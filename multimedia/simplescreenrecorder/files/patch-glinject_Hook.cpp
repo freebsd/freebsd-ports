@@ -1,4 +1,4 @@
---- glinject/Hook.cpp.orig	2017-07-25 22:43:33 UTC
+--- glinject/Hook.cpp.orig	2017-12-11 00:15:36 UTC
 +++ glinject/Hook.cpp
 @@ -15,6 +15,8 @@ THE SOFTWARE IS PROVIDED "AS IS" AND THE
  #include <GL/glx.h>

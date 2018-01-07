@@ -1,8 +1,5 @@
 bin/simplescreenrecorder
-bin/ssr-glinject
-lib/libssr-glinject.so
 man/man1/simplescreenrecorder.1.gz
-man/man1/ssr-glinject.1.gz
 share/appdata/simplescreenrecorder.appdata.xml
 share/applications/simplescreenrecorder.desktop
 share/icons/hicolor/128x128/apps/simplescreenrecorder-error.png
@@ -74,6 +71,7 @@ share/icons/hicolor/scalable/apps/simplescreenrecorder.svg
 %%DATADIR%%/translations/simplescreenrecorder_fr.qm
 %%DATADIR%%/translations/simplescreenrecorder_he.qm
 %%DATADIR%%/translations/simplescreenrecorder_hu.qm
+%%DATADIR%%/translations/simplescreenrecorder_id.qm
 %%DATADIR%%/translations/simplescreenrecorder_it.qm
 %%DATADIR%%/translations/simplescreenrecorder_ja.qm
 %%DATADIR%%/translations/simplescreenrecorder_lt.qm
