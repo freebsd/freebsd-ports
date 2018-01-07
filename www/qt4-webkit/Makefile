@@ -3,7 +3,7 @@
 
 PORTNAME=	webkit
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt4-
 
@@ -15,6 +15,7 @@ USE_QT4=	corelib declarative gui network \
 QT_DIST=	yes
 USE_XORG=	xrender
 USES=		pkgconfig
+USE_CXXSTD=	gnu++98
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
