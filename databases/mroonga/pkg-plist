@@ -16,7 +16,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/down.png
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/jquery-1.11.1.js
+%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/jquery-3.1.0.js
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/minus.png
@@ -97,7 +97,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/down.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/jquery-1.11.1.js
+%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/jquery-3.1.0.js
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/minus.png
