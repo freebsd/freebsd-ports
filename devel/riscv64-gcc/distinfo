@@ -1,3 +1,3 @@
-TIMESTAMP = 1502306294
-SHA256 (freebsd-riscv-riscv-gcc-7.1.1-b2cdb72_GH0.tar.gz) = e4be22d446a163f8cdf30ebdd9c4cb91a2846793205c89521a84abb8a9d6b6d3
-SIZE (freebsd-riscv-riscv-gcc-7.1.1-b2cdb72_GH0.tar.gz) = 97690613
+TIMESTAMP = 1515136464
+SHA256 (freebsd-riscv-riscv-gcc-7.2.0-2ea300e_GH0.tar.gz) = f6e4f31a6a6dc1cfb6ea982b53f031ec25cc234e9e8302c2b6d0d2746bf68a2f
+SIZE (freebsd-riscv-riscv-gcc-7.2.0-2ea300e_GH0.tar.gz) = 97771092
