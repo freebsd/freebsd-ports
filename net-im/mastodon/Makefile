@@ -2,8 +2,7 @@
 
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
-PORTREVISION=	4
+DISTVERSION=	2.1.2
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -39,7 +38,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 		rubygem-iso-639>=0.2.8:textproc/rubygem-iso-639 \
 		rubygem-cld3>=3.2.0:textproc/rubygem-cld3 \
-		rubygem-devise-rails5>=4.2:devel/rubygem-devise-rails5 \
+		rubygem-devise-rails5>=4.3:devel/rubygem-devise-rails5 \
 		rubygem-devise-two-factor-rails5>=3.0:security/rubygem-devise-two-factor-rails5 \
 		rubygem-doorkeeper-rails5>=4.2:security/rubygem-doorkeeper-rails5 \
 		rubygem-fast_blank>=1.0:devel/rubygem-fast_blank \
@@ -69,6 +68,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-mario-redis-lock>=1.2:databases/rubygem-mario-redis-lock \
 		rubygem-rqrcode>=0.10:www/rubygem-rqrcode \
 		rubygem-ruby-oembed>=0.12:www/rubygem-ruby-oembed \
+		rubygem-progressbar>=1.4:devel/rubygem-progressbar \
 		rubygem-sanitize>=4.4:textproc/rubygem-sanitize \
 		rubygem-sidekiq>=5.0:devel/rubygem-sidekiq \
 		rubygem-sidekiq-scheduler>=2.1:devel/rubygem-sidekiq-scheduler \
@@ -91,7 +91,7 @@ USES=		gmake gnome pgsql python:build,2 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tootsuite jehops:mn
 GH_PROJECT=	mastodon_node:mn
-GH_TAGNAME=	2.1.0:mn
+GH_TAGNAME=	2.1.2:mn
 USE_GNOME=	libxml2 libxslt
 USE_RC_SUBR=	mastodon_stream mastodon_web mastodon_workers
 USE_RUBY=	yes
@@ -137,8 +137,8 @@ do-install:
 		${WRKSRC}/node_modules/.bin/node-sass \
 		${WRKSRC}/node_modules/uws/build_log.txt
 	${STRIP_CMD} ${WRKSRC}/node_modules/uws/uws_freebsd_${NODE_ABI}.node
-	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${WWWDIR}/tmp \
-		${STAGEDIR}/var/log/mastodon
+	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}/var/run/${PORTNAME} \
+		${STAGEDIR}/var/log/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/nginx.conf \
 		${STAGEDIR}${WWWDIR}/nginx.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/nginx-include.conf \
