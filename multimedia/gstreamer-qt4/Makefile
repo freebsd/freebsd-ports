@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-${PORTNAME}/
 PKGNAMESUFFIX=	-qt4
