@@ -116,3 +116,4 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/dwz.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/python_support.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/systemd.pm
+%%SITE_PERL%%/Debian/Debhelper/SequencerUtil.pm
