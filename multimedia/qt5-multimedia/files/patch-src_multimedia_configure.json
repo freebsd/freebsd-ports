@@ -1,0 +1,11 @@
+Make it possible to disable OpenAL support via a command-line option.
+--- src/multimedia/configure.json
++++ src/multimedia/configure.json
+@@ -9,6 +9,7 @@
+         "options": {
+             "alsa": "boolean",
+             "gstreamer": { "type": "optionalString", "values": [ "no", "yes", "0.10", "1.0" ] },
++            "openal": "boolean",
+             "pulseaudio": "boolean",
+             "mediaplayer-backend": { "type": "string", "values": [ "directshow", "wmf" ] },
+             "wmf-backend": { "type": "void", "name": "mediaplayer-backend", "value": "wmf" }
