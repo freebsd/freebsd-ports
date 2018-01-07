@@ -546,8 +546,8 @@
     SUBDIR += py-premailer
     SUBDIR += py-pymailq
     SUBDIR += py-pyspf
-    SUBDIR += py-spambayes
     SUBDIR += py-pyzmail
+    SUBDIR += py-spambayes
     SUBDIR += py-zope.sendmail
     SUBDIR += pymsgauth
     SUBDIR += pysieved
