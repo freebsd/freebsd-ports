@@ -186,8 +186,8 @@
     SUBDIR += consolehm
     SUBDIR += consolekit2
     SUBDIR += consul
-    SUBDIR += consul_exporter
     SUBDIR += consul-alerts
+    SUBDIR += consul_exporter
     SUBDIR += container-diff
     SUBDIR += contractor
     SUBDIR += copytape
@@ -1194,12 +1194,12 @@
     SUBDIR += tracker
     SUBDIR += tree
     SUBDIR += tren
+    SUBDIR += trueos-libqt5
     SUBDIR += ts
     SUBDIR += tss
     SUBDIR += tty-clock
     SUBDIR += ttyd
     SUBDIR += ttyload
-    SUBDIR += trueos-libqt5
     SUBDIR += tuptime
     SUBDIR += tw_cli
     SUBDIR += twmn
