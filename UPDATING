@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180107
+  AFFECTS: users of security/gnupg and mail/mutt and mail/neomutt
+  AUTHOR: adamw@FreeBSD.org
+
+  The invocation for gpg from mutt/neomutt changed between gnupg-2.0
+  (which has expired and is now removed) and gnupg-2.2 (the current
+  version in the tree). Unless you're using gpgme, PGP-related
+  commands may fail in (neo)mutt.
+
+  In all cases, users are strongly urged to use security/gpgme to take
+  care of the setup for you. If you prefer to roll your own, the
+  following muttrc/neomuttrc entry has been reported to work:
+
+  pgp_decrypt_command="gpg2 %?p?--passphrase-fd 0 --pinentry-mode=loopback? --no-verbose --batch --output - %f"
+
+  See muttrc(5), neomuttrc(5), mutt.org, and neomutt.org for instructions
+  on (neo)mutt's gpg and gpgme instructions.
+
 20180102:
   AFFECTS: users of devel/awscli
   AUTHOR: bhughes@FreeBSD.org
