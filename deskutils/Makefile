@@ -128,8 +128,8 @@
     SUBDIR += kdeplasma-addons
     SUBDIR += kruler
     SUBDIR += ksshaskpass
-    SUBDIR += launchy
     SUBDIR += latte-dock
+    SUBDIR += launchy
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += libstreamanalyzer
     SUBDIR += libstreams
