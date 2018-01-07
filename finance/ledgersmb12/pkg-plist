@@ -47,7 +47,6 @@ ledgersmb/LedgerSMB/User.pm
 ledgersmb/Makefile.PL
 ledgersmb/README.OpenBSD
 ledgersmb/README.debian
-ledgersmb/README.svn-status
 ledgersmb/README.translations
 ledgersmb/TODO
 ledgersmb/UPGRADE
@@ -611,6 +610,7 @@ ledgersmb/sql/US_Service_Company-chart.sql
 ledgersmb/sql/Venezuela_Default-chart.sql
 ledgersmb/sql/fixes/ar_ap_summary_fix_1.2.14.sql
 ledgersmb/sql/fixes/inventory_lost_on_order_conversion.sql
+ledgersmb/sql/fixes/new_custom_fields_funcs.sql
 ledgersmb/sql/fixes/recurring_pkey_duplicate.sql
 ledgersmb/sql/fixes/tax_pkey_duplicate.sql
 ledgersmb/sql/fixes/transactions_foreign_key_fix.sql
