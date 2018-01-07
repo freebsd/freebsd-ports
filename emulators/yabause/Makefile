@@ -18,6 +18,7 @@ USE_GL=		gl glu glut
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+LLD_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 
