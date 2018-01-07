@@ -2,7 +2,7 @@
 
 PORTNAME=	riscv-isa-sim
 DISTVERSION=	git
-PORTREVISION=	20170810
+PORTREVISION=	20180103
 CATEGORIES=	emulators
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfesvr.so:emulators/riscv-fesvr
 ONLY_FOR_ARCHS=	amd64
 
 GH_ACCOUNT=	freebsd-riscv
-GH_TAGNAME=	54ae820
+GH_TAGNAME=	acf9589
 
 USES=	compiler:c++11-lang gmake shebangfix
 
