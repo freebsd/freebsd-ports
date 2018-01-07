@@ -29,7 +29,7 @@ GSSAPI_MIT_USES=	gssapi:mit
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/krb5-heimdal-compat.h ${WRKSRC}
 
-post-build:
-	${STRIP_CMD} ${WRKSRC}/blib/arch/auto/Authen/Krb5/Krb5.so
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Authen/Krb5/Krb5.so
 
 .include <bsd.port.mk>
