@@ -13,7 +13,7 @@ COMMENT=	Terminal/console pager module
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.3+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
