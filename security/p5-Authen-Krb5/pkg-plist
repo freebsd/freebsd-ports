@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Authen::Krb5.3.gz
 %%SITE_ARCH%%/Authen/Krb5.pm
 %%SITE_ARCH%%/auto/Authen/Krb5/Krb5.so
 %%SITE_ARCH%%/auto/Authen/Krb5/autosplit.ix
+%%PERL5_MAN3%%/Authen::Krb5.3.gz
