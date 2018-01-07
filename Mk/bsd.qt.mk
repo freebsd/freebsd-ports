@@ -135,7 +135,7 @@ CONFIGURE_ARGS+=-fast \
 				-demosdir ${PREFIX}/${QT_EXAMPLEDIR_REL}/demos
 . else
 CONFIGURE_ARGS+=-nomake examples -nomake tests \
-				-platform ${QMAKESPEC:T} \
+				-platform ${QMAKESPECNAME} \
 				-archdatadir ${PREFIX}/${QT_ARCHDIR_REL} \
 				-libexecdir ${PREFIX}/${QT_LIBEXECDIR_REL} \
 				-qmldir ${PREFIX}/${QT_QMLDIR_REL} \
@@ -261,7 +261,8 @@ UIC?=			${QT_BINDIR}/uic
 QMAKE?=			${QT_BINDIR}/qmake
 # Needed to redefine the qmake target for internal Qt configuration.
 _QMAKE?=		${QMAKE}
-QMAKESPEC?=		${QT_MKSPECDIR}/freebsd-${QMAKE_COMPILER}
+QMAKESPECNAME?=	freebsd-${QMAKE_COMPILER}
+QMAKESPEC?=		${QT_MKSPECDIR}/${QMAKESPECNAME}
 
 # The whole Qt distribution should be built with the same compiler, but it's
 # better to support custom settings. Dereferencing the detection allows to
