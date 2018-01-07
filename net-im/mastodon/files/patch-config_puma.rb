@@ -4,7 +4,7 @@
  threads_count = ENV.fetch('MAX_THREADS') { 5 }.to_i
  threads threads_count, threads_count
  
-+pidfile 'tmp/mastodon_web.pid'
++pidfile '/var/run/mastodon/mastodon_web.pid'
 +
  if ENV['SOCKET'] then
    bind 'unix://' + ENV['SOCKET']

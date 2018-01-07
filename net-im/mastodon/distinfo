@@ -1,5 +1,5 @@
-TIMESTAMP = 1513484543
-SHA256 (tootsuite-mastodon-v2.1.0_GH0.tar.gz) = 2d4f63545873de469e636c8e1d4b10a65e621f5cfc59fe377d83f32289530dc4
-SIZE (tootsuite-mastodon-v2.1.0_GH0.tar.gz) = 12357025
-SHA256 (jehops-mastodon_node-2.1.0_GH0.tar.gz) = 8997bd7adc3499f66bf49bbd848a622d0411eaaf373cd0c2b92120532a2bfd6f
-SIZE (jehops-mastodon_node-2.1.0_GH0.tar.gz) = 28361650
+TIMESTAMP = 1515286436
+SHA256 (tootsuite-mastodon-v2.1.2_GH0.tar.gz) = 38b00da5aada8f39888c62c665a9cd75b7ae7033b4c244f89a2380d8dfb9a0f8
+SIZE (tootsuite-mastodon-v2.1.2_GH0.tar.gz) = 12426068
+SHA256 (jehops-mastodon_node-2.1.2_GH0.tar.gz) = c6c2c09dd2be4db1d313c6230844ed7ea4cbea8963a03e6bac87a69e11019c8a
+SIZE (jehops-mastodon_node-2.1.2_GH0.tar.gz) = 27194814
