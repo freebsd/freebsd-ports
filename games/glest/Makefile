@@ -21,6 +21,7 @@ USES=		autoreconf:build dos2unix localbase lua:51 openal:al,alut \
 		pkgconfig zip
 USE_SDL=	yes
 USE_GL=		yes
+LLD_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	mk/linux/configure
 SUB_FILES=		glest-wrapper pkg-message
