@@ -1,10 +1,10 @@
---- exec/bootstrap.orig	2012-07-15 13:24:41 UTC
+--- exec/bootstrap.orig	2018-01-07 21:36:21 UTC
 +++ exec/bootstrap
 @@ -1,6 +1,6 @@
  echo Creating icm-exec
  
 -gcc -O2 -g -Wall -DHAVE_GLOB -c *.c 
-+${CC} ${CFLAGS} -g -DHAVE_GLOB -c *.c 
++${CC} ${CFLAGS} -g -DHAVE_GLOB -c *.c
  
  mkdir -p tmp/bin
  
