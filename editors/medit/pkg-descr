@@ -1,0 +1,13 @@
+medit is a programming and around-programming text editor.  Originally
+started as a simple built-in editor component in GGAP, it grew up to a
+real text editor.  It features:
+
+  - Configurable syntax highlighting
+  - Configurable keyboard accelerators
+  - Plugins that can be written in C, Python, or Lua
+  - Configurable tools available from the main and context menus;
+    can be written in Python or Lua, or be a shell script
+  - Regular expression search/replace, grep(1) frontend, built-in
+    file selector, etc.
+
+WWW: http://mooedit.sourceforge.net/

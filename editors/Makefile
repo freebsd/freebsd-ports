@@ -185,6 +185,7 @@
     SUBDIR += linux-sublime3
     SUBDIR += madedit
     SUBDIR += manedit
+    SUBDIR += medit
     SUBDIR += mg
     SUBDIR += micro
     SUBDIR += mined
