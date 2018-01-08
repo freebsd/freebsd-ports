@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 PORTREVISION=	0
 .else
 # dns/bind912 here
-PORTREVISION=	1
+PORTREVISION=	2
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
