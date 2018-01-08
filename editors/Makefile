@@ -244,6 +244,7 @@
     SUBDIR += vile
     SUBDIR += vim
     SUBDIR += vim-lite
+    SUBDIR += vim-tiny
     SUBDIR += web-mode
     SUBDIR += with-editor
     SUBDIR += wordgrinder
