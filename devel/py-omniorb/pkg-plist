@@ -363,6 +363,8 @@ include/omniORBpy.h
 %%PORTDOCS%%%%DOCSDIR%%/omniORBpy.pdf
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.bib
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.tex
+%%PORTDOCS%%%%DOCSDIR%%/tex/omniURLDefs.hva
+%%PORTDOCS%%%%DOCSDIR%%/tex/omniURLDefs.sty
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ami/ami_callback.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ami/ami_poller.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ami/example_echo.idl
