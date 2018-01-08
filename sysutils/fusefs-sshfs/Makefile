@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sshfs
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
@@ -21,6 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	libfuse
 
 USE_GNOME=	glib20
+CFLAGS+=	-DNDEBUG
 
 PLIST_FILES=	bin/sshfs \
 		man/man1/sshfs.1.gz
