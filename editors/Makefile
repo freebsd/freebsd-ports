@@ -216,6 +216,7 @@
     SUBDIR += py-editorconfig
     SUBDIR += py-room
     SUBDIR += rox-edit
+    SUBDIR += rubygem-neovim
     SUBDIR += scite
     SUBDIR += se
     SUBDIR += semi
