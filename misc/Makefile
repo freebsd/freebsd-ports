@@ -251,6 +251,7 @@
     SUBDIR += libkdeedu
     SUBDIR += libmetalink
     SUBDIR += libpostal
+    SUBDIR += libpredict
     SUBDIR += libpri
     SUBDIR += libsupertone
     SUBDIR += libutf
