@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mario-redis-lock
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
