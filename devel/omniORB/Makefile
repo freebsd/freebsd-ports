@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniORB
-DISTVERSION=	4.2.1-2
-PORTREVISION=	1
+DISTVERSION=	4.2.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${DISTVERSION:S/-2//}
 
@@ -13,7 +12,7 @@ COMMENT=	Robust high performance CORBA ORB for C++ and Python
 LICENSE=	GPLv2
 
 CONFLICTS=	omniORB41-4.1.*
-PLIST_SUB+=	SONUM=1
+PLIST_SUB+=	SONUM=2
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig python tar:bzip2 shebangfix ssl
 USE_LDCONFIG=	yes
@@ -43,9 +42,9 @@ post-install:
 .for i in catior convertior omniMapper omniNames omnicpp nameclt omkdepend genior
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-.for i in libomniDynamic4.so.2.1 libomnisslTP4.so.2.1 libCOS4.so.2.1 \
-	libomniCodeSets4.so.2.1 libomniZIOPDynamic4.so.2.1 libomniZIOP4.so.2.1 \
-	libomniConnectionMgmt4.so.2.1 libomniORB4.so.2.1 libCOSDynamic4.so.2.1 \
+.for i in libomniDynamic4.so.2.2 libomnisslTP4.so.2.2 libCOS4.so.2.2 \
+	libomniCodeSets4.so.2.2 libomniZIOPDynamic4.so.2.2 libomniZIOP4.so.2.2 \
+	libomniConnectionMgmt4.so.2.2 libomniORB4.so.2.2 libCOSDynamic4.so.2.2 \
 	libomnithread.so.4.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${i}
 .endfor
