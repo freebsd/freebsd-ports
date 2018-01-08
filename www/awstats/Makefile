@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	awstats
-PORTVERSION=	7.6
+PORTVERSION=	7.7
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 LICENSE=	GPLv3
