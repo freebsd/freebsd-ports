@@ -19,8 +19,6 @@ RUN_DEPENDS=	rubygem-backports>=2.0:devel/rubygem-backports \
 		rubygem-sinatra>=2.0:www/rubygem-sinatra \
 		rubygem-tilt>=2.0:devel/rubygem-tilt
 
-PORTSCOUT=	limit:^1\.
-
 NO_ARCH=	yes
 
 USE_RUBY=	yes
