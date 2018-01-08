@@ -1,7 +1,7 @@
 bin/repmgr
+bin/repmgrd
+lib/postgresql/repmgr.so
+share/postgresql/extension/repmgr--4.0.sql
+share/postgresql/extension/repmgr--unpackaged--4.0.sql
+share/postgresql/extension/repmgr.control
 @sample etc/repmgr.conf.sample
-sbin/repmgrd
-lib/postgresql/repmgr_funcs.so
-%%DATADIR%%/repmgr.sql
-%%DATADIR%%/repmgr_funcs.sql
-%%DATADIR%%/uninstall_repmgr_funcs.sql
