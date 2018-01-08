@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		php:cli python shebangfix
+USES=		php:cli python${PY_MYSQL} shebangfix
 SHEBANG_FILES=	\
 		mibs/process.pl \
 		poller-wrapper.py \
@@ -56,6 +56,7 @@ LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
+PYPOLLER_VARS=	PY_MYSQL=:2.7
 SVN_RUN_DEPENDS=	svn:devel/subversion
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 
