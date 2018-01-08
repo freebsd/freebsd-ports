@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=0.4:www/py-django-appconf@${
 		${PYTHON_PKGNAMEPREFIX}rcssmin>=0:archivers/py-rcssmin@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rjsmin>=0:archivers/py-rjsmin@${FLAVOR}
 
-USES=		python
+USES=		python${PY_SLIMIT}
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
@@ -32,5 +32,6 @@ BEAUTIFULSOUP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beauti
 LXML_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${FLAVOR}
 HTML5LIB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${FLAVOR}
 SLIMIT_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}slimit>=0.8.1:www/py-slimit@${FLAVOR}
+SLIMIT_VARS=	PY_SLIMIT=:2.7
 
 .include <bsd.port.mk>
