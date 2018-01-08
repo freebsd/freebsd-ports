@@ -46,6 +46,7 @@
     SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += binwalk
+    SUBDIR += bitwarden-ruby
     SUBDIR += blindelephant
     SUBDIR += boringssl
     SUBDIR += botan110
