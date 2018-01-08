@@ -312,7 +312,7 @@ named_prestart()
 		checkyesno named_chroot_autoupdate && chroot_autoupdate
 
 		case "${altlog_proglist}" in
-		  named)
+		  *named*)
 		    ;;
 		  *)
 		    warn 'Using chroot without setting altlog_proglist, logging may not'
