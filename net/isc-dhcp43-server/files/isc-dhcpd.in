@@ -52,8 +52,7 @@ eval ": \${${name}_withgroup:=dhcpd}"			# group name to run as
 
 eval ": \${${name}_chroot_enable:=\"NO\"}"		# runs chrooted?
 eval ": \${${name}_devfs_enable:=\"YES\"}"		# devfs if available?
-eval ": \${${name}_rootdir:=/var/db/${name}}"		# directory to run in
-eval ": \${${name}_chrootdir:=${name}_rootdir}"		# automatically set _chrootdir for syslogd compatibility
+eval ": \${${name}_chrootdir:=/var/db/${name}}"		# directory to run in
 # dhcpd_includedir=""			# directory for included config files
 
 safe_run ()	# rc command [args...]
@@ -302,8 +301,8 @@ check_chroot ()
 {
 	if checkyesno paranoia; then
 		if checkyesno ${name}_chroot_enable; then
-			if eval "[ -z \"\${${name}_rootdir}\" ]"; then
-				err 1 "${name}_rootdir must be set" \
+			if eval "[ -z \"\${${name}_chrootdir}\" ]"; then
+				err 1 "${name}_chrootdir must be set" \
 				      "if ${name}_chroot_enable is enabled"
 			fi
 		else
@@ -331,7 +330,7 @@ _rcvar_chuser ()
 _rcvar_chroot ()
 {
 	if ! checkyesno paranoia || ! checkyesno ${name}_chroot_enable; then
-		eval "${name}_rootdir="
+		eval "${name}_chrootdir="
 	elif checkyesno paranoia && checkyesno ${name}_chroot_enable; then
 		eval "${name}_devdir=\${__dhcpd_devdir}"
 		eval "${name}_etcdir=\${__dhcpd_etcdir}"
@@ -352,16 +351,16 @@ _rcvar_pidnleases ()
 
 _rcvar_rooted ()
 {
-	eval "_dhcpd_rootdir=\${${name}_rootdir}"
-	eval "_dhcpd_devdir=\${${name}_rootdir}\${${name}_devdir}"
-	eval "_dhcpd_etcdir=\${${name}_rootdir}\${${name}_etcdir}"
-	eval "_dhcpd_confdir=\${${name}_rootdir}\${${name}_confdir}"
-	eval "_dhcpd_includedir=\${${name}_rootdir}\${${name}_includedir}"
-	eval "_dhcpd_piddir=\${${name}_rootdir}\${${name}_piddir}"
-	eval "_dhcpd_leasesdir=\${${name}_rootdir}\${${name}_leasesdir}"
-	eval "_dhcpd_conffile=\${${name}_rootdir}\${${name}_conffile}"
-	eval "_dhcpd_pidfile=\${${name}_rootdir}\${${name}_pidfile}"
-	eval "_dhcpd_leasesfile=\${${name}_rootdir}\${${name}_leasesfile}"
+	eval "_dhcpd_chrootdir=\${${name}_chrootdir}"
+	eval "_dhcpd_devdir=\${${name}_chrootdir}\${${name}_devdir}"
+	eval "_dhcpd_etcdir=\${${name}_chrootdir}\${${name}_etcdir}"
+	eval "_dhcpd_confdir=\${${name}_chrootdir}\${${name}_confdir}"
+	eval "_dhcpd_includedir=\${${name}_chrootdir}\${${name}_includedir}"
+	eval "_dhcpd_piddir=\${${name}_chrootdir}\${${name}_piddir}"
+	eval "_dhcpd_leasesdir=\${${name}_chrootdir}\${${name}_leasesdir}"
+	eval "_dhcpd_conffile=\${${name}_chrootdir}\${${name}_conffile}"
+	eval "_dhcpd_pidfile=\${${name}_chrootdir}\${${name}_pidfile}"
+	eval "_dhcpd_leasesfile=\${${name}_chrootdir}\${${name}_leasesfile}"
 }
 
 setup_umask ()
@@ -385,7 +384,7 @@ setup_chroot ()
 			safe_mkdir ${_dhcpd_devdir}/_
 			# XXX /_ hack! so, .../dev is root owned.
 		fi
-		safe_mkdir ${_dhcpd_rootdir} ${_dhcpd_etcdir}/_ ${_dhcpd_confdir}
+		safe_mkdir ${_dhcpd_chrootdir} ${_dhcpd_etcdir}/_ ${_dhcpd_confdir}
 		# XXX /_ hack! so, .../etc is root owned.
 		if checkyesno ${name}_devfs_enable; then
 			safe_mount ${_dhcpd_devdir}
@@ -442,8 +441,8 @@ setup_flags ()
 	if eval "[ -n \"\${${name}_withgroup}\" ]"; then
 		eval "rc_flags=\"\${rc_flags} -group \${${name}_withgroup}\""
 	fi
-	if eval "[ -n \"\${${name}_rootdir}\" ]"; then
-		eval "rc_flags=\"\${rc_flags} -chroot \${${name}_rootdir}\""
+	if eval "[ -n \"\${${name}_chrootdir}\" ]"; then
+		eval "rc_flags=\"\${rc_flags} -chroot \${${name}_chrootdir}\""
 	fi
 	eval "rc_flags=\"\${rc_flags} \${${name}_ifaces}\""
 }
@@ -519,7 +518,7 @@ __dhcpd_devdir=/dev			# devices directory
 __dhcpd_etcdir=/etc			# etc directory
 __dhcpd_piddir=/var/run			# pid file directory
 __dhcpd_leasesdir=/var/db		# leases file directory
-#__dhcpd_rootdir=/var/db/${name}	# root directory
+#__dhcpd_chrootdir=/var/db/${name}	# root directory
 
 dhcpd_check
 dhcpd_rcvar
