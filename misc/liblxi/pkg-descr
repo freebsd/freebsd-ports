@@ -1,0 +1,6 @@
+liblxi is an open source software library which offers a simple API for
+communicating with LXI compatible instruments. The API allows applications
+to discover instruments on your network, send SCPI commands, and receive
+responses.
+
+WWW: https://lxi-tools.github.io

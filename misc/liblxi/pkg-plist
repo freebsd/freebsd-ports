@@ -1,0 +1,10 @@
+include/lxi.h
+lib/liblxi.so
+lib/liblxi.so.1
+lib/liblxi.so.1.0.0
+man/man3/lxi_connect.3.gz
+man/man3/lxi_disconnect.3.gz
+man/man3/lxi_discover.3.gz
+man/man3/lxi_init.3.gz
+man/man3/lxi_receive.3.gz
+man/man3/lxi_send.3.gz
