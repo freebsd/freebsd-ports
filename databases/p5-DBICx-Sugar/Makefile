@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBICx-Sugar
-PORTVERSION=	0.0100
+PORTVERSION=	0.0200
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IRONCAMEL
@@ -26,5 +26,6 @@ TEST_DEPENDS=	p5-Test-Modern>=0:devel/p5-Test-Modern \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
