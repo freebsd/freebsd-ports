@@ -1,4 +1,3 @@
-# Created by: Kevin Bowling  <kbowling@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	qdirstat
