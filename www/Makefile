@@ -2176,6 +2176,7 @@
     SUBDIR += rubygem-semantic-ui-sass
     SUBDIR += rubygem-simple-rss
     SUBDIR += rubygem-sinatra
+    SUBDIR += rubygem-sinatra-contrib
     SUBDIR += rubygem-sinatra-contrib1
     SUBDIR += rubygem-sinatra-r18n
     SUBDIR += rubygem-sinatra-respond_to
