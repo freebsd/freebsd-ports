@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sql-ledger
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.6
 CATEGORIES=	finance perl5
 MASTER_SITES=	http://www.sql-ledger.com/source/
 
@@ -20,14 +20,22 @@ SUB_FILES=	pkg-message sql-ledger-httpd.conf
 USES=		perl5 pgsql shebangfix
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl
 NO_ARCH=	yes
+USE_APACHE_RUN=	22+
 
 ROOT_DIRS=	SL bin css doc images js locale spool sql templates users
-ROOT_FILES=	VERSION admin.pl am.pl ap.pl ar.pl bp.pl ca.pl cp.pl ct.pl\
-		favicon.ico gl.pl hr.pl ic.pl im.pl index.html ir.pl is.pl\
-		jc.pl login.pl menu.ini menu.pl oe.pl pe.pl ps.pl rc.pl\
-		rd.pl rp.pl setup.pl sm.pl vr.pl
+ROOT_FILES=	VERSION favicon.ico index.html menu.ini
+ROOT_SCRIPTS=	admin.pl am.pl ap.pl ar.pl bp.pl ca.pl cp.pl ct.pl gl.pl hr.pl \
+	       	ic.pl im.pl ir.pl is.pl jc.pl login.pl menu.pl oe.pl pe.pl ps.pl \
+	       	rc.pl rd.pl rp.pl setup.pl sm.pl vr.pl
 
+.include <bsd.port.pre.mk>
 do-install:
+.if ${APACHE_VERSION:M24}
+	@${REINPLACE_CMD} -e '/Order/d' \
+		-e 's/Deny from All/Require all denied/g' \
+		-e 's/Allow from All/Require all granted/g' \
+		${WRKDIR}/sql-ledger-httpd.conf
+.endif
 	${INSTALL_DATA} ${WRKDIR}/sql-ledger-httpd.conf ${STAGEDIR}${PREFIX}/etc/
 	@${MKDIR} ${STAGEDIR}/${WWWDIR}
 .for dir in ${ROOT_DIRS}
@@ -36,6 +44,9 @@ do-install:
 .endfor
 .for f in ${ROOT_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
+.endfor
+.for f in ${ROOT_SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
 .endfor
 
 post-install:
@@ -52,4 +63,4 @@ post-install:
 	@${ECHO_CMD} "@group" >> ${TMPPLIST}
 	@${ECHO_CMD} "@owner" >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
