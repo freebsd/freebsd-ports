@@ -26,6 +26,7 @@ USE_SDL=	sdl2 image2
 USE_GL=		glu gl glew
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	build
+LLD_UNSAFE=	yes
 
 WORKINGSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DATADIR=	${PREFIX}/share/games/trigger-rally

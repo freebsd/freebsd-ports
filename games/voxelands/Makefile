@@ -18,6 +18,7 @@ LIB_DEPENDS=		libIrrlicht.so:x11-toolkits/irrlicht \
 BROKEN_powerpc64=	fails to link: sibling call optimization does not allow automatic multiple TOCs
 
 USES=			cmake tar:bzip2
+LLD_UNSAFE=		yes
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
