@@ -329,6 +329,7 @@
     SUBDIR += libbeid
     SUBDIR += libbf
     SUBDIR += libcryptui
+    SUBDIR += libdecaf
     SUBDIR += libecc
     SUBDIR += libfprint
     SUBDIR += libgcrypt
