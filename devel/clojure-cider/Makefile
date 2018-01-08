@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clojure-cider
-PORTVERSION=	0.15.1
+PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel elisp
 
