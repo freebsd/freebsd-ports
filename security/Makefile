@@ -1089,6 +1089,7 @@
     SUBDIR += rubygem-openssl20
     SUBDIR += rubygem-openvas-omp
     SUBDIR += rubygem-origami
+    SUBDIR += rubygem-pbkdf2-ruby
     SUBDIR += rubygem-pundit
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-rack-oauth2
