@@ -15,4 +15,7 @@ USE_RUBY=	yes
 USES=		gem
 PLIST_FILES=	bin/piston
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=2018-02-08
+
 .include <bsd.port.mk>
