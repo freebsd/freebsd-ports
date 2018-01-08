@@ -33,6 +33,7 @@ USES=		alias cmake compiler:c++11-lib dos2unix gettext \
 USE_GL=		gl glu
 USE_SDL=	sdl
 USE_XORG=	x11 xext sm ice
+LLD_UNSAFE=	yes
 DOS2UNIX_FILES=	lib/irrlicht/source/Irrlicht/Makefile \
 		lib/irrlicht/source/Irrlicht/COpenGLExtensionHandler.h
 CMAKE_ARGS=	-DUSE_WIIUSE=NO \
