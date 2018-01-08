@@ -21,7 +21,7 @@ LIB_DEPENDS=	libunibilium.so:devel/unibilium \
 		libuv.so:devel/libuv \
 		libmsgpackc.so:devel/msgpack
 
-USES=		cmake:outsource gettext iconv lua:build pathfix pkgconfig
+USES=		cmake:outsource iconv lua:build pathfix pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	libmpack:libmpack:1.0.5:libmpack \
 		libmpack:libmpack-lua:1.0.6:libmpack_lua
@@ -30,12 +30,19 @@ CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${MANPREFIX}/man" \
 		-DDEPS_PREFIX:PATH="${LOCALBASE}"
 
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|lua_objlen|lua_rawlen| ; \
 		 s|luaL_reg |luaL_Reg | ; \
 		 s|luaL_register(L, NULL, \(.*\));|luaL_setfuncs(L, \1, 0);|' \
 		${WRKSRC_libmpack_lua}/lmpack.c
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e '/find_package(LibIntl)/ d' ${WRKSRC}/CMakeLists.txt
 
 pre-build:
 	@${LN} -s ${WRKSRC_libmpack} ${WRKSRC_libmpack_lua}/mpack-src
