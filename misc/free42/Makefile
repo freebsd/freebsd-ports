@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	Free42
-DISTVERSION=	2.0.7
+PORTNAME=	free42
+DISTVERSION=	2.0.10
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/upstream/
-DISTNAME=	${PORTNAME:tl}-nologo-${DISTVERSION}
+DISTNAME=	${PORTNAME}-nologo-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simulation of the HP-42S scientific calculator and HP-82240 printer
@@ -27,21 +27,20 @@ DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h
 BUILD_WRKSRC=	${WRKSRC}/gtk
 
 post-extract:
-	@${RM} `${FIND} ${WRKDIR} -name "*.orig"`
 	@cd ${BUILD_WRKSRC} && tar xvfz ../inteldecimal/IntelRDFPMathLib20U1.tar.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"%s/%s.%s", free42dirname, name,|"%s/%s.%s", "${DATADIR:tl}", name,|' \
-		${BUILD_WRKSRC}/shell_skin.cc
+	@${REINPLACE_CMD} -e 's|snprintf(free42dirname, FILENAMELEN, "%s/\.free42", home)|strcpy(free42dirname, "${DATADIR}")|' \
+		${BUILD_WRKSRC}/shell_main.cc
 
 do-build:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} cleaner && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD}
-		# TODO do we need decimal fp arithmetic?: ${MAKE_CMD} BCD_MATH=1 SKIN_SYS_DIR="${DATADIR:tl}"
+		# TODO do we need decimal fp arithmetic?: ${MAKE_CMD} BCD_MATH=1 SKIN_SYS_DIR="${DATADIR}"
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/free42bin ${STAGEDIR}${PREFIX}/bin/
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} skins ${STAGEDIR}${DATADIR:tl}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} skins ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
