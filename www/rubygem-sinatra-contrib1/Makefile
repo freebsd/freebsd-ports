@@ -5,6 +5,7 @@ PORTVERSION=	1.4.7
 PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Collection of useful Sinatra extensions

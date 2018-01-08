@@ -9844,3 +9844,4 @@ devel/p5-MooseX-Role-WithOverloading||2018-01-06|Has expired: deprecated by upst
 devel/p5-Test-Block||2018-01-06|Has expired: Marked as deprecated upstream
 sysutils/socket||2018-01-06|Has expired: Out of date
 x11-toolkits/qt5-declarative-render2d/||2018-01-06|Merged into x11-toolkits/qt5-quick
+www/rubygem-sinatra-contrib|www/rubygem-sinatra-contrib1|2018-01-06|Renamed to coordinate with rubygem-sinatra1
