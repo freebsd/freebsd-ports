@@ -18,6 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	minetest
 
 USES=		cmake iconv:wchar_t
+LLD_UNSAFE=	yes
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
 		-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc"
 
