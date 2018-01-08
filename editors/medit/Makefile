@@ -36,5 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/std::nullptr_t/ { x ; \
 		s/.*/#include <cstddef>/ ; G ; }' \
 		${WRKSRC}/moo/moopython/moopython-utils.h
+	@${REINPLACE_CMD} -e 's/long val = strtol/errno = 0; &/' \
+		${WRKSRC}/moo/mooutils/mooglade.c
 
 .include <bsd.port.mk>
