@@ -4,4 +4,4 @@ and communicates with the script using XMLHTTP on port 80 or securely using
 SSL. This provides you with shell access to your machine from almost any Web
 browser, even when firewalls are in the way.
 
-WWW: http://anyterm.org/
+WWW: https://anyterm.org/
