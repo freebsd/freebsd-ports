@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	yabasic
-PORTVERSION=	2.769
+PORTVERSION=	2.78.2
+PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Yet another Basic for Unix and Windows
 
-LICENSE=	ART10 GPLv2
-LICENSE_COMB=	multi
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		bison ncurses
 GNU_CONFIGURE=	yes
