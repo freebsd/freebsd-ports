@@ -1,19 +1,13 @@
---- meson.build.orig	2017-09-20 17:08:27 UTC
+--- meson.build.orig	2017-10-25 18:32:34 UTC
 +++ meson.build
-@@ -58,15 +58,10 @@ executable('sshfs', sshfs_sources,
- if rst2man.found()
-     custom_target('manpages', input: [ 'sshfs.rst' ], output: [ 'sshfs.1' ],
-                   command: [rst2man, '@INPUT@', '@OUTPUT@'], install: true,
--                  install_dir: join_paths(get_option('mandir'), '1'))
-+                  install_dir: join_paths(get_option('mandir'), 'man1'))
- else
+@@ -63,10 +63,5 @@ else
      message('rst2man not found, not building manual page.')
  endif
--
+ 
 -meson.add_install_script('utils/install_helper.sh',
 -                         get_option('sbindir'),
 -                         get_option('bindir'))
 -
- 
+-
  subdir('test')
  
