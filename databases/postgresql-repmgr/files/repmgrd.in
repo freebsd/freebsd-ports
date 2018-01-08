@@ -25,7 +25,7 @@ load_rc_config $name
 : ${repmgrd_user:="pgsql"}
 : ${repmgrd_config="%%PREFIX%%/etc/repmgr.conf"}
 
-command=%%PREFIX%%/sbin/${name}
+command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/${name}.pid
 
 command_args="-m -d -p $pidfile -f $repmgrd_config"
