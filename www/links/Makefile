@@ -3,6 +3,7 @@
 
 PORTNAME=	links
 DISTVERSION=	2.14
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://links.twibright.com/download/
@@ -20,13 +21,13 @@ CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos \
 		--without-gpm --without-fb --without-windows
 
 USES=		cpe localbase:ldflags ssl gettext-runtime
-USE_GNOME=	librsvg2 glib20 gdkpixbuf2 cairo
 
 CPE_VENDOR=	twibright
 
 PLIST_FILES=	bin/links man/man1/links.1.gz
 
-OPTIONS_DEFINE=	CIPHERSTRING DIRECTFB IPV6 NLS SVGALIB THREADS TRANS UTF8 X11
+OPTIONS_DEFINE=	CIPHERSTRING DIRECTFB IPV6 NLS SVG SVGALIB THREADS TRANS \
+		UTF8 X11
 OPTIONS_DEFAULT=	UTF8 X11
 
 CIPHERSTRING_DESC=	Select the OpenSSL ciphers used via CIPHERSTRING
@@ -40,6 +41,9 @@ IPV6_CONFIGURE_WITH=	ipv6
 
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	gettext-runtime
+
+SVG_CONFIGURE_WITH=	librsvg
+SVG_USE=		gnome=librsvg2,glib20,gdkpixbuf2,cairo
 
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_WITH=	svgalib
@@ -68,6 +72,9 @@ LIB_DEPENDS+=	libpng.so:graphics/png \
 USES+=		jpeg
 CONFIGURE_ARGS+=	--enable-graphics
 .else
+.if ${PORT_OPTIONS:MSVG}
+IGNORE=	option SVG requires one of DIRECTFB, SVGALIB, or X11
+.endif
 CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
 .endif
 
