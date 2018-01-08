@@ -1,6 +1,7 @@
 # Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
 
+PORTREVISION=	1
 CATEGORIES=	japanese
 PKGNAMESUFFIX=	-img
 

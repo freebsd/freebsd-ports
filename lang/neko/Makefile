@@ -2,6 +2,7 @@
 
 PORTNAME=	neko
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	penzin.dev@gmail.com
