@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-Random
-PORTVERSION=	0.17
-PORTREVISION=	2
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,5 +24,6 @@ TEST_DEPENDS=	p5-Test-Class>=0.03:devel/p5-Test-Class \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
