@@ -22,7 +22,7 @@ PORTSCOUT=	ignore:1
 LIB_DEPENDS=	libsigc-1.2.so:devel/libsigc++12
 BUILD_DEPENDS=	gm4:devel/m4
 
-USES+=		gmake libtool:keepla pathfix pkgconfig
+USES+=		autoreconf gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
@@ -39,7 +39,8 @@ post-patch:
 		${WRKSRC}/glib/glibmm/*.cc ${WRKSRC}/glib/glibmm/*.h \
 		${WRKSRC}/gtk/gtkmm/textbuffer.cc
 .for d in docs examples tests
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/${d}//' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS[[:space:]]*=/s/${d}//' \
+		${WRKSRC}/Makefile.am
 .endfor
 
 .include <bsd.port.mk>
