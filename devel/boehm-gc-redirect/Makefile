@@ -1,8 +1,6 @@
 # Created by: stas
 # $FreeBSD$
 
-PORTREVISION=	1
-
 COMMENT=	Garbage collection and memory leak detection for C and C++ with malloc redirection
 
 LICENSE=	MIT
