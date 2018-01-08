@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfastjson
-PORTVERSION=	0.99.7
+PORTVERSION=	0.99.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -11,11 +11,12 @@ COMMENT=	libfastjson is a fork from json-c
 
 LICENSE=	MIT
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	rsyslog
-
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pathfix pkgconfig
 INSTALL_TARGET=	install-strip
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rsyslog
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
