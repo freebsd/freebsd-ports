@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 BROKEN_FreeBSD_10=	does not build
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
 BUILD_DEPENDS=	rapidjson>=0:devel/rapidjson \
 		swig3.0:devel/swig30
@@ -25,7 +25,6 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libcdio.so:sysutils/libcdio \
 		libcrossguid.so:devel/libcrossguid \
 		libcurl.so:ftp/curl \
-		libdrm.so:graphics/libdrm \
 		libdvdnav.so:multimedia/libdvdnav \
 		libdvdread.so:multimedia/libdvdread \
 		libexpat.so:textproc/expat2 \
@@ -56,16 +55,13 @@ GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
 GH_TAGNAME=	bff1759626cb44be4a3f6dc0d6ebb5fe43a55a96
 USE_GNOME=	libxslt libxml2
-USE_GL=		egl gl glu
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 USE_LDCONFIG=	yes
-USE_XORG=	x11 xext xrandr
 
 CONFLICTS_INSTALL=	kodi-[0-9]*
 
-CMAKE_ARGS=	-DCORE_PLATFORM_NAME=X11 \
-		-DLIBDVD_INCLUDE_DIRS="${LOCALBASE}/include" \
+CMAKE_ARGS=	-DLIBDVD_INCLUDE_DIRS="${LOCALBASE}/include" \
 		-DDVDREAD_LIBRARY="${LOCALBASE}/lib/libdvdread.so" \
 		-DDVDNAV_LIBRARY="${LOCALBASE}/lib/libdvdnav.so"
 CMAKE_OFF=	ENABLE_ALSA \
@@ -81,8 +77,17 @@ PLIST_SUB=	ARCH=${KODIARCH_${ARCH}} OPSYS=${OPSYS:tl}
 
 OPTIONS_DEFINE=	AVAHI CEC DBUS LIBBLURAY MYSQL NFS SMB SSH UPNP VAAPI	\
 		VDPAU WEBSERVER
-OPTIONS_DEFAULT=	SNDIO SSH UPNP VAAPI VDPAU WEBSERVER
+OPTIONS_DEFAULT=	SNDIO SSH UPNP VAAPI VDPAU WEBSERVER X11
+OPTIONS_SINGLE=	PLATFORM
+OPTIONS_SINGLE_PLATFORM=	GBM RPI WAYLAND X11
+OPTIONS_EXCLUDE_amd64=	RPI
+OPTIONS_EXCLUDE_i386=	RPI
 OPTIONS_SUB=	yes
+
+GBM_DESC=	GBM support (requires a kernel with evdev support)
+PLATFORM_DESC=	Platform
+RPI_DESC=	Raspberry Pi support
+WAYLAND_DESC=	Wayland support (broken)
 
 # Choosing one of SNDIO or PULSEAUDIO is mandatory right now if you
 # want audio output.  The OSS backend is currently not hooked into
@@ -101,6 +106,8 @@ CEC_CMAKE_BOOL=		ENABLE_CEC
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CMAKE_BOOL=	ENABLE_DBUS
 
+GBM_CMAKE_ON=		-DCORE_PLATFORM_NAME:STRING="gbm"
+
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CMAKE_BOOL=	ENABLE_BLURAY
 
@@ -112,6 +119,15 @@ NFS_CMAKE_BOOL=		ENABLE_NFS
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	ENABLE_PULSEAUDIO
+
+# For RPI, disable VAAPI in multimedia/ffmpeg too, so that mesa-libs
+# is *not* installed via libva in the build environment.  Both
+# mesa-libs and raspberrypi-userland conflict with each other.
+RPI_CMAKE_ON=		-DCORE_PLATFORM_NAME:STRING="rbpi"
+RPI_LIB_DEPENDS=	libbrcmEGL.so:misc/raspberrypi-userland
+RPI_LIB_DEPENDS_OFF=	libdrm.so:graphics/libdrm
+RPI_PREVENTS=		VAAPI VDPAU
+RPI_USE_OFF=		GL=egl,gl,glu
 
 SMB_USES=		samba:lib
 SMB_CMAKE_BOOL=		ENABLE_SMBCLIENT
@@ -138,8 +154,16 @@ VAAPI_CMAKE_BOOL=	ENABLE_VAAPI
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CMAKE_BOOL=	ENABLE_VDPAU
 
+WAYLAND_BROKEN=	Requires default WAYLAND in graphics/mesa-libs and missing graphics/waylandpp port
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-/protocols
+WAYLAND_LIB_DEPENDS=	libwayland-client++.so:graphics/waylandpp \
+			libxkbcommon.so:x11/libxkbcommon
+
 WEBSERVER_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 WEBSERVER_CMAKE_BOOL=	ENABLE_MICROHTTPD
+
+X11_CMAKE_ON=		-DCORE_PLATFORM_NAME:STRING="x11"
+X11_USE=		XORG=x11,xext,xrandr
 
 post-patch:
 # Do not try to download dvdnav/dvdread during the build, instead
@@ -147,6 +171,10 @@ post-patch:
 # (see CMAKE_ARGS).
 	@${REINPLACE_CMD} 's@KODI_DEPENDSBUILD@true@' \
 		${WRKSRC}/cmake/modules/FindLibDvd.cmake
+	@${CP} ${WRKSRC}/cmake/platform/linux/gbm.cmake \
+		${WRKSRC}/cmake/platform/linux/rbpi.cmake \
+		${WRKSRC}/cmake/platform/linux/wayland.cmake \
+		${WRKSRC}/cmake/platform/freebsd
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/manpages/kodi.bin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1

@@ -66,8 +66,11 @@ include/kodi/xbmc_addon_types.h
 include/kodi/xbmc_epg_types.h
 include/kodi/xbmc_pvr_dll.h
 include/kodi/xbmc_pvr_types.h
-lib/kodi/kodi-x11
-lib/kodi/kodi-xrandr
+%%GBM%%lib/kodi/kodi-gbm
+%%RPI%%lib/kodi/kodi-rbpi
+%%WAYLAND%%lib/kodi/kodi-wayland
+%%X11%%lib/kodi/kodi-x11
+%%X11%%lib/kodi/kodi-xrandr
 lib/kodi/system/libcpluff-%%ARCH%%-%%OPSYS%%.so
 lib/kodi/system/players/VideoPlayer/libdvdnav-%%ARCH%%-%%OPSYS%%.so
 man/man1/kodi.1.gz
