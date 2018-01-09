@@ -9,29 +9,6 @@
  	std::set_terminate(__gnu_cxx::__verbose_terminate_handler);
  #endif
  #endif
-@@ -289,17 +289,17 @@ synfig::Main::Main(const synfig::String& basepath,Prog
- 		locations.push_back(getenv("SYNFIG_MODULE_LIST"));
- 	else
- 	{
--		locations.push_back("./"MODULE_LIST_FILENAME);
-+		locations.push_back("./" MODULE_LIST_FILENAME);
- 		if(getenv("HOME"))
- 			locations.push_back(strprintf("%s/.local/share/synfig/%s", getenv("HOME"), MODULE_LIST_FILENAME));
- 	#ifdef SYSCONFDIR
--		locations.push_back(SYSCONFDIR"/"MODULE_LIST_FILENAME);
-+		locations.push_back(SYSCONFDIR "/" MODULE_LIST_FILENAME);
- 	#endif
- 		locations.push_back(prefix+ETL_DIRECTORY_SEPARATOR+"etc"+ETL_DIRECTORY_SEPARATOR+MODULE_LIST_FILENAME);
--		locations.push_back("/usr/local/etc/"MODULE_LIST_FILENAME);
-+		locations.push_back("/usr/local/etc/" MODULE_LIST_FILENAME);
- 	#ifdef __APPLE__
--		locations.push_back("/Library/Frameworks/synfig.framework/Resources/"MODULE_LIST_FILENAME);
--		locations.push_back("/Library/Synfig/"MODULE_LIST_FILENAME);
-+		locations.push_back("/Library/Frameworks/synfig.framework/Resources/" MODULE_LIST_FILENAME);
-+		locations.push_back("/Library/Synfig/" MODULE_LIST_FILENAME);
- 		if(getenv("HOME"))
- 			locations.push_back(strprintf("%s/Library/Synfig/%s", getenv("HOME"), MODULE_LIST_FILENAME));
- 	#endif
 @@ -490,7 +490,11 @@ synfig::get_binary_path(const String &fallback_path)
  
  	/* Read from /proc/self/exe (symlink) */
