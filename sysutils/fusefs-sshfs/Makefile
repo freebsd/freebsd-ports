@@ -14,7 +14,7 @@ COMMENT=	Mount remote directories over ssh
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils@${FLAVOR}
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
 USES=		fuse:3 gettext meson pkgconfig
 
