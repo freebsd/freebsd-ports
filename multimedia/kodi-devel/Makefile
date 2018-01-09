@@ -84,11 +84,6 @@ OPTIONS_EXCLUDE_amd64=	RPI
 OPTIONS_EXCLUDE_i386=	RPI
 OPTIONS_SUB=	yes
 
-GBM_DESC=	GBM support (requires a kernel with evdev support)
-PLATFORM_DESC=	Platform
-RPI_DESC=	Raspberry Pi support
-WAYLAND_DESC=	Wayland support (broken)
-
 # Choosing one of SNDIO or PULSEAUDIO is mandatory right now if you
 # want audio output.  The OSS backend is currently not hooked into
 # Kodi's audio sink factory due to recent refactorings.
@@ -96,6 +91,10 @@ OPTIONS_MULTI=		SOUND
 OPTIONS_MULTI_SOUND=	PULSEAUDIO SNDIO
 
 CEC_DESC=	CEC adapter support
+GBM_DESC=	GBM support (requires a kernel with evdev support)
+PLATFORM_DESC=	Platform
+RPI_DESC=	Raspberry Pi support
+WAYLAND_DESC=	Wayland support (broken)
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CMAKE_BOOL=	ENABLE_AVAHI
