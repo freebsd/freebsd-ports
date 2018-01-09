@@ -155,6 +155,7 @@ VDPAU_CMAKE_BOOL=	ENABLE_VDPAU
 
 WAYLAND_BROKEN=	Requires default WAYLAND in graphics/mesa-libs and missing graphics/waylandpp port
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-/protocols
+WAYLAND_CMAKE_ON=	-DWAYLAND_RENDER_SYSTEM:STRING="gl"
 WAYLAND_LIB_DEPENDS=	libwayland-client++.so:graphics/waylandpp \
 			libxkbcommon.so:x11/libxkbcommon
 
