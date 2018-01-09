@@ -28,8 +28,6 @@ GH_PROJECT=	${PORTNAME:tl}
 USE_PHP=	tokenizer
 
 NO_ARCH=	yes
-
-
 NO_BUILD=	yes
 
 PLIST_FILES=	${DATADIR}/phpcpd.php

@@ -9,7 +9,6 @@ COMMENT=	Qt event loop support for dbus-python
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus@${FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus@${FLAVOR}
 
-
 CONFIGURE_ARGS=	--enable QtCore
 PYQT_DIST=	yes
 
