@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.2.8:devel/py-lxml@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.5.0:www/py-requests@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six:devel/py-six@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent optsuffix
