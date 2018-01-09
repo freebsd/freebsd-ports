@@ -16,8 +16,8 @@ lib/tiled/plugins/libjson.so
 lib/tiled/plugins/liblua.so
 %%PYTHON%%lib/tiled/plugins/libpython.so
 lib/tiled/plugins/libreplicaisland.so
+lib/tiled/plugins/libtbin.so
 lib/tiled/plugins/libtengine.so
-lib/tiled/plugins/libtmw.so
 man/man1/automappingconverter.1.gz
 man/man1/tiled.1.gz
 man/man1/tmxrasterizer.1.gz
