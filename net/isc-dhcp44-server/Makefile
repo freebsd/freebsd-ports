@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/-P/g}
 MAINTAINER=	zi@FreeBSD.org
 COMMENT?=	ISC Dynamic Host Configuration Protocol server
 
-LICENSE=	ISCL
+LICENSE=	MPL20
 
 USES=		gmake
 
