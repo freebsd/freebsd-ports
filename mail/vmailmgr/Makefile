@@ -11,7 +11,6 @@ MASTER_SITES=	http://www.vmailmgr.org/current/	\
 MAINTAINER=	mij@bitchx.it
 COMMENT=	Virtual domain manager for qmail
 
-
 # get python paths (PYTHON_SITELIBDIR) in case we install the python API
 USES=			autoreconf gmake perl5 python
 GNU_CONFIGURE=		yes
