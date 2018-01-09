@@ -1,3 +1,5 @@
-Newsbeuter is an RSS feed reader for the text console.
+Newsboat is a fork of Newsbeuter, an RSS/Atom feed reader for the text console.
+The only difference is that Newsboat is actively maintained while Newsbeuter
+isn't.
 
-WWW: http://newsbeuter.org/
+WWW: https://newsboat.org/
