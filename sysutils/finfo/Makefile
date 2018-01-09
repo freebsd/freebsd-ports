@@ -11,7 +11,6 @@ COMMENT=	Finfo displays potentially useful information about a file
 
 PLIST_FILES=	bin/finfo man/man1/finfo.1.gz
 
-
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c)
 

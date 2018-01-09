@@ -24,5 +24,4 @@ post-patch:
 	${REINPLACE_CMD} 's|Prerelease = "dev"|Prerelease = ""|' \
 		${WRKSRC}/version/version.go
 
-
 .include <bsd.port.mk>

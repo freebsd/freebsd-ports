@@ -12,7 +12,6 @@ COMMENT=	Mouse and keyboard sharing utility
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cmake cpe ssl

@@ -71,7 +71,6 @@ SPOOF_CONFIGURE_ON=		--with-libnet=/usr/local/bin
 SPOOF_CONFIGURE_ENV=		LIBNET_CFLAGS="-I/usr/local/include" \
 				LIBNET_LIBS="-L/usr/local/lib -lnet"
 
-
 IPV6_CONFIGURE_ENABLE=		ipv6
 
 GEOIP_CONFIGURE_ENABLE=		geoip

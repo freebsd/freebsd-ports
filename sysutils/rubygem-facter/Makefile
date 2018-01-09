@@ -25,7 +25,6 @@ ZFS_FACTS_DESC=	Generate ZFS related facts
 
 OPTIONS_DEFAULT=	EC2_FACTS ZFS_FACTS
 
-
 .include <bsd.port.pre.mk>
 
 # Restrict dmidecode dependency to x86-based systems
