@@ -3,4 +3,4 @@ the results back to GitLab. It is used in conjunction with GitLab CI, the
 open-source continuous integration service included with GitLab that
 coordinates the jobs.
 
-WWW: https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/tree/master
+WWW: https://gitlab.com/gitlab-org/gitlab-runner
