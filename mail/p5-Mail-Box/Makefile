@@ -37,5 +37,4 @@ USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
 CONFIGURE_ENV+=	MAILBOX_INSTALL_OPTIONALS=n
 
-
 .include <bsd.port.mk>
