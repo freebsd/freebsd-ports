@@ -1,6 +1,9 @@
+share/backgrounds/adapta/kahelo.jpg
 share/backgrounds/adapta/poly.jpg
 share/backgrounds/adapta/suna.jpg
 share/backgrounds/adapta/tealized.jpg
 share/backgrounds/adapta/tri-fadeno.jpg
+share/cinnamon-background-properties/adapta-backgrounds.xml
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 share/gnome-background-properties/adapta-backgrounds.xml
+share/mate-background-properties/adapta-backgrounds.xml
