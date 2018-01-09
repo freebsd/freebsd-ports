@@ -56,6 +56,10 @@ USE_LDCONFIG=	yes
 
 KDE_APPLICATIONS_VERSION=	15.08.0
 
+# clang 6.0 defaults to -std=gnu++14, but the port fails with too many errors
+# when built in C++11 (or later) mode.
+USE_CXXSTD=	gnu++98
+
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DBUILD_python:BOOL=OFF \
 		-DBUILD_ruby:BOOL=OFF \
