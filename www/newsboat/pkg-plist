@@ -1,5 +1,11 @@
 bin/newsboat
-%%PODCAST%%bin/podboat
+bin/podboat
+man/man1/newsboat.1.gz
+man/man1/podboat.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/docbook-xsl.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/config
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/newsboat.html
 share/locale/ca/LC_MESSAGES/newsboat.mo
 share/locale/de/LC_MESSAGES/newsboat.mo
 share/locale/es/LC_MESSAGES/newsboat.mo
@@ -13,9 +19,9 @@ share/locale/nl/LC_MESSAGES/newsboat.mo
 share/locale/pl/LC_MESSAGES/newsboat.mo
 share/locale/pt_BR/LC_MESSAGES/newsboat.mo
 share/locale/ru/LC_MESSAGES/newsboat.mo
+share/locale/sk/LC_MESSAGES/newsboat.mo
 share/locale/sv/LC_MESSAGES/newsboat.mo
 share/locale/tr/LC_MESSAGES/newsboat.mo
 share/locale/uk/LC_MESSAGES/newsboat.mo
 share/locale/zh/LC_MESSAGES/newsboat.mo
 share/locale/zh_TW/LC_MESSAGES/newsboat.mo
-share/doc/newsboat/examples/config
