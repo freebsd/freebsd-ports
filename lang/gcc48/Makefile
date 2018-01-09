@@ -120,6 +120,11 @@ SUB_LIST+=	TARGLIB=${TARGLIB}
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${CONFIGURE_TARGET} [${LANGUAGES}]"
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name '*.[ch]' | \
+	    ${XARGS} ${EGREP} -l '"(HOST_WIDE|PLUGIN_COND)' | \
+	    ${XARGS} ${REINPLACE_CMD} -E -e 's/"(HOST_WIDE|PLUGIN_COND)/" \1/g'
+
 pre-configure:
 	cd ${WRKSRC} ; contrib/gcc_update --touch
 	@${RM} ${WRKSRC}/gcc/*/*.info*
