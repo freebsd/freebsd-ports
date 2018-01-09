@@ -1,6 +1,6 @@
 bin/bt2line
 bin/check_callstack
-@comment SLOG-2 tools are not installed if NOPORTDOCS is set
+@comment SLOG-2 tools are not installed if WITHOUT=DOCS
 %%JAVA%%bin/clog2TOslog2
 bin/clog2_join
 bin/clog2_print
