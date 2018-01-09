@@ -11,7 +11,7 @@ MASTER_SITES=	GNU \
 		http://mirror.sdunix.com/gnu/ \
 		ftp://mirrors.kernel.org/gnu/screen/ \
 		http://cschubert.com/distfiles/ \
-		http://people.freebsd.org/~cy/distfiles/
+		LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
