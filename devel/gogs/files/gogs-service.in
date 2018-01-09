@@ -26,20 +26,17 @@ load_rc_config ${name}
 : ${%%PORTNAME%%_enable="NO"}
 : ${%%PORTNAME%%_config="%%ETCDIR%%/conf/app.ini"}
 
-is_process_running() {
-  local pidfile=$1
-  [ -f $pidfile ] && procstat `cat $pidfile` >/dev/null 2>&1
-}
+logfile=/var/log/%%PORTNAME%%.log
+pidfile=/var/run/%%PORTNAME%%.pid
+command="/usr/bin/true"
+procname="/usr/sbin/daemon"
 
-stop_daemon() {
-  # assume PID is also PGID (daemon(8) PID is always PGID)
-  [ -f "$1" ] && kill -- -$(cat $1)
+is_process_running() {
+  [ -f $pidfile ] && procstat $(cat $pidfile) >/dev/null 2>&1
 }
 
 %%PORTNAME%%_start() {
-  local logfile=/var/log/%%PORTNAME%%.log
-  local pidfile=/var/run/%%PORTNAME%%.pid
-  if is_process_running $pidfile; then
+  if is_process_running; then
     echo "%%PORTNAME%% is already running (pid=$(cat $pidfile))"
     return 1
   fi
@@ -49,7 +46,7 @@ stop_daemon() {
   chmod 640 $logfile
   cd %%PREFIX%%/libexec/%%PORTNAME%%
   /usr/sbin/daemon -P $pidfile -u %%GOGS_USER%% %%PREFIX%%/libexec/%%PORTNAME%%/%%PORTNAME%% web --config ${%%PORTNAME%%_config} >>$logfile 2>&1
-  if is_process_running $pidfile; then
+  if is_process_running; then
     echo "started %%PORTNAME%% (pid=$(cat $pidfile))"
   else
     echo "failed to start %%PORTNAME%%"
@@ -57,15 +54,13 @@ stop_daemon() {
 }
 
 %%PORTNAME%%_stop() {
-  local pidfile=/var/run/%%PORTNAME%%.pid
-  if is_process_running $pidfile; then
-    echo "stopping %%PORTNAME%% (pid=$(cat $pidfile))"
-    stop_daemon $pidfile
+  if is_process_running; then
+    local pid=$(cat $pidfile)
+    echo "stopping %%PORTNAME%% (pid=$pid)"
+    kill -- -$pid
   else
     echo "%%PORTNAME%% isn't running"
   fi
 }
-
-command="/usr/bin/true"
 
 run_rc_command "$1"
