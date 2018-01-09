@@ -34,5 +34,4 @@ post-patch:
 		 /echo $${CXXFLAGS}/s|^|#| ; \
 		 s|$$OPTIMIZER_CFLAGS||' ${WRKSRC}/configure
 
-
 .include <bsd.port.mk>

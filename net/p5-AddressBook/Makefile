@@ -12,7 +12,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module providing an LDAP addressbook interface
 
-
 BUILD_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-XML-DOM>=0:textproc/p5-XML-DOM
 RUN_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \

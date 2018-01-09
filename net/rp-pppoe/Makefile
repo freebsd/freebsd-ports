@@ -14,7 +14,6 @@ PATCH_WRKSRC=	${WRKSRC}/src
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${WRKSRC}/src
 
-
 man5=	pppoe.conf.5
 man8=	pppoe-connect.8 pppoe-setup.8 pppoe-start.8 pppoe-status.8 \
 	pppoe-stop.8 pppoe-relay.8 pppoe-server.8 pppoe.8
