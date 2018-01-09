@@ -16,12 +16,12 @@ EXTRASCRIPTS_DESC=	Install additional scripts
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXTRASCRIPTS}
-PLIST_SUB=	EXTRASCRIPTS=""
+PLIST_SUB+=	EXTRASCRIPTS=""
 USES+=		perl5
 USE_PERL5=	run
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 .else
-PLIST_SUB=	EXTRASCRIPTS="@comment "
+PLIST_SUB+=	EXTRASCRIPTS="@comment "
 .endif
 
 do-install:

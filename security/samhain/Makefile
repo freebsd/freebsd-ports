@@ -132,8 +132,6 @@ CONFIGURE_ARGS+=	--enable-network=client \
 			--with-config-file=REQ_FROM_SERVER
 PLIST_SUB+=		SAMHAIN="" SETPWD="" YULE="@comment "
 EXTRA_PATCHES+=		${FILESDIR}/fixsamhainrc.patch
-MAN5+=			samhainrc.5
-MAN8+=			samhain.8
 .elif defined(WITH_SERVER)
 USERS=			yule
 GROUPS=			yule
@@ -141,14 +139,10 @@ CONFIGURE_ARGS+=	--enable-network=server
 SUB_LIST+=		WITH_YULE="yes"
 PLIST_SUB+=		YULE="" SAMHAIN="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=		${FILESDIR}/fixyulerc.patch
-MAN5+=			yulerc.5
-MAN8+=			yule.8
 .else
 SUB_LIST+=		WITH_YULE=""
 PLIST_SUB+=		SAMHAIN="" YULE="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=		${FILESDIR}/fixsamhainrc.patch
-MAN5+=			samhainrc.5
-MAN8+=			samhain.8
 .endif
 
 pre-everything::

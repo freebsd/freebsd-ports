@@ -13,26 +13,17 @@ USES=		gmake groff
 
 ALL_TARGET=	default
 
-MAN1=	fastforward.1 printforward.1 setforward.1 newaliases.1 printmaillist.1 setmaillist.1 newinclude.1
-CAT1=	fastforward.0 printforward.0 setforward.0 newaliases.0 printmaillist.0 setmaillist.0 newinclude.0
+FILES=	fastforward printforward setforward newaliases printmaillist setmaillist newinclude
 
 PORTDOCS=	ALIASES
 
-PLIST_FILES=	\
-		bin/fastforward bin/printforward bin/setforward bin/newaliases bin/printmaillist bin/setmaillist bin/newinclude \
-		${MAN1:S,^,man/man1/,:S,$,.gz,} ${CAT1:S,^,man/cat1/,:S,$,.gz,}
+PLIST_FILES=	${FILES:S,^,bin/,} ${FILES:S,^,man/man1/,:S,$,.1.gz,} ${FILES:S,^,man/cat1/,:S,$,.0.gz,}
 
 do-install:
-.for binfile in fastforward printforward setforward newaliases printmaillist setmaillist newinclude
+.for binfile in ${FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${binfile} ${STAGEDIR}${PREFIX}/bin/${binfile}
-.endfor
-
-.for manfile in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${manfile} ${STAGEDIR}${MAN1PREFIX}/man/man1/${manfile}
-.endfor
-
-.for catfile in ${CAT1}
-	${INSTALL_MAN} ${WRKSRC}/${catfile} ${STAGEDIR}${MAN1PREFIX}/man/cat1/${catfile}
+	${INSTALL_MAN} ${WRKSRC}/${binfile}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${binfile}.0 ${STAGEDIR}${MAN1PREFIX}/man/cat1
 .endfor
 
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

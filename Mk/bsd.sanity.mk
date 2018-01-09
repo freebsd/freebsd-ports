@@ -3,17 +3,56 @@
 # MAINTAINER: portmgr@FreeBSD.org
 #
 
-.if defined(WITHOUT_NLS)
-WARNING+=	"WITHOUT_NLS is deprecated use OPTIONS_UNSET=NLS instead"
-.endif
+# Warnings for everyone
 
-.if defined(WITH_NEW_XORG) || defined(WITHOUT_NEW_XORG)
-WARNING+=	"WITH_NEW_XORG and WITHOUT_NEW_XORG knobs were removed and have no effect"
+.for opt in ${ALL_OPTIONS:NDEBUG}
+.if defined(WITH_${opt})
+WARNING+=     "WITH_${opt} is unsupported, use WITH=${opt} on the command line, or one of these in /etc/make.conf, OPTIONS_SET+=${opt} to set it globally, or ${OPTIONS_NAME}_SET+=${opt} for only this port."
 .endif
+.if defined(WITHOUT_${opt})
+WARNING+=     "WITHOUT_${opt} is unsupported, use WITHOUT=${opt} on the command line, or one of these in /etc/make.conf, OPTIONS_UNSET+=${opt} to set it globally, or ${OPTIONS_NAME}_UNSET+=${opt} for only this port."
+.endif
+.endfor
 
-.if defined(WITH_KMS) || defined(WITHOUT_KMS)
-WARNING+=	"WITH_KMS was removed and has no effect"
+ALL_UNSUPPORTED=	WITHOUT_NLS NOPORTDOCS NOPORTEXAMPLES WITH_BDB_VER \
+			OVERRIDE_LINUX_BASE_PORT WITH_OPENSSL_PORT \
+			WITH_OPENSSL_BASE
+ALL_DEPRECATED=		
+ALL_NOTNEEDED=		WITH_NEW_XORG WITHOUT_NEW_XORG WITH_KMS WITHOUT_KMS
+
+WITHOUT_NLS_ALT=	"OPTIONS_UNSET=NLS, or ${OPTIONS_NAME}_UNSET+=NLS instead"
+NOPORTDOCS_ALT=		"OPTIONS_UNSET=DOCS, or ${OPTIONS_NAME}_UNSET+=DOCS instead"
+NOPORTEXAMPLES_ALT=	"OPTIONS_UNSET=EXAMPLES, or ${OPTIONS_NAME}_UNSET+=EXAMPLES instead"
+WITH_BDB_VER_ALT=	"DEFAULT_VERSIONS+=bdb=${WITH_BDB_VER}"
+OVERRIDE_LINUX_BASE_PORT_ALT=	"DEFAULT_VERSIONS+=linux=${OVERRIDE_LINUX_BASE_PORT}"
+WITH_OPENSSL_PORT_ALT=	"DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT:Uopenssl} in your make.conf"
+WITH_OPENSSL_BASE_ALT=	"DEFAULT_VERSIONS+=ssl=base in your make.conf"
+WITH_NEW_XORG_ALT=	"removed and has no effect"
+WITHOUT_NEW_XORG_ALT=	${WITH_NEW_XORG_ALT}
+WITH_MKS_ALT=	"removed and has no effect"
+WITHOUT_MKS_ALT=	${WITH_MKS_ALT}
+
+.for a in ${ALL_DEPRECATED}
+.if defined(${a})
+WARNING+=	"${a} is deprecated, please use ${${a}_ALT}"
 .endif
+.endfor
+
+.for a in ${ALL_NOTNEEDED}
+.if defined(${a})
+WARNING+=	"${a} is not needed: ${${a}_REASON}"
+.endif
+.endfor
+
+.for a in ${ALL_UNSUPPORTED}
+.if defined(${a})
+ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
+.endif
+.endfor
+
+
+
+# Warnings only when DEVELOPER=yes
 
 .if exists(${.CURDIR}/../../Mk/bsd.port.mk)
 .if ${.CURDIR:H:T} != ${PKGCATEGORY}
@@ -23,28 +62,8 @@ DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the por
 DEV_WARNING+=	"Not validating first entry in CATEGORIES due to being outside of PORTSDIR. Please ensure this is proper when committing."
 .endif
 
-#.if defined(WITHOUT_X11)
-#WARNING+=	"WITHOUT_X11 is deprecated use X11 option instead"
-#.endif
-
 .if defined(USE_PERL5) && ${USE_PERL5} == yes
 DEV_ERROR+=	"USE_PERL5=yes is unsupported, please use USES=perl5 instead"
-.endif
-
-.if defined(USE_KDEBASE_VER)
-DEV_ERROR+=	"USE_KDEBASE_VER is unsupported"
-.endif
-
-.if defined(USE_KDELIBS_VER)
-DEV_ERROR+=	"USE_KDELIBS_VER is unsupported"
-.endif
-
-.if defined(USE_QT_VER)
-DEV_ERROR+=	"USE_QT_VER is unsupported"
-.endif
-
-.if defined(USE_GHOSTSCRIPT) || defined(USE_GHOSTSCRIPT_BUILD) || defined(USE_GHOSTSCRIPT_RUN)
-DEV_ERROR+=	"USE_GHOSTSCRIPT is unsupported, please use USES=ghostscript instead"
 .endif
 
 .if !empty(LIB_DEPENDS:M*/../*)
@@ -79,33 +98,8 @@ DEV_WARNING+=	"USE_GNOME=desktopfileutils is deprecated, please use USES=desktop
 DEV_ERROR+=	"All LIB_DEPENDS should use the new format and start out with lib.  \(libfoo.so vs foo.so\)"
 .endif
 
-.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || \
-   defined(USE_TK)  || defined(USE_TK_BUILD)  || defined(USE_TK_RUN)  || defined(USE_TK_WRAPPER)
-DEV_ERROR+=	"USE_TCL and USE_TK are no longer supported, please use USES=tcl or USES=tk"
-.endif
-
-# print warning if no reason given for NO_STAGE
-.if defined(NO_STAGE)
-DEV_ERROR+=	"NO_STAGE is unsupported, convert port to stage directory:"
-DEV_ERROR+=	"https://wiki.freebsd.org/ports/StageDir"
-.endif
-
-.for a in 1 2 3 4 5 6 7 8 9 L N
-.if defined(MAN${a})
-DEV_WARNING+=	"MAN${a} macros are deprecated when using stage directory"
-.endif
-.endfor
-
-.if defined(MLINKS)
-DEV_WARNING+=	"MLINKS macros are deprecated when using stage directory"
-.endif
-
 .if defined(_PREMKINCLUDED)
 DEV_ERROR+=	"you cannot include bsd.port[.pre].mk twice"
-.endif
-
-.if defined(USE_DOS2UNIX)
-DEV_ERROR+=	"USE_DOS2UNIX is no longer supported, please use USES=dos2unix"
 .endif
 
 .if defined(LICENSE)
@@ -143,28 +137,13 @@ DEV_ERROR+=	"USE_PYTHON_BUILD is no longer supported, please use USES=python:bui
 .endif
 .endif
 
-.if defined(PYDISTUTILS_INSTALLNOSINGLE)
-DEV_WARNING+=	"PYDISTUTILS_INSTALLNOSINGLE is deprecated, please do not use it anymore"
-.endif
-
-.if defined(INSTALLS_EGGINFO)
-DEV_ERROR+=	"INSTALLS_EGGINFO is no longer supported, please add the entry directly to the plist"
-.endif
-
-.if defined(WANT_SDL)
-DEV_ERROR+=	"WANT_SDL is no longer supported. If you need SDL, use USE_SDL, if you need optional dependency, use options"
-.endif
-
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} == YES
 DEV_ERROR+=	"USE_RC_SUBR=yes has not been supported for a long time, remove it."
 .endif
 
-.if defined(USE_RUBYGEMS) && !defined(RUBYGEM_AUTOPLIST)
-DEV_ERROR+=	"USE_RUBYGEMS is no longer supported, please use USES=gem:noautoplist"
-.endif
-
-.if defined(RUBYGEM_AUTOPLIST)
-DEV_ERROR+=	"RUBYGEM_AUTOPLIST is no longer supported, please use USES=gem"
+.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || \
+   defined(USE_TK)  || defined(USE_TK_BUILD)  || defined(USE_TK_RUN)  || defined(USE_TK_WRAPPER)
+DEV_ERROR+=	"USE_TCL and USE_TK are no longer supported, please use USES=tcl or USES=tk"
 .endif
 
 SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
@@ -176,12 +155,20 @@ SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
 		USE_PYTHON_PREFIX USE_BZIP2 USE_XZ USE_PGSQL NEED_ROOT \
 		UNIQUENAME LATEST_LINK USE_SQLITE USE_FIREBIRD USE_PHPEXT \
 		USE_ZENDEXT USE_PHP_BUILD USE_BDB PLIST_DIRSTRY USE_RCORDER \
-		USE_OPENSSL WANT_GNOME
-SANITY_DEPRECATED=	PYTHON_PKGNAMESUFFIX USE_AUTOTOOLS \
+		USE_OPENSSL WANT_GNOME RUBYGEM_AUTOPLIST WANT_SDL INSTALLS_EGGINFO \
+		USE_DOS2UNIX NO_STAGE USE_RUBYGEMS USE_GHOSTSCRIPT \
+		USE_GHOSTSCRIPT_BUILD USE_GHOSTSCRIPT_RUN
+SANITY_DEPRECATED=	PYTHON_PKGNAMESUFFIX USE_AUTOTOOLS MLINKS \
 			USE_MYSQL WANT_MYSQL_VER \
 			USE_PHPIZE WANT_PHP_CLI WANT_PHP_CGI WANT_PHP_MOD \
-			WANT_PHP_WEB WANT_PHP_EMB
-SANITY_NOTNEEDED=	CMAKE_NINJA WX_UNICODE
+			WANT_PHP_WEB WANT_PHP_EMB PYDISTUTILS_INSTALLNOSINGLE
+SANITY_NOTNEEDED=	CMAKE_NINJA WX_UNICODE USE_KDEBASE_VER \
+			USE_KDELIBS_VER USE_QT_VER
+
+.for a in 1 2 3 4 5 6 7 8 9 L N
+SANITY_DEPRECATED+=	MAN${a}
+MAN${a}_ALT=		it more, obsoleted by staging
+.endfor
 
 USE_AUTOTOOLS_ALT=	USES=autoreconf and GNU_CONFIGURE=yes
 USE_OPENAL_ALT=		USES=openal
@@ -237,6 +224,17 @@ WANT_PHP_WEB_ALT=	USES=php:web
 WANT_PHP_EMB_ALT=	USES=php:embed
 USE_RCORDER_ALT=	USE_RC_SUBR=${USE_RCORDER}
 WANT_GNOME_ALT=		USES=gnome
+MLINKS_ALT=		it no more
+USE_DOS2UNIX_ALT=	USES=dos2unix
+PYDISTUTILS_INSTALLNOSINGLE_ALT=	it no more
+INSTALLS_EGGINFO_ALT=	an entry in the plist
+WANT_SDL_ALT=		USE_SDL for SDL directly, if you need optional dependency, use options
+RUBYGEM_AUTOPLIST_ALT=	USES=gem
+USE_RUBYGEMS_ALT=	USES=gem
+USE_GHOSTSCRIPT=	USES=ghostscript
+USE_GHOSTSCRIPT_BUILD=	USES=ghostscript
+USE_GHOSTSCRIPT_RUN=	USES=ghostscript
+NO_STAGE_ALT=	https://wiki.freebsd.org/ports/StageDir to convert your port to staging
 
 .for a in ${SANITY_DEPRECATED}
 .if defined(${a})

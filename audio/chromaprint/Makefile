@@ -27,9 +27,7 @@ OPTIONS_DEFINE=		DOXYGEN TEST
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
 DOXYGEN_PORTDOCS=	*
-# PORTDOCS macro won't work if NOPORTDOCS is defined or if DOCS is disabled
 DOXYGEN_IMPLIES=	DOCS
-.undef NOPORTDOCS
 
 TEST_BUILD_DEPENDS=	${NONEXISTENT}:devel/googletest:patch
 TEST_CMAKE_BOOL=	BUILD_TESTS

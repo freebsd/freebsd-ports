@@ -18,8 +18,7 @@ LOCALBASE?=	/usr/local
 .for lang in APACHE BDB FIREBIRD FORTRAN FPC GCC GHOSTSCRIPT LINUX LUA MYSQL \
 	PERL5 PGSQL PHP PYTHON PYTHON2 PYTHON3 RUBY SSL TCLTK
 .if defined(${lang}_DEFAULT)
-WARNING+=	"The variable ${lang}_DEFAULT is set and it should only be defined through DEFAULT_VERSIONS+=${lang:tl}=${${lang}_DEFAULT} in /etc/make.conf"
-WARNING+=	"This behaviour has never been supported and will be removed on 2017-01-31"
+ERROR+=	"The variable ${lang}_DEFAULT is set and it should only be defined through DEFAULT_VERSIONS+=${lang:tl}=${${lang}_DEFAULT} in /etc/make.conf"
 .endif
 #.undef ${lang}_DEFAULT
 .endfor
@@ -49,10 +48,6 @@ LINUX_DEFAULT?=		c6_64
 .else
 # Possible values: c6
 LINUX_DEFAULT?=		c6
-.endif
-.if defined(OVERRIDE_LINUX_BASE_PORT)
-LINUX_DEFAULT:=		${OVERRIDE_LINUX_BASE_PORT}
-WARNING+=		"OVERRIDE_LINUX_BASE_PORT is deprecated, please use DEFAULT_VERSIONS+=linux=${OVERRIDE_LINUX_BASE_PORT}."
 .endif
 # Possible values: 5.1, 5.2, 5.3
 LUA_DEFAULT?=		5.2
@@ -91,20 +86,7 @@ SAMBA_DEFAULT?=		4.6
 .if !defined(SSL_DEFAULT)
 #	If no preference was set, check for an installed base version
 #	but give an installed port preference over it.
-.  if defined(WITH_OPENSSL_PORT)
-.    if defined(OPENSSL_PORT)
-SSL_DEFAULT:=${OPENSSL_PORT:T}
-WARNING+=	"Using WITH_OPENSSL_PORT and OPENSSL_PORT in make.conf is deprecated, replace them with DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT} in your make.conf"
-.    else
-SSL_DEFAULT=openssl
-WARNING+=	"Using WITH_OPENSSL_PORT in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=openssl in your make.conf"
-.    endif
-.  elif defined(WITH_OPENSSL_BASE)
-SSL_DEFAULT=base
-WARNING+=	"Using WITH_OPENSSL_BASE in make.conf is deprecated, replace it with DEFAULT_VERSIONS+=ssl=base in your make.conf"
-.  elif	!defined(WITH_OPENSSL_BASE) && \
-	!defined(WITH_OPENSSL_PORT) && \
-	!defined(SSL_DEFAULT) && \
+.  if	!defined(SSL_DEFAULT) && \
 	!exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so) && \
 	exists(${DESTDIR}/usr/include/openssl/opensslv.h)
 SSL_DEFAULT=	base

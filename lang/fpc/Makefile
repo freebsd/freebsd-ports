@@ -36,12 +36,12 @@ FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 .if ${ARCH} == "i386"
 PPNAME=		ppc386
 FPC_ARCH=	i386
-PLIST_SUB=	FPC_I386="" \
+PLIST_SUB+=	FPC_I386="" \
 		FPC_AMD64="@comment "
 .elif ${ARCH} == "amd64"
 PPNAME=		ppcx64
 FPC_ARCH=	x86_64
-PLIST_SUB=	FPC_I386="@comment " \
+PLIST_SUB+=	FPC_I386="@comment " \
 		FPC_AMD64=""
 .endif
 

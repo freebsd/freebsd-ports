@@ -9,7 +9,6 @@ MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 		http://idaemons.org/distfiles/ruby/ \
 		LOCAL/knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	${WITH_BDB_VER}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org

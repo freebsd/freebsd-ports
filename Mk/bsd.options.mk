@@ -196,30 +196,7 @@ _OPTIONS_TARGETS=	fetch:300:pre fetch:500:do fetch:700:post \
 			package:300:pre package:500:do package:700:post \
 			stage:800:post
 
-# Set the default values for the global options, as defined by portmgr
-.if !defined(NOPORTDOCS)
-PORT_OPTIONS+=	DOCS
-.else
-OPTIONS_WARNINGS+=		"NOPORTDOCS"
-WITHOUT+=			DOCS
-OPTIONS_WARNINGS_UNSET+=	DOCS
-.endif
-
-.if !defined(WITHOUT_NLS)
-PORT_OPTIONS+=	NLS
-.else
-WITHOUT+=		NLS
-.endif
-
-.if !defined(NOPORTEXAMPLES)
-PORT_OPTIONS+=	EXAMPLES
-.else
-OPTIONS_WARNINGS+=		"NOPORTEXAMPLES"
-WITHOUT+=			EXAMPLES
-OPTIONS_WARNINGS_UNSET+=	EXAMPLES
-.endif
-
-PORT_OPTIONS+=	IPV6
+PORT_OPTIONS+=	DOCS NLS EXAMPLES IPV6
 
 # Add per arch options
 .for opt in ${OPTIONS_DEFINE_${ARCH}}
@@ -325,21 +302,6 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endif
 .  sinclude "${OPTIONS_FILE}.local"
 
-### convert WITH and WITHOUT found in make.conf or reloaded from old optionsfile
-# XXX once WITH_DEBUG is not magic any more, do remove the :NDEBUG from here.
-.for opt in ${ALL_OPTIONS:NDEBUG}
-.if defined(WITH_${opt})
-OPTIONS_WARNINGS+=	"WITH_${opt}"
-OPTIONS_WARNINGS_SET+=	${opt}
-PORT_OPTIONS+=	${opt}
-.endif
-.if defined(WITHOUT_${opt})
-OPTIONS_WARNINGS+=	"WITHOUT_${opt}"
-OPTIONS_WARNINGS_UNSET+=	${opt}
-PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
-.endif
-.endfor
-
 _OPTIONS_UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}
 .for _k in SET UNSET SET_FORCE UNSET_FORCE
 .if defined(${_OPTIONS_UNIQUENAME}_${_k})
@@ -347,28 +309,6 @@ WARNING+=	"You are using ${_OPTIONS_UNIQUENAME}_${_k} which is not supported any
 WARNING+=	"${OPTIONS_NAME}_${_k}=	${${_OPTIONS_UNIQUENAME}_${_k}}"
 .endif
 .endfor
-
-.if defined(OPTIONS_WARNINGS)
-WARNING+=	"You are using the following deprecated options: ${OPTIONS_WARNINGS}"
-WARNING+=	"If you added them on the command line, you should replace them by"
-WARNING+=	"WITH=\"${OPTIONS_WARNINGS_SET}\" WITHOUT=\"${OPTIONS_WARNINGS_UNSET}\""
-WARNING+=	""
-WARNING+=	"If they are global options set in your make.conf, you should replace them with:"
-.if defined(OPTIONS_WARNINGS_SET)
-WARNING+=	"OPTIONS_SET=${OPTIONS_WARNINGS_SET}"
-.endif
-.if defined(OPTIONS_WARNINGS_UNSET)
-WARNING+=	"OPTIONS_UNSET=${OPTIONS_WARNINGS_UNSET}"
-.endif
-WARNING+=	""
-WARNING+=	"If they are local to this port, you should use:"
-.if defined(OPTIONS_WARNINGS_SET)
-WARNING+=	"${OPTIONS_NAME}_SET=${OPTIONS_WARNINGS_SET}"
-.endif
-.if defined(OPTIONS_WARNINGS_UNSET)
-WARNING+=	"${OPTIONS_NAME}_UNSET=${OPTIONS_WARNINGS_UNSET}"
-.endif
-.endif
 
 ## Finish by using the options set by the port config dialog, if any
 .  for opt in ${OPTIONS_FILE_SET}
@@ -471,11 +411,15 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 ## Now some compatibility
 .if empty(PORT_OPTIONS:MDOCS)
-NOPORTDOCS=	yes
+PLIST_SUB+=		PORTDOCS="@comment "
+.else
+PLIST_SUB+=		PORTDOCS=""
 .endif
 
 .if empty(PORT_OPTIONS:MEXAMPLES)
-NOPORTEXAMPLES=	yes
+PLIST_SUB+=	        PORTEXAMPLES="@comment "
+.else
+PLIST_SUB+=	        PORTEXAMPLES=""
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
