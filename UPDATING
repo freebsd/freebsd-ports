@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180109
+  AFFECTS: users of www/qt5-webengine
+  AUTHOR: kde@FreeBSD.org
+
+  The upgrade of www/qt5-webengine to 5.9.3 may fail if an older version
+  of it is installed. It is recommended to either build the port in a
+  builder like poudriere, or to deinstall and then doing an install.
+
 20180107
   AFFECTS: users of security/gnupg and mail/mutt and mail/neomutt
   AUTHOR: adamw@FreeBSD.org
