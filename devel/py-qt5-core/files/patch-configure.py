@@ -7,8 +7,20 @@ depends on different modules with module-specific .api files.
 Also fixes a bug where dbus support drops multiple -I flags produced
 by pkg-config --cflags dbus-1 .
 
+Also fixes the build of www/py-qt5-webengine@py36 by adding printsupport to
+QtWebEngineWidgets.
+
 --- configure.py.orig	2017-11-23 14:44:03 UTC
 +++ configure.py
+@@ -98,7 +98,7 @@ MODULE_METADATA = {
+     'QtWebEngineCore':      ModuleMetadata(qmake_QT=['webenginecore', '-gui']),
+     'QtWebEngineWidgets':   ModuleMetadata(
+                                     qmake_QT=['webenginewidgets', 'webchannel',
+-                                            'network', 'widgets'],
++                                              'network', 'printsupport', 'widgets'],
+                                     cpp11=True),
+     'QtWebKit':             ModuleMetadata(qmake_QT=['webkit', 'network']),
+     'QtWebKitWidgets':      ModuleMetadata(
 @@ -503,7 +503,7 @@ class TargetConfiguration:
          self.no_pydbus = False
          self.no_qml_plugin = False
@@ -27,7 +39,7 @@ by pkg-config --cflags dbus-1 .
              self.prot_is_public = True
  
          self.vend_inc_dir = self.py_venv_inc_dir
-@@ -1450,8 +1450,9 @@ def generate_makefiles(target_config, verbose, parts, 
+@@ -1450,8 +1450,9 @@ def generate_makefiles(target_config, ve
  
      # Add the internal modules if they are required.
      if not target_config.no_tools:
@@ -39,7 +51,7 @@ by pkg-config --cflags dbus-1 .
  
      for mname in pyqt_modules:
          metadata = MODULE_METADATA[mname]
-@@ -1493,20 +1494,17 @@ def generate_makefiles(target_config, verbose, parts, 
+@@ -1493,20 +1494,17 @@ def generate_makefiles(target_config, ve
  
      f.close()
  
@@ -69,7 +81,7 @@ by pkg-config --cflags dbus-1 .
                  generate_tool_wrapper(target_config, 'pyuic5',
                          'PyQt5.uic.pyuic')))
  
-@@ -1524,23 +1522,6 @@ def generate_makefiles(target_config, verbose, parts, 
+@@ -1524,23 +1522,6 @@ def generate_makefiles(target_config, ve
                      source_path('examples', 'quick', 'tutorials', 'extending',
                              'chapter6-plugins'))
  
@@ -93,7 +105,7 @@ by pkg-config --cflags dbus-1 .
      # Generate the Python dbus module.
      if target_config.pydbus_module_dir != '':
          mname = 'dbus'
-@@ -1568,14 +1549,18 @@ def generate_makefiles(target_config, verbose, parts, 
+@@ -1568,14 +1549,18 @@ def generate_makefiles(target_config, ve
      out_f.write('''TEMPLATE = subdirs
  CONFIG += ordered nostrip
  SUBDIRS = %s

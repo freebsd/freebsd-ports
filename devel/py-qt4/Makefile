@@ -12,6 +12,7 @@ COMMENT=	Python bindings for the Qt 4 toolkit (meta port)
 USES=		metaport python pyqt:4
 USE_PYTHON=	flavors
 
+# Keep these synchronized with _USE_PYQT_ALL / _USE_PYQT4_ONLY in Mk/Use/pyqt.mk
 OPTIONS_DEFINE=		assistant core dbus dbussupport declarative \
 			demo designer designerplugin doc gui help \
 			multimedia network opengl phonon qscintilla2 \

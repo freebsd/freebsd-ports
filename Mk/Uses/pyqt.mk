@@ -75,6 +75,7 @@ QSCI2_DISTNAME=		QScintilla-gpl-${QSCI2_VERSION}
 PYQT4_LICENSE=		GPLv3
 PYQT5_LICENSE=		GPLv3
 
+# Keep these synchronized with OPTIONS_DEFINE in devel/py-qt4 and devel/py-qt5
 # PyQt components split up into pyqt4/pyqt5/...
 _USE_PYQT_ALL=		core dbus dbussupport demo designer designerplugin \
 			gui multimedia network opengl qscintilla2 \
@@ -84,7 +85,7 @@ _USE_PYQT4_ONLY=	assistant declarative doc \
 			help phonon script scripttools
 # List of components only in pyqt5
 _USE_PYQT5_ONLY=	multimediawidgets printsupport qml serialport \
-			webkitwidgets widgets
+			webchannel webengine webkitwidgets widgets
 
 # Unversioned variables for the rest of the file
 PYQT_VERSION=		${PYQT${_PYQT_VERSION}_VERSION}
@@ -118,6 +119,8 @@ py-scripttools_PATH=	${PYQT_PY_RELNAME}-scripttools>=${PYQT_VERSION}
 py-sql_PATH=		${PYQT_PY_RELNAME}-sql>=${PYQT_VERSION}
 py-svg_PATH=		${PYQT_PY_RELNAME}-svg>=${PYQT_VERSION}
 py-test_PATH=		${PYQT_PY_RELNAME}-test>=${PYQT_VERSION}
+py-webchannel_PATH=	${PYQT_PY_RELNAME}-webchannel>=${PYQT_VERSION}
+py-webengine_PATH=	${PYQT_PY_RELNAME}-webengine>=${PYQT_VERSION}
 py-webkit_PATH=		${PYQT_PY_RELNAME}-webkit>=${PYQT_VERSION}
 py-xml_PATH=		${PYQT_PY_RELNAME}-xml>=${PYQT_VERSION}
 py-xmlpatterns_PATH=	${PYQT_PY_RELNAME}-xmlpatterns>=${PYQT_VERSION}
@@ -152,6 +155,8 @@ py-scripttools_PORT=	devel/${PYQT_RELNAME}-scripttools
 py-sql_PORT=		databases/${PYQT_RELNAME}-sql
 py-svg_PORT=		graphics/${PYQT_RELNAME}-svg
 py-test_PORT=		devel/${PYQT_RELNAME}-test
+py-webchannel_PORT=	www/${PYQT_RELNAME}-webchannel
+py-webengine_PORT=	www/${PYQT_RELNAME}-webengine
 py-webkit_PORT=		www/${PYQT_RELNAME}-webkit
 py-xml_PORT=		textproc/${PYQT_RELNAME}-xml
 py-xmlpatterns_PORT=	textproc/${PYQT_RELNAME}-xmlpatterns
@@ -184,6 +189,8 @@ py-scripttools_DESC=	Python bindings for QtScriptTools module
 py-sql_DESC=		Python bindings for QtSql module
 py-svg_DESC=		Python bindings for QtSvg module
 py-test_DESC=		Python bindings for QtTest module
+py-webchannel_DESC=	Python bindings for QtWebChannel module
+py-webengine_DESC=	Python bindings for QtWebEngine module
 py-webkit_DESC=		Python bindings for QtWebKit module
 py-xml_DESC=		Python bindings for QtXml module
 py-xmlpatterns_DESC=	Python bindings for QtXmlPatterns module
