@@ -3,7 +3,7 @@
 
 PORTNAME=	synfigstudio
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/synfig/releases/${PORTVERSION}/source
 
@@ -11,10 +11,6 @@ MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv2+
-
-BROKEN=		missing header
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2018-01-27
 
 BUILD_DEPENDS=	etl>=0.04.19_1:devel/etl
 LIB_DEPENDS=	libsynfig.so:devel/synfig
@@ -56,6 +52,40 @@ post-patch:
 		 s|sk_SK|sk| ; \
 		 s|sv_SE|sv|' \
 		${WRKSRC}/po/LINGUAS
+	@${REINPLACE_CMD} -e \
+		's|^#include <sigc++/hide.h>$$|#include <sigc++/sigc++.h>| ; \
+		 s|^#include <sigc++/object.h>$$|#include <sigc++/sigc++.h>| ; \
+		 s|^#include <sigc++/retype.h>$$|#include <sigc++/sigc++.h>|' \
+		${WRKSRC}/src/gui/canvasview.cpp \
+		${WRKSRC}/src/gui/compview.cpp \
+		${WRKSRC}/src/gui/docks/dock_children.cpp \
+		${WRKSRC}/src/gui/docks/dock_curves.cpp \
+		${WRKSRC}/src/gui/docks/dock_history.cpp \
+		${WRKSRC}/src/gui/docks/dock_keyframes.cpp \
+		${WRKSRC}/src/gui/docks/dock_layergroups.cpp \
+		${WRKSRC}/src/gui/docks/dock_layers.cpp \
+		${WRKSRC}/src/gui/docks/dock_metadata.cpp \
+		${WRKSRC}/src/gui/docks/dock_params.cpp \
+		${WRKSRC}/src/gui/docks/dock_timetrack.cpp \
+		${WRKSRC}/src/gui/docks/dock_toolbox.cpp \
+		${WRKSRC}/src/gui/docks/dockable.cpp \
+		${WRKSRC}/src/gui/docks/dockdialog.cpp \
+		${WRKSRC}/src/gui/docks/dockmanager.h \
+		${WRKSRC}/src/gui/duck.h \
+		${WRKSRC}/src/gui/duckmatic.cpp \
+		${WRKSRC}/src/gui/duckmatic.h \
+		${WRKSRC}/src/gui/instance.cpp \
+		${WRKSRC}/src/gui/instance.h \
+		${WRKSRC}/src/gui/states/state_stroke.h \
+		${WRKSRC}/src/gui/states/state_zoom.cpp \
+		${WRKSRC}/src/gui/widgets/widget_curves.cpp \
+		${WRKSRC}/src/gui/workarea.cpp \
+		${WRKSRC}/src/gui/workarearenderer/workarearenderer.h \
+		${WRKSRC}/src/synfigapp/action_system.h \
+		${WRKSRC}/src/synfigapp/canvasinterface.h \
+		${WRKSRC}/src/synfigapp/instance.h \
+		${WRKSRC}/src/synfigapp/main.h \
+		${WRKSRC}/src/synfigapp/uimanager.h
 
 pre-build:
 # FIX LC_MESSAGES
