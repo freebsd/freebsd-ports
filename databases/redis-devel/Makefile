@@ -12,8 +12,6 @@ COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_i386=	undefined reference to __atomic_fetch_add_8
-
 OPTIONS_DEFINE=	TESTS TRIB
 OPTIONS_RADIO=	EXTLUA
 OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
@@ -27,6 +25,7 @@ TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
 .if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
 # Needed for __atomic_fetch_add_8
+USES+=		gcc
 CFLAGS+=	-march=i586
 .endif
 
