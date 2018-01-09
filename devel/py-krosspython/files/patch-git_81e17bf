@@ -1,0 +1,27 @@
+commit 81e17bf1d8514cc4f00191776022ba2e0c935b27
+Author: Tobias C. Berner <tcberner@FreeBSD.org>
+Date:   Wed Jul 26 14:31:32 2017 +0200
+
+    Fix build on FreBSD
+
+    Summary:
+    kross-interpreters/python/cxx/Objects.hxx:1081:15: error: cannot initialize
+          a member subobject of type 'int' with an rvalue of type 'nullptr_t'
+                , offset( NULL )
+                  ^       ~~~~
+
+    Reviewers: #freebsd, aspotashev
+
+    Differential Revision: https://phabricator.kde.org/D6928
+
+--- python/cxx/Objects.hxx
++++ python/cxx/Objects.hxx
+@@ -1078,7 +1078,7 @@ namespace Py
+         // TMM: added this seqref ctor for use with STL algorithms
+         seqref (Object& obj)
+             : s(dynamic_cast< SeqBase<T>&>(obj))
+-            , offset( NULL )
++            , offset( 0 )
+             , the_item(s.getItem(offset))
+         {}
+         ~seqref()
