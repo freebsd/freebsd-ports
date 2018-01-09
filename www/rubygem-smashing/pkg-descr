@@ -1,0 +1,9 @@
+Smashing, the spiritual successor to Dashing, is a Sinatra-based framework that
+lets you build excellent dashboards. You write a bit of ruby code to gather data
+from some services and let Smashing handle the rest - displaying that data in a
+wonderfully simple layout. Built for developers and hackers, Smashing is highly
+customizable while maintaining humble roots that make it approachable to
+beginners.
+
+WWW: https://smashing.github.io/
+WWW: https://github.com/Smashing/smashing
