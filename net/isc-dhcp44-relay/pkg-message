@@ -1,0 +1,8 @@
+****  This port installs the dhcp relay daemon, but doesn't invoke dhcrelay by
+      default. If you want to invoke dhcrelay at startup, add the following
+      lines to /etc/rc.conf:
+
+	    dhcrelay_enable="YES"
+	    dhcrelay_flags=""		# command option(s)
+	    dhcrelay_servers=""		# dhcrelay server(s)
+	    dhcrelay_ifaces=""		# ethernet interface(s)

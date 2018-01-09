@@ -1,0 +1,29 @@
+@unexec echo "You should stop the dhcpd and dhcpd6 daemons if you are permanently removing this port."
+@sample etc/dhcpd.conf.sample
+%%IPV6%%@sample etc/dhcpd6.conf.sample
+%%IPV6%%etc/rc.d/isc-dhcpd6
+sbin/dhcpd
+bin/omshell
+%%LDAP%%bin/dhcpd-conf-to-ldap
+man/man1/omshell.1.gz
+man/man3/dhcpctl.3.gz
+man/man3/omapi.3.gz
+man/man5/dhcpd.conf.5.gz
+man/man5/dhcpd.leases.5.gz
+man/man5/dhcp-eval.5.gz
+man/man5/dhcp-options.5.gz
+man/man8/dhcpd.8.gz
+include/dhcpctl.h
+include/omapip/alloc.h
+include/omapip/buffer.h
+include/omapip/omapip.h
+include/omapip/omapip_p.h
+include/omapip/hash.h
+include/omapip/trace.h
+include/omapip/convert.h
+include/omapip/isclib.h
+include/omapip/result.h
+lib/libdhcp.a
+lib/libdhcpctl.a
+lib/libomapi.a
+%%LDAP%%%%SCHEMA_DIR%%/dhcp.schema

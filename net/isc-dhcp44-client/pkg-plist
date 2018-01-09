@@ -1,0 +1,11 @@
+sbin/dhclient
+sbin/dhclient-script
+man/man5/dhclient.conf.5.gz
+man/man5/dhclient.leases.5.gz
+man/man8/dhclient.8.gz
+man/man8/dhclient-script.8.gz
+@unexec if cmp -s %D/etc/dhclient.conf.example %D/etc/dhclient.conf; then rm -f %D/etc/dhclient.conf; fi
+etc/dhclient.conf.example
+@exec if [ ! -f %D/etc/dhclient.conf ] ; then cp -p %D/%F %B/dhclient.conf; fi
+@exec [ -f /var/run/dhclient.leases ] || touch /var/run/dhclient.leases
+@unexec [ -s /var/run/dhclient.leases ] || rm -f /var/run/dhclient.leases
