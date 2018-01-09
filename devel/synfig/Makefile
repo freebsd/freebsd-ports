@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	synfig
-PORTVERSION=	1.0.2
-PORTREVISION=	12
+PORTVERSION=	1.2.1
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
@@ -12,29 +11,29 @@ COMMENT=	Vector based 2D animation package
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	etl>=0.04.19_1:devel/etl
-LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
-		libltdl.so:devel/libltdl \
-		libMagickWand-6.so:graphics/ImageMagick \
+BUILD_DEPENDS=	etl>=1.2.1:devel/etl
+LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 		libIlmImf.so:graphics/OpenEXR \
+		libMagickWand-6.so:graphics/ImageMagick \
+		libavcodec.so:multimedia/ffmpeg \
+		libboost_program_options.so:devel/boost-libs \
+		libdv.so:multimedia/libdv \
+		libfftw3.so:math/fftw3 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libltdl.so:devel/libltdl \
 		libmlt.so:multimedia/mlt \
 		libmng.so:graphics/libmng \
 		libpng.so:graphics/png \
-		libtiff.so:graphics/tiff \
-		libavcodec.so:multimedia/ffmpeg \
-		libdv.so:multimedia/libdv
+		libtiff.so:graphics/tiff
 
-USES=		compiler:c++11-lang iconv jpeg libtool pathfix pkgconfig
+USES=		compiler:c++11-lang gmake iconv jpeg libtool localbase pathfix pkgconfig
 USE_CXXSTD=	c++11
-USE_GNOME=	cairo glibmm libxml++26
+USE_GNOME=	cairo glibmm intltool libxml++26 pango
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -45,23 +44,8 @@ NLS_CONFIGURE_ENABLE=	nls
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
-		 /optimization_flags/s|CFLAGS=|#CFLAGS=| ; \
-		 s|el_GR|el| ; \
-		 s|ja_JP|ja| ; \
-		 s|no_NO|no| ; \
-		 s|pl_PL|pl| ; \
-		 s|sk_SK|sk| ; \
-		 s|sv_SE|sv|' \
+		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' \
 		${WRKSRC}/configure
-
-post-build:
-# FIX LC_MESSAGES
-	@${LN} -sf el_GR.gmo ${WRKSRC}/po/el.gmo
-	@${LN} -sf ja_JP.gmo ${WRKSRC}/po/ja.gmo
-	@${LN} -sf no_NO.gmo ${WRKSRC}/po/no.gmo
-	@${LN} -sf pl_PL.gmo ${WRKSRC}/po/pl.gmo
-	@${LN} -sf sk_SK.gmo ${WRKSRC}/po/sk.gmo
-	@${LN} -sf sv_SE.gmo ${WRKSRC}/po/sv.gmo
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
