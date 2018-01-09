@@ -34,7 +34,6 @@ PLIST_FILES=	include/cgi.h lib/libcgi.a lib/libcgi.so lib/libcgi.so.1 \
 		man/man3/cgiSetHeader.3.gz \
 		man/man3/cgiSetType.3.gz
 
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/cgi.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/*.3 ${STAGEDIR}${PREFIX}/man/man3

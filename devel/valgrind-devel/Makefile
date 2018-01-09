@@ -35,7 +35,6 @@ OPTIONS_DEFAULT_amd64=	32BIT
 32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
 MPI_DESC=	Enable build of MPI wrappers
 
-
 DOCS_BUILD_DEPENDS=    docbook-xsl>=0:textproc/docbook-xsl \
                        xsltproc:textproc/libxslt
 MANPAGES_BUILD_DEPENDS=        docbook-xsl>=0:textproc/docbook-xsl \

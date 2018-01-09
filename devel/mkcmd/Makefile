@@ -9,7 +9,6 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 		http://www.komquats.com/distfiles/ \
 		http://people.freebsd.org/~cy/distfiles/
 
-
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Command-line parser and manual page generator
 
