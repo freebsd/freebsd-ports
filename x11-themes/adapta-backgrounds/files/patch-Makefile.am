@@ -1,4 +1,4 @@
---- Makefile.am.orig	2016-11-20 19:55:11 UTC
+--- Makefile.am.orig	2018-01-01 03:20:16 UTC
 +++ Makefile.am
 @@ -5,12 +5,13 @@ SUBDIRS = \
  	backgrounds
@@ -6,7 +6,7 @@
  EXTRA_DIST = \
 -	AUTHORS \
 -	COPYING \
--	LICENSE_CC_BY_SA3
+-	LICENSE_CC_BY_SA4
 +	AUTHORS
  
  install-data-hook:
