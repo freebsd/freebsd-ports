@@ -2181,6 +2181,7 @@
     SUBDIR += rubygem-sinatra-r18n
     SUBDIR += rubygem-sinatra-respond_to
     SUBDIR += rubygem-sinatra1
+    SUBDIR += rubygem-smashing
     SUBDIR += rubygem-socksify
     SUBDIR += rubygem-task_list
     SUBDIR += rubygem-thin
