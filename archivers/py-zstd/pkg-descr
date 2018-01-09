@@ -1,0 +1,13 @@
+Simple python bindings to Yann Collet's ZSTD compression library.
+
+Zstd, short for Zstandard, is a new lossless compression algorithm,
+which provides both good compression ratio and speed for standard
+compression needs. "Standard" translates into everyday situations
+which neither look for highest possible ratio (which LZMA and ZPAQ
+cover) nor extreme speeds (which LZ4 covers).
+
+Please note that this is a simple python binding to Zstandard.
+A more full-featured binding is Gregory Szorc's py-zstandard
+package.
+
+WWW: https://github.com/sergey-dryabzhinsky/python-zstd

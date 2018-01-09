@@ -190,6 +190,7 @@
     SUBDIR += py-rjsmin
     SUBDIR += py-warctools
     SUBDIR += py-xopen
+    SUBDIR += py-zstd
     SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += quazip-qt5
