@@ -100,7 +100,6 @@ do-build:
 	@${ECHO_CMD} ".include <bsd.kmod.mk>" >> ${WRKSRC}/n/v4/Makefile
 	@cd ${WRKSRC}/n/v4; make all
 
-
 do-install:
 	@cd ${WRKSRC}/bg/v4; ${SETENV} ${MAKE_ENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
 	@cd ${WRKSRC}/lp/v4; ${SETENV} ${MAKE_ENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install

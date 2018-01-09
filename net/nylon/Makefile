@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent=yes
 CONFIGURE_ENV=	EVENTLIB="`pkgconf --libs libevent`" EVENTINC="`pkgconf --cflags libevent`"
 
-
 PLIST_FILES=	bin/nylon etc/nylon.conf.sample man/man1/nylon.1.gz
 
 post-install:
