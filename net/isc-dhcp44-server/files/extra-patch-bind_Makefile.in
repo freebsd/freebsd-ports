@@ -1,0 +1,11 @@
+--- bind/Makefile.in.orig	2018-01-05 14:28:00 UTC
++++ bind/Makefile.in
+@@ -21,7 +21,7 @@ bindsrcdir=@BINDSRCDIR@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ 
+-bindconfig = --without-openssl --without-libxml2 --without-libjson \
++bindconfig = --disable-symtable --without-openssl --without-libxml2 --without-libjson \
+ 	--without-gssapi --disable-threads --without-lmdb \
+ 	--includedir=@includedir@ --libdir=@libdir@ \
+ 	@BINDLT@ @BINDIOMUX@ @BINDCONFIG@ --enable-full-report

@@ -284,6 +284,9 @@
     SUBDIR += isc-dhcp43-client
     SUBDIR += isc-dhcp43-relay
     SUBDIR += isc-dhcp43-server
+    SUBDIR += isc-dhcp44-client
+    SUBDIR += isc-dhcp44-relay
+    SUBDIR += isc-dhcp44-server
     SUBDIR += istgt
     SUBDIR += jags
     SUBDIR += jakarta-commons-net
