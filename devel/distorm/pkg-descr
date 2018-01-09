@@ -6,4 +6,4 @@ robust handling of valid and unused prefixes. The output is a special structure
 that can describe any x86 instruction, and later be formatted into text for
 display.
 
-WWW: http://code.google.com/p/distorm/
+WWW: https://github.com/gdabah/distorm
