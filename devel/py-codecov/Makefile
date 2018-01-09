@@ -11,6 +11,7 @@ MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Hosted coverage reports for Github, Bitbucket and Gitlab
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.9:www/py-requests@${FLAVOR}
