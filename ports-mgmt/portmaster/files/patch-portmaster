@@ -1,6 +1,6 @@
 --- portmaster.orig	2017-12-21 09:02:44 UTC
 +++ portmaster
-@@ -113,13 +112,13 @@ kill_bad_children () {
+@@ -113,13 +113,13 @@ kill_bad_children () {
  		[ "$pid" -gt 25 ] || continue
  		case "$ppid" in
  		1)	case "$command" in
@@ -16,7 +16,7 @@
  			*'make -DBATCH checksum'*|*'/fetch '*|\[sh\]) pm_kill $pid ;;
  			esac ;;
  		esac
-@@ -333,9 +332,8 @@ pm_mktemp () {
+@@ -333,9 +333,8 @@ pm_mktemp () {
  		fail "mktemp for $1 failed:\n       ${pm_mktemp_file#mktemp: }"
  }
  pm_unlink () { [ -e "$1" ] && /bin/unlink $1; }
@@ -28,7 +28,7 @@
  
  # Superuser versions for commands that need root privileges
  
-@@ -412,7 +410,7 @@ usage () {
+@@ -412,7 +411,7 @@ usage () {
  	echo "    [[[--packages|-P]|[--packages-only|-PP]] | [--packages-build]]"
  	echo "    [--packages-if-newer] [--delete-build-only] [--always-fetch]"
  	echo "    [--local-packagedir=<path>] [--packages-local] [--delete-packages]"
@@ -37,7 +37,7 @@
  	echo "    [--index|--index-first|--index-only] [-m <arguments for make>]"
  	echo "    [-x <glob pattern to exclude from building>]"
  	echo "$progname [Common flags] <full name of port directory in $pdb>"
-@@ -653,6 +651,10 @@ for var in "$@" ; do
+@@ -653,6 +652,10 @@ for var in "$@" ; do
  				export LOCAL_PACKAGEDIR ;;
  	--delete-packages)	PM_DELETE_PACKAGES=pm_delete_packages
  				export PM_DELETE_PACKAGES ;;
@@ -48,7 +48,43 @@
  #	--flavor=*)		PM_FLAVOR=${var#--flavor=} ;;
  	--update-if-newer)	PM_UPDATE_IF_NEWER=pm_update_if_newer
  				export PM_UPDATE_IF_NEWER ;;
-@@ -1589,25 +1591,28 @@ init_packages () {
+@@ -1435,16 +1438,14 @@ check_force_multi () {
+ 
+ find_new_port () {
+ 	# Global: new_port
+-	local portdir flavor flavor_option
++	local portdir flavor
+ 
+ 	[ -n "$new_port" ] && return
+ 
+ 	portdir=$(dir_part "$1")
+ 	flavor=$(flavor_part "$1")
+-	flavor_option=${flavor:+FLAVOR=$flavor}
+-#	export_flavor $flavor
+ 	if pm_cd_pd $portdir; then
+-		new_port=`pm_make -V PKGNAME ${flavor_option}`
++		new_port=`FLAVOR=$flavor pm_make -V PKGNAME`
+ 	else
+ 		new_port=`parse_index $portdir name` ||
+ 			fail "No entry for $portdir in $PM_INDEX"
+@@ -1461,7 +1462,6 @@ check_for_updates () {
+ 	originflavor=${2:-`origin_from_pdb $iport`} || return 0
+ 	flavor=$(flavor_part "$originflavor")
+ 	export_flavor $flavor
+-	flavor_option=${flavor:+FLAVOR=$flavor}
+ 	origin=$(dir_part "$originflavor")
+ 
+ 	if [ -n "$PM_INDEX" ]; then
+@@ -1495,7 +1495,7 @@ check_for_updates () {
+ 				fail "Cannot cd to port directory: $pd/$origin"
+ 			fi
+ 		fi
+-		port_ver=`pm_make $flavor_option -V PKGNAME`
++		port_ver=`FLAVOR=$flavor pm_make -V PKGNAME`
+ 		[ -z "$port_ver" ] && fail "Is $pd/$origin/Makefile missing?"
+ 	elif [ -z "$do_update" -a -z "$skip" -a -z "$PM_INDEX_ONLY" ]; then
+ 		find_moved_port $origin $iport $nf
+@@ -1589,25 +1589,28 @@ init_packages () {
  }
  
  pm_pkg_create () {
@@ -79,7 +115,7 @@
  		if [ "$1" = "$pbu" ]; then
  			if [ -n "$BACKUP" ]; then
  				echo "	===>>> Package saved to $1" ; echo ''
-@@ -1616,15 +1621,14 @@ pm_pkg_create () {
+@@ -1616,15 +1619,14 @@ pm_pkg_create () {
  				NB_DELETE="${NB_DELETE}${pkg} "
  			fi
  		elif [ "$1" = "$PACKAGES" ]; then
@@ -99,7 +135,7 @@
  			fi
  
  			cd ${1}/${portdir%/*}
-@@ -1665,7 +1669,7 @@ find_dl_distfiles () {
+@@ -1665,7 +1667,7 @@ find_dl_distfiles () {
  	else
  		# Old method, for now
  		if pm_cd $pd/$1; then
@@ -108,7 +144,7 @@
  			dist_list="${dist_list%options}distfiles"
  		else
  			# The port might have moved, etc.; so take a stab at it,
-@@ -1803,6 +1807,7 @@ set_distfiles_and_subdir () {
+@@ -1803,6 +1805,7 @@ set_distfiles_and_subdir () {
  }
  
  delete_stale_distfiles () {
@@ -116,7 +152,7 @@
  	# Global: distfiles_checked
  	local file answer
  
-@@ -1849,6 +1854,7 @@ delete_stale_distfiles () {
+@@ -1849,6 +1852,7 @@ delete_stale_distfiles () {
  }
  
  delete_all_distfiles () {
@@ -124,7 +160,7 @@
  	# Global: delete_all DISTDIR
  	local origin rc delete_current
  
-@@ -2264,12 +2270,14 @@ make_dep_list () {
+@@ -2264,12 +2268,14 @@ make_dep_list () {
  
  	for dep_type in $*; do
  		case $dep_type in
@@ -144,7 +180,46 @@
  		*)
  			fail "make_dep_list: Unsupported option '$dep_type'"
  		esac
-@@ -3302,7 +3310,7 @@ pm_cd_pd $portdir
+@@ -2404,16 +2410,16 @@ dependency_check () {
+ 			case "$CUR_DEPS" in *:${origin}:*) continue ;; esac
+ 
+ 		if [ -z "$PM_INDEX_ONLY" ]; then
+-			local conflicts glob confl_p dir flavor flavor_opt
++			local conflicts glob confl_p dir flavor
+ 			dir=$(dir_part $d_port)
+ 			flavor=$(flavor_part $d_port)
+-			flavor_opt=${flavor:+FLAVOR=$flavor}
+ 			conflicts=''
+ 			if pm_cd "$pd/$dir"; then
+ 				if grep -ql ^CONFLICTS Makefile ; then
+-					conflicts=`pm_make_b $flavor_opt -V CONFLICTS`
+-					conflicts="$conflicts `pm_make_b $flavor_opt -V CONFLICTS_BUILD`"
+-					conflicts="$conflicts `pm_make_b $flavor_opt -V CONFLICTS_INSTALL`"
++					conflicts=`FLAVOR=$flavor pm_make_b \
++							-V CONFLICTS \
++							-V CONFLICTS_BUILD \
++							-V CONFLICTS_INSTALL`
+ 				fi
+ 			else
+ 				fail "Cannot cd to $dir"
+@@ -3104,7 +3110,6 @@ if [ -z "$PM_INDEX_ONLY" ] && ! pm_isdir_pd "$portdir"
+ 	[ -n "$moved_npd" ] || no_valid_port
+ 	flavor=$(flavor_part "$moved_npd")
+ 	export_flavor $flavor
+-#	flavor_option=${flavor:+-m FLAVOR=$flavor} # FLAVOR is exported in the environment
+ 	pm_isdir_pd "$moved_npd" || no_valid_port
+ 
+ 	[ "$$" -eq "$PM_PARENT_PID" ] && parent_exit
+@@ -3117,7 +3122,7 @@ iport_from_pkgname () {
+ 
+ 	dir=$(dir_part $1)
+ 	flavor=$(flavor_part $1)
+-	pkgname=$(make -C "$pd/$dir" -V PKGNAME FLAVOR=$flavor) || return 1
++	pkgname=$(FLAVOR=$flavor make -C "$pd/$dir" -V PKGNAME) || return 1
+ 	pkg info -x "^${pkgname%-*}"'-[^-]*' 2>/dev/null
+ }
+ 
+@@ -3302,7 +3307,7 @@ pm_cd_pd $portdir
  
  if [ -n "$PM_BUILD_ONLY_LIST" ]; then
  	case "$build_only_dl_g" in
@@ -153,7 +228,7 @@
  		[ -n "$PM_PACKAGES_BUILD" ] && PM_PACKAGES_BUILD=doing_build_only_dep
  		[ -n "$PM_DEL_BUILD_ONLY" ] && PM_DEL_BUILD_ONLY=doing_build_only_dep ;;
  	*)	[ -n "$PM_PACKAGES_BUILD" ] && PM_PACKAGES_BUILD=pmp_build
-@@ -3402,31 +3410,19 @@ fetch_package () {
+@@ -3402,31 +3407,19 @@ fetch_package () {
  }
  	if [ -z "$PACKAGESITE" -a -z "$PM_PACKAGES_LOCAL" ]; then
  		release=`uname -r`
@@ -190,7 +265,7 @@
  
  	echo "===>>> Checking package repository for latest available version"
  
-@@ -3437,11 +3433,12 @@ fetch_package () {
+@@ -3437,11 +3430,12 @@ fetch_package () {
  			latest_pv=${local_package##*/}
  		fi
  		if [ -z "$latest_pv" -a -z "$PM_INDEX_ONLY" ]; then
@@ -208,7 +283,7 @@
  				latest_pv=${latest_pv##*/}
  			else
  				pm_v "===>>> No local package for ${new_port}, attempting fetch"
-@@ -3753,6 +3750,7 @@ if [ -z "$use_package" ]; then
+@@ -3753,6 +3747,7 @@ if [ -z "$use_package" ]; then
  	unset np_orphan
  	# Defining NO_DEPENDS ensures that we will control the installation
  	# of the depends, not bsd.port.mk.
@@ -216,7 +291,7 @@
  	eval pm_make_s -DNO_DEPENDS install $port_log_args || install_failed $new_port
  else
  	[ -n "$local_package" ] && ppd=${LOCAL_PACKAGEDIR}/All
-@@ -3850,7 +3848,7 @@ fi
+@@ -3850,7 +3845,7 @@ fi
  if [ -n "$MAKE_PACKAGE" ]; then
  	if [ -z "$use_package" ]; then
  		echo "===>>> Creating a package for new version $new_port"
@@ -225,7 +300,7 @@
  		echo "	===>>> Package saved to $PACKAGES/All" ; echo ''
  	else
  		pm_pkg_create $PACKAGES $new_port
-@@ -3858,6 +3856,7 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3858,6 +3853,7 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
