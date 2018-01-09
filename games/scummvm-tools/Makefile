@@ -40,11 +40,11 @@ USE_WX=		2.8
 WX_COMP=	wx:lib:build
 WX_CONFIG_ARGS=	absolute
 GUI_BIN=	tools_gui
-PLIST_SUB=	WX=""
+PLIST_SUB+=	WX=""
 STRIP_FILES+=	scummvm-tools
 .else
 CONFIGURE_ARGS+=	--disable-wxwidgets
-PLIST_SUB=	WX="@comment "
+PLIST_SUB+=	WX="@comment "
 .endif
 
 pre-patch:

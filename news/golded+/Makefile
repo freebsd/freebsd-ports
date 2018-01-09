@@ -17,7 +17,6 @@ USES=		gmake ncurses
 
 WRKSRC=		${WRKDIR}/golded-plus/${PORTNAME}
 
-MAN1=		golded.1 goldnode.1 rddt.1
 DOCS=		copying copying.lib license.txt notework.txt rusfaq.txt\
 		tips.txt notework.rus
 PORTDOCS=	${DOCS} gold_ref.txt gold_usr.txt

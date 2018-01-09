@@ -15,7 +15,6 @@ COMMENT=	Paragraph reformatter for email
 CONFLICTS=	quake-par-[0-9]*
 
 ALL_TARGET=	#
-MAN1=		par.1
 PLIST_FILES=	bin/par \
 		man/man1/par.1.gz
 

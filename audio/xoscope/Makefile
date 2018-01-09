@@ -15,6 +15,4 @@ USES=		gmake pkgconfig tar:tgz
 USE_GNOME=	gtk20
 USE_XORG=	x11
 
-MAN1=		xoscope.1
-
 .include <bsd.port.mk>

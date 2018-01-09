@@ -54,7 +54,6 @@ PLIST_SUB+=	EFIEMU=${EFIEMU}
 LIB_DEPENDS+=	libfreetype.so:print/freetype2
 BUILD_DEPENDS+=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
 		${LOCALBASE}/share/fonts/gnu-unifont/unifont.pcf.gz:x11-fonts/gnu-unifont
-MAN1+=		grub-mkfont.1
 CONFIGURE_ARGS+=	--enable-grub-mkfont
 .else
 CONFIGURE_ARGS+=	--disable-grub-mkfont

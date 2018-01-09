@@ -13,9 +13,6 @@
 # INVALID_BDB_VER
 #			- This variable can be defined when the port does not
 #			  support one or more versions of Berkeley DB.
-# WITH_BDB_VER
-#			- User defined global variable to set Berkeley DB version.
-#			  Deprecated, use DEFAULT_VERSIONS+=bdb=xx
 # <BDB_UNIQUENAME>_WITH_BDB_VER
 #			- User defined port specific variable to set Berkeley DB
 #			  version.
@@ -59,11 +56,6 @@ _bdb_ARGS?=	yes
 # check if + works properly from test builds 01h12m23s
 
 BDB_UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
-
-.if defined(WITH_BDB_VER)
-WARNING+=	"WITH_BDB_VER is deprecated and will be removed on 2016-08-01. Use DEFAULT_VERSIONS+=bdb=${WITH_BDB_VER}"
-BDB_DEFAULT:=${WITH_BDB_VER}
-.endif
 
 _BDB_DEFAULT_save:=${BDB_DEFAULT}
 

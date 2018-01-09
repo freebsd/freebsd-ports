@@ -1773,18 +1773,6 @@ MAKE_ENV+=	WITHOUT_DEBUG_FILES=yes
 MAKE_ENV+=	WITHOUT_KERNEL_SYMBOLS=yes
 .endif
 
-.if defined(NOPORTDOCS)
-PLIST_SUB+=		PORTDOCS="@comment "
-.else
-PLIST_SUB+=		PORTDOCS=""
-.endif
-
-.if defined(NOPORTEXAMPLES)
-PLIST_SUB+=	        PORTEXAMPLES="@comment "
-.else
-PLIST_SUB+=	        PORTEXAMPLES=""
-.endif
-
 CONFIGURE_SHELL?=	${SH}
 MAKE_SHELL?=	${SH}
 
@@ -4525,7 +4513,7 @@ ${TMPPLIST}:
 
 .for _type in EXAMPLES DOCS
 .if !target(add-plist-${_type:tl})
-.if defined(PORT${_type}) && !defined(NOPORT${_type})
+.if defined(PORT${_type}) && !empty(PORT_OPTIONS:M${_type})
 add-plist-${_type:tl}:
 .for x in ${PORT${_type}}
 	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
@@ -5308,6 +5296,17 @@ show-warnings:
 	@sleep ${WARNING_WAIT}
 .endif
 
+.if defined(ERROR)
+show-errors:
+	@${ECHO_MSG} "/!\\ ERRORS /!\\"
+	@${ECHO_MSG}
+.for m in ${ERROR}
+	@${ECHO_MSG} "${m}" | ${FMT_80}
+	@${ECHO_MSG}
+.endfor
+	@${FALSE}
+.endif
+
 .if defined(DEVELOPER)
 .if defined(DEV_WARNING)
 DEV_WARNING_WAIT?=	10
@@ -5356,7 +5355,8 @@ _TARGETS_STAGES=	SANITY PKG FETCH EXTRACT PATCH CONFIGURE BUILD INSTALL TEST PAC
 
 _SANITY_SEQ=	050:post-chroot 100:pre-everything \
 				125:show-unsupported-system-error 150:check-makefile \
-				200:show-warnings 210:show-dev-warnings 220:show-dev-errors \
+				190:show-errors 200:show-warnings \
+				210:show-dev-errors 220:show-dev-warnings \
 				250:check-categories 300:check-makevars \
 				350:check-desktop-entries 400:check-depends \
 				450:identify-install-conflicts 500:check-deprecated \

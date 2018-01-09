@@ -15,7 +15,8 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-OPTIONS_DEFINE=	DOXYGEN EXAMPLES DOCS
+OPTIONS_DEFINE=	DOXYGEN EXAMPLES
+OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix
@@ -28,12 +29,9 @@ SAMPLE_PROGS=	client pipe_query proxy server simple \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen>=0:devel/doxygen
 ALL_TARGET=	all doxygen
-PLIST_SUB+=	PORTDOCS=""
-.else
-PLIST_SUB+=	PORTDOCS="@comment "
 .endif
 
 .if ${ARCH} == "i386"
@@ -41,7 +39,7 @@ CONFIGURE_ARGS+=--disable-64bit
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
+.if ${PORT_OPTIONS:MDOXYGEN}
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
