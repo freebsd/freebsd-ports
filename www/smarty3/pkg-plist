@@ -53,6 +53,7 @@
 %%DATADIR%%/sysplugins/smarty_cacheresource_custom.php
 %%DATADIR%%/sysplugins/smarty_cacheresource_keyvaluestore.php
 %%DATADIR%%/sysplugins/smarty_data.php
+%%DATADIR%%/sysplugins/smarty_internal_block.php
 %%DATADIR%%/sysplugins/smarty_internal_cacheresource_file.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_append.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_assign.php
@@ -73,6 +74,7 @@
 %%DATADIR%%/sysplugins/smarty_internal_compile_include_php.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_insert.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_ldelim.php
+%%DATADIR%%/sysplugins/smarty_internal_compile_make_nocache.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_nocache.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_private_block_plugin.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_private_foreachsection.php
@@ -118,6 +120,7 @@
 %%DATADIR%%/sysplugins/smarty_internal_method_getconfigvars.php
 %%DATADIR%%/sysplugins/smarty_internal_method_getdebugtemplate.php
 %%DATADIR%%/sysplugins/smarty_internal_method_getdefaultmodifiers.php
+%%DATADIR%%/sysplugins/smarty_internal_method_getglobal.php
 %%DATADIR%%/sysplugins/smarty_internal_method_getregisteredobject.php
 %%DATADIR%%/sysplugins/smarty_internal_method_getstreamvariable.php
 %%DATADIR%%/sysplugins/smarty_internal_method_gettags.php
@@ -159,18 +162,16 @@
 %%DATADIR%%/sysplugins/smarty_internal_resource_stream.php
 %%DATADIR%%/sysplugins/smarty_internal_resource_string.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_cachemodify.php
+%%DATADIR%%/sysplugins/smarty_internal_runtime_capture.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_codeframe.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_filterhandler.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_foreach.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_getincludepath.php
-%%DATADIR%%/sysplugins/smarty_internal_runtime_hhvm.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_inheritance.php
-%%DATADIR%%/sysplugins/smarty_internal_runtime_subtemplate.php
+%%DATADIR%%/sysplugins/smarty_internal_runtime_make_nocache.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_tplfunction.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_updatecache.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_updatescope.php
-%%DATADIR%%/sysplugins/smarty_internal_runtime_validatecompiled.php
-%%DATADIR%%/sysplugins/smarty_internal_runtime_var.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_writefile.php
 %%DATADIR%%/sysplugins/smarty_internal_smartytemplatecompiler.php
 %%DATADIR%%/sysplugins/smarty_internal_template.php
