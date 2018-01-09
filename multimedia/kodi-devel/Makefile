@@ -73,7 +73,7 @@ CONFIGURE_ENV=	OPENSSL_LIBS="-L${OPENSSLLIB}" OPENSSL_CFLAGS="-I${OPENSSLINC}"
 KODIARCH_i386=	x86
 KODIARCH_amd64=	x86_64
 
-PLIST_SUB=	ARCH=${KODIARCH_${ARCH}} OPSYS=${OPSYS:tl}
+PLIST_SUB=	ARCH=${KODIARCH_${ARCH}:U${ARCH}} OPSYS=${OPSYS:tl}
 
 OPTIONS_DEFINE=	AVAHI CEC DBUS LIBBLURAY MYSQL NFS SMB SSH UPNP VAAPI	\
 		VDPAU WEBSERVER
@@ -154,8 +154,9 @@ VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CMAKE_BOOL=	ENABLE_VDPAU
 
 WAYLAND_BROKEN=	Requires default WAYLAND in graphics/mesa-libs and missing graphics/waylandpp port
-WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-/protocols
-WAYLAND_CMAKE_ON=	-DWAYLAND_RENDER_SYSTEM:STRING="gl"
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
+WAYLAND_CMAKE_ON=	-DCORE_PLATFORM_NAME:STRING="wayland" \
+			-DWAYLAND_RENDER_SYSTEM:STRING="gl"
 WAYLAND_LIB_DEPENDS=	libwayland-client++.so:graphics/waylandpp \
 			libxkbcommon.so:x11/libxkbcommon
 
