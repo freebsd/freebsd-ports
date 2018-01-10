@@ -5,7 +5,7 @@ PORTNAME=	nettle
 PORTVERSION=	3.4
 CATEGORIES=	security
 MASTER_SITES=	GNU \
-		http://www.lysator.liu.se/~nisse/archive/ 
+		http://www.lysator.liu.se/~nisse/archive/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low-level cryptographic library
@@ -36,8 +36,9 @@ PORTEXAMPLES=	*.c *.h
 CONFIGURE_ENV+=	CCPIC=-fPIC
 .endif
 
-.if ${ARCH} == "mips64"
 post-patch:
+	@${REINPLACE_CMD} -e '/libdir=/ s|lib32|lib|' ${WRKSRC}/configure
+.if ${ARCH} == "mips64"
 	@${REINPLACE_CMD} -e 's|__sgi|__unix__|' ${WRKSRC}/configure
 .endif
 
