@@ -1,6 +1,6 @@
---- include/Ptr.cxx.orig	Tue Jul 22 09:20:15 2003
-+++ include/Ptr.cxx	Tue Jul 22 09:20:42 2003
-@@ -19,7 +19,7 @@
+--- include/Ptr.cxx.orig	1998-10-07 05:15:50 UTC
++++ include/Ptr.cxx
+@@ -19,7 +19,7 @@ template<class T>
  Ptr<T>::~Ptr()
  {
    if (ptr_) {
