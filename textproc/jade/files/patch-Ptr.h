@@ -1,5 +1,5 @@
---- include/Ptr.h.orig	1998-10-07 05:15:50 UTC
-+++ include/Ptr.h
+--- include/Ptr.h.orig	Wed Oct  7 14:15:50 1998
++++ include/Ptr.h	Tue Jul 22 09:19:49 2003
 @@ -5,6 +5,7 @@
  #define Ptr_INCLUDED 1
  
