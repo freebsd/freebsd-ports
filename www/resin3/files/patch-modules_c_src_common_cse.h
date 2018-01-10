@@ -1,6 +1,6 @@
---- modules/c/src/common/cse.h.orig	Thu May 12 12:54:14 2005
-+++ modules/c/src/common/cse.h	Thu May 12 12:55:30 2005
-@@ -339,6 +339,9 @@
+--- modules/c/src/common/cse.h.orig	2013-10-28 16:37:43 UTC
++++ modules/c/src/common/cse.h
+@@ -367,6 +367,9 @@ resin_host_t *cse_match_host(config_t *config,
  			     const char *host, int port,
  			     time_t now);
  
@@ -8,5 +8,5 @@
 +		port, time_t now);
 +
  cluster_srun_t *
- cse_add_cluster_server(cluster_t *cluster,
+ cse_add_cluster_server(mem_pool_t *pool, cluster_t *cluster,
  		       const char *host, int port, const char *id,

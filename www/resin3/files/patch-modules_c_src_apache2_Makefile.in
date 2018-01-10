@@ -1,6 +1,6 @@
---- ./modules/c/src/apache2/Makefile.in.orig	2012-03-06 09:59:32.000000000 -0800
-+++ ./modules/c/src/apache2/Makefile.in	2012-03-06 09:59:45.000000000 -0800
-@@ -36,11 +36,6 @@
+--- modules/c/src/apache2/Makefile.in.orig	2013-10-28 16:37:54 UTC
++++ modules/c/src/apache2/Makefile.in
+@@ -36,11 +36,6 @@ mod_caucho.la	: $(OBJ_PICS)
  	$(CC) -c $(INCLUDES) $(CFLAGS) $<
  
  install	: mod_caucho.la
