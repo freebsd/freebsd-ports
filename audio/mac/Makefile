@@ -3,6 +3,7 @@
 
 PORTNAME=	mac
 PORTVERSION=	3.99.4.5.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://etree.org/shnutils/shntool/support/formats/ape/unix/3.99-u4-b5-s7/ \
 		http://freebsd.nsu.ru/distfiles/
