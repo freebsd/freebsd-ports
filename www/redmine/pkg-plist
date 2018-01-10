@@ -1413,6 +1413,7 @@
 %%WWWDIR%%/public/images/2downarrow.png
 %%WWWDIR%%/public/images/2uparrow.png
 %%WWWDIR%%/public/images/add.png
+%%WWWDIR%%/public/images/anonymous.png
 %%WWWDIR%%/public/images/arrow_collapsed.png
 %%WWWDIR%%/public/images/arrow_down.png
 %%WWWDIR%%/public/images/arrow_expanded.png
@@ -1777,6 +1778,7 @@
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_cc.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_custom_fields.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_duplicate_keyword.eml
+%%WWWDIR%%/test/fixtures/mail_handler/ticket_with_empty_attachment.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_invalid_attributes.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_keyword_after_delimiter.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_localized_attributes.eml
@@ -1818,6 +1820,7 @@
 %%WWWDIR%%/test/functional/activities_controller_test.rb
 %%WWWDIR%%/test/functional/admin_controller_test.rb
 %%WWWDIR%%/test/functional/attachments_controller_test.rb
+%%WWWDIR%%/test/functional/attachments_visibility_test.rb
 %%WWWDIR%%/test/functional/auth_sources_controller_test.rb
 %%WWWDIR%%/test/functional/auto_completes_controller_test.rb
 %%WWWDIR%%/test/functional/boards_controller_test.rb
@@ -2031,6 +2034,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/export/csv_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/export/pdf_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/field_format/attachment_format_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/field_format/attachment_format_visibility_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/field_format/bool_format_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/field_format/enumeration_format_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/field_format/field_format_test.rb
