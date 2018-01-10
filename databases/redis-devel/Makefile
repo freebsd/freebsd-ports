@@ -25,7 +25,7 @@ TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
 .if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
 # Needed for __atomic_fetch_add_8
-USES+=		gcc
+USE_GCC=	yes
 CFLAGS+=	-march=i586
 .endif
 
