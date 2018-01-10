@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	10.1.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www devel
 
 MAINTAINER=	idefix@fechner.net
@@ -136,7 +136,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-sanitize>=2.0:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2:textproc/rubygem-babosa \
 	rubygem-loofah>=2.0.3:textproc/rubygem-loofah \
-	rubygem-licensee>=8.7:devel/rubygem-licensee \
+	rubygem-licensee8>=8.7:devel/rubygem-licensee8 \
 	rubygem-rack-attack>=4.4.1:www/rubygem-rack-attack \
 	rubygem-ace-rails-ap>=4.1.0:www/rubygem-ace-rails-ap \
 	rubygem-mousetrap-rails>=1.4.6:www/rubygem-mousetrap-rails \
