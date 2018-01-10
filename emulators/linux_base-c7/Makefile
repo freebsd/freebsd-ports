@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	centos-release-7-4.1708.el7.centos \
@@ -13,7 +13,7 @@ BIN_DISTNAMES=	centos-release-7-4.1708.el7.centos \
 		elfutils-0.168-8.el7 \
 		filesystem-3.2-21.el7 \
 		findutils-4.5.11-5.el7 \
-		glibc-common-2.17-196.el7 \
+		glibc-common-2.17-196.el7_4.2 \
 		grep-2.20-3.el7 \
 		info-5.1-4.el7 \
 		keyutils-1.5.8-3.el7 \
@@ -30,24 +30,24 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		gamin-0.1.10-16.el7 \
 		gdbm-1.10-8.el7 \
 		glib2-2.50.3-3.el7 \
-		glibc-2.17-196.el7 \
+		glibc-2.17-196.el7_4.2 \
 		gmp-6.0.0-15.el7 \
 		keyutils-libs-1.5.8-3.el7 \
 		krb5-libs-1.15.1-8.el7 \
 		libacl-2.2.51-12.el7 \
 		libattr-2.4.46-12.el7 \
-		libblkid-2.23.2-43.el7 \
+		libblkid-2.23.2-43.el7_4.2 \
 		libcap-2.22-9.el7 \
 		libcom_err-1.42.9-10.el7 \
 		libdb-5.3.21-20.el7 \
 		libffi-3.0.13-18.el7 \
-		libgcc-4.8.5-16.el7 \
+		libgcc-4.8.5-16.el7_4.1 \
 		libidn-1.28-4.el7 \
-		libmount-2.23.2-43.el7 \
+		libmount-2.23.2-43.el7_4.2 \
 		libselinux-2.5-11.el7 \
 		libsepol-2.5-6.el7 \
-		libstdc++-4.8.5-16.el7 \
-		libuuid-2.23.2-43.el7 \
+		libstdc++-4.8.5-16.el7_4.1 \
+		libuuid-2.23.2-43.el7_4.2 \
 		ncurses-libs-5.9-14.20130511.el7_4 \
 		nss-softokn-freebl-3.28.3-8.el7_4 \
 		pcre-8.32-17.el7 \
@@ -55,7 +55,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		readline-6.2-10.el7 \
 		redhat-lsb-core-4.1-27.el7.centos.1 \
 		slang-2.2.4-11.el7 \
-		util-linux-2.23.2-43.el7 \
+		util-linux-2.23.2-43.el7_4.2 \
 		xz-libs-5.2.2-1.el7 \
 		zlib-1.2.7-17.el7
 SHARE_DISTNAMES=basesystem-10.0-7.el7.centos \
@@ -76,10 +76,10 @@ SRC_DISTFILES=	acl-2.2.51-12.el7${SRC_SUFX}:SOURCE \
 		findutils-4.5.11-5.el7${SRC_SUFX}:SOURCE \
 		freetype-2.4.11-15.el7${SRC_SUFX}:SOURCE \
 		gamin-0.1.10-16.el7${SRC_SUFX}:SOURCE \
-		gcc-4.8.5-16.el7${SRC_SUFX}:SOURCE \
+		gcc-4.8.5-16.el7_4.1${SRC_SUFX}:SOURCE \
 		gdbm-1.10-8.el7${SRC_SUFX}:SOURCE \
 		glib2-2.50.3-3.el7${SRC_SUFX}:SOURCE \
-		glibc-2.17-196.el7${SRC_SUFX}:SOURCE \
+		glibc-2.17-196.el7_4.2${SRC_SUFX}:SOURCE \
 		gmp-6.0.0-15.el7${SRC_SUFX}:SOURCE \
 		grep-2.20-3.el7${SRC_SUFX}:SOURCE \
 		keyutils-1.5.8-3.el7${SRC_SUFX}:SOURCE \
@@ -102,7 +102,7 @@ SRC_DISTFILES=	acl-2.2.51-12.el7${SRC_SUFX}:SOURCE \
 		setup-2.8.71-7.el7${SRC_SUFX}:SOURCE \
 		slang-2.2.4-11.el7${SRC_SUFX}:SOURCE \
 		texinfo-5.1-4.el7${SRC_SUFX}:SOURCE \
-		util-linux-2.23.2-43.el7${SRC_SUFX}:SOURCE \
+		util-linux-2.23.2-43.el7_4.2${SRC_SUFX}:SOURCE \
 		which-2.20-7.el7${SRC_SUFX}:SOURCE \
 		xz-5.2.2-1.el7${SRC_SUFX}:SOURCE \
 		zlib-1.2.7-17.el7${SRC_SUFX}:SOURCE
