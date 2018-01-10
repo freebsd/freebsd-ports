@@ -51,7 +51,7 @@ post-stage:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/regina.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/regutil.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/regina.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/regutil.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

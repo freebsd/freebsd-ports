@@ -70,7 +70,7 @@ do-install:
 	@${CAT} ${WRKDIR}/message-transcoding >> ${PKGMESSAGE}
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/README.TXT ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.TXT ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/subsonic.war ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/subsonic-booter-jar-with-dependencies.jar ${STAGEDIR}${DATADIR}/
 

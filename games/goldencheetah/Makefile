@@ -46,6 +46,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/user/*.info \
 		${STAGEDIR}${PREFIX}/${INFO_PATH}/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/user/*.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/user/*.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
