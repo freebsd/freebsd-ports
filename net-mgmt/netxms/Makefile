@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	netxms
-PORTVERSION=	2.0.7
+PORTVERSION=	2.2.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.netxms.org/download/ \
-		http://www.netxms.org/download/archive/
+MASTER_SITES=	http://www.netxms.org/download/releases/2.2/${PORTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Network monitoring system
@@ -16,12 +15,13 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libjansson.so:devel/jansson \
-		libtre.so:textproc/libtre
+		libtre.so:textproc/libtre \
+		libmosquitto.so:net/mosquitto
 
-OPTIONS_DEFINE=	SERVER CLIENT AGENT
-OPTIONS_DEFAULT=	CLIENT AGENT
+OPTIONS_DEFINE=	SERVER CLIENT AGENT SSH
+OPTIONS_DEFAULT=	CLIENT AGENT SSH
 OPTIONS_SINGLE=	SERVER
-OPTIONS_SINGLE_SERVER=	MYSQL PGSQL SQLITE ODBC
+OPTIONS_SINGLE_SERVER=	MYSQL PGSQL ODBC
 OPTIONS_SUB=	yes
 
 SERVER_DESC=	Install NetXMS server & agent
@@ -35,10 +35,10 @@ MYSQL_CONFIGURE_ON=	--with-mysql
 MYSQL_USES=		mysql
 PGSQL_CONFIGURE_ON=	--with-pgsql
 PGSQL_USES=		pgsql
-SQLITE_CONFIGURE_ON=	--with-sqlite
-SQLITE_USES=		sqlite
 ODBC_CONFIGURE_ON=	--with-odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+SSH_CONFIGURE_OFF=	--disable-ssh
+SSH_LIB_DEPENDS=	libssh.so:security/libssh
 
 USES=		gmake iconv libtool perl5 ssl
 GNU_CONFIGURE=	yes
