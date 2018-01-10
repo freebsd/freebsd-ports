@@ -5,5 +5,5 @@ include/libe-book-0.1/libe-book/EBOOKDocument.h
 include/libe-book-0.1/libe-book/libe-book.h
 lib/libe-book-0.1.so
 lib/libe-book-0.1.so.1
-lib/libe-book-0.1.so.1.0.2
+lib/libe-book-0.1.so.1.0.3
 libdata/pkgconfig/libe-book-0.1.pc
