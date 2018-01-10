@@ -100,7 +100,7 @@ GLIB_SCHEMAS=	org.gnucash.dialogs.business.gschema.xml \
 .if ${FLAVOR:U} == guile1
 CONFIGURE_ARGS+=	--with-guile=1.8
 PLIST_SUB+=		GUILE2="@comment "
-.elif ${FLAVOR:U} == guile2
+.elif ${FLAVOR:U${FLAVORS:[1]}} == guile2
 CONFIGURE_ARGS+=	--with-guile=2.0
 PLIST_SUB+=		GUILE2=""
 .endif
