@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	8.31.0
+PORTVERSION=	8.32.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -15,7 +15,8 @@ LIB_DEPENDS=	libee.so:devel/libee \
 		libestr.so:devel/libestr \
 		libfastjson.so:devel/libfastjson \
 		liblogging-stdlog.so:devel/liblogging \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libcurl.so:ftp/curl
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
 PORTSCOUT=	limit:^8\.
@@ -38,7 +39,6 @@ DBI_PLIST_FILES=	lib/rsyslog/omlibdbi.so
 
 ELASTIC_DESC=		Elasticsearch module for rsyslog
 ELASTIC_CONFIGURE_ENABLE=	elasticsearch
-ELASTIC_LIB_DEPENDS=	libcurl.so:ftp/curl
 ELASTIC_PLIST_FILES=	lib/rsyslog/omelasticsearch.so
 
 GCRYPT_DESC=		Enable support for encrypted logfiles
