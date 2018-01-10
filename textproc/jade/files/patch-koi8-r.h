@@ -1,5 +1,5 @@
---- /dev/null	1970-01-01 00:00:00 UTC
-+++ include/koi8-r.h
+--- /dev/null	Sat Jul 31 17:25:08 2004
++++ include/koi8-r.h	Sat Jul 31 17:04:24 2004
 @@ -0,0 +1,15 @@
 +/* KOI8-R (GR only) */
 +96, 0x0020,

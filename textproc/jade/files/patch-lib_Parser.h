@@ -1,4 +1,4 @@
---- lib/Parser.h.orig	1998-10-01 05:13:28 UTC
+--- lib/Parser.h~	1998-10-01 05:13:28 UTC
 +++ lib/Parser.h
 @@ -62,15 +62,15 @@ class Parser : private ParserState {  (public)
    Parser(const SgmlParser::Params &);

@@ -1,5 +1,5 @@
---- lib/assert.cxx.orig	1998-10-07 05:15:50 UTC
-+++ lib/assert.cxx
+--- lib/assert.cxx.orig	Wed Apr 25 12:42:54 2001
++++ lib/assert.cxx	Wed Apr 25 12:43:26 2001
 @@ -6,7 +6,7 @@
  #include "macros.h"
  

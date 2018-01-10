@@ -1,5 +1,5 @@
---- /dev/null	1970-01-01 00:00:00 UTC
-+++ pubtext/koi8r.dcl
+--- /dev/null	Sat Jul 31 17:25:08 2004
++++ pubtext/koi8r.dcl	Sat Jul 31 17:04:35 2004
 @@ -0,0 +1,236 @@
 +		     <!SGML "ISO 8879:1986 (ENR)"
 +

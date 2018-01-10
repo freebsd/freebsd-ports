@@ -1,6 +1,6 @@
---- include/CharsetRegistry.h.orig	1998-10-07 05:15:50 UTC
-+++ include/CharsetRegistry.h
-@@ -45,6 +45,7 @@ class SP_API CharsetRegistry { (public)
+--- include/CharsetRegistry.h.orig	Sat Jul 31 17:02:57 2004
++++ include/CharsetRegistry.h	Sat Jul 31 17:05:32 2004
+@@ -45,6 +45,7 @@
      GB2312 = 58,
      ISO10646_UCS2 = 176,
      ISO10646_UCS4 = 177,
