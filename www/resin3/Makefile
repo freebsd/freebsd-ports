@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	resin
-PORTVERSION=	3.1.14
-PORTREVISION=	1
+PORTVERSION=	3.1.15
 CATEGORIES=	www java
 MASTER_SITES=	http://www.caucho.com/download/
 
@@ -19,7 +18,6 @@ GNU_CONFIGURE=	yes
 USES=		libtool python ssl
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_LDCONFIG=	yes
 
 # Pass JAVA_HOME as determined by bsd.java.mk
 CONFIGURE_ARGS=	--with-java-home=${JAVA_HOME} \
@@ -57,6 +55,7 @@ LOG_FILE?=	/var/log/${APP_NAME}.log
 APXS?=		${LOCALBASE}/sbin/apxs
 SUB_FILES=	pkg-message resin3ctl
 USE_RC_SUBR=	resin3
+NO_ARCH=	yes
 
 .include <bsd.port.options.mk>
 

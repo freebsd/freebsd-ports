@@ -1,6 +1,6 @@
---- configure.orig	2012-11-08 21:22:27.000000000 +0100
-+++ configure	2013-02-07 12:28:12.000000000 +0100
-@@ -12271,26 +12271,6 @@
+--- configure.orig	2014-10-13 18:18:58 UTC
++++ configure
+@@ -12456,26 +12456,6 @@ case "$target_os" in
    *freebsd*)
  	PROXY_LIBS='-lpthread'
          jni_os=freebsd
