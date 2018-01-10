@@ -1,6 +1,6 @@
---- configure.ac.orig	2017-09-28 02:25:19 UTC
+--- configure.ac.orig	2017-12-27 14:40:24 UTC
 +++ configure.ac
-@@ -156,11 +156,35 @@ AC_CHECK_FUNC(dlopen, [],
+@@ -159,11 +159,35 @@ AC_CHECK_FUNC(dlopen, [],
  AC_SUBST(DLOPEN_LIBS)
  
  # checking for openssl
