@@ -340,7 +340,11 @@ intl_DEPENDS=	devel/pecl-intl
 json_DEPENDS=	devel/php${PHP_VER}-json
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
+.    if ${PHP_VER} >= 72
+mcrypt_DEPENDS=	security/pecl-mcrypt
+.    else
 mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
+.    endif
 .    if ${PHP_VER} >= 70
 memcache_DEPENDS=	databases/php${PHP_VER}-memcache
 .    else
