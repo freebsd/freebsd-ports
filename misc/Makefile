@@ -376,6 +376,7 @@
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
+    SUBDIR += pnpids
     SUBDIR += podsleuth
     SUBDIR += posixtestsuite
     SUBDIR += proxyper
