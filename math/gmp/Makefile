@@ -46,7 +46,4 @@ CONFIGURE_ENV+=	ABI="32"
 post-extract:
 	@${RM} ${WRKSRC}/doc/gmp.info*
 
-regression-test check: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
-
 .include <bsd.port.post.mk>
