@@ -4,7 +4,7 @@ PORTNAME=	kodi
 DISTVERSION=	18.0.g201801070734
 PORTREVISION=	1
 CATEGORIES=	multimedia
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX?=	-devel
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Award winning media center application
