@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libe-book
-PORTVERSION=	0.1.2
-PORTREVISION=	17
+PORTVERSION=	0.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/libebook/${PORTNAME}-${PORTVERSION}/
 
@@ -11,16 +10,16 @@ COMMENT=	Library for import of reflowable e-book formats
 
 LICENSE=	MPL20
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string/classification.hpp:devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:devel/icu \
+		liblangtag.so:devel/liblangtag \
 		librevenge-0.0.so:textproc/librevenge
 
 OPTIONS_DEFINE=	DOCS
 
 USE_GNOME=	libxml2
 
-USES=		compiler:c++11-lang gmake gperf libtool pathfix pkgconfig \
-		tar:xz
+USES=		compiler:c++11-lib gmake gperf libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
