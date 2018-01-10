@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WebService-MusicBrainz
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-URI>=0:net/p5-URI \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
-		p5-libwww>=0:www/p5-libwww
+		p5-libwww>=0:www/p5-libwww \
+		p5-Mojolicious>=7.13:www/p5-Mojolicious
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
