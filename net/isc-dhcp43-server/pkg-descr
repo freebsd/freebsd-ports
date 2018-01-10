@@ -6,4 +6,7 @@ DHCP protocol, through a suite of DHCP tools:
   * A DHCP client
   * A DHCP relay agent
 
+Details on versioning/release information may be obtained here:
+https://www.isc.org/downloads/
+
 WWW: https://www.isc.org/products/DHCP/
