@@ -25,7 +25,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/* ${STAGEDIR}${PREFIX}/bin/
-	${CP} -R ${WRKSRC}/src/GENERATED/include/* ${STAGEDIR}${PREFIX}/include/
+	cd ${WRKSRC}/src/GENERATED/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/
 	${INSTALL_LIB} ${WRKSRC}/build/lib/* ${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.mk>
