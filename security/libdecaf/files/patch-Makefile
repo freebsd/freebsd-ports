@@ -1,4 +1,4 @@
---- Makefile.orig	2018-01-08 13:58:29 UTC
+--- Makefile.orig	2017-10-16 23:18:47 UTC
 +++ Makefile
 @@ -19,7 +19,7 @@ BUILD_IBIN = build/obj/bin
  
@@ -9,7 +9,16 @@
  CC = clang
  CXX = clang++
  else
-@@ -97,14 +97,14 @@ scan: clean
+@@ -49,8 +49,6 @@ endif
+ 
+ TODAY = $(shell date "+%Y-%m-%d")
+ 
+-ARCHFLAGS ?= -march=native
+-
+ ifeq ($(CC),clang)
+ WARNFLAGS_C += -Wgcc-compat
+ endif
+@@ -97,14 +95,14 @@ scan: clean
  
  # Internal test programs, which are not part of the final build/bin directory.
  $(BUILD_IBIN)/test: $(BUILD_OBJ)/test_decaf.o lib
@@ -26,7 +35,7 @@
  	$(LDXX) $(LDFLAGS) -o $@ $< -L$(BUILD_LIB) -ldecaf
  else
  	$(LDXX) $(LDFLAGS) -Wl,-rpath,`pwd`/$(BUILD_LIB) -o $@ $< -L$(BUILD_LIB) -ldecaf
-@@ -112,14 +112,14 @@ endif
+@@ -112,14 +110,14 @@ endif
  
  # Internal test programs, which are not part of the final build/bin directory.
  $(BUILD_IBIN)/test_ct: $(BUILD_OBJ)/test_ct.o lib
