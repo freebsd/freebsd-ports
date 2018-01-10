@@ -9,5 +9,5 @@ include/libhackrf/hackrf.h
 lib/libhackrf.a
 lib/libhackrf.so
 lib/libhackrf.so.0
-lib/libhackrf.so.0.3.0
+lib/libhackrf.so.0.4.0
 libdata/pkgconfig/libhackrf.pc

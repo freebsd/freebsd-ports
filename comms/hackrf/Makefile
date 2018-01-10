@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hackrf
-PORTVERSION=	2015.07.2
+PORTVERSION=	2017.02.1
 CATEGORIES=	comms devel hamradio science security
 
 MAINTAINER=	cederom@tlen.pl
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	mossmann
-GH_TAGNAME=	69c4997
+GH_TAGNAME=	31a37bd
 
 USES=		cmake:outsource
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
