@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	sysutils
-MASTER_SITES=	https://downloadmirror.intel.com/27337/eng/:intel \
+MASTER_SITES=	https://downloadmirror.intel.com/27431/eng/:intel \
 		LOCAL/sbruno:amd
 PKGNAMEPREFIX=	devcpu-
-DISTFILES=	microcode-20171117.tgz:intel amd-ucode-2014-12-01.tar.bz2:amd
+DISTFILES=	microcode-20180108.tgz:intel amd-ucode-2014-12-01.tar.bz2:amd
 
 MAINTAINER=	clarkjc@runbox.com
 COMMENT=	Intel and AMD CPUs microcode updates
