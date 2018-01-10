@@ -1,8 +1,9 @@
 bin/pmd2raw
 bin/pmd2svg
+bin/pmd2text
 include/libpagemaker-0.0/libpagemaker/PMDocument.h
 include/libpagemaker-0.0/libpagemaker/libpagemaker.h
 lib/libpagemaker-0.0.so
 lib/libpagemaker-0.0.so.0
-lib/libpagemaker-0.0.so.0.0.3
+lib/libpagemaker-0.0.so.0.0.4
 libdata/pkgconfig/libpagemaker-0.0.pc
