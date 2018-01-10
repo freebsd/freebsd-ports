@@ -3,6 +3,7 @@
 
 PORTNAME=	libmicrohttpd
 DISTVERSION=	0.9.58
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -20,6 +21,7 @@ USE_LDCONFIG=	yes
 CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	GNUTLS
+OPTIONS_DEFAULT=GNUTLS
 
 GNUTLS_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgnutls.so:security/gnutls
@@ -27,9 +29,5 @@ GNUTLS_CONFIGURE_WITH=	libgcrypt-prefix=${LOCALBASE} gnutls=${LOCALBASE}
 GNUTLS_CONFIGURE_ENABLE=https
 
 INFO=		libmicrohttpd libmicrohttpd-tutorial
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|bin_PROGRAMS =|noinst_PROGRAMS +=|' \
-		${WRKSRC}/src/examples/Makefile.in
 
 .include <bsd.port.mk>
