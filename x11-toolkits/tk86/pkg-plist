@@ -74,6 +74,7 @@ lib/tk%%TK_VER%%/console.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/image1.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/image2.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/earth.gif
+%%DEMOS%%lib/tk%%TK_VER%%/demos/images/earthmenu.png
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/earthris.gif
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/flagdown.xbm
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/flagup.xbm
