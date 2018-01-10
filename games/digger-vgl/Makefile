@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/digger ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}/var/games/digger
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/digger.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/digger.txt ${STAGEDIR}${DOCSDIR}
 .if ${PORT_OPTIONS:MSOUND}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Use \"digger /A\" command to run Digger with sound enabled."

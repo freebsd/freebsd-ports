@@ -165,9 +165,8 @@ do-install:
 		${TAR} xf - -C ${STAGEDIR}${GNU_CONFIGURE_PREFIX}
 	@${ECHO_MSG} "Install minimal documentation..."
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/slau591${DOC_VERSION}.pdf \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau591${DOC_VERSION}.pdf \
 		${STAGEDIR}${DOCSDIR}/slau591c.pdf
-	${INSTALL_MAN} ${FILESDIR}/watchdog.txt \
-		${STAGEDIR}${DOCSDIR}/watchdog.txt
+	${INSTALL_DATA} ${FILESDIR}/watchdog.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

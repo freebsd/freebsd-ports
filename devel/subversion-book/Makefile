@@ -42,7 +42,7 @@ do-install-HTML_SINGLE-on:
 	(cd ${STAGEDIR}${DOCSDIR}/svn-book-html && ${LN} -s svn-book.html index.html)
 
 do-install-PDF-on:
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${PDF_DISTFILES} \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PDF_DISTFILES} \
 		${STAGEDIR}${DOCSDIR}/svn-book.pdf
 
 .include <bsd.port.mk>

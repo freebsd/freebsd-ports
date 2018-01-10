@@ -49,7 +49,7 @@ do-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/remotebox.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/changelog.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/remotebox.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/changelog.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -112,7 +112,7 @@ post-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5/$${i}; \
 	done; \
 	for i in $${pdf_files}; do \
-		${INSTALL_MAN} $${pdf} ${PREFIX}/share/doc/krb5/$${i}; \
+		${INSTALL_DATA} $${pdf} ${PREFIX}/share/doc/krb5/$${i}; \
 		${ECHO_CMD} share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done
 .endif
@@ -123,7 +123,7 @@ post-install:
 		${MKDIR} ${PREFIX}/share/doc/krb5/$${i}; \
 	done; \
 	for i in $${html_files}; do \
-		${INSTALL_MAN} $${i} ${PREFIX}/share/doc/krb5/$${i}; \
+		${INSTALL_DATA} $${i} ${PREFIX}/share/doc/krb5/$${i}; \
 		${ECHO_CMD} share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done
 .endif

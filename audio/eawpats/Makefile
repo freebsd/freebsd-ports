@@ -38,10 +38,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${TIMIDITY_DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/linuxconfig/timidity.cfg ${STAGEDIR}${TIMIDITY_DATADIR}/timidity.cfg-eawpats
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/*.txt ${WRKSRC}/*.hlp ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${WRKSRC}/*.hlp ${STAGEDIR}${DOCSDIR}
 .for subdir in ${DOC_SUBDIRS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/${subdir}
-	${INSTALL_MAN} ${WRKSRC}/${subdir}/*.txt ${STAGEDIR}${DOCSDIR}/${subdir}
+	${INSTALL_DATA} ${WRKSRC}/${subdir}/*.txt ${STAGEDIR}${DOCSDIR}/${subdir}
 .endfor
 
 .include <bsd.port.mk>
