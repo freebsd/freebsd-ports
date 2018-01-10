@@ -42,7 +42,7 @@ microcode_update_prepare()
 
 microcode_update_start()
 {
-	echo "Updating cpucodes..."
+	echo "Updating CPU Microcode..."
 	if [ "${microcode_cpus}" = "ALL" ]; then
 		ncpu=`/sbin/sysctl -n hw.ncpu`
 		cpus=`jot ${ncpu} 0`;
@@ -51,9 +51,19 @@ microcode_update_start()
 	fi
 	for i in ${cpus}; do
 		${CMT} -u ${microcode_update_flags} \
-		    -d "${microcode_update_datadir}" /dev/cpuctl${i} || \
-		    (echo "Failed." && exit 1)
+                    -d "${microcode_update_datadir}" /dev/cpuctl${i} 2>&1 | \
+                    logger -p daemon.notice -t microcode_update || \
+		    (echo "Microcode Update Failed." && exit 1)
 	done
+	if [ "${microcode_cpus}" = "ALL" ]; then
+		for i in ${cpus}; do
+			${CMT} -e /dev/cpuctl${i} >/dev/null 2>&1
+			if [ $? -ne 0 ]; then
+				echo "Re-evalutation of CPU flags Failed."
+				exit 1
+			fi
+		done
+	fi
 	echo "Done."
 }
 
