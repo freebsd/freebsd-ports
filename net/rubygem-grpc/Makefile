@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grpc
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -30,9 +30,11 @@ USES=		gem gmake pkgconfig
 post-extract:
 	@${RM} -r ${WRKSRC}/include ${WRKSRC}/third_party ${WRKSRC}/src/boringssl \
 		${WRKSRC}/src/core ${WRKSRC}/Makefile ${WRKSRC}/.yardopts ${WRKSRC}/etc
-	@${CP} ${FILESDIR}/grpc.gemspec ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/src/ruby/lib/grpc.rb
+	@${REINPLACE_CMD} -E '/s\.files = /s;, "(Makefile|etc|include|third_party|src/boringssl|src/core)[^"]*"\.freeze;;g' \
+		${WRKSRC}/grpc.gemspec
+	@${REINPLACE_CMD} -e '/s\.files = /s;"\.yardopts"\.freeze, ;;' ${WRKSRC}/grpc.gemspec
 
 .include <bsd.port.mk>
