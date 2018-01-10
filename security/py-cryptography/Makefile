@@ -26,11 +26,19 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.9.0:devel/py-pytest@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso8601>0:devel/py-iso8601@${FLAVOR}
 
 # Python 2.7, 3.4-3.6
-USES=		python ssl
+USES=		compiler:env python ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
+post-patch:
+	@${REINPLACE_CMD} -e 's|"-Wno-error=sign-conversion"||' \
+		${WRKSRC}/src/_cffi_src/build_openssl.py
+.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cryptography/hazmat/bindings/*.so
@@ -38,4 +46,4 @@ post-install:
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
