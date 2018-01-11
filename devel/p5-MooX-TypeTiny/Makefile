@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Optimized type checks for Moo + Type::Tiny
 
 LICENSE=	ART10 GPLv1+
