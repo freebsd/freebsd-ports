@@ -19,16 +19,17 @@ MAKE_ARGS=	LIBUTIL_OBJS=ssl_writev.o \
 
 PLIST_FILES=	bin/httperf \
 		man/man1/httperf.1.gz
-
-OPTIONS_DEFINE=	DOCS
 PORTDOCS=	ChangeLog NEWS README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

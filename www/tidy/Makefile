@@ -25,10 +25,11 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tidy ${STAGEDIR}${PREFIX}/bin/tidy4
-	${INSTALL_MAN}	${WRKSRC}/man_page.txt	${STAGEDIR}${PREFIX}/man/man1/tidy4.1
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for docfile in ${DOCFILES}
-	${INSTALL_MAN} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}/
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/man_page.txt \
+		${STAGEDIR}${PREFIX}/man/man1/tidy4.1
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
