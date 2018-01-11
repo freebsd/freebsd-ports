@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://launchpadlibrarian.net/69906918/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCR system developed and open sourced by Cognitive technologies
 
 LICENSE=	BSD3CLAUSE
