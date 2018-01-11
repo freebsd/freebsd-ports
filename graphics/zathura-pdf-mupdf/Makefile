@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-pdf-mupdf
-PORTVERSION=	0.3.1
-PORTREVISION=	5
+PORTVERSION=	0.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-mupdf/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/
