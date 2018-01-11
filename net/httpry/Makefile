@@ -33,7 +33,7 @@ do-install:
 		${COPYTREE_BIN} \* ${STAGEDIR}${PREFIX}/bin/httpry-scripts "! -name *.bak")
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/perl-tools ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/format-string ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/perl-tools ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/format-string ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

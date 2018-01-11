@@ -35,7 +35,7 @@ do-install:
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in LICENSE algorithms arguments feedback files introduction todo
-	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

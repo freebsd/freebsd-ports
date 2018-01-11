@@ -32,7 +32,7 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}/README.main
+	${INSTALL_DATA} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}/README.main
 
 .include <bsd.port.mk>

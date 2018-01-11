@@ -29,7 +29,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in AUTHORS CONTRIBUTING.md LICENSE README.md
-	${INSTALL_MAN} ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/${x} \
+	${INSTALL_DATA} ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/${x} \
 		${STAGEDIR}${DOCSDIR}
 .endfor
 

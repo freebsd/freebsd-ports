@@ -36,8 +36,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} boost-build.jam bootstrap.jam \
 		build-system.jam site-config.jam user-config.jam \
 		${STAGEDIR}${DATADIR})
-	${INSTALL_MAN} ${WRKSRC}/boost.png \
-		${STAGEDIR}${PREFIX}/share/doc/boost.png
+	${INSTALL_DATA} ${WRKSRC}/boost.png ${STAGEDIR}${PREFIX}/share/doc
 	(cd ${WRKSRC}/doc && ${RM} -r Jamfile.v2 project-root.jam \
 		html/userman_HTML.manifest src)
 

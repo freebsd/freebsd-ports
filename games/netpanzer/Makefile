@@ -34,8 +34,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/netpanzer.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/netpanzer.png ${WRKSRC}/netpanzer.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_MAN} COPYING ChangeLog README RELNOTES TODO ${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/docs && ${INSTALL_MAN} Doxyfile code-notes.txt coding.txt serverhowto.html tipofday.txt ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} COPYING ChangeLog README RELNOTES TODO ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/docs && ${INSTALL_DATA} Doxyfile code-notes.txt coding.txt serverhowto.html tipofday.txt ${STAGEDIR}${DOCSDIR})
 
 do-fetch-svn:
 	svn export svn://svn.berlios.de/${PORTNAME}/tags/${PORTNAME}/${PORTVERSION} ${PORTNAME}-${PORTVERSION}
