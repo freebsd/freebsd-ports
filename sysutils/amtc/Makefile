@@ -9,7 +9,7 @@ COMMENT=	Threaded Intel AMT/vPro mass management tool
 
 LICENSE=	CC-BY-3.0
 
-BUILD_DEPENDS=	xxd:editors/vim-lite
+BUILD_DEPENDS=	xxd:editors/vim-console
 LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt \
 		libcurl.so:ftp/curl
 

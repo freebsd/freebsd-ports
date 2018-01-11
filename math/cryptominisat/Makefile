@@ -12,7 +12,7 @@ LICENSE=	MIT LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE-SCALMC
 
-BUILD_DEPENDS=	xxd:editors/vim-lite # for xxd tool
+BUILD_DEPENDS=	xxd:editors/vim-console # for xxd tool
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
 BROKEN_powerpc64=	fails to compile: main.cpp: undefined reference to boost::program_options::abstract_variables_map::operator[]

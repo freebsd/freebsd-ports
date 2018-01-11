@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake \
 		bison:devel/bison \
-		xxd:editors/vim-lite
+		xxd:editors/vim-console
 LIB_DEPENDS=	libev.so:devel/libev \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
