@@ -31,6 +31,8 @@ USE_PYTHON=	autoplist distutils concurrent optsuffix
 
 PORTDOCS=	tutorial.pdf
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${PGSQL_VER:M9\.[12345]}
@@ -48,9 +50,12 @@ post-patch:
 	${SED} -i -e "s@%%PGUSER%%@${PGUSER}@" ${WRKSRC}/doc/barman.5
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/barman.conf ${STAGEDIR}${ETCDIR}/barman.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/doc/barman.conf \
+		${STAGEDIR}${ETCDIR}/barman.conf.sample
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
