@@ -34,5 +34,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune
 	${INSTALL_DATA} ${WRKSRC}/bible* ${STAGEDIR}${PREFIX}/share/games/fortune
 
-
 .include <bsd.port.mk>

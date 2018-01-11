@@ -19,8 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pipelka
 GH_TAGNAME=	ea0a119
 
-USES=		compiler:c++11-lang autoreconf desktop-file-utils gettext gmake \
-		libtool localbase pkgconfig
+USES=		compiler:c++11-lang autoreconf desktop-file-utils gettext \
+		gmake libtool localbase pkgconfig
 USE_CXXSTD=	c++11
 USE_GNOME=	gconfmm26 gtkmm24 intltool
 GCONF_SCHEMAS=	aeskulap.schemas
@@ -30,6 +30,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
-
 
 .include <bsd.port.mk>

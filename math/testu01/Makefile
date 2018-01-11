@@ -41,10 +41,8 @@ post-patch-DOCS-off:
 	@${FIND} -X ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} \
 	-e '/^install-data-am\: /s/install-docDATA//'
 
-
 post-patch-EXAMPLES-off:
 	@${REINPLACE_CMD} -e  '/^SUBDIRS \=/s/ examples / /' ${WRKSRC}/Makefile.in
-
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

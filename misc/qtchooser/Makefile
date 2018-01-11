@@ -43,5 +43,4 @@ post-install:
 # Create the default profile.
 	cd ${STAGEDIR}/${QT_QTCHOOSERDIR} && ${LN} -s qt5.conf default.conf
 
-
 .include <bsd.port.mk>
