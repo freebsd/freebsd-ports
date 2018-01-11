@@ -1,0 +1,9 @@
+--- man/CMakeLists.txt.orig	2017-12-03 17:03:49 UTC
++++ man/CMakeLists.txt
+@@ -1,4 +1,5 @@
++include(GNUInstallDirs)
+ set(MAN_PAGES_1 polybar.1)
+ INSTALL(FILES ${MAN_PAGES_1}
+-  DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1
++  DESTINATION ${CMAKE_INSTALL_MANDIR}/man1
+   COMPONENT doc)

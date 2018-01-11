@@ -1,0 +1,29 @@
+Polybar was originally built with Linux in mind, so certain modules do
+not function in FreeBSD.
+
+Working modules:
+- cpu
+- date
+- i3
+- memory
+- script
+- text
+- xkeyboard
+- xwindow
+
+Broken modules:
+- filesystem
+- network (requires wireless_tools)
+- temperature (requires /sys/class/thermal/* in sysfs)
+- volume (requires full alsa, not a wrapper)
+- menu (does not show up)
+- xbacklight
+- xworkspaces
+
+Not tested:
+- backlight
+- battery
+- bspwm
+- github
+- ipc
+- mpd
