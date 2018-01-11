@@ -243,7 +243,7 @@
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
-    SUBDIR += vim-lite
+    SUBDIR += vim-console
     SUBDIR += vim-tiny
     SUBDIR += web-mode
     SUBDIR += with-editor

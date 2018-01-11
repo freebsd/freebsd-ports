@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180111
+  AFFECTS: users of editors/vim-lite
+  AUTHOR: adamw@FreeBSD.org
+
+  The vim-lite port has been renamed to vim-console, because it isn't
+  actually any lighter. All three vim packages are built with
+  --enable-features=huge. pkg should handle the change transparently,
+  but portmaster users might need to run this command:
+
+  	portmaster -o editors/vim-console editors/vim-lite
+
+  If the switch doesn't happen automatically for you, just delete the
+  vim-lite package and install vim-console.
+
 20180109
   AFFECTS: users of www/qt5-webengine
   AUTHOR: kde@FreeBSD.org
