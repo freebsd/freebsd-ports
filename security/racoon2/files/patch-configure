@@ -1,0 +1,11 @@
+--- configure.orig	2008-07-06 02:41:34 UTC
++++ configure
+@@ -785,7 +785,7 @@ if test x"$enable_startup_scripts" = xyes; then
+ 	netbsd*1.[56]*|netbsd*[2-9].*)
+ 		startup_scripts=rc-d
+ 		;;
+-	freebsd[5-9].*)
++	freebsd[5-9].*|freebsd[1-4][0-9].*)
+ 		startup_scripts=rc-d
+ 		;;
+ 	*)

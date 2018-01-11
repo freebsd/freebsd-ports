@@ -14,7 +14,6 @@ USES=		perl5 tar:tgz ssl
 CONFIGURE_ARGS+=	--disable-kinkd
 PLIST_SUB+=	KINK="@comment "
 
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${PREFIX}
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/racoon2
