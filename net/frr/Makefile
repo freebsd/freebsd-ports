@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	gawk:lang/gawk
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
+RESTRICTED=	possible GPL violation of Quagga project
+
 CONFLICTS=	openbgpd openospfd zebra quagga-esr quagga
 
 USE_GITHUB=	yes
