@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x86info
-DISTVERSION=	1.31snap01
+DISTVERSION=	1.31snap02
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kernelslacker
-GH_TAGNAME=	636fbaa
+GH_TAGNAME=	b7d0839
 
 USES=		gmake pkgconfig python:build
 
