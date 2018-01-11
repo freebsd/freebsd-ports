@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 USE_CABAL=	QuickCheck>=2
 
 XMLDOCS=	doc/alex:html
-USE_AUTOTOOLS=	autoconf:env
+XMLDOCS_CONF=	yes
 
 STANDALONE=	yes
 EXECUTABLE=	alex
