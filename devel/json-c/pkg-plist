@@ -8,13 +8,14 @@ include/json-c/json_inttypes.h
 include/json-c/json_object.h
 include/json-c/json_object_iterator.h
 include/json-c/json_object_private.h
+include/json-c/json_pointer.h
 include/json-c/json_tokener.h
 include/json-c/json_util.h
+include/json-c/json_visit.h
 include/json-c/linkhash.h
 include/json-c/printbuf.h
-include/json-c/random_seed.h
 lib/libjson-c.a
 lib/libjson-c.so
-lib/libjson-c.so.2
-lib/libjson-c.so.2.0.2
+lib/libjson-c.so.3
+lib/libjson-c.so.3.0.1
 libdata/pkgconfig/json-c.pc
