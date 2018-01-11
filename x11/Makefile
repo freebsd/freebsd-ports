@@ -265,6 +265,7 @@
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python
     SUBDIR += plasma-scriptengine-ruby
+    SUBDIR += polybar
     SUBDIR += presentproto
     SUBDIR += printproto
     SUBDIR += printscreen

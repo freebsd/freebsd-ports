@@ -1,0 +1,23 @@
+The main purpose of Polybar is to help users create awesome status
+bars.  It has built-in functionality to display information about the
+most commonly used services.  Some of the services included so far:
+
+    Systray icons
+    Window title
+    Playback controls and status display for MPD using libmpdclient
+    ALSA volume controls
+    Workspace and desktop panel for bspwm and i3
+    Workspace module for EWMH compliant window managers
+    Keyboard layout and indicator status
+    CPU and memory load indicator
+    Battery display
+    Network connection details
+    Backlight level
+    Date and time label
+    Time-based shell script execution
+    Command output tailing
+    User-defined menu tree
+    Inter-process messaging
+    And more...
+
+WWW: https://github.com/jaagr/polybar
