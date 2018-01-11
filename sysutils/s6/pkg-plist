@@ -35,6 +35,7 @@ bin/s6-ipcserver-socketbinder
 bin/s6-ipcserverd
 bin/s6-log
 bin/s6-mkfifodir
+bin/s6-notifyoncheck
 bin/s6-setlock
 bin/s6-setsid
 bin/s6-setuidgid
@@ -68,9 +69,9 @@ include/s6/s6-supervise.h
 include/s6/s6.h
 include/s6/s6lock.h
 lib/libs6.so
-lib/libs6.so.2.4
-lib/libs6.so.2.4.0
-lib/libs6.so.2.4.0.0
+lib/libs6.so.2.7
+lib/libs6.so.2.7.0
+lib/libs6.so.2.7.0.0
 lib/s6/libs6.a
 libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -118,6 +119,7 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-ipcserverd.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-log.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-mkfifodir.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-notifyoncheck.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setlock.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setsid.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setuidgid.html
