@@ -3,7 +3,7 @@
 
 PORTNAME=	catch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
+DISTVERSION=	2.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -26,13 +26,17 @@ REPORTERS=	catch_reporter_automake.hpp \
 		catch_reporter_bases.cpp \
 		catch_reporter_bases.hpp \
 		catch_reporter_compact.cpp \
+		catch_reporter_compact.h \
 		catch_reporter_console.cpp \
-	       	catch_reporter_junit.cpp \
+		catch_reporter_console.h \
+		catch_reporter_junit.cpp \
+		catch_reporter_junit.h \
 		catch_reporter_multi.cpp \
 		catch_reporter_multi.h \
 		catch_reporter_tap.hpp \
 		catch_reporter_teamcity.hpp \
-		catch_reporter_xml.cpp
+		catch_reporter_xml.cpp \
+		catch_reporter_xml.h
 
 PLIST_FILES=	include/catch.hpp \
 		${REPORTERS:S/^/include\//g}
