@@ -156,7 +156,7 @@ SUB_LIST+=	PG_GROUP=${PG_GROUP} \
 
 .if !defined(SLAVE_ONLY)
 .  if ( defined(SERVER_ONLY) && ${PORT_OPTIONS:MICU} ) || make(makesum)
-USE_AUTOTOOLS=	autoconf
+USES+=		autoreconf
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	${ICU_PATCHFILE}:icu
@@ -237,8 +237,8 @@ PLIST_SUB+=	PG_USER=${PG_USER}
 
 post-patch:
 .  if defined(SERVER_ONLY) && ${PORT_OPTIONS:MICU}
-	@${REINPLACE_CMD} -E -e \
-		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
+	@${REINPLACE_CMD} \
+		-e '/m4_PACKAGE_VERSION/s/\[2\.6[0-9]\]/m4_defn([m4_PACKAGE_VERSION])/' \
 		-e '/icu/s/_57//' \
 		${WRKSRC}/configure.in
 .  endif
