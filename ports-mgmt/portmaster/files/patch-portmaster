@@ -135,16 +135,27 @@
  			fi
  
  			cd ${1}/${portdir%/*}
-@@ -1665,7 +1667,7 @@ find_dl_distfiles () {
+@@ -1663,14 +1665,16 @@ find_dl_distfiles () {
+ 	if [ -s "${pdb}/${upg_port}/distfiles" ]; then
+ 		dist_list="${pdb}/${upg_port}/distfiles"
  	else
++		local d=$(dir_part $1)
  		# Old method, for now
- 		if pm_cd $pd/$1; then
+-		if pm_cd $pd/$1; then
 -			dist_list=`pm_make_b -V OPTIONSFILE`
++		if pm_cd $pd/$d; then
 +			dist_list=`pm_make_b -V OPTIONS_FILE`
  			dist_list="${dist_list%options}distfiles"
  		else
  			# The port might have moved, etc.; so take a stab at it,
-@@ -1803,6 +1805,7 @@ set_distfiles_and_subdir () {
+ 			# but do not take a chance with a possibly wrong answer
+-			dist_list="$port_dbdir/${1##*/}/distfiles"
++			local dd=$(echo "$d" | tr "/" "_")
++			dist_list="$port_dbdir/${dd##*/}/distfiles"
+ 		fi
+ 		[ -s "$dist_list" ] || { unset dist_list ; return 0; }
+ 	fi
+@@ -1803,6 +1807,7 @@ set_distfiles_and_subdir () {
  }
  
  delete_stale_distfiles () {
@@ -152,7 +163,7 @@
  	# Global: distfiles_checked
  	local file answer
  
-@@ -1849,6 +1852,7 @@ delete_stale_distfiles () {
+@@ -1849,6 +1854,7 @@ delete_stale_distfiles () {
  }
  
  delete_all_distfiles () {
@@ -160,7 +171,7 @@
  	# Global: delete_all DISTDIR
  	local origin rc delete_current
  
-@@ -2264,12 +2268,14 @@ make_dep_list () {
+@@ -2264,12 +2270,14 @@ make_dep_list () {
  
  	for dep_type in $*; do
  		case $dep_type in
@@ -180,7 +191,7 @@
  		*)
  			fail "make_dep_list: Unsupported option '$dep_type'"
  		esac
-@@ -2404,16 +2410,16 @@ dependency_check () {
+@@ -2404,16 +2412,16 @@ dependency_check () {
  			case "$CUR_DEPS" in *:${origin}:*) continue ;; esac
  
  		if [ -z "$PM_INDEX_ONLY" ]; then
@@ -202,7 +213,7 @@
  				fi
  			else
  				fail "Cannot cd to $dir"
-@@ -3104,7 +3110,6 @@ if [ -z "$PM_INDEX_ONLY" ] && ! pm_isdir_pd "$portdir"
+@@ -3104,7 +3112,6 @@ if [ -z "$PM_INDEX_ONLY" ] && ! pm_isdir_pd "$portdir"
  	[ -n "$moved_npd" ] || no_valid_port
  	flavor=$(flavor_part "$moved_npd")
  	export_flavor $flavor
@@ -210,7 +221,7 @@
  	pm_isdir_pd "$moved_npd" || no_valid_port
  
  	[ "$$" -eq "$PM_PARENT_PID" ] && parent_exit
-@@ -3117,7 +3122,7 @@ iport_from_pkgname () {
+@@ -3117,7 +3124,7 @@ iport_from_pkgname () {
  
  	dir=$(dir_part $1)
  	flavor=$(flavor_part $1)
@@ -219,7 +230,7 @@
  	pkg info -x "^${pkgname%-*}"'-[^-]*' 2>/dev/null
  }
  
-@@ -3302,7 +3307,7 @@ pm_cd_pd $portdir
+@@ -3302,7 +3309,7 @@ pm_cd_pd $portdir
  
  if [ -n "$PM_BUILD_ONLY_LIST" ]; then
  	case "$build_only_dl_g" in
@@ -228,7 +239,7 @@
  		[ -n "$PM_PACKAGES_BUILD" ] && PM_PACKAGES_BUILD=doing_build_only_dep
  		[ -n "$PM_DEL_BUILD_ONLY" ] && PM_DEL_BUILD_ONLY=doing_build_only_dep ;;
  	*)	[ -n "$PM_PACKAGES_BUILD" ] && PM_PACKAGES_BUILD=pmp_build
-@@ -3402,31 +3407,19 @@ fetch_package () {
+@@ -3402,31 +3409,19 @@ fetch_package () {
  }
  	if [ -z "$PACKAGESITE" -a -z "$PM_PACKAGES_LOCAL" ]; then
  		release=`uname -r`
@@ -265,7 +276,7 @@
  
  	echo "===>>> Checking package repository for latest available version"
  
-@@ -3437,11 +3430,12 @@ fetch_package () {
+@@ -3437,11 +3432,12 @@ fetch_package () {
  			latest_pv=${local_package##*/}
  		fi
  		if [ -z "$latest_pv" -a -z "$PM_INDEX_ONLY" ]; then
@@ -283,7 +294,7 @@
  				latest_pv=${latest_pv##*/}
  			else
  				pm_v "===>>> No local package for ${new_port}, attempting fetch"
-@@ -3753,6 +3747,7 @@ if [ -z "$use_package" ]; then
+@@ -3753,6 +3749,7 @@ if [ -z "$use_package" ]; then
  	unset np_orphan
  	# Defining NO_DEPENDS ensures that we will control the installation
  	# of the depends, not bsd.port.mk.
@@ -291,7 +302,7 @@
  	eval pm_make_s -DNO_DEPENDS install $port_log_args || install_failed $new_port
  else
  	[ -n "$local_package" ] && ppd=${LOCAL_PACKAGEDIR}/All
-@@ -3850,7 +3845,7 @@ fi
+@@ -3850,7 +3847,7 @@ fi
  if [ -n "$MAKE_PACKAGE" ]; then
  	if [ -z "$use_package" ]; then
  		echo "===>>> Creating a package for new version $new_port"
@@ -300,7 +311,7 @@
  		echo "	===>>> Package saved to $PACKAGES/All" ; echo ''
  	else
  		pm_pkg_create $PACKAGES $new_port
-@@ -3858,6 +3853,7 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3858,6 +3855,7 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
