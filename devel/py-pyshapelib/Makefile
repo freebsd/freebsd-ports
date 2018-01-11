@@ -33,7 +33,7 @@ post-extract:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
 
 post-install-EXAMPLES-on:

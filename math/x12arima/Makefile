@@ -31,7 +31,7 @@ PORTDOCS=	ReleaseNotesVersion03.pdf qref03unix.pdf x12adocV03.pdf
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/docs && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
 .endif
+
 .include <bsd.port.mk>

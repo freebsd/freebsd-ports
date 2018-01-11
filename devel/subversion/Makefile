@@ -164,7 +164,7 @@ post-install:	${MKREPOS_TARGET}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-STATIC-off:
 	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so

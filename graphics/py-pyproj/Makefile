@@ -32,7 +32,7 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS1:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS1:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

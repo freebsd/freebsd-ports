@@ -122,7 +122,7 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 .for i in AUTHORS ChangeLog PORTS
-	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
 post-install-EXAMPLES-on:

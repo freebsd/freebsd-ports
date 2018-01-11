@@ -39,8 +39,8 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MV} ${STAGEDIR}${ETCDIR}/tunnel.conf.default ${STAGEDIR}${ETCDIR}/tunnel.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/server.README
-	${INSTALL_MAN} ${WRKSRC}/LISEZ-MOI ${STAGEDIR}${DOCSDIR}/server.LISEZ-MOI
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/server.README
+	${INSTALL_DATA} ${WRKSRC}/LISEZ-MOI ${STAGEDIR}${DOCSDIR}/server.LISEZ-MOI
 	${INSTALL_DATA} ${WRKSRC}/server/users.new ${STAGEDIR}${ETCDIR}/users.sample
 
 .include <bsd.port.mk>

@@ -37,7 +37,7 @@ do-install:
 .endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

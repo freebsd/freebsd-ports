@@ -44,6 +44,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${DISTDIR} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	@(cd ${DISTDIR} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

@@ -165,7 +165,7 @@ do-install:
 .endif
 .if ${PORT_OPTIONS:MLDAP}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${LDAP_README} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${LDAP_README} ${STAGEDIR}${DOCSDIR}
 .endif
 .endif
 .if ${SUBSYS} == client

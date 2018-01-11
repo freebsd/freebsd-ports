@@ -19,6 +19,6 @@ USES=	fortran cmake
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

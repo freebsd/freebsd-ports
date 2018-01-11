@@ -40,9 +40,9 @@ post-install:
 	${LN} -s ${DISTNAME} ${STAGEDIR}${PREFIX}/lib/iwidgets
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/iwidgets.ps ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/iwidgets.ps ${STAGEDIR}${DOCSDIR}
 .for f in CHANGES ChangeLog README
-	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

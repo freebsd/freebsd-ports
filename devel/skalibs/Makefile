@@ -29,7 +29,7 @@ post-install-DOCS-on:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .for d in libbiguint libdatastruct librandom libstdcrypto libstddjb libunixonacid
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
-	cd ${WRKSRC} && ${INSTALL_MAN} doc/${d}/*.html ${STAGEDIR}${DOCSDIR}/${d}
+	cd ${WRKSRC} && ${INSTALL_DATA} doc/${d}/*.html ${STAGEDIR}${DOCSDIR}/${d}
 .endfor
 
 .include <bsd.port.mk>
