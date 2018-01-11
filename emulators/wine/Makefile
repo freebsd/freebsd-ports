@@ -33,8 +33,10 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-opencl \
 		--without-osmesa \
 		--with-oss \
+		--without-pulse \
 		--without-sane \
-		--without-tiff
+		--without-tiff \
+		--without-udev
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:xz
