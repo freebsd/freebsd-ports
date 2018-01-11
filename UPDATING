@@ -11,8 +11,8 @@ you update your ports collection, before attempting any port upgrades.
 
   The vim-lite port has been renamed to vim-console, because it isn't
   actually any lighter. All three vim packages are built with
-  --enable-features=huge. pkg should handle the change transparently,
-  but portmaster users might need to run this command:
+  --enable-features=huge. Portmaster users will need to run this
+  command:
 
   	portmaster -o editors/vim-console editors/vim-lite
 
