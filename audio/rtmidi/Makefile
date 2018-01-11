@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rtmidi
-DISTVERSION=	2.1.1-38
-DISTVERSIONSUFFIX=	-g907a94c
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.0.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@rawbw.com
@@ -13,11 +13,11 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		autoreconf localbase libtool
+USES=		autoreconf libtool localbase
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	thestk
-CONFIGURE_ARGS=	--with-jack
+CONFIGURE_ARGS=	--with-jack --disable-static
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
