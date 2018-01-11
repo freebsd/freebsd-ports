@@ -1,0 +1,16 @@
+--- Makefile.orig	2016-12-09 02:53:39 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ CFLAGS+=-Wall
+-LIBS=-lcurses
++LIBS=	-lncurses
+ 
+ all:	ascii_invaders
+ 
+@@ -7,5 +7,5 @@ clean:
+ 	rm -f invaders.o ascii_invaders
+ 
+ ascii_invaders: invaders.o
+-	$(CC) $(CFLAGS) $(LIBS) invaders.o -o ascii_invaders
++	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) invaders.o -o ascii_invaders
+ 
