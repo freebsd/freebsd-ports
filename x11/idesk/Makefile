@@ -14,7 +14,6 @@ LIB_DEPENDS=	libXft.so:x11-fonts/libXft \
 		libImlib2.so:graphics/imlib2
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf
 USES=		gmake pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	SHAPE SN DOCS
