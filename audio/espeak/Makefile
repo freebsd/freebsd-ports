@@ -13,6 +13,15 @@ COMMENT=	Software speech synthesizer
 
 LICENSE=	GPLv3
 
+CONFLICTS=	speak-1.[0-9]
+
+USES=		gmake zip
+USE_LDCONFIG=	yes
+CXXFLAGS+=	-I${LOCALBASE}/include
+
+BUILD_WRKSRC=	${WRKSRC}/src
+INSTALL_WRKSRC=	${WRKSRC}/src
+
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=	PORTAUDIO
 OPTIONS_RADIO=	AUDIO_SYSTEM
@@ -34,25 +43,15 @@ PULSEAUDIO_MAKE_ENV=	AUDIO="pulseaudio"
 PORTAUDIO_MAKE_ENV=	AUDIO="portaudio"
 RUNTIME_MAKE_ENV=	AUDIO="runtime"
 
-CONFLICTS=	speak-1.[0-9]
-
-CXXFLAGS+=	-I${LOCALBASE}/include
-USES=		gmake zip
-USE_LDCONFIG=	yes
-
-WRKSRC=	${WRKDIR}/${DISTNAME}
-BUILD_WRKSRC=	${WRKSRC}/src
-INSTALL_WRKSRC=	${WRKSRC}/src
-
-REINPLACE_FILES=	Makefile speech.h
-REINPLACE_ARGS=	-i.bak -e "s|%%DATADIR%%|${DATADIR}|g"
-
-BROKEN_sparc64=	Does not compile on sparc64
-
+.include <bsd.port.pre.mk>
 
 post-patch:
-	cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} ${REINPLACE_FILES}
-	${MV} ${WRKSRC}/src/portaudio19.h ${WRKSRC}/src/portaudio.h
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
+		${WRKSRC}/src/Makefile ${WRKSRC}/src/speech.h
+	@${MV} ${WRKSRC}/src/portaudio19.h ${WRKSRC}/src/portaudio.h
+.if ${ARCH} == sparc64	# cf. http://seclists.org/tcpdump/2012/q4/112
+	@${REINPLACE_CMD} -e 's|-fpic|-fPIC|' ${WRKSRC}/src/Makefile
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -60,4 +59,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libespeak.so*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
