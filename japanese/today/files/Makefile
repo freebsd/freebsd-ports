@@ -19,7 +19,6 @@ OBJSC1 = config.o getfile.o getsb.o kyureki2.o \
   misc2.o rdcalend.o schedule2.o
 OBJS_CAL = calendar.o $(OBJSC1)
 
-
 all: today calendar dayinfo
 
 install: today calendar dayinfo
@@ -43,7 +42,6 @@ dayinfo: dayinfo.c
 
 clean:
 	rm -f *.o core dayinfo calendar today
-
 
 birthday.o: birthday.c $(HFILES)
 calendar.o: calendar.c $(HFILES) $(OBJSC1)

@@ -37,7 +37,6 @@ CDEV_MAJOR?=	202
 DEVNAME= 	${KMOD}
 SRCS=		rtc.c rtc_linux.c vnode_if.h
 
-
 INCLUDE=	-I${.CURDIR} -I${SYS}
 
 CFLAGS+=	${INCLUDE} -DCDEV_MAJOR_=${CDEV_MAJOR}

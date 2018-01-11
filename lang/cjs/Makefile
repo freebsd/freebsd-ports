@@ -29,5 +29,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=--enable-compile-warnings=no
 
-
 .include <bsd.port.mk>

@@ -14,7 +14,6 @@ COMMENT=	Phonon 4 transitional library for Qt 5
 
 LICENSE=	LGPL21
 
-
 USES=		cmake:outsource kde:5 pathfix tar:xz
 USE_KDE=	ecm
 USE_QT5=	core dbus gui opengl widgets \

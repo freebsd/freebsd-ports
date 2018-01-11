@@ -38,7 +38,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${EXAMPLEFILES}
