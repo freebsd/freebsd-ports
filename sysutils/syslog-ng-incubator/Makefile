@@ -27,7 +27,6 @@ SHEBANG_FILES=	scl/elasticsearch/es-bridge
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	autoconf:env
 
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/syslog-ng/ --disable-java
 
