@@ -6,7 +6,7 @@ PORTVERSION=	0.7.0
 CATEGORIES=	editors rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for neovim
 
 LICENSE=	MIT
