@@ -5,7 +5,7 @@ PKGNAMESUFFIX=	-tiny
 
 COMMENT=	Improved version of the vi editor (vim binary only)
 
-CONFLICTS_INSTALL=	vim vim-lite
+CONFLICTS_INSTALL=	vim vim-console
 
 TINY=		yes
 MASTERDIR=	${.CURDIR}/../vim
