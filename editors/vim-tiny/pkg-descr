@@ -9,7 +9,7 @@ configuration files.
 This is the "tiny" version, which is console-only and contains ONLY the vim
 binary. It contains no help files, syntax files, or any other runtime files,
 and is designed only for minimal installs. You almost always want the vim
-or vim-lite package instead.
+or vim-console package instead.
 
 WWW: http://www.vim.org/
 WWW: https://github.com/vim/vim
