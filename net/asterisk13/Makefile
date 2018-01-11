@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.18.5
-PORTREVISION=	1
+PORTVERSION=	13.19.0
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
+MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
 			asterisk/old-releases/ \
 			sounds/releases/:g729
@@ -130,7 +129,9 @@ DAHDI_LIB_DEPENDS=	libpri.so:misc/libpri \
 			libtonezone.so:misc/dahdi
 
 EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
-EXCHANGE_LIB_DEPENDS=	libneon.so:www/neon
+EXCHANGE_LIB_DEPENDS=	libneon.so:www/neon \
+			libexpat.so:textproc/expat2
+EXCHANGE_USES=		gettext-runtime
 
 FREETDS_CONFIGURE_ON=	--with-tds=${LOCALBASE}
 FREETDS_CONFIGURE_OFF=	--without-tds
@@ -192,6 +193,7 @@ SQLITE2_CONFIGURE_WITH=	sqlite
 SQLITE2_LIB_DEPENDS=	libsqlite.so:databases/sqlite2
 
 SRTP_CONFIGURE_WITH=	srtp
+SRTP_LIB_DEPENDS=	libsrtp.so:net/libsrtp
 
 SYSINFO_LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
