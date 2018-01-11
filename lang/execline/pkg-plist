@@ -48,9 +48,9 @@ include/execline/config.h
 include/execline/execline.h
 lib/execline/libexecline.a
 lib/libexecline.so
-lib/libexecline.so.2.2
-lib/libexecline.so.2.2.0
-lib/libexecline.so.2.2.0.0
+lib/libexecline.so.2.3
+lib/libexecline.so.2.3.0
+lib/libexecline.so.2.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/background.html
