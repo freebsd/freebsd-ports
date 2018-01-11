@@ -1,8 +1,11 @@
 --- Makefile.orig	2006-02-24 22:00:24 UTC
 +++ Makefile
-@@ -8,9 +8,9 @@ INSTALL?=	install
+@@ -6,11 +6,11 @@
+ RMCMD?=		rm -f
+ INSTALL?=	install
  LOCALBASE?=	/usr/local
- X11BASE?= 	/usr/X11R6
+-X11BASE?= 	/usr/X11R6
++X11BASE?= 	$(LOCALBASE)
  
 -CC= 		gcc
 -CFLAGS= 	-O2 -Wall
