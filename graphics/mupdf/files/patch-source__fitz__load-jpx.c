@@ -1,6 +1,6 @@
---- source/fitz/load-jpx.c.orig	2017-04-05 11:02:21 UTC
+--- source/fitz/load-jpx.c.orig	2017-12-13 14:00:30 UTC
 +++ source/fitz/load-jpx.c
-@@ -444,14 +444,18 @@ fz_load_jpx_info(fz_context *ctx, unsign
+@@ -445,14 +445,18 @@ fz_load_jpx_info(fz_context *ctx, const 
  
  #else /* HAVE_LURATECH */
  
@@ -9,7 +9,7 @@
 +{
  #define OPJ_STATIC
  #define OPJ_HAVE_INTTYPES_H
- #if !defined(_WIN32) && !defined(_WIN64)
+ #if !defined(_MSC_VER) || _MSC_VER >= 1600
  #define OPJ_HAVE_STDINT_H
  #endif
 +#endif
@@ -20,7 +20,7 @@
  
  struct fz_jpxd_s
  {
-@@ -919,6 +923,10 @@ fz_load_jpx_info(fz_context *ctx, unsign
+@@ -930,6 +934,10 @@ fz_load_jpx_info(fz_context *ctx, const 
  	*yresp = state.yres;
  }
  
