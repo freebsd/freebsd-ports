@@ -12,10 +12,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Network UPS Tools
 
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig libtool
+USES=		autoreconf gmake pkgconfig libtool
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
