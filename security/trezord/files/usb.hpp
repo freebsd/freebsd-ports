@@ -123,7 +123,9 @@ open_path(char const *path)
                             libusb_get_device_address(dev));
                     if (strncmp(devpath, path, sizeof(devpath)) == 0) {
                             if (libusb_open(dev, &handle) == 0) {
+#if !defined(__FreeBSD__) || __FreeBSD_version >= 1100000
                                     libusb_set_auto_detach_kernel_driver(handle, 1);
+#endif
                                     if (libusb_claim_interface(handle, 0)) {
                                             libusb_close(handle);
                                             handle = NULL;
