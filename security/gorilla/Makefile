@@ -57,7 +57,6 @@ do-build:
 		${WRKSRC}/sources/tcllib/sha256c/${GORILLAARCH:tl}
 .endif
 
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gorilla
 	@${INSTALL_SCRIPT} ${WRKSRC}/sources/*.tcl \

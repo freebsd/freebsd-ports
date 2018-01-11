@@ -47,7 +47,6 @@ post-patch-EXTRAS-on:
 		${WRKSRC}/Support/bin/*
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/Support/bin/*
 
-
 do-install:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	${INSTALL_PROGRAM} ${WRKSRC}/multimarkdown ${STAGEDIR}${PREFIX}/bin

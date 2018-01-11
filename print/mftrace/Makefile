@@ -28,7 +28,6 @@ GNU_CONFIGURE=	yes
 USES=		gmake python
 MAKEFILE=	GNUmakefile
 
-
 PLIST_FILES=	\
 		bin/gf2pbm \
 		bin/mftrace \

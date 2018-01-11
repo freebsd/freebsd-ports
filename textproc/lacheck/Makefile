@@ -14,7 +14,6 @@ PLIST_FILES=	bin/lacheck \
 		man/man1/lacheck.1.gz
 ALL_TARGET=	lacheck lacheck.1
 
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}| ; \
 		 s|^CC|# CC|; s|^CFLAGS|# CFLAGS|' \

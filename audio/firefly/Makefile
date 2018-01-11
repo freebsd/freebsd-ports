@@ -74,5 +74,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-
 .include <bsd.port.mk>
