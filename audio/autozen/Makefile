@@ -13,7 +13,6 @@ COMMENT=	Adjust brain waves with sound
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-
 OPTIONS_DEFINE=	DOCS
 
 USES=		shebangfix perl5 pkgconfig

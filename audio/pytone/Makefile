@@ -18,7 +18,6 @@ LIB_DEPENDS=	libao.so:audio/libao
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${FLAVOR}
 
-
 USES=		ncurses python:2
 USE_PYTHON=	autoplist distutils
 

@@ -10,7 +10,6 @@ PKGNAMEPREFIX=	kibana5-
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Kibana 5.0 X-Pack plugins
 
-
 RUN_DEPENDS:=	kibana5>=5.3.0:textproc/kibana5
 
 NO_BUILD=	yes

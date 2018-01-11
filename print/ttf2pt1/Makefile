@@ -32,7 +32,6 @@ SHEBANG_FILES=	app/TeX/sfd2map \
 		scripts/t1fdir \
 		scripts/trans
 
-
 CPPFLAGS+=	`pkg-config --cflags freetype2` \
 		-I${LOCALBASE}/include -DUSE_FREETYPE
 LIBS+=		`pkg-config --libs freetype2` \

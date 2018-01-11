@@ -24,5 +24,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/ISO* ${STAGEDIR}${INSTDIR}
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${STAGEDIR}${INSTDIR}/catalog
 
-
 .include <bsd.port.mk>
