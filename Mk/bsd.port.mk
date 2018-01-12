@@ -1673,7 +1673,7 @@ CONFIGURE_ENV+=		PATH=${PATH}
 
 .if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB) && empty(USE_GITHUB:Mnodefault)
 .if defined(WRKSRC)
-DEV_WARNING+=	"You are using USE_GITHUB and WRKSRC is set which is wrong.  Set GH_PROJECT correctly, or set WRKSRC_SUBDIR instead."
+DEV_WARNING+=	"You are using USE_GITHUB and WRKSRC is set which is wrong.  Set GH_PROJECT correctly, set WRKSRC_SUBDIR or remove WRKSRC entirely."
 .endif
 WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
 .endif
