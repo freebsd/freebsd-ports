@@ -90,7 +90,6 @@ bin/zlib_decompress
 include/mysql/mysqlx_ername.h
 include/mysql/mysqlx_error.h
 include/mysql/mysqlx_version.h
-@dir lib/mysql/plugin/debug
 @dir(mysql,mysql,) /var/db/mysql
 %%INNODBMEMCACHED%%lib/mysql/plugin/innodb_engine.so
 %%INNODBMEMCACHED%%lib/mysql/plugin/libmemcached.so
