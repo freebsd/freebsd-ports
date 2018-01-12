@@ -2,18 +2,24 @@
 
 PORTNAME=	encodings
 PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
-MASTER_SITES=	XORG/individual/font
 CATEGORIES=	x11-fonts
+MASTER_SITES=	XORG/individual/font
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org Encoding fonts
 
+LICENSE=	PD
+
+BUILD_DEPENDS=	mkfontscale:x11-fonts/mkfontscale
+
 USES=		tar:bzip2
 USE_XORG=	fontutil
-BUILD_DEPENDS=	mkfontscale:x11-fonts/mkfontscale
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontrootdir=${PREFIX}/share/fonts
+
+post-install:
+	cd ${STAGEDIR}/usr/local/share/fonts/encodings && /usr/local/bin/mkfontscale -b -s -l -n -r -p /usr/local/share/fonts/encodings -e . -e large .
 
 .include <bsd.port.mk>
