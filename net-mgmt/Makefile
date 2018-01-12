@@ -295,6 +295,7 @@
     SUBDIR += pnp-icinga2
     SUBDIR += portmon
     SUBDIR += prometheus
+    SUBDIR += prometheus-collectd-exporter
     SUBDIR += pushgateway
     SUBDIR += py-adal
     SUBDIR += py-dnsdiag
