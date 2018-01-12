@@ -20,6 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontrootdir=${PREFIX}/share/fonts
 
 post-install:
-	cd ${STAGEDIR}/usr/local/share/fonts/encodings && mkfontscale -b -s -l -n -r -p ${PREFIX}/share/fonts/encodings -e . -e large .
+	cd ${STAGEDIR}${PREFIX}/share/fonts/encodings && mkfontscale -b -s -l -n -r -p ${PREFIX}/share/fonts/encodings -e . -e large .
 
 .include <bsd.port.mk>
