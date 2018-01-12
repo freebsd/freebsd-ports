@@ -328,7 +328,17 @@
  				latest_pv=${latest_pv##*/}
  			else
  				pm_v "===>>> No local package for ${new_port}, attempting fetch"
-@@ -3753,6 +3769,7 @@ if [ -z "$use_package" ]; then
+@@ -3622,6 +3638,9 @@ pkg_flavor () {
+ 	pm_make pretty-flavors-package-names | sed -ne 's!^\([A-Za-z0-9_]*\): *'$pkg'$!\1!p';
+ }
+ 	export_flavor=$(pkg_flavor $new_port)
++	if [ -n "$HIDE_BUILD" ] && [ -n "$(pm_make -V LICENSE)" ]; then
++		pm_make extract ask-license || fail "make extract ask-license failed for $portdir"
++	fi
+ 	eval pm_make build $port_log_args || fail "make build failed for $portdir"
+ 
+ 	pm_sv Running make stage
+@@ -3753,6 +3772,7 @@ if [ -z "$use_package" ]; then
  	unset np_orphan
  	# Defining NO_DEPENDS ensures that we will control the installation
  	# of the depends, not bsd.port.mk.
@@ -336,7 +346,7 @@
  	eval pm_make_s -DNO_DEPENDS install $port_log_args || install_failed $new_port
  else
  	[ -n "$local_package" ] && ppd=${LOCAL_PACKAGEDIR}/All
-@@ -3850,7 +3867,7 @@ fi
+@@ -3850,7 +3870,7 @@ fi
  if [ -n "$MAKE_PACKAGE" ]; then
  	if [ -z "$use_package" ]; then
  		echo "===>>> Creating a package for new version $new_port"
@@ -345,7 +355,7 @@
  		echo "	===>>> Package saved to $PACKAGES/All" ; echo ''
  	else
  		pm_pkg_create $PACKAGES $new_port
-@@ -3858,6 +3875,7 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3858,6 +3878,7 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
