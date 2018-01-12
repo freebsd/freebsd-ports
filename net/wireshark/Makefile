@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.4.3
-PORTREVISION?=	1
+PORTVERSION=	2.4.4
+PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
