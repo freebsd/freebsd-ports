@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-gtk
-PORTVERSION=	0.9.2.6
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.2.7
 CATEGORIES=	deskutils python
 
 MAINTAINER=	swills@FreeBSD.org
@@ -10,17 +10,24 @@ COMMENT=	Python based GUI for Syncthing
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${FLAVOR} \
+		syncthing>=0.13:net/syncthing
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	syncthing
-
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 USE_GNOME=	gtk30 pygobject3
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	syncthing
+
+OPTIONS_DEFAULT=	NOTIFY
+OPTIONS_DEFINE=	NOTIFY
+
+NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
