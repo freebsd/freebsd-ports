@@ -3,6 +3,7 @@
 
 PORTNAME=	imapfilter
 PORTVERSION=	2.6.11
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -30,7 +31,7 @@ MAKE_ARGS=	PREFIX=${PREFIX} \
 		LIBLUA=-llua-${LUA_VER}
 
 post-patch:
-	${REINPLACE_CMD} 's|-ldl ||' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} 's|-ldl ||' ${WRKSRC}/src/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/imapfilter
