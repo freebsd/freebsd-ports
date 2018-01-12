@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	R
 DISTVERSION=	5_7_2
 CATEGORIES=	devel java
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated drawing of UML diagrams
 
 LICENSE=	BSD3CLAUSE

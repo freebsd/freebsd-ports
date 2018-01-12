@@ -6,7 +6,7 @@ PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JSON Web Token implementation in C
 
 LICENSE=	GPLv2

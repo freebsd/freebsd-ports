@@ -6,7 +6,7 @@ PORTVERSION=	4.01
 CATEGORIES=	mail
 MASTER_SITES=	http://www.cnpbagwell.com/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client to perform simple tasks with a POP3/IMAP server
 
 USES=		shebangfix

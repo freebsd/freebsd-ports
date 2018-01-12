@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME:S|n|N|}-hinted
 DISTFILES=	${DISTNAME}.zip NotoEmoji-Regular.ttf:emoji
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google font family - lite version
 
 LICENSE=	APACHE20 OFL11

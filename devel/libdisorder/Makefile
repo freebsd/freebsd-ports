@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libdisorder.freshdefense.net/releases/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple C library for entropy measurement
 
 LICENSE=	GPLv2+

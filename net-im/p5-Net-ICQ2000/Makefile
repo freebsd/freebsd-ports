@@ -8,7 +8,7 @@ CATEGORIES=	net-im perl5
 MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq.old/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for ICQv7 protocol realisation
 
 USES=		perl5

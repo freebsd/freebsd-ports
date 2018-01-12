@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	DEBIAN/pool/main/a/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.dfsg.orig
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced tftp server and client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.dfsg

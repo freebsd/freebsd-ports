@@ -6,7 +6,7 @@ PORTVERSION=	4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free stand-alone ini file parsing library
 
 LICENSE=	MIT

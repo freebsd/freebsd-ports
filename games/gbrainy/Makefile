@@ -6,7 +6,7 @@ PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brain teaser game and trainer
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/cppcms/${PORTNAME}/${PORTVERSION}-beta
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ web development framework
 
 LICENSE=	LGPL3

@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/src-highlite
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter
 
 LICENSE=	GPLv3

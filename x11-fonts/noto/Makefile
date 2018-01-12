@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}.zip \
 		${PORTNAME:S|n|N|}SerifCJKsc-hinted.zip \
 		${PORTNAME:S|n|N|}SerifCJKtc-hinted.zip
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google font family
 
 LICENSE=	OFL11
