@@ -1,0 +1,161 @@
+commit 0f648a99db03
+Author: Dragana Damjanovic <dd.mozilla@gmail.com>
+Date:   Mon Jan 8 16:57:48 2018 +0200
+
+    Bug 1409449 - Do not show auth-dialog for triggeringPrincipal==SystemPrincipal. r=ckerschb r=valentin r=francois a=gchang
+    
+    --HG--
+    extra : amend_source : ca9c12183a4c25d451bb6ec2cc4b6ed25327d1ff
+---
+ modules/libpref/init/all.js                        |  5 ++++
+ .../protocol/http/nsHttpChannelAuthProvider.cpp    | 35 +++++++++++++++++-----
+ netwerk/protocol/http/nsHttpChannelAuthProvider.h  |  1 +
+ toolkit/components/telemetry/Histograms.json       |  8 ++---
+ 4 files changed, 38 insertions(+), 11 deletions(-)
+
+diff --git modules/libpref/init/all.js modules/libpref/init/all.js
+index c06f1d869c0f..a1e8e7054e4d 100644
+--- modules/libpref/init/all.js
++++ modules/libpref/init/all.js
+@@ -2229,6 +2229,11 @@ pref("network.auth.subresource-http-auth-allow", 2);
+ // have any effect.
+ pref("network.auth.subresource-img-cross-origin-http-auth-allow", true);
+ 
++// Resources that are triggered by some non-web-content:
++// true - they are allow to present http auth. dialog
++// false - they are not allow to present http auth. dialog.
++pref("network.auth.non-web-content-triggered-resources-http-auth-allow", false);
++
+ // This preference controls whether to allow sending default credentials (SSO) to
+ // NTLM/Negotiate servers allowed in the "trusted uri" list when navigating them
+ // in a Private Browsing window.
+diff --git netwerk/protocol/http/nsHttpChannelAuthProvider.cpp netwerk/protocol/http/nsHttpChannelAuthProvider.cpp
+index 92abed30355a..c70eb9455adb 100644
+--- netwerk/protocol/http/nsHttpChannelAuthProvider.cpp
++++ netwerk/protocol/http/nsHttpChannelAuthProvider.cpp
+@@ -42,6 +42,7 @@ namespace net {
+ #define HTTP_AUTH_DIALOG_TOP_LEVEL_DOC 29
+ #define HTTP_AUTH_DIALOG_SAME_ORIGIN_SUBRESOURCE 30
+ #define HTTP_AUTH_DIALOG_SAME_ORIGIN_XHR 31
++#define HTTP_AUTH_DIALOG_NON_WEB_CONTENT 32
+ 
+ #define HTTP_AUTH_BASIC_INSECURE 0
+ #define HTTP_AUTH_BASIC_SECURE 1
+@@ -95,6 +96,7 @@ uint32_t nsHttpChannelAuthProvider::sAuthAllowPref =
+     SUBRESOURCE_AUTH_DIALOG_ALLOW_ALL;
+ 
+ bool nsHttpChannelAuthProvider::sImgCrossOriginAuthAllowPref = true;
++bool nsHttpChannelAuthProvider::sNonWebContentTriggeredAuthAllow = false;
+ 
+ void
+ nsHttpChannelAuthProvider::InitializePrefs()
+@@ -106,6 +108,9 @@ nsHttpChannelAuthProvider::InitializePrefs()
+   mozilla::Preferences::AddBoolVarCache(&sImgCrossOriginAuthAllowPref,
+                                         "network.auth.subresource-img-cross-origin-http-auth-allow",
+                                         true);
++  mozilla::Preferences::AddBoolVarCache(&sNonWebContentTriggeredAuthAllow,
++                                        "network.auth.non-web-content-triggered-resources-http-auth-allow",
++                                        false);
+ }
+ 
+ NS_IMETHODIMP
+@@ -912,8 +917,10 @@ nsHttpChannelAuthProvider::GetCredentialsForChallenge(const char *challenge,
+             // BlockPrompt will set mCrossOrigin parameter as well.
+             if (BlockPrompt()) {
+                 LOG(("nsHttpChannelAuthProvider::GetCredentialsForChallenge: "
+-                     "Prompt is blocked [this=%p pref=%d img-pref=%d]\n",
+-                      this, sAuthAllowPref, sImgCrossOriginAuthAllowPref));
++                     "Prompt is blocked [this=%p pref=%d img-pref=%d "
++                     "non-web-content-triggered-pref=%d]\n",
++                      this, sAuthAllowPref, sImgCrossOriginAuthAllowPref,
++                      sNonWebContentTriggeredAuthAllow));
+                 return NS_ERROR_ABORT;
+             }
+ 
+@@ -983,8 +990,15 @@ nsHttpChannelAuthProvider::BlockPrompt()
+     // We will treat loads w/o loadInfo as a top level document.
+     bool topDoc = true;
+     bool xhr = false;
++    bool nonWebContent = false;
+ 
+     if (loadInfo) {
++        nsCOMPtr<nsIPrincipal> triggeringPrinc =
++            loadInfo->TriggeringPrincipal();
++        if (nsContentUtils::IsSystemPrincipal(triggeringPrinc)) {
++            nonWebContent = true;
++        }
++
+         if (loadInfo->GetExternalContentPolicyType() !=
+             nsIContentPolicy::TYPE_DOCUMENT) {
+             topDoc = false;
+@@ -1013,23 +1027,30 @@ nsHttpChannelAuthProvider::BlockPrompt()
+     }
+ 
+     if (gHttpHandler->IsTelemetryEnabled()) {
+-        if (topDoc) {
+-            Telemetry::Accumulate(Telemetry::HTTP_AUTH_DIALOG_STATS_2,
++        if (nonWebContent) {
++            Telemetry::Accumulate(Telemetry::HTTP_AUTH_DIALOG_STATS_3,
++                                  HTTP_AUTH_DIALOG_NON_WEB_CONTENT);
++        } else if (topDoc) {
++            Telemetry::Accumulate(Telemetry::HTTP_AUTH_DIALOG_STATS_3,
+                                   HTTP_AUTH_DIALOG_TOP_LEVEL_DOC);
+         } else if (!mCrossOrigin) {
+             if (xhr) {
+-                Telemetry::Accumulate(Telemetry::HTTP_AUTH_DIALOG_STATS_2,
++                Telemetry::Accumulate(Telemetry::HTTP_AUTH_DIALOG_STATS_3,
+                                       HTTP_AUTH_DIALOG_SAME_ORIGIN_XHR);
+             } else {
+-                Telemetry::Accumulate(Telemetry::HTTP_AUTH_DIALOG_STATS_2,
++                Telemetry::Accumulate(Telemetry::HTTP_AUTH_DIALOG_STATS_3,
+                                       HTTP_AUTH_DIALOG_SAME_ORIGIN_SUBRESOURCE);
+             }
+         } else {
+-            Telemetry::Accumulate(Telemetry::HTTP_AUTH_DIALOG_STATS_2,
++            Telemetry::Accumulate(Telemetry::HTTP_AUTH_DIALOG_STATS_3,
+                                   loadInfo->GetExternalContentPolicyType());
+         }
+     }
+ 
++    if (!sNonWebContentTriggeredAuthAllow && nonWebContent) {
++        return true;
++    }
++
+     switch (sAuthAllowPref) {
+     case SUBRESOURCE_AUTH_DIALOG_DISALLOW_ALL:
+         // Do not open the http-authentication credentials dialog for
+diff --git netwerk/protocol/http/nsHttpChannelAuthProvider.h netwerk/protocol/http/nsHttpChannelAuthProvider.h
+index 4cf61c5a5881..01c536a8be25 100644
+--- netwerk/protocol/http/nsHttpChannelAuthProvider.h
++++ netwerk/protocol/http/nsHttpChannelAuthProvider.h
+@@ -187,6 +187,7 @@ private:
+     // sub-resources.
+     static uint32_t                   sAuthAllowPref;
+     static bool                       sImgCrossOriginAuthAllowPref;
++    static bool                       sNonWebContentTriggeredAuthAllow;
+     nsCOMPtr<nsICancelable>           mGenerateCredentialsCancelable;
+ };
+ 
+diff --git toolkit/components/telemetry/Histograms.json toolkit/components/telemetry/Histograms.json
+index 41678ec2d2cf..dfc2183420a5 100644
+--- toolkit/components/telemetry/Histograms.json
++++ toolkit/components/telemetry/Histograms.json
+@@ -2427,14 +2427,14 @@
+     "labels": ["NotSent", "CachedContentUsed", "CachedContentNotUsed"],
+     "description": "Stats for validation requests when cache won the race."
+   },
+-  "HTTP_AUTH_DIALOG_STATS_2": {
++  "HTTP_AUTH_DIALOG_STATS_3": {
+     "record_in_processes": ["main", "content"],
+     "expires_in_version": "61",
+-    "alert_emails": ["necko@mozilla.com"],
++    "alert_emails": ["necko@mozilla.com", "ddamjanovic@mozilla.com"],
+     "bug_numbers": [1357835],
+     "kind": "enumerated",
+-    "n_values": 32,
+-    "description": "Stats about what kind of resource requested http authentication. (29=top-level doc, 30=same origin subresources, 31=same origin xhr, (nsIContentPolicy type)=cross-origin subresources per nsIContentPolicy type)"
++    "n_values": 64,
++    "description": "Stats about what kind of resource requested http authentication. (29=top-level doc, 30=same origin subresources, 31=same origin xhr, 32=non-web-content, (nsIContentPolicy type)=cross-origin subresources per nsIContentPolicy type)"
+   },
+   "HTTP_AUTH_TYPE_STATS": {
+     "record_in_processes": ["main", "content"],

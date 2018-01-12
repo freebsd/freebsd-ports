@@ -1,0 +1,162 @@
+commit 0e19989ae721
+Author: Tristan Bourvon <tbourvon@mozilla.com>
+Date:   Tue Oct 31 11:04:40 2017 +0100
+
+    Bug 1412646 - Initialize some uninitialized fields in security/manager/ r=keeler a=jcristau
+    
+    MozReview-Commit-ID: HGj8xw5Uq6j
+    
+    --HG--
+    extra : rebase_source : 320cb43e17001f33137fdd1e7a49be8cbf0a4b24
+    extra : source : 202ff4e53892c94131974daf3b9637fac064e558
+---
+ security/manager/ssl/DataStorage.cpp            | 1 +
+ security/manager/ssl/ScopedNSSTypes.h           | 1 +
+ security/manager/ssl/SharedSSLState.cpp         | 1 +
+ security/manager/ssl/nsCertOverrideService.h    | 1 +
+ security/manager/ssl/nsCertTree.cpp             | 5 ++++-
+ security/manager/ssl/nsNSSCallbacks.cpp         | 4 +++-
+ security/manager/ssl/nsNSSCertValidity.cpp      | 4 +++-
+ security/manager/ssl/nsNTLMAuthModule.h         | 2 +-
+ security/manager/ssl/nsSecurityHeaderParser.cpp | 1 +
+ security/manager/ssl/nsSiteSecurityService.cpp  | 1 +
+ 10 files changed, 17 insertions(+), 4 deletions(-)
+
+diff --git security/manager/ssl/DataStorage.cpp security/manager/ssl/DataStorage.cpp
+index 808b2392b518..5e43ec5dcc6d 100644
+--- security/manager/ssl/DataStorage.cpp
++++ security/manager/ssl/DataStorage.cpp
+@@ -73,6 +73,7 @@ StaticAutoPtr<DataStorage::DataStorages> DataStorage::sDataStorages;
+ 
+ DataStorage::DataStorage(const nsString& aFilename)
+   : mMutex("DataStorage::mMutex")
++  , mTimerDelay(sDataStorageDefaultTimerDelay)
+   , mPendingWrite(false)
+   , mShuttingDown(false)
+   , mInitCalled(false)
+diff --git security/manager/ssl/ScopedNSSTypes.h security/manager/ssl/ScopedNSSTypes.h
+index 34aa229cc247..e91e9b40ec41 100644
+--- security/manager/ssl/ScopedNSSTypes.h
++++ security/manager/ssl/ScopedNSSTypes.h
+@@ -108,6 +108,7 @@ class Digest
+ {
+ public:
+   Digest()
++  : mItemBuf()
+   {
+     mItem.type = siBuffer;
+     mItem.data = mItemBuf;
+diff --git security/manager/ssl/SharedSSLState.cpp security/manager/ssl/SharedSSLState.cpp
+index c97687541326..df9d36369c0a 100644
+--- security/manager/ssl/SharedSSLState.cpp
++++ security/manager/ssl/SharedSSLState.cpp
+@@ -123,6 +123,7 @@ SharedSSLState::SharedSSLState()
+ , mSocketCreated(false)
+ , mOCSPStaplingEnabled(false)
+ , mOCSPMustStapleEnabled(false)
++, mSignedCertTimestampsEnabled(false)
+ {
+   mIOLayerHelpers.Init();
+   mClientAuthRemember->Init();
+diff --git security/manager/ssl/nsCertOverrideService.h security/manager/ssl/nsCertOverrideService.h
+index 9f60aab37079..57992241c8d9 100644
+--- security/manager/ssl/nsCertOverrideService.h
++++ security/manager/ssl/nsCertOverrideService.h
+@@ -29,6 +29,7 @@ public:
+ 
+   nsCertOverride()
+     : mPort(-1)
++    , mIsTemporary(false)
+     , mOverrideBits(OverrideBits::None)
+   {
+   }
+diff --git security/manager/ssl/nsCertTree.cpp security/manager/ssl/nsCertTree.cpp
+index f58323ed4485..6fa9080de812 100644
+--- security/manager/ssl/nsCertTree.cpp
++++ security/manager/ssl/nsCertTree.cpp
+@@ -55,7 +55,8 @@ CompareCacheHashEntryPtr::~CompareCacheHashEntryPtr()
+ }
+ 
+ CompareCacheHashEntry::CompareCacheHashEntry()
+-:key(nullptr)
++  : key(nullptr)
++  , mCritInit()
+ {
+   for (int i = 0; i < max_criterions; ++i) {
+     mCritInit[i] = false;
+@@ -152,6 +153,8 @@ NS_IMPL_ISUPPORTS(nsCertTree, nsICertTree, nsITreeView)
+ 
+ nsCertTree::nsCertTree()
+   : mTreeArray(nullptr)
++  , mNumOrgs(0)
++  , mNumRows(0)
+   , mCompareCache(&gMapOps, sizeof(CompareCacheHashEntryPtr),
+                   kInitialCacheLength)
+ {
+diff --git security/manager/ssl/nsNSSCallbacks.cpp security/manager/ssl/nsNSSCallbacks.cpp
+index 480210836c18..bb81a5772a4b 100644
+--- security/manager/ssl/nsNSSCallbacks.cpp
++++ security/manager/ssl/nsNSSCallbacks.cpp
+@@ -546,7 +546,9 @@ nsNSSHttpRequestSession::~nsNSSHttpRequestSession()
+ }
+ 
+ nsHTTPListener::nsHTTPListener()
+-: mResultData(nullptr),
++: mHttpRequestSucceeded(false),
++  mHttpResponseCode(0),
++  mResultData(nullptr),
+   mResultLen(0),
+   mLock("nsHTTPListener.mLock"),
+   mCondition(mLock, "nsHTTPListener.mCondition"),
+diff --git security/manager/ssl/nsNSSCertValidity.cpp security/manager/ssl/nsNSSCertValidity.cpp
+index d983df2cf6cf..62c0c4bb7e8a 100644
+--- security/manager/ssl/nsNSSCertValidity.cpp
++++ security/manager/ssl/nsNSSCertValidity.cpp
+@@ -13,7 +13,9 @@
+ NS_IMPL_ISUPPORTS(nsX509CertValidity, nsIX509CertValidity)
+ 
+ nsX509CertValidity::nsX509CertValidity(const mozilla::UniqueCERTCertificate& cert)
+-  : mTimesInitialized(false)
++  : mNotBefore(0)
++  , mNotAfter(0)
++  , mTimesInitialized(false)
+ {
+   MOZ_ASSERT(cert);
+   if (!cert) {
+diff --git security/manager/ssl/nsNTLMAuthModule.h security/manager/ssl/nsNTLMAuthModule.h
+index 27bf2999f01b..0b0bfa505959 100644
+--- security/manager/ssl/nsNTLMAuthModule.h
++++ security/manager/ssl/nsNTLMAuthModule.h
+@@ -15,7 +15,7 @@ public:
+   NS_DECL_ISUPPORTS
+   NS_DECL_NSIAUTHMODULE
+ 
+-  nsNTLMAuthModule() {}
++  nsNTLMAuthModule() : mNTLMNegotiateSent(false) {}
+ 
+   nsresult InitTest();
+ 
+diff --git security/manager/ssl/nsSecurityHeaderParser.cpp security/manager/ssl/nsSecurityHeaderParser.cpp
+index b0bff007203f..d6b65e3b2a5b 100644
+--- security/manager/ssl/nsSecurityHeaderParser.cpp
++++ security/manager/ssl/nsSecurityHeaderParser.cpp
+@@ -52,6 +52,7 @@ static mozilla::LazyLogModule sSHParserLog("nsSecurityHeaderParser");
+ 
+ nsSecurityHeaderParser::nsSecurityHeaderParser(const nsCString& aHeader)
+   : mCursor(aHeader.get())
++  , mDirective(nullptr)
+   , mError(false)
+ {
+ }
+diff --git security/manager/ssl/nsSiteSecurityService.cpp security/manager/ssl/nsSiteSecurityService.cpp
+index 237efc715f86..f39e34db6569 100644
+--- security/manager/ssl/nsSiteSecurityService.cpp
++++ security/manager/ssl/nsSiteSecurityService.cpp
+@@ -495,6 +495,7 @@ nsSiteSecurityService::nsSiteSecurityService()
+   : mMaxMaxAge(kSixtyDaysInSeconds)
+   , mUsePreloadList(true)
+   , mPreloadListTimeOffset(0)
++  , mProcessPKPHeadersFromNonBuiltInRoots(false)
+ {
+ }
+ 

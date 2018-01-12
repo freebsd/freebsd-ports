@@ -1,0 +1,35 @@
+commit e6d14191c530
+Author: Marco Bonardo <mbonardo@mozilla.com>
+Date:   Wed Nov 8 15:42:21 2017 +0100
+
+    Bug 1395508. r=dao, a=gchang
+    
+    MozReview-Commit-ID: 8jH9dyj5JZU
+    
+    --HG--
+    extra : source : a14cc3bd9643311badcf1f8c00a58a493c2f5a2e
+---
+ browser/base/content/browser.js                    |  9 ++++++---
+ .../content/test/urlbar/browser_urlbarCopying.js   | 22 +++++++++++++++++++++-
+ 2 files changed, 27 insertions(+), 4 deletions(-)
+
+diff --git browser/base/content/browser.js browser/base/content/browser.js
+index c4eb8b8c7e43..80c44f32dc38 100755
+--- browser/base/content/browser.js
++++ browser/base/content/browser.js
+@@ -2763,9 +2763,12 @@ function losslessDecodeURI(aURI) {
+                   //    a sequence that survived decodeURI, i.e. one for:
+                   //    ';', '/', '?', ':', '@', '&', '=', '+', '$', ',', '#'
+                   //    (RFC 3987 section 3.2)
+-                  // 2. Re-encode whitespace so that it doesn't get eaten away
+-                  //    by the location bar (bug 410726).
+-                  .replace(/%(?!3B|2F|3F|3A|40|26|3D|2B|24|2C|23)|[\r\n\t]/ig,
++                  // 2. Re-encode select whitespace so that it doesn't get eaten
++                  //    away by the location bar (bug 410726). Re-encode all
++                  //    adjacent whitespace, to prevent spoofing attempts where
++                  //    invisible characters would push part of the URL to
++                  //    overflow the location bar (bug 1395508).
++                  .replace(/%(?!3B|2F|3F|3A|40|26|3D|2B|24|2C|23)|[\r\n\t]|\s(?=\s)|\s$/ig,
+                            encodeURIComponent);
+       } catch (e) {}
+     }
