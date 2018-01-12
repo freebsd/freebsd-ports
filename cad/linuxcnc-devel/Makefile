@@ -12,7 +12,7 @@ COMMENT=	Open Source CNC machine controller
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_10=	Does not build
+BROKEN=		wrong DEPENDS
 
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		libboost_python.so:devel/boost-python-libs \
