@@ -8,7 +8,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reverse polish math expression evaluation
 
 TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn

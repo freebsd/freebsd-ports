@@ -9,7 +9,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object class for manipulating and generating E-books
 
 LICENSE=	GPLv2
@@ -36,8 +36,8 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		txt2html>=0:textproc/txt2html \
 		p5-Bit-Vector>=0:math/p5-Bit-Vector \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	${LOCALBASE}/bin/tidy5:www/tidy-html5
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		tidy5:www/tidy-html5
 
 USES=		perl5
 USE_PERL5=	modbuild
