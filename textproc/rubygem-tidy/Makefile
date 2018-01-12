@@ -16,4 +16,7 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
+DEPRECATED=	No longer needed and not maintained
+EXPIRATION_DATE=2018-02-12
+
 .include <bsd.port.mk>
