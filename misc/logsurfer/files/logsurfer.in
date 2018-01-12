@@ -40,6 +40,6 @@ load_rc_config ${name}
 pidfile=${logsurfer_pidfile:="/var/run/logsurfer.pid"}
 command=%%PREFIX%%/bin/logsurfer
 command_args="-D -p ${pidfile} -c ${logsurfer_config} -F -s -e ${logsurfer_logfile}"
-required_files=${logsurfer_config} ${logsurfer_logfile}
+required_files="${logsurfer_config} ${logsurfer_logfile}"
 
 run_rc_command "$1"
