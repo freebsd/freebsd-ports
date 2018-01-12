@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket-51 \
 		${LUA_MODLIBDIR}/ssl.so:security/luasec-51 \
 		${LUA_MODLIBDIR}/lxp.so:textproc/luaexpat-51 \
-		${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem-51
+		${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem-51 \
+		${LUA_MODLIBDIR}/bit.so:devel/lua-bitop-51
 LIB_DEPENDS=	libidn.so:dns/libidn
 
 USES=		cpe gmake lua:51 shebangfix ssl
