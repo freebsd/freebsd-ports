@@ -1,0 +1,499 @@
+commit ecb753bbae79
+Author: Peter Van der Beken <peterv@propagandism.org>
+Date:   Fri Nov 3 16:58:59 2017 +0100
+
+    Bug 1387427 - Don't insert source content into the document for XSLT transforms. r=smaug, a=gchang
+    
+    --HG--
+    extra : source : b069f99a8ca9989f277645bbadc2116dcabd8ad0
+---
+ dom/xml/nsXMLContentSink.cpp             | 93 +++++++++++++++++---------------
+ dom/xml/nsXMLContentSink.h               |  8 ++-
+ dom/xslt/base/txURIUtils.cpp             | 11 +---
+ dom/xslt/base/txURIUtils.h               |  4 +-
+ dom/xslt/nsIDocumentTransformer.h        |  6 ++-
+ dom/xslt/xslt/txExecutionState.cpp       | 15 ++++--
+ dom/xslt/xslt/txExecutionState.h         |  7 ++-
+ dom/xslt/xslt/txMozillaTextOutput.cpp    |  2 +-
+ dom/xslt/xslt/txMozillaXMLOutput.cpp     |  2 +-
+ dom/xslt/xslt/txMozillaXSLTProcessor.cpp | 37 +++++++------
+ dom/xslt/xslt/txMozillaXSLTProcessor.h   |  7 +--
+ 11 files changed, 107 insertions(+), 85 deletions(-)
+
+diff --git dom/xml/nsXMLContentSink.cpp dom/xml/nsXMLContentSink.cpp
+index 637939261be7..3d973f2bcf97 100644
+--- dom/xml/nsXMLContentSink.cpp
++++ dom/xml/nsXMLContentSink.cpp
+@@ -152,6 +152,7 @@ NS_IMPL_CYCLE_COLLECTION_TRAVERSE_BEGIN_INHERITED(nsXMLContentSink,
+     const StackNode& node = tmp->mContentStack.ElementAt(i);
+     cb.NoteXPCOMChild(node.mContent);
+   }
++  NS_IMPL_CYCLE_COLLECTION_TRAVERSE(mDocumentChildren)
+ NS_IMPL_CYCLE_COLLECTION_TRAVERSE_END
+ 
+ // nsIContentSink
+@@ -293,8 +294,7 @@ nsXMLContentSink::DidBuildModel(bool aTerminated)
+       }
+     }
+ 
+-    nsCOMPtr<nsIDOMDocument> currentDOMDoc(do_QueryInterface(mDocument));
+-    mXSLTProcessor->SetSourceContentModel(currentDOMDoc);
++    mXSLTProcessor->SetSourceContentModel(mDocument, mDocumentChildren);
+     // Since the processor now holds a reference to us we drop our reference
+     // to it to avoid owning cycles
+     mXSLTProcessor = nullptr;
+@@ -358,8 +358,9 @@ NS_IMETHODIMP
+ nsXMLContentSink::OnTransformDone(nsresult aResult,
+                                   nsIDocument* aResultDocument)
+ {
+-  NS_ASSERTION(NS_FAILED(aResult) || aResultDocument,
+-               "Don't notify about transform success without a document.");
++  MOZ_ASSERT(aResultDocument, "Don't notify about transform end without a document.");
++
++  mDocumentChildren.Clear();
+ 
+   nsCOMPtr<nsIDOMDocument> domDoc = do_QueryInterface(aResultDocument);
+ 
+@@ -368,28 +369,17 @@ nsXMLContentSink::OnTransformDone(nsresult aResult,
+ 
+   if (NS_FAILED(aResult) && contentViewer) {
+     // Transform failed.
+-    if (domDoc) {
+-      aResultDocument->SetMayStartLayout(false);
+-      // We have an error document.
+-      contentViewer->SetDOMDocument(domDoc);
+-    }
+-    else {
+-      // We don't have an error document, display the
+-      // untransformed source document.
+-      nsCOMPtr<nsIDOMDocument> document = do_QueryInterface(mDocument);
+-      contentViewer->SetDOMDocument(document);
+-    }
++    aResultDocument->SetMayStartLayout(false);
++    // We have an error document.
++    contentViewer->SetDOMDocument(domDoc);
+   }
+ 
+   nsCOMPtr<nsIDocument> originalDocument = mDocument;
+-  if (NS_SUCCEEDED(aResult) || aResultDocument) {
+-    // Transform succeeded or it failed and we have an error
+-    // document to display.
+-    mDocument = aResultDocument;
+-    nsCOMPtr<nsIHTMLDocument> htmlDoc = do_QueryInterface(mDocument);
+-    if (htmlDoc) {
+-      htmlDoc->SetDocWriteDisabled(false);
+-    }
++  // Transform succeeded, or it failed and we have an error document to display.
++  mDocument = aResultDocument;
++  nsCOMPtr<nsIHTMLDocument> htmlDoc = do_QueryInterface(mDocument);
++  if (htmlDoc) {
++    htmlDoc->SetDocWriteDisabled(false);
+   }
+ 
+   // Notify document observers that all the content has been stuck
+@@ -617,12 +607,17 @@ nsXMLContentSink::AddContentAsLeaf(nsIContent *aContent)
+ {
+   nsresult result = NS_OK;
+ 
+-  if ((eXMLContentSinkState_InProlog == mState) ||
+-      (eXMLContentSinkState_InEpilog == mState)) {
+-    NS_ASSERTION(mDocument, "Fragments have no prolog or epilog");
+-    mDocument->AppendChildTo(aContent, false);
+-  }
+-  else {
++  if (mState == eXMLContentSinkState_InProlog) {
++    NS_ASSERTION(mDocument, "Fragments have no prolog");
++    mDocumentChildren.AppendElement(aContent);
++  } else if (mState == eXMLContentSinkState_InEpilog) {
++    NS_ASSERTION(mDocument, "Fragments have no epilog");
++    if (mXSLTProcessor) {
++      mDocumentChildren.AppendElement(aContent);
++    } else {
++      mDocument->AppendChildTo(aContent, false);
++    }
++  } else {
+     nsCOMPtr<nsIContent> parent = GetCurrentContent();
+ 
+     if (parent) {
+@@ -875,6 +870,20 @@ nsXMLContentSink::SetDocElement(int32_t aNameSpaceID,
+   if (mDocElement)
+     return false;
+ 
++  mDocElement = aContent;
++
++  if (mXSLTProcessor) {
++    mDocumentChildren.AppendElement(aContent);
++    return true;
++  }
++
++  if (!mDocumentChildren.IsEmpty()) {
++    for (nsIContent* child : mDocumentChildren) {
++      mDocument->AppendChildTo(child, false);
++    }
++    mDocumentChildren.Clear();
++  }
++
+   // check for root elements that needs special handling for
+   // prettyprinting
+   if ((aNameSpaceID == kNameSpaceID_XBL &&
+@@ -893,7 +902,6 @@ nsXMLContentSink::SetDocElement(int32_t aNameSpaceID,
+     }
+   }
+ 
+-  mDocElement = aContent;
+   nsresult rv = mDocument->AppendChildTo(mDocElement, NotifyForDocElement());
+   if (NS_FAILED(rv)) {
+     // If we return false here, the caller will bail out because it won't
+@@ -1001,17 +1009,17 @@ nsXMLContentSink::HandleStartElement(const char16_t *aName,
+     mInMonolithicContainer++;
+   }
+ 
+-  if (content != mDocElement && !mCurrentHead) {
+-    // This isn't the root and we're not inside an XHTML <head>.
+-    // Might need to start layout
+-    MaybeStartLayout(false);
+-  }
+-
+-  if (content == mDocElement) {
+-    NotifyDocElementCreated(mDocument);
++  if (!mXSLTProcessor) {
++    if (content == mDocElement) {
++      NotifyDocElementCreated(mDocument);
+ 
+-    if (aInterruptable && NS_SUCCEEDED(result) && mParser && !mParser->IsParserEnabled()) {
+-      return NS_ERROR_HTMLPARSER_BLOCK;
++      if (aInterruptable && NS_SUCCEEDED(result) && mParser && !mParser->IsParserEnabled()) {
++        return NS_ERROR_HTMLPARSER_BLOCK;
++      }
++    } else if (!mCurrentHead) {
++      // This isn't the root and we're not inside an XHTML <head>.
++      // Might need to start layout
++      MaybeStartLayout(false);
+     }
+   }
+ 
+@@ -1171,9 +1179,9 @@ nsXMLContentSink::HandleDoctypeDecl(const nsAString & aSubset,
+   nsCOMPtr<nsIContent> content = do_QueryInterface(docType);
+   NS_ASSERTION(content, "doctype isn't content?");
+ 
+-  rv = mDocument->AppendChildTo(content, false);
++  mDocumentChildren.AppendElement(content);
+   DidAddContent();
+-  return NS_SUCCEEDED(rv) ? DidProcessATokenImpl() : rv;
++  return DidProcessATokenImpl();
+ }
+ 
+ NS_IMETHODIMP
+@@ -1321,6 +1329,7 @@ nsXMLContentSink::ReportError(const char16_t* aErrorText,
+   mIsDocumentObserver = false;
+ 
+   // Clear the current content
++  mDocumentChildren.Clear();
+   nsCOMPtr<nsIDOMNode> node(do_QueryInterface(mDocument));
+   if (node) {
+     for (;;) {
+diff --git dom/xml/nsXMLContentSink.h dom/xml/nsXMLContentSink.h
+index a1a7fc8814e9..17ac940caa07 100644
+--- dom/xml/nsXMLContentSink.h
++++ dom/xml/nsXMLContentSink.h
+@@ -139,7 +139,7 @@ protected:
+ 
+   void DidAddContent()
+   {
+-    if (IsTimeToNotify()) {
++    if (!mXSLTProcessor && IsTimeToNotify()) {
+       FlushTags();
+     }
+   }
+@@ -190,6 +190,12 @@ protected:
+ 
+   nsCOMPtr<nsIDocumentTransformer> mXSLTProcessor;
+ 
++  // Holds the children in the prolog until the root element is added, after which they're
++  // inserted in the document. However, if we're doing an XSLT transform this will
++  // actually hold all the children of the source document, until the transform is
++  // finished. After the transform is finished we'll just discard the children. 
++  nsTArray<nsCOMPtr<nsIContent>> mDocumentChildren;
++
+   static const int NS_ACCUMULATION_BUFFER_SIZE = 4096;
+   // Our currently accumulated text that we have not flushed to a textnode yet.
+   char16_t mText[NS_ACCUMULATION_BUFFER_SIZE];
+diff --git dom/xslt/base/txURIUtils.cpp dom/xslt/base/txURIUtils.cpp
+index 2c0dec942b80..3f3556f80110 100644
+--- dom/xslt/base/txURIUtils.cpp
++++ dom/xslt/base/txURIUtils.cpp
+@@ -43,16 +43,9 @@ void URIUtils::resolveHref(const nsAString& href, const nsAString& base,
+ 
+ // static
+ void
+-URIUtils::ResetWithSource(nsIDocument *aNewDoc, nsIDOMNode *aSourceNode)
++URIUtils::ResetWithSource(nsIDocument *aNewDoc, nsINode *aSourceNode)
+ {
+-    nsCOMPtr<nsINode> node = do_QueryInterface(aSourceNode);
+-    if (!node) {
+-        // XXXbz passing nullptr as the first arg to Reset is illegal
+-        aNewDoc->Reset(nullptr, nullptr);
+-        return;
+-    }
+-
+-    nsCOMPtr<nsIDocument> sourceDoc = node->OwnerDoc();
++    nsCOMPtr<nsIDocument> sourceDoc = aSourceNode->OwnerDoc();
+     nsIPrincipal* sourcePrincipal = sourceDoc->NodePrincipal();
+ 
+     // Copy the channel and loadgroup from the source document.
+diff --git dom/xslt/base/txURIUtils.h dom/xslt/base/txURIUtils.h
+index ca38538a8b82..ad182a00a795 100644
+--- dom/xslt/base/txURIUtils.h
++++ dom/xslt/base/txURIUtils.h
+@@ -9,7 +9,7 @@
+ #include "txCore.h"
+ 
+ class nsIDocument;
+-class nsIDOMNode;
++class nsINode;
+ 
+ /**
+  * A utility class for URI handling
+@@ -22,7 +22,7 @@ public:
+     /**
+      * Reset the given document with the document of the source node
+      */
+-    static void ResetWithSource(nsIDocument *aNewDoc, nsIDOMNode *aSourceNode);
++    static void ResetWithSource(nsIDocument *aNewDoc, nsINode *aSourceNode);
+ 
+     /**
+      * Resolves the given href argument, using the given documentBase
+diff --git dom/xslt/nsIDocumentTransformer.h dom/xslt/nsIDocumentTransformer.h
+index a5df807ffe8c..34343e8e1a15 100644
+--- dom/xslt/nsIDocumentTransformer.h
++++ dom/xslt/nsIDocumentTransformer.h
+@@ -7,10 +7,13 @@
+ 
+ #include "nsISupports.h"
+ 
++template<class> class nsCOMPtr;
++class nsIContent;
+ class nsIDocument;
+ class nsIDOMNode;
+ class nsIURI;
+ class nsString;
++template<class> class nsTArray;
+ 
+ #define NS_ITRANSFORMOBSERVER_IID \
+ { 0x04b2d17c, 0xe98d, 0x45f5, \
+@@ -43,7 +46,8 @@ public:
+ 
+   NS_IMETHOD SetTransformObserver(nsITransformObserver* aObserver) = 0;
+   NS_IMETHOD LoadStyleSheet(nsIURI* aUri, nsIDocument* aLoaderDocument) = 0;
+-  NS_IMETHOD SetSourceContentModel(nsIDOMNode* aSource) = 0;
++  NS_IMETHOD SetSourceContentModel(nsIDocument* aDocument,
++                                   const nsTArray<nsCOMPtr<nsIContent>>& aSource) = 0;
+   NS_IMETHOD CancelLoads() = 0;
+ 
+   NS_IMETHOD AddXSLTParamNamespace(const nsString& aPrefix,
+diff --git dom/xslt/xslt/txExecutionState.cpp dom/xslt/xslt/txExecutionState.cpp
+index e1d714189ce7..2fc84971d2d3 100644
+--- dom/xslt/xslt/txExecutionState.cpp
++++ dom/xslt/xslt/txExecutionState.cpp
+@@ -17,9 +17,9 @@
+ const int32_t txExecutionState::kMaxRecursionDepth = 20000;
+ 
+ nsresult
+-txLoadedDocumentsHash::init(txXPathNode* aSourceDocument)
++txLoadedDocumentsHash::init(const txXPathNode& aSource)
+ {
+-    mSourceDocument = aSourceDocument;
++    mSourceDocument = txXPathNodeUtils::getOwnerDocument(aSource);
+ 
+     nsAutoString baseURI;
+     nsresult rv = txXPathNodeUtils::getBaseURI(*mSourceDocument, baseURI);
+@@ -27,7 +27,14 @@ txLoadedDocumentsHash::init(txXPathNode* aSourceDocument)
+         return rv;
+     }
+ 
+-    PutEntry(baseURI)->mDocument = mSourceDocument;
++    // Technically the hash holds documents, but we allow any node that we're transforming
++    // from. In particular, the document() function uses this hash and it can return the
++    // source document, but if we're transforming from a document fragment (through
++    // txMozillaXSLTProcessor::SetSourceContentModel/txMozillaXSLTProcessor::DoTransform)
++    // or from another type of node (through txMozillaXSLTProcessor::TransformToDocument
++    // or txMozillaXSLTProcessor::TransformToFragment) it makes more sense to return the
++    // real root of the source tree, which is the node where the transform started.
++    PutEntry(baseURI)->mDocument = txXPathNativeNode::createXPathNode(txXPathNativeNode::getNode(aSource));
+     return NS_OK;
+ }
+ 
+@@ -121,7 +128,7 @@ txExecutionState::init(const txXPathNode& aNode,
+     mOutputHandler->startDocument();
+ 
+     // Set up loaded-documents-hash
+-    rv = mLoadedDocuments.init(txXPathNodeUtils::getOwnerDocument(aNode));
++    rv = mLoadedDocuments.init(aNode);
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+     // Init members
+diff --git dom/xslt/xslt/txExecutionState.h dom/xslt/xslt/txExecutionState.h
+index 44f1918c86b0..300bcfed07e4 100644
+--- dom/xslt/xslt/txExecutionState.h
++++ dom/xslt/xslt/txExecutionState.h
+@@ -56,16 +56,15 @@ class txLoadedDocumentsHash : public nsTHashtable<txLoadedDocumentEntry>
+ {
+ public:
+     txLoadedDocumentsHash()
+-        : nsTHashtable<txLoadedDocumentEntry>(4),
+-          mSourceDocument(nullptr)
++        : nsTHashtable<txLoadedDocumentEntry>(4)
+     {
+     }
+     ~txLoadedDocumentsHash();
+-    MOZ_MUST_USE nsresult init(txXPathNode* aSourceDocument);
++    MOZ_MUST_USE nsresult init(const txXPathNode& aSource);
+ 
+ private:
+     friend class txExecutionState;
+-    txXPathNode* mSourceDocument;
++    nsAutoPtr<txXPathNode> mSourceDocument;
+ };
+ 
+ 
+diff --git dom/xslt/xslt/txMozillaTextOutput.cpp dom/xslt/xslt/txMozillaTextOutput.cpp
+index 9056bd8f2608..c2c6ba8757be 100644
+--- dom/xslt/xslt/txMozillaTextOutput.cpp
++++ dom/xslt/xslt/txMozillaTextOutput.cpp
+@@ -153,7 +153,7 @@ txMozillaTextOutput::createResultDocument(nsIDOMDocument* aSourceDocument,
+     NS_ASSERTION(mDocument, "Need document");
+ 
+     // Reset and set up document
+-    URIUtils::ResetWithSource(mDocument, aSourceDocument);
++    URIUtils::ResetWithSource(mDocument, source);
+     // Only do this after resetting the document to ensure we have the
+     // correct principal.
+     mDocument->SetScriptHandlingObject(sgo);
+diff --git dom/xslt/xslt/txMozillaXMLOutput.cpp dom/xslt/xslt/txMozillaXMLOutput.cpp
+index 451f093682a4..5c254e22c0e9 100644
+--- dom/xslt/xslt/txMozillaXMLOutput.cpp
++++ dom/xslt/xslt/txMozillaXMLOutput.cpp
+@@ -812,7 +812,7 @@ txMozillaXMLOutput::createResultDocument(const nsAString& aName, int32_t aNsID,
+     mNodeInfoManager = mDocument->NodeInfoManager();
+ 
+     // Reset and set up the document
+-    URIUtils::ResetWithSource(mDocument, aSourceDocument);
++    URIUtils::ResetWithSource(mDocument, source);
+ 
+     // Make sure we set the script handling object after resetting with the
+     // source, so that we have the right principal.
+diff --git dom/xslt/xslt/txMozillaXSLTProcessor.cpp dom/xslt/xslt/txMozillaXSLTProcessor.cpp
+index bc554e54878e..54e7c2aed220 100644
+--- dom/xslt/xslt/txMozillaXSLTProcessor.cpp
++++ dom/xslt/xslt/txMozillaXSLTProcessor.cpp
+@@ -377,15 +377,27 @@ txMozillaXSLTProcessor::SetTransformObserver(nsITransformObserver* aObserver)
+ }
+ 
+ nsresult
+-txMozillaXSLTProcessor::SetSourceContentModel(nsIDOMNode* aSourceDOM)
++txMozillaXSLTProcessor::SetSourceContentModel(nsIDocument* aDocument,
++                                              const nsTArray<nsCOMPtr<nsIContent>>& aSource)
+ {
+-    mSource = aSourceDOM;
+-
+     if (NS_FAILED(mTransformResult)) {
+         notifyError();
+         return NS_OK;
+     }
+ 
++    mSource = aDocument->CreateDocumentFragment();
++
++    ErrorResult rv;
++    for (nsIContent* child : aSource) {
++        // XPath data model doesn't have DocumentType nodes.
++        if (child->NodeType() != nsIDOMNode::DOCUMENT_TYPE_NODE) {
++            mSource->AppendChild(*child, rv);
++            if (rv.Failed()) {
++                return rv.StealNSResult();
++            }
++        }
++    }
++
+     if (mStylesheet) {
+         return DoTransform();
+     }
+@@ -552,8 +564,7 @@ public:
+ 
+   ~nsTransformBlockerEvent()
+   {
+-    nsCOMPtr<nsIDocument> document =
+-        do_QueryInterface(mProcessor->GetSourceContentModel());
++    nsCOMPtr<nsIDocument> document = mProcessor->GetSourceContentModel()->OwnerDoc();
+     document->UnblockOnload(true);
+   }
+ 
+@@ -572,13 +583,9 @@ txMozillaXSLTProcessor::DoTransform()
+     NS_ASSERTION(mObserver, "no observer");
+     NS_ASSERTION(NS_IsMainThread(), "should only be on main thread");
+ 
+-    nsresult rv;
+-    nsCOMPtr<nsIDocument> document = do_QueryInterface(mSource, &rv);
+-    NS_ENSURE_SUCCESS(rv, rv);
+-
+     nsCOMPtr<nsIRunnable> event = new nsTransformBlockerEvent(this);
+-    document->BlockOnload();
+-    rv = NS_DispatchToCurrentThread(event);
++    mSource->OwnerDoc()->BlockOnload();
++    nsresult rv = NS_DispatchToCurrentThread(event);
+     if (NS_FAILED(rv)) {
+         // XXX Maybe we should just display the source document in this case?
+         //     Also, set up context information, see bug 204655.
+@@ -643,7 +650,7 @@ txMozillaXSLTProcessor::TransformToDocument(nsIDOMNode *aSource,
+     nsresult rv = ensureStylesheet();
+     NS_ENSURE_SUCCESS(rv, rv);
+ 
+-    mSource = aSource;
++    mSource = do_QueryInterface(aSource);
+ 
+     return TransformToDoc(aResult, true);
+ }
+@@ -657,11 +664,7 @@ txMozillaXSLTProcessor::TransformToDoc(nsIDOMDocument **aResult,
+         return NS_ERROR_OUT_OF_MEMORY;
+     }
+ 
+-    nsCOMPtr<nsIDOMDocument> sourceDOMDocument;
+-    mSource->GetOwnerDocument(getter_AddRefs(sourceDOMDocument));
+-    if (!sourceDOMDocument) {
+-        sourceDOMDocument = do_QueryInterface(mSource);
+-    }
++    nsCOMPtr<nsIDOMDocument> sourceDOMDocument = do_QueryInterface(mSource->OwnerDoc());
+ 
+     txExecutionState es(mStylesheet, IsLoadDisabled());
+ 
+diff --git dom/xslt/xslt/txMozillaXSLTProcessor.h dom/xslt/xslt/txMozillaXSLTProcessor.h
+index 569ca7adbf6e..b3c5420d6fee 100644
+--- dom/xslt/xslt/txMozillaXSLTProcessor.h
++++ dom/xslt/xslt/txMozillaXSLTProcessor.h
+@@ -75,7 +75,8 @@ public:
+     // nsIDocumentTransformer interface
+     NS_IMETHOD SetTransformObserver(nsITransformObserver* aObserver) override;
+     NS_IMETHOD LoadStyleSheet(nsIURI* aUri, nsIDocument* aLoaderDocument) override;
+-    NS_IMETHOD SetSourceContentModel(nsIDOMNode* aSource) override;
++    NS_IMETHOD SetSourceContentModel(nsIDocument* aDocument,
++                                     const nsTArray<nsCOMPtr<nsIContent>>& aSource) override;
+     NS_IMETHOD CancelLoads() override {return NS_OK;}
+     NS_IMETHOD AddXSLTParamNamespace(const nsString& aPrefix,
+                                      const nsString& aNamespace) override;
+@@ -136,7 +137,7 @@ public:
+     void reportError(nsresult aResult, const char16_t *aErrorText,
+                      const char16_t *aSourceText);
+ 
+-    nsIDOMNode *GetSourceContentModel()
++    nsINode *GetSourceContentModel()
+     {
+         return mSource;
+     }
+@@ -169,7 +170,7 @@ private:
+     nsIDocument* mStylesheetDocument; // weak
+     nsCOMPtr<nsIContent> mEmbeddedStylesheetRoot;
+ 
+-    nsCOMPtr<nsIDOMNode> mSource;
++    nsCOMPtr<nsINode> mSource;
+     nsresult mTransformResult;
+     nsresult mCompileResult;
+     nsString mErrorText, mSourceText;

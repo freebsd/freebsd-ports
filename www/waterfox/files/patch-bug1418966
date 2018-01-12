@@ -1,0 +1,232 @@
+commit 229898bfe36d
+Author: Jan de Mooij <jdemooij@mozilla.com>
+Date:   Wed Dec 13 14:13:43 2017 -0600
+
+    Bug 1418966 - Pin TypeScripts better when doing Baseline debug mode OSR. r=bhackett a=ritu
+    
+    --HG--
+    extra : source : f5ea86116d56e8e90689ec325061c948869159ba
+---
+ js/src/jit/BaselineCompiler.cpp     |  4 +++-
+ js/src/jit/BaselineDebugModeOSR.cpp |  2 ++
+ js/src/jit/IonAnalysis.cpp          |  3 ++-
+ js/src/jit/VMFunctions.cpp          |  3 ++-
+ js/src/jsscript.h                   |  2 +-
+ js/src/vm/EnvironmentObject.cpp     |  4 +++-
+ js/src/vm/TypeInference-inl.h       | 17 ++++++++++++++++-
+ js/src/vm/TypeInference.cpp         |  3 +++
+ js/src/vm/TypeInference.h           | 19 +++++++++++++++++++
+ 9 files changed, 51 insertions(+), 6 deletions(-)
+
+diff --git js/src/jit/BaselineCompiler.cpp js/src/jit/BaselineCompiler.cpp
+index fe02710d0105..5d1d7956bda3 100644
+--- js/src/jit/BaselineCompiler.cpp
++++ js/src/jit/BaselineCompiler.cpp
+@@ -36,6 +36,7 @@
+ #include "jit/MacroAssembler-inl.h"
+ #include "vm/Interpreter-inl.h"
+ #include "vm/NativeObject-inl.h"
++#include "vm/TypeInference-inl.h"
+ 
+ using namespace js;
+ using namespace js::jit;
+@@ -98,7 +99,8 @@ BaselineCompiler::compile()
+     AutoTraceLog logScript(logger, scriptEvent);
+     AutoTraceLog logCompile(logger, TraceLogger_BaselineCompilation);
+ 
+-    if (!script->ensureHasTypes(cx) || !script->ensureHasAnalyzedArgsUsage(cx))
++    AutoKeepTypeScripts keepTypes(cx);
++    if (!script->ensureHasTypes(cx, keepTypes) || !script->ensureHasAnalyzedArgsUsage(cx))
+         return Method_Error;
+ 
+     // When code coverage is only enabled for optimizations, or when a Debugger
+diff --git js/src/jit/BaselineDebugModeOSR.cpp js/src/jit/BaselineDebugModeOSR.cpp
+index e4f0a87d4fe0..f8ff5f237fd0 100644
+--- js/src/jit/BaselineDebugModeOSR.cpp
++++ js/src/jit/BaselineDebugModeOSR.cpp
+@@ -16,6 +16,7 @@
+ #include "jit/JitFrames-inl.h"
+ #include "jit/MacroAssembler-inl.h"
+ #include "vm/Stack-inl.h"
++#include "vm/TypeInference-inl.h"
+ 
+ using namespace js;
+ using namespace js::jit;
+@@ -673,6 +674,7 @@ RecompileBaselineScriptForDebugMode(JSContext* cx, JSScript* script,
+     JitSpew(JitSpew_BaselineDebugModeOSR, "Recompiling (%s:%zu) for %s",
+             script->filename(), script->lineno(), observing ? "DEBUGGING" : "NORMAL EXECUTION");
+ 
++    AutoKeepTypeScripts keepTypes(cx);
+     script->setBaselineScript(cx->runtime(), nullptr);
+ 
+     MethodStatus status = BaselineCompile(cx, script, /* forceDebugMode = */ observing);
+diff --git js/src/jit/IonAnalysis.cpp js/src/jit/IonAnalysis.cpp
+index 72055a41c485..2191bbdea906 100644
+--- js/src/jit/IonAnalysis.cpp
++++ js/src/jit/IonAnalysis.cpp
+@@ -4430,7 +4430,8 @@ jit::AnalyzeArgumentsUsage(JSContext* cx, JSScript* scriptArg)
+     if (script->length() > MAX_SCRIPT_SIZE)
+         return true;
+ 
+-    if (!script->ensureHasTypes(cx))
++    AutoKeepTypeScripts keepTypes(cx);
++    if (!script->ensureHasTypes(cx, keepTypes))
+         return false;
+ 
+     TraceLoggerThread* logger = TraceLoggerForCurrentThread(cx);
+diff --git js/src/jit/VMFunctions.cpp js/src/jit/VMFunctions.cpp
+index bb47eb548f00..1baa93c0d063 100644
+--- js/src/jit/VMFunctions.cpp
++++ js/src/jit/VMFunctions.cpp
+@@ -624,7 +624,8 @@ CreateThis(JSContext* cx, HandleObject callee, HandleObject newTarget, MutableHa
+         RootedFunction fun(cx, &callee->as<JSFunction>());
+         if (fun->isInterpreted() && fun->isConstructor()) {
+             JSScript* script = JSFunction::getOrCreateScript(cx, fun);
+-            if (!script || !script->ensureHasTypes(cx))
++            AutoKeepTypeScripts keepTypes(cx);
++            if (!script || !script->ensureHasTypes(cx, keepTypes))
+                 return false;
+             if (!js::CreateThis(cx, fun, script, newTarget, GenericObject, rval))
+                 return false;
+diff --git js/src/jsscript.h js/src/jsscript.h
+index b4ce7dc694b7..3611aa701424 100644
+--- js/src/jsscript.h
++++ js/src/jsscript.h
+@@ -1709,7 +1709,7 @@ class JSScript : public js::gc::TenuredCell
+     bool isTopLevel() { return code() && !functionNonDelazifying(); }
+ 
+     /* Ensure the script has a TypeScript. */
+-    inline bool ensureHasTypes(JSContext* cx);
++    inline bool ensureHasTypes(JSContext* cx, js::AutoKeepTypeScripts&);
+ 
+     inline js::TypeScript* types();
+ 
+diff --git js/src/vm/EnvironmentObject.cpp js/src/vm/EnvironmentObject.cpp
+index 11f9015ddcfb..ee256b4a59c6 100644
+--- js/src/vm/EnvironmentObject.cpp
++++ js/src/vm/EnvironmentObject.cpp
+@@ -28,6 +28,7 @@
+ #include "gc/Marking-inl.h"
+ #include "vm/NativeObject-inl.h"
+ #include "vm/Stack-inl.h"
++#include "vm/TypeInference-inl.h"
+ 
+ using namespace js;
+ using namespace js::gc;
+@@ -1506,7 +1507,8 @@ class DebugEnvironmentProxyHandler : public BaseProxyHandler
+             CallObject& callobj = env->as<CallObject>();
+             RootedFunction fun(cx, &callobj.callee());
+             RootedScript script(cx, JSFunction::getOrCreateScript(cx, fun));
+-            if (!script->ensureHasTypes(cx) || !script->ensureHasAnalyzedArgsUsage(cx))
++            AutoKeepTypeScripts keepTypes(cx);
++            if (!script->ensureHasTypes(cx, keepTypes) || !script->ensureHasAnalyzedArgsUsage(cx))
+                 return false;
+ 
+             BindingIter bi(script);
+diff --git js/src/vm/TypeInference-inl.h js/src/vm/TypeInference-inl.h
+index eb50e3d4b258..ea6e2492a113 100644
+--- js/src/vm/TypeInference-inl.h
++++ js/src/vm/TypeInference-inl.h
+@@ -683,6 +683,21 @@ TypeScript::SetArgument(JSContext* cx, JSScript* script, unsigned arg, const js:
+     SetArgument(cx, script, arg, TypeSet::GetValueType(value));
+ }
+ 
++inline
++AutoKeepTypeScripts::AutoKeepTypeScripts(JSContext* cx)
++  : zone_(cx->zone()->types),
++    prev_(zone_.keepTypeScripts)
++{
++    zone_.keepTypeScripts = true;
++}
++
++inline
++AutoKeepTypeScripts::~AutoKeepTypeScripts()
++{
++    MOZ_ASSERT(zone_.keepTypeScripts);
++    zone_.keepTypeScripts = prev_;
++}
++
+ /////////////////////////////////////////////////////////////////////
+ // TypeHashSet
+ /////////////////////////////////////////////////////////////////////
+@@ -1202,7 +1217,7 @@ JSScript::types()
+ }
+ 
+ inline bool
+-JSScript::ensureHasTypes(JSContext* cx)
++JSScript::ensureHasTypes(JSContext* cx, js::AutoKeepTypeScripts&)
+ {
+     return types() || makeTypes(cx);
+ }
+diff --git js/src/vm/TypeInference.cpp js/src/vm/TypeInference.cpp
+index 10fc2391f3df..ecd83f47c8ec 100644
+--- js/src/vm/TypeInference.cpp
++++ js/src/vm/TypeInference.cpp
+@@ -4442,6 +4442,7 @@ JSScript::maybeSweepTypes(AutoClearTypeInferenceStateOnOOM* oom)
+     // only do this if nothing has been compiled for the script, which will be
+     // the case unless the script has been compiled since we started sweeping.
+     if (types.sweepReleaseTypes &&
++        !types.keepTypeScripts &&
+         !hasBaselineScript() &&
+         !hasIonScript())
+     {
+@@ -4509,6 +4510,7 @@ TypeZone::TypeZone(Zone* zone)
+     sweepCompilerOutputs(zone->group(), nullptr),
+     sweepReleaseTypes(zone->group(), false),
+     sweepingTypes(zone->group(), false),
++    keepTypeScripts(zone->group(), false),
+     activeAnalysis(zone->group(), nullptr)
+ {
+ }
+@@ -4518,6 +4520,7 @@ TypeZone::~TypeZone()
+     js_delete(compilerOutputs.ref());
+     js_delete(sweepCompilerOutputs.ref());
+     MOZ_RELEASE_ASSERT(!sweepingTypes);
++    MOZ_ASSERT(!keepTypeScripts);
+ }
+ 
+ void
+diff --git js/src/vm/TypeInference.h js/src/vm/TypeInference.h
+index 0e8e9c27ee12..358ac842f9e8 100644
+--- js/src/vm/TypeInference.h
++++ js/src/vm/TypeInference.h
+@@ -1286,6 +1286,20 @@ class TypeScript
+ #endif
+ };
+ 
++// Ensures no TypeScripts are purged in the current zone.
++class MOZ_RAII AutoKeepTypeScripts
++{
++    TypeZone& zone_;
++    bool prev_;
++
++    AutoKeepTypeScripts(const AutoKeepTypeScripts&) = delete;
++    void operator=(const AutoKeepTypeScripts&) = delete;
++
++  public:
++    explicit inline AutoKeepTypeScripts(JSContext* cx);
++    inline ~AutoKeepTypeScripts();
++};
++
+ void
+ FillBytecodeTypeMap(JSScript* script, uint32_t* bytecodeMap);
+ 
+@@ -1360,6 +1374,9 @@ class TypeZone
+     static const size_t TYPE_LIFO_ALLOC_PRIMARY_CHUNK_SIZE = 8 * 1024;
+     ZoneGroupData<LifoAlloc> typeLifoAlloc_;
+ 
++    TypeZone(const TypeZone&) = delete;
++    void operator=(const TypeZone&) = delete;
++
+   public:
+     // Current generation for sweeping.
+     ZoneGroupOrGCTaskOrIonCompileData<uint32_t> generation;
+@@ -1386,6 +1403,8 @@ class TypeZone
+ 
+     ZoneGroupData<bool> sweepingTypes;
+ 
++    ZoneGroupData<bool> keepTypeScripts;
++
+     // The topmost AutoEnterAnalysis on the stack, if there is one.
+     ZoneGroupData<AutoEnterAnalysis*> activeAnalysis;
+ 
