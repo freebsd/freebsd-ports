@@ -16,6 +16,8 @@ COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 
 LICENSE=	RUBY
 
+BROKEN_RUBY25=	yes
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_RUBY=		yes
