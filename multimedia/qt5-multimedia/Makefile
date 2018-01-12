@@ -2,7 +2,7 @@
 
 PORTNAME=	multimedia
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt5-
 
@@ -21,6 +21,13 @@ USE_XORG=	x11 xext xv
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 QT_CONFIG=	xlib
+
+# TODO: Bug 225100: the machinery in bsd.qt.mk's qt-post-install target does
+# not seem to account for the case of a module no longer defining QT_DEFINES:
+# the lines in qconfig-modules.h including said module's qconfig-<module>.h
+# will remain. We're setting it below to avoid build errors, but this needs to
+# be fixed properly later.
+QT_DEFINES=	_QTMULTIMEDIA_DUMMY
 
 OPTIONS_DEFINE=			GSTREAMER OPENAL
 OPTIONS_DEFAULT=		ALSA GSTREAMER
