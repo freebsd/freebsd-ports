@@ -12,6 +12,8 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High performance graph data structures and algorithms
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libigraph.so:math/igraph
 
 USES=		python
