@@ -1,6 +1,6 @@
---- nc.cpp.orig	Tue May  2 09:29:37 2006
-+++ nc.cpp	Sat May  6 21:42:59 2006
-@@ -258,7 +258,7 @@
+--- nc.cpp.orig	2017-12-27 12:07:16 UTC
++++ nc.cpp
+@@ -178,7 +178,7 @@ void help(void)
  
  	printf("-f file   what file to monitor (usuallly:\n");
  	printf("-F host:port   connect to a host for retrieving the status.log information\n");
@@ -9,7 +9,7 @@
  	printf("          the nagios.cfg file\n");
  	printf("-i x      check interval (in seconds)\n");
  	printf("-a        list also the services for hosts that are down\n");
-@@ -288,7 +288,7 @@
+@@ -210,7 +210,7 @@ int main(int argc, char *argv[])
  	WINDOW *win;
  	int sw;
  
@@ -18,7 +18,7 @@
  	int interval = 5;
  	char list_all_problems = 0;
  	char always_notify = 0;
-@@ -390,7 +390,7 @@
+@@ -322,7 +322,7 @@ int main(int argc, char *argv[])
  		wattroff(win, COLOR_PAIR(MY_DRAW));
  
  		if (file_mode == 0)	/* file */

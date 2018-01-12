@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagcon
-PORTVERSION=	0.0.30
+PORTVERSION=	0.0.31
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.vanheusden.com/nagcon/
 
@@ -18,7 +18,7 @@ CPPFILES=	utils.cpp br.cpp nc.cpp pl.cpp
 
 USES=		ncurses tar:tgz
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include
-LDFLAGS+=	-lncurses -lstdc++ -L${LOCALBASE}/lib -lstrfunc
+LDFLAGS+=	-lncurses -lstdc++ -L${LOCALBASE}/lib -lstrfunc -ltinfo
 
 do-build:
 	${CC} ${CFLAGS} -c -o ${WRKSRC}/${CFILES:C/\.c//}.o ${WRKSRC}/${CFILES}
