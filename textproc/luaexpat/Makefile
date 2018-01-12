@@ -3,7 +3,7 @@
 
 PORTNAME=	luaexpat
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://matthewwild.co.uk/projects/luaexpat/ \
 				http://redundancy.redundancy.org/mirror/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 USES?=		lua
 USES+=		gmake
 ALL_TARGET=	lib
-CFLAGS+=	-DLUA_INT_LONG
+CFLAGS+=	-DLUA_32BITS
 
 CFLAGS+=	-fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib
