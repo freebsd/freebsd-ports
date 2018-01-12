@@ -1,6 +1,6 @@
---- br.cpp.orig	Thu Feb 28 15:12:00 2008
-+++ br.cpp	Thu Feb 28 15:12:12 2008
-@@ -28,6 +28,7 @@
+--- br.cpp.orig	2017-12-27 12:07:16 UTC
++++ br.cpp
+@@ -12,6 +12,7 @@
  #include <sys/mman.h>
  #include <fcntl.h>
  #include <syslog.h>

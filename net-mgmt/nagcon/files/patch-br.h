@@ -1,6 +1,6 @@
---- ./br.h.orig	Tue Mar 28 20:54:02 2006
-+++ ./br.h	Tue Mar 28 20:56:02 2006
-@@ -8,6 +8,12 @@
+--- br.h.orig	2017-12-27 12:07:16 UTC
++++ br.h
+@@ -10,6 +10,12 @@
  #define likely(x)       __builtin_expect((x),1)
  #define unlikely(x)     __builtin_expect((x),0)
  
