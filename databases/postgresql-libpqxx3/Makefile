@@ -3,7 +3,7 @@
 
 PORTNAME=	libpqxx
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://pqxx.org/download/software/${PORTNAME}/
 PKGNAMEPREFIX=	postgresql-
@@ -13,8 +13,11 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	20080111.freebsd.org@ab.ote.we.lv
 COMMENT=	New C++ interface for PostgreSQL
 
-CONFLICTS=	postgresql-libpqxx-[2-4].*
-PORTSCOUT=	limit:^2\.
+LICENSE=	BSD3CLAUSE
+
+CONFLICTS=	postgresql-libpqxx-2.* postgresql-libpqxx-[4-9].* \
+		postgresql-libpqxx4-4.*
+PORTSCOUT=	limit:^3\.
 
 USES+=		gmake libtool pathfix pgsql pkgconfig python:2.7,build shebangfix
 GNU_CONFIGURE=	yes
