@@ -123,7 +123,7 @@ diff -u -p -r1.1.1.8 -r1.13
 +	int			 s;
 +
 +	/* Check if TCP_MD5SIG is supported. */
-+	s = socket(PF_LOCAL, SOCK_STREAM, 0);
++	s = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
 +	if (s < 0)
 +		fatal("socket open for TCP_MD5SIG check");
 +	opt = TF_SIGNATURE;
