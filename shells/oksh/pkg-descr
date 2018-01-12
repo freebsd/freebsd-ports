@@ -1,0 +1,6 @@
+oksh is the portable version of the OpenBSD Korn shell, a continuation
+of the Public Domain Korn Shell (PDKSH).  Its command language is a
+superset of the sh(1) shell language.  oksh is best known as the
+default user shell and /bin/sh on OpenBSD.
+
+WWW: https://devio.us/~bcallah/oksh/
