@@ -8,7 +8,7 @@ MASTER_SITES=	http://font.ubuntu.com/download/
 
 DISTNAME=	${PORTNAME}-family-${PORTVERSION}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ubuntu font family
 
 LICENSE=	UFL

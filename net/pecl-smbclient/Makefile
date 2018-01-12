@@ -5,7 +5,7 @@ PORTVERSION=	0.9.0
 PORTREVISION=	3
 CATEGORIES=	net pear
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smbclient wrapper extension
 
 LICENSE=	BSD2CLAUSE

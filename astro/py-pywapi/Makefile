@@ -6,7 +6,7 @@ CATEGORIES=	astro python
 MASTER_SITES=	http://launchpad.net/python-weather-api/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python wrapper around different weather APIs
 
 LICENSE=	MIT

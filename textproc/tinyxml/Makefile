@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small C++ XML parser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

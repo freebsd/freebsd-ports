@@ -7,7 +7,7 @@ CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Release-${PORTVERSION}
 DISTNAME=	TaskCoach-${PORTVERSION}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Friendly task manager
 
 LICENSE=	GPLv3

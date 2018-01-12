@@ -6,7 +6,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python framework for Telegram Bot API
 
 LICENSE=	MIT

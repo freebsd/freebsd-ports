@@ -5,7 +5,7 @@ PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.catb.org/esr/deheader/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to find unnecessary includes in C/C++ files
 
 LICENSE=	BSD3CLAUSE

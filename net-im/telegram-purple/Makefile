@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	net-im
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libpurple plugin for Telegram messenger
 
 LICENSE=	GPLv2+
