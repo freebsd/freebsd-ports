@@ -13,6 +13,8 @@ COMMENT=	Brokken's Own Base Classes And Templates
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	icmake:devel/icmake \
 		yodl>=3.0:textproc/yodl
 
