@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	18.0.g201801070734
-PORTREVISION=	1
+DISTVERSION=	18.0.g201801112007
 CATEGORIES=	multimedia
 PKGNAMESUFFIX?=	-devel
 
@@ -53,7 +52,7 @@ USES=		autoreconf:build cmake:outsource,noninja compiler:c++11-lib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	bff1759626cb44be4a3f6dc0d6ebb5fe43a55a96
+GH_TAGNAME=	4e01f3da2b0f17bd4da4c507691666695393527a
 USE_GNOME=	libxslt libxml2
 USE_JAVA=	yes
 JAVA_BUILD=	yes
