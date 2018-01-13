@@ -20,8 +20,7 @@ OPTIONS_DEFINE=	OPENLDAP DOCS
 OPTIONS_DEFAULT=OPENLDAP
 OPENLDAP_DESC=	OpenLDAP support
 
-USES=		bison libtool makeinfo perl5
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf bison libtool makeinfo perl5
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
