@@ -9845,3 +9845,4 @@ devel/p5-Test-Block||2018-01-06|Has expired: Marked as deprecated upstream
 sysutils/socket||2018-01-06|Has expired: Out of date
 x11-toolkits/qt5-declarative-render2d/||2018-01-06|Merged into x11-toolkits/qt5-quick
 editors/vim-lite|editors/vim-console|2018-01-11|Renamed to reflect that it is console-only, not any lighter
+devel/py-repl|devel/py-pyrepl|2018-01-10|Rename to match pypi name

@@ -10,4 +10,4 @@ Features:
  - no global variables, so you can run two independent readers
    without having their histories interfering.
 
-WWW: http://bitbucket.org/pypy/pyrepl/
+WWW: https://bitbucket.org/pypy/pyrepl
