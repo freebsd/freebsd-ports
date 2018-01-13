@@ -16,7 +16,8 @@ LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
 USES=		tar:tgz
 ALL_TARGET=	tidy
-DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif
+PLIST_FILES=	bin/tidy4 man/man1/tidy4.1.gz
+PORTDOCS=	Overview.html tidy.gif release-notes.html grid.gif
 
 OPTIONS_DEFINE=	DOCS
 
