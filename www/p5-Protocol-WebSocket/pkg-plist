@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Protocol/WebSocket.pm
+%%SITE_PERL%%/Protocol/WebSocket/Client.pm
 %%SITE_PERL%%/Protocol/WebSocket/Cookie.pm
 %%SITE_PERL%%/Protocol/WebSocket/Cookie/Request.pm
 %%SITE_PERL%%/Protocol/WebSocket/Cookie/Response.pm
@@ -12,6 +13,7 @@
 %%SITE_PERL%%/Protocol/WebSocket/Stateful.pm
 %%SITE_PERL%%/Protocol/WebSocket/URL.pm
 %%PERL5_MAN3%%/Protocol::WebSocket.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Client.3.gz
 %%PERL5_MAN3%%/Protocol::WebSocket::Cookie.3.gz
 %%PERL5_MAN3%%/Protocol::WebSocket::Cookie::Request.3.gz
 %%PERL5_MAN3%%/Protocol::WebSocket::Cookie::Response.3.gz
