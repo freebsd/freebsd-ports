@@ -3,7 +3,7 @@
 
 PORTNAME=	am-utils
 PORTVERSION=	6.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
@@ -21,6 +21,7 @@ OPTIONS_DEFAULT=OPENLDAP
 OPENLDAP_DESC=	OpenLDAP support
 
 USES=		bison libtool makeinfo perl5
+USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
@@ -36,19 +37,15 @@ INSTALL_TARGET=	install-strip
 INFO=		am-utils
 DOCS=		AUTHORS BUGS FAQ NEWS README.attrcache
 
-.include <bsd.port.options.mk>
+OPENLDAP_USE=			OPENLDAP=yes
+OPENLDAP_CONFIGURE_WITH=	ldap
+OPENLDAP_CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+				CPPFLAGS="-I${LOCALBASE}/include"
+OPENLDAP_VARS=			DOCS+="README.ldap ldap-id.txt ldap.schema"
 
-.if ${PORT_OPTIONS:MOPENLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap=yes \
-		--enable-ldflags=-L${LOCALBASE}/lib \
-		--enable-cppflags=-I${LOCALBASE}/include
-DOCS+=		README.ldap ldap-id.txt ldap.schema
-PLIST_SUB+=	LDAP_DOC=""
-.else
-PLIST_SUB+=	LDAP_DOC="@comment "
-CONFIGURE_ARGS+=--with-ldap=no
-.endif
+OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/am-utils.info*

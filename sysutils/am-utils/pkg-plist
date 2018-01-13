@@ -40,6 +40,6 @@ sbin/wire-test
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.attrcache
-%%LDAP_DOC%%%%PORTDOCS%%%%DOCSDIR%%/README.ldap
-%%LDAP_DOC%%%%PORTDOCS%%%%DOCSDIR%%/ldap-id.txt
-%%LDAP_DOC%%%%PORTDOCS%%%%DOCSDIR%%/ldap.schema
+%%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/README.ldap
+%%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/ldap-id.txt
+%%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/ldap.schema
