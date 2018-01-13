@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qjackctl
-PORTVERSION=	0.4.5
-PORTREVISION=	1
+DISTVERSIONPREFIX=	qjackctl_
+DISTVERSION=	0_5_0
 CATEGORIES=	audio
-MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt interface for JACK Audio Connection Kit
@@ -15,9 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		gmake localbase pkgconfig
+USES=		autoreconf gmake localbase pkgconfig
 USE_XORG=	x11
-INSTALLS_ICONS=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	rncbc
+
 QT_NONSTANDARD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_qmake=${QMAKE} \
@@ -26,10 +27,8 @@ CONFIGURE_ENV=	ac_cv_qmake=${QMAKE} \
 		ac_cv_path_ac_lrelease=${LRELEASE} \
 		ac_cv_path_ac_lupdate=${LUPDATE}
 
-MAKE_JOBS_UNSAFE=yes
-
 OPTIONS_DEFINE=		ALSA PORTAUDIO SYSTRAY
-OPTIONS_DEFAULT=	QT4 SYSTRAY
+OPTIONS_DEFAULT=	QT5 SYSTRAY
 OPTIONS_SINGLE=		TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
 
