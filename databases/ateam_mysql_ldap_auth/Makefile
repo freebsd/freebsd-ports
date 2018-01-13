@@ -21,9 +21,10 @@ GH_ACCOUNT=	ateamsystems
 GH_TAGNAME=	f6a1a5d
 
 PLIST_FILES=	lib/mysql/plugin/auth_ldap.so \
-		"@sample etc/ateam_mysql_ldap_auth.conf.sample" \
-		${DOCSDIR}/README \
-		${DOCSDIR}/INSTALL
+		"@sample etc/ateam_mysql_ldap_auth.conf.sample"
+PORTDOCS=	README INSTALL
+
+OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	pkg-message
 
