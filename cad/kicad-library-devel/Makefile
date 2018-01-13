@@ -4,7 +4,7 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
 CATEGORIES=	cad
-PKGNAMESUFFIX=	-library
+PKGNAMESUFFIX=	-library-devel
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Schematic and 3D libraries supported by KiCad team
