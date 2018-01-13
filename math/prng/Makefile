@@ -26,7 +26,7 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/examples/,} \
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} \
 		${STAGEDIR}${EXAMPLESDIR}
 
 check regression-test test: build
