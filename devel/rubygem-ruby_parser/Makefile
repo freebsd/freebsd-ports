@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby_parser
-PORTVERSION=	3.8.4
+PORTVERSION=	3.10.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,14 +11,16 @@ COMMENT=	Ruby parser written in pure ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-sexp_processor>=4.1:devel/rubygem-sexp_processor
+RUN_DEPENDS=	rubygem-sexp_processor>=4.9:devel/rubygem-sexp_processor
 
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	bin/ruby_parse*
 
 PLIST_FILES=	bin/ruby_parse \
 		bin/ruby_parse_extract_error
+
+SHEBANG_FILES=	bin/* \
+		compare/normalize.rb
 
 .include <bsd.port.mk>
