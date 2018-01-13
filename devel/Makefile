@@ -4405,6 +4405,7 @@
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
+    SUBDIR += py-eventlib
     SUBDIR += py-exam
     SUBDIR += py-extras
     SUBDIR += py-extremes
