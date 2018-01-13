@@ -1,11 +1,13 @@
---- libsndio/Makefile.in.orig	2017-11-14 19:00:10 UTC
+--- libsndio/Makefile.in.orig	2018-01-13 12:32:33 UTC
 +++ libsndio/Makefile.in
-@@ -14,7 +14,7 @@ LDADD = @ldadd@
- SO_CFLAGS = -fPIC
+@@ -42,8 +42,8 @@ MAN7 = sndio.7
+ #
+ # libraries to build and install
+ #
+-MAJ = 7
+-MIN = 0
++MAJ = 6
++MIN = 1
+ SO = @so@
+ SO_LINK = @so_link@
  
- # extra compiler flags to produce a shared library with the given name
--SO_LDFLAGS = -shared #-Wl,-soname=libsndio.so.${MAJ}.${MIN}
-+SO_LDFLAGS = -shared -Wl,-soname=libsndio.so.${MAJ}.${MIN}
- 
- # variables defined on configure script command line (if any)
- @vars@
