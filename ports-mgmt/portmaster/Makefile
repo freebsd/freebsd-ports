@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portmaster
-PORTVERSION=	3.18
-PORTREVISION=	13
+PORTVERSION=	3.19
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	se@FreeBSD.org
@@ -30,7 +29,7 @@ verify: checksum
 do-build:
 .for file in portmaster files/portmaster.rc.sample files/portmaster.8
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
-	    -e 's#%%PKGNAME%%#${PKGNAME}#g' ${WRKSRC}/${file}
+	    -e 's#===>>> Version [0-9._]*#===>>> Version ${PKGVERSION}#' ${WRKSRC}/${file}
 .endfor
 
 do-install:
