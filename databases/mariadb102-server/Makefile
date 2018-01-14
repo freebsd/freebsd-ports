@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.2.11
-PORTREVISION?=	1
+PORTVERSION=	10.2.12
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -180,6 +180,12 @@ post-install:
 	${RM} -r ${STAGEDIR}/${PREFIX}/share/mysql/policy \
 		${STAGEDIR}/${PREFIX}/share/pkgconfig
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/mysql/libmysqlclient*
+	${RM} ${STAGEDIR}${LOCALBASE}/share/doc/mysql/COPYING \
+		${STAGEDIR}${LOCALBASE}/share/doc/mysql/COPYING.thirdparty \
+		${STAGEDIR}${LOCALBASE}/share/groonga-normalizer-mysql/lgpl-2.0.txt \
+		${STAGEDIR}${LOCALBASE}/share/groonga/COPYING \
+		${STAGEDIR}${LOCALBASE}/storage/groonga/COPYING \
+		${STAGEDIR}${LOCALBASE}/share/mysql/mroonga/COPYING
 .endif # defined(CLIENT_ONLY)
 
 .if defined(WITH_OPENSSL_PORT)
