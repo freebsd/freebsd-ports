@@ -1,0 +1,80 @@
+--- configure.orig	2006-03-22 19:13:52 UTC
++++ configure
+@@ -2268,14 +2268,12 @@ echo Using FORTRAN runtime libraries: $withval
+ 
+ fi;
+ 
+-LDFLAGS=
+ LIBDIRS=
+ 
+ # Check whether --with-libdirs or --without-libdirs was given.
+ if test "${with_libdirs+set}" = set; then
+   withval="$with_libdirs"
+   LIBDIRS=$withval
+-LDFLAGS=$withval
+ echo Using extra library directories: $withval
+ 
+ fi;
+@@ -2290,7 +2288,7 @@ if test "${with_cca_chem_config+set}" = set; then
+ 
+ else
+ 
+-  if test "$components" == "yes"; then
++  if test "$components" = "yes"; then
+     # Extract the first word of "cca-chem-config", so it can be a program name with args.
+ set dummy cca-chem-config; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+@@ -5207,7 +5205,7 @@ case $target_cpu in
+      ;;
+ esac
+ 
+-if test X$GXX == Xyes; then
++if test X$GXX = Xyes; then
+   echo "$as_me:$LINENO: checking for C++ cpu tuning flag" >&5
+ echo $ECHO_N "checking for C++ cpu tuning flag... $ECHO_C" >&6
+ 
+@@ -5265,7 +5263,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ echo "${ECHO_T}$cxx_tuneflag" >&6
+ fi
+ 
+-if test X$GCC == Xyes; then
++if test X$GCC = Xyes; then
+   echo "$as_me:$LINENO: checking for C cpu tuning flag" >&5
+ echo $ECHO_N "checking for C cpu tuning flag... $ECHO_C" >&6
+   CFLAGS_SAV=$CFLAGS
+@@ -28629,10 +28627,10 @@ ENABLESHARED=$enable_shared
+ 
+ 
+ 
+-if test $components == "yes"; then
++if test $components = "yes"; then
+ 
+-  if test $HAVE_MPI == "yes" &&
+-     test $HAVE_MPIPP == "no"; then
++  if test $HAVE_MPI = "yes" &&
++     test $HAVE_MPIPP = "no"; then
+     { { echo "$as_me:$LINENO: error: libmpi++ needed for mpi cca components" >&5
+ echo "$as_me: error: libmpi++ needed for mpi cca components" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -28808,10 +28806,10 @@ echo "$as_me: WARNING: Ccaffeine not configured for MP
+ 
+ 
+ 
+-  if test $ENABLE_PYTHON == "yes"; then
++  if test $ENABLE_PYTHON = "yes"; then
+     # check for babel python
+     BABEL_PYTHON_ENABLE=`$BABEL_CONFIG --query-var=SUPPORT_PYTHON`
+-    if test $BABEL_PYTHON_ENABLE == "false"; then
++    if test $BABEL_PYTHON_ENABLE = "false"; then
+       { { echo "$as_me:$LINENO: error: Babel not properly configured for python" >&5
+ echo "$as_me: error: Babel not properly configured for python" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -28846,7 +28844,7 @@ echo "$as_me: error: Ccaffeine not properly configured
+   echo -e "ccafe bin:\n  $CCAFE_BIN"
+   echo -e "ccafe python enabled:\n  $CCAFE_PYTHON_ENABLE"
+   echo -e "ccafe mpi enabled\n  $CCAFE_MPI_ENABLE"
+-  if test $CCAFE_MPI_ENABLE == "yes"; then
++  if test $CCAFE_MPI_ENABLE = "yes"; then
+     echo -e "ccafe mpi include:\n  $CCAFE_MPI_INCLUDE"
+     echo -e "ccafe mpi lib:\n  $CCAFE_MPI_LIB"
+     echo -e "ccafe mpi bin:\n  $CCAFE_MPI_BIN"
