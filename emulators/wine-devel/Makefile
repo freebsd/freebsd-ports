@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	3.0-rc5
+DISTVERSION=	3.0-rc6
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -93,8 +93,6 @@ MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 OPENAL_CONFIGURE_WITH=	openal
 OPENAL_USES=		openal
 
-STAGING_LIB_DEPENDS=	libtxc_dxtn.so:graphics/s2tc
-
 V4L_CONFIGURE_WITH=	v4l
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
@@ -149,6 +147,7 @@ DISTFILES+=	${COMP_DIST}:cho
 EXTRACT_DEPENDS=bash:shells/bash \
 		git:devel/git \
 		autoreconf-2.69:devel/autoconf
+LIB_DEPENDS+=	libtxc_dxtn.so:graphics/s2tc
 
 post-extract: fix-shebang
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1
