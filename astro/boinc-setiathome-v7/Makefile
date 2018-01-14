@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-setiathome-v7
 PORTVERSION=	7.00
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/rene
 DISTNAME=	setiathome-svn-1924 # modified archive, see leftout in top directory
@@ -23,6 +23,7 @@ USES=		autoreconf compiler gmake libtool pkgconfig ssl tar:xz
 
 CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
+LDFLAGS+=	-lexecinfo
 .if defined(CPUTYPE)
 CFLAGS+=	-march=${CPUTYPE}
 .endif
