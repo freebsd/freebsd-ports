@@ -3,6 +3,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	7.8.6
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ler@FreeBSD.org
@@ -120,7 +121,7 @@ post-patch:
 
 post-install:
 .for name in config.h project_specific_defines.h api/reduce.h \
-	lib/opencl_boinc.h lib/shmem.h lib/std_fixes.h
+	lib/opencl_boinc.h lib/shmem.h lib/std_fixes.h lib/str_replace.h
 	${INSTALL_DATA} ${WRKSRC}/${name} ${STAGEDIR}${PREFIX}/include/boinc
 .endfor
 
