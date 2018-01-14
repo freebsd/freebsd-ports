@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	useragent
-PORTVERSION=	0.16.8
+PORTVERSION=	0.16.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
