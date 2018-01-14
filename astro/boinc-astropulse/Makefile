@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3 \
-		${NONEXISTENT}:astro/boinc-setiathome-v7:patch
+		${NONEXISTENT}:astro/boinc-setiathome-v8:patch
 RUN_DEPENDS=	boinc_client:net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
@@ -33,7 +33,7 @@ BOINC_CLIENT_USER?=	boinc
 BOINC_CLIENT_GROUP?=	boinc
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
-SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-v7 && ${MAKE} -V WRKSRC
+SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-v8 && ${MAKE} -V WRKSRC
 CONFIGURE_ENV=	BOINCDIR="${NONEXISTENT}" \
 		BOINC_DIR="${NONEXISTENT}" \
 		SETI_BOINC_DIR="${SETI_WORK}"
