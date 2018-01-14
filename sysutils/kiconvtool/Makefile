@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	kiconvtool
-PORTVERSION=	0.97
-PORTREVISION=	1
+PORTVERSION=	0.98
 CATEGORIES=	sysutils
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
-		LOCAL/amdmi3
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tool to preload kernel iconv charset tables
+
+LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	AMDmi3
 
 USES=		iconv	# used by libkiconv, actually
 
