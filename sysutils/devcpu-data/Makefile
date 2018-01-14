@@ -3,6 +3,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloadmirror.intel.com/27431/eng/:intel \
 		LOCAL/sbruno:amd
