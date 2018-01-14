@@ -8,7 +8,7 @@ CATEGORIES=	astro
 MASTER_SITES=	LOCAL/rene
 DISTNAME=	astropulse-svn-1702 # modified archive, see leftout in top directory
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Astropulse for BOINC
 
 LICENSE=	GPLv2
