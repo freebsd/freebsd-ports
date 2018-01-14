@@ -10,7 +10,6 @@ include/boinc/base64.h
 include/boinc/boinc_api.h
 include/boinc/boinc_fcgi.h
 include/boinc/boinc_opencl.h
-include/boinc/boinc_win.h
 include/boinc/cal_boinc.h
 include/boinc/cc_config.h
 include/boinc/cert_sig.h
@@ -20,7 +19,6 @@ include/boinc/config.h
 include/boinc/coproc.h
 include/boinc/crypt.h
 include/boinc/diagnostics.h
-include/boinc/diagnostics_win.h
 include/boinc/error_numbers.h
 include/boinc/filesys.h
 include/boinc/graphics2.h
@@ -42,16 +40,15 @@ include/boinc/procinfo.h
 include/boinc/project_specific_defines.h
 include/boinc/proxy_info.h
 include/boinc/reduce.h
+include/boinc/sched_msgs.h
 include/boinc/shmem.h
 include/boinc/stackwalker_imports.h
-include/boinc/stackwalker_win.h
 include/boinc/std_fixes.h
 include/boinc/str_util.h
 include/boinc/svn_version.h
 include/boinc/url.h
 include/boinc/util.h
 include/boinc/version.h
-include/boinc/win_util.h
 %%X11%%include/boinc/boinc_gl.h
 %%X11%%include/boinc/graphics_api.h
 %%X11%%include/boinc/graphics_data.h
@@ -60,16 +57,16 @@ lib/libboinc.a
 lib/libboinc_api.a
 lib/libboinc_api.so
 lib/libboinc_api.so.7
-lib/libboinc_api.so.7.2.33
+lib/libboinc_api.so.7.8.6
 lib/libboinc_crypt.a
 lib/libboinc_opencl.a
 lib/libboinc_opencl.so
 lib/libboinc_opencl.so.7
-lib/libboinc_opencl.so.7.2.33
+lib/libboinc_opencl.so.7.8.6
 %%X11%%lib/libboinc_graphics2.a
 %%X11%%lib/libboinc_graphics2.so
 %%X11%%lib/libboinc_graphics2.so.7
-%%X11%%lib/libboinc_graphics2.so.7.2.33
+%%X11%%lib/libboinc_graphics2.so.7.8.6
 %%SKINS%%share/boinc/skins/Charity Engine/background_image.png
 %%SKINS%%share/boinc/skins/Charity Engine/ce_about.ico
 %%SKINS%%share/boinc/skins/Charity Engine/ce_icon_play.png
