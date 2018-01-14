@@ -3,9 +3,10 @@
 
 PORTNAME=	boinc-setiathome-v8
 PORTVERSION=	8.00
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/ler/setiathome
-DISTNAME=	setiathome-svn-3725  # no releases available, snapshot
+DISTNAME=	setiathome-svn-3727  # no releases available, snapshot
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Setiathome Enhanced for BOINC

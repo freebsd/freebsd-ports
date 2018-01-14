@@ -9848,3 +9848,4 @@ editors/vim-lite|editors/vim-console|2018-01-11|Renamed to reflect that it is co
 devel/py-repl|devel/py-pyrepl|2018-01-10|Rename to match pypi name
 devel/lua-bitop-51|devel/lua51-bitop|2018-01-14|Rename to lua51- prefix
 astro/boinc-setiathome-v7|astro/boinc-setiathome-v8|2018-01-14|Rename to v8 to reflect current version
+astro/boinc-setiathome-v8|astro/boinc-setiathome|2018-01-14|Rename to unversioned per adamw@
