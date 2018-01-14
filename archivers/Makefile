@@ -65,6 +65,7 @@
     SUBDIR += libarchive
     SUBDIR += libcabinet
     SUBDIR += libcomprex
+    SUBDIR += libdeflate
     SUBDIR += libdynamite
     SUBDIR += liblz4
     SUBDIR += liblzxcomp
