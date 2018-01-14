@@ -44,6 +44,7 @@ include/boinc/sched_msgs.h
 include/boinc/shmem.h
 include/boinc/stackwalker_imports.h
 include/boinc/std_fixes.h
+include/boinc/str_replace.h
 include/boinc/str_util.h
 include/boinc/svn_version.h
 include/boinc/url.h
