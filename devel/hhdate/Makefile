@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	hhdate
-DISTVERSION=	2.3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4
 CATEGORIES=	devel
 
 MAINTAINER=	andreas.sommer87@googlemail.com
@@ -27,8 +28,6 @@ TEST_ENV=		${MAKE_ENV} WRKDIR=${WRKDIR}
 TEST_USES=		compiler:c++11-lib
 TEST_TEST_TARGET=	test
 USE_CXXSTD=		c++11
-
-.include <bsd.port.options.mk>
 
 post-extract-TEST-on:
 	${INSTALL_DATA} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
