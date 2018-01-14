@@ -2,19 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	boinc-client
-PORTVERSION=	7.2.33
-PORTREVISION=	8
+PORTVERSION=	7.8.6
 CATEGORIES=	net
-MASTER_SITES=	LOCAL/rene
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
-GNU_CONFIGURE=	yes
+LICENSE=	LGPL3
+
+LIB_DEPENDS+=	libfreetype.so:print/freetype2
+
+USES=		autoreconf dos2unix gettext gmake libtool pkgconfig ssl tar:xz
+USE_XORG+=	x11 xscrnsaver
 INSTALL_TARGET=	install-strip
-USES=		autoreconf dos2unix gmake libtool pkgconfig tar:xz
+GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	BOINC
+GH_PROJECT=	boinc
+GH_TAGNAME=	client_release/7.8/${PORTVERSION}
 USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.xpm
+NO_WRKSUBDIR=	yes
+WRKSRC_SUBDIR=	boinc-client_release-7.8-${PORTVERSION}
 
 USERS=		boinc
 GROUPS=		boinc
@@ -32,7 +41,7 @@ SUB_LIST=	BOINC_CLIENT_HOME="${BOINC_CLIENT_HOME}" \
 CONFIGURE_ARGS=	--disable-server
 CONFIGURE_ENV=	OBJCXX="${CXX}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
 OPTIONS_DEFINE=		CLIENT MANAGER NLS X11 LINUX USER SKINS
 OPTIONS_DEFAULT=	CLIENT MANAGER X11 USER
