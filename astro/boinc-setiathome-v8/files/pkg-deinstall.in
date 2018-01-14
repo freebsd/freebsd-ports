@@ -9,7 +9,7 @@ fi
 F=%%BOINC_CLIENT_HOME%%/projects/%%SETI_SITE%%/app_info.xml
 echo Removing setiathome_v7 lines from $F
 
-l=`grep -n "<name>setiathome_v7</name>" $F | cut -f 1 -d :`
+l=`grep -n "<name>setiathome_v8</name>" $F | cut -f 1 -d :`
 if [ $? -ne 0 ]; then
     echo $F is corrupt
     exit 1

@@ -1,12 +1,11 @@
 # Created by: rene
 # $FreeBSD$
 
-PORTNAME=	boinc-setiathome-v7
-PORTVERSION=	7.00
-PORTREVISION=	9
+PORTNAME=	boinc-setiathome-v8
+PORTVERSION=	8.00
 CATEGORIES=	astro
-MASTER_SITES=	LOCAL/rene
-DISTNAME=	setiathome-svn-1924 # modified archive, see leftout in top directory
+MASTER_SITES=	LOCAL/ler/setiathome
+DISTNAME=	setiathome-svn-3725  # no releases available, snapshot
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Setiathome Enhanced for BOINC
@@ -19,7 +18,7 @@ RUN_DEPENDS=	boinc_client:net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler gmake libtool pkgconfig ssl tar:xz
+USES=		autoreconf compiler gmake libtool pkgconfig tar:xz
 
 CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
