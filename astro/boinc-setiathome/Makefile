@@ -1,11 +1,11 @@
 # Created by: rene
 # $FreeBSD$
 
-PORTNAME=	boinc-setiathome-v8
+PORTNAME=	boinc-setiathome
 PORTVERSION=	8.00
-PORTREVISION=	1
 CATEGORIES=	astro
-MASTER_SITES=	LOCAL/ler/setiathome
+MASTER_SITES=	LOCAL/ler/setiathome \
+		http://www.lerctr.org/setiathome/
 DISTNAME=	setiathome-svn-3727  # no releases available, snapshot
 
 MAINTAINER=	ler@FreeBSD.org
