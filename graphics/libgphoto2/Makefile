@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.5.14
+PORTVERSION=	2.5.16
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Universal digital camera control library
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		gmake iconv libtool pkgconfig tar:bzip2
+USES=		gmake iconv libtool localbase pkgconfig tar:bzip2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
@@ -24,9 +25,6 @@ CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
 		udevscriptdir=${WRKDIR}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.12.0
 

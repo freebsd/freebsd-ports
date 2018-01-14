@@ -95,7 +95,6 @@ lib/libgphoto2_port/%%VERSION_PORT%%/ptpip.so
 lib/libgphoto2_port/%%VERSION_PORT%%/usb1.so
 lib/libgphoto2_port/%%VERSION_PORT%%/usbdiskdirect.so
 lib/libgphoto2_port/%%VERSION_PORT%%/usbscsi.so
-lib/libgphoto2_port/%%VERSION_PORT%%/vusb.so
 libdata/pkgconfig/libgphoto2.pc
 libdata/pkgconfig/libgphoto2_port.pc
 man/man3/libgphoto2.3.gz
