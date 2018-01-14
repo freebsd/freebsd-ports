@@ -15,8 +15,6 @@ CONFIGURE_ARGS+=	--disable-kinkd
 PLIST_SUB+=	KINK="@comment "
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${PREFIX}
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/racoon2
 CONFIGURE_ENV=	YACC=/usr/bin/yacc perl_bindir=${LOCALBASE}/bin/perl5
 
 OPTIONS_DEFINE=	DOCS
@@ -68,18 +66,19 @@ PORTDOCS+=	kinkd-install.ja.txt kinkd-state-txn.obj
 .endif
 .endif
 
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} \
+		-e '/INSTALL/s|\$$([a-z0-9]*dir)|$$(DESTDIR)&|' \
+		-e '/INSTALL/s|\$$(prefix)|$$(DESTDIR)&|' {} +
+	@${REINPLACE_CMD} 's|/var/run/racoon2|$$(DESTDIR)&|' \
+		${WRKSRC}/samples/Makefile.in
+
 post-patch-DOCS-on:
 .for FILE in ${PORTDOCS}
 	@${REINPLACE_CMD} -e 's|/usr/local/racoon2|${PREFIX}|' ${WRKSRC}/doc/${FILE}
 .endfor
 
-post-configure:
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e '/INSTALL/s|\$$([a-z].*dir)|${STAGEDIR}&|'
-	@${REINPLACE_CMD} -e '/INSTALL/s|\$$(prefix)|${STAGEDIR}&|' ${WRKSRC}/pskgen/Makefile
-	@${REINPLACE_CMD} -e '/^prefix=/s|/usr/local|${STAGEDIR}${PREFIX}|;/\/var\/run\/racoon2/d' ${WRKSRC}/samples/Makefile
-
 post-install:
-	${MKDIR} ${STAGEDIR}/var/run/racoon2
 	@if [ -z `/sbin/sysctl -a | ${GREP} -q ipsec && echo ipsec` ]; then \
 	    ${ECHO_MSG} "WARNING: IPsec feature is disabled on this host"; \
 	    ${ECHO_MSG} "         You must build the kernel if you want to run racoon on the host"; \
