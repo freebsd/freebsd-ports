@@ -4,7 +4,7 @@
 PORTNAME=	libint
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1-1-6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +21,7 @@ GH_ACCOUNT=	evaleev
 # in libgcc_s.so which fails if it's different versions.  Forcing this port
 # to build with the default version of GCC as well resolves the conflict
 # that manifests in the science/libghemical port.
-USES=		autoreconf gmake libtool perl5
+USES=		autoreconf:build gmake libtool perl5
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	default
@@ -30,18 +30,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-cc-optflags="${CFLAGS}" \
 		--with-cxx-optflags="${CXXFLAGS}"
 
-OPTIONS_DEFINE=	DEBUG DERIV R12
-
-DERIV_DESC=	1st- and 2nd-order derivative ERI support
-R12_DESC=	Linear R12 methods integrals support
-
-DEBUG_CONFIGURE_ON=	--enable-debug
-DERIV_CONFIGURE_ON=	--enable-deriv
-R12_CONFIGURE_ON=	--enable-r12
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| -rpath|${LDFLAGS} -rpath|g' \
 		${WRKSRC}/src/lib/MakeVars.in
+
+pre-configure:
+# Cannot run autoheader so cannot use autoreconf.
+	@(cd ${WRKSRC} && ${LOCALBASE}/bin/libtoolize -c -f \
+		&& ${LOCALBASE}/bin/aclocal && ${LOCALBASE}/bin/autoconf)
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
