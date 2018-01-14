@@ -20,13 +20,6 @@ PLIST_FILES=	bin/container-diff
 GH_ACCOUNT=	GoogleCloudPlatform
 USE_GITHUB=	yes
 
-.include <bsd.port.options.mk>
-
-# Change inode size from 64 bits to 32 bits for systems without ino64 support
-.if ${OSVERSION} < 1200031
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-without-ino64
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/container-diff ${STAGEDIR}${PREFIX}/bin/container-diff
 
