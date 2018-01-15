@@ -2,7 +2,7 @@
 
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.1.3
+DISTVERSION=	7.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -24,7 +24,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		byteorder-1.2.1 \
 		cfg-if-0.1.2 \
 		chrono-0.4.0 \
-		clap-2.29.0 \
+		clap-2.29.1 \
 		coco-0.1.1 \
 		crossbeam-0.2.12 \
 		dtoa-0.4.2 \
@@ -36,7 +36,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		encoding-index-singlebyte-1.20141219.5 \
 		encoding-index-tradchinese-1.20141219.5 \
 		encoding_index_tests-0.1.4 \
-		env_logger-0.5.0-rc.1 \
+		env_logger-0.5.0-rc.2 \
 		fnv-1.0.6 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
@@ -48,7 +48,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.11 \
 		lazy_static-1.0.0 \
-		libc-0.2.35 \
+		libc-0.2.36 \
 		linked-hash-map-0.5.0 \
 		log-0.3.9 \
 		log-0.4.1 \
@@ -68,7 +68,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		redox_termios-0.1.1 \
 		regex-0.2.5 \
 		regex-syntax-0.4.2 \
-		same-file-1.0.1 \
+		same-file-1.0.2 \
 		scopeguard-0.3.3 \
 		serde-1.0.27 \
 		serde_cbor-0.8.1 \
