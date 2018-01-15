@@ -15,8 +15,6 @@ COMMENT=	Hierarchical Data Format library (from NCSA) 1.8
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=		Does not compile on ${ARCH}
-
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 
 USES=		libtool:keepla localbase tar:bzip2
