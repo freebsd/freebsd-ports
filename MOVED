@@ -9857,3 +9857,4 @@ devel/ruby-calendar||2018-01-15|Has expired: Does not build with current version
 devel/ruby-rbbr||2018-01-15|Has expired: Does not build with current versions of ruby
 devel/ruby-date2||2018-01-15|Has expired: Does not build with current versions of ruby
 audio/ruby-xmms2||2018-01-15|Has expired: Does not build with current versions of ruby
+net/unison-nox11|net/unison@nox11|2018-01-15|Moved to a flavored, generic, version
