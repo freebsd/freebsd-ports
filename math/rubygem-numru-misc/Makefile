@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numru-misc
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	math rubygems
 MASTER_SITES=	RG
 
