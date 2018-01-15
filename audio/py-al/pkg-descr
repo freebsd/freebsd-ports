@@ -2,4 +2,4 @@ PyAL is a wrapper around the OpenAL library and as such similar to the
 discontinued PyOpenAL project. In contrast to PyOpenAL, it has no licensing
 restrictions, nor does it rely on C code, but uses ctypes instead.
 
-WWW: http://bitbucket.org/marcusva/py-al
+WWW: https://bitbucket.org/marcusva/py-al
