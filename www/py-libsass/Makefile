@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsass
-DISTVERSION=	0.13.4
+DISTVERSION=	0.13.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_sass.so
 
 .include <bsd.port.mk>
