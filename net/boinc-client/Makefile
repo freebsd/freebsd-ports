@@ -3,6 +3,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	7.8.6
+DISTVERSIONPREFIX=	client_release/7.8/
 PORTREVISION=	1
 CATEGORIES=	net
 
@@ -20,11 +21,8 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	BOINC
 GH_PROJECT=	boinc
-GH_TAGNAME=	client_release/7.8/${PORTVERSION}
 USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.xpm
-NO_WRKSUBDIR=	yes
-WRKSRC_SUBDIR=	boinc-client_release-7.8-${PORTVERSION}
 
 USERS=		boinc
 GROUPS=		boinc
