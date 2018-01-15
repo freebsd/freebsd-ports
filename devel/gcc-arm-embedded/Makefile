@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	6.3.20170628
-PORTREVISION=	1
+PORTVERSION=	7.2.20171218
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/
+MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2017q4/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -23,7 +23,7 @@ PYGDB_DESC=	Build and install python-enabled gdb in addition to standard one
 
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
-PYGDB_USES=		python:2
+PYGDB_USES=		python:2.7
 
 OPTIONS_SUB=		yes
 
@@ -44,8 +44,8 @@ GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
-GCC_VERSION=		6.3.1
-FULL_VERSION=		6-2017-q2-update
+GCC_VERSION=		7.2.1
+FULL_VERSION=		7-2017-q4-major
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
