@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pspg
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
 CATEGORIES=	databases
 
 MAINTAINER=	dg@syrec.org
@@ -24,7 +24,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pspg
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pspg
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
