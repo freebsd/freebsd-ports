@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	0.4.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5.8
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
