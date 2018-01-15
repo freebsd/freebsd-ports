@@ -1,5 +1,0 @@
-Ruby/AWS is a Ruby language library that allows programmatic access to
-the popular Amazon Web site via the REST (XML over HTTP) based Amazon
-Web Services.  It is the successor to the now obsolete Ruby/Amazon.
-
-WWW: http://www.caliban.org/ruby/ruby-aws/

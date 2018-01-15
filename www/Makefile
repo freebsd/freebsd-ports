@@ -1947,7 +1947,6 @@
     SUBDIR += rt42
     SUBDIR += rt44
     SUBDIR += rtv
-    SUBDIR += ruby-aws
     SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actioncable5
     SUBDIR += rubygem-actioncable50
@@ -2218,7 +2217,6 @@
     SUBDIR += sabredav
     SUBDIR += sahi
     SUBDIR += sakai
-    SUBDIR += samidare
     SUBDIR += sams2
     SUBDIR += sarg
     SUBDIR += scloader
