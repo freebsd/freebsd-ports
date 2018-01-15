@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	data_objects
-PORTVERSION=	0.10.13
+PORTVERSION=	0.10.17
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
