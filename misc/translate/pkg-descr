@@ -1,5 +1,5 @@
 A small perl script, that takes a given string or word
 and translates it to a selected language using the altavista
-babelfish service.
+Google Translate service.
 
 Requires perl.
