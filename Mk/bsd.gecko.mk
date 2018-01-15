@@ -109,14 +109,15 @@ USE_XORG+=	xcb
 MESA_LLVM_VER?=	50
 BUILD_DEPENDS+=	llvm${MESA_LLVM_VER}>0:devel/llvm${MESA_LLVM_VER}
 MOZ_EXPORT+=	LLVM_CONFIG=llvm-config${MESA_LLVM_VER}
+.if ${MOZILLA_VER:R:R} < 58
 MOZ_EXPORT+=	BINDGEN_CFLAGS="${BINDGEN_CFLAGS}"
-# XXX bug 1341234
 . if ! ${USE_MOZILLA:M-nspr}
 BINDGEN_CFLAGS+=-isystem${LOCALBASE}/include/nspr
 . endif
 . if ! ${USE_MOZILLA:M-pixman}
 BINDGEN_CFLAGS+=-isystem${LOCALBASE}/include/pixman-1
 . endif
+.endif # MOZILLA_VER < 58
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSREL} == 11.1
@@ -144,6 +145,7 @@ PKGDEINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-deinstall.in
 MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 			${MOZILLA}-xpcom ${MOZILLA}-plugin
 
+MAKE_ENV+=		MACH=1 # XXX bug 1412398
 ALL_TARGET?=	build
 
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
@@ -395,7 +397,7 @@ post-patch-SNDIO-on:
 .endif
 
 .if ${PORT_OPTIONS:MRUST} || ${MOZILLA_VER:R:R} >= 54
-BUILD_DEPENDS+=	${RUST_PORT:T}>=1.19.0_2:${RUST_PORT}
+BUILD_DEPENDS+=	${RUST_PORT:T}>=1.21.0:${RUST_PORT}
 RUST_PORT?=		lang/rust
 . if ${MOZILLA_VER:R:R} < 54
 MOZ_OPTIONS+=	--enable-rust

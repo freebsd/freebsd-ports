@@ -69,6 +69,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_MS \
 		LANG_MY \
 		LANG_NB \
+		LANG_NE \
 		LANG_NL \
 		LANG_NN \
 		LANG_OR \
@@ -118,6 +119,7 @@ LANG_KM_DESC?=	Khmer language support
 LANG_LIJ_DESC?=	Ligurian (Genoa) language support
 LANG_MS_DESC?=	Malay language support
 LANG_MY_DESC?=	Burmese language support
+LANG_NE_DESC?=	Nepali language support
 LANG_SW_DESC?=	Swahili language support
 LANG_UR_DESC?=	Urdu (Pakistan) language support
 LANG_UZ_DESC?=	Uzbek language support
