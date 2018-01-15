@@ -5228,14 +5228,11 @@
     SUBDIR += rth
     SUBDIR += ruby-bsearch
     SUBDIR += ruby-build
-    SUBDIR += ruby-calendar
-    SUBDIR += ruby-date2
     SUBDIR += ruby-gems
     SUBDIR += ruby-korundum
     SUBDIR += ruby-krossruby
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-qtruby
-    SUBDIR += ruby-rbbr
     SUBDIR += ruby-rbprof
     SUBDIR += ruby-sdl
     SUBDIR += ruby-setup.rb
