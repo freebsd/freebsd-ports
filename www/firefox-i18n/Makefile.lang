@@ -5,7 +5,7 @@ FIREFOX_I18N_ALL_=	ach af an ar as ast az be bg bn-BD bn-IN br bs ca cak	\
 			cs cy da de dsb el en-GB en-US en-ZA eo es-AR es-CL	\
 			es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl gn	\
 			gu-IN he hi-IN hr hsb hu hy-AM id is it ja ka kab	\
-			kk km kn ko lij lt lv mai mk ml mr ms my nb-NO nl	\
+			kk km kn ko lij lt lv mai mk ml mr ms my nb-NO ne-NP nl	\
 			nn-NO or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son	\
 			sq sr sv-SE ta te th tr uk ur uz vi xh zh-CN zh-TW
 
@@ -212,6 +212,9 @@ FIREFOX_I18N+=  my
 .endif
 .if ${PORT_OPTIONS:MLANG_NB}
 FIREFOX_I18N+=  nb-NO
+.endif
+.if ${PORT_OPTIONS:MLANG_NE}
+FIREFOX_I18N+=  ne-NP
 .endif
 .if ${PORT_OPTIONS:MLANG_NL}
 FIREFOX_I18N+=  nl

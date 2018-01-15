@@ -4,7 +4,7 @@ diff --git build/moz.configure/old.configure build/moz.configure/old.configure
 index d0fe7accffe6..c46bdd023225 100644
 --- build/moz.configure/old.configure
 +++ build/moz.configure/old.configure
-@@ -288,7 +288,12 @@ def old_configure_options(*options):
+@@ -285,7 +285,12 @@ def old_configure_options(*options):
      '--with-system-libvpx',
      '--with-system-nspr',
      '--with-system-nss',
@@ -17,29 +17,13 @@ index d0fe7accffe6..c46bdd023225 100644
      '--with-system-zlib',
      '--with-thumb',
      '--with-thumb-interwork',
-diff --git config/Makefile.in config/Makefile.in
-index a6206bb0ff30..f20987c61754 100644
---- config/Makefile.in
-+++ config/Makefile.in
-@@ -51,6 +51,11 @@ export:: $(export-preqs)
- 		-DMOZ_SYSTEM_LIBEVENT=$(MOZ_SYSTEM_LIBEVENT) \
- 		-DMOZ_SYSTEM_LIBVPX=$(MOZ_SYSTEM_LIBVPX) \
- 		-DMOZ_SYSTEM_ICU=$(MOZ_SYSTEM_ICU) \
-+		-DMOZ_SYSTEM_OGG=$(MOZ_SYSTEM_OGG) \
-+		-DMOZ_SYSTEM_THEORA=$(MOZ_SYSTEM_THEORA) \
-+		-DMOZ_SYSTEM_VORBIS=$(MOZ_SYSTEM_VORBIS) \
-+		-DMOZ_SYSTEM_TREMOR=$(MOZ_SYSTEM_TREMOR) \
-+		-DMOZ_SYSTEM_SOUNDTOUCH=$(MOZ_SYSTEM_SOUNDTOUCH) \
- 		$(srcdir)/system-headers $(srcdir)/stl-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
- 	$(INSTALL) system_wrappers $(DIST)
- 
 diff --git config/external/moz.build config/external/moz.build
 index 029ff8504795..2c3a40caa1ba 100644
 --- config/external/moz.build
 +++ config/external/moz.build
-@@ -21,12 +21,21 @@ if CONFIG['MOZ_UPDATER']:
- external_dirs += ['modules/brotli']
- external_dirs += ['modules/woff2']
+@@ -23,12 +23,21 @@ external_dirs += ['modules/woff2']
+ 
+ external_dirs += ['modules/xz-embedded']
  
 -if CONFIG['MOZ_VORBIS']:
 +if not CONFIG['MOZ_SYSTEM_OGG']:
@@ -61,7 +45,7 @@ index 029ff8504795..2c3a40caa1ba 100644
  if CONFIG['MOZ_WEBM_ENCODER']:
      external_dirs += ['media/libmkv']
  
-@@ -52,12 +61,9 @@ external_dirs += [
+@@ -51,12 +60,9 @@ external_dirs += [
      'media/kiss_fft',
      'media/libcubeb',
      'media/libnestegg',
@@ -74,33 +58,44 @@ index 029ff8504795..2c3a40caa1ba 100644
      'media/psshparser'
  ]
  
-diff --git config/system-headers config/system-headers
-index 5ee7f71f9634..13178ac3b3ab 100644
---- config/system-headers
-+++ config/system-headers
-@@ -1348,3 +1348,17 @@ unicode/utypes.h
- libutil.h
- unwind.h
- fenv.h
-+#if MOZ_SYSTEM_OGG==1
-+ogg/ogg.h
-+ogg/os_types.h
-+#endif
-+#if MOZ_SYSTEM_THEORA==1
-+theora/theoradec.h
-+#endif
-+#if MOZ_SYSTEM_VORBIS==1
-+vorbis/codec.h
-+vorbis/vorbisenc.h
-+#endif
-+#if MOZ_SYSTEM_TREMOR==1
-+tremor/ivorbiscodec.h
-+#endif
+diff --git config/system-headers.mozbuild config/system-headers.mozbuild
+index 09d3db5ca8c0..c6533b84c470 100644
+--- config/system-headers.mozbuild
++++ config/system-headers.mozbuild
+@@ -1325,6 +1325,28 @@ if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
+         'harfbuzz/hb.h',
+     ]
+ 
++if CONFIG['MOZ_SYSTEM_OGG']:
++    system_headers += [
++        'ogg/ogg.h',
++        'ogg/os_types.h',
++    ]
++
++if CONFIG['MOZ_SYSTEM_THEORA']:
++    system_headers += [
++        'theora/theoradec.h',
++    ]
++
++if CONFIG['MOZ_SYSTEM_VORBIS']:
++    system_headers += [
++        'vorbis/codec.h',
++        'vorbis/vorbisenc.h',
++    ]
++
++if CONFIG['MOZ_SYSTEM_TREMOR']:
++    system_headers += [
++        'tremor/ivorbiscodec.h',
++    ]
++
+ if CONFIG['MOZ_SYSTEM_LIBVPX']:
+     system_headers += [
+         'vpx_mem/vpx_mem.h',
 diff --git dom/media/AudioStream.cpp dom/media/AudioStream.cpp
 index 93ecda4319af..ff674c64ea07 100644
 --- dom/media/AudioStream.cpp
 +++ dom/media/AudioStream.cpp
-@@ -115,7 +115,9 @@ AudioStream::AudioStream(DataSource& aSource)
+@@ -121,7 +121,9 @@ AudioStream::AudioStream(DataSource& aSource)
    : mMonitor("AudioStream")
    , mChannels(0)
    , mOutChannels(0)
@@ -110,7 +105,7 @@ index 93ecda4319af..ff674c64ea07 100644
    , mDumpFile(nullptr)
    , mState(INITIALIZED)
    , mDataSource(aSource)
-@@ -135,9 +137,11 @@ AudioStream::~AudioStream()
+@@ -142,9 +144,11 @@ AudioStream::~AudioStream()
    if (mDumpFile) {
      fclose(mDumpFile);
    }
@@ -122,7 +117,7 @@ index 93ecda4319af..ff674c64ea07 100644
  #if defined(XP_WIN)
    if (XRE_IsContentProcess()) {
      audio::AudioNotificationReceiver::Unregister(this);
-@@ -151,7 +155,11 @@ nsresult AudioStream::EnsureTimeStretcherInitializedUnlocked()
+@@ -168,7 +172,11 @@ nsresult AudioStream::EnsureTimeStretcherInitializedUnlocked()
  {
    mMonitor.AssertCurrentThreadOwns();
    if (!mTimeStretcher) {
@@ -138,7 +133,7 @@ diff --git dom/media/AudioStream.h dom/media/AudioStream.h
 index 7dc1f60f95cc..67d402a4117f 100644
 --- dom/media/AudioStream.h
 +++ dom/media/AudioStream.h
-@@ -16,7 +16,11 @@
+@@ -15,7 +15,11 @@
  #include "mozilla/TimeStamp.h"
  #include "mozilla/UniquePtr.h"
  #include "CubebUtils.h"
@@ -148,9 +143,9 @@ index 7dc1f60f95cc..67d402a4117f 100644
  #include "soundtouch/SoundTouchFactory.h"
 +#endif
  
- namespace mozilla {
- 
-@@ -287,7 +291,11 @@ private:
+ #if defined(XP_WIN)
+ #include "mozilla/audio/AudioNotificationReceiver.h"
+@@ -297,7 +301,11 @@ private:
    uint32_t mChannels;
    uint32_t mOutChannels;
    AudioClock mAudioClock;
@@ -166,7 +161,7 @@ diff --git dom/media/moz.build dom/media/moz.build
 index 86b051c58d33..fb6186dce78b 100644
 --- dom/media/moz.build
 +++ dom/media/moz.build
-@@ -308,6 +308,21 @@ if CONFIG['MOZ_WEBRTC']:
+@@ -318,6 +318,21 @@ if CONFIG['MOZ_WEBRTC']:
  
  DEFINES['MOZILLA_INTERNAL_API'] = True
  
@@ -185,9 +180,9 @@ index 86b051c58d33..fb6186dce78b 100644
 +if CONFIG['MOZ_SYSTEM_SOUNDTOUCH']:
 +    CXXFLAGS += CONFIG['MOZ_SOUNDTOUCH_CFLAGS']
 +
- if CONFIG['OS_TARGET'] == 'WINNT':
-     DEFINES['WEBRTC_WIN'] = True
- else:
+ if CONFIG['MOZ_ANDROID_HLS_SUPPORT']:
+     DEFINES['MOZ_ANDROID_HLS_SUPPORT'] = True
+ 
 diff --git dom/media/platforms/ffmpeg/ffvpx/FFVPXRuntimeLinker.cpp dom/media/platforms/ffmpeg/ffvpx/FFVPXRuntimeLinker.cpp
 index 078f6ea5ef60..c600db067539 100644
 --- dom/media/platforms/ffmpeg/ffvpx/FFVPXRuntimeLinker.cpp
@@ -206,7 +201,7 @@ index 078f6ea5ef60..c600db067539 100644
  
  namespace mozilla {
  
-@@ -50,6 +54,12 @@ FFVPXRuntimeLinker::Init()
+@@ -54,6 +58,12 @@ FFVPXRuntimeLinker::Init()
  
    sLinkStatus = LinkStatus_FAILED;
  
@@ -219,7 +214,7 @@ index 078f6ea5ef60..c600db067539 100644
    // We retrieve the path of the lgpllibs library as this is where mozavcodec
    // and mozavutil libs are located.
    char* lgpllibsname = PR_GetLibraryName(nullptr, "lgpllibs");
-@@ -60,6 +70,7 @@ FFVPXRuntimeLinker::Init()
+@@ -64,6 +74,7 @@ FFVPXRuntimeLinker::Init()
      PR_GetLibraryFilePathname(lgpllibsname,
                                (PRFuncPtr)&soundtouch::SoundTouch::getVersionId);
    PR_FreeLibraryName(lgpllibsname);
@@ -312,7 +307,7 @@ diff --git media/libvorbis/README_MOZILLA media/libvorbis/README_MOZILLA
 index 1211ac074b33..eb31084aed25 100644
 --- media/libvorbis/README_MOZILLA
 +++ media/libvorbis/README_MOZILLA
-@@ -8,3 +8,6 @@ https://svn.xiph.org/tags/vorbis/libvorbis-1.3.5@19464
+@@ -8,3 +8,6 @@ from https://git.xiph.org/vorbis.git
  
  Some files are renamed during the copy to prevent clashes with object
  file names with other Mozilla libraries.
@@ -334,9 +329,9 @@ diff --git old-configure.in old-configure.in
 index b614eef85c89..85f9099dba4d 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -2941,6 +2941,111 @@ if test -n "$MOZ_OMX_PLUGIN"; then
-     fi
+@@ -2627,6 +2627,111 @@ if test -n "$MOZ_APPLEMEDIA"; then
  fi
+ fi # COMPILE_ENVIRONMENT
  
 +dnl ========================================================
 +dnl Check for libogg
@@ -450,7 +445,7 @@ diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 079a575adec3..514d901195de 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -237,6 +237,21 @@ if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
+@@ -240,6 +240,21 @@ if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
  if CONFIG['MOZ_SYSTEM_HUNSPELL']:
      OS_LIBS += CONFIG['MOZ_HUNSPELL_LIBS']
  
@@ -476,7 +471,7 @@ diff --git xpcom/build/XPCOMInit.cpp xpcom/build/XPCOMInit.cpp
 index c083ab4bc4f3..62b917043a2c 100644
 --- xpcom/build/XPCOMInit.cpp
 +++ xpcom/build/XPCOMInit.cpp
-@@ -154,7 +154,9 @@ extern nsresult nsStringInputStreamConstructor(nsISupports*, REFNSIID, void**);
+@@ -132,7 +132,9 @@ extern nsresult nsStringInputStreamConstructor(nsISupports*, REFNSIID, void**);
  
  #include "mozilla/ipc/GeckoChildProcessHost.h"
  
@@ -486,7 +481,7 @@ index c083ab4bc4f3..62b917043a2c 100644
  #if defined(MOZ_VPX) && !defined(MOZ_VPX_NO_MEM_REPORTING)
  #if defined(HAVE_STDINT_H)
  // mozilla-config.h defines HAVE_STDINT_H, and then it's defined *again* in
-@@ -664,11 +666,13 @@ NS_InitXPCOM2(nsIServiceManager** aResult,
+@@ -639,11 +641,13 @@ NS_InitXPCOM2(nsIServiceManager** aResult,
    // this oddness.
    mozilla::SetICUMemoryFunctions();
  
