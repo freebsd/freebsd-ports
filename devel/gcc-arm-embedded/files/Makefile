@@ -430,6 +430,7 @@ strip-binaries:
 	   if ! ${FILE} $$bin | ${GREP} -qs ': ELF' ; then continue ; fi ; \
 	   ${STRIP_CMD} $${bin} ; \
 	 done
+	@${STRIP_CMD} ${INTERIM_PREFIX}/lib/libcc1.so.0
 	@for bin in $$(${FIND} ${INTERIM_PREFIX}/lib/gcc/${TARGET}/${GCC_VERSION} -perm +111 -and ! -type d) ; do \
 	   if ! ${FILE} $$bin | ${GREP} -qs ': ELF' ; then continue ; fi ; \
 	   ${STRIP_CMD} $${bin} ; \
