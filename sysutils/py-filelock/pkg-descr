@@ -1,6 +1,7 @@
 This package contains a single module, which implements a platform
 independent file lock in Python.
+
 The lock includes a lock counter and is thread safe. This means,
 when locking the same lock object twice, it will not block.
 
-WWW: https://pypi.python.org/pypi/filelock
+WWW: https://github.com/benediktschmitt/py-filelock
