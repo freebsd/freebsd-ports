@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sslsplit
-PORTVERSION=	0.5.0
-PORTREVISION=	4
+PORTVERSION=	0.5.1
 CATEGORIES=	security
 MASTER_SITES=	http://mirror.roe.ch/rel/sslsplit/
 
