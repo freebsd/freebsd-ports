@@ -1,15 +1,21 @@
+# $FreeBSD: head/textproc/loook/Makefile 412349 2016-04-01 14:25:16Z mat 2
 # Created by: ache
 # $FreeBSD$
 
 PORTNAME=	lha
 PORTVERSION=	1.14i
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	archivers
 MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
+
+LICENSE=	LHA
+LICENSE_NAME=	License of lha
+LICENSE_FILE=	${FILESDIR}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell auto-accept
 
 PLIST_FILES=	bin/lha
 PLIST_FILES+=	man/ja/man1/lha.1.gz
