@@ -1,0 +1,13 @@
+This project provides Python bindings for interfacing with the Zstandard
+compression library. A C extension and CFFI interface are provided.
+
+Zstd, short for Zstandard, is a new lossless compression algorithm,
+which provides both good compression ratio and speed for standard
+compression needs. "Standard" translates into everyday situations
+which neither look for highest possible ratio (which LZMA and ZPAQ
+cover) nor extreme speeds (which LZ4 covers).
+
+Please note that a simple python binding to Zstandard is also
+available: archivers/py-zstd.
+
+WWW: https://github.com/indygreg/python-zstandard
