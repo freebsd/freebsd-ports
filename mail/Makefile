@@ -146,6 +146,7 @@
     SUBDIR += gmime24-sharp
     SUBDIR += gmime26
     SUBDIR += gmime26-sharp
+    SUBDIR += gmime30
     SUBDIR += gnarwl
     SUBDIR += gnubiff
     SUBDIR += gnumail
