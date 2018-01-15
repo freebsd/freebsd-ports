@@ -1,2 +1,3 @@
-SHA256 (rubygem/do_postgres-0.10.13.gem) = baf607480a6eb9a7802f9320f76c069673dbf4ac7bb98df92810f59f8119603f
-SIZE (rubygem/do_postgres-0.10.13.gem) = 31744
+TIMESTAMP = 1514155053
+SHA256 (rubygem/do_postgres-0.10.17.gem) = a8e6b28f7d65dc9d07cd62fb7ca404d5b8e1ce309922e18a6d9b16b0d366bd8a
+SIZE (rubygem/do_postgres-0.10.17.gem) = 31744
