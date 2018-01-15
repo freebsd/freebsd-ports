@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -64,6 +64,7 @@ post-patch:
 
 do-build-DOXYGEN-on:
 	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS})
+	${RM} ${WRKSRC}/doc/man/man1/_* ${WRKSRC}/doc/man/man3/_*
 
 do-install-DOXYGEN-on:
 	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} \
