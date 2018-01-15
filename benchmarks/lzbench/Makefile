@@ -13,6 +13,8 @@ USES=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	inikep
 
+MAKE_ENV=	CODE_FLAGS=-Wno-c++11-narrowing		# XXX: for clang 6
+
 PLIST_FILES=	bin/lzbench
 PORTDOCS=	NEWS
 
