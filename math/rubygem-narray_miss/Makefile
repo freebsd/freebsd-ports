@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	narray_miss
-PORTVERSION=	1.2.8
+PORTVERSION=	1.4.0
 CATEGORIES=	math rubygems
 MASTER_SITES=	RG
 
