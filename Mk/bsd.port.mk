@@ -380,10 +380,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- If set, the system should use OpenLDAP libraries
 #				  with SASL support.
 ##
-# USE_AUTOTOOLS	- If set, this port uses various GNU autotools
-#				  (libtool, autoconf, autoheader, automake et al.)
-#				  See bsd.autotools.mk for more details.
-##
 # USE_FPC		- If set, this port relies on the Free Pascal language.
 # 				  Implies inclusion of bsd.fpc.mk.  (Also see
 #				  that file for more information on WANT_FPC_*).
@@ -1977,10 +1973,6 @@ _USES_POST+=	php
 
 .if defined(USE_APACHE) || defined(USE_APACHE_BUILD) || defined(USE_APACHE_RUN)
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
-.endif
-
-.if defined(USE_AUTOTOOLS)
-.include "${PORTSDIR}/Mk/bsd.autotools.mk"
 .endif
 
 .if defined(USE_FPC) || defined(WANT_FPC_BASE) || defined(WANT_FPC_ALL)
