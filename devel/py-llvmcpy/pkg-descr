@@ -1,0 +1,7 @@
+The main goal of llvmcpy is to provide Python bindings for the LLVM project
+that are fast and require the lowest possible maintainance effort. To achive
+this, we use CFFI to parse the (slightly adapted) header files for the LLVM-C
+API and automatically generate a set of classes and functions to interact with
+them in a Pythonic way.
+
+WWW: https://github.com/revng/llvmcpy
