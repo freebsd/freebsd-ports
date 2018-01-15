@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dehydrated
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -12,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	curl:ftp/curl
+
+USES=		shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lukas2511
@@ -26,7 +28,6 @@ OPTIONS_DEFAULT=	BASH
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		shebangfix
 
 BASH_RUN_DEPENDS=	bash:shells/bash
 ZSH_RUN_DEPENDS=	zsh:shells/zsh
@@ -34,14 +35,14 @@ ZSH_RUN_DEPENDS=	zsh:shells/zsh
 PERIODIC_DIRS=	etc/periodic/weekly
 PERIODIC_FILES=	000.dehydrated
 
-PLIST_DIRS=	%%ETCDIR%%/.acme-challenges \
+PLIST_DIRS=	${ETCDIR}/.acme-challenges \
 		www/dehydrated
 PLIST_FILES=	bin/dehydrated \
-		%%ETCDIR%%/config.example \
-		%%ETCDIR%%/hook.sh.example \
-		%%ETCDIR%%/domains.txt.example \
+		${ETCDIR}/config.example \
+		${ETCDIR}/hook.sh.example \
+		${ETCDIR}/domains.txt.example \
 		${PERIODIC_DIRS}/000.dehydrated
-PORTDOCS_PLIST_FILES=	%%PORTDOCS%%%%DOCSDIR%%/README.md
+PORTDOCS_PLIST_FILES=	${PORTDOCS}${DOCSDIR}/README.md
 
 SUB_FILES=	000.dehydrated pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}

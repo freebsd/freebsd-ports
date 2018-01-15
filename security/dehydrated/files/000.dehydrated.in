@@ -11,13 +11,6 @@ export PATH
 
 case "$weekly_letsencrypt_enable" in
     [Yy][Ee][Ss])
-        echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-        echo '!! WARNING: letsencrypt.sh has been renamed to dehydrated !!'
-        echo '!! rename all weekly_letsencrypt_* periodic variables     !!'
-        echo '!! to         weekly_dehydrated_* in your periodic.conf   !!'
-        echo '|| and mv /usr/local/etc/{letsencrypt.sh,dehydrated}      ||'
-        echo '|| default challenge path has been renamed as well        ||'
-        echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
         : ${weekly_dehydrated_enable:=$weekly_letsencrypt_enable}
         : ${weekly_dehydrated_user:=$weekly_letsencrypt_user}
         : ${weekly_dehydrated_flags:=$weekly_letsencrypt_flags}
