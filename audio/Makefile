@@ -687,6 +687,7 @@
     SUBDIR += py-speex
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
+    SUBDIR += py-wavio
     SUBDIR += py-xmms2
     SUBDIR += pytone
     SUBDIR += qjackctl
