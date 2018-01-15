@@ -2,24 +2,23 @@
 
 PORTNAME=	nstat
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	# empty
-DISTFILES=	# empty
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Replacement for bw/netstat/vmstat/pcm-memory.x
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	pcm.x:sysutils/intel-pcm
 
-NO_FETCH=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	gallatin
+GH_TAGNAME=	5839b41
 
 PLIST_FILES=	bin/nstat \
 		man/man1/nstat.1.gz
-
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@(cd ${FILESDIR} && ${CP} -R . ${WRKSRC})
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
