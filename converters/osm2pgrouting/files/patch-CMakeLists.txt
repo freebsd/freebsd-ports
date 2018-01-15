@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2017-12-18 15:44:24 UTC
++++ CMakeLists.txt
+@@ -106,7 +106,7 @@ TARGET_LINK_LIBRARIES(osm2pgrouting
+     )
+ 
+ INSTALL(TARGETS osm2pgrouting
+-    RUNTIME DESTINATION "/usr/bin"
++    RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin"
+     )
+ 
+ if(WIN32)
+@@ -114,13 +114,15 @@ if(WIN32)
+ endif()
+ 
+ INSTALL(FILES
+-    "${CMAKE_SOURCE_DIR}/COPYING"
+     "${CMAKE_SOURCE_DIR}/Readme.md"
++    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/osm2pgrouting")
++
++INSTALL(FILES
+     "${CMAKE_SOURCE_DIR}/mapconfig.xml"
+     "${CMAKE_SOURCE_DIR}/mapconfig_for_cars.xml"
+     "${CMAKE_SOURCE_DIR}/mapconfig_for_bicycles.xml"
+     "${CMAKE_SOURCE_DIR}/mapconfig_for_pedestrian.xml"
+-    DESTINATION "${SHARE_DIR}")
++    DESTINATION "${CMAKE_INSTALL_PREFIX}/etc")
+ 
+ 
+ #INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
