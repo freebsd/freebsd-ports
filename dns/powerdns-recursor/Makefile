@@ -3,7 +3,7 @@
 
 PORTNAME=	recursor
 DISTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
 		libprotobuf.so:devel/protobuf
 
+CONFLICTS_INSTALL=	powerdns-recursor40
+
 USES=		compiler:c++11-lib cpe gmake localbase:ldflags pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	YES
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
@@ -39,7 +41,7 @@ OPTIONS_RADIO=	LUA_RG
 OPTIONS_RADIO_LUA_RG=	LUA LUAJIT
 LUAJIT_DESC=		Enable LuaJIT
 LUA_RG_DESC=		Lua Engine
-OPTALGO_DESC=		Enable optional algorithms (12 & 15)
+OPTALGO_DESC=		Enable optional algorithms (12, 15 & 16)
 SETUID_DESC=		Run as pdns_recursor user
 
 LUA_CONFIGURE_WITH=	lua
@@ -49,8 +51,10 @@ LUAJIT_CONFIGURE_WITH=	luajit
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit
 
 OPTALGO_CONFIGURE_ON=	--enable-botan \
+			--enable-libdecaf \
 			--enable-libsodium
 OPTALGO_LIB_DEPENDS=	libbotan-2.so:security/botan2 \
+			libdecaf.so:security/libdecaf \
 			libsodium.so:security/libsodium
 
 SETUID_VARS=	USERS=pdns_recursor GROUPS=pdns
