@@ -1,0 +1,8 @@
+This a Python module allowing to use a PostgreSQL instance "as if" it was a
+simple SQLite database: no admin privileges, no configuration needed.
+
+It manages a "local" PostgreSQL cluster in user's home (~/.pglite)
+
+By default it opens a TCP port 55432 on localhost.
+
+WWW: https://github.com/Oslandia/pglite
