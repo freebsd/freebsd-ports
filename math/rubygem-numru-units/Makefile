@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numru-units
-PORTVERSION=	1.7.0
+PORTVERSION=	1.9.0
 CATEGORIES=	math rubygems
 MASTER_SITES=	RG
 
