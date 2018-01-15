@@ -429,7 +429,7 @@ GH_PROJECT:=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME:=	${GH_TAGNAME_DEFAULT}
 GH_SUBDIR:=	${GH_SUBDIR_DEFAULT}
 .  if defined(GH_TAGNAME)
-GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
+GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,g}
 # GitHub silently converts tags starting with v to not have v in the filename
 # and extraction directory.  It also replaces + with -.
 GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g}
