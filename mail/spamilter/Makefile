@@ -2,7 +2,7 @@
 
 PORTNAME=	spamilter
 PORTVERSION=	0.60
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wanlink.com/spamilter/download/
 
