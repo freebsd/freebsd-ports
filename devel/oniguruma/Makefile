@@ -2,40 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	oniguruma
-PORTVERSION=	6.6.1
-DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	6.7.0
 CATEGORIES=	devel textproc
+MASTER_SITES=	https://github.com/kkos/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	onig-${DISTVERSION}
 
-MAINTAINER=	rob@theseusnetworking.com
-COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Regular expressions library compatible with POSIX/GNU/Perl
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix autoreconf libtool
-USE_GITHUB=	yes
-GH_ACCOUNT=	kkos
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
+USES=			autoreconf pathfix libtool  # configure provided in the tarball breaks: https://github.com/kkos/oniguruma/issues/73
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-static
 PATHFIX_MAKEFILEIN=	Makefile.am
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
-TEST_TARGET=	test
-TEST_WRKSRC=	${WRKSRC}/test
+USE_LDCONFIG=		yes
+INSTALL_TARGET=		install-strip
+TEST_WRKSRC=		${WRKSRC}/test
+TEST_TARGET=		test
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^INCLUDES/s|$$(includedir)|| ; \
-		 s|$$(<)|$$(@).in|' ${WRKSRC}/Makefile.am
+OPTIONS_DEFINE=			STATISTICS DOCS EXAMPLES
+STATISTICS_DESC=		Take matching time statistical data (debug feature)
 
-post-install:
+STATISTICS_CONFIGURE_WITH=	statistics
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} HISTORY README ${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
+	cd ${WRKSRC} && ${INSTALL_DATA} HISTORY README ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/sample && ${INSTALL_DATA} *.c ${STAGEDIR}${EXAMPLESDIR})
+	cd ${WRKSRC}/sample && ${INSTALL_DATA} *.c ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
