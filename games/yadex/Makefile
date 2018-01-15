@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	WAD file editor, for games like Doom and Hexen
+COMMENT=	WAD file editor, for games like Doom and Heretic
 
 LICENSE=	GPLv2
 
@@ -60,6 +60,8 @@ post-patch:
 	@${REINPLACE_CMD} -E 's,^#(CXXFLAGS \+= -DWHITE_BACKGROUND)$$,\1,' \
 		${WRKSRC}/${MAKEFILE}
 .endif
+# Fix the build against Clang 6.0.0
+	@${REINPLACE_CMD} -e 's,1000000ul,1000000l,' ${WRKSRC}/src/input.cc
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
