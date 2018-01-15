@@ -1,4 +1,3 @@
-# $FreeBSD: head/textproc/loook/Makefile 412349 2016-04-01 14:25:16Z mat 2
 # Created by: ache
 # $FreeBSD$
 
