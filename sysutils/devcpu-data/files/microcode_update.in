@@ -56,11 +56,16 @@ microcode_update_start()
 		    (echo "Microcode Update Failed." && exit 1)
 	done
 	if [ "${microcode_cpus}" = "ALL" ]; then
-			${CMT} -e /dev/cpuctl${i} >/dev/null 2>&1
+                CPUCONTROL_UPDATED=$(cpucontrol -h 2>&1 | grep -q -- -e; echo $?)
+                if [ ${CPUCONTROL_UPDATED} -ne 0 ]; then
+                        echo "Please update your system in order to update CPU microcode."
+                else
+			${CMT} -e /dev/cpuctl0 >/dev/null 2>&1
 			if [ $? -ne 0 ]; then
-				echo "Re-evalutation of CPU flags Failed."
+				echo "Re-evalulation of CPU flags Failed."
 				exit 1
 			fi
+                fi
 	fi
 	echo "Done."
 }
