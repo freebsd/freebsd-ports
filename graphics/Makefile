@@ -1029,6 +1029,7 @@
     SUBDIR += sswf
     SUBDIR += stamp
     SUBDIR += structuresynth
+    SUBDIR += sverchok-blender
     SUBDIR += svg2pdf
     SUBDIR += svg2png
     SUBDIR += svgalib

@@ -3,7 +3,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.79
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -23,14 +23,18 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
+.include "${.CURDIR}/Makefile.versions"
+
 USES=		cmake:outsource desktop-file-utils \
-		jpeg python:3.5 shebangfix
+		jpeg python:${BLENDER_PY_VERSION} shebangfix \
+		fortran  # fortran is needed because Blender plugins can load python libraries built with fortran, and they need Blender to have USES=fortran
 USE_XORG=	x11 xext xmu xrender
 USE_GL=		gl glu glew
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF \
-		-DWITH_INSTALL_PORTABLE:BOOL=FALSE
+		-DWITH_INSTALL_PORTABLE:BOOL=FALSE \
+		-DPYTHON_VERSION:STRING=${BLENDER_PY_VERSION}
 
 SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/bl_i18n_utils/merge_po.py \
@@ -38,10 +42,9 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/blend_render_info.py
 CFLAGS_i386=	-march=i586
 CXXFLAGS_i386=	-march=i586
-BL_VERSION=	2.79
-OUTDIR=		${INSTALL_WRKSRC}/bin/${BL_VERSION}
+OUTDIR=		${INSTALL_WRKSRC}/bin/${BLENDER_BL_VERSION}
 
-PLIST_SUB+=	VER=${BL_VERSION}
+PLIST_SUB+=	VER=${BLENDER_BL_VERSION}
 OPTIONS_SUB=	yes
 
 .include "${.CURDIR}/Makefile.options"
