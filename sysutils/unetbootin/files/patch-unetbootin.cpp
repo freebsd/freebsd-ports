@@ -161,6 +161,24 @@
  	rawtargetDev = QString(targetDev).remove(QRegExp("s\\d$"));
  #endif
  	#endif
+@@ -3724,7 +3809,7 @@ void unetbootin::writegrub2cfg()
+ 	QString menulstxt = QString(
+ 	"%9\n\n"
+ #ifndef NODEFAULTBOOT
+-	"\nmenuentry \""UNETBOOTINB"\" {\n"
++	"\nmenuentry \"" UNETBOOTINB "\" {\n"
+ 	"\tset root=%8\n"
+ 	"\t%1 %2 %3 %4\n"
+ 	"\t%5 %6 %7\n"
+@@ -3845,7 +3930,7 @@ void unetbootin::runinsthdd()
+ 	"timeout 10\n"
+ 	#endif
+ #ifndef NODEFAULTBOOT
+-	"\ntitle "UNETBOOTINB"\n"
++	"\ntitle " UNETBOOTINB "\n"
+ 	#ifdef Q_OS_WIN32
+ 	"find --set-root %3\n"
+ 	#endif
 @@ -4281,21 +4366,47 @@ void unetbootin::runinstusb()
              instIndvfl("libutil.c32", QString("%1libutil.c32").arg(targetPath));
              instIndvfl("libcom32.c32", QString("%1libcom32.c32").arg(targetPath));
@@ -241,3 +259,12 @@
  	pdesc1->setText("");
  	progresslayer->setEnabled(false);
  	progresslayer->hide();
+@@ -4343,7 +4468,7 @@ void unetbootin::fininstall()
+ 	sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trcurrent));
+ 	if (installType == tr("Hard Disk"))
+ 	{
+-		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1").arg(postinstmsg));
++		rebootmsgtext->setText(tr("After rebooting, select the " UNETBOOTINB " menu entry to boot.%1").arg(postinstmsg));
+ 	}
+ 	if (installType == tr("USB Drive"))
+ 	{
