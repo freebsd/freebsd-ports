@@ -75,6 +75,9 @@ PORTDOCS=	AUTHORS ChangeLog README
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
+	@${REINPLACE_CMD} -E '/fav(->|\.)fov/s|NULL|0.0|' \
+		${WRKSRC}/src/celestia/celestiacore.cpp \
+		${WRKSRC}/src/celestia/favorites.cpp
 # Fix Lua discovery pkg-config(1) calls
 	@${REINPLACE_CMD} -E 's|lua5\.?|lua-5.|' ${WRKSRC}/configure
 # Remove controversial compiler options (respect our C[XX]FLAGS)
