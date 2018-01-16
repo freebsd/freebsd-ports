@@ -3,6 +3,7 @@
 
 PORTNAME=	libevent
 PORTVERSION=	2.1.8
+PORTREVISION=	1
 DISTVERSIONPREFIX=	release-
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel
@@ -13,7 +14,8 @@ COMMENT=	API for executing callback functions on events or timeouts
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf libtool pathfix
+USES=		autoreconf libtool pathfix python:2.7,env shebangfix
+SHEBANG_FILES=	event_rpcgen.py
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
