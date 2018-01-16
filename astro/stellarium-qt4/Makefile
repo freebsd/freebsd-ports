@@ -68,6 +68,9 @@ PLIST_SUB+=	SCRIPTS="@comment "
 .endif
 
 post-patch: .SILENT
+# Fix the build against Clang 6.0.0
+	${REINPLACE_CMD} -e 's,skyDrawer==false,skyDrawer==NULL,' \
+		${WRKSRC}/src/core/StelCore.cpp
 # Avoid picking up the wrong `fixx11h.h' (`x11/kdelibs3' port installs one
 # that does not handle FontChange)
 	${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
