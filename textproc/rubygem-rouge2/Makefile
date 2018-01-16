@@ -4,6 +4,7 @@ PORTNAME=	rouge
 PORTVERSION=	2.2.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, easy-to-extend drop-in replacement for pygments
