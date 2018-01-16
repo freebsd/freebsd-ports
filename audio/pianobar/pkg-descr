@@ -1,3 +1,11 @@
-A free/open-source, console-based replacement for pandora's flash player.
+pianobar is a free/open-source, console-based client for the personalized
+online radio Pandora.  It offers the following features:
 
-WWW: http://6xq.net/html/00/17.html
+ - Play and manage stations (create, add music, delete, rename, etc.)
+ - Rate songs and explain why they have been selected
+ - Upcoming songs/song history
+ - Customize key bindings and text output
+ - Remote control and eventcmd interface (e.g., send tracks to last.fm)
+ - Proxy support for listeners outside the USA
+
+WWW: https://6xq.net/pianobar/
