@@ -10,4 +10,4 @@ sigrok-cli is a command-line tool written in C, which uses both libsigrok
 and libsigrokdecode to provide the basic sigrok functionality from the
 command-line. Among other things, it's useful for scripting purposes.
 
-WWW: http://sigrok.org/
+WWW: https://sigrok.org/
