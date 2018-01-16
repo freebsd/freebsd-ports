@@ -31,4 +31,6 @@ FREETYPE_CONFIGURE_WITH=freetype
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_USES=		iconv
 
+CXXFLAGS+=	-std=c++98
+
 .include <bsd.port.mk>
