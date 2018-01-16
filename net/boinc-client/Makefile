@@ -4,7 +4,7 @@
 PORTNAME=	boinc-client
 PORTVERSION=	7.8.6
 DISTVERSIONPREFIX=	client_release/7.8/
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	ler@FreeBSD.org
@@ -12,10 +12,7 @@ COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS+=	libfreetype.so:print/freetype2
-
 USES=		autoreconf dos2unix gettext gmake libtool pkgconfig ssl tar:xz
-USE_XORG+=	x11 xscrnsaver
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
@@ -67,7 +64,8 @@ MANAGER_CONFIGURE_ENABLE=manager
 MANAGER_USE=		XORG=x11,xext,xscrnsaver WX=2.8
 
 CLIENT_CONFIGURE_ENABLE=client
-CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl
+CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			libfreetype.so:print/freetype2
 CLIENT_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CLIENT_USE=		RC_SUBR=boinc-client
 
@@ -76,6 +74,7 @@ LINUX_USES=		linux
 
 X11_USES=		jpeg
 X11_USE=		GL=glut XORG=xmu,xi
+X11_USE_XORG+=		x11 xscrnsaver
 X11_CONFIGURE_OFF=	ax_cv_check_glut_libglut=no
 
 .include <bsd.port.options.mk>
@@ -85,6 +84,7 @@ WX_CONF_ARGS=	absolute
 SUB_LIST+=	OPTION_MANAGER="true"
 .else
 SUB_LIST+=	OPTION_MANAGER=""
+CONFIGURE_ARGS+=	--disable-manager
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
@@ -96,6 +96,10 @@ SUB_LIST+=	OPTION_NO_GUI_RPC=${PORT_OPTIONS:MNO_GUI_RPC:S/^NO_GUI_RPC$/--no_gui_
 SUB_LIST+=	OPTION_USER="true"
 .else
 SUB_LIST+=	OPTION_USER=""
+.endif
+
+.if ${PORT_OPTIONS:NX11}
+CONFIGURE_ARGS+=	--without-x
 .endif
 
 post-patch:
@@ -116,6 +120,9 @@ post-patch:
 	    ${WRKSRC}/zip/zip/z_fileio.c ${WRKSRC}/zip/zip/z_globals.c \
 	    ${WRKSRC}/zip/zip/zip.c ${WRKSRC}/zip/zip/zipfile.c \
 	    ${WRKSRC}/zip/zip/zipup.c
+.if ${PORT_OPTIONS:NX11}
+	@${REINPLACE_CMD} -e 's|enable_xss="yes"|enable_xss="no"|' ${WRKSRC}/configure.ac
+.endif
 
 post-install:
 .for name in config.h project_specific_defines.h api/reduce.h \
