@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML_BBCodeParser
-DISTVERSION=	1.2.4
+PORTVERSION=	1.2.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	lewiz@compsoc.man.ac.uk
