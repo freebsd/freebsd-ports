@@ -22,10 +22,10 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 
 CONFLICTS_INSTALL=	grive-[0-9]*
 
+USES=		cmake pkgconfig localbase
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	vitalif
-
-USES=		cmake pkgconfig localbase
 
 PLIST_FILES=	bin/grive \
 		man/man1/grive.1.gz
