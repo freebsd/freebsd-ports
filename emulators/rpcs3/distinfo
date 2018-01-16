@@ -1,6 +1,6 @@
 TIMESTAMP = 1516033416
-SHA256 (RPCS3-rpcs3-v0.0.4-250-gec41483e9_GH0.tar.gz) = 5c0db1e8ea40a22e1954c7af52ef1f63cd35ceccf430c4d3cd98ac75f7c58b1d
-SIZE (RPCS3-rpcs3-v0.0.4-250-gec41483e9_GH0.tar.gz) = 3619704
+SHA256 (RPCS3-rpcs3-v0.0.4-252-g24e97b9e0_GH0.tar.gz) = ebf5d9d125ff571cc80b431952f2aebd467b09fec5da7c86919a11964410e4c7
+SIZE (RPCS3-rpcs3-v0.0.4-252-g24e97b9e0_GH0.tar.gz) = 3619025
 SHA256 (RPCS3-hidapi-hidapi-0.8.0-rc1-25-gca39ce8_GH0.tar.gz) = e50e4f4e9035e891e16867e995f44aac87ce734a9dde169f02fc9719b2ce3642
 SIZE (RPCS3-hidapi-hidapi-0.8.0-rc1-25-gca39ce8_GH0.tar.gz) = 105623
 SHA256 (RPCS3-yaml-cpp-release-0.5.3-62-g017626a_GH0.tar.gz) = 1d4b32443f137c23b68d3cb183ba6fb48eb76be2b0b30016970adff5c770d841
