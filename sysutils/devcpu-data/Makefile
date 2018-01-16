@@ -3,9 +3,9 @@
 
 PORTNAME=	data
 PORTVERSION=	1.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	https://downloadmirror.intel.com/27431/eng/:intel \
+MASTER_SITES=	https://downloadmirror.intel.com/27337/eng/:intel \
 		LOCAL/sbruno:amd
 PKGNAMEPREFIX=	devcpu-
 DISTFILES=	microcode-20171117.tgz:intel amd64-microcode_3.20171205.1.tar.xz:amd
