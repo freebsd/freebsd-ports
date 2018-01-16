@@ -1,0 +1,21 @@
+--- portmaster.orig	2018-01-14 21:53:23 UTC
++++ portmaster
+@@ -45,7 +45,7 @@ if [ -z "$PM_PARENT_PID" ]; then
+ 	my_environment=`set`
+ 
+ 	# If we are already root, unset this to avoid potential conflict
+-	[ `ps -o uid= $$` -eq 0 ] && unset PM_SU_CMD PM_SU_VERBOSE
++	[ `id -u` -eq 0 ] && unset PM_SU_CMD PM_SU_VERBOSE
+ fi
+ 
+ #=============== Begin functions we always want to have ===============
+@@ -3233,6 +3233,9 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
+ elif [ -n "$FETCH_ONLY" -a -n "$PM_PACKAGES" ]; then
+ 	update_pm_nu $portdir
+ fi
++
++# Test for necessary privileges to actually install ports
++[ "$($PM_SU_CMD id -u)" = 0 ] || fail "Insufficient privileges to install ports (run as root or set PM_SU_CMD)"
+ 
+ # Do these things first time through
+ if [ -z "$PM_INDEX_ONLY" -a -z "$PM_BUILDING" -a -z "$SHOW_WORK" -a -z "$NO_ACTION" ]; then
