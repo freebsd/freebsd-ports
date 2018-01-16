@@ -1,10 +1,13 @@
---- libgrive/src/util/File.cc.orig	2016-08-28 12:56:18 UTC
+--- libgrive/src/util/File.cc.orig	2016-01-14 20:51:31 UTC
 +++ libgrive/src/util/File.cc
-@@ -32,6 +32,7 @@
- #include <sys/stat.h>
+@@ -33,6 +33,10 @@
  #include <sys/types.h>
  #include <fcntl.h>
-+#include <unistd.h>
  
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#include <unistd.h>
++#endif
++
  #ifdef WIN32
  	#include <io.h>
+ 	typedef int ssize_t ;
