@@ -11,6 +11,7 @@ MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Auto-generates API docs from Zope interfaces
 
 LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=	python
 USE_PYTHON=	autoplist distutils
