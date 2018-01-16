@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	vbindiff
-DISTVERSION=	3.0_beta4
+DISTVERSION=	3.0_beta5
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.cjmweb.net/vbindiff/
+MASTER_SITES=	https://www.cjmweb.net/vbindiff/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Visual binary diff, visually compare binary files
+
+LICENSE=	GPLv2+
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
