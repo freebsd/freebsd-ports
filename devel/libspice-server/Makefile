@@ -3,6 +3,7 @@
 
 PORTNAME=	libspice-server
 DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.spice-space.org/download/releases/
 DISTNAME=	spice-${PORTVERSION}
@@ -14,7 +15,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libopus.so:audio/opus
 BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
-RUN_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
 
 OPTIONS_DEFINE=		GSTREAMER LZ4 SASL STATISTICS
 OPTIONS_DEFAULT=	GSTREAMER LZ4 SASL
@@ -33,7 +33,7 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 STATISTICS_CONFIGURE_ENABLE=	statistics
 
-USES=		gmake jpeg libtool localbase:ldflag pkgconfig \
+USES=		autoreconf gmake jpeg libtool localbase:ldflag pkgconfig \
 		ssl tar:bzip2
 
 USE_GNOME=	glib20
