@@ -3,4 +3,4 @@ EBCDIC). It can also display two files at once, and highlight the
 differences between them. Unlike diff, it works well with large files (up to
 4 GB).
 
-WWW: http://www.pobox.com/~cjm/vbindiff/
+WWW: https://www.pobox.com/~cjm/vbindiff/
