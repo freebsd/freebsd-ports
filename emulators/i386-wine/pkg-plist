@@ -905,7 +905,7 @@ lib32/.libGL/dri/swrast_dri.so
 lib32/.libGL/dri/vmwgfx_dri.so
 lib32/.libGL/libGL.so.1
 lib32/libGLU.so.1
-lib32/libLLVM-4.0.so
+lib32/libLLVM-5.0.so
 lib32/libX11-xcb.so.1
 lib32/libX11.so.6
 lib32/libXau.so.6
@@ -942,7 +942,6 @@ lib32/libp11-kit.so.0
 lib32/libpciaccess.so.0
 lib32/libpng16.so.16
 lib32/libtasn1.so.6
-lib32/libtxc_dxtn.so
 lib32/libunistring.so.2
 lib32/libunwind.so.8
 lib32/libwine.so
