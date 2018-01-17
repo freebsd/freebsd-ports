@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	yar
-PORTVERSION=	2.0.2
+DISTVERSION=	2.0.4
 CATEGORIES=	www
 
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	Yar (Yet another RPC framework) is a light, concurrent RPC framework
 
 LICENSE=	PHP301
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+IGNORE_WITH_PHP=56
 
 USES=		localbase php:pecl
 USE_PHP=	json:build curl:build
-IGNORE_WITH_PHP=56 72
 
 OPTIONS_DEFINE=	MSGPACK
 MSGPACK_DESC=	Enable MSGPACK module
