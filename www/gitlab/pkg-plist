@@ -3434,6 +3434,7 @@
 %%WWWDIR%%/app/serializers/container_tags_serializer.rb
 %%WWWDIR%%/app/serializers/deploy_key_entity.rb
 %%WWWDIR%%/app/serializers/deploy_key_serializer.rb
+%%WWWDIR%%/app/serializers/deploy_keys_project_entity.rb
 %%WWWDIR%%/app/serializers/deployment_entity.rb
 %%WWWDIR%%/app/serializers/deployment_serializer.rb
 %%WWWDIR%%/app/serializers/discussion_entity.rb
@@ -5851,6 +5852,8 @@
 %%WWWDIR%%/db/migrate/20171006091000_add_name_foreign_key_to_ci_build_trace_sections.rb
 %%WWWDIR%%/db/migrate/20171012101043_add_circuit_breaker_properties_to_application_settings.rb
 %%WWWDIR%%/db/migrate/20171017145932_add_new_circuitbreaker_settings_to_application_settings.rb
+%%WWWDIR%%/db/migrate/20171211145425_add_can_push_to_deploy_keys_projects.rb
+%%WWWDIR%%/db/migrate/20171215113714_populate_can_push_from_deploy_keys_projects.rb
 %%WWWDIR%%/db/migrate/limits_to_mysql.rb
 %%WWWDIR%%/db/migrate/markdown_cache_limits_to_mysql.rb
 %%WWWDIR%%/db/migrate/merge_request_diff_file_limits_to_mysql.rb
@@ -5938,6 +5941,8 @@
 %%WWWDIR%%/db/post_migrate/20170927112318_update_legacy_diff_notes_type_for_import.rb
 %%WWWDIR%%/db/post_migrate/20170927112319_update_notes_type_for_import.rb
 %%WWWDIR%%/db/post_migrate/20171005130944_schedule_create_gpg_key_subkeys_from_gpg_keys.rb
+%%WWWDIR%%/db/post_migrate/20171215121205_post_populate_can_push_from_deploy_keys_projects.rb
+%%WWWDIR%%/db/post_migrate/20171215121259_remove_can_push_from_keys.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
@@ -8096,6 +8101,7 @@
 %%WWWDIR%%/lib/gitlab/middleware/read_only.rb
 %%WWWDIR%%/lib/gitlab/middleware/static.rb
 %%WWWDIR%%/lib/gitlab/middleware/webpack_proxy.rb
+%%WWWDIR%%/lib/gitlab/o_auth.rb
 %%WWWDIR%%/lib/gitlab/o_auth/auth_hash.rb
 %%WWWDIR%%/lib/gitlab/o_auth/provider.rb
 %%WWWDIR%%/lib/gitlab/o_auth/session.rb
@@ -8519,12 +8525,14 @@
 %%WWWDIR%%/spec/controllers/import/gitea_controller_spec.rb
 %%WWWDIR%%/spec/controllers/import/github_controller_spec.rb
 %%WWWDIR%%/spec/controllers/import/gitlab_controller_spec.rb
+%%WWWDIR%%/spec/controllers/import/gitlab_projects_controller_spec.rb
 %%WWWDIR%%/spec/controllers/import/google_code_controller_spec.rb
 %%WWWDIR%%/spec/controllers/invites_controller_spec.rb
 %%WWWDIR%%/spec/controllers/metrics_controller_spec.rb
 %%WWWDIR%%/spec/controllers/notification_settings_controller_spec.rb
 %%WWWDIR%%/spec/controllers/oauth/applications_controller_spec.rb
 %%WWWDIR%%/spec/controllers/oauth/authorizations_controller_spec.rb
+%%WWWDIR%%/spec/controllers/omniauth_callbacks_controller_spec.rb
 %%WWWDIR%%/spec/controllers/passwords_controller_spec.rb
 %%WWWDIR%%/spec/controllers/profiles/accounts_controller_spec.rb
 %%WWWDIR%%/spec/controllers/profiles/avatars_controller_spec.rb
@@ -9570,6 +9578,8 @@
 %%WWWDIR%%/spec/javascripts/new_branch_spec.js
 %%WWWDIR%%/spec/javascripts/notebook/cells/code_spec.js
 %%WWWDIR%%/spec/javascripts/notebook/cells/markdown_spec.js
+%%WWWDIR%%/spec/javascripts/notebook/cells/output/html_sanitize_tests.js
+%%WWWDIR%%/spec/javascripts/notebook/cells/output/html_spec.js
 %%WWWDIR%%/spec/javascripts/notebook/cells/output/index_spec.js
 %%WWWDIR%%/spec/javascripts/notebook/cells/prompt_spec.js
 %%WWWDIR%%/spec/javascripts/notebook/index_spec.js
@@ -10869,6 +10879,7 @@
 %%WWWDIR%%/spec/services/projects/enable_deploy_key_service_spec.rb
 %%WWWDIR%%/spec/services/projects/fork_service_spec.rb
 %%WWWDIR%%/spec/services/projects/forks_count_service_spec.rb
+%%WWWDIR%%/spec/services/projects/gitlab_projects_import_service_spec.rb
 %%WWWDIR%%/spec/services/projects/hashed_storage_migration_service_spec.rb
 %%WWWDIR%%/spec/services/projects/housekeeping_service_spec.rb
 %%WWWDIR%%/spec/services/projects/import_service_spec.rb

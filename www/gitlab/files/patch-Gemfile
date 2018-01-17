@@ -1,4 +1,4 @@
---- Gemfile.orig	2017-12-07 12:02:52 UTC
+--- Gemfile.orig	2018-01-11 16:23:59 UTC
 +++ Gemfile
 @@ -1,49 +1,49 @@
  source 'https://rubygems.org'
@@ -48,10 +48,11 @@
 -gem 'omniauth-saml', '~> 1.7.0'
 -gem 'omniauth-shibboleth', '~> 1.2.0'
 -gem 'omniauth-twitter', '~> 1.2.0'
+-gem 'omniauth_crowd', '~> 2.2.0'
 +gem 'omniauth-saml', '>= 1.7.0'
 +gem 'omniauth-shibboleth', '>= 1.2.0'
 +gem 'omniauth-twitter', '>= 1.2.0'
- gem 'omniauth_crowd', '~> 2.2.0'
++gem 'omniauth_crowd', '>= 2.2.0'
  gem 'omniauth-authentiq', '~> 0.3.1'
 -gem 'rack-oauth2', '~> 1.2.1'
 +gem 'rack-oauth2', '>= 1.2.1'
@@ -174,7 +175,7 @@
 +gem 'version_sorter', '>= 2.1.0'
  
  # Cache
- gem 'redis-rails', '~> 5.0.1'
+ gem 'redis-rails', '~> 5.0.2'
  
  # Redis
 -gem 'redis', '~> 3.2'
