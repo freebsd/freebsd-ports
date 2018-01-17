@@ -15,7 +15,7 @@
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqltest mysqlclient regex)
- 
+ ADD_DEPENDENCIES(mysqltest GenError)
  
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
