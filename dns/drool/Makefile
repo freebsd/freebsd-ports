@@ -3,6 +3,7 @@
 
 PORTNAME=	drool
 DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/drool/
 
