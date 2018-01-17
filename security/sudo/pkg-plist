@@ -13,6 +13,7 @@ libexec/sudo/sudoers.so
 libexec/sudo/system_group.so
 man/man5/sudo.conf.5.gz
 man/man5/sudoers.5.gz
+man/man5/sudoers_timestamp.5.gz
 %%LDAP%%man/man5/sudoers.ldap.5.gz
 man/man8/sudo.8.gz
 man/man8/sudo_plugin.8.gz
@@ -56,6 +57,7 @@ sbin/visudo
 %%NLS%%share/locale/fr/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/fur/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/fur/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/sudoers.mo
