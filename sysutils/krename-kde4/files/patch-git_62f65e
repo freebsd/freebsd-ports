@@ -1,0 +1,22 @@
+From 62f65e049d6640dc346ea5bd18c6bd81aee0936f Mon Sep 17 00:00:00 2001
+From: "Martin T. H. Sandsmark" <martin.sandsmark@kde.org>
+Date: Sat, 7 May 2016 23:59:34 +0200
+Subject: [PATCH] fix build
+
+---
+ src/batchrenamer.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/batchrenamer.cpp b/src/batchrenamer.cpp
+index 7640b06..e20ed02 100644
+--- src/batchrenamer.cpp
++++ src/batchrenamer.cpp
+@@ -402,7 +402,7 @@ void BatchRenamer::undoFiles( ProgressDialog* p )
+                 break;
+             case eRenameMode_Link:
+                 // In case of link delete created file
+-                job = KIO::file_delete( dstUrl, false );
++                job = KIO::file_delete( dstUrl, KIO::HideProgressInfo );
+                 break;
+             case eRenameMode_Copy: // no undo possible
+                 // TODO: Maybe we should delete the created files
