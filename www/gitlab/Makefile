@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	10.1.5
+PORTVERSION=	10.1.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	8
 CATEGORIES=	www devel
 
 MAINTAINER=	idefix@fechner.net
@@ -102,7 +101,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-wikicloth>=0.8.1:textproc/rubygem-wikicloth \
 	rubygem-asciidoctor>=1.5.2:textproc/rubygem-asciidoctor \
 	rubygem-asciidoctor-plantuml>=0.0.7:textproc/rubygem-asciidoctor-plantuml \
-	rubygem-rouge>=2.0:textproc/rubygem-rouge \
+	rubygem-rouge2>=2.0:textproc/rubygem-rouge2 \
 	rubygem-truncato>=0.7.9:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=2.7.0:devel/rubygem-bootstrap_form \
 	rubygem-nokogiri>=1.8.1:textproc/rubygem-nokogiri  \
