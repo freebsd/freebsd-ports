@@ -3,6 +3,7 @@
 
 PKGNAMESUFFIX=	-${FLAVOR:U:S/_/-/}
 CATEGORIES=	devel python
+DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt${PYQTVER}/QtGui.so:x11-toolkits/py-qt${PYQTVER}-gui@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/PyQt${PYQTVER}/Qsci.so:devel/py-qt${PYQTVER}-qscintilla2@${PY_FLAVOR}
