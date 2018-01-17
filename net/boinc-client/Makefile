@@ -4,7 +4,7 @@
 PORTNAME=	boinc-client
 PORTVERSION=	7.8.6
 DISTVERSIONPREFIX=	client_release/7.8/
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 
 MAINTAINER=	ler@FreeBSD.org
@@ -40,7 +40,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
 OPTIONS_DEFINE=		CLIENT MANAGER NLS X11 LINUX USER SKINS
-OPTIONS_DEFAULT=	CLIENT X11 USER
+OPTIONS_DEFAULT=	CLIENT MANAGER X11 USER
 OPTIONS_GROUP=		SCRIPT
 OPTIONS_GROUP_SCRIPT=	NO_GUI_RPC NO_NET_INFO
 CLIENT_DESC=		Build BOINC client
@@ -57,11 +57,14 @@ OPTIONS_SUB=		yes
 
 MANAGER_USES=		iconv
 MANAGER_LIB_DEPENDS=	libnotify.so:devel/libnotify \
-			libsqlite3.so:databases/sqlite3
+			libfontconfig.so:x11-fonts/fontconfig \
+			libsqlite3.so:databases/sqlite3 \
+			libxcb-util.so:x11/xcb-util 
 MANAGER_CONFIGURE_ON=	--with-sqlite3-prefix=${LOCALBASE}
 MANAGER_CONFIGURE_OFF=	--with-wx-config=false --without-x
 MANAGER_CONFIGURE_ENABLE=manager
-MANAGER_USE=		XORG=x11,xext,xscrnsaver WX=2.8
+MANAGER_USE=		GNOME=cairo,gdkpixbuf2,glib20,gtk20,pango \
+			XORG=xcb,x11,xext,xscrnsaver WX=3.0
 
 CLIENT_CONFIGURE_ENABLE=client
 CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl \
@@ -133,7 +136,7 @@ post-install:
 post-install-MANAGER-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc
 .for name in 16 32 48
-	${INSTALL_DATA} ${WRKSRC}/clientgui/res/boincmgr.${name}x${name}.png \
+	${INSTALL_DATA} ${WRKSRC}/packages/generic/sea/boincmgr.${name}x${name}.png \
 	    ${STAGEDIR}${PREFIX}/share/pixmaps
 .endfor
 .if ${PORT_OPTIONS:MSKINS}
