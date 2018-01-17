@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	skalibs
-PORTVERSION=	2.4.0.2
+PORTVERSION=	2.6.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -29,7 +29,7 @@ post-install-DOCS-on:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .for d in libbiguint libdatastruct librandom libstdcrypto libstddjb libunixonacid
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
-	cd ${WRKSRC} && ${INSTALL_MAN} doc/${d}/*.html ${STAGEDIR}${DOCSDIR}/${d}
+	cd ${WRKSRC} && ${INSTALL_DATA} doc/${d}/*.html ${STAGEDIR}${DOCSDIR}/${d}
 .endfor
 
 .include <bsd.port.mk>

@@ -160,6 +160,7 @@
     SUBDIR += chyves
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
+    SUBDIR += circonus-agent
     SUBDIR += ciso
     SUBDIR += ciso-maker
     SUBDIR += ck4up
@@ -186,8 +187,9 @@
     SUBDIR += consolehm
     SUBDIR += consolekit2
     SUBDIR += consul
-    SUBDIR += consul_exporter
     SUBDIR += consul-alerts
+    SUBDIR += consul_exporter
+    SUBDIR += container-diff
     SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreutils
@@ -946,6 +948,7 @@
     SUBDIR += py-zfs
     SUBDIR += pydf
     SUBDIR += qchroot
+    SUBDIR += qdirstat
     SUBDIR += qjail
     SUBDIR += qjail4
     SUBDIR += qlogtools
@@ -1129,7 +1132,6 @@
     SUBDIR += snap
     SUBDIR += snooze
     SUBDIR += snowlog
-    SUBDIR += socket
     SUBDIR += socklog
     SUBDIR += solaar
     SUBDIR += sortu

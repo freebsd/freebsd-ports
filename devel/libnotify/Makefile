@@ -4,6 +4,7 @@
 
 PORTNAME=	libnotify
 PORTVERSION=	0.7.7
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -13,8 +14,8 @@ COMMENT=	Library for desktop notifications
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake libtool localbase pathfix pkgconfig tar:xz
-USE_GNOME=	intlhack glib20 gdkpixbuf2 introspection
+USES=		gmake libtool pkgconfig tar:xz
+USE_GNOME=	glib20 gdkpixbuf2 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

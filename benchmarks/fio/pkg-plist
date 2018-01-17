@@ -7,6 +7,7 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/backwards-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic-verify.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/butterfly.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpp_null.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpuio.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dev-dax.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk-zone-profile.fio
@@ -14,6 +15,13 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag2.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enospc-pressure.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/falloc.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filecreate-ioengine.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-rand-RW.job
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-rand-read.job
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-rand-write.job
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-seq-RW.job
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-seq-read.job
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-seq-write.job
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fixed-rate-submission.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fsx.fio
@@ -26,6 +34,7 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jesd219.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latency-profile.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libhdfs.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libpmem.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtd.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_multicast.fio

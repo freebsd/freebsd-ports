@@ -358,10 +358,9 @@ sub create_excludelist {
     or die "Failed to open exclude list ($excludefile): $!\n";
   print EXCLFILE '# Auto-generated exclude list ', scalar localtime, "\n";
   for (sort keys %leavestokeep) {
-    /^(.+)-\d.+$/o 
+    /^(.+)-\d.*$/o 
       ? print EXCLFILE $1, "\n"
       : warn 'Unable to extract exclude pattern from ', $_, "\n";
   }
   print "New exclude list ($excludefile) generated.\n";
 }
-

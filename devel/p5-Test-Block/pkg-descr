@@ -1,5 +1,0 @@
-This module allows you to specify the number of expected tests at
-a finer level of granularity than an entire test script. It is built
-with Test::Builder and plays happily with Test::More and friends.
-
-WWW: http://search.cpan.org/dist/Test-Block/

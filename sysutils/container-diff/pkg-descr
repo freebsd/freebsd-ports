@@ -1,0 +1,15 @@
+container-diff is a tool for analyzing and comparing container images.
+
+container-diff can examine images along several different criteria, including:
+- Docker Image History
+- Image file system
+- Apt packages
+- pip packages
+- npm packages
+
+These analyses can be performed on a single image, or a diff can be performed on
+two images to compare. The tool can help users better understand what is
+changing inside their images, and give them a better look at what their images
+contain.
+
+WWW: https://github.com/GoogleCloudPlatform/container-diff

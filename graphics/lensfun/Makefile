@@ -32,4 +32,8 @@ PYHELPERS_CMAKE_ON=	-DSTAGEDIR:STRING=${STAGEDIR} -DPYTHON:STRING=${PYTHON_CMD}
 PYHELPERS_CMAKE_OFF=	-DINSTALL_HELPER_SCRIPTS:BOOL=OFF -DPYTHON:STRING=IGNORE
 PYHELPERS_USES=		python:3.4+
 
+post-patch:
+# Fix the build against Clang 6.0.0
+	@${REINPLACE_CMD} -e '/%%/s,R_BX, & ,' ${WRKSRC}/libs/lensfun/cpuid.cpp
+
 .include <bsd.port.mk>

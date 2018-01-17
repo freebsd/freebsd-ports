@@ -35,17 +35,6 @@ X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
 
-pre-everything::
-.if defined(WITH_BDB_VER)
-pre-everything::
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "WARNING:"
-	@${ECHO_CMD} "	You have defined WITH_BDB_VER. Make sure you use the same"
-	@${ECHO_CMD} "	db version for all ports that use libtabe, such as xcin."
-	@${ECHO_CMD} "	Otherwise, ports that use libtabe may not work correctly."
-	@${ECHO_CMD} ""
-.endif
-
 post-patch-X11-off:
 	${REINPLACE_CMD} -e '/all:/s/ bims//; /bims/d' \
 		${WRKSRC}/src/Makefile.in

@@ -168,7 +168,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} && ${CHMOD} a+rx ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
+	@cd ${WRKSRC}/doc && ${INSTALL_DATA} manual.txt PGP-Notes.txt \
 		${STAGEDIR}${DOCSDIR}
 .endif
 

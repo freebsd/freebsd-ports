@@ -6,7 +6,7 @@ PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tutorial for algorithms and data structures
 
 BUILD_DEPENDS=	p5-Tk>=0:x11-toolkits/p5-Tk

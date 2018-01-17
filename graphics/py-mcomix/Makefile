@@ -3,6 +3,7 @@
 
 PORTNAME=	mcomix
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/MComix-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +20,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		python:2.7 tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	autoplist distutils
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth_crowd
-PORTVERSION=	2.2.3
+PORTVERSION=	2.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

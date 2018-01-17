@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hstr
-DISTVERSION=	1.23
+DISTVERSION=	1.24
 CATEGORIES=	sysutils
 
 MAINTAINER=	monsieurp@gentoo.org

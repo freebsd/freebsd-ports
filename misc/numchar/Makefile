@@ -13,7 +13,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/numchar ${STAGEDIR}${PREFIX}/bin
 	${LN} -fs ${PREFIX}/bin/numchar ${STAGEDIR}${PREFIX}/bin/phdecode
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/numchar
-	${INSTALL_MAN} ${WRKSRC}/numchar.html \
+	${INSTALL_DATA} ${WRKSRC}/numchar.html \
 		${STAGEDIR}${PREFIX}/share/doc/numchar
 
 .include <bsd.port.mk>

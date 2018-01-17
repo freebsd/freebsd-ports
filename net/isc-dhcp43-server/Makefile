@@ -18,7 +18,7 @@ LICENSE=	ISCL
 
 USES=		gmake
 
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	2
 PORTREVISION_CLIENT=	0
 PORTREVISION_RELAY=	0
 
@@ -37,13 +37,13 @@ BIND_SYMBOLS_DESC=	Enable BIND internal symbol table
 
 # PORTREVISION and CONFLICTS handling
 .if ${SUBSYS} == client
-CONFLICTS=	isc-dhcp3?-client-[0-9]* isc-dhcp4[12]-client-[0-9]*
+CONFLICTS=	isc-dhcp3?-client-[0-9]* isc-dhcp4[124]-client-[0-9]*
 DHCP_PORTREVISION=	${PORTREVISION_CLIENT}
 .elif ${SUBSYS} == relay
-CONFLICTS=	isc-dhcp3?-relay-[0-9]* isc-dhcp4[12]-relay-[0-9]*
+CONFLICTS=	isc-dhcp3?-relay-[0-9]* isc-dhcp4[124]-relay-[0-9]*
 DHCP_PORTREVISION=	${PORTREVISION_RELAY}
 .else
-CONFLICTS=	isc-dhcp3?-server-[0-9]* isc-dhcp4[12]-server-[0-9]*
+CONFLICTS=	isc-dhcp3?-server-[0-9]* isc-dhcp4[124]-server-[0-9]*
 DHCP_PORTREVISION=	${PORTREVISION_SERVER}
 .endif
 MAKE_JOBS_UNSAFE=	yes
@@ -165,7 +165,7 @@ do-install:
 .endif
 .if ${PORT_OPTIONS:MLDAP}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${LDAP_README} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${LDAP_README} ${STAGEDIR}${DOCSDIR}
 .endif
 .endif
 .if ${SUBSYS} == client

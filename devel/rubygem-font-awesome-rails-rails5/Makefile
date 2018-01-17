@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	font-awesome-rails
-PORTVERSION=	4.7.0.2
+PORTVERSION=	4.7.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
@@ -13,7 +13,7 @@ LICENSE=	MIT OFL11
 LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-railties5>0:www/rubygem-railties5
+RUN_DEPENDS=	rubygem-railties5>=3.2:www/rubygem-railties5
 
 NO_ARCH=	yes
 USE_RUBY=	yes

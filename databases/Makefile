@@ -687,6 +687,7 @@
     SUBDIR += postgresql-libpgeasy
     SUBDIR += postgresql-libpqxx
     SUBDIR += postgresql-libpqxx3
+    SUBDIR += postgresql-libpqxx4
     SUBDIR += postgresql-mysql_fdw
     SUBDIR += postgresql-odbc
     SUBDIR += postgresql-orafce
@@ -808,6 +809,7 @@
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue
     SUBDIR += py-pgcli
+    SUBDIR += py-pglite
     SUBDIR += py-pgspecial
     SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb

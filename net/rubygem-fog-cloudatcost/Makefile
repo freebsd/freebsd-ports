@@ -3,6 +3,7 @@
 
 PORTNAME=	fog-cloudatcost
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

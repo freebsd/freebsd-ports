@@ -65,6 +65,7 @@
     SUBDIR += libarchive
     SUBDIR += libcabinet
     SUBDIR += libcomprex
+    SUBDIR += libdeflate
     SUBDIR += libdynamite
     SUBDIR += liblz4
     SUBDIR += liblzxcomp
@@ -190,6 +191,8 @@
     SUBDIR += py-rjsmin
     SUBDIR += py-warctools
     SUBDIR += py-xopen
+    SUBDIR += py-zstandard
+    SUBDIR += py-zstd
     SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += quazip-qt5

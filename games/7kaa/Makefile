@@ -22,6 +22,7 @@ BROKEN_armv7=		fails to compile: OBULLET.cpp:41:9: constant expression evaluates
 
 USES=		compiler:c++11-lib gmake localbase openal:al pkgconfig tar:xz
 GNU_CONFIGURE=	yes
+LLD_UNSAFE=	yes
 CONFIGURE_ARGS=	--disable-nls # no translations ATM
 USE_SDL=	sdl2
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	execline
-PORTVERSION=	2.2.0.0
+PORTVERSION=	2.3.0.4
 CATEGORIES=	lang shells
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -13,6 +13,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
+BUILD_DEPENDS=	skalibs>=2.6.2.0:devel/skalibs
 
 CONFLICTS_INSTALL=	ImageMagick-* # bin/import
 
@@ -36,6 +37,6 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_MAN} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

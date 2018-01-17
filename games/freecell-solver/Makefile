@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freecell-solver
-PORTVERSION=	4.12.1
-PORTREVISION=	1
+PORTVERSION=	4.14.1
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 
@@ -20,9 +19,10 @@ BUILD_DEPENDS=	p5-Path-Tiny>=0.076:devel/p5-Path-Tiny \
 OPTIONS_DEFINE=	DOCS EXAMPLES TCMALLOC
 TCMALLOC_DESC=	Use Google's TCMalloc
 
-USES=		cmake:outsource compiler:c11 perl5 shebangfix tar:xz
+USES=		cmake:outsource compiler:c11 perl5 python:3.4+ shebangfix tar:xz
 USE_PERL5=	build
-SHEBANG_FILES=	board_gen/make_pysol_freecell_board.py
+SHEBANG_FILES=	board_gen/make_pysol_freecell_board.py \
+		board_gen/transpose-freecell-board.py
 CMAKE_ARGS=	-DFCS_WITH_TEST_SUITE:BOOL=OFF
 USE_LDCONFIG=	yes
 

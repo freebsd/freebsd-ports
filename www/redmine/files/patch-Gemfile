@@ -1,12 +1,15 @@
---- Gemfile.orig	2017-07-16 18:18:29 UTC
+--- Gemfile.orig	2018-01-08 19:38:18 UTC
 +++ Gemfile
-@@ -4,20 +4,20 @@ if Gem::Version.new(Bundler::VERSION) < 
+@@ -4,24 +4,24 @@ if Gem::Version.new(Bundler::VERSION) < 
    abort "Redmine requires Bundler 1.5.0 or higher (you're using #{Bundler::VERSION}).\nPlease update with 'gem update bundler'."
  end
  
 -gem "rails", "4.2.8"
 +gem "rails", ">= 4.2.8"
  gem "addressable", "2.4.0" if RUBY_VERSION < "2.0"
+ if RUBY_VERSION < "2.1"
+   gem "public_suffix", (RUBY_VERSION < "2.0" ? "~> 1.4" : "~> 2.0.5")
+ end
 -gem "jquery-rails", "~> 3.1.4"
 +gem "jquery-rails", ">= 3.1.4"
  gem "coderay", "~> 1.1.1"
@@ -19,15 +22,15 @@
 +gem "roadie-rails", "~> 1.1", ">= 1.1.1"
  gem "roadie", "~> 3.2.1"
  gem "mimemagic"
+ gem "mail", "~> 2.6.4"
  
--gem "nokogiri", (RUBY_VERSION >= "2.1" ? "~> 1.7.2" : "~> 1.6.8")
+ gem "nokogiri", (RUBY_VERSION >= "2.1" ? "~> 1.8.1" : "~> 1.6.8")
 -gem "i18n", "~> 0.7.0"
-+gem "nokogiri"
 +gem "i18n", "~> 0.7"
  gem "ffi", "1.9.14", :platforms => :mingw if RUBY_VERSION < "2.0"
  
  # Request at least rails-html-sanitizer 1.0.3 because of security advisories
-@@ -29,27 +29,15 @@ gem "rbpdf", "~> 1.19.3"
+@@ -33,27 +33,15 @@ gem "rbpdf", "~> 1.19.3"
  
  # Optional gem for LDAP authentication
  group :ldap do
@@ -57,7 +60,7 @@
  # Include database gems for the adapters found in the database
  # configuration file
  require 'erb'
-@@ -82,23 +70,6 @@ else
+@@ -86,23 +74,6 @@ else
    warn("Please configure your config/database.yml first")
  end
  
@@ -81,7 +84,7 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -108,3 +79,7 @@ end
+@@ -112,3 +83,7 @@ end
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
  end

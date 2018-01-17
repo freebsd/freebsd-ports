@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tile38
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10.0
 CATEGORIES=	databases
 
 MAINTAINER=	olevole@olevole.ru

@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
 
-USES=		php:cli python shebangfix
+USES=		php:cli python${PY_MYSQL} shebangfix
 SHEBANG_FILES=	scripts/auth_test.php scripts/deploy-docs.sh scripts/github-remove \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
@@ -69,6 +69,7 @@ LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:databases/py-MySQLdb
+PYPOLLER_VARS=	PY_MYSQL=:2.7
 X11_RUN_DEPENDS=	Magick-config:graphics/ImageMagick \
 			mtr:net/mtr
 X11_RUN_DEPENDS_OFF=	Magick-config:graphics/ImageMagick-nox11 \

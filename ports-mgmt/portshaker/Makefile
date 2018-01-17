@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME?=	portshaker
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.15
 DISTVERSIONPREFIX=	v
 PORTREVISION?=	0
 CATEGORIES?=	ports-mgmt
 
 MAINTAINER?=	romain@FreeBSD.org
 COMMENT?=	Maintain ports tree using multiple sources
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES+=		uidfix
 USE_GITHUB=	yes
@@ -22,11 +25,7 @@ RSYNC_DESC=	rsync support
 GIT_DESC=	git support
 HG_DESC=	mercurial support
 RSYNC_RUN_DEPENDS=	rsync:net/rsync
-.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
-SVN_RUN_DEPENDS=	svn:devel/subversion18
-.else
-SVN_RUN_DEPENDS=	svn:devel/subversion
-.endif
+SVN_RUN_DEPENDS=	svn:devel/subversion${WITH_SUBVERSION_VER}
 GIT_RUN_DEPENDS=	git:devel/git
 HG_RUN_DEPENDS=		hg:devel/mercurial
 .else

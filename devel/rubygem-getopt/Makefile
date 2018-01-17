@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getopt
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

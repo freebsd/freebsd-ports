@@ -1,0 +1,47 @@
+--- src/3rdparty/chromium/remoting/host/BUILD.gn.orig	2017-01-26 00:49:17 UTC
++++ src/3rdparty/chromium/remoting/host/BUILD.gn
+@@ -326,7 +326,7 @@ static_library("host") {
+     deps += [ "//components/policy:generated" ]
+   }
+ 
+-  if (is_linux && !is_chromeos) {
++  if ((is_linux || is_bsd) && !is_chromeos) {
+     libs += [ "pam" ]
+   }
+ 
+@@ -349,7 +349,7 @@ static_library("host") {
+       "input_injector_x11.cc",
+       "local_input_monitor_x11.cc",
+     ]
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       # These will already be filtered out on non-Linux.
+       sources -= [
+         "linux/unicode_to_keysym.cc",
+@@ -538,7 +538,7 @@ source_set("unit_tests") {
+     "touch_injector_win_unittest.cc",
+   ]
+ 
+-  if (!use_x11 && is_linux) {
++  if (!use_x11 && (is_linux || is_bsd)) {
+     sources -= [ "linux/unicode_to_keysym_unittest.cc" ]
+   }
+   if (use_ozone || is_chromeos) {
+@@ -755,7 +755,7 @@ if (enable_me2me_host) {
+         deps += [ "//build/config/linux/gtk2" ]
+       }
+     }
+-    if ((is_linux && !is_chromeos) || is_mac) {
++    if ((is_linux && !is_chromeos) || is_mac || is_bsd) {
+       libs = [ "pam" ]
+     }
+ 
+@@ -825,7 +825,7 @@ if (enable_me2me_host) {
+       }
+     }
+   }
+-  if (is_chrome_branded && enable_me2me_host && is_linux && !is_chromeos) {
++  if (is_chrome_branded && enable_me2me_host && is_linux && is_bsd && !is_chromeos) {
+     group("remoting_me2me_host_archive") {
+       deps = [
+         "//remoting/host/installer/linux:remoting_me2me_host_archive",

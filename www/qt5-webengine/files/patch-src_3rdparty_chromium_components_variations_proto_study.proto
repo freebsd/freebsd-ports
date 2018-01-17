@@ -1,0 +1,10 @@
+--- src/3rdparty/chromium/components/variations/proto/study.proto.orig	2017-01-26 00:49:13 UTC
++++ src/3rdparty/chromium/components/variations/proto/study.proto
+@@ -186,6 +186,7 @@ message Study {
+     PLATFORM_CHROMEOS = 3;
+     PLATFORM_ANDROID  = 4;
+     PLATFORM_IOS      = 5;
++    PLATFORM_BSD      = 6;
+   }
+ 
+   // Possible form factors Chrome is running on.

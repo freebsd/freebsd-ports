@@ -1,3 +1,0 @@
-%%QT_CMAKEDIR%%/Qt5Quick/Qt5Quick_ContextPlugin.cmake
-%%QT_PLUGINDIR%%/scenegraph/libsoftwarecontext.so
-%%DEBUG%%%%QT_PLUGINDIR%%/scenegraph/libsoftwarecontext.so.debug

@@ -13,10 +13,10 @@ MAINTAINER=	bc979@lafn.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
 USES=		compiler:features
-USE_AUTOTOOLS=	autoconf
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
 CONFIGURE_ARGS=	--enable-nonauth-file=${POPUSERS_FILE} \
-		--without-gdbm \
+		--without-gdbm ac_cv_header_gdbm_h=no \
 		--enable-keep-temp-drop
 LIBS+=		-L${LOCALBASE}/lib -lcrypt -lmd -lutil
 
@@ -124,13 +124,13 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 
 post-patch:
 .if ${COMPILER_TYPE} == clang
-	@${REINPLACE_CMD} -e 's|-freg-struct-return||' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|-freg-struct-return||' ${WRKSRC}/configure
 .endif
 	@${RM} ${WRKSRC}/popper/md5.h
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/man/*
 	@${REINPLACE_CMD} -e \
 		's|\$${sbindir}/sendmail|${LOCALBASE}/sbin/sendmail|g' \
-		${WRKSRC}/configure.in
+		${WRKSRC}/configure
 .if ${PORT_OPTIONS:MPOPPASSD}
 	@${REINPLACE_CMD} -e 's|/usr/bin/smbpasswd|${LOCALBASE}/bin/smbpasswd|' \
 		${WRKSRC}/password/poppassd.c

@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	brnrd@FreeBSD.org
-COMMENT=	A friendly wrapper library for the Soundcloud API
+COMMENT=	Friendly wrapper library for the Soundcloud API
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,7 +23,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}
 
 do-test:
 	cd ${WRKSRC} ; nosetests --with-doctest

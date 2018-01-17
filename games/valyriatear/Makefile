@@ -29,6 +29,7 @@ USE_SDL=	sdl image ttf
 USE_GL=		gl glu
 USE_XORG=	x11 xext sm ice
 INSTALLS_ICONS=	yes
+LLD_UNSAFE=	yes
 
 PORTDOCS=	*
 PORTDATA=	*

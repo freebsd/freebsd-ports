@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra-contrib
-PORTVERSION=	1.4.7
-PORTREVISION=	1
+PORTVERSION=	2.0.0
+PORTREVISION=	0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	robak@FreeBSD.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Collection of useful Sinatra extensions
 
 LICENSE=	MIT
@@ -16,10 +16,8 @@ RUN_DEPENDS=	rubygem-backports>=2.0:devel/rubygem-backports \
 		rubygem-multi_json>=0:devel/rubygem-multi_json \
 		rubygem-rack-protection>=0:www/rubygem-rack-protection \
 		rubygem-rack-test>=0:www/rubygem-rack-test \
-		rubygem-sinatra1>=1.4:www/rubygem-sinatra1 \
+		rubygem-sinatra>=2.0:www/rubygem-sinatra \
 		rubygem-tilt>=2.0:devel/rubygem-tilt
-
-PORTSCOUT=	limit:^1\.
 
 NO_ARCH=	yes
 

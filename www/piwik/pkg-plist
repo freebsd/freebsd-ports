@@ -537,6 +537,8 @@
 %%WWWDIR%%/core/UrlHelper.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
+%%WWWDIR%%/core/View/HtmlEmailFooterView.php
+%%WWWDIR%%/core/View/HtmlReportEmailHeaderView.php
 %%WWWDIR%%/core/View/OneClickDone.php
 %%WWWDIR%%/core/View/RenderTokenParser.php
 %%WWWDIR%%/core/View/UIControl.php
@@ -1795,6 +1797,8 @@
 %%WWWDIR%%/plugins/CoreConsole/Commands/DevelopmentEnable.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/DevelopmentManageTestFiles.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/DevelopmentSyncProcessedSystemTests.php
+%%WWWDIR%%/plugins/CoreConsole/Commands/GenerateAngularComponent.php
+%%WWWDIR%%/plugins/CoreConsole/Commands/GenerateAngularConstructBase.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/GenerateAngularDirective.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/GenerateApi.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/GenerateArchiver.php
@@ -1851,6 +1855,7 @@
 %%WWWDIR%%/plugins/CoreHome/CoreHome.php
 %%WWWDIR%%/plugins/CoreHome/DataTableRowAction/MultiRowEvolution.php
 %%WWWDIR%%/plugins/CoreHome/DataTableRowAction/RowEvolution.php
+%%WWWDIR%%/plugins/CoreHome/LoginWhitelist.php
 %%WWWDIR%%/plugins/CoreHome/Menu.php
 %%WWWDIR%%/plugins/CoreHome/Segment.php
 %%WWWDIR%%/plugins/CoreHome/SystemSummary/Item.php
@@ -1898,6 +1903,7 @@
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/trim.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/ucfirst.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/global-ajax-queue.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/services/periods.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-api.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-api.spec.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-url.js
@@ -1910,6 +1916,10 @@
 %%WWWDIR%%/plugins/CoreHome/angularjs/content-block/content-block.directive.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/content-intro/content-intro.directive.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/content-table/content-table.directive.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/date-picker/date-picker.directive.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/date-range-picker/date-range-picker.component.html
+%%WWWDIR%%/plugins/CoreHome/angularjs/date-range-picker/date-range-picker.component.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/date-range-picker/date-range-picker.component.less
 %%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler/dialogtoggler-urllistener.service.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler/dialogtoggler.controller.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler/dialogtoggler.directive.js
@@ -1927,6 +1937,13 @@
 %%WWWDIR%%/plugins/CoreHome/angularjs/notification/notification.directive.html
 %%WWWDIR%%/plugins/CoreHome/angularjs/notification/notification.directive.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/notification/notification.directive.less
+%%WWWDIR%%/plugins/CoreHome/angularjs/period-date-picker/period-date-picker.component.html
+%%WWWDIR%%/plugins/CoreHome/angularjs/period-date-picker/period-date-picker.component.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/period-date-picker/period-date-picker.component.less
+%%WWWDIR%%/plugins/CoreHome/angularjs/period-selector/period-selector.controller.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/period-selector/period-selector.directive.html
+%%WWWDIR%%/plugins/CoreHome/angularjs/period-selector/period-selector.directive.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/period-selector/period-selector.directive.less
 %%WWWDIR%%/plugins/CoreHome/angularjs/piwikApp.config.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/piwikApp.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/popover-handler/popover-handler.directive.js
@@ -2093,6 +2110,7 @@
 %%WWWDIR%%/plugins/CoreHome/templates/_menu.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_notifications.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_periodSelect.twig
+%%WWWDIR%%/plugins/CoreHome/templates/_shortcuts.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_singleReport.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_singleWidget.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_siteSelectHeader.twig
@@ -2879,6 +2897,7 @@
 %%WWWDIR%%/plugins/Events/Columns/EventAction.php
 %%WWWDIR%%/plugins/Events/Columns/EventCategory.php
 %%WWWDIR%%/plugins/Events/Columns/EventName.php
+%%WWWDIR%%/plugins/Events/Columns/EventUrl.php
 %%WWWDIR%%/plugins/Events/Columns/EventValue.php
 %%WWWDIR%%/plugins/Events/Columns/Metrics/AverageEventValue.php
 %%WWWDIR%%/plugins/Events/Columns/TotalEvents.php
@@ -2954,6 +2973,9 @@
 %%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component/component.directive.html
 %%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component/component.directive.js
 %%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component/component.directive.less
+%%WWWDIR%%/plugins/ExamplePlugin/angularjs/example-component/example-component.component.html
+%%WWWDIR%%/plugins/ExamplePlugin/angularjs/example-component/example-component.component.js
+%%WWWDIR%%/plugins/ExamplePlugin/angularjs/example-component/example-component.component.less
 %%WWWDIR%%/plugins/ExamplePlugin/docs/faq.md
 %%WWWDIR%%/plugins/ExamplePlugin/docs/index.md
 %%WWWDIR%%/plugins/ExamplePlugin/javascripts/plugin.js
@@ -3811,6 +3833,7 @@
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/lt.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/nb.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/nl.json
+%%WWWDIR%%/plugins/MobileAppMeasurable/lang/pl.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/pt-br.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/pt.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/ru.json
@@ -5606,12 +5629,17 @@
 %%WWWDIR%%/plugins/SEO/templates/getRank.twig
 %%WWWDIR%%/plugins/ScheduledReports/API.php
 %%WWWDIR%%/plugins/ScheduledReports/Controller.php
+%%WWWDIR%%/plugins/ScheduledReports/GeneratedReport.php
 %%WWWDIR%%/plugins/ScheduledReports/Menu.php
 %%WWWDIR%%/plugins/ScheduledReports/Model.php
+%%WWWDIR%%/plugins/ScheduledReports/ReportEmailGenerator.php
+%%WWWDIR%%/plugins/ScheduledReports/ReportEmailGenerator/AttachedFileReportEmailGenerator.php
+%%WWWDIR%%/plugins/ScheduledReports/ReportEmailGenerator/HtmlReportEmailGenerator.php
 %%WWWDIR%%/plugins/ScheduledReports/ScheduledReports.php
 %%WWWDIR%%/plugins/ScheduledReports/Tasks.php
 %%WWWDIR%%/plugins/ScheduledReports/angularjs/manage-scheduled-report/manage-scheduled-report.controller.js
 %%WWWDIR%%/plugins/ScheduledReports/angularjs/manage-scheduled-report/manage-scheduled-report.directive.js
+%%WWWDIR%%/plugins/ScheduledReports/config/config.php
 %%WWWDIR%%/plugins/ScheduledReports/config/tcpdf_config.php
 %%WWWDIR%%/plugins/ScheduledReports/lang/ar.json
 %%WWWDIR%%/plugins/ScheduledReports/lang/be.json
@@ -7073,6 +7101,8 @@
 %%WWWDIR%%/vendor/piwik/decompress/src/Tar.php
 %%WWWDIR%%/vendor/piwik/decompress/src/ZipArchive.php
 %%WWWDIR%%/vendor/piwik/device-detector/Cache/Cache.php
+%%WWWDIR%%/vendor/piwik/device-detector/Cache/PSR16Bridge.php
+%%WWWDIR%%/vendor/piwik/device-detector/Cache/PSR6Bridge.php
 %%WWWDIR%%/vendor/piwik/device-detector/Cache/StaticCache.php
 %%WWWDIR%%/vendor/piwik/device-detector/DeviceDetector.php
 %%WWWDIR%%/vendor/piwik/device-detector/Parser/Bot.php

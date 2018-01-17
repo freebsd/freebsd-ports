@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/chrome/common/extensions/api/BUILD.gn.orig	2017-12-15 17:02:55.964660000 -0500
++++ src/3rdparty/chromium/chrome/common/extensions/api/BUILD.gn	2017-12-15 17:03:23.878684000 -0500
+@@ -117,7 +117,7 @@
+     "wallpaper.json",
+     "wallpaper_private.json",
+   ]
+-} else if (is_linux || is_win) {
++} else if (is_linux || is_bsd || is_win) {
+   schema_sources += [ "input_ime.json" ]
+ }
+ if (enable_service_discovery) {

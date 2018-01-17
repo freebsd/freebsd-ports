@@ -1,0 +1,12 @@
+--- src/3rdparty/chromium/third_party/webrtc/BUILD.gn.orig	2017-01-26 00:50:17 UTC
++++ src/3rdparty/chromium/third_party/webrtc/BUILD.gn
+@@ -60,6 +60,9 @@ config("common_inherited_config") {
+   if (is_linux) {
+     defines += [ "WEBRTC_LINUX" ]
+   }
++  if (is_bsd) {
++    defines += [ "WEBRTC_LINUX", "WEBRTC_BSD", "WEBRTC_THREAD_RR" ]
++  }
+   if (is_mac) {
+     defines += [ "WEBRTC_MAC" ]
+   }

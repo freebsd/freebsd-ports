@@ -15,5 +15,6 @@ OPTIONS_DEFINE=	DOCS
 USE_LDCONFIG=	yes
 USES=		dos2unix libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++98
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-emk-sinatra-url-for>=0.2:www/rubygem-emk-sinatra-url-for \
 		rubygem-puma>=3:www/rubygem-puma \
 		rubygem-sass>=3.3:textproc/rubygem-sass \
 		rubygem-sinatra1>=1.4.6:www/rubygem-sinatra1 \
-		rubygem-sinatra-contrib>=1.4.6:www/rubygem-sinatra-contrib
+		rubygem-sinatra-contrib1>=1.4.6:www/rubygem-sinatra-contrib1
 
 NO_ARCH=	yes
 USE_RUBY=	yes

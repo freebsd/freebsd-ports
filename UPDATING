@@ -5,6 +5,72 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180117:
+  AFFECTS: users of x11-toolkits/kf5-kirigami2 and x11/kf5-plasma-framework
+  AUTHOR: kde@FreeBSD.org
+
+  Files that were previously installed by kf5-kirigami2 get now installed 
+  in kf5-plasma-wramwork. This can lead to a conflict during the upgrade
+  of the packages. 
+  It is recommended to first remove the package kf5-krigami2.
+
+20180115
+  AFFECTS: users of net-p2p/transmission-daemon
+  AUTHOR: woodsb02@FreeBSD.org
+
+  The transmission-daemon port has been updated to 2.92_4 to incorporate
+  a patch which mitigates DNS rebinding attacks. This will prevent users
+  from being able to connect to the transmission daemon (via the CLI,
+  web or GUI interfaces) unless one of the following is done:
+    - Enable password authentication, then any hostname is allowed.
+      This can be achieved by add either editing settings.json to set
+      rpc-authentication-required, rpc-username and rpc-password or by
+      running transmission-daemon with the following arguments (can be
+      set with transmission_flags in /etc/rc.conf):
+      -t -u USERNAME -v PASSWORD
+    OR
+    - Add the allowed client hostnames to the rpc-host-whitelist setting
+
+20180111
+  AFFECTS: users of editors/vim-lite
+  AUTHOR: adamw@FreeBSD.org
+
+  The vim-lite port has been renamed to vim-console, because it isn't
+  actually any lighter. All three vim packages are built with
+  --enable-features=huge. Portmaster users will need to run this
+  command:
+
+  	portmaster -o editors/vim-console editors/vim-lite
+
+  If the switch doesn't happen automatically for you, just delete the
+  vim-lite package and install vim-console.
+
+20180109
+  AFFECTS: users of www/qt5-webengine
+  AUTHOR: kde@FreeBSD.org
+
+  The upgrade of www/qt5-webengine to 5.9.3 may fail if an older version
+  of it is installed. It is recommended to either build the port in a
+  builder like poudriere, or to deinstall and then doing an install.
+
+20180107
+  AFFECTS: users of security/gnupg and mail/mutt and mail/neomutt
+  AUTHOR: adamw@FreeBSD.org
+
+  The invocation for gpg from mutt/neomutt changed between gnupg-2.0
+  (which has expired and is now removed) and gnupg-2.2 (the current
+  version in the tree). Unless you're using gpgme, PGP-related
+  commands may fail in (neo)mutt.
+
+  In all cases, users are strongly urged to use security/gpgme to take
+  care of the setup for you. If you prefer to roll your own, the
+  following muttrc/neomuttrc entry has been reported to work:
+
+  pgp_decrypt_command="gpg2 %?p?--passphrase-fd 0 --pinentry-mode=loopback? --no-verbose --batch --output - %f"
+
+  See muttrc(5), neomuttrc(5), mutt.org, and neomutt.org for instructions
+  on (neo)mutt's gpg and gpgme instructions.
+
 20180102:
   AFFECTS: users of devel/awscli
   AUTHOR: bhughes@FreeBSD.org

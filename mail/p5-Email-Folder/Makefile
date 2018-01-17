@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Email-FolderType>=0.6:mail/p5-Email-FolderType \
+BUILD_DEPENDS=	p5-Email-FolderType>=0.600:mail/p5-Email-FolderType \
 		p5-Email-Simple>=0:mail/p5-Email-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

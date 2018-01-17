@@ -77,7 +77,9 @@ do-install:
 .for f in ${PERLMOD_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${f:H:T}/${f:T}
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

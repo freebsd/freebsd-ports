@@ -62,7 +62,7 @@ ${mastodon_redis_host:+REDIS_HOST=\"${mastodon_redis_host}\"} \
 ${mastodon_redis_port:+REDIS_PORT=\"${mastodon_redis_port}\"}"
 
 mastodon_web_user=mastodon
-pidfile="%%WWWDIR%%/tmp/${name}.pid"
+pidfile="/var/run/mastodon/${name}.pid"
 procname="%%RUBY%%:"
 
 start_precmd="rm -f %%WWWDIR%%/Gemfile.lock"

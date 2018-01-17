@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/device/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ src/3rdparty/chromium/device/BUILD.gn
+@@ -184,7 +184,7 @@ test("device_unittests") {
+     ]
+   }
+ 
+-  if ((is_chromeos || is_linux) && use_dbus) {
++  if ((is_chromeos || is_linux || is_bsd) && use_dbus) {
+     configs += [ "//build/config/linux/dbus" ]
+ 
+     sources += [

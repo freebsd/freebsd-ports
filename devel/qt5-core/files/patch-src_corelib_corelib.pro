@@ -12,21 +12,22 @@ to fix up the paths so that cmake files still land in the the "correct" location
 in /usr/local/lib/cmake -- as this seemed to be the least intrusive method.
 
 
-
---- src/corelib/corelib.pro.orig	2017-02-04 18:51:27 UTC
-+++ src/corelib/corelib.pro
-@@ -113,12 +113,12 @@ cmake_extras_mkspec_dir_for_install.inpu
- cmake_extras_mkspec_dir_for_install.output = $$DESTDIR/cmake/install/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake
-
- cmake_qt5_umbrella_module_files.files = $$cmake_umbrella_config_file.output $$cmake_umbrella_config_version_file.output
+--- src/corelib/corelib.pro.orig	2017-06-28 11:54:29.000000000 +0200
++++ src/corelib/corelib.pro	2017-07-20 23:06:37.223900000 +0200
+@@ -130,7 +130,7 @@
+     $$cmake_umbrella_config_version_file.output \
+     $$cmake_umbrella_config_module_location_for_install.output
+ 
 -cmake_qt5_umbrella_module_files.path = $$[QT_INSTALL_LIBS]/cmake/Qt5
 +cmake_qt5_umbrella_module_files.path = $$[QT_INSTALL_PREFIX]/lib/cmake/Qt5
-
- QMAKE_SUBSTITUTES += ctest_macros_file cmake_umbrella_config_file cmake_umbrella_config_version_file cmake_extras_mkspec_dir cmake_extras_mkspec_dir_for_install
-
+ 
+ QMAKE_SUBSTITUTES += \
+     ctest_macros_file \
+@@ -143,6 +143,6 @@
+ 
  ctest_qt5_module_files.files += $$ctest_macros_file.output $$cmake_extras_mkspec_dir_for_install.output
-
+ 
 -ctest_qt5_module_files.path = $$[QT_INSTALL_LIBS]/cmake/Qt5Core
 +ctest_qt5_module_files.path = $$[QT_INSTALL_PREFIX]/lib/cmake/Qt5Core
-
+ 
  INSTALLS += ctest_qt5_module_files cmake_qt5_umbrella_module_files

@@ -27,5 +27,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-
 .include <bsd.port.mk>

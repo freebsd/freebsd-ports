@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/ui/views/BUILD.gn.orig	2017-01-26 00:49:32 UTC
++++ src/3rdparty/chromium/ui/views/BUILD.gn
+@@ -426,7 +426,7 @@ component("views") {
+   if (use_x11 && !is_chromeos) {
+     deps += [ "//ui/display/util" ]
+   }
+-  if (is_linux && !is_chromeos) {
++  if ((is_linux || is_bsd) && !is_chromeos) {
+     sources -= [ "window/window_button_order_provider.cc" ]
+     deps += [ "//ui/shell_dialogs" ]
+   } else {
+@@ -618,7 +618,7 @@ component("views") {
+           "widget/desktop_aura/desktop_window_tree_host_ozone.cc",
+         ]
+       }
+-      if (is_linux) {
++      if (is_linux || is_bsd) {
+         sources += [
+           "style/platform_style_linux.cc",
+           "widget/desktop_aura/desktop_cursor_loader_updater_auralinux.cc",

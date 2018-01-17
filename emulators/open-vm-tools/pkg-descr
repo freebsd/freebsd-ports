@@ -7,7 +7,7 @@ their own set of tools and utilities to supplement the guest virtual
 machine. However, most of the implementations are proprietary and
 are tied to a specific virtualization platform.
 
-This port replaces the vmware guest ports and the binary only vmware
+This port replaces the VMware guest ports and the binary-only VMware
 tools ports in the ports tree.
 
-WWW: https://github.com/vmware/open-vm-tools/releases
+WWW: https://github.com/vmware/open-vm-tools

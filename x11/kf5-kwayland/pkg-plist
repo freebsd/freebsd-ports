@@ -1,4 +1,5 @@
 etc/xdg/org_kde_kwayland.categories
+include/KF5/KWayland/Client/appmenu.h
 include/KF5/KWayland/Client/blur.h
 include/KF5/KWayland/Client/buffer.h
 include/KF5/KWayland/Client/compositor.h
@@ -31,6 +32,7 @@ include/KF5/KWayland/Client/registry.h
 include/KF5/KWayland/Client/relativepointer.h
 include/KF5/KWayland/Client/seat.h
 include/KF5/KWayland/Client/server_decoration.h
+include/KF5/KWayland/Client/server_decoration_palette.h
 include/KF5/KWayland/Client/shadow.h
 include/KF5/KWayland/Client/shell.h
 include/KF5/KWayland/Client/shm_pool.h
@@ -43,6 +45,7 @@ include/KF5/KWayland/Client/touch.h
 include/KF5/KWayland/Client/xdgforeign_v2.h
 include/KF5/KWayland/Server/xdgforeign_interface.h
 include/KF5/KWayland/Client/xdgshell.h
+include/KF5/KWayland/Server/appmenu_interface.h
 include/KF5/KWayland/Server/blur_interface.h
 include/KF5/KWayland/Server/buffer_interface.h
 include/KF5/KWayland/Server/clientconnection.h
@@ -77,6 +80,7 @@ include/KF5/KWayland/Server/relativepointer_interface.h
 include/KF5/KWayland/Server/resource.h
 include/KF5/KWayland/Server/seat_interface.h
 include/KF5/KWayland/Server/server_decoration_interface.h
+include/KF5/KWayland/Server/server_decoration_palette_interface.h
 include/KF5/KWayland/Server/shadow_interface.h
 include/KF5/KWayland/Server/shell_interface.h
 include/KF5/KWayland/Server/slide_interface.h

@@ -1,0 +1,10 @@
+The Simple Protocol for Independent Computing Environments (SPICE) is
+a remote display system built for virtual environments which allows
+you to view a computing 'desktop' environment not only on the machine
+where it is running, but from anywhere on the Internet and from a wide
+variety of machine architectures.
+
+This package contains the run-time libraries for any application that
+wishes to be a SPICE server
+
+WWW: http://spice-space.org/

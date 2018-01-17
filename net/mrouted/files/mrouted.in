@@ -12,9 +12,14 @@ name="mrouted"
 rcvar="${name}_enable"
 command="%%PREFIX%%/sbin/$name"
 pidfile="/var/run/${name}.pid"
-required_files="%%PREFIX%%/etc/${name}.conf"
 extra_commands="reload"
 
 load_rc_config $name
 : ${mrouted_enable="NO"}
+: ${mrouted_config="%%PREFIX%%/etc/${name}.conf"}
+
+required_files="${mrouted_config}"
+
+command_args="-c ${mrouted_config}"
+
 run_rc_command "$1"

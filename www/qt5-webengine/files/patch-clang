@@ -1,0 +1,143 @@
+--- src/3rdparty/chromium/base/strings/safe_sprintf_unittest.cc.orig	2016-10-06 04:02:08.000000000 +0300
++++ src/3rdparty/chromium/base/strings/safe_sprintf_unittest.cc	2016-10-25 21:42:28.951114000 +0300
+@@ -728,6 +728,7 @@
+ }
+
+ TEST(SafeSPrintfTest, EmitNULL) {
++/* Avoid compiler error: http://pastebin.com/1edWUE84
+   char buf[40];
+ #if defined(__GNUC__)
+ #pragma GCC diagnostic push
+@@ -739,6 +740,7 @@
+   EXPECT_EQ("0x0", std::string(buf));
+   EXPECT_EQ(6, SafeSPrintf(buf, "%s", NULL));
+   EXPECT_EQ("<NULL>", std::string(buf));
++*/
+ #if defined(__GCC__)
+ #pragma GCC diagnostic pop
+ #endif
+--- src/3rdparty/chromium/base/threading/thread_local_storage_unittest.cc 2015-04-15 00:18:48.000000000 +0200
++++ src/3rdparty/chromium/base/threading/thread_local_storage_unittest.cc 2015-04-18 21:45:40.000000000 +0200
+@@ -60,7 +60,7 @@
+ void ThreadLocalStorageCleanup(void *value) {
+   int *ptr = reinterpret_cast<int*>(value);
+   // Destructors should never be called with a NULL.
+-  ASSERT_NE(reinterpret_cast<int*>(NULL), ptr);
++  ASSERT_NE(static_cast<int*>(NULL), ptr);
+   if (*ptr == kFinalTlsValue)
+     return;  // We've been called enough times.
+   ASSERT_LT(kFinalTlsValue, *ptr);
+--- src/3rdparty/chromium/base/tracked_objects.cc 2015-04-15 00:31:20.000000000 +0200
++++ src/3rdparty/chromium/base/tracked_objects.cc 2015-04-18 21:57:33.000000000 +0200
+@@ -425,7 +425,7 @@
+   }
+   // We must NOT do any allocations during this callback.
+   // Using the simple linked lists avoids all allocations.
+-  DCHECK_EQ(this->next_retired_worker_, reinterpret_cast<ThreadData*>(NULL));
++  DCHECK_EQ(this->next_retired_worker_, static_cast<ThreadData*>(NULL));
+   this->next_retired_worker_ = first_retired_worker_;
+   first_retired_worker_ = this;
+ }
+--- src/3rdparty/chromium/base/tracked_objects_unittest.cc.orig   2015-08-22 15:01:51.000000000 -0400
++++ src/3rdparty/chromium/base/tracked_objects_unittest.cc    2015-09-03 09:20:53.370191000 -0400
+@@ -58,9 +58,9 @@
+     Births* birth = ThreadData::TallyABirthIfActive(location);
+
+     if (ThreadData::status() == ThreadData::DEACTIVATED)
+-      EXPECT_EQ(reinterpret_cast<Births*>(NULL), birth);
++      EXPECT_EQ(static_cast<Births*>(NULL), birth);
+     else
+-      EXPECT_NE(reinterpret_cast<Births*>(NULL), birth);
++      EXPECT_NE(static_cast<Births*>(NULL), birth);
+   }
+
+   // Helper function to verify the most common test expectations.
+--- src/3rdparty/chromium/media/audio/audio_output_proxy_unittest.cc	2015-04-15 00:18:55.000000000 +0200
++++ src/3rdparty/chromium/media/audio/audio_output_proxy_unittest.cc	2015-04-18 22:02:38.000000000 +0200
+@@ -387,7 +387,7 @@
+     // |stream| is closed at this point. Start() should reopen it again.
+     EXPECT_CALL(manager(), MakeAudioOutputStream(_, _))
+         .Times(2)
+-        .WillRepeatedly(Return(reinterpret_cast<AudioOutputStream*>(NULL)));
++        .WillRepeatedly(Return(static_cast<AudioOutputStream*>(NULL)));
+
+     EXPECT_CALL(callback_, OnError(_))
+         .Times(2);
+--- src/3rdparty/chromium/third_party/hunspell/src/hunspell/affentry.hxx.orig 2015-07-21 18:46:37.322427000 -0400
++++ src/3rdparty/chromium/third_party/hunspell/src/hunspell/affentry.hxx  2015-07-21 18:48:02.034251000 -0400
+@@ -27,7 +27,7 @@
+   struct hentry *      checkword(const char * word, int len, char in_compound,
+                             const FLAG needflag = FLAG_NULL);
+
+-  struct hentry *      check_twosfx(const char * word, int len, char in_compound, const FLAG needflag = NULL);
++  struct hentry *      check_twosfx(const char * word, int len, char in_compound, const FLAG needflag = 0);
+
+   char *      check_morph(const char * word, int len, char in_compound,
+                             const FLAG needflag = FLAG_NULL);
+@@ -90,7 +90,7 @@
+ //                    const FLAG cclass = FLAG_NULL, const FLAG needflag = FLAG_NULL, char in_compound=IN_CPD_NOT);
+                     const FLAG cclass = FLAG_NULL, const FLAG needflag = FLAG_NULL, const FLAG badflag = 0);
+
+-  struct hentry *   check_twosfx(const char * word, int len, int optflags, PfxEntry* ppfx, const FLAG needflag = NULL);
++  struct hentry *   check_twosfx(const char * word, int len, int optflags, PfxEntry* ppfx, const FLAG needflag = 0);
+
+   char *      check_twosfx_morph(const char * word, int len, int optflags,
+                  PfxEntry* ppfx, const FLAG needflag = FLAG_NULL);
+--- src/3rdparty/chromium/third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-15 00:31:48.000000000 +0200
++++ src/3rdparty/chromium/third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-18 22:05:41.000000000 +0200
+@@ -439,7 +439,7 @@
+ }
+
+ CMapTable::CMapFormat0::Builder::Builder(const CMapId& cmap_id)
+-    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
++    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
+                     CMapFormat::kFormat0,
+                     cmap_id) {
+ }
+@@ -563,7 +563,7 @@
+     : CMapTable::CMap::Builder(data ? down_cast<WritableFontData*>(
+                                    data->Slice(offset, data->ReadUShort(
+                                        offset + Offset::kFormat0Length)))
+-                               : reinterpret_cast<WritableFontData*>(NULL),
++                               : static_cast<WritableFontData*>(NULL),
+                                CMapFormat::kFormat2, cmap_id) {
+   // TODO(arthurhsu): FIXIT: heavy lifting and leak, need fix.
+ }
+@@ -574,7 +574,7 @@
+     : CMapTable::CMap::Builder(data ? down_cast<ReadableFontData*>(
+                                    data->Slice(offset, data->ReadUShort(
+                                        offset + Offset::kFormat0Length)))
+-                               : reinterpret_cast<ReadableFontData*>(NULL),
++                               : static_cast<ReadableFontData*>(NULL),
+                                CMapFormat::kFormat2, cmap_id) {
+   // TODO(arthurhsu): FIXIT: heavy lifting and leak, need fix.
+ }
+@@ -958,7 +958,7 @@
+ CMapTable::CMapFormat4::Builder::Builder(SegmentList* segments,
+                                          IntegerList* glyph_id_array,
+                                          const CMapId& cmap_id)
+-    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
++    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
+                     CMapFormat::kFormat4, cmap_id),
+       segments_(segments->begin(), segments->end()),
+       glyph_id_array_(glyph_id_array->begin(), glyph_id_array->end()) {
+@@ -966,7 +966,7 @@
+ }
+
+ CMapTable::CMapFormat4::Builder::Builder(const CMapId& cmap_id)
+-    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
++    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
+                     CMapFormat::kFormat4, cmap_id) {
+ }
+
+--- src/3rdparty/chromium/third_party/webrtc/base/taskrunner.cc	2015-04-15 00:32:17.000000000 +0200
++++ src/3rdparty/chromium/third_party/webrtc/base/taskrunner.cc	2015-04-18 22:10:53.000000000 +0200
+@@ -102,7 +102,7 @@
+   std::vector<Task *>::iterator it;
+   it = std::remove(tasks_.begin(),
+                    tasks_.end(),
+-                   reinterpret_cast<Task *>(NULL));
++                   static_cast<Task *>(NULL));
+
+   tasks_.erase(it, tasks_.end());
+

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc tk
 MASTER_SITES=	SF
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk frontend for diff(1)
 
 LICENSE=	GPLv2

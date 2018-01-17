@@ -3,7 +3,7 @@
 
 PORTNAME=	basket
 PORTVERSION=	1.81
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://basket.kde.org/downloads/
 
@@ -19,5 +19,6 @@ USE_XORG=	xft xpm
 USE_KDE=	automoc4 kdelibs qimageblitz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
+USE_CXXSTD=	gnu++98
 
 .include <bsd.port.mk>

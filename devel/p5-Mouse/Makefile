@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Mouse
-PORTVERSION=	2.4.10
+PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:GFUJI
+MASTER_SITE_SUBDIR=	CPAN:SKAJI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -39,4 +39,11 @@ USE_PERL5=	modbuild
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Mouse/Mouse.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502503
+BUILD_DEPENDS+=	p5-Devel-PPPort>=3.33:devel/p5-Devel-PPPort
+RUN_DEPENDS+=	p5-Devel-PPPort>=3.33:devel/p5-Devel-PPPort
+.endif
+
+.include <bsd.port.post.mk>

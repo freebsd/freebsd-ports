@@ -43,7 +43,6 @@ PLIST_SUB+=		DSV_TOOLS="@comment "
 .else
 PLIST_SUB+=		DSV_TOOLS=""
 CONFIGURE_ARGS+=	--with-dsv-tools
-MAN1+=			webjob-dsvtool.1
 .endif
 .endif
 

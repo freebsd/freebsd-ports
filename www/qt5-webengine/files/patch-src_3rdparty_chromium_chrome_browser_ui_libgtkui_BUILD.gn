@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/chrome/browser/ui/libgtkui/BUILD.gn.orig	2017-01-26 00:49:09 UTC
++++ src/3rdparty/chromium/chrome/browser/ui/libgtkui/BUILD.gn
+@@ -2,7 +2,7 @@
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+ 
+-assert(is_linux, "This file should only be referenced on Linux")
++assert(is_linux || is_bsd, "This file should only be referenced on Linux")
+ 
+ import("//build/config/features.gni")
+ import("//build/config/ui.gni")

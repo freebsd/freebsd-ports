@@ -47,7 +47,7 @@ do-test:
 R_POSTCMD_INSTALL_OPTIONS+=	-l ${STAGEDIR}${PREFIX}/${R_LIB_DIR}
 R_POSTCMD_INSTALL_OPTIONS+=	--install-tests
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 R_POSTCMD_INSTALL_OPTIONS+=	--no-docs --no-html
 .endif
 

@@ -1,18 +1,10 @@
-%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsql_db2_p.h
-%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsql_ibase_p.h
-%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsql_mysql_p.h
-%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsql_oci_p.h
-%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsql_odbc_p.h
-%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsql_psql_p.h
-%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsql_sqlite2_p.h
-%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsql_sqlite_p.h
-%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsql_tds_p.h
 %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsqlcachedresult_p.h
 %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsqldriver_p.h
 %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsqlnulldriver_p.h
 %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsqlquerymodel_p.h
 %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsqlresult_p.h
 %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsqltablemodel_p.h
+%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qtsqlglobal_p.h
 %%QT_INCDIR%%/QtSql/QSql
 %%QT_INCDIR%%/QtSql/QSqlDatabase
 %%QT_INCDIR%%/QtSql/QSqlDriver
@@ -47,6 +39,7 @@
 %%QT_INCDIR%%/QtSql/qsqlrelationaltablemodel.h
 %%QT_INCDIR%%/QtSql/qsqlresult.h
 %%QT_INCDIR%%/QtSql/qsqltablemodel.h
+%%QT_INCDIR%%/QtSql/qtsqlglobal.h
 %%QT_INCDIR%%/QtSql/qtsqlversion.h
 %%QT_CMAKEDIR%%/Qt5Sql/Qt5SqlConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Sql/Qt5SqlConfigVersion.cmake

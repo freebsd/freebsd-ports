@@ -1,0 +1,10 @@
+--- src/3rdparty/chromium/content/gpu/BUILD.gn.orig	2017-01-26 00:49:13 UTC
++++ src/3rdparty/chromium/content/gpu/BUILD.gn
+@@ -96,6 +96,7 @@ target(link_target_type, "gpu_sources") 
+ 
+   if (use_x11) {
+     deps += [ "//ui/events/platform/x11" ]
++    configs += [ "//build/config/linux:x11" ]
+   }
+ 
+   if (use_ozone) {

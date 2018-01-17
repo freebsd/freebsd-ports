@@ -20,6 +20,7 @@ GH_ACCOUNT=	dhewm
 
 USES=		cmake jpeg openal:al
 USE_SDL=	sdl2
+LLD_UNSAFE=	yes
 
 WRKSRC_SUBDIR=	neo
 

@@ -38,6 +38,13 @@ if [ -r /etc/defaults/periodic.conf ]; then
 	source_periodic_confs
 fi
 
+: ${security_status_baseaudit_enable:=YES}
+: ${security_status_baseaudit_period:=daily}
+: ${security_status_baseaudit_quiet:=NO}
+: ${security_status_baseaudit_chroots=$pkg_chroots}
+: ${security_status_baseaudit_jails=$pkg_jails}
+: ${security_status_baseaudit_expiry:=2}
+
 # Compute PKG_DBDIR from the config file.
 pkgcmd=%%PREFIX%%/sbin/pkg
 PKG_DBDIR=`${pkgcmd} config PKG_DBDIR`
@@ -91,7 +98,7 @@ audit_base() {
 	now=`date +%s` || rc=3
 	## Add 10 minutes of padding since the check is in seconds.
 	if [ $rc -ne 0 -o \
-		$(( 86400 \* "${daily_status_security_baseaudit_expiry:-2}" )) \
+		$(( 86400 \* "${security_status_baseaudit_expiry}" )) \
 		-le $(( ${now} - ${then} + 600 )) ]; then
 		## Random delay so the mirrors do not get slammed when run by periodic(8)
 		if [ ! -t 0 ]; then
@@ -117,23 +124,20 @@ audit_base() {
 # Use $pkg_chroots to provide a default list of chroots, and
 # $pkg_jails to provide a default list of jails (or '*' for all jails)
 # for all pkg periodic scripts, or set
-# $daily_status_security_baseaudit_chroots and
-# $daily_status_security_baseaudit_jails for this script only.
+# $security_status_baseaudit_chroots and
+# $security_status_baseaudit_jails for this script only.
 
 audit_base_all() {
 	local rc
 	local last_rc
 	local jails
 
-	: ${daily_status_security_baseaudit_chroots=$pkg_chroots}
-	: ${daily_status_security_baseaudit_jails=$pkg_jails}
-
 	# We always show audit results for the base system, but only print
 	# a banner line if we're also showing audit results for any
 	# chroots or jails.
 
-	if [ -n "${daily_status_security_baseaudit_chroots}" -o \
-		-n "${daily_status_security_baseaudit_jails}" ]; then
+	if [ -n "${security_status_baseaudit_chroots}" -o \
+		-n "${security_status_baseaudit_jails}" ]; then
 		echo "Host system:"
 	fi
 
@@ -141,7 +145,7 @@ audit_base_all() {
 	last_rc=$?
 	[ $last_rc -gt 1 ] && rc=$last_rc
 
-	for c in $daily_status_security_baseaudit_chroots ; do
+	for c in $security_status_baseaudit_chroots ; do
 		echo
 		echo "chroot: $c"
 		audit_base "-c $c" $c
@@ -149,7 +153,7 @@ audit_base_all() {
 		[ $last_rc -gt 1 ] && rc=$last_rc
 	done
 
-	case $daily_status_security_baseaudit_jails in
+	case $security_status_baseaudit_jails in
 	\*)
 		jails=$(jls -q -h name path | sed -e 1d -e 's/ /|/')
 		;;
@@ -159,7 +163,7 @@ audit_base_all() {
 	*)
 		# Given the jail name or jid, find the jail path
 		jails=
-		for j in $daily_status_security_baseaudit_jails ; do
+		for j in $security_status_baseaudit_jails ; do
 			p=$(jls -j $j -h name path | sed -e 1d -e 's/ /|/')
 			jails="${jails} ${p}"
 		done
@@ -177,11 +181,16 @@ audit_base_all() {
 	return $rc
 }
 
+security_daily_compat_var security_status_baseaudit_enable
+security_daily_compat_var security_status_baseaudit_quiet
+security_daily_compat_var security_status_baseaudit_chroots
+security_daily_compat_var security_status_baseaudit_jails
+security_daily_compat_var security_status_baseaudit_exipiry
+
 rc=0
 
-case "${daily_status_security_baseaudit_enable:-YES}" in
-[Nn][Oo]) ;;
-*)
+if check_yesno_period security_status_baseaudit_enable
+then
 	echo
 	echo 'Checking for security vulnerabilities in base (userland & kernel):'
 
@@ -189,7 +198,7 @@ case "${daily_status_security_baseaudit_enable:-YES}" in
 		echo 'pkg-audit is enabled but pkg is not used'
 		rc=2
 	else
-		case "${daily_status_security_baseaudit_quiet:-NO}" in
+		case "${security_status_baseaudit_quiet}" in
 		[Yy][Ee][Ss])
 			q='-q'
 			;;
@@ -200,7 +209,6 @@ case "${daily_status_security_baseaudit_enable:-YES}" in
 
 		audit_base_all ; rc=$?
 	fi
-	;;
-esac
+fi
 
 exit "$rc"

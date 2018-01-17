@@ -37,7 +37,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WORKINGSRC}/beret ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WORKINGSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WORKINGSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}
 .for datadir in images music rooms sfx
 	${MKDIR} ${STAGEDIR}${DATADIR}/${datadir}

@@ -1,0 +1,13 @@
+libdeflate is a library for fast, whole-buffer DEFLATE-based compression and
+decompression.  The supported formats are:
+
+  - DEFLATE (raw)
+  - zlib (a.k.a. DEFLATE with a zlib wrapper)
+  - gzip (a.k.a. DEFLATE with a gzip wrapper)
+
+libdeflate is heavily optimized.  It is significantly faster than the zlib
+library, both for compression and decompression, and especially on x86
+processors.  In addition, libdeflate offers optional high compression modes
+that provide a better compression ratio than the zlib's "level 9".
+
+WWW: https://github.com/ebiggers/libdeflate

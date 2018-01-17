@@ -1,0 +1,32 @@
+commit 24b71ccea227
+Author: Gijs Kruitbosch <gijskruitbosch@gmail.com>
+Date:   Wed Nov 29 17:03:54 2017 +0000
+
+    Bug 1420507, r=freddyb,francois a=gchang
+    
+    --HG--
+    extra : source : f3ea44ff63eec1d2e6edafe94c213860a8cfe11f
+---
+ dom/base/nsTreeSanitizer.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git dom/base/nsTreeSanitizer.cpp dom/base/nsTreeSanitizer.cpp
+index 7b567eeed0ed..496cbd37ec88 100644
+--- dom/base/nsTreeSanitizer.cpp
++++ dom/base/nsTreeSanitizer.cpp
+@@ -172,6 +172,7 @@ nsStaticAtom** const kAttributesHTML[] = {
+   &nsGkAtoms::contextmenu,
+   &nsGkAtoms::controls,
+   &nsGkAtoms::coords,
++  &nsGkAtoms::crossorigin,
+   &nsGkAtoms::datetime,
+   &nsGkAtoms::dir,
+   &nsGkAtoms::disabled,
+@@ -188,6 +189,7 @@ nsStaticAtom** const kAttributesHTML[] = {
+   &nsGkAtoms::hreflang,
+   &nsGkAtoms::icon,
+   &nsGkAtoms::id,
++  &nsGkAtoms::integrity,
+   &nsGkAtoms::ismap,
+   &nsGkAtoms::itemid,
+   &nsGkAtoms::itemprop,

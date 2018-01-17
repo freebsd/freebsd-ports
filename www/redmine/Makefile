@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redmine
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.redmine.org/releases/
 
@@ -23,7 +23,8 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-roadie-rails>=1.2.0:mail/rubygem-roadie-rails \
 		rubygem-roadie>=3.2.1:mail/rubygem-roadie \
 		rubygem-mimemagic>=0:misc/rubygem-mimemagic \
-		rubygem-nokogiri>=1.7.2:textproc/rubygem-nokogiri \
+		rubygem-mail>=2.6.4:mail/rubygem-mail \
+		rubygem-nokogiri>=1.8.1:textproc/rubygem-nokogiri \
 		rubygem-i18n>=0.8.5:devel/rubygem-i18n \
 		rubygem-ffi>=1.9.14:devel/rubygem-ffi \
 		rubygem-rails-html-sanitizer>=1.0.3:textproc/rubygem-rails-html-sanitizer \

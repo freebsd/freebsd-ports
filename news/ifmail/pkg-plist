@@ -3,6 +3,7 @@ man/man8/ifmail.8.gz
 man/man8/iftoss.8.gz
 @owner ifmail
 @group uucp
+@mode 04711
 libexec/ifmail/ifcico
 libexec/ifmail/ifindex
 libexec/ifmail/ifmail
@@ -15,6 +16,7 @@ libexec/ifmail/ifunpack
 libexec/ifmail/nlpatch
 @owner
 @group
+@mode
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.ifcico
 %%PORTDOCS%%%%DOCSDIR%%/README.ifgate

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based MSN messenger client
 
 USES=		python:2.7

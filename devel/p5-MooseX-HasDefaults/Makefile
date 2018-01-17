@@ -17,5 +17,4 @@ BUILD_DEPENDS=	p5-Moose>2:devel/p5-Moose \
 USES=		perl5
 USE_PERL5=	configure
 
-
 .include <bsd.port.mk>

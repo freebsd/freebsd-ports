@@ -1,0 +1,284 @@
+commit c3b597795e95
+Author: Jan de Mooij <jdemooij@mozilla.com>
+Date:   Sat Dec 16 16:22:13 2017 -0600
+
+    Bug 1412420 - Ensure upper bits are zeroed when calling a function that returns int32. r=nbp a=ritu
+    
+    --HG--
+    extra : source : 26d3df5b58fb60facb9057dc1e86576127c9e1f5
+---
+ js/src/irregexp/NativeRegExpMacroAssembler.cpp |  4 ++--
+ js/src/irregexp/RegExpStack.cpp                |  2 +-
+ js/src/irregexp/RegExpStack.h                  |  2 +-
+ js/src/jit/CodeGenerator.cpp                   | 12 ++++++------
+ js/src/jit/MacroAssembler-inl.h                | 11 +++++++++++
+ js/src/jit/MacroAssembler.cpp                  |  2 +-
+ js/src/jit/MacroAssembler.h                    |  3 ++-
+ js/src/jit/SharedIC.cpp                        | 16 ++++++++--------
+ js/src/jit/shared/CodeGenerator-shared.h       |  8 +++++---
+ js/src/jit/x86/CodeGenerator-x86.cpp           |  4 ++--
+ 10 files changed, 39 insertions(+), 25 deletions(-)
+
+diff --git js/src/irregexp/NativeRegExpMacroAssembler.cpp js/src/irregexp/NativeRegExpMacroAssembler.cpp
+index 004bb8e108f2..0c5743ea506b 100644
+--- js/src/irregexp/NativeRegExpMacroAssembler.cpp
++++ js/src/irregexp/NativeRegExpMacroAssembler.cpp
+@@ -453,7 +453,7 @@ NativeRegExpMacroAssembler::GenerateCode(JSContext* cx, bool match_only)
+         masm.setupUnalignedABICall(temp0);
+         masm.passABIArg(temp1);
+         masm.callWithABI(JS_FUNC_TO_DATA_PTR(void*, GrowBacktrackStack));
+-        masm.storeCallWordResult(temp0);
++        masm.storeCallBoolResult(temp0);
+ 
+         masm.PopRegsInMask(volatileRegs);
+ 
+@@ -882,7 +882,7 @@ NativeRegExpMacroAssembler::CheckNotBackReferenceIgnoreCase(int start_reg, Label
+             int (*fun)(const char16_t*, const char16_t*, size_t) = CaseInsensitiveCompareUCStrings;
+             masm.callWithABI(JS_FUNC_TO_DATA_PTR(void*, fun));
+         }
+-        masm.storeCallWordResult(temp0);
++        masm.storeCallInt32Result(temp0);
+ 
+         masm.PopRegsInMask(volatileRegs);
+ 
+diff --git js/src/irregexp/RegExpStack.cpp js/src/irregexp/RegExpStack.cpp
+index 7ea47149ed40..15008ccd7b9b 100644
+--- js/src/irregexp/RegExpStack.cpp
++++ js/src/irregexp/RegExpStack.cpp
+@@ -44,7 +44,7 @@ RegExpStackScope::~RegExpStackScope()
+     regexp_stack->reset();
+ }
+ 
+-int
++bool
+ irregexp::GrowBacktrackStack(JSRuntime* rt)
+ {
+     AutoUnsafeCallWithABI unsafe;
+diff --git js/src/irregexp/RegExpStack.h js/src/irregexp/RegExpStack.h
+index da81567a11b6..c92666f2427a 100644
+--- js/src/irregexp/RegExpStack.h
++++ js/src/irregexp/RegExpStack.h
+@@ -114,7 +114,7 @@ class RegExpStack
+     }
+ };
+ 
+-int
++bool
+ GrowBacktrackStack(JSRuntime* rt);
+ 
+ }}  // namespace js::irregexp
+diff --git js/src/jit/CodeGenerator.cpp js/src/jit/CodeGenerator.cpp
+index 22c0a3163232..4befbdc285db 100644
+--- js/src/jit/CodeGenerator.cpp
++++ js/src/jit/CodeGenerator.cpp
+@@ -1640,7 +1640,7 @@ CreateDependentString::generateFallback(MacroAssembler& masm, LiveRegisterSet re
+         masm.callWithABI(kind == FallbackKind::FatInlineString
+                          ? JS_FUNC_TO_DATA_PTR(void*, AllocateFatInlineString)
+                          : JS_FUNC_TO_DATA_PTR(void*, AllocateString));
+-        masm.storeCallWordResult(string_);
++        masm.storeCallPointerResult(string_);
+ 
+         masm.PopRegsInMask(regsToSave);
+ 
+@@ -1679,7 +1679,7 @@ CreateMatchResultFallback(MacroAssembler& masm, LiveRegisterSet regsToSave,
+     masm.move32(Imm32(int32_t(templateObj->as<NativeObject>().numDynamicSlots())), temp5);
+     masm.passABIArg(temp5);
+     masm.callWithABI(JS_FUNC_TO_DATA_PTR(void*, CreateMatchResultFallbackFunc));
+-    masm.storeCallWordResult(object);
++    masm.storeCallPointerResult(object);
+ 
+     masm.PopRegsInMask(regsToSave);
+ 
+@@ -7976,7 +7976,7 @@ JitRuntime::generateMallocStub(JSContext* cx)
+     masm.passABIArg(regZone);
+     masm.passABIArg(regNBytes);
+     masm.callWithABI(JS_FUNC_TO_DATA_PTR(void*, MallocWrapper));
+-    masm.storeCallWordResult(regReturn);
++    masm.storeCallPointerResult(regReturn);
+ 
+     masm.PopRegsInMask(save);
+     masm.ret();
+@@ -9445,7 +9445,7 @@ CodeGenerator::emitRest(LInstruction* lir, Register array, Register numActuals,
+     callVM(InitRestParameterInfo, lir);
+ 
+     if (saveAndRestore) {
+-        storeResultTo(resultreg);
++        storePointerResultTo(resultreg);
+         restoreLive(lir);
+     }
+ }
+@@ -10682,8 +10682,8 @@ CodeGenerator::visitOutOfLineTypeOfV(OutOfLineTypeOfV* ool)
+     masm.passABIArg(obj);
+     masm.movePtr(ImmPtr(gen->runtime), output);
+     masm.passABIArg(output);
+-    masm.callWithABI(JS_FUNC_TO_DATA_PTR(void*, TypeOfObject));
+-    masm.storeCallWordResult(output);
++    masm.callWithABI(JS_FUNC_TO_DATA_PTR(void*, jit::TypeOfObject));
++    masm.storeCallPointerResult(output);
+     restoreVolatile(output);
+ 
+     masm.jump(ool->rejoin());
+diff --git js/src/jit/MacroAssembler-inl.h js/src/jit/MacroAssembler-inl.h
+index 9d0acbfb4002..a1f9716e1329 100644
+--- js/src/jit/MacroAssembler-inl.h
++++ js/src/jit/MacroAssembler-inl.h
+@@ -831,6 +831,17 @@ MacroAssembler::storeCallBoolResult(Register reg)
+     and32(Imm32(0xFF), reg);
+ }
+ 
++void
++MacroAssembler::storeCallInt32Result(Register reg)
++{
++#if JS_BITS_PER_WORD == 32
++    storeCallPointerResult(reg);
++#else
++    // Ensure the upper 32 bits are cleared.
++    move32(ReturnReg, reg);
++#endif
++}
++
+ void
+ MacroAssembler::storeCallResultValue(AnyRegister dest)
+ {
+diff --git js/src/jit/MacroAssembler.cpp js/src/jit/MacroAssembler.cpp
+index 0863dd980e93..25c284324bfe 100644
+--- js/src/jit/MacroAssembler.cpp
++++ js/src/jit/MacroAssembler.cpp
+@@ -2117,7 +2117,7 @@ MacroAssembler::outOfLineTruncateSlow(FloatRegister src, Register dest, bool wid
+         callWithABI(mozilla::BitwiseCast<void*, int32_t(*)(double)>(JS::ToInt32),
+                     MoveOp::GENERAL, CheckUnsafeCallWithABI::DontCheckOther);
+     }
+-    storeCallWordResult(dest);
++    storeCallInt32Result(dest);
+ 
+ #if defined(JS_CODEGEN_ARM) || defined(JS_CODEGEN_ARM64) || \
+     defined(JS_CODEGEN_MIPS32) || defined(JS_CODEGEN_MIPS64)
+diff --git js/src/jit/MacroAssembler.h js/src/jit/MacroAssembler.h
+index e353c5aa10f5..2c8b005b7008 100644
+--- js/src/jit/MacroAssembler.h
++++ js/src/jit/MacroAssembler.h
+@@ -1630,12 +1630,13 @@ class MacroAssembler : public MacroAssemblerSpecific
+             storeTypedOrValue(src.reg(), dest);
+     }
+ 
+-    void storeCallWordResult(Register reg) {
++    void storeCallPointerResult(Register reg) {
+         if (reg != ReturnReg)
+             mov(ReturnReg, reg);
+     }
+ 
+     inline void storeCallBoolResult(Register reg);
++    inline void storeCallInt32Result(Register reg);
+ 
+     void storeCallFloatResult(FloatRegister reg) {
+         if (reg != ReturnDoubleReg)
+diff --git js/src/jit/SharedIC.cpp js/src/jit/SharedIC.cpp
+index 0c8be36a592d..1f88cc93176d 100644
+--- js/src/jit/SharedIC.cpp
++++ js/src/jit/SharedIC.cpp
+@@ -1145,19 +1145,19 @@ ICBinaryArith_BooleanWithInt32::Compiler::generateStubCode(MacroAssembler& masm)
+         break;
+       }
+       case JSOP_BITOR: {
+-        masm.orPtr(rhsReg, lhsReg);
++        masm.or32(rhsReg, lhsReg);
+         masm.tagValue(JSVAL_TYPE_INT32, lhsReg, R0);
+         EmitReturnFromIC(masm);
+         break;
+       }
+       case JSOP_BITXOR: {
+-        masm.xorPtr(rhsReg, lhsReg);
++        masm.xor32(rhsReg, lhsReg);
+         masm.tagValue(JSVAL_TYPE_INT32, lhsReg, R0);
+         EmitReturnFromIC(masm);
+         break;
+       }
+       case JSOP_BITAND: {
+-        masm.andPtr(rhsReg, lhsReg);
++        masm.and32(rhsReg, lhsReg);
+         masm.tagValue(JSVAL_TYPE_INT32, lhsReg, R0);
+         EmitReturnFromIC(masm);
+         break;
+@@ -1206,7 +1206,7 @@ ICBinaryArith_DoubleWithInt32::Compiler::generateStubCode(MacroAssembler& masm)
+         masm.setupUnalignedABICall(scratchReg);
+         masm.passABIArg(FloatReg0, MoveOp::DOUBLE);
+         masm.callWithABI(mozilla::BitwiseCast<void*, int32_t(*)(double)>(JS::ToInt32));
+-        masm.storeCallWordResult(scratchReg);
++        masm.storeCallInt32Result(scratchReg);
+         masm.pop(intReg);
+ 
+         masm.bind(&doneTruncate);
+@@ -1216,13 +1216,13 @@ ICBinaryArith_DoubleWithInt32::Compiler::generateStubCode(MacroAssembler& masm)
+     // All handled ops commute, so no need to worry about ordering.
+     switch(op) {
+       case JSOP_BITOR:
+-        masm.orPtr(intReg, intReg2);
++        masm.or32(intReg, intReg2);
+         break;
+       case JSOP_BITXOR:
+-        masm.xorPtr(intReg, intReg2);
++        masm.xor32(intReg, intReg2);
+         break;
+       case JSOP_BITAND:
+-        masm.andPtr(intReg, intReg2);
++        masm.and32(intReg, intReg2);
+         break;
+       default:
+        MOZ_CRASH("Unhandled op for BinaryArith_DoubleWithInt32.");
+@@ -1359,7 +1359,7 @@ ICUnaryArith_Double::Compiler::generateStubCode(MacroAssembler& masm)
+         masm.setupUnalignedABICall(scratchReg);
+         masm.passABIArg(FloatReg0, MoveOp::DOUBLE);
+         masm.callWithABI(BitwiseCast<void*, int32_t(*)(double)>(JS::ToInt32));
+-        masm.storeCallWordResult(scratchReg);
++        masm.storeCallInt32Result(scratchReg);
+ 
+         masm.bind(&doneTruncate);
+         masm.not32(scratchReg);
+diff --git js/src/jit/shared/CodeGenerator-shared.h js/src/jit/shared/CodeGenerator-shared.h
+index d75572dac0a6..48b2b4d8561c 100644
+--- js/src/jit/shared/CodeGenerator-shared.h
++++ js/src/jit/shared/CodeGenerator-shared.h
+@@ -454,8 +454,8 @@ class CodeGeneratorShared : public LElementVisitor
+         return masm.PushWithPatch(t);
+     }
+ 
+-    void storeResultTo(Register reg) {
+-        masm.storeCallWordResult(reg);
++    void storePointerResultTo(Register reg) {
++        masm.storeCallPointerResult(reg);
+     }
+ 
+     void storeFloatResultTo(FloatRegister reg) {
+@@ -725,7 +725,9 @@ class StoreRegisterTo
+     { }
+ 
+     inline void generate(CodeGeneratorShared* codegen) const {
+-        codegen->storeResultTo(out_);
++        // It's okay to use storePointerResultTo here - the VMFunction wrapper
++        // ensures the upper bytes are zero for bool/int32 return values.
++        codegen->storePointerResultTo(out_);
+     }
+     inline LiveRegisterSet clobbered() const {
+         LiveRegisterSet set;
+diff --git js/src/jit/x86/CodeGenerator-x86.cpp js/src/jit/x86/CodeGenerator-x86.cpp
+index e2f80c4ac8fc..fe358c370baf 100644
+--- js/src/jit/x86/CodeGenerator-x86.cpp
++++ js/src/jit/x86/CodeGenerator-x86.cpp
+@@ -747,7 +747,7 @@ CodeGeneratorX86::visitOutOfLineTruncate(OutOfLineTruncate* ool)
+             masm.callWithABI(BitwiseCast<void*, int32_t(*)(double)>(JS::ToInt32), MoveOp::GENERAL,
+                              CheckUnsafeCallWithABI::DontCheckOther);
+         }
+-        masm.storeCallWordResult(output);
++        masm.storeCallInt32Result(output);
+ 
+         restoreVolatile(output);
+     }
+@@ -839,7 +839,7 @@ CodeGeneratorX86::visitOutOfLineTruncateFloat32(OutOfLineTruncateFloat32* ool)
+                              CheckUnsafeCallWithABI::DontCheckOther);
+         }
+ 
+-        masm.storeCallWordResult(output);
++        masm.storeCallInt32Result(output);
+         masm.Pop(input);
+ 
+         restoreVolatile(output);

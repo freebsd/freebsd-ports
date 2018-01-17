@@ -1,0 +1,15 @@
+diff --git toolkit/moz.configure toolkit/moz.configure
+index 1befea00c485..7999b7acd5bd 100644
+--- toolkit/moz.configure
++++ toolkit/moz.configure
+@@ -842,8 +842,8 @@ def webrender(value, milestone):
+     enable_webrender = None
+ 
+     if value.origin == 'default':
+-        # if nothing is specified, default to just building on Nightly
+-        build_webrender = milestone.is_nightly
++        # build by default downstream
++        build_webrender = True
+     elif len(value) and value[0] == 'build':
+         # if explicitly set to 'build', then we build but don't enable
+         build_webrender = True

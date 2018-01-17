@@ -1,9 +1,9 @@
 bin/qsynth
 man/man1/qsynth.1.gz
 man/man1/qsynth.fr.1.gz
-share/appdata/qsynth.appdata.xml
 share/applications/qsynth.desktop
 share/icons/hicolor/32x32/apps/qsynth.png
+share/metainfo/qsynth.appdata.xml
 %%DATADIR%%/translations/qsynth_cs.qm
 %%DATADIR%%/translations/qsynth_de.qm
 %%DATADIR%%/translations/qsynth_es.qm

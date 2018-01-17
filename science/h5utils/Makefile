@@ -12,7 +12,7 @@ LICENSE=	MIT GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 CFLAGS +=	-L${LOCALBASE}/lib -I${LOCALBASE}/include -lpthread
 
 BUILD_DEPENDS+=	gawk:lang/gawk
@@ -22,8 +22,6 @@ LIB_DEPENDS+=	libhdf5.so:science/hdf5 \
 
 USES=		autoreconf
 GNU_CONFIGURE=	yes
-
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	stevengj
 

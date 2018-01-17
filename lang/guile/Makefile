@@ -49,7 +49,6 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC} ; \
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
-	@${REINPLACE_CMD} -e 's|2.68|${AUTOCONF_VERSION}|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|$$(libdir)|$$(libdir)data|g' ${WRKSRC}/Makefile.am
 	@${TOUCH} ${WRKSRC}/Makefile.in
 

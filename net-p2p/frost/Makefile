@@ -24,7 +24,6 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-
 JAVAVM=		${LOCALBASE}/bin/java
 JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 JAR_FILE=	frost.jar
@@ -58,8 +57,6 @@ DESKTOP_ENTRIES=	"Frost" "Freenet Client" \
 			"${JAVASHAREDIR}/${PORTNAME}/jtc.ico" \
 			"frost" "P2P;Network;Java;" \
 			false
-
-pre-everything::
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \

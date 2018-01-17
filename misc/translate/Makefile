@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	translate
-PORTVERSION=	1.11
+PORTVERSION=	1.20
 CATEGORIES=	misc
 MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	Translates string using Babelfish
+COMMENT=	Translates string using Google Translate
 
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 

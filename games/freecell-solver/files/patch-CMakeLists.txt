@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-06-09 15:03:09 UTC
+--- CMakeLists.txt.orig	2017-10-06 15:32:19 UTC
 +++ CMakeLists.txt
-@@ -636,7 +636,7 @@ IF ("${FCS_ENABLE_DBM_SOLVER}")
+@@ -598,7 +598,7 @@ IF ("${FCS_ENABLE_DBM_SOLVER}")
          SET (DEBONDT_DELTA_STATES 1)
      ENDIF ()
  
@@ -9,7 +9,7 @@
      # LINK_DIRECTORIES("/home/shlomif/progs/C/pthreads/rwlock/fcfs-rwlock/pthreads")
      # INCLUDE_DIRECTORIES("/home/shlomif/progs/C/pthreads/rwlock/fcfs-rwlock/pthreads")
  
-@@ -703,7 +703,7 @@ ENDIF ()
+@@ -665,7 +665,7 @@ ENDIF ()
  
  IF (CMAKE_USE_PTHREADS_INIT)
      FCS_ADD_EXEC(freecell-solver-multi-thread-solve threaded_range_solver.c)
@@ -18,7 +18,7 @@
  ENDIF ()
  
  IF (UNIX)
-@@ -872,7 +872,7 @@ INSTALL(
+@@ -823,7 +823,7 @@ INSTALL(
      FILES
          "${CMAKE_CURRENT_BINARY_DIR}/lib${CPACK_PACKAGE_NAME}.pc"
      DESTINATION
@@ -27,7 +27,20 @@
  )
  
  # Rebuild config.h if ver.txt has changed.
-@@ -1061,7 +1061,7 @@ IF(ASCIIDOC_FOUND)
+@@ -947,10 +947,10 @@ ENDMACRO()
+ IF(ASCIIDOC_FOUND)
+ 
+     SET (_pdf_targets)
+-    ADD_COPY_TARGET( "asciidoc__css" "/etc/asciidoc/stylesheets/asciidoc.css"
++    ADD_COPY_TARGET( "asciidoc__css" "/usr/local/etc/asciidoc/stylesheets/asciidoc.css"
+         "${CMAKE_CURRENT_SOURCE_DIR}/asciidoc.css")
+     TRAIL_SPACE_COPY_TARGET( "asciidoc__js"
+-        "/etc/asciidoc/javascripts/asciidoc.js"
++        "/usr/local/etc/asciidoc/javascripts/asciidoc.js"
+         "${CMAKE_CURRENT_SOURCE_DIR}/asciidoc.js")
+     FOREACH(_file ${_docfiles})
+         GET_FILENAME_COMPONENT(_file_we ${_file} NAME_WE)
+@@ -1036,7 +1036,7 @@ IF(ASCIIDOC_FOUND)
      ADD_CUSTOM_COMMAND(
          OUTPUT "${_manpage}"
          COMMAND "xsltproc" "--output" "${_manpage}"

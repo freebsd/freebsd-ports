@@ -12,66 +12,57 @@ to fix up the paths so that cmake files still land in the the "correct" location
 in /usr/local/lib/cmake -- as this seemed to be the least intrusive method.
 
 
-
---- mkspecs/features/create_cmake.prf.orig	2016-05-11 09:21:02.000000000 +0200
-+++ mkspecs/features/create_cmake.prf	2016-06-03 18:21:42.389363000 +0200
-@@ -48,7 +52,7 @@
+--- mkspecs/features/create_cmake.prf.orig	2017-06-28 11:54:29.000000000 +0200
++++ mkspecs/features/create_cmake.prf	2017-07-14 15:04:51.254262000 +0200
+@@ -48,7 +48,7 @@
  }
-
+ 
  CMAKE_INCLUDE_DIR = $$cmakeRelativePath($$[QT_INSTALL_HEADERS], $$[QT_INSTALL_PREFIX])
 -contains(CMAKE_INCLUDE_DIR, "^\\.\\./.*") {
 +contains(CMAKE_INCLUDE_DIR, "^\\.\\./.*")|freebsd {
      CMAKE_INCLUDE_DIR = $$[QT_INSTALL_HEADERS]/
      CMAKE_INCLUDE_DIR_IS_ABSOLUTE = True
  }
-@@ -56,7 +60,7 @@
+@@ -56,7 +56,7 @@
  !exists($$first(QT.$${MODULE}_private.includes)): CMAKE_NO_PRIVATE_INCLUDES = true
-
+ 
  CMAKE_LIB_DIR = $$cmakeRelativePath($$[QT_INSTALL_LIBS], $$[QT_INSTALL_PREFIX])
 -contains(CMAKE_LIB_DIR,"^\\.\\./.*") {
 +contains(CMAKE_LIB_DIR,"^\\.\\./.*")|freebsd {
      CMAKE_LIB_DIR = $$[QT_INSTALL_LIBS]/
      CMAKE_LIB_DIR_IS_ABSOLUTE = True
  } else {
-@@ -67,20 +71,20 @@
+@@ -67,13 +67,13 @@
  }
-
+ 
  CMAKE_BIN_DIR = $$cmakeRelativePath($$[QT_HOST_BINS], $$[QT_INSTALL_PREFIX])
 -contains(CMAKE_BIN_DIR, "^\\.\\./.*") {
 +contains(CMAKE_BIN_DIR, "^\\.\\./.*")|freebsd {
      CMAKE_BIN_DIR = $$[QT_HOST_BINS]/
      CMAKE_BIN_DIR_IS_ABSOLUTE = True
  }
-
+ 
  CMAKE_PLUGIN_DIR = $$cmakeRelativePath($$[QT_INSTALL_PLUGINS], $$[QT_INSTALL_PREFIX])
 -contains(CMAKE_PLUGIN_DIR, "^\\.\\./.*") {
 +contains(CMAKE_PLUGIN_DIR, "^\\.\\./.*")|freebsd {
      CMAKE_PLUGIN_DIR = $$[QT_INSTALL_PLUGINS]/
      CMAKE_PLUGIN_DIR_IS_ABSOLUTE = True
  }
-
- win32:!wince:!static:!staticlib {
-     CMAKE_DLL_DIR = $$cmakeRelativePath($$[QT_INSTALL_BINS], $$[QT_INSTALL_PREFIX])
--    contains(CMAKE_DLL_DIR, "^\\.\\./.*") {
-+    contains(CMAKE_DLL_DIR, "^\\.\\./.*")|freebsd {
-         CMAKE_DLL_DIR = $$[QT_INSTALL_BINS]/
-         CMAKE_DLL_DIR_IS_ABSOLUTE = True
-     }
-@@ -167,7 +171,7 @@
+@@ -167,7 +167,7 @@
        cmake_target_file
-
+ 
      cmake_qt5_plugin_file.files = $$cmake_target_file.output
 -    cmake_qt5_plugin_file.path = $$[QT_INSTALL_LIBS]/cmake/Qt5$${CMAKE_MODULE_NAME}
 +    cmake_qt5_plugin_file.path = $$[QT_INSTALL_PREFIX]/lib/cmake/Qt5$${CMAKE_MODULE_NAME}
      INSTALLS += cmake_qt5_plugin_file
-
+ 
      return()
-@@ -314,7 +318,7 @@
+@@ -314,7 +314,7 @@
      cmake_qt5_module_files.files += $$cmake_macros_file.output
  }
-
+ 
 -cmake_qt5_module_files.path = $$[QT_INSTALL_LIBS]/cmake/Qt5$${CMAKE_MODULE_NAME}
 +cmake_qt5_module_files.path = $$[QT_INSTALL_PREFIX]/lib/cmake/Qt5$${CMAKE_MODULE_NAME}
-
+ 
  # We are generating cmake files. Most developers of Qt are not aware of cmake,
  # so we require automatic tests to be available. The only module which should

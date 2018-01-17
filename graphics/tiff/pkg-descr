@@ -11,7 +11,7 @@ The library is capable of dealing with images that are written to
 follow the 5.0 or 6.0 TIFF spec.  There is also considerable support
 for some of the more esoteric portions of the 6.0 TIFF spec.
 
-Unless NOPORTDOCS is defined, the html documentations is also
+Unless WITHOUT=DOCS, the html documentations is also
 installed locally in /usr/local/share/doc/tiff.
 
 WWW: http://www.simplesystems.org/libtiff/

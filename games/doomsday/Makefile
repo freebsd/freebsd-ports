@@ -2,50 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	doomsday
-PORTVERSION=	1.15.8
-PORTREVISION=	6
+PORTVERSION=	2.0.3
 CATEGORIES=	games
 MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
-DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Enhanced Doom, Heretic, and Hexen source port
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libassimp.so:multimedia/assimp
+		libassimp.so:multimedia/assimp \
+		libfluidsynth.so:audio/fluidsynth
 RUN_DEPENDS=	timidity:audio/timidity
 
+USES=		cmake:outsource compiler:c++11-lib ninja openal pkgconfig python:build
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
-USE_SDL=	sdl2 mixer2 net2
-USE_XORG=	x11
-USES=		compiler:c++11-lib pkgconfig python:build qmake:outsource
-USE_QT4=	corelib network opengl moc_build
-QMAKE_SOURCE_PATH=	${WRKSRC}/doomsday
-QMAKE_ARGS+=	QMAKE_LFLAGS+="-Wl,--export-dynamic" \
-		CONFIG+="deng_notools deng_nosnowberry" \
-		SCRIPT_PYTHON=${PYTHON_CMD}
-LDFLAGS+=	-lm
+USE_SDL=	sdl2 mixer2
+USE_XORG=	x11 sm ice xext xrandr xxf86vm
+USE_QT5=	buildtools_build core gui network widgets qmake opengl x11extras
+LDFLAGS+=	-L${LOCALBASE}/lib
+CXXFLAGS+=	-I${LOCALBASE}/include
+CMAKE_ARGS+=	-DDENG_ENABLE_COTIRE=OFF -DDENG_ASSIMP_EMBEDDED=OFF
 
-OPTIONS_DEFINE=	OPENAL
-OPTIONS_SUB=	yes
-
-OPENAL_DESC=	Build OpenAL sound plugin
-OPENAL_USES=	openal:al
-OPENAL_QMAKE_ON=	CONFIG+=deng_openal
-OPENAL_QMAKE_OFF=	CONFIG+=deng_noopenal
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
 PORTSCOUT=	limit:^\d+\.\d+\.\d+$$
 
 post-patch:
-	@${REINPLACE_CMD} 's,share/man,man,' \
-		${WRKSRC}/doomsday/client/client.pro \
-		${WRKSRC}/doomsday/server/server.pro
 	# Removing (three) non-ascii bytes from the beginning of the file
 	@${REINPLACE_CMD} '1s,^...,,' \
-		${WRKSRC}/doomsday/client/src/client/cl_sound.cpp
+		${WRKSRC}/apps/client/src/client/cl_sound.cpp
+	@${REINPLACE_CMD} -E 's|(DENG_DISTRIB_DIR /usr)|\1/local|' \
+		${WRKSRC}/cmake/Config.cmake
 
 .include <bsd.port.mk>

@@ -11,8 +11,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Perl5 module interface to Sophos AntiVirus
 
-MAN3=		SAVI.3
-
 USES=		perl5
 USE_PERL5=	configure
 ONLY_FOR_ARCHS=	i386 amd64

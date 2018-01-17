@@ -1025,7 +1025,6 @@ share/mimelnk/application/x-qet-titleblock.desktop
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/beka/beka_2806_b_2_0_1_2_01_000.elmt
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/beka/beka_2806_b_2_0_1_4_01_000.elmt
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/beka/qet_directory
-%%DATADIR%%/elements/10_electric/20_manufacturers_articles/bosch_rexroth/.directory
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/bosch_rexroth/bosch_rexroth_cdb02.1b-et-ec-ec-nn-s4-s4-nn-nn-fw.elmt
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/bosch_rexroth/bosch_rexroth_hmd01.1n-w0036-a-07-nnnn.elmt
 %%DATADIR%%/elements/10_electric/20_manufacturers_articles/bosch_rexroth/bosch_rexroth_hmv01.1r-w0018-a-07-nnnn.elmt

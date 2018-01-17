@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplescreenrecorder
-DISTVERSION=	0.3.8-26
-DISTVERSIONSUFFIX=	-g0f6eebf
+DISTVERSION=	0.3.9
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,29 +13,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libavformat.so:multimedia/ffmpeg
 
-USES=		gmake localbase libtool pkgconfig
+USES=		cmake:outsource pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	MaartenBaert
 GH_PROJECT=	ssr
-USE_GL=		gl glu
-USE_QT4=	corelib gui moc_build rcc_build uic_build linguisttools_build
+USE_QT5=	core gui widgets x11extras buildtools_build linguisttools_build qmake_build
 USE_XORG=	x11 xext xfixes xi
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-assert
-USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	PULSEAUDIO JACK
-OPTIONS_DEFAULT=		PULSEAUDIO
-PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
-JACK_CONFIGURE_WITH=		jack
-JACK_LIB_DEPENDS=		libjack.so:audio/jack
+CMAKE_ON=	WITH_QT5
+CMAKE_OFF=	WITH_GLINJECT  # doesn't yet work on FreeBSD: https://github.com/MaartenBaert/ssr/issues/586#issuecomment-343780107
 
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's|-ldl([". ])|-lc\1|g' \
-		-e 's|-ldl$$|-lc|g' \
-		${WRKSRC}/configure
+OPTIONS_DEFINE=		PULSEAUDIO JACK
+OPTIONS_DEFAULT=	PULSEAUDIO
+PULSEAUDIO_CMAKE_BOOL=	WITH_PULSEAUDIO
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+JACK_CMAKE_BOOL=	WITH_JACK
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
+
+post-install:  # https://github.com/MaartenBaert/ssr/issues/609
+	@${RM} ${STAGEDIR}${PREFIX}/man/man1/ssr-glinject.*
 
 .include <bsd.port.mk>

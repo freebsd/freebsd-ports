@@ -2,4 +2,4 @@ The Gstreamer ffmpeg package provides mpeg support for Gstreamer.
 It includes codecs for most popular formats, and optimized
 colourspace conversion.
 
-WWW: http://gstreamer.freedesktop.org/
+WWW: https://gstreamer.freedesktop.org/

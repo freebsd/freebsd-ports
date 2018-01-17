@@ -23,10 +23,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/man3/* ${STAGEDIR}${MAN3PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/man/man5/* ${STAGEDIR}${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/usr/latex/m17n-lib.pdf ${STAGEDIR}${DOCSDIR}/en
+	${INSTALL_DATA} ${WRKSRC}/usr/latex/m17n-lib.pdf ${STAGEDIR}${DOCSDIR}/en
 	(cd ${WRKSRC}/usr/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/en/)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
-	${INSTALL_MAN} ${WRKSRC}/ja/latex/m17n-lib.pdf ${STAGEDIR}${DOCSDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/ja/latex/m17n-lib.pdf ${STAGEDIR}${DOCSDIR}/ja
 	(cd ${WRKSRC}/ja/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/ja/)
 
 .include <bsd.port.mk>

@@ -29,5 +29,4 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/gsad:security/greenbone-security-assistant${OPEN
 SUB_FILES=	pkg-message
 OPENVAS_VER=	8
 
-
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+This is a port of sct, a simple command-line utility written by Ted Unangst,
+which can be used to control screen temperature. It exceeds at being much more
+lightweight than similar software solutions like Redshift and f.lux. At the
+same time it is easier to use than xrandr.
+
+Sct takes temperature values in range 1000 to 10000, where 6500 is the default
+value. Here are some usage examples:
+
+ * Campfire style: `sct 4500`
+ * Dust storm on Mars style: `sct 2000`
+ * Coffee free all nighter style: `sct 8000`
+ * Default style: `sct`
+
+WWW: https://www.tedunangst.com/flak/post/sct-set-color-temperature

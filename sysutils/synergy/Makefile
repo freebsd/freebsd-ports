@@ -6,12 +6,11 @@ DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	sysutils
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libopencm3
-PORTVERSION=	0.0.20170522
+PORTVERSION=	0.0.20180108
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -13,15 +13,15 @@ BUILD_DEPENDS=	${LOCALBASE}/gcc-arm-embedded-${TOOLCHAIN_FULL_VERSION}/bin/arm-n
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libopencm3
-GH_TAGNAME=	b76d853
+GH_TAGNAME=	3922cc7
 
-USES=		gmake python:2,build shebangfix
+USES=		gmake python:2.7,build shebangfix
 
 SHEBANG_FILES=	scripts/irq2nvic_h \
 		scripts/lpcvtcksum
 
-TOOLCHAIN_FULL_VERSION?=6-2017-q2-update
-TOOLCHAIN_PORT_VERSION?=6.3.20170628
+TOOLCHAIN_FULL_VERSION?=7-2017-q4-major
+TOOLCHAIN_PORT_VERSION?=7.2.20171218
 TOOLCHAIN_TARGET?=arm-none-eabi
 
 DESTDIRNAME=	STAGEDIR

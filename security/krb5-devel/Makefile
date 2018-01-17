@@ -98,7 +98,6 @@ CONFIGURE_ARGS+=	--without-readline
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
 
-
 .include <bsd.port.pre.mk>
 
 post-install:

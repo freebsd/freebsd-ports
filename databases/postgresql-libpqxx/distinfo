@@ -1,2 +1,3 @@
-SHA256 (postgresql/libpqxx-4.0.1.tar.gz) = 097ceda2797761ce517faa5bee186c883df1c407cb2aada613a16773afeedc38
-SIZE (postgresql/libpqxx-4.0.1.tar.gz) = 1582532
+TIMESTAMP = 1515770390
+SHA256 (postgresql/jtv-libpqxx-6.0.0_GH0.tar.gz) = 81cac92458efd799fadb0374107464320d93eba71de05aedf21afb9c8dda7c3a
+SIZE (postgresql/jtv-libpqxx-6.0.0_GH0.tar.gz) = 676528

@@ -1,0 +1,6 @@
+libpredict allows to calculate satellite orbits based on their
+position parameters at any given time. It supports any orbit
+types used by satellites, for example geostationary, elliptical,
+geosynchronous.
+
+WWW: https://github.com/la1k/libpredict

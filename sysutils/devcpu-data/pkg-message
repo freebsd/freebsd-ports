@@ -1,0 +1,20 @@
+Installing this port will allow host startup to update the CPU microcode on 
+a FreeBSD system automatically.  In order to enable this feature, add the
+following to the system's /etc/rc.conf:
+
+microcode_update_enable="YES"
+
+To ensure the update is applied, reboot the system or start the microcode update
+service via:
+
+# service microcode_update start
+
+If the CPU requires a microcode update, a console message such as the following
+will appear:
+
+Updating CPU Microcode...
+/usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl0 from rev 0x17 to rev 0x22... done.
+/usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl2 from rev 0x17 to rev 0x22... done.
+/usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl4 from rev 0x17 to rev 0x22... done.
+/usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl6 from rev 0x17 to rev 0x22... done.
+Done.

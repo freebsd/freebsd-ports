@@ -1,0 +1,38 @@
+--- src/3rdparty/chromium/chrome/app/generated_resources.grd.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/chrome/app/generated_resources.grd
+@@ -6939,7 +6939,7 @@ Keep your key file in a safe place. You 
+       <message name="IDS_FLAGS_FORCE_UI_DIRECTION_RTL" desc="Name for the option to force right-to-left UI direction mode.">
+           Right-to-left
+       </message>
+-      <if expr="is_win or is_linux">
++      <if expr="is_win or is_linux or is_bsd">
+         <message name="IDS_FLAGS_ENABLE_INPUT_IME_API_NAME" desc="Name of the flag to enable che chrome.input.ime API.">
+           Enable Input IME API
+         </message>
+@@ -10334,7 +10334,7 @@ I don't think this site should be blocke
+       <message name="IDS_APPEARANCE_GROUP_NAME" desc="The title of the appearance group">
+         Appearance
+       </message>
+-      <if expr="not is_linux or chromeos">
++      <if expr="not is_linux or not is_bsd or chromeos">
+         <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
+           Themes
+         </message>
+@@ -10342,7 +10342,7 @@ I don't think this site should be blocke
+       <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
+         Reset to default theme
+       </message>
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_linux or is_bsd and not chromeos">
+         <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
+           Use GTK+ theme
+         </message>
+@@ -11663,7 +11663,7 @@ Tell us what happened exactly before you
+         Set as default
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_linux or is_bsd and not chromeos">
+         <message name="IDS_SHOW_WINDOW_DECORATIONS_MENU" desc="The menu entry text in the tab strip context menu.  This toggles the system title bar and window borders (window decorations) on linux.">
+           Use system title bar and borders
+         </message>

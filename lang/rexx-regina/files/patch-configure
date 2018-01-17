@@ -1,20 +1,31 @@
 --- configure.orig	2015-01-18 20:33:40 UTC
 +++ configure
-@@ -3490,6 +3490,13 @@ case "$target" in
+@@ -3490,13 +3490,22 @@ case "$target" in
           osis64bit=yes
        fi
        ;;
+-   *-freebsd* | *-openbsd*)
 +   *-dragonfly*)
-+      mach="`uname -m`"
+       mach="`uname -m`"
+-      if test "$mach" = "amd64"; then
 +      if test "$mach" = "x86_64"; then
+          bitflag="64"
+          osis64bit=yes
+       fi
+       ;;
++   *-freebsd* | *-openbsd*)
++      mach="`uname -p`"
++      if test "${mach%64}" = "$mach"; then
++         bitflag="32"
++      else
 +         bitflag="64"
 +         osis64bit=yes
 +      fi
 +      ;;
-    *-freebsd* | *-openbsd*)
-       mach="`uname -m`"
-       if test "$mach" = "amd64"; then
-@@ -6256,6 +6263,10 @@ rm -f core conftest.err conftest.$ac_obj
+    *nto-qnx*)
+       ;;
+    *qnx*)
+@@ -6256,6 +6265,10 @@ rm -f core conftest.err conftest.$ac_objext \
                 ;;
              *linux*)
                 ;;
@@ -25,7 +36,7 @@
              *freebsd*)
                 THREADING_COMPILE="-pthread -D_REENTRANT -DPOSIX -DREGINA_REENTRANT"
                 THREADING_LINK="-pthread"
-@@ -8679,7 +8690,14 @@ case "$target" in
+@@ -8679,7 +8692,14 @@ case "$target" in
                  SHLPRE="lib"
                  SHL_LD="ld -assert pure-text -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
                  ;;
@@ -41,7 +52,7 @@
                  if test "$ac_cv_prog_CC" = "gcc" -o "$ac_cv_prog_CC" = "g++" -o "$ac_cv_prog_CC" = "clang"; then
                     LD_RXLIB_A1="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
                     LD_RXLIB_A2="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
-@@ -9429,7 +9447,7 @@ $as_echo_n "checking OS distribution nam
+@@ -9429,7 +9449,7 @@ $as_echo_n "checking OS distribution name... " >&6; }
  $as_echo "$MYDISTRO" >&6; }
  else
     case "$target" in

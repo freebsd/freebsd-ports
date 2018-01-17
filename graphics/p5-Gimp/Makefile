@@ -38,5 +38,4 @@ MAKE_JOBS_UNSAFE=	yes
 BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.14:devel/p5-ExtUtils-MakeMaker
 .endif
 
-
 .include <bsd.port.post.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	fog-brightbox
 PORTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

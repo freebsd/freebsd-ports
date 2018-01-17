@@ -1,0 +1,174 @@
+--- src/3rdparty/chromium/BUILD.gn.orig	2017-06-20 05:10:02.000000000 -0400
++++ src/3rdparty/chromium/BUILD.gn	2017-12-15 16:23:27.924636000 -0500
+@@ -218,7 +218,7 @@
+     ]
+   }
+ 
+-  if (!is_ios && !is_android && !is_chromecast) {
++  if (!is_ios && !is_android && !is_bsd && !is_chromecast) {
+     deps += [
+       "//chrome",
+       "//chrome/test:browser_tests",
+@@ -286,7 +286,7 @@
+     }
+   }
+ 
+-  if (!is_ios) {
++  if (!is_ios && !is_bsd) {
+     # TODO(GYP): Figure out which of these should actually build on iOS,
+     # and whether there should be other targets that are iOS-only and missing.
+     deps += [
+@@ -336,7 +336,7 @@
+         "//third_party/catapult/telemetry:bitmaptools($host_toolchain)",
+       ]
+     }
+-  } else {
++  } else if (!is_bsd) {
+     deps += [ "//ios:all" ]
+   }
+ 
+@@ -504,18 +504,23 @@
+     ]
+   }
+ 
+-  if (is_linux) {
+-    # The following are definitely linux-only.
++  if (is_linux || is_bsd) {
++    # The following are definitely? linux-only.
+     deps += [
+       "//chrome:manpage",
+       "//chrome:xdg_mime",
+       "//net:disk_cache_memory_test",
+       "//net:quic_client",
+       "//net:quic_server",
+-      "//sandbox/linux:chrome_sandbox",
+-      "//sandbox/linux:sandbox_linux_unittests",
+     ]
+ 
++    if (is_linux) {
++      deps += [
++        "//sandbox/linux:chrome_sandbox",
++        "//sandbox/linux:sandbox_linux_unittests",
++      ]
++    }
++
+     if (use_dbus) {
+       deps += [
+         "//dbus:dbus_test_server",
+@@ -533,7 +538,7 @@
+     }
+   }
+ 
+-  if (is_ios || is_win || (is_linux && !is_chromeos)) {
++  if (is_ios || is_win || is_bsd || (is_linux && !is_chromeos)) {
+     deps += [
+       "//base:base_i18n_perftests",
+       "//base:base_perftests",
+@@ -612,7 +617,7 @@
+     if (enable_nacl) {
+       deps += [ "//components/nacl/loader:nacl_loader_unittests" ]
+ 
+-      if (is_linux) {
++      if (is_linux || is_bsd) {
+         # TODO(dpranke): Figure out what platforms should actually have this.
+         deps += [ "//components/nacl/loader:nacl_helper" ]
+ 
+@@ -722,7 +727,7 @@
+       deps +=
+           [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
+     }
+-  } else if (!is_android && !is_ios) {
++  } else if (!is_android && !is_ios && !is_bsd) {
+     deps += [ "//breakpad:symupload($host_toolchain)" ]
+   }
+ 
+@@ -787,7 +792,7 @@
+     }
+   }
+ 
+-  if (is_linux && !is_chromeos && !is_chromecast) {
++  if ((is_linux || is_bsd) && !is_chromeos && !is_chromecast) {
+     # TODO(GYP): Figure out if any of these should be in gn_all
+     # and figure out how cross-platform they are
+     deps += [
+@@ -840,7 +845,7 @@
+     ]
+ 
+     if (target_cpu == "x86" || target_cpu == "x64") {
+-      if (!is_android) {
++      if (!is_android && !is_bsd) {
+         deps += [ "//chrome/test:load_library_perf_tests" ]
+         if (use_qt) {
+           deps -= [ "//chrome/test:load_library_perf_tests" ]
+@@ -851,7 +856,7 @@
+         "//third_party/libjpeg_turbo:simd_asm",
+       ]
+     }
+-    if (is_linux && current_toolchain == host_toolchain) {
++    if ((is_linux || is_bsd) && current_toolchain == host_toolchain) {
+       deps += [ "//v8:v8_shell" ]
+     }
+   }
+@@ -861,7 +866,7 @@
+   }
+ 
+   if ((is_linux && !is_chromeos && !is_chromecast) || (is_win && use_drfuzz) ||
+-      (use_libfuzzer && is_mac)) {
++      (use_libfuzzer && is_mac) || is_bsd) {
+     deps += [
+       "//testing/libfuzzer/fuzzers",
+       "//testing/libfuzzer/tests:libfuzzer_tests",
+@@ -904,7 +909,7 @@
+ 
+ group("gn_mojo_targets") {
+   testonly = true
+-  if (is_linux && !is_chromeos) {
++  if (is_bsd || (is_linux && !is_chromeos)) {
+     # TODO(GYP): Figure out if any of these should be in gn_all
+     # and figure out how cross-platform they are
+     deps = [
+@@ -930,7 +935,7 @@
+   }
+ }
+ 
+-if (!is_ios) {
++if (!is_ios || !is_bsd) {
+   # This group includes all of the targets needed to build and test Blink,
+   # including running the layout tests (see below).
+   group("blink_tests") {
+@@ -976,7 +981,7 @@
+       data_deps += [ "//content/shell:content_shell_crash_service" ]
+     }
+ 
+-    if (!is_win && !is_android) {
++    if (!is_win && !is_android && !is_bsd) {
+       data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
+     }
+ 
+@@ -984,7 +989,7 @@
+       data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
+     }
+ 
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
+     }
+ 
+@@ -1006,7 +1011,7 @@
+ group("chromium_builder_perf") {
+   testonly = true
+ 
+-  if (!is_ios && !is_android && !is_chromecast) {
++  if (!is_ios && !is_android && !is_chromecast && !is_bsd) {
+     data_deps = [
+       "//cc:cc_perftests",
+       "//chrome/test:load_library_perf_tests",
+@@ -1043,7 +1048,7 @@
+         "//chrome/installer/mini_installer:mini_installer",
+         "//chrome/test:angle_perftests",
+       ]
+-    } else {
++    } else if (!is_bsd) {
+       data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
+     }
+   }

@@ -12,9 +12,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	cups-config:print/cups
 RUN_DEPENDS=	cancel:print/cups \
-		${PYTHON_PKGNAMEPREFIX}pycups>0:print/py-pycups \
 		bash:shells/bash \
-		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2
+		${PYTHON_PKGNAMEPREFIX}pycups>0:print/py-pycups@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simoncadman

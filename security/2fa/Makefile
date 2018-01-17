@@ -2,7 +2,7 @@
 
 PORTNAME=	2fa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	security
 
 MAINTAINER=	dg@syrec.org
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsc
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -22,7 +23,10 @@ PLIST_FILES=	bin/2fa
 PORTDOCS=	README.md
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} GOPATH=${WRKSRC} go build -o ${PORTNAME}
+	@cd ${WRKSRC}/${GH_SUBDIR} && ${SETENV} GOPATH=${WRKSRC} go build -o ${PORTNAME}
+
+do-test:
+	@cd ${WRKSRC}/${GH_SUBDIR} && ${SETENV} GOPATH=${WRKSRC} go test
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

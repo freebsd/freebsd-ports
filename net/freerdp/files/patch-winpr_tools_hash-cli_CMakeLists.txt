@@ -1,0 +1,15 @@
+--- winpr/tools/hash-cli/CMakeLists.txt.orig	2017-11-28 14:26:30 UTC
++++ winpr/tools/hash-cli/CMakeLists.txt
+@@ -50,5 +50,11 @@ if (WITH_DEBUG_SYMBOLS AND MSVC)
+ endif()
+ 
+ set_property(TARGET ${MODULE_NAME} PROPERTY FOLDER "WinPR/Tools")
++if(WITH_MANPAGES)
+ configure_file(winpr-hash.1.in ${CMAKE_CURRENT_BINARY_DIR}/winpr-hash.1)
+-install_freerdp_man(${CMAKE_CURRENT_BINARY_DIR}/winpr-hash.1 1)
++	if(BSD)
++	    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/winpr-hash.1 DESTINATION man/man1)
++	else()
++	    install_freerdp_man(${CMAKE_CURRENT_BINARY_DIR}/winpr-hash.1 1)
++	endif()
++endif(WITH_MANPAGES)

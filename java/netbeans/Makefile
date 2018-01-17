@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-PORTVERSION=	8.1
+PORTVERSION=	8.2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
 		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
-DISTNAME=	netbeans-${PORTVERSION}-201510222201
+DISTNAME=	netbeans-${PORTVERSION}-201609300101
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	Modular, standards-based integrated development environment
+COMMENT=	Modular, standards-based integrated development environment (unstable version)
 
 LICENSE=	CDDL GPLv2
 LICENSE_COMB=	dual
@@ -19,8 +19,13 @@ SHEBANG_FILES=	extide/ant/bin/antRun.pl \
 		extide/ant/bin/complete-ant-cmd.pl \
 		extide/ant/bin/runant.pl \
 		extide/ant/bin/runant.py
+perl_OLD_CMD=	/usr/bin/perl
+perl_CMD=	${LOCALBASE}/bin/perl
+python_OLD_CMD=	/usr/bin/python
+python_CMD=	${LOCALBASE}/bin/python2.7
+
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.8
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/netbeans

@@ -34,6 +34,4 @@ CONFIGURE_ARGS+=--without-png
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
-MAN1=		mscgen.1
-
 .include <bsd.port.mk>

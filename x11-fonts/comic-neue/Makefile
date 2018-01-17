@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://comicneue.com/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Comic Sans alternative
 
 LICENSE=	CC0-1.0

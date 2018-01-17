@@ -46,6 +46,7 @@
     SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += binwalk
+    SUBDIR += bitwarden-ruby
     SUBDIR += blindelephant
     SUBDIR += boringssl
     SUBDIR += botan110
@@ -328,6 +329,7 @@
     SUBDIR += libbeid
     SUBDIR += libbf
     SUBDIR += libcryptui
+    SUBDIR += libdecaf
     SUBDIR += libecc
     SUBDIR += libfprint
     SUBDIR += libgcrypt
@@ -801,6 +803,7 @@
     SUBDIR += pecl-gnupg
     SUBDIR += pecl-krb5
     SUBDIR += pecl-libsodium
+    SUBDIR += pecl-mcrypt
     SUBDIR += pecl-pam
     SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
@@ -1041,8 +1044,8 @@
     SUBDIR += rubygem-airbrussh
     SUBDIR += rubygem-attr_encrypted
     SUBDIR += rubygem-bcrypt
-    SUBDIR += rubygem-bcrypt_pbkdf
     SUBDIR += rubygem-bcrypt-ruby
+    SUBDIR += rubygem-bcrypt_pbkdf
     SUBDIR += rubygem-devise-two-factor
     SUBDIR += rubygem-devise-two-factor-rails5
     SUBDIR += rubygem-devise-two-factor-rails50
@@ -1085,16 +1088,18 @@
     SUBDIR += rubygem-omniauth-saml
     SUBDIR += rubygem-omniauth-shibboleth
     SUBDIR += rubygem-openssl
-    SUBDIR += rubygem-openssl20
     SUBDIR += rubygem-openssl-ccm
+    SUBDIR += rubygem-openssl20
     SUBDIR += rubygem-openvas-omp
     SUBDIR += rubygem-origami
+    SUBDIR += rubygem-pbkdf2-ruby
     SUBDIR += rubygem-pundit
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-rack-oauth2
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-rbnacl
     SUBDIR += rubygem-rbnacl-libsodium
+    SUBDIR += rubygem-rbnacl4
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-rex-arch
     SUBDIR += rubygem-rex-bin_tools
@@ -1233,6 +1238,7 @@
     SUBDIR += tor-devel
     SUBDIR += tpm-tools
     SUBDIR += tpmmanager
+    SUBDIR += trezord
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131

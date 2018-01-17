@@ -32,7 +32,7 @@ PLIST_FILES=	${PY_FILES:S,^,bin/,} \
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${FILESDIR}/README.parsepe ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.parsepe ${STAGEDIR}${DOCSDIR}
 .for fil in ${PY_FILES}
 	${INSTALL_SCRIPT} ${FILESDIR}/${fil} ${STAGEDIR}${PREFIX}/bin
 .endfor

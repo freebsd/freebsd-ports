@@ -2,7 +2,7 @@
 
 PORTNAME=	unix-connect
 PORTVERSION=	0.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	german comms news mail
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/unix-connect/ \
 		SF

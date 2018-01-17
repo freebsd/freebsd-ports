@@ -2,7 +2,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.7.50
-PORTREVISION=	20171226
+PORTREVISION=	20180105
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-riscv
 
@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 BROKEN_powerpc64=	fails to compile: async.c: internal compiler error: Segmentation fault
 
 USE_GITHUB=	yes
-GH_TUPLE=	riscv:riscv-qemu:701f712 \
+GH_TUPLE=	riscv:riscv-qemu:8d56aad \
 		qemu:dtc:65cc4d2:dtc/dtc
 
 HAS_CONFIGURE=	yes

@@ -28,7 +28,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/i3status ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/man/i3status.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/i3status.conf ${STAGEDIR}${PREFIX}/etc/i3status.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/man/i3status.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/i3status.conf \
+		${STAGEDIR}${PREFIX}/etc/i3status.conf.sample
 
 .include <bsd.port.mk>

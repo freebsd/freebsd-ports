@@ -10,7 +10,6 @@ PKGNAMEPREFIX=	elasticsearch5-
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Elasticsearch X-Pack plugins
 
-
 RUN_DEPENDS:=	elasticsearch5>=5.3.0:textproc/elasticsearch5
 
 NO_BUILD=	yes

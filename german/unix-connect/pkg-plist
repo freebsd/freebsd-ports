@@ -18,7 +18,7 @@ libexec/uconnect/rgsmtp
 libexec/uconnect/rsmtp
 libexec/uconnect/cron.d.hourly
 libexec/uconnect/logrotate.d.entry
-libexec/uconnect/uurnews
+@(news,dialer,4555) libexec/uconnect/uurnews
 %%SENDMAIL%%libexec/uconnect/mail.uuconnect
 %%SENDMAIL%%libexec/uconnect/zbatchsmtp
 %%POSTFIX%%libexec/uconnect/zbatchsmtp

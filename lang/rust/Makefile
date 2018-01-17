@@ -126,11 +126,6 @@ pre-fetch:
 	fi
 
 RUST_STD_DIR=		${RUST_STD_BOOTSTRAP:T:R:R}
-LIBSTD_SUFFIX_aarch64=	0b5479f9b944419b
-LIBSTD_SUFFIX_amd64=	d5600fa473bb2268
-LIBSTD_SUFFIX_i386=	7c10a38de31dc096
-LIBSTD=			${RUST_STD_DIR}/rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}/lib/libstd-${LIBSTD_SUFFIX_${ARCH}:U${LIBSTD_SUFFIX}}.rlib
-STDF=			${LIBSTD:T:R:S/lib//}.0.o
 
 post-extract:
 	@${MKDIR} \
@@ -147,12 +142,16 @@ post-extract:
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
 	${TAR} -x -C ${WRKSRC} -f ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP}
 	${CC} ${CFLAGS} -fPIC -c -o ${WRKSRC}/old_fstat.o ${FILESDIR}/old_fstat.c
-	(cd ${WRKSRC} && ${AR} x ${WRKSRC}/${LIBSTD} ${STDF})
-	${LD} -r -o ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF} ${WRKSRC}/old_fstat.o
-	${MV} ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF}
-	(cd ${WRKSRC} && ${AR} r ${WRKSRC}/${LIBSTD} ${STDF})
-	${TAR} -cy --format=ustar -C ${WRKSRC} -f ${WRKSRC}/rustc.tbz ${RUST_STD_DIR}
-	${MV} ${WRKSRC}/rustc.tbz ${WRKSRC}/build/cache/${RUST_STD_BOOTSTRAP}
+	(set -ex; cd ${WRKSRC}; \
+	 libstd="$$(echo "${RUST_STD_DIR}/rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}/lib/"libstd-*.rlib)"; \
+	 hash="$$(basename "$$libstd" .rlib | ${SED} 's/^libstd-//')"; \
+	 std_o="std-$$hash.0.o"; \
+	 ${AR} x "$$libstd" "$$std_o"; \
+	 ${LD} -r -o std.xx.o "$$std_o" old_fstat.o; \
+	 ${MV} std.xx.o "$$std_o"; \
+	 ${AR} r "$$libstd" "$$std_o")
+	${TAR} -cz --format=ustar -C ${WRKSRC} -f ${WRKSRC}/rust-std.tar.gz ${RUST_STD_DIR}
+	${MV} ${WRKSRC}/rust-std.tar.gz ${WRKSRC}/build/cache/${RUST_STD_BOOTSTRAP}
 .endif
 
 post-patch:
@@ -161,27 +160,21 @@ post-patch:
 # If we override the versions and date of the bootstraps (for instance
 # on aarch64 where we provide our own bootstraps), we need to update
 # places where they are recorded.
-	@if test "${BOOTSTRAPS_DATE_${ARCH}}" && \
-	test "${BOOTSTRAPS_DATE_${ARCH}}" != "${BOOTSTRAPS_DATE}"; then \
-		${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's|^date:.*|date: ${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}|' \
-		${WRKSRC}/src/stage0.txt; \
-	fi
-	@if test "${RUST_BOOTSTRAP_VERSION_${ARCH}}" && \
-	test "${RUST_BOOTSTRAP_VERSION_${ARCH}}" != "${RUST_BOOTSTRAP_VERSION}"; then \
-		${REINPLACE_CMD} -e \
+		${WRKSRC}/src/stage0.txt
+	@${REINPLACE_CMD} -e \
 		's|^rustc:.*|rustc: ${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}|' \
-		${WRKSRC}/src/stage0.txt; \
-	fi
-	@if test "${CARGO_BOOTSTRAP_VERSION_${ARCH}}" && \
-	test "${CARGO_BOOTSTRAP_VERSION_${ARCH}}" != "${CARGO_BOOTSTRAP_VERSION}"; then \
-		${REINPLACE_CMD} -e \
+		${WRKSRC}/src/stage0.txt
+	@${REINPLACE_CMD} -e \
 		's|^cargo:.*|cargo: ${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}|' \
-		${WRKSRC}/src/stage0.txt; \
-	fi
+		${WRKSRC}/src/stage0.txt
 # After patching crates, we need to update their corresponding
 # `.cargo-checksum.json` to reflect the new checksums verified by Cargo.
 	@for dir in "${WRKSRC}/src/vendor/libc" "${WRKSRC}/src/vendor/openssl" "${WRKSRC}/src/vendor/openssl-sys"; do \
+		if ! test -d "$$dir"; then \
+			continue; \
+		fi; \
 		cd "$$dir"; \
 		for file in $$(${FIND} * -name "*.orig"); do \
 			old_checksum=$$(${SHA256} -q "$$file"); \
@@ -196,6 +189,9 @@ post-patch:
 # fix is applied. We'll need them in `do-configure` to update the
 # `.cargo-checksum.json` files.
 	@for crate in ${CRATES_PATCHED_BY_FBSD10_FIX}; do \
+		if ! test -d "${WRKSRC}/$$crate"; then \
+			continue; \
+		fi; \
 		for file in $$(${FIND} "${WRKSRC}/$$crate" -name "config.rpath"); do \
 			${CP} "$$file" "$$file.orig"; \
 		done; \
@@ -215,6 +211,9 @@ do-configure:
 # `do-configure`. Like after `extra-path-ino64`, we need to update
 # `.cargo-checksum.json`.
 	@for crate in ${CRATES_PATCHED_BY_FBSD10_FIX}; do \
+		if ! test -d "${WRKSRC}/$$crate"; then \
+			continue; \
+		fi; \
 		cd "${WRKSRC}/$$crate"; \
 		for file in $$(${FIND} * -name "*.orig"); do \
 			old_checksum=$$(${SHA256} -q "$$file"); \

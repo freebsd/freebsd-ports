@@ -17,11 +17,11 @@ bin/idl2wrs
 bin/tshark
 %%TEXT2PCAP%%
 lib/libwireshark.so
-lib/libwireshark.so.10
-lib/libwireshark.so.10.0.3
+lib/libwireshark.so.9
+lib/libwireshark.so.9.1.4
 lib/libwiretap.so
 lib/libwiretap.so.7
-lib/libwiretap.so.7.0.3
+lib/libwiretap.so.7.0.4
 %%GUI%%lib/libwscodecs.so
 %%GUI%%lib/libwscodecs.so.1
 %%GUI%%lib/libwscodecs.so.1.1.0

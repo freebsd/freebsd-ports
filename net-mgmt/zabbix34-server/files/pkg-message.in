@@ -45,7 +45,7 @@ Please see https://www.zabbix.com/ for detailed information about Zabbix.
 On-line Zabbix documentation:
 https://www.zabbix.com/documentation/3.4/start
 
-For Zabbix frontend “Welcome” screen. Enter the user name Admin with password
+For Zabbix frontend "Welcome" screen. Enter the user name Admin with password
 zabbix to log in as a Zabbix superuser.
 
 For use NMAP please edit sudoers

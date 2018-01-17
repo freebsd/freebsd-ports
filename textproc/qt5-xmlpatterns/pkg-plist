@@ -279,6 +279,7 @@
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtreatas_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtriplecontainer_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtruthpredicate_p.h
+%%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtxmlpatterns-config_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtypeavailablefn_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtypechecker_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qunaryexpression_p.h
@@ -391,6 +392,7 @@
 %%QT_INCDIR%%/QtXmlPatterns/qabstractxmlreceiver.h
 %%QT_INCDIR%%/QtXmlPatterns/qsimplexmlnodemodel.h
 %%QT_INCDIR%%/QtXmlPatterns/qsourcelocation.h
+%%QT_INCDIR%%/QtXmlPatterns/qtxmlpatterns-config.h
 %%QT_INCDIR%%/QtXmlPatterns/qtxmlpatternsglobal.h
 %%QT_INCDIR%%/QtXmlPatterns/qtxmlpatternsversion.h
 %%QT_INCDIR%%/QtXmlPatterns/qxmlformatter.h

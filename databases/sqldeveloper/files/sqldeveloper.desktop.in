@@ -1,0 +1,10 @@
+# $FreeBSD$
+[Desktop Entry]
+Encoding=UTF-8
+Name=Oracle SQL Developer
+Comment=Oracle SQL Developer
+Icon=/usr/local/share/icons/hicolor/32x32/apps/sqldeveloper.png
+Exec=sqldeveloper
+Terminal=false
+Type=Application
+Categories=Utility

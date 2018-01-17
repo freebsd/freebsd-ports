@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.11
-PORTREVISION=	2
+PORTVERSION=	1.12.0
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -28,12 +27,12 @@ MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes \
 		SOVERSION=${PORTVERSION}
 USES=		cpe compiler:c++11-lang gmake jpeg pkgconfig
 USE_XORG=	x11 xcursor xext xinerama xrandr
-USE_GL=		gl
+USE_GL=		gl glut
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	artifex
 
-OPTIONS_DEFINE=	JS SCROLL
+OPTIONS_DEFINE=	DOCS JS SCROLL
 OPTIONS_DEFAULT=SCROLL
 
 JS_DESC=	JavaScript support (V8 engine)
@@ -51,6 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl //' ${WRKSRC}/Makerules ${WRKSRC}/Makethird
 	@${RM} -r ${WRKSRC}/thirdparty/curl \
 		${WRKSRC}/thirdparty/freetype \
+		${WRKSRC}/thirdparty/freeglut \
 		${WRKSRC}/thirdparty/harfbuzz \
 		${WRKSRC}/thirdparty/jbig2dec \
 		${WRKSRC}/thirdparty/libjpeg \

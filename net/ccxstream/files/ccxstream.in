@@ -16,7 +16,7 @@
 # The port will refuse to start unless ccxstream_flags is initalized,
 # in addition to ccxstream_enable. For information on the arguments
 # to ccxstream, look at %%PREFIX%%/share/doc/ccxstream/README (if you
-# installed the port documentation by not specifying NOPORTDOCS) or the
+# installed the port documentation by not specifying WITHOUT=DOCS) or the
 # output of "ccxstream -h". At bare minimum, you'll want to add the
 # "-u <user>" argument to specify the userid the server will run under
 # (unless you WANT to run this code as root), and the "-r <directory>"

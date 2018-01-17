@@ -1,0 +1,53 @@
+--- src/3rdparty/chromium/build/linux/libpci/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/build/linux/libpci/BUILD.gn
+@@ -3,20 +3,36 @@
+ # found in the LICENSE file.
+ 
+ import("//tools/generate_library_loader/generate_library_loader.gni")
++import("//build/config/linux/pkg_config.gni")
+ 
+-# This generates a target named "libpci".
+-generate_library_loader("libpci") {
+-  name = "LibPciLoader"
+-  output_h = "libpci.h"
+-  output_cc = "libpci_loader.cc"
+-  header = "<pci/pci.h>"
++declare_args() {
++  use_system_libpci = is_bsd
++}
+ 
+-  functions = [
+-    "pci_alloc",
+-    "pci_init",
+-    "pci_cleanup",
+-    "pci_scan_bus",
+-    "pci_fill_info",
+-    "pci_lookup_name",
+-  ]
++if (use_system_libpci) {
++  pkg_config("system_libpci") {
++    packages = [ "libpci" ]
++  }
++
++  source_set("libpci") {
++    public_configs = [ ":system_libpci" ]
++  }
++
++} else {
++  # This generates a target named "libpci".
++  generate_library_loader("libpci") {
++    name = "LibPciLoader"
++    output_h = "libpci.h"
++    output_cc = "libpci_loader.cc"
++    header = "<pci/pci.h>"
++
++    functions = [
++      "pci_alloc",
++      "pci_init",
++      "pci_cleanup",
++      "pci_scan_bus",
++      "pci_fill_info",
++      "pci_lookup_name",
++    ]
++  }
+ }

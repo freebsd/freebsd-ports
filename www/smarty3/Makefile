@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	smarty
-PORTVERSION=	3.1.29
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	3.1.30
 CATEGORIES=	www
 PKGNAMESUFFIX=	3
 
@@ -13,15 +12,15 @@ COMMENT=	PHP compiling template engine
 
 LICENSE=	LGPL3
 
-NO_BUILD=	yes
 USES=		php:web
 USE_PHP=	pcre
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	smarty-php
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+SUB_FILES=	pkg-message
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 

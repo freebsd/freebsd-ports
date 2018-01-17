@@ -43,6 +43,7 @@ OPTIONS_DEFINE=	DEBUG
 DEBUG_MAKE_ENV=	LIBTYPE=debug
 
 LDFLAGS+=	-Wl,--add-needed
+LLD_UNSAFE=	yes
 
 post-patch:
 # Fix for print/freetype2 v2.7, where FT_Done_GlyphSlot function is not exported

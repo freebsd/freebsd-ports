@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	retryable
-PORTVERSION=	2.0.4
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

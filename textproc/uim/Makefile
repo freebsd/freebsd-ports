@@ -3,7 +3,7 @@
 
 PORTNAME=	uim
 PORTVERSION=	1.8.6
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	textproc
 MASTER_SITES=	https://github.com/uim/uim/releases/download/${PORTNAME}-${PORTVERSION}/
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -46,7 +46,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 .if !defined(UIM_SLAVE)
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim
 DOCSDIR_SIGSCHEME=	${PREFIX}/share/doc/uim/sigscheme
-PLIST_SUB=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}" \
+PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}" \
 		DOCSDIR_SIGSCHEME="${DOCSDIR_SIGSCHEME:S,^${PREFIX}/,,}"
 .endif
 

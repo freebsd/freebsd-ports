@@ -14,7 +14,6 @@ COMMENT=	glm-like formula to define dynamic generalized linear models
 RUN_DEPENDS=	R-cran-mvtnorm>=0.9.96_11:math/R-cran-mvtnorm \
 		R-cran-KFAS>=0.9.11_3:math/R-cran-KFAS
 
-USES=	cran:auto-plist
-
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>

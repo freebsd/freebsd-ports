@@ -2,7 +2,7 @@
 
 PORTNAME=	smokekde
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,6 +14,7 @@ USE_KDE=	kate kdelibs okular pimlibs \
 USE_QT4=	corelib dbus designer_build gui network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
+USE_CXXSTD=	gnu++98
 
 OPTIONS_DEFINE=	ATTICA
 OPTIONS_SUB=	yes

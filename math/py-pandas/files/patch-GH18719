@@ -1,0 +1,61 @@
+commit c753e1e08b01a438aaa252327de046109bf4bcfd
+Author: Joris Van den Bossche <jorisvandenbossche@gmail.com>
+Date:   Mon Dec 11 11:57:00 2017 +0100
+
+    TST: make it possible to run tests without moto installed (#18719)
+
+diff pandas/tests/io/conftest.py pandas/tests/io/conftest.py
+--- pandas/tests/io/conftest.py.orig	2017-12-11 10:57:00 UTC
++++ pandas/tests/io/conftest.py
+@@ -1,6 +1,5 @@
+ import os
+ 
+-import moto
+ import pytest
+ from pandas.io.parsers import read_table
+ 
+@@ -42,6 +41,7 @@ def s3_resource(tips_file, jsonl_file):
+     is yielded by the fixture.
+     """
+     pytest.importorskip('s3fs')
++    moto = pytest.importorskip('moto')
+     moto.mock_s3().start()
+ 
+     test_s3_files = [
+diff pandas/tests/io/json/test_compression.py pandas/tests/io/json/test_compression.py
+--- pandas/tests/io/json/test_compression.py.orig	2017-12-11 10:57:00 UTC
++++ pandas/tests/io/json/test_compression.py
+@@ -1,5 +1,4 @@
+ import pytest
+-import moto
+ 
+ import pandas as pd
+ from pandas import compat
+@@ -73,6 +72,8 @@ def test_read_zipped_json():
+ def test_with_s3_url(compression):
+     boto3 = pytest.importorskip('boto3')
+     pytest.importorskip('s3fs')
++    moto = pytest.importorskip('moto')
++
+     if compression == 'xz':
+         tm._skip_if_no_lzma()
+ 
+diff pandas/tests/io/test_excel.py pandas/tests/io/test_excel.py
+--- pandas/tests/io/test_excel.py.orig	2017-12-11 10:57:00 UTC
++++ pandas/tests/io/test_excel.py
+@@ -10,7 +10,6 @@ from warnings import catch_warnings
+ import numpy as np
+ import pytest
+ from numpy import nan
+-import moto
+ 
+ import pandas as pd
+ import pandas.util.testing as tm
+@@ -616,6 +615,7 @@ class XlrdTests(ReadingTestsBase):
+     def test_read_from_s3_url(self):
+         boto3 = pytest.importorskip('boto3')
+         pytest.importorskip('s3fs')
++        moto = pytest.importorskip('moto')
+ 
+         with moto.mock_s3():
+             conn = boto3.resource("s3", region_name="us-east-1")

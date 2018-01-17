@@ -13,3 +13,6 @@ man/man5/softhsm2.conf.5.gz
 @dir /var/lib/softhsm/tokens
 @dir /var/lib/softhsm
 @dir /var/lib
+@dir share/p11-kit/modules
+@dir share
+share/p11-kit/modules/softhsm2.module

@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/third_party/opus/BUILD.gn.orig	2017-01-26 00:49:30 UTC
++++ src/3rdparty/chromium/third_party/opus/BUILD.gn
+@@ -14,7 +14,7 @@ use_opus_arm_optimization = current_cpu 
+ # If OPUS Run Time CPU Detections (RTCD) shall be used.
+ # Based on the conditions in celt/arm/armcpu.c:
+ # defined(_MSC_VER) || defined(__linux__).
+-use_opus_rtcd = current_cpu == "arm" && (is_win || is_android || is_linux)
++use_opus_rtcd = current_cpu == "arm" && (is_win || is_android || is_linux || is_bsd)
+ 
+ config("opus_config") {
+   include_dirs = [ "src/include" ]

@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=   http://foolscap.lothar.com/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPC protocol for Twisted Python
 
 LICENSE=	MIT

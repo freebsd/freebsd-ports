@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/device/hid/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ src/3rdparty/chromium/device/hid/BUILD.gn
+@@ -56,6 +56,13 @@ source_set("hid") {
+     deps += [ "//device/udev_linux" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "hid_connection_linux.cc",
++      "hid_connection_linux.h",
++    ]
++  }
++
+   if (is_chromeos) {
+     deps += [ "//chromeos" ]
+   }

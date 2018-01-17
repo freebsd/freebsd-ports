@@ -10,8 +10,8 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	C++ networking library and application framework
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	TIRPC_CFLAGS=" " TIRPC_LIBS=" "
 USES=		libtool pathfix pkgconfig
-USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 PLIST_SUB=	ASSA_VERSION=${PORTVERSION:R:R}
 

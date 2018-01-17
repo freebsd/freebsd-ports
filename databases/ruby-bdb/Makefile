@@ -9,13 +9,14 @@ MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 		http://idaemons.org/distfiles/ruby/ \
 		LOCAL/knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	${WITH_BDB_VER}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 
 LICENSE=	RUBY
+
+BROKEN_RUBY25=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

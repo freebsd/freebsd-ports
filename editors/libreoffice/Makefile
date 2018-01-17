@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	2
+PORTREVISION=	3
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -32,7 +32,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
-		liborcus-0.12.so:devel/liborcus \
+		liborcus-0.13.so:devel/liborcus \
 		libcurl.so:ftp/curl \
 		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \

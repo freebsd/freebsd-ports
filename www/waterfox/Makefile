@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	waterfox
-DISTVERSION=	56.0.1.s20171228
+DISTVERSION=	56.0.3
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -32,7 +33,6 @@ LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 USE_GITHUB=	yes
 GH_ACCOUNT=	MrAlex94
 GH_PROJECT=	Waterfox
-GH_TAGNAME=	7da45c952fc0
 
 USE_GECKO=	gecko
 MOZ_PKGCONFIG_FILES=	# empty

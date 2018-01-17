@@ -37,6 +37,7 @@ include/adept/scalar_shortcuts.h
 include/adept/settings.h
 include/adept/solve.h
 include/adept/spread.h
+include/adept/store_transpose.h
 include/adept/traits.h
 include/adept/vector_utilities.h
 include/adept/where.h

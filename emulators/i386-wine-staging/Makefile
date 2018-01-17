@@ -22,5 +22,6 @@ PKGNAMESUFFIX=	-staging
 .include "${SLAVEDIR}/Makefile.i386"
 .else
 MASTERDIR=	${SLAVEDIR}
+BROKEN=		Staging patchset still not available for this version
 .include "${SLAVEDIR}/Makefile.inc"
 .endif

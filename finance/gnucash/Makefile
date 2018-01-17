@@ -3,6 +3,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.6.19
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -100,7 +101,7 @@ GLIB_SCHEMAS=	org.gnucash.dialogs.business.gschema.xml \
 .if ${FLAVOR:U} == guile1
 CONFIGURE_ARGS+=	--with-guile=1.8
 PLIST_SUB+=		GUILE2="@comment "
-.elif ${FLAVOR:U} == guile2
+.elif ${FLAVOR:U${FLAVORS:[1]}} == guile2
 CONFIGURE_ARGS+=	--with-guile=2.0
 PLIST_SUB+=		GUILE2=""
 .endif

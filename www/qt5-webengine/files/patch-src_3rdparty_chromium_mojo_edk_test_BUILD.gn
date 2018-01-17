@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/mojo/edk/test/BUILD.gn.orig	2017-01-26 00:49:15 UTC
++++ src/3rdparty/chromium/mojo/edk/test/BUILD.gn
+@@ -48,7 +48,7 @@ source_set("run_all_unittests") {
+     "//testing/gtest",
+   ]
+ 
+-  if (is_linux && !is_component_build) {
++  if ((is_linux || is_bsd) && !is_component_build) {
+     public_configs = [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+   }
+ }
+@@ -68,7 +68,7 @@ source_set("run_all_perftests") {
+     "run_all_perftests.cc",
+   ]
+ 
+-  if (is_linux && !is_component_build) {
++  if ((is_linux || is_bsd) && !is_component_build) {
+     public_configs = [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+   }
+ }

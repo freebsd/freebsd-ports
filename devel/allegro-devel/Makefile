@@ -120,7 +120,6 @@ post-install:
 . endfor
 .endif
 
-
 .if ${PORT_OPTIONS:MDEMOS} && ${PORT_OPTIONS:MEXAMPLES}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} demos ${STAGEDIR}${EXAMPLESDIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/cosmic_protector ${STAGEDIR}${PREFIX}/bin/

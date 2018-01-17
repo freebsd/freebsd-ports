@@ -44,6 +44,7 @@ scripts/ParasiteDragScriptTest.vspscript
 scripts/SeligAirfoilExport.vspscript
 scripts/SnapToDemo.vspscript
 scripts/Stack.vspscript
+scripts/StructuresParmContainerTest.vspscript
 scripts/SubSurface.vspscript
 scripts/TestAll.vspscript
 scripts/TestAnalysis.vspscript
@@ -84,6 +85,7 @@ scripts/Wing.vspscript
 %%DATADIR%%/SharkTeeth.tga
 %%DATADIR%%/SnapToDemo.vspscript
 %%DATADIR%%/Stack.vspscript
+%%DATADIR%%/StructuresParmContainerTest.vspscript
 %%DATADIR%%/SubSurface.vspscript
 %%DATADIR%%/TestAll.vspscript
 %%DATADIR%%/TestAnalysis.vspscript

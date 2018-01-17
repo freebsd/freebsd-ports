@@ -395,11 +395,11 @@ man/man1/omniidl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/omniidl.pdf
 %%PORTDOCS%%%%DOCSDIR%%/omnithread.html
 %%PORTDOCS%%%%DOCSDIR%%/omnithread.pdf
-%%PORTDOCS%%%%DOCSDIR%%/tex/cover.tex
-%%PORTDOCS%%%%DOCSDIR%%/tex/ode.tex
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniNames.tex
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORB.bib
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORB.tex
+%%PORTDOCS%%%%DOCSDIR%%/tex/omniURLDefs.hva
+%%PORTDOCS%%%%DOCSDIR%%/tex/omniURLDefs.sty
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniidl.tex
 %%PORTDOCS%%%%DOCSDIR%%/tex/omnithread.tex
 %%PORTDOCS%%%%DOCSDIR%%/tex/utilities.tex

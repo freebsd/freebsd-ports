@@ -1,0 +1,43 @@
+--- CMakeLists.txt.orig	2017-12-02 14:37:41 UTC
++++ CMakeLists.txt
+@@ -31,7 +31,6 @@ if (WIN32)
+ endif(WIN32)
+ 
+ if (UNIX AND NOT APPLE)
+-  set (SRCS src/glibc_compat.c ${SRCS})
+ endif(UNIX AND NOT APPLE)
+ 
+ add_executable(trezord ${SRCS})
+@@ -49,7 +48,7 @@ else(WIN32)
+   if (APPLE)
+     set(OS_LIBRARIES pthread)
+   else(APPLE)
+-    set(OS_LIBRARIES pthread dl z)
++    set(OS_LIBRARIES pthread usb z)
+   endif(APPLE)
+ endif(WIN32)
+ 
+@@ -72,7 +71,6 @@ find_package(Protobuf 2.5.0 REQUIRED)
+ find_package(jsoncpp REQUIRED)
+ 
+ # add vendored libs
+-add_subdirectory(vendor/hidapi)
+ add_subdirectory(vendor/trezor-crypto)
+ 
+ include_directories(
+@@ -81,7 +79,6 @@ include_directories(
+   ${PROTOBUF_INCLUDE_DIRS}
+   ${JSONCPP_INCLUDE_DIRS}
+   ${CURL_INCLUDE_DIRS}
+-  vendor/hidapi/hidapi
+   vendor/trezor-crypto
+   vendor/easyloggingpp)
+ 
+@@ -91,7 +88,6 @@ target_link_libraries(trezord
+   ${CURL_LIBRARIES}
+   ${PROTOBUF_LIBRARIES}
+   ${JSONCPP_LIBRARIES}
+-  hidapi
+   TrezorCrypto)
+ 
+ if(BUILD_TESTS)

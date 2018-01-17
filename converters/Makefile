@@ -59,6 +59,7 @@
     SUBDIR += ocaml-base64
     SUBDIR += ocaml-jsonm
     SUBDIR += osm2mp
+    SUBDIR += osm2pgrouting
     SUBDIR += osm2pgsql
     SUBDIR += p5-Bencode
     SUBDIR += p5-Boulder

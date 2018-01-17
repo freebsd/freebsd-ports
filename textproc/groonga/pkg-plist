@@ -81,6 +81,8 @@ lib/groonga/plugins/functions/time.so
 lib/groonga/plugins/functions/vector.so
 lib/groonga/plugins/query_expanders/tsv.a
 lib/groonga/plugins/query_expanders/tsv.so
+lib/groonga/plugins/sharding/dynamic_columns.rb
+lib/groonga/plugins/sharding/keys_parsable.rb
 %%RUBY%%lib/groonga/plugins/ruby/eval.rb
 %%RUBY%%lib/groonga/plugins/sharding.rb
 %%RUBY%%lib/groonga/plugins/sharding/logical_count.rb
@@ -120,12 +122,17 @@ lib/groonga/plugins/query_expanders/tsv.so
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/variable.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree_builder.rb
 %%RUBY%%lib/groonga/scripts/ruby/fixed_size_column.rb
+%%RUBY%%lib/groonga/scripts/ruby/groonga-log.rb
+%%RUBY%%lib/groonga/scripts/ruby/groonga-log/parser.rb
+%%RUBY%%lib/groonga/scripts/ruby/groonga-log/statistic.rb
+%%RUBY%%lib/groonga/scripts/ruby/groonga-log/version.rb
 %%RUBY%%lib/groonga/scripts/ruby/id.rb
 %%RUBY%%lib/groonga/scripts/ruby/index_column.rb
 %%RUBY%%lib/groonga/scripts/ruby/index_cursor.rb
 %%RUBY%%lib/groonga/scripts/ruby/index_info.rb
 %%RUBY%%lib/groonga/scripts/ruby/initialize/post.rb
 %%RUBY%%lib/groonga/scripts/ruby/initialize/pre.rb
+%%RUBY%%lib/groonga/scripts/ruby/labeled_arguments.rb
 %%RUBY%%lib/groonga/scripts/ruby/logger.rb
 %%RUBY%%lib/groonga/scripts/ruby/logger/level.rb
 %%RUBY%%lib/groonga/scripts/ruby/object.rb
@@ -185,6 +192,8 @@ sbin/groonga-httpd-restart
 %%DATADIR%%/examples/dictionary/init-db.sh
 %%DATADIR%%/examples/dictionary/jmdict/jmdict.rb
 %%DATADIR%%/examples/dictionary/readme.txt
+%%DATADIR%%/groonga-log/README.md
+%%DATADIR%%/groonga-log/lgpl-2.1.txt
 %%DATADIR%%/html/admin/css/groonga-admin.css
 %%DATADIR%%/html/admin/css/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%DATADIR%%/html/admin/css/redmond/images/ui-bg_flat_55_fbec88_40x100.png

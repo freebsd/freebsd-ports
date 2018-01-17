@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slack-notifier
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

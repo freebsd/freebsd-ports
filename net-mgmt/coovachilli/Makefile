@@ -29,8 +29,8 @@ OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
 	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_MAN} ${FILESDIR}/main.conf.sample ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_MAN} ${FILESDIR}/pf.conf.sample ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_MAN} ${FILESDIR}/ipfw-config.sample ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/main.conf.sample ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/pf.conf.sample ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/ipfw-config.sample ${STAGEDIR}/${EXAMPLESDIR}
 
 .include <bsd.port.mk>

@@ -1,0 +1,139 @@
+commit 2e3c1926dbbb
+Author: Cameron McCormack <cam@mcc.id.au>
+Date:   Thu Dec 21 14:07:31 2017 -0500
+
+    Bug 1425000 - Use a consistent window for CSP, etc. for FontFace loads. r=jfkthame, a=abillings
+    
+    MozReview-Commit-ID: F2xhsgTBI1V
+    
+    --HG--
+    extra : rebase_source : ba02ceab0317edfd9a4dd6c05618c5dbbcc4f830
+    extra : source : c035522097125e8cf8fc8cbbc110be62a12aa055
+---
+ gfx/thebes/gfxUserFontSet.h  |  4 ++++
+ layout/style/FontFace.cpp    |  5 +++++
+ layout/style/FontFace.h      |  2 ++
+ layout/style/FontFaceSet.cpp | 18 ++++++++++--------
+ layout/style/FontFaceSet.h   |  4 ++--
+ 5 files changed, 23 insertions(+), 10 deletions(-)
+
+diff --git gfx/thebes/gfxUserFontSet.h gfx/thebes/gfxUserFontSet.h
+index 076b7c119c6a..beddfc3bc0be 100644
+--- gfx/thebes/gfxUserFontSet.h
++++ gfx/thebes/gfxUserFontSet.h
+@@ -673,6 +673,10 @@ public:
+     void GetFamilyNameAndURIForLogging(nsACString& aFamilyName,
+                                        nsACString& aURI);
+ 
++#ifdef DEBUG
++    gfxUserFontSet* GetUserFontSet() const { return mFontSet; }
++#endif
++
+ protected:
+     const uint8_t* SanitizeOpenTypeData(const uint8_t* aData,
+                                         uint32_t aLength,
+diff --git layout/style/FontFace.cpp layout/style/FontFace.cpp
+index 76d26910bb62..eeda8ca5ddb8 100644
+--- layout/style/FontFace.cpp
++++ layout/style/FontFace.cpp
+@@ -672,6 +672,11 @@ FontFace::SetUserFontEntry(gfxUserFontEntry* aEntry)
+   if (mUserFontEntry) {
+     mUserFontEntry->mFontFaces.AppendElement(this);
+ 
++    MOZ_ASSERT(mUserFontEntry->GetUserFontSet() ==
++                 mFontFaceSet->GetUserFontSet(),
++               "user font entry must be associated with the same user font set "
++               "as the FontFace");
++
+     // Our newly assigned user font entry might be in the process of or
+     // finished loading, so set our status accordingly.  But only do so
+     // if we're not going "backwards" in status, which could otherwise
+diff --git layout/style/FontFace.h layout/style/FontFace.h
+index 69e76c9b848a..355b340f9eed 100644
+--- layout/style/FontFace.h
++++ layout/style/FontFace.h
+@@ -94,6 +94,8 @@ public:
+   void AddFontFaceSet(FontFaceSet* aFontFaceSet);
+   void RemoveFontFaceSet(FontFaceSet* aFontFaceSet);
+ 
++  FontFaceSet* GetPrimaryFontFaceSet() const { return mFontFaceSet; }
++
+   /**
+    * Gets the family name of the FontFace as a raw string (such as 'Times', as
+    * opposed to GetFamily, which returns a CSS-escaped string, such as
+diff --git layout/style/FontFaceSet.cpp layout/style/FontFaceSet.cpp
+index f5aa30f5d1ca..fe372044f6b5 100644
+--- layout/style/FontFaceSet.cpp
++++ layout/style/FontFaceSet.cpp
+@@ -983,7 +983,7 @@ FontFaceSet::InsertRuleFontFace(FontFace* aFontFace, SheetType aSheetType,
+   mUserFontSet->AddUserFontEntry(fontfamily, entry);
+ }
+ 
+-already_AddRefed<gfxUserFontEntry>
++/* static */ already_AddRefed<gfxUserFontEntry>
+ FontFaceSet::FindOrCreateUserFontEntryFromFontFace(FontFace* aFontFace)
+ {
+   nsAutoString fontfamily;
+@@ -997,11 +997,13 @@ FontFaceSet::FindOrCreateUserFontEntryFromFontFace(FontFace* aFontFace)
+                                                SheetType::Doc);
+ }
+ 
+-already_AddRefed<gfxUserFontEntry>
++/* static */ already_AddRefed<gfxUserFontEntry>
+ FontFaceSet::FindOrCreateUserFontEntryFromFontFace(const nsAString& aFamilyName,
+                                                    FontFace* aFontFace,
+                                                    SheetType aSheetType)
+ {
++  FontFaceSet* set = aFontFace->GetPrimaryFontFaceSet();
++
+   nsCSSValue val;
+   nsCSSUnit unit;
+ 
+@@ -1128,7 +1130,7 @@ FontFaceSet::FindOrCreateUserFontEntryFromFontFace(const nsAString& aFamilyName,
+           face->mURI = uri ? new gfxFontSrcURI(uri) : nullptr;
+           URLValue* url = val.GetURLStructValue();
+           face->mReferrer = url->mExtraData->GetReferrer();
+-          face->mReferrerPolicy = mDocument->GetReferrerPolicy();
++          face->mReferrerPolicy = set->mDocument->GetReferrerPolicy();
+           face->mOriginPrincipal =
+             new gfxFontSrcPrincipal(url->mExtraData->GetPrincipal());
+           NS_ASSERTION(face->mOriginPrincipal, "null origin principal in @font-face rule");
+@@ -1195,11 +1197,11 @@ FontFaceSet::FindOrCreateUserFontEntryFromFontFace(const nsAString& aFamilyName,
+   }
+ 
+   RefPtr<gfxUserFontEntry> entry =
+-    mUserFontSet->FindOrCreateUserFontEntry(aFamilyName, srcArray, weight,
+-                                            stretch, italicStyle,
+-                                            featureSettings,
+-                                            languageOverride,
+-                                            unicodeRanges, fontDisplay);
++    set->mUserFontSet->FindOrCreateUserFontEntry(aFamilyName, srcArray, weight,
++                                                 stretch, italicStyle,
++                                                 featureSettings,
++                                                 languageOverride,
++                                                 unicodeRanges, fontDisplay);
+   return entry.forget();
+ }
+ 
+diff --git layout/style/FontFaceSet.h layout/style/FontFaceSet.h
+index a28afe39a13a..46c25087564d 100644
+--- layout/style/FontFaceSet.h
++++ layout/style/FontFaceSet.h
+@@ -136,7 +136,7 @@ public:
+    * Finds an existing entry in the user font cache or creates a new user
+    * font entry for the given FontFace object.
+    */
+-  already_AddRefed<gfxUserFontEntry>
++  static already_AddRefed<gfxUserFontEntry>
+     FindOrCreateUserFontEntryFromFontFace(FontFace* aFontFace);
+ 
+   /**
+@@ -268,7 +268,7 @@ private:
+     bool mLoadEventShouldFire;
+   };
+ 
+-  already_AddRefed<gfxUserFontEntry> FindOrCreateUserFontEntryFromFontFace(
++  static already_AddRefed<gfxUserFontEntry> FindOrCreateUserFontEntryFromFontFace(
+                                                    const nsAString& aFamilyName,
+                                                    FontFace* aFontFace,
+                                                    SheetType aSheetType);

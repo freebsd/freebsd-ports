@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-json
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Extraction of the JSON parsing tools between providers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-fog-core>=1.0:devel/rubygem-fog-core \
+RUN_DEPENDS=	rubygem-fog-core>=2.0:devel/rubygem-fog-core \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json
 
 NO_ARCH=	yes

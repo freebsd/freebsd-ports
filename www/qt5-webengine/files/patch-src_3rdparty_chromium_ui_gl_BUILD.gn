@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/ui/gl/BUILD.gn.orig	2017-01-26 00:49:31 UTC
++++ src/3rdparty/chromium/ui/gl/BUILD.gn
+@@ -13,7 +13,7 @@ declare_args() {
+   enable_swiftshader = is_chrome_branded && is_win
+ }
+ 
+-use_egl = is_win || is_android || is_linux
++use_egl = is_win || is_android || is_linux || is_bsd
+ use_glx = use_x11 || ozone_platform_x11
+ 
+ if (is_android) {
+@@ -170,7 +170,7 @@ component("gl") {
+       "gl_surface_egl.h",
+     ]
+   }
+-  if (is_android || is_linux) {
++  if (is_android || is_linux || is_bsd) {
+     sources += [
+       "gl_implementation_osmesa.cc",
+       "gl_implementation_osmesa.h",

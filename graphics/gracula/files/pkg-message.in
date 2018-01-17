@@ -1,7 +1,7 @@
 
         Please read the file %%DOCSDIR%%/README
         to learn how to use Graphic Counter Language (if you haven't
-	installed with -D NOPORTDOCS).
+	installed WITHOUT=DOCS).
 
         An introductory tutorial, and a GCL FAQ, can be found at
         http://www.whizkidtech.redprince.net/gcl/

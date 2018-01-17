@@ -123,6 +123,9 @@ MANPAGES=	my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack
 		mysqltest.1 perror.1 replace.1 resolve_stack_dump.1 resolveip.1
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
+# issue 220865: Currently there's no source to be built with server-side support.
+# But this keeps the pkg-plist not overlaping
+CMAKE_ARGS+=	-DWITH_AUTHENTICATION_LDAP=0
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/db/mysql
@@ -133,6 +136,9 @@ post-install:
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MANPAGES}/' ${WRKSRC}/man/CMakeLists.txt
+	# issue 220865: MySQL developers forgot that FreeBSD != Linux
+	@${REINPLACE_CMD} -e 's|%%FREEBSD_LOCAL_LIB%%|${LOCALBASE}/lib|g' \
+	${WRKSRC}/cmake/plugin.cmake
 
 .include <bsd.port.pre.mk>
 

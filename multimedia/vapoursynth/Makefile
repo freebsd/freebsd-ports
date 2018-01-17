@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vapoursynth
-PORTVERSION=	R40
-PORTREVISION=	2
+PORTVERSION=	R42.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -121,7 +120,7 @@ post-build-DOCS-on:
 	fi
 
 post-install-DOCS-on:
-	${INSTALL_MAN} ${WRKSRC}/doc/_build/texinfo/VapourSynth.info \
+	${INSTALL_DATA} ${WRKSRC}/doc/_build/texinfo/VapourSynth.info \
 		${STAGEDIR}${PREFIX}/${INFO_PATH}
 	(cd ${WRKSRC}/doc/_build/html && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})

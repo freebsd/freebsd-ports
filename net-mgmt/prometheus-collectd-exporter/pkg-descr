@@ -1,0 +1,6 @@
+An exporter for collectd. It accepts collectd's binary network
+protocol as sent by collectd's network plugins and metrics in JSON
+format via HTTP POST as sent by colletd's write_http_plugin, and
+transform and exposes them for consumption by Prometheus.
+
+WWW: https://github.com/prometheus/collectd_exporter

@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-
 PLIST_FILES=	bin/wmpinboard \
 		man/man1/wmpinboard.1.gz
 

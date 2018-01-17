@@ -1,0 +1,11 @@
+--- fog-ovirt.gemspec.orig	2018-01-06 07:07:52 UTC
++++ fog-ovirt.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<fog-core>.freeze, ["~> 1.45"])
++      s.add_runtime_dependency(%q<fog-core>.freeze, [">= 1.45"])
+       s.add_runtime_dependency(%q<fog-json>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<fog-xml>.freeze, ["~> 0.1.1"])
+       s.add_runtime_dependency(%q<rbovirt>.freeze, ["~> 0.1.4"])

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.4
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/
 DISTNAME=	samhain_signed-${PORTVERSION}
@@ -132,8 +132,6 @@ CONFIGURE_ARGS+=	--enable-network=client \
 			--with-config-file=REQ_FROM_SERVER
 PLIST_SUB+=		SAMHAIN="" SETPWD="" YULE="@comment "
 EXTRA_PATCHES+=		${FILESDIR}/fixsamhainrc.patch
-MAN5+=			samhainrc.5
-MAN8+=			samhain.8
 .elif defined(WITH_SERVER)
 USERS=			yule
 GROUPS=			yule
@@ -141,14 +139,10 @@ CONFIGURE_ARGS+=	--enable-network=server
 SUB_LIST+=		WITH_YULE="yes"
 PLIST_SUB+=		YULE="" SAMHAIN="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=		${FILESDIR}/fixyulerc.patch
-MAN5+=			yulerc.5
-MAN8+=			yule.8
 .else
 SUB_LIST+=		WITH_YULE=""
 PLIST_SUB+=		SAMHAIN="" YULE="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=		${FILESDIR}/fixsamhainrc.patch
-MAN5+=			samhainrc.5
-MAN8+=			samhain.8
 .endif
 
 pre-everything::
@@ -205,16 +199,16 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/MANUAL-2_4.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-client+server.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-client+server-troubleshooting.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-samhain+GnuPG.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-write-modules.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/FAQ.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/README.UPGRADE ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/README ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/BUGS ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/sh_mounts.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/sh_userfiles.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/MANUAL-2_4.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/HOWTO-client+server.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/HOWTO-client+server-troubleshooting.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/HOWTO-samhain+GnuPG.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/HOWTO-write-modules.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/FAQ.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/README.UPGRADE ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/BUGS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/sh_mounts.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/sh_userfiles.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

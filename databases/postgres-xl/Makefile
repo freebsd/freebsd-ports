@@ -20,6 +20,7 @@ CONFLICTS=	postgresql[^${PORTVERSION:R:R}]?-client* \
 
 USES=		gmake readline
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-world
 

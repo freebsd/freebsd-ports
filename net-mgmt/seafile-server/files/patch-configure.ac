@@ -1,4 +1,4 @@
---- configure.ac.orig	2016-12-27 07:02:58 UTC
+--- configure.ac.orig	2017-11-03 09:11:19 UTC
 +++ configure.ac
 @@ -51,8 +51,16 @@ else
    AC_MSG_RESULT(no)
@@ -30,7 +30,7 @@
  AC_ARG_ENABLE(python,
                AC_HELP_STRING([--enable-python],[build seafile python binding]),
                [compile_python=$enableval],
-@@ -89,6 +102,7 @@ AM_CONDITIONAL([COMPILE_FUSE], [test "${
+@@ -89,6 +102,7 @@ AM_CONDITIONAL([COMPILE_FUSE], [test "${compile_fuse}"
  
  AM_CONDITIONAL([WIN32], [test "$bwin32" = "true"])
  AM_CONDITIONAL([MACOS], [test "$bmac" = "true"])
@@ -47,7 +47,7 @@
    LIB_ICONV=-liconv
  elif test "$bmac" = true ; then
    LIB_WS32=
-@@ -149,6 +166,24 @@ elif test "$bmac" = true ; then
+@@ -149,6 +165,24 @@ elif test "$bmac" = true ; then
    LIB_MAC="-framework CoreServices"
    LIB_CRYPT32=
    LIB_ICONV=-liconv
@@ -72,7 +72,7 @@
  else
    LIB_WS32=
    LIB_GDI32=
-@@ -162,6 +199,8 @@ else
+@@ -162,6 +196,8 @@ else
    LIB_MAC=
    MSVC_CFLAGS=
    LIB_CRYPT32=
@@ -81,7 +81,7 @@
  fi
  
  AC_SUBST(LIB_WS32)
-@@ -174,6 +214,8 @@ AC_SUBST(LIB_IPHLPAPI)
+@@ -174,6 +210,8 @@ AC_SUBST(LIB_IPHLPAPI)
  AC_SUBST(LIB_SHELL32)
  AC_SUBST(LIB_PSAPI)
  AC_SUBST(LIB_MAC)
@@ -90,3 +90,27 @@
  AC_SUBST(MSVC_CFLAGS)
  AC_SUBST(LIB_CRYPT32)
  AC_SUBST(LIB_ICONV)
+@@ -189,6 +227,8 @@ ZDB_REQUIRED=2.10
+ CURL_REQUIRED=7.17
+ FUSE_REQUIRED=2.7.3
+ ZLIB_REQUIRED=1.2.0
++LIBEVHTP_REQUIRED=1.2.10
++ONIGURUMA_REQUIRED=5.9.2
+ 
+ PKG_CHECK_MODULES(SSL, [openssl])
+ AC_SUBST(SSL_CFLAGS)
+@@ -221,6 +261,14 @@ AC_SUBST(LIBEVENT_LIBS)
+ PKG_CHECK_MODULES(ZLIB, [zlib >= $ZLIB_REQUIRED])
+ AC_SUBST(ZLIB_CFLAGS)
+ AC_SUBST(ZLIB_LIBS)
++
++PKG_CHECK_MODULES(LIBEVHTP, [evhtp >= $LIBEVHTP_REQUIRED])
++AC_SUBST(LIBEVHTP_CFLAGS)
++AC_SUBST(LIBEVHTP_LIBS)
++
++PKG_CHECK_MODULES(ONIGURUMA, [oniguruma >= $ONIGURUMA_REQUIRED])
++AC_SUBST(ONIGURUMA_CFLAGS)
++AC_SUBST(ONIGURUMA_LIBS)
+ 
+ if test x${compile_python} = xyes; then
+     AM_PATH_PYTHON([2.6])

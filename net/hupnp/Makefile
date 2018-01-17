@@ -3,7 +3,7 @@
 
 PORTNAME=	hupnp
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 DISTNAME=	herqq-${PORTVERSION}
@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/hupnp/LICENSE_LGPLv3.txt
 USES=		gmake qmake zip
 USE_QT4=	corelib network xml dbus gui \
 		moc_build rcc_build uic_build
+USE_CXXSTD=	gnu++98
 
 QMAKE_ARGS=	"CONFIG+=DISABLE_AVTESTAPP DISABLE_TESTAPP"
 

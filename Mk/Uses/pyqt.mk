@@ -75,6 +75,7 @@ QSCI2_DISTNAME=		QScintilla-gpl-${QSCI2_VERSION}
 PYQT4_LICENSE=		GPLv3
 PYQT5_LICENSE=		GPLv3
 
+# Keep these synchronized with OPTIONS_DEFINE in devel/py-qt4 and devel/py-qt5
 # PyQt components split up into pyqt4/pyqt5/...
 _USE_PYQT_ALL=		core dbus dbussupport demo designer designerplugin \
 			gui multimedia network opengl qscintilla2 \
@@ -84,7 +85,7 @@ _USE_PYQT4_ONLY=	assistant declarative doc \
 			help phonon script scripttools
 # List of components only in pyqt5
 _USE_PYQT5_ONLY=	multimediawidgets printsupport qml serialport \
-			webkitwidgets widgets
+			webchannel webengine webkitwidgets widgets
 
 # Unversioned variables for the rest of the file
 PYQT_VERSION=		${PYQT${_PYQT_VERSION}_VERSION}
@@ -118,6 +119,8 @@ py-scripttools_PATH=	${PYQT_PY_RELNAME}-scripttools>=${PYQT_VERSION}
 py-sql_PATH=		${PYQT_PY_RELNAME}-sql>=${PYQT_VERSION}
 py-svg_PATH=		${PYQT_PY_RELNAME}-svg>=${PYQT_VERSION}
 py-test_PATH=		${PYQT_PY_RELNAME}-test>=${PYQT_VERSION}
+py-webchannel_PATH=	${PYQT_PY_RELNAME}-webchannel>=${PYQT_VERSION}
+py-webengine_PATH=	${PYQT_PY_RELNAME}-webengine>=${PYQT_VERSION}
 py-webkit_PATH=		${PYQT_PY_RELNAME}-webkit>=${PYQT_VERSION}
 py-xml_PATH=		${PYQT_PY_RELNAME}-xml>=${PYQT_VERSION}
 py-xmlpatterns_PATH=	${PYQT_PY_RELNAME}-xmlpatterns>=${PYQT_VERSION}
@@ -126,7 +129,7 @@ py-multimediawidgets_PATH=	${PYQT_PY_RELNAME}-multimediawidgets>=${PYQT_VERSION}
 py-qml_PATH=			${PYQT_PY_RELNAME}-qml>=${PYQT_VERSION}
 py-printsupport_PATH=		${PYQT_PY_RELNAME}-printsupport>=${PYQT_VERSION}
 py-serialport_PATH=		${PYQT_PY_RELNAME}-serialport>=${PYQT_VERSION}
-py-webkitwidgets_PATH= 		${PYQT_PY_RELNAME}-webkitwidgets>=${PYQT_VERSION}
+py-webkitwidgets_PATH=		${PYQT_PY_RELNAME}-webkitwidgets>=${PYQT_VERSION}
 py-widgets_PATH=		${PYQT_PY_RELNAME}-widgets>=${PYQT_VERSION}
 
 py-sip_PORT=		devel/py-sip
@@ -152,6 +155,8 @@ py-scripttools_PORT=	devel/${PYQT_RELNAME}-scripttools
 py-sql_PORT=		databases/${PYQT_RELNAME}-sql
 py-svg_PORT=		graphics/${PYQT_RELNAME}-svg
 py-test_PORT=		devel/${PYQT_RELNAME}-test
+py-webchannel_PORT=	www/${PYQT_RELNAME}-webchannel
+py-webengine_PORT=	www/${PYQT_RELNAME}-webengine
 py-webkit_PORT=		www/${PYQT_RELNAME}-webkit
 py-xml_PORT=		textproc/${PYQT_RELNAME}-xml
 py-xmlpatterns_PORT=	textproc/${PYQT_RELNAME}-xmlpatterns
@@ -160,7 +165,7 @@ py-multimediawidgets_PORT=	multimedia/py-qt5-multimediawidgets
 py-qml_PORT=			lang/py-qt5-qml
 py-printsupport_PORT=		print/py-qt5-printsupport
 py-serialport_PORT=		comms/py-qt5-serialport
-py-webkitwidgets_PORT= 		www/py-qt5-webkitwidgets
+py-webkitwidgets_PORT=		www/py-qt5-webkitwidgets
 py-widgets_PORT=		x11-toolkits/py-qt5-widgets
 
 py-assistant_DESC=	Python bindings for QtAssistant module
@@ -184,6 +189,8 @@ py-scripttools_DESC=	Python bindings for QtScriptTools module
 py-sql_DESC=		Python bindings for QtSql module
 py-svg_DESC=		Python bindings for QtSvg module
 py-test_DESC=		Python bindings for QtTest module
+py-webchannel_DESC=	Python bindings for QtWebChannel module
+py-webengine_DESC=	Python bindings for QtWebEngine module
 py-webkit_DESC=		Python bindings for QtWebKit module
 py-xml_DESC=		Python bindings for QtXml module
 py-xmlpatterns_DESC=	Python bindings for QtXmlPatterns module
@@ -192,7 +199,7 @@ py-multimediawidgets_DESC=	Python bindings for QtMultimediaWidgets module
 py-qml_DESC=			Python bindings for Qml module
 py-printsupport_DESC=		Python bindings for Printsupport module
 py-serialport_DESC=		Python bindings for QtSerialPort
-py-webkitwidgets_DESC= 		Python bindings for QtWebKitWidgets module
+py-webkitwidgets_DESC=		Python bindings for QtWebKitWidgets module
 py-widgets_DESC=		Python bindings for QTWidgets module
 
 SIPDIR_REL=	share/py-sip/PyQt${_PYQT_VERSION}

@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/third_party/libxslt/BUILD.gn.orig	2017-01-26 00:49:30 UTC
++++ src/3rdparty/chromium/third_party/libxslt/BUILD.gn
+@@ -82,7 +82,7 @@ static_library("libxslt") {
+   public_configs = [ ":libxslt_config" ]
+ 
+   cflags = []
+-  if (is_linux || is_android) {
++  if (is_linux || is_bsd || is_android) {
+     include_dirs = [ "linux" ]
+   } else if (is_win) {
+     include_dirs = [ "win32" ]

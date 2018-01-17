@@ -16,10 +16,10 @@ COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liborc-0.4.so:devel/orc
-
 NOT_FOR_ARCHS=		aarch64
 NOT_FOR_ARCHS_REASON=	invokes x86 asm
+
+LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
 PORTSCOUT=	limit:0\.10\..*
 

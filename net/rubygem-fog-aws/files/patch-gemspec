@@ -1,0 +1,11 @@
+--- fog-aws.gemspec.orig	2018-01-06 12:37:47 UTC
++++ fog-aws.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
+       s.add_development_dependency(%q<shindo>.freeze, ["~> 0.3"])
+       s.add_development_dependency(%q<rubyzip>.freeze, ["~> 1.2.1"])
+-      s.add_runtime_dependency(%q<fog-core>.freeze, ["~> 1.38"])
++      s.add_runtime_dependency(%q<fog-core>.freeze, [">= 1.38"])
+       s.add_runtime_dependency(%q<fog-json>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<fog-xml>.freeze, ["~> 0.1"])
+       s.add_runtime_dependency(%q<ipaddress>.freeze, ["~> 0.8"])

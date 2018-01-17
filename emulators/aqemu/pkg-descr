@@ -1,4 +1,5 @@
-AQEMU is a QEMU GUI written in Qt4. The program have user-friendly
-interface and allows to set up the majority of QEMU options.
+AQEMU is a Qt5 GUI for virtual machines using QEMU as the backend.
+The application has a user-friendly interface and allows to set a
+large number of options.
 
-WWW: https://sourceforge.net/projects/aqemu/
+WWW: https://github.com/tobimensch/aqemu

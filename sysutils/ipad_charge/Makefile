@@ -5,7 +5,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	sysutils
 DISTFILES=	# empty
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic iPad USB charging utility
 
 LICENSE=	BSD2CLAUSE

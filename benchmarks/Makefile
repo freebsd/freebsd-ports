@@ -38,6 +38,7 @@
     SUBDIR += iperf3
     SUBDIR += libmicro
     SUBDIR += lmbench
+    SUBDIR += lzbench
     SUBDIR += mdtest
     SUBDIR += nbench
     SUBDIR += netio

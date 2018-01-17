@@ -17,5 +17,4 @@ USE_PYTHON=	distutils autoplist
 post-patch:
 	@${REINPLACE_CMD} -e 's#(doc_loc, data_fnames)##g' ${WRKSRC}/setup.py
 
-
 .include <bsd.port.mk>

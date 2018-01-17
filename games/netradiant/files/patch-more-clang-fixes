@@ -1,5 +1,16 @@
---- contrib/bobtoolz/DTreePlanter.h.orig	2013-06-30 22:04:35.000000000 +0800
-+++ contrib/bobtoolz/DTreePlanter.h	2013-09-12 22:07:28.000000000 +0800
+--- contrib/bobtoolz/DPatch.cpp.orig	2013-06-30 14:04:35 UTC
++++ contrib/bobtoolz/DPatch.cpp
+@@ -302,7 +302,7 @@ DPatch* DPatch::MergePatches( patch_merge_t merge_info
+ 
+ 	int newHeight = p1->height + p2->height - 1;
+ 	if ( newHeight > MAX_PATCH_HEIGHT ) {
+-		return false;
++		return NULL;
+ 	}
+ 
+ 	DPatch* newPatch = new DPatch();
+--- contrib/bobtoolz/DTreePlanter.h.orig	2013-06-30 14:04:35 UTC
++++ contrib/bobtoolz/DTreePlanter.h
 @@ -20,6 +20,8 @@
  #ifndef __DTREE_H__
  #define __DTREE_H__
@@ -9,8 +20,8 @@
  #include "qerplugin.h"
  #include "signal/isignal.h"
  #include "string/string.h"
---- contrib/bobtoolz/dialogs/dialogs-gtk.cpp.orig	2013-06-30 22:04:35.000000000 +0800
-+++ contrib/bobtoolz/dialogs/dialogs-gtk.cpp	2013-09-12 22:09:01.000000000 +0800
+--- contrib/bobtoolz/dialogs/dialogs-gtk.cpp.orig	2013-06-30 14:04:35 UTC
++++ contrib/bobtoolz/dialogs/dialogs-gtk.cpp
 @@ -22,6 +22,7 @@
  
  #include "str.h"
@@ -19,8 +30,8 @@
  #include <gtk/gtk.h>
  #include "gtkutil/pointer.h"
  
---- contrib/bobtoolz/misc.cpp.orig	2013-06-30 22:04:35.000000000 +0800
-+++ contrib/bobtoolz/misc.cpp	2013-09-12 22:10:25.000000000 +0800
+--- contrib/bobtoolz/misc.cpp.orig	2013-06-30 14:04:35 UTC
++++ contrib/bobtoolz/misc.cpp
 @@ -31,7 +31,7 @@
  
  #include "funchandlers.h"
@@ -30,8 +41,8 @@
  #include <sys/types.h>
  #include <unistd.h>
  #endif
---- contrib/bobtoolz/shapes.cpp.orig	2013-06-30 22:04:35.000000000 +0800
-+++ contrib/bobtoolz/shapes.cpp	2013-09-12 22:20:34.000000000 +0800
+--- contrib/bobtoolz/shapes.cpp.orig	2013-06-30 14:04:35 UTC
++++ contrib/bobtoolz/shapes.cpp
 @@ -40,6 +40,7 @@
  #include <list>
  #include <map>
@@ -40,8 +51,8 @@
  #include <time.h>
  
  #include "scenelib.h"
---- contrib/bobtoolz/visfind.cpp.orig	2013-06-30 22:04:35.000000000 +0800
-+++ contrib/bobtoolz/visfind.cpp	2013-09-12 22:21:08.000000000 +0800
+--- contrib/bobtoolz/visfind.cpp.orig	2013-06-30 14:04:35 UTC
++++ contrib/bobtoolz/visfind.cpp
 @@ -8,6 +8,7 @@
  #include "bsploader.h"
  
@@ -50,8 +61,8 @@
  
  typedef struct {
  	int portalclusters;
---- contrib/sunplug/sunplug.cpp.orig	2013-06-30 22:04:35.000000000 +0800
-+++ contrib/sunplug/sunplug.cpp	2013-09-12 22:24:14.000000000 +0800
+--- contrib/sunplug/sunplug.cpp.orig	2013-06-30 14:04:35 UTC
++++ contrib/sunplug/sunplug.cpp
 @@ -35,6 +35,7 @@
  #include "qerplugin.h"   // declaration to use other interfaces as a plugin
  
@@ -60,8 +71,8 @@
  
  void about_plugin_window();
  void MapCoordinator();
---- contrib/ufoaiplug/ufoai_level.cpp.orig	2013-06-30 22:04:35.000000000 +0800
-+++ contrib/ufoaiplug/ufoai_level.cpp	2013-09-12 22:24:53.000000000 +0800
+--- contrib/ufoaiplug/ufoai_level.cpp.orig	2013-06-30 14:04:35 UTC
++++ contrib/ufoaiplug/ufoai_level.cpp
 @@ -25,6 +25,7 @@
  
  #include "string/string.h"
@@ -70,8 +81,8 @@
  
  class Level;
  
---- libs/cmdlib/cmdlib.cpp.orig	2013-06-30 22:04:34.000000000 +0800
-+++ libs/cmdlib/cmdlib.cpp	2013-09-12 22:22:08.000000000 +0800
+--- libs/cmdlib/cmdlib.cpp.orig	2013-06-30 14:04:34 UTC
++++ libs/cmdlib/cmdlib.cpp
 @@ -27,6 +27,7 @@
  
  #include <string.h>
@@ -80,3 +91,42 @@
  
  #include "string/string.h"
  #include "os/path.h"
+--- libs/scenelib.h.orig	2013-06-30 14:04:34 UTC
++++ libs/scenelib.h
+@@ -32,7 +32,6 @@
+ #include "math/aabb.h"
+ #include "transformlib.h"
+ #include "generic/callback.h"
+-#include "generic/reference.h"
+ #include "container/stack.h"
+ #include "typesystem.h"
+ 
+@@ -286,6 +285,7 @@ inline bool operator!=( scene::Node& node, scene::Node
+ 	return !::operator==( node, other );
+ }
+ 
++#include "generic/reference.h"
+ 
+ inline scene::Node& NewNullNode(){
+ 	return ( new scene::NullNode )->node();
+--- plugins/mapq3/parse.h.orig	2013-06-30 14:04:35 UTC
++++ plugins/mapq3/parse.h
+@@ -40,6 +40,7 @@ namespace scene
+ class Node;
+ }
+ 
++#include "scenelib.h"
+ #include "generic/referencecounted.h"
+ typedef SmartReference<scene::Node, IncRefDecRefCounter<scene::Node> > NodeSmartReference;
+ 
+--- radiant/texwindow.cpp.orig	2013-06-30 14:04:35 UTC
++++ radiant/texwindow.cpp
+@@ -1880,7 +1880,7 @@ void TextureBrowser_SetNotex(){
+ 	name << GlobalRadiant().getAppPath() << "bitmaps/notex.png";
+ 	g_notex = name.c_str();
+ 
+-	name = NULL;
++	name.clear();
+ 	name << GlobalRadiant().getAppPath() << "bitmaps/shadernotex.png";
+ 	g_shadernotex = name.c_str();
+ }

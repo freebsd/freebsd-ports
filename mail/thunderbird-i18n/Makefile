@@ -56,7 +56,6 @@ do-extract:
 	done
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
 
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${XPI_LINKFARMS:S,^,${STAGEDIR},}
 	cd ${WRKSRC}; ${PAX} -rw . ${STAGEDIR}${XPI_LIBDIR}
@@ -78,5 +77,4 @@ list-langs:
 		${AWK} 'BEGIN{ORS=" "}{print $$1}END{printf "\nNumber of languages: %d\n",NR}'
 
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
-
 .include <bsd.port.post.mk>

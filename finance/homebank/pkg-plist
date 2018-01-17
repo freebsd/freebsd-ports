@@ -2,6 +2,7 @@ bin/homebank
 share/appdata/homebank.appdata.xml
 share/application-registry/homebank.applications
 share/applications/homebank.desktop
+%%DATADIR%%/datas/ChangeLog
 %%DATADIR%%/datas/example.xhb
 %%DATADIR%%/datas/hb-categories-de.csv
 %%DATADIR%%/datas/hb-categories-en.csv
@@ -57,6 +58,8 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/8.png
 %%DATADIR%%/help/images/9.png
 %%DATADIR%%/help/images/arrow.png
+%%DATADIR%%/help/images/d-info.png
+%%DATADIR%%/help/images/d-warn.png
 %%DATADIR%%/help/images/dlg-account1.png
 %%DATADIR%%/help/images/dlg-account2.png
 %%DATADIR%%/help/images/dlg-assign1.png
@@ -128,7 +131,6 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/images/use-vehiclecost1.png
 %%DATADIR%%/help/images/use-vehiclecost2.png
 %%DATADIR%%/help/images/use-vehiclecost3.png
-%%DATADIR%%/help/images/warn.png
 %%DATADIR%%/help/images/web_title.png
 %%DATADIR%%/help/images/win-account1.png
 %%DATADIR%%/help/images/win-balance1.png

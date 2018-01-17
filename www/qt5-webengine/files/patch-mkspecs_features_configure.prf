@@ -1,0 +1,20 @@
+--- mkspecs/features/configure.prf.orig	2017-04-19 08:37:44 UTC
++++ mkspecs/features/configure.prf
+@@ -4,7 +4,7 @@ load(functions)
+ 
+ defineTest(runConfigure) {
+     webengine_successfully_configured: return(true)
+-    linux:contains(QT_CONFIG,no-pkg-config) {
++    unix:contains(QT_CONFIG,no-pkg-config) {
+         skipBuild("pkg-config is required")
+         return(false)
+     }
+@@ -53,7 +53,7 @@ defineTest(runConfigure) {
+         qtConfig(embedded): WEBENGINE_CONFIG += reduce_binary_size
+     }
+ 
+-    linux {
++    unix {
+         QT_FOR_CONFIG += gui-private
+         !config_khr:skipBuild("khronos development headers appear to be missing (mesa/libegl1-mesa-dev)")
+ 

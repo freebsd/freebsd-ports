@@ -19,4 +19,7 @@ USES=		gem shebangfix
 SHEBANG_FILES=	script/bootstrap \
 		script/setup
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=2018-02-08
+
 .include <bsd.port.mk>

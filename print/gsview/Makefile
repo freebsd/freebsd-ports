@@ -49,8 +49,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/printer.ini \
 	    ${STAGEDIR}${PREFIX}/etc/gsview/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_MAN} gsview.css cdorder.txt regorder.txt \
+	cd ${WRKSRC} && ${INSTALL_DATA} gsview.css cdorder.txt regorder.txt \
 	    Readme.htm LICENCE ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/bin/*.htm ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/bin/*.htm ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

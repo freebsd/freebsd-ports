@@ -16,5 +16,4 @@ USES=	tar:bzip2
 PLIST_FILES=	bin/rfbproxy \
 		man/man1/rfbproxy.1.gz
 
-
 .include <bsd.port.mk>

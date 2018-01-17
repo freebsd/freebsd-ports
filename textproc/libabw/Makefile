@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libabw
-PORTVERSION=	0.1.1
-PORTREVISION=	7
+PORTVERSION=	0.1.2
 CATEGORIES=	textproc
 MASTER_SITES=	LODEV/${PORTNAME}
 
@@ -14,7 +13,7 @@ LICENSE=	MPL20
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge
 
-USES=		gperf perl5 libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib gperf perl5 libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes

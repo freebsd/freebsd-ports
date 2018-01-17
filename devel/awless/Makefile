@@ -3,7 +3,7 @@
 
 PORTNAME=	awless
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.8
+DISTVERSION=	0.1.9
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -28,6 +28,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

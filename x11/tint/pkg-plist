@@ -17,6 +17,7 @@ share/applications/tint2conf.desktop
 share/icons/hicolor/scalable/apps/tint2.svg
 share/icons/hicolor/scalable/apps/tint2conf.svg
 %%NLS%%share/locale/bs/LC_MESSAGES/tint2conf.mo
+%%NLS%%share/locale/es/LC_MESSAGES/tint2conf.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tint2conf.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/tint2conf.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/tint2conf.mo

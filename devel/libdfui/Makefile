@@ -13,8 +13,10 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libaura3.so:devel/libaura
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 USE_LDCONFIG=	yes
+
+MAKE_ENV=	SONAME=${SONAME} SOLINK=${SOLINK}
 
 SONAME=		${SOLINK}.4
 SOLINK=		${PORTNAME}4.so
@@ -31,13 +33,13 @@ PLIST_FILES=	lib/${SONAME} \
 		include/dfui4/system.h
 PORTDOCS=	README
 
-MAKE_ENV=	SONAME=${SONAME} SOLINK=${SOLINK}
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${SONAME} ${STAGEDIR}${PREFIX}/lib/${SONAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${SONAME} ${STAGEDIR}${PREFIX}/lib
 	${LN} -s ${SONAME} ${STAGEDIR}${PREFIX}/lib/${SOLINK}
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/dfui4
 	${INSTALL_DATA} ${WRKSRC}/conn_caps.h ${STAGEDIR}${PREFIX}/include/dfui4/
@@ -48,7 +50,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/encoding.h ${STAGEDIR}${PREFIX}/include/dfui4/
 	${INSTALL_DATA} ${WRKSRC}/lang.h ${STAGEDIR}${PREFIX}/include/dfui4/
 	${INSTALL_DATA} ${WRKSRC}/system.h ${STAGEDIR}${PREFIX}/include/dfui4/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

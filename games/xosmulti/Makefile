@@ -28,6 +28,6 @@ PLIST_FILES=	bin/xosmulti
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xosmulti ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/xosmulti
-	${INSTALL_MAN} ${WRKSRC}/README.jp ${STAGEDIR}${PREFIX}/share/doc/ja/xosmulti
+	${INSTALL_DATA} ${WRKSRC}/README.jp ${STAGEDIR}${PREFIX}/share/doc/ja/xosmulti
 
 .include <bsd.port.mk>

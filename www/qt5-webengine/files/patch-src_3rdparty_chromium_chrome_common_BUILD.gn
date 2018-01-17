@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/chrome/common/BUILD.gn.orig	2017-01-26 00:49:09 UTC
++++ src/3rdparty/chromium/chrome/common/BUILD.gn
+@@ -243,6 +243,13 @@ static_library("common") {
+     public_deps += [ "//ppapi/shared_impl" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "component_flash_hint_file_linux.cc",
++      "component_flash_hint_file_linux.h",
++    ]
++  }
++
+   if (enable_extensions) {
+     sources += [
+       "cast_messages.cc",

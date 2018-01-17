@@ -6,6 +6,7 @@
 # PROVIDE:	microcode_update
 # REQUIRE:	root mountcritlocal
 # KEYWORD:	nojail
+# BEFORE:	SERVERS
 
 #
 # Add the following line to /etc/rc.conf to enable flow-capture:
@@ -41,7 +42,7 @@ microcode_update_prepare()
 
 microcode_update_start()
 {
-	echo "Updating cpucodes..."
+	echo "Updating CPU Microcode..."
 	if [ "${microcode_cpus}" = "ALL" ]; then
 		ncpu=`/sbin/sysctl -n hw.ncpu`
 		cpus=`jot ${ncpu} 0`;
@@ -50,9 +51,22 @@ microcode_update_start()
 	fi
 	for i in ${cpus}; do
 		${CMT} -u ${microcode_update_flags} \
-		    -d "${microcode_update_datadir}" /dev/cpuctl${i} || \
-		    (echo "Failed." && exit 1)
+                    -d "${microcode_update_datadir}" /dev/cpuctl${i} 2>&1 | \
+                    logger -p daemon.notice -t microcode_update || \
+		    (echo "Microcode Update Failed." && exit 1)
 	done
+	if [ "${microcode_cpus}" = "ALL" ]; then
+                CPUCONTROL_UPDATED=$(cpucontrol -h 2>&1 | grep -q -- -e; echo $?)
+                if [ ${CPUCONTROL_UPDATED} -ne 0 ]; then
+                        echo "Please update your system in order to update CPU microcode."
+                else
+			${CMT} -e /dev/cpuctl0 >/dev/null 2>&1
+			if [ $? -ne 0 ]; then
+				echo "Re-evalulation of CPU flags Failed."
+				exit 1
+			fi
+                fi
+	fi
 	echo "Done."
 }
 

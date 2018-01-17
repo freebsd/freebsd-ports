@@ -1,0 +1,54 @@
+Comment unused TestStringClass() and fix build with Clang 6
+
+code/splines/util_str.cpp:477:11: error: reinterpret_cast from 'nullptr_t' to
+'const char *' is not allowed
+        idStr e( reinterpret_cast<const char *>( NULL ) );
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+code/splines/util_str.cpp:491:10: error: reinterpret_cast from 'nullptr_t' to
+'const char *' is not allowed
+        a = c + reinterpret_cast<const char *>( NULL );
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+code/splines/util_str.cpp:494:6: error: reinterpret_cast from 'nullptr_t' to
+'const char *' is not allowed
+        a = reinterpret_cast<const char *>( NULL ) + d;
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+code/splines/util_str.cpp:498:7: error: reinterpret_cast from 'nullptr_t' to
+'const char *' is not allowed
+        a += reinterpret_cast<const char *>( NULL );
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--- MP/code/splines/util_str.cpp.orig	2018-01-08 12:19:28 UTC
++++ MP/code/splines/util_str.cpp
+@@ -454,6 +454,7 @@ void idStr::snprintf
+ #pragma warning(disable : 4189) // local variable is initialized but not referenced
+ #endif
+ 
++#if 0
+ /*
+ =================
+ TestStringClass
+@@ -526,6 +527,7 @@ void TestStringClass
+ 
+ 	a[1] = '1';                 // a.data = "t1st", b.data = "test"
+ }
++#endif
+ 
+ #ifdef _MSC_VER
+ #pragma warning(default : 4189) // local variable is initialized but not referenced
+--- SP/code/splines/util_str.cpp.orig	2018-01-08 12:19:44 UTC
++++ SP/code/splines/util_str.cpp
+@@ -454,6 +454,7 @@ void idStr::snprintf
+ #pragma warning(disable : 4189) // local variable is initialized but not referenced
+ #endif
+ 
++#if 0
+ /*
+ =================
+ TestStringClass
+@@ -526,6 +527,7 @@ void TestStringClass
+ 
+ 	a[1] = '1';                 // a.data = "t1st", b.data = "test"
+ }
++#endif
+ 
+ #ifdef _MSC_VER
+ #pragma warning(default : 4189) // local variable is initialized but not referenced

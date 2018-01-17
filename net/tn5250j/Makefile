@@ -53,7 +53,7 @@ do-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for d in ${DOC_FILES}
-	${INSTALL_MAN} ${WRKSRC}/src/${d} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.post.mk>

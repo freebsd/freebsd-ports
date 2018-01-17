@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for easily serializing a wide variety of objects
 
 USES=		uidfix zip
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC_SUBDIR=	src
 USE_LDCONFIG=	yes
 
 .if defined(NO_PROFILE)

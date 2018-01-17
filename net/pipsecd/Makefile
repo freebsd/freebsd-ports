@@ -25,8 +25,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ipsec
 	${INSTALL_DATA} ${WRKSRC}/pipsecd.conf.sample ${STAGEDIR}${PREFIX}/etc/ipsec
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/pipsecd
-	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/pipsecd
-	${INSTALL_MAN} ${WRKSRC}/COPYRIGHT ${STAGEDIR}${PREFIX}/share/doc/pipsecd
-	${INSTALL_MAN} ${WRKSRC}/README.port ${STAGEDIR}${PREFIX}/share/doc/pipsecd
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/pipsecd
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${STAGEDIR}${PREFIX}/share/doc/pipsecd
+	${INSTALL_DATA} ${WRKSRC}/README.port ${STAGEDIR}${PREFIX}/share/doc/pipsecd
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	timidity++
 PORTVERSION=	2.14.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	audio
 MASTER_SITES=	SF/timidity/TiMidity%2B%2B/TiMidity%2B%2B-${PORTVERSION}
 DISTNAME=	TiMidity++-${PORTVERSION}
@@ -15,7 +15,8 @@ LICENSE=	GPLv2+
 
 .if !defined(PKGNAMESUFFIX)
 LIB_DEPENDS=	libarc.so:archivers/libarc \
-		libvorbis.so:audio/libvorbis
+		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg
 RUN_DEPENDS=	eawpats>0:audio/eawpats
 .endif
 
@@ -81,6 +82,7 @@ post-install::
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME}
 	(cd ${WRKSRC}/doc/ja_JP.eucJP && ${INSTALL_DATA} ${DOCFILES} \
 		${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME})
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/timidity
 
 .endif # PKGNAMESUFFIX
 .include <bsd.port.mk>

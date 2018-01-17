@@ -1,3 +1,4 @@
+lib/elixir/lib/hex/ebin/Elixir.Hex.API.Auth.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.API.Key.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.API.Package.Owner.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.API.Package.beam
@@ -20,6 +21,7 @@ lib/elixir/lib/hex/ebin/Elixir.Hex.HTTP.SSL.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.HTTP.VerifyHostname.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.HTTP.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Mix.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.OptionParser.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Parallel.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Registry.Server.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Registry.beam
@@ -28,6 +30,7 @@ lib/elixir/lib/hex/ebin/Elixir.Hex.Repo.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Resolver.Backtracks.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Resolver.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.SCM.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.Server.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Set.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Shell.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.State.beam
@@ -62,6 +65,7 @@ lib/elixir/lib/hex/ebin/hex_pb_signed.beam
 lib/elixir/lib/hex/ebin/safe_erl_term.beam
 lib/elixir/lib/hex/lib/hex.ex
 lib/elixir/lib/hex/lib/hex/api.ex
+lib/elixir/lib/hex/lib/hex/api/auth.ex
 lib/elixir/lib/hex/lib/hex/api/key.ex
 lib/elixir/lib/hex/lib/hex/api/package.ex
 lib/elixir/lib/hex/lib/hex/api/release.ex
@@ -83,6 +87,7 @@ lib/elixir/lib/hex/lib/hex/http/certs.ex
 lib/elixir/lib/hex/lib/hex/http/ssl.ex
 lib/elixir/lib/hex/lib/hex/http/verify_hostname.ex
 lib/elixir/lib/hex/lib/hex/mix.ex
+lib/elixir/lib/hex/lib/hex/option_parser.ex
 lib/elixir/lib/hex/lib/hex/parallel.ex
 lib/elixir/lib/hex/lib/hex/registry.ex
 lib/elixir/lib/hex/lib/hex/registry/server.ex
@@ -91,6 +96,7 @@ lib/elixir/lib/hex/lib/hex/repo.ex
 lib/elixir/lib/hex/lib/hex/resolver.ex
 lib/elixir/lib/hex/lib/hex/resolver/backtracks.ex
 lib/elixir/lib/hex/lib/hex/scm.ex
+lib/elixir/lib/hex/lib/hex/server.ex
 lib/elixir/lib/hex/lib/hex/set.ex
 lib/elixir/lib/hex/lib/hex/shell.ex
 lib/elixir/lib/hex/lib/hex/state.ex

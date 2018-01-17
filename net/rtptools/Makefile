@@ -6,7 +6,7 @@ PORTVERSION=	1.21
 CATEGORIES=	net mbone
 MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of tools to record, playback, and monitor RTPv2 data streams
 
 LICENSE=	CUL

@@ -3,6 +3,7 @@
 
 PORTNAME=	librtmp
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,5 +29,8 @@ USE_PYTHON=	autoplist distutils
 .if ${PYTHON_REL} < 3400
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>=0:devel/py-singledispatch@${FLAVOR}
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/librtmp/_librtmp*.so
 
 .include <bsd.port.post.mk>

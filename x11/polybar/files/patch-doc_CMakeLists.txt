@@ -1,0 +1,11 @@
+--- doc/CMakeLists.txt.orig	2017-12-03 17:03:49 UTC
++++ doc/CMakeLists.txt
+@@ -85,7 +85,7 @@ configure_file(
+   ESCAPE_QUOTES @ONLY)
+ 
+ install(FILES config
+-  DESTINATION share/doc/polybar
++  DESTINATION share/examples/polybar
+   COMPONENT config)
+ 
+ # }}}

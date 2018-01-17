@@ -1,12 +1,15 @@
-Use the definition in memory.cc instead.
---- src/3rdparty/chromium/base/process/memory_stubs.cc.orig	2017-04-19 16:40:17 UTC
+--- src/3rdparty/chromium/base/process/memory_stubs.cc.orig	2017-01-26 00:49:07 UTC
 +++ src/3rdparty/chromium/base/process/memory_stubs.cc
-@@ -32,9 +32,11 @@ bool UncheckedMalloc(size_t size, void**
-   return *result != nullptr;
- }
+@@ -31,6 +31,8 @@ void TerminateBecauseOutOfMemory(size_t 
+ // their respective stdlib function since those functions will return null on a
+ // failure to allocate.
  
-+#if !defined(OS_BSD)
- bool UncheckedCalloc(size_t num_items, size_t size, void** result) {
++#if !defined(OS_FREEBSD)
++// FreeBSD brings it's own implementation in memory.cc -- cmt
+ bool UncheckedMalloc(size_t size, void** result) {
+   *result = malloc(size);
+   return *result != nullptr;
+@@ -40,5 +42,6 @@ bool UncheckedCalloc(size_t num_items, s
    *result = calloc(num_items, size);
    return *result != nullptr;
  }

@@ -44,29 +44,29 @@ PLIST_SUB+=	LDAP="@comment "
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/async-iface-notes ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/language.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/module-interface.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/note-behaviourfile ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/note-struct-ownership ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/using-openradius.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/async-iface-notes ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/language.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/module-interface.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/note-behaviourfile ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/note-struct-ownership ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/using-openradius.html ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/accounts
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-ldap ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-ldap-authbind ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-mysql ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-postgres ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-unixpass ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-usersfile ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-ldap ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-ldap-authbind ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-mysql ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-postgres ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-unixpass ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-usersfile ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/accounts/README ${STAGEDIR}${EXAMPLESDIR}/accounts
-	${INSTALL_MAN} ${WRKSRC}/examples/accounts/accounts.mysql ${STAGEDIR}${EXAMPLESDIR}/accounts
-	${INSTALL_MAN} ${WRKSRC}/examples/accounts/behaviour ${STAGEDIR}${EXAMPLESDIR}/accounts
-	${INSTALL_MAN} ${WRKSRC}/examples/accounts/configuration ${STAGEDIR}${EXAMPLESDIR}/accounts
+	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-ldap ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-ldap-authbind ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-mysql ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-postgres ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-unixpass ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-usersfile ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-ldap ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-ldap-authbind ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-mysql ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-postgres ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-unixpass ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-usersfile ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/accounts/README ${STAGEDIR}${EXAMPLESDIR}/accounts
+	${INSTALL_DATA} ${WRKSRC}/examples/accounts/accounts.mysql ${STAGEDIR}${EXAMPLESDIR}/accounts
+	${INSTALL_DATA} ${WRKSRC}/examples/accounts/behaviour ${STAGEDIR}${EXAMPLESDIR}/accounts
+	${INSTALL_DATA} ${WRKSRC}/examples/accounts/configuration ${STAGEDIR}${EXAMPLESDIR}/accounts
 # Configuration, copy over to sample files
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 .for FILE in dictionary

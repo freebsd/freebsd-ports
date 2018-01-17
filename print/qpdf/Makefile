@@ -3,7 +3,7 @@
 
 PORTNAME=	qpdf
 PORTVERSION=	6.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -22,6 +22,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=		gmake libtool
+USE_CXXSTD=	gnu++98
 
 post-patch:
 	@${REINPLACE_CMD} 's/make --version/${MAKE_CMD} --version/' \

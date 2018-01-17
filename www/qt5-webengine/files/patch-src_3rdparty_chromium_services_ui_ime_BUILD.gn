@@ -1,0 +1,10 @@
+--- src/3rdparty/chromium/services/ui/ime/BUILD.gn.orig	2017-01-26 00:49:17 UTC
++++ src/3rdparty/chromium/services/ui/ime/BUILD.gn
+@@ -50,7 +50,6 @@ test("mus_ime_unittests") {
+     ":test_manifest",
+     ":lib",
+     "//services/ui",
+-    "//services/ui/ime/test_ime_driver",
+   ]
+ }
+ 

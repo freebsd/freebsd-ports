@@ -12,7 +12,6 @@ COMMENT=	User utilities for zisofs
 
 PORTDOCS=	CHANGES COPYING INSTALL MRULES README
 
-USE_AUTOTOOLS=	autoconf
 USES=		gmake tar:bzip2 desthack
 GNU_CONFIGURE=	yes
 

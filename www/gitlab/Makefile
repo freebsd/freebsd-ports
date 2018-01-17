@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	10.1.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	www devel
 
 MAINTAINER=	idefix@fechner.net
@@ -136,7 +136,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-sanitize>=2.0:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2:textproc/rubygem-babosa \
 	rubygem-loofah>=2.0.3:textproc/rubygem-loofah \
-	rubygem-licensee>=8.7:devel/rubygem-licensee \
+	rubygem-licensee8>=8.7:devel/rubygem-licensee8 \
 	rubygem-rack-attack>=4.4.1:www/rubygem-rack-attack \
 	rubygem-ace-rails-ap>=4.1.0:www/rubygem-ace-rails-ap \
 	rubygem-mousetrap-rails>=1.4.6:www/rubygem-mousetrap-rails \
@@ -185,7 +185,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-vmstat>=2.3.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem>=1.1.6:sysutils/rubygem-sys-filesystem \
 	rubygem-net-ssh>=4.1.0:security/rubygem-net-ssh \
-	rubygem-rbnacl>=4.0:security/rubygem-rbnacl \
+	rubygem-rbnacl4<=4.0.2:security/rubygem-rbnacl4 \
 	rubygem-rbnacl-libsodium>=0:security/rubygem-rbnacl-libsodium \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-gitaly-proto>=0.39.0:net/rubygem-gitaly-proto \

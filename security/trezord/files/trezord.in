@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: trezord
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# trezord_enable (bool):	Set to NO by default.
+#				Set it to YES to enable trezord.
+
+. /etc/rc.subr
+
+name=trezord
+rcvar=trezord_enable
+
+load_rc_config $name
+
+: ${trezord_enable:="NO"}
+
+command=%%PREFIX%%/sbin/${name}
+
+run_rc_command "$1"

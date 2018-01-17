@@ -1,0 +1,173 @@
+src/im/msrp.cxx:838:47: error: invalid operands to binary expression ('basic_ostream<char, std::__1::char_traits<char> >' and 'std::__1::ostream' (aka 'basic_ostream<char>'))
+    PStringStream str; str << ::setfill('\r') << mime.PrintContents(str);
+                       ~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~
+src/sip/sipep.cxx:474:32: error: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wreserved-user-defined-literal]
+  if (remoteParty.Find(";OPAL-"OPAL_SIP_REFERRED_CONNECTION) == P_MAX_INDEX)
+                               ^
+
+speexcodec.cxx:783:64: error: non-constant-expression cannot be narrowed from type 'int' to
+      'unsigned int' in initializer list [-Wc++11-narrowing]
+  DECLARE_H323_NARROW_SPEEX_CODEC(ietfSpeex, Narrow5k95,  2,   NARROW_BITSPERFRAME_MODE2),
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+speexcodec.cxx:759:38: note: expanded from macro 'NARROW_BITSPERFRAME_MODE2'
+#define NARROW_BITSPERFRAME_MODE2    (Speex_Bits_Per_Second(2, 8000)/50) // 119             // 5950
+                                     ^
+speexcodec.cxx:466:3: note: expanded from macro 'DECLARE_H323_NARROW_SPEEX_CODEC'
+  bitsPerFrame*50,                    /* raw bits per second */ \
+  ^~~~~~~~~~~~~~~
+speexcodec.cxx:783:64: note: insert an explicit cast to silence this issue
+  DECLARE_H323_NARROW_SPEEX_CODEC(ietfSpeex, Narrow5k95,  2,   NARROW_BITSPERFRAME_MODE2),
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                               static_cast<unsigned int>(
+speexcodec.cxx:759:38: note: expanded from macro 'NARROW_BITSPERFRAME_MODE2'
+#define NARROW_BITSPERFRAME_MODE2    (Speex_Bits_Per_Second(2, 8000)/50) // 119             // 5950
+                                     ^
+speexcodec.cxx:466:3: note: expanded from macro 'DECLARE_H323_NARROW_SPEEX_CODEC'
+  bitsPerFrame*50,                    /* raw bits per second */ \
+  ^~~~~~~~~~~~~~~
+G7222Codec.cpp:617:5: error: non-constant-expression cannot be narrowed from type 'int' to
+      'unsigned int' in initializer list [-Wc++11-narrowing]
+    AMRWB_ALIGNED_BPS (AMRWB_24k),          // raw bits per second
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+G7222Codec.cpp:119:33: note: expanded from macro 'AMRWB_ALIGNED_BPS'
+#define AMRWB_ALIGNED_BPS(mode) ((AMRWB_block_size_octet[(mode)] + 1) * 50 * 8)
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+G7222Codec.cpp:617:5: note: insert an explicit cast to silence this issue
+    AMRWB_ALIGNED_BPS (AMRWB_24k),          // raw bits per second
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    static_cast<unsigned int>(   )
+G7222Codec.cpp:119:33: note: expanded from macro 'AMRWB_ALIGNED_BPS'
+#define AMRWB_ALIGNED_BPS(mode) ((AMRWB_block_size_octet[(mode)] + 1) * 50 * 8)
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+h263-1998.cxx:77:34: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+#define DEFAULT_CUSTOM_MPI "0,0,"STRINGIZE(PLUGINCODEC_MPI_DISABLED)
+                                 ^
+h264-x264.cxx:1183:35: error: non-constant-expression cannot be narrowed from type 'int' to 'size_t'
+      (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
+        size_t dstLineSize[3] = { m_context->width, m_context->width/2, m_context->width/2 };
+                                  ^~~~~~~~~~~~~~~~
+h264-x264.cxx:1183:35: note: insert an explicit cast to silence this issue
+        size_t dstLineSize[3] = { m_context->width, m_context->width/2, m_context->width/2 };
+                                  ^~~~~~~~~~~~~~~~
+                                  static_cast<size_t>( )
+h264-x264.cxx:1183:53: error: non-constant-expression cannot be narrowed from type 'int' to 'size_t'
+      (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
+        size_t dstLineSize[3] = { m_context->width, m_context->width/2, m_context->width/2 };
+                                                    ^~~~~~~~~~~~~~~~~~
+h264-x264.cxx:1183:53: note: insert an explicit cast to silence this issue
+        size_t dstLineSize[3] = { m_context->width, m_context->width/2, m_context->width/2 };
+                                                    ^~~~~~~~~~~~~~~~~~
+                                                    static_cast<size_t>( )
+h264-x264.cxx:1183:73: error: non-constant-expression cannot be narrowed from type 'int' to 'size_t'
+      (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
+        size_t dstLineSize[3] = { m_context->width, m_context->width/2, m_context->width/2 };
+                                                                        ^~~~~~~~~~~~~~~~~~
+h264-x264.cxx:1183:73: note: insert an explicit cast to silence this issue
+        size_t dstLineSize[3] = { m_context->width, m_context->width/2, m_context->width/2 };
+                                                                        ^~~~~~~~~~~~~~~~~~
+                                                                        static_cast<size_t>( )
+
+--- plugins/audio/G.722.2/G7222Codec.cpp.orig	2013-02-20 02:17:52 UTC
++++ plugins/audio/G.722.2/G7222Codec.cpp
+@@ -109,7 +109,7 @@ const UWord16 AMRWB_core_block_bits[16]= { 132, 177, 2
+ const UWord16 AMRWB_efficient_ToC_bits = 6;
+ const UWord16 AMRWB_efficient_CMR_bits = 4;
+ 
+-const UWord8 AMRWB_block_size_octet[16]= { 18, 24, 33, 37, 41, 47, 51, 59, 61, 6, 6, 0, 0, 0, 1, 1 };
++const unsigned AMRWB_block_size_octet[16]= { 18, 24, 33, 37, 41, 47, 51, 59, 61, 6, 6, 0, 0, 0, 1, 1 };
+ 
+ // RFC 3267 octet-aligned ToC adds 8 bits to each core speech bits frame and 8 per packet for header
+ // RFC 3267 bandwidth-efficient adds 6 bits to each core speech bits frame and 4 per packet for header
+@@ -186,7 +186,7 @@ static int AMRWBEncode (const struct PluginCodec_Defin
+ 	//PTRACE(2, "Codec\tAMR-WB encoder: Audio data of size " << *fromLen << " did not match expected " << AMRWB_FRAME_SAMPLES * sizeof(short));
+     return 0;
+   }
+-  if (*toLen < (unsigned) AMRWB_block_size_octet[Context->mode] + 1)
++  if (*toLen < AMRWB_block_size_octet[Context->mode] + 1)
+   {
+ 	//PTRACE(2,"Codec\tAMR-WB encoder: Output buffer of size " << *toLen << " too short for mode " << mode);
+ 	return 0;
+@@ -346,7 +346,7 @@ static int AMRWBDecode (const struct PluginCodec_Defin
+       return 0;
+ 
+     case -2:
+-      //PTRACE(2, "Codec\tAMR-WB decoder: Packet size " << *fromLen << " did not match expected " << (unsigned)(AMRWB_block_size_octet[FrameType] + 1) << " for frame type " << FrameType);
++      //PTRACE(2, "Codec\tAMR-WB decoder: Packet size " << *fromLen << " did not match expected " << (AMRWB_block_size_octet[FrameType] + 1) << " for frame type " << FrameType);
+       return 0;
+ 
+     case -3:
+--- plugins/audio/Speex/speexcodec.cxx.orig	2013-02-20 02:17:48 UTC
++++ plugins/audio/Speex/speexcodec.cxx
+@@ -756,18 +756,19 @@ CREATE_NARROW_SPEEXW_CAP_DATA(Narrow-8k,    Narrow8k, 
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+-#define NARROW_BITSPERFRAME_MODE2    (Speex_Bits_Per_Second(2, 8000)/50) // 119             // 5950
+-#define NARROW_BITSPERFRAME_MODE3    (Speex_Bits_Per_Second(3, 8000)/50) // 160             // 8000
+-#define NARROW_BITSPERFRAME_MODE4    (Speex_Bits_Per_Second(4, 8000)/50) // 220             // 11000 
+-#define NARROW_BITSPERFRAME_MODE5    (Speex_Bits_Per_Second(5, 8000)/50) // 300             // 15000
+-#define NARROW_BITSPERFRAME_MODE6    (Speex_Bits_Per_Second(6, 8000)/50) // 364             // 18200
+-#define NARROW_BITSPERFRAME_MODE7    (Speex_Bits_Per_Second(7, 8000)/50) // 492             // 26400
++#define NARROW_BITSPERFRAME_MODE(m)  ((unsigned)Speex_Bits_Per_Second(m, 8000)/50)
++#define NARROW_BITSPERFRAME_MODE2    NARROW_BITSPERFRAME_MODE(2) // 119             // 5950
++#define NARROW_BITSPERFRAME_MODE3    NARROW_BITSPERFRAME_MODE(3) // 160             // 8000
++#define NARROW_BITSPERFRAME_MODE4    NARROW_BITSPERFRAME_MODE(4) // 220             // 11000 
++#define NARROW_BITSPERFRAME_MODE5    NARROW_BITSPERFRAME_MODE(5) // 300             // 15000
++#define NARROW_BITSPERFRAME_MODE6    NARROW_BITSPERFRAME_MODE(6) // 364             // 18200
++#define NARROW_BITSPERFRAME_MODE7    NARROW_BITSPERFRAME_MODE(7) // 492             // 26400
+ 
+ //#define WIDE_BITSPERFRAME_MODE2    ((Speex_Bytes_Per_Frame(2, 16000)/50) // NARROW_BITSPERFRAME_MODE2 + 112)     // 11550
+ //#define WIDE_BITSPERFRAME_MODE3    ((Speex_Bytes_Per_Frame(3, 16000)/50)     // 17600
+ //#define WIDE_BITSPERFRAME_MODE4    ((Speex_Bytes_Per_Frame(4, 16000)/50)     // 28600
+ //#define WIDE_BITSPERFRAME_MODE5    ((Speex_Bytes_Per_Frame(5, 16000)/50)     // 28600
+-#define WIDE_BITSPERFRAME_MODE6    (Speex_Bits_Per_Second(6, 16000)/50)     // 20600
++#define WIDE_BITSPERFRAME_MODE6    ((unsigned)Speex_Bits_Per_Second(6, 16000)/50)     // 20600
+ 
+ static struct PluginCodec_Definition ver1SpeexCodecDefn[] = {
+ 
+--- plugins/video/H.263-1998/h263-1998.cxx.orig	2013-02-20 02:18:03 UTC
++++ plugins/video/H.263-1998/h263-1998.cxx
+@@ -70,7 +70,7 @@ static const char sdpH263[]      = { "H263" };
+ 
+ 
+ #define MAX_H263_CUSTOM_SIZES 10
+-#define DEFAULT_CUSTOM_MPI "0,0,"STRINGIZE(PLUGINCODEC_MPI_DISABLED)
++#define DEFAULT_CUSTOM_MPI "0,0," STRINGIZE(PLUGINCODEC_MPI_DISABLED)
+ 
+ static struct StdSizes {
+   enum { 
+--- plugins/video/H.264/h264-x264.cxx.orig	2013-02-20 02:18:02 UTC
++++ plugins/video/H.264/h264-x264.cxx
+@@ -1181,7 +1181,7 @@ class MyDecoder : public PluginCodec<MY_CODEC>
+ 
+         uint8_t * src[3] = { m_picture->data[0], m_picture->data[1], m_picture->data[2] };
+         uint8_t * dst[3] = { OPAL_VIDEO_FRAME_DATA_PTR(videoHeader), dst[0] + ySize, dst[1] + uvSize };
+-        size_t dstLineSize[3] = { m_context->width, m_context->width/2, m_context->width/2 };
++        size_t dstLineSize[3] = { (size_t)m_context->width, (size_t)m_context->width/2, (size_t)m_context->width/2 };
+ 
+         for (int y = 0; y < m_context->height; ++y) {
+           for (int plane = 0; plane < 3; ++plane) {
+--- src/im/msrp.cxx.orig	2013-02-20 02:18:42 UTC
++++ src/im/msrp.cxx
+@@ -835,7 +835,8 @@ bool MSRPProtocol::SendREPORT(const PString & chunkId,
+   flush();
+ 
+   {
+-    PStringStream str; str << ::setfill('\r') << mime.PrintContents(str);
++    PStringStream str; str << ::setfill('\r');
++    mime.PrintContents(str);
+     PTRACE(4, "Sending MSRP REPORT\n" << "MSRP " << chunkId << " " << MSRPCommands[REPORT] << CRLF 
+                                                  << "To-Path: " << toUrl << CRLF 
+                                                  << "From-Path: "<< fromUrl << CRLF 
+--- src/sip/sipep.cxx.orig	2013-02-20 02:18:32 UTC
++++ src/sip/sipep.cxx
+@@ -471,7 +471,7 @@ PBoolean SIPEndPoint::SetupTransfer(const PString & to
+   if (!AddConnection(connection))
+     return false;
+ 
+-  if (remoteParty.Find(";OPAL-"OPAL_SIP_REFERRED_CONNECTION) == P_MAX_INDEX)
++  if (remoteParty.Find(";OPAL-" OPAL_SIP_REFERRED_CONNECTION) == P_MAX_INDEX)
+     otherConnection->Release(OpalConnection::EndedByCallForwarded);
+   else
+     otherConnection->SetPhase(OpalConnection::ForwardingPhase);

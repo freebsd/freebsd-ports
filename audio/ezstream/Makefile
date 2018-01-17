@@ -41,7 +41,6 @@ TAGLIB_CONFIGURE_ON=	--with-taglib=${LOCALBASE}
 
 .include <bsd.port.options.mk>
 
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|examples||g ; \
 		s|: install-dist_docDATA|:|g' ${WRKSRC}/Makefile.in

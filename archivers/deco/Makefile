@@ -4,7 +4,7 @@ PORTNAME=	deco
 PORTVERSION=	1.6.4
 CATEGORIES=	archivers
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to extract various archive file formats
 
 LICENSE=	GPLv3

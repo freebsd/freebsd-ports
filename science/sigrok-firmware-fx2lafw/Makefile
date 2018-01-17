@@ -31,7 +31,7 @@ PLIST_FILES=	${FW_FILES:S,^,share/sigrok-firmware/,}
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in README NEWS
-	${INSTALL_MAN} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/sigrok-firmware
 .for fwfile in ${FW_FILES}

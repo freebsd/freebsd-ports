@@ -38,6 +38,7 @@ PYTHON_VARS=	USES+=python:3.3+
 PYTHON_MAKE_ARGS=	ENABLE_PYTHON=1
 
 MAKE_ENV=	USER_CFLAGS="${CFLAGS}" USER_LDFLAGS="${LDFLAGS}"
+LLD_UNSAFE=	yes
 SUB_FILES=	pkg-message
 
 USES=		desktop-file-utils gettext-runtime gmake ncurses openal:al,alut pkgconfig

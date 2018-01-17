@@ -1,0 +1,9 @@
+--- src/3rdparty/chromium/build/config/crypto.gni.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/build/config/crypto.gni
+@@ -21,5 +21,5 @@ declare_args() {
+ 
+   # True if NSS is used for certificate handling. It is possible to use OpenSSL
+   # for the crypto library, but NSS for the platform certificate library.
+-  use_nss_certs = is_linux
++  use_nss_certs = is_linux || is_bsd
+ }

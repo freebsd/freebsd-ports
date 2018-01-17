@@ -1,0 +1,24 @@
+--- src/3rdparty/chromium/chrome/browser/extensions/BUILD.gn.orig	2017-01-26 00:49:08 UTC
++++ src/3rdparty/chromium/chrome/browser/extensions/BUILD.gn
+@@ -1024,7 +1024,7 @@ static_library("extensions") {
+     sources -= [ "global_shortcut_listener_ozone.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [ "//build/linux:fontconfig" ]
+ 
+     if (use_dbus) {
+@@ -1115,6 +1115,12 @@ static_library("extensions") {
+     defines += [ "ENABLE_HOTWORDING" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "api/image_writer_private/removable_storage_provider_linux.cc",
++    ]
++  }
++
+   if (enable_service_discovery) {
+     sources += [
+       "api/gcd_private/gcd_private_api.cc",

@@ -2,7 +2,7 @@
 
 PORTNAME=	Net-RabbitFoot
 PORTVERSION=	1.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IKUTA
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	p5-AnyEvent-RabbitMQ>=0:net/p5-AnyEvent-RabbitMQ \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-App-Cmd>=0:devel/p5-MooseX-App-Cmd \
-		p5-MooseX-AttributeHelpers>=0:devel/p5-MooseX-AttributeHelpers \
 		p5-MooseX-ConfigFromFile>=0:devel/p5-MooseX-ConfigFromFile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception

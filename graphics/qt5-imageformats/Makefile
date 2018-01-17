@@ -16,6 +16,6 @@ LIB_DEPENDS=	libjasper.so:graphics/jasper \
 
 USE_QT5=	core gui buildtools_build
 QT_DIST=	${PORTNAME}
-USES=		qmake
+USES=		localbase qmake
 
 .include <bsd.port.mk>

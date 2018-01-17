@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	textile
-PORTVERSION=	2.3.16
+PORTVERSION=	3.0.0
 CATEGORIES=	www textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,5 +18,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${F
 USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	python-${PORTNAME}
 
 .include <bsd.port.mk>

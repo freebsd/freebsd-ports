@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	terraform
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -23,6 +23,5 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 post-patch:
 	${REINPLACE_CMD} 's|Prerelease = "dev"|Prerelease = ""|' \
 		${WRKSRC}/version/version.go
-
 
 .include <bsd.port.mk>

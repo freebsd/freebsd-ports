@@ -14,11 +14,16 @@ COMMENT=	Just-In-Time Compiler for Lua
 WRKSRC=		${WRKDIR}/LuaJIT-${DISTVERSION}
 USES=		gmake
 USE_LDCONFIG=	yes
+MAKE_ARGS=	CC=${CC}
 
 PLIST_SUB+=	VERSION=${DISTVERSION}
+BROKEN_powerpc64=	Not ported to powerpc64 upstream
 
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
-ONLY_FOR_ARCHS_REASON=	Requires newer gcc/clang to compile.
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc*} || ${ARCH:Mmips*} || ${ARCH:Msparc*}
+USE_GCC=yes
+.endif
 
 post-install:
 	${LN} -sf ${PORTNAME}-${DISTVERSION} \

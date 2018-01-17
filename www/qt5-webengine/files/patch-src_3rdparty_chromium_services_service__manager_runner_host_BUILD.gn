@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/services/service_manager/runner/host/BUILD.gn.orig	2017-01-26 00:49:17 UTC
++++ src/3rdparty/chromium/services/service_manager/runner/host/BUILD.gn
+@@ -51,7 +51,7 @@ source_set("child_process_base") {
+     "//services/service_manager/runner/common",
+   ]
+ 
+-  if (is_linux && !is_android) {
++  if (is_linux && !is_android && !is_bsd) {
+     sources += [
+       "linux_sandbox.cc",
+       "linux_sandbox.h",

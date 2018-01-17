@@ -24,8 +24,8 @@ PLIST_FILES=	lib/gtk-2.0/modules/libgtkparasite.so
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/USAGE ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/USAGE ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>

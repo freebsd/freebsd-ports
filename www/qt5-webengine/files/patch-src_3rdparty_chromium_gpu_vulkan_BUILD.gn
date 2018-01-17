@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/gpu/vulkan/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ src/3rdparty/chromium/gpu/vulkan/BUILD.gn
+@@ -14,7 +14,7 @@ if (enable_vulkan) {
+   component("vulkan") {
+     output_name = "vulkan_wrapper"
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       assert(use_x11, "Vulkan only support x11 at this point.")
+       sources = [
+         "vulkan_command_buffer.cc",

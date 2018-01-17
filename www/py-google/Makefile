@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	google
-PORTVERSION=	1.9.3
+DISTVERSION=	2.0.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python bindings to the Google search engine
 
 LICENSE=	BSD2CLAUSE

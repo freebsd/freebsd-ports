@@ -19,6 +19,9 @@ USE_LDCONFIG=	yes
 USES=		gem
 PLIST_FILES=	${GEM_LIB_DIR}/lib/tidy/libtidy.so
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=2018-02-10
+
 post-install:
 	${RM} ${LOCALBASE}/${GEM_LIB_DIR}/lib/tidy/libtidy.dll
 	${RM} ${LOCALBASE}/${GEM_LIB_DIR}/lib/tidy/libtidy.so

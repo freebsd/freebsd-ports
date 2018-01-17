@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sndio
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.sndio.org/
 
@@ -12,7 +12,7 @@ COMMENT=	Small audio and MIDI framework from the OpenBSD project
 LICENSE=	ISCL
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --enable-oss
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man
 
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	sndiod

@@ -43,8 +43,6 @@ SHEBANG_FILES=	\
 	dev/ci/run-tests-natively \
 	dev/ci/setup-host
 
-NOPORTDOCS=	yes
-
 APACHE22_USE=	APACHE=22+
 
 LIB_DEPENDS+=	libuv.so:devel/libuv \

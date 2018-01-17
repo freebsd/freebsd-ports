@@ -1,0 +1,15 @@
+--- configure.ac.orig	2014-10-28 17:12:59 UTC
++++ configure.ac
+@@ -732,7 +732,11 @@ dnl libgdbm for dbm_pagfno, so check for
+ fi
+ dnl check if dbm_open is part of libc
+ if test "$ac_cv_lib_new_dbm" = "" -a "$ac_cv_header_ndbm_h" = "yes"; then
+-  AC_CHECK_LIB(c, dbm_open, ac_cv_header_new_dbm="ndbm.h"; ac_cv_lib_new_dbm="c")
++  AC_CHECK_LIB(c, dbm_open, 
++dnl on FreeBSD dbm_open is in base libc, but if gdbm is installed with COMPAT
++dnl then GNU ndbm.h is present, so check if this is the case first.
++    AC_CHECK_LIB(gdbm_compat, dbm_pagfno, ac_cv_header_new_dbm="ndbm.h"; ac_cv_lib_new_dbm="gdbm -lgdbm_compat",
++      AC_CHECK_LIB(c, dbm_pagfno, ac_cv_header_new_dbm="ndbm.h"; ac_cv_lib_new_dbm="c")))
+ fi
+ if test "$ac_cv_lib_new_dbm" = "" -a "$ac_cv_header_db1_ndbm_h" = "yes"; then
+   AC_CHECK_LIB(db1, dbm_open, ac_cv_header_new_dbm="db1/ndbm.h"; ac_cv_lib_new_dbm="db1")

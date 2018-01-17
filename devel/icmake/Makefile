@@ -1,34 +1,40 @@
 # $FreeBSD$
 
 PORTNAME=	icmake
-PORTVERSION=	7.22.01
+PORTVERSION=	9.02.04
 CATEGORIES=	devel
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.orig.tar.gz
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Intelligent C-like Maker
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash \
 		gsed:textproc/gsed
 
+WRKSRC_SUBDIR=	${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 REINPLACE_ARGS=	-I ""
 
 USES=		shebangfix
-SHEBANG_FILES=	icm_bootstrap icm_install icm_prepare scripts/convert
+SHEBANG_FILES=	build comp/build comp/icm_bootstrap comp/updategrammar \
+		comp/updateparser comp/updatescanner dep/build dep/icm_bootstrap \
+		exec/build exec/icm_bootstrap exec/list/test/build exec/string/test/build \
+		icm_bootstrap icm_github icm_install icm_prepare icmake/build \
+		icmake/icm_bootstrap icmake/setlinks icmbuild/build icmbuild/icm_bootstrap \
+		iuo/bootstrapinstall iuo/install iuo/uninstall pp/build pp/icm_bootstrap \
+		rss/build rss/icm_bootstrap scripts/convert un/build un/icm_bootstrap
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	fbb-git
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|find|find .|g' \
+		${WRKSRC}/icm_prepare
 	@${REINPLACE_CMD} -e 's|sed|gsed|g' \
 		${WRKSRC}/scripts/conversions \
 		${WRKSRC}/scripts/convert
@@ -39,16 +45,6 @@ post-patch:
 		s|"usr/share/doc/icmake"|"share/doc/icmake-${PORTVERSION}"| ; \
 		s|"usr/share/doc/icmake-doc"|"share/doc/icmake-${PORTVERSION}/doc"|' \
 		${WRKSRC}/INSTALL.im
-	@${REINPLACE_CMD} -e '\
-		s|"ar"|"${AR}"| ; \
-		s|"rsv"|"${ARFLAGS}"| ; \
-		s|"gcc"|"${CC}"| ; \
-		s|"gzip"|"${GZIP_CMD}"| ; \
-		s|"cp"|"${CP}"| ; \
-		s|"mkdir"|"${MKDIR}"| ; \
-		s|"rm"|"${RM}"| ; \
-		s|"strip"|"${STRIP_CMD}"|' \
-		${WRKSRC}/def/programs
 	@${REINPLACE_CMD} -e 's|cp -r|cp -R|' \
 		${WRKSRC}/icm_bootstrap \
 		${WRKSRC}/icm_install
@@ -58,44 +54,34 @@ post-patch:
 		${WRKSRC}/doc/manpage/icmake.yo \
 		${WRKSRC}/doc/manpage/build \
 		${WRKSRC}/examples/am \
+		${WRKSRC}/examples/bup \
 		${WRKSRC}/examples/defines \
 		${WRKSRC}/examples/ds \
 		${WRKSRC}/examples/ftpxfer \
+		${WRKSRC}/examples/idir \
 		${WRKSRC}/examples/initialization \
+		${WRKSRC}/examples/killprog \
 		${WRKSRC}/examples/nesteddirectives \
 		${WRKSRC}/examples/r \
+		${WRKSRC}/examples/tolower \
 		${WRKSRC}/exec/build \
-		${WRKSRC}/make/build \
 		${WRKSRC}/pp/build \
-		${WRKSRC}/rss/build \
-		${WRKSRC}/un/build
+		${WRKSRC}/rss/build
 	@${REINPLACE_CMD} -e 's|"gcc"|"${CC}"|g; s|-Wall -O2|${CFLAGS}|g' \
 		${WRKSRC}/comp/build \
-		${WRKSRC}/def/programs \
 		${WRKSRC}/doc/icmake.doc \
 		${WRKSRC}/exec/icmconf \
 		${WRKSRC}/usr/share/icmake/icmconf \
 		${WRKSRC}/exec/build \
-		${WRKSRC}/make/build \
 		${WRKSRC}/pp/build \
 		${WRKSRC}/rss/build \
 		${WRKSRC}/un/build
-	@${REINPLACE_CMD} -e '\
-		s|/usr/lib/icmake|${PREFIX}/lib/icmake-${PORTVERSION}|g; \
-		s|/usr/share/icmake|${PREFIX}/share/icmake-${PORTVERSION}|g; \
-		s|/etc/icmake/icmake.cf|${PREFIX}/etc/icmake/icmake.rc|g' \
-		${WRKSRC}/etc/icmake/icmake.rc
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_bootstrap ${PREFIX}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_prepare ${PREFIX}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_bootstrap x
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install strip progs ${STAGEDIR}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install scripts ${STAGEDIR}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install skel ${STAGEDIR}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install etc ${STAGEDIR}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install man ${STAGEDIR}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install doc ${STAGEDIR}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install docdoc ${STAGEDIR}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install strip all ${STAGEDIR}
 
 .include <bsd.port.mk>

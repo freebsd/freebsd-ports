@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/third_party/glslang/BUILD.gn.orig	2017-01-26 00:49:29 UTC
++++ src/3rdparty/chromium/third_party/glslang/BUILD.gn
+@@ -8,7 +8,7 @@ config("glslang_config") {
+   include_dirs = [ "src" ]
+ 
+   defines = []
+-  if (is_linux || is_android) {
++  if (is_linux || is_bsd || is_android) {
+     defines += [ "GLSLANG_OSINCLUDE_UNIX" ]
+   } else if (is_win) {
+     defines += [ "GLSLANG_OSINCLUDE_WIN32" ]
+@@ -132,7 +132,7 @@ static_library("glslang") {
+     "src/glslang/Public/ShaderLang.h",
+   ]
+ 
+-  if (is_linux || is_android) {
++  if (is_linux || is_bsd || is_android) {
+     sources += [ "src/glslang/OSDependent/Unix/ossource.cpp" ]
+   } else if (is_win) {
+     sources += [

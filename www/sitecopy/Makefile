@@ -38,7 +38,6 @@ USES+=	ssl
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|;;|;|g' \
 		${WRKSRC}/src/sitestore.c
