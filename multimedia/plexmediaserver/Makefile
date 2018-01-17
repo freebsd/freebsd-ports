@@ -24,7 +24,6 @@ USE_RC_SUBR?=	${PORTNAME}
 
 SUB_FILES=	pkg-message
 SUB_LIST?=	PORTNAME=${PORTNAME} DATADIR=${DATADIR} USERS=${USERS} GROUPS=${GROUPS}
-PLIST_SUB+=	PLEX_BUILD=${DISTVERSIONSUFFIX}
 
 USERS=	plex
 GROUPS=	${USERS}
@@ -51,16 +50,24 @@ post-patch:
 	${FIND} ${WRKSRC}/Resources -name '*.so' -exec ${STRIP_CMD} {} \+
 	${FIND} ${WRKSRC} ${WRKSRC}/Resources -name 'Plex*' -depth 1 -exec ${STRIP_CMD} {} \+
 	${FIND} ${WRKSRC} -depth 1 -name 'lib*' -exec ${STRIP_CMD} {} \+
-	${RM} ${WRKSRC}/start.sh
+	${RM} ${WRKSRC}/start.sh ${WRKSRC}/Resources/start.sh
 	# Older verisons of Plex we have to create a symlink
 	# Newer versions of Plex ship a duplicate file; we'll just symlink
 	${RM} ${WRKSRC}/libpython2.7.so
+.if ! ${PORT_OPTIONS:MRELAY}
+	${RM} ${WRKSRC}/Plex\ Relay
+.endif
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR})
 	# Python fix for older releases of Plex
-	(cd ${STAGEDIR}/${DATADIR} && ${LN} -s libpython2.7.so.1 libpython2.7.so)
+	${INSTALL} -lrs ${STAGEDIR}/${DATADIR}/libpython2.7.so.1 ${STAGEDIR}/${DATADIR}/libpython2.7.so
 	# Workaround for space in binary name
-	(cd ${STAGEDIR}${DATADIR} && ${LN} -s Plex\ Media\ Server Plex_Media_Server)
+	${INSTALL} -lrs ${STAGEDIR}/${DATADIR}/Plex\ Media\ Server ${STAGEDIR}/${DATADIR}/Plex_Media_Server
+
+post-install:
+	@${CHMOD} 555 ${STAGEDIR}/${DATADIR}/CrashUploader ${STAGEDIR}/${DATADIR}/Plex*
+	@${FIND} -s ${STAGEDIR}${DATADIR} -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
