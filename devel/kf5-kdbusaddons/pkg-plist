@@ -14,8 +14,10 @@ include/KF5/KDBusAddons/kdeinitinterface.h
 include/KF5/kdbusaddons_version.h
 lib/cmake/KF5DBusAddons/KF5DBusAddonsConfig.cmake
 lib/cmake/KF5DBusAddons/KF5DBusAddonsConfigVersion.cmake
+lib/cmake/KF5DBusAddons/KF5DBusAddonsMacros.cmake
 lib/cmake/KF5DBusAddons/KF5DBusAddonsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5DBusAddons/KF5DBusAddonsTargets.cmake
+lib/cmake/KF5DBusAddons/KF5dbus.service.in
 lib/libKF5DBusAddons.so
 lib/libKF5DBusAddons.so.5
 lib/libKF5DBusAddons.so.%%KDE_FRAMEWORKS_VERSION%%

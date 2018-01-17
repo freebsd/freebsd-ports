@@ -1,4 +1,5 @@
 bin/kbuildsycoca5
+etc/xdg/kservice.categories
 etc/xdg/menus/kf5-applications.menu
 include/KF5/KService/KAutostart
 include/KF5/KService/KDBusServiceStarter

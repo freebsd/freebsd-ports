@@ -4,6 +4,7 @@ bin/balooctl
 bin/baloosearch
 bin/balooshow
 etc/xdg/autostart/baloo_file.desktop
+etc/xdg/baloo.categories
 include/KF5/Baloo/Baloo/File
 include/KF5/Baloo/Baloo/FileMonitor
 include/KF5/Baloo/Baloo/IndexerConfig

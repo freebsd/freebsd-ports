@@ -31,6 +31,7 @@ share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
 share/ECM/kde-modules/appstreamtest.cmake
+share/ECM/kde-modules/prefix.sh.cmake
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddQch.cmake
 share/ECM/modules/ECMFindQMLModule.cmake.in

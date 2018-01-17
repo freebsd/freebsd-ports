@@ -1,3 +1,4 @@
+etc/xdg/kjobwidgets.categories
 include/KF5/KJobWidgets/KAbstractWidgetJobTracker
 include/KF5/KJobWidgets/KDialogJobUiDelegate
 include/KF5/KJobWidgets/KJobWidgets

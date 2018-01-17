@@ -1,3 +1,4 @@
+etc/xdg/kbookmarks.categories
 include/KF5/KBookmarks/KBookmark
 include/KF5/KBookmarks/KBookmarkAction
 include/KF5/KBookmarks/KBookmarkActionInterface
