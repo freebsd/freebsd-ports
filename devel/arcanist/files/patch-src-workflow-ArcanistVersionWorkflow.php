@@ -1,6 +1,6 @@
---- src/workflow/ArcanistVersionWorkflow.php.orig	2015-07-14 00:07:20.409019999 +0200
-+++ src/workflow/ArcanistVersionWorkflow.php	2015-07-14 00:27:09.586063998 +0200
-@@ -27,6 +27,13 @@
+--- src/workflow/ArcanistVersionWorkflow.php.orig	2017-06-09 15:12:37 UTC
++++ src/workflow/ArcanistVersionWorkflow.php
+@@ -27,6 +27,13 @@ EOTEXT
    public function run() {
      $console = PhutilConsole::getConsole();
  

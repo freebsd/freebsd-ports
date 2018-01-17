@@ -12,11 +12,13 @@ COMMENT=	Command line interface for Phabricator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	php-libphutil>0:devel/libphutil
+
 CONFLICTS=	arc-*
 
 PHP_DESTDIR=	lib/php/arcanist
-RUN_DEPENDS=	php-libphutil>0:devel/libphutil
-USES=		php
+USES=		php python:2.7,env shebangfix
+SHEBANG_FILES=	scripts/breakout.py
 USE_PHP=	curl dom hash json simplexml
 USE_GITHUB=	yes
 NO_BUILD=	yes
