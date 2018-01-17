@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	speedtables
-PORTVERSION=	1.13.8
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.13.9
+#DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	databases
 
@@ -30,7 +30,8 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS PGSQL CASSANDRA
 CASSANDRA_DESC=		Cassandra database support
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
-PGSQL_LIB_DEPENDS=	libpgtcl2.0.0.so:databases/postgresql94-pgtcl
+PGSQL_USES=		pgsql
+PGSQL_VARS=		WANT_PGSQL=pgtcl
 CASSANDRA_CONFIGURE_ON=	--with-casstcl=${LOCALBASE}
 CASSANDRA_LIB_DEPENDS=	libcasstcl.so:databases/casstcl
 
