@@ -3,6 +3,7 @@
 
 PORTNAME=	pc-webkitviewer
 PORTVERSION=	201706210943
+PORTREVISION= 1
 CATEGORIES=	www
 
 MAINTAINER=	jmaloney@ixsystems.com
@@ -17,10 +18,10 @@ CONFLICTS=      pcbsd-utils-[0-9]*
 
 MAKE_JOBS_UNSAFE=yes
 ONLY_FOR_ARCHS= amd64
+USES=           qmake shebangfix tar:xz
 USE_LDCONFIG=   yes
 USE_QT5=        core gui network svg linguist_build \
-		buildtools_build x11extras widgets multimedia
-USES=           qmake shebangfix tar:xz
+		buildtools_build x11extras widgets multimedia webkit
 USE_GL+=	gl
 
 WRKSRC_SUBDIR=  src-qt5
