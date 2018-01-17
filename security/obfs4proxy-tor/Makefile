@@ -2,6 +2,7 @@
 
 PORTNAME=	obfs4proxy
 DISTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://people.torproject.org/~yawning/releases/${PORTNAME}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -31,7 +32,7 @@ PLIST_FILES=	bin/obfs4proxy \
 		man/man1/obfs4proxy.1.gz
 
 do-build:
-	@${RLN} ${WRKSRC} ${WRKSRC}/obfs4proxy/src/git.torproject.org/pluggable-transports/obfs4.git 
+	@${RLN} ${WRKSRC} ${WRKSRC}/obfs4proxy/src/git.torproject.org/pluggable-transports/obfs4.git
 	@cd ${WRKSRC}/obfs4proxy && \
 		${SETENV} GOPATH=${WRKSRC}/obfs4proxy go build
 
