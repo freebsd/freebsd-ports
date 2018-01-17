@@ -1,0 +1,15 @@
+The facedetect plugin cannot be built with C++11:
+
+frei0r-plugins-1.5.0/src/filter/facedetect/facedetect.cpp:271:15: 
+  error: non-constant-expression cannot be narrowed from type 'int' 
+  to 'double' in initializer list [-Wc++11-narrowing]
+
+--- src/filter/facedetect/CMakeLists.txt.orig	2018-01-17 09:42:26 UTC
++++ src/filter/facedetect/CMakeLists.txt
+@@ -11,5 +11,6 @@ LINK_LIBRARIES(${OpenCV_LIBS} ${OpenCV_LIBRARIES})
+ 
+ add_library (${TARGET}  MODULE ${SOURCES})
+ set_target_properties (${TARGET} PROPERTIES PREFIX "")
++set_property(TARGET facedetect PROPERTY CXX_STANDARD 98)
+ 
+ install (TARGETS ${TARGET} LIBRARY DESTINATION ${LIBDIR})
