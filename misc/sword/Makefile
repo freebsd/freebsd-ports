@@ -15,7 +15,11 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cppunit-config:devel/cppunit
 
-BROKEN_FreeBSD_12=	does not build on 12.X
+# Workaround for for FreeBSD_11+.
+BUILD_DEPENDS+= clang38:lang/clang38
+CC=		clang38
+CXX=		clang++38
+
 BROKEN_powerpc64=	does not compile: libicui18n.so: undefined reference to __cxa_throw_bad_array_new_length
 
 GNU_CONFIGURE=	yes
