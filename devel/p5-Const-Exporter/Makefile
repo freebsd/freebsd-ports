@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Const-Exporter
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	p5-Const-Fast>=0:devel/p5-Const-Fast \
 		p5-Ref-Util>=0:devel/p5-Ref-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Hash-Objectify>=0:devel/p5-Hash-Objectify \
-		p5-Path-Tiny>=0.004:devel/p5-Path-Tiny \
 		p5-Test-Most>=0:devel/p5-Test-Most
 
 NO_ARCH=	yes
