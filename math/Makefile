@@ -737,6 +737,7 @@
     SUBDIR += symmetrica
     SUBDIR += tablix
     SUBDIR += taucs
+    SUBDIR += tblis
     SUBDIR += testu01
     SUBDIR += tetgen
     SUBDIR += timbl
