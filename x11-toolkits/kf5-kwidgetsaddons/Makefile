@@ -1,7 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	kwidgetsaddons
-DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+# Note, the so file is still 5.42.0, therefore, just 
+#       override the DISTVERSION and not the value of
+#       KDE_FRAMEWORKS_VERSION as usually.
+DISTVERSION=	5.42.1 # ${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
