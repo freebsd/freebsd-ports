@@ -23,6 +23,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/ApplicationWindow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/BasicListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ContextDrawer.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/FormLayout.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/GlobalDrawer.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Heading.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Icon.qml
@@ -54,10 +55,6 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/Material/Label.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/Material/SwipeListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/Material/Theme.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/styles/Plasma/Icon.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/styles/Plasma/Theme.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/styles/Plasma/Units.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop.plasma/Units.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop/AbstractApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop/AbstractListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop/ApplicationWindow.qml
@@ -68,6 +65,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/ApplicationHeader.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/templates/FormLayout.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/OverlayDrawer.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/OverlaySheet.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/SwipeListItem.qml

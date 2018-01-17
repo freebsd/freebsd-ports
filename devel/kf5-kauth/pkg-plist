@@ -1,4 +1,5 @@
 etc/dbus-1/system.d/org.kde.kf5auth.conf
+etc/xdg/kauth.categories
 include/KF5/KAuth/KAuth
 include/KF5/KAuth/KAuthAction
 include/KF5/KAuth/KAuthActionReply

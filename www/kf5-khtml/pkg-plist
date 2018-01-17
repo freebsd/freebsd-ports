@@ -1,4 +1,5 @@
 etc/xdg/khtmlrc
+etc/xdg/khtml.categories
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings
 include/KF5/KHtml/KHTMLView
@@ -32,6 +33,7 @@ include/KF5/KHtml/dom/html_misc.h
 include/KF5/KHtml/dom/html_object.h
 include/KF5/KHtml/dom/html_table.h
 include/KF5/KHtml/kencodingdetector.h
+include/KF5/KHtml/khtml_debug.h
 include/KF5/KHtml/khtml_events.h
 include/KF5/KHtml/khtml_export.h
 include/KF5/KHtml/khtml_part.h

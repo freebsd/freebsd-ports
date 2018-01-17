@@ -11,6 +11,7 @@ include/KF5/KIOCore/KDiskFreeSpaceInfo
 include/KF5/KIOCore/KFileItem
 include/KF5/KIOCore/KFileItemListProperties
 include/KF5/KIOCore/KIO/AuthInfo
+include/KF5/KIOCore/KIO/BatchRenameJob
 include/KF5/KIOCore/KIO/ChmodJob
 include/KF5/KIOCore/KIO/ConnectionServer
 include/KF5/KIOCore/KIO/CopyJob
@@ -69,6 +70,7 @@ include/KF5/KIOCore/kdiskfreespaceinfo.h
 include/KF5/KIOCore/kfileitem.h
 include/KF5/KIOCore/kfileitemlistproperties.h
 include/KF5/KIOCore/kio/authinfo.h
+include/KF5/KIOCore/kio/batchrenamejob.h
 include/KF5/KIOCore/kio/chmodjob.h
 include/KF5/KIOCore/kio/connectionserver.h
 include/KF5/KIOCore/kio/copyjob.h
@@ -775,7 +777,6 @@ share/kservices5/searchproviders/backports.desktop
 share/kservices5/searchproviders/baidu.desktop
 share/kservices5/searchproviders/beolingus.desktop
 share/kservices5/searchproviders/bing.desktop
-share/kservices5/searchproviders/blip.desktop
 share/kservices5/searchproviders/bugft.desktop
 share/kservices5/searchproviders/bugno.desktop
 share/kservices5/searchproviders/call.desktop

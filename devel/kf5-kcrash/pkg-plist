@@ -1,3 +1,4 @@
+etc/xdg/kcrash.categories
 include/KF5/KCrash/KCrash
 include/KF5/KCrash/kcrash.h
 include/KF5/KCrash/kcrash_export.h

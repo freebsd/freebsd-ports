@@ -1,3 +1,4 @@
+etc/xdg/prison.categories
 include/KF5/prison/AbstractBarcode
 include/KF5/prison/Prison
 include/KF5/prison/abstractbarcode.h
