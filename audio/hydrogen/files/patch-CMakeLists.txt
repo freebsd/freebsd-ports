@@ -1,11 +1,7 @@
---- CMakeLists.txt.orig	2014-09-09 18:39:33 UTC
+--- CMakeLists.txt.orig	2016-11-05 18:52:50 UTC
 +++ CMakeLists.txt
-@@ -100,12 +100,12 @@ ENDIF()
- IF(APPLE)
- 	SET(CMAKE_CXX_FLAGS "-O2")
- ELSE()
--	SET(CMAKE_CXX_FLAGS "-O2 -fno-implement-inlines")
-+	SET(CMAKE_CXX_FLAGS "-O2 ${CMAKE_CXX_FLAGS}")
+@@ -111,9 +111,9 @@ IF (NOT CMAKE_CXX_COMPILER_ID MATCHES "C
+     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-implement-inlines")
  ENDIF()
  
 -SET(CMAKE_CXX_FLAGS_RELEASE "")
@@ -16,7 +12,7 @@
  
  
  IF(APPLE)
-@@ -178,7 +178,11 @@ FIND_LADSPA(LADSPA ladspa.h noise)
+@@ -201,7 +201,11 @@ FIND_HELPER(NSMSESSION liblo lo/lo.h lo)
  IF("${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD")
  	FIND_HELPER(OSS oss sys/soundcard.h ossaudio )
  ELSE()
@@ -29,16 +25,3 @@
  ENDIF()
  
  FIND_HELPER(JACK jack jack/jack.h jack)
-@@ -195,9 +199,9 @@ FIND_HELPER(PULSEAUDIO pulseaudio pulse/
- FIND_HELPER(LASH lash-1.0 lash/lash.h lash)
- FIND_HELPER(LRDF lrdf lrdf.h lrdf)
- 
--IF(LRDF_FOUND)
--	include_directories(${LRDF_INCLUDE_DIRS}) # see github issue 194
--ENDIF(LRDF_FOUND)
-+#IF(LRDF_FOUND)
-+#	include_directories(${LRDF_INCLUDE_DIRS}) # see github issue 194
-+#ENDIF(LRDF_FOUND)
- 
- FIND_HELPER(RUBBERBAND rubberband RubberBandStretcher.h rubberband)
- FIND_HELPER(CPPUNIT cppunit cppunit/TestCase.h cppunit)
