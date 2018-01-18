@@ -12,8 +12,6 @@ COMMENT=	Microsoft C++ REST SDK
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../license.txt
 
-BROKEN=		fails to build with boost 1.66, see bug 224093
-
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USE_GITHUB=	yes
