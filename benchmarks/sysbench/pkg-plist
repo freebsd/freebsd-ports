@@ -14,6 +14,7 @@ bin/sysbench
 %%DATADIR%%/tests/include/api_sql_common.sh
 %%DATADIR%%/tests/include/config.sh
 %%DATADIR%%/tests/include/drv_common.sh
+%%DATADIR%%/tests/include/inspect.lua
 %%DATADIR%%/tests/include/mysql_common.sh
 %%DATADIR%%/tests/include/oltp_legacy/bulk_insert.lua
 %%DATADIR%%/tests/include/oltp_legacy/common.lua
