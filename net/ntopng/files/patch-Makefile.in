@@ -1,10 +1,10 @@
---- Makefile.in.orig	2017-12-06 11:11:19 UTC
+--- Makefile.in.orig	2018-01-12 09:48:20 UTC
 +++ Makefile.in
 @@ -34,7 +34,8 @@ LIBPCAP=-lpcap
  MONGOOSE_HOME=${PWD}/third-party/mongoose
  MONGOOSE_INC=-I$(MONGOOSE_HOME)
  ######
--HAS_LUAJIT=$(shell pkg-config --exists luajit; echo $$?)
+-HAS_LUAJIT=$(shell pkg-config --atleast-version=2.1.0 luajit; echo $$?)
 +# Force using embedded luajit
 +HAS_LUAJIT=1
  ifeq ($(HAS_LUAJIT), 0)
