@@ -80,7 +80,7 @@ WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 MYSQLD_USES=		mysql:server
 MYSQLD_USES_OFF=	mysql:client
 
-SUB_FILES+=	librenms.conf pkg-message
+SUB_FILES+=	pkg-message
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 
 ROOT_FILES=	addhost.php adduser.php	alerts.php build-base.php build.sql \
