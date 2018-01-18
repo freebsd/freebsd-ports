@@ -1,5 +1,5 @@
---- src/osdep.h.orig	2003-04-20 14:34:47.000000000 -0400
-+++ src/osdep.h	2008-01-23 23:29:47.000000000 -0500
+--- src/osdep.h.orig	2003-04-20 18:34:47 UTC
++++ src/osdep.h
 @@ -32,6 +32,14 @@
  extern "C"
  {
@@ -15,7 +15,7 @@
  
  #if TIME_WITH_SYS_TIME
  # include <sys/time.h>
-@@ -63,10 +71,27 @@
+@@ -63,10 +71,27 @@ namespace aprsd
                                        char *buf, size_t buflen, struct hostent **result,
                                        int *h_errnop)
      {

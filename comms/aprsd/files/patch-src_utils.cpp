@@ -1,14 +1,14 @@
---- src/utils.cpp.orig	2003-10-01 12:58:27.000000000 -0400
-+++ src/utils.cpp	2008-01-22 21:54:44.000000000 -0500
-@@ -41,6 +41,7 @@
+--- src/utils.cpp.orig	2003-10-01 16:58:27 UTC
++++ src/utils.cpp
+@@ -41,6 +41,7 @@ int CountDefault = 7;		   //Max of 7 instances of one 
  
  static RecursiveMutex pmtxLog;
  
-+const string LOGPATH("%%LOGPATH%%");
++const string LOGPATH("/var/log/aprsd/");
  
  int WriteLog(const string& sp, const string& LogFile)
  {
-@@ -50,11 +51,12 @@
+@@ -50,11 +51,12 @@ int WriteLog(const string& sp, const string& LogFile)
      static Lock locker(pmtxLog, false);
  
      locker.get();
@@ -23,7 +23,7 @@
  
      time(&ltime);                                       // Timestamp
      ctime_r(&ltime, szTime);                            // "threadsafe" ctime
-@@ -91,8 +93,8 @@
+@@ -91,8 +93,8 @@ int WriteLog(const char* pch, const char* LogFile)
  
      pthread_mutex_lock(pmtxLog);
  
