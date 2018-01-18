@@ -187,6 +187,7 @@ post-install:
 		${STAGEDIR}${LOCALBASE}/share/groonga/COPYING \
 		${STAGEDIR}${LOCALBASE}/storage/groonga/COPYING \
 		${STAGEDIR}${LOCALBASE}/share/mysql/mroonga/COPYING
+	${RM} ${STAGEDIR}${PREFIX}/include/mysql/*.h
 .endif # defined(CLIENT_ONLY)
 
 .if defined(WITH_OPENSSL_PORT)
