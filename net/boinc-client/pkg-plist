@@ -217,6 +217,16 @@ lib/libboinc_opencl.so.7.8.6
 %%X11%%share/boinc/ttf/LiberationSerif-BoldItalic.ttf
 %%X11%%share/boinc/ttf/LiberationSerif-Italic.ttf
 %%X11%%share/boinc/ttf/LiberationSerif-Regular.ttf
+%%MANAGER%%%%NLS%%share/locale/fa_IR/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/he/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/he/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/it_IT/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/it_IT/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/ka/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/ms/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/ms/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/sv/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/sv/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/ar/LC_MESSAGES/BOINC-Client.mo
 %%MANAGER%%%%NLS%%share/locale/ar/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/be/LC_MESSAGES/BOINC-Client.mo
@@ -227,8 +237,6 @@ lib/libboinc_opencl.so.7.8.6
 %%MANAGER%%%%NLS%%share/locale/ca/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/cs/LC_MESSAGES/BOINC-Client.mo
 %%MANAGER%%%%NLS%%share/locale/cs/LC_MESSAGES/BOINC-Manager.mo
-%%MANAGER%%%%NLS%%share/locale/cy/LC_MESSAGES/BOINC-Client.mo
-%%MANAGER%%%%NLS%%share/locale/cy/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/da/LC_MESSAGES/BOINC-Client.mo
 %%MANAGER%%%%NLS%%share/locale/da/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/de/LC_MESSAGES/BOINC-Client.mo
@@ -261,8 +269,6 @@ lib/libboinc_opencl.so.7.8.6
 %%MANAGER%%%%NLS%%share/locale/nb/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/nl/LC_MESSAGES/BOINC-Client.mo
 %%MANAGER%%%%NLS%%share/locale/nl/LC_MESSAGES/BOINC-Manager.mo
-%%MANAGER%%%%NLS%%share/locale/nn/LC_MESSAGES/BOINC-Client.mo
-%%MANAGER%%%%NLS%%share/locale/nn/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/pl/LC_MESSAGES/BOINC-Client.mo
 %%MANAGER%%%%NLS%%share/locale/pl/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/pt_BR/LC_MESSAGES/BOINC-Client.mo
@@ -277,8 +283,6 @@ lib/libboinc_opencl.so.7.8.6
 %%MANAGER%%%%NLS%%share/locale/sk/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/sl/LC_MESSAGES/BOINC-Client.mo
 %%MANAGER%%%%NLS%%share/locale/sl/LC_MESSAGES/BOINC-Manager.mo
-%%MANAGER%%%%NLS%%share/locale/sv_SE/LC_MESSAGES/BOINC-Client.mo
-%%MANAGER%%%%NLS%%share/locale/sv_SE/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/tr/LC_MESSAGES/BOINC-Client.mo
 %%MANAGER%%%%NLS%%share/locale/tr/LC_MESSAGES/BOINC-Manager.mo
 %%MANAGER%%%%NLS%%share/locale/uk/LC_MESSAGES/BOINC-Client.mo

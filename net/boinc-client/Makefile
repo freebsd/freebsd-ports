@@ -4,7 +4,7 @@
 PORTNAME=	boinc-client
 PORTVERSION=	7.8.6
 DISTVERSIONPREFIX=	client_release/7.8/
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 
 MAINTAINER=	ler@FreeBSD.org
@@ -109,8 +109,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|' \
 		${WRKSRC}/client/hostinfo_unix.cpp
 	@${REINPLACE_CMD} -e 's|client/scripts||' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|$$$$mydir/$$$$ldir|&/LC_MESSAGES|' \
-		${WRKSRC}/locale/Makefile.am
+	#@${REINPLACE_CMD} -e 's|$$$$mydir/$$$$ldir|&/LC_MESSAGES|' \
+	#	${WRKSRC}/locale/Makefile.am
 # avoid build conflict with archivers/libzip
 	@${MV} ${WRKSRC}/zip/unzip/zip.h ${WRKSRC}/zip/unzip/boinczip.h
 	@${MV} ${WRKSRC}/zip/zip/zip.h ${WRKSRC}/zip/zip/boinczip.h
