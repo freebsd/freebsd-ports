@@ -2,6 +2,7 @@
 
 PORTNAME=	libpagemaker
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	print graphics devel
 MASTER_SITES=	LODEV/${PORTNAME}
 

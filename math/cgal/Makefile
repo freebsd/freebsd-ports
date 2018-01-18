@@ -3,6 +3,7 @@
 
 PORTNAME=	cgal
 PORTVERSION=	4.10.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME:tu}/${PORTNAME}/releases/download/releases/${DISTNAME}/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	love
 PORTVERSION=	0.7.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	devel games
 MASTER_SITES=	http://cdn.bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
