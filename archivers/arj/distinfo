@@ -1,5 +1,5 @@
-TIMESTAMP = 1508345026
+TIMESTAMP = 1516278521
 SHA256 (arj-3.10.22.tar.gz) = 589e4c9bccc8669e7b6d8d6fcd64e01f6a2c21fe10aad56a83304ecc3b96a7db
 SIZE (arj-3.10.22.tar.gz) = 431467
-SHA256 (arj_3.10.22-16.debian.tar.xz) = 2d9cc5aeb2ac44d000d2e3399846f1c3ce468e17e3af4bfb505b9a6eaf88a502
-SIZE (arj_3.10.22-16.debian.tar.xz) = 19452
+SHA256 (arj_3.10.22-17.debian.tar.xz) = 9791db321ef8fb7237697ac0ad7fa9c18d5e53c43bb835953ef80aeeda809804
+SIZE (arj_3.10.22-17.debian.tar.xz) = 19548
