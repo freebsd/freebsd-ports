@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfwnt
-PORTVERSION=	20170115
+PORTVERSION=	20180117
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfwnt/releases/download/${PORTVERSION}/ \
@@ -14,23 +14,27 @@ COMMENT=	Library for Windows NT data types
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	python${PYTHON2_DEFAULT}:lang/python${PYTHON2_DEFAULT:S/.//} \
+		python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//}
+RUN_DEPENDS=	python${PYTHON2_DEFAULT}:lang/python${PYTHON2_DEFAULT:S/.//} \
+		python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//}
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python
-USES=		libtool pathfix python
+CONFIGURE_ARGS=	--enable-python2 --enable-python3
+CONFIGURE_ENV=	PYTHON2_CONFIG=${LOCALBASE}/bin/python${PYTHON2_DEFAULT}-config \
+		PYTHON3=${LOCALBASE}/bin/python${PYTHON3_DEFAULT} \
+		PYTHON3_CONFIG=${LOCALBASE}/bin/python${PYTHON3_DEFAULT}-config
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PLIST_SUB=	PYTHON2_SITELIBDIR=lib/python${PYTHON2_DEFAULT}/site-packages \
+		PYTHON3_SITELIBDIR=lib/python${PYTHON3_DEFAULT}/site-packages
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	NLS
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 NLS_CONFIGURE_OFF=	--disable-nls
-
-PORTDOCS=	AUTHORS ChangeLog
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
