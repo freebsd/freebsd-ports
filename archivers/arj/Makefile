@@ -3,12 +3,12 @@
 
 PORTNAME=	arj
 PORTVERSION=	3.10.22
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	archivers
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.78_3.10%20build%2022:source \
 		DEBIAN_POOL:patch
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:source \
-		${PORTNAME}_${PORTVERSION}-16.debian.tar.xz:patch
+		${PORTNAME}_${PORTVERSION}-17.debian.tar.xz:patch
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Open source implementation of the ARJ archiver
