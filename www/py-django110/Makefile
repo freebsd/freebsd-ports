@@ -24,7 +24,7 @@ EXPIRATION_DATE=2018-01-31
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		cpe python shebangfix
+USES=		cpe python${PY_MYSQL} shebangfix
 USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	django/bin/django-admin.py \
 		django/conf/project_template/manage.py-tpl
@@ -49,6 +49,7 @@ HTMLDOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${FLA
 HTMLDOCS_IMPLIES=	DOCS
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${FLAVOR}
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb@${FLAVOR}
+MYSQL_VARS=	PY_MYSQL=:2.7
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
 
 post-build-HTMLDOCS-on:
