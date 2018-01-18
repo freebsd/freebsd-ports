@@ -416,7 +416,10 @@ do-build:
 	fi ;								  \
 	cd ${WRKSRC}/instsetoo_native ;					  \
 	. ../${FREEBSD_ENV_SET} ;					  \
-	build.pl --all -P$${numproc} -- -P$${dmproc}
+	if [ -n "${HOME}" -a ! -w "${HOME}" ]; then			  \
+		export HOME=/tmp ;					  \
+	fi ;								  \
+	HOME=/tmp build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
