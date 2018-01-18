@@ -409,6 +409,7 @@
     SUBDIR += metasploit
     SUBDIR += mhash
     SUBDIR += mindterm-binary
+    SUBDIR += minisign
     SUBDIR += monkeysphere
     SUBDIR += morphis
     SUBDIR += munge
