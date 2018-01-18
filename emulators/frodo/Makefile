@@ -10,6 +10,8 @@ DISTNAME=	FrodoV4_1b.Src
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulates a Commodore 64
 
+BROKEN_FreeBSD_12=	Regression C++
+
 USES=		shebangfix tk:run
 USE_XORG=	x11 xt xext sm ice
 ALL_TARGET=	Frodo
