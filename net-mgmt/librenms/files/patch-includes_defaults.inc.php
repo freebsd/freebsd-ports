@@ -1,6 +1,6 @@
---- includes/defaults.inc.php.orig	2017-11-01 17:55:06.000000000 +0000
-+++ includes/defaults.inc.php	2017-11-20 23:16:29.419902000 +0000
-@@ -48,19 +48,21 @@
+--- includes/defaults.inc.php.orig	2017-12-31 20:48:36 UTC
++++ includes/defaults.inc.php
+@@ -48,19 +48,21 @@ $config['fping_options']['retries'] = 3;
  $config['fping_options']['timeout'] = 500;
  $config['fping_options']['count']   = 3;
  $config['fping_options']['millisec'] = 200;
@@ -30,5 +30,5 @@
 +$config['dot']            = '/usr/local/bin/dot';
 +$config['sfdp']           = '/usr/local/bin/sfdp';
  
- // Memcached - Keep immediate statistics
- $config['memcached']['enable'] = false;
+ $config['slow_statistics'] = true;
+ // THIS WILL CHANGE TO FALSE IN FUTURE
