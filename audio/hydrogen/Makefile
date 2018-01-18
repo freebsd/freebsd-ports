@@ -10,8 +10,6 @@ COMMENT=	Advanced drum machine
 
 LICENSE=	GPLv2
 
-CONFLICTS=	hydrogen-devel-0.*
-
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		liblo.so:audio/liblo
 
