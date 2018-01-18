@@ -3,7 +3,7 @@
 
 PORTNAME=	translate
 PORTVERSION=	1.20
-CATEGORIES=	misc
+CATEGORIES=	misc perl5
 MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@FreeBSD.org
