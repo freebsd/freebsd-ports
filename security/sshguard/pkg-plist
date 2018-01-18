@@ -7,6 +7,7 @@ libexec/sshg-fw-ipfilter
 libexec/sshg-fw-ipfw
 libexec/sshg-fw-ipset
 libexec/sshg-fw-iptables
+libexec/sshg-fw-nft-sets
 libexec/sshg-fw-null
 libexec/sshg-fw-pf
 libexec/sshg-logtail
