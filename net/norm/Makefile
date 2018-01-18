@@ -9,17 +9,16 @@ DISTNAME=	src-norm-${DISTVERSION}
 MAINTAINER=	hd@oc.dk
 COMMENT=	NACK-Oriented Reliable Multicast (NORM)
 
-BROKEN_mips=	Does not build: named return values are no longer supported
-BROKEN_mips64=	Does not build: named return values are no longer supported
-BROKEN_powerpc64=	Does not build: named return values are no longer supported
-BROKEN_sparc64=	Does not build: named return values are no longer supported
-
 WRKSRC=		${WRKDIR}/norm-${DISTVERSION}
 
 USES=		waf tar:tgz libtool
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/normApi.h lib/libnorm.so lib/libnorm.so.1 \
 		lib/libnorm.so.1.0.0
+
+post-patch:
+	@${REINPLACE_CMD} -e '92s,r.*;,{&},' \
+		${WRKSRC}/protolib/include/protoSpace.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/include/normApi.h ${STAGEDIR}${PREFIX}/include/
