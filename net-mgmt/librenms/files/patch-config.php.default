@@ -1,4 +1,4 @@
---- config.php.default.orig	2017-04-11 17:32:28 UTC
+--- config.php.default.orig	2017-12-31 20:48:36 UTC
 +++ config.php.default
 @@ -10,7 +10,7 @@ $config['db_name'] = 'librenms';
  
