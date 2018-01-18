@@ -3,6 +3,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	5.1.12
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -28,12 +29,14 @@ OPTIONS_DEFAULT=	APACHE22
 
 USE_RUBY=	yes
 RAKE_BIN=	${LOCALBASE}/bin/rake
-USES=		cpe gem libtool shebangfix ssl
+USES=		cpe gem libtool python:env shebangfix ssl
 SHEBANG_FILES=	\
 	src/cxx_supportlib/vendor-copy/libuv/gyp_uv.py \
 	dev/vagrant/nginx_start \
 	dev/vagrant/provision.sh \
 	dev/ci/run-tests-with-docker \
+	dev/ci/tests/debian/run \
+	dev/ci/tests/rpm/run \
 	dev/ci/scripts/setup-host-natively.sh \
 	dev/ci/scripts/docker-entrypoint-stage2.sh \
 	dev/ci/scripts/inituidgid \
