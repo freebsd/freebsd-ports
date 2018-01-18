@@ -3,7 +3,7 @@
 PORTNAME=	cpprestsdk
 PORTVERSION=	2.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	projects@phess.net
@@ -11,6 +11,8 @@ COMMENT=	Microsoft C++ REST SDK
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../license.txt
+
+BROKEN=		fails to build with boost 1.66, see bug 224093
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	evolvotron
 PORTVERSION=	0.6.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

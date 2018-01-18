@@ -3,7 +3,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \

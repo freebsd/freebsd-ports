@@ -3,6 +3,7 @@
 
 PORTNAME=	osm2pgsql
 PORTVERSION=	0.94.0
+PORTREVISION=	1
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org

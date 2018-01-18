@@ -3,6 +3,7 @@
 
 PORTNAME=	osquery
 PORTVERSION=	2.10.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -12,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to link
+#BROKEN=		fails to build with boost 1.66, see bug 224180
 
 BUILD_DEPENDS=	thrift>0:devel/thrift \
 		bash>0:shells/bash \

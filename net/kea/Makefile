@@ -2,7 +2,7 @@
 
 PORTNAME=	kea
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	ISC/kea/${PORTVERSION}
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 		libboost_system.so:devel/boost-libs
 
+BROKEN=		fails to build with boost 1.66, see bug 224184
 BROKEN_powerpc64=	fails to configure: checking for log4cplus library... no
 
 USES=		autoreconf compiler:c++11-lang libtool pathfix python:3.3+ ssl
