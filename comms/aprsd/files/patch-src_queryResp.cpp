@@ -1,5 +1,5 @@
---- src/queryResp.cpp.orig	2003-03-30 23:49:40.000000000 -0500
-+++ src/queryResp.cpp	2008-01-23 22:12:30.000000000 -0500
+--- src/queryResp.cpp.orig	2003-03-31 04:49:40 UTC
++++ src/queryResp.cpp
 @@ -40,6 +40,9 @@
  
  #include <netinet/in.h>
@@ -10,7 +10,7 @@
  
  #include "constant.h"
  #include "utils.h"
-@@ -84,7 +87,6 @@
+@@ -84,7 +87,6 @@ void queryResp(int source, const aprsString* pkt)
      if ((rc = gethostname(hostname,80)) != 0)
          strcpy(hostname, "Host_Unknown");
      else {
@@ -18,7 +18,7 @@
          //Thread-Safe verison of gethostbyname()
          h = NULL;
          rc = gethostbyname_r(hostname,
-@@ -94,12 +96,10 @@
+@@ -94,12 +96,10 @@ void queryResp(int source, const aprsString* pkt)
                                  &h,
                                  &h_err);
  
