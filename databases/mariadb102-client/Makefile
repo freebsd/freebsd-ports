@@ -27,13 +27,12 @@ post-configure:
 		${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c
 
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/share/aclocal/mysql.m4
-	${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
-.	for f in server my_global.h my_sys.h mysql_com.h mysql_version.h
-	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/${f}
-.	endfor
-	${RM} -r ${STAGEDIR}${DATADIR}/policy
-	${RM} ${STAGEDIR}${PREFIX}/man/man1/aria* ${STAGEDIR}${PREFIX}/man/man1/myisam*
+	${RM} ${STAGEDIR}${PREFIX}/share/aclocal/mysql.m4 \
+		${STAGEDIR}${PREFIX}/man/man1/aria* \
+		${STAGEDIR}${PREFIX}/man/man1/myisam*
+	${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig \
+		${STAGEDIR}${DATADIR}/policy \
+		${STAGEDIR}${PREFIX}/include/mysql/server
 	# Fix https://mariadb.atlassian.net/browse/MDEV-9388
 	@${REINPLACE_CMD} 's/-l-pthread/-lpthread/' ${STAGEDIR}${PREFIX}/bin/mysql_config
 
