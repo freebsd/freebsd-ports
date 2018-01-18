@@ -419,7 +419,7 @@ do-build:
 	if [ -n "${HOME}" -a ! -w "${HOME}" ]; then			  \
 		export HOME=/tmp ;					  \
 	fi ;								  \
-	HOME=/tmp build.pl --all -P$${numproc} -- -P$${dmproc}
+	build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
