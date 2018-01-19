@@ -3,6 +3,7 @@
 
 PORTNAME=	xml-security-c
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	APACHE/santuario/c-library
 PKGNAMEPREFIX=	apache-
