@@ -1,14 +1,14 @@
---- Makefile.orig	2017-07-28 13:40:22 UTC
+--- Makefile.orig	2018-01-17 20:01:47 UTC
 +++ Makefile
 @@ -1,6 +1,7 @@
  REBAR ?= "$(CURDIR)/rebar"
  PREFIX ?= /usr/local
  SHARE_PREFIX ?= $(PREFIX)/share
 +MAN_PREFIX ?= $(PREFIX)/man
- CANONICAL := v1.5/
+ CANONICAL := v1.6/
  ELIXIRC := bin/elixirc --verbose --ignore-module-conflict
  ERLC := erlc -I lib/elixir/include
-@@ -267,9 +268,9 @@ clean_man:
+@@ -260,9 +261,9 @@ clean_man:
  	rm -f man/iex.1.bak
  
  install_man: build_man
