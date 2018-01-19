@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libuv
-PORTVERSION=	1.19.0
+PORTVERSION=	1.19.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 #MASTER_SITES=	http://dist.libuv.org/dist/v${PORTVERSION}/
