@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-DISTVERSION=	11.1.11
+DISTVERSION=	11.1.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rsync:net/rsync \
 LIB_DEPENDS=	libssh2.so:security/libssh2 \
 		libsqlite3.so:databases/sqlite3
 
-USES=	libedit
+USES=		libedit pkgconfig
 
 USE_GITHUB=	yes
 USE_RC_SUBR=	cbsdd cbsdrsyncd
