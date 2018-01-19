@@ -1,6 +1,6 @@
---- src/Lib/Network/Address.hpp.orig	2010-01-19 17:08:17.000000000 +0100
-+++ src/Lib/Network/Address.hpp	2012-04-20 17:34:26.306480287 +0200
-@@ -47,7 +47,7 @@
+--- src/Lib/Network/Address.hpp.orig	2016-04-09 13:14:00 UTC
++++ src/Lib/Network/Address.hpp
+@@ -62,7 +62,7 @@ class Address (public)
      struct sockaddr * getSockaddr() const { return (struct sockaddr *)&ss; };
      socklen_t getSockaddrLen() const
      {
