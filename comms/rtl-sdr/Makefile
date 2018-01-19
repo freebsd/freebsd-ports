@@ -3,7 +3,7 @@
 
 PORTNAME=	rtl-sdr
 PORTVERSION=	20140210
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac

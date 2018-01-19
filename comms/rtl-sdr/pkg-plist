@@ -32,7 +32,7 @@ libdata/pkgconfig/librtlsdr.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/doxygen.png
 %%DOXYGEN%%%%DOCSDIR%%/html/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/html/files.html
-%%DOXYGEN%%%%DOCSDIR%%/html/files.js
+%%DOXYGEN%%%%DOCSDIR%%/html/files_dup.js
 %%DOXYGEN%%%%DOCSDIR%%/html/folderclosed.png
 %%DOXYGEN%%%%DOCSDIR%%/html/folderopen.png
 %%DOXYGEN%%%%DOCSDIR%%/html/getopt_8h_source.html
