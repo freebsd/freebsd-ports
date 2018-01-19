@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dq
-PORTVERSION=	20161210
-PORTREVISION=	1
+PORTVERSION=	20180112
 CATEGORIES=	dns
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -23,7 +22,7 @@ SUB_LIST=	ETCDIR="${ETCDIR}" UID="${USERS}" GID="${GROUPS}"
 ALL_TARGET=	compile
 
 do-install:
-	cd ${WRKSRC}/build/bin && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/build/bin && ${INSTALL_PROGRAM} * ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC}/build/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/
 	${MKDIR} ${STAGEDIR}${ETCDIR}cache/env ${STAGEDIR}${ETCDIR}cache/root/servers
 	${ECHO_CMD} 10000000 > ${STAGEDIR}${ETCDIR}cache/env/CACHESIZE
