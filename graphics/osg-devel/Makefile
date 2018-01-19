@@ -47,7 +47,7 @@ GTA_DESC=	GTA file format support
 INVENTOR_DESC=	SGI OpenInventor support
 LIBLAS_DESC=	liblas support
 NVTT_DESC=	Use NVidia texture tools
-QT_DESC=	QT toolkit support (optional)
+QT_DESC=	QT toolkit support
 SDL_DESC=	Use SDL (joystick support in present3d)
 VNC_DESC=	LibVNCServer support
 
