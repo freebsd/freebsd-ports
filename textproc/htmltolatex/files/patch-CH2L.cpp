@@ -1,5 +1,5 @@
---- CH2L.cpp.orig	Sun Nov 11 21:03:19 2001
-+++ CH2L.cpp	Fri Feb 21 03:08:09 2003
+--- CH2L.cpp.orig	2001-11-11 21:03:19.000000000 +0100
++++ CH2L.cpp	2018-01-19 07:07:05.786197000 +0100
 @@ -18,6 +18,9 @@
   * Boston, MA 02111-1307, USA.
   *
@@ -45,3 +45,12 @@
  { 
  	bool did_something = false;
  	bool alignment_changed = false;
+@@ -3945,7 +3947,7 @@
+ 
+ 		mTableDimensionsFileName = tsp;
+ 		mTableDimensionsFile.open(tsp.c_str());
+-		return mTableDimensionsFile;
++		return true;
+ 		}
+ 	else 
+ 		{
