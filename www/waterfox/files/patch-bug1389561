@@ -1,0 +1,758 @@
+commit 06e22a681925
+Author: Shawn Huang <shuang@mozilla.com>
+Date:   Thu Oct 26 16:59:18 2017 +0800
+
+    Bug 1389561 - Part 1: Ensure origin initialized in Maintenance::DirectoryWork. r=janv
+    
+    Make sure origins had been initialized in Maintenance::DirectoryWork before getting
+    QuotaObject. It's possible that DatabaseMaintenance::Run before origins initialized.
+---
+ dom/indexedDB/ActorsParent.cpp | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
+
+diff --git dom/indexedDB/ActorsParent.cpp dom/indexedDB/ActorsParent.cpp
+index de613cc4eec0..06ffc9df84fa 100644
+--- dom/indexedDB/ActorsParent.cpp
++++ dom/indexedDB/ActorsParent.cpp
+@@ -18602,6 +18602,7 @@ Maintenance::DirectoryWork()
+         continue;
+       }
+ 
++      nsCString suffix;
+       nsCString group;
+       nsCString origin;
+       nsTArray<nsString> databasePaths;
+@@ -18659,17 +18660,17 @@ Maintenance::DirectoryWork()
+ 
+         // Found a database.
+         if (databasePaths.IsEmpty()) {
++          MOZ_ASSERT(suffix.IsEmpty());
+           MOZ_ASSERT(group.IsEmpty());
+           MOZ_ASSERT(origin.IsEmpty());
+ 
+           int64_t dummyTimeStamp;
+           bool dummyPersisted;
+-          nsCString dummySuffix;
+           if (NS_WARN_IF(NS_FAILED(
+                 quotaManager->GetDirectoryMetadata2(originDir,
+                                                     &dummyTimeStamp,
+                                                     &dummyPersisted,
+-                                                    dummySuffix,
++                                                    suffix,
+                                                     group,
+                                                     origin)))) {
+             // Not much we can do here...
+@@ -18687,6 +18688,21 @@ Maintenance::DirectoryWork()
+                                                     group,
+                                                     origin,
+                                                     Move(databasePaths)));
++
++        nsCOMPtr<nsIFile> directory;
++
++        // Idle maintenance may occur before origin is initailized.
++        // Ensure origin is initialized first. It will initialize all origins
++        // for temporary storage including IDB origins.
++        rv = quotaManager->EnsureOriginIsInitialized(persistenceType,
++                                                     suffix,
++                                                     group,
++                                                     origin,
++                                                     getter_AddRefs(directory));
++
++        if (NS_WARN_IF(NS_FAILED(rv))) {
++          return rv;
++        }
+       }
+     }
+   }
+commit a9f850009e15
+Author: Shawn Huang <shuang@mozilla.com>
+Date:   Thu Nov 2 14:54:07 2017 +0800
+
+    Bug 1389561 - Part 2: Wait for idle maintenance releasing DirectoryLock when finished. r=janv
+---
+ dom/indexedDB/ActorsParent.cpp | 68 +++++++++++++++++++++++++++++++-----------
+ 1 file changed, 51 insertions(+), 17 deletions(-)
+
+diff --git dom/indexedDB/ActorsParent.cpp dom/indexedDB/ActorsParent.cpp
+index 47d621909119..cf3d32ef8fff 100644
+--- dom/indexedDB/ActorsParent.cpp
++++ dom/indexedDB/ActorsParent.cpp
+@@ -17984,11 +17984,22 @@ QuotaClient::ShutdownWorkThreads()
+ 
+   mShutdownRequested = true;
+ 
++  // Shutdown maintenance thread pool (this spins the event loop until all
++  // threads are gone). This should release any maintenance related quota
++  // objects.
+   if (mMaintenanceThreadPool) {
+     mMaintenanceThreadPool->Shutdown();
+     mMaintenanceThreadPool = nullptr;
+   }
+ 
++  // Let any runnables dispatched from dying maintenance threads to be
++  // processed. This should release any maintenance related directory locks.
++  if (mCurrentMaintenance) {
++    MOZ_ALWAYS_TRUE(SpinEventLoopUntil([&]() {
++      return !mCurrentMaintenance;
++    }));
++  }
++
+   RefPtr<ConnectionPool> connectionPool = gConnectionPool.get();
+   if (connectionPool) {
+     connectionPool->Shutdown();
+@@ -18312,7 +18323,8 @@ Maintenance::Start()
+   AssertIsOnBackgroundThread();
+   MOZ_ASSERT(mState == State::Initial);
+ 
+-  if (IsAborted()) {
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnBackgroundThread()) ||
++      IsAborted()) {
+     return NS_ERROR_ABORT;
+   }
+ 
+@@ -18336,7 +18348,8 @@ Maintenance::CreateIndexedDatabaseManager()
+   MOZ_ASSERT(NS_IsMainThread());
+   MOZ_ASSERT(mState == State::CreateIndexedDatabaseManager);
+ 
+-  if (IsAborted()) {
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnNonBackgroundThread()) ||
++      IsAborted()) {
+     return NS_ERROR_ABORT;
+   }
+ 
+@@ -18361,7 +18374,8 @@ Maintenance::OpenDirectory()
+   MOZ_ASSERT(!mDirectoryLock);
+   MOZ_ASSERT(QuotaManager::Get());
+ 
+-  if (IsAborted()) {
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnBackgroundThread()) ||
++      IsAborted()) {
+     return NS_ERROR_ABORT;
+   }
+ 
+@@ -18385,7 +18399,8 @@ Maintenance::DirectoryOpen()
+   MOZ_ASSERT(mState == State::DirectoryOpenPending);
+   MOZ_ASSERT(mDirectoryLock);
+ 
+-  if (IsAborted()) {
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnBackgroundThread()) ||
++      IsAborted()) {
+     return NS_ERROR_ABORT;
+   }
+ 
+@@ -18415,7 +18430,8 @@ Maintenance::DirectoryWork()
+   // We have to find all database files that match any persistence type and any
+   // origin. We ignore anything out of the ordinary for now.
+ 
+-  if (IsAborted()) {
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnNonBackgroundThread()) ||
++      IsAborted()) {
+     return NS_ERROR_ABORT;
+   }
+ 
+@@ -18754,6 +18770,11 @@ Maintenance::BeginDatabaseMaintenance()
+     }
+   };
+ 
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnBackgroundThread()) ||
++      IsAborted()) {
++    return NS_ERROR_ABORT;
++  }
++
+   RefPtr<nsThreadPool> threadPool;
+ 
+   for (DirectoryInfo& directoryInfo : mDirectoryInfos) {
+@@ -18940,6 +18961,11 @@ DatabaseMaintenance::PerformMaintenanceOnDatabase()
+     }
+   };
+ 
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnNonBackgroundThread()) ||
++      mMaintenance->IsAborted()) {
++    return;
++  }
++
+   nsCOMPtr<nsIFile> databaseFile = GetFileForPath(mDatabasePath);
+   MOZ_ASSERT(databaseFile);
+ 
+@@ -18956,10 +18982,6 @@ DatabaseMaintenance::PerformMaintenanceOnDatabase()
+ 
+   AutoClose autoClose(connection);
+ 
+-  if (mMaintenance->IsAborted()) {
+-    return;
+-  }
+-
+   AutoProgressHandler progressHandler(mMaintenance);
+   if (NS_WARN_IF(NS_FAILED(progressHandler.Register(connection)))) {
+     return;
+@@ -18978,20 +19000,12 @@ DatabaseMaintenance::PerformMaintenanceOnDatabase()
+     return;
+   }
+ 
+-  if (mMaintenance->IsAborted()) {
+-    return;
+-  }
+-
+   MaintenanceAction maintenanceAction;
+   rv = DetermineMaintenanceAction(connection, databaseFile, &maintenanceAction);
+   if (NS_WARN_IF(NS_FAILED(rv))) {
+     return;
+   }
+ 
+-  if (mMaintenance->IsAborted()) {
+-    return;
+-  }
+-
+   switch (maintenanceAction) {
+     case MaintenanceAction::Nothing:
+       break;
+@@ -19018,6 +19032,11 @@ DatabaseMaintenance::CheckIntegrity(mozIStorageConnection* aConnection,
+   MOZ_ASSERT(aConnection);
+   MOZ_ASSERT(aOk);
+ 
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnNonBackgroundThread()) ||
++      mMaintenance->IsAborted()) {
++    return NS_ERROR_ABORT;
++  }
++
+   nsresult rv;
+ 
+   // First do a full integrity_check. Scope statements tightly here because
+@@ -19135,6 +19154,11 @@ DatabaseMaintenance::DetermineMaintenanceAction(
+   MOZ_ASSERT(aDatabaseFile);
+   MOZ_ASSERT(aMaintenanceAction);
+ 
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnNonBackgroundThread()) ||
++      mMaintenance->IsAborted()) {
++    return NS_ERROR_ABORT;
++  }
++
+   int32_t schemaVersion;
+   nsresult rv = aConnection->GetSchemaVersion(&schemaVersion);
+   if (NS_WARN_IF(NS_FAILED(rv))) {
+@@ -19344,6 +19368,11 @@ DatabaseMaintenance::IncrementalVacuum(mozIStorageConnection* aConnection)
+   MOZ_ASSERT(!IsOnBackgroundThread());
+   MOZ_ASSERT(aConnection);
+ 
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnNonBackgroundThread()) ||
++      mMaintenance->IsAborted()) {
++    return;
++  }
++
+   nsresult rv = aConnection->ExecuteSimpleSQL(NS_LITERAL_CSTRING(
+     "PRAGMA incremental_vacuum;"
+   ));
+@@ -19361,6 +19390,11 @@ DatabaseMaintenance::FullVacuum(mozIStorageConnection* aConnection,
+   MOZ_ASSERT(aConnection);
+   MOZ_ASSERT(aDatabaseFile);
+ 
++  if (NS_WARN_IF(QuotaClient::IsShuttingDownOnNonBackgroundThread()) ||
++      mMaintenance->IsAborted()) {
++    return;
++  }
++
+   nsresult rv = aConnection->ExecuteSimpleSQL(NS_LITERAL_CSTRING(
+     "VACUUM;"
+   ));
+commit 5d30f2130fd9
+Author: Shawn Huang <shuang@mozilla.com>
+Date:   Wed Nov 1 11:14:20 2017 +0800
+
+    Bug 1389561 - Part 3: Wait for releasing all AsmJSCache parent actors in Client::ShutdownWorkThreads(). r=janv
+    
+    This patch implements Client::ShutdownWorkThreads for taking care of unreleased DirectoryLock and QuotaObject objects.
+---
+ dom/asmjscache/AsmJSCache.cpp | 29 ++++++++++++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
+
+diff --git dom/asmjscache/AsmJSCache.cpp dom/asmjscache/AsmJSCache.cpp
+index 22ab3dbf0136..49a7d6974134 100644
+--- dom/asmjscache/AsmJSCache.cpp
++++ dom/asmjscache/AsmJSCache.cpp
+@@ -67,6 +67,8 @@ namespace asmjscache {
+ 
+ namespace {
+ 
++class ParentRunnable;
++
+ // Anything smaller should compile fast enough that caching will just add
+ // overhead.
+ static const size_t sMinCachedModuleLength = 10000;
+@@ -74,6 +76,10 @@ static const size_t sMinCachedModuleLength = 10000;
+ // The number of characters to hash into the Metadata::Entry::mFastHash.
+ static const unsigned sNumFastHashChars = 4096;
+ 
++// Track all live parent actors.
++typedef nsTArray<const ParentRunnable*> ParentActorArray;
++StaticAutoPtr<ParentActorArray> sLiveParentActors;
++
+ nsresult
+ WriteMetadataFile(nsIFile* aMetadataFile, const Metadata& aMetadata)
+ {
+@@ -802,6 +808,13 @@ ParentRunnable::FinishOnOwningThread()
+   FileDescriptorHolder::Finish();
+ 
+   mDirectoryLock = nullptr;
++
++  MOZ_ASSERT(sLiveParentActors);
++  sLiveParentActors->RemoveElement(this);
++
++  if (sLiveParentActors->IsEmpty()) {
++    sLiveParentActors = nullptr;
++  }
+ }
+ 
+ NS_IMETHODIMP
+@@ -1039,6 +1052,12 @@ AllocEntryParent(OpenMode aOpenMode,
+   RefPtr<ParentRunnable> runnable =
+     new ParentRunnable(aPrincipalInfo, aOpenMode, aWriteParams);
+ 
++  if (!sLiveParentActors) {
++    sLiveParentActors = new ParentActorArray();
++  }
++
++  sLiveParentActors->AppendElement(runnable);
++
+   nsresult rv = NS_DispatchToMainThread(runnable);
+   NS_ENSURE_SUCCESS(rv, nullptr);
+ 
+@@ -1687,7 +1706,15 @@ public:
+ 
+   void
+   ShutdownWorkThreads() override
+-  { }
++  {
++    AssertIsOnBackgroundThread();
++
++    if (sLiveParentActors) {
++      MOZ_ALWAYS_TRUE(SpinEventLoopUntil([&]() {
++        return !sLiveParentActors;
++      }));
++    }
++  }
+ 
+ private:
+   nsAutoRefCnt mRefCnt;
+commit 0693fefe1317
+Author: Jan Varga <jan.varga@gmail.com>
+Date:   Thu Nov 2 14:54:18 2017 +0800
+
+    Bug 1389561 - Part 4: Split AsmJSCache's Client implementation into declaration and definition; r=luke
+---
+ dom/asmjscache/AsmJSCache.cpp | 271 +++++++++++++++++++++++++-----------------
+ 1 file changed, 165 insertions(+), 106 deletions(-)
+
+diff --git dom/asmjscache/AsmJSCache.cpp dom/asmjscache/AsmJSCache.cpp
+index 49a7d6974134..1ba4f66085a1 100644
+--- dom/asmjscache/AsmJSCache.cpp
++++ dom/asmjscache/AsmJSCache.cpp
+@@ -240,6 +240,60 @@ EvictEntries(nsIFile* aDirectory, const nsACString& aGroup,
+   }
+ }
+ 
++/*******************************************************************************
++ * Client
++ ******************************************************************************/
++
++class Client
++  : public quota::Client
++{
++public:
++  NS_INLINE_DECL_REFCOUNTING(Client, override)
++
++  Type
++  GetType() override;
++
++  nsresult
++  InitOrigin(PersistenceType aPersistenceType,
++             const nsACString& aGroup,
++             const nsACString& aOrigin,
++             const AtomicBool& aCanceled,
++             UsageInfo* aUsageInfo) override;
++
++  nsresult
++  GetUsageForOrigin(PersistenceType aPersistenceType,
++                    const nsACString& aGroup,
++                    const nsACString& aOrigin,
++                    const AtomicBool& aCanceled,
++                    UsageInfo* aUsageInfo) override;
++
++  void
++  OnOriginClearCompleted(PersistenceType aPersistenceType,
++                         const nsACString& aOrigin)
++                         override;
++
++  void
++  ReleaseIOThreadObjects() override;
++
++  void
++  AbortOperations(const nsACString& aOrigin) override;
++
++  void
++  AbortOperationsForProcess(ContentParentId aContentParentId) override;
++
++  void
++  StartIdleMaintenance() override;
++
++  void
++  StopIdleMaintenance() override;
++
++  void
++  ShutdownWorkThreads() override;
++
++private:
++  ~Client() override = default;
++};
++
+ // FileDescriptorHolder owns a file descriptor and its memory mapping.
+ // FileDescriptorHolder is derived by two runnable classes (that is,
+ // (Parent|Child)Runnable.
+@@ -1593,136 +1647,141 @@ CloseEntryForWrite(size_t aSize,
+   }
+ }
+ 
+-class Client : public quota::Client
+-{
+-  ~Client() override = default;
++/*******************************************************************************
++ * Client
++ ******************************************************************************/
+ 
+-public:
+-  NS_IMETHOD_(MozExternalRefCountType)
+-  AddRef() override;
+-
+-  NS_IMETHOD_(MozExternalRefCountType)
+-  Release() override;
+-
+-  Type
+-  GetType() override
+-  {
+-    return ASMJS;
+-  }
++Client::Type
++Client::GetType()
++{
++  return ASMJS;
++}
+ 
+-  nsresult
+-  InitOrigin(PersistenceType aPersistenceType,
+-             const nsACString& aGroup,
+-             const nsACString& aOrigin,
+-             const AtomicBool& aCanceled,
+-             UsageInfo* aUsageInfo) override
+-  {
+-    if (!aUsageInfo) {
+-      return NS_OK;
+-    }
+-    return GetUsageForOrigin(aPersistenceType,
+-                             aGroup,
+-                             aOrigin,
+-                             aCanceled,
+-                             aUsageInfo);
++nsresult
++Client::InitOrigin(PersistenceType aPersistenceType,
++                   const nsACString& aGroup,
++                   const nsACString& aOrigin,
++                   const AtomicBool& aCanceled,
++                   UsageInfo* aUsageInfo)
++{
++  if (!aUsageInfo) {
++    return NS_OK;
+   }
++  return GetUsageForOrigin(aPersistenceType,
++                           aGroup,
++                           aOrigin,
++                           aCanceled,
++                           aUsageInfo);
++}
+ 
+-  nsresult
+-  GetUsageForOrigin(PersistenceType aPersistenceType,
+-                    const nsACString& aGroup,
+-                    const nsACString& aOrigin,
+-                    const AtomicBool& aCanceled,
+-                    UsageInfo* aUsageInfo) override
+-  {
+-    QuotaManager* qm = QuotaManager::Get();
+-    MOZ_ASSERT(qm, "We were being called by the QuotaManager");
+-
+-    nsCOMPtr<nsIFile> directory;
+-    nsresult rv = qm->GetDirectoryForOrigin(aPersistenceType, aOrigin,
+-                                            getter_AddRefs(directory));
+-    NS_ENSURE_SUCCESS(rv, rv);
+-    MOZ_ASSERT(directory, "We're here because the origin directory exists");
++nsresult
++Client::GetUsageForOrigin(PersistenceType aPersistenceType,
++                          const nsACString& aGroup,
++                          const nsACString& aOrigin,
++                          const AtomicBool& aCanceled,
++                          UsageInfo* aUsageInfo)
++{
++  QuotaManager* qm = QuotaManager::Get();
++  MOZ_ASSERT(qm, "We were being called by the QuotaManager");
+ 
+-    rv = directory->Append(NS_LITERAL_STRING(ASMJSCACHE_DIRECTORY_NAME));
+-    NS_ENSURE_SUCCESS(rv, rv);
++  nsCOMPtr<nsIFile> directory;
++  nsresult rv = qm->GetDirectoryForOrigin(aPersistenceType, aOrigin,
++                                          getter_AddRefs(directory));
++  if (NS_WARN_IF(NS_FAILED(rv))) {
++    return rv;
++  }
+ 
+-    DebugOnly<bool> exists;
+-    MOZ_ASSERT(NS_SUCCEEDED(directory->Exists(&exists)) && exists);
++  MOZ_ASSERT(directory, "We're here because the origin directory exists");
+ 
+-    nsCOMPtr<nsISimpleEnumerator> entries;
+-    rv = directory->GetDirectoryEntries(getter_AddRefs(entries));
+-    NS_ENSURE_SUCCESS(rv, rv);
++  rv = directory->Append(NS_LITERAL_STRING(ASMJSCACHE_DIRECTORY_NAME));
++  if (NS_WARN_IF(NS_FAILED(rv))) {
++    return rv;
++  }
+ 
+-    bool hasMore;
+-    while (NS_SUCCEEDED((rv = entries->HasMoreElements(&hasMore))) &&
+-           hasMore && !aCanceled) {
+-      nsCOMPtr<nsISupports> entry;
+-      rv = entries->GetNext(getter_AddRefs(entry));
+-      NS_ENSURE_SUCCESS(rv, rv);
++  DebugOnly<bool> exists;
++  MOZ_ASSERT(NS_SUCCEEDED(directory->Exists(&exists)) && exists);
+ 
+-      nsCOMPtr<nsIFile> file = do_QueryInterface(entry);
+-      NS_ENSURE_TRUE(file, NS_NOINTERFACE);
++  nsCOMPtr<nsISimpleEnumerator> entries;
++  rv = directory->GetDirectoryEntries(getter_AddRefs(entries));
++  if (NS_WARN_IF(NS_FAILED(rv))) {
++    return rv;
++  }
+ 
+-      int64_t fileSize;
+-      rv = file->GetFileSize(&fileSize);
+-      NS_ENSURE_SUCCESS(rv, rv);
++  bool hasMore;
++  while (NS_SUCCEEDED((rv = entries->HasMoreElements(&hasMore))) &&
++         hasMore && !aCanceled) {
++    nsCOMPtr<nsISupports> entry;
++    rv = entries->GetNext(getter_AddRefs(entry));
++    if (NS_WARN_IF(NS_FAILED(rv))) {
++      return rv;
++    }
+ 
+-      MOZ_ASSERT(fileSize >= 0, "Negative size?!");
++    nsCOMPtr<nsIFile> file = do_QueryInterface(entry);
++    if (NS_WARN_IF(!file)) {
++      return NS_NOINTERFACE;
++    }
+ 
+-      // Since the client is not explicitly storing files, append to database
+-      // usage which represents implicit storage allocation.
+-      aUsageInfo->AppendToDatabaseUsage(uint64_t(fileSize));
++    int64_t fileSize;
++    rv = file->GetFileSize(&fileSize);
++    if (NS_WARN_IF(NS_FAILED(rv))) {
++      return rv;
+     }
+-    NS_ENSURE_SUCCESS(rv, rv);
+ 
+-    return NS_OK;
+-  }
++    MOZ_ASSERT(fileSize >= 0, "Negative size?!");
+ 
+-  void
+-  OnOriginClearCompleted(PersistenceType aPersistenceType,
+-                         const nsACString& aOrigin)
+-                         override
+-  { }
++    // Since the client is not explicitly storing files, append to database
++    // usage which represents implicit storage allocation.
++    aUsageInfo->AppendToDatabaseUsage(uint64_t(fileSize));
++  }
++  if (NS_WARN_IF(NS_FAILED(rv))) {
++    return rv;
++  }
+ 
+-  void
+-  ReleaseIOThreadObjects() override
+-  { }
++  return NS_OK;
++}
+ 
+-  void
+-  AbortOperations(const nsACString& aOrigin) override
+-  { }
++void
++Client::OnOriginClearCompleted(PersistenceType aPersistenceType,
++                               const nsACString& aOrigin)
++{
++}
+ 
+-  void
+-  AbortOperationsForProcess(ContentParentId aContentParentId) override
+-  { }
++void
++Client::ReleaseIOThreadObjects()
++{
++}
+ 
+-  void
+-  StartIdleMaintenance() override
+-  { }
++void
++Client::AbortOperations(const nsACString& aOrigin)
++{
++}
+ 
+-  void
+-  StopIdleMaintenance() override
+-  { }
++void
++Client::AbortOperationsForProcess(ContentParentId aContentParentId)
++{
++}
+ 
+-  void
+-  ShutdownWorkThreads() override
+-  {
+-    AssertIsOnBackgroundThread();
++void
++Client::StartIdleMaintenance()
++{
++}
+ 
+-    if (sLiveParentActors) {
+-      MOZ_ALWAYS_TRUE(SpinEventLoopUntil([&]() {
+-        return !sLiveParentActors;
+-      }));
+-    }
+-  }
++void
++Client::StopIdleMaintenance()
++{
++}
+ 
+-private:
+-  nsAutoRefCnt mRefCnt;
+-  NS_DECL_OWNINGTHREAD
+-};
++void
++Client::ShutdownWorkThreads()
++{
++  AssertIsOnBackgroundThread();
+ 
+-NS_IMPL_ADDREF(asmjscache::Client)
+-NS_IMPL_RELEASE(asmjscache::Client)
++  if (sLiveParentActors) {
++    MOZ_ALWAYS_TRUE(SpinEventLoopUntil([&]() {
++      return !sLiveParentActors;
++    }));
++  }
++}
+ 
+ quota::Client*
+ CreateClient()
+commit 58e99f59ab54
+Author: Jan Varga <jan.varga@gmail.com>
+Date:   Thu Nov 2 14:54:29 2017 +0800
+
+    Bug 1389561 - Part 5: Prevent allocation of parent actors if quota manager is shutting down; r=luke
+---
+ dom/asmjscache/AsmJSCache.cpp | 59 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 58 insertions(+), 1 deletion(-)
+
+diff --git dom/asmjscache/AsmJSCache.cpp dom/asmjscache/AsmJSCache.cpp
+index 1ba4f66085a1..1d73c1c9546c 100644
+--- dom/asmjscache/AsmJSCache.cpp
++++ dom/asmjscache/AsmJSCache.cpp
+@@ -247,7 +247,41 @@ EvictEntries(nsIFile* aDirectory, const nsACString& aGroup,
+ class Client
+   : public quota::Client
+ {
++  static Client* sInstance;
++
++  bool mShutdownRequested;
++
+ public:
++  Client();
++
++  static bool
++  IsShuttingDownOnBackgroundThread()
++  {
++    AssertIsOnBackgroundThread();
++
++    if (sInstance) {
++      return sInstance->IsShuttingDown();
++    }
++
++    return QuotaManager::IsShuttingDown();
++  }
++
++  static bool
++  IsShuttingDownOnNonBackgroundThread()
++  {
++    MOZ_ASSERT(!IsOnBackgroundThread());
++
++    return QuotaManager::IsShuttingDown();
++  }
++
++  bool
++  IsShuttingDown() const
++  {
++    AssertIsOnBackgroundThread();
++
++    return mShutdownRequested;
++  }
++
+   NS_INLINE_DECL_REFCOUNTING(Client, override)
+ 
+   Type
+@@ -291,7 +325,7 @@ public:
+   ShutdownWorkThreads() override;
+ 
+ private:
+-  ~Client() override = default;
++  ~Client() override;
+ };
+ 
+ // FileDescriptorHolder owns a file descriptor and its memory mapping.
+@@ -1098,6 +1132,10 @@ AllocEntryParent(OpenMode aOpenMode,
+ {
+   AssertIsOnBackgroundThread();
+ 
++  if (NS_WARN_IF(Client::IsShuttingDownOnBackgroundThread())) {
++    return nullptr;
++  }
++
+   if (NS_WARN_IF(aPrincipalInfo.type() == PrincipalInfo::TNullPrincipalInfo)) {
+     MOZ_ASSERT(false);
+     return nullptr;
+@@ -1651,6 +1689,25 @@ CloseEntryForWrite(size_t aSize,
+  * Client
+  ******************************************************************************/
+ 
++Client* Client::sInstance = nullptr;
++
++Client::Client()
++  : mShutdownRequested(false)
++{
++  AssertIsOnBackgroundThread();
++  MOZ_ASSERT(!sInstance, "We expect this to be a singleton!");
++
++  sInstance = this;
++}
++
++Client::~Client()
++{
++  AssertIsOnBackgroundThread();
++  MOZ_ASSERT(sInstance == this, "We expect this to be a singleton!");
++
++  sInstance = nullptr;
++}
++
+ Client::Type
+ Client::GetType()
+ {
