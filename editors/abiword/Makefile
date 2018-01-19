@@ -54,7 +54,7 @@ COLTCP_DESC=		Collaborate with direct TCP peer to peer connections
 COLTELEPATHY_DESC=	Collaborate with the Telepathy backend (experimental)
 COLXMPP_DESC=		Collaborate with the Jabber/XMPP backend
 DICT_DESC=		Spelling and grammar checking
-GRAMMAR_DESC=		Grammar checking plugin (requires SPELLCHECK option)
+GRAMMAR_DESC=		Grammar checking plugin
 MATHVIEW_DESC=		MathML render plugin
 OTS_DESC=		Text Summarizer plugin
 PSION_DESC=		Psion 5(MX) files convertion plugin
@@ -102,6 +102,7 @@ COLXMPP_LIB_DEPENDS=		libloudmouth-1.so:net-im/loudmouth
 DEBUG_CONFIGURE_ENABLE=		debug
 
 GRAMMAR_LIB_DEPENDS=		liblink-grammar.so:textproc/link-grammar
+GRAMMAR_IMPLIES=		SPELLCHECK
 
 MATHVIEW_USES=			bison
 MATHVIEW_LIB_DEPENDS=		libmathview.so:x11-toolkits/gtkmathview

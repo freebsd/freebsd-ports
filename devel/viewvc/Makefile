@@ -21,7 +21,7 @@ OPTIONS_SINGLE_WEBSRV=	APACHE LIGHTTPD
 OPTIONS_SINGLE_APMOD=	MODPYTHON33 MODPYTHON35 MODWSGI
 
 WEBSRV_DESC=		Enable web server support
-APMOD_DESC=		depend on optional Apache module
+APMOD_DESC=		depend on Apache module
 
 MODWSGI_DESC=		Add mod_wsgi to the list of package dependencies
 MODPYTHON33_DESC=	Add mod_python33 to the list of package dependencies
