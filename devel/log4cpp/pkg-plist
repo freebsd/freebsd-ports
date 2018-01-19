@@ -60,6 +60,8 @@ libdata/pkgconfig/log4cpp.pc
 %%DOXYGEN%%man/man3/log4cpp.3.gz
 %%DOXYGEN%%man/man3/log4cpp::AbortAppender.3.gz
 %%DOXYGEN%%man/man3/log4cpp::Appender.3.gz
+%%DOXYGEN%%man/man3/log4cpp::Appender::AppenderMapStorage.3.gz
+%%DOXYGEN%%man/man3/log4cpp::Appender::AppenderMapStorageInitializer.3.gz
 %%DOXYGEN%%man/man3/log4cpp::AppenderSkeleton.3.gz
 %%DOXYGEN%%man/man3/log4cpp::AppendersFactory.3.gz
 %%DOXYGEN%%man/man3/log4cpp::BasicConfigurator.3.gz
@@ -69,6 +71,7 @@ libdata/pkgconfig/log4cpp.pc
 %%DOXYGEN%%man/man3/log4cpp::CategoryNameComponent.3.gz
 %%DOXYGEN%%man/man3/log4cpp::CategoryStream.3.gz
 %%DOXYGEN%%man/man3/log4cpp::ConfigureFailure.3.gz
+%%DOXYGEN%%man/man3/log4cpp::DailyRollingFileAppender.3.gz
 %%DOXYGEN%%man/man3/log4cpp::FactoryParams.3.gz
 %%DOXYGEN%%man/man3/log4cpp::FileAppender.3.gz
 %%DOXYGEN%%man/man3/log4cpp::Filter.3.gz

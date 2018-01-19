@@ -204,7 +204,6 @@ lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
 %%DOXYGEN%%%%DOCSDIR%%/zorba/html/rtab_r.gif
 %%DOXYGEN%%%%DOCSDIR%%/zorba/html/scripting_spec.html
 %%DOXYGEN%%%%DOCSDIR%%/zorba/html/terminal.png
-%%DOXYGEN%%%%DOCSDIR%%/zorba/xqdoc/Makefile
 %%PYTHON%%%%DOXYGEN%%%%DOCSDIR%%/python/html/rtab_b.gif
 %%PYTHON%%%%DOXYGEN%%%%DOCSDIR%%/python/html/rtab_r.gif
 %%PYTHON%%%%DOXYGEN%%%%DOCSDIR%%/python/html/rtab_l.gif
