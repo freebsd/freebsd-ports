@@ -38,7 +38,7 @@ FRONTEND_DESC=	Front End
 XAW_DESC=	Xaw GUI toolkit support (default)
 XAW3D_DESC=	Xaw3d GUI toolkit support (not fully supported)
 GTK2_DESC=	GTK+ 2 GUI toolkit support (experimental)
-SOUND_DESC=	Sound output (optional)
+SOUND_DESC=	Sound Output (optional)
 SOX_DESC=	SoX audio support
 
 CRAFTY_RUN_DEPENDS=	crafty:games/crafty
