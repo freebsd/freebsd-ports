@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdb
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	devel
 
 MAINTAINER=	jhb@FreeBSD.org
@@ -14,7 +14,7 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdjhb
 GH_PROJECT=	illumos-gate
-GH_TAGNAME=	b8a73a7590
+GH_TAGNAME=	291c37a43d
 
 ONLY_FOR_ARCHS=	amd64
 
