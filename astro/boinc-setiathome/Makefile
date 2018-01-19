@@ -14,6 +14,8 @@ COMMENT=	Setiathome Enhanced for BOINC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	does not compile: analyzeFuncs_altivec.cpp: CoreServices/CoreServices.h: No such file or directory
+BROKEN_FreeBSD_10_i386=	does not compile: vector/x86_ops.h:149:9: error: unknown type name '__m128i'; did you mean '__m128'?
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 RUN_DEPENDS=	boinc_client:net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
@@ -82,8 +84,6 @@ PLIST_SUB+=	PREFIX=${PREFIX} \
 		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME} \
 		BOINC_CLIENT_USER=${BOINC_CLIENT_USER} \
 		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
-
-BROKEN_powerpc64=	does not compile: analyzeFuncs_altivec.cpp: CoreServices/CoreServices.h: No such file or directory
 
 # str_replace.h is included in newer versions of net/boinc-client,
 # but it is not needed on FreeBSD
