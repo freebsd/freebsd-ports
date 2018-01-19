@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION?=	6.99.13
+PORTVERSION?=	6.99.14
 DISTVERSIONSUFFIX=-sdk
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES=	devel games
 MASTER_SITES=	https://www.renpy.org/dl/${PORTVERSION}/
 
@@ -35,11 +35,6 @@ USE_SDL?=	sdl2
 EXCLUDE=	gen 'module/*.py[co]' 'renpy/*.py[co]'
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 SHEBANG_FILES=	renpy.py launcher/game/tkaskdir.py
-.ifndef PKGNAMESUFFIX
-python3_CMD?=	${PYTHON_CMD}
-SHEBANG_LANG=	python3
-SHEBANG_FILES+=	tutorial/recrop.py
-.endif
 TARGET_ORDER_OVERRIDE=610:fix-shebang
 BUILD_WRKSRC=	${WRKSRC}/module
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
