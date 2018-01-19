@@ -26,6 +26,7 @@ OPTIONS_RADIO?=	SOUND
 OPTIONS_RADIO_SOUND?=	SOX ALSA
 OPTIONS_DEFAULT?=	XAW
 OPTIONS_SUB?=	yes
+
 ZIPPY_DESC=	Add Zippy capability (computer player on ICS)
 ENGINES_DESC=	Chess Engines
 CRAFTY_DESC=	Install crafty engine
@@ -37,16 +38,17 @@ FRONTEND_DESC=	Front End
 XAW_DESC=	Xaw GUI toolkit support (default)
 XAW3D_DESC=	Xaw3d GUI toolkit support (not fully supported)
 GTK2_DESC=	GTK+ 2 GUI toolkit support (experimental)
-SOUND_DESC=	Sound Output (optional)
+SOUND_DESC=	Sound output (optional)
 SOX_DESC=	SoX audio support
-CRAFTY_RUN_DEPENDS+=	crafty:games/crafty
-FAIRYMAX_RUN_DEPENDS+=	fairymax:games/fairymax
-GNUCHESS_RUN_DEPENDS+=	gnuchess:games/gnuchess
-KNIGHTCAP_RUN_DEPENDS+=	KnightCap:games/KnightCap
-PHALANX_RUN_DEPENDS+=	phalanx:games/phalanx
-XAW3D_DEPENDS+=	libXaw3d.so:x11-toolkits/Xaw3d
-SOX_RUN_DEPENDS+=	play:audio/sox
-ALSA_RUN_DEPENDS+=	aplay:audio/alsa-utils
+
+CRAFTY_RUN_DEPENDS=	crafty:games/crafty
+FAIRYMAX_RUN_DEPENDS=	fairymax:games/fairymax
+GNUCHESS_RUN_DEPENDS=	gnuchess:games/gnuchess
+KNIGHTCAP_RUN_DEPENDS=	KnightCap:games/KnightCap
+PHALANX_RUN_DEPENDS=	phalanx:games/phalanx
+XAW3D_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d
+SOX_RUN_DEPENDS=	play:audio/sox
+ALSA_RUN_DEPENDS=	aplay:audio/alsa-utils
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 ZIPPY_CONFIGURE_ENABLE=	zippy
@@ -79,8 +81,6 @@ DATADIR?=	${PREFIX}/share/games/${PORTNAME}
 XBOARDCONF?=	${WRKSRC}/xboard.conf
 
 PORTDOCS=	AUTHORS COPYING COPYRIGHT ChangeLog DIFFSTAT FAQ.html NEWS README SHORTLOG TODO
-
-BROKEN_sparc64=	Does not install on sparc64
 
 .if ${PORT_OPTIONS:MZIPPY}
 USES+=		shebangfix
