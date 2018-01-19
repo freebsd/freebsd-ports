@@ -1,5 +1,4 @@
-%%MK_LINK%%/root/.guacamole
-%%MK_LINK%%%%TOMCAT%%apache-tomcat-8.0/webapps/guacamole.war
+%%TOMCAT%%apache-tomcat-8.0/webapps/guacamole.war
 %%ETCDIR%%/guacamole.properties.sample
 %%ETCDIR%%/logback.xml.sample
 %%ETCDIR%%/user-mapping.xml.sample
