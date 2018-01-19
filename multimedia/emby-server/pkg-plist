@@ -256,6 +256,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/medias
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/nowplayinghelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playaccessvalidation.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playbackmanager.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playbackorientation.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playbackvalidation.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playerselection.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playersettingsmenu.js
@@ -310,15 +311,6 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/serverrestartdi
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/serviceworker/notifications.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/serviceworker/sync.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sessionplayer.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/sharingmanager.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/sharingmenu.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/socialsharekit/LICENSE
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/socialsharekit/dist/css/social-share-kit.css
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/socialsharekit/dist/fonts/social-share-kit.eot
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/socialsharekit/dist/fonts/social-share-kit.svg
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/socialsharekit/dist/fonts/social-share-kit.ttf
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/socialsharekit/dist/fonts/social-share-kit.woff
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/socialsharekit/dist/js/social-share-kit.min.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/shell.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/shortcuts.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/skinmanager.js
@@ -537,6 +529,7 @@ lib/emby-server/dashboard-ui/dashboard/livetvtuner.js
 lib/emby-server/dashboard-ui/dashboard/logpage.js
 lib/emby-server/dashboard-ui/dashboard/wizardcomponents.js
 lib/emby-server/dashboard-ui/dashboard/wizardfinishpage.js
+lib/emby-server/dashboard-ui/dashboard/wizardremoteaccess.js
 lib/emby-server/dashboard-ui/dashboard/wizardsettings.js
 lib/emby-server/dashboard-ui/dashboard/wizardstart.js
 lib/emby-server/dashboard-ui/dashboardgeneral.html
@@ -683,7 +676,6 @@ lib/emby-server/dashboard-ui/scripts/searchtab.js
 lib/emby-server/dashboard-ui/scripts/secondaryitems.js
 lib/emby-server/dashboard-ui/scripts/selectserver.js
 lib/emby-server/dashboard-ui/scripts/serversecurity.js
-lib/emby-server/dashboard-ui/scripts/shared.js
 lib/emby-server/dashboard-ui/scripts/site.js
 lib/emby-server/dashboard-ui/scripts/songs.js
 lib/emby-server/dashboard-ui/scripts/streamingsettings.js
@@ -714,7 +706,6 @@ lib/emby-server/dashboard-ui/secondaryitems.html
 lib/emby-server/dashboard-ui/selectserver.html
 lib/emby-server/dashboard-ui/serversecurity.html
 lib/emby-server/dashboard-ui/serviceworker.js
-lib/emby-server/dashboard-ui/shared.html
 lib/emby-server/dashboard-ui/streamingsettings.html
 lib/emby-server/dashboard-ui/strings/ar.json
 lib/emby-server/dashboard-ui/strings/be-BY.json
@@ -789,6 +780,7 @@ lib/emby-server/dashboard-ui/wizardagreement.html
 lib/emby-server/dashboard-ui/wizardcomponents.html
 lib/emby-server/dashboard-ui/wizardfinish.html
 lib/emby-server/dashboard-ui/wizardlibrary.html
+lib/emby-server/dashboard-ui/wizardremoteaccess.html
 lib/emby-server/dashboard-ui/wizardsettings.html
 lib/emby-server/dashboard-ui/wizardstart.html
 lib/emby-server/dashboard-ui/wizarduser.html
