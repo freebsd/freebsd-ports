@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Async-Interrupt
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Async/Interrupt/Interrupt.so
 
 .include <bsd.port.mk>
