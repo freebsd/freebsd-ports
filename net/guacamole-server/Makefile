@@ -3,6 +3,7 @@
 
 PORTNAME=	guacamole-server
 DISTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -74,7 +75,7 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/ssl|${PREFIX}/etc/ssl|g ; \
-			 s|/etc/guacamole|${PREFIX}/etc/guacd|g' \
+			 s|/etc/guacamole|${ETCDIR}|g' \
 			 ${WRKSRC}/src/guacd/man/guacd.conf.5.in
 
 post-install:
