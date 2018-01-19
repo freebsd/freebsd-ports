@@ -24,6 +24,7 @@ include/guacamole/protocol-types.h
 include/guacamole/protocol.h
 include/guacamole/socket-constants.h
 include/guacamole/socket-fntypes.h
+include/guacamole/socket-ssl.h
 include/guacamole/socket-types.h
 include/guacamole/socket.h
 include/guacamole/stream-types.h
@@ -54,7 +55,7 @@ include/guacamole/user.h
 lib/libguac.a
 lib/libguac.so
 lib/libguac.so.12
-lib/libguac.so.12.2.0
+lib/libguac.so.12.3.0
 man/man5/guacd.conf.5.gz
 man/man8/guacd.8.gz
 %%GUACENC%%man/man1/guacenc.1.gz

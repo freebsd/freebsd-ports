@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-server
-PORTVERSION=	0.9.13
-DISTVERSIONSUFFIX=	-incubating
-PORTREVISION=	1
+DISTVERSION=	0.9.14
 CATEGORIES=	net
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -19,11 +17,10 @@ LIB_DEPENDS=	libossp-uuid.so:misc/ossp-uuid \
 CONFLICTS_BUILD=pulseaudio-*+jack_* ffmpeg-*+jack_*
 
 USES=		autoreconf jpeg libtool localbase \
-		pkgconfig shebangfix ssl
+		pkgconfig shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
-GH_PROJECT=	incubator-guacamole-server
 
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
@@ -40,8 +37,8 @@ GROUPS=		guacamole
 SUB_LIST=	GUACD_USER=${USERS} \
 		GUACD_GROUP=${GROUPS}
 
-OPTIONS_DEFINE=		WEBP GUACENC NLS
-OPTIONS_DEFAULT=	RDP SSH VNC VORBIS PULSEAUDIO WEBP GUACENC
+OPTIONS_DEFINE=		GUACENC NLS SSL WEBP
+OPTIONS_DEFAULT=	RDP SSH SSL VNC VORBIS PULSEAUDIO WEBP GUACENC
 OPTIONS_GROUP=		SP AUDIO
 OPTIONS_GROUP_SP=	RDP SSH VNC
 OPTIONS_GROUP_AUDIO=	VORBIS PULSEAUDIO
@@ -49,26 +46,36 @@ OPTIONS_SUB=		yes
 
 AUDIO_DESC=		Audio Support
 GUACENC_DESC=		Video Encoding Utility
-PULSEAUDIO_DESC=	VNC audio support (Experimental)
 RDP_DESC=		RDP protocol support
 SP_DESC=		Supported Protocols
 VNC_DESC=		VNC protocol support
 
+GUACENC_CONFIGURE_ENABLE=	guacenc
+GUACENC_CONFIGURE_WITH=		libavcodec libavutil libswscale
 GUACENC_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 NLS_USES=		gettext-runtime
+PULSEAUDIO_CONFIGURE_WITH=	pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+RDP_CONFIGURE_WITH=	rdp
 RDP_LIB_DEPENDS=	libfreerdp1.so:net/freerdp1
+SSH_CONFIGURE_WITH=	pango ssh
+SSH_IMPLIES=		SSL
 SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 SSH_USE=		GNOME=pango
+SSL_CONFIGURE_WITH=	ssl
+SSL_USES=		ssl
+VNC_CONFIGURE_WITH=	vnc
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
+VORBIS_CONFIGURE_WITH=	vorbis
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 			libogg.so:audio/libogg
+WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/ssl|${PREFIX}/etc/ssl|g ; \
 			 s|/etc/guacamole|${PREFIX}/etc/guacd|g' \
-			 ${WRKSRC}/src/guacd/man/guacd.conf.5
+			 ${WRKSRC}/src/guacd/man/guacd.conf.5.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

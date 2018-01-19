@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-client
-PORTVERSION=	0.9.13
-DISTVERSIONSUFFIX=	-incubating
+DISTVERSION=	0.9.14
 CATEGORIES=	www java
 MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
 		http://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo
-DISTFILES=	repository-${PORTVERSION}${EXTRACT_SUFX}:repo
+DISTFILES=	repository-${DISTVERSION}${EXTRACT_SUFX}:repo
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -24,7 +23,6 @@ JAVA_VERSION=	1.8+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
-GH_PROJECT=	incubator-guacamole-client
 
 MVN=		mvn
 MVN_ARGS=	package -Duser.home=${WRKDIR}
@@ -43,7 +41,7 @@ TOMCAT_DESC=		Use Tomcat as your servlet
 TOMCAT_RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-8.0/bin/bootstrap.jar:www/tomcat8
 SERVER_RUN_DEPENDS=	guacd:net/guacamole-server
 
-AUTH_EXTENSION=	duo cas header ldap noauth
+AUTH_EXTENSION=	cas duo header ldap noauth openid
 
 .include <bsd.port.pre.mk>
 
