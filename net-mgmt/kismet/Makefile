@@ -3,6 +3,7 @@
 
 PORTNAME=	kismet
 DISTVERSION=	2016-07-R1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
