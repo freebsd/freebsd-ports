@@ -29,6 +29,8 @@ include/tbb/internal/_aggregator_impl.h
 include/tbb/internal/_concurrent_queue_impl.h
 include/tbb/internal/_concurrent_unordered_impl.h
 include/tbb/internal/_flow_graph_async_msg_impl.h
+include/tbb/internal/_flow_graph_body_impl.h
+include/tbb/internal/_flow_graph_cache_impl.h
 include/tbb/internal/_flow_graph_impl.h
 include/tbb/internal/_flow_graph_indexer_impl.h
 include/tbb/internal/_flow_graph_item_buffer_impl.h
@@ -42,6 +44,7 @@ include/tbb/internal/_mutex_padding.h
 include/tbb/internal/_range_iterator.h
 include/tbb/internal/_tbb_hash_compare_impl.h
 include/tbb/internal/_tbb_strings.h
+include/tbb/internal/_tbb_trace_impl.h
 include/tbb/internal/_tbb_windef.h
 include/tbb/internal/_template_helpers.h
 include/tbb/internal/_x86_eliding_mutex_impl.h
