@@ -11,8 +11,13 @@ MASTER_SITES=	http://arvin.schnell-web.net/xanalyser/ \
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Spectrum analyser
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake libtool motif tar:bzip2
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/xanalyser lib/X11/app-defaults/XAnalyser man/man1/xanalyser.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
