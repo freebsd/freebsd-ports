@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	licensee
-PORTVERSION=	9.7.0
+PORTVERSION=	8.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	8
 
 MAINTAINER=	idefix@fechner.net
 COMMENT=	Detects under what license a project is distributed
@@ -12,8 +13,9 @@ COMMENT=	Detects under what license a project is distributed
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-rugged>=0.24:devel/rubygem-rugged \
-		rubygem-octokit>=4.8.0:net/rubygem-octokit
+RUN_DEPENDS=	rubygem-rugged>=0.24:devel/rubygem-rugged
+
+PORTSCOUT=	limit:^8\.
 
 NO_ARCH=	yes
 USE_RUBY=	yes
