@@ -8,6 +8,7 @@
 %%QT_INCDIR%%/Qt/qalgorithms.h
 %%QT_INCDIR%%/Qt/qanimationgroup.h
 %%QT_INCDIR%%/Qt/qatomic.h
+%%QT_INCDIR%%/Qt/qatomic_aarch64.h
 %%QT_INCDIR%%/Qt/qatomic_alpha.h
 %%QT_INCDIR%%/Qt/qatomic_arch.h
 %%QT_INCDIR%%/Qt/qatomic_arm.h
@@ -457,6 +458,7 @@
 %%QT_INCDIR%%/QtCore/qalgorithms.h
 %%QT_INCDIR%%/QtCore/qanimationgroup.h
 %%QT_INCDIR%%/QtCore/qatomic.h
+%%QT_INCDIR%%/QtCore/qatomic_aarch64.h
 %%QT_INCDIR%%/QtCore/qatomic_alpha.h
 %%QT_INCDIR%%/QtCore/qatomic_arch.h
 %%QT_INCDIR%%/QtCore/qatomic_arm.h
