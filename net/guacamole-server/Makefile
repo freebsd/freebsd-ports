@@ -58,7 +58,7 @@ PULSEAUDIO_CONFIGURE_WITH=	pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 RDP_CONFIGURE_WITH=	rdp
 RDP_LIB_DEPENDS=	libfreerdp1.so:net/freerdp1
-SSH_CONFIGURE_WITH=	pango ssh
+SSH_CONFIGURE_WITH=	pango ssh terminal
 SSH_IMPLIES=		SSL
 SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 SSH_USE=		GNOME=pango

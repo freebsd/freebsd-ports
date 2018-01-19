@@ -24,7 +24,7 @@ include/guacamole/protocol-types.h
 include/guacamole/protocol.h
 include/guacamole/socket-constants.h
 include/guacamole/socket-fntypes.h
-include/guacamole/socket-ssl.h
+%%SSL%%include/guacamole/socket-ssl.h
 include/guacamole/socket-types.h
 include/guacamole/socket.h
 include/guacamole/stream-types.h
