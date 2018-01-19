@@ -82,6 +82,8 @@ THREADS_CONFIGURE_OFF=	--disable-multithread
 post-patch:
 	@${REINPLACE_CMD} 's|\(link_with_cc\)=gcc|\1=$${CC}|' \
 		${WRKSRC}/build/make/configure.sh
+	@${REINPLACE_CMD} 's|sparc-solaris-gcc|sparc-linux-gcc|' \
+		${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vpx*
