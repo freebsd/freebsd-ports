@@ -12,6 +12,8 @@ COMMENT=	Red-black tree implementation for Elixir
 LICENSE=	MIT
 
 IGNORE=		does not build with Elixir 1.3
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=2018-02-18
 
 USES=		elixir
 USE_GITHUB=	yes
