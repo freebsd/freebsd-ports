@@ -3,7 +3,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -18,7 +18,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 USES=		cmake:outsource compiler:c++11-lib libedit perl5 \
 		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
-_USES_PYTHON?=	python:build
+_USES_PYTHON?=	python:build:2.7
 USES+=		${_USES_PYTHON}
 SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
 		tools/clang/tools/scan-view/bin/scan-view \
@@ -64,8 +64,7 @@ CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fopenmp.diff \
 	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py \
 	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format-sublime.py \
-	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_git-clang-format \
-	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
+	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_git-clang-format
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_GH_PROJECT=	clang:clang
 CLANG_GH_SUBDIR=	tools/clang:clang
@@ -99,7 +98,7 @@ LLDB_GH_PROJECT=	lldb:lldb
 LLDB_GH_SUBDIR=		tools/lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
 LLDB_IMPLIES=		CLANG
-LLDB_VARS=		_USES_PYTHON=python
+LLDB_VARS=		_USES_PYTHON=python:2.7
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
@@ -231,7 +230,7 @@ CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|so
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
-COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|include.xray)
+COMPILER_RT_PATTERN=	(_blacklist.txt|sanitizer|include.xray)
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -302,6 +301,8 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.builtins-x86_64.a \
 	libclang_rt.dd-x86_64.a \
 	libclang_rt.dyndd-x86_64.so \
+	libclang_rt.fuzzer-x86_64.a \
+	libclang_rt.fuzzer_no_main-x86_64.a \
 	libclang_rt.lsan-x86_64.a \
 	libclang_rt.profile-x86_64.a \
 	libclang_rt.safestack-x86_64.a \
@@ -459,13 +460,13 @@ build-plist:
 	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type f -o -type l | \
 	    ${GREP} -v '[/-]lit$$' | ${GREP} -v 'FileCheck$$' | \
 	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
+	    -e 's|${PYTHON_SITELIBDIR:C|${PREFIX}/||}|%%PYTHON_SITELIBDIR%%|' \
 	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' \
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' \
 	    -e 's|\.${LLVM_MAJOR:C/\..*//}|.%%LLVM_LIB_VER%%|' \
-	    -e 's|${PYTHON_SITELIBDIR:C|${PREFIX}/||}|%%PYTHON_SITELIBDIR%%|' | \
-	    ${SORT} >> ${PLIST}.tmp
+	    | ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
