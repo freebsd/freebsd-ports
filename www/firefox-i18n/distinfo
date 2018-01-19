@@ -1,4 +1,4 @@
-TIMESTAMP = 1516028155
+TIMESTAMP = 1516319766
 SHA256 (xpi/firefox-i18n-58.0/ach.xpi) = 2927ffaed1c67d844e36c61a735508341b4da5ae062e87ef6bb728ea6252c120
 SIZE (xpi/firefox-i18n-58.0/ach.xpi) = 445610
 SHA256 (xpi/firefox-i18n-58.0/af.xpi) = 56398a4ea260c26c5d1a5722a17e3ae4946a25aca36bc21e7f8146f56078b31f
@@ -43,8 +43,8 @@ SHA256 (xpi/firefox-i18n-58.0/el.xpi) = 321b7f69e2db2f794604fa5dd085e4deccec1c67
 SIZE (xpi/firefox-i18n-58.0/el.xpi) = 540701
 SHA256 (xpi/firefox-i18n-58.0/en-GB.xpi) = c969f4e459b719e292fd1674ae90191b0e6b1262c86fcd26d9a96d12673c3abe
 SIZE (xpi/firefox-i18n-58.0/en-GB.xpi) = 443432
-SHA256 (xpi/firefox-i18n-58.0/en-US.xpi) = 557551671ba00a923723de024e7e52336fc7fad436fe2eef0df43341a5ca363d
-SIZE (xpi/firefox-i18n-58.0/en-US.xpi) = 440001
+SHA256 (xpi/firefox-i18n-58.0/en-US.xpi) = fcf9498e7303362fae71ae7848b806503ae598e70ad9c55e5045ced0cff76acf
+SIZE (xpi/firefox-i18n-58.0/en-US.xpi) = 440002
 SHA256 (xpi/firefox-i18n-58.0/en-ZA.xpi) = 21ff6c58a514b0b05b137196096f2711105f4b15c27a9dbadeff6ad111e14747
 SIZE (xpi/firefox-i18n-58.0/en-ZA.xpi) = 434818
 SHA256 (xpi/firefox-i18n-58.0/eo.xpi) = 628b4c660141ab9c6056e087c200929d2d850668d7d8b625aee2413be1f70120
