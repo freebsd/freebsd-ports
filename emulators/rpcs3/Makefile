@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.4-259
-DISTVERSIONSUFFIX=	-g71f69d1d4
+DISTVERSION=	0.0.4-270
+DISTVERSIONSUFFIX=	-gf908daf32
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -44,10 +44,6 @@ CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 CXXFLAGS+=	-Wno-macro-redefined # __STDC_*_MACROS sys/cdefs.h vs. llvm-config
 LDFLAGS+=	-Wl,--as-needed # GLU
-PLIST_FILES=	bin/${PORTNAME} \
-		share/applications/${PORTNAME}.desktop \
-		share/icons/hicolor/48x48/apps/${PORTNAME}.png \
-		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 
 OPTIONS_DEFINE=	ALSA EVDEV GDB LLVM PULSEAUDIO VULKAN
 OPTIONS_DEFAULT=ALSA LLVM VULKAN
