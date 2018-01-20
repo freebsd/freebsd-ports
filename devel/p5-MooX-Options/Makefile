@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooX-Options
-PORTVERSION=	4.008
-PORTREVISION=	1
+PORTVERSION=	4.010
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,13 +16,12 @@ BUILD_DEPENDS=	p5-Data-Record>=0:devel/p5-Data-Record \
 		p5-Getopt-Long-Descriptive>=0.091:devel/p5-Getopt-Long-Descriptive \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
-		p5-Module-Metadata>=1.000019:devel/p5-Module-Metadata \
 		p5-Moo>=1.003001:devel/p5-Moo \
 		p5-MooX-ConfigFromFile>=0:devel/p5-MooX-ConfigFromFile \
 		p5-Path-Class>=0.32:devel/p5-Path-Class \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
 		p5-Term-Size-Any>=0:devel/p5-Term-Size-Any \
-		p5-Text-WrapI18N>=0:textproc/p5-Text-WrapI18N
+		p5-Unicode-LineBreak>=0:textproc/p5-Unicode-LineBreak
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Mo>=0:devel/p5-Mo \
@@ -34,6 +32,7 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
