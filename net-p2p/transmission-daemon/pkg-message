@@ -1,0 +1,18 @@
+------------------------------------------------------------------------
+To allow clients to connect to the transmission daemon using DNS with
+any hostname other than localhost, do one of the following:
+  - Enable password authentication, then any hostname is allowed.
+    This can be achieved by either:
+      - setting rpc-authentication-required to true, and adding
+        credentials to the rpc-username and rpc-password fields in
+        settings.json (must be done whilst the transmission service is
+        stopped); or
+      - running transmission-daemon with the following arguments
+        (these can be set with transmission_flags in /etc/rc.conf):
+        -t -u USERNAME -v PASSWORD
+  OR
+  - Add the allowed server hostnames to the rpc-host-whitelist setting
+    in settings.json (must be done whilst the transmission service is
+    stopped). Note that this value is NOT a list of allowed CLIENTS,
+    but instead a list of allowed SERVER hostnames.
+------------------------------------------------------------------------
