@@ -2,7 +2,7 @@
 
 PORTNAME=	arduino-tools
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	# Mostly metaport - installs files, no build
 DISTFILES=	#
@@ -27,7 +27,7 @@ RUN_DEPENDS=	arduino-avrdude:devel/arduino-avrdude \
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-ARMGCC_FULL_VERS=	6-2017-q2-update
+ARMGCC_FULL_VERS=	7-2017-q4-major
 
 ARMGCC_VERS=	4.9.2
 AVRDUDE_VERS=	6.3.0-arduino9
