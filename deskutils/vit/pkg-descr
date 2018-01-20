@@ -5,4 +5,4 @@ VIT is to allow you to customize the way in which you use Taskwarrior's core
 commands as well as to provide a framework for easily dispatching external
 commands (both user scripts and Taskwarrior's many External Scripts).
 
-WWW: http://tasktools.org/projects/vit.html
+WWW: https://tasktools.org/projects/vit.html
