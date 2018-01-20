@@ -13,6 +13,37 @@
  	i = 0;
  	XtSetArg(args[i], XmNbackground, color.pixel);   i++;
  	XtSetArg(args[i], XmNforeground, whitepixel);   i++;
+@@ -255,25 +255,25 @@ void Seat::MakeCardMaps()
+    for (int i = 0; i< 13; i++) {
+       s_map[i] = XCreateBitmapFromData(_dpy,
+          RootWindow(_dpy, _screen),
+-         s_bits[i], CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
++         reinterpret_cast<const char *>(s_bits[i]), CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
+  
+       h_map[i] = XCreateBitmapFromData(_dpy,
+          RootWindow(_dpy, _screen),
+-         h_bits[i], CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
++         reinterpret_cast<const char *>(h_bits[i]), CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
+  
+       c_map[i] = XCreateBitmapFromData(_dpy,
+          RootWindow(_dpy, _screen),
+-         c_bits[i], CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
++         reinterpret_cast<const char *>(c_bits[i]), CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
+  
+       d_map[i] = XCreateBitmapFromData(_dpy,
+          RootWindow(_dpy, _screen),
+-         d_bits[i], CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
++         reinterpret_cast<const char *>(d_bits[i]), CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
+  
+    }
+ 
+    back_map = XCreateBitmapFromData(_dpy,
+       RootWindow(_dpy, _screen),
+-      back_bits, CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
++      reinterpret_cast<const char *>(back_bits), CARD_MAP_WIDTH, CARD_MAP_HEIGHT);
+  
+ }
+ 
 @@ -342,7 +342,8 @@
     Card ** cards = hands->Cards();
     if( hands->NumOfCards() )
