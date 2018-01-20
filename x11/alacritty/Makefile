@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	alacritty
-PORTVERSION=	g20180108
+PORTVERSION=	g20180118
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwilm
-GH_TAGNAME=	02953c28127ece6a919e43f607ff5dbd442c6de0
+GH_TAGNAME=	b396a9a75350c5b1c82f5aae06a68dbd035df83c
 GH_TUPLE=	jwilm:rust-fontconfig:be2b94de833ec69cf767186262a5fb8360fa5b45:servofontconfig \
 		jwilm:libfontconfig:5c1845e1bffa11cf4d3e6fb27f456bf5c814ce1b:servofontconfigsys
 
@@ -43,13 +43,13 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		byteorder-1.2.1 \
 		bytes-0.3.0 \
 		cargo_metadata-0.2.3 \
-		cc-1.0.3 \
+		cc-1.0.4 \
 		cfg-if-0.1.2 \
 		cgl-0.2.1 \
 		cgmath-0.15.0 \
-		clap-2.29.0 \
-		clippy-0.0.177 \
-		clippy_lints-0.0.177 \
+		clap-2.29.2 \
+		clippy-0.0.180 \
+		clippy_lints-0.0.180 \
 		cmake-0.1.29 \
 		cocoa-0.13.0 \
 		core-foundation-0.4.6 \
@@ -62,7 +62,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		either-1.4.0 \
 		env_logger-0.4.3 \
 		errno-0.2.3 \
-		euclid-0.16.1 \
+		euclid-0.16.2 \
 		expat-sys-2.1.5 \
 		filetime-0.1.14 \
 		fnv-1.0.6 \
@@ -72,15 +72,13 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		freetype-sys-0.4.0 \
 		fsevent-0.2.17 \
 		fsevent-sys-0.1.6 \
-		fuchsia-zircon-0.2.1 \
-		fuchsia-zircon-0.3.2 \
-		fuchsia-zircon-sys-0.2.0 \
-		fuchsia-zircon-sys-0.3.2 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
 		gdi32-sys-0.1.2 \
 		getopts-0.2.15 \
-		gl_generator-0.6.1 \
 		gl_generator-0.7.0 \
-		gleam-0.4.17 \
+		gl_generator-0.8.0 \
+		gleam-0.4.19 \
 		glutin-0.12.0 \
 		idna-0.1.4 \
 		if_chain-0.1.2 \
@@ -90,22 +88,21 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		itoa-0.3.4 \
 		kernel32-sys-0.2.2 \
 		khronos_api-2.0.0 \
-		lazy_static-0.2.11 \
 		lazy_static-1.0.0 \
 		lazycell-0.4.0 \
-		lazycell-0.5.1 \
-		libc-0.2.34 \
+		lazycell-0.6.0 \
+		libc-0.2.36 \
 		libloading-0.4.3 \
 		libz-sys-1.0.18 \
 		linked-hash-map-0.5.0 \
 		log-0.3.9 \
-		log-0.4.0 \
+		log-0.4.1 \
 		malloc_buf-0.0.6 \
 		matches-0.1.6 \
 		memchr-2.0.1 \
-		memmap-0.6.1 \
+		memmap-0.6.2 \
 		mio-0.5.1 \
-		mio-0.6.11 \
+		mio-0.6.12 \
 		mio-more-0.1.0 \
 		miow-0.1.5 \
 		miow-0.2.1 \
@@ -121,25 +118,25 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		osmesa-sys-0.1.2 \
 		owning_ref-0.3.3 \
 		parking_lot-0.5.3 \
-		parking_lot_core-0.2.8 \
+		parking_lot_core-0.2.10 \
 		percent-encoding-1.0.1 \
 		pkg-config-0.3.9 \
 		pulldown-cmark-0.0.15 \
 		quine-mc_cluskey-0.2.4 \
 		quote-0.3.15 \
-		rand-0.3.19 \
-		redox_syscall-0.1.33 \
+		rand-0.3.20 \
+		redox_syscall-0.1.37 \
 		redox_termios-0.1.1 \
-		regex-0.2.3 \
-		regex-syntax-0.4.1 \
+		regex-0.2.5 \
+		regex-syntax-0.4.2 \
 		safemem-0.2.0 \
-		same-file-1.0.0 \
+		same-file-1.0.2 \
 		semver-0.6.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.26 \
-		serde_derive-1.0.26 \
-		serde_derive_internals-0.18.1 \
-		serde_json-1.0.8 \
+		serde-1.0.27 \
+		serde_derive-1.0.27 \
+		serde_derive_internals-0.19.0 \
+		serde_json-1.0.9 \
 		serde_yaml-0.7.3 \
 		shared_library-0.1.8 \
 		shell32-sys-0.1.2 \
@@ -154,7 +151,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		termion-1.5.1 \
 		textwrap-0.9.0 \
 		thread_local-0.3.5 \
-		time-0.1.38 \
+		time-0.1.39 \
 		token_store-0.1.2 \
 		toml-0.4.5 \
 		unicode-bidi-0.3.4 \
@@ -171,14 +168,14 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		void-1.0.2 \
 		vte-0.3.2 \
 		walkdir-2.0.1 \
-		wayland-client-0.12.4 \
-		wayland-kbd-0.13.0 \
-		wayland-protocols-0.12.4 \
-		wayland-scanner-0.12.4 \
-		wayland-sys-0.12.4 \
+		wayland-client-0.12.5 \
+		wayland-kbd-0.13.1 \
+		wayland-protocols-0.12.5 \
+		wayland-scanner-0.12.5 \
+		wayland-sys-0.12.5 \
 		wayland-window-0.13.2 \
 		winapi-0.2.8 \
-		winapi-0.3.2 \
+		winapi-0.3.3 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.3.2 \
 		winapi-x86_64-pc-windows-gnu-0.3.2 \
