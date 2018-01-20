@@ -1,4 +1,4 @@
 PyUSB aims to be an easy to use Python module to access USB devices. PyUSB
 relies on a native system library for USB access.
 
-WWW: http://walac.github.io/pyusb/
+WWW: http://pyusb.github.io/pyusb/
