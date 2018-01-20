@@ -1,0 +1,28 @@
+bin/rpcs3
+share/applications/rpcs3.desktop
+share/icons/hicolor/48x48/apps/rpcs3.png
+share/icons/hicolor/scalable/apps/rpcs3.svg
+%%DATADIR%%/GuiConfigs/Darker Style by TheMitoSan.qss
+%%DATADIR%%/GuiConfigs/Kuroi (Dark) by Ani.qss
+%%DATADIR%%/GuiConfigs/ModernBlue Theme by TheMitoSan.qss
+%%DATADIR%%/Icons/ui/L1.png
+%%DATADIR%%/Icons/ui/L2.png
+%%DATADIR%%/Icons/ui/R1.png
+%%DATADIR%%/Icons/ui/R2.png
+%%DATADIR%%/Icons/ui/circle.png
+%%DATADIR%%/Icons/ui/cross.png
+%%DATADIR%%/Icons/ui/dpad.png
+%%DATADIR%%/Icons/ui/dpad_down.png
+%%DATADIR%%/Icons/ui/dpad_left.png
+%%DATADIR%%/Icons/ui/dpad_right.png
+%%DATADIR%%/Icons/ui/dpad_up.png
+%%DATADIR%%/Icons/ui/fade_bottom.png
+%%DATADIR%%/Icons/ui/fade_top.png
+%%DATADIR%%/Icons/ui/left_stick.png
+%%DATADIR%%/Icons/ui/new.png
+%%DATADIR%%/Icons/ui/right_stick.png
+%%DATADIR%%/Icons/ui/save.png
+%%DATADIR%%/Icons/ui/select.png
+%%DATADIR%%/Icons/ui/square.png
+%%DATADIR%%/Icons/ui/start.png
+%%DATADIR%%/Icons/ui/triangle.png
