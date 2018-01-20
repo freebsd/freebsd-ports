@@ -35,7 +35,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/sabtraylinux.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/scheduler.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/skintext.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/tvsort.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/sorting.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/urlgrabber.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/certgen.py
@@ -53,7 +53,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarfile.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rsslib.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/servertests.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/subprocess_fix.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/systrayiconthread.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/version.py
@@ -148,10 +147,12 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-76x76-precomposed.png
 %%DATADIR%%/interfaces/Config/templates/staticcfg/ico/favicon.ico
 %%DATADIR%%/interfaces/Config/templates/staticcfg/ico/faviconpaused.ico
+%%DATADIR%%/interfaces/Config/templates/staticcfg/ico/safari-pinned-tab.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-arrow.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-full.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-small.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/chartist.min.js
+%%DATADIR%%/interfaces/Config/templates/staticcfg/js/filesize.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-3.2.1.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-ui.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery.tablesort.min.js
@@ -191,6 +192,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/es.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/fi.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/fr.js
+%%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/he.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/nb.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/nl.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/pl.js
