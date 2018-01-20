@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paramiko
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ CONFLICTS_INSTALL=	py??-paramiko1-*
 OPTIONS_DEFINE=	EXAMPLES
 
 do-test: extract
-	@(cd ${WRKSRC} && ${PYTHON_CMD} test.py)
+	@(cd ${WRKSRC} && ${PYTHON_CMD} -m unittest discover .)
 
 .include <bsd.port.mk>
