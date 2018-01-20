@@ -1,10 +1,3 @@
-%%PERL5_MAN3%%/MooX::Options.3.gz
-%%PERL5_MAN3%%/MooX::Options::Descriptive.3.gz
-%%PERL5_MAN3%%/MooX::Options::Descriptive::Usage.3.gz
-%%PERL5_MAN3%%/MooX::Options::Manual::Man.3.gz
-%%PERL5_MAN3%%/MooX::Options::Manual::MooXCmd.3.gz
-%%PERL5_MAN3%%/MooX::Options::Manual::NamespaceClean.3.gz
-%%PERL5_MAN3%%/MooX::Options::Role.3.gz
 %%SITE_PERL%%/MooX/Options.pm
 %%SITE_PERL%%/MooX/Options/Descriptive.pm
 %%SITE_PERL%%/MooX/Options/Descriptive/Usage.pm
@@ -12,3 +5,10 @@
 %%SITE_PERL%%/MooX/Options/Manual/MooXCmd.pod
 %%SITE_PERL%%/MooX/Options/Manual/NamespaceClean.pod
 %%SITE_PERL%%/MooX/Options/Role.pm
+%%PERL5_MAN3%%/MooX::Options.3.gz
+%%PERL5_MAN3%%/MooX::Options::Descriptive.3.gz
+%%PERL5_MAN3%%/MooX::Options::Descriptive::Usage.3.gz
+%%PERL5_MAN3%%/MooX::Options::Manual::Man.3.gz
+%%PERL5_MAN3%%/MooX::Options::Manual::MooXCmd.3.gz
+%%PERL5_MAN3%%/MooX::Options::Manual::NamespaceClean.3.gz
+%%PERL5_MAN3%%/MooX::Options::Role.3.gz
