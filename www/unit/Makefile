@@ -3,6 +3,7 @@
 
 PORTNAME=	unit
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://unit.nginx.org/download/
 
@@ -70,6 +71,10 @@ CONFIGURE_ARGS+=--control=unix:${UNIT_SOCK}
 
 .if !target(post-install)
 post-install:
+	${MKDIR} ${STAGEDIR}${UNIT_LOGDIR}
+	${MKDIR} ${STAGEDIR}${UNIT_RUNDIR}
+	${ECHO_CMD} @dir ${UNIT_LOGDIR} >> ${TMPPLIST}
+	${ECHO_CMD} @dir ${UNIT_RUNDIR} >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules
 .endif
 
