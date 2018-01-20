@@ -21,6 +21,7 @@ GH_TAGNAME=	113be27
 
 USES=		cmake localbase
 CMAKE_ARGS=	-Wno-dev
+USE_CXXSTD=	gnu++98
 USE_SDL=	mixer sdl
 USE_GNOME=	gtk20
 USE_CSTD=	gnu89
