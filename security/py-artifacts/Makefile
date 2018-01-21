@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yapf>=0:textproc/py-yapf@${FLAVOR}
+		yapf:textproc/py-yapf
 
 NO_ARCH=	yes
 USES=		python
