@@ -23,6 +23,9 @@ PORTEXAMPLES=	*
 GH_ACCOUNT=	leethomason
 USE_GITHUB=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e '/CMAKE_DEBUG_POSTFIX/d' ${WRKSRC}/CMakeLists.txt
+
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} resources ${STAGEDIR}${EXAMPLESDIR}/
