@@ -13,17 +13,10 @@ COMMENT=	Constructive Solid Geometry rendering library
 
 LICENSE=	GPLv2
 
-USES=		qmake:outsource
+USES=		compiler:c++11-lang qmake
 USE_GL=		gl glew
-USE_QT4=	corelib gui
+USE_QT4=	qmake_build
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLIST_SUB=      PORTVERSION=${PORTVERSION}
-
-do-install:
-	${INSTALL_LIB} ${WRKDIR}/lib/libopencsg.so.${PORTVERSION} \
-		${STAGEDIR}${PREFIX}/lib
-	${LN} -sf libopencsg.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopencsg.so.1
-	${LN} -sf libopencsg.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopencsg.so
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/include/opencsg.h ${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.mk>
