@@ -508,6 +508,7 @@
     SUBDIR += elixir-decimal
     SUBDIR += elixir-deppie
     SUBDIR += elixir-dialyze
+    SUBDIR += elixir-distillery
     SUBDIR += elixir-estree
     SUBDIR += elixir-eternal
     SUBDIR += elixir-exactor
