@@ -3,12 +3,15 @@
 
 PORTNAME=	gnuit
 PORTVERSION=	4.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Interactive Tools - a file system browser for UNIX systems
+
+LICENSE=	GPLv3+ GFDL
+LICENSE_COMB=	multi
 
 USES=		ncurses
 GNU_CONFIGURE=	YES
