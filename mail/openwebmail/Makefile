@@ -3,7 +3,7 @@
 
 PORTNAME=	openwebmail
 PORTVERSION=	2.53
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.acatysmoof.com/download/release/ \
 		http://openwebmail.org/openwebmail/download/release/
