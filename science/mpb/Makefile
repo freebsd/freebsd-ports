@@ -33,6 +33,10 @@ NLOPT_LIB_DEPENDS=	libnlopt.so:math/nlopt
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200051
+USE_GCC=	yes
+.endif
+
 .if ${PORT_OPTIONS:MATLAS}
 LIB_DEPENDS+=	libatlas.so:math/atlas
 CONFIGURE_ARGS+=	--with-lapack=-lalapack
