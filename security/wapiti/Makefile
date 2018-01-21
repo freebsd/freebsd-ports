@@ -2,20 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	wapiti
-PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Wapiti is a vulnerability scanner for web applications
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:www/py-beautifulsoup32@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=1.2.3:www/py-requests@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tld>=0:dns/py-tld@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaswfp>=0:graphics/py-yaswfp@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR}
 
-USES=		python:2
+USES=		python:3.4+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
