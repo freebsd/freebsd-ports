@@ -5395,6 +5395,7 @@
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-extras
     SUBDIR += rubygem-facets
+    SUBDIR += rubygem-faker
     SUBDIR += rubygem-faraday_middleware-multi_json
     SUBDIR += rubygem-fast-stemmer
     SUBDIR += rubygem-fast_blank
