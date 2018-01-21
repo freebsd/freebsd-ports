@@ -2,8 +2,7 @@
 
 PORTNAME=	uhd
 PORTVERSION=	3.10.2.0
-PORTREVISION=	1
-#PORTREVISION=	4
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://files.ettus.com/binaries/images/
 DISTFILES=	${IMAGE_FILE}
@@ -25,7 +24,6 @@ GH_TAGNAME=     bd6e21dc06cfca6f1165b1eba6ddbf5a46dc343c
 
 CONFLICTS=	usrp-[0-9]*
 
-BROKEN=		fails to build with boost 1.66, see bug 224087
 BROKEN_powerpc64=	fails to link: undefined reference to boost function
 
 USES=		compiler:c++0x cmake:outsource ncurses pkgconfig \
