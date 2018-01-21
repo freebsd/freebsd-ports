@@ -3,6 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.27a
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -66,8 +67,9 @@ TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WMF_CONFIGURE_WITH=	wmf
+X11_CONFIGURE_OFF=	ac_cv_lib_ICE_IceConnectionNumber=no
 X11_CONFIGURE_WITH=	x
-X11_USE=		XORG=x11,xext
+X11_USE=		XORG=ice,sm,x11,xext
 XML_CONFIGURE_WITH=	xml
 XML_USE=		GNOME=libxml2
 XML_USES=		gnome
