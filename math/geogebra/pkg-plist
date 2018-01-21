@@ -1,6 +1,7 @@
 bin/geogebra
 share/applications/geogebra.desktop
 share/icons/hicolor/32x32/apps/geogebra.png
+share/icons/hicolor/scalable/apps/geogebra.svg
 %%DATADIR%%/geogebra/OpenGeoProver.jar
 %%DATADIR%%/geogebra/geogebra.jar
 %%DATADIR%%/geogebra/geogebra_3d.jar
