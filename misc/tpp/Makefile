@@ -9,6 +9,9 @@ MASTER_SITES=	http://synflood.at/tpp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text presentation program
 
+DEPRECATED=	Depends on expired devel/ruby-ncurses
+EXPIRATION_DATE=2018-02-21
+
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/ncurses.rb:devel/ruby-ncurses \
 		figlet:misc/figlet
 
