@@ -1,0 +1,178 @@
+diff --git a/openbox/config.c b/openbox/config.c
+index dad5d1bf..a387335c 100644
+--- a/openbox/config.c
++++ b/openbox/config.c
+@@ -48,6 +48,8 @@ StrutPartial config_margins;
+ gchar   *config_theme;
+ gboolean config_theme_keepborder;
+ guint    config_theme_window_list_icon_size;
++guint    config_theme_cornerradius;
++gboolean config_theme_menuradius;
+
+ gchar   *config_title_layout;
+
+@@ -719,6 +721,10 @@ static void parse_theme(xmlNodePtr node, gpointer d)
+         else if (config_theme_window_list_icon_size > 96)
+             config_theme_window_list_icon_size = 96;
+     }
++    if ((n = obt_xml_find_node(node, "cornerRadius"))) {
++	config_theme_cornerradius = obt_xml_node_int(n);
++	obt_xml_attr_bool(n, "menu", &config_theme_menuradius);
++    }
+
+     for (n = obt_xml_find_node(node, "font");
+          n;
+@@ -1098,6 +1104,8 @@ void config_startup(ObtXmlInst *i)
+     config_title_layout = g_strdup("NLIMC");
+     config_theme_keepborder = TRUE;
+     config_theme_window_list_icon_size = 36;
++    config_theme_cornerradius = 0;
++    config_theme_menuradius = TRUE;
+
+     config_font_activewindow = NULL;
+     config_font_inactivewindow = NULL;
+diff --git a/openbox/config.h b/openbox/config.h
+index 96a66cf1..5622d059 100644
+--- a/openbox/config.h
++++ b/openbox/config.h
+@@ -152,6 +152,10 @@ extern gchar *config_title_layout;
+ extern gboolean config_animate_iconify;
+ /*! Size of icons in focus switching dialogs */
+ extern guint config_theme_window_list_icon_size;
++/*! Display rounded corners for decorated windows */
++extern guint config_theme_cornerradius;
++/*! Display rounded corners for root and client-list menus */
++extern gboolean config_theme_menuradius;
+
+ /*! The font for the active window's title */
+ extern RrFont *config_font_activewindow;
+diff --git a/openbox/frame.c b/openbox/frame.c
+index 89669726..1539717c 100644
+--- a/openbox/frame.c
++++ b/openbox/frame.c
+@@ -334,6 +334,51 @@ void frame_adjust_shape(ObFrame *self)
+ #endif
+ }
+
++void frame_round_corners(Window window)
++{
++    XWindowAttributes win_attr;
++    XGetWindowAttributes(obt_display, window, &win_attr);
++
++    // If this returns null, the window is invalid.
++    if(!XGetWindowAttributes(obt_display, window, &win_attr))
++        return;
++
++    int width = win_attr.width + win_attr.border_width;
++    int height = win_attr.height + win_attr.border_width;
++    int rad = config_theme_cornerradius;
++    int dia = 2 * rad;
++
++    // do not try to round if the window would be smaller than the corners
++    if(width < dia || height < dia)
++        return;
++
++    Pixmap mask = XCreatePixmap(obt_display, window, width, height, 1);
++    // if this returns null, the mask is not drawable
++    if(!mask)
++        return;
++
++    XGCValues xgcv;
++    GC shape_gc = XCreateGC(obt_display, mask, 0, &xgcv);
++    if(!shape_gc) {
++        XFreePixmap(obt_display, mask);
++        return;
++    }
++
++    XSetForeground(obt_display, shape_gc, 0);
++    XFillRectangle(obt_display, mask, shape_gc, 0, 0, width, height);
++    XSetForeground(obt_display, shape_gc, 1);
++    XFillArc(obt_display, mask, shape_gc, 0, 0, dia, dia, 0, 23040);
++    XFillArc(obt_display, mask, shape_gc, width-dia-1, 0, dia, dia, 0, 23040);
++    XFillArc(obt_display, mask, shape_gc, 0, height-dia-1, dia, dia, 0, 23040);
++    XFillArc(obt_display, mask, shape_gc, width-dia-1, height-dia-1, dia, dia,
++        0, 23040);
++    XFillRectangle(obt_display, mask, shape_gc, rad, 0, width-dia, height);
++    XFillRectangle(obt_display, mask, shape_gc, 0, rad, width, height-dia);
++    XShapeCombineMask(obt_display, window, ShapeBounding, 0, 0, mask, ShapeSet);
++    XFreePixmap(obt_display, mask);
++    XFreeGC(obt_display, shape_gc);
++}
++
+ void frame_adjust_area(ObFrame *self, gboolean moved,
+                        gboolean resized, gboolean fake)
+ {
+@@ -857,7 +902,6 @@ void frame_adjust_area(ObFrame *self, gboolean moved,
+
+         if (resized) {
+             self->need_render = TRUE;
+-            framerender_frame(self);
+             frame_adjust_shape(self);
+         }
+
+@@ -884,7 +928,9 @@ void frame_adjust_area(ObFrame *self, gboolean moved,
+     {
+         XResizeWindow(obt_display, self->label, self->label_width,
+                       ob_rr_theme->label_height);
++	self->need_render = TRUE;
+     }
++    framerender_frame(self);
+ }
+
+ static void frame_adjust_cursors(ObFrame *self)
+@@ -958,6 +1004,8 @@ void frame_adjust_client_area(ObFrame *self)
+     XMoveResizeWindow(obt_display, self->backfront, 0, 0,
+                       self->client->area.width,
+                       self->client->area.height);
++    self->need_render = TRUE;
++    framerender_frame(self);
+ }
+
+ void frame_adjust_state(ObFrame *self)
+diff --git a/openbox/framerender.c b/openbox/framerender.c
+index 094d5962..54046580 100644
+--- a/openbox/framerender.c
++++ b/openbox/framerender.c
+@@ -21,6 +21,7 @@
+ #include "openbox.h"
+ #include "screen.h"
+ #include "client.h"
++#include "config.h"
+ #include "framerender.h"
+ #include "obrender/theme.h"
+
+@@ -42,6 +43,12 @@ void framerender_frame(ObFrame *self)
+         return;
+     self->need_render = FALSE;
+
++    if (config_theme_cornerradius &&
++            !self->client->fullscreen &&
++            !self->client->shaped &&
++            !(self->client->type == OB_CLIENT_TYPE_DOCK))
++        frame_round_corners(self->window);
++
+     {
+         gulong px;
+
+diff --git a/openbox/menuframe.c b/openbox/menuframe.c
+index c37fdcc5..f598cf15 100644
+--- a/openbox/menuframe.c
++++ b/openbox/menuframe.c
+@@ -17,6 +17,7 @@
+    See the COPYING file for a copy of the GNU General Public License.
+ */
+
++#include "frame.h"
+ #include "menuframe.h"
+ #include "client.h"
+ #include "menu.h"
+@@ -845,6 +846,9 @@ void menu_frame_render(ObMenuFrame *self)
+
+     RECT_SET_SIZE(self->area, w, h);
+
++    if (config_theme_menuradius)
++        frame_round_corners(self->window);
++
+     XFlush(obt_display);
+ }
+

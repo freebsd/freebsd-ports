@@ -19,4 +19,8 @@ GNOME or K desktop environments, you can combine their ease and
 functionality with the power of Openbox.  Your desktop becomes cleaner and
 faster, and is in your control, when you use Openbox.
 
+This port also includes optional 3rd party patches for rounder corners
+support and miscellaneous fixes from
+https://github.com/dylanaraps/openbox-patched.
+
 WWW: http://openbox.org/
