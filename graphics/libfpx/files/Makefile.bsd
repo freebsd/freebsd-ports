@@ -8,12 +8,11 @@ LIBDIR	=	${PREFIX}/lib
 INCSDIR	=	${PREFIX}/include
 INCDIR	=	${INCSDIR}		# for pre-bsd.incs.mk API
 
-NO_PROFILE=	Don't want it
-NOPROFILE=	${NO_PROFILE}
+MK_PROFILE=	no
 HAVES=		-DHAVE_WCHAR_H -DHAVE_DLFCN_H \
 		-DHAVE_SYS_TIME_H \
 		-DHAVE_SYS_PARAM_H -DHAVE_SYS_MOUNT_H
-CFLAGS+=	${HAVES}
+CFLAGS+=	${HAVES} -Dregister=
 
 CPPS	!=	find ${.CURDIR} -name \*.cpp -print
 # Some of the .cxx files are #include-ed into others, so can't use `find' here:
@@ -23,7 +22,7 @@ OLESS	:=	ascii.cxx cdocfile.cxx chinst.cxx dffuncs.cxx dfiter.cxx \
 		iter.cxx mem.cxx msf.cxx msfiter.cxx mstream.cxx page.cxx \
 		refilb.cxx rexpdf.cxx sstream.cxx storage.cxx time.cxx \
 		vect.cxx wchar.c
-JPGS	!=	find ${.CURDIR}/jpeg -name \*.c
+JPGS	!=	find ${.CURDIR}/jpeg -name \*.c -not -name dllmain.c
 
 CPPS	+=	${OLESS:S/^/${.CURDIR}\/oless\//} ${JPGS}
 
