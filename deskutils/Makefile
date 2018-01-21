@@ -43,6 +43,7 @@
     SUBDIR += everygui
     SUBDIR += fbreader
     SUBDIR += fet
+    SUBDIR += flameshot
     SUBDIR += freemind
     SUBDIR += fusenshi
     SUBDIR += gaddr
