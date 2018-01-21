@@ -12,7 +12,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	The "meta-port" for version 3 of the Python interpreter
 
 USES=			python:run
-PYTHON_VERSION=		${PYTHON3_DEFAULT_VERSION}
+PYTHON_VERSION=		python${PYTHON3_DEFAULT}
 NO_BUILD=		yes
 
 PLIST_FILES=	bin/2to3-${PYTHON_MAJOR_VER} \

@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20180116:
+AUTHOR: mat@FreeBSD.org
+
+  The deprecated PYTHON_DEFAULT_VERSION, PYTHON2_DEFAULT_VERSION, and
+  PYTHON3_DEFAULT_VERSION have been removed.
+
 20180106:
 AUTHOR: kde@FreeBSD.org
 
