@@ -74,12 +74,12 @@ index df9c576d8..d68f2003b 100644
      0x52, 0x49, 0x46, 0x46, // 0  "RIFF"
      0x00, 0x00, 0x00, 0x00, // 4  wavSize
 @@ -222,7 +222,7 @@ bool K3bExternalEncoder::writeWaveHeader()
-     qDebug() << "(K3bExternalEncoder) writing wave header";
+     kDebug() << "(K3bExternalEncoder) writing wave header";
  
      // write the RIFF thing
 -    if( d->process->write( s_riffHeader, 4 ) != 4 ) {
 +    if( d->process->write( (const char*) s_riffHeader, 4 ) != 4 ) {
-         qDebug() << "(K3bExternalEncoder) failed to write riff header.";
+         kDebug() << "(K3bExternalEncoder) failed to write riff header.";
          return false;
      }
 @@ -243,7 +243,7 @@ bool K3bExternalEncoder::writeWaveHeader()
@@ -88,6 +88,6 @@ index df9c576d8..d68f2003b 100644
      // write static part of the header
 -    if( d->process->write( s_riffHeader + 8, 32 ) != 32 ) {
 +    if( d->process->write( (const char*) s_riffHeader + 8, 32 ) != 32 ) {
-         qDebug() << "(K3bExternalEncoder) failed to write wave header.";
+         kDebug() << "(K3bExternalEncoder) failed to write wave header.";
          return false;
      }
