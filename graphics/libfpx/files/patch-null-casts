@@ -1,5 +1,5 @@
 --- oless/expdf.cxx	2013-09-02 11:47:00.000000000 -0400
-+++ oless/expdf.cxx	2014-02-14 14:29:24.000000000 -0500
++++ oless/expdf.cxx	2018-01-20 19:59:14.495701000 -0500
 @@ -610,5 +610,5 @@
          olErr(EH_Err, STG_E_INVALIDFUNCTION);
      olChk(Validate());
@@ -21,3 +21,26 @@
 +                         0, &pstmsrc));
  
          //  It's a stream
+@@ -1575,5 +1575,5 @@
+     olMemTo(EH_pst, pstExp = new CExposedStream());
+     olChkTo(EH_pstExp, pstExp->Init(pstDirect, this,
+-                                    df, pdfnName, (ULONG)NULL));
++                                    df, pdfnName, 0));
+     *ppStream = pstExp;
+     return S_OK;
+@@ -1624,5 +1624,5 @@
+     olMemTo(EH_pst, pstExp = new CExposedStream());
+     olChkTo(EH_pstExp, pstExp->Init(pstDirect, this,
+-                                    df, pdfnName, (ULONG)NULL));
++                                    df, pdfnName, 0));
+     *ppStream = pstExp;
+     return S_OK;
+--- oless/storage.cxx	2013-09-02 11:47:00.000000000 -0400
++++ oless/storage.cxx	2018-01-20 20:03:24.664133000 -0500
+@@ -144,5 +144,5 @@
+ 
+     olChk(ValidateNameW(pwcsName, CBMAXPATHCOMPLEN));
+-    olMem(pilb = new CFileILB(pwcsName, (DWORD)NULL, FALSE));
++    olMem(pilb = new CFileILB(pwcsName, 0, FALSE));
+     olChk(pilb->Open(STGM_READ));
+     sc = GetScode( StgIsStorageILockBytes(pilb) );
