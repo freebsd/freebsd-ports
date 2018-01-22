@@ -35,6 +35,15 @@
          x64 = True
      elif line == "armv7l":
          armv7l = True
+@@ -879,7 +898,7 @@
+       os.remove(filePath)
+     passwords = open(filePath, "a")
+ 
+-    command = '"%s" "%s"' % (sys.executable,
++    command = '"%s" "%s" 2>/dev/null' % (sys.executable,
+                            os.path.abspath(os.path.join(os.path.dirname(__file__), "icehashpassword.py")))
+ 
+     #
 @@ -2013,7 +2032,7 @@
          addLdPath(getCppLibDir(lang), env)
      elif isAIX():

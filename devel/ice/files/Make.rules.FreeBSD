@@ -1,4 +1,6 @@
 mkshlib                 = $(CXX) -shared $(LDFLAGS) -o $(1) -Wl,-h,$(2) $(3) $(4)
+mkplugin		= $(CXX) -shared $(LDFLAGS) -o $(1) $(3) $(4)
+
 
 BASELIBS		= -lIceUtil -pthread -L$(LOCALBASE)/lib %%ICONV_LIB%%
 LIBS			= -lIce $(BASELIBS) 
