@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	1.17
-PORTREVISION=	4
+PORTVERSION=	1.18.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	http://libtom.net/files/
-DISTNAME=	crypt-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
@@ -18,10 +16,13 @@ CFLAGS+=	-I${LOCALBASE}/include
 EXTRALIBS=	-L${LOCALBASE}/lib
 MAKEFILE=	makefile.shared
 ALL_TARGET=	library
-MAKE_ARGS=	IGNORE_SPEED=yes INCPATH="${PREFIX}/include" \
-		LIBPATH="${PREFIX}/lib" EXTRALIBS="${EXTRALIBS}"
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		gmake libtool:build tar:bzip2
+MAKE_ARGS=	INCPATH="${PREFIX}/include" LIBPATH="${PREFIX}/lib" \
+		EXTRALIBS="${EXTRALIBS}"
+USES=		gmake libtool:build
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	libtom
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_MULTI=		MATH
@@ -48,32 +49,29 @@ DOCS_MAKE_ARGS_OFF=		NODOCS=yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's| make | $$(MAKE) |' \
 		-e 's|-g $$(GROUP)||' -e 's|-o $$(USER)||' \
-		${WRKSRC}/makefile.shared ${WRKSRC}/testprof/makefile.shared
+		${WRKSRC}/makefile.shared ${WRKSRC}/makefile_include.mk
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt_prof.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt.so.0
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
-	${INSTALL_DATA} ${WRKSRC}/doc/crypt.pdf ${STAGEDIR}${DOCSDIR}/pdf
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt.so.1
 
 do-test:
-	@${ECHO_MSG} "Testing with -DUSE_TFM..."
-	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_TFM" EXTRALIBS="-L${PREFIX}/lib -ltfm" ${MAKE_CMD} test && ${WRKSRC}/test)
-
-	@${ECHO_MSG} "Cleaning up test binary..."
-	@${RM} ${WRKSRC}/test
-	@${RM} ${WRKSRC}/demos/test.o
-
-	@${ECHO_MSG} "Testing with -DUSE_LTM..."
-	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_LTM" EXTRALIBS="-L${PREFIX}/lib -ltommath" ${MAKE_CMD} test && ${WRKSRC}/test)
-
-	@${ECHO_MSG} "Cleaning up test binary..."
-	@${RM} ${WRKSRC}/test
-	@${RM} ${WRKSRC}/demos/test.o
-
-	@${ECHO_MSG} "Testing with -DUSE_GMP..."
-	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_GMP" EXTRALIBS="-L${PREFIX}/lib -lgmp" ${MAKE_CMD} test && ${WRKSRC}/test)
+	# TomsFastMath
+	@${ECHO_CMD} "Testing TomsFastMath"
+	${MAKE_CMD} -C ${WRKSRC} \
+	    CFLAGS="-I${LOCALBASE}/include -DUSE_TFM -DTFM_DESC" \
+	    EXTRALIBS="-L${LOCALBASE}/lib -ltfm" clean test
+	(cd ${WRKSRC} && ./test)
+	# LibTomMath
+	@${ECHO_CMD} "Testing LibTomMath"
+	${MAKE_CMD} -C ${WRKSRC} \
+	    CFLAGS="-I${LOCALBASE}/include -DUSE_LTM -DLTM_DESC" \
+	    EXTRALIBS="-L${LOCALBASE}/lib -ltommath" clean test
+	(cd ${WRKSRC} && ./test)
+	# GMP
+	@${ECHO_CMD} "Testing GMP"
+	${MAKE_CMD} -C ${WRKSRC} \
+	    CFLAGS="-I${LOCALBASE}/include -DUSE_GMP -DGMP_DESC" \
+	    EXTRALIBS="-L${LOCALBASE}/lib -lgmp" clean test
+	(cd ${WRKSRC} && ./test)
 
 .include <bsd.port.mk>
