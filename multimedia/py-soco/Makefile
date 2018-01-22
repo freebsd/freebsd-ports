@@ -2,6 +2,7 @@
 
 PORTNAME=	soco
 PORTVERSION=	0.13
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,8 @@ COMMENT=	Python library to control Sonos speakers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xmltodict>0:devel/py-xmltodict@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SoCo
