@@ -841,6 +841,51 @@ gemdeps()
 	return $rc
 }
 
+# If an non rubygem-port has a 'Gemfile' file
+# it is checked with bundle to be sure
+# all dependencies are satisfied.
+# Without the check missing/wrong dependencies
+# are just found when executing the application
+gemfiledeps()
+{
+	# skip check if port does not use ruby at all
+	if [ -z "$USE_RUBY" ]; then
+		return 0
+	fi
+	
+	# skip check if port is a rubygem-* one; they have no Gemfiles
+	if [ "${PKGBASE%%-*}" = "rubygem" ]; then
+		return 0
+	fi
+	
+	# advise install of bundler if its not present for check
+	if ! type bundle > /dev/null 2>&1; then
+		notice "Please install sysutils/rubygem-bundler for additional Gemfile-checks"
+		return 0
+	fi
+ 
+	# locate the Gemfile(s)
+	while read -r f; do
+	
+		# no results presents a blank line from heredoc
+		[ -z "$f" ] && continue
+	
+		# if there is no Gemfile everything is fine - stop here
+		[ ! -f "$f" ] && return 0;
+
+		# use bundle to check if Gemfile is satisfied
+		# if bundle returns 1 the Gemfile is not satisfied
+		# and so stage-qa isn't also
+		if ! bundle check --dry-run --gemfile $f > /dev/null 2>&1; then
+			warn "Dependencies defined in ${f} are not satisfied"
+		fi
+      
+	done <<-EOF
+		$(find ${STAGEDIR} -name Gemfile)
+		EOF
+	return 0
+}
+
 flavors()
 {
 	local rc pkgnames uniques
@@ -860,7 +905,7 @@ flavors()
 
 checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
 checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
-checks="$checks proxydeps sonames perlcore no_arch gemdeps flavors"
+checks="$checks proxydeps sonames perlcore no_arch gemdeps gemfiledeps flavors"
 
 ret=0
 cd ${STAGEDIR}
