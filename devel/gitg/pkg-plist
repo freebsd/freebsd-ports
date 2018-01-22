@@ -73,6 +73,7 @@ share/icons/hicolor/scalable/apps/gitg-symbolic.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gitg.mo
