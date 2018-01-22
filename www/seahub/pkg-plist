@@ -297,7 +297,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-link.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-links.bb406c0f1843.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-links.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/share.7e1dc5d93639.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/share.e91a9adb9011.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/shared-repo.887016f9da47.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/shared-repo.js
@@ -315,7 +315,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/widgets/popover.js
 %%SEAHUBDIR%%/media/assets/scripts/build.a0552a4ed8dc.js
 %%SEAHUBDIR%%/media/assets/scripts/build.js
-%%SEAHUBDIR%%/media/assets/scripts/common.f18031bd088f.js
+%%SEAHUBDIR%%/media/assets/scripts/common.1c7dbf8404ec.js
 %%SEAHUBDIR%%/media/assets/scripts/common.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/build.00c133b18e9e.txt
 %%SEAHUBDIR%%/media/assets/scripts/dist/build.d41d8cd98f00.js
@@ -379,9 +379,9 @@
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/jquery.iframe-transport.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.603390194f29.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.a436a4dfff20.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.c512bc07d260.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/main.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.92b86490e682.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.e5556f477b96.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.ef8a19e97e35.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.js
@@ -391,21 +391,21 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/ca/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/cs/djangojs.9dbef50d1ad9.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/cs/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/de/djangojs.f52330b9a5a3.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/de/djangojs.9fbed75906e3.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/de/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/el/djangojs.30265339e750.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/el/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/en/djangojs.4fef8f9a3076.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/en/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/es-ar/djangojs.ff964379a71b.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/es-ar/djangojs.cb412d6b5bb4.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/es-ar/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/es-mx/djangojs.c7a73c0edc7e.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/es-mx/djangojs.cc68cd9938f6.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/es-mx/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/es/djangojs.a4eabe100177.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/es/djangojs.a390af093421.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/es/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fi/djangojs.970325752d1c.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fi/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.ed920db95a16.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.4815124a8108.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/he/djangojs.f701701595f1.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/he/djangojs.js
@@ -427,7 +427,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/pl/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/pt-br/djangojs.7ed00277fd1b.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/pt-br/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/ru/djangojs.0be7a2b0decd.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/ru/djangojs.ccb13e9ca753.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/ru/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sk/djangojs.06183425c030.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sk/djangojs.js
@@ -443,7 +443,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/uk/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/vi/djangojs.f31ad3779e8c.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/vi/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/zh-cn/djangojs.7d62b2f830fb.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/zh-cn/djangojs.7ef663ded071.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/zh-cn/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/zh-tw/djangojs.ed546e75764e.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/zh-tw/djangojs.js
@@ -838,7 +838,6 @@
 %%SEAHUBDIR%%/seahub/api2/endpoints/admin/users.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/admin/users_batch.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/admin/utils.py
-%%SEAHUBDIR%%/seahub/api2/endpoints/all_groups.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/be_shared_repo.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/copy_move_task.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/deleted_repos.py
@@ -873,6 +872,7 @@
 %%SEAHUBDIR%%/seahub/api2/endpoints/send_upload_link_email.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/share_link_zip_task.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/share_links.py
+%%SEAHUBDIR%%/seahub/api2/endpoints/shareable_groups.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/shared_folders.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/shared_repos.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/shared_upload_links.py
@@ -1183,8 +1183,8 @@
 %%SEAHUBDIR%%/seahub/templates/registration/password_reset_done.html
 %%SEAHUBDIR%%/seahub/templates/registration/password_reset_email.html
 %%SEAHUBDIR%%/seahub/templates/registration/password_reset_form.html
-%%SEAHUBDIR%%/seahub/templates/registration/register_complete_email.txt
-%%SEAHUBDIR%%/seahub/templates/registration/register_complete_email_subject.txt
+%%SEAHUBDIR%%/seahub/templates/registration/register_complete_email.html
+%%SEAHUBDIR%%/seahub/templates/registration/register_complete_email_subject.html
 %%SEAHUBDIR%%/seahub/templates/registration/registration_complete.html
 %%SEAHUBDIR%%/seahub/templates/registration/registration_form.html
 %%SEAHUBDIR%%/seahub/templates/repo_dir_recycle_view.html
@@ -1681,7 +1681,6 @@
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_two_factor_auth.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_upload_links.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_users.py
-%%SEAHUBDIR%%/tests/api/endpoints/test_all_groups.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_be_shared_repo.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_deleted_repos.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_dir_shared_items.py
@@ -1713,6 +1712,7 @@
 %%SEAHUBDIR%%/tests/api/endpoints/test_send_upload_link.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_share_link_zip_task.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_share_links.py
+%%SEAHUBDIR%%/tests/api/endpoints/test_shareable_groups.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_shared_folders.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_shared_repos.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_shared_upload_links.py
@@ -1788,9 +1788,6 @@
 %%SEAHUBDIR%%/tests/seahub/profile/views/__init__.py
 %%SEAHUBDIR%%/tests/seahub/profile/views/test_edit_profile.py
 %%SEAHUBDIR%%/tests/seahub/profile/views/test_profile.py
-%%SEAHUBDIR%%/tests/seahub/registraion/__init__.py
-%%SEAHUBDIR%%/tests/seahub/registraion/test_can_email_admins_on_registration.py
-%%SEAHUBDIR%%/tests/seahub/registraion/tests.py
 %%SEAHUBDIR%%/tests/seahub/role_permissions/test_utils.py
 %%SEAHUBDIR%%/tests/seahub/share/models/__init__.py
 %%SEAHUBDIR%%/tests/seahub/share/models/test_extra_groups_share_permission.py
@@ -1805,8 +1802,11 @@
 %%SEAHUBDIR%%/tests/seahub/tags/models/test_filetag_manager.py
 %%SEAHUBDIR%%/tests/seahub/tags/models/test_tags_manager.py
 %%SEAHUBDIR%%/tests/seahub/test_accounts.py
+%%SEAHUBDIR%%/tests/seahub/thirdpart/__init__.py
 %%SEAHUBDIR%%/tests/seahub/thirdpart/registration/__init__.py
 %%SEAHUBDIR%%/tests/seahub/thirdpart/registration/test_models.py
+%%SEAHUBDIR%%/tests/seahub/thirdpart/registration/tests.py
+%%SEAHUBDIR%%/tests/seahub/thirdpart/shibboleth/__init__.py
 %%SEAHUBDIR%%/tests/seahub/thirdpart/shibboleth/test_backends.py
 %%SEAHUBDIR%%/tests/seahub/thirdpart/shibboleth/test_middleware.py
 %%SEAHUBDIR%%/tests/seahub/utils/__init__.py
@@ -1832,6 +1832,7 @@
 %%SEAHUBDIR%%/tests/seahub/views/file/test_view_raw_shared_file.py
 %%SEAHUBDIR%%/tests/seahub/views/file/test_view_shared_file.py
 %%SEAHUBDIR%%/tests/seahub/views/init/test_convert_cmmt_desc_link.py
+%%SEAHUBDIR%%/tests/seahub/views/init/test_demo.py
 %%SEAHUBDIR%%/tests/seahub/views/init/test_file_revisions.py
 %%SEAHUBDIR%%/tests/seahub/views/init/test_get_unencry_rw_repos_by_user.py
 %%SEAHUBDIR%%/tests/seahub/views/init/test_i18n.py
