@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ttyd
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	neel@neelc.org
