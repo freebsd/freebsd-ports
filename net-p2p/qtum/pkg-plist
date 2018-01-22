@@ -1,0 +1,7 @@
+bin/bench_qtum
+bin/qtum-cli
+bin/qtum-qt
+bin/qtum-tx
+bin/qtumd
+bin/test_qtum
+bin/test_qtum-qt
