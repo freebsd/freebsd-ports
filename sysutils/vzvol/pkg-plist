@@ -1,5 +1,4 @@
 bin/vzvol
-lib/vzvol/lib/freebsd/sudo.sh
 lib/vzvol/lib/freebsd/vzvol_import.sh
 lib/vzvol/lib/freebsd/vzvol_fs_fat32.sh
 lib/vzvol/lib/freebsd/vzvol_pkgcheck.sh
@@ -17,7 +16,6 @@ lib/vzvol/lib/shared/vzvol_list.sh
 lib/vzvol/lib/shared/vzvol_vmdk.sh
 lib/vzvol/lib/shared/zvol_check.sh
 lib/vzvol/lib/shared/vzvol_errorcode.sh
-lib/vzvol/lib/linux/sudo.sh
 lib/vzvol/lib/linux/vzvol_pkgcheck.sh
 lib/vzvol/lib/linux/vzvol_fs_fat32.sh
 lib/vzvol/lib/linux/vzvol_import.sh

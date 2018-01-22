@@ -2,7 +2,7 @@
 
 PORTNAME=		vzvol
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.5.5
+DISTVERSION=		0.6.0
 CATEGORIES=		sysutils
 
 MAINTAINER=		rainbow@purlinux.org
