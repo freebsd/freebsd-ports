@@ -47,8 +47,6 @@ DOCSDIR=	${PREFIX}/share/doc/xjdic
 
 NO_WRKSUBDIR=	yes
 
-BROKEN_sparc64=	Fails on sparc64 during installation with error 2
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
