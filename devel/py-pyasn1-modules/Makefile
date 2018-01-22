@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyasn1-modules
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +12,14 @@ COMMENT=	Collection of ASN.1 data structures for py-pyasn1
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.8:devel/py-pyasn1@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.4.1:devel/py-pyasn1@${FLAVOR}
 
 OPTIONS_DEFINE=	DOCS
 
 NO_ARCH=	yes
 USES=		python shebangfix
 SHEBANG_FILES=	tools/*.py
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 PORTDOCS=	CHANGES.txt README.md
 TOOLS=		cmcdump.py cmpdump.py crldump.py crmfdump.py ocspclient.py \
