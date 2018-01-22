@@ -1,0 +1,11 @@
+JOSE (Javascript Object Signing and Encryption) is a Python implementation
+of the standards developed by IETF Javascript Object Signing and Encryption
+(Active WG), in particular the following RFCs:
+
+- JSON Web Algorithms (JWA)
+- JSON Web Key (JWK)
+- JSON Web Signature (JWS)
+
+Originally developed as part of the ACME protocol implementation.
+
+WWW: https://josepy.readthedocs.io/en/latest/
