@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdvdnav
-PORTVERSION=	5.0.3
+PORTVERSION=	6.0.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvdnav/${PORTVERSION}/ \
 		http://dvdnav.mplayerhq.hu/releases/ \
@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvdnav/${PORTVERSION}
 		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	MPlayer version of the libdvdnav project
+COMMENT=	Videolan version of the libdvdnav project
 
 LICENSE=	GPLv2
 
