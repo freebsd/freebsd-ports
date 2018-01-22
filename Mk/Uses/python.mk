@@ -87,7 +87,9 @@
 #			  otherwise be created and they are not wanted.
 #
 #	allflavors 	- Generate flavors for all possible versions and not
-#			  simply the default ones.
+#			  simply the default ones.  Only to be used for py-*
+#			  ports that are part of the Python distribution, but
+#			  kept as separate ports.
 #
 #	optsuffix	- Set PKGNAMESUFFIX to PYTHON_PKGNAMESUFFIX if not the
 #			  default python version.
