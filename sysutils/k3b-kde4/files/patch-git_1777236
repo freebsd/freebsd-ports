@@ -33,7 +33,7 @@ index a4fc784b5..22928b279 100644
 -        return QString::fromLocal8Bit( ade->value );
 -    else
 -        return QString();
-+    return ade && ade->value[0] != '\0' ? QString::fromLocal8Bit( ade->value ) : QString();
++    return ade && ade->value && ade->value[0] != '\0' ? QString::fromLocal8Bit( ade->value ) : QString();
  }
  
  
@@ -47,7 +47,7 @@ index a4fc784b5..22928b279 100644
 -        return QString::fromLocal8Bit( ade->value );
 -    else
 -        return QString();
-+    return ade && ade->value[0] != '\0' ? QString::fromLocal8Bit( ade->value ) : QString();
++    return ade && ade->value && ade->value[0] != '\0' ? QString::fromLocal8Bit( ade->value ) : QString();
  }
  
  
@@ -61,7 +61,7 @@ index a4fc784b5..22928b279 100644
 -        return QString::fromLocal8Bit( ade->value );
 -    else
 -        return QString();
-+    return ade && ade->value[0] != '\0' ? QString::fromLocal8Bit( ade->value ) : QString();
++    return ade && ade->value && ade->value[0] != '\0' ? QString::fromLocal8Bit( ade->value ) : QString();
  }
  
  
