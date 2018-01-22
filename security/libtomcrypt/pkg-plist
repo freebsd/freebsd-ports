@@ -11,13 +11,8 @@ include/tomcrypt_misc.h
 include/tomcrypt_pk.h
 include/tomcrypt_pkcs.h
 include/tomcrypt_prng.h
-include/tomcrypt_test.h
 lib/libtomcrypt.a
 lib/libtomcrypt.so
-lib/libtomcrypt.so.0
-lib/libtomcrypt.so.0.0.117
-lib/libtomcrypt_prof.a
-lib/libtomcrypt_prof.so
-lib/libtomcrypt_prof.so.0
-lib/libtomcrypt_prof.so.0.0.117
-%%PORTDOCS%%%%DOCSDIR%%/pdf/crypt.pdf
+lib/libtomcrypt.so.1
+lib/libtomcrypt.so.1.0.1
+libdata/pkgconfig/libtomcrypt.pc
