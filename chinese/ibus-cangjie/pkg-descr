@@ -1,0 +1,8 @@
+This is an IBus engine for users of the Cangjie and 
+Quick input methods.
+
+It is primarily intended to Hong Kong people 
+who want to input Traditional Chinese,
+as they are (by far) the majority of Cangjie and Quick users.
+
+WWW: http://cangjians.github.io/projects/ibus-cangjie/
