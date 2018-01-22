@@ -16,11 +16,6 @@ LIB_DEPENDS=	libosmocore.so:devel/libosmocore \
 		libosmoabis.so:devel/libosmo-abis \
 		libtalloc.so:devel/talloc
 
-BROKEN_mips=	Does not build: undefined reference to __bswap_16
-BROKEN_mips64=	Does not build: undefined reference to __bswap_16
-BROKEN_powerpc64=	Does not build: undefined reference to __bswap_16
-BROKEN_sparc64=	Does not build: undefined reference to __bswap_16
-
 USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -41,5 +36,7 @@ DAHDI_CPPFLAGS=		-I${LOCALBASE}/include
 
 post-patch:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
+	@${REINPLACE_CMD} -e 's,__bswap_,__bswap,' \
+		${WRKSRC}/examples/rs232-write.c
 
 .include <bsd.port.mk>
