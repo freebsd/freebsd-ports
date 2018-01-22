@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lz4
-PORTVERSION=	0.18.2
+PORTVERSION=	0.19.1
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,4 +28,10 @@ post-install:
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/block/_block.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/frame/_frame.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
