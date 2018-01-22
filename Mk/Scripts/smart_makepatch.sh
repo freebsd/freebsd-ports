@@ -230,6 +230,38 @@ stage_patches() {
 	done
 }
 
+compare_common_patches() {
+	[ -z "${old_patch_list}" ] && return
+	local archive_patch_list
+	local P
+	local ppatch
+	local ppatch_stripped
+	local cpatch
+	local cpatch_stripped
+	for P in ${old_patch_list}; do
+		if [ -e ${DESTDIR}/${P} ]; then
+			ppatch=${PATCHDIR}/${P}
+			cpatch=${DESTDIR}/${P}
+			ppatch_stripped=$(mktemp -t portpatch)
+			cpatch_stripped=$(mktemp -t portpatch)
+			egrep -v -- '--- .+ UTC$' ${ppatch} \
+				> ${ppatch_stripped}
+			egrep -v -- '--- .+ UTC$' ${cpatch} \
+				> ${cpatch_stripped}
+			# Don't replace patches with only metadata changes
+			if ! cmp -s ${ppatch_stripped} ${cpatch_stripped}; then
+				archive_patch_list="${archive_patch_list} ${P}"
+			else
+				echo "${P} only contains metadata changes; not replacing"
+				rm ${cpatch}
+			fi
+			rm ${ppatch_stripped}
+			rm ${cpatch_stripped}
+		fi
+	done
+	old_patch_list=${archive_patch_list}
+}
+
 conserve_old_patches() {
 	mkdir -p ${SAVEDIR}
 	rm -f ${SAVEDIR}/*
@@ -257,5 +289,6 @@ map_existing_patches
 extract_comments
 regenerate_patches
 stage_patches
+compare_common_patches
 conserve_old_patches
 install_regenerated_patches
