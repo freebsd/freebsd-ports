@@ -294,6 +294,7 @@
     SUBDIR += kdbx-viewer
     SUBDIR += kedpm
     SUBDIR += keepass
+    SUBDIR += keepass-plugin-keepassrpc
     SUBDIR += keepassx
     SUBDIR += keepassx-devel
     SUBDIR += keepassx2
