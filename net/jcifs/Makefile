@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jcifs
-PORTVERSION=	1.3.18
+PORTVERSION=	1.3.19
 PORTEPOCH=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/
@@ -18,6 +18,7 @@ USES=		tar:tgz
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
