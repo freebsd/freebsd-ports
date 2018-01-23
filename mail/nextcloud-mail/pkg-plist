@@ -51,7 +51,6 @@
 %%WWWDIR%%/js/build/build.js
 %%WWWDIR%%/js/cache.js
 %%WWWDIR%%/js/init.js
-%%WWWDIR%%/js/jquery.js
 %%WWWDIR%%/js/radio.js
 %%WWWDIR%%/js/replybuilder.js
 %%WWWDIR%%/js/routecontroller.js
@@ -88,6 +87,8 @@
 %%WWWDIR%%/l10n/eo.json
 %%WWWDIR%%/l10n/es.js
 %%WWWDIR%%/l10n/es.json
+%%WWWDIR%%/l10n/es_419.js
+%%WWWDIR%%/l10n/es_419.json
 %%WWWDIR%%/l10n/es_AR.js
 %%WWWDIR%%/l10n/es_AR.json
 %%WWWDIR%%/l10n/es_CL.js
@@ -376,6 +377,7 @@
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/font-face-atmedia-2.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/font-face-atmedia.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/ie-hacks.csst
+%%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/import.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/keyframes.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/selector-commented.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/simple-default.csst
@@ -461,6 +463,7 @@
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/values/number-trailingzero.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/values/number-zero.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/values/quoted-strings.csst
+%%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/values/transition-duration.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/vendor-prefixed/webkit-gradient.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/test.csst.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
