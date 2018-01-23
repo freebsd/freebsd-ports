@@ -1,0 +1,18 @@
+--- KeePassRPC/KeePassRPC.csproj.orig	2017-12-16 23:19:07 UTC
++++ KeePassRPC/KeePassRPC.csproj
+@@ -105,7 +105,7 @@
+     <Reference Include="KeePass, Version=2.1.8.29009, Culture=neutral, PublicKeyToken=7952fc8ece49a093, processorArchitecture=MSIL">
+       <SpecificVersion>False</SpecificVersion>
+       <ExecutableExtension>.exe</ExecutableExtension>
+-      <HintPath>..\..\..\..\Program Files (x86)\KeePass Password Safe 2 DEV\KeePass.exe</HintPath>
++      <HintPath>/usr/local/share/keepass/KeePass.exe</HintPath>
+     </Reference>
+     <Reference Include="System" />
+     <Reference Include="System.Configuration" />
+@@ -385,4 +385,4 @@
+       :BuildEventOK
+       echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</PostBuildEvent>
+   </PropertyGroup>
+-</Project>
+\ No newline at end of file
++</Project>
