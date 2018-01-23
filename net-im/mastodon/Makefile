@@ -3,6 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -42,11 +43,11 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-devise-two-factor-rails5>=3.0:security/rubygem-devise-two-factor-rails5 \
 		rubygem-doorkeeper-rails5>=4.2:security/rubygem-doorkeeper-rails5 \
 		rubygem-fast_blank>=1.0:devel/rubygem-fast_blank \
-		rubygem-goldfinger>=2.0:www/rubygem-goldfinger \
+		rubygem-goldfinger>=2.1:www/rubygem-goldfinger \
 		rubygem-hiredis>=0.6:databases/rubygem-hiredis \
 		rubygem-redis-namespace>=1.5:databases/rubygem-redis-namespace \
 		rubygem-htmlentities>=4.3:textproc/rubygem-htmlentities \
-		rubygem-http2>=2.2:www/rubygem-http2 \
+		rubygem-http>=3.0:www/rubygem-http \
 		rubygem-http_accept_language>=2.1:devel/rubygem-http_accept_language \
 		rubygem-httplog>=0.99:sysutils/rubygem-httplog \
 		rubygem-idn-ruby>=0.1.0:dns/rubygem-idn-ruby \
