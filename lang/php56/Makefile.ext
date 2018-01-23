@@ -544,7 +544,7 @@ CONFIGURE_ARGS+=--enable-gd-native-ttf
 CONFIGURE_ARGS+=--enable-gd-jis-conv
 .	endif
 .	if ${PORT_OPTIONS:MX11}
-USE_XORG=	xpm
+USE_XORG=	x11 xpm
 
 CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 .	endif
