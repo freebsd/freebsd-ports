@@ -3,8 +3,10 @@
 
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.18.1
-DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
+MASTER_SITES=	https://github.com/libtom/${PORTNAME}/releases/download/v${PORTVERSION}/
+DISTNAME=	crypt-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
@@ -12,17 +14,16 @@ COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 CFLAGS+=	-I${LOCALBASE}/include
 EXTRALIBS=	-L${LOCALBASE}/lib
 MAKEFILE=	makefile.shared
 ALL_TARGET=	library
 MAKE_ARGS=	INCPATH="${PREFIX}/include" LIBPATH="${PREFIX}/lib" \
 		EXTRALIBS="${EXTRALIBS}"
-USES=		gmake libtool:build
+USES=		gmake libtool:build tar:xz
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	libtom
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_MULTI=		MATH
@@ -44,7 +45,7 @@ GMP_LIB_DEPENDS=		libgmp.so:math/gmp
 GMP_CFLAGS=			-DGMP_DESC
 GMP_VARS=			EXTRALIBS+=-lgmp
 
-DOCS_MAKE_ARGS_OFF=		NODOCS=yes
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's| make | $$(MAKE) |' \
@@ -53,6 +54,10 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt.so.1
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/crypt.pdf ${STAGEDIR}${DOCSDIR}
 
 do-test:
 	# TomsFastMath
