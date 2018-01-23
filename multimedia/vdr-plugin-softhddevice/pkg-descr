@@ -15,4 +15,4 @@ A software and GPU emulated HD output device plugin for VDR.
 
 Note: currently doesn't support XV, only VDPAU or (optionally) VAAPI
 
-WWW: http://projects.vdr-developer.org/projects/plg-softhddevice
+WWW: https://projects.vdr-developer.org/projects/plg-softhddevice
