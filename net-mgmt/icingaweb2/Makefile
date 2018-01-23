@@ -53,7 +53,7 @@ do-install:
 		${STAGEDIR}${EXAMPLESDIR}/bash_completion.d
 	(cd ${WRKSRC} && ${RM} -r .mailmap changelog.py icingaweb2.spec \
 		bin/license_writer.py packages test)
-	(${FIND} ${WRKSRC} -name "*.bak" -exec rm {} +)
+	(${FIND} ${WRKSRC} -name "*.bak" -delete)
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
