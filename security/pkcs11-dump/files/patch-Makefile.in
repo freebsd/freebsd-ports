@@ -1,6 +1,6 @@
---- Makefile.in.orig	2011-04-04 12:52:22.000000000 +0200
-+++ Makefile.in	2011-04-04 12:54:09.000000000 +0200
-@@ -73,8 +73,7 @@
+--- Makefile.in.orig	2018-01-23 10:46:50 UTC
++++ Makefile.in
+@@ -73,8 +73,7 @@ am__CONFIG_DISTCLEAN_FILES = config.stat
  mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = config.h
  CONFIG_CLEAN_FILES = versioninfo.rc
@@ -10,7 +10,7 @@
  binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
  PROGRAMS = $(bin_PROGRAMS)
  am_pkcs11_dump_OBJECTS = pkcs11-dump.$(OBJEXT)
-@@ -665,7 +664,7 @@
+@@ -665,7 +664,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
  installdirs:
@@ -19,7 +19,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -715,8 +714,7 @@
+@@ -715,8 +714,7 @@ info: info-am
  
  info-am:
  
