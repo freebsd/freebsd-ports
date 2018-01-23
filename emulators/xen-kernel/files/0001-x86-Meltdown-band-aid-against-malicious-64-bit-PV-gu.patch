@@ -1,0 +1,756 @@
+From e19517a3355acaaa2ff83018bc41e7fd044161e5 Mon Sep 17 00:00:00 2001
+From: Jan Beulich <jbeulich@suse.com>
+Date: Wed, 17 Jan 2018 17:24:12 +0100
+Subject: [PATCH 1/2] x86: Meltdown band-aid against malicious 64-bit PV guests
+
+This is a very simplistic change limiting the amount of memory a running
+64-bit PV guest has mapped (and hence available for attacking): Only the
+mappings of stack, IDT, and TSS are being cloned from the direct map
+into per-CPU page tables. Guest controlled parts of the page tables are
+being copied into those per-CPU page tables upon entry into the guest.
+Cross-vCPU synchronization of top level page table entry changes is
+being effected by forcing other active vCPU-s of the guest into the
+hypervisor.
+
+The change to context_switch() isn't strictly necessary, but there's no
+reason to keep switching page tables once a PV guest is being scheduled
+out.
+
+This isn't providing full isolation yet, but it should be covering all
+pieces of information exposure of which would otherwise require an XSA.
+
+There is certainly much room for improvement, especially of performance,
+here - first and foremost suppressing all the negative effects on AMD
+systems. But in the interest of backportability (including to really old
+hypervisors, which may not even have alternative patching) any such is
+being left out here.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+master commit: 5784de3e2067ed73efc2fe42e62831e8ae7f46c4
+master date: 2018-01-16 17:49:03 +0100
+---
+ xen/arch/x86/domain.c              |   5 +
+ xen/arch/x86/mm.c                  |  17 ++++
+ xen/arch/x86/smpboot.c             | 198 +++++++++++++++++++++++++++++++++++++
+ xen/arch/x86/x86_64/asm-offsets.c  |   2 +
+ xen/arch/x86/x86_64/compat/entry.S |  11 +++
+ xen/arch/x86/x86_64/entry.S        | 149 +++++++++++++++++++++++++++-
+ xen/include/asm-x86/asm_defns.h    |  30 ++++++
+ xen/include/asm-x86/current.h      |  12 +++
+ xen/include/asm-x86/processor.h    |   1 +
+ xen/include/asm-x86/x86_64/page.h  |   5 +-
+ 10 files changed, 424 insertions(+), 6 deletions(-)
+
+diff --git a/xen/arch/x86/domain.c b/xen/arch/x86/domain.c
+index 6539b75fa7..3cf18f95b7 100644
+--- a/xen/arch/x86/domain.c
++++ b/xen/arch/x86/domain.c
+@@ -1949,6 +1949,9 @@ static void paravirt_ctxt_switch_to(struct vcpu *v)
+ 
+     switch_kernel_stack(v);
+ 
++    this_cpu(root_pgt)[root_table_offset(PERDOMAIN_VIRT_START)] =
++        l4e_from_page(v->domain->arch.perdomain_l3_pg, __PAGE_HYPERVISOR_RW);
++
+     cr4 = pv_guest_cr4_to_real_cr4(v);
+     if ( unlikely(cr4 != read_cr4()) )
+         write_cr4(cr4);
+@@ -2096,6 +2099,8 @@ void context_switch(struct vcpu *prev, struct vcpu *next)
+ 
+     ASSERT(local_irq_is_enabled());
+ 
++    get_cpu_info()->xen_cr3 = 0;
++
+     cpumask_copy(&dirty_mask, next->vcpu_dirty_cpumask);
+     /* Allow at most one CPU at a time to be dirty. */
+     ASSERT(cpumask_weight(&dirty_mask) <= 1);
+diff --git a/xen/arch/x86/mm.c b/xen/arch/x86/mm.c
+index 50f500c940..c9e4003989 100644
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -3857,6 +3857,7 @@ long do_mmu_update(
+     struct vcpu *curr = current, *v = curr;
+     struct domain *d = v->domain, *pt_owner = d, *pg_owner;
+     struct domain_mmap_cache mapcache;
++    bool_t sync_guest = 0;
+     uint32_t xsm_needed = 0;
+     uint32_t xsm_checked = 0;
+     int rc = put_old_guest_table(curr);
+@@ -4005,6 +4006,8 @@ long do_mmu_update(
+                 case PGT_l4_page_table:
+                     rc = mod_l4_entry(va, l4e_from_intpte(req.val), mfn,
+                                       cmd == MMU_PT_UPDATE_PRESERVE_AD, v);
++                    if ( !rc )
++                        sync_guest = 1;
+                     break;
+                 case PGT_writable_page:
+                     perfc_incr(writable_mmu_updates);
+@@ -4107,6 +4110,20 @@ long do_mmu_update(
+ 
+     domain_mmap_cache_destroy(&mapcache);
+ 
++    if ( sync_guest )
++    {
++        /*
++         * Force other vCPU-s of the affected guest to pick up L4 entry
++         * changes (if any). Issue a flush IPI with empty operation mask to
++         * facilitate this (including ourselves waiting for the IPI to
++         * actually have arrived). Utilize the fact that FLUSH_VA_VALID is
++         * meaningless without FLUSH_CACHE, but will allow to pass the no-op
++         * check in flush_area_mask().
++         */
++        flush_area_mask(pt_owner->domain_dirty_cpumask,
++                        ZERO_BLOCK_PTR, FLUSH_VA_VALID);
++    }
++
+     perfc_add(num_page_updates, i);
+ 
+  out:
+diff --git a/xen/arch/x86/smpboot.c b/xen/arch/x86/smpboot.c
+index f9e4ee85ff..eaeec5acf0 100644
+--- a/xen/arch/x86/smpboot.c
++++ b/xen/arch/x86/smpboot.c
+@@ -319,6 +319,9 @@ void start_secondary(void *unused)
+      */
+     spin_debug_disable();
+ 
++    get_cpu_info()->xen_cr3 = 0;
++    get_cpu_info()->pv_cr3 = __pa(this_cpu(root_pgt));
++
+     load_system_tables();
+ 
+     /* Full exception support from here on in. */
+@@ -628,6 +631,187 @@ void cpu_exit_clear(unsigned int cpu)
+     set_cpu_state(CPU_STATE_DEAD);
+ }
+ 
++static int clone_mapping(const void *ptr, root_pgentry_t *rpt)
++{
++    unsigned long linear = (unsigned long)ptr, pfn;
++    unsigned int flags;
++    l3_pgentry_t *pl3e = l4e_to_l3e(idle_pg_table[root_table_offset(linear)]) +
++                         l3_table_offset(linear);
++    l2_pgentry_t *pl2e;
++    l1_pgentry_t *pl1e;
++
++    if ( linear < DIRECTMAP_VIRT_START )
++        return 0;
++
++    flags = l3e_get_flags(*pl3e);
++    ASSERT(flags & _PAGE_PRESENT);
++    if ( flags & _PAGE_PSE )
++    {
++        pfn = (l3e_get_pfn(*pl3e) & ~((1UL << (2 * PAGETABLE_ORDER)) - 1)) |
++              (PFN_DOWN(linear) & ((1UL << (2 * PAGETABLE_ORDER)) - 1));
++        flags &= ~_PAGE_PSE;
++    }
++    else
++    {
++        pl2e = l3e_to_l2e(*pl3e) + l2_table_offset(linear);
++        flags = l2e_get_flags(*pl2e);
++        ASSERT(flags & _PAGE_PRESENT);
++        if ( flags & _PAGE_PSE )
++        {
++            pfn = (l2e_get_pfn(*pl2e) & ~((1UL << PAGETABLE_ORDER) - 1)) |
++                  (PFN_DOWN(linear) & ((1UL << PAGETABLE_ORDER) - 1));
++            flags &= ~_PAGE_PSE;
++        }
++        else
++        {
++            pl1e = l2e_to_l1e(*pl2e) + l1_table_offset(linear);
++            flags = l1e_get_flags(*pl1e);
++            if ( !(flags & _PAGE_PRESENT) )
++                return 0;
++            pfn = l1e_get_pfn(*pl1e);
++        }
++    }
++
++    if ( !(root_get_flags(rpt[root_table_offset(linear)]) & _PAGE_PRESENT) )
++    {
++        pl3e = alloc_xen_pagetable();
++        if ( !pl3e )
++            return -ENOMEM;
++        clear_page(pl3e);
++        l4e_write(&rpt[root_table_offset(linear)],
++                  l4e_from_paddr(__pa(pl3e), __PAGE_HYPERVISOR));
++    }
++    else
++        pl3e = l4e_to_l3e(rpt[root_table_offset(linear)]);
++
++    pl3e += l3_table_offset(linear);
++
++    if ( !(l3e_get_flags(*pl3e) & _PAGE_PRESENT) )
++    {
++        pl2e = alloc_xen_pagetable();
++        if ( !pl2e )
++            return -ENOMEM;
++        clear_page(pl2e);
++        l3e_write(pl3e, l3e_from_paddr(__pa(pl2e), __PAGE_HYPERVISOR));
++    }
++    else
++    {
++        ASSERT(!(l3e_get_flags(*pl3e) & _PAGE_PSE));
++        pl2e = l3e_to_l2e(*pl3e);
++    }
++
++    pl2e += l2_table_offset(linear);
++
++    if ( !(l2e_get_flags(*pl2e) & _PAGE_PRESENT) )
++    {
++        pl1e = alloc_xen_pagetable();
++        if ( !pl1e )
++            return -ENOMEM;
++        clear_page(pl1e);
++        l2e_write(pl2e, l2e_from_paddr(__pa(pl1e), __PAGE_HYPERVISOR));
++    }
++    else
++    {
++        ASSERT(!(l2e_get_flags(*pl2e) & _PAGE_PSE));
++        pl1e = l2e_to_l1e(*pl2e);
++    }
++
++    pl1e += l1_table_offset(linear);
++
++    if ( l1e_get_flags(*pl1e) & _PAGE_PRESENT )
++    {
++        ASSERT(l1e_get_pfn(*pl1e) == pfn);
++        ASSERT(l1e_get_flags(*pl1e) == flags);
++    }
++    else
++        l1e_write(pl1e, l1e_from_pfn(pfn, flags));
++
++    return 0;
++}
++
++DEFINE_PER_CPU(root_pgentry_t *, root_pgt);
++
++static int setup_cpu_root_pgt(unsigned int cpu)
++{
++    root_pgentry_t *rpt = alloc_xen_pagetable();
++    unsigned int off;
++    int rc;
++
++    if ( !rpt )
++        return -ENOMEM;
++
++    clear_page(rpt);
++    per_cpu(root_pgt, cpu) = rpt;
++
++    rpt[root_table_offset(RO_MPT_VIRT_START)] =
++        idle_pg_table[root_table_offset(RO_MPT_VIRT_START)];
++    /* SH_LINEAR_PT inserted together with guest mappings. */
++    /* PERDOMAIN inserted during context switch. */
++    rpt[root_table_offset(XEN_VIRT_START)] =
++        idle_pg_table[root_table_offset(XEN_VIRT_START)];
++
++    /* Install direct map page table entries for stack, IDT, and TSS. */
++    for ( off = rc = 0; !rc && off < STACK_SIZE; off += PAGE_SIZE )
++        rc = clone_mapping(__va(__pa(stack_base[cpu])) + off, rpt);
++
++    if ( !rc )
++        rc = clone_mapping(idt_tables[cpu], rpt);
++    if ( !rc )
++        rc = clone_mapping(&per_cpu(init_tss, cpu), rpt);
++
++    return rc;
++}
++
++static void cleanup_cpu_root_pgt(unsigned int cpu)
++{
++    root_pgentry_t *rpt = per_cpu(root_pgt, cpu);
++    unsigned int r;
++
++    if ( !rpt )
++        return;
++
++    per_cpu(root_pgt, cpu) = NULL;
++
++    for ( r = root_table_offset(DIRECTMAP_VIRT_START);
++          r < root_table_offset(HYPERVISOR_VIRT_END); ++r )
++    {
++        l3_pgentry_t *l3t;
++        unsigned int i3;
++
++        if ( !(root_get_flags(rpt[r]) & _PAGE_PRESENT) )
++            continue;
++
++        l3t = l4e_to_l3e(rpt[r]);
++
++        for ( i3 = 0; i3 < L3_PAGETABLE_ENTRIES; ++i3 )
++        {
++            l2_pgentry_t *l2t;
++            unsigned int i2;
++
++            if ( !(l3e_get_flags(l3t[i3]) & _PAGE_PRESENT) )
++                continue;
++
++            ASSERT(!(l3e_get_flags(l3t[i3]) & _PAGE_PSE));
++            l2t = l3e_to_l2e(l3t[i3]);
++
++            for ( i2 = 0; i2 < L2_PAGETABLE_ENTRIES; ++i2 )
++            {
++                if ( !(l2e_get_flags(l2t[i2]) & _PAGE_PRESENT) )
++                    continue;
++
++                ASSERT(!(l2e_get_flags(l2t[i2]) & _PAGE_PSE));
++                free_xen_pagetable(l2e_to_l1e(l2t[i2]));
++            }
++
++            free_xen_pagetable(l2t);
++        }
++
++        free_xen_pagetable(l3t);
++    }
++
++    free_xen_pagetable(rpt);
++}
++
+ static void cpu_smpboot_free(unsigned int cpu)
+ {
+     unsigned int order, socket = cpu_to_socket(cpu);
+@@ -664,6 +848,8 @@ static void cpu_smpboot_free(unsigned int cpu)
+             free_domheap_page(mfn_to_page(mfn));
+     }
+ 
++    cleanup_cpu_root_pgt(cpu);
++
+     order = get_order_from_pages(NR_RESERVED_GDT_PAGES);
+     free_xenheap_pages(per_cpu(gdt_table, cpu), order);
+ 
+@@ -719,6 +905,9 @@ static int cpu_smpboot_alloc(unsigned int cpu)
+     set_ist(&idt_tables[cpu][TRAP_nmi],           IST_NONE);
+     set_ist(&idt_tables[cpu][TRAP_machine_check], IST_NONE);
+ 
++    if ( setup_cpu_root_pgt(cpu) )
++        goto oom;
++
+     for ( stub_page = 0, i = cpu & ~(STUBS_PER_PAGE - 1);
+           i < nr_cpu_ids && i <= (cpu | (STUBS_PER_PAGE - 1)); ++i )
+         if ( cpu_online(i) && cpu_to_node(i) == node )
+@@ -773,6 +962,8 @@ static struct notifier_block cpu_smpboot_nfb = {
+ 
+ void __init smp_prepare_cpus(unsigned int max_cpus)
+ {
++    int rc;
++
+     register_cpu_notifier(&cpu_smpboot_nfb);
+ 
+     mtrr_aps_sync_begin();
+@@ -786,6 +977,11 @@ void __init smp_prepare_cpus(unsigned int max_cpus)
+ 
+     stack_base[0] = stack_start;
+ 
++    rc = setup_cpu_root_pgt(0);
++    if ( rc )
++        panic("Error %d setting up PV root page table\n", rc);
++    get_cpu_info()->pv_cr3 = __pa(per_cpu(root_pgt, 0));
++
+     set_nr_sockets();
+ 
+     socket_cpumask = xzalloc_array(cpumask_t *, nr_sockets);
+@@ -850,6 +1046,8 @@ void __init smp_prepare_boot_cpu(void)
+ {
+     cpumask_set_cpu(smp_processor_id(), &cpu_online_map);
+     cpumask_set_cpu(smp_processor_id(), &cpu_present_map);
++
++    get_cpu_info()->xen_cr3 = 0;
+ }
+ 
+ static void
+diff --git a/xen/arch/x86/x86_64/asm-offsets.c b/xen/arch/x86/x86_64/asm-offsets.c
+index a3ae7a475f..4f2ba28520 100644
+--- a/xen/arch/x86/x86_64/asm-offsets.c
++++ b/xen/arch/x86/x86_64/asm-offsets.c
+@@ -137,6 +137,8 @@ void __dummy__(void)
+     OFFSET(CPUINFO_processor_id, struct cpu_info, processor_id);
+     OFFSET(CPUINFO_current_vcpu, struct cpu_info, current_vcpu);
+     OFFSET(CPUINFO_cr4, struct cpu_info, cr4);
++    OFFSET(CPUINFO_xen_cr3, struct cpu_info, xen_cr3);
++    OFFSET(CPUINFO_pv_cr3, struct cpu_info, pv_cr3);
+     DEFINE(CPUINFO_sizeof, sizeof(struct cpu_info));
+     BLANK();
+ 
+diff --git a/xen/arch/x86/x86_64/compat/entry.S b/xen/arch/x86/x86_64/compat/entry.S
+index 7ee01597a3..f7e53fb3cb 100644
+--- a/xen/arch/x86/x86_64/compat/entry.S
++++ b/xen/arch/x86/x86_64/compat/entry.S
+@@ -270,6 +270,17 @@ ENTRY(cstar_enter)
+         pushq $0
+         movl  $TRAP_syscall, 4(%rsp)
+         SAVE_ALL
++
++        GET_STACK_END(bx)
++        mov   STACK_CPUINFO_FIELD(xen_cr3)(%rbx), %rcx
++        neg   %rcx
++        jz    .Lcstar_cr3_okay
++        mov   %rcx, STACK_CPUINFO_FIELD(xen_cr3)(%rbx)
++        neg   %rcx
++        write_cr3 rcx, rdi, rsi
++        movq  $0, STACK_CPUINFO_FIELD(xen_cr3)(%rbx)
++.Lcstar_cr3_okay:
++
+         GET_CURRENT(bx)
+         movq  VCPU_domain(%rbx),%rcx
+         cmpb  $0,DOMAIN_is_32bit_pv(%rcx)
+diff --git a/xen/arch/x86/x86_64/entry.S b/xen/arch/x86/x86_64/entry.S
+index cebb1e4f4f..d63e734bb3 100644
+--- a/xen/arch/x86/x86_64/entry.S
++++ b/xen/arch/x86/x86_64/entry.S
+@@ -36,6 +36,32 @@ ENTRY(switch_to_kernel)
+ /* %rbx: struct vcpu, interrupts disabled */
+ restore_all_guest:
+         ASSERT_INTERRUPTS_DISABLED
++
++        /* Copy guest mappings and switch to per-CPU root page table. */
++        mov   %cr3, %r9
++        GET_STACK_END(dx)
++        mov   STACK_CPUINFO_FIELD(pv_cr3)(%rdx), %rdi
++        movabs $PADDR_MASK & PAGE_MASK, %rsi
++        movabs $DIRECTMAP_VIRT_START, %rcx
++        mov   %rdi, %rax
++        and   %rsi, %rdi
++        and   %r9, %rsi
++        add   %rcx, %rdi
++        add   %rcx, %rsi
++        mov   $ROOT_PAGETABLE_FIRST_XEN_SLOT, %ecx
++        mov   root_table_offset(SH_LINEAR_PT_VIRT_START)*8(%rsi), %r8
++        mov   %r8, root_table_offset(SH_LINEAR_PT_VIRT_START)*8(%rdi)
++        rep movsq
++        mov   $ROOT_PAGETABLE_ENTRIES - \
++               ROOT_PAGETABLE_LAST_XEN_SLOT - 1, %ecx
++        sub   $(ROOT_PAGETABLE_FIRST_XEN_SLOT - \
++                ROOT_PAGETABLE_LAST_XEN_SLOT - 1) * 8, %rsi
++        sub   $(ROOT_PAGETABLE_FIRST_XEN_SLOT - \
++                ROOT_PAGETABLE_LAST_XEN_SLOT - 1) * 8, %rdi
++        rep movsq
++        mov   %r9, STACK_CPUINFO_FIELD(xen_cr3)(%rdx)
++        write_cr3 rax, rdi, rsi
++
+         RESTORE_ALL
+         testw $TRAP_syscall,4(%rsp)
+         jz    iret_exit_to_guest
+@@ -70,6 +96,22 @@ iret_exit_to_guest:
+         ALIGN
+ /* No special register assumptions. */
+ restore_all_xen:
++        /*
++         * Check whether we need to switch to the per-CPU page tables, in
++         * case we return to late PV exit code (from an NMI or #MC).
++         */
++        GET_STACK_END(ax)
++        mov   STACK_CPUINFO_FIELD(xen_cr3)(%rax), %rdx
++        mov   STACK_CPUINFO_FIELD(pv_cr3)(%rax), %rax
++        test  %rdx, %rdx
++        /*
++         * Ideally the condition would be "nsz", but such doesn't exist,
++         * so "g" will have to do.
++         */
++UNLIKELY_START(g, exit_cr3)
++        write_cr3 rax, rdi, rsi
++UNLIKELY_END(exit_cr3)
++
+         RESTORE_ALL adj=8
+         iretq
+ 
+@@ -99,7 +141,18 @@ ENTRY(lstar_enter)
+         pushq $0
+         movl  $TRAP_syscall, 4(%rsp)
+         SAVE_ALL
+-        GET_CURRENT(bx)
++
++        GET_STACK_END(bx)
++        mov   STACK_CPUINFO_FIELD(xen_cr3)(%rbx), %rcx
++        neg   %rcx
++        jz    .Llstar_cr3_okay
++        mov   %rcx, STACK_CPUINFO_FIELD(xen_cr3)(%rbx)
++        neg   %rcx
++        write_cr3 rcx, r11, r12
++        movq  $0, STACK_CPUINFO_FIELD(xen_cr3)(%rbx)
++.Llstar_cr3_okay:
++
++        __GET_CURRENT(bx)
+         testb $TF_kernel_mode,VCPU_thread_flags(%rbx)
+         jz    switch_to_kernel
+ 
+@@ -248,7 +301,18 @@ GLOBAL(sysenter_eflags_saved)
+         pushq $0
+         movl  $TRAP_syscall, 4(%rsp)
+         SAVE_ALL
+-        GET_CURRENT(bx)
++
++        GET_STACK_END(bx)
++        mov   STACK_CPUINFO_FIELD(xen_cr3)(%rbx), %rcx
++        neg   %rcx
++        jz    .Lsyse_cr3_okay
++        mov   %rcx, STACK_CPUINFO_FIELD(xen_cr3)(%rbx)
++        neg   %rcx
++        write_cr3 rcx, rdi, rsi
++        movq  $0, STACK_CPUINFO_FIELD(xen_cr3)(%rbx)
++.Lsyse_cr3_okay:
++
++        __GET_CURRENT(bx)
+         cmpb  $0,VCPU_sysenter_disables_events(%rbx)
+         movq  VCPU_sysenter_addr(%rbx),%rax
+         setne %cl
+@@ -284,13 +348,23 @@ ENTRY(int80_direct_trap)
+         movl  $0x80, 4(%rsp)
+         SAVE_ALL
+ 
++        GET_STACK_END(bx)
++        mov   STACK_CPUINFO_FIELD(xen_cr3)(%rbx), %rcx
++        neg   %rcx
++        jz    .Lint80_cr3_okay
++        mov   %rcx, STACK_CPUINFO_FIELD(xen_cr3)(%rbx)
++        neg   %rcx
++        write_cr3 rcx, rdi, rsi
++        movq  $0, STACK_CPUINFO_FIELD(xen_cr3)(%rbx)
++.Lint80_cr3_okay:
++
+         cmpb  $0,untrusted_msi(%rip)
+ UNLIKELY_START(ne, msi_check)
+         movl  $0x80,%edi
+         call  check_for_unexpected_msi
+ UNLIKELY_END(msi_check)
+ 
+-        GET_CURRENT(bx)
++        __GET_CURRENT(bx)
+ 
+         /* Check that the callback is non-null. */
+         leaq  VCPU_int80_bounce(%rbx),%rdx
+@@ -441,9 +515,27 @@ ENTRY(dom_crash_sync_extable)
+ 
+ ENTRY(common_interrupt)
+         SAVE_ALL CLAC
++
++        GET_STACK_END(14)
++        mov   STACK_CPUINFO_FIELD(xen_cr3)(%r14), %rcx
++        mov   %rcx, %r15
++        neg   %rcx
++        jz    .Lintr_cr3_okay
++        jns   .Lintr_cr3_load
++        mov   %rcx, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
++        neg   %rcx
++.Lintr_cr3_load:
++        write_cr3 rcx, rdi, rsi
++        xor   %ecx, %ecx
++        mov   %rcx, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
++        testb $3, UREGS_cs(%rsp)
++        cmovnz %rcx, %r15
++.Lintr_cr3_okay:
++
+         CR4_PV32_RESTORE
+         movq %rsp,%rdi
+         callq do_IRQ
++        mov   %r15, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
+         jmp ret_from_intr
+ 
+ /* No special register assumptions. */
+@@ -461,6 +553,23 @@ ENTRY(page_fault)
+ /* No special register assumptions. */
+ GLOBAL(handle_exception)
+         SAVE_ALL CLAC
++
++        GET_STACK_END(14)
++        mov   STACK_CPUINFO_FIELD(xen_cr3)(%r14), %rcx
++        mov   %rcx, %r15
++        neg   %rcx
++        jz    .Lxcpt_cr3_okay
++        jns   .Lxcpt_cr3_load
++        mov   %rcx, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
++        neg   %rcx
++.Lxcpt_cr3_load:
++        write_cr3 rcx, rdi, rsi
++        xor   %ecx, %ecx
++        mov   %rcx, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
++        testb $3, UREGS_cs(%rsp)
++        cmovnz %rcx, %r15
++.Lxcpt_cr3_okay:
++
+ handle_exception_saved:
+         GET_CURRENT(bx)
+         testb $X86_EFLAGS_IF>>8,UREGS_eflags+1(%rsp)
+@@ -525,6 +634,7 @@ handle_exception_saved:
+         leaq  exception_table(%rip),%rdx
+         PERFC_INCR(exceptions, %rax, %rbx)
+         callq *(%rdx,%rax,8)
++        mov   %r15, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
+         testb $3,UREGS_cs(%rsp)
+         jz    restore_all_xen
+         leaq  VCPU_trap_bounce(%rbx),%rdx
+@@ -557,6 +667,7 @@ exception_with_ints_disabled:
+         rep;  movsq                     # make room for ec/ev
+ 1:      movq  UREGS_error_code(%rsp),%rax # ec/ev
+         movq  %rax,UREGS_kernel_sizeof(%rsp)
++        mov   %r15, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
+         jmp   restore_all_xen           # return to fixup code
+ 
+ /* No special register assumptions. */
+@@ -634,6 +745,17 @@ ENTRY(double_fault)
+         movl  $TRAP_double_fault,4(%rsp)
+         /* Set AC to reduce chance of further SMAP faults */
+         SAVE_ALL STAC
++
++        GET_STACK_END(bx)
++        mov   STACK_CPUINFO_FIELD(xen_cr3)(%rbx), %rbx
++        test  %rbx, %rbx
++        jz    .Ldblf_cr3_okay
++        jns   .Ldblf_cr3_load
++        neg   %rbx
++.Ldblf_cr3_load:
++        write_cr3 rbx, rdi, rsi
++.Ldblf_cr3_okay:
++
+         movq  %rsp,%rdi
+         call  do_double_fault
+         BUG   /* do_double_fault() shouldn't return. */
+@@ -652,10 +774,28 @@ ENTRY(nmi)
+         movl  $TRAP_nmi,4(%rsp)
+ handle_ist_exception:
+         SAVE_ALL CLAC
++
++        GET_STACK_END(14)
++        mov   STACK_CPUINFO_FIELD(xen_cr3)(%r14), %rcx
++        mov   %rcx, %r15
++        neg   %rcx
++        jz    .List_cr3_okay
++        jns   .List_cr3_load
++        mov   %rcx, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
++        neg   %rcx
++.List_cr3_load:
++        write_cr3 rcx, rdi, rsi
++        movq  $0, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
++.List_cr3_okay:
++
+         CR4_PV32_RESTORE
+         testb $3,UREGS_cs(%rsp)
+         jz    1f
+-        /* Interrupted guest context. Copy the context to stack bottom. */
++        /*
++         * Interrupted guest context. Clear the restore value for xen_cr3
++         * and copy the context to stack bottom.
++         */
++        xor   %r15, %r15
+         GET_CPUINFO_FIELD(guest_cpu_user_regs,di)
+         movq  %rsp,%rsi
+         movl  $UREGS_kernel_sizeof/8,%ecx
+@@ -665,6 +805,7 @@ handle_ist_exception:
+         movzbl UREGS_entry_vector(%rsp),%eax
+         leaq  exception_table(%rip),%rdx
+         callq *(%rdx,%rax,8)
++        mov   %r15, STACK_CPUINFO_FIELD(xen_cr3)(%r14)
+         cmpb  $TRAP_nmi,UREGS_entry_vector(%rsp)
+         jne   ret_from_intr
+ 
+diff --git a/xen/include/asm-x86/asm_defns.h b/xen/include/asm-x86/asm_defns.h
+index 6e5c079ad8..6cfdaa1aa0 100644
+--- a/xen/include/asm-x86/asm_defns.h
++++ b/xen/include/asm-x86/asm_defns.h
+@@ -93,9 +93,30 @@ void ret_from_intr(void);
+         UNLIKELY_DONE(mp, tag);   \
+         __UNLIKELY_END(tag)
+ 
++        .equ .Lrax, 0
++        .equ .Lrcx, 1
++        .equ .Lrdx, 2
++        .equ .Lrbx, 3
++        .equ .Lrsp, 4
++        .equ .Lrbp, 5
++        .equ .Lrsi, 6
++        .equ .Lrdi, 7
++        .equ .Lr8,  8
++        .equ .Lr9,  9
++        .equ .Lr10, 10
++        .equ .Lr11, 11
++        .equ .Lr12, 12
++        .equ .Lr13, 13
++        .equ .Lr14, 14
++        .equ .Lr15, 15
++
+ #define STACK_CPUINFO_FIELD(field) (1 - CPUINFO_sizeof + CPUINFO_##field)
+ #define GET_STACK_END(reg)                        \
++        .if .Lr##reg > 8;                         \
++        movq $STACK_SIZE-1, %r##reg;              \
++        .else;                                    \
+         movl $STACK_SIZE-1, %e##reg;              \
++        .endif;                                   \
+         orq  %rsp, %r##reg
+ 
+ #define GET_CPUINFO_FIELD(field, reg)             \
+@@ -177,6 +198,15 @@ void ret_from_intr(void);
+ #define ASM_STAC ASM_AC(STAC)
+ #define ASM_CLAC ASM_AC(CLAC)
+ 
++.macro write_cr3 val:req, tmp1:req, tmp2:req
++        mov   %cr4, %\tmp1
++        mov   %\tmp1, %\tmp2
++        and   $~X86_CR4_PGE, %\tmp1
++        mov   %\tmp1, %cr4
++        mov   %\val, %cr3
++        mov   %\tmp2, %cr4
++.endm
++
+ #define CR4_PV32_RESTORE                                           \
+         667: ASM_NOP5;                                             \
+         .pushsection .altinstr_replacement, "ax";                  \
+diff --git a/xen/include/asm-x86/current.h b/xen/include/asm-x86/current.h
+index e6587e684c..397fa4c38f 100644
+--- a/xen/include/asm-x86/current.h
++++ b/xen/include/asm-x86/current.h
+@@ -42,6 +42,18 @@ struct cpu_info {
+     struct vcpu *current_vcpu;
+     unsigned long per_cpu_offset;
+     unsigned long cr4;
++    /*
++     * Of the two following fields the latter is being set to the CR3 value
++     * to be used on the given pCPU for loading whenever 64-bit PV guest
++     * context is being entered. The value never changes once set.
++     * The former is the value to restore when re-entering Xen, if any. IOW
++     * its value being zero means there's nothing to restore. However, its
++     * value can also be negative, indicating to the exit-to-Xen code that
++     * restoring is not necessary, but allowing any nested entry code paths
++     * to still know the value to put back into CR3.
++     */
++    unsigned long xen_cr3;
++    unsigned long pv_cr3;
+     /* get_stack_bottom() must be 16-byte aligned */
+ };
+ 
+diff --git a/xen/include/asm-x86/processor.h b/xen/include/asm-x86/processor.h
+index ccd406a3fe..9906f38f2d 100644
+--- a/xen/include/asm-x86/processor.h
++++ b/xen/include/asm-x86/processor.h
+@@ -517,6 +517,7 @@ extern idt_entry_t idt_table[];
+ extern idt_entry_t *idt_tables[];
+ 
+ DECLARE_PER_CPU(struct tss_struct, init_tss);
++DECLARE_PER_CPU(root_pgentry_t *, root_pgt);
+ 
+ extern void init_int80_direct_trap(struct vcpu *v);
+ 
+diff --git a/xen/include/asm-x86/x86_64/page.h b/xen/include/asm-x86/x86_64/page.h
+index 589f22552e..afc77c3237 100644
+--- a/xen/include/asm-x86/x86_64/page.h
++++ b/xen/include/asm-x86/x86_64/page.h
+@@ -25,8 +25,8 @@
+ /* These are architectural limits. Current CPUs support only 40-bit phys. */
+ #define PADDR_BITS              52
+ #define VADDR_BITS              48
+-#define PADDR_MASK              ((1UL << PADDR_BITS)-1)
+-#define VADDR_MASK              ((1UL << VADDR_BITS)-1)
++#define PADDR_MASK              ((_AC(1,UL) << PADDR_BITS) - 1)
++#define VADDR_MASK              ((_AC(1,UL) << VADDR_BITS) - 1)
+ 
+ #define is_canonical_address(x) (((long)(x) >> 47) == ((long)(x) >> 63))
+ 
+@@ -117,6 +117,7 @@ typedef l4_pgentry_t root_pgentry_t;
+       : (((_s) < ROOT_PAGETABLE_FIRST_XEN_SLOT) ||  \
+          ((_s) > ROOT_PAGETABLE_LAST_XEN_SLOT)))
+ 
++#define root_table_offset         l4_table_offset
+ #define root_get_pfn              l4e_get_pfn
+ #define root_get_flags            l4e_get_flags
+ #define root_get_intpte           l4e_get_intpte
+-- 
+2.15.1
+
