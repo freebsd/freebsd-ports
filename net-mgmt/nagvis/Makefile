@@ -3,6 +3,7 @@
 
 PORTNAME=	nagvis
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.nagvis.org/share/
 
