@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.7.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -81,7 +81,17 @@ EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patc
 		${FILESDIR}/xsa242-4.9.patch:-p1 \
 		${FILESDIR}/xsa243-4.7.patch:-p1 \
 		${FILESDIR}/xsa244-4.7.patch:-p1 \
-		${FILESDIR}/xsa236-4.9.patch:-p1
+		${FILESDIR}/xsa236-4.9.patch:-p1 \
+		${FILESDIR}/0001-x86-compat-fix-compilation-errors-with-clang-6.patch:-p1 \
+		${FILESDIR}/xsa246-4.7.patch:-p1 \
+		${FILESDIR}/0001-p2m-Always-check-to-see-if-removing-a-p2m-entry-actu.patch:-p1 \
+		${FILESDIR}/0002-p2m-Check-return-value-of-p2m_set_entry-when-decreas.patch:-p1 \
+		${FILESDIR}/xsa248-4.8.patch:-p1 \
+		${FILESDIR}/xsa249.patch:-p1 \
+		${FILESDIR}/xsa250.patch:-p1 \
+		${FILESDIR}/xsa251-4.8.patch:-p1 \
+		${FILESDIR}/0001-x86-Meltdown-band-aid-against-malicious-64-bit-PV-gu.patch:-p1 \
+		${FILESDIR}/0002-x86-allow-Meltdown-band-aid-to-be-disabled.patch:-p1
 
 .include <bsd.port.options.mk>
 
