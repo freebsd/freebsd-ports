@@ -11,9 +11,11 @@ include/z3_macros.h
 include/z3_optimization.h
 include/z3_polynomial.h
 include/z3_rcf.h
+include/z3_spacer.h
 include/z3_v1.h
 %%STATIC%%lib/libz3.a
 lib/libz3.so
+lib/libz3.so.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/z3/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/z3/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/z3/lib/libz3.so
