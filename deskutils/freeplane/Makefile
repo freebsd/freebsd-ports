@@ -3,6 +3,7 @@
 
 PORTNAME=	freeplane
 PORTVERSION=	1.6.12
+PORTREVISION=	1
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable
 DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
@@ -26,10 +27,8 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
 		"! ( -name freeplane\.sh* -or -name license\.txt -or -name *\.bat -or -name *\.exe )"
 # Install freeplane.sh with the right permission, link to it to bin/
-# and let it resolve the path to DATADIR automatically to avoid
-# patching it further.  For this to work it has to be a link to an
-# absolute path.
+# and let it resolve the path to DATADIR automatically.
 	${INSTALL_SCRIPT} ${WRKSRC}/freeplane.sh ${STAGEDIR}${DATADIR}
-	${LN} -s ${DATADIR}/freeplane.sh ${STAGEDIR}${PREFIX}/bin/freeplane
+	${RLN} ${STAGEDIR}${DATADIR}/freeplane.sh ${STAGEDIR}${PREFIX}/bin/freeplane
 
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@
  	# -m should be faster and link does always resolve, else this script
  	# wouldn't be called, would it?
 -	freefile=$(readlink -mn "$0")
-+	freefile=$(readlink -n "$0")
++	freefile=$(readlink -fn "$0")
  	_debug "Link '$0' resolved to '${freefile}'."
  else
  	freefile="$0"
