@@ -2,8 +2,7 @@
 
 PORTNAME=	icingaweb2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
-PORTREVISION=	1
+DISTVERSION=	2.5.1
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
@@ -54,6 +53,7 @@ do-install:
 		${STAGEDIR}${EXAMPLESDIR}/bash_completion.d
 	(cd ${WRKSRC} && ${RM} -r .mailmap changelog.py icingaweb2.spec \
 		bin/license_writer.py packages test)
+	(${FIND} ${WRKSRC} -name "*.bak" -exec rm {} +)
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
