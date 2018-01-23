@@ -46,15 +46,17 @@ LUA_CONFIGURE_WITH=	lua
 LUA_USES=		lua
 
 LUAJIT_CONFIGURE_WITH=	luajit
+LUAJIT_DESC=		Use LuaJIT instead of Lua
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit
-
+LUAJIT_USES_OFF=	lua
 OPTALGO_CONFIGURE_ON=	--enable-botan \
 			--enable-libsodium
+OPTALGO_DESC=		Enable optional algorithms (12, 15 & 16)
 OPTALGO_LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 			libsodium.so:security/libsodium
-
-SETUID_VARS=	USERS=pdns_recursor GROUPS=pdns
+SETUID_DESC=		Run as pdns_recursor user
 SETUID_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-setuid
+SETUID_VARS=		USERS=pdns_recursor GROUPS=pdns
 
 SUB_FILES=	pkg-message
 
