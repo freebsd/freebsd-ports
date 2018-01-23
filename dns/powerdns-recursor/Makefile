@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-DISTVERSION=	4.1.0
-PORTREVISION=	3
+DISTVERSION=	4.1.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -35,30 +34,22 @@ CPE_VENDOR=	powerdns
 
 USE_RC_SUBR=	pdns-recursor
 
-OPTIONS_DEFINE=	OPTALGO SETUID
-OPTIONS_DEFAULT=	LUA SETUID
-OPTIONS_RADIO=	LUA_RG
-OPTIONS_RADIO_LUA_RG=	LUA LUAJIT
-LUAJIT_DESC=		Enable LuaJIT
-LUA_RG_DESC=		Lua Engine
-OPTALGO_DESC=		Enable optional algorithms (12, 15 & 16)
-SETUID_DESC=		Run as pdns_recursor user
-
-LUA_CONFIGURE_WITH=	lua
-LUA_USES=		lua
-
+OPTIONS_DEFINE=		LUAJIT OPTALGO SETUID
+OPTIONS_DEFAULT=	SETUID
 LUAJIT_CONFIGURE_WITH=	luajit
+LUAJIT_DESC=		Use LuaJIT instead of Lua
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit
-
+LUAJIT_USES_OFF=	lua
 OPTALGO_CONFIGURE_ON=	--enable-botan \
 			--enable-libdecaf \
 			--enable-libsodium
+OPTALGO_DESC=		Enable optional algorithms (12, 15 & 16)
 OPTALGO_LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 			libdecaf.so:security/libdecaf \
 			libsodium.so:security/libsodium
-
-SETUID_VARS=	USERS=pdns_recursor GROUPS=pdns
+SETUID_DESC=		Run as pdns_recursor user
 SETUID_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-setuid
+SETUID_VARS=		USERS=pdns_recursor GROUPS=pdns
 
 SUB_FILES=	pkg-message
 
