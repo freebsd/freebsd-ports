@@ -466,6 +466,7 @@
 %%WWWDIR%%/apps/dav/lib/SystemTag/SystemTagsObjectMappingCollection.php
 %%WWWDIR%%/apps/dav/lib/SystemTag/SystemTagsObjectTypeCollection.php
 %%WWWDIR%%/apps/dav/lib/SystemTag/SystemTagsRelationsCollection.php
+%%WWWDIR%%/apps/dav/lib/Tree.php
 %%WWWDIR%%/apps/dav/lib/Upload/AssemblyStream.php
 %%WWWDIR%%/apps/dav/lib/Upload/ChunkLocationProvider.php
 %%WWWDIR%%/apps/dav/lib/Upload/ChunkingPlugin.php
@@ -1401,21 +1402,6 @@
 %%WWWDIR%%/apps/files/templates/index.php
 %%WWWDIR%%/apps/files/templates/list.php
 %%WWWDIR%%/apps/files/templates/simplelist.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/API.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/Exception.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/Exception/Forbidden.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/Exception/NotFound.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/Exception/OverQuota.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/Exception/RequestToken.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/OAuth.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/OAuth/Consumer/Dropbox.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/OAuth/Curl.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/OAuth/PEAR.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/OAuth/PHP.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/OAuth/Wordpress.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/OAuth/Zend.php
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/OAuth/ca-bundle.pem
-%%WWWDIR%%/apps/files_external/3rdparty/Dropbox/autoload.php
 %%WWWDIR%%/apps/files_external/3rdparty/autoload.php
 %%WWWDIR%%/apps/files_external/3rdparty/aws-sdk-php/Aws/Common/Aws.php
 %%WWWDIR%%/apps/files_external/3rdparty/aws-sdk-php/Aws/Common/Client/AbstractClient.php
@@ -2237,7 +2223,6 @@
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/streams/src/UrlCallBack.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/streams/src/Wrapper.php
 %%WWWDIR%%/apps/files_external/ajax/applicable.php
-%%WWWDIR%%/apps/files_external/ajax/oauth1.php
 %%WWWDIR%%/apps/files_external/ajax/oauth2.php
 %%WWWDIR%%/apps/files_external/appinfo/Migrations/Version20170814051424.php
 %%WWWDIR%%/apps/files_external/appinfo/app.php
@@ -2248,7 +2233,6 @@
 %%WWWDIR%%/apps/files_external/css/settings.css
 %%WWWDIR%%/apps/files_external/img/app.svg
 %%WWWDIR%%/apps/files_external/js/app.js
-%%WWWDIR%%/apps/files_external/js/dropbox.js
 %%WWWDIR%%/apps/files_external/js/gdrive.js
 %%WWWDIR%%/apps/files_external/js/mountsfilelist.js
 %%WWWDIR%%/apps/files_external/js/oauth1.js
@@ -2447,7 +2431,6 @@
 %%WWWDIR%%/apps/files_external/lib/Lib/Backend/AmazonS3.php
 %%WWWDIR%%/apps/files_external/lib/Lib/Backend/Backend.php
 %%WWWDIR%%/apps/files_external/lib/Lib/Backend/DAV.php
-%%WWWDIR%%/apps/files_external/lib/Lib/Backend/Dropbox.php
 %%WWWDIR%%/apps/files_external/lib/Lib/Backend/Google.php
 %%WWWDIR%%/apps/files_external/lib/Lib/Backend/Local.php
 %%WWWDIR%%/apps/files_external/lib/Lib/Backend/OwnCloud.php
@@ -2458,7 +2441,6 @@
 %%WWWDIR%%/apps/files_external/lib/Lib/Backend/Swift.php
 %%WWWDIR%%/apps/files_external/lib/Lib/LegacyDependencyCheckPolyfill.php
 %%WWWDIR%%/apps/files_external/lib/Lib/Storage/AmazonS3.php
-%%WWWDIR%%/apps/files_external/lib/Lib/Storage/Dropbox.php
 %%WWWDIR%%/apps/files_external/lib/Lib/Storage/Google.php
 %%WWWDIR%%/apps/files_external/lib/Lib/Storage/OwnCloud.php
 %%WWWDIR%%/apps/files_external/lib/Lib/Storage/SFTP.php
@@ -2477,6 +2459,8 @@
 %%WWWDIR%%/apps/files_sharing/appinfo/Migrations/Version20170804201125.php
 %%WWWDIR%%/apps/files_sharing/appinfo/Migrations/Version20170804201253.php
 %%WWWDIR%%/apps/files_sharing/appinfo/Migrations/Version20170830112305.php
+%%WWWDIR%%/apps/files_sharing/appinfo/Migrations/Version20171115154900.php
+%%WWWDIR%%/apps/files_sharing/appinfo/Migrations/Version20171215103657.php
 %%WWWDIR%%/apps/files_sharing/appinfo/app.php
 %%WWWDIR%%/apps/files_sharing/appinfo/info.xml
 %%WWWDIR%%/apps/files_sharing/appinfo/routes.php
@@ -3458,16 +3442,18 @@
 %%WWWDIR%%/apps/systemtags/lib/Activity/Listener.php
 %%WWWDIR%%/apps/systemtags/list.php
 %%WWWDIR%%/apps/systemtags/templates/list.php
-%%WWWDIR%%/apps/templateeditor/app/templateeditor.php
+%%WWWDIR%%/apps/templateeditor/CHANGELOG.md
+%%WWWDIR%%/apps/templateeditor/COPYING
+%%WWWDIR%%/apps/templateeditor/Makefile
 %%WWWDIR%%/apps/templateeditor/appinfo/info.xml
 %%WWWDIR%%/apps/templateeditor/appinfo/routes.php
 %%WWWDIR%%/apps/templateeditor/appinfo/signature.json
-%%WWWDIR%%/apps/templateeditor/controller/adminsettingscontroller.php
 %%WWWDIR%%/apps/templateeditor/css/settings-admin.css
-%%WWWDIR%%/apps/templateeditor/http/mailtemplateresponse.php
 %%WWWDIR%%/apps/templateeditor/img/app.svg
 %%WWWDIR%%/apps/templateeditor/js/settings-admin.js
 %%WWWDIR%%/apps/templateeditor/l10n/.tx/config
+%%WWWDIR%%/apps/templateeditor/l10n/af_ZA.js
+%%WWWDIR%%/apps/templateeditor/l10n/af_ZA.json
 %%WWWDIR%%/apps/templateeditor/l10n/ar.js
 %%WWWDIR%%/apps/templateeditor/l10n/ar.json
 %%WWWDIR%%/apps/templateeditor/l10n/ast.js
@@ -3593,8 +3579,12 @@
 %%WWWDIR%%/apps/templateeditor/l10n/zh_HK.php
 %%WWWDIR%%/apps/templateeditor/l10n/zh_TW.js
 %%WWWDIR%%/apps/templateeditor/l10n/zh_TW.json
-%%WWWDIR%%/apps/templateeditor/lib/adminpanel.php
-%%WWWDIR%%/apps/templateeditor/lib/mailtemplate.php
+%%WWWDIR%%/apps/templateeditor/lib/AdminPanel.php
+%%WWWDIR%%/apps/templateeditor/lib/AppInfo/Application.php
+%%WWWDIR%%/apps/templateeditor/lib/Controller/AdminSettingsController.php
+%%WWWDIR%%/apps/templateeditor/lib/Http/MailTemplateResponse.php
+%%WWWDIR%%/apps/templateeditor/lib/MailTemplate.php
+%%WWWDIR%%/apps/templateeditor/lib/TemplateEditor.php
 %%WWWDIR%%/apps/templateeditor/templates/settings-admin.php
 %%WWWDIR%%/apps/theme-example/appinfo/info.xml
 %%WWWDIR%%/apps/theme-example/appinfo/signature.json
@@ -3888,6 +3878,9 @@
 %%WWWDIR%%/core/doc/admin/_images/admin_filehandling-2.png
 %%WWWDIR%%/core/doc/admin/_images/amazons3.png
 %%WWWDIR%%/core/doc/admin/_images/anti-virus-configuration-rules.png
+%%WWWDIR%%/core/doc/admin/_images/anti-virus-message-host-connection-problem.png
+%%WWWDIR%%/core/doc/admin/_images/anti-virus-message-misconfiguration-problem.png
+%%WWWDIR%%/core/doc/admin/_images/anti-virus-message-socket-connection-problem.png
 %%WWWDIR%%/core/doc/admin/_images/antivirus-app.png
 %%WWWDIR%%/core/doc/admin/_images/antivirus-config.png
 %%WWWDIR%%/core/doc/admin/_images/antivirus-daemon-socket.png
@@ -3905,6 +3898,7 @@
 %%WWWDIR%%/core/doc/admin/_images/begin-owncloud-uninstall.png
 %%WWWDIR%%/core/doc/admin/_images/code-integrity-admin.png
 %%WWWDIR%%/core/doc/admin/_images/code-integrity-notification.png
+%%WWWDIR%%/core/doc/admin/_images/configure-mountpoints.png
 %%WWWDIR%%/core/doc/admin/_images/confirm-clamav-installation.png
 %%WWWDIR%%/core/doc/admin/_images/confirm-owncloud-uninstall.png
 %%WWWDIR%%/core/doc/admin/_images/confirm-owncloud-upgrade.png
@@ -4002,7 +3996,11 @@
 %%WWWDIR%%/core/doc/admin/_images/picking-a-user-to-impersonate.png
 %%WWWDIR%%/core/doc/admin/_images/preview_images.png
 %%WWWDIR%%/core/doc/admin/_images/rackspace.png
+%%WWWDIR%%/core/doc/admin/_images/register-an-application.png
 %%WWWDIR%%/core/doc/admin/_images/security-setup-warning-1.png
+%%WWWDIR%%/core/doc/admin/_images/set-application-name.png
+%%WWWDIR%%/core/doc/admin/_images/set-permissions.png
+%%WWWDIR%%/core/doc/admin/_images/set-redirect-urls.png
 %%WWWDIR%%/core/doc/admin/_images/sharepoint-1.png
 %%WWWDIR%%/core/doc/admin/_images/sharepoint-2.png
 %%WWWDIR%%/core/doc/admin/_images/sharepoint-3.png
@@ -4057,6 +4055,7 @@
 %%WWWDIR%%/core/doc/admin/_images/workflow-3.png
 %%WWWDIR%%/core/doc/admin/_images/workflow-4.png
 %%WWWDIR%%/core/doc/admin/_images/workflow-5.png
+%%WWWDIR%%/core/doc/admin/_sources/appliance/Collabora.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/appliance/clamav.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/appliance/howto-update-owncloud.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/appliance/index.rst.txt
@@ -4107,7 +4106,6 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/import_ssl_cert.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/index.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/index_php_less_urls.rst.txt
-%%WWWDIR%%/core/doc/admin/_sources/configuration/server/js_css_asset_management_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/knowledgebase_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/language_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/logging_configuration.rst.txt
@@ -4115,7 +4113,6 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/occ_command.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/reverse_proxy_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/security/password-policy.rst.txt
-%%WWWDIR%%/core/doc/admin/_sources/configuration/server/security/ransomware-protection.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/security_setup_warnings.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/server/thirdparty_php_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/user/index.rst.txt
@@ -4133,6 +4130,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/external_storage/enterprise_only_auth.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/external_storage/index.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/external_storage/ldap_home_connector_configuration.rst.txt
+%%WWWDIR%%/core/doc/admin/_sources/enterprise/external_storage/onedrive.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/external_storage/s3_swift_as_primary_object_store_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/external_storage/sharepoint-integration_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/external_storage/windows-network-drive_configuration.rst.txt
@@ -4146,6 +4144,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/installation/oracle_db_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/logging/enterprise_logging_apps.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/logging/index.rst.txt
+%%WWWDIR%%/core/doc/admin/_sources/enterprise/ransomware-protection/index.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/server_branding/enterprise_server_branding.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/server_branding/index.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/enterprise/user_management/index.rst.txt
@@ -4268,6 +4267,7 @@
 %%WWWDIR%%/core/doc/admin/_static/up-pressed.png
 %%WWWDIR%%/core/doc/admin/_static/up.png
 %%WWWDIR%%/core/doc/admin/_static/websupport.js
+%%WWWDIR%%/core/doc/admin/appliance/Collabora.html
 %%WWWDIR%%/core/doc/admin/appliance/clamav.html
 %%WWWDIR%%/core/doc/admin/appliance/howto-update-owncloud.html
 %%WWWDIR%%/core/doc/admin/appliance/index.html
@@ -4318,7 +4318,6 @@
 %%WWWDIR%%/core/doc/admin/configuration/server/import_ssl_cert.html
 %%WWWDIR%%/core/doc/admin/configuration/server/index.html
 %%WWWDIR%%/core/doc/admin/configuration/server/index_php_less_urls.html
-%%WWWDIR%%/core/doc/admin/configuration/server/js_css_asset_management_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration/server/knowledgebase_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration/server/language_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration/server/logging_configuration.html
@@ -4326,7 +4325,6 @@
 %%WWWDIR%%/core/doc/admin/configuration/server/occ_command.html
 %%WWWDIR%%/core/doc/admin/configuration/server/reverse_proxy_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration/server/security/password-policy.html
-%%WWWDIR%%/core/doc/admin/configuration/server/security/ransomware-protection.html
 %%WWWDIR%%/core/doc/admin/configuration/server/security_setup_warnings.html
 %%WWWDIR%%/core/doc/admin/configuration/server/thirdparty_php_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration/user/index.html
@@ -4344,6 +4342,7 @@
 %%WWWDIR%%/core/doc/admin/enterprise/external_storage/enterprise_only_auth.html
 %%WWWDIR%%/core/doc/admin/enterprise/external_storage/index.html
 %%WWWDIR%%/core/doc/admin/enterprise/external_storage/ldap_home_connector_configuration.html
+%%WWWDIR%%/core/doc/admin/enterprise/external_storage/onedrive.html
 %%WWWDIR%%/core/doc/admin/enterprise/external_storage/s3_swift_as_primary_object_store_configuration.html
 %%WWWDIR%%/core/doc/admin/enterprise/external_storage/sharepoint-integration_configuration.html
 %%WWWDIR%%/core/doc/admin/enterprise/external_storage/windows-network-drive_configuration.html
@@ -4357,6 +4356,7 @@
 %%WWWDIR%%/core/doc/admin/enterprise/installation/oracle_db_configuration.html
 %%WWWDIR%%/core/doc/admin/enterprise/logging/enterprise_logging_apps.html
 %%WWWDIR%%/core/doc/admin/enterprise/logging/index.html
+%%WWWDIR%%/core/doc/admin/enterprise/ransomware-protection/index.html
 %%WWWDIR%%/core/doc/admin/enterprise/server_branding/enterprise_server_branding.html
 %%WWWDIR%%/core/doc/admin/enterprise/server_branding/index.html
 %%WWWDIR%%/core/doc/admin/enterprise/user_management/index.html
@@ -6457,6 +6457,7 @@
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/blockQuotes.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/codeBlocks.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/codeSpans.js
+%%WWWDIR%%/core/vendor/showdown/src/subParsers/completeHTMLDocument.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/detab.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/ellipsis.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/emoji.js
@@ -6476,6 +6477,7 @@
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/images.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/italicsAndBold.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/lists.js
+%%WWWDIR%%/core/vendor/showdown/src/subParsers/metadata.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/outdent.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/paragraphs.js
 %%WWWDIR%%/core/vendor/showdown/src/subParsers/runExtension.js
@@ -7250,9 +7252,6 @@
 %%WWWDIR%%/lib/composer/lukasreschke/id3parser/src/getID3/getid3_exception.php
 %%WWWDIR%%/lib/composer/lukasreschke/id3parser/src/getID3/getid3_handler.php
 %%WWWDIR%%/lib/composer/lukasreschke/id3parser/src/getID3/getid3_lib.php
-%%WWWDIR%%/lib/composer/natxet/CssMin/README
-%%WWWDIR%%/lib/composer/natxet/CssMin/composer.json
-%%WWWDIR%%/lib/composer/natxet/CssMin/src/CssMin.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/.travis.yml
 %%WWWDIR%%/lib/composer/nikic/php-parser/CHANGELOG.md
 %%WWWDIR%%/lib/composer/nikic/php-parser/LICENSE
@@ -10036,6 +10035,7 @@
 %%WWWDIR%%/lib/private/Files/External/DependencyTrait.php
 %%WWWDIR%%/lib/private/Files/External/FrontendDefinitionTrait.php
 %%WWWDIR%%/lib/private/Files/External/IdentifierTrait.php
+%%WWWDIR%%/lib/private/Files/External/InvalidStorage.php
 %%WWWDIR%%/lib/private/Files/External/LegacyUtil.php
 %%WWWDIR%%/lib/private/Files/External/MissingDependency.php
 %%WWWDIR%%/lib/private/Files/External/PersonalMount.php
@@ -10210,6 +10210,7 @@
 %%WWWDIR%%/lib/private/Repair/Apps.php
 %%WWWDIR%%/lib/private/Repair/CleanTags.php
 %%WWWDIR%%/lib/private/Repair/Collation.php
+%%WWWDIR%%/lib/private/Repair/DisableExtraThemes.php
 %%WWWDIR%%/lib/private/Repair/DropOldJobs.php
 %%WWWDIR%%/lib/private/Repair/DropOldTables.php
 %%WWWDIR%%/lib/private/Repair/FillETags.php
@@ -10433,6 +10434,7 @@
 %%WWWDIR%%/lib/public/Encryption/IFile.php
 %%WWWDIR%%/lib/public/Encryption/IManager.php
 %%WWWDIR%%/lib/public/Encryption/Keys/IStorage.php
+%%WWWDIR%%/lib/public/Events/EventEmitterTrait.php
 %%WWWDIR%%/lib/public/Files.php
 %%WWWDIR%%/lib/public/Files/AlreadyExistsException.php
 %%WWWDIR%%/lib/public/Files/Cache/ICache.php
@@ -10449,7 +10451,9 @@
 %%WWWDIR%%/lib/public/Files/EntityTooLargeException.php
 %%WWWDIR%%/lib/public/Files/External/Auth/AuthMechanism.php
 %%WWWDIR%%/lib/public/Files/External/Auth/IUserProvided.php
+%%WWWDIR%%/lib/public/Files/External/Auth/InvalidAuth.php
 %%WWWDIR%%/lib/public/Files/External/Backend/Backend.php
+%%WWWDIR%%/lib/public/Files/External/Backend/InvalidBackend.php
 %%WWWDIR%%/lib/public/Files/External/Config/IAuthMechanismProvider.php
 %%WWWDIR%%/lib/public/Files/External/Config/IBackendProvider.php
 %%WWWDIR%%/lib/public/Files/External/DefinitionParameter.php
