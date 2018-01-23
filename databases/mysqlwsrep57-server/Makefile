@@ -171,6 +171,14 @@ CMAKE_ARGS+=		-DWITH_SSL=system
 CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
 .endif
 
+# ${LOCALBASE}/include/lz4.h does not compile with Clang 6.
+# Also MySQL code itself needs -Wno-c++11-narrowing when Clang 6 is used.
+.if ${OSVERSION} >= 1200056
+CFLAGS+=	-DLZ4_DISABLE_DEPRECATE_WARNINGS
+CXXFLAGS+=	-DLZ4_DISABLE_DEPRECATE_WARNINGS -Wno-c++11-narrowing
+LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
+
 post-extract:
 	${RM} -fv ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
