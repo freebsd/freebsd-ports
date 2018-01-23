@@ -1,3 +1,3 @@
-TIMESTAMP = 1508093600
-SHA256 (fail2ban-fail2ban-0.10.1_GH0.tar.gz) = 19bac652e50f35b3b58ea010c2b89b91b945365d37dbf17467e0dc345c058465
-SIZE (fail2ban-fail2ban-0.10.1_GH0.tar.gz) = 465156
+TIMESTAMP = 1516358804
+SHA256 (fail2ban-fail2ban-0.10.2_GH0.tar.gz) = 1c1a969137c56f7e8b90e5f14d78b80214d34d67209787bfddc8d5804ceb29cc
+SIZE (fail2ban-fail2ban-0.10.2_GH0.tar.gz) = 474624
