@@ -54,18 +54,19 @@ ask() {
 
 	answer=x
 	while [ "${answer}" != "y" -a "${answer}" != "n" ] ; do
-		read -p "${question} [y/n] " answer
+		printf "%s [y/n] " "${question}"
+		read -r answer
 	done
 
 	[ "${answer}" = "y" ] && return 0
 	return 1
 }
 
-: ${svnserver:="svn+ssh://repo.FreeBSD.org"}
+: "${svnserver:="svn+ssh://repo.FreeBSD.org"}"
 
-if [ -n "$(type svn 2>/dev/null)" ]; then
+if [ -n "$(command -v svn 2>/dev/null)" ]; then
 	svn=svn
-elif [ -n "$(type svnlite 2>/dev/null)" ]; then
+elif [ -n "$(command -v svnlite 2>/dev/null)" ]; then
 	svn=svnlite
 else
 	err "Neither svn(1) nor svnlite(1) found. Please install devel/subversion."
@@ -73,21 +74,20 @@ fi
 
 latest_branch=$("${svn}" ls ${svnserver}/ports/branches/|sed -ne '/^2.*Q./s|/$||p'|tail -1)
 
-[ $# -lt 1 ] && err "$(basename $0) requires at least 1 arguments: [<branch>] <revnumber> [<revnumber>...]"
+[ $# -lt 1 ] && err "$(basename "$0") requires at least 1 arguments: [<branch>] <revnumber> [<revnumber>...]"
 branch=$1
 
 # I sure hope by 2030 we'll be doing something else. Yes, famous last words.
-if expr ${branch} : '20[12][0-9]Q[1-4]' > /dev/null; then
+if expr "${branch}" : '20[12][0-9]Q[1-4]' > /dev/null; then
 	shift
-	if [ ${latest_branch} != ${branch} ]; then
+	if [ "${latest_branch}" != "${branch}" ]; then
 		ask "/!\\ The latest branch is ${latest_branch}, do you really want to commit to ${branch}?" || exit 1
 	fi
 else
 	branch=${latest_branch}
 fi
 
-revs=""
-for rev in $@
+for rev in "$@"
 do
   rev=${rev##r} # remove a leading "r"
   case ${rev} in
@@ -102,17 +102,17 @@ cd "${dir}"
 "${svn}" co --depth=empty ${svnserver}/ports/branches/"${branch}"
 filelist=""
 
-echo -n "MFH:" > commit.txt
-for rev in $@
+printf "MFH:" > commit.txt
+for rev in "$@"
 do
   rev=${rev##r}
-  echo -n " r${rev}" >> commit.txt
+  printf " r%s" "${rev}" >> commit.txt
 done
 echo >> commit.txt
-for rev in $@
+for rev in "$@"
 do
   rev=${rev##r}
-  for f in $("${svn}" diff --summarize -c r${rev} ${svnserver}/ports/head); do
+  for f in $("${svn}" diff --summarize -c "r${rev}" "${svnserver}/ports/head"); do
 	  case ${f} in
 	  */*) ;;
 	  *)continue;;
@@ -121,17 +121,17 @@ do
 	  f=${f%/*}
 	  filelist="${filelist}${LF}${f}"
   done
-  "${svn}" log -r${rev##-} ${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' \
+  "${svn}" log "-r${rev##-}" ${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' \
       | sed '$d' >> commit.txt
 done
 filelist=$(printf '%s\n' "${filelist}" | sort -u)
 "${svn}" up --parents $(printf '%s\n' $filelist \
     | sed "s}^}${branch}/}")
 "${svn}" up --quiet "${branch}"
-for rev in $@
+for rev in "$@"
 do
   rev=${rev##r}
-  "${svn}" merge -c r${rev} ^/head/ "${branch}"
+  "${svn}" merge -c "r${rev}" ^/head/ "${branch}"
 done
 "${svn}" up --quiet "${branch}"
 "${svn}" status "${branch}"
