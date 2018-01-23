@@ -14,10 +14,7 @@ COMMENT=	Program to create standalone executables from Python scripts
 
 LICENSE=	GPLv2
 
-BROKEN_aarch64=		Does not compile: error: stb__testsize2_uinta declared as an array with a negative size
 BROKEN_mips64=		Does not compile: cc1: error: unrecognized command line option "-m64
-BROKEN_powerpc64=	Does not compile: error: size of array stb__testsize2_uinta is negative
-BROKEN_sparc64=		Does not compile: error: size of array stb__testsize2_uinta is negative
 
 OPTIONS_DEFINE=	DOCS
 
@@ -36,6 +33,8 @@ post-patch:
 		${WRKSRC}/PyInstaller/depend/utils.py
 	@${REINPLACE_CMD} -e '/libpython/s,\.so\.1\.0,.so.1,' \
 		${WRKSRC}/PyInstaller/bindepend.py
+	@${REINPLACE_CMD} -e '/defined(__x86_64__)/s,$$, || defined(__aarch64__) || defined(__powerpc64__) || defined(__sparc64__),' \
+		${WRKSRC}/bootloader/common/stb.h
 
 pre-build:
 	cd ${WRKSRC}/bootloader && ${PYTHON_CMD} waf configure build install
