@@ -1,6 +1,5 @@
 bin/corebird
 man/man1/corebird.1.gz
-share/appdata/org.baedert.corebird.appdata.xml
 share/applications/corebird.desktop
 share/dbus-1/services/org.baedert.corebird.service
 share/icons/hicolor/256x256/apps/corebird.png
@@ -11,6 +10,7 @@ share/icons/hicolor/32x32/apps/corebird.png
 share/icons/hicolor/48x48/apps/corebird.png
 share/icons/hicolor/64x64/apps/corebird.png
 share/icons/hicolor/96x96/apps/corebird.png
+share/metainfo/org.baedert.corebird.appdata.xml
 %%NLS%%share/locale/ar/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/corebird.mo
