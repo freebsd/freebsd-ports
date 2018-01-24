@@ -7,7 +7,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	GH \
 		LOCAL/bdrewery/${PORTNAME}/
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP proxy for applications that do not speak IPv6
 
 LICENSE=	GPLv2
