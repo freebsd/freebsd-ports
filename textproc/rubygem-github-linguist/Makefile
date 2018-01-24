@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	github-linguist
-PORTVERSION=	5.3.2
+PORTVERSION=	5.3.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
