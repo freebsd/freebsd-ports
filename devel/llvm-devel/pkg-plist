@@ -439,6 +439,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/Visibility.h
 %%CLANG%%llvm-devel/include/clang/Basic/X86Target.def
 %%CLANG%%llvm-devel/include/clang/Basic/XRayLists.h
+%%CLANG%%llvm-devel/include/clang/Basic/arm_fp16.inc
 %%CLANG%%llvm-devel/include/clang/Basic/arm_neon.inc
 %%CLANG%%llvm-devel/include/clang/CodeGen/BackendUtil.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/CGFunctionInfo.h
@@ -1391,7 +1392,7 @@ llvm-devel/include/llvm/CodeGen/DIE.h
 llvm-devel/include/llvm/CodeGen/DIEValue.def
 llvm-devel/include/llvm/CodeGen/DwarfStringPoolEntry.h
 llvm-devel/include/llvm/CodeGen/EdgeBundles.h
-llvm-devel/include/llvm/CodeGen/ExecutionDepsFix.h
+llvm-devel/include/llvm/CodeGen/ExecutionDomainFix.h
 llvm-devel/include/llvm/CodeGen/ExpandReductions.h
 llvm-devel/include/llvm/CodeGen/FastISel.h
 llvm-devel/include/llvm/CodeGen/FaultMaps.h
@@ -1433,6 +1434,7 @@ llvm-devel/include/llvm/CodeGen/LiveRegMatrix.h
 llvm-devel/include/llvm/CodeGen/LiveRegUnits.h
 llvm-devel/include/llvm/CodeGen/LiveStacks.h
 llvm-devel/include/llvm/CodeGen/LiveVariables.h
+llvm-devel/include/llvm/CodeGen/LoopTraversal.h
 llvm-devel/include/llvm/CodeGen/LowLevelType.h
 llvm-devel/include/llvm/CodeGen/MIRParser/MIRParser.h
 llvm-devel/include/llvm/CodeGen/MIRPrinter.h
@@ -1478,6 +1480,7 @@ llvm-devel/include/llvm/CodeGen/ParallelCG.h
 llvm-devel/include/llvm/CodeGen/Passes.h
 llvm-devel/include/llvm/CodeGen/PreISelIntrinsicLowering.h
 llvm-devel/include/llvm/CodeGen/PseudoSourceValue.h
+llvm-devel/include/llvm/CodeGen/ReachingDefAnalysis.h
 llvm-devel/include/llvm/CodeGen/RegAllocPBQP.h
 llvm-devel/include/llvm/CodeGen/RegAllocRegistry.h
 llvm-devel/include/llvm/CodeGen/RegisterClassInfo.h
@@ -1738,6 +1741,7 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/IRTransformLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/IndirectionUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LambdaResolver.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LazyEmittingLayer.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/Legacy.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/NullResolver.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ObjectTransformLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/OrcABISupport.h
@@ -2349,6 +2353,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ammintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm64intr.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_acle.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_fp16.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_neon.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/armintr.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/avx2intrin.h
@@ -2410,7 +2415,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/mwaitxintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/nmmintrin.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/omp.h
-%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ompt.h
+%%CLANG%%%%OPENMP%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ompt.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/opencl-c.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/pkuintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/pmmintrin.h
@@ -2824,3 +2829,5 @@ llvm-devel/share/opt-viewer/style.css
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/main.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/run.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/util.py
+@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
