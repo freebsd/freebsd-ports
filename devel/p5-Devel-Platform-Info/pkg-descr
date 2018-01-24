@@ -1,0 +1,11 @@
+Devel::Platform::Info is a Perl module which provides a unified
+framework for obtaining common platform metadata.
+
+The module is a wrapper to the drivers which can determine platform
+metadata regarding the operating system currently running.
+
+The goal of the distribution is to furnish CPANtesters test reports with
+information concerning key components of the platform currently being
+used.
+
+WWW: http://search.cpan.org/dist/Devel-Platform-Info/
