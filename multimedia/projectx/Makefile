@@ -6,10 +6,12 @@ PORTVERSION=	0.91.0
 CATEGORIES=	multimedia java
 MASTER_SITES=	SF/project-x/project-x/ProjectX_${PORTVERSION}.00
 DISTNAME=	ProjectX_${PORTVERSION}
-DISTFILES=	ProjectX_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVB (mpeg) cutting/demux tool
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/Copying
 
 USES=		zip:infozip
 USE_JAVA=	yes
@@ -27,7 +29,7 @@ do-build:
 	cd ${WRKSRC} && ${MKDIR} build && ${SH} build-fbsd.sh
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/lib
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/ProjectX.jar \
 		${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/commons-net-1.3.0.jar \
