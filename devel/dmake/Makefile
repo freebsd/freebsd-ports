@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mohawk2
 GH_TAGNAME=	e5588b0
 
-USES=		autoreconf:autoconf
+USES=		autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR}
 

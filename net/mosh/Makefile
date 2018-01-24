@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-utempter --without-ncurses
 CONFIGURE_ENV+=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
 		TINFO_CFLAGS="-I/usr/include"
 INSTALL_TARGET=	install-strip
-USES=		autoreconf:autoconf ncurses perl5 pkgconfig ssl
+USES=		autoreconf ncurses perl5 pkgconfig ssl
 
 CONFLICTS_INSTALL=	mosh-0.[2-9].*
 

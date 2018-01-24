@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcjose.so:devel/cjose \
 		libjansson.so:devel/jansson \
 		libpcre.so:devel/pcre
 
-USES=		autoreconf:autoconf cpe gmake libtool pkgconfig ssl
+USES=		autoreconf cpe gmake libtool pkgconfig ssl
 USE_APACHE=	22+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pingidentity
