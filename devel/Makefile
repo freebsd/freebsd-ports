@@ -2411,6 +2411,7 @@
     SUBDIR += p5-Devel-PackagePath
     SUBDIR += p5-Devel-PartialDump
     SUBDIR += p5-Devel-PatchPerl
+    SUBDIR += p5-Devel-Platform-Info
     SUBDIR += p5-Devel-Pointer
     SUBDIR += p5-Devel-Profile
     SUBDIR += p5-Devel-REPL
