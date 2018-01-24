@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	3.5.12
+PORTVERSION=	3.6.0
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL/tota/${PORTNAME}
@@ -18,7 +18,8 @@ RUN_DEPENDS=	rubygem-gtk2>=3.1.8:x11-toolkits/rubygem-gtk2 \
 		rubygem-cairo>=1.12.9:graphics/rubygem-cairo \
 		rubygem-addressable>=2.5.2:www/rubygem-addressable \
 		rubygem-delayer>=0.0.2:devel/rubygem-delayer \
-		rubygem-delayer-deferred>=1.0.4:devel/rubygem-delayer-deferred \
+		rubygem-delayer-deferred>=2.0.0:devel/rubygem-delayer-deferred \
+		rubygem-diva>=0.3.1:devel/rubygem-diva \
 		rubygem-gettext>=3.0.9:devel/rubygem-gettext \
 		rubygem-gio2>=3.1.0:devel/rubygem-gio2 \
 		rubygem-httpclient>=2.7.1:www/rubygem-httpclient \
