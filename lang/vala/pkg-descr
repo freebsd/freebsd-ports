@@ -9,4 +9,4 @@ type system to create classes and interfaces declared in the Vala source
 code. It's also planned to generate GIDL files when gobject-
 introspection is ready.
 
-WWW: http://live.gnome.org/Vala
+WWW: https://wiki.gnome.org/Projects/Vala
