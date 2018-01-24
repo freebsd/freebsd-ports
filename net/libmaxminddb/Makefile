@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmaxminddb
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/maxmind/libmaxminddb/releases/download/${PORTVERSION}/
 
