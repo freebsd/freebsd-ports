@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rbtrace
-PORTVERSION=	0.4.9
+PORTVERSION=	0.4.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
