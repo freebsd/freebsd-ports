@@ -1,9 +1,9 @@
 --- doc/Makefile.in.orig	2013-11-11 04:41:52 UTC
 +++ doc/Makefile.in
-@@ -243,7 +243,7 @@ host_vendor = @host_vendor@
- # and an extra copy or two in the install-data-hook.  
- # However, the manpages do not appear to be tremendously useful, so
- # let's not bother.
+@@ -278,7 +278,7 @@ host_vendor = @host_vendor@
+ host_cpu = @host_cpu@
+ host_os = @host_os@
+ host_vendor = @host_vendor@
 -htmldir = $(am__append_1)
 +htmldir = @htmldir@
  includedir = @includedir@
