@@ -17,7 +17,7 @@
 +     notclang-9.*)
 +	AC_MSG_RESULT([ok (${gcc_version})])
 +	;;
-+     clang-2.9|clang-3.*|clang-4.*|clang-5.*)
++     clang-2.9|clang-[[3-9]].*)
  	AC_MSG_RESULT([ok (clang-${gcc_version})])
  	;;
       *)
