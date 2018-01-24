@@ -7,6 +7,7 @@ PORTNAME=	solaar
 # https://github.com/pwr/Solaar/issues/296
 DISTVERSION=	0.9.2-221
 DISTVERSIONSUFFIX=	-g1a67b33
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
