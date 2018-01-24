@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chunky_png
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
