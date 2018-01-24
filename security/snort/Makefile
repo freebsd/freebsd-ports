@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snort
-PORTVERSION=	2.9.9.0
-PORTREVISION=	1
+PORTVERSION=	2.9.11.1
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
 		ZI
