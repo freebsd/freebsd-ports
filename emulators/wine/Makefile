@@ -30,6 +30,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --without-dbus \
 		--without-gettext --without-gettextpo \
 		--without-gphoto --without-gsm --without-gstreamer \
+		--without-krb5 \
 		--without-opencl \
 		--without-osmesa \
 		--with-oss \
