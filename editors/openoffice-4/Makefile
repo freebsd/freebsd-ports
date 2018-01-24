@@ -119,7 +119,7 @@ XDGDIR=			${OOPATH}/share/xdg
 XDGREL=			../../${INSTALLATION_BASEDIR}/openoffice${AOOVERSION1}/share/xdg
 EXECBASE?=		openoffice-${AOOSUFFIX}
 
-USES=		autoreconf:autoconf bison compiler:c++11-lib cpe \
+USES=		autoreconf bison compiler:c++11-lib cpe \
 		desktop-file-utils \
 		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
 		shared-mime-info ssl tar:bzip2
