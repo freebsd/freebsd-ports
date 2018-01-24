@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.7.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -90,6 +90,8 @@ EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patc
 		${FILESDIR}/xsa249.patch:-p1 \
 		${FILESDIR}/xsa250.patch:-p1 \
 		${FILESDIR}/xsa251-4.8.patch:-p1 \
+		${FILESDIR}/0001-x86-entry-Remove-support-for-partial-cpu_user_regs-f.patch:-p1 \
+		${FILESDIR}/0001-x86-mm-Always-set-_PAGE_ACCESSED-on-L4e-updates.patch:-p1 \
 		${FILESDIR}/0001-x86-Meltdown-band-aid-against-malicious-64-bit-PV-gu.patch:-p1 \
 		${FILESDIR}/0002-x86-allow-Meltdown-band-aid-to-be-disabled.patch:-p1
 
