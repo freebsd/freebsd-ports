@@ -1,6 +1,8 @@
 bin/cppcheck
 %%DATADIR%%/avr.cfg
 %%DATADIR%%/bsd.cfg
+%%DATADIR%%/cppcheck-lib.cfg
+%%DATADIR%%/embedded_sql.cfg
 %%DATADIR%%/gnu.cfg
 %%DATADIR%%/gtk.cfg
 %%DATADIR%%/microsoft_sal.cfg
