@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.12.2
-PORTREVISION?=	5
+PORTREVISION?=	6
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -695,13 +695,13 @@ LIB_DEPENDS+=	libmsgpuck.so:devel/msgpuck \
 		libyajl.so:devel/yajl
 GH_ACCOUNT+=	tarantool:nginx_tarantool
 GH_PROJECT+=	nginx_upstream_module:nginx_tarantool
-GH_TAGNAME+=	9e38881:nginx_tarantool
+GH_TAGNAME+=	1278ee5:nginx_tarantool
 .if ${PORT_OPTIONS:MDSO}
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_nginx_tarantool}
 .else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_nginx_tarantool}
 .endif
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
+EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-ngx_http_tarantool-config
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_SECURE_LINK}
@@ -804,7 +804,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 LIB_DEPENDS+=	libdrizzle.so:databases/libdrizzle
 CONFIGURE_ENV+=	"LIBDRIZZLE_INC=${LOCALBASE}/include"
 CONFIGURE_ENV+=	"LIBDRIZZLE_LIB=${LOCALBASE}/lib"
-NGINX_DRIZZLE_VERSION=	0.1.10
+NGINX_DRIZZLE_VERSION=	0.1.9
 GH_ACCOUNT+=	openresty:drizzle
 GH_PROJECT+=	drizzle-nginx-module:drizzle
 GH_TAGNAME+=	v${NGINX_DRIZZLE_VERSION}:drizzle
@@ -814,7 +814,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config \
 .endif
 
 .if ${PORT_OPTIONS:MDYNAMIC_UPSTREAM}
-NGINX_DYNAMIC_UPSTREAM_VERSION=	0.1.6
+NGINX_DYNAMIC_UPSTREAM_VERSION=	0.1.3
 GH_ACCOUNT+=	cubicdaiya:dyn_upstream
 GH_PROJECT+=	ngx_dynamic_upstream:dyn_upstream
 GH_TAGNAME+=	v${NGINX_DYNAMIC_UPSTREAM_VERSION}:dyn_upstream
@@ -844,7 +844,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_encryptsession}
 
 .if ${PORT_OPTIONS:MGRIDFS}
 NGINX_GRIDFS_VERSION=	0.8
-MONGO_C_DRIVER_VERSION=		0.4
+MONGO_C_DRIVER_VERSION=		0.3.1
 GH_ACCOUNT+=	mdirolf:gridfs mongodb:mongo_c
 GH_PROJECT+=	nginx-gridfs:gridfs mongo-c-driver:mongo_c
 GH_TAGNAME+=	v${NGINX_GRIDFS_VERSION}:gridfs v${MONGO_C_DRIVER_VERSION}:mongo_c
@@ -872,11 +872,6 @@ CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_lua}
 .else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
 .endif
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_lua_common.h  \
-		${PATCHDIR}/extra-patch-ngx_http_lua_headers.c \
-		${PATCHDIR}/extra-patch-ngx_http_lua_headers.h \
-		${PATCHDIR}/extra-patch-ngx_http_lua_module.c \
-		${PATCHDIR}/extra-patch-ngx_http_lua_ssl_ocsp.c
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
@@ -892,7 +887,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
-NGINX_MODSECURITY_VERSION=	3.0.0
+NGINX_MODSECURITY_VERSION=	2.9.1
 LIB_DEPENDS+=	libapr-1.so:devel/apr1 \
 		libcurl.so:ftp/curl \
 		libluajit-5.1.so:lang/luajit \
@@ -980,7 +975,6 @@ GH_ACCOUNT+=	openresty:redis2
 GH_PROJECT+=	redis2-nginx-module:redis2
 GH_TAGNAME+=	v${NGINX_REDIS2_VERSION}:redis2
 CONFIGURE_ARGS+=--add-module=${WRKSRC_redis2}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_redis2_util.c
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
@@ -1004,7 +998,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_setmisc}
 .endif
 
 .if ${PORT_OPTIONS:MSFLOW}
-NGINX_SFLOW_VERSION=	f15c87f
+NGINX_SFLOW_VERSION=	543c72a
 GH_ACCOUNT+=	sflow:sflow
 GH_PROJECT+=	nginx-sflow-module:sflow
 GH_TAGNAME+=	${NGINX_SFLOW_VERSION}:sflow
