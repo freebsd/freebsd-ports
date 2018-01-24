@@ -1,3 +1,4 @@
+bin/cppunit-config
 bin/DllPlugInTester
 include/cppunit/AdditionalMessage.h
 include/cppunit/Asserter.h
