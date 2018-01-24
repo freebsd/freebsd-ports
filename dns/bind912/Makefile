@@ -52,11 +52,11 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS=	bind99 bind910 bind9-devel
+CONFLICTS=	bind99 bind910 bind911 bind9-devel
 
 .if defined(BIND_TOOLS_SLAVE)
 CONFIGURE_ARGS+=	--disable-shared
-CONFLICTS+=		bind911
+CONFLICTS+=		bind912
 .else
 USE_RC_SUBR=	named
 SUB_FILES=	pkg-message named.conf
