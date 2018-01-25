@@ -3,7 +3,7 @@
 
 PORTNAME=	minisat
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math devel
 MASTER_SITES=	http://highsecure.ru/distfiles/
 
