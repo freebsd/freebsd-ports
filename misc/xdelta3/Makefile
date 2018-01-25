@@ -14,6 +14,7 @@ COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 LICENSE=	GPLv2+
 
 USES=		autoreconf gmake
+USE_CXXSTD=	gnu++98
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jmacd
@@ -22,7 +23,6 @@ GH_PROJECT=	xdelta-devel
 WRKSRC_SUBDIR=	xdelta3
 
 GNU_CONFIGURE=	yes
-USE_CXXSTD=	gnu++98
 
 PLIST_FILES=	bin/xdelta3 man/man1/xdelta3.1.gz
 
