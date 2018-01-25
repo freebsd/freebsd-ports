@@ -100,7 +100,7 @@
          else
            TMPMNT=${MOUNT}
          fi
-+        if [ -f ${TMPMNT}/etc/rc.d/zfsbe ]; then
++        if [ -f ${TMPMNT}/etc/init.d/zfsbe ]; then
 +          HAVE_ZFSBE=1
 +        fi
          if [ -f /boot/zfs/zpool.cache ]
