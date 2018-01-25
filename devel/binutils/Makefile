@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.28
+PORTVERSION=	2.29.1
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -19,6 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
 
 CONFLICTS=	libbfd-[0-9]*
 .endif
+
+#TEST_DEPENDS+=	runtest:misc/dejagnu
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	NLS RELRO STATIC
 STATIC_PREVENTS=	NLS
@@ -68,6 +71,7 @@ RELRO_CONFIGURE_ON=	--enable-relro
 RELRO_CONFIGURE_OFF=	--enable-relro=no
 
 MAKE_ENV+=	ac_cv_func_sbrk=0
+MAKE_ARGS+=	LIBDL=""
 
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
@@ -90,6 +94,9 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s/-ldl//g" ${WRKSRC}/gold/testsuite/Makefile.in
 
 post-install:
 .if !defined(PKGNAMEPREFIX)
