@@ -9,6 +9,7 @@ lib/libkcgijson.a
 lib/libkcgiregress.a
 lib/libkcgixml.a
 man/man3/kcgi.3.gz
+man/man3/kcgi_writer_disable.3.gz
 man/man3/kcgihtml.3.gz
 man/man3/kcgijson.3.gz
 man/man3/kcgiregress.3.gz
@@ -27,8 +28,8 @@ man/man3/khttpbasic_validate.3.gz
 man/man3/khttpdigest_validate.3.gz
 man/man3/kmalloc.3.gz
 man/man3/kutil_epoch2str.3.gz
-man/man3/kutil_openlog.3.gz
 man/man3/kutil_log.3.gz
+man/man3/kutil_openlog.3.gz
 man/man3/kutil_urlencode.3.gz
 man/man3/kvalid_string.3.gz
 man/man8/kfcgi.8.gz
