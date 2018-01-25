@@ -1,0 +1,331 @@
+commit cf341df19ad7
+Author: Simon Sapin <simon.sapin@exyr.org>
+Date:   Thu Nov 9 06:49:29 2017 -0600
+
+    servo: Merge #19162 - Allow unused imports for AsciiExt in style code (from emilio:ascii-ext); r=emilio
+    
+    See #19128, this part is cherry-picked so Gecko can build with rust nightly.
+    
+    Source-Repo: https://github.com/servo/servo
+    Source-Revision: e7a654dd13f589e127193267bcb576ffd661c11d
+    
+    --HG--
+    extra : subtree_source : https%3A//hg.mozilla.org/projects/converted-servo-linear
+    extra : subtree_revision : 0ee67ddf598b1ea99e92f6a285a960f86b1cb971
+---
+ servo/components/selectors/attr.rs                                  | 2 +-
+ servo/components/selectors/parser.rs                                | 2 +-
+ servo/components/style/attr.rs                                      | 2 +-
+ servo/components/style/counter_style/mod.rs                         | 2 +-
+ servo/components/style/custom_properties.rs                         | 2 +-
+ servo/components/style/gecko/generated/pseudo_element_definition.rs | 4 ++--
+ servo/components/style/gecko/pseudo_element_definition.mako.rs      | 4 ++--
+ servo/components/style/gecko_string_cache/mod.rs                    | 2 +-
+ servo/components/style/properties/longhand/font.mako.rs             | 2 +-
+ servo/components/style/properties/longhand/pointing.mako.rs         | 2 +-
+ servo/components/style/str.rs                                       | 2 +-
+ servo/components/style/stylesheets/viewport_rule.rs                 | 2 +-
+ servo/components/style/values/mod.rs                                | 2 +-
+ servo/components/style/values/specified/align.rs                    | 2 +-
+ servo/components/style/values/specified/angle.rs                    | 2 +-
+ servo/components/style/values/specified/calc.rs                     | 2 +-
+ servo/components/style/values/specified/grid.rs                     | 2 +-
+ servo/components/style/values/specified/length.rs                   | 2 +-
+ servo/components/style/values/specified/mod.rs                      | 2 +-
+ servo/components/style/values/specified/percentage.rs               | 2 +-
+ servo/components/style/values/specified/text.rs                     | 2 +-
+ servo/components/style/values/specified/time.rs                     | 2 +-
+ servo/components/style_traits/viewport.rs                           | 2 +-
+ 23 files changed, 25 insertions(+), 25 deletions(-)
+
+diff --git servo/components/selectors/attr.rs servo/components/selectors/attr.rs
+index b71be2cca73b..577b52eb26ab 100644
+--- servo/components/selectors/attr.rs
++++ servo/components/selectors/attr.rs
+@@ -4,7 +4,7 @@
+ 
+ use cssparser::ToCss;
+ use parser::SelectorImpl;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::fmt;
+ 
+ #[derive(Eq, PartialEq, Clone)]
+diff --git servo/components/selectors/parser.rs servo/components/selectors/parser.rs
+index 490399ce38ce..a6c58179e110 100644
+--- servo/components/selectors/parser.rs
++++ servo/components/selectors/parser.rs
+@@ -13,7 +13,7 @@ use precomputed_hash::PrecomputedHash;
+ use servo_arc::ThinArc;
+ use sink::Push;
+ use smallvec::SmallVec;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::borrow::{Borrow, Cow};
+ use std::fmt::{self, Display, Debug, Write};
+ use std::iter::Rev;
+diff --git servo/components/style/attr.rs servo/components/style/attr.rs
+index 9861c4360f98..e34d03f01823 100644
+--- servo/components/style/attr.rs
++++ servo/components/style/attr.rs
+@@ -16,7 +16,7 @@ use selectors::attr::AttrSelectorOperation;
+ use servo_arc::Arc;
+ use servo_url::ServoUrl;
+ use shared_lock::Locked;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::str::FromStr;
+ use str::{HTML_SPACE_CHARACTERS, read_exponent, read_fraction};
+ use str::{read_numbers, split_commas, split_html_space_chars};
+diff --git servo/components/style/counter_style/mod.rs servo/components/style/counter_style/mod.rs
+index 1eb47fedf516..6b55364bca96 100644
+--- servo/components/style/counter_style/mod.rs
++++ servo/components/style/counter_style/mod.rs
+@@ -15,7 +15,7 @@ use error_reporting::ContextualParseError;
+ use parser::{ParserContext, log_css_error, Parse};
+ use selectors::parser::SelectorParseError;
+ use shared_lock::{SharedRwLockReadGuard, ToCssWithGuard};
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::borrow::Cow;
+ use std::fmt;
+ use std::ops::Range;
+diff --git servo/components/style/custom_properties.rs servo/components/style/custom_properties.rs
+index cb9e39561846..787dfaadf82c 100644
+--- servo/components/style/custom_properties.rs
++++ servo/components/style/custom_properties.rs
+@@ -12,7 +12,7 @@ use parser::ParserContext;
+ use properties::{CSSWideKeyword, DeclaredValue};
+ use selectors::parser::SelectorParseError;
+ use servo_arc::Arc;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::borrow::Cow;
+ use std::collections::{HashMap, hash_map, HashSet};
+ use std::fmt;
+diff --git servo/components/style/gecko/generated/pseudo_element_definition.rs servo/components/style/gecko/generated/pseudo_element_definition.rs
+index 46da69d1e9b6..1cb2bf9f3e1d 100644
+--- servo/components/style/gecko/generated/pseudo_element_definition.rs
++++ servo/components/style/gecko/generated/pseudo_element_definition.rs
+@@ -1182,7 +1182,7 @@ impl PseudoElement {
+     /// Returns `None` if the pseudo-element is not recognised.
+     #[inline]
+     pub fn from_slice(s: &str, in_ua_stylesheet: bool) -> Option<Self> {
+-        use std::ascii::AsciiExt;
++        #[allow(unused_imports)] use std::ascii::AsciiExt;
+ 
+         // We don't need to support tree pseudos because functional
+         // pseudo-elements needs arguments, and thus should be created
+@@ -1552,7 +1552,7 @@ impl PseudoElement {
+     /// Returns `None` if the pseudo-element is not recognized.
+     #[inline]
+     pub fn tree_pseudo_element(name: &str, args: Box<[String]>) -> Option<Self> {
+-        use std::ascii::AsciiExt;
++        #[allow(unused_imports)] use std::ascii::AsciiExt;
+         debug_assert!(name.starts_with("-moz-tree-"));
+         let tree_part = &name[10..];
+             if tree_part.eq_ignore_ascii_case("column") {
+diff --git servo/components/style/gecko/pseudo_element_definition.mako.rs servo/components/style/gecko/pseudo_element_definition.mako.rs
+index e4a5025314b6..d676cb9f0491 100644
+--- servo/components/style/gecko/pseudo_element_definition.mako.rs
++++ servo/components/style/gecko/pseudo_element_definition.mako.rs
+@@ -171,7 +171,7 @@ impl PseudoElement {
+     /// Returns `None` if the pseudo-element is not recognised.
+     #[inline]
+     pub fn from_slice(s: &str, in_ua_stylesheet: bool) -> Option<Self> {
+-        use std::ascii::AsciiExt;
++        #[allow(unused_imports)] use std::ascii::AsciiExt;
+ 
+         // We don't need to support tree pseudos because functional
+         // pseudo-elements needs arguments, and thus should be created
+@@ -193,7 +193,7 @@ impl PseudoElement {
+     /// Returns `None` if the pseudo-element is not recognized.
+     #[inline]
+     pub fn tree_pseudo_element(name: &str, args: Box<[String]>) -> Option<Self> {
+-        use std::ascii::AsciiExt;
++        #[allow(unused_imports)] use std::ascii::AsciiExt;
+         debug_assert!(name.starts_with("-moz-tree-"));
+         let tree_part = &name[10..];
+         % for pseudo in TREE_PSEUDOS:
+diff --git servo/components/style/gecko_string_cache/mod.rs servo/components/style/gecko_string_cache/mod.rs
+index fed06fbeec5d..726bbc8631ca 100644
+--- servo/components/style/gecko_string_cache/mod.rs
++++ servo/components/style/gecko_string_cache/mod.rs
+@@ -13,7 +13,7 @@ use gecko_bindings::bindings::Gecko_ReleaseAtom;
+ use gecko_bindings::structs::nsIAtom;
+ use nsstring::{nsAString, nsString};
+ use precomputed_hash::PrecomputedHash;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::borrow::{Cow, Borrow};
+ use std::char::{self, DecodeUtf16};
+ use std::fmt::{self, Write};
+diff --git servo/components/style/media_queries.rs servo/components/style/media_queries.rs
+index 5f71ddf974fb..6667f16f3585 100644
+--- servo/components/style/media_queries.rs
++++ servo/components/style/media_queries.rs
+@@ -12,7 +12,7 @@ use cssparser::{Delimiter, Parser, Token, ParserInput};
+ use parser::ParserContext;
+ use selectors::parser::SelectorParseError;
+ use serialize_comma_separated_list;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::fmt;
+ use style_traits::{ToCss, ParseError, StyleParseError};
+ 
+diff --git servo/components/style/properties/longhand/font.mako.rs servo/components/style/properties/longhand/font.mako.rs
+index f6b78a917498..093c6c1009e7 100644
+--- servo/components/style/properties/longhand/font.mako.rs
++++ servo/components/style/properties/longhand/font.mako.rs
+@@ -2096,7 +2096,7 @@ https://drafts.csswg.org/css-fonts-4/#low-level-font-variation-settings-control-
+ 
+         #[inline]
+         fn to_computed_value(&self, _context: &Context) -> computed_value::T {
+-            use std::ascii::AsciiExt;
++            #[allow(unused_imports)] use std::ascii::AsciiExt;
+             match *self {
+                 SpecifiedValue::Normal => computed_value::T(0),
+                 SpecifiedValue::Override(ref lang) => {
+diff --git servo/components/style/properties/longhand/pointing.mako.rs servo/components/style/properties/longhand/pointing.mako.rs
+index 9e7923889b17..132e62501647 100644
+--- servo/components/style/properties/longhand/pointing.mako.rs
++++ servo/components/style/properties/longhand/pointing.mako.rs
+@@ -93,7 +93,7 @@
+     impl Parse for computed_value::Keyword {
+         fn parse<'i, 't>(_context: &ParserContext, input: &mut Parser<'i, 't>)
+                          -> Result<computed_value::Keyword, ParseError<'i>> {
+-            use std::ascii::AsciiExt;
++            #[allow(unused_imports)] use std::ascii::AsciiExt;
+             use style_traits::cursor::Cursor;
+             let ident = input.expect_ident()?;
+             if ident.eq_ignore_ascii_case("auto") {
+diff --git servo/components/style/str.rs servo/components/style/str.rs
+index 92febb408249..e4ba90d6435e 100644
+--- servo/components/style/str.rs
++++ servo/components/style/str.rs
+@@ -7,7 +7,7 @@
+ #![deny(missing_docs)]
+ 
+ use num_traits::ToPrimitive;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::convert::AsRef;
+ use std::iter::{Filter, Peekable};
+ use std::str::Split;
+diff --git servo/components/style/stylesheets/viewport_rule.rs servo/components/style/stylesheets/viewport_rule.rs
+index 7d3339a92148..ad57415cbc90 100644
+--- servo/components/style/stylesheets/viewport_rule.rs
++++ servo/components/style/stylesheets/viewport_rule.rs
+@@ -19,7 +19,7 @@ use parser::{Parse, ParserContext, log_css_error};
+ use properties::StyleBuilder;
+ use selectors::parser::SelectorParseError;
+ use shared_lock::{SharedRwLockReadGuard, ToCssWithGuard};
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::borrow::Cow;
+ use std::fmt;
+ use std::iter::Enumerate;
+diff --git servo/components/style/values/mod.rs servo/components/style/values/mod.rs
+index 616aa5cb4852..0ea4759ff23e 100644
+--- servo/components/style/values/mod.rs
++++ servo/components/style/values/mod.rs
+@@ -12,7 +12,7 @@ use Atom;
+ pub use cssparser::{RGBA, Token, Parser, serialize_identifier, BasicParseError, CowRcStr};
+ use parser::{Parse, ParserContext};
+ use selectors::parser::SelectorParseError;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::fmt::{self, Debug};
+ use std::hash;
+ use style_traits::{ToCss, ParseError, StyleParseError};
+diff --git servo/components/style/values/specified/align.rs servo/components/style/values/specified/align.rs
+index dc7fd43ed941..10da78904e2b 100644
+--- servo/components/style/values/specified/align.rs
++++ servo/components/style/values/specified/align.rs
+@@ -10,7 +10,7 @@ use cssparser::Parser;
+ use gecko_bindings::structs;
+ use parser::{Parse, ParserContext};
+ use selectors::parser::SelectorParseError;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::fmt;
+ use style_traits::{ToCss, ParseError, StyleParseError};
+ 
+diff --git servo/components/style/values/specified/calc.rs servo/components/style/values/specified/calc.rs
+index 66b94b20ad01..58d12fe0147e 100644
+--- servo/components/style/values/specified/calc.rs
++++ servo/components/style/values/specified/calc.rs
+@@ -9,7 +9,7 @@
+ use app_units::Au;
+ use cssparser::{Parser, Token, BasicParseError};
+ use parser::ParserContext;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::fmt;
+ use style_traits::{HasViewportPercentage, ToCss, ParseError, StyleParseError};
+ use style_traits::values::specified::AllowedLengthType;
+diff --git servo/components/style/values/specified/grid.rs servo/components/style/values/specified/grid.rs
+index beb1459e76dc..927b8c912935 100644
+--- servo/components/style/values/specified/grid.rs
++++ servo/components/style/values/specified/grid.rs
+@@ -7,7 +7,7 @@
+ 
+ use cssparser::{Parser, Token, BasicParseError};
+ use parser::{Parse, ParserContext};
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::mem;
+ use style_traits::{HasViewportPercentage, ParseError, StyleParseError};
+ use values::{CSSFloat, CustomIdent};
+diff --git servo/components/style/values/specified/length.rs servo/components/style/values/specified/length.rs
+index bf4b83b52932..2514b2aaca89 100644
+--- servo/components/style/values/specified/length.rs
++++ servo/components/style/values/specified/length.rs
+@@ -12,7 +12,7 @@ use euclid::Size2D;
+ use font_metrics::FontMetricsQueryResult;
+ use parser::{Parse, ParserContext};
+ use std::{cmp, fmt, mem};
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::ops::Mul;
+ use style_traits::{HasViewportPercentage, ToCss, ParseError, StyleParseError};
+ use style_traits::values::specified::{AllowedLengthType, AllowedNumericType};
+diff --git servo/components/style/values/specified/mod.rs servo/components/style/values/specified/mod.rs
+index 7c51c3868f8a..8fbdc827829a 100644
+--- servo/components/style/values/specified/mod.rs
++++ servo/components/style/values/specified/mod.rs
+@@ -11,7 +11,7 @@ use context::QuirksMode;
+ use cssparser::{Parser, Token, serialize_identifier, BasicParseError};
+ use parser::{ParserContext, Parse};
+ use self::url::SpecifiedUrl;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::f32;
+ use std::fmt;
+ use style_traits::{ToCss, ParseError, StyleParseError};
+diff --git servo/components/style/values/specified/text.rs servo/components/style/values/specified/text.rs
+index 2c0395128c64..c3248a7bc45d 100644
+--- servo/components/style/values/specified/text.rs
++++ servo/components/style/values/specified/text.rs
+@@ -7,7 +7,7 @@
+ use cssparser::Parser;
+ use parser::{Parse, ParserContext};
+ use selectors::parser::SelectorParseError;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use style_traits::ParseError;
+ use values::computed::{Context, ToComputedValue};
+ use values::computed::text::LineHeight as ComputedLineHeight;
+diff --git servo/components/style_traits/viewport.rs servo/components/style_traits/viewport.rs
+index 01d9b541ac34..e25ff9ba9e71 100644
+--- servo/components/style_traits/viewport.rs
++++ servo/components/style_traits/viewport.rs
+@@ -7,7 +7,7 @@
+ use {CSSPixel, PinchZoomFactor, ParseError};
+ use cssparser::{Parser, ToCss, ParseError as CssParseError, BasicParseError};
+ use euclid::TypedSize2D;
+-use std::ascii::AsciiExt;
++#[allow(unused_imports)] use std::ascii::AsciiExt;
+ use std::fmt;
+ 
+ define_css_keyword_enum!(UserZoom:
