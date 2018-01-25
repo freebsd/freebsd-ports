@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML_Template_IT
-PORTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 PORTEPOCH=	1
 CATEGORIES=	devel www pear
 
