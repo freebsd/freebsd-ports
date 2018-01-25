@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	The FlightGear flight simulator
+COMMENT=	FlightGear flight simulator
 
 LICENSE=	GPLv2
 
@@ -27,11 +27,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
+USES=		alias cmake compiler cpe dos2unix jpeg openal:al,alut sqlite \
+		tar:bzip2
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xt
 USE_GL=		gl glew glu glut
 
-USES=		alias cmake compiler cpe dos2unix jpeg openal:al,alut sqlite \
-		tar:bzip2
 DOS2UNIX_REGEX=	.*\.(c|h|cxx|cpp|hxx|hpp)
 CMAKE_ARGS+=	-DENABLE_JS_SERVER:BOOL=ON \
 		-DSYSTEM_SQLITE:BOOL=ON \

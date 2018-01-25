@@ -13,9 +13,9 @@ COMMENT=	Tools for using Parity v2 Archive files (tbb version)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtbb.so:devel/tbb
-
 ONLY_FOR_ARCHS=		amd64 i386
+
+LIB_DEPENDS=	libtbb.so:devel/tbb
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf

@@ -16,9 +16,9 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libosg.so:graphics/osg
 
+USES=		alias cmake compiler:c++11-lib cpe jpeg openal:al,alut tar:bzip2
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu glut
-USES=		alias cmake compiler:c++11-lib cpe jpeg openal:al,alut tar:bzip2
 
 .include <bsd.port.pre.mk>
 
