@@ -749,7 +749,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${WRKDIR}, then point EXTRA_PATCHES to them.
 #				  The patches specified by this variable will be
 #				  applied after the normal distribution patches but
-#				  before those in ${PATCHDIR}.
+#				  before those in ${PATCHDIR}.  This can also contain
+#				  directories, all the files named patch-* in those directories
+#				  will be applied.
 # EXTRA_PATCH_TREE - where to find extra 'out-of-tree' patches
 #				  Points to a directory hierarchy with the same layout
 #				  as the ports tree, where local patches can be found.

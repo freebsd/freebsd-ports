@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20180125:
+AUTHOR: mat@FreeBSD.org
+
+  Add support to passing directories to EXTRA_PATCHES.
+
+  Instead of:
+
+    EXTRA_PATCHES=        ${PATCHDIR}/feat-foo-patch-file.c \
+                          ${PATCHDIR}/feat-foo-patch-file.h \
+                          ${PATCHDIR}/feat-foo-patch-file2.c
+
+  Move those files to ${PATCHDIR}/feat-foo/, name them patch-*, and set:
+
+    EXTRA_PATCHES=        ${PATCHDIR}/feat-foo
+
 20180116:
 AUTHOR: mat@FreeBSD.org
 

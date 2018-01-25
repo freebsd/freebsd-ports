@@ -107,9 +107,14 @@ fi
 
 if [ -n "${dp_EXTRA_PATCHES}" ]; then
 	for i in ${dp_EXTRA_PATCHES}; do
-		apply_one_patch "${i}" \
-			"Applying extra patch" \
-			${dp_PATCH_ARGS}
+		if [ -d "${i}" ]; then
+			patch_from_directory "${i}" \
+				"extra patch"
+		else
+			apply_one_patch "${i}" \
+				"Applying extra patch" \
+				${dp_PATCH_ARGS}
+		fi
 	done
 fi
 
