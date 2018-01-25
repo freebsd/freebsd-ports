@@ -43,7 +43,9 @@
     SUBDIR += everygui
     SUBDIR += fbreader
     SUBDIR += fet
+    SUBDIR += flameshot
     SUBDIR += freemind
+    SUBDIR += freeplane
     SUBDIR += fusenshi
     SUBDIR += gaddr
     SUBDIR += ganttproject
@@ -201,7 +203,6 @@
     SUBDIR += py-pycarddav
     SUBDIR += py-pystash
     SUBDIR += py-send2trash
-    SUBDIR += py-spice-gtk
     SUBDIR += py-taskw
     SUBDIR += py-vdirsyncer
     SUBDIR += py-vobject

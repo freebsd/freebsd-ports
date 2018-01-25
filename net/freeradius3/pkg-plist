@@ -473,6 +473,12 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius-clients.schema
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius.ldif
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius.schema
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/samba/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/samba/freeradius-attrs.ldif
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/samba/freeradius-classes.ldif
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/samba/freeradius-clients-attrs.ldif
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/samba/freeradius-clients-classes.ldif
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/samba/freeradius-user.ldif
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/README
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/radius-mapping.sh
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/kibana4-dashboard.json
@@ -504,6 +510,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/certs/index.txt.attr
 %%EXAMPLESDIR%%/raddb/certs/index.txt.attr.old
 %%EXAMPLESDIR%%/raddb/certs/index.txt.old
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/raddb/certs/inner-server.cnf
 %%EXAMPLESDIR%%/raddb/certs/passwords.mk
 %%EXAMPLESDIR%%/raddb/certs/serial
 %%EXAMPLESDIR%%/raddb/certs/serial.old
@@ -645,7 +652,6 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/oracle/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/oracle/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras/cisco_h323_db_schema.sql
-%%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras/update_radacct_group.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras/voip-postpaid.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/schema.sql
@@ -666,7 +672,6 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-enabled/date
 %%EXAMPLESDIR%%/raddb/mods-enabled/detail
 %%EXAMPLESDIR%%/raddb/mods-enabled/detail.log
-%%EXAMPLESDIR%%/raddb/mods-enabled/dhcp
 %%EXAMPLESDIR%%/raddb/mods-enabled/digest
 %%EXAMPLESDIR%%/raddb/mods-enabled/dynamic_clients
 %%EXAMPLESDIR%%/raddb/mods-enabled/eap

@@ -24,6 +24,7 @@
  * SUCH DAMAGE.
  */
 
+/* $FreeBSD$ */
 #include <stdarg.h>
 #include <stdint.h>
 #include <stdio.h>

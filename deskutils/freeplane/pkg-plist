@@ -1,0 +1,238 @@
+bin/freeplane
+%%DATADIR%%/core/org.freeplane.core/META-INF/MANIFEST.MF
+%%DATADIR%%/core/org.freeplane.core/lib/SimplyHTML-0.17.3.jar
+%%DATADIR%%/core/org.freeplane.core/lib/commons-codec-1.7.jar
+%%DATADIR%%/core/org.freeplane.core/lib/commons-io-2.4.jar
+%%DATADIR%%/core/org.freeplane.core/lib/commons-lang-2.6.jar
+%%DATADIR%%/core/org.freeplane.core/lib/freeplane_mac-1.5.jar
+%%DATADIR%%/core/org.freeplane.core/lib/freeplaneeditor-1.5.jar
+%%DATADIR%%/core/org.freeplane.core/lib/freeplaneosgi-1.5.jar
+%%DATADIR%%/core/org.freeplane.core/lib/freeplaneviewer.jar
+%%DATADIR%%/core/org.freeplane.core/lib/idw-gpl-1.6.1.jar
+%%DATADIR%%/core/org.freeplane.core/lib/jgoodies-common-1.8.1.jar
+%%DATADIR%%/core/org.freeplane.core/lib/jgoodies-forms-1.9.0.jar
+%%DATADIR%%/core/org.freeplane.core/lib/jortho-1.5.jar
+%%DATADIR%%/core/org.freeplane.core/lib/jortho.jar
+%%DATADIR%%/core/org.freeplane.core/lib/kitfox-svg-salamander-1.1.1-p1.jar
+%%DATADIR%%/doc/Freeplane_LaTeX.mm
+%%DATADIR%%/doc/Images/Preferences_Joining nodes.png
+%%DATADIR%%/doc/Images/doc/BackgroundContextMenu.png
+%%DATADIR%%/doc/Images/doc/BackgroundContextMenu_nl.png
+%%DATADIR%%/doc/Images/doc/HotKeysTable.png
+%%DATADIR%%/doc/Images/doc/HotKeysTable_nl.png
+%%DATADIR%%/doc/Images/doc/MenusPropertiesPanel.png
+%%DATADIR%%/doc/Images/doc/MenusPropertiesPanel_nl.png
+%%DATADIR%%/doc/Images/doc/freeplaneApplications.png
+%%DATADIR%%/doc/Images/doc/goto node with ID.png
+%%DATADIR%%/doc/Images/doc/key mapping dialog.png
+%%DATADIR%%/doc/Images/doc/mapView v outlineView.png
+%%DATADIR%%/doc/Images/doc/right-click menu - open maps.png
+%%DATADIR%%/doc/Images/doc/tabs in workspace.png
+%%DATADIR%%/doc/Images/examples.png
+%%DATADIR%%/doc/Images/eyes.png
+%%DATADIR%%/doc/Images/icons toolbar - collapsed.png
+%%DATADIR%%/doc/Images/mouse/mouse_RB.png
+%%DATADIR%%/doc/Images/other/workspace/Freeplane workspace (annotated).png
+%%DATADIR%%/doc/Images/other/workspace/Freeplane workspace.png
+%%DATADIR%%/doc/Images/other/workspace/details arrow_.png
+%%DATADIR%%/doc/Images/other/workspace/f bar - split.png
+%%DATADIR%%/doc/Images/other/workspace/f bar.png
+%%DATADIR%%/doc/Images/other/workspace/filter toolbar - split.png
+%%DATADIR%%/doc/Images/other/workspace/filter toolbar.png
+%%DATADIR%%/doc/Images/other/workspace/icons toolbar.png
+%%DATADIR%%/doc/Images/other/workspace/menubar.png
+%%DATADIR%%/doc/Images/other/workspace/notes panel.png
+%%DATADIR%%/doc/Images/other/workspace/properties panel.png
+%%DATADIR%%/doc/Images/other/workspace/resize arrows.png
+%%DATADIR%%/doc/Images/other/workspace/right-click menu.png
+%%DATADIR%%/doc/Images/other/workspace/scroll bars.png
+%%DATADIR%%/doc/Images/other/workspace/status line.png
+%%DATADIR%%/doc/Images/other/workspace/submenu flyouts (basic).png
+%%DATADIR%%/doc/Images/other/workspace/submenu flyouts.png
+%%DATADIR%%/doc/Images/other/workspace/toolbar - split.png
+%%DATADIR%%/doc/Images/other/workspace/toolbar.png
+%%DATADIR%%/doc/Images/other/workspace/view - toolbars.png
+%%DATADIR%%/doc/Images/other/workspace/view - view settings.png
+%%DATADIR%%/doc/Images/properties toolbar - collapsed.png
+%%DATADIR%%/doc/api/allclasses-frame.html
+%%DATADIR%%/doc/api/allclasses-noframe.html
+%%DATADIR%%/doc/api/constant-values.html
+%%DATADIR%%/doc/api/deprecated-list.html
+%%DATADIR%%/doc/api/help-doc.html
+%%DATADIR%%/doc/api/index-all.html
+%%DATADIR%%/doc/api/index.html
+%%DATADIR%%/doc/api/org/freeplane/core/ui/components/UITools.InsertEolAction.html
+%%DATADIR%%/doc/api/org/freeplane/core/ui/components/UITools.html
+%%DATADIR%%/doc/api/org/freeplane/core/ui/components/package-frame.html
+%%DATADIR%%/doc/api/org/freeplane/core/ui/components/package-summary.html
+%%DATADIR%%/doc/api/org/freeplane/core/ui/components/package-tree.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/FreeplaneVersion.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/HtmlUtils.IndexPair.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/HtmlUtils.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/LogUtils.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/MenuUtils.MenuEntry.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/MenuUtils.MenuEntryTreeBuilder.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/MenuUtils.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/TextUtils.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/package-frame.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/package-summary.html
+%%DATADIR%%/doc/api/org/freeplane/core/util/package-tree.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/FreeplaneScriptBaseClass.ConfigProperties.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/FreeplaneScriptBaseClass.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/package-frame.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/package-summary.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/package-tree.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Convertible.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Attributes.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.AttributesRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Cloud.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Connector.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ConnectorRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Controller.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ControllerRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Edge.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.EdgeRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ExternalObject.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ExternalObjectRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Font.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.FontRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Icons.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.IconsRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Link.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.LinkRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Map.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.MapRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Node.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.NodeRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.NodeStyle.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.NodeStyleRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Properties.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Reminder.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ReminderRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/ScriptUtils.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/package-frame.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/package-summary.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/package-tree.html
+%%DATADIR%%/doc/api/overview-frame.html
+%%DATADIR%%/doc/api/overview-summary.html
+%%DATADIR%%/doc/api/overview-tree.html
+%%DATADIR%%/doc/api/package-list
+%%DATADIR%%/doc/api/script.js
+%%DATADIR%%/doc/api/serialized-form.html
+%%DATADIR%%/doc/api/stylesheet.css
+%%DATADIR%%/doc/examplepicture_nl.JPG
+%%DATADIR%%/doc/freeplane.jpg
+%%DATADIR%%/doc/freeplane.mm
+%%DATADIR%%/doc/freeplaneApplications.mm
+%%DATADIR%%/doc/freeplaneApplications_ja.mm
+%%DATADIR%%/doc/freeplaneApplications_nl.mm
+%%DATADIR%%/doc/freeplaneFunctions.mm
+%%DATADIR%%/doc/freeplaneFunctions_ja.mm
+%%DATADIR%%/doc/freeplaneFunctions_nl.mm
+%%DATADIR%%/doc/freeplaneTutorial.jpg
+%%DATADIR%%/doc/freeplaneTutorial.mm
+%%DATADIR%%/doc/freeplaneTutorial.mmfilter
+%%DATADIR%%/doc/freeplaneTutorial_ja.mm
+%%DATADIR%%/doc/freeplaneTutorial_ja.mmfilter
+%%DATADIR%%/doc/freeplaneTutorial_nl.jpg
+%%DATADIR%%/doc/freeplaneTutorial_nl.mm
+%%DATADIR%%/doc/freeplaneTutorial_nl.mmfilter
+%%DATADIR%%/doc/freeplane_de.mm
+%%DATADIR%%/doc/freeplane_es.mm
+%%DATADIR%%/doc/freeplane_et.mm
+%%DATADIR%%/doc/freeplane_fr.mm
+%%DATADIR%%/doc/freeplane_id.mm
+%%DATADIR%%/doc/freeplane_it.mm
+%%DATADIR%%/doc/freeplane_ja.mm
+%%DATADIR%%/doc/freeplane_menuposition_nl.jpg
+%%DATADIR%%/doc/freeplane_nl.jpg
+%%DATADIR%%/doc/freeplane_ru.mm
+%%DATADIR%%/doc/freeplane_vi.mm
+%%DATADIR%%/doc/history_en.txt
+%%DATADIR%%/doc/whatsNew-1.5.x.mm
+%%DATADIR%%/framework.jar
+%%DATADIR%%/freeplane.l4j.ini
+%%DATADIR%%/freeplane.png
+%%DATADIR%%/freeplane.policy
+%%DATADIR%%/freeplane.sh
+%%DATADIR%%/freeplane.svg
+%%DATADIR%%/freeplaneConsole.l4j.ini
+%%DATADIR%%/freeplaneIcons.dll
+%%DATADIR%%/freeplanelauncher.jar
+%%DATADIR%%/gitinfo.txt
+%%DATADIR%%/init.xargs
+%%DATADIR%%/plugins/org.freeplane.plugin.bugreport/META-INF/MANIFEST.MF
+%%DATADIR%%/plugins/org.freeplane.plugin.bugreport/lib/plugin-1.5.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.formula/META-INF/MANIFEST.MF
+%%DATADIR%%/plugins/org.freeplane.plugin.formula/lib/plugin-1.5.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/META-INF/MANIFEST.MF
+%%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/lib/jsyntaxpane-0.9.6~r156-5.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/lib/plugin-1.5.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.latex/META-INF/MANIFEST.MF
+%%DATADIR%%/plugins/org.freeplane.plugin.latex/lib/jlatexmath-1.0.6.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.latex/lib/jlatexmath-font-cyrillic-1.0.6.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.latex/lib/jlatexmath-font-greek-1.0.6.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.latex/lib/plugin-1.5.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.openmaps/META-INF/MANIFEST.MF
+%%DATADIR%%/plugins/org.freeplane.plugin.openmaps/lib/jmapviewer-1.14.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.openmaps/lib/plugin-1.5.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.script/META-INF/MANIFEST.MF
+%%DATADIR%%/plugins/org.freeplane.plugin.script/lib/byte-buddy-1.6.9.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.script/lib/groovy-all-2.3.1.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.script/lib/groovy-patcher-0.0.2.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.script/lib/plugin-1.5.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/META-INF/MANIFEST.MF
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/avalon-framework-api-4.3.1.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/avalon-framework-impl-4.3.1.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/batik-all-1.9.1.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/commons-logging-1.2.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/fop-2.1.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/plugin-1.5.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/xml-apis-1.4.01.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/xml-apis-ext-1.3.04.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/xmlgraphics-commons-2.2.jar
+%%DATADIR%%/props.xargs
+%%DATADIR%%/resources/gitinfo.properties
+%%DATADIR%%/resources/ortho/dictionary_de.ortho
+%%DATADIR%%/resources/ortho/dictionary_en.ortho
+%%DATADIR%%/resources/ortho/dictionary_fr.ortho
+%%DATADIR%%/resources/templates/BigMap.mm
+%%DATADIR%%/resources/templates/BuzanMap.mm
+%%DATADIR%%/resources/templates/conceptMap.mm
+%%DATADIR%%/resources/templates/essay.mm
+%%DATADIR%%/resources/templates/standard-1.6-noEdgeColor.mm
+%%DATADIR%%/resources/templates/standard-1.6.mm
+%%DATADIR%%/resources/xml/filemodemenu.xml
+%%DATADIR%%/resources/xml/mindmapmodemenu.xml
+%%DATADIR%%/resources/xml/preferences.xml
+%%DATADIR%%/resources/xml/stylemodemenu.xml
+%%DATADIR%%/resources/xslt/export2oowriter.manifest.xsl
+%%DATADIR%%/resources/xslt/export2oowriter.styles.xsl
+%%DATADIR%%/resources/xslt/export2oowriter.xsl
+%%DATADIR%%/resources/xslt/mm2adoc.xsl
+%%DATADIR%%/resources/xslt/mm2freeplane1_1-mm.xsl
+%%DATADIR%%/resources/xslt/mm2html.xsl
+%%DATADIR%%/resources/xslt/mm2latexartcl.xsl
+%%DATADIR%%/resources/xslt/mm2latexbeamer_richcontent_1.3.x.xsl
+%%DATADIR%%/resources/xslt/mm2latexbook.xsl
+%%DATADIR%%/resources/xslt/mm2latexinput.xsl
+%%DATADIR%%/resources/xslt/mm2markdown.xsl
+%%DATADIR%%/resources/xslt/mm2msp_utf8.xsl
+%%DATADIR%%/resources/xslt/mm2msp_utf8_TEMPLATE.mm
+%%DATADIR%%/resources/xslt/mm2mwiki.xsl
+%%DATADIR%%/resources/xslt/mm2opml.xsl
+%%DATADIR%%/resources/xslt/mm2raw.xsl
+%%DATADIR%%/resources/xslt/mm2text.xsl
+%%DATADIR%%/resources/xslt/mm2wordml_utf8.xsl
+%%DATADIR%%/resources/xslt/mm2wordml_utf8_TEMPLATE.mm
+%%DATADIR%%/resources/xslt/mm2xbel.xsl
+%%DATADIR%%/resources/xslt/mm2xls_utf8.xsl
+%%DATADIR%%/resources/xslt/mm2xml.xsl
+%%DATADIR%%/resources/xslt/tohtml.xsl
+%%DATADIR%%/resources/xslt/xbel2mm.xsl
+%%DATADIR%%/scripts/apiGenerator.groovy
+%%DATADIR%%/scripts/freeplane.dsld
+%%DATADIR%%/scripts/installScriptAddOn.groovy
+@dir %%DATADIR%%/fwdir/condperm
+@dir %%DATADIR%%/fwdir/perms

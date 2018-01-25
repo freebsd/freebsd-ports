@@ -1,6 +1,6 @@
 # $FreeBSD$
 #
-# Run autoreconf in CONFIGURE_WRKSRC to update configure, Makefile.in and
+# Run autoreconf in AUTORECONF_WRKSRC to update configure, Makefile.in and
 # other build scripts.
 #
 # Autoreconf encapsulates the following commands.  Each command applies to a
@@ -72,7 +72,7 @@ AUTORECONF_WRKSRC?=	${WRKSRC}
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_AUTORECONF_POST_MK)
 _INCLUDE_USES_AUTORECONF_POST_MK=	yes
 
-.if ! ${autoreconf_ARGS:Mbuild}
+.if empty(autoreconf_ARGS)
 _USES_configure+=	470:do-autoreconf
 do-autoreconf:
 .for f in AUTHORS ChangeLog INSTALL NEWS README
@@ -87,6 +87,8 @@ do-autoreconf:
 		then ${LOCALBASE}/bin/intltoolize -f -c; fi)
 .endif
 	@(cd ${AUTORECONF_WRKSRC} && ${AUTORECONF} -f -i)
+.elif ! ${autoreconf_ARGS:Mbuild}
+IGNORE= Incorrect 'USES+=autoreconf:${autoreconf_ARGS}' expecting 'USES+=autoreconf[:build]'
 .endif
 
 .endif

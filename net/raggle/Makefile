@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.raggle.org/files/
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Console RSS aggregator written in Ruby
 
+DEPRECATED=	Depends on expired devel/ruby-ncurses
+EXPIRATION_DATE=2018-02-21
+
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/ncurses.rb:devel/ruby-ncurses
 
 USE_RUBY=	yes

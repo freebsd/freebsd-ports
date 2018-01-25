@@ -1,0 +1,66 @@
+commit 6e14443b30ce2c8e284617840bc49e249c63afc1
+Author: oconrad <conrad@geowiss.uni-hamburg.de>
+Date:   Fri Dec 8 10:16:47 2017 +0100
+
+    saga_gui, loading tool description from file: wxgtk issue reported in [saga-gis-developer] SAGA GIS on FreeBSD: fails to build with wxgtk30 - 3.0.3.1
+---
+ saga-gis/src/saga_core/saga_gui/wksp_tool.cpp | 25 ++++++++-----------------
+ saga-gis/src/saga_core/saga_gui/wksp_tool.h   |  2 --
+ 2 files changed, 8 insertions(+), 19 deletions(-)
+
+--- src/saga_core/saga_gui/wksp_tool.cpp.orig	2017-09-01 15:57:36 UTC
++++ src/saga_core/saga_gui/wksp_tool.cpp
+@@ -135,34 +135,25 @@ wxString CWKSP_Tool::Get_Name(void)
+ }
+ 
+ //---------------------------------------------------------
+-wxString CWKSP_Tool::Get_File_Name(void)
+-{
+-	return( m_pTool->Get_File_Name().c_str() );
+-}
+-
+-//---------------------------------------------------------
+ wxString CWKSP_Tool::Get_Description(void)
+ {
+ 	//-----------------------------------------------------
+-	if( !Get_File_Name().IsEmpty() )
++	if( !m_pTool->Get_File_Name().is_Empty() )
+ 	{
++		CSG_String	Lib_Name	= SG_File_Get_Name(m_pTool->Get_File_Name(), false);
++		CSG_String	File_Path	= SG_File_Make_Path(SG_File_Get_Path(m_pTool->Get_File_Name()), Lib_Name, "");
++
++		File_Path	= SG_File_Make_Path(File_Path, CSG_String::Format("%s_%02d", Lib_Name.c_str(), Get_Index()));
++
+ 		CSG_String	Description;
+ 		CSG_File	Stream;
+ 
+-		wxFileName	FileName(Get_File_Name());
+-		FileName.AppendDir	(FileName.GetName());
+-		FileName.SetName	(wxString::Format("%s_%02d", FileName.GetName().c_str(), Get_Index()));
+-
+-		FileName.SetExt		("html");
+-
+-		if( Stream.Open(FileName.GetFullPath().wc_str(), SG_FILE_R) && Stream.Read(Description, Stream.Length()) )
++		if( SG_File_Set_Extension(File_Path, "html") && Stream.Open(File_Path, SG_FILE_R) && Stream.Read(Description, Stream.Length()) )
+ 		{
+ 			return( Description.c_str() );
+ 		}
+ 
+-		FileName.SetExt		("htm");
+-
+-		if( Stream.Open(FileName.GetFullPath().wc_str(), SG_FILE_R) && Stream.Read(Description, Stream.Length()) )
++		if( SG_File_Set_Extension(File_Path, "htm" ) && Stream.Open(File_Path, SG_FILE_R) && Stream.Read(Description, Stream.Length()) )
+ 		{
+ 			return( Description.c_str() );
+ 		}
+--- src/saga_core/saga_gui/wksp_tool.h.orig	2017-05-24 13:15:53 UTC
++++ src/saga_core/saga_gui/wksp_tool.h
+@@ -103,8 +103,6 @@ class CWKSP_Tool : public CWKSP_Base_Item (public)
+ 	void							Set_Menu_ID			(int Menu_ID);
+ 	int								Get_Menu_ID			(void)			{	return( m_Menu_ID );	}
+ 
+-	wxString						Get_File_Name		(void);
+-
+ 	bool							is_Interactive		(void);
+ 	bool							is_Executing		(void);
+ 

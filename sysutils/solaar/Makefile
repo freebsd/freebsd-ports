@@ -1,8 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	solaar
-PORTVERSION=	g20170327
-PORTREVISION=	2
+# The latest release is from 2013 and there is not going to be a new
+# release for now:
+# https://github.com/pwr/Solaar/issues/288
+# https://github.com/pwr/Solaar/issues/296
+DISTVERSION=	0.9.2-221
+DISTVERSIONSUFFIX=	-g1a67b33
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -14,17 +18,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 # libhidapi.so is only loaded at runtime via ctypes (dlopen)
 RUN_DEPENDS=	${LOCALBASE}/lib/libhidapi.so:comms/hidapi
 
-USES=	python
-USE_PYTHON=	distutils autoplist concurrent optsuffix
-
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	pwr
 GH_PROJECT=	Solaar
-# The latest release is from 2013 and there is not going to be a new
-# release for now:
-# https://github.com/pwr/Solaar/issues/288
-# https://github.com/pwr/Solaar/issues/296
-GH_TAGNAME=	53ec751
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 NO_ARCH=	yes
 

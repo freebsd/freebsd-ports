@@ -1,5 +1,5 @@
---- utils/postdownload.orig	2012-11-03 03:56:52.000000000 -0500
-+++ utils/postdownload	2012-11-03 03:57:09.000000000 -0500
+--- utils/postdownload.orig	2009-03-01 17:37:04 UTC
++++ utils/postdownload
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh

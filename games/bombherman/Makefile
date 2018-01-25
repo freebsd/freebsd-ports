@@ -23,6 +23,7 @@ GH_PROJECT=	Bomb-her-man
 GH_TAGNAME=	8f5aa22
 
 USES=		autoreconf gmake pkgconfig
+USE_CXXSTD=	gnu++98
 USE_SDL=	sdl image mixer ttf
 USE_GNOME=	cairo intltool librsvg2
 GNU_CONFIGURE=	yes

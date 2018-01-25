@@ -2283,7 +2283,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/jaxen-1.1.3.jar
 %%DATADIR%%/lib/jayatana-1.2.4.jar
 %%DATADIR%%/lib/jdom.jar
-%%DATADIR%%/lib/jediterm-pty-2.5.jar
+%%DATADIR%%/lib/jediterm-pty-2.6.jar
 %%DATADIR%%/lib/jgoodies-forms.jar
 %%DATADIR%%/lib/jh.jar
 %%DATADIR%%/lib/jing.jar

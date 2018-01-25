@@ -1,28 +1,26 @@
 ======================================================================
 
 To use obfs4 as a Bridge Client, please add the following configuration
-to your '%%PREFIX%%/etc/tor/torrc' config file:
+to your 'torrc' config file:
 
-ClientTransportPlugin obfs4 exec %%PREFIX%%/bin/obfs4proxy
+  # Enable obfs4proxy as Client
+  ClientTransportPlugin obfs4 exec %%PREFIX%%/bin/obfs4proxy
 
-To enable this Pluggable Transport in your Tor Bridge, use the
-following configurations in your 'torrc' file:
+To use obfs4 as a Pluggable Transport in your Tor Bridge server, use the
+following configurations in your 'torrc' config file:
 
-# Use obfs4proxy to provide the obfuscator
-ServerTransportPlugin obfs4 exec %%PREFIX%%/bin/obfs4proxy managed
-
-# Enable Extended ORPort
-ExtORPort auto
-
-## (Optional) Listen on the specified IP:PORT for obfs4 connections
-## as opposed to picking a random port automatically
-# ServerTransportListenAddr obfs4 0.0.0.0:443
+  # Enable obfs4proxy as Server
+  ServerTransportPlugin obfs4 exec %%PREFIX%%/bin/obfs4proxy
+  # Enable Extended ORPort
+  ExtORPort auto
+  ## (Optional) Listen on the specified IP:PORT
+  # ServerTransportListenAddr obfs4 0.0.0.0:443
 
 obfs4proxy is backwards-compatible with obfs2 and obfs3 either in client or 
 server mode. If you want to use it like this, please adjust your 'torrc' 
 config file to fit your needs. It's compatible with ScrambleSuit in client mode.
 
-For more information, please consulte the official wiki page at 
+For more information, please consult the official wiki page at 
 https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports/obfs4proxy
 
 ======================================================================

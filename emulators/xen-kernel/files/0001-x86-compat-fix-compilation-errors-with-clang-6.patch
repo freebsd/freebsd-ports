@@ -1,0 +1,76 @@
+From 58e028648e3bc831b1b60a39b7f1661538fa6a34 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Tue, 23 Jan 2018 16:05:17 +0000
+Subject: [PATCH] x86/compat: fix compilation errors with clang 6
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+The following errors are generated when compiling Xen with clang 6:
+
+In file included from x86_64/asm-offsets.c:9:
+In file included from /root/src/xen/xen/include/xen/sched.h:8:
+In file included from /root/src/xen/xen/include/xen/shared.h:6:
+In file included from /root/src/xen/xen/include/compat/arch-x86/../xen.h:9:
+/root/src/xen/xen/include/compat/arch-x86/xen.h:10:10: error: the current #pragma pack aligment
+      value is modified in the included file [-Werror,-Wpragma-pack]
+#include "xen-x86_32.h"
+         ^
+/root/src/xen/xen/include/compat/arch-x86/xen-x86_32.h:40:9: note: previous '#pragma pack'
+      directive that modifies alignment is here
+#pragma pack()
+        ^
+In file included from x86_64/asm-offsets.c:9:
+In file included from /root/src/xen/xen/include/xen/sched.h:8:
+In file included from /root/src/xen/xen/include/xen/shared.h:6:
+/root/src/xen/xen/include/compat/arch-x86/../xen.h:9:10: error: the current #pragma pack aligment
+      value is modified in the included file [-Werror,-Wpragma-pack]
+#include "arch-x86/xen.h"
+         ^
+/root/src/xen/xen/include/compat/arch-x86/xen.h:71:9: note: previous '#pragma pack' directive that
+      modifies alignment is here
+#pragma pack()
+        ^
+2 errors generated.
+
+Fix this by using pragma push/pop in order to store the current pragma
+value in the compiler stack and later restoring it when using clang.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+---
+Cc: Andrew Cooper <andrew.cooper3@citrix.com>
+Cc: George Dunlap <George.Dunlap@eu.citrix.com>
+Cc: Ian Jackson <ian.jackson@eu.citrix.com>
+Cc: Jan Beulich <jbeulich@suse.com>
+Cc: Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>
+Cc: Stefano Stabellini <sstabellini@kernel.org>
+Cc: Tim Deegan <tim@xen.org>
+Cc: Wei Liu <wei.liu2@citrix.com>
+---
+Changes since v1:
+ - Only use push/pop with clang.
+---
+ xen/include/Makefile | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/xen/include/Makefile b/xen/include/Makefile
+index 268bc9d6ba..eeae942903 100644
+--- a/xen/include/Makefile
++++ b/xen/include/Makefile
+@@ -34,8 +34,13 @@ cppflags-y                := -include public/xen-compat.h
+ cppflags-$(CONFIG_X86)    += -m32
+ 
+ # 8-byte types are 4-byte aligned on x86_32 ...
++ifeq ($(clang),y)
++prefix-$(CONFIG_X86)      := \#pragma pack(push, 4)
++suffix-$(CONFIG_X86)      := \#pragma pack(pop)
++else
+ prefix-$(CONFIG_X86)      := \#pragma pack(4)
+ suffix-$(CONFIG_X86)      := \#pragma pack()
++endif
+ 
+ endif
+ 
+-- 
+2.15.1
+

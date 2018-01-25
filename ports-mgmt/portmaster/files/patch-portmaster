@@ -15,8 +15,8 @@
  
 -flavor_part	() { expr "$1" : ".*@" >/dev/null && echo "${1#*@}"; }
 -dir_part	() { echo "${1%%@*}"; }
-+target_part	() { [ -z "{$1##*:*}" ] && echo "${1#*:}" || echo install; }
-+flavor_part	() { local tmp="${1%%:*}"; [ -z "{$tmp##*@*}" ] && echo "${tmp#*@}"; }
++target_part	() { [ -z "${1##*:*}" ] && echo "${1#*:}" || echo install; }
++flavor_part	() { local tmp="${1%%:*}"; [ -z "${tmp##*@*}" ] && echo "${tmp#*@}"; }
 +dir_part	() { local tmp="${1%%:*}"; echo "${tmp%%@*}"; }
  export_flavor	() { local flavor="$1"; if [ "$FLAVOR" != "$flavor" ]; then
  			pm_v "===>>> Setting FLAVOR to '$flavor' (was '$FLAVOR')";
@@ -99,21 +99,25 @@
  			fi
  			for glob in $conflicts; do
  				confl_p=`pkg query -g "%n-%v" $glob 2>/dev/null`
-@@ -2498,7 +2499,8 @@ dependency_check () {
+@@ -2498,7 +2499,11 @@ dependency_check () {
  			check_for_updates $iport $origin || fail 'Update failed'
  		else
  			check_interactive $origin || continue
 -			update_port $origin
-+			[ "$make_target" = "install" ] && make_target=""
-+			update_port $origin${make_target:+:$make_target}
++			if [ "$make_target" != "install" ]; then
++				[ -z "$PM_FIRST_PASS" ] && post_clean_l="$post_clean_l $origin"
++				origin="$origin:$make_target"
++			fi
++			update_port "$origin"
  		fi
  	done
  	[ -n "$PM_FIRST_PASS" ] && unset doing_dep_check
-@@ -3029,8 +3031,11 @@ no_valid_port () {
+@@ -3029,8 +3034,12 @@ no_valid_port () {
  	echo "===>>> Try $progname --help" ; echo '' ; safe_exit 1
  }
  
 +make_target=$(target_part "$1")
++post_clean_l=""
 +
  # Figure out what we are going to be working on
  if [ -z "$REPLACE_ORIGIN" ]; then
@@ -121,7 +125,7 @@
  	export_flavor $(flavor_part $portdir)
  	[ -n "$portdir" ] && { argv=$portdir ; unset portdir; }
  	argv=${argv:-$1} ; argv=${argv%/} ; argv=`globstrip $argv`
-@@ -3061,6 +3066,8 @@ if [ -z "$REPLACE_ORIGIN" ]; then
+@@ -3061,6 +3070,8 @@ if [ -z "$REPLACE_ORIGIN" ]; then
  		unset glob_dirs
  	fi
  	unset argv
@@ -130,7 +134,7 @@
  else
  	portdir="${1#$pd/}" ; portdir="${portdir%/}"
  	export_flavor=$(flavor_part $portdir)
-@@ -3234,6 +3241,9 @@ elif [ -n "$FETCH_ONLY" -a -n "$PM_PACKAGES" ]; then
+@@ -3234,6 +3245,9 @@ elif [ -n "$FETCH_ONLY" -a -n "$PM_PACKAGES" ]; then
  	update_pm_nu $portdir
  fi
  
@@ -140,7 +144,7 @@
  # Do these things first time through
  if [ -z "$PM_INDEX_ONLY" -a -z "$PM_BUILDING" -a -z "$SHOW_WORK" -a -z "$NO_ACTION" ]; then
  	# Do not start this in the background until we are sure we are going to proceed
-@@ -3639,12 +3649,18 @@ pkg_flavor () {
+@@ -3639,12 +3653,18 @@ pkg_flavor () {
  	if [ -n "$HIDE_BUILD" ] && [ -n "$(pm_make -V LICENSE)" ]; then
  		pm_make extract ask-license || fail "make extract ask-license failed for $portdir"
  	fi
@@ -159,3 +163,18 @@
  else
  	[ -z "$local_package" ] && {
  		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.txz failed"; }
+@@ -3876,9 +3896,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
+ fi
+ 
+ if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
+-#	export_flavor $(flavor_part $portdir)
++	for dir in $post_clean_l; do
++		pm_v "===>>> Running 'make clean' for special build dependency $dir"
++		(FLAVOR=$(flavor_part $portdir) pm_make_s -C "$pd/$dir" clean NOCLEANDEPENDS=ncd2 >/dev/null)&
++	done
+ 	pm_v "===>>> Running 'make clean' in the background"
+-	(pm_make_s clean NOCLEANDEPENDS=ncd2 >/dev/null)&
++	(FLAVOR=$(flavor_part $portdir) pm_make_s clean NOCLEANDEPENDS=ncd2 >/dev/null)&
+ 	pm_v
+ fi
+ if [ -n "$ro_opd" ]; then

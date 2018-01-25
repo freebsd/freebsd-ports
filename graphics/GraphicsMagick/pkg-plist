@@ -98,7 +98,7 @@ lib/libGraphicsMagick++.so.12.3.1
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.so
 lib/libGraphicsMagick.so.3
-lib/libGraphicsMagick.so.3.17.1
+lib/libGraphicsMagick.so.3.17.2
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.so
 lib/libGraphicsMagickWand.so.2
@@ -149,6 +149,7 @@ man/man5/quantize.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2014.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2015.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2016.html
+%%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2017.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Changes.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Copyright.html

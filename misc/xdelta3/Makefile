@@ -14,6 +14,7 @@ COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 LICENSE=	GPLv2+
 
 USES=		autoreconf gmake
+USE_CXXSTD=	gnu++98
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jmacd

@@ -1,4 +1,4 @@
---- beadm.orig	2017-01-05 23:47:29 UTC
+--- beadm.orig	2017-01-13 23:25:44 UTC
 +++ beadm
 @@ -128,6 +128,24 @@ __be_new() { # 1=SOURCE 2=TARGET
    unset NAME_NEW
@@ -88,12 +88,39 @@
              USED              = __normalize($2)
              USEDBYDATASET     = __normalize($3)
              USEDBYSNAPSHOTS   = __normalize($4)
-@@ -607,7 +607,7 @@ EOF
+@@ -492,6 +540,7 @@ case ${1} in
+         fi
+       fi
+       # do not change root (/) mounted boot environment mountpoint
++      HAVE_ZFSBE=0
+       if [ "${ROOTFS}" != "${POOL}/${BEDS}/${2}" ]
+       then
+         TMPMNT=$( mktemp -d -t BE-${2} )
+@@ -519,6 +568,9 @@ EOF
+         else
+           TMPMNT=${MOUNT}
+         fi
++        if [ -f ${TMPMNT}/etc/rc.d/zfsbe ]; then
++          HAVE_ZFSBE=1
++        fi
+         if [ -f /boot/zfs/zpool.cache ]
+         then
+           cp /boot/zfs/zpool.cache ${TMPMNT}/boot/zfs/zpool.cache
+@@ -555,11 +607,16 @@ EOF
+           zfs set canmount=noauto ${NAME}
+         done
+     # enable automatic mount for active boot environment and promote it
++    if [ ${HAVE_ZFSBE} -eq 1 ]; then
++      ZFSBE_CANMOUNT=noauto
++    else
++      ZFSBE_CANMOUNT=on
++    fi
+     echo "${ZFS_LIST}" \
        | grep -E "^${POOL}/${BEDS}/${2}(/|$)" \
        | while read NAME
          do
 -          zfs set canmount=on ${NAME}
-+          zfs set canmount=noauto ${NAME}
++          zfs set canmount=${ZFSBE_CANMOUNT} ${NAME}
            while __be_clone ${NAME}
            do
              zfs promote ${NAME}

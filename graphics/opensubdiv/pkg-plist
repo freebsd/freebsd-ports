@@ -628,7 +628,7 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/files.html
-%%PORTDOCS%%%%DOCSDIR%%/doxy_html/files.js
+%%PORTDOCS%%%%DOCSDIR%%/doxy_html/files_dup.js
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/folderclosed.png
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions.html
@@ -712,7 +712,7 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/namespacemembers_func.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/namespacemembers_type.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/namespaces.html
-%%PORTDOCS%%%%DOCSDIR%%/doxy_html/namespaces.js
+%%PORTDOCS%%%%DOCSDIR%%/doxy_html/namespaces_dup.js
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/nav_f.png
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/nav_g.png
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/nav_h.png

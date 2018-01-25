@@ -137,7 +137,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/jcip-annotations.jar
 %%IDEA_HOME%%/lib/jdkAnnotations.jar
 %%IDEA_HOME%%/lib/jdom.jar
-%%IDEA_HOME%%/lib/jediterm-pty-2.5.jar
+%%IDEA_HOME%%/lib/jediterm-pty-2.6.jar
 %%IDEA_HOME%%/lib/jgoodies-common-1.2.1.jar
 %%IDEA_HOME%%/lib/jgoodies-forms.jar
 %%IDEA_HOME%%/lib/jgoodies-looks-2.4.2.jar

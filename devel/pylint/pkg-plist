@@ -414,6 +414,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/inconsistent_mro.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/inconsistent_mro.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/inconsistent_returns.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/inconsistent_returns.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/inconsistent_returns.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/indexing_exception.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/indexing_exception.rc

@@ -4,7 +4,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -39,10 +39,12 @@ GNOMEHELP_DESC=	Build Ekiga help files
 #OPTIONS_GROUP_EXP=	KDE KAB GSTREAMER XCAP LOUDMOUTH
 EXP_DESC=	Experimental features
 KDE_DESC=	KDE 4 support
-KAB_DESC=	KAddressBook support (implies KDE option)
+KAB_DESC=	KAddressBook support
 GSTREAMER_DESC=	Gstreamer support
 XCAP_DESC=	Remote contact storage via HTTP in xml format
 LOUDMOUTH_DESC=	XMPP (jabber) support
+
+KAB_IMPLIES=	KDE
 
 # Note that h.323 support is enabled when opal is build with it.
 

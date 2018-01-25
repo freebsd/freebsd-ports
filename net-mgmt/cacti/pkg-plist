@@ -1098,6 +1098,7 @@
 %%CACTIDIR%%/install/upgrades/1_1_20.php
 %%CACTIDIR%%/install/upgrades/1_1_26.php
 %%CACTIDIR%%/install/upgrades/1_1_28.php
+%%CACTIDIR%%/install/upgrades/1_1_31.php
 %%CACTIDIR%%/install/upgrades/index.php
 %%CACTIDIR%%/lib/aggregate.php
 %%CACTIDIR%%/lib/api_aggregate.php
@@ -1182,7 +1183,6 @@
 %%CACTIDIR%%/poller_boost.php
 %%CACTIDIR%%/poller_commands.php
 %%CACTIDIR%%/poller_dsstats.php
-%%CACTIDIR%%/poller_export.php
 %%CACTIDIR%%/poller_maintenance.php
 %%CACTIDIR%%/poller_realtime.php
 %%CACTIDIR%%/poller_recovery.php

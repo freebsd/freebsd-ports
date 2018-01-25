@@ -1,0 +1,4 @@
+This gem is a port of Perl's Data::Faker library that generates fake data.
+It is used to easily generate fake data: names, addresses, phone numbers, etc.
+
+WWW: https://github.com/stympy/faker

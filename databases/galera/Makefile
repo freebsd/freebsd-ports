@@ -4,6 +4,7 @@
 PORTNAME=	galera
 PORTVERSION?=	25.3.22
 DISTVERSIONPREFIX?=	release_
+ORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	devel@galeracluster.com

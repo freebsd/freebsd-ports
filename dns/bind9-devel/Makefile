@@ -31,8 +31,8 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.0a0.2018.01.16
-HASH=		3d2a6c9
+ISCVERSION=	9.13.0a0.2018.01.22
+HASH=		8a4ce20
 
 USES=	cpe libedit
 
@@ -54,11 +54,11 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS=	bind99 bind910 bind9-devel
+CONFLICTS=	bind99 bind910 bind911 bind912
 
 .if defined(BIND_TOOLS_SLAVE)
 CONFIGURE_ARGS+=	--disable-shared
-CONFLICTS+=		bind911
+CONFLICTS+=		bind9-devel
 .else
 USE_RC_SUBR=	named
 SUB_FILES=	pkg-message named.conf

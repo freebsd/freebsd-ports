@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.7.20
-PORTREVISION=	2
+PORTVERSION=	5.7.21
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.7
 PKGNAMESUFFIX?=	57-server
@@ -157,7 +156,7 @@ post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
 	# issue 220865: MySQL developers forgot that FreeBSD != Linux
 	@${REINPLACE_CMD} -e 's|%%FREEBSD_LOCAL_LIB%%|${LOCALBASE}/lib|g' \
-	    ${WRKSRC}/cmake/plugin.cmake
+	    ${WRKSRC}/configure.cmake
 
 .if !defined(CLIENT_ONLY)
 post-install:

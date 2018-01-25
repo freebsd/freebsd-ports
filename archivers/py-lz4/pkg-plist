@@ -9,6 +9,9 @@
 %%PYTHON_SITELIBDIR%%/lz4/frame/__init__.py
 %%PYTHON_SITELIBDIR%%/lz4/frame/__init__.pyc
 %%PYTHON_SITELIBDIR%%/lz4/frame/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lz4/frame/_compression.py
+%%PYTHON_SITELIBDIR%%/lz4/frame/_compression.pyc
+%%PYTHON_SITELIBDIR%%/lz4/frame/_compression.pyo
 %%PYTHON_SITELIBDIR%%/lz4/frame/_frame.so
 %%PYTHON_SITELIBDIR%%/lz4/version.py
 %%PYTHON_SITELIBDIR%%/lz4/version.pyc

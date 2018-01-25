@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-client
-PORTVERSION=	0.9.13
-DISTVERSIONSUFFIX=	-incubating
+DISTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
 		http://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo
-DISTFILES=	repository-${PORTVERSION}${EXTRACT_SUFX}:repo
+DISTFILES=	repository-${DISTVERSION}${EXTRACT_SUFX}:repo
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -24,7 +24,6 @@ JAVA_VERSION=	1.8+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
-GH_PROJECT=	incubator-guacamole-client
 
 MVN=		mvn
 MVN_ARGS=	package -Duser.home=${WRKDIR}
@@ -32,20 +31,22 @@ NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		MK_LINK SERVER TOMCAT
-OPTIONS_DEFAULT=	MK_LINK SERVER TOMCAT
+OPTIONS_DEFINE=		SERVER TOMCAT
+OPTIONS_DEFAULT=	SERVER TOMCAT
 OPTIONS_SUB=		yes
 
-MK_LINK_DESC=		Make sybolic links
 SERVER_DESC=		Include Guacamole Server
 TOMCAT_DESC=		Use Tomcat as your servlet
 
 TOMCAT_RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-8.0/bin/bootstrap.jar:www/tomcat8
 SERVER_RUN_DEPENDS=	guacd:net/guacamole-server
 
-AUTH_EXTENSION=	duo cas header ldap noauth
+AUTH_EXTENSION=	cas duo header ldap noauth openid
 
-.include <bsd.port.pre.mk>
+post-patch:
+		@${REINPLACE_CMD} 's|/etc/guacamole|${ETCDIR}| ; \
+			s|"/etc"|"${ETCDIR:S|/${PORTNAME}||}"|' \
+			${WRKSRC}/guacamole-ext/src/main/java/org/apache/guacamole/environment/LocalEnvironment.java
 
 do-build:
 		cd ${WRKSRC} && ${MVN} ${MVN_ARGS}
@@ -66,13 +67,9 @@ do-install:
 		${INSTALL_DATA} ${FILESDIR}/logback.xml.sample ${STAGEDIR}${ETCDIR}/
 		${INSTALL_DATA} ${FILESDIR}/guacamole.properties.sample ${STAGEDIR}${ETCDIR}/
 
-do-install-MK_LINK-on:
-		@${MKDIR} ${STAGEDIR}/root
-		${RLN} ${STAGEDIR}/${ETCDIR} ${STAGEDIR}/root/.guacamole
-.if ${PORT_OPTIONS:MTOMCAT}
+do-install-TOMCAT-on:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/apache-tomcat-8.0/webapps
 		${RLN} ${STAGEDIR}${DATADIR}/guacamole.war \
 			${STAGEDIR}${PREFIX}/apache-tomcat-8.0/webapps
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

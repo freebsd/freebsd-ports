@@ -19,6 +19,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/Devel/MAT/Tool/IO.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Identify.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Inrefs.pm
+%%SITE_ARCH%%/Devel/MAT/Tool/Outrefs.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Reachability.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Roots.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Show.pm
@@ -76,6 +77,7 @@ bin/pmat-list-orphans
 %%PERL5_MAN3%%/Devel::MAT::Tool::IO.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Identify.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Inrefs.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Outrefs.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Reachability.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Roots.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Show.3.gz

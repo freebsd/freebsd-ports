@@ -17,6 +17,7 @@ LIB_DEPENDS+=	libpng.so:graphics/png\
 		libexpat.so:textproc/expat2
 
 USES=		compiler gmake iconv jpeg pkgconfig tar:bzip2
+USE_CXXSTD=	gnu++98
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GNOME=	gtk20 pangox-compat

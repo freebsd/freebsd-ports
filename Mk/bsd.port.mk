@@ -757,7 +757,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${WRKDIR}, then point EXTRA_PATCHES to them.
 #				  The patches specified by this variable will be
 #				  applied after the normal distribution patches but
-#				  before those in ${PATCHDIR}.
+#				  before those in ${PATCHDIR}.  This can also contain
+#				  directories, all the files named patch-* in those directories
+#				  will be applied.
 # EXTRA_PATCH_TREE - where to find extra 'out-of-tree' patches
 #				  Points to a directory hierarchy with the same layout
 #				  as the ports tree, where local patches can be found.
@@ -1628,7 +1630,8 @@ QA_ENV+=		STAGEDIR=${STAGEDIR} \
 				PKGBASE=${PKGBASE} \
 				PORTNAME=${PORTNAME} \
 				NO_ARCH=${NO_ARCH} \
-				"NO_ARCH_IGNORE=${NO_ARCH_IGNORE}"
+				"NO_ARCH_IGNORE=${NO_ARCH_IGNORE}" \
+				USE_RUBY=${USE_RUBY}
 .if !empty(USES:Mssl)
 QA_ENV+=		USESSSL=yes
 .endif
@@ -4041,7 +4044,8 @@ DEPENDS-LIST= \
 			dp_PKGNAME="${PKGNAME}" \
 			dp_PKG_INFO="${PKG_INFO}" \
 			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
-			${SH} ${SCRIPTSDIR}/depends-list.sh
+			${SH} ${SCRIPTSDIR}/depends-list.sh \
+			${DEPENDS_SHOW_FLAVOR:D-f}
 
 ALL-DEPENDS-LIST=			${DEPENDS-LIST} -r ${_UNIFIED_DEPENDS:Q}
 MISSING-DEPENDS-LIST=		${DEPENDS-LIST} -m ${_UNIFIED_DEPENDS:Q}

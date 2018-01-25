@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	2018
+PORTVERSION=	2018.2
 CATEGORIES=	devel
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
 
 LICENSE=	APACHE20
+
+ONLY_FOR_ARCHS=		amd64 armv6 i386
+ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
+
+USES=	compiler gmake tar:tgz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	01org
@@ -23,11 +28,7 @@ SUB_LIST=	prefix="${PREFIX}" \
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
-ONLY_FOR_ARCHS=		amd64 armv6 i386
-ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
-
 USE_LDCONFIG=	yes
-USES=	compiler gmake tar:tgz
 ALL_TARGET=	default
 
 CC_BASENAME=	${CC:C,^.*/,,}

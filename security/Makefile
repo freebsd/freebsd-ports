@@ -294,6 +294,7 @@
     SUBDIR += kdbx-viewer
     SUBDIR += kedpm
     SUBDIR += keepass
+    SUBDIR += keepass-plugin-keepassrpc
     SUBDIR += keepassx
     SUBDIR += keepassx-devel
     SUBDIR += keepassx2
@@ -409,6 +410,7 @@
     SUBDIR += metasploit
     SUBDIR += mhash
     SUBDIR += mindterm-binary
+    SUBDIR += minisign
     SUBDIR += monkeysphere
     SUBDIR += morphis
     SUBDIR += munge
@@ -837,6 +839,7 @@
     SUBDIR += pidgin-otr
     SUBDIR += pinentry
     SUBDIR += pinentry-curses
+    SUBDIR += pinentry-fltk
     SUBDIR += pinentry-gnome3
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt4
@@ -914,6 +917,7 @@
     SUBDIR += py-hkdf
     SUBDIR += py-htpasswd
     SUBDIR += py-itsdangerous
+    SUBDIR += py-josepy
     SUBDIR += py-kerberos
     SUBDIR += py-keyczar
     SUBDIR += py-keyring
@@ -946,6 +950,7 @@
     SUBDIR += py-pyaes
     SUBDIR += py-pyaff4
     SUBDIR += py-pyaxo
+    SUBDIR += py-pyblake2
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptodome

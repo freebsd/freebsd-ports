@@ -1,0 +1,22 @@
+commit 25a066def7cddd0f9178d07531b1f18703308db0
+Author: Alan Somers <asomers@gmail.com>
+Date:   Wed Sep 6 09:17:00 2017 -0600
+
+    Fix indentation in man page
+
+--- beadm.1.orig	2017-01-13 23:25:44 UTC
++++ beadm.1
+@@ -87,9 +87,11 @@ If the -e param is specified, the new environment will
+ Creates a snapshot of the existing boot environment named
+ .Ar beName .
+ .Pp
+-.It
+-.Ic destroy Op Fl F
++.It Xo
++.Ic destroy
++.Op Fl F
+ .Ao Ar beName | beName@snapshot Ac
++.Xc
+ .Pp
+ Destroys the given
+ .Ar beName

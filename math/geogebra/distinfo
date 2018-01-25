@@ -1,5 +1,7 @@
-TIMESTAMP = 1505636042
-SHA256 (GeoGebra-Linux-Portable-5-0-387-0.tar.bz2) = 86b634159e05566a1f4d405875c3251ff814e0c220b75296e272863bdf50b365
-SIZE (GeoGebra-Linux-Portable-5-0-387-0.tar.bz2) = 140214739
+TIMESTAMP = 1515695749
+SHA256 (GeoGebra-Linux-Portable-5-0-414-0.tar.bz2) = efd4879762d1da2023c5142a98698e61071ea7c2be4783597230a7d67a186b08
+SIZE (GeoGebra-Linux-Portable-5-0-414-0.tar.bz2) = 136418363
 SHA256 (geogebra.png) = e97122d77209e2c235f5afcee8f783c1e933d14062851ac73a4ed7a6520c5614
 SIZE (geogebra.png) = 4018
+SHA256 (geogebra-logo.svg) = 55ded6b5ec9ad382494f858d8ab5def0ed6c7d529481cd212863b2edde3b5e07
+SIZE (geogebra-logo.svg) = 6523

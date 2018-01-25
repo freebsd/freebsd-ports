@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fllog
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/${PORTNAME}
 

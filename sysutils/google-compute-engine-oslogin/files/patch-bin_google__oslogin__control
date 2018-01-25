@@ -1,0 +1,51 @@
+--- bin/google_oslogin_control.orig	2017-12-13 23:47:59 UTC
++++ bin/google_oslogin_control
+@@ -65,29 +65,31 @@ overwrite_file() {
+ 
+ remove_from_config() {
+   config=$1
+-  sed -i "/${added_comment}/,+1d" ${config}.new
++  gsed -i "/${added_comment}/,+1d" ${config}.new
+ }
+ 
+ remove_from_nss_config() {
+-  sed -i '/^passwd:/ s/ oslogin//' ${nss_config}.new
++  gsed -i '/^passwd:/ s/ oslogin//' ${nss_config}.new
+ }
+ 
+ add_to_sshd_config() {
+   remove_from_config ${sshd_config}
+-  sed -i "\$a${added_comment}\n${sshd_command}" ${sshd_config}.new
+-  sed -i "\$a${added_comment}\n${sshd_user}" ${sshd_config}.new
++  gsed -i "\$a${added_comment}\n${sshd_command}" ${sshd_config}.new
++  gsed -i "\$a${added_comment}\n${sshd_user}" ${sshd_config}.new
+ }
+ 
+ add_to_nss_config() {
+   remove_from_nss_config
+-  sed -i '/^passwd:/ s/$/ oslogin/' ${nss_config}.new
++  gsed -i '/^passwd:/ s/$/ oslogin/' ${nss_config}.new
++  # Replace compat by files (as compat cannot be used with other sources)
++  gsed -i '/^passwd:/ s/compat/files/' ${nss_config}.new
+ }
+ 
+ add_to_pam_config() {
+   remove_from_config ${pam_config}
+-  sed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_admin}" ${pam_config}.new
+-  sed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_login}" ${pam_config}.new
+-  sed -i "/pam_loginuid.so/ a${added_comment}\n${pam_homedir}" ${pam_config}.new
++  gsed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_admin}" ${pam_config}.new
++  gsed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_login}" ${pam_config}.new
++  gsed -i "/session.*pam_permit.so/ a${added_comment}\n${pam_homedir}" ${pam_config}.new
+ }
+ 
+ restart_service() {
+@@ -100,7 +102,7 @@ restart_service() {
+     fi
+   fi
+   if which service > /dev/null 2>&1; then
+-    if service --status-all | grep -Fq ${service}; then
++    if service -e | grep -Fq ${service}; then
+       echo "Restarting ${service}."
+       service ${service} restart
+       return $?

@@ -161,6 +161,7 @@
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder
     SUBDIR += sayaka
+    SUBDIR += scudcloud
     SUBDIR += sendxmpp
     SUBDIR += skype
     SUBDIR += skype-devel

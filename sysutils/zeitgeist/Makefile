@@ -4,6 +4,7 @@
 
 PORTNAME=	zeitgeist
 PORTVERSION=	0.9.16
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/+download/
 
@@ -20,9 +21,10 @@ BUILD_DEPENDS=	valac:lang/vala \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus@${PY_FLAVOR}
 
-USE_GNOME=	intlhack glib20 introspection:build
-GNU_CONFIGURE=	yes
 USES=		gmake gettext pathfix python:2 pkgconfig libtool sqlite tar:xz
+USE_GNOME=	intlhack glib20 introspection:build
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip

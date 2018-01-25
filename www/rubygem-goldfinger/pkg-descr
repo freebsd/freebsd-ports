@@ -3,4 +3,4 @@ application/jrd+json responses. It raises Goldfinger::NotFoundError on failure
 to fetch the Webfinger or XRD data, or Goldfinger::SSLError if something is
 wrong with the HTTPS connection.
 
-WWW: https://github.com/Gargron/goldfinger/
+WWW: https://github.com/tootsuite/goldfinger

@@ -2,6 +2,7 @@
 
 PORTNAME=	sc3-plugins
 DISTVERSION=	3.8.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -13,7 +13,7 @@ OPTIONS_DEFINE=		EXAMPLES EXS HISTOGRAM OMNI SCTP SOCKETS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 EXS_DESC=	Enable ICSC async socket support
-HISTOGRAM_DESC=	Enable optional histogram output
+HISTOGRAM_DESC=	Enable histogram output
 OMNI_DESC=	Enable OMNI tests
 SCTP_DESC=	Enable SCTP support
 SOCKETS_DESC=	Enable Unix Domain socket support

@@ -73,6 +73,8 @@ man/man1/aubiotrack.1.gz
 %%DOXYGEN%%share/doc/aubio/html/annotated.html
 %%DOXYGEN%%share/doc/aubio/html/aubio_8h.html
 %%DOXYGEN%%share/doc/aubio/html/aubio_8h_source.html
+%%DOXYGEN%%share/doc/aubio/html/awhitening_8h.html
+%%DOXYGEN%%share/doc/aubio/html/awhitening_8h_source.html
 %%DOXYGEN%%share/doc/aubio/html/bc_s.png
 %%DOXYGEN%%share/doc/aubio/html/bdwn.png
 %%DOXYGEN%%share/doc/aubio/html/biquad_8h.html

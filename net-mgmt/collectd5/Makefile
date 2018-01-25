@@ -264,7 +264,6 @@ TSDB_CONFIGURE_ENABLE=		write_tsdb
 
 VARNISH_LIB_DEPENDS=		libvarnishapi.so:www/varnish4
 VARNISH_CONFIGURE_ENABLE=	varnish
-VARNISH_CONFIGURE_WITH=		libvarnish=${LOCALBASE}
 
 VIRT_IMPLIES=			XML
 VIRT_LIB_DEPENDS=		libvirt.so:devel/libvirt \

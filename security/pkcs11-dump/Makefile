@@ -9,7 +9,9 @@ MASTER_SITES=	https://github.com/alonbl/pkcs11-dump/releases/download/pkcs11-dum
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Allow dumping PKCS\#11 token content
 
-USES=	tar:bzip2 ssl
+LICENSE=	GPLv2
+
+USES=		tar:bzip2 ssl dos2unix
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \

@@ -121,7 +121,6 @@ include/mysql/typelib.h
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.so
 lib/mysql/libmysqlclient.so.20
-lib/mysql/libmysqlservices.a
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.20

@@ -31,7 +31,6 @@ include/crypto_verify_8.h
 include/direntry.h
 include/hasasmvolatilememory.h
 include/hasipv6.h
-include/order.h
 include/randombytes.h
 include/uint32_pack.h
 include/uint32_pack_big.h

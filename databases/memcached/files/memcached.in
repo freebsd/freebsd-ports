@@ -14,6 +14,8 @@
 #				Default is empty "".
 # memcached_user (user):	Set user to run memcached.
 #				Default is "nobody".
+# memcached_group (group):	Set group to run memcached.
+#				Default is "nobody".
 # memcached_profiles (str):     Set to "" by default.
 #                               Define your profiles here.
 # memcached_post_start (str):   Set extra commands that should be executed after memcached was successfully
@@ -30,6 +32,7 @@ pidfile="${_piddir}/memcached.pid"
 
 : ${memcached_enable="NO"}
 : ${memcached_user="nobody"}
+: ${memcached_group="nobody"}
 
 load_rc_config ${name}
 
@@ -39,6 +42,7 @@ if [ -n "$2" ]; then
 		pidfile="${_piddir}/memcached.${profile}.pid"
 		eval memcached_enable="\${memcached_${profile}_enable:-${memcached_enable}}"
                 eval memcached_user="\${memcached_${profile}_user:-${memcached_user}}"
+                eval memcached_group="\${memcached_${profile}_group:-${memcached_group}}"
 		eval memcached_flags="\${memcached_${profile}_flags:-${memcached_flags}}"
 		eval memcached_post_start="\${memcached_${profile}_post_start:-${memcached_post_start}}"
 	else
@@ -103,9 +107,8 @@ memcached_poststop()
 }
 
 command=%%PREFIX%%/bin/memcached
-command_args="-d -u ${memcached_user} -P ${pidfile} "
+command_args="-d -P ${pidfile} "
 
-memcached_group=`id -gn $memcached_user`
 start_precmd="install -d -o $memcached_user -g $memcached_group -m 755 $_piddir"
 start_postcmd="${name}_poststart"
 stop_postcmd="${name}_poststop"

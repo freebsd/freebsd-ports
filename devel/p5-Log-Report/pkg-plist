@@ -36,6 +36,7 @@
 %%SITE_PERL%%/Log/Report/Message.pod
 %%SITE_PERL%%/Log/Report/Translator.pm
 %%SITE_PERL%%/Log/Report/Translator.pod
+%%SITE_PERL%%/Log/Report/messages/first-domain.utf-8.po
 %%SITE_PERL%%/Log/Report/messages/log-report.utf-8.po
 %%SITE_PERL%%/Log/Report/messages/log-report/nl_NL.po
 %%SITE_PERL%%/MojoX/Log/Report.pm

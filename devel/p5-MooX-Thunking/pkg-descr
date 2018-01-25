@@ -1,0 +1,6 @@
+This is a Moo extension. It allows another value for the is parameter to "has"
+in Moo: "thunked". If used, this will allow you to transparently provide either
+a real value for the attribute, or a "CodeLike" in Types::TypeTiny that when
+called will return such a real value.
+
+WWW: http://search.cpan.org/dist/MooX-Thunking/

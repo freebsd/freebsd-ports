@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.387.0
+PORTVERSION=	5.0.414.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
+		https://static.geogebra.org/images/ \
 		http://freebsd.uzsolt.hu/src/
 DISTNAME=	GeoGebra-Linux-Portable-${PORTVERSION:S/./-/g}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} geogebra.png
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} geogebra.png geogebra-logo.svg
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -40,6 +41,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKDIR}/geogebra.desktop ${STAGEDIR}${DESKTOPDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${DISTDIR}/geogebra.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps/geogebra.png
+	${INSTALL_DATA} ${DISTDIR}/geogebra-logo.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/geogebra.svg
 
 .include <bsd.port.mk>

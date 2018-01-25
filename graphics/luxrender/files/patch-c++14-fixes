@@ -1,0 +1,40 @@
+--- core/queryable/queryable.h.orig	2016-05-09 21:21:17 UTC
++++ core/queryable/queryable.h
+@@ -194,7 +194,7 @@ class LUX_EXPORT Queryable (public)
+ 	}
+ 	template<class T> friend void AddStringAttribute(T &object,
+ 		const std::string &name, const std::string &description,
+-		const boost::function<std::string (void)> &get, const boost::function<void (std::string)> set = NULL) {
++		const boost::function<std::string (void)> &get, const boost::function<void (std::string)> set = 0x0) {
+ 
+ 		AddAttrib<QueryableStringAttribute>(object, name, description, get, set);
+ 	}
+--- core/scheduler.cpp.orig	2016-05-09 21:21:17 UTC
++++ core/scheduler.cpp
+@@ -43,7 +43,7 @@ void NullTask(Range*){}
+ 
+ Scheduler::Scheduler(unsigned step)
+ {
+-	current_task = NULL;
++	current_task = 0x0;
+ 	default_step = step;
+ 	state = RUNNING;
+ 
+@@ -127,7 +127,7 @@ TaskType Scheduler::GetTask()
+ 		condition.wait(lock);
+ 
+ 	if(current_task == NullTask)
+-		return NULL;
++		return 0x0;
+ 
+ 	return current_task;
+ }
+@@ -152,7 +152,7 @@ bool Scheduler::EndTask(Thread* thread)
+ 
+ 	if(counter == 0)
+ 	{
+-		current_task = NULL;
++		current_task = 0x0;
+ 		condition.notify_all();
+ 	}
+ 	else

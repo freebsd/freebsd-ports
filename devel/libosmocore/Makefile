@@ -29,5 +29,7 @@ DOXYGEN_CONFIGURE_ENV_OFF=ac_cv_path_DOXYGEN=false
 
 post-patch:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
+	@${REINPLACE_CMD} -e '/#pragma GCC diagnostic/d' \
+		${WRKSRC}/src/application.c
 
 .include <bsd.port.mk>

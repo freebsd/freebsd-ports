@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.6.11
+PORTVERSION=	1.6.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -20,6 +20,7 @@ USES=		autoreconf libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 SUB_FILES=	geoipupdate.sh pkg-message
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"

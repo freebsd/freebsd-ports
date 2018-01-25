@@ -61,7 +61,7 @@ AS_ROOT_DESC=		Run spamd as root (recommended)
 
 DATABASE_DESC=		Optional user-config/bayes database backends
 
-GPG_DESC=		GnuPG (for sa-update, optional)
+GPG_DESC=		GnuPG (for sa-update)
 GNUPG_NONE_DESC=	Do not use GnuPG
 GNUPG_DESC=		GnuPG 1 (security/gnupg1)
 GNUPG2_DESC=		GnuPG 2 (security/gnupg)

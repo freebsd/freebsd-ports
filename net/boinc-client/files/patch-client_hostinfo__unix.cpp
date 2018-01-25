@@ -1,4 +1,4 @@
---- client/hostinfo_unix.cpp.orig	2018-01-14 16:39:30 UTC
+--- client/hostinfo_unix.cpp.orig	2018-01-14 10:07:52 UTC
 +++ client/hostinfo_unix.cpp
 @@ -164,7 +164,9 @@ extern "C" {
  // The following is intended to be true both on Linux

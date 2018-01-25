@@ -14,11 +14,6 @@ LICENSE_FILE=	${INSTALL_WRKSRC}/ss.h
 CONFLICTS=	heimdal-[0-9]*
 CONFLICTS+=	krb4-[0-9]*
 
-BROKEN_mips=		Does not build: expected declaration specifiers before size_t
-BROKEN_mips64=		Does not build: expected declaration specifiers before size_t
-BROKEN_powerpc64=	Does not build: expected declaration specifiers before size_t
-BROKEN_sparc64=		Does not build: expected declaration specifiers before size_t
-
 OPTIONS_EXCLUDE=	DOCS EXAMPLES IPV6 NLS
 CONFIGURE_ARGS=	--enable-elf-shlibs
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
@@ -31,7 +26,7 @@ FILESDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
 
 pre-build:
-	@(cd ${WRKSRC}/lib/ss && compile_et ss_err.et && \
+	(cd ${WRKSRC}/lib/ss && compile_et ss_err.et && \
 	${REINPLACE_CMD} -f ${FILESDIR}/fix-ss_err.h.sed ss_err.h)
 
 .include "${MASTERDIR}/Makefile"

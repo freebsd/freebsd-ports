@@ -1,4 +1,4 @@
---- scripts/mk_util.py.orig	2016-11-07 22:02:30 UTC
+--- scripts/mk_util.py.orig	2017-12-18 14:18:30 UTC
 +++ scripts/mk_util.py
 @@ -49,7 +49,7 @@ C_COMPILERS=['gcc', 'clang']
  CSC_COMPILERS=['csc', 'mcs']
@@ -9,12 +9,12 @@
  BUILD_DIR='build'
  REV_BUILD_DIR='..'
  SRC_DIR='src'
-@@ -2391,7 +2391,7 @@ def mk_config():
+@@ -2441,7 +2441,7 @@ def mk_config():
          check_ar()
          CXX = find_cxx_compiler()
          CC  = find_c_compiler()
 -        SLIBEXTRAFLAGS = ''
 +        SLIBEXTRAFLAGS = '%s -Wl,-soname,libz3.so.0' % LDFLAGS
+         EXE_EXT = ''
+         LIB_EXT = '.a'
          if GPROF:
-             CXXFLAGS = '%s -pg' % CXXFLAGS
-             LDFLAGS  = '%s -pg' % LDFLAGS

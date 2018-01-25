@@ -356,6 +356,7 @@
     SUBDIR += hs-svgcairo
     SUBDIR += hugin
     SUBDIR += icat
+    SUBDIR += icc-profiles-adobe-cs4
     SUBDIR += icc-profiles-basiccolor
     SUBDIR += icc-profiles-openicc
     SUBDIR += iccexamin
@@ -907,7 +908,6 @@
     SUBDIR += py-pyproj
     SUBDIR += py-qt4-svg
     SUBDIR += py-qt5-svg
-    SUBDIR += py-rabbyt
     SUBDIR += py-sane
     SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag
@@ -919,6 +919,7 @@
     SUBDIR += py-traitsui
     SUBDIR += py-wand
     SUBDIR += py-webcolors
+    SUBDIR += py-yaswfp
     SUBDIR += pygts
     SUBDIR += pymorph
     SUBDIR += pysvg

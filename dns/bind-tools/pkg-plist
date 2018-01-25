@@ -14,6 +14,7 @@ man/man1/mdig.1.gz
 man/man1/named-rrchecker.1.gz
 man/man1/nslookup.1.gz
 man/man1/nsupdate.1.gz
+man/man8/dnssec-cds.8.gz
 %%PYTHON%%man/man8/dnssec-checkds.8.gz
 %%PYTHON%%man/man8/dnssec-coverage.8.gz
 man/man8/dnssec-dsfromkey.8.gz
@@ -26,9 +27,9 @@ man/man8/dnssec-settime.8.gz
 man/man8/dnssec-signzone.8.gz
 man/man8/dnssec-verify.8.gz
 man/man8/genrandom.8.gz
-man/man8/isc-hmac-fixup.8.gz
 man/man8/named-journalprint.8.gz
 man/man8/nsec3hash.8.gz
+sbin/dnssec-cds
 %%PYTHON%%sbin/dnssec-checkds
 %%PYTHON%%sbin/dnssec-coverage
 sbin/dnssec-dsfromkey
@@ -41,6 +42,5 @@ sbin/dnssec-settime
 sbin/dnssec-signzone
 sbin/dnssec-verify
 sbin/genrandom
-sbin/isc-hmac-fixup
 sbin/named-journalprint
 sbin/nsec3hash

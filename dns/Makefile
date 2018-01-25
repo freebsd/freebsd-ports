@@ -187,6 +187,7 @@
     SUBDIR += py-pycares
     SUBDIR += py-pydnstable
     SUBDIR += py-pywdns
+    SUBDIR += py-tld
     SUBDIR += py-tldextract
     SUBDIR += radns
     SUBDIR += rbldnsd

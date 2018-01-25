@@ -34,5 +34,7 @@ INSTALL_TARGET=	install-strip
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|LTC_LTC_PKCS_1_V1_5|LTC_PKCS_1_V1_5|g' \
+	    ${WRKSRC}/src/stc-tomcrypt.c
 
 .include <bsd.port.mk>

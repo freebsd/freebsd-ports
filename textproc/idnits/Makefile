@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	idnits
-PORTVERSION=	2.15.00
+PORTVERSION=	2.15.01
 CATEGORIES=	textproc
 MASTER_SITES=	https://tools.ietf.org/tools/idnits/ \
 		LOCAL/sunpoet

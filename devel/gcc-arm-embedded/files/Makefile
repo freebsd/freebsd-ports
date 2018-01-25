@@ -13,7 +13,7 @@ WORLD_LIB=${LOCALBASE}
 LDFLAGS+=	-L${WORLD_LIB}/lib
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-MAKE_ARGS+=     CFLAGS="-Wno-error -fbracket-depth=512" CXXFLAGS="-Wno-error -fbracket-depth=512"
+MAKE_ARGS+=     CFLAGS="-Wno-error -fbracket-depth=512 -Wno-deprecated-register" CXXFLAGS="-Wno-error -fbracket-depth=512 -Wno-deprecated-register"
 .endif
 
 MISC_DOCS=	license.txt readme.txt release.txt

@@ -12,7 +12,7 @@ COMMENT=	Non-interactive ssh password auth tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf:env
+USES=		autoreconf
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sshpass \

@@ -9,7 +9,7 @@ src/core/k9tools.cpp:59:54: error: no viable conversion from 'bool'
      return false;
  #else
 -    bool res= KStandardDirs::findExe( _progName,NULL,false) !=NULL ;
-+    bool res= KStandardDirs::findExe( _progName,NULL, KStandardDirs::SearchOption::NoSearchOptions) !=NULL ;
++    bool res= KStandardDirs::findExe( _progName,NULL, KStandardDirs::NoSearchOptions) !=NULL ;
      if (_msg && !res)
          k9Dialogs::error(i18n("Error starting program %1").arg(_progName),i18n("Running program"));
      return res;

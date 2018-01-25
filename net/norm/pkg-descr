@@ -1,4 +1,6 @@
-This a port of NACK-Oriented Reliable Multicast (N.O.R.M.),
-as specified in RFC5740.
+This a port of NACK-Oriented Reliable Multicast (NORM) Transport Protocol
+implementation, as specified in RFC 5740.  This protocol can provide end-
+to-end reliable transport of bulk data objects or streams over generic IP
+multicast routing and forwarding services.
 
 WWW: http://www.nrl.navy.mil/itd/ncs/products/norm

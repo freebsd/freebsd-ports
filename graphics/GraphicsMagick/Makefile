@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.27a
+PORTVERSION=	1.3.28
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -18,8 +18,6 @@ OPTIONS_DEFAULT=FREETYPE JASPER JBIG JPEG LCMS2 OPENMP PNG TIFF WEBP WMF X11 XML
 DPS_DESC=	Display Ghostscript support
 Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16-bit (quality)
 TEST_DESC=	Run bundled self-tests after build
-
-PORTSCOUT=	skipv:1.3.27
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static \
@@ -66,8 +64,9 @@ TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WMF_CONFIGURE_WITH=	wmf
+X11_CONFIGURE_OFF=	ac_cv_lib_ICE_IceConnectionNumber=no
 X11_CONFIGURE_WITH=	x
-X11_USE=		XORG=x11,xext
+X11_USE=		XORG=ice,sm,x11,xext
 XML_CONFIGURE_WITH=	xml
 XML_USE=		GNOME=libxml2
 XML_USES=		gnome

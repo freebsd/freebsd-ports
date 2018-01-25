@@ -1,24 +1,21 @@
-diff --git examples/sshguard.conf.sample examples/sshguard.conf.sample
-index d881e51..87b7acc 100644
---- examples/sshguard.conf.sample
+--- examples/sshguard.conf.sample.orig	2017-12-06 22:18:20 UTC
 +++ examples/sshguard.conf.sample
-@@ -6,11 +6,13 @@
+@@ -6,10 +6,12 @@
  
  #### REQUIRED CONFIGURATION ####
  # Full path to backend executable (required, no default)
--#BACKEND="/usr/local/libexec/sshg-fw-hosts"
-+BACKEND="/usr/local/libexec/sshg-fw-null"
+-#BACKEND="/usr/local/libexec/sshg-fw-iptables"
++#BACKEND="/usr/local/libexec/sshg-fw-hosts"
 +#BACKEND="/usr/local/libexec/sshg-fw-ipfw"
 +#BACKEND="/usr/local/libexec/sshg-fw-pf"
  
- # Space-separated list of log files to monitor. Ignored if LOGREADER is set.
- # (optional, no default)
+ # Space-separated list of log files to monitor. (optional, no default)
 -#FILES="/var/log/auth.log /var/log/authlog /var/log/maillog"
 +FILES="/var/log/auth.log /var/log/maillog"
  
- # Shell command that provides logs on standard output. Takes precedence over
- # FILES. (optional, no default)
-@@ -36,12 +38,12 @@ DETECTION_TIME=1800
+ # Shell command that provides logs on standard output. (optional, no default)
+ # Example 1: ssh and sendmail from systemd journal:
+@@ -40,12 +42,12 @@ DETECTION_TIME=1800
  # !! Warning: These features may not work correctly with sandboxing. !!
  
  # Full path to PID file (optional, no default)

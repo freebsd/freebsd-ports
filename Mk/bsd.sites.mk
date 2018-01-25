@@ -860,8 +860,8 @@ MASTER_SITE_QMAIL+= \
 
 .if !defined(IGNORE_MASTER_SITE_QT)
 MASTER_SITE_QT+= \
-	http://download.qt-project.org/%SUBDIR%/ \
-	http://master.qt-project.org/%SUBDIR%/ \
+	https://download.qt.io/%SUBDIR%/ \
+	http://master.qt.io/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/download.qt-project.org/%SUBDIR%/ \
 	http://www.nic.funet.fi/pub/mirrors/download.qt-project.org/%SUBDIR%/ \
 	http://qtmirror.ics.com/pub/qtproject/%SUBDIR%/ \

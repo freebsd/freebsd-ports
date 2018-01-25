@@ -44,12 +44,6 @@ bin/wsrep_sst_mysqldump
 bin/wsrep_sst_rsync
 bin/wsrep_sst_xtrabackup
 bin/wsrep_sst_xtrabackup-v2
-@comment include/mysql/my_config.h
-include/mysql/my_global.h
-include/mysql/my_sys.h
-include/mysql/mysql_com.h
-include/mysql/mysql_version.h
-@comment include/mysql/mysqld_error.h
 include/mysql/server/private/embedded_priv.h
 @comment lib/mysql/libmariadb.so
 @comment lib/mysql/libmariadb.so.3

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wmweather+
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	SF/wmweatherplus/wmweather%2B/ \
 		SF/nemysisfreebsdp/misc/:icons

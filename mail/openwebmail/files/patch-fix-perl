@@ -69,7 +69,7 @@ diff -ruN openwebmail/shares/mailfilter.pl openwebmail-2.53_2/cgi-bin/openwebmai
                       }
                    }
 -                  if (!defined @{$r_attachments}) {
-+                  if (!@{$r_attachments}) {
++                  if (!ref{$r_attachments}) {
                       ($header, $body, $r_attachments)=ow::mailparse::parse_rfc822block(\$currmessage);
                    }
  
@@ -78,7 +78,7 @@ diff -ruN openwebmail/shares/mailfilter.pl openwebmail-2.53_2/cgi-bin/openwebmai
                       }
                    }
 -                  if (!defined @{$r_attachments}) {
-+                  if (!@{$r_attachments}) {
++                  if (!ref{$r_attachments}) {
                       ($header, $body, $r_attachments)=ow::mailparse::parse_rfc822block(\$currmessage);
                    }
                    # check attachments

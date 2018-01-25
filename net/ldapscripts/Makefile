@@ -19,12 +19,13 @@ RUN_DEPENDS=	ldapadd:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
 		ldapmodrdn:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
 		ldappasswd:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	SASL
 SASL_VARS=	OPENLDAP_FLAVOUR=-sasl WANT_OPENLDAP_SASL=yes
 
-NO_ARCH=	yes
-USE_OPENLDAP=	yes
 USES=		iconv tar:tgz
+USE_OPENLDAP=	yes
 LIBDIR=	${PREFIX}/lib/${PORTNAME}
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man \
 		ETCDIR=${ETCDIR}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tile38
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	databases
 
 MAINTAINER=	olevole@olevole.ru
@@ -11,9 +11,7 @@ COMMENT=	In-memory geolocation data store, spatial index, and realtime geofence
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go>=1.4:lang/go \
-		bash:shells/bash
-RUN_DEPENDS=	go>=1.4:lang/go \
+BUILD_DEPENDS=	go>=1.7:lang/go \
 		bash:shells/bash
 
 USES=		shebangfix

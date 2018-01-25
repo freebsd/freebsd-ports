@@ -1,19 +1,20 @@
---- src/servers.cpp.orig	2003-10-01 12:58:27.000000000 -0400
-+++ src/servers.cpp	2008-01-23 23:26:01.000000000 -0500
-@@ -2627,7 +2627,6 @@
-                                  &hostinfo,
-                                  &h_err);
+--- src/servers.cpp.orig	2003-10-01 16:58:27 UTC
++++ src/servers.cpp
+@@ -2283,7 +2283,7 @@ void *TCPServerThread(void *p)
+     server.sin_addr.s_addr = INADDR_ANY;
+     server.sin_port = htons(sp->ServerPort);
  
--
-         if (rc || (hostinfo == NULL)){
-             char* cp = new char[256];
-             memset(cp, 0, 256);
-@@ -3277,7 +3276,7 @@
+-    if (bind(s, (struct sockaddr *)&server, sizeof(server)) <  0) {
++    if (::bind(s, (struct sockaddr *)&server, sizeof(server)) <  0) {
+         perror("TCPServerThread bind error");
+         ShutDownServer = true;
+         return NULL;
+@@ -2382,7 +2382,7 @@ void *UDPServerThread(void *p)
+     server.sin_port = htons(UDP_Port) ;/* 0 = Use any available port       */
+     server.sin_addr.s_addr = INADDR_ANY;	/* Server's Internet Address    */
  
- //----------------------------------------------------------------------
- 
--inline string convertUpTime(int dTime)
-+string convertUpTime(int dTime)
- {
-     std::ostringstream ostr;
-     int x;
+-    if (bind(s, (struct sockaddr *)&server, sizeof(server)) < 0) {
++    if (::bind(s, (struct sockaddr *)&server, sizeof(server)) < 0) {
+         perror("Datagram socket bind error");
+         ShutDownServer = true;
+         return NULL;

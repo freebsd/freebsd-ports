@@ -2,7 +2,7 @@
 
 PORTNAME=	cgit
 PORTVERSION=	1.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		https://www.kernel.org/pub/software/scm/git/:git
@@ -15,10 +15,16 @@ COMMENT=	Fast, lightweight web frontend for Git repositories
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GIT_VERSION=	2.15.1
-USES=		cpe gmake iconv shebangfix ssl tar:xz
+TEST_DEPENDS=	msgfmt:devel/gettext-tools
+
+GIT_VERSION=	2.16.1
+USES=		cpe gmake iconv perl5 python:env shebangfix ssl tar:xz
 CPE_VENDOR=	lars_hjemli
-SHEBANG_FILES=	filters/html-converters/rst2html
+USE_PERL5=	test
+SHEBANG_FILES=	filters/email-gravatar.py \
+		filters/html-converters/md2html \
+		filters/html-converters/rst2html \
+		filters/syntax-highlighting.py
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

@@ -1,0 +1,25 @@
+%%SYSCOLORDIR%%/Adobe/CMYK/CoatedFOGRA27.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/CoatedFOGRA39.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/CoatedGRACoL2006.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/JapanColor2001Coated.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/JapanColor2001Uncoated.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/JapanColor2002Newspaper.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/JapanColor2003WebCoated.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/JapanWebCoated.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/USWebCoatedSWOP.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/USWebUncoated.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/UncoatedFOGRA29.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/WebCoatedFOGRA28.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/WebCoatedSWOP2006Grade3.icc
+%%SYSCOLORDIR%%/Adobe/CMYK/WebCoatedSWOP2006Grade5.icc
+%%SYSCOLORDIR%%/Adobe/RGB/AdobeRGB1998.icc
+%%SYSCOLORDIR%%/Adobe/RGB/AppleRGB.icc
+%%SYSCOLORDIR%%/Adobe/RGB/ColorMatchRGB.icc
+%%SYSCOLORDIR%%/Adobe/RGB/PAL_SECAM.icc
+%%SYSCOLORDIR%%/Adobe/RGB/SMPTE-C.icc
+%%SYSCOLORDIR%%/Adobe/RGB/VideoHD.icc
+%%SYSCOLORDIR%%/Adobe/RGB/VideoNTSC.icc
+%%SYSCOLORDIR%%/Adobe/RGB/VideoPAL.icc
+%%PORTDOCS%%%%DOCSDIR%%/Color Profile EULA.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Profile Information.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Trademark Information.pdf

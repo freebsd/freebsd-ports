@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Python classes providing access to network packets
 
-LICENSE=	APACHE11
+LICENSE=	APACHE11 ZLIB
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${FLAVOR} \
@@ -20,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${FLAVOR} \
 
 USES=		dos2unix python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 PORTDOCS=	*
 

@@ -36,6 +36,8 @@ lib/elixir/lib/elixir/ebin/Elixir.Bitwise.beam
 lib/elixir/lib/elixir/ebin/Elixir.Calendar.ISO.beam
 lib/elixir/lib/elixir/ebin/Elixir.Calendar.beam
 lib/elixir/lib/elixir/ebin/Elixir.CaseClauseError.beam
+lib/elixir/lib/elixir/ebin/Elixir.Code.Formatter.beam
+lib/elixir/lib/elixir/ebin/Elixir.Code.Identifier.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.LoadError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.beam
 lib/elixir/lib/elixir/ebin/Elixir.Collectable.BitString.beam
@@ -53,6 +55,7 @@ lib/elixir/lib/elixir/ebin/Elixir.Date.Range.beam
 lib/elixir/lib/elixir/ebin/Elixir.Date.beam
 lib/elixir/lib/elixir/ebin/Elixir.DateTime.beam
 lib/elixir/lib/elixir/ebin/Elixir.Dict.beam
+lib/elixir/lib/elixir/ebin/Elixir.DynamicSupervisor.beam
 lib/elixir/lib/elixir/ebin/Elixir.Enum.EmptyError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Enum.OutOfBoundsError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Enum.beam
@@ -260,8 +263,11 @@ lib/elixir/lib/elixir/ebin/elixir_utils.beam
 %%SRC%%lib/elixir/lib/elixir/lib/calendar/naive_datetime.ex
 %%SRC%%lib/elixir/lib/elixir/lib/calendar/time.ex
 %%SRC%%lib/elixir/lib/elixir/lib/code.ex
+%%SRC%%lib/elixir/lib/elixir/lib/code/formatter.ex
+%%SRC%%lib/elixir/lib/elixir/lib/code/identifier.ex
 %%SRC%%lib/elixir/lib/elixir/lib/collectable.ex
 %%SRC%%lib/elixir/lib/elixir/lib/dict.ex
+%%SRC%%lib/elixir/lib/elixir/lib/dynamic_supervisor.ex
 %%SRC%%lib/elixir/lib/elixir/lib/enum.ex
 %%SRC%%lib/elixir/lib/elixir/lib/exception.ex
 %%SRC%%lib/elixir/lib/elixir/lib/file.ex
@@ -349,6 +355,7 @@ lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.RunnerStats.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Server.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Test.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.TestCase.beam
+lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.TestModule.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.TimeoutError.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.beam
 lib/elixir/lib/ex_unit/ebin/ex_unit.app
@@ -376,7 +383,6 @@ lib/elixir/lib/iex/ebin/Elixir.IEx.CLI.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Config.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Evaluator.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Helpers.beam
-lib/elixir/lib/iex/ebin/Elixir.IEx.History.State.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.History.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Any.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Atom.beam
@@ -471,6 +477,8 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Process.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Quiet.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.State.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Task.Compiler.Diagnostic.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Task.Compiler.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.App.Start.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.App.Tree.beam
@@ -504,6 +512,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Escript.Build.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Escript.Install.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Escript.Uninstall.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Escript.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Format.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Help.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Iex.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Loadconfig.beam
@@ -514,6 +523,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Local.Rebar.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Local.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.New.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Cprof.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Eprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Fprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Run.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Test.Cover.beam
@@ -555,6 +565,7 @@ lib/elixir/lib/mix/ebin/mix.app
 %%SRC%%lib/elixir/lib/mix/lib/mix/shell/process.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/shell/quiet.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/state.ex
+%%SRC%%lib/elixir/lib/mix/lib/mix/task.compiler.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/task.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/app.start.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/app.tree.ex
@@ -588,6 +599,7 @@ lib/elixir/lib/mix/ebin/mix.app
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/escript.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/escript.install.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/escript.uninstall.ex
+%%SRC%%lib/elixir/lib/mix/lib/mix/tasks/format.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/help.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/iex.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/loadconfig.ex
@@ -598,6 +610,7 @@ lib/elixir/lib/mix/ebin/mix.app
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/local.rebar.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/new.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/profile.cprof.ex
+%%SRC%%lib/elixir/lib/mix/lib/mix/tasks/profile.eprof.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/profile.fprof.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/run.ex
 %%SRC%%lib/elixir/lib/mix/lib/mix/tasks/test.ex
@@ -651,6 +664,7 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Date.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/DateTime.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Dict.html
+%%PORTDOCS%%%%DOCSDIR%%/elixir/DynamicSupervisor.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Enum.EmptyError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Enum.OutOfBoundsError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Enum.html
@@ -679,7 +693,6 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Inspect.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Integer.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Kernel.ParallelCompiler.html
-%%PORTDOCS%%%%DOCSDIR%%/elixir/Kernel.ParallelRequire.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Kernel.SpecialForms.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Kernel.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/KeyError.html
@@ -728,16 +741,14 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/elixir/UnicodeConversionError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Version.InvalidRequirementError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Version.InvalidVersionError.html
-%%PORTDOCS%%%%DOCSDIR%%/elixir/Version.Requirement.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Version.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/WithClauseError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/assets/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/elixir/behaviours.html
-%%PORTDOCS%%%%DOCSDIR%%/elixir/deprecations.html
+%%PORTDOCS%%%%DOCSDIR%%/elixir/compatibility-and-deprecations.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-2d66791e4b.css
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-ad33bc0e7d.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-d0e3e529a6.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-98eba193eb.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/elixir/fonts/icomoon.svg
 %%PORTDOCS%%%%DOCSDIR%%/elixir/fonts/icomoon.ttf
@@ -767,14 +778,14 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.Formatter.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.MultiError.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.Test.html
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.TestCase.html
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.TestModule.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.TimeoutError.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/app-2d66791e4b.css
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/app-ad33bc0e7d.js
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-ea5eafe040.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-dad54ee519.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/fonts/icomoon.svg
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/fonts/icomoon.ttf
@@ -790,7 +801,7 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/iex/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/app-2d66791e4b.css
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/app-ad33bc0e7d.js
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items-73b60c0bda.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items-0a56688996.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/iex/fonts/icomoon.svg
 %%PORTDOCS%%%%DOCSDIR%%/iex/fonts/icomoon.ttf
@@ -805,7 +816,7 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/logger/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/app-2d66791e4b.css
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/app-ad33bc0e7d.js
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/sidebar_items-671f0a4af6.js
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/sidebar_items-17aeec0e2f.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/logger/fonts/icomoon.svg
 %%PORTDOCS%%%%DOCSDIR%%/logger/fonts/icomoon.ttf
@@ -827,6 +838,8 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Shell.Process.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Shell.Quiet.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Shell.html
+%%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Task.Compiler.Diagnostic.html
+%%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Task.Compiler.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Task.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.App.Start.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.App.Tree.html
@@ -859,6 +872,7 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Escript.Install.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Escript.Uninstall.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Escript.html
+%%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Format.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Help.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Iex.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Loadconfig.html
@@ -869,6 +883,7 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Local.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.New.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Profile.Cprof.html
+%%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Profile.Eprof.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Profile.Fprof.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Run.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Test.html
@@ -878,7 +893,7 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-2d66791e4b.css
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-ad33bc0e7d.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-90f4354b07.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-897d49cdf2.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/mix/fonts/icomoon.svg
 %%PORTDOCS%%%%DOCSDIR%%/mix/fonts/icomoon.ttf

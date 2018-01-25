@@ -1,0 +1,6 @@
+bin/google_authorized_keys
+bin/google_oslogin_control
+lib/libnss_google-compute-engine-oslogin-%%DISTVERSION%%.so
+lib/nss_oslogin.so.1
+lib/pam_oslogin_admin.so
+lib/pam_oslogin_login.so

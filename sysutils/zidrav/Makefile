@@ -13,6 +13,8 @@ COMMENT=	File corruption detection and repair program
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_12=	Regression C++
+
 ALL_TARGET=	zidrav
 PLIST_FILES=	bin/zidrav man/man1/zidrav.1.gz
 

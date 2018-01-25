@@ -13,6 +13,9 @@ COMMENT=	Simple Ruby DSL for making HTTP requests
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Use www/rubygem-http instead
+EXPIRATION_DATE=2018-01-31
+
 RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 		rubygem-http-cookie>=1.0:www/rubygem-http-cookie \
 		rubygem-http-form_data1>=1.0.1:www/rubygem-http-form_data1 \

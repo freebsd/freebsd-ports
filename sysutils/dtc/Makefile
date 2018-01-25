@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	dtc
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	imp@FreeBSD.org
+MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	Device Tree Compiler
 
 LICENSE=	GPLv2
@@ -15,10 +14,15 @@ USES=		bison gmake shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	dtdiff
 
+TEST_TARGET=	check
+TEST_ENV=	STATSZ="stat -f %Uz"
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dgibson
 GH_PROJECT=	dtc
 
-MAKE_ARGS+=	PREFIX=${PREFIX} NO_PYTHON=yes
+MAKE_ARGS+=	PREFIX=${PREFIX} NO_PYTHON=yes \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_LIB="${INSTALL_LIB}"
 
 .include <bsd.port.mk>

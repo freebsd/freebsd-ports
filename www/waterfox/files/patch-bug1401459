@@ -1,0 +1,36 @@
+commit 5d4e99313a0a
+Author: Shih-Chiang Chien <schien@mozilla.com>
+Date:   Thu Jan 11 10:40:29 2018 +0800
+
+    Bug 1401459 - always run HttpChannelChild::Release on main thread. r=mayhemer a=gchang
+    
+    --HG--
+    extra : source : ce5f4fbbebc872f25557afa14342aad95adfa085
+---
+ netwerk/protocol/http/HttpChannelChild.cpp | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git netwerk/protocol/http/HttpChannelChild.cpp netwerk/protocol/http/HttpChannelChild.cpp
+index bde74561b6e1..21752ec27c83 100644
+--- netwerk/protocol/http/HttpChannelChild.cpp
++++ netwerk/protocol/http/HttpChannelChild.cpp
+@@ -245,6 +245,19 @@ NS_IMPL_ADDREF(HttpChannelChild)
+ 
+ NS_IMETHODIMP_(MozExternalRefCountType) HttpChannelChild::Release()
+ {
++  if (!NS_IsMainThread()) {
++    nsrefcnt count = mRefCnt;
++    nsresult rv = NS_DispatchToMainThread(
++                    NewNonOwningRunnableMethod("HttpChannelChild::Release",
++                                               this,
++                                               &HttpChannelChild::Release));
++
++    // Continue Release procedure if failed to dispatch to main thread.
++    if (!NS_WARN_IF(NS_FAILED(rv))) {
++      return count - 1;
++    }
++  }
++
+   nsrefcnt count = --mRefCnt;
+   MOZ_ASSERT(int32_t(count) >= 0, "dup release");
+   NS_LOG_RELEASE(this, count, "HttpChannelChild");

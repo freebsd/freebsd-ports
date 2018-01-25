@@ -2,6 +2,7 @@
 
 PORTNAME=	blitz
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel science
 
 MAINTAINER=	yuri@FreeBSD.org

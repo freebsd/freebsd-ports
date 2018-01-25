@@ -3,7 +3,7 @@
 
 PORTNAME=	orthanc
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics net www
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/orthanc/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/:mongoose
@@ -18,6 +18,7 @@ COMMENT=	RESTful DICOM server for healthcare and medical research
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost 1.66, see bug 224177
 BROKEN_powerpc64=	fails to configure: CMake: Looking for C++ include pugixml.hpp - not found
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \

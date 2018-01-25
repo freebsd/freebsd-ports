@@ -2,20 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	sshguard
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 
 MAINTAINER=	dan.mcgregor@usask.ca
-COMMENT=	Protect hosts from brute force attacks against ssh and other services
+COMMENT=	Protect hosts from brute-force attacks against SSH and other services
 
 LICENSE=	BSD2CLAUSE
 
-USES=		autoreconf
-
 USE_RC_SUBR=	sshguard
-MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}"
 GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message

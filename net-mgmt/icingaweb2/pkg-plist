@@ -405,6 +405,7 @@ bin/icingacli
 %%WWWDIR%%/library/Icinga/User/Preferences/PreferencesStore.php
 %%WWWDIR%%/library/Icinga/User/Preferences/Store/DbStore.php
 %%WWWDIR%%/library/Icinga/User/Preferences/Store/IniStore.php
+%%WWWDIR%%/library/Icinga/Util/ASN1.php
 %%WWWDIR%%/library/Icinga/Util/Color.php
 %%WWWDIR%%/library/Icinga/Util/ConfigAwareFactory.php
 %%WWWDIR%%/library/Icinga/Util/Dimension.php
@@ -462,6 +463,7 @@ bin/icingacli
 %%WWWDIR%%/library/Icinga/Web/Form/Validator/UrlValidator.php
 %%WWWDIR%%/library/Icinga/Web/Form/Validator/WritablePathValidator.php
 %%WWWDIR%%/library/Icinga/Web/Helper/CookieHelper.php
+%%WWWDIR%%/library/Icinga/Web/Helper/HtmlPurifier.php
 %%WWWDIR%%/library/Icinga/Web/Hook.php
 %%WWWDIR%%/library/Icinga/Web/Hook/GrapherHook.php
 %%WWWDIR%%/library/Icinga/Web/Hook/TicketHook.php
@@ -1489,7 +1491,6 @@ bin/icingacli
 %%WWWDIR%%/library/vendor/Zend/Xml/Security.php
 %%WWWDIR%%/library/vendor/dompdf/LICENSE
 %%WWWDIR%%/library/vendor/dompdf/SOURCE
-%%WWWDIR%%/library/vendor/dompdf/autoload.inc.php
 %%WWWDIR%%/library/vendor/dompdf/lib/Cpdf.php
 %%WWWDIR%%/library/vendor/dompdf/lib/fonts/Courier-Bold.afm
 %%WWWDIR%%/library/vendor/dompdf/lib/fonts/Courier-BoldOblique.afm
@@ -1575,6 +1576,7 @@ bin/icingacli
 %%WWWDIR%%/library/vendor/dompdf/lib/php-font-lib/src/FontLib/WOFF/TableDirectoryEntry.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/DefaultStyle.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Document.php
+%%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Gradient/Stop.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Style.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Surface/CPdf.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Surface/SurfaceCpdf.php
@@ -1584,6 +1586,7 @@ bin/icingacli
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/AbstractTag.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Anchor.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Circle.php
+%%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/ClipPath.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Ellipse.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Group.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Image.php
@@ -1596,7 +1599,9 @@ bin/icingacli
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Rect.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Shape.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Stop.php
+%%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/StyleTag.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/Text.php
+%%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/Svg/Tag/UseTag.php
 %%WWWDIR%%/library/vendor/dompdf/lib/php-svg-lib/src/autoload.php
 %%WWWDIR%%/library/vendor/dompdf/lib/res/broken_image.png
 %%WWWDIR%%/library/vendor/dompdf/lib/res/html.css
@@ -1713,6 +1718,7 @@ bin/icingacli
 %%WWWDIR%%/modules/doc/run.php
 %%WWWDIR%%/modules/migrate/application/clicommands/ConfigCommand.php
 %%WWWDIR%%/modules/migrate/library/Migrate/Config/UserDomainMigration.php
+%%WWWDIR%%/modules/migrate/module.info
 %%WWWDIR%%/modules/monitoring/application/clicommands/ConferenceCommand.php
 %%WWWDIR%%/modules/monitoring/application/clicommands/ListCommand.php
 %%WWWDIR%%/modules/monitoring/application/clicommands/NrpeCommand.php
@@ -1723,6 +1729,7 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/application/controllers/ConfigController.php
 %%WWWDIR%%/modules/monitoring/application/controllers/DowntimeController.php
 %%WWWDIR%%/modules/monitoring/application/controllers/DowntimesController.php
+%%WWWDIR%%/modules/monitoring/application/controllers/EventController.php
 %%WWWDIR%%/modules/monitoring/application/controllers/HealthController.php
 %%WWWDIR%%/modules/monitoring/application/controllers/HostController.php
 %%WWWDIR%%/modules/monitoring/application/controllers/HostsController.php
@@ -1802,6 +1809,7 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/application/views/scripts/downtime/show.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/downtimes/delete-all.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/downtimes/show.phtml
+%%WWWDIR%%/modules/monitoring/application/views/scripts/event/show.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/form/reorder-command-transports.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/health/disable-notifications.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/health/info.phtml
@@ -1863,6 +1871,7 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/application/views/scripts/show/components/notifications.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/show/components/output.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/show/components/perfdata.phtml
+%%WWWDIR%%/modules/monitoring/application/views/scripts/show/components/reachable.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/show/components/servicegroups.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/show/components/status.phtml
 %%WWWDIR%%/modules/monitoring/application/views/scripts/show/contact.phtml
@@ -1892,16 +1901,19 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommandQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommentQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommentdeletionhistoryQuery.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommenteventQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/CommenthistoryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/ContactQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/ContactgroupQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/CustomvarQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeendhistoryQuery.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeeventQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimestarthistoryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventgridQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventhistoryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/FlappingendhistoryQuery.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/FlappingeventQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/FlappingstarthistoryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/GroupsummaryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/HostcommentQuery.php
@@ -1922,6 +1934,7 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/IdoQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/InstanceQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/NotificationQuery.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/NotificationeventQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/NotificationhistoryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/ProgramstatusQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/RuntimesummaryQuery.php
@@ -1940,6 +1953,7 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicestatehistoryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicestatusQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicestatussummaryQuery.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/StatechangeeventQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/StatehistoryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/StatussummaryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/UnhandledhostproblemsQuery.php
@@ -1978,13 +1992,16 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Data/ColumnFilterIterator.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Command.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Comment.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Commentevent.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Contact.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Contactgroup.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Customvar.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/DataView.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Downtime.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Downtimeevent.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Eventgrid.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Eventhistory.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Flappingevent.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Hostcomment.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Hostdowntime.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Hostgroup.php
@@ -1993,6 +2010,7 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Hoststatussummary.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Instance.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Notification.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Notificationevent.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Programstatus.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Runtimesummary.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Runtimevariables.php
@@ -2002,6 +2020,7 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Servicegroupsummary.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Servicestatus.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Servicestatussummary.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Statechangeevent.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Statussummary.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Unhandledhostproblems.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/DataView/Unhandledserviceproblems.php
@@ -2034,6 +2053,7 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Timeline/TimeRange.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/TransportStep.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Controller/MonitoredObjectController.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Helper/PluginOutputPurifier.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Hook/HostActionsHook.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Hook/ServiceActionsHook.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Hook/TimelineProviderHook.php

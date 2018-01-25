@@ -9,6 +9,15 @@
  const string anonCiphers = "ADH:@SECLEVEL=0";
  #  else
  const string anonCiphers = "ADH";
+@@ -2048,7 +2048,7 @@
+     //
+     // No DSA support in Secure Transport / AIX 7.1 / SChannel
+     //
+-#if !defined(ICE_USE_SECURE_TRANSPORT) && !defined(_AIX) && !defined(ICE_USE_SCHANNEL)
++#if !defined(ICE_USE_SECURE_TRANSPORT) && !defined(_AIX) && !defined(ICE_USE_SCHANNEL)  && !defined(LIBRESSL_VERSION_NUMBER)
+     {
+         //
+         // DSA PEM keys are not supported with SChannel. Since Windows 10
 @@ -3215,9 +3215,7 @@
  #endif
      }

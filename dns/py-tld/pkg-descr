@@ -1,0 +1,4 @@
+Extract the top level domain (TLD) from the URL given. List of TLD names is
+taken from Mozilla.
+
+WWW: https://github.com/barseghyanartur/tld

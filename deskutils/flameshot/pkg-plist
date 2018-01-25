@@ -1,0 +1,10 @@
+bin/flameshot
+share/applications/flameshot-config.desktop
+share/applications/flameshot-init.desktop
+share/applications/flameshot.desktop
+share/bash-completion/completions/flameshot
+share/dbus-1/interfaces/org.dharkael.Flameshot.xml
+share/dbus-1/services/org.dharkael.Flameshot.service
+%%DATADIR%%/translations/Internationalization_ca.qm
+%%DATADIR%%/translations/Internationalization_es.qm
+share/icons/flameshot.png
