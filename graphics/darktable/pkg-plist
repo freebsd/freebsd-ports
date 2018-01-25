@@ -338,8 +338,8 @@ share/applications/darktable.desktop
 %%DATADIR%%/watermarks/simple-text.svg
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS.md
 %%PORTDOCS%%%%DOCSDIR%%/darktablerc.html
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png
