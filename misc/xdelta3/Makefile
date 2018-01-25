@@ -22,6 +22,7 @@ GH_PROJECT=	xdelta-devel
 WRKSRC_SUBDIR=	xdelta3
 
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	gnu++98
 
 PLIST_FILES=	bin/xdelta3 man/man1/xdelta3.1.gz
 
