@@ -78,6 +78,7 @@ LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:devel/llnextgen
 RUST_MANIFESTS=		lib/rustlib/manifest-cargo \
 			lib/rustlib/manifest-rls-preview \
 			lib/rustlib/manifest-rustc \
+			lib/rustlib/manifest-rustfmt-preview \
 			lib/rustlib/manifest-rust-analysis-${RUST_TARGET} \
 			lib/rustlib/manifest-rust-std-${RUST_TARGET}
 RUST_DOCS_MANIFEST=	lib/rustlib/manifest-rust-docs
@@ -312,6 +313,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/rls \
 		${STAGEDIR}${PREFIX}/bin/rustc \
 		${STAGEDIR}${PREFIX}/bin/rustdoc \
+		${STAGEDIR}${PREFIX}/bin/rustfmt \
 		${STAGEDIR}${PREFIX}/lib/*.so \
 		${STAGEDIR}${PREFIX}/lib/rustlib/*/lib/*.so
 
