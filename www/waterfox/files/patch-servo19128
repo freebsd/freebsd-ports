@@ -1,0 +1,295 @@
+commit a6f7082122e9
+Author: Simon Sapin <simon.sapin@exyr.org>
+Date:   Thu Nov 9 10:00:38 2017 -0600
+
+    servo: Merge #19128 - Upgrade to rustc 1.23.0-nightly (02004ef78 2017-11-08) (from servo:asciiext); r=nox
+    
+    This fixes some new warnings, some of which (in `style`) are treated as errors. See https://users.rust-lang.org/t/psa-dealing-with-warning-unused-import-std-ascii-asciiext-in-today-s-nightly/13726
+    
+    Source-Repo: https://github.com/servo/servo
+    Source-Revision: c46c9dc019ffe5447297140c22cd8b6ee95a9f5f
+    
+    --HG--
+    extra : subtree_source : https%3A//hg.mozilla.org/projects/converted-servo-linear
+    extra : subtree_revision : 49e4a180cd0d8ecdd48cd6896dc16b580f564e10
+---
+ servo/components/gfx/font.rs                          | 1 -
+ servo/components/net/fetch/cors_cache.rs              | 1 -
+ servo/components/net/fetch/methods.rs                 | 1 -
+ servo/components/net/http_loader.rs                   | 1 -
+ servo/components/net/websocket_loader.rs              | 1 -
+ servo/components/net_traits/response.rs               | 1 -
+ servo/components/script/dom/bindings/str.rs           | 1 -
+ servo/components/script/dom/blob.rs                   | 1 -
+ servo/components/script/dom/cssstyledeclaration.rs    | 1 -
+ servo/components/script/dom/document.rs               | 1 -
+ servo/components/script/dom/element.rs                | 1 -
+ servo/components/script/dom/htmlelement.rs            | 1 -
+ servo/components/script/dom/htmllinkelement.rs        | 1 -
+ servo/components/script/dom/htmlmetaelement.rs        | 1 -
+ servo/components/script/dom/htmlscriptelement.rs      | 1 -
+ servo/components/script/dom/macros.rs                 | 1 -
+ servo/components/script/dom/namednodemap.rs           | 1 -
+ servo/components/script/dom/serviceworkercontainer.rs | 1 -
+ servo/components/script/dom/servoparser/async_html.rs | 1 -
+ servo/components/script/dom/servoparser/mod.rs        | 1 -
+ servo/components/script/dom/textdecoder.rs            | 1 -
+ servo/components/script/dom/websocket.rs              | 1 -
+ servo/components/script/dom/window.rs                 | 1 -
+ servo/components/script/dom/xmlhttprequest.rs         | 1 -
+ servo/components/style/servo/selector_parser.rs       | 1 -
+ servo/rust-toolchain                                  | 2 +-
+ 26 files changed, 1 insertion(+), 26 deletions(-)
+
+diff --git servo/components/gfx/font.rs servo/components/gfx/font.rs
+index 357f61a2d7ab..acf98e6f9e9a 100644
+--- servo/components/gfx/font.rs
++++ servo/components/gfx/font.rs
+@@ -10,7 +10,6 @@ use platform::font::{FontHandle, FontTable};
+ use platform::font_context::FontContextHandle;
+ use platform::font_template::FontTemplateData;
+ use smallvec::SmallVec;
+-use std::ascii::AsciiExt;
+ use std::borrow::ToOwned;
+ use std::cell::RefCell;
+ use std::collections::HashMap;
+diff --git servo/components/net/fetch/cors_cache.rs servo/components/net/fetch/cors_cache.rs
+index 6c30782453d5..8962dd2c9985 100644
+--- servo/components/net/fetch/cors_cache.rs
++++ servo/components/net/fetch/cors_cache.rs
+@@ -12,7 +12,6 @@
+ use hyper::method::Method;
+ use net_traits::request::{CredentialsMode, Origin, Request};
+ use servo_url::ServoUrl;
+-use std::ascii::AsciiExt;
+ use time::{self, Timespec};
+ 
+ /// Union type for CORS cache entries
+diff --git servo/components/net/websocket_loader.rs servo/components/net/websocket_loader.rs
+index 71178bbc7d93..f2d36b4fdae9 100644
+--- servo/components/net/websocket_loader.rs
++++ servo/components/net/websocket_loader.rs
+@@ -19,7 +19,6 @@ use net_traits::{CookieSource, MessageData, NetworkError, WebSocketCommunicate,
+ use net_traits::{WebSocketDomAction, WebSocketNetworkEvent};
+ use net_traits::request::{Destination, Type};
+ use servo_url::ServoUrl;
+-use std::ascii::AsciiExt;
+ use std::io::{self, Write};
+ use std::net::TcpStream;
+ use std::sync::{Arc, Mutex};
+diff --git servo/components/net_traits/response.rs servo/components/net_traits/response.rs
+index 74525a85f07b..a7699d8ad911 100644
+--- servo/components/net_traits/response.rs
++++ servo/components/net_traits/response.rs
+@@ -9,7 +9,6 @@ use hyper::header::{AccessControlExposeHeaders, ContentType, Headers};
+ use hyper::status::StatusCode;
+ use hyper_serde::Serde;
+ use servo_url::ServoUrl;
+-use std::ascii::AsciiExt;
+ use std::sync::{Arc, Mutex};
+ 
+ /// [Response type](https://fetch.spec.whatwg.org/#concept-response-type)
+diff --git servo/components/script/dom/bindings/str.rs servo/components/script/dom/bindings/str.rs
+index 761acab30682..e2c91a1f5061 100644
+--- servo/components/script/dom/bindings/str.rs
++++ servo/components/script/dom/bindings/str.rs
+@@ -7,7 +7,6 @@
+ use cssparser::CowRcStr;
+ use html5ever::{LocalName, Namespace};
+ use servo_atoms::Atom;
+-use std::ascii::AsciiExt;
+ use std::borrow::{Borrow, Cow, ToOwned};
+ use std::fmt;
+ use std::hash::{Hash, Hasher};
+diff --git servo/components/script/dom/cssstyledeclaration.rs servo/components/script/dom/cssstyledeclaration.rs
+index 0732c9af9e45..c70f081922bf 100644
+--- servo/components/script/dom/cssstyledeclaration.rs
++++ servo/components/script/dom/cssstyledeclaration.rs
+@@ -16,7 +16,6 @@ use dom::window::Window;
+ use dom_struct::dom_struct;
+ use servo_arc::Arc;
+ use servo_url::ServoUrl;
+-use std::ascii::AsciiExt;
+ use style::attr::AttrValue;
+ use style::properties::{Importance, PropertyDeclarationBlock, PropertyId, LonghandId, ShorthandId};
+ use style::properties::{parse_one_declaration_into, parse_style_attribute, SourcePropertyDeclaration};
+diff --git servo/components/script/dom/document.rs servo/components/script/dom/document.rs
+index 90ea06fbe7b4..4fe244b47b74 100644
+--- servo/components/script/dom/document.rs
++++ servo/components/script/dom/document.rs
+@@ -122,7 +122,6 @@ use servo_arc::Arc;
+ use servo_atoms::Atom;
+ use servo_config::prefs::PREFS;
+ use servo_url::{ImmutableOrigin, MutableOrigin, ServoUrl};
+-use std::ascii::AsciiExt;
+ use std::borrow::ToOwned;
+ use std::cell::{Cell, Ref, RefMut};
+ use std::collections::{HashMap, HashSet, VecDeque};
+diff --git servo/components/script/dom/element.rs servo/components/script/dom/element.rs
+index 59db577c4eb3..ea7567020b97 100644
+--- servo/components/script/dom/element.rs
++++ servo/components/script/dom/element.rs
+@@ -95,7 +95,6 @@ use selectors::matching::{RelevantLinkStatus, matches_selector_list};
+ use selectors::sink::Push;
+ use servo_arc::Arc;
+ use servo_atoms::Atom;
+-use std::ascii::AsciiExt;
+ use std::borrow::Cow;
+ use std::cell::{Cell, Ref};
+ use std::convert::TryFrom;
+diff --git servo/components/script/dom/htmlelement.rs servo/components/script/dom/htmlelement.rs
+index 59846595166a..eb1f1022c8b7 100644
+--- servo/components/script/dom/htmlelement.rs
++++ servo/components/script/dom/htmlelement.rs
+@@ -31,7 +31,6 @@ use dom::nodelist::NodeList;
+ use dom::virtualmethods::VirtualMethods;
+ use dom_struct::dom_struct;
+ use html5ever::{LocalName, Prefix};
+-use std::ascii::AsciiExt;
+ use std::borrow::ToOwned;
+ use std::default::Default;
+ use std::rc::Rc;
+diff --git servo/components/script/dom/htmllinkelement.rs servo/components/script/dom/htmllinkelement.rs
+index 8175da5c913c..5da65a49d34d 100644
+--- servo/components/script/dom/htmllinkelement.rs
++++ servo/components/script/dom/htmllinkelement.rs
+@@ -27,7 +27,6 @@ use net_traits::ReferrerPolicy;
+ use script_layout_interface::message::Msg;
+ use script_traits::{MozBrowserEvent, ScriptMsg as ConstellationMsg};
+ use servo_arc::Arc;
+-use std::ascii::AsciiExt;
+ use std::borrow::ToOwned;
+ use std::cell::Cell;
+ use std::default::Default;
+diff --git servo/components/script/dom/htmlmetaelement.rs servo/components/script/dom/htmlmetaelement.rs
+index 9370675eb6bd..dc3ee9aa12de 100644
+--- servo/components/script/dom/htmlmetaelement.rs
++++ servo/components/script/dom/htmlmetaelement.rs
+@@ -22,7 +22,6 @@ use html5ever::{LocalName, Prefix};
+ use parking_lot::RwLock;
+ use servo_arc::Arc;
+ use servo_config::prefs::PREFS;
+-use std::ascii::AsciiExt;
+ use std::sync::atomic::AtomicBool;
+ use style::attr::AttrValue;
+ use style::media_queries::MediaList;
+diff --git servo/components/script/dom/htmlscriptelement.rs servo/components/script/dom/htmlscriptelement.rs
+index ea0cc4c25e8e..f5f758060525 100644
+--- servo/components/script/dom/htmlscriptelement.rs
++++ servo/components/script/dom/htmlscriptelement.rs
+@@ -36,7 +36,6 @@ use network_listener::{NetworkListener, PreInvoke};
+ use servo_atoms::Atom;
+ use servo_config::opts;
+ use servo_url::ServoUrl;
+-use std::ascii::AsciiExt;
+ use std::cell::Cell;
+ use std::fs::File;
+ use std::io::{Read, Write};
+diff --git servo/components/script/dom/macros.rs servo/components/script/dom/macros.rs
+index a1bb30657252..9cd5fb9a8dc5 100644
+--- servo/components/script/dom/macros.rs
++++ servo/components/script/dom/macros.rs
+@@ -149,7 +149,6 @@ macro_rules! make_enumerated_getter(
+         fn $attr(&self) -> DOMString {
+             use dom::bindings::inheritance::Castable;
+             use dom::element::Element;
+-            use std::ascii::AsciiExt;
+             let element = self.upcast::<Element>();
+             let mut val = element.get_string_attribute(&local_name!($htmlname));
+             val.make_ascii_lowercase();
+diff --git servo/components/script/dom/namednodemap.rs servo/components/script/dom/namednodemap.rs
+index 9d92bf11c2d2..4f1b13a999e8 100644
+--- servo/components/script/dom/namednodemap.rs
++++ servo/components/script/dom/namednodemap.rs
+@@ -15,7 +15,6 @@ use dom::element::Element;
+ use dom::window::Window;
+ use dom_struct::dom_struct;
+ use html5ever::LocalName;
+-use std::ascii::AsciiExt;
+ 
+ #[dom_struct]
+ pub struct NamedNodeMap {
+diff --git servo/components/script/dom/serviceworkercontainer.rs servo/components/script/dom/serviceworkercontainer.rs
+index ba2e327409f1..3a0ed0fcb253 100644
+--- servo/components/script/dom/serviceworkercontainer.rs
++++ servo/components/script/dom/serviceworkercontainer.rs
+@@ -16,7 +16,6 @@ use dom::serviceworker::ServiceWorker;
+ use dom_struct::dom_struct;
+ use script_thread::ScriptThread;
+ use serviceworkerjob::{Job, JobType};
+-use std::ascii::AsciiExt;
+ use std::default::Default;
+ use std::rc::Rc;
+ 
+diff --git servo/components/script/dom/servoparser/async_html.rs servo/components/script/dom/servoparser/async_html.rs
+index 59411fda1c73..f9e3bf48c378 100644
+--- servo/components/script/dom/servoparser/async_html.rs
++++ servo/components/script/dom/servoparser/async_html.rs
+@@ -27,7 +27,6 @@ use html5ever::tokenizer::{Tokenizer as HtmlTokenizer, TokenizerOpts, TokenizerR
+ use html5ever::tree_builder::{ElementFlags, NodeOrText as HtmlNodeOrText, NextParserState, QuirksMode, TreeSink};
+ use html5ever::tree_builder::{TreeBuilder, TreeBuilderOpts};
+ use servo_url::ServoUrl;
+-use std::ascii::AsciiExt;
+ use std::borrow::Cow;
+ use std::cell::Cell;
+ use std::collections::HashMap;
+diff --git servo/components/script/dom/servoparser/mod.rs servo/components/script/dom/servoparser/mod.rs
+index 6a5a723111da..bb8b066c2439 100644
+--- servo/components/script/dom/servoparser/mod.rs
++++ servo/components/script/dom/servoparser/mod.rs
+@@ -46,7 +46,6 @@ use script_traits::DocumentActivity;
+ use servo_config::prefs::PREFS;
+ use servo_config::resource_files::read_resource_file;
+ use servo_url::ServoUrl;
+-use std::ascii::AsciiExt;
+ use std::borrow::Cow;
+ use std::cell::Cell;
+ use std::mem;
+diff --git servo/components/script/dom/websocket.rs servo/components/script/dom/websocket.rs
+index b533789e6118..80febbe72fe4 100644
+--- servo/components/script/dom/websocket.rs
++++ servo/components/script/dom/websocket.rs
+@@ -34,7 +34,6 @@ use script_runtime::CommonScriptMsg;
+ use script_runtime::ScriptThreadEventCategory::WebSocketEvent;
+ use script_thread::{Runnable, RunnableWrapper};
+ use servo_url::ServoUrl;
+-use std::ascii::AsciiExt;
+ use std::borrow::ToOwned;
+ use std::cell::Cell;
+ use std::ptr;
+diff --git servo/components/script/dom/window.rs servo/components/script/dom/window.rs
+index 3c87e5f6b0b4..d10d2131dc5a 100644
+--- servo/components/script/dom/window.rs
++++ servo/components/script/dom/window.rs
+@@ -88,7 +88,6 @@ use servo_config::opts;
+ use servo_config::prefs::PREFS;
+ use servo_geometry::{f32_rect_to_au_rect, max_rect};
+ use servo_url::{Host, MutableOrigin, ImmutableOrigin, ServoUrl};
+-use std::ascii::AsciiExt;
+ use std::borrow::ToOwned;
+ use std::cell::Cell;
+ use std::collections::{HashMap, HashSet};
+diff --git servo/components/script/dom/xmlhttprequest.rs servo/components/script/dom/xmlhttprequest.rs
+index 6ed2dda1851f..e8902f6133c5 100644
+--- servo/components/script/dom/xmlhttprequest.rs
++++ servo/components/script/dom/xmlhttprequest.rs
+@@ -63,7 +63,6 @@ use script_traits::DocumentActivity;
+ use servo_atoms::Atom;
+ use servo_config::prefs::PREFS;
+ use servo_url::ServoUrl;
+-use std::ascii::AsciiExt;
+ use std::borrow::ToOwned;
+ use std::cell::Cell;
+ use std::default::Default;
+diff --git servo/components/style/servo/selector_parser.rs servo/components/style/servo/selector_parser.rs
+index 95ef6b0169f5..d205c4ee1170 100644
+--- servo/components/style/servo/selector_parser.rs
++++ servo/components/style/servo/selector_parser.rs
+@@ -21,7 +21,6 @@ use selectors::Element;
+ use selectors::attr::{AttrSelectorOperation, NamespaceConstraint, CaseSensitivity};
+ use selectors::parser::{SelectorMethods, SelectorParseError};
+ use selectors::visitor::SelectorVisitor;
+-use std::ascii::AsciiExt;
+ use std::fmt;
+ use std::fmt::Debug;
+ use std::mem;
