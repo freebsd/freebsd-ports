@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.22.1
-PORTREVISION?=	2
+PORTVERSION?=	1.23.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		LOCAL/dumbbell/rust:rust_bootstrap \
-		https://static.rust-lang.org/dist/:rust_bootstrap \
+		https://dev-static.rust-lang.org/dist/:rust_bootstrap \
 		LOCAL/dumbbell/rust:cargo_bootstrap \
-		https://static.rust-lang.org/dist/:cargo_bootstrap \
+		https://dev-static.rust-lang.org/dist/:cargo_bootstrap \
 		https://s3.amazonaws.com/rust-lang-ci/cargo-builds/:cargo_bootstrap \
 		LOCAL/marino:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
@@ -43,14 +42,14 @@ ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 #CONFLICTS_BUILD+=	${PKGBASE}
 CONFLICTS_INSTALL?=	rust-nightly
 
-BOOTSTRAPS_DATE?=		2017-10-12
+BOOTSTRAPS_DATE?=		2017-11-20
 
-RUST_BOOTSTRAP_VERSION?=	1.21.0
+RUST_BOOTSTRAP_VERSION?=	1.22.1
 RUSTC_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
-CARGO_BOOTSTRAP_VERSION?=	0.22.0
-CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}${EXTRACT_SUFX}
+CARGO_BOOTSTRAP_VERSION?=	0.23.0
+CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
 
@@ -62,7 +61,7 @@ RUST_ARCH_x86_64=	x86_64 # dragonfly
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
 PLIST_SUB+=		RUST_TARGET=${RUST_TARGET}
 
-USES=		compiler gmake libedit pkgconfig python:2.7,build ssl
+USES=		compiler gmake libedit pkgconfig python:2.7,build ssl tar:xz
 
 OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN SOURCES
 GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
@@ -145,7 +144,7 @@ post-extract:
 	(set -ex; cd ${WRKSRC}; \
 	 libstd="$$(echo "${RUST_STD_DIR}/rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}/lib/"libstd-*.rlib)"; \
 	 hash="$$(basename "$$libstd" .rlib | ${SED} 's/^libstd-//')"; \
-	 std_o="std-$$hash.0.o"; \
+	 std_o="std-$$hash.std0.rust-cgu.o"; \
 	 ${AR} x "$$libstd" "$$std_o"; \
 	 ${LD} -r -o std.xx.o "$$std_o" old_fstat.o; \
 	 ${MV} std.xx.o "$$std_o"; \
@@ -342,7 +341,7 @@ do-test:
 
 BOOTSTRAPS_SOURCE_PKG_FBSDVER=		10
 BOOTSTRAPS_SOURCE_PKG_FBSDVER_aarch64=	11
-BOOTSTRAPS_SOURCE_PKG_REV=		_1
+BOOTSTRAPS_SOURCE_PKG_REV=		_2
 BOOTSTRAPS_SOURCE_PKG_URL=	http://pkg.freebsd.org/FreeBSD:${BOOTSTRAPS_SOURCE_PKG_FBSDVER_${ARCH}:U${BOOTSTRAPS_SOURCE_PKG_FBSDVER}}:${ARCH}/latest/All/rust-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}${BOOTSTRAPS_SOURCE_PKG_REV}.txz
 BOOTSTRAPS_SOURCE_PKG=		${_DISTDIR}/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${ARCH}.txz
 
@@ -361,7 +360,7 @@ package-to-bootstraps: ${BOOTSTRAPS_SOURCE_PKG}
 		${MV} ${WRKDIR}/bootstraps/bin/rust* rustc/bin && \
 		${MV} ${WRKDIR}/bootstraps/lib/*.so rustc/lib
 	${TAR} -cz --format=ustar -C ${WRKDIR}/bootstraps \
-		-f ${_DISTDIR}/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz \
+		-f ${_DISTDIR}/${RUSTC_BOOTSTRAP} \
 		rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}
 # `rust-std` bootstrap.
 	${RM} -r ${WRKDIR}/bootstraps/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}
@@ -370,7 +369,7 @@ package-to-bootstraps: ${BOOTSTRAPS_SOURCE_PKG}
 		${MKDIR} rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET} && \
 		${MV} ${WRKDIR}/bootstraps/lib/rustlib/${RUST_TARGET}/lib rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}
 	${TAR} -cz --format=ustar -C ${WRKDIR}/bootstraps \
-		-f ${_DISTDIR}/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz \
+		-f ${_DISTDIR}/${RUST_STD_BOOTSTRAP} \
 		rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}
 
 ${BOOTSTRAPS_SOURCE_PKG}:
