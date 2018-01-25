@@ -1,0 +1,13 @@
+--version is a GNUism which BSD diff doesn't support
+
+--- configure.orig	2018-01-24 22:25:44 UTC
++++ configure
+@@ -170,7 +170,7 @@ for t in ${all_targets}; do
+     [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
+ done
+ 
+-if ! diff --version >/dev/null; then
++if ! hash diff 2>/dev/null; then
+   die "diff missing: Try installing diffutils via your package manager."
+ fi
+ 
