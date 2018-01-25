@@ -209,6 +209,7 @@
     SUBDIR += curly
     SUBDIR += currtime
     SUBDIR += cw
+    SUBDIR += DtraceToolkit
     SUBDIR += daa2iso
     SUBDIR += dae
     SUBDIR += daemonize
