@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		python shebangfix
+USES=		python:patch shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	fail2ban
