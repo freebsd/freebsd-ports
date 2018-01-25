@@ -57,6 +57,9 @@ MATCHCOMPILER_CMAKE_BOOL=	USE_MATCHCOMPILER
 MATCHCOMPILER_USES=	python:${PYUSE:C/ /,/W}
 MATCHCOMPILER_VARS=	PYUSE+=build
 
+post-patch:
+	@${REINPLACE_CMD} -e '/find_package(Qt5/ d' ${WRKSRC}/cmake/findDependencies.cmake
+
 post-install-HTMLREPORT-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/htmlreport/cppcheck-htmlreport ${STAGEDIR}${PREFIX}/bin
 
