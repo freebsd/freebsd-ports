@@ -28,6 +28,7 @@
     SUBDIR += pkg
     SUBDIR += pkg-devel
     SUBDIR += pkg-plist
+    SUBDIR += pkg-provides
     SUBDIR += pkg-rmleaf
     SUBDIR += pkg_cleanup
     SUBDIR += pkg_cutleaves
