@@ -5126,6 +5126,7 @@ go/src/runtime/testdata/testprogcgo/numgoroutine.go
 go/src/runtime/testdata/testprogcgo/pprof.go
 go/src/runtime/testdata/testprogcgo/raceprof.go
 go/src/runtime/testdata/testprogcgo/racesig.go
+go/src/runtime/testdata/testprogcgo/sigstack.go
 go/src/runtime/testdata/testprogcgo/threadpanic.go
 go/src/runtime/testdata/testprogcgo/threadpanic_unix.c
 go/src/runtime/testdata/testprogcgo/threadpanic_windows.c
@@ -6856,6 +6857,11 @@ go/test/fixedbugs/issue21120.go
 go/test/fixedbugs/issue21655.go
 go/test/fixedbugs/issue21963.go
 go/test/fixedbugs/issue22083.go
+go/test/fixedbugs/issue22429.go
+go/test/fixedbugs/issue22458.go
+go/test/fixedbugs/issue22683.go
+go/test/fixedbugs/issue22683.out
+go/test/fixedbugs/issue22781.go
 go/test/fixedbugs/issue2615.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
