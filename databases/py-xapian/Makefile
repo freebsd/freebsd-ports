@@ -17,8 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	fails to build: Fatal Python error: swig_pythreadstate set in XapianSWIG_Python_Thread_Allow ctor
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4.8:textproc/py-sphinx@${FLAVOR} \
-		xapian-core>=${PORTVERSION}:databases/xapian-core
+BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 CONFLICTS_INSTALL=	xapian-bindings12
@@ -37,6 +36,8 @@ USES=		libtool python tar:xz
 USE_PYTHON=	flavors
 
 PORTDOCS=	*
+
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4.8:textproc/py-sphinx@${FLAVOR}
 
 .include <bsd.port.pre.mk>
 
