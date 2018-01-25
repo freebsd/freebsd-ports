@@ -993,7 +993,6 @@ japanese/stardict2-dict-ja||2010-02-25|Please use japanese/stardict-dict-ja
 net/mpd||2010-02-25|Has expired: obsoleted, unsupported port. Use net/mpd4, net/mpd5 instead
 textproc/xmlada-gcc||2010-02-27|Has expired: broken and practically unmaintained
 www/cheetah||2010-03-16|Has expired: broken, unmaintained, development ceased in 2001
-net-p2p/rblibtorrent-devel||2010-03-16|Old version, no longer depended on
 mail/sylpheed2|mail/sylpheed3|2010-03-23|Update to new major version
 multimedia/gstreamer-schroedinger||2010-03-24|Removed
 multimedia/video4bsd-kmod|multimedia/cuse4bsd-kmod|2010-03-25|Renamed
@@ -1117,7 +1116,6 @@ sysutils/bacula-client-devel||2010-07-16|Removed
 sysutils/bacula-server-devel||2010-07-16|Removed
 java/eclipse-v4all||2010-07-16|Not useful with Eclipse 3.x
 irc/kvirc-devel||2010-07-17|irc/kvirc has been updated to the latest version
-www/p5-Plack-Server-AnyEvent||2010-07-19|Use www/p5-Twiggy instead
 science/qelectrotech|cad/qelectrotech|2010-07-21|Fix category
 mail/squirrelmail-compatibility-plugin1|mail/squirrelmail-compatibility-plugin|2010-07-21|Has expired: use mail/squirrelmail-compatibility-plugin
 mail/squirrelmail-newuser_wiz-plugin|mail/squirrelmail-askuserinfo-plugin|2010-07-21|Has expired: use mail/squirrelmail-askuserinfo-plugin
@@ -1233,7 +1231,7 @@ multimedia/vlconwooztalk||2010-09-14|Has expired: wooztalk website not respondin
 net-im/wooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 russian/php_doc||2010-09-14|Has expired: Support for the Russian translation of the PHP manual seems to have stopped
 sysutils/ipmi-kmod||2010-09-14|Has expired: in base system since 6.2-RELEASE
-www/p5-Plack-Server-AnyEvent||2010-09-14|Has expired: yes
+www/p5-Plack-Server-AnyEvent||2010-07-19|Use www/p5-Twiggy instead
 www/xpi-dailymotiononwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 www/xpi-deezeronwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 www/xpi-firefoxonwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
@@ -3966,7 +3964,6 @@ sysutils/salt|sysutils/py-salt|2013-01-27|Rename to consistency with other Pytho
 sysutils/salt-cloud|sysutils/py-salt-cloud|2013-01-27|Rename to consistency with other Python ports
 deskutils/py-dosage|deskutils/dosage|2013-01-28|Rename - it's a standalone application
 textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/clucene
-textproc/clucene-contrib|textproc/clucene|2013-01-28|Integrated into textproc/clucene
 lang/erlang14||2013-01-30|Not needed; no issues came up with R15
 www/tomcat55||2013-01-31|Has expired: EOL and unsupported upstream
 net/samba-pdbsql||2013-01-31|Depends from the obsoleted net/samba34
@@ -5250,7 +5247,6 @@ www/clickheat||2013-12-07|Has expired: No more activity since 2011
 security/rarcrack||2013-12-08|Has expired: Not active since several years
 java/subversion-java|java/java-subversion|2013-12-08|Rename to reflect subversion child port naming scheme
 games/flare|games/flare-game|2013-12-10|Flare port was split into engine and game counterparts, as upstream did
-audio/liteamp||2013-12-15|Has expired: Dead upstream since 2004, does not build with clang
 security/opieprint||2013-12-15|Has expired: No more active upstream
 security/bubblegum||2013-12-15|Has expired: No more active upstream
 security/snortsms||2013-12-15|Has expired: Not active since several years
@@ -5503,7 +5499,6 @@ graphics/php52-exif||2014-03-01|PHP 5.2 is end-of-life
 graphics/php52-gd||2014-03-01|PHP 5.2 is end-of-life
 graphics/php52-ming||2014-03-01|PHP 5.2 is end-of-life
 lang/php52||2014-03-01|PHP 5.2 is end-of-life
-lang/php52||2014-03-01|PHP 5.2 is end-of-life.ext
 lang/php52-extensions||2014-03-01|PHP 5.2 is end-of-life
 mail/php52-imap||2014-03-01|PHP 5.2 is end-of-life
 math/php52-bcmath||2014-03-01|PHP 5.2 is end-of-life
@@ -5843,7 +5838,6 @@ databases/libgda3-freetds||2014-04-11|Ancient version, consider using newer vers
 databases/libgda3-ldap||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-mdb||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-mysql||2014-04-11|Ancient version, consider using newer versions
-databases/libgda3-odbc||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-odbc||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-postgresql||2014-04-11|Ancient version, consider using newer versions
 databases/libgnomedb||2014-04-11|Superseded by libgda starting from version 4
@@ -6553,7 +6547,6 @@ games/atitd||2014-09-01|Not staged
 games/avp-demo||2014-09-01|Not staged
 games/linux-sof||2014-09-01|Not staged
 games/quake3-freezetag||2014-09-01|Not staged
-games/rftg||2014-09-01|Not staged
 games/rftg||2014-09-01|Not staged
 german/manpages||2014-09-01|Not staged
 graphics/Cgraph||2014-09-01|Not staged
@@ -9140,7 +9133,6 @@ accessibility/gnome-speech||2017-04-01|Obsolete and not depend on anymore
 accessibility/gok||2017-04-01|Obsolete and not depend on anymore
 accessibility/dasher||2017-04-01|Obsolete and not depend on anymore
 accessibility/java-access-bridge||2017-04-01|Obsolete and not depend on anymore
-accessibility/dasher||2017-04-01|Obsolete and not depend on anymore
 accessibility/at-spi||2017-04-01|Obsolete and not depend on anymore
 accessibility/at-spi-reference||2017-04-01|Obsolete and not depend on anymore
 deskutils/gnome-blog||2017-04-01|Obsolete and not depend on anymore
