@@ -6,7 +6,7 @@
 #
 # Feature:	python
 # Usage:	USES=python or USES=python:args
-# Valid ARGS:	<version>, build, run, test
+# Valid ARGS:	<version>, patch, build, run, test
 #
 # version 	If your port requires only some set of Python versions, you
 # 		can set this to [min]-[max] or min+ or -max or as an
@@ -22,6 +22,8 @@
 #			USES=python		# Use the set default Python
 #						# version
 #
+# patch		Indicates that Python is needed at patch time and adds
+#		it to PATCH_DEPENDS.
 # build		Indicates that Python is needed at build time and adds
 #		it to BUILD_DEPENDS.
 # run		Indicates that Python is needed at run time and adds
@@ -35,8 +37,10 @@
 #		PYTHON_NO_DEPENDS.
 #
 # If build, run and test are omitted, Python will be added as BUILD_DEPENDS,
-# RUN_DEPENDS and TEST_DEPENDS. PYTHON_NO_DEPENDS can be set to not add any
-# dependencies.
+# RUN_DEPENDS and TEST_DEPENDS.
+# patch is independant, it does not prevent the default build/run/test
+# dependency.
+# env or PYTHON_NO_DEPENDS can be set to not add any dependencies.
 #
 # Variables, which can be set by a user:
 #
@@ -268,6 +272,10 @@ _PYTHON_FEATURE_FLAVORS=	yes
 .undef _PYTHON_RUN_DEP
 .undef _PYTHON_TEST_DEP
 _PYTHON_ARGS=		${python_ARGS:S/,/ /g}
+.if ${_PYTHON_ARGS:Mpatch}
+_PYTHON_PATCH_DEP=	yes
+_PYTHON_ARGS:=		${_PYTHON_ARGS:Npatch}
+.endif
 .if ${_PYTHON_ARGS:Mbuild}
 _PYTHON_BUILD_DEP=	yes
 _PYTHON_ARGS:=		${_PYTHON_ARGS:Nbuild}
@@ -660,24 +668,14 @@ PY_FUTURES=
 .endif
 
 # dependencies
-.if defined(_PYTHON_BUILD_DEP)
-BUILD_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
-.if defined(_WANTS_META_PORT)
-BUILD_DEPENDS+=	python${_WANTS_META_PORT}:${_PYTHON_RELPORTDIR}${_WANTS_META_PORT}
-.endif
-.endif
-.if defined(_PYTHON_RUN_DEP)
-RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
-.if defined(_WANTS_META_PORT)
-RUN_DEPENDS+=	python${_WANTS_META_PORT}:${_PYTHON_RELPORTDIR}${_WANTS_META_PORT}
-.endif
-.endif
-.if defined(_PYTHON_TEST_DEP)
-TEST_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
-.if defined(_WANTS_META_PORT)
-TEST_DEPENDS+=	python${_WANTS_META_PORT}:${_PYTHON_RELPORTDIR}${_WANTS_META_PORT}
-.endif
-.endif
+.for _stage in PATCH BUILD RUN TEST
+.  if defined(_PYTHON_${_stage}_DEP)
+${_stage}_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
+.    if defined(_WANTS_META_PORT)
+${_stage}_DEPENDS+=	python${_WANTS_META_PORT}:${_PYTHON_RELPORTDIR}${_WANTS_META_PORT}
+.    endif
+.  endif
+.endfor
 
 # set $PREFIX as Python's one
 .if defined(_PYTHON_FEATURE_PYTHONPREFIX)
