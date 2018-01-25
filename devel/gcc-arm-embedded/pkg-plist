@@ -1,3 +1,4 @@
+%%SYMLINK%%gcc-arm-embedded
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/bin/ar
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/bin/as
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/bin/ld

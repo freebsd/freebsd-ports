@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	7.2.20171218
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2017q4/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
@@ -15,11 +15,12 @@ LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	does not build: __adjust.c: internal compiler error: Segmentation fault
 
-OPTIONS_DEFINE=	PYGDB EXAMPLES HTML PDF DOCS
-OPTIONS_DEFAULT=PYGDB
+OPTIONS_DEFINE=	PYGDB EXAMPLES HTML PDF DOCS SYMLINK
+OPTIONS_DEFAULT=PYGDB SYMLINK
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
 PYGDB_DESC=	Build and install python-enabled gdb in addition to standard one
+SYMLINK_DESC=	Make version-independed symlink ${LOCALBASE}/${PORTNAME}
 
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
@@ -121,5 +122,8 @@ do-build:
 
 do-install:
 	@${TAR} -cf - -C ${WRKDIR}/install ${PORTNAME}-${FULL_VERSION} | ${TAR} -xf - -C ${STAGEDIR}${PREFIX}
+.if ${PORT_OPTIONS:MSYMLINK}
+	@${LN} -s ${PORTNAME}-${FULL_VERSION} ${STAGEDIR}${PREFIX}/${PORTNAME}
+.endif
 
 .include <bsd.port.post.mk>
