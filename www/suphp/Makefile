@@ -19,6 +19,7 @@ SUB_FILES=	pkg-message
 USE_APACHE=	22+
 CFLAGS+=	-I${LOCALBASE}/include
 USE_CSTD=	gnu89
+USE_CXXSTD=	gnu++98
 
 MYPORTDOCS=	apache/CONFIG \
 		apache/INSTALL \
