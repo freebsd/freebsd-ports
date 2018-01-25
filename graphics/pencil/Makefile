@@ -13,11 +13,11 @@ COMMENT=	Pencil - a traditional 2D animation software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libming.so:graphics/ming \
-		libpng.so:graphics/png
-
 BROKEN_armv6=		fails to compile: no matching function for call to 'qMax'
 BROKEN_armv7=		fails to compile: no matching function for call to 'qMax'
+
+LIB_DEPENDS=	libming.so:graphics/ming \
+		libpng.so:graphics/png
 
 USES=		qmake zip
 USE_QT4=	gui opengl xml moc_build rcc_build

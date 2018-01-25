@@ -15,17 +15,17 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	rsync:net/rsync \
 		bash:shells/bash
 
-USE_GNOME=	gtk20 intltool
-USES=		desktop-file-utils gettext gmake \
-		pkgconfig shared-mime-info shebangfix
-SHEBANG_FILES=	src/grsync-batch
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-unity
-
-INSTALLS_ICONS=	yes
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+USES=		desktop-file-utils gettext gmake \
+		pkgconfig shared-mime-info shebangfix
+USE_GNOME=	gtk20 intltool
+SHEBANG_FILES=	src/grsync-batch
+
+INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

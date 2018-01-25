@@ -17,6 +17,9 @@ LICENSE_PERMS_BuildLic=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-acc
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
+USES=		alias dos2unix gmake pkgconfig:build
+DOS2UNIX_REGEX=	.*(\.(c|h)|Makefile)(\.deps)?
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jonof
 GH_PROJECT=	jfbuild:build jfaudiolib:audio jfmact:mact
@@ -29,9 +32,6 @@ GH_SUBDIR=	jfbuild:build jfaudiolib:audio jfmact:mact
 USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
-
-USES=		alias dos2unix gmake pkgconfig:build
-DOS2UNIX_REGEX=	.*(\.(c|h)|Makefile)(\.deps)?
 
 NO_CDROM=	Must be distributed only through the Internet and free of charge
 
