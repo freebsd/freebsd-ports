@@ -3,7 +3,8 @@
 PORTNAME=	d2coding
 PORTVERSION=	1.3.1
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	https://github.com/naver/d2codingfont/releases/download/VER${PORTVERSION}/
+MASTER_SITES=	https://github.com/naver/d2codingfont/releases/download/VER${PORTVERSION}/ \
+		LOCAL/jkim
 PKGNAMESUFFIX=	-ttf
 DISTNAME=	D2Coding-Ver${PORTVERSION}-${PORTRELEASE}
 
