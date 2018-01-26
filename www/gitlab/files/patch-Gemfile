@@ -64,7 +64,7 @@
  gem 'akismet', '~> 2.0'
  
  # Two-factor authentication
-@@ -73,7 +73,7 @@ gem 'gollum-lib', '~> 4.2', require: fal
+@@ -73,11 +73,11 @@ gem 'gollum-lib', '~> 4.2', require: fal
  gem 'gollum-rugged_adapter', '~> 0.4.4', require: false
  
  # Language detection
@@ -73,6 +73,11 @@
  
  # API
  gem 'grape', '~> 1.0'
+-gem 'grape-entity', '~> 0.6.0'
++gem 'grape-entity', '~> 0.6'
+ gem 'rack-cors', '~> 0.4.0', require: 'rack/cors'
+ 
+ # Disable strong_params so that Mash does not respond to :permitted?
 @@ -87,25 +87,25 @@ gem 'hashie-forbidden_attributes'
  gem 'kaminari', '~> 1.0'
  
