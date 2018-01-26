@@ -1824,6 +1824,7 @@
     SUBDIR += py-pyramid_rpc
     SUBDIR += py-pysearch
     SUBDIR += py-python-digitalocean
+    SUBDIR += py-python-dotenv
     SUBDIR += py-pywebdav
     SUBDIR += py-pyweblib
     SUBDIR += py-pywikibot
