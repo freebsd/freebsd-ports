@@ -199,6 +199,7 @@
 %%DOCS%%%%T%%/webapps/docs/manager-howto.html
 %%DOCS%%%%T%%/webapps/docs/maven-jars.html
 %%DOCS%%%%T%%/webapps/docs/mbeans-descriptors-howto.html
+%%DOCS%%%%T%%/webapps/docs/mbeans-descriptors.dtd
 %%DOCS%%%%T%%/webapps/docs/monitoring.html
 %%DOCS%%%%T%%/webapps/docs/proxy-howto.html
 %%DOCS%%%%T%%/webapps/docs/realm-howto.html
@@ -252,6 +253,8 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/Async2.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/Async3.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/Async3.java
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.class
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
@@ -614,7 +617,9 @@
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/401.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/403.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/404.jsp
+%%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/connectorCerts.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/connectorCiphers.jsp
+%%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/connectorTrustedCerts.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/web.xml
