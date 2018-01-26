@@ -1,0 +1,44 @@
+diff -ruN tools/clang/include/clang/Basic/LangOptions.def tools/clang/include/clang/Basic/LangOptions.def
+--- tools/clang/include/clang/Basic/LangOptions.def	2015-07-30 22:47:41 UTC
++++ tools/clang/include/clang/Basic/LangOptions.def
+@@ -114,6 +114,7 @@
+ LANGOPT(RTTIData          , 1, 1, "emit run-time type information data")
+ LANGOPT(MSBitfields       , 1, 0, "Microsoft-compatible structure layout")
+ LANGOPT(Freestanding, 1, 0, "freestanding implementation")
++LANGOPT(FormatExtensions  , 1, 0, "FreeBSD format extensions")
+ LANGOPT(NoBuiltin         , 1, 0, "disable builtin functions")
+ LANGOPT(NoMathBuiltin     , 1, 0, "disable math builtin functions")
+ LANGOPT(GNUAsm            , 1, 1, "GNU-style inline assembly")
+diff -ruN tools/clang/include/clang/Driver/Options.td tools/clang/include/clang/Driver/Options.td
+--- tools/clang/include/clang/Driver/Options.td	2015-07-30 22:47:41 UTC
++++ tools/clang/include/clang/Driver/Options.td
+@@ -644,6 +644,8 @@
+ 
+ def ffreestanding : Flag<["-"], "ffreestanding">, Group<f_Group>, Flags<[CC1Option]>,
+   HelpText<"Assert that the compilation takes place in a freestanding environment">;
++def fformat_extensions: Flag<["-"], "fformat-extensions">, Group<f_Group>, Flags<[CC1Option]>,
++  HelpText<"Enable FreeBSD kernel specific format string extensions">;
+ def fgnu_keywords : Flag<["-"], "fgnu-keywords">, Group<f_Group>, Flags<[CC1Option]>,
+   HelpText<"Allow GNU-extension keywords regardless of language standard">;
+ def fgnu89_inline : Flag<["-"], "fgnu89-inline">, Group<f_Group>, Flags<[CC1Option]>,
+--- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig	2017-09-14 19:36:28.212240000 +0100
++++ tools/clang/lib/Driver/ToolChains/Clang.cpp	2017-09-14 19:35:59.296165000 +0100
+@@ -3202,6 +3202,7 @@
+ 
+   // Forward -f (flag) options which we can pass directly.
+   Args.AddLastArg(CmdArgs, options::OPT_femit_all_decls);
++  Args.AddLastArg(CmdArgs, options::OPT_fformat_extensions);
+   Args.AddLastArg(CmdArgs, options::OPT_fheinous_gnu_extensions);
+   Args.AddLastArg(CmdArgs, options::OPT_fno_operator_names);
+   // Emulated TLS is enabled by default on Android and OpenBSD, and can be enabled
+diff -ruN tools/clang/lib/Frontend/CompilerInvocation.cpp tools/clang/lib/Frontend/CompilerInvocation.cpp
+--- tools/clang/lib/Frontend/CompilerInvocation.cpp	2015-07-30 22:47:41 UTC
++++ tools/clang/lib/Frontend/CompilerInvocation.cpp
+@@ -1543,6 +1543,7 @@
+   Opts.ShortWChar = Args.hasFlag(OPT_fshort_wchar, OPT_fno_short_wchar, false);
+   Opts.ShortEnums = Args.hasArg(OPT_fshort_enums);
+   Opts.Freestanding = Args.hasArg(OPT_ffreestanding);
++  Opts.FormatExtensions = Args.hasArg(OPT_fformat_extensions);
+   Opts.NoBuiltin = Args.hasArg(OPT_fno_builtin) || Opts.Freestanding;
+   Opts.NoMathBuiltin = Args.hasArg(OPT_fno_math_builtin);
+   Opts.AssumeSaneOperatorNew = !Args.hasArg(OPT_fno_assume_sane_operator_new);
