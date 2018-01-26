@@ -1,0 +1,6 @@
+Fth is a Forth language interpreter. It includes the interpreter itself, fth,
+and the extension library libfth. You can write Forth scripts and interpret them
+with the interpreter fth, or you can link libfth into an application to use it
+as extension language.
+
+WWW: https://sourceforge.net/projects/fth/
