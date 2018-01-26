@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	sid_cv_have_ios_binary=yes
 INSTALL_TARGET=	install-strip
-USES=		libtool tar:tgz
+USES=		autoreconf libtool tar:tgz
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
