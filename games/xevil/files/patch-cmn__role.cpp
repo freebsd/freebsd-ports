@@ -82,7 +82,14 @@
    // Probably would be better to use Role::message(), but we want it to stay
    // up for a long time.  Should add argument to Role::message().
  
-@@ -663,12 +659,10 @@
+@@ -657,18 +653,16 @@ void Client::connect_server() {  
+     client.sin_family = AF_INET;
+     client.sin_addr.s_addr = htonl(INADDR_ANY);
+     client.sin_port = htons((u_short)(clientPortBase + n));
+-    if (bind(udpSock,(CMN_SOCKADDR *)&client,sizeof(client)) >= 0) {
++    if (::bind(udpSock,(CMN_SOCKADDR *)&client,sizeof(client)) >= 0) {
+       // Success.
+       break;
      }
    }
    if (n == CLIENT_PORT_TRIES) {
@@ -247,11 +254,13 @@
    // Hack, using errLocator for more than reporting errors.
    errLocator->set_remember_deleted(True);
    errLocator->set_remember_sounds(True); 
-@@ -1843,19 +1827,17 @@
+@@ -1842,20 +1826,18 @@ void Server::run() {
+   serverAddr.sin_port = htons(port);
  
    // Give address to both the TCP and UDP sockets.
-   if (bind(tcpSock, (CMN_SOCKADDR *)&serverAddr, sizeof(serverAddr)) < 0) {
+-  if (bind(tcpSock, (CMN_SOCKADDR *)&serverAddr, sizeof(serverAddr)) < 0) {
 -    ostrstream str;
++  if (::bind(tcpSock, (CMN_SOCKADDR *)&serverAddr, sizeof(serverAddr)) < 0) {
 +    stringstream str;
      str << "Couldn't bind socket name to TCP socket on port " 
 -        << port << "."  << ends;
@@ -261,8 +270,9 @@
 +    error(str.str().c_str());
      return;
    }
-   if (bind(udpSock, (CMN_SOCKADDR *)&serverAddr, sizeof(serverAddr)) < 0) {
+-  if (bind(udpSock, (CMN_SOCKADDR *)&serverAddr, sizeof(serverAddr)) < 0) {
 -    ostrstream str;
++  if (::bind(udpSock, (CMN_SOCKADDR *)&serverAddr, sizeof(serverAddr)) < 0) {
 +    stringstream str;
      str << "Couldn't bind socket name to UDP socket on port " 
 -        << port << "."  << ends;
