@@ -9,16 +9,14 @@ CATEGORIES=	devel palm gnome
 MASTER_SITES=	http://cactus.rulez.org/projects/guikachu/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Resource editor for PalmOS(tm) systems
+COMMENT=	Resource editor for PalmOS systems
 
 LIB_DEPENDS=	libgnomeuimm-2.6.so:x11-toolkits/libgnomeuimm26 \
 		libgnomevfsmm-2.6.so:devel/gnome-vfsmm
 
-BROKEN=		fails to build: ustring.h: expected ';' at end of declaration list
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2018-01-27
-
-USES=		gmake pathfix pkgconfig shared-mime-info desktop-file-utils
+USES=		compiler:c++11-lang gmake pathfix pkgconfig \
+		shared-mime-info desktop-file-utils
+USE_CXXSTD=	c++11
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_UPDATE_MIME="no"
