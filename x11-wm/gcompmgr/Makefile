@@ -12,13 +12,10 @@ COMMENT=	GNOME interface to xcompmgr
 
 RUN_DEPENDS=	xcompmgr:x11-wm/xcompmgr
 
-BROKEN=		fails to compile: ustring.h: expected ';' at end of declaration list
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2018-01-27
-
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lX11
-USES=		autoreconf libtool pkgconfig
+USES=		compiler:c++11-lang autoreconf libtool pkgconfig
+USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm24
 USE_XORG=	x11
 
@@ -33,6 +30,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${RM} ${WRKSRC}/INSTALL
+	@${REINPLACE_CMD} -e '/^CXXFLAGS=""/d' ${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|connect(SigC::slot|connect(sigc::mem_fun|g ; \
 		s|#include <sigc++\/compatibility\.h>||g' \
 			${WRKSRC}/src/*.cc
