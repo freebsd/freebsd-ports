@@ -1,0 +1,17 @@
+TIMESTAMP = 1514447413
+SHA256 (wjakob-instant-meshes-0.0-42-g4a083f4_GH0.tar.gz) = 8fbde93e36a8f8007463b6a34c15b755e3bb9856944f63a61773708021396e10
+SIZE (wjakob-instant-meshes-0.0-42-g4a083f4_GH0.tar.gz) = 3001873
+SHA256 (wjakob-nanogui-2a61f03_GH0.tar.gz) = 449ec1c4510377a651de5357b18b7540f9cc4bbf2cac6b1b36d28ceff045a6b3
+SIZE (wjakob-nanogui-2a61f03_GH0.tar.gz) = 2420569
+SHA256 (wjakob-glfw-0ff30d6_GH0.tar.gz) = 31bd08bd1d8061a3f62ff970561994b6c90d2db7ab955134cef71ee0eda5d165
+SIZE (wjakob-glfw-0ff30d6_GH0.tar.gz) = 471108
+SHA256 (wjakob-nanovg-ac15b84_GH0.tar.gz) = b7971a9c4ae472c39190ed6b24d98622fec3ace0e744362fa8b540dba212a4ff
+SIZE (wjakob-nanovg-ac15b84_GH0.tar.gz) = 2014793
+SHA256 (pybind-pybind11-c01a1c1_GH0.tar.gz) = 84cd4dc4c0b703a43d8d547c8ddadcf30d3c26e45e3a1565bd9d5ef5040fcf7d
+SIZE (pybind-pybind11-c01a1c1_GH0.tar.gz) = 360503
+SHA256 (wjakob-pcg32-0ef13e6_GH0.tar.gz) = 4043b476e24158b5fc157428f2c09eea342a8f03e77fa9d57609e220e8605b9e
+SIZE (wjakob-pcg32-0ef13e6_GH0.tar.gz) = 5320
+SHA256 (wjakob-dset-7967ef0_GH0.tar.gz) = 5f9361a6760b327cacbe77e9260bc3b121c35ff740c61d235aff7079efaa4423
+SIZE (wjakob-dset-7967ef0_GH0.tar.gz) = 2492
+SHA256 (wjakob-pss-a91da33_GH0.tar.gz) = e2dc7fd87c44971ea53d0c7436daa70ae3caba77facff7b5554fdb5a3d67c1b5
+SIZE (wjakob-pss-a91da33_GH0.tar.gz) = 3476

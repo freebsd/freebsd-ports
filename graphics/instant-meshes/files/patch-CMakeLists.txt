@@ -1,0 +1,48 @@
+--- CMakeLists.txt.orig	2017-09-06 16:18:14 UTC
++++ CMakeLists.txt
+@@ -11,11 +11,11 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CO
+ endif()
+ string(TOUPPER "${CMAKE_BUILD_TYPE}" U_CMAKE_BUILD_TYPE)
+ 
+-if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/ext/nanogui/ext/glfw")
+-  message(FATAL_ERROR "The Instant Meshes dependency repositories (NanoGUI, GLFW, etc.) are missing! "
+-    "You probably did not clone the project with --recursive. It is possible to recover "
+-    "by calling \"git submodule update --init --recursive\"")
+-endif()
++#if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/ext/nanogui/ext/glfw")
++#  message(FATAL_ERROR "The Instant Meshes dependency repositories (NanoGUI, GLFW, etc.) are missing! "
++#    "You probably did not clone the project with --recursive. It is possible to recover "
++#    "by calling \"git submodule update --init --recursive\"")
++#endif()
+ 
+ # Enable folders for projects in Visual Studio
+ if (CMAKE_GENERATOR MATCHES "Visual Studio")
+@@ -66,7 +66,7 @@ set(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL
+ set(NANOGUI_BUILD_SHARED  OFF CACHE BOOL " " FORCE)
+ set(NANOGUI_BUILD_PYTHON  OFF CACHE BOOL " " FORCE)
+ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/ext/nanogui ext_build/nanogui)
+-set_property(TARGET nanogui glfw glfw_objects bin2c PROPERTY FOLDER "dependencies")
++set_property(TARGET nanogui bin2c PROPERTY FOLDER "dependencies")
+ 
+ # Build TBB
+ set(TBB_BUILD_STATIC ON CACHE BOOL " " FORCE)
+@@ -75,8 +75,8 @@ set(TBB_BUILD_TBBMALLOC OFF CACHE BOOL "
+ set(TBB_BUILD_TBBMALLOC_PROXY OFF CACHE BOOL " " FORCE)
+ set(TBB_BUILD_TESTS OFF CACHE BOOL " " FORCE)
+ 
+-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/ext/tbb ext_build/tbb)
+-set_property(TARGET tbb_static tbb_def_files PROPERTY FOLDER "dependencies")
++#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/ext/tbb ext_build/tbb)
++#set_property(TARGET tbb_static tbb_def_files PROPERTY FOLDER "dependencies")
+ 
+ # Compile instant meshes with various compiler warnings turned on
+ if(MSVC)
+@@ -173,7 +173,7 @@ add_executable(InstantMeshes MACOSX_BUND
+   ${EXTRA_SOURCE})
+ 
+ add_definitions(${NANOGUI_EXTRA_DEFS})
+-target_link_libraries(InstantMeshes tbb_static nanogui ${NANOGUI_EXTRA_LIBS})
++target_link_libraries(InstantMeshes tbb nanogui ${NANOGUI_EXTRA_LIBS})
+ 
+ set_target_properties(InstantMeshes PROPERTIES OUTPUT_NAME "Instant Meshes")
+ 
