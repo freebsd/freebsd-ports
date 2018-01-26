@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	lcapy
-DISTVERSION=	40de0a2
+DISTVERSION=	g20171202
+PORTEPOCH=	1
 CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,12 +13,14 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${FLAVOR}
 
-USES=		python:2.7
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	distutils concurrent autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	mph-
+GH_TAGNAME=	23c940f
 PORTEXAMPLES=	netlists \
 		networks \
 		notebooks \
