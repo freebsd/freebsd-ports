@@ -741,6 +741,7 @@
     SUBDIR += testu01
     SUBDIR += tetgen
     SUBDIR += timbl
+    SUBDIR += tmv
     SUBDIR += tomsfastmath
     SUBDIR += topaz
     SUBDIR += triangle
