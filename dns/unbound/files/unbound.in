@@ -23,13 +23,15 @@ rcvar=unbound_enable
 command="%%PREFIX%%/sbin/unbound"
 extra_commands="reload"
 start_precmd="start_precmd"
-reload_precmd="%%PREFIX%%/sbin/unbound-checkconf >/dev/null"
+reload_precmd="%%PREFIX%%/sbin/unbound-checkconf ${unbound_conf} >/dev/null"
 
 load_rc_config $name
 
 pidfile=${unbound_pidfile:-"%%PREFIX%%/etc/unbound/unbound.pid"}
 unbound_enable=${unbound_enable:-"NO"}
 unbound_anchorflags=${unbound_anchorflags:-""}
+unbound_conf=${unbound_conf:-"%%ETCDIR%%/unbound.conf"}
+unbound_flags=${unbound_flags:-" -c ${unbound_conf}"}
 
 start_precmd()
 {
@@ -40,7 +42,7 @@ start_precmd()
 		su -m unbound -c "%%PREFIX%%/sbin/unbound-anchor ${unbound_anchorflags}"
 	fi
 	echo .
-	%%PREFIX%%/sbin/unbound-checkconf > /dev/null
+	%%PREFIX%%/sbin/unbound-checkconf ${unbound_conf} > /dev/null
 	return $?
 }
 
