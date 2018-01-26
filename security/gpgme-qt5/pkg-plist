@@ -24,6 +24,7 @@ include/QGpgME/ListAllKeysJob
 include/QGpgME/MultiDeleteJob
 include/QGpgME/Protocol
 include/QGpgME/QGpgMENewCryptoConfig
+include/QGpgME/QuickJob
 include/QGpgME/RefreshKeysJob
 include/QGpgME/SignEncryptJob
 include/QGpgME/SignJob
@@ -61,6 +62,7 @@ include/qgpgme/protocol.h
 include/qgpgme/qgpgme_export.h
 include/qgpgme/qgpgme_version.h
 include/qgpgme/qgpgmenewcryptoconfig.h
+include/qgpgme/quickjob.h
 include/qgpgme/refreshkeysjob.h
 include/qgpgme/signencryptjob.h
 include/qgpgme/signjob.h
@@ -74,4 +76,4 @@ lib/cmake/QGpgme/QGpgmeConfig.cmake
 lib/cmake/QGpgme/QGpgmeConfigVersion.cmake
 lib/libqgpgme.so
 lib/libqgpgme.so.7
-lib/libqgpgme.so.7.2.0
+lib/libqgpgme.so.7.3.0
