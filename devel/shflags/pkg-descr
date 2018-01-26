@@ -1,13 +1,10 @@
-Shell Flags (shFlags) is a library written to greatly simplify the
-handling of command-line flags in Bourne based Unix shell scripts (bash,
-dash, ksh, sh, zsh) on many Unix OSes (Linux, Solaris, Mac OS X, etc.).
+shFlags is a port of the Google gflags library for Unix shell. The code is
+written in a way to be as portable as possible to work across a wide array of
+Unix variants.
 
-Most shell scripts use getopt for flags processing, but the different
-versions of getopt on various OSes make writing portable shell scripts
-difficult. shFlags instead provides an API that doesn't change across
-shell and OS versions so the script writer can be confident that the
-script will work.
-
-shFlags is a port of the google-gflags C++/Python library.
+shFlags is simply a library that you include into an existing shell script that
+gives you some additional functions that can be called. The power behind those
+functions though is somewhat amazing though, and you will hopefully be amazed
+with the simplicity with which you can handle command-line arguments in shell.
 
 WWW: https://github.com/kward/shflags
