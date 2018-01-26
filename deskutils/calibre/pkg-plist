@@ -1345,6 +1345,7 @@ lib/calibre/calibre/utils/resources.py
 lib/calibre/calibre/utils/rss_gen.py
 lib/calibre/calibre/utils/run_tests.py
 lib/calibre/calibre/utils/search_query_parser.py
+lib/calibre/calibre/utils/search_query_parser_test.py
 lib/calibre/calibre/utils/serialize.py
 lib/calibre/calibre/utils/serve_coffee.py
 lib/calibre/calibre/utils/sftp.py
