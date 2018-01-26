@@ -45,9 +45,9 @@
 static const struct regcache_map_entry aarch64_fbsd_pcbmap[] =
   {
     { 30, AARCH64_X0_REGNUM, 8 }, /* x0 ... x29 */
-    { 1, AARCH64_LR_REGNUM, 8 },
-    { 1, AARCH64_SP_REGNUM, 8 },
     { 1, AARCH64_PC_REGNUM, 8 },
+    { 1, REGCACHE_MAP_SKIP, 8 },
+    { 1, AARCH64_SP_REGNUM, 8 },
     { 0 }
   };
 
@@ -100,7 +100,7 @@ aarch64_fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
   trad_frame_set_reg_addr (cache, AARCH64_PC_REGNUM, sp + 16);
   trad_frame_set_reg_addr (cache, AARCH64_CPSR_REGNUM, sp + 24);
   for (i = 0; i < 30; i++)
-    trad_frame_set_reg_addr (cache, AARCH64_X0_REGNUM + 1, sp + 32 + i * 8);
+    trad_frame_set_reg_addr (cache, AARCH64_X0_REGNUM + i, sp + 32 + i * 8);
 
   /* Read $PC from trap frame.  */
   pc = read_memory_unsigned_integer (sp + 16, 8, byte_order);
@@ -149,9 +149,9 @@ aarch64_fbsd_trapframe_sniffer (const struct frame_unwind *self,
   find_pc_partial_function (get_frame_func (this_frame), &name, NULL, NULL);
   return (name && ((strcmp (name, "handle_el1h_sync") == 0)
 		   || (strcmp (name, "handle_el1h_irq") == 0)
-		   || (strcmp (name, "handle_el0h_sync") == 0)
-		   || (strcmp (name, "handle_el0h_irq") == 0)
-		   || (strcmp (name, "handle_el0h_error") == 0)
+		   || (strcmp (name, "handle_el0_sync") == 0)
+		   || (strcmp (name, "handle_el0_irq") == 0)
+		   || (strcmp (name, "handle_el0_error") == 0)
 		   || (strcmp (name, "fork_trampoline") == 0)));
 }
 
