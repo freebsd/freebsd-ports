@@ -1,0 +1,247 @@
+jsapi.cpp:3988:16: error: cannot initialize return object of type 'JSIdArray *' with an rvalue of type 'bool'
+        return false;
+               ^~~~~
+jsarray.cpp:497:1: error: non-constant-expression cannot be narrowed from type 'intptr_t' (aka 'long') to 'uintptr_t' (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
+JS_DEFINE_CALLINFO_3(extern, BOOL, js_EnsureDenseArrayCapacity, CONTEXT, OBJECT, INT32,
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./jsbuiltins.h:350:5: note: expanded from macro 'JS_DEFINE_CALLINFO_3'
+    _JS_DEFINE_CALLINFO(linkage, op,                                                              \
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./jsbuiltins.h:294:11: note: expanded from macro '_JS_DEFINE_CALLINFO'
+        { (intptr_t) &name, argtypes, nanojit::ABI_FASTCALL, isPure, storeAccSet _JS_CI_NAME(name) }; \
+          ^~~~~~~~~~~~~~~~
+jsfun.cpp:2054:16: error: cannot initialize return object of type 'JSString *' with an rvalue of type 'bool'
+        return false;
+               ^~~~~
+jsfun.cpp:2660:20: error: cannot initialize return object of type 'const js::Shape *' with an rvalue of type 'bool'
+            return false;
+                   ^~~~~
+jsiter.cpp:428:20: error: cannot initialize return object of type 'JSObject *' with an rvalue of type 'bool'
+            return false;
+                   ^~~~~
+jsparse.cpp:3355:20: error: cannot initialize return object of type 'JSParseNode *' with an rvalue of type 'bool'
+            return false;
+                   ^~~~~
+jsstr.cpp:1737:24: error: cannot initialize return object of type 'const RegExpPair *' with an rvalue of type 'bool'
+                return false;
+                       ^~~~~
+jsstr.cpp:3403:16: error: cannot initialize return object of type 'JSObject *' with an rvalue of type 'JSIntn' (aka 'int')
+        return JS_FALSE;
+               ^~~~~~~~
+./jstypes.h:395:18: note: expanded from macro 'JS_FALSE'
+#define JS_FALSE (JSIntn)0
+                 ^~~~~~~~~
+jstypedarray.cpp:1337:20: error: cannot initialize return object of type 'JSObject *' with an rvalue of type 'bool'
+            return false;
+                   ^~~~~
+jstypedarray.cpp:1671:16: error: cannot initialize return object of type 'JSObject *' with an rvalue of type 'bool'
+        return false;
+               ^~~~~
+jsxml.cpp:285:16: error: cannot initialize return object of type 'JSObject *' with an rvalue of type 'JSIntn' (aka 'int')
+        return JS_FALSE;
+               ^~~~~~~~
+jsxml.cpp:434:20: error: cannot initialize return object of type 'JSString *' with an rvalue of type 'JSIntn' (aka 'int')
+            return JS_FALSE;
+                   ^~~~~~~~
+./jstypes.h:395:18: note: expanded from macro 'JS_FALSE'
+#define JS_FALSE (JSIntn)0
+                 ^~~~~~~~~
+./methodjit/InvokeHelpers.cpp:731:16: error: cannot initialize return object of type 'void *' with an rvalue of type 'bool'
+        return false;
+               ^~~~~
+./nanojit/NativeX64.cpp:1902:59: error: constant expression evaluates to 9223372036854775808 which cannot be narrowed to type 'int64_t' (aka 'long') [-Wc++11-narrowing]
+    static const AVMPLUS_ALIGN16(int64_t) negateMask[] = {0x8000000000000000LL,0};
+                                                          ^~~~~~~~~~~~~~~~~~~~
+./nanojit/NativeX64.cpp:1902:59: note: insert an explicit cast to silence this issue
+    static const AVMPLUS_ALIGN16(int64_t) negateMask[] = {0x8000000000000000LL,0};
+                                                          ^~~~~~~~~~~~~~~~~~~~
+                                                          static_cast<int64_t>( )
+./nanojit/RegAlloc.h:189:24: error: non-constant-expression cannot be narrowed from type 'int' to 'nanojit::Register' (aka 'unsigned int') in initializer list [-Wc++11-narrowing]
+        Register r = { (sizeof(RegisterMask) == 4) ? lsbSet32(mask) : lsbSet64(mask) };
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./nanojit/RegAlloc.h:189:24: note: insert an explicit cast to silence this issue
+        Register r = { (sizeof(RegisterMask) == 4) ? lsbSet32(mask) : lsbSet64(mask) };
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                       static_cast<Register>(                                       )
+./nanojit/RegAlloc.h:197:24: error: non-constant-expression cannot be narrowed from type 'int' to 'nanojit::Register' (aka 'unsigned int') in initializer list [-Wc++11-narrowing]
+        Register r = { (sizeof(RegisterMask) == 4) ? msbSet32(mask) : msbSet64(mask) };
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./nanojit/RegAlloc.h:197:24: note: insert an explicit cast to silence this issue
+        Register r = { (sizeof(RegisterMask) == 4) ? msbSet32(mask) : msbSet64(mask) };
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                       static_cast<Register>(                                       )
+
+--- jsapi.cpp.orig	2011-03-31 19:08:36 UTC
++++ jsapi.cpp
+@@ -3985,7 +3985,7 @@ JS_Enumerate(JSContext *cx, JSObject *obj)
+     AutoIdVector props(cx);
+     JSIdArray *ida;
+     if (!GetPropertyNames(cx, obj, JSITER_OWNONLY, &props) || !VectorToIdArray(cx, props, &ida))
+-        return false;
++        return NULL;
+     for (size_t n = 0; n < size_t(ida->length); ++n)
+         JS_ASSERT(js_CheckForStringIndex(ida->vector[n]) == ida->vector[n]);
+     return ida;
+--- jsbuiltins.h.orig	2011-03-31 19:08:36 UTC
++++ jsbuiltins.h
+@@ -284,14 +284,14 @@ struct ClosureVarInfo;
+ #define _JS_DEFINE_CALLINFO(linkage, name, crtype, cargtypes, argtypes, isPure, storeAccSet)      \
+     _JS_TN_LINKAGE(linkage, crtype) name cargtypes;                                               \
+     _JS_CI_LINKAGE(linkage) const nanojit::CallInfo _JS_CALLINFO(name) =                          \
+-        { (intptr_t) &name, argtypes, nanojit::ABI_CDECL, isPure, storeAccSet _JS_CI_NAME(name) };\
++        { (uintptr_t) &name, argtypes, nanojit::ABI_CDECL, isPure, storeAccSet _JS_CI_NAME(name) };\
+     JS_STATIC_ASSERT_IF(isPure, (storeAccSet) == nanojit::ACCSET_NONE);
+ 
+ #else
+ #define _JS_DEFINE_CALLINFO(linkage, name, crtype, cargtypes, argtypes, isPure, storeAccSet)      \
+     _JS_TN_LINKAGE(linkage, crtype) FASTCALL name cargtypes;                                      \
+     _JS_CI_LINKAGE(linkage) const nanojit::CallInfo _JS_CALLINFO(name) =                          \
+-        { (intptr_t) &name, argtypes, nanojit::ABI_FASTCALL, isPure, storeAccSet _JS_CI_NAME(name) }; \
++        { (uintptr_t) &name, argtypes, nanojit::ABI_FASTCALL, isPure, storeAccSet _JS_CI_NAME(name) }; \
+     JS_STATIC_ASSERT_IF(isPure, (storeAccSet) == nanojit::ACCSET_NONE);
+ #endif
+ 
+--- jsfun.cpp.orig	2011-03-31 19:08:36 UTC
++++ jsfun.cpp
+@@ -2051,7 +2051,7 @@ fun_toStringHelper(JSContext *cx, JSObject *obj, uintN
+ 
+     JSString *str = JS_DecompileFunction(cx, fun, indent);
+     if (!str)
+-        return false;
++        return NULL;
+ 
+     if (!indent)
+         cx->compartment->toSourceCache.put(fun, str);
+@@ -2657,7 +2657,7 @@ LookupInterpretedFunctionPrototype(JSContext *cx, JSOb
+     const Shape *shape = funobj->nativeLookup(id);
+     if (!shape) {
+         if (!ResolveInterpretedFunctionPrototype(cx, funobj))
+-            return false;
++            return NULL;
+         shape = funobj->nativeLookup(id);
+     }
+     JS_ASSERT(!shape->configurable());
+--- jsiter.cpp.orig	2011-03-31 19:08:36 UTC
++++ jsiter.cpp
+@@ -425,7 +425,7 @@ NewIteratorObject(JSContext *cx, uintN flags)
+          */
+         JSObject *obj = js_NewGCObject(cx, FINALIZE_OBJECT0);
+         if (!obj)
+-            return false;
++            return NULL;
+         obj->init(cx, &js_IteratorClass, NULL, NULL, NULL, false);
+         obj->setMap(cx->compartment->emptyEnumeratorShape);
+         return obj;
+--- jsparse.cpp.orig	2011-03-31 19:08:36 UTC
++++ jsparse.cpp
+@@ -3352,7 +3352,7 @@ Parser::functionDef(JSAtom *funAtom, FunctionType type
+     if (!outertc->inFunction() && bodyLevel && funAtom && !lambda && outertc->compiling()) {
+         JS_ASSERT(pn->pn_cookie.isFree());
+         if (!DefineGlobal(pn, outertc->asCodeGenerator(), funAtom))
+-            return false;
++            return NULL;
+     }
+ 
+     pn->pn_blockid = outertc->blockid();
+--- jsstr.cpp.orig	2011-03-31 19:08:36 UTC
++++ jsstr.cpp
+@@ -1734,7 +1734,7 @@ class RegExpGuard
+         if (flat) {
+             patstr = flattenPattern(cx, fm.patstr);
+             if (!patstr)
+-                return false;
++                return NULL;
+         } else {
+             patstr = fm.patstr;
+         }
+@@ -3400,7 +3400,7 @@ js_InitStringClass(JSContext *cx, JSObject *obj)
+                                  UndefinedValue(), NULL, NULL,
+                                  JSPROP_READONLY | JSPROP_PERMANENT | JSPROP_SHARED, 0, 0,
+                                  NULL)) {
+-        return JS_FALSE;
++        return NULL;
+     }
+ 
+     return proto;
+--- jstypedarray.cpp.orig	2011-03-31 19:08:36 UTC
++++ jstypedarray.cpp
+@@ -1334,7 +1334,7 @@ class TypedArrayTemplate
+         if (size != 0 && count >= INT32_MAX / size) {
+             JS_ReportErrorNumber(cx, js_GetErrorMessage, NULL,
+                                  JSMSG_NEED_DIET, "size and count");
+-            return false;
++            return NULL;
+         }
+ 
+         int32 bytelen = size * count;
+@@ -1668,7 +1668,7 @@ TypedArrayConstruct(JSContext *cx, jsint atype, uintN 
+ 
+       default:
+         JS_NOT_REACHED("shouldn't have gotten here");
+-        return false;
++        return NULL;
+     }
+ }
+ 
+--- jsxml.cpp.orig	2011-03-31 19:08:36 UTC
++++ jsxml.cpp
+@@ -282,7 +282,7 @@ NewXMLNamespace(JSContext *cx, JSLinearString *prefix,
+ 
+     obj = NewBuiltinClassInstanceXML(cx, &js_NamespaceClass);
+     if (!obj)
+-        return JS_FALSE;
++        return NULL;
+     JS_ASSERT(JSVAL_IS_VOID(obj->getNamePrefixVal()));
+     JS_ASSERT(JSVAL_IS_VOID(obj->getNameURIVal()));
+     JS_ASSERT(JSVAL_IS_VOID(obj->getNamespaceDeclared()));
+@@ -431,7 +431,7 @@ ConvertQNameToString(JSContext *cx, JSObject *obj)
+         size_t length = str->length();
+         jschar *chars = (jschar *) cx->malloc((length + 2) * sizeof(jschar));
+         if (!chars)
+-            return JS_FALSE;
++            return NULL;
+         *chars = '@';
+         const jschar *strChars = str->getChars(cx);
+         if (!strChars) {
+--- methodjit/InvokeHelpers.cpp.orig	2011-03-31 19:08:36 UTC
++++ methodjit/InvokeHelpers.cpp
+@@ -728,7 +728,7 @@ AtSafePoint(JSContext *cx)
+ {
+     JSStackFrame *fp = cx->fp();
+     if (fp->hasImacropc())
+-        return false;
++        return NULL;
+ 
+     JSScript *script = fp->script();
+     return script->maybeNativeCodeForPC(fp->isConstructing(), cx->regs->pc);
+--- nanojit/NativeX64.cpp.orig	2011-03-31 19:08:36 UTC
++++ nanojit/NativeX64.cpp
+@@ -1899,7 +1899,7 @@ namespace nanojit
+          }
+     }
+ 
+-    static const AVMPLUS_ALIGN16(int64_t) negateMask[] = {0x8000000000000000LL,0};
++    static const AVMPLUS_ALIGN16(int64_t) negateMask[] = {(int64_t)0x8000000000000000LL,0};
+ 
+     void Assembler::asm_fneg(LIns *ins) {
+         Register rr, ra;
+--- nanojit/RegAlloc.h.orig	2011-03-31 19:08:36 UTC
++++ nanojit/RegAlloc.h
+@@ -186,7 +186,7 @@ namespace nanojit
+     inline Register lsReg(RegisterMask mask) {
+         // This is faster than it looks; we rely on the C++ optimizer
+         // to strip the dead branch and inline just one alternative.
+-        Register r = { (sizeof(RegisterMask) == 4) ? lsbSet32(mask) : lsbSet64(mask) };
++        Register r = { (sizeof(RegisterMask) == 4) ? (Register)lsbSet32(mask) : (Register)lsbSet64(mask) };
+         return r;
+     }
+ 
+@@ -194,7 +194,7 @@ namespace nanojit
+     inline Register msReg(RegisterMask mask) {
+         // This is faster than it looks; we rely on the C++ optimizer
+         // to strip the dead branch and inline just one alternative.
+-        Register r = { (sizeof(RegisterMask) == 4) ? msbSet32(mask) : msbSet64(mask) };
++        Register r = { (sizeof(RegisterMask) == 4) ? (Register)msbSet32(mask) : (Register)msbSet64(mask) };
+         return r;
+     }
+ 
