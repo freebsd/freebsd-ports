@@ -1,0 +1,15 @@
+TIMESTAMP = 1516903760
+SHA256 (llvm-6.0.0rc1.src.tar.xz) = 6d0bafa39f666181bf711e4afd089eae193dce081a13e84e300d6a6968985137
+SIZE (llvm-6.0.0rc1.src.tar.xz) = 25268528
+SHA256 (cfe-6.0.0rc1.src.tar.xz) = a203dca484aea8c315a6e6098bb9b77fc3b43c8a86fb59e9dbbd959e5e0432d7
+SIZE (cfe-6.0.0rc1.src.tar.xz) = 11954864
+SHA256 (compiler-rt-6.0.0rc1.src.tar.xz) = 3f19543cb8b9170aa02f2b8b3104a61fe7ba607a91b7bf1cffb73a5dbaa2bc21
+SIZE (compiler-rt-6.0.0rc1.src.tar.xz) = 1635768
+SHA256 (clang-tools-extra-6.0.0rc1.src.tar.xz) = d6e306d219fd725c3bb7063ca337b11906855853f1f088c712ba008b995944e6
+SIZE (clang-tools-extra-6.0.0rc1.src.tar.xz) = 758104
+SHA256 (lld-6.0.0rc1.src.tar.xz) = 29d90ee405b4d6bea4881c7d83f212315248f10699cd27a7d6e50cb88439f8fb
+SIZE (lld-6.0.0rc1.src.tar.xz) = 785256
+SHA256 (lldb-6.0.0rc1.src.tar.xz) = 843efd16695bc5d7c823cf743ea8a9145d3c39514f3cb73998946572c1ac0ba8
+SIZE (lldb-6.0.0rc1.src.tar.xz) = 19318508
+SHA256 (openmp-6.0.0rc1.src.tar.xz) = ee4298c5005ba135b9f757993cdb4dbc61350ffa64eca15fb70965784a64ce46
+SIZE (openmp-6.0.0rc1.src.tar.xz) = 2272032
