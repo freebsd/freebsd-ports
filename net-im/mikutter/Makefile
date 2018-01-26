@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL/tota/${PORTNAME}
@@ -29,9 +29,9 @@ RUN_DEPENDS=	rubygem-gtk2>=3.1.8:x11-toolkits/rubygem-gtk2 \
 		rubygem-memoist>=0.16.0:devel/rubygem-memoist \
 		rubygem-moneta>=0.7:devel/rubygem-moneta \
 		rubygem-nokogiri>=1.6.7:textproc/rubygem-nokogiri \
-		rubygem-oauth>=0.5.3:net/rubygem-oauth \
+		rubygem-oauth>=0.5.4:net/rubygem-oauth \
 		rubygem-pluggaloid>=1.1.1:devel/rubygem-pluggaloid \
-		rubygem-public_suffix>=3.0.0:dns/rubygem-public_suffix \
+		rubygem-public_suffix>=3.0.1:dns/rubygem-public_suffix \
 		rubygem-ruby-hmac>=0.4.0:security/rubygem-ruby-hmac \
 		rubygem-text>=1.3.1:textproc/rubygem-text \
 		rubygem-totoridipjp>=0.1.0:www/rubygem-totoridipjp \
