@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2017-11-06 17:57:14 UTC
++++ Makefile.in
+@@ -2206,7 +2206,7 @@ PicStatic: $(librecoll_la_OBJECTS)
+ @MAKEPYTHON_TRUE@            OPTSFORPYTHON=--install-layout=deb; \
+ @MAKEPYTHON_TRUE@        fi; \
+ @MAKEPYTHON_TRUE@        set -x; \
+-@MAKEPYTHON_TRUE@        python setup.py install \
++@MAKEPYTHON_TRUE@        ${PYTHON_CMD} setup.py install --no-compile \
+ @MAKEPYTHON_TRUE@         --prefix=${prefix} --root=$${DESTDIR:-/} $${OPTSFORPYTHON})
+ @MAKEPYTHON_TRUE@clean-local: recollpython-clean
+ @MAKEPYTHON_TRUE@recollpython-clean:
