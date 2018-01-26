@@ -14,6 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pathfix pkgconfig libtool
+USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image
 USE_LDCONFIG=	yes
