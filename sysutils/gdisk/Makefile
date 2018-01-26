@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/gptfdisk/gptfdisk/${PORTVERSION}
 DISTNAME=	gptfdisk-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GPT fdisk
 
 LICENSE=	GPLv2
@@ -15,23 +15,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
-		libpopt.so:devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=	localbase:ldflags
+USES=		localbase:ldflags
 
-MAKEFILE=	Makefile.freebsd
 ALL_TARGET=	fixparts gdisk sgdisk
+MAKEFILE=	Makefile.freebsd
 
 OPTIONS_DEFINE=	CGDISK UTF16
 OPTIONS_SUB=	yes
-
 CGDISK_DESC=	Curses-based interactive program
 UTF16_DESC=	Support for Unicode partition names
 
 CGDISK_ALL_TARGET=	cgdisk
 CGDISK_USES=		ncurses
-
 UTF16_CPPFLAGS=		-DUSE_UTF16
 UTF16_LDFLAGS=		-licuio -licuuc
 UTF16_LIB_DEPENDS=	libicuuc.so:devel/icu
