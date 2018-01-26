@@ -40,8 +40,10 @@ PLIST_SUB=	PHP_EXT_DIR=${PHP_EXT_DIR} PHP_MAJOR_VER=${PHP_VER:C|.$||}
 
 .if ${PHP_VER} >= 70
 CONFIGURE_ARGS+=--with-php7 --without-php
+PLIST_SUB+=	PHP5="@comment " PHP7=""
 .else
 CONFIGURE_ARGS+=--with-php --without-php7
+PLIST_SUB+=	PHP5="" PHP7="@comment "
 .endif
 
 post-patch:
