@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	1.9.0
-PORTREVISION?=	1
+PORTVERSION=	1.10.0
+PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -82,17 +82,10 @@ USES+=		python
 USE_PYTHON=	py3kplist flavors
 CONFIGURE_ENV+=	SWIG=${LOCALBASE}/bin/swig3.0
 PLIST_SUB+=	VERSION=${PORTVERSION}
-.  endif
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(SLAVEPORT)
-.  if ${SLAVEPORT} == "python"
-.    if ${PYTHON_REL} >= 3000
-CONFIGURE_ARGS+=--enable-languages="python3"
-.    else
+.    if ${FLAVOR:Upy27:Mpy2*}
 CONFIGURE_ARGS+=--enable-languages="python2"
+.    else
+CONFIGURE_ARGS+=--enable-languages="python3"
 .    endif
 .  endif
 .endif
@@ -114,4 +107,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

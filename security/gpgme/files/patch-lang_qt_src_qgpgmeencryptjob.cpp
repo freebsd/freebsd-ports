@@ -1,22 +1,22 @@
-Rename encrypt() so that the code builds with FreeBSD 10.2/10.3's libc++, which
+Rename encrypt() so that the code builds with FreeBSD 10.4's libc++, which
 has a bug that causes std::bind() to fail with the original function name:
 
-qgpgmeencryptjob.cpp:133:9: error: no matching function for call to 'bind'
+qgpgmeencryptjob.cpp:134:9: error: no matching function for call to 'bind'
     run(std::bind(&encrypt,
         ^~~~~~~~~
-/usr/include/c++/v1/functional:2184:1: note: candidate template ignored:
+/usr/include/c++/v1/functional:2185:1: note: candidate template ignored:
 couldn't infer template argument '_Fp'
 bind(_Fp&& __f, _BoundArgs&&... __bound_args)
 ^
-/usr/include/c++/v1/functional:2193:1: note: candidate template ignored:
+/usr/include/c++/v1/functional:2194:1: note: candidate template ignored:
 couldn't infer template argument '_Rp'
 bind(_Fp&& __f, _BoundArgs&&... __bound_args)
 ^
 1 error generated.
 
---- lang/qt/src/qgpgmeencryptjob.cpp.orig	2016-10-18 17:22:02 UTC
+--- lang/qt/src/qgpgmeencryptjob.cpp.orig	2017-07-12 12:35:02 UTC
 +++ lang/qt/src/qgpgmeencryptjob.cpp
-@@ -65,7 +65,7 @@ void QGpgMEEncryptJob::setOutputIsBase64
+@@ -66,7 +66,7 @@ void QGpgMEEncryptJob::setOutputIsBase64Encoded(bool o
      mOutputIsBase64Encoded = on;
  }
  
@@ -25,7 +25,7 @@ bind(_Fp&& __f, _BoundArgs&&... __bound_args)
          const std::vector<Key> &recipients,
          const std::weak_ptr<QIODevice> &plainText_,
          const std::weak_ptr<QIODevice> &cipherText_,
-@@ -117,7 +117,7 @@ static QGpgMEEncryptJob::result_type enc
+@@ -118,7 +118,7 @@ static QGpgMEEncryptJob::result_type encrypt_qba(Conte
      if (!buffer->open(QIODevice::ReadOnly)) {
          assert(!"This should never happen: QBuffer::open() failed");
      }
@@ -34,7 +34,7 @@ bind(_Fp&& __f, _BoundArgs&&... __bound_args)
  }
  
  Error QGpgMEEncryptJob::start(const std::vector<Key> &recipients, const QByteArray &plainText, bool alwaysTrust)
-@@ -130,7 +130,7 @@ Error QGpgMEEncryptJob::start(const std:
+@@ -131,7 +131,7 @@ Error QGpgMEEncryptJob::start(const std::vector<Key> &
  void QGpgMEEncryptJob::start(const std::vector<Key> &recipients, const std::shared_ptr<QIODevice> &plainText,
                               const std::shared_ptr<QIODevice> &cipherText, const Context::EncryptionFlags eflags)
  {
