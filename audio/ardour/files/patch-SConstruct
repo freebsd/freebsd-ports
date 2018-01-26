@@ -1,4 +1,4 @@
---- SConstruct.orig
+--- SConstruct.orig	2012-12-02 19:19:45 UTC
 +++ SConstruct
 @@ -784,10 +784,7 @@ if env['FPU_OPTIMIZATION']:
  # handle x86/x86_64 libdir properly
@@ -27,7 +27,16 @@
  
  if env['DEBUG'] == 1:
      env.Append(CCFLAGS=" ".join (debug_flags))
-@@ -954,6 +945,7 @@ conf.Finish()
+@@ -866,7 +857,7 @@ if env['UNIVERSAL'] == 1:
+ #
+ 
+ env.Append(CCFLAGS="-Wall")
+-env.Append(CXXFLAGS="-Woverloaded-virtual")
++env.Append(CXXFLAGS="-Woverloaded-virtual -std=c++11")
+ 
+ if env['EXTRA_WARN']:
+     env.Append(CCFLAGS="-Wextra -pedantic -ansi")
+@@ -955,6 +946,7 @@ conf.Finish()
  
  libraries['usb'] = LibraryInfo ()
  prep_libcheck(env, libraries['usb'])
@@ -35,7 +44,7 @@
  
  conf = Configure (libraries['usb'])
  if conf.CheckLib ('usb', 'usb_interrupt_write'):
-@@ -1005,6 +997,7 @@ libraries['boost'] = conf.Finish ()
+@@ -1006,6 +998,7 @@ libraries['boost'] = conf.Finish ()
  
  libraries['dmalloc'] = LibraryInfo ()
  prep_libcheck(env, libraries['dmalloc'])
@@ -43,7 +52,7 @@
  
  #
  # look for the threaded version
-@@ -1062,8 +1055,10 @@ elif conf.CheckCHeader('/System/Library/
+@@ -1063,8 +1056,10 @@ elif conf.CheckCHeader('/System/Library/Frameworks/Cor
      subst_dict['%MIDITAG%'] = "ardour"
      subst_dict['%MIDITYPE%'] = "coremidi"
  else:
@@ -56,7 +65,7 @@
  
  pname = env['PROGRAM_NAME']
  subst_dict['%MIDI_DEVICE_NAME%'] = pname.lower()
-@@ -1349,8 +1344,8 @@ if conf.CheckCHeader('/System/Library/Fr
+@@ -1352,8 +1347,8 @@ if conf.CheckCHeader('/System/Library/Frameworks/CoreA
      subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
      subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
  else:
