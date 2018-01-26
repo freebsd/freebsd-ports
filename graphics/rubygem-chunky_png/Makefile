@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chunky_png
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
