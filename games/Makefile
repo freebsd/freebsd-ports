@@ -477,6 +477,7 @@
     SUBDIR += kcheckers
     SUBDIR += kdegames4
     SUBDIR += kdiamond
+    SUBDIR += keeperrl
     SUBDIR += kevedit
     SUBDIR += kfourinline
     SUBDIR += kgoldrunner
