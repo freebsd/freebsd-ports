@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paperclip
-DISTVERSION=	5.2.0
+DISTVERSION=	5.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
