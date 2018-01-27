@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pot
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -24,6 +24,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}/flavours
 	${INSTALL_DATA} ${WRKSRC}/etc/pot/pot.default.conf \
+		${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/pot/pot.conf.sample \
 		${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/pot/flavours/dns.sh \
 		${STAGEDIR}${ETCDIR}/flavours
