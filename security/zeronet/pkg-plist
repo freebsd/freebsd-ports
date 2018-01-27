@@ -24,6 +24,18 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/Bigfile/__init__.py
 %%DATADIR%%/plugins/Bigfile/__init__.pyc
 %%DATADIR%%/plugins/Bigfile/__init__.pyo
+%%DATADIR%%/plugins/Chart/ChartCollector.py
+%%DATADIR%%/plugins/Chart/ChartCollector.pyc
+%%DATADIR%%/plugins/Chart/ChartCollector.pyo
+%%DATADIR%%/plugins/Chart/ChartDb.py
+%%DATADIR%%/plugins/Chart/ChartDb.pyc
+%%DATADIR%%/plugins/Chart/ChartDb.pyo
+%%DATADIR%%/plugins/Chart/ChartPlugin.py
+%%DATADIR%%/plugins/Chart/ChartPlugin.pyc
+%%DATADIR%%/plugins/Chart/ChartPlugin.pyo
+%%DATADIR%%/plugins/Chart/__init__.py
+%%DATADIR%%/plugins/Chart/__init__.pyc
+%%DATADIR%%/plugins/Chart/__init__.pyo
 %%DATADIR%%/plugins/Cors/CorsPlugin.py
 %%DATADIR%%/plugins/Cors/CorsPlugin.pyc
 %%DATADIR%%/plugins/Cors/CorsPlugin.pyo
@@ -167,6 +179,8 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/Sidebar/media-globe/three.min.js
 %%DATADIR%%/plugins/Sidebar/media-globe/world.jpg
 %%DATADIR%%/plugins/Sidebar/media/Class.coffee
+%%DATADIR%%/plugins/Sidebar/media/Menu.coffee
+%%DATADIR%%/plugins/Sidebar/media/Menu.css
 %%DATADIR%%/plugins/Sidebar/media/RateLimit.coffee
 %%DATADIR%%/plugins/Sidebar/media/Scrollable.js
 %%DATADIR%%/plugins/Sidebar/media/Scrollbable.css
@@ -539,6 +553,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/Translate/languages/pl.json
 %%DATADIR%%/src/Translate/languages/pt-br.json
 %%DATADIR%%/src/Translate/languages/ru.json
+%%DATADIR%%/src/Translate/languages/sk.json
 %%DATADIR%%/src/Translate/languages/sl.json
 %%DATADIR%%/src/Translate/languages/tr.json
 %%DATADIR%%/src/Translate/languages/zh-tw.json
