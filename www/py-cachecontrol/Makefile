@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	CacheControl
-PORTVERSION=	0.12.3
+DISTVERSION=	0.12.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Caching algorithms in httplib2 for use with requests session object
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lockfile>=0.9:devel/py-lockfile@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>=0.9:devel/py-lockfile@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}redis>=2.10.5:databases/py-redis@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
