@@ -1,0 +1,4 @@
+The BOSH Command Line Interface (CLI) is what you use to run BOSH
+commands. CLI v2 is a new major version of CLI.
+
+WWW: https://bosh.io/docs/cli-v2.html
