@@ -1,9 +1,9 @@
 bin/pot
 %%ETCDIR%%/flavours/dns.sh
+%%ETCDIR%%/pot.conf.sample
 %%ETCDIR%%/pot.default.conf
 %%DATADIR%%/add-dep.sh
 %%DATADIR%%/add-fscomp.sh
-%%DATADIR%%/add-rss.sh
 %%DATADIR%%/clone-fscomp.sh
 %%DATADIR%%/clone.sh
 %%DATADIR%%/common.sh
@@ -17,6 +17,7 @@ bin/pot
 %%DATADIR%%/list.sh
 %%DATADIR%%/rename.sh
 %%DATADIR%%/revert.sh
+%%DATADIR%%/set-rss.sh
 %%DATADIR%%/show.sh
 %%DATADIR%%/snapshot.sh
 %%DATADIR%%/start.sh
