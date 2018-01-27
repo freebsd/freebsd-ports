@@ -9,7 +9,8 @@ MASTER_SITES=	http://www.defora.org/os/download/download/3381/
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Frontend to the SSH client, using the Gtk+ toolkit
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem
 
