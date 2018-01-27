@@ -312,6 +312,7 @@
     SUBDIR += gtkguitune
     SUBDIR += gtkpod
     SUBDIR += gtmixer
+    SUBDIR += guidolib
     SUBDIR += guspat
     SUBDIR += gvolwheel
     SUBDIR += gxmms2
