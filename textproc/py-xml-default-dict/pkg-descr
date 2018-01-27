@@ -1,0 +1,4 @@
+Simple lib to convert xml file into a defaultdict from python collections lib,
+making more easy use the dict to accesses some tags of xml data.
+
+WWW: https://github.com/kanazux/xml-default-dict
