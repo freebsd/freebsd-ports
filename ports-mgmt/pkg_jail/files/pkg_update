@@ -1,5 +1,5 @@
 #!/bin/sh
-#	$Id: pkg_update,v 1.92 2017/07/29 05:50:19 cvs Exp $
+#	$Id: pkg_update,v 1.93 2018/01/27 11:19:14 cvs Exp $
 #	$FreeBSD$
 #
 # Copyright (c) 2001-2017 by Dirk Meyer. All rights reserved.
@@ -183,7 +183,8 @@ run_pkg_installed() {
 			return 0
 		fi
 	else
-		installed=`pkg query -e "%o == ${dir}" '%o'`
+		# more then one Flavor can be installed
+		installed=`pkg query -e "%o == ${dir}" '%o' | head -1`
 		if test "${installed}" = "${dir}"
 		then
 			echo "#installed:	${pkgname} from ${dir}"
@@ -2121,6 +2122,11 @@ check_update_pkg() {
 		pkgname=`cd "${portsdir}/ports-mgmt/pkg" && make PKGNAMESUFFIX=-pkgng -V PKGNAME`
 		if test "${old}" = "${pkgname}"
 		then
+			if test ! -L /usr/sbin/pkg
+			then
+				mv -f /usr/sbin/pkg /usr/sbin/pkg.orig
+				ln -s "${pkg}" /usr/sbin/pkg
+			fi
 			return
 		fi
 	fi
