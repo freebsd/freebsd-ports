@@ -4,7 +4,7 @@
 PORTNAME=	soapui
 PORTVERSION=	5.2.1
 CATEGORIES=	devel java www
-MASTER_SITES=	SF
+MASTER_SITES=	http://smartbearsoftware.com/distrib/soapui/${PORTVERSION}/
 DISTNAME=	SoapUI-${PORTVERSION}-linux-bin
 
 MAINTAINER=	pi@FreeBSD.org
@@ -12,9 +12,14 @@ COMMENT=	Web service, SOA, and SOAP testing tool
 
 LICENSE=	EUPL LGPL21 LGPL3 APACHE11 APACHE20 BSD3CLAUSE MPL11 MIT CPL
 LICENSE_COMB=	multi
-LICENSE_NAME_EUPL=European Union Public Licence V. 1.1
-LICENSE_FILE_EUPL=${WRKSRC}/LICENSE.txt
-LICENSE_PERMS_EUPL=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+LICENSE_NAME_CPL=	Common Public License V. 1.0
+LICENSE_FILE_CPL=	${WRKSRC}/licenses/junit-LICENSE.txt
+LICENSE_PERMS_CPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+LICENSE_NAME_EUPL=	European Union Public Licence V. 1.1
+LICENSE_FILE_EUPL=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS_EUPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cpe
 CPE_VENDOR=	smartbear
