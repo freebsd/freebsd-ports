@@ -3728,6 +3728,7 @@
     SUBDIR += p5-experimental
     SUBDIR += p5-forks
     SUBDIR += p5-github_creator
+    SUBDIR += p5-goto-file
     SUBDIR += p5-iCal-Parser
     SUBDIR += p5-indirect
     SUBDIR += p5-interface
