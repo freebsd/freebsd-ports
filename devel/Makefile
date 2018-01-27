@@ -4199,6 +4199,7 @@
     SUBDIR += py-PyExecJS
     SUBDIR += py-PyLD
     SUBDIR += py-PyODE
+    SUBDIR += py-QtPy
     SUBDIR += py-RPyC
     SUBDIR += py-Record
     SUBDIR += py-SymbolType
