@@ -9,7 +9,9 @@ man/man6/makebearoff.6.gz
 man/man6/makehyper.6.gz
 man/man6/makeweights.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/allabout.html
+%%PORTDOCS%%%%DOCSDIR%%/allabout.pdf
 %%PORTDOCS%%%%DOCSDIR%%/gnubg.html
+%%PORTDOCS%%%%DOCSDIR%%/gnubg.pdf
 %%PORTDOCS%%%%DOCSDIR%%/images/1540d81e.png
 %%PORTDOCS%%%%DOCSDIR%%/images/16d7944c.png
 %%PORTDOCS%%%%DOCSDIR%%/images/1805dc7d.png
@@ -144,6 +146,7 @@ man/man6/makeweights.6.gz
 %%DATADIR%%/fonts/Vera.ttf
 %%DATADIR%%/fonts/VeraBd.ttf
 %%DATADIR%%/fonts/VeraSeBd.ttf
+%%DATADIR%%/gnubg.css
 %%DATADIR%%/gnubg.gtkrc
 %%DATADIR%%/gnubg.sql
 %%DATADIR%%/gnubg.wd
