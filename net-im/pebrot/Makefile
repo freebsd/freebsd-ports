@@ -3,14 +3,19 @@
 
 PORTNAME=	pebrot
 PORTVERSION=	0.8.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based MSN messenger client
 
-USES=		python:2.7
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		python:2.7 shebangfix
+SHEBANG_GLOB=	*.py
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
