@@ -20,8 +20,6 @@ man/de/man1/kid3.1.gz
 %%CLI%%man/man1/kid3-cli.1.gz
 %%QT%%man/man1/kid3-qt.1.gz
 man/man1/kid3.1.gz
-%%QT%%share/appdata/kid3-qt.appdata.xml
-%%KDE%%share/appdata/kid3.appdata.xml
 %%KDE%%share/applications/kde4/kid3.desktop
 %%QT%%share/applications/kid3-qt.desktop
 %%KDE%%share/apps/kid3/kid3ui.rc
@@ -64,3 +62,5 @@ man/man1/kid3.1.gz
 %%DATADIR%%/translations/kid3_tr.qm
 %%DATADIR%%/translations/kid3_zh_CN.qm
 %%DATADIR%%/translations/kid3_zh_TW.qm
+%%QT%%share/metainfo/kid3-qt.appdata.xml
+%%KDE%%share/metainfo/kid3.appdata.xml
