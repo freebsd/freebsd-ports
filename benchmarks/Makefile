@@ -87,6 +87,7 @@
     SUBDIR += typometer
     SUBDIR += ubench
     SUBDIR += unixbench
+    SUBDIR += vegeta
     SUBDIR += webbench
     SUBDIR += wrk
 
