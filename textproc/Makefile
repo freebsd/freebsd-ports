@@ -1585,6 +1585,7 @@
     SUBDIR += rubygem-text
     SUBDIR += rubygem-tidy
     SUBDIR += rubygem-tidy_ffi
+    SUBDIR += rubygem-toml
     SUBDIR += rubygem-truncato
     SUBDIR += rubygem-twitter-text
     SUBDIR += rubygem-twitter-text1
