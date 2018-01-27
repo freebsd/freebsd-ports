@@ -18,6 +18,12 @@ ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056 && ${ARCH} == i386
+BROKEN=	undefined reference to '__atomic_fetch_add_8'
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stress-ng ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/stress-ng.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
