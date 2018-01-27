@@ -1,0 +1,11 @@
+To use Test2::Harness you use the yath command. Yath will find the tests (or use
+the ones you specify), and run them. As it runs it will output diagnostics
+information such as failures. At the end yath will print a summary of the test
+run.
+
+The canonical source of up-to-date command options are the help output when
+using $ yath help and $ yath help COMMAND.
+
+yath can be thought of as a more powerful alternative to prove (Test::Harness).
+
+WWW: http://search.cpan.org/dist/Test2-Harness/
