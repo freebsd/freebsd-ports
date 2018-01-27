@@ -1,0 +1,20 @@
+The Guido Engine Library is a generic, portable library and API for the
+graphical rendering of musical scores. The library is based on the GUIDO
+Music Notation Format as the underlying data format. It takes account of
+the conventional music notation system and should be flexible enough to
+include any graphical sign and musical information if necessary.
+
+The GUIDO Music Notation Format [GMN] is a formal language for score level
+music representation. It is a plain-text, i.e. readable and platform
+independent format capable of representing all information contained in
+conventional musical scores. The basic GUIDO Format is very flexible and can
+be easily extended and adapted to capture a wide variety of musical features
+beyond conventional musical notation (CMN). The GUIDO design is strongly
+influenced by the objective to facilitate an adequate representation of musical
+material, from tiny motives up to complex symphonic scores. GUIDO is a general
+purpose musical notation format; the intended range of application includes
+notation software, compositional and analytical systems and tools, performance
+systems, and large musical databases.  It is powerful, flexible, easily
+portable, and human readable.
+
+WWW: http://guidolib.sourceforge.net/
