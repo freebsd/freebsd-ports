@@ -28,6 +28,7 @@ USES=		pathfix gmake perl5 python:build libtool
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gearmand
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}
+USE_CXXSTD=	gnu++98
 
 CONFIGURE_ARGS+=--with-lib-prefix=${LOCALBASE} --with-boost=${LOCALBASE} \
 		--localstatedir=/var/db/${PORTNAME} --enable-static
