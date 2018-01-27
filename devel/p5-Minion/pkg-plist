@@ -19,6 +19,7 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/logo-black-2x.png
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/logo-black.png
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/moment/moment.js
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/popper/popper.js
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.eot
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.ttf
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.woff
