@@ -477,6 +477,7 @@
     SUBDIR += e00compr
     SUBDIR += e2fsprogs-libss
     SUBDIR += easygit
+    SUBDIR += easyloggingpp
     SUBDIR += eblob
     SUBDIR += ebnf2yacc
     SUBDIR += ecgi
