@@ -3,7 +3,7 @@
 
 PORTNAME=	toml
 PORTVERSION=	0.2.0
-CATEGORIES=	devel rubygems
+CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
