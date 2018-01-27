@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libunwind
-PORTVERSION=	20170113	# This is the release date of libunwind 1.2
-PORTREVISION=	1
+PORTVERSION=	20170615	# This is the release date of libunwind 1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
-DISTNAME=	${PORTNAME}-1.2
+DISTNAME=	${PORTNAME}-1.2.1
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Generic stack unwinding library
