@@ -18,7 +18,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-6.11.so
+lib/libracket3m-6.12.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -207,6 +207,10 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/ffi/unsafe/compiled/nsstring_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/objc_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/objc_rkt.zo
+%%DATADIR%%/collects/ffi/unsafe/compiled/port_rkt.dep
+%%DATADIR%%/collects/ffi/unsafe/compiled/port_rkt.zo
+%%DATADIR%%/collects/ffi/unsafe/compiled/schedule_rkt.dep
+%%DATADIR%%/collects/ffi/unsafe/compiled/schedule_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/try-atomic_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/try-atomic_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/custodian.rkt
@@ -219,9 +223,11 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/ffi/unsafe/nsalloc.rkt
 %%DATADIR%%/collects/ffi/unsafe/nsstring.rkt
 %%DATADIR%%/collects/ffi/unsafe/objc.rkt
+%%DATADIR%%/collects/ffi/unsafe/port.rkt
 %%DATADIR%%/collects/ffi/unsafe/private/compiled/win32_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/private/compiled/win32_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/private/win32.rkt
+%%DATADIR%%/collects/ffi/unsafe/schedule.rkt
 %%DATADIR%%/collects/ffi/unsafe/try-atomic.rkt
 %%DATADIR%%/collects/ffi/vector.rkt
 %%DATADIR%%/collects/ffi/winapi.rkt
@@ -1635,8 +1641,6 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/syntax/parse/private/compiled/minimatch_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/opt_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/opt_rkt.zo
-%%DATADIR%%/collects/syntax/parse/private/compiled/parse-aux_rkt.dep
-%%DATADIR%%/collects/syntax/parse/private/compiled/parse-aux_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/parse_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/parse_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/rep-attrs_rkt.dep
@@ -1670,7 +1674,6 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/syntax/parse/private/make.rkt
 %%DATADIR%%/collects/syntax/parse/private/minimatch.rkt
 %%DATADIR%%/collects/syntax/parse/private/opt.rkt
-%%DATADIR%%/collects/syntax/parse/private/parse-aux.rkt
 %%DATADIR%%/collects/syntax/parse/private/parse.rkt
 %%DATADIR%%/collects/syntax/parse/private/rep-attrs.rkt
 %%DATADIR%%/collects/syntax/parse/private/rep-data.rkt
