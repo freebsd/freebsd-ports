@@ -54,6 +54,6 @@ PASSENGER_DESC=	Passenger backend
 MEMCACHE_CLIENT_DESC=	MemCache-Client support
 
 MEMCACHE_CLIENT_RUN_DEPENDS=	rubygem-memcache-client>=1.2.0:databases/rubygem-memcache-client
-PASSENGER_RUN_DEPENDS=	rubygem-passenger>=2.2.15:www/rubygem-passenger
+PASSENGER_RUN_DEPENDS=	rubygem-passenger-*>=2.2.15:www/rubygem-passenger
 
 .include <bsd.port.mk>
