@@ -24,6 +24,7 @@ LIB_DEPENDS=		libespeak.so:audio/espeak \
 			libminizip.so:archivers/minizip
 
 USES=			gnustep openal:al perl5 python:build tar:bzip2
+USE_CXXSTD=		gnu++98
 USE_GL=			gl glu
 USE_SDL=		sdl
 USE_XORG=		x11
