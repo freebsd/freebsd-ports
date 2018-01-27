@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	zeronet
-PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.1
 CATEGORIES=	security net-p2p
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Decentralized websites using Bitcoin crypto and BitTorrent network
 
 LICENSE=	GPLv2
