@@ -2,6 +2,7 @@
 
 PORTNAME=	diorite
 PORTVERSION=	0.2.1
+PORTREVSION=	1
 CATEGORIES=	x11-toolkits devel
 
 MAINTAINER=	avilla@FreeBSD.org
@@ -11,13 +12,14 @@ LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	valac:lang/vala
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	tiliado
 
-USES=		gnome pkgconfig shebangfix waf
-USE_GNOME=	glib20 gtk30
+# USES=waf implicity does USES=python:2,build but that is not sufficient
+# for shebangfix to know the python version
+USES=		gnome pkgconfig python:2.7,build shebangfix waf
+USE_GITHUB=	yes
+USE_GNOME=	gdkpixbuf2 glib20 gtk30
 USE_XORG=	x11
-SHEBANG_LANG=	python3
 SHEBANG_FILES=	testgen.py
 # --noopt is required to prevent a crash in ipcserver.c, as
 # the argument of diorite_ipc_server_process_connection_co() gets
