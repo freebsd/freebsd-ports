@@ -1,9 +1,0 @@
-Pond is not email. Pond is forward secure, asynchronous messaging for the
-discerning. Pond messages are asynchronous, but are not a record; they expire
-automatically a week after they are received. Pond seeks to prevent leaking
-traffic information against everyone except a global passive attacker.
-
-Pond is experimental software! DO NOT USE IT FOR ANYTHING REAL!!!
-Use security/gnupg instead.
-
-WWW: https://github.com/agl/pond

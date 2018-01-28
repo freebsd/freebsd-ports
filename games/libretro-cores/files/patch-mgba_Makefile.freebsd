@@ -1,5 +1,0 @@
---- mgba/Makefile.freebsd.orig	2016-11-09 04:30:27 UTC
-+++ mgba/Makefile.freebsd
-@@ -0,0 +1,2 @@
-+all:
-+	cmake . -DBUILD_LIBRETRO=ON -DBUILD_QT=OFF -DBUILD_SDL=OFF -DBUILD_SHARED=OFF -DBUILD_STATIC=ON && ${MAKE}

@@ -130,7 +130,6 @@
     SUBDIR += qmc2
     SUBDIR += qtemu
     SUBDIR += quasi88
-    SUBDIR += raine
     SUBDIR += riscv-fesvr
     SUBDIR += riscv-isa-sim
     SUBDIR += rpcs3

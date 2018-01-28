@@ -9854,3 +9854,38 @@ deskutils/py-spice-gtk|deskutils/spice-gtk|2018-01-20|Old style Python bindings 
 lang/py-clojure|lang/py-clojure_py|2018-01-26|Rename to match PyPI naming
 www/tomcat-devel|www/tomcat9|2018-01-26|Apache Tomcat 9.0.4 is the first stable release of the 9.0.x series
 devel/rubygem-toml|textproc/rubygem-toml|2018-01-27|Move to a better category
+emulators/raine||2018-01-28|Has expired: Broken for more than 6 months
+mail/libmapi||2018-01-28|Has expired: Broken for more than 6 months
+www/lessc||2018-01-28|Has expired: Broken for more than 6 months
+www/uglifyjs||2018-01-28|Has expired: Broken for more than 6 months
+www/py-octoprint||2018-01-28|Has expired: Broken for more than 6 months
+www/xpi-noscript||2018-01-28|Has expired: Broken for more than 6 months
+www/npm-less-plugin-clean-css||2018-01-28|Has expired: Broken for more than 6 months
+www/caudium14||2018-01-28|Has expired: Depends on expiring lang/pike78
+www/hinventory-client||2018-01-28|Has expired: Broken for more than 6 months
+security/tclgpg||2018-01-28|Has expired: Broken for more than 6 months
+security/pond||2018-01-28|Has expired: Broken for more than 6 months
+security/mdcrack||2018-01-28|Has expired: Broken for more than 6 months
+devel/npm-commander||2018-01-28|Has expired: Broken for more than 6 months
+devel/py-protocols-devel||2018-01-28|Has expired: Broken for more than 6 months
+devel/py-InlineEgg||2018-01-28|Has expired: Broken for more than 6 months
+devel/npm-amdefine||2018-01-28|Has expired: Broken for more than 6 months
+devel/npm-source-map||2018-01-28|Has expired: Broken for more than 6 months
+devel/libical-glib||2018-01-28|Has expired: Broken for more than 6 months
+devel/npm-graceful-readlink||2018-01-28|Has expired: Broken for more than 6 months
+devel/npm-clean-css||2018-01-28|Has expired: Broken for more than 6 months
+devel/py-ruledispatch||2018-01-28|Has expired: Depends on expiring devel/py-protocols-devel
+games/balazarbrothers||2018-01-28|Has expired: Broken for more than 6 months
+games/libretro-cores||2018-01-28|Has expired: Broken for more than 6 months
+games/gish-demo||2018-01-28|Has expired: Broken for more than 6 months
+games/cheech||2018-01-28|Has expired: Broken for more than 6 months
+audio/mbrolavox||2018-01-28|Has expired: Broken for more than 6 months
+audio/linux-mbrola||2018-01-28|Has expired: Depends on expiring audio/mbrolavox
+audio/gigedit||2018-01-28|Has expired: Broken for more than 6 months
+audio/gnomoradio||2018-01-28|Has expired: Broken for more than 6 months
+math/asir2000||2018-01-28|Has expired: Broken for more than 6 months
+multimedia/librespot||2018-01-28|Has expired: Broken for more than 6 months
+multimedia/bombono||2018-01-28|Has expired: Broken for more than 6 months
+lang/gcl||2018-01-28|Has expired: Broken for more than 6 months
+lang/pike78||2018-01-28|Has expired: Broken for more than 6 months
+shells/ambit||2018-01-28|Has expired: Broken for more than 6 months
