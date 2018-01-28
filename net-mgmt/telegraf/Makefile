@@ -3,6 +3,7 @@
 
 PORTNAME=	telegraf
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
