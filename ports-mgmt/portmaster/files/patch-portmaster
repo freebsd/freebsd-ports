@@ -9,6 +9,15 @@
  fi
  
  #=============== Begin functions we always want to have ===============
+@@ -181,7 +181,7 @@ parent_exit () {
+ 
+ 		pm_v "===>>> Removing empty directories from WRKDIRPREFIX"
+ 		[ -n "$needws" ] && echo '' || pm_v
+-		find $PM_WRKDIRPREFIX -depth -mindepth 1 -type d -empty -delete 2>/dev/null
++		find $PM_WRKDIRPREFIX -depth -mindepth 1 maxdepth 2 -type d -empty -delete 2>/dev/null
+ 	fi
+ 
+ 	case "$DISPLAY_LIST" in
 @@ -308,8 +308,9 @@ safe_exit () {
  	exit ${1:-0}
  } # safe_exit()
@@ -21,7 +30,41 @@
  export_flavor	() { local flavor="$1"; if [ "$FLAVOR" != "$flavor" ]; then
  			pm_v "===>>> Setting FLAVOR to '$flavor' (was '$FLAVOR')";
  			export FLAVOR="$flavor"; fi; }
-@@ -2203,8 +2204,9 @@ update_build_l () {
+@@ -2175,23 +2176,29 @@ update_pm_nu () {
+ }
+ 
+ update_build_l () {
+-	local originflavor origin flavor iport
++	local originflavor origin flavor iport make_target
+ 
+ 	originflavor=$1 ; update_pm_nu $originflavor
+ 	origin=$(dir_part "$originflavor")
+ 	flavor=$(flavor_part "$originflavor")
+ 	iport="$2"
++	make_target=$3
+ 
+ 	[ -n "$PM_NO_CONFIRM" ] && return
+ 
+ 	if [ -z "$iport" ]; then
+ 		case "$build_l" in *\ $origin\\*) return ;; esac
+-		build_l="${build_l}\tInstall $originflavor\n"
++		case $make_target in
++		install)
++			build_l="${build_l}\tInstall $originflavor\n" ;;
++		*)
++			build_l="${build_l}\tExecute make $make_target for $originflavor\n" ;;
++		esac
+ 		return
+-	else
+-		case "$build_l" in *\ $iport\ *|*\ $iport\\*) return ;; esac
+ 	fi
+ 
++	case "$build_l" in *\ $iport\ *|*\ $iport\\*) return ;; esac
++
+ 	find_new_port "$originflavor" # sets global variable new_port
+ 
+ 	case `pkg version -t $iport $new_port 2>/dev/null` in
+@@ -2203,8 +2210,9 @@ update_build_l () {
  }
  
  update_port () {
@@ -32,7 +75,7 @@
  	if [ -n "$2" ]; then
  		echo "===>>> Launching child to update $1 to $2"
  	else
-@@ -2300,7 +2302,7 @@ make_dep_list () {
+@@ -2300,7 +2308,7 @@ make_dep_list () {
  			fail "make_dep_list: Unsupported option '$dep_type'"
  		esac
  	done
@@ -41,7 +84,7 @@
  }
  
  gen_dep_list () {
-@@ -2368,15 +2370,17 @@ dependency_check () {
+@@ -2368,15 +2376,17 @@ dependency_check () {
  		rundeps=`gen_dep_list run-depends-list`
  
  		for dep in $d_port_list; do
@@ -62,7 +105,7 @@
  				rundep_list="$rundep_list $varname"
  				eval $varname=\"$portdir \$$varname\"
  				eval ${varname}_p=$dep
-@@ -2409,7 +2413,10 @@ dependency_check () {
+@@ -2409,7 +2419,10 @@ dependency_check () {
  
  	# Do not export, for THIS parent process only
  	[ -n "$PM_FIRST_PASS" ] && doing_dep_check=doing_dep_check
@@ -74,7 +117,7 @@
  		origin="${d_port#$pd/}"
  		if [ -n "$SHOW_WORK" ]; then
  			iport=`iport_from_origin $origin`
-@@ -2429,20 +2436,14 @@ dependency_check () {
+@@ -2429,20 +2442,14 @@ dependency_check () {
  		[ -z "$PM_URB_UP" ] &&
  			case "$CUR_DEPS" in *:${origin}:*) continue ;; esac
  
@@ -99,7 +142,7 @@
  			fi
  			for glob in $conflicts; do
  				confl_p=`pkg query -g "%n-%v" $glob 2>/dev/null`
-@@ -2498,7 +2499,11 @@ dependency_check () {
+@@ -2498,7 +2505,11 @@ dependency_check () {
  			check_for_updates $iport $origin || fail 'Update failed'
  		else
  			check_interactive $origin || continue
@@ -112,7 +155,7 @@
  		fi
  	done
  	[ -n "$PM_FIRST_PASS" ] && unset doing_dep_check
-@@ -3029,8 +3034,12 @@ no_valid_port () {
+@@ -3029,8 +3040,12 @@ no_valid_port () {
  	echo "===>>> Try $progname --help" ; echo '' ; safe_exit 1
  }
  
@@ -125,7 +168,7 @@
  	export_flavor $(flavor_part $portdir)
  	[ -n "$portdir" ] && { argv=$portdir ; unset portdir; }
  	argv=${argv:-$1} ; argv=${argv%/} ; argv=`globstrip $argv`
-@@ -3061,6 +3070,8 @@ if [ -z "$REPLACE_ORIGIN" ]; then
+@@ -3061,6 +3076,8 @@ if [ -z "$REPLACE_ORIGIN" ]; then
  		unset glob_dirs
  	fi
  	unset argv
@@ -134,7 +177,13 @@
  else
  	portdir="${1#$pd/}" ; portdir="${portdir%/}"
  	export_flavor=$(flavor_part $portdir)
-@@ -3234,6 +3245,9 @@ elif [ -n "$FETCH_ONLY" -a -n "$PM_PACKAGES" ]; then
+@@ -3229,11 +3246,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
+ 		fi
+ 	fi
+ 
+-	update_build_l $portdir $upg_port
++	update_build_l "$portdir" "$upg_port" "$make_target"
+ elif [ -n "$FETCH_ONLY" -a -n "$PM_PACKAGES" ]; then
  	update_pm_nu $portdir
  fi
  
@@ -144,7 +193,7 @@
  # Do these things first time through
  if [ -z "$PM_INDEX_ONLY" -a -z "$PM_BUILDING" -a -z "$SHOW_WORK" -a -z "$NO_ACTION" ]; then
  	# Do not start this in the background until we are sure we are going to proceed
-@@ -3639,12 +3653,18 @@ pkg_flavor () {
+@@ -3639,12 +3659,18 @@ pkg_flavor () {
  	if [ -n "$HIDE_BUILD" ] && [ -n "$(pm_make -V LICENSE)" ]; then
  		pm_make extract ask-license || fail "make extract ask-license failed for $portdir"
  	fi
@@ -163,7 +212,7 @@
  else
  	[ -z "$local_package" ] && {
  		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.txz failed"; }
-@@ -3876,9 +3896,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3876,9 +3902,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
