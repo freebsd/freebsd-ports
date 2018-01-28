@@ -3,7 +3,7 @@
 
 PORTNAME=	fog-aliyun
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ COMMENT=	Module for the 'fog' gem to support aliyun OSS/ECS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-fog-core>=1.27:devel/rubygem-fog-core \
+RUN_DEPENDS=	rubygem-fog-core1>=1.27:devel/rubygem-fog-core1 \
 		rubygem-fog-json>=1.0:devel/rubygem-fog-json \
 		rubygem-ipaddress>=0.8:net/rubygem-ipaddress \
 		rubygem-xml-simple>=1.1:textproc/rubygem-xml-simple
