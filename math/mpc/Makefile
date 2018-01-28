@@ -4,7 +4,7 @@
 PORTNAME=	mpc
 PORTVERSION=	1.0.3
 CATEGORIES=	math devel
-MASTER_SITES=	GNU/${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Library of complex numbers with arbitrarily high precision
