@@ -1,0 +1,113 @@
+2018-01-27  Gerald Pfeifer  <gerald@pfeifer.com>
+
+	* term/Makefile.am: Use relative symlinks for terminal
+	descriptions.
+	* term/Makefile.in: Regenerate.
+
+--- UTC
+--- term/Makefile.am.orig	2009-02-18 02:31:26.000000000 +0000
++++ term/Makefile.am	2018-01-27 10:53:28.274055000 +0000
+@@ -27,43 +27,43 @@
+ 	for i in $(GIT_XTERMS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.xterm $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.xterm $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_COLOR_XTERMS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.xterm-color $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.xterm-color $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_HPTERMS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.hpterm $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.hpterm $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_GENERICS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.generic $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.generic $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_VT100S);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.vt100 $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.vt100 $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_ANSIS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.ansi $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.ansi $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_LINUXS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.linux $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.linux $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 
+ uninstall-local:
+--- term/Makefile.in.orig	2009-02-18 02:31:26.000000000 +0000
++++ term/Makefile.in	2018-01-27 10:54:00.274727000 +0000
+@@ -773,43 +773,43 @@
+ 	for i in $(GIT_XTERMS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.xterm $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.xterm $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_COLOR_XTERMS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.xterm-color $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.xterm-color $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_HPTERMS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.hpterm $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.hpterm $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_GENERICS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.generic $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.generic $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_VT100S);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.vt100 $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.vt100 $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_ANSIS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.ansi $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.ansi $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_LINUXS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(datadir)/gnuit/$$i;\
+-	    ln -s $(datadir)/gnuit/gnuitrc.linux $(DESTDIR)$(datadir)/gnuit/$$i;\
++	    ln -s gnuitrc.linux $(DESTDIR)$(datadir)/gnuit/$$i;\
+ 	done
+ 
+ uninstall-local:
