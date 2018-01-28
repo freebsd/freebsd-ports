@@ -4,4 +4,4 @@ It contains:
 - cuebreakpoints: print the breakpoints from a cue or toc file
 - cueprint: print disc and track information for a cue or toc file
 
-WWW: http://developer.berlios.de/projects/cuetools/
+WWW: https://github.com/svend/cuetools
