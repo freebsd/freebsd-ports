@@ -1,0 +1,7 @@
+plog is a parser for the logged output of the ipmon utility that is part
+of the excellent IP-Filter packet-filtering and NAT package written and
+maintained by Darren Reed. plog translates the somewhat garbled output
+from ipmon into a report that aids analysis of your firewall traffic.
+The current version number is 0.10.
+
+WWW: http://www.antibozo.net/ogata/webtools/

@@ -740,6 +740,7 @@
     SUBDIR += p5-dicewaregen
     SUBDIR += p5-openxpki
     SUBDIR += p5-openxpki-i18n
+    SUBDIR += p5-plog
     SUBDIR += pad
     SUBDIR += pam-modules
     SUBDIR += pam-mysql
