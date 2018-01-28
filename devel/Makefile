@@ -5420,6 +5420,7 @@
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-core
+    SUBDIR += rubygem-fog-core1
     SUBDIR += rubygem-fog-json
     SUBDIR += rubygem-font-awesome-rails
     SUBDIR += rubygem-font-awesome-rails-rails4
