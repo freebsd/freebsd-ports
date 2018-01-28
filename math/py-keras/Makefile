@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keras
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,8 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}theano>=0.8.0:math/py-theano@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${FLAVOR}
 
-USES=		python:-3.5
-USE_PYTHON=	autoplist distutils
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 USE_GITHUB=	yes
