@@ -4,7 +4,7 @@
 PORTNAME=	help2man
 PORTVERSION=	1.47.5
 CATEGORIES=	misc
-MASTER_SITES=	GNU/${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically generating simple manual pages from program output
