@@ -1,0 +1,7 @@
+CPAN::Testers::Common::Client is a Perl module which provides a common client
+for constructing metabase facts and the legacy email message sent to CPAN
+Testers in a way that is properly parsed by the extraction and report tools.
+It is meant to be used by all the CPAN clients (and standalone tools) that
+want/need to support the CPAN Testers infrastructure.
+
+WWW: http://search.cpan.org/dist/CPAN-Testers-Common-Client/
