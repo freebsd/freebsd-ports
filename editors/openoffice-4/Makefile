@@ -141,7 +141,7 @@ CPE_VENDOR=	apache
 OPTIONS_DEFINE=		CRASHDUMP CUPS DBGUTIL DEBUG GNOME GNOMEVFS MMEDIA \
 			SDK WIKI_PUBLISHER
 OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS MMEDIA WIKI_PUBLISHER
-CRASHDUMP_DESC=		Enable crashdumps, requires WITH_DEBUG
+CRASHDUMP_DESC=		Enable crashdumps, sets WITH_DEBUG
 DBGUTIL_DESC=		Enable assertions, object counting. (non-production)
 DEBUG_DESC=		Compile with -O0, sets WITH_DEBUG
 GNOME_DESC=		GConf + screensaver presentation control via DBUS
@@ -151,6 +151,7 @@ SDK_DESC=		Build and install software development kit
 WIKI_PUBLISHER_DESC=	Build and install Wiki Publisher extension
 
 CRASHDUMP_CONFIGURE_ENABLE=	crashdump
+CRASHDUMP_VARS=			WITH_DEBUG=yes
 
 CUPS_CONFIGURE_ENABLE=		cups
 CUPS_LIB_DEPENDS=		libcups.so:print/cups
@@ -196,10 +197,6 @@ TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-symbols
-.else
-.if ${PORT_OPTIONS:MCRASHDUMP}
-BROKEN=	CRASHDUMP option requires WITH_DEBUG
-.endif
 .endif
 
 .include <${FILESDIR}/Makefile.localized>
