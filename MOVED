@@ -9889,3 +9889,4 @@ multimedia/bombono||2018-01-28|Has expired: Broken for more than 6 months
 lang/gcl||2018-01-28|Has expired: Broken for more than 6 months
 lang/pike78||2018-01-28|Has expired: Broken for more than 6 months
 shells/ambit||2018-01-28|Has expired: Broken for more than 6 months
+mail/evolution-mapi||2018-01-28|Has expired: Depends on expiring mail/libmapi
