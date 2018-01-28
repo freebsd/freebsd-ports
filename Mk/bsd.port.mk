@@ -5078,196 +5078,44 @@ pretty-print-config:
 .endif # pretty-print-config
 
 desktop-categories:
-	@categories=""; \
-	for native_category in ${CATEGORIES}; do \
-		c=""; \
-		case $$native_category in \
-			accessibility)	c="Utility Accessibility"		;; \
-			archivers)		c="Utility Archiving"			;; \
-			astro)			c="Education Science Astronomy"	;; \
-			audio)			c="AudioVideo Audio"			;; \
-			benchmarks)		c="System"						;; \
-			biology)		c="Education Science Biology"	;; \
-			cad)			c="Graphics Engineering"		;; \
-			comms)			c="Utility"						;; \
-			converters)		c="Utility"						;; \
-			databases)		c="Office Database"				;; \
-			deskutils)		c="Utility"						;; \
-			devel)			c="Development"					;; \
-			dns)			c="Network"						;; \
-			elisp)			c="Development"					;; \
-			editors)		c="Utility"						;; \
-			emulators)		c="System Emulator"				;; \
-			finance)		c="Office Finance"				;; \
-			ftp)			c="Network FileTransfer"		;; \
-			games)			c="Game"						;; \
-			geography)		c="Education Science Geography"	;; \
-			gnome)			c="GNOME GTK"					;; \
-			graphics)		c="Graphics"					;; \
-			hamradio)		c="HamRadio"					;; \
-			haskell)		c="Development"					;; \
-			irc)			c="Network IRCClient"			;; \
-			java)			c="Development Java"			;; \
-			kde)			c="KDE Qt"						;; \
-			lang)			c="Development"					;; \
-			lisp)			c="Development"					;; \
-			mail)			c="Office Email"				;; \
-			mate)			c="MATE GTK"		;; \
-			math)			c="Education Science Math"		;; \
-			mbone)			c="Network AudioVideo"			;; \
-			multimedia)		c="AudioVideo"					;; \
-			net)			c="Network"						;; \
-			net-im)			c="Network InstantMessaging"	;; \
-			net-mgmt)		c="Network"						;; \
-			net-p2p)		c="Network P2P"					;; \
-			news)			c="Network News"				;; \
-			palm)			c="Office PDA"					;; \
-			parallel)		c="ParallelComputing"			;; \
-			pear)			c="Development WebDevelopment"	;; \
-			perl5)			c="Development"					;; \
-			python)			c="Development"					;; \
-			ruby)			c="Development"					;; \
-			rubygems)		c="Development"					;; \
-			scheme)			c="Development"					;; \
-			science)		c="Science Education"			;; \
-			security)		c="System Security"				;; \
-			shells)			c="System Shell"				;; \
-			sysutils)		c="System"						;; \
-			tcl*|tk*)		c="Development"					;; \
-			textproc)		c="Utility TextTools"			;; \
-			www)			c="Network"						;; \
-			x11-clocks)		c="Utility Clock"				;; \
-			x11-fm)			c="System FileManager"			;; \
-			xfce)			c="GTK XFCE"					;; \
-			zope)			c="Development WebDevelopment"	;; \
-		esac; \
-		if [ -n "$$c" ]; then \
-			categories="$$categories $$c"; \
-		fi; \
-	done; \
-	if [ -n "$$categories" ]; then \
-		for c in $$categories; do ${ECHO_MSG} "$$c"; done \
-			| ${SORT} -u | ${TR} '\n' ';'; \
-		${ECHO_MSG}; \
-	fi
-
-# http://standards.freedesktop.org/menu-spec/menu-spec-latest.html
-DESKTOP_CATEGORIES_MAIN=	AudioVideo Audio Video Development Education \
-	Game Graphics Network Office Science Settings System Utility
-DESKTOP_CATEGORIES_ADDITIONAL=	Building Debugger IDE GUIDesigner Profiling \
-	RevisionControl Translation Calendar ContactManagement Database \
-	Dictionary Chart Email Finance FlowChart PDA ProjectManagement \
-	Presentation Spreadsheet WordProcessor 2DGraphics VectorGraphics \
-	RasterGraphics 3DGraphics Scanning OCR Photography Publishing Viewer \
-	TextTools DesktopSettings HardwareSettings Printing PackageManager \
-	Dialup InstantMessaging Chat IRCClient Feed FileTransfer HamRadio News \
-	P2P RemoteAccess Telephony TelephonyTools VideoConference WebBrowser \
-	WebDevelopment Midi Mixer Sequencer Tuner TV AudioVideoEditing Player \
-	Recorder DiscBurning ActionGame AdventureGame ArcadeGame BoardGame \
-	BlocksGame CardGame KidsGame LogicGame RolePlaying Shooter Simulation \
-	SportsGame StrategyGame Art Construction Music Languages \
-	ArtificialIntelligence Astronomy Biology Chemistry ComputerScience \
-	DataVisualization Economy Electricity Geography Geology Geoscience \
-	History Humanities ImageProcessing Literature Maps Math \
-	NumericalAnalysis MedicalSoftware Physics Robotics Spirituality Sports \
-	ParallelComputing Amusement Archiving Compression Electronics Emulator \
-	Engineering FileTools FileManager TerminalEmulator Filesystem Monitor \
-	Security Accessibility Calculator Clock TextEditor Documentation Adult \
-	Core KDE GNOME MATE XFCE GTK Qt Motif Java ConsoleOnly
-DESKTOP_CATEGORIES_RESERVED=	Screensaver TrayIcon Applet Shell
-
-VALID_DESKTOP_CATEGORIES+=	${DESKTOP_CATEGORIES_MAIN} \
-	${DESKTOP_CATEGORIES_ADDITIONAL} \
-	${DESKTOP_CATEGORIES_RESERVED}
+	@${SETENV} \
+			dp_CATEGORIES="${CATEGORIES}" \
+			dp_ECHO_CMD=${ECHO_CMD} \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			dp_SORT="${SORT}" \
+			dp_TR="${TR}" \
+			${SH} ${SCRIPTSDIR}/desktop-categories.sh
 
 .if defined(DESKTOP_ENTRIES)
 check-desktop-entries:
-	@set -- ${DESKTOP_ENTRIES} XXX; \
-	if [ `${EXPR} \( $$# - 1 \) % 6` -ne 0 ]; then \
-		${ECHO_MSG} "${PKGNAME}: Makefile error: the DESKTOP_ENTRIES list must contain one or more groups of 6 elements"; \
-		exit 1; \
-	fi; \
-	num=1; \
-	while [ $$# -gt 6 ]; do \
-		entry="#$$num"; \
-		if [ -n "$$4" ]; then \
-			entry="$$entry ($$4)"; \
-		elif [ -n "$$1" ]; then \
-			entry="$$entry ($$1)"; \
-		fi; \
-		if [ -z "$$1" ]; then \
-			${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 1 (Name) is empty"; \
-			exit 1; \
-		fi; \
-		if ${ECHO_CMD} "$$3" | ${EGREP} -iq '.(png|svg|xpm)$$'; then \
-			if ! ${ECHO_CMD} "$$3" | ${GREP} -iq '^/'; then \
-				${ECHO_MSG} "${PKGNAME}: Makefile warning: in desktop entry $$entry: field 3 (Icon) should be either absolute path or icon name without extension if installed icons follow Icon Theme Specification"; \
-			fi; \
-		fi; \
-		if [ -z "$$4" ]; then \
-			${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 4 (Exec) is empty"; \
-			exit 1; \
-		fi; \
-		if [ -n "$$5" ]; then \
-			for c in `${ECHO_CMD} "$$5" | ${TR} ';' ' '`; do \
-				if ! ${ECHO_CMD} ${VALID_DESKTOP_CATEGORIES} | ${GREP} -wq $$c; then \
-					${ECHO_CMD} "${PKGNAME}: Makefile warning: in desktop entry $$entry: category $$c is not a valid desktop category"; \
-				fi; \
-			done; \
-			if ! ${ECHO_CMD} "$$5" | ${GREP} -q "`${ECHO_CMD} ${DESKTOP_CATEGORIES_MAIN} | ${SED} -E 's,[[:blank:]]+,\\\|,g'`"; then \
-				${ECHO_CMD} "${PKGNAME}: Makefile warning: in desktop entry $$entry: field 5 (Categories) must contain at least one main desktop category (make -VDESKTOP_CATEGORIES_MAIN)"; \
-			fi; \
-			if ! ${ECHO_CMD} "$$5" | ${GREP} -q ';$$'; then \
-				${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 5 (Categories) does not end with a semicolon"; \
-				exit 1; \
-			fi; \
-		else \
-			if [ -z "`cd ${.CURDIR} && ${MAKE} desktop-categories`" ]; then \
-				${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 5 (Categories) is empty and could not be deduced from the CATEGORIES variable"; \
-				exit 1; \
-			fi; \
-		fi; \
-		if [ "x$$6" != "xtrue" ] && [ "x$$6" != "xfalse" ] && [ "x$$6" != "x" ]; then \
-			${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 6 (StartupNotify) is not \"true\", \"false\" or \"\"(empty)"; \
-			exit 1; \
-		fi; \
-		shift 6; \
-		num=`${EXPR} $$num + 1`; \
-	done
+	@${SETENV} \
+			dp_CURDIR="${.CURDIR}" \
+			dp_ECHO_CMD=${ECHO_CMD} \
+			dp_ECHO_MSG=${ECHO_MSG} \
+			dp_EXPR="${EXPR}" \
+			dp_GREP="${GREP}" \
+			dp_MAKE="${MAKE}" \
+			dp_PKGNAME="${PKGNAME}" \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			dp_SED="${SED}" \
+			dp_VALID_DESKTOP_CATEGORIES="${VALID_DESKTOP_CATEGORIES}" \
+			dp_TR="${TR}" \
+			${SH} ${SCRIPTSDIR}/check-desktop-entries.sh ${DESKTOP_ENTRIES}
 .endif
 
 .if !target(install-desktop-entries)
 .if defined(DESKTOP_ENTRIES)
 install-desktop-entries:
-	@set -- ${DESKTOP_ENTRIES} XXX; \
-	while [ $$# -gt 6 ]; do \
-		filename="`${ECHO_CMD} "$$4" | ${SED} -e 's,^/,,g;s,[/ ],_,g;s,[^_[:alnum:]],,g'`.desktop"; \
-		pathname="${STAGEDIR}${DESKTOPDIR}/$$filename"; \
-		categories="$$5"; \
-		if [ -z "$$categories" ]; then \
-			categories="`cd ${.CURDIR} && ${MAKE} desktop-categories`"; \
-		fi; \
-		${ECHO_CMD} "${DESKTOPDIR}/$$filename" >> ${TMPPLIST}; \
-		${ECHO_CMD} "[Desktop Entry]" > $$pathname; \
-		${ECHO_CMD} "Type=Application" >> $$pathname; \
-		${ECHO_CMD} "Version=1.0" >> $$pathname; \
-		${ECHO_CMD} "Name=$$1" >> $$pathname; \
-		comment="$$2"; \
-		if [ -z "$$2" ]; then \
-			comment="`cd ${.CURDIR} && ${MAKE} -VCOMMENT`"; \
-		fi; \
-		${ECHO_CMD} "GenericName=$$comment" >> $$pathname; \
-		${ECHO_CMD} "Comment=$$comment" >> $$pathname; \
-		if [ -n "$$3" ]; then \
-			${ECHO_CMD} "Icon=$$3" >> $$pathname; \
-		fi; \
-		${ECHO_CMD} "Exec=$$4" >> $$pathname; \
-		${ECHO_CMD} "Categories=$$categories" >> $$pathname; \
-		if [ -n "$$6" ]; then \
-			${ECHO_CMD} "StartupNotify=$$6" >> $$pathname; \
-		fi; \
-		shift 6; \
-	done
+	@${SETENV} \
+			dp_CURDIR="${.CURDIR}" \
+			dp_ECHO_CMD=${ECHO_CMD} \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			dp_STAGEDIR="${STAGEDIR}" \
+			dp_DESKTOPDIR="${DESKTOPDIR}" \
+			dp_TMPPLIST="${TMPPLIST}" \
+			dp_MAKE="${MAKE}" \
+			dp_SED="${SED}" \
+			${SH} ${SCRIPTSDIR}/install-desktop-entries.sh ${DESKTOP_ENTRIES}
 .endif
 .endif
 
