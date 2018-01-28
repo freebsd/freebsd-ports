@@ -18,7 +18,6 @@ COMMENT=	Distributed document-oriented "NoSQL" database
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
-BROKEN=		fails to build with boost 1.66, see bug 224090
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 (i386 deprecated in v3)"
 
