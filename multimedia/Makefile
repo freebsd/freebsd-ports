@@ -25,7 +25,6 @@
     SUBDIR += baka-mplayer
     SUBDIR += bino
     SUBDIR += bitstream
-    SUBDIR += bombono
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
     SUBDIR += ccextractor
@@ -206,7 +205,6 @@
     SUBDIR += libquvi-scripts
     SUBDIR += libquvi-scripts09
     SUBDIR += libquvi09
-    SUBDIR += librespot
     SUBDIR += librtmp
     SUBDIR += libsmacker
     SUBDIR += libtheora

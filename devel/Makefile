@@ -1429,7 +1429,6 @@
     SUBDIR += libhtp
     SUBDIR += libhyve-remote
     SUBDIR += libical
-    SUBDIR += libical-glib
     SUBDIR += libinotify
     SUBDIR += libiqxmlrpc
     SUBDIR += libisofs
@@ -1772,11 +1771,6 @@
     SUBDIR += node-thrift
     SUBDIR += notify-sharp
     SUBDIR += noweb
-    SUBDIR += npm-amdefine
-    SUBDIR += npm-clean-css
-    SUBDIR += npm-commander
-    SUBDIR += npm-graceful-readlink
-    SUBDIR += npm-source-map
     SUBDIR += npth
     SUBDIR += nsgenbind
     SUBDIR += nspr
@@ -4148,7 +4142,6 @@
     SUBDIR += py-ExtensionClass
     SUBDIR += py-Faker
     SUBDIR += py-IBMQuantumExperience
-    SUBDIR += py-InlineEgg
     SUBDIR += py-Jinja2
     SUBDIR += py-Jinja2-doc
     SUBDIR += py-Missing
@@ -4707,7 +4700,6 @@
     SUBDIR += py-prompt_toolkit
     SUBDIR += py-protobuf
     SUBDIR += py-protocols
-    SUBDIR += py-protocols-devel
     SUBDIR += py-ptrace
     SUBDIR += py-ptvsd
     SUBDIR += py-pudb
@@ -4870,7 +4862,6 @@
     SUBDIR += py-ruamel.ordereddict
     SUBDIR += py-ruamel.yaml
     SUBDIR += py-rubymarshal
-    SUBDIR += py-ruledispatch
     SUBDIR += py-rwt
     SUBDIR += py-sanetime
     SUBDIR += py-sarge
