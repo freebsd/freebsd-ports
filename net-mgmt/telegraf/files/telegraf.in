@@ -17,6 +17,8 @@
 
 . /etc/rc.subr
 
+PATH=${PATH}:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin
+
 name="telegraf"
 rcvar=telegraf_enable
 load_rc_config $name
