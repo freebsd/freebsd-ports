@@ -318,10 +318,11 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.safestack-i386.a \
 	libclang_rt.stats-i386.a \
 	libclang_rt.stats_client-i386.a \
+	libclang_rt.ubsan_minimal-i386.a \
+	libclang_rt.ubsan_minimal-i386.so \
 	libclang_rt.ubsan_standalone-i386.a \
 	libclang_rt.ubsan_standalone-i386.so \
-	libclang_rt.ubsan_standalone_cxx-i386.a \
-	libclang_rt.ubsan_standalone_cxx-i386.so
+	libclang_rt.ubsan_standalone_cxx-i386.a
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
