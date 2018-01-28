@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Drawpile
-DISTVERSION=	2.0.5
+DISTVERSION=	2.0.6
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libmicrohttpd.so:www/libmicrohttpd \
-		libminiupnpc.so:net/miniupnpc
+		libminiupnpc.so:net/miniupnpc \
+		libsodium.so:security/libsodium
 
 USES=		cmake:outsource desktop-file-utils kde:5 pkgconfig shared-mime-info
 USE_GITHUB=	yes
@@ -23,6 +24,7 @@ USE_KDE=	archive
 OPTIONS_DEFINE=	DOCS
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-install:
 .for SZ in 16 32 64 128 256
