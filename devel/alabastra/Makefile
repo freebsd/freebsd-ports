@@ -11,6 +11,9 @@ DISTNAME=	Alabastra-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ editor written with Qt 4
 
+DEPRECATED=	Abandonware, not used in the ports tree
+EXPIRATION_DATE=	2018-03-01
+
 LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

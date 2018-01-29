@@ -12,6 +12,9 @@ COMMENT=	Generate Allegro dialogs in a simple way
 
 LIB_DEPENDS=	liballeg.so:devel/allegro
 
+DEPRECATED=	Abandonware, not used in the ports tree
+EXPIRATION_DATE=	2018-03-01
+
 USES=	gmake
 
 MAKEFILE=	makefile
