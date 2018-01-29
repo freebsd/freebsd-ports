@@ -12,6 +12,9 @@ COMMENT=	Client for accessing Google APIs
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/rubygem-google-api-client instead
+EXPIRATION_DATE=2018-02-28
+
 RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 		rubygem-googleauth>=0.5:security/rubygem-googleauth \
 		rubygem-httpclient>=2.7:www/rubygem-httpclient \
