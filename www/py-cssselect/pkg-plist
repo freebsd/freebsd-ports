@@ -1,4 +1,4 @@
-%%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/index.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
 %%PORTDOCS%%%%DOCSDIR%%/_static/alabaster.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
@@ -9,7 +9,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/down.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/jquery-1.11.1.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery-3.1.0.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
