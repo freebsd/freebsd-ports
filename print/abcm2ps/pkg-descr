@@ -2,4 +2,4 @@ abcm2ps is a command line program which converts ABC to music sheet in
 PostScript format. It is an extension of abc2ps which may handle many
 voices per staff.
 
-WWW: http://moinejf.free.fr/
+WWW: https://github.com/leesavide/abcm2ps
