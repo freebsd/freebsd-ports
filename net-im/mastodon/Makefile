@@ -3,7 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -28,7 +28,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-pghero-rails5>=2.0.0:databases/rubygem-pghero-rails5 \
 		rubygem-dotenv-rails-rails5>=2.2:misc/rubygem-dotenv-rails-rails5 \
 		rubygem-aws-sdk>=2.10:devel/rubygem-aws-sdk \
-		rubygem-fog-core>=1.45:devel/rubygem-fog-core \
+		rubygem-fog-core1>=1.45:devel/rubygem-fog-core1 \
 		rubygem-fog-local>=0.4:net/rubygem-fog-local \
 		rubygem-fog-openstack>=0.1:net/rubygem-fog-openstack \
 		rubygem-paperclip-rails5>=5.1.0:devel/rubygem-paperclip-rails5 \
