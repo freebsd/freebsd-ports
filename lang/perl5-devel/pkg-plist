@@ -326,7 +326,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Memoize/Storable.pm
 %%PRIV_LIB%%/Module/CoreList.pm
 %%PRIV_LIB%%/Module/CoreList.pod
-%%PRIV_LIB%%/Module/CoreList/TieHashDelta.pm
 %%PRIV_LIB%%/Module/CoreList/Utils.pm
 %%PRIV_LIB%%/Module/Load.pm
 %%PRIV_LIB%%/Module/Load/Conditional.pm
