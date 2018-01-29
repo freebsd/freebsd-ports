@@ -3,6 +3,7 @@ bin/encfsctl
 bin/encfssh
 %%MANPAGES%%man/man1/encfs.1.gz
 %%MANPAGES%%man/man1/encfsctl.1.gz
+%%MANPAGES%%man/man1/encfssh.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/be/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/encfs.mo
