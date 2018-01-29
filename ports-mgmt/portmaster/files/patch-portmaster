@@ -177,7 +177,23 @@
  else
  	portdir="${1#$pd/}" ; portdir="${portdir%/}"
  	export_flavor=$(flavor_part $portdir)
-@@ -3229,11 +3246,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
+@@ -3138,12 +3155,13 @@ if [ -z "$PM_INDEX_ONLY" ] && ! pm_isdir_pd "$portdir"
+ fi
+ 
+ iport_from_pkgname () {
+-	local dir flavor pkgname
++	local dir flavor pkgname pattern
+ 
+ 	dir=$(dir_part $1)
+ 	flavor=$(flavor_part $1)
+ 	pkgname=$(FLAVOR=$flavor make -C "$pd/$dir" -V PKGNAME) || return 1
+-	pkg info -x "^${pkgname%-*}"'-[^-]*' 2>/dev/null
++	pattern="^${pkgname%-*}"'-[^-]*$'
++	pkg info -x "$pattern" 2>/dev/null | egrep -- "$pattern"
+ }
+ 
+ if [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
+@@ -3229,11 +3247,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
  		fi
  	fi
  
@@ -193,7 +209,7 @@
  # Do these things first time through
  if [ -z "$PM_INDEX_ONLY" -a -z "$PM_BUILDING" -a -z "$SHOW_WORK" -a -z "$NO_ACTION" ]; then
  	# Do not start this in the background until we are sure we are going to proceed
-@@ -3639,12 +3659,18 @@ pkg_flavor () {
+@@ -3639,12 +3660,18 @@ pkg_flavor () {
  	if [ -n "$HIDE_BUILD" ] && [ -n "$(pm_make -V LICENSE)" ]; then
  		pm_make extract ask-license || fail "make extract ask-license failed for $portdir"
  	fi
@@ -212,7 +228,7 @@
  else
  	[ -z "$local_package" ] && {
  		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.txz failed"; }
-@@ -3876,9 +3902,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3876,9 +3903,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
