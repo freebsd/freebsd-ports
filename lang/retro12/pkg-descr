@@ -1,0 +1,16 @@
+RETRO is a clean, elegant, and pragmatic dialect of Forth. It provides
+a simple alternative for those willing to make a break from legacy
+systems.
+
+The language draws influences from many sources including traditional 
+Forth systems, cmForth, colorForth, Factor, and Parable. It was
+designed to be easy to grasp and adapt to specific uses.
+
+The basic language is very portable. It runs on a tiny virtual
+machine (Nga), which is written in C. There are multiple interface
+options, the main one (rre) is buildable with just the standard C
+compiler and libraries on most systems (tested at various points
+on Linux, NetBSD, macOS, and Windows, on x86, x86-64, PPC [emulated],
+and various ARM processors).
+
+WWW: https://forthworks.com/retro
