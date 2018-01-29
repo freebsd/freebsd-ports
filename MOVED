@@ -9891,3 +9891,4 @@ lang/pike78||2018-01-28|Has expired: Broken for more than 6 months
 shells/ambit||2018-01-28|Has expired: Broken for more than 6 months
 mail/evolution-mapi||2018-01-28|Has expired: Depends on expiring mail/libmapi
 devel/beautifyphp||2018-01-29|only works for PHP4 which is gone long ago
+devel/clanlib22|devel/clanlib|2018-01-29|No users in the ports tree, newer version available
