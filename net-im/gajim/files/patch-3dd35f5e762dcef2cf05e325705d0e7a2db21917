@@ -1,0 +1,87 @@
+--- src/common/crypto.py.orig
++++ src/common/crypto.py
+@@ -76,50 +76,8 @@
+     else:
+         return base28_chr[n]
+ 
+-def add_entropy_sources_OpenSSL():
+-    # Other possibly variable data. This are very low quality sources of
+-    # entropy, but some of them are installation dependent and can be hard
+-    # to guess for the attacker.
+-    # Data available on all platforms Unix, Windows
+-    sources = [sys.argv, sys.builtin_module_names,
+-        sys.copyright, sys.getfilesystemencoding(), sys.hexversion,
+-        sys.modules, sys.path, sys.version, sys.api_version,
+-        os.environ, os.getcwd(), os.getpid()]
+-
+-    for s in sources:
+-        OpenSSL.rand.add(str(s), 1)
+-
+-    # The /proc filesystem on POSIX systems contains many random variables:
+-    # memory statistics, interrupt counts, network packet counts
+-    if os.name == 'posix':
+-        dirs = ['/proc', '/proc/net', '/proc/self']
+-        for d in dirs:
+-            if os.access(d, os.R_OK):
+-                for filename in os.listdir(d):
+-                    OpenSSL.rand.add(filename, 0)
+-                    try:
+-                        with open(d + os.sep + filename, "r") as fp:
+-                        # Limit the ammount of read bytes, in case a memory
+-                        # file was opened
+-                            OpenSSL.rand.add(str(fp.read(5000)), 1)
+-                    except IOError:
+-                        # Ignore all read and access errors
+-                        pass
+-
+-PYOPENSSL_PRNG_PRESENT = False
+-try:
+-    import OpenSSL.rand
+-    PYOPENSSL_PRNG_PRESENT = True
+-except ImportError:
+-    # PyOpenSSL PRNG not available
+-    pass
+-
+ def random_bytes(bytes_):
+-    if PYOPENSSL_PRNG_PRESENT:
+-        OpenSSL.rand.add(os.urandom(bytes_), bytes_)
+-        return OpenSSL.rand.bytes(bytes_)
+-    else:
+-        return os.urandom(bytes_)
++    return os.urandom(bytes_)
+ 
+ def generate_nonce():
+     return random_bytes(8)
+--- src/gajim.py.orig
++++ src/gajim.py
+@@ -296,20 +296,6 @@
+ pid_filename = gajimpaths['PID_FILE']
+ config_filename = gajimpaths['CONFIG_FILE']
+ 
+-# Seed the OpenSSL pseudo random number generator from file and initialize
+-RNG_SEED = gajimpaths['RNG_SEED']
+-PYOPENSSL_PRNG_PRESENT = False
+-try:
+-    import OpenSSL.rand
+-    from common import crypto
+-    PYOPENSSL_PRNG_PRESENT = True
+-    # Seed from file
+-    OpenSSL.rand.load_file(str(RNG_SEED))
+-    crypto.add_entropy_sources_OpenSSL()
+-    OpenSSL.rand.write_file(str(RNG_SEED))
+-except ImportError:
+-    log.info("PyOpenSSL PRNG not available")
+-
+ import traceback
+ import errno
+ import dialogs
+@@ -456,9 +442,6 @@
+ del pid_dir
+ 
+ def on_exit():
+-    # Save the entropy from OpenSSL PRNG
+-    if PYOPENSSL_PRNG_PRESENT:
+-        OpenSSL.rand.write_file(str(RNG_SEED))
+     # delete pid file on normal exit
+     if os.path.exists(pid_filename):
+         os.remove(pid_filename)
