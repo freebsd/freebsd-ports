@@ -25,6 +25,7 @@
     SUBDIR += baka-mplayer
     SUBDIR += bino
     SUBDIR += bitstream
+    SUBDIR += blind
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
     SUBDIR += ccextractor
