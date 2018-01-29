@@ -1,0 +1,19 @@
+bin/nncp-bundle
+bin/nncp-call
+bin/nncp-caller
+bin/nncp-cfgenc
+bin/nncp-cfgmin
+bin/nncp-cfgnew
+bin/nncp-check
+bin/nncp-daemon
+bin/nncp-file
+bin/nncp-freq
+bin/nncp-log
+bin/nncp-mail
+bin/nncp-pkt
+bin/nncp-reass
+bin/nncp-rm
+bin/nncp-stat
+bin/nncp-toss
+bin/nncp-xfer
+@sample etc/nncp.conf.sample etc/newsyslog.conf.d/nncp.conf
