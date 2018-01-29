@@ -1,6 +1,6 @@
 bin/pot
 %%ETCDIR%%/flavours/dns.sh
-%%ETCDIR%%/pot.conf.sample
+@sample %%ETCDIR%%/pot.conf.sample
 %%ETCDIR%%/pot.default.conf
 %%DATADIR%%/add-dep.sh
 %%DATADIR%%/add-fscomp.sh
