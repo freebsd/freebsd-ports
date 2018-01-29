@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nncp-caller
+# REQUIRE: DAEMON NETWORKING FILESYSTEMS
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# nncp_caller_enable (bool):	Set to NO by default.
+#				Set it to YES to enable nncp-caller.
+# nncp_caller_config (path):	Set to %%PREFIX%%/etc/nncp.yaml by default.
+
+. /etc/rc.subr
+
+name=nncp_caller
+rcvar=nncp_caller_enable
+
+load_rc_config $name
+
+: ${nncp_caller_enable:="NO"}
+: ${nncp_caller_config="%%PREFIX%%/etc/nncp.yaml"}
+
+command=%%PREFIX%%/bin/nncp-caller
+command_args="-quiet -cfg $nncp_caller_config &"
+
+run_rc_command "$1"

@@ -480,6 +480,7 @@
     SUBDIR += nifmon
     SUBDIR += nload
     SUBDIR += nmsg
+    SUBDIR += nncp
     SUBDIR += nocatsplash
     SUBDIR += norm
     SUBDIR += nph
