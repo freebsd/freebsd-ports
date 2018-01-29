@@ -104,6 +104,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qnumeric_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qobject_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qoperatingsystemversion_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qoperatingsystemversion_win_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qorderedmutexlocker_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qparallelanimationgroup_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpodlist_p.h

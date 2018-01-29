@@ -1,5 +1,7 @@
 %%QT_INCDIR%%/QtQuickControls2/%%FULLVER%%/QtQuickControls2/private/qquickanimatednode_p.h
+%%QT_INCDIR%%/QtQuickControls2/%%FULLVER%%/QtQuickControls2/private/qquickclippedtext_p.h
 %%QT_INCDIR%%/QtQuickControls2/%%FULLVER%%/QtQuickControls2/private/qquickcolorimageprovider_p.h
+%%QT_INCDIR%%/QtQuickControls2/%%FULLVER%%/QtQuickControls2/private/qquickitemgroup_p.h
 %%QT_INCDIR%%/QtQuickControls2/%%FULLVER%%/QtQuickControls2/private/qquickpaddedrectangle_p.h
 %%QT_INCDIR%%/QtQuickControls2/%%FULLVER%%/QtQuickControls2/private/qquickplaceholdertext_p.h
 %%QT_INCDIR%%/QtQuickControls2/%%FULLVER%%/QtQuickControls2/private/qquickproxytheme_p.h
@@ -33,6 +35,8 @@
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickcontainer_p_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickcontrol_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickcontrol_p_p.h
+%%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickdeferredexecute_p_p.h
+%%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickdeferredpointer_p_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickdelaybutton_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickdial_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickdialog_p.h
