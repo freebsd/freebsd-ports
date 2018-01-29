@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tzinfo-data
-PORTVERSION=	1.2018.2
+PORTVERSION=	1.2018.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
