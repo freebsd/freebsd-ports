@@ -5,7 +5,7 @@ PORTNAME=	openal-soft
 PORTVERSION=	1.12.854
 PORTREVISION=	5
 CATEGORIES=	audio linux
-MASTER_SITES=	EPEL
+MASTER_SITES=	EPEL/o
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	3D positional spatialized sound library (Linux CentOS ${LINUX_DIST_VER})
