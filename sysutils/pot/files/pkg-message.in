@@ -1,0 +1,5 @@
+Now, before to run 'pot init', it would be wise to edit the configuration file
+
+Do not edit pot.default.conf, but pot.conf instead.
+Configuration files are stored in %%ETCDIR%%/
+
