@@ -10,6 +10,9 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ # mirror, original disappeared
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File-like IO for strings
 
+DEPRECATED=	Abandonware, no more upstream
+EXPIRATION_DATE=	2018-03-01
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

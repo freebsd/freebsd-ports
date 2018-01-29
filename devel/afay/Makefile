@@ -11,6 +11,9 @@ DISTNAME=	afay_thiberlog_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved aflex and ayacc Ada 95 scanner and parser generators
 
+DEPRECATED=	Abandonware, not used in the ports tree
+EXPIRATION_DATE=	2018-03-01
+
 LICENSE=	aflex
 LICENSE_NAME=	Arcadia-UC-Irvine
 LICENSE_FILE=	${WRKSRC}/afay/aflex/README

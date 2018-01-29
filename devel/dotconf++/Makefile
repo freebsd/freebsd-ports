@@ -11,6 +11,9 @@ MASTER_SITES=	SF \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration file parser written in C++
 
+DEPRECATED=	No upstream, not depend on in the ports tree
+EXPIRATION_DATE=	2018-03-01
+
 USES=		compiler:env libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

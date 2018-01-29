@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.gufi.org/ports/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mp3 player
 
+DEPRECATED=	No more upstream
+EXPIRATION_DATE=	2018-03-01
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_gcc=no
