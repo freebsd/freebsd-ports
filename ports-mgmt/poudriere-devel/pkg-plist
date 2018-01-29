@@ -32,6 +32,7 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/awk/json.awk
 %%DATADIR%%/awk/json_jail.awk
 %%DATADIR%%/awk/json_top.awk
+%%DATADIR%%/awk/parse_MOVED.awk
 %%DATADIR%%/awk/processonelog2.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
 %%DATADIR%%/api.sh
