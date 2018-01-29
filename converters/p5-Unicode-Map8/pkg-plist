@@ -182,5 +182,5 @@ bin/umap
 %%SITE_ARCH%%/Unicode/Map8/maps/us-dk.bin
 %%SITE_ARCH%%/Unicode/Map8/maps/videotex-suppl.bin
 %%SITE_ARCH%%/auto/Unicode/Map8/Map8.so
-%%PERL5_MAN3%%/Unicode::Map8.3.gz
 %%PERL5_MAN1%%/umap.1.gz
+%%PERL5_MAN3%%/Unicode::Map8.3.gz
