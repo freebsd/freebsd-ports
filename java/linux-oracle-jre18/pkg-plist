@@ -148,7 +148,9 @@
 %%T%%/lib/i386/libavplugin-54.so
 %%T%%/lib/i386/libavplugin-55.so
 %%T%%/lib/i386/libavplugin-56.so
+%%T%%/lib/i386/libavplugin-57.so
 %%T%%/lib/i386/libavplugin-ffmpeg-56.so
+%%T%%/lib/i386/libavplugin-ffmpeg-57.so
 %%T%%/lib/i386/libawt.so
 %%T%%/lib/i386/libawt_headless.so
 %%T%%/lib/i386/libawt_xawt.so
