@@ -1,0 +1,17 @@
+--- Makefile.orig	2016-10-04 08:01:36 UTC
++++ Makefile
+@@ -22,12 +22,10 @@ manpages:
+ $(OBJ): $(HDR) util.o
+ 
+ .o:
+-	@echo "LD $@"
+-	@$(LD) $< -o $@ $(LDFLAGS) util.o
++	$(LD) $< -o $@ $(LDFLAGS) util.o
+ 
+ .c.o:
+-	@echo "CC $<"
+-	@$(CC) -c $< -o $@ $(CFLAGS)
++	$(CC) -c $< -o $@ $(CFLAGS)
+ 
+ install: $(BIN)
+ 	mkdir -p $(DESTDIR)$(PREFIX)/bin/
