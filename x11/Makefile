@@ -351,6 +351,7 @@
     SUBDIR += wmctrl
     SUBDIR += wmdrawer
     SUBDIR += wmmatrix
+    SUBDIR += wmutils-core
     SUBDIR += wmxss
     SUBDIR += workrave
     SUBDIR += x11perf
