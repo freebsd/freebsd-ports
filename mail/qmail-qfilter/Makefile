@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end for qmail-queue to run messages through filters
 
 LICENSE=	GPLv2
