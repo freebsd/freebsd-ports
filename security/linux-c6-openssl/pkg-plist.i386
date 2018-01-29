@@ -34,6 +34,7 @@ usr/lib/openssl/engines/libubsec.so
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FIPS
+%%PORTDOCS%%%%DOCSDIR%%/README.legacy-settings
 %%PORTDOCS%%%%DOCSDIR%%/c-indentation.el
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
 %%PORTDOCS%%%%DOCSDIR%%/openssl_button.gif
