@@ -1,0 +1,6 @@
+wmutils-core is a set of tools for X windows manipulation. Each tool only
+has one purpose, to make it as flexible and reliable as possible. Included
+tools allow window listing, moving, resizing, focusing, changing window
+order and more.
+
+WWW: https://github.com/wmutils/core
