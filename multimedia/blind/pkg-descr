@@ -1,0 +1,13 @@
+blind uses a raw video format with a simple container. A file begins with
+an plain-text line, containing the number of frames, the width, the height,
+and the pixel format, all separated by a single regular blank space, without
+and leading or tailing white space. After this line, which ends with an LF,
+there is a NUL-byte followed by the 4 characters "uivf" (unportable, interim
+video format). This head is followed by the video frame-by-frame with row-major
+frames. Pixels are independently encoded, and are encoded unscaled CIE XYZ with
+non-premultiplied alpha and without any transfer-function, with values stored
+in native doubles or optionally in native floats. These two configurations are
+the only options, but the container format is designed so this can be changed
+arbitrarily in the future.
+
+WWW: https://tools.suckless.org/blind/
