@@ -3,6 +3,7 @@
 
 PORTNAME=	sphinx
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
@@ -30,7 +31,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.18.1:www/py-requests@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imagesize>=0.7.1:graphics/py-imagesize@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing>=3.6.1:devel/py-typing@${FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0:www/py-html5lib@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR} \
