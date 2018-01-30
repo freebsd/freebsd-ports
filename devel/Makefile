@@ -4008,6 +4008,7 @@
     SUBDIR += pecl-vld
     SUBDIR += pecl-weakref
     SUBDIR += pecl-weakref2
+    SUBDIR += pecl-xdebug
     SUBDIR += pecl-xhprof
     SUBDIR += pecl-yac
     SUBDIR += pecl-yaconf
@@ -4025,7 +4026,6 @@
     SUBDIR += php-memoize
     SUBDIR += php-scalar_objects
     SUBDIR += php-uprofiler
-    SUBDIR += php-xdebug
     SUBDIR += php5-blitz
     SUBDIR += php5-blitz-devel
     SUBDIR += php5-dav
