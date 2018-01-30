@@ -12,6 +12,8 @@ COMMENT=	Management system for bhyve virtual machines
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+
 OPTIONS_DEFINE=	EXAMPLES
 EXAMPLES_DESC=	Install example guest templates
 
