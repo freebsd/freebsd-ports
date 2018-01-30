@@ -20,9 +20,9 @@ COMMENT=	Secure alternative to widely-used Sendmail
 
 LICENSE=	IPL10 EPL
 LICENSE_COMB=	multi
-LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_NAME_IPL10=	IBM PUBLIC LICENSE VERSION 1.0
+LICENSE_PERMS_IPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 PORTSCOUT=	limit:^3\.2\.
 
