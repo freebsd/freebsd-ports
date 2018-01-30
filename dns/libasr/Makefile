@@ -3,6 +3,7 @@
 
 PORTNAME=	libasr
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
@@ -18,7 +19,15 @@ CONFLICTS=	libasr-devel-[0-9]*
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-USES=		groff libtool ssl:build
+OPTIONS_DEFINE=	MAN3
+OPTIONS_SUB=	yes
+
+MAN3_DESC=	Install API manpages (section 3)
+MAN3_USES=	groff
+MAN3_CONFIGURE_OFF=	ac_cv_path_GROFF="" ac_cv_path_NROFF="" ac_cv_path_MANDOC=""
+MAN3_CONFIGURE_ON=	--with-mantype="man"
+
+USES=		libtool ssl:build
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${OPENSSLINC}
