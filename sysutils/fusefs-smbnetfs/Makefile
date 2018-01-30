@@ -30,6 +30,8 @@ CONFIGURE_ENV+=	GLIB_LIBS=-L/var/empty
 CFLAGS+=	-I${SAMBAINCLUDES}
 LDFLAGS+=	-L${SAMBALIBS}
 SUB_FILES=	pkg-message
+# configure just generated config.h -- we do not need to redo it:
+MAKE_ARGS+=	AUTOHEADER=${TRUE}
 
 .include <bsd.port.pre.mk>
 
