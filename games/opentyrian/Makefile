@@ -23,7 +23,7 @@ USE_SDL=	sdl
 SUB_FILES=	pkg-message
 DATADIR=	${PREFIX}/share/tyrian
 
-PORTSCOUT=	ignore:11402-phase-0.8
+PORTSCOUT=	skipv:11402-phase-0.8
 
 PORTDOCS=	CREDITS NEWS README
 
