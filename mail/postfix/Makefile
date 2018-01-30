@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -17,12 +18,11 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail
 
-LICENSE=	IPL10
+LICENSE=	IPL10 EPL
+LICENSE_COMB=	multi
 LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-LIB_DEPENDS=	libicuuc.so:devel/icu
 
 PORTSCOUT=	limit:^3\.2\.
 
@@ -40,15 +40,16 @@ USE_SUBMAKE=	yes
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BDB CDB DOCS INST_BASE LDAP LDAP_SASL LMDB MYSQL \
+OPTIONS_DEFINE=	BDB CDB DOCS EAI INST_BASE LDAP LDAP_SASL LMDB MYSQL \
 		NIS PCRE PGSQL SASL SQLITE TEST TLS
 
 OPTIONS_RADIO=		RG1
 OPTIONS_RADIO_RG1=	SASLKRB5 SASLKMIT
-OPTIONS_DEFAULT=	PCRE TLS
+OPTIONS_DEFAULT=	EAI PCRE TLS
 
 BDB_USES=		bdb
 CDB_LIB_DEPENDS=	libcdb.so:databases/tinycdb
+EAI_LIB_DEPENDS=	libicuuc.so:devel/icu
 LDAP_USE=		OPENLDAP=yes
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 MYSQL_USE=		MYSQL=yes
@@ -60,6 +61,7 @@ SQLITE_USES=		sqlite
 TLS_USES=		ssl
 
 CDB_DESC=	CDB maps lookups
+EAI_DESC=	Email Address Internationalization (SMTPUTF8) support
 INST_BASE_DESC=	Install into /usr and /etc/postfix
 LDAP_DESC=	LDAP maps (uses WITH_OPENLDAP_VER)
 LDAP_SASL_DESC=	LDAP client-to-server SASL auth
@@ -150,9 +152,12 @@ _REQUIRE=		LOGIN cleanvar dovecot
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH
 
 # Email Address Internationalization (EAI, RFC 6531..6533)
-# This is now mandantory!
+.if ${PORT_OPTIONS:MEAI}
 POSTFIX_CCARGS+=	-DHAS_EAI -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -licuuc
+.else
+POSTFIX_CCARGS+=	-DNO_EAI
+.endif
 
 .if ${PORT_OPTIONS:MPCRE}
 DYN_EXT+=		pcre
