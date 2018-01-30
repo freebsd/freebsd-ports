@@ -1,7 +1,7 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 PKGNAMESUFFIX=	24-sharp
 

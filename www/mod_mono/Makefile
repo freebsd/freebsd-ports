@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_mono
 PORTVERSION=	3.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

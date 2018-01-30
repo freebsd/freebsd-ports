@@ -3,6 +3,7 @@
 
 PORTNAME=	xsp
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 

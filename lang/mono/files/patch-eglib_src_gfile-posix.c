@@ -1,4 +1,4 @@
---- eglib/src/gfile-posix.c.orig	2016-07-29 09:10:29 UTC
+--- eglib/src/gfile-posix.c.orig	2017-07-20 18:10:59 UTC
 +++ eglib/src/gfile-posix.c
 @@ -170,7 +170,7 @@ g_get_current_dir (void)
  	do {

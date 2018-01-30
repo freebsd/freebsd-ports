@@ -2,6 +2,7 @@
 
 PORTNAME=	nplot
 PORTVERSION=	0.9.11
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	cs@innolan.dk

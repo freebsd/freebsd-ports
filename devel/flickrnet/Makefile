@@ -3,6 +3,7 @@
 
 PORTNAME=	flickrnet
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://romain.blogreen.org/distfiles/

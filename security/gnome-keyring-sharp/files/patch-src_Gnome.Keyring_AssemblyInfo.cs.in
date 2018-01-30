@@ -1,0 +1,8 @@
+--- src/Gnome.Keyring/AssemblyInfo.cs.in.orig	2010-06-30 23:06:58 UTC
++++ src/Gnome.Keyring/AssemblyInfo.cs.in
+@@ -35,5 +35,6 @@ using System.Runtime.CompilerServices;
+ [assembly: AssemblyDescription ("Client library to access the GNOME Keyring daemon")]
+ [assembly: AssemblyCopyright ("(c) 2006 Novell, Inc.")]
+ [assembly: AssemblyCompany ("Novell, Inc.")]
+ [assembly: AssemblyKeyFile ("Gnome.Keyring.snk")]
++[assembly: AssemblyDelaySignAttribute (true)]
