@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	snort
-DISTVERSION=	3.0.0-a4
+DISTVERSION=	3.0.0-a4.242
 CATEGORIES=	security
-MASTER_SITES=	https://snort.org/downloads/snortplus/
 PKGNAMESUFFIX=	3
-DISTNAME=	${PORTNAME}-3.0.0-239-auto
+DISTNAME=	BUILD_242
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
@@ -39,7 +38,11 @@ LRGPCAP_CONFIGURE_ENABLE=	large-pcap
 
 .include <bsd.port.options.mk>
 
-USES=		cpe libtool pathfix pkgconfig ssl
+USES=		autoreconf cpe libtool pathfix pkgconfig ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	snortadmin
+GH_PROJECT=	snort3
+GH_TAGNAME=	BUILD_242
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
