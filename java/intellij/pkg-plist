@@ -103,7 +103,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/coverage-util.jar
 %%IDEA_HOME%%/lib/cucumber-core-1.2.4.jar
 %%IDEA_HOME%%/lib/cucumber-groovy-1.2.4.jar
-%%IDEA_HOME%%/lib/ecj-4.6.2.jar
+%%IDEA_HOME%%/lib/ecj-4.7.2.jar
 %%IDEA_HOME%%/lib/emma.jar
 %%IDEA_HOME%%/lib/extensions.jar
 %%IDEA_HOME%%/lib/external-system-rt.jar
