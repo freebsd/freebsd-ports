@@ -3,7 +3,7 @@
 
 PORTNAME=	dk-milter
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/DomainKeys%20Milter/${PORTVERSION}
 
@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
 
 USE_RC_SUBR=	milter-dk
-USES+=		ssl
+USES+=		ssl groff
 
 .if !defined(BUILDING_INDEX)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
