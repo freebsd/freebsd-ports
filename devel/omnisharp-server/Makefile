@@ -3,6 +3,7 @@
 
 PORTNAME=	omnisharp-server
 DISTVERSION=	g20150729
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ultima@FreeBSD.org

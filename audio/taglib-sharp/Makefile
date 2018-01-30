@@ -2,7 +2,7 @@
 
 PORTNAME=	taglib-sharp
 PORTVERSION=	2.0.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/${PORTVERSION}/
 

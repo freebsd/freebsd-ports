@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-sharp
 PORTVERSION=	2.24.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	mono@FreeBSD.org

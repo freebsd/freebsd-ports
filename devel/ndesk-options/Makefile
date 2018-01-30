@@ -2,6 +2,7 @@
 
 PORTNAME=	ndesk-options
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ndesk.org/archive/${PORTNAME}/
 

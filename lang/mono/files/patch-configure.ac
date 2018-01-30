@@ -1,6 +1,6 @@
---- configure.ac.orig	2017-04-12 10:51:18 UTC
+--- configure.ac.orig	2017-07-20 18:10:59 UTC
 +++ configure.ac
-@@ -355,6 +355,7 @@ AC_SUBST(extra_runtime_ldflags)
+@@ -385,6 +385,7 @@ AC_SUBST(extra_runtime_ldflags)
  AM_CONDITIONAL(HOST_WIN32, test x$host_win32 = xyes)
  AM_CONDITIONAL(TARGET_WIN32, test x$target_win32 = xyes)
  AM_CONDITIONAL(PLATFORM_LINUX, echo x$target_os | grep -q linux)
@@ -8,7 +8,7 @@
  AM_CONDITIONAL(PLATFORM_DARWIN, test x$host_darwin = xyes)
  AM_CONDITIONAL(PLATFORM_SIGPOSIX, test x$use_sigposix = xyes)
  AM_CONDITIONAL(PLATFORM_ANDROID, test x$platform_android = xyes)
-@@ -363,7 +364,7 @@ if test -z "$PLATFORM_DARWIN_TRUE"; then
+@@ -393,7 +394,7 @@ if test -z "$PLATFORM_DARWIN_TRUE"; then
  PLATFORM_AOT_SUFFIX=.dylib
  fi
  

@@ -4,7 +4,7 @@
 
 PORTNAME=	ndesk-dbus-glib
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
 

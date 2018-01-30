@@ -2,6 +2,7 @@
 
 PORTNAME=	mono-zeroconf
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/
 

@@ -1,0 +1,16 @@
+--- configure.ac.orig	2018-01-20 15:44:37 UTC
++++ configure.ac
+@@ -20,8 +20,13 @@ AC_PATH_PROG(CSC, csc, no)
+ AC_PATH_PROG(GMCS, gmcs, no)
+ AC_PATH_PROG(MCS, mcs, no)
+ AC_PATH_PROG(RUNTIME, mono, no)
++AC_PATH_PROG(SN, sn, no)
+ CS="C#"
+ 
++if test "x$SN" = "xno" ; then
++	AC_MSG_ERROR([No key signing tool found])
++fi
++
+ if test "x$CSC" = "xno" ; then
+ 	if test "x$GMCS" = "xno" ; then
+ 		if test "x$MCS" = "xno" ; then

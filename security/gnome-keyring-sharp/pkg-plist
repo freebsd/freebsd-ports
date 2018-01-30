@@ -2,7 +2,7 @@ lib/libgnome-keyring-sharp-glue.a
 lib/libgnome-keyring-sharp-glue.so
 lib/mono/gac/Gnome.Keyring/1.0.0.0__1a73e1bde00c9b66/Gnome.Keyring.dll
 lib/mono/gac/Gnome.Keyring/1.0.0.0__1a73e1bde00c9b66/Gnome.Keyring.dll.config
-lib/mono/gac/Gnome.Keyring/1.0.0.0__1a73e1bde00c9b66/Gnome.Keyring.dll.mdb
+lib/mono/gac/Gnome.Keyring/1.0.0.0__1a73e1bde00c9b66/Gnome.Keyring.pdb
 lib/mono/gnome-keyring-sharp-1.0/Gnome.Keyring.dll
 lib/monodoc/sources/Gnome.Keyring.source
 lib/monodoc/sources/Gnome.Keyring.tree
