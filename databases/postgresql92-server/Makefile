@@ -88,6 +88,10 @@ XML_DESC=	Build with XML data type
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
 OPTIONS_DEFINE+=	ICU
 ICU_DESC=	Use ICU for unicode collation
+.else
+CONFIGURE_ARGS+=--with-icu
+LIB_DEPENDS+=	libicudata.so:devel/icu
+USES+=		pkgconfig
 .endif
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
