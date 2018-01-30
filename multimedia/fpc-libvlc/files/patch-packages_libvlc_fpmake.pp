@@ -1,13 +1,13 @@
---- packages/libvlc/fpmake.pp.orig	2015-08-07 13:22:31 UTC
-+++ packages/libvlc/fpmake.pp
-@@ -15,15 +15,15 @@ begin
+--- packages/libvlc/fpmake.pp	2017-09-02 11:48:24.000000000 -0500
++++ packages/libvlc/fpmake.pp	2017-12-12 12:19:09.246128000 -0500
+@@ -15,15 +15,15 @@
  {$ifdef ALLPACKAGES}
      P.Directory:=ADirectory;
  {$endif ALLPACKAGES}
 -    P.OSes := [win32, win64, linux, freebsd];
 +    P.OSes := [win32, win64, linux, dragonfly, freebsd];
      P.Dependencies.Add('fcl-base');
-     P.Version:='3.0.2';
+     P.Version:='3.0.4';
      P.License := 'LGPL with modification';
      P.HomepageURL := 'www.freepascal.org';
      P.Email := 'michael@freepascal.org';
