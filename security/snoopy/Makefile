@@ -2,34 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	snoopy
-PORTVERSION=	1.9.0
+PORTVERSION=	2.4.6
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	execve() wrapper and logger
+COMMENT=	Log every executed command to syslog
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	bash:shells/bash
+TEST_DEPENDS=	socat:net/socat
 
 OPTIONS_DEFINE=	DOCS
 
+CONFIGURE_ARGS=	--disable-datasource-tid_kernel \
+		ac_cv_prog_SNOOPY_PROG_SOCAT_FOUND=yes
 GNU_CONFIGURE=	yes
-USES=		gmake
-
-PLIST_FILES=	bin/detect lib/snoopy.so
-PORTDOCS=	ChangeLog README.md TODO
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+USES=		autoreconf gmake libtool shebangfix
 
 GH_ACCOUNT=	a2o
 USE_GITHUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} '/^LIBS=/d' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' ${WRKSRC}/README.md
+SHEBANG_GLOB=	*.sh
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/detect ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_LIB} ${WRKSRC}/snoopy.so ${STAGEDIR}${PREFIX}/lib/
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/README.md
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ChangeLog README.md ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} CONTRIBUTING.md FAQ.md FILTER_exclude_spawns_of.md HACKING.md INSTALL.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
