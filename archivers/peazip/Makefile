@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	peazip
-PORTVERSION=	6.4.1
+PORTVERSION=	6.5.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -25,13 +25,13 @@ DOS2UNIX_REGEX=		.*\.([txt]|pas|lpi|txt)
 LAZARUS_PROJECT_FILES=	project_pea.lpi project_peach.lpi project_gwrap.lpi
 LAZBUILD_CMD=		${LOCALBASE}/bin/lazbuild -d
 LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
-LAZARUS_VER=		1.6.4
+LAZARUS_VER=		1.8.0
 LAZARUS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 ARCHIVER_FILES=		#
 
 OPTIONS_DEFINE=		7Z ARC ZPAQ UNACE
 OPTIONS_SINGLE=		LCL
-OPTIONS_SINGLE_LCL=	GTK2 QT4
+OPTIONS_SINGLE_LCL=	GTK2 QT4 QT5
 
 7Z_DESC=		7z file archiver support
 ARC_DESC=		Arc file archiver support
@@ -39,6 +39,7 @@ ZPAQ_DESC=		Zpaq file archiver support
 UNACE_DESC=		Unace file archiver support
 GTK2_DESC=		Use gtk20 interface
 QT4_DESC=		Use qt4 interface
+QT5_DESC=		Use qt5 interface
 
 OPTIONS_DEFAULT=	GTK2 7Z
 
@@ -55,6 +56,12 @@ BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-
 LIB_DEPENDS+=	libQt4Pas.so:x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
+.endif
+
+.if ${PORT_OPTIONS:MQT5}
+LIB_DEPENDS+=	libQt5Pas.so:x11-toolkits/qt5pas
+LCL_PLATFORM=	qt5
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt5
 .endif
 
 .if ${PORT_OPTIONS:M7Z}
@@ -88,6 +95,9 @@ PLIST_SUB+=	UNACE=""
 .else
 PLIST_SUB+=	UNACE="@comment "
 .endif
+
+post-patch:
+	${REINPLACE_CMD} 's|GetSelectedNodePath|Path|g' ${WRKSRC}/peach.pas
 
 do-build:
 .for PROJECT_FILE in ${LAZARUS_PROJECT_FILES}
