@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorriso
-PORTVERSION=	1.4.6
-PORTREVISION=	3
+PORTVERSION=	1.4.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
