@@ -1,7 +1,7 @@
---- config/sidekiq.yml.orig	2017-09-17 13:23:44 UTC
+--- config/sidekiq.yml.orig	2018-01-24 12:29:46 UTC
 +++ config/sidekiq.yml
-@@ -27,3 +27,4 @@
-   ip_cleanup_scheduler:
-     cron: '<%= Random.rand(0..59) %> <%= Random.rand(3..5) %> * * *'
-     class: Scheduler::IpCleanupScheduler
+@@ -30,3 +30,4 @@
+   email_scheduler:
+     cron: '0 10 * * 2'
+     class: Scheduler::EmailScheduler
 +:pidfile: /var/run/mastodon/mastodon_workers.pid

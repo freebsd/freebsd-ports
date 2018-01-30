@@ -1,4 +1,4 @@
---- Gemfile.orig	2018-01-09 18:35:10 UTC
+--- Gemfile.orig	2018-01-24 12:29:46 UTC
 +++ Gemfile
 @@ -11,11 +11,11 @@ gem 'uglifier', '~> 3.2'
  
@@ -14,32 +14,16 @@
  gem 'fog-local', '~> 0.4', require: false
  gem 'fog-openstack', '~> 0.1', require: false
  gem 'paperclip', '~> 5.1'
-@@ -23,7 +23,6 @@ gem 'paperclip-av-transcoder', '~> 0.6'
- 
- gem 'active_model_serializers', '~> 0.10'
- gem 'addressable', '~> 2.5'
--gem 'bootsnap'
- gem 'browser'
- gem 'charlock_holmes', '~> 0.7.5'
- gem 'iso-639'
-@@ -32,13 +31,13 @@ gem 'devise', '~> 4.3'
- gem 'devise-two-factor', '~> 3.0'
- gem 'doorkeeper', '~> 4.2'
- gem 'fast_blank', '~> 1.0'
--gem 'goldfinger', '~> 2.0'
-+gem 'goldfinger', '~> 2.1'
- gem 'hiredis', '~> 0.6'
- gem 'redis-namespace', '~> 1.5'
+@@ -38,7 +38,7 @@ gem 'redis-namespace', '~> 1.5'
  gem 'htmlentities', '~> 4.3'
--gem 'http', '~> 2.2'
-+gem 'http', '~> 3.0'
+ gem 'http', '~> 3.0'
  gem 'http_accept_language', '~> 2.1'
 -gem 'httplog', '~> 0.99'
 +gem 'httplog', '>= 0.99'
  gem 'idn-ruby', require: 'idn'
  gem 'kaminari', '~> 1.1'
  gem 'link_header', '~> 0.0'
-@@ -54,11 +53,11 @@ gem 'rack-cors', '~> 0.4', require: 'rac
+@@ -55,11 +55,11 @@ gem 'rack-cors', '~> 0.4', require: 'rac
  gem 'rack-timeout', '~> 0.4'
  gem 'rails-i18n', '~> 5.0'
  gem 'rails-settings-cached', '~> 0.6'
@@ -49,11 +33,11 @@
  gem 'rqrcode', '~> 0.10'
  gem 'ruby-oembed', '~> 0.12', require: 'oembed'
 -gem 'ruby-progressbar', '~> 1.4'
-+gem 'progressbar', '~> 1.4'
++gem 'progressbar', '>= 1.4'
  gem 'sanitize', '~> 4.4'
  gem 'sidekiq', '~> 5.0'
  gem 'sidekiq-scheduler', '~> 2.1'
-@@ -76,45 +75,6 @@ gem 'webpush'
+@@ -77,45 +77,6 @@ gem 'webpush'
  gem 'json-ld-preloaded', '~> 2.2.1'
  gem 'rdf-normalize', '~> 0.3.1'
  

@@ -1,16 +1,17 @@
 ############################################################
-Version 2.1.0 includes database migrations and changes to
-some preview cards.
+
+Version 2.2.0 includes database migrations and a step "to
+fix a past issue with bugged out home timelines."
 
 As the mastodon user, run
 
 % RAILS_ENV=production rails db:migrate
 % RAILS_ENV=production rails \
-  mastodon:maintenance:migrate_photo_preview_cards
+  mastodon:maintenance:remove_regeneration_markers
 
-Some options may now be set in /etc/rc.conf.  See the
-comments in the rc scripts (mastodon_web, mastodon_workers,
-and mastodon_stream) for details.
+Some options may now be set in rc.conf.  See the comments in
+the rc scripts (mastodon_web, mastodon_workers, and
+mastodon_stream) for details.
 
 Visit this URL to get started with Mastodon.
 http://ftfl.ca/blog/2017-05-23-mastodon-freebsd.html
