@@ -5638,6 +5638,7 @@
     SUBDIR += rubygem-protected_attributes
     SUBDIR += rubygem-protocol
     SUBDIR += rubygem-pry
+    SUBDIR += rubygem-pry-byebug
     SUBDIR += rubygem-pry-rails
     SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-ptreloaded
