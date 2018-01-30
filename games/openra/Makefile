@@ -70,7 +70,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/[[:<:]]get[[:blank:]]/d' \
 			${WRKSRC}/thirdparty/fetch-thirdparty-deps.sh
 	${FIND} -L ${WRKSRC}/thirdparty -name '*.config*' -exec ${REINPLACE_CMD} \
-		-i '.bak.os' -e '/linux/{ p; s//${OPSYS:tl}/; }' {} +
+		-i '.bak.os' -e '/${OPSYS:tl}/d; /linux/{ p; s//${OPSYS:tl}/; }' {} +
 	${SED} 's/@LIBLUA51@/liblua-${LUA_VER}.so/' \
 		${WRKSRC}/thirdparty/Eluant.dll.config.in \
 		>${WRKSRC}/Eluant.dll.config
