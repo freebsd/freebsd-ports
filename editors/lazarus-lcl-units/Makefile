@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-lcl-units
 COMMENT=	Lazarus components library units
 
 USE_FPC=	fcl-base fcl-db fcl-image fcl-json fcl-registry \
-		fcl-res fcl-xml iconvenc pasjpeg regexpr
+		fcl-res fcl-xml iconvenc pasjpeg
 
 LCL_INTERFACE=	#
 
