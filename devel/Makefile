@@ -5311,6 +5311,7 @@
     SUBDIR += rubygem-caesars
     SUBDIR += rubygem-cairo-gobject
     SUBDIR += rubygem-capybara
+    SUBDIR += rubygem-capybara-screenshot
     SUBDIR += rubygem-celluloid
     SUBDIR += rubygem-celluloid-essentials
     SUBDIR += rubygem-celluloid-extras
