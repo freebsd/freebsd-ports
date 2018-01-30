@@ -22,10 +22,4 @@ PG_USER?=	postgres
 PG_GROUP?=	postgres
 PG_UID?=	770
 
-.if defined(SERVER_ONLY)
-CONFIGURE_ARGS+=--with-icu
-LIB_DEPENDS+=	libicudata.so:devel/icu
-USES+=		pkgconfig
-.endif
-
 .include "${.CURDIR}/../postgresql92-server/Makefile"
