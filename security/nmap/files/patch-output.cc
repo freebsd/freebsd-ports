@@ -1,6 +1,6 @@
---- output.cc.orig	2016-01-13 20:53:39 UTC
+--- output.cc.orig	2017-06-07 12:32:38 UTC
 +++ output.cc
-@@ -148,6 +148,7 @@
+@@ -157,6 +157,7 @@
  #include <set>
  #include <vector>
  #include <list>
