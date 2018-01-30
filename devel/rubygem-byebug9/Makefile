@@ -16,7 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_RUBY=	yes
 USES=		gem
 
-PLIST_FILES=	bin/byebug
+PLIST_FILES=	bin/byebug9
 PORTSCOUT=	limit:^1\.
+
+post-extract:
+	@${MV} ${WRKSRC}/bin/byebug ${WRKSRC}/bin/byebug9
 
 .include <bsd.port.mk>
