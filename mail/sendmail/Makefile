@@ -2,7 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.15.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BDB_SUFFIX}${PKGNAMESUFFIX2}
@@ -21,7 +21,7 @@ CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-
 USERS=		smmsp
 GROUPS=		smmsp
 
-USES=		cpe uidfix
+USES=		cpe uidfix groff
 MAKE_ARGS=	UBINOWN=${UID} UBINGRP=${GID} \
 		SBINOWN=${UID} SBINGRP=${GID} \
 		GBINOWN=${UID} GBINGRP=${GID} \
