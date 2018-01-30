@@ -21,7 +21,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libopus.so:audio/opus \
 		libpulse.so:audio/pulseaudio
 
-USES=		cmake:noninja,outsource desktop-file-utils gmake pkgconfig python:build ssl
+USES=		cmake:noninja,outsource desktop-file-utils gmake pkgconfig python:2.7,build ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
