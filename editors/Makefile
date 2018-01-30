@@ -77,6 +77,7 @@
     SUBDIR += lazarus-lcl-gtk2
     SUBDIR += lazarus-lcl-nogui
     SUBDIR += lazarus-lcl-qt
+    SUBDIR += lazarus-lcl-qt5
     SUBDIR += lazarus-lcl-units
     SUBDIR += le
     SUBDIR += leafpad
