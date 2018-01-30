@@ -5,7 +5,7 @@ PORTNAME=	sagasu
 PORTVERSION=	2.0.12
 PORTREVISION=	1
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME tool to find strings in a set of files
