@@ -1,3 +1,4 @@
+etc/alsa/pcm/pcm-oss.conf
 usr/lib/alsa-lib/libasound_module_ctl_oss.so
 usr/lib/alsa-lib/libasound_module_pcm_oss.so
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
