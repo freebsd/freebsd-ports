@@ -3,9 +3,9 @@
   To do this, uncomment the following lines in %%LOCALBASE%%etc/pkg.conf file
   and add pkg-provides to the supported plugin list
 
-  PKG_PLUGINS_DIR = "%%LOCALBASE%%lib/pkg/";
+  PKG_PLUGINS_DIR = "%%LOCALBASE%%/lib/pkg/";
   PKG_ENABLE_PLUGINS = true;
-  PLUGINS [ provides ]
+  PLUGINS [ provides ];
 
   After that run `pkg plugins' to see the plugins handled by pkg`.
 
