@@ -15,3 +15,5 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/variants.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/variants.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/varutils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/varutils.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/widestrutils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/widestrutils.ppu
