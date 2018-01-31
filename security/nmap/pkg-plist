@@ -85,6 +85,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/data/psexec/nmap_service.c
 %%DATADIR%%/nselib/data/psexec/nmap_service.vcproj
 %%DATADIR%%/nselib/data/psexec/pwdump.lua
+%%DATADIR%%/nselib/data/publickeydb
 %%DATADIR%%/nselib/data/rtsp-urls.txt
 %%DATADIR%%/nselib/data/snmpcommunities.lst
 %%DATADIR%%/nselib/data/ssl-fingerprints
@@ -119,12 +120,15 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/ipOps.lua
 %%DATADIR%%/nselib/ipmi.lua
 %%DATADIR%%/nselib/ipp.lua
+%%DATADIR%%/nselib/irc.lua
 %%DATADIR%%/nselib/iscsi.lua
 %%DATADIR%%/nselib/isns.lua
 %%DATADIR%%/nselib/jdwp.lua
 %%DATADIR%%/nselib/json.lua
 %%DATADIR%%/nselib/ldap.lua
 %%DATADIR%%/nselib/lfs.luadoc
+%%DATADIR%%/nselib/libssh2-utility.lua
+%%DATADIR%%/nselib/libssh2.luadoc
 %%DATADIR%%/nselib/listop.lua
 %%DATADIR%%/nselib/lpeg-utility.lua
 %%DATADIR%%/nselib/lpeg.luadoc
@@ -169,6 +173,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/sip.lua
 %%DATADIR%%/nselib/slaxml.lua
 %%DATADIR%%/nselib/smb.lua
+%%DATADIR%%/nselib/smb2.lua
 %%DATADIR%%/nselib/smbauth.lua
 %%DATADIR%%/nselib/smtp.lua
 %%DATADIR%%/nselib/snmp.lua
@@ -241,6 +246,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/broadcast-netbios-master-browser.nse
 %%DATADIR%%/scripts/broadcast-networker-discover.nse
 %%DATADIR%%/scripts/broadcast-novell-locate.nse
+%%DATADIR%%/scripts/broadcast-ospf2-discover.nse
 %%DATADIR%%/scripts/broadcast-pc-anywhere.nse
 %%DATADIR%%/scripts/broadcast-pc-duo.nse
 %%DATADIR%%/scripts/broadcast-pim-discovery.nse
@@ -261,6 +267,8 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/cassandra-info.nse
 %%DATADIR%%/scripts/cccam-version.nse
 %%DATADIR%%/scripts/cics-enum.nse
+%%DATADIR%%/scripts/cics-info.nse
+%%DATADIR%%/scripts/cics-user-brute.nse
 %%DATADIR%%/scripts/cics-user-enum.nse
 %%DATADIR%%/scripts/citrix-brute-xml.nse
 %%DATADIR%%/scripts/citrix-enum-apps-xml.nse
@@ -326,6 +334,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ftp-brute.nse
 %%DATADIR%%/scripts/ftp-libopie.nse
 %%DATADIR%%/scripts/ftp-proftpd-backdoor.nse
+%%DATADIR%%/scripts/ftp-syst.nse
 %%DATADIR%%/scripts/ftp-vsftpd-backdoor.nse
 %%DATADIR%%/scripts/ftp-vuln-cve2010-4221.nse
 %%DATADIR%%/scripts/ganglia-info.nse
@@ -364,6 +373,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-coldfusion-subzero.nse
 %%DATADIR%%/scripts/http-comments-displayer.nse
 %%DATADIR%%/scripts/http-config-backup.nse
+%%DATADIR%%/scripts/http-cookie-flags.nse
 %%DATADIR%%/scripts/http-cors.nse
 %%DATADIR%%/scripts/http-cross-domain-policy.nse
 %%DATADIR%%/scripts/http-csrf.nse
@@ -421,6 +431,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-robots.txt.nse
 %%DATADIR%%/scripts/http-robtex-reverse-ip.nse
 %%DATADIR%%/scripts/http-robtex-shared-ns.nse
+%%DATADIR%%/scripts/http-security-headers.nse
 %%DATADIR%%/scripts/http-server-header.nse
 %%DATADIR%%/scripts/http-shellshock.nse
 %%DATADIR%%/scripts/http-sitemap-generator.nse
@@ -459,6 +470,10 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-vuln-cve2014-8877.nse
 %%DATADIR%%/scripts/http-vuln-cve2015-1427.nse
 %%DATADIR%%/scripts/http-vuln-cve2015-1635.nse
+%%DATADIR%%/scripts/http-vuln-cve2017-1001000.nse
+%%DATADIR%%/scripts/http-vuln-cve2017-5638.nse
+%%DATADIR%%/scripts/http-vuln-cve2017-5689.nse
+%%DATADIR%%/scripts/http-vuln-cve2017-8917.nse
 %%DATADIR%%/scripts/http-vuln-misfortune-cookie.nse
 %%DATADIR%%/scripts/http-vuln-wnr1000-creds.nse
 %%DATADIR%%/scripts/http-waf-detect.nse
@@ -471,10 +486,12 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/iax2-brute.nse
 %%DATADIR%%/scripts/iax2-version.nse
 %%DATADIR%%/scripts/icap-info.nse
+%%DATADIR%%/scripts/iec-identify.nse
 %%DATADIR%%/scripts/ike-version.nse
 %%DATADIR%%/scripts/imap-brute.nse
 %%DATADIR%%/scripts/imap-capabilities.nse
 %%DATADIR%%/scripts/imap-ntlm-info.nse
+%%DATADIR%%/scripts/impress-remote-discover.nse
 %%DATADIR%%/scripts/informix-brute.nse
 %%DATADIR%%/scripts/informix-query.nse
 %%DATADIR%%/scripts/informix-tables.nse
@@ -586,6 +603,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/omron-info.nse
 %%DATADIR%%/scripts/openlookup-info.nse
 %%DATADIR%%/scripts/openvas-otp-brute.nse
+%%DATADIR%%/scripts/openwebnet-discovery.nse
 %%DATADIR%%/scripts/oracle-brute-stealth.nse
 %%DATADIR%%/scripts/oracle-brute.nse
 %%DATADIR%%/scripts/oracle-enum-users.nse
@@ -602,6 +620,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/pop3-capabilities.nse
 %%DATADIR%%/scripts/pop3-ntlm-info.nse
 %%DATADIR%%/scripts/pptp-version.nse
+%%DATADIR%%/scripts/puppet-naivesigning.nse
 %%DATADIR%%/scripts/qconn-exec.nse
 %%DATADIR%%/scripts/qscan.nse
 %%DATADIR%%/scripts/quake1-info.nse
@@ -640,6 +659,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/sip-methods.nse
 %%DATADIR%%/scripts/skypev2-version.nse
 %%DATADIR%%/scripts/smb-brute.nse
+%%DATADIR%%/scripts/smb-double-pulsar-backdoor.nse
 %%DATADIR%%/scripts/smb-enum-domains.nse
 %%DATADIR%%/scripts/smb-enum-groups.nse
 %%DATADIR%%/scripts/smb-enum-processes.nse
@@ -651,19 +671,25 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/smb-mbenum.nse
 %%DATADIR%%/scripts/smb-os-discovery.nse
 %%DATADIR%%/scripts/smb-print-text.nse
+%%DATADIR%%/scripts/smb-protocols.nse
 %%DATADIR%%/scripts/smb-psexec.nse
 %%DATADIR%%/scripts/smb-security-mode.nse
 %%DATADIR%%/scripts/smb-server-stats.nse
 %%DATADIR%%/scripts/smb-system-info.nse
 %%DATADIR%%/scripts/smb-vuln-conficker.nse
+%%DATADIR%%/scripts/smb-vuln-cve-2017-7494.nse
 %%DATADIR%%/scripts/smb-vuln-cve2009-3103.nse
 %%DATADIR%%/scripts/smb-vuln-ms06-025.nse
 %%DATADIR%%/scripts/smb-vuln-ms07-029.nse
 %%DATADIR%%/scripts/smb-vuln-ms08-067.nse
 %%DATADIR%%/scripts/smb-vuln-ms10-054.nse
 %%DATADIR%%/scripts/smb-vuln-ms10-061.nse
+%%DATADIR%%/scripts/smb-vuln-ms17-010.nse
 %%DATADIR%%/scripts/smb-vuln-regsvc-dos.nse
-%%DATADIR%%/scripts/smbv2-enabled.nse
+%%DATADIR%%/scripts/smb2-capabilities.nse
+%%DATADIR%%/scripts/smb2-security-mode.nse
+%%DATADIR%%/scripts/smb2-time.nse
+%%DATADIR%%/scripts/smb2-vuln-uptime.nse
 %%DATADIR%%/scripts/smtp-brute.nse
 %%DATADIR%%/scripts/smtp-commands.nse
 %%DATADIR%%/scripts/smtp-enum-users.nse
@@ -689,7 +715,11 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/socks-auth-info.nse
 %%DATADIR%%/scripts/socks-brute.nse
 %%DATADIR%%/scripts/socks-open-proxy.nse
+%%DATADIR%%/scripts/ssh-auth-methods.nse
+%%DATADIR%%/scripts/ssh-brute.nse
 %%DATADIR%%/scripts/ssh-hostkey.nse
+%%DATADIR%%/scripts/ssh-publickey-acceptance.nse
+%%DATADIR%%/scripts/ssh-run.nse
 %%DATADIR%%/scripts/ssh2-enum-algos.nse
 %%DATADIR%%/scripts/sshv1.nse
 %%DATADIR%%/scripts/ssl-ccs-injection.nse
@@ -725,6 +755,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/telnet-ntlm-info.nse
 %%DATADIR%%/scripts/tftp-enum.nse
 %%DATADIR%%/scripts/tls-nextprotoneg.nse
+%%DATADIR%%/scripts/tls-ticketbleed.nse
 %%DATADIR%%/scripts/tn3270-screen.nse
 %%DATADIR%%/scripts/tor-consensus-checker.nse
 %%DATADIR%%/scripts/traceroute-geolocation.nse
@@ -737,6 +768,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ventrilo-info.nse
 %%DATADIR%%/scripts/versant-info.nse
 %%DATADIR%%/scripts/vmauthd-brute.nse
+%%DATADIR%%/scripts/vmware-version.nse
 %%DATADIR%%/scripts/vnc-brute.nse
 %%DATADIR%%/scripts/vnc-info.nse
 %%DATADIR%%/scripts/vnc-title.nse

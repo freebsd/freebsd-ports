@@ -1,3 +1,0 @@
-bin/hinventory_FreeBSD.sh
-@sample etc/hinventory.conf.sample
-@dir /var/spool/hinventory

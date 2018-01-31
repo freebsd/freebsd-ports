@@ -5,7 +5,7 @@ PORTNAME=	binutils
 PORTVERSION=	2.22
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.gnu.org/pub/gnu/${PORTNAME}/ \
+MASTER_SITES=	GNU \
 		SOURCEWARE/${PORTNAME}/releases
 PKGNAMEPREFIX=	psptoolchain-
 

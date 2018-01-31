@@ -1,5 +1,0 @@
---- bsnes-libretro/Makefile.freebsd.orig	2016-11-09 04:30:27 UTC
-+++ bsnes-libretro/Makefile.freebsd
-@@ -0,0 +1,2 @@
-+all:
-+	$(foreach p,accuracy balanced performance,${MAKE} profile=$(p);)

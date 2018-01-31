@@ -3,7 +3,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.1e
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org

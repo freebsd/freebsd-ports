@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
-PORTVERSION=	8.13.7
-PORTREVISION=	1
+PORTVERSION=	8.13.19
+DISTVERSIONPREFIX=	v
 CATEGORIES=	print audio
-MASTER_SITES=	http://moinejf.free.fr/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Converts ABC to music sheet in PostScript format
@@ -21,7 +20,10 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 ALL_TARGET=	${PORTNAME}
 
-PORTDOCS=	Changes README deco.abc newfeatures.abc sample.abc sample2.abc\
+USE_GITHUB=	yes
+GH_ACCOUNT=	leesavide
+
+PORTDOCS=	deco.abc newfeatures.abc sample.abc sample2.abc\
 		sample3.abc sample4.abc voices.abc sample3.eps \
 		options.txt
 PLIST_FILES=	bin/abcm2ps \

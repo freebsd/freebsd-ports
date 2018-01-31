@@ -1,0 +1,9 @@
+Open Source Password Manager
+
+Passman allows you to host your passwords and credentials on your own
+Nextcloud instance. Independently and open source.
+
+The encryption is done on the client and server side with AES256 bit
+encryption, to ensure the safety of your credentials.
+
+WWW: https://passman.cc

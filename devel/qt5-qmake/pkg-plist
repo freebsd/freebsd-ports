@@ -88,6 +88,8 @@
 %%QT_MKSPECDIR%%/devices/freebsd-rasp-pi-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/integrity-armv8-drive-cx/qmake.conf
 %%QT_MKSPECDIR%%/devices/integrity-armv8-drive-cx/qplatformdefs.h
+%%QT_MKSPECDIR%%/devices/integrity-armv8-msm8996au/qmake.conf
+%%QT_MKSPECDIR%%/devices/integrity-armv8-msm8996au/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-archos-gen8-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-archos-gen8-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-arm-amlogic-8726M-g++/qeglfshooks_8726m.cpp
@@ -316,6 +318,8 @@
 %%QT_MKSPECDIR%%/integrity-armv7-imx6/qplatformdefs.h
 %%QT_MKSPECDIR%%/integrity-armv7/qmake.conf
 %%QT_MKSPECDIR%%/integrity-armv7/qplatformdefs.h
+%%QT_MKSPECDIR%%/integrity-armv8-rcar/qmake.conf
+%%QT_MKSPECDIR%%/integrity-armv8-rcar/qplatformdefs.h
 %%QT_MKSPECDIR%%/integrity-x86/qmake.conf
 %%QT_MKSPECDIR%%/integrity-x86/qplatformdefs.h
 %%QT_MKSPECDIR%%/linux-aarch64-gnu-g++/qmake.conf

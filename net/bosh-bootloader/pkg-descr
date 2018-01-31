@@ -1,0 +1,6 @@
+This is a command line utility for standing up a CloudFoundry or
+Concourse installation on an IAAS. This CLI is currently under heavy
+development, and the initial goal is to support bootstrapping a
+CloudFoundry installation on AWS.
+
+WWW: https://github.com/cloudfoundry/bosh-bootloader

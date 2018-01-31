@@ -5,9 +5,9 @@ In file included from qgpgmebackend.cpp:42:0:
                  ^
 
 
---- lang/cpp/src/engineinfo.h.orig	2016-11-20 11:59:52 UTC
+--- lang/cpp/src/engineinfo.h.orig	2017-10-04 15:17:16 UTC
 +++ lang/cpp/src/engineinfo.h
-@@ -30,6 +30,7 @@
+@@ -32,6 +32,7 @@
  #include <algorithm>
  #include <string>
  #include <iostream>

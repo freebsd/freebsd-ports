@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Authen-SCRAM
-PORTVERSION=	0.006
+PORTVERSION=	0.007
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Salted Challenge Response Authentication Mechanism (RFC 5802)
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Authen-SASL-SASLprep>=1.100:security/p5-Authen-SASL-SASLprep \
 		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \

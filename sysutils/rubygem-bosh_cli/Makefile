@@ -11,6 +11,9 @@ COMMENT=	BOSH CLI
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Use net/bosh-cli (CLI v2) instead
+EXPIRATION_DATE=2018-02-28
+
 RUN_DEPENDS=	rubygem-blobstore_client>=1.3262.24.0:devel/rubygem-blobstore_client \
 		rubygem-bosh_common>=1.3262.24.0:devel/rubygem-bosh_common \
 		rubygem-bosh-template>=1.3262.24.0:devel/rubygem-bosh-template \

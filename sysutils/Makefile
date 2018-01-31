@@ -571,6 +571,10 @@
     SUBDIR += lineak-xosdplugin
     SUBDIR += lineakd
     SUBDIR += linrename
+    SUBDIR += linux-c6-lttng-ust
+    SUBDIR += linux-c6-userspace-rcu
+    SUBDIR += linux-c7-lttng-ust
+    SUBDIR += linux-c7-userspace-rcu
     SUBDIR += linux-crashplan
     SUBDIR += linuxfdisk
     SUBDIR += livecd
@@ -1039,7 +1043,6 @@
     SUBDIR += rubygem-hiera
     SUBDIR += rubygem-hiera-eyaml
     SUBDIR += rubygem-hiera-file
-    SUBDIR += rubygem-hiera1
     SUBDIR += rubygem-hieracles
     SUBDIR += rubygem-httplog
     SUBDIR += rubygem-itamae
@@ -1094,6 +1097,7 @@
     SUBDIR += sas3ircu
     SUBDIR += savelogs
     SUBDIR += sb16config
+    SUBDIR += sbase
     SUBDIR += sbsigntool
     SUBDIR += scalpel
     SUBDIR += scan_ffs

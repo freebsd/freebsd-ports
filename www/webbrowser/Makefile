@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	webbrowser
@@ -6,7 +5,7 @@ PORTVERSION=	0.3
 CATEGORIES=	www
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper for running the "best" available WEB browser
 
 LICENSE=	BSD2CLAUSE

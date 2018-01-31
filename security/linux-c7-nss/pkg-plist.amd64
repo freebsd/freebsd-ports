@@ -8,6 +8,7 @@ etc/pki/nssdb/secmod.db
 usr/lib/libnss3.so
 usr/lib/libnssdbm3.chk
 usr/lib/libnssdbm3.so
+usr/lib/libnsspem.so
 usr/lib/libnssutil3.so
 usr/lib/libsmime3.so
 usr/lib/libsoftokn3.chk
@@ -20,6 +21,7 @@ usr/lib/nss/unsupported-tools/shlibsign
 usr/lib64/libnss3.so
 usr/lib64/libnssdbm3.chk
 usr/lib64/libnssdbm3.so
+usr/lib64/libnsspem.so
 usr/lib64/libnssutil3.so
 usr/lib64/libsmime3.so
 usr/lib64/libsoftokn3.chk
@@ -29,6 +31,7 @@ usr/lib64/nss/libnssckbi.so
 usr/lib64/nss/unsupported-tools/bltest
 usr/lib64/nss/unsupported-tools/fipstest
 usr/lib64/nss/unsupported-tools/shlibsign
+usr/share/licenses/nss-pem-1.0.3/COPYING
 usr/share/man/man5/cert8.db.5.gz
 usr/share/man/man5/cert9.db.5.gz
 usr/share/man/man5/key3.db.5.gz

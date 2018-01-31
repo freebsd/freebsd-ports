@@ -2,57 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	gdisk
-PORTVERSION=	0.8.10
-PORTREVISION=	6
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/gptfdisk/gptfdisk/${PORTVERSION}
 DISTNAME=	gptfdisk-${PORTVERSION}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GPT fdisk
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
-		libpopt.so:devel/popt
+ONLY_FOR_ARCHS=	amd64 i386
 
-WRKSRC=		${WRKDIR}/gptfdisk-${PORTVERSION}
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libuuid.so:misc/e2fsprogs-libuuid
 
-ONLY_FOR_ARCHS=	i386 amd64
+USES=		localbase:ldflags
+
+ALL_TARGET=	fixparts gdisk sgdisk
+MAKEFILE=	Makefile.freebsd
 
 OPTIONS_DEFINE=	CGDISK UTF16
 OPTIONS_SUB=	yes
 CGDISK_DESC=	Curses-based interactive program
 UTF16_DESC=	Support for Unicode partition names
-UTF16_CPPFLAGS+=	-DUSE_UTF16
-UTF16_LDFLAGS+=	-licuio
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKEFILE=	Makefile.freebsd
-
-PROGRAM_LIST=	fixparts gdisk sgdisk
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCGDISK}
-PROGRAM_LIST+=	cgdisk
-LIB_DEPENDS+=	libncurses.so:devel/ncurses
-.endif
-
-.if ${PORT_OPTIONS:MUTF16}
-LIB_DEPENDS+=	libicuuc.so:devel/icu
-.endif
-
-post-patch:
-.if ! ${PORT_OPTIONS:MCGDISK}
-	${REINPLACE_CMD} -e '/^all:/s| cgdisk||' ${WRKSRC}/${MAKEFILE}
-.endif
+CGDISK_ALL_TARGET=	cgdisk
+CGDISK_USES=		ncurses
+UTF16_CPPFLAGS=		-DUSE_UTF16
+UTF16_LDFLAGS=		-licuio -licuuc
+UTF16_LIB_DEPENDS=	libicuuc.so:devel/icu
 
 do-install:
-.for i in ${PROGRAM_LIST}
+.for i in fixparts gdisk sgdisk
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${i}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 .endfor
+
+do-install-CGDISK-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/cgdisk ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/cgdisk.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>

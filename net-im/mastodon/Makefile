@@ -2,8 +2,7 @@
 
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.3
-PORTREVISION=	1
+DISTVERSION=	2.2.0
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -28,18 +27,19 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-pghero-rails5>=2.0.0:databases/rubygem-pghero-rails5 \
 		rubygem-dotenv-rails-rails5>=2.2:misc/rubygem-dotenv-rails-rails5 \
 		rubygem-aws-sdk>=2.10:devel/rubygem-aws-sdk \
-		rubygem-fog-core>=1.45:devel/rubygem-fog-core \
+		rubygem-fog-core1>=1.45:devel/rubygem-fog-core1 \
 		rubygem-fog-local>=0.4:net/rubygem-fog-local \
 		rubygem-fog-openstack>=0.1:net/rubygem-fog-openstack \
 		rubygem-paperclip-rails5>=5.1.0:devel/rubygem-paperclip-rails5 \
 		rubygem-paperclip-av-transcoder>=0.6:multimedia/rubygem-paperclip-av-transcoder \
 		rubygem-active_model_serializers>=0.10:databases/rubygem-active_model_serializers \
 		rubygem-addressable>=2.5:www/rubygem-addressable \
+		rubygem-bootsnap>=0:devel/rubygem-bootsnap \
 		rubygem-browser>=2.4.0:www/rubygem-browser \
 		rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 		rubygem-iso-639>=0.2.8:textproc/rubygem-iso-639 \
 		rubygem-cld3>=3.2.0:textproc/rubygem-cld3 \
-		rubygem-devise-rails5>=4.3:devel/rubygem-devise-rails5 \
+		rubygem-devise-rails5>=4.4:devel/rubygem-devise-rails5 \
 		rubygem-devise-two-factor-rails5>=3.0:security/rubygem-devise-two-factor-rails5 \
 		rubygem-doorkeeper-rails5>=4.2:security/rubygem-doorkeeper-rails5 \
 		rubygem-fast_blank>=1.0:devel/rubygem-fast_blank \
@@ -60,6 +60,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-ostatus2>=2.0:www/rubygem-ostatus2 \
 		rubygem-ox>=2.8:textproc/rubygem-ox \
 		rubygem-pundit>=1.1:security/rubygem-pundit \
+		rubygem-premailer-rails-rails5>=0:mail/rubygem-premailer-rails-rails5 \
 		rubygem-rack-attack>=5.0:www/rubygem-rack-attack \
 		rubygem-rack-cors0>=0.4:www/rubygem-rack-cors0 \
 		rubygem-rack-timeout>=0.4:www/rubygem-rack-timeout \
@@ -92,7 +93,7 @@ USES=		gmake gnome pgsql python:build,2 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tootsuite jehops:mn
 GH_PROJECT=	mastodon_node:mn
-GH_TAGNAME=	2.1.2:mn
+GH_TAGNAME=	2.2.0:mn
 USE_GNOME=	libxml2 libxslt
 USE_RC_SUBR=	mastodon_stream mastodon_web mastodon_workers
 USE_RUBY=	yes
@@ -119,8 +120,11 @@ do-build:
 	HOME=${WRKSRC_mn} yarn config set nodedir ${LOCALBASE} --offline
 	@${CP} ${FILESDIR}/yarn.lock.in ${WRKSRC}/yarn.lock
 	(cd ${WRKSRC} && HOME=${WRKSRC_mn} yarn --offline)
+#	(cd ${WRKSRC} && \
+#		NODE_ENV=production RAILS_ENV=production \
+#		./node_modules/.bin/webpack --config config/webpack/production.js)
 	(cd ${WRKSRC} && \
-		NODE_ENV=production RAILS_ENV=production \
+		NODE_ENV=production \
 		./node_modules/.bin/webpack --config config/webpack/production.js)
 
 do-install:
@@ -138,8 +142,9 @@ do-install:
 		${WRKSRC}/node_modules/.bin/node-sass \
 		${WRKSRC}/node_modules/uws/build_log.txt
 	${STRIP_CMD} ${WRKSRC}/node_modules/uws/uws_freebsd_${NODE_ABI}.node
-	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}/var/run/${PORTNAME} \
-		${STAGEDIR}/var/log/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}/var/cache/${PORTNAME} \
+		${STAGEDIR}/var/log/${PORTNAME} \
+		${STAGEDIR}/var/run/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/nginx.conf \
 		${STAGEDIR}${WWWDIR}/nginx.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/nginx-include.conf \

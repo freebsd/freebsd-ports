@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	github-markup
-PORTVERSION=	1.6.2
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -18,8 +18,7 @@ REINPLACE_ARGS=	-i ''
 
 PLIST_FILES=	bin/github-markup
 
-SHEBANG_FILES=	script/bootstrap \
-		script/cibuild
+SHEBANG_FILES=	script/*
 
 post-patch:
 	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/lib/github/commands/rest2html

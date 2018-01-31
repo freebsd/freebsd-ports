@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	centos-release-7-4.1708.el7.centos \
@@ -39,7 +39,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		libblkid-2.23.2-43.el7_4.2 \
 		libcap-2.22-9.el7 \
 		libcom_err-1.42.9-10.el7 \
-		libdb-5.3.21-20.el7 \
+		libdb-5.3.21-21.el7_4 \
 		libffi-3.0.13-18.el7 \
 		libgcc-4.8.5-16.el7_4.1 \
 		libidn-1.28-4.el7 \
@@ -86,7 +86,7 @@ SRC_DISTFILES=	acl-2.2.51-12.el7${SRC_SUFX}:SOURCE \
 		krb5-1.15.1-8.el7${SRC_SUFX}:SOURCE \
 		less-458-9.el7${SRC_SUFX}:SOURCE \
 		libcap-2.22-9.el7${SRC_SUFX}:SOURCE \
-		libdb-5.3.21-20.el7${SRC_SUFX}:SOURCE \
+		libdb-5.3.21-21.el7_4${SRC_SUFX}:SOURCE \
 		libffi-3.0.13-18.el7${SRC_SUFX}:SOURCE \
 		libidn-1.28-4.el7${SRC_SUFX}:SOURCE \
 		libselinux-2.5-11.el7${SRC_SUFX}:SOURCE \

@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nncp-daemon
+# REQUIRE: DAEMON NETWORKING FILESYSTEMS
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# nncp_daemon_enable (bool):	Set to NO by default.
+#				Set it to YES to enable nncp-daemon.
+# nncp_daemon_config (path):	Set to %%PREFIX%%/etc/nncp.yaml by default.
+# nncp_daemon_bind (string):	Address:port to bind to
+#				Default is "[::]:5400".
+
+. /etc/rc.subr
+
+name=nncp_daemon
+rcvar=nncp_daemon_enable
+
+load_rc_config $name
+
+: ${nncp_daemon_enable:="NO"}
+: ${nncp_daemon_config="%%PREFIX%%/etc/nncp.yaml"}
+: ${nncp_daemon_bind="[::]:5400"}
+
+command=%%PREFIX%%/bin/nncp-daemon
+command_args="-quiet -bind $nncp_daemon_bind -cfg $nncp_daemon_config &"
+
+run_rc_command "$1"

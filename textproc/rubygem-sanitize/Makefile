@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sanitize
-PORTVERSION=	4.5.0
+PORTVERSION=	4.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-crass>=1.0.2:www/rubygem-crass \
 		rubygem-nokogiri>=1.4.4:textproc/rubygem-nokogiri \
-		rubygem-nokogumbo>=1.4.1:textproc/rubygem-nokogumbo
+		rubygem-nokogumbo>=1.4:textproc/rubygem-nokogumbo
 
 NO_ARCH=	yes
 USE_RUBY=	yes

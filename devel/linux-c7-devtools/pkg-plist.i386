@@ -1974,7 +1974,7 @@ usr/lib/gcc/i686-redhat-linux/4.8.5
 usr/lib/gcrt1.o
 usr/lib/libBrokenLocale.so
 usr/lib/libanl.so
-usr/lib/libbfd-2.25.1-32.base.el7_4.1.so
+usr/lib/libbfd-2.25.1-32.base.el7_4.2.so
 usr/lib/libbfd.a
 usr/lib/libbfd.so
 usr/lib/libbsd-compat.a
@@ -2003,7 +2003,7 @@ usr/lib/libnss_files.so
 usr/lib/libnss_hesiod.so
 usr/lib/libnss_nis.so
 usr/lib/libnss_nisplus.so
-usr/lib/libopcodes-2.25.1-32.base.el7_4.1.so
+usr/lib/libopcodes-2.25.1-32.base.el7_4.2.so
 usr/lib/libopcodes.a
 usr/lib/libopcodes.so
 usr/lib/libpthread.so

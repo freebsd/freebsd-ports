@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Console_Table
-PORTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	devel pear
 
 MAINTAINER=	joneum@FreeBSD.org

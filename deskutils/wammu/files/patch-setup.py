@@ -1,6 +1,6 @@
---- setup.py.orig	2015-11-23 14:47:59 UTC
+--- setup.py.orig	2018-01-05 14:40:21 UTC
 +++ setup.py
-@@ -385,23 +385,23 @@ data_files.append((os.path.join('share',
+@@ -410,24 +410,24 @@ data_files.append((os.path.join('share',
      'icon/wammu.ico',
      'icon/wammu.svg',
      ]))
@@ -19,6 +19,7 @@
 -data_files.append((os.path.join('share', 'man', 'pt_BR', 'man1'), ['man/pt_BR/wammu.1', 'man/pt_BR/wammu-configure.1']))
 -data_files.append((os.path.join('share', 'man', 'ru', 'man1'), ['man/ru/wammu.1', 'man/ru/wammu-configure.1']))
 -data_files.append((os.path.join('share', 'man', 'sk', 'man1'), ['man/sk/wammu.1', 'man/sk/wammu-configure.1']))
+-data_files.append((os.path.join('share', 'man', 'sv', 'man1'), ['man/sv/wammu.1', 'man/sv/wammu-configure.1']))
 -data_files.append((os.path.join('share', 'man', 'tr', 'man1'), ['man/sk/wammu.1', 'man/tr/wammu-configure.1']))
 -data_files.append((os.path.join('share', 'man', 'uk', 'man1'), ['man/sk/wammu.1', 'man/uk/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'man1'), ['wammu.1', 'wammu-configure.1']))
@@ -36,8 +37,9 @@
 +data_files.append((os.path.join('man', 'pt_BR', 'man1'), ['man/pt_BR/wammu.1', 'man/pt_BR/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'ru', 'man1'), ['man/ru/wammu.1', 'man/ru/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'sk', 'man1'), ['man/sk/wammu.1', 'man/sk/wammu-configure.1']))
++data_files.append((os.path.join('man', 'sv', 'man1'), ['man/sv/wammu.1', 'man/sv/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'tr', 'man1'), ['man/sk/wammu.1', 'man/tr/wammu-configure.1']))
 +data_files.append((os.path.join('man', 'uk', 'man1'), ['man/sk/wammu.1', 'man/uk/wammu-configure.1']))
  
- distutils.core.setup(
+ setup(
      name="wammu",

@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.12.2
-PORTREVISION?=	6
+PORTREVISION?=	7
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -729,10 +729,10 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_upload}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
-NGINX_UPLOADPROGRESS_VERSION=	0.9.2
+NGINX_UPLOADPROGRESS_VERSION=	afb2d31
 GH_ACCOUNT+=	masterzen:uploadprogress
 GH_PROJECT+=	nginx-upload-progress-module:uploadprogress
-GH_TAGNAME+=	v${NGINX_UPLOADPROGRESS_VERSION}:uploadprogress
+GH_TAGNAME+=	${NGINX_UPLOADPROGRESS_VERSION}:uploadprogress
 CONFIGURE_ARGS+=--add-module=${WRKSRC_uploadprogress}
 .endif
 

@@ -320,7 +320,9 @@
 %%T%%/lib/libavplugin-54.so
 %%T%%/lib/libavplugin-55.so
 %%T%%/lib/libavplugin-56.so
+%%T%%/lib/libavplugin-57.so
 %%T%%/lib/libavplugin-ffmpeg-56.so
+%%T%%/lib/libavplugin-ffmpeg-57.so
 %%T%%/lib/libawt.so
 %%T%%/lib/libawt_headless.so
 %%T%%/lib/libawt_xawt.so

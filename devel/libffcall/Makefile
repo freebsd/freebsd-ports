@@ -4,7 +4,7 @@
 PORTNAME=	libffcall
 PORTVERSION=	1.13
 CATEGORIES=	devel
-MASTER_SITES=	GNU/${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	amutu@amutu.com
 COMMENT=	Foreign function call libraries

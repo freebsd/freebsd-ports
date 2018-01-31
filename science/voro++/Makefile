@@ -1,4 +1,3 @@
-# Created by: Jason Bacon
 # $FreeBSD$
 
 PORTNAME=	voro++
@@ -6,7 +5,7 @@ PORTVERSION=	0.4.6
 CATEGORIES=	science
 MASTER_SITES=	http://math.lbl.gov/voro++/download/dir/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Three-dimensional computations of the Voronoi tessellation
 
 LICENSE=	BSD3CLAUSE

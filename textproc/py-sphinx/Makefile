@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sphinx
-PORTVERSION=	1.4.8
-PORTREVISION=	2
+PORTVERSION=	1.6.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
@@ -23,16 +23,28 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.3:devel/py-Jinja2@${FLAVOR} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.3:devel/py-Jinja2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0.11:textproc/py-docutils@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-websupport>=1.0.1:textproc/py-sphinxcontrib-websupport@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0.1:textproc/py-sphinx_rtd_theme@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}alabaster>=0.7:textproc/py-alabaster@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}snowballstemmer>=1.1:textproc/py-snowballstemmer@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.18.1:www/py-requests@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imagesize>=0.7.1:graphics/py-imagesize@${FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0:www/py-html5lib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils concurrent
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing>=0:devel/py-typing@${FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

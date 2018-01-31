@@ -12,6 +12,9 @@ DISTNAME=	boa-constructor-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform RAD GUI Building IDE for wxPython
 
+DEPRECATED=	Abandonware, does not work with recent python/wxPython
+EXPIRATION_DATE=	2018-03-01
+
 WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}
 
 USES=		dos2unix gettext python:2.7 zip

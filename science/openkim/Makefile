@@ -1,4 +1,3 @@
-# Created by: Jason Bacon
 # $FreeBSD$
 
 PORTNAME=	openkim
@@ -8,7 +7,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://s3.openkim.org/openkim-api/
 DISTNAME=	${PORTNAME}-api-v${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Knowledgebase of Interatomic Models
 
 LICENSE=	CDDL

@@ -88,6 +88,7 @@
     SUBDIR += fpc-units
     SUBDIR += fpc-utils
     SUBDIR += fsharp
+    SUBDIR += fth
     SUBDIR += gambit-c
     SUBDIR += gauche
     SUBDIR += gawk
@@ -103,7 +104,6 @@
     SUBDIR += gcc7
     SUBDIR += gcc7-devel
     SUBDIR += gcc8-devel
-    SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += gjs
@@ -261,12 +261,11 @@
     SUBDIR += php72-extensions
     SUBDIR += php_doc
     SUBDIR += picoc
-    SUBDIR += pike78
     SUBDIR += pocl
     SUBDIR += polyml
     SUBDIR += ptoc
     SUBDIR += pure
-    SUBDIR += py-clojure
+    SUBDIR += py-clojure_py
     SUBDIR += py-hy
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
@@ -294,13 +293,13 @@
     SUBDIR += racket-minimal
     SUBDIR += ratfor
     SUBDIR += referenceassemblies-pcl
+    SUBDIR += retro12
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina
     SUBDIR += rexx-regutil
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
     SUBDIR += rubinius
-    SUBDIR += ruby22
     SUBDIR += ruby23
     SUBDIR += ruby24
     SUBDIR += ruby25

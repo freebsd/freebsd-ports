@@ -30,6 +30,12 @@ CONFIGURE_ARGS+=	--disable-sasl --enable-ssl
 
 USE_LDCONFIG=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056 && ${ARCH} == i386
+BROKEN=	undefined reference to '__atomic_fetch_add_8'
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e \
 	's|_ALIGN(|_RE_ALIGN(|g' ${WRKSRC}/src/rdkafka_buf.h \

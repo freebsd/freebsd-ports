@@ -3,11 +3,11 @@
 
 PORTNAME=	ahven
 PORTVERSION=	2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ahven-framework.com/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Ada unit test framework
 
 LICENSE=	ISCL
@@ -22,7 +22,7 @@ OPTIONS_DEFAULT=	TRACE
 NO_OPTIONS_SORT=	yes
 TRACE_DESC=		Build with GNAT-specific symbolic tracing functionality
 
-DOCS_USES=		python:build
+DOCS_USES=		python:2.7,build
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-adadomain>0:textproc/py-sphinxcontrib-adadomain
 TRACE_EXTRA_PATCHES=	${FILESDIR}/extra-src_ahven-framework.adb

@@ -35,13 +35,12 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 PORTDATA=	*
 
 OPTIONS_SINGLE=		LISP
-OPTIONS_SINGLE_LISP=	CLISP CMUCL GCL SBCL
+OPTIONS_SINGLE_LISP=	CLISP CMUCL SBCL
 
 OPTIONS_DEFAULT=	SBCL
 
 CLISP_DESC=	Build with Clisp
 CMUCL_DESC=	Build with CMU Common Lisp
-GCL_DESC=	Build with GNU Common Lisp
 SBCL_DESC=	Build with Steel Bank Common Lisp
 
 .include <bsd.port.pre.mk>
@@ -64,15 +63,6 @@ LISPBINARY=	lisp
 PLIST_SUB+=	LISPBINARY=""
 MAXIMABINARY=	maxima_core
 STRIP=	#strip(1) chokes on LISPBINARY
-.endif
-
-.if ${PORT_OPTIONS:MGCL}
-LISPSELECT=	--enable-gcl
-LISPPORT=	gcl:lang/gcl
-BINDIRECTORY=	binary-gcl
-#LISPBINARY is null so fudge this so deinstall works cleanly
-PLIST_SUB+=	LISPBINARY="@comment "
-MAXIMABINARY=	maxima
 .endif
 
 .if ${PORT_OPTIONS:MSBCL}

@@ -75,7 +75,6 @@
 %%PYTHON_SITELIBDIR%%/gpg/gpgme.py
 %%PYTHON_SITELIBDIR%%/gpg/gpgme.pyc
 %%PYTHON_SITELIBDIR%%/gpg/gpgme.pyo
-%%PYTHON_SITELIBDIR%%/gpg/install_files.txt
 %%PYTHON_SITELIBDIR%%/gpg/results.py
 %%PYTHON_SITELIBDIR%%/gpg/results.pyc
 %%PYTHON_SITELIBDIR%%/gpg/results.pyo

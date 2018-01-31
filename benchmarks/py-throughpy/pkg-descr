@@ -1,0 +1,4 @@
+Execute throughput tests with iperf3 and get some formatted responses.
+The output shows just the min, max and average values.
+
+WWW: https://github.com/kanazux/throughpy

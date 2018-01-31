@@ -52,6 +52,11 @@ SERF_CONFIGURE_OFF=		--without-serf
 SERF_CONFIGURE_ON=		--with-serf
 SERF_LIB_DEPENDS=		libserf-1.so:www/serf
 
+GPG_AGENT_CONFIGURE_OFF=	--without-gpg-agent
+GPG_AGENT_CONFIGURE_ON=		--with-gpg-agent
+GPG_AGENT_BUILD_DEPENDS=	gpg-agent:security/gnupg
+GPG_AGENT_RUN_DEPENDS=		gpg-agent:security/gnupg
+
 STATIC_CONFIGURE_ON=		--enable-all-static PKG_CONFIG="${LOCALBASE}/bin/pkg-config --static"
 
 # ===============================================================

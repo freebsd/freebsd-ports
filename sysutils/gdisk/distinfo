@@ -1,2 +1,3 @@
-SHA256 (gptfdisk-0.8.10.tar.gz) = 73e64151203ae0c347c488358e71ca582bb7fb7f0d66df86b71c42050390eb9b
-SIZE (gptfdisk-0.8.10.tar.gz) = 190666
+TIMESTAMP = 1511345902
+SHA256 (gptfdisk-1.0.3.tar.gz) = 89fd5aec35c409d610a36cb49c65b442058565ed84042f767bba614b8fc91b5c
+SIZE (gptfdisk-1.0.3.tar.gz) = 199924

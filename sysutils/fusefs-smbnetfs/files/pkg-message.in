@@ -1,23 +1,21 @@
 ===>  Basic Instructions:
 
-After kldload fuse.ko (see sysutils/fusefs-kmod documentation) and setting
-
+After kldload fuse.ko and setting
 	# sysctl vfs.usermount=1
 
 you should make .smb directory in your homedir:
-
 	% mkdir ~/.smb
 
 Copy your smb.conf (usually in %%PREFIX%%/etc/) and
 %%DOCSDIR%%/smbnetfs.conf to this directory:
-
 	% cp %%PREFIX%%/etc/smb.conf %%DOCSDIR%%/smbnetfs.conf ~/.smb/
 
 Make mountpoint for smb network and mount it:
-
 	% mkdir ~/mountpoint
 	% smbnetfs ~/mountpoint
 
 Now you can get access to smb shares in your network, for example:
-
 	% cd ~/mountpoint/ip-addr
+
+XXX Note, use of Gnome keyring was replaced in version 0.6.1 with
+XXX libsecret, which this port does not enable by default.

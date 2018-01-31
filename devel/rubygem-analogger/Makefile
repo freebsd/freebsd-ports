@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	analogger
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, flexible, easy to use logging service for Ruby
 
-LICENSE=	RUBY
+LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-eventmachine>=0.0.0:devel/rubygem-eventmachine
+RUN_DEPENDS=	rubygem-eventmachine>=1.2:devel/rubygem-eventmachine
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	bin/analogger
-ruby_OLD_CMD=	ruby
 
 PLIST_FILES=	bin/analogger
+
+SHEBANG_FILES=	bin/analogger
+ruby_OLD_CMD=	ruby
 
 .include <bsd.port.mk>

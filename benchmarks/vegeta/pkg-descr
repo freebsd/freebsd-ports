@@ -1,0 +1,4 @@
+Vegeta is a versatile HTTP load testing tool built out of a need to drill HTTP
+services with a constant request rate.
+
+WWW: https://github.com/tsenart/vegeta

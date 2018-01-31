@@ -1,3 +1,4 @@
+bin/sumlabels.py
 bin/sumtrees.py
 %%PYTHON_SITELIBDIR%%/dendropy/__init__.py
 %%PYTHON_SITELIBDIR%%/dendropy/__init__.pyc
@@ -152,6 +153,9 @@ bin/sumtrees.py
 %%PYTHON_SITELIBDIR%%/dendropy/interop/raxml.py
 %%PYTHON_SITELIBDIR%%/dendropy/interop/raxml.pyc
 %%PYTHON_SITELIBDIR%%/dendropy/interop/raxml.pyo
+%%PYTHON_SITELIBDIR%%/dendropy/interop/rspr.py
+%%PYTHON_SITELIBDIR%%/dendropy/interop/rspr.pyc
+%%PYTHON_SITELIBDIR%%/dendropy/interop/rspr.pyo
 %%PYTHON_SITELIBDIR%%/dendropy/interop/rstats.py
 %%PYTHON_SITELIBDIR%%/dendropy/interop/rstats.pyc
 %%PYTHON_SITELIBDIR%%/dendropy/interop/rstats.pyo

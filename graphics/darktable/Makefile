@@ -3,6 +3,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -11,7 +12,8 @@ COMMENT=	Virtual lighttable and darkroom for photographers
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+		xsltproc:textproc/libxslt \
 		po4a-translate:textproc/po4a
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \

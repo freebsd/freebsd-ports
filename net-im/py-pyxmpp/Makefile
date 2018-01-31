@@ -14,6 +14,9 @@ COMMENT=	Python XMPP library
 LICENSE=	LGPL21 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obsoleted in favor of PyXMPP2
+EXPIRATION_DATE=	2018-02-28
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.18.2:security/py-m2crypto@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libxml2>0:textproc/py-libxml2@${FLAVOR}

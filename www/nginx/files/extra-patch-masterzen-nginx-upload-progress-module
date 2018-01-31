@@ -1,0 +1,9 @@
+--- work/nginx-upload-progress-module-0.9.2/config.orig	2018-01-27 09:47:26.335521000 +0100
++++ work/nginx-upload-progress-module-0.9.2/config	2018-01-27 09:47:53.763756000 +0100
+@@ -1,5 +1,5 @@
+ ngx_addon_name=ngx_http_uploadprogress_module
+-if test -n "$ngx_module_link"; then
++if [ $ngx_module_link = DYNAMIC ] ; then
+     ngx_module_type=FILTER
+     ngx_module_name=ngx_http_uploadprogress_module
+     ngx_module_srcs="$ngx_addon_dir/ngx_http_uploadprogress_module.c"

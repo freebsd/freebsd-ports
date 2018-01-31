@@ -1,6 +1,0 @@
-bin/ambit
-lib/libambit.sh
-man/man1/ambit.1.gz
-@sample etc/ambit.conf.sample
-@dir %%AMBITDIR%%/hosts
-@dir %%AMBITDIR%%

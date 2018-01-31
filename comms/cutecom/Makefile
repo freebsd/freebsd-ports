@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://cutecom.sourceforge.net/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Graphical serial terminal
 
 RUN_DEPENDS=	lsz:comms/lrzsz

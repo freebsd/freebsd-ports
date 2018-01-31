@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		fortran gmake libtool tk
+USE_CXXSTD=	gnu++98
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--disable-python --with-hdf5=${LOCALBASE}	\
 		--with-hdf5-include=${LOCALBASE}/include/hdf5-18

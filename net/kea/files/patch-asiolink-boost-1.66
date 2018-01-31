@@ -1,0 +1,86 @@
+From 4fd11ef050438adeb1e0ae0d9d2d8ec3a2cb659c Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Bart=C5=82omiej=20Piotrowski?= <bpiotrowski@archlinux.org>
+Date: Sat, 30 Dec 2017 14:40:24 +0100
+Subject: [PATCH] asiolink: fix build with boost 1.66
+
+- use native_handle() for getting native socket type
+- use io_context instead of io_service
+---
+ src/lib/asiolink/io_acceptor.h         | 4 ++++
+ src/lib/asiolink/io_service.h          | 5 +++++
+ src/lib/asiolink/tcp_socket.h          | 4 ++++
+ src/lib/asiolink/udp_socket.h          | 4 ++++
+ src/lib/asiolink/unix_domain_socket.cc | 4 ++++
+ 5 files changed, 21 insertions(+)
+
+--- src/lib/asiolink/io_service.h.orig	2017-04-24 23:28:20 UTC
++++ src/lib/asiolink/io_service.h
+@@ -11,7 +11,12 @@
+ 
+ namespace boost {
+ namespace asio {
++#if BOOST_VERSION < 106600
+     class io_service;
++#else
++    class io_context;
++    typedef io_context io_service;
++#endif
+ }
+ }
+ 
+--- src/lib/asiolink/tcp_acceptor.h.orig	2017-04-24 23:28:20 UTC
++++ src/lib/asiolink/tcp_acceptor.h
+@@ -44,7 +44,11 @@ class TCPAcceptor : public IOSocket { (public)
+ 
+     /// @brief Returns file descriptor of the underlying socket.
+     virtual int getNative() const final {
++#if BOOST_VERSION < 106600
+         return (acceptor_->native());
++#else
++        return (acceptor_->native_handle());
++#endif
+     }
+ 
+     /// @brief Returns protocol of the socket.
+--- src/lib/asiolink/tcp_socket.h.orig	2017-04-24 23:28:20 UTC
++++ src/lib/asiolink/tcp_socket.h
+@@ -75,7 +75,11 @@ class TCPSocket : public IOAsioSocket<C> { (public)
+ 
+     /// \brief Return file descriptor of underlying socket
+     virtual int getNative() const {
++#if BOOST_VERSION < 106600
+         return (socket_.native());
++#else
++        return (socket_.native_handle());
++#endif
+     }
+ 
+     /// \brief Return protocol of socket
+--- src/lib/asiolink/udp_socket.h.orig	2017-04-24 23:28:20 UTC
++++ src/lib/asiolink/udp_socket.h
+@@ -61,7 +61,11 @@ class UDPSocket : public IOAsioSocket<C> { (public)
+ 
+     /// \brief Return file descriptor of underlying socket
+     virtual int getNative() const {
++#if BOOST_VERSION < 106600
+         return (socket_.native());
++#else
++        return (socket_.native_handle());
++#endif
+     }
+ 
+     /// \brief Return protocol of socket
+--- src/lib/asiolink/unix_domain_socket.cc.orig	2017-04-24 23:28:20 UTC
++++ src/lib/asiolink/unix_domain_socket.cc
+@@ -48,7 +48,11 @@ UnixDomainSocket::UnixDomainSocket(IOService& io_servi
+ 
+ int
+ UnixDomainSocket::getNative() const {
++#if BOOST_VERSION < 106600
+     return (impl_->socket_.native());
++#else
++    return (impl_->socket_.native_handle());
++#endif
+ }
+ 
+ int

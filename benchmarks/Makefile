@@ -62,6 +62,7 @@
     SUBDIR += postal
     SUBDIR += postmark
     SUBDIR += py-naarad
+    SUBDIR += py-throughpy
     SUBDIR += py-zopkio
     SUBDIR += pybench
     SUBDIR += raidtest
@@ -87,6 +88,7 @@
     SUBDIR += typometer
     SUBDIR += ubench
     SUBDIR += unixbench
+    SUBDIR += vegeta
     SUBDIR += webbench
     SUBDIR += wrk
 

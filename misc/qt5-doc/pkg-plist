@@ -98,6 +98,7 @@
 %%QT_DOCDIR%%/gammaray-manual/examples-gammaray.html
 %%QT_DOCDIR%%/gammaray-manual/examples-manifest.xml
 %%QT_DOCDIR%%/gammaray-manual/gammaray-action-inspector.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-application-attributes.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-basic-operations.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-client.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-codec-browser.html
@@ -110,7 +111,13 @@
 %%QT_DOCDIR%%/gammaray-manual/gammaray-http-cookies.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-install.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-launcher-gui.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-licenses-and-attributions.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-locales.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-manual-attribution-backward-cpp.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-manual-attribution-kitemmodels.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-manual-attribution-kuserfeedback.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-manual-attribution-lz4.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-manual-attribution-stackwalker.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-manual.qhp
 %%QT_DOCDIR%%/gammaray-manual/gammaray-manual.qhp.sha1
 %%QT_DOCDIR%%/gammaray-manual/gammaray-messages.html
@@ -123,11 +130,14 @@
 %%QT_DOCDIR%%/gammaray-manual/gammaray-object-inspection.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-paint-analyzer.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-properties.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-qmlbindings.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-qmlcontext.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-qmltype.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-qobject-browser.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-qresource-browser.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-qsggeometry.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-qsgmaterial.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-qsgtexture.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-qt3d-geometry-example.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-qt3d-geometry-mycylinder-cpp.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-qt3d-geometry-mycylinder-h.html
@@ -148,6 +158,7 @@
 %%QT_DOCDIR%%/gammaray-manual/gammaray-signal-slot-example.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-signal-slot-signal-slot-cpp.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-signal-slot-signal-slot-pro.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-stack-trace.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-standard-paths.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-state-machine-debugger.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-state-machine-example.html
@@ -163,12 +174,15 @@
 %%QT_DOCDIR%%/gammaray-manual/gammaray-translator-inspector.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-wayland-compositors.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-web-inspector.html
+%%QT_DOCDIR%%/gammaray-manual/gammaray-widget-attributes.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-widget-inspector.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-widget-layouting-example.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-widget-layouting-widget-layouting-cpp.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray-widget-layouting-widget-layouting-pro.html
 %%QT_DOCDIR%%/gammaray-manual/gammaray.index
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-action-inspector.png
+%%QT_DOCDIR%%/gammaray-manual/images/gammaray-application-attributes.png
+%%QT_DOCDIR%%/gammaray-manual/images/gammaray-bindings.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-codec-browser.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-connections.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-enums.png
@@ -193,6 +207,7 @@
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-paint-analyzer.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-properties.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qmlcontext.png
+%%QT_DOCDIR%%/gammaray-manual/images/gammaray-qmltype.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qq2-geometry.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qq2-inspector.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qq2-qsg-visualize.png
@@ -200,6 +215,7 @@
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qrc-browser.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qsggeometry.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qsgmaterial.png
+%%QT_DOCDIR%%/gammaray-manual/images/gammaray-qsgtexture.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qsm-debugger.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qt3d-buffers.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qt3d-geometry-backface-culling.png
@@ -211,6 +227,7 @@
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qtcreator-connect.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-qtcreator.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-signal-plotter.png
+%%QT_DOCDIR%%/gammaray-manual/images/gammaray-stack-trace.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-standard-paths.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-style-controls.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-text-documents.png
@@ -219,6 +236,7 @@
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-translations.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-wayland-compositor.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-web-inspector.png
+%%QT_DOCDIR%%/gammaray-manual/images/gammaray-widget-attributes.png
 %%QT_DOCDIR%%/gammaray-manual/images/gammaray-widget-inspector.png
 %%QT_DOCDIR%%/gammaray-manual/index.html
 %%QT_DOCDIR%%/qdoc.qch
@@ -4946,7 +4964,6 @@
 %%QT_DOCDIR%%/qtlocation/qtlocation-attribution-clip2tri.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-attribution-clipper.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-attribution-earcut.html
-%%QT_DOCDIR%%/qtlocation/qtlocation-attribution-mapboxgl-any.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-attribution-mapboxgl-boost.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-attribution-mapboxgl-css-color-parser.html
 %%QT_DOCDIR%%/qtlocation/qtlocation-attribution-mapboxgl-earcut.html
@@ -7100,6 +7117,8 @@
 %%QT_DOCDIR%%/qtquick/qml-qtquick-fontloader.html
 %%QT_DOCDIR%%/qtquick/qml-qtquick-fontmetrics-members.html
 %%QT_DOCDIR%%/qtquick/qml-qtquick-fontmetrics.html
+%%QT_DOCDIR%%/qtquick/qml-qtquick-gestureevent-members.html
+%%QT_DOCDIR%%/qtquick/qml-qtquick-gestureevent.html
 %%QT_DOCDIR%%/qtquick/qml-qtquick-gradient-members.html
 %%QT_DOCDIR%%/qtquick/qml-qtquick-gradient.html
 %%QT_DOCDIR%%/qtquick/qml-qtquick-gradientstop-members.html

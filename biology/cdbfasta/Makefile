@@ -6,7 +6,7 @@ PORTVERSION=	2010.07.22
 CATEGORIES=	biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast indexing and retrieval of FASTA records from flat file databases
 
 # LICENSE=	unspecified

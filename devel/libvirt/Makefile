@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	3.10.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -76,8 +76,6 @@ ZFS_CONFIGURE_WITH=	storage-zfs
 
 VARDIR=		/var
 
-USE_RC_SUBR=	libvirtd virtlogd
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-avahi \
 		--without-dbus \
@@ -101,11 +99,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
 USES=		charsetfix cpe gettext-runtime gmake libtool pathfix \
 		perl5 python:2.7,build pkgconfig shebangfix tar:xz
+USE_RC_SUBR=	libvirtd virtlogd
 CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-SHLIB_VER=	0.3010.0
+SHLIB_VER=	0.4000.0
 PLIST_SUB+=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
@@ -119,6 +118,8 @@ SUB_LIST+=	PORTVERSION="-${PORTVERSION}"
 .if ${PORT_OPTIONS:MQEMU} || ${PORT_OPTIONS:MNSS}
 LIB_DEPENDS+=		libyajl.so:devel/yajl
 CONFIGURE_ARGS+=	--with-yajl=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-yajl
 .endif
 
 .if !${PLIST_SUB:MXEN}

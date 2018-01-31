@@ -6,7 +6,7 @@ PORTVERSION=	0.98
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rate-limited autoresponder for qmail
 
 LIB_DEPENDS=	libbg.so:devel/bglibs

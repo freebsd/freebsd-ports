@@ -41,14 +41,16 @@
  
    // Create server address.
    memset((void *)&serverAddr,'\0',sizeof(serverAddr));
-@@ -171,10 +171,9 @@
+@@ -170,11 +170,10 @@ ServerPing::ServerPing(int argc,char** argv) {
+   client.sin_family = AF_INET;
    client.sin_addr.s_addr = htonl(INADDR_ANY);
    client.sin_port = htons((u_short)clientPort);
-   if (bind(udpSock,(CMN_SOCKADDR *)&client,sizeof(client)) < 0) {
+-  if (bind(udpSock,(CMN_SOCKADDR *)&client,sizeof(client)) < 0) {
 -    ostrstream str;
 -    str << "Could not bind local UDP port " << clientPort << ends;
 -    error(str.str());
 -    delete str.str();
++  if (::bind(udpSock,(CMN_SOCKADDR *)&client,sizeof(client)) < 0) {
 +    stringstream str;
 +    str << "Could not bind local UDP port " << clientPort;
 +    error(str.str().c_str());

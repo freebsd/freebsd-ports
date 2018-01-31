@@ -10,6 +10,8 @@ COMMENT=	Erlang XML parsing and manipulation library
 
 LICENSE=	APACHE20
 
+BROKEN=		checksum and size mismatch
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		erlang:rebar

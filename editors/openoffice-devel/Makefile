@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	3
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -16,7 +16,7 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
 PKGNAMESUFFIX=		-devel
-DISTFILES=	${AOOSRC}${AOODISTTAG} unowinreg.dll:unoreg ${EXTSRC}:extsrc
+DISTFILES=	${AOOSRC}${AOODISTTAG} ${EXTSRC}:extsrc
 DIST_SUBDIR=	openoffice
 EXTRACT_ONLY=	${AOOSRC}
 
@@ -105,7 +105,7 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1810071
+SVNREVISION=	1822069
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -150,11 +150,14 @@ WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
 
-OPTIONS_DEFINE=		CUPS GNOME GNOMEVFS MMEDIA MYSQL PDFIMPORT \
-			REPORT_BUILDER SDK WIKI_PUBLISHER
-OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS MMEDIA PDFIMPORT WIKI_PUBLISHER
+OPTIONS_DEFINE=		CRASHDUMP CUPS DBGUTIL DEBUG GNOME GNOMEVFS MMEDIA \
+			MYSQL PDFIMPORT REPORT_BUILDER SDK WIKI_PUBLISHER
+OPTIONS_DEFAULT=	CUPS GNOME MMEDIA PDFIMPORT WIKI_PUBLISHER
+CRASHDUMP_DESC=		Enable crashdumps, sets WITH_DEBUG
+DBGUTIL_DESC=		Enable assertions, object counting. (non-production)
+DEBUG_DESC=		Compile with -O0, sets WITH_DEBUG
 GNOME_DESC=		GConf + screensaver presentation control via DBUS
-GNOMEVFS_DESC=		GNOME Virtual File System
+GNOMEVFS_DESC=		Use GNOME Virtual File System instead of gio
 MMEDIA_DESC=		Multimedia backend for impress
 MYSQL_DESCR=		Build MySQL Connector extension
 PDFIMPORT_DESC=		Build and install PDF import extension
@@ -162,8 +165,15 @@ REPORT_BUILDER_DESC=	Build and install Report builder extension (Broken)
 SDK_DESC=		Build and install software development kit
 WIKI_PUBLISHER_DESC=	Build and install Wiki Publisher extension
 
+CRASHDUMP_CONFIGURE_ENABLE=	crashdump
+CRASHDUMP_VARS=			WITH_DEBUG=yes
+
 CUPS_CONFIGURE_ENABLE=		cups
 CUPS_LIB_DEPENDS=		libcups.so:print/cups
+
+DBGUTIL_CONFIGURE_ENABLE=	dbgutil
+
+DEBUG_CONFIGURE_ENABLE=		debug
 
 GNOME_CONFIGURE_ENABLE=		dbus gconf lockdown
 GNOME_LIB_DEPENDS=		libdbus-1.so:devel/dbus \
@@ -185,6 +195,7 @@ MYSQL_LIB_DEPENDS=		libmysqlcppconn.so:databases/mysql-connector-c++
 MYSQL_USES=			mysql
 
 SDK_CONFIGURE_ENABLE=		odk
+SDK_DISTFILES=			unowinreg.dll:unoreg
 
 PDFIMPORT_CONFIGURE_ENABLE=	pdfimport
 PDFIMPORT_CONFIGURE_WITH=	system-poppler
@@ -210,6 +221,10 @@ WIKI_PUBLISHER_RUN_DEPENDS=	${WIKI_PUBLISHER_JAR_DEPENDS}
 TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-symbols
+.endif
 
 .if ${PORT_OPTIONS:MREPORT_BUILDER} || ${PORT_OPTIONS:MWIKI_PUBLISHER}
 BUILD_DEPENDS+=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
@@ -266,7 +281,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-cairo --enable-cairo		\
 			--with-system-coinmp				\
 			--with-system-curl				\
-			--enable-crashdump				\
 			--with-system-dicts				\
 			--with-epm=${LOCALBASE}/bin/epm			\
 			--with-system-expat				\
@@ -331,9 +345,11 @@ pre-everything::
 	${TOUCH} ${BUILD_COOKIE}
 .endif
 
+do-extract-SDK-on:
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
+
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 	${CP} ${FILESDIR}/freebsd-aoo-intro-developer.png \
 		${WRKSRC}/default_images/introabout/intro.png
 	${CP} ${FILESDIR}/freebsd-aoo-about-developer.png \
@@ -444,7 +460,9 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
 		${STAGEDIR}${PREFIX}/share/mime/packages
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd*.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
+	@cd ${WRKSRC} ; \
+		. ${FREEBSD_ENV_SET} ; \
+		cd instsetoo_native/$${INPATH}/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
 		for i in *.tar.?z ; do \
 			${ECHO_CMD} "extracting $$i" ; \
 			${TAR} -s '|./[^/]*/||' -xz -f $$i \
@@ -468,7 +486,9 @@ do-install:
 	done
 	@${ECHO_CMD} "adding desktop support"
 	@${LN} -sf ${XDGREL} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
-	@cd ${WRKSRC}/sysui/unxfbsd*.pro/misc/openoffice ;	\
+	@cd ${WRKSRC} ;						\
+	    . ${FREEBSD_ENV_SET} ;				\
+	    cd sysui/$${INPATH}/misc/openoffice ;		\
 	    DESTDIR=${STAGEDIR}					\
 		GNOMEDIR=${PREFIX}				\
 		ICON_PREFIX=openoffice${AOOVERSION1}		\

@@ -1,4 +1,3 @@
-# Created by: Jason W. Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	endian
@@ -6,7 +5,7 @@ PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Report endianness of a system
 
 LICENSE=	BSD2CLAUSE

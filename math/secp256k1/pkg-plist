@@ -1,0 +1,7 @@
+include/secp256k1.h
+include/secp256k1_ecdh.h
+lib/libsecp256k1.a
+lib/libsecp256k1.so
+lib/libsecp256k1.so.0
+lib/libsecp256k1.so.0.0.0
+libdata/pkgconfig/libsecp256k1.pc

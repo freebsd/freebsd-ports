@@ -79,7 +79,7 @@ fetchindex: ${INDEXDIR}/${INDEXFILE}.bz2
 ${INDEXDIR}/${INDEXFILE}.bz2: .PHONY
 	@${FETCHINDEX} ${INDEXDIR}/${INDEXFILE}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
 
-MASTER_SITE_INDEX?=	http://www.FreeBSD.org/ports/
+MASTER_SITE_INDEX?=	https://www.FreeBSD.org/ports/
 SETENV?=	/usr/bin/env
 FETCHINDEX?=	${SETENV} ${FETCH_ENV} fetch -am -o
 
@@ -129,7 +129,7 @@ ${INDEXDIR}/${INDEXFILE}:
 			echo; \
 			echo "********************************************************************"; \
 			echo "Before reporting this error, verify that you are running a supported"; \
-			echo "version of FreeBSD (see http://www.FreeBSD.org/ports/) and that you"; \
+			echo "version of FreeBSD (see https://www.FreeBSD.org/ports/) and that you"; \
 			echo "have a complete and up-to-date ports collection.  (INDEX builds are"; \
 			echo "not supported with partial or out-of-date ports collections."; \
 			echo "If that is the case, then"; \

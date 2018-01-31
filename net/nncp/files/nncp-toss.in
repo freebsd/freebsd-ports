@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nncp-toss
+# REQUIRE: DAEMON NETWORKING FILESYSTEMS
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# nncp_toss_enable (bool):	Set to NO by default.
+#				Set it to YES to enable nncp-toss.
+# nncp_toss_config (path):	Set to %%PREFIX%%/etc/nncp.yaml by default.
+# nncp_toss_cycle   (int):	Repeat tossing after that number of seconds.
+#				Default is "60".
+
+. /etc/rc.subr
+
+name=nncp_toss
+rcvar=nncp_toss_enable
+
+load_rc_config $name
+
+: ${nncp_toss_enable:="NO"}
+: ${nncp_toss_config="%%PREFIX%%/etc/nncp.yaml"}
+: ${nncp_toss_cycle="60"}
+
+command=%%PREFIX%%/bin/nncp-toss
+command_args="-quiet -cycle $nncp_toss_cycle -cfg $nncp_toss_config &"
+
+run_rc_command "$1"

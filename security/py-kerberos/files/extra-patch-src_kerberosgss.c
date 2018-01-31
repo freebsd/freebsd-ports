@@ -38,3 +38,12 @@
      if (kt) {
          krb5_kt_close(kcontext, kt);
      }
+@@ -150,7 +148,7 @@ int authenticate_gss_client_init(
+     name_token.value = (char *)service;
+     
+     maj_stat = gss_import_name(
+-        &min_stat, &name_token, gss_krb5_nt_service_name, &state->server_name
++        &min_stat, &name_token, GSS_C_NT_HOSTBASED_SERVICE, &state->server_name
+     );
+     
+     if (GSS_ERROR(maj_stat)) {

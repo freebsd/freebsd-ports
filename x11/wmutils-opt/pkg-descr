@@ -1,0 +1,5 @@
+wmutils-opt is a set of optional utilities meant to accompany wmutils-core.
+This package includes tools to move/resize windows with the mouse, control
+window borders, and view a window's events and name.
+
+WWW: https://github.com/wmutils/opt

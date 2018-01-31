@@ -17,22 +17,6 @@
 %%T%%/bin/tomcat-native.tar.gz
 %%T%%/bin/tool-wrapper.sh
 %%T%%/bin/version.sh
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
-@sample %%T%%/conf/catalina.policy.sample
-@sample %%T%%/conf/catalina.properties.sample
-@sample %%T%%/conf/context.xml.sample
-@sample %%T%%/conf/jaspic-providers.xml.sample
-@sample %%T%%/conf/jaspic-providers.xsd.sample
-@sample %%T%%/conf/logging.properties.sample
-@sample %%T%%/conf/server.xml.sample
-@sample %%T%%/conf/tomcat-users.xml.sample
-@sample %%T%%/conf/tomcat-users.xsd.sample
-@sample %%T%%/conf/web.xml.sample
-@dir %%T%%/conf
-@owner
-@group
-@dir %%T%%/endorsed
 %%T%%/lib/annotations-api.jar
 %%T%%/lib/catalina-ant.jar
 %%T%%/lib/catalina-ha.jar
@@ -58,26 +42,26 @@
 %%T%%/lib/tomcat-util.jar
 %%T%%/lib/tomcat-websocket.jar
 %%T%%/lib/websocket-api.jar
+@dir %%T%%/endorsed
+@postunexec [ ! -d %D/%%T%% ] || echo If permanently deleting this package, %D/%%T%% must be removed manually
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
+@dir %%T%%/conf
 @dir %%T%%/logs
-%%T%%/temp/safeToDelete.tmp
 @dir %%T%%/temp
-%%ROOT%%%%T%%/webapps/ROOT/RELEASE-NOTES.txt
-%%ROOT%%%%T%%/webapps/ROOT/WEB-INF/web.xml
-%%ROOT%%%%T%%/webapps/ROOT/asf-logo-wide.svg
-%%ROOT%%%%T%%/webapps/ROOT/bg-button.png
-%%ROOT%%%%T%%/webapps/ROOT/bg-middle.png
-%%ROOT%%%%T%%/webapps/ROOT/bg-nav-item.png
-%%ROOT%%%%T%%/webapps/ROOT/bg-nav.png
-%%ROOT%%%%T%%/webapps/ROOT/bg-upper.png
-%%ROOT%%%%T%%/webapps/ROOT/favicon.ico
-%%ROOT%%%%T%%/webapps/ROOT/index.jsp
-%%ROOT%%%%T%%/webapps/ROOT/tomcat-power.gif
-%%ROOT%%%%T%%/webapps/ROOT/tomcat.css
-%%ROOT%%%%T%%/webapps/ROOT/tomcat.gif
-%%ROOT%%%%T%%/webapps/ROOT/tomcat.png
-%%ROOT%%%%T%%/webapps/ROOT/tomcat.svg
+@dir %%T%%/webapps
+@dir %%T%%/work
+@sample %%T%%/conf/catalina.policy.sample
+@sample %%T%%/conf/catalina.properties.sample
+@sample %%T%%/conf/context.xml.sample
+@sample %%T%%/conf/jaspic-providers.xml.sample
+@sample %%T%%/conf/jaspic-providers.xsd.sample
+@sample %%T%%/conf/logging.properties.sample
+@sample %%T%%/conf/server.xml.sample
+@sample %%T%%/conf/tomcat-users.xml.sample
+@sample %%T%%/conf/tomcat-users.xsd.sample
+@sample %%T%%/conf/web.xml.sample
+%%T%%/temp/safeToDelete.tmp
 %%DOCS%%%%T%%/webapps/docs/BUILDING.txt
 %%DOCS%%%%T%%/webapps/docs/RELEASE-NOTES.txt
 %%DOCS%%%%T%%/webapps/docs/RUNNING.txt
@@ -201,6 +185,7 @@
 %%DOCS%%%%T%%/webapps/docs/manager-howto.html
 %%DOCS%%%%T%%/webapps/docs/maven-jars.html
 %%DOCS%%%%T%%/webapps/docs/mbeans-descriptors-howto.html
+%%DOCS%%%%T%%/webapps/docs/mbeans-descriptors.dtd
 %%DOCS%%%%T%%/webapps/docs/monitoring.html
 %%DOCS%%%%T%%/webapps/docs/proxy-howto.html
 %%DOCS%%%%T%%/webapps/docs/realm-howto.html
@@ -254,6 +239,8 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/Async2.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/Async3.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/Async3.java
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.class
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
@@ -298,8 +285,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.class
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.class
@@ -620,7 +605,9 @@
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/401.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/403.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/404.jsp
+%%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/connectorCerts.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/connectorCiphers.jsp
+%%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/connectorTrustedCerts.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/web.xml
@@ -636,8 +623,18 @@
 %%MANAGER%%%%T%%/webapps/manager/index.jsp
 %%MANAGER%%%%T%%/webapps/manager/status.xsd
 %%MANAGER%%%%T%%/webapps/manager/xform.xsl
-@dir %%T%%/webapps
-@dir %%T%%/work
-@owner
-@group
-@postunexec [ ! -d %D/%%T%% ] || echo If permanently deleting this package, %D/%%T%% must be removed manually
+%%ROOT%%%%T%%/webapps/ROOT/RELEASE-NOTES.txt
+%%ROOT%%%%T%%/webapps/ROOT/WEB-INF/web.xml
+%%ROOT%%%%T%%/webapps/ROOT/asf-logo-wide.svg
+%%ROOT%%%%T%%/webapps/ROOT/bg-button.png
+%%ROOT%%%%T%%/webapps/ROOT/bg-middle.png
+%%ROOT%%%%T%%/webapps/ROOT/bg-nav-item.png
+%%ROOT%%%%T%%/webapps/ROOT/bg-nav.png
+%%ROOT%%%%T%%/webapps/ROOT/bg-upper.png
+%%ROOT%%%%T%%/webapps/ROOT/favicon.ico
+%%ROOT%%%%T%%/webapps/ROOT/index.jsp
+%%ROOT%%%%T%%/webapps/ROOT/tomcat-power.gif
+%%ROOT%%%%T%%/webapps/ROOT/tomcat.css
+%%ROOT%%%%T%%/webapps/ROOT/tomcat.gif
+%%ROOT%%%%T%%/webapps/ROOT/tomcat.png
+%%ROOT%%%%T%%/webapps/ROOT/tomcat.svg

@@ -12,7 +12,6 @@ LICENSE=	PHP301
 
 USES=		php:pecl
 USE_PHP=	spl:build
-IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--enable-rar
 

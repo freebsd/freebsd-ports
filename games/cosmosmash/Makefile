@@ -5,7 +5,7 @@ PORTNAME=	cosmosmash
 DISTVERSION=	1.4.7
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
+MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/ \
 		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org

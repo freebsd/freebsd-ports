@@ -3971,6 +3971,8 @@
 %%WWWDIR%%/apps/activity/l10n/bg.json
 %%WWWDIR%%/apps/activity/l10n/bn_BD.js
 %%WWWDIR%%/apps/activity/l10n/bn_BD.json
+%%WWWDIR%%/apps/activity/l10n/br.js
+%%WWWDIR%%/apps/activity/l10n/br.json
 %%WWWDIR%%/apps/activity/l10n/ca.js
 %%WWWDIR%%/apps/activity/l10n/ca.json
 %%WWWDIR%%/apps/activity/l10n/cs.js
@@ -4437,6 +4439,8 @@
 %%WWWDIR%%/apps/dav/l10n/en_GB.json
 %%WWWDIR%%/apps/dav/l10n/es.js
 %%WWWDIR%%/apps/dav/l10n/es.json
+%%WWWDIR%%/apps/dav/l10n/es_419.js
+%%WWWDIR%%/apps/dav/l10n/es_419.json
 %%WWWDIR%%/apps/dav/l10n/es_AR.js
 %%WWWDIR%%/apps/dav/l10n/es_AR.json
 %%WWWDIR%%/apps/dav/l10n/es_CL.js
@@ -4469,6 +4473,8 @@
 %%WWWDIR%%/apps/dav/l10n/es_SV.json
 %%WWWDIR%%/apps/dav/l10n/es_UY.js
 %%WWWDIR%%/apps/dav/l10n/es_UY.json
+%%WWWDIR%%/apps/dav/l10n/et_EE.js
+%%WWWDIR%%/apps/dav/l10n/et_EE.json
 %%WWWDIR%%/apps/dav/l10n/eu.js
 %%WWWDIR%%/apps/dav/l10n/eu.json
 %%WWWDIR%%/apps/dav/l10n/fi.js
@@ -4575,7 +4581,6 @@
 %%WWWDIR%%/apps/dav/lib/CardDAV/ImageExportPlugin.php
 %%WWWDIR%%/apps/dav/lib/CardDAV/PhotoCache.php
 %%WWWDIR%%/apps/dav/lib/CardDAV/Plugin.php
-%%WWWDIR%%/apps/dav/lib/CardDAV/SyncJob.php
 %%WWWDIR%%/apps/dav/lib/CardDAV/SyncService.php
 %%WWWDIR%%/apps/dav/lib/CardDAV/UserAddressBooks.php
 %%WWWDIR%%/apps/dav/lib/CardDAV/Xml/Groups.php
@@ -4704,6 +4709,8 @@
 %%WWWDIR%%/apps/encryption/l10n/eo.json
 %%WWWDIR%%/apps/encryption/l10n/es.js
 %%WWWDIR%%/apps/encryption/l10n/es.json
+%%WWWDIR%%/apps/encryption/l10n/es_419.js
+%%WWWDIR%%/apps/encryption/l10n/es_419.json
 %%WWWDIR%%/apps/encryption/l10n/es_AR.js
 %%WWWDIR%%/apps/encryption/l10n/es_AR.json
 %%WWWDIR%%/apps/encryption/l10n/es_CL.js
@@ -4905,6 +4912,8 @@
 %%WWWDIR%%/apps/federatedfilesharing/l10n/eo.json
 %%WWWDIR%%/apps/federatedfilesharing/l10n/es.js
 %%WWWDIR%%/apps/federatedfilesharing/l10n/es.json
+%%WWWDIR%%/apps/federatedfilesharing/l10n/es_419.js
+%%WWWDIR%%/apps/federatedfilesharing/l10n/es_419.json
 %%WWWDIR%%/apps/federatedfilesharing/l10n/es_AR.js
 %%WWWDIR%%/apps/federatedfilesharing/l10n/es_AR.json
 %%WWWDIR%%/apps/federatedfilesharing/l10n/es_CL.js
@@ -5071,6 +5080,8 @@
 %%WWWDIR%%/apps/federation/l10n/eo.json
 %%WWWDIR%%/apps/federation/l10n/es.js
 %%WWWDIR%%/apps/federation/l10n/es.json
+%%WWWDIR%%/apps/federation/l10n/es_419.js
+%%WWWDIR%%/apps/federation/l10n/es_419.json
 %%WWWDIR%%/apps/federation/l10n/es_AR.js
 %%WWWDIR%%/apps/federation/l10n/es_AR.json
 %%WWWDIR%%/apps/federation/l10n/es_CL.js
@@ -5306,6 +5317,8 @@
 %%WWWDIR%%/apps/files/l10n/eo.json
 %%WWWDIR%%/apps/files/l10n/es.js
 %%WWWDIR%%/apps/files/l10n/es.json
+%%WWWDIR%%/apps/files/l10n/es_419.js
+%%WWWDIR%%/apps/files/l10n/es_419.json
 %%WWWDIR%%/apps/files/l10n/es_AR.js
 %%WWWDIR%%/apps/files/l10n/es_AR.json
 %%WWWDIR%%/apps/files/l10n/es_CL.js
@@ -5720,6 +5733,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/ForbiddenException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/HostDownException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidHostException.php
+%%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidParameterException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidPathException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidRequestException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidResourceException.php
@@ -5728,6 +5742,8 @@
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/NoRouteToHostException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/NotEmptyException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/NotFoundException.php
+%%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/OutOfSpaceException.php
+%%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/RevisionMismatchException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/TimedOutException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/FileInfo.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/IFileInfo.php
@@ -5830,6 +5846,8 @@
 %%WWWDIR%%/apps/files_external/l10n/eo.json
 %%WWWDIR%%/apps/files_external/l10n/es.js
 %%WWWDIR%%/apps/files_external/l10n/es.json
+%%WWWDIR%%/apps/files_external/l10n/es_419.js
+%%WWWDIR%%/apps/files_external/l10n/es_419.json
 %%WWWDIR%%/apps/files_external/l10n/es_AR.js
 %%WWWDIR%%/apps/files_external/l10n/es_AR.json
 %%WWWDIR%%/apps/files_external/l10n/es_CL.js
@@ -6532,6 +6550,8 @@
 %%WWWDIR%%/apps/files_sharing/l10n/eo.json
 %%WWWDIR%%/apps/files_sharing/l10n/es.js
 %%WWWDIR%%/apps/files_sharing/l10n/es.json
+%%WWWDIR%%/apps/files_sharing/l10n/es_419.js
+%%WWWDIR%%/apps/files_sharing/l10n/es_419.json
 %%WWWDIR%%/apps/files_sharing/l10n/es_AR.js
 %%WWWDIR%%/apps/files_sharing/l10n/es_AR.json
 %%WWWDIR%%/apps/files_sharing/l10n/es_CL.js
@@ -7106,6 +7126,8 @@
 %%WWWDIR%%/apps/files_texteditor/l10n/eo.json
 %%WWWDIR%%/apps/files_texteditor/l10n/es.js
 %%WWWDIR%%/apps/files_texteditor/l10n/es.json
+%%WWWDIR%%/apps/files_texteditor/l10n/es_419.js
+%%WWWDIR%%/apps/files_texteditor/l10n/es_419.json
 %%WWWDIR%%/apps/files_texteditor/l10n/es_AR.js
 %%WWWDIR%%/apps/files_texteditor/l10n/es_AR.json
 %%WWWDIR%%/apps/files_texteditor/l10n/es_CL.js
@@ -7299,6 +7321,8 @@
 %%WWWDIR%%/apps/files_trashbin/l10n/eo.json
 %%WWWDIR%%/apps/files_trashbin/l10n/es.js
 %%WWWDIR%%/apps/files_trashbin/l10n/es.json
+%%WWWDIR%%/apps/files_trashbin/l10n/es_419.js
+%%WWWDIR%%/apps/files_trashbin/l10n/es_419.json
 %%WWWDIR%%/apps/files_trashbin/l10n/es_AR.js
 %%WWWDIR%%/apps/files_trashbin/l10n/es_AR.json
 %%WWWDIR%%/apps/files_trashbin/l10n/es_CL.js
@@ -7523,6 +7547,8 @@
 %%WWWDIR%%/apps/files_versions/l10n/eo.json
 %%WWWDIR%%/apps/files_versions/l10n/es.js
 %%WWWDIR%%/apps/files_versions/l10n/es.json
+%%WWWDIR%%/apps/files_versions/l10n/es_419.js
+%%WWWDIR%%/apps/files_versions/l10n/es_419.json
 %%WWWDIR%%/apps/files_versions/l10n/es_AR.js
 %%WWWDIR%%/apps/files_versions/l10n/es_AR.json
 %%WWWDIR%%/apps/files_versions/l10n/es_CL.js
@@ -7759,6 +7785,8 @@
 %%WWWDIR%%/apps/firstrunwizard/l10n/eo.json
 %%WWWDIR%%/apps/firstrunwizard/l10n/es.js
 %%WWWDIR%%/apps/firstrunwizard/l10n/es.json
+%%WWWDIR%%/apps/firstrunwizard/l10n/es_419.js
+%%WWWDIR%%/apps/firstrunwizard/l10n/es_419.json
 %%WWWDIR%%/apps/firstrunwizard/l10n/es_AR.js
 %%WWWDIR%%/apps/firstrunwizard/l10n/es_AR.json
 %%WWWDIR%%/apps/firstrunwizard/l10n/es_CL.js
@@ -8008,6 +8036,8 @@
 %%WWWDIR%%/apps/gallery/l10n/eo.json
 %%WWWDIR%%/apps/gallery/l10n/es.js
 %%WWWDIR%%/apps/gallery/l10n/es.json
+%%WWWDIR%%/apps/gallery/l10n/es_419.js
+%%WWWDIR%%/apps/gallery/l10n/es_419.json
 %%WWWDIR%%/apps/gallery/l10n/es_AR.js
 %%WWWDIR%%/apps/gallery/l10n/es_AR.json
 %%WWWDIR%%/apps/gallery/l10n/es_CL.js
@@ -8297,6 +8327,8 @@
 %%WWWDIR%%/apps/logreader/l10n/en_GB.json
 %%WWWDIR%%/apps/logreader/l10n/es.js
 %%WWWDIR%%/apps/logreader/l10n/es.json
+%%WWWDIR%%/apps/logreader/l10n/es_419.js
+%%WWWDIR%%/apps/logreader/l10n/es_419.json
 %%WWWDIR%%/apps/logreader/l10n/es_CL.js
 %%WWWDIR%%/apps/logreader/l10n/es_CL.json
 %%WWWDIR%%/apps/logreader/l10n/es_CO.js
@@ -8347,6 +8379,8 @@
 %%WWWDIR%%/apps/logreader/l10n/ja.json
 %%WWWDIR%%/apps/logreader/l10n/ka_GE.js
 %%WWWDIR%%/apps/logreader/l10n/ka_GE.json
+%%WWWDIR%%/apps/logreader/l10n/ko.js
+%%WWWDIR%%/apps/logreader/l10n/ko.json
 %%WWWDIR%%/apps/logreader/l10n/lt_LT.js
 %%WWWDIR%%/apps/logreader/l10n/lt_LT.json
 %%WWWDIR%%/apps/logreader/l10n/lv.js
@@ -8430,6 +8464,8 @@
 %%WWWDIR%%/apps/nextcloud_announcements/l10n/en_GB.json
 %%WWWDIR%%/apps/nextcloud_announcements/l10n/es.js
 %%WWWDIR%%/apps/nextcloud_announcements/l10n/es.json
+%%WWWDIR%%/apps/nextcloud_announcements/l10n/es_419.js
+%%WWWDIR%%/apps/nextcloud_announcements/l10n/es_419.json
 %%WWWDIR%%/apps/nextcloud_announcements/l10n/es_AR.js
 %%WWWDIR%%/apps/nextcloud_announcements/l10n/es_AR.json
 %%WWWDIR%%/apps/nextcloud_announcements/l10n/es_CL.js
@@ -8575,6 +8611,8 @@
 %%WWWDIR%%/apps/notifications/l10n/en_GB.json
 %%WWWDIR%%/apps/notifications/l10n/es.js
 %%WWWDIR%%/apps/notifications/l10n/es.json
+%%WWWDIR%%/apps/notifications/l10n/es_419.js
+%%WWWDIR%%/apps/notifications/l10n/es_419.json
 %%WWWDIR%%/apps/notifications/l10n/es_AR.js
 %%WWWDIR%%/apps/notifications/l10n/es_AR.json
 %%WWWDIR%%/apps/notifications/l10n/es_CL.js
@@ -8691,6 +8729,8 @@
 %%WWWDIR%%/apps/oauth2/l10n/.gitkeep
 %%WWWDIR%%/apps/oauth2/l10n/af.js
 %%WWWDIR%%/apps/oauth2/l10n/af.json
+%%WWWDIR%%/apps/oauth2/l10n/ar.js
+%%WWWDIR%%/apps/oauth2/l10n/ar.json
 %%WWWDIR%%/apps/oauth2/l10n/ast.js
 %%WWWDIR%%/apps/oauth2/l10n/ast.json
 %%WWWDIR%%/apps/oauth2/l10n/ca.js
@@ -8709,6 +8749,8 @@
 %%WWWDIR%%/apps/oauth2/l10n/en_GB.json
 %%WWWDIR%%/apps/oauth2/l10n/es.js
 %%WWWDIR%%/apps/oauth2/l10n/es.json
+%%WWWDIR%%/apps/oauth2/l10n/es_419.js
+%%WWWDIR%%/apps/oauth2/l10n/es_419.json
 %%WWWDIR%%/apps/oauth2/l10n/es_AR.js
 %%WWWDIR%%/apps/oauth2/l10n/es_AR.json
 %%WWWDIR%%/apps/oauth2/l10n/es_CL.js
@@ -8741,6 +8783,8 @@
 %%WWWDIR%%/apps/oauth2/l10n/es_SV.json
 %%WWWDIR%%/apps/oauth2/l10n/es_UY.js
 %%WWWDIR%%/apps/oauth2/l10n/es_UY.json
+%%WWWDIR%%/apps/oauth2/l10n/et_EE.js
+%%WWWDIR%%/apps/oauth2/l10n/et_EE.json
 %%WWWDIR%%/apps/oauth2/l10n/eu.js
 %%WWWDIR%%/apps/oauth2/l10n/eu.json
 %%WWWDIR%%/apps/oauth2/l10n/fi.js
@@ -8759,6 +8803,8 @@
 %%WWWDIR%%/apps/oauth2/l10n/ja.json
 %%WWWDIR%%/apps/oauth2/l10n/ka_GE.js
 %%WWWDIR%%/apps/oauth2/l10n/ka_GE.json
+%%WWWDIR%%/apps/oauth2/l10n/ko.js
+%%WWWDIR%%/apps/oauth2/l10n/ko.json
 %%WWWDIR%%/apps/oauth2/l10n/lt_LT.js
 %%WWWDIR%%/apps/oauth2/l10n/lt_LT.json
 %%WWWDIR%%/apps/oauth2/l10n/lv.js
@@ -8832,6 +8878,8 @@
 %%WWWDIR%%/apps/password_policy/l10n/en_GB.json
 %%WWWDIR%%/apps/password_policy/l10n/es.js
 %%WWWDIR%%/apps/password_policy/l10n/es.json
+%%WWWDIR%%/apps/password_policy/l10n/es_419.js
+%%WWWDIR%%/apps/password_policy/l10n/es_419.json
 %%WWWDIR%%/apps/password_policy/l10n/es_AR.js
 %%WWWDIR%%/apps/password_policy/l10n/es_AR.json
 %%WWWDIR%%/apps/password_policy/l10n/es_CL.js
@@ -9017,6 +9065,8 @@
 %%WWWDIR%%/apps/serverinfo/l10n/en_GB.json
 %%WWWDIR%%/apps/serverinfo/l10n/es.js
 %%WWWDIR%%/apps/serverinfo/l10n/es.json
+%%WWWDIR%%/apps/serverinfo/l10n/es_419.js
+%%WWWDIR%%/apps/serverinfo/l10n/es_419.json
 %%WWWDIR%%/apps/serverinfo/l10n/es_AR.js
 %%WWWDIR%%/apps/serverinfo/l10n/es_AR.json
 %%WWWDIR%%/apps/serverinfo/l10n/es_CL.js
@@ -9085,6 +9135,8 @@
 %%WWWDIR%%/apps/serverinfo/l10n/nb.json
 %%WWWDIR%%/apps/serverinfo/l10n/nl.js
 %%WWWDIR%%/apps/serverinfo/l10n/nl.json
+%%WWWDIR%%/apps/serverinfo/l10n/nn_NO.js
+%%WWWDIR%%/apps/serverinfo/l10n/nn_NO.json
 %%WWWDIR%%/apps/serverinfo/l10n/pl.js
 %%WWWDIR%%/apps/serverinfo/l10n/pl.json
 %%WWWDIR%%/apps/serverinfo/l10n/pt_BR.js
@@ -9147,6 +9199,8 @@
 %%WWWDIR%%/apps/sharebymail/l10n/en_GB.json
 %%WWWDIR%%/apps/sharebymail/l10n/es.js
 %%WWWDIR%%/apps/sharebymail/l10n/es.json
+%%WWWDIR%%/apps/sharebymail/l10n/es_419.js
+%%WWWDIR%%/apps/sharebymail/l10n/es_419.json
 %%WWWDIR%%/apps/sharebymail/l10n/es_AR.js
 %%WWWDIR%%/apps/sharebymail/l10n/es_AR.json
 %%WWWDIR%%/apps/sharebymail/l10n/es_CL.js
@@ -9268,6 +9322,8 @@
 %%WWWDIR%%/apps/survey_client/l10n/en_GB.json
 %%WWWDIR%%/apps/survey_client/l10n/es.js
 %%WWWDIR%%/apps/survey_client/l10n/es.json
+%%WWWDIR%%/apps/survey_client/l10n/es_419.js
+%%WWWDIR%%/apps/survey_client/l10n/es_419.json
 %%WWWDIR%%/apps/survey_client/l10n/es_CL.js
 %%WWWDIR%%/apps/survey_client/l10n/es_CL.json
 %%WWWDIR%%/apps/survey_client/l10n/es_CO.js
@@ -9312,6 +9368,8 @@
 %%WWWDIR%%/apps/survey_client/l10n/ja.json
 %%WWWDIR%%/apps/survey_client/l10n/ka_GE.js
 %%WWWDIR%%/apps/survey_client/l10n/ka_GE.json
+%%WWWDIR%%/apps/survey_client/l10n/ko.js
+%%WWWDIR%%/apps/survey_client/l10n/ko.json
 %%WWWDIR%%/apps/survey_client/l10n/lv.js
 %%WWWDIR%%/apps/survey_client/l10n/lv.json
 %%WWWDIR%%/apps/survey_client/l10n/mn.js
@@ -9412,6 +9470,8 @@
 %%WWWDIR%%/apps/systemtags/l10n/eo.json
 %%WWWDIR%%/apps/systemtags/l10n/es.js
 %%WWWDIR%%/apps/systemtags/l10n/es.json
+%%WWWDIR%%/apps/systemtags/l10n/es_419.js
+%%WWWDIR%%/apps/systemtags/l10n/es_419.json
 %%WWWDIR%%/apps/systemtags/l10n/es_AR.js
 %%WWWDIR%%/apps/systemtags/l10n/es_AR.json
 %%WWWDIR%%/apps/systemtags/l10n/es_CL.js
@@ -9601,6 +9661,8 @@
 %%WWWDIR%%/apps/theming/l10n/en_GB.json
 %%WWWDIR%%/apps/theming/l10n/es.js
 %%WWWDIR%%/apps/theming/l10n/es.json
+%%WWWDIR%%/apps/theming/l10n/es_419.js
+%%WWWDIR%%/apps/theming/l10n/es_419.json
 %%WWWDIR%%/apps/theming/l10n/es_AR.js
 %%WWWDIR%%/apps/theming/l10n/es_AR.json
 %%WWWDIR%%/apps/theming/l10n/es_CL.js
@@ -9729,6 +9791,8 @@
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/en_GB.json
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/es.js
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/es.json
+%%WWWDIR%%/apps/twofactor_backupcodes/l10n/es_419.js
+%%WWWDIR%%/apps/twofactor_backupcodes/l10n/es_419.json
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/es_AR.js
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/es_AR.json
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/es_CL.js
@@ -9867,6 +9931,8 @@
 %%WWWDIR%%/apps/updatenotification/l10n/eo.json
 %%WWWDIR%%/apps/updatenotification/l10n/es.js
 %%WWWDIR%%/apps/updatenotification/l10n/es.json
+%%WWWDIR%%/apps/updatenotification/l10n/es_419.js
+%%WWWDIR%%/apps/updatenotification/l10n/es_419.json
 %%WWWDIR%%/apps/updatenotification/l10n/es_AR.js
 %%WWWDIR%%/apps/updatenotification/l10n/es_AR.json
 %%WWWDIR%%/apps/updatenotification/l10n/es_CL.js
@@ -10115,6 +10181,8 @@
 %%WWWDIR%%/apps/user_ldap/l10n/eo.json
 %%WWWDIR%%/apps/user_ldap/l10n/es.js
 %%WWWDIR%%/apps/user_ldap/l10n/es.json
+%%WWWDIR%%/apps/user_ldap/l10n/es_419.js
+%%WWWDIR%%/apps/user_ldap/l10n/es_419.json
 %%WWWDIR%%/apps/user_ldap/l10n/es_AR.js
 %%WWWDIR%%/apps/user_ldap/l10n/es_AR.json
 %%WWWDIR%%/apps/user_ldap/l10n/es_CL.js
@@ -10406,6 +10474,8 @@
 %%WWWDIR%%/apps/workflowengine/l10n/en_GB.json
 %%WWWDIR%%/apps/workflowengine/l10n/es.js
 %%WWWDIR%%/apps/workflowengine/l10n/es.json
+%%WWWDIR%%/apps/workflowengine/l10n/es_419.js
+%%WWWDIR%%/apps/workflowengine/l10n/es_419.json
 %%WWWDIR%%/apps/workflowengine/l10n/es_AR.js
 %%WWWDIR%%/apps/workflowengine/l10n/es_AR.json
 %%WWWDIR%%/apps/workflowengine/l10n/es_CL.js
@@ -10438,6 +10508,8 @@
 %%WWWDIR%%/apps/workflowengine/l10n/es_SV.json
 %%WWWDIR%%/apps/workflowengine/l10n/es_UY.js
 %%WWWDIR%%/apps/workflowengine/l10n/es_UY.json
+%%WWWDIR%%/apps/workflowengine/l10n/et_EE.js
+%%WWWDIR%%/apps/workflowengine/l10n/et_EE.json
 %%WWWDIR%%/apps/workflowengine/l10n/fa.js
 %%WWWDIR%%/apps/workflowengine/l10n/fa.json
 %%WWWDIR%%/apps/workflowengine/l10n/fi.js
@@ -11512,6 +11584,8 @@
 %%WWWDIR%%/core/l10n/en_GB.json
 %%WWWDIR%%/core/l10n/es.js
 %%WWWDIR%%/core/l10n/es.json
+%%WWWDIR%%/core/l10n/es_419.js
+%%WWWDIR%%/core/l10n/es_419.json
 %%WWWDIR%%/core/l10n/es_AR.js
 %%WWWDIR%%/core/l10n/es_AR.json
 %%WWWDIR%%/core/l10n/es_CL.js
@@ -11756,6 +11830,8 @@
 %%WWWDIR%%/lib/l10n/en_GB.json
 %%WWWDIR%%/lib/l10n/es.js
 %%WWWDIR%%/lib/l10n/es.json
+%%WWWDIR%%/lib/l10n/es_419.js
+%%WWWDIR%%/lib/l10n/es_419.json
 %%WWWDIR%%/lib/l10n/es_AR.js
 %%WWWDIR%%/lib/l10n/es_AR.json
 %%WWWDIR%%/lib/l10n/es_CL.js
@@ -11788,6 +11864,8 @@
 %%WWWDIR%%/lib/l10n/es_SV.json
 %%WWWDIR%%/lib/l10n/es_UY.js
 %%WWWDIR%%/lib/l10n/es_UY.json
+%%WWWDIR%%/lib/l10n/et_EE.js
+%%WWWDIR%%/lib/l10n/et_EE.json
 %%WWWDIR%%/lib/l10n/fi.js
 %%WWWDIR%%/lib/l10n/fi.json
 %%WWWDIR%%/lib/l10n/fr.js
@@ -12030,6 +12108,7 @@
 %%WWWDIR%%/lib/private/Files/Cache/Wrapper/CachePermissionsMask.php
 %%WWWDIR%%/lib/private/Files/Cache/Wrapper/CacheWrapper.php
 %%WWWDIR%%/lib/private/Files/Cache/Wrapper/JailPropagator.php
+%%WWWDIR%%/lib/private/Files/Config/CachedMountFileInfo.php
 %%WWWDIR%%/lib/private/Files/Config/CachedMountInfo.php
 %%WWWDIR%%/lib/private/Files/Config/LazyStorageMountInfo.php
 %%WWWDIR%%/lib/private/Files/Config/MountProviderCollection.php
@@ -12060,6 +12139,7 @@
 %%WWWDIR%%/lib/private/Files/ObjectStore/S3.php
 %%WWWDIR%%/lib/private/Files/ObjectStore/S3ConnectionTrait.php
 %%WWWDIR%%/lib/private/Files/ObjectStore/S3ObjectTrait.php
+%%WWWDIR%%/lib/private/Files/ObjectStore/S3Signature.php
 %%WWWDIR%%/lib/private/Files/ObjectStore/StorageObjectStore.php
 %%WWWDIR%%/lib/private/Files/ObjectStore/Swift.php
 %%WWWDIR%%/lib/private/Files/Search/SearchBinaryOperator.php
@@ -12455,6 +12535,7 @@
 %%WWWDIR%%/lib/public/Files/Cache/IScanner.php
 %%WWWDIR%%/lib/public/Files/Cache/IUpdater.php
 %%WWWDIR%%/lib/public/Files/Cache/IWatcher.php
+%%WWWDIR%%/lib/public/Files/Config/ICachedMountFileInfo.php
 %%WWWDIR%%/lib/public/Files/Config/ICachedMountInfo.php
 %%WWWDIR%%/lib/public/Files/Config/IHomeMountProvider.php
 %%WWWDIR%%/lib/public/Files/Config/IMountProvider.php
@@ -12726,6 +12807,8 @@
 %%WWWDIR%%/settings/l10n/eo.json
 %%WWWDIR%%/settings/l10n/es.js
 %%WWWDIR%%/settings/l10n/es.json
+%%WWWDIR%%/settings/l10n/es_419.js
+%%WWWDIR%%/settings/l10n/es_419.json
 %%WWWDIR%%/settings/l10n/es_AR.js
 %%WWWDIR%%/settings/l10n/es_AR.json
 %%WWWDIR%%/settings/l10n/es_CL.js

@@ -1,0 +1,14 @@
+It is rare, but there are times where you want to swap out the currently
+compiling file for a different one. This module does that. From the point you
+use the module perl will be parsing the new file instead of the original.
+
+This was created specifically for Test2::Harness which can preload modules and
+fork to run each test. The problem was that using do to execute the test files
+post-fork was resuling in extra frames in the stack trace... in other words
+there are a lot of tests that assume the test file is the bottom of the stack.
+This happens all the time, specially if stack traces need to be verified.
+
+This module allows Test2::Harness to swap out the main script for the new file
+without adding a stack frame.
+
+WWW: http://search.cpan.org/dist/goto-file/

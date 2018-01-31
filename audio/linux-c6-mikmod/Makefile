@@ -5,7 +5,7 @@ PORTNAME=	libmikmod
 PORTVERSION=	3.2.0
 PORTREVISION=	4
 CATEGORIES=	audio linux
-MASTER_SITES=	EPEL
+MASTER_SITES=	EPEL/l
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	MikMod Sound Library (Linux CentOS ${LINUX_DIST_VER})

@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	bwa
@@ -6,7 +5,7 @@ PORTVERSION=	0.7.17
 DISTVERSIONPREFIX=v
 CATEGORIES=	biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Burrows-Wheeler sequence aligner
 
 LICENSE=	GPLv3

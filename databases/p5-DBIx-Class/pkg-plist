@@ -179,6 +179,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/_Util.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class/File.pm
+%%PERL5_MAN1%%/dbicadmin.1.gz
 %%PERL5_MAN3%%/DBIx::Class.3.gz
 %%PERL5_MAN3%%/DBIx::Class::AccessorGroup.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Admin.3.gz
@@ -297,4 +298,3 @@ bin/dbicadmin
 %%PERL5_MAN3%%/DBIx::Class::UTF8Columns.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Parser::DBIx::Class.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Producer::DBIx::Class::File.3.gz
-%%PERL5_MAN1%%/dbicadmin.1.gz

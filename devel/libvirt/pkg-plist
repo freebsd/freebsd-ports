@@ -16,7 +16,6 @@ man/man7/virkeycode-osx.7.gz
 man/man7/virkeycode-rfb.7.gz
 man/man7/virkeycode-usb.7.gz
 man/man7/virkeycode-win32.7.gz
-man/man7/virkeycode-xt.7.gz
 man/man7/virkeycode-xtkbd.7.gz
 man/man7/virkeyname-linux.7.gz
 man/man7/virkeyname-osx.7.gz
@@ -221,7 +220,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-tunnel.png
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-unmanaged-direct.png
 %%DOCSDIR%%%%PORTVERSION%%/html/migration.html
-%%DOCSDIR%%%%PORTVERSION%%/html/mobile.css                                   
+%%DOCSDIR%%%%PORTVERSION%%/html/mobile.css
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2005.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2006.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2007.html
@@ -237,7 +236,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/news.html
 %%DOCSDIR%%%%PORTVERSION%%/html/node.gif
 %%DOCSDIR%%%%PORTVERSION%%/html/nss.html
-%%DOCSDIR%%%%PORTVERSION%%/html/pci-hotplug.html   
+%%DOCSDIR%%%%PORTVERSION%%/html/pci-hotplug.html
 %%DOCSDIR%%%%PORTVERSION%%/html/php.html
 %%DOCSDIR%%%%PORTVERSION%%/html/python.html
 %%DOCSDIR%%%%PORTVERSION%%/html/remote.html

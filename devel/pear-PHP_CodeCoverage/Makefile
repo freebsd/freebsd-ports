@@ -32,7 +32,7 @@ DOM_DESC=	Enable DOM support
 XDEBUG_DESC=	Enable Xdebug support
 
 DOM_USE=	PHP=dom
-XDEBUG_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdebug.so:devel/php-xdebug
+XDEBUG_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdebug.so:devel/pecl-xdebug
 
 PHP_DIR=	share/PHP
 
