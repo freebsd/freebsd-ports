@@ -9893,3 +9893,16 @@ mail/evolution-mapi||2018-01-28|Has expired: Depends on expiring mail/libmapi
 devel/beautifyphp||2018-01-29|only works for PHP4 which is gone long ago
 devel/clanlib22|devel/clanlib|2018-01-29|No users in the ports tree, newer version available
 devel/php-xdebug|devel/pecl-xdebug|2018-01-30|Moved to pecl
+astro/py-pyfits|astro/py-astropy|2018-01-31|Has expired: Use astro/py-astropy instead
+devel/py-gitdb|devel/py-gitdb2|2018-01-31|Has expired: Use devel/py-gitdb2 instead
+devel/py-smmap|devel/py-smmap2|2018-01-31|Has expired: Use devel/py-smmap2 instead
+devel/rubygem-moneta06|devel/rubygem-moneta|2018-01-31|Has expired: Use devel/rubygem-moneta instead
+lang/ruby22|lang/ruby24|2018-01-31|Has expired: Upgrade to newer version (e.g. lang/ruby24)
+net/tcptraceroute-devel|net/tcptraceroute|2018-01-31|Has expired: Use net/tcptraceroute instead
+security/rubygem-openssl20|security/rubygem-openssl|2018-01-31|Has expired: Use security/rubygem-openssl instead
+sysutils/rubygem-hiera1|sysutils/rubygem-hiera|2018-01-31|Has expired: Use sysutils/rubygem-hiera instead
+www/py-django110|www/py-django111|2018-01-31|Has expired: Use www/py-django111 or www/py-django20 instead
+www/rubygem-http2|www/rubygem-http|2018-01-31|Has expired: Use www/rubygem-http instead
+www/rubygem-jekyll-watch1|www/rubygem-jekyll-watch|2018-01-31|Has expired: Use www/rubygem-jekyll-watch instead
+www/rubygem-puma2|www/rubygem-puma|2018-01-31|Has expired: Use www/rubygem-puma instead
+www/rubygem-turbolinks-classic|www/rubygem-turbolinks|2018-01-31|Has expired: Use www/rubygem-turbolinks instead
