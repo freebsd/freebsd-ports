@@ -1,0 +1,5 @@
+TIMESTAMP = 1515351589
+SHA256 (centos/lttng-ust-2.4.1-4.el7.x86_64.rpm) = 7b24d8afbddb579a6946cc9dde6781b8b21e57150accb40992381e6b2d23aee5
+SIZE (centos/lttng-ust-2.4.1-4.el7.x86_64.rpm) = 180520
+SHA256 (centos/lttng-ust-2.4.1-4.el7.src.rpm) = 909359d59a25ca6166eeeb5d730c82cc6778e62c437600880f612140c5070dbb
+SIZE (centos/lttng-ust-2.4.1-4.el7.src.rpm) = 585467

@@ -565,7 +565,9 @@
     SUBDIR += lineak-xosdplugin
     SUBDIR += lineakd
     SUBDIR += linrename
+    SUBDIR += linux-c6-lttng-ust
     SUBDIR += linux-c6-userspace-rcu
+    SUBDIR += linux-c7-lttng-ust
     SUBDIR += linux-c7-userspace-rcu
     SUBDIR += linux-crashplan
     SUBDIR += linuxfdisk
