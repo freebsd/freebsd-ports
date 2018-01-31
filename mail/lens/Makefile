@@ -12,7 +12,6 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Mail filter written in Ruby
 
 NO_BUILD=	yes
-BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
 USE_RUBY=	yes
 USES=		shebangfix
