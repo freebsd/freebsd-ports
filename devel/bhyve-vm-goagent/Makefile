@@ -3,6 +3,7 @@
 PORTNAME=	bhyve-vm-goagent
 PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	araujo@FreeBSD.org
@@ -11,6 +12,8 @@ COMMENT=	Agent developed in Go that runs inside guest vm
 LICENSE=	BSD2CLAUSE
 
 ONLY_FOR_ARCHS=	amd64 i386
+
+BUILD_DEPENDS=	git:devel/git
 
 USES=		go
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
