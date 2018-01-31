@@ -1603,6 +1603,7 @@
     SUBDIR += linux-c6-libsigc++20
     SUBDIR += linux-c6-libsoup
     SUBDIR += linux-c6-libthai
+    SUBDIR += linux-c6-libunwind
     SUBDIR += linux-c6-nspr
     SUBDIR += linux-c6-qt47
     SUBDIR += linux-c6-sdl12
@@ -1616,6 +1617,7 @@
     SUBDIR += linux-c7-libpciaccess
     SUBDIR += linux-c7-libsigc++20
     SUBDIR += linux-c7-libthai
+    SUBDIR += linux-c7-libunwind
     SUBDIR += linux-c7-nspr
     SUBDIR += linux-c7-qt
     SUBDIR += linux-c7-sdl12

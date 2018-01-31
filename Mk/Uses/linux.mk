@@ -110,6 +110,7 @@ linux_libssh2_DEP=		linux-${linux_ARGS}-libssh2>0:security/linux-${linux_ARGS}-l
 linux_libtasn1_DEP=		linux-${linux_ARGS}-libtasn1>0:security/linux-${linux_ARGS}-libtasn1
 linux_libthai_DEP=		linux-${linux_ARGS}-libthai>0:devel/linux-${linux_ARGS}-libthai
 linux_libtheora_DEP=		linux-${linux_ARGS}-libtheora>0:multimedia/linux-${linux_ARGS}-libtheora
+linux_libunwind_DEP=		linux-${linux_ARGS}-libunwind>0:devel/linux-${linux_ARGS}-libunwind
 linux_libv4l_DEP=		linux-${linux_ARGS}-libv4l>0:multimedia/linux-${linux_ARGS}-libv4l
 linux_libvorbis_DEP=		linux-${linux_ARGS}-libvorbis>0:audio/linux-${linux_ARGS}-libvorbis
 linux_libxml2_DEP=		linux-${linux_ARGS}-libxml2>0:textproc/linux-${linux_ARGS}-libxml2
