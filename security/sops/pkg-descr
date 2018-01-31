@@ -1,0 +1,7 @@
+SOPS is a wrapper around a text editor that transparently takes care of the
+encryption and decryption. It supports YAML, JSON and BINARY formats and
+encrypts with AWS KMS and PGP. When encrypting YAML and JSON, the content of
+the file is manipulated as a tree where keys are stored in cleartext, and
+values are encrypted.
+
+WWW: https://github.com/mozilla/sops
