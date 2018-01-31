@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${MMVERSION}.x/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python module for instant inlining of C and C++ code in Python
 
 LICENSE=	LGPL3

@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	lnphost
@@ -6,7 +5,7 @@ PORTVERSION=	1.0a
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lego RCX iinfrared communication API
 
 LICENSE=	GPLv2

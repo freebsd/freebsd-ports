@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTREVISION=	10
@@ -6,7 +5,7 @@ PKGNAMESUFFIX=	-openmpi
 
 MPIPREFIX=	mpi/openmpi/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 
 LIB_DEPENDS+=	libmpi.so:net/openmpi
 

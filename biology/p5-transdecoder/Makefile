@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	transdecoder
@@ -7,7 +6,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	biology perl5
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Identify candidate coding regions within transcript sequences
 
 LICENSE=	BSD3CLAUSE
