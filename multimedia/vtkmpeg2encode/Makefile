@@ -1,4 +1,3 @@
-# Created by: Jason W. Bacon <bacon@smithers.neuro.mcw.edu>
 # $FreeBSD$
 
 PORTNAME=	vtkmpeg2encode

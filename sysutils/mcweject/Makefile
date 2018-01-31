@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jbacon@mcw.edu>
 # $FreeBSD$
 
 PORTNAME=	mcweject
@@ -6,7 +5,7 @@ PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Removable media eject
 
 LICENSE=	BSD3CLAUSE

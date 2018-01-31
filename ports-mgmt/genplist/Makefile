@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	genplist
@@ -6,7 +5,7 @@ PORTVERSION=	1.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generates a static plist for a port
 
 LICENSE=	BSD2CLAUSE

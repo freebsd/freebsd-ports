@@ -1,4 +1,3 @@
-# Created by: Jason W. Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 ############################################################################
@@ -15,7 +14,7 @@ PORTREVISION=	5
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2

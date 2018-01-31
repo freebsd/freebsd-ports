@@ -1,11 +1,10 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	fastool
 PORTVERSION=	0.1.4
 CATEGORIES=	biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple and quick FastQ and FastA tool for file reading and conversion
 
 LICENSE=	BSD2CLAUSE

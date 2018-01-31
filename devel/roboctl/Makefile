@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	roboctl
@@ -6,7 +5,7 @@ PORTVERSION=	0.3.8
 CATEGORIES=	devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	API and tools for communicating with Lego and Vex robots
 
 LICENSE=	GPLv3

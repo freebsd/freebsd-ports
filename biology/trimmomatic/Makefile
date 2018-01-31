@@ -7,7 +7,7 @@ CATEGORIES=	biology java
 MASTER_SITES=	http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/
 DISTNAME=	Trimmomatic-${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Flexible read trimming tool for Illumina NGS data
 
 LICENSE=	GPLv3

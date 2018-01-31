@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	yaggo
@@ -6,7 +5,7 @@ PORTVERSION=	1.5.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generate command line parser using getopt_long
 
 LICENSE=	GPLv3

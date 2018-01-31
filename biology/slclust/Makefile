@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	slclust
@@ -7,7 +6,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF/slclust/slclust
 DISTNAME=	${PORTNAME}_02022010
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single-linkage clustering with Jaccard similarity
 
 LICENSE=	ART10
