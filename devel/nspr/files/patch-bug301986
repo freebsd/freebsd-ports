@@ -22,20 +22,17 @@ Better to just keep calling it pthread_t isntead of casting to anything.
  
  /*
  ** Set the procedure that is called when a thread is dumped. The procedure
---- pr/src/pthreads/ptthread.c.orig	2015-10-16 13:22:19 UTC
+--- pr/src/pthreads/ptthread.c.orig	2018-01-18 12:37:14 UTC
 +++ pr/src/pthreads/ptthread.c
-@@ -1155,12 +1155,12 @@ PR_IMPLEMENT(void) PR_ProcessExit(PRIntn
+@@ -1122,9 +1122,9 @@ PR_IMPLEMENT(void) PR_ProcessExit(PRIntn status)
      _exit(status);
  }
  
 -PR_IMPLEMENT(PRUint32) PR_GetThreadID(PRThread *thred)
 +PR_IMPLEMENT(pthread_t) PR_GetThreadID(PRThread *thred)
  {
- #if defined(_PR_DCETHREADS)
-     return (PRUint32)&thred->id;  /* this is really a sham! */
- #else
 -    return (PRUint32)thred->id;  /* and I don't know what they will do with it */
 +    return thred->id;  /* and I don't know what they will do with it */
- #endif
  }
  
+ /*
