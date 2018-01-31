@@ -5564,7 +5564,6 @@
     SUBDIR += rubygem-mmap2
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-moneta
-    SUBDIR += rubygem-moneta06
     SUBDIR += rubygem-mongo
     SUBDIR += rubygem-mono_logger
     SUBDIR += rubygem-msgpack
