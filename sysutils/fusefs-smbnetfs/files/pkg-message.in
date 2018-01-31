@@ -18,4 +18,4 @@ Now you can get access to smb shares in your network, for example:
 	% cd ~/mountpoint/ip-addr
 
 XXX Note, use of Gnome keyring was replaced in version 0.6.1 with
-XXX libsecret, which this port no longer enables by default.
+XXX libsecret, which this port does not enable by default.
