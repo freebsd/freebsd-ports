@@ -1028,7 +1028,6 @@
     SUBDIR += rubygem-hiera
     SUBDIR += rubygem-hiera-eyaml
     SUBDIR += rubygem-hiera-file
-    SUBDIR += rubygem-hiera1
     SUBDIR += rubygem-hieracles
     SUBDIR += rubygem-httplog
     SUBDIR += rubygem-itamae
