@@ -11,8 +11,10 @@ include/qpdf/Pipeline.hh
 include/qpdf/Pl_Buffer.hh
 include/qpdf/Pl_Concatenate.hh
 include/qpdf/Pl_Count.hh
+include/qpdf/Pl_DCT.hh
 include/qpdf/Pl_Discard.hh
 include/qpdf/Pl_Flate.hh
+include/qpdf/Pl_RunLength.hh
 include/qpdf/Pl_StdioFile.hh
 include/qpdf/PointerHolder.hh
 include/qpdf/QPDF.hh
@@ -28,10 +30,9 @@ include/qpdf/QUtil.hh
 include/qpdf/RandomDataProvider.hh
 include/qpdf/Types.h
 include/qpdf/qpdf-c.h
-lib/libqpdf.a
 lib/libqpdf.so
-lib/libqpdf.so.17
-lib/libqpdf.so.17.0.0
+lib/libqpdf.so.18
+lib/libqpdf.so.18.2.0
 libdata/pkgconfig/libqpdf.pc
 man/man1/fix-qdf.1.gz
 man/man1/qpdf.1.gz
