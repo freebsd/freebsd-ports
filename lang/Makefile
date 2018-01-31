@@ -300,7 +300,6 @@
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
     SUBDIR += rubinius
-    SUBDIR += ruby22
     SUBDIR += ruby23
     SUBDIR += ruby24
     SUBDIR += ruby25
