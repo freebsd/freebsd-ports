@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	colmap
-DISTVERSION=	3.3
-PORTREVISION=	1
+DISTVERSION=	3.4
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
