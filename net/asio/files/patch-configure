@@ -1,9 +1,11 @@
 Since we aren't compiling anything for the port, don't look for boost:
---- configure	2014-10-01 20:10:53.000000000 -0400
-+++ configure	2014-11-30 12:32:04.000000000 -0500
-@@ -5026,5 +5026,4 @@
+--- configure.orig	2015-03-23 20:37:48 UTC
++++ configure
+@@ -5025,7 +5025,6 @@ else
+ 
      echo "Can't find boost headers. Please check the location of the boost"
      echo "distribution and rerun configure using the --with-boost=DIR option."
 -    exit 1
  
  fi
+ 
