@@ -1,2 +1,3 @@
-SHA256 (libsunacl-1.0.tar.gz) = 6b386274771d94e80386e4ec7e3052df5bf02829e508ae4537a39065842c87b8
-SIZE (libsunacl-1.0.tar.gz) = 3980
+TIMESTAMP = 1515742027
+SHA256 (libsunacl-1.0.1.tar.gz) = ed6b53e11326cbf43095062aabedd6c8342c23993c23cf56189dd76e953662e0
+SIZE (libsunacl-1.0.1.tar.gz) = 5387

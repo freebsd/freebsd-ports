@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libsunacl
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/freenas/libsunacl/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Wrapper providing SunOS NFSv4 ACL API
 
 LICENSE=	BSD2CLAUSE
