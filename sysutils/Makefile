@@ -506,7 +506,6 @@
     SUBDIR += isomaster
     SUBDIR += isomd5sum
     SUBDIR += istatserver
-    SUBDIR += ixautomation
     SUBDIR += jadm
     SUBDIR += jail-primer
     SUBDIR += jailadmin
@@ -924,6 +923,7 @@
     SUBDIR += py-halite
     SUBDIR += py-honcho
     SUBDIR += py-iowait
+    SUBDIR += py-ixautomation
     SUBDIR += py-nagiosplugin
     SUBDIR += py-nomad
     SUBDIR += py-pkginfo
