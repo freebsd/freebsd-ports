@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.57.0
+PORTVERSION=	7.58.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -13,7 +13,7 @@ COMMENT=	Command line tool and library for transferring data with URLs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	CA_BUNDLE COOKIES CURL_DEBUG DEBUG DOCS EXAMPLES HTTP2 IDN IPV6 LDAP LDAPS LIBSSH2 METALINK PROXY PSL RTMP SMB TLS_SRP
+OPTIONS_DEFINE=	BROTLI CA_BUNDLE COOKIES CURL_DEBUG DEBUG DOCS EXAMPLES HTTP2 IDN IPV6 LDAP LDAPS LIBSSH2 METALINK PROXY PSL RTMP SMB TLS_SRP
 OPTIONS_RADIO=	SSL
 OPTIONS_SINGLE=	GSSAPI RESOLV
 OPTIONS_RADIO_SSL=	GNUTLS NSS OPENSSL POLARSSL WOLFSSL
@@ -35,7 +35,7 @@ TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 CONFIGURE_ARGS=	--disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp \
 		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions \
-		--without-axtls --without-brotli
+		--without-axtls
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes
@@ -59,6 +59,8 @@ DOCS=		BUGS CODE_OF_CONDUCT.md CODE_STYLE.md CONTRIBUTE.md FAQ \
 
 SHEBANG_FILES=	*/*.pl
 
+BROTLI_CONFIGURE_WITH=	brotli=${LOCALBASE}
+BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
 CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss

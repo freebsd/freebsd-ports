@@ -399,6 +399,7 @@ man/man3/curl_unescape.3.gz
 man/man3/curl_version.3.gz
 man/man3/curl_version_info.3.gz
 man/man3/libcurl-easy.3.gz
+man/man3/libcurl-env.3.gz
 man/man3/libcurl-errors.3.gz
 man/man3/libcurl-multi.3.gz
 man/man3/libcurl-share.3.gz
