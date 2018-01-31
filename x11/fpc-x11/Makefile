@@ -3,6 +3,7 @@
 
 CATEGORIES=	x11 lang
 PKGNAMESUFFIX=	-x11
+PORTREVISION=	1
 
 COMMENT=	Free Pascal interface to X windows server
 
