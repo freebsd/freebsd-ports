@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-trollop>=1.9:devel/rubygem-trollop
 
-BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
 
 NO_ARCH=	yes
