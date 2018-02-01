@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iz
-DISTVERSION=	0.6.0-beta2
+PORTVERSION=	0.6.4
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
@@ -15,10 +15,7 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BBasile
-# FIXME: Remove this once it goes out of beta.
-# Side note, 0.6.0-beta.2 was a perfectly reasonable version to be used in
-# DISTVERSION.
-GH_TAGNAME=	v${DISTVERSION:S/beta/beta./}
+GH_TAGNAME=	v${PORTVERSION}
 
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
