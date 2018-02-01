@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fpc
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.4
 PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -23,8 +23,8 @@ COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
 USES=		gmake iconv
 ONLY_FOR_ARCHS=	i386 amd64
-BOOTVER=	3.0.2
-MANVER=		3.0.2
+BOOTVER=	3.0.4
+MANVER=		3.0.4
 
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	fpc-svn
@@ -36,12 +36,12 @@ FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 .if ${ARCH} == "i386"
 PPNAME=		ppc386
 FPC_ARCH=	i386
-PLIST_SUB+=	FPC_I386="" \
+PLIST_SUB=	FPC_I386="" \
 		FPC_AMD64="@comment "
 .elif ${ARCH} == "amd64"
 PPNAME=		ppcx64
 FPC_ARCH=	x86_64
-PLIST_SUB+=	FPC_I386="@comment " \
+PLIST_SUB=	FPC_I386="@comment " \
 		FPC_AMD64=""
 .endif
 
@@ -177,7 +177,7 @@ do-install:
 		"${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}" \
 		"${STAGEDIR}${PREFIX}/etc"
 	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||' \
-		-e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4|g' \
+		-e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4;${LOCALBASE}/lib/qt5|g' \
 		${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample
 
 .else
