@@ -3,18 +3,20 @@
 
 PORTNAME=	tramp
 PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net elisp
 MASTER_SITES=	GNU
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Transparent remote file access tool for emacsen
+COMMENT=	Transparent remote file access tool for Emacs
 
-USE_EMACS=	yes
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe emacs gmake makeinfo
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake makeinfo
 CPE_VENDOR=	gnu
 
 TRAMP_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
@@ -27,5 +29,9 @@ INFO=		tramp
 
 post-patch:
 	@${REINPLACE_CMD} 's/^make/${MAKE_CMD}/' ${WRKSRC}/configure
+
+.if ${FLAVOR:U} != nox && ${FLAVOR:U} != devel_nox
+PLIST_FILES+=	${TRAMP_LISPDIR}/tramp-gvfs.el ${TRAMP_LISPDIR}/tramp-gvfs.elc
+.endif
 
 .include <bsd.port.mk>

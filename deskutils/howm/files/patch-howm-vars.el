@@ -1,6 +1,6 @@
---- howm-vars.el.orig	2015-12-31 22:41:45.000000000 +0900
-+++ howm-vars.el	2016-11-26 22:46:32.596292000 +0900
-@@ -759,7 +759,7 @@
+--- howm-vars.el.orig	2015-12-31 13:41:45 UTC
++++ howm-vars.el
+@@ -759,7 +759,7 @@ When the value is elisp function, it is 
  This variable is obsolete and may be removed in future.")
  (defvar howm-view-grep-default-option
    ;; "labels" causes a trouble in git-head emacs (d5e3922) [2015-01-31]

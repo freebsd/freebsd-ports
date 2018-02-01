@@ -5,122 +5,67 @@ PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
 PORTREVISION=	2
 CATEGORIES=	mail elisp
-PKGNAMESUFFIX=	-devel-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	Yet another message interface on Emacsen
+COMMENT=	Mail and news system for Emacs
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_EMACS=	yes
-USE_GITHUB=	yes
+BUILD_DEPENDS=	emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR} \
+		semi${EMACS_PKGNAMESUFFIX}>0:editors/semi@${EMACS_FLAVOR} \
+		x-face-e21${EMACS_PKGNAMESUFFIX}>0:mail/x-face-e21@${EMACS_FLAVOR}
+RUN_DEPENDS=	emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR} \
+		semi${EMACS_PKGNAMESUFFIX}>0:editors/semi@${EMACS_FLAVOR}
 
+USES=		emacs
+EMACS_FLAVORS_EXCLUDE=	devel_full devel_nox # www/emacs-w3m fails to configure
+USE_GITHUB=	yes
 GH_TAGNAME=	770d54f
 
+NO_ARCH=	yes
 SNAPDATE=	20170628
+CONFLICTS=	wanderlust
 
-CONFLICTS=	wanderlust-*-2.14.*
+MAKE_ARGS+=	EMACS=${EMACS_CMD} \
+		FLAGS="-batch -q -no-site-file" \
+		LISPDIR=${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR} \
+		INFODIR=${STAGEDIR}${PREFIX}/${INFO_PATH} \
+		PIXMAPDIR=${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/etc/wl/icons
+
+INFO=		wl wl-ja
+PORTDATA=	ja.Emacs
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.pre.mk>
-
-MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}
-MIMEUI_PRODUCT=	semi
-MIMEUI_VERSION=	1.14
-MIMEUI_COOKIE=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}-${MIMEUI_VERSION}.FreeBSD-packages
-
-BUILD_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:editors/${MIMEUI_PORT_NAME}
-RUN_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:editors/${MIMEUI_PORT_NAME}
-
-.if (${EMACS_NAME} == "emacs") && (${EMACS_MAJOR_VER} >= 22)
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/x-face-e21.el:mail/x-face-e21
-.endif
-
-EMACS_W3M_PORT_NAME=	emacs-w3m
-EMACS_W3M_LISP_FILE=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/w3m/shimbun.el
-
-.if exists(${EMACS_W3M_LISP_FILE})
-BUILD_DEPENDS+=	${EMACS_W3M_LISP_FILE}:www/${EMACS_W3M_PORT_NAME}
-RUN_DEPENDS+=	${EMACS_W3M_LISP_FILE}:www/${EMACS_W3M_PORT_NAME}
-SHIMBUN=	""
-.else
-SHIMBUN=	"@comment "
-.endif
-
-INFODIR=	${PREFIX}/info
-INFO=		wl wl-ja
-UTILSDIR=	${EMACS_VERSION_SITE_LISPDIR}/wl
-WL_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/wl
-WL_ICONDIR=	${EMACS_LIBDIR_WITH_VER}/etc/wl/icons
-STARTUPDIR=	${EMACS_VERSION_SITE_LISPDIR}
-
-DOCSDIR_JA=	${PREFIX}/share/doc/ja/wanderlust
-DOCS=		README.md NEWS doc/wl.texi
-DOCS_JA=	README.ja NEWS.ja doc/wl-ja.texi
-EXAMPLESLANG=	en ja
-EXAMPLES=	dot.addresses dot.folders dot.wl
-UTILS=		bbdb-wl.el
-
-PLIST_SUB+=	DIRSECTION=${DIRSECTION} \
-		STARTUPDIR=${STARTUPDIR} \
-		WL_LISPDIR=${WL_LISPDIR} \
-		WL_ICONDIR=${WL_ICONDIR} \
-		SHIMBUN=${SHIMBUN} \
-		DOCSDIR_JA=${DOCSDIR_JA:S,^${PREFIX}/,,}
-
-PLIST=		${PKGDIR}/pkg-plist
-MAKE_ARGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD} \
-		LISPDIR=${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
-		INFODIR=${STAGEDIR}${INFODIR} \
-		PIXMAPDIR=${STAGEDIR}${PREFIX}/${EMACS_LIBDIR_WITH_VER}/etc/wl/icons \
-		FLAGS="-batch -q -no-site-file"
 
 post-extract:
 	@${CP} ${FILESDIR}/WL-CFG ${WRKSRC}
 
-post-configure:
-	${REINPLACE_CMD} -e 's|%%EMACS_LIBDIR_WITH_VER%%|${PREFIX}/${EMACS_LIBDIR_WITH_VER}|' ${WRKSRC}/WL-MK
-
 post-install:
-.if !exists(${EMACS_W3M_LISP_FILE})
-	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/wl
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MAKE} install-docs
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MAKE} install-examples
-.endif
-	@${MAKE} install-utils
+	${INSTALL} -d ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/wl \
+		${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/wanderlust-startup.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} \
+		${WRKSRC}/elmo/elmo-shimbun.el \
+		${WRKSRC}/utils/bbdb-wl.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/wl
+	${INSTALL_DATA} ${WRKSRC}/etc/ja.Emacs ${STAGEDIR}${DATADIR}
 
-# local targets
-install-docs:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR_JA}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for i in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR_JA}
+post-install-DOCS-on:
+	${INSTALL} -d ${STAGEDIR}/${DOCSDIR}
+.for f in README* NEWS* doc/wl*.texi
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-install-examples:
-.for l in ${EXAMPLESLANG}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/$l
-	for i in ${EXAMPLES} ; do \
-		${INSTALL_DATA} ${WRKSRC}/samples/$l/$$i ${STAGEDIR}${EXAMPLESDIR}/$l; \
-	done
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/etc/ja.Emacs ${STAGEDIR}${EXAMPLESDIR}/ja
+post-install-EXAMPLES-on:
+	${INSTALL} -d ${STAGEDIR}/${EXAMPLESDIR}
+	(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} "en ja" \
+		${STAGEDIR}${EXAMPLESDIR})
+	${RM} ${STAGEDIR}${EXAMPLESDIR}/en/*.orig \
+		${STAGEDIR}${EXAMPLESDIR}/ja/*.orig
 
-install-utils:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${UTILSDIR}
-.for i in ${UTILS}
-	${INSTALL_DATA} ${WRKSRC}/utils/${i} ${STAGEDIR}${PREFIX}/${UTILSDIR}
-.endfor
-	@${MKDIR} ${PREFIX}/${STARTUPDIR}
-	@${INSTALL_DATA} ${FILESDIR}/wanderlust-startup.el ${STAGEDIR}${PREFIX}/${STARTUPDIR}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

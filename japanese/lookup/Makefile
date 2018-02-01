@@ -6,40 +6,19 @@ PORTVERSION=	1.4.1
 PORTREVISION=	19
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/lookup/dist/
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@utahime.org
-COMMENT=	Search interface on ${EMACS_PORT_NAME} for CD-ROM books, etc
+COMMENT=	Emacs search interface for CD-ROM books, etc
 
 LICENSE=	GPLv2
 
-USE_EMACS=	yes
+USES=		emacs
 
-INFO?=		lookup lookup-guide
-
-.include <bsd.port.pre.mk>
-
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
-ELISPDIR=	${EMACSDIR}/lisp/lookup
-MANIFEST=	MANIFEST.lookup
-.else
-ELISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/lookup
-PLIST_SUB=	ELISPDIR=${EMACS_VERSION_SITE_LISPDIR}
-.endif
+EMACS_FLAVORS_EXCLUDE=	devel_full and devel_nox # fail to build
+INFO=		lookup lookup-guide
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
-		--with-lispdir=${ELISPDIR}
+		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/lookup
 
-post-install:
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-	${RM} ${WRKDIR}/${MANIFEST}
-	emacsdir=`${ECHO_CMD} ${EMACSDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
-	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \
-		${SED} -e "s;^$${emacsdir}/;;" > ${WRKDIR}/${MANIFEST}
-	${MKDIR} ${EMACSDIR}/pkginfo
-	${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
-		${EMACSDIR}/pkginfo/
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

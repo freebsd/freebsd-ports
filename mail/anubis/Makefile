@@ -43,7 +43,7 @@ OPTIONS_EXCLUDE+=	PAM
 .endif
 
 EMACS_DESC=		Install EMACS lisp files (requires emacs)
-EMACS_USE=		EMACS=yes
+EMACS_USES=		emacs:build
 EMACS_CONFIGURE_ON=	--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}/anubis
 EMACS_CONFIGURE_OFF=	--with-lispdir=no
 

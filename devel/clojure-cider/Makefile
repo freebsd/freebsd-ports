@@ -3,23 +3,24 @@
 PORTNAME=	clojure-cider
 PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Clojure IDE and REPL for Emacs
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	clojure-mode.el>0:lang/clojure-mode.el \
-		dash.el>0:devel/dash.el \
-		epl.el>0:devel/epl.el \
-		pkg-info.el>0:devel/pkg-info.el
+RUN_DEPENDS=	clojure-mode.el${EMACS_PKGNAMESUFFIX}>0:lang/clojure-mode.el@${EMACS_FLAVOR} \
+		dash.el${EMACS_PKGNAMESUFFIX}>0:devel/dash.el@${EMACS_FLAVOR} \
+		epl.el${EMACS_PKGNAMESUFFIX}>0:devel/epl.el@${EMACS_FLAVOR} \
+		pkg-info.el${EMACS_PKGNAMESUFFIX}>0:devel/pkg-info.el@${EMACS_FLAVOR}
 
+USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	clojure-emacs
 GH_PROJECT=	cider
-
-USE_EMACS=	yes
 
 NO_BUILD=	yes
 NO_ARCH=	yes

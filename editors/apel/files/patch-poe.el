@@ -714,7 +714,7 @@
 +       (prog1
 +	   (buffer-string)
 +	 (kill-buffer nil)))))
- 
+
  ;; Emacs 20.1 and later: (combine-after-change-calls &rest BODY)
  (defmacro-maybe combine-after-change-calls (&rest body)
 @@ -1056,20 +1056,20 @@ STRING should be given if the last searc
@@ -752,7 +752,20 @@
  If second arg FIXEDCASE is non-nil, do not alter case of replacement text.
  Otherwise maybe capitalize the whole text, or maybe just word initials,
  based on the replaced text.
-@@ -1090,38 +1090,38 @@ Leaves point at end of replacement text.
+@@ -1080,48 +1080,48 @@ then capitalize each word in NEWTEXT.
+
+ If third arg LITERAL is non-nil, insert NEWTEXT literally.
+ Otherwise treat `\' as special:
+-  `\&' in NEWTEXT means substitute original matched text.
+-  `\N' means substitute what matched the Nth `\(...\)'.
++  `\\&' in NEWTEXT means substitute original matched text.
++  `\\N' means substitute what matched the Nth `\\(...\\)'.
+        If Nth parens didn't match, substitute nothing.
+-  `\\' means insert one `\'.
++  `\\\\' means insert one `\\'.
+ FIXEDCASE and LITERAL are optional arguments.
+ Leaves point at end of replacement text.
+
  The optional fourth argument STRING can be a string to modify.
  In that case, this function creates and returns a new string
  which is made by replacing the part of STRING that was matched."
@@ -823,7 +836,20 @@
  If second arg FIXEDCASE is non-nil, do not alter case of replacement text.
  Otherwise maybe capitalize the whole text, or maybe just word initials,
  based on the replaced text.
-@@ -1142,24 +1142,24 @@ Leaves point at end of replacement text.
+@@ -1132,34 +1132,34 @@ then capitalize each word in NEWTEXT.
+
+ If third arg LITERAL is non-nil, insert NEWTEXT literally.
+ Otherwise treat `\' as special:
+-  `\&' in NEWTEXT means substitute original matched text.
+-  `\N' means substitute what matched the Nth `\(...\)'.
++  `\\&' in NEWTEXT means substitute original matched text.
++  `\\N' means substitute what matched the Nth `\\(...\\)'.
+        If Nth parens didn't match, substitute nothing.
+-  `\\' means insert one `\'.
++  `\\\\' means insert one `\'.
+ FIXEDCASE and LITERAL are optional arguments.
+ Leaves point at end of replacement text.
+
  The optional fourth argument STRING can be a string to modify.
  In that case, this function creates and returns a new string
  which is made by replacing the part of STRING that was matched."

@@ -25,7 +25,7 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:japanese/ruby-romkan \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rubydir=${RUBY_SITELIBDIR}
-USES=		autoreconf
+USES+=		autoreconf
 USE_RUBY=	yes
 
 .if !defined(SLAVE_PORT)

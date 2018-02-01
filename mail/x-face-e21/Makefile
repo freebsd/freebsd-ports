@@ -3,21 +3,19 @@
 
 PORTNAME=	x-face-e21
 PORTVERSION=	20070306
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.jpl.org/elips/
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}.el
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	X-Face utilities for Emacs 21 (and possibly 22)
+COMMENT=	X-Face utilities for Emacs
 
 RUN_DEPENDS=	uncompface:mail/faces
 
-USE_EMACS=	yes
-
-.include <bsd.port.pre.mk>
+USES=		emacs
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}
@@ -28,14 +26,14 @@ PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/${DISTNAME} \
 		${EMACS_VERSION_SITE_LISPDIR}/${DISTNAME}c
 
 do-build:
-	@cd ${WRKSRC} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
-		-f batch-byte-compile ${DISTNAME}
+	@(cd ${WRKSRC} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
+		-f batch-byte-compile ${DISTNAME})
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME} \
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} \
 		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}c \
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}c \
 		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

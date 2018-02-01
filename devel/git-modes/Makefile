@@ -3,10 +3,10 @@
 
 PORTNAME=	git-modes
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel elisp
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	GNU Emacs modes for Git-related files
@@ -14,11 +14,10 @@ COMMENT=	GNU Emacs modes for Git-related files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		emacs gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
-USES=		gmake
-USE_EMACS=	yes
 PORTDOCS=	README.md
 NO_ARCH=	yes
 

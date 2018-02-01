@@ -3,67 +3,69 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU
-PKGNAMESUFFIX?=	25
 
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	emacs@FreeBSD.org
 COMMENT=	GNU editing macros
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL?=	emacs-devel-[0-9]* emacs-nox11-[0-9]*
+BROKEN_aarch64=	Fails to link: missing sbrk
+CONFLICTS_INSTALL=	emacs-devel emacs-devel_nox
 
-BROKEN_aarch64=		Fails to link: missing sbrk
+FLAVORS=		full canna nox
+full_CONFLICTS_INSTALL=	emacs-canna emacs-nox
+canna_CONFLICTS_INSTALL=	emacs emacs-nox
+canna_PKGNAMESUFFIX=	-canna
+canna_DESCR=		${.CURDIR}/pkg-descr-canna
+canna_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
+nox_CONFLICTS_INSTALL=	emacs emacs-canna
+nox_PKGNAMESUFFIX=	-nox
 
+USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
+
+CPE_VENDOR=	gnu
 EMACS_VER=	25.3
 GNU_CONFIGURE=	yes
-USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
-# Building with GCC 4.6+ requires it; remove after 9.3 EOL
-LDFLAGS+=	${ncurses_ARGS:Mport:C/.+/-ltinfo/}
 INFO_PATH=	${DATADIR_REL}/info
-CPE_VENDOR=	gnu
 
 SUB_FILES=	sources.el
-SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
-SUB_LIST+=	EMACS_VER=${EMACS_VER} # sources.el
+SUB_LIST=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET} \
+		EMACS_VER=${EMACS_VER} # sources.el
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-gameuser=games:games
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 
-INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
-	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc	\
-	ert eshell eudc eww flymake forms gnus htmlfontify idlwave ido info	\
-	mairix-el message mh-e newsticker nxml-mode octave-mode org pcl-cvs pgg	\
-	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar	\
+INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
+	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc \
+	ert eshell eudc eww flymake forms gnus htmlfontify idlwave ido info \
+	mairix-el message mh-e newsticker nxml-mode octave-mode org pcl-cvs pgg \
+	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar \
 	srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
-OPTIONS_DEFINE=	ACL CANNA DBUS GNUTLS LLDB MODULES SOURCES X11 XML
-
-OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
-OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
-OPTIONS_RADIO_SOUND=		ALSA OSS
-OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
-OPTIONS_GROUP=			GRAPHICS NEEDX11
-OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
-OPTIONS_GROUP_NEEDX11=		GCONF GSETTINGS M17N OTF SCROLLBARS XFT XIM     \
-				XWIDGETS
-
-OPTIONS_DEFAULT?=	ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK3 JPEG KQUEUE    \
-			M17N MAGICK MODULES OSS OTF PNG SCROLLBARS SOURCES SVG  \
+OPTIONS_DEFINE=	ACL DBUS GNUTLS LLDB MODULES SOURCES X11 XML
+OPTIONS_DEFAULT=	ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK3 JPEG KQUEUE  \
+			M17N MAGICK MODULES OSS OTF PNG SCROLLBARS SOURCES SVG \
 			TIFF X11 XFT XIM XML XPM
+OPTIONS_SUB=	YES
+OPTIONS_GROUP=	GRAPHICS NEEDX11
+OPTIONS_GROUP_GRAPHICS=	CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
+OPTIONS_GROUP_NEEDX11=	GCONF GSETTINGS M17N OTF SCROLLBARS XFT XIM XWIDGETS
+OPTIONS_RADIO=	FILENOTIFY SOUND X11TOOLKIT
+OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
+OPTIONS_RADIO_SOUND=	ALSA OSS
+OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
 
 ACL_DESC=	Access control list support
 CAIRO_DESC=	Experimental Cairo library support     (implies PNG, XFT)
 CANNA_DESC=	Japanese input support
-FILENOTIFY_DESC=File notification support
+FILENOTIFY_DESC=	File notification support
 GFILE_DESC=	File notification via gfile
 GRAPHICS_DESC=	Graphics support (each implies X11)
 GSETTINGS_DESC=	GSettings API for application settings
@@ -75,17 +77,15 @@ M17N_DESC=	M17N for text-shaping                  (implies XFT)
 MODULES_DESC=	Dynamic modules support
 NEEDX11_DESC=	Other X11-dependent (each implies X11)
 OTF_DESC=	Opentype fonts                         (implies XFT)
-SCROLLBARS_DESC=Toolkit scroll-bars
+SCROLLBARS_DESC=	Toolkit scroll-bars
 SOURCES_DESC=	Install sources
 SVG_DESC=	Scalable vector graphics support       (implies PNG)
 X11_DESC=	X window system support
-X11TOOLKIT_DESC=X11 toolkit (each implies X11)
+X11TOOLKIT_DESC=	X11 toolkit (each implies X11)
 XAW3D_DESC=	Athena3D widgets
 XAW_DESC=	Athena widgets
 XIM_DESC=	X Input Method
 XWIDGETS_DESC=	GTK widgets in Emacs buffers           (requires GTK3)
-
-OPTIONS_SUB=		YES
 
 ACL_CONFIGURE_ENABLE=	acl
 ALSA_CONFIGURE_ON=	--with-sound=alsa
@@ -93,12 +93,6 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 CAIRO_USE=		GNOME=cairo
 CAIRO_CONFIGURE_WITH=	cairo
 CAIRO_IMPLIES=		PNG XFT X11
-CANNA_CONFIGURE_WITH=	canna
-CANNA_PATCH_SITES=	http://www.gentei.org/~yuuji/software/emacs25canna/ \
-			http://distfiles.pirateparty.in/ashish/ \
-			LOCAL/ashish
-CANNA_PATCHFILES=	emacs25.1canna-20160919.diff.gz
-CANNA_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=	dbus
 GCONF_USE=		GNOME=gconf2
@@ -111,7 +105,7 @@ GIF_IMPLIES=		X11
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 GSETTINGS_USE=		GNOME=glib20
-GSETTINGS_CONFIGURE_WITH=gsettings
+GSETTINGS_CONFIGURE_WITH=	gsettings
 GSETTINGS_IMPLIES=	DBUS X11
 GTK2_USE=		GNOME=cairo,gtk20
 GTK2_USES=		gettext-runtime
@@ -147,7 +141,7 @@ OTF_IMPLIES=		X11 XFT
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
 PNG_IMPLIES=		X11
-SCROLLBARS_CONFIGURE_WITH=toolkit-scroll-bars
+SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 SCROLLBARS_IMPLIES=	X11
 SVG_USE=		GNOME=cairo,librsvg2
 SVG_CONFIGURE_WITH=	rsvg
@@ -181,9 +175,34 @@ XPM_USE=		XORG=xpm
 XPM_CONFIGURE_WITH=	xpm
 XPM_IMPLIES=		X11
 XWIDGETS_USE=		XORG=xcomposite
-XWIDGETS_CONFIGURE_WITH=xwidgets
+XWIDGETS_CONFIGURE_WITH=	xwidgets
 XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 XWIDGETS_IMPLIES=	GTK3
+
+.if ${FLAVOR:U} == canna
+CONFIGURE_WITH=		canna
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES=		http://www.gentei.org/~yuuji/software/emacs25canna/ \
+			http://distfiles.pirateparty.in/ashish/ \
+			LOCAL/ashish
+PATCHFILES=		emacs25.2canna-20170507.diff.gz
+PLIST_FILES+=		${DATADIR}/${EMACS_VER}/lisp/canna.el.gz \
+			${DATADIR}/${EMACS_VER}/lisp/canna.elc \
+			${DATADIR}/${EMACS_VER}/lisp/isearch-ext.el.gz \
+			${DATADIR}/${EMACS_VER}/lisp/isearch-ext.elc \
+			${SOURCES}${DATADIR}/${EMACS_VER}/src/canna.c
+.elif ${FLAVOR:U} == nox
+OPTIONS_EXCLUDE=	ALSA CAIRO DBUS GCONF GIF GSETTINGS GTK2 GTK3 JPEG \
+			M17N MAGICK MOTIF OSS OTF PNG SCROLLBARS SVG TIFF XAW \
+			XAW3D X11 XFT XIM XPM XWIDGETS
+CONFIGURE_ARGS+=	--with-sound=no --without-cairo --without-dbus \
+			--without-gconf --without-gif --without-gsettings \
+			--with-x-toolkit=no --without-jpeg --without-m17n-flt \
+			--without-imagemagick --without-libotf --without-png \
+			--without-toolkit-scroll-bars --without-rsvg \
+			--without-tiff --without-xim --without-xpm \
+			--without-xwidgets
+.endif
 
 .include <bsd.port.options.mk>
 

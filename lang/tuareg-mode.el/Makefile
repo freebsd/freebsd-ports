@@ -3,25 +3,25 @@
 
 PORTNAME=	tuareg-mode
 PORTVERSION=	2.0.8
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	lang elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Emacs major mode for editing Caml code
 
 LICENSE=	GPLv2
 
-USE_EMACS=	yes
+USES=		emacs
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	ocaml
 GH_PROJECT=	tuareg
 
 OPTIONS_DEFINE=	DOCS
 ELISP_FILES=	ocamldebug.el tuareg.el
 .for f in ${ELISP_FILES}
-PLIST_FILES+=	%%EMACS_SITE_LISPDIR%%/$f %%EMACS_SITE_LISPDIR%%/$fc
+PLIST_FILES+=	${EMACS_SITE_LISPDIR}/$f ${EMACS_SITE_LISPDIR}/$fc
 .endfor
 
 PORTDOCS=	README.md

@@ -2,26 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	haskell-mode
-PORTVERSION=	16.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=v
+DISTVERSION=	16.1
+PORTREVISION=	2
 CATEGORIES=	lang elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Emacs lisp mode for editing haskell programs
 
 LICENSE=	GPLv3
 
-USE_EMACS=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-GH_ACCOUNT=	haskell
-PORTDOCS=	NEWS README.md
+USES=		emacs gmake
 USE_GITHUB=	yes
-USES=		gmake
+GH_ACCOUNT=	haskell
+
+PORTDOCS=	NEWS README.md
 ALL_TARGET=	haskell-mode-autoloads.el
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 ELISPDIR=	${PREFIX}/${PLIST_DIRS}
 ELISPFILES=	ghc-core.el ghci-script-mode.el haskell-align-imports.el \

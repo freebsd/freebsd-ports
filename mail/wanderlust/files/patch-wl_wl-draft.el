@@ -1,6 +1,6 @@
---- wl/wl-draft.el.orig	2009-09-23 20:33:55.000000000 +0900
-+++ wl/wl-draft.el	2009-09-23 20:34:31.000000000 +0900
-@@ -147,10 +147,6 @@
+--- wl/wl-draft.el.orig	2005-03-20 13:10:03 UTC
++++ wl/wl-draft.el
+@@ -147,10 +147,6 @@ e.g.
  	     (if (eq wl-smtp-connection-type 'ssl)
  		 #'open-ssl-stream
  	       smtp-open-connection-function))

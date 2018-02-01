@@ -1,6 +1,6 @@
---- utils/ptexinfmt.el.orig
+--- utils/ptexinfmt.el.orig	2005-02-24 08:16:41 UTC
 +++ utils/ptexinfmt.el
-@@ -68,50 +68,50 @@
+@@ -68,50 +68,50 @@ This is last argument in `ptexinfmt-brok
    "Declare a symbol FACILITY is broken if ASSERTION is nil.
  DOCSTRING will be printed if ASSERTION is nil and
  `ptexinfmt-disable-broken-notice-flag' is nil."
@@ -69,7 +69,7 @@
  
  ;; sort -fd
  (ptexinfmt-broken-facility texinfo-format-printindex
-@@ -509,7 +509,7 @@
+@@ -509,7 +509,7 @@ For example, @verb\{|@|\} results in @ a
    (goto-char texinfo-command-start))
  
  ;; @,{c}	==>	c,	cedilla accent
