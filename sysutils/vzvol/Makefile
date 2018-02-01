@@ -2,10 +2,10 @@
 
 PORTNAME=		vzvol
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.6.0
+DISTVERSION=		0.6.1
 CATEGORIES=		sysutils
 
-MAINTAINER=		rainbow@purlinux.org
+MAINTAINER=		rainbow@sanitylinux.org
 COMMENT=		Feature-rich ZFS zvol management tool
 
 LICENSE=		BSD2CLAUSE
