@@ -1,9 +1,9 @@
---- packages/modplug/fpmake.pp.orig	2015-11-13 21:15:29 UTC
-+++ packages/modplug/fpmake.pp
-@@ -17,7 +17,7 @@ begin
+--- packages/modplug/fpmake.pp	2017-09-02 11:48:24.000000000 -0500
++++ packages/modplug/fpmake.pp	2017-12-12 12:24:14.440128000 -0500
+@@ -17,7 +17,7 @@
      P.Directory:=ADirectory;
  {$endif ALLPACKAGES}
-     P.Version:='3.0.2';
+     P.Version:='3.0.4';
 -    P.OSes := [linux];
 +    P.OSes := [linux,dragonfly,freebsd];
      P.SourcePath.Add('src');

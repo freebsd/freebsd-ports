@@ -181,6 +181,7 @@
     SUBDIR += fpc-googleapi
     SUBDIR += fpc-httpd22
     SUBDIR += fpc-httpd24
+    SUBDIR += fpc-libmicrohttpd
     SUBDIR += free-sa-devel
     SUBDIR += freeway
     SUBDIR += fswiki
