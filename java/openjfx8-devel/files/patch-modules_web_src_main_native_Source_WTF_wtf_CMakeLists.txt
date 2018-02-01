@@ -1,6 +1,6 @@
---- modules/web/src/main/native/Source/WTF/wtf/CMakeLists.txt.orig	2017-09-08 16:56:55 UTC
+--- modules/web/src/main/native/Source/WTF/wtf/CMakeLists.txt.orig	2018-01-16 01:40:56 UTC
 +++ modules/web/src/main/native/Source/WTF/wtf/CMakeLists.txt
-@@ -309,6 +309,7 @@ list(APPEND WTF_SOURCES
+@@ -343,6 +343,7 @@ list(APPEND WTF_SOURCES
  )
  set(WTF_SYSTEM_INCLUDE_DIRECTORIES
      ${ICU_INCLUDE_DIRS}
