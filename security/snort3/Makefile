@@ -40,6 +40,12 @@ DEBUG_CONFIGURE_DISABLE=	corefiles
 DEBUG_MAKE_ENV=		DONTSTRIP="yes"
 LRGPCAP_CONFIGURE_ENABLE=	large-pcap
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1004000
+EXTRA_PATCHES=	${PATCHDIR}/freebsd103_patch-src_memory_memory__allocator.h
+.endif
+
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
@@ -49,4 +55,4 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 CONFLICTS=	snort-2*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
