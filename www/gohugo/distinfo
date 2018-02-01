@@ -1,6 +1,6 @@
-TIMESTAMP = 1516656036
-SHA256 (gohugo/gohugoio-hugo-v0.34_GH0.tar.gz) = 4ba991d4de650a97ad51893ce707788b87190bf487f6b13ad88111540469787d
-SIZE (gohugo/gohugoio-hugo-v0.34_GH0.tar.gz) = 22042849
+TIMESTAMP = 1517430895
+SHA256 (gohugo/gohugoio-hugo-v0.35_GH0.tar.gz) = dfef416fe3a0355caef0210d0e7530383f6ec320ce0891431ab7c039b31a86c4
+SIZE (gohugo/gohugoio-hugo-v0.35_GH0.tar.gz) = 22354909
 SHA256 (gohugo/BurntSushi-toml-a368813_GH0.tar.gz) = 68dc067c4105cd20a642ddf1f4acaada7474c1b58e5b249d4bd9b0d7e8edebc2
 SIZE (gohugo/BurntSushi-toml-a368813_GH0.tar.gz) = 42252
 SHA256 (gohugo/PuerkitoBio-purell-0bcb03f_GH0.tar.gz) = ade9e6e2a5d1d79daaf2d729f450c482ff0aa316ea0a1d9e5e3f7a753d05c49c
