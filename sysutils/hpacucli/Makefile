@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/brooks
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HP configuration utility for Smart Array RAID cards
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	relies on compatXx features that are x86-specific
+
 RUN_DEPENDS=	compat4x-i386>0:misc/compat4x \
 		compat5x-${ARCH}>0:misc/compat5x
 
