@@ -3,6 +3,7 @@
 
 PORTNAME=	zcad
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	LOCAL/danfe
 DISTNAME=	${PORTNAME}-trunk-r2259
@@ -16,7 +17,7 @@ USES=		tar:xz
 USE_FPC=	cairo fcl-base fcl-image fcl-json fcl-stl fcl-xml opengl \
 		pasjpeg rtl-extra rtl-objpas x11
 
-LAZARUS_VER=	1.6.4
+LAZARUS_VER=	1.8.0
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp \
 		--lazarusdir=${LAZARUS_DIR}
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
