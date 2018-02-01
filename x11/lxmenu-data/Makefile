@@ -16,9 +16,11 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 USES=		gettext gmake localbase tar:xz
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
+NO_ARCH=	yes
 
 PORTDOCS=	AUTHORS README TODO
+
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
