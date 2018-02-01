@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-desktop
 PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome3
 
@@ -17,18 +17,15 @@ RUN_DEPENDS=	xkeyboard-config>=0:x11/xkeyboard-config \
 		libxkbfile>=0:x11/libxkbfile
 
 USE_XORG=	x11 xrandr xext
-USES=		autoreconf gettext gmake libtool pathfix pkgconfig \
-		shebangfix tar:xz
+USES=		autoreconf gettext gmake libtool localbase:ldflags pathfix \
+		pkgconfig python:2,run shebangfix tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 SHEBANG_FILES=	files/usr/bin/cinnamon-desktop-migrate-mediakeys
-python_OLD_CMD=	/usr/bin/python2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.cinnamon.desktop.a11y.applications.gschema.xml \
 		org.cinnamon.desktop.a11y.keyboard.gschema.xml \
