@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ess
-DISTVERSION=	16.04
-PORTREVISION=	1
+DISTVERSION=	17.11
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
 		http://stat.ethz.ch/ESS/downloads/ess/
