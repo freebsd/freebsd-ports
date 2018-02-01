@@ -25,7 +25,7 @@ post-patch:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/man/man1
 
-regression-test:
+do-test:
 	${RM} -r ${WRKDIR}/regression-test1
 	${MKDIR} ${WRKDIR}/regression-test1
 	${MV} ${WRKSRC}/*.[cho] ${WRKDIR}/regression-test1
