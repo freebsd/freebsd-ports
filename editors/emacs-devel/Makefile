@@ -7,24 +7,30 @@ PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	emacs@FreeBSD.org
 COMMENT=	GNU editing macros
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	emacs25-[0-9]* emacs-nox11-[0-9]*
+CONFLICTS_INSTALL=	emacs emacs-canna emacs-nox
 
+FLAVORS=		full nox
+full_CONFLICTS_INSTALL=	emacs-devel_nox
+full_PKGNAMESUFFIX=	-devel
+nox_CONFLICTS_INSTALL=	emacs-devel
+nox_PKGNAMESUFFIX=	-devel_nox
+
+USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	6b8e9b7
+GH_TAGNAME=	b3fb0d4
 
-EMACS_VER=	27.0.50
-EMACS_REV=	20171118
-GNU_CONFIGURE=	yes
-USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
-INFO_PATH=	${DATADIR_REL}/info
 CPE_VENDOR=	gnu
+EMACS_VER=	27.0.50
+EMACS_REV=	20180122
+GNU_CONFIGURE=	yes
+INFO_PATH=	${DATADIR_REL}/info
 
 SUB_FILES=	sources.el
 SUB_LIST=	EMACS_VER=${EMACS_VER}
@@ -33,33 +39,29 @@ CONFIGURE_ARGS=	--with-gameuser=games:games
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 
-INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
-	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc	\
-	ert eshell eudc eww flymake forms gnus htmlfontify idlwave ido info	\
-	mairix-el message mh-e newsticker nxml-mode octave-mode org pcl-cvs pgg	\
-	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar	\
+INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
+	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc \
+	ert eshell eudc eww flymake forms gnus htmlfontify idlwave ido info \
+	mairix-el message mh-e newsticker nxml-mode octave-mode org pcl-cvs pgg \
+	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar \
 	srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
-MAKE_JOBS_UNSAFE=	yes
-
 OPTIONS_DEFINE=	ACL DBUS GNUTLS LCMS2 LLDB MODULES SOURCES THREADS X11 XML
-
-OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
+OPTIONS_DEFAULT=	ACL DBUS FREEDESKTOP GCONF GIF GNUTLS GSETTINGS GTK3 \
+			JPEG KQUEUE LCMS2 M17N MAGICK MODULES OSS OTF PNG \
+			SCROLLBARS SOURCES SVG THREADS TIFF X11 XFT XIM XML XPM
+OPTIONS_SUB=	YES
+OPTIONS_GROUP=	GRAPHICS NEEDX11
+OPTIONS_GROUP_GRAPHICS=	CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
+OPTIONS_GROUP_NEEDX11=	GCONF GSETTINGS M17N OTF SCROLLBARS XFT XIM XWIDGETS
+OPTIONS_RADIO=	FILENOTIFY SOUND X11TOOLKIT
 OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
-OPTIONS_RADIO_SOUND=		ALSA OSS
+OPTIONS_RADIO_SOUND=	ALSA OSS
 OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
-OPTIONS_GROUP=			GRAPHICS NEEDX11
-OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
-OPTIONS_GROUP_NEEDX11=		GCONF GSETTINGS M17N OTF SCROLLBARS XFT XIM     \
-				XWIDGETS
-
-OPTIONS_DEFAULT=	ACL DBUS FREEDESKTOP GCONF GIF GNUTLS GSETTINGS GTK2    \
-			JPEG KQUEUE LCMS2 M17N MAGICK MODULES OSS OTF PNG SCROLLBARS  \
-			SOURCES SVG THREADS TIFF X11 XFT XIM XML XPM
 
 ACL_DESC=	Access control list support
 CAIRO_DESC=	Experimental Cairo support    (implies PNG, XFT)
-FILENOTIFY_DESC=File notification support
+FILENOTIFY_DESC=	File notification support
 GCONF_DESC=	GConf configuration support
 GFILE_DESC=	File notification via gfile
 GRAPHICS_DESC=	Graphics support (each implies X11)
@@ -83,8 +85,6 @@ XAW_DESC=	Athena widgets
 XIM_DESC=	X Input Method Support
 XWIDGETS_DESC=	GTK widgets in Emacs buffers  (requires GTK3)
 
-OPTIONS_SUB=		YES
-
 ACL_CONFIGURE_ENABLE=	acl
 ALSA_CONFIGURE_ON=	--with-sound=alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -103,7 +103,7 @@ GIF_IMPLIES=		X11
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 GSETTINGS_USE=		GNOME=glib20
-GSETTINGS_CONFIGURE_WITH=gsettings
+GSETTINGS_CONFIGURE_WITH=	gsettings
 GSETTINGS_IMPLIES=	DBUS X11
 GTK2_USE=		GNOME=cairo,gtk20
 GTK2_USES=		gettext
@@ -141,7 +141,7 @@ OTF_IMPLIES=		X11 XFT
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
 PNG_IMPLIES=		X11
-SCROLLBARS_CONFIGURE_WITH=toolkit-scroll-bars
+SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 SCROLLBARS_IMPLIES=	X11
 SVG_USE=		GNOME=cairo,librsvg2
 SVG_CONFIGURE_WITH=	rsvg
@@ -176,9 +176,23 @@ XPM_USE=		XORG=xpm
 XPM_CONFIGURE_WITH=	xpm
 XPM_IMPLIES=		X11
 XWIDGETS_USE=		XORG=xcomposite
-XWIDGETS_CONFIGURE_WITH=xwidgets
+XWIDGETS_CONFIGURE_WITH=	xwidgets
 XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 XWIDGETS_IMPLIES=	GTK3
+
+.if ${FLAVOR:U} == nox
+OPTIONS_EXCLUDE=	ALSA CAIRO DBUS GCONF GIF GSETTINGS GTK2 GTK3 JPEG \
+			LCMS2 M17N MAGICK MOTIF OSS OTF PNG SCROLLBARS SVG TIFF \
+			XAW XAW3D X11 XFT XIM XPM XWIDGETS
+CONFIGURE_ARGS+=	--with-sound=no --without-cairo --without-dbus \
+			--without-gconf --without-gif --without-gsettings \
+			--with-x-toolkit=no --without-jpeg --without-lcms2 \
+			--without-m17n-flt --without-imagemagick \
+			--without-libotf --without-png \
+			--without-toolkit-scroll-bars --without-rsvg \
+			--without-tiff --without-xim --without-xpm \
+			--without-xwidgets
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -203,7 +217,9 @@ post-patch-X11-off:
 
 post-install-SOURCES-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
-	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
-	${INSTALL_DATA} ${WRKDIR}/sources.el ${STAGEDIR}${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
+	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] \
+		${STAGEDIR}${DATADIR}/${EMACS_VER}/src
+	${INSTALL_DATA} ${WRKDIR}/sources.el \
+		${STAGEDIR}${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
 
 .include <bsd.port.mk>

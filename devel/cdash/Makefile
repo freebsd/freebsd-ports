@@ -3,7 +3,7 @@
 
 PORTNAME=	cdash
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cdash.org/wp-content/uploads/2014/11/
 DISTNAME=	CDash-2-2-3

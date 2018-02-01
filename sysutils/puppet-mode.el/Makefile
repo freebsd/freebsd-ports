@@ -3,21 +3,26 @@
 
 PORTNAME=	puppet-mode.el
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Simple mode for editing puppet manifests
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		emacs
 USE_GITHUB=	yes
-GH_PROJECT=	puppet-syntax-emacs
 GH_ACCOUNT=	puppetlabs
+GH_PROJECT=	puppet-syntax-emacs
 GH_TAGNAME=	be5d708
 
+NO_ARCH=	yes
 NO_BUILD=	yes
-USE_EMACS=	yes
 
-PLIST_FILES=	%%EMACS_SITE_LISPDIR%%/puppet-mode.el
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/puppet-mode.el
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/puppet-mode.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}

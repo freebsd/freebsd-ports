@@ -1,6 +1,6 @@
---- Makefile.orig	2009-12-28 01:20:59.000000000 +0900
-+++ Makefile	2009-12-28 01:22:55.000000000 +0900
-@@ -91,7 +91,7 @@
+--- Makefile.orig	2005-01-23 10:10:44 UTC
++++ Makefile
+@@ -91,7 +91,7 @@ install-package:
  		$(PACKAGEDIR) $(PIXMAPDIR)
  
  info:

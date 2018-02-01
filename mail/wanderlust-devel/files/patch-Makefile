@@ -1,6 +1,6 @@
---- Makefile.orig	2008-02-19 20:29:06.000000000 +0900
-+++ Makefile	2009-12-28 01:33:12.000000000 +0900
-@@ -92,7 +92,7 @@
+--- Makefile.orig	2017-06-28 06:06:07 UTC
++++ Makefile
+@@ -91,7 +91,7 @@ install-package:
  		$(PACKAGEDIR) $(PIXMAPDIR)
  
  info:
@@ -9,7 +9,7 @@
  
  install-info:
  	$(EMACS) $(FLAGS) -l WL-MK -f install-wl-info $(INFODIR)
-@@ -110,9 +110,9 @@
+@@ -109,9 +109,9 @@ mostlyclean-dvi:
  clean-dvi: mostlyclean-dvi
  	rm -f doc/*.dvi
  

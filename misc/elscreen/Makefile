@@ -3,27 +3,34 @@
 
 PORTNAME=	elscreen
 PORTVERSION=	1.4.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc elisp
 MASTER_SITES=	ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	GNU screen like utility on Emacsen
+COMMENT=	Emacs utility similar to GNU Screen
 
-RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:editors/apel
+RUN_DEPENDS=	apel${EMACS_PKGNAMESUFFIX}>0:editors/apel@${EMACS_FLAVOR}
 
-USE_EMACS=	yes
+USES=		emacs
 
-EMACS_NO_BUILD_DEPENDS=	YES
+NO_ARCH=	yes
 NO_BUILD=	YES
+
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/elscreen.el
+PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/elscreen.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/elscreen.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ChangeLog README
+
+do-install-DOCS-on:
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 

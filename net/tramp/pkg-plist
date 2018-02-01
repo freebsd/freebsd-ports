@@ -8,8 +8,6 @@
 %%TRAMP_LISPDIR%%/tramp-compat.elc
 %%TRAMP_LISPDIR%%/tramp-ftp.el
 %%TRAMP_LISPDIR%%/tramp-ftp.elc
-%%TRAMP_LISPDIR%%/tramp-gvfs.el
-%%TRAMP_LISPDIR%%/tramp-gvfs.elc
 %%TRAMP_LISPDIR%%/tramp-gw.el
 %%TRAMP_LISPDIR%%/tramp-gw.elc
 %%TRAMP_LISPDIR%%/tramp-loaddefs.el

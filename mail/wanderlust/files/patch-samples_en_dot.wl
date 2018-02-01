@@ -1,5 +1,5 @@
---- samples/en/dot.wl.orig	2009-09-26 19:47:36.000000000 +0900
-+++ samples/en/dot.wl	2009-09-26 19:47:42.000000000 +0900
+--- samples/en/dot.wl.orig	2004-11-26 03:59:36 UTC
++++ samples/en/dot.wl
 @@ -314,7 +314,7 @@
  
  	;; for Emacs21

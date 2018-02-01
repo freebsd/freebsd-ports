@@ -1,6 +1,6 @@
---- samples/en/dot.wl.orig	2009-09-26 19:47:36.000000000 +0900
-+++ samples/en/dot.wl	2009-09-26 19:47:42.000000000 +0900
-@@ -314,7 +314,7 @@
+--- samples/en/dot.wl.orig	2017-06-28 06:06:07 UTC
++++ samples/en/dot.wl
+@@ -327,7 +327,7 @@
  
  	;; for Emacs21
  	((and (not (featurep 'xemacs))

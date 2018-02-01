@@ -2,30 +2,29 @@
 
 PORTNAME=	boiled-mozc
 PORTVERSION=	0.7
-PORTREVISION=	3
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTVERSIONPREFIX=v
+PORTREVISION=	4
 CATEGORIES=	japanese editors elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Wrapper to mozc.el that offers modeless ("boil"ed) input style
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.el.gz:japanese/mozc-el
-RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.el.gz:japanese/mozc-el
+BUILD_DEPENDS=	ja-mozc-el${EMACS_PKGNAMESUFFIX}>0:japanese/mozc-el@${EMACS_FLAVOR}
+RUN_DEPENDS=	ja-mozc-el${EMACS_PKGNAMESUFFIX}>0:japanese/mozc-el@${EMACS_FLAVOR}
 
-GH_ACCOUNT=	tadanagao
-
+USES=		emacs
 USE_GITHUB=	yes
-USE_EMACS=	yes
+GH_ACCOUNT=	tadanagao
 
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}.el \
 		${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}.elc
 
 do-build:
-	@cd ${WRKSRC} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
-		-f batch-byte-compile ${PORTNAME}.el
+	@(cd ${WRKSRC} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
+		-f batch-byte-compile ${PORTNAME}.el)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}

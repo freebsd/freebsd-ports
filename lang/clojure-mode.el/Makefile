@@ -3,20 +3,20 @@
 
 PORTNAME=	clojure-mode.el
 PORTVERSION=	5.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	harrigan-s@outlook.com
 COMMENT=	Emacs lisp module for the Clojure language
 
 LICENSE=	GPLv3
 
+USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	clojure-emacs
 GH_PROJECT=	clojure-mode
-
-USE_EMACS=	yes
 
 NO_ARCH=	yes
 NO_BUILD=	yes

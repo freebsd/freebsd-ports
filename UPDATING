@@ -5,6 +5,45 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180201:
+  AFFECTS: users of editors/emacs* and all ports using Emacs via USES=emacs
+  AUTHOR: jrm@FreeBSD.org
+
+  The Emacs ports framework has been updated to support flavors and the
+  editors/emacs-nox11 port has been replaced by the nox flavors of
+  editors/emacs and editors/emacs-devel.
+
+  Supported Flavors
+  --------------------------------------------------------
+  editor/emacs:        full canna nox
+  editors/emacs-devel: full nox
+  ports using Emacs:   full canna nox devel_full devel_nox
+  --------------------------------------------------------
+
+  For those using pre-built packages, if
+
+     # pkg upgrade
+
+  does not install the new Emacs package, use one of
+
+     # pkg install emacs
+     # pkg install emacs-canna
+     # pkg install emacs-nox
+     # pkg install emacs-devel
+     # pkg install emacs-devel_nox
+
+  For those building their own packages, a flavor other than the default must be
+  specified.  For example, to build editors/emacs with the nox flavor, or to
+  build a port using Emacs with the devel_full flavor use
+
+     # make FLAVOR=nox install
+     # make FLAVOR=devel_full
+
+  An alternative to the default flavor, full, can be set in make.conf.  For
+  example, to set the nox flavor as the default, use
+
+     DEFAULT_VERSIONS+=emacs=nox
+
 20180117:
   AFFECTS: users of x11-toolkits/kf5-kirigami2 and x11/kf5-plasma-framework
   AUTHOR: kde@FreeBSD.org

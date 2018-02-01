@@ -16,15 +16,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USES=		cpe gmake libtool
 USE_RC_SUBR=	radiusd
 USE_SUBMAKE=	yes
 USE_LDCONFIG=	yes
 CPE_PRODUCT=	radius
 CPE_VENDOR=	gnu
+
+CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 DATADIR=	${PREFIX}/share/radius
@@ -52,8 +53,9 @@ MYSQL_CONFIGURE_WITH=		mysql
 PGSQL_USES=			pgsql
 PGSQL_CONFIGURE_WITH=		postgres
 DBM_CONFIGURE_ENABLE=		dbm=ndbm
-EMACS_USE=			emacs=yes
+EMACS_USES=			emacs
 EMACS_CONFIGURE_WITH=		lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}
+EMACS_NO_DEPENDS=		yes
 NLS_USES=			gettext
 NLS_CONFIGURE_OFF=		--disable-nls
 PAM_CONFIGURE_ENABLE=		pam

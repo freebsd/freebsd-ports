@@ -9907,3 +9907,5 @@ www/rubygem-jekyll-watch1|www/rubygem-jekyll-watch|2018-01-31|Has expired: Use w
 www/rubygem-puma2|www/rubygem-puma|2018-01-31|Has expired: Use www/rubygem-puma instead
 www/rubygem-turbolinks-classic|www/rubygem-turbolinks|2018-01-31|Has expired: Use www/rubygem-turbolinks instead
 databases/mysql-proxy||2018-01-31|Has expired: No longer maintained and not recommended for production use
+japanese/migemo-emacs23|japanese/migemo-emacs|2018-02-01|Moved to version agnostic name
+editors/emacs-nox11|editors/emacs@nox|2018-02-01|Moved to a flavored version

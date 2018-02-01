@@ -1,21 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	elixir-mode.el
-PORTVERSION=	2.3.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTVERSION=	2.3.1
+PORTREVISION=	2
 CATEGORIES=	lang
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Emacs major mode for Elixir
 
 LICENSE=	GPLv3
 
+USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 GH_PROJECT=	emacs-elixir
 
-USE_EMACS=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:

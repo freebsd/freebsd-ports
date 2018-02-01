@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-03-07 00:42:29.000000000 +0900
-+++ Makefile.in	2012-03-07 00:45:51.000000000 +0900
-@@ -64,7 +64,7 @@
+--- Makefile.in.orig	2017-12-31 05:59:39 UTC
++++ Makefile.in
+@@ -66,7 +66,7 @@ install-ja: install-lisp install-info-ja
  
  install-lisp: lisp
  	@$(SHELL) $(srcdir)/mkinstalldirs "$(DESTDIR)$(lispdir)";\
@@ -9,7 +9,7 @@
  	  if test -f "$$p"; then\
  	    case "$$p" in\
  	      $(IGNORES)) ;;\
-@@ -86,7 +86,7 @@
+@@ -93,7 +93,7 @@ install-lisp: lisp
  	  fi;\
  	done;\
  	if test -f shimbun/shimbun.elc; then\
