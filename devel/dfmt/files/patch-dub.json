@@ -1,11 +1,11 @@
---- dub.json.orig	2017-02-13 19:03:07 UTC
-+++ dub.json
+--- dub.json.orig	2017-05-22 12:21:31.000000000 -0500
++++ dub.json	2017-12-13 10:20:13.893225000 -0500
 @@ -3,7 +3,6 @@
      "description": "Dfmt is a formatter for D source code",
-     "targetType": "executable",
+     "targetType": "autodetect",
      "license": "BSL-1.0",
 -    "dependencies": {
--      "libdparse": "~>0.7.0-beta.6"
+-      "libdparse": "~>0.7.2-alpha.3"
 -    }
 +    "libs": ["dparse"],
 +    "lflags": ["-L%%LOCALBASE%%/lib/d"],
