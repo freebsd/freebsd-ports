@@ -3,6 +3,7 @@
 
 PORTNAME=	efl
 PORTVERSION=	1.19.2
+PORTREVISION=	1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -23,7 +24,9 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf compiler:c++14-lang gettext-tools gmake iconv jpeg \
-		libtool pathfix pkgconfig shared-mime-info tar:xz
+		libtool pathfix pkgconfig python:2,run shared-mime-info \
+		shebangfix tar:xz
+SHEBANG_FILES=	src/scripts/eina/eina-bench-cmp
 USE_XORG=	x11 xcursor xcomposite xdamage xext xfixes xi xinerama xp \
 		xrandr xrender xtst xscrnsaver
 USE_LDCONFIG=	yes
