@@ -16,8 +16,12 @@ bin/cpu-x
 %%X11%%share/icons/hicolor/256x256/apps/cpu-x.png
 %%X11%%share/icons/hicolor/384x384/apps/cpu-x.png
 %%X11%%share/icons/hicolor/512x512/apps/cpu-x.png
+share/locale/cs_CZ/LC_MESSAGES/cpu-x.mo
 share/locale/fr/LC_MESSAGES/cpu-x.mo
+share/locale/pl/LC_MESSAGES/cpu-x.mo
 share/locale/pt_BR/LC_MESSAGES/cpu-x.mo
+share/locale/ru/LC_MESSAGES/cpu-x.mo
+share/locale/zh/LC_MESSAGES/cpu-x.mo
 %%X11%%share/polkit-1/actions/org.pkexec.cpu-x.policy
 %%X11%%%%DATADIR%%/AMD.png
 %%X11%%%%DATADIR%%/CPU-X.png
@@ -32,5 +36,7 @@ share/locale/pt_BR/LC_MESSAGES/cpu-x.mo
 %%X11%%%%DATADIR%%/UMC.png
 %%X11%%%%DATADIR%%/Unknown.png
 %%X11%%%%DATADIR%%/cpu-x-gtk-3.12.css
+%%X11%%%%DATADIR%%/cpu-x-gtk-3.12-dark.css
 %%X11%%%%DATADIR%%/cpu-x-gtk-3.12.ui
 %%X11%%%%DATADIR%%/cpu-x-gtk-3.20.css
+%%X11%%%%DATADIR%%/cpu-x-gtk-3.20-dark.css
