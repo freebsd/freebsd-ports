@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openjfx8
-DISTVERSION=	8u172-b00
-PORTREVISION=	3
+DISTVERSION=	8u172-b03
 PORTEPOCH=	1
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://github.com/t6/openjfx/releases/download/release/ \
@@ -21,13 +20,11 @@ ONLY_FOR_ARCHS=	amd64 i386
 BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
 		antlr3>0:devel/antlr3 \
 		gradle>=4.0:devel/gradle \
-		${JAVALIBDIR}/junit.jar:java/junit \
-		swt-devel>0:x11-toolkits/swt-devel
+		${JAVALIBDIR}/junit.jar:java/junit
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
-RUN_DEPENDS=	swt-devel>0:x11-toolkits/swt-devel
 
-USES=		gettext-runtime jpeg sqlite
+USES=		gettext-runtime jpeg pkgconfig sqlite
 USE_GL=		gl
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_JAVA=	yes
@@ -35,16 +32,21 @@ JAVA_VERSION=	1.8
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xtst xxf86vm
 
-OPTIONS_DEFINE=	MEDIA TEST WEBKIT
+OPTIONS_DEFINE=	MEDIA SWT TEST WEBKIT
 OPTIONS_DEFAULT=	MEDIA WEBKIT
 OPTIONS_SUB=	yes
 
-MEDIA_DESC=	Build media module
+MEDIA_DESC=	Media module
+SWT_DESC=	SWT support
 
 MEDIA_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 			libsndio.so:audio/sndio
 MEDIA_USES=	gmake
 MEDIA_VARS=	COMPILE_MEDIA=true
+
+SWT_BUILD_DEPENDS=	swt-devel>0:x11-toolkits/swt-devel
+SWT_RUN_DEPENDS=	swt-devel>0:x11-toolkits/swt-devel
+SWT_VARS=	COMPILE_SWT=true
 
 TEST_USES=	display:test
 TEST_VARS=	AWT_TEST=true FULL_TEST=true
@@ -53,8 +55,7 @@ TEST_VARS=	AWT_TEST=true FULL_TEST=true
 WEBKIT_BUILD_DEPENDS=	cmake:devel/cmake
 WEBKIT_IMPLIES=	MEDIA
 WEBKIT_LIB_DEPENDS=	libicui18n.so:devel/icu
-WEBKIT_USES=	bison compiler:c++14-lang gmake gperf perl5 pkgconfig \
-		python:2.7,build
+WEBKIT_USES=	bison compiler:c++14-lang gmake gperf perl5 python:2.7,build
 WEBKIT_USE=	GNOME=libxslt,libxml2 \
 		PERL5=build \
 		RUBY=yes \
@@ -105,12 +106,16 @@ post-patch:
 	@${RM} -r ${WRKSRC}/modules/web/src/main/native/Source/ThirdParty/icu \
 		${WRKSRC}/modules/web/src/main/native/Source/ThirdParty/sqlite
 
+post-patch-SWT-off:
+	@${RM} -r ${WRKSRC}/modules/graphics/src/main/java/com/sun/glass/ui/swt
+
 do-configure:
 	@${MKDIR} ${WRKDIR}/gradle-home
 	@${ECHO_CMD} "NUM_COMPILE_THREADS = ${MAKE_JOBS_NUMBER}" > ${WRKSRC}/gradle.properties
 .for prop in COMPILE_MEDIA COMPILE_WEBKIT AWT_TEST FULL_TEST
 	@${ECHO_CMD} "${prop} = ${${prop}:Ufalse}" >> ${WRKSRC}/gradle.properties
 .endfor
+	@${ECHO_CMD} "BSD.compileSWT = ${COMPILE_SWT:Ufalse};" >> ${WRKSRC}/buildSrc/bsd.gradle
 
 do-build:
 	@cd ${WRKSRC} && ${GRADLE_RUN} zips

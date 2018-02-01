@@ -1,6 +1,6 @@
---- modules/web/src/main/native/Tools/Scripts/webkitdirs.pm.orig	2017-09-08 16:56:55 UTC
+--- modules/web/src/main/native/Tools/Scripts/webkitdirs.pm.orig	2018-01-16 01:40:56 UTC
 +++ modules/web/src/main/native/Tools/Scripts/webkitdirs.pm
-@@ -1957,7 +1957,7 @@ sub generateBuildSystemFromCMakeProject
+@@ -2061,7 +2061,7 @@ sub generateBuildSystemFromCMakeProject
      chdir($buildPath) or die;
  
      # We try to be smart about when to rerun cmake, so that we can have faster incremental builds.

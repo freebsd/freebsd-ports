@@ -1,4 +1,4 @@
---- modules/web/src/main/native/Source/cmake/OptionsJava.cmake.orig	2017-09-08 16:56:55 UTC
+--- modules/web/src/main/native/Source/cmake/OptionsJava.cmake.orig	2018-01-16 01:40:56 UTC
 +++ modules/web/src/main/native/Source/cmake/OptionsJava.cmake
 @@ -52,9 +52,9 @@ elseif (APPLE)
      set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
@@ -13,7 +13,7 @@
      #### ICU-END ####
  
      find_package(LibXml2 2.7.0 REQUIRED)
-@@ -233,8 +233,9 @@ if (CMAKE_MAJOR_VERSION LESS 3)
+@@ -191,8 +191,9 @@ if (CMAKE_MAJOR_VERSION LESS 3)
  endif ()
  
  set(ICU_INCLUDE_DIRS

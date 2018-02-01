@@ -16,7 +16,7 @@
 %%JAVA_HOME%%/jre/lib/%%ARCH%%/libprism_sw.so
 %%JAVA_HOME%%/jre/lib/ext/jfxrt.jar
 %%JAVA_HOME%%/jre/lib/javafx.properties
-%%JAVA_HOME%%/jre/lib/jfxswt.jar
+%%SWT%%%%JAVA_HOME%%/jre/lib/jfxswt.jar
 %%JAVA_HOME%%/lib/ant-javafx.jar
 %%JAVA_HOME%%/lib/javafx-mx.jar
 %%JAVA_HOME%%/lib/packager.jar
