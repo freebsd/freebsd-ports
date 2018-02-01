@@ -9,10 +9,10 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of x11-toolkits/kf5-kirigami2 and x11/kf5-plasma-framework
   AUTHOR: kde@FreeBSD.org
 
-  Files that were previously installed by kf5-kirigami2 get now installed 
-  in kf5-plasma-wramwork. This can lead to a conflict during the upgrade
+  Files that were previously installed by kf5-kirigami2 are now installed 
+  by kf5-plasma-framework. This can lead to a conflict during the upgrade
   of the packages. 
-  It is recommended to first remove the package kf5-krigami2.
+  It is recommended to first remove the package kf5-kirigami2.
 
 20180115
   AFFECTS: users of net-p2p/transmission-daemon
