@@ -14,7 +14,6 @@ include/d/dlib/audio/sample.d
 include/d/dlib/audio/sound.d
 include/d/dlib/audio/synth.d
 include/d/dlib/audio/unmanaged.d
-include/d/dlib/coding/huffman.d
 include/d/dlib/coding/package.d
 include/d/dlib/coding/varint.d
 include/d/dlib/coding/zlib.d
@@ -30,8 +29,10 @@ include/d/dlib/container/queue.d
 include/d/dlib/container/stack.d
 include/d/dlib/core/bitio.d
 include/d/dlib/core/compound.d
+include/d/dlib/core/fiber.d
 include/d/dlib/core/memory.d
 include/d/dlib/core/oop.d
+include/d/dlib/core/ownership.d
 include/d/dlib/core/package.d
 include/d/dlib/core/stream.d
 include/d/dlib/core/thread.d
@@ -74,6 +75,7 @@ include/d/dlib/image/color.d
 include/d/dlib/image/compleximage.d
 include/d/dlib/image/filters/boxblur.d
 include/d/dlib/image/filters/chromakey.d
+include/d/dlib/image/filters/contrast.d
 include/d/dlib/image/filters/convolution.d
 include/d/dlib/image/filters/desaturate.d
 include/d/dlib/image/filters/edgedetect.d
@@ -101,7 +103,6 @@ include/d/dlib/image/resampling/bilinear.d
 include/d/dlib/image/resampling/lanczos.d
 include/d/dlib/image/resampling/nearest.d
 include/d/dlib/image/signal2d.d
-include/d/dlib/image/tone/contrast.d
 include/d/dlib/image/transform.d
 include/d/dlib/image/unmanaged.d
 include/d/dlib/math/affine.d
