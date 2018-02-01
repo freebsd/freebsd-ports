@@ -5,7 +5,7 @@
  @MAKEPYTHON_TRUE@        fi; \
  @MAKEPYTHON_TRUE@        set -x; \
 -@MAKEPYTHON_TRUE@        python setup.py install \
-+@MAKEPYTHON_TRUE@        ${PYTHON_CMD} setup.py install --no-compile \
++@MAKEPYTHON_TRUE@        ${PYTHON_CMD} setup.py install \
  @MAKEPYTHON_TRUE@         --prefix=${prefix} --root=$${DESTDIR:-/} $${OPTSFORPYTHON})
  @MAKEPYTHON_TRUE@clean-local: recollpython-clean
  @MAKEPYTHON_TRUE@recollpython-clean:
