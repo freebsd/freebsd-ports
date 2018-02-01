@@ -2,6 +2,7 @@
 
 PORTNAME=	libsearpc
 PORTVERSION=	3.0.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -18,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_TAGNAME=	12a0126
 
-USES=		autoreconf gettext libtool pathfix pkgconfig python:2
+USES=		autoreconf gettext libtool pathfix pkgconfig python:2.7 shebangfix
+SHEBANG_FILES=	lib/searpc-codegen.py
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
