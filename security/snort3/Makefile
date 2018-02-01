@@ -12,10 +12,8 @@ COMMENT=	Lightweight network intrusion detection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_11=	Segmentation Fault
-BROKEN_FreeBSD_12=	Segmentation Fault
-
-BUILD_DEPENDS=	daq>=2.2.2:net/daq
+BUILD_DEPENDS=	daq>=2.2.2:net/daq \
+		bash>0:shells/bash
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libdnet.so:net/libdnet \
 		libpcap.so:net/libpcap \
@@ -23,7 +21,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libhwloc.so:devel/hwloc
 RUN_DEPENDS=	daq>=2.2.2:net/daq
 
-USES=		autoreconf cpe libtool pathfix pkgconfig ssl
+USES=		cmake compiler:c++11-lang cpe libtool pathfix pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	snortadmin
 GH_PROJECT=	snort3
@@ -40,6 +38,8 @@ DEBUG_CONFIGURE_ENABLE=	debug debug-msgs
 DEBUG_CONFIGURE_DISABLE=	corefiles
 DEBUG_MAKE_ENV=		DONTSTRIP="yes"
 LRGPCAP_CONFIGURE_ENABLE=	large-pcap
+
+.include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
