@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldc
-PORTVERSION=	1.3.0
+PORTVERSION=	1.7.0
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/ldc/releases/download/v${PORTVERSION}/:source \
 		https://github.com/ldc-developers/ldc/releases/download/v${BOOTVER}/:bootstrap
@@ -23,14 +23,13 @@ BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line op
 
 USES=		cmake
 CMAKE_ARGS+=	-DD_COMPILER:STRING="${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/}/bin/ldmd2" \
-		-DD_COMPILER_FLAGS:STRING=${D_COMPILER_FLAGS} \
-		-DD_FLAGS:STRING=${D_FLAGS} \
 		-DBUILD_SHARED_LIBS:STRING="BOTH"
-CC=		clang39
 
-BOOTVER=	0.17.3
+CC=		clang39
+CXX=		clang++39
+
+BOOTVER=	0.17.5
 LDCVER=		${PORTVERSION}
-D_FLAGS=	"-w;"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/-src/}
 
 DISTFILES+=	${PORTNAME}-${BOOTVER}-src.tar.gz:bootstrap
@@ -38,8 +37,7 @@ DISTFILES+=	${PORTNAME}-${BOOTVER}-src.tar.gz:bootstrap
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-D_COMPILER_FLAGS="-m64 -relocation-model=pic"
-D_FLAGS="-m64;-relocation-model=pic"
+CFLAGS+=	-fPIC
 .endif
 
 pre-configure:
