@@ -27,7 +27,7 @@ USE_GNOME=	glib20:build
 GNU_CONFIGURE=	yes
 # A hack to disable gratuitous linking with -lglib-2.0
 CONFIGURE_ENV+=	GLIB_LIBS=-L/var/empty
-CFLAGS+=	-I${SAMBAINCLUDES}
+CFLAGS+=	-I${SAMBAINCLUDES} -DFUSE_USE_VERSION=${FUSE_VERSION}
 LDFLAGS+=	-L${SAMBALIBS}
 SUB_FILES=	pkg-message
 # configure just generated config.h -- we do not need to redo it:
@@ -39,5 +39,17 @@ MAKE_ARGS+=	AUTOHEADER=${TRUE}
 CONFIGURE_ENV+=	ac_cv_lib_iconv_iconv_open=yes
 CONFIGURE_ARGS+=--with-libiconv=native
 .endif
+
+# Uses/fuse.mk should be doing the below:
+.if ${LIBFUSE_VER} == 3
+CONFIGURE_ENV+=	FUSE_CFLAGS="-I${LOCALBASE}/include/fuse3" \
+		FUSE_LIBS="-L${LOCALBASE}/lib -lfuse3"
+FUSEPKG=	fuse3
+LDFLAGS+=	-lthr
+.else
+FUSEPKG=	fuse
+.endif
+FUSE_VERSION=	"`pkgconf --version ${FUSEPKG} |	\
+		    ${SED} -E 's,^([0-9]+)\.([0-9]+)\..*,\1\2,'`"
 
 .include <bsd.port.post.mk>
