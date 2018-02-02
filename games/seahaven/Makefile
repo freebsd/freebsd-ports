@@ -3,7 +3,7 @@
 
 PORTNAME=	seahaven
 PORTVERSION=	1.60
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://seahaven.sourceforge.net/
 EXTRACT_SUFX=	.tgz
