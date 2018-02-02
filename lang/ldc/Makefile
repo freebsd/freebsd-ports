@@ -3,6 +3,7 @@
 
 PORTNAME=	ldc
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/ldc/releases/download/v${PORTVERSION}/:source \
 		https://github.com/ldc-developers/ldc/releases/download/v${BOOTVER}/:bootstrap
@@ -38,6 +39,9 @@ DISTFILES+=	${PORTNAME}-${BOOTVER}-src.tar.gz:bootstrap
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
+PLIST_SUB+=	LDC_I386=""
+.elif ${ARCH} == "i386"
+PLIST_SUB+=	LDC_I386="@comment "
 .endif
 
 pre-configure:
