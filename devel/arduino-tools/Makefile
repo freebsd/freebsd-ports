@@ -2,7 +2,7 @@
 
 PORTNAME=	arduino-tools
 PORTVERSION=	1.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	# Mostly metaport - installs files, no build
 DISTFILES=	#
@@ -18,7 +18,7 @@ RUN_DEPENDS=	arduino-avrdude:devel/arduino-avrdude \
 		avr-as:devel/avr-binutils \
 		avr-gcc:devel/avr-gcc \
 		${LOCALBASE}/avr/include/avr/io.h:devel/avr-libc \
-		${LOCALBASE}/gcc-arm-embedded-${ARMGCC_FULL_VERS}/bin/arm-none-eabi-gcc:devel/gcc-arm-embedded \
+		gcc-arm-embedded>0:devel/gcc-arm-embedded \
 		${LOCALBASE}/arduino/tools-builder/ctags/${CTAGS_VERS}/ctags:devel/arduino-ctags \
 		arduino-core>=0:devel/arduino-core \
 		arduinoOTA:devel/arduinoOTA \
@@ -26,8 +26,6 @@ RUN_DEPENDS=	arduino-avrdude:devel/arduino-avrdude \
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-
-ARMGCC_FULL_VERS=	7-2017-q4-major
 
 ARMGCC_VERS=	4.9.2
 AVRDUDE_VERS=	6.3.0-arduino9
@@ -57,7 +55,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/arduino/tools-builder/arm-none-eabi-gcc/${ARMGCC_VERS}
 	${LN} -s ../../../hardware/arduino/sam/system/CMSIS/CMSIS ${STAGEDIR}${PREFIX}/arduino/tools-builder/CMSIS/${CMSIS_VERS}/CMSIS
 	${LN} -s ../../../hardware/arduino/sam/system/CMSIS/Device ${STAGEDIR}${PREFIX}/arduino/tools-builder/CMSIS/${CMSIS_VERS}/Device
-	${LN} -s ../../../../gcc-arm-embedded-${ARMGCC_FULL_VERS}/bin ${STAGEDIR}${PREFIX}/arduino/tools-builder/arm-none-eabi-gcc/${ARMGCC_VERS}/bin
+	${LN} -s ../../../../gcc-arm-embedded/bin ${STAGEDIR}${PREFIX}/arduino/tools-builder/arm-none-eabi-gcc/${ARMGCC_VERS}/bin
 	${LN} -s ../../../../etc ${STAGEDIR}${PREFIX}/arduino/tools-builder/arm-none-eabi-gcc/${ARMGCC_VERS}/etc
 .for _tool in ${_STD_TOOLS_}
 	${MKDIR} ${STAGEDIR}${PREFIX}/arduino/tools-builder/${_tool:C/:.*//}/${_tool:C/.*://}
