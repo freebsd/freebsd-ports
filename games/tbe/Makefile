@@ -10,14 +10,17 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Butterfly Effect
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lib tar:tgz
-USE_QT4=	gui linguisttools_build moc_build qmake_build rcc_build \
-		svg uic_build xml
+BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kaa-ching
+
+USES=		cmake compiler:c++11-lib
+USE_QT4=	corelib gui linguisttools_build moc_build qmake_build rcc_build \
+		svg uic_build xml
 
 PORTDOCS=	*
 
