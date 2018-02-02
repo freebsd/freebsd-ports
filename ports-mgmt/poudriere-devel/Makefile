@@ -28,6 +28,8 @@ OPTIONS_DEFINE=	DIALOG4PORTS EXAMPLES QEMU ZSH
 OPTIONS_DEFAULT=DIALOG4PORTS ZSH
 OPTIONS_SUB=	yes
 
+IGNORE=		bug with skipped packages
+
 RUN_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
 RUN_DEPENDS+=	freebsd-release-manifests>0:misc/freebsd-release-manifests
 
