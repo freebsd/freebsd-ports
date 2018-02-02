@@ -12,6 +12,12 @@ SLAVEPORT=	python
 BINDING_NAME=	python
 PLIST=		${.CURDIR}/pkg-plist
 
+.if ${FLAVOR:Upy27:Mpy2*}
+CONFIGURE_ARGS+=--enable-languages="python2"
+.else
+CONFIGURE_ARGS+=--enable-languages="python3"
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/gpg/_gpgme.so
 
