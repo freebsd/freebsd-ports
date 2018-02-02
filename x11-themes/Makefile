@@ -9,6 +9,7 @@
     SUBDIR += adwaita-icon-theme
     SUBDIR += adwaita-qt4
     SUBDIR += adwaita-qt5
+    SUBDIR += arc-gruvbox-theme
     SUBDIR += audacious-skins
     SUBDIR += beastie
     SUBDIR += claws-mail-themes
