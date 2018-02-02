@@ -1072,6 +1072,7 @@
     SUBDIR += py-s3cmd
     SUBDIR += py-s3transfer
     SUBDIR += py-shodan
+    SUBDIR += py-smart_open
     SUBDIR += py-smbpasswd
     SUBDIR += py-soap2py
     SUBDIR += py-soappy
