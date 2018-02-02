@@ -1,5 +1,0 @@
-TIMESTAMP = 1488697441
-SHA256 (perforce/2016.1.1492381/bin.freebsd100x86_64/p4api.tgz) = 7d7892be5d6895a60e996df15b065eebad98fd7632e668dca4ba80b6f73c6830
-SIZE (perforce/2016.1.1492381/bin.freebsd100x86_64/p4api.tgz) = 4175401
-SHA256 (perforce/2016.1.1492381/bin.freebsd100x86_64/p4api.pdf) = df5e388c2753925d8411d98a14d7b634ef2543d4a0a04a340513e89d887ab57b
-SIZE (perforce/2016.1.1492381/bin.freebsd100x86_64/p4api.pdf) = 1908708
