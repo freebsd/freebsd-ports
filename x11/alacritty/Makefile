@@ -4,7 +4,7 @@ PORTNAME=	alacritty
 PORTVERSION=	g20180126
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator
 
 LICENSE=	APACHE20
