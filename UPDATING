@@ -39,8 +39,9 @@ you update your ports collection, before attempting any port upgrades.
      # make FLAVOR=nox install
      # make FLAVOR=devel_full
 
-  An alternative to the default flavor, full, can be set in make.conf.  For
-  example, to set the nox flavor as the default, use
+  For ports using Emacs, an alternative to the default flavor, full,
+  can be set in make.conf.  For example, to automatically depend on
+  emacs-nox, use
 
      DEFAULT_VERSIONS+=emacs=nox
 
