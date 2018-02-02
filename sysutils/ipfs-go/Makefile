@@ -1,44 +1,28 @@
 # $FreeBSD$
 
-PORTNAME=	ipfs-go
-PORTVERSION=	0.4.7
+PORTNAME=	ipfs
+PORTVERSION=	0.4.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
+MASTER_SITES=	https://dist.ipfs.io/go-ipfs/${DISTVERSIONPREFIX}${DISTVERSION}/
+PKGNAMESUFFIX=	-go
+DISTNAME=	go-ipfs_${DISTVERSIONPREFIX}${DISTVERSION}_freebsd-${ARCH}
 
 MAINTAINER=	jhixson@gmail.com
 COMMENT=	IPFS implementation in Go
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	go>=1.7:lang/go
-
 ONLY_FOR_ARCHS=	amd64
-
-USES=		compiler go
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	jhixson74
-
-MAKE_ENV+=	GOPATH=${WRKSRC}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-USE_RC_SUBR=	${PORTNAME}
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/go-ipfs
 
-do-build:
-	cd ${WRKSRC}/src/github.com/ipfs/go-ipfs/cmd/ipfs; \
-		${SETENV} ${BUILD_ENV} ${MAKE_ENV} go build -v -x \
-			-ldflags "-X main.GitDescribe=${DISTVERSIONFULL}" -o bin/${PORTNAME}
+USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/ipfs/go-ipfs/cmd/ipfs/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/ipfs ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-# golang assumes that if clang is in use, it is called "clang" and not "cc". If
-# it's called "cc", go fails.
-.if ${COMPILER_TYPE} == clang
-BUILD_ENV=  CC=clang
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
