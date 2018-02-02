@@ -1,0 +1,6 @@
+Tablist adds marks and filters to Emacs's tabulated-list-mode and also puts a
+dired face on tabulated list buffers.  It can be used by deriving from
+tablist-mode, or with more limited features by enabling tablist-minor-mode
+inside a tabulated-list-mode buffer.
+
+WWW: https://github.com/politza/tablist
