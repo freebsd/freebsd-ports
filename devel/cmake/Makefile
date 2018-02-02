@@ -34,7 +34,8 @@ OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
-MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+MANPAGES_USES=		python:env
+MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 MANPAGES_CONFIGURE_ON=	--sphinx-man
 
 CONFLICTS_INSTALL=	cmake-modules-*
