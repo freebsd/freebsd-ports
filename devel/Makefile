@@ -5952,6 +5952,7 @@
     SUBDIR += sysconftool
     SUBDIR += sysfsutils
     SUBDIR += t1lib
+    SUBDIR += tablist
     SUBDIR += ta-lib
     SUBDIR += tailor
     SUBDIR += talloc
