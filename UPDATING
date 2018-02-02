@@ -15,7 +15,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Supported Flavors
   --------------------------------------------------------
-  editor/emacs:        full canna nox
+  editors/emacs:       full canna nox
   editors/emacs-devel: full nox
   ports using Emacs:   full canna nox devel_full devel_nox
   --------------------------------------------------------
