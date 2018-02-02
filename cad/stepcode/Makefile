@@ -23,6 +23,10 @@ CMAKE_ARGS+=	-DSC_INSTALL_PREFIX=${PREFIX} \
 
 MANDIRS=	${PREFIX}/man
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,( JudyValue ) 0,nullptr,' \
+		${WRKSRC}/src/base/judy/src/judy*Array.h
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/schema_scanner
 	@(cd ${STAGEDIR}${PREFIX} ; \
