@@ -158,6 +158,7 @@
     SUBDIR += paps
     SUBDIR += pcal
     SUBDIR += pdf-renderer
+    SUBDIR += pdf-tools
     SUBDIR += pdf4tcl
     SUBDIR += pdfbox
     SUBDIR += pdfcube
