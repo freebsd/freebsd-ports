@@ -1,29 +1,43 @@
 # $FreeBSD$
 
 PORTNAME=	sent
-PORTVERSION=	0.2
+PORTVERSION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://dl.suckless.org/tools/
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Simple plaintext presentation tool
 
-LICENSE=	MIT
+LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:graphics/png\
-		libfontconfig.so:x11-fonts/fontconfig
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	2ff:graphics/farbfeld
 
 USE_XORG=	x11 xft
 
-ALL_TARGET=	${PORTNAME}
+MAKE_ARGS=	CC="${CC}" PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}/man" \
+		X11INC="${LOCALBASE}/include" X11LIB="${LOCALBASE}/lib"
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	bin/${PORTNAME} ${EXAMPLESDIR}/example ${EXAMPLESDIR}/nyan.png
+PLIST_FILES=	bin/sent \
+		man/man1/sent.1.gz
+PORTDOCS=	README.md
+PORTEXAMPLES=	example \
+		nyan.png \
+		transparent_test.ff
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sent ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example ${STAGEDIR}${EXAMPLESDIR}/example
-	${INSTALL_DATA} ${WRKSRC}/nyan.png ${STAGEDIR}${EXAMPLESDIR}/nyan.png
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sent
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
