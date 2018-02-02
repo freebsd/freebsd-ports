@@ -27,7 +27,7 @@ STATUS=		debug
 STATUS=		release
 .endif
 
-USES=		compiler gmake iconv localbase pkgconfig sqlite tar:tgz
+USES=		compiler gmake iconv localbase pkgconfig sqlite
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	do_install
