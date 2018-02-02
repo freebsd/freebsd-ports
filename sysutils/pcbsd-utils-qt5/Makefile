@@ -31,7 +31,7 @@ ONLY_FOR_ARCHS=	amd64
 USE_LDCONFIG=	yes
 USE_QT5=	core gui network svg linguist \
 		webkit buildtools x11extras
-USES=		desktop-file-utils python qmake shebangfix tar:xz
+USES=		desktop-file-utils python qmake shebangfix
 SHEBANG_FILES=	pc-netmanager/src/NetworkManager/resources/umts_stick \
 		pc-sysmanager/scripts/fastest_cvsup
 
