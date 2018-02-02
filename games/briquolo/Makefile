@@ -3,7 +3,7 @@
 
 PORTNAME=	briquolo
 PORTVERSION=	0.5.7
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	http://briquolo.free.fr/download/
 
