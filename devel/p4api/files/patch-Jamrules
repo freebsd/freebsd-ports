@@ -1,0 +1,28 @@
+--- Jamrules.orig	2018-02-01 21:40:54 UTC
++++ Jamrules
+@@ -449,12 +449,11 @@
+ 	# P4BIN is set to ../p4-bin (relative to P4)
+ 
+ 	SubDir AllP4 p4 ;	# where we are
+-	SubDir AllP4 p4-bin ;	# where we want to be
++	SubDir AllP4 p4 p4-bin ;	# where we want to be
+ 	SubDir P4BIN ;		# name is that
+ 	SubDir AllP4 p4 ;	# back to where we started
+ 
+ 	EXEC_SUB_TOKENS =
+-		$(OS:L)$(OSVER:EL)$(OSPLAT:EL)
+ 		$(BUILD)
+ 		$(TYPE:L) ;
+ 
+@@ -931,11 +930,6 @@
+ 		OPTIM += -Wno-parentheses -Wno-switch -fwrapv ;
+ 
+ 		_mflags = ;
+-		switch $(OSPLAT:U)
+-		{
+-		case X86     : _mflags = -m32 ;
+-		case X86_64  : _mflags = -m64 ;
+-		}
+ 
+ 		$(GENFLAGS) += $(_mflags) -pipe ;
+ 		LINKFLAGS   += $(_mflags) ;
