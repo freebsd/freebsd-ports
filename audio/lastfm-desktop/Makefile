@@ -21,8 +21,8 @@ LIB_DEPENDS=	liblastfm.so:audio/liblastfm \
 USE_GITHUB=	yes
 GH_ACCOUNT=	lastfm
 
-USES=		gettext pkgconfig qmake tar:bzip2 gmake
-USE_QT4=	corelib gui linguist_build moc_build network phonon \
+USES=		gettext pkgconfig qmake gmake
+USE_QT4=	corelib dbus gui linguist_build moc_build network phonon \
 		rcc_build sql uic_build webkit xml
 SUB_FILES=	lastfm-desktop.sh
 
@@ -37,11 +37,9 @@ OPTIONS_SINGLE=		PHONON
 OPTIONS_SINGLE_PHONON=	GSTREAMER VLC
 OPTIONS_DEFAULT=	VLC
 GSTREAMER_DESC=		Multimedia via Phonon-GStreamer
-GSTREAMER_USE=		QT4=dbus,phonon-gst_run GNOME=gdkpixbuf2,glib20
+GSTREAMER_USE=		QT4=phonon-gst_run
 VLC_DESC=		Multimedia via Phonon-VLC
 VLC_RUN_DEPENDS=	phonon-vlc>=0.6.1:multimedia/phonon-vlc
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -52,4 +50,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/app/client/audioscrobbler.ico ${STAGEDIR}${PREFIX}/share/pixmaps/
 	(cd ${WRKSRC}/app/client && ${COPYTREE_SHARE} qrc ${STAGEDIR}${DATADIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
