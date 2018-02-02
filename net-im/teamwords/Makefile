@@ -3,8 +3,8 @@
 
 PORTNAME=	teamwords
 PORTVERSION=	0.2.1
-PORTREVISION=	3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	net-im
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -12,10 +12,11 @@ COMMENT=	Unofficial Qt Slack client
 
 LICENSE=	LGPL3
 
+USES=		compiler:c++11-lang qmake
 USE_LDCONFIG=	yes
-USE_QT5=	core gui network svg linguist \
+USE_QT5=	core gui widgets network svg linguist \
 		webkit buildtools x11extras
-USES=		compiler:c++11-lang qmake tar:xz
+USE_GL=		gl
 
 QMAKE_ARGS=	CONFIG+="configure"
 
@@ -30,7 +31,7 @@ SUB_FILES=      teamwords.desktop
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/teamwords ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/${SUB_FILES} ${STAGEDIR}${PREFIX}/share/applications/
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
 	${INSTALL_DATA} ${WRKSRC}/images/png/Slack.png ${STAGEDIR}${PREFIX}/share/icons/teamwords.png
 
 .include <bsd.port.mk>
