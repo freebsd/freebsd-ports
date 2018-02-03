@@ -1,0 +1,6 @@
+include/pngwriter.h
+lib/cmake/PNGwriter/PNGwriterConfig.cmake
+lib/cmake/PNGwriter/PNGwriterConfigVersion.cmake
+lib/cmake/PNGwriter/PNGwriterTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/PNGwriter/PNGwriterTargets.cmake
+lib/libPNGwriter.so
