@@ -1,15 +1,11 @@
-bin/flea
 bin/mutt
-bin/muttbug
 @(,mail,2755) bin/mutt_dotlock
 bin/pgpewrap
 bin/pgpring
 bin/smime_keys
 @sample etc/Muttrc.sample
-man/man1/flea.1.gz
 man/man1/mutt.1.gz
 man/man1/mutt_dotlock.1.gz
-man/man1/muttbug.1.gz
 man/man1/pgpewrap.1.gz
 man/man1/pgpring.1.gz
 man/man1/smime_keys.1.gz
