@@ -2,6 +2,7 @@
 
 PORTNAME=	gitlab-markup
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,13 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem shebangfix
+USES=		gem python:run shebangfix
 
 PLIST_FILES=	bin/github-markup
 
 SHEBANG_FILES=	lib/github/commands/rest2html \
 		script/bootstrap \
 		script/cibuild
-python_CMD=	${LOCALBASE}/bin/python2
 
 .include <bsd.port.mk>
