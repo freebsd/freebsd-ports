@@ -1930,6 +1930,7 @@
     SUBDIR += p5-App-SVN-Bisect
     SUBDIR += p5-App-Trace
     SUBDIR += p5-App-cpanminus
+    SUBDIR += p5-App-cpanminus-reporter
     SUBDIR += p5-App-cpanoutdated
     SUBDIR += p5-App-local-lib-helper
     SUBDIR += p5-App-perlbrew
