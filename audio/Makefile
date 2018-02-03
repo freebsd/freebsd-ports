@@ -50,6 +50,7 @@
     SUBDIR += autocd
     SUBDIR += autotalent
     SUBDIR += autozen
+    SUBDIR += avldrums-lv2
     SUBDIR += aylet
     SUBDIR += baresip
     SUBDIR += baudline
