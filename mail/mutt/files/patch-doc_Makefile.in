@@ -1,5 +1,6 @@
-Index: doc/Makefile.in
-@@ -667,14 +667,7 @@
+--- doc/Makefile.in.orig	2018-01-27 22:36:31 UTC
++++ doc/Makefile.in
+@@ -664,14 +664,7 @@ install-data-local: makedoc-all instdoc
  	-for f in $(HTML_DOCFILES) ; do \
  		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
  	done
@@ -14,8 +15,8 @@ Index: doc/Makefile.in
 +	$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.sample
  
  uninstall-local:
- 	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 smime_keys.1 pgpewrap.1 pgpring.1; do \
-@@ -697,9 +690,7 @@
+ 	for f in mutt.1 mutt_dotlock.1 smime_keys.1 pgpewrap.1 pgpring.1; do \
+@@ -694,9 +687,7 @@ uninstall-local:
  
  check:
  manual.txt: manual.html
