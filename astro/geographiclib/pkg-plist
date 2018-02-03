@@ -38,6 +38,7 @@ include/GeographicLib/MGRS.hpp
 include/GeographicLib/MagneticCircle.hpp
 include/GeographicLib/MagneticModel.hpp
 include/GeographicLib/Math.hpp
+include/GeographicLib/NearestNeighbor.hpp
 include/GeographicLib/NormalGravity.hpp
 include/GeographicLib/OSGB.hpp
 include/GeographicLib/PolarStereographic.hpp
@@ -51,10 +52,16 @@ include/GeographicLib/TransverseMercator.hpp
 include/GeographicLib/TransverseMercatorExact.hpp
 include/GeographicLib/UTMUPS.hpp
 include/GeographicLib/Utility.hpp
+lib/cmake/GeographicLib/geographiclib-config-version.cmake
+lib/cmake/GeographicLib/geographiclib-config.cmake
+lib/cmake/GeographicLib/geographiclib-namespace-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/GeographicLib/geographiclib-namespace-targets.cmake
+lib/cmake/GeographicLib/geographiclib-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/GeographicLib/geographiclib-targets.cmake
 lib/libGeographic.a
 lib/libGeographic.so
 lib/libGeographic.so.17
-lib/libGeographic.so.17.0.0
+lib/libGeographic.so.17.1.2
 lib/node_modules/geographiclib/LICENSE.txt
 lib/node_modules/geographiclib/README.md
 lib/node_modules/geographiclib/geographiclib.js
@@ -76,6 +83,7 @@ lib/node_modules/geographiclib/test/geodesictest.js
 %%PYTHON_SITELIBDIR%%/geographiclib/polygonarea.py
 %%PYTHON_SITELIBDIR%%/geographiclib/test/__init__.py
 %%PYTHON_SITELIBDIR%%/geographiclib/test/test_geodesic.py
+libdata/pkgconfig/geographiclib.pc
 man/man1/CartConvert.1.gz
 man/man1/ConicProj.1.gz
 man/man1/GeoConvert.1.gz
@@ -93,7 +101,6 @@ man/man8/geographiclib-get-magnetic.8.gz
 sbin/geographiclib-get-geoids
 sbin/geographiclib-get-gravity
 sbin/geographiclib-get-magnetic
-share/cmake/GeographicLib/FindGeographicLib.cmake
 %%GEOID_EGM2008_1%%%%DATADIR%%/geoids/egm2008-1.pgm
 %%GEOID_EGM2008_1%%%%DATADIR%%/geoids/egm2008-1.pgm.aux.xml
 %%GEOID_EGM2008_1%%%%DATADIR%%/geoids/egm2008-1.wld
@@ -129,6 +136,8 @@ share/cmake/GeographicLib/FindGeographicLib.cmake
 %%MAGNETIC_EMM2010%%%%DATADIR%%/magnetic/emm2010.wmm.cof
 %%MAGNETIC_EMM2015%%%%DATADIR%%/magnetic/emm2015.wmm
 %%MAGNETIC_EMM2015%%%%DATADIR%%/magnetic/emm2015.wmm.cof
+%%MAGNETIC_EMM2017%%%%DATADIR%%/magnetic/emm2017.wmm
+%%MAGNETIC_EMM2017%%%%DATADIR%%/magnetic/emm2017.wmm.cof
 %%MAGNETIC_IGRF11%%%%DATADIR%%/magnetic/igrf11.wmm
 %%MAGNETIC_IGRF11%%%%DATADIR%%/magnetic/igrf11.wmm.cof
 %%MAGNETIC_IGRF12%%%%DATADIR%%/magnetic/igrf12.wmm

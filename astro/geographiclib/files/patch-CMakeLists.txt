@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2017-10-05 10:11:23 UTC
++++ CMakeLists.txt
+@@ -177,6 +177,11 @@ option (APPLE_MULTIPLE_ARCHITECTURES
+ # directory is present you get this behavior regardless.
+ option (CONVERT_WARNINGS_TO_ERRORS "Convert warnings into errors?" OFF)
+ 
++# (12) Allow perl usage to be explicitly disabled. It might exist on the
++# system, but the user may not necessarily want it to be used for one reason
++# or another.
++option (GEOGRAPHICLIB_NO_PERL "Disable usage of pod2man and pod2html" OFF)
++
+ set (LIBNAME Geographic)
+ if (MSVC OR CMAKE_CONFIGURATION_TYPES)
+   # For multi-config systems and for Visual Studio, the debug version of
+@@ -450,7 +455,7 @@ endif ()
+ # documentation files into the source tree.  Skip Apple here because
+ # man/makeusage.sh uses "head --lines -4" to drop the last 4 lines of a
+ # file and there's no simple equivalent for MacOSX
+-if (NOT WIN32 AND NOT APPLE)
++if (NOT WIN32 AND NOT APPLE AND NOT GEOGRAPHICLIB_NO_PERL)
+   find_program (HAVE_POD2MAN pod2man)
+   find_program (HAVE_POD2HTML pod2html)
+   find_program (HAVE_COL col)
