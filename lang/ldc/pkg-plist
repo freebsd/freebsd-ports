@@ -385,7 +385,7 @@ include/d/ldc/arrayinit.d
 include/d/ldc/asan.d
 include/d/ldc/attributes.d
 include/d/ldc/dcompute.d
-%%LDC_I386%%include/d/ldc/dynamic_compile.d
+include/d/ldc/dynamic_compile.d
 include/d/ldc/eh_asm.S
 include/d/ldc/eh_msvc.d
 include/d/ldc/gccbuiltins_aarch64.di
@@ -570,10 +570,10 @@ lib/libdruntime-ldc-shared.so
 lib/libdruntime-ldc-shared.so.2.0.77
 lib/libdruntime-ldc-shared.so.77
 lib/libdruntime-ldc.a
-%%LDC_I386%%lib/libldc-jit-rt.a
-%%LDC_I386%%lib/libldc-jit.so
-%%LDC_I386%%lib/libldc-jit.so.2.0.77
-%%LDC_I386%%lib/libldc-jit.so.77
+lib/libldc-jit-rt.a
+lib/libldc-jit.so
+lib/libldc-jit.so.2.0.77
+lib/libldc-jit.so.77
 lib/libldc-profile-rt.a
 lib/libphobos2-ldc-debug-shared.so
 lib/libphobos2-ldc-debug-shared.so.2.0.77
