@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sngrep
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -12,11 +12,12 @@ COMMENT=	SIP Packet display and capture
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		autoreconf localbase ncurses
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	irontec
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf localbase ncurses
 
 OPTIONS_DEFINE=	OPENSSL PCRE UNICODE IPV6 EEP
 
