@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtMultimedia.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtMultimedia.pyi
 %%PYQT_SIPDIR%%/QtMultimedia/QtMultimediamod.sip
 %%PYQT_SIPDIR%%/QtMultimedia/qabstractvideobuffer.sip
 %%PYQT_SIPDIR%%/QtMultimedia/qabstractvideofilter.sip
