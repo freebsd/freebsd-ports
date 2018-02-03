@@ -1,4 +1,4 @@
---- Makefile.orig	2015-07-11 08:39:39 UTC
+--- Makefile.orig	2018-01-12 15:20:18 UTC
 +++ Makefile
 @@ -5,7 +5,6 @@ PREFIX=/usr/local
  CONF_PREFIX=$(PREFIX)
@@ -8,7 +8,7 @@
  TRANSLATION_PATH=$(PREFIX)/share/smplayer/translations
  THEMES_PATH=$(PREFIX)/share/smplayer/themes
  SHORTCUTS_PATH=$(PREFIX)/share/smplayer/shortcuts
-@@ -22,7 +21,7 @@ LRELEASE=lrelease
+@@ -18,7 +17,7 @@ LRELEASE=lrelease
  
  DEFS=DATA_PATH=\\\"$(DATA_PATH)\\\" \
       TRANSLATION_PATH=\\\"$(TRANSLATION_PATH)\\\" \
@@ -16,13 +16,15 @@
 +     THEMES_PATH=\\\"$(THEMES_PATH)\\\" \
       SHORTCUTS_PATH=\\\"$(SHORTCUTS_PATH)\\\"
  
- 
-@@ -55,11 +54,6 @@ install: src/smplayer
+ all: src/smplayer webserver/simple_web_server
+@@ -43,13 +42,8 @@ install: all
  	install -m 644 src/input.conf $(DESTDIR)$(DATA_PATH)
  	-install -d $(DESTDIR)$(TRANSLATION_PATH)
  	install -m 644 src/translations/*.qm $(DESTDIR)$(TRANSLATION_PATH)
 -	-install -d $(DESTDIR)$(DOC_PATH)
 -	install -m 644 Changelog *.txt $(DESTDIR)$(DOC_PATH)
+ 
+ 	install -m 755 webserver/simple_web_server $(DESTDIR)$(PREFIX)/bin/
 -
 -	-install -d $(DESTDIR)$(DOC_PATH)
 -	tar -C docs/ --exclude=.svn -c -f - . | tar -C $(DESTDIR)$(DOC_PATH) -x -f -

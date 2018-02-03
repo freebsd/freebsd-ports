@@ -1,3 +1,4 @@
+bin/simple_web_server
 bin/smplayer
 man/man1/smplayer.1.gz
 share/applications/smplayer.desktop
@@ -46,6 +47,7 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 %%DATADIR%%/translations/smplayer_lt.qm
 %%DATADIR%%/translations/smplayer_mk.qm
 %%DATADIR%%/translations/smplayer_ms_MY.qm
+%%DATADIR%%/translations/smplayer_nb_NO.qm
 %%DATADIR%%/translations/smplayer_nl.qm
 %%DATADIR%%/translations/smplayer_nn_NO.qm
 %%DATADIR%%/translations/smplayer_pl.qm
