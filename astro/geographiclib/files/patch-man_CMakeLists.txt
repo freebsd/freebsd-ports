@@ -1,0 +1,12 @@
+--- man/CMakeLists.txt.orig	2017-10-05 10:11:24 UTC
++++ man/CMakeLists.txt
+@@ -101,7 +101,7 @@ else ()
+ endif ()
+ 
+ # Install the man pages.
+-install (FILES ${MANPAGES} DESTINATION share/man/man1)
++install (FILES ${MANPAGES} DESTINATION man/man1)
+ if (NOT WIN32)
+-  install (FILES ${SYSMANPAGES} DESTINATION share/man/man8)
++  install (FILES ${SYSMANPAGES} DESTINATION man/man8)
+ endif ()

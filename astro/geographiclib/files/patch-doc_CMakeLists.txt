@@ -1,0 +1,14 @@
+--- doc/CMakeLists.txt.orig	2017-10-05 10:11:23 UTC
++++ doc/CMakeLists.txt
+@@ -9,9 +9,9 @@ foreach (TOOL ${TOOLS})
+ endforeach ()
+ 
+ if (COMMON_INSTALL_PATH)
+-  set (INSTALL_DOC_DIR "share/doc/GeographicLib")
++  set (INSTALL_DOC_DIR "share/doc/GeographicLib" CACHE STRING "")
+ else ()
+-  set (INSTALL_DOC_DIR "doc")
++  set (INSTALL_DOC_DIR "doc" CACHE STRING "")
+ endif ()
+ 
+ # Run doxygen, if available
