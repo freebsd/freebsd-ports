@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ir
-PORTVERSION=	g20130909
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.2-1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 impulse response plugin for reverb and cabinet simulation
 
 LICENSE=	GPLv2
@@ -24,7 +25,6 @@ USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	Anchakor
 GH_PROJECT=	ir.lv2
-GH_TAGNAME=	af1f8ab
 USE_GNOME=	glib20 gtk20 gdkpixbuf2 cairo
 
 PLIST_FILES=	lib/lv2/ir.lv2/ir.so lib/lv2/ir.lv2/ir.ttl \
