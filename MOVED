@@ -9909,3 +9909,4 @@ www/rubygem-turbolinks-classic|www/rubygem-turbolinks|2018-01-31|Has expired: Us
 databases/mysql-proxy||2018-01-31|Has expired: No longer maintained and not recommended for production use
 japanese/migemo-emacs23|japanese/migemo-emacs|2018-02-01|Moved to version agnostic name
 editors/emacs-nox11|editors/emacs@nox|2018-02-01|Moved to a flavored version
+audio/py-mad|audio/py-pymad|2018-02-03|Rename to match PyPI naming
