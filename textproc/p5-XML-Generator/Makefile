@@ -11,15 +11,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ah@linux-hq.de
 COMMENT=	Simple Perl module for generating XML documents
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM
 RUN_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM
-
 TEST_DEPENDS=	p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 
 USES=		perl5
 USE_PERL5=	configure
-
-regression-test test:
-	@(cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} test)
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
