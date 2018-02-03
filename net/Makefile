@@ -1128,6 +1128,7 @@
     SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
+    SUBDIR += reaver
     SUBDIR += recvnet
     SUBDIR += redir
     SUBDIR += relayd
