@@ -1,10 +1,10 @@
 # Created by: Hye-Shik Chang
 # $FreeBSD$
 
-PORTNAME=	mad
+PORTNAME=	pymad
 PORTVERSION=	0.10
-DISTVERSIONPREFIX=	version/
 CATEGORIES=	audio python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,14 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmad.so:audio/libmad
 
-PORTSCOUT=	ignore:1
-
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
-
-GH_ACCOUNT=	jaqx0r
-GH_PROJECT=	pymad
-USE_GITHUB=	yes
 
 do-configure:
 	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config_unix.py --prefix ${LOCALBASE}
