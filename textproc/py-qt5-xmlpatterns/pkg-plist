@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtXmlPatterns.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtXmlPatterns.pyi
 %%PYQT_SIPDIR%%/QtXmlPatterns/QtXmlPatternsmod.sip
 %%PYQT_SIPDIR%%/QtXmlPatterns/qabstractmessagehandler.sip
 %%PYQT_SIPDIR%%/QtXmlPatterns/qabstracturiresolver.sip

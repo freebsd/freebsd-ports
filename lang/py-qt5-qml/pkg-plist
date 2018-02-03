@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtQml.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtQml.pyi
 %%QT_PLUGINDIR%%/PyQt5/libpyqt5qmlplugin.so
 %%PYQT_SIPDIR%%/QtQml/QtQmlmod.sip
 %%PYQT_SIPDIR%%/QtQml/qjsengine.sip

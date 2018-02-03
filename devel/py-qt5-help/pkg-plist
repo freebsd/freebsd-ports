@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtHelp.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtHelp.pyi
 %%PYQT_SIPDIR%%/QtHelp/QtHelpmod.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpcontentwidget.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpengine.sip

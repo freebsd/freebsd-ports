@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtDesigner.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtDesigner.pyi
 %%PYQT_SIPDIR%%/QtDesigner/QtDesignermod.sip
 %%PYQT_SIPDIR%%/QtDesigner/abstractactioneditor.sip
 %%PYQT_SIPDIR%%/QtDesigner/abstractformbuilder.sip
