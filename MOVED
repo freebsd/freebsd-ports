@@ -1116,6 +1116,7 @@ sysutils/bacula-client-devel||2010-07-16|Removed
 sysutils/bacula-server-devel||2010-07-16|Removed
 java/eclipse-v4all||2010-07-16|Not useful with Eclipse 3.x
 irc/kvirc-devel||2010-07-17|irc/kvirc has been updated to the latest version
+www/p5-Plack-Server-AnyEvent||2010-07-19|Use www/p5-Twiggy instead
 science/qelectrotech|cad/qelectrotech|2010-07-21|Fix category
 mail/squirrelmail-compatibility-plugin1|mail/squirrelmail-compatibility-plugin|2010-07-21|Has expired: use mail/squirrelmail-compatibility-plugin
 mail/squirrelmail-newuser_wiz-plugin|mail/squirrelmail-askuserinfo-plugin|2010-07-21|Has expired: use mail/squirrelmail-askuserinfo-plugin
@@ -1231,7 +1232,6 @@ multimedia/vlconwooztalk||2010-09-14|Has expired: wooztalk website not respondin
 net-im/wooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 russian/php_doc||2010-09-14|Has expired: Support for the Russian translation of the PHP manual seems to have stopped
 sysutils/ipmi-kmod||2010-09-14|Has expired: in base system since 6.2-RELEASE
-www/p5-Plack-Server-AnyEvent||2010-07-19|Use www/p5-Twiggy instead
 www/xpi-dailymotiononwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 www/xpi-deezeronwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 www/xpi-firefoxonwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
