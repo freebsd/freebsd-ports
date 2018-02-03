@@ -4,8 +4,10 @@ bin/rofi-theme-selector
 include/rofi/helper.h
 include/rofi/mode-private.h
 include/rofi/mode.h
+include/rofi/rofi-types.h
 libdata/pkgconfig/rofi.pc
 man/man1/rofi-sensible-terminal.1.gz
+man/man1/rofi-theme-selector.1.gz
 man/man1/rofi.1.gz
 man/man5/rofi-theme.5.gz
 %%DATADIR%%/themes/Adapta-Nokto.rasi
