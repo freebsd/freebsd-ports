@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${FLAVOR}
 
 USES=		python:3.4+ pyqt:5
-USE_PYTHON=	distutils autoplist noflavors
+USE_PYTHON=	distutils autoplist
 USE_PYQT=	core_run gui_run widgets_run
 NO_ARCH=	yes
 
