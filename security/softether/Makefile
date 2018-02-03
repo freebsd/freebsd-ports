@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	softether
-PORTVERSION=	4.20.9608
-PORTREVISION=	1
+PORTVERSION=	4.25.9656
 CATEGORIES=	security
-MASTER_SITES=	http://www.softether-download.com/files/softether/v4.20-9608-rtm-2016.04.17-tree/Source_Code/
-DISTNAME=	${PORTNAME}-src-v4.20-9608-rtm
+MASTER_SITES=	http://www.softether-download.com/files/softether/v4.25-9656-rtm-2018.01.15-tree/Source_Code/
+DISTNAME=	${PORTNAME}-src-v4.25-9656-rtm
 
 MAINTAINER=	net@arrishq.net
 COMMENT=	Softether VPN solution
@@ -51,7 +50,7 @@ PLIST_SUB+=	LOGDIR="${LOGDIR}"
 SUB_LIST=	LOGDIR="${LOGDIR}"
 
 # a pity the source directory has such a naming scheme, but well
-WRKSRC=		${WRKDIR}/v4.20-9608
+WRKSRC=		${WRKDIR}/v4.25-9656
 
 ALL_TARGET=	build
 
