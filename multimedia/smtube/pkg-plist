@@ -7,6 +7,7 @@ share/icons/hicolor/32x32/apps/smtube.png
 share/icons/hicolor/48x48/apps/smtube.png
 share/icons/hicolor/64x64/apps/smtube.png
 %%DATADIR%%/translations/smtube_bg.qm
+%%DATADIR%%/translations/smtube_ca.qm
 %%DATADIR%%/translations/smtube_cs.qm
 %%DATADIR%%/translations/smtube_da.qm
 %%DATADIR%%/translations/smtube_de.qm
