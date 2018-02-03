@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mad
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libmad.so:audio/libmad
 
 PORTSCOUT=	ignore:1
 
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 GH_ACCOUNT=	jaqx0r
