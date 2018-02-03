@@ -412,6 +412,15 @@
 %%EXAMPLESDIR%%/itemviews/fetchmore.py
 %%EXAMPLESDIR%%/itemviews/fetchmore.pyc
 %%EXAMPLESDIR%%/itemviews/fetchmore.pyo
+%%EXAMPLESDIR%%/itemviews/frozencolumn/frozencolumn.py
+%%EXAMPLESDIR%%/itemviews/frozencolumn/frozencolumn.pyc
+%%EXAMPLESDIR%%/itemviews/frozencolumn/frozencolumn.pyo
+%%EXAMPLESDIR%%/itemviews/frozencolumn/grades.txt
+%%EXAMPLESDIR%%/itemviews/interview/images/interview.png
+%%EXAMPLESDIR%%/itemviews/interview/images/services.png
+%%EXAMPLESDIR%%/itemviews/interview/interview.py
+%%EXAMPLESDIR%%/itemviews/interview/interview.pyc
+%%EXAMPLESDIR%%/itemviews/interview/interview.pyo
 %%EXAMPLESDIR%%/itemviews/pixelator/images/qt.png
 %%EXAMPLESDIR%%/itemviews/pixelator/pixelator.py
 %%EXAMPLESDIR%%/itemviews/pixelator/pixelator.pyc
@@ -468,6 +477,9 @@
 %%EXAMPLESDIR%%/itemviews/stardelegate.py
 %%EXAMPLESDIR%%/itemviews/stardelegate.pyc
 %%EXAMPLESDIR%%/itemviews/stardelegate.pyo
+%%EXAMPLESDIR%%/itemviews/storageview.py
+%%EXAMPLESDIR%%/itemviews/storageview.pyc
+%%EXAMPLESDIR%%/itemviews/storageview.pyo
 %%EXAMPLESDIR%%/layouts/README
 %%EXAMPLESDIR%%/layouts/basiclayouts.py
 %%EXAMPLESDIR%%/layouts/basiclayouts.pyc
