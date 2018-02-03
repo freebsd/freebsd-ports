@@ -15,14 +15,12 @@ LICENSE_NAME=	License of James Clark's Software
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake iconv libtool perl5
+USES=		gmake iconv libtool localbase perl5
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade \
 		--disable-doc-build
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
