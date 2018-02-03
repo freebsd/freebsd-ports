@@ -1,0 +1,25 @@
+From 48106975fb120fa7b6b1abb136183cb84bc957c9 Mon Sep 17 00:00:00 2001
+From: Peter Schuller <peter.schuller@infidyne.com>
+Date: Mon, 22 Jan 2018 12:15:21 -0800
+Subject: [PATCH] Fix case statement (so we build with clang). (#101)
+
+--- src/utils/screengrabber.cpp.orig	2017-12-20 13:41:48 UTC
++++ src/utils/screengrabber.cpp
+@@ -35,7 +35,7 @@ QPixmap ScreenGrabber::grabEntireDesktop(bool &ok) {
+         QPixmap res;
+ 		// handle screenshot based on DE
+         switch (m_info.windowManager()) {
+-		case m_info.GNOME: {
++		case DesktopInfo::GNOME: {
+             // https://github.com/GNOME/gnome-shell/blob/695bfb96160033be55cfb5ac41c121998f98c328/data/org.gnome.Shell.Screenshot.xml
+ 			QString path = FileNameHandler().generateAbsolutePath("/tmp") + ".png";
+ 			QDBusInterface gnomeInterface(QStringLiteral("org.gnome.Shell"),
+@@ -48,7 +48,7 @@ QPixmap ScreenGrabber::grabEntireDesktop(bool &ok) {
+ 				ok = false;
+ 			}
+             break;
+-		} case m_info.KDE: {
++		} case DesktopInfo::KDE: {
+             // https://github.com/KDE/spectacle/blob/517a7baf46a4ca0a45f32fd3f2b1b7210b180134/src/PlatformBackends/KWinWaylandImageGrabber.cpp#L145
+ 			QDBusInterface kwinInterface(QStringLiteral("org.kde.KWin"),
+ 										 QStringLiteral("/Screenshot"),
