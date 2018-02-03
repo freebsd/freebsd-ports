@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sentry-raven
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
