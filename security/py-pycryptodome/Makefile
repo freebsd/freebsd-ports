@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	pycryptodome
-PORTVERSION=	3.4.7
+DISTVERSION=	3.4.9
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cryptographic library for Python
 
 LICENSE=	BSD2CLAUSE
