@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smplayer
-DISTVERSION=	17.1.0
-PORTREVISION=	2
+DISTVERSION=	18.1.0
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
@@ -24,7 +23,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS=	PREFIX=${PREFIX} DESTDIR=${STAGEDIR}
 QMAKE_ARGS=	"DEFINES_DISABLED+=MPLAYER2_SUPPORT"
 
-PORTDOCS=	Changelog Not_so_obvious_things.txt Notes_about_mpv.txt \
+PORTDOCS=	Changelog Not_so_obvious_things.txt \
 		Readme.txt Release_notes.txt Watching_TV.txt
 
 OPTIONS_SINGLE=		TOOLKIT
@@ -67,6 +66,8 @@ post-patch:
 		s|/share/man|/man|g; \
 		s| make| ${MAKE_CMD}|g' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-O2 -W -Wall -Werror|${CFLAGS}|' \
+		${WRKSRC}/webserver/Makefile
 
 post-patch-DEBUG-on:
 	@${REINPLACE_CMD} -e '/CONFIG += debug/s|#||' \
@@ -78,7 +79,9 @@ post-patch-DEBUG-off:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/simple_web_server
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
