@@ -1,0 +1,18 @@
+avldrums.lv2 is a drum sample player plugin written by Robin Gareus
+dedicated to Glen MacArthur's AVLdrums. This self-contained plugin
+provides a convenient way to rapidly sequence and mix midi-drums.
+
+The AVLdrums comes as two separate drumkits: Black Pearl and Red Zeppelin.
+There are 5 velocity layers for each of the 28 kits pieces or drum-zones
+for both kits.
+
+The main benefits compared to loading the soundfont into a generic sample
+player are:
+* built-in MIDNAM: The plugin informs the host about note-names
+* Semantic grouping of ports: fan-out separate mics to individual tracks
+* Compatible stereo/multi-out variant: Allows to in-place replace the stereo
+  version with multi-out. Start with stereo when sequencing and when moving
+  to the mixing stage use separate outputs to process or customize level and
+  pan of individual drums.
+
+WWW: http://x42-plugins.com/x42/x42-avldrums
