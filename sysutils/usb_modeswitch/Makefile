@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	usb_modeswitch
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.draisberghof.de/usb_modeswitch/
 DISTNAME=	${PORTNAME:S|_|-|}-${PORTVERSION}
