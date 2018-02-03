@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.11.50.g20171215
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	GH
 PKGNAMESUFFIX?=	-sbruno
@@ -245,7 +245,7 @@ CONFIGURE_ARGS+=	--sparc_cpu=v9
 CONFIGURE_ARGS+=	--python=${PYTHON_CMD}
 
 # clang in freebsd 10 is unable to assemble linuxboot_dma.bin
-.if (${OSVERSION} < 1100000)
+.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1100000)
 PLIST_SUB+=	LINUXBOOT_DMA="@comment "
 .else
 PLIST_SUB+=	LINUXBOOT_DMA=""
@@ -254,7 +254,7 @@ PLIST_SUB+=	LINUXBOOT_DMA=""
 post-patch:
 	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 # clang in freebsd 10 is unable to assemble linuxboot_dma.bin
-.if (${OSVERSION} < 1100000)
+.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1100000)
 	@${REINPLACE_CMD} -E \
 		-e 's|linuxboot_dma.bin||' \
 		${WRKSRC}/pc-bios/optionrom/Makefile
