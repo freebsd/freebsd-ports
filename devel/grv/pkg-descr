@@ -1,0 +1,6 @@
+GRV is a terminal-based interface for viewing git repositories. It allows
+refs, commits and diffs to be viewed, searched and filtered. The behavior
+and style can be customized through configuration. A query language can be
+used to filter refs and commits.
+
+WWW: https://github.com/rgburke/grv
