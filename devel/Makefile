@@ -864,6 +864,7 @@
     SUBDIR += grantlee5
     SUBDIR += grpc
     SUBDIR += grumpy
+    SUBDIR += grv
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
     SUBDIR += gstreamer-plugins-gconf
