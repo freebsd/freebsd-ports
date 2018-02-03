@@ -327,6 +327,7 @@
     SUBDIR += routers2-extensions
     SUBDIR += routers2-extras
     SUBDIR += rrdbot
+    SUBDIR += rtrlib
     SUBDIR += rubygem-blimpy
     SUBDIR += rubygem-oxidized
     SUBDIR += rubygem-oxidized-script
