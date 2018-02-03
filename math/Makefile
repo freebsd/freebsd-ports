@@ -204,6 +204,7 @@
     SUBDIR += glgraph
     SUBDIR += glm
     SUBDIR += glpk
+    SUBDIR += glucose
     SUBDIR += gmm++
     SUBDIR += gmp
     SUBDIR += gmp-ecm

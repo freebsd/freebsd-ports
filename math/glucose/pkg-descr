@@ -1,0 +1,12 @@
+Glucose is based on the MiniSat solver, and extends it by preserving
+the so-called "glue clauses" and using new scoring scheme.
+
+Glucose is a SAT solver based on a particular scoring scheme for the clause
+learning mechanism, based on the paper Laurent Simon and Gilles Audemard
+presented at IJCAI'09. Solver's name is a contraction of the concept of
+"glue clauses", a particular kind of clauses that glucose detects and preserves
+during search.
+
+Glucose accepts SAT problems in the DIMACS format.
+
+WWW: http://www.labri.fr/perso/lsimon/glucose/
