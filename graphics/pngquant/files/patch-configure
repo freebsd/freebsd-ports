@@ -1,5 +1,5 @@
 Index: configure
-@@ -1,15 +1,15 @@
+@@ -1,11 +1,11 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  
@@ -13,11 +13,6 @@ Index: configure
  SSE=auto
  OPENMP=
  LIBPNG_DIR=.
--if [[ "$OSTYPE" =~ "darwin" ]]; then
-+if echo "$OSTYPE" | grep -q "darwin"; then
-     COCOA_READER=auto
-     LCMS2=0
- else
 @@ -41,7 +41,7 @@
          help "--with-libimagequant=<dir>    external libimagequant (lib/ default)"
          help "--with-openmp=static          compile with multicore support"
@@ -153,7 +148,7 @@ Index: configure
          cflags "$OPENMPFLAGS"
          lflags "$OPENMPFLAGS"
          status "OpenMP" "yes"
-@@ -350,11 +349,13 @@
+@@ -342,7 +342,7 @@
  fi
  
  # Cocoa
@@ -161,14 +156,7 @@ Index: configure
 +if echo "$OSTYPE" | grep -q "darwin"; then
      cflags "-mmacosx-version-min=10.6"
      lflags "-mmacosx-version-min=10.6"
- 
--    if [ "$COCOA_READER" != 0 ] && "$CC" 2>/dev/null 1>/dev/null -xc -E <(echo "#import <Cocoa/Cocoa.h>"); then
-+    if [ "$COCOA_READER" != 0 ] && \
-+        echo "#import <Cocoa/Cocoa.h>" | \
-+		"$CC" 2>/dev/null 1>/dev/null -xc -E -; then
-         COCOA_READER=1
-         cflags "-DUSE_COCOA=1"
-         lflags "-framework Cocoa"
+ fi
 @@ -365,32 +366,29 @@
  fi
  
