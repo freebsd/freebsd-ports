@@ -9,3 +9,4 @@ man/man8/powerdxx.8.gz
 sbin/powerd++
 sbin/powerdxx
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/refman.pdf
