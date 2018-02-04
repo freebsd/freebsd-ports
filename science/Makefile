@@ -199,6 +199,7 @@
     SUBDIR += silo
     SUBDIR += simlib
     SUBDIR += simsmith
+    SUBDIR += siril
     SUBDIR += step
     SUBDIR += svmlight
     SUBDIR += szip
