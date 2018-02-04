@@ -12,6 +12,8 @@ COMMENT=	Lightweight library for vector and matrix math
 
 LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	multi
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_MPL20=	${WRKSRC}/COPYING.MPL2
 
 CMAKE_ARGS=	-DPKGCONFIG_INSTALL_DIR:PATH="${PREFIX}/libdata/pkgconfig"
 USES=		cmake:outsource tar:bzip2
