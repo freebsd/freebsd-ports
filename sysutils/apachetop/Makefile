@@ -5,10 +5,10 @@ PORTNAME=	apachetop
 PORTVERSION=	0.12.6
 PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	https://lukasz.wasikowski.net/files/
+MASTER_SITES=	https://www.freebsd.systems/files/
 
 MAINTAINER=	lukasz@wasikowski.net
-COMMENT=	Apache RealTime log stats
+COMMENT=	Apache realtime log stats
 
 LICENSE=	BSD3CLAUSE
 
