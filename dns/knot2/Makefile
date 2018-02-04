@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -60,14 +60,11 @@ FASTPARSER_CONFIGURE_ENABLE=	fastparser
 IDN_CONFIGURE_WITH=		libidn
 IDN_LIB_DEPENDS=		libidn.so:dns/libidn
 
+# starting at 2.6.5 this block will already be absolete
 .include <bsd.port.pre.mk>
-
 .if ${ARCH} == "i386"
-CPUTYPE=	i686
-CFLAGS+=	-march=i686
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
-USE_GCC=	yes
-.endif
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-configure.ac
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src_Makefile.am
 .endif
 
 post-patch:
@@ -83,4 +80,5 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
+#.include <bsd.port.mk>
 .include <bsd.port.post.mk>
