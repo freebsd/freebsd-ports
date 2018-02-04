@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--enable-static \
 		--disable-gl
 INSTALL_TARGET=	install-strip
 USES=		iconv libtool pathfix pkgconfig tar:bzip2
+# Builds fine with clang, but crashes since 1.11.3
 USE_GCC=	any
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
