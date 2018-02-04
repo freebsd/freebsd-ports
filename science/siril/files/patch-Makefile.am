@@ -1,0 +1,16 @@
+--- Makefile.am.orig	2017-11-13 22:13:16 UTC
++++ Makefile.am
+@@ -17,11 +17,9 @@ install-data-local:
+ 	$(INSTALL_DATA) src/gui/siril3.glade $(DESTDIR)$(pkgdatadir)
+ 	$(INSTALL_DATA) src/gui/gtk_old.css $(DESTDIR)$(pkgdatadir)
+ 	$(INSTALL_DATA) src/gui/gtk.css $(DESTDIR)$(pkgdatadir)
+-	$(mkinstalldirs) $(DESTDIR)$(docdir)
+-	$(INSTALL_DATA) AUTHORS LICENSE.md $(DESTDIR)$(docdir)
+ 	$(mkinstalldirs) $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL_DATA) siril.1.gz $(DESTDIR)$(mandir)/man1
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ EXTRA_DIST = config.rpath
+-AUTOMAKE_OPTIONS = foreign
+\ No newline at end of file
++AUTOMAKE_OPTIONS = foreign
