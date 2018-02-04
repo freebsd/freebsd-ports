@@ -5,10 +5,12 @@ PORTNAME=	apachetop
 PORTVERSION=	0.12.6
 PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://lukasz.wasikowski.net/files/
+MASTER_SITES=	https://lukasz.wasikowski.net/files/
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Apache RealTime log stats
+
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 USES=		ncurses readline
