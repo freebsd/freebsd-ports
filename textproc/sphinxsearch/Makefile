@@ -7,7 +7,7 @@
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	2.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/ \
 		http://snowball.tartarus.org/dist/:libstemmer
