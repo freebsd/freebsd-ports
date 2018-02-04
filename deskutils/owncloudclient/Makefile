@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloudclient
-PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -39,11 +38,17 @@ DEBUG_CMAKE_ON=		-DCMAKE_BUILD_TYPE:STRING=Debug
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|.lst |.lst.sample |' ${WRKSRC}/CMakeLists.txt
+.if ${OSVERSION} < 1100101
+	@${REINPLACE_CMD} -e 's/ -fstack-protector-strong//' \
+		${WRKSRC}/src/CMakeLists.txt
+.endif
 
 pre-configure:
 	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
