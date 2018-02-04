@@ -8,7 +8,10 @@ CATEGORIES=	databases
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/libmemcache/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The C library for accessing a memcache cluster
+COMMENT=	C library for accessing a memcache cluster
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
