@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minisign
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	security
 
 MAINTAINER=	feld@FreeBSD.org
