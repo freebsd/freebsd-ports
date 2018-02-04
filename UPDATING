@@ -33,8 +33,13 @@ you update your ports collection, before attempting any port upgrades.
      # pkg install emacs-devel_nox
 
   For those building their own packages, a flavor other than the default must be
-  specified.  For example, to build editors/emacs with the nox flavor, or to
-  build a port using Emacs with the devel_full flavor use
+  specified.  For example, to build the nox flavor of editors/emacs, or to build
+  the devel_full flavor of a port using Emacs, use
+
+     # poudriere bulk -j 11amd64 editors/emacs@nox
+     # poudriere bulk -j 11amd64 print/pdf-tools@devel_full
+
+  or
 
      # make FLAVOR=nox install
      # make FLAVOR=devel_full
