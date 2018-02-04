@@ -4418,6 +4418,7 @@
     SUBDIR += py-evdev
     SUBDIR += py-eventlib
     SUBDIR += py-exam
+    SUBDIR += py-expiringdict
     SUBDIR += py-extras
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
