@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libgphoto2.so:graphics/libgphoto2 \
 		libpopt.so:devel/popt
 
-USES=		gmake jpeg localbase pkgconfig tar:bzip2
+USES=		gmake jpeg pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	POPT_CFLAGS="$$(pkg-config --cflags popt)" \
 		POPT_LIBS="$$(pkg-config --libs popt)"
