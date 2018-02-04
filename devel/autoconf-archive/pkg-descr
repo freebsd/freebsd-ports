@@ -5,4 +5,4 @@ can be re-used without imposing any restrictions whatsoever on the licensing
 of the generated configure script. In particular, it is possible to use all
 those macros in configure scripts that are meant for non-free software.
 
-WWW: http://savannah.gnu.org/projects/autoconf-archive/
+WWW: https://savannah.gnu.org/projects/autoconf-archive
