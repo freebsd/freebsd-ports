@@ -3,7 +3,6 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -41,15 +40,13 @@ TOSTRIP=	bin/sqlr-start \
 		bin/sqlr-connection \
 		bin/sqlr-scaler \
 		bin/sqlr-cachemanager \
-		bin/sqlr-fields \
-		bin/sqlr-query \
 		bin/sqlr-export \
 		bin/sqlr-import \
 		bin/sqlr-pwdenc \
 		bin/sqlr-status \
 		bin/sqlrsh \
 		lib/libsqlrodbc.so.4.0.0 \
-		lib/libsqlrutil.so.4.0.0 \
+		lib/libsqlrutil.so.6.0.0 \
 		lib/libsqlrclient.so.4.0.0 \
 		lib/libsqlrclientwrapper.so.4.0.0 \
 		lib/libpqsqlrelay.so.4.0.0 \
@@ -58,14 +55,11 @@ TOSTRIP=	bin/sqlr-start \
 		lib/libmysql41sqlrelay.so.4.0.0 \
 		lib/libmysql50sqlrelay.so.4.0.0 \
 		lib/libmysql51sqlrelay.so.4.0.0 \
-		lib/libsqlrserver.so.4.0.0 \
+		lib/libsqlrserver.so.6.0.0 \
 		libexec/sqlrelay/sqlrauth_database.so \
-		libexec/sqlrelay/sqlrauth_krb_userlist.so \
 		libexec/sqlrelay/sqlrauth_proxied.so \
 		libexec/sqlrelay/sqlrauth_sqlrelay.so \
-		libexec/sqlrelay/sqlrauth_tls_userlist.so \
 		libexec/sqlrelay/sqlrauth_userlist.so \
-		libexec/sqlrelay/sqlrconfig_xml.so \
 		libexec/sqlrelay/sqlrconfig_xmldom.so \
 		libexec/sqlrelay/sqlrconnection_router.so \
 		libexec/sqlrelay/sqlrfilter_patterns.so \
