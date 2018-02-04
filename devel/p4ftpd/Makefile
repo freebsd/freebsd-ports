@@ -26,7 +26,7 @@ USE_RC_SUBR=	p4ftpd
 
 .include <bsd.port.pre.mk>
 
-.include "${.CURDIR}/../p4/Makefile.inc"
+.include "${.CURDIR}/../p4d/Makefile.inc"
 
 USERS=	p4admin
 GROUPS=	p4admin
