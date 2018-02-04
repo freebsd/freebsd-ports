@@ -1945,6 +1945,9 @@
 @dir %%WWWDIR%%/node_modules/yargs/locales
 @dir %%WWWDIR%%/public
 @dir %%WWWDIR%%/public/assets
+@dir %%WWWDIR%%/public/assets/pghero
+@dir %%WWWDIR%%/public/assets/doorkeeper
+@dir %%WWWDIR%%/public/assets/doorkeeper/admin
 @dir %%WWWDIR%%/public/avatars
 @dir %%WWWDIR%%/public/avatars/original
 @dir %%WWWDIR%%/public/emoji
@@ -16060,6 +16063,17 @@
 %%WWWDIR%%/public/500.html
 %%WWWDIR%%/public/android-chrome-192x192.png
 %%WWWDIR%%/public/apple-touch-icon.png
+%%WWWDIR%%/public/assets/.sprockets-manifest-00000000000000000000000000000000.json
+%%WWWDIR%%/public/assets/500.html
+%%WWWDIR%%/public/assets/doorkeeper/admin/application-0000000000000000000000000000000000000000000000000000000000000000.css
+%%WWWDIR%%/public/assets/doorkeeper/admin/application-0000000000000000000000000000000000000000000000000000000000000000.css.gz
+%%WWWDIR%%/public/assets/doorkeeper/application-0000000000000000000000000000000000000000000000000000000000000000.css
+%%WWWDIR%%/public/assets/doorkeeper/application-0000000000000000000000000000000000000000000000000000000000000000.css.gz
+%%WWWDIR%%/public/assets/pghero/application-0000000000000000000000000000000000000000000000000000000000000000.js
+%%WWWDIR%%/public/assets/pghero/application-0000000000000000000000000000000000000000000000000000000000000000.js.gz
+%%WWWDIR%%/public/assets/pghero/application-0000000000000000000000000000000000000000000000000000000000000000.css
+%%WWWDIR%%/public/assets/pghero/application-0000000000000000000000000000000000000000000000000000000000000000.css.gz
+%%WWWDIR%%/public/assets/pghero/favicon-0000000000000000000000000000000000000000000000000000000000000000.png
 %%WWWDIR%%/public/assets/sw.js
 %%WWWDIR%%/public/avatars/original/missing.png
 %%WWWDIR%%/public/badge.png
