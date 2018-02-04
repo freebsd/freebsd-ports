@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit_payloads-mettle
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.6
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
