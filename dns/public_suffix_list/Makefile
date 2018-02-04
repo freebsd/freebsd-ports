@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	public_suffix_list
-PORTVERSION=	0.0.0.20180113
+PORTVERSION=	20180125
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,12 +21,11 @@ PLIST_FILES=	%%DATADIR%%/public_suffix_list.dat \
 
 GH_ACCOUNT=	publicsuffix
 GH_PROJECT=	list
-GH_TAGNAME=	eacc5d0
+GH_TAGNAME=	0f3b07d
 USE_GITHUB=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/public_suffix_list.dat ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/tests/test_psl.txt ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/public_suffix_list.dat ${WRKSRC}/tests/test_psl.txt ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
