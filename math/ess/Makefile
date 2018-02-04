@@ -19,7 +19,8 @@ RUN_DEPENDS=	R:math/R
 
 NO_ARCH=	yes
 
-USES=		emacs gmake makeinfo tar:tgz
+USES=		emacs gmake makeinfo perl5 tar:tgz
+USE_PERL5=	build
 
 INFO=		ess
 
