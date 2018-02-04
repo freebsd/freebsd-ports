@@ -1,0 +1,7 @@
+sounddevice provides bindings for the PortAudio library and a few convenience
+functions to play and record NumPy arrays containing audio signals.
+
+It is primarily intended for use in signal analysis software.
+PortAudio plays and records sound through the OSS audio interface.
+
+WWW: https://github.com/spatialaudio/python-sounddevice
