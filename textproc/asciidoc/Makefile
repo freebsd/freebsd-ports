@@ -3,6 +3,7 @@
 
 PORTNAME=	asciidoc
 PORTVERSION=	8.6.10
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
