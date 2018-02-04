@@ -101,6 +101,7 @@ man/man1/windres.1.gz
 %%NLS%%share/locale/nl/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gprof.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/ld.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/binutils.mo
