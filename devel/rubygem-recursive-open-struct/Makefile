@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursive-open-struct
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
