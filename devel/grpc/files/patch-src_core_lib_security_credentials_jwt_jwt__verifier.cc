@@ -1,6 +1,6 @@
---- src/core/lib/security/credentials/jwt/jwt_verifier.cc.orig	2017-12-13 01:39:01 UTC
+--- src/core/lib/security/credentials/jwt/jwt_verifier.cc.orig	2018-02-01 19:36:08 UTC
 +++ src/core/lib/security/credentials/jwt/jwt_verifier.cc
-@@ -466,7 +466,7 @@ static BIGNUM* bignum_from_base64(grpc_e
+@@ -463,7 +463,7 @@ static BIGNUM* bignum_from_base64(const 
    return result;
  }
  
