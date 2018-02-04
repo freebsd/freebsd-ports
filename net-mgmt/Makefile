@@ -366,6 +366,7 @@
     SUBDIR += torrus
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
+    SUBDIR += unifi-devel
     SUBDIR += unifi5
     SUBDIR += victorops-nagios
     SUBDIR += vidalia
