@@ -16,22 +16,17 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
-USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		gmake
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_LDCONFIG=	yes
 ALL_TARGET=	posix
-
-INCDIR=		include/${PORTNAME}
-PLIST_SUB=	INCDIR=${INCDIR}
+TEST_TARGET=	check
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${INCDIR}
-	${INSTALL_DATA} ${WRKSRC}/malloc.h ${STAGEDIR}${PREFIX}/${INCDIR}/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/malloc.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/libmalloc.a ${STAGEDIR}${PREFIX}/lib/libptmalloc2.a
 	${INSTALL_LIB} ${WRKSRC}/malloc.so ${STAGEDIR}${PREFIX}/lib/libptmalloc2.so.0
 	${LN} -s libptmalloc2.so.0 ${STAGEDIR}${PREFIX}/lib/libptmalloc2.so
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
