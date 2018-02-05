@@ -14,7 +14,7 @@ COMMENT=	High performance processing of XML and HTML data with Tcl
 LICENSE=	MPL11
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake tcl:tea
+USES=		tcl:tea
 CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
 CONFIGURE_ARGS+=--with-expat=/usr
 EXTRACT_AFTER_ARGS=--exclude 'expat*/*.c' --exclude 'expat*/[a-mo-z]*.h' \
@@ -33,6 +33,7 @@ HTML5_DESC=	Enable parsing of HTML5 (requires gumbo)
 HTML5_LIB_DEPENDS=libgumbo.so:devel/gumbo
 HTML5_CONFIGURE_ENABLE=html5
 HTML5_CFLAGS=	-I${LOCALBASE}/include
+MAKE_ARGS+=	RANLIB_STUB=:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
