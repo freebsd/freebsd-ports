@@ -1518,6 +1518,7 @@ lib/%%DISTNAME%%/xpce/prolog/lib/emacs/chr_mode.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/cpp_mode.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/dde_server.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/emacs.pl
+lib/%%DISTNAME%%/xpce/prolog/lib/emacs/emacs_chrome_server.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/find.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/fundamental_mode.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/gdb.pl
