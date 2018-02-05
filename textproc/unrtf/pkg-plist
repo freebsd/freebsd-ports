@@ -1,0 +1,9 @@
+bin/unrtf
+man/man1/unrtf.1.gz
+%%DATADIR%%/SYMBOL.charmap
+%%DATADIR%%/html.conf
+%%DATADIR%%/latex.conf
+%%DATADIR%%/rtf.conf
+%%DATADIR%%/text.conf
+%%DATADIR%%/troff_mm.conf
+%%DATADIR%%/vt.conf
