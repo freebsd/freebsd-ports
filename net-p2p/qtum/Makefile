@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtum
-PORTVERSION=	0.14.13
+PORTVERSION=	0.14.14
 DISTVERSIONPREFIX=	mainnet-ignition-v
 CATEGORIES=	net-p2p finance
 
@@ -39,11 +39,8 @@ CONFIGURE_ARGS=	--disable-man \
 USES=		autoreconf bdb:5 compiler:c++11-lib gmake libtool pkgconfig ssl
 USE_QT5=	buildtools core dbus gui linguisttools network testlib widgets
 USE_GITHUB=	yes
-GH_ACCOUNT=	qtumproject
-GH_PROJECT=	qtum
-# Add extra account:project:tag:meaninglessgroupname/sub/dir via GH_TUPLE
-# for the one git submodule used by Qtum.
-GH_TUPLE=	qtumproject:cpp-eth-qtum:488ccdc7cef0a0b4fa54c8:cppeth/src/cpp-ethereum
+GH_TUPLE=	qtumproject:qtum:${DISTVERSIONPREFIX}${PORTVERSION} \
+		qtumproject:cpp-eth-qtum:488ccdc7cef0a0b4fa54c8:cppeth/src/cpp-ethereum
 
 .include <bsd.port.pre.mk>
 
