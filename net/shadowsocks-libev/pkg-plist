@@ -3,10 +3,22 @@ bin/ss-manager
 bin/ss-server
 bin/ss-tunnel
 include/shadowsocks.h
-lib/libshadowsocks-libev.a
 lib/libshadowsocks-libev.la
+lib/libshadowsocks-libev.so
+lib/libshadowsocks-libev.so.2
+lib/libshadowsocks-libev.so.2.0.0
 libdata/pkgconfig/shadowsocks-libev.pc
 @sample %%ETCDIR%%/config.json.sample
+%%BASH%%share/bash-completion/completions/ss-local
+%%BASH%%share/bash-completion/completions/ss-manager
+%%BASH%%share/bash-completion/completions/ss-redir
+%%BASH%%share/bash-completion/completions/ss-server
+%%BASH%%share/bash-completion/completions/ss-tunnel
+%%ZSH%%share/zsh/site-functions/_ss-local
+%%ZSH%%share/zsh/site-functions/_ss-manager
+%%ZSH%%share/zsh/site-functions/_ss-redir
+%%ZSH%%share/zsh/site-functions/_ss-server
+%%ZSH%%share/zsh/site-functions/_ss-tunnel
 %%DOCS%%man/man1/ss-local.1.gz
 %%DOCS%%man/man1/ss-manager.1.gz
 %%DOCS%%man/man1/ss-nat.1.gz
