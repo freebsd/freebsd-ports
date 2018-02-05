@@ -13,6 +13,7 @@ bin/hugin
 bin/hugin_executor
 bin/hugin_hdrmerge
 bin/hugin_lensdb
+bin/hugin_stacker
 bin/hugin_stitch_project
 bin/icpfind
 bin/linefind
@@ -79,14 +80,19 @@ share/applications/pto_gen.desktop
 %%DATADIR%%/data/blended_stacks.executor
 %%DATADIR%%/data/celeste.model
 %%DATADIR%%/data/default.setting
+%%DATADIR%%/data/duallens.assistant
+%%DATADIR%%/data/expressions.ini
 %%DATADIR%%/data/fused_layers.executor
 %%DATADIR%%/data/hdr_pano.executor
 %%DATADIR%%/data/hugin_exiftool_copy.arg
 %%DATADIR%%/data/hugin_exiftool_final_example.arg
+%%DATADIR%%/data/median_stack.executor
+%%DATADIR%%/data/multirow.assistant
 %%DATADIR%%/data/normal_enblend.executor
 %%DATADIR%%/data/normal_enblend_cubic.executor
 %%DATADIR%%/data/normal_layered_tiff.executor
 %%DATADIR%%/data/normal_smartblend.executor
+%%DATADIR%%/data/normal.assistant
 %%DATADIR%%/data/plugins-templates/dual_use.py
 %%DATADIR%%/data/plugins-templates/plugin_skeleton.py
 %%DATADIR%%/data/plugins/README_woa.txt
@@ -94,6 +100,9 @@ share/applications/pto_gen.desktop
 %%DATADIR%%/data/plugins/shooting_pattern.py
 %%DATADIR%%/data/plugins/top_five.py
 %%DATADIR%%/data/plugins/woa.py
+%%DATADIR%%/data/scanned.assistant
+%%DATADIR%%/data/scanned2.assistant
+%%DATADIR%%/data/stacked.assistant
 %%DATADIR%%/data/zeronoise.executor
 %%DATADIR%%/xrc/about.xrc
 %%DATADIR%%/xrc/batch_frame.xrc
@@ -446,7 +455,7 @@ share/applications/pto_gen.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Tca_correct.html
 %%DATADIR%%/xrc/data/help_en_EN/The_General_Panini_Projection.html
 %%DATADIR%%/xrc/data/help_en_EN/Tone_mapping.html
-%%DATADIR%%/xrc/data/help_en_EN/User_defined_output_sequence.html
+%%DATADIR%%/xrc/data/help_en_EN/User_defined_output_sequence_and_user_defined_assistant.html
 %%DATADIR%%/xrc/data/help_en_EN/Using_Celeste_with_hugin.html
 %%DATADIR%%/xrc/data/help_en_EN/Verdandi.html
 %%DATADIR%%/xrc/data/help_en_EN/Vertical-fisheye.jpg
