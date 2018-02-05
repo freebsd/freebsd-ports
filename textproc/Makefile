@@ -333,6 +333,7 @@
     SUBDIR += ibus
     SUBDIR += ibus-el
     SUBDIR += ibus-kmfl
+    SUBDIR += ibus-m17n
     SUBDIR += ibus-qt
     SUBDIR += ibus-typing-booster
     SUBDIR += icdiff
