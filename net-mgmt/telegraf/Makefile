@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.5.1
-PORTREVISION=	2
+DISTVERSION=	1.5.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
