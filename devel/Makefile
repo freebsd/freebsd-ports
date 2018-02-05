@@ -4670,6 +4670,7 @@
     SUBDIR += py-oslo.versionedobjects
     SUBDIR += py-oslo.vmware
     SUBDIR += py-osprofiler
+    SUBDIR += py-p4python
     SUBDIR += py-packaging
     SUBDIR += py-palm
     SUBDIR += py-parsedatetime
