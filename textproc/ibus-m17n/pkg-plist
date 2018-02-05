@@ -1,0 +1,8 @@
+libexec/ibus-engine-m17n
+libexec/ibus-setup-m17n
+share/ibus/component/m17n.xml
+%%DATADIR%%/default.xml
+%%DATADIR%%/icons/ibus-m17n.svg
+%%DATADIR%%/setup/ibus-m17n-preferences.ui
+share/applications/ibus-setup-m17n.desktop
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-m17n.mo
