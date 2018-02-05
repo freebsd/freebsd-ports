@@ -64,6 +64,15 @@
        ;;
      --with-ow-dir=*)
        WATCOM=`echo $option | cut -d'=' -f2`
+@@ -2748,7 +2754,7 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+   # don't check for yasm for the time beeing as 0.40 and 0.50 both have known bugs
+   # [ "$OS" != "darwin" ] && check_yasm
+   [ "$OS" != "darwin"  ] && check_xsltproc
+-  [ "$OS" != "darwin"  ] && check_mkisofs
++  [ "$OS" != "darwin" -a "$OS" != "freebsd" ] && check_mkisofs
+ fi
+ 
+ # the libraries
 @@ -2803,13 +2809,20 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
    [ $WITH_PYTHON -eq 1 ] && check_python
    [ $WITH_JAVA   -eq 1 ] && check_java
