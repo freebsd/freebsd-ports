@@ -525,6 +525,11 @@ bin/stonesoup
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_summoner.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_undead_warrior.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_firemage.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_froggy_goodgod_tengu_gold.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_froggy_jiyva_felid.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_froggy_natasha_and_boris.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_froggy_rune_and_run_failed_on_dis.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_froggy_thunder_fist_nikola.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_omndra_zot_demon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_peileppe_bloax_eye.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_pooryurik_knight.png

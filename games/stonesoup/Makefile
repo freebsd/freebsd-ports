@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.21.0
+PORTVERSION=	0.21.1
 CATEGORIES=	games
 MASTER_SITES=	https://crawl.develz.org/release/%SUBDIR%/ \
 		http://crawl.develz.org/release/%SUBDIR%/
