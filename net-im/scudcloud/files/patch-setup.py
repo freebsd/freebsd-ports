@@ -9,3 +9,13 @@
      yield os.path.join('share', 'applications'), \
          glob.glob(os.path.join('share', '*.desktop'))
      yield os.path.join('share', 'pixmaps'), \
+@@ -59,8 +57,7 @@ setup(name='scudcloud',
+       maintainer='Andrew Stiegmann',
+       maintainer_email='andrew.stiegmann@gmail.com',
+       package_data = {
+-          # *.js will be processed separately
+-          'scudcloud': ['resources/*.css', 'resources/*.html', 'resources/*.png',]
++          'scudcloud': ['resources/*.css', 'resources/*.html', 'resources/*.png', 'resources/*.js']
+       },
+       packages=['scudcloud',],
+       requires=['dbus', 'PyQt5',],
