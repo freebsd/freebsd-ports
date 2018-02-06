@@ -10,6 +10,7 @@ MAINTAINER=	matt@mjslabs.com
 COMMENT=	Yubico C client library
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 BUILD_DEPENDS=	curl-config:ftp/curl \
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	curl-config:ftp/curl \
 GNU_CONFIGURE=	yes
 USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 PLIST_FILES=	bin/ykclient \
 		include/ykclient.h \
@@ -35,8 +37,5 @@ STATIC_CONFIGURE_ENABLE=	static
 STATIC_PLIST_FILES=		lib/libykclient.a
 
 MAKE_JOBS_UNSAFE=	yes
-
-regression-test: build
-	@(cd ${WRKSRC} && ${MAKE_CMD} check)
 
 .include <bsd.port.mk>
