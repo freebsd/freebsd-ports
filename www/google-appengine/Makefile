@@ -3,7 +3,7 @@
 
 PORTNAME=	google-appengine
 PORTVERSION=	1.9.51
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
@@ -27,7 +27,8 @@ PORTDATA=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	${GAESCRIPTS:C,^| ,bin/&,g}
 
-USES=		gettext python:2 shebangfix zip
+USES=		gettext python:2.7 shebangfix zip
+SHEBANG_FILES=	${GAESCRIPTS}
 
 WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
 
