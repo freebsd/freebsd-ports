@@ -70,7 +70,12 @@ pre-everything::
 #define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
 PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
+
+# Use the internal pkg instead, generally, unless this is a cross-build,
+# in which case that won't work. Hope for the best then.
+.if !defined(CROSS_TOOLCHAIN)
 PKG_BIN=	${WRKSRC}/src/pkg-static
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
