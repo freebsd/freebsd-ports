@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.92.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://launchpadlibrarian.net/332184472/ \
 		https://inkscape.org/en/gallery/item/11254/ \
@@ -39,7 +39,6 @@ USE_XORG=	x11
 INSTALLS_ICONS=	yes
 CMAKE_ARGS+=	-DWITH_GNOME_VFS:BOOL=NO
 
-python_CMD?=	${LOCALBASE}/bin/python2
 SHEBANG_FILES=	cxxtest/cxxtestgen.pl share/extensions/*.p[lm] \
 		share/extensions/*.py share/extensions/genpofiles.sh \
 		fix-roff-punct
