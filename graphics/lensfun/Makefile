@@ -3,18 +3,23 @@
 
 PORTNAME=	lensfun
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Library for fixing lens geometry distortions
 
-LICENSE=	LGPL3
+LICENSE=	GPLv3 LGPL3 CC-BY-SA-3.0 PD
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3=		${WRKSRC}/docs/gpl-3.0.txt
+LICENSE_FILE_LGPL3=		${WRKSRC}/docs/lgpl-3.0.txt
+LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/docs/cc-by-sa-3.0.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake gettext-runtime pathfix pkgconfig
+USES=		cmake gettext-runtime pathfix pkgconfig shebangfix
+SHEBANG_FILES=	apps/lensfun-update-data apps/lensfun-add-adapter
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DBUILD_AUXFUN:BOOL=ON
