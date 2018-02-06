@@ -1097,10 +1097,17 @@ IGNORE=	CROSS_SYSROOT should be defined
 HOSTCC:=	${CC}
 HOSTCXX:=	${CXX}
 .endif
+.if !defined(CC_FOR_BUILD)
+CC_FOR_BUILD:=	${HOSTCC}
+CXX_FOR_BUILD:=	${HOSTCXX}
+.endif
+CONFIGURE_ENV+= HOSTCC="${HOSTCC}" HOSTCXX="${HOSTCXX}" CC_FOR_BUILD="${CC_FOR_BUILD}" CXX_FOR_BUILD="${CXX_FOR_BUILD}"
+
 CC=		${XCC}
 CXX=	${XCXX}
 CFLAGS+=	--sysroot=${CROSS_SYSROOT} -isystem ${CROSS_SYSROOT}/usr/include
-CXXFLAGS+=	--sysroot=${CROSS_SYSROOT} -isystem ${CROSS_SYSROOT}/usr/include/c++/v1 -nostdinc++
+CXXFLAGS+=	--sysroot=${CROSS_SYSROOT} -isystem ${CROSS_SYSROOT}/usr/include -isystem ${CROSS_SYSROOT}/usr/include/c++/v1 -nostdinc++
+CPPFLAGS+=	--sysroot=${CROSS_SYSROOT} -isystem ${CROSS_SYSROOT}/usr/include
 LDFLAGS+=	--sysroot=${CROSS_SYSROOT}
 .for _tool in AS AR LD NM OBJCOPY RANLIB SIZE STRINGS
 ${_tool}=	${CROSS_BINUTILS_PREFIX}${tool:tl}
@@ -2584,7 +2591,7 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	tcl textproc tk \
 	ukrainian vietnamese windowmaker wayland www \
 	x11 x11-clocks x11-drivers x11-fm x11-fonts x11-servers x11-themes \
-	x11-toolkits x11-wm xfce zope
+	x11-toolkits x11-wm xfce zope base
 
 check-categories:
 .for cat in ${CATEGORIES}
