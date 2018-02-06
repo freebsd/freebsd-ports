@@ -3,7 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -122,10 +122,8 @@ do-build:
 	@${CP} ${FILESDIR}/yarn.lock.in ${WRKSRC}/yarn.lock
 	(cd ${WRKSRC};\
 		HOME=${WRKSRC_mn} yarn --offline;\
-		SECRET_KEY_BASE=x RAILS_ENV=production rails assets:precompile;\
-		${REINPLACE_CMD} -e\
-		"s|^  cache_dir:.*|  cache_dir: '/var/cache/mastodon',|"\
-		${WRKSRC}/config/boot.rb)
+		SECRET_KEY_BASE=x RAILS_ENV=production rails --trace\
+		assets:precompile)
 	(cd ${WRKSRC}/public/assets &&\
 		${MV} .sprockets-manifest-*.json .sprockets-manifest-${X}.json &&\
 		${MV} doorkeeper/application-*.css doorkeeper/application-${XX}.css &&\
@@ -137,17 +135,21 @@ do-build:
 		${MV} pghero/application-*.js pghero/application-${XX}.js &&\
 		${MV} pghero/application-*.js.gz pghero/application-${XX}.js.gz &&\
 		${MV} pghero/favicon-*.png pghero/favicon-${XX}.png)
-	${REINPLACE_CMD} -e 's|application-[0-9A-Za-z]\{64\}|application-${XX}|g'\
+	@${REINPLACE_CMD} -e 's|application-[0-9A-Za-z]\{64\}|application-${XX}|g'\
 		${WRKSRC}/public/assets/.sprockets-manifest-${X}.json
-	${REINPLACE_CMD} -e 's|"digest":"[0-9A-Za-z]\{64\}"|"digest":"${XX}"|g'\
+	@${REINPLACE_CMD} -e 's|"digest":"[0-9A-Za-z]\{64\}"|"digest":"${XX}"|g'\
 		${WRKSRC}/public/assets/.sprockets-manifest-${X}.json
-
+	@${REINPLACE_CMD} -e\
+		"s|^  cache_dir:.*|  cache_dir: '/var/cache/mastodon',|"\
+		${WRKSRC}/config/boot.rb
 do-install:
 	@${RM} -r ${WRKSRC}/node_modules/emoji*\
 		${WRKSRC}/node_modules/*/man\
 		${WRKSRC}/node_modules/*/node_modules\
 		${WRKSRC}/node_modules/node-sass\
-		${WRKSRC}/node_modules/uws/build
+		${WRKSRC}/node_modules/uws/build\
+		${WRKSRC}/node_modules/babel-preset-env/.github\
+		${WRKSRC}/node_modules/redis/.github
 	@${RM}	${WRKSRC}/Gemfile.lock\
 		${WRKSRC}/lib/tasks/auto_annotate_models.rake\
 		${WRKSRC}/node_modules/uws/uws_darwin_*\
@@ -157,9 +159,10 @@ do-install:
 		${WRKSRC}/node_modules/.bin/node-sass\
 		${WRKSRC}/node_modules/uws/build_log.txt
 	${STRIP_CMD} ${WRKSRC}/node_modules/uws/uws_freebsd_${NODE_ABI}.node
-	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}/var/cache/${PORTNAME}\
+	@${MKDIR} ${STAGEDIR}/var/cache/${PORTNAME} \
 		${STAGEDIR}/var/log/${PORTNAME}\
-		${STAGEDIR}/var/run/${PORTNAME}
+		${STAGEDIR}/var/run/${PORTNAME}\
+		${STAGEDIR}${WWWDIR}/public/system
 	${INSTALL_DATA} ${WRKDIR}/nginx.conf\
 		${STAGEDIR}${WWWDIR}/nginx.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/nginx-include.conf\
@@ -171,6 +174,7 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE}\
 		"app bin config db lib log node_modules public spec streaming vendor"\
 		${STAGEDIR}${WWWDIR})
+	:>${STAGEDIR}${WWWDIR}/Gemfile.lock
 
 .include <bsd.port.pre.mk>
 
