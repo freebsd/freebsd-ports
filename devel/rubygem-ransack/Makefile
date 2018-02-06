@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ransack
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
