@@ -3,6 +3,7 @@
 
 PORTNAME=	coccinelle
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
 
@@ -20,7 +21,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 USE_OCAML=	3.0+
 USE_OCAML_CAMLP4=yes
 
-USES=		gmake perl5 pkgconfig:build python tar:tgz
+USES=		gmake perl5 pkgconfig:build python shebangfix tar:tgz
+SHEBANG_FILES=	tools/pycocci
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}" PYVER="${PYTHON_VER}"
