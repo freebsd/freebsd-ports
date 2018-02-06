@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prips
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/files/sys/prips/
 
