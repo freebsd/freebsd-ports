@@ -29,10 +29,13 @@ LICENSE_COMB=	multi
 .endif
 
 PREFIX=		/usr
-CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1"
+CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1" \
+		NM=/usr/bin/nm \
+		AS_FOR_TARGET=/usr/bin/as \
+		LD_FOR_TARGET=/usr/bin/ld \
+		NM_FOR_TARGET=/usr/bin/nm
 TARGET_ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
 GCC_TARGET=	${TARGET_ARCH}-unknown-${OPSYS:tl}${OSREL}
-
 USES=	gmake libtool tar:bzip2 makeinfo
 PLIST_SUB=	TARGETARCH=${TARGET_ARCH} \
 		OPSYS=${OPSYS:tl} \
@@ -44,8 +47,10 @@ EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/freebsd-format-extens
 
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
-CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls \
+CONFIGURE_ARGS+=	\
+		--target=${GCC_TARGET} \
 		--enable-languages=c,c++ \
+		--disable-nls \
 		--without-headers \
 		--with-build-sysroot=${CROSS_SYSROOT} \
 		-with-pkgversion="GNU Collection for FreeBSD"
@@ -63,8 +68,12 @@ post-patch:
 		${WRKSRC}//gcc/cp/g++spec.c
 
 post-install:
+	${MV} ${STAGEDIR}/usr/bin/gcov-tool ${STAGEDIR}/usr/bin/${GCC_TARGET}-gcov-tool ; \
 	for tool in cpp gcc g++ gcov; do \
+		${MV} ${STAGEDIR}/usr/bin/$${tool} ${STAGEDIR}/usr/bin/${GCC_TARGET}-$${tool} ; \
 		${LN} -sf ${GCC_TARGET}-$${tool}  ${STAGEDIR}/usr/bin/$${tool} ; \
+		${MV} ${STAGEDIR}/${MANDIR}1/$${tool}.1 ${STAGEDIR}/${MANDIR}1/${GCC_TARGET}-$${tool}.1 ; \
+		${GZIP_CMD} ${STAGEDIR}/${MANDIR}1/${GCC_TARGET}-$${tool}.1 ; \
 		${LN} -sf ${GCC_TARGET}-$${tool}.1.gz ${STAGEDIR}/${MANDIR}1/$${tool}.1.gz ; \
 	done ; \
 	${LN} -sf ${GCC_TARGET}-g++  ${STAGEDIR}/usr/bin/c++ ; \
