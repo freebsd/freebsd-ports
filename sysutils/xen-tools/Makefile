@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -57,8 +57,12 @@ CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}" \
 # Disable bash and xgettext tests, they are not needed on FreeBSD.
 CONFIGURE_ENV+=		ac_cv_path_BASH=${TRUE}
 
-SHEBANG_FILES=	tools/misc/xencov_split \
-		tools/misc/xen-ringwatch
+SHEBANG_FILES=	tools/misc/xen-ringwatch \
+		tools/misc/xencov_split \
+		tools/python/scripts/convert-legacy-stream \
+		tools/python/scripts/verify-stream-v2 \
+		tools/xenmon/xenmon.py
+
 ALL_TARGET=	tools docs
 INSTALL_TARGET=	install-tools install-docs
 
