@@ -1378,6 +1378,7 @@ llvm-devel/include/llvm/Bitcode/BitcodeWriterPass.h
 llvm-devel/include/llvm/Bitcode/BitstreamReader.h
 llvm-devel/include/llvm/Bitcode/BitstreamWriter.h
 llvm-devel/include/llvm/Bitcode/LLVMBitCodes.h
+llvm-devel/include/llvm/CodeGen/AccelTable.h
 llvm-devel/include/llvm/CodeGen/Analysis.h
 llvm-devel/include/llvm/CodeGen/AsmPrinter.h
 llvm-devel/include/llvm/CodeGen/AtomicExpandUtils.h
@@ -1402,6 +1403,9 @@ llvm-devel/include/llvm/CodeGen/GCMetadataPrinter.h
 llvm-devel/include/llvm/CodeGen/GCStrategy.h
 llvm-devel/include/llvm/CodeGen/GCs.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/CallLowering.h
+llvm-devel/include/llvm/CodeGen/GlobalISel/Combiner.h
+llvm-devel/include/llvm/CodeGen/GlobalISel/CombinerHelper.h
+llvm-devel/include/llvm/CodeGen/GlobalISel/CombinerInfo.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/GISelWorkList.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/IRTranslator.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/InstructionSelect.h
@@ -1412,6 +1416,7 @@ llvm-devel/include/llvm/CodeGen/GlobalISel/Legalizer.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/LegalizerHelper.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/LegalizerInfo.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/Localizer.h
+llvm-devel/include/llvm/CodeGen/GlobalISel/MIPatternMatch.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/MachineIRBuilder.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/RegBankSelect.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/RegisterBank.h
@@ -1592,6 +1597,7 @@ llvm-devel/include/llvm/DebugInfo/CodeView/TypeVisitorCallbacks.h
 llvm-devel/include/llvm/DebugInfo/DIContext.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFAbbreviationDeclaration.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFAcceleratorTable.h
+llvm-devel/include/llvm/DebugInfo/DWARF/DWARFAddressRange.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFAttribute.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFCompileUnit.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFContext.h
@@ -1606,6 +1612,7 @@ llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugLoc.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugMacro.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugPubTable.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugRangeList.h
+llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugRnglists.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDie.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFExpression.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFFormValue.h
@@ -2050,6 +2057,7 @@ llvm-devel/include/llvm/Support/Compiler.h
 llvm-devel/include/llvm/Support/Compression.h
 llvm-devel/include/llvm/Support/ConvertUTF.h
 llvm-devel/include/llvm/Support/CrashRecoveryContext.h
+llvm-devel/include/llvm/Support/DJB.h
 llvm-devel/include/llvm/Support/DOTGraphTraits.h
 llvm-devel/include/llvm/Support/DataExtractor.h
 llvm-devel/include/llvm/Support/DataTypes.h
@@ -2179,6 +2187,7 @@ llvm-devel/include/llvm/Testing/Support/Error.h
 llvm-devel/include/llvm/Testing/Support/SupportHelpers.h
 llvm-devel/include/llvm/ToolDrivers/llvm-dlltool/DlltoolDriver.h
 llvm-devel/include/llvm/ToolDrivers/llvm-lib/LibDriver.h
+llvm-devel/include/llvm/Transforms/AggressiveInstCombine/AggressiveInstCombine.h
 llvm-devel/include/llvm/Transforms/Coroutines.h
 llvm-devel/include/llvm/Transforms/GCOVProfiler.h
 llvm-devel/include/llvm/Transforms/IPO.h
@@ -2342,7 +2351,9 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_complex_builtins.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_device_functions.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_intrinsics.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_libdevice_declares.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_math_forward_declares.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_runtime_wrapper.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__stddef_max_align_t.h
@@ -2504,6 +2515,7 @@ llvm-devel/lib/libLLVMARMDesc.a
 llvm-devel/lib/libLLVMARMDisassembler.a
 llvm-devel/lib/libLLVMARMInfo.a
 llvm-devel/lib/libLLVMARMUtils.a
+llvm-devel/lib/libLLVMAggressiveInstCombine.a
 llvm-devel/lib/libLLVMAnalysis.a
 llvm-devel/lib/libLLVMAsmParser.a
 llvm-devel/lib/libLLVMAsmPrinter.a
