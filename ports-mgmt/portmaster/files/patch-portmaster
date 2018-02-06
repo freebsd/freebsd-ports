@@ -14,7 +14,7 @@
  		pm_v "===>>> Removing empty directories from WRKDIRPREFIX"
  		[ -n "$needws" ] && echo '' || pm_v
 -		find $PM_WRKDIRPREFIX -depth -mindepth 1 -type d -empty -delete 2>/dev/null
-+		find $PM_WRKDIRPREFIX -depth -mindepth 1 maxdepth 2 -type d -empty -delete 2>/dev/null
++		find $PM_WRKDIRPREFIX -depth -mindepth 1 -maxdepth 2 -type d -empty -delete 2>/dev/null
  	fi
  
  	case "$DISPLAY_LIST" in
