@@ -1,34 +1,42 @@
---- Makefile.orig	2017-06-02 21:50:17 UTC
-+++ Makefile
-@@ -571,7 +571,7 @@ HAVE_UNUSED=
+--- Makefile.ship.orig	2018-01-29 02:26:08 UTC
++++ Makefile.ship
+@@ -581,7 +581,7 @@ else
+ #endif	/* end of skip for non-Gnu makefiles */
  
- #INCDIR= /usr/local/include
- #INCDIR= /dev/env/DJDIR/include
+ # default INCDIR for non-macOS
 -INCDIR= /usr/include
 +INCDIR= ${PREFIX}/include
+ #INCDIR= /usr/local/include
+ #INCDIR= /dev/env/DJDIR/include
  
- # Where to install calc related things
- #
-@@ -610,15 +610,15 @@ INCDIR= /usr/include
- #
- #BINDIR= /usr/local/bin
- #BINDIR= /dev/env/DJDIR/bin
+@@ -644,7 +644,7 @@ else
+ #endif	/* end of skip for non-Gnu makefiles */
+ 
+ # default BINDIR for non-macOS
 -BINDIR= /usr/bin
 +BINDIR= ${PREFIX}/bin
+ #BINDIR= /usr/local/bin
+ #BINDIR= /dev/env/DJDIR/bin
  
- #LIBDIR= /usr/local/lib
- #LIBDIR= /dev/env/DJDIR/lib
+@@ -660,7 +660,7 @@ else
+ #endif	/* end of skip for non-Gnu makefiles */
+ 
+ # default LIBDIR for non-macOS
 -LIBDIR= /usr/lib
 +LIBDIR= ${PREFIX}/lib
+ #LIBDIR= /usr/local/lib
+ #LIBDIR= /dev/env/DJDIR/lib
  
- #CALC_SHAREDIR= /usr/local/lib/calc
- #CALC_SHAREDIR= /dev/env/DJDIR/share/calc
+@@ -676,7 +676,7 @@ else
+ #endif	/* end of skip for non-Gnu makefiles */
+ 
+ # default CALC_SHAREDIR for non-macOS
 -CALC_SHAREDIR= /usr/share/calc
 +CALC_SHAREDIR= ${PREFIX}/share/calc
+ #CALC_SHAREDIR= /usr/local/lib/calc
+ #CALC_SHAREDIR= /dev/env/DJDIR/share/calc
  
- # NOTE: Do not set CALC_INCDIR to /usr/include or /usr/local/include!!!
- #	Always be sure that the CALC_INCDIR path ends in /calc to avoid
-@@ -685,7 +685,7 @@ SCRIPTDIR= ${BINDIR}/cscript
+@@ -749,7 +749,7 @@ SCRIPTDIR= ${BINDIR}/cscript
  #
  # If in doubt, use T=
  #
@@ -37,7 +45,7 @@
  
  # where man pages are installed
  #
-@@ -696,7 +696,7 @@ T=
+@@ -760,7 +760,7 @@ T=
  #MANDIR=
  #MANDIR= /usr/local/man/man1
  #MANDIR= /usr/man/man1
@@ -46,7 +54,7 @@
  #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
-@@ -831,14 +831,14 @@ CALCRC= ${CALC_SHAREDIR}/startup:~/.calc
+@@ -895,14 +895,14 @@ CALCRC= ${CALC_SHAREDIR}/startup:~/.calc
  #
  # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
  #
@@ -55,10 +63,8 @@
 +#USE_READLINE=
 +USE_READLINE= -DUSE_READLINE
  #
--READLINE_LIB=
--READLINE_EXTRAS=
-+#READLINE_LIB=
-+#READLINE_EXTRAS=
+ READLINE_LIB=
+ READLINE_EXTRAS=
  #
 -#READLINE_LIB= -lreadline
 -#READLINE_EXTRAS= -lhistory -lncurses
@@ -67,7 +73,7 @@
  #
  #READLINE_LIB= -L/usr/gnu/lib -lreadline
  #READLINE_EXTRAS= -lhistory -lncurses
-@@ -872,7 +872,7 @@ READLINE_INCLUDE=
+@@ -936,7 +936,7 @@ READLINE_INCLUDE=
  #CALCPAGER= more
  #CALCPAGER= pg
  #CALCPAGER= cat
@@ -76,7 +82,7 @@
  #CALCPAGER= less.exe -ci
  
  # Debug/Optimize options for ${CC} and ${LCC}
-@@ -999,35 +999,36 @@ LIB_EXT_VERSION= ${LIB_EXT}.${VERSION}
+@@ -1063,35 +1063,35 @@ LIB_EXT_VERSION= ${LIB_EXT}.${VERSION}
  
  # standard utilities used during make
  #
@@ -122,11 +128,10 @@
 -LDCONFIG= ldconfig
 +#LN= ln
 +#LDCONFIG= ldconfig
-+LDCONFIG=
  # assume the X11 makedepend tool for the depend rule
  MAKEDEPEND= makedepend
  STRIP= strip
-@@ -1327,13 +1328,15 @@ WNO_IMPLICT= -Wno-implicit
+@@ -1381,13 +1381,15 @@ WNO_IMPLICT= -Wno-implicit
  WNO_ERROR_LONG_LONG= -Wno-error=long-long
  WNO_LONG_LONG= -Wno-long-long
  CCWERR=
@@ -146,7 +151,7 @@
  #
  endif
  
-@@ -1680,7 +1683,8 @@ ICFLAGS= ${COMMON_CFLAGS} ${CC_STATIC}
+@@ -1734,7 +1736,8 @@ ICFLAGS= ${COMMON_CFLAGS} ${CC_STATIC}
  else
  ICFLAGS= ${COMMON_CFLAGS} ${CC_SHARE}
  endif
@@ -156,7 +161,7 @@
  
  # Required flags to link files for calc
  #
-@@ -1865,7 +1869,7 @@ CUSTOM_PASSDOWN=  \
+@@ -1919,7 +1922,7 @@ CUSTOM_PASSDOWN=  \
      COMMON_ADD="${COMMON_ADD}" \
      COMMON_CFLAGS="${COMMON_CFLAGS} -I.." \
      COMMON_LDFLAGS="${COMMON_LDFLAGS}" \
@@ -165,7 +170,7 @@
      CUSTOMCALDIR="${CUSTOMCALDIR}" \
      CUSTOMHELPDIR="${CUSTOMHELPDIR}" \
      CUSTOMINCDIR="${CUSTOMINCDIR}" \
-@@ -1893,7 +1897,7 @@ CUSTOM_PASSDOWN=  \
+@@ -1947,7 +1950,7 @@ CUSTOM_PASSDOWN=  \
      PURIFY="${PURIFY}" \
      Q="${Q}" \
      RANLIB="${RANLIB}" \
@@ -174,7 +179,7 @@
      RMDIR=${RMDIR} \
      SCRIPTDIR="${SCRIPTDIR}" \
      SED=${SED} \
-@@ -1920,7 +1924,7 @@ HELP_PASSDOWN= \
+@@ -1974,7 +1977,7 @@ HELP_PASSDOWN= \
      COMMON_ADD="${COMMON_ADD}" \
      COMMON_CFLAGS="${COMMON_CFLAGS}" \
      COMMON_LDFLAGS="${COMMON_LDFLAGS}" \
@@ -183,7 +188,7 @@
      EXT=${EXT} \
      FMT=${FMT} \
      GREP=${GREP} \
-@@ -1935,7 +1939,7 @@ HELP_PASSDOWN= \
+@@ -1989,7 +1992,7 @@ HELP_PASSDOWN= \
      MKDIR=${MKDIR} \
      MV=${MV} \
      Q="${Q}" \
@@ -192,7 +197,7 @@
      RMDIR=${RMDIR} \
      SCRIPTDIR="${SCRIPTDIR}" \
      SED=${SED} \
-@@ -1955,7 +1959,7 @@ CAL_PASSDOWN= \
+@@ -2009,7 +2012,7 @@ CAL_PASSDOWN= \
      CHMOD=${CHMOD} \
      CMP=${CMP} \
      CO=${CO} \
@@ -201,7 +206,7 @@
      HELPDIR="${HELPDIR}" \
      INCDIR="${INCDIR}" \
      LANG=${LANG} \
-@@ -1964,7 +1968,7 @@ CAL_PASSDOWN= \
+@@ -2018,7 +2021,7 @@ CAL_PASSDOWN= \
      MKDIR=${MKDIR} \
      MV=${MV} \
      Q="${Q}" \
@@ -210,7 +215,7 @@
      RMDIR=${RMDIR} \
      SCRIPTDIR="${SCRIPTDIR}" \
      T=${T} \
-@@ -1983,7 +1987,7 @@ CSCRIPT_PASSDOWN= \
+@@ -2037,7 +2040,7 @@ CSCRIPT_PASSDOWN= \
      CHMOD=${CHMOD} \
      CMP=${CMP} \
      CO=${CO} \
@@ -219,7 +224,7 @@
      FMT=${FMT} \
      HELPDIR="${HELPDIR}" \
      INCDIR="${INCDIR}" \
-@@ -1993,7 +1997,7 @@ CSCRIPT_PASSDOWN= \
+@@ -2047,7 +2050,7 @@ CSCRIPT_PASSDOWN= \
      MKDIR=${MKDIR} \
      MV=${MV} \
      Q="${Q}" \
