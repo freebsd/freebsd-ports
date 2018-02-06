@@ -34,7 +34,7 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 STATISTICS_CONFIGURE_ENABLE=	statistics
 
 USES=		autoreconf gmake jpeg libtool localbase:ldflag pkgconfig \
-		ssl tar:bzip2
+		python ssl tar:bzip2
 
 USE_GNOME=	glib20
 USE_XORG=	pixman
@@ -49,7 +49,8 @@ CONFIGURE_ARGS+=--disable-celt051 \
 SPICE_SSL_CFLAGS=	-I${OPENSSLINC}
 SPICE_SSL_LIBS=	-L${OPENSSLLIB} -lcrypto -lssl
 CONFIGURE_ENV+=	SSL_CFLAGS="${SPICE_SSL_CFLAGS}" SSL_LIBS="${SPICE_SSL_LIBS}" \
-		OPENSSL_CFLAGS="${SPICE_SSL_CFLAGS}" OPENSSL_LIBS="${SPICE_SSL_LIBS}"
+		OPENSSL_CFLAGS="${SPICE_SSL_CFLAGS}" OPENSSL_LIBS="${SPICE_SSL_LIBS}" \
+		PYTHON=${PYTHON_CMD}
 
 INSTALL_TARGET=	install-strip
 
