@@ -3,7 +3,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.30
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -13,6 +13,8 @@ COMMENT?=	GNU binary tools
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
+
+EXTRA_PATCHES=	${FILESDIR}/fix-aarch64.diff:-p1
 
 .if !defined(CROSS_TOOLCHAIN)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
