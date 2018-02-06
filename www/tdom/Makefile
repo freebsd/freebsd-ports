@@ -33,6 +33,7 @@ HTML5_DESC=	Enable parsing of HTML5 (requires gumbo)
 HTML5_LIB_DEPENDS=libgumbo.so:devel/gumbo
 HTML5_CONFIGURE_ENABLE=html5
 HTML5_CFLAGS=	-I${LOCALBASE}/include
+HTML5_USES=	pkgconfig
 MAKE_ARGS+=	RANLIB_STUB=:
 
 post-install-DOCS-on:
