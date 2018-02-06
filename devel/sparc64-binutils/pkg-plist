@@ -1,4 +1,4 @@
-in/sparc64-freebsd-addr2line
+bin/sparc64-freebsd-addr2line
 bin/sparc64-freebsd-ar
 bin/sparc64-freebsd-as
 bin/sparc64-freebsd-c++filt
