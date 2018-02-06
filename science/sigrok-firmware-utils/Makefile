@@ -3,7 +3,7 @@
 
 PORTNAME=	firmware
 PORTVERSION=	20140418
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	#none
 PKGNAMEPREFIX=	sigrok-
@@ -13,10 +13,12 @@ DISTFILES=	#none
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Sigrok firmware extraction utils
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3+
 
-USES=		python:3.4+
+USES=		python:3.4+ shebangfix
+SHEBANG_FILES=	${PY_FILES} ${EX_FILES}
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	README.parsepe
 
@@ -30,15 +32,19 @@ PLIST_FILES=	${PY_FILES:S,^,bin/,} \
 		${EX_FILES:S,^,bin/,} \
 		${EX_FILES:S,^,man/man1/,:S,$,.1.gz,}
 
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${FILESDIR}/* ${WRKSRC}
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/README.parsepe ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.parsepe ${STAGEDIR}${DOCSDIR}
 .for fil in ${PY_FILES}
-	${INSTALL_SCRIPT} ${FILESDIR}/${fil} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${fil} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for fil in ${EX_FILES}
-	${INSTALL_SCRIPT} ${FILESDIR}/${fil} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/${fil}.1 ${STAGEDIR}${MANDIRS}/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/${fil} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${fil}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 
 .include <bsd.port.mk>
