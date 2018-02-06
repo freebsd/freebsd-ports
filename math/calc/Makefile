@@ -2,21 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	calc
-PORTVERSION=	2.12.6.0
+PORTVERSION=	2.12.6.5
 CATEGORIES=	math
-MASTER_SITES=	SF
-
-LICENSE=	LGPL21
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Arbitrary precision calculator
 
+LICENSE=	LGPL21
+
 USES=		gmake tar:bzip2 readline
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	lcn2
 
 MAKE_JOBS_UNSAFE=	yes
 
 CALCPAGER?=	more
+MAKEFILE=	Makefile.ship
 MAKE_ENV+=	CALCPAGER="${CALCPAGER}" CAT="${CAT}" CHMOD="${CHMOD}" \
 		CP="${CP}" GMAKE="${MAKE_CMD}" LN="${LN}" MKDIR="${MKDIR}" \
 		MV="${MV}" RM="${RM}" SED="${SED}" TOUCH="${TOUCH}" \
