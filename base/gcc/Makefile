@@ -1,15 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.4.0
-CATEGORIES=	devel
+PORTVERSION=	6.3.0
+CATEGORIES=	base
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION} \
+		http://www.mpfr.org/mpfr-3.1.6/:mpfr \
 		http://www.mpfr.org/mpfr-current/:mpfr \
 		GNU/gmp:gmp \
-		http://www.multiprecision.org/mpc/download/:mpc
+		https://ftp.gnu.org/gnu/mpc/:mpc
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		mpfr-3.1.4.tar.xz:mpfr \
-		gmp-5.1.3.tar.xz:gmp \
+		mpfr-3.1.6.tar.xz:mpfr \
+		gmp-6.1.2.tar.xz:gmp \
 		mpc-1.0.3.tar.gz:mpc
 PKGNAMEPREFIX=	${OPSYS:tl}-
 
@@ -30,7 +31,7 @@ LICENSE_COMB=	multi
 PREFIX=		/usr
 CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1"
 TARGET_ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
-GCC_TARGET=	${TARGET_ARCH}-portbld-${OPSYS:tl}${OSREL}
+GCC_TARGET=	${TARGET_ARCH}-unknown-${OPSYS:tl}${OSREL}
 
 USES=	gmake libtool tar:bzip2 makeinfo
 PLIST_SUB=	TARGETARCH=${TARGET_ARCH} \
@@ -53,8 +54,8 @@ ALL_TARGET?=	all-gcc
 INSTALL_TARGET?=	install-gcc
 
 post-extract:
-	cd ${WRKSRC}; ${LN} -sf ../mpfr-3.1.4 mpfr ; \
-		${LN} -sf ../gmp-5.1.3 gmp ; \
+	cd ${WRKSRC}; ${LN} -sf ../mpfr-3.1.6 mpfr ; \
+		${LN} -sf ../gmp-6.1.2 gmp ; \
 		${LN} -sf ../mpc-1.0.3 mpc
 
 post-patch:
