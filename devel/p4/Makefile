@@ -5,12 +5,17 @@ PORTNAME=	p4
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://swarm.workshop.perforce.com/projects/perforce_software-p4/archives/:zip
+# Perforce stupidly rerolls their distfiles on a regular basis, updating the
+# files' timestamps when they do, which changes the zip file's checksum.  Work
+# around that by cacheing the distfile in LOCAL and using that version to make
+# distinfo
+MASTER_SITES=	LOCAL/asomers/perforce/p4 \
+		https://swarm.workshop.perforce.com/projects/perforce_software-p4/archives/
 DISTNAME=	${YEAR}-${MAJOR}
-DISTFILES=	${ZIP_FILES}:zip
-EXTRACT_ONLY=	${ZIP_FILES}
+DIST_SUBDIR=	perforce/p4
+DISTFILES=	${ZIP_FILES}
 
-MAINTAINER=	gordon@FreeBSD.org
+MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Perforce client
 
 LICENSE=	BSD2CLAUSE

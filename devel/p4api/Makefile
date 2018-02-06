@@ -4,13 +4,19 @@ PORTNAME=	p4api
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://swarm.workshop.perforce.com/projects/perforce_software-p4/archives/:zip \
-		ftp://ftp.perforce.com/perforce/${P4VERSION}/doc/manuals/p4api/:pdf
+# Perforce stupidly rerolls their distfiles on a regular basis, updating the
+# files' timestamps when they do, which changes the zip file's checksum.  Work
+# around that by cacheing the distfile in LOCAL and using that version to make
+# distinfo
+MASTER_SITES=	LOCAL/asomers/perforce/p4:zip \
+		ftp://ftp.perforce.com/perforce/${P4VERSION}/doc/manuals/p4api/:pdf \
+		https://swarm.workshop.perforce.com/projects/perforce_software-p4/archives/:zip
+DIST_SUBDIR=	perforce/p4
 DISTNAME=	${YEAR}-${MAJOR}
 DISTFILES=	${ZIP_FILES}:zip p4api.pdf:pdf
 EXTRACT_ONLY=	${ZIP_FILES}
 
-MAINTAINER=	gordon@FreeBSD.org
+MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Perforce API (static libraries and header files)
 
 LICENSE=	BSD2CLAUSE
@@ -46,7 +52,7 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/p4api.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/p4api.pdf ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
