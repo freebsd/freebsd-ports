@@ -12,6 +12,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Grep-like text finder for large trees of text
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	p5-File-Next>=1.16:sysutils/p5-File-Next
 RUN_DEPENDS:=	${BUILD_DEPENDS}
