@@ -3,7 +3,7 @@
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
@@ -14,7 +14,8 @@ PORTSCOUT=	skipv:0.411
 
 OPTIONS_DEFINE=	MYSQL OPENSSL PGSQL
 
-USES=		python:run
+USES=		python:run shebangfix
+SHEBANG_FILES=	bin/flow-*
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--localstatedir="${PREFIX}"
@@ -37,21 +38,12 @@ FLOW_CAPTURE_UID=	174
 FLOW_CAPTURE_GID=	174
 FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPGSQL}
-CONFIGURE_ARGS+=--with-pgsql="${PREFIX}"
-USES+=		pgsql
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=--with-mysql="${PREFIX}"
-USE_MYSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS+=--with-openssl="${OPENSSLBASE}"
-.endif
+PGSQL_CONFIGURE_ON=	--with-pgsql="${LOCALBASE}"
+PGSQL_USES=		pgsql
+MYSQL_CONFIGURE_ON=	--with-mysql="${LOCALBASE}"
+MYSQL_USES=		mysql
+OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
+OPENSSL_USES=		ssl
 
 post-patch:
 	${REINPLACE_CMD}\
@@ -60,6 +52,6 @@ post-patch:
 	  ${WRKSRC}/docs/flow-*.1.in ${WRKSRC}/docs/flow-*.html.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
