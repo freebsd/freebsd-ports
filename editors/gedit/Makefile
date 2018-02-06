@@ -3,6 +3,7 @@
 
 PORTNAME=	gedit
 PORTVERSION=	3.22.0
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -10,7 +11,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for GNOME 3 Desktop Environment
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
@@ -28,9 +29,10 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake gnome libtool localbase \
-		pathfix pkgconfig python:3.2+ tar:xz
+		pathfix pkgconfig python:3.2+ shebangfix tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtksourceview3 intlhack introspection \
 		libxml2 pygobject3
+SHEBANG_FILES=	plugins/externaltools/data/send-to-fpaste.tool.in
 USE_XORG=	sm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-updater \
