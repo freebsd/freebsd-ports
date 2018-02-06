@@ -1,5 +1,5 @@
-@owner %%WWWOWN%%
 @group %%WWWGRP%%
+@owner %%WWWOWN%%
 %%WWWDIR%%/.appveyor.yml
 %%WWWDIR%%/.drone.yml
 %%WWWDIR%%/.github/CONTRIBUTING.md
@@ -129,6 +129,7 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.8.0-2017-07-28.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.8.0-2017-07-31.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.8.2-2017-10-14.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.8.4-2018-01-16.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.0.0.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.0.1.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.0.2.sql
@@ -202,6 +203,7 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.8.0-2017-07-28.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.8.0-2017-07-31.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.8.2-2017-10-14.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.8.4-2018-01-16.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.2-2012-03-05.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.3-2012-03-13.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.4-2012-03-18.sql
@@ -281,6 +283,7 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.8.0-2017-07-28.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.8.0-2017-07-31.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.8.2-2017-10-14.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.8.4-2018-01-16.sql
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/default.php
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/default.xml
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/langforum.php
@@ -2255,6 +2258,7 @@
 %%WWWDIR%%/build/travis/phpenv/apcu-5.6.ini
 %%WWWDIR%%/build/travis/phpenv/apcu-7.0.ini
 %%WWWDIR%%/build/travis/phpenv/apcu-7.1.ini
+%%WWWDIR%%/build/travis/phpenv/apcu-7.2.ini
 %%WWWDIR%%/build/travis/phpenv/memcache.ini
 %%WWWDIR%%/build/travis/phpenv/memcached.ini
 %%WWWDIR%%/build/travis/phpenv/redis.ini
@@ -3900,7 +3904,7 @@
 %%WWWDIR%%/libraries/src/Mail/Mail.php
 %%WWWDIR%%/libraries/src/Mail/MailHelper.php
 %%WWWDIR%%/libraries/src/Mail/MailWrapper.php
-%%WWWDIR%%/libraries/src/Mail/language/phpmailer.lang-joomla.php
+%%WWWDIR%%/libraries/src/Mail/language/phpmailer.lang-en_gb.php
 %%WWWDIR%%/libraries/src/Menu/AbstractMenu.php
 %%WWWDIR%%/libraries/src/Menu/AdministratorMenu.php
 %%WWWDIR%%/libraries/src/Menu/MenuHelper.php
