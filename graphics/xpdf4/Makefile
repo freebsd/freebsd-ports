@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	xpdf
-PORTVERSION=	4.02
-PORTREVISION=	3
+PORTVERSION=	4.00
+PORTEPOCH=	1
 CATEGORIES=	graphics print
-MASTER_SITES=	http://www.xpdfreader.com/dl/
+MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	4
 CONFLICTS_INSTALL=	xpdf3-* xpdf-*
@@ -14,7 +14,6 @@ CONFLICTS_INSTALL=	xpdf3-*	xpdf4-*
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display PDF files and convert them to other formats
-WRKSRC=		${WRKDIR}/${PORTNAME}-4.00
 
 LICENSE=	GPLv2
 
