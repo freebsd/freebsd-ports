@@ -12,6 +12,9 @@ DISTNAME=	zen-cart-v1.3.9h-full-fileset-10262010
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based user-friendly, open source shopping cart
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, no upstream, all www files wrongly belongs to www user.
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 

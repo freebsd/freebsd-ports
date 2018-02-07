@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Jinzora%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based media streaming and management system
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 IGNORE_WITH_PHP=	70 71 72
 
 USES=		php

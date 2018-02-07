@@ -12,6 +12,9 @@ DISTNAME=	Zikula_Core-${PORTVERSION}.build20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MVC web application framework (PHP/MySQL)
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, no upstream, all www files wrongly belongs to www user.
+
 IGNORE_WITH_PHP=	70 71 72
 
 WRKSRC=		${WRKDIR}/Zikula_Core-${PORTVERSION}

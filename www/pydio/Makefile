@@ -13,6 +13,8 @@ LICENSE=	AGPLv3
 
 PORTSCOUT=	limitw:1,even
 
+BROKEN=		It is wrong to have the entire files owned by www user
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		cpe dos2unix php:web

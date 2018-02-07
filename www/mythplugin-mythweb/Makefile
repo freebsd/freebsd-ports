@@ -12,6 +12,9 @@ COMMENT=	Frontend for scheduling and managing recordings on your MythTV Box
 
 LICENSE=	GPLv2
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 IGNORE_WITH_PHP=	70 71 72
 
 RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
