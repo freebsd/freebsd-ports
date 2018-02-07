@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	flang-clang
-DISTVERSION=	5.0-20171019
-PORTREVISION=	1
+DISTVERSION=	5.0-20180112
+PORTREVISION=	0
 CATEGORIES=	devel lang
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -33,7 +33,7 @@ SHEBANG_FILES=	tools/scan-view/bin/scan-view \
 USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
 GH_PROJECT=	clang
-GH_TAGNAME=	b11539a
+GH_TAGNAME=	64043d5
 
 CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config50
 
