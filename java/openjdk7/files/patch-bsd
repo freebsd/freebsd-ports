@@ -1,50 +1,5 @@
---- ./.hgtags	Tue Aug 01 14:12:25 2017 +0100
-+++ ./.hgtags	Thu Sep 07 23:37:08 2017 -0700
-@@ -123,6 +123,7 @@
- 2d38c2a79c144c30cd04d143d83ee7ec6af40771 jdk7-b146
- 3ac30b3852876ccad6bd61697b5f9efa91ca7bc6 jdk7u1-b01
- d91364304d7c4ecd34caffdba2b840aeb0d10b51 jdk7-b147
-+00b623147f23ef8a92a25c4c28ef8681dc1d1b52 7u0
- 34451dc0580d5c95d97b95a564e6198f36545d68 jdk7u1-b02
- bf735d852f79bdbb3373c777eec3ff27e035e7ba jdk7u1-b03
- f66a2bada589f4157789e6f66472954d2f1c114e jdk7u1-b04
-@@ -612,3 +613,4 @@
- b21d7bc25e0f96c6ed9b19e1ea0ea6253c34d7fe jdk7u141-b01
- db8fe12e5e508b18dd0aeb166099406a774b0d04 jdk7u141-b02
- ae6c3762cdc9b1610211cd1ad1a29ed1a7f8471e jdk7u151-b00
-+c63b09823b9fa0ddeb37c1ac534569a9227c5bf6 jdk7u151-b01
---- ./corba/.hgtags	Tue Aug 01 14:12:26 2017 +0100
-+++ ./corba/.hgtags	Thu Sep 07 23:37:09 2017 -0700
-@@ -123,6 +123,7 @@
- 770227a4087e4e401fe87ccd19738440111c3948 jdk7-b146
- 36f0efbc66ef8ace3cca8aa8d0c88f3334080f8a jdk7u1-b01
- 73323cb3396260d93e0ab731fd2d431096ceed0f jdk7-b147
-+578c4d2c534cc761f5f5cc0d8360471bb8d5f94f 7u0
- 9515a2d034b4727c11aeea36354a549fbc469c4f jdk7u1-b02
- dd71cb354c573c1addcda269a7dd9144bfce9587 jdk7u1-b03
- eaee830124aa453627591d8f9eccb39d7e040876 jdk7u1-b04
-@@ -614,3 +615,4 @@
- caa46a309b1195a0301956e7416633b717553925 jdk7u141-b01
- 39240de9d27767c8bad74e34f83f0a4902a9ef85 jdk7u141-b02
- d232281a177cd3f80d48eca3f1bbc3919f720a1e jdk7u151-b00
-+f74af33b4963a7c484ffa605f11e41efd92966e3 jdk7u151-b01
---- ./hotspot/.hgtags	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/.hgtags	Fri Sep 08 09:32:12 2017 -0700
-@@ -182,6 +182,7 @@
- 38fa55e5e79232d48f1bb8cf27d88bc094c9375a hs21-b16
- 81d815b05abb564aa1f4100ae13491c949b9a07e jdk7-b147
- 81d815b05abb564aa1f4100ae13491c949b9a07e hs21-b17
-+f1a18ada5853af49fce54d43dd5a5b67dc291470 7u0
- 9b0ca45cd756d538c4c30afab280a91868eee1a5 jdk7u2-b01
- 0cc8a70952c368e06de2adab1f2649a408f5e577 jdk8-b01
- 31e253c1da429124bb87570ab095d9bc89850d0a jdk8-b02
-@@ -846,3 +847,4 @@
- 22c5a6ca09e35b63baf51bad4cb3d8f0cf326705 jdk7u141-b01
- 56ad25be7d88c2c2da562fe1e8879c8723d01da1 jdk7u141-b02
- 75662a7ec1719b3133636d09bd078968579a55ab jdk7u151-b00
-+d0c7cea0660f7a8188a7b8c1f6d1a6c8d6388fb0 jdk7u151-b01
---- ./hotspot/agent/src/os/bsd/ps_proc.c	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/agent/src/os/bsd/ps_proc.c	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/agent/src/os/bsd/ps_proc.c	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/agent/src/os/bsd/ps_proc.c	Sat Feb 03 14:01:55 2018 -0800
 @@ -131,7 +131,7 @@
  
  static bool ptrace_continue(pid_t pid, int signal) {
@@ -54,8 +9,8 @@
      print_debug("ptrace(PTRACE_CONT, ..) failed for %d\n", pid);
      return false;
    }
---- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Sat Feb 03 14:01:55 2018 -0800
 @@ -33,6 +33,7 @@
  import sun.jvm.hotspot.debugger.remote.*;
  import sun.jvm.hotspot.debugger.windbg.*;
@@ -64,8 +19,8 @@
  import sun.jvm.hotspot.memory.*;
  import sun.jvm.hotspot.oops.*;
  import sun.jvm.hotspot.runtime.*;
---- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/bugspot/BugSpotAgent.java	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/bugspot/BugSpotAgent.java	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/bugspot/BugSpotAgent.java	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/bugspot/BugSpotAgent.java	Sat Feb 03 14:01:55 2018 -0800
 @@ -35,6 +35,7 @@
  import sun.jvm.hotspot.debugger.windbg.*;
  import sun.jvm.hotspot.debugger.linux.*;
@@ -74,8 +29,8 @@
  import sun.jvm.hotspot.debugger.remote.*;
  import sun.jvm.hotspot.livejvm.*;
  import sun.jvm.hotspot.memory.*;
---- ./hotspot/make/bsd/Makefile	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/bsd/Makefile	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/bsd/Makefile	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/bsd/Makefile	Sat Feb 03 14:01:55 2018 -0800
 @@ -1,5 +1,5 @@
  #
 -# Copyright (c) 1999, 2011, Oracle and/or its affiliates. All rights reserved.
@@ -105,8 +60,8 @@
  
  # Synonyms for win32-like targets.
  compiler2:  jvmg product
---- ./hotspot/make/bsd/makefiles/build_vm_def.sh	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/bsd/makefiles/build_vm_def.sh	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Sat Feb 03 14:01:55 2018 -0800
 @@ -1,12 +1,28 @@
  #!/bin/sh
  
@@ -142,8 +97,8 @@
 +        if ($3 ~ /^_ZN9Arguments17SharedArchivePathE$/) print "\t" $3 ";"
 +    }' | sort -u ;;
 +esac
---- ./hotspot/make/bsd/makefiles/buildtree.make	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/bsd/makefiles/buildtree.make	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/bsd/makefiles/buildtree.make	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/bsd/makefiles/buildtree.make	Sat Feb 03 14:01:55 2018 -0800
 @@ -255,6 +255,16 @@
  	echo "$(call gamma-path,commonsrc,os/posix/vm)"; \
  	[ -n "$(CFLAGS_BROWSE)" ] && \
@@ -170,8 +125,8 @@
  
  .dbxrc:  $(BUILDTREE_MAKE)
  	@echo Creating $@ ...
---- ./hotspot/make/bsd/makefiles/gcc.make	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/bsd/makefiles/gcc.make	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/bsd/makefiles/gcc.make	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/bsd/makefiles/gcc.make	Sat Feb 03 14:01:55 2018 -0800
 @@ -117,7 +117,10 @@
  CFLAGS += -fno-rtti
  CFLAGS += -fno-exceptions
@@ -205,8 +160,8 @@
  endif
  
  # -DDONT_USE_PRECOMPILED_HEADER will exclude all includes in precompiled.hpp.
---- ./hotspot/make/bsd/makefiles/jsig.make	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/bsd/makefiles/jsig.make	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/bsd/makefiles/jsig.make	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/bsd/makefiles/jsig.make	Sat Feb 03 14:01:55 2018 -0800
 @@ -36,9 +36,16 @@
    LIBJSIG_G = lib$(JSIG_G).so
  endif
@@ -259,8 +214,8 @@
  	$(QUIETLY) cp -f $(LIBJSIG) $(DEST_JSIG) && echo "Done"
  
  .PHONY: install_jsig
---- ./hotspot/make/bsd/makefiles/launcher.make	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/bsd/makefiles/launcher.make	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/bsd/makefiles/launcher.make	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/bsd/makefiles/launcher.make	Sat Feb 03 14:01:55 2018 -0800
 @@ -50,7 +50,7 @@
    LIBS_LAUNCHER             += $(STATIC_STDCXX) $(LIBS)
  else
@@ -270,8 +225,8 @@
  
    # The gamma launcher runs the JDK from $JAVA_HOME, overriding the JVM with a
    # freshly built JVM at ./libjvm.{so|dylib}.  This is accomplished by setting 
---- ./hotspot/make/bsd/makefiles/mapfile-vers-product	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/bsd/makefiles/mapfile-vers-product	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Sat Feb 03 14:01:55 2018 -0800
 @@ -19,237 +19,248 @@
  # Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
  # or visit www.oracle.com if you need additional information or have any
@@ -746,8 +701,8 @@
 +        local:
 +                *;
 +};
---- ./hotspot/make/bsd/makefiles/ppc.make	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/bsd/makefiles/ppc.make	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/bsd/makefiles/ppc.make	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/bsd/makefiles/ppc.make	Sat Feb 03 14:01:55 2018 -0800
 @@ -28,3 +28,6 @@
  # Must also specify if CPU is big endian
  CFLAGS += -DVM_BIG_ENDIAN
@@ -755,8 +710,8 @@
 +ifdef E500V2
 +ASFLAGS += -Wa,-mspe -Wa,--defsym -Wa,E500V2=1 
 +endif
---- ./hotspot/make/bsd/makefiles/saproc.make	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/bsd/makefiles/saproc.make	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/bsd/makefiles/saproc.make	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/bsd/makefiles/saproc.make	Sat Feb 03 14:01:55 2018 -0800
 @@ -36,6 +36,11 @@
    LIBSAPROC_G = lib$(SAPROC_G).so
  endif
@@ -813,8 +768,8 @@
  	  cp -f $(LIBSAPROC) $(DEST_SAPROC) && echo "Done";  \
  	fi
  
---- ./hotspot/make/solaris/makefiles/defs.make	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/make/solaris/makefiles/defs.make	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/make/solaris/makefiles/defs.make	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/make/solaris/makefiles/defs.make	Sat Feb 03 14:01:55 2018 -0800
 @@ -221,8 +221,8 @@
  endif
  ifeq ($(JVM_VARIANT_CLIENT),true)
@@ -826,8 +781,8 @@
    EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjvm_dtrace.$(LIBRARY_SUFFIX)
    ifeq ($(ARCH_DATA_MODEL),32)
      EXPORT_LIST += $(EXPORT_CLIENT_DIR)/64/libjvm_db.$(LIBRARY_SUFFIX)
---- ./hotspot/src/cpu/sparc/vm/globals_sparc.hpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/cpu/sparc/vm/globals_sparc.hpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/cpu/sparc/vm/globals_sparc.hpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/cpu/sparc/vm/globals_sparc.hpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -71,7 +71,11 @@
  define_pd_global(bool, RewriteBytecodes,     true);
  define_pd_global(bool, RewriteFrequentPairs, true);
@@ -841,7 +796,7 @@
  // GC Ergo Flags
  define_pd_global(intx, CMSYoungGenPerWorker, 16*M);  // default max size of CMS young gen, per GC worker thread
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Fri Sep 08 09:32:12 2017 -0700
++++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -0,0 +1,46 @@
 +/*
 + * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
@@ -889,8 +844,8 @@
 +  return false;
 +}
 +
---- ./hotspot/src/os/bsd/vm/os_bsd.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/os/bsd/vm/os_bsd.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -163,6 +163,7 @@
  #endif
  pthread_t os::Bsd::_main_thread;
@@ -1310,8 +1265,8 @@
    } else {
      pthread_mutex_unlock(_mutex);
      assert (status == 0, "invariant") ;
---- ./hotspot/src/os/bsd/vm/os_bsd.hpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/os/bsd/vm/os_bsd.hpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -106,6 +106,12 @@
  
    static bool hugetlbfs_sanity_check(bool warn, size_t page_size);
@@ -1386,8 +1341,8 @@
      }
  };
  
---- ./hotspot/src/os/bsd/vm/os_bsd.inline.hpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/os/bsd/vm/os_bsd.inline.hpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/os/bsd/vm/os_bsd.inline.hpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/os/bsd/vm/os_bsd.inline.hpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -31,10 +31,22 @@
  # include "atomic_bsd_x86.inline.hpp"
  # include "orderAccess_bsd_x86.inline.hpp"
@@ -1411,8 +1366,8 @@
  
  // System includes
  
---- ./hotspot/src/os/bsd/vm/thread_bsd.inline.hpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/os/bsd/vm/thread_bsd.inline.hpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/os/bsd/vm/thread_bsd.inline.hpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/os/bsd/vm/thread_bsd.inline.hpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -34,11 +34,26 @@
  # include "orderAccess_bsd_x86.inline.hpp"
  # include "prefetch_bsd_x86.inline.hpp"
@@ -1440,8 +1395,8 @@
  
  // Contains inlined functions for class Thread and ThreadLocalStorage
  
---- ./hotspot/src/os/posix/vm/os_posix.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/os/posix/vm/os_posix.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/os/posix/vm/os_posix.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/os/posix/vm/os_posix.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -183,11 +183,19 @@
    if (rlim.rlim_cur == RLIM_INFINITY) st->print("infinity");
    else st->print("%d", rlim.rlim_cur);
@@ -1462,8 +1417,8 @@
  }
  
  void os::Posix::print_uname_info(outputStream* st) {
---- ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -945,7 +945,7 @@
    if (rslt != 0)
      fatal(err_msg("pthread_stackseg_np failed with err = %d", rslt));
@@ -1473,8 +1428,8 @@
    *size   = ss.ss_size;
  #elif defined(_ALLBSD_SOURCE)
    pthread_attr_t attr;
---- ./hotspot/src/os_cpu/bsd_zero/vm/os_bsd_zero.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/os_cpu/bsd_zero/vm/os_bsd_zero.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/os_cpu/bsd_zero/vm/os_bsd_zero.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/os_cpu/bsd_zero/vm/os_bsd_zero.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -24,7 +24,7 @@
   */
  
@@ -1484,8 +1439,8 @@
  # include <pthread_np.h> /* For pthread_attr_get_np */
  #endif
  
---- ./hotspot/src/share/vm/gc_implementation/shared/gcTraceSend.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/share/vm/gc_implementation/shared/gcTraceSend.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/share/vm/gc_implementation/shared/gcTraceSend.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/share/vm/gc_implementation/shared/gcTraceSend.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -111,7 +111,7 @@
    if (e.should_commit()) {
      e.set_gcId(_shared_gc_info.id());
@@ -1495,8 +1450,8 @@
      e.commit();
    }
  }
---- ./hotspot/src/share/vm/opto/lcm.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/share/vm/opto/lcm.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/share/vm/opto/lcm.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/share/vm/opto/lcm.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -57,7 +57,7 @@
  // Check whether val is not-null-decoded compressed oop,
  // i.e. will grab into the base of the heap if it represents NULL.
@@ -1506,8 +1461,8 @@
      if (val && val->is_Mach()) {
        if (val->as_Mach()->ideal_Opcode() == Op_DecodeN) {
          // This assumes all Decodes with TypePtr::NotNull are matched to nodes that
---- ./hotspot/src/share/vm/runtime/atomic.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/share/vm/runtime/atomic.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/share/vm/runtime/atomic.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/share/vm/runtime/atomic.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -57,6 +57,12 @@
  #ifdef TARGET_OS_ARCH_windows_x86
  # include "atomic_windows_x86.inline.hpp"
@@ -1521,8 +1476,8 @@
  #ifdef TARGET_OS_ARCH_linux_arm
  # include "atomic_linux_arm.inline.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/objectMonitor.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/share/vm/runtime/objectMonitor.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/share/vm/runtime/objectMonitor.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/share/vm/runtime/objectMonitor.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -1740,7 +1740,7 @@
       }
       iterator->_notified = 1 ;
@@ -1541,8 +1496,8 @@
       if (Policy != 4) {
          iterator->TState = ObjectWaiter::TS_ENTER ;
       }
---- ./hotspot/src/share/vm/runtime/os.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/share/vm/runtime/os.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/share/vm/runtime/os.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/share/vm/runtime/os.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -410,13 +410,6 @@
      if (_native_java_library == NULL) {
        vm_exit_during_initialization("Unable to load native library", ebuf);
@@ -1557,8 +1512,8 @@
    }
    static jboolean onLoaded = JNI_FALSE;
    if (onLoaded) {
---- ./hotspot/src/share/vm/runtime/os.hpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/share/vm/runtime/os.hpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/share/vm/runtime/os.hpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/share/vm/runtime/os.hpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -30,6 +30,9 @@
  #include "runtime/extendedPC.hpp"
  #include "runtime/handles.hpp"
@@ -1579,8 +1534,8 @@
  #endif
  #ifdef TARGET_OS_ARCH_linux_x86
  # include "os_linux_x86.hpp"
---- ./hotspot/src/share/vm/runtime/vmThread.cpp	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/share/vm/runtime/vmThread.cpp	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/share/vm/runtime/vmThread.cpp	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/share/vm/runtime/vmThread.cpp	Sat Feb 03 14:01:55 2018 -0800
 @@ -396,7 +396,7 @@
        // Only write caller thread information for non-concurrent vm operations.
        // For concurrent vm operations, the thread id is set to 0 indicating thread is unknown.
@@ -1590,8 +1545,8 @@
        event.commit();
      }
  
---- ./hotspot/src/share/vm/trace/tracetypes.xml	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/src/share/vm/trace/tracetypes.xml	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/src/share/vm/trace/tracetypes.xml	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/src/share/vm/trace/tracetypes.xml	Sat Feb 03 14:01:55 2018 -0800
 @@ -60,7 +60,7 @@
   <types>
    <content_types>
@@ -1612,8 +1567,8 @@
  
      <!-- VM Thread ID Note: changed from U2 to U8 for hotspot -->
      <primary_type symbol="VMTHREAD" datatype="U8" contenttype="VMTHREAD"
---- ./hotspot/test/compiler/5091921/Test7005594.sh	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/test/compiler/5091921/Test7005594.sh	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/test/compiler/5091921/Test7005594.sh	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/test/compiler/5091921/Test7005594.sh	Sat Feb 03 14:01:55 2018 -0800
 @@ -60,6 +60,9 @@
    # Windows/MKS
    MEM=`"$ROOTDIR/mksnt/sysinf" memory -v | grep "Total Physical Memory: " | sed 's/Total Physical Memory: *//g'`
@@ -1624,8 +1579,8 @@
  else
    echo "Unable to determine amount of physical memory on the machine"
  fi
---- ./hotspot/test/runtime/7110720/Test7110720.sh	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/test/runtime/7110720/Test7110720.sh	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/test/runtime/7110720/Test7110720.sh	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/test/runtime/7110720/Test7110720.sh	Sat Feb 03 14:01:55 2018 -0800
 @@ -28,7 +28,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1636,7 +1591,7 @@
      RM=/bin/rm
      CP=/bin/cp
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/test/runtime/7158800/Test7158800.sh	Fri Sep 08 09:32:12 2017 -0700
++++ ./hotspot/test/runtime/7158800/Test7158800.sh	Sat Feb 03 14:01:55 2018 -0800
 @@ -0,0 +1,91 @@
 +#!/bin/sh
 +# 
@@ -1729,8 +1684,8 @@
 +    echo "Test Passed"
 +    exit 0
 +fi
---- ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Thu Aug 03 07:27:30 2017 +0100
-+++ ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Fri Sep 08 09:32:12 2017 -0700
+--- ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Mon Nov 27 05:43:26 2017 +0000
++++ ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Sat Feb 03 14:01:55 2018 -0800
 @@ -36,8 +36,8 @@
      public static void main(String args[]) throws Throwable {
  
@@ -1742,53 +1697,8 @@
              return;
          }
  
---- ./jaxp/.hgtags	Tue Aug 01 14:12:27 2017 +0100
-+++ ./jaxp/.hgtags	Thu Sep 07 23:37:10 2017 -0700
-@@ -123,6 +123,7 @@
- bcd31fa1e3c6f51b4fdd427ef905188cdac57164 jdk7-b146
- 067fb18071e3872698f6218724958bd0cebf30a3 jdk7u1-b01
- fc268cd1dd5d2e903ccd4b0275e1f9c2461ed30c jdk7-b147
-+3170972bd3928a331c4c64a5c0c9632077fb399a 7u0
- 104ca42e1e7ca66b074a4619ce6420f15d8f454d jdk7u1-b02
- 64e323faadf65018c1ffc8bb9c97f7b664e87347 jdk7u1-b03
- 2256c20e66857f80cacda14ffdbc0979c929d7f8 jdk7u1-b04
-@@ -615,3 +616,4 @@
- e096a279a1c226d7d3a4aa19d5beeba1fb0507cf jdk7u141-b01
- b4b91a7beb185c0a8a14b83d2b05cfd7fc33c6fe jdk7u141-b02
- 26391fa1d876e3bf563f21328d7ea24d5d657b21 jdk7u151-b00
-+57fc772ac86ac6cbd297cd6f09a63f9c016c271c jdk7u151-b01
---- ./jaxws/.hgtags	Tue Aug 01 14:12:28 2017 +0100
-+++ ./jaxws/.hgtags	Thu Sep 07 23:37:12 2017 -0700
-@@ -123,6 +123,7 @@
- 05469dd4c3662c454f8a019e492543add60795cc jdk7-b146
- c01bfd68d0528bc88348813c4d75d7f5c62bc4e2 jdk7u1-b01
- d13b1f877bb5ed8dceb2f7ec10365d1db5f70b2d jdk7-b147
-+ce6378e3c791c56b98cbf161804a07d0225b41c0 7u0
- 4c24f7019ce939a452154a83151294ad7da66a9d jdk7u1-b02
- 272778f529d11081f548f37fcd6a7aec0b11a8dd jdk7u1-b03
- 48b06a6e6f46e5bcd610f4bed57cd5067cf31f8c jdk7u1-b04
-@@ -614,3 +615,4 @@
- 506e24eee4e1887fbfdd77512f830b75e14c5759 jdk7u141-b01
- 1af82a2d3d16626b8d2f5e633d23c027975406b8 jdk7u141-b02
- 1f0dd7a7e0ccaa340db533da400bb83ca1ad3cf2 jdk7u151-b00
-+3233576db658552e8933b1cd86f5586507564f44 jdk7u151-b01
---- ./jdk/.hgtags	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/.hgtags	Thu Sep 07 23:37:21 2017 -0700
-@@ -123,6 +123,7 @@
- 539e576793a8e64aaf160e0d6ab0b9723cd0bef0 jdk7-b146
- 69e973991866c948cf1808b06884ef2d28b64fcb jdk7u1-b01
- f097ca2434b1412b12ab4a5c2397ce271bf681e7 jdk7-b147
-+0870207843e2a74816dff1e33a717ffaf6f0a919 7u0
- 2baf612764d215e6f3a5b48533f74c6924ac98d7 jdk7u1-b02
- a4781b6d9cfb6901452579adee17c9a17c1b584c jdk7u1-b03
- b223ed9a5fdf8ce3af42adfa8815975811d70eae jdk7u1-b04
-@@ -601,3 +602,4 @@
- a319566e15f5611bae9cfda2696e8217020a9269 jdk7u141-b01
- 19a085e656145471455d7fbd648717f94281a729 jdk7u141-b02
- 871e3350966f67b95768a94c1854f1515cfa56ca jdk7u151-b00
-+da1c09ab9b742fa77c0e667c2218b8d626432656 jdk7u151-b01
---- ./jdk/make/com/sun/nio/sctp/Exportedfiles.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/nio/sctp/Exportedfiles.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/nio/sctp/Exportedfiles.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/nio/sctp/Exportedfiles.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -29,6 +29,7 @@
  
  ifneq ($(PLATFORM), windows)
@@ -1802,8 +1712,8 @@
  endif
  endif
 +endif
---- ./jdk/make/com/sun/nio/sctp/FILES_c.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/nio/sctp/FILES_c.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/nio/sctp/FILES_c.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/nio/sctp/FILES_c.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -25,9 +25,13 @@
  
  ifneq ($(PLATFORM),windows)
@@ -1818,8 +1728,8 @@
  endif	
 +endif
 +endif
---- ./jdk/make/com/sun/nio/sctp/FILES_java.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/nio/sctp/FILES_java.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/nio/sctp/FILES_java.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/nio/sctp/FILES_java.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -50,6 +50,8 @@
  
  ifneq ($(PLATFORM), windows)
@@ -1835,8 +1745,8 @@
  endif
 +endif
 +endif
---- ./jdk/make/com/sun/nio/sctp/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/nio/sctp/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/nio/sctp/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/nio/sctp/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -47,9 +47,13 @@
  ifeq ($(PLATFORM), macosx)
  include $(BUILDDIR)/common/Classes.gmk
@@ -1859,8 +1769,8 @@
  endif # macosx
  endif # windows
  
---- ./jdk/make/com/sun/security/auth/module/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/security/auth/module/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/security/auth/module/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/security/auth/module/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -67,7 +67,7 @@
    include FILES_c_solaris.gmk
  endif # solaris
@@ -1870,8 +1780,8 @@
    LIBRARY = jaas_unix
    include FILES_export_unix.gmk
    include FILES_c_unix.gmk
---- ./jdk/make/com/sun/tools/attach/Exportedfiles.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/tools/attach/Exportedfiles.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/tools/attach/Exportedfiles.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/tools/attach/Exportedfiles.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -43,7 +43,7 @@
  	sun/tools/attach/LinuxVirtualMachine.java
  endif
@@ -1881,8 +1791,8 @@
  FILES_export = \
  	sun/tools/attach/BsdVirtualMachine.java
  endif
---- ./jdk/make/com/sun/tools/attach/FILES_c.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/tools/attach/FILES_c.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/tools/attach/FILES_c.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/tools/attach/FILES_c.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -39,7 +39,7 @@
  	LinuxVirtualMachine.c
  endif
@@ -1892,8 +1802,8 @@
  FILES_c = \
  	BsdVirtualMachine.c
  endif
---- ./jdk/make/com/sun/tools/attach/FILES_java.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/tools/attach/FILES_java.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/tools/attach/FILES_java.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/tools/attach/FILES_java.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -43,7 +43,7 @@
  	sun/tools/attach/LinuxAttachProvider.java
  endif
@@ -1903,8 +1813,8 @@
  FILES_java += \
  	sun/tools/attach/BsdAttachProvider.java
  endif
---- ./jdk/make/com/sun/tools/attach/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/tools/attach/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/tools/attach/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/tools/attach/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -38,7 +38,7 @@
  ifeq ($(PLATFORM), linux)
  FILES_m = mapfile-linux
@@ -1923,8 +1833,8 @@
    vpath %.c $(call NativeSrcDirList,,native/sun/tools/attach)
  else
    vpath %.c $(PLATFORM_SRC)/native/sun/tools/attach
---- ./jdk/make/com/sun/tools/attach/mapfile-bsd	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/com/sun/tools/attach/mapfile-bsd	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/com/sun/tools/attach/mapfile-bsd	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/com/sun/tools/attach/mapfile-bsd	Sat Feb 03 21:37:28 2018 -0800
 @@ -30,6 +30,7 @@
  	    Java_sun_tools_attach_BsdVirtualMachine_checkPermissions;
  	    Java_sun_tools_attach_BsdVirtualMachine_close;
@@ -1934,7 +1844,7 @@
  	    Java_sun_tools_attach_BsdVirtualMachine_sendQuitTo;
  	    Java_sun_tools_attach_BsdVirtualMachine_socket;
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/common/Defs-bsd.gmk	Thu Sep 07 23:37:21 2017 -0700
++++ ./jdk/make/common/Defs-bsd.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -0,0 +1,482 @@
 +#
 +# Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -2418,8 +2328,8 @@
 +  OTHER_CXXFLAGS += -I$(OPENWIN_HOME)/include
 +  OTHER_CPPFLAGS += -I$(OPENWIN_HOME)/include
 +endif
---- ./jdk/make/common/Defs-linux.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/Defs-linux.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/Defs-linux.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/Defs-linux.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -445,6 +445,7 @@
  override LIBDL                   = -ldl
  override MOOT_PRIORITIES         = true
@@ -2428,8 +2338,8 @@
  ifeq ($(ARCH), $(findstring $(ARCH), amd64 ppc64))
  override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
  else
---- ./jdk/make/common/Defs-solaris.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/Defs-solaris.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/Defs-solaris.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/Defs-solaris.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -753,6 +753,9 @@
  # Network Services library
  LIBNSL = -lnsl
@@ -2440,8 +2350,8 @@
  # service configuration facility library
  LIBSCF = -lscf
  
---- ./jdk/make/common/Defs.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/Defs.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/Defs.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/Defs.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -179,7 +179,7 @@
  
    ifdef ALT_FREETYPE_LIB_PATH
@@ -2473,7 +2383,7 @@
        else
          FREETYPE_HEADERS_PATH = /usr/include
        endif
-@@ -261,6 +261,10 @@
+@@ -255,6 +255,10 @@
      LDLIBS_COMMON = -pthread
    endif
  
@@ -2484,7 +2394,7 @@
    # AIX port: do not link launchers (e.g. java, javac) against libjava.so  and libjvm.so
    ifeq ($(PLATFORM), aix)
      LDLIBS_COMMON =
-@@ -408,7 +412,7 @@
+@@ -402,7 +406,7 @@
  # We define an intermediate variable for Java files because
  # we use its value later to help define $SOURCEPATH
  
@@ -2493,8 +2403,8 @@
    VPATH0.java = $(subst $(ONESPACE),:,$(GENSRCDIR) $(call JavaSrcDirList,,classes))
  else
    VPATH0.java = $(GENSRCDIR)$(CLASSPATH_SEPARATOR)$(PLATFORM_SRC)/classes$(CLASSPATH_SEPARATOR)$(SHARE_SRC)/classes
---- ./jdk/make/common/Library.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/Library.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/Library.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/Library.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -299,8 +299,12 @@
              ifeq ($(PLATFORM), solaris)
  	      $(STRIP) -x $@
@@ -2510,8 +2420,8 @@
              endif
            # implied else here is no stripping at all
            endif
---- ./jdk/make/common/Mapfile-vers.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/Mapfile-vers.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/Mapfile-vers.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/Mapfile-vers.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -76,7 +76,7 @@
  
  endif # PLATFORM
@@ -2521,8 +2431,8 @@
  
  ifeq ($(VARIANT), OPT)
    # OPT build MUST have a mapfile?
---- ./jdk/make/common/Program.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/Program.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/Program.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/Program.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -95,6 +95,17 @@
    endif # SYSTEM_ZLIB
  endif # PLATFORM
@@ -2584,19 +2494,19 @@
  ifeq ($(PLATFORM), macosx)
    OTHER_INCLUDES += -I$(LAUNCHER_SOLARIS_PLATFORM_SRC)/bin
 -  ifneq ($(SYSTEM_ZLIB), true)
--    OTHER_INCLUDES += -I$(SHARE_SRC)/native/java/util/zip/zlib-1.2.8
+-    OTHER_INCLUDES += -I$(SHARE_SRC)/native/java/util/zip/zlib
 -  endif # SYSTEM_ZLIB
 -else # PLATFORM !MACOSX
 +endif # PLATFORM !MACOSX
 +ifneq ($(SYSTEM_ZLIB), true)
-   OTHER_INCLUDES += -I$(SHARE_SRC)/native/java/util/zip/zlib-1.2.8
+   OTHER_INCLUDES += -I$(SHARE_SRC)/native/java/util/zip/zlib
 -endif
 +endif # SYSTEM_ZLIB
  
  OTHER_CPPFLAGS  += -DPROGNAME='"$(PROGRAM)"'
  VERSION_DEFINES += -DFULL_VERSION='"$(FULL_VERSION)"'
---- ./jdk/make/common/Release.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/Release.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/Release.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/Release.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -180,6 +180,12 @@
    JA_DIRNAME=ja_JP.UTF-8
  endif # linux
@@ -2641,8 +2551,8 @@
  	       | ($(CD) $(JDK_IMAGE_DIR)/src && $(TAR) xf -); \
  	  fi; \
  	done
---- ./jdk/make/common/Rules.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/Rules.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/Rules.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/Rules.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -51,7 +51,7 @@
  #
  # All source tree areas for java/properties files (a few may be closed)
@@ -2661,8 +2571,8 @@
  # TODO(cpc): need to document why this is necessary...
  $(CLASSDESTDIR)/%.class: $(JDK_TOPDIR)/src/macosx/classes/%.java
  	@$(add-java-file)
---- ./jdk/make/common/shared/Compiler-gcc.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/shared/Compiler-gcc.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/shared/Compiler-gcc.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/shared/Compiler-gcc.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -72,6 +72,21 @@
  
  endif
@@ -2686,7 +2596,7 @@
  
    # Settings specific to Solaris
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/common/shared/Defs-bsd.gmk	Thu Sep 07 23:37:21 2017 -0700
++++ ./jdk/make/common/shared/Defs-bsd.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -0,0 +1,267 @@
 +#
 +# Copyright (c) 2005, 2011, Oracle and/or its affiliates. All rights reserved.
@@ -2955,8 +2865,8 @@
 +endef
 +endif
 +
---- ./jdk/make/common/shared/Defs-utils.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/shared/Defs-utils.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/shared/Defs-utils.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/shared/Defs-utils.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -74,6 +74,13 @@
    UTILS_DEVTOOL_PATH=$(DEVTOOLS_PATH)
  endif
@@ -3007,8 +2917,8 @@
 +    UNZIP      = $(UTILS_DEVTOOL_PATH)unzip
 +  endif
 +endif
---- ./jdk/make/common/shared/Defs-versions.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/shared/Defs-versions.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/shared/Defs-versions.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/shared/Defs-versions.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -44,6 +44,11 @@
    override CC_VERSION = gcc
  endif
@@ -3035,8 +2945,8 @@
  # Mac specific
  ifeq ($(PLATFORM), macosx)
    REQUIRED_OS_NAME            = Darwin
---- ./jdk/make/common/shared/Defs.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/shared/Defs.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/shared/Defs.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/shared/Defs.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -181,7 +181,7 @@
  # platform and shared sources/headers.  This is mainly useful for the
  # Mac OS X build, which pulls its platform sources from the solaris and/or
@@ -3046,8 +2956,8 @@
    define JavaSrcDirList
    $(JAVA_SRCDIR_LIST:%=$1$(JDK_TOPDIR)/%/$2)
    endef
---- ./jdk/make/common/shared/Platform.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/common/shared/Platform.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/common/shared/Platform.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/common/shared/Platform.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -315,6 +315,85 @@
    # How much RAM does this machine have:
  endif
@@ -3134,8 +3044,8 @@
  # Windows with and without CYGWIN will be slightly different
  ifeq ($(SYSTEM_UNAME), Windows_NT)
    PLATFORM = windows
---- ./jdk/make/java/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -53,7 +53,7 @@
    endif
  endif # PLATFORM
@@ -3145,8 +3055,8 @@
    SUBDIRS += jexec
  endif # PLATFORM
  
---- ./jdk/make/java/instrument/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/instrument/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/instrument/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/instrument/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -104,12 +104,24 @@
    # equivalent of strcasecmp is stricmp on Windows
    CPPFLAGS_COMMON += -Dstrcasecmp=stricmp
@@ -3177,8 +3087,8 @@
    ifeq ($(SYSTEM_ZLIB), true)
      OTHER_LDLIBS += -lz
    endif
---- ./jdk/make/java/java/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/java/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/java/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/java/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -177,9 +177,11 @@
  #
  ifneq ($(PLATFORM), windows)
@@ -3201,8 +3111,8 @@
  
  ARCHFLAG = 
  ifeq ($(ARCH_DATA_MODEL), 64)
---- ./jdk/make/java/java/genlocales.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/java/genlocales.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/java/genlocales.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/java/genlocales.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -93,17 +93,65 @@
  
  else
@@ -3273,8 +3183,8 @@
  endif
  	
  genlocales : $(LocaleDataMetaInfo_Dest)  
---- ./jdk/make/java/jli/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/jli/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/jli/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/jli/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -119,9 +119,9 @@
    LIBARCH_DEFINES += -DLIBARCH64NAME='"$(LIBARCH64)"'
  endif # PLATFORM
@@ -3318,8 +3228,8 @@
  vpath %.c $(LAUNCHER_SHARE_SRC) $(LAUNCHER_PLATFORM_SRC)
  ifneq ($(SYSTEM_ZLIB),true)
    vpath %.c $(ZIP_SRC)
---- ./jdk/make/java/net/FILES_c.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/net/FILES_c.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/net/FILES_c.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/net/FILES_c.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -54,6 +54,10 @@
      FILES_c += bsd_close.c
  endif
@@ -3331,8 +3241,8 @@
  ifeq ($(PLATFORM), windows)
      FILES_c += TwoStacksPlainSocketImpl.c
      FILES_c += DualStackPlainSocketImpl.c
---- ./jdk/make/java/net/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/net/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/net/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/net/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -95,7 +95,7 @@
  
  include $(BUILDDIR)/common/Library.gmk
@@ -3342,8 +3252,8 @@
  ifdef DONT_ENABLE_IPV6
    OTHER_CFLAGS += -DDONT_ENABLE_IPV6
  endif
---- ./jdk/make/java/nio/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/nio/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/nio/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/nio/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -263,13 +263,89 @@
  	sun/nio/fs/UnixConstants.java
  endif # PLATFORM = linux
@@ -3495,8 +3405,8 @@
  FILES_m = mapfile-bsd
  endif
  include $(BUILDDIR)/common/Mapfile-vers.gmk
---- ./jdk/make/java/nio/mapfile-bsd	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/nio/mapfile-bsd	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/nio/mapfile-bsd	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/nio/mapfile-bsd	Sat Feb 03 21:37:28 2018 -0800
 @@ -70,6 +70,7 @@
                  Java_sun_nio_ch_IOUtil_drain;
                  Java_sun_nio_ch_IOUtil_fdVal;
@@ -3517,8 +3427,8 @@
  		Java_sun_nio_ch_KQueuePort_socketpair;
  		Java_sun_nio_ch_KQueuePort_interrupt;
  		Java_sun_nio_ch_KQueuePort_drain1;
---- ./jdk/make/java/npt/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/npt/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/npt/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/npt/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -74,6 +74,14 @@
    OTHER_LDLIBS += -liconv
  endif
@@ -3534,8 +3444,8 @@
  #
  # Add to ambient vpath so we pick up the library files
  #
---- ./jdk/make/java/redist/fonts/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/java/redist/fonts/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/java/redist/fonts/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/java/redist/fonts/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -42,7 +42,7 @@
  	$(LIBDIR)/fonts/LucidaSansRegular.ttf       	\
  	$(LIBDIR)/fonts/LucidaSansDemiBold.ttf       	\
@@ -3563,8 +3473,8 @@
  
  all build : $(INTERNAL_IMPORT_LIST)
  
---- ./jdk/make/javax/sound/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/javax/sound/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/javax/sound/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/javax/sound/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -111,6 +111,21 @@
    #MXSPP_ADD = $(PLATFORM)-$(ARCH)/
  endif # PLATFORM linux
@@ -3587,8 +3497,8 @@
  ifeq ($(PLATFORM), macosx)
    CPPFLAGS += -DUSE_PORTS=TRUE \
                -DUSE_DAUDIO=TRUE \
---- ./jdk/make/javax/sound/SoundDefs.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/javax/sound/SoundDefs.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/javax/sound/SoundDefs.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/javax/sound/SoundDefs.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -40,6 +40,10 @@
    CPPFLAGS += -DX_PLATFORM=X_LINUX
  endif # PLATFORM linux
@@ -3600,8 +3510,8 @@
  ifeq ($(PLATFORM), macosx)
    CPPFLAGS += -DX_PLATFORM=X_MACOSX
  endif # PLATFORM macosx
---- ./jdk/make/javax/sound/jsoundalsa/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/javax/sound/jsoundalsa/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/javax/sound/jsoundalsa/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/javax/sound/jsoundalsa/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -51,6 +51,7 @@
  	$(PORTFILES_c)
  
@@ -3652,8 +3562,8 @@
  
  #
  # Add to the ambient VPATH.
---- ./jdk/make/jpda/transport/socket/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/jpda/transport/socket/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/jpda/transport/socket/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/jpda/transport/socket/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -38,6 +38,11 @@
  
  include $(BUILDDIR)/common/Defs.gmk
@@ -3666,8 +3576,8 @@
  ifeq ($(PLATFORM), linux)
    OTHER_LDLIBS += $(LIBNSL) $(LIBSOCKET) -lpthread
  endif
---- ./jdk/make/sun/awt/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/sun/awt/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/sun/awt/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/sun/awt/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -127,6 +127,13 @@
  OTHER_LDLIBS = $(JVMLIB) $(LIBM) $(LIBDL)
  endif
@@ -3743,8 +3653,8 @@
  LDFLAGS += -L$(OPENWIN_LIB)
  endif
  
---- ./jdk/make/sun/awt/mawt.gmk	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/sun/awt/mawt.gmk	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/sun/awt/mawt.gmk	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/sun/awt/mawt.gmk	Sat Feb 03 21:37:28 2018 -0800
 @@ -169,7 +169,7 @@
  OTHER_LDLIBS = -lXt -lXext $(LIBXTST) $(LIBXMU) -lX11 -lXi
  endif
@@ -3801,8 +3711,8 @@
  ifeq ($(PLATFORM), macosx)
    CPPFLAGS += -I$(OPENWIN_HOME)/include/X11/extensions \
                -I$(OPENWIN_HOME)/include 
---- ./jdk/make/sun/font/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/sun/font/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/sun/font/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/sun/font/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -97,7 +97,7 @@
  # Turn off aliasing with GCC for ExtensionSubtables.cpp (and others on GCC < 4.3)
  # Turn off strict overflow with GCC for IndicRearrangementProcessor.cpp on GCC >= 4.3
@@ -3821,8 +3731,8 @@
  OTHER_INCLUDES += -I$(X11_PATH)/include
  OTHER_LDLIBS  += -lawt $(LIBM) $(LIBCXX)
   ifeq ($(OS_VENDOR),Apple)
---- ./jdk/make/sun/jawt/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/sun/jawt/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/sun/jawt/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/sun/jawt/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -99,8 +99,7 @@
  #
  # Other extra flags needed for compiling.
@@ -3850,8 +3760,8 @@
    ifndef BUILD_HEADLESS_ONLY
      OTHER_LDLIBS = -L$(LIBDIR)/$(LIBARCH) -lawt -L$(LIBDIR)/$(LIBARCH)/xawt -lmawt
    else
---- ./jdk/make/sun/rmi/rmi/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/sun/rmi/rmi/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/sun/rmi/rmi/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/sun/rmi/rmi/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -63,6 +63,9 @@
      BUILD_TARGETS += bin
    endif
@@ -3862,8 +3772,8 @@
  
  build: $(BUILD_TARGETS)
  
---- ./jdk/make/sun/splashscreen/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/sun/splashscreen/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/sun/splashscreen/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/sun/splashscreen/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -61,6 +61,12 @@
  
  CFLAGS += -DSPLASHSCREEN
@@ -3909,21 +3819,8 @@
    endif
  else # PLATFORM
    CFLAGS += -DWITH_WIN32
-@@ -121,11 +138,7 @@
-   CPPFLAGS += $(call NativeSrcDirList,-I,native/$(PKGDIR)/splashscreen)
-   CPPFLAGS += $(call NativeSrcDirList,-I,/native/sun/osxapp)
- endif
--CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/splashscreen
--CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/image/jpeg
--ifneq ($(SYSTEM_ZLIB),true)
--  CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib-$(ZLIB_VERSION)
--else
-+ifeq ($(SYSTEM_ZLIB),true)
-   OTHER_CFLAGS += $(ZLIB_CFLAGS)
-   OTHER_LDLIBS += $(ZLIB_LIBS)
- endif
---- ./jdk/make/sun/xawt/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/sun/xawt/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/sun/xawt/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/sun/xawt/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -52,6 +52,9 @@
  AUTO_JAVA_PRUNE = WrapperGenerator.java
  
@@ -3976,8 +3873,8 @@
  ifeq ($(PLATFORM), macosx)
    CPPFLAGS += -DX11_PATH=\"$(X11_PATH)\" -DPACKAGE_PATH=\"$(PACKAGE_PATH)\"
  endif
---- ./jdk/make/tools/freetypecheck/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/make/tools/freetypecheck/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/make/tools/freetypecheck/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/make/tools/freetypecheck/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -52,8 +52,15 @@
    else 
      ifeq ($(PLATFORM), macosx)
@@ -3997,7 +3894,7 @@
    endif
  endif
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/tools/sharing/classlist.bsd	Thu Sep 07 23:37:21 2017 -0700
++++ ./jdk/make/tools/sharing/classlist.bsd	Sat Feb 03 21:37:28 2018 -0800
 @@ -0,0 +1,2327 @@
 +java/lang/Object
 +java/lang/String
@@ -6326,8 +6223,8 @@
 +sun/applet/AppletPanel$6
 +javax/swing/BufferStrategyPaintManager$1
 +# f3ac8b467e7f8c49
---- ./jdk/src/bsd/doc/man/appletviewer.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/appletviewer.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/appletviewer.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/appletviewer.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -6380,8 +6277,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/apt.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/apt.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/apt.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/apt.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -6534,8 +6431,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/extcheck.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/extcheck.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/extcheck.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/extcheck.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -6567,8 +6464,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/idlj.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/idlj.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/idlj.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/idlj.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,13 +19,13 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -6891,8 +6788,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/ja/appletviewer.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/appletviewer.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/appletviewer.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/appletviewer.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,51 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -6946,8 +6843,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/apt.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/apt.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/apt.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/apt.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,9 +19,135 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -7086,8 +6983,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/extcheck.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/extcheck.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/extcheck.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/extcheck.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,55 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -7145,8 +7042,8 @@
 +jar(1)
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/idlj.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/idlj.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/idlj.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/idlj.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,720 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -7869,8 +7766,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jar.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jar.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jar.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jar.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,583 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -8456,8 +8353,8 @@
 +pack200(1)
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jarsigner.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jarsigner.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jarsigner.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jarsigner.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,1655 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -10115,8 +10012,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/java.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/java.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/java.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/java.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -1,4 +1,4 @@
 -." Copyright (c) 1994, 2011, Oracle and/or its affiliates. All rights reserved.
 +." Copyright (c) 1994, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -10757,8 +10654,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/javac.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/javac.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/javac.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/javac.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,1222 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -11983,8 +11880,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/javadoc.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/javadoc.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/javadoc.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/javadoc.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,4 +19,4179 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -16166,8 +16063,8 @@
 +http://docs.oracle.com/javase/7/docs/technotes/tools/findingclasses.html#srcfiles(tools.jar) 
 +.RE
 + 
---- ./jdk/src/bsd/doc/man/ja/javah.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/javah.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/javah.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/javah.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,120 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -16290,8 +16187,8 @@
 +javac(1)、java(1)、jdb(1)、javap(1)、javadoc(1)
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/javap.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/javap.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/javap.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/javap.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,299 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -16593,8 +16490,8 @@
 +javac(1)、java(1)、jdb(1)、javah(1)、javadoc(1)
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/javaws.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/javaws.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/javaws.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/javaws.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,204 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -16802,7 +16699,7 @@
 +.LP
 + 
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/doc/man/ja/jcmd.1	Thu Sep 07 23:37:21 2017 -0700
++++ ./jdk/src/bsd/doc/man/ja/jcmd.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -0,0 +1,118 @@
 +." Copyright (c) 1994, 2012, Oracle and/or its affiliates. All rights reserved.
 +." DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -16922,8 +16819,8 @@
 +jps(1)
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jconsole.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jconsole.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jconsole.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jconsole.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,138 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -17064,8 +16961,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jdb.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jdb.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jdb.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jdb.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,312 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -17380,8 +17277,8 @@
 +javac(1)、java(1)、javah(1)、javap(1)、javadoc(1)
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jhat.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jhat.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jhat.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jhat.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,135 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -17519,8 +17416,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jinfo.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jinfo.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jinfo.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jinfo.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,148 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -17671,8 +17568,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jmap.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jmap.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jmap.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jmap.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,161 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -17836,8 +17733,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jps.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jps.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jps.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jps.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,260 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -18100,8 +17997,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jrunscript.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jrunscript.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jrunscript.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jrunscript.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,194 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -18298,8 +18195,8 @@
 +http://docs.oracle.com/javase/7/docs/technotes/tools/share/jsdocs/allclasses\-noframe.htmlを参照してください。
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jsadebugd.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jsadebugd.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jsadebugd.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jsadebugd.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,107 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -18409,8 +18306,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jstack.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jstack.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jstack.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jstack.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,154 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -18567,8 +18464,8 @@
 +混合モードのスタック・トレース(\-mオプション使用)は、リモート・デバッグ・サーバーでは機能しません。
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jstat.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jstat.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jstat.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jstat.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,5370 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -23941,8 +23838,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/jstatd.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/jstatd.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/jstatd.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/jstatd.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,267 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -24212,8 +24109,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/keytool.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/keytool.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/keytool.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/keytool.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -1,4 +1,4 @@
 -." Copyright (c) 1998, 2011, Oracle and/or its affiliates. All rights reserved.
 +." Copyright (c) 1998-2011 keytool tool, Oracle and/or its affiliates. All rights reserved.
@@ -26049,8 +25946,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/native2ascii.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/native2ascii.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/native2ascii.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/native2ascii.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,54 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -26107,8 +26004,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/orbd.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/orbd.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/orbd.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/orbd.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,350 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -26461,8 +26358,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/pack200.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/pack200.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/pack200.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/pack200.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,344 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -26809,8 +26706,8 @@
 +JDKに付属するJava SE API仕様との相違が見つかった場合には、仕様を優先してください。
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/policytool.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/policytool.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/policytool.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/policytool.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,102 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -26915,8 +26812,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/rmic.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/rmic.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/rmic.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/rmic.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,209 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -27128,8 +27025,8 @@
 +http://docs.oracle.com/javase/7/docs/technotes/tools/index.html#classpath
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/rmid.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/rmid.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/rmid.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/rmid.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,310 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -27442,8 +27339,8 @@
 +http://docs.oracle.com/javase/7/docs/technotes/tools/index.html#classpath、java(1)
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/rmiregistry.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/rmiregistry.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/rmiregistry.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/rmiregistry.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,65 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -27511,8 +27408,8 @@
 +\f2java.rmi.Naming\fP @
 +.fi
 +http://docs.oracle.com/javase/7/docs/api/java/rmi/Naming.html  
---- ./jdk/src/bsd/doc/man/ja/schemagen.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/schemagen.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/schemagen.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/schemagen.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,109 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -27624,8 +27521,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/serialver.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/serialver.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/serialver.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/serialver.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,79 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -27707,8 +27604,8 @@
 +http://docs.oracle.com/javase/7/docs/api/java/io/ObjectStreamClass.html
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/servertool.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/servertool.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/servertool.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/servertool.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,95 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -27806,8 +27703,8 @@
 +.SH "関連項目"
 +.LP
 +orbd(1)  
---- ./jdk/src/bsd/doc/man/ja/tnameserv.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/tnameserv.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/tnameserv.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/tnameserv.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,476 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -28286,8 +28183,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/unpack200.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/unpack200.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/unpack200.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/unpack200.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,6 +19,160 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -28450,8 +28347,8 @@
 +JDKに付属するJava SE API仕様との相違が見つかった場合には、仕様を優先してください。
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/ja/wsgen.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/wsgen.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/wsgen.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/wsgen.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,4 +19,638 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -29092,8 +28989,8 @@
 +SOAP 1.2 WSDLが生成されます。
 +.LP
 +サービスをデプロイするときにJAXWSランタイムによって自動的にWSDLが生成されるため、開発時にWSDLを生成する必要はありません。 
---- ./jdk/src/bsd/doc/man/ja/wsimport.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/wsimport.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/wsimport.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/wsimport.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,4 +19,1048 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -30144,8 +30041,8 @@
 +Javaアーティファクトを生成し、\f2http://stockquote.example.com/quote?wsdl\fPをインポートしてそのJavaアーティファクトをコンパイルします
 +.br
 + 
---- ./jdk/src/bsd/doc/man/ja/xjc.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/ja/xjc.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/ja/xjc.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/ja/xjc.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,279 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -30428,8 +30325,8 @@
 +
 +.LP
 + 
---- ./jdk/src/bsd/doc/man/jar.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jar.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jar.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jar.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,31 +19,31 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -30878,8 +30775,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/javac.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/javac.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/javac.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/javac.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -31761,8 +31658,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/javadoc.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/javadoc.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/javadoc.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/javadoc.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -35077,8 +34974,8 @@
  .RE
 -
 + 
---- ./jdk/src/bsd/doc/man/javah.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/javah.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/javah.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/javah.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -35189,8 +35086,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/javap.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/javap.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/javap.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/javap.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -35422,8 +35319,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/javaws.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/javaws.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/javaws.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/javaws.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -35458,8 +35355,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jconsole.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jconsole.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jconsole.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jconsole.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -35577,8 +35474,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jdb.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jdb.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jdb.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jdb.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -35912,8 +35809,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jhat.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jhat.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jhat.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jhat.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -36048,8 +35945,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jinfo.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jinfo.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jinfo.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jinfo.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -36185,8 +36082,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jmap.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jmap.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jmap.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jmap.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -36322,8 +36219,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jps.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jps.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jps.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jps.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -36439,8 +36336,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jrunscript.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jrunscript.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jrunscript.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jrunscript.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -36587,8 +36484,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jsadebugd.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jsadebugd.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jsadebugd.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jsadebugd.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -36667,8 +36564,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jstack.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jstack.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jstack.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jstack.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -36778,8 +36675,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jstat.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jstat.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jstat.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jstat.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -38389,8 +38286,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/jstatd.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/jstatd.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/jstatd.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/jstatd.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -38513,8 +38410,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/keytool.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/keytool.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/keytool.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/keytool.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -1,4 +1,4 @@
 -." Copyright (c) 1998, 2011, Oracle and/or its affiliates. All rights reserved.
 +." Copyright (c) 1998-2011 keytool tool, Oracle and/or its affiliates. All rights reserved.
@@ -39762,8 +39659,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/native2ascii.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/native2ascii.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/native2ascii.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/native2ascii.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -39804,8 +39701,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/orbd.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/orbd.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/orbd.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/orbd.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -40039,8 +39936,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/pack200.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/pack200.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/pack200.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/pack200.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -40205,8 +40102,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/policytool.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/policytool.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/policytool.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/policytool.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,71 +19,86 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -40324,8 +40221,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/rmic.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/rmic.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/rmic.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/rmic.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -40534,8 +40431,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/rmid.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/rmid.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/rmid.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/rmid.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -40815,8 +40712,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/rmiregistry.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/rmiregistry.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/rmiregistry.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/rmiregistry.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,14 +19,14 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -40859,8 +40756,8 @@
  .fi
 -http://download.oracle.com/javase/7/docs/api/java/rmi/Naming.html
 +http://docs.oracle.com/javase/7/docs/api/java/rmi/Naming.html  
---- ./jdk/src/bsd/doc/man/schemagen.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/schemagen.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/schemagen.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/schemagen.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -40927,8 +40824,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/serialver.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/serialver.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/serialver.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/serialver.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -40988,8 +40885,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/servertool.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/servertool.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/servertool.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/servertool.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,13 +19,13 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -41097,8 +40994,8 @@
  .LP
 -orbd(1)
 +orbd(1)  
---- ./jdk/src/bsd/doc/man/tnameserv.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/tnameserv.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/tnameserv.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/tnameserv.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,18 +19,18 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -41369,8 +41266,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/unpack200.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/unpack200.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/unpack200.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/unpack200.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -41437,8 +41334,8 @@
  .LP
 -
 + 
---- ./jdk/src/bsd/doc/man/wsgen.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/wsgen.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/wsgen.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/wsgen.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -41654,8 +41551,8 @@
  .LP
 -Note that you do not have to generate WSDL at the development time as JAXWS runtime will automatically generate a WSDL for you when you deploy your service.
 +Note that you do not have to generate WSDL at the development time as JAXWS runtime will automatically generate a WSDL for you when you deploy your service. 
---- ./jdk/src/bsd/doc/man/wsimport.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/wsimport.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/wsimport.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/wsimport.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -41952,8 +41849,8 @@
  .br
 -
 + 
---- ./jdk/src/bsd/doc/man/xjc.1	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/bsd/doc/man/xjc.1	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/bsd/doc/man/xjc.1	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/bsd/doc/man/xjc.1	Sat Feb 03 21:37:28 2018 -0800
 @@ -19,7 +19,7 @@
  ." or visit www.oracle.com if you need additional information or have any
  ." questions.
@@ -42222,8 +42119,8 @@
  .LP
 -
 + 
---- ./jdk/src/share/classes/java/util/TimeZone.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/java/util/TimeZone.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/java/util/TimeZone.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/java/util/TimeZone.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -917,15 +917,13 @@
          }
          int gmtOffset =  (hours * 60 + num) * 60 * 1000;
@@ -42241,8 +42138,8 @@
          }
          return zi;
      }
---- ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -1146,7 +1146,7 @@
       */
      HashMap<String, Boolean> existsMap;
@@ -42252,8 +42149,8 @@
              return false;
          } else if (existsMap == null) {
             existsMap = new HashMap<String, Boolean>();
---- ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -39,6 +39,7 @@
          WINDOWS,
          LINUX,
@@ -42273,8 +42170,8 @@
              if (osName.contains("OS X")) {
                  return MACOSX;
              }
---- ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -48,6 +48,8 @@
  
      public static boolean isLinux;
@@ -42296,8 +42193,8 @@
                  isMacOSX = osName.contains("OS X"); // TODO: MacOSX
  
                  String t2kStr = System.getProperty("sun.java2d.font.scaler");
---- ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -418,7 +418,7 @@
                           * registerFonts method as on-screen these JRE fonts
                           * always go through the T2K rasteriser.
@@ -42307,8 +42204,8 @@
                              /* Linux font configuration uses these fonts */
                              registerFontDir(jreFontDirName);
                          }
---- ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -1568,7 +1568,7 @@
          }
  
@@ -42318,8 +42215,8 @@
              execCmd = new String[ncomps];
              execCmd[n++] = "/usr/bin/lpr";
              if ((pFlags & PRINTER) != 0) {
---- ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -84,7 +84,8 @@
                              String osname = System.getProperty("os.name");
                              if (osname.startsWith("SunOS")) {
@@ -42330,8 +42227,8 @@
                                  gssLibs = new String[]{
                                      "libgssapi.so",
                                      "libgssapi_krb5.so",
---- ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Sat Feb 03 21:37:28 2018 -0800
 @@ -30,5 +30,6 @@
  #[solaris]sun.tools.attach.SolarisAttachProvider
  #[windows]sun.tools.attach.WindowsAttachProvider
@@ -42339,8 +42236,8 @@
 +#[bsd]sun.tools.attach.BsdAttachProvider
  #[macosx]sun.tools.attach.BsdAttachProvider
  #[aix]sun.tools.attach.AixAttachProvider
---- ./jdk/src/share/classes/sun/tools/jar/Main.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/sun/tools/jar/Main.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/sun/tools/jar/Main.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/sun/tools/jar/Main.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -51,6 +51,7 @@
      String zname = "";
      String[] files;
@@ -42400,8 +42297,8 @@
                  if (!d.exists() && !d.mkdirs() || !d.isDirectory()) {
                      throw new IOException(formatMsg(
                          "error.create.dir", d.getPath()));
---- ./jdk/src/share/classes/sun/tools/jar/resources/jar.properties	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/classes/sun/tools/jar/resources/jar.properties	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/classes/sun/tools/jar/resources/jar.properties	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/classes/sun/tools/jar/resources/jar.properties	Sat Feb 03 21:37:28 2018 -0800
 @@ -44,6 +44,8 @@
          {0} : could not create directory
  error.incorrect.length=\
@@ -42411,8 +42308,8 @@
  out.added.manifest=\
          added manifest
  out.update.manifest=\
---- ./jdk/src/share/demo/jvmti/compiledMethodLoad/sample.makefile.txt	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/demo/jvmti/compiledMethodLoad/sample.makefile.txt	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/demo/jvmti/compiledMethodLoad/sample.makefile.txt	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/demo/jvmti/compiledMethodLoad/sample.makefile.txt	Sat Feb 03 21:37:28 2018 -0800
 @@ -38,6 +38,7 @@
  #       gnumake JDK=<java_home> OSNAME=solaris [OPT=true] [LIBARCH=sparcv9]
  #       gnumake JDK=<java_home> OSNAME=linux   [OPT=true]
@@ -42451,8 +42348,8 @@
  # Common -I options
  CFLAGS += -I.
  CFLAGS += -I../agent_util
---- ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Sat Feb 03 21:37:28 2018 -0800
 @@ -33,6 +33,10 @@
  
  #include <stdlib.h>
@@ -42473,8 +42370,8 @@
  #define SWAP_BYTES(a) \
      ((((a) << 8) & 0xff00) | 0x00ff) & (((a) >> 8) | 0xff00)
  #else
---- ./jdk/src/share/native/com/sun/media/sound/SoundDefs.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/com/sun/media/sound/SoundDefs.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/com/sun/media/sound/SoundDefs.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/com/sun/media/sound/SoundDefs.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -64,7 +64,7 @@
  
  
@@ -42484,8 +42381,8 @@
  #include <sys/types.h>
  #endif
  
---- ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -24,6 +24,9 @@
   * questions.
   */
@@ -42509,8 +42406,8 @@
  #ifdef __NEWVALID       /* special setup for Sun test regime */
  #if defined(i386) || defined(i486) || \
      defined(intel) || defined(x86) || defined(arm) || \
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -86,7 +86,7 @@
  #endif /* MLIB_USE_FTOI_CLAMPING */
  
@@ -42550,8 +42447,8 @@
  
  #endif /* _NO_LONGLONG */
  
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -42591,8 +42488,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -42632,8 +42529,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -42673,8 +42570,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -95,7 +95,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -42714,8 +42611,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -42755,8 +42652,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -42796,8 +42693,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -95,7 +95,7 @@
      dst = dp[0];
      if (ld_offset + size < 32) {
@@ -43017,8 +42914,8 @@
    }
  
  #else  /* _LONGLONG */
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -168,7 +168,7 @@
  }
  
@@ -43299,8 +43196,8 @@
        dp[12] = t0;
        dp[13] = t1;
        dp[14] = t2;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -88,7 +88,7 @@
  } d64_2_f32;
  
@@ -43452,8 +43349,8 @@
  
    ((mlib_u32*)lh)[0] = l;  ((mlib_u32*)lh)[1] = l;
    ((mlib_u32*)lh)[2] = l;  ((mlib_u32*)lh)[3] = h;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -30,7 +30,7 @@
  typedef union {
    mlib_d64 db;
@@ -43463,8 +43360,8 @@
      mlib_s32 int1, int0;
  #else
      mlib_s32 int0, int1;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -275,11 +275,11 @@
        for (i = 0; j <= (b_size - 4); j += 4, i++) {
          src0 = src1;
@@ -43563,8 +43460,8 @@
          s0 = s1;
          dp += SIZE;
          sp += SIZE;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -120,7 +120,7 @@
    }                                                               \
  }
@@ -44797,8 +44694,8 @@
        dp[12] = t0;
        dp[13] = t1;
        dp[14] = t2;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -27,9 +27,21 @@
  #ifndef MLIB_IMAGE_H
  #define MLIB_IMAGE_H
@@ -44822,8 +44719,8 @@
  #include <mlib_types.h>
  #include <mlib_status.h>
  #include <mlib_sys.h>
---- ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -26,7 +26,7 @@
  
  #include <stdlib.h>
@@ -44845,8 +44742,8 @@
    return valloc(size);
  #else
    return (void *) memalign(8, size);
---- ./jdk/src/share/native/sun/awt/medialib/mlib_types.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_types.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_types.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_types.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -59,7 +59,7 @@
  
  #if defined(__SUNPRO_C) || defined(__SUNPRO_CC) || defined(__GNUC__) || defined(AIX)
@@ -44856,8 +44753,8 @@
  #include <stddef.h>                     /* for ptrdiff_t */
  #include <stdint.h>                     /* for uintptr_t */
  #elif defined(__linux__)
---- ./jdk/src/share/native/sun/java2d/opengl/OGLFuncs.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/share/native/sun/java2d/opengl/OGLFuncs.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/share/native/sun/java2d/opengl/OGLFuncs.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/share/native/sun/java2d/opengl/OGLFuncs.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -26,7 +26,7 @@
  #ifndef OGLFuncs_h_Included
  #define OGLFuncs_h_Included
@@ -44867,8 +44764,8 @@
  #include <dlfcn.h>
  #endif
  #include "jni.h"
---- ./jdk/src/solaris/back/util_md.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/back/util_md.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/back/util_md.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/back/util_md.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -51,7 +51,7 @@
  
  /* On little endian machines, convert java big endian numbers. */
@@ -44878,8 +44775,8 @@
  
  #define HOST_TO_JAVA_CHAR(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
  #define HOST_TO_JAVA_SHORT(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
---- ./jdk/src/solaris/bin/ergo.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/bin/ergo.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/bin/ergo.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/bin/ergo.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -100,6 +100,27 @@
  /* Compute physical memory by asking the OS */
  uint64_t
@@ -44914,8 +44811,8 @@
    return result;
 +#endif
  }
---- ./jdk/src/solaris/bin/ergo.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/bin/ergo.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/bin/ergo.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/bin/ergo.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -33,6 +33,10 @@
  #include <sys/stat.h>
  #include <unistd.h>
@@ -44927,8 +44824,8 @@
  
  #include "java.h"
  
---- ./jdk/src/solaris/bin/ergo_i586.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/bin/ergo_i586.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/bin/ergo_i586.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/bin/ergo_i586.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -106,7 +106,7 @@
  
  #endif /* __solaris__ */
@@ -44987,8 +44884,8 @@
    return result;
 +#endif
  }
---- ./jdk/src/solaris/bin/java_md_solinux.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/bin/java_md_solinux.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/bin/java_md_solinux.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/bin/java_md_solinux.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -928,8 +928,9 @@
   * onwards the filename returned in DL_info structure from dladdr is
   * an absolute pathname so technically realpath isn't required.
@@ -45045,8 +44942,8 @@
  /* --- Splash Screen shared library support --- */
  static const char* SPLASHSCREEN_SO = JNI_LIB_NAME("splashscreen");
  static void* hSplashLib = NULL;
---- ./jdk/src/solaris/bin/java_md_solinux.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/bin/java_md_solinux.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/bin/java_md_solinux.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/bin/java_md_solinux.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -33,6 +33,10 @@
  #include <sys/time.h>
  #define CounterGet()              (gethrtime()/1000)
@@ -45068,8 +44965,8 @@
  #else /* Solaris */
  static const char *system_dir   = "/usr/jdk";
  static const char *user_dir     = "/jdk";
---- ./jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd	Sat Feb 03 21:37:28 2018 -0800
 @@ -95,7 +95,14 @@
              public LaunchMechanism run() {
                  String javahome = System.getProperty("java.home");
@@ -45086,8 +44983,8 @@
                  String s = System.getProperty(
                      "jdk.lang.Process.launchMechanism", "posix_spawn");
  
---- ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -213,7 +213,7 @@
          if (fontID != null) {
              fileName = (String)fontNameMap.get(fontID);
@@ -45115,8 +45012,8 @@
               (!mFontConfig.foundOsSpecificFile() ||
                !mFontConfig.fontFilesArePresent()) ||
               (FontUtilities.isSolaris && !mFontConfig.fontFilesArePresent()))) {
---- ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -59,7 +59,7 @@
                      } else if (os.startsWith("AIX")) {
                          defaultLower = 32768;
@@ -45126,8 +45023,8 @@
                          defaultLower = 49152;
                          defaultUpper = 65535;
                      } else {
---- ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -50,7 +50,7 @@
              return new SolarisAsynchronousChannelProvider();
          if (osname.equals("Linux"))
@@ -45137,8 +45034,8 @@
              return new BsdAsynchronousChannelProvider();
          if (osname.equals("AIX"))
              return new AixAsynchronousChannelProvider();
---- ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -70,6 +70,8 @@
              return createProvider("sun.nio.fs.LinuxFileSystemProvider");
          if (osname.equals("Darwin") || osname.contains("OS X"))
@@ -45148,8 +45045,8 @@
          if (osname.equals("AIX") || osname.equals("OS400"))
              return createProvider("sun.nio.fs.AixFileSystemProvider");
          throw new AssertionError("Platform not recognized");
---- ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -170,6 +170,7 @@
  
      static boolean isBSD() {
@@ -45158,8 +45055,8 @@
                  osname.contains("OS X"));
      }
  
---- ./jdk/src/solaris/javavm/export/jvm_md.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/javavm/export/jvm_md.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/javavm/export/jvm_md.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/javavm/export/jvm_md.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -75,7 +75,11 @@
  #define JVM_O_O_APPEND   O_APPEND
  #define JVM_O_EXCL       O_EXCL
@@ -45172,8 +45069,8 @@
  
  /* Signals */
  
---- ./jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -172,6 +172,9 @@
      /*
       * XXXBSD: there's no way available to get swap info in
@@ -45223,8 +45120,8 @@
       */
      // throw_internal_error(env, "Unimplemented in FreeBSD");
      return (100);
---- ./jdk/src/solaris/native/java/io/UnixFileSystem_md.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/io/UnixFileSystem_md.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/java/io/UnixFileSystem_md.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/java/io/UnixFileSystem_md.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -151,7 +151,6 @@
      return rv;
  }
@@ -45233,8 +45130,8 @@
  JNIEXPORT jboolean JNICALL
  Java_java_io_UnixFileSystem_setPermission(JNIEnv *env, jobject this,
                                            jobject file,
---- ./jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -56,7 +56,7 @@
  
      for (i = 0; environ[i]; i++) {
@@ -45253,8 +45150,8 @@
              jbyteArray var, val;
              const char * valBeg = varEnd + 1;
              jsize varLength = varEnd - environ[i];
---- ./jdk/src/solaris/native/java/lang/childproc.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/lang/childproc.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/java/lang/childproc.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/java/lang/childproc.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -62,6 +62,16 @@
    return c >= '0' && c <= '9';
  }
@@ -45280,8 +45177,8 @@
  
  int
  moveDescriptor(int fd_from, int fd_to)
---- ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -151,7 +151,7 @@
      lc = setlocale(cat, NULL);
  #endif
@@ -45311,8 +45208,8 @@
      } else {
          sprops.language = "en";
          sprops.encoding = "ISO8859-1";
---- ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -67,14 +67,19 @@
  #include <sys/param.h>
  #include <sys/ioctl.h>
@@ -45367,8 +45264,8 @@
    return 0;
  }
  
---- ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -23,12 +23,12 @@
   * questions.
   */
@@ -45406,12 +45303,35 @@
              len = sizeof(struct sockaddr_in);
          }
          JVM_Connect(fd, (struct sockaddr *)&addr, len);
---- ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/net/bsd_close.c	Thu Sep 07 23:37:21 2017 -0700
-@@ -345,6 +345,76 @@
+--- ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/java/net/bsd_close.c	Sat Feb 03 21:37:28 2018 -0800
+@@ -68,7 +68,7 @@
+ 
+ /*
+  * This limit applies if getlimit() returns unlimited.
+- * Unfortunately, this means if someone wants a higher limt
++ * Unfortunately, this means if someone wants a higher limit
+  * then they have to set an explicit limit, higher than this,
+  * which is probably counter-intuitive.
+  */
+@@ -320,11 +320,8 @@
+ }
+ 
+ int NET_Accept(int s, struct sockaddr *addr, int *addrlen) {
+-    socklen_t len = *addrlen;
+-    int error = accept(s, addr, &len);
+-    if (error != -1)
+-        *addrlen = (int)len;
+-    BLOCKING_IO_RETURN_INT( s, error );
++    /* See NET_RecvFrom() */
++    BLOCKING_IO_RETURN_INT( s, accept(s, addr, (socklen_t *)addrlen) );
+ }
+ 
+ int NET_Connect(int s, struct sockaddr *addr, int addrlen) {
+@@ -349,6 +346,68 @@
   * signal other than our wakeup signal.
   */
- int NET_Timeout(int s, long timeout) {
+ int NET_Timeout0(int s, long timeout, long currentTime) {
 +/*
 + * On MacOS X, poll(2) is not working correctly, so a select(2) based
 + * implementation is preferred.  See
@@ -45426,7 +45346,7 @@
 + * Other *BSD will use poll(2) for now, but please adjust as appropriate.
 + */
 +#ifndef __APPLE__
-+    long prevtime = 0, newtime;
++    long prevtime = currentTime, newtime;
 +    struct timeval t;
 +    fdEntry_t *fdEntry = getFdEntry(s);
 +
@@ -45436,14 +45356,6 @@
 +    if (fdEntry == NULL) {
 +        errno = EBADF;
 +        return -1;
-+    }
-+
-+    /*
-+     * Pick up current time as may need to adjust timeout
-+     */
-+    if (timeout > 0) {
-+        gettimeofday(&t, NULL);
-+        prevtime = t.tv_sec * 1000  +  t.tv_usec / 1000;
 +    }
 +
 +    for(;;) {
@@ -45482,18 +45394,18 @@
 +
 +    }
 +#else
-     long prevtime = 0, newtime;
+     long prevtime = currentTime, newtime;
      struct timeval t, *tp = &t;
      fd_set fds;
-@@ -431,4 +501,5 @@
+@@ -432,4 +491,5 @@
          }
  
      }
 +#endif
  }
---- ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/net/net_util_md.c	Thu Sep 07 23:37:21 2017 -0700
-@@ -45,6 +45,10 @@
+--- ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/java/net/net_util_md.c	Sat Feb 03 21:37:28 2018 -0800
+@@ -46,6 +46,10 @@
  #endif
  #endif
  
@@ -45504,7 +45416,7 @@
  #ifdef __solaris__
  #include <sys/sockio.h>
  #include <stropts.h>
-@@ -1546,7 +1550,22 @@
+@@ -1547,7 +1551,22 @@
          }
      }
  
@@ -45528,19 +45440,8 @@
  
      return setsockopt(fd, level, opt, arg, len);
  }
---- ./jdk/src/solaris/native/java/net/net_util_md.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/net/net_util_md.h	Thu Sep 07 23:37:21 2017 -0700
-@@ -46,7 +46,7 @@
-    close subroutine does not return until the select call returns.
-    ...
- */
--#if defined(__linux__) || defined(MACOSX) || defined (_AIX)
-+#if defined(__linux__) || defined(__FreeBSD__) || defined(MACOSX) || defined (_AIX)
- extern int NET_Timeout(int s, long timeout);
- extern int NET_Read(int s, void* buf, size_t len);
- extern int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
---- ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -123,7 +123,7 @@
          return NULL;
      }
@@ -45574,8 +45475,8 @@
  }
 -#endif /* MACOSX */
 +#endif /* _ALLBSD_SOURCE */
---- ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -334,7 +334,7 @@
              if (strcmp(style, "regular") == 0) {
                  altstyle = "roman";
@@ -45585,8 +45486,8 @@
              if (!strcmp(family, "lucidasans")) {
                  family = "lucida";
              }
---- ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -123,7 +123,7 @@
   */
  
@@ -45646,8 +45547,8 @@
  #endif /* HEADLESS */
      return point;
  }
---- ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -67,7 +67,7 @@
                                  XIMPreeditDrawCallbackStruct *);
  static void PreeditCaretCallback(XIC, XPointer,
@@ -45887,8 +45788,8 @@
      AWT_LOCK();
      adjustStatusWindow(window);
      AWT_UNLOCK();
---- ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  #include "wsutils.h"
  #include "list.h"
@@ -45898,8 +45799,8 @@
  #include <sys/socket.h>
  #endif
  
---- ./jdk/src/solaris/native/sun/awt/awt_util.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/awt_util.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_util.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/awt_util.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -187,7 +187,7 @@
  #ifdef __solaris__
  extern Widget awt_util_getXICStatusAreaWindow(Widget w);
@@ -45918,8 +45819,8 @@
  typedef struct _XmImRefRec {
    Cardinal      num_refs;       /* Number of referencing widgets. */
    Cardinal      max_refs;       /* Maximum length of refs array. */
---- ./jdk/src/solaris/native/sun/awt/awt_wm.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/awt_wm.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_wm.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/awt_wm.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -121,12 +121,19 @@
  static Atom XA_KWM_WIN_MAXIMIZED;
  
@@ -46017,8 +45918,8 @@
          awt_wmgr = OPENLOOK_WM;
      }
      else {
---- ./jdk/src/solaris/native/sun/awt/awt_wm.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/awt_wm.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_wm.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/awt_wm.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -45,7 +45,10 @@
      KDE2_WM,
      SAWFISH_WM,
@@ -46031,8 +45932,8 @@
  };
  
  extern void awt_wm_init(void);
---- ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/extutil.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/extutil.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -58,7 +58,7 @@
   */
  /* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */
@@ -46048,8 +45949,8 @@
  
 -#endif /* __linux__ || MACOSX */
 +#endif /* __linux__ || _ALLBSD_SOURCE */
---- ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -23,7 +23,7 @@
   * questions.
   */
@@ -46118,8 +46019,8 @@
      }
  #endif
  #endif /* !HEADLESS */
---- ./jdk/src/solaris/native/sun/awt/robot_common.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/awt/robot_common.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/robot_common.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/awt/robot_common.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -27,7 +27,7 @@
      #error This file should not be included in headless library
  #endif
@@ -46129,8 +46030,8 @@
  #include <stdlib.h>
  #endif
  
---- ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -28,9 +28,9 @@
  #include <sys/types.h>
  
@@ -46143,8 +46044,8 @@
  #include <stdint.h>
  #endif /* __linux__ || MACOSX */
  
---- ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -804,7 +804,7 @@
  static int initialized;
  static int usevis = JNI_TRUE;
@@ -46154,8 +46055,8 @@
  #   define ULTRA_CHIP   "sparc64"
  #else
  #   define ULTRA_CHIP   "sun4u"
---- ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/net/portconfig.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/net/portconfig.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -66,6 +66,24 @@
          range->higher = net_getParam("/dev/tcp", "tcp_largest_anon_port");
          return 0;
@@ -46181,8 +46082,8 @@
  #elif defined(_ALLBSD_SOURCE)
      {
          int ret;
---- ./jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -204,7 +204,7 @@
          return IOS_THROWN;
      }
@@ -46201,8 +46102,8 @@
  #endif
  
      if (numBytes > 0)
---- ./jdk/src/solaris/native/sun/nio/ch/FileDispatcherImpl.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/nio/ch/FileDispatcherImpl.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/nio/ch/FileDispatcherImpl.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/nio/ch/FileDispatcherImpl.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -264,6 +264,21 @@
      fl.l_start = (off64_t)pos;
      fl.l_type = F_UNLCK;
@@ -46225,8 +46126,8 @@
      if (lockResult < 0) {
          JNU_ThrowIOExceptionWithLastError(env, "Release failed");
      }
---- ./jdk/src/solaris/native/sun/nio/ch/NativeThread.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/nio/ch/NativeThread.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/nio/ch/NativeThread.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/nio/ch/NativeThread.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -33,12 +33,19 @@
  #include "nio_util.h"
  
@@ -46275,8 +46176,8 @@
      if (pthread_kill((pthread_t)thread, INTERRUPT_SIGNAL))
          JNU_ThrowIOExceptionWithLastError(env, "Thread signal failed");
  #endif
---- ./jdk/src/solaris/native/sun/nio/ch/Sctp.h	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/nio/ch/Sctp.h	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/nio/ch/Sctp.h	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/nio/ch/Sctp.h	Sat Feb 03 21:37:28 2018 -0800
 @@ -320,8 +320,20 @@
  typedef int sctp_peeloff_func(int sock, sctp_assoc_t id);
  
@@ -46316,8 +46217,8 @@
  jboolean loadSocketExtensionFuncs(JNIEnv* env);
  
  #endif /* !SUN_NIO_CH_SCTP_H */
---- ./jdk/src/solaris/native/sun/nio/ch/SctpNet.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/nio/ch/SctpNet.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/nio/ch/SctpNet.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/nio/ch/SctpNet.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -58,6 +58,7 @@
   */
  jboolean loadSocketExtensionFuncs
@@ -46334,8 +46235,8 @@
  
      funcsLoaded = JNI_TRUE;
      return JNI_TRUE;
---- ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -50,7 +50,7 @@
  {
      const char *libName = (*env)->GetStringUTFChars(env, jLibName, NULL);
@@ -46345,8 +46246,8 @@
      void *hModule = dlopen(libName, RTLD_LAZY);
  #else
      void *hModule = dlopen(libName, RTLD_NOLOAD);
---- ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Sat Feb 03 21:37:28 2018 -0800
 @@ -867,7 +867,7 @@
  {
      KeySym originalKeysym = *keysym;
@@ -46356,8 +46257,8 @@
      /* The following code on Linux will cause the keypad keys
       * not to echo on JTextField when the NumLock is on. The
       * keysyms will be 0, because the last parameter 2 is not defined.
---- ./jdk/test/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -79,6 +79,11 @@
    endif
    OS_VERSION := $(shell $(UNAME) -r)
@@ -46370,8 +46271,8 @@
  ifeq ($(UNAME_S), Darwin)
    OS_NAME     = macosx
    OS_ARCH    := $(shell $(UNAME) -m)
---- ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -48,7 +48,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -46381,8 +46282,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -56,7 +56,7 @@
  
  OS=`uname -s`
@@ -46392,8 +46293,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/com/sun/jdi/JITDebug.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/jdi/JITDebug.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/jdi/JITDebug.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/jdi/JITDebug.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -63,7 +63,7 @@
  OS=`uname -s`
  export TRANSPORT_METHOD
@@ -46403,8 +46304,8 @@
        PATHSEP=":"
        TRANSPORT_METHOD=dt_socket
        ;;
---- ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -123,7 +123,7 @@
      esac
      libloc=${jreloc}/lib/${libarch}
@@ -46414,8 +46315,8 @@
      xx=`find ${jreloc}/lib -name libdt_socket.so`
      libloc=`dirname ${xx}`
      ;;
---- ./jdk/test/com/sun/jdi/ShellScaffold.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/jdi/ShellScaffold.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/jdi/ShellScaffold.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/jdi/ShellScaffold.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -284,7 +284,7 @@
           psCmd=ps
           jstack=jstack.exe
@@ -46425,8 +46326,8 @@
           transport=dt_socket
           address=
           devnull=/dev/null
---- ./jdk/test/com/sun/jdi/Solaris32AndSolaris64Test.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/jdi/Solaris32AndSolaris64Test.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/jdi/Solaris32AndSolaris64Test.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/jdi/Solaris32AndSolaris64Test.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -112,7 +112,7 @@
        fi
        ;;
@@ -46436,8 +46337,8 @@
        pass "This test always passes on $OS"
        ;;
  
---- ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -45,7 +45,7 @@
  
  OS=`uname -s`
@@ -46447,8 +46348,8 @@
      PS=":"
      ;;
    Windows* | CYGWIN*)
---- ./jdk/test/com/sun/management/OperatingSystemMXBean/TestTotalSwap.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/management/OperatingSystemMXBean/TestTotalSwap.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/management/OperatingSystemMXBean/TestTotalSwap.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/management/OperatingSystemMXBean/TestTotalSwap.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -72,6 +72,16 @@
     done
  }
@@ -46476,8 +46377,8 @@
       Darwin )
         # $ sysctl -n vm.swapusage 
         # total = 8192.00M  used = 7471.11M  free = 720.89M  (encrypted)
---- ./jdk/test/com/sun/management/UnixOperatingSystemMXBean/GetMaxFileDescriptorCount.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/management/UnixOperatingSystemMXBean/GetMaxFileDescriptorCount.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/management/UnixOperatingSystemMXBean/GetMaxFileDescriptorCount.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/management/UnixOperatingSystemMXBean/GetMaxFileDescriptorCount.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -48,7 +48,7 @@
  
  # Test GetMaxFileDescriptorCount if we are running on Unix
@@ -46487,8 +46388,8 @@
         runOne GetMaxFileDescriptorCount
         ;;
      * )
---- ./jdk/test/com/sun/management/UnixOperatingSystemMXBean/GetOpenFileDescriptorCount.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/com/sun/management/UnixOperatingSystemMXBean/GetOpenFileDescriptorCount.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/com/sun/management/UnixOperatingSystemMXBean/GetOpenFileDescriptorCount.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/com/sun/management/UnixOperatingSystemMXBean/GetOpenFileDescriptorCount.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -48,7 +48,7 @@
  
  # Test GetOpenFileDescriptorCount if we are running on Unix
@@ -46498,8 +46399,8 @@
         runOne GetOpenFileDescriptorCount
         ;;
      * )
---- ./jdk/test/java/awt/Focus/NPEInKFMOnButtonClickInDialogTest/NPEInKFMOnButtonClickInDialogTest.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/awt/Focus/NPEInKFMOnButtonClickInDialogTest/NPEInKFMOnButtonClickInDialogTest.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/awt/Focus/NPEInKFMOnButtonClickInDialogTest/NPEInKFMOnButtonClickInDialogTest.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/awt/Focus/NPEInKFMOnButtonClickInDialogTest/NPEInKFMOnButtonClickInDialogTest.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -50,8 +50,8 @@
  
      public static void main(String[] args) {
@@ -46511,8 +46412,8 @@
              return;
          }
  
---- ./jdk/test/java/awt/PrintJob/Text/stringwidth.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/awt/PrintJob/Text/stringwidth.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/awt/PrintJob/Text/stringwidth.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/awt/PrintJob/Text/stringwidth.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -25,10 +25,11 @@
  fi
  
@@ -46529,8 +46430,8 @@
  # Windows
  
  if [ -z "${TESTJAVA}" ] ; then
---- ./jdk/test/java/io/File/GetXSpace.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/io/File/GetXSpace.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/io/File/GetXSpace.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/io/File/GetXSpace.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -26,7 +26,7 @@
  # set platform-dependent variable
  OS=`uname -s`
@@ -46540,8 +46441,8 @@
    Windows_98 )    return    ;;
    Windows* )      SID=`sid`; TMP="c:/temp"  ;;
    * )
---- ./jdk/test/java/io/FileOutputStream/ManyFiles.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/io/FileOutputStream/ManyFiles.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/io/FileOutputStream/ManyFiles.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/io/FileOutputStream/ManyFiles.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -43,7 +43,7 @@
          // Windows capability it is much simpler to only run it
          // on that platform.
@@ -46551,8 +46452,8 @@
              return;
  
          for (int n = 0; n < NUM_FILES; n++) {
---- ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -41,7 +41,7 @@
  # Need to determine the classpath separator and filepath separator based on the
  # operating system.
@@ -46562,8 +46463,8 @@
    PS=":"  ;;
  Windows* | CYGWIN* )
    PS=";"  ;;
---- ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -46573,8 +46474,8 @@
      PS=":"    ;;
    Windows* | CYGWIN* )
      PS=";"    ;;
---- ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -46584,8 +46485,8 @@
      PS=":"    ;;
    Windows* | CYGWIN* )
      PS=";"    ;;
---- ./jdk/test/java/lang/ClassLoader/Assert.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/lang/ClassLoader/Assert.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/lang/ClassLoader/Assert.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/lang/ClassLoader/Assert.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -25,7 +25,7 @@
  
  OS=`uname -s`
@@ -46595,8 +46496,8 @@
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
      ;;
---- ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -45,13 +45,7 @@
  # set platform-specific variables
  OS=`uname -s`
@@ -46612,8 +46513,8 @@
      FS="/"
      ;;
    AIX )
---- ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -49,13 +49,7 @@
  # set platform-specific variables
  OS=`uname -s`
@@ -46629,8 +46530,8 @@
      FS="/"
      ;;
    AIX )
---- ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -30,7 +30,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -46640,8 +46541,8 @@
    Windows* | CYGWIN* )
      echo "Passed"; exit 0 ;;
    * ) echo "Unrecognized system!" ;  exit 1 ;;
---- ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -44,7 +44,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -46651,8 +46552,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/java/lang/instrument/MakeJAR2.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/lang/instrument/MakeJAR2.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/lang/instrument/MakeJAR2.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/lang/instrument/MakeJAR2.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -49,7 +49,7 @@
  
  OS=`uname -s`
@@ -46662,8 +46563,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -35,15 +35,7 @@
  
  OS=`uname -s`
@@ -46681,8 +46582,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -61,7 +61,7 @@
  while true; do
    echo "Run $i: TestSystemLoadAvg"
@@ -46692,8 +46593,8 @@
           runOne GetSystemLoadAverage
           ;;
        * )
---- ./jdk/test/java/net/Authenticator/B4933582.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/net/Authenticator/B4933582.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/net/Authenticator/B4933582.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/net/Authenticator/B4933582.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -26,7 +26,7 @@
  
  OS=`uname -s`
@@ -46703,8 +46604,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -45,6 +45,8 @@
              return (true);
          if (p.getProperty ("os.name").equals ("Linux"))
@@ -46714,8 +46615,8 @@
          if (p.getProperty ("os.name").startsWith ("Mac OS"))
              return (true);
          // Check for specific Solaris version from here
---- ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -27,7 +27,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -46725,8 +46626,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/net/Socket/OldSocketImpl.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/net/Socket/OldSocketImpl.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/net/Socket/OldSocketImpl.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/net/Socket/OldSocketImpl.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -28,7 +28,7 @@
  
  OS=`uname -s`
@@ -46736,8 +46637,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URL/B5086147.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/net/URL/B5086147.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/net/URL/B5086147.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/net/URL/B5086147.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -26,7 +26,7 @@
  
  OS=`uname -s`
@@ -46747,8 +46648,8 @@
      exit 0
      ;;
    CYGWIN* )
---- ./jdk/test/java/net/URL/runconstructor.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/net/URL/runconstructor.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/net/URL/runconstructor.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/net/URL/runconstructor.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -27,7 +27,7 @@
  #
  OS=`uname -s`
@@ -46758,8 +46659,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URLClassLoader/B5077773.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/net/URLClassLoader/B5077773.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/net/URLClassLoader/B5077773.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/net/URLClassLoader/B5077773.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -34,7 +34,7 @@
  
  OS=`uname -s`
@@ -46769,8 +46670,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -27,7 +27,7 @@
  
  OS=`uname -s`
@@ -46780,8 +46681,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URLConnection/6212146/test.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/net/URLConnection/6212146/test.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/net/URLConnection/6212146/test.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/net/URLConnection/6212146/test.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -33,7 +33,7 @@
  
  OS=`uname -s`
@@ -46791,8 +46692,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Makefile	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Makefile	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Makefile	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Makefile	Sat Feb 03 21:37:28 2018 -0800
 @@ -71,6 +71,48 @@
    EXTRA_LIBS = -lc
  endif
@@ -46842,8 +46743,8 @@
  LIBDIR=lib/$(PLATFORM)-$(ARCH)
  LAUNCHERLIB=$(LIBDIR)/libLauncher.so
  
---- ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/run_tests.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/run_tests.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/run_tests.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/run_tests.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -33,11 +33,14 @@
  # @run shell run_tests.sh
  
@@ -46912,8 +46813,8 @@
  
  LIBDIR=lib/${PLATFORM}-${ARCH}
  LAUNCHERLIB=${LIBDIR}/libLauncher.so
---- ./jdk/test/java/nio/charset/Charset/default.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/nio/charset/Charset/default.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/nio/charset/Charset/default.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/nio/charset/Charset/default.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -41,10 +41,14 @@
  fi
  
@@ -46933,8 +46834,8 @@
  
  JAVA=$TESTJAVA/bin/java
  
---- ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -34,7 +34,7 @@
  
  OS=`uname -s`
@@ -46944,8 +46845,8 @@
    # Skip locale test for Windows
    Windows* | CYGWIN* )
      echo "Passed"; exit 0 ;;
---- ./jdk/test/java/nio/charset/spi/basic.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/nio/charset/spi/basic.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/nio/charset/spi/basic.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/nio/charset/spi/basic.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -70,10 +70,14 @@
      L="$1"
      shift
@@ -46974,8 +46875,8 @@
    Windows* )      CPS=';' ;;
    *)              echo "Unknown platform: `uname`"; exit 1 ;;
  esac
---- ./jdk/test/java/nio/file/FileSystem/Basic.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/nio/file/FileSystem/Basic.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/nio/file/FileSystem/Basic.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/nio/file/FileSystem/Basic.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -76,6 +76,8 @@
              checkSupported(fs, "posix", "unix", "owner", "acl", "user");
          if (os.equals("Linux"))
@@ -46985,8 +46886,8 @@
          if (os.contains("OS X"))
              checkSupported(fs, "posix", "unix", "owner");
          if (os.equals("Windows"))
---- ./jdk/test/java/nio/file/Files/CopyAndMove.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/nio/file/Files/CopyAndMove.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/nio/file/Files/CopyAndMove.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/nio/file/Files/CopyAndMove.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -634,7 +634,7 @@
  
                  // check POSIX attributes are copied
@@ -47005,8 +46906,8 @@
          boolean isDirectory = isDirectory(file, NOFOLLOW_LINKS);
  
          if (isUnix) {
---- ./jdk/test/java/rmi/registry/readTest/readTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/rmi/registry/readTest/readTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/rmi/registry/readTest/readTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/rmi/registry/readTest/readTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -34,7 +34,7 @@
  REGARGS=""
  
@@ -47016,8 +46917,8 @@
      PS=":"
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
---- ./jdk/test/java/rmi/reliability/launch_reliability.ksh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/rmi/reliability/launch_reliability.ksh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/rmi/reliability/launch_reliability.ksh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/rmi/reliability/launch_reliability.ksh	Sat Feb 03 21:37:28 2018 -0800
 @@ -84,14 +84,12 @@
  
  
@@ -47037,8 +46938,8 @@
  
  export PATH_SEP
  mainpid=$$
---- ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,15 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47056,8 +46957,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -34,15 +34,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47075,8 +46976,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -50,19 +50,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47098,8 +46999,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,15 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47117,8 +47018,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/signedfirst/Static.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/security/Security/signedfirst/Static.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/security/Security/signedfirst/Static.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/security/Security/signedfirst/Static.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,15 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47136,8 +47037,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/util/Currency/PropertiesTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/util/Currency/PropertiesTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/util/Currency/PropertiesTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/util/Currency/PropertiesTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -30,7 +30,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47147,8 +47048,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -58,7 +58,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47158,8 +47059,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -31,7 +31,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47169,8 +47070,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/util/ResourceBundle/Control/ExpirationTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/util/ResourceBundle/Control/ExpirationTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/util/ResourceBundle/Control/ExpirationTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/util/ResourceBundle/Control/ExpirationTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -72,10 +72,10 @@
  Windows* | CYGWIN* )
      DEL=";"
@@ -47184,8 +47085,8 @@
      DEL=":"
      HAS_S=YES
      ;;
---- ./jdk/test/java/util/ServiceLoader/basic.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/java/util/ServiceLoader/basic.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/java/util/ServiceLoader/basic.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/java/util/ServiceLoader/basic.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -42,9 +42,7 @@
  
  OS=`uname -s`
@@ -47197,8 +47098,8 @@
        SEP=':' ;;
      * )
        SEP='\;' ;;
---- ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -51,7 +51,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47208,8 +47109,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -92,6 +92,14 @@
        TMP="/tmp"
        ;;
@@ -47225,8 +47126,8 @@
     AIX )
        VAR="A different value for AIX"
        DEFAULT_JDK=/
---- ./jdk/test/javax/script/CommonSetup.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/javax/script/CommonSetup.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/javax/script/CommonSetup.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/javax/script/CommonSetup.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -36,7 +36,7 @@
  
  OS=`uname -s`
@@ -47236,8 +47137,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -33,17 +33,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47257,8 +47158,8 @@
      PS=":"
      FS="/"
      RM="/bin/rm -f"
---- ./jdk/test/jprt.config	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/jprt.config	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/jprt.config	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/jprt.config	Sat Feb 03 21:37:28 2018 -0800
 @@ -71,8 +71,8 @@
  
  # Uses 'uname -s', but only expect SunOS or Linux, assume Windows otherwise.
@@ -47326,8 +47227,8 @@
  
  # Export PATH setting
  PATH="${path4sdk}"
---- ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -50,7 +50,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47337,8 +47238,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -53,8 +53,13 @@
          return isOs("linux");
      }
@@ -47354,8 +47255,8 @@
      }
  
      public static String getOsName() {
---- ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -107,8 +107,8 @@
  
      public static void main(String[] args) throws AWTException, InvocationTargetException, InterruptedException {
@@ -47367,8 +47268,8 @@
                                 "skipping!");
              return;
          }
---- ./jdk/test/sun/management/jmxremote/bootstrap/CustomLauncherTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/CustomLauncherTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/management/jmxremote/bootstrap/CustomLauncherTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/management/jmxremote/bootstrap/CustomLauncherTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -45,37 +45,53 @@
  # has to locate libjvm.so. Also $! is not reliable on some releases of MKS.
  #{
@@ -47448,8 +47349,8 @@
  
  
  #
---- ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -35,7 +35,7 @@
  UMASK=`umask`
  
@@ -47459,8 +47360,8 @@
      PATHSEP=":"
      FILESEP="/"
      DFILESEP=$FILESEP
---- ./jdk/test/sun/management/jmxremote/bootstrap/LocalManagementTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/LocalManagementTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/management/jmxremote/bootstrap/LocalManagementTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/management/jmxremote/bootstrap/LocalManagementTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -86,10 +86,12 @@
  #    on Windows 98.
  
@@ -47478,8 +47379,8 @@
  
  JAVA=${TESTJAVA}/bin/java
  CLASSPATH=${TESTCLASSES}
---- ./jdk/test/sun/management/jmxremote/bootstrap/PasswordFilePermissionTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/PasswordFilePermissionTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/management/jmxremote/bootstrap/PasswordFilePermissionTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/management/jmxremote/bootstrap/PasswordFilePermissionTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -70,10 +70,12 @@
  # security the password file.
  
@@ -47497,8 +47398,8 @@
  
  
  # Create configuration file and dummy password file
---- ./jdk/test/sun/management/jmxremote/bootstrap/SSLConfigFilePermissionTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/SSLConfigFilePermissionTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/management/jmxremote/bootstrap/SSLConfigFilePermissionTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/management/jmxremote/bootstrap/SSLConfigFilePermissionTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -69,10 +69,12 @@
  # security the password file.
  
@@ -47516,8 +47417,8 @@
  
  # Create management and SSL configuration files
  
---- ./jdk/test/sun/net/www/MarkResetTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/net/www/MarkResetTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/net/www/MarkResetTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/net/www/MarkResetTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -28,7 +28,7 @@
  
  OS=`uname -s`
@@ -47527,8 +47428,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -28,7 +28,7 @@
  
  OS=`uname -s`
@@ -47538,8 +47439,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -47549,8 +47450,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -47560,8 +47461,8 @@
      PS=":"
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
---- ./jdk/test/sun/nio/ch/SelProvider.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/nio/ch/SelProvider.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/nio/ch/SelProvider.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/nio/ch/SelProvider.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -39,7 +39,7 @@
                  expected = "sun.nio.ch.DevPollSelectorProvider";
              } else if ("Linux".equals(osname)) {
@@ -47571,8 +47472,8 @@
                  expected = "sun.nio.ch.KQueueSelectorProvider";
              } else {
                  return;
---- ./jdk/test/sun/security/krb5/runNameEquals.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/krb5/runNameEquals.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/krb5/runNameEquals.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/krb5/runNameEquals.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -48,7 +48,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47582,8 +47483,8 @@
      PATHSEP=":"
      FILESEP="/"
      NATIVE=true
---- ./jdk/test/sun/security/pkcs11/KeyStore/Basic.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/pkcs11/KeyStore/Basic.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/pkcs11/KeyStore/Basic.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/pkcs11/KeyStore/Basic.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -131,6 +131,27 @@
  	;;
      esac
@@ -47612,8 +47513,8 @@
    Windows* )  
      FS="\\"
      PS=";"
---- ./jdk/test/sun/security/pkcs11/KeyStore/ClientAuth.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/pkcs11/KeyStore/ClientAuth.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/pkcs11/KeyStore/ClientAuth.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/pkcs11/KeyStore/ClientAuth.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -93,6 +93,27 @@
  	;;
      esac
@@ -47642,8 +47543,8 @@
    Windows* )
      FS="\\"
      PS=";"
---- ./jdk/test/sun/security/pkcs11/PKCS11Test.java	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/pkcs11/PKCS11Test.java	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/pkcs11/PKCS11Test.java	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/pkcs11/PKCS11Test.java	Sat Feb 03 21:37:28 2018 -0800
 @@ -245,6 +245,8 @@
          osMap.put("SunOS-amd64-64", "/usr/lib/mps/64/");
          osMap.put("Linux-i386-32", "/usr/lib/");
@@ -47653,8 +47554,8 @@
      }
  
      private final static char[] hexDigits = "0123456789abcdef".toCharArray();
---- ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -50,19 +50,7 @@
  
  OS=`uname -s`
@@ -47676,8 +47577,8 @@
      FS="/"
      PS=":"
      CP="${FS}bin${FS}cp"
---- ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -51,19 +51,7 @@
  
  OS=`uname -s`
@@ -47699,8 +47600,8 @@
      FS="/"
      PS=":"
      CP="${FS}bin${FS}cp"
---- ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -44,11 +44,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47714,8 +47615,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -47,15 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47733,8 +47634,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -33,7 +33,7 @@
  
  OS=`uname -s`
@@ -47744,8 +47645,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -42,7 +42,7 @@
  
  OS=`uname -s`
@@ -47755,8 +47656,8 @@
          FILESEP="/"
          PATHSEP=":"
          ;;
---- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -32,7 +32,7 @@
  HOSTNAME=`uname -n`
  OS=`uname -s`
@@ -47766,8 +47667,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -32,7 +32,7 @@
  HOSTNAME=`uname -n`
  OS=`uname -s`
@@ -47777,8 +47678,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47788,8 +47689,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47799,8 +47700,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -41,7 +41,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47810,8 +47711,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -42,7 +42,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47821,8 +47722,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47832,8 +47733,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -47,15 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47851,8 +47752,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -42,13 +42,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47868,8 +47769,8 @@
      FILESEP="/"
      ;;
    AIX )
---- ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -45,7 +45,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47879,8 +47780,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47890,8 +47791,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/autotest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/autotest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/autotest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/autotest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -71,6 +71,27 @@
              "/usr/lib/x86_64-linux-gnu/nss/libsoftokn3.so"`
      fi
@@ -47920,8 +47821,8 @@
    * )
      echo "Will not run test on: ${OS}"
      exit 0;
---- ./jdk/test/sun/security/tools/keytool/i18n.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/i18n.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/i18n.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/i18n.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47931,8 +47832,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/printssl.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/printssl.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/printssl.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/printssl.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -37,7 +37,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47942,8 +47843,8 @@
      FS="/"
      ;;
    CYGWIN* )
---- ./jdk/test/sun/security/tools/keytool/resource.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/resource.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/resource.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/resource.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -43,7 +43,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47953,8 +47854,8 @@
      NULL=/dev/null
      FS="/"
      ;;
---- ./jdk/test/sun/security/tools/keytool/standard.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/keytool/standard.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/standard.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/keytool/standard.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -44,7 +44,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47964,8 +47865,8 @@
      FS="/"
      ;;
    Windows_* )
---- ./jdk/test/sun/security/tools/policytool/Alias.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/policytool/Alias.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/Alias.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/policytool/Alias.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47975,8 +47876,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47986,8 +47887,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -47997,8 +47898,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48008,8 +47909,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48019,8 +47920,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48030,8 +47931,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/i18n.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/security/tools/policytool/i18n.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/i18n.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/security/tools/policytool/i18n.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48042,7 +47943,7 @@
      PS=":"
      FS="/"
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/test/sun/tools/jconsole/ImmutableResourceTest.sh	Thu Sep 07 23:37:21 2017 -0700
++++ ./jdk/test/sun/tools/jconsole/ImmutableResourceTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -0,0 +1,111 @@
 +#
 +# Copyright (c) 2005, 2007, Oracle and/or its affiliates. All rights reserved.
@@ -48155,8 +48056,8 @@
 +
 +   else fail "unspecified test failure"
 +fi
---- ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -54,7 +54,7 @@
  
  OS=`uname -s`
@@ -48166,8 +48067,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/sun/tools/native2ascii/Native2AsciiTests.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/tools/native2ascii/Native2AsciiTests.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/tools/native2ascii/Native2AsciiTests.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/tools/native2ascii/Native2AsciiTests.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -33,7 +33,7 @@
  
  case `uname -s` in
@@ -48177,8 +48078,8 @@
  esac
  
  N2A=$TESTJAVA/bin/native2ascii
---- ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Tue Aug 01 14:12:33 2017 +0100
-+++ ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Thu Sep 07 23:37:21 2017 -0700
+--- ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Tue Mar 04 13:03:37 2014 +0400
++++ ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Sat Feb 03 21:37:28 2018 -0800
 @@ -56,7 +56,7 @@
  
  OS=`uname -s`
@@ -48188,23 +48089,8 @@
        PATHSEP=":"
        ;;
  
---- ./langtools/.hgtags	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/.hgtags	Thu Sep 07 23:37:13 2017 -0700
-@@ -123,6 +123,7 @@
- 9425dd4f53d5bfcd992d9aecea0eb7d8b2d4f62b jdk7-b146
- d34578643d1c6c752d4a6b5e79c6ab1b60850b4a jdk7u1-b01
- 58bc532d63418ac3c9b42460d89cdaf595c6f3e1 jdk7-b147
-+23aadf169f085b180803bcdc53baad4ae870f75b 7u0
- cd2cc8b5edb045b950aed46d159b4fb8fc2fd1df jdk7u1-b02
- 82820a30201dbf4b80f1916f3d0f4a92ad21b61a jdk7u1-b03
- baa2c13c70fea3d6e259a34f0903197fdceb64b5 jdk7u1-b04
-@@ -614,3 +615,4 @@
- 853798299f7a4f38745632dc256219fbf75f861e jdk7u141-b01
- ba8ba083c4392a1ddfe40467de1e08d77443807e jdk7u141-b02
- 4624941508c189c7b81c3393664741640a9b0467 jdk7u151-b00
-+205349c408f4715dbbaf428ceafca676e2333979 jdk7u151-b01
---- ./langtools/test/Makefile	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/Makefile	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/Makefile	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/Makefile	Sat Feb 03 14:01:52 2018 -0800
 @@ -45,6 +45,14 @@
      ARCH=i586
    endif
@@ -48240,8 +48126,8 @@
  
  # Root of all test results
  TEST_OUTPUT_DIR = $(TEST_ROOT)/../build/$(PLATFORM)-$(ARCH)/test/langtools
---- ./langtools/test/tools/javac/4846262/Test.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/4846262/Test.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/4846262/Test.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/4846262/Test.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -44,7 +44,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48251,8 +48137,8 @@
      FS="/"
      ;;
    CYGWIN* )
---- ./langtools/test/tools/javac/6302184/T6302184.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/6302184/T6302184.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/6302184/T6302184.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/6302184/T6302184.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -41,7 +41,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48262,8 +48148,8 @@
      FS="/"
      ;;
    CYGWIN* )
---- ./langtools/test/tools/javac/ClassPathTest/ClassPathTest.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/ClassPathTest/ClassPathTest.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/ClassPathTest/ClassPathTest.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/ClassPathTest/ClassPathTest.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -56,7 +56,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48273,8 +48159,8 @@
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
      ;;
---- ./langtools/test/tools/javac/ExtDirs/ExtDirs.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/ExtDirs/ExtDirs.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/ExtDirs/ExtDirs.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/ExtDirs/ExtDirs.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -54,7 +54,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48284,8 +48170,8 @@
      PS=":"
      FS="/"
      ;;
---- ./langtools/test/tools/javac/MissingInclude.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/MissingInclude.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/MissingInclude.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/MissingInclude.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48295,8 +48181,8 @@
      FS="/"
      ;;
    Windows* )
---- ./langtools/test/tools/javac/ProtectedInnerClass/ProtectedInnerClass.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/ProtectedInnerClass/ProtectedInnerClass.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/ProtectedInnerClass/ProtectedInnerClass.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/ProtectedInnerClass/ProtectedInnerClass.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -52,7 +52,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48306,8 +48192,8 @@
      PS=":"
      FS="/"
      ;;
---- ./langtools/test/tools/javac/T5090006/compiler.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/T5090006/compiler.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/T5090006/compiler.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/T5090006/compiler.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48317,8 +48203,8 @@
      FS="/"
      ;;
    Windows* )
---- ./langtools/test/tools/javac/apt.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/apt.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/apt.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/apt.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -38,7 +38,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48328,8 +48214,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./langtools/test/tools/javac/constDebug/ConstDebug.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/constDebug/ConstDebug.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/constDebug/ConstDebug.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/constDebug/ConstDebug.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48339,8 +48225,8 @@
      PS=":"
      FS="/"
      ;;
---- ./langtools/test/tools/javac/fatalErrors/NoJavaLang.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/fatalErrors/NoJavaLang.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/fatalErrors/NoJavaLang.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/fatalErrors/NoJavaLang.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -48,7 +48,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48350,8 +48236,8 @@
      FS="/"
      ;;
    CYGWIN* )
---- ./langtools/test/tools/javac/innerClassFile/Driver.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/innerClassFile/Driver.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/innerClassFile/Driver.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/innerClassFile/Driver.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -53,7 +53,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48361,8 +48247,8 @@
      FS="/"
      ;;
    Windows* )
---- ./langtools/test/tools/javac/javazip/Test.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/javazip/Test.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/javazip/Test.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/javazip/Test.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -41,7 +41,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48372,8 +48258,8 @@
      FS="/"
      SCR=`pwd`
      ;;
---- ./langtools/test/tools/javac/links/links.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/links/links.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/links/links.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/links/links.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -53,7 +53,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48383,8 +48269,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./langtools/test/tools/javac/newlines/Newlines.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/newlines/Newlines.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/newlines/Newlines.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/newlines/Newlines.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -50,7 +50,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48394,8 +48280,8 @@
      FS="/"
      ;;
    Windows* )
---- ./langtools/test/tools/javac/stackmap/T4955930.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/stackmap/T4955930.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/stackmap/T4955930.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/stackmap/T4955930.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -41,7 +41,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48405,8 +48291,8 @@
      FS="/"
      ;;
    Windows_95 | Windows_98 | Windows_NT )
---- ./langtools/test/tools/javac/unicode/SupplementaryJavaID6.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javac/unicode/SupplementaryJavaID6.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javac/unicode/SupplementaryJavaID6.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javac/unicode/SupplementaryJavaID6.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -55,7 +55,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48416,8 +48302,8 @@
      if [ -d /usr/lib/locale/en_US.UTF-8 -o -d /usr/lib/locale/en_US.utf8 ]
      then
          ENV="env LANG=en_US.UTF-8"
---- ./langtools/test/tools/javah/6257087/foo.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javah/6257087/foo.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javah/6257087/foo.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javah/6257087/foo.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -41,7 +41,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48427,8 +48313,8 @@
      PS=":"
      FS="/"
      ;;
---- ./langtools/test/tools/javah/ConstMacroTest.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javah/ConstMacroTest.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javah/ConstMacroTest.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javah/ConstMacroTest.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -56,7 +56,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48438,8 +48324,8 @@
      PS=":"
      FS="/"
      ;;
---- ./langtools/test/tools/javah/MissingParamClassTest.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javah/MissingParamClassTest.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javah/MissingParamClassTest.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javah/MissingParamClassTest.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -58,7 +58,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48449,8 +48335,8 @@
      PS=":"
      FS="/"
      ;;
---- ./langtools/test/tools/javah/ReadOldClass.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javah/ReadOldClass.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javah/ReadOldClass.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javah/ReadOldClass.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -43,7 +43,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -48460,8 +48346,8 @@
      PS=":"
      FS="/"
      ;;
---- ./langtools/test/tools/javap/pathsep.sh	Tue Aug 01 14:12:29 2017 +0100
-+++ ./langtools/test/tools/javap/pathsep.sh	Thu Sep 07 23:37:13 2017 -0700
+--- ./langtools/test/tools/javap/pathsep.sh	Mon Nov 27 05:43:25 2017 +0000
++++ ./langtools/test/tools/javap/pathsep.sh	Sat Feb 03 14:01:52 2018 -0800
 @@ -40,7 +40,7 @@
  # set platform-dependent variables
  OS=`uname -s`
