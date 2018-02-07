@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	SASL
 CONFIGURE_ARGS=	--disable-memcached-sasl --enable-memcached-json --with-libmemcached-dir=${LOCALBASE}
 USES=		pkgconfig php:ext
 USE_PHP=	session:build json:build
+PHP_VER=	70
 IGNORE_WITH_PHP=56 71 72
 
 USE_GITHUB=	yes
