@@ -1,0 +1,7 @@
+Check the PEP-8 naming conventions.
+
+This module provides a plugin for flake8, the Python code checker.
+
+(It replaces the plugin flint-naming for the flint checker.)
+
+WWW: https://pypi.python.org/pypi/pep8-naming
