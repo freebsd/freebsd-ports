@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	5.9.2
-DISTVERSIONPREFIX=	${PORTNAME}-
+PORTVERSION=	5.10.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER?=	sunpoet@FreeBSD.org
@@ -50,7 +50,9 @@ TOOLS=		db_repl_stress db_sanity_test db_stress ldb rocksdb_dump rocksdb_undump 
 DEBUG_MAKE_ENV=		DEBUG_LEVEL=2
 DEBUG_MAKE_ENV_OFF=	DEBUG_LEVEL=0
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+LZ4_MAKE_ENV_OFF=	ROCKSDB_DISABLE_LZ4=yes
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+ZSTD_MAKE_ENV_OFF=	ROCKSDB_DISABLE_ZSTD=yes
 
 .if !defined(LITE)
 CONFLICTS_INSTALL=	rocksdb-lite
@@ -87,12 +89,6 @@ post-patch:
 .if ${ARCH} == i386
 	@${REINPLACE_CMD} -e 's|#ifdef __SSE4_2__|&DISABLED__|' ${WRKSRC}/util/crc32c.cc
 .endif
-
-post-patch-LZ4-off:
-	@${REINPLACE_CMD} -e '/lz4/Id' ${WRKSRC}/build_tools/build_detect_platform
-
-post-patch-ZSTD-off:
-	@${REINPLACE_CMD} -e '/zstd/Id' ${WRKSRC}/build_tools/build_detect_platform
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
