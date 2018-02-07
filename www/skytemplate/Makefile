@@ -13,15 +13,14 @@ COMMENT=	Yet another PHP compiling template engine
 
 USES=		php:web
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-.for f in class.SkyTemplate.php class.SkyTemplate_withDaddy.php
-	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DATADIR}/SkyTpl
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.php ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/SkyTpl
 	${INSTALL_DATA} ${WRKSRC}/SkyTpl/* ${STAGEDIR}${DATADIR}/SkyTpl
-.endfor
 
 .include <bsd.port.mk>
