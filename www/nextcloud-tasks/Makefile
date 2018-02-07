@@ -14,8 +14,9 @@ MAINTAINER=	brnrd@freebsd.org
 COMMENT=	Tasks app for Nextcloud
 
 LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	nextcloud>=12:www/nextcloud
+RUN_DEPENDS=	nextcloud>=10:www/nextcloud
 
 NO_BUILD=	yes
 NO_ARCH=	yes
