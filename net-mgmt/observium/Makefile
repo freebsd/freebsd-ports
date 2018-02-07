@@ -4,7 +4,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.17.9.8859
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -41,7 +41,7 @@ RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 		sudo:security/sudo
 LIB_DEPENDS+=	libpng.so:graphics/png
 
-OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER SVN WMIC
+OPTIONS_DEFINE=	APACHEMOD DOCS EXAMPLES FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER SVN WMIC
 OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER SVN WMIC
 APACHEMOD_DESC=	Use PHP with Apache 2.2+ module
 FPING_DESC=	Enable fping support ping monitoring
@@ -65,13 +65,14 @@ WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 SUB_FILES+=	pkg-message observium.conf.sample
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PHPBASE}/bin/python
 
-ROOT_FILES=	rename_device.php snmptrap.php add_device.php \
-		snmpd.conf.example check-errors.php config_to_json.php delete_device.php \
-		syslog.php irc.php snmp.conf.example adduser.php discovery.php \
-		check-services.php poller.php config.php.default poller-wrapper.py
-ROOT_DIRS=	html scripts includes update mibs libs
+ROOT_FILES=	add_device.php adduser.php alerter.php alerts.php \
+		check-errors.php check-services.php config_to_json.php \
+		config.php.default delete_device.php discovery.php housekeeping.php \
+		irc.php poller-wrapper.py poller.php rename_device.php \
+		snmptrap.php snmptrap.php syslog.php test_alert.php
+ROOT_DIRS=	html includes libs logs mibs rrd scripts templates tests update
 
-PORTDOCS=	INSTALL README
+PORTDOCS=	INSTALL README VERSION
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 
 .if ${PORT_OPTIONS:MAPACHEMOD}
@@ -92,37 +93,43 @@ USES+=	mysql:client
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/poller-wrapper.py ${WRKSRC}/poller.php
+	${FIND} ${WRKSRC} -type d -empty -delete
+	${MKDIR} ${WRKSRC}/logs ${WRKSRC}/rrd
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR} ${STAGEDIR}/${PREFIX}/${APACHEETCDIR}/Includes
+	${INSTALL_DATA} ${WRKDIR}/observium.conf.sample ${STAGEDIR}/${PREFIX}/${APACHEETCDIR}/Includes
 .for dir in ${ROOT_DIRS}
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/${dir}
-	cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/${dir}
+	(cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/${dir})
 .endfor
 .for f in ${ROOT_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
 .endfor
-	# Create empty rrd dir and logs writable by www (the apache user)
-	${MKDIR} ${STAGEDIR}/${WWWDIR}/rrd ${STAGEDIR}/${WWWDIR}/logs
-	# Files in scripts dir should be executable
+# Files in scripts dir should be executable
 	${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
-	# Ensure PHP and Python scripts are executable
-	${FIND} ${STAGEDIR}/${WWWDIR} -type f -name '*.py' -or -type f -name '*.php' -exec ${CHMOD} +x {} \;
-	# Rename for @sample
-	${MV} ${STAGEDIR}/${WWWDIR}/config.php.default ${STAGEDIR}/${WWWDIR}/config.php.default.sample
+# Ensure PHP and Python scripts are executable
+	${FIND} ${STAGEDIR}/${WWWDIR} -type f -name '*.py' -or -type f -name \
+		'*.php' -exec ${CHMOD} +x {} \;
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${EXAMPLESDIR}
 .endfor
-.endif
-	${INSTALL_DATA} ${WRKDIR}/observium.conf.sample ${STAGEDIR}/${PREFIX}/${APACHEETCDIR}/Includes
+
+post-install:
+	@${ECHO}  "@sample ${APACHEETCDIR}/Includes/observium.conf.sample" >> ${TMPPLIST}
+	@${FIND} -s ${STAGEDIR}${WWWDIR} -type f '(' -name '*.orig' -or -name '*.bak' ')' -delete
+	@${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/logs" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/rrd" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
