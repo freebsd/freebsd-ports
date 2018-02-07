@@ -4,6 +4,7 @@
 PORTNAME=	vexim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	mail www
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -12,34 +13,28 @@ COMMENT=	Web interface for managing virtual domains for exim
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GITHUB=	yes
-GH_PROJECT=	${PORTNAME}2
-
 SUB_FILES=	pkg-message
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	gettext session posix
 USES=		gettext php
+USE_PHP=	gettext session posix
+
+USE_GITHUB=	yes
+GH_PROJECT=	${PORTNAME}2
+GH_TAGNAME=	2f51492
 
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL
 OPTIONS_DEFINE=		DOCS ORDER
 OPTIONS_DEFAULT=	MYSQL
 
-ORDER_DESC=		Sort userlist by localpart istead of realname
+ORDER_DESC=		Sort userlist by localpart instead of realname
 ORDER_EXTRA_PATCHES=	${FILESDIR}/extrapatch-order
 
+MYSQL_USE=	php=pdo_mysql
+PGSQL_USE=	php=pdo_pgsql
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USES+=		mysql
-USE_PHP+=	pdo_mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-USE_PHP+=	pdo_pgsql
-.endif
 
 .if ${PORT_OPTIONS:MORDER}
 post-patch:

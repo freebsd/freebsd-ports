@@ -12,13 +12,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/configure
 %%PORTDOCS%%%%DOCSDIR%%/docs/debian-conf.d/auth/30_vexim_authenticators
 %%PORTDOCS%%%%DOCSDIR%%/docs/debian-conf.d/main/00_vexim_listmacrosdefs
+%%PORTDOCS%%%%DOCSDIR%%/docs/debian-conf.d/router/240_vexim_mailman
 %%PORTDOCS%%%%DOCSDIR%%/docs/debian-conf.d/router/249_vexim_ditch_routers
 %%PORTDOCS%%%%DOCSDIR%%/docs/debian-conf.d/router/250_vexim_virtual_domains
+%%PORTDOCS%%%%DOCSDIR%%/docs/debian-conf.d/transport/30_vexim_mailman
 %%PORTDOCS%%%%DOCSDIR%%/docs/debian-conf.d/transport/30_vexim_virtual_delivery
 %%PORTDOCS%%%%DOCSDIR%%/docs/debian-conf.d/transport/30_vexim_virtual_ditch_spam_transport
 %%PORTDOCS%%%%DOCSDIR%%/docs/debian-conf.d/transport/30_vexim_virtual_vacation_delivery
 %%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-content.conf
 %%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-helo.conf
+%%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-mime.conf
 %%PORTDOCS%%%%DOCSDIR%%/docs/vexim-acl-check-rcpt.conf
 %%PORTDOCS%%%%DOCSDIR%%/docs/vexim-group.txt
 %%WWWDIR%%/admin.php
