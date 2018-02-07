@@ -13,7 +13,7 @@ COMMENT=	PHP interface to Thrift
 
 USES=		php:ext
 PHP_MODNAME=	thrift_protocol
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
 WRKSRC_SUBDIR=	lib/php/src/ext/thrift_protocol

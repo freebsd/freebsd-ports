@@ -14,7 +14,7 @@ COMMENT=	PHP extension for TrustCommerce credit card processing
 
 USES=		php:ext ssl
 
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 post-patch:
 	# avoid name conflicts with libressl

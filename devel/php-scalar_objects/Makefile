@@ -17,6 +17,6 @@ GH_ACCOUNT=	nikic
 GH_TAGNAME=	baf4985
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 .include <bsd.port.mk>
