@@ -2,6 +2,7 @@
 
 PORTNAME=	rssroll
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
@@ -17,8 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	koue
 
 GNU_CONFIGURE=	yes
-
-PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/rssroll ${STAGEDIR}${PREFIX}/bin
