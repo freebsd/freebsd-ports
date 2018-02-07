@@ -20,11 +20,11 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libmpfr.so:math/mpfr \
 		libzzip.so:devel/zziplib
 
+USES=		pkgconfig tar:xz libtool
 USE_TEX=	kpathsea web2c texmf formats texlua texluajit fmtutil
 USE_XORG=	pixman
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
-USES=		pkgconfig tar:xz libtool
 TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux \
@@ -38,7 +38,7 @@ EXTRACT_AFTER_ARGS_TEXMF=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 DISTVERSION_TEXLIVE_SOURCE=	20150521
 DISTVERSION_TEXLIVE_TEXMF=	20150523
 DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXLIVE_TEXMF}-texmf
-EXTRACT_FILES_TEXMF= \
+EXTRACT_FILES_TEXMF=	\
 	texmf-dist/doc/lualatex \
 	texmf-dist/doc/luatex \
 	texmf-dist/scripts/context/lua \
