@@ -3,6 +3,7 @@ lib/geeqie/geeqie-import
 lib/geeqie/geeqie-rotate
 lib/geeqie/geeqie-symlink
 lib/geeqie/geeqie-ufraw
+lib/geeqie/geocode-parameters.awk
 man/man1/geeqie.1.gz
 share/applications/geeqie.desktop
 %%DATADIR%%/applications/geeqie-import-geeqie.desktop
