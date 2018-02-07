@@ -18,6 +18,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpkg.so:ports-mgmt/pkg
 
+NOT_FOR_ARCHS=		mips mips64
+NOT_FOR_ARCHS_REASON=	SSP is currently broken on MIPS
+
 OPTIONS_DEFINE=	IPV6 MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
 		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL AX_DISABLE_TRAP \
 		TLS
@@ -28,7 +31,6 @@ MFD_REWRITES_DESC=	Use new MFD rewrites of mib modules
 PERL_EMBEDDED_DESC=	Build embedded perl
 DUMMY_DESC=		Enable dummy values as placeholders
 TKMIB_DESC=		Install graphical MIB browser
-#DMALLOC_DESC=		Enable dmalloc debug memory allocator
 AX_SOCKONLY_DESC=	Disable UDP/TCP transports for agentx
 AX_DISABLE_TRAP_DESC=	Disable agentx subagent code in snmptrapd
 UNPRIVILEGED_DESC=	Allow unprivileged users to execute net-snmp
@@ -117,13 +119,6 @@ CONFIGURE_ARGS+=--disable-embedded-perl --without-perl-modules
 PLIST_SUB+=	WITH_PERL_EMBEDDED="@comment "
 PLIST_SUB+=	WITH_PERL="@comment "
 .endif
-
-#.if ${PORT_OPTIONS:MDMALLOC}
-#LIB_DEPENDS+=	libdmalloc.so:devel/dmalloc
-#CONFIGURE_ARGS+=--with-dmalloc=${LOCALBASE}
-#.else
-#CONFIGURE_ARGS+=--without-dmalloc
-#.endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
