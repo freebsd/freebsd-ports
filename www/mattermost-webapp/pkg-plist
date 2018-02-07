@@ -2235,3 +2235,5 @@
 @owner %%MATTERMOSTD_USER%%
 @group %%MATTERMOSTD_GROUP%%
 @dir %%WWWDIR%%/client/plugins
+@owner
+@group
