@@ -23,9 +23,12 @@ NO_OPTIONS_SORT=	yes
 TRACE_DESC=		Build with GNAT-specific symbolic tracing functionality
 
 DOCS_USES=		python:2.7,build
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx \
-			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-adadomain>0:textproc/py-sphinxcontrib-adadomain
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-adadomain>0:textproc/py-sphinxcontrib-adadomain@${PY_FLAVOR}
 TRACE_EXTRA_PATCHES=	${FILESDIR}/extra-src_ahven-framework.adb
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|sphinx-build|&-${PYTHON_VER}|' ${WRKSRC}/doc/manual/en/Makefile
 
 do-build:
 	(cd ${WRKSRC} && ${MKDIR} lib objects)
