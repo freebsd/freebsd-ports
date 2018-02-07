@@ -1,5 +1,3 @@
-@owner %%NEXTCLOUD_USERNAME%%
-@group %%NEXTCLOUD_GROUPNAME%%
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/appinfo/app.php
@@ -51,8 +49,6 @@
 %%WWWDIR%%/l10n/ast.json
 %%WWWDIR%%/l10n/bg.js
 %%WWWDIR%%/l10n/bg.json
-%%WWWDIR%%/l10n/bn_BD.js
-%%WWWDIR%%/l10n/bn_BD.json
 %%WWWDIR%%/l10n/ca.js
 %%WWWDIR%%/l10n/ca.json
 %%WWWDIR%%/l10n/cs.js
@@ -73,8 +69,36 @@
 %%WWWDIR%%/l10n/es.json
 %%WWWDIR%%/l10n/es_AR.js
 %%WWWDIR%%/l10n/es_AR.json
+%%WWWDIR%%/l10n/es_CL.js
+%%WWWDIR%%/l10n/es_CL.json
+%%WWWDIR%%/l10n/es_CO.js
+%%WWWDIR%%/l10n/es_CO.json
+%%WWWDIR%%/l10n/es_CR.js
+%%WWWDIR%%/l10n/es_CR.json
+%%WWWDIR%%/l10n/es_DO.js
+%%WWWDIR%%/l10n/es_DO.json
+%%WWWDIR%%/l10n/es_EC.js
+%%WWWDIR%%/l10n/es_EC.json
+%%WWWDIR%%/l10n/es_GT.js
+%%WWWDIR%%/l10n/es_GT.json
+%%WWWDIR%%/l10n/es_HN.js
+%%WWWDIR%%/l10n/es_HN.json
 %%WWWDIR%%/l10n/es_MX.js
 %%WWWDIR%%/l10n/es_MX.json
+%%WWWDIR%%/l10n/es_NI.js
+%%WWWDIR%%/l10n/es_NI.json
+%%WWWDIR%%/l10n/es_PA.js
+%%WWWDIR%%/l10n/es_PA.json
+%%WWWDIR%%/l10n/es_PE.js
+%%WWWDIR%%/l10n/es_PE.json
+%%WWWDIR%%/l10n/es_PR.js
+%%WWWDIR%%/l10n/es_PR.json
+%%WWWDIR%%/l10n/es_PY.js
+%%WWWDIR%%/l10n/es_PY.json
+%%WWWDIR%%/l10n/es_SV.js
+%%WWWDIR%%/l10n/es_SV.json
+%%WWWDIR%%/l10n/es_UY.js
+%%WWWDIR%%/l10n/es_UY.json
 %%WWWDIR%%/l10n/et_EE.js
 %%WWWDIR%%/l10n/et_EE.json
 %%WWWDIR%%/l10n/eu.js
@@ -85,6 +109,8 @@
 %%WWWDIR%%/l10n/fi.json
 %%WWWDIR%%/l10n/fr.js
 %%WWWDIR%%/l10n/fr.json
+%%WWWDIR%%/l10n/gl.js
+%%WWWDIR%%/l10n/gl.json
 %%WWWDIR%%/l10n/he.js
 %%WWWDIR%%/l10n/he.json
 %%WWWDIR%%/l10n/hr.js
@@ -95,14 +121,14 @@
 %%WWWDIR%%/l10n/hy.json
 %%WWWDIR%%/l10n/ia.js
 %%WWWDIR%%/l10n/ia.json
-%%WWWDIR%%/l10n/id.js
-%%WWWDIR%%/l10n/id.json
 %%WWWDIR%%/l10n/is.js
 %%WWWDIR%%/l10n/is.json
 %%WWWDIR%%/l10n/it.js
 %%WWWDIR%%/l10n/it.json
 %%WWWDIR%%/l10n/ja.js
 %%WWWDIR%%/l10n/ja.json
+%%WWWDIR%%/l10n/ka_GE.js
+%%WWWDIR%%/l10n/ka_GE.json
 %%WWWDIR%%/l10n/ko.js
 %%WWWDIR%%/l10n/ko.json
 %%WWWDIR%%/l10n/lb.js
