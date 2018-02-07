@@ -19,6 +19,6 @@ MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpcd.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpcd.so
 
 .include <bsd.port.mk>

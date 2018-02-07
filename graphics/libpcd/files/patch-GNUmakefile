@@ -1,5 +1,5 @@
---- GNUmakefile.old	Mon Aug 23 21:10:15 2004
-+++ GNUmakefile	Mon Aug 23 21:10:38 2004
+--- GNUmakefile.orig	2003-07-22 09:52:46 UTC
++++ GNUmakefile
 @@ -1,11 +1,11 @@
  
  DESTDIR	:=
