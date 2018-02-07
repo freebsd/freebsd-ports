@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Community Developed Content Management System
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 IGNORE_WITH_PHP=	70 71 72
 
 USES=		cpe shebangfix python:run php zip:infozip

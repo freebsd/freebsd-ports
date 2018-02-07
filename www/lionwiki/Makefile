@@ -9,6 +9,9 @@ MASTER_SITES=	http://lionwiki.0o.cz/download/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalis wiki, extensible, templatable and file based
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 USES=		php
 USE_PHP=	session ctype
 

@@ -14,6 +14,9 @@ COMMENT=	Subsonic streaming media server
 # http://forum.subsonic.org/forum/viewtopic.php?f=4&t=16604#p71128
 LICENSE=	NONE
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 OPTIONS_SINGLE=	APPSERVER
 APPSERVER_DESC=	Java Application Server
 OPTIONS_SINGLE_APPSERVER=	JETTY TOMCAT8 TOMCAT7 TOMCAT6 RESIN3

@@ -12,6 +12,9 @@ DISTNAME=	ext-${PORTVERSION}-gpl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript platform for rapid development of cross-browser web apps
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/ext-${PORTVERSION}.1144

@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webbased iCal calendar viewer
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 USES=		php tar:tgz
 NO_BUILD=	yes
 NO_ARCH=	yes

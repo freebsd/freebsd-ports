@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web content management system
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 LICENSE=	GPLv2+
 
 USES=		cpe php

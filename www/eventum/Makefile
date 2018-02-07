@@ -10,6 +10,9 @@ MASTER_SITES=	MYSQL/eventum
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eventum issue tracking system
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 IGNORE_WITH_PHP=	70 71 72
 
 USES=		cpe php:web

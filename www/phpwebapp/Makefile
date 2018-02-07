@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web application framework
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained upstream, all www files wrongly belongs to www user.
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		php:web shebangfix

@@ -9,6 +9,9 @@ MASTER_SITES=	http://textpattern.com/file_download/110/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, flexible, elegant, easy-to-use content management system
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 LICENSE=	GPLv2
 
 IGNORE_WITH_PHP=	70 71 72
