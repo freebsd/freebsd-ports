@@ -121,5 +121,4 @@
 %%WWWDIR%%/vendor/yzalis/identicon/src/Identicon/Generator/ImageMagickGenerator.php
 %%WWWDIR%%/vendor/yzalis/identicon/src/Identicon/Identicon.php
 %%WWWDIR%%/vendor/yzalis/identicon/src/autoload.php
-@owner www
 @dir(www,www,700) /var/db/privatebin
