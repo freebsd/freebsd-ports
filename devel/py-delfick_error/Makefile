@@ -30,6 +30,9 @@ USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	*
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|sphinx-build|&-${PYTHON_VER}|' ${WRKSRC}/docs/build.sh
+
 post-build-DOCS-on:
 	cd ${WRKSRC}/docs && ${SH} build.sh
 
