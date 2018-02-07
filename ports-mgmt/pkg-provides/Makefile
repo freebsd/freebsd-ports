@@ -2,8 +2,7 @@
 
 PORTNAME=	pkg-provides
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -24,7 +23,7 @@ SUB_LIST=	LOCALBASE=${LOCALBASE}
 
 GH_ACCOUNT=	rosorio
 GH_PROJECT=	pkg-provides
-GH_TAGNAME=	cf5262b
+GH_TAGNAME=	3938a4f
 
 PLIST_FILES=	lib/pkg/provides.so man/man8/pkg-provides.8.gz
 
