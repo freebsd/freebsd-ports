@@ -13,6 +13,9 @@ COMMENT=	MusicBrainz client library for audio metadata lookup
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Web Service 1.0 support ending 2018-08-01
+EXPIRATION_DATE=	2018-08-01
+
 LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 		libneon.so:www/neon
 
