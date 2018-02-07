@@ -21,6 +21,7 @@
     SUBDIR += apq-odbc
     SUBDIR += apq-pgsql
     SUBDIR += arangodb32
+    SUBDIR += arangodb33
     SUBDIR += ateam_mysql_ldap_auth
     SUBDIR += autobackupmysql
     SUBDIR += bbdb
