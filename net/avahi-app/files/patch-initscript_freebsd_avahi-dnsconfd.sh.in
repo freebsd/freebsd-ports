@@ -1,6 +1,6 @@
---- initscript/freebsd/avahi-dnsconfd.sh.in.orig	2010-08-26 00:51:39 UTC
-+++ initscript/freebsd/avahi-dnsconfd.sh.in
-@@ -12,13 +12,15 @@
+--- initscript/freebsd/avahi-dnsconfd.sh.in.orig	2010-08-26 09:51:39.037153000 +0900
++++ initscript/freebsd/avahi-dnsconfd.sh.in	2016-01-17 11:59:50.394307000 +0900
+@@ -12,18 +12,22 @@
  # DNS servers in a DHCP-like fashion with mDNS.
  #
  
@@ -18,3 +18,10 @@
  
  start_cmd=avahi_dnsconfd_start
  stop_cmd=avahi_dnsconfd_stop
+ 
+ avahi_dnsconfd_bin=@sbindir@/avahi-dnsconfd
++command=${avahi_dnsconfd_bin}
++pidfile="/var/run/avahi-dnsconfd.pid"
+ 
+ avahi_dnsconfd_start() {
+     checkyesno avahi_dnsconfd_enable && echo "Starting avahi-dnsconfd." && \
