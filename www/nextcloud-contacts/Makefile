@@ -15,7 +15,7 @@ COMMENT=	Contacts app for Nextcloud
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	nextcloud>=12:www/nextcloud
+RUN_DEPENDS=	nextcloud>=11:www/nextcloud
 
 NO_BUILD=	yes
 NO_ARCH=	yes
