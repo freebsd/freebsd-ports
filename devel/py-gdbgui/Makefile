@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdbgui
-PORTVERSION=	0.7.8.2
+PORTVERSION=	0.11.0.0
 CATEGORIES=	devel lang python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,6 +12,7 @@ LICENSE=	CC-BY-NC-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.12.2:www/py-flask@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flask-Compress>=1.4.0:www/py-flask-compress@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-SocketIO>=2.9.0:www/py-flask-socketio@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}eventlet>=0.21.0:net/py-eventlet@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygdbmi>=0.7.3.3:devel/py-pygdbmi@${FLAVOR} \
