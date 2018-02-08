@@ -5997,6 +5997,7 @@
     SUBDIR += tig
     SUBDIR += tigcc
     SUBDIR += tijmp
+    SUBDIR += tinycbor
     SUBDIR += tinylaf
     SUBDIR += tinyq
     SUBDIR += tkcon

@@ -1,0 +1,11 @@
+--- Makefile.configure.orig	2018-01-30 22:21:35 UTC
++++ Makefile.configure
+@@ -14,7 +14,7 @@ PROGRAM-cjson += \#include <cjson/cJSON.
+ PROGRAM-cjson += int main() { return cJSON_False; }
+ CCFLAGS-cjson = -I$(dir $(MAKEFILE))src/cjson
+ PROGRAM-system-cjson = $(PROGRAM-cjson)
+-CCFLAGS-system-cjson = -lcjson
++CCFLAGS-system-cjson = -I$(LOCALBASE)/include -L$(LOCALBASE)/lib -lcjson
+ 
+ sink:
+ 	@echo >&2 Please run from the top-level Makefile.
