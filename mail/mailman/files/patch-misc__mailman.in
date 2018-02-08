@@ -1,6 +1,6 @@
---- misc/mailman.in.orig	Thu Mar  7 08:09:51 2002
-+++ misc/mailman.in	Fri Sep 27 15:56:40 2002
-@@ -39,15 +39,19 @@
+--- misc/mailman.in.orig	2018-02-04 17:04:39 UTC
++++ misc/mailman.in
+@@ -52,16 +52,20 @@ MAILMANCTL=$MAILMANHOME/bin/mailmanctl
  case "$1" in
  'start')
      #rm -f $MAILMANHOME/locks/*
@@ -15,10 +15,11 @@
  
  'restart')
      $PYTHON $MAILMANCTL -q restart
-+    ;;
+     ;;
 +*)
 +    echo "Usage: `basename $0` {start|stop|restart}" >&2
 +    exit 64
-     ;;
++    ;;
  
- esac
+ 'reopen')
+     $PYTHON $MAILMANCTL -q reopen
