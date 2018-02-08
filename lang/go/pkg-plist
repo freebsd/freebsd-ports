@@ -1788,6 +1788,8 @@ go/src/cmd/go/internal/web/http.go
 go/src/cmd/go/internal/web/security.go
 go/src/cmd/go/internal/work/build.go
 go/src/cmd/go/internal/work/build_test.go
+go/src/cmd/go/internal/work/security.go
+go/src/cmd/go/internal/work/security_test.go
 go/src/cmd/go/internal/work/testgo.go
 go/src/cmd/go/main.go
 go/src/cmd/go/mkalldocs.sh
