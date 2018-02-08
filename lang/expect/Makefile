@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	5.45.3
+PORTVERSION=	5.45.4
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	SF/expect/Expect/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
@@ -20,6 +20,9 @@ CONFIGURE_ARGS=	--datadir=${DATADIR}
 PLIST_SUB+=	EXPECT_VER=${PORTVERSION} \
 		LIBEXPECT_VER=${LIBEXPECT_VER}
 TEST_TARGET=	test
+
+post-patch:
+	${REINPLACE_CMD} 's|5\.45\.3|${PORTVERSION}|' ${WRKSRC}/configure.in
 
 post-install:
 	${LN} -sf expect${PORTVERSION}/libexpect${LIBEXPECT_VER}.so \
