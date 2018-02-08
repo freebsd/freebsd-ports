@@ -331,6 +331,12 @@ CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs="-Xmx768m"
 MAKE_ENV+=	JAVADOC_CMD_MEM="-Xmx768m"
 .endif
 
+.if ${ARCH} == i386
+# Fix the build for i386 when WITH_LLD_IS_LD is set
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=225741
+MAKE_ENV+=	LFLAGS="-Wl,-z,notext"
+.endif
+
 .if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64
 JDK_BUILD_JVM=	server
 .else
