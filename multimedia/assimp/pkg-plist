@@ -5,6 +5,7 @@ include/assimp/Compiler/pushpack1.h
 include/assimp/DefaultIOStream.h
 include/assimp/DefaultIOSystem.h
 include/assimp/DefaultLogger.hpp
+include/assimp/Defines.h
 include/assimp/Exporter.hpp
 include/assimp/IOStream.hpp
 include/assimp/IOSystem.hpp
@@ -45,9 +46,9 @@ include/assimp/vector2.inl
 include/assimp/vector3.h
 include/assimp/vector3.inl
 include/assimp/version.h
-lib/cmake/assimp-4.0/assimp-config-version.cmake
-lib/cmake/assimp-4.0/assimp-config.cmake
+lib/cmake/assimp-%%VER2%%/assimp-config-version.cmake
+lib/cmake/assimp-%%VER2%%/assimp-config.cmake
 lib/libassimp.so
-lib/libassimp.so.4
-lib/libassimp.so.%%SHLIB_VER%%
+lib/libassimp.so.%%SHL1%%
+lib/libassimp.so.%%SHL3%%
 libdata/pkgconfig/assimp.pc
