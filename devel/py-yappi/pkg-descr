@@ -3,4 +3,4 @@ Yappi is designed to work on long-running multi-threaded applications.
 It is possible to profile an application, retrieve statistics, then stop and
 start later on the fly without affecting the profiled application.
 
-WWW: https://pypi.python.org/pypi/yappi/
+WWW: https://pypi.python.org/pypi/yappi

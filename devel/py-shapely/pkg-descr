@@ -4,4 +4,4 @@ is not concerned with data formats or coordinate reference systems.
 Responsibility for reading and writing data and projecting coordinates
 is left to other packages like WorldMill and pyproj.
 
-WWW: http://pypi.python.org/pypi/Shapely/
+WWW: https://pypi.python.org/pypi/Shapely
