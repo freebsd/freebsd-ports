@@ -1337,6 +1337,7 @@
     SUBDIR += libchipcard
     SUBDIR += libcidr
     SUBDIR += libcii
+    SUBDIR += libcjson
     SUBDIR += libclc
     SUBDIR += libcli
     SUBDIR += libconcurrent
