@@ -24,7 +24,7 @@ CXXFLAGS+=	-ffast-math
 
 OPTIONS_DEFINE=	DEBUG DOCS FORTRAN GLPK
 
-FORTRAN_DESCR=	Use BLAS/LAPACK with the fortran interface
+FORTRAN_DESC=	Use BLAS/LAPACK with the Fortran interface
 GLPK_DESC=	GNU Linear Programming Kit support
 
 PORTDOCS=	*
