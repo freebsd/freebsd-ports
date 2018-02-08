@@ -1,0 +1,72 @@
+read_elf.cpp:170:56: error: no member named 'getError' in
+      'llvm::Expected<std::__1::unique_ptr<llvm::object::Binary, std::__1::default_delete<llvm::object::Binary> >
+      >'
+        << "] is not a binary file: " << binary_or_err.getError().message();
+                                         ~~~~~~~~~~~~~ ^
+read_elf.cpp:105:37: error: no member named 'section_begin' in
+      'llvm::object::ELFFile<llvm::object::ELFType<llvm::support::little, false> >'
+  for (auto section_iterator = elf->section_begin(); section_iterator != elf->section_end();
+                               ~~~  ^
+read_elf.cpp:316:23: error: no member named 'program_header_begin' in
+      'llvm::object::ELFFile<llvm::object::ELFType<llvm::support::little, false> >'
+  for (auto it = elf->program_header_begin(); it != elf->program_header_end(); ++it) {
+                 ~~~  ^
+
+--- simpleperf/read_elf.cpp.orig	2017-01-06 00:19:41 UTC
++++ simpleperf/read_elf.cpp
+@@ -102,11 +102,19 @@ bool GetBuildIdFromNoteFile(const std::string& filenam
+ 
+ template <class ELFT>
+ bool GetBuildIdFromELFFile(const llvm::object::ELFFile<ELFT>* elf, BuildId* build_id) {
++#if LLVM_VERSION_MAJOR < 4
+   for (auto section_iterator = elf->section_begin(); section_iterator != elf->section_end();
++#else
++  for (auto section_iterator = elf->sections()->begin(); section_iterator != elf->sections()->end();
++#endif
+        ++section_iterator) {
+     if (section_iterator->sh_type == llvm::ELF::SHT_NOTE) {
+       auto contents = elf->getSectionContents(&*section_iterator);
++#if LLVM_VERSION_MAJOR < 4
+       if (contents.getError()) {
++#else
++      if (!contents) {
++#endif
+         LOG(DEBUG) << "read note section error";
+         continue;
+       }
+@@ -167,7 +175,11 @@ static BinaryRet OpenObjectFile(const std::string& fil
+   auto binary_or_err = llvm::object::createBinary(buffer_or_err.get()->getMemBufferRef());
+   if (!binary_or_err) {
+     LOG(ERROR) << filename << " [" << file_offset << "-" << (file_offset + file_size)
++#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR < 39
+         << "] is not a binary file: " << binary_or_err.getError().message();
++#else
++        << "] is not a binary file: " << errorToErrorCode(binary_or_err.takeError()).message();
++#endif
+     return ret;
+   }
+   ret.binary = llvm::object::OwningBinary<llvm::object::Binary>(std::move(binary_or_err.get()),
+@@ -313,7 +325,11 @@ template <class ELFT>
+ bool ReadMinExecutableVirtualAddress(const llvm::object::ELFFile<ELFT>* elf, uint64_t* p_vaddr) {
+   bool has_vaddr = false;
+   uint64_t min_addr = std::numeric_limits<uint64_t>::max();
++#if LLVM_VERSION_MAJOR < 4
+   for (auto it = elf->program_header_begin(); it != elf->program_header_end(); ++it) {
++#else
++  for (auto it = elf->program_headers()->begin(); it != elf->program_headers()->end(); ++it) {
++#endif
+     if ((it->p_type == llvm::ELF::PT_LOAD) && (it->p_flags & llvm::ELF::PF_X)) {
+       if (it->p_vaddr < min_addr) {
+         min_addr = it->p_vaddr;
+@@ -357,7 +373,11 @@ bool ReadMinExecutableVirtualAddressFromElfFile(const 
+ template <class ELFT>
+ bool ReadSectionFromELFFile(const llvm::object::ELFFile<ELFT>* elf, const std::string& section_name,
+                             std::string* content) {
++#if LLVM_VERSION_MAJOR < 4
+   for (auto it = elf->section_begin(); it != elf->section_end(); ++it) {
++#else
++  for (auto it = elf->sections()->begin(); it != elf->sections()->end(); ++it) {
++#endif
+     auto name_or_err = elf->getSectionName(&*it);
+     if (name_or_err && *name_or_err == section_name) {
+       auto data_or_err = elf->getSectionContents(&*it);
