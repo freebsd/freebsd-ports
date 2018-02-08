@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180208:
+  AFFECTS: users of mail/mailman*
+  AUTHOR: mandree@FreeBSD.org
+
+  In order to overcome complaints about mismatched checksums in
+  Mailman/Default.py, mailman now configures the DEFAULT_EMAIL_HOST
+  and DEFAULT_URL_HOST to "localhost" statically, and the rc script
+  will check this and refuse to start on next boot. 
+  Users must configured DEFAULT_EMAIL_HOST and DEFAULT_URLHOST in 
+  Mailman/mm_cfg.py properly.
+
+  A short example has been added to:
+  ${PREFIX}/local/share/doc/mailman/FreeBSD-post-install-notes.
+
 20180201:
   AFFECTS: users of editors/emacs* and all ports using Emacs via USES=emacs
   AUTHOR: jrm@FreeBSD.org
