@@ -1,8 +1,9 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.4.15
+DISTVERSION?=	9.4.16
 PORTREVISION=	0
+PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
 
@@ -15,4 +16,8 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 
 ICU_PATCHFILE=	pg-949-icu-2016-10-02.diff.gz
 
-.include "${.CURDIR}/../postgresql92-server/Makefile"
+PG_USER?=	pgsql
+PG_GROUP?=	pgsql
+PG_UID?=	70
+
+.include "${.CURDIR}/../postgresql10-server/Makefile"
