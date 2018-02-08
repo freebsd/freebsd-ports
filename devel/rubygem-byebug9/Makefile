@@ -13,6 +13,9 @@ COMMENT=	Ruby 2 debugger
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/rubygem-byebug instead
+EXPIRATION_DATE=2018-02-28
+
 USE_RUBY=	yes
 USES=		gem
 
