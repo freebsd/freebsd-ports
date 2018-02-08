@@ -1,11 +1,11 @@
 The SOCKS proxy and relay.
 
-* Srelay is a socks4/5 protocol proxy server
+* Srelay is a socks 4/5 protocol proxy server
 * Supports socks connect/bind request in the protocol v4, v4a, and v5.
 * Supports socks server chaining with both v4 and v5 servers.
 * Supports Username/Password authentication in v5 (not recommended).
-* Testing on FreeBSD 8.1R, Solaris 8, 10, Linux-i386, MacOS 10.5.
+* Testing on Linux-x86_64, macos 10.7-10.12, FreeBSD 10.1-11.1
 * Supports IPv6 as well as IPv4.
 * Srelay is Free.
 
-WWW: https://github.com/gco/srelay
+WWW: http://socks-relay.sourceforge.net/
