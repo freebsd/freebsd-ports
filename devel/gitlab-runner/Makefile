@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-runner
-PORTVERSION=	10.0.2
+PORTVERSION=	10.4.0
 CATEGORIES=	devel
 MASTER_SITES=	\
 		https://gitlab.com/gitlab-org/gitlab-runner/repository/archive.tar.bz2?ref=v${PORTVERSION}&dummy=/ \
@@ -17,6 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Official GitLab Runner written in Go
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	go:lang/go \
 		go-bindata:devel/go-bindata
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
@@ -24,16 +27,17 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		git:devel/git
 
 USES=		tar:bz2
-GITHASH=	a9a76a502bf69371d9c610d0b2814b4e0f3ae762
-GITREV=		a9a76a50
-GITBRANCH=	10-0-stable
-BUILT=		2017-10-04T12:39:04-00:00
+GITHASH=	857480b64b013d8edffaf70e4b7ea43ee1c66a9e
+GITREV=		857480b6
+GITBRANCH=	10-4-stable
+BUILT=		2018-01-22T09:48:29-00:00
+
 WRKSRC=		${WRKDIR}/gitlab-runner-v${PORTVERSION}-${GITHASH}
 GO_LDFLAGS=	-X gitlab.com/gitlab-org/gitlab-runner/common.VERSION=${PORTVERSION} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.REVISION=${GITREV} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BUILT=${BUILT} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BRANCH=${GITBRANCH} \
-		-s -w                                           
+		-s -w
 
 PLIST_FILES=	bin/gitlab-runner
 
