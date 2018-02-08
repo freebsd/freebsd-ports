@@ -5,7 +5,6 @@
 
     SUBDIR += aspell-pt_BR
     SUBDIR += aspell-pt_PT
-    SUBDIR += eric6
     SUBDIR += gimp-help-pt_BR
     SUBDIR += hunspell
     SUBDIR += hyphen
