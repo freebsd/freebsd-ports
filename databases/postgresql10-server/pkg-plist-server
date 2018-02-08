@@ -174,6 +174,13 @@ lib/libpgcommon.a
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_upgrade-10.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_waldump-10.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/plpgsql-10.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/postgres-10.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pg_archivecleanup-10.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pg_basebackup-10.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pg_test_fsync-10.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pg_upgrade-10.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pg_waldump-10.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/postgres-10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/initdb-10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_controldata-10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_ctl-10.mo
@@ -769,7 +776,6 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/US/Michigan
 %%TZDATA%%%%DATADIR%%/timezone/US/Mountain
 %%TZDATA%%%%DATADIR%%/timezone/US/Pacific
-%%TZDATA%%%%DATADIR%%/timezone/US/Pacific-New
 %%TZDATA%%%%DATADIR%%/timezone/US/Samoa
 %%TZDATA%%%%DATADIR%%/timezone/UTC
 %%TZDATA%%%%DATADIR%%/timezone/Universal
