@@ -18,4 +18,4 @@ functions but want their users to easily override a method without
 figuring out how to write a more specific rule or when it is not
 feasible.
 
-WWW: https://pypi.python.org/pypi/prioritized_methods/
+WWW: https://pypi.python.org/pypi/prioritized_methods
