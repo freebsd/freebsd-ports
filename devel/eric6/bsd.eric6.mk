@@ -7,7 +7,7 @@
 # devel/cs-eric6, devel/es-eric6, devel/it-eric6, devel/tr-eric6
 
 PORTNAME=	eric6
-PORTVERSION=	17.12
+PORTVERSION=	18.02
 MASTER_SITES=	SF/eric-ide/${PORTNAME}/stable/${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

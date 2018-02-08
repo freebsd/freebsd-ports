@@ -9911,3 +9911,9 @@ editors/emacs-nox11|editors/emacs@nox|2018-02-01|Moved to a flavored version
 audio/py-mad|audio/py-pymad|2018-02-03|Rename to match PyPI naming
 emulators/qemu-cheri128|emulators/qemu-cheri|2018-02-06|All versions installed in one port
 emulators/qemu-cheri128m|emulators/qemu-cheri|2018-02-06|All versions installed in one port
+chinese/eric6||2018-02-08|No longer shipped by upstream
+devel/cs-eric6||2018-02-08|No longer shipped by upstream
+devel/it-eric6||2018-02-08|No longer shipped by upstream
+devel/tr-eric6||2018-02-08|No longer shipped by upstream
+french/eric6||2018-02-08|No longer shipped by upstream
+portuguese/eric6/eric6||2018-02-08|No longer shipped by upstream

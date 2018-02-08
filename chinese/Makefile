@@ -27,7 +27,6 @@
     SUBDIR += dictd-database
     SUBDIR += docproj
     SUBDIR += enscript
-    SUBDIR += eric6
     SUBDIR += eterm
     SUBDIR += fandol
     SUBDIR += fcitx
