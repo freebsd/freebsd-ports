@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Astro-Coords
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.19
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class for handling astronomical coordinates
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	p5-Astro-PAL>=0:astro/p5-Astro-PAL \
 		p5-Astro-Telescope>=0.71:astro/p5-Astro-Telescope \
