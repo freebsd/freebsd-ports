@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	chromaprint
-PORTVERSION=	1.4.2
-PORTREVISION=	4
+PORTVERSION=	1.4.3
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/acoustid/${PORTNAME}/releases/download/v${PORTVERSION}/ \
-		https://bitbucket.org/acoustid/${PORTNAME}/downloads/
+MASTER_SITES=	https://github.com/acoustid/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	AcoustID audio fingerprinting library
@@ -21,6 +19,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_TOOLS:BOOL=true \
 		-DFFT_LIB:STRING=avfft
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
 OPTIONS_DEFINE=		DOXYGEN TEST
 
