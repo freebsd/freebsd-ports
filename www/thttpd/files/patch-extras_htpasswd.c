@@ -25,7 +25,7 @@
      exit(1);
  }
  
-@@ -149,51 +155,128 @@ void interrupted(int signo) {
+@@ -149,52 +155,129 @@ void interrupted(int signo) {
  int main(int argc, char *argv[]) {
      FILE *tfp,*f;
      char user[MAX_STRING_LEN];
@@ -138,7 +138,8 @@
 +        exit(1);
 +    }
 +    /* already checked for boflw ... */
-     strcpy(user,argv[2]);
+     strncpy(user,argv[2],sizeof(user)-1);
+     user[sizeof(user)-1] = '\0';
  
      found = 0;
 -    while(!(my_getline(line,MAX_STRING_LEN,f))) {
