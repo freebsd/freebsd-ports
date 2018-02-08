@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-simpleperf
 DISTVERSIONPREFIX=	android-
 DISTVERSION=	7.1.2_r17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,7 +30,7 @@ TEST_TARGET=	test
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (llvm deps)
 PLIST_FILES=	bin/simpleperf
 
-LLVM_VER?=	38 # XXX Move to DEFAULT_VERSIONS
+LLVM_VER?=	50 # XXX Move to DEFAULT_VERSIONS
 
 OPTIONS_DEFINE=	TEST
 
