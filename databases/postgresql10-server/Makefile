@@ -102,7 +102,7 @@ USES+=		pkgconfig
 # (requires dump/restore if modified.)
 OPTIONS_DEFINE+=	INTDATE
 INTDATE_DESC=	Builds with 64-bit date/time type
-OPTIONS_DEFAULT+=	XML TZDATA INTDATE DTRACE
+OPTIONS_DEFAULT+=	XML TZDATA INTDATE
 .endif
 
 .if !defined(SLAVE_ONLY)
