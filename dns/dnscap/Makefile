@@ -3,6 +3,7 @@
 
 PORTNAME=	dnscap
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/ \
@@ -22,11 +23,12 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool
 
-PORTDOCS=	*
-
 THREADS_CONFIGURE_ENABLE=	threads
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-dist_docDATA||' ${WRKSRC}/Makefile.in
+
+post-patch-DOCS-on:
+	@${REINPLACE_CMD} -e '/^dist_doc_DATA = / s| LICENSE||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

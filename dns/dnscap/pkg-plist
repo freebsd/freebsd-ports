@@ -6,3 +6,5 @@ lib/dnscap/royparse.so
 lib/dnscap/txtout.a
 lib/dnscap/txtout.so
 man/man1/dnscap.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
