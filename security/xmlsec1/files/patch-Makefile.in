@@ -1,13 +1,6 @@
---- Makefile.in.orig	2017-01-05 17:38:02.402682000 +0900
-+++ Makefile.in	2017-01-05 17:39:12.079701000 +0900
-@@ -468,13 +468,13 @@
- top_srcdir = @top_srcdir@
- NULL = 
- SAFE_VERSION = @XMLSEC_VERSION_SAFE@
--SUBDIRS = include src apps man docs
-+SUBDIRS = include src apps man ${DOCS}
- TEST_APP = apps/xmlsec1$(EXEEXT)
- DEFAULT_CRYPTO = @XMLSEC_DEFAULT_CRYPTO@
+--- Makefile.in.orig	2017-12-12 16:05:23.187628000 +0300
++++ Makefile.in	2017-12-12 16:07:19.241092000 +0300
+@@ -480,7 +480,7 @@
  bin_SCRIPTS = xmlsec1-config
  pkgconfig_DATA = xmlsec1.pc @XMLSEC_CRYPTO_PC_FILES_LIST@
  pkgconfigdir = $(prefix)/libdata/pkgconfig
