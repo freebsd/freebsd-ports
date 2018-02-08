@@ -33,6 +33,14 @@ puppet_manifest="$($command config print manifest)"
 start_precmd="puppetmaster_checkconfig"
 restart_precmd="puppetmaster_checkconfig"
 puppetmaster_checkconfig() {
+	cat << EOT
+================================================================================
+The Rack and WEBrick Puppet master servers are deprecated and will be removed
+in a future release. Please use Puppet Server instead (sysutils/puppetserver5).
+
+See http://links.puppet.com/deprecate-rack-webrick-servers for more information.
+================================================================================
+EOT
 	echo -n "Performing sanity check of ${name} configuration: "
 	if ! ${command} parser validate "${puppet_manifest}"
 	then
