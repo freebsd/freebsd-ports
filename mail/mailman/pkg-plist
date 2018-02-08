@@ -338,6 +338,7 @@
 %%MMDIR%%/bin/list_lists
 %%MMDIR%%/bin/list_members
 %%MMDIR%%/bin/list_owners
+%%MMDIR%%/bin/mailman-config
 %%MMDIR%%/bin/mailmanctl
 %%MMDIR%%/bin/mmsitepass
 %%MMDIR%%/bin/msgfmt.py
@@ -2161,6 +2162,7 @@
 %%MMDIR%%/tests/bounces/exim_01.txt
 %%MMDIR%%/tests/bounces/groupwise_01.txt
 %%MMDIR%%/tests/bounces/groupwise_02.txt
+%%MMDIR%%/tests/bounces/groupwise_03.txt
 %%MMDIR%%/tests/bounces/hotpop_01.txt
 %%MMDIR%%/tests/bounces/llnl_01.txt
 %%MMDIR%%/tests/bounces/microsoft_01.txt
