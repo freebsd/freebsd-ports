@@ -2,7 +2,7 @@
 
 PORTNAME=	snuffleupagus
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.2.1
 CATEGORIES=	security
 
 MAINTAINER=	franco@opnsense.org
