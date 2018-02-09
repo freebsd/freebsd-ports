@@ -128,6 +128,7 @@
     SUBDIR += psi
     SUBDIR += psimedia
     SUBDIR += purple-hangouts
+    SUBDIR += purple-discord
     SUBDIR += py-fbmq
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot

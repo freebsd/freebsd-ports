@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-02-09 00:05:15 UTC
++++ Makefile
+@@ -118,7 +118,7 @@ po/%.mo: po/%.po
+ 	msgfmt -o $@ $^
+ 
+ %-locale-install: po/%.mo
+-	install -D -m $(FILE_PERM) -p po/$(*F).mo $(LOCALEDIR)/$(*F)/LC_MESSAGES/purple-discord.mo
++	install -m $(FILE_PERM) -p po/$(*F).mo $(LOCALEDIR)/$(*F)/LC_MESSAGES/purple-discord.mo
+ 
+ install: $(DISCORD_TARGET) install-icons install-locales
+ 	mkdir -m $(DIR_PERM) -p $(DISCORD_DEST)
