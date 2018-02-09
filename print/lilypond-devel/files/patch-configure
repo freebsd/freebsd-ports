@@ -1,6 +1,6 @@
---- configure.orig	2017-02-12 12:13:29 UTC
+--- configure.orig	2017-10-15 16:42:11 UTC
 +++ configure
-@@ -11503,74 +11503,7 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
+@@ -11527,75 +11527,10 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
  
      if test $? -eq 0 -a -n "0.9.0"; then
  
@@ -72,7 +72,11 @@
 -    { $as_echo "$as_me:$LINENO: result: $ver" >&5
 -$as_echo "$ver" >&6; }
 -    if test "$num" -lt "$req"; then
-+    if $exe --atleast-pkgconfig-version 0.9.0; then
- 
+-
++    $PKG_CONFIG --atleast-pkgconfig-version 0.9.0
++    
++    if test ! $?; then
++    ver=`$PKG_CONFIG --version`
      eval "REQUIRED"=\"`eval echo \"'$'REQUIRED\" \""$r >= 0.9.0 (installed: $ver)"\"`\"
  
+     fi
