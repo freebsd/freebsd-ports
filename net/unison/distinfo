@@ -1,9 +1,3 @@
-TIMESTAMP = 1464031624
-SHA256 (unison-2.48.4/unison-2.48.4.tar.gz) = 30aa53cd671d673580104f04be3cf81ac1e20a2e8baaf7274498739d59e99de8
-SIZE (unison-2.48.4/unison-2.48.4.tar.gz) = 1200861
-SHA256 (unison-2.48.4/unison-2.48.4-manual.html) = 2b5674e2fd7751148784a716ce5a03f8cd0a321c8a3bd4343832ed9b83d2d404
-SIZE (unison-2.48.4/unison-2.48.4-manual.html) = 278110
-SHA256 (unison-2.48.4/unison-2.48.4-manual.pdf) = eaf9bf89967eb17c59b98f0a7ba6b6ff260b6c6de73277a633d954ceb42f5f93
-SIZE (unison-2.48.4/unison-2.48.4-manual.pdf) = 516093
-SHA256 (unison-2.48.4/unison-2.48.4-manual.ps) = 8b7aaf70452148e0817ee84db5b0686a9867ec5a1697490113572e0f4669dd0a
-SIZE (unison-2.48.4/unison-2.48.4-manual.ps) = 770305
+TIMESTAMP = 1518118647
+SHA256 (bcpierce00-unison-v2.48.15v4_GH0.tar.gz) = f8c7e982634bbe1ed6510fe5b36b6c5c55c06caefddafdd9edc08812305fdeec
+SIZE (bcpierce00-unison-v2.48.15v4_GH0.tar.gz) = 1911781
