@@ -3,10 +3,11 @@
 
 PORTNAME=	aparapi
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-SNAPSHOT
 CATEGORIES=	java lang
 
-MAINTAINER=	dieterich@ogolem.org
+MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Open source API for expressing data parallel workflows in Java
 
 LICENSE=	BSD3CLAUSE
