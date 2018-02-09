@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-fm
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
+PORTREVISION=	201802091520
 CATEGORIES=	deskutils
 
 MAINTAINER=	jt@ixsystems.com
@@ -13,23 +14,23 @@ CONFLICTS_INSTALL=	lumina-1.2.*
 
 OPTIONS_DEFINE=	I18N
 OPTIONS_DEFAULT=	I18N
-I18N_DESC=	Install localization files
+I18N_DESC= Install localization files
 
 .include <bsd.port.options.mk>
 
 MAKE_JOBS_UNSAFE=yes
 
+USES=           qmake
 USE_QT5=	core gui widgets network svg imageformats \
 		buildtools_build x11extras multimedia concurrent
-USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	b6536c1547571ae8dd0618bed752e2e0025bf2a7
+GH_TAGNAME=	9409ccbf9b56fad22063456497095a211f7bac8c
 WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}
 
 .if${PORT_OPTIONS:MI18N}
-USE_QT5+=	linguist_build
+USE_QT5+= linguist_build
 QMAKE_ARGS+=CONFIG+=WITH_I18N
 .endif
 
