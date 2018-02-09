@@ -1,8 +1,6 @@
-Lookup is a search interface to electronic dictionaries within Emacs.
-You can use various sources (such as CD-ROM books, dictionary server on
-the network, and so on) as dictionaries by the simple operation.
+Lookup is an integrated search interface with electronic dictionaries
+for the Emacs text editor. You can use various kinds of dictionaries,
+such as CD-ROM books and online dictionaries, in an efficient and
+effective manner.
 
-Lookup works on GNU Emacs 19.28 or later, XEmacs 20.3 or later, Mule
-2.3, and Meadow 1.0 or later.
-
-WWW: http://openlab.ring.gr.jp/edict/lookup/index.html
+WWW: http://lookup2.github.io/
