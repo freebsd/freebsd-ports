@@ -1,5 +1,8 @@
+3DM2 includes an rc.d script to control a daemon mode.
 
-To run 3DM2 at startup, add twdm2_enable="YES" to your /etc/rc.conf.
+You can start the daemon with these commands:
+# sysrc -f /etc/rc.conf twdm2_enable="YES"
+# service 3dm2 start
 
-        Do not forget to edit '%%PREFIX%%/etc/3dm2/3dm2.conf'
-        Visit https://localhost:888/
+Do not forget to edit '%%PREFIX%%/etc/3dm2/3dm2.conf'
+Visit https://localhost:888/
