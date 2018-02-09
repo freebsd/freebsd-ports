@@ -1,5 +1,8 @@
-This is an early version of a basic time period checking library for Python.
-It is in part inspired by perl's Time::Period module and the time class
-mechanism of Cfengine.
+Period is a basic time period checking library.
 
-WWW: http://www.biostat.wisc.edu/~annis/creations/period.py.html
+Period is based on period.py by William S. Annis. (available at
+https://www.biostat.wisc.edu/~annis/creations/period.py.html) and ported to
+python3 with a few improvements. Period.py was in part inspired by perl's
+Time::Period module and the time class mechanism of Cfengine.
+
+WWW: https://pypi.python.org/pypi/period
