@@ -2,7 +2,7 @@
 
 PORTNAME=	grv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.2
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -22,10 +22,10 @@ GH_TUPLE=	bradfitz:slice:d9036e2:slice/src/github.com/bradfitz/slice \
 		camlistore:go4:fba789b:reflectutil/src/go4.org \
 		gobwas:glob:51eb1ee:glob/src/github.com/gobwas/glob \
 		golang:crypto:1875d0a:crypto/src/golang.org/x/crypto \
-		golang:sys:8f27ce8:sys/src/golang.org/x/sys \
+		golang:sys:37707fd:sys/src/golang.org/x/sys \
 		mattn:go-runewidth:97311d9:runewidth/src/github.com/mattn/go-runewidth \
 		rgburke:goncurses:74f667a:goncurses/src/github.com/rgburke/goncurses \
-		rjeczalik:notify:27b537f:notify/src/github.com/rjeczalik/notify \
+		rjeczalik:notify:c31e5f2:notify/src/github.com/rjeczalik/notify \
 		Sirupsen:logrus:768a92a:logrus/src/github.com/Sirupsen/logrus \
 		tchap:go-patricia:5ad6cdb:patricia/src/github.com/tchap/go-patricia \
 		libgit2:git2go:eb0bf21:git2go/src/gopkg.in/libgit2/git2go.v26 # Keep git2go branch in sync with devel/libgit2 version
