@@ -1,15 +1,19 @@
---- Makefile.orig	2016-10-03 22:11:34.000000000 +0200
-+++ Makefile	2017-07-15 23:47:33.427574000 +0200
-@@ -83,9 +83,9 @@ quick:
+--- Makefile.orig	2016-10-03 20:11:34 UTC
++++ Makefile
+@@ -83,11 +83,11 @@ quick:
  
  unix-gcc:
  	$(MAKE) -j target=UNIX \
 -		CC=gcc \
 -		opt='-DSYZYGY -DTEST -DCPUS=4' \
 -		CFLAGS='-Wall -Wno-array-bounds -pipe -O3 -fprofile-use \
+-		-mpopcnt -fprofile-correction -pthread' \
+-		LDFLAGS='$(LDFLAGS) -fprofile-use -pthread -lstdc++' \
 +		CC=$(CC) \
 +		opt='$(opt) -DSYZYGY -DTEST -DCPUS=4' \
-+		CFLAGS='$(CFLAGS) -Wall -Wno-array-bounds -pipe -O3 -fprofile-use \
- 		-mpopcnt -fprofile-correction -pthread' \
- 		LDFLAGS='$(LDFLAGS) -fprofile-use -pthread -lstdc++' \
++		CFLAGS='$(CFLAGS) -Wall -Wno-array-bounds -pipe -O3 \
++		-mpopcnt -pthread' \
++		LDFLAGS='$(LDFLAGS) -pthread -lstdc++' \
  		crafty-make
+ 
+ unix-gcc-profile:

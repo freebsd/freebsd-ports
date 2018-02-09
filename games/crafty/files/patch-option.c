@@ -1,5 +1,5 @@
---- option.c.orig	2016-10-28 05:11:42.000000000 +0200
-+++ option.c	2017-07-15 23:35:58.863941000 +0200
+--- option.c.orig	2016-10-28 03:11:42 UTC
++++ option.c
 @@ -978,9 +978,11 @@ int Option(TREE * RESTRICT tree) {
    else if (OptionMatch("help", *args)) {
      FILE *helpfile;
