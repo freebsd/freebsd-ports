@@ -1,0 +1,12 @@
+##################################################################
+
+ To enable this theme edit:
+
+ %%PREFIX%%/etc/slim.conf
+
+ This theme use the x11-fonts/montserrat font by default. However,
+ that can be changed to any desired font editing:
+
+ %%PREFIX%%/share/slim/themes/slim-freebsd-black-theme/slim.theme
+
+##################################################################
