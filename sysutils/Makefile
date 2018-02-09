@@ -6,9 +6,6 @@
     SUBDIR += 3dm
     SUBDIR += 44bsd-more
     SUBDIR += 915resolution
-    SUBDIR += LPRng
-    SUBDIR += LPRngTool
-    SUBDIR += UEFITool
     SUBDIR += abck
     SUBDIR += abduco
     SUBDIR += abgx360
@@ -187,8 +184,8 @@
     SUBDIR += consolehm
     SUBDIR += consolekit2
     SUBDIR += consul
-    SUBDIR += consul-alerts
     SUBDIR += consul_exporter
+    SUBDIR += consul-alerts
     SUBDIR += container-diff
     SUBDIR += contractor
     SUBDIR += copytape
@@ -209,7 +206,6 @@
     SUBDIR += curly
     SUBDIR += currtime
     SUBDIR += cw
-    SUBDIR += DTraceToolkit
     SUBDIR += daa2iso
     SUBDIR += dae
     SUBDIR += daemonize
@@ -264,6 +260,7 @@
     SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += dtpstree
+    SUBDIR += DTraceToolkit
     SUBDIR += du2ps
     SUBDIR += duff
     SUBDIR += dunst
@@ -413,8 +410,8 @@
     SUBDIR += gkrellm2
     SUBDIR += gkrelltop
     SUBDIR += gksu
-    SUBDIR += gnome_subr
     SUBDIR += glogg
+    SUBDIR += gnome_subr
     SUBDIR += gnome-control-center
     SUBDIR += gnome-device-manager
     SUBDIR += gnome-mount
@@ -589,6 +586,8 @@
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += lookat
+    SUBDIR += LPRng
+    SUBDIR += LPRngTool
     SUBDIR += lr
     SUBDIR += lscpu
     SUBDIR += lsof
@@ -1271,6 +1270,7 @@
     SUBDIR += udfclient
     SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
+    SUBDIR += UEFITool
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
