@@ -2,23 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	lookup
-PORTVERSION=	1.4.1
-PORTREVISION=	19
+PORTVERSION=	1.99.96.20180209
 CATEGORIES=	japanese elisp
-MASTER_SITES=	http://openlab.ring.gr.jp/edict/lookup/dist/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Emacs search interface for CD-ROM books, etc
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
-USES=		emacs
+USES=		autoreconf emacs makeinfo
 
-EMACS_FLAVORS_EXCLUDE=	devel_full and devel_nox # fail to build
-INFO=		lookup lookup-guide
-HAS_CONFIGURE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	lookup2
+GH_PROJECT=	lookup2
+GH_TAGNAME=	c4f4986
+
+INFO=		lookup
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
-		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/lookup
+		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+PORTDOCS=	AUTHORS ChangeLog NEWS README.md
+
+ post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

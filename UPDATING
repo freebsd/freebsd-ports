@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20180209:
+  AFFECTS: users of japanese/lookup
+  AUTHOR: yasu@utahime.org
+
+  japanese/lookup is update to 1.99.96.20130920. This version is not
+  compatible with previous version 1.4.1 and incompatibility includes
+  how to setup. See info of Lookup for detail.
+
+20180209:
   AFFECTS: users of net-mgmt/pmacct
   AUTHOR: pi@FreeBSD.org
 
