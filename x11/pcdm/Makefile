@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcdm
-PORTVERSION=	201802021047
+PORTVERSION=	201802091418
 CATEGORIES=	x11
 
 MAINTAINER=	jmaloney@ixsystems.com
@@ -27,6 +27,6 @@ USE_QT5=        core gui network svg multimedia imageformats \
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	pcdm
-GH_TAGNAME=	e00cdffa5689699f9c646b3e57b10c017c9bd3f2
+GH_TAGNAME=	1e351796e930953d84480deca4d299bff5338b52
 
 .include <bsd.port.mk>
