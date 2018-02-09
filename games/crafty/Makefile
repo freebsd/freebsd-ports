@@ -3,11 +3,12 @@
 
 PORTNAME=	crafty
 PORTVERSION=	25.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.craftychess.com/downloads/source/:src \
 		http://www.craftychess.com/downloads/book/:data
 DISTFILES=	crafty-${PORTVERSION}.zip:src \
-		books.bin:data \
+		book.bin:data \
 		start.pgn.gz:data
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
