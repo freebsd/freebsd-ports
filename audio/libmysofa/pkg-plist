@@ -1,0 +1,8 @@
+%%TEST%%bin/mysofa2json
+include/mysofa.h
+lib/libmysofa.a
+lib/libmysofa.so
+lib/libmysofa.so.0
+lib/libmysofa.so.0.5.1
+%%DATADIR%%/MIT_KEMAR_normal_pinna.sofa
+%%DATADIR%%/default.sofa
