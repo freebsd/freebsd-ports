@@ -28,11 +28,11 @@ status_cmd="$command status"
 
 neo4j_prestart()
 {
-	NEO4J_DATA=%%DATADIR%%
+	NEO4J_DATA=%%DBDIR%%
 	NEO4J_LIB=%%PREFIX%%/neo4j/lib
-	NEO4J_LOGS=/var/log/neo4j
+	NEO4J_LOGS=%%LOGDIR%%
 	NEO4J_PLUGINS=${NEO4J_LIB}/plugins
-	NEO4J_RUN=/var/run/neo4j
+	NEO4J_RUN=%%RUNDIR%%
 	mkdir -p ${NEO4J_LOGS} ${NEO4J_RUN}
 }
 
