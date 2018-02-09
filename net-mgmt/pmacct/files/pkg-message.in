@@ -3,11 +3,12 @@ Please note that this port requires configuration before it will function
 
 Add these to /etc/rc.conf:
 pmacctd_enable="YES"
-pmacctd_flags="-Df %%PREFIX%%/etc/pmacctd.conf -i <interface>"
+pmacctd_interfaces="em0 em1"
 
-Configuration examples are located in %%EXAMPLESDIR%%.  You must copy
-one of these to %%PREFIX%%/etc/pmacctd.conf and make any required edits
-for your environment.
+Configuration examples are located in %%EXAMPLESDIR%%.
+
+You should copy one of these to %%PREFIX%%/etc/pmacct/<interface>
+and adapt them for your environment.
 
 Database-related files/information can be found in %%DATADIR%%.
 

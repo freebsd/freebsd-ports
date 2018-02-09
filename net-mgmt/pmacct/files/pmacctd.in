@@ -4,35 +4,61 @@
 #
 
 # PROVIDE: pmacctd
-# REQUIRE: NETWORKING
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 
-#
-# Add the following lines to /etc/rc.conf to enable pmacctd:
-#
-# pmacctd_enable="YES"
-#
 # You can define flags for pmacctd running. 
 # See http://wiki.pmacct.net/OfficialConfigKeys for more details.
 #
-# Example:
-# pmacctd_flags="-f %%PREFIX%%/etc/pmacctd.conf -i em0"
+# pmacctd_enable (bool):	Set to YES to enable pmacctd
+#				Default: NO
+# pmacctd_flags (str):		Extra flags passed to pmacctd
+#				Default: -D
+# pmacctd_conf (str):		pmacctd configuration file
+#				Default: %%PREFIX%%/etc/pmacctd.conf
 #
-# Default flags: -f %%PREFIX%%/etc/pmacctd.conf
+# To enable multi interface, use:
+# pmacctd_interfaces="em0 em1"
 #
+# defaults will follow, pmacctd_conf becomes 'pmacctd_em0_conf', etc.
 
 . /etc/rc.subr
 
-name=pmacctd
+name="pmacctd"
 rcvar=pmacctd_enable
 
-command=%%PREFIX%%/sbin/$name
-command_args="-D"
-
-# set defaults
-
-pmacctd_enable=${pmacctd_enable:-"NO"}
-pmacctd_flags=${pmacctd_flags:-"-f %%PREFIX%%/etc/pmacctd.conf"}
+command="%%PREFIX%%/sbin/$name"
 
 load_rc_config $name
-run_rc_command "$1"
+
+
+[ -z "$pmacctd_enable" ]    && pmacctd_enable="NO"
+[ -z "$pmacctd_conf" ]      && pmacctd_conf="%%PREFIX%%/etc/pmacctd.conf"
+[ -z "$pmacctd_flags" ]     && pmacctd_flags="-D"
+
+[ -n "$pmacctd_conf" ]      && pmacctd_flags="$pmacctd_flags -f $pmacctd_conf"
+
+if [ -n "$pmacctd_interfaces" ]; then
+    _1=$1
+    if [ $# -gt 1 ]; then shift; pmacctd_interfaces=$*; fi
+    pmacctd_conf=""
+    pmacctd_flags=""
+    rc=0
+    for i in ${pmacctd_interfaces}; do
+	eval _conf=\$pmacctd_${i}_conf
+	eval _flags=\$pmacctd_${i}_flags 
+	[ -z "$_conf" ] && _conf="%%PREFIX%%/etc/pmacct/$i"
+	[ -z "$_flags" ] && _flags="-D"
+	eval pidfile="/var/run/pmacct/${i}.pid"
+
+	command_args="$_flags -F $pidfile -f $_conf -i $i"
+	run_rc_command "$_1"
+	if [ $? -ne 0 ]; then rc=1; fi  
+	unset _pidcmd _rc_restart_done
+    done
+    exit $rc
+else
+    run_rc_command "$1"
+fi
+
