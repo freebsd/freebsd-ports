@@ -165,6 +165,7 @@
     SUBDIR += rezlooks
     SUBDIR += sawfish-themes
     SUBDIR += sddm-freebsd-black-theme
+    SUBDIR += slim-freebsd-themes
     SUBDIR += slim-themes
     SUBDIR += thewidgetfactory
     SUBDIR += ubuntulooks
