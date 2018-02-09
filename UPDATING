@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180209:
+  AFFECTS: users of net-mgmt/pmacct
+  AUTHOR: pi@FreeBSD.org
+
+  To allow separete pmacctd instances per interface, use
+
+    pmacctd_enable="YES"
+    pmacctd_interfaces="re1 re2"
+
+  in /etc/rc.conf. The path to the config files will be
+
+    /usr/local/etc/pmacct/<interface>
+
 20180208:
   AFFECTS: users of mail/mailman*
   AUTHOR: mandree@FreeBSD.org
