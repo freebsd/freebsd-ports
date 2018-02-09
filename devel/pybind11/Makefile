@@ -2,7 +2,7 @@
 
 PORTNAME=	pybind11
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.2
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +15,6 @@ USES=		cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	pybind
 NO_ARCH=	yes
-CMAKE_ARGS=	-DPYBIND11_TEST:BOOL="OFF"
+CMAKE_OFF=	PYBIND11_TEST
 
 .include <bsd.port.mk>
