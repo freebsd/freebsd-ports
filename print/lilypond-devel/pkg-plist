@@ -360,6 +360,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%PORTVERSION%%/scm/translation-functions.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/x11-color.scm
 %%DATADIR%%/%%PORTVERSION%%/tex/lilypond-tex-metrics.tex
+%%DATADIR%%/%%PORTVERSION%%/tex/texinfo-ja.tex
 %%DATADIR%%/%%PORTVERSION%%/vim/compiler/lilypond.vim
 %%DATADIR%%/%%PORTVERSION%%/vim/ftdetect/lilypond.vim
 %%DATADIR%%/%%PORTVERSION%%/vim/ftplugin/lilypond.vim
