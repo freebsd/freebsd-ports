@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
@@ -31,6 +31,7 @@ CONFLICTS_INSTALL=	texlive-texmf-201[234]*
 USE_TEX=	web2c kpathsea ptexenc tlmgr texhash-bootstrap
 USES=		compiler:c++11-lib ghostscript pkgconfig perl5 \
 		python:run shebangfix tar:xz
+USE_CXXSTD=	gnu++11
 USE_PERL5=	run
 # during build phase gnu configure is run a lot
 MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}
