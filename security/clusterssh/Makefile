@@ -3,7 +3,7 @@
 
 PORTNAME=	clusterssh
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	4.11
+DISTVERSION=	4.13
 CATEGORIES=	security net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -40,6 +40,7 @@ TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes \
 USES=		perl5
 USE_GITHUB=	yes
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
 GH_ACCOUNT=	duncs
 
