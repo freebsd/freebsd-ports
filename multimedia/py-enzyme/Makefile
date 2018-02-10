@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Python module to parse metadata in video files
 
-LICENSE=	GPLv3
+LICENSE=	APACHE20
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
