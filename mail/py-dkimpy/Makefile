@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authres>=0:mail/py-authres@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}milter>=0:mail/py-milter@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pynacl>=0:security/py-pynacl@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist concurrent
 NO_ARCH=	yes
 
