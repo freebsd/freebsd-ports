@@ -715,7 +715,6 @@
     SUBDIR += postgresql92-plperl
     SUBDIR += postgresql92-plpython
     SUBDIR += postgresql92-pltcl
-    SUBDIR += postgresql92-server
     SUBDIR += postgresql93-client
     SUBDIR += postgresql93-contrib
     SUBDIR += postgresql93-docs
