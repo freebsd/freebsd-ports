@@ -19,6 +19,8 @@
 #               Default is ":9115".
 # blackbox_exporter_config (string):        Set configuration file of blackbox_exporter
 #               Default is "%%PREFIX%%/etc/blackbox_exporter.yml".
+# blackbox_exporter_log_file (string):      Set log file of blackbox_exporter
+#               Default is "/var/log/blackbox_exporter.log".
 
 . /etc/rc.subr
 
@@ -33,6 +35,7 @@ load_rc_config $name
 : ${blackbox_exporter_args:=""}
 : ${blackbox_exporter_listen_address:=":9115"}
 : ${blackbox_exporter_config:="%%PREFIX%%/etc/blackbox_exporter.yml"}
+: ${blackbox_exporter_log_file:="/var/log/blackbox_exporter.log"}
 
 pidfile=/var/run/blackbox_exporter.pid
 command="/usr/sbin/daemon"
@@ -40,14 +43,24 @@ procname="%%PREFIX%%/bin/blackbox_exporter"
 command_args="-p ${pidfile} /usr/bin/env ${procname} \
     --web.listen-address=${blackbox_exporter_listen_address} \
     --config.file=${blackbox_exporter_config} \
-    ${blackbox_exporter_args}"
+    ${blackbox_exporter_args} >> ${blackbox_exporter_log_file} 2>&1"
 
 start_precmd=blackbox_exporter_startprecmd
 
 blackbox_exporter_startprecmd()
 {
     if [ ! -e ${pidfile} ]; then
-        install -o ${blackbox_exporter_user} -g ${blackbox_exporter_group} /dev/null ${pidfile};
+        install \
+            -o ${blackbox_exporter_user} \
+            -g ${blackbox_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+    if [ ! -e ${blackbox_exporter_log_file} ]; then
+        install \
+            -o ${blackbox_exporter_user} \
+            -g ${blackbox_exporter_group} \
+            -m 640 \
+            /dev/null ${blackbox_exporter_log_file};
     fi
 }
 
