@@ -75,7 +75,7 @@ DISTFILES+=	${EXTRACT_ONLY} ${PORTNAME}-docs-${PORTVERSION}.tar.gz
 .endif
 
 .if ${PORT_OPTIONS:MEMACS}
-USE_EMACS=	yes
+USES+=			emacs:build
 MAKE_ARGS+=	emacs_prefix=${PREFIX}
 .endif
 

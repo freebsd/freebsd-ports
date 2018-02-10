@@ -28,9 +28,8 @@ NEOVIM_DESC=	Neovim plugin
 VIM_DESC=	Vim plugin
 
 OPTIONS_SUB=	yes
-EMACS_USE=	emacs=yes
-EMACS_NO_BUILD_DEPENDS=	yes
-EMACS_NO_RUN_DEPENDS=	yes
+EMACS_USES=	emacs
+EMACS_VARS=	EMACS_NO_DEPENDS=yes
 
 CONTRIB_RUN_DEPENDS=	xe:sysutils/xe
 

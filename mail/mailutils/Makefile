@@ -40,7 +40,7 @@ TOKYOCABINET_DESC=	Tokyo Cabinet database support
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
-EMACS_USE=		EMACS=yes
+EMACS_USES=		emacs:build
 EMACS_IMPLIES=		MH
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
@@ -88,12 +88,6 @@ PGSQL_CONFIGURE_WITH=	postgres
 
 TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMH} && exists(${LOCALBASE}/bin/emacs)
-USE_EMACS=	yes
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/need_charset_alias=/s|true|false|' \

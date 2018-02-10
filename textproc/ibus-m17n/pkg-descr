@@ -1,0 +1,7 @@
+This is the m17n IMEngine for IBus (Intelligent Input Bus) framework. It
+allows you to use official and contributed keyboard layouts of the m17n
+project (available via devel/m17n-db and textproc/m17n-contrib) through
+standard IBus interface. m17n-lib currenty supports input of more than 60
+languages with more than 70 language-specific input methods.
+
+WWW: https://github.com/ibus/ibus-m17n

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cocaine
-PORTVERSION=	0.5.8
+PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Small library for doing (command) lines
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-climate_control>=0.0.3:devel/rubygem-climate_control
+RUN_DEPENDS=	rubygem-terrapin>=${PORTVERSION}:devel/rubygem-terrapin
 
 NO_ARCH=	yes
 USE_RUBY=	yes

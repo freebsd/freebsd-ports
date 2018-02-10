@@ -15,7 +15,7 @@ RUN_DEPENDS=	sipcalc:net-mgmt/sipcalc \
 
 WRKSRC_SUBDIR=	src-sh/pcbsd-utils
 USE_QT5=	core network buildtools qmake
-USES=		pkgconfig tar:xz
+USES=		pkgconfig
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 USE_GITHUB=	yes

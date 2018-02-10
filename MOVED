@@ -1116,6 +1116,7 @@ sysutils/bacula-client-devel||2010-07-16|Removed
 sysutils/bacula-server-devel||2010-07-16|Removed
 java/eclipse-v4all||2010-07-16|Not useful with Eclipse 3.x
 irc/kvirc-devel||2010-07-17|irc/kvirc has been updated to the latest version
+www/p5-Plack-Server-AnyEvent||2010-07-19|Use www/p5-Twiggy instead
 science/qelectrotech|cad/qelectrotech|2010-07-21|Fix category
 mail/squirrelmail-compatibility-plugin1|mail/squirrelmail-compatibility-plugin|2010-07-21|Has expired: use mail/squirrelmail-compatibility-plugin
 mail/squirrelmail-newuser_wiz-plugin|mail/squirrelmail-askuserinfo-plugin|2010-07-21|Has expired: use mail/squirrelmail-askuserinfo-plugin
@@ -1231,7 +1232,6 @@ multimedia/vlconwooztalk||2010-09-14|Has expired: wooztalk website not respondin
 net-im/wooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 russian/php_doc||2010-09-14|Has expired: Support for the Russian translation of the PHP manual seems to have stopped
 sysutils/ipmi-kmod||2010-09-14|Has expired: in base system since 6.2-RELEASE
-www/p5-Plack-Server-AnyEvent||2010-07-19|Use www/p5-Twiggy instead
 www/xpi-dailymotiononwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 www/xpi-deezeronwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
 www/xpi-firefoxonwooztalk||2010-09-14|Has expired: wooztalk website not responding as of 20100731
@@ -9309,7 +9309,6 @@ textproc/ibus-table||2017-04-30|Has expired: Unfetchable for more than six month
 textproc/chm2pdf||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 textproc/dtdinst||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 textproc/py-xmltv||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
-textproc/ibus-m17n||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 textproc/libroxml||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 mail/gnome-gmail-notifier||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 irc/py-gozerbot||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
@@ -9906,3 +9905,16 @@ www/rubygem-http2|www/rubygem-http|2018-01-31|Has expired: Use www/rubygem-http 
 www/rubygem-jekyll-watch1|www/rubygem-jekyll-watch|2018-01-31|Has expired: Use www/rubygem-jekyll-watch instead
 www/rubygem-puma2|www/rubygem-puma|2018-01-31|Has expired: Use www/rubygem-puma instead
 www/rubygem-turbolinks-classic|www/rubygem-turbolinks|2018-01-31|Has expired: Use www/rubygem-turbolinks instead
+databases/mysql-proxy||2018-01-31|Has expired: No longer maintained and not recommended for production use
+japanese/migemo-emacs23|japanese/migemo-emacs|2018-02-01|Moved to version agnostic name
+editors/emacs-nox11|editors/emacs@nox|2018-02-01|Moved to a flavored version
+audio/py-mad|audio/py-pymad|2018-02-03|Rename to match PyPI naming
+emulators/qemu-cheri128|emulators/qemu-cheri|2018-02-06|All versions installed in one port
+emulators/qemu-cheri128m|emulators/qemu-cheri|2018-02-06|All versions installed in one port
+chinese/eric6||2018-02-08|No longer shipped by upstream
+devel/cs-eric6||2018-02-08|No longer shipped by upstream
+devel/it-eric6||2018-02-08|No longer shipped by upstream
+devel/tr-eric6||2018-02-08|No longer shipped by upstream
+french/eric6||2018-02-08|No longer shipped by upstream
+portuguese/eric6||2018-02-08|No longer shipped by upstream
+devel/rubygem-event-bus||2018-02-08|Has expired: No longer maintained upstream

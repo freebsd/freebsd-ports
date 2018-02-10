@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipyparallel
-PORTVERSION=	6.0.2
+PORTVERSION=	6.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,10 +21,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter_client>=0:devel/py-jupyter_client@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}notebook>=0:www/py-notebook@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=13:net/py-pyzmq@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tornado>=4.0:www/py-tornado@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tornado>=4.0:www/py-tornado@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitlets>=4.3:devel/py-traitlets@${FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

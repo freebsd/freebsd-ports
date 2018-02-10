@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml
+PORTREVISION=	1
 CATEGORIES=	textproc devel python
 
 MAINTAINER=	kde@FreeBSD.org

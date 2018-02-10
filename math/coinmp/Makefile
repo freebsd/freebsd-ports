@@ -22,13 +22,18 @@ USES=	libtool pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 CXXFLAGS+=	-ffast-math
 
-OPTIONS_DEFINE=	DEBUG DOCS GLPK
+OPTIONS_DEFINE=	DEBUG DOCS FORTRAN GLPK
 
+FORTRAN_DESC=	Use BLAS/LAPACK with the Fortran interface
 GLPK_DESC=	GNU Linear Programming Kit support
 
 PORTDOCS=	*
 
 DEBUG_CXXFLAGS=		-fomit-frame-pointer
+
+FORTRAN_USES=		fortran blaslapack
+FORTRAN_CONFIGURE_ON=	--with-lapack-lib="${LAPACKLIB} -L${LOCALBASE}/lib" \
+			--with-blas-lib="${BLASLIB} -L${LOCALBASE}/lib"
 
 GLPK_LIB_DEPENDS=	libglpk.so:math/glpk
 GLPK_CONFIGURE_ON=	--with-gmpl-incdir=${LOCALBASE}/include	\
@@ -37,6 +42,9 @@ GLPK_CONFIGURE_OFF=	--disable-glpk-libcheck
 
 STRIP_FILES=	libCoinUtils libOsi libOsiClp libOsiCommonTests libClp libClpSolver \
 		libCgl libCbc libCbcSolver libOsiCbc libCoinMP
+
+TEST_TARGET=	unitTest
+TEST_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 post-patch::
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
@@ -52,9 +60,5 @@ post-install:
 .for filename in ${STRIP_FILES}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${filename}.so.*
 .endfor
-
-check regression-test test: build
-	${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-		${MAKE_ARGS} test -C ${WRKSRC}
 
 .include <bsd.port.mk>

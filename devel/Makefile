@@ -361,7 +361,6 @@
     SUBDIR += cram
     SUBDIR += creduce
     SUBDIR += critcl
-    SUBDIR += cs-eric6
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csmith
@@ -766,6 +765,7 @@
     SUBDIR += git-modes
     SUBDIR += git-review
     SUBDIR += git-subversion
+    SUBDIR += git-town
     SUBDIR += gitaly
     SUBDIR += gitblit
     SUBDIR += gitflow
@@ -864,6 +864,7 @@
     SUBDIR += grantlee5
     SUBDIR += grpc
     SUBDIR += grumpy
+    SUBDIR += grv
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
     SUBDIR += gstreamer-plugins-gconf
@@ -1212,7 +1213,6 @@
     SUBDIR += isa-l
     SUBDIR += isl
     SUBDIR += ispc
-    SUBDIR += it-eric6
     SUBDIR += itext
     SUBDIR += ivykis
     SUBDIR += iz
@@ -1337,6 +1337,7 @@
     SUBDIR += libchipcard
     SUBDIR += libcidr
     SUBDIR += libcii
+    SUBDIR += libcjson
     SUBDIR += libclc
     SUBDIR += libcli
     SUBDIR += libconcurrent
@@ -1930,6 +1931,7 @@
     SUBDIR += p5-App-SVN-Bisect
     SUBDIR += p5-App-Trace
     SUBDIR += p5-App-cpanminus
+    SUBDIR += p5-App-cpanminus-reporter
     SUBDIR += p5-App-cpanoutdated
     SUBDIR += p5-App-local-lib-helper
     SUBDIR += p5-App-perlbrew
@@ -4415,6 +4417,7 @@
     SUBDIR += py-evdev
     SUBDIR += py-eventlib
     SUBDIR += py-exam
+    SUBDIR += py-expiringdict
     SUBDIR += py-extras
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
@@ -4570,6 +4573,7 @@
     SUBDIR += py-libtmux
     SUBDIR += py-libusb1
     SUBDIR += py-libusb115
+    SUBDIR += py-libversion
     SUBDIR += py-libvirt
     SUBDIR += py-libzfs
     SUBDIR += py-linecache2
@@ -4666,6 +4670,8 @@
     SUBDIR += py-oslo.versionedobjects
     SUBDIR += py-oslo.vmware
     SUBDIR += py-osprofiler
+    SUBDIR += py-p4python
+    SUBDIR += py-packaging
     SUBDIR += py-palm
     SUBDIR += py-parsedatetime
     SUBDIR += py-path.py
@@ -4675,6 +4681,7 @@
     SUBDIR += py-paver
     SUBDIR += py-pbr
     SUBDIR += py-pefile
+    SUBDIR += py-pep8-naming
     SUBDIR += py-period
     SUBDIR += py-petname
     SUBDIR += py-pex
@@ -5395,7 +5402,6 @@
     SUBDIR += rubygem-equalizer
     SUBDIR += rubygem-errand
     SUBDIR += rubygem-et-orbi
-    SUBDIR += rubygem-event-bus
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-excon
     SUBDIR += rubygem-execjs
@@ -5804,6 +5810,7 @@
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-temple
     SUBDIR += rubygem-term-ansicolor
+    SUBDIR += rubygem-terrapin
     SUBDIR += rubygem-test-unit
     SUBDIR += rubygem-thor
     SUBDIR += rubygem-thread_safe
@@ -5954,6 +5961,7 @@
     SUBDIR += sysfsutils
     SUBDIR += t1lib
     SUBDIR += ta-lib
+    SUBDIR += tablist
     SUBDIR += tailor
     SUBDIR += talloc
     SUBDIR += tass64
@@ -5991,6 +5999,7 @@
     SUBDIR += tig
     SUBDIR += tigcc
     SUBDIR += tijmp
+    SUBDIR += tinycbor
     SUBDIR += tinylaf
     SUBDIR += tinyq
     SUBDIR += tkcon
@@ -6005,7 +6014,6 @@
     SUBDIR += tokei
     SUBDIR += tortoisehg
     SUBDIR += tpasm
-    SUBDIR += tr-eric6
     SUBDIR += trac-bitten
     SUBDIR += tradcpp
     SUBDIR += trio

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unit
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	www
 MASTER_SITES=	https://unit.nginx.org/download/
 

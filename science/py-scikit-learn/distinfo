@@ -1,2 +1,3 @@
-SHA256 (scikit-learn-0.17.tar.gz) = 23a5b6804524cb2cd54d8310010169511c7633dcf69af7439747eec02677f314
-SIZE (scikit-learn-0.17.tar.gz) = 7834903
+TIMESTAMP = 1515331523
+SHA256 (scikit-learn-0.19.1.tar.gz) = 5ca0ad32ee04abe0d4ba02c8d89d501b4e5e0304bdf4d45c2e9875a735b323a0
+SIZE (scikit-learn-0.19.1.tar.gz) = 9526647

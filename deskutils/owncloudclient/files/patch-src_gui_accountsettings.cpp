@@ -1,12 +1,12 @@
---- src/gui/accountsettings.cpp.orig	2016-05-12 07:59:12 UTC
+--- src/gui/accountsettings.cpp.orig	2017-12-20 15:03:02 UTC
 +++ src/gui/accountsettings.cpp
-@@ -31,7 +31,8 @@
- #include "creds/abstractcredentials.h"
+@@ -34,7 +34,8 @@
  #include "tooltipupdater.h"
+ #include "filesystem.h"
  
 -#include <math.h>
 +#include <climits>
 +#include <cmath>
  
- #include <QDebug>
  #include <QDesktopServices>
+ #include <QDir>

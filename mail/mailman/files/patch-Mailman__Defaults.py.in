@@ -1,15 +1,15 @@
---- Mailman/Defaults.py.in.orig	2008-04-24 09:47:40.000000000 -0300
-+++ Mailman/Defaults.py.in	2008-04-24 09:50:37.000000000 -0300
-@@ -107,7 +107,7 @@
+--- Mailman/Defaults.py.in.orig	2018-02-04 17:04:39 UTC
++++ Mailman/Defaults.py.in
+@@ -148,7 +148,7 @@ GLOBAL_BAN_LIST = []
  # Command that is used to convert text/html parts into plain text.  This
  # should output results to standard output.  %(filename)s will contain the
  # name of the temporary file that the program should operate on.
 -HTML_TO_PLAIN_TEXT_COMMAND = '/usr/bin/lynx -dump %(filename)s'
 +HTML_TO_PLAIN_TEXT_COMMAND = '%%LOCALBASE%%/bin/lynx -dump %(filename)s'
  
- 
- 
-@@ -395,8 +395,8 @@
+ # A Python regular expression character class which defines the characters
+ # allowed in list names.  Lists cannot be created with names containing any
+@@ -538,8 +538,8 @@ VIRTUAL_MAILMAN_LOCAL_DOMAIN = None
  # and virtual-mailman.db files, respectively, from the associated plain text
  # files.  The file being updated will be appended to this string (with a
  # separating space), so it must be appropriate for os.system().
@@ -20,16 +20,16 @@
  
  # Ceiling on the number of recipients that can be specified in a single SMTP
  # transaction.  Set to 0 to submit the entire recipient list in one
-@@ -430,7 +430,7 @@
+@@ -573,7 +573,7 @@ SMTPPORT = 0                            
  
  # Command for direct command pipe delivery to sendmail compatible program,
  # when DELIVERY_MODULE is 'Sendmail'.
 -SENDMAIL_CMD = '/usr/lib/sendmail'
 +SENDMAIL_CMD = '/usr/sbin/sendmail'
  
- # Set these variables if you need to authenticate to your NNTP server for
- # Usenet posting or reading.  If no authentication is necessary, specify None
-@@ -673,6 +673,12 @@
+ # SMTP authentication for DELIVERY_MODULE = 'SMTPDirect'.  To enable SASL
+ # authentication for SMTPDirect, set SMTP_AUTH = Yes and provide appropriate
+@@ -851,6 +851,12 @@ VERP_CONFIRMATIONS = No
  # debugging).
  MAX_AUTORESPONSES_PER_DAY = 10
  

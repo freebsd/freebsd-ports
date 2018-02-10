@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.29.1
+PORTVERSION=	2.30
+PORTREVISION=	2
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -12,6 +13,8 @@ COMMENT?=	GNU binary tools
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
+
+EXTRA_PATCHES=	${FILESDIR}/fix-aarch64.diff:-p1
 
 .if !defined(CROSS_TOOLCHAIN)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
@@ -36,7 +39,12 @@ CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 
 .if defined(PKGNAMEPREFIX)
-BUTARGET?=	${PKGNAMEPREFIX}${OPSYS:tl}
+.if ${PKGNAMEPREFIX:M*-*-}
+BUTARGET?=	${PKGNAMEPREFIX}${OPSYS:tl}${OSREL}
+.else
+BUTARGET?=	${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}
+.endif
+PLIST_SUB=	BUTARGET=${BUTARGET}
 OPTIONS_EXCLUDE=	NLS
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 CONFIGURE_ARGS+=	--disable-shared \
@@ -111,6 +119,30 @@ post-install:
 .endif
 	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH} ] ; then rm -rf ${STAGEDIR}${PREFIX}/${INFO_PATH}; fi
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
+.if defined(CROSS_TOOLCHAIN)
+	${MV} ${STAGEDIR}/usr/bin/as ${STAGEDIR}/usr/bin/${BUTARGET}-as
+	${LN} -fs /usr/bin/${BUTARGET}-as ${STAGEDIR}/usr/bin/as
+	${MV} ${STAGEDIR}/usr/bin/ld ${STAGEDIR}/usr/bin/${BUTARGET}-ld
+	${LN} -fs /usr/bin/${BUTARGET}-ld ${STAGEDIR}/usr/bin/ld
+	${MV} ${STAGEDIR}/usr/bin/ld.bfd ${STAGEDIR}/usr/bin/${BUTARGET}-ld.bfd
+	${LN} -fs /usr/bin/${BUTARGET}-ld.bfd ${STAGEDIR}/usr/bin/ld.bfd
+	${MV} ${STAGEDIR}/usr/bin/objcopy ${STAGEDIR}/usr/bin/${BUTARGET}-objcopy
+	${LN} -fs /usr/bin/${BUTARGET}-objcopy ${STAGEDIR}/usr/bin/objcopy
+	${MV} ${STAGEDIR}/usr/bin/objdump ${STAGEDIR}/usr/bin/${BUTARGET}-objdump
+	${LN} -fs /usr/bin/${BUTARGET}-objdump ${STAGEDIR}/usr/bin/objdump
+	${MV} ${STAGEDIR}/${MANDIR}1/as.1 ${STAGEDIR}/${MANDIR}1/${BUTARGET}-as.1
+	${GZIP_CMD} ${STAGEDIR}/${MANDIR}1/${BUTARGET}-as.1
+	${LN} -fs ${BUTARGET}-as.1.gz ${STAGEDIR}/${MANDIR}1/as.1.gz
+	${MV} ${STAGEDIR}/${MANDIR}1/ld.1 ${STAGEDIR}/${MANDIR}1/${BUTARGET}-ld.1
+	${GZIP_CMD} ${STAGEDIR}/${MANDIR}1/${BUTARGET}-ld.1
+	${LN} -fs ${BUTARGET}-ld.1.gz ${STAGEDIR}/${MANDIR}1/ld.1.gz
+	${MV} ${STAGEDIR}/${MANDIR}1/objcopy.1 ${STAGEDIR}/${MANDIR}1/${BUTARGET}-objcopy.1
+	${GZIP_CMD} ${STAGEDIR}/${MANDIR}1/${BUTARGET}-objcopy.1
+	${LN} -fs ${BUTARGET}-objcopy.1.gz ${STAGEDIR}/${MANDIR}1/objcopy.1.gz
+	${MV} ${STAGEDIR}/${MANDIR}1/objdump.1 ${STAGEDIR}/${MANDIR}1/${BUTARGET}-objdump.1
+	${GZIP_CMD} ${STAGEDIR}/${MANDIR}1/${BUTARGET}-objdump.1
+	${LN} -fs ${BUTARGET}-objdump.1.gz ${STAGEDIR}/${MANDIR}1/objdump.1.gz
+.endif
 .endif
 .for tool in ${BUREMOVE}
 	@${RM} ${STAGEDIR}${PREFIX}/bin/${BUTARGET}-${tool} \

@@ -4,19 +4,18 @@
 PORTNAME=	Pymacs
 PORTVERSION=	0.25
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel editors python elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python package for scripting emacs
 
 LICENSE=	GPLv2
 
+USES=		emacs python:2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	pinard
-
-USES=		python:2.7
-USE_EMACS=	yes
 USE_PYTHON=	distutils
 
 pre-configure:

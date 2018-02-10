@@ -16,6 +16,8 @@
 %%NONX86%%bin/qemu-system-mips64el
 %%NONX86%%bin/qemu-system-mipsel
 %%NONX86%%bin/qemu-system-moxie
+%%NONX86%%bin/qemu-system-nios2
+%%NONX86%%bin/qemu-system-or1k
 %%NONX86%%bin/qemu-system-ppc
 %%NONX86%%bin/qemu-system-ppc64
 %%NONX86%%bin/qemu-system-ppcemb
@@ -45,6 +47,7 @@
 %%SOFTMMU%%@sample etc/qemu-ifdown.sample
 %%SOFTMMU%%man/man1/qemu.1.gz
 %%SOFTMMU%%man/man1/qemu-img.1.gz
+%%PORTDOCS%%%%SOFTMMU%%man/man7/qemu-block-drivers.7.gz
 %%PORTDOCS%%%%SOFTMMU%%man/man7/qemu-ga-ref.7.gz
 %%PORTDOCS%%%%SOFTMMU%%man/man7/qemu-qmp-ref.7.gz
 %%SOFTMMU%%man/man8/qemu-ga.8.gz
@@ -119,7 +122,9 @@
 %%SOFTMMU%%%%DATADIR%%/pxe-virtio.rom
 %%SOFTMMU%%%%DATADIR%%/qemu-icon.bmp
 %%SOFTMMU%%%%DATADIR%%/qemu_logo_no_text.svg
+%%SOFTMMU%%%%DATADIR%%/qemu_vga.ndrv
 %%SOFTMMU%%%%DATADIR%%/s390-ccw.img
+%%SOFTMMU%%%%DATADIR%%/s390-netboot.img
 %%SOFTMMU%%%%DATADIR%%/sgabios.bin
 %%SOFTMMU%%%%DATADIR%%/slof.bin
 %%SOFTMMU%%%%DATADIR%%/spapr-rtas.bin

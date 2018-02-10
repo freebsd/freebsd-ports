@@ -1,0 +1,8 @@
+--- cmake/CMakeLists.txt.orig	2017-10-05 10:11:23 UTC
++++ cmake/CMakeLists.txt
+@@ -77,4 +77,4 @@ set (PACKAGE_VERSION "${PROJECT_VERSION}
+ configure_file (project.pc.in geographiclib.pc @ONLY)
+ install (FILES
+   "${CMAKE_CURRENT_BINARY_DIR}/geographiclib.pc"
+-  DESTINATION "lib${LIB_SUFFIX}/pkgconfig")
++  DESTINATION "libdata/pkgconfig")

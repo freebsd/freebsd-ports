@@ -20,6 +20,7 @@ include/babeltrace/ctf-writer/writer.h
 include/babeltrace/ctf/callbacks.h
 include/babeltrace/ctf/events.h
 include/babeltrace/ctf/iterator.h
+include/babeltrace/error.h
 include/babeltrace/format.h
 include/babeltrace/iterator.h
 include/babeltrace/list.h

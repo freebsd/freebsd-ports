@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	scrypt
-PORTVERSION=	0.8.0
+DISTVERSION=	0.8.6
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bindings for the scrypt key derivation function library
 
 LICENSE=	BSD2CLAUSE
 
 USES=		python ssl
 USE_PYTHON=	autoplist distutils
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_scrypt.so

@@ -1,0 +1,14 @@
+--- Makefile.am.orig	2017-12-31 12:31:21 UTC
++++ Makefile.am
+@@ -10,9 +10,9 @@ man_MANS = geeqie.1
+ readmedir = @readmedir@
+ 
+ if HAVE_MARKDOWN
+-readme_DATA = README.md COPYING ChangeLog TODO README.lirc AUTHORS README.html ChangeLog.html
++readme_DATA = README.md TODO README.lirc AUTHORS
+ else
+-readme_DATA = README.md COPYING ChangeLog TODO README.lirc AUTHORS ChangeLog.html
++readme_DATA = README.md TODO README.lirc AUTHORS
+ endif
+ 
+ desktopdir = $(datadir)/applications

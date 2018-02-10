@@ -1,15 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.4.0
-CATEGORIES=	devel
+PORTVERSION=	6.3.0
+CATEGORIES=	base
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION} \
+		http://www.mpfr.org/mpfr-3.1.6/:mpfr \
 		http://www.mpfr.org/mpfr-current/:mpfr \
 		GNU/gmp:gmp \
-		http://www.multiprecision.org/mpc/download/:mpc
+		https://ftp.gnu.org/gnu/mpc/:mpc
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		mpfr-3.1.4.tar.xz:mpfr \
-		gmp-5.1.3.tar.xz:gmp \
+		mpfr-3.1.6.tar.xz:mpfr \
+		gmp-6.1.2.tar.xz:gmp \
 		mpc-1.0.3.tar.gz:mpc
 PKGNAMEPREFIX=	${OPSYS:tl}-
 
@@ -28,10 +29,13 @@ LICENSE_COMB=	multi
 .endif
 
 PREFIX=		/usr
-CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1"
+CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1" \
+		NM=/usr/bin/nm \
+		AS_FOR_TARGET=/usr/bin/as \
+		LD_FOR_TARGET=/usr/bin/ld \
+		NM_FOR_TARGET=/usr/bin/nm
 TARGET_ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
-GCC_TARGET=	${TARGET_ARCH}-portbld-${OPSYS:tl}${OSREL}
-
+GCC_TARGET=	${TARGET_ARCH}-unknown-${OPSYS:tl}${OSREL}
 USES=	gmake libtool tar:bzip2 makeinfo
 PLIST_SUB=	TARGETARCH=${TARGET_ARCH} \
 		OPSYS=${OPSYS:tl} \
@@ -43,8 +47,10 @@ EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/freebsd-format-extens
 
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
-CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls \
+CONFIGURE_ARGS+=	\
+		--target=${GCC_TARGET} \
 		--enable-languages=c,c++ \
+		--disable-nls \
 		--without-headers \
 		--with-build-sysroot=${CROSS_SYSROOT} \
 		-with-pkgversion="GNU Collection for FreeBSD"
@@ -53,8 +59,8 @@ ALL_TARGET?=	all-gcc
 INSTALL_TARGET?=	install-gcc
 
 post-extract:
-	cd ${WRKSRC}; ${LN} -sf ../mpfr-3.1.4 mpfr ; \
-		${LN} -sf ../gmp-5.1.3 gmp ; \
+	cd ${WRKSRC}; ${LN} -sf ../mpfr-3.1.6 mpfr ; \
+		${LN} -sf ../gmp-6.1.2 gmp ; \
 		${LN} -sf ../mpc-1.0.3 mpc
 
 post-patch:
@@ -62,8 +68,12 @@ post-patch:
 		${WRKSRC}//gcc/cp/g++spec.c
 
 post-install:
+	${MV} ${STAGEDIR}/usr/bin/gcov-tool ${STAGEDIR}/usr/bin/${GCC_TARGET}-gcov-tool ; \
 	for tool in cpp gcc g++ gcov; do \
+		${MV} ${STAGEDIR}/usr/bin/$${tool} ${STAGEDIR}/usr/bin/${GCC_TARGET}-$${tool} ; \
 		${LN} -sf ${GCC_TARGET}-$${tool}  ${STAGEDIR}/usr/bin/$${tool} ; \
+		${MV} ${STAGEDIR}/${MANDIR}1/$${tool}.1 ${STAGEDIR}/${MANDIR}1/${GCC_TARGET}-$${tool}.1 ; \
+		${GZIP_CMD} ${STAGEDIR}/${MANDIR}1/${GCC_TARGET}-$${tool}.1 ; \
 		${LN} -sf ${GCC_TARGET}-$${tool}.1.gz ${STAGEDIR}/${MANDIR}1/$${tool}.1.gz ; \
 	done ; \
 	${LN} -sf ${GCC_TARGET}-g++  ${STAGEDIR}/usr/bin/c++ ; \

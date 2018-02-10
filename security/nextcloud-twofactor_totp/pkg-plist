@@ -1,8 +1,5 @@
-@owner %%NEXTCLOUD_USERNAME%%
-@group %%NEXTCLOUD_GROUPNAME%%
 %%WWWDIR%%/AUTHORS.md
 %%WWWDIR%%/CHANGELOG.md
-%%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
 %%WWWDIR%%/appinfo/app.php
 %%WWWDIR%%/appinfo/database.xml
@@ -36,6 +33,8 @@
 %%WWWDIR%%/l10n/en_GB.json
 %%WWWDIR%%/l10n/es.js
 %%WWWDIR%%/l10n/es.json
+%%WWWDIR%%/l10n/es_419.js
+%%WWWDIR%%/l10n/es_419.json
 %%WWWDIR%%/l10n/es_AR.js
 %%WWWDIR%%/l10n/es_AR.json
 %%WWWDIR%%/l10n/es_CL.js
@@ -475,11 +474,13 @@
 %%WWWDIR%%/vendor/endroid/qrcode/tests/QrCodeTest.php
 %%WWWDIR%%/vendor/symfony/options-resolver/.gitignore
 %%WWWDIR%%/vendor/symfony/options-resolver/CHANGELOG.md
+%%WWWDIR%%/vendor/symfony/options-resolver/Debug/OptionsResolverIntrospector.php
 %%WWWDIR%%/vendor/symfony/options-resolver/Exception/AccessException.php
 %%WWWDIR%%/vendor/symfony/options-resolver/Exception/ExceptionInterface.php
 %%WWWDIR%%/vendor/symfony/options-resolver/Exception/InvalidArgumentException.php
 %%WWWDIR%%/vendor/symfony/options-resolver/Exception/InvalidOptionsException.php
 %%WWWDIR%%/vendor/symfony/options-resolver/Exception/MissingOptionsException.php
+%%WWWDIR%%/vendor/symfony/options-resolver/Exception/NoConfigurationException.php
 %%WWWDIR%%/vendor/symfony/options-resolver/Exception/NoSuchOptionException.php
 %%WWWDIR%%/vendor/symfony/options-resolver/Exception/OptionDefinitionException.php
 %%WWWDIR%%/vendor/symfony/options-resolver/Exception/UndefinedOptionsException.php
@@ -487,6 +488,7 @@
 %%WWWDIR%%/vendor/symfony/options-resolver/Options.php
 %%WWWDIR%%/vendor/symfony/options-resolver/OptionsResolver.php
 %%WWWDIR%%/vendor/symfony/options-resolver/README.md
+%%WWWDIR%%/vendor/symfony/options-resolver/Tests/Debug/OptionsResolverIntrospectorTest.php
 %%WWWDIR%%/vendor/symfony/options-resolver/Tests/OptionsResolverTest.php
 %%WWWDIR%%/vendor/symfony/options-resolver/composer.json
 %%WWWDIR%%/vendor/symfony/options-resolver/phpunit.xml.dist

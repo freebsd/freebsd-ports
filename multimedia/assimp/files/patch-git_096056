@@ -1,0 +1,21 @@
+From 096056b899d9c423cdcad527849126e3e3e17a34 Mon Sep 17 00:00:00 2001
+From: Turo Lamminen <turotl@gmail.com>
+Date: Sun, 24 Dec 2017 22:17:45 +0200
+Subject: [PATCH] Q3BSP: Fix build with clang libc++
+
+---
+ code/Q3BSPZipArchive.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git code/Q3BSPZipArchive.cpp code/Q3BSPZipArchive.cpp
+index 86c966d8e..1c8b18ad3 100644
+--- code/Q3BSPZipArchive.cpp
++++ code/Q3BSPZipArchive.cpp
+@@ -43,6 +43,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ #include "Q3BSPZipArchive.h"
+ #include <cassert>
++#include <cstdlib>
+ #include <assimp/ai_assert.h>
+ 
+ namespace Assimp {

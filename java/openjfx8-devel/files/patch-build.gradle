@@ -1,4 +1,4 @@
---- build.gradle.orig	2017-09-08 16:56:55 UTC
+--- build.gradle.orig	2018-01-16 01:40:56 UTC
 +++ build.gradle
 @@ -251,6 +251,7 @@ ext.IS_64 = OS_ARCH.toLowerCase().contains("64")
  ext.IS_MAC = OS_NAME.contains("mac") || OS_NAME.contains("darwin")
@@ -76,7 +76,7 @@
  if (IS_WINDOWS && OS_ARCH != "x86" && OS_ARCH != "amd64") {
      throw new Exception("Unknown and unsupported build architecture: $OS_ARCH")
  } else if (IS_MAC && OS_ARCH != "x86_64") {
-@@ -1168,7 +1176,8 @@ allprojects {
+@@ -1169,7 +1177,8 @@ allprojects {
      // By default all of our projects require junit for testing so we can just
      // setup this dependency here.
      dependencies {
@@ -86,7 +86,7 @@
          if (BUILD_CLOSED && DO_JCOV)  {
              testCompile name: "jcov"
          }
-@@ -1306,12 +1315,15 @@ project(":graphics") {
+@@ -1307,12 +1316,15 @@ project(":graphics") {
  
      dependencies {
          compile project(":base"), BUILD_SRC
@@ -107,7 +107,7 @@
      }
  
      // Create a single "native" task which will depend on all the individual native tasks for graphics
-@@ -1460,7 +1472,7 @@ project(":graphics") {
+@@ -1461,7 +1473,7 @@ project(":graphics") {
                  workingDir = "modules/graphics"
                  main = settings.generator
                  classpath = configurations.compile + configurations.antlr3
@@ -116,7 +116,7 @@
                  classpath += files("$buildDir/classes/jsl-compilers/decora")
                  args = ["-i", sourceDir, "-o", destinationDir, "-t", "-pkg", "com/sun/scenario/effect", "$settings.outputs", "$settings.fileName"]
                  jvmArgs "-Djava.ext.dirs="
-@@ -1471,9 +1483,9 @@ project(":graphics") {
+@@ -1472,9 +1484,9 @@ project(":graphics") {
      task generateDecoraNativeHeaders(type: JavaHeaderTask, dependsOn: compileDecoraJavaShaders) {
          description = "Generates JNI Headers for Decora SSE Natives"
          source file("$buildDir/classes/jsl-decora")
@@ -128,7 +128,7 @@
          output = file("$buildDir/generated-src/headers/jsl-decora")
      }
  
-@@ -1601,9 +1613,7 @@ project(":graphics") {
+@@ -1602,9 +1614,7 @@ project(":graphics") {
              copy {
                  into libsDir
                  from f.getParentFile()
@@ -139,7 +139,7 @@
                  includeEmptyDirs = false
              }
              // Have to rename the swt jar because it is some platform specific name but
-@@ -1650,7 +1660,7 @@ project(":controls") {
+@@ -1651,7 +1661,7 @@ project(":controls") {
              javaexec {
                  executable = JAVA
                  workingDir = "modules/controls"
@@ -148,7 +148,7 @@
                          project(":graphics").sourceSets.main.output,
                          project(":base").sourceSets.main.output)
                  main = "com.sun.javafx.css.parser.Css2Bin"
-@@ -1687,7 +1697,11 @@ project(":swt") {
+@@ -1688,7 +1698,11 @@ project(":swt") {
      }
      dependencies {
          compile BUILD_SRC, project(":base"), project(":graphics")
@@ -161,7 +161,7 @@
      }
  }
  
-@@ -1786,7 +1800,7 @@ project(":fxpackager") {
+@@ -1787,7 +1801,7 @@ project(":fxpackager") {
      }
  
      dependencies {
@@ -170,7 +170,7 @@
      }
  
      // When producing the jar, we need to relocate a few class files
-@@ -2037,7 +2051,7 @@ project(":fxpackager") {
+@@ -2038,7 +2052,7 @@ project(":fxpackager") {
          description = "Creates the packager.jar"
          archiveName = "packager.jar";
          includeEmptyDirs = false
@@ -179,7 +179,7 @@
          from("$buildDir/resources/main");
          include('jdk/packager/**')
  
-@@ -2047,21 +2061,6 @@ project(":fxpackager") {
+@@ -2048,21 +2062,6 @@ project(":fxpackager") {
      jar.dependsOn buildJavaPackager
      jar.dependsOn packagerJar
  
@@ -201,7 +201,7 @@
      task packagerFakeJar(type: Jar) {
          dependsOn compileTestJava
          from compileTestJava.destinationDir
-@@ -2240,7 +2239,7 @@ project(":media") {
+@@ -2241,7 +2240,7 @@ project(":media") {
  
              doLast {
                  exec {
@@ -210,7 +210,7 @@
                      args("JAVA_HOME=${JDK_HOME}", "GENERATED_HEADERS_DIR=${generatedHeadersDir}",
                           "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=jfxmedia",
                           "COMPILE_PARFAIT=${compileParfait}")
-@@ -2250,7 +2249,7 @@ project(":media") {
+@@ -2251,7 +2250,7 @@ project(":media") {
                          args(IS_64 ? "ARCH=x64" : "ARCH=x32", "RESOURCE=${nativeOutputDir}/${buildType}/${WIN.media.jfxmediaRcFile}")
                      } else {
                          args ("CC=${mediaProperties.compiler}", "LINK=${mediaProperties.linker}", "LIB=${mediaProperties.lib}")
@@ -219,7 +219,7 @@
                              args(IS_64 ? "ARCH=x64" : "ARCH=x32")
                          }
  
-@@ -2272,7 +2271,7 @@ project(":media") {
+@@ -2273,7 +2272,7 @@ project(":media") {
                  enabled = IS_COMPILE_MEDIA
                  doLast {
                      exec {
@@ -228,7 +228,7 @@
                          args("OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=gstreamer-lite")
  
                          if (t.name == "win") {
-@@ -2280,7 +2279,7 @@ project(":media") {
+@@ -2281,7 +2280,7 @@ project(":media") {
                              args(IS_64 ? "ARCH=x64" : "ARCH=x32", "RESOURCE=${nativeOutputDir}/${buildType}/${WIN.media.gstreamerRcFile}")
                          } else {
                              args ("CC=${mediaProperties.compiler}", "LINK=${mediaProperties.linker}", "LIB=${mediaProperties.lib}")
@@ -237,7 +237,7 @@
                                  args(IS_64 ? "ARCH=x64" : "ARCH=x32")
                              }
                          }
-@@ -2301,7 +2300,7 @@ project(":media") {
+@@ -2302,7 +2301,7 @@ project(":media") {
  
                  doLast {
                      exec {
@@ -246,7 +246,7 @@
                          args("OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=fxplugins",
                               "ON2_SRCDIR=${project.ext.ON2_SRCDIR}", "ON2_LIB=${project.ext.ON2_LIB}")
  
-@@ -2318,7 +2317,7 @@ project(":media") {
+@@ -2319,7 +2318,7 @@ project(":media") {
                              args(IS_64 ? "ARCH=x64" : "ARCH=x32", "RESOURCE=${nativeOutputDir}/${buildType}/${WIN.media.fxpluginsRcFile}")
                          } else {
                              args ("CC=${mediaProperties.compiler}", "LINK=${mediaProperties.linker}", "LIB=${mediaProperties.lib}")
@@ -255,7 +255,7 @@
                                  args(IS_64 ? "ARCH=x64" : "ARCH=x32")
                              }
                          }
-@@ -2328,7 +2327,7 @@ project(":media") {
+@@ -2329,7 +2328,7 @@ project(":media") {
  
              buildNative.dependsOn buildPlugins
  
@@ -264,7 +264,7 @@
                  def buildAVPlugin = task( "buildAVPlugin", dependsOn: [buildPlugins]) {
                      enabled = IS_COMPILE_MEDIA
  
-@@ -2339,7 +2338,7 @@ project(":media") {
+@@ -2340,7 +2339,7 @@ project(":media") {
                                  File dir = file(libavDir)
                                  if (dir.exists()) {
                                      exec {
@@ -273,7 +273,7 @@
                                          args("CC=${mediaProperties.compiler}", "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
                                               "BASE_NAME=avplugin", "VERSION=${version}", "LIBAV_DIR=${libavDir}",
                                               "SUFFIX=", IS_64 ? "ARCH=x64" : "ARCH=x32")
-@@ -2352,7 +2351,7 @@ project(":media") {
+@@ -2353,7 +2352,7 @@ project(":media") {
                                  File dir = file(libavDir)
                                  if (dir.exists()) {
                                      exec {
@@ -282,7 +282,7 @@
                                          args("CC=${mediaProperties.compiler}", "LINKER=${mediaProperties.linker}",
                                               "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
                                               "BASE_NAME=avplugin", "VERSION=${version}", "LIBAV_DIR=${libavDir}",
-@@ -2363,7 +2362,7 @@ project(":media") {
+@@ -2364,7 +2363,7 @@ project(":media") {
                          } else {
                              // Building fxavcodec plugin (libav plugin)
                              exec {
@@ -291,7 +291,7 @@
                                  args("CC=${mediaProperties.compiler}", "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
                                       "BASE_NAME=avplugin", IS_64 ? "ARCH=x64" : "ARCH=x32")
                              }
-@@ -2411,7 +2410,7 @@ project(":media") {
+@@ -2412,7 +2411,7 @@ project(":media") {
                      doLast {
                          exec {
                              environment(WINDOWS_NATIVE_COMPILE_ENVIRONMENT)
@@ -300,7 +300,7 @@
                              args("OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=glib-lite",
                                   IS_64 ? "ARCH=x64" : "ARCH=x32", "RESOURCE=${nativeOutputDir}/${buildType}/${WIN.media.glibRcFile}")
                          }
-@@ -2424,7 +2423,7 @@ project(":media") {
+@@ -2425,7 +2424,7 @@ project(":media") {
                      enabled = IS_COMPILE_MEDIA
                      doLast {
                          exec {
@@ -309,7 +309,7 @@
                              args("OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=glib-lite")
                              args ("CC=${mediaProperties.compiler}", "LINK=${mediaProperties.linker}", "LIB=${mediaProperties.lib}")
                          }
-@@ -2477,7 +2476,7 @@ project(":web") {
+@@ -2478,7 +2477,7 @@ project(":web") {
  
      task generateHeaders(dependsOn: compileJava) {
          doLast {
@@ -327,17 +327,17 @@
                            IS_64 ? "${t.name}-amd64" : "${t.name}-i586"
  
          def webkitOutputDir = cygpath("$buildDir/${t.name}")
-@@ -2586,6 +2585,9 @@ project(":web") {
+@@ -2592,6 +2591,9 @@ project(":web") {
                      targetCpuBitDepthSwitch = "--32-bit"
                  }
  
 +                cmakeArgs += " -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON"
 +                cmakeArgs += " -DCMAKE_C_COMPILER:STRING=${System.getenv("CC")}"
 +                cmakeArgs += " -DCMAKE_CXX_COMPILER:STRING=${System.getenv("CXX")}"
-                 commandLine("perl", "Tools/Scripts/build-webkit",
+                 commandLine("perl", "$projectDir/src/main/native/Tools/Scripts/build-webkit",
                      "--java", "--icu-unicode", targetCpuBitDepthSwitch,
                      "--cmakeargs=${cmakeArgs}")
-@@ -2628,7 +2630,7 @@ project(":web") {
+@@ -2634,7 +2636,7 @@ project(":web") {
      task drtJar(type: Jar, dependsOn: compileJava) {
          archiveName = "drt.jar"
          destinationDir = file("$buildDir/test")
@@ -346,7 +346,7 @@
          include drtClasses
      }
      if (IS_COMPILE_WEBKIT) {
-@@ -2880,22 +2882,22 @@ compileTargets { t ->
+@@ -2886,22 +2888,22 @@ compileTargets { t ->
          description = "Creates the jfxrt.jar for the $t.name target"
          archiveName = "build/${sdkDirName}/rt/lib/ext/jfxrt.jar";
          includeEmptyDirs = false
@@ -376,7 +376,7 @@
  
          if (!IS_MAC) {
              exclude ("modules/media/build/classes/main/com/sun/media/jfxmediaimpl/platform/osx/**",
-@@ -2960,7 +2962,7 @@ compileTargets { t ->
+@@ -2966,7 +2968,7 @@ compileTargets { t ->
                    "modules/web/build/resources/ios",
                    "modules/extensions/build/classes/ios")
          } else {
@@ -385,7 +385,7 @@
          }
  
          exclude("**/javafx/embed/swt/**")
-@@ -3000,8 +3002,8 @@ compileTargets { t ->
+@@ -3007,8 +3009,8 @@ compileTargets { t ->
          description = "Creates the jfxswt.jar for the $t.name target"
          archiveName = "build/${sdkDirName}/rt/lib/jfxswt.jar";
          includeEmptyDirs = false
@@ -396,7 +396,7 @@
          include("**/javafx/embed/swt/**")
          exclude("**/*.java");  // Builder java files are in build/classes and should be excluded
  
-@@ -3022,7 +3024,7 @@ compileTargets { t ->
+@@ -3029,7 +3031,7 @@ compileTargets { t ->
          description = "Creates the javafx-mx.jar"
          archiveName = "build/${sdkDirName}/lib/javafx-mx.jar";
          includeEmptyDirs = false
@@ -405,7 +405,7 @@
          from "modules/jmx/build/resources/main"
          dependsOn project(":jmx").assemble
      }
-@@ -3077,7 +3079,7 @@ compileTargets { t ->
+@@ -3084,7 +3086,7 @@ compileTargets { t ->
                          // OSX media natives
                          [ "jfxmedia_qtkit", "jfxmedia_avf", "glib-lite" ].each { name ->
                              from ("modules/media/build/native/${t.name}/${mediaBuildType}/${library(name)}") }
@@ -414,7 +414,7 @@
                          from("modules/media/build/native/${t.name}/${mediaBuildType}") { include "libavplugin*.so" }
                      } else from ("modules/media/build/native/${t.name}/${mediaBuildType}/${library("glib-lite")}")
                  } else {
-@@ -3090,7 +3092,7 @@ compileTargets { t ->
+@@ -3097,7 +3099,7 @@ compileTargets { t ->
                          // copy libjfxmedia_{avf,qtkit}.dylib if they exist
                          [ "jfxmedia_qtkit", "jfxmedia_avf", "glib-lite" ].each { name ->
                              from ("$LIBRARY_STUB/${library(name)}") }
@@ -423,7 +423,7 @@
                          from(LIBRARY_STUB) { include "libavplugin*.so" }
                      }
                      else if (t.name != "android"  && t.name != "dalvik" ) {
-@@ -3155,7 +3157,7 @@ compileTargets { t ->
+@@ -3162,7 +3164,7 @@ compileTargets { t ->
              }
  
              // Copy over the javapackager executable
@@ -432,7 +432,7 @@
                  copy {
                      from "modules/fxpackager/build/javapackager"
                      into "build/${sdkDirName}/bin"
-@@ -3208,10 +3210,11 @@ ext.JFXRT_CP =
+@@ -3215,10 +3217,11 @@ ext.JFXRT_CP =
          project(":fxml").sourceSets.main.output.classesDir,
          project(":swing").sourceSets.main.output.classesDir, //NOTE - used by 3Dviewer
          project(":builders").sourceSets.main.output.classesDir,
@@ -446,7 +446,7 @@
  project(":apps") {
      // The apps build is Ant based, and gradle lets us "import" ant build.xml
      // into our configuration.
-@@ -3256,7 +3259,7 @@ project(":apps") {
+@@ -3295,7 +3298,7 @@ project(":apps") {
          }
          rootProject.clean.dependsOn(appsClean)
      }

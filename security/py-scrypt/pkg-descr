@@ -8,4 +8,4 @@ will take a considerable amount of time. This is in contrast to more
 traditional hash functions such as MD5 or the SHA family which can be
 implemented extremely fast on cheap hardware.
 
-WWW: https://pypi.python.org/pypi/scrypt/
+WWW: https://pypi.python.org/pypi/scrypt

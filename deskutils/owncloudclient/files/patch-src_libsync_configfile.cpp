@@ -1,8 +1,8 @@
---- src/libsync/configfile.cpp.orig	2016-05-12 07:59:12 UTC
+--- src/libsync/configfile.cpp.orig	2017-12-20 15:03:02 UTC
 +++ src/libsync/configfile.cpp
-@@ -415,11 +415,22 @@ bool ConfigFile::skipUpdateCheck( const 
-     QString con( connection );
-     if( connection.isEmpty() ) con = defaultConnection();
+@@ -448,11 +448,22 @@ bool ConfigFile::skipUpdateCheck(const QString &connec
+     if (connection.isEmpty())
+         con = defaultConnection();
  
 +#if 0
      QVariant fallback = getValue(QLatin1String(skipUpdateCheckC), con, false);
@@ -22,4 +22,4 @@
 +#endif
  }
  
- void ConfigFile::setSkipUpdateCheck( bool skip, const QString& connection )
+ void ConfigFile::setSkipUpdateCheck(bool skip, const QString &connection)

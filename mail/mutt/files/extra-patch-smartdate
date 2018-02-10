@@ -1,4 +1,4 @@
---- hdrline.c.orig	2017-06-03 23:31:21 UTC
+--- hdrline.c.orig	2018-01-27 22:22:49 UTC
 +++ hdrline.c
 @@ -249,6 +249,89 @@ static char *apply_subject_mods (ENVELOP
   * %Y = `x-label:' field (if present, tree unfolded, and != parent's x-label)
@@ -90,7 +90,7 @@
  static const char *
  hdr_format_str (char *dest,
  		size_t destlen,
-@@ -469,7 +552,13 @@ hdr_format_str (char *dest,
+@@ -422,7 +505,13 @@ hdr_format_str (char *dest,
  
          if (!do_locales)
            setlocale (LC_TIME, "C");
@@ -105,7 +105,7 @@
          if (!do_locales)
            setlocale (LC_TIME, "");
  
---- mutt.h.orig	2017-05-30 19:27:53 UTC
+--- mutt.h.orig	2018-01-27 22:22:49 UTC
 +++ mutt.h
 @@ -134,6 +134,16 @@ typedef enum
    MUTT_FORMAT_NOFILTER    = (1<<7)  /* do not allow filtering on this pass */

@@ -7,6 +7,7 @@ bin/hugo
 %%MANPAGES%%man/man1/hugo-convert.1.gz
 %%MANPAGES%%man/man1/hugo-env.1.gz
 %%MANPAGES%%man/man1/hugo-gen-autocomplete.1.gz
+%%MANPAGES%%man/man1/hugo-gen-chromastyles.1.gz
 %%MANPAGES%%man/man1/hugo-gen-doc.1.gz
 %%MANPAGES%%man/man1/hugo-gen-man.1.gz
 %%MANPAGES%%man/man1/hugo-gen.1.gz
@@ -20,6 +21,5 @@ bin/hugo
 %%MANPAGES%%man/man1/hugo-new-theme.1.gz
 %%MANPAGES%%man/man1/hugo-new.1.gz
 %%MANPAGES%%man/man1/hugo-server.1.gz
-%%MANPAGES%%man/man1/hugo-undraft.1.gz
 %%MANPAGES%%man/man1/hugo-version.1.gz
 %%MANPAGES%%man/man1/hugo.1.gz

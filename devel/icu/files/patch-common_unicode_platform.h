@@ -11,21 +11,3 @@
  #elif defined(__BYTE_ORDER__) && defined(__ORDER_BIG_ENDIAN__)
      /* gcc */
  #   define U_IS_BIG_ENDIAN (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
-@@ -498,11 +498,15 @@
- #   define U_CPLUSPLUS_VERSION 1
- #endif
- 
--#if (U_PLATFORM == U_PF_AIX || U_PLATFORM == U_PF_OS390) && defined(__cplusplus) &&(U_CPLUSPLUS_VERSION < 11)
-+#if defined(__cplusplus) && (U_CPLUSPLUS_VERSION < 11)
- // add in std::nullptr_t
- namespace std {
-+#if (U_PLATFORM == U_PF_AIX || U_PLATFORM == U_PF_OS390)
-   typedef decltype(nullptr) nullptr_t;
--};
-+#elif defined(__GNUC__) && !defined(__clang__)
-+  typedef __decltype(__null) nullptr_t;
-+#endif
-+}
- #endif
- 
- /**

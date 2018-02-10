@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MechanicalSoup
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,10 +23,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-mock>=0:www/py-requests-mock@${FLAVOR}
 
-USE_GITHUB=	yes
-
 NO_ARCH=	yes
 USES=		python
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

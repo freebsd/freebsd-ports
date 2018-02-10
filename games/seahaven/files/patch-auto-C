@@ -1,7 +1,14 @@
-diff -ru work/seahaven-1.60/auto.C work.new/seahaven-1.60/auto.C
 --- auto.C	2011-07-10 00:23:59.000000000 -0600
-+++ auto.C	2014-02-25 15:10:30.000000000 -0700
-@@ -486,12 +486,10 @@
++++ auto.C	2018-02-02 12:19:55.618524000 -0700
+@@ -146,7 +146,6 @@
+ }
+ 
+ int HashList::Add(const Hash& h) {
+-    if (!this) Error("Add to NULL HashList.");
+     if (HashVal().EmptyP()) hash = h;
+     else next = new HashList(h, next);
+     return depth++;
+@@ -486,12 +485,10 @@
  
  class MoveCard : public Move {
      Card& from;

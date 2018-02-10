@@ -115,7 +115,7 @@ do-install:
 	cd ${DISTDIR}/${DIST_SUBDIR}; ${INSTALL_DATA} ${PORTDOCS:M*.pdf} ${STAGEDIR}${DOCSDIR}
 .endif
 
-check regression-test test: build
+do-test:
 .for _f in calgarytest.zpaq calgarytest2.zpaq
 .for _c in -list -test
 	${WRKSRC}/zpaq ${_c} ${DISTDIR}/${DIST_SUBDIR}/${_f}

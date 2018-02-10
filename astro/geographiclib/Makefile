@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	geographiclib
-PORTVERSION=	1.46
-PORTREVISION=	2
+PORTVERSION=	1.49
 CATEGORIES=	astro
 MASTER_SITES=	SF/geographiclib/distrib\
 		SF/geographiclib:geoids,gravity,magnetic
-DISTNAME=	GeographicLib-${PORTVERSION}
+DISTNAME=	GeographicLib-${PORTVERSION}${DISTVERSIONSUFFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	GeographicLib
 
@@ -17,16 +16,15 @@ COMMENT=	Library for geographic projections
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_compile_flag.m4:devel/autoconf-archive
-
-USES=		autoreconf compiler:c++11-lang gmake libtool python
+USES=		cmake compiler:c++14-lang python
+WRKSRC=		${WRKDIR}/GeographicLib-${PORTVERSION}
 PORTDOCS=	*
 FETCH_ENV+=	HTTP_REFERER=
-GNU_CONFIGURE=	yes
-MAKE_ARGS+=	geographiclib_data=${DATADIR:Q}
-MAKE_ARGS+=	pythondir=${PYTHON_SITELIBDIR}/geographiclib
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+CMAKE_ARGS=	-DGEOGRAPHICLIB_DATA:STRING=${DATADIR:Q}\
+		-DGEOGRAPHICLIB_LIB_TYPE:STRING=BOTH\
+		-DINSTALL_PYTHON_DIR:STRING=${PYTHON_SITELIBDIR:Q}\
+		-DINSTALL_DOC_DIR:STRING=${DOCSDIR:Q}
 
 OPTIONS_DEFINE=	DOXYGEN PERL
 OPTIONS_DEFAULT=	DOXYGEN PERL\
@@ -35,16 +33,18 @@ OPTIONS_DEFAULT=	DOXYGEN PERL\
 PERL_DESC=	Build documentation with pod2man and pod2html
 OPTIONS_GROUP=	DATASETS
 OPTIONS_SUB=	yes
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_DOXYGEN=
+DOXYGEN_CMAKE_BOOL=	GEOGRAPHICLIB_DOCUMENTATION
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen\
+			sphinx-build:textproc/py-sphinx
+PERL_CMAKE_BOOL_OFF=	GEOGRAPHICLIB_NO_PERL
 PERL_USE=	PERL5=build
 PERL_USES=	perl5
-PERL_CONFIGURE_ENV_OFF=	ac_cv_prog_POD2MAN= ac_cv_prog_POD2HTML=
 
 GEOID_NAMES=		egm84-30 egm84-15 egm96-15 egm96-5\
 			egm2008-5 egm2008-2_5 egm2008-1
 GRAVITY_NAMES=		egm84 egm96 egm2008 wgs84 grs80
-MAGNETIC_NAMES=		wmm2010 wmm2015 igrf11 igrf12 emm2010 emm2015
+MAGNETIC_NAMES=		wmm2010 wmm2015 igrf11 igrf12\
+			emm2010 emm2015 emm2017
 
 .for n in ${GEOID_NAMES}
 GEOID_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DESC=		Install ${n} geoid dataset
@@ -71,6 +71,9 @@ OPTIONS_DEFAULT=	${MAKESUM_OPTIONS_DEFAULT}
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's/\(tail\) --lines/\1 -n/g'\
+		-e "s,head --lines -4,${SED} -e '\$$d' | ${SED} -e '\$$d' | ${SED} -e '\$$d' | ${SED} -e '\$$d',"\
+		${WRKSRC}/man/makeusage.sh
 	${REINPLACE_CMD} -e '/wget/s/wget -O/fetch -o /'\
 		${WRKSRC}/tools/geographiclib-get-*.sh
 

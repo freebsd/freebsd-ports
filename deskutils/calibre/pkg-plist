@@ -905,6 +905,7 @@ lib/calibre/calibre/gui2/metadata/single_download.py
 lib/calibre/calibre/gui2/metadata/single.py
 lib/calibre/calibre/gui2/notify.py
 lib/calibre/calibre/gui2/open_with.py
+lib/calibre/calibre/gui2/pin_columns.py
 lib/calibre/calibre/gui2/preferences/__init__.py
 lib/calibre/calibre/gui2/preferences/adding_ui.py
 lib/calibre/calibre/gui2/preferences/adding.py
@@ -1358,6 +1359,7 @@ lib/calibre/calibre/utils/socket_inheritance.py
 lib/calibre/calibre/utils/soupparser.py
 lib/calibre/calibre/utils/speedups.py
 lib/calibre/calibre/utils/spell/__init__.py
+lib/calibre/calibre/utils/tdir_in_cache.py
 lib/calibre/calibre/utils/terminal.py
 lib/calibre/calibre/utils/test_lock.py
 lib/calibre/calibre/utils/text2int.py

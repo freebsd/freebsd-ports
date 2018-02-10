@@ -3,10 +3,10 @@
 
 PORTNAME=	proofgeneral
 PORTVERSION=	4.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
-PKGNAMESUFFIX=	-${EMACS_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	ProofGeneral-${PORTVERSION}
 
 MAINTAINER=	beyert@cs.ucr.edu
@@ -18,20 +18,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
-USE_EMACS=	yes
+USES=		emacs gmake perl5 shebangfix tar:tgz
+EMACS_FLAVORS_EXCLUDE=	nox devel_nox
+
 INSTALLS_ICONS=	yes
-USES=		gmake perl5 shebangfix tar:tgz
 SHEBANG_FILES=	lego/legotags coq/coqtags isar/isartags
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${EMACS_NAME} == xemacs
-IGNORE=	the ProofGeneral developers no longer support XEmacs
-.endif
-
 MAKE_ARGS+=	PREFIX="${LOCALBASE}" DEST_PREFIX="${STAGEDIR}${PREFIX}" \
-	MAKE="${MAKE_CMD}" EMACS="${EMACS_NAME}" EMACS_NAME="${EMACS_NAME}" \
+	MAKE="${MAKE_CMD}" EMACS=emacs EMACS_NAME=emacs \
 	DOCDIR="${STAGEDIR}${DOCSDIR}" MANDIR="${STAGEDIR}${PREFIX}/man/man1" \
 	INFODIR="${STAGEDIR}${PREFIX}/info" \
 	BINDIR="${STAGEDIR}${PREFIX}/bin" DESKTOP="${STAGEDIR}${PREFIX}/share" \
@@ -45,15 +40,14 @@ SUB_FILES=	pkg-message
 SUB_LIST=	EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
 
 INFO=		PG-adapting ProofGeneral
-
-.if ${PORT_OPTIONS:MDOCS}
-MAKE_ARGS+=	DOCSDIR=${DOCSDIR} INSTALLDOC=install-doc
-BUILD_DEPENDS+=	texi2html:textproc/texi2html
-.endif
-
 PORTDOCS=	AUTHORS BUGS CHANGES COMPATIBILITY COPYING INSTALL \
 		PG-adapting ProofGeneral README REGISTER acl2 hol98 isar lego \
 		pgshell phox twelf
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_MAKE_ARGS=	DOCSDIR=${DOCSDIR} INSTALLDOC=install-doc
+DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
@@ -67,7 +61,7 @@ post-patch:
 		's|PGHOMEDEFAULT=$$HOME|PGHOMEDEFAULT=${PREFIX}/${EMACS_SITE_LISPDIR}|g' \
 	${WRKSRC}/bin/proofgeneral
 	@${TOUCH} ${WRKSRC}/.byte-compile
-	@${REINPLACE_CMD} -e 's,%%EMACS_NAME%%,${EMACS_NAME},' \
+	@${REINPLACE_CMD} -e 's,%%EMACS_NAME%%,emacs,' \
 		${WRKSRC}/isar/interface
 
 pre-build:
@@ -75,7 +69,11 @@ pre-build:
 	@${RM} ${WRKSRC}/.byte-compile || ${TRUE}
 #.endif
 
-post-install:
+post-install-DOCS-on:
 	@${FIND} ${STAGEDIR}${DOCSDIR} -type d -empty -delete
 
-.include <bsd.port.post.mk>
+post-install-DOCS-off:
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+
+.include <bsd.port.mk>

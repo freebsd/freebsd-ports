@@ -4,4 +4,4 @@ server and user agent. This module aims to produce
 a library for serializing and deserializing JSON
 that conforms strictly to RFC 4627.
 
-WWW: https://pypi.python.org/pypi/jsonlib2/
+WWW: https://pypi.python.org/pypi/jsonlib2

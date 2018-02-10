@@ -1,4 +1,4 @@
 Pidfile featuring stale detection and file-locking, can also be used as
 context-manager or decorator
 
-WWW: http://pypi.python.org/pypi/pid
+WWW: https://pypi.python.org/pypi/pid

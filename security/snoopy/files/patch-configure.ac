@@ -1,15 +1,6 @@
 --- configure.ac.orig	2016-09-14 15:02:26 UTC
 +++ configure.ac
-@@ -30,7 +30,7 @@ AC_CONFIG_SRCDIR([src/eventsource/execve
- AC_CONFIG_AUX_DIR([build/aux])
- AC_CONFIG_MACRO_DIR([build/m4])
- m4_include([build/snoopy.m4])
--AM_INIT_AUTOMAKE([1.11 gnu silent-rules subdir-objects -Wall -Werror])
-+AM_INIT_AUTOMAKE([1.11 gnu silent-rules subdir-objects])
- 
- 
- ### Silent make output
-@@ -125,18 +125,11 @@ SNOOPY_PROG_CHECK([wc],       [WC],     
+@@ -125,12 +125,6 @@ SNOOPY_PROG_CHECK([wc],       [WC],     
  
  
  
@@ -22,9 +13,3 @@
  dnl Checks for header files.
  AC_CHECK_HEADERS([ \
      ctype.h \
-     dlfcn.h \
-     errno.h \
--    features.h \
-     grp.h \
-     limits.h \
-     pwd.h \

@@ -31,7 +31,6 @@ if (!BSD.canBuild) return;
 
 // All desktop related packages should be built
 BSD.compileSwing = true;
-BSD.compileSWT = true;
 BSD.compileFXPackager = true;
 
 // Libraries end up in the sdk/rt/lib/$OS_ARCH directory for freebsd

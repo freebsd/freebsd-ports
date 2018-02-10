@@ -1,16 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	phpunit
-DISTVERSION=	5.7.26
+DISTVERSION=	5.7.27
 CATEGORIES=	devel www
-MASTER_SITES=	https://phar.phpunit.de/ \
-		http://ports.toco-domains.de/
+MASTER_SITES=	https://phar.phpunit.de/
 EXTRACT_SUFX=	.phar
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Testing framework for unit tests
 
 LICENSE=	BSD3CLAUSE
+
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=	2018-02-02
 
 CONFLICTS_INSTALL=	phpunit6
 

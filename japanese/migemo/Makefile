@@ -12,6 +12,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKKDIC_FILE}.bz2:skkdic
 DIST_SUBDIR=	migemo
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+.if defined(SLAVE_PORT)
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-03-01
+.endif
+
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Japanese incremental search tool
 
@@ -25,7 +30,7 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:japanese/ruby-romkan \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rubydir=${RUBY_SITELIBDIR}
-USES=		autoreconf
+USES+=		autoreconf
 USE_RUBY=	yes
 
 .if !defined(SLAVE_PORT)

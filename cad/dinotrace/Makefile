@@ -3,35 +3,32 @@
 
 PORTNAME=	dinotrace
 PORTVERSION=	9.4c
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.org/ftp/
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical signal trace waveform viewer
 
-OPTIONS_DEFINE=	EMACS
-OPTIONS_DEFAULT=	EMACS
-EMACS_DESC=	Install Emacs supplimentary files
+LICENSE=	GPLv3+
 
-USE_XORG=	x11 sm ice xmu xt
 USES=		gmake motif perl5 tar:tgz
+USE_XORG=	x11 sm ice xmu xt
 USE_PERL5=	build
+
 GNU_CONFIGURE=	yes
 
 INFO=		dinotrace
 PLIST_FILES=	bin/dinotrace
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	EMACS
+OPTIONS_DEFAULT=	EMACS
+EMACS_DESC=	Install Emacs supplimentary files
 
-.if ${PORT_OPTIONS:MEMACS}
-RUN_DEPENDS+=	verilog-mode.el>0:cad/verilog-mode.el
-USE_EMACS=	yes
-EMACS_NO_BUILD_DEPENDS=	yes
-.for F in dinotrace.el sim-log.el
-PLIST_FILES+=	${EMACS_SITE_LISPDIR}/${F}
-.endfor
-.endif
+EMACS_USES=	emacs:run
+EMACS_RUN_DEPENDS=	verilog-mode.el${EMACS_PKGNAMESUFFIX}>0:cad/verilog-mode.el@${FLAVOR}
+EMACS_PLIST_FILES=	${EMACS_SITE_LISPDIR}/dinotrace.el ${EMACS_SITE_LISPDIR}/sim-log.el
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"-O3"|""|' ${WRKSRC}/configure

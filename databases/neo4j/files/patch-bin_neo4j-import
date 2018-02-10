@@ -1,6 +1,27 @@
---- bin/neo4j-import.orig	2017-07-04 01:59:39 UTC
+--- bin/neo4j-import.orig	2018-02-07 19:48:06 UTC
 +++ bin/neo4j-import
-@@ -140,7 +140,7 @@ _setup_calculated_paths() {
+@@ -39,6 +39,8 @@ build_classpath() {
+ detect_os() {
+   if uname -s | grep -q Darwin; then
+     DIST_OS="macosx"
++  elif uname -s | grep -q FreeBSD; then
++    DIST_OS="freebsd"
+   elif [[ -e /etc/gentoo-release ]]; then
+     DIST_OS="gentoo"
+   else
+@@ -122,6 +124,9 @@ _find_java_home() {
+   [[ "${JAVA_HOME:-}" ]] && return
+
+   case "${DIST_OS}" in
++    "freebsd")
++      JAVA_HOME="%%JAVA_HOME%%"
++      ;;
+     "macosx")
+       JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+       ;;
+@@ -138,9 +143,9 @@ _show_java_help() {
+
+ _setup_calculated_paths() {
    if [[ -z "${NEO4J_HOME:-}" ]]; then
 -    NEO4J_HOME="$(cd "$(dirname "$0")"/.. && pwd)"
 +    NEO4J_HOME="$(cd "$(dirname "$0")"/../neo4j && pwd)"
@@ -9,4 +30,4 @@
 +  : "${NEO4J_CONF:="${NEO4J_HOME}/../etc"}"
    readonly NEO4J_HOME NEO4J_CONF
  }
- 
+

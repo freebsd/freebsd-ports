@@ -1,6 +1,6 @@
---- texi/Makefile.in.orig	2016-01-25 20:09:17.000000000 +0900
-+++ texi/Makefile.in	2016-11-29 15:30:25.384280000 +0900
-@@ -45,8 +45,8 @@
+--- texi/Makefile.in.orig	2016-01-25 11:09:17 UTC
++++ texi/Makefile.in
+@@ -45,8 +45,8 @@ DESTDIR		=
  
  TEXI_FILES	= tramp.texi trampver.texi doclicense.texi docstyle.texi \
  		  $(if $(findstring yes, @INSTALL_CHAPTER@), trampinst.texi)

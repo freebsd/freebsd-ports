@@ -1,5 +1,5 @@
 PyQt4 is a set of Python bindings for Digia's Qt4 application framework.
 This package provides the Qsci module for the Qscintilla2 editor component.
 
-WWW: http://www.riverbankcomputing.co.uk/software/pyqt/
+WWW: https://riverbankcomputing.com/software/pyqt
 	http://www.riverbankcomputing.co.uk/software/qscintilla/

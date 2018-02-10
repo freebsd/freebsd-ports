@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Bot-BasicBot
-PORTVERSION=	0.91
+PORTVERSION=	0.93
 CATEGORIES=	irc perl5
 MASTER_SITES=	CPAN/Bot
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
-		p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC
+		p5-POE-Component-IRC>=6.90:irc/p5-POE-Component-IRC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

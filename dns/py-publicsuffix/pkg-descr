@@ -7,4 +7,4 @@ Accurately knowing the public suffix of a domain is useful when handling web
 browser cookies, highlighting the most important part of a domain name in a
 user interface or sorting URLs by web site
 
-WWW: https://pypi.python.org/pypi/publicsuffix/
+WWW: https://pypi.python.org/pypi/publicsuffix

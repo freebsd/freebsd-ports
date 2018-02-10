@@ -1,8 +1,8 @@
 # Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
 
-SEAMONKEY_I18N_ALL_=	cs de en-GB en-US es-AR es-ES fr hu it ja lt nl	\
-			pl pt-PT ru sk sv-SE zh-CN zh-TW
+SEAMONKEY_I18N_ALL_=	cs de en-GB en-US es-AR es-ES fr hu it ja lt \
+			nb-NO nl pl pt-PT ru sk sv-SE zh-CN zh-TW
 
 .if defined(SEAMONKEY_I18N_ALL) || (defined(PACKAGE_BUILDING) && !exists(${OPTIONS_FILE})) || make(makesum)
 SEAMONKEY_I18N=   ${SEAMONKEY_I18N_ALL_}

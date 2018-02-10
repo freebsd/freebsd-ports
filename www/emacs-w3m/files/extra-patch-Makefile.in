@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-06-28 14:59:34.000000000 +0900
-+++ Makefile.in	2014-06-28 15:02:17.000000000 +0900
-@@ -99,19 +99,6 @@
+--- Makefile.in.orig	2017-12-31 05:56:38 UTC
++++ Makefile.in
+@@ -99,19 +99,6 @@ install-lisp: lisp
  	      $(INSTALL_DATA) shimbun/$$p "$(DESTDIR)$(lispdir)/s$$p";\
  	    fi;\
  	  done;\
@@ -10,7 +10,7 @@
 -	    if test $(COMPRESS_INSTALL) = yes -a -n "$(GZIP_PROG)"\
 -		-a -f "shimbun/$$p"c; then\
 -		rm -f "$(DESTDIR)$(lispdir)/$$p".gz;\
--		$(GZIP_PROG) -9n "$(DESTDIR)$(lispdir)/$$p";\
+-		"$(GZIP_PROG)" -9n "$(DESTDIR)$(lispdir)/$$p";\
 -	    fi;\
 -	  done;\
 -	  for p in `cd shimbun && echo *.elc`; do\

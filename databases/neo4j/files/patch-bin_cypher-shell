@@ -1,7 +1,30 @@
---- bin/cypher-shell.orig	2017-07-04 01:59:39 UTC
+--- bin/cypher-shell.orig	2018-02-07 19:48:06 UTC
 +++ bin/cypher-shell
-@@ -72,7 +72,7 @@ build_classpath() {
- 
+@@ -41,7 +41,9 @@ _find_java_cmd() {
+ detect_os() {
+   if uname -s | grep -q Darwin; then
+     DIST_OS="macosx"
+-  elif [[ -e /etc/gentoo-release ]]; then
++  elif uname -s | grep -q FreeBSD; then
++    DIST_OS="freebsd"
++   elif [[ -e /etc/gentoo-release ]]; then
+     DIST_OS="gentoo"
+   else
+     DIST_OS="other"
+@@ -52,7 +54,10 @@ _find_java_home() {
+   [[ "${JAVA_HOME:-}" ]] && return
+
+   case "${DIST_OS}" in
+-    "macosx")
++    "freebsd")
++      JAVA_HOME="%%JAVA_HOME%%"
++      ;;
++     "macosx")
+       JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+       ;;
+     "gentoo")
+@@ -72,7 +77,7 @@ build_classpath() {
+
    # Then try installation directory (prefix/bin and prefix/share/cypher-shell/lib)
    if [[ -z "${JARPATH}" ]]; then
 -    APP_HOME="${APP_HOME}/../share/cypher-shell"

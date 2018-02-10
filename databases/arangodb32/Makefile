@@ -3,7 +3,7 @@
 
 PORTNAME=	arangodb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.9
+DISTVERSION=	3.2.10
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	32
 
@@ -11,6 +11,7 @@ MAINTAINER=	galu@packetdam.com
 COMMENT=	ArangoDB is a distributed NoSQL database with multiple data models
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only builds on amd64"

@@ -32,10 +32,4 @@ post-install:
 	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} ";"
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} == 2701 || ${PYTHON_REL} == 3200
-IGNORE=	does not work with ${PYTHON_VERSION} (see http://goo.gl/SZpDN)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

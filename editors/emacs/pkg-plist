@@ -1201,8 +1201,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/timeclock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/todo-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/todo-mode.elc
-%%CANNA%%%%DATADIR%%/%%EMACS_VER%%/lisp/canna.el.gz
-%%CANNA%%%%DATADIR%%/%%EMACS_VER%%/lisp/canna.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/case-table.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/case-table.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cdl.el.gz
@@ -2392,8 +2390,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/isearch.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/isearchb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/isearchb.elc
-%%CANNA%%%%DATADIR%%/%%EMACS_VER%%/lisp/isearch-ext.el.gz
-%%CANNA%%%%DATADIR%%/%%EMACS_VER%%/lisp/isearch-ext.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/jit-lock.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/jit-lock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/jka-cmpr-hook.el.gz
@@ -3980,7 +3976,6 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/bytecode.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/callint.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/callproc.c
-%%CANNA%%%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/canna.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/casefiddle.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/casetab.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/category.c

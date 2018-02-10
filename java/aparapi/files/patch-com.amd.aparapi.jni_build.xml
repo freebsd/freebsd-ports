@@ -1,6 +1,6 @@
---- com.amd.aparapi.jni/build.xml.orig	2015-09-21 01:20:25 UTC
+--- com.amd.aparapi.jni/build.xml.orig	2018-01-22 14:48:34 UTC
 +++ com.amd.aparapi.jni/build.xml
-@@ -71,6 +71,23 @@ First consider editing the properties in
+@@ -71,6 +71,23 @@ First consider editing the properties in build.propert
           </and>
        </condition>
  
@@ -24,7 +24,7 @@
        <echo message="amd.app.sdk.dir ${amd.app.sdk.dir}"/>
  
  	  <!-- Check for Visual Studio Compiler -->
-@@ -300,9 +317,16 @@ First consider editing the properties in
+@@ -300,9 +317,16 @@ First consider editing the properties in build.propert
              <not>
                 <os family="mac" />
              </not>
@@ -41,7 +41,7 @@
        <condition property="use.gcc_mac">
           <os family="mac" />
        </condition>
-@@ -352,6 +376,9 @@ First consider editing the properties in
+@@ -352,6 +376,9 @@ First consider editing the properties in build.propert
                    <os family="mac" />
                 </not>
                 <not>
@@ -51,7 +51,7 @@
                    <isset property="amd.app.sdk.dir" />
                 </not>
              </and>
-@@ -485,6 +512,45 @@ First consider editing the properties in
+@@ -485,6 +512,46 @@ First consider editing the properties in build.propert
        </exec>
     </target>
  
@@ -60,6 +60,7 @@
 +      <echo message="freebsdcc ${os.arch}" />
 +      <exec executable="clang++" failonerror="true">
 +         <arg value="-m${gcc.m.value}" />
++         <arg value="-std=gnu++98" />
 +         <arg value="-O3" />
 +         <arg value="-g" />
 +         <arg value="-fPIC" />
@@ -97,7 +98,7 @@
     <target name="gcc_mac" if="use.gcc_mac">
        <mkdir dir="${basedir}/dist"/>
        <echo message="gcc ${os.arch}" />
-@@ -575,7 +641,7 @@ First consider editing the properties in
+@@ -575,7 +642,7 @@ First consider editing the properties in build.propert
        </exec>
     </target>
  
@@ -106,7 +107,7 @@
  
     <target name="msvc_cltest" if="use.msvc">
        <mkdir dir="${basedir}\dist"/>
-@@ -627,6 +693,24 @@ First consider editing the properties in
+@@ -627,6 +694,24 @@ First consider editing the properties in build.propert
        </exec>
     </target>
  
@@ -131,7 +132,7 @@
     <target name="gcc_cltest" if="use.gcc">
        <mkdir dir="${basedir}/dist"/>
        <echo message="gcc cltest ${os.arch}" />
-@@ -674,6 +758,20 @@ First consider editing the properties in
+@@ -674,6 +759,20 @@ First consider editing the properties in build.propert
        </exec>
     </target>
  

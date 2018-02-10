@@ -13,6 +13,7 @@
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/misc.R
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/mpi.R
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/ns-eval.R
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/pkg.R
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/VERSION
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ess-julia.jl
 %%EMACS_LIBDIR%%/%%ETCDIR%%/ess-s4.S
@@ -67,8 +68,6 @@
 %%EMACS_SITE_LISPDIR%%/ess/ess-julia.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-lsp-l.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-lsp-l.elc
-%%EMACS_SITE_LISPDIR%%/ess/ess-menu.el
-%%EMACS_SITE_LISPDIR%%/ess/ess-menu.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-mode.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-mode.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-mouse.el
@@ -87,10 +86,10 @@
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-args.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-completion.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-completion.elc
-%%EMACS_SITE_LISPDIR%%/ess/ess-r-d.el
-%%EMACS_SITE_LISPDIR%%/ess/ess-r-d.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-gui.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-gui.elc
+%%EMACS_SITE_LISPDIR%%/ess/ess-r-mode.el
+%%EMACS_SITE_LISPDIR%%/ess/ess-r-mode.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-package.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-package.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-r-syntax.el
@@ -103,8 +102,8 @@
 %%EMACS_SITE_LISPDIR%%/ess/ess-roxy.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-rutils.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-rutils.elc
-%%EMACS_SITE_LISPDIR%%/ess/ess-s-l.el
-%%EMACS_SITE_LISPDIR%%/ess/ess-s-l.elc
+%%EMACS_SITE_LISPDIR%%/ess/ess-s-lang.el
+%%EMACS_SITE_LISPDIR%%/ess/ess-s-lang.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-s3-d.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-s3-d.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-s4-d.el
@@ -127,10 +126,10 @@
 %%EMACS_SITE_LISPDIR%%/ess/ess-sp6-d.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-sp6w-d.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-sp6w-d.elc
-%%EMACS_SITE_LISPDIR%%/ess/ess-sta-d.el
-%%EMACS_SITE_LISPDIR%%/ess/ess-sta-d.elc
-%%EMACS_SITE_LISPDIR%%/ess/ess-sta-l.el
-%%EMACS_SITE_LISPDIR%%/ess/ess-sta-l.elc
+%%EMACS_SITE_LISPDIR%%/ess/ess-stata-lang.el
+%%EMACS_SITE_LISPDIR%%/ess/ess-stata-lang.elc
+%%EMACS_SITE_LISPDIR%%/ess/ess-stata-mode.el
+%%EMACS_SITE_LISPDIR%%/ess/ess-stata-mode.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-swv.el
 %%EMACS_SITE_LISPDIR%%/ess/ess-swv.elc
 %%EMACS_SITE_LISPDIR%%/ess/ess-toolbar.el

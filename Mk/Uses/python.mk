@@ -402,7 +402,11 @@ FLAVORS=	${_ALL_PYTHON_FLAVORS}
 .    for _v in ${PYTHON_DEFAULT} ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT}
 _f=	py${_v:S/.//}
 .      if ${_ALL_PYTHON_FLAVORS:M${_f}} && !${FLAVORS:M${_f}}
+.if !empty(FLAVORS)
 FLAVORS:=	${FLAVORS} ${_f}
+.else
+FLAVORS:=	${_f}
+.endif
 .      endif
 .    endfor
 .  endif

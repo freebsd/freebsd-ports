@@ -2,7 +2,9 @@
 bin/recollindex
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 %%PYTHON_SITELIBDIR%%/recoll/__init__.py
+%%PYTHON_SITELIBDIR%%/recoll/__init__.pyc
 %%PYTHON_SITELIBDIR%%/recoll/rclconfig.py
+%%PYTHON_SITELIBDIR%%/recoll/rclconfig.pyc
 %%PYTHON_SITELIBDIR%%/recoll/rclextract.so
 %%PYTHON_SITELIBDIR%%/recoll/recoll.so
 lib/recoll/librecoll-%%VERSION%%.so

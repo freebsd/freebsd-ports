@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--disable-memcached-sasl --enable-memcached-json --with-libmemca
 USES=		pkgconfig php:ext
 USE_PHP=	session:build json:build
 PHP_VER=	70
-IGNORE_WITH_PHP=56
+IGNORE_WITH_PHP=56 71 72
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	php-memcached-dev

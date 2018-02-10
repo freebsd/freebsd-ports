@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, highly customizable PHP photo album
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.          
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 

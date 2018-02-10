@@ -1,6 +1,7 @@
 bin/pylupdate5
 bin/pyrcc5
 %%PYTHON_SITELIBDIR%%/PyQt5/QtXml.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtXml.pyi
 %%PYTHON_SITELIBDIR%%/PyQt5/pylupdate.so
 %%PYTHON_SITELIBDIR%%/PyQt5/pylupdate_main.py
 %%PYTHON_SITELIBDIR%%/PyQt5/pyrcc.so

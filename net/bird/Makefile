@@ -3,12 +3,12 @@
 
 PORTNAME=	bird
 PORTVERSION=	1.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
 
-MAINTAINER=	melifaro@ipfw.ru
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT?=	Dynamic IP routing daemon (${FLAVOR:Uipv4:S/ip/IP/} version)
 
 LICENSE=	GPLv2

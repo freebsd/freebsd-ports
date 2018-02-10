@@ -3,39 +3,35 @@
 
 PORTNAME=	migemo.el
 PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Japanese incremental search tool for Emacs
 
 LICENSE=	GPLv2
 
-USE_EMACS=	yes
-USE_GITHUB=	yes
-
 RUN_DEPENDS=	cmigemo:japanese/cmigemo
 
+USES=		emacs
+USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-jp
 GH_PROJECT=	migemo
 
-CONFLICTS=	ja-migemo-emacs24-[0-9]*
-
+CONFLICTS=	ja-migemo-emacs
+NO_ARCH=	yes
 NO_BUILD=	yes
-
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/migemo.el
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-OPTINOS_DEFAULT=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/migemo.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

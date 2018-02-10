@@ -1,8 +1,0 @@
---- build/Makefile.am.common.orig	2016-09-14 15:02:26 UTC
-+++ build/Makefile.am.common
-@@ -9,4 +9,4 @@ MAINTAINERCLEANFILES = Makefile.in
- # Note:
- # -I$(top_srcdir) is here for #include 'lib/iniparser/src/iniparser.h' to work
- #
--AM_CFLAGS = -Wall -Werror -Wextra -Wno-unused-parameter -std=c99 -pedantic -I$(top_srcdir)
-+AM_CFLAGS = -Wextra -Wno-unused-parameter -std=c99 -pedantic -I$(top_srcdir)

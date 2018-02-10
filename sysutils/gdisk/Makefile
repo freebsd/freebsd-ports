@@ -3,6 +3,7 @@
 
 PORTNAME=	gdisk
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/gptfdisk/gptfdisk/${PORTVERSION}
 DISTNAME=	gptfdisk-${PORTVERSION}
@@ -30,7 +31,9 @@ UTF16_DESC=	Support for Unicode partition names
 
 CGDISK_ALL_TARGET=	cgdisk
 CGDISK_USES=		ncurses
+UTF16_USES=		compiler:c++11-lib
 UTF16_CPPFLAGS=		-DUSE_UTF16
+UTF16_CXXFLAGS=		-std=gnu++11
 UTF16_LDFLAGS=		-licuio -licuuc
 UTF16_LIB_DEPENDS=	libicuuc.so:devel/icu
 

@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ess
-DISTVERSION=	16.04
+DISTVERSION=	17.11
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
 		http://stat.ethz.ch/ESS/downloads/ess/
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	R support for Emacsen
@@ -18,8 +19,8 @@ RUN_DEPENDS=	R:math/R
 
 NO_ARCH=	yes
 
-USES=		gmake makeinfo tar:tgz
-USE_EMACS=	yes
+USES=		emacs gmake makeinfo perl5 tar:tgz
+USE_PERL5=	build
 
 INFO=		ess
 

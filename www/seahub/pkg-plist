@@ -297,7 +297,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-link.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-links.bb406c0f1843.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-links.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/share.e91a9adb9011.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/share.e1084afee823.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/shared-repo.887016f9da47.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/shared-repo.js
@@ -379,9 +379,9 @@
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/jquery.iframe-transport.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.603390194f29.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.c512bc07d260.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.af6ce7ebfdf1.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/main.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.e5556f477b96.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.5c9241c03836.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.ef8a19e97e35.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.js
@@ -581,7 +581,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/dir.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/dirent.46ace69d5584.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/dirent.js
-%%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/folder-share-item.da4cf4aec01f.js
+%%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/folder-share-item.485fb2cdac88.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/folder-share-item.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/group-member.e38424744e06.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/group-member.js
@@ -607,7 +607,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/search-repos.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/search-trash-repos.0e629c870320.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/search-trash-repos.js
-%%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/share.a4bf27bf31d9.js
+%%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/share.958986b18ab5.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/share.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/side-nav.58861626b95f.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/side-nav.js
@@ -1664,6 +1664,7 @@
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_groups.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_invitations.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_libraries.py
+%%SEAHUBDIR%%/tests/api/endpoints/admin/test_library_dirents.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_library_history.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_license.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_login_bg_image.py
@@ -1843,8 +1844,8 @@
 %%SEAHUBDIR%%/tests/seahub/views/repo/test_download_dir.py
 %%SEAHUBDIR%%/tests/seahub/views/repo/test_get_upload_url.py
 %%SEAHUBDIR%%/tests/seahub/views/repo/test_repo_history_view.py
-%%SEAHUBDIR%%/tests/seahub/views/repo/test_shared_dir.py
 %%SEAHUBDIR%%/tests/seahub/views/repo/test_shared_upload_link.py
+%%SEAHUBDIR%%/tests/seahub/views/repo/test_view_shared_dir.py
 %%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_link_search.py
 %%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_inst_admin.py
 %%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_inst_info_admins.py

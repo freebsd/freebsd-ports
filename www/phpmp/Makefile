@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web interface for music player daemon
 
+EXPIRATION_DATE=	2018-03-07
+DEPRECATED=	Unmaintained, all www files wrongly belongs to www user.
+
 LICENSE=	GPLv2
 
 NO_BUILD=	yes

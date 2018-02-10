@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	shadowsocks-libev
-PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.1.3
 CATEGORIES=	net
 
 MAINTAINER=	xiaoding+freebsd@xiaoding.org
 COMMENT=	Lightweight tunnel proxy which can help you get through firewalls
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libev.so:devel/libev \
 		libmbedcrypto.so:security/mbedtls \
@@ -18,17 +19,17 @@ LIB_DEPENDS=	libev.so:devel/libev \
 		libcares.so:dns/c-ares
 
 USES=		autoreconf gmake libtool:keepla pathfix
-
-# fetch from github repo
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
 USE_GITHUB=	yes
 GH_ACCOUNT=	shadowsocks
-GH_TUPLE=	shadowsocks:libcork:0220aa5:libcork/libcork \
-		shadowsocks:ipset:3ea7fe3:libipset/libipset \
-		shadowsocks:libbloom:7a9deb8:libbloom/libbloom
+GH_TUPLE=	shadowsocks:libbloom:7a9deb8:libbloom/libbloom \
+		shadowsocks:libcork:0220aa5:libcork/libcork \
+		shadowsocks:ipset:3ea7fe3:libipset/libipset
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
-
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	BASH DOCS ZSH
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
@@ -38,11 +39,23 @@ DOCS_CONFIGURE_OFF=	--disable-documentation
 USE_RC_SUBR=	shadowsocks_libev
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^#ifdef TCP_FASTOPEN|#if defined(TCP_FASTOPEN) \&\& defined(__linux)|' \
+	@${REINPLACE_CMD} -e 's|^#ifdef TCP_FASTOPEN|#if defined(TCP_FASTOPEN) \&\& defined(__linux)|' \
 		${WRKSRC}/src/local.c ${WRKSRC}/src/server.c
 
 post-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/debian/config.json ${STAGEDIR}${ETCDIR}/config.json.sample
+
+post-install-BASH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+.for c in ss-local ss-manager ss-redir ss-server ss-tunnel
+	${INSTALL_DATA} ${WRKSRC}/completions/bash/${c} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${c}
+.endfor
+
+post-install-ZSH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+.for c in _ss-local _ss-manager _ss-redir _ss-server _ss-tunnel
+	${INSTALL_DATA} ${WRKSRC}/completions/zsh/${c} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/${c}
+.endfor
 
 .include <bsd.port.mk>

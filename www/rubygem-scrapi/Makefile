@@ -20,7 +20,7 @@ USES=		gem
 PLIST_FILES=	${GEM_LIB_DIR}/lib/tidy/libtidy.so
 
 DEPRECATED=	No longer maintained upstream
-EXPIRATION_DATE=2018-02-10
+EXPIRATION_DATE=2018-02-12
 
 post-install:
 	${RM} ${LOCALBASE}/${GEM_LIB_DIR}/lib/tidy/libtidy.dll

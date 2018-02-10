@@ -1,0 +1,15 @@
+--- python/geographiclib/CMakeLists.txt.orig	2017-10-05 10:11:24 UTC
++++ python/geographiclib/CMakeLists.txt
+@@ -4,9 +4,10 @@
+ file (GLOB PYTHON_FILES [A-Za-z_]*.py)
+ file (GLOB TEST_FILES test/[A-Za-z_]*.py)
+ if (COMMON_INSTALL_PATH)
+-  set (INSTALL_PYTHON_DIR "lib${LIB_SUFFIX}/python/site-packages")
++  set (INSTALL_PYTHON_DIR "lib${LIB_SUFFIX}/python/site-packages"
++    CACHE STRING "")
+ else ()
+-  set (INSTALL_PYTHON_DIR "python")
++  set (INSTALL_PYTHON_DIR "python" CACHE STRING "")
+ endif ()
+ 
+ install (FILES ${PYTHON_FILES}

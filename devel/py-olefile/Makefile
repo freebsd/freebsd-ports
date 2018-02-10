@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	olefile
-PORTVERSION=	0.44
+PORTVERSION=	0.45.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,14 @@ COMMENT=	Python module to read MS OLE2 files
 
 LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/olefile/LICENSE.txt
-LICENSE_FILE_MIT=	${WRKSRC}/olefile/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
-USES=		dos2unix python zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+do-test:
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} tests/test_olefile.py)
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
 This module implements a simple batching mechanism that allows you to split
 a large sequence into smaller batches.
 
-WWW: https://pypi.python.org/pypi/z3c.batching/
+WWW: https://pypi.python.org/pypi/z3c.batching

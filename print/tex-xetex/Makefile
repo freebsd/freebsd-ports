@@ -2,7 +2,7 @@
 
 PORTNAME=	xetex
 PORTVERSION=	0.99992
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -24,7 +24,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpoppler.so:graphics/poppler \
 		libTECkit.so:textproc/teckit
 
-USES=		pkgconfig tar:xz
+USES=		compiler:c++11-lib pkgconfig tar:xz
+USE_CXXSTD=	gnu++11
 USE_TEX=	kpathsea web2c texmf formats fmtutil dvipdfmx
 USE_XORG=	pixman
 USE_GNOME=	cairo

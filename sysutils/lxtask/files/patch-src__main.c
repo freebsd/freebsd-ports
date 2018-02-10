@@ -1,6 +1,6 @@
---- ./src/main.c.orig	2010-04-12 13:54:32.000000000 +0400
-+++ ./src/main.c	2010-09-25 23:50:53.951634770 +0400
-@@ -51,7 +51,6 @@
+--- src/main.c.orig	2011-06-21 21:50:00 UTC
++++ src/main.c
+@@ -56,7 +56,6 @@ guint win_height;
  guint refresh_interval;
  guint rID;
  
@@ -8,8 +8,8 @@
  
  int main (int argc, char *argv[])
  {
-@@ -65,7 +64,6 @@
-     gtk_set_locale ();
+@@ -72,7 +71,6 @@ int main (int argc, char *argv[])
+ #endif
      gtk_init (&argc, &argv);
  
 -    PAGE_SIZE=sysconf(_SC_PAGESIZE)>>10;

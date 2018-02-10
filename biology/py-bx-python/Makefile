@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bx-python
-PORTVERSION=	0.7.4
-DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.1
 CATEGORIES=	biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for reading, manipulating and writing genomic data sets
 
 LICENSE=	MIT
@@ -17,10 +16,12 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}python-lzo>0:archivers/py-python-lzo@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		compiler python
 USE_GITHUB=	yes
 GH_ACCOUNT=	bxlab
+USE_PYTHON=	autoplist cython distutils
 
-USES=		compiler python
-USE_PYTHON=	autoplist distutils
+post-install:
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bx -name "*.so" | ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>

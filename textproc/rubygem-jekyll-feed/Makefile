@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-feed
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,8 @@ RUN_DEPENDS=	rubygem-jekyll>=3.3:www/rubygem-jekyll
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+
+SHEBANG_FILES=	script/*
 
 .include <bsd.port.mk>

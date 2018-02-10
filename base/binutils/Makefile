@@ -2,12 +2,12 @@
 
 PORTEPOCH=	0
 CATEGORIES=	base
-PKGNAMEPREFIX=	${OPSYS}-
+PKGNAMEPREFIX=	${OPSYS:tl}-
 VALID_CATEGORIES=	base
 
 COMMENT=	GNU binary tools for base
 
-MASTERDIR=	${.CURDIR}/../..//devel/binutils
+MASTERDIR=	${.CURDIR}/../../devel/binutils
 PLIST=		${.CURDIR}/pkg-plist.${TARGET_ARCH}
 
 .if !defined(CROSS_TOOLCHAIN)
@@ -19,7 +19,8 @@ PLIST=		${.CURDIR}/pkg-plist.${TARGET_ARCH}
 .endif
 
 TARGET_ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
-BUTARGET=	${TARGET_ARCH}-${OPSYS:tl}
+BUTARGET=	${TARGET_ARCH}-unknown-${OPSYS:tl}${OSREL}
+
 CONFIGURE_ARGS+=	--disable-host-shared
 PREFIX=	/usr
 

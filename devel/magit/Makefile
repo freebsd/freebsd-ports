@@ -3,8 +3,9 @@
 
 PORTNAME=	magit
 PORTVERSION=	2.11.0
+PORTREVISION=	1
 CATEGORIES=	devel elisp
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Interface to Git for Emacs
@@ -12,26 +13,17 @@ COMMENT=	Interface to Git for Emacs
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	dash.el>=2.12.1:devel/dash.el \
-		with-editor-${EMACS_PORT_NAME}>=2.5.0:editors/with-editor
-RUN_DEPENDS=	dash.el>=2.12.1:devel/dash.el \
-		with-editor-${EMACS_PORT_NAME}>=2.5.0:editors/with-editor
+BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el@${EMACS_FLAVOR} \
+		with-editor${EMACS_PKGNAMESUFFIX}>=2.5.0:editors/with-editor@${EMACS_FLAVOR}
+RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el@${EMACS_FLAVOR} \
+		with-editor${EMACS_PKGNAMESUFFIX}>=2.5.0:editors/with-editor@${EMACS_FLAVOR}
 
-USES=		gmake makeinfo
-USE_EMACS=	yes
+USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
+
 INFO=		magit magit-popup
 PORTDOCS=	AUTHORS.md
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=			DOCS GIT_SUBVERSION
-GIT_SUBVERSION_DESC=		Use devel/git-subversion as backend
-GIT_SUBVERSION_BUILD_DEPENDS=	git-subversion>0:devel/git-subversion
-GIT_SUBVERSION_BUILD_DEPENDS_OFF=	git>0:devel/git
-GIT_SUBVERSION_RUN_DEPENDS=	git-subversion>0:devel/git-subversion
-GIT_SUBVERSION_RUN_DEPENDS_OFF=	git>0:devel/git
-
-.include <bsd.port.pre.mk>
 
 ELISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 MAKE_ENV+=	INSTALL_INFO=install-info \
@@ -42,4 +34,11 @@ MAKE_ENV+=	INSTALL_INFO=install-info \
 		docdir=${DOCSDIR}
 PLIST_SUB+=	ELISPDIR=${ELISPDIR}
 
-.include <bsd.port.post.mk>
+OPTIONS_DEFINE=			DOCS GIT_SUBVERSION
+GIT_SUBVERSION_DESC=		Use devel/git-subversion as backend
+GIT_SUBVERSION_BUILD_DEPENDS=	git-subversion>0:devel/git-subversion
+GIT_SUBVERSION_BUILD_DEPENDS_OFF=	git>0:devel/git
+GIT_SUBVERSION_RUN_DEPENDS=	git-subversion>0:devel/git-subversion
+GIT_SUBVERSION_RUN_DEPENDS_OFF=	git>0:devel/git
+
+.include <bsd.port.mk>

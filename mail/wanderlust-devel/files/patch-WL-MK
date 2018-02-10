@@ -1,5 +1,5 @@
---- WL-MK.orig	2012-01-23 21:34:34.000000000 +0900
-+++ WL-MK	2012-01-23 21:38:11.000000000 +0900
+--- WL-MK.orig	2017-06-28 06:06:07 UTC
++++ WL-MK
 @@ -131,7 +131,7 @@
      (defvar PIXMAPDIR
        (if (string= pixmap-dir "NONE")

@@ -1,5 +1,6 @@
-SHA256 (GeographicLib/GeographicLib-1.46.tar.gz) = 3a0606fd99fb099572ba1923f556b05b545965359edb92930a658fc99172d962
-SIZE (GeographicLib/GeographicLib-1.46.tar.gz) = 2208372
+TIMESTAMP = 1517542980
+SHA256 (GeographicLib/GeographicLib-1.49.tar.gz) = aec0ab52b6b9c9445d9d0a77e3af52257e21d6e74e94d8c2cb8fa6f11815ee2b
+SIZE (GeographicLib/GeographicLib-1.49.tar.gz) = 2448498
 SHA256 (GeographicLib/geoids-distrib/egm84-30.tar.bz2) = 18bc3e2b55c4f9f2f9ba8d14380dc47cc5c0d00dc2363b723d2305f30a91498e
 SIZE (GeographicLib/geoids-distrib/egm84-30.tar.bz2) = 416481
 SHA256 (GeographicLib/geoids-distrib/egm84-15.tar.bz2) = 579e3dad2f33b54f1fed16edb3ed9d4ae8cdad6ea064f7375af30d678eb2e51c
@@ -36,3 +37,5 @@ SHA256 (GeographicLib/magnetic-distrib/emm2010.tar.bz2) = aa8782fddb505d8dc24e3d
 SIZE (GeographicLib/magnetic-distrib/emm2010.tar.bz2) = 3627692
 SHA256 (GeographicLib/magnetic-distrib/emm2015.tar.bz2) = 8e71a9704c5f2714bb65581df68e30f0d84d0ad17286d00efb782e7232334c3f
 SIZE (GeographicLib/magnetic-distrib/emm2015.tar.bz2) = 659405
+SHA256 (GeographicLib/magnetic-distrib/emm2017.tar.bz2) = 13ace8ecaf05bf07c7dda93f4a52e98e14be7147d23213fcbe946de3362954a1
+SIZE (GeographicLib/magnetic-distrib/emm2017.tar.bz2) = 1733711

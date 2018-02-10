@@ -4,6 +4,8 @@
 %%WWWDIR_REL%%/gateways/sshnokey
 %%WWWDIR_REL%%/gateways/telnet
 %%WWWDIR_REL%%/gateways/ucssdk
+%%WWWDIR_REL%%/wwwroot/css/codemirror/codemirror.css
+%%WWWDIR_REL%%/wwwroot/css/codemirror/rackcode.css
 %%WWWDIR_REL%%/wwwroot/css/jquery-ui-1.8.22.redmond.css
 %%WWWDIR_REL%%/wwwroot/css/jquery.contextmenu.css
 %%WWWDIR_REL%%/wwwroot/css/pi.css
@@ -40,15 +42,9 @@
 %%WWWDIR_REL%%/wwwroot/inc/triggers.php
 %%WWWDIR_REL%%/wwwroot/inc/upgrade.php
 %%WWWDIR_REL%%/wwwroot/index.php
-%%WWWDIR_REL%%/wwwroot/js/codemirror/codemirror.css
-%%WWWDIR_REL%%/wwwroot/js/codemirror/codemirror.js
-%%WWWDIR_REL%%/wwwroot/js/codemirror/css.js
-%%WWWDIR_REL%%/wwwroot/js/codemirror/htmlmixed.js
-%%WWWDIR_REL%%/wwwroot/js/codemirror/javascript.js
-%%WWWDIR_REL%%/wwwroot/js/codemirror/php.js
-%%WWWDIR_REL%%/wwwroot/js/codemirror/rackcode.js
-%%WWWDIR_REL%%/wwwroot/js/codemirror/sql.js
 %%WWWDIR_REL%%/wwwroot/js/bulkselector.js
+%%WWWDIR_REL%%/wwwroot/js/codemirror/codemirror.js
+%%WWWDIR_REL%%/wwwroot/js/codemirror/rackcode.js
 %%WWWDIR_REL%%/wwwroot/js/inplace-edit.js
 %%WWWDIR_REL%%/wwwroot/js/jquery-1.4.4.min.js
 %%WWWDIR_REL%%/wwwroot/js/jquery-ui-1.8.21.min.js
@@ -156,6 +152,7 @@
 %%WWWDIR_REL%%/wwwroot/pix/tango-go-prev-next-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-go-prev-next-gray-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-go-previous.png
+%%WWWDIR_REL%%/wwwroot/pix/tango-go-up.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-internet-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-list-add-big.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-list-add.png
@@ -179,4 +176,4 @@
 %%WWWDIR_REL%%/wwwroot/pix/tango-view-refresh-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/unchecked.png
 %%WWWDIR_REL%%/wwwroot/pix/virtualresources.png
-@unexec if [ -d %D/%%WWWDIR_REL%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%WWWDIR%%/`` to remove any configuration files left."; fi
+@postunexec if [ -d %D/%%WWWDIR_REL%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%WWWDIR%%/`` to remove any configuration files left."; fi

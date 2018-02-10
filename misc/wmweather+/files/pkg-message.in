@@ -7,11 +7,14 @@ All options are given in the config file and in command line (CLI)
 Please copy example.conf to yours home directory and adjust it to your needs!
 
     su user
-
     mkdir ~/.wmweather+
-
     cp -a %%EXAMPLESDIR%%/example.conf ~/.wmweather+/conf
+    exit
 
+If you prefer a global configuration file, do
+
+    su root
+    cp -a %%EXAMPLESDIR%%/example.conf %%PREFIX%%/etc/wmweather+.conf
     exit
 
 Have fun!

@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtSvg.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtSvg.pyi
 %%PYQT_SIPDIR%%/QtSvg/QtSvgmod.sip
 %%PYQT_SIPDIR%%/QtSvg/qgraphicssvgitem.sip
 %%PYQT_SIPDIR%%/QtSvg/qsvggenerator.sip

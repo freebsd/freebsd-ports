@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtWidgets.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtWidgets.pyi
 %%PYQT_SIPDIR%%/QtWidgets/QtWidgetsmod.sip
 %%PYQT_SIPDIR%%/QtWidgets/qabstractbutton.sip
 %%PYQT_SIPDIR%%/QtWidgets/qabstractitemdelegate.sip

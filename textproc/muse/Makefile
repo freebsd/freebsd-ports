@@ -3,18 +3,17 @@
 
 PORTNAME=	muse
 PORTVERSION=	3.20
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
 		LOCAL/dryice \
 		http://dryice.name/computer/FreeBSD/distfiles/
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Authoring and publishing environment for Emacs
 
-USE_EMACS=	yes
-USES=		gmake makeinfo
+USES=		emacs gmake makeinfo
 
 INFO=		muse
 
@@ -37,10 +36,4 @@ post-install:
 		${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} scripts ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.pre.mk>
-
-.if ${EMACS_PORT_NAME} != "emacs23"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

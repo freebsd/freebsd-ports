@@ -3,12 +3,12 @@
 
 PORTNAME=	ddskk
 PORTVERSION=	15.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/ \
 		ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \
 		http://www.ring.gr.jp/archives/elisp/skk/maintrunk/
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Kana to Kanji conversion program on Emacsen
@@ -16,7 +16,8 @@ COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/READMEs/COPYING
 
-USE_EMACS=	yes
+USES=		emacs
+
 MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}" \
 		SKK_LISPDIR="${STAGEDIR}${PREFIX}/${SKK_LISPDIR}" \
 		SKK_INFODIR="${STAGEDIR}${PREFIX}/${INFO_PATH}"

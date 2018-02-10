@@ -150,7 +150,6 @@ bin/pt-visual-explain
 %%SITE_PERL%%/bash/subshell.sh
 %%SITE_PERL%%/bash/summary_common.sh
 %%SITE_PERL%%/bash/tmpdir.sh
-%%SITE_ARCH%%/auto/percona-toolkit/.packlist
 %%PERL5_MAN1%%/percona-toolkit.1.gz
 %%PERL5_MAN1%%/pt-align.1.gz
 %%PERL5_MAN1%%/pt-archiver.1.gz

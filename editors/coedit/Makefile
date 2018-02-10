@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	coedit
-DISTVERSION=	3_update_3
-PORTREVISION=	1
+PORTVERSION=	3.6.1
+DISTVERSIONPREFIX=v
 CATEGORIES=	editors
 
 MAINTAINER=	acm@FreeBSD.org
@@ -38,17 +38,18 @@ DESKTOP_ENTRIES="Coedit" \
 		${TRUE}
 
 OPTIONS_SINGLE=		LCL
-OPTIONS_SINGLE_LCL=	GTK2 QT4
+OPTIONS_SINGLE_LCL=	GTK2 QT4 QT5
 
 GTK2_DESC=		Use gtk20 interface
 QT4_DESC=		Use qt4 interface
+QT5_DESC=		Use qt5 interface
 
 OPTIONS_DEFAULT=	GTK2
 
 D_LIB_DIR=	${LOCALBASE}/lib/d
 D_INCLUDE_DIR=	${LOCALBASE}/include/d
 PROJECT_FILE=	lazproj/coedit.lpi
-LAZARUS_VER=	1.6.4
+LAZARUS_VER=	1.8.0
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild
 LAZARUS_DIR=	${WRKSRC}/lazarus-${LAZARUS_VER}
 LCL_UNITS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
@@ -63,6 +64,11 @@ QT4_BUILD_DEPENDS=	${LCL_UNITS_DIR}/qt/interfaces.ppu:editors/lazarus-lcl-qt
 QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
 QT4_MAKE_ENV=		GUI=qt
 QT4_VARS=		LCL_PLATFORM=qt
+
+QT4_BUILD_DEPENDS=	${LCL_UNITS_DIR}/qt5/interfaces.ppu:editors/lazarus-lcl-qt5
+QT4_LIB_DEPENDS=	libQt5Pas.so:x11-toolkits/qt5pas
+QT4_MAKE_ENV=		GUI=qt5
+QT4_VARS=		LCL_PLATFORM=qt5
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LDMD2_CMD%%|${LDMD2_CMD}|g' \

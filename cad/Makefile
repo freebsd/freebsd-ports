@@ -72,6 +72,7 @@
     SUBDIR += py-gdspy
     SUBDIR += py-lcapy
     SUBDIR += py-pycam
+    SUBDIR += py-pyfda
     SUBDIR += python-gdsii
     SUBDIR += pythoncad
     SUBDIR += qcad

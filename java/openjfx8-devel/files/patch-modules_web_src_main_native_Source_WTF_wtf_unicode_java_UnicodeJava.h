@@ -1,8 +1,8 @@
---- modules/web/src/main/native/Source/WTF/wtf/unicode/java/UnicodeJava.h.orig	2017-09-08 16:56:55 UTC
+--- modules/web/src/main/native/Source/WTF/wtf/unicode/java/UnicodeJava.h.orig	2018-01-16 01:40:56 UTC
 +++ modules/web/src/main/native/Source/WTF/wtf/unicode/java/UnicodeJava.h
 @@ -15,21 +15,6 @@
  
- #define CharProp(p) java_lang_Character_##p
+ #define CharProp(p) com_sun_webkit_dom_CharacterDataImpl_##p
  
 -#if PLATFORM(JAVA) && OS(WINDOWS)
 -typedef wchar_t UChar;

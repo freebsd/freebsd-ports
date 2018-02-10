@@ -1,7 +1,4 @@
-@owner %%NEXTCLOUD_USERNAME%%
-@group %%NEXTCLOUD_GROUPNAME%%
 %%WWWDIR%%/CHANGELOG.md
-%%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
 %%WWWDIR%%/appinfo/autoload.php
 %%WWWDIR%%/appinfo/database.xml
@@ -30,6 +27,8 @@
 %%WWWDIR%%/l10n/en_GB.json
 %%WWWDIR%%/l10n/es.js
 %%WWWDIR%%/l10n/es.json
+%%WWWDIR%%/l10n/es_419.js
+%%WWWDIR%%/l10n/es_419.json
 %%WWWDIR%%/l10n/es_AR.js
 %%WWWDIR%%/l10n/es_AR.json
 %%WWWDIR%%/l10n/es_CL.js
@@ -139,5 +138,11 @@
 %%WWWDIR%%/vendor/yubico/u2flib-server/apigen.neon
 %%WWWDIR%%/vendor/yubico/u2flib-server/composer.json
 %%WWWDIR%%/vendor/yubico/u2flib-server/do-source-release.sh
+%%WWWDIR%%/vendor/yubico/u2flib-server/examples/assets/u2f-api.js
+%%WWWDIR%%/vendor/yubico/u2flib-server/examples/cli/u2f-server.phps
+%%WWWDIR%%/vendor/yubico/u2flib-server/examples/localstorage/index.phps
+%%WWWDIR%%/vendor/yubico/u2flib-server/examples/pdo/index.phps
 %%WWWDIR%%/vendor/yubico/u2flib-server/phpunit.xml
 %%WWWDIR%%/vendor/yubico/u2flib-server/src/u2flib_server/U2F.php
+%%WWWDIR%%/vendor/yubico/u2flib-server/tests/certs/yubico-u2f-ca-1.pem
+%%WWWDIR%%/vendor/yubico/u2flib-server/tests/u2flib_test.php

@@ -2,7 +2,7 @@
 
 PORTNAME=	assimp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.1
+DISTVERSION=	4.1.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,16 +19,11 @@ USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-# CMAKE_ARGS instructs cmake to skip runtime path removal during install
-CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON -DASSIMP_BUILD_TESTS:BOOL=OFF
+CMAKE_OFF=	ASSIMP_BUILD_TESTS
 
-PLIST_SUB=	SHLIB_VER=${DISTVERSION}
+PLIST_SUB=	SHL3=${DISTVERSION} VER2=${DISTVERSION:R} SHL1=${DISTVERSION:R:R}
 
-.include <bsd.port.pre.mk>
+post-install: # rm the third-party lib installed by mistake: https://github.com/assimp/assimp/issues/1650
+	@${RM} ${STAGEDIR}${PREFIX}/lib/libIrrXML.a
 
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-# GCC C++11 support is broken on FreeBSD (see PR 193528 for details)
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

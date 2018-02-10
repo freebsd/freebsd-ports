@@ -38,6 +38,17 @@ package) can help with that.
    many of the steps you may read about in these files.  Also, not everything
    in these files is necessarily relevant to the FreeBSD port.
 
+   In most cases, you will want to override the host name settings (which
+   default to 'localhost') by adding these lines to Mailman/mm_cfg.py:
+   (the documentation is in Mailman/Defaults.py, but you need to override
+   the defaults in mm_cfg.py instead, changes to Defaults.py are lost on
+   upgrades):
+
+   # adjust and add this to Mailman/mm_cfg.py:
+   DEFAULT_URL_HOST = 'CHANGE_ME.example.org'
+   DEFAULT_EMAIL_HOST = 'CHANGE_ME.example.org'
+   add_virtualhost(DEFAULT_URL_HOST, DEFAULT_EMAIL_HOST)
+
 
 2) Integrating Mailman with your web server
 

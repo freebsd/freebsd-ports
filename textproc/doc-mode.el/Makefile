@@ -3,16 +3,17 @@
 
 PORTNAME=	doc-mode.el
 PORTVERSION=	1.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	textproc elisp
 MASTER_SITES=	SF/xpt/doc-mode/doc-mode-${PORTVERSION}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	doc-mode-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asciidoc fontlocking for emacs
 
-USE_EMACS=	yes
+USES=		emacs tar:tgz
+
 NO_BUILD=	yes
 
 do-install:

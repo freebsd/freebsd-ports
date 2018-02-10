@@ -5,4 +5,4 @@ review and modify requests created by the browser before they are
 sent to the server, and to review and modify responses returned
 from the server before they are received by the browser.
 
-WWW: http://www.owasp.org/index.php/Category:OWASP_WebScarab_Project
+WWW: https://www.owasp.org/index.php/Category:OWASP_WebScarab_Project

@@ -3,8 +3,8 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
-lib/expect%%EXPECT_VER%%/libexpect%%LIBEXPECT_VER%%.so
-lib/expect%%EXPECT_VER%%/pkgIndex.tcl
+lib/expect%%PORTVERSION%%/libexpect%%PORTVERSION%%.so
+lib/expect%%PORTVERSION%%/pkgIndex.tcl
 lib/libexpect.so
 lib/libexpect.so.1
 man/man1/expect.1.gz

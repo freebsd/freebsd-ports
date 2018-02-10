@@ -1,6 +1,6 @@
---- initscript/freebsd/avahi-daemon.sh.in.orig	2010-08-26 00:51:39 UTC
-+++ initscript/freebsd/avahi-daemon.sh.in
-@@ -9,13 +9,15 @@
+--- initscript/freebsd/avahi-daemon.sh.in.orig	2010-08-26 09:51:39.036153000 +0900
++++ initscript/freebsd/avahi-daemon.sh.in	2016-01-17 11:59:38.578756000 +0900
+@@ -9,18 +9,22 @@
  # Avahi's mDNSResponder, a Zeroconf (Bonjour) service advertisement daemon.
  #
  
@@ -18,3 +18,10 @@
  
  start_cmd=avahi_daemon_start
  stop_cmd=avahi_daemon_stop
+ 
+ avahi_daemon_bin=@sbindir@/avahi-daemon
++command=${avahi_daemon_bin}
++pidfile="/var/run/avahi-daemon/pid"
+ 
+ avahi_daemon_start() {
+     checkyesno avahi_daemon_enable && echo "Starting avahi-daemon." && \

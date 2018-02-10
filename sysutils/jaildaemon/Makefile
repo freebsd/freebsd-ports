@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jaildaemon
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/jaildaemon/
 

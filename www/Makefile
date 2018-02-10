@@ -181,6 +181,7 @@
     SUBDIR += fpc-googleapi
     SUBDIR += fpc-httpd22
     SUBDIR += fpc-httpd24
+    SUBDIR += fpc-libmicrohttpd
     SUBDIR += free-sa-devel
     SUBDIR += freeway
     SUBDIR += fswiki
@@ -394,6 +395,8 @@
     SUBDIR += man2web
     SUBDIR += mathjax
     SUBDIR += mathopd
+    SUBDIR += mattermost-server
+    SUBDIR += mattermost-webapp
     SUBDIR += mediawiki123
     SUBDIR += mediawiki127
     SUBDIR += mediawiki128

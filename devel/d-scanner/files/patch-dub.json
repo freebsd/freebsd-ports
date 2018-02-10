@@ -1,15 +1,19 @@
---- dub.json.orig	2017-02-13 22:32:31 UTC
-+++ dub.json
-@@ -6,10 +6,6 @@
- 	"license" : "Boost Software License - Version 1.0",
- 	"targetType": "executable",
- 	"versions": ["built_with_dub"],
--	"dependencies": {
--		"libdparse": "~>0.7.0",
--		"dsymbol": "~>0.2.0",
--		"inifiled": ">=0.0.6",
--		"emsi_containers": "~>0.5.3"
--	},
-+        "lflags":["-L/usr/local/lib/d"],
-+        "libs" : ["dparse","inifiled","dsymbol","emsi_containers"],
+--- dub.json.orig	2017-11-04 14:57:42.000000000 -0500
++++ dub.json	2017-12-13 10:12:16.502483000 -0500
+@@ -11,12 +11,8 @@
+     "built_with_dub",
+     "StdLoggerDisableWarning"
+   ],
+-  "dependencies" : {
+-    "libdparse" : "~>0.8.0-alpha.1",
+-    "dsymbol" : "~>0.3.0-alpha.1",
+-    "inifiled" : ">=1.0.2",
+-    "emsi_containers" : "~>0.6.0",
+-    "libddoc" : "~>0.3.0-beta.1"
+-  },
+-  "targetPath" : "bin"
++
++  "targetPath" : "bin",
++  "lflags":["-L%%LOCALBASE%%/lib/d"],
++  "libs" : ["dparse","inifiled","dsymbol","emsi_containers","ddoc"],
  }

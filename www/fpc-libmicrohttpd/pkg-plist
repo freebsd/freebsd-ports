@@ -1,0 +1,3 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libmicrohttpd.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libmicrohttpd/libmicrohttpd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libmicrohttpd/libmicrohttpd.ppu

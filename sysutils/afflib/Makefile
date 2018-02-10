@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	afflib
-PORTVERSION=	3.7.15
-PORTREVISION=	1
+PORTVERSION=	3.7.16
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -18,12 +18,11 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	sshock
 GH_PROJECT=	AFFLIBv3
-GH_TAGNAME=	4540cbd
 
-USE_LDCONFIG=	yes
-USES=		autoreconf fuse libtool pathfix readline ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-s3=yes
+USES=		autoreconf fuse libtool pathfix readline ssl
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

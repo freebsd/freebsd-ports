@@ -59,12 +59,7 @@ OPTIONS_SUB=	yes
 PLIST_FILES=
 
 CLANG_DESC=	Build clang
-CLANG_EXTRA_PATCHES= \
-	${PATCHDIR}/clang-patch-fformat_extensions.diff \
-	${PATCHDIR}/clang-patch-fopenmp.diff \
-	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py \
-	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format-sublime.py \
-	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_git-clang-format
+CLANG_EXTRA_PATCHES=	${PATCHDIR}/clang
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_GH_PROJECT=	clang:clang
 CLANG_GH_SUBDIR=	tools/clang:clang
@@ -104,8 +99,7 @@ OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
 OPENMP_GH_SUBDIR=	projects/openmp:openmp
 OPENMP_GH_TAGNAME=	${OPENMP_COMMIT}:openmp
-OPENMP_EXTRA_PATCHES= \
-	${PATCHDIR}/openmp-patch-bug32279
+OPENMP_EXTRA_PATCHES=	${PATCHDIR}/openmp
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils

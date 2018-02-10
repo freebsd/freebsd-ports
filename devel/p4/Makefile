@@ -2,25 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	p4
-PORTVERSION=	2016.1.1492381
+PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
-		http://filehost.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/
-DISTNAME=	p4
-EXTRACT_SUFX=
-EXTRACT_ONLY=	# none
+# Perforce stupidly rerolls their distfiles on a regular basis, updating the
+# files' timestamps when they do, which changes the zip file's checksum.  Work
+# around that by cacheing the distfile in LOCAL and using that version to make
+# distinfo
+MASTER_SITES=	LOCAL/asomers/perforce/p4 \
+		https://swarm.workshop.perforce.com/projects/perforce_software-p4/archives/
+DISTNAME=	${YEAR}-${MAJOR}
+DIST_SUBDIR=	perforce/p4
+DISTFILES=	${ZIP_FILES}
 
-MAINTAINER=	gordon@FreeBSD.org
+MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Perforce client
 
-# The LICENSE file is not included in the distfile, but Catherine Louie of
-# Perforce Support assures me that the LICENSE file on swarm also applies to
-# the binary distribution.
-# https://swarm.workshop.perforce.com/projects/perforce_software-p4/files/2016-1/LICENSE
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+BUILD_DEPENDS=	${JAM}:devel/jam
 
 PLIST_FILES=	bin/p4
 
@@ -28,7 +29,16 @@ PLIST_FILES=	bin/p4
 
 .include "Makefile.inc"
 
+# Sadly, Jam always returns 1 even on success.  Ignore its return value and
+# detect build errors during the install phase.
+do-build:
+	cd ${WRKSRC} && ${SETENV} C++="${CXX}" C++FLAGS="${CXXFLAGS}" \
+		CCFLAGS="${CFLAGS}" \
+		LINKFLAGS="${LDFLAGS}" \
+		OSVER=${OSVER} \
+		${JAM} -dx -j${MAKE_JOBS_NUMBER} || true
+
 do-install:
-	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/p4 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/p4-bin/p4 ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

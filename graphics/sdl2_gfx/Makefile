@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/SDL2_gfx/
 DISTNAME=	SDL2_gfx-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
 LICENSE=	ZLIB

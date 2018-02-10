@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme-tiny
-PORTVERSION=	0.0.g.2016.08.18
+DISTVERSION=	0.0.g2017-11-14
 CATEGORIES=	security python
 
 MAINTAINER=	mat@FreeBSD.org
@@ -16,7 +16,7 @@ SHEBANG_FILES=	acme_tiny.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	diafygi
-GH_TAGNAME=	daba51d
+GH_TAGNAME=	4ed1395
 
 SUB_FILES=	pkg-message
 NO_BUILD=	yes

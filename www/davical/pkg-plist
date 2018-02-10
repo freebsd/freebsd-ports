@@ -53,10 +53,12 @@
 %%DATADIR%%/scripts/refresh-alarms.php
 %%DATADIR%%/scripts/sync-remote-caldav.php
 %%DATADIR%%/scripts/tz-update.php
+%%PORTDOCS%%%%DOCSDIR%%/Doxyfile
 %%WWWDIR%%/htdocs/.htaccess
 %%WWWDIR%%/htdocs/admin.php
 %%WWWDIR%%/htdocs/always.php
 %%WWWDIR%%/htdocs/caldav.php
+%%WWWDIR%%/htdocs/caldav.php.orig
 %%WWWDIR%%/htdocs/css/browse.css
 %%WWWDIR%%/htdocs/css/edit.css
 %%WWWDIR%%/htdocs/davical.css

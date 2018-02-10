@@ -5,14 +5,94 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180209:
+  AFFECTS: users of japanese/lookup
+  AUTHOR: yasu@utahime.org
+
+  japanese/lookup is update to 1.99.96.20130920. This version is not
+  compatible with previous version 1.4.1 and incompatibility includes
+  how to setup. See info of Lookup for detail.
+
+20180209:
+  AFFECTS: users of net-mgmt/pmacct
+  AUTHOR: pi@FreeBSD.org
+
+  To allow separete pmacctd instances per interface, use
+
+    pmacctd_enable="YES"
+    pmacctd_interfaces="re1 re2"
+
+  in /etc/rc.conf. The path to the config files will be
+
+    /usr/local/etc/pmacct/<interface>
+
+20180208:
+  AFFECTS: users of mail/mailman*
+  AUTHOR: mandree@FreeBSD.org
+
+  In order to overcome complaints about mismatched checksums in
+  Mailman/Default.py, mailman now configures the DEFAULT_EMAIL_HOST
+  and DEFAULT_URL_HOST to "localhost" statically, and the rc script
+  will check this and refuse to start on next boot. 
+  Users must configured DEFAULT_EMAIL_HOST and DEFAULT_URLHOST in 
+  Mailman/mm_cfg.py properly.
+
+  A short example has been added to:
+  ${PREFIX}/local/share/doc/mailman/FreeBSD-post-install-notes.
+
+20180201:
+  AFFECTS: users of editors/emacs* and all ports using Emacs via USES=emacs
+  AUTHOR: jrm@FreeBSD.org
+
+  The Emacs ports framework has been updated to support flavors and the
+  editors/emacs-nox11 port has been replaced by the nox flavors of
+  editors/emacs and editors/emacs-devel.
+
+  Supported Flavors
+  --------------------------------------------------------
+  editors/emacs:       full canna nox
+  editors/emacs-devel: full nox
+  ports using Emacs:   full canna nox devel_full devel_nox
+  --------------------------------------------------------
+
+  For those using pre-built packages, if
+
+     # pkg upgrade
+
+  does not install the new Emacs package, use one of
+
+     # pkg install emacs
+     # pkg install emacs-canna
+     # pkg install emacs-nox
+     # pkg install emacs-devel
+     # pkg install emacs-devel_nox
+
+  For those building their own packages, a flavor other than the default must be
+  specified.  For example, to build the nox flavor of editors/emacs, or to build
+  the devel_full flavor of a port using Emacs, use
+
+     # poudriere bulk -j 11amd64 editors/emacs@nox
+     # poudriere bulk -j 11amd64 print/pdf-tools@devel_full
+
+  or
+
+     # make FLAVOR=nox install
+     # make FLAVOR=devel_full
+
+  For ports using Emacs, an alternative to the default flavor, full,
+  can be set in make.conf.  For example, to automatically depend on
+  emacs-nox, use
+
+     DEFAULT_VERSIONS+=emacs=nox
+
 20180117:
   AFFECTS: users of x11-toolkits/kf5-kirigami2 and x11/kf5-plasma-framework
   AUTHOR: kde@FreeBSD.org
 
-  Files that were previously installed by kf5-kirigami2 get now installed 
-  in kf5-plasma-wramwork. This can lead to a conflict during the upgrade
+  Files that were previously installed by kf5-kirigami2 are now installed 
+  by kf5-plasma-framework. This can lead to a conflict during the upgrade
   of the packages. 
-  It is recommended to first remove the package kf5-krigami2.
+  It is recommended to first remove the package kf5-kirigami2.
 
 20180115
   AFFECTS: users of net-p2p/transmission-daemon

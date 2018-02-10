@@ -2,7 +2,7 @@
 
 PORTNAME?=	greenbone-security-assistant8
 PORTVERSION?=	6.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES?=	http://wald.intevation.org/frs/download.php/2442/
 DISTNAME=	${PORTNAME:S/${OPENVAS_VER}//}-${PORTVERSION}

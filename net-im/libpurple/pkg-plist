@@ -84,6 +84,8 @@ lib/purple-2/idle.a
 lib/purple-2/idle.so
 lib/purple-2/joinpart.a
 lib/purple-2/joinpart.so
+%%OSCAR%%lib/purple-2/libaim.a
+%%OSCAR%%lib/purple-2/libaim.so
 %%OSCAR%%lib/purple-2/libicq.a
 %%OSCAR%%lib/purple-2/libicq.so
 %%BONJOUR%%lib/purple-2/libbonjour.a

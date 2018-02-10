@@ -87,12 +87,3 @@
  	if ( munmap( m->addr, m->size ) < 0 )
  	    syslog( LOG_ERR, "munmap - %m" );
  #else /* HAVE_MMAP */
-@@ -523,7 +543,7 @@ void
- mmc_logstats( long secs )
-     {
-     syslog(
--	LOG_NOTICE, "  map cache - %d allocated, %d active (%lld bytes), %d free; hash size: %d; expire age: %ld",
-+	LOG_NOTICE, "  map cache - %d allocated, %d active (%lld bytes), %d free; hash size: %d; expire age: %d",
- 	alloc_count, map_count, (long long) mapped_bytes, free_count, hash_size,
- 	expire_age );
-     if ( map_count + free_count != alloc_count )

@@ -1,5 +1,16 @@
-Python module interface to the cURL library which is
-a tool for transferring files with URL syntax, supporting
-many protocols.
+PycURL is a Python interface to libcurl, the multiprotocol file transfer
+library. Similarly to the urllib Python module, PycURL can be used to fetch
+objects identified by a URL from a Python program. Beyond simple fetches however
+PycURL exposes most of the functionality of libcurl, including:
 
+- Speed - libcurl is very fast and PycURL, being a thin wrapper above libcurl,
+  is very fast as well. PycURL was benchmarked to be several times faster than
+  requests.
+- Features including multiple protocol support, SSL, authentication and proxy
+  options. PycURL supports most of libcurl's callbacks.
+- Multi and share interfaces.
+- Sockets used for network operations, permitting integration of PycURL into the
+  applications' I/O loop (e.g., using Tornado).
+
+WWW: https://pypi.python.org/pypi/pycurl
 WWW: http://pycurl.io/

@@ -2,4 +2,4 @@ This library allows Python to read, modify, and write out bitmap fonts in
 the BDF file format, such as are used as screen fonts in GNOME and KDE
 (among others).
 
-WWW: https://pypi.python.org/pypi/bdflib/
+WWW: https://pypi.python.org/pypi/bdflib

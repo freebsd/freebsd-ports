@@ -3,10 +3,10 @@
 
 PORTNAME=	psvn
 PORTVERSION=	20120326.212349
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://www.xsteve.at/prg/emacs/
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	psvn.el
 EXTRACT_SUFX=	# empty
 
@@ -17,7 +17,7 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS=	svn:devel/subversion
 
-USE_EMACS=	yes
+USES=		emacs
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
@@ -30,7 +30,7 @@ PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}/psvn.el \
 ELISPDIR=	${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 do-build:
-	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile psvn.el
+	(cd ${WRKSRC} && ${EMACS_CMD} -batch -q -f batch-byte-compile psvn.el)
 
 do-install:
 	@${MKDIR} ${ELISPDIR}

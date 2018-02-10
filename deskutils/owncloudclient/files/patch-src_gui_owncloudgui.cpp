@@ -1,7 +1,7 @@
---- src/gui/owncloudgui.cpp.orig	2016-05-12 07:59:12 UTC
+--- src/gui/owncloudgui.cpp.orig	2017-12-20 15:03:02 UTC
 +++ src/gui/owncloudgui.cpp
-@@ -34,6 +34,8 @@
- #include "accountmanager.h"
+@@ -35,6 +35,8 @@
+ #include "common/syncjournalfilerecord.h"
  #include "creds/abstractcredentials.h"
  
 +#include <climits>

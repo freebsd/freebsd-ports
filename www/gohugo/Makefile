@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.34
+DISTVERSION=	0.35
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -11,6 +11,7 @@ MAINTAINER=	ben.lavery@hashbang0.com
 COMMENT=	Fast and flexible static site generator
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		go
 USE_GITHUB=	yes
@@ -71,18 +72,17 @@ OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
-MANPAGES_DESC=	Build and/or install manual pages
-
 GOENV=		GOPATH=${WRKSRC} CGO_CFLAGS="${CGO_CFLAGS}" \
 		CGO_LDFLAGS="${CGO_LDFLAGS}" GOBIN=""
 
 PORTMANS=	hugo-benchmark.1 hugo-config.1 hugo-convert-toJSON.1 \
 		hugo-convert-toTOML.1 hugo-convert-toYAML.1 hugo-convert.1 \
-		hugo-env.1 hugo-gen-autocomplete.1 hugo-gen-doc.1 hugo-gen-man.1 \
-		hugo-gen.1 hugo-import-jekyll.1 hugo-import.1 hugo-list-drafts.1 \
-		hugo-list-expired.1 hugo-list-future.1 hugo-list.1 hugo-new-site.1 \
-		hugo-new-theme.1 hugo-new.1 hugo-server.1 hugo-undraft.1 \
-		hugo-version.1 hugo.1
+		hugo-env.1 hugo-gen-autocomplete.1 hugo-gen-chromastyles.1 \
+		hugo-gen-doc.1 hugo-gen-man.1 hugo-gen.1 hugo-import-jekyll.1 \
+		hugo-import.1 hugo-list-drafts.1 hugo-list-expired.1 \
+		hugo-list-future.1 hugo-list.1 hugo-new-site.1 \
+		hugo-new-theme.1 hugo-new.1 hugo-server.1 hugo-version.1 \
+		hugo.1
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME} && \

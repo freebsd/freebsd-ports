@@ -3,27 +3,21 @@
 
 PORTNAME=	uim-el
 PORTVERSION=	1.8.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/uim/uim/releases/download/uim-${PORTVERSION}/
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	uim-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Emacs lisp for uim input method library
 
-CONFLICTS?=	uim-el-xemacs21-mule-[0-9]* \
-		uim-el-emacs22-[0-9]* \
-		uim-el-emacs21-[0-9]*
-
 RUN_DEPENDS=	uim-el-agent:textproc/uim
 
-OPTIONS_DEFINE=	DOCS
-
-USES=		gettext-tools gmake iconv perl5 tar:bzip2
-USE_PERL5=	build
+USES=		emacs gettext-tools gmake iconv perl5 tar:bzip2
 USE_GNOME=	intltool
-USE_EMACS=	yes
+USE_PERL5=	build
+
 GNU_CONFIGURE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/emacs
@@ -36,6 +30,8 @@ LIBS+=		-L${LOCALBASE}/lib
 
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim-el
 PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

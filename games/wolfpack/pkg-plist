@@ -7,9 +7,9 @@ lib/wolfpack/empsched
 lib/wolfpack/fairland
 lib/wolfpack/files
 lib/wolfpack/pconfig
-man/man6/empire.6.gz
 man/man6/emp_server.6.gz
 man/man6/empdump.6.gz
+man/man6/empire.6.gz
 man/man6/empsched.6.gz
 man/man6/fairland.6.gz
 man/man6/files.6.gz
@@ -31,9 +31,8 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/Basics
 %%DATADIR%%/info.nr/Bridges
 %%DATADIR%%/info.nr/Bugs
-%%DATADIR%%/info.nr/CHANGES.CHAINSAW
+%%DATADIR%%/info.nr/Chainsaw
 %%DATADIR%%/info.nr/Citizens
-%%DATADIR%%/info.nr/Clients
 %%DATADIR%%/info.nr/Combat
 %%DATADIR%%/info.nr/Commerce
 %%DATADIR%%/info.nr/Commodities
@@ -46,7 +45,10 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/Education
 %%DATADIR%%/info.nr/Empire2
 %%DATADIR%%/info.nr/Empire3
-%%DATADIR%%/info.nr/Empire4
+%%DATADIR%%/info.nr/Empire4.0
+%%DATADIR%%/info.nr/Empire4.2
+%%DATADIR%%/info.nr/Empire4.3
+%%DATADIR%%/info.nr/Empire4.4
 %%DATADIR%%/info.nr/Expert
 %%DATADIR%%/info.nr/Fallout
 %%DATADIR%%/info.nr/Flak
@@ -111,7 +113,6 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/Unit-types
 %%DATADIR%%/info.nr/Update-sequence
 %%DATADIR%%/info.nr/Updates
-%%DATADIR%%/info.nr/Wolfpack
 %%DATADIR%%/info.nr/accept
 %%DATADIR%%/info.nr/add
 %%DATADIR%%/info.nr/all

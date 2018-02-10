@@ -1,14 +1,14 @@
---- ./src/xfce-taskmanager-linux.c.orig	2010-04-12 13:54:32.000000000 +0400
-+++ ./src/xfce-taskmanager-linux.c	2010-09-25 23:50:53.956637695 +0400
-@@ -28,6 +28,7 @@
- #include <glib/gi18n.h>
+--- src/xfce-taskmanager-linux.c.orig	2011-06-21 21:50:00 UTC
++++ src/xfce-taskmanager-linux.c
+@@ -29,6 +29,7 @@
+ #include <glib/gprintf.h>
  #include "xfce-taskmanager-linux.h"
  
 +#define PAGE_SIZE ( sysconf(_SC_PAGESIZE) )
  
  #if 1
  void get_task_details(gint pid,struct task *task)
-@@ -39,7 +40,7 @@
+@@ -40,7 +41,7 @@ void get_task_details(gint pid,struct ta
  	task->checked=FALSE;
          task->size=0;
  
@@ -17,7 +17,7 @@
          fd=open(line,O_RDONLY);
          if(fd==-1) return;
          read(fd,line,256);
-@@ -49,7 +50,7 @@
+@@ -50,7 +51,7 @@ void get_task_details(gint pid,struct ta
  	task->size*=PAGE_SIZE;
  	task->rss*=PAGE_SIZE;
  
@@ -26,7 +26,7 @@
  	fd=open(line,O_RDONLY);
  	if(fd!=-1)
  	{
-@@ -118,8 +119,8 @@
+@@ -136,8 +137,8 @@ struct task get_task_details(gint pid)
      gchar filename[255];
      gchar cmdline_filename[255];
  
@@ -37,7 +37,7 @@
  
      stat(filename, &status);
  
-@@ -235,9 +236,9 @@
+@@ -253,9 +254,9 @@ GArray *get_task_list(void)
      GArray *task_list;
      int count=0;
  
@@ -49,7 +49,7 @@
          return NULL;
      }
  
-@@ -277,7 +278,7 @@
+@@ -295,7 +296,7 @@ GArray *get_task_list(void)
  
  
      task_list = g_array_new(FALSE, FALSE, sizeof (struct task));
@@ -58,7 +58,7 @@
      if(n<0) return task_list;
  
      g_array_set_size(task_list,n);
-@@ -299,7 +300,7 @@
+@@ -318,7 +319,7 @@ GArray *get_task_list(void)
  
  gboolean get_cpu_usage_from_proc(system_status *sys_stat)
  {
@@ -67,7 +67,7 @@
      FILE *file;
  
      if ( sys_stat->valid_proc_reading == TRUE ) {
-@@ -340,7 +341,7 @@
+@@ -359,7 +360,7 @@ gboolean get_system_status (system_statu
      int reach;
      static int cpu_count;
  
@@ -76,7 +76,7 @@
      if(!file) return FALSE;
      reach=0;
      while (fgets (buffer, 100, file) != NULL)
-@@ -357,7 +358,7 @@
+@@ -378,7 +379,7 @@ gboolean get_system_status (system_statu
  
      if(!cpu_count)
      {

@@ -50,6 +50,7 @@
     SUBDIR += autocd
     SUBDIR += autotalent
     SUBDIR += autozen
+    SUBDIR += avldrums-lv2
     SUBDIR += aylet
     SUBDIR += baresip
     SUBDIR += baudline
@@ -417,6 +418,7 @@
     SUBDIR += libmusicbrainz3
     SUBDIR += libmusicbrainz5
     SUBDIR += libmusicxml
+    SUBDIR += libmysofa
     SUBDIR += libnjb
     SUBDIR += libnoise
     SUBDIR += libogg
@@ -560,6 +562,7 @@
     SUBDIR += ncmpc
     SUBDIR += ncmpcpp
     SUBDIR += nekobee
+    SUBDIR += noise-repellent-lv2
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod
@@ -661,7 +664,6 @@
     SUBDIR += py-hsaudiotag
     SUBDIR += py-id3
     SUBDIR += py-karaoke
-    SUBDIR += py-mad
     SUBDIR += py-mpd
     SUBDIR += py-mpd2
     SUBDIR += py-musicbrainz2
@@ -675,9 +677,11 @@
     SUBDIR += py-pyaudio
     SUBDIR += py-pylast
     SUBDIR += py-pyliblo
+    SUBDIR += py-pymad
     SUBDIR += py-pysndfile
     SUBDIR += py-shout
     SUBDIR += py-soundcloud
+    SUBDIR += py-sounddevice
     SUBDIR += py-soundscrape
     SUBDIR += py-speechrecognition
     SUBDIR += py-speex

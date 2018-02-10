@@ -19,7 +19,7 @@ USE_RUBY_EXTCONF=	yes
 
 BROKEN=			checksum mismatch
 DEPRECATED=		Marked BROKEN for more than 6 months
-EXPIRATION_DATE=	2018-01-20
+EXPIRATION_DATE=	2018-02-21
 
 INSTALL_TARGET=	site-install
 

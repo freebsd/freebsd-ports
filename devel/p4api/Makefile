@@ -1,41 +1,61 @@
 # $FreeBSD$
 
 PORTNAME=	p4api
-PORTVERSION=	2016.1.1492381
+PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/:tar \
-		ftp://ftp.perforce.com/perforce/${P4VERSION}/doc/manuals/p4api/:pdf
-EXTRACT_SUFX=
-DISTFILES=	${TAR_FILES}:tar p4api.pdf:pdf
-EXTRACT_ONLY=	${TAR_FILES}
+# Perforce stupidly rerolls their distfiles on a regular basis, updating the
+# files' timestamps when they do, which changes the zip file's checksum.  Work
+# around that by cacheing the distfile in LOCAL and using that version to make
+# distinfo
+MASTER_SITES=	LOCAL/asomers/perforce/p4:zip \
+		ftp://ftp.perforce.com/perforce/${P4VERSION}/doc/manuals/p4api/:pdf \
+		https://swarm.workshop.perforce.com/projects/perforce_software-p4/archives/:zip
+DIST_SUBDIR=	perforce/p4
+DISTNAME=	${YEAR}-${MAJOR}
+DISTFILES=	${ZIP_FILES}:zip p4api.pdf:pdf
+EXTRACT_ONLY=	${ZIP_FILES}
 
-MAINTAINER=	gordon@FreeBSD.org
+MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Perforce API (static libraries and header files)
 
-# The LICENSE file is not included in the distfile, but Catherine Louie of
-# Perforce Support assures me that the LICENSE file on swarm also applies to
-# the binary distribution.
-# https://swarm.workshop.perforce.com/projects/perforce_software-p4/files/2016-1/LICENSE
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_BUILD=	yes
+BUILD_DEPENDS=	${JAM}:devel/jam
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+USES=		zip
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
 .include <bsd.port.pre.mk>
+.include "../p4/Makefile.inc"
 
-.include "${.CURDIR}/../p4/Makefile.inc"
-
-TAR_FILES=	p4api.tgz
+# Sadly, Jam always returns 1 even on success.  Ignore its return value and
+# detect build errors during the install phase.
+do-build:
+	cd ${WRKSRC} && ${SETENV} C++="${CXX}" C++FLAGS="${CXXFLAGS}" \
+		CCFLAGS="${CFLAGS}" \
+		LINKFLAGS="${LDFLAGS}" \
+		OSVER=${OSVER} \
+		API=1 \
+		TYPE=pic \
+		${JAM} -dx -j${MAKE_JOBS_NUMBER} || true
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/perforce
-	cd ${WRKSRC}/include/p4 && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/perforce
+	cd ${WRKSRC}/p4-bin/bin.pic/p4api-*/include/p4 && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/perforce
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/perforce
-	cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/perforce
+	cd ${WRKSRC}/p4-bin/bin.pic/p4api-*/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/perforce
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/p4api.pdf ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/sample && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/p4-bin/bin.pic/p4api-*/sample && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

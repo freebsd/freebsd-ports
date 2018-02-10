@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmsg
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.2
 CATEGORIES=	net
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -17,8 +17,8 @@ LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c \
 		libyajl.so:devel/yajl
 
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir='$${exec_prefix}/libdata/pkgconfig'
 INSTALL_TARGET=	install-strip
 

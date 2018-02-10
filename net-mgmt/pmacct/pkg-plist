@@ -24,6 +24,7 @@ sbin/sfacctd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/agent_to_peer.map.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/allow-list.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/amqp_receiver.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/avro/avro_file_decoder.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bgp_md5.lst.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow_to_rd.map.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnuplot-example.sh
@@ -52,9 +53,9 @@ sbin/sfacctd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampling.map.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tee_receivers.lst.example
 %%DATADIR%%/README.64bit
+%%DATADIR%%/README.GeoIP
 %%DATADIR%%/README.IPv6
 %%DATADIR%%/README.cos
-%%DATADIR%%/README.country
 %%DATADIR%%/README.custom_primitives
 %%DATADIR%%/README.etype
 %%DATADIR%%/README.export_proto

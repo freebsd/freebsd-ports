@@ -1,4 +1,3 @@
-%%GMIC%%bin/gmicparser
 bin/krita
 etc/xdg/kritarc
 lib/kritaplugins/krita_colorspaces_extensions.so
@@ -20,6 +19,7 @@ lib/kritaplugins/kritabmpexport.so
 lib/kritaplugins/kritabmpimport.so
 lib/kritaplugins/kritabrushexport.so
 lib/kritaplugins/kritabrushimport.so
+lib/kritaplugins/kritabuginfo.so
 lib/kritaplugins/kritachalkpaintop.so
 lib/kritaplugins/kritachanneldocker.so
 lib/kritaplugins/kritaclonesarray.so
@@ -50,7 +50,6 @@ lib/kritaplugins/kritaexperimentpaintop.so
 lib/kritaplugins/kritaextensioncolorsfilters.so
 lib/kritaplugins/kritafastcolortransferfilter.so
 lib/kritaplugins/kritafilterop.so
-%%GMIC%%lib/kritaplugins/kritagmic.so
 lib/kritaplugins/kritagradientmap.so
 lib/kritaplugins/kritagriddocker.so
 lib/kritaplugins/kritagridpaintop.so
@@ -100,6 +99,7 @@ lib/kritaplugins/kritapresetdocker.so
 lib/kritaplugins/kritapresethistory.so
 lib/kritaplugins/kritapsdexport.so
 lib/kritaplugins/kritapsdimport.so
+lib/kritaplugins/kritaqmic.so
 lib/kritaplugins/kritaqmlexport.so
 lib/kritaplugins/kritaraindropsfilter.so
 lib/kritaplugins/kritarandompickfilter.so
@@ -108,6 +108,7 @@ lib/kritaplugins/kritarotateimage.so
 lib/kritaplugins/kritaroundcornersfilter.so
 lib/kritaplugins/kritaroundmarkerpaintop.so
 lib/kritaplugins/kritarulerassistanttool.so
+lib/kritaplugins/kritaasccdl.so
 lib/kritaplugins/kritaselectiontools.so
 lib/kritaplugins/kritaseparatechannels.so
 lib/kritaplugins/kritashearimage.so
@@ -125,6 +126,7 @@ lib/kritaplugins/kritatgaimport.so
 lib/kritaplugins/kritathreshold.so
 lib/kritaplugins/kritatiffexport.so
 lib/kritaplugins/kritatiffimport.so
+lib/kritaplugins/kritatoolSmartPatch.so
 lib/kritaplugins/kritatoolcrop.so
 lib/kritaplugins/kritatooldyna.so
 lib/kritaplugins/kritatoollazybrush.so
@@ -359,6 +361,8 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/brushes/D_Dust_Particles.gih
 %%DATADIR%%/brushes/D_Normal_dust.gbr
 %%DATADIR%%/brushes/F_Furr_fast.gbr
+%%DATADIR%%/brushes/Flat_textured1.gih
+%%DATADIR%%/brushes/Flat_textured2.gih
 %%DATADIR%%/brushes/G_Sparks.gih
 %%DATADIR%%/brushes/LJF_Foliage_Brush_01.gbr
 %%DATADIR%%/brushes/LJF_Foliage_Brush_02.gbr
@@ -408,6 +412,9 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/brushes/R_Rake_small.gbr
 %%DATADIR%%/brushes/Real_Oil_2.gbr
 %%DATADIR%%/brushes/Real_oil_1.gbr
+%%DATADIR%%/brushes/Rect_textured1.gih
+%%DATADIR%%/brushes/Rect_textured2.gih
+%%DATADIR%%/brushes/Rect_textured3.gih
 %%DATADIR%%/brushes/S_Smudge_Cheese.gbr
 %%DATADIR%%/brushes/S_splats_02.gih
 %%DATADIR%%/brushes/Sc_Scratch.gih
@@ -442,6 +449,8 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/brushes/Z_Test-pressure.gih
 %%DATADIR%%/brushes/Z_Triangle_shape_1.gbr
 %%DATADIR%%/brushes/Z_Triangle_shape_2.gbr
+%%DATADIR%%/brushes/oil_bristle.gbr
+%%DATADIR%%/brushes/oil_knife.gbr
 %%DATADIR%%/brushes/rake_textured_01.gbr
 %%DATADIR%%/brushes/rake_textured_02.gbr
 %%DATADIR%%/brushes/texture-a.png
@@ -472,8 +481,6 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/defaultpresets/spraybrush.kpp
 %%DATADIR%%/defaultpresets/tangentnormal.kpp
 %%DATADIR%%/dtd/krita.dtd
-%%GMIC%%%%DATADIR%%/gmic/gimp_update169.gmic
-%%GMIC%%%%DATADIR%%/gmic/gmic_def.gmic.blacklist
 %%DATADIR%%/gradients/BG-Krita2.ggr
 %%DATADIR%%/gradients/GPS-FG-Glare.ggr
 %%DATADIR%%/gradients/GPS-Fire-Blueish.ggr
@@ -534,10 +541,13 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/paintoppresets/Basic_tip_soft.kpp
 %%DATADIR%%/paintoppresets/Basic_wet.kpp
 %%DATADIR%%/paintoppresets/Basic_wet_soft.kpp
+%%DATADIR%%/paintoppresets/Blender_Blur.kpp
 %%DATADIR%%/paintoppresets/Block_basic.kpp
 %%DATADIR%%/paintoppresets/Block_bristles.kpp
 %%DATADIR%%/paintoppresets/Block_fuzzy.kpp
 %%DATADIR%%/paintoppresets/Block_mix_tilt.kpp
+%%DATADIR%%/paintoppresets/Block_textured_1.kpp
+%%DATADIR%%/paintoppresets/Block_textured_2.kpp
 %%DATADIR%%/paintoppresets/Block_tilt.kpp
 %%DATADIR%%/paintoppresets/Block_wet_tilt.kpp
 %%DATADIR%%/paintoppresets/Bristle_Details.kpp
@@ -551,6 +561,8 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/paintoppresets/Bristles_mix.kpp
 %%DATADIR%%/paintoppresets/Bristles_textured.kpp
 %%DATADIR%%/paintoppresets/Bristles_wet.kpp
+%%DATADIR%%/paintoppresets/Brush_dotted.kpp
+%%DATADIR%%/paintoppresets/Brush_textured.kpp
 %%DATADIR%%/paintoppresets/Chalk_brush.kpp
 %%DATADIR%%/paintoppresets/Clone_tool.kpp
 %%DATADIR%%/paintoppresets/Curve_curvy.kpp
@@ -589,6 +601,8 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/paintoppresets/Layout_oval.kpp
 %%DATADIR%%/paintoppresets/Layout_pen.kpp
 %%DATADIR%%/paintoppresets/Move_tool.kpp
+%%DATADIR%%/paintoppresets/Oils_bristle.kpp
+%%DATADIR%%/paintoppresets/Oils_knife.kpp
 %%DATADIR%%/paintoppresets/Pastel_texture_large.kpp
 %%DATADIR%%/paintoppresets/Pastel_texture_thin.kpp
 %%DATADIR%%/paintoppresets/Pencil_2B.kpp
@@ -644,6 +658,7 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/paintoppresets/Texture_fuzzy.kpp
 %%DATADIR%%/paintoppresets/Texture_hair.kpp
 %%DATADIR%%/paintoppresets/Texture_leaves_fuzzy.kpp
+%%DATADIR%%/paintoppresets/Textured_tilt.kpp
 %%DATADIR%%/paintoppresets/ink_precision_03.kpp
 %%DATADIR%%/paintoppresets/pixel1.kpp
 %%DATADIR%%/palettes/concept-cookie.gpl
@@ -686,6 +701,7 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/patterns/23-dynamic-screentone-A.png
 %%DATADIR%%/patterns/24-dynamic-screentone-B.png
 %%DATADIR%%/patterns/25-dynamic-screentone-C.png
+%%DATADIR%%/patterns/26_brush-marks.png
 %%DATADIR%%/patterns/Canvas_Hard.pat
 %%DATADIR%%/patterns/Canvas_covered.pat
 %%DATADIR%%/patterns/Canvas_small_01.pat
@@ -864,10 +880,10 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/workspaces/Default.kws
 %%DATADIR%%/workspaces/Small_Vector.kws
 %%DATADIR%%/workspaces/VFX_Paint.kws
+share/kritaplugins/buginfo.xmlgui
 share/kritaplugins/clonesarray.xmlgui
 share/kritaplugins/colorrange.xmlgui
 share/kritaplugins/colorspaceconversion.xmlgui
-%%GMIC%%share/kritaplugins/gmic.xmlgui
 share/kritaplugins/histogram.xmlgui
 share/kritaplugins/imageseparate.xmlgui
 share/kritaplugins/imagesize.xmlgui

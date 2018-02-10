@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unifi5
-PORTVERSION=	5.6.26
+PORTVERSION=	5.6.30
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
@@ -16,12 +16,8 @@ COMMENT=	UniFi Controller v5
 RUN_DEPENDS=	mongodb>0:databases/mongodb \
 		snappyjava>0:archivers/snappy-java
 
-BUILD=		0
-TOMCATVER=	7.0.82
-
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR} \
 		JAVA=${JAVA}
-PLIST_SUB+=	BUILDVERSION="${PORTVERSION}.${BUILD}" BUNDLEDFW="${BUNDLEDFW}" TOMCATVER="${TOMCATVER}"
 
 EXTRACT_CMD=	/usr/bin/ar
 EXTRACT_BEFORE_ARGS=	-p
@@ -48,9 +44,12 @@ NO_WRKSUBDIR=	yes
 
 CONFLICTS=	unifi2-* unifi3-* unifi4-*
 
+DIR_LIST=	conf data logs run work
+
 post-patch:
 	${RM} ${WRKSRC}/usr/lib/unifi/lib/snappy-java-1.1.2.6.jar ${WRKSRC}/usr/lib/unifi/bin/*
 	(cd ${WRKSRC}/usr/lib/unifi/lib && ${LN} -s ${JAVAJARDIR}/snappy-java.jar snappy-java-1.1.2.6.jar)
+	${RM} -r ${WRKSRC}/usr/lib/unifi/lib/native
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
@@ -59,6 +58,13 @@ do-install:
 # Create directories that will be writable by unifi
 .for i in data logs run work
 	${MKDIR} ${STAGEDIR}/${JAVASHAREDIR}/unifi/${i}
+.endfor
+
+post-install:
+	@${FIND} -s ${STAGEDIR}${JAVASHAREDIR}/unifi -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+.for dir in ${DIR_LIST}
+	@${ECHO} "@dir(unifi,wheel,) ${JAVASHAREDIR}/unifi/${dir}" >> ${TMPPLIST}
 .endfor
 
 .include <bsd.port.mk>

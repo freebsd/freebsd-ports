@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geeqie
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geeqie.org/
 

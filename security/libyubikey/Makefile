@@ -9,11 +9,13 @@ MAINTAINER=	matt@mjslabs.com
 COMMENT=	Library for decrypting and parsing YubiKey One-Time Passwords
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 PLIST_FILES=	bin/modhex \
 		bin/ykgenerate \
@@ -32,8 +34,5 @@ OPTIONS_DEFINE=		STATIC
 
 STATIC_CONFIGURE_ENABLE=	static
 STATIC_PLIST_FILES=		lib/libyubikey.a
-
-regression-test: build
-	@(cd ${WRKSRC}; ${MAKE} check)
 
 .include <bsd.port.mk>

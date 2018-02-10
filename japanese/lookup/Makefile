@@ -2,44 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	lookup
-PORTVERSION=	1.4.1
-PORTREVISION=	19
+PORTVERSION=	1.99.96.20180209
 CATEGORIES=	japanese elisp
-MASTER_SITES=	http://openlab.ring.gr.jp/edict/lookup/dist/
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@utahime.org
-COMMENT=	Search interface on ${EMACS_PORT_NAME} for CD-ROM books, etc
+COMMENT=	Emacs search interface for CD-ROM books, etc
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
-USE_EMACS=	yes
+USES=		autoreconf emacs makeinfo
 
-INFO?=		lookup lookup-guide
+USE_GITHUB=	yes
+GH_ACCOUNT=	lookup2
+GH_PROJECT=	lookup2
+GH_TAGNAME=	c4f4986
 
-.include <bsd.port.pre.mk>
-
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
-ELISPDIR=	${EMACSDIR}/lisp/lookup
-MANIFEST=	MANIFEST.lookup
-.else
-ELISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/lookup
-PLIST_SUB=	ELISPDIR=${EMACS_VERSION_SITE_LISPDIR}
-.endif
-HAS_CONFIGURE=	yes
+INFO=		lookup
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
-		--with-lispdir=${ELISPDIR}
+		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+PORTDOCS=	AUTHORS ChangeLog NEWS README.md
 
-post-install:
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-	${RM} ${WRKDIR}/${MANIFEST}
-	emacsdir=`${ECHO_CMD} ${EMACSDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
-	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \
-		${SED} -e "s;^$${emacsdir}/;;" > ${WRKDIR}/${MANIFEST}
-	${MKDIR} ${EMACSDIR}/pkginfo
-	${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
-		${EMACSDIR}/pkginfo/
-.endif
+ post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

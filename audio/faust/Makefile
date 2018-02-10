@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	faust
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2-5-10
+DISTVERSION=	2.5.17
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,16 +11,16 @@ COMMENT=	Functional programming language for realtime audio signal processing
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libLLVM-${LLVM_VERSION_P}.so:devel/llvm${LLVM_VERSION}
+LIB_DEPENDS=	libLLVM-${LLVM_VERSION:C/([1-9])([0-9])/\1.\2/}.so:devel/llvm${LLVM_VERSION}
 
 USES=		gmake ncurses python pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
-GH_TUPLE=	ThatOtherPerson:xxd:cd8ecce:x/xxd-replacement
+GH_TUPLE=	grame-cncm:faustlibraries:f889fe1:libs/libraries \
+		ThatOtherPerson:xxd:cd8ecce:xxd/xxd-replacement
 USE_CXXSTD=	c++11
 SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench
-LLVM_VERSION=	34 # llvm-4.0 and 3.9 fail, see bug#220454
-LLVM_VERSION_P=	${LLVM_VERSION:C/([1-9])([0-9])/\1.\2/}
+LLVM_VERSION=	50
 MAKE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
 
 OPTIONS_DEFINE=	HIGHLIGHT HTTPD_LIB
@@ -35,7 +34,7 @@ HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 
 # Fix of the upstream bug https://github.com/grame-cncm/faust/issues/76 will kill most of the patches.
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|make -C|$$(MAKE) -C|' \
+	@${REINPLACE_CMD} -i '' -e 's|make -C|$$(MAKE) -C| ; s|share/man|man|g' \
 		${WRKSRC}/Makefile \
 		${WRKSRC}/architecture/osclib/Makefile
 	@${REINPLACE_CMD} -i '' -e 's| -O1|| ; s|-o faust|-lexecinfo -o faust|' \
@@ -82,14 +81,13 @@ post-patch:
 	@${REINPLACE_CMD} -i '' "s|xxd|${WRKSRC}/xxd-replacement/xxd|" \
 		${WRKSRC}/compiler/Makefile.unix \
 		${WRKSRC}/architecture/httpdlib/src/Makefile
-	@${REINPLACE_CMD} -i '' "s|cp libraries/old/|#cp libraries/old/| ; s|cp libraries/\*\.lib|#cp libraries/*.lib|" \
-		${WRKSRC}/Makefile
 
 pre-build:
 	cd ${WRKSRC}/xxd-replacement && ${MAKE_CMD}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faust
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/faust # https://github.com/grame-cncm/faust/issues/135
 
 post-install-HIGHLIGHT-on:
 	# 1) kate

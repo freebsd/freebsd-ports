@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtoolchain
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -28,6 +28,7 @@ RUN_DEPENDS?=	${XCC}:devel/${PKGNAMEPREFIX}${X_COMPILER_TYPE}
 SUB_FILES=	xtoolchain.mk
 SUB_LIST=	TARGETARCH=${TOOLCHAIN_PREFIX:C/-//g} \
 		OPSYS=${OPSYS:tl} \
+		OSREL=${OSREL} \
 		XCC=${XCC} \
 		XCXX=${XCXX} \
 		XCPP=${XCPP} \

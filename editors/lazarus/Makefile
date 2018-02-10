@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	1.6.4
-DISTVERSIONSUFFIX=	-0
+PORTVERSION=	1.8.0
 PORTREVISION?=	0
 CATEGORIES=	editors devel
-MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION:S/.0//} \
+MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
 		LOCAL/acm/freepascal
 DIST_SUBDIR=	freepascal
 
@@ -21,8 +20,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 USES=		gmake
 USE_GNOME=	#
 USE_FPC?=	cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
-		fcl-registry fcl-res fcl-web fcl-xml gtk2 ibase iconvenc rtl-extra \
-		mysql numlib odbc openssl oracle pasjpeg postgres sqlite x11
+		fcl-registry fcl-res fcl-web fcl-xml gtk2 ibase iconvenc mysql \
+		numlib odbc openssl oracle pasjpeg postgres regexpr rtl-extra \
+		sqlite x11
 OPT?=		"-Sgic "
 
 MAKE_ENV=	OPT=${OPT}
@@ -33,11 +33,12 @@ DATADIR?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 .if !defined(PKGNAMESUFFIX)
 OPTIONS_DEFINE=		GDB
 OPTIONS_SINGLE=		LCL
-OPTIONS_SINGLE_LCL=	GTK2 QT4
+OPTIONS_SINGLE_LCL=	GTK2 QT4 QT5
 
 GDB_DESC=		Install a newest version  of gdb
 GTK2_DESC=		Use gtk20 interface
 QT4_DESC=		Use qt4 interface
+QT5_DESC=		Use qt5 interface
 
 OPTIONS_DEFAULT=	GTK2 GDB
 .endif
@@ -82,6 +83,13 @@ BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-
 RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 .endif
 
+.if ${PORT_OPTIONS:MQT5}
+LIB_DEPENDS+=   libQt5Pas.so:x11-toolkits/qt5pas
+LCL_PLATFORM=   qt5
+BUILD_DEPENDS+= ${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt5
+RUN_DEPENDS+=   ${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt5
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKDIR}/man1
 	@${MV} ${WRKSRC}/install/man/man1/lazarus-ide.1 ${WRKDIR}/man1/
@@ -92,7 +100,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
-			-e 's|tools: lcl|tools:|g' -e '3080d' -e '3082d' -e '3083d' -e '3084d' -e '3085d' -e '3086d' ${WRKSRC}/${MAKEFILE}
+			-e 's|tools: lcl|tools:|g' -e '3267d' -e '3269d' -e '3270d' -e '3271d' -e '3272d' -e '3273d' ${WRKSRC}/${MAKEFILE}
 
 pre-build:
 	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/lcl/units ${WRKSRC}/lcl/units

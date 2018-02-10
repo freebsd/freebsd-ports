@@ -8,4 +8,4 @@ Its features:
 * Automatic parsing of JSON and XML into ruby hashes based on response
   content-type
 
-WWW: http://johnnunemaker.com/httparty/
+WWW: https://johnnunemaker.com/httparty/

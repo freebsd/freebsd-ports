@@ -2,4 +2,5 @@ ipdb exports functions to access the IPython debugger, which features tab
 completion, syntax highlighting, better tracebacks, better introspection with
 the same interface as the pdb module.
 
+WWW: https://pypi.python.org/pypi/ipdb
 WWW: https://github.com/gotcha/ipdb

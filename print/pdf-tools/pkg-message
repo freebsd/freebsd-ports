@@ -1,0 +1,5 @@
+############################################
+Add this line to your Emacs initialization.
+
+(load "pdf-tools-init.el")
+############################################

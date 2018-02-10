@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtWebKitWidgets.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtWebKitWidgets.pyi
 %%PYQT_SIPDIR%%/QtWebKitWidgets/QtWebKitWidgetsmod.sip
 %%PYQT_SIPDIR%%/QtWebKitWidgets/qgraphicswebview.sip
 %%PYQT_SIPDIR%%/QtWebKitWidgets/qwebframe.sip
