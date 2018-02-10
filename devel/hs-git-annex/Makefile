@@ -3,6 +3,7 @@
 
 PORTNAME=	git-annex
 PORTVERSION=	6.20170520
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

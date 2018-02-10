@@ -2,6 +2,7 @@
 
 PORTNAME=	dns
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	dns haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -13,8 +13,8 @@ c2hs: C header contains errors:
    ("openbsd","cpp") -> ["-xc", "-w"]
 -  (_,"cpp")         -> ["-x", "c", "-w"]
 -  (_,"gcc")         -> ["-E", "-x", "c", "-w"]
-+  (_,"cpp")         -> ["-x", "c", "-w", "-std=c99"]
-+  (_,"gcc")         -> ["-E", "-x", "c", "-w", "-std=c99"]
++  (_,"cpp")         -> ["-x", "c", "-w", "-std=c99", "-D_Nullable=", "-D_Nonnull="]
++  (_,"gcc")         -> ["-E", "-x", "c", "-w", "-std=c99", "-D_Nullable", "-D_Nonnull="]
    _                 -> []
  
  -- C preprocessor option for including only definitions (EXPORTED)

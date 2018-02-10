@@ -3,6 +3,7 @@
 
 PORTNAME=	math-functions
 PORTVERSION=	0.2.1.0
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

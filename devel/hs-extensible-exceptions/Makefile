@@ -2,7 +2,7 @@
 
 PORTNAME=	extensible-exceptions
 PORTVERSION=	0.1.1.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

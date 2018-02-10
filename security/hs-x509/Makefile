@@ -2,6 +2,7 @@
 
 PORTNAME=	x509
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

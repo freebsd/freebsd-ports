@@ -2,6 +2,7 @@
 
 PORTNAME=	nonce
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

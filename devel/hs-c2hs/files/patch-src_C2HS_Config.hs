@@ -23,8 +23,8 @@ gtk2hsC2hs: Error in C header file.
    ("openbsd","cpp") -> ["-xc"]
 -  (_,"cpp")         -> ["-x", "c"]
 -  (_,"gcc")         -> ["-E", "-x", "c"]
-+  (_,"cpp")         -> ["-x", "c", "-std=c99"]
-+  (_,"gcc")         -> ["-E", "-x", "c", "-std=c99"]
++  (_,"cpp")         -> ["-x", "c"]
++  (_,"gcc")         -> ["-E", "-x", "c"]
    _                 -> []
 
  -- | C2HS Library file name

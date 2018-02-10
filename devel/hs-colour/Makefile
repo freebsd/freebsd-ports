@@ -2,6 +2,7 @@
 
 PORTNAME=	colour
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
