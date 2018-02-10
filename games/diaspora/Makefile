@@ -6,11 +6,12 @@ PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://diaspora.fs2downloads.com/ \
-		http://www.freespacemods.net/e107_files/downloads/:freespacemods \
+		http://sectorgame.com/fsfiles/uploads/Projects%20-%20Campaigns%20-%20TCs/Total%20Conversions/Diaspora/:sectorgame \
+		http://sectorgame.com/fsfiles/uploads/Projects%20-%20Campaigns%20-%20TCs/Total%20Conversions/Diaspora/Diaspora%20%28Linux%29.tar.lzma?dummy=/:sectorgame1 \
 		http://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/:intfiles \
 		http://ftp.tw.freebsd.org/distfiles/:twfiles
-DISTFILES=	Diaspora_R1_Linux.tar.lzma:freespacemods,DEFAULT \
-		Diaspora_R1_Patch_1.1.tar.lzma:intfiles,twfiles,DEFAULT \
+DISTFILES=	Diaspora_R1_Linux.tar.lzma:sectorgame1,DEFAULT \
+		Diaspora_R1_Patch_1.1.tar.lzma:sectorgame,intfiles,twfiles,DEFAULT \
 		Diaspora_R1_Patch_1.1.1.tar.lzma
 
 MAINTAINER=	lightside@gmx.com
