@@ -3,7 +3,7 @@
 
 PORTNAME=	ldc
 PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/ldc/releases/download/v${PORTVERSION}/:source \
 		https://github.com/ldc-developers/ldc/releases/download/v${BOOTVER}/:bootstrap
@@ -15,6 +15,7 @@ COMMENT=	The LLVM-based D compiler
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	clang40:devel/llvm40
+RUN_DEPENDS=	clang40:devel/llvm40
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
 BROKEN_aarch64=		fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
