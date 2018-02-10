@@ -708,13 +708,6 @@
     SUBDIR += postgresql10-plpython
     SUBDIR += postgresql10-pltcl
     SUBDIR += postgresql10-server
-    SUBDIR += postgresql92-client
-    SUBDIR += postgresql92-contrib
-    SUBDIR += postgresql92-docs
-    SUBDIR += postgresql92-pgtcl
-    SUBDIR += postgresql92-plperl
-    SUBDIR += postgresql92-plpython
-    SUBDIR += postgresql92-pltcl
     SUBDIR += postgresql93-client
     SUBDIR += postgresql93-contrib
     SUBDIR += postgresql93-docs
