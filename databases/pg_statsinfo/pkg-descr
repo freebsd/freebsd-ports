@@ -1,7 +1,0 @@
-pg_statsinfo is a utility that monitor statistics and the activity of
-PostgreSQL(and OS).  pg_statsinfo gets some statistics information as
-snapshot.  We can check the DB activity and bottleneck analysis by
-using these snapshot information. This utility provides some function
-to get the information acquisition easily.
-
-WWW: http://pgstatsinfo.projects.pgfoundry.org/
