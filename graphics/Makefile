@@ -407,11 +407,11 @@
     SUBDIR += kamera-kde4
     SUBDIR += kcolorchooser
     SUBDIR += kcoloredit
-    SUBDIR += kdegraphics4
-    SUBDIR += kdegraphics4-mobipocket
-    SUBDIR += kdegraphics4-strigi-analyzer
-    SUBDIR += kdegraphics4-svgpart
-    SUBDIR += kdegraphics4-thumbnailers
+    SUBDIR += kdegraphics-kde4
+    SUBDIR += kdegraphics-mobipocket-kde4
+    SUBDIR += kdegraphics-strigi-analyzer-kde4
+    SUBDIR += kdegraphics-svgpart-kde4
+    SUBDIR += kdegraphics-thumbnailers-kde4
     SUBDIR += kdiagram
     SUBDIR += kf5-kimageformats
     SUBDIR += kf5-kplotting

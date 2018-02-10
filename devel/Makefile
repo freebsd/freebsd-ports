@@ -1252,11 +1252,11 @@
     SUBDIR += kdbg
     SUBDIR += kde-dev-scripts
     SUBDIR += kde-dev-utils
-    SUBDIR += kdebindings4
-    SUBDIR += kdesdk4
-    SUBDIR += kdesdk4-kioslaves
-    SUBDIR += kdesdk4-strigi-analyzers
-    SUBDIR += kdesdk4-thumbnailers
+    SUBDIR += kdebindings-kde4
+    SUBDIR += kdesdk-kde4
+    SUBDIR += kdesdk-kioslaves-kde4
+    SUBDIR += kdesdk-strigi-analyzers-kde4
+    SUBDIR += kdesdk-thumbnailers-kde4
     SUBDIR += kdesvn-kde4
     SUBDIR += kdevelop-kde4
     SUBDIR += kdevelop-pg-qt

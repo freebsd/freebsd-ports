@@ -3,7 +3,7 @@
 
 PORTNAME=	kde-base-artwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

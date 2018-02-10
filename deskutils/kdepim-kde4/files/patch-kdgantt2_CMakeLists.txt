@@ -1,0 +1,13 @@
+Remove files not included in the tarball from being moc'ed
+
+--- kdgantt2/CMakeLists.txt.orig	2017-10-07 07:32:16 UTC
++++ kdgantt2/CMakeLists.txt
+@@ -40,8 +40,6 @@ set(libkdgantt_mocable_files
+   kdganttproxymodel
+   kdganttsummaryhandlingproxymodel
+   kdganttview
+-  kdganttlegend
+-  kdgantttimescalezoomdialog
+ )
+ foreach(it ${libkdgantt_mocable_files})
+   qt4_generate_moc(${it}.h ${CMAKE_BINARY_DIR}/kdgantt2/moc_${it}.cpp)

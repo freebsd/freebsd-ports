@@ -267,7 +267,7 @@ kactivities_LIB=	libkactivities.so
 kate_PORT=		editors/kate
 kate_LIB=		libkateinterfaces.so
 
-kdelibs_PORT=		x11/kdelibs4
+kdelibs_PORT=		x11/kdelibs-kde4
 kdelibs_LIB=		libkdecore.so
 
 kfilemetadata_PORT=	sysutils/kfilemetadata
@@ -323,7 +323,7 @@ perlkde_TYPE=		run
 perlqt_PORT=		devel/p5-perlqt
 perlqt_PATH=		${KDE_PREFIX}/bin/puic4
 
-pimlibs_PORT=		deskutils/kdepimlibs4
+pimlibs_PORT=		deskutils/kdepimlibs-kde4
 pimlibs_LIB=		libkpimutils.so
 
 pykde4_PORT=		devel/py-pykde4

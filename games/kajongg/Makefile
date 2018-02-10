@@ -2,7 +2,7 @@
 
 PORTNAME=	kajongg
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	games kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -20,5 +20,5 @@ SHEBANG_FILES=	src/kajongg.py \
 		src/kajonggserver.py \
 		src/kajonggtest.py
 
-.include <${.CURDIR}/../kdegames4/Makefile.common>
+.include <${.CURDIR}/../kdegames-kde4/Makefile.common>
 .include <bsd.port.mk>

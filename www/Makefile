@@ -339,7 +339,7 @@
     SUBDIR += kannel
     SUBDIR += kannel-sqlbox
     SUBDIR += kcgi
-    SUBDIR += kdewebdev4
+    SUBDIR += kdewebdev-kde4
     SUBDIR += kf5-kdewebkit
     SUBDIR += kf5-khtml
     SUBDIR += kf5-kjs

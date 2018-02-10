@@ -1,0 +1,5 @@
+lib/strigi/strigila_diff.so
+lib/strigi/strigila_po.so
+lib/strigi/strigita_ts.so
+lib/strigi/strigita_xlf.so
+share/strigi/fieldproperties/strigi_translation.fieldproperties

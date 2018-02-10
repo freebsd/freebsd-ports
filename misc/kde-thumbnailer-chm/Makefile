@@ -2,7 +2,7 @@
 
 PORTNAME=	kde-thumbnailer-chm
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	153410-${PORTNAME}-${PORTVERSION}

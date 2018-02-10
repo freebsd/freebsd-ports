@@ -128,7 +128,7 @@
     SUBDIR += kde4-baseapps
     SUBDIR += kde4-runtime
     SUBDIR += kde4-workspace
-    SUBDIR += kdelibs4
+    SUBDIR += kdelibs-kde4
     SUBDIR += keybinder
     SUBDIR += keybinder-gtk3
     SUBDIR += keyboardcast

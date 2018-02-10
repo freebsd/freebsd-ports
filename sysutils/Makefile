@@ -523,7 +523,7 @@
     SUBDIR += k8temp
     SUBDIR += kcm-polkit-kde
     SUBDIR += kcron
-    SUBDIR += kdeadmin4
+    SUBDIR += kdeadmin-kde4
     SUBDIR += kdf
     SUBDIR += kdirstat
     SUBDIR += keyboard-daemon
