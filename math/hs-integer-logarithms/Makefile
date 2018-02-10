@@ -2,6 +2,7 @@
 
 PORTNAME=	integer-logarithms
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

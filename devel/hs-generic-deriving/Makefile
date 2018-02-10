@@ -2,6 +2,7 @@
 
 PORTNAME=	generic-deriving
 PORTVERSION=	1.11.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

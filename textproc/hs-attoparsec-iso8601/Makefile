@@ -2,6 +2,7 @@
 
 PORTNAME=	attoparsec-iso8601
 PORTVERSION=	1.0.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

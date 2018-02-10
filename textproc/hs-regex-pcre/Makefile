@@ -2,6 +2,7 @@
 
 PORTNAME=	regex-pcre
 PORTVERSION=	0.94.4
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

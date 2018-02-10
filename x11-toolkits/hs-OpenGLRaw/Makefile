@@ -2,6 +2,7 @@
 
 PORTNAME=	OpenGLRaw
 PORTVERSION=	3.2.4.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
