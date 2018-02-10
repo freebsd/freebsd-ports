@@ -1,3 +1,3 @@
-TIMESTAMP = 1518245399
-SHA256 (kafka-python-1.4.1.tar.gz) = 5cf7a5f098ed45f6ac57e563ae93b8a06108b9d20fe537c18cc0d85af86aa479
-SIZE (kafka-python-1.4.1.tar.gz) = 302061
+TIMESTAMP = 1518250373
+SHA256 (dpkp-kafka-python-1.4.1_GH0.tar.gz) = 5cf7a5f098ed45f6ac57e563ae93b8a06108b9d20fe537c18cc0d85af86aa479
+SIZE (dpkp-kafka-python-1.4.1_GH0.tar.gz) = 302061

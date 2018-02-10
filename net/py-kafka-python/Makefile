@@ -4,7 +4,6 @@
 PORTNAME=	kafka-python
 PORTVERSION=	1.4.1
 CATEGORIES=	net python
-MASTER_SITES=	https://github.com/dpkp/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	christer.edwards@gmail.com
@@ -14,6 +13,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
+USE_GITHUB=	yes
+GH_ACCOUNT=	dpkp
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
