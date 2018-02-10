@@ -1,0 +1,8 @@
+XMRig configuration file available at:
+%%ETCDIR%%/config.json
+
+To automatically start XMRig at boot time:
+# sysrc xmrig_enable="YES"
+
+To then manually start XMRig without rebooting:
+# service xmrig start

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmrig
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
@@ -18,11 +18,14 @@ LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd \
 USES=		cmake:outsource
 USE_GITHUB=	yes
 
-PLIST_FILES=	bin/xmrig %%DATADIR%%/config.json
+USE_RC_SUBR=	${PORTNAME}
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME} USERS=${USERS}
+USERS=		xmrig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src//config.json ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/config.json ${STAGEDIR}${ETCDIR}/config.json.sample
 
 .include <bsd.port.mk>

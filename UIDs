@@ -101,7 +101,7 @@ pop3vscan:*:151:6::0:0:POP3VScan Daemon:/var/spool/pop3vscan:/usr/sbin/nologin
 iog:*:152:80::0:0:iog Monitoring Owner:/usr/local/iog:/usr/sbin/nologin
 rbldns:*:153:153::0:0:rbldnsd pseudo-user:/nonexistent:/usr/sbin/nologin
 trircd:*:154:154::0:0:& user:/usr/local/etc/tr-ircd:/usr/sbin/nologin
-# free: 155
+xmrig:*:155:65534::0:0:XMRig:/nonexistent:/usr/sbin/nologin
 monetdb:*:156:156::0:0:MonetDB user:/usr/local/monetdb5:/bin/sh
 barman:*:157:157::0:0:Barman user:/var/barman:/bin/sh
 pootle:*:158:158::0:0:Pootle User:/var/db/pootle:/usr/sbin/nologin
