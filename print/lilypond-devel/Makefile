@@ -4,8 +4,8 @@
 PORTNAME=	lilypond
 DISTVERSION=	2.19.81
 CATEGORIES=	print audio
-MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/ \
-		http://lilypond.org/downloads/sources/v${PORTVERSION:R}/
+MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${DISTVERSION:R}/ \
+		http://lilypond.org/downloads/sources/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	m.ne@gmx.net
@@ -63,7 +63,7 @@ CONFIGURE_ENV+=	ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 
 ALL_TARGET=	all
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -81,6 +81,6 @@ post-patch-NLS-off:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilypond
-	(cd ${STAGEDIR}/${DATADIR} && ${LN} -fs ${PORTVERSION} current)
+	(cd ${STAGEDIR}/${DATADIR} && ${LN} -fs ${DISTVERSION} current)
 
 .include <bsd.port.mk>
