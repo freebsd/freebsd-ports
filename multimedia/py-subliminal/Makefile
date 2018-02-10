@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Python library to search and download subtitles
 
-LICENSE=	LGPL3
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.0:www/py-beautifulsoup@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enzyme>=0.4.1:multimedia/py-enzyme@${FLAVOR} \
