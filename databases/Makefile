@@ -579,7 +579,6 @@
     SUBDIR += pg_repack
     SUBDIR += pg_rman
     SUBDIR += pg_stat_kcache
-    SUBDIR += pg_statsinfo
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgagent
@@ -697,7 +696,6 @@
     SUBDIR += postgresql-plv8js
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
-    SUBDIR += postgresql-repmgr2
     SUBDIR += postgresql-tds_fdw
     SUBDIR += postgresql-zhparser
     SUBDIR += postgresql10-client
