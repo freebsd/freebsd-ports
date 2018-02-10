@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pioneer
-PORTVERSION=	0.0.${GH_TAGNAME}
-PORTREVISION=	1
+DISTVERSION=	0.0.${GH_TAGNAME}
 CATEGORIES=	games
 
 MAINTAINER=	lightside@gmx.com
@@ -35,11 +34,9 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libassimp.so:multimedia/assimp
 
 USES=		autoreconf compiler:c++11-lib gmake pkgconfig
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
-GH_TAGNAME=	20171001
-
+GH_TAGNAME=	20180203
 USE_GL=		gl
 USE_SDL=	image2 sdl2
 
@@ -62,9 +59,8 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		DOCS MODELCOMPILER NOGPUJOBS PROFILER SERVERAGENT
 OPTIONS_DEFAULT=	MODELCOMPILER
-DOCS_SUB_LIST=	QUICKSTART_PATH="${DOCSDIR}"
-DOCS_SUB_LIST_OFF=	\
-		QUICKSTART_PATH="https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}"
+DOCS_SUB_LIST=		QUICKSTART_PATH="${DOCSDIR}"
+DOCS_SUB_LIST_OFF=	QUICKSTART_PATH="https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}"
 MODELCOMPILER_DESC=	Build/install modelcompiler tool
 MODELCOMPILER_PLIST_FILES=	bin/${PORTNAME}-modelcompiler
 NOGPUJOBS_DESC=		Disable EnableGPUJobs for config.ini by default
