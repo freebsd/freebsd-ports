@@ -2,7 +2,7 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.13.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://rtorrent.net/downloads/
 
