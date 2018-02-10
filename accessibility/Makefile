@@ -13,7 +13,7 @@
     SUBDIR += eflite
     SUBDIR += jovie
     SUBDIR += kaccessible
-    SUBDIR += kdeaccessibility4
+    SUBDIR += kdeaccessibility-kde4
     SUBDIR += kmag
     SUBDIR += kmousetool
     SUBDIR += kmouth

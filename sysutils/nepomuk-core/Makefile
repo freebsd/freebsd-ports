@@ -3,7 +3,7 @@
 
 PORTNAME=	nepomuk-core
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	14
+PORTREVISION=	16
 CATEGORIES=	sysutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4 \
 		libexiv2.so:graphics/exiv2 \
 		libswscale.so:multimedia/ffmpeg \
 		libepub.so:textproc/ebook-tools \
-		libqmobipocket.so:graphics/kdegraphics4-mobipocket
+		libqmobipocket.so:graphics/kdegraphics-mobipocket-kde4
 
 USES=		cmake:outsource kde:4 python:run shebangfix tar:xz
 USE_KDE=	automoc4 baloo kdelibs kfilemetadata \

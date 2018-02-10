@@ -304,9 +304,9 @@
     SUBDIR += kafka
     SUBDIR += kafkacat
     SUBDIR += kamailio
-    SUBDIR += kdenetwork4
-    SUBDIR += kdenetwork4-filesharing
-    SUBDIR += kdenetwork4-strigi-analyzers
+    SUBDIR += kdenetwork-kde4
+    SUBDIR += kdenetwork-filesharing-kde4
+    SUBDIR += kdenetwork-strigi-analyzers-kde4
     SUBDIR += kea
     SUBDIR += kf5-kxmlrpcclient
     SUBDIR += kget

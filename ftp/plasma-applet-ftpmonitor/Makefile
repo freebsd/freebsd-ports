@@ -2,7 +2,7 @@
 
 PORTNAME=	ftpmonitor
 PORTVERSION=	1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ftp kde
 MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/ftpmonitor/
 PKGNAMEPREFIX=	plasma-applet-

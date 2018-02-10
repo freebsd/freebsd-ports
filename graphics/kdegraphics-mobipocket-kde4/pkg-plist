@@ -1,0 +1,10 @@
+include/kde4/qmobipocket/mobipocket.h
+include/kde4/qmobipocket/qfilestream.h
+include/kde4/qmobipocket/qmobipocket_export.h
+lib/cmake/QMobipocket/QMobipocketConfig.cmake
+lib/kde4/mobithumbnail.so
+lib/libqmobipocket.so
+lib/libqmobipocket.so.1
+lib/libqmobipocket.so.1.0.0
+lib/strigi/strigila_mobi.so
+share/kde4/services/mobithumbnail.desktop

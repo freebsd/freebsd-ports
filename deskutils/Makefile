@@ -124,9 +124,9 @@
     SUBDIR += kcharselect
     SUBDIR += kchmviewer
     SUBDIR += kdeconnect
-    SUBDIR += kdepim4
-    SUBDIR += kdepim4-runtime
-    SUBDIR += kdepimlibs4
+    SUBDIR += kdepim-kde4
+    SUBDIR += kdepim-runtime-kde4
+    SUBDIR += kdepimlibs-kde4
     SUBDIR += kdeplasma-addons
     SUBDIR += kruler
     SUBDIR += ksshaskpass

@@ -120,7 +120,7 @@
     SUBDIR += kde4-wallpapers-freebsd
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
-    SUBDIR += kdeartwork4
+    SUBDIR += kdeartwork-kde4
     SUBDIR += kf5-breeze-icons
     SUBDIR += kf5-kemoticons
     SUBDIR += kf5-kiconthemes

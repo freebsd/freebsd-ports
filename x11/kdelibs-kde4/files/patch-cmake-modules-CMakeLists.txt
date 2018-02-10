@@ -1,0 +1,29 @@
+--- ./cmake/modules/CMakeLists.txt~	2009-12-01 10:27:12.000000000 +1000
++++ ./cmake/modules/CMakeLists.txt	2009-12-07 02:42:29.159330039 +1000
+@@ -7,9 +7,6 @@
+ # to have it around, so there is a place where the modules which are not installed
+ # are listed explicitely:
+ set(cmakeFilesDontInstall
+-               FindHUpnp.cmake
+-               FindPolkitQt.cmake
+-               FindPolkitQt-1.cmake
+                FindUDev.cmake
+                )
+ 
+@@ -56,6 +53,7 @@
+                FindGettext.cmake
+                FindGphoto2.cmake
+                FindHUNSPELL.cmake
++               FindHUpnp.cmake
+                FindIOKit.cmake
+                FindKDE4Internal.cmake
+                FindKDE4Workspace.cmake
+@@ -93,6 +91,8 @@
+                FindPhonon.cmake
+                FindPkgConfig.cmake
+                FindPlasma.cmake
++               FindPolkitQt.cmake
++               FindPolkitQt-1.cmake
+                FindPopplerQt4.cmake
+                FindPostgreSQL.cmake
+                FindPulseAudio.cmake
