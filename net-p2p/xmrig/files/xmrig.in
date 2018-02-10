@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: xmrig
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# xmrig_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# xmrig_user:		The user account the XMRig daemon runs as.
+#			It uses '%%USERS%%' user by default.
+#			Do not sets it as empty or it will run as root.
+# xmrig_conf:		The configuration file XMRig uses.    
+#			Default: %%ETCDIR%%/config.json
+
+. /etc/rc.subr
+name="%%PORTNAME%%"
+rcvar="${name}_enable"
+load_rc_config ${name}
+
+: ${xmrig_enable:="NO"}
+: ${xmrig_user:="%%USERS%%"}
+: ${xmrig_conf:="%%ETCDIR%%/config.json"}
+
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/xmrig"
+command_args="-f ${procname} --config=${xmrig_conf}"
+
+run_rc_command "$1"
