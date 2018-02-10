@@ -472,7 +472,7 @@
     SUBDIR += kbounce
     SUBDIR += kbreakout
     SUBDIR += kcheckers
-    SUBDIR += kdegames4
+    SUBDIR += kdegames-kde4
     SUBDIR += kdiamond
     SUBDIR += keeperrl
     SUBDIR += kevedit
