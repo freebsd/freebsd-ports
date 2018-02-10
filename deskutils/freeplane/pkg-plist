@@ -178,7 +178,7 @@ bin/freeplane
 %%DATADIR%%/plugins/org.freeplane.plugin.openmaps/lib/jmapviewer-1.14.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.openmaps/lib/plugin-1.5.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.script/META-INF/MANIFEST.MF
-%%DATADIR%%/plugins/org.freeplane.plugin.script/lib/byte-buddy-1.6.9.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.script/lib/byte-buddy-1.7.9.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.script/lib/groovy-all-2.3.1.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.script/lib/groovy-patcher-0.0.2.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.script/lib/plugin-1.5.jar
