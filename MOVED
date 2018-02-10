@@ -9920,7 +9920,7 @@ portuguese/eric6||2018-02-08|No longer shipped by upstream
 devel/rubygem-event-bus||2018-02-08|Has expired: No longer maintained upstream
 accessibility/kdeaccessibility4|accessibility/kdeaccessibility-kde4|2018-02-10|Rename KDE4 metaports for simplicty
 deskutils/kdepim4-runtime|deskutils/kdepim-runtime-kde4|2018-02-10|Rename KDE4 metaports for simplicty
-deskutils/kdepim4|desktuils/kdepim-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+deskutils/kdepim4|deskutils/kdepim-kde4|2018-02-10|Rename KDE4 metaports for simplicty
 deskutils/kdepimlibs4|deskutils/kdepimlibs-kde4|2018-02-10|Rename KDE4 metaports for simplicty
 devel/kdebindings4|devel/kdebindings-kde4|2018-02-10|Rename KDE4 metaports for simplicty
 devel/kdesdk4-kioslaves|devel/kdesdk-kioslaves-kde4|2018-02-10|Rename KDE4 metaports for simplicty
