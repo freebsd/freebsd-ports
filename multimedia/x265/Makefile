@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BUILD_DEPENDS=	yasm:devel/yasm
 
-USES=		cmake pathfix
+USES=		cmake compiler:c++14-lang pathfix
 
 OPTIONS_DEFINE=		DEBUG OPTIMIZED_FLAGS
 OPTIONS_DEFINE_amd64=	HI10P HI12P
@@ -40,16 +40,7 @@ CFLAGS_mips64=	-DNO_ATOMICS # cannot use lang/gcc
 EXTRACT_AFTER_ARGS+=	--exclude "md5*"
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION}/source
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100052
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang50:devel/llvm50
-CPP=		${LOCALBASE}/bin/clang-cpp50
-CC=		${LOCALBASE}/bin/clang50
-CXX=		${LOCALBASE}/bin/clang++50
-.endif
-
 do-test:
 	${WRKSRC}/test/TestBench
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
