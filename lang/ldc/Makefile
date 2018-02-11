@@ -14,8 +14,8 @@ COMMENT=	The LLVM-based D compiler
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	clang40:devel/llvm40
-RUN_DEPENDS=	clang40:devel/llvm40
+BUILD_DEPENDS=	llvm40>0:devel/llvm40
+RUN_DEPENDS=	llvm40>0:devel/llvm40
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
 BROKEN_aarch64=		fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
