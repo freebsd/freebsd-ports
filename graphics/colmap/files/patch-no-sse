@@ -2,14 +2,13 @@ build: don't force SSE on i386
 
 --- src/ext/PBA/CMakeLists.txt.orig	2017-06-15 14:32:01 UTC
 +++ src/ext/PBA/CMakeLists.txt
-@@ -1,7 +1,3 @@
--if(NOT IS_MSVC)
+@@ -1,5 +1,5 @@
+ if(NOT IS_MSVC)
 -    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -O3 -pthread -march=core2 -mfpmath=sse -Wno-c++11-narrowing")
--endif()
--
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++11-narrowing")
+ endif()
+ 
  if(CUDA_ENABLED)
-     # Fix for Ubuntu 16.04.
-     add_definitions("-D_FORCE_INLINES")
 --- src/ext/PBA/SparseBundleCPU.cpp.orig	2017-06-15 14:32:01 UTC
 +++ src/ext/PBA/SparseBundleCPU.cpp
 @@ -52,15 +52,16 @@ using std::max;
