@@ -3,7 +3,7 @@
 
 PORTNAME=	iboview
 PORTVERSION=	20150427
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	http://www.iboview.org/bin/
 DISTNAME=	ibo-view.20150427
@@ -15,9 +15,10 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	qt5-buildtools>=0:devel/qt5-buildtools \
-		boost-libs>=0:devel/boost-libs
-LIB_DEPENDS=	libgcc_s.so:lang/gcc
-RUN_DEPENDS=	boost-libs>=0:devel/boost-libs
+		boost-libs>=0:devel/boost-libs \
+		${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so:lang/gcc${GCC_DEFAULT}
+RUN_DEPENDS=	boost-libs>=0:devel/boost-libs \
+		${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so:lang/gcc${GCC_DEFAULT}
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON_amd64=	only builds and is supported on amd64
