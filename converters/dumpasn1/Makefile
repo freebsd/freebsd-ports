@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dumpasn1
-PORTVERSION=	20141219
+PORTVERSION=	20170309
 CATEGORIES=	converters security
 MASTER_SITES=	https://www.cs.auckland.ac.nz/~pgut001/
 DISTFILES=	dumpasn1.c dumpasn1.cfg
@@ -11,8 +11,6 @@ EXTRACT_ONLY=	yes
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Dumps the contents of an ASN.1 encoded file, e.g. an SSL certificate
-
-BROKEN=		Invalid checksum
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
