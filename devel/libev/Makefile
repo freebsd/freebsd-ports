@@ -3,6 +3,7 @@
 
 PORTNAME=	libev
 DISTVERSION=	4.24
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.schmorp.de/libev/ \
 		http://dist.schmorp.de/libev/Attic/
