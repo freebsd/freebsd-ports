@@ -5383,6 +5383,14 @@ lib/python%%XYDOT%%/test/test_import/data/circular_imports/subpkg/__pycache__/ut
 lib/python%%XYDOT%%/test/test_import/data/circular_imports/subpkg/subpackage2.py
 lib/python%%XYDOT%%/test/test_import/data/circular_imports/subpkg/util.py
 lib/python%%XYDOT%%/test/test_import/data/circular_imports/util.py
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule1.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule1.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule1.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule2.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule2.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule2.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/submodule1.py
+lib/python%%XYDOT%%/test/test_import/data/package2/submodule2.py
 lib/python%%XYDOT%%/test/test_importlib/__init__.py
 lib/python%%XYDOT%%/test/test_importlib/__main__.py
 lib/python%%XYDOT%%/test/test_importlib/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
