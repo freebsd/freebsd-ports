@@ -6,7 +6,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build tool alternative to make
 
 LICENSE=	MIT
