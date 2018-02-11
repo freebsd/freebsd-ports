@@ -33,7 +33,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 USES=		compiler:c++14-lang gperf jpeg gmake localbase pkgconfig \
 		python shebangfix ssl tar:xz
-USE_APACHE=	22
+USE_APACHE=	24
 SHEBANG_GLOB=	*.gyp *.gypi *.py *.sh
 SHEBANG_FILES=	build/fix_proto_and_invoke_protoc
 
@@ -64,7 +64,7 @@ GYP_DEFINES+=	os_posix=1 \
 		target_arch=${ARCH} \
 		system_include_path_apr=${LOCALBASE}/include/apr-1 \
 		system_include_path_aprutil=${LOCALBASE}/include/apr-1 \
-		system_include_path_httpd=${LOCALBASE}/include/apache22 \
+		system_include_path_httpd=${LOCALBASE}/include/apache24 \
 		system_include_path_execinfo=${LOCALBASE}/include \
 		system_include_path_icu=${LOCALBASE}/include \
 		include_dirs=${LOCALBASE}/include \
@@ -169,7 +169,7 @@ do-install:
 	APACHE_DOC_ROOT=${DOCSDIR} \
 	APACHE_CONTROL_PROGRAM=${HTTPD} \
 	APACHE_PROGRAM=apache${APACHE_VERSION} \
-	APACHE_START="service apache22 start" \
+	APACHE_START="service apache24 start" \
 	APACHE_PIDFILE="/var/run/httpd.pid" \
 	APACHE_USER=www \
 	DISTRO_NAME=FreeBSD' > FreeBSD/make_vars.mk && \
@@ -185,7 +185,7 @@ do-install:
 	    APACHE_CONF_DIR=${PREFIX}/${APACHEETCDIR} \
 	    APACHE_DOC_ROOT=${DOCSDIR} \
 	    APACHE_CONTROL_PROGRAM=${HTTPD} APACHE_PROGRAM=apache${APACHE_VERSION} \
-	    APACHE_START="service apache22 start" APACHE_PIDFILE="/var/run/httpd.pid" \
+	    APACHE_START="service apache24 start" APACHE_PIDFILE="/var/run/httpd.pid" \
 	    APACHE_USER=www DISTRO_NAME=FreeBSD MOD_PAGESPEED_ROOT=${WRKSRC} \
 	    PAGESPEED_MODULE=${WRKSRC}/Release/libmod_pagespeed.so \
 	    PAGESPEED_MODULE_24=${WRKSRC}/Release/libmod_pagespeed_ap24.so \
