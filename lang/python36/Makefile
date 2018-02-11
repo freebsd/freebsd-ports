@@ -128,8 +128,6 @@ post-patch:
 		"s|lib_dirs,\ \'readline\'|[\'${LOCALBASE}/lib\',\ \'.\'],\ \'readline\'|" \
 		${WRKSRC}/setup.py
 .endif
-	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
-		${WRKSRC}/Lib/cgi.py
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
