@@ -5,6 +5,9 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/fpjson.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/fpjsonrtti.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/fpjsonrtti.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/fpjsonrtti.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/fpjsontopas.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/fpjsontopas.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/fpjsontopas.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/jsonconf.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/jsonconf.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/jsonconf.rsj
