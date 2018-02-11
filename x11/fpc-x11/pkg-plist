@@ -1,8 +1,11 @@
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/x11.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/cursorfont.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/deckeysym.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/fontconfig.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/fontconfig.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/hpkeysym.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/keysym.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/sunkeysym.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/x.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/x.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xatom.ppu
@@ -10,6 +13,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xcms.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xcms.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xf86dga.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xf86dga.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xf86keysym.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xf86vmode.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xf86vmode.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xfixes.o
