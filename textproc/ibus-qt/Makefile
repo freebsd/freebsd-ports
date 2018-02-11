@@ -19,12 +19,10 @@ RUN_DEPENDS=	ibus>=1.3.7:textproc/ibus
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 	libicuuc.so:devel/icu
 
-BROKEN_powerpc64=	fails to link: libicui18n.so: undefined reference to '__cxa_throw_bad_array_new_length@CXXABI_1.3.8'
-
 GH_ACCOUNT=	ibus
 
 USE_QT4=	gui dbus moc_build qmake_build moc_build uic_build rcc_build
-USES=		cmake pkgconfig
+USES=		cmake compiler:c++11-lib pkgconfig
 CMAKE_ARGS=	-DDOCDIR=${PREFIX}/share/doc/ibus-qt -DLIBDIR=lib
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
