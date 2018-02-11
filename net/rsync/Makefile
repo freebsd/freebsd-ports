@@ -13,7 +13,7 @@ MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
 		LOCAL/ehaupt/rsync
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3
