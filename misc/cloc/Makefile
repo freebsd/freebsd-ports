@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cloc
-PORTVERSION=	1.74
+PORTVERSION=	1.76
+DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -12,10 +13,11 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff
 
+USES=		perl5
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlDanial
 
-USES=		perl5
 USE_PERL5=	run
 PLIST_FILES=	bin/${PORTNAME}
 NO_BUILD=	yes
