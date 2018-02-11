@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libzmq4
-PORTVERSION=	4.2.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	4.2.3
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/zeromq/libzmq/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -16,11 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	zmq-[0-9]* libzmq[^4]-[0-9]*
 
-USES=	gmake libtool pkgconfig
+USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
-OPTIONS_DEFINE=			DEBUG MANPAGES
+OPTIONS_DEFINE=			DEBUG LIBUNWIND MANPAGES
 OPTIONS_RADIO=			CURVE
 OPTIONS_RADIO_CURVE=		SODIUM TWEETNACL
 OPTIONS_GROUP=			MULTICAST
@@ -28,6 +29,7 @@ OPTIONS_GROUP_MULTICAST=	NORM PGM
 OPTIONS_DEFAULT=		MANPAGES NORM PGM TWEETNACL
 OPTIONS_SUB=		yes
 
+LIBUNWIND_DESC=	Use libunwind to print stack trace in case of error
 CURVE_DESC=	CURVE security backend
 MULTICAST_DESC=	Reliable Multicast Transports
 TWEETNACL_DESC=	Use tweetnacl
@@ -40,6 +42,9 @@ DEBUG_VARS=		WITH_DEBUG=yes
 
 PGM_CONFIGURE_WITH=	pgm
 PGM_LIB_DEPENDS=	libpgm.so:net/openpgm
+
+LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
+LIBUNWIND_CONFIGURE_ENABLE=	libunwind
 
 MANPAGES_BUILD_DEPENDS=		xmlto:textproc/xmlto \
 				asciidoc:textproc/asciidoc
@@ -54,14 +59,10 @@ SODIUM_PLIST_FILES=	bin/curve_keygen
 
 TWEETNACL_PLIST_FILES=	bin/curve_keygen
 
-CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-
-CFLAGS+=	-Wno-long-long
-CPPFLAGS+=	-Wno-error
-MAKE_ENV=	V=1
-
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig --disable-static
+CFLAGS+=		-Wno-long-long
+CPPFLAGS+=		-Wno-error
+MAKE_ENV=		V=1
 
 .include <bsd.port.options.mk>
 
