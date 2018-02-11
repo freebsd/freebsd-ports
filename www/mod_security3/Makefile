@@ -3,6 +3,7 @@
 PORTNAME=	mod_security
 DISTVERSION=	3.0.0
 CATEGORIES=	www security
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	marius.halden@modirum.com
 COMMENT=	Intrusion detection and prevention engine
