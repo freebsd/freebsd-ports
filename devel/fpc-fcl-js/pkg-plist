@@ -1,6 +1,9 @@
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-js.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsbase.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsbase.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsminifier.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsminifier.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsminifier.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsparser.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsparser.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsparser.rsj
