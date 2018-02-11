@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsync
-PORTVERSION=	3.1.2
-PORTREVISION=	8
+DISTVERSION=	3.1.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
 		https://rsync.samba.org/ftp/rsync/ \
