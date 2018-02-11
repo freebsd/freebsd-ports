@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.12.2
-PORTREVISION?=	7
+PORTREVISION?=	8
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -113,7 +113,7 @@ OPTIONS_DEFINE=	\
 	LUA \
 	MEMC \
 	MODSECURITY \
-	MODSECURITY_DEVEL \
+	MODSECURITY3 \
 	NAXSI \
 	PASSENGER \
 	POSTGRES \
@@ -228,7 +228,7 @@ LET_DESC=			3rd party let module
 LUA_DESC=			3rd party lua module
 MEMC_DESC=			3rd party memc (memcached) module
 MODSECURITY_DESC=		3rd party mod_security module
-MODSECURITY_DEVEL_DESC=		3rd party mod_security v3 module
+MODSECURITY3_DESC=		3rd party mod_security v3 module
 NAXSI_DESC=			3rd party naxsi module
 PASSENGER_DESC=			3rd party passenger module
 POSTGRES_DESC=			3rd party postgres module
@@ -903,8 +903,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure \
 		${PATCHDIR}/extra-patch-ngx_http_modsecurity.c
 .endif
 
-.if ${PORT_OPTIONS:MMODSECURITY_DEVEL}
-LIB_DEPENDS+=	libmodsecurity.so.3:www/mod_security-devel
+.if ${PORT_OPTIONS:MMODSECURITY3}
+LIB_DEPENDS+=	libmodsecurity.so:www/mod_security3
 GH_TUPLE+=	SpiderLabs:ModSecurity-nginx:c0ae166:modsec
 CONFIGURE_ARGS+=--add-module=${WRKSRC_modsec}
 .endif
