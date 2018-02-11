@@ -38,7 +38,8 @@ load_rc_config $name
 : ${mailman_run_localhost:="NO"}
 
 start_precmd=${name}_prestart
-extra_commands="reload status"
+extra_commands="reload status reopen"
+reopen_cmd="${command} reopen"
 
 mailman_prestart() {
 	### check/fix permissions if desired
