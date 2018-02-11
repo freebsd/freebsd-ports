@@ -1,5 +1,5 @@
 # Backport patch 0001 from Issue #20210
-# Issue: http://bugs.python.org/issue20210
+# Issue: https://bugs.python.org/issue20210
 # By: Thomas Petazzoni
 
 --- ./Makefile.pre.in.orig	2014-03-24 22:45:17.908886504 +1100
