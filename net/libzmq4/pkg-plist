@@ -1,9 +1,8 @@
 include/zmq_utils.h
 include/zmq.h
-lib/libzmq.a
 lib/libzmq.so
 lib/libzmq.so.5
-lib/libzmq.so.5.1.2
+lib/libzmq.so.5.1.3
 libdata/pkgconfig/libzmq.pc
 %%MANPAGES%%man/man3/zmq_atomic_counter_dec.3.gz
 %%MANPAGES%%man/man3/zmq_atomic_counter_destroy.3.gz
@@ -24,6 +23,7 @@ libdata/pkgconfig/libzmq.pc
 %%MANPAGES%%man/man3/zmq_disconnect.3.gz
 %%MANPAGES%%man/man3/zmq_errno.3.gz
 %%MANPAGES%%man/man3/zmq_getsockopt.3.gz
+%%MANPAGES%%man/man7/zmq_gssapi.7.gz
 %%MANPAGES%%man/man3/zmq_has.3.gz
 %%MANPAGES%%man/man3/zmq_msg_close.3.gz
 %%MANPAGES%%man/man3/zmq_msg_copy.3.gz
