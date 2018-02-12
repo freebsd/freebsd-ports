@@ -3,6 +3,7 @@ include/czmq_library.h
 include/czmq_prelude.h
 include/czmq.h
 include/zactor.h
+include/zargs.h
 include/zarmour.h
 include/zauth.h
 include/zbeacon.h
@@ -38,10 +39,11 @@ include/zuuid.h
 lib/libczmq.a
 lib/libczmq.so
 lib/libczmq.so.4
-lib/libczmq.so.4.0.2
+lib/libczmq.so.4.1.0
 libdata/pkgconfig/libczmq.pc
 man/man1/zmakecert.1.gz
 man/man3/zactor.3.gz
+man/man3/zargs.3.gz
 man/man3/zarmour.3.gz
 man/man3/zauth.3.gz
 man/man3/zbeacon.3.gz
@@ -76,6 +78,7 @@ man/man3/ztrie.3.gz
 man/man3/zuuid.3.gz
 man/man7/czmq.7.gz
 share/zproject/czmq/zactor.api
+share/zproject/czmq/zargs.api
 share/zproject/czmq/zarmour.api
 share/zproject/czmq/zcert.api
 share/zproject/czmq/zcertstore.api
@@ -100,6 +103,7 @@ share/zproject/czmq/zproc.api
 share/zproject/czmq/zsock_option.api
 share/zproject/czmq/zsock.api
 share/zproject/czmq/zstr.api
+share/zproject/czmq/zsys.api
 share/zproject/czmq/ztimerset.api
 share/zproject/czmq/ztrie.api
 share/zproject/czmq/zuuid.api
