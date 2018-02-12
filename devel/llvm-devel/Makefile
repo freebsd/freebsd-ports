@@ -276,6 +276,7 @@ MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 
 .if ${OPSYS} == FreeBSD && ${OSREL} == 10.3
 CFLAGS+=	-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1
+BROKEN=	Missing __cxa_thread_atexit
 .endif
 
 .if defined(WITH_DEBUG)
