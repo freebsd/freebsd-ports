@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://dev.louiz.org/attachments/download/52/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console XMPP client
 
 LICENSE=	ZLIB
