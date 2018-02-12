@@ -125,7 +125,7 @@ post-patch:
 # readline shared library is present on base before FreeBSD 11 - r268461
 # force setup.py ignore base and use readline from ports
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		"s|lib_dirs,\ \'readline\'|[\'${LOCALBASE}/lib\',\ \'.\'],\ \'readline\'|" \
 		${WRKSRC}/setup.py
 .endif
