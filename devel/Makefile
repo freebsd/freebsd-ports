@@ -3976,6 +3976,7 @@
     SUBDIR += pecl-inotify
     SUBDIR += pecl-intl
     SUBDIR += pecl-jsmin
+    SUBDIR += pecl-jsmin2
     SUBDIR += pecl-json_post
     SUBDIR += pecl-jsonc
     SUBDIR += pecl-jsond
