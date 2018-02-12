@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sbt
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/sbt/sbt/releases/download/v${PORTVERSION}/
 
@@ -42,6 +42,8 @@ do-install:
 .if ${PORT_OPTIONS:MADVANCED}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sbt ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sbt-launch-lib.bash ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/conf
+	${INSTALL_DATA} ${FILESDIR}/sbtopts ${STAGEDIR}${DATADIR}/conf
 .if ${PORT_OPTIONS:MPRELOADED}
 	cd ${WRKSRC}/lib && ${COPYTREE_SHARE} local-preloaded ${STAGEDIR}${DATADIR}
 .endif
