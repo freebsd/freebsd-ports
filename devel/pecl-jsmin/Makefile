@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsmin
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -12,6 +11,6 @@ COMMENT=	PHP extension for minifying JavaScript
 LICENSE=	PHP301
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=56
 
 .include <bsd.port.mk>
