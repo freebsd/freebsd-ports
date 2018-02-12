@@ -5,7 +5,10 @@ to get it running, you just have to:
    (perldoc App::Netdisco::Manual::Configuration)
  * edit rc.conf according to %%PREFIX%%/etc/rc.d/netdisco
  * read "perldoc App::Netdisco::Manual::Deployment"
- * launch netdisco-deploy to install/upgrade your database
+ * launch netdisco-deploy *as user netdisco* to install/upgrade your database
  * copy (or link) %%ETCDIR%%/netdiscologs.conf
    to %%PREFIX%%/etc/newsyslog.conf.d/ to take care
    of logs rotation
+
+Always use "su - netdisco" before running netdisco-do or netdisco-deploy
+ (because of locallib use)
