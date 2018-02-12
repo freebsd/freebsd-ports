@@ -1750,6 +1750,7 @@
 %%SEAHUBDIR%%/tests/api/test_repo_tokens.py
 %%SEAHUBDIR%%/tests/api/test_repo_user_folder_perm.py
 %%SEAHUBDIR%%/tests/api/test_repos.py
+%%SEAHUBDIR%%/tests/api/test_search.py
 %%SEAHUBDIR%%/tests/api/test_serializers.py
 %%SEAHUBDIR%%/tests/api/test_shared_repo.py
 %%SEAHUBDIR%%/tests/api/test_shares.py
