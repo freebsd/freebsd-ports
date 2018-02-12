@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	RG
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rainbows and unicorns
 
 RUN_DEPENDS=	rubygem-trollop1>=1.9:devel/rubygem-trollop1 \
