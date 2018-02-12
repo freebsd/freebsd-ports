@@ -74,6 +74,7 @@ share/drawpile/drawpile/theme/dark/format-text-underline.svg
 share/drawpile/drawpile/theme/dark/go-jump.svg
 share/drawpile/drawpile/theme/dark/im-ban-user.svg
 share/drawpile/drawpile/theme/dark/im-kick-user.svg
+share/drawpile/drawpile/theme/dark/im-user.svg
 share/drawpile/drawpile/theme/dark/irc-operator.svg
 share/drawpile/drawpile/theme/dark/irc-unvoice.svg
 share/drawpile/drawpile/theme/dark/layer-visible-off.svg
@@ -141,6 +142,7 @@ share/drawpile/drawpile/theme/light/format-text-underline.svg
 share/drawpile/drawpile/theme/light/go-jump.svg
 share/drawpile/drawpile/theme/light/im-ban-user.svg
 share/drawpile/drawpile/theme/light/im-kick-user.svg
+share/drawpile/drawpile/theme/light/im-user.svg
 share/drawpile/drawpile/theme/light/irc-operator.svg
 share/drawpile/drawpile/theme/light/irc-unvoice.svg
 share/drawpile/drawpile/theme/light/layer-visible-off.svg
