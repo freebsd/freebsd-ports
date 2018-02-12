@@ -3,6 +3,7 @@
 
 PORTNAME=	dtv-scan-tables
 PORTVERSION=	20170530
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	dreamcat4@gmail.com
