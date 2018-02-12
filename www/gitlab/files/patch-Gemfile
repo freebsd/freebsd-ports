@@ -1,6 +1,6 @@
 --- Gemfile.orig	2018-01-11 16:23:59 UTC
 +++ Gemfile
-@@ -1,49 +1,49 @@
+@@ -1,55 +1,55 @@
  source 'https://rubygems.org'
  
 -gem 'rails', '4.2.8'
@@ -64,6 +64,13 @@
  gem 'akismet', '~> 2.0'
  
  # Two-factor authentication
+ gem 'devise-two-factor', '~> 3.0.0'
+ gem 'rqrcode-rails3', '~> 0.1.7'
+-gem 'attr_encrypted', '~> 3.0.0'
++gem 'attr_encrypted', '~> 3.0'
+ gem 'u2f', '~> 0.2.1'
+ 
+ # GitLab Pages
 @@ -73,11 +73,11 @@ gem 'gollum-lib', '~> 4.2', require: fal
  gem 'gollum-rugged_adapter', '~> 0.4.4', require: false
  
