@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_pagespeed
 PORTVERSION=	1.12.34.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/mmokhi:boringssl,chromium_base,chromium_build,googleurl,gflags_arch,gflags_src,libjpeg_turbo_src,yasm_patched,libwebp,modpb64 \
@@ -33,7 +33,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 USES=		compiler:c++14-lang gperf jpeg gmake localbase pkgconfig \
 		python shebangfix ssl tar:xz
-USE_APACHE=	24
+USE_APACHE=	22+
 SHEBANG_GLOB=	*.gyp *.gypi *.py *.sh
 SHEBANG_FILES=	build/fix_proto_and_invoke_protoc
 
@@ -48,6 +48,7 @@ BUILDTYPE=	Release
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 CLR_VERSION=	20161024
 GYP_DEFINES+=	os_posix=1 \
+		support_posix_shared_mem=1 \
 		use_system_libs=1 \
 		use_system_protobuf=1 \
 		use_system_openssl=1 \
