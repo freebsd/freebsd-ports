@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multimarkdown
-PORTVERSION=	4.7
+DISTVERSION=	4.7.1
 CATEGORIES=	textproc
 DIST_SUBDIR=	${PORTNAME}
 
@@ -12,14 +12,13 @@ COMMENT=	Extended Markdown processor with more features, written in C
 LICENSE=	MIT GPLv2+
 LICENSE_COMB=	dual
 
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	fletcher:DEFAULT nddrylliog:greg
 GH_PROJECT=	MultiMarkdown-4 greg:greg
 GH_TAGNAME=	98ecf13:greg
 GH_SUBDIR=	greg:greg
-
 ALL_TARGET=	${PORTNAME}
-USES=		gmake
 
 OPTIONS_DEFINE=		CHEAT_SHEET EXTRAS HELPERS DOCS
 CHEAT_SHEET_DESC=	HTML-based cheat sheat
@@ -48,7 +47,7 @@ post-patch-EXTRAS-on:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/Support/bin/*
 
 do-install:
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${FIND} ${WRKSRC} -name '*.bak' -o -name '*.bat' -delete
 	${INSTALL_PROGRAM} ${WRKSRC}/multimarkdown ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/bin
 
@@ -62,6 +61,7 @@ do-install-EXTRAS-on:
 	${INSTALL_DATA} ${WRKSRC}/Support/XSLT/* ${STAGEDIR}${DATADIR}/XSLT
 	@${MKDIR} ${STAGEDIR}${DATADIR}/utilities
 	${INSTALL_SCRIPT} ${WRKSRC}/Support/Utilities/* ${STAGEDIR}${DATADIR}/utilities
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Support/README.md ${STAGEDIR}${DOCSDIR}/README-extras.md
 
 post-install-CHEAT_SHEET-on:
