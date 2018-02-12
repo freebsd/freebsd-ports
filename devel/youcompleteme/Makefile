@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	YouCompleteMe
-DISTVERSION=	g20171203
-PORTREVISION=	1
+DISTVERSION=	g20180210
 CATEGORIES=	devel
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -28,9 +27,9 @@ RUN_DEPENDS=	vim:editors/vim \
 USES=		cmake python:2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	Valloric
-GH_TAGNAME=	290dd9472
-GH_TUPLE=	Valloric:ycmd:f58c1f7b6:ycm/third_party/ycmd \
-		vheon:JediHTTP:67c8d27c6:ycmd5/third_party/ycmd/third_party/JediHTTP
+GH_TAGNAME=	c2a7b3c
+GH_TUPLE=	Valloric:ycmd:aa04988:ycm/third_party/ycmd \
+		vheon:JediHTTP:d283a73:ycmd5/third_party/ycmd/third_party/JediHTTP
 
 CMAKE_SOURCE_PATH+=	${WRKSRC}/third_party/ycmd/cpp
 
