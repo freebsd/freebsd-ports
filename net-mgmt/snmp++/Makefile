@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}v${PORTVERSION}
 MAINTAINER=	nicolai@petri.dk
 COMMENT=	SNMP C++ library with V3 support
 
+LICENSE=	BSD3CLAUSE
+
 MAKEFILE=	Makefile.FreeBSD
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
