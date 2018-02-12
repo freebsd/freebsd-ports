@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	distcache
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+DISTVERSION=	1.5.1
 CATEGORIES=	security www
 MASTER_SITES=	SF/${PORTNAME}/2.%20${PORTNAME}-stable/${PORTVERSION} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/

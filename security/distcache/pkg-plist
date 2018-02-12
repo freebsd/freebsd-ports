@@ -2,6 +2,11 @@ bin/dc_client
 bin/dc_server
 bin/dc_snoop
 bin/dc_test
+bin/nal_echo
+bin/nal_hose
+bin/nal_ping
+bin/nal_pong
+bin/nal_proxy
 bin/nal_test
 bin/piper
 bin/sslswamp
@@ -10,6 +15,7 @@ include/distcache/dc_plug.h
 include/distcache/dc_server.h
 include/libnal/nal.h
 include/libnal/nal_devel.h
+include/libnal/nal_ssl.h
 lib/libdistcache.a
 lib/libdistcache.so
 lib/libdistcache.so.1
@@ -22,6 +28,10 @@ lib/libnal.a
 lib/libnal.so
 lib/libnal.so.1
 lib/libnal.so.1.0.1
+lib/libnalssl.a
+lib/libnalssl.so
+lib/libnalssl.so.1
+lib/libnalssl.so.1.0.1
 man/man1/dc_client.1.gz
 man/man1/dc_server.1.gz
 man/man1/dc_snoop.1.gz
