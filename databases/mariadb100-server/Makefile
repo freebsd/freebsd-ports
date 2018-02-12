@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.33
-PORTREVISION?=	1
+PORTVERSION=	10.0.34
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -56,7 +56,6 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mariadb" \
 		-DINSTALL_SQLBENCHDIR= \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
 		-DWITH_UNIT_TESTS=0 \
-		-DWITH_LIBEDIT=0 \
 		-DWITH_SSL=${OPENSSLBASE} \
 		-DWITH_LIBWRAP=1 \
 		-DCOMPILATION_COMMENT="FreeBSD Ports"
@@ -114,14 +113,13 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
 ${ENGINE}_CMAKE_OFF=    -DWITHOUT_${ENGINE}=1
 .endfor
 
+INNOBASE_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-MDEV-15288
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 MROONGA_CMAKE_OFF=	-DWITHOUT_MROONGA=1
 MROONGA_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
-# Currently OQGraph does not build using clang.
-# See See https://mariadb.atlassian.net/browse/MDEV-8051.
-OQGRAPH_USE=		gcc
+# See https://mariadb.atlassian.net/browse/MDEV-15291.
 OQGRAPH_BROKEN=		OQGraph does not build
 TOKUDB_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 TOKUDB_PORTDOCS=	PATENTS README.md
