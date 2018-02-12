@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.30
-PORTREVISION?=	2
+PORTVERSION=	10.1.31
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -114,6 +114,7 @@ GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
 .else
 # MySQL-Server part
 BROKEN_powerpc64=	Does not build: fatal error: sys/platform/ppc.h: No such file or directory
+#LIB_DEPENDS=	libevent.so:devel/libevent
 USES+=		mysql:101m
 USE_GNOME=	libxml2
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
@@ -126,13 +127,14 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
 		-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1
 
 .for ENGINE in ${OPTIONS_GROUP_ENGINES}
-${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO \
-			-DWITHOUT_${ENGINE}=1
+${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO
+${ENGINE}_CMAKE_ON=	-DPLUGIN_${ENGINE}=DYNAMIC
 .endfor
 
 CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONNECT_EXTRA_USE=	gnome=libxml2
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI=NO
+INNOBASE_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-MDEV-15288
 LZ4_CMAKE_OFF=		-DGRN_WITH_LZ4=OFF -DWITH_INNODB_LZ4=OFF
 LZ4_CMAKE_ON=		-DGRN_WITH_LZ4=${LOCALBASE}/lib -DWITH_INNODB_LZ4=${LOCALBASE}/lib
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
@@ -143,7 +145,6 @@ MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 MROONGA_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 MROONGA_VARS=		LICENSE+=LGPL20 LICENSE_COMB=multi
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack
-OQGRAPH_BROKEN=		OQGRAPH fails to build with boost 1.66, see bug 224089
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 SNAPPY_CMAKE_OFF=	-DWITH_INNODB_SNAPPY=OFF
