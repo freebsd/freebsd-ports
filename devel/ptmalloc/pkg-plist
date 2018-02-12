@@ -1,4 +1,4 @@
-%%INCDIR%%/malloc.h
+include/ptmalloc/malloc.h
 lib/libptmalloc.a
 lib/libptmalloc.so
 lib/libptmalloc.so.3
