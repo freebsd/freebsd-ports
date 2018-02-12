@@ -15,13 +15,13 @@ ONLY_FOR_ARCHS_REASON=	device driver part of the program only supports amd64
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/libbfd \
 		${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty \
-		${LOCALBASE}/lib/libxo.a:devel/libxo \
-		${LOCALBASE}/bin/python:lang/python
+		${LOCALBASE}/lib/libxo.a:devel/libxo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freenas
 GH_TAGNAME=	45e2b86
 
+BINARY_ALIAS=	python=${PYTHON_CMD}
 USES=		python:build kmod
 USE_PYTHON=	cython
 
