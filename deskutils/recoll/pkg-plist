@@ -86,6 +86,7 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/filters/rclxmp.py
 %%DATADIR%%/filters/rclxslt.py
 %%DATADIR%%/filters/rclzip
+%%DATADIR%%/filters/recoll-we-move-files.py
 %%DATADIR%%/filters/xls-dump.py
 %%DATADIR%%/filters/xlsxmltocsv.py
 %%QT4%%%%DATADIR%%/images/aptosid-book.png
