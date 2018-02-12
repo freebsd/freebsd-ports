@@ -1,4 +1,4 @@
---- Makefile.orig	2017-10-20 04:48:01 UTC
+--- Makefile.orig	2018-02-09 15:54:09 UTC
 +++ Makefile
 @@ -6,7 +6,7 @@ EPREFIX        = $(PREFIX)
  
@@ -15,14 +15,14 @@
  EXAILEMANDIR   = $(DESTDIR)$(MANPREFIX)/man
 +BASHCOMPDIR    = $(ETCDIR)/bash_completion.d
  
- .PHONY: dist test completion coverage clean sanitycheck builddir
- 
-@@ -202,7 +203,7 @@ po/messages.pot: pot
- # The "set -o pipefail" (only works on Bash) makes the whole thing die if any of the find fails.
- # The "LC_ALL=C" disables any locale-dependent sort behavior.
+ .PHONY: all all_no_locale builddir compile make-install-dirs uninstall \
+ 	install install_no_locale install-target locale install-locale \
+@@ -206,7 +207,7 @@ po/messages.pot: pot
+ #   dash (Debian's /bin/sh) doesn't support it and exits immediately, so we test it in a subshell.
+ # The "export LC_ALL=C" disables any locale-dependent sort behavior.
  pot:
--	( set -o pipefail || true && \
-+	( set || true && \
+-	( ( set -o pipefail 2> /dev/null ) && set -o pipefail ; \
++	( \
  	  export LC_ALL=C && cd po && \
  	  { find ../xl ../xlgui -name "*.py" | sort && \
  	    find ../data/ui -name "*.ui" | sort && \
