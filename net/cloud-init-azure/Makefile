@@ -41,7 +41,7 @@ PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	currently depends on dmidecode which is x86-only
 
-PLIST_DIRS=	/var/lib/cloud
+PLIST_DIRS=	/var/lib/cloud /var/lib
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/setup.py
