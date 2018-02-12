@@ -237,6 +237,7 @@
     SUBDIR += goobox
     SUBDIR += gqmpeg
     SUBDIR += gqradio
+    SUBDIR += gradio
     SUBDIR += gramofile
     SUBDIR += grip
     SUBDIR += gsm
