@@ -19,7 +19,7 @@ RUN_DEPENDS=	unrar:archivers/unrar \
 		wpd2html:textproc/libwpd010 \
 		unrtf:textproc/unrtf
 
-USES=		bison gmake iconv libtool localbase python shebangfix
+USES=		bison gmake iconv libtool localbase python:2.7 shebangfix
 SHEBANG_FILES=	filters/*.py desktop/hotrecoll.py \
 		filters/rcl7z filters/rclaudio filters/rclchm \
 		filters/rcldia filters/rclepub filters/rclepub1 \
