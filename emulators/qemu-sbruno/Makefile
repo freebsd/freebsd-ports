@@ -18,7 +18,6 @@ GH_TUPLE=	seanbruno:qemu-bsd-user:2b84fbb94e9 \
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2.7,build
 USE_PERL5=	build
-PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
 ONLY_FOR_ARCHS=		amd64 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?

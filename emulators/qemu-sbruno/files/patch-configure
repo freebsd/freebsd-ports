@@ -1,6 +1,6 @@
---- configure.orig	2016-11-10 11:32:23.000000000 -0700
-+++ configure	2016-11-13 09:06:21.654976000 -0700
-@@ -2977,10 +2977,10 @@
+--- configure.orig	2018-02-08 19:22:54 UTC
++++ configure
+@@ -3248,10 +3248,10 @@ fi
  # curses probe
  if test "$curses" != "no" ; then
    if test "$mingw32" = "yes" ; then
