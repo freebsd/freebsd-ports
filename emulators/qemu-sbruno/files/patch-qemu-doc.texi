@@ -1,5 +1,6 @@
-Index: qemu/qemu-doc.texi
-@@ -985,7 +985,8 @@
+--- qemu-doc.texi.orig	2018-02-08 19:22:54 UTC
++++ qemu-doc.texi
+@@ -556,7 +556,8 @@ Send the escape character to the fronten
  
  @c man begin SEEALSO
  The HTML documentation of QEMU for more precise information and Linux

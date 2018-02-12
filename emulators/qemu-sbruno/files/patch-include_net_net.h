@@ -1,7 +1,8 @@
-Index: qemu/include/net/net.h
-@@ -174,8 +174,8 @@ void net_host_device_remove(Monitor *mon
- int do_netdev_add(Monitor *mon, const QDict *qdict, QObject **ret_data);
- int do_netdev_del(Monitor *mon, const QDict *qdict, QObject **ret_data);
+--- include/net/net.h.orig	2018-02-08 19:22:54 UTC
++++ include/net/net.h
+@@ -220,8 +220,8 @@ void qmp_netdev_add(QDict *qdict, QObjec
+ int net_hub_id_for_client(NetClientState *nc, int *id);
+ NetClientState *net_hub_port_find(int hub_id);
  
 -#define DEFAULT_NETWORK_SCRIPT "/etc/qemu-ifup"
 -#define DEFAULT_NETWORK_DOWN_SCRIPT "/etc/qemu-ifdown"
