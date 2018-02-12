@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	version_sorter
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
