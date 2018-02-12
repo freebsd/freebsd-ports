@@ -51,7 +51,7 @@ lib/libwcs-%%VERSION%%.a
 lib/libwcs.a
 lib/libwcs.so
 lib/libwcs.so.5
-lib/libwcs.so.5.17
+lib/libwcs.so.5.18
 libdata/pkgconfig/wcslib.pc
 man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
