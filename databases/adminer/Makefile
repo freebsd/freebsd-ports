@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adminer
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.1
 CATEGORIES=	databases www
 MASTER_SITES=	https://github.com/vrana/adminer/releases/download/v${PORTVERSION}/
 EXTRACT_SUFX=	.php
@@ -13,15 +13,15 @@ COMMENT=	Full-featured database management tool written in PHP
 
 LICENSE=	APACHE20
 
-NO_ARCH=	yes
-NO_BUILD=	yes
 USES=	php
 USE_PHP=	session
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPVER="${PHP_VER}"
-PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/${PORTNAME}
