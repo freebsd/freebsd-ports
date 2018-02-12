@@ -1,4 +1,4 @@
-A little gtkmm GUI to select lv2 plugs from a list and run them with jalv.
+A little gtkmm GUI to select lv2 plugins from a list and run them with jalv.
 
 Features:
 * select jalv interpreter from combo box
