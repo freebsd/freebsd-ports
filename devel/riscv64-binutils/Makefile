@@ -2,7 +2,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.29
-PORTREVISION=	20180105
+PORTREVISION=	20180212
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	riscv64-
@@ -25,7 +25,7 @@ GH_PROJECT=	riscv-binutils-gdb
 GH_TAGNAME=	dc03ed3
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX}${OPSYS:tl} \
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL} \
 		--with-sysroot=/ \
 		--disable-gdb \
 		--disable-sim \
