@@ -3,7 +3,7 @@
 
 PORTNAME=	gif2png
 PORTVERSION=	2.5.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.catb.org/~esr/gif2png/
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		localbase:ldflags python:2,run shebangfix
+USES=		localbase:ldflags python:2.7,run shebangfix
 SHEBANG_FILES=	web2png
 GNU_CONFIGURE=	yes
 
