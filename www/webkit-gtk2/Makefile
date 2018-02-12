@@ -14,7 +14,6 @@ COMMENT=	Opensource browser engine using the GTK+ 2 toolkit
 
 BUILD_DEPENDS=	gtkdoc-rebase:textproc/gtk-doc \
 		p5-Switch>0:lang/p5-Switch \
-		python:lang/python \
 		geoclue>=0:net/geoclue
 LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libsecret-1.so:security/libsecret \
@@ -33,10 +32,11 @@ RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limit:^2\.4\.
 
+BINARY_ALIAS=	python=${PYTHON_CMD}
 USE_GSTREAMER1=	yes
 USE_XORG=	x11 xcomposite xdamage xfixes xrender xt
 USES=		bison compiler:c++11-lib gettext gmake gperf jpeg libtool \
-		localbase pathfix perl5 pkgconfig shebangfix sqlite tar:xz
+		localbase pathfix perl5 pkgconfig python:build shebangfix sqlite tar:xz
 PATHFIX_MAKEFILEIN=	GNUmakefile.in
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
