@@ -11,13 +11,14 @@ COMMENT=	CAM-related software for profile and pocketing operations
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	python-config:lang/python
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Heeks
 GH_TAGNAME=	f1986ac
 
+BINARY_ALIAS=	python=${PYTHON_CMD} \
+		python-config=${PYTHON_CMD}-config
 USES=		cmake:outsource python
 USE_LDCONFIG=	yes
 
