@@ -3,7 +3,7 @@
 
 PORTNAME=	tren
 PORTVERSION=	1.242
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://www.tundraware.com/Software/tren/
 
@@ -15,7 +15,7 @@ LICENSE_NAME=	Tren license
 LICENSE_FILE=	${WRKSRC}/tren-license.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell no-auto-accept
 
-USES=		python:2,run shebangfix
+USES=		python:2.7,run shebangfix
 SHEBANG_FILES=	tren.py
 PLIST_FILES=	bin/tren.py man/man1/tren.1.gz
 PORTDOCS=	WHATSNEW.txt tren-license.txt tren.html tren.pdf tren.ps tren.rst
