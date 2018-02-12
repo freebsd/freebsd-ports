@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	i2p
-PORTVERSION=	0.9.16
+DISTVERSION=	0.9.33
 CATEGORIES=	security java net-p2p
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTVERSION} \
 		http://download.i2p2.no/releases/${PORTVERSION}/ \
@@ -30,13 +30,12 @@ ONLY_FOR_ARCHS_REASON=	i2p libwrapper.so library binary only available for i386 
 
 USES=		gettext tar:bzip2
 USE_RC_SUBR=	i2p
-
 USE_ANT=	yes
 USE_JAVA=	yes
+NO_ARCH=	yes
 JAVA_BUILD=	jdk
 JAVA_VERSION=	1.6+
 USE_LOCALE=	en_US.UTF-8
-
 ALL_TARGET=	updater tarball
 
 SUB_FILES=	wrapper.sh
