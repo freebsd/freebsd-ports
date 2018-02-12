@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cppzmq
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -12,6 +12,8 @@ COMMENT=	C++ bindings for 0MQ
 LICENSE=	MIT
 
 LIB_DEPENDS=	libzmq.so:net/libzmq4
+
+NO_ARCH=	yes
 
 USES=		cmake pkgconfig
 CMAKE_ARGS=	--no-warn-unused-cli -Wno-dev
@@ -25,10 +27,11 @@ GH_ACCOUNT=	zeromq
 PLIST_FILES=	\
 	include/zmq.hpp \
 	include/zmq_addon.hpp \
+	share/cmake/Modules/FindZeroMQ.cmake \
 	share/cmake/Modules/cppzmqConfig.cmake \
 	share/cmake/Modules/cppzmqConfigVersion.cmake \
 	share/cmake/Modules/cppzmqTargets.cmake \
-	share/cmake/Modules/libzmqPkgConfigFallback.cmake
+	share/cmake/Modules/libzmq-pkg-config/FindZeroMQ.cmake
 
 post-patch:
 	${SED} -i '.orig' \
