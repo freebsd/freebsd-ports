@@ -1,7 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	htmlpurifier
+PORTNAME=	htmlpurifier.org
 PORTVERSION=	20140120
 PORTREVISION=	1
 CATEGORIES=	devel www pear
