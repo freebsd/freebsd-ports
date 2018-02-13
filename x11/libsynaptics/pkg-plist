@@ -4,10 +4,9 @@ include/synaptics/Shm_0_14_6
 include/synaptics/pad.h
 include/synaptics/synaptics.h
 include/synaptics/syndebug.h
-include/synaptics/synparams.h
+include/synaptics/synparam.h
 include/synaptics/synshm.h
-include/synaptics/version.h
 lib/libsynaptics.a
 lib/libsynaptics.so
 lib/libsynaptics.so.0
-lib/libsynaptics.so.0.0.0
+lib/libsynaptics.so.0.0.1
