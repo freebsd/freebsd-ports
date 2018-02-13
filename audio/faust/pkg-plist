@@ -70,6 +70,7 @@ bin/faust2w32max6
 bin/faust2w32msp
 bin/faust2w32puredata
 bin/faust2w32vst
+bin/faust2w64max6
 bin/faust2wasm
 bin/faust2webaudio
 bin/faust2webaudioasm
