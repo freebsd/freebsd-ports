@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	ibus-daemon:textproc/ibus \
-		${PYTHON_SITELIBDIR}/Xlib/X.py:x11-toolkits/py-xlib
+		${PYTHON_SITELIBDIR}/Xlib/X.py:x11-toolkits/py-xlib@${PY_FLAVOR}
 
 USES=		emacs python:2.7,run shebangfix
 
