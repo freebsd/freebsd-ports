@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	yubikey-personalization-gui
-PORTVERSION=	3.1.24
+PORTVERSION=	3.1.25
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	romain@FreeBSD.org
