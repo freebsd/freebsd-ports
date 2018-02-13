@@ -1,5 +1,5 @@
-TIMESTAMP = 1517341505
-SHA256 (containous-traefik-v1.5.1_GH0.tar.gz) = 047664e865f40d023e6c86375799bca6d94784533d153ac4876837347944550e
-SIZE (containous-traefik-v1.5.1_GH0.tar.gz) = 8060097
+TIMESTAMP = 1518525389
+SHA256 (containous-traefik-v1.5.2_GH0.tar.gz) = 9d4c65f5ed55d05e6727330fa095e8374f3e05a121f1f4395cbc15d0577da2d4
+SIZE (containous-traefik-v1.5.2_GH0.tar.gz) = 7828713
 SHA256 (jteeuwen-go-bindata-a0ff256_GH0.tar.gz) = 06c7bb64ab428a28eb3633ae19fafb6b7b241d384ef45ac0728b1c5fbec64961
 SIZE (jteeuwen-go-bindata-a0ff256_GH0.tar.gz) = 17868
