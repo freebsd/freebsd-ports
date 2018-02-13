@@ -591,6 +591,7 @@
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += oscommerce
+    SUBDIR += osrm-backend
     SUBDIR += otrs
     SUBDIR += otter-browser
     SUBDIR += owncloud
