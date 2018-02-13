@@ -37,8 +37,6 @@ GROUPS=			osrm
 USE_GITHUB=		yes
 GH_ACCOUNT=		Project-OSRM
 
-LUA_VER=		5.2
-
 pre-install:
 	${MKDIR}	${STAGEDIR}/var/db/osrm-backend
 .include <bsd.port.mk>
