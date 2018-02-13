@@ -1,11 +1,10 @@
-# $FreeBSD$
+# $FreeBSD: head/sysutils/ipfs-go/Makefile 451834 2017-10-12 09:06:17Z mat $
 
-PORTNAME=	ipfs
+PORTNAME=	ipfs-go
 PORTVERSION=	0.4.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dist.ipfs.io/go-ipfs/${DISTVERSIONPREFIX}${DISTVERSION}/
-PKGNAMESUFFIX=	-go
 DISTNAME=	go-ipfs_${DISTVERSIONPREFIX}${DISTVERSION}_freebsd-${ARCH}
 
 MAINTAINER=	jhixson@gmail.com
@@ -20,7 +19,7 @@ PLIST_FILES=	bin/${PORTNAME}
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/go-ipfs
 
-USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
+USE_RC_SUBR=	${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipfs ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
