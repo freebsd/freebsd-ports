@@ -1,0 +1,5 @@
+PySoundFile can read and write sound files. File reading/writing is supported
+through libsndfile, which is a free, cross-platform, open-source (LGPL) library
+for reading and writing many different sampled sound file formats.
+
+WWW: https://github.com/bastibe/PySoundFile
