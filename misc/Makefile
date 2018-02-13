@@ -303,6 +303,7 @@
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Array-RefElem
     SUBDIR += p5-Asterisk-FastAGI
+    SUBDIR += p5-asterisk-perl
     SUBDIR += p5-Bot-Training
     SUBDIR += p5-Bot-Training-MegaHAL
     SUBDIR += p5-Bot-Training-StarCraft
@@ -356,7 +357,6 @@
     SUBDIR += p5-Text-FIGlet
     SUBDIR += p5-Tie-DxHash
     SUBDIR += p5-Zen-Koans
-    SUBDIR += p5-asterisk-perl
     SUBDIR += pantry
     SUBDIR += parley
     SUBDIR += pastebinit
