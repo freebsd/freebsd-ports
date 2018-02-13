@@ -2,4 +2,4 @@ ARPACK-NG is a collection of Fortran77 subroutines designed to solve
 large-scale eigenvalue problems. It is a fork of the Rice University
 ARPACK, and is jointly-maintained by Debian, Octave, and Scilab.
 
-WWW: http://forge.scilab.org/index.php/p/arpack-ng/
+WWW: https://forge.scilab.org/index.php/p/arpack-ng/
