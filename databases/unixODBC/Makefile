@@ -6,7 +6,7 @@ PORTVERSION=	2.3.5
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.unixodbc.org/pub/unixODBC/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	ODBC library suite for Unix
 
 LICENSE=	GPLv2 LGPL21
