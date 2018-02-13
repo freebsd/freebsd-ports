@@ -2,7 +2,7 @@
 
 PORTNAME=	lumina-core
 PORTVERSION=	1.4.2
-PORTREVISION=	201802091520
+PORTREVISION=	201802130927
 CATEGORIES=	x11
 
 MAINTAINER=	jt@ixsystems.com
@@ -24,6 +24,7 @@ LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 CONFLICTS_INSTALL=	lumina-1.2.*
 
 OPTIONS_DEFINE=	MULTIMEDIA TRUEOS I18N
+OPTIONS_SUB=		yes
 OPTIONS_DEFAULT=	MULTIMEDIA I18N
 MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
 TRUEOS_DESC=	Use the TrueOS system interface settings.
@@ -47,7 +48,7 @@ USE_QT5=	core gui widgets network svg multimedia imageformats \
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	9409ccbf9b56fad22063456497095a211f7bac8c
+GH_TAGNAME=	8dc986531c1e2c7d17ad6987b19e3c84f0f63e4c
 WRKSRC_SUBDIR=	src-qt5/core
 
 #Setup the qmake configuration options

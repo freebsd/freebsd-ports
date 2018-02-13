@@ -2,7 +2,7 @@
 
 PORTNAME=	lumina-calculator
 PORTVERSION=	1.4.2
-PORTREVISION=	201802091520
+PORTREVISION=	201802130927
 CATEGORIES=	deskutils
 
 MAINTAINER=	jt@ixsystems.com
@@ -18,6 +18,7 @@ LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 CONFLICTS_INSTALL=	lumina-1.2.*
 
 OPTIONS_DEFINE=	I18N
+OPTIONS_SUB=		yes
 OPTIONS_DEFAULT=	I18N
 I18N_DESC= Install localization files
 
@@ -33,7 +34,7 @@ USE_QT5=	core gui widgets network svg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	9409ccbf9b56fad22063456497095a211f7bac8c
+GH_TAGNAME=	8dc986531c1e2c7d17ad6987b19e3c84f0f63e4c
 WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}
 
 .if${PORT_OPTIONS:MI18N}

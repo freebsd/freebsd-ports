@@ -2,7 +2,7 @@
 
 PORTNAME=	lumina-coreutils
 PORTVERSION=	1.4.2
-PORTREVISION=	201802091520
+PORTREVISION=	201802130927
 CATEGORIES=	x11
 
 MAINTAINER=	jt@ixsystems.com
@@ -15,6 +15,7 @@ RUN_DEPENDS=	xrandr:x11/xrandr
 CONFLICTS_INSTALL=	lumina-1.2.*
 
 OPTIONS_DEFINE=	I18N
+OPTIONS_SUB=		yes
 OPTIONS_DEFAULT=	I18N
 I18N_DESC= Install localization files
 
@@ -31,7 +32,7 @@ USE_QT5=	core gui widgets network svg imageformats \
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	9409ccbf9b56fad22063456497095a211f7bac8c
+GH_TAGNAME=	8dc986531c1e2c7d17ad6987b19e3c84f0f63e4c
 WRKSRC_SUBDIR=	src-qt5/core-utils
 
 .if${PORT_OPTIONS:MI18N}
