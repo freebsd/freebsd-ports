@@ -16,6 +16,7 @@ PLIST_SUB+=	SONUM=2
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig python tar:bzip2 shebangfix ssl
 USE_LDCONFIG=	yes
+USE_PYTHON=	py3kplist
 MAKEFILE=	GNUmakefile
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--datadir=${DATADIR} --with-openssl=${OPENSSLBASE} \
@@ -26,7 +27,8 @@ OPTIONS_DEFAULT=	STATIC
 OPTIONS_SUB=	yes
 STATIC_CONFIGURE_OFF=	--disable-static
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-2//}
-SHEBANG_FILES=	src/tool/omniidl/python/scripts/omniidlrun.py
+SHEBANG_FILES=	src/tool/omniidl/python/scripts/omniidlrun.py \
+		src/tool/omniidl/python3/scripts/omniidlrun.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
@@ -48,7 +50,7 @@ post-install:
 	libomnithread.so.4.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${i}
 .endfor
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_omniidlmodule.so.4.2
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/*.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
