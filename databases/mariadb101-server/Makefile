@@ -145,7 +145,6 @@ MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 MROONGA_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 MROONGA_VARS=		LICENSE+=LGPL20 LICENSE_COMB=multi
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack
-OQGRAPH_BROKEN=		OQGRAPH fails to build, see https://jira.mariadb.org/browse/MDEV-15291.
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 SNAPPY_CMAKE_OFF=	-DWITH_INNODB_SNAPPY=OFF
