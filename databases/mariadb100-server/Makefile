@@ -18,7 +18,6 @@ MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
-#LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
@@ -74,11 +73,12 @@ CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 
 .if !defined(CLIENT_ONLY)
 # MySQL-Server options
-OPTIONS_DEFINE+=	MAXKEY
+OPTIONS_DEFINE+=	CONNECT_EXTRA MAXKEY
 OPTIONS_DEFAULT+=	MAXKEY
 OPTIONS_GROUP=		ENGINES
 OPTIONS_GROUP_ENGINES=	INNOBASE MROONGA OQGRAPH SPHINX SPIDER TOKUDB
 
+CONNECT_EXTRA_DESC=	Enable ODBC and XML in CONNECT engine
 ENGINES_DESC=	Optional MariaDB storage engines
 INNOBASE_DESC=	Build InnoDB engine next to XtraDB
 MAXKEY_DESC=	Change max key length from 1000 to 4000
@@ -113,14 +113,14 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
 ${ENGINE}_CMAKE_OFF=    -DWITHOUT_${ENGINE}=1
 .endfor
 
+CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+CONNECT_EXTRA_USE=	gnome=libxml2
 INNOBASE_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-MDEV-15288
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 MROONGA_CMAKE_OFF=	-DWITHOUT_MROONGA=1
 MROONGA_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
-# See https://mariadb.atlassian.net/browse/MDEV-15291.
-OQGRAPH_BROKEN=		OQGraph does not build
 TOKUDB_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 TOKUDB_PORTDOCS=	PATENTS README.md
 TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
@@ -130,10 +130,14 @@ post-install:
 	# These are "client" components, so there should be a switch that
 	# prevents them from being installed but it's unknown right now
 .	for f in bin/msql2mysql bin/mysql_config bin/mysql_find_rows \
-		bin/mysqlaccess COPYING.AGPLv3 COPYING.GPLv2 share/aclocal/mysql.m4
+		bin/mysqlaccess share/aclocal/mysql.m4
 		${RM} ${STAGEDIR}${PREFIX}/${f}
 .	endfor
 	${RM} -r ${STAGEDIR}${DATADIR}/SELinux
+
+post-install-TOKUDB-on:
+	${RM} ${STAGEDIR}${DOCSDIR}/COPYING.GPLv2 \
+		${STAGEDIR}${DOCSDIR}/COPYING.AGPLv3
 .endif
 
 .include <bsd.port.pre.mk>
