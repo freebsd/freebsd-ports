@@ -34,7 +34,8 @@ you update your ports collection, before attempting any port upgrades.
   Mailman/Default.py, mailman now configures the DEFAULT_EMAIL_HOST
   and DEFAULT_URL_HOST to "localhost" statically, and the rc script
   will check this and refuse to start on next boot.
-  Users must configured DEFAULT_EMAIL_HOST and DEFAULT_URL_HOST in 
+
+  Users must configure DEFAULT_EMAIL_HOST and DEFAULT_URL_HOST in 
   Mailman/mm_cfg.py properly.
 
   A short example has been added to:
