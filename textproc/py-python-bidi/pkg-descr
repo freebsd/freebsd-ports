@@ -1,0 +1,4 @@
+Bi-directional (BiDi) layout implementation in pure python.
+It contains library and command line utility pybidi.
+
+WWW: https://github.com/MeirKriheli/python-bidi

@@ -1340,6 +1340,7 @@
     SUBDIR += py-pystache
     SUBDIR += py-pystemmer
     SUBDIR += py-python-augeas
+    SUBDIR += py-python-bidi
     SUBDIR += py-python-docx
     SUBDIR += py-python-gettext
     SUBDIR += py-python-slugify
