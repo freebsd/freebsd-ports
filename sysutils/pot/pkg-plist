@@ -11,6 +11,7 @@ bin/pot
 %%DATADIR%%/create-dns.sh
 %%DATADIR%%/create-fscomp.sh
 %%DATADIR%%/create.sh
+%%DATADIR%%/de-init.sh
 %%DATADIR%%/destroy.sh
 %%DATADIR%%/help.sh
 %%DATADIR%%/init.sh
