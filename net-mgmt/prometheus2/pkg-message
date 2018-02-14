@@ -1,0 +1,43 @@
+
+If you are a user of Prometheus 1.x, the following information may be relevant.
+
+Prometheus 2 contains a number of breaking changes, including:
+  - Changes to how command line flags are parsed (double dash is now required)
+  - Removal of some command line flags
+  - Alert Manager options moved into prometheus.yaml
+  - Alerting / Recording Rules format changes
+    - Rules are now in YAML format
+  - Changes to the storage engine
+    - These changes mean that old data will be unreadable by Prometheus 2,
+      refer to the Prometheus 2 migration guide for more information on this
+      issue
+
+Any existing Prometheus 1 `prometheus.yml` should continue to work with
+Prometheus 2.
+
+As a safety measure, the Prometheus 2 init script will refuse to start
+Prometheus if it finds a Prometheus 1 data dir at the $prometheus_data_dir
+location.
+
+You will likely wish to review the Prometheus 2 migration guide at
+https://prometheus.io/docs/prometheus/2.1/migration/
+
+Brief migration steps:
+  - Stop the running Prometheus 1.
+  - Move any existing `prometheus_` rcconf variables to their equivalent
+   `prometheus1_` rcconf variable.
+  - Move the Prometheus 1 data dir to a suitable location.
+    - A new $prometheus_data_dir for Prometheus 2 will be created by the init
+      script.
+  - Set the `prometheus1_data_dir` rcconf variable to the location that you
+    moved the Prometheus 1 data dir to.
+  - Copy your existing `prometheus.yml` to `prometheus1.yml`.
+    - Prometheus 2 should be able to use your existing Prometheus 1 config.
+  - Put Prometheus 1 into a read-only mode on a different port making changes
+    described at: https://prometheus.io/docs/prometheus/2.0/migration/#storage
+    - You can use the `prometheus1_args` rcconf setting to pass additional
+      arguments.
+  - Add a `remote_read` section to the `prometheus.yml` used by Prometheus 2,
+    this allows Prometheus 2 to have access to the metrics previously gathered
+    by Prometheus 1.
+  - Start both Prometheus 1 and 2.
