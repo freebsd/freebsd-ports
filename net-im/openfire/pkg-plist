@@ -409,6 +409,7 @@
 %%PLUGINS%%%%DATADIR%%/plugins/tikitoken.jar
 %%PLUGINS%%%%DATADIR%%/plugins/userCreation.jar
 %%PLUGINS%%%%DATADIR%%/plugins/userImportExport.jar
+%%PLUGINS%%%%DATADIR%%/plugins/userStatus.jar
 %%PLUGINS%%%%DATADIR%%/plugins/userservice.jar
 %%PLUGINS%%%%DATADIR%%/plugins/xmldebugger.jar
 @dir %%VARDB%%

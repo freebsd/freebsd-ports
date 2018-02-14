@@ -2,23 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.2.1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	4.2.2
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net-im java
+MASTER_SITES=	https://github.com/igniterealtime/${PORTNAME}/releases/download/v${PORTVERSION}/
+DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Enterprise instant messaging server
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.html
 
 RUN_DEPENDS=	slf4j>=1.7.7:devel/slf4j
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	igniterealtime
-GH_PROJECT=	Openfire
 
 OPTIONS_DEFINE=	DOCS PLUGINS
 OPTIONS_DEFAULT=PLUGINS
@@ -35,17 +32,18 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	igniterealtime
 
-ALL_TARGET=	openfire
-USE_RC_SUBR=	openfire
+ALL_TARGET=	${PORTNAME}
+USE_RC_SUBR=	${PORTNAME}
 SUB_FILES+=	pkg-message
 
+WRKSRC=		${WRKDIR}/${PORTNAME}_src
 BUILD_WRKSRC=	${WRKSRC}/build
-INSTALL_WRKSRC=	${WRKSRC}/target/openfire
+INSTALL_WRKSRC=	${WRKSRC}/target/${PORTNAME}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PORTDOCS=	*
-VARLOG=		/var/log/openfire
-VARDB=		/var/db/openfire
-USERS=		openfire
+VARLOG=		/var/log/${PORTNAME}
+VARDB=		/var/db/${PORTNAME}
+USERS=		${PORTNAME}
 GROUPS=		${USERS}
 PLIST_SUB+=	VARLOG=${VARLOG} \
 		VARDB=${VARDB}
@@ -74,8 +72,8 @@ do-install:
 	${LN} -sf ${ETCDIR} ${STAGEDIR}${DATADIR}/resources/security
 	${LN} -sf ${VARDB} ${STAGEDIR}${DATADIR}/embedded-db
 	${LN} -sf ${VARLOG} ${STAGEDIR}${DATADIR}/logs
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/conf/openfire.xml \
-		${STAGEDIR}${ETCDIR}/openfire.xml.sample
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/conf/${PORTNAME}.xml \
+		${STAGEDIR}${ETCDIR}/${PORTNAME}.xml.sample
 	${INSTALL} -m 600 ${INSTALL_WRKSRC}/resources/security/truststore \
 		${STAGEDIR}${ETCDIR}/truststore.sample
 	${INSTALL} -m 600 ${INSTALL_WRKSRC}/resources/security/keystore \
