@@ -1,6 +1,6 @@
---- src/logcheck.orig	2017-07-11 17:32:13 UTC
+--- src/logcheck.orig	2017-12-21 16:33:24 UTC
 +++ src/logcheck
-@@ -24,17 +24,10 @@
+@@ -24,16 +24,16 @@
  
  if [ `id -u` = 0 ]; then
      echo "logcheck should not be run as root. Use su to invoke logcheck:"
@@ -9,18 +9,20 @@
      echo "Or use sudo: sudo -u logcheck logcheck${@:+ $@}."
      # you may want to uncomment that hack to let logcheck invoke itself.
 -    # su -s /bin/bash -c "$0 $*" logcheck
--    exit 1
--fi
--
--if [ ! -f /usr/bin/lockfile-create -o \
--     ! -f /usr/bin/lockfile-remove -o \
--     ! -f /usr/bin/lockfile-touch ]; then
--    echo "fatal: lockfile-progs is a prerequisite for logcheck, and was not found."
 +    # su -s %%LOCALBASE%%/bin/bash -c "$0 $*" logcheck
      exit 1
  fi
  
-@@ -69,13 +62,13 @@ EVENTSSUBJECT="System Events"
+-if [ ! -f /usr/bin/lockfile-create -o \
+-     ! -f /usr/bin/lockfile-remove -o \
+-     ! -f /usr/bin/lockfile-touch ]; then
++if [ ! -f %%PREFIX%%/bin/lockfile-create -o \
++     ! -f %%PREFIX%%/bin/lockfile-remove -o \
++     ! -f %%PREFIX%%/bin/lockfile-touch ]; then
+     echo "fatal: lockfile-progs is a prerequisite for logcheck, and was not found."
+     exit 1
+ fi
+@@ -69,13 +69,13 @@ EVENTSSUBJECT="System Events"
  ADDTAG="no"
  
  # Set the default paths
@@ -41,7 +43,7 @@
  CAT="/bin/cat"
  SYSLOG_SUMMARY="/usr/bin/syslog-summary"
  
-@@ -90,20 +83,15 @@ FQDN=0
+@@ -90,7 +90,7 @@ FQDN=0
  SORTUNIQ=0
  SUPPORT_CRACKING_IGNORE=0
  SYSLOGSUMMARY=0
@@ -50,41 +52,7 @@
  LOCKFILE="$LOCKDIR/logcheck"
  
  # Carry out the clean up tasks
- cleanup() {
- 
--    if [ -n "$LOCK" ]; then
--        debug "cleanup: Killing lockfile-touch - $LOCK"
--	kill "$LOCK" && unset LOCK
--    fi
--
--    if [ -f "$LOCKFILE.lock" ]; then
--        debug "cleanup: Removing lockfile: $LOCKFILE.lock"
--	lockfile-remove "$LOCKFILE"
-+    if [ -f "$LOCKFILE" ]; then
-+        debug "cleanup: Removing lockfile: $LOCKFILE"
-+	rm -f "$LOCKFILE"
-     fi
- 
-     if [ -d "$TMPDIR" ]; then
-@@ -145,14 +133,9 @@ error() {
-     if [ "$2" = "noclean" ]; then
- 	debug "error: Not removing lockfile"
-     else
--        if [ -n "$LOCK" ]; then
--	    debug "error: Killing lockfile-touch - $LOCK"
--	    kill "$LOCK" && unset LOCK
--	fi
--
--       if [ -f "$LOCKFILE.lock" ]; then
--           debug "error: Removing lockfile: $LOCKFILE.lock"
--           lockfile-remove "$LOCKFILE"
-+       if [ -f "$LOCKFILE" ]; then
-+           debug "error: Removing lockfile: $LOCKFILE"
-+           rm -f "$LOCKFILE"
-        fi
- 
-     fi
-@@ -171,7 +154,7 @@ $message
+@@ -171,7 +171,7 @@ $message
  ${TMPDIR:+Check temporary directory: $TMPDIR
  }
  Also verify that the logcheck user can read all files referenced in
@@ -93,7 +61,7 @@
  
  $(export)
  EOF
-@@ -223,7 +206,7 @@ cleanrules() {
+@@ -223,7 +223,7 @@ cleanrules() {
  			error "Couldn't read $x"
  		fi
  	done
@@ -102,7 +70,7 @@
  	    rulefile="$(basename "$rulefile")"
  	    if [ -f "${dir}/${rulefile}" ]; then
  		debug "cleanrules: ${dir}/${rulefile}"
-@@ -538,9 +521,9 @@ fi
+@@ -538,9 +538,9 @@ fi
  
  # Hostname either fully qualified or not.
  if [ "$FQDN" -eq 1 ]; then
@@ -114,33 +82,7 @@
  fi
  
  # Now check for the other options
-@@ -623,30 +606,25 @@ fi
- 
- trap 'cleanup' 0
- 
--debug "Trying to get lockfile: $LOCKFILE.lock"
-+debug "Trying to get lockfile: $LOCKFILE"
- if [ ! -d "$LOCKDIR" ]; then
- 	mkdir -m 0755 "$LOCKDIR"
- fi
--lockfile-create --retry 1 "$LOCKFILE" > /dev/null 2>&1
-+lockfile -r 1 "$LOCKFILE" > /dev/null 2>&1
- 
- 
- if [ $? -eq 1 ]; then
-     trap 0
--    if [ -e "${LOCKFILE}.lock" ]; then
-+    if [ -e "${LOCKFILE}" ]; then
-         error "Another logcheck process is still running" "noclean"
-     else
--        error "Failed to get lockfile: $LOCKFILE.lock" "noclean"
-+        error "Failed to get lockfile: $LOCKFILE" "noclean"
-     fi
--
--else
--    debug "Running lockfile-touch $LOCKFILE.lock"
--    lockfile-touch "$LOCKFILE" &
--    LOCK="$!"
+@@ -645,8 +645,8 @@ else
  fi
  
  # Create the secure temporary directory or exit
