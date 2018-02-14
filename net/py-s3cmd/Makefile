@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${FLAVOR}
 
-USES=		python:2
+USES=		python:3
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
