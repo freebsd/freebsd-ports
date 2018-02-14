@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libnotify.so:devel/libnotify \
 		libkeybinder-3.0.so:x11/keybinder-gtk3
 
-USES=		gmake libtool pkgconfig tar:bz2 xfce
+USES=		gmake libtool pkgconfig tar:bz2 xfce:gtk3
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30
 USE_XFCE=	xfconf
