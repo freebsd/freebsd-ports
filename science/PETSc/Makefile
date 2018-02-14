@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmpich.so:net/mpich2
 
-USES=		blaslapack fortran gmake python shebangfix
+USES=		blaslapack fortran gmake python:2.7 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		--with-mpi-dir=${LOCALBASE} \
