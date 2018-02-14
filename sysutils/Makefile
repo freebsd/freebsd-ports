@@ -575,6 +575,7 @@
     SUBDIR += lmmon
     SUBDIR += lmon
     SUBDIR += lnav
+    SUBDIR += lockfile-progs
     SUBDIR += log_analysis
     SUBDIR += logrotate
     SUBDIR += logstalgia
