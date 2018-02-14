@@ -9961,3 +9961,4 @@ databases/postgresql-repmgr2||2018-02-10|Removed, only for PostgreSQL 9.2
 www/mod_security-devel|www/mod_security3|2018-02-12|Renamed, upstream has made a release
 devel/pear-channel-htmlpurifier|devel/pear-channel-htmlpurifier.org|2018-02-13|Rename for consistency
 games/lolcat|games/rubygem-lolcat|2018-02-13|Rename to match our rubygems naming
+net-mgmt/prometheus|net-mgmt/prometheus1|2018-02-14|Rename to include major version number in the portname
