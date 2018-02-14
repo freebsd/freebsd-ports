@@ -35,6 +35,7 @@
 %%SITE_PERL%%/Test2/Event/Times.pm
 %%SITE_PERL%%/Test2/Manual.pm
 %%SITE_PERL%%/Test2/Manual/Anatomy.pm
+%%SITE_PERL%%/Test2/Manual/Anatomy/Context.pm
 %%SITE_PERL%%/Test2/Manual/Anatomy/EndToEnd.pm
 %%SITE_PERL%%/Test2/Manual/Anatomy/Event.pm
 %%SITE_PERL%%/Test2/Manual/Concurrency.pm
@@ -139,6 +140,7 @@
 %%PERL5_MAN3%%/Test2::Compare::Wildcard.3.gz
 %%PERL5_MAN3%%/Test2::Manual.3.gz
 %%PERL5_MAN3%%/Test2::Manual::Anatomy.3.gz
+%%PERL5_MAN3%%/Test2::Manual::Anatomy::Context.3.gz
 %%PERL5_MAN3%%/Test2::Manual::Anatomy::EndToEnd.3.gz
 %%PERL5_MAN3%%/Test2::Manual::Anatomy::Event.3.gz
 %%PERL5_MAN3%%/Test2::Manual::Concurrency.3.gz
