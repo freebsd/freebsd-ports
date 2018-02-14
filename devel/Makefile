@@ -358,6 +358,7 @@
     SUBDIR += cpputest
     SUBDIR += cproto
     SUBDIR += cpuflags
+    SUBDIR += cquery
     SUBDIR += cram
     SUBDIR += creduce
     SUBDIR += critcl
