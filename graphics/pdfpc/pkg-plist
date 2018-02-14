@@ -3,8 +3,13 @@ bin/pdfpc
 man/man1/pdfpc.1.gz
 man/man5/pdfpcrc.5.gz
 share/pixmaps/pdfpc/blank.svg
+share/pixmaps/pdfpc/eraser.svg
+share/pixmaps/pdfpc/hidden.svg
+share/pixmaps/pdfpc/highlight.svg
 share/pixmaps/pdfpc/loaded.svg
+share/pixmaps/pdfpc/locked.svg
 share/pixmaps/pdfpc/pause.svg
 share/pixmaps/pdfpc/pdfpc.css
+share/pixmaps/pdfpc/pen.svg
 share/pixmaps/pdfpc/saved.svg
 share/pixmaps/pdfpc/snow.svg
