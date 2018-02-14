@@ -4,8 +4,7 @@
 # vim: ts=8 noet
 
 PORTNAME=	ripgrep
-PORTVERSION=	0.7.1
-PORTREVISION=	3
+DISTVERSION=	0.8.0
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -16,58 +15,61 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
 
+BUILD_DEPENDS=	a2x:textproc/asciidoc
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
 
-CARGO_CRATES=	aho-corasick-0.6.3 \
-		ansi_term-0.9.0 \
-		atty-0.2.3 \
-		bitflags-0.9.1 \
-		bytecount-0.1.7 \
+CARGO_CRATES=	aho-corasick-0.6.4 \
+		ansi_term-0.10.2 \
+		atty-0.2.6 \
+		bitflags-1.0.1 \
+		bytecount-0.3.1 \
 		cfg-if-0.1.2 \
-		clap-2.26.2 \
-		crossbeam-0.2.10 \
-		encoding_rs-0.7.1 \
-		env_logger-0.4.3 \
-		fnv-1.0.5 \
-		fs2-0.4.2 \
-		kernel32-sys-0.2.2 \
-		lazy_static-0.2.9 \
-		libc-0.2.32 \
-		log-0.3.8 \
-		memchr-1.0.2 \
-		memchr-2.0.0 \
-		memmap-0.5.2 \
-		num_cpus-1.7.0 \
-		redox_syscall-0.1.31 \
+		clap-2.29.4 \
+		crossbeam-0.3.2 \
+		encoding_rs-0.7.2 \
+		fnv-1.0.6 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		glob-0.2.11 \
+		lazy_static-1.0.0 \
+		libc-0.2.36 \
+		log-0.4.1 \
+		memchr-2.0.1 \
+		memmap-0.6.2 \
+		num_cpus-1.8.0 \
+		rand-0.3.22 \
+		rand-0.4.2 \
+		redox_syscall-0.1.37 \
 		redox_termios-0.1.1 \
-		regex-0.2.2 \
-		regex-syntax-0.4.1 \
-		same-file-1.0.0 \
-		simd-0.1.1 \
-		simd-0.2.0 \
-		strsim-0.6.0 \
-		term_size-0.3.0 \
+		regex-0.2.6 \
+		regex-syntax-0.4.2 \
+		same-file-1.0.2 \
+		simd-0.2.1 \
+		strsim-0.7.0 \
+		tempdir-0.3.5 \
 		termion-1.5.1 \
-		textwrap-0.8.0 \
-		thread_local-0.3.4 \
+		textwrap-0.9.0 \
+		thread_local-0.3.5 \
 		unicode-width-0.1.4 \
 		unreachable-1.0.0 \
 		utf8-ranges-1.0.0 \
-		vec_map-0.8.0 \
 		void-1.0.2 \
-		walkdir-2.0.1 \
-		winapi-0.2.8 \
-		winapi-build-0.1.1
+		walkdir-2.1.3 \
+		winapi-0.3.4 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
 
 RIPGREP_OUTDIR=	${WRKDIR}/cargo-out
 CARGO_ENV=	RIPGREP_OUTDIR=${RIPGREP_OUTDIR}
 
 PLIST_FILES=	bin/rg \
 		man/man1/rg.1.gz
+PORTDOCS=	CHANGELOG.md FAQ.md GUIDE.md
 
-OPTIONS_DEFINE=	BASH FISH ZSH SIMD
+OPTIONS_DEFINE=	BASH DOCS FISH SIMD ZSH
 OPTIONS_DEFAULT=BASH FISH ZSH
 
 OPTIONS_DEFINE_amd64=	AVX
@@ -78,12 +80,11 @@ OPTIONS_DEFAULT_amd64=	${OPTIONS_DEFAULT_i386}
 OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:S/SSE2/SIMD/}
 
 AVX_DESC=	${SSE_DESC:S/SSE/AVX/}
-FISH_DESC=	Install programmable completions for Fish
 
 AVX_VARS=	CARGO_FEATURES+=avx-accel RUSTFLAGS+="-C target-feature=+avx"
 AVX_IMPLIES=	SIMD
 
-BASH_PLIST_FILES=	etc/bash_completion.d/rg.bash-completion
+BASH_PLIST_FILES=	etc/bash_completion.d/rg.bash
 FISH_PLIST_FILES=	share/fish/completions/rg.fish
 
 # simd crate uses cfg_target_feature which isn't stable yet, so unlock
@@ -100,12 +101,16 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rg
-	${INSTALL_MAN} ${WRKSRC}/doc/rg.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${RIPGREP_OUTDIR}/rg.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
-	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.bash-completion \
+	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 post-install-FISH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions/
