@@ -15,13 +15,11 @@ COMMENT=	Lightweight fully POSIX compliant regexp matching library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		libtool pathfix pkgconfig tar:bzip2
+USES=		libtool localbase:ldflags pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	NLS OPTIMIZED_CFLAGS PGO DOCS
 OPTIONS_SUB=	yes
@@ -50,9 +48,6 @@ post-install:
 .for i in tre-api.html tre-syntax.html
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-regression-test: build
-	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check )
 
 .if ${PORT_OPTIONS:MPGO}
 pgo: pgo-pre-build pgo-build pgo-run pgo-post-run pgo-clean
