@@ -1,5 +1,5 @@
 bin/fc-solve
-bin/freecell-solver-config
+bin/find-freecell-deal-index.py
 bin/freecell-solver-fc-pro-range-solve
 bin/freecell-solver-multi-thread-solve
 bin/freecell-solver-range-parallel-solve
@@ -19,7 +19,6 @@ lib/libfreecell-solver.so
 lib/libfreecell-solver.so.0
 lib/libfreecell-solver.so.0.5.0
 libdata/pkgconfig/libfreecell-solver.pc
-man/man1/freecell-solver-config.1.gz
 man/man6/fc-solve-board_gen.6.gz
 man/man6/fc-solve.6.gz
 man/man6/freecell-solver-range-parallel-solve.6.gz
@@ -50,6 +49,7 @@ man/man6/transpose-freecell-board.py.6.gz
 %%DATADIR%%/presets/gooey-unknown-thing.sh
 %%DATADIR%%/presets/hello-world.sh
 %%DATADIR%%/presets/john_galt_line-500.sh
+%%DATADIR%%/presets/looking-glass.sh
 %%DATADIR%%/presets/maliciously-obscure.sh
 %%DATADIR%%/presets/micro-finance-improved.sh
 %%DATADIR%%/presets/micro-finance.sh
