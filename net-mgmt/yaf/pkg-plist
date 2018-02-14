@@ -104,6 +104,10 @@ lib/libyaf.so
 %%APPLABEL%%lib/yaf/nntpplugin.so
 %%APPLABEL%%lib/yaf/nntpplugin.so.1
 %%APPLABEL%%lib/yaf/nntpplugin.so.1.0.1
+%%APPLABEL%%lib/yaf/ntpplugin.a
+%%APPLABEL%%lib/yaf/ntpplugin.so
+%%APPLABEL%%lib/yaf/ntpplugin.so.1
+%%APPLABEL%%lib/yaf/ntpplugin.so.1.0.1
 %%APPLABEL%%lib/yaf/nullplugin.a
 %%APPLABEL%%lib/yaf/nullplugin.so
 %%APPLABEL%%lib/yaf/nullplugin.so.1
