@@ -1161,6 +1161,7 @@
     SUBDIR += xrally
     SUBDIR += xrick
     SUBDIR += xrisk
+    SUBDIR += xroach
     SUBDIR += xrobots
     SUBDIR += xrot
     SUBDIR += xrubik
