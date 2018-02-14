@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	aubio
-PORTVERSION=	0.4.5
-PORTREVISION?=	2
+PORTVERSION=	0.4.6
+PORTREVISION?=	0
 CATEGORIES?=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
