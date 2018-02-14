@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20180214:
-  AFFECTS: users of lang/ruby22
+  AFFECTS: users of lang/ruby23
   AUTHOR: swills@FreeBSD.org
 
   The default ruby version has been updated from 2.3 to 2.4.
