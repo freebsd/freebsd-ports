@@ -1,5 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtMultimediaWidgets.so
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtMultimediaWidgets.pyi
+%%PYTHON_SITELIBDIR%%/PyQt5/QtMultimediaWidgets.pyi
 %%PYQT_SIPDIR%%/QtMultimediaWidgets/QtMultimediaWidgetsmod.sip
 %%PYQT_SIPDIR%%/QtMultimediaWidgets/qcameraviewfinder.sip
 %%PYQT_SIPDIR%%/QtMultimediaWidgets/qgraphicsvideoitem.sip

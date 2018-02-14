@@ -1,5 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtQuick.so
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtQuick.pyi
+%%PYTHON_SITELIBDIR%%/PyQt5/QtQuick.pyi
 %%PYQT_SIPDIR%%/QtQuick/QtQuickmod.sip
 %%PYQT_SIPDIR%%/QtQuick/qquickframebufferobject.sip
 %%PYQT_SIPDIR%%/QtQuick/qquickimageprovider.sip

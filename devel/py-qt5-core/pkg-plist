@@ -3,7 +3,7 @@ bin/pyuic5
 %%PYTHON_SITELIBDIR%%/PyQt5/Qt.pyc
 %%PYTHON_SITELIBDIR%%/PyQt5/Qt.pyo
 %%PYTHON_SITELIBDIR%%/PyQt5/QtCore.so
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtCore.pyi
+%%PYTHON_SITELIBDIR%%/PyQt5/QtCore.pyi
 %%PYTHON_SITELIBDIR%%/PyQt5/__init__.py
 %%PYTHON_SITELIBDIR%%/PyQt5/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PyQt5/__init__.pyo
