@@ -1,5 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtNetwork.so
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtNetwork.pyi
+%%PYTHON_SITELIBDIR%%/PyQt5/QtNetwork.pyi
 %%PYQT_SIPDIR%%/QtNetwork/QtNetworkmod.sip
 %%PYQT_SIPDIR%%/QtNetwork/qabstractnetworkcache.sip
 %%PYQT_SIPDIR%%/QtNetwork/qabstractsocket.sip

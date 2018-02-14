@@ -10,6 +10,8 @@ by pkg-config --cflags dbus-1 .
 Also fixes the build of www/py-qt5-webengine@py36 by adding printsupport to
 QtWebEngineWidgets.
 
+Also causes .pyi files to be installed regardless of the Python version to
+simplify plist handling.
 --- configure.py.orig	2017-11-23 14:44:03 UTC
 +++ configure.py
 @@ -98,7 +98,7 @@ MODULE_METADATA = {
@@ -39,7 +41,7 @@ QtWebEngineWidgets.
              self.prot_is_public = True
  
          self.vend_inc_dir = self.py_venv_inc_dir
-@@ -1450,8 +1450,9 @@ def generate_makefiles(target_config, ve
+@@ -1450,8 +1450,9 @@ def generate_makefiles(target_config, verbose, parts, 
  
      # Add the internal modules if they are required.
      if not target_config.no_tools:
@@ -51,7 +53,7 @@ QtWebEngineWidgets.
  
      for mname in pyqt_modules:
          metadata = MODULE_METADATA[mname]
-@@ -1493,20 +1494,17 @@ def generate_makefiles(target_config, ve
+@@ -1493,20 +1494,17 @@ def generate_makefiles(target_config, verbose, parts, 
  
      f.close()
  
@@ -81,7 +83,7 @@ QtWebEngineWidgets.
                  generate_tool_wrapper(target_config, 'pyuic5',
                          'PyQt5.uic.pyuic')))
  
-@@ -1524,23 +1522,6 @@ def generate_makefiles(target_config, ve
+@@ -1524,23 +1522,6 @@ def generate_makefiles(target_config, verbose, parts, 
                      source_path('examples', 'quick', 'tutorials', 'extending',
                              'chapter6-plugins'))
  
@@ -105,7 +107,7 @@ QtWebEngineWidgets.
      # Generate the Python dbus module.
      if target_config.pydbus_module_dir != '':
          mname = 'dbus'
-@@ -1568,14 +1549,18 @@ def generate_makefiles(target_config, ve
+@@ -1568,14 +1549,18 @@ def generate_makefiles(target_config, verbose, parts, 
      out_f.write('''TEMPLATE = subdirs
  CONFIG += ordered nostrip
  SUBDIRS = %s
@@ -136,6 +138,15 @@ QtWebEngineWidgets.
              if metadata.public and mname != 'Qt':
                  sip_files = matching_files(source_path('sip', mname, '*.sip'))
  
+@@ -1618,7 +1605,7 @@ INSTALLS += sip%s
+ ))
+ 
+     # Install the stub files.
+-    if target_config.py_version >= 0x030500 and target_config.pyqt_stubs_dir:
++    if target_config.pyqt_stubs_dir:
+         out_f.write('''
+ pep484_stubs.files = %s Qt.pyi
+ pep484_stubs.path = %s
 @@ -1628,11 +1615,12 @@ INSTALLS += pep484_stubs
  
      # Install the QScintilla .api file.
@@ -150,6 +161,24 @@ QtWebEngineWidgets.
 +''' % (api_list, qmake_quote(target_config.qsci_api_dir + '/api/python')))
  
      out_f.close()
+ 
+@@ -1864,7 +1852,7 @@ def inform_user(target_config, sip_version):
+                         os.path.join(
+                                 target_config.qsci_api_dir, 'api', 'python'))
+ 
+-    if target_config.py_version >= 0x030500 and target_config.pyqt_stubs_dir:
++    if target_config.pyqt_stubs_dir:
+         inform("The PyQt5 PEP 484 stub files will be installed in %s." %
+                 target_config.pyqt_stubs_dir)
+ 
+@@ -2431,7 +2419,7 @@ def generate_sip_module_code(target_config, verbose, p
+             argv.append('-a')
+             argv.append(mname + '.api')
+ 
+-        if target_config.py_version >= 0x030500 and target_config.pyqt_stubs_dir:
++        if target_config.pyqt_stubs_dir:
+             argv.append('-y')
+             argv.append(mname + '.pyi')
  
 @@ -2604,7 +2592,7 @@ target.files = $$PY_MODULE
      pro_lines.append('INSTALLS += target')
