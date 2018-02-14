@@ -2,7 +2,7 @@
 
 PORTNAME=	easyloggingpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.95.4
+DISTVERSION=	9.96.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +19,7 @@ CMAKE_ON=	build_shared_lib  # patched in, requested such option in https://githu
 
 PLIST_FILES=	include/easylogging++.h \
 		include/easylogging++.cc \
-		lib/libeasyloggingpp.so
+		lib/libeasyloggingpp.so \
+		libdata/pkgconfig/easyloggingpp.pc
 
 .include <bsd.port.mk>
