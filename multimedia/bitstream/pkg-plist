@@ -92,6 +92,7 @@ include/bitstream/ietf/rtcp_sr.h
 include/bitstream/ietf/rtp.h
 include/bitstream/ietf/rtp2250.h
 include/bitstream/ietf/rtp3551.h
+include/bitstream/ietf/rtp3640.h
 include/bitstream/ietf/rtp6184.h
 include/bitstream/ietf/rtp7587.h
 include/bitstream/ietf/udp.h
@@ -159,3 +160,4 @@ include/bitstream/smpte/2022_6_hbrmt.h
 include/bitstream/smpte/291.h
 include/bitstream/smpte/337.h
 include/bitstream/smpte/rdd08.h
+libdata/pkgconfig/bitstream.pc
