@@ -1,16 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	lolcat
-PORTVERSION=	42.0.99
-PORTREVISION=	4
+PORTVERSION=	90.8.8
 CATEGORIES=	games
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rainbows and unicorns
 
-RUN_DEPENDS=	rubygem-trollop1>=1.9:devel/rubygem-trollop1 \
-		rubygem-paint>=0.8.5:devel/rubygem-paint
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-paint>=2.0.0:devel/rubygem-paint \
+		rubygem-trollop>=2.1.2:devel/rubygem-trollop
 
 NO_ARCH=	yes
 USE_RUBY=	yes
