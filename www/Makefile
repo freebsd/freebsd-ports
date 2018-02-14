@@ -2166,7 +2166,6 @@
     SUBDIR += rubygem-ruby-readability
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-sawyer
-    SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-select2-rails
     SUBDIR += rubygem-select2-rails3
     SUBDIR += rubygem-selenium-webdriver
