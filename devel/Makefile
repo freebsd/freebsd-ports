@@ -1445,6 +1445,7 @@
     SUBDIR += liblas12
     SUBDIR += libleaftag
     SUBDIR += liblnk
+    SUBDIR += liblockfile
     SUBDIR += liblogging
     SUBDIR += liblognorm
     SUBDIR += liblouis

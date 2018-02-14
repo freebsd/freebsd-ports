@@ -1,0 +1,24 @@
+This library implements a number of functions found in -lmail on SysV
+systems. These functions are designed to lock the standard mailboxes in
+/var/mail (or wherever the system puts them).
+
+In additions, this library adds a number of functions to create,
+manage and remove generic lockfiles.
+
+The lockfiles are created by this library in an NFS-safe manner, that
+is by using a tempfile and using link(2) to create the lockfile. It
+works around several defects in NFS servers to make sure the lockfile
+is created atomically.
+
+The locking strategy is compatible with other well-written NFS-safe
+programs that create lockfiles - such as procmail, exim and mutt.
+
+If you are trying to lock a mailbox in a directory writable for group
+mail, the locking functions will call a helper application which runs
+setgid to do the actual locking. The helper application "dotlockfile"
+can also be used directly, for example for use in shellscripts.
+
+This means a program such as a MUA doesn't need to be setgid mail anymore
+to be able to lock the mailbox.
+
+WWW: https://github.com/miquels/liblockfile
