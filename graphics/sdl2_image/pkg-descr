@@ -15,4 +15,4 @@ Note that IMG_Load_RW cannot load TGA images.
 
 An example program 'showimage' is included, with source in showimage.c
 
-WWW: http://www.libsdl.org/projects/SDL_image/
+WWW: https://www.libsdl.org/projects/SDL_image/
