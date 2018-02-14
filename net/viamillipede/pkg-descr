@@ -1,0 +1,8 @@
+WWW: https://github.com/agokhale/viamillipede
+viamillipede - Paralel TCP transport for pipes
+Viamillipede is client and server program built to improve network 
+pipe transport using multiple TCP sessions.  It multiplexes a single
+ network pipe into multiple TCP con nectons and then terminates the
+connections into a pipe transparently on another host.  
+It is similar to the simplest mode of remote pipe transparency of 
+Netcat with the parallelism from iperf
