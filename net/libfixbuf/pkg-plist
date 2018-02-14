@@ -1,6 +1,7 @@
 include/fixbuf/autoinc.h
 include/fixbuf/private.h
 include/fixbuf/public.h
+include/fixbuf/version.h
 lib/libfixbuf.a
 lib/libfixbuf.so
 lib/libfixbuf.so.3
