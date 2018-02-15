@@ -3,21 +3,24 @@
 
 PORTNAME=	mbox2imap
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://BSDforge.com/projects/source/mail/mbox2imap/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Upload email stored in mbox file format to an IMAP server
 
-#LICENSE=	(if author can still be reached, ask; else BSD2CLAUSE)
+LICENSE=	NONE
 
-USES=		python tar:xz
+USES=		python shebangfix tar:xz
+SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
