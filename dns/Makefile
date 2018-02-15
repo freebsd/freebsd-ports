@@ -39,6 +39,7 @@
     SUBDIR += dnscrypt-proxy
     SUBDIR += dnscrypt-wrapper
     SUBDIR += dnsdbck
+    SUBDIR += dnsdbq
     SUBDIR += dnsdist
     SUBDIR += dnsenum
     SUBDIR += dnsflood
