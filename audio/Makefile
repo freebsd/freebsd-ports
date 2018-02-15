@@ -636,6 +636,7 @@
     SUBDIR += penguinsap
     SUBDIR += pianobar
     SUBDIR += picard
+    SUBDIR += picard-plugins
     SUBDIR += pithos
     SUBDIR += play
     SUBDIR += playgsf
