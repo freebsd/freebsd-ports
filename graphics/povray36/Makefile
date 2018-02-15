@@ -22,6 +22,7 @@ BROKEN_powerpc64=	Does not build: error: 64 bit CPU required
 USE_XORG=	x11
 USES=		gmake jpeg tar:bzip2
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	gnu++98
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
 
