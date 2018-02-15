@@ -13,6 +13,7 @@ include/mailfront/mailfront.h
 include/mailfront/responses.h
 libexec/mailfront/backend-echo.so
 libexec/mailfront/backend-qmail.so
+libexec/mailfront/backend-queuedir.so
 libexec/mailfront/plugin-add-received.so
 libexec/mailfront/plugin-check-fqdn.so
 libexec/mailfront/plugin-clamav.so
@@ -23,6 +24,7 @@ libexec/mailfront/plugin-cvm-validate.so
 libexec/mailfront/plugin-mailrules.so
 libexec/mailfront/plugin-patterns.so
 libexec/mailfront/plugin-qmail-validate.so
+libexec/mailfront/plugin-rbl.so
 libexec/mailfront/plugin-spamassassin.so
 libexec/mailfront/plugin-starttls-ucspi.so
 libexec/mailfront/protocol-qmqp.so
