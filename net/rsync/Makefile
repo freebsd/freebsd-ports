@@ -8,11 +8,10 @@ MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
 		https://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \
 		http://www.mirrorservice.org/sites/rsync.samba.org/ \
-		https://www.mirrorservice.org/sites/rsync.samba.org/ \
-		LOCAL/ehaupt/rsync
+		https://www.mirrorservice.org/sites/rsync.samba.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3
