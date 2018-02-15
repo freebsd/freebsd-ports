@@ -158,6 +158,7 @@
     SUBDIR += ring-libclient
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
+    SUBDIR += rubygem-hipchat15
     SUBDIR += rubygem-lita
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder

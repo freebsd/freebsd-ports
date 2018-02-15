@@ -1,0 +1,4 @@
+OpenStruct subclass that returns nested hash attributes
+as RecursiveOpenStructs.
+
+WWW: https://github.com/aetherknight/recursive-open-struct

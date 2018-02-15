@@ -1959,6 +1959,7 @@
     SUBDIR += rubygem-acts-as-taggable-on5
     SUBDIR += rubygem-acts_as_taggable
     SUBDIR += rubygem-addressable
+    SUBDIR += rubygem-addressable23
     SUBDIR += rubygem-adsf
     SUBDIR += rubygem-akami
     SUBDIR += rubygem-amazon-ecs
@@ -2016,6 +2017,7 @@
     SUBDIR += rubygem-gollum-lib-gitlab
     SUBDIR += rubygem-gollum-rugged_adapter
     SUBDIR += rubygem-gon
+    SUBDIR += rubygem-gon61
     SUBDIR += rubygem-gon-rails4
     SUBDIR += rubygem-hackpad-cli
     SUBDIR += rubygem-haml
@@ -2024,6 +2026,7 @@
     SUBDIR += rubygem-haml-rails-rails4
     SUBDIR += rubygem-haml4
     SUBDIR += rubygem-hamlit
+    SUBDIR += rubygem-hamlit26
     SUBDIR += rubygem-hamlit-rails
     SUBDIR += rubygem-hamlit-rails-rails5
     SUBDIR += rubygem-hamlit-rails-rails50
@@ -2048,6 +2051,7 @@
     SUBDIR += rubygem-jekyll-watch
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
+    SUBDIR += rubygem-jquery-atwho-rails13
     SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-jquery-rails-rails5
     SUBDIR += rubygem-jquery-rails-rails50
@@ -2072,6 +2076,7 @@
     SUBDIR += rubygem-kaminari-rails50
     SUBDIR += rubygem-kensa
     SUBDIR += rubygem-kubeclient
+    SUBDIR += rubygem-kubeclient22
     SUBDIR += rubygem-layout_yullio_generator
     SUBDIR += rubygem-less
     SUBDIR += rubygem-lighthouse-api
@@ -2107,6 +2112,7 @@
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rack-accept
     SUBDIR += rubygem-rack-attack
+    SUBDIR += rubygem-rack-attack44
     SUBDIR += rubygem-rack-cache
     SUBDIR += rubygem-rack-contrib
     SUBDIR += rubygem-rack-cors
@@ -2184,6 +2190,7 @@
     SUBDIR += rubygem-tinyatom
     SUBDIR += rubygem-tinymce-rails
     SUBDIR += rubygem-toml-rb
+    SUBDIR += rubygem-toml-rb03
     SUBDIR += rubygem-totoridipjp
     SUBDIR += rubygem-tumblr_client
     SUBDIR += rubygem-turbolinks
@@ -2192,8 +2199,10 @@
     SUBDIR += rubygem-turbolinks-source
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
+    SUBDIR += rubygem-uglifier27
     SUBDIR += rubygem-underscore-rails
     SUBDIR += rubygem-unicorn
+    SUBDIR += rubygem-unicorn51
     SUBDIR += rubygem-unicorn-worker-killer
     SUBDIR += rubygem-url_escape
     SUBDIR += rubygem-url_mount
