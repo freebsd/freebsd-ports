@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	vim:editors/vim \
 		${LOCALBASE}/lib/libboost_thread.so:devel/boost-libs \
-		${LOCALBASE}/lib/libboost_python.so:devel/boost-python-libs \
+		${LOCALBASE}/lib/${PY_BOOST} \
 		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bottle>0:www/py-bottle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}frozendict>0:devel/py-frozendict@${PY_FLAVOR} \

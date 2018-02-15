@@ -12,7 +12,7 @@ COMMENT=	Ettus Research USRP driver framework
 
 BROKEN=		fails to build with boost 1.66, see bug 224088
 
-LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
+LIB_DEPENDS=	${PY_BOOST}
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
 		cheetah-analyze:devel/py-cheetah \
 		rst2html:textproc/py-docutils \

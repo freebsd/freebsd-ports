@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
-		libboost_python.so:devel/boost-python-libs \
+		${PY_BOOST} \
 		libexpat.so:textproc/expat2
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}

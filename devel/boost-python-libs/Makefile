@@ -1,10 +1,12 @@
 # Created by: Alexander Churanov <churanov.port.maintainer@gmail.com>
 # $FreeBSD$
 
-PORTNAME?=	boost-python-libs
-COMMENT?=	Framework for interfacing Python 2 and C++
+PORTNAME=	boost-libs
+COMMENT=	Framework for interfacing Python 2 and C++
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-USES?=		python:2.7
+USES=		python
+USE_PYTHON=	flavors
 
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS
 

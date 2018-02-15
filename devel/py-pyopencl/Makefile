@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl \
 		${PYTHON_PKGNAMEPREFIX}cffi>=1.1.0:devel/py-cffi@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy@${FLAVOR}
-LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
+LIB_DEPENDS=	${PY_BOOST} \
 		libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>=1.1.0:devel/py-cffi@${FLAVOR} \
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${FLAVOR} \
 
 CONFIGURE_ARGS=	BOOST_INC_DIR="${LOCALBASE}/include" \
 		BOOST_LIB_DIR="${LOCALBASE}/lib" \
-		BOOST_PYTHON_LIBNAME=boost_python \
+		BOOST_PYTHON_LIBNAME=${PY_BOOST_LIB} \
 		CL_INC_DIR="${LOCALBASE}/include" \
 		CL_LIB_DIR="${LOCALBASE}/lib" \
 		USE_SHIPPED_BOOST=False

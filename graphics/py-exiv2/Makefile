@@ -13,7 +13,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Python bindings for exiv2
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2\
-		libboost_python.so:devel/boost-python-libs
+		${PY_BOOST}
 
 USES=		python:2 scons tar:bzip2
 USE_PYTHON=	flavors

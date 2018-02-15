@@ -9964,3 +9964,4 @@ games/lolcat|games/rubygem-lolcat|2018-02-13|Rename to match our rubygems naming
 net-mgmt/prometheus|net-mgmt/prometheus1|2018-02-14|Rename to include major version number in the portname
 textproc/rubygem-tidy||2018-02-14|Has expired: No longer needed and not maintained
 www/rubygem-scrapi||2018-02-14|Has expired: No longer maintained upstream
+devel/boost-python3-libs|devel/boost-python-libs@py36|2018-02-15|Flavorize

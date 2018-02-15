@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 COMMENT=	Python bindings for libtorrent-rasterbar
 
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
-		libboost_python.so:devel/boost-python-libs
+		${PY_BOOST}
 
 MASTERDIR=	${.CURDIR}/../libtorrent-rasterbar
 
