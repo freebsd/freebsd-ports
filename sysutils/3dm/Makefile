@@ -6,7 +6,7 @@ DISTVERSION=	2.11.00.021
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.avagotech.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
+MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
 DISTNAME=	3DM2_CLI-freebsd_10-2-2-1_9-5-5-1
 DIST_SUBDIR=	3dm2
 
