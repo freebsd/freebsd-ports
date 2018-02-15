@@ -151,7 +151,7 @@ INSTALL_WRKSRC=	${WRKSRC}/modules/python
 .elif defined(OCV_JAVA)
 BUILD_DEPENDS+=	ant:devel/apache-ant
 LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv
-USES+=		python:build
+USES+=		python:2.7,build
 USE_JAVA=	yes
 CMAKE_ARGS+=	-DBUILD_opencv_java:BOOL=On
 . for module in apps python stitching superres videostab
