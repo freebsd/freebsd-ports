@@ -100,7 +100,7 @@ sbin/zebra
 %%ISISD%%%%EXAMPLESDIR%%/isisd.conf.sample
 %%EXAMPLESDIR%%/ospf6d.conf.sample
 %%EXAMPLESDIR%%/ospfd.conf.sample
-%%PIMD%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pimd.conf.sample
+%%PIMD%%%%EXAMPLESDIR%%/pimd.conf.sample
 %%EXAMPLESDIR%%/ripd.conf.sample
 %%EXAMPLESDIR%%/ripngd.conf.sample
 %%EXAMPLESDIR%%/vtysh.conf.sample
