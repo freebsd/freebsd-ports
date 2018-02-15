@@ -220,6 +220,15 @@ share/locale/ia/LC_MESSAGES/balooshow5.mo
 share/locale/ia/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/ia/LC_MESSAGES/kio5_tags.mo
 share/locale/ia/LC_MESSAGES/kio5_timeline.mo
+share/locale/id/LC_MESSAGES/baloo_file5.mo
+share/locale/id/LC_MESSAGES/baloo_file_extractor5.mo
+share/locale/id/LC_MESSAGES/balooctl5.mo
+share/locale/id/LC_MESSAGES/baloomonitorplugin.mo
+share/locale/id/LC_MESSAGES/baloosearch5.mo
+share/locale/id/LC_MESSAGES/balooshow5.mo
+share/locale/id/LC_MESSAGES/kio5_baloosearch.mo
+share/locale/id/LC_MESSAGES/kio5_tags.mo
+share/locale/id/LC_MESSAGES/kio5_timeline.mo
 share/locale/it/LC_MESSAGES/baloo_file5.mo
 share/locale/it/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/it/LC_MESSAGES/balooctl5.mo

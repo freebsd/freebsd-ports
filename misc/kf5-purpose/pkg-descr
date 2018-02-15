@@ -1,0 +1,8 @@
+This framework offers the possibility to create integrate services 
+and actions on any application without having to implement them 
+specifically. Purpose will offer them mechanisms to list the 
+different alternatives to execute given the requested action 
+type and will facilitate components so that all the plugins can 
+receive all the information they need.
+
+WWW: https://api.kde.org/frameworks/purpose/html/index.html
