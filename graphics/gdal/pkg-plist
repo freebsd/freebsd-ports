@@ -105,14 +105,13 @@ include/vrtdataset.h
 lib/gdalplugins/.keepme
 lib/libgdal.a
 lib/libgdal.so
-lib/libgdal.so.%%MAJOR_VER%%
+lib/libgdal.so.%%SHLIB_VER%%
 lib/libgdal.so.%%PORTVERSION%%
 libdata/pkgconfig/gdal.pc
 %%DATADIR%%/GDALLogoBW.svg
 %%DATADIR%%/GDALLogoColor.svg
 %%DATADIR%%/GDALLogoGS.svg
 %%DATADIR%%/GDALmake.opt
-%%DATADIR%%/LICENSE.TXT
 %%DATADIR%%/compdcs.csv
 %%DATADIR%%/coordinate_axis.csv
 %%DATADIR%%/cubewerx_extra.wkt
