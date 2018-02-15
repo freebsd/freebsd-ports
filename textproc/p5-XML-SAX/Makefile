@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-SAX
-PORTVERSION=	0.99
-PORTREVISION=	2
+PORTVERSION=	1.00
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,11 +17,8 @@ BUILD_DEPENDS=	p5-XML-NamespaceSupport>=0.03:textproc/p5-XML-NamespaceSupport \
 		p5-XML-SAX-Base>=1.05:textproc/p5-XML-SAX-Base
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-post-configure:
-# dirty hack to deceive irritable pod2man
-	@${PERL} -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
