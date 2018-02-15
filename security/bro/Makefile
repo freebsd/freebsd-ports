@@ -4,10 +4,8 @@
 PORTNAME=	bro
 PORTVERSION=	2.5.2
 CATEGORIES=	security
-MASTER_SITES=	https://www.bro.org/downloads/:source1 \
-		https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${PORTVERSION2}?dummy=/:source2
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source1 \
-		${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION2}_GH0${EXTRACT_SUFX}:source2
+MASTER_SITES=	https://www.bro.org/downloads/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	System for detecting network intruders in real-time
@@ -18,16 +16,14 @@ BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
 
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
-GH_ACCOUNT=	actor-framework
-GH_PROJECT=	${GH_ACCOUNT}
 
 USES=		bison cmake:outsource compiler:c++11-lang ninja perl5 python shebangfix ssl
+USE_GITHUB=	nodefault
+GH_TUPLE=	actor-framework:actor-framework:0.14.6:actor_framework
 
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 CXXFLAGS+=	-std=c++11 -Wall
 
-PORTVERSION2=	0.14.6
-WRKSRC2=	${WRKDIR}/${GH_PROJECT}-${PORTVERSION2}
 STAGEDIR2=	${STAGEDIR}-caf
 
 SHEBANG_FILES=	aux/broctl/aux/trace-summary/trace-summary
@@ -105,8 +101,6 @@ CMAKE_ARGS2=		-GNinja \
 			-D CAF_NO_OPENCL:BOOL=yes \
 			-D CAF_NO_UNIT_TESTS:BOOL=yes
 
-CMAKE_SOURCE_PATH2=	${WRKSRC2}
-
 CONFIGURE_WRKSRC2=	${WRKDIR}/.build-caf
 BUILD_WRKSRC2=		${CONFIGURE_WRKSRC2}
 INSTALL_WRKSRC2=	${CONFIGURE_WRKSRC2}
@@ -115,7 +109,7 @@ INSTALL_WRKSRC2=	${CONFIGURE_WRKSRC2}
 pre-configure-BROKER-on:
 	${MKDIR} ${CONFIGURE_WRKSRC2}
 	(cd ${CONFIGURE_WRKSRC2} && \
-	    ${CMAKE_BIN} ${CMAKE_ARGS2} ${CMAKE_SOURCE_PATH2})
+	    ${CMAKE_BIN} ${CMAKE_ARGS2} ${WRKSRC_actor_framework})
 	${MKDIR} ${STAGEDIR2}
 	(cd ${BUILD_WRKSRC2} && \
 	    ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} install)
