@@ -13,6 +13,9 @@ COMMENT=	Act of enabling/disabling features in your application
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	yes
+EXPIRATION_DATE=	2018-08-01
+
 CONFLICTS_INSTALL=	rubygem-flipper
 
 PORTSCOUT=	limit:^0\.10\.
