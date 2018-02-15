@@ -1,7 +1,17 @@
+c++17 lacks std::bind2nd
 citra-qt currently needs SDL for audio and input
 
 --- CMakeLists.txt.orig	2017-08-09 15:54:29 UTC
 +++ CMakeLists.txt
+@@ -89,7 +88,7 @@ message(STATUS "Target architecture: ${ARCHITECTURE}")
+ # Configure compilation flags
+ # ===========================
+ 
+-set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ if (NOT MSVC)
 @@ -207,15 +207,15 @@ if (ENABLE_SDL2)
      else()
          find_package(SDL2 REQUIRED)
