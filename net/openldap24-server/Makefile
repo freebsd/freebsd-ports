@@ -536,10 +536,6 @@ PLIST_SUB+=		OPENLDAP_MAJOR=${OPENLDAP_MAJOR}
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
 .if !${PORT_OPTIONS:MFETCH}
 CONFIGURE_ARGS+=	--without-fetch
 .else
