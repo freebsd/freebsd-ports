@@ -17,6 +17,7 @@ LICENSE=	LGPL21
 WRKSRC=		${WRKDIR}/cloudcity
 
 USES=		cmake:noninja kde:4
+USE_CXXSTD=	gnu++98
 USE_KDE=	kdelibs automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 
