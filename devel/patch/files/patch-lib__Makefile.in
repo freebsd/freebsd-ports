@@ -1,6 +1,6 @@
---- ./lib/Makefile.in.orig	2012-10-05 10:51:11.000000000 -0400
-+++ ./lib/Makefile.in	2012-10-05 10:51:34.000000000 -0400
-@@ -1372,7 +1372,7 @@
+--- lib/Makefile.in.orig	2018-02-03 13:33:56 UTC
++++ lib/Makefile.in
+@@ -1603,7 +1603,7 @@ install-data: install-data-am
  uninstall: uninstall-am
  
  install-am: all-am
@@ -9,3 +9,35 @@
  
  installcheck: installcheck-am
  install-strip:
+@@ -1966,11 +1966,11 @@ install-exec-localcharset: all-local
+ 	if test $(GLIBC21) = no; then \
+ 	  case '$(host_os)' in \
+ 	    darwin[56]*) \
+-	      need_charset_alias=true ;; \
++	      need_charset_alias=false ;; \
+ 	    darwin* | cygwin* | mingw* | pw32* | cegcc*) \
+ 	      need_charset_alias=false ;; \
+ 	    *) \
+-	      need_charset_alias=true ;; \
++	      need_charset_alias=false ;; \
+ 	  esac ; \
+ 	else \
+ 	  need_charset_alias=false ; \
+@@ -1978,7 +1978,7 @@ install-exec-localcharset: all-local
+ 	if $$need_charset_alias; then \
+ 	  $(mkinstalldirs) $(DESTDIR)$(libdir) ; \
+ 	fi ; \
+-	if test -f $(charset_alias); then \
++	if false; then \
+ 	  sed -f ref-add.sed $(charset_alias) > $(charset_tmp) ; \
+ 	  $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
+ 	  rm -f $(charset_tmp) ; \
+@@ -1992,7 +1992,7 @@ install-exec-localcharset: all-local
+ 
+ uninstall-local: uninstall-localcharset
+ uninstall-localcharset: all-local
+-	if test -f $(charset_alias); then \
++	if false; then \
+ 	  sed -f ref-del.sed $(charset_alias) > $(charset_tmp); \
+ 	  if grep '^# Packages using this file: $$' $(charset_tmp) \
+ 	      > /dev/null; then \

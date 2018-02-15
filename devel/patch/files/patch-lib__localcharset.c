@@ -1,15 +1,15 @@
---- ./lib/localcharset.c.orig	2012-10-05 10:28:29.000000000 -0400
-+++ ./lib/localcharset.c	2012-10-05 10:38:42.000000000 -0400
-@@ -122,7 +122,7 @@
+--- lib/localcharset.c.orig	2018-02-03 12:42:20 UTC
++++ lib/localcharset.c
+@@ -129,7 +129,7 @@ get_charset_aliases (void)
    cp = charset_aliases;
    if (cp == NULL)
      {
 -#if !(defined DARWIN7 || defined VMS || defined WINDOWS_NATIVE || defined __CYGWIN__ || defined OS2)
 +#if !(defined DARWIN7 || defined VMS || defined WINDOWS_NATIVE || defined __CYGWIN__ || defined OS2 || defined __FreeBSD__)
+       char *malloc_dir = NULL;
        const char *dir;
        const char *base = "charset.alias";
-       char *file_name;
-@@ -249,6 +249,86 @@
+@@ -259,6 +259,86 @@ get_charset_aliases (void)
  
  #else
  
