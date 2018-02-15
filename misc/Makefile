@@ -237,6 +237,7 @@
     SUBDIR += kdeedu-kde4
     SUBDIR += kdeutils-kde4
     SUBDIR += kenny
+    SUBDIR += kf5-purpose
     SUBDIR += kgeography
     SUBDIR += klettres
     SUBDIR += krecipes-kde4

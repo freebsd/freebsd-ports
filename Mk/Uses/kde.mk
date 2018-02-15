@@ -65,7 +65,7 @@ KDE4_APPLICATIONS_VERSION?=	15.04.3
 KDE4_BRANCH?=			stable
 
 # Current KDE desktop.
-KDE_FRAMEWORKS_VERSION?=	5.42.0
+KDE_FRAMEWORKS_VERSION?=	5.43.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -215,7 +215,7 @@ _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 # The *_TIER<n> variables are internal, primarily for checking
 # that our list of frameworks matches the structure offered upstream.
 _USE_FRAMEWORKS_TIER1=	apidox archive attica5 breeze-icons codecs config \
-			coreaddons dbusaddons dnssd i18n idletime itemmodels \
+			coreaddons dbusaddons dnssd holidays i18n idletime itemmodels \
 			itemviews kirigami2 oxygen-icons5 plotting prison solid \
 			sonnet syntaxhighlighting threadweaver wayland \
 			widgetsaddons windowsystem
@@ -230,7 +230,7 @@ _USE_FRAMEWORKS_TIER3=	activities baloo5 bookmarks configwidgets \
 			designerplugin emoticons globalaccel guiaddons \
 			iconthemes init kcmutils kdeclarative \
 			kded kdesu kdewebkit kio newstuff notifyconfig parts \
-			people plasma-framework runner service texteditor \
+			people plasma-framework purpose runner service texteditor \
 			textwidgets wallet xmlgui xmlrpcclient
 
 _USE_FRAMEWORKS_TIER4= 	frameworkintegration
@@ -453,6 +453,9 @@ globalaccel_LIB=	libKF5GlobalAccel.so
 guiaddons_PORT=		x11-toolkits/kf5-kguiaddons
 guiaddons_LIB=		libKF5GuiAddons.so
 
+holidays_PORT=		net/kf5-kholidays
+holidays_LIB=		libKF5Holidays.so
+
 i18n_PORT=		devel/kf5-ki18n
 i18n_LIB=		libKF5I18n.so
 
@@ -552,6 +555,9 @@ prison_LIB=		libKF5Prison.so
 
 pty_PORT=		devel/kf5-kpty
 pty_LIB=		libKF5Pty.so
+
+purpose_PORT=		misc/kf5-purpose
+purpose_LIB=		libKF5Purpose.so
 
 runner_PORT=		x11/kf5-krunner
 runner_LIB=		libKF5Runner.so

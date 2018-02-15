@@ -1,3 +1,9 @@
+%%MANPAGES%%man/man7/ecm-developer.7.gz
+%%MANPAGES%%man/man7/ecm-find-modules.7.gz
+%%MANPAGES%%man/man7/ecm-kde-modules.7.gz
+%%MANPAGES%%man/man7/ecm-modules.7.gz
+%%MANPAGES%%man/man7/ecm-toolchains.7.gz
+%%MANPAGES%%man/man7/ecm.7.gz
 share/ECM/cmake/ECMConfig.cmake
 share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
@@ -15,6 +21,7 @@ share/ECM/find-modules/FindPythonModuleGeneration.cmake
 share/ECM/find-modules/FindQHelpGenerator.cmake
 share/ECM/find-modules/FindQtWaylandScanner.cmake
 share/ECM/find-modules/FindSasl2.cmake
+share/ECM/find-modules/FindSeccomp.cmake
 share/ECM/find-modules/FindSharedMimeInfo.cmake
 share/ECM/find-modules/FindWayland.cmake
 share/ECM/find-modules/FindWaylandScanner.cmake
@@ -34,14 +41,12 @@ share/ECM/kde-modules/appstreamtest.cmake
 share/ECM/kde-modules/prefix.sh.cmake
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddQch.cmake
-share/ECM/modules/ECMFindQMLModule.cmake.in
-share/ECM/modules/ECMQchDoxygen.config.in
-share/ECM/modules/ECMQchDoxygenLayout.xml
 share/ECM/modules/ECMAddTests.cmake
 share/ECM/modules/ECMCoverageOption.cmake
 share/ECM/modules/ECMCreateQmFromPoFiles.cmake
 share/ECM/modules/ECMEnableSanitizers.cmake
 share/ECM/modules/ECMFindModuleHelpers.cmake
+share/ECM/modules/ECMFindQMLModule.cmake.in
 share/ECM/modules/ECMGenerateHeaders.cmake
 share/ECM/modules/ECMGeneratePkgConfigFile.cmake
 share/ECM/modules/ECMGeneratePriFile.cmake
@@ -53,11 +58,14 @@ share/ECM/modules/ECMOptionalAddSubdirectory.cmake
 share/ECM/modules/ECMPackageConfigHelpers.cmake
 share/ECM/modules/ECMPoQmTools.cmake
 share/ECM/modules/ECMQMLModules.cmake
+share/ECM/modules/ECMQchDoxygen.config.in
+share/ECM/modules/ECMQchDoxygenLayout.xml
 share/ECM/modules/ECMQmLoader.cpp.in
 share/ECM/modules/ECMQtDeclareLoggingCategory.cmake
 share/ECM/modules/ECMQtDeclareLoggingCategory.cpp.in
 share/ECM/modules/ECMQtDeclareLoggingCategory.h.in
 share/ECM/modules/ECMQueryQmake.cmake
+share/ECM/modules/ECMQueryQmake.cmake.orig
 share/ECM/modules/ECMSetupVersion.cmake
 share/ECM/modules/ECMUninstallTarget.cmake
 share/ECM/modules/ECMUseFindModules.cmake
@@ -68,6 +76,7 @@ share/ECM/test-modules/test_execute_and_compare.cmake
 share/ECM/toolchain/Android.cmake
 share/ECM/toolchain/deployment-file.json.in
 share/ECM/toolchain/specifydependencies.cmake
+%%HELP%%%%DOCSDIR%%/ExtraCMakeModules.qch
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindEGL.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindGLIB2.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindKF5.rst.txt
@@ -191,4 +200,3 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/toolchain/Android.html
-%%HELP%%%%DOCSDIR%%/ExtraCMakeModules.qch

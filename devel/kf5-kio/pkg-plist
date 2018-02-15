@@ -2,6 +2,7 @@ bin/kcookiejar5
 bin/ktelnetservice5
 bin/ktrash5
 bin/protocoltojson
+etc/dbus-1/system.d/org.kde.kio.file.conf
 etc/xdg/accept-languages.codes
 etc/xdg/kshorturifilterrc
 include/KF5/KIOCore/KACL
@@ -265,6 +266,7 @@ lib/libKF5KIONTLM.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5KIOWidgets.so
 lib/libKF5KIOWidgets.so.5
 lib/libKF5KIOWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libexec/kauth/file_helper
 lib/libexec/kf5/kio_http_cache_cleaner
 lib/libexec/kf5/kiod5
 lib/libexec/kf5/kioexec
@@ -317,6 +319,7 @@ share/dbus-1/services/org.kde.kiod5.service
 share/dbus-1/services/org.kde.kioexecd.service
 share/dbus-1/services/org.kde.kpasswdserver.service
 share/dbus-1/services/org.kde.kssld5.service
+share/dbus-1/system-services/org.kde.kio.file.service
 share/doc/HTML/ca/kcontrol5/cache/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/cache/index.docbook
 share/doc/HTML/ca/kcontrol5/cookies/index.cache.bz2
@@ -1031,3 +1034,4 @@ share/locale/wa/LC_MESSAGES/kio5.mo
 share/locale/xh/LC_MESSAGES/kio5.mo
 share/locale/zh_CN/LC_MESSAGES/kio5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5.mo
+share/polkit-1/actions/org.kde.kio.file.policy

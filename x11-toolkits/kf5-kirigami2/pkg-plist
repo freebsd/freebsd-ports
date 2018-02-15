@@ -75,6 +75,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/MenuIcon.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/PassiveNotification.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ScrollView.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/templates/qmldir
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ast/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca/LC_MESSAGES/libkirigami2plugin_qt.qm
@@ -91,6 +92,7 @@ share/locale/fr/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/gl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/hu/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ia/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/id/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/it/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ja/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ko/LC_MESSAGES/libkirigami2plugin_qt.qm
