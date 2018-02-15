@@ -1,0 +1,3 @@
+A gem that provides a client interface for the Sentry error logger
+
+WWW: https://github.com/getsentry/raven-ruby
