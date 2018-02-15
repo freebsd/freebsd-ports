@@ -1,0 +1,8 @@
+Moodbar is a stand-alone moodbar file generator. These files can
+be used by audio players to display a visual representation or
+"mood" of an audio track.
+
+The original moodbar generator developed for Amarok has become
+abandonware. This is a new implementation based on GStreamer 1.x.
+
+WWW: https://github.com/exaile/moodbar
