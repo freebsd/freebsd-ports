@@ -12,6 +12,8 @@ include/epix/Color_Neutral.h
 include/epix/Color_RGB.h
 include/epix/Color_Sep.h
 include/epix/Color_Utils.h
+include/epix/Complex.h
+include/epix/Sline.h
 include/epix/active_screen.h
 include/epix/affine.h
 include/epix/angle_units.h

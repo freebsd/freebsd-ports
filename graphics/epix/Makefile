@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epix
-PORTVERSION=	1.2.16
+DISTVERSION=	1.2.18
 CATEGORIES=	graphics
 MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/epix/
 
