@@ -1,6 +1,6 @@
---- vtysh/extract.pl.in.orig	2016-10-18 13:03:52 UTC
+--- vtysh/extract.pl.in.orig	2018-02-04 17:34:34 UTC
 +++ vtysh/extract.pl.in
-@@ -69,7 +69,7 @@ my $cli_stomp = 0;
+@@ -75,7 +75,7 @@ my $cli_stomp = 0;
  foreach (@ARGV) {
      $file = $_;
  
