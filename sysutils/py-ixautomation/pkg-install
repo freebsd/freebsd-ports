@@ -23,3 +23,6 @@ sysrc -f /etc/rc.conf vm_dir="/usr/local/ixautomation/vms"
 if [ ! -f "/usr/local/etc/ixautomation.conf" ] ; then
   cp /usr/local/etc/ixautomation.conf.dist /usr/local/etc/ixautomation.conf
 fi
+
+# Enable dbus needed for webui tests
+/sbin/rc-update add dbus default

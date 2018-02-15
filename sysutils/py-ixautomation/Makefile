@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ixautomation
-PORTVERSION=	18.02.01
+PORTVERSION=	18.02.02
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,6 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${FLAVOR} \
 		${LOCALBASE}/bin/firefox:www/firefox-esr \
 		${LOCALBASE}/bin/geckodriver:www/geckodriver \
 		xorg-vfbserver>=0:x11-servers/xorg-vfbserver \
+		xhost>=0:x11/xhost \
 		bhyve-firmware>=0:sysutils/bhyve-firmware
 
 WRKSRC_SUBDIR=  src
@@ -37,6 +38,6 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=	yes
 GH_ACCOUNT=	ixsystems
 GH_PROJECT=	ixautomation
-GH_TAGNAME=	e822778bcc864b12d99a23461711970275f1d883
+GH_TAGNAME=	46499a3d4b220d416d7a57eb1ebc683fc19720f0
 
 .include <bsd.port.mk>
