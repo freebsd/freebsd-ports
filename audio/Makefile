@@ -511,6 +511,7 @@
     SUBDIR += mma
     SUBDIR += moc
     SUBDIR += modplugplay
+    SUBDIR += moodbar
     SUBDIR += moony-lv2
     SUBDIR += mous
     SUBDIR += mp-player
