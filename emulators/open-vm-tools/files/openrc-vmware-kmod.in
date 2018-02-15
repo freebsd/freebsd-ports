@@ -3,7 +3,7 @@
 command="kldstat"
 
 start_pre() {
-	if[ $1 = vmmemctl ]; then
+	if [ $1 = vmmemctl ]; then
 		# VMware kernel module: vmmemctl
 		kernel_mod="vmmemctl"
 		name="vmware_guest_${kernel_mod}"
