@@ -64,10 +64,4 @@ post-install-DOCS-on:
 	(cd ${STAGEDIR}${L_HELP} && ${LN} -sf ../doc/lynx/${doc} .)
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

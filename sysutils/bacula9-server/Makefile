@@ -129,10 +129,6 @@ MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
 .if ${readline_ARGS} == "port"
 readline_CONFIGURE=	${LOCALBASE}
 .else

@@ -35,10 +35,6 @@ ZLIB_CONFIGURE_WITH=	libz
 
 .include <bsd.port.pre.mk>
 
-.if empty(PORT_OPTIONS:MGCRYPT) && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/Libs:/s/@LIBS@//' \
 		${WRKSRC}/libssh2.pc.in
