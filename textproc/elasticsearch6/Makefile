@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	5.3.0
-PORTREVISION=	1
+PORTVERSION=	6.0.1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
-PKGNAMESUFFIX=	5
+PKGNAMESUFFIX=	6
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	w.schwarzenfeld@utanet.at
 COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash>0:shells/bash
 
-CONFLICTS=	elasticsearch-[0-9]* elasticsearch2-[0-9]* elasticsearch6-[0-9]*
+CONFLICTS=	elasticsearch-[0-9]* elasticsearch2-[0-9]* elasticsearch5-[0-9]*
 
 USES=		cpe shebangfix
 NO_ARCH=	yes
@@ -25,7 +24,7 @@ NO_BUILD=	yes
 JAVA_VERSION=	1.8+
 USE_RC_SUBR=	${PORTNAME}
 SHEBANG_FILES=	bin/elasticsearch-plugin \
-		bin/elasticsearch bin/elasticsearch.in.sh
+		bin/elasticsearch
 
 OPTIONS_DEFINE=	DOCS
 
@@ -33,8 +32,7 @@ OPTIONS_DEFINE=	DOCS
 
 LUCENEVER=	6.4.1
 CONFIG_FILES=	elasticsearch.yml log4j2.properties jvm.options
-BINS=		elasticsearch.in.sh \
-		elasticsearch \
+BINS=		elasticsearch \
 		elasticsearch-plugin
 
 DOCS=		LICENSE.txt \
@@ -62,7 +60,6 @@ PLIST_SUB+=	SEARCHUSER=${SEARCHUSER} \
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/config/elasticsearch.yml
-	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/elasticsearch.in.sh
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/elasticsearch
 
 do-install:
