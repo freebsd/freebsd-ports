@@ -7,7 +7,6 @@ bin/irw
 bin/irxevent
 bin/lircrcd
 bin/mode2
-%%SMODE2%%bin/smode2
 bin/pronto2lirc
 bin/xmode2
 include/lirc/lirc_client.h
