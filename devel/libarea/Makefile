@@ -11,7 +11,7 @@ COMMENT=	CAM-related software for profile and pocketing operations
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
+LIB_DEPENDS=	${PY_BOOST}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Heeks

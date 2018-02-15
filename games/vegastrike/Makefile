@@ -15,7 +15,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/vegastrike.ico:games/vegastrike-data
-LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
+LIB_DEPENDS=	${PY_BOOST} \
 		libexpat.so:textproc/expat2 \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg

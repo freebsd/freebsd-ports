@@ -25,7 +25,7 @@ BUILD_DEPENDS=	\
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops \
 	gperf:devel/gperf
 LIB_DEPENDS=	\
-	libboost_python.so:devel/boost-python-libs \
+	${PY_BOOST} \
 	libboost_thread.so:devel/boost-libs \
 	libleveldb.so:databases/leveldb \
 	libldap.so:net/openldap24-client \

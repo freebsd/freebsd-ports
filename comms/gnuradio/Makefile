@@ -27,7 +27,7 @@ LIB_DEPENDS=	libcppunit.so:devel/cppunit \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libqwt.so:x11-toolkits/qwt5 \
-		libboost_python.so:devel/boost-python-libs \
+		${PY_BOOST} \
 		libportaudio.so:audio/portaudio \
 		libjack.so:audio/jack \
 		libasound.so:audio/alsa-lib \

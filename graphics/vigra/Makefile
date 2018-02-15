@@ -49,7 +49,7 @@ NUMPY_BUILD_DEPENDS=	nosetests:devel/py-nose \
 			f2py:math/py-numpy
 NUMPY_RUN_DEPENDS=	nosetests:devel/py-nose \
 			f2py:math/py-numpy
-NUMPY_LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
+NUMPY_LIB_DEPENDS=	${PY_BOOST}
 # On FreeBSD < 11 libc++ lacks support for sized delete operators.
 # GCC dropped the builtin version of these operators in 6+ by
 # defaulting to gnu++14. Force c++11 instead.
