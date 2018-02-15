@@ -177,6 +177,7 @@
     SUBDIR += luasql-sqlite3
     SUBDIR += mantis
     SUBDIR += mariadb-connector-c
+    SUBDIR += mariadb-connector-odbc
     SUBDIR += mariadb100-client
     SUBDIR += mariadb100-server
     SUBDIR += mariadb101-client
