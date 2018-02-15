@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		closure-compiler:www/closure-compiler \
 		greadlink:sysutils/coreutils \
 		gsed:textproc/gsed \
-		gyp:devel/py-gyp \
+		gyp:devel/py-gyp@${PY_FLAVOR} \
 		flock:sysutils/flock \
 		${LOCALBASE}/include/apr-1/apr_pools.h:devel/apr1
 LIB_DEPENDS=	libpng.so:graphics/png \
@@ -32,7 +32,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libopencv_legacy.so:graphics/opencv
 
 USES=		compiler:c++14-lang gperf jpeg gmake localbase pkgconfig \
-		python shebangfix ssl tar:xz
+		python:2.7 shebangfix ssl tar:xz
 USE_APACHE=	22+
 SHEBANG_GLOB=	*.gyp *.gypi *.py *.sh
 SHEBANG_FILES=	build/fix_proto_and_invoke_protoc
