@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${FLAVOR}
-RUN_DEPENDS=	isympy:math/py-sympy@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.3:math/py-matplotlib@${FLAVOR} \
