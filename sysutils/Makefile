@@ -400,6 +400,7 @@
     SUBDIR += geomWatch
     SUBDIR += getdelta
     SUBDIR += geteltorito
+    SUBDIR += getssl
     SUBDIR += gigolo
     SUBDIR += gkfreq
     SUBDIR += gkleds2
