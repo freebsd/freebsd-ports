@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fox
-PORTVERSION=	1.6.55
+PORTVERSION=	1.6.56
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/ \
 		http://ftp.fox-toolkit.org/pub/
@@ -83,7 +83,7 @@ CXXFLAGS+=	-fexpensive-optimizations -finline-functions
 post-patch:
 # Rename man pages as in manpage.1 --> manpage-16.1 to avoid
 # conflicts with fox14 and fox17
-	files=$$(${FIND} ${WRKSRC} -name *.1); \
+	@files=$$(${FIND} ${WRKSRC} -name *.1); \
 	for f in $$files; do \
 		${MV} $$f `${ECHO_CMD} $$f | ${SED} -e 's|\.1|-16.1|'`; \
 	done;
