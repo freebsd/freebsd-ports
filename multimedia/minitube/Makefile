@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitube
-PORTVERSION=	2.7
+DISTVERSION=	2.9
 CATEGORIES=	multimedia www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,16 +10,14 @@ COMMENT=	TV-like client for YouTube
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	flaviotordini
-
-USES=		qmake
 USE_GL=		gl
 USE_QT5=	core dbus gui network phonon4 qml script sql widgets \
 		buildtools_build imageformats_run sql-sqlite3_run
 QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE} \
 		DEFINES+=APP_GOOGLE_API_KEY="${MINITUBE_GOOGLE_API_KEY}"
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
