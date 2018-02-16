@@ -8,13 +8,13 @@
 #               Allows defining egg cache directory to fix runtime on diskless systems.
 
 name=salt_minion
-command="/usr/local/bin/salt-minion"
-required_dirs="/usr/local/etc/salt"
+command="%%PREFIX%%/bin/salt-minion"
+required_dirs="%%PREFIX%%/etc/salt"
 command_args="-c ${required_dirs}"
 pidfile="${salt_minion_pidfile:-/var/run/salt-minion.pid}"
 command_background="true"
 
-start_stop_daemon_args=" -e PATH=${salt_minion_paths:-/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin} -e PYTHON_EGG_CACHE=\"${salt_minion_eggcache:-/tmp}\""
+start_stop_daemon_args=" -e PATH=${salt_minion_paths:-/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/bin:%%PREFIX%%/sbin} -e PYTHON_EGG_CACHE=\"${salt_minion_eggcache:-/tmp}\""
 
 depend() {
         keyword -shutdown
