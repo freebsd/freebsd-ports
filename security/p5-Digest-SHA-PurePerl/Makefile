@@ -19,13 +19,12 @@ USE_PERL5=	configure
 NO_ARCH=	true
 
 PORTEXAMPLES=	dups
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
