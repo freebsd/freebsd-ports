@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radix
-PORTVERSION=	0.9.6
+PORTVERSION=	0.10.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,5 +16,8 @@ LICENSE_COMB=	dual
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/_${PORTNAME}.so
 
 .include <bsd.port.mk>
