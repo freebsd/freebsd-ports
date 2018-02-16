@@ -5209,6 +5209,7 @@
     SUBDIR += ragel
     SUBDIR += raknet
     SUBDIR += rapidjson
+    SUBDIR += raylib
     SUBDIR += rbenv
     SUBDIR += rbtools
     SUBDIR += rclint
