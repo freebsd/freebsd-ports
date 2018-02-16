@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcmc-jags
-PORTVERSION=	4.2.0
-PORTREVISION=	3
+DISTVERSION=	4.3.0
 CATEGORIES=	math
 MASTER_SITES=	SF/mcmc-jags/JAGS/${S}.x/Source/:1 \
 		SF/mcmc-jags/Examples/${S}.x/:2 \
@@ -17,6 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Just Another Gibbs Sampler
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 GNU_CONFIGURE=	yes
 USES=		bison compiler:features fortran gmake libtool localbase pathfix
