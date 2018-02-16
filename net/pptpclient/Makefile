@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pptpclient
-PORTVERSION=	1.9.0
+DISTVERSION=	1.10.0
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/pptp/pptp-${PORTVERSION}
 DISTNAME=	pptp-${PORTVERSION}
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5
 USE_RC_SUBR=	pptp
