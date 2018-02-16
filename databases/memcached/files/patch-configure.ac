@@ -1,6 +1,6 @@
---- configure.ac.orig	2016-12-04 13:19:07 UTC
+--- configure.ac.orig	2017-12-21 06:24:20 UTC
 +++ configure.ac
-@@ -137,8 +137,7 @@ if test "x$enable_dtrace" = "xyes"; then
+@@ -143,8 +143,7 @@ if test "x$enable_dtrace" = "xyes"; then
    if test "x$DTRACE" != "xno"; then
      AC_DEFINE([ENABLE_DTRACE],1,[Set to nonzero if you want to include DTRACE])
      build_dtrace=yes
@@ -10,7 +10,7 @@
      if test $? -eq 0
      then
          dtrace_instrument_obj=yes
-@@ -594,7 +593,7 @@ then
+@@ -627,7 +626,7 @@ then
  elif test "$GCC" = "yes"
  then
    GCC_VERSION=`$CC -dumpversion`
