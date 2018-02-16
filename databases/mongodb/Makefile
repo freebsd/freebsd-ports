@@ -19,6 +19,7 @@ LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
 BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	use of undeclared identifier 'BIO_s_file_internal'
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libsnappy.so:archivers/snappy \
