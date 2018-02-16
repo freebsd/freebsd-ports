@@ -1,10 +1,12 @@
-%%SITE_PERL%%/Net/DNS/SEC.pm
-%%SITE_PERL%%/Net/DNS/SEC/DSA.pm
-%%SITE_PERL%%/Net/DNS/SEC/ECCGOST.pm
-%%SITE_PERL%%/Net/DNS/SEC/ECDSA.pm
-%%SITE_PERL%%/Net/DNS/SEC/Keyset.pm
-%%SITE_PERL%%/Net/DNS/SEC/Private.pm
-%%SITE_PERL%%/Net/DNS/SEC/RSA.pm
+%%SITE_ARCH%%/Net/DNS/SEC.pm
+%%SITE_ARCH%%/Net/DNS/SEC/DSA.pm
+%%SITE_ARCH%%/Net/DNS/SEC/ECCGOST.pm
+%%SITE_ARCH%%/Net/DNS/SEC/ECDSA.pm
+%%SITE_ARCH%%/Net/DNS/SEC/Keyset.pm
+%%SITE_ARCH%%/Net/DNS/SEC/Private.pm
+%%SITE_ARCH%%/Net/DNS/SEC/RSA.pm
+%%SITE_ARCH%%/Net/DNS/SEC/libcrypto.pod
+%%SITE_ARCH%%/auto/Net/DNS/SEC/SEC.so
 %%PERL5_MAN3%%/Net::DNS::SEC.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::DSA.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::ECCGOST.3.gz
@@ -12,3 +14,4 @@
 %%PERL5_MAN3%%/Net::DNS::SEC::Keyset.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::Private.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::RSA.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::libcrypto.3.gz
