@@ -38,6 +38,7 @@ FOX16_CONFIGURE_ENV=	FOX_CFLAGS="$$(fox-config --cflags)" \
 			FOX_LIBS="$$(fox-config --libs)" \
 			RESWRAP="${LOCALBASE}/bin/reswrap"
 FOX17_DESC=		Fox 1.7 GUI toolkit support
+FOX17_BROKEN=		Fails to build: recorder.cpp:104:9: error: no matching member function for call to 'prepend'
 FOX17_LIB_DEPENDS=	libFOX-1.7.so:x11-toolkits/fox17
 FOX17_CONFIGURE_ENV=	FOX_CFLAGS="$$(pkgconf fox17 --cflags)" \
 			FOX_LIBS="$$(pkgconf fox17 --libs) -lX11" \

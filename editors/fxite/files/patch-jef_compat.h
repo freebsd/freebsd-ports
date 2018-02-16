@@ -78,7 +78,7 @@
  FXID GetNetActiveWindow();
  
  void WaitForWindowFocus(FXTopWindow*w, FXuint msecs=1000);
- 
++
 +// #define SetPadLRTB(o,l,r,t,b) \
 +//   (o)->setPadLeft(l); \
 +//   (o)->setPadRight(r); \
@@ -86,4 +86,4 @@
 +//   (o)->setPadBottom(b);
 +// 
 +// #define SetPad(o,p) SetPadLRTB(o,p,p,p,p)
-+
+ 

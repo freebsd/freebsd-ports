@@ -1,6 +1,6 @@
 --- src/appwin_pub.h.orig	2013-10-03 09:22:51 UTC
 +++ src/appwin_pub.h
-@@ -55,7 +55,7 @@ public:
+@@ -55,7 +55,7 @@ class TopWinPub: public FXObject { (public)
    static void ParseCommands(FXString &commands);
    static FXMainWindow* instantiate(FXApp*a);
    static void create();

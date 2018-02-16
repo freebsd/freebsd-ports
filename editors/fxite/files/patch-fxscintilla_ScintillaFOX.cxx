@@ -1,6 +1,6 @@
 --- fxscintilla/ScintillaFOX.cxx.orig	2013-10-03 09:22:51 UTC
 +++ fxscintilla/ScintillaFOX.cxx
-@@ -171,7 +171,7 @@ private:
+@@ -171,7 +171,7 @@ class ScintillaFOX : public ScintillaBase { (private)
    // From ScintillaBase
    virtual bool ModifyScrollBars(int nMax, int nPage);
    virtual void ReconfigureScrollBars();
@@ -18,7 +18,7 @@
    // Have to call FXScrollArea::getViewportXxxx instead of getViewportXxxx
    // to prevent infinite loop
  #ifdef FOX_1_6
-@@ -1256,7 +1256,7 @@ long FXScintilla::onDNDMotion(FXObject* 
+@@ -1256,7 +1256,7 @@ long FXScintilla::onDNDMotion(FXObject* sender,FXSelec
    FXDragAction action;
    FXint pos;
    // Scroll into view

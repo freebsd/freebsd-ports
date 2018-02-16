@@ -1,6 +1,6 @@
 --- src/luacmds.cpp.orig	2013-10-03 09:22:51 UTC
 +++ src/luacmds.cpp
-@@ -530,7 +530,7 @@ static int view_clear_output(lua_State* 
+@@ -530,7 +530,7 @@ static int view_clear_output(lua_State* L)
  }
  
  
@@ -9,7 +9,7 @@
    {"file_new",                  file_new},
    {"file_open",                 file_open},
    {"file_reload",               file_reload},
-@@ -585,7 +585,7 @@ static const struct luaL_reg fxte_comman
+@@ -585,7 +585,7 @@ static const struct luaL_reg fxte_commands[] = {
  
  
  
