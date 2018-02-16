@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2016-04-02 00:29:38 UTC
+--- CMakeLists.txt.orig	2017-05-31 05:57:25 UTC
 +++ CMakeLists.txt
 @@ -10,8 +10,6 @@ if (NOT WITHOUT_OPENCV)
    find_package (OpenCV)
@@ -9,17 +9,17 @@
  include(FindPkgConfig)
  option (WITHOUT_GAVL "Disable plugins dependent upon gavl" OFF)
  if (PKG_CONFIG_FOUND AND NOT WITHOUT_GAVL)
-@@ -45,16 +43,8 @@ set (FREI0R_1_1_DEF ${CMAKE_SOURCE_DIR}/
+@@ -45,16 +43,8 @@ set (FREI0R_1_1_DEF ${CMAKE_SOURCE_DIR}/msvc/frei0r_1_
  # --- custom targets: ---
  INCLUDE( cmake/modules/TargetDistclean.cmake OPTIONAL)
  
 -# See this thread for a ridiculous discussion about the simple question how to install a header file with CMake: http://www.cmake.org/pipermail/cmake/2009-October/032874.html
 -install (DIRECTORY include DESTINATION . FILES_MATCHING PATTERN "frei0r.h" PATTERN "msvc" EXCLUDE)
--
--add_subdirectory (doc)
--add_subdirectory (src)
 +add_subdirectory (src/filter)
  
+-add_subdirectory (doc)
+-add_subdirectory (src)
+-
 -# Generate frei0r.pc and install it.
  set (prefix "${CMAKE_INSTALL_PREFIX}")
  set (exec_prefix "${CMAKE_INSTALL_PREFIX}")
@@ -27,9 +27,9 @@
 -set (includedir "${CMAKE_INSTALL_PREFIX}/include")
 -configure_file ("frei0r.pc.in" "frei0r.pc" @ONLY)
 -install (FILES "${CMAKE_CURRENT_BINARY_DIR}/frei0r.pc" DESTINATION lib/pkgconfig)
---- src/filter/CMakeLists.txt.orig	2016-04-02 00:29:38 UTC
+--- src/filter/CMakeLists.txt.orig	2017-05-31 05:57:25 UTC
 +++ src/filter/CMakeLists.txt
-@@ -8,86 +8,3 @@ if (${OpenCV_FOUND})
+@@ -8,89 +8,3 @@ if (${OpenCV_FOUND})
      add_subdirectory (facebl0r)
      add_subdirectory (facedetect)
  endif (${OpenCV_FOUND})
@@ -44,6 +44,7 @@
 -add_subdirectory (balanc0r)
 -add_subdirectory (baltan)
 -add_subdirectory (bluescreen0r)
+-add_subdirectory (bgsubtract0r)
 -add_subdirectory (blur)
 -add_subdirectory (brightness)
 -add_subdirectory (bw0r)
@@ -71,6 +72,7 @@
 -add_subdirectory (flippo)
 -add_subdirectory (gamma)
 -add_subdirectory (glow)
+-add_subdirectory (glitch0r)
 -#add_subdirectory (host_param_test)
 -add_subdirectory (hueshift0r)
 -add_subdirectory (invert0r)
@@ -95,6 +97,7 @@
 -add_subdirectory (primaries)
 -add_subdirectory (RGB)
 -add_subdirectory (rgbnoise)
+-add_subdirectory (rgbsplit0r)
 -add_subdirectory (saturat0r)
 -add_subdirectory (scanline0r)
 -add_subdirectory (select0r)

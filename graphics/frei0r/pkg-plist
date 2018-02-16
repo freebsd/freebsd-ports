@@ -18,6 +18,7 @@ lib/frei0r-1/alphaspot.so
 lib/frei0r-1/alphaxor.so
 lib/frei0r-1/balanc0r.so
 lib/frei0r-1/baltan.so
+lib/frei0r-1/bgsubtract0r.so
 lib/frei0r-1/blend.so
 lib/frei0r-1/bluescreen0r.so
 lib/frei0r-1/brightness.so
@@ -55,6 +56,7 @@ lib/frei0r-1/emboss.so
 lib/frei0r-1/equaliz0r.so
 lib/frei0r-1/flippo.so
 lib/frei0r-1/gamma.so
+lib/frei0r-1/glitch0r.so
 lib/frei0r-1/glow.so
 lib/frei0r-1/grain_extract.so
 lib/frei0r-1/grain_merge.so
@@ -90,6 +92,7 @@ lib/frei0r-1/pr0be.so
 lib/frei0r-1/pr0file.so
 lib/frei0r-1/primaries.so
 lib/frei0r-1/rgbnoise.so
+lib/frei0r-1/rgbsplit0r.so
 lib/frei0r-1/saturat0r.so
 lib/frei0r-1/saturation.so
 lib/frei0r-1/scanline0r.so
