@@ -10,6 +10,8 @@ COMMENT=	Tools for MongoDB
 
 LICENSE=	APACHE20
 
+BROKEN_SSL=	openssl-devel
+
 BUILD_DEPENDS=	go>0:lang/go
 
 USES=	localbase

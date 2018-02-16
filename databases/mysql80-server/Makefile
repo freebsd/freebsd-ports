@@ -15,6 +15,8 @@ COMMENT?=		Multithreaded SQL database (server)
 
 LICENSE=		GPLv2
 
+BROKEN_SSL=	openssl-devel
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql80-client
