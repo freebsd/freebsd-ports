@@ -2,7 +2,7 @@
 
 # Configuration options for this service
 # =======================
-# salt_minion_paths (string):      Set to "/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin" by default.
+# salt_minion_paths (string):      Set to "/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/bin:%%PREFIX%%/sbin" by default.
 #               Default $PATH for salt_minion
 # salt_minion_eggcache (string):   Set to "/tmp" by default.
 #               Allows defining egg cache directory to fix runtime on diskless systems.
