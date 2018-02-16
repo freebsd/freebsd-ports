@@ -8,13 +8,13 @@
 #               Allows defining egg cache directory to fix runtime on diskless systems.
 
 name=salt_master
-command="/usr/local/bin/salt-master"
-required_dirs="/usr/local/etc/salt"
+command="%%PREFIX%%/bin/salt-master"
+required_dirs="%%PREFIX%%/etc/salt"
 command_args="-c ${required_dirs}"
 pidfile="${salt_master_pidfile:-/var/run/salt-master.pid}"
 command_background="true"
 
-start_stop_daemon_args=" -e PATH=${salt_master_paths:-/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin} -e PYTHON_EGG_CACHE=\"${salt_master_eggcache:-/tmp}\""
+start_stop_daemon_args=" -e PATH=${salt_master_paths:-/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/bin:%%PREFIX%%/sbin} -e PYTHON_EGG_CACHE=\"${salt_master_eggcache:-/tmp}\""
 
 depend() {
         keyword -shutdown
