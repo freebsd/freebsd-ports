@@ -6,9 +6,9 @@ lib/gogglesmm/libgap_wav.so
 man/man1/gogglesmm.1.gz
 share/appdata/gogglesmm.appdata.xml
 share/applications/gogglesmm.desktop
-%%DATADIR%%/import_banshee_stats.py
-%%DATADIR%%/import_gogglesmm12.py
-%%DATADIR%%/import_gogglesmm12_stats.py
+%%IMPORT%%%%DATADIR%%/import_banshee_stats.py
+%%IMPORT%%%%DATADIR%%/import_gogglesmm12.py
+%%IMPORT%%%%DATADIR%%/import_gogglesmm12_stats.py
 share/icons/hicolor/16x16/apps/gogglesmm.png
 share/icons/hicolor/22x22/apps/gogglesmm.png
 share/icons/hicolor/24x24/apps/gogglesmm.png
