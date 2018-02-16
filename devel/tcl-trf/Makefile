@@ -12,6 +12,9 @@ DISTNAME=	trf${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Data conversion, digests, compression, error-correction for Tcl
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	use of undeclared identifier 'SHA_Init'
+
 ALL_TARGET=	all
 
 USES+=		tcl:tea tar:bzip2
