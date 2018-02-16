@@ -13,6 +13,8 @@ COMMENT=	MySQL database enhanced with Galera replication (server package)
 
 LICENSE=	GPLv2
 
+BROKEN_SSL=	openssl-devel
+
 RUN_DEPENDS=	bash:shells/bash \
 		lsof:sysutils/lsof \
 		netcat:net/netcat \
