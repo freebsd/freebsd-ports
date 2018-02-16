@@ -7,14 +7,18 @@ if [ "$2" = "POST-INSTALL" ]; then
         /usr/bin/install -d -o acme -g acme -m 750 ~acme/.acme.sh
     fi
 
-    if [ ! -d ~acme/certs ]; then    
+    if [ ! -d ~acme/certs ]; then
         /usr/bin/install -d -o acme -g acme -m 750 ~acme/certs
     fi
-    
+
+    if [ ! -d ~acme/.acme.sh/deploy ]; then
+        /bin/ln -sf %%EXAMPLESDIR%%/deploy ~acme/.acme.sh
+    fi
+
     if [ ! -d ~acme/.acme.sh/dnsapi ]; then
         /bin/ln -sf %%EXAMPLESDIR%%/dnsapi ~acme/.acme.sh
     fi
-    
+
     if [ ! -f ~acme/.acme.sh/account.conf.sample ]; then
 
         /bin/cat << EOF >> ~acme/.acme.sh/account.conf.sample
