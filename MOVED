@@ -4722,7 +4722,6 @@ sysutils/klineakconfig||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kmilo||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/knutclient||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/komparator||2013-07-26|Has expired: Depends on Qt 3.x
-sysutils/krename||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kshutdown||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/ksynaptics||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/lineak-kdeplugins||2013-07-26|Has expired: Depends on Qt 3.x
@@ -9965,3 +9964,4 @@ textproc/rubygem-tidy||2018-02-14|Has expired: No longer needed and not maintain
 www/rubygem-scrapi||2018-02-14|Has expired: No longer maintained upstream
 devel/boost-python3-libs|devel/boost-python-libs@py36|2018-02-15|Flavorize
 net/quagga-esr|net/quagga|2018-02-15|Fixes available, go back to the regular quagga
+sysutils/krename-kde4|sysutils/krename|2018-02-16|Renamed to sysutils/krename
