@@ -196,6 +196,7 @@
     SUBDIR += google-startup-scripts
     SUBDIR += googlecl
     SUBDIR += gopher
+    SUBDIR += goreplay
     SUBDIR += gotthard
     SUBDIR += gq
     SUBDIR += grdesktop
