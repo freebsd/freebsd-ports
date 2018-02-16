@@ -12,6 +12,8 @@ COMMENT=	Portable scriptable network and serial communication program
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_SSL=	openssl-devel
+
 USES=		ssl
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
