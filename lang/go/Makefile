@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.9.4
+PORTVERSION=	1.10
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
@@ -22,7 +22,6 @@ SHEBANG_FILES=	src/*.bash \
 		lib/time/*.bash \
 		misc/benchcmp \
 		misc/nacl/go_nacl_*_exec \
-		src/cmd/dist/*.bash \
 		src/cmd/go/*.sh \
 		src/net/http/cgi/testdata/*.cgi \
 		src/regexp/syntax/*.pl
@@ -64,6 +63,7 @@ do-build:
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
 		GO386=${GO386} \
 		${SH} make.bash
+	${RM} -r ${WRKSRC}/pkg/obj
 
 do-install:
 	@${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}
@@ -82,7 +82,6 @@ pkg-plist: stage
 	cd ${WRKDIR} && ${FIND} go -type f | \
 		${SED} -e "s/\/${OPSYS:tl}_${GOARCH}\//\/%%opsys_ARCH%%\//g" | \
 		${SORT} >> ${WRKDIR}/pkg-plist
-	${ECHO_CMD} "@dir go/pkg/obj/%%opsys_ARCH%%" >> ${WRKDIR}/pkg-plist
 	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
 
 .include <bsd.port.post.mk>
