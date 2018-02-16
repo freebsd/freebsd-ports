@@ -1,5 +1,6 @@
 include/MYGUI/MyGUI_OpenGLDataManager.h
 include/MYGUI/MyGUI_OpenGLDiagnostic.h
+include/MYGUI/MyGUI_OpenGLImageLoader.h
 include/MYGUI/MyGUI_OpenGLPlatform.h
 include/MYGUI/MyGUI_OpenGLRTTexture.h
 include/MYGUI/MyGUI_OpenGLRenderManager.h
