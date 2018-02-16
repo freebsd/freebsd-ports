@@ -10,7 +10,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Facebook plugin for libpurple
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKWRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpurple.so:net-im/libpurple \
 		libjson-glib-1.0.so:devel/json-glib
