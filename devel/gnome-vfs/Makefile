@@ -16,6 +16,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LIB
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type 'struct ssl_st'
+
 USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)

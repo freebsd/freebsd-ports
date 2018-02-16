@@ -13,6 +13,9 @@ COMMENT=	Library for support of the Expert Witness Compression Format (EWF)
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	field has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
+
 LIB_DEPENDS=	libsmdev.so:devel/libsmdev \
 		libsmraw.so:devel/libsmraw \
 		libuuid.so:misc/e2fsprogs-libuuid

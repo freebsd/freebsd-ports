@@ -11,6 +11,9 @@ COMMENT=	Robust high performance CORBA ORB for C++ and Python
 
 LICENSE=	GPLv2
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	member access into incomplete type 'DH' (aka 'dh_st')
+
 CONFLICTS=	omniORB41-4.1.*
 PLIST_SUB+=	SONUM=2
 GNU_CONFIGURE=	yes

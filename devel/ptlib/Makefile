@@ -12,6 +12,9 @@ COMMENT=	Cross platform C++ library, used by OPAL
 
 LICENSE=	MPL10
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	use of undeclared identifier 'BIO_s_file_internal'
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 CONFLICTS=	pwlib-1.*

@@ -15,6 +15,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-GPL
 LICENSE_FILE_LGPL20=	${WRKSRC}/LICENSE-LGPL
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	member access into incomplete type 'BIO' (aka 'bio_st')
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize --with-ssl=${OPENSSLBASE}
 MAKE_ARGS=	INSTDIR=${STAGEDIR}${PREFIX} SHARED_INSTDIR=${STAGEDIR}${PREFIX}
