@@ -1,0 +1,28 @@
+libc++ on FreeBSD 10.* doesn't support c++17 yet
+
+In file included from src/core/core_timing.cpp:12:
+In file included from /usr/include/c++/v1/unordered_map:350:
+/usr/include/c++/v1/__hash_table:1165:43: error: conflicting types for '__hash_table<_Tp, _Hash, _Equal, _Alloc>'
+__hash_table<_Tp, _Hash, _Equal, _Alloc>::__hash_table()
+                                          ^
+/usr/include/c++/v1/__hash_table:852:5: note: previous declaration is here
+    __hash_table()
+    ^
+/usr/include/c++/v1/__hash_table:1233:43: error: conflicting types for '__hash_table<_Tp, _Hash, _Equal, _Alloc>'
+__hash_table<_Tp, _Hash, _Equal, _Alloc>::__hash_table(__hash_table&& __u)
+                                          ^
+/usr/include/c++/v1/__hash_table:866:5: note: previous declaration is here
+    __hash_table(__hash_table&& __u)
+    ^
+
+--- CMakeLists.txt.orig	2018-02-14 15:32:26 UTC
++++ CMakeLists.txt
+@@ -89,7 +88,7 @@ message(STATUS "Target architecture: ${ARCHITECTURE}")
+ # Configure compilation flags
+ # ===========================
+ 
+-set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ if (NOT MSVC)
