@@ -16,7 +16,7 @@
  
  #include "intl.h"
  #include "appwin_base.h"
-@@ -405,7 +405,14 @@ long TopWindowBase::onTimer(FXObject*o, 
+@@ -405,7 +405,14 @@ long TopWindowBase::onTimer(FXObject*o, FXSelector sel
  long TopWindowBase::onCloseWait(FXObject*o, FXSelector sel, void*p)
  {
    if (FXSELTYPE(sel)==SEL_CHORE) {
@@ -32,7 +32,7 @@
    } else {
      close();
    }
-@@ -1246,7 +1253,12 @@ void TopWindowBase::ParseCommands(FXStri
+@@ -1246,7 +1253,12 @@ void TopWindowBase::ParseCommands(FXString &commands)
              FXString filename=sect.text();
              if (rowcol.empty()) {
                FXint beg,end;

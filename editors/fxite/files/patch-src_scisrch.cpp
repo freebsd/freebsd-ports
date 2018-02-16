@@ -13,7 +13,7 @@
  #if 1
  
  // The capitalization of text inserted by `&' or `\1', `\2', ... `\9' can be altered by
-@@ -222,7 +228,7 @@ int SciSearch::FindTextNoSel(const FXStr
+@@ -222,7 +228,7 @@ int SciSearch::FindTextNoSel(const FXString &what, FXu
    if (fm<0) { fm=0; }
    if (to>len) { to=len; }
    FXuint dirn=isfwd?REX_FORWARD:REX_BACKWARD;
@@ -22,7 +22,7 @@
      beg=isfwd?begs[0]:ends[0];
      end=isfwd?ends[0]:begs[0];
      return 1;
-@@ -256,8 +262,8 @@ bool SciSearch::FindText(const FXString 
+@@ -256,8 +262,8 @@ bool SciSearch::FindText(const FXString &what, FXuint 
    long fm = isfwd? pos : 0;
    long to = isfwd? len : (pos-1);
    if (
@@ -33,7 +33,7 @@
    ) {
      SciMsg(SCI_SETTARGETSTART,begs[0],0);
      SciMsg(SCI_SETTARGETEND,ends[0],0);
-@@ -383,8 +389,8 @@ long SciSearch::ReplaceAllInDoc(const FX
+@@ -383,8 +389,8 @@ long SciSearch::ReplaceAllInDoc(const FXString &search
    SciMsg(SCI_SETSEARCHFLAGS,0,0);
    SciMsg(SCI_BEGINUNDOACTION,0,0);
    while (1) {
@@ -44,7 +44,7 @@
        SciMsg(SCI_SETTARGETSTART,begs[0],0);
        SciMsg(SCI_SETTARGETEND,ends[0],0);
        FXString newstr=DoSubstitute(content,begs,ends,repl_template,MAX_CAPTURES);
-@@ -438,7 +444,7 @@ long SciSearch::ReplaceAllInSel(const FX
+@@ -438,7 +444,7 @@ long SciSearch::ReplaceAllInSel(const FXString &search
  
      SciMsg(SCI_SETSEARCHFLAGS,0,0);
      if (bol_only) { // Special case, start of first line
@@ -53,7 +53,7 @@
          SciMsg(SCI_SETTARGETSTART,begs[0],0);
          SciMsg(SCI_SETTARGETEND,ends[0],0);
          FXString newstr=DoSubstitute(content,begs,ends,repl_template,MAX_CAPTURES);
-@@ -452,7 +458,7 @@ long SciSearch::ReplaceAllInSel(const FX
+@@ -452,7 +458,7 @@ long SciSearch::ReplaceAllInSel(const FXString &search
      long substart=start;
      while (1) {
        if (end<=substart) { break; }

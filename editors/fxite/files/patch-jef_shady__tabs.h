@@ -1,6 +1,6 @@
 --- jef/shady_tabs.h.orig	2013-10-03 09:22:51 UTC
 +++ jef/shady_tabs.h
-@@ -28,7 +28,7 @@ protected:
+@@ -28,7 +28,7 @@ class ShadyTabs: public FXTabBook { (protected)
    void UpdateTabs();
  public:
    long onCmdOpenItem  ( FXObject* sender, FXSelector sel, void* p );

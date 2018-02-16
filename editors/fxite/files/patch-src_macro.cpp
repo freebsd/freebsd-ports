@@ -9,7 +9,7 @@
    if (!lua_istable(L, -1)) {
      lua_pop(L, 1);
      return 1;
-@@ -324,7 +324,7 @@ static void debug_hook(lua_State *L, lua
+@@ -324,7 +324,7 @@ static void debug_hook(lua_State *L, lua_Debug *ar)
  /* Override a builtin Lua function, or add a new one if it doesn't exist */
  static void override(lua_State *L, const char*module, const char* funcname, lua_CFunction newfunc)
  {
@@ -18,7 +18,7 @@
    if (lua_istable(L,-1)) {
      lua_pushstring(L,funcname);
      if (newfunc) {
-@@ -342,7 +342,7 @@ static void override(lua_State *L, const
+@@ -342,7 +342,7 @@ static void override(lua_State *L, const char*module, 
  /* Don't let scripts try to read from stdin, as this would block indefinitely */
  static void close_stdin(lua_State *L)
  {
@@ -36,7 +36,7 @@
      PersistRecord*pr=(PersistRecord*)keepers.data(i);
      if (pr) {
        if (pr->t==LUA_TSTRING) {
-@@ -406,11 +406,12 @@ void MacroRunner::PushKeepers(lua_State 
+@@ -406,11 +406,12 @@ void MacroRunner::PushKeepers(lua_State *L)
      lua_pushstring(L,PERSIST_TABLE_NAME);
      lua_newtable(L);
      lua_settable(L, -3);
@@ -51,7 +51,7 @@
        switch (pr->t) {
          case LUA_TNUMBER: { lua_pushnumber(L, pr->n);  break;}
          case LUA_TBOOLEAN:{ lua_pushboolean(L, pr->b); break;}
-@@ -455,7 +456,7 @@ void MacroRunner::PopKeepers(lua_State *
+@@ -455,7 +456,7 @@ void MacroRunner::PopKeepers(lua_State *L)
              }
            }
            if (pr) {
@@ -60,7 +60,7 @@
            }
          }
          lua_pop(L, 1);
-@@ -479,6 +480,9 @@ bool MacroRunner::RunMacro(const FXStrin
+@@ -479,6 +480,9 @@ bool MacroRunner::RunMacro(const FXString &source, boo
    lua_State *L=luaL_newstate();
    luaL_openlibs(L);
    luaopen_dialog(L);
@@ -70,7 +70,7 @@
    override(L,"os","exit", osexit);
    override(L,"io","stdin", NULL);
    override(L,"_G","print", print);
-@@ -487,11 +491,27 @@ bool MacroRunner::RunMacro(const FXStrin
+@@ -487,11 +491,27 @@ bool MacroRunner::RunMacro(const FXString &source, boo
    si->script=isfilename?source.text():NULL;
    states.append(si);
    lua_sethook(L,debug_hook,LUA_MASKLINE,1);

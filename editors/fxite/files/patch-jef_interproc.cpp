@@ -1,6 +1,6 @@
 --- jef/interproc.cpp.orig	2013-10-03 09:22:51 UTC
 +++ jef/interproc.cpp
-@@ -323,6 +323,18 @@ static int SocketFailure(const char*func
+@@ -323,7 +323,19 @@ static int SocketFailure(const char*func)
  }
  
  
@@ -9,17 +9,18 @@
 +# define FOX_1_7_50_OR_NEWER
 +# endif
 +#endif
-+
+ 
 +#ifdef FOX_1_7_50_OR_NEWER
 +# define LookupInHash(d,k) ((d)->at(k))
 +#else
 +# define LookupInHash(d,k) ((d)->find(k))
 +#endif
 +
- 
++
  long InterProc::onSocketRead(FXObject*o,FXSelector sel,void*p)
  {
-@@ -344,7 +356,7 @@ long InterProc::onSocketRead(FXObject*o,
+   switch (FXSELID(sel)) {
+@@ -344,7 +356,7 @@ long InterProc::onSocketRead(FXObject*o,FXSelector sel
        ssize_t len=0;
        char buf[bufsize];
        int read_fd=(FXival)p;

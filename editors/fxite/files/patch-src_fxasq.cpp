@@ -20,7 +20,7 @@
      FXWindow*obj=(FXWindow*)keylist.data(i);
      if (k&&obj) {
        if (IsGroup(obj)) {
-@@ -299,7 +299,7 @@ void FxAsqWin::Select(const char*key, co
+@@ -299,7 +299,7 @@ void FxAsqWin::Select(const char*key, const char*value
  {
    FXHorizontalFrame *frm = new FXHorizontalFrame(userbox,LAYOUT_FILL_X);
    new FXLabel(frm,label,NULL);
@@ -29,7 +29,7 @@
    if (list) {
      list->reparent(frm);
      void*p=list->getUserData();
-@@ -315,7 +315,7 @@ void FxAsqWin::Select(const char*key, co
+@@ -315,7 +315,7 @@ void FxAsqWin::Select(const char*key, const char*value
  
  void FxAsqWin::Option(const char*key, const char*value, const char*label)
  {
@@ -38,7 +38,7 @@
    if (!IsList(list)) {
      list=new FXListBox(userbox,NULL,0,LISTBOX_OPTS);
      keylist.insert(key,list);
-@@ -327,7 +327,7 @@ void FxAsqWin::Option(const char*key, co
+@@ -327,7 +327,7 @@ void FxAsqWin::Option(const char*key, const char*value
  
  void FxAsqWin::Group(const char*key, const char*value, const char*label)
  {
@@ -47,7 +47,7 @@
    if (grp) {
      ((FXWindow*)grp)->reparent(userbox);
      grp->setText(label);
-@@ -341,7 +341,7 @@ void FxAsqWin::Group(const char*key, con
+@@ -341,7 +341,7 @@ void FxAsqWin::Group(const char*key, const char*value,
  
  void FxAsqWin::Radio(const char*key, const char*value, const char*label)
  {
@@ -56,7 +56,7 @@
    if (!IsGroup(grp)) {
      grp=new GroupBox(userbox,NULL);
      keylist.insert(key,grp);
-@@ -505,7 +505,7 @@ void FxAsqWin::Font(const char*key, cons
+@@ -505,7 +505,7 @@ void FxAsqWin::Font(const char*key, const char*value, 
  FxAsqWin::~FxAsqWin()
  {
    void*p=NULL;

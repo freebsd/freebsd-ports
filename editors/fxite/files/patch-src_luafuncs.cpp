@@ -20,7 +20,7 @@
  
  
  /*
-@@ -86,7 +89,7 @@ static bool check_find_flags(lua_State* 
+@@ -86,7 +89,7 @@ static bool check_find_flags(lua_State* L, int pos, in
  {
    flags=0;
    luaL_argcheck(L, lua_istable(L,pos), pos, _("expected table"));
@@ -47,7 +47,7 @@
    {"seltext", seltext},
    {"text", text},
    {"documents", documents},
-@@ -1403,7 +1406,7 @@ static const struct luaL_reg fxte_funcs[
+@@ -1403,7 +1406,7 @@ static const struct luaL_reg fxte_funcs[] = {
  
  
  

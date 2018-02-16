@@ -1,6 +1,6 @@
 --- src/prefdlg_sntx.cpp.orig	2013-10-03 09:22:51 UTC
 +++ src/prefdlg_sntx.cpp
-@@ -84,7 +84,7 @@ long MyColorWell::onDoubleClicked(FXObje
+@@ -84,7 +84,7 @@ long MyColorWell::onDoubleClicked(FXObject*o,FXSelecto
    colordialog.setSelector(ID_COLORDIALOG);
    colordialog.setRGBA(oldcolor);
    colordialog.setOpaqueOnly(isOpaqueOnly());
