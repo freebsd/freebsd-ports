@@ -16,6 +16,7 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig \
 
 BROKEN_aarch64=		fails to compile: fatal error: byteswap.h file not found
 BROKEN_armv6=		fails to compile: fatal error: byteswap.h file not found
+BROKEN_SSL=		openssl-devel
 
 USE_GITHUB=	yes
 
