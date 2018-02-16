@@ -1,0 +1,9 @@
+Raylib is a programming library to learn videogames programming.
+It doesn't have a fancy interface, has no visual helpers, and no auto-debugging.
+It is created based on the believe ther that just coding in the best way
+to learn.
+
+Raylib is highly inspired by Borland BGI graphics lib and by XNA framework. 
+Allegro and SDL have also been used as reference.
+
+WWW: http://www.raylib.com/
