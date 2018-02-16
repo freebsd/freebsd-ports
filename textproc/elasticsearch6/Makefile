@@ -8,7 +8,7 @@ MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
 PKGNAMESUFFIX=	6
 
-MAINTAINER=	w.schwarzenfeld@utanet.at
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
