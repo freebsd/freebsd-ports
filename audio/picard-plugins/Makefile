@@ -16,6 +16,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
 GH_TAGNAME=	7d0cf37
 
+PORTSCOUT=	limit:^1\.
+
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	GCC_VER=${GCC_DEFAULT:S/.//}
