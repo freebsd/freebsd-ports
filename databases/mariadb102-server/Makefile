@@ -181,6 +181,13 @@ post-install:
 	${RM} -r ${STAGEDIR}/${PREFIX}/share/mysql/policy \
 		${STAGEDIR}/${PREFIX}/share/pkgconfig
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/mysql/libmysqlclient*
+	${RM} ${STAGEDIR}${LOCALBASE}/share/doc/mysql/COPYING \
+		${STAGEDIR}${LOCALBASE}/share/doc/mysql/COPYING.thirdparty \
+		${STAGEDIR}${LOCALBASE}/share/groonga-normalizer-mysql/lgpl-2.0.txt \
+		${STAGEDIR}${LOCALBASE}/share/groonga/COPYING \
+		${STAGEDIR}${LOCALBASE}/storage/groonga/COPYING \
+		${STAGEDIR}${LOCALBASE}/share/mysql/mroonga/COPYING
+	${RM} ${STAGEDIR}${PREFIX}/include/mysql/*.h
 .endif # defined(CLIENT_ONLY)
 
 .if defined(WITH_OPENSSL_PORT)

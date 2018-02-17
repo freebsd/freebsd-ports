@@ -45,12 +45,6 @@ bin/wsrep_sst_mysqldump
 bin/wsrep_sst_rsync
 bin/wsrep_sst_xtrabackup
 bin/wsrep_sst_xtrabackup-v2
-@comment include/mysql/my_config.h
-@comment include/mysql/my_global.h
-@comment include/mysql/my_sys.h
-@comment include/mysql/mysql_com.h
-@comment include/mysql/mysql_version.h
-@comment include/mysql/mysqld_error.h
 include/mysql/server/private/embedded_priv.h
 @comment lib/mysql/libmariadb.so
 @comment lib/mysql/libmariadb.so.3
@@ -148,6 +142,7 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/maria_add_gis_sp_bootstrap.sql
 %%MROONGA%%%%DATADIR%%/mroonga/install.sql
 %%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
+%%MROONGA%%%%DATADIR%%/mroonga/AUTHORS
 %%DATADIR%%/my-huge.cnf
 %%DATADIR%%/my-innodb-heavy-4G.cnf
 %%DATADIR%%/my-large.cnf
