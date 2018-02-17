@@ -29,6 +29,8 @@ MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all libchibi-scheme.a
 TEST_TARGET=	test
 
+PORTSCOUT=	skipv:stable
+
 post-patch:
 	@${REINPLACE_CMD} -e 's@ -g -g3 -O3 @ @' \
 		-e '/$$(SO)/ s@$$(INSTALL_EXE) -m0755 @$$(BSD_INSTALL_LIB) @' \
