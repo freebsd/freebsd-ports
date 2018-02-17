@@ -14,6 +14,8 @@ COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
+BROKEN_SSL=	openssl-devel
+
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USERS=		${PORTNAME}
@@ -90,10 +92,4 @@ post-install-X11-off:
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${STAGEDIR}${PREFIX}/libexec
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
