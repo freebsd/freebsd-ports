@@ -1,11 +1,11 @@
---- Makefile.orig	2011-06-01 09:07:20.000000000 +0800
-+++ Makefile	2011-06-01 09:07:54.000000000 +0800
-@@ -11,7 +11,7 @@
+--- Makefile.orig	2017-03-04 05:21:04 UTC
++++ Makefile
+@@ -9,7 +9,7 @@ BZIP2     = bzip2 -9
  DATE	  = date
  EMACS	  = emacs
  ETAGS	  = etags
 -FLAGS     = -batch -q -no-site-file -l SKK-MK
-+FLAGS     = -batch -q -no-site-file --eval '(setq PREFIX "${PREFIX}")' --eval '(setq SKK_LISPDIR "${SKK_LISPDIR}")' -l SKK-MK
++FLAGS     = -batch -q -no-site-file --eval '(setq PREFIX "${PREFIX}")' --eval '(setq SKK_LISPDIR "${SKK_LISPDIR}")' --eval '(setq skk-server-host nil)' -l SKK-MK
+ GIT       = git
  GZIP      = gzip -9
  MD5	  = md5
- RM	  = /bin/rm -f
