@@ -134,6 +134,7 @@
     SUBDIR += enet
     SUBDIR += erlang-ranch
     SUBDIR += erlang-xmlrpc
+    SUBDIR += eternaltcp
     SUBDIR += etrace
     SUBDIR += exabgp
     SUBDIR += exaddos

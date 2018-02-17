@@ -1,0 +1,5 @@
+Eternal Terminal is a remote shell that automatically reconnects without
+interrupting the session. Uses ssh under-the-hood for handshake and
+encryption. Connection is via TCP unlike UDP based remote shells such as mosh.
+
+WWW: https://mistertea.github.io/EternalTCP/
