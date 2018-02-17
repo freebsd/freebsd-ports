@@ -51,8 +51,8 @@ mailman_prestart() {
 	### check if the default configuration is plausible
 	vhosts=$(PYTHONPATH="%%MAILMANDIR%%/bin" "%%PYTHON_CMD%%" -c 'import paths;from Mailman import mm_cfg;_x=dict(mm_cfg.VIRTUAL_HOSTS);print repr(_x);')
 	if [ "${vhosts}" = "{'localhost': 'localhost'}" ] ; then
-		warn 'Be sure to change the default hosts in Mailman/mm_cfg.py!'
-		warn 'Review %%DOCSDIR%%/FreeBSD-post-install-notes for instructions.'
+		warn 'No DEFAULT or virtual hosts configured.'
+		warn 'Review %%DOCSDIR%%/FreeBSD-post-install-notes #1 for instructions.'
 		if ! checkyesno mailman_run_localhost ; then
 			err 78 "Start of mailman refused due to insufficient configuration."
 		fi

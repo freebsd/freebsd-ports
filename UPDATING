@@ -70,11 +70,17 @@ you update your ports collection, before attempting any port upgrades.
   and DEFAULT_URL_HOST to "localhost" statically, and the rc script
   will check this and refuse to start on next boot.
 
-  Users must configure DEFAULT_EMAIL_HOST and DEFAULT_URL_HOST in 
-  Mailman/mm_cfg.py properly.
+  Users must configure DEFAULT_EMAIL_HOST and DEFAULT_URL_HOST in
+  Mailman/mm_cfg.py properly and add this line below:
+  add_virtualhost(DEFAULT_URL_HOST, DEFAULT_EMAIL_HOST)
 
   A short example has been added to:
   ${PREFIX}/local/share/doc/mailman/FreeBSD-post-install-notes.
+
+  As of 2.1.26_3, the post-install script will add back the prior
+  default settings to mm_cfg.py (instead of Defaults.py) if no
+  virtual hosts have been defined, to cover the normal use cases
+  and initial installation.
 
 20180201:
   AFFECTS: users of editors/emacs* and all ports using Emacs via USES=emacs
