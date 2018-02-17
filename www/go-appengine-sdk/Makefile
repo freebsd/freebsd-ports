@@ -1,0 +1,90 @@
+# $FreeBSD$
+
+PORTNAME=	go-appengine-sdk
+DISTVERSION=	1.9.62
+CATEGORIES=	www devel
+MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
+DISTNAME=	${PORTNAME:S,-,_,g}_linux_amd64-${PORTVERSION}
+
+MAINTAINER=	dg@syrec.org
+COMMENT=	App Engine SDK for Go
+
+LICENSE=	APACHE20 BSD3CLAUSE GPLv2 LGPL21 MIT MPL11 PSFL
+LICENSE_COMB=	multi
+LICENSE_FILE_APACHE20=		${WRKSRC}/LICENSE
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv2=		${WRKSRC}/LICENSE
+LICENSE_FILE_LGPL21=		${WRKSRC}/LICENSE
+LICENSE_FILE_MIT=		${WRKSRC}/LICENSE
+LICENSE_FILE_MPL11=		${WRKSRC}/LICENSE
+LICENSE_FILE_PSFL=		${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	amd64 i386
+
+BUILD_DEPENDS=	go:lang/go
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6:security/py-pycrypto@${PY_FLAVOR}
+
+USES=		gettext python:2.7 shebangfix zip
+SHEBANG_GLOB=	*.py *.bash *.sh *.pl *.cgi goapp
+WRKSRC=		${WRKDIR}/go_appengine
+
+GAEDATADIRS=	google lib tools
+GAEGOROOTS=	goroot-1.6 goroot-1.8
+GAESCRIPTS=	appcfg.py backends_conversion.py \
+		bulkload_client.py bulkloader.py dev_appserver.py \
+		download_appstats.py endpointscfg.py run_tests.py \
+		wrapper_util.py
+GOARCH=		${ARCH:S,i386,386,}
+
+PLIST_FILES=	${GAESCRIPTS:C,(.+)\.py,bin/\1-go,} \
+		bin/goapp
+PLIST_DIRS=	${GAEGOROOTS:C,(.+),${DATADIR}/\1/pkg/obj/${OPSYS:tl}_${GOARCH},}
+
+OPTIONS_DEFINE=		EXAMPLES SSE2
+OPTIONS_DEFAULT=	SSE2
+SSE2_DESC=		Generate code with SSE2 (check off for old x86 CPUs)
+
+SSE2_VARS_OFF=		GO386=387
+
+PORTDATA=	*
+PORTEXAMPLES=	*
+
+do-build:
+	@for R in ${GAEGOROOTS}; do \
+		(cd ${WRKSRC}/$${R}/src && \
+			GOROOT_BOOTSTRAP=${LOCALBASE}/go \
+			GOOS=${OPSYS:tl} GOARCH=${GOARCH} \
+			GO386=${GO386} \
+			${SH} make.bash); \
+		(cd ${WRKSRC}/$${R}/bin && \
+			${RM} godoc cover && ${MV} go goapp); \
+		(cd ${WRKSRC}/$${R} && \
+			${RM} -rf ./pkg/linux_amd64_appengine ./pkg/tool/linux_amd64); \
+	done
+	# Create wrapper scripts to avoid conflicts with other AppEngine SDK(s)
+	@cd ${WRKSRC} && \
+		for S in ${GAESCRIPTS} goapp; do \
+			${ECHO} "#!/bin/sh" >> $${S%.py}-go; \
+			${ECHO} "${LOCALBASE}/bin/python2.7 ${DATADIR}/$${S} \$$*" >> $${S%.py}-go; \
+		done
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	for S in ${GAESCRIPTS} _python_runtime.py goapp; do \
+		${INSTALL_SCRIPT} ${WRKSRC}/$${S} ${STAGEDIR}${DATADIR}; \
+	done
+	${INSTALL_SCRIPT} ${WRKSRC}/*-go ${STAGEDIR}${PREFIX}/bin
+	${MV} ${STAGEDIR}${PREFIX}/bin/goapp-go ${STAGEDIR}${PREFIX}/bin/goapp
+	cd ${WRKSRC} && \
+		${COPYTREE_SHARE} "${GAEDATADIRS}" ${STAGEDIR}${DATADIR} && \
+		${CP} -a ${GAEGOROOTS} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/VERSION ${STAGEDIR}${DATADIR}
+	cd ${STAGEDIR}${DATADIR} && \
+		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${DATADIR} -f ${GAEDATADIRS} -q
+
+do-install-EXAMPLES-on:
+	cd ${WRKSRC}/demos && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>
