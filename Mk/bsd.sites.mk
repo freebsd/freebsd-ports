@@ -689,7 +689,7 @@ MASTER_SITE_MOZDEV+= \
 	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
 	http://www.devlib.org/mozdev/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/pub/mozdev/%SUBDIR%/ \
-	http://mirrors.ibiblio.org/pub/mirrors/mozdev.org/%SUBDIR%/ \
+	http://mirrors.ibiblio.org/mozdev.org/%SUBDIR%/ \
 	https://ftp.osuosl.org/pub/mozdev/%SUBDIR%/
 .endif
 
