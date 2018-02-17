@@ -4,8 +4,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/cdb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/context-skk.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/context-skk.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/queue-m.el
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/queue-m.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/leim-list.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-abbrev.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-abbrev.elc
@@ -61,13 +59,15 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-macs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-num.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-num.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-search-web.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-search-web.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server-completion.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server-completion.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-setup.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-show-mode.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-show-mode.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-setup.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-sticky.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-sticky.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-study.el
@@ -84,6 +84,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-viper.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/tar-util.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/tar-util.elc
 share/skk/NICOLA-SKK.tut
 share/skk/SKK.tut
 share/skk/SKK.tut.E
