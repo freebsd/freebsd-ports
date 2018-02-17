@@ -1,4 +1,6 @@
 bin/pqxx-config
+include/pqxx/array
+include/pqxx/array.hxx
 include/pqxx/basic_connection
 include/pqxx/basic_connection.hxx
 include/pqxx/binarystring
