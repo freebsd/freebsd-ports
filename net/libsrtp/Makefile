@@ -12,6 +12,8 @@ COMMENT=	Secure RTP (SRTP) Reference Implementation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_SSL=	openssl-devel
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 
@@ -32,10 +34,4 @@ CONFIGURE_ARGS+=--disable-debug
 post-patch:
 	@${REINPLACE_CMD} '/pkg-config.*openssl/d' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
