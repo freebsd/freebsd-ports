@@ -22,6 +22,7 @@ GH_ACCOUNT=	SupSuper
 GH_PROJECT=	OpenXcom
 
 USES=		compiler:c++11-lang gmake pkgconfig
+USE_CXXSTD=	c++11
 USE_SDL=	sdl mixer image gfx
 USE_GL=		gl
 
