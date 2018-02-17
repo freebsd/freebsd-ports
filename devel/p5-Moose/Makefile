@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.2009
+PORTVERSION=	2.2010
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Class-Load-XS>=0.01:devel/p5-Class-Load-XS \
 		p5-Data-OptList>=0.107:devel/p5-Data-OptList \
 		p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
-		p5-Devel-OverloadInfo>=0.004:devel/p5-Devel-OverloadInfo \
+		p5-Devel-OverloadInfo>=0.005:devel/p5-Devel-OverloadInfo \
 		p5-Devel-StackTrace>=2.03:devel/p5-Devel-StackTrace \
 		p5-Eval-Closure>=0.04:devel/p5-Eval-Closure \
 		p5-MRO-Compat>=0.05:devel/p5-MRO-Compat \
