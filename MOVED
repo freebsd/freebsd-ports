@@ -9946,14 +9946,14 @@ x11-themes/kdeartwork4|x11-themes/kdeartwork-kde4|2018-02-10|Rename KDE4 metapor
 x11/kdelibs4|x11/kdelibs-kde4|2018-02-10|Rename KDE4 metaports for simplicty
 devel/p5-Parse-Pidl||2018-02-10|Has expired: yes
 devel/rubygem-piston||2018-02-10|Has expired: No longer maintained upstream
-databases/postgresql92-server|databases/postgresql93-server|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-line. Please upgrade to a later version
-databases/postgresql92-client|databases/postgresql93-client|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-line. Please upgrade to a later version
-databases/postgresql92-contrib|databases/postgresql93-contrib|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-line. Please upgrade to a later version
-databases/postgresql92-docs|databases/postgresql93-docs|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-line. Please upgrade to a later version
-databases/postgresql92-pgtcl|databases/postgresql93-pgtcl|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-line. Please upgrade to a later version
-databases/postgresql92-plperl|databases/postgresql93-plperl|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-line. Please upgrade to a later version
-databases/postgresql92-plpython|databases/postgresql93-plpython|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-line. Please upgrade to a later version
-databases/postgresql92-pltcl|databases/postgresql93-pltcl|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-line. Please upgrade to a later version
+databases/postgresql92-server|databases/postgresql93-server|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-client|databases/postgresql93-client|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-contrib|databases/postgresql93-contrib|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-docs|databases/postgresql93-docs|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-pgtcl|databases/postgresql93-pgtcl|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-plperl|databases/postgresql93-plperl|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-plpython|databases/postgresql93-plpython|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-pltcl|databases/postgresql93-pltcl|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
 databases/pg_statsinfo||2018-02-10|Removed, only for PosgreSQL 9.2
 databases/postgresql-repmgr2||2018-02-10|Removed, only for PostgreSQL 9.2
 www/mod_security-devel|www/mod_security3|2018-02-12|Renamed, upstream has made a release
