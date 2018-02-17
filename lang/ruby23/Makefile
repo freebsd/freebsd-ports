@@ -171,7 +171,7 @@ post-patch:
 post-build:
 #
 # Hack to allow modules to be installed into separate PREFIX and/or under user
-# privilegies
+# privileges
 #
 	@${RB_SET_CONF_VAR} "prefix" "ENV['PREFIX'] || \3"
 	@${RB_SET_CONF_VAR} "INSTALL" "'/usr/bin/install -c'"
