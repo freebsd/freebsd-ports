@@ -68,6 +68,8 @@ OPTIONS_EXCLUDE_i386=		DTRACE
 # ld(1) fails to link probes: missing __dtrace_erlang___* symbols
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 
+OPENSSL_VARS=	BROKEN_SSL=openssl-devel
+
 ERL_RELEASE=	19.3
 
 USES=		gmake ncurses perl5
@@ -282,10 +284,4 @@ post-install:
 		| ${SORT} \
 		>> ${TMPPLIST}
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
