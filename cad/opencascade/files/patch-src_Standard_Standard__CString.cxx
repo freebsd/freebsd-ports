@@ -1,4 +1,4 @@
---- src/Standard/Standard_CString.cxx.orig	2016-11-25 09:52:27 UTC
+--- src/Standard/Standard_CString.cxx.orig	2017-08-30 13:28:31 UTC
 +++ src/Standard/Standard_CString.cxx
 @@ -81,7 +81,7 @@ Standard_Integer HashCodes (const Standa
      // strtod, strtol, strtoll functions. For other system with locale-depended
