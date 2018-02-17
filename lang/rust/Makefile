@@ -145,7 +145,7 @@ post-extract:
 	(set -ex; cd ${WRKSRC}; \
 	 libstd="$$(echo "${RUST_STD_DIR}/rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}/lib/"libstd-*.rlib)"; \
 	 hash="$$(basename "$$libstd" .rlib | ${SED} 's/^libstd-//')"; \
-	 std_o="std-$$hash.std0.rust-cgu.o"; \
+	 std_o="$$(${AR} t "$$libstd" | ${GREP} -E "^std-$$hash.*\.o$$")"; \
 	 ${AR} x "$$libstd" "$$std_o"; \
 	 ${LD} -r -o std.xx.o "$$std_o" old_fstat.o; \
 	 ${MV} std.xx.o "$$std_o"; \
