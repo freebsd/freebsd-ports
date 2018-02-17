@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 		rubygem-rugged>=0.25.1:devel/rubygem-rugged
 
 # bin/linguist
-CONFLICTS_INSTALL=	qtchooser rubygem-gitlab-linguist
+CONFLICTS_INSTALL=	qtchooser rubygem-github-linguist47 rubygem-gitlab-linguist
 
 USE_RUBY=	yes
 USES=		gem
