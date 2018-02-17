@@ -19,6 +19,8 @@ PLIST_FILES=	bin/sbm \
 		bin/sbm-rt-plot \
 		man/man1/sbm.1.gz
 
+PORTSCOUT=	skipv:0.9 # only Linux related changes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sbm ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/sbm-plot ${WRKSRC}/sbm-rt-plot \
