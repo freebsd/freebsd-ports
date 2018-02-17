@@ -1,0 +1,5 @@
+include/gwenhywfar4/gwen-gui-gtk3/gtk3_gui.h
+lib/libgwengui-gtk3.so
+lib/libgwengui-gtk3.so.0
+lib/libgwengui-gtk3.so.0.0.0
+libdata/pkgconfig/gwengui-gtk3.pc

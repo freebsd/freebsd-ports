@@ -1,28 +1,19 @@
+Prevent SO version rollback
 Fix dectection of fox libs
-Allow configuring the locations of lrelease and lupdate
 Prevent linking to unneeded Qt5 libraries
 
---- configure.orig	2017-07-30 14:20:32 UTC
+--- configure.orig	2018-02-10 18:33:05 UTC
 +++ configure
-@@ -951,6 +951,8 @@ with_x
- with_qt5_qmake
- with_qt5_moc
- with_qt5_uic
-+with_qt5_lrelease
-+with_qt5_lupdate
- with_docpath
- enable_release
- enable_memtrace
-@@ -1672,6 +1674,8 @@ Optional Packages:
-   --with-qt5-qmake=FILE    uses given qmake
-   --with-qt5-moc=FILE      uses given qt moc
-   --with-qt5-uic=FILE      uses given qt uic
-+  --with-qt5-lrelease=FILE     uses given qt lrelease
-+  --with-qt5-lupdate=FILE      uses given qt lupdate
-   --with-docpath=DIR where to store the apidoc
-   --with-buffer-hardlimit=VALUE new default buffer hard limit
-   --with-plugins-ct=LIST list of CT plugins to build
-@@ -21084,7 +21088,7 @@ $as_echo_n "checking for fox libraries..
+@@ -2888,7 +2888,7 @@ GWENHYWFAR_VERSION_TAG="stable"
+ #
+ # SO version for Gwenhywfar
+ #
+-GWENHYWFAR_SO_CURRENT="78"
++GWENHYWFAR_SO_CURRENT="79"
+ GWENHYWFAR_SO_AGE="19"
+ GWENHYWFAR_SO_REVISION="0"
+ GWENHYWFAR_SO_EFFECTIVE="`echo \$(($GWENHYWFAR_SO_CURRENT-$GWENHYWFAR_SO_AGE))`"
+@@ -21093,7 +21093,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
  
  # Check whether --with-fox-libs was given.
  if test "${with_fox_libs+set}" = set; then :
@@ -31,7 +22,7 @@ Prevent linking to unneeded Qt5 libraries
  else
  
        ac_ext=cpp
-@@ -22415,43 +22419,16 @@ $as_echo_n "checking for Qt... " >&6; }
+@@ -22522,43 +22522,16 @@ $as_echo_n "checking for Qt... " >&6; }
      am_have_qt_makefile=`mktemp`
      # http://qt-project.org/doc/qt-5/qmake-variable-reference.html#qt
      cat > $am_have_qt_pro << EOF
@@ -77,27 +68,14 @@ Prevent linking to unneeded Qt5 libraries
      rm $am_have_qt_pro $am_have_qt_makefile
  
      # Look for specific tools in $PATH
-@@ -22474,9 +22451,21 @@ else
- 
+@@ -22582,8 +22555,8 @@ else
  fi
  
-+# Check whether --with-qt5-lrelease was given.
-+if test "${with_qt5_lrelease+set}" = set; then :
-+  withval=$with_qt5_lrelease; QT_LRELEASE="$withval"
-+else
-+  QT_RELEASE=`which lrelease`
-+
-+fi
-+
-+# Check whether --with-qt5-lupdate was given.
-+if test "${with_qt5_lupdate+set}" = set; then :
-+  withval=$with_qt5_lupdate; QT_LUPDATE="$withval"
-+else
-+  QT_LUPDATE=`which lupdate`
  
 -    QT_LRELEASE=`which lrelease`
 -    QT_LUPDATE=`which lupdate`
-+fi
++    QT_LRELEASE=#none
++    QT_LUPDATE=#none
  
      # Get Qt version from qmake
      QT_DIR=`$QT_QMAKE --version | grep -o -E /.+`
