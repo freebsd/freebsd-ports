@@ -17,6 +17,9 @@ USES=		gmake
 DESTDIRNAME=	INSTALL_ROOT
 MAKE_ARGS=	prefix=${PREFIX}
 
+# bin/linguist
+CONFLICTS_INSTALL=	rubygem-github-linguist rubygem-github-linguist47 rubygem-gitlab-linguist
+
 QT_QTCHOOSERDIR=${PREFIX}/etc/xdg/qtchooser
 
 post-patch:
