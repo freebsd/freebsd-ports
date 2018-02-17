@@ -26,6 +26,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 OPTIONS_DEFINE=	EXAMPLES
 
 CMAKE_ARGS=	-DWITH_JAVA=OFF -DWITH_PYTHON=OFF -DWITH_SWIG=OFF
+USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 USES=		cmake pathfix
 
