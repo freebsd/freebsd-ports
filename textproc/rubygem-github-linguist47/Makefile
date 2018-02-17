@@ -17,6 +17,9 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.3:textproc/rubygem-charlock_holmes \
 		rubygem-mime-types>=1.19:misc/rubygem-mime-types \
 		rubygem-rugged>=0.23.0b:devel/rubygem-rugged
 
+# bin/linguist
+CONFLICTS_INSTALL=	qtchooser rubygem-github-linguist rubygem-gitlab-linguist
+
 NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
