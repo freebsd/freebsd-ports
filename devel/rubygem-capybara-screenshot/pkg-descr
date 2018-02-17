@@ -1,4 +1,4 @@
 When a Cucumber step fails, it is useful to create a screenshot image and HTML
 file of the current page
 
-WWW: http://github.com/mattheworiordan/capybara-screenshot
+WWW: https://github.com/mattheworiordan/capybara-screenshot
