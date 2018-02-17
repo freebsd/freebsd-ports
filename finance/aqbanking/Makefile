@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	aqbanking
-PORTVERSION=	5.6.12
+PORTVERSION=	5.7.8
 CATEGORIES=	finance
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=208&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=217&file=02&dummy=/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar \
 		libltdl.so:devel/libltdl \
@@ -26,7 +26,8 @@ MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 AQB_SHLIB_VER=	35
-PLIST_SUB=	AQB_SHLIB_VER="${AQB_SHLIB_VER}"
+PLIST_SUB=	AQB_SHLIB_VER="${AQB_SHLIB_VER}" \
+		AQB_MAJ_MIN_VER="${PORTVERSION:R}"
 
 OPTIONS_DEFINE=		DOCS DOXYGEN EBICS KTOBLZCHECK
 OPTIONS_DEFAULT=	KTOBLZCHECK
