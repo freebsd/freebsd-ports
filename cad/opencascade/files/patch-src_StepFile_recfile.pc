@@ -1,5 +1,5 @@
---- src/StepFile/recfile.pc.orig	2014-11-07 16:16:45.000000000 +0100
-+++ src/StepFile/recfile.pc	2014-11-16 21:26:42.000000000 +0100
+--- src/StepFile/recfile.pc.orig	2017-08-30 13:28:34 UTC
++++ src/StepFile/recfile.pc
 @@ -16,7 +16,7 @@
  #include "stdio.h"
  #include "string.h"

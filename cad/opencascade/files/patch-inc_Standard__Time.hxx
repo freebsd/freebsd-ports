@@ -1,4 +1,4 @@
---- inc/Standard_Time.hxx.orig	2016-11-25 09:52:28 UTC
+--- inc/Standard_Time.hxx.orig	2017-08-30 13:28:31 UTC
 +++ inc/Standard_Time.hxx
 @@ -26,11 +26,11 @@
  // ------------------------------------------------------------------
