@@ -1,8 +1,0 @@
---- grive/CMakeLists.txt.orig	2012-07-07 23:43:18.000000000 +0800
-+++ grive/CMakeLists.txt	2013-04-21 23:34:38.000000000 +0800
-@@ -27,4 +27,4 @@
- )
- 
- install(TARGETS grive_executable RUNTIME DESTINATION bin)
--install(FILES doc/grive.1 DESTINATION share/man/man1 )
-+install(FILES doc/grive.1 DESTINATION man/man1 )

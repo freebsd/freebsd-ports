@@ -9965,3 +9965,4 @@ www/rubygem-scrapi||2018-02-14|Has expired: No longer maintained upstream
 devel/boost-python3-libs|devel/boost-python-libs@py36|2018-02-15|Flavorize
 net/quagga-esr|net/quagga|2018-02-15|Fixes available, go back to the regular quagga
 sysutils/krename-kde4|sysutils/krename|2018-02-16|Renamed to sysutils/krename
+net/grive|net/grive2|2018-02-17|Has expired: Unmaintained by upstream, use net/grive2 instead
