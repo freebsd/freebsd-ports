@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.4
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
 
@@ -22,7 +22,6 @@ RUN_DEPENDS=	\
 		p5-Email-MIME>=1.904:mail/p5-Email-MIME \
 		p5-Email-Sender>=1.300011:mail/p5-Email-Sender \
 		p5-Encode-Detect>=0:converters/p5-Encode-Detect \
-		p5-File-Slurp>=9999.13:devel/p5-File-Slurp \
 		p5-JSON-XS>=2.01:converters/p5-JSON-XS \
 		p5-List-MoreUtils>=0.32:lang/p5-List-MoreUtils \
 		p5-Math-Random-ISAAC>=1.001:math/p5-Math-Random-ISAAC \
