@@ -12,6 +12,8 @@ COMMENT=	High performance DNS/DNSSEC zone validator
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_SSL=	openssl-devel
+
 LIB_DEPENDS=	libJudy.so:devel/judy
 
 USES=		ssl
@@ -28,12 +30,6 @@ MAKE_ARGS+=	INCPATH=-I${LOCALBASE}/include
 MAKE_ARGS+=	EXTRALPATH=-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
