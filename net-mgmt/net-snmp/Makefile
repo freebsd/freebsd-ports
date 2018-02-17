@@ -16,6 +16,8 @@ COMMENT=	Extendable SNMP implementation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_SSL=	openssl-devel
+
 LIB_DEPENDS=	libpkg.so:ports-mgmt/pkg
 
 NOT_FOR_ARCHS=		mips mips64
@@ -215,10 +217,6 @@ DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
 CONFLICTS=	ucd-snmp-4.* net-snmp-5.3.*
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
 
 .if ${SSL_DEFAULT} != base
 LCRYPTO=	-lcrypto
