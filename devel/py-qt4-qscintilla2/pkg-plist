@@ -1,3 +1,4 @@
+%%PYTHON_SITELIBDIR%%/PyQt4/Qsci.pyi
 %%PYTHON_SITELIBDIR%%/PyQt4/Qsci.so
 %%PYQT_SIPDIR%%/Qsci/qsciabstractapis.sip
 %%PYQT_SIPDIR%%/Qsci/qsciapis.sip
@@ -22,8 +23,10 @@
 %%PYQT_SIPDIR%%/Qsci/qscilexeridl.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerjava.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerjavascript.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexerjson.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerlua.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexermakefile.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexermarkdown.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexermatlab.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexeroctave.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerpascal.sip

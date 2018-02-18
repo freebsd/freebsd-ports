@@ -2,7 +2,7 @@
 
 PORTNAME=	qtruby
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel kde kde-kde4 ruby
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
@@ -10,7 +10,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for Qt
 
 LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5 \
-		libqscintilla2.so:devel/qscintilla2
+		libqscintilla2_qt4.so:devel/qscintilla2
 
 USES=		cmake:outsource kde:4 tar:xz
 USE_KDE=	smokeqt

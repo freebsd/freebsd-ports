@@ -3,6 +3,7 @@
 
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_QSCI2}
@@ -12,7 +13,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for QScintilla2 (PyQt4), QSci module
 
-LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2
+LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2
 
 DISTINFO_FILE=	${.CURDIR:H}/qscintilla2/distinfo
 DESTDIRNAME=	INSTALL_ROOT

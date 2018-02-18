@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkitwidgets
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -24,7 +24,7 @@ OPTIONS_SUB=	yes
 API_DESC=		Install QtWebKitWidgets API for QScintilla2
 API_CONFIGURE_ON=	--qsci-api --qsci-api-destdir=${QSCIDIR}
 API_CONFIGURE_OFF=	--no-qsci-api
-API_LIB_DEPENDS=	libqscintilla2-qt5.so:devel/qscintilla2-qt5
+API_LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 DEBUG_CONFIGURE_ON=	--debug --trace
 
 .include <bsd.port.mk>
