@@ -13,6 +13,9 @@ COMMENT=	Node package manager
 
 LICENSE=	MIT
 
+DEPRECATED=	Use www/npm instead
+EXPIRATION_DATE=2018-03-31
+
 RUN_DEPENDS=	gmake:devel/gmake \
 		node>=0.8.0:www/node
 
