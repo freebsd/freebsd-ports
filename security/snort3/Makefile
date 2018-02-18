@@ -13,6 +13,8 @@ COMMENT=	Lightweight network intrusion detection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to package
+
 BUILD_DEPENDS=	daq>=2.2.2:net/daq \
 		bash>0:shells/bash
 LIB_DEPENDS=	libpcre.so:devel/pcre \
