@@ -1,5 +1,5 @@
-TIMESTAMP = 1499306920
-SHA256 (apache-groovy-binary-2.4.12.zip) = 93b9a19c760c2af846afa0e9c78692d70186cdde36e070e9806fe11b84a8a7b6
-SIZE (apache-groovy-binary-2.4.12.zip) = 36503102
-SHA256 (apache-groovy-docs-2.4.12.zip) = 3e2c3607792d46b2007623042ab57424fb081bebd99db926f04472ee8fd9922d
-SIZE (apache-groovy-docs-2.4.12.zip) = 15256130
+TIMESTAMP = 1518835711
+SHA256 (apache-groovy-binary-2.4.13.zip) = b9e4ad752affe37867a28e186dccddc8b541ea82ad3d86e4172a0fd9084c146f
+SIZE (apache-groovy-binary-2.4.13.zip) = 36587726
+SHA256 (apache-groovy-docs-2.4.13.zip) = 901e8bb3aec821170e419a2feddae1396525acb1ea2a81826eda738e8dd3fc7a
+SIZE (apache-groovy-docs-2.4.13.zip) = 14810979
