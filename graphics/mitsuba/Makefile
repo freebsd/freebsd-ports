@@ -14,6 +14,8 @@ COMMENT=	Research-oriented physically based rendering system
 LICENSE=	GPLv3
 
 BROKEN=		fails to build with boost 1.65, see bug 220719
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-03-19
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng.so:graphics/png \

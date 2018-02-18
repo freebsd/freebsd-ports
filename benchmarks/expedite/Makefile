@@ -31,5 +31,7 @@ SDL_CONFIGURE_ENABLE=		software-sdl
 X11_CONFIGURE_ENABLE=		software-x11 xrender-x11
 
 BROKEN=		Do not build with devel/efl 1.19.x
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-03-19
 
 .include <bsd.port.mk>
