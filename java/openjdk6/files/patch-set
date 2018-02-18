@@ -3469,7 +3469,7 @@
  
  OTHER_INCLUDES += -I$(LAUNCHER_SHARE_SRC)/bin -I$(LAUNCHER_PLATFORM_SRC)/bin
 +ifneq ($(SYSTEM_ZLIB),true)
- OTHER_INCLUDES += -I$(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
+ OTHER_INCLUDES += -I$(SHARE_SRC)/native/java/util/zip/zlib
 +endif
  
  OTHER_CPPFLAGS += -DPROGNAME='"$(PROGRAM)"'
@@ -3965,18 +3965,17 @@
  # Tell library.gmk to copy the txt file first
 --- jdk/make/java/jli/Makefile
 +++ jdk/make/java/jli/Makefile
-@@ -44,8 +44,10 @@
+@@ -44,7 +44,9 @@
  
  include $(BUILDDIR)/common/Defs.gmk
  
 +ifneq ($(SYSTEM_ZLIB),true)
- ZLIB_VERSION = 1.1.3
- ZIP_SRC = $(SHARE_SRC)/native/java/util/zip/zlib-$(ZLIB_VERSION)
+ ZIP_SRC = $(SHARE_SRC)/native/java/util/zip/zlib
 +endif
  LAUNCHER_SHARE_SRC = $(SHARE_SRC)/bin
  LAUNCHER_PLATFORM_SRC = $(PLATFORM_SRC)/bin
  
-@@ -56,7 +58,10 @@
+@@ -55,7 +57,10 @@
  	parse_manifest.c \
  	version_comp.c \
  	wildcard.c \
@@ -3988,7 +3987,7 @@
  	inflate.c \
  	infblock.c \
  	inftrees.c \
-@@ -65,6 +70,7 @@
+@@ -64,6 +69,7 @@
  	infutil.c \
  	zadler32.c \
  	zutil.c
@@ -3996,7 +3995,7 @@
  
  OTHER_CPPFLAGS += -DEXPAND_CLASSPATH_WILDCARDS
  
-@@ -96,7 +102,11 @@
+@@ -95,7 +101,11 @@
  
  OTHER_INCLUDES += -I$(LAUNCHER_SHARE_SRC)
  OTHER_INCLUDES += -I$(LAUNCHER_PLATFORM_SRC)
@@ -4009,7 +4008,7 @@
  
  #
  # Library to compile.
-@@ -134,8 +144,29 @@
+@@ -133,8 +143,29 @@
  
  endif	# PLATFORM
  
@@ -4231,42 +4230,40 @@
  
 --- jdk/make/java/zip/FILES_c.gmk
 +++ jdk/make/java/zip/FILES_c.gmk
-@@ -30,6 +30,10 @@
+@@ -30,7 +30,10 @@
  	Inflater.c \
  	ZipFile.c \
  	ZipEntry.c \
+-	zip_util.c \
 +	zip_util.c
 +
 +ifneq ($(SYSTEM_ZLIB),true)
 +FILES_c += \
+ 	compress.c \
+ 	deflate.c \
+ 	infback.c \
+@@ -42,3 +45,4 @@
  	zadler32.c \
  	zcrc32.c \
- 	deflate.c \
-@@ -40,5 +44,5 @@
- 	inftrees.c \
- 	infcodes.c \
- 	infutil.c \
--	inffast.c \
--	zip_util.c
-+	inffast.c
+ 	zutil.c
 +endif
 --- jdk/make/java/zip/Makefile
 +++ jdk/make/java/zip/Makefile
-@@ -69,16 +69,24 @@
+@@ -67,16 +67,23 @@
  CPPFLAGS += -UDEBUG 
  endif
  
--CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib-$(ZLIB_VERSION)
+-CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib
  CPPFLAGS += -I$(SHARE_SRC)/native/java/io
  CPPFLAGS += -I$(PLATFORM_SRC)/native/java/io
  
 +ifneq ($(SYSTEM_ZLIB),true)
-+CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib-$(ZLIB_VERSION)
++CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib
 +
  #
  # Add to ambient vpath so we pick up the library files
  #
- vpath %.c $(SHARE_SRC)/native/$(PKGDIR)/zlib-$(ZLIB_VERSION)
+ vpath %.c $(SHARE_SRC)/native/$(PKGDIR)/zlib
 +endif
  
  #
@@ -4277,7 +4274,6 @@
 +else
  OTHER_LDLIBS = $(JVMLIB)
 +endif
-+
 --- jdk/make/javax/sound/FILES_c.gmk
 +++ jdk/make/javax/sound/FILES_c.gmk
 @@ -34,6 +34,8 @@
@@ -4581,19 +4577,20 @@
  endif
 --- jdk/make/sun/splashscreen/FILES_c.gmk
 +++ jdk/make/sun/splashscreen/FILES_c.gmk
-@@ -49,20 +49,6 @@
+@@ -45,21 +45,6 @@
  	dgif_lib.c \
  	gif_err.c \
  	gifalloc.c \
 -	compress.c \
 -	deflate.c \
--	gzio.c \
--	infblock.c \
--	infcodes.c \
+-	gzclose.c \
+-	gzlib.c \
+-	gzread.c \
+-	gzwrite.c \
+-	infback.c \
 -	inffast.c \
 -	inflate.c \
 -	inftrees.c \
--	infutil.c \
 -	trees.c \
 -	uncompr.c \
 -	zadler32.c \
@@ -4602,7 +4599,7 @@
  	jcomapi.c \
  	jdapimin.c \
  	jdapistd.c \
-@@ -108,3 +94,20 @@
+@@ -105,3 +90,21 @@
  	jfdctfst.c \
  	jfdctint.c
  
@@ -4610,13 +4607,14 @@
 +  FILES_c += \
 +	compress.c \
 +	deflate.c \
-+	gzio.c \
-+	infblock.c \
-+	infcodes.c \
++	gzclose.c \
++	gzlib.c \
++	gzread.c \
++	gzwrite.c \
++	infback.c \
 +	inffast.c \
 +	inflate.c \
 +	inftrees.c \
-+	infutil.c \
 +	trees.c \
 +	uncompr.c \
 +	zadler32.c \
@@ -4632,7 +4630,7 @@
 +CPPFLAGS += -I$(PLATFORM_SRC)/native/$(PKGDIR)/splashscreen -I$(SHARE_SRC)/native/$(PKGDIR)/splashscreen
 +CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/image/jpeg
 +ifneq ($(SYSTEM_ZLIB),true)
-+  CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
++  CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib
 +endif
 +
 +
@@ -4657,16 +4655,15 @@
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)/splashscreen
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)/giflib
--vpath %.c   $(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
 +ifneq ($(SYSTEM_ZLIB),true)
-+  vpath %.c   $(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
+ vpath %.c   $(SHARE_SRC)/native/java/util/zip/zlib
 +endif
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)/libpng
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)/image/jpeg
  vpath %.c   $(PLATFORM_SRC)/native/$(PKGDIR)/splashscreen
  
 -CPPFLAGS += -I$(PLATFORM_SRC)/native/$(PKGDIR)/splashscreen -I$(SHARE_SRC)/native/$(PKGDIR)/splashscreen
--CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/image/jpeg -I$(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
+-CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/image/jpeg -I$(SHARE_SRC)/native/java/util/zip/zlib
 -
  ifeq ($(PLATFORM), linux)
    ifeq ($(ARCH_DATA_MODEL), 64)
@@ -5672,9 +5669,9 @@
  }
  
  JNIEXPORT void JNICALL
---- jdk/src/share/native/java/util/zip/zlib-1.1.3/zconf.h
-+++ jdk/src/share/native/java/util/zip/zlib-1.1.3/zconf.h
-@@ -42,44 +42,49 @@
+--- jdk/src/share/native/java/util/zip/zlib/zconf.h
++++ jdk/src/share/native/java/util/zip/zlib/zconf.h
+@@ -35,6 +35,11 @@
  /* for _LP64 */
  #include <sys/types.h>
  
@@ -5686,77 +5683,287 @@
  /*
   * If you *really* need a unique prefix for all types and library functions,
   * compile with -DZ_PREFIX. The "standard" zlib should be compiled without it.
-  */
- #ifdef Z_PREFIX
--#  define deflateInit_  z_deflateInit_
--#  define deflate       z_deflate
--#  define deflateEnd    z_deflateEnd
--#  define inflateInit_  z_inflateInit_
--#  define inflate       z_inflate
--#  define inflateEnd    z_inflateEnd
--#  define deflateInit2_ z_deflateInit2_
--#  define deflateSetDictionary z_deflateSetDictionary
--#  define deflateCopy   z_deflateCopy
--#  define deflateReset  z_deflateReset
--#  define deflateParams z_deflateParams
--#  define inflateInit2_ z_inflateInit2_
--#  define inflateSetDictionary z_inflateSetDictionary
--#  define inflateSync   z_inflateSync
--#  define inflateSyncPoint z_inflateSyncPoint
--#  define inflateReset  z_inflateReset
--#  define compress      z_compress
--#  define compress2     z_compress2
--#  define uncompress    z_uncompress
--#  define adler32       z_adler32
--#  define crc32         z_crc32
--#  define get_crc_table z_get_crc_table
--
--#  define Byte          z_Byte
--#  define uInt          z_uInt
--#  define uLong         z_uLong
--#  define Bytef         z_Bytef
--#  define charf         z_charf
--#  define intf          z_intf
--#  define uIntf         z_uIntf
--#  define uLongf        z_uLongf
--#  define voidpf        z_voidpf
--#  define voidp         z_voidp
-+#  define deflateInit_  _java_z_deflateInit_
-+#  define deflate       _java_z_deflate
-+#  define deflateEnd    _java_z_deflateEnd
-+#  define inflateInit_  _java_z_inflateInit_
-+#  define inflate       _java_z_inflate
-+#  define inflateEnd    _java_z_inflateEnd
-+#  define deflateInit2_ _java_z_deflateInit2_
-+#  define deflateSetDictionary _java_z_deflateSetDictionary
-+#  define deflateCopy   _java_z_deflateCopy
-+#  define deflateReset  _java_z_deflateReset
-+#  define deflateParams _java_z_deflateParams
-+#  define inflateInit2_ _java_z_inflateInit2_
-+#  define inflateSetDictionary _java_z_inflateSetDictionary
-+#  define inflateSync   _java_z_inflateSync
-+#  define inflateSyncPoint _java_z_inflateSyncPoint
-+#  define inflateReset  _java_z_inflateReset
-+#  define compress      _java_z_compress
-+#  define compress2     _java_z_compress2
-+#  define uncompress    _java_z_uncompress
-+#  define adler32       _java_z_adler32
-+#  define crc32         _java_z_crc32
-+#  define get_crc_table _java_z_get_crc_table
-+
-+#  define Byte          _java_z_Byte
-+#  define uInt          _java_z_uInt
-+#  define uLong         _java_z_uLong
-+#  define Bytef         _java_z_Bytef
-+#  define charf         _java_z_charf
-+#  define intf          _java_z_intf
-+#  define uIntf         _java_z_uIntf
-+#  define uLongf        _java_z_uLongf
-+#  define voidpf        _java_z_voidpf
-+#  define voidp         _java_z_voidp
+@@ -45,150 +50,150 @@
+ #  define Z_PREFIX_SET
+ 
+ /* all linked symbols and init macros */
+-#  define _dist_code            z__dist_code
+-#  define _length_code          z__length_code
+-#  define _tr_align             z__tr_align
+-#  define _tr_flush_bits        z__tr_flush_bits
+-#  define _tr_flush_block       z__tr_flush_block
+-#  define _tr_init              z__tr_init
+-#  define _tr_stored_block      z__tr_stored_block
+-#  define _tr_tally             z__tr_tally
+-#  define adler32               z_adler32
+-#  define adler32_combine       z_adler32_combine
+-#  define adler32_combine64     z_adler32_combine64
+-#  define adler32_z             z_adler32_z
++#  define _dist_code            _java_z__dist_code
++#  define _length_code          _java_z__length_code
++#  define _tr_align             _java_z__tr_align
++#  define _tr_flush_bits        _java_z__tr_flush_bits
++#  define _tr_flush_block       _java_z__tr_flush_block
++#  define _tr_init              _java_z__tr_init
++#  define _tr_stored_block      _java_z__tr_stored_block
++#  define _tr_tally             _java_z__tr_tally
++#  define adler32               _java_z_adler32
++#  define adler32_combine       _java_z_adler32_combine
++#  define adler32_combine64     _java_z_adler32_combine64
++#  define adler32_z             _java_z_adler32_z
+ #  ifndef Z_SOLO
+-#    define compress              z_compress
+-#    define compress2             z_compress2
+-#    define compressBound         z_compressBound
+-#  endif
+-#  define crc32                 z_crc32
+-#  define crc32_combine         z_crc32_combine
+-#  define crc32_combine64       z_crc32_combine64
+-#  define crc32_z               z_crc32_z
+-#  define deflate               z_deflate
+-#  define deflateBound          z_deflateBound
+-#  define deflateCopy           z_deflateCopy
+-#  define deflateEnd            z_deflateEnd
+-#  define deflateGetDictionary  z_deflateGetDictionary
+-#  define deflateInit           z_deflateInit
+-#  define deflateInit2          z_deflateInit2
+-#  define deflateInit2_         z_deflateInit2_
+-#  define deflateInit_          z_deflateInit_
+-#  define deflateParams         z_deflateParams
+-#  define deflatePending        z_deflatePending
+-#  define deflatePrime          z_deflatePrime
+-#  define deflateReset          z_deflateReset
+-#  define deflateResetKeep      z_deflateResetKeep
+-#  define deflateSetDictionary  z_deflateSetDictionary
+-#  define deflateSetHeader      z_deflateSetHeader
+-#  define deflateTune           z_deflateTune
+-#  define deflate_copyright     z_deflate_copyright
+-#  define get_crc_table         z_get_crc_table
++#    define compress              _java_z_compress
++#    define compress2             _java_z_compress2
++#    define compressBound         _java_z_compressBound
++#  endif
++#  define crc32                 _java_z_crc32
++#  define crc32_combine         _java_z_crc32_combine
++#  define crc32_combine64       _java_z_crc32_combine64
++#  define crc32_z               _java_z_crc32_z
++#  define deflate               _java_z_deflate
++#  define deflateBound          _java_z_deflateBound
++#  define deflateCopy           _java_z_deflateCopy
++#  define deflateEnd            _java_z_deflateEnd
++#  define deflateGetDictionary  _java_z_deflateGetDictionary
++#  define deflateInit           _java_z_deflateInit
++#  define deflateInit2          _java_z_deflateInit2
++#  define deflateInit2_         _java_z_deflateInit2_
++#  define deflateInit_          _java_z_deflateInit_
++#  define deflateParams         _java_z_deflateParams
++#  define deflatePending        _java_z_deflatePending
++#  define deflatePrime          _java_z_deflatePrime
++#  define deflateReset          _java_z_deflateReset
++#  define deflateResetKeep      _java_z_deflateResetKeep
++#  define deflateSetDictionary  _java_z_deflateSetDictionary
++#  define deflateSetHeader      _java_z_deflateSetHeader
++#  define deflateTune           _java_z_deflateTune
++#  define deflate_copyright     _java_z_deflate_copyright
++#  define get_crc_table         _java_z_get_crc_table
+ #  ifndef Z_SOLO
+-#    define gz_error              z_gz_error
+-#    define gz_intmax             z_gz_intmax
+-#    define gz_strwinerror        z_gz_strwinerror
+-#    define gzbuffer              z_gzbuffer
+-#    define gzclearerr            z_gzclearerr
+-#    define gzclose               z_gzclose
+-#    define gzclose_r             z_gzclose_r
+-#    define gzclose_w             z_gzclose_w
+-#    define gzdirect              z_gzdirect
+-#    define gzdopen               z_gzdopen
+-#    define gzeof                 z_gzeof
+-#    define gzerror               z_gzerror
+-#    define gzflush               z_gzflush
+-#    define gzfread               z_gzfread
+-#    define gzfwrite              z_gzfwrite
+-#    define gzgetc                z_gzgetc
+-#    define gzgetc_               z_gzgetc_
+-#    define gzgets                z_gzgets
+-#    define gzoffset              z_gzoffset
+-#    define gzoffset64            z_gzoffset64
+-#    define gzopen                z_gzopen
+-#    define gzopen64              z_gzopen64
++#    define gz_error              _java_z_gz_error
++#    define gz_intmax             _java_z_gz_intmax
++#    define gz_strwinerror        _java_z_gz_strwinerror
++#    define gzbuffer              _java_z_gzbuffer
++#    define gzclearerr            _java_z_gzclearerr
++#    define gzclose               _java_z_gzclose
++#    define gzclose_r             _java_z_gzclose_r
++#    define gzclose_w             _java_z_gzclose_w
++#    define gzdirect              _java_z_gzdirect
++#    define gzdopen               _java_z_gzdopen
++#    define gzeof                 _java_z_gzeof
++#    define gzerror               _java_z_gzerror
++#    define gzflush               _java_z_gzflush
++#    define gzfread               _java_z_gzfread
++#    define gzfwrite              _java_z_gzfwrite
++#    define gzgetc                _java_z_gzgetc
++#    define gzgetc_               _java_z_gzgetc_
++#    define gzgets                _java_z_gzgets
++#    define gzoffset              _java_z_gzoffset
++#    define gzoffset64            _java_z_gzoffset64
++#    define gzopen                _java_z_gzopen
++#    define gzopen64              _java_z_gzopen64
+ #    ifdef _WIN32
+-#      define gzopen_w              z_gzopen_w
++#      define gzopen_w              _java_z_gzopen_w
+ #    endif
+-#    define gzprintf              z_gzprintf
+-#    define gzputc                z_gzputc
+-#    define gzputs                z_gzputs
+-#    define gzread                z_gzread
+-#    define gzrewind              z_gzrewind
+-#    define gzseek                z_gzseek
+-#    define gzseek64              z_gzseek64
+-#    define gzsetparams           z_gzsetparams
+-#    define gztell                z_gztell
+-#    define gztell64              z_gztell64
+-#    define gzungetc              z_gzungetc
+-#    define gzvprintf             z_gzvprintf
+-#    define gzwrite               z_gzwrite
+-#  endif
+-#  define inflate               z_inflate
+-#  define inflateBack           z_inflateBack
+-#  define inflateBackEnd        z_inflateBackEnd
+-#  define inflateBackInit       z_inflateBackInit
+-#  define inflateBackInit_      z_inflateBackInit_
+-#  define inflateCodesUsed      z_inflateCodesUsed
+-#  define inflateCopy           z_inflateCopy
+-#  define inflateEnd            z_inflateEnd
+-#  define inflateGetDictionary  z_inflateGetDictionary
+-#  define inflateGetHeader      z_inflateGetHeader
+-#  define inflateInit           z_inflateInit
+-#  define inflateInit2          z_inflateInit2
+-#  define inflateInit2_         z_inflateInit2_
+-#  define inflateInit_          z_inflateInit_
+-#  define inflateMark           z_inflateMark
+-#  define inflatePrime          z_inflatePrime
+-#  define inflateReset          z_inflateReset
+-#  define inflateReset2         z_inflateReset2
+-#  define inflateResetKeep      z_inflateResetKeep
+-#  define inflateSetDictionary  z_inflateSetDictionary
+-#  define inflateSync           z_inflateSync
+-#  define inflateSyncPoint      z_inflateSyncPoint
+-#  define inflateUndermine      z_inflateUndermine
+-#  define inflateValidate       z_inflateValidate
+-#  define inflate_copyright     z_inflate_copyright
+-#  define inflate_fast          z_inflate_fast
+-#  define inflate_table         z_inflate_table
++#    define gzprintf              _java_z_gzprintf
++#    define gzputc                _java_z_gzputc
++#    define gzputs                _java_z_gzputs
++#    define gzread                _java_z_gzread
++#    define gzrewind              _java_z_gzrewind
++#    define gzseek                _java_z_gzseek
++#    define gzseek64              _java_z_gzseek64
++#    define gzsetparams           _java_z_gzsetparams
++#    define gztell                _java_z_gztell
++#    define gztell64              _java_z_gztell64
++#    define gzungetc              _java_z_gzungetc
++#    define gzvprintf             _java_z_gzvprintf
++#    define gzwrite               _java_z_gzwrite
++#  endif
++#  define inflate               _java_z_inflate
++#  define inflateBack           _java_z_inflateBack
++#  define inflateBackEnd        _java_z_inflateBackEnd
++#  define inflateBackInit       _java_z_inflateBackInit
++#  define inflateBackInit_      _java_z_inflateBackInit_
++#  define inflateCodesUsed      _java_z_inflateCodesUsed
++#  define inflateCopy           _java_z_inflateCopy
++#  define inflateEnd            _java_z_inflateEnd
++#  define inflateGetDictionary  _java_z_inflateGetDictionary
++#  define inflateGetHeader      _java_z_inflateGetHeader
++#  define inflateInit           _java_z_inflateInit
++#  define inflateInit2          _java_z_inflateInit2
++#  define inflateInit2_         _java_z_inflateInit2_
++#  define inflateInit_          _java_z_inflateInit_
++#  define inflateMark           _java_z_inflateMark
++#  define inflatePrime          _java_z_inflatePrime
++#  define inflateReset          _java_z_inflateReset
++#  define inflateReset2         _java_z_inflateReset2
++#  define inflateResetKeep      _java_z_inflateResetKeep
++#  define inflateSetDictionary  _java_z_inflateSetDictionary
++#  define inflateSync           _java_z_inflateSync
++#  define inflateSyncPoint      _java_z_inflateSyncPoint
++#  define inflateUndermine      _java_z_inflateUndermine
++#  define inflateValidate       _java_z_inflateValidate
++#  define inflate_copyright     _java_z_inflate_copyright
++#  define inflate_fast          _java_z_inflate_fast
++#  define inflate_table         _java_z_inflate_table
+ #  ifndef Z_SOLO
+-#    define uncompress            z_uncompress
+-#    define uncompress2           z_uncompress2
++#    define uncompress            _java_z_uncompress
++#    define uncompress2           _java_z_uncompress2
+ #  endif
+-#  define zError                z_zError
++#  define zError                _java_z_zError
+ #  ifndef Z_SOLO
+-#    define zcalloc               z_zcalloc
+-#    define zcfree                z_zcfree
++#    define zcalloc               _java_z_zcalloc
++#    define zcfree                _java_z_zcfree
+ #  endif
+-#  define zlibCompileFlags      z_zlibCompileFlags
+-#  define zlibVersion           z_zlibVersion
++#  define zlibCompileFlags      _java_z_zlibCompileFlags
++#  define zlibVersion           _java_z_zlibVersion
+ 
+ /* all zlib typedefs in zlib.h and zconf.h */
+-#  define Byte                  z_Byte
+-#  define Bytef                 z_Bytef
+-#  define alloc_func            z_alloc_func
+-#  define charf                 z_charf
+-#  define free_func             z_free_func
++#  define Byte                  _java_z_Byte
++#  define Bytef                 _java_z_Bytef
++#  define alloc_func            _java_z_alloc_func
++#  define charf                 _java_z_charf
++#  define free_func             _java_z_free_func
+ #  ifndef Z_SOLO
+-#    define gzFile                z_gzFile
++#    define gzFile                _java_z_gzFile
+ #  endif
+-#  define gz_header             z_gz_header
+-#  define gz_headerp            z_gz_headerp
+-#  define in_func               z_in_func
+-#  define intf                  z_intf
+-#  define out_func              z_out_func
+-#  define uInt                  z_uInt
+-#  define uIntf                 z_uIntf
+-#  define uLong                 z_uLong
+-#  define uLongf                z_uLongf
+-#  define voidp                 z_voidp
+-#  define voidpc                z_voidpc
+-#  define voidpf                z_voidpf
++#  define gz_header             _java_z_gz_header
++#  define gz_headerp            _java_z_gz_headerp
++#  define in_func               _java_z_in_func
++#  define intf                  _java_z_intf
++#  define out_func              _java_z_out_func
++#  define uInt                  _java_z_uInt
++#  define uIntf                 _java_z_uIntf
++#  define uLong                 _java_z_uLong
++#  define uLongf                _java_z_uLongf
++#  define voidp                 _java_z_voidp
++#  define voidpc                _java_z_voidpc
++#  define voidpf                _java_z_voidpf
+ 
+ /* all zlib structs in zlib.h and zconf.h */
+-#  define gz_header_s           z_gz_header_s
+-#  define internal_state        z_internal_state
++#  define gz_header_s           _java_z_gz_header_s
++#  define internal_state        _java_z_internal_state
+ 
  #endif
  
- #if (defined(_WIN32) || defined(__WIN32__)) && !defined(WIN32)
 --- jdk/src/share/native/sun/awt/debug/debug_util.h
 +++ jdk/src/share/native/sun/awt/debug/debug_util.h
 @@ -50,7 +50,9 @@
@@ -11221,9 +11428,9 @@
  #include <signal.h>
  #include <string.h>
  #include <errno.h>
-@@ -49,6 +53,17 @@
- #include <fcntl.h>
- #include <limits.h>
+@@ -118,6 +122,17 @@
+ #define START_CHILD_SYSTEM_CALL "fork"
+ #endif
  
 +#ifdef __FreeBSD__
 +#include <dlfcn.h>
@@ -11239,7 +11446,17 @@
  #ifndef STDIN_FILENO
  #define STDIN_FILENO 0
  #endif
-@@ -259,11 +274,89 @@
+@@ -151,7 +166,9 @@
+  * "All identifiers in this volume of IEEE Std 1003.1-2001, except
+  * environ, are defined in at least one of the headers" (!)
+  */
++#ifndef __APPLE__
+ extern char **environ;
++#endif
+ 
+ 
+ static void
+@@ -342,11 +359,89 @@
      }
  }
  
@@ -11313,11 +11530,11 @@
 +
 +#else
 +
-+#ifdef _ALLBSD_SOURCE                                                          
++#ifdef _ALLBSD_SOURCE
 +#define FD_DIR "/dev/fd"
 +#else
-+#define dirent dirent64                                                        
-+#define readdir readdir64                                                      
++#define dirent dirent64
++#define readdir readdir64
 +#define FD_DIR "/proc/self/fd"
 +#endif
 +
@@ -11330,7 +11547,7 @@
      int from_fd = FAIL_FILENO + 1;
  
      /* We're trying to close all file descriptors, but opendir() might
-@@ -276,13 +369,13 @@
+@@ -359,13 +454,13 @@
      close(from_fd);             /* for possible use by opendir() */
      close(from_fd + 1);         /* another one for good luck */
  
@@ -11346,7 +11563,7 @@
          int fd;
          if (isdigit(dirp->d_name[0]) &&
              (fd = strtol(dirp->d_name, NULL, 10)) >= from_fd + 2)
-@@ -293,6 +386,7 @@
+@@ -376,6 +471,7 @@
  
      return 1;
  }
@@ -11354,37 +11571,10 @@
  
  static void
  moveDescriptor(int fd_from, int fd_to)
-@@ -449,7 +543,9 @@
-      * "All identifiers in this volume of IEEE Std 1003.1-2001, except
-      * environ, are defined in at least one of the headers" (!)
-      */
-+#ifndef __APPLE__
-     extern char **environ;
-+#endif
+@@ -643,6 +739,28 @@
+ {
+     const ChildStuff* p = (const ChildStuff*) arg;
  
-     if (envp != NULL)
-         environ = (char **) envp;
-@@ -513,10 +609,15 @@
-     }
- }
- 
-+#if defined(__FreeBSD__)
-+#undef fork1
-+#define fork1() jdk_fork_wrapper()
-+#else
- #ifndef __solaris__
- #undef fork1
- #define fork1() fork()
- #endif
-+#endif
- 
- JNIEXPORT jint JNICALL
- Java_java_lang_UNIXProcess_forkAndExec(JNIEnv *env,
-@@ -578,6 +679,30 @@
-     if (resultPid == 0) {
-         /* Child process */
- 
-+
 +#ifdef __OpenBSD__
 +// XXXBSD: Work-around userland pthread implementation issue.
 +// Closing file descriptors will reset them to be blocking.
@@ -11407,10 +11597,21 @@
 +    }
 +#endif
 +
-+
-         /* Close the parent sides of the pipe.
-            Give the child sides of the pipes the right fileno's.
-            Closing pipe fds here is redundant, since closeDescriptors()
+     /* Close the parent sides of the pipes.
+        Closing pipe fds here is redundant, since closeDescriptors()
+        would do it anyways, but a little paranoia is a good thing. */
+@@ -742,7 +860,11 @@
+      * replicated in the child process. This is the POSIX-specified
+      * behavior for fork().
+      */
++    #if defined(__FreeBSD__)
++    pid_t resultPid = jdk_fork_wrapper();
++    #else
+     pid_t resultPid = fork();
++    #endif
+   #endif
+     if (resultPid == 0)
+         childProcess(c);
 --- jdk/src/solaris/native/java/lang/java_props_md.c
 +++ jdk/src/solaris/native/java/lang/java_props_md.c
 @@ -23,7 +23,7 @@
