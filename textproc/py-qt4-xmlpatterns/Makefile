@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlpatterns
+PORTREVISION=	1
 CATEGORIES=	textproc devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,7 +23,7 @@ OPTIONS_SUB=	yes
 API_DESC=		Install QtXmlPatterns API for QScintilla2
 API_CONFIGURE_ON=	--qsci-api --qsci-api-destdir=${QSCIDIR}
 API_CONFIGURE_OFF=	--no-qsci-api
-API_LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2
+API_LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2
 DEBUG_CONFIGURE_ON=	--debug --trace
 
 .include <bsd.port.mk>

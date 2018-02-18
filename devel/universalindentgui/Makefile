@@ -3,7 +3,7 @@
 
 PORTNAME=	universalindentgui
 PORTVERSION=	1.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	SF/universalindent/uigui/UniversalIndentGUI_${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Graphical UI for multiple source code indent/format/beautify tools
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
-LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2
+LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2
 
 USES=		dos2unix qmake python:run shebangfix
 SHEBANG_FILES=	indenters/*.py indenters/*.rb

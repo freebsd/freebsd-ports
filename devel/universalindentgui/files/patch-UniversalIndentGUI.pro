@@ -1,5 +1,14 @@
---- UniversalIndentGUI.pro.orig	2017-01-20 10:40:58 UTC
+--- UniversalIndentGUI.pro.orig	2018-02-16 21:30:56 UTC
 +++ UniversalIndentGUI.pro
+@@ -23,7 +23,7 @@ macx {
+  ICON = resources/UniversalIndentGUI.icns
+ }
+ else {
+- LIBS += -lqscintilla2
++ LIBS += -lqscintilla2_qt4
+ }
+ 
+ CONFIG(release, debug|release) {
 @@ -37,10 +37,10 @@ macx:pipe2nul = "&> /dev/null"
  ##########################
  message(Updating language files)

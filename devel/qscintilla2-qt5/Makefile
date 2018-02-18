@@ -2,7 +2,6 @@
 
 PORTNAME=	qscintilla2-qt5
 PORTVERSION=	${QSCI2_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITES_QSCI2}
 DISTNAME=	${QSCI2_DISTNAME}
@@ -13,7 +12,7 @@ COMMENT=	Qt 5 port of the Scintilla C++ editor class
 USES=		qmake pyqt:5
 USE_GL=		gl
 USE_PYQT=	#
-USE_QT5=	buildtools_build gui printsupport widgets
+USE_QT5=	buildtools_build core gui printsupport widgets
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 BUILD_WRKSRC=		${WRKSRC}/Qt4Qt5
