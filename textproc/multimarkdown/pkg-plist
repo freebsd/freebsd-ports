@@ -1,5 +1,5 @@
-bin/multimarkdown
 bin/markdown
+bin/multimarkdown
 %%HELPERS%%bin/mmd
 %%HELPERS%%bin/mmd2all
 %%HELPERS%%bin/mmd2odf
