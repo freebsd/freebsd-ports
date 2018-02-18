@@ -209,6 +209,8 @@ include/wine/windows/d3d11_4.idl
 include/wine/windows/d3d11sdklayers.h
 include/wine/windows/d3d11sdklayers.idl
 include/wine/windows/d3d11shader.h
+include/wine/windows/d3d12.h
+include/wine/windows/d3d12.idl
 include/wine/windows/d3d8.h
 include/wine/windows/d3d8caps.h
 include/wine/windows/d3d8types.h
@@ -964,6 +966,7 @@ lib/wine/acledit.dll.so
 lib/wine/aclui.dll.so
 lib/wine/activeds.dll.so
 lib/wine/actxprxy.dll.so
+lib/wine/adsldp.dll.so
 lib/wine/adsldpc.dll.so
 lib/wine/advapi32.dll.so
 lib/wine/advpack.dll.so
@@ -1136,6 +1139,7 @@ lib/wine/api-ms-win-mm-mme-l1-1-0.dll.so
 lib/wine/api-ms-win-mm-time-l1-1-0.dll.so
 lib/wine/api-ms-win-ntuser-dc-access-l1-1-0.dll.so
 lib/wine/api-ms-win-ntuser-rectangle-l1-1-0.dll.so
+lib/wine/api-ms-win-perf-legacy-l1-1-0.dll.so
 lib/wine/api-ms-win-power-base-l1-1-0.dll.so
 lib/wine/api-ms-win-power-setting-l1-1-0.dll.so
 %%STAGING%%lib/wine/api-ms-win-rtcore-ntuser-draw-l1-1-0.dll.so
@@ -1193,6 +1197,7 @@ lib/wine/cabinet.dll.so
 lib/wine/cacls.exe.so
 lib/wine/capi2032.dll.so
 lib/wine/cards.dll.so
+lib/wine/cdosys.dll.so
 lib/wine/cfgmgr32.dll.so
 lib/wine/clock.exe.so
 lib/wine/clusapi.dll.so
@@ -1228,6 +1233,7 @@ lib/wine/d3d10.dll.so
 lib/wine/d3d10_1.dll.so
 lib/wine/d3d10core.dll.so
 lib/wine/d3d11.dll.so
+lib/wine/d3d12.dll.so
 lib/wine/d3d8.dll.so
 lib/wine/d3d9.dll.so
 lib/wine/d3dcompiler_33.dll.so
@@ -1367,6 +1373,7 @@ lib/wine/fakedlls/acledit.dll
 lib/wine/fakedlls/aclui.dll
 lib/wine/fakedlls/activeds.dll
 lib/wine/fakedlls/actxprxy.dll
+lib/wine/fakedlls/adsldp.dll
 lib/wine/fakedlls/adsldpc.dll
 lib/wine/fakedlls/advapi32.dll
 lib/wine/fakedlls/advpack.dll
@@ -1539,6 +1546,7 @@ lib/wine/fakedlls/api-ms-win-mm-mme-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-mm-time-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-ntuser-dc-access-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-ntuser-rectangle-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-perf-legacy-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-power-base-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-power-setting-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/api-ms-win-rtcore-ntuser-draw-l1-1-0.dll
@@ -1596,6 +1604,7 @@ lib/wine/fakedlls/cabinet.dll
 lib/wine/fakedlls/cacls.exe
 lib/wine/fakedlls/capi2032.dll
 lib/wine/fakedlls/cards.dll
+lib/wine/fakedlls/cdosys.dll
 lib/wine/fakedlls/cfgmgr32.dll
 lib/wine/fakedlls/clock.exe
 lib/wine/fakedlls/clusapi.dll
@@ -1631,6 +1640,7 @@ lib/wine/fakedlls/d3d10.dll
 lib/wine/fakedlls/d3d10_1.dll
 lib/wine/fakedlls/d3d10core.dll
 lib/wine/fakedlls/d3d11.dll
+lib/wine/fakedlls/d3d12.dll
 lib/wine/fakedlls/d3d8.dll
 lib/wine/fakedlls/d3d9.dll
 lib/wine/fakedlls/d3dcompiler_33.dll
@@ -2339,6 +2349,7 @@ lib/wine/libd3d10.def
 lib/wine/libd3d10_1.def
 lib/wine/libd3d10core.def
 lib/wine/libd3d11.def
+lib/wine/libd3d12.def
 lib/wine/libd3d8.def
 lib/wine/libd3d9.def
 lib/wine/libd3dcompiler.def
