@@ -39,7 +39,7 @@ JAVA_VARS=			JAVA_VERSION=1.6+ JAVA_BUILD=yes JAVA_RUN=yes
 JAVA_CONFIGURE_ENABLE=		bdjava-jar
 JAVA_CONFIGURE_ENV=		JDK_HOME="${JAVA_HOME}"
 
-post-extract:
+post-patch:
 	@${RLN} ${WRKSRC}/jni/linux ${WRKSRC}/jni/freebsd
 
 .include <bsd.port.mk>
