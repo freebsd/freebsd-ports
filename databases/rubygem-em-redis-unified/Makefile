@@ -5,7 +5,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Eventmachine-based implementation of the Redis protocol
 
 LICENSE=	MIT
