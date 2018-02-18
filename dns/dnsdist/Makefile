@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdist
-DISTVERSION=	1.2.0
-PORTREVISION=	5
+DISTVERSION=	1.2.1
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/ \
 		LOCAL/cpm
@@ -40,9 +39,9 @@ USE_RC_SUBR=	dnsdist
 
 # Fix dnsdist binaries when building on FreeBSD 10.3
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-BUILD_DEPENDS+=	clang40:devel/llvm40
-CC=		clang40
-CXX=		clang++40
+BUILD_DEPENDS+=	clang50:devel/llvm50
+CC=		clang50
+CXX=		clang++50
 .endif
 
 post-install:
