@@ -10,6 +10,9 @@ COMMENT=	BOSH blobstore client
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Only used by deprecated sysutils/rubygem-bosh_cli
+EXPIRATION_DATE=2018-02-28
+
 RUN_DEPENDS=	rubygem-aws-sdk-resources>=2.2.0:devel/rubygem-aws-sdk-resources \
 		rubygem-bosh_common>=${PORTVERSION}:devel/rubygem-bosh_common \
 		rubygem-httpclient>=2.7.1:www/rubygem-httpclient \
