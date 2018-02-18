@@ -1,14 +1,13 @@
---- setup.py.orig	2015-08-06 05:38:27 UTC
-+++ setup.py
-@@ -42,7 +42,10 @@ classifiers = [
+--- setup.py.orig	2017-12-16 21:08:32.634424000 -0300
++++ setup.py	2017-12-16 21:10:59.767507000 -0300
+@@ -57,7 +57,10 @@
  
  
  def get_long_description():
--    lines = open('README.rst').read().splitlines(False)
+-    lines = open('README.rst', 'rb').read().splitlines(False)
 +    if sys.version_info[0] > 2:
 +        lines = open('README.rst', encoding='utf-8').read().splitlines(False)
 +    else:
 +        lines = open('README.rst').read().splitlines(False)
-     end = lines.index('Getting Started')
-     return '\n' + '\n'.join(lines[:end]) + '\n'
- 
+     end = lines.index(b'Getting Started')
+     return '\n' + str(b'\n'.join(lines[:end])) + '\n'
