@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	daemonize
-PORTVERSION=	1.7.7
+DISTVERSION=	1.7.8
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	sysutils
 
