@@ -10,6 +10,9 @@ COMMENT=	Renders bosh templates
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Only used by deprecated sysutils/rubygem-bosh_cli
+EXPIRATION_DATE=2018-02-28
+
 RUN_DEPENDS=	rubygem-semi_semantic>=1.1.0:devel/rubygem-semi_semantic
 
 NO_ARCH=	yes
