@@ -1,5 +1,14 @@
-The aim of SCEW is to provide an easy interface around the Expat XML parser.
-SCEW also incorporates functions to create and handle XML trees.  That is, add
-and delete nodes, change attribute names and values, etc.
+The aim of SCEW is to provide an easy interface around the XML Expat parser, as
+well as a simple interface for creating new XML documents. It provides functions
+to load and access XML elements without the need to create Expat event handling
+routines every time you want to load a new XML document.
 
-WWW: http://www.nongnu.org/scew/
+These are the main SCEW features:
+- Uses a DOM-like object model for new or parsed XML documents.
+- Supports loading concatenated XML documents.
+- Can copy and compare full XML documents, elements or attributes.
+- Writes XML documents to multiple outputs.
+- Allows adding new I/O sources easily.
+- UTF-8, ISO-8859-1 and US-ASCII encodings (and UTF-16 in Windows).
+
+WWW: https://savannah.nongnu.org/projects/scew
