@@ -19,6 +19,8 @@ GH_TUPLE=	rust-lang:rust:282fa87 \
 		rust-lang:rust-installer:4f99485:rust_installer/src/rust-installer
 
 BROKEN=		needs to be adapted after changes in lang/rust
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-03-19
 
 CONFLICTS_BUILD=	rust # see FIXME in `pre-fetch` in lang/rust/Makefile
 CONFLICTS_INSTALL=	rust

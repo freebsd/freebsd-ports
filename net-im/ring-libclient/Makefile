@@ -12,6 +12,9 @@ COMMENT=	Client library for the Ring VoIP SIP phone and IM
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Depends on expiring and broken net-im/ring-daemon
+EXPIRATION_DATE=	2018-03-19
+
 LIB_DEPENDS=	libring.so:net-im/ring-daemon
 
 USE_GITHUB=	yes
