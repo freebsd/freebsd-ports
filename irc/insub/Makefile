@@ -15,7 +15,7 @@ RUN_DEPENDS=	cowsay:games/cowsay \
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjones
 
-USES=		perl5 python:2.5+ shebangfix
+USES=		perl5 python shebangfix
 SHEBANG_FILES=	insub.py
 USE_PERL5=	run
 NO_BUILD=	yes
