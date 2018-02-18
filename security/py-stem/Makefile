@@ -18,7 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>0:devel/py-pyflakes@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycodestyle>0:devel/py-pycodestyle@${FLAVOR}
 
-USES=		python:2.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
