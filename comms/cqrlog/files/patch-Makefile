@@ -1,5 +1,5 @@
---- Makefile.orig	2016-04-20 16:06:15 UTC
-+++ Makefile
+--- Makefile.orig	2017-12-30 02:10:01.000000000 -0500
++++ Makefile	2018-01-05 12:34:28.752177000 -0500
 @@ -1,12 +1,13 @@
 -CC=lazbuild
 +CC=lazbuild -d
@@ -19,18 +19,18 @@
  	$(ST) src/cqrlog
  	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
  
-@@ -30,7 +31,7 @@ install:
- 	install -d -v         $(sharedir)/pixmaps/cqrlog
- 	install -d -v         $(sharedir)/icons
+@@ -38,7 +39,7 @@
+ 	install -d -v         $(sharedir)/icons/cqrlog
  	install -d -v         $(sharedir)/applications
+ 	install -d -v         $(sharedir)/appdata
 -	install -d -v         $(sharedir)/man/man1
 +	install -d -v         $(mandir)/man/man1
  	install    -v -m 0755 src/cqrlog $(bindir)
  	install    -v -m 0755 tools/cqrlog-apparmor-fix $(datadir)/cqrlog-apparmor-fix
  	install    -v -m 0644 ctyfiles/* $(datadir)/ctyfiles/
-@@ -47,7 +48,7 @@ install:
- 	install    -v -m 0644 images/cqrlog.png $(sharedir)/pixmaps/cqrlog/cqrlog.png
- 	install    -v -m 0644 images/cqrlog.png $(sharedir)/icons/cqrlog.png  
+@@ -64,7 +65,7 @@
+ 	install    -v -m 0644 images/icon/32x32/cqrlog.png $(sharedir)/pixmaps/cqrlog/cqrlog.png
+ 	install    -v -m 0644 images/icon/128x128/cqrlog.png $(sharedir)/icons/cqrlog.png
  	install    -v -m 0644 src/changelog.html $(datadir)/changelog.html
 -	install    -v -m 0644 tools/cqrlog.1.gz $(sharedir)/man/man1/cqrlog.1.gz
 +	install    -v -m 0644 tools/cqrlog.1.gz $(mandir)/man/man1/cqrlog.1.gz
