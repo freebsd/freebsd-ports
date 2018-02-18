@@ -1,11 +1,6 @@
 bin/scew_print
 bin/scew_stream
 bin/scew_write
-libdata/pkgconfig/scew.pc
-lib/libscew.a
-lib/libscew.so
-lib/libscew.so.1
-lib/libscew.so.1.0.8
 include/scew/attribute.h
 include/scew/bool.h
 include/scew/element.h
@@ -23,3 +18,8 @@ include/scew/tree.h
 include/scew/writer.h
 include/scew/writer_buffer.h
 include/scew/writer_file.h
+lib/libscew.a
+lib/libscew.so
+lib/libscew.so.1
+lib/libscew.so.1.0.10
+libdata/pkgconfig/scew.pc
