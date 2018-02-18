@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drool
-DISTVERSION=	1.0.1
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/drool/
 
