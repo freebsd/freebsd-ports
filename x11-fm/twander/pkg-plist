@@ -3,7 +3,6 @@ bin/twander.pyo
 man/man1/twander.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/READ-1ST.txt
 %%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
-%%PORTDOCS%%%%DOCSDIR%%/twander-license.txt
 %%PORTDOCS%%%%DOCSDIR%%/.twander
 %%PORTDOCS%%%%DOCSDIR%%/twander.html
 %%PORTDOCS%%%%DOCSDIR%%/twander.pdf

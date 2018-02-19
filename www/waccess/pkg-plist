@@ -1,3 +1,2 @@
 bin/waccess
 man/man1/waccess.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/waccess-license.txt

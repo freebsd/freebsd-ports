@@ -1,8 +1,7 @@
 bin/hb.py
 man/man1/hb.1.gz
-share/doc/hb/hb.txt
-share/doc/hb/0-StartHere.txt
-share/doc/hb/1-HB-License.txt
-share/doc/hb/2-HowToUse.txt
-share/doc/hb/3-UnderTheHood.txt
-share/doc/hb/4-Limitations-Enhancements.txt
+%%PORTDOCS%%%%DOCSDIR%%/hb.txt
+%%PORTDOCS%%%%DOCSDIR%%/0-StartHere.txt
+%%PORTDOCS%%%%DOCSDIR%%/2-HowToUse.txt
+%%PORTDOCS%%%%DOCSDIR%%/3-UnderTheHood.txt
+%%PORTDOCS%%%%DOCSDIR%%/4-Limitations-Enhancements.txt

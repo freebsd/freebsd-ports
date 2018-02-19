@@ -1,7 +1,6 @@
 bin/nohtml.py
 man/man1/nohtml.1.gz
-%%PORTDOCS%%share/doc/nohtml/nohtml-license.txt
-%%PORTDOCS%%share/doc/nohtml/nohtml.html
-%%PORTDOCS%%share/doc/nohtml/nohtml.pdf
-%%PORTDOCS%%share/doc/nohtml/nohtml.ps
-%%PORTDOCS%%share/doc/nohtml/nohtml.txt
+%%PORTDOCS%%%%DOCSDIR%%/nohtml.html
+%%PORTDOCS%%%%DOCSDIR%%/nohtml.pdf
+%%PORTDOCS%%%%DOCSDIR%%/nohtml.ps
+%%PORTDOCS%%%%DOCSDIR%%/nohtml.txt
