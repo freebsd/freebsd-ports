@@ -12,7 +12,7 @@ COMMENT=		Fast and Secure Tunnelling Daemon
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT
 
-BROKEN=			fails to build
+BROKEN=			fails to build: cipher_aes128_ctr_nacl.c:36:10: 'crypto_stream_aes128ctr.h' file not found
 
 LIB_DEPENDS=		libjson-c.so:devel/json-c       \
 			libsodium.so:security/libsodium \
