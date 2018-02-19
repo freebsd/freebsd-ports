@@ -5,17 +5,23 @@ PKGNAMESUFFIX=	c
 
 COMMENT=	Compiled implementations of some of the modules of Tcllib
 
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 BUILD_DEPENDS=	critcl:devel/critcl
 RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/pkgIndex.tcl:devel/tcllib
 
-MASTERDIR=	${.CURDIR:H}/tcllib
+USES=		bison
+MASTERDIR=	${.CURDIR}/../tcllib
 TMPPLIST=	${WRKDIR}/PLIST
 DESCR=		${.CURDIR}/pkg-descr
 ALL_TARGET=	critcl
 OPTIONS_DEFINE=
 
-post-patch:
-	cd ${WRKSRC}/modules/json/c && ${YACC} -b json json.y
+pre-build:
+	cd ${WRKSRC}/modules/json/c && ${LOCALBASE}/bin/bison -b json json.y
 
 do-install:
 	${RM} ${WRKSRC}/modules/tcllibc/license.terms
