@@ -9,7 +9,10 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl interface to jaiku.com's API
+COMMENT=	Perl interface to jaiku.com's API #'
+
+DEPRECATED=	Upstream disappeared and jaiku.com returns 404
+EXPIRATION_DATE=2018-03-31
 
 RUN_DEPENDS=	p5-libwww>=5.805:www/p5-libwww \
 		p5-JSON-Any>0:converters/p5-JSON-Any \
