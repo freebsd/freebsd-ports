@@ -2,30 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	yersinia
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	0.8.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.yersinia.net/download/
+MASTER_SITES=	GH
+# MASTER_SITES=	http://www.yersinia.net/download/
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
-LIB_DEPENDS=	libnet.so:net/libnet
+LICENSE=	GPLv2
 
-.if !defined(WITHOUT_GTK)
-.if exists(${LOCALBASE}/include/gtk-2.0/gtk/gtk.h)
-WITH_GTK=	true
-.endif
-.endif
-.if defined(WITH_GTK)
-USES=		pkgconfig
-USE_GNOME+=	gtk20
+LIB_DEPENDS=	libnet.so:net/libnet \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		autoreconf ncurses pkgconfig
+USE_GNOME+=	cairo gdkpixbuf2 gtk20 
 PKGNAMESUFFIX=	-gtk
-CONFLICTS=	yersinia-[0-9]*
-.else
-CONFIGURE_ARGS+=	--disable-gtk
-CONFLICTS=	yersinia-gtk-[0-9]*
-.endif
+USE_GITHUB=	yes
+GH_TUPLE=	tomac:yersinia:8c0d7c5
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/yersinia \
