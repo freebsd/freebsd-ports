@@ -9967,3 +9967,7 @@ net/quagga-esr|net/quagga|2018-02-15|Fixes available, go back to the regular qua
 sysutils/krename-kde4|sysutils/krename|2018-02-16|Renamed to sysutils/krename
 net/grive|net/grive2|2018-02-17|Has expired: Unmaintained by upstream, use net/grive2 instead
 textproc/rubygem-sass-rails5|textproc/rubygem-sass-rails-rails4|2018-02-18|Rename to match our rubygems naming
+devel/elixir-exrm||2018-02-19|Has expired: No longer maintained upstream
+devel/elixir-conform_exrm||2018-02-19|Has expired: No longer maintained upstream
+devel/elixir-sorted_set||2018-02-19|Has expired: No longer maintained upstream
+devel/elixir-red_black_tree||2018-02-19|Has expired: No longer maintained upstream
