@@ -20,6 +20,8 @@ PORTSCOUT=	ignore	# cannot handle the version in the directory
 
 .if !defined(MASTERDIR)
 BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_armv6=		fails to build: Tests failed: f_pre_1970_date_encoding
+BROKEN_armv7=		fails to build: Tests failed: f_pre_1970_date_encoding
 .endif
 
 USES=		cpe gmake makeinfo pkgconfig tar:xz
