@@ -57,6 +57,7 @@
     SUBDIR += cpuid
     SUBDIR += crosspad
     SUBDIR += crosti
+    SUBDIR += cryptoballot
     SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += dahdi
