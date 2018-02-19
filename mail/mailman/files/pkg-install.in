@@ -84,6 +84,11 @@ POST-INSTALL)
 
   echo "---> Running update"
 
+  if test -r /var/tmp/last_mailman_version ; then
+	  mkdir -p "%%MAILMANDIR%%/data"
+	  mv -f /var/tmp/last_mailman_version "%%MAILMANDIR%%/data"
+  fi
+
   LC_ALL=C "%%MAILMANDIR%%/bin/update"
 
   echo "---> Checking crontab(5) file for user \"%%USER%%\""
