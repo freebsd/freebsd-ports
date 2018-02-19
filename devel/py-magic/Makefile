@@ -15,6 +15,9 @@ COMMENT=	Python module for determining file type
 
 LICENSE=	BSD2CLAUSE
 
+# both install module as magic.py
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}python-magic-*
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
