@@ -12,6 +12,10 @@ COMMENT=	Preview FreeBSD loader logos
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_armv6=		fails to link: testmain uses VFP register arguments, dict.o does not
+BROKEN_armv7=		fails to link: testmain uses VFP register arguments, dict.o does not
+BROKEN_mips64=		fails to link: relocation truncated to fit: R_MIPS_26 against `__assert@@FBSD_1.0'
+
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=	requires kernel source files in ${SRC_BASE}
 .endif
@@ -25,9 +29,6 @@ PLIST_FILES=	bin/${PORTNAME}
 # Make sure building succeeds on HEAD
 CFLAGS+=	-I/usr/include # uses -nostdinc
 MAKE_ARGS+=	-m ${SRC_BASE}/share/mk
-
-BROKEN_armv6=		fails to link: testmain uses VFP register arguments, dict.o does not
-BROKEN_mips64=		fails to link: relocation truncated to fit: R_MIPS_26 against `__assert@@FBSD_1.0'
 
 WRKSRC_SUBDIR=	ficl
 
