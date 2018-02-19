@@ -90,7 +90,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg\
 		rubygem-lograge-rails5>=0.7:www/rubygem-lograge-rails5\
 		rubygem-redis-rails-rails5>=5.0.2:www/rubygem-redis-rails-rails5
 
-USES=		gmake gnome pgsql python:build,2 shebangfix
+USES=		gmake gnome pgsql python:2.7,build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tootsuite jehops:mn
 GH_PROJECT=	mastodon_node:mn
@@ -119,6 +119,7 @@ do-build:
 	@${RM} ${WRKSRC}/Gemfile.lock
 	HOME=${WRKSRC_mn} yarn config set yarn-offline-mirror ${WRKSRC_mn} --offline
 	HOME=${WRKSRC_mn} yarn config set nodedir ${LOCALBASE} --offline
+	HOME=${WRKSRC_mn} yarn config set python ${PYTHON_CMD}
 	@${CP} ${FILESDIR}/yarn.lock.in ${WRKSRC}/yarn.lock
 	(cd ${WRKSRC};\
 		HOME=${WRKSRC_mn} yarn --offline;\
