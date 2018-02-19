@@ -5,6 +5,7 @@ include/irssi/irssi-config.h
 include/irssi/irssi-version.h
 include/irssi/src/common.h
 include/irssi/src/core/args.h
+%%CAPSICUM%%include/irssi/src/core/capsicum.h
 include/irssi/src/core/channel-rec.h
 include/irssi/src/core/channel-setup-rec.h
 include/irssi/src/core/channels-setup.h
@@ -16,6 +17,7 @@ include/irssi/src/core/commands.h
 include/irssi/src/core/core.h
 include/irssi/src/core/expandos.h
 include/irssi/src/core/ignore.h
+include/irssi/src/core/iregex.h
 include/irssi/src/core/levels.h
 include/irssi/src/core/line-split.h
 include/irssi/src/core/log.h
@@ -27,6 +29,7 @@ include/irssi/src/core/modules.h
 include/irssi/src/core/net-disconnect.h
 include/irssi/src/core/net-nonblock.h
 include/irssi/src/core/net-sendbuffer.h
+include/irssi/src/core/network-openssl.h
 include/irssi/src/core/network.h
 include/irssi/src/core/nick-rec.h
 include/irssi/src/core/nicklist.h
@@ -54,6 +57,7 @@ include/irssi/src/core/write-buffer.h
 include/irssi/src/fe-common/core/chat-completion.h
 include/irssi/src/fe-common/core/command-history.h
 include/irssi/src/fe-common/core/completion.h
+%%CAPSICUM%%include/irssi/src/fe-common/core/fe-capsicum.h
 include/irssi/src/fe-common/core/fe-channels.h
 include/irssi/src/fe-common/core/fe-common-core.h
 include/irssi/src/fe-common/core/fe-core-commands.h
@@ -61,6 +65,7 @@ include/irssi/src/fe-common/core/fe-exec.h
 include/irssi/src/fe-common/core/fe-messages.h
 include/irssi/src/fe-common/core/fe-queries.h
 include/irssi/src/fe-common/core/fe-recode.h
+include/irssi/src/fe-common/core/fe-settings.h
 include/irssi/src/fe-common/core/fe-tls.h
 include/irssi/src/fe-common/core/fe-windows.h
 include/irssi/src/fe-common/core/formats.h
@@ -130,6 +135,7 @@ include/irssi/src/lib-config/module.h
 %%PERL%%%%SITE_ARCH%%/auto/Irssi/TextUI/TextUI.so
 %%PERL%%%%SITE_ARCH%%/auto/Irssi/UI/UI.so
 man/man1/irssi.1.gz
+%%CAPSICUM%%%%PORTDOCS%%%%DOCSDIR%%/capsicum.txt
 %%PORTDOCS%%%%DOCSDIR%%/design.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
@@ -139,6 +145,7 @@ man/man1/irssi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/signals.txt
 %%PORTDOCS%%%%DOCSDIR%%/special_vars.txt
 %%PORTDOCS%%%%DOCSDIR%%/startup-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/startup-HOWTO.txt
 %%DATADIR%%/help/accept
 %%DATADIR%%/help/action
 %%DATADIR%%/help/admin
@@ -217,11 +224,11 @@ man/man1/irssi.1.gz
 %%DATADIR%%/help/rmreconns
 %%DATADIR%%/help/rmrejoins
 %%DATADIR%%/help/save
-%%DATADIR%%/help/servlist
 %%DATADIR%%/help/sconnect
 %%DATADIR%%/help/script
 %%DATADIR%%/help/scrollback
 %%DATADIR%%/help/server
+%%DATADIR%%/help/servlist
 %%DATADIR%%/help/set
 %%DATADIR%%/help/silence
 %%DATADIR%%/help/squery
