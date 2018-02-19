@@ -11,14 +11,14 @@ PORTREVISION=	0
 PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
-MASTER_SITES=	LOCAL/mat/bind
-#MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;/
+MASTER_SITES=	LOCAL/mat/bind \
+		https://gitlab.isc.org/isc-projects/bind9/repository/${HASH}/archive.tar.bz2?d/
 .if defined(BIND_TOOLS_SLAVE)
 PKGNAMESUFFIX=	-tools
 .else
 PKGNAMESUFFIX=	9-devel
 .endif
-DISTNAME=	${PORTNAME}9-${HASH}
+DISTNAME=	${PORTNAME}9-${HASH}-${HASH}
 
 MAINTAINER=	mat@FreeBSD.org
 .if defined(BIND_TOOLS_SLAVE)
@@ -31,10 +31,10 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.0a0.2018.02.10
-HASH=		313e733
+ISCVERSION=	9.13.0a0.2018.02.19
+HASH=		2a50992ab3f9762912e2d4c3f76ab50f213225ed
 
-USES=	cpe libedit
+USES=	cpe libedit tar:bz2
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}

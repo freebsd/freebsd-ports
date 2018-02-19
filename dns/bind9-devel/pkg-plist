@@ -191,7 +191,6 @@ include/isc/netdb.h
 include/isc/netscope.h
 include/isc/offset.h
 include/isc/once.h
-include/isc/ondestroy.h
 include/isc/os.h
 include/isc/parseint.h
 include/isc/platform.h
