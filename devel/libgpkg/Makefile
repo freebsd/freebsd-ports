@@ -25,8 +25,7 @@ USES=		cmake tar:bzip2
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/luciad-libgpkg-c56e3708453e
 
-GEOS_CMAKE_OFF=		-DGPKG_GEOS=OFF
-GEOS_CMAKE_ON=		-DGPKG_GEOS=ON
+GEOS_CMAKE_BOOL=	GPKG_GEOS
 GEOS_LIB_DEPENDS=	libgeos_c.so:graphics/geos
 
 post-install:
