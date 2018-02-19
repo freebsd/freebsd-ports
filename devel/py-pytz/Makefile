@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytz
-PORTVERSION=	2017.3
+PORTVERSION=	2018.3
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -13,7 +13,7 @@ COMMENT=	World Timezone Definitions for Python
 
 LICENSE=	MIT
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
