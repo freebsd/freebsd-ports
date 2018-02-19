@@ -12,6 +12,9 @@ COMMENT=	Programmable completion library for Bash
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=	fails to build: gmake: install-recursive: Error 1
+BROKEN_armv7=	fails to build: gmake: install-recursive: Error 1
+
 RUN_DEPENDS=	bash:shells/bash
 
 OPTIONS_DEFINE=	CMAKE_MODULES DOCS
