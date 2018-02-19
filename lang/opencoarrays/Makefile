@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencoarrays
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.9.3
 CATEGORIES=	lang parallel
 
 MAINTAINER=	as@cmplx.uk
@@ -15,14 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
+PLIST_SUB=	GCC_VER=${_GCC_VER}
+USES=		cmake:outsource fortran
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	sourceryinstitute
 GH_PROJECT=	OpenCoarrays
-
-USES=		cmake:outsource fortran shebangfix
-PLIST_SUB=	GCC_VER=${_GCC_VER}
-SHEBANG_FILES=	src/extensions/caf-head \
-		src/extensions/cafrun-head
 
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI OPENMPI2
@@ -31,6 +29,7 @@ OPTIONS_DEFAULT=	MPICH
 MPICH_DESC=		Parallel processing support via MPICH
 MPICH_BUILD_DEPENDS=	mpif90:net/mpich
 MPICH_RUN_DEPENDS=	mpif90:net/mpich
+MPICH_CONFIGURE_ENV=	MPI_HOME=${LOCALBASE}
 
 OPENMPI_BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpif90:net/openmpi
 OPENMPI_RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpif90:net/openmpi
@@ -48,8 +47,8 @@ IGNORE=		requires GCC 5 or higher.  Add DEFAULT_VERSIONS+=gcc=5 to /etc/make.con
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} '/mod_install/s/$${CMAKE_Fortran_COMPILER_VERSION}/${_GCC_VER}/' \
-		${WRKSRC}/src/mpi/CMakeLists.txt
+	@${REINPLACE_CMD} '/mod_dir_tail/s/$${CMAKE_Fortran_COMPILER_VERSION}/${_GCC_VER}/' \
+		${WRKSRC}/CMakeLists.txt
 
 do-test:
 	(cd ${TEST_WRKSRC} && ctest)

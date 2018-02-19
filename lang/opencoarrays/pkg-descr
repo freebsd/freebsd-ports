@@ -1,5 +1,5 @@
-OpenCoarrays is an open-source software project that supports the coarray
-Fortran (CAF) parallel programming features of the Fortran 2008 standard
-and several features proposed for Fortran 2015.
+OpenCoarrays is a BSD licensed open source project that produces
+an ABI for GCC Fortran front-end to build programs that leverage
+the parallel programming features of Fortran 2018.
 
 WWW: http://www.opencoarrays.org/
