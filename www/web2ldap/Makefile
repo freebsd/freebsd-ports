@@ -3,6 +3,7 @@
 
 PORTNAME=	web2ldap
 PORTVERSION=	1.2.94
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		http://www.sfr-fresh.com/unix/www/
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.0:net/py-ldap@${PY_FLAVOR} \
 		${LOCALBASE}/etc/mime.types:misc/mime-support
 
 OPTIONS_DEFINE=	DOCS
-USES=		cpe python:2 shebangfix
+USES=		cpe python:2.7 shebangfix
 python_OLD_CMD=	/usr/bin/python2.7
 SHEBANG_FILES=	sbin/*.py fcgi/*.py
 SUB_FILES=	pkg-message

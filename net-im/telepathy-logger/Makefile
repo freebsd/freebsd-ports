@@ -16,7 +16,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib
 
-USES=		gettext-tools gmake libtool pathfix pkgconfig python:2,build \
+USES=		gettext-tools gmake libtool pathfix pkgconfig python:2.7,build \
 		sqlite tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

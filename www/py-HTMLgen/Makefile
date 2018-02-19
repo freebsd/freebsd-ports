@@ -3,7 +3,7 @@
 
 PORTNAME=	HTMLgen
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	LOCAL/dryice \
 		http://dryice.name/computer/FreeBSD/distfiles/ \
@@ -14,7 +14,7 @@ DISTNAME=	HTMLgen
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python library for the generation of HTML documents
 
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 USE_PYTHON=	flavors
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	bzr
 PORTVERSION=	20110228
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://schema.filez.com/distfiles/
 PKGNAMEPREFIX=	trac-
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	tracd:www/trac \
 		bzr:devel/bzr
 
-USES=		python:2 tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

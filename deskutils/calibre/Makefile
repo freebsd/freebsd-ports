@@ -3,6 +3,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	3.17.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -48,7 +49,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		pdftohtml:graphics/poppler-utils
 
 USES=		desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig \
-		python:2 pyqt:5 shared-mime-info shebangfix ssl tar:xz
+		python:2.7 pyqt:5 shared-mime-info shebangfix ssl tar:xz
 USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 SHEBANG_GLOB=	*.sh *.py

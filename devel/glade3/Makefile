@@ -3,6 +3,7 @@
 
 PORTNAME=	glade3
 PORTVERSION=	3.8.5
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -38,7 +39,7 @@ GNOME_CONFIGURE_ENABLE=	gnome
 GNOME_USE=	GNOME=libgnomeui
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_USE=	GNOME=pygtk2
-PYTHON_USES=	python:2
+PYTHON_USES=	python:2.7
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/glade3/bindings

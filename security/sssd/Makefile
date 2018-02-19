@@ -3,7 +3,7 @@
 
 PORTNAME=	sssd
 PORTVERSION=	1.11.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
@@ -53,11 +53,11 @@ SUB_FILES=	pkg-message
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 USES=		autoreconf cpe gettext gmake iconv libtool pathfix pkgconfig \
-		python:2 shebangfix gssapi:mit
+		python:2.7 shebangfix gssapi:mit
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
 
-python_CMD=	${SETENV} python2
+python_CMD=	${SETENV} ${PYTHON_VERSION}
 SHEBANG_FILES=	src/tools/sss_obfuscate \
 		src/sbus/sbus_codegen
 

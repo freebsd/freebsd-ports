@@ -2,6 +2,7 @@
 
 PORTNAME=	libosmocore
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmocore/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
@@ -15,12 +16,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
 		libtalloc.so:devel/talloc
 
-USES=		alias autoreconf gmake libtool pathfix pkgconfig python:2
+USES=		alias autoreconf gmake libtool pathfix pkgconfig python:2.7 shebangfix
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lexecinfo
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 PORTDOCS=	*
+SHEBANG_FILES=	utils/conv_codes_gsm.py utils/conv_gen.py
+python_OLD_CMD=	/usr/bin/python2
 
 OPTIONS_DEFINE=	DOXYGEN
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
@@ -31,5 +34,9 @@ post-patch:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
 	@${REINPLACE_CMD} -e '/#pragma GCC diagnostic/d' \
 		${WRKSRC}/src/application.c
+	${REINPLACE_CMD} -e 's/python2/${PYTHON_VERSION}/' \
+		${WRKSRC}/include/Makefile.am \
+		${WRKSRC}/src/gsm/Makefile.am \
+		${WRKSRC}/tests/Makefile.am
 
 .include <bsd.port.mk>

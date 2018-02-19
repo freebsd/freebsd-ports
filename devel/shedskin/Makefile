@@ -3,6 +3,7 @@
 
 PORTNAME=	shedskin
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgc.so:devel/boehm-gc \
 
 USE_GITHUB=	yes
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

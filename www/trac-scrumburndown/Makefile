@@ -3,7 +3,7 @@
 
 PORTNAME=	scrumburndown
 PORTVERSION=	1.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
@@ -18,7 +18,7 @@ RUN_DEPENDS=	tracd:www/trac \
 		trac-timingandestimation>=0:www/trac-timingandestimation
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

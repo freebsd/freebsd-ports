@@ -3,7 +3,7 @@
 
 PORTNAME=	tags
 DISTVERSION=	0.7.r${SVN_REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
@@ -14,7 +14,7 @@ COMMENT=	Generic tags frontend for trac
 
 RUN_DEPENDS=	tracd:www/trac
 
-USES=		python:2 tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

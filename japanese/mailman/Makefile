@@ -3,7 +3,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1.14.j7
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.python.jp/doc/contrib/mailman/_static/ \
@@ -21,7 +21,7 @@ CONFLICTS=	mailman-2.1.*
 
 PORTSCOUT=	limit:.*\.j\d+$$
 
-USES=		autoreconf gettext python:2 tar:tgz
+USES=		autoreconf gettext python:2.7 tar:tgz
 USE_RC_SUBR=	mailman
 
 GNU_CONFIGURE=	yes

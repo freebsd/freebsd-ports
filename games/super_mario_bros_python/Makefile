@@ -3,7 +3,7 @@
 
 PORTNAME=	super_mario_bros_python
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games python
 MASTER_SITES=	SF/supermariobrosp/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/Super-Mario-Bros-Python-v${DISTVERSION}release
 
-USES=		shebangfix python:2 zip
+USES=		shebangfix python:2.7 zip
 SHEBANG_FILES=	gamelib/*.py start.py
 
 PORTDOCS=	changelog.txt readme.txt

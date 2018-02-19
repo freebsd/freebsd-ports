@@ -1,0 +1,11 @@
+--- configure.orig	2018-02-11 22:32:42 UTC
++++ configure
+@@ -18702,7 +18702,7 @@ FOUND_PYTHON=no
+ PYTHON_CXXFLAGS=""
+ PYTHON_LIBS=""
+ 
+-PYTHON_binchk="python python2 python2.2 python2.3 python2.4"
++PYTHON_binchk="python python2 python2.2 python2.3 python2.4 python2.7"
+ for i in ${PYTHON_binchk};
+ do
+     PYTHON_check=`$i -V 2>/dev/null; echo $?`

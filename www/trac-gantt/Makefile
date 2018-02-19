@@ -3,7 +3,7 @@
 
 PORTNAME=	TracGantt
 PORTVERSION=	0.3.2a
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www devel python
 MASTER_SITES=	http://willbarton.com/files/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	trac>=0.11:www/trac
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	bitmath
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Represent and manipulate file sizes with different prefix notations
 
 LICENSE=	MIT
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-4

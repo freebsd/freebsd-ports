@@ -3,7 +3,7 @@
 
 PORTNAME=	pgtune
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2449/ \
 		https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
@@ -14,7 +14,7 @@ COMMENT=	Postgresql.conf tuning tips based on hardware and load type
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		python:2,run shebangfix
+USES=		python:2.7,run shebangfix
 SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes

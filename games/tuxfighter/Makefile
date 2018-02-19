@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxfighter
 PORTVERSION=	54
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games python
 MASTER_SITES=	SF/pygamebook/TuxFighter/TuxFighter${PORTVERSION}_source/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}
 
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	TuxFighter54.py
 
 PORTDOCS=	readme_TuxFighter54.txt

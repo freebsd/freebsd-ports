@@ -2,7 +2,7 @@
 
 PORTNAME=	link-grammar
 PORTVERSION=	5.3.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
@@ -48,7 +48,7 @@ PERL_LDFLAGS=			-L${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE -lperl
 PERL_USES=			perl5
 
 PYTHON_CONFIGURE_ENABLE=	python-bindings
-PYTHON_USES=			python:2
+PYTHON_USES=			python:2.7
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

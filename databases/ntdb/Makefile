@@ -2,7 +2,7 @@
 
 PORTNAME=		ntdb
 PORTVERSION=		1.0
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA/tdb
@@ -35,7 +35,7 @@ MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 .if defined(NO_PYTHON)
 CONFIGURE_ARGS+=	--disable-python
 .else
-USES+=			python:2
+USES+=			python:2.7
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/ntdb.so
 .endif
 

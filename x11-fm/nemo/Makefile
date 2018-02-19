@@ -3,6 +3,7 @@
 
 PORTNAME=	nemo
 PORTVERSION=	2.4.5
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 DIST_SUBDIR=	gnome3
 
@@ -22,7 +23,7 @@ RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 USES=		autoreconf:build desktop-file-utils gettext gmake libtool pathfix \
-		pkgconfig python:2 shared-mime-info
+		pkgconfig python:2.7 shared-mime-info
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack introspection:build \
 		libxml2 pygobject3
 USE_GITHUB=	yes

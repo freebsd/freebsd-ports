@@ -3,6 +3,7 @@
 
 PORTNAME=	mt
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/PyMT-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Python module which provides Movable Type XML-RPC connectivity
 
 LICENSE=	PSFL  # says License: python
 
-USES=		python:2
+USES=		python:2.7
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	jabberbot
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	SF/pythonjabberbot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xmpppy>0:net-im/py-xmpppy@${FLAVOR}
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-patch:

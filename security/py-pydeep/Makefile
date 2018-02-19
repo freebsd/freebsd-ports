@@ -3,6 +3,7 @@
 
 PORTNAME=	pydeep
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libfuzzy.so:security/ssdeep
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-patch:

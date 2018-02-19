@@ -3,7 +3,7 @@
 
 PORTNAME=	openshot
 PORTVERSION=	1.4.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://launchpad.net/openshot/${PORTVERSION:C/\.[0-9]+$//}/${PORTVERSION}/+download/
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
-USES=		desktop-file-utils gettext python:2 shared-mime-info
+USES=		desktop-file-utils gettext python:2.7 shared-mime-info
 INSTALLS_OMF=	yes
 
 post-patch:

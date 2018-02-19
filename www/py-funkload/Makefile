@@ -3,6 +3,7 @@
 
 PORTNAME=	funkload
 PORTVERSION=	1.17.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webunit>=1.3.8:www/py-webunit@${FLAVOR} \
 		tcpwatch.py:net/tcpwatch
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

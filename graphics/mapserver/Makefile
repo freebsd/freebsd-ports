@@ -3,6 +3,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		7.0.7
+PORTREVISION=	1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -43,7 +44,7 @@ WCS_DESC=		WCS Server support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES+=			python:2
+USES+=			python:2.7
 BUILD_DEPENDS+=		swig3.0:devel/swig30
 BINARY_ALIAS=		swig=swig3.0
 CMAKE_ARGS+=		-DWITH_PYTHON=yes

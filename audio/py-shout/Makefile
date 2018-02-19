@@ -3,7 +3,7 @@
 
 PORTNAME=	shout
 PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio python
 MASTER_SITES=	http://downloads.us.xiph.org/releases/libshout/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libshout.so:audio/libshout
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		pkgconfig python:2 shebangfix
+USES=		pkgconfig python:2.7 shebangfix
 SHEBANG_FILES=	example.py
 USE_PYTHON=	autoplist distutils
 

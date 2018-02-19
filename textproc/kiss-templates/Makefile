@@ -31,7 +31,7 @@ USES=			cmake
 OPTIONS_DEFINE=		TEST
 TEST_DESC=		Build with unit tests
 TEST_BUILD_DEPENDS=	boost-libs>=1.55:devel/boost-libs
-TEST_USES=		python:2,build,test shebangfix
+TEST_USES=		python:2.7,build,test shebangfix
 TEST_TEST_TARGET=	test
 SHEBANG_FILES=		tests/comparison-based/generate.py tests/differ.py
 

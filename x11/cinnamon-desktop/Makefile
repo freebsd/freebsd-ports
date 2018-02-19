@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-desktop
 PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome3
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	xkeyboard-config>=0:x11/xkeyboard-config \
 
 USE_XORG=	x11 xrandr xext
 USES=		autoreconf gettext gmake libtool localbase:ldflags pathfix \
-		pkgconfig python:2,run shebangfix tar:xz
+		pkgconfig python:2.7,run shebangfix tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build

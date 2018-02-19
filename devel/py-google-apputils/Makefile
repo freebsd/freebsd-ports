@@ -3,7 +3,7 @@
 
 PORTNAME=	google-apputils
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-gflags>2:devel/py-python-gflags@${FLA
 		${PYTHON_PKGNAMEPREFIX}dateutil>2:devel/py-dateutil@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

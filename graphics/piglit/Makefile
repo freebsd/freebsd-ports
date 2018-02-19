@@ -3,6 +3,7 @@
 
 PORTNAME=	piglit
 PORTVERSION=	20170922
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -29,7 +30,7 @@ GH_ACCOUNT=	dumbbell
 GH_PROJECT=	piglit
 GH_TAGNAME=	60996b829c85f3df192bc6228108c0a8eaa38afd
 
-USES=		cmake:outsource compiler:c11 pkgconfig python:2
+USES=		cmake:outsource compiler:c11 pkgconfig python:2.7
 USE_GL=		egl gbm gl glu
 USE_XORG=	x11 xcb xext xrender
 

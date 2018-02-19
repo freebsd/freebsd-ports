@@ -3,7 +3,7 @@
 
 PORTNAME=	denyhosts
 PORTVERSION=	2.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	DenyHosts-${PORTVERSION}
@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	DOCS
 REINPLACE_ARGS=	-i ''
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	denyhosts
-USES=		cpe python:2 shebangfix
+USES=		cpe python:2.7 shebangfix
 CPE_VENDOR=	phil_schwartz
 
 PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt

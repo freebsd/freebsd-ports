@@ -3,7 +3,7 @@
 
 PORTNAME=	queequeg
 PORTVERSION=	0.91
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	wn:textproc/wordnet \
 		${PYTHON_SITELIBDIR}/cdbmodule.so:databases/py-cdb
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:databases/py-cdb
 
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	*.py misc/*.py qq
 ALL_TARGET=	dict
 MAKE_ARGS=	WORDNETDICT="${LOCALBASE}/share/WordNet" \

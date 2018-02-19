@@ -3,7 +3,7 @@
 
 PORTNAME=	freevo
 PORTVERSION=	1.9.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/Freevo%20releases/${PORTVERSION}
 
@@ -39,7 +39,7 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD} \
 SUB_FILES=	pkg-message pkg-deinstall
 
 NO_ARCH=	yes
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils noegginfo
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_SETUP=	${PYSETUP}

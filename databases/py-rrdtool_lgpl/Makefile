@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool_lgpl
 PORTVERSION=	1.0b1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases python
 MASTER_SITES=	SF/py-rrdtool/py-rrdtool/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	librrd.so:databases/rrdtool
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 LIBDIR?=	${LOCALBASE}/lib # directory where librrd.so lives

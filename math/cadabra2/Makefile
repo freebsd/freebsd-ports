@@ -2,7 +2,7 @@
 
 PORTNAME=	cadabra2
 DISTVERSION=	2.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sympy/__init__.py:math/py-sympy@${PY_FLAVOR} \
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=GUI
 
-USES=		compiler:c++14-lang cmake gettext-runtime pkgconfig python:2 sqlite
+USES=		compiler:c++14-lang cmake gettext-runtime pkgconfig python:2.7 sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	kpeeters
 GUI_USE=	GNOME=gtkmm30,gdkpixbuf2

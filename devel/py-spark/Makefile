@@ -3,7 +3,7 @@
 
 PORTNAME=	spark
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://pages.cpsc.ucalgary.ca/~aycock/spark/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scanning, Parsing, and Rewriting Kit
 
-USES=		python:2
+USES=		python:2.7
 NO_BUILD=	yes
 NO_ARCH=	yes
 

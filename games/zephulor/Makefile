@@ -3,7 +3,7 @@
 
 PORTNAME=	zephulor
 PORTVERSION=	1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF/apz/apz/stable/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYGAME} \
 
 WRKSRC=		${WRKDIR}/zephulor-source
 
-USES=		python:2
+USES=		python:2.7
 NO_BUILD=	yes
 
 PORTDOCS=	*

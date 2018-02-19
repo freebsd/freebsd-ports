@@ -3,7 +3,7 @@
 
 PORTNAME=	prewikka
 PORTVERSION=	1.0.1p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security python
 MASTER_SITES=	https://www.prelude-ids.org/attachments/download/286/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	cheetah-compile:devel/py-cheetah
 LIB_DEPENDS=	libprelude.so:security/libprelude \
 		libpreludedb.so:security/libpreludedb
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	NLS

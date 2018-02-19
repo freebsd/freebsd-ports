@@ -3,7 +3,7 @@
 
 PORTNAME=	rhodecode
 PORTVERSION=	1.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,7 +38,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:www/py-pylons@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}celery>=0:devel/py-celery@${FLAVOR} \
 		mercurial>=2.6:devel/mercurial
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 USE_RC_SUBR=		rhodecode

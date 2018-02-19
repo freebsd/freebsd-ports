@@ -3,7 +3,7 @@
 
 PORTNAME=	wotsap
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lysator.liu.se/~jc/wotsap/download/
 EXTRACT_SUFX=	.tgz
@@ -13,7 +13,7 @@ COMMENT=	Web of trust statistics and pathfinder
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 
-USES=		python:2,run shebangfix
+USES=		python:2.7,run shebangfix
 NO_BUILD=	yes
 SHEBANG_FILES=	wotsap pks2wot
 

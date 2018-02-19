@@ -3,7 +3,7 @@
 
 PORTNAME=	unknown-horizons
 PORTVERSION=	2013.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GITHUB=	yes
 
 USE_GNOME=	intltool
-USES=		gettext-tools python:2 tar:xz
+USES=		gettext-tools python:2.7 tar:xz
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	UnknownHorizons
 

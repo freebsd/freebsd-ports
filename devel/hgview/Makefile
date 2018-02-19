@@ -3,6 +3,7 @@
 
 PORTNAME=	hgview
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP \
 		http://download.logilab.org/pub/${PORTNAME}/
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	hg:devel/mercurial \
 		asciidoc:textproc/asciidoc
 
 NO_ARCH=	yes
-USES=		gmake pyqt:4 python:2
+USES=		gmake pyqt:4 python:2.7
 USE_PYQT=	gui_run qscintilla2_run
 USE_PYTHON=	distutils
 PORTDOCS=	*

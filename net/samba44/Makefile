@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}44
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--mandir="${MANPREFIX}/man" \
 # Flags
 CONFIGURE_ENV+=		PTHREAD_LDFLAGS="-lpthread"
 
-USES=			cpe compiler waf pkgconfig perl5 python:2 \
+USES=			cpe compiler waf pkgconfig perl5 python:2.7 \
 			readline iconv shebangfix
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}

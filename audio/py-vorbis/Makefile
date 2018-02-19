@@ -3,7 +3,7 @@
 
 PORTNAME=	vorbis
 PORTVERSION=	1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio python
 MASTER_SITES=	http://ekyo.nerim.net/software/pyogg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:audio/py-ogg@${FLAVOR}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:audio/py-ogg@${FLAVOR}
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-patch:

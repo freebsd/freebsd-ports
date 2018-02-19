@@ -3,7 +3,7 @@
 
 PORTNAME=	childtickets
 PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://schema.filez.com/distfiles/
 PKGNAMEPREFIX=	trac-
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	trac>=0.12:www/trac
 
-USES=		python:2 zip
+USES=		python:2.7 zip
 
 WRKSRC=		${WRKDIR}/childticketsplugin/0.12
 

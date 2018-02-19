@@ -3,7 +3,7 @@
 
 PORTNAME=	dissy
 PORTVERSION=	10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	sbz@FreeBSD.org
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:www/py-webkitgtk@${FLAVOR}
 LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	SimonKagstrom

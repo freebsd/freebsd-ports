@@ -3,7 +3,7 @@
 
 PORTNAME=	symeig
 PORTVERSION=	1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math python
 MASTER_SITES=	SF/mdp-toolkit/mdp-toolkit/2.4
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYNUMPY}
 
-USES=		fortran python:2
+USES=		fortran python:2.7
 USE_PYTHON=	distutils autoplist
 
 LDFLAGS+=	-shared

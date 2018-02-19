@@ -3,7 +3,7 @@
 
 PORTNAME=	grouch
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.mems-exchange.org/software/files/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ COMMENT=	System for describing and enforcing a Python object schema
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	*

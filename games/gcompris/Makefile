@@ -3,6 +3,7 @@
 
 PORTNAME=	gcompris
 PORTVERSION=	15.10
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://gcompris.net/download/
 
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 		gnucap:cad/gnucap
 
 USES=		display:configure gettext gmake libtool localbase pathfix \
-		pkgconfig python:2 shebangfix sqlite tar:bzip2
+		pkgconfig python:2.7 shebangfix sqlite tar:bzip2
 SHEBANG_FILES=	boards/voices/*.sh
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes

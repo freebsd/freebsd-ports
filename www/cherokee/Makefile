@@ -4,7 +4,7 @@
 PORTNAME=	cherokee
 PORTVERSION=	1.2.104
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -58,8 +58,8 @@ OPTIONS_DEFAULT=	ADMIN GEOIP
 OPTIONS_SUB=		yes
 
 ADMIN_DESC=		Build the Admin Interface
-ADMIN_USES=		python:2
-ADMIN_USES_OFF=		python:2,build 
+ADMIN_USES=		python:2.7
+ADMIN_USES_OFF=		python:2.7,build 
 ADMIN_CONFIGURE_OFF=	--disable-admin
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ON=	--with-ffmpeg=yes

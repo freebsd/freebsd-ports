@@ -4,7 +4,7 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	2.6.4
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME:S/2$//}/${PORTVERSION:C/..$//}
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -38,7 +38,7 @@ OPTIONS_DEFAULT=PYTHON
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2
+USES+=		python:2.7
 PLIST_SUB+=	PYTHON=""
 .else
 PLIST_SUB+=	PYTHON="@comment "

@@ -3,7 +3,7 @@
 
 PORTNAME=	yolk
 PORTVERSION=	0.4.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Command-line tool for querying PyPI and Python packages installed
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	EXAMPLES

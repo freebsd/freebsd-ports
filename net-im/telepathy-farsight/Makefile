@@ -4,7 +4,7 @@
 
 PORTNAME=	telepathy-farsight
 PORTVERSION=	0.0.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libgstfarsight-0.10.so:net-im/farsight2
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig python:2
+USES=		gmake libtool pathfix pkgconfig python:2.7
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 libxslt:build
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -3,6 +3,7 @@
 
 PORTNAME=	meld
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://entrian.com/PyMeld/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ COMMENT=	System for manipulating HTML using a Pythonic object model
 
 LICENSE=	MIT
 
-USES=		python:2
+USES=		python:2.7
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/PyMeld.py \
 		%%PYTHON_SITELIBDIR%%/PyMeld.pyc \

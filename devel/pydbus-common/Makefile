@@ -3,7 +3,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	1.2.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX?=	py
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 INSTALL_TARGET=	install-strip
 
 .if ${SLAVE_PORT} == no
-USES+=		python:2,build
+USES+=		python:2.7,build
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

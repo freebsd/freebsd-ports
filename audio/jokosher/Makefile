@@ -2,7 +2,7 @@
 
 PORTNAME=	jokosher
 PORTVERSION=	0.11.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpadlibrarian.net/43860543/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
 
-USES=		desktop-file-utils python:2 shared-mime-info
+USES=		desktop-file-utils python:2.7 shared-mime-info
 USE_PYTHON=	distutils
 USE_GSTREAMER=	gnonlin good python
 INSTALLS_ICONS=	yes

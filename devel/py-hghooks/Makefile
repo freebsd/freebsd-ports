@@ -3,6 +3,7 @@
 
 PORTNAME=	hghooks
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Set of Mercurial hooks
 
 LICENSE=	LGPL3
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

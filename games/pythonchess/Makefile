@@ -3,6 +3,7 @@
 
 PORTNAME=	pythonchess
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://sites.google.com/site/purplesaguaroinc/myfiles/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -21,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVO
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/p/P/:S/c/C/}
 
-USES=		dos2unix python:2 zip
+USES=		dos2unix python:2.7 zip
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
 
 SUB_FILES=	${PORTNAME}

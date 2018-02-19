@@ -4,7 +4,7 @@
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME/sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo@${PY_FL
 
 PORTSCOUT=	ignore:1
 
-USES=		gmake libtool pathfix pkgconfig python:2 tar:xz shebangfix
+USES=		gmake libtool pathfix pkgconfig python:2.7 tar:xz shebangfix
 USE_GNOME=	glib20 introspection:build,run
 USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes

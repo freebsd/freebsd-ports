@@ -3,7 +3,7 @@
 
 PORTNAME=	musicbrainz2
 PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
 		http://ftp.osuosl.org/pub/musicbrainz/python-musicbrainz2/
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libdiscid.so:audio/libdiscid
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	python-musicbrainz2
 

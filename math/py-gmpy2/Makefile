@@ -3,6 +3,7 @@
 
 PORTNAME=	gmpy2
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr
 
-USES=		python:2 zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
 post-install:

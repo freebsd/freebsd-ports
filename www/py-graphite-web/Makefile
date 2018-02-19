@@ -3,7 +3,7 @@
 
 PORTNAME=	graphite-web
 PORTVERSION=	0.9.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:graphics/py-cairo@${FLAVOR} \
 		xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype
 
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
-USES=		cpe python:2
+USES=		cpe python:2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	graphite-project
 CPE_VENDOR=	graphite_project

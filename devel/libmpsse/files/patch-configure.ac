@@ -6,7 +6,7 @@
  
 +	if ! test $PYEXE
 +  	then
-+    		PYEXE=$(which python2)
++    		PYEXE=$(which python2.7)
 +    		if ! test ${PYEXE}
 +    		then
 +      			PYEXE=$(which python)
@@ -16,7 +16,7 @@
 +
 +  	if ! test $PYDEV
 +  	then
-+    		for INCL in $(python2-config --includes)
++    		for INCL in $(python2.7-config --includes)
 +    		do
 +      			echo $INCL
 +      			INCL=$(echo "${INCL}" | sed 's:^-I::g')

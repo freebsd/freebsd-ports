@@ -3,7 +3,7 @@
 
 PORTNAME=	pyside-tools
 PORTVERSION=	0.2.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PySide
 GH_PROJECT=	Tools
 
-USES=		cmake python:2 shebangfix
+USES=		cmake python:2.7 shebangfix
 SHEBANG_FILES=	pyside-uic pysideuic/icon_cache.py
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 

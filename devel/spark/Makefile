@@ -3,6 +3,7 @@
 
 PORTNAME=	spark
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33 \
 RUN_DEPENDS=	bash:shells/bash \
 		yarn:devel/hadoop2
 
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"

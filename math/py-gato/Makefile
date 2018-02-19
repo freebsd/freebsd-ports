@@ -3,6 +3,7 @@
 
 PORTNAME=	gato
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR}
 
 NO_ARCH=	yes
 PORTEXAMPLES=	*
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 post-install:

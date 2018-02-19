@@ -4,7 +4,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.24.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	GNOME/sources/pygtk/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ COMMENT=	Set of Python bindings for GTK+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo@${FLAVOR}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo@${FLAVOR}
 
-USES=		gettext gmake libtool pathfix pkgconfig python:2 tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig python:2.7 tar:bzip2
 USE_GNOME=	libglade2 pygobject
 USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes

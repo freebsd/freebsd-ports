@@ -3,7 +3,7 @@
 
 PORTNAME=	rubber
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://launchpadlibrarian.net/53558954/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 NO_ARCH=	yes
 
-USES=		gmake makeinfo python:2
+USES=		gmake makeinfo python:2.7
 USE_TEX=	latex
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} \

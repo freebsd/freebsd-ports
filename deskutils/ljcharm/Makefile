@@ -3,7 +3,7 @@
 
 PORTNAME=	charm
 PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils net
 MASTER_SITES=	SF/lj${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Menu-driven python-based livejournal client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

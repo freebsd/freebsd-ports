@@ -2,7 +2,7 @@
 
 PORTNAME=	libmpsse
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	devttys0
 GH_TAGNAME=	f1a6744b220d
 
-USES=		autoreconf localbase:ldflags pkgconfig python:2
+USES=		autoreconf localbase:ldflags pkgconfig python:2.7
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SWIG="swig3.0"
 USE_LDCONFIG=	yes

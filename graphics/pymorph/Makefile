@@ -3,7 +3,7 @@
 
 PORTNAME=	pymorph
 PORTVERSION=	0.96
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 
@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS+=	${PYNUMPY}
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	DOCS
 
 USE_GNOME=	glib20 libxslt:build
 USE_GSTREAMER=	yes
-USES=		cmake:outsource gettext pathfix pkgconfig python:2,build
+USES=		cmake:outsource gettext pathfix pkgconfig python:2.7,build
 CMAKE_ARGS=	-DENABLE_EXAMPLES:BOOL=False \
 		-DENABLE_FARSIGHT:BOOL=False \
 		-DENABLE_FARSTREAM:BOOL=True \

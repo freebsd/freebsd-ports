@@ -3,6 +3,7 @@
 
 PORTNAME=	django-extensions
 PORTVERSION=	1.6.7
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
