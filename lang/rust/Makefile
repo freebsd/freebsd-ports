@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.23.0
+PORTVERSION?=	1.24.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		LOCAL/dumbbell/rust:rust_bootstrap \
-		https://dev-static.rust-lang.org/dist/:rust_bootstrap \
+		https://static.rust-lang.org/dist/:rust_bootstrap \
 		LOCAL/dumbbell/rust:cargo_bootstrap \
-		https://dev-static.rust-lang.org/dist/:cargo_bootstrap \
+		https://static.rust-lang.org/dist/:cargo_bootstrap \
 		https://s3.amazonaws.com/rust-lang-ci/cargo-builds/:cargo_bootstrap \
 		LOCAL/marino:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
@@ -42,13 +42,13 @@ ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 #CONFLICTS_BUILD+=	${PKGBASE}
 CONFLICTS_INSTALL?=	rust-nightly
 
-BOOTSTRAPS_DATE?=		2017-11-20
+BOOTSTRAPS_DATE?=		2018-01-04
 
-RUST_BOOTSTRAP_VERSION?=	1.22.1
+RUST_BOOTSTRAP_VERSION?=	1.23.0
 RUSTC_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
-CARGO_BOOTSTRAP_VERSION?=	0.23.0
+CARGO_BOOTSTRAP_VERSION?=	0.24.0
 CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
@@ -343,7 +343,7 @@ do-test:
 
 BOOTSTRAPS_SOURCE_PKG_FBSDVER=		10
 BOOTSTRAPS_SOURCE_PKG_FBSDVER_aarch64=	11
-BOOTSTRAPS_SOURCE_PKG_REV=		_2
+BOOTSTRAPS_SOURCE_PKG_REV=
 BOOTSTRAPS_SOURCE_PKG_URL=	http://pkg.freebsd.org/FreeBSD:${BOOTSTRAPS_SOURCE_PKG_FBSDVER_${ARCH}:U${BOOTSTRAPS_SOURCE_PKG_FBSDVER}}:${ARCH}/latest/All/rust-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}${BOOTSTRAPS_SOURCE_PKG_REV}.txz
 BOOTSTRAPS_SOURCE_PKG=		${_DISTDIR}/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${ARCH}.txz
 
