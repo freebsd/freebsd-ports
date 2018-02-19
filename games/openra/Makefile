@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	openra
-PORTVERSION=	20171014
+PORTVERSION=	20180218
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20161223/:SDL2_CS \
 		https://github.com/${GH_ACCOUNT}/OpenAL-CS/releases/download/20151227/:OpenAL_CS \
@@ -31,7 +30,6 @@ NUGET_DEPENDS=	FuzzyLogicLibrary=1.2.0 \
 		Open.Nat=2.1.0 \
 		SharpFont=4.0.1 \
 		SharpZipLib=0.86.0 \
-		SmartIrc4net=0.4.5.1 \
 		StyleCop.MSBuild=4.7.49.0 \
 		StyleCopPlus.MSBuild=4.7.49.5 \
 		rix0rrr.BeaconLib=1.0.1
@@ -67,7 +65,7 @@ post-patch:
 		-e '/echo/!s/	@/	/' \
 		-e '/^mods:/s/$$/ version/' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e '/[[:<:]]get[[:blank:]]/d' \
+	${REINPLACE_CMD} -e '/noget\.sh/d' \
 			${WRKSRC}/thirdparty/fetch-thirdparty-deps.sh
 	${FIND} -L ${WRKSRC}/thirdparty -name '*.config*' -exec ${REINPLACE_CMD} \
 		-i '.bak.os' -e '/${OPSYS:tl}/d; /linux/{ p; s//${OPSYS:tl}/; }' {} +
