@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-CMAKE_ARGS=	-DBUILD_DOCS=OFF -DWITH_BINLOG=OFF
+CMAKE_OFF=	BUILD_DOCS WITH_BINLOG
 USE_GNOME=	glib20
 USES=		cmake gnome mysql pkgconfig
 
