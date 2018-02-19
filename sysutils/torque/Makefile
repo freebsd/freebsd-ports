@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source distributed computing resource manager based on PBS
 
 BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_FreeBSD_12=	fails to compile: mom_mach.c: variable has incomplete type 'struct vmmeter'
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 USES=		gmake perl5 libtool
