@@ -5900,6 +5900,7 @@
     SUBDIR += sfml1
     SUBDIR += sgb
     SUBDIR += shapelib
+    SUBDIR += shards
     SUBDIR += shedskin
     SUBDIR += shflags
     SUBDIR += shiboken
