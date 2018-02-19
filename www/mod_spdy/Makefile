@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_spdy
 PORTVERSION=	0.9.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~masaki/ports/:mod_spdy \
 		APACHE_HTTPD:apache22
@@ -17,8 +17,7 @@ COMMENT=	SPDY module for the Apache HTTP server v2.2
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	python:lang/python \
-		greadlink:sysutils/coreutils \
+BUILD_DEPENDS=	greadlink:sysutils/coreutils \
 		flock:sysutils/flock \
 		svn:devel/subversion \
 		curl:ftp/curl \
@@ -26,8 +25,9 @@ BUILD_DEPENDS=	python:lang/python \
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_APACHE=	22
-USES=		compiler gmake python:2 ssl tar:xz
+USES=		compiler gmake python:2.7 ssl tar:xz
 REINPLACE_ARGS=	-i ""
+BINARY_ALIAS=	python=${PYTHON_CMD}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_spdy/src
 CFLAGS+=	-fno-stack-protector -Wno-unknown-warning-option -Wno-c++11-extensions -I${OPENSSLINC}
