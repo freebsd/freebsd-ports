@@ -109,8 +109,6 @@ share/trueos/handbook/_sources/helpsupport.rst.txt
 share/trueos/handbook/_sources/install.rst.txt
 share/trueos/handbook/_sources/introducing.rst.txt
 share/trueos/handbook/_sources/pico.rst.txt
-share/trueos/handbook/_sources/postinstallrst..txt
-share/trueos/handbook/_sources/preinstall.rst.txt
 share/trueos/handbook/_sources/trueos.rst.txt
 share/trueos/handbook/_sources/using.rst.txt
 share/trueos/handbook/_static/ajax-loader.gif
@@ -139,14 +137,14 @@ share/trueos/handbook/_static/fonts/fontawesome-webfont.svg
 share/trueos/handbook/_static/fonts/fontawesome-webfont.ttf
 share/trueos/handbook/_static/fonts/fontawesome-webfont.woff
 share/trueos/handbook/_static/fonts/fontawesome-webfont.woff2
-share/trueos/handbook/_static/freenas2.png
+share/trueos/handbook/_static/FreeNAS_Certified_Ad.png
 share/trueos/handbook/_static/information-icon.png
 share/trueos/handbook/_static/jquery-3.1.0.js
 share/trueos/handbook/_static/jquery.js
 share/trueos/handbook/_static/js/modernizr.min.js
 share/trueos/handbook/_static/js/theme.js
 share/trueos/handbook/_static/minus.png
-share/trueos/handbook/_static/newegg.jpg
+share/trueos/handbook/_static/TrueNAS_Ad.jpg
 share/trueos/handbook/_static/plus.png
 share/trueos/handbook/_static/pygments.css
 share/trueos/handbook/_static/searchtools.js
