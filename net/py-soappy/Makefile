@@ -3,6 +3,7 @@
 
 PORTNAME=	soappy
 PORTVERSION=	0.12.22
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wstools>0:textproc/py-wstools@${FLAVOR}
 
-USES=		python:2 zip
+USES=		python:2.7 zip
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py*-soappy-devel-0.12.*

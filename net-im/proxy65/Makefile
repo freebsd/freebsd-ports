@@ -2,7 +2,7 @@
 
 PORTNAME=	proxy65
 PORTVERSION=	1.2.0.20150210
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	mm@FreeBSD.org
@@ -28,7 +28,7 @@ JABBERD_DESC=   Use with jabberd 2.x (net-im/jabberd)
 EJABBERD_DESC=  Use with ejabberd (net-im/ejabberd)
 
 USE_PYTHON=	distutils autoplist
-USES=		python:2
+USES=		python:2.7
 USE_RC_SUBR=	proxy65
 
 PORTDOCS=	README

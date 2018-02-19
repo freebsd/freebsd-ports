@@ -3,7 +3,7 @@
 
 PORTNAME=	TracSpamFilter
 PORTVERSION=	0.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www devel python
 MASTER_SITES=	http://zhoushuqun.com/files/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -16,7 +16,7 @@ RUN_DEPENDS=	tracd:www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}dev
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

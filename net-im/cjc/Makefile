@@ -3,6 +3,7 @@
 
 PORTNAME=	cjc
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	GHC
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=0:net-im/py-pyxmpp@${PY_FLAVOR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jajcus
 
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	cjc.in cjc.py cjc/main.py
 NO_ARCH=	yes
 

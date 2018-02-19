@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:devel/py-lxml@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stopit>=1.1.0:devel/py-stopit@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=2.1.1:textproc/py-chardet@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tblib>=0.2.0:devel/py-tblib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pdfminer=20140328:textproc/py-pdfminer@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pdfminer>=20140328:textproc/py-pdfminer@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}futures>=2.1.5:devel/py-futures@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>=0.3.3:net/py-ndg_httpsclient@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.3:devel/py-pyasn1@${FLAVOR} \

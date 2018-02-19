@@ -3,7 +3,7 @@
 
 PORTNAME=	hellanzb
 PORTVERSION=	0.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news
 MASTER_SITES=	http://www.hellanzb.com/distfiles/
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	par2:archivers/par2cmdline \
 		mac:audio/mac
 
 USE_PYTHON=	distutils
-USES=		python:2
+USES=		python:2.7
 PORTDOCS=	CHANGELOG CREDITS README
 NO_ARCH=	yes
 

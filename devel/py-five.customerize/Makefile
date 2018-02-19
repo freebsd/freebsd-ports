@@ -2,7 +2,7 @@
 
 PORTNAME=	five.customerize
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +30,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.portlets>=0:www/py-plone.portlets@${FL
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:devel/py-Acquisition@${FLAVOR}
 
 USE_PYTHON=	distutils autoplist
-USES=		python:2 zope zip
+USES=		python:2.7 zope zip
 
 .include <bsd.port.mk>

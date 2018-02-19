@@ -3,6 +3,7 @@
 
 PORTNAME=	hfst
 PORTVERSION=	3.13.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	demon@FreeBSD.org
@@ -13,7 +14,7 @@ BROKEN=		fails to build
 USE_GITHUB=	yes
 GH_TAGNAME=	c187d5a
 
-USES=		autoreconf libtool pathfix pkgconfig python:2 readline shebangfix
+USES=		autoreconf libtool pathfix pkgconfig python:2.7 readline shebangfix
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline --enable-lexc-wrapper --enable-proc --enable-tagger --enable-train-tagger --enable-xfst --enable-shuffle --enable-traverse

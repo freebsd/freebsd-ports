@@ -3,7 +3,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	3.18.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -33,7 +33,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake gnome libtool \
-		pathfix pkgconfig python:2 tar:xz
+		pathfix pkgconfig python:2.7 tar:xz
 USE_GNOME=	gtk30 intlhack introspection:build libxml2 nautilus3 \
 		pygobject3
 USE_XORG=	x11 xproto xtst ice sm

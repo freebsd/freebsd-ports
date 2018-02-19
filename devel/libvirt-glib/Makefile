@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt-glib
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
@@ -21,7 +22,7 @@ VALA_BUILD_DEPENDS=	valac:lang/vala
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection
-USES=		gettext gmake libtool pathfix pkgconfig python:2
+USES=		gettext gmake libtool pathfix pkgconfig python:2.7
 USE_LDCONFIG=	yes
 USE_GNOME=	intlhack introspection libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include

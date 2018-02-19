@@ -3,7 +3,7 @@
 
 PORTNAME=	loook
 PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.danielnaber.de/loook/
 DISTNAME=	${PORTNAME}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAV
 
 WRKSRC=		${WRKDIR}
 
-USES=		python:2 zip
+USES=		python:2.7 zip
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}

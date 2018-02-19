@@ -3,7 +3,7 @@
 
 PORTNAME=	archmage
 PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/chm.py:textproc/pychm \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32@${FLAVOR}
 
 NO_BUILD=	yes
-USES=		cpe python:2 tar:bzip2
+USES=		cpe python:2.7 tar:bzip2
 USE_PYTHON=	distutils autoplist
 
 CPE_VENDOR=	archmage_project

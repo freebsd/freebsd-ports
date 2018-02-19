@@ -3,7 +3,7 @@
 
 PORTNAME=	ao
 PORTVERSION=	0.82
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio python
 MASTER_SITES=	http://ekyo.nerim.net/software/pyogg/ \
 		http://www.sourcefiles.org/Programming/Development/Modules/Python/
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libao.so:audio/libao
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 do-configure:

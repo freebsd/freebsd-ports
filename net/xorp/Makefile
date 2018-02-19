@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libpcap.so.1:net/libpcap	# avoid base libpcap
 
-USES=		ncurses scons shebangfix ssl compiler:env python:2,build
+USES=		ncurses scons shebangfix ssl compiler:env python:2.7,build
 USE_GITHUB=	yes
 USE_RC_SUBR=	xorp
 GH_ACCOUNT=	greearb

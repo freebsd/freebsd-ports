@@ -3,7 +3,7 @@
 
 PORTNAME=	instant
 PORTVERSION=	${MMVERSION}.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${MMVERSION}.x/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE=	LGPL3
 
 RUN_DEPENDS=	swig3.0:devel/swig30
 
-USES=			python:2
+USES=			python:2.7
 USE_PYTHON=		distutils
 PYDISTUTILS_PKGNAME=	instant
 

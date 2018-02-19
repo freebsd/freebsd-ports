@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	zip:archivers/zip
 
-USES=		libtool pathfix pkgconfig python:2,build tar:bzip2
+USES=		libtool pathfix pkgconfig python:2.7,build tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XMLTO=":"
 USE_LDCONFIG=	yes

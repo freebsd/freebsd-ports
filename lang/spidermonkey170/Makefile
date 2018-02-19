@@ -17,7 +17,7 @@ LIB_DEPENDS=		libnspr4.so:devel/nspr
 CONFLICTS=		njs-[0-9]*
 
 GNU_CONFIGURE=		yes
-USES=			gmake pathfix perl5 python:2,build
+USES=			gmake pathfix perl5 python:2.7,build
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 

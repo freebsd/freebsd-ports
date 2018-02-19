@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libmhash.so:security/mhash
 
-USES=		autoreconf gmake libtool pkgconfig python:2,build varnish
+USES=		autoreconf gmake libtool pkgconfig python:2.7,build varnish
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip

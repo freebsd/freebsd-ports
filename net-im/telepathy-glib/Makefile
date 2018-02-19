@@ -17,7 +17,7 @@ RUN_DEPENDS=	vapigen:lang/vala
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gmake libtool pathfix pkgconfig python:2,build
+USES=		gmake libtool pathfix pkgconfig python:2.7,build
 USE_GNOME=	glib20 introspection:build libxslt:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

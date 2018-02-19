@@ -3,7 +3,7 @@
 
 PORTNAME=	elasticsearch-dsl-py
 PORTVERSION=	0.0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +18,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${FLAVOR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	elastic
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	zodb
 PORTVERSION=	3.10.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>=0:devel/py-zconfig@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zclockfile>=1.0.0:devel/py-zclockfile@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.event>=1.0.0:devel/py-zope.event@${FLAVOR}
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

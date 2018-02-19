@@ -25,7 +25,7 @@ GH_PROJECT=	qemu
 GH_TAGNAME=	8d5981c
 
 HAS_CONFIGURE=	yes
-USES=		gmake libtool makeinfo pkgconfig python:2,build
+USES=		gmake libtool makeinfo pkgconfig python:2.7,build
 USE_XORG=	pixman
 USE_GNOME+=	glib20
 ONLY_FOR_ARCHS=	amd64

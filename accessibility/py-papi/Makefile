@@ -3,7 +3,7 @@
 
 PORTNAME=	papi
 PORTVERSION=	0.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	accessibility devel python
 MASTER_SITES=	SF/ocemp/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ COMMENT=	ATK accessibility wrapper for python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig python:2
+USES=		pkgconfig python:2.7
 USE_GNOME=	atk
 USE_PYTHON=	autoplist distutils
 

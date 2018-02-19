@@ -3,7 +3,7 @@
 
 PORTNAME=	exiv2
 PORTVERSION=	0.3.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics python
 MASTER_SITES=	https://launchpadlibrarian.net/83595798/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ COMMENT=	Python bindings for exiv2
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2\
 		${PY_BOOST}
 
-USES=		python:2 scons tar:bzip2
+USES=		python:2.7 scons tar:bzip2
 USE_PYTHON=	flavors
 USE_LDCONFIG=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include

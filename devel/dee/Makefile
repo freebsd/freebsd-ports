@@ -3,7 +3,7 @@
 
 PORTNAME=	dee
 PORTVERSION=	1.2.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/151383425/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libicutu.so:devel/icu
 
-USES=		gmake libtool pkgconfig pathfix python:2
+USES=		gmake libtool pkgconfig pathfix python:2.7
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 introspection:build pygobject3
 USE_LDCONFIG=	yes

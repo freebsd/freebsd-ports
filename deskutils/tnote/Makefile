@@ -3,7 +3,7 @@
 
 PORTNAME=	tnote
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
@@ -12,7 +12,7 @@ COMMENT=	Small note taking program for the terminal
 
 LICENSE=	GPLv3
 
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils
 
 SHEBANG_FILES=	tnote

@@ -3,6 +3,7 @@
 
 PORTNAME=	librenms-agent
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kiwi@oav.net
@@ -10,7 +11,7 @@ COMMENT=	Agents and plugins for librenms
 
 LICENSE=	GPLv2
 
-USES=		shebangfix python:2:run php:cli
+USES=		shebangfix python:2.7:run php:cli
 NO_ARCH=	yes
 
 USE_GITHUB=	yes

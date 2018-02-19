@@ -3,7 +3,7 @@
 
 PORTNAME=	pycadia
 PORTVERSION=	0.5.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games python
 MASTER_SITES=	GENTOO \
 		SF/nemysisfreebsdp/games/
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 USE_GNOME=	pygtk2 libgnomeui
 SHEBANG_FILES=	*.py
 NO_ARCH=	yes

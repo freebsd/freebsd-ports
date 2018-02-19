@@ -3,6 +3,7 @@
 
 PORTNAME=	bugzillatools
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Tool for interacting with the Bugzilla bug tracking system
 
 LICENSE=	GPLv3
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

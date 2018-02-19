@@ -2,6 +2,7 @@
 
 PORTNAME=	sk1
 DISTVERSION=	g20171127
+PORTREVISION=	1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycups>0:print/py-pycups@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${FLAVOR}
 
-USES=		desktop-file-utils python:2
+USES=		desktop-file-utils python:2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	sk1project
 GH_PROJECT=	sk1-wx

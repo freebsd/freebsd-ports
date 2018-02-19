@@ -3,7 +3,7 @@
 
 PORTNAME=	bzr
 PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 
@@ -20,7 +20,7 @@ CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root
 
 USE_PYTHON=	distutils cython
 PYDISTUTILS_PKGNAME=	bzr
-USES=		gettext python:2
+USES=		gettext python:2.7
 MAKE_ENV=	BZR_LOG=/dev/null
 
 post-install:

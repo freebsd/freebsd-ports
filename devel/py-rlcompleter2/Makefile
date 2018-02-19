@@ -3,6 +3,7 @@
 
 PORTNAME=	rlcompleter2
 PORTVERSION=	0.98
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Python module for readline interactive completion
 
 LICENSE=	MIT
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

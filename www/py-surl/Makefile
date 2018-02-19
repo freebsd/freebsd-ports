@@ -3,6 +3,7 @@
 
 PORTNAME=	surl
 PORTVERSION=	0.7.1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://launchpadlibrarian.net/96097348/ \
 		http://www.c-s.li/ports/
@@ -13,7 +14,7 @@ COMMENT=	URL shortening command line application
 
 LICENSE=	GPLv3
 
-USES=		python:2 tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils
 
 post-patch:

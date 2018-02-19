@@ -3,7 +3,7 @@
 
 PORTNAME=	dir2ogg
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/${PORTVERSION}/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	faad:audio/faad \
 		mplayer:multimedia/mplayer \
 		oggenc:audio/vorbis-tools
 
-USES=		python:2,run shebangfix
+USES=		python:2.7,run shebangfix
 
 SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes

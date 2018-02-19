@@ -14,7 +14,7 @@ COMMENT=	IRC Connection Manager for Telepathy Framework
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib
 
-USES=		gmake libtool pathfix pkgconfig python:2,build ssl
+USES=		gmake libtool pathfix pkgconfig python:2.7,build ssl
 USE_GNOME=	glib20 libxslt:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

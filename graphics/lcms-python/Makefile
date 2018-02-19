@@ -3,6 +3,7 @@
 
 PORTNAME=	lcms
 PORTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	graphics devel python
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-python
@@ -17,7 +18,7 @@ LIB_DEPENDS=	liblcms.so:graphics/lcms
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
 
-USES=		python:2
+USES=		python:2.7
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-python
 CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}"

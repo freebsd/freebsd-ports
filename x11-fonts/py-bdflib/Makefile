@@ -3,6 +3,7 @@
 
 PORTNAME=	bdflib
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	CHEESESHOP/source/b/${PORTNAME}
@@ -14,7 +15,7 @@ COMMENT=	Library for working with BDF font files
 LICENSE=	GPLv3
 
 NO_ARCH=	yes
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 post-patch:

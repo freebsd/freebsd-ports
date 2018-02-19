@@ -3,6 +3,7 @@
 
 PORTNAME=	hatop
 PORTVERSION=	0.7.7
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils net
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:net/haproxy
 
-USES=		python:2
+USES=		python:2.7
 NO_BUILD=	yes
 
 USE_GITHUB=	yes

@@ -2,7 +2,7 @@
 
 PORTNAME=	fivestarvote
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel python
 MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
@@ -12,7 +12,7 @@ COMMENT=	Five star plugin for voting on Trac resources
 
 RUN_DEPENDS=	tracd:www/trac
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

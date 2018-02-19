@@ -25,7 +25,7 @@ LICENSE=	GPLv3
 USES=		dos2unix tar:xz
 
 .if defined(PYTHON_SLAVEPORT)
-USES+=		python:2
+USES+=		python:2.7
 USE_PYTHON=	distutils
 
 PYDISTUTILS_PKGNAME=	distorm3

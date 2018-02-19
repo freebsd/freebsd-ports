@@ -3,7 +3,7 @@
 
 PORTNAME=	bg5pdf
 PORTVERSION=	1.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	chinese print
 MASTER_SITES=	LOCAL/chinsan
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpdf.so:print/pdflib
 
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	bg5pdf gbpdf
 python_OLD_CMD=	"/usr/bin/env /usr/bin/python"
 

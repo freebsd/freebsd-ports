@@ -3,7 +3,7 @@
 
 PORTNAME=	plexpy
 PORTVERSION=	1.4.22
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 DISTVERSIONPREFIX=v
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	PlexPy.py
 python_OLD_CMD=	/bin/sh
 

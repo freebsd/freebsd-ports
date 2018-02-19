@@ -3,6 +3,7 @@
 
 PORTNAME=	keywordsecretticket
 PORTVERSION=	1.0.1.${GITDATE}
+PORTREVISION=	1
 CATEGORIES=	www devel python
 PKGNAMEPREFIX=	trac-
 
@@ -20,7 +21,7 @@ GH_PROJECT=	trac-keyword-secret-ticket-plugin
 GH_TAGNAME=	98edea2
 GITDATE=	20130401
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

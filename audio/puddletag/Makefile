@@ -3,7 +3,7 @@
 PORTNAME=	puddletag
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -21,7 +21,7 @@ RUN_DEPENDS=	chromaprint>=0.4:audio/chromaprint \
 USE_GITHUB=	yes
 GH_ACCOUNT=	keithgg
 
-USES=		python:2 pyqt:4
+USES=		python:2.7 pyqt:4
 USE_PYTHON=	autoplist distutils
 USE_PYQT=	gui_run svg_run
 WRKSRC_SUBDIR=	source

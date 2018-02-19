@@ -3,6 +3,7 @@
 
 PORTNAME=	cdb
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://pilcrow.madison.wi.us/python-${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ COMMENT=	Python interface to DJB's constant database library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
