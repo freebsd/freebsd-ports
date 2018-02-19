@@ -2206,6 +2206,7 @@
     SUBDIR += rubygem-unicorn
     SUBDIR += rubygem-unicorn51
     SUBDIR += rubygem-unicorn-worker-killer
+    SUBDIR += rubygem-unicorn-worker-killer044
     SUBDIR += rubygem-url_escape
     SUBDIR += rubygem-url_mount
     SUBDIR += rubygem-vegas
