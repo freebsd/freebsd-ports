@@ -1,0 +1,10 @@
+A plugin which enables the NTFS-3G FUSE driver to transparently read
+from system-compressed files.
+
+System compression, also known as "Compact OS", is a Windows feature
+that allows rarely modified files to be compressed using the XPRESS or
+LZX compression formats. It is implemented using reparse points. This
+feature appeared in Windows 10 and many Windows 10 systems have been
+using it by default.
+
+WWW: https://github.com/ebiggers/ntfs-3g-system-compression
