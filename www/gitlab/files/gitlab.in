@@ -41,6 +41,7 @@ restart_cmd="restart_gitlab"
 : ${gitlab_authBackend:="http://127.0.0.1:8080"}
 : ${gitlab_workhorse_tcp:="NO"}
 : ${gitlab_workhorse_addr:="127.0.0.1:8181"}
+: ${gitlab_mail_room_enable:="NO"}
 
 load_rc_config $name
 
@@ -56,7 +57,11 @@ socket_path="$app_root/tmp/sockets"
 rails_socket="$socket_path/gitlab.socket"
 web_server_pid_path="$pid_path/unicorn.pid"
 sidekiq_pid_path="$pid_path/sidekiq.pid"
-mail_room_enabled=false
+if checkyesno gitlab_mail_room_enable; then
+	mail_room_enabled=true
+else
+	mail_room_enabled=false
+fi
 mail_room_pid_path="$pid_path/mail_room.pid"
 gitlab_workhorse_dir=$(cd $app_root/../gitlab-workhorse && pwd)
 gitlab_workhorse_pid_path="$pid_path/gitlab-workhorse.pid"
