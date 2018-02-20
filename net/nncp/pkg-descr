@@ -2,12 +2,13 @@ NNCP (Node to Node copy) is a collection of utilities simplifying
 secure store-and-forward files and mail exchanging.
 
 This utilities are intended to help build up small size (dozens of
-nodes) ad-hoc friend-to-friend (F2F) statically routed darknet networks
-for fire-and-forget secure reliable files, file requests and Internet
-mail transmission. All packets are integrity checked, end-to-end
-encrypted (E2EE), explicitly authenticated by known participants public
-keys. Onion encryption is applied to relayed packets. Each node acts
-both as a client and server, can use push and poll behaviour model.
+nodes) ad-hoc friend-to-friend (F2F) statically routed darknet
+delay-tolerant networks for fire-and-forget secure reliable files, file
+requests, Internet mail and commands transmission. All packets are
+integrity checked, end-to-end encrypted (E2EE), explicitly authenticated
+by known participants public keys. Onion encryption is applied to
+relayed packets. Each node acts both as a client and server, can use
+push and poll behaviour model.
 
 Out-of-box offline sneakernet/floppynet, dead drops, sequential and
 append-only CD-ROM/tape storages, air-gapped computers support. But
