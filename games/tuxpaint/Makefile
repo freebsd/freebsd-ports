@@ -34,6 +34,8 @@ MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		SHARED_FLAGS="-shared -fPIC" \
 		GPERF="${GPERF}"
 
+MAKE_JOBS_UNSAFE=	yes
+
 INSTALL_TARGET=	install-gettext install-im install-magic-plugins \
 		install-magic-plugin-dev install-default-config \
 		install-example-stamps install-example-starters \
