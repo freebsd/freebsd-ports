@@ -3,6 +3,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	french cad
 CATEGORIES=	french cad
 
@@ -37,7 +38,6 @@ BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
 		${LOCALBASE}/lib/libGKlib.a:math/metis-edf	\
 		pylupdate4:textproc/py-qt4-xml			\
 		gnproc:sysutils/coreutils			\
-		python:lang/python				\
 		bash:shells/bash				\
 		${PYNUMPY}
 LIB_DEPENDS+=	libhdf5-18.so:science/hdf5-18			\
@@ -52,7 +52,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:math/py-gnuplot@${PY_FLAVOR} \
 
 BROKEN_FreeBSD_12=	does not build (sed: ${STAGEDIR}${inst_dir}/${VE}/aster.conf: No such file or directory)
 
-USES=		bison fortran gettext python:2 tk
+USES=		bison fortran gettext python:2.7 tk
 USE_BINUTILS=	yes
 USE_QT4=	linguisttools_build
 
@@ -68,6 +68,8 @@ MAKE_ENV=	INCLUDES="${LOCALBASE}/include/hdf5-18 ${LOCALBASE}/include"	\
 		LD_PRELOAD="${LOCALBASE}/lib/gcc${_GCC_VER}/libgcc_s.so.1"	\
 		LINKFLAGS="${LDFLAGS}" LD_LIBRARY_PATH="${LOCALBASE}/lib/gcc${_GCC_VER}"
 REINPLACE_ARGS=	-i ""
+
+BINARY_ALIAS=	python=${PYTHON_CMD}
 
 VER=		${PORTVERSION:R}
 VE=		${VER:R}

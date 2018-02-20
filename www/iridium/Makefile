@@ -18,7 +18,6 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	gperf:devel/gperf \
 		clang50:devel/llvm50 \
 		yasm:devel/yasm \
-		python:lang/python \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
 		bash:shells/bash \
 		flock:sysutils/flock \
@@ -62,7 +61,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 ONLY_FOR_ARCHS=	amd64 i386
 USES=		bison desktop-file-utils jpeg ninja perl5 \
-		pkgconfig python:2,build shebangfix tar:xz
+		pkgconfig python:2.7,build shebangfix tar:xz
 
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xdamage xfixes xi \
@@ -71,6 +70,7 @@ USE_GNOME=	atk dconf glib20 gtk20 gtk30 libxml2 libxslt
 MAKE_ARGS=	-C out/${BUILDTYPE}
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
+BINARY_ALIAS=	python=${PYTHON_CMD}
 
 CC=		clang50
 CXX=		clang++50
@@ -186,16 +186,16 @@ pre-configure:
 	# system libraries and not shippen ones.
 	# cd ${WRKSRC} && ${PYTHON_CMD} \
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
-	cd ${WRKSRC} && ${PYTHON_CMD} \
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
 		ffmpeg flac harfbuzz-ng libwebp libxml libxslt snappy yasm || ${FALSE}
 
 do-configure:
 	# GN generator bootstrapping and generating ninja files
-	cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} LD=${CXX} \
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
 		./tools/gn/bootstrap/bootstrap.py ${GN_BOOTSTRAP_FLAGS}
-	cd ${WRKSRC} && ${SETENV} ./out/${BUILDTYPE}/gn \
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./out/${BUILDTYPE}/gn \
 		gen --args='${GN_ARGS}' out/${BUILDTYPE}
 
 	# Setup nodejs dependency
