@@ -5,7 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20180214:
+20180220:
+  AFFECTS: users of www/nextcloud
+  AUTHOR: brnrd@FreeBSD.org
+
+  The file and directory permissions of Nextcloud have changed. Write
+  permissions have been removed from all directories except `data' and
+  `config'. For the updater to work, the app store of your installation
+  must be disabled. To disable the app-store prior to updating the
+  package:
+
+  # cd /usr/local/www/nextcloud
+  # su -m www -c "php ./occ config:system:set appstoreenabled --value=false --type=boolean"
+
+  If you've already updated your nextcloud package, you must manually edit
+  the configuration of nextcloud (config/config.php) and add
+
+  	'appstoreenabled' => false,
+
+  to the CONFIG array before the updater will run.
+
+20180214
   AFFECTS: users of lang/ruby23
   AUTHOR: swills@FreeBSD.org
 
@@ -38,7 +58,6 @@ you update your ports collection, before attempting any port upgrades.
   # make -C /usr/ports/ports-mgmt/portupgrade install clean
   # pkg set -o lang/ruby23:lang/ruby24
   # portupgrade -x ruby-2.4.\* -fr lang/ruby24
-
 
 20180209:
   AFFECTS: users of japanese/lookup
