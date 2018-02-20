@@ -11,18 +11,17 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	Utility to determine file type
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-fsect-man5
-MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
+CONFIGURE_ARGS=	--enable-fsect-man5
+MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
+TEST_TARGET=	check
 
 CONFLICTS=	tct-[0-9]*
-
-check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(datadir)/misc|$$(datadir)/${PORTNAME}|g' \
