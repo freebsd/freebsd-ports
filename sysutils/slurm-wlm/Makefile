@@ -30,6 +30,7 @@ USE_PERL5=	configure
 USE_RC_SUBR=	slurmctld slurmd
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--bindir=${PREFIX}/bin
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
