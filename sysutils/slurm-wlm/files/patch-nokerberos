@@ -1,0 +1,41 @@
+Index: sysutils/slurm-wlm/files/patch-src-plugins-mpi-pmi2-agent.c
+===================================================================
+--- sysutils/slurm-wlm/files/patch-src-plugins-mpi-pmi2-agent.c.orig	2018-02-20 02:40:20 UTC
++++ sysutils/slurm-wlm/files/patch-src-plugins-mpi-pmi2-agent.c
+@@ -0,0 +1,10 @@
++--- src/plugins/mpi/pmi2/agent.c.orig	2017-11-01 01:04:16 UTC
+++++ src/plugins/mpi/pmi2/agent.c
++@@ -39,7 +39,6 @@
++ \*****************************************************************************/
++ 
++ #if defined(__FreeBSD__)
++-#include <roken.h>
++ #include <sys/socket.h>	/* AF_INET */
++ #endif
++ 
+--- sysutils/slurm-wlm/files/patch-src-plugins-mpi-pmi2-pmi1.c.orig	2018-02-20 02:40:20 UTC
++++ sysutils/slurm-wlm/files/patch-src-plugins-mpi-pmi2-pmi1.c
+@@ -0,0 +1,10 @@
++--- src/plugins/mpi/pmi2/pmi1.c.orig	2017-11-01 01:04:16 UTC
+++++ src/plugins/mpi/pmi2/pmi1.c
++@@ -38,7 +38,6 @@
++ #include "config.h"
++ 
++ #if defined(__FreeBSD__)
++-#include <roken.h>
++ #include <sys/socket.h> /* AF_INET */
++ #endif
++ 
+--- sysutils/slurm-wlm/files/patch-src-plugins-mpi-pmi2-pmi2.c.orig	2018-02-20 02:40:20 UTC
++++ sysutils/slurm-wlm/files/patch-src-plugins-mpi-pmi2-pmi2.c
+@@ -0,0 +1,10 @@
++--- src/plugins/mpi/pmi2/pmi2.c.orig	2017-11-01 01:04:16 UTC
+++++ src/plugins/mpi/pmi2/pmi2.c
++@@ -36,7 +36,6 @@
++ \*****************************************************************************/
++ 
++ #if defined(__FreeBSD__)
++-#include <roken.h>
++ #include <sys/socket.h> /* AF_INET */
++ #endif
++ 
