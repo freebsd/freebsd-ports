@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-SetUserGroup
-PORTVERSION=	0.005
+PORTVERSION=	1.000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DBOOK
@@ -15,7 +15,7 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Mojolicious>=6.0:www/p5-Mojolicious \
-		p5-Unix-Groups>=0:devel/p5-Unix-Groups
+		p5-Unix-Groups-FFI>=0:devel/p5-Unix-Groups-FFI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
