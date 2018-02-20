@@ -11,10 +11,11 @@ share/applications/yapet.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/DESIGN
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/html/DESIGN.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.html
+%%PORTDOCS%%%%DOCSDIR%%/html/yapet_colors.html
+%%PORTDOCS%%%%DOCSDIR%%/html/yapet_config.html
 %%CONVERTERS%%%%PORTDOCS%%%%DOCSDIR%%/html/csv2yapet.html
 %%PORTDOCS%%%%DOCSDIR%%/html/yapet.html
 %%CONVERTERS%%%%PORTDOCS%%%%DOCSDIR%%/html/yapet2csv.html
