@@ -39,6 +39,7 @@ SUB_LIST=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET} \
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-gameuser=games:games
+CONFIGURE_ENV=	ac_cv_prog_liblockfile=no
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 

@@ -36,6 +36,7 @@ SUB_FILES=	sources.el
 SUB_LIST=	EMACS_VER=${EMACS_VER}
 
 CONFIGURE_ARGS=	--with-gameuser=games:games
+CONFIGURE_ENV=	ac_cv_prog_liblockfile=no
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 
