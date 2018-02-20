@@ -16,6 +16,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -62,7 +63,7 @@ USES=		gperf jpeg python:2.7,build pkgconfig \
 		qmake:norecursive,outsource shebangfix
 USE_GNOME=	glib20 libxml2 libxslt
 USE_QT5=	core designer gui location network qml quick webchannel \
-		widgets buildtools_build qmake_build
+		widgets printsupport buildtools_build qmake_build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xi xproto \
 		xrandr xrender xscrnsaver xtst
 
@@ -70,7 +71,7 @@ USE_LDCONFIG=	${QT_LIBDIR}
 
 QT_DIST=	${PORTNAME}
 
-QMAKE_CONFIGURE_ARGS=	-no-printing-and-pdf -proprietary-codecs -system-ffmpeg
+QMAKE_CONFIGURE_ARGS=	-proprietary-codecs -system-ffmpeg
 
 # We could just set it to an empty string as well. "all" does not account for
 # dependencies correctly in the generated Makefiles, use the right target here.
