@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	self-service-password
-PORTVERSION=	1.1
+DISTVERSION=	1.2
 CATEGORIES=	net www
 MASTER_SITES=	http://ltb-project.org/archives/
 DISTNAME=	ltb-project-${PORTNAME}-${PORTVERSION}
