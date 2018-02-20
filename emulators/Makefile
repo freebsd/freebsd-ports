@@ -173,7 +173,6 @@
     SUBDIR += wine-gecko-devel
     SUBDIR += wine-mono
     SUBDIR += wine-mono-devel
-    SUBDIR += wine-staging
     SUBDIR += winetricks
     SUBDIR += wxmupen64plus
     SUBDIR += x48
