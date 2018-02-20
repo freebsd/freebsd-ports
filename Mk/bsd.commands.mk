@@ -130,4 +130,3 @@ PKG_ADD?=		${PKG_BIN} add
 PKG_QUERY?=		${PKG_BIN} query
 
 .endif
-.info here
