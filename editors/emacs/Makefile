@@ -165,8 +165,8 @@ PATCHFILES=		emacs25.2canna-20170507.diff.gz
 PLIST_FILES+=		${DATADIR}/${EMACS_VER}/lisp/canna.el.gz \
 			${DATADIR}/${EMACS_VER}/lisp/canna.elc \
 			${DATADIR}/${EMACS_VER}/lisp/isearch-ext.el.gz \
-			${DATADIR}/${EMACS_VER}/lisp/isearch-ext.elc \
-			%%SOURCES%%${DATADIR}/${EMACS_VER}/src/canna.c
+			${DATADIR}/${EMACS_VER}/lisp/isearch-ext.elc
+SOURCES_PLIST_FILES=	${DATADIR}/${EMACS_VER}/src/canna.c
 .endif
 .if ${FLAVOR:U} == nox
 CONFIGURE_ARGS+=	--with-sound=no --without-cairo --without-dbus \
