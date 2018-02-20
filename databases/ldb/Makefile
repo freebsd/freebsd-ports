@@ -22,7 +22,12 @@ LDB_DEPENDS=		talloc>=2.1.8:devel/talloc \
 			tdb>=1.3.12,1:databases/tdb \
 			popt>=0:devel/popt
 
-CONFLICTS=		ldb1[23]-1.*
+CONFLICTS_INSTALL=	ldb1[23]-1.*
+
+#FLAVORS=		default nopython
+#nopython_PKGNAMESUFFIX=	-nopython
+#nopython_CONFLICTS=	ldb
+#default_CONFLICTS=	ldb-nopython
 
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
@@ -38,7 +43,7 @@ CONFIGURE_ARGS+=	--bundled-libraries=!talloc,!tevent,!tdb,!popt \
 			--with-privatelibdir=${PREFIX}/lib/ldb
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
-			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
+			--with-openldap=${LOCALBASE} \
 			--disable-rpath \
 			--without-gettext
 
@@ -143,13 +148,13 @@ post-install:
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.so
 			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb.so
 .else
-.for file in		include/pyldb.h \
+.for f in		include/pyldb.h \
 			lib/libpyldb-util.so \
 			lib/libpyldb-util.so.1 \
 			lib/ldb/libpytalloc-util.so.2
 				${RM} ${STAGEDIR}${PREFIX}/${file}
 .endfor
-.for file in		${PYTHON_SITELIBDIR}/ldb.so \
+.for f in		${PYTHON_SITELIBDIR}/ldb.so \
 			${PYTHON_SITELIBDIR}/_ldb_text.py \
 			${PYTHON_SITELIBDIR}/_tdb_text.py \
 			${PYTHON_SITELIBDIR}/_tevent.so \
