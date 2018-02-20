@@ -1,8 +1,0 @@
---- ui/base/ui_features.gni.orig	2017-06-05 19:03:30 UTC
-+++ ui/base/ui_features.gni
-@@ -15,4 +15,4 @@ declare_args() {
-   has_native_accessibility = use_atk || is_win || is_mac
- }
- 
--enable_hidpi = is_mac || is_win || is_linux
-+enable_hidpi = is_mac || is_win || is_linux || is_bsd

@@ -1,15 +1,24 @@
---- third_party/sqlite/BUILD.gn.orig	2017-04-19 19:06:52 UTC
-+++ third_party/sqlite/BUILD.gn
-@@ -22,7 +22,7 @@ if (!use_system_sqlite) {
-       # sqlite3Fts3InitTok).
-       cflags += [ "-Wno-unused-function" ]
+--- third_party/sqlite/BUILD.gn.orig	2018-01-04 21:06:22.000000000 +0100
++++ third_party/sqlite/BUILD.gn	2018-02-03 11:16:06.346330000 +0100
+@@ -118,7 +118,7 @@
+         "USE_PREAD=1",
+       ]
      }
+-    if (is_linux || is_android) {
++    if ((is_linux && !is_bsd) || is_android) {
+       defines += [
+         # Linux provides fdatasync(), a faster equivalent of fsync().
+         "fdatasync=fdatasync",
+@@ -127,7 +127,7 @@
+ 
+     # Pull in config.h on Linux.  This allows use of preprocessor macros which
+     # are not available to the build config.
 -    if (is_linux) {
-+    if (is_linux || is_bsd) {
-       cflags += [
-         # SQLite doesn"t believe in compiler warnings,
-         # preferring testing.
-@@ -150,7 +150,7 @@ if (!use_system_sqlite) {
++    if (is_linux && !is_bsd) {
+       defines += [ "_HAVE_SQLITE_CONFIG_H" ]
+     }
+ 
+@@ -161,7 +161,7 @@
        ":sqlite_warnings",
      ]
  
@@ -18,30 +27,3 @@
        libs = [ "dl" ]
      } else if (is_mac || is_ios) {
        libs = [
-@@ -187,7 +187,7 @@ if (!use_system_sqlite) {
-     public_configs = [ ":sqlite_export" ]
-   }
- 
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     executable("sqlite_shell") {
-       # So shell.c can find the correct sqlite3.h.
-       include_dirs = [ "amalgamation" ]
-@@ -216,7 +216,7 @@ if (use_system_sqlite) {
- 
-   config("sqlite_config") {
-     defines = [ "USE_SYSTEM_SQLITE" ]
--    if (is_ios) {
-+    if (is_ios || is_bsd) {
-       libs = [ "sqlite3" ]
-     } else {
-       assert(false, "extra flags to use system sqlite3 library missing")
-@@ -235,7 +235,7 @@ if (use_system_sqlite) {
-     }
-   }
- 
--  if (is_ios) {
-+  if (is_ios || is_bsd) {
-     source_set("sqlite_recover") {
-       sources = [
-         # TODO(shess): Move out of the SQLite source tree, perhaps to ext/.

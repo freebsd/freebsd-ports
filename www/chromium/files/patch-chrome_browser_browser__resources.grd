@@ -1,6 +1,6 @@
---- chrome/browser/browser_resources.grd.orig	2017-09-05 21:05:12.000000000 +0200
-+++ chrome/browser/browser_resources.grd	2017-09-07 19:30:41.365751000 +0200
-@@ -424,7 +424,7 @@
+--- chrome/browser/browser_resources.grd.orig	2017-12-15 02:04:08.000000000 +0100
++++ chrome/browser/browser_resources.grd	2017-12-24 00:39:53.904855000 +0100
+@@ -370,7 +370,7 @@
          <include name="IDR_ABOUT_VOICESEARCH_JS" file="resources\about_voicesearch.js" type="BINDATA" />
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
        </if>
@@ -9,10 +9,10 @@
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_linux.json" type="BINDATA" />
        </if>
        <if expr="is_android">
-@@ -674,7 +674,7 @@
-       <if expr="not is_android and not is_ios">
-         <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />
+@@ -620,7 +620,7 @@
+         <include name="IDR_WELCOME_WIN10_PIN_SMALL_WEBP" file="resources\welcome\win10\pin-small.webp" type="BINDATA" />
        </if>
+       <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />
 -      <if expr="is_android or is_linux">
 +      <if expr="is_android or is_posix">
          <include name="IDR_SANDBOX_INTERNALS_HTML" file="resources\sandbox_internals\sandbox_internals.html" flattenhtml="true" allowexternalscript="true" type="BINDATA" compress="gzip" />

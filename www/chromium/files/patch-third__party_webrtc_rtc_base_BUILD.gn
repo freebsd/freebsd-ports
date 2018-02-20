@@ -1,18 +1,20 @@
---- third_party/webrtc/rtc_base/BUILD.gn.orig	2017-09-07 00:32:08.540773000 +0200
-+++ third_party/webrtc/rtc_base/BUILD.gn	2017-09-07 00:32:40.555681000 +0200
-@@ -575,7 +575,6 @@
+--- third_party/webrtc/rtc_base/BUILD.gn.orig	2017-12-15 02:05:40.000000000 +0100
++++ third_party/webrtc/rtc_base/BUILD.gn	2017-12-24 19:35:21.721858000 +0100
+@@ -649,8 +649,6 @@
  
    if (use_x11) {
      libs += [
 -      "dl",
-       "rt",
+-      "rt",
        "Xext",
        "X11",
-@@ -586,7 +585,6 @@
- 
-   if (is_linux) {
-     libs += [
--      "dl",
-       "rt",
+       "Xcomposite",
+@@ -658,7 +656,7 @@
      ]
    }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     libs += [
+       "dl",
+       "rt",

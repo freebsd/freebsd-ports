@@ -1,20 +1,20 @@
---- components/policy/tools/generate_policy_source.py.orig	2017-09-07 05:49:44.475708000 +0200
-+++ components/policy/tools/generate_policy_source.py	2017-09-07 06:03:36.269823000 +0200
-@@ -90,7 +90,7 @@
+--- components/policy/tools/generate_policy_source.py.orig	2017-12-15 02:04:15.000000000 +0100
++++ components/policy/tools/generate_policy_source.py	2017-12-24 12:04:08.751317000 +0100
+@@ -91,7 +91,7 @@
+         raise RuntimeError('is_device_only is only allowed for Chrome OS: "%s"'
+                            % p)
        if platform not in ['chrome_frame', 'chrome_os',
-                           'android', 'webview_android',
+-                          'android', 'webview_android',
++                          'android', 'webview_android', 'chrome.bsd',
                            'chrome.win', 'chrome.linux', 'chrome.mac',
--                          'chrome.*']:
-+                          'chrome.bsd', 'chrome.*']:
+                           'chrome.fuchsia', 'chrome.*']:
          raise RuntimeError('Platform "%s" is not supported' % platform)
- 
-       split_result = version_range.split('-')
-@@ -108,7 +108,7 @@
+@@ -111,7 +111,7 @@
        if platform.startswith('chrome.'):
          platform_sub = platform[7:]
          if platform_sub == '*':
--          self.platforms.extend(['win', 'mac', 'linux'])
-+          self.platforms.extend(['win', 'mac', 'linux', 'bsd'])
+-          self.platforms.extend(['win', 'mac', 'linux', 'fuchsia'])
++          self.platforms.extend(['win', 'mac', 'linux', 'fuchsia', 'bsd'])
          else:
            self.platforms.append(platform_sub)
        else:

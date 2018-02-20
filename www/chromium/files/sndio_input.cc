@@ -121,31 +121,6 @@ void SndioAudioInputStream::Start(AudioInputCallback* callback) {
 
 void SndioAudioInputStream::ReadAudio() {
   NOTIMPLEMENTED();
-  DCHECK(callback_);
-
-  int num_buffers = sndio_rec_bufsize_ / params_.frames_per_buffer();
-  double normalized_volume = 0.0;
-
-  // Update the AGC volume level once every second. Note that, |volume| is
-  // also updated each time SetVolume() is called through IPC by the
-  // render-side AGC.
-  GetAgcVolume(&normalized_volume);
-
-  while (num_buffers--) {
-    int frames_read = sio_read(device_handle_, audio_buffer_.get(),
-                                         params_.frames_per_buffer());
-    if (frames_read == params_.frames_per_buffer()) {
-      audio_bus_->FromInterleaved(audio_buffer_.get(),
-                                  audio_bus_->frames(),
-                                  params_.bits_per_sample() / 8);
-      callback_->OnData(
-          this, audio_bus_.get(), hw_delay_, normalized_volume);
-    } else {
-      LOG(WARNING) << "sio_read() returning less than expected frames: "
-                   << frames_read << " vs. " << params_.frames_per_buffer()
-                   << ". Dropping this buffer.";
-    }
-  }
 }
 
 void SndioAudioInputStream::Stop() {

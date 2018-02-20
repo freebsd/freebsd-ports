@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	61.0.3163.100
-PORTREVISION=	5
+PORTVERSION=	63.0.3239.132
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -34,6 +33,7 @@ BUILD_DEPENDS+=	gperf:devel/gperf \
 LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 		libsnappy.so:archivers/snappy \
 		libFLAC.so:audio/flac \
+		libopus.so:audio/opus \
 		libspeex.so:audio/speex \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
@@ -48,7 +48,9 @@ LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
 		libavcodec.so:multimedia/ffmpeg \
+		libopenh264.so:multimedia/openh264 \
 		libcups.so:print/cups \
+		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libgcrypt.so:security/libgcrypt \
@@ -59,7 +61,7 @@ LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 		libfontconfig.so:x11-fonts/fontconfig
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf
+		noto>0:x11-fonts/noto
 
 BROKEN_FreeBSD_11_aarch64=	components/safe_browsing_db/v4_rice.cc:120:18: use of overloaded operator '&' is ambiguous
 BROKEN_FreeBSD_12_aarch64=	third_party/skia/src/core/SkCpu.cpp:84:27: use of undeclared identifier 'getauxval'
@@ -79,6 +81,7 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 .if !defined(GN_ONLY)
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
+USE_GL=		gl
 USE_LDCONFIG=	${DATADIR}
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xdamage xfixes xi \
@@ -104,22 +107,29 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_nacl=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
-		enable_webrtc=false \
+		enable_webrtc=true \
 		fieldtrial_testing_like_official_build=true \
 		is_clang=true \
+		is_official_build=true \
 		toolkit_views=true \
 		treat_warnings_as_errors=false \
 		use_allocator="none" \
 		use_allocator_shim=false \
 		use_aura=true \
+		use_bundled_fontconfig=false \
 		use_cups=true \
+		use_custom_libcxx=false \
 		use_gtk3=true \
 		use_lld=true \
 		use_sysroot=false \
+		use_system_freetype=true \
+		use_system_harfbuzz=true \
 		use_system_libjpeg=true \
-		use_system_sqlite=false   # chrome has additional patches
+		use_system_sqlite=false \
+		extra_cxxflags="-I${LOCALBASE}/include" \
+		extra_ldflags="-L${LOCALBASE}/lib"
 # TODO: investigate building with these options:
-# use_system_icu use_system_harfbuzz use_system_minigbm
+# use_system_icu use_system_minigbm
 GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild
 
 # FreeBSD Chromium Api Key
@@ -134,12 +144,11 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=	CODECS GCONF KERBEROS DRIVER
+OPTIONS_DEFINE=	CODECS DEBUG DRIVER GCONF KERBEROS TEST
 CODECS_DESC=	Compile and enable patented codecs like H.264
 DRIVER_DESC=	Install chromedriver
-OPTIONS_GROUP=		AUDIO TESTS
+OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
-OPTIONS_GROUP_TESTS=	DEBUG TEST
 
 OPTIONS_DEFAULT=	ALSA CODECS DRIVER GCONF KERBEROS
 OPTIONS_SUB=		yes
@@ -159,6 +168,7 @@ CODECS_VARS_OFF=	GN_ARGS+=ffmpeg_branding="Chromium" \
 
 DEBUG_VARS=		BUILDTYPE=Debug \
 			GN_ARGS+=is_debug=true \
+			GN_ARGS+=is_component_build=false \
 			GN_BOOTSTRAP_FLAGS+=--debug \
 			WANTSPACE="lots of free diskspace (~ 8.5GB)"
 DEBUG_VARS_OFF=		BUILDTYPE=Release \
@@ -202,7 +212,7 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 		CPLUS_INCLUDE_PATH=${LOCALBASE}/include
 
 # Work around base r261801
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100508
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1004000
 GN_ARGS+=	extra_cxxflags="-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1"
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++-old
 .else
@@ -220,6 +230,11 @@ pre-everything::
 	@${ECHO_MSG} "and ${WANTSPACE}."
 	@${ECHO_MSG}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|@@PACKAGE@@|chromium|' \
+			-e 's|@@MENUNAME@@|Chromium Web Browser|' \
+			${WRKSRC}/chrome/app/resources/manpage.1.in
+
 post-patch-SNDIO-on:
 	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@${CP} ${FILESDIR}/sndio_output.* ${WRKSRC}/media/audio/sndio
@@ -233,7 +248,7 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		ffmpeg flac harfbuzz-ng libwebp libxml libxslt snappy yasm || ${FALSE}
+		ffmpeg flac freetype harfbuzz-ng libdrm libwebp libxml libxslt openh264 opus snappy yasm || ${FALSE}
 .endif
 
 do-configure:
@@ -259,25 +274,17 @@ do-test-TEST-on:
 .if !defined(GN_ONLY)
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.for m in font_service test_ime_driver ui
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${m}.service \
-		${STAGEDIR}${DATADIR}
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in \
+		${STAGEDIR}${MANPREFIX}/man/man1/chrome.1
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/*.service ${STAGEDIR}${DATADIR}
 .for s in 22 24 48 64 128 256
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/chrome/app/theme/chromium/product_logo_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/chrome.png
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/chrome/tools/build/linux/chrome-wrapper \
-		${STAGEDIR}${DATADIR}
-.for p in chrome_100_percent chrome_200_percent headless_lib keyboard_resources \
-	resources mus_app_resources_100 mus_app_resources_200 mus_app_resources_strings \
-	views_mus_resources
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak \
-		${STAGEDIR}${DATADIR}
-.endfor
-.for d in icudtl.dat natives_blob.bin snapshot_blob.bin
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/*.png ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/*.pak ${STAGEDIR}${DATADIR}
+.for d in protoc icudtl.dat mksnapshot natives_blob.bin snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \
@@ -288,8 +295,16 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/chromium-browser.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/chrome ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/mksnapshot \
+	${INSTALL_SCRIPT} ${WRKSRC}/chrome/tools/build/linux/chrome-wrapper \
 		${STAGEDIR}${DATADIR}
+.for f in libEGL.so libGLESv2.so
+	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/${f} ${STAGEDIR}${DATADIR}
+.endfor
+	@${MKDIR} ${STAGEDIR}${DATADIR}/swiftshader
+.for g in libEGL.so libGLESv2.so
+	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/swiftshader/${g} \
+		${STAGEDIR}${DATADIR}/swiftshader
+.endfor
 
 post-install-DEBUG-on:
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/*.so \

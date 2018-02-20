@@ -1,0 +1,10 @@
+--- third_party/WebKit/Source/platform/BUILD.gn.orig	2017-12-31 11:16:52.912677000 +0100
++++ third_party/WebKit/Source/platform/BUILD.gn	2017-12-31 11:18:02.966134000 +0100
+@@ -148,6 +148,7 @@
+     "//build/win:default_exe_manifest",
+     "//third_party/icu",
+   ]
++  libs = [ "cxxrt" ]
+ }
+ 
+ # This isn't strictly necessary since we can just add the deps to "platform",

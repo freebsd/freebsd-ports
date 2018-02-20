@@ -1,19 +1,15 @@
---- base/process/process_metrics.h.orig	2017-07-25 21:04:48.000000000 +0200
-+++ base/process/process_metrics.h	2017-08-01 22:08:56.153263000 +0200
-@@ -22,6 +22,12 @@
- #include "base/values.h"
- #include "build/build_config.h"
+--- base/process/process_metrics.h.orig	2017-12-23 20:56:16.823419000 +0100
++++ base/process/process_metrics.h	2017-12-23 20:58:52.195249000 +0100
+@@ -103,7 +103,7 @@
+   size_t image;
+ };
  
-+#if defined(OS_BSD)
-+#include <kvm.h>
-+#include <sys/param.h>
-+#include <sys/sysctl.h>
-+#endif
-+
- #if defined(OS_MACOSX)
- #include <mach/mach.h>
- #include "base/process/port_provider_mac.h"
-@@ -215,7 +221,7 @@
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ // Minor and major page fault counts since the process creation.
+ // Both counts are process-wide, and exclude child processes.
+ //
+@@ -245,7 +245,7 @@
    // otherwise.
    bool GetIOCounters(IoCounters* io_counters) const;
  
@@ -22,23 +18,34 @@
    // Returns the number of file descriptors currently open by the process, or
    // -1 on error.
    int GetOpenFdCount() const;
-@@ -223,12 +229,12 @@
-   // Returns the soft limit of file descriptors that can be opened by the
-   // process, or -1 on error.
+@@ -255,7 +255,7 @@
    int GetOpenFdSoftLimit() const;
--#endif  // defined(OS_LINUX) || defined(OS_AIX)
-+#endif  // defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
+ #endif  // defined(OS_LINUX) || defined(OS_AIX)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    // Bytes of swap as reported by /proc/[pid]/status.
    uint64_t GetVmSwapBytes() const;
--#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
-+#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
-  private:
- #if !defined(OS_MACOSX) || defined(OS_IOS)
-@@ -304,7 +310,7 @@
+@@ -282,7 +282,7 @@
+   bool GetWorkingSetKBytesTotmaps(WorkingSetKBytes *ws_usage) const;
+ #endif
+ 
+-#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX)
++#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
+   int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
+ #endif
+ #if defined(OS_MACOSX)
+@@ -303,7 +303,7 @@
+   TimeTicks last_cpu_time_;
+   int64_t last_system_time_;
+ 
+-#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX)
++#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
+   // Same thing for idle wakeups.
+   TimeTicks last_idle_wakeups_time_;
+   uint64_t last_absolute_idle_wakeups_;
+@@ -351,7 +351,7 @@
  #endif  // defined(OS_POSIX)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -47,7 +54,16 @@
  // Data about system-wide memory consumption. Values are in KB. Available on
  // Windows, Mac, Linux, Android and Chrome OS.
  //
-@@ -352,7 +358,7 @@
+@@ -384,7 +384,7 @@
+   int avail_phys = 0;
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_BSD)
+   // This provides an estimate of available memory as described here:
+   // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
+   // NOTE: this is ONLY valid in kernels 3.14 and up.  Its value will always
+@@ -399,7 +399,7 @@
  #endif
  
  #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) || \

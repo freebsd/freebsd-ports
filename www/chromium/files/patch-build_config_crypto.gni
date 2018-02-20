@@ -1,8 +1,0 @@
---- build/config/crypto.gni.orig	2017-06-05 19:03:01 UTC
-+++ build/config/crypto.gni
-@@ -20,4 +20,4 @@ use_openssl_certs = is_android || is_nacl
- 
- # True if NSS is used for certificate handling. It is possible to use OpenSSL
- # for the crypto library, but NSS for the platform certificate library.
--use_nss_certs = is_linux
-+use_nss_certs = is_linux || is_bsd

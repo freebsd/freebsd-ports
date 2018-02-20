@@ -1,6 +1,14 @@
---- base/third_party/libevent/BUILD.gn.orig	2017-08-03 00:05:03.000000000 +0200
-+++ base/third_party/libevent/BUILD.gn	2017-08-03 14:47:35.196280000 +0200
-@@ -50,6 +50,13 @@
+--- base/third_party/libevent/BUILD.gn.orig	2018-01-04 21:05:38.000000000 +0100
++++ base/third_party/libevent/BUILD.gn	2018-01-06 01:02:53.058845000 +0100
+@@ -43,13 +43,20 @@
+       "mac/event-config.h",
+     ]
+     include_dirs = [ "mac" ]
+-  } else if (is_linux) {
++  } else if (is_linux && !is_bsd) {
+     sources += [
+       "epoll.c",
+       "linux/config.h",
        "linux/event-config.h",
      ]
      include_dirs = [ "linux" ]
