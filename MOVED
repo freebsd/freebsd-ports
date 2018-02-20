@@ -9971,3 +9971,4 @@ devel/elixir-exrm||2018-02-19|Has expired: No longer maintained upstream
 devel/elixir-conform_exrm||2018-02-19|Has expired: No longer maintained upstream
 devel/elixir-sorted_set||2018-02-19|Has expired: No longer maintained upstream
 devel/elixir-red_black_tree||2018-02-19|Has expired: No longer maintained upstream
+emulators/wine-staging|emulators/wine-devel|2018-02-20|Broken for months, abandoned upstream
