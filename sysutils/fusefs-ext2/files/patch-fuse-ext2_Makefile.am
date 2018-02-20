@@ -1,11 +1,11 @@
---- fuse-ext2/Makefile.am.orig	2015-03-30 23:42:20 UTC
+--- fuse-ext2/Makefile.am.orig	2018-02-08 17:53:26 UTC
 +++ fuse-ext2/Makefile.am
-@@ -146,7 +146,7 @@ fuse_ext2_CFLAGS +=	\
+@@ -156,7 +156,7 @@ install-exec-local:
  endif
- 
+ if LINUX
  install-data-hook:
 -	cd "$(DESTDIR)/$(moddir)" && rm -f $(mod_LTLIBRARIES)
 +	true
  
- if DARWIN
  install-exec-local:
+ 	$(INSTALL) -d "$(DESTDIR)/$(sbindir)"
