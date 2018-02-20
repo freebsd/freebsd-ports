@@ -46,10 +46,6 @@ bool AudioManagerOpenBSD::HasAudioInputDevices() {
   return true;
 }
 
-void AudioManagerOpenBSD::ShowAudioInputSettings() {
-  NOTIMPLEMENTED();
-}
-
 void AudioManagerOpenBSD::GetAudioInputDeviceNames(
     AudioDeviceNames* device_names) {
   DCHECK(device_names->empty());

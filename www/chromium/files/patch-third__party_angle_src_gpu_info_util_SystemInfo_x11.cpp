@@ -1,5 +1,5 @@
---- third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2017-09-10 02:37:35.309513000 +0200
-+++ third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp	2017-09-10 02:48:01.225261000 +0200
+--- third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2017-12-15 02:05:36.000000000 +0100
++++ third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp	2017-12-30 05:11:53.917801000 +0100
 @@ -8,6 +8,8 @@
  
  #include "gpu_info_util/SystemInfo_internal.h"
@@ -35,14 +35,14 @@
 +
 +    bool vendor_ret =
 +        queryInteger(display, 0, 0, GLX_RENDERER_VENDOR_ID_MESA, vid);
-+    bool_device_ret =
++    bool device_ret =
 +        queryInteger(display, 0, 0, GLX_RENDERER_DEVICE_ID_MESA, did);
 +
 +    if (vendor_ret && device_ret) {
 +        GPUDeviceInfo info;
 +        info.vendorId = vid[0];
 +        info.deviceId = did[0];
-+        device->push_back(info);
++        devices->push_back(info);
 +    }
 +
 +    return true;

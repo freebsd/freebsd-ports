@@ -1,20 +1,11 @@
---- third_party/webrtc/system_wrappers/BUILD.gn.orig	2017-06-05 19:04:24 UTC
-+++ third_party/webrtc/system_wrappers/BUILD.gn
-@@ -79,7 +79,7 @@ rtc_static_library("system_wrappers") {
-     libs += [ "log" ]
-   }
- 
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     defines += [ "WEBRTC_THREAD_RR" ]
- 
+--- third_party/webrtc/system_wrappers/BUILD.gn.orig	2017-12-15 02:05:40.000000000 +0100
++++ third_party/webrtc/system_wrappers/BUILD.gn	2017-12-24 19:38:19.942270000 +0100
+@@ -72,8 +72,6 @@
      if (!build_with_chromium) {
-@@ -89,7 +89,7 @@ rtc_static_library("system_wrappers") {
-     libs += [ "rt" ]
+       deps += [ ":cpu_features_linux" ]
+     }
+-
+-    libs += [ "rt" ]
    }
  
--  if (is_linux || is_android) {
-+  if (is_linux || is_android || is_bsd) {
-     sources += [ "source/atomic32_non_darwin_unix.cc" ]
-   }
- 
+   if (is_linux || is_android) {

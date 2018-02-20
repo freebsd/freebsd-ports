@@ -1,14 +1,11 @@
---- chrome/common/BUILD.gn.orig	2017-04-19 19:06:30 UTC
-+++ chrome/common/BUILD.gn
-@@ -240,6 +240,13 @@ static_library("common") {
+--- chrome/common/BUILD.gn.orig	2017-12-15 02:04:11.000000000 +0100
++++ chrome/common/BUILD.gn	2017-12-30 02:27:17.872477000 +0100
+@@ -287,6 +287,10 @@
      public_deps += [ "//ppapi/shared_impl" ]
    }
  
 +  if (is_bsd) {
-+    sources -= [
-+      "component_flash_hint_file_linux.cc",
-+      "component_flash_hint_file_linux.h"
-+    ]
++    sources -= [ "component_flash_hint_file_linux.cc" ]
 +  }
 +
    if (enable_extensions) {

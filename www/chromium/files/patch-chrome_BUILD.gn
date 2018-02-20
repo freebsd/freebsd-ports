@@ -1,6 +1,6 @@
---- chrome/BUILD.gn.orig	2017-09-05 21:05:11.000000000 +0200
-+++ chrome/BUILD.gn	2017-09-06 17:18:59.694120000 +0200
-@@ -165,7 +165,7 @@
+--- chrome/BUILD.gn.orig	2017-12-15 02:04:06.000000000 +0100
++++ chrome/BUILD.gn	2017-12-25 06:31:53.132995000 +0100
+@@ -152,7 +152,7 @@
        ]
  
        data += [ "$root_out_dir/resources.pak" ]
@@ -9,21 +9,3 @@
          data += [
            "$root_out_dir/chrome_100_percent.pak",
            "$root_out_dir/locales/en-US.pak",
-@@ -245,7 +245,7 @@
-         }
-       }
- 
--      if (is_linux) {
-+      if (is_linux || is_bsd) {
-         sources += [
-           "app/chrome_dll_resource.h",
-           "app/chrome_main.cc",
-@@ -1783,7 +1783,7 @@
-   }
- }
- 
--if (is_linux) {
-+if (is_linux || is_bsd) {
-   action("manpage") {
-     if (is_chrome_branded) {
-       name = "Google Chrome"

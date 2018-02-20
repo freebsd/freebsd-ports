@@ -1,34 +1,34 @@
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2017-09-05 21:05:41.000000000 +0200
-+++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp	2017-09-06 21:40:15.799533000 +0200
-@@ -92,7 +92,7 @@
-       synthetic_bold_(source.synthetic_bold_),
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2017-12-15 02:04:47.000000000 +0100
++++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp	2017-12-24 18:18:08.481217000 +0100
+@@ -96,7 +96,7 @@
        synthetic_italic_(source.synthetic_italic_),
+       avoid_embedded_bitmaps_(source.avoid_embedded_bitmaps_),
        orientation_(source.orientation_),
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
        style_(source.style_),
  #endif
        harf_buzz_face_(nullptr),
-@@ -113,7 +113,7 @@
-       synthetic_bold_(src.synthetic_bold_),
+@@ -118,7 +118,7 @@
        synthetic_italic_(src.synthetic_italic_),
+       avoid_embedded_bitmaps_(false),
        orientation_(src.orientation_),
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
        style_(FontRenderStyle::QuerySystem(family_,
                                            text_size_,
                                            typeface_->fontStyle())),
-@@ -144,7 +144,7 @@
-       synthetic_bold_(synthetic_bold),
+@@ -150,7 +150,7 @@
        synthetic_italic_(synthetic_italic),
+       avoid_embedded_bitmaps_(false),
        orientation_(orientation),
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
        style_(FontRenderStyle::QuerySystem(family_,
                                            text_size_,
                                            typeface_->fontStyle())),
-@@ -189,7 +189,7 @@
-   synthetic_italic_ = other.synthetic_italic_;
+@@ -196,7 +196,7 @@
+   avoid_embedded_bitmaps_ = other.avoid_embedded_bitmaps_;
    harf_buzz_face_ = nullptr;
    orientation_ = other.orientation_;
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
@@ -36,10 +36,10 @@
    style_ = other.style_;
  #endif
  
-@@ -213,7 +213,7 @@
-          is_hash_table_deleted_value_ == a.is_hash_table_deleted_value_ &&
+@@ -221,7 +221,7 @@
           synthetic_bold_ == a.synthetic_bold_ &&
-          synthetic_italic_ == a.synthetic_italic_
+          synthetic_italic_ == a.synthetic_italic_ &&
+          avoid_embedded_bitmaps_ == a.avoid_embedded_bitmaps_
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
           && style_ == a.style_

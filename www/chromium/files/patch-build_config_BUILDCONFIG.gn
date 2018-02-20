@@ -1,5 +1,5 @@
---- build/config/BUILDCONFIG.gn.orig	2017-09-05 21:05:11.000000000 +0200
-+++ build/config/BUILDCONFIG.gn	2017-09-06 17:04:08.044575000 +0200
+--- build/config/BUILDCONFIG.gn.orig	2017-12-15 02:04:05.000000000 +0100
++++ build/config/BUILDCONFIG.gn	2017-12-30 02:24:17.939908000 +0100
 @@ -131,13 +131,13 @@
    is_official_build = false
  
@@ -36,32 +36,89 @@
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -379,8 +379,18 @@
+@@ -297,6 +297,7 @@
+   is_nacl = false
+   is_posix = false
+   is_win = true
++  is_bsd = false
+ } else if (current_os == "mac") {
+   is_android = false
+   is_chromeos = false
+@@ -307,6 +308,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
++  is_bsd = false
+ } else if (current_os == "android") {
+   is_android = true
+   is_chromeos = false
+@@ -317,6 +319,7 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "chromeos") {
+   is_android = false
+   is_chromeos = true
+@@ -327,6 +330,7 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "nacl") {
+   # current_os == "nacl" will be passed by the nacl toolchain definition.
+   # It is not set by default or on the command line. We treat is as a
+@@ -340,6 +344,7 @@
+   is_nacl = true
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "fuchsia") {
+   is_android = false
+   is_chromeos = false
+@@ -350,6 +355,7 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "ios") {
+   is_android = false
+   is_chromeos = false
+@@ -360,6 +366,7 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "linux") {
+   is_android = false
+   is_chromeos = false
+@@ -370,6 +377,7 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "aix") {
+   is_android = false
+   is_chromeos = false
+@@ -379,8 +387,20 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
 +} else if (current_os == "bsd") {
 +  is_android = false
 +  is_chromeos = false
 +  is_fuchsia = false
 +  is_ios = false
-+  is_linux = false
++  is_linux = true
 +  is_bsd = true
 +  is_mac = false
 +  is_nacl = false
 +  is_posix = true
 +  is_win = false
++  is_bsd = true
  }
 -
  # =============================================================================
  # SOURCES FILTERS
  # =============================================================================
-@@ -450,7 +460,7 @@
- if (!is_mac && !is_ios) {
-   sources_assignment_filter += [ "*.mm" ]
- }
--if (!is_linux) {
-+if (!is_linux && !is_bsd) {
-   sources_assignment_filter += [
-     "*_linux.h",
-     "*_linux.cc",

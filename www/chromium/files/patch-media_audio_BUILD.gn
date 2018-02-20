@@ -1,11 +1,11 @@
---- media/audio/BUILD.gn.orig	2017-06-05 19:03:08 UTC
-+++ media/audio/BUILD.gn
-@@ -216,9 +216,19 @@ source_set("audio") {
+--- media/audio/BUILD.gn.orig	2018-01-04 21:05:54.000000000 +0100
++++ media/audio/BUILD.gn	2018-01-27 12:34:55.048961000 +0100
+@@ -237,9 +237,19 @@
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  
 -  if (is_linux) {
-+  if (is_linux || (is_bsd && !use_sndio)) {
++  if (is_linux && !use_sndio) {
      sources += [ "linux/audio_manager_linux.cc" ]
    }
 +  if (use_sndio) {
@@ -21,16 +21,11 @@
  
    if (use_alsa) {
      libs += [ "asound" ]
-@@ -265,9 +265,11 @@ source_set("audio") {
+@@ -285,7 +295,6 @@
+     if (link_pulseaudio) {
        configs += [ ":libpulse" ]
      } else {
-       # TODO(ajwong): Technically, this dl should go in the action.
 -      libs += [ "dl" ]
        deps += [ ":pulse_generate_stubs" ]
        sources += get_target_outputs(":pulse_generate_stubs")
-+    }
-+    if (is_linux) {
-+      libs += [ "dl" ]
      }
-   }
- 

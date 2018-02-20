@@ -1,6 +1,6 @@
---- device/hid/hid_service_freebsd.cc.orig	2017-12-03 15:37:32.168519000 -0800
-+++ device/hid/hid_service_freebsd.cc	2017-12-03 15:37:32.179514000 -0800
-@@ -0,0 +1,370 @@
+--- device/hid/hid_service_freebsd.cc.orig	2018-01-26 21:53:10.804422000 +0100
++++ device/hid/hid_service_freebsd.cc	2018-01-26 21:53:10.805522000 +0100
+@@ -0,0 +1,371 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -34,14 +34,13 @@
 +#include "base/threading/thread_task_runner_handle.h"
 +#include "components/device_event_log/device_event_log.h"
 +#include "device/hid/hid_connection_freebsd.h"
-+#include "device/hid/hid_device_info_freebsd.h"
 +
 +const int kMaxPermissionChecks = 5;
 +
 +namespace device {
 +
 +struct HidServiceFreeBSD::ConnectParams {
-+  ConnectParams(scoped_refptr<HidDeviceInfoFreeBSD> device_info,
++  ConnectParams(scoped_refptr<HidDeviceInfo> device_info,
 +                const ConnectCallback& callback)
 +      : device_info(std::move(device_info)),
 +        callback(callback),
@@ -50,7 +49,7 @@
 +            base::CreateSequencedTaskRunnerWithTraits(kBlockingTaskTraits)) {}
 +  ~ConnectParams() {}
 +
-+  scoped_refptr<HidDeviceInfoFreeBSD> device_info;
++  scoped_refptr<HidDeviceInfo> device_info;
 +  ConnectCallback callback;
 +  scoped_refptr<base::SequencedTaskRunner> task_runner;
 +  scoped_refptr<base::SequencedTaskRunner> blocking_task_runner;
@@ -160,11 +159,10 @@
 +      return;
 +    }
 +
-+    scoped_refptr<HidDeviceInfoFreeBSD> device_info(new HidDeviceInfoFreeBSD(
-+        device_id, device_node, vendor_id, product_id, product_name,
-+        serial_number,
-+        kHIDBusTypeUSB,
-+        report_descriptor));
++    scoped_refptr<HidDeviceInfo> device_info(new HidDeviceInfo(
++        device_id, vendor_id, product_id, product_name, serial_number,
++        device::mojom::HidBusType::kHIDBusTypeUSB,
++        report_descriptor, device_node));
 +
 +    task_runner_->PostTask(FROM_HERE, base::Bind(&HidServiceFreeBSD::AddDevice,
 +                                                 service_, device_info));
@@ -241,7 +239,7 @@
 +    devd_buffer_->data()[bytes_read] = 0;
 +    char *data = devd_buffer_->data();
 +    // It may take some time for devd to change permissions
-+    // on /dev/uhidX node. So do not fail immediately if 
++    // on /dev/uhidX node. So do not fail immediately if
 +    // open fail. Retry each second for kMaxPermissionChecks
 +    // times before giving up entirely
 +    if (base::StartsWith(data, "+uhid", base::CompareCase::SENSITIVE)) {
@@ -252,7 +250,7 @@
 +        if (HaveReadWritePermissions(device_name))
 +          OnDeviceAdded(parts[0].substr(1));
 +        else {
-+          // Do not re-add to checks 
++          // Do not re-add to checks
 +          if (permissions_checks_attempts_.find(device_name) == permissions_checks_attempts_.end()) {
 +            permissions_checks_attempts_.insert(std::pair<std::string, int>(device_name, kMaxPermissionChecks));
 +            timer_->Start(FROM_HERE, base::TimeDelta::FromSeconds(1),
@@ -307,6 +305,10 @@
 +  blocking_task_runner_->DeleteSoon(FROM_HERE, helper_.release());
 +}
 +
++base::WeakPtr<HidService> HidServiceFreeBSD::GetWeakPtr() {
++  return weak_factory_.GetWeakPtr();
++}
++
 +// static
 +void HidServiceFreeBSD::OpenOnBlockingThread(
 +    std::unique_ptr<ConnectParams> params) {
@@ -329,19 +331,18 @@
 +  FinishOpen(std::move(params));
 +}
 +
-+void HidServiceFreeBSD::Connect(const HidDeviceId& device_id,
++void HidServiceFreeBSD::Connect(const std::string& device_guid,
 +                            const ConnectCallback& callback) {
 +  DCHECK(thread_checker_.CalledOnValidThread());
 +
-+  const auto& map_entry = devices().find(device_id);
++  const auto& map_entry = devices().find(device_guid);
 +  if (map_entry == devices().end()) {
 +    base::ThreadTaskRunnerHandle::Get()->PostTask(
 +        FROM_HERE, base::Bind(callback, nullptr));
 +    return;
 +  }
 +
-+  scoped_refptr<HidDeviceInfoFreeBSD> device_info =
-+      static_cast<HidDeviceInfoFreeBSD*>(map_entry->second.get());
++  scoped_refptr<HidDeviceInfo> device_info = map_entry->second;
 +
 +  auto params = base::MakeUnique<ConnectParams>(device_info, callback);
 +

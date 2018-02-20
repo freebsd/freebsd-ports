@@ -1,6 +1,6 @@
---- chrome/common/url_constants.h.orig	2017-09-05 21:05:14.000000000 +0200
-+++ chrome/common/url_constants.h	2017-09-07 14:48:59.551106000 +0200
-@@ -133,7 +133,7 @@
+--- chrome/common/url_constants.h.orig	2017-12-15 02:04:12.000000000 +0100
++++ chrome/common/url_constants.h	2017-12-31 04:24:38.490568000 +0100
+@@ -136,7 +136,7 @@
  extern const char kChromeUIMetroFlowURL[];
  #endif
  
@@ -9,7 +9,7 @@
  extern const char kChromeUITabModalConfirmDialogURL[];
  #endif
  
-@@ -150,7 +150,7 @@
+@@ -149,7 +149,7 @@
  extern const char kChromeUICastURL[];
  #endif
  
@@ -18,16 +18,25 @@
  extern const char kChromeUIDiscardsURL[];
  #endif
  
-@@ -265,7 +265,7 @@
- extern const char kChromeUISigninDiceInternalsHost[];
- #endif
+@@ -262,7 +262,7 @@
+ extern const char kChromeUIPrintHost[];
+ #endif  // ENABLE_PRINT_PREVIEW
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  extern const char kChromeUIDiscardsHost[];
  #endif
  
-@@ -326,7 +326,7 @@
+@@ -270,7 +270,7 @@
+ extern const char kChromeUILinuxProxyConfigHost[];
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ extern const char kChromeUISandboxHost[];
+ #endif
+ 
+@@ -325,7 +325,7 @@
  extern const char kChromeUIMetroFlowHost[];
  #endif
  

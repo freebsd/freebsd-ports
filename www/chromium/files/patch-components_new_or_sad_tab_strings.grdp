@@ -1,38 +1,38 @@
---- components/new_or_sad_tab_strings.grdp.orig	2017-08-02 19:00:40.657953000 +0200
-+++ components/new_or_sad_tab_strings.grdp	2017-08-02 19:02:23.894386000 +0200
-@@ -58,7 +58,7 @@
-           Open page in Incognito mode (⇧⌘N)
+--- components/new_or_sad_tab_strings.grdp.orig	2017-12-15 02:04:14.000000000 +0100
++++ components/new_or_sad_tab_strings.grdp	2017-12-24 11:49:23.903168000 +0100
+@@ -48,7 +48,7 @@
+           Open page in a new Incognito window (⇧⌘N)
          </message>
        </if>
 -      <if expr="is_win or is_linux or chromeos">
 +      <if expr="is_win or is_posix or chromeos">
-         <message name="IDS_SAD_TAB_RELOAD_INCOGNITO" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to open the web page in Chrome's Incognito mode." formatter_data="android_java">
-           Open page in Incognito mode (Ctrl-Shift-N)
+         <message name="IDS_SAD_TAB_RELOAD_INCOGNITO" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to open the web page in Chrome's Incognito mode.">
+           Open page in a new Incognito window (Ctrl-Shift-N)
          </message>
-@@ -73,7 +73,7 @@
+@@ -63,7 +63,7 @@
            Close other tabs or apps
          </message>
        </if>
 -      <if expr="is_linux and not chromeos">
 +      <if expr="is_posix and not chromeos">
-         <message name="IDS_SAD_TAB_RELOAD_CLOSE_TABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other Chrome tabs or programs running on their computer." formatter_data="android_java">
+         <message name="IDS_SAD_TAB_RELOAD_CLOSE_TABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other Chrome tabs or programs running on their computer.">
            Close other tabs or programs
          </message>
-@@ -83,7 +83,7 @@
+@@ -73,7 +73,7 @@
            Close other apps
          </message>
        </if>
 -      <if expr="is_linux and not chromeos">
 +      <if expr="is_posix and not chromeos">
-         <message name="IDS_SAD_TAB_RELOAD_CLOSE_NOTABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other programs running on their computer (Linux)." formatter_data="android_java">
+         <message name="IDS_SAD_TAB_RELOAD_CLOSE_NOTABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other programs running on their computer (Linux).">
            Close other programs
          </message>
-@@ -98,7 +98,7 @@
+@@ -88,7 +88,7 @@
            Restart Chromium
          </message>
        </if>
 -      <if expr="is_win or is_linux or is_macosx or chromeos">
 +      <if expr="is_win or is_posix or is_macosx or chromeos">
-         <message name="IDS_SAD_TAB_RELOAD_RESTART_DEVICE" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to restart their computer." formatter_data="android_java">
+         <message name="IDS_SAD_TAB_RELOAD_RESTART_DEVICE" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to restart their computer.">
            Restart your computer
          </message>
