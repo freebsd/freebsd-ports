@@ -23,6 +23,6 @@ NO_ARCH=	yes
 PLIST_FILES=	man/man1/nyx.1.gz
 
 post-install:
-		${CP} ${WRKSRC}/nyx.1 ${STAGEDIR}${MANPREFIX}/man/man1
+		${INSTALL_MAN} ${WRKSRC}/nyx.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
