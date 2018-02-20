@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-ovirt
-PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTVERSION=	0.1.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-fog-core1>=1.45:devel/rubygem-fog-core1 \
 		rubygem-fog-json>=0:devel/rubygem-fog-json \
 		rubygem-fog-xml>=0.1.1:textproc/rubygem-fog-xml \
-		rubygem-rbovirt>=0.1.4:www/rubygem-rbovirt
+		rubygem-rbovirt>=0.1.5:www/rubygem-rbovirt
 
 NO_ARCH=	yes
 USE_RUBY=	yes
