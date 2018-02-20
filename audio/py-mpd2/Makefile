@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpd2
-PORTVERSION=	0.5.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,7 +20,6 @@ GH_PROJECT=	python-${PORTNAME}
 USES=		shebangfix python
 SHEBANG_FILES=	examples/*.py doc/*.py
 USE_PYTHON=	autoplist concurrent distutils
-
 NO_ARCH=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
