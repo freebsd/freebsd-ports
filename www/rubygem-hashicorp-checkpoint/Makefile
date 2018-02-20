@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hashicorp-checkpoint
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
