@@ -191,7 +191,7 @@ PLIST_FILES+=		${DATADIR}/${EMACS_VER}/lisp/canna.el.gz \
 			${DATADIR}/${EMACS_VER}/lisp/canna.elc \
 			${DATADIR}/${EMACS_VER}/lisp/isearch-ext.el.gz \
 			${DATADIR}/${EMACS_VER}/lisp/isearch-ext.elc \
-			${SOURCES}${DATADIR}/${EMACS_VER}/src/canna.c
+			%%SOURCES%%${DATADIR}/${EMACS_VER}/src/canna.c
 .elif ${FLAVOR:U} == nox
 OPTIONS_EXCLUDE=	ALSA CAIRO DBUS GCONF GIF GSETTINGS GTK2 GTK3 JPEG \
 			M17N MAGICK MOTIF OSS OTF PNG SCROLLBARS SVG TIFF XAW \
