@@ -21,6 +21,7 @@
 @(,,555) %%DATADIR%%/bin/gitlab-keys
 @(,,555) %%DATADIR%%/bin/gitlab-projects
 @(,,555) %%DATADIR%%/bin/gitlab-shell
+@(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-keys-check
 @(,,555) %%DATADIR%%/bin/install
 @sample %%DATADIR%%/config.yml.sample
 @(,,555) %%DATADIR%%/hooks/post-receive
@@ -43,6 +44,7 @@
 %%DATADIR%%/lib/gitlab_shell.rb
 %%DATADIR%%/lib/httpunix.rb
 %%DATADIR%%/lib/names_helper.rb
+%%DATADIR%%/lib/object_dirs_helper.rb
 %%DATADIR%%/lib/vendor/redis/lib/redis.rb
 %%DATADIR%%/lib/vendor/redis/lib/redis/client.rb
 %%DATADIR%%/lib/vendor/redis/lib/redis/connection.rb
@@ -69,9 +71,11 @@
 %%DATADIR%%/spec/gitlab_post_receive_spec.rb
 %%DATADIR%%/spec/gitlab_projects_spec.rb
 %%DATADIR%%/spec/gitlab_reference_counter_spec.rb
+%%DATADIR%%/spec/gitlab_shell_authorized_keys_check_spec.rb
 %%DATADIR%%/spec/gitlab_shell_spec.rb
 %%DATADIR%%/spec/httpunix_spec.rb
 %%DATADIR%%/spec/names_helper_spec.rb
+%%DATADIR%%/spec/object_dirs_helper_spec.rb
 %%DATADIR%%/spec/spec_helper.rb
 %%DATADIR%%/spec/support/gl_id_test_hook
 %%DATADIR%%/spec/support/hook_fail
