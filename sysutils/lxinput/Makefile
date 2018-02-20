@@ -9,10 +9,11 @@ MASTER_SITES=	SF/lxde/LXInput%20%28Kbd%20and%20amp_%20mouse%20config%29/LXInput%
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keyboard and mouse settings
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2+  # though COPYING is GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-	libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2
 
 USES=		gmake localbase pkgconfig tar:xz
 USE_GNOME=	gtk20 cairo gdkpixbuf2 intltool
