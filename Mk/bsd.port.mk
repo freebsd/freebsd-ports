@@ -2110,8 +2110,12 @@ FETCH_CMD?=		${FETCH_BINARY} ${FETCH_ARGS}
 .if defined(RANDOMIZE_MASTER_SITES)
 .if exists(/usr/games/random)
 RANDOM_CMD?=	/usr/games/random
+.elif exists(/usr/bin/random)
+RANDOM_CMD?=	/usr/bin/random
+.endif
+.if defined(RANDOM_CMD) && !empty(RANDOM_CMD)
 RANDOM_ARGS?=	-w -f -
-_RANDOMIZE_SITES=	 |${RANDOM_CMD} ${RANDOM_ARGS}
+_RANDOMIZE_SITES=	 ${RANDOM_CMD} ${RANDOM_ARGS}
 .endif
 .endif
 
