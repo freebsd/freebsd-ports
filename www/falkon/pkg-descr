@@ -1,0 +1,10 @@
+Falkon (formerly called QupZilla) is a new and very fast QtWebEngine browser 
+which aims to be a lightweight web browser available for all major platforms. 
+
+Falkon has all the standard functions you expect from a web browser. It includes
+bookmarks, history (both also in sidebar) and tabs. Above that, you can manage
+RSS feeds with an included RSS reader, block ads with a builtin AdBlock plugin,
+block Flash content with Click2Flash and edit the local CA Certificate
+database with an SSL Manager.
+
+WWW: https://github.com/KDE/falkon
