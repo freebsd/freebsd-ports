@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU
@@ -181,7 +181,7 @@ XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 XWIDGETS_IMPLIES=	GTK3
 
 .if ${FLAVOR:U} == canna
-CONFIGURE_WITH=		canna
+CONFIGURE_ARGS+=	--with-canna
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES=		http://www.gentei.org/~yuuji/software/emacs25canna/ \
 			http://distfiles.pirateparty.in/ashish/ \
