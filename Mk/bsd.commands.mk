@@ -108,11 +108,6 @@ XZ_CMD?=		/usr/bin/xz ${XZ}
 
 MD5?=			/sbin/md5
 SHA256?=		/sbin/sha256
-.if exists(/usr/bin/soeliminate)
-SOELIM?=		/usr/bin/soeliminate
-.else
-SOELIM?=		/usr/bin/soelim
-.endif
 
 # ECHO is defined in /usr/share/mk/sys.mk, which can either be "echo",
 # or "true" if the make flag -s is given.  Use ECHO_CMD where you mean
@@ -133,4 +128,12 @@ PKG_CREATE?=		${PKG_BIN} create
 PKG_ADD?=		${PKG_BIN} add
 PKG_QUERY?=		${PKG_BIN} query
 
+.endif
+
+.if defined(OSVERSION)
+.if ${OSVERSION} < 1100000
+SOELIM?=		/usr/bin/soeliminate
+.else
+SOELIM?=		/usr/bin/soelim
+.endif
 .endif
