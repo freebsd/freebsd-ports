@@ -1049,6 +1049,7 @@
     SUBDIR += ruby-camellia
     SUBDIR += rubygem-airbrussh
     SUBDIR += rubygem-attr_encrypted
+    SUBDIR += rubygem-attr_encrypted30
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-bcrypt_pbkdf
