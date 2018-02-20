@@ -5,6 +5,7 @@ PORTNAME=	dotenv-rails
 PORTVERSION=	2.2.1
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	-rails4
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Autoload dotenv in Rails
