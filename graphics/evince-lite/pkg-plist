@@ -126,7 +126,7 @@ lib/mozilla/plugins/libevbrowserplugin.so
 lib/systemd/user/evince.service
 libdata/pkgconfig/evince-document-%%VERSION%%.pc
 libdata/pkgconfig/evince-view-%%VERSION%%.pc
-libexec/evinced
+%%DBUS%%libexec/evinced
 man/man1/evince.1.gz
 share/GConf/gsettings/evince.convert
 share/appdata/evince-pdfdocument.metainfo.xml
@@ -135,7 +135,7 @@ share/appdata/evince-tiffdocument.metainfo.xml
 share/appdata/evince.appdata.xml
 share/applications/evince-previewer.desktop
 share/applications/evince.desktop
-share/dbus-1/services/org.gnome.evince.Daemon.service
+%%DBUS%%share/dbus-1/services/org.gnome.evince.Daemon.service
 share/gtk-doc/html/evince/EvFileMonitor.html
 share/gtk-doc/html/evince/EvHistory.html
 share/gtk-doc/html/evince/EvMessageArea.html
