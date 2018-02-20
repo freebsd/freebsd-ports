@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	10.0.6
+PORTVERSION=	10.0.7
 CATEGORIES=	www
-MASTER_SITES=	http://download.owncloud.org/community/
+MASTER_SITES=	https://download.owncloud.org/community/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Personal cloud which runs on your own server
