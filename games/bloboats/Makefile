@@ -15,6 +15,8 @@ COMMENT=	Boat racing game in the spirit of Elasto Mania or X-Moto
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
+BROKEN_FreeBSD_12=	does not build on 12.X
+
 USES=		dos2unix gmake
 USE_SDL=	mixer image net sdl
 USE_GL=		gl glu
