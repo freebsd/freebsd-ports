@@ -21,7 +21,8 @@ full_PKGNAMESUFFIX=	-devel
 nox_CONFLICTS_INSTALL=	emacs-devel
 nox_PKGNAMESUFFIX=	-devel_nox
 
-USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
+USES=		autoreconf:build cpe gmake localbase:ldflags makeinfo ncurses \
+		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
 GH_TAGNAME=	d599dce
@@ -47,8 +48,8 @@ INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
 	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar \
 	srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
-OPTIONS_DEFINE=	ACL DBUS GCONF GNUTLS GSETTINGS LCMS2 LLDB M17N MODULES OTF \
-		SCROLLBARS SOURCES THREADS XFT XIM XML XWIDGETS
+OPTIONS_DEFINE=	ACL DBUS GCONF GNUTLS GSETTINGS LCMS2 LLDB M17N MAILUTILS \
+		MODULES OTF SCROLLBARS SOURCES THREADS XFT XIM XML XWIDGETS
 OPTIONS_DEFAULT=	ACL DBUS FREEDESKTOP GCONF GIF GNUTLS GSETTINGS GTK3 \
 		JPEG KQUEUE LCMS2 M17N MAGICK MODULES OSS OTF PNG \
 		SCROLLBARS SOURCES SVG THREADS TIFF XFT XIM XML XPM
@@ -72,6 +73,7 @@ LLDB_DESC=	Enable LLDB support for GUD
 #LTO_DESC=	Enable link-time optimization
 MAGICK_DESC=	ImageMagick support
 M17N_DESC=	M17N support for text-shaping (implies XFT)
+MAILUTILS_DESC=	Mail framework via GNU Mailutils
 MODULES_DESC=	Dynamic modules support
 OTF_DESC=	Opentype fonts support        (implies XFT)
 SCROLLBARS_DESC=Toolkit scroll-bars
@@ -122,6 +124,8 @@ M17N_CONFIGURE_WITH=	m17n-flt
 M17N_IMPLIES=		XFT
 MAGICK_LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick
 MAGICK_CONFIGURE_WITH=	imagemagick
+MAILUTILS_CONFIGURE_WITH=	mailutils
+MAILUTILS_LIB_DEPENDS=	libmailutils.so:mail/mailutils
 MODULES_CONFIGURE_WITH=	modules
 MOTIF_USES=		motif
 MOTIF_CONFIGURE_ON=	--with-x-toolkit=motif
