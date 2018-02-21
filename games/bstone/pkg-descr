@@ -1,0 +1,18 @@
+A source port of game Blake Stone: Aliens of Gold and Blake Stone: Planet Strike
+
+Features:
+* High resolution rendering of world (extended vanilla engine)
+* Modern and vanilla controls
+* Allows to customize control bindings
+* Separate volume control of sound effects and music
+
+Supported games:
+* Aliens of Gold v1.0 full
+* Aliens of Gold v2.0 full
+* Aliens of Gold v2.1 full
+* Aliens of Gold v3.0 full
+* Aliens of Gold v3.0 shareware
+* Planet Strike v1.0
+* Planet Strike v1.1
+
+WWW: https://github.com/bibendovsky/bstone
