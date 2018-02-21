@@ -4,6 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	10.4.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	idefix@fechner.net
@@ -198,7 +199,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-asset_sync220>=2.2.0:net/rubygem-asset_sync220 \
 	rubygem-rinku>=1.7.3:www/rubygem-rinku
 
-PGSQL_RUN_DEPENDS=	rubygem-pg>=0.18.2:databases/rubygem-pg \
+PGSQL_RUN_DEPENDS=	rubygem-pg0>=0.18.2:databases/rubygem-pg0 \
 	rubygem-peek-pg>=1.3.0:databases/rubygem-peek-pg
 MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.5:databases/rubygem-mysql2 \
 	rubygem-peek-mysql2>=1.1.0:databases/rubygem-peek-mysql2
