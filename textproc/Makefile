@@ -434,6 +434,7 @@
     SUBDIR += libnxml
     SUBDIR += libodfgen01
     SUBDIR += libparsifal
+    SUBDIR += libqxp
     SUBDIR += librevenge
     SUBDIR += libsass
     SUBDIR += libsoldout
