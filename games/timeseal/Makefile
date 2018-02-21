@@ -11,6 +11,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Account for network lag in FICS chess games
 
+DEPRECATED=	Abandoned, outdated, requires COMPAT_43 kernel option which was removed from GENERIC in FreeBSD 7.0 
+EXPIRATION_DATE=	2018-03-21
+
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 STRIP=		# strip(1) does not support a.out binaries
