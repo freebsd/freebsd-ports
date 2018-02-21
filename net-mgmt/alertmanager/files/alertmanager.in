@@ -44,8 +44,8 @@ procname="%%PREFIX%%/bin/alertmanager"
 sig_reload=HUP
 extra_commands="reload"
 command_args="-p ${pidfile} /usr/bin/env ${procname} \
-                -config.file=${alertmanager_config} \
-                -storage.path=${alertmanager_data_dir} \
+                --config.file=${alertmanager_config} \
+                --storage.path=${alertmanager_data_dir} \
                 ${alertmanager_args} > ${alertmanager_log_file} 2>&1"
 
 start_precmd=alertmanager_startprecmd
