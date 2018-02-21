@@ -1,0 +1,11 @@
+include/libepubgen-0.1/libepubgen/EPUBDrawingGenerator.h
+include/libepubgen-0.1/libepubgen/EPUBPackage.h
+include/libepubgen-0.1/libepubgen/EPUBPresentationGenerator.h
+include/libepubgen-0.1/libepubgen/EPUBTextGenerator.h
+include/libepubgen-0.1/libepubgen/libepubgen-api.h
+include/libepubgen-0.1/libepubgen/libepubgen-decls.h
+include/libepubgen-0.1/libepubgen/libepubgen.h
+lib/libepubgen-0.1.so
+lib/libepubgen-0.1.so.1
+lib/libepubgen-0.1.so.1.0.0
+libdata/pkgconfig/libepubgen-0.1.pc
