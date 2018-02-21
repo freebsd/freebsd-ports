@@ -1,0 +1,22 @@
+Python 2 and 3 wrapper for wkhtmltoimage utility to convert HTML to IMG
+using Webkit.
+
+Simple example:
+
+import imgkit
+
+  imgkit.from_url('http://google.com', 'out.jpg')
+  imgkit.from_file('test.html', 'out.jpg')
+  imgkit.from_string('Hello!', 'out.jpg')
+
+You can pass a list with multiple URLs or files:
+
+  imgkit.from_url(['google.com', 'yandex.ru', 'engadget.com'], 'out.jpg')
+  imgkit.from_file(['file1.html', 'file2.html'], 'out.jpg')
+
+Also you can pass an opened file:
+
+  with open('file.html') as f:
+      imgkit.from_file(f, 'out.jpg')
+
+WWW: https://github.com/jarrekk/imgkit
