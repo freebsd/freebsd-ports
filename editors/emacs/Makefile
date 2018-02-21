@@ -65,7 +65,6 @@ OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
 
 ACL_DESC=	Access control list support
 CAIRO_DESC=	Experimental Cairo library support     (implies PNG, XFT)
-CANNA_DESC=	Japanese input support
 FILENOTIFY_DESC=	File notification support
 GFILE_DESC=	File notification via gfile
 GRAPHICS_DESC=	Graphics support
@@ -182,7 +181,6 @@ CONFIGURE_ARGS+=	--with-sound=no --without-cairo --without-dbus \
 OPTIONS_EXCLUDE=	ALSA CAIRO DBUS GCONF GIF GSETTINGS GTK2 GTK3 JPEG \
 			M17N MAGICK MOTIF OSS OTF PNG SCROLLBARS SVG TIFF XAW \
 			XAW3D XFT XIM XPM XWIDGETS
-WITHOUT_X11=		yes
 .else
 CONFIGURE_ARGS+=	--with-x
 INSTALLS_ICONS=		yes
