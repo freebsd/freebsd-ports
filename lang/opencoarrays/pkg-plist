@@ -10,6 +10,6 @@ lib/cmake/opencoarrays/OpenCoarraysTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/opencoarrays/OpenCoarraysTargets.cmake
 lib/libcaf_mpi.a
 lib/libcaf_mpi.so
-lib/libcaf_mpi.so.2
+lib/libcaf_mpi.so.%%SOVERSION%%
 man/man1/caf.1.gz
 man/man1/cafrun.1.gz
