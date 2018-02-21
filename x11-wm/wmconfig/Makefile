@@ -6,7 +6,7 @@ PORTVERSION=	1.5.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://www.arrishq.net/files/
 
-MAINTAINER=	net@arrishq.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu generation tool for X window managers
 
 LICENSE=	GPLv2
