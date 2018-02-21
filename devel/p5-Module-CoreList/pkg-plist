@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Module/CoreList.pm
 %%SITE_PERL%%/Module/CoreList.pod
-%%SITE_PERL%%/Module/CoreList/TieHashDelta.pm
 %%SITE_PERL%%/Module/CoreList/Utils.pm
 %%PERL5_MAN3%%/Module::CoreList.3.gz
 %%PERL5_MAN3%%/Module::CoreList::Utils.3.gz
