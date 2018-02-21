@@ -141,6 +141,7 @@ share/aclocal/cutter.m4
 %%DATADIR%%/icons/kinotan/pass.png
 %%DATADIR%%/icons/kinotan/pending.png
 %%DATADIR%%/license/fdl-1.3.txt
+%%DATADIR%%/license/gpl-3.txt
 %%DATADIR%%/license/lgpl-3.txt
 %%DATADIR%%/stack/Makefile.am
 %%DATADIR%%/stack/autogen.sh
@@ -226,7 +227,6 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/index-all.html
 %%DOCSDIR%%/index-deprecated.html
 %%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/install-to-centos.html
 %%DOCSDIR%%/install-to-cygwin.html
 %%DOCSDIR%%/install-to-debian.html
