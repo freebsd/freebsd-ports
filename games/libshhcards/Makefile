@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libshhcards
-PORTVERSION=	1.0.5
-PORTREVISION=	3
+PORTVERSION=	1.0.6
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	shhcards-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for displaying game cards on X Window System
+
+LICENSE=	ART10
 
 USE_XORG=	xpm
 MAKEFILE=	${FILESDIR}/Makefile.lib
