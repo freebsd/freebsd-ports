@@ -264,6 +264,7 @@
     SUBDIR += picoc
     SUBDIR += pocl
     SUBDIR += polyml
+    SUBDIR += ponyc
     SUBDIR += ptoc
     SUBDIR += pure
     SUBDIR += py-clojure_py
