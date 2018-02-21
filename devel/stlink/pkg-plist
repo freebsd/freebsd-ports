@@ -14,7 +14,7 @@ include/stlink/usb.h
 include/stlink/version.h
 lib/libstlink-shared.so
 lib/libstlink-shared.so.1
-lib/libstlink-shared.so.1.4.0
+lib/libstlink-shared.so.1.5.0
 lib/libstlink.a
 libdata/pkgconfig/stlink.pc
 man/man1/st-flash.1.gz
