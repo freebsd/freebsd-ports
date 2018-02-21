@@ -17,7 +17,7 @@ LIB_DEPENDS=	libtreectrl.so.1:x11-toolkits/tktreectrl # no libtreectrl.so is pro
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR} \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:x11-toolkits/py-Pmw@${FLAVOR}
 
-USES=		python:2.7 tk:run zip # 2.7 because of py36-Pmw
+USES=		python:2.7 tk:run zip # 2.7 is only because x11-toolkits/py-Pmw has USES=python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
