@@ -1,7 +1,0 @@
-# $FreeBSD$
-
-PROG=	tweak
-SRCS=	actions.c btree.c buffer.c curses.c keytab.c main.c rcfile.c search.c
-LDADD=	-lncurses
-
-.include <bsd.prog.mk>
