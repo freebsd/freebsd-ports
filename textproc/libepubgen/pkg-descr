@@ -1,0 +1,7 @@
+libepubgen is a library for generating documents in ePub format, implementing
+librevenge document interfaces. It supports conversion of text documents,
+presentations and vector drawings. Spreadsheets are not supported. As these
+interfaces are used by multiple libraries, libepubgen can be used to generate
+EPUB from many sources.
+
+WWW: http://libepubgen.sourceforge.net/
