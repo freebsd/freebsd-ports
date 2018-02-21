@@ -24,11 +24,11 @@ nox_PKGNAMESUFFIX=	-devel_nox
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	b3fb0d4
+GH_TAGNAME=	d599dce
 
 CPE_VENDOR=	gnu
 EMACS_VER=	27.0.50
-EMACS_REV=	20180122
+EMACS_REV=	20180220
 GNU_CONFIGURE=	yes
 INFO_PATH=	${DATADIR_REL}/info
 
