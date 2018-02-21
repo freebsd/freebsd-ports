@@ -1,0 +1,3 @@
+Export php-fpm metrics in Prometheus format.
+
+WWW: https://github.com/bakins/php-fpm-exporter
