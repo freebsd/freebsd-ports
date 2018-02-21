@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	threads-shared
-PORTVERSION=	1.57
+PORTVERSION=	1.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
@@ -16,5 +16,8 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/threads/shared/shared.so
 
 .include <bsd.port.mk>
