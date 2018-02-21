@@ -45,7 +45,7 @@ OPTIONS_SUB=		yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 1200000
-BOOTSTRAP_PATH=	crystal-0.24.1-freebsd12.0
+BOOTSTRAP_PATH=	crystal-0.24.1-freebsd12.0-1
 .else
 BOOTSTRAP_PATH=	crystal-0.24.1-freebsd11.1
 .endif
