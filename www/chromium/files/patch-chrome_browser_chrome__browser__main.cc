@@ -1,15 +1,15 @@
---- chrome/browser/chrome_browser_main.cc.orig	2017-06-05 19:03:02 UTC
-+++ chrome/browser/chrome_browser_main.cc
-@@ -183,7 +183,7 @@
- #include "chrome/browser/feedback/feedback_profile_observer.h"
- #endif  // defined(OS_ANDROID)
+--- chrome/browser/chrome_browser_main.cc.orig	2017-12-15 02:04:08.000000000 +0100
++++ chrome/browser/chrome_browser_main.cc	2017-12-24 00:42:50.301023000 +0100
+@@ -193,7 +193,7 @@
+ #include "chrome/browser/offline_pages/offline_page_info_handler.h"
+ #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -274,7 +274,7 @@
+@@ -287,7 +287,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -18,19 +18,7 @@
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #endif
  
-@@ -477,9 +477,9 @@ void RegisterComponentsForUpdate() {
- 
- #if !defined(OS_ANDROID)
-   RegisterPepperFlashComponent(cus);
--#if !defined(OS_CHROMEOS)
-+#if !defined(OS_CHROMEOS) && !defined(OS_BSD)
-   RegisterWidevineCdmComponent(cus);
--#endif  // !defined(OS_CHROMEOS)
-+#endif  // !defined(OS_CHROMEOS) && !defined(OS_BSD)
- #endif  // !defined(OS_ANDROID)
- 
- #if !defined(DISABLE_NACL) && !defined(OS_ANDROID)
-@@ -761,7 +761,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
+@@ -719,7 +719,7 @@
    field_trial_synchronizer_ = new FieldTrialSynchronizer();
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -39,7 +27,7 @@
    metrics::DesktopSessionDurationTracker::Initialize();
  #endif
    metrics::RendererUptimeTracker::Initialize();
-@@ -1191,11 +1191,11 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1122,11 +1122,11 @@
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
@@ -51,9 +39,9 @@
 -#endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
  
-   // Initialize tracking synchronizer system.
-   tracking_synchronizer_ = new metrics::TrackingSynchronizer(
-@@ -1374,7 +1374,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
+ #if defined(OS_MACOSX)
+   // Get the Keychain API to register for distributed notifications on the main
+@@ -1327,7 +1327,7 @@
  
  // Start the tab manager here so that we give the most amount of time for the
  // other services to start up before we start adjusting the oom priority.

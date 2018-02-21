@@ -1,6 +1,6 @@
---- third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp.orig	2017-06-05 19:04:22 UTC
-+++ third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp
-@@ -68,6 +68,103 @@ const wchar_t* const fullmonths[] = {L"January", L"Feb
+--- third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp.orig	2017-12-31 05:03:16.422190000 +0100
++++ third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp	2017-12-31 05:11:19.941348000 +0100
+@@ -70,6 +70,103 @@
                                       L"July",    L"August",   L"September",
                                       L"October", L"November", L"December"};
  
@@ -97,10 +97,10 @@
 +static char *
 +     fcvt(double arg, int ndigits, int *decpt, int *sign)
 +{
-+    return (ap_cvt(arg, ndigits, decpt, sign, 0));
++     return (ap_cvt(arg, ndigits, decpt, sign, 0));
 +}
 +#endif // defined(__FreeBSD__)
 +
- CFX_ByteString StrTrim(const CFX_ByteString& pStr) {
-   CFX_ByteString result(pStr);
+ ByteString StrTrim(const ByteString& pStr) {
+   ByteString result(pStr);
    result.TrimLeft(' ');

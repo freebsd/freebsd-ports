@@ -1,42 +1,40 @@
---- third_party/webrtc/rtc_base/platform_thread.cc.orig	2017-09-07 01:16:42.622602000 +0200
-+++ third_party/webrtc/rtc_base/platform_thread.cc	2017-09-07 01:29:26.664318000 +0200
-@@ -15,11 +15,18 @@
- #include "webrtc/rtc_base/timeutils.h"
- #include "webrtc/rtc_base/trace_event.h"
+--- third_party/webrtc/rtc_base/platform_thread.cc.orig	2017-12-15 02:05:40.000000000 +0100
++++ third_party/webrtc/rtc_base/platform_thread.cc	2017-12-24 19:19:48.387841000 +0100
+@@ -16,7 +16,9 @@
+ #include "rtc_base/trace_event.h"
  
--#if defined(WEBRTC_LINUX)
-+#if defined(WEBRTC_LINUX) && !defined(__FreeBSD__)
+ #if defined(WEBRTC_LINUX)
++#if !defined(__FreeBSD__)
  #include <sys/prctl.h>
++#endif
  #include <sys/syscall.h>
  #endif
  
-+#if defined(WEBRTC_BSD)
-+#include <pthread.h>
-+#include <pthread_np.h>
-+#include <sys/syscall.h>
-+#include <sys/thr.h>
-+#endif
-+
- namespace rtc {
- 
- PlatformThreadId CurrentThreadId() {
-@@ -29,6 +36,8 @@
- #elif defined(WEBRTC_POSIX)
- #if defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
+@@ -31,8 +33,10 @@
    ret = pthread_mach_thread_np(pthread_self());
-+#elif defined(WEBRTC_BSD)
-+  ret = reinterpret_cast<int>(pthread_getthreadid_np());
- #elif defined(WEBRTC_LINUX)
-   ret =  syscall(__NR_gettid);
  #elif defined(WEBRTC_ANDROID)
-@@ -72,7 +81,9 @@
-                      reinterpret_cast<ULONG_PTR*>(&threadname_info));
-   } __except (EXCEPTION_EXECUTE_HANDLER) {
-   }
--#elif defined(WEBRTC_LINUX) || defined(WEBRTC_ANDROID)
-+#elif defined(WEBRTC_BSD)
-+  pthread_set_name_np(pthread_self(), name);
-+#elif (defined(WEBRTC_LINUX) || defined(WEBRTC_ANDROID)) && !defined(WEBRTC_BSD)
+   ret = gettid();
+-#elif defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX) && !defined(__FreeBSD__)
+   ret =  syscall(__NR_gettid);
++#elif defined(__FreeBSD__)
++  ret = reinterpret_cast<uint64_t>(pthread_self());
+ #else
+   // Default implementation for nacl and solaris.
+   ret = reinterpret_cast<pid_t>(pthread_self());
+@@ -59,6 +63,7 @@
+ }
+ 
+ void SetCurrentThreadName(const char* name) {
++#if !defined(__FreeBSD__)
+ #if defined(WEBRTC_WIN)
+   struct {
+     DWORD dwType;
+@@ -76,6 +81,7 @@
    prctl(PR_SET_NAME, reinterpret_cast<unsigned long>(name));
  #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
    pthread_setname_np(name);
++#endif
+ #endif
+ }
+ 

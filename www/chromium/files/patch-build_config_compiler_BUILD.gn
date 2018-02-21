@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2017-09-05 21:05:11.000000000 +0200
-+++ build/config/compiler/BUILD.gn	2017-09-11 02:57:48.188641000 +0200
-@@ -46,7 +46,7 @@
+--- build/config/compiler/BUILD.gn.orig	2018-01-04 21:05:38.000000000 +0100
++++ build/config/compiler/BUILD.gn	2018-01-20 16:53:24.701867000 +0100
+@@ -47,7 +47,7 @@
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -9,15 +9,6 @@
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -167,7 +167,7 @@
-     configs += [ "//build/config/win:compiler" ]
-   } else if (is_android) {
-     configs += [ "//build/config/android:compiler" ]
--  } else if (is_linux) {
-+  } else if (is_linux || is_bsd) {
-     configs += [ "//build/config/linux:compiler" ]
-   } else if (is_nacl) {
-     configs += [ "//build/config/nacl:compiler" ]
 @@ -222,7 +222,7 @@
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
@@ -27,89 +18,72 @@
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -319,7 +319,7 @@
- 
-   # Linux/Android common flags setup.
-   # ---------------------------------
--  if (is_linux || is_android || is_fuchsia) {
-+  if (is_linux || is_android || is_bsd || is_fuchsia) {
-     if (use_pic) {
-       cflags += [ "-fPIC" ]
-       ldflags += [ "-fPIC" ]
-@@ -509,7 +509,7 @@
-       ldflags += [ "-flto" ]
- 
-       # Apply a lower LTO optimization level as the default is too slow.
--      if (is_linux) {
-+      if (is_linux || is_bsd) {
-         if (use_lld) {
-           ldflags += [ "-Wl,--lto-O1" ]
-         } else {
-@@ -532,7 +532,7 @@
-     # Also, when targeting ARM, without this flag, LTO produces a .text section
-     # that is larger than the maximum call displacement, preventing the linker
-     # from relocating calls (http://llvm.org/PR22999).
--    if (is_linux) {
-+    if (is_linux || is_bsd) {
-       if (use_lld) {
-         ldflags += [
-           "-Wl,-mllvm,-function-sections",
-@@ -603,7 +603,7 @@
+@@ -326,8 +326,6 @@
+       "-Wl,-z,relro",
+     ]
+     if (!using_sanitizer) {
+-      ldflags += [ "-Wl,-z,defs" ]
+-
+       # Functions interposed by the sanitizers can make ld think
+       # that some libraries aren't needed when they actually are,
+       # http://crbug.com/234010. As workaround, disable --as-needed.
+@@ -424,7 +422,7 @@
+   # TODO(hans): Remove this once Clang generates better optimized debug info by
+   # default. https://crbug.com/765793
+   if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
+-      target_os != "chromeos") {
++      target_os != "chromeos" && !is_bsd) {
+     cflags += [
+       "-Xclang",
+       "-mllvm",
+@@ -638,7 +636,7 @@
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
--      if (is_clang && !is_android && !is_nacl) {
-+      if (is_clang && !is_android && !is_nacl && !is_bsd) {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -854,11 +854,11 @@
- #   configs -= [ "//build/config/compiler:clang_stackrealign" ]
- # See https://crbug.com/556393 for details of where it must be avoided.
- config("clang_stackrealign") {
--  if (is_clang && current_cpu == "x86" && (is_android || is_linux)) {
-+  if (is_clang && current_cpu == "x86" && (is_android || is_linux || is_bsd)) {
-     # Android needs -mstackrealign due to a bug on ia32 Jelly Bean.
-     # See crbug.com/521527
-     cflags = [ "-mstackrealign" ]
--    if (is_linux) {
-+    if (is_linux || is_bsd) {
-       # Align the stack on 16-byte boundaries, http://crbug.com/418554.
-       cflags += [ "-mstack-alignment=16" ]
-     }
-@@ -910,7 +910,7 @@
-   # smaller.
-   if (is_win) {
-     configs += [ "//build/config/win:runtime_library" ]
--  } else if (is_linux) {
-+  } else if (is_linux || is_bsd) {
-     configs += [ "//build/config/linux:runtime_library" ]
-   } else if (is_ios) {
-     configs += [ "//build/config/ios:runtime_library" ]
-@@ -1164,7 +1164,7 @@
+@@ -1261,23 +1259,8 @@
+         # TODO(hans): https://crbug.com/637306
          "-Wno-address-of-packed-member",
  
-         # TODO(hans): https://crbug.com/681136
+-        # TODO(hans): https://crbug.com/681136
 -        "-Wno-unused-lambda-capture",
-+        # "-Wno-unused-lambda-capture",
- 
+-
          # TODO(thakis ): https://crbug.com/683349
          "-Wno-user-defined-warnings",
-@@ -1214,7 +1214,7 @@
-     ]
- 
-     if (!is_debug && !using_sanitizer &&
--        (!is_linux || !is_clang || is_official_build) &&
-+        (!is_linux || !is_bsd || !is_clang || is_official_build) &&
-         current_cpu != "s390x" && current_cpu != "s390" &&
-         current_cpu != "ppc64" && current_cpu != "ppc64" &&
-         current_cpu != "mips" && current_cpu != "mips64") {
-@@ -1734,7 +1734,7 @@
-         # "-gdwarf-3" doesn't work with dump_syms in Chrome OS.
+-
+-        # TODO(thakis): https://crbug.com/753973
+-        "-Wno-enum-compare-switch",
+-
+-        # TODO(hans): https://crbug.com/763392
+-        "-Wno-tautological-unsigned-zero-compare",
+-
+-        # TODO(hans): https://crbug.com/766891
+-        "-Wno-null-pointer-arithmetic",
+-
+-        # TODO(hans): https://crbug.com/767059
+-        "-Wno-tautological-unsigned-enum-zero-compare",
+       ]
+     } else if (use_xcode_clang && xcode_version_int >= 830) {
+       # This is necessary to allow a progressive transition from using xcode 8.0
+@@ -1861,7 +1844,7 @@
+         # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
          cflags += [ "-gdwarf-3" ]
        }
 -      cflags += [ "-g2" ]
 +      cflags += [ "-g0" ]
      }
-     if (use_debug_fission) {
+     if (use_debug_fission && !is_nacl) {
        cflags += [ "-gsplit-dwarf" ]
+@@ -1875,7 +1858,7 @@
+     # DWARF info may be corrupt; offsets in a range list entry are in different
+     # sections" there.  Maybe just a bug in nacl_switch_32.S.
+     if (!is_mac && !is_ios && !is_nacl && target_cpu != "x86" &&
+-        (use_gold || use_lld)) {
++        (use_gold || use_lld) && !is_bsd) {
+       if (is_clang) {
+         # This flag enables the GNU-format pubnames and pubtypes sections,
+         # which lld needs in order to generate a correct GDB index.

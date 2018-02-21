@@ -1,28 +1,20 @@
---- content/common/BUILD.gn.orig	2017-06-05 19:03:07 UTC
-+++ content/common/BUILD.gn
-@@ -508,7 +508,7 @@ source_set("common") {
-   }
- 
-   if (!use_seccomp_bpf) {
--    if (is_linux) {
-+    if (is_linux || is_bsd) {
-       sources -= [
-         "sandbox_linux/bpf_cros_arm_gpu_policy_linux.cc",
-         "sandbox_linux/bpf_cros_arm_gpu_policy_linux.h",
-@@ -522,6 +522,16 @@ source_set("common") {
-         "sandbox_linux/bpf_utility_policy_linux.h",
-         "sandbox_linux/sandbox_bpf_base_policy_linux.cc",
+--- content/common/BUILD.gn.orig	2018-01-04 21:05:50.000000000 +0100
++++ content/common/BUILD.gn	2018-01-21 00:08:52.884724000 +0100
+@@ -564,6 +564,17 @@
          "sandbox_linux/sandbox_bpf_base_policy_linux.h",
-+        "sandbox_linux/sandbox_seccomp_bpf_linux.cc",
-+        "sandbox_linux/sandbox_seccomp_bpf_linux.h",
-+      ]
-+    }
+       ]
+     }
 +    if (is_bsd) {
 +      sources -= [
 +        "quarantine/quarantine_linux.cc",
-+        "sandbox_linux/sandbox_linux.cc",
-+        "sandbox_linux/sandbox_linux.h",
++        "sandbox_linux/bpf_cdm_policy_linux.cc",
++        "sandbox_linux/bpf_pdf_compositor_policy_linux.cc",
 +        "sandbox_linux/sandbox_init_linux.cc",
-       ]
-     }
-     if (is_android) {
++        "sandbox_linux/sandbox_linux.cc",
++        "sandbox_linux/sandbox_seccomp_bpf_linux.cc",
++        "sandbox_linux/sandbox_debug_handling_linux.cc",
++      ]
++    }
+   }
+ 
+   if (is_mac) {

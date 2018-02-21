@@ -1,5 +1,5 @@
---- content/renderer/renderer_main.cc.orig	2017-09-05 21:05:19.000000000 +0200
-+++ content/renderer/renderer_main.cc	2017-09-09 00:53:51.849087000 +0200
+--- content/renderer/renderer_main.cc.orig	2017-12-15 02:04:18.000000000 +0100
++++ content/renderer/renderer_main.cc	2017-12-31 04:55:48.524657000 +0100
 @@ -34,12 +34,19 @@
  #include "ppapi/features/features.h"
  #include "third_party/WebKit/public/platform/scheduler/renderer/renderer_scheduler.h"
@@ -12,7 +12,7 @@
  #endif  // OS_ANDROID
  
 +#if defined(OS_BSD)
-+#include "content/browser/renderer_host/render_sandbox_host_linux.h"
++#include "content/browser/sandbox_host_linux.h"
 +#include "content/common/font_config_ipc_linux.h"
 +#include "content/common/sandbox_linux/sandbox_linux.h"
 +#endif
@@ -20,7 +20,7 @@
  #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
  #include "content/common/font_config_ipc_linux.h"
  #include "content/common/sandbox_linux/sandbox_linux.h"
-@@ -190,9 +197,13 @@
+@@ -191,9 +198,13 @@
    // is OK.
    InitializeWebRtcModule();
  #endif
@@ -35,7 +35,7 @@
      // TODO(markus): Check if it is OK to unconditionally move this
      // instruction down.
      auto render_process = RenderProcessImpl::Create();
-@@ -202,7 +213,7 @@
+@@ -203,7 +214,7 @@
      bool run_loop = true;
      if (!no_sandbox)
        run_loop = platform.EnableSandbox();

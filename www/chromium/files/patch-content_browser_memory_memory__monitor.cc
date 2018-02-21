@@ -1,21 +1,11 @@
---- content/browser/memory/memory_monitor.cc.orig	2017-06-05 19:03:07 UTC
-+++ content/browser/memory/memory_monitor.cc
-@@ -8,6 +8,7 @@
- 
- namespace content {
- 
-+#if !defined(OS_FREEBSD)
- // static
- MemoryMonitorDelegate* MemoryMonitorDelegate::GetInstance() {
-   return base::Singleton<
-@@ -21,8 +22,9 @@ void MemoryMonitorDelegate::GetSystemMemoryInfo(
-     base::SystemMemoryInfoKB* mem_info) {
+--- content/browser/memory/memory_monitor.cc.orig	2018-01-04 21:05:50.000000000 +0100
++++ content/browser/memory/memory_monitor.cc	2018-01-27 19:06:05.251190000 +0100
+@@ -22,7 +22,7 @@
    base::GetSystemMemoryInfo(mem_info);
  }
-+#endif // !defined(OS_FREEBSD)
  
 -#if defined(OS_MACOSX)
-+#if defined(OS_MACOSX) && !defined(OS_FREEBSD)
++#if defined(OS_MACOSX) || defined(OS_BSD)
  // TODO(bashi,bcwhite): Remove when memory monitor for mac is available.
  std::unique_ptr<MemoryMonitor> CreateMemoryMonitor() {
    NOTREACHED();

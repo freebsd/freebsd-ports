@@ -1,24 +1,25 @@
---- device/serial/BUILD.gn.orig	2017-06-05 19:03:07 UTC
-+++ device/serial/BUILD.gn
-@@ -6,7 +6,7 @@ import("//build/config/features.gni")
+--- device/serial/BUILD.gn.orig	2017-12-15 02:04:18.000000000 +0100
++++ device/serial/BUILD.gn	2017-12-25 06:34:10.834395000 +0100
+@@ -6,7 +6,7 @@
  import("//mojo/public/tools/bindings/mojom.gni")
  
  # Library works only on desktop platforms.
--assert(is_win || is_linux || is_mac)
-+assert(is_win || is_linux || is_bsd || is_mac)
+-if (is_win || is_linux || is_mac) {
++if (is_win || is_linux || is_mac || is_bsd) {
+   config("platform_support") {
+     visibility = [ ":serial" ]
+     if (is_win) {
+@@ -57,6 +57,13 @@
+       "//net",
+       "//third_party/re2",
+     ]
++
++    if (is_bsd) {
++      sources -= [
++        "serial_device_enumerator_linux.cc",
++        "serial_device_enumerator_linux.h",
++      ]
++    }
  
- config("platform_support") {
-   visibility = [ ":serial" ]
-@@ -54,6 +54,12 @@ static_library("serial") {
- 
-   if (use_udev) {
-     deps += [ "//device/udev_linux" ]
-+  }
-+  if (is_bsd) {
-+    sources -= [
-+      "serial_device_enumerator_linux.cc",
-+      "serial_device_enumerator_linux.h"
-+    ]
-   }
-   if (is_chromeos) {
-     deps += [
+     if (use_udev) {
+       deps += [ "//device/udev_linux" ]

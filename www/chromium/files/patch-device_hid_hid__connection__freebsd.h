@@ -1,5 +1,5 @@
---- device/hid/hid_connection_freebsd.h.orig	2017-12-03 15:37:32.155357000 -0800
-+++ device/hid/hid_connection_freebsd.h	2017-12-03 15:37:32.159062000 -0800
+--- device/hid/hid_connection_freebsd.h.orig	2018-01-26 21:53:10.788319000 +0100
++++ device/hid/hid_connection_freebsd.h	2018-01-26 21:53:10.788634000 +0100
 @@ -0,0 +1,76 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -44,15 +44,15 @@
 +
 +  // HidConnection implementation.
 +  void PlatformClose() override;
-+  void PlatformRead(const ReadCallback& callback) override;
++  void PlatformRead(ReadCallback callback) override;
 +  void PlatformWrite(scoped_refptr<net::IOBuffer> buffer,
 +                     size_t size,
-+                     const WriteCallback& callback) override;
++                     WriteCallback callback) override;
 +  void PlatformGetFeatureReport(uint8_t report_id,
-+                                const ReadCallback& callback) override;
++                                ReadCallback callback) override;
 +  void PlatformSendFeatureReport(scoped_refptr<net::IOBuffer> buffer,
 +                                 size_t size,
-+                                 const WriteCallback& callback) override;
++                                 WriteCallback callback) override;
 +  void ProcessInputReport(scoped_refptr<net::IOBuffer> buffer, size_t size);
 +  void ProcessReadQueue();
 +

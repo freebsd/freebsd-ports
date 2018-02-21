@@ -1,11 +1,16 @@
---- third_party/usrsctp/BUILD.gn.orig	2017-04-19 19:06:53 UTC
-+++ third_party/usrsctp/BUILD.gn
-@@ -112,6 +112,12 @@ static_library("usrsctp") {
+--- third_party/usrsctp/BUILD.gn.orig	2017-12-15 02:04:50.000000000 +0100
++++ third_party/usrsctp/BUILD.gn	2018-01-03 13:28:10.295173000 +0100
+@@ -109,11 +109,16 @@
+     "-UINET6",
+   ]
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux && !is_bsd) || is_android ) {
+     defines += [
        "__Userspace_os_Linux",
        "_GNU_SOURCE",
      ]
 +  } else if (is_bsd) {
-+    # For now, freebsd hard coding, differentiate different bsd is a plan
 +    defines += [
 +      "__Userspace_os_FreeBSD",
 +    ]

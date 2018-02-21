@@ -1,11 +1,20 @@
---- components/crash/content/app/BUILD.gn.orig	2017-04-19 19:06:32 UTC
-+++ components/crash/content/app/BUILD.gn
-@@ -153,7 +153,7 @@ source_set("app_non_mac_win") {
-       "//breakpad:breakpad_handler",
+--- components/crash/content/app/BUILD.gn.orig	2017-12-15 02:04:14.000000000 +0100
++++ components/crash/content/app/BUILD.gn	2017-12-24 11:36:40.773625000 +0100
+@@ -188,7 +188,7 @@
+     libs = [ "log" ]
+   }
+ 
+-  if (is_android || is_linux) {
++  if (is_android || (is_linux && !is_bsd)) {
+     # Want these files on both Linux and Android.
+     set_sources_assignment_filter([])
+     sources += [
+@@ -218,7 +218,7 @@
        "//sandbox",
+       "//third_party/breakpad:breakpad_handler",
      ]
 -  } else if (is_posix && !is_ios) {
 +  } else if (is_posix && !is_ios && !is_bsd) {
-     deps += [ "//breakpad:client" ]
+     deps += [ "//third_party/breakpad:client" ]
    }
  }
