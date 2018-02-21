@@ -117,7 +117,6 @@ for _file in "${@}"; do
 	else
 		sites="$(${SORTED_MASTER_SITES_CMD_TMP})"
 	fi
-	echo $sites >&2
 	for site in ${sites}; do
 		sites_remaining=$((sites_remaining + 1))
 	done
