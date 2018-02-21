@@ -125,6 +125,7 @@
     SUBDIR += bsdrain
     SUBDIR += bsdtris
     SUBDIR += bsp
+    SUBDIR += bstone
     SUBDIR += bubble-chains
     SUBDIR += bubbros
     SUBDIR += bugsquish
