@@ -1,0 +1,42 @@
+--- Makefile.orig	2016-03-22 21:12:51 UTC
++++ Makefile
+@@ -16,15 +16,16 @@
+ #    number in tweak.h, or else the resulting binary won't match
+ #    the version number on the archive.
+ 
+-CC := gcc
+-CFLAGS := -g -c -Wall $(XFLAGS)
+-LINK := gcc
+-LFLAGS :=
+-LIBS := 
++CC ?= gcc
++CFLAGS ?= -g
++CFLAGS += -c -Wall $(XFLAGS)
++LINK ?= ${CC}
++LFLAGS ?=
++LIBS ?= 
+ 
+-PREFIX=$(DESTDIR)/usr/local
+-BINDIR=$(PREFIX)/bin
+-MANDIR=$(PREFIX)/man/man1
++PREFIX?=/usr/local
++BINDIR?=$(PREFIX)/bin
++MANDIR?=$(PREFIX)/man/man1
+ 
+ TWEAK := main.o keytab.o actions.o search.o rcfile.o buffer.o btree.o
+ 
+@@ -63,10 +64,10 @@ release: tweak.1 btree.html
+ 	rm -rf reltmp
+ 
+ install: tweak tweak.1
+-	mkdir -p $(BINDIR)
+-	install tweak $(BINDIR)/tweak
+-	mkdir -p $(MANDIR)
+-	install -m 0644 tweak.1 $(MANDIR)/tweak.1
++	mkdir -p $(DESTDIR)$(BINDIR)
++	install tweak $(DESTDIR)$(BINDIR)/tweak
++	mkdir -p $(DESTDIR)$(MANDIR)
++	install -m 0644 tweak.1 $(DESTDIR)$(MANDIR)/tweak.1
+ 
+ clean:
+ 	rm -f *.o tweak tweak.1 btree.html
