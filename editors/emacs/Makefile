@@ -26,7 +26,7 @@ canna_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
 nox_CONFLICTS_INSTALL=	emacs emacs-canna
 nox_PKGNAMESUFFIX=	-nox
 
-USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
+USES=		cpe gmake localbase:ldflags makeinfo ncurses pkgconfig tar:xz
 
 CPE_VENDOR=	gnu
 EMACS_VER=	25.3
@@ -50,9 +50,9 @@ INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
 	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar \
 	srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
-OPTIONS_DEFINE=	ACL DBUS GCONF GNUTLS GSETTINGS LLDB M17N MODULES OTF SCROLLBARS\
-		SOURCES XFT XIM XML XWIDGETS
-OPTIONS_DEFAULT=	ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK3 JPEG KQUEUE  \
+OPTIONS_DEFINE=	ACL DBUS GCONF GNUTLS GSETTINGS LLDB M17N MAILUTILS MODULES OTF \
+		SCROLLBARS SOURCES XFT XIM XML XWIDGETS
+OPTIONS_DEFAULT=	ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK3 JPEG KQUEUE \
 		M17N MAGICK MODULES OSS OTF PNG SCROLLBARS SOURCES SVG \
 		TIFF XFT XIM XML XPM
 OPTIONS_SUB=	YES
@@ -74,6 +74,7 @@ KQUEUE_DESC=	File notification via kqueue
 LLDB_DESC=	LLDB support for GUD
 #LTO_DESC=	Enable link-time optimization
 MAGICK_DESC=	ImageMagick image processing support
+MAILUTILS_DESC=	Mail framework via GNU Mailutils
 M17N_DESC=	M17N for text-shaping                  (implies XFT)
 MODULES_DESC=	Dynamic modules support
 OTF_DESC=	Opentype fonts                         (implies XFT)
@@ -121,6 +122,8 @@ M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=	m17n-flt
 MAGICK_LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick
 MAGICK_CONFIGURE_WITH=	imagemagick
+MAILUTILS_CONFIGURE_WITH=	mailutils
+MAILUTILS_LIB_DEPENDS=	libmailutils.so:mail/mailutils
 MODULES_CONFIGURE_WITH=	modules
 MOTIF_USES=		motif
 MOTIF_CONFIGURE_ON=	--with-x-toolkit=motif
