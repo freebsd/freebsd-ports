@@ -12,7 +12,6 @@ COMMENT=	File manager extensions for the Cinnamon desktop
 
 BUILD_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gtkdocize:textproc/gtk-doc \
-		python:lang/python \
 		rst2html:textproc/py-docutils \
 		gnome-autogen.sh:devel/gnome-common \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:devel/gsettings-desktop-schemas
@@ -44,6 +43,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+BINARY_ALIAS=	python=${PYTHON_CMD}
 
 NON_AUTO_EXTENSIONS=	nemo-dropbox nemo-fileroller nemo-preview
 AUTO_EXTENSIONS=	nemo-share
@@ -57,13 +57,13 @@ post-patch:
 
 do-configure:
 .for i in ${NON_AUTO_EXTENSIONS}
-	cd ${WRKSRC}/${i} && NOCONFIGURE=yes ${SH} autogen.sh && ./configure --prefix=${PREFIX} \
+	cd ${WRKSRC}/${i} && NOCONFIGURE=yes ${SH} autogen.sh && ${SETENV} ${CONFIGURE_ENV} ./configure --prefix=${PREFIX} \
 		--with-nemo-extension-dir=${PREFIX}/lib/nemo/extensions-3.0 \
 		--mandir=${PREFIX}/man
 .endfor
 
 .for i in ${AUTO_EXTENSIONS}
-	cd ${WRKSRC}/${i} && ./configure --prefix=${PREFIX} \
+	cd ${WRKSRC}/${i} && ${SETENV} ${CONFIGURE_ENV} ./configure --prefix=${PREFIX} \
 		--with-nemo-extension-dir=${PREFIX}/lib/nemo/extensions-3.0 \
 		--mandir=${PREFIX}/man
 .endfor

@@ -13,7 +13,6 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real-time strategy (RTS) game of ancient warfare
 
 BUILD_DEPENDS=	zip:archivers/zip \
-		python:lang/python \
 		cmake:devel/cmake
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
@@ -31,13 +30,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
 USES=		compiler:c++11-lib dos2unix gmake iconv jpeg openal:al \
-		pkgconfig tar:xz
+		pkgconfig python:build tar:xz
 USE_GNOME=	libxml2 gtk20
 USE_GL=		gl
 USE_SDL=	sdl2
 USE_XORG=	x11 xcursor
 BUNDLE_LIBS=	yes
 DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
+BINARY_ALIAS=	python=${PYTHON_CMD}
 
 USE_WX=		2.8+
 WX_COMPS=	wx:lib
