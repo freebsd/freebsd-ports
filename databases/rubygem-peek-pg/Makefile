@@ -2,6 +2,7 @@
 
 PORTNAME=	peek-pg
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby \
 		rubygem-concurrent-ruby-ext>=0:devel/rubygem-concurrent-ruby-ext \
-		rubygem-pg>=0:databases/rubygem-pg \
+		rubygem-pg0>=0:databases/rubygem-pg0 \
 		rubygem-peek>=0.1.0:devel/rubygem-peek
 
 NO_ARCH=	yes
