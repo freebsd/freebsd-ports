@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgpool-II
-PORTVERSION=	3.3.7
+PORTVERSION=	3.3.20
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	33
@@ -13,7 +13,8 @@ LICENSE=	MIT
 
 BROKEN_SSL=	openssl-devel
 BROKEN_SSL_REASON_openssl-devel=	library 'ssl' is required for OpenSSL
-
+DEPRECATED=	Will be deprecated by upstream, please switch to newer pgpool versions
+EXPIRATION_DATE=	2018-07-31
 RUN_DEPENDS=	rsync:net/rsync
 
 USES=		gmake libtool perl5 pgsql
@@ -23,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 
-CONFLICTS=	pgpool-3.* pgpool-II-22-2.* pgpool-II-23-2.* pgpool-II-30-3.* pgpool-II-3.*
+CONFLICTS=	pgpool-3.* pgpool-II-30-3.* pgpool-II-3.*
 USE_RC_SUBR=	pgpool
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp \
@@ -41,6 +42,7 @@ OPTIONS_DEFAULT=	SSL PAM
 LIBMEMCACHED_DESC=		Build with MemCached support
 LIBMEMCACHED_BUILD_DEPENDS=	libmemcached>=1.0:databases/libmemcached
 LIBMEMCACHED_CONFIGURE_ON=	--with-memcached=${LOCALBASE}/lib/libmemcached
+LIBMEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 SSL_CONFIGURE_WITH=	openssl
 SSL_USES=		ssl

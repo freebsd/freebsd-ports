@@ -1,5 +1,5 @@
---- ./pool_hba.c.orig	2014-03-24 14:30:01.000000000 +0000
-+++ ./pool_hba.c	2014-06-29 14:58:09.893352941 +0100
+--- pool_hba.c.orig	2018-02-13 05:20:52 UTC
++++ pool_hba.c
 @@ -29,6 +29,7 @@
  #include <string.h>
  #include <errno.h>

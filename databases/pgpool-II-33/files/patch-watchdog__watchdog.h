@@ -1,5 +1,5 @@
---- ./watchdog/watchdog.h.orig	2014-03-24 14:30:01.000000000 +0000
-+++ ./watchdog/watchdog.h	2014-06-29 14:55:21.760361453 +0100
+--- watchdog/watchdog.h.orig	2018-02-13 05:20:52 UTC
++++ watchdog/watchdog.h
 @@ -56,6 +56,28 @@
  #define WD_TIME_DIFF_SEC(a,b) (int)(((a).tv_sec - (b).tv_sec) + \
                                      ((a).tv_usec - (b).tv_usec) / 1000000.0)
