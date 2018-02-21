@@ -13,9 +13,10 @@ sbin/lldpcli
 sbin/lldpctl
 sbin/lldpd
 %%BASH%%share/bash-completion/completions/lldpcli
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTE.md
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/README.bsd
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTE.md
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.bsd
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%ZSH%%share/zsh/site-functions/_lldpcli
