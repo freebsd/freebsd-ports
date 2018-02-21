@@ -6,7 +6,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://download.pydio.com/pub/core/archives/
 DISTNAME=	${PORTNAME}-core-${PORTVERSION}
 
-MAINTAINER=	net@arrishq.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ajax web file management system
 
 LICENSE=	AGPLv3
