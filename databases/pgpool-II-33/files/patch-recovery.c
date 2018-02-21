@@ -1,6 +1,6 @@
---- ./recovery.c.orig	2014-03-24 14:30:01.000000000 +0000
-+++ ./recovery.c	2014-06-29 14:55:21.756363519 +0100
-@@ -117,7 +117,7 @@
+--- recovery.c.orig	2018-02-13 05:20:52 UTC
++++ recovery.c
+@@ -115,7 +115,7 @@ int start_recovery(int recovery_node)
  
  	if (REPLICATION)
  	{
@@ -9,7 +9,7 @@
  
  		/* 2nd stage */
  		*InRecovery = RECOVERY_ONLINE;
-@@ -430,6 +430,6 @@
+@@ -437,6 +437,6 @@ int wait_connection_closed(void)
  			sleep(3);
  	} while (i++ < WAIT_RETRY_COUNT);
  
