@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stress-ng
-PORTVERSION=	0.09.15
+PORTVERSION=	0.09.16
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
 
@@ -22,11 +22,6 @@ PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056 && ${ARCH} == i386
 BROKEN=	undefined reference to '__atomic_fetch_add_8'
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1101000 && ${OSVERSION} < 1200000 && ${ARCH} == amd64
-BUILD_DEPENDS+=	clang50:devel/llvm50
-CC=	clang50
 .endif
 
 do-install:
