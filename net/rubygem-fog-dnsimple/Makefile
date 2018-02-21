@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-dnsimple
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,10 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for the 'fog' gem to support DNSimple
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-fog-core>=1.38:devel/rubygem-fog-core \
-		rubygem-fog-json>=1.0:devel/rubygem-fog-json
+		rubygem-fog-json>=0:devel/rubygem-fog-json
 
 NO_ARCH=	yes
 USE_RUBY=	yes
