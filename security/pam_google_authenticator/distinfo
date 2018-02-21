@@ -1,2 +1,3 @@
-SHA256 (google-google-authenticator-1.01.20160208-195ddc1_GH0.tar.gz) = 65c0ec2dea2191337a921e518e24774058fadd55d52f2a21d60371b5d5a0c2a3
-SIZE (google-google-authenticator-1.01.20160208-195ddc1_GH0.tar.gz) = 1791991
+TIMESTAMP = 1519235290
+SHA256 (google-google-authenticator-libpam-1.05_GH0.tar.gz) = 862412d6927ee1a19d81150006d53c21935897ba6d033616c31fc4d6aaa4db08
+SIZE (google-google-authenticator-libpam-1.05_GH0.tar.gz) = 57778
