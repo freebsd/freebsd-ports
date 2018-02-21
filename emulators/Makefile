@@ -108,7 +108,7 @@
     SUBDIR += pcemu
     SUBDIR += pcsxr
     SUBDIR += pearpc
-#    SUBDIR += pipelight
+    SUBDIR += pipelight
     SUBDIR += playonbsd
     SUBDIR += ppsspp
     SUBDIR += ppsspp-qt5
