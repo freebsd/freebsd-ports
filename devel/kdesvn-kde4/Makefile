@@ -3,7 +3,7 @@
 
 PORTNAME=	kdesvn
 DISTVERSION=	1.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libapr-1.so:devel/apr1 \
 		libgdbm.so:databases/gdbm \
 		libexpat.so:textproc/expat2
-RUN_DEPENDS=	keditbookmarks:x11/kde4-baseapps
 
 CONFLICTS=	qsvn-[0-9]*
 
@@ -25,7 +24,7 @@ CMAKE_ARGS+=	-DSUBVERSION_INCLUDE_DIR=${LOCALBASE}/include/subversion-1 \
 		-DMAN_INSTALL_DIR=${MANPREFIX}/man
 
 USES=		cmake:outsource compiler:c11 bdb kde:4 tar:xz
-USE_KDE=	automoc4 kdelibs soprano
+USE_KDE=	automoc4 kdelibs soprano baseapps_run
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui xml network dbus svg sql \
 		qmake_build moc_build rcc_build uic_build linguist_build

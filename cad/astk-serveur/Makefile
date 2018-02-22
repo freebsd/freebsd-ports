@@ -3,6 +3,7 @@
 
 PORTNAME=	astk
 DISTVERSION=	1.13.10-1
+PORTREVISION=	1
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -142,7 +143,7 @@ WITH_ED=	gedit
 RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:editors/gedit
 . elif exists(${LOCALBASE}/bin/kwrite)
 WITH_ED=	kwrite
-RUN_DEPENDS+=	${LOCALBASE}/bin/kwrite:editors/kate
+RUN_DEPENDS+=	${LOCALBASE}/bin/kwrite:editors/kate-kde4
 . elif exists(${LOCALBASE}/bin/xedit)
 WITH_ED=	xedit
 RUN_DEPENDS+=	${LOCALBASE}/bin/xedit:x11/xedit

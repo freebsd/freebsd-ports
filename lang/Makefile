@@ -150,7 +150,7 @@
     SUBDIR += jython
     SUBDIR += kawa
     SUBDIR += kf5-kross
-    SUBDIR += kturtle
+    SUBDIR += kturtle-kde4
     SUBDIR += lafontaine
     SUBDIR += lci
     SUBDIR += ldc

@@ -3,7 +3,7 @@
 
 PORTNAME=	rkward
 PORTVERSION=	0.6.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libR.so:math/R \
 		libsoprano.so:textproc/soprano
-RUN_DEPENDS=	${KDE_PREFIX}/lib/kde4/katepart.so:editors/kate
+RUN_DEPENDS=	${KDE_PREFIX}/lib/kde4/katepart.so:editors/kate-kde4
 
 USES=		cmake gettext fortran kde:4 php:cli shared-mime-info
 USE_QT4=	corelib dbus gui qmake_build moc_build network phonon rcc_build	\
