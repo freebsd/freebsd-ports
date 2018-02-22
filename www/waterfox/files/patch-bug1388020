@@ -74,7 +74,7 @@ index a48a9081e155..e0a74920fbe5 100644
      MOZ_ASSERT(aExternalImageId.isSome());
      result = new WebRenderTextureHost(aDesc, aFlags, result, aExternalImageId.ref());
    }
-@@ -269,13 +268,50 @@ CreateBackendIndependentTextureHost(const SurfaceDescriptor& aDesc,
+@@ -269,13 +268,49 @@ CreateBackendIndependentTextureHost(const SurfaceDescriptor& aDesc,
        const MemoryOrShmem& data = bufferDesc.data();
        switch (data.type()) {
          case MemoryOrShmem::TShmem: {
@@ -98,8 +98,7 @@ index a48a9081e155..e0a74920fbe5 100644
 +            case BufferDescriptor::TYCbCrDescriptor: {
 +              const YCbCrDescriptor& ycbcr = desc.get_YCbCrDescriptor();
 +              reqSize =
-+                ImageDataSerializer::ComputeYCbCrBufferSize(ycbcr.ySize(), ycbcr.ySize().width,
-+                                                            ycbcr.cbCrSize(), ycbcr.cbCrSize().width);
++                ImageDataSerializer::ComputeYCbCrBufferSize(ycbcr.ySize(), ycbcr.cbCrSize());
 +              break;
 +            }
 +            case BufferDescriptor::TRGBDescriptor: {
