@@ -4,7 +4,7 @@
 PORTNAME=	fbreader
 PORTVERSION=	0.99.6
 DISTVERSIONSUFFIX=	-freebsdport
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	johannes@perceivon.net
