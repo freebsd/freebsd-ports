@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	certbot
-PORTVERSION=	0.21.1
+PORTVERSION=	${ACME_VERSION}
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -14,7 +14,7 @@ COMMENT=	Let's Encrypt client
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${PORTVERSION}:security/py-acme@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION}:security/py-acme@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configargparse>=0.9.3:devel/py-configargparse@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=1.2:security/py-cryptography@${FLAVOR} \
@@ -42,4 +42,5 @@ post-patch:
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
+.include "${.CURDIR}/../py-acme/version.mk"
 .include <bsd.port.mk>
