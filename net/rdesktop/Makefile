@@ -6,7 +6,7 @@ PORTVERSION=	1.8.3
 CATEGORIES=	net comms ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gregf@hugops.pw
 COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
 
 LICENSE=	GPLv3
