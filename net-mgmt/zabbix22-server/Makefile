@@ -3,7 +3,7 @@
 
 PORTNAME=	zabbix22
 PORTVERSION=	2.2.21
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -130,7 +130,10 @@ LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \
 	  | ${XARGS} ${REINPLACE_CMD} -e 's#/etc/zabbix#${ETCDIR}#g'
-	@${REINPLACE_CMD} -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#g' ${WRKSRC}/conf/zabbix_*.conf
+	@${REINPLACE_CMD} -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#g' \
+		${WRKSRC}/conf/zabbix_*.conf \
+		${WRKSRC}/src/zabbix_proxy/proxy.c \
+		${WRKSRC}/src/zabbix_server/server.c
 
 .if ${ZABBIX_BUILD} != "agent"
 .if ! ${PORT_OPTIONS:MFPING}
