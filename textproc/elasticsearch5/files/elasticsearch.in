@@ -36,12 +36,11 @@ load_rc_config ${name}
 required_files="${elasticsearch_config}/elasticsearch.yml"
 _pidprefix=/var/run/elasticsearch
 pidfile=${_pidprefix}.pid
+procname=%%JAVA%%
 
 extra_commands="console status"
 console_cmd=elasticsearch_console
 start_precmd=elasticsearch_precmd
-status_cmd=elasticsearch_status
-stop_cmd=elasticsearch_stop
 command=%%PREFIX%%/lib/elasticsearch/bin/elasticsearch
 command_args="-d --pidfile=${pidfile} -Epath.conf=${elasticsearch_config}"
 
@@ -59,52 +58,6 @@ elasticsearch_console()
     run_rc_command "start"
 }
 
-elasticsearch_stop()
-{
-    rc_pid=$(elasticsearch_check_pidfile $pidfile)
-
-    if [ -z "$rc_pid" ]; then
-        [ -n "$rc_fast" ] && return 0
-        echo "${name} not running? (check $pidfile)."
-        return 1
-    fi
-
-    echo "Stopping ${name}."
-    kill $sig_stop ${rc_pid}
-    wait_for_pids ${rc_pid}
-}
-
-elasticsearch_status()
-{
-    rc_pid=$(elasticsearch_check_pidfile $pidfile)
-
-    if [ -z "$rc_pid" ]; then
-        [ -n "$rc_fast" ] && return 0
-        echo "${name} not running? (check $pidfile)."
-        return 1
-    fi
-    echo "${name} is running as pid ${rc_pid}."
-}
-
-elasticsearch_check_pidfile()
-{
-    _pidfile=$1
-    if [ -z "$_pidfile" ]; then
-        err 3 'USAGE: elasticsearch_check_pidfile pidfile'
-    fi
-    if [ ! -f $_pidfile ]; then
-        debug "pid file ($_pidfile): not readable."
-        return
-    fi
-    read _pid _junk < $_pidfile
-    if [ -z "$_pid" ]; then
-        debug "pid file ($_pidfile): no pid in file."
-        return
-    fi
-    if [ -n "`%%PREFIX%%/bin/jps -l | grep -e "^$_pid"`" ]; then
-        echo -n $_pid
-    fi
-}
 if [ -n "$2" ]; then
     profile="$2"
     if [ "x${elasticsearch_profiles}" != "x" ]; then
