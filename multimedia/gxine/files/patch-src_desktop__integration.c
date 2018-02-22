@@ -1,6 +1,6 @@
---- ./src/desktop_integration.c.orig	2008-05-23 22:42:20.000000000 +0400
-+++ ./src/desktop_integration.c	2008-06-15 20:21:03.000000000 +0400
-@@ -123,6 +123,9 @@
+--- src/desktop_integration.c.orig	2017-12-27 17:41:32 UTC
++++ src/desktop_integration.c
+@@ -120,6 +120,9 @@ static void *get_func (const char *name)
  
  gboolean gxine_vfs_init (void)
  {
@@ -10,7 +10,7 @@
    void (*init_func) (void) = NULL;
  
    if (gnome_vfs_available != -1)
-@@ -173,6 +176,7 @@
+@@ -170,6 +173,7 @@ gboolean gxine_vfs_init (void)
  #endif
  
    return gnome_vfs_available = 1;

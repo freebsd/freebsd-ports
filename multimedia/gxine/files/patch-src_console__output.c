@@ -1,6 +1,6 @@
---- ./src/console_output.c.orig	2008-06-12 04:48:13.000000000 +0400
-+++ ./src/console_output.c	2009-03-20 16:18:03.000000000 +0300
-@@ -44,6 +44,159 @@
+--- src/console_output.c.orig	2017-12-27 17:41:32 UTC
++++ src/console_output.c
+@@ -45,6 +45,159 @@ static void console_push (const char *s, uint8_t e) {}
  #else
  /* defines & functions for gxine */
  
