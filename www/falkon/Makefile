@@ -1,43 +1,26 @@
 # $FreeBSD$
 
-PORTNAME=	falkon
-PORTVERSION=	2.1.2
-PORTREVISION=	1
-CATEGORIES=	www
+PORTNAME=        falkon
+DISTVERSION=        2.1.99.20180209
 
-MAINTAINER=	ken@ixsystems.com
-COMMENT=	Web browser based on Qt Webengine
+CATEGORIES=        www
 
-LICENSE=	GPLv3
+MAINTAINER=        kde@FreeBSD.org
+COMMENT=        Web browser based on WebKit engine and Qt Framework
 
-LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
+LICENSE=        GPLv3
+LICENSE_FILE=        ${WRKSRC}/LICENSE
 
-USES=		desktop-file-utils pkgconfig ssl tar:xz cmake
-USE_QT5=	core concurrent gui network printsupport script sql webengine \
-		widgets x11extras xml quick webchannel imageformats_run sql-sqlite3_run \
-		buildtools_build linguisttools_build
-USE_XORG=	x11 xcb
-USE_GL=		gl
-CONFIGURE_ENV=	FALKON_PREFIX=${PREFIX}/
-USE_LDCONFIG=	yes
-PLIST_SUB=	VERSION=${PORTVERSION}
+USES=                cmake:outsource desktop-file-utils kde:5 ssl
+USE_KDE=        wallet
+USE_QT5=        core dbus gui location network printsupport qml quick \
+                sql webchannel webengine widgets x11extras \
+                buildtools_build qmake_build
+USE_XORG=        xcb
 
-OPTIONS_DEFINE=	DBUS DEBUG
-OPTIONS_SUB=	yes
+USE_LDCONFIG=        yes
+USE_GITHUB=        yes
+GH_ACCOUNT=        KDE
+GH_TAGNAME=        31e4d5f
 
-DBUS_USE=		QT5=dbus
-DBUS_CONFIGURE_ENV_OFF=	DISABLE_DBUS="true"
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	KDE
-GH_PROJECT=	falkon
-GH_TAGNAME=	b4eaa10c100bff53d7f53f283505a81fa5988966
-
-.include <bsd.port.options.mk>
-
-# work around for build failure in test plugin (single source file target)
-.if ${PORT_OPTIONS:MDEBUG}
-MAKE_JOBS_UNSAFE=	yes
-.endif
-
-.include <bsd.port.mk>
+CONFLICTS_INSTALL=        qupzilla-qt[45]*
