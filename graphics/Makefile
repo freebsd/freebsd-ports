@@ -405,7 +405,7 @@
     SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += kamera-kde4
-    SUBDIR += kcolorchooser
+    SUBDIR += kcolorchooser-kde4
     SUBDIR += kcoloredit
     SUBDIR += kdegraphics-kde4
     SUBDIR += kdegraphics-mobipocket-kde4
@@ -462,13 +462,13 @@
     SUBDIR += kix-kmod
     SUBDIR += klatexformula
     SUBDIR += kludge3d
-    SUBDIR += kolourpaint
+    SUBDIR += kolourpaint-kde4
     SUBDIR += kphotoalbum-kde4
     SUBDIR += kpovmodeler
-    SUBDIR += kqtquickcharts
+    SUBDIR += kqtquickcharts-kde4
     SUBDIR += krita
-    SUBDIR += ksaneplugin
-    SUBDIR += ksnapshot
+    SUBDIR += ksaneplugin-kde4
+    SUBDIR += ksnapshot-kde4
     SUBDIR += kudu
     SUBDIR += l2p
     SUBDIR += largetifftools
@@ -522,7 +522,7 @@
     SUBDIR += libkface
     SUBDIR += libkipi-kde4
     SUBDIR += libkipiplugins
-    SUBDIR += libksane
+    SUBDIR += libksane-kde4
     SUBDIR += libkscreen
     SUBDIR += liblqr-1
     SUBDIR += liblug
@@ -630,7 +630,7 @@
     SUBDIR += ocrad
     SUBDIR += ocre
     SUBDIR += ogre3d
-    SUBDIR += okular
+    SUBDIR += okular-kde4
     SUBDIR += opencollada
     SUBDIR += opencolorio
     SUBDIR += opencolorio-tools

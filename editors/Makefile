@@ -66,8 +66,8 @@
     SUBDIR += jove
     SUBDIR += jucipp
     SUBDIR += jupp
-    SUBDIR += kate
-    SUBDIR += kate-plugin-pate
+    SUBDIR += kate-kde4
+    SUBDIR += kate-plugin-pate-kde4
     SUBDIR += kile-kde4
     SUBDIR += klat4
     SUBDIR += komodo-edit

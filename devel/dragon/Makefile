@@ -3,6 +3,7 @@
 
 PORTNAME=	dragon
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblfcbase.so:devel/lfcbase
 
-CONFLICTS=	dragon-player
+CONFLICTS=	dragon-kde4
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/dragon

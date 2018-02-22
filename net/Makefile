@@ -311,14 +311,14 @@
     SUBDIR += kea
     SUBDIR += kf5-kholidays
     SUBDIR += kf5-kxmlrpcclient
-    SUBDIR += kget
+    SUBDIR += kget-kde4
     SUBDIR += kio-upnp-ms
     SUBDIR += kippo
     SUBDIR += kissd
     SUBDIR += knc
     SUBDIR += knemo-kde4
-    SUBDIR += krdc
-    SUBDIR += krfb
+    SUBDIR += krdc-kde4
+    SUBDIR += krfb-kde4
     SUBDIR += kwooty
     SUBDIR += l2tpd
     SUBDIR += l4ip
@@ -1497,7 +1497,7 @@
     SUBDIR += yptransitd
     SUBDIR += zebra
     SUBDIR += zebra-server
-    SUBDIR += zeroconf-ioslave
+    SUBDIR += zeroconf-ioslave-kde4
     SUBDIR += zerotier
     SUBDIR += zillion
     SUBDIR += zmap

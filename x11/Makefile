@@ -124,10 +124,10 @@
     SUBDIR += kactivitymanagerd
     SUBDIR += kb2mb2
     SUBDIR += kbproto
+    SUBDIR += kde-baseapps-kde4
+    SUBDIR += kde-runtime-kde4
+    SUBDIR += kde-workspace-kde4
     SUBDIR += kde4
-    SUBDIR += kde4-baseapps
-    SUBDIR += kde4-runtime
-    SUBDIR += kde4-workspace
     SUBDIR += kdelibs-kde4
     SUBDIR += keybinder
     SUBDIR += keybinder-gtk3
@@ -144,8 +144,8 @@
     SUBDIR += kf5-kwayland
     SUBDIR += kf5-kwindowsystem
     SUBDIR += kf5-plasma-framework
-    SUBDIR += kgamma
-    SUBDIR += konsole
+    SUBDIR += kgamma-kde4
+    SUBDIR += konsole-kde4
     SUBDIR += leechcraft
     SUBDIR += lemonbar
     SUBDIR += libICE
@@ -189,7 +189,7 @@
     SUBDIR += libgnomekbd
     SUBDIR += libgnomemm26
     SUBDIR += libinput
-    SUBDIR += libkonq
+    SUBDIR += libkonq-kde4
     SUBDIR += libmatekbd
     SUBDIR += liboldX
     SUBDIR += libsx
@@ -263,8 +263,8 @@
     SUBDIR += pcdm
     SUBDIR += pipeglade
     SUBDIR += pixman
-    SUBDIR += plasma-scriptengine-python
-    SUBDIR += plasma-scriptengine-ruby
+    SUBDIR += plasma-scriptengine-python-kde4
+    SUBDIR += plasma-scriptengine-ruby-kde4
     SUBDIR += polybar
     SUBDIR += presentproto
     SUBDIR += printproto
