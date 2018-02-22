@@ -3,7 +3,7 @@
 
 PORTNAME=	nitrogen
 PORTVERSION=	1.0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde4-style-

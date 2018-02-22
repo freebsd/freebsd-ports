@@ -3,6 +3,7 @@
 
 PORTNAME=	scroll
 PORTVERSION=	1.20170122
+PORTREVISION=	1
 CATEGORIES=	games haskell
 
 MAINTAINER=	haskell@FreeBSD.org

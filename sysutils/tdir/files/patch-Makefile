@@ -1,0 +1,13 @@
+--- Makefile.orig	2014-02-12 18:24:13 UTC
++++ Makefile
+@@ -3,8 +3,5 @@
+ all:	# Do nothing - this is a python script that needs no build
+ 
+ install:
+-	install -c -o root -g wheel -m 755 ./tdir ${PREFIX}/bin
+-	install -c -o root -g wheel -m 644 ./tdir.1.gz ${PREFIX}/man/man1
+-	mkdir ${PREFIX}/share/doc/tdir
+-	install -c -o root -g wheel -m 644 ./tdir-license.txt ${PREFIX}/share/doc/tdir
+-
++	${BSD_INSTALL_SCRIPT} ./tdir ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_MAN}  ./tdir.1.gz ${DESTDIR}${PREFIX}/man/man1

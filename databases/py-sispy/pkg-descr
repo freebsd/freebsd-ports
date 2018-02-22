@@ -1,3 +1,3 @@
-Client library for interacting with the SIS RESTful API
+Client library for interacting with the SIS RESTful API.
 
-WWW: https://pypi.python.org/pypi/sispy
+WWW: https://github.com/sis-cmdb/sis-python

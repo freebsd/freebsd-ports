@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lldpd
-PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTVERSION=	0.9.9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/ \
 		http://mirror.1labs.ch/${PORTNAME}/
@@ -12,10 +11,12 @@ MAINTAINER=	freebsd@simweb.ch
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		libtool
+USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
@@ -53,6 +54,7 @@ PROPRIETARY_CONFIGURE_ENABLE=	cdp edp fdp sonmp
 JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
 JSON_USES=		pkgconfig
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+SNMP_USES=		ssl
 XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 post-patch:
@@ -61,7 +63,7 @@ post-patch:
 		${WRKSRC}/src/client/Makefile.am \
 		${WRKSRC}/src/client/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	${INSTALL_DATA} ${FILESDIR}/README.bsd ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

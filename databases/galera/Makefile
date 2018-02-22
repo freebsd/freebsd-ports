@@ -15,6 +15,8 @@ BUILD_DEPENDS=	checkmk:devel/check \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
+BROKEN_SSL=		openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	check that SSL devel headers are installed and usable
 BROKEN_aarch64=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 BROKEN_armv6=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 BROKEN_armv7=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'

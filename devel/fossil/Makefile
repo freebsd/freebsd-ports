@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	fossil
-PORTVERSION=	2.4
+PORTVERSION=	2.5
+PORTREVISION=	1
 DISTVERSIONPREFIX=	src-
 PORTEPOCH=	2
 CATEGORIES=	devel www
@@ -36,6 +37,8 @@ FUSE_CONFIGURE_OFF=	--disable-fusefs
 TH1HOOKS_CONFIGURE_ON=	--with-th1-hooks
 TCL_CONFIGURE_ON=	--with-tcl-stubs --with-tcl=${TCL_LIBDIR}
 TCL_USES=		tcl
+TCL_CFLAGS=		-DTCL_LIBRARY_NAME=\\\"libtcl${TCL_SHLIB_VER}.so\\\" \
+			-DTCL_MINOR_OFFSET=7
 FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 FUSE_USES=		localbase:ldflags
 

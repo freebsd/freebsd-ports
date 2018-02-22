@@ -3,7 +3,7 @@
 
 PORTNAME=	mbox
 PORTVERSION=	0.7.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mbox.wz.cz/src/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ogg>0:audio/py-ogg@${FLAVOR} \
 		mplayer:multimedia/mplayer
 
 WRKSRC=		${WRKDIR}/mBox-${PORTVERSION}
-USES=		python:2 tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	autoplist distutils
 USE_WX=		3.0+
 WX_COMPS=	python

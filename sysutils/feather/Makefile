@@ -4,7 +4,7 @@
 PORTNAME=	feather
 PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	danrue
 
-USES=		python:2,run shebangfix
+USES=		python:2.7,run shebangfix
 SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes

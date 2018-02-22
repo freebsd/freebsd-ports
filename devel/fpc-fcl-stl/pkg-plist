@@ -7,6 +7,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-stl/ghashmap.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-stl/ghashmap.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-stl/ghashset.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-stl/ghashset.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-stl/glinkedlist.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-stl/glinkedlist.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-stl/gmap.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-stl/gmap.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-stl/gpriorityqueue.o

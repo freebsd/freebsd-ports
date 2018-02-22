@@ -1,0 +1,11 @@
+bin/qxp2raw
+bin/qxp2svg
+bin/qxp2text
+include/libqxp-0.0/libqxp/QXPDocument.h
+include/libqxp-0.0/libqxp/QXPPathResolver.h
+include/libqxp-0.0/libqxp/libqxp.h
+include/libqxp-0.0/libqxp/libqxp_api.h
+lib/libqxp-0.0.so
+lib/libqxp-0.0.so.0
+lib/libqxp-0.0.so.0.0.0
+libdata/pkgconfig/libqxp-0.0.pc

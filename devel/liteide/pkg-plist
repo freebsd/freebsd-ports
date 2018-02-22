@@ -43,13 +43,13 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteapp/qss/black.qss
 %%DATADIR%%/liteapp/qss/carbon.qss
 %%DATADIR%%/liteapp/qss/coffee.qss
-%%DATADIR%%/liteapp/qss/default.qss
 %%DATADIR%%/liteapp/qss/default_macos.qss
+%%DATADIR%%/liteapp/qss/default.qss
 %%DATADIR%%/liteapp/qss/evilworks.qss
 %%DATADIR%%/liteapp/qss/gray.qss
 %%DATADIR%%/liteapp/qss/sublime.qss
-%%DATADIR%%/liteapp/qss/vs-dark.qss
 %%DATADIR%%/liteapp/qss/vs-dark-hdpi.qss
+%%DATADIR%%/liteapp/qss/vs-dark.qss
 %%DATADIR%%/liteapp/template/empty/root
 %%DATADIR%%/liteapp/template/empty/setup.inf
 %%DATADIR%%/liteapp/template/file.sub
@@ -80,6 +80,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/litebuild/python.xml
 %%DATADIR%%/litebuild/qlang.xml
 %%DATADIR%%/litebuild/rust.xml
+%%DATADIR%%/litebuild/tcl.xml
 %%DATADIR%%/liteeditor/color/carbon.xml
 %%DATADIR%%/liteeditor/color/clearday.xml
 %%DATADIR%%/liteeditor/color/cobalt black.xml
@@ -87,6 +88,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/color/colorhelp.md
 %%DATADIR%%/liteeditor/color/darktango.xml
 %%DATADIR%%/liteeditor/color/darkvim.xml
+%%DATADIR%%/liteeditor/color/default-func.xml
 %%DATADIR%%/liteeditor/color/default.xml
 %%DATADIR%%/liteeditor/color/evilworks.xml
 %%DATADIR%%/liteeditor/color/gist-github.xml
@@ -98,8 +100,8 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/color/sublime-bold.xml
 %%DATADIR%%/liteeditor/color/sublime.xml
 %%DATADIR%%/liteeditor/color/visualstudio.xml
-%%DATADIR%%/liteeditor/kate/alert.xml
 %%DATADIR%%/liteeditor/kate/alert_indent.xml
+%%DATADIR%%/liteeditor/kate/alert.xml
 %%DATADIR%%/liteeditor/kate/awk.xml
 %%DATADIR%%/liteeditor/kate/bash.xml
 %%DATADIR%%/liteeditor/kate/c.xml
@@ -123,6 +125,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/kate/qlang.xml
 %%DATADIR%%/liteeditor/kate/ruby.xml
 %%DATADIR%%/liteeditor/kate/rust.xml
+%%DATADIR%%/liteeditor/kate/tcl.xml
 %%DATADIR%%/liteeditor/kate/toml.xml
 %%DATADIR%%/liteeditor/kate/xml.xml
 %%DATADIR%%/liteeditor/kate/yacc.xml

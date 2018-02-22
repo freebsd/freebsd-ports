@@ -3,7 +3,7 @@
 
 PORTNAME=	nlopt
 PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://ab-initio.mit.edu/nlopt/
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
 
 USES=		autoreconf compiler:features libtool pathfix \
-		pkgconfig python:2
+		pkgconfig python:2.7
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip

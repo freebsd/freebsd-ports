@@ -3,6 +3,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.11.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -22,6 +23,9 @@ LICENSE=	IPL10
 LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	No longer supported
+EXPIRATION_DATE=2018-06-22
 
 PORTSCOUT=	limit:^2\.11\.
 

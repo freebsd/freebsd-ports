@@ -1,6 +1,6 @@
 include/SDL2/SDL_image.h
 lib/libSDL2_image-2.0.so.0
-lib/libSDL2_image-2.0.so.0.0.1
+lib/libSDL2_image-2.0.so.0.2.0
 lib/libSDL2_image.a
 lib/libSDL2_image.so
 libdata/pkgconfig/SDL2_image.pc

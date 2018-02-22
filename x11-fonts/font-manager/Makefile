@@ -3,7 +3,7 @@
 
 PORTNAME=	font-manager
 PORTVERSION=	0.5.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fonts gnome
 
 MAINTAINER=	portmaster@bsdforge.com
@@ -24,7 +24,7 @@ GH_PROJECT=	master
 
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig python:2 tar:bzip2
+USES=		gmake pkgconfig python:2.7 tar:bzip2
 
 PORTDATA=	*
 

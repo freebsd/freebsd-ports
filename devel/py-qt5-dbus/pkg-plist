@@ -1,5 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtDBus.so
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtDBus.pyi
+%%PYTHON_SITELIBDIR%%/PyQt5/QtDBus.pyi
 %%PYQT_SIPDIR%%/QtDBus/QtDBusmod.sip
 %%PYQT_SIPDIR%%/QtDBus/qdbusabstractadaptor.sip
 %%PYQT_SIPDIR%%/QtDBus/qdbusabstractinterface.sip

@@ -3,7 +3,7 @@
 
 PORTNAME=	jswebkit
 PORTVERSION=	0.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www python
 MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/universe/p/python-jswebkit/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ COMMENT=	WebKit/JavaScriptCore Python bindings
 
 LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 
-USES=		pkgconfig python:2
+USES=		pkgconfig python:2.7
 USE_PYTHON=	distutils autoplist cython cython_run
 WRKSRC=		${WRKDIR}/python-${PORTNAME}-${PORTVERSION}
 

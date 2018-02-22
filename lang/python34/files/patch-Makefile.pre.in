@@ -35,6 +35,17 @@
  NO_AS_NEEDED=	@NO_AS_NEEDED@
  LDLAST=		@LDLAST@
  SGI_ABI=	@SGI_ABI@
+@@ -822,8 +825,8 @@ Objects/unicodeobject.o: $(srcdir)/Objec
+ Objects/dictobject.o: $(srcdir)/Objects/stringlib/eq.h
+ Objects/setobject.o: $(srcdir)/Objects/stringlib/eq.h
+ 
+-$(OPCODETARGETS_H): $(OPCODETARGETGEN_FILES)
+-	$(OPCODETARGETGEN) $(OPCODETARGETS_H)
++#$(OPCODETARGETS_H): $(OPCODETARGETGEN_FILES)
++#	$(OPCODETARGETGEN) $(OPCODETARGETS_H)
+ 
+ Python/ceval.o: $(OPCODETARGETS_H) $(srcdir)/Python/ceval_gil.h
+ 
 @@ -1080,12 +1077,6 @@
  	else true; \
  	fi

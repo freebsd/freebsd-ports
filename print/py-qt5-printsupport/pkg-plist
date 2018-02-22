@@ -1,5 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtPrintSupport.so
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PyQt5/QtPrintSupport.pyi
+%%PYTHON_SITELIBDIR%%/PyQt5/QtPrintSupport.pyi
 %%PYQT_SIPDIR%%/QtPrintSupport/QtPrintSupportmod.sip
 %%PYQT_SIPDIR%%/QtPrintSupport/qabstractprintdialog.sip
 %%PYQT_SIPDIR%%/QtPrintSupport/qpagesetupdialog.sip

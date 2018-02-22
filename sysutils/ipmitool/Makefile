@@ -13,6 +13,8 @@ COMMENT=	CLI to manage IPMI systems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_SSL=	openssl-devel
+
 USES=		cpe tar:bzip2 gmake readline ssl
 CPE_VENDOR=	sun
 GNU_CONFIGURE=	yes
@@ -51,10 +53,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PERIODIC_DIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/status-ipmi.sh ${STAGEDIR}${PREFIX}/${PERIODIC_DIR}/400.status-ipmi
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

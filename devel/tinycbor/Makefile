@@ -4,6 +4,7 @@
 PORTNAME=	tinycbor
 PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -23,6 +24,7 @@ GH_PROJECT=	tinycbor
 USE_GITHUB=	yes
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/src/tinycbor-version.h ${STAGEDIR}${PREFIX}/include/tinycbor/tinycbor-version.h
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so.${PORTVERSION}
 	${LN} -fs libtinycbor.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so
 	${LN} -fs libtinycbor.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so.${PORTVERSION:R:R}

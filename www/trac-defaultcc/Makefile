@@ -3,7 +3,7 @@
 
 PORTNAME=	defaultcc
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/trac-${PORTNAME}/
 PKGNAMEPREFIX=	trac-
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	trac>=0.11:www/trac
 
-USES=		python:2 zip
+USES=		python:2.7 zip
 
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

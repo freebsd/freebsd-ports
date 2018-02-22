@@ -2,7 +2,7 @@
 
 PORTNAME=	crypto-random
 PORTVERSION=	0.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -36,4 +36,8 @@ do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}
 
+post-install:
+	@${FIND} -s ${STAGEDIR}${DATADIR} -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+
 .include <bsd.port.mk>

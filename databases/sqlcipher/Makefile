@@ -2,7 +2,7 @@
 
 PORTNAME=	sqlcipher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.1
+DISTVERSION=	3.4.2
 CATEGORIES=	databases
 
 MAINTAINER=	jharris@widomaker.com

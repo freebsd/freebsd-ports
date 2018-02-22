@@ -2,6 +2,7 @@
 
 PORTNAME=	foundation
 PORTVERSION=	0.0.13
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

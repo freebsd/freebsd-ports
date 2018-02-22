@@ -3,7 +3,7 @@
 
 PORTNAME=	variety
 PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/variety/trunk/${PORTVERSION}/+download/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/
@@ -38,7 +38,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${
 
 SHEBANG_FILES=	bin/variety data/scripts/*
 
-USES=	desktop-file-utils gettext python:2 shebangfix gnome
+USES=	desktop-file-utils gettext python:2.7 shebangfix gnome
 USE_GNOME=	pygobject3:run
 USE_PYTHON=	distutils
 

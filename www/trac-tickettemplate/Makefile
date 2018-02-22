@@ -3,7 +3,7 @@
 
 PORTNAME=	tickettemplate
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/trac-${PORTNAME}/
 PKGNAMEPREFIX=	trac-
@@ -14,7 +14,7 @@ COMMENT=	Plugin for making ticket templates
 
 RUN_DEPENDS=	trac>=0.11:www/trac
 
-USES=		python:2 zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

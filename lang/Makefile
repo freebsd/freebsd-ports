@@ -46,6 +46,7 @@
     SUBDIR += cmucl-extra
     SUBDIR += cocor
     SUBDIR += cparser
+    SUBDIR += crystal
     SUBDIR += csharp-mode.el
     SUBDIR += cython
     SUBDIR += diveintopython
@@ -263,6 +264,7 @@
     SUBDIR += picoc
     SUBDIR += pocl
     SUBDIR += polyml
+    SUBDIR += ponyc
     SUBDIR += ptoc
     SUBDIR += pure
     SUBDIR += py-clojure_py

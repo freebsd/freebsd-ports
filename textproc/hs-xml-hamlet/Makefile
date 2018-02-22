@@ -2,6 +2,7 @@
 
 PORTNAME=	xml-hamlet
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,26 +1,26 @@
---- configure.orig	2011-02-15 22:30:29 UTC
+--- configure.orig	2018-02-11 02:23:44 UTC
 +++ configure
-@@ -4339,13 +4339,13 @@ if test "${with_curses+set}" = set; then
+@@ -4398,13 +4398,13 @@ if test "${with_curses+set}" = set; then
  fi
  
  
--{ echo "$as_me:$LINENO: checking for initscr in -lcurses" >&5
--echo $ECHO_N "checking for initscr in -lcurses... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking for initscr in -lncurses" >&5
-+echo $ECHO_N "checking for initscr in -lncurses... $ECHO_C" >&6; }
- if test "${ac_cv_lib_curses_initscr+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for initscr in -lcurses" >&5
+-$as_echo_n "checking for initscr in -lcurses... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for initscr in -lncurses" >&5
++$as_echo_n "checking for initscr in -lncurses... " >&6; }
+ if ${ac_cv_lib_curses_initscr+:} false; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lcurses  $LIBS"
 +LIBS="-lncurses  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -4401,7 +4401,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_curses_initscr" >&5
- echo "${ECHO_T}$ac_cv_lib_curses_initscr" >&6; }
- if test $ac_cv_lib_curses_initscr = yes; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -4435,7 +4435,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_curses_initscr" >&5
+ $as_echo "$ac_cv_lib_curses_initscr" >&6; }
+ if test "x$ac_cv_lib_curses_initscr" = xyes; then :
 -  LIBS="$LIBS -lcurses"
 +  LIBS="$LIBS -lncurses"
          if test x$curses_loc = x/usr -a -d /usr/include/ncurses; then

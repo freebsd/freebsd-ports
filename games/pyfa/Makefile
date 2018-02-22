@@ -3,7 +3,7 @@
 
 PORTNAME=	pyfa
 PORTVERSION=	1.19.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games python
 
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pyfa-org
 GH_PROJECT=	Pyfa
 
-USES=		python:2 dos2unix
+USES=		python:2.7 dos2unix
 DOS2UNIX_GLOB=	*.py
 NO_ARCH=	yes
 

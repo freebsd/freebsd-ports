@@ -22,7 +22,7 @@ OPTIONS_SUB=		yes
 GNUPLOT_BUILD_DEPENDS=	gnuplot:math/gnuplot
 GNUPLOT_RUN_DEPENDS=	gnuplot:math/gnuplot
 
-PYTHON_LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
+PYTHON_LIB_DEPENDS=	${PY_BOOST}
 PYTHON_USES=		localbase python:2.7
 PYTHON_CONFIGURE_ARGS=	--enable-python-bindings
 PYTHON_CONFIGURE_WITH=	boost=${LOCALBASE}

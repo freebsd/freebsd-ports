@@ -13,9 +13,9 @@ COMMENT=	Library that helps you create bindings between C++ and Lua
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
+LIB_DEPENDS=	${PY_BOOST}
 
-USES=		lua:51
+USES=		lua:51 python:env
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I.. -I${LUA_INCDIR} -I${LOCALBASE}/include

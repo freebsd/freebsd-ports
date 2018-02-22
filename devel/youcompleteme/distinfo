@@ -1,7 +1,7 @@
-TIMESTAMP = 1513125436
-SHA256 (Valloric-YouCompleteMe-g20171203-290dd9472_GH0.tar.gz) = 035fef0f466eafd31c0020252098d6c8701575203d85658e7ea93ba1ae666b5f
-SIZE (Valloric-YouCompleteMe-g20171203-290dd9472_GH0.tar.gz) = 262862
-SHA256 (Valloric-ycmd-f58c1f7b6_GH0.tar.gz) = 56134203064bc65e57de89ed434910128ce0267d8cd0daa6271267d4a9e30c5a
-SIZE (Valloric-ycmd-f58c1f7b6_GH0.tar.gz) = 3432391
-SHA256 (vheon-JediHTTP-67c8d27c6_GH0.tar.gz) = 07b4e0193c43dde1139299af88999801fa42ce2d9382299e31c06ff9f418f6a6
-SIZE (vheon-JediHTTP-67c8d27c6_GH0.tar.gz) = 20955
+TIMESTAMP = 1518385235
+SHA256 (Valloric-YouCompleteMe-g20180210-c2a7b3c_GH0.tar.gz) = b9c43452dfe9bb3d49efb4dcccb30579008a5c04b2da89f8e70a49cbc5f3a120
+SIZE (Valloric-YouCompleteMe-g20180210-c2a7b3c_GH0.tar.gz) = 275077
+SHA256 (Valloric-ycmd-aa04988_GH0.tar.gz) = 7490cf826eed8416d477f7c0db182e4e19978b5c58a0929fb7dc23d4928d2aaf
+SIZE (Valloric-ycmd-aa04988_GH0.tar.gz) = 3780074
+SHA256 (vheon-JediHTTP-d283a73_GH0.tar.gz) = 54c150e89aa9f80e3838c8d30602dbb5b5a892beaa8a3d05179deaba6f4e109c
+SIZE (vheon-JediHTTP-d283a73_GH0.tar.gz) = 20959

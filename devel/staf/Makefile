@@ -14,6 +14,9 @@ COMMENT=	Software Testing Automation Framework
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.htm
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	variable has incomplete type 'EVP_MD_CTX' (aka 'evp_md_ctx_st')
+
 WRKSRC=		${WRKDIR}/src
 WRKSRC_SUBDIR=	${PORTNAME}
 INSTALL_WRKSRC=	${WRKDIR}/rel/freebsd/staf/${STAF_BUILD_TYPE}

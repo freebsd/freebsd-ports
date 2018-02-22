@@ -11,6 +11,7 @@
 %%INSTALLPATH%%/mod_addressing.lua
 %%INSTALLPATH%%/mod_adhoc_account_management.lua
 %%INSTALLPATH%%/mod_adhoc_blacklist.lua
+%%INSTALLPATH%%/mod_adhoc_groups.lua
 %%INSTALLPATH%%/mod_admin_blocklist.lua
 %%INSTALLPATH%%/mod_admin_message.lua
 %%INSTALLPATH%%/mod_admin_probe.lua
@@ -58,7 +59,7 @@
 %%INSTALLPATH%%/mod_compat_vcard.lua
 %%INSTALLPATH%%/mod_component_client.lua
 %%INSTALLPATH%%/mod_component_roundrobin.lua
-%%INSTALLPATH%%/mod_compression.lua
+%%INSTALLPATH%%/mod_compression_unsafe.lua
 %%INSTALLPATH%%/mod_conformance_restricted.lua
 %%INSTALLPATH%%/mod_conversejs.lua
 %%INSTALLPATH%%/mod_csi.lua
@@ -129,10 +130,12 @@
 %%INSTALLPATH%%/mod_mam_muc.lua
 %%INSTALLPATH%%/mod_mamsub.lua
 %%INSTALLPATH%%/mod_manifesto.lua
+%%INSTALLPATH%%/mod_measure_client_presence.lua
 %%INSTALLPATH%%/mod_measure_cpu.lua
 %%INSTALLPATH%%/mod_measure_malloc.lua
 %%INSTALLPATH%%/mod_measure_memory.lua
 %%INSTALLPATH%%/mod_measure_message_length.lua
+%%INSTALLPATH%%/mod_measure_stanza_counts.lua
 %%INSTALLPATH%%/mod_measure_storage.lua
 %%INSTALLPATH%%/mod_message_logging.lua
 %%INSTALLPATH%%/mod_migrate.lua
@@ -148,12 +151,12 @@
 %%INSTALLPATH%%/mod_munin.lua
 %%INSTALLPATH%%/mod_net_dovecotauth.lua
 %%INSTALLPATH%%/mod_offline_email.lua
+%%INSTALLPATH%%/mod_omemo_all_access.lua
 %%INSTALLPATH%%/mod_onhold.lua
 %%INSTALLPATH%%/mod_onions.lua
 %%INSTALLPATH%%/mod_openid.lua
 %%INSTALLPATH%%/mod_password_policy.lua
 %%INSTALLPATH%%/mod_pastebin.lua
-%%INSTALLPATH%%/mod_pep_plus.lua
 %%INSTALLPATH%%/mod_pep_vcard_avatar.lua
 %%INSTALLPATH%%/mod_pep_vcard_png_avatar.lua
 %%INSTALLPATH%%/mod_persisthosts.lua
@@ -180,6 +183,7 @@
 %%INSTALLPATH%%/mod_rawdebug.lua
 %%INSTALLPATH%%/mod_readonly.lua
 %%INSTALLPATH%%/mod_register_dnsbl.lua
+%%INSTALLPATH%%/mod_register_oob_url.lua
 %%INSTALLPATH%%/mod_register_redirect.lua
 %%INSTALLPATH%%/mod_register_web.lua
 %%INSTALLPATH%%/mod_reload_components.lua
@@ -246,6 +250,7 @@
 %%INSTALLPATH%%/mod_throttle_presence.lua
 %%INSTALLPATH%%/mod_throttle_unsolicited.lua
 %%INSTALLPATH%%/mod_tls_policy.lua
+%%INSTALLPATH%%/mod_traceback.lua
 %%INSTALLPATH%%/mod_track_muc_joins.lua
 %%INSTALLPATH%%/mod_turncredentials.lua
 %%INSTALLPATH%%/mod_twitter.lua
@@ -253,6 +258,7 @@
 %%INSTALLPATH%%/mod_vjud.lua
 %%INSTALLPATH%%/mod_watchuntrusted.lua
 %%INSTALLPATH%%/mod_webpresence.lua
+%%INSTALLPATH%%/mod_xhtmlim.lua
 %%INSTALLPATH%%/mqtt.lib.lua
 %%INSTALLPATH%%/prosodytop.lua
 %%INSTALLPATH%%/rsm.lib.lua

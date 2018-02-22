@@ -3,6 +3,7 @@
 
 PORTNAME=	ws2300
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}-1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Driver for the LaCrosse WS-2300 weather station
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/agpl-3.0.txt
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

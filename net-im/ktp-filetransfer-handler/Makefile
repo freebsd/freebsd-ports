@@ -2,7 +2,7 @@
 
 PORTNAME=	ktp-filetransfer-handler
 PORTVERSION=	${KTP_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
 

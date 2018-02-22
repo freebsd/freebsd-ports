@@ -1,6 +1,6 @@
 --- Makefile.orig	2002-09-04 21:55:45 UTC
 +++ Makefile
-@@ -4,7 +4,7 @@
+@@ -4,7 +4,5 @@
  all:	# Do nothing - this is a python script that needs no build
  
  install:
@@ -9,6 +9,4 @@
 -	install -c -o root -g wheel -m 644 ./abck.1.gz ${PREFIX}/man/man1
 -	install -c -o root -g wheel -m 644 ./abck-License.txt ${PREFIX}/share/doc/abck
 +	${BSD_INSTALL_SCRIPT} ./abck ${DESTDIR}${PREFIX}/bin
-+	mkdir ${DESTDIR}${PREFIX}/share/doc/abck
 +	${BSD_INSTALL_MAN} ./abck.1.gz ${DESTDIR}${PREFIX}/man/man1
-+	${BSD_INSTALL_DATA} ./abck-License.txt ${DESTDIR}${PREFIX}/share/doc/abck

@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steganography tool to hide data in binary files
 
 LICENSE=	GPLv2

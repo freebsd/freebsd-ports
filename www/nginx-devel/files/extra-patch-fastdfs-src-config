@@ -1,5 +1,5 @@
---- ../fastdfs-nginx-module-5a8110f/src/config.orig	2016-10-12 16:09:34.075804000 +0200
-+++ ../fastdfs-nginx-module-5a8110f/src/config	2016-10-12 16:10:43.916280000 +0200
+--- ../fastdfs-nginx-module-85347be/src/config.orig	2016-10-12 16:09:34.075804000 +0200
++++ ../fastdfs-nginx-module-85347be/src/config	2016-10-12 16:10:43.916280000 +0200
 @@ -3,16 +3,16 @@
  if test -n "${ngx_module_link}"; then
      ngx_module_type=HTTP

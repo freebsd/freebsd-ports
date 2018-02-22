@@ -3,7 +3,7 @@
 
 PORTNAME=	basket
 PORTVERSION=	1.81
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://basket.kde.org/downloads/
 

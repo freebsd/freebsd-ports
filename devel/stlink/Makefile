@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	stlink
-PORTVERSION=	1.4.0
-PORTREVISION=	0
+PORTVERSION=	1.5.0
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -23,10 +23,16 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	README.md tested-boards.md tutorial.md
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "powerpc" || ${ARCH} == "arm" || ${ARCH} == "armv6" || ${ARCH} == "mips"
+EXTRA_PATCHES+=	${FILESDIR}/extra-pacth-32bit
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/README.md
 	${INSTALL_DATA} ${WRKSRC}/doc/tested-boards.md ${STAGEDIR}${DOCSDIR}/tested-boards.md
 	${INSTALL_DATA} ${WRKSRC}/doc/tutorial.md ${STAGEDIR}${DOCSDIR}/tutorial.md
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

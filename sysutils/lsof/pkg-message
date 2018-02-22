@@ -1,0 +1,10 @@
+NOTE: Due to the way the FreeBSD build clusters make packages,
+you may see a warning similar to the following:
+
+lsof: WARNING: compiled for FreeBSD release 11.1-RELEASE-p6; this is 11.1-RELEASE-p4.
+
+This is because the poudriere jails that build the packages don't have the  
+corresponding kernel installed, so they don't know that the kernel version is different.
+
+This warning can be ignored if you are using a system that is updated via freebsd-update
+and are using pre-built packages. 

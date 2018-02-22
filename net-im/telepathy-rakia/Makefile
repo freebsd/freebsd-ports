@@ -15,7 +15,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libsofia-sip-ua-glib.so:net/sofia-sip \
 		libtelepathy-glib.so:net-im/telepathy-glib
 
-USES=		gmake pathfix pkgconfig python:2,build ssl
+USES=		gmake pathfix pkgconfig python:2.7,build ssl
 USE_GNOME=	glib20 libxslt:build
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

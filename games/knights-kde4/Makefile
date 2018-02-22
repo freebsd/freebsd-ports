@@ -3,7 +3,7 @@
 
 PORTNAME=	knights
 PORTVERSION=	2.5.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games kde
 MASTER_SITES=	http://dl.dropbox.com/u/2888238/Knights/
 

@@ -127,8 +127,9 @@
     SUBDIR += proxy65
     SUBDIR += psi
     SUBDIR += psimedia
-    SUBDIR += purple-hangouts
     SUBDIR += purple-discord
+    SUBDIR += purple-facebook
+    SUBDIR += purple-hangouts
     SUBDIR += py-fbmq
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
@@ -158,6 +159,7 @@
     SUBDIR += ring-libclient
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
+    SUBDIR += rubygem-hipchat15
     SUBDIR += rubygem-lita
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder

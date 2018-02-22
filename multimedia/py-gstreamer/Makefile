@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.22
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia python gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:textproc/py-libxml2@${FLAVOR}
 
 PORTSCOUT=	limit:0\.10\..*
 
-USES=		gmake libtool pathfix pkgconfig python:2 tar:bzip2
+USES=		gmake libtool pathfix pkgconfig python:2.7 tar:bzip2
 USE_GNOME=	pygobject
 USE_GSTREAMER=	yes
 USE_PYTHON=	flavors

@@ -12,6 +12,8 @@ COMMENT=	English stemming implementation in Elixir
 LICENSE=	MIT
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-03-19
 
 USES=		elixir
 USE_GITHUB=	yes

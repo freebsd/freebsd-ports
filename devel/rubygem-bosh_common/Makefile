@@ -11,6 +11,9 @@ COMMENT=	BOSH common
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Only used by deprecated sysutils/rubygem-bosh_cli
+EXPIRATION_DATE=2018-02-28
+
 RUN_DEPENDS=	rubygem-logging>=1.8.2:devel/rubygem-logging \
 		rubygem-semi_semantic>=1.1.0:devel/rubygem-semi_semantic
 

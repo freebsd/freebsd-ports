@@ -1,6 +1,6 @@
---- ./configure.orig	2012-12-27 12:50:36.000000000 +0000
-+++ ./configure	2013-05-05 20:55:42.000000000 +0000
-@@ -633,6 +633,9 @@
+--- configure.orig	2018-02-14 03:55:48 UTC
++++ configure
+@@ -633,6 +633,9 @@ ac_includes_default="\
  #endif
  #ifdef HAVE_UNISTD_H
  # include <unistd.h>
@@ -10,7 +10,7 @@
  #endif"
  
  ac_header_list=
-@@ -13802,7 +13805,7 @@
+@@ -14496,7 +14499,7 @@ $as_echo "#define HAVE_LC_MESSAGES 1" >>confdefs.h
  
      fi
    fi

@@ -3,7 +3,7 @@
 
 PORTNAME=	gaeutilities
 PORTVERSION=	1.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ COMMENT=	Utility classes to make working with Google App Engine easier
 
 RUN_DEPENDS=	google-appengine>=1.2.4_1:www/google-appengine
 
-USES=		python:2 # same as www/google-appengine
+USES=		python:2.7 # same as www/google-appengine
 USE_GITHUB=	yes
 GH_ACCOUNT=	joerussbowman
 GH_TAGNAME=	ea3f7e1

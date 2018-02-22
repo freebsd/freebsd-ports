@@ -3,6 +3,7 @@
 
 PORTNAME=	hedis
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org

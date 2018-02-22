@@ -13,8 +13,5 @@ man/man1/stoken.1.gz
 %%X11%%%%DATADIR%%/pin-dialog.ui
 %%X11%%%%DATADIR%%/tokencode-detail.ui
 %%X11%%%%DATADIR%%/tokencode-small.ui
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/libstoken-test.c
-%%PORTDOCS%%%%DOCSDIR%%/sdtid-test.pl
 %%X11%%share/pixmaps/stoken-gui.png
 libdata/pkgconfig/stoken.pc

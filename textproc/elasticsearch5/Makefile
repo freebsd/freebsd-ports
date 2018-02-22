@@ -3,7 +3,7 @@
 
 PORTNAME=	elasticsearch
 PORTVERSION=	5.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash>0:shells/bash
 
-CONFLICTS=	elasticsearch-[0-9]* elasticsearch2-[0-9]*
+CONFLICTS=	elasticsearch-[0-9]* elasticsearch2-[0-9]* elasticsearch6-[0-9]*
 
 USES=		cpe shebangfix
 NO_ARCH=	yes

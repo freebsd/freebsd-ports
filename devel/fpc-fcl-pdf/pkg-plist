@@ -1,4 +1,6 @@
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-pdf.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpfonttextmapping.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpfonttextmapping.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpparsettf.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpparsettf.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fppdf.o
@@ -7,3 +9,5 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpttf.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpttf.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpttfencodings.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpttfencodings.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpttfsubsetter.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-pdf/fpttfsubsetter.ppu

@@ -13,6 +13,8 @@ COMMENT=	Converts HTML to PDF and/or PostScript
 
 LICENSE=	GPLv2
 
+BROKEN_SSL=	openssl-devel
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	HTMLDOCGUI
@@ -57,10 +59,4 @@ post-configure:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/htmldoc
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

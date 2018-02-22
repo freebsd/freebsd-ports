@@ -105,6 +105,7 @@
     SUBDIR += p5-Archive-Rar
     SUBDIR += p5-Archive-SimpleExtractor
     SUBDIR += p5-Archive-Tar
+    SUBDIR += p5-Archive-Tar-Wrapper
     SUBDIR += p5-Archive-Zip
     SUBDIR += p5-Compress-Bzip2
     SUBDIR += p5-Compress-LZ4

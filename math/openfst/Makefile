@@ -3,6 +3,7 @@
 
 PORTNAME=	openfst
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.openfst.org/twiki/pub/FST/FstDownload/
 
@@ -11,7 +12,7 @@ COMMENT=	Library for working with weighted finite-state transducers (FSTs)
 
 LICENSE=	APACHE20
 
-USES=		compiler:c++11-lib libtool python:2
+USES=		compiler:c++11-lib libtool python:2.7
 USE_LDCONFIG=	${LOCALBASE}/lib/fst
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-bin --enable-compact-fsts --enable-compress --enable-const-fsts --enable-far --enable-linear-fsts --enable-lookahead-fsts --enable-mpdt --enable-ngram-fsts --enable-pdt --enable-python --enable-special

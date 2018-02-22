@@ -3,7 +3,7 @@
 
 PORTNAME=	opencolorio
 PORTVERSION=	1.0.9
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -72,7 +72,7 @@ PLIST=		${PKGDIR}/pkg-plist-pyglue
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libyaml-cpp03.so:devel/yaml-cpp03
-USES+=		python:2,build
+USES+=		python:2.7,build
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
 		-DOCIO_BUILD_SHARED:BOOL=ON \

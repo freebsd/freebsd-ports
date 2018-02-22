@@ -96,6 +96,7 @@
     SUBDIR += py-bitcoin
     SUBDIR += py-python-obelisk
     SUBDIR += py-stripe
+    SUBDIR += py-ta-lib
     SUBDIR += py-vatnumber
     SUBDIR += py-ystockquote
     SUBDIR += qhacc

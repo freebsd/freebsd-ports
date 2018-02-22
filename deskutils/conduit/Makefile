@@ -4,7 +4,7 @@
 
 PORTNAME=	conduit
 PORTVERSION=	0.3.17
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas@${PY_
 		xdg-open:devel/xdg-utils
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pathfix pkgconfig python:2 \
+USES=		gettext gmake pathfix pkgconfig python:2.7 \
 		shebangfix
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

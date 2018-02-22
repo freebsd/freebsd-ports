@@ -2,7 +2,7 @@
 
 PORTNAME=	kpat
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,5 +16,5 @@ post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
 		${WRKSRC}/mimetypes/CMakeLists.txt
 
-.include <${.CURDIR}/../kdegames4/Makefile.common>
+.include <${.CURDIR}/../kdegames-kde4/Makefile.common>
 .include <bsd.port.mk>

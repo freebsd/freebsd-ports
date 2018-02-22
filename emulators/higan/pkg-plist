@@ -10,6 +10,7 @@ share/applications/higan.desktop
 %%DATADIR%%/Game Gear.sys/manifest.bml
 %%DATADIR%%/Master System.sys/manifest.bml
 %%DATADIR%%/Mega Drive.sys/manifest.bml
+%%DATADIR%%/Mega Drive.sys/tmss.rom
 %%DATADIR%%/PC Engine.sys/manifest.bml
 %%DATADIR%%/Super Famicom.sys/ipl.rom
 %%DATADIR%%/Super Famicom.sys/manifest.bml

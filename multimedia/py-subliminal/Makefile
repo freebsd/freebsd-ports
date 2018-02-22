@@ -10,10 +10,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Python library to search and download subtitles
 
-LICENSE=	LGPL3
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.0:www/py-beautifulsoup@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enzyme>=0.4.1:multimedia/py-enzyme@${FLAVOR} \
+		${PY_FUTURES} \
 		${PYTHON_PKGNAMEPREFIX}guessit>=2.1.0:multimedia/py-guessit@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.0.1:www/py-requests@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=4.0:devel/py-click@${FLAVOR} \
@@ -32,10 +34,4 @@ USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3200
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures@${FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

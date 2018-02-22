@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloud
-PORTVERSION=	12.0.5
+DISTVERSION=	13.0.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/prereleases/
 
@@ -30,6 +30,7 @@ OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	EXIF LDAP MYSQL SMB SSL
 
+DB_DESC=	Database backend(s)
 EXIF_DESC=	Image rotation support
 
 EXIF_USE=	PHP=exif
@@ -42,12 +43,6 @@ SQLITE_USE=	PHP=pdo_sqlite,sqlite3
 SMB_RUN_DEPENDS=	pecl-smbclient>=0.8.0:net/pecl-smbclient
 SSL_USE=	PHP=openssl
 
-.include <bsd.port.pre.mk>
-
-.if !empty(PORT_OPTIONS:MPGSQL) && ${PGSQL_VER} >= 10
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-PostgreSQL-10
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/www/|${WWWDIR}|' ${WRKSRC}/config/config.sample.php
 
@@ -57,4 +52,4 @@ do-install:
 	@${RM} ${STAGEDIR}${WWWDIR}/updater/updater.phar
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

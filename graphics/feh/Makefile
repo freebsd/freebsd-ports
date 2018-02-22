@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feh
-PORTVERSION=	2.23
+PORTVERSION=	2.23.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		LOCAL/uqs
@@ -22,7 +22,7 @@ USES=		cpe desktop-file-utils gmake perl5 shebangfix tar:bzip2
 CPE_VENDOR=	daniel_friesel
 USE_PERL5=	run
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 

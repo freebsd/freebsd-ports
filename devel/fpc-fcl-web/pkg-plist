@@ -91,6 +91,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/httpdefs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/httpdefs.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/httpprotocol.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/httpprotocol.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/httproute.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/httproute.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/iniwebsession.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/iniwebsession.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/iniwebsession.rsj
@@ -101,6 +103,11 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/restcodegen.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/sqldbwebdata.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/sqldbwebdata.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/sqldbwebdata.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/uhpack.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/uhpackimp.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/uhpackimp.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/uhpacktables.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/uhpacktables.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/webjsonrpc.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/webjsonrpc.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/webpage.o

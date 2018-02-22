@@ -3,7 +3,7 @@
 
 PORTNAME=	mpdbrowser
 PORTVERSION=	0.9.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio python
 MASTER_SITES=	http://mpdbrowser.tuxfamily.org/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:audio/py-mpd@${FLAVOR}
 
-USES=		gettext iconv python:2 tar:tgz
+USES=		gettext iconv python:2.7 tar:tgz
 USE_GNOME=	intltool pygtk2
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	mpdBrowser

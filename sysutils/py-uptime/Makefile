@@ -12,7 +12,7 @@ COMMENT=	Cross-platform uptime library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		python:2.5+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-install:

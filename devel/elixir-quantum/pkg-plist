@@ -32,7 +32,7 @@ lib/elixir/lib/quantum/lib/quantum/execution_broadcaster.ex
 lib/elixir/lib/quantum/lib/quantum/executor.ex
 lib/elixir/lib/quantum/lib/quantum/executor_supervisor.ex
 lib/elixir/lib/quantum/lib/quantum/job.ex
-lib/elixir/lib/quantum/lib/quantum/job_bradcaster.ex
+lib/elixir/lib/quantum/lib/quantum/job_broadcaster.ex
 lib/elixir/lib/quantum/lib/quantum/normalizer.ex
 lib/elixir/lib/quantum/lib/quantum/run_strategy.ex
 lib/elixir/lib/quantum/lib/quantum/run_strategy/all.ex

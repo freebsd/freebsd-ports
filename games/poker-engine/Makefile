@@ -3,7 +3,7 @@
 
 PORTNAME=	poker-engine
 PORTVERSION=	1.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync \
 		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${FLAVOR} \
 		${PYTHON_SITELIBDIR}/libxslt.py:textproc/py-libxslt@${FLAVOR}
 
-USES=		gettext gmake pathfix pkgconfig python:2
+USES=		gettext gmake pathfix pkgconfig python:2.7
 USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes
 

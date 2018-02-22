@@ -3,7 +3,7 @@
 
 PORTNAME=	zeronet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.2:devel/py-gevent@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gevent>0:devel/py-gevent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stem>0:security/py-stem@${PY_FLAVOR}
 
 SUB_FILES=	zeronet-service zeronet-cmd pkg-message

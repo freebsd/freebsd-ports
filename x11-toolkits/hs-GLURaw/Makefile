@@ -2,6 +2,7 @@
 
 PORTNAME=	GLURaw
 PORTVERSION=	2.0.0.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

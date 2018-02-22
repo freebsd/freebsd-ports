@@ -2,7 +2,7 @@
 
 PORTNAME=	dep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
+DISTVERSION=	0.4.1
 CATEGORIES=	devel
 
 MAINTAINER=	sam.gwydir@joyent.com
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	golang
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_TARGET=	github.com/${GH_ACCOUNT}/${PORTNAME}/cmd/dep
+GO_TARGET=	${GO_PKGNAME}/cmd/dep
 
 PLIST_FILES=	bin/dep
 

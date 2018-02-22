@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dirkx@webweaving.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 
 LICENSE=	EULA

@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://www.spice-space.org/download/releases/
 DISTNAME=	spice-${PORTVERSION}
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implements the server side of the SPICE protocol
 
 LICENSE=	GPLv2

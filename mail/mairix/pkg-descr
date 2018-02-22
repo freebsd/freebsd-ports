@@ -1,4 +1,15 @@
 Mairix is a program for indexing and searching email messages stored in
 Maildir, MH or mbox folders.
 
+Features:
+* Indexing is fast. It runs incrementally on new messages - any particular
+  message only gets scanned once in the lifetime of the index file.
+* The search mode populates a "virtual" folder with symlinks(*) which
+  point to the real messages. This folder can be opened as usual in your mail
+  program.
+* The search mode is very fast.
+* Indexing and searching works on the basis of words. The index file tabulates
+  which words occur in which parts (particular headers + body) of which
+  messages.
+
 WWW: http://www.rc0.org.uk/mairix/

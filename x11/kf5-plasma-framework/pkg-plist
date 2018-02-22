@@ -112,6 +112,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/DefaultListItemBackground.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/RoundShadow.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/TextFieldFocus.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/ApplicationWindowStyle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/BusyIndicatorStyle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/ButtonStyle.qml

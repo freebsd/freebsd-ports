@@ -1,15 +1,15 @@
---- chrome/app/settings_strings.grdp.orig	2017-06-05 19:03:01 UTC
-+++ chrome/app/settings_strings.grdp
-@@ -278,7 +278,7 @@
-   <message name="IDS_SETTINGS_THEMES" desc="Name of the control which allows the user to get a theme for the browser.">
-     Themes
-   </message>
+--- chrome/app/settings_strings.grdp.orig	2017-12-15 02:04:07.000000000 +0100
++++ chrome/app/settings_strings.grdp	2017-12-24 00:15:33.402792000 +0100
+@@ -363,7 +363,7 @@
+       Themes
+     </message>
+   </if>
 -  <if expr="is_linux and not chromeos">
 +  <if expr="is_posix and not chromeos">
      <message name="IDS_SETTINGS_SYSTEM_THEME" desc="Text of the label describing the system (GTK+) browser theme on Linux">
        GTK+
      </message>
-@@ -292,7 +292,7 @@
+@@ -377,7 +377,7 @@
        Use Classic
      </message>
    </if>

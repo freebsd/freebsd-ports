@@ -3,7 +3,7 @@
 
 PORTNAME=	emptyepsilon
 DISTVERSIONPREFIX=	EE-
-DISTVERSION=	2017.11.03
+DISTVERSION=	2018.02.15
 CATEGORIES=	games
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,11 +16,10 @@ BROKEN_powerpc64=	fails to compile: scienceDatabase.cpp: call of overloaded 'abs
 
 LIB_DEPENDS=	libsfml-system.so:devel/sfml
 
+USES=		cmake:outsource compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	daid
 GH_PROJECT=	EmptyEpsilon SeriousProton:sproton
-
-USES=		cmake compiler:c++11-lib
 USE_GL=		gl glu
 CMAKE_ARGS=	-DSERIOUS_PROTON_DIR="${WRKSRC_sproton}/"
 

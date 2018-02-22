@@ -1,15 +1,6 @@
---- base/BUILD.gn.orig	2017-07-25 21:04:48.000000000 +0200
-+++ base/BUILD.gn	2017-08-02 22:12:25.442369000 +0200
-@@ -1106,7 +1106,7 @@
-       "base_paths_win.h",
-     ]
- 
--    if (is_linux) {
-+    if (is_linux || is_bsd) {
-       sources += [ "base_paths_posix.cc" ]
-     }
-   }
-@@ -1142,7 +1142,7 @@
+--- base/BUILD.gn.orig	2017-12-15 02:04:05.000000000 +0100
++++ base/BUILD.gn	2017-12-30 01:18:00.438461000 +0100
+@@ -1125,7 +1125,7 @@
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -18,31 +9,44 @@
        host_toolchain != "//build/toolchain/cros:host") {
      libs = [ "atomic" ]
    }
-@@ -1168,7 +1168,7 @@
+@@ -1151,7 +1151,7 @@
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
 -    } else if (is_linux && use_allocator == "none") {
-+    } else if (is_linux && !is_bsd && use_allocator == "none") {
++    } else if ((is_linux && !is_bsd) && use_allocator == "none") {
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1185,6 +1185,31 @@
+@@ -1539,7 +1539,7 @@
+       "//base/third_party/xdg_user_dirs",
+     ]
+   } else {
+-    # Non-Linux.
++    # Non-Linux/BSD.
+     sources -= [
+       "nix/mime_util_xdg.cc",
+       "nix/mime_util_xdg.h",
+@@ -1555,6 +1555,33 @@
      }
    }
  
 +  if (is_bsd) {
 +    sources -= [
-+      "files/file_util_linux.cc",
 +      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/memory_linux.cc",
 +      "process/process_linux.cc",
++      "process/process_handle_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_metrics_linux.cc",
-+      "process/process_handle_linux.cc",
-+      "sys_info_linux.cc",
++      "sys_info_linux.cc"
 +    ]
 +    sources += [
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
 +      "files/file_path_watcher_stub.cc",
++      "process/memory_stubs.cc",
 +      "process/process_handle_freebsd.cc",
 +      "process/process_iterator_freebsd.cc",
 +      "process/process_metrics_freebsd.cc",
@@ -54,39 +58,19 @@
 +    ]
 +  }
 +
-+
-+
-   # Allow more direct string conversions on platforms with native utf8
-   # strings
-   if (is_mac || is_ios || is_chromeos || is_chromecast) {
-@@ -1520,7 +1545,7 @@
-   }
- 
-   # Linux.
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     if (is_asan || is_lsan || is_msan || is_tsan) {
-       # For llvm-sanitizer.
-       data += [ "//third_party/llvm-build/Release+Asserts/lib/libstdc++.so.6" ]
-@@ -1545,7 +1570,7 @@
-       "//base/third_party/xdg_user_dirs",
-     ]
-   } else {
--    # Non-Linux.
-+    # Non-Linux/BSD.
-     sources -= [
-       "nix/mime_util_xdg.cc",
-       "nix/mime_util_xdg.h",
-@@ -2392,6 +2417,12 @@
-       "trace_event/trace_event_android_unittest.cc",
+   # iOS
+   if (is_ios) {
+     set_sources_assignment_filter([])
+@@ -2389,6 +2416,12 @@
      ]
      set_sources_assignment_filter(sources_assignment_filter)
-+  }
+   }
 +
 +  if (is_bsd) {
 +    sources -= [
 +      "debug/proc_maps_linux_unittest.cc",
 +    ]
-   }
++  } 
  
    if (is_win) {
+     deps += [ "//base:scoped_handle_test_dll" ]

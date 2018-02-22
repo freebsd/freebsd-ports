@@ -5,8 +5,7 @@ PORTNAME=	dnscrypt-proxy
 PORTVERSION=	1.9.5
 PORTREVISION=	3
 CATEGORIES=	dns
-MASTER_SITES=	https://download.dnscrypt.org/dnscrypt-proxy/ \
-		https://download.dnscrypt.org/dnscrypt-proxy/old/
+MASTER_SITES=	LOCAL/dbaio/${PORTNAME}/
 
 MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	Boost privacy and security of DNS

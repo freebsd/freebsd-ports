@@ -3,6 +3,7 @@
 
 PORTNAME=	pyst
 PORTVERSION=	0.6.50
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/pyst/${PORTVERSION}
 
@@ -12,7 +13,7 @@ COMMENT=	Python interface to allow Asterisk programming
 LICENSE=	LGPL21 PSFL
 LICENSE_COMB=	dual
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils
 NO_ARCH=	yes
 

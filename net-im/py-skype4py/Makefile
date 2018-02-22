@@ -3,7 +3,7 @@
 
 PORTNAME=	Skype4Py
 PORTVERSION=	1.0.35
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Skype (TM) API wrapper for Python
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:2 zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

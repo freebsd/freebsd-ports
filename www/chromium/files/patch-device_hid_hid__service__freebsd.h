@@ -1,6 +1,6 @@
---- device/hid/hid_service_freebsd.h.orig	2017-12-03 15:37:32.180261000 -0800
-+++ device/hid/hid_service_freebsd.h	2017-12-03 15:37:32.183647000 -0800
-@@ -0,0 +1,47 @@
+--- device/hid/hid_service_freebsd.h.orig	2018-01-26 21:53:10.805771000 +0100
++++ device/hid/hid_service_freebsd.h	2018-01-26 21:53:10.805991000 +0100
+@@ -0,0 +1,48 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -24,8 +24,9 @@
 +  HidServiceFreeBSD();
 +  ~HidServiceFreeBSD() override;
 +
-+  void Connect(const HidDeviceId& device_id,
++  void Connect(const std::string& device_guid,
 +               const ConnectCallback& connect) override;
++  base::WeakPtr<HidService> GetWeakPtr() override;
 +
 + private:
 +  struct ConnectParams;

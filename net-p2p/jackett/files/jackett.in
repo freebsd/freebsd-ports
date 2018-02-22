@@ -39,6 +39,9 @@ jackett_precmd()
 {
 	export XDG_CONFIG_HOME=${jackett_data_dir}
 
+	# avoid root user warning
+	export USER=${jackett_user}
+
 	if [ ! -d ${jackett_data_dir} ]; then
 		install -d -o ${jackett_user} ${jackett_data_dir}
 	fi

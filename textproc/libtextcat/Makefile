@@ -28,10 +28,12 @@ post-install:
 	(cd ${WRKSRC}/langclass/LM &&		\
 	${FIND} . -name "*.lm" -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/LM/{}" \;)
 	${INSTALL_DATA} ${WRKSRC}/langclass/conf.txt "${STAGEDIR}${DATADIR}"
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-regression-test:
+do-test:
 	(cd ${WRKSRC}/langclass/ &&		\
 	for t in `${LS} ShortTexts/*.txt` ; do	\
 	${ECHO_MSG} "Analyzing $$t..." ;	\

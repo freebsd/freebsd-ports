@@ -1,0 +1,4 @@
+# Use sbt's internal PollingWatchServices.
+# This triggers rebuilds on src changes after max. 0.5 seconds (instead of 10 seconds).
+# Reference: https://github.com/sbt/sbt/issues/3868
+-Dsbt.watch.mode=polling

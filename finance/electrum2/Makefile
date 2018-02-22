@@ -16,6 +16,9 @@ COMMENT=	Easy to use Bitcoin client (legacy version)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+DEPRECATED=	Vulnerable legacy port, please use finance/electrum instead
+EXPIRATION_DATE=	2018-03-11
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonrpclib>0:devel/py-jsonrpclib@${FLAVOR} \

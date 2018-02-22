@@ -3,7 +3,7 @@
 PORTNAME=	gpicker
 DISTVERSION=	2.3
 CATEGORIES=	deskutils
-MASTER_SITES=	SAVANNAH/${PORTNAME}
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program allowing to quickly pick a file in a large project

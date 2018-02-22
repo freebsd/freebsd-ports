@@ -2,7 +2,7 @@
 
 PORTNAME=	guake
 PORTVERSION=	0.8.10
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -44,7 +44,7 @@ PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,${PREFIX}/,,}"
 
 NO_ARCH=	yes
 USES=		autoreconf:build desktop-file-utils gettext gmake libtool \
-		pkgconfig python:2
+		pkgconfig python:2.7
 USE_GITHUB=	yes
 USE_GNOME=	gtk20 pygnome2 intltool
 

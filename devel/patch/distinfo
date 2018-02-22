@@ -1,2 +1,3 @@
-SHA256 (patch-2.7.5.tar.xz) = fd95153655d6b95567e623843a0e77b81612d502ecf78a489a4aed7867caa299
-SIZE (patch-2.7.5.tar.xz) = 727704
+TIMESTAMP = 1518689812
+SHA256 (patch-2.7.6.tar.xz) = ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
+SIZE (patch-2.7.6.tar.xz) = 783756

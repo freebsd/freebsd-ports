@@ -1,0 +1,4 @@
+Shards is a dependency manager for the Crystal programming language. It
+downloads dependencies with Git, ensuring correct versions for all dependencies.
+
+WWW: https://github.com/crystal-lang/shards

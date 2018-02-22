@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.23.4
-PORTREVISION=	2
+DISTVERSION=	1.23.7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -20,7 +19,7 @@ RUN_DEPENDS=	unrar:archivers/unrar \
 		wpd2html:textproc/libwpd010 \
 		unrtf:textproc/unrtf
 
-USES=		bison gmake iconv libtool localbase python shebangfix
+USES=		bison gmake iconv libtool localbase python:2.7 shebangfix
 SHEBANG_FILES=	filters/*.py desktop/hotrecoll.py \
 		filters/rcl7z filters/rclaudio filters/rclchm \
 		filters/rcldia filters/rclepub filters/rclepub1 \
@@ -30,7 +29,6 @@ SHEBANG_FILES=	filters/*.py desktop/hotrecoll.py \
 USE_PYTHON=	py3kplist
 USE_GNOME=	libxslt:run
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-pic
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_PKGNAME=	Recoll
@@ -63,8 +61,8 @@ QT4_CONFIGURE_ENABLE=	qtgui
 QT4_CONFIGURE_ENV=	QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" \
 			QTDIR="${PREFIX}"
 QT4_VARS=		QT_NONSTANDARD=yes
-SOUND_RUN_DEPENDS=	mutagen-pony:audio/py-mutagen \
-			pykaraoke:audio/py-karaoke
+SOUND_RUN_DEPENDS=	mutagen-pony:audio/py-mutagen@${PY_FLAVOR} \
+			pykaraoke:audio/py-karaoke@${PY_FLAVOR}
 X11MON_DESC=		X11 session monitoring support
 X11MON_USES=		fam
 X11MON_USE=		xorg=ice,sm,x11
@@ -74,8 +72,8 @@ X11MON_BROKEN=		does not build: index/rclmonrcv.cpp:(.text+0x1f13): undefined re
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-                's|@QMAKE@|${TRUE}|' \
-                ${WRKSRC}/Makefile.in
+		's|@QMAKE@|${TRUE}|' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/configure

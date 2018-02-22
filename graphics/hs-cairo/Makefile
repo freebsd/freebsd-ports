@@ -2,6 +2,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	0.13.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org

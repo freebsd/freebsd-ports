@@ -319,6 +319,7 @@ man/man1/qbs.1.gz
 %%DATADIR%%/imports/qbs/base/CppApplication.qbs
 %%DATADIR%%/imports/qbs/base/DynamicLibrary.qbs
 %%DATADIR%%/imports/qbs/base/InnoSetup.qbs
+%%DATADIR%%/imports/qbs/base/Installer.qbs
 %%DATADIR%%/imports/qbs/base/InstallPackage.qbs
 %%DATADIR%%/imports/qbs/base/JavaClassCollection.qbs
 %%DATADIR%%/imports/qbs/base/JavaJarFile.qbs
@@ -357,7 +358,6 @@ man/man1/qbs.1.gz
 %%DATADIR%%/modules/cpp/freebsd-gcc.qbs
 %%DATADIR%%/modules/cpp/freebsd.js
 %%DATADIR%%/modules/cpp/gcc.js
-%%DATADIR%%/modules/cpp/genericunix-gcc.qbs
 %%DATADIR%%/modules/cpp/ios-gcc.qbs
 %%DATADIR%%/modules/cpp/macos-gcc.qbs
 %%DATADIR%%/modules/cpp/msvc.js

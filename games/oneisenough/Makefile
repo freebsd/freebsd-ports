@@ -3,6 +3,7 @@
 
 PORTNAME=	oneisenough
 PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://hectigo.net/games/oneisenough/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/"one is enough"
 
-USES=		dos2unix python:2 shebangfix zip
+USES=		dos2unix python:2.7 shebangfix zip
 DOS2UNIX_FILES=	*.txt bin/*.py
 DOS2UNIX_REGEX= .*.[^pt][^nt][^gf]
 SHEBANG_FILES=	run_game.py bin/mainmenu.py

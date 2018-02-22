@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	faust
-DISTVERSION=	2.5.17
+DISTVERSION=	2.5.21
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org

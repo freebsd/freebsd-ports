@@ -3,6 +3,7 @@
 
 PORTNAME=	mtools
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=2.0:sysutils/py-psutil@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${FLAVOR}
 
 USE_PYTHON=	autoplist distutils
-USES=		python:2
+USES=		python:2.7
 
 .include <bsd.port.mk>

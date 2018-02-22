@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mattermost-webapp
-PORTVERSION=	4.6.0
+PORTVERSION=	4.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://releases.mattermost.com/${PORTVERSION}/

@@ -1,7 +1,7 @@
 # Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-opengl
 
 COMMENT=	OpenGL renderer for MyGUI

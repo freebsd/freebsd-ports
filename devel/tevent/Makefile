@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=		tevent
-PORTVERSION=		0.9.34
-PORTREVISION=		1
+PORTVERSION=		0.9.35
+PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA
@@ -14,8 +14,13 @@ LICENSE=		LGPL3
 
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
-BUILD_DEPENDS=		talloc>=2.1.10:devel/talloc
-RUN_DEPENDS=		talloc>=2.1.10:devel/talloc
+BUILD_DEPENDS=		talloc>=2.1.11:devel/talloc
+RUN_DEPENDS=		talloc>=2.1.11:devel/talloc
+
+#FLAVORS=		default nopython
+#nopython_PKGNAMESUFFIX=	-nopython
+#nopython_CONFLICTS=	tevent
+#default_CONFLICTS=	tevent-nopython
 
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
@@ -28,7 +33,6 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 CONFIGURE_ARGS+=	--bundled-libraries=!talloc
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
-			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
 			--disable-rpath \
 			--without-gettext
 
@@ -73,7 +77,7 @@ CONFIGURE_ARGS+=	--extra-python=${LOCALBASE}/bin/${SAMBA4_PYTHON3}
 PLIST_SUB+=		SAMBA4_PYTHON3_SO_ABI=${SAMBA4_PYTHON3_SO_ABI} \
 			SAMBA4_PYTHON3_SITELIBDIR=${SAMBA4_PYTHON3_SITELIBDIR}
 
-PLIST_FILES+=		%%SAMBA4_PYTHON3_SITELIBDIR%%/_tevent.so \
+PLIST_FILES+=		%%SAMBA4_PYTHON3_SITELIBDIR%%/_tevent.%%SAMBA4_PYTHON3_SO_ABI%%.so \
 			%%SAMBA4_PYTHON3_SITELIBDIR%%/tevent.py  \
 			%%SAMBA4_PYTHON3_SITELIBDIR%%/tevent.pyc \
 			%%SAMBA4_PYTHON3_SITELIBDIR%%/tevent.pyo
@@ -108,16 +112,18 @@ pre-configure:
 				${FALSE}; \
 			fi
 
+.if !defined(NO_PYTHON)
 post-build:
 			${PYTHON_CMD} -m py_compile ${BUILD_WRKSRC}/tevent.py
 			${PYTHON_CMD} -O -m py_compile ${BUILD_WRKSRC}/tevent.py
+.endif
 
 post-install:
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtevent.so
 .if !defined(NO_PYTHON)
 			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_tevent.so
 .if defined(SAMBA4_PYTHON3)
-			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SAMBA4_PYTHON3_SITELIBDIR}/_tevent.so
+			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SAMBA4_PYTHON3_SITELIBDIR}/_tevent.${SAMBA4_PYTHON3_SO_ABI}.so
 .endif
 .endif
 

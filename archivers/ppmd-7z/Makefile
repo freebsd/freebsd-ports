@@ -11,12 +11,21 @@ DISTNAME=	p7zip_${DISTVERSION}_src_all
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-ratio PPMD compressor
 
+LICENSE=	LGPL21+ UNRAR
+LICENSE_COMB=	multi
+LICENSE_NAME_UNRAR=	unRAR license
+LICENSE_FILE=	${WRKSRC}/DOCS/License.txt
+LICENSE_FILE_UNRAR=	${WRKSRC}/DOCS/unRarLicense.txt
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/DOCS/copying.txt
+LICENSE_PERMS_UNRAR=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		tar:bzip2 gmake
 WRKSRC=		${WRKDIR}/p7zip_${DISTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Compress/PPMD_Alone
 MAKEFILE=	makefile
 PLIST_FILES=	bin/${PKGBASE}
 MAKE_ARGS=	PROG=${PORTNAME} CXX="${CXX}" LIB="-pthread"
+TEST_TARGET=	test
 
 post-patch:
 	@${REINPLACE_CMD} -e '/bool Open(LPCTSTR fileName, DWORD creationDisposition)/,/}/d'\
@@ -25,9 +34,6 @@ post-patch:
 			${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PKGBASE}
-
-regression-test: build
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PKGBASE}
 
 .include <bsd.port.mk>

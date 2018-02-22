@@ -369,6 +369,7 @@
     SUBDIR += fusefs-mhddfs
     SUBDIR += fusefs-mp3fs
     SUBDIR += fusefs-ntfs
+    SUBDIR += fusefs-ntfs-compression
     SUBDIR += fusefs-pod
     SUBDIR += fusefs-rar2fs
     SUBDIR += fusefs-s3fs
@@ -401,6 +402,7 @@
     SUBDIR += geteltorito
     SUBDIR += ghostbsd-bug-report
     SUBDIR += ghostbsd-grub2-settings
+    SUBDIR += getssl
     SUBDIR += gigolo
     SUBDIR += gkfreq
     SUBDIR += gkleds2
@@ -525,7 +527,7 @@
     SUBDIR += k8temp
     SUBDIR += kcm-polkit-kde
     SUBDIR += kcron
-    SUBDIR += kdeadmin4
+    SUBDIR += kdeadmin-kde4
     SUBDIR += kdf
     SUBDIR += kdirstat
     SUBDIR += keyboard-daemon
@@ -537,7 +539,7 @@
     SUBDIR += kldfind
     SUBDIR += kldpatch
     SUBDIR += knutclient-kde4
-    SUBDIR += krename-kde4
+    SUBDIR += krename
     SUBDIR += kshutdown-kde4
     SUBDIR += ksysguardd
     SUBDIR += ksystemlog
@@ -577,6 +579,7 @@
     SUBDIR += lmmon
     SUBDIR += lmon
     SUBDIR += lnav
+    SUBDIR += lockfile-progs
     SUBDIR += log_analysis
     SUBDIR += logrotate
     SUBDIR += logstalgia
@@ -857,6 +860,7 @@
     SUBDIR += php71-posix
     SUBDIR += php72-fileinfo
     SUBDIR += php72-posix
+    SUBDIR += phpfpm_exporter
     SUBDIR += phybs
     SUBDIR += pick
     SUBDIR += pidof
@@ -1245,6 +1249,7 @@
     SUBDIR += u-boot-olimex-a20-som-evb
     SUBDIR += u-boot-olinuxino-lime
     SUBDIR += u-boot-orangepi-one
+    SUBDIR += u-boot-orangepi-pc
     SUBDIR += u-boot-orangepi-pc2
     SUBDIR += u-boot-orangepi-plus-2e
     SUBDIR += u-boot-orangepi-zero

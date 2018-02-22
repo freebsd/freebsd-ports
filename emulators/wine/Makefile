@@ -6,7 +6,7 @@ DISTVERSION=	3.0
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
-		http://ibiblio.org/pub/linux/system/emulators/wine/
+		http://mirrors.ibiblio.org/wine/source/3.0/
 
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	Microsoft Windows compatibility environment
@@ -108,7 +108,7 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 .include <bsd.port.pre.mk>
 
 # PR224863: clang 6.0.0 crashes
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056 && ${ARCH} == amd64
+.if ${OPSYS} == FreeBSD && ${OSVERSION} == 1200056 && ${ARCH} == amd64
 USE_GCC=	yes
 .endif
 

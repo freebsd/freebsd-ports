@@ -13,6 +13,8 @@ COMMENT=	User-space fs with on-access antivirus scanning
 LICENSE=	GPLv2
 
 BROKEN=		fails to build with boost 1.65, see bug 220725
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-03-19
 
 LIB_DEPENDS=	libccgnu2.so:devel/commoncpp \
 		libPocoNet.so:devel/poco-ssl \

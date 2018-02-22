@@ -56,6 +56,7 @@
     SUBDIR += cpuid
     SUBDIR += crosspad
     SUBDIR += crosti
+    SUBDIR += cryptoballot
     SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += dahdi
@@ -233,9 +234,10 @@
     SUBDIR += kde4-l10n-ug
     SUBDIR += kde4-l10n-wa
     SUBDIR += kde4-xdg-env
-    SUBDIR += kdeedu4
-    SUBDIR += kdeutils4
+    SUBDIR += kdeedu-kde4
+    SUBDIR += kdeutils-kde4
     SUBDIR += kenny
+    SUBDIR += kf5-purpose
     SUBDIR += kgeography
     SUBDIR += klettres
     SUBDIR += krecipes-kde4
@@ -427,7 +429,7 @@
     SUBDIR += rpl
     SUBDIR += rtfm
     SUBDIR += rubygem-dotenv
-    SUBDIR += rubygem-dotenv-rails
+    SUBDIR += rubygem-dotenv-rails-rails4
     SUBDIR += rubygem-dotenv-rails-rails5
     SUBDIR += rubygem-dotenv-rails-rails50
     SUBDIR += rubygem-iesd

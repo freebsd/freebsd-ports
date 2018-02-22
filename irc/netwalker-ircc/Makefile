@@ -15,6 +15,13 @@ USES=		ncurses tar:tgz
 
 LDFLAGS+=	-lncurses -lpthread
 
+.include <bsd.port.pre.mk>
+
+# does not compile with clang 6.0.0
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056
+USE_GCC=	yes
+.endif
+
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 	${WRKSRC}/config.h > ${WRKSRC}/config.h.freebsd
@@ -32,4 +39,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/help/* ${STAGEDIR}${PREFIX}/share/netwalker-ircc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

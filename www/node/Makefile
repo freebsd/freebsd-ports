@@ -12,7 +12,7 @@ COMMENT=	V8 JavaScript for client and server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64
 
 OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS DTRACE
 OPTIONS_DEFAULT=DTRACE
@@ -41,7 +41,7 @@ NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
 DTRACE_CONFIGURE_ON=	--with-dtrace
 
-USES=		compiler:c++11-lib gmake python:2,build pkgconfig \
+USES=		compiler:c++11-lib gmake python:2.7,build pkgconfig \
 		localbase shebangfix
 
 HAS_CONFIGURE=	yes

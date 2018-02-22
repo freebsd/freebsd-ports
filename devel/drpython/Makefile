@@ -27,6 +27,7 @@ USES=		compiler:c++11-lib python:2.7 zip
 USE_PYTHON=	autoplist distutils
 USE_WX=		3.0+
 WX_COMPS=	python:lib
+MAKE_ARGS=	SPHINXBUILD=sphinx-build-${PYTHON_VER}
 
 PLIST_FILES=	bin/drpython
 
@@ -49,7 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON%%|${PYTHON_CMD}|' ${WRKSRC}/drpython.lin
 
 pre-build:
-	@(cd ${WRKSRC}/docsrc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} html)
+	@(cd ${WRKSRC}/docsrc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} html)
 	@(cd ${WRKSRC}/docsrc/_build/html && ${CP} -f *.html *.js \
 		${WRKSRC}/documentation)
 

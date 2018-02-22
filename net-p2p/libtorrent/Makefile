@@ -2,7 +2,7 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.13.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://rtorrent.net/downloads/
 
@@ -11,6 +11,8 @@ COMMENT=	BitTorrent Library written in C++
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_SSL=	openssl-devel
 
 CONFLICTS_INSTALL=	rblibtorrent-[0-9]* rblibtorrent-devel-[0-9]*
 
@@ -34,10 +36,6 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 KQUEUE_CONFIGURE_WITH=	kqueue
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
 
 # Disable instrumentation, which requires 64-bit atomic ops, on i386 (when
 # using gcc) and powerpc to avoid linking errors:

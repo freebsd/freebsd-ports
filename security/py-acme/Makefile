@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	acme
-PORTVERSION=	0.21.0
+PORTVERSION=	${ACME_VERSION}
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	ACME protocol implementation in Python
 
 LICENSE=	APACHE20
@@ -33,4 +33,5 @@ NO_ARCH=	yes
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
+.include "version.mk"
 .include <bsd.port.mk>

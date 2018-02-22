@@ -1,0 +1,15 @@
+This package includes several programs to safely lock and unlock
+files and mailboxes from the command line.  These include:
+
+   lockfile-create
+   lockfile-remove
+   lockfile-touchlock
+   mail-lock
+   mail-unlock
+   mail-touchlock
+
+These programs use liblockfile to perform the file locking and
+unlocking, so they are guaranteed compatible with Debian's
+file locking policies.
+
+WWW: https://tracker.debian.org/pkg/lockfile-progs

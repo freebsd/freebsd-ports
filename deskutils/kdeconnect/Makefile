@@ -2,7 +2,7 @@
 
 PORTNAME=	kdeconnect-kde
 PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	KDE/unstable/kdeconnect/${PORTVERSION}/src/
 

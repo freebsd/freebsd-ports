@@ -1,6 +1,6 @@
---- device/hid/hid_connection_freebsd.cc.orig	2017-12-03 15:37:32.146994000 -0800
-+++ device/hid/hid_connection_freebsd.cc	2017-12-03 15:37:32.154605000 -0800
-@@ -0,0 +1,278 @@
+--- device/hid/hid_connection_freebsd.cc.orig	2018-01-26 21:53:10.787158000 +0100
++++ device/hid/hid_connection_freebsd.cc	2018-01-26 21:53:10.788129000 +0100
+@@ -0,0 +1,280 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -54,7 +54,7 @@
 +
 +  void Write(scoped_refptr<net::IOBuffer> buffer,
 +             size_t size,
-+             const WriteCallback& callback) {
++             WriteCallback callback) {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +    char *data = buffer->data();
 +    // if report id is 0, it shouldn't be included
@@ -66,20 +66,20 @@
 +    ssize_t result = HANDLE_EINTR(write(fd_.get(), data, size));
 +    if (result < 0) {
 +      HID_PLOG(EVENT) << "Write failed";
-+      origin_task_runner_->PostTask(FROM_HERE, base::Bind(callback, false));
++      origin_task_runner_->PostTask(FROM_HERE, base::BindOnce(std::move(callback), false));
 +    } else {
 +      if (static_cast<size_t>(result) != size)
 +        HID_LOG(EVENT) << "Incomplete HID write: " << result << " != " << size;
-+      origin_task_runner_->PostTask(FROM_HERE, base::Bind(callback, true));
++      origin_task_runner_->PostTask(FROM_HERE, base::BindOnce(std::move(callback), true));
 +    }
 +  }
 +
 +  void GetFeatureReport(uint8_t report_id,
 +                        scoped_refptr<net::IOBufferWithSize> buffer,
-+                        const ReadCallback& callback) {
++                        ReadCallback callback) {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +    struct usb_gen_descriptor ugd;
-+    ugd.ugd_report_type = UHID_FEATURE_REPORT;  
++    ugd.ugd_report_type = UHID_FEATURE_REPORT;
 +    ugd.ugd_data = buffer->data();
 +    ugd.ugd_maxlen = buffer->size();
 +    int result = HANDLE_EINTR(
@@ -87,23 +87,23 @@
 +    if (result < 0) {
 +      HID_PLOG(EVENT) << "Failed to get feature report";
 +      origin_task_runner_->PostTask(FROM_HERE,
-+                                    base::Bind(callback, false, nullptr, 0));
++                                    base::BindOnce(std::move(callback), false, nullptr, 0));
 +    } else if (result == 0) {
 +      HID_LOG(EVENT) << "Get feature result too short.";
 +      origin_task_runner_->PostTask(FROM_HERE,
-+                                    base::Bind(callback, false, nullptr, 0));
++                                    base::BindOnce(std::move(callback), false, nullptr, 0));
 +    } else {
 +      origin_task_runner_->PostTask(FROM_HERE,
-+                                    base::Bind(callback, true, buffer, result));
++                                    base::BindOnce(std::move(callback), true, buffer, result));
 +    }
 +  }
 +
 +  void SendFeatureReport(scoped_refptr<net::IOBuffer> buffer,
 +                         size_t size,
-+                         const WriteCallback& callback) {
++                         WriteCallback callback) {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +    struct usb_gen_descriptor ugd;
-+    ugd.ugd_report_type = UHID_FEATURE_REPORT;  
++    ugd.ugd_report_type = UHID_FEATURE_REPORT;
 +    ugd.ugd_data = buffer->data();
 +    ugd.ugd_maxlen = size;
 +    // FreeBSD does not require report id if it's not used
@@ -118,9 +118,11 @@
 +        ioctl(fd_.get(), USB_SET_REPORT, &ugd));
 +    if (result < 0) {
 +      HID_PLOG(EVENT) << "Failed to send feature report";
-+      origin_task_runner_->PostTask(FROM_HERE, base::Bind(callback, false));
++      origin_task_runner_->PostTask(FROM_HERE,
++                                    base::BindOnce(std::move(callback), false));
 +    } else {
-+      origin_task_runner_->PostTask(FROM_HERE, base::Bind(callback, true));
++      origin_task_runner_->PostTask(FROM_HERE,
++                                    base::BindOnce(std::move(callback), true));
 +    }
 +  }
 +
@@ -157,7 +159,7 @@
 +    }
 +
 +    origin_task_runner_->PostTask(
-+        FROM_HERE, base::Bind(&HidConnectionFreeBSD::ProcessInputReport,
++        FROM_HERE, base::BindOnce(&HidConnectionFreeBSD::ProcessInputReport,
 +                              connection_, buffer, bytes_read));
 +  }
 +
@@ -182,8 +184,8 @@
 +  helper_ = base::MakeUnique<BlockingTaskHelper>(std::move(fd), device_info,
 +                                                 weak_factory_.GetWeakPtr());
 +  blocking_task_runner_->PostTask(
-+      FROM_HERE,
-+      base::Bind(&BlockingTaskHelper::Start, base::Unretained(helper_.get())));
++      FROM_HERE, base::BindOnce(&BlockingTaskHelper::Start,
++                                base::Unretained(helper_.get())));
 +}
 +
 +HidConnectionFreeBSD::~HidConnectionFreeBSD() {}
@@ -196,31 +198,30 @@
 +  blocking_task_runner_->DeleteSoon(FROM_HERE, helper_.release());
 +
 +  while (!pending_reads_.empty()) {
-+    pending_reads_.front().callback.Run(false, NULL, 0);
++    std::move(pending_reads_.front().callback).Run(false, NULL, 0);
 +    pending_reads_.pop();
 +  }
 +}
 +
-+void HidConnectionFreeBSD::PlatformRead(const ReadCallback& callback) {
-+  DCHECK(thread_checker().CalledOnValidThread());
++void HidConnectionFreeBSD::PlatformRead(ReadCallback callback) {
 +  PendingHidRead pending_read;
-+  pending_read.callback = callback;
-+  pending_reads_.push(pending_read);
++  pending_read.callback = std::move(callback);
++  pending_reads_.push(std::move(pending_read));
 +  ProcessReadQueue();
 +}
 +
 +void HidConnectionFreeBSD::PlatformWrite(scoped_refptr<net::IOBuffer> buffer,
 +                                     size_t size,
-+                                     const WriteCallback& callback) {
++                                     WriteCallback callback) {
 +
 +  blocking_task_runner_->PostTask(
 +      FROM_HERE,
-+      base::Bind(&BlockingTaskHelper::Write, base::Unretained(helper_.get()),
-+                 buffer, size, callback));
++      base::BindOnce(&BlockingTaskHelper::Write, base::Unretained(helper_.get()),
++                 buffer, size, std::move(callback)));
 +}
 +
 +void HidConnectionFreeBSD::PlatformGetFeatureReport(uint8_t report_id,
-+                                                const ReadCallback& callback) {
++                                                ReadCallback callback) {
 +  // The first byte of the destination buffer is the report ID being requested
 +  // and is overwritten by the feature report.
 +  DCHECK_GT(device_info()->max_feature_report_size(), 0u);
@@ -231,18 +232,19 @@
 +
 +  blocking_task_runner_->PostTask(
 +      FROM_HERE,
-+      base::Bind(&BlockingTaskHelper::GetFeatureReport,
-+                 base::Unretained(helper_.get()), report_id, buffer, callback));
++      base::BindOnce(&BlockingTaskHelper::GetFeatureReport,
++                 base::Unretained(helper_.get()), report_id,
++                 buffer, std::move(callback)));
 +}
 +
 +void HidConnectionFreeBSD::PlatformSendFeatureReport(
 +    scoped_refptr<net::IOBuffer> buffer,
 +    size_t size,
-+    const WriteCallback& callback) {
++    WriteCallback callback) {
 +  blocking_task_runner_->PostTask(
 +      FROM_HERE,
-+      base::Bind(&BlockingTaskHelper::SendFeatureReport,
-+                 base::Unretained(helper_.get()), buffer, size, callback));
++      base::BindOnce(&BlockingTaskHelper::SendFeatureReport,
++                 base::Unretained(helper_.get()), buffer, size, std::move(callback)));
 +}
 +
 +void HidConnectionFreeBSD::ProcessInputReport(
@@ -269,12 +271,12 @@
 +  // during the loop.
 +  scoped_refptr<HidConnectionFreeBSD> self(this);
 +  while (pending_reads_.size() && pending_reports_.size()) {
-+    PendingHidRead read = pending_reads_.front();
-+    PendingHidReport report = pending_reports_.front();
++    PendingHidRead read = std::move(pending_reads_.front());
++    PendingHidReport report = std::move(pending_reports_.front());
 +
 +    pending_reads_.pop();
 +    pending_reports_.pop();
-+    read.callback.Run(true, report.buffer, report.size);
++    std::move(read.callback).Run(true, std::move(report.buffer), report.size);
 +  }
 +}
 +

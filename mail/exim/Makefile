@@ -91,7 +91,7 @@ MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.90
+EXIM_VERSION=	4.90.1
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 

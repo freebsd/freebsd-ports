@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
-USES=		gmake python shebangfix ssl tar:bzip2
+USES=		gmake python:2.7 shebangfix ssl tar:bzip2
 SHEBANG_FILES=	examples/tests/*.py examples/poa/*.py \
 		examples/fortune/*.py examples/embed/*.py \
 		examples/valuetype/tests/*.py \

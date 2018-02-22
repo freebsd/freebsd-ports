@@ -6,10 +6,10 @@ bin/nncp-cfgmin
 bin/nncp-cfgnew
 bin/nncp-check
 bin/nncp-daemon
+bin/nncp-exec
 bin/nncp-file
 bin/nncp-freq
 bin/nncp-log
-bin/nncp-mail
 bin/nncp-pkt
 bin/nncp-reass
 bin/nncp-rm

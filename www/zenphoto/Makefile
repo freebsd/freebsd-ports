@@ -4,6 +4,7 @@
 PORTNAME=	zenphoto
 PORTVERSION=	1.4.14
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE=	GPLv2+
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	gd gettext json mbstring mysqli pcre session
+USE_PHP=	gd gettext hash json mbstring mysqli pcre session
 USES=		cpe php:web
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

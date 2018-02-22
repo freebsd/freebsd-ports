@@ -5,7 +5,7 @@ PORTNAME=	mpfr
 PORTVERSION=	3.1.6
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/ \
-		GNU/${PORTNAME}
+		GNU
 DIST_SUBDIR=	${DISTNAME}
 
 PATCH_SITES=	${MASTER_SITES}

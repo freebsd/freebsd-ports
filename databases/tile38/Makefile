@@ -5,7 +5,7 @@ PORTNAME=	tile38
 PORTVERSION=	1.10.1
 CATEGORIES=	databases
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	a.andersson.thn@gmail.com
 COMMENT=	In-memory geolocation data store, spatial index, and realtime geofence
 
 LICENSE=	MIT

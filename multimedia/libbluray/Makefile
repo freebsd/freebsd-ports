@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbluray
-PORTVERSION=	0.9.3
+DISTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
@@ -19,11 +19,12 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 LIB_DEPENDS+=	libaacs.so:multimedia/libaacs \
 		libbdplus.so:multimedia/libbdplus
 
-INSTALL_TARGET=	install-strip
-USES=		autoreconf iconv libtool pathfix pkgconfig tar:bzip2
+USES=		iconv libtool pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
-GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 .include "Makefile.include"
 
@@ -35,7 +36,10 @@ JAVA_BUILD_DEPENDS=		ant:devel/apache-ant
 JAVA_CATEGORIES=		java
 JAVA_USE=			JAVA=yes
 JAVA_VARS=			JAVA_VERSION=1.6+ JAVA_BUILD=yes JAVA_RUN=yes
-JAVA_CONFIGURE_ENABLE=		bdjava
+JAVA_CONFIGURE_ENABLE=		bdjava-jar
 JAVA_CONFIGURE_ENV=		JDK_HOME="${JAVA_HOME}"
+
+post-patch:
+	@${RLN} ${WRKSRC}/jni/linux ${WRKSRC}/jni/freebsd
 
 .include <bsd.port.mk>

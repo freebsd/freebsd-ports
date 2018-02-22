@@ -24,7 +24,7 @@ LIB_DEPENDS=	libarpack.so:math/arpack			\
 		libportaudio.so:audio/portaudio		\
 		libumfpack.so:math/suitesparse
 
-USES=		blaslapack cmake:outsource dos2unix fortran pkgconfig python:build
+USES=		blaslapack cmake:outsource dos2unix fortran pkgconfig python:2.7,build
 USE_GL=		yes
 USE_QT4=	gui network opengl svg webkit xml			\
 		moc_build qmake_build rcc_build uic_build

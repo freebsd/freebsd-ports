@@ -3,7 +3,7 @@
 
 PORTNAME=	kyototycoon
 PORTVERSION=	0.9.56
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/ \
 		LOCAL/sunpoet
@@ -25,6 +25,7 @@ INSTALL_TARGET=	install-strip
 MAKE_ARGS=	PCDIR=${PREFIX}/libdata/pkgconfig
 REINPLACE_ARGS=	-i ''
 TEST_TARGET=	check
+USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 USES=		gmake pkgconfig

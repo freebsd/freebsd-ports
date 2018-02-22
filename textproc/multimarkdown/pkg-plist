@@ -1,3 +1,4 @@
+bin/markdown
 bin/multimarkdown
 %%HELPERS%%bin/mmd
 %%HELPERS%%bin/mmd2all
@@ -8,7 +9,6 @@ bin/multimarkdown
 %%HELPERS%%bin/mmd2tex
 
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%EXTRAS%%%%DOCSDIR%%/README-extras.md
 
 %%EXTRAS%%bin/mmd-xslt
 %%EXTRAS%%bin/mmd2LaTeX.pl
@@ -29,6 +29,7 @@ bin/multimarkdown
 %%EXTRAS%%%%DATADIR%%/XSLT/opml2mmd.xslt
 %%EXTRAS%%%%DATADIR%%/XSLT/xhtml-toc-h2.xslt
 %%EXTRAS%%%%DATADIR%%/XSLT/xhtml2latex.xslt
+%%EXTRAS%%%%DOCSDIR%%/README-extras.md
 
 %%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/LICENCE
 %%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/MMD-Guide.html

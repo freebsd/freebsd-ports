@@ -21,8 +21,9 @@ LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick	\
 		libcdf.so:science/cdf			\
 		libXp.so:x11/libXp
 
-USE_XORG=	x11 xt xinerama xext xpm xmu sm ice
+MAKE_JOBS_UNSAFE=	yes
 USES=		bison motif gmake libtool
+USE_XORG=	x11 xt xinerama xext xpm xmu sm ice
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

@@ -671,6 +671,13 @@ PY_FUTURES=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures@${PY_FLAVOR}
 PY_FUTURES=
 .endif
 
+.if ${PYTHON_REL} < 3000
+PY_BOOST_LIB=	boost_python
+.else
+PY_BOOST_LIB=	boost_python3
+.endif
+PY_BOOST=	lib${PY_BOOST_LIB}.so:devel/boost-python-libs@${PY_FLAVOR}
+
 # dependencies
 .for _stage in PATCH BUILD RUN TEST
 .  if defined(_PYTHON_${_stage}_DEP)

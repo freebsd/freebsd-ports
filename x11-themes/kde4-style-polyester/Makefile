@@ -3,7 +3,7 @@
 
 PORTNAME=	polyester
 PORTVERSION=	2.0.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.notmart.org/files/
 PKGNAMEPREFIX=	kde4-style-

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-11-25 09:52:00 UTC
+--- CMakeLists.txt.orig	2017-08-30 13:27:56 UTC
 +++ CMakeLists.txt
-@@ -739,7 +739,7 @@ if (${DRAWEXE_INDEX} GREATER -1)
+@@ -847,7 +847,7 @@ if (${DRAWEXE_INDEX} GREATER -1)
              PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_WRITE GROUP_EXECUTE WORLD_READ WORLD_WRITE WORLD_EXECUTE)
    else()
      install (FILES "${CMAKE_SOURCE_DIR}/adm/templates/draw.${SCRIPT_EXT}" DESTINATION  "${INSTALL_DIR_SCRIPT}"
@@ -9,7 +9,7 @@
    endif()
  
    # copy draw script to CMake binary folder
-@@ -906,7 +906,13 @@ foreach (OCCT_CONFIGURATION ${CMAKE_CONF
+@@ -1056,7 +1056,13 @@ foreach (OCCT_CONFIGURATION ${CMAKE_CONF
  endforeach()
  # install OpenCASCADE config file with compile definitions and C/C++ flags ONLY for current configuration
  install (CODE "string (TOLOWER \"\${CMAKE_INSTALL_CONFIG_NAME}\" CMAKE_INSTALL_CONFIG_NAME_LOWER)")

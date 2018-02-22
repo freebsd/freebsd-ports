@@ -38,7 +38,7 @@
    {"message", message},
    {"confirm", confirm},
    {"input", input},
-@@ -620,7 +624,7 @@ static const struct luaL_reg fx_util_fun
+@@ -620,7 +624,7 @@ static const struct luaL_reg fx_util_funcs[] = {
  
  
  

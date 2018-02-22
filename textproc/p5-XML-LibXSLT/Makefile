@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-LibXSLT
-PORTVERSION=	1.95
+PORTVERSION=	1.96
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5 pkgconfig
+USES=		gnome perl5 pkgconfig
 USE_GNOME=	libxml2 libxslt
 USE_PERL5=	configure
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	cherrypy
 PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://download.cherrypy.org/${PORTNAME}/${PORTVERSION}/
@@ -16,7 +16,7 @@ COMMENT=	Pythonic, object-oriented web development framework
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 PORTSCOUT=	ignore:1        # This the last version of 2.3.X branch

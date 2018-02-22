@@ -2,7 +2,7 @@
 
 PORTNAME=	ticketimport
 PORTVERSION=	0.7c
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www devel python
 MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE # "same license as trac"
 RUN_DEPENDS=	tracd:www/trac \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=0.7.1:textproc/py-xlrd@${FLAVOR}
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

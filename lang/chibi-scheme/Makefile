@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chibi-scheme
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+DISTVERSION=	0.8
 CATEGORIES=	lang
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,19 +17,25 @@ GH_ACCOUNT=	ashinn
 USES=		gmake
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	MODDIR=${PREFIX}/lib/chibi \
+MAKE_ARGS=	IMAGE_FILES="" \
+		LDCONFIG=${TRUE} \
+		LIBDIR=${PREFIX}/lib \
 		MANDIR=${PREFIX}/man/man1 \
-		LIBCHIBI_FLAGS='-Wl,-soname="libchibi-scheme.so.${PORTVERSION}"'
+		MODDIR=${PREFIX}/lib/chibi \
+		PKGCONFDIR=${PREFIX}/libdata/pkgconfig
+# tries to generate meta files with ./chibi-scheme when it's not yet built
+MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	all libchibi-scheme.a
 TEST_TARGET=	test
 
+PORTSCOUT=	skipv:stable
+
 post-patch:
 	@${REINPLACE_CMD} -e 's@ -g -g3 -O3 @ @' \
-		-e 's@$$(SOLIBDIR)/pkgconfig@${PREFIX}/libdata/pkgconfig@' \
-		-e '/$$(SO)/ s@$$(INSTALL) -m0755 @$$(BSD_INSTALL_LIB) @' \
+		-e '/$$(SO)/ s@$$(INSTALL_EXE) -m0755 @$$(BSD_INSTALL_LIB) @' \
 		-e '/tools/ s@$$(INSTALL) -m0755 @$$(BSD_INSTALL_SCRIPT) @' \
-		-e 's@$$(INSTALL) -m0755 @$$(BSD_INSTALL_PROGRAM) @' \
+		-e 's@$$(INSTALL_EXE) -m0755 @$$(BSD_INSTALL_PROGRAM) @' \
 		-e '/$$(MANDIR)/ s@$$(INSTALL) -m0644 @$$(BSD_INSTALL_MAN) @' \
 		-e 's@$$(INSTALL) -m0644 @$$(BSD_INSTALL_DATA) @' \
 		${WRKSRC}/Makefile

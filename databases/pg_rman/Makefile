@@ -10,6 +10,8 @@ COMMENT=	Online backup and restore tool for PostgreSQL
 LICENSE=	BSD3CLAUSE
 
 BROKEN=		checksum and size mismatch (using a branch and not a tag or commit hash)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-03-19
 
 USES=		gettext-runtime gmake pgsql
 USE_GITHUB=	yes

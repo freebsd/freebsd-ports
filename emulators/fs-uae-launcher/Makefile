@@ -11,7 +11,7 @@ COMMENT=	GUI launcher for the FS-UAE Amiga emulator
 
 LICENSE=	GPLv2
 
-USES=		gettext gmake pathfix python shebangfix
+USES=		gettext gmake pathfix python:2.7 shebangfix
 
 INSTALLS_ICONS=	yes
 MAKE_ARGS=	DESTDIR=${STAGEDIR} prefix=${PREFIX}

@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.443 2017/12/28 23:42:15 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.449 2018/02/18 21:02:27 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 15;
+my $micro = 16;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -159,7 +159,7 @@ my @varlist =  qw(
 	OPTIONS_GROUP OPTIONS_SUB INSTALLS_OMF USE_RC_SUBR USES DIST_SUBDIR
 	ALLFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS GNU_CONFIGURE
 	CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB NO_STAGE
-	DEVELOPER SUB_FILES SHEBANG_LANG
+	DEVELOPER SUB_FILES SHEBANG_LANG MASTER_SITES_SUBDIRS
 );
 
 my %makevar;
@@ -1360,10 +1360,10 @@ sub checkmakefile {
 		}
 	# special case for $rcsidsrt\nMCom:
 	} elsif ($lines[1] =~ /^# \$$rcsidstr[:\$]/ and $lines[2] =~ /^#\s+\$MCom[:\$]/ and $lines[3] =~ /^$/) {
-		# DO NOTHING
+        # DO NOTHING
 	} elsif ($lines[1] !~ /^# \$$rcsidstr[:\$]/ or $lines[2] !~ /^$/) {
 		&perror("FATAL", $file, 1, "incorrect header; ".
-			"use Created by: with a single space, then \$$rcsidstr\$.");
+			"simply use \$$rcsidstr\$.");
 	}
 
 	#
@@ -2017,18 +2017,18 @@ xargs xmkmf
 		# XXX This is a hack.  Really, we should break $j up into individual
 		# lines, and go through each one.
 		while ($j =~ /^(.*\b$i\b.*)$/gm) {
+			my $lineno = &linenumber($`);
 			my $curline = $1;
 			my $dte_test = $curline;
 			$dte_test =~ s/^\s+//g;
 			if ($desktop_entries =~ /\Q$dte_test\E$/) {
 				next;
 			}
-			my $lineno = &linenumber($`);
 			if ($curline =~ /(?:^|\s)[\@\-]{0,2}$i(?:$|\s)/
 				&& $curline !~ /^[A-Z]+_TARGET[?+]?=[^\n]+$i/m
 				&& $curline !~ /^[A-Z]+_INSTALL_TARGET[?+]?=[^\n]+$i/m
-				&& $curline !~ /^IGNORE(.)?=[^\n]+$i/m
-				&& $curline !~ /^BROKEN(.)?=[^\n]+$i/m
+				&& $curline !~ /^IGNORE(_[\w\d]+)?(.)?=[^\n]+$i/m
+				&& $curline !~ /^BROKEN(_[\w\d]+)?(.)?=[^\n]+$i/m
 				&& $curline !~ /^RESTRICTED(.)?=[^\n]+$i/m
 				&& $curline !~ /^NO_PACKAGE(.)?=[^\n]+$i/m
 				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
@@ -2040,6 +2040,7 @@ xargs xmkmf
 				&& $curline !~ /^NOT_FOR_ARCHS_REASON(_[\w\d]+)?(.)?=[^\n]+$i/m
 				&& $curline !~ /^SHEBANG_FILES(.)?=[^\n]+$i/m
 				&& $curline !~ /^[A-Z0-9_]+_DESC=[^\n]+$i/m
+				&& $curline !~ /#.*?$i/m
 				&& $curline !~ /^\s*#.+$/m
 				&& $curline !~ /\$\{MAKE_CMD\}.*\binstall\b/m
 				&& $curline !~ /\-\-$i/m
@@ -2231,6 +2232,14 @@ xargs xmkmf
 			&perror("WARN", $file, $lineno, "USE_KDE is defined without ".
 				"defining USES=kde:5");
 		}
+	}
+
+	#
+	# whole file: USES=pyqt:5
+	#
+	if ($makevar{USES} =~ /\bpyqt:5/ && $whole !~ /^USE_PYQT[?:]?=\s(.*)$/m) {
+		&perror("WARN", $file, -1, "When USES=pyqt:5 is defined, you must also define ".
+			"USE_PYQT=xxxx");
 	}
 
 	#
@@ -2708,8 +2717,19 @@ DIST_SUBDIR EXTRACT_ONLY
 						if ($verbose);
 				}
 			} else {
-				print "OK: non-URL \"$i\" ok.\n"
-					if ($verbose);
+				my $good_ms = 1;
+				foreach my $mss (split(/\s+/, $makevar{MASTER_SITES_SUBDIRS})) {
+					my ($ms, $sd) = split(/:/, $mss);
+					if ($i =~ /^$ms/ && $i ne $ms) {
+						&perror("WARN", $file, -1, "typically when you specify magic site $ms ".
+							"you do not need anything else as $sd is assumed");
+						$good_ms = 0;
+					}
+				}
+				if ($good_ms) {
+					print "OK: non-URL \"$i\" ok.\n"
+						if ($verbose);
+				}
 				# Assume variables contain an ftp/http site.
 				$ftphttp = 1;
 			}

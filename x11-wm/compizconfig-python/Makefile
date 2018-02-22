@@ -3,7 +3,7 @@
 
 PORTNAME=	compizconfig-python
 PORTVERSION=	0.8.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	\
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig python:2 tar:bzip2
+USES=		gmake libtool pathfix pkgconfig python:2.7 tar:bzip2
 USE_GNOME=	glib20
 USE_PYTHON=	flavors
 

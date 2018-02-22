@@ -2,6 +2,7 @@
 
 PORTNAME=	shelly
 PORTVERSION=	1.6.8.3
+PORTREVISION=	1
 CATEGORIES=	shells haskell
 
 MAINTAINER=	haskell@FreeBSD.org

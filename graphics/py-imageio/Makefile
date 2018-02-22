@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	imageio
-PORTVERSION=	1.6
-PORTREVISION=	3
+DISTVERSION=	2.2.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR} \
 		${PYNUMPY}
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	distutils autoplist
-
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

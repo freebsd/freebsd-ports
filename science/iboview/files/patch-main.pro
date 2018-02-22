@@ -14,7 +14,7 @@
 -LIBS += -L$$MKLDIR/lib/intel64 -fopenmp -lmkl_gf_ilp64 -lmkl_gnu_thread -lmkl_core -Wl,-rpath,$$MKLDIR/lib/intel64
 +#LIBS += -L$$MKLDIR/lib/intel64 -fopenmp -lmkl_gf_ilp64 -lmkl_gnu_thread -lmkl_core -Wl,-rpath,$$MKLDIR/lib/intel64
  # LIBS += -LC:\Users\cgk\Develop\Libraries\OpenBLAS\bin -lopenblas
-+LIBS +=	-Wl,-rpath=%%_GCC_RUNTIME%% %%_GCC_RUNTIME%%/libgcc_s.so -lopenblas
++LIBS += -lopenblas
  
  # MICROSCF = ../wmme
  

@@ -2,18 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	rsync
-PORTVERSION=	3.1.2
-PORTREVISION=	8
+DISTVERSION=	3.1.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
 		https://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \
 		http://www.mirrorservice.org/sites/rsync.samba.org/ \
-		https://www.mirrorservice.org/sites/rsync.samba.org/ \
-		LOCAL/ehaupt/rsync
+		https://www.mirrorservice.org/sites/rsync.samba.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3

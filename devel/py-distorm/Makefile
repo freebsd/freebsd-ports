@@ -5,7 +5,7 @@ PORTNAME=	distorm
 
 COMMENT=	Python interface for fast x86 and x86-64 disassembler library
 
-PORTREVISION=		0
+PORTREVISION=		1
 PYTHON_SLAVEPORT=	yes
 MASTERDIR=		${.CURDIR}/../distorm
 

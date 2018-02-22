@@ -1,6 +1,6 @@
---- Makefile.in.orig	2009-07-08 00:47:22.000000000 +0900
-+++ Makefile.in	2009-11-09 22:34:02.000000000 +0900
-@@ -227,8 +227,8 @@
+--- Makefile.in.orig	2018-02-11 12:50:50 UTC
++++ Makefile.in
+@@ -372,8 +372,8 @@ ac_aux_dir = dist
  tmpdir = /tmp
  
  # Directories for app-defaults file and manual page
@@ -8,10 +8,10 @@
 -appmandir = $(libdir)/$(PACKAGE)-$(VERSION)/man
 +appdefaultsdir = $(libdir)/X11/app-defaults
 +appmandir = $(man1dir)
- PATHNAMES = -DPROG_VERSION=$(VERSION) \
- 	-DPROG_REVISION=$(REVISION) \
+ PATHNAMES = -DPROG_VERSION=\"$(VERSION)\" \
+ 	-DPROG_REVISION=\"$(REVISION)\" \
  	-DCAD_DIR=\"$(libdir)\" \
-@@ -260,8 +260,8 @@
+@@ -409,8 +409,8 @@ man_MANS = lib/xcircuit.1
  INCLUDES = -IXw ${INC_SPECS}
  
  # Library directory and files
@@ -21,10 +21,10 @@
 +scriptsdir = $(pkgdatadir)
  USER_RC_FILE = .xcircuitrc
  PROLOGUE_FILE = xcircps2.pro
- LGF_LIB = lgf.lps
-@@ -640,7 +640,7 @@
- 	$(RM) lib/xcircuit${SHDLIB_EXT}
- 	$(CC) ${CFLAGS} ${SHLIB_CFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o \
+ CYRILLIC_ENC_FILE = cyrillic.enc
+@@ -842,7 +842,7 @@ lib/$(INTERP_PATH)/$(WRAPPER_OBJ): xcwrap.o ${xcircuit
+ 	$(RM) lib/$(INTERP_PATH)/$(WRAPPER_OBJ)
+ 	$(SHLIB_LD) ${CFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o \
  		${xcircuit_OBJECTS} ${xcircuit_LDADD} ${SHLIB_LIB_SPECS} \
 -		${LDFLAGS} ${X_EXTRA_LIBS} ${EXTRA_LIBS} -lc ${LIBS} \
 +		${LDFLAGS} ${X_EXTRA_LIBS} ${EXTRA_LIBS} ${LIBS} \

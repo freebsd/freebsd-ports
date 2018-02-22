@@ -2,7 +2,7 @@
 
 PORTNAME=	libkomparediff2
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

@@ -1965,7 +1965,7 @@ lib/node_modules/npm/node_modules/node-gyp/CHANGELOG.md
 lib/node_modules/npm/node_modules/node-gyp/LICENSE
 lib/node_modules/npm/node_modules/node-gyp/README.md
 lib/node_modules/npm/node_modules/node-gyp/addon.gypi
-lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+@(,,755) lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
 lib/node_modules/npm/node_modules/node-gyp/gyp/.npmignore
 lib/node_modules/npm/node_modules/node-gyp/gyp/AUTHORS
 lib/node_modules/npm/node_modules/node-gyp/gyp/DEPS
@@ -2231,7 +2231,7 @@ lib/node_modules/npm/node_modules/npm-lifecycle/LICENSE
 lib/node_modules/npm/node_modules/npm-lifecycle/README.md
 lib/node_modules/npm/node_modules/npm-lifecycle/index.js
 lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js
-lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin/node-gyp
+@(,,755) lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin/node-gyp
 lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin/node-gyp.cmd
 lib/node_modules/npm/node_modules/npm-lifecycle/node_modules/byline/LICENSE
 lib/node_modules/npm/node_modules/npm-lifecycle/node_modules/byline/README.md

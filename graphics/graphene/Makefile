@@ -2,7 +2,7 @@
 
 PORTNAME=	graphene
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	GNOME
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 USES=		gnome meson pkgconfig python:3.4+ shebangfix tar:xz
 USE_GNOME=	glib20 pygobject3
+USE_LDCONFIG=	yes
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	GTKDOC #INTROSPECTION
@@ -27,6 +28,7 @@ USE_GNOME+=		introspection:build
 
 GTKDOC_MESON_TRUE=	enable-gtk-doc
 GTKDOC_DESC=		Build documentation
+GTKDOC_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=python |=${PYTHON_VERSION} |g' \

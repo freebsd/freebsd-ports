@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/9363a4a1e121344ae98f22b55fb28623cf0f6038/panels/datetime/data/:tzpng
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -39,7 +39,7 @@ RUN_DEPENDS=	py*-dbus>=0:devel/py-dbus \
 		py*-lxml>=0:devel/py-lxml
 
 USES=		autoreconf gettext gmake libtool pathfix \
-		python:2 pkgconfig
+		python:2.7 pkgconfig
 USE_GNOME=	evolutiondataserver3 gconf2 gnomeprefix \
 		gtk30 intlhack libgnomekbd
 USE_GITHUB=	yes

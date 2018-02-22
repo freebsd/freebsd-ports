@@ -125,6 +125,7 @@
     SUBDIR += bsdrain
     SUBDIR += bsdtris
     SUBDIR += bsp
+    SUBDIR += bstone
     SUBDIR += bubble-chains
     SUBDIR += bubbros
     SUBDIR += bugsquish
@@ -472,7 +473,7 @@
     SUBDIR += kbounce
     SUBDIR += kbreakout
     SUBDIR += kcheckers
-    SUBDIR += kdegames4
+    SUBDIR += kdegames-kde4
     SUBDIR += kdiamond
     SUBDIR += keeperrl
     SUBDIR += kevedit
@@ -571,7 +572,6 @@
     SUBDIR += lm-solve
     SUBDIR += lmarbles
     SUBDIR += lmpc
-    SUBDIR += lolcat
     SUBDIR += lordsawar
     SUBDIR += lpairs
     SUBDIR += lskat
@@ -867,6 +867,7 @@
     SUBDIR += rtb
     SUBDIR += rubix
     SUBDIR += rubygem-fortune_gem
+    SUBDIR += rubygem-lolcat
     SUBDIR += rubygem-vimgolf
     SUBDIR += sampsvr
     SUBDIR += sarien
@@ -1161,6 +1162,7 @@
     SUBDIR += xrally
     SUBDIR += xrick
     SUBDIR += xrisk
+    SUBDIR += xroach
     SUBDIR += xrobots
     SUBDIR += xrot
     SUBDIR += xrubik

@@ -3,7 +3,7 @@
 
 PORTNAME=	barbie_seahorse_adventures
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games python
 MASTER_SITES=	http://www.imitationpickles.org/barbie/files/
 DISTNAME=	barbie-${DISTVERSION}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/barbie-${DISTVERSION}
 
-USES=		dos2unix python:2 shebangfix tar:tgz
+USES=		dos2unix python:2.7 shebangfix tar:tgz
 SHEBANG_FILES=	run_game.py create-upload.py
 DOS2UNIX_GLOB=	*.py
 NO_BUILD=	yes

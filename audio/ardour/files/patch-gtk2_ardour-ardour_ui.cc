@@ -31,3 +31,21 @@
  						   
  				VBox* vbox = msg.get_vbox();
  				HBox hbox;
+@@ -1964,7 +1969,7 @@ ARDOUR_UI::name_io_setup (AudioEngine& engine, 
+ 
+ 		const char **connections = io.input(0)->get_connections();
+ 		
+-		if (connections == 0 || connections[0] == '\0') {
++		if (connections == 0 || *connections[0] == '\0') {
+ 			buf = _("off");
+ 		} else {
+ 			buf = connections[0];
+@@ -1983,7 +1988,7 @@ ARDOUR_UI::name_io_setup (AudioEngine& engine, 
+ 
+ 		const char **connections = io.output(0)->get_connections();
+ 		
+-		if (connections == 0 || connections[0] == '\0') {
++		if (connections == 0 || *connections[0] == '\0') {
+ 			buf = _("off");
+ 		} else {
+ 			buf = connections[0];

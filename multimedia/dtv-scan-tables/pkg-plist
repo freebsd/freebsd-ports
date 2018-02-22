@@ -1,6 +1,7 @@
 %%DATADIR%%/COPYING
 %%DATADIR%%/COPYING.LGPL
 %%DATADIR%%/README
+%%DATADIR%%/Makefile
 %%DATADIR%%/atsc/ca-AB-Calgary
 %%DATADIR%%/atsc/ca-ON-Toronto
 %%DATADIR%%/atsc/us-ATSC-center-frequencies-8VSB

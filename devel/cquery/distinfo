@@ -1,0 +1,13 @@
+TIMESTAMP = 1518578749
+SHA256 (cquery-project-cquery-v20180213_GH0.tar.gz) = 368dda96bf9f2689f0eb6ed4747df62e1fc7deb51f06c23577132dbed70de754
+SIZE (cquery-project-cquery-v20180213_GH0.tar.gz) = 375511
+SHA256 (miloyip-rapidjson-daabb88_GH0.tar.gz) = bb649179af18e19dbc849fcf7902694573d5885a6c8d18f4ee8d64ad77af89bc
+SIZE (miloyip-rapidjson-daabb88_GH0.tar.gz) = 1047783
+SHA256 (onqtam-doctest-b40b7e7_GH0.tar.gz) = 6d954ba4b7de0cc7874257787f7d0cf7bb74087f92b95f6c9204b82eea35bbb2
+SIZE (onqtam-doctest-b40b7e7_GH0.tar.gz) = 2350263
+SHA256 (greg7mdp-sparsepp-1ca7189_GH0.tar.gz) = 8939512469e32ddd79a8ccd56c5713f191a9b3fa0263fad823be56280f1a3690
+SIZE (greg7mdp-sparsepp-1ca7189_GH0.tar.gz) = 122785
+SHA256 (msgpack-msgpack-c-208595b_GH0.tar.gz) = 4bd076f34f06238181d23ba6825bbc22cd50cf6f503f0cddf0485e6ca42edcc4
+SIZE (msgpack-msgpack-c-208595b_GH0.tar.gz) = 461967
+SHA256 (emilk-loguru-2c35b5e_GH0.tar.gz) = 531c6fa7866d4f8de79a6c9425cb466ac2c5e1cafce8eb3427e3716338b5f2bb
+SIZE (emilk-loguru-2c35b5e_GH0.tar.gz) = 196008

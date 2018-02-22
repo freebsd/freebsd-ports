@@ -2,7 +2,7 @@
 
 PORTNAME=	kpartsplugin
 DISTVERSION=	0.0-${PORTDATE}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www kde
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~fischer/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTDATE}

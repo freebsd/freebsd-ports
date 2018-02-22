@@ -3,6 +3,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	2.2.10
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 		http://bluefish.mrball.net/stable/source/
@@ -18,7 +19,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 
 USES=		desktop-file-utils gettext gmake libtool localbase pkgconfig python:2.7 \
 		shared-mime-info shebangfix tar:bzip2
-SHEBANG_FILES=	data/css_decompressor
+SHEBANG_FILES=	data/css_decompressor data/cssmin.py data/jsbeautify \
+		data/jsmin.py data/lorem-ipsum-generator
 python_OLD_CMD=	/usr/bin/python2.7
 USE_GNOME=	cairo intltool libxml2
 GNU_CONFIGURE=	yes

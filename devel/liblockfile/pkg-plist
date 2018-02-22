@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+@(,mail,2755) bin/dotlockfile
+include/lockfile.h
+include/maillock.h
+lib/liblockfile.a
+lib/liblockfile.so
+lib/liblockfile.so.1
+lib/liblockfile.so.1.0
+man/man1/dotlockfile.1.gz
+man/man3/lockfile_create.3.gz
+man/man3/maillock.3.gz

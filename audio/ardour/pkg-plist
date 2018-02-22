@@ -28,6 +28,7 @@ lib/ardour2/libvamphostsdk.so
 lib/ardour2/libvampsdk.so
 lib/ardour2/surfaces/libardour_genericmidi.so
 lib/ardour2/surfaces/libardour_mackie.so
+lib/ardour2/surfaces/libardour_powermate.so
 lib/ardour2/surfaces/libardour_tranzport.so
 lib/ardour2/vamp/libardourvampplugins.so
 share/ardour2/icons/application-x-ardour_16px.png

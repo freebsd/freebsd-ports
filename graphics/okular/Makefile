@@ -2,7 +2,7 @@
 
 PORTNAME=	okular
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	graphics kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 		libchm.so:misc/chmlib \
 		libfreetype.so:print/freetype2 \
 		libepub.so:textproc/ebook-tools \
-		libqmobipocket.so:graphics/kdegraphics4-mobipocket
+		libqmobipocket.so:graphics/kdegraphics-mobipocket-kde4
 
 USES=		cmake:outsource jpeg kde:4 pkgconfig tar:xz
 USE_KDE=	kdelibs automoc4 qimageblitz kactivities \

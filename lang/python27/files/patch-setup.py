@@ -40,7 +40,7 @@
 -        if (host_platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
 -                        'freebsd7', 'freebsd8')
 -            or host_platform.startswith("gnukfreebsd")):
-+# Initial backport of http://hg.python.org/cpython/rev/50f1922bc1d5
++# Initial backport of https://hg.python.org/cpython/rev/50f1922bc1d5
 +
 +        if any(sys.platform.startswith(prefix)
 +               for prefix in ("linux", "freebsd", "gnukfreebsd")):

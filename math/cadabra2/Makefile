@@ -2,7 +2,7 @@
 
 PORTNAME=	cadabra2
 DISTVERSION=	2.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 PATCH_DEPENDS=	${NONEXISTENT}:devel/boost-libs:extract \
 		${NONEXISTENT}:devel/websocketpp:extract
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
-LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
+LIB_DEPENDS=	${PY_BOOST} \
 		libboost_system.so:devel/boost-libs \
 		libpcrecpp.so:devel/pcre \
 		libjsoncpp.so:devel/jsoncpp \
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sympy/__init__.py:math/py-sympy@${PY_FLAVOR} \
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=GUI
 
-USES=		compiler:c++14-lang cmake gettext-runtime pkgconfig python:2 sqlite
+USES=		compiler:c++14-lang cmake gettext-runtime pkgconfig python:2.7 sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	kpeeters
 GUI_USE=	GNOME=gtkmm30,gdkpixbuf2

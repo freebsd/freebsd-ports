@@ -3,7 +3,7 @@
 
 PORTNAME=	xpn
 PORTVERSION=	1.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	news python
 MASTER_SITES=	http://xpn.altervista.org/codice/
 
@@ -21,7 +21,7 @@ SHEBANG_FILES=	${XPN}
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} XPN=${XPN}
 
-USES=		gettext python:2 shebangfix
+USES=		gettext python:2.7 shebangfix
 
 XPN=	${PORTNAME}.py
 

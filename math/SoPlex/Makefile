@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SoPlex
-DISTVERSION=	3.0.1
+DISTVERSION=	3.1.1
 CATEGORIES=	math science
 MASTER_SITES=	http://soplex.zib.de/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}

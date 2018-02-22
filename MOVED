@@ -4722,7 +4722,6 @@ sysutils/klineakconfig||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kmilo||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/knutclient||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/komparator||2013-07-26|Has expired: Depends on Qt 3.x
-sysutils/krename||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kshutdown||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/ksynaptics||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/lineak-kdeplugins||2013-07-26|Has expired: Depends on Qt 3.x
@@ -9493,7 +9492,6 @@ x11-themes/kde-icons-icosx||2017-08-23|Has expired: Broken for more than 6 month
 devel/insight||2017-08-23|Has expired: Broken for more than 6 months
 devel/gdb66||2017-08-23|Has expired: Broken for more than 6 months
 biology/biojava||2017-08-23|Has expired: Broken for more than 6 months
-games/xroach||2017-08-23|Has expired: Broken for more than 6 months
 java/intellij-pycharm|devel/pycharm-ce|2017-08-23|Renamed to reflect upstream name. Use a more appropriate origin (devel for development tools, IDE)
 www/pyweblib|www/py-pyweblib|2017-08-25|Rename to comply with PyPI scheme
 databases/libzbxpgsql|databases/zabbix3-libzbxpgsql|2017-08-26|Rename to allow multiple versions of libzbxpgsql to coexist
@@ -9918,3 +9916,60 @@ devel/tr-eric6||2018-02-08|No longer shipped by upstream
 french/eric6||2018-02-08|No longer shipped by upstream
 portuguese/eric6||2018-02-08|No longer shipped by upstream
 devel/rubygem-event-bus||2018-02-08|Has expired: No longer maintained upstream
+accessibility/kdeaccessibility4|accessibility/kdeaccessibility-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+deskutils/kdepim4-runtime|deskutils/kdepim-runtime-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+deskutils/kdepim4|deskutils/kdepim-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+deskutils/kdepimlibs4|deskutils/kdepimlibs-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+devel/kdebindings4|devel/kdebindings-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+devel/kdesdk4-kioslaves|devel/kdesdk-kioslaves-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+devel/kdesdk4-strigi-analyzers|devel/kdesdk-strigi-analyzers-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+devel/kdesdk4-thumbnailers|devel/kdesdk-thumbnailers-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+devel/kdesdk4|devel/kdesdk-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+games/kdegames4|games/kdegames-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+graphics/kdegraphics4-mobipocket|graphics/kdegraphics-mobipocket-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+graphics/kdegraphics4-strigi-analyzer|graphics/kdegraphics-strigi-analyzer-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+graphics/kdegraphics4-svgpart|graphics/kdegraphics-svgpart-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+graphics/kdegraphics4-thumbnailers|graphics/kdegraphics-thumbnailers-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+graphics/kdegraphics4|graphics/kdegraphics-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+misc/kdeedu4|misc/kdeedu-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+misc/kdeutils4|misc/kdeutils-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+multimedia/kdemultimedia4-ffmpegthumbs|multimedia/kdemultimedia-ffmpegthumbs-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+multimedia/kdemultimedia4-mplayerthumbs|multimedia/kdemultimedia-mplayerthumbs-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+multimedia/kdemultimedia4|multimedia/kdemultimedia-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+net/kdenetwork4-filesharing|net/kdenetwork-filesharing-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+net/kdenetwork4-strigi-analyzers|net/kdenetwork-strigi-analyzers-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+net/kdenetwork4|net/kdenetwork-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+sysutils/kdeadmin4|sysutils/kdeadmin-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+www/kdewebdev4|www/kdewebdev-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+x11-clocks/kdetoys4|x11-clocks/kdetoys-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+x11-themes/kdeartwork4|x11-themes/kdeartwork-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+x11/kdelibs4|x11/kdelibs-kde4|2018-02-10|Rename KDE4 metaports for simplicty
+devel/p5-Parse-Pidl||2018-02-10|Has expired: yes
+devel/rubygem-piston||2018-02-10|Has expired: No longer maintained upstream
+databases/postgresql92-server|databases/postgresql93-server|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-client|databases/postgresql93-client|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-contrib|databases/postgresql93-contrib|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-docs|databases/postgresql93-docs|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-pgtcl|databases/postgresql93-pgtcl|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-plperl|databases/postgresql93-plperl|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-plpython|databases/postgresql93-plpython|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/postgresql92-pltcl|databases/postgresql93-pltcl|2018-02-10|Has expired: PostgreSQL 9.2 support has reached End-of-life. Please upgrade to a later version
+databases/pg_statsinfo||2018-02-10|Removed, only for PosgreSQL 9.2
+databases/postgresql-repmgr2||2018-02-10|Removed, only for PostgreSQL 9.2
+www/mod_security-devel|www/mod_security3|2018-02-12|Renamed, upstream has made a release
+devel/pear-channel-htmlpurifier|devel/pear-channel-htmlpurifier.org|2018-02-13|Rename for consistency
+games/lolcat|games/rubygem-lolcat|2018-02-13|Rename to match our rubygems naming
+net-mgmt/prometheus|net-mgmt/prometheus1|2018-02-14|Rename to include major version number in the portname
+textproc/rubygem-tidy||2018-02-14|Has expired: No longer needed and not maintained
+www/rubygem-scrapi||2018-02-14|Has expired: No longer maintained upstream
+devel/boost-python3-libs|devel/boost-python-libs@py36|2018-02-15|Flavorize
+net/quagga-esr|net/quagga|2018-02-15|Fixes available, go back to the regular quagga
+sysutils/krename-kde4|sysutils/krename|2018-02-16|Renamed to sysutils/krename
+net/grive|net/grive2|2018-02-17|Has expired: Unmaintained by upstream, use net/grive2 instead
+textproc/rubygem-sass-rails5|textproc/rubygem-sass-rails-rails4|2018-02-18|Rename to match our rubygems naming
+devel/elixir-exrm||2018-02-19|Has expired: No longer maintained upstream
+devel/elixir-conform_exrm||2018-02-19|Has expired: No longer maintained upstream
+devel/elixir-sorted_set||2018-02-19|Has expired: No longer maintained upstream
+devel/elixir-red_black_tree||2018-02-19|Has expired: No longer maintained upstream
+emulators/wine-staging|emulators/wine-devel|2018-02-20|Broken for months, abandoned upstream
+misc/rubygem-dotenv-rails|misc/rubygem-dotenv-rails-rails4|2018-02-20|Rename to match our rubygems naming

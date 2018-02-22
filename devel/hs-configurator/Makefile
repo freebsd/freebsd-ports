@@ -2,7 +2,7 @@
 
 PORTNAME=	configurator
 PORTVERSION=	0.3.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

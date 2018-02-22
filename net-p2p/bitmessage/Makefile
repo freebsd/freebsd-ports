@@ -2,31 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	bitmessage
-PORTVERSION=	0.6.2
-DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.3.2
 CATEGORIES=	net-p2p
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Secure P2P communications client
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:devel/py-qt4-core@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt4-network>=${PYQT4_VERSION}:net/py-qt4-network@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT4_VERSION}:x11-toolkits/py-qt4-gui@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyopencl>0:devel/py-pyopencl@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:devel/py-qt4-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt4-network>=${PYQT4_VERSION}:net/py-qt4-network@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT4_VERSION}:x11-toolkits/py-qt4-gui@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gobject>0:devel/py-gobject@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}notify2>0:devel/py-notify2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyopencl>0:devel/py-pyopencl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR}
 
+USES=		gmake python:2.7 pyqt:4 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Bitmessage
 GH_PROJECT=	PyBitmessage
-
-USES=		gmake python:2.7 pyqt:4 ssl
 USE_PYQT=	core_run gui_run network_run
-USE_PYTHON=	distutils autoplist
-INSTALLS_ICONS=	yes
+USE_PYTHON=	distutils autoplist noflavors
 REINPLACE_ARGS=	-i ''
 
 post-patch:

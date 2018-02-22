@@ -1,6 +1,5 @@
 bin/gottet
 man/man6/gottet.6.gz
-share/appdata/gottet.appdata.xml
 share/applications/gottet.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -35,4 +34,5 @@ share/icons/hicolor/48x48/apps/gottet.png
 share/icons/hicolor/512x512/apps/gottet.png
 share/icons/hicolor/64x64/apps/gottet.png
 share/icons/hicolor/scalable/apps/gottet.svg
+share/metainfo/gottet.appdata.xml
 share/pixmaps/gottet.xpm

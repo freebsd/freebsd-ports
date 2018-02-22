@@ -1,23 +1,7 @@
---- src/Makefile.in.orig	2012-02-21 04:10:20.000000000 +0900
-+++ src/Makefile.in	2012-05-15 17:11:18.000000000 +0900
-@@ -405,12 +405,12 @@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- GNU_VERBOSITY := $(if $(findstring GNU,$(shell $(MAKE) -v)),0,1)
--INCLUDES = -I../include -I$(top_srcdir)/include -I$(includedir) \
--	   -I$(top_builddir)/pixmaps $(LIRC_INCLUDE)
-+INCLUDES = -I../include -I$(top_srcdir)/include \
-+	   -I$(top_builddir)/pixmaps $(JS_CFLAGS) $(LIRC_INCLUDE)
- 
- AM_CFLAGS = $(GNU99) $(XINE_CFLAGS) $(X_CFLAGS) \
- 	    $(GTK2_CFLAGS) $(GTHREAD2_CFLAGS) \
--	    $(HAL_CFLAGS) $(UDEV_CFLAGS) $(DBUS_CFLAGS) $(JS_CFLAGS) \
-+	    $(HAL_CFLAGS) $(UDEV_CFLAGS) $(DBUS_CFLAGS) $(NSPR_CFLAGS) \
- 	    -DLOCALEDIR=\"$(localedir)\"
- 
- gxine_SOURCES = \
-@@ -452,7 +452,7 @@
- gxine_LDADD = $(XINE_LIBS) $(GTK2_LIBS) $(GTHREAD2_LIBS) \
+--- src/Makefile.in.orig	2018-02-22 07:47:00 UTC
++++ src/Makefile.in
+@@ -470,7 +470,7 @@ gxine_SOURCES = \
+ gxine_LDADD = $(XINE_LIBS) $(GTK2_LIBS) $(GTK3_LIBS) $(GTHREAD2_LIBS) \
  	      $(JS_LIBS) $(HAL_LIBS) $(UDEV_LIBS) $(DBUS_LIBS) $(LIRC_LIBS) \
  	      $(X_LIBS) $(X_EXTRA_LIBS) $(XEXT_LIBS) $(XTEST_LIBS) \
 -	      $(XINERAMA_LIBS) $(XRANDR_LIBS) $(XCB_LIBS) -ldl -lm

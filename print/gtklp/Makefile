@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gtklp
-PORTVERSION=	1.3.1
+DISTVERSION=	1.3.3
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -14,17 +13,17 @@ COMMENT=	GTK interface to cups
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcups.so:print/cups
+LIB_DEPENDS=	libcups.so:print/cups \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		autoreconf gettext libtool pkgconfig ssl
+USES=		autoreconf gettext libtool pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gtk20
 INSTALLS_ICONS=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_XORG=	x11
 
 DESKTOP_ENTRIES="GtkLP" "" "${PORTNAME}" "${PORTNAME}" "System;GTK;" ""
 

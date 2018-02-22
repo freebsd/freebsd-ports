@@ -13,6 +13,9 @@ COMMENT=	ActiveRecord adapter for Flipper
 
 LICENSE=	MIT
 
+DEPRECATED=	Use databases/rubygem-flipper-active_record instead
+EXPIRATION_DATE=2018-02-28
+
 RUN_DEPENDS=	rubygem-activerecord4>=3.2:databases/rubygem-activerecord4 \
 		rubygem-flipper010>=${PORTVERSION}:devel/rubygem-flipper010
 

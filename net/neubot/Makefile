@@ -3,6 +3,7 @@
 
 PORTNAME=	neubot
 PORTVERSION=	0.4.16.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://releases.neubot.org/_packages/
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		python:2
+USES=		python:2.7
 NO_BUILD=	yes
 
 USERS=		_neubot

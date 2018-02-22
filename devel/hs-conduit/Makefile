@@ -2,6 +2,7 @@
 
 PORTNAME=	conduit
 PORTVERSION=	1.2.11
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

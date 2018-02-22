@@ -4,8 +4,7 @@
 PORTNAME=	ipacctd
 PORTVERSION=	1.47
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/ipacctd/ \
-		LOCAL/skv
+MASTER_SITES=	LOCAL/skv
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP accounting using divert socket

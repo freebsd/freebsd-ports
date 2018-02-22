@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencascade
-PORTVERSION=	7.1.0
-PORTREVISION=	3
+PORTVERSION=	7.2.0
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -22,7 +21,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/overview.md
 # and ${WRKSRC}/dox/dev_guides/building
-USES=		alias:10 cmake:outsource compiler:c++11-lib dos2unix \
+USES=		alias:10 cmake:outsource compiler:c++14-lang dos2unix \
 		shebangfix tk tar:tgz
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu
@@ -34,9 +33,9 @@ SHEBANG_FILES=	adm/templates/*.sh	\
 ENVSH=		env.sh adm/templates/env.sh.in adm/templates/env.sh
 VTKVER=		6.2
 
-OPTIONS_DEFINE=	VIS DOXYGEN
+OPTIONS_DEFINE=	DOCS DOXYGEN FFMPEG VIS
 VIS_DESC=	Build Visualizazion module (requires OpenGL, freetype, ftgl and gl2ps)
-OPTIONS_DEFAULT=VIS
+OPTIONS_DEFAULT=FFMPEG VIS
 OPTIONS_SUB=	yes
 
 REINPLACE_ARGS=	-i ""
@@ -44,7 +43,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DINSTALL_DIR_INCLUDE=${PREFIX}/include/OpenCASCADE	\
 		-DINSTALL_DIR_LIB=${PREFIX}/lib				\
-		-DINSTALL_DIR_CMAKE=${OCCROOT}/lib/cmake		\
+		-DINSTALL_DIR_CMAKE=${PREFIX}/lib/cmake			\
 		-DINSTALL_DIR_DATA=${OCCROOT}/data			\
 		-DINSTALL_DIR_RESOURCE=${OCCROOT}/resources		\
 		-DINSTALL_DIR_SAMPLES=${OCCROOT}/samples		\
@@ -57,7 +56,12 @@ USE_LDCONFIG=	yes
 
 LOCCROOT=	OpenCAS
 OCCROOT=	${PREFIX}/${LOCCROOT}
-PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${CHOSEN_COMPILER_TYPE}
+PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${CHOSEN_COMPILER_TYPE}	\
+		VE=${PORTVERSION:R:R} VER=${PORTVERSION}
+
+FFMPEG_CMAKE_ON=	-DUSE_FFMPEG:BOOL=ON
+FFMPEG_CMAKE_OFF=	-DUSE_FFMPEG:BOOL=OFF
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 VIS_CMAKE_ON=		-DUSE_FREEIMAGE:BOOL=ON -DUSE_GL2PS:BOOL=ON	\
 			-DUSE_FREETYPE:BOOL=ON
@@ -71,8 +75,8 @@ VIS_CMAKE_ON=	-D3RDPARTY_FREETYPE_DIR=${LOCALBASE}
 
 DOXYGEN_USE=	TEX=latex:build
 DOXYGEN_BUILD_DEPENDS=	bash:shells/bash		\
-			doxygen:devel/doxygen	\
-			dot:graphics/graphviz	\
+			doxygen:devel/doxygen		\
+			dot:graphics/graphviz		\
 			inkscape:graphics/inkscape
 DOXYGEN_RUN_DEPENDS=	${LOCALBASE}/www/MathJax/MathJax.js:www/mathjax
 
@@ -112,10 +116,11 @@ post-install:
 post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/overview && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	${RMDIR} ${STAGEDIR}${DOCSDIR}/latex
+	${RM} -r ${STAGEDIR}${DOCSDIR}/latex
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
+	${RM} -rf /tmp/testOCC
 	${MKDIR} /tmp/testOCC
 	bash -c "\
 	cd ${OCCROOT} && . ${OCCROOT}/bin/env.sh &&	\

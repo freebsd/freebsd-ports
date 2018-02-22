@@ -1,0 +1,13 @@
+--- config/elasticsearch.yml.orig	2018-02-06 00:13:22 UTC
++++ config/elasticsearch.yml
+@@ -35,6 +35,10 @@
+ # Path to log files:
+ #
+ #path.logs: /path/to/logs
++path.logs: /var/log/elasticsearch
++#
++# Path to scripts dir:
++path.scripts: /usr/local/libexec/elasticsearch
+ #
+ # ----------------------------------- Memory -----------------------------------
+ #

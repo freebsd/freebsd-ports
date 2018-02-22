@@ -3,7 +3,7 @@
 
 PORTNAME=	pipelight
 PORTVERSION=	0.2.8.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	https://bitbucket.org/mmueller2012/pipelight/get/ \
 		http://repos.fds-team.de/pluginloader/v${DISTVERSION}/:plg
@@ -46,11 +46,11 @@ SUB_FILES=	pipelight-mkufs
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/wine:emulators/wine-staging
-RUN_DEPENDS+=	${LOCALBASE}/bin/wine:emulators/wine-staging
+BUILD_DEPENDS+=	${LOCALBASE}/bin/wine:emulators/wine
+RUN_DEPENDS+=	${LOCALBASE}/bin/wine:emulators/wine
 .elif ${ARCH} == "amd64"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/wine:emulators/i386-wine-staging
-RUN_DEPENDS+=	${LOCALBASE}/bin/wine:emulators/i386-wine-staging
+BUILD_DEPENDS+=	${LOCALBASE}/bin/wine:emulators/i386-wine
+RUN_DEPENDS+=	${LOCALBASE}/bin/wine:emulators/i386-wine
 .endif
 
 pre-configure:

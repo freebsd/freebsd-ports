@@ -1,25 +1,20 @@
---- mysys_ssl/my_crypt.cc.orig	2017-01-17 19:38:25 UTC
+--- mysys_ssl/my_crypt.cc.orig	2018-02-04 02:30:31 UTC
 +++ mysys_ssl/my_crypt.cc
-@@ -275,10 +275,14 @@ int my_random_bytes(uchar* buf, int num)
-   return MY_AES_OK;
- }
- #else
-+#include <openssl/opensslv.h>
+@@ -27,6 +27,7 @@
+ #include <openssl/aes.h>
+ #include <openssl/err.h>
  #include <openssl/rand.h>
++#include <openssl/opensslv.h>
+ 
+ #ifdef HAVE_ERR_remove_thread_state
+ #define ERR_remove_state(X) ERR_remove_thread_state(NULL)
+@@ -295,6 +296,9 @@ unsigned int my_aes_ctx_size(enum my_aes
  
  int my_random_bytes(uchar *buf, int num)
  {
-+#if defined(LIBRESSL_VERSION_NUMBER)
++#ifdef LIBRESSL_VERSION_NUMBER
 +  arc4random_buf(buf, num);
-+#else
-   /*
-     Unfortunately RAND_bytes manual page does not provide any guarantees
-     in relation to blocking behavior. Here we explicitly use SSLeay random
-@@ -288,6 +292,7 @@ int my_random_bytes(uchar *buf, int num)
-   RAND_METHOD *rand = RAND_SSLeay();
-   if (rand == NULL || rand->bytes(buf, num) != 1)
-     return MY_AES_OPENSSL_ERROR;
 +#endif
+   if (RAND_bytes(buf, num) != 1)
+     return MY_AES_OPENSSL_ERROR;
    return MY_AES_OK;
- }
- #endif

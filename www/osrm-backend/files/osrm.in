@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# PROVIDE: osrm
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+#
+# osrm_enable (bool):		Set to NO by default.
+#				Set it to YES to enable osrm-backend.
+# osrm_flags (flags):		Empty by default
+#				Adjust it to your needs.
+# osrm_file (path):		The path to the osrm-file you intend
+#				to use with osrm.
+# osrm_shared_memory (bool):	Set to NO by default.
+#				When enabled it will ignore osrm_file
+#				and assume osrm-datastore has set up
+#				the data in shared memory.
+#				osrm will fail to start if this is
+#				enbled and osrm-datastore hasnt set
+#                               up the shared memory.
+
+. /etc/rc.subr
+
+name="osrm"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${osrm_enable:="NO"}
+: ${osrm_user:="osrm"}
+: ${osrm_group:="osrm"}
+: ${osrm_flags:=""}
+: ${osrm_shared_memory:="NO"}
+: ${osrm_file:=""}
+
+
+
+
+pidfile="/var/run/osrm.pid"
+procname="/usr/local/bin/osrm-routed"
+command=/usr/sbin/daemon
+start_precmd="osrm_precmd"
+
+osrm_precmd()
+{
+    if checkyesno osrm_shared_memory; then
+        command_args="-f -c -p ${pidfile} ${procname} --shared-memory=yes ${osrm_flags}"
+    else
+	    
+        if [ -f "$osrm_file" ]; then
+            chown ${osrm_user}:${osrm_group} ${osrm_file}
+            command_args="-f -c -p ${pidfile} ${procname} ${osrm_flags} ${osrm_file}"
+        else
+	    err 1 "Osrm file not found or osrm_file variable empty."    
+        fi
+    fi
+    install -o $osrm_user -m 644 /dev/null ${pidfile}
+}
+
+
+run_rc_command "$1"

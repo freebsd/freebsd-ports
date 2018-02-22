@@ -1,5 +1,5 @@
-TIMESTAMP = 1513359428
-SHA256 (qemu/2.11.50.g20171215/seanbruno-qemu-bsd-user-2.11.50.g20171215-8dcfea1_GH0.tar.gz) = cd7f9e5b1f1a6a6055b9fba569b5d45970e78679fce1b4d000f28ccb53b1ab15
-SIZE (qemu/2.11.50.g20171215/seanbruno-qemu-bsd-user-2.11.50.g20171215-8dcfea1_GH0.tar.gz) = 14817005
-SHA256 (qemu/2.11.50.g20171215/qemu-keycodemapdb-10739aa_GH0.tar.gz) = ae43fb1e2b07b78be88a7882306b6e71383eb77472a35d7d78fed21e345d134a
-SIZE (qemu/2.11.50.g20171215/qemu-keycodemapdb-10739aa_GH0.tar.gz) = 47895
+TIMESTAMP = 1518374880
+SHA256 (qemu/2.11.50.g20180208/seanbruno-qemu-bsd-user-2.11.50.g20180208-2b84fbb94e9_GH0.tar.gz) = f46358d51c90a3a775aab3b8f728a0009c025adc44e367f72bead70ed5b9de3c
+SIZE (qemu/2.11.50.g20180208/seanbruno-qemu-bsd-user-2.11.50.g20180208-2b84fbb94e9_GH0.tar.gz) = 15503774
+SHA256 (qemu/2.11.50.g20180208/qemu-keycodemapdb-10739aa_GH0.tar.gz) = ae43fb1e2b07b78be88a7882306b6e71383eb77472a35d7d78fed21e345d134a
+SIZE (qemu/2.11.50.g20180208/qemu-keycodemapdb-10739aa_GH0.tar.gz) = 47895

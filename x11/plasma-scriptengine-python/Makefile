@@ -2,7 +2,7 @@
 
 PORTNAME=	plasma-scriptengine-python
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11 kde kde-applications
 DISTNAME=	kde-workspace-${PORTVERSION}
 
@@ -10,7 +10,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma scriptengine for Python
 
 NO_ARCH=	yes
-USES=		cmake:outsource kde:4 python:2 tar:xz
+USES=		cmake:outsource kde:4 python:2.7 tar:xz
 USE_KDE=	kdelibs pykde4 automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 DISTINFO_FILE=	${.CURDIR:H:H}/x11/kde4-workspace/distinfo

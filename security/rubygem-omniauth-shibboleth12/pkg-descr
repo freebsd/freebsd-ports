@@ -1,0 +1,4 @@
+Ruby gem that implements an OmniAuth strategy for authenticating
+through Shibboleth (SAML) for usage in rubygem-onmiauth.
+
+WWW: https://github.com/toyokazu/omniauth-shibboleth

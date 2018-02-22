@@ -1,22 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	4.18.0
-PORTREVISION?=	0
+PORTVERSION=	4.19.0
+PORTREVISION?=	1
 CATEGORIES=	devel net security
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=206&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=207&file=01&dummy=/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
 		libgpg-error.so:security/libgpg-error
 
-USES=		gettext gmake iconv libtool pathfix pkgconfig ssl
+USES=		gettext gmake iconv:translit libtool pathfix pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes" \
@@ -56,6 +56,8 @@ CONFIGURE_ARGS+=--with-fox-includes=${LOCALBASE}/include/fox-1.6 \
 LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 USE_GNOME+=	cairo gdkpixbuf2 gtk20
+.  elif ${SLAVEPORT}=="gtk3"
+USE_GNOME+=	cairo gdkpixbuf2 gtk30
 .  elif ${SLAVEPORT}=="qt4"
 USE_QT4=	corelib gui moc_build uic_build
 QT_NONSTANDARD=	yes
@@ -66,13 +68,11 @@ CONFIGURE_ARGS+=--with-qt4-includes=${QT_INCDIR} \
 .  elif ${SLAVEPORT}=="qt5"
 USE_GL=		gl
 USE_QT5=	core gui widgets \
-		buildtools_build linguisttools_build qmake_build
+		buildtools_build qmake_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=--with-qt5-qmake=${QMAKE} \
 		--with-qt5-moc=${MOC} \
-		--with-qt5-uic=${UIC} \
-		--with-qt5-lrelease=${LRELEASE} \
-		--with-qt5-lupdate=${LUPDATE}
+		--with-qt5-uic=${UIC}
 .  endif
 .endif
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	pythonsudoku
 PORTVERSION=	0.13
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/Python%20Sudoku/${PORTVERSION}/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:print/py-reportlab1@${FLAVOR}
 
-USES=		python:2 tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 INSTALLS_ICONS=	yes

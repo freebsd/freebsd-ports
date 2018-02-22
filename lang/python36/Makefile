@@ -4,9 +4,9 @@
 PORTNAME=	python
 PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	PYTHON/ftp/python/${PYTHON_PORTVERSION}
+MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
-DISTNAME=	Python-${DISTVERSION}
+DISTNAME=	Python-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
@@ -14,17 +14,12 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		cpe ncurses pathfix pkgconfig readline:port ssl tar:xz shebangfix
+USES=		cpe ncurses pathfix pkgconfig readline:port shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
 SHEBANG_FILES=	Lib/*.py Lib/*/*.py Lib/*/*/*.py Lib/*/*/*/*.py
-
-BROKEN_SSL=	openssl-devel
-
-CPE_VENDOR=	python
-CPE_PRODUCT=	${CPE_VENDOR}
 
 # Duplicate python.mk variables. TODO: Let lang/python?? ports use python.mk bits.
 PYTHON_VER=		${PYTHON_PORTVERSION:R}
@@ -46,9 +41,11 @@ MAKE_JOBS_UNSAFE=	yes							# Parser/pgen build bug. See Issue: 200622, 201974
 SUB_FILES=		pkg-message
 SUB_LIST=		PYTHON_SUFFIX=${PYTHON_SUFFIX}
 
-PLIST_SUB=		XYDOT=${PYTHON_VER} XY=${PYTHON_SUFFIX} \
-			XYZDOT=${PYTHON_PORTVERSION} ABI=${ABIFLAGS} \
-			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. http://bugs.python.org/issue19554
+PLIST_SUB=		ABI=${ABIFLAGS} \
+			XY=${PYTHON_SUFFIX} \
+			XYDOT=${PYTHON_VER} \
+			XYZDOT=${PORTVERSION} \
+			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. https://bugs.python.org/issue19554
 
 OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC THREADS
 OPTIONS_DEFAULT=	LIBFFI PYMALLOC THREADS
@@ -75,7 +72,7 @@ LIBFFI_LIB_DEPENDS=	libffi.so:devel/libffi
 
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
-# Upstream Issue: http://bugs.python.org/issue6299
+# Upstream Issue: https://bugs.python.org/issue6299
 NLS_USES=		gettext
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
@@ -98,13 +95,13 @@ ABIFLAGS:=	d${ABIFLAGS}
 .endif
 
 .if !empty(ABIFLAGS)
-PLIST_FILES+=	bin/python%%XYDOT%%%%ABI%%
-PLIST_FILES+=	bin/python%%XYDOT%%%%ABI%%-config
-PLIST_FILES+=	libdata/pkgconfig/python-%%XYDOT%%%%ABI%%.pc
+PLIST_FILES+=	bin/python${PYTHON_VER}${ABIFLAGS} \
+		bin/python${PYTHON_VER}${ABIFLAGS}-config \
+		libdata/pkgconfig/python-${PYTHON_VER}${ABIFLAGS}.pc
 .endif
 
-# http://bugs.python.org/issue22521
-# http://bugs.python.org/issue23042
+# https://bugs.python.org/issue22521
+# https://bugs.python.org/issue23042
 .if ${ARCH} == i386 && !${PORT_OPTIONS:MLIBFFI}
 BROKEN=		You must use libffi from ports on i386. Enable the LIBFFI option
 .endif
@@ -113,7 +110,7 @@ BROKEN=		You must use libffi from ports on i386. Enable the LIBFFI option
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
-# See http://bugs.freebsd.org/115940 and http://bugs.freebsd.org/193650
+# See https://bugs.freebsd.org/115940 and https://bugs.freebsd.org/193650
 .if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
 PLIST_SUB+=	NO_NIS="@comment "
 DISABLED_EXTENSIONS+=	nis
@@ -125,16 +122,14 @@ post-patch:
 # readline shared library is present on base before FreeBSD 11 - r268461
 # force setup.py ignore base and use readline from ports
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		"s|lib_dirs,\ \'readline\'|[\'${LOCALBASE}/lib\',\ \'.\'],\ \'readline\'|" \
 		${WRKSRC}/setup.py
 .endif
-	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
-		${WRKSRC}/Lib/cgi.py
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
-	${RM} ${STAGEDIR}${PREFIX}/lib/libpython3.so						# Upstream Issue: http://bugs.python.org/issue17975
+	${RM} ${STAGEDIR}${PREFIX}/lib/libpython3.so						# Upstream Issue: https://bugs.python.org/issue17975
 .endif
 # This code block exists for the qemu-user enabled cross build environment.
 # When using this environment in poudriere, CC is not set to the default

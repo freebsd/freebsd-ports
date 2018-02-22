@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	4.1.19
+DISTVERSION=	4.1.20
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -17,7 +17,6 @@ CONFLICTS=	nsd-[0-3]* nsd3-[0-9]*
 
 USES=		cpe ssl
 CPE_VENDOR=	nlnetlabs
-
 USE_RC_SUBR=	nsd
 
 NSDUSER?=	nsd

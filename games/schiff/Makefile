@@ -3,7 +3,7 @@
 
 PORTNAME=	schiff
 PORTVERSION=	16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games python
 MASTER_SITES=	SF/pygamebook/${PORTNAME:S/s/S/}/${PORTNAME}${PORTVERSION}.py/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -19,7 +19,7 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python:2,run shebangfix
+USES=		python:2.7,run shebangfix
 SHEBANG_FILES=	schiff.py
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

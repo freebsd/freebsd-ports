@@ -2,7 +2,7 @@
 
 PORTNAME=	semantik
 DISTVERSION=	0.9.5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://ftp.waf.io/pub/release/ \
 		http://www.freehackers.org/~tnagy/release/
@@ -12,7 +12,7 @@ COMMENT=	KDE mind mapping tool
 
 LICENSE=	GPLv3
 
-USES=		kde:4 pkgconfig python:2 shebangfix tar:bzip2 waf \
+USES=		kde:4 pkgconfig python:2.7 shebangfix tar:bzip2 waf \
 		gettext shared-mime-info
 USE_KDE=	kdelibs
 USE_OCAML=	yes

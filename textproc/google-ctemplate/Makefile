@@ -21,7 +21,8 @@ SHEBANG_FILES=	src/template-converter src/htmlparser/generate_fsm.py src/htmlpar
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	OlafvdSpek
-INSTALL_target=	install-strip
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -35,13 +36,5 @@ post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e \
 		'/install-data-am/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/libctemplate.so.3.0.0
-	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/libctemplate_nothreads.so.3.0.0
-
-regression-test: build
-	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
-		${MAKE_ARGS} check -C ${WRKSRC}
 
 .include <bsd.port.mk>

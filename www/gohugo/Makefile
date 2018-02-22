@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.35
+DISTVERSION=	0.36.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -45,6 +45,7 @@ GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 		mattn:go-runewidth:9e777a8:go_runewidth/src/github.com/mattn/go-runewidth \
 		miekg:mmark:fd2f6c1:mmark/src/github.com/miekg/mmark \
 		mitchellh:mapstructure:b4575ee:mapstructure/src/github.com/mitchellh/mapstructure \
+		muesli:smartcrop:1db4849:smartcrop/src/github.com/muesli/smartcrop \
 		nicksnyder:go-i18n:0dc1626:go_i18n/src/github.com/nicksnyder/go-i18n \
 		olekukonko:tablewriter:96aac99:tablewriter/src/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:16398ba:go_toml/src/github.com/pelletier/go-toml \

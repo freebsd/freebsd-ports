@@ -3,6 +3,7 @@
 
 PORTNAME=	dsv
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	SF/python-${PORTNAME}/python-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to parse or write delimeter-separated (e.g. CSV) files
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 DSV_BASEDIR=	${PYTHONPREFIX_SITELIBDIR}/DSV
 NO_ARCH=	yes

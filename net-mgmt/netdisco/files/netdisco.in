@@ -21,7 +21,7 @@ extra_commands="reload status"
 : ${netdisco_home="/var/run/netdisco"}
 : ${netdisco_user="netdisco"}
 : ${netdisco_group="netdisco"}
-netdisco_daemons="web daemon"
+netdisco_daemons="web backend"
 
 netdisco_start_precmd() {
   # /var/run and /var/log
@@ -100,15 +100,15 @@ netdisco_config_init() {
   netdisco_enable=${netdisco_enable:=NO}
   if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
     netdisco_web_enable=${netdisco_enable}
-    netdisco_daemon_enable=${netdisco_enable}
+    netdisco_backend_enable=${netdisco_enable}
   fi
   netdisco_web_enable=${netdisco_web_enable:-NO}
   netdisco_web_pidfile=${netdisco_web_pidfile:-"/var/run/netdisco/netdisco-web.pid"}
-  netdisco_daemon_enable=${netdisco_daemon_enable:-NO}
+  netdisco_backend_enable=${netdisco_backend_enable:-NO}
   netdisco_web_user=${netdisco_user}
-  netdisco_daemon_user=${netdisco_user}
+  netdisco_backend_user=${netdisco_user}
   netdisco_web_group=${netdisco_group}
-  netdisco_daemon_group=${netdisco_group}
+  netdisco_backend_group=${netdisco_group}
   export NETDISCO_HOME=/var/run/netdisco
 }
 

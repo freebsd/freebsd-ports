@@ -3,7 +3,7 @@
 
 PORTNAME=	gogglesmm
 PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -21,13 +21,15 @@ BROKEN_powerpc64=	fails to compile: ap_mad.cpp:358:2: \#error fixme
 USE_GITHUB=	yes
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
-		localbase:ldflags pkgconfig sqlite
+		localbase:ldflags pkgconfig shebangfix sqlite
 USE_XORG=	ice sm x11
 INSTALLS_ICONS=	yes
 
+SHEBANG_FILES=	extra/*.py
+
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		A52 ALSA DBUS DCA DOCS FAAD FLAC MAD NLS \
+OPTIONS_DEFINE=		A52 ALSA DBUS DCA DOCS FAAD FLAC IMPORT MAD NLS \
 			OGG OPENGL OPUS PULSEAUDIO ZLIB
 OPTIONS_RADIO=		SSL VORBISDEC
 OPTIONS_RADIO_SSL=	GCRYPT GNUTLS OPENSSL
@@ -61,6 +63,10 @@ GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CMAKE_BOOL=	WITH_GNUTLS
+
+IMPORT_DESC=		Install scripts to import old databases
+IMPORT_USES=		python:2.7
+IMPORT_CMAKE_BOOL=	WITH_IMPORT
 
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CMAKE_BOOL=		WITH_MAD

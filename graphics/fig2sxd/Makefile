@@ -16,6 +16,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/fig2sxd man/man1/fig2sxd.1.gz
 
+.include <bsd.port.pre.mk>
+
+# does not compile with clang 6.0.0
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056
+USE_GCC=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CXX/d; s|^\(all:\).*|\1 $$(TARGET1) fig2sxd.1|' \
@@ -25,4 +32,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

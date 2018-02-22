@@ -3,7 +3,7 @@
 
 PORTNAME=	sidplayer
 PORTVERSION=	4.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://sidplayer.cebix.net/downloads/ \
 		LOCAL/ehaupt

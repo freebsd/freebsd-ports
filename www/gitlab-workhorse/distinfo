@@ -1,3 +1,3 @@
-TIMESTAMP = 1505982528
-SHA256 (gitlab-workhorse-v2.3.0.tar.gz) = 5e2758b8970f290c1979771518715718bbac58b0e6df72ec104a9b57adebc3b4
-SIZE (gitlab-workhorse-v2.3.0.tar.gz) = 789925
+TIMESTAMP = 1516803285
+SHA256 (gitlab-workhorse-v3.3.1.tar.gz) = de8165d271b5c87f0cc4d879d5422fd443f0d32c0224e9c6e5801c2758fe78cf
+SIZE (gitlab-workhorse-v3.3.1.tar.gz) = 911861

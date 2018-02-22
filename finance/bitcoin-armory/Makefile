@@ -4,7 +4,7 @@
 PORTNAME=	BitcoinArmory
 PORTVERSION=	0.93.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	finance
 
 MAINTAINER=	yuri@rawbw.com
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=14.0.0:devel/py-twisted@${PY_FLAVOR
 USE_GITHUB=	yes
 GH_ACCOUNT=	etotheipi
 
-USES=		compiler:c++11-lang compiler:c++11-lib gmake pyqt:4 python:2 shebangfix
+USES=		compiler:c++11-lang compiler:c++11-lib gmake pyqt:4 python:2.7 shebangfix
 USE_PYQT=	core_run gui_run
 SHEBANG_FILES=	ArmoryQt.py extras/extractKeysFromWallet.py
 CPPFLAGS+=	-I${LOCALBASE}/include

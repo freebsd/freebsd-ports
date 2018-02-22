@@ -20,11 +20,7 @@ BROKEN_armv7=	fails to compile: Can't define TIME_MAX #'
 
 LIB_DEPENDS=	libcheck.so:devel/check
 
-CMAKE_ARGS=	-DBUILD_DOCS=OFF \
-		-DBUILD_TESTS=OFF \
-		-DENABLE_GCOV=OFF \
-		-DLINUX=ON \
-		-DUSE_VALGRIND=OFF
+CMAKE_OFF=	BUILD_DOCS BUILD_TESTS ENABLE_GCOV USE_VALGRIND
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		cmake pathfix pkgconfig python:2.7,build shebangfix
@@ -44,5 +40,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|STATIC|SHARED|' ${WRKSRC}/libchula/CMakeLists.txt ${WRKSRC}/libhpack/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt ${WRKSRC}/libchula/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|LINUX|BSD|' ${WRKSRC}/libchula-qa/mem_mgr.c
 
 .include <bsd.port.mk>

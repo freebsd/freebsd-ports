@@ -2,7 +2,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.29
-PORTREVISION=	20180105
+PORTREVISION=	20180212
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	riscv64-
@@ -24,8 +24,10 @@ GH_ACCOUNT=	freebsd-riscv
 GH_PROJECT=	riscv-binutils-gdb
 GH_TAGNAME=	dc03ed3
 
+BUTARGET=	${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX}${OPSYS:tl} \
+CONFIGURE_ARGS=	--target=${BUTARGET} \
 		--with-sysroot=/ \
 		--disable-gdb \
 		--disable-sim \
@@ -37,6 +39,8 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX}${OPSYS:tl} \
 		--with-system-zlib \
 		--with-gmp=${LOCALBASE} \
 		--with-mpfr=${LOCALBASE}
+
+PLIST_SUB=	BUTARGET=${BUTARGET}
 
 .include <bsd.port.pre.mk>
 

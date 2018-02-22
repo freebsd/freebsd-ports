@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BBasile
 GH_PROJECT=	Coedit
 
-USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-net fcl-registry \
+USE_FPC=	cairo chm fcl-base fcl-db fcl-image fcl-json fcl-net fcl-registry \
 		fcl-stl fcl-web fcl-xml numlib openssl pasjpeg rtl-objpas \
 		regexpr rtl-extra x11
 

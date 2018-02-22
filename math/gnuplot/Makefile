@@ -2,6 +2,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	5.2.2
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -22,6 +23,7 @@ CONFIGURE_ARGS+=--with-readline=gnu \
 		--without-linux-vga \
 		--without-lisp-files \
 		--without-tutorial \
+		--with-bitmap-terminals \
 		--with-qt=no
 
 .if defined(LITE)
@@ -33,7 +35,6 @@ CONFIGURE_ARGS+=--disable-x11-mbfonts \
 		--without-gd \
 		--without-caca \
 		--without-wx \
-		--without-bitmap-terminals \
 		--without-gpic \
 		--without-mif \
 		--without-cairo \
@@ -52,8 +53,7 @@ LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
 		libgd.so:graphics/gd \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
-CONFIGURE_ARGS+=--with-bitmap-terminals \
-		--with-gd=${LOCALBASE} \
+CONFIGURE_ARGS+=--with-gd=${LOCALBASE} \
 		--with-gpic \
 		--with-mif \
 		--with-kpsexpand \

@@ -3,7 +3,7 @@
 
 PORTNAME=	linkchecker
 PORTVERSION=	9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	LinkChecker-${PORTVERSION}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${FLAVOR} \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		cpe python:2
+USES=		cpe python:2.7
 CPE_VENDOR=	bastian_kleineidam
 USE_PYTHON=	distutils autoplist
 INSTALLS_ICONS=	yes

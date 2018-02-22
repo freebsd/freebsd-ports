@@ -12,6 +12,9 @@ COMMENT=	File type identification using libmagic
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# both install module as magic.py
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}magic-*
+
 USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils

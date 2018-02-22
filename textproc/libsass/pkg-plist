@@ -9,4 +9,5 @@ lib/libsass.a
 lib/libsass.so
 lib/libsass.so.0
 lib/libsass.so.0.0.9
+lib/libsass_pic.a
 libdata/pkgconfig/libsass.pc

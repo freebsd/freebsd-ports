@@ -3,7 +3,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.8.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/
@@ -11,16 +11,14 @@ MASTER_SITES=	http://ftp.midnight-commander.org/ \
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	mc-light-4*
 
-USES=		gmake shebangfix perl5 pkgconfig tar:xz libtool
-SHEBANG_FILES=	misc/mcedit.menu.in configure configure.ac \
-		${WRKSRC}/src/vfs/extfs/helpers/Makefile.in \
-		${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
+USES=		gmake shebangfix perl5 pkgconfig python:2.7,run tar:xz libtool
+SHEBANG_FILES=	${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
 		${WRKSRC}/src/vfs/extfs/helpers/uc1541.in
-python_CMD=	${LOCALBASE}/bin/python2
 python_OLD_CMD=	@PYTHON@
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
@@ -86,6 +84,7 @@ post-install:
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+
 post-install-X11-on:
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/

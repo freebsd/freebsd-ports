@@ -39,6 +39,7 @@
     SUBDIR += dnscrypt-proxy
     SUBDIR += dnscrypt-wrapper
     SUBDIR += dnsdbck
+    SUBDIR += dnsdbq
     SUBDIR += dnsdist
     SUBDIR += dnsenum
     SUBDIR += dnsflood
@@ -173,6 +174,7 @@
     SUBDIR += powerdns-recursor
     SUBDIR += powerdns-recursor40
     SUBDIR += public_suffix_list
+    SUBDIR += py-cloudflare
     SUBDIR += py-dns
     SUBDIR += py-dns-lexicon
     SUBDIR += py-dnschain

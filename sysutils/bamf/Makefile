@@ -3,6 +3,7 @@
 
 PORTNAME=	bamf
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpadlibrarian.net/280921055/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 	libdbus-glib-1.so:devel/dbus-glib \
 	libstartup-notification-1.so:x11/startup-notification
 
-USES=		gettext-runtime gmake libtool pathfix pkgconfig python:2
+USES=		gettext-runtime gmake libtool pathfix pkgconfig python:2.7
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk30 glib20 introspection:build libwnck3 cairo gdkpixbuf2
 USE_XORG=	x11

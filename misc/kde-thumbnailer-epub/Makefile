@@ -2,7 +2,7 @@
 
 PORTNAME=	kde-thumbnailer-epub
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	151210-${PORTNAME}-${PORTVERSION}

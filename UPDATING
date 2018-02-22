@@ -5,6 +5,60 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180220:
+  AFFECTS: users of www/nextcloud
+  AUTHOR: brnrd@FreeBSD.org
+
+  The file and directory permissions of Nextcloud have changed. Write
+  permissions have been removed from all directories except `data' and
+  `config'. For the updater to work, the app store of your installation
+  must be disabled. To disable the app-store prior to updating the
+  package:
+
+  # cd /usr/local/www/nextcloud
+  # su -m www -c "php ./occ config:system:set appstoreenabled --value=false --type=boolean"
+
+  If you've already updated your nextcloud package, you must manually edit
+  the configuration of nextcloud (config/config.php) and add
+
+  	'appstoreenabled' => false,
+
+  to the CONFIG array before the updater will run.
+
+20180214
+  AFFECTS: users of lang/ruby23
+  AUTHOR: swills@FreeBSD.org
+
+  The default ruby version has been updated from 2.3 to 2.4.
+
+  If you compile your own ports you may keep 2.3 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep ruby 2.3 as default version
+  #
+  DEFAULT_VERSIONS+=ruby=2.3
+
+  If you wish to update to the new default version, you need to first stop any
+  software that uses ruby. Then, you will need to follow these steps, depending
+  upon how you manage your system.
+
+  If you use pkgng, simply upgrade:
+  # pkg upgrade
+
+  If you use portmaster, install new ruby, then rebuild all ports that depend
+  on ruby:
+  # portmaster -o lang/ruby24 lang/ruby23
+  # portmaster -R -r ruby-2.4
+
+  If you use portupgrade, install new ruby, then rebuild all ports that depend
+  on ruby:
+
+  # pkg delete -f ruby portupgrade
+  # make -C /usr/ports/ports-mgmt/portupgrade install clean
+  # pkg set -o lang/ruby23:lang/ruby24
+  # portupgrade -x ruby-2.4.\* -fr lang/ruby24
+
 20180209:
   AFFECTS: users of japanese/lookup
   AUTHOR: yasu@utahime.org
@@ -33,12 +87,19 @@ you update your ports collection, before attempting any port upgrades.
   In order to overcome complaints about mismatched checksums in
   Mailman/Default.py, mailman now configures the DEFAULT_EMAIL_HOST
   and DEFAULT_URL_HOST to "localhost" statically, and the rc script
-  will check this and refuse to start on next boot. 
-  Users must configured DEFAULT_EMAIL_HOST and DEFAULT_URLHOST in 
-  Mailman/mm_cfg.py properly.
+  will check this and refuse to start on next boot.
+
+  Users must configure DEFAULT_EMAIL_HOST and DEFAULT_URL_HOST in
+  Mailman/mm_cfg.py properly and add this line below:
+  add_virtualhost(DEFAULT_URL_HOST, DEFAULT_EMAIL_HOST)
 
   A short example has been added to:
   ${PREFIX}/local/share/doc/mailman/FreeBSD-post-install-notes.
+
+  As of 2.1.26_3, the post-install script will add back the prior
+  default settings to mm_cfg.py (instead of Defaults.py) if no
+  virtual hosts have been defined, to cover the normal use cases
+  and initial installation.
 
 20180201:
   AFFECTS: users of editors/emacs* and all ports using Emacs via USES=emacs

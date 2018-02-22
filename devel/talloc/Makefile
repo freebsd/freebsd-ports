@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=		talloc
-PORTVERSION=		2.1.10
-PORTREVISION=		1
+PORTVERSION=		2.1.11
+PORTREVISION=		0
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA
 
@@ -13,6 +13,11 @@ LICENSE=		LGPL3
 
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
+#FLAVORS=		default nopython
+#nopython_PKGNAMESUFFIX=	-nopython
+#nopython_CONFLICTS=	talloc
+#default_CONFLICTS=	talloc-nopython
+
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
 WAF_CMD=		buildtools/bin/waf
@@ -22,7 +27,6 @@ PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
-			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
 			--disable-rpath \
 			--without-gettext
 
@@ -70,7 +74,7 @@ PLIST_SUB+=		SAMBA4_PYTHON3_SO_ABI=${SAMBA4_PYTHON3_SO_ABI} \
 
 PLIST_FILES+=		lib/libpytalloc-util.%%SAMBA4_PYTHON3_SO_ABI%%.so \
 			lib/libpytalloc-util.%%SAMBA4_PYTHON3_SO_ABI%%.so.2 \
-			%%SAMBA4_PYTHON3_SITELIBDIR%%/talloc.so \
+			%%SAMBA4_PYTHON3_SITELIBDIR%%/talloc.%%SAMBA4_PYTHON3_SO_ABI%%.so \
 			%%PKGCONFIGDIR%%/pytalloc-util.%%SAMBA4_PYTHON3_SO_ABI%%.pc
 .endif
 .endif
@@ -125,7 +129,7 @@ post-install:
 			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/talloc.so
 .if defined(SAMBA4_PYTHON3)
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpytalloc-util.${SAMBA4_PYTHON3_SO_ABI}.so
-			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SAMBA4_PYTHON3_SITELIBDIR}/talloc.so
+			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SAMBA4_PYTHON3_SITELIBDIR}/talloc.${SAMBA4_PYTHON3_SO_ABI}.so
 .endif
 .endif
 

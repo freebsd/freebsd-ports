@@ -1,4 +1,4 @@
-http://bugs.python.org/issue24557
+https://bugs.python.org/issue24557
 assume egd unless OPENSSL_NO_EGD is defined-remove configure check
 
 --- Modules/_ssl.c.orig	2016-06-25 21:52:32 UTC

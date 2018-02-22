@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.6.3
-PORTREVISION=	3
+PORTVERSION=	1.8.0
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/gnome-commander/${PORTVERSION:R}
@@ -21,6 +20,7 @@ LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique \
 		libpopt.so:devel/popt \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
+BUILD_DEPENDS=	itstool:textproc/itstool
 RUN_DEPENDS=	meld:textproc/meld \
 		yelp:x11/yelp
 
@@ -32,6 +32,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
+LDFLAGS+=	-lintl
 
 CONFLICTS=	gnome-commander-[0-9]*
 

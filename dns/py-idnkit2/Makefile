@@ -3,6 +3,7 @@
 
 PORTNAME=	idnkit-python
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://jprs.co.jp/idn/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Python bindings for Internationalized Domain Name toolkit 2
 
 LIB_DEPENDS=	libidnkitlite.so:dns/idnkit2
 
-USES=		python:2 tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils autoplist
 
 post-patch:

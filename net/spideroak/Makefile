@@ -3,7 +3,7 @@
 
 PORTNAME=	spideroak
 PORTVERSION=	6.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/${PORTNAME}/ \
 		https://spideroak.com/getbuild?platform=slackware&arch=i386&dummy=/
@@ -32,7 +32,7 @@ PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,} \
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 SUB_FILES=	pkg-message
 
-USES=		desktop-file-utils linux python:2 tar:tgz
+USES=		desktop-file-utils linux python:2.7 tar:tgz
 USE_LINUX=	xorglibs
 
 post-patch:

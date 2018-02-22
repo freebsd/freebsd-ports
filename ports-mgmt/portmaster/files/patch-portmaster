@@ -18,19 +18,35 @@
  	fi
  
  	case "$DISPLAY_LIST" in
-@@ -308,8 +308,9 @@ safe_exit () {
+@@ -308,20 +308,19 @@ safe_exit () {
  	exit ${1:-0}
  } # safe_exit()
  
 -flavor_part	() { expr "$1" : ".*@" >/dev/null && echo "${1#*@}"; }
 -dir_part	() { echo "${1%%@*}"; }
+-export_flavor	() { local flavor="$1"; if [ "$FLAVOR" != "$flavor" ]; then
+-			pm_v "===>>> Setting FLAVOR to '$flavor' (was '$FLAVOR')";
+-			export FLAVOR="$flavor"; fi; }
+- 
 +target_part	() { [ -z "${1##*:*}" ] && echo "${1#*:}" || echo install; }
 +flavor_part	() { local tmp="${1%%:*}"; [ -z "${tmp##*@*}" ] && echo "${tmp#*@}"; }
 +dir_part	() { local tmp="${1%%:*}"; echo "${tmp%%@*}"; }
- export_flavor	() { local flavor="$1"; if [ "$FLAVOR" != "$flavor" ]; then
- 			pm_v "===>>> Setting FLAVOR to '$flavor' (was '$FLAVOR')";
- 			export FLAVOR="$flavor"; fi; }
-@@ -2175,23 +2176,29 @@ update_pm_nu () {
++export_flavor	() { [ "$FLAVOR" != "$1" ] && export FLAVOR="$1"; }
++
+ pm_cd     () { builtin cd $1 2>/dev/null || return 1; }
+ pm_cd_pd  () { [ -n "$PM_INDEX_ONLY" ] && return 2;
+ 			local dir=$pd/$(dir_part $1);
+ 			builtin cd $dir 2>/dev/null ||
+ 			fail "Cannot cd to port directory: $dir"; }
+ pm_isdir	() { builtin test -d "$1"; }
+-pm_isdir_pd	() { local dir=$pd/$(dir_part "$1");
+-			builtin test -d "$dir"; }
++pm_isdir_pd	() { local dir=$(dir_part "$1");
++			builtin test -n "$dir" -a -d "$pd/$dir"; }
+ pm_kill   () { kill $* >/dev/null 2>/dev/null; }
+ pm_make   () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH build_l PM_URB_LIST;
+ 		 /usr/bin/nice /usr/bin/make $PM_MAKE_ARGS $*; ); }
+@@ -2175,23 +2174,29 @@ update_pm_nu () {
  }
  
  update_build_l () {
@@ -64,7 +80,7 @@
  	find_new_port "$originflavor" # sets global variable new_port
  
  	case `pkg version -t $iport $new_port 2>/dev/null` in
-@@ -2203,8 +2210,9 @@ update_build_l () {
+@@ -2203,8 +2208,9 @@ update_build_l () {
  }
  
  update_port () {
@@ -75,7 +91,7 @@
  	if [ -n "$2" ]; then
  		echo "===>>> Launching child to update $1 to $2"
  	else
-@@ -2300,7 +2308,7 @@ make_dep_list () {
+@@ -2300,7 +2306,7 @@ make_dep_list () {
  			fail "make_dep_list: Unsupported option '$dep_type'"
  		esac
  	done
@@ -84,7 +100,7 @@
  }
  
  gen_dep_list () {
-@@ -2368,15 +2376,17 @@ dependency_check () {
+@@ -2368,15 +2374,17 @@ dependency_check () {
  		rundeps=`gen_dep_list run-depends-list`
  
  		for dep in $d_port_list; do
@@ -105,7 +121,7 @@
  				rundep_list="$rundep_list $varname"
  				eval $varname=\"$portdir \$$varname\"
  				eval ${varname}_p=$dep
-@@ -2409,7 +2419,10 @@ dependency_check () {
+@@ -2409,7 +2417,10 @@ dependency_check () {
  
  	# Do not export, for THIS parent process only
  	[ -n "$PM_FIRST_PASS" ] && doing_dep_check=doing_dep_check
@@ -117,7 +133,7 @@
  		origin="${d_port#$pd/}"
  		if [ -n "$SHOW_WORK" ]; then
  			iport=`iport_from_origin $origin`
-@@ -2429,20 +2442,14 @@ dependency_check () {
+@@ -2429,20 +2440,14 @@ dependency_check () {
  		[ -z "$PM_URB_UP" ] &&
  			case "$CUR_DEPS" in *:${origin}:*) continue ;; esac
  
@@ -142,7 +158,7 @@
  			fi
  			for glob in $conflicts; do
  				confl_p=`pkg query -g "%n-%v" $glob 2>/dev/null`
-@@ -2498,7 +2505,11 @@ dependency_check () {
+@@ -2498,7 +2503,11 @@ dependency_check () {
  			check_for_updates $iport $origin || fail 'Update failed'
  		else
  			check_interactive $origin || continue
@@ -155,7 +171,7 @@
  		fi
  	done
  	[ -n "$PM_FIRST_PASS" ] && unset doing_dep_check
-@@ -3029,8 +3040,12 @@ no_valid_port () {
+@@ -3029,8 +3038,12 @@ no_valid_port () {
  	echo "===>>> Try $progname --help" ; echo '' ; safe_exit 1
  }
  
@@ -168,7 +184,7 @@
  	export_flavor $(flavor_part $portdir)
  	[ -n "$portdir" ] && { argv=$portdir ; unset portdir; }
  	argv=${argv:-$1} ; argv=${argv%/} ; argv=`globstrip $argv`
-@@ -3061,6 +3076,8 @@ if [ -z "$REPLACE_ORIGIN" ]; then
+@@ -3061,6 +3074,8 @@ if [ -z "$REPLACE_ORIGIN" ]; then
  		unset glob_dirs
  	fi
  	unset argv
@@ -177,7 +193,7 @@
  else
  	portdir="${1#$pd/}" ; portdir="${portdir%/}"
  	export_flavor=$(flavor_part $portdir)
-@@ -3143,7 +3160,7 @@ iport_from_pkgname () {
+@@ -3143,7 +3158,7 @@ iport_from_pkgname () {
  	dir=$(dir_part $1)
  	flavor=$(flavor_part $1)
  	pkgname=$(FLAVOR=$flavor make -C "$pd/$dir" -V PKGNAME) || return 1
@@ -186,7 +202,7 @@
  }
  
  if [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
-@@ -3229,11 +3246,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
+@@ -3229,11 +3244,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
  		fi
  	fi
  
@@ -202,7 +218,7 @@
  # Do these things first time through
  if [ -z "$PM_INDEX_ONLY" -a -z "$PM_BUILDING" -a -z "$SHOW_WORK" -a -z "$NO_ACTION" ]; then
  	# Do not start this in the background until we are sure we are going to proceed
-@@ -3636,15 +3656,21 @@ pkg_flavor () {
+@@ -3636,15 +3654,21 @@ pkg_flavor () {
  	pm_make pretty-flavors-package-names | sed -ne 's!^\([A-Za-z0-9_]*\): *'$pkg'$!\1!p';
  }
  	export_flavor=$(pkg_flavor $new_port)
@@ -225,7 +241,7 @@
  else
  	[ -z "$local_package" ] && {
  		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.txz failed"; }
-@@ -3876,9 +3902,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3876,9 +3900,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then

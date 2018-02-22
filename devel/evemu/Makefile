@@ -3,6 +3,7 @@
 
 PORTNAME=	evemu
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
 
@@ -25,8 +26,8 @@ MANPAGES_BUILD_DEPENDS=		minixmlto:textproc/minixmlto \
 MANPAGES_CONFIGURE_ENV=		XMLTO=${LOCALBASE}/bin/minixmlto
 MANPAGES_CONFIGURE_ENV_OFF=	ac_cv_path_XMLTO="" \
 				ac_cv_path_ASCIIDOC=""
-PYTHON_USES=			python:2
-PYTHON_USES_OFF=		python:2,build
+PYTHON_USES=			python:2.7
+PYTHON_USES_OFF=		python:2.7,build
 PYTHON_CONFIGURE_ENABLE=	python-bindings
 
 GNU_CONFIGURE=  yes

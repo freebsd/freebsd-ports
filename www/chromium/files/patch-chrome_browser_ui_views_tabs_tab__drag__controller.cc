@@ -1,24 +1,24 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2017-06-05 19:03:03 UTC
-+++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
-@@ -249,7 +249,7 @@ void TabDragController::Init(
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2017-12-15 02:04:11.000000000 +0100
++++ chrome/browser/ui/views/tabs/tab_drag_controller.cc	2017-12-24 02:45:43.317955000 +0100
+@@ -261,7 +261,7 @@
    //     synchronous on desktop Linux, so use that.
-   // - Ash
+   // - Chrome OS
    //     Releasing capture on Ash cancels gestures so avoid it.
--#if defined(OS_LINUX) || defined(USE_ASH)
-+#if defined(OS_LINUX) || defined(OS_BSD) || defined(USE_ASH)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
    can_release_capture_ = false;
  #endif
    start_point_in_screen_ = gfx::Point(source_tab_offset, mouse_offset.y());
-@@ -594,7 +594,7 @@ TabDragController::DragBrowserToNewTabStrip(
+@@ -599,7 +599,7 @@
      else
        target_tabstrip->GetWidget()->SetCapture(attached_tabstrip_);
  
--#if !defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if (!defined(OS_LINUX) && !defined(OS_BSD)) || defined(OS_CHROMEOS)
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) || defined(OS_BSD)
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -1784,7 +1784,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -1792,7 +1792,7 @@
      if (dragged_window)
        exclude.insert(dragged_window);
    }

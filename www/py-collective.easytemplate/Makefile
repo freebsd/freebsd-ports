@@ -3,6 +3,7 @@
 
 PORTNAME=	collective.easytemplate
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=2.1.0:devel/py-Products.CM
 		${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}collective.templateengines>=0.3:www/py-collective.templateengines@${FLAVOR}
 
-USES=		python:2 zip
+USES=		python:2.7 zip
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -13,6 +13,9 @@ COMMENT=	Gnome client of the Ring VoIP SIP phone and IM
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expiring and broken net-im/ring-daemon
+EXPIRATION_DATE=	2018-03-19
+
 LIB_DEPENDS=	libringclient.so:net-im/ring-libclient \
 		libqrencode.so:graphics/libqrencode \
 		libcogl-pango.so:graphics/cogl \

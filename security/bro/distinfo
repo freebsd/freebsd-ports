@@ -1,5 +1,7 @@
-TIMESTAMP = 1508621466
-SHA256 (bro-2.5.2.tar.gz) = ab95b1bc376282919e5fa6b25b5ef8864e2e7bd5efe842db35d4a223b8f5b970
-SIZE (bro-2.5.2.tar.gz) = 18512696
+TIMESTAMP = 1518744511
+SHA256 (bro-2.5.3.tar.gz) = 7384fa14e6cebc86488040877fc0bfd50868e969f0fa05178cef0116e4116225
+SIZE (bro-2.5.3.tar.gz) = 18514905
 SHA256 (actor-framework-actor-framework-0.14.6_GH0.tar.gz) = cbc2033896fe41e42604de2f74673971718a40684996650157484485755f7720
 SIZE (actor-framework-actor-framework-0.14.6_GH0.tar.gz) = 1239451
+SHA256 (bro-bro-netmap-cf88debf487b31ab30dc3b5bac64783b4e49997e_GH0.tar.gz) = 383423f92932c3ef244194954708b3a237b4f37ebc358014f51dcb3b9786896b
+SIZE (bro-bro-netmap-cf88debf487b31ab30dc3b5bac64783b4e49997e_GH0.tar.gz) = 24630

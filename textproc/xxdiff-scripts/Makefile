@@ -3,6 +3,7 @@
 
 PORTNAME=	xxdiff
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-scripts
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	xxdiff:textproc/xxdiff
 
-USES=		python:2 tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	xxdiff-scripts
 NO_ARCH=	yes

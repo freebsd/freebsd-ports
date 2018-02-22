@@ -6,6 +6,7 @@
 %%NONX86%%bin/qemu-system-alpha
 %%NONX86%%bin/qemu-system-arm
 %%NONX86%%bin/qemu-system-cris
+%%NONX86%%bin/qemu-system-hppa
 %%SOFTMMU%%bin/qemu-system-i386
 %%NONX86%%bin/qemu-system-lm32
 %%NONX86%%bin/qemu-system-m68k
@@ -66,6 +67,7 @@
 %%SOFTMMU%%%%DATADIR%%/efi-rtl8139.rom
 %%SOFTMMU%%%%DATADIR%%/efi-virtio.rom
 %%SOFTMMU%%%%DATADIR%%/efi-vmxnet3.rom
+%%SOFTMMU%%%%DATADIR%%/hppa-firmware.img
 %%SOFTMMU%%%%DATADIR%%/keymaps/ar
 %%SOFTMMU%%%%DATADIR%%/keymaps/bepo
 %%SOFTMMU%%%%DATADIR%%/keymaps/common

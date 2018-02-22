@@ -3,7 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	7.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -36,7 +36,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		fortran gettext gmake iconv jpeg perl5 pkgconfig python:2 \
+USES=		fortran gettext gmake iconv jpeg perl5 pkgconfig python:2.7 \
 		readline shebangfix tk
 SHEBANG_LANG=	nviz
 nviz_OLD_CMD=	nviz

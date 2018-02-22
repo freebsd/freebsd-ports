@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Addons for the Ruby implementation of the Haml template language
 
 LICENSE=	MIT
@@ -14,7 +14,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-haml>=4.0.0:www/rubygem-haml
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

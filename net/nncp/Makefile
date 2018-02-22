@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	nncp
-DISTVERSION=	2.0
+DISTVERSION=	3.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.nncpgo.org/download/
 
 MAINTAINER=	stargrave@stargrave.org
-COMMENT=	Utilities for secure store-and-forward files and mail exchanging
+COMMENT=	Utilities for secure store-and-forward files, mail, command exchanging
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

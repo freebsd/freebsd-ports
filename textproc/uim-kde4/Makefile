@@ -1,7 +1,7 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=	-kde4
 
 COMMENT=	KDE4 panel applet of uim input method

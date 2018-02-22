@@ -2,7 +2,7 @@
 
 PORTNAME=	cantor
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	math kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +12,7 @@ LIB_DEPENDS=	libspectre.so:print/libspectre \
 		libqalculate.so:math/libqalculate \
 		libanalitza.so:math/analitza
 
-USES=		cmake:outsource kde:4 pkgconfig python:2 tar:xz
+USES=		cmake:outsource kde:4 pkgconfig python:2.7 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT4=	corelib qtestlib_build xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build

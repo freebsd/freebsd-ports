@@ -1,0 +1,11 @@
+--- third_party/webrtc/webrtc.gni.orig	2017-12-24 19:22:37.091592000 +0100
++++ third_party/webrtc/webrtc.gni	2017-12-24 19:23:04.024283000 +0100
+@@ -199,7 +199,7 @@
+ rtc_opus_dir = "//third_party/opus"
+ 
+ # Desktop capturer is supported only on Windows, OSX and Linux.
+-rtc_desktop_capture_supported = is_win || is_mac || (is_linux && use_x11)
++rtc_desktop_capture_supported = is_win || is_mac || ((is_linux && use_x11) && !is_bsd)
+ 
+ ###############################################################################
+ # Templates

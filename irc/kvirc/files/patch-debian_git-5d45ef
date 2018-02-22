@@ -1,0 +1,30 @@
+Description: Fixes FTBFS with gcc 6.
+ Fixes invalid conversion errors. Also fixes two wrong flag operations, already
+ fixed upstream (in 0d14434b and 934fa2e1).
+Author: Andrey Rahmatullin <wrar@debian.org>
+Bug-Debian: https://bugs.debian.org/811908
+Last-Update: 2016-11-04
+
+diff --git a/src/kvirc/kernel/KviIrcConnection.cpp b/src/kvirc/kernel/KviIrcConnection.cpp
+index f925ca7..1266b46 100644
+--- src/kvirc/kernel/KviIrcConnection.cpp
++++ src/kvirc/kernel/KviIrcConnection.cpp
+@@ -669,7 +669,8 @@ void KviIrcConnection::closeAllChannels()
+ 	while(m_pChannelList->first())
+ 	{
+ 		m_pChannelList->first()->close();
+-		QApplication::processEvents(QEventLoop::ExcludeSocketNotifiers & QEventLoop::ExcludeUserInputEvents);
++		QEventLoop::ProcessEventsFlags f(QEventLoop::ExcludeSocketNotifiers | QEventLoop::ExcludeUserInputEvents);
++		QApplication::processEvents(f);
+ 	}
+ }
+ 
+@@ -678,7 +679,8 @@ void KviIrcConnection::closeAllQueries()
+ 	while(m_pQueryList->first())
+ 	{
+ 		m_pQueryList->first()->close();
+-		QApplication::processEvents(QEventLoop::ExcludeSocketNotifiers & QEventLoop::ExcludeUserInputEvents);
++		QEventLoop::ProcessEventsFlags f(QEventLoop::ExcludeSocketNotifiers | QEventLoop::ExcludeUserInputEvents);
++		QApplication::processEvents(f);
+ 	}
+ }

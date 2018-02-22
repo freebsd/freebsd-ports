@@ -3,7 +3,7 @@
 
 PORTNAME=		opensips
 PORTVERSION=		2.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
@@ -20,17 +20,13 @@ LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 			librabbitmq.so:net/rabbitmq-c-devel \
 			libhiredis.so:databases/hiredis \
 			libexpat.so:textproc/expat2 \
-			libpython2.7.so:lang/python27 \
 			libcurl.so:ftp/curl \
 			libjson-c.so:devel/json-c
 BUILD_DEPENDS=		ginstall:sysutils/coreutils \
 			gtar:archivers/gtar \
 			gm4:devel/m4 \
-			redis-server:databases/redis-devel \
-			python2:lang/python2 \
-			python:lang/python
+			redis-server:databases/redis-devel
 RUN_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash \
-			${LOCALBASE}/bin/python2:lang/python2 \
 			${LOCALBASE}/bin/grep:textproc/gnugrep
 
 GINSTALL=		ginstall
@@ -40,7 +36,7 @@ DOCSDIR=		share/doc/opensips
 
 USE_RC_SUBR=		opensips
 
-USES=			gmake ncurses perl5 pkgconfig shebangfix ssl
+USES=			gmake ncurses perl5 pkgconfig python:2.7 shebangfix ssl
 USE_GCC=		yes
 
 NOPRECIOUSMAKEVARS=	yes
@@ -188,7 +184,7 @@ EXTRA_MODULES+=		proto_tls
 EXTRA_MODULES+=		db_sqlite
 .endif
 
-OPENSIPS_MAKE_ENV=	CC="${CC}" CXX="${CXX}" CPP="${CPP}" _GCC_RUNTIME="${_GCC_RUNTIME}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
+OPENSIPS_MAKE_ENV=	CC="${CC}" CXX="${CXX}" CPP="${CPP}" _GCC_RUNTIME="${_GCC_RUNTIME}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" PYTHON=${PYTHON_CMD}
 
 post-patch:
 	@${RM} ${WRKSRC}/modules/json/array_del.c

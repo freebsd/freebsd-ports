@@ -32,7 +32,7 @@
  
  env.Append(CCFLAGS="-Wall")
 -env.Append(CXXFLAGS="-Woverloaded-virtual")
-+env.Append(CXXFLAGS="-Woverloaded-virtual -std=c++11")
++env.Append(CXXFLAGS="-Woverloaded-virtual -std=c++11 -Wno-c++11-narrowing")
  
  if env['EXTRA_WARN']:
      env.Append(CCFLAGS="-Wextra -pedantic -ansi")

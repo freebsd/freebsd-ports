@@ -1,6 +1,6 @@
---- Makefile.orig	2014-07-15 21:44:10.713832840 +0800
-+++ Makefile	2014-07-15 21:43:38.083846847 +0800
-@@ -4,13 +4,13 @@
+--- Makefile.orig	2002-09-04 23:41:00 UTC
++++ Makefile
+@@ -4,13 +4,12 @@
  all:	# Do nothing - this is a python script that needs no build
  
  install:
@@ -18,7 +18,6 @@
 +	$(BSD_INSTALL_MAN) ./hb.1.gz $(DESTDIR)${PREFIX}/man/man1
 +	$(BSD_INSTALL_DATA) ./hb.txt $(DESTDIR)${PREFIX}/share/doc/hb
 +	$(BSD_INSTALL_DATA) ./0-StartHere.txt $(DESTDIR)${PREFIX}/share/doc/hb
-+	$(BSD_INSTALL_DATA) ./1-HB-License.txt $(DESTDIR)${PREFIX}/share/doc/hb
 +	$(BSD_INSTALL_DATA) ./2-HowToUse.txt $(DESTDIR)${PREFIX}/share/doc/hb
 +	$(BSD_INSTALL_DATA) ./3-UnderTheHood.txt $(DESTDIR)${PREFIX}/share/doc/hb
 +	$(BSD_INSTALL_DATA) ./4-Limitations-Enhancements.txt $(DESTDIR)${PREFIX}/share/doc/hb

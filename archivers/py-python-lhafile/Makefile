@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	python-lhafile
-PORTVERSION=	0.2.1
+DISTVERSION=	0.2.2
 CATEGORIES=	archivers python
-MASTER_SITES=	http://fengestad.no/python-lhafile/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	lhafile-${DISTVERSION}
 
 MAINTAINER=	cs@innolan.dk
 COMMENT=	LHA(.lzh) file extract interface

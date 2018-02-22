@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	DOCS
 USE_GITHUB=	yes
 GH_ACCOUNT=	julmon
 
-USES=		python:2.6+
+USES=		python
 USE_PYTHON=	autoplist distutils noegginfo concurrent optsuffix
 PYDISTUTILS_INSTALLARGS=	--with-man
 

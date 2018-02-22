@@ -165,6 +165,7 @@
     SUBDIR += elasticsearch5
     SUBDIR += elasticsearch5-search-guard
     SUBDIR += elasticsearch5-x-pack
+    SUBDIR += elasticsearch6
     SUBDIR += elixir-earmark
     SUBDIR += elixir-ex_doc
     SUBDIR += elixir-funnel
@@ -415,6 +416,7 @@
     SUBDIR += libcue
     SUBDIR += libe-book
     SUBDIR += libebml
+    SUBDIR += libepubgen
     SUBDIR += libextractor
     SUBDIR += libexttextcat
     SUBDIR += libflate
@@ -432,6 +434,7 @@
     SUBDIR += libnxml
     SUBDIR += libodfgen01
     SUBDIR += libparsifal
+    SUBDIR += libqxp
     SUBDIR += librevenge
     SUBDIR += libsass
     SUBDIR += libsoldout
@@ -1261,6 +1264,7 @@
     SUBDIR += pure-csv
     SUBDIR += pure-xml
     SUBDIR += py-Chameleon
+    SUBDIR += py-CommonMark
     SUBDIR += py-MarkupSafe
     SUBDIR += py-Tempita
     SUBDIR += py-acora
@@ -1339,6 +1343,7 @@
     SUBDIR += py-pystache
     SUBDIR += py-pystemmer
     SUBDIR += py-python-augeas
+    SUBDIR += py-python-bidi
     SUBDIR += py-python-docx
     SUBDIR += py-python-gettext
     SUBDIR += py-python-slugify
@@ -1461,6 +1466,7 @@
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
     SUBDIR += rubygem-asciidoctor-plantuml
+    SUBDIR += rubygem-asciidoctor-plantuml007
     SUBDIR += rubygem-autoprefixer-rails
     SUBDIR += rubygem-babel-source
     SUBDIR += rubygem-babel-transpiler
@@ -1481,12 +1487,14 @@
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diffy
+    SUBDIR += rubygem-diffy31
     SUBDIR += rubygem-docdiff
     SUBDIR += rubygem-elasticsearch
     SUBDIR += rubygem-elasticsearch-api
     SUBDIR += rubygem-elasticsearch-transport
     SUBDIR += rubygem-emot
     SUBDIR += rubygem-escape_utils
+    SUBDIR += rubygem-escape_utils11
     SUBDIR += rubygem-escape_utils-rails4
     SUBDIR += rubygem-ezamar
     SUBDIR += rubygem-fast_xs
@@ -1496,6 +1504,7 @@
     SUBDIR += rubygem-gemoji
     SUBDIR += rubygem-gherkin
     SUBDIR += rubygem-github-linguist
+    SUBDIR += rubygem-github-linguist47
     SUBDIR += rubygem-github-markup
     SUBDIR += rubygem-gitlab-grit
     SUBDIR += rubygem-gitlab-linguist
@@ -1529,6 +1538,7 @@
     SUBDIR += rubygem-liquid-tag-parser
     SUBDIR += rubygem-loggability
     SUBDIR += rubygem-loofah
+    SUBDIR += rubygem-loofah20
     SUBDIR += rubygem-ltsv
     SUBDIR += rubygem-markaby
     SUBDIR += rubygem-multi_xml
@@ -1567,11 +1577,12 @@
     SUBDIR += rubygem-rubypants
     SUBDIR += rubygem-rugments
     SUBDIR += rubygem-sanitize
+    SUBDIR += rubygem-sanitize20
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-listen
+    SUBDIR += rubygem-sass-rails-rails4
     SUBDIR += rubygem-sass-rails-rails5
     SUBDIR += rubygem-sass-rails-rails50
-    SUBDIR += rubygem-sass-rails5
     SUBDIR += rubygem-sass32
     SUBDIR += rubygem-sass34
     SUBDIR += rubygem-sax-machine
@@ -1585,7 +1596,6 @@
     SUBDIR += rubygem-termcolor
     SUBDIR += rubygem-terminal-table
     SUBDIR += rubygem-text
-    SUBDIR += rubygem-tidy
     SUBDIR += rubygem-tidy_ffi
     SUBDIR += rubygem-toml
     SUBDIR += rubygem-tomlrb
@@ -1595,8 +1605,10 @@
     SUBDIR += rubygem-unf
     SUBDIR += rubygem-unf_ext
     SUBDIR += rubygem-version_sorter
+    SUBDIR += rubygem-version_sorter21
     SUBDIR += rubygem-whatlanguage
     SUBDIR += rubygem-wikicloth
+    SUBDIR += rubygem-wikicloth081
     SUBDIR += rubygem-xml-simple
     SUBDIR += rubygem-ya2yaml
     SUBDIR += rubygem-yard

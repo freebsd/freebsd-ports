@@ -2,6 +2,7 @@
 
 PORTNAME=	pywatchman
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	watchman>=4:sysutils/watchman
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 post-install:

@@ -11,8 +11,13 @@ DISTNAME=	ecofont_vera_sans_regular
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Environmentally friendly, ink saving typeface
 
+LICENSE=	NONE
+
+BROKEN=		unfetchable
+
 USES=		fonts zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	${FONTSDIR}/${ECOFONT}
 

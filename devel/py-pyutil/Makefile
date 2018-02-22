@@ -3,6 +3,7 @@
 
 PORTNAME=	pyutil
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.1:devel/py-simplejson@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zbase32>=1.1.0:converters/zbase32
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-extract:

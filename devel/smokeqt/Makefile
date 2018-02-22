@@ -2,13 +2,13 @@
 
 PORTNAME=	smokeqt
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SMOKE bindings for Qt
 
-LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2 \
+LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2 \
 		libqwt.so:x11-toolkits/qwt5
 
 USES=		cmake:outsource kde:4 pkgconfig tar:xz

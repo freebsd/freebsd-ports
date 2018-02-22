@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	trezor
-PORTVERSION=	0.7.16
+PORTVERSION=	0.9.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mnemonic>=0:security/py-mnemonic@${FLAVOR} \
 
 USES=		python
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
+NO_ARCH=	yes
 
 GH_PROJECT=	python-trezor
 

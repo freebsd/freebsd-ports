@@ -1,7 +1,0 @@
-lib/elixir/lib/sorted_set/ebin/Elixir.Collectable.SortedSet.beam
-lib/elixir/lib/sorted_set/ebin/Elixir.Enumerable.SortedSet.beam
-lib/elixir/lib/sorted_set/ebin/Elixir.Inspect.SortedSet.beam
-lib/elixir/lib/sorted_set/ebin/Elixir.SortedSet.beam
-lib/elixir/lib/sorted_set/ebin/sorted_set.app
-lib/elixir/lib/sorted_set/lib/sorted_set.ex
-%%PORTDOCS%%%%DOCSDIR%%/README.md

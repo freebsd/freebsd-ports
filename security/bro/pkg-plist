@@ -56,6 +56,12 @@ bin/bro-cut
 %%BROKER%%include/broker/util/operators.hh
 %%BROKER%%include/broker/util/optional.hh
 %%BROKER%%include/broker/util/variant.hh
+%%NETMAP%%lib/bro/plugins/Bro_Netmap/COPYING
+%%NETMAP%%lib/bro/plugins/Bro_Netmap/__bro_plugin__
+%%NETMAP%%lib/bro/plugins/Bro_Netmap/broctl/netmap.py
+%%NETMAP%%lib/bro/plugins/Bro_Netmap/lib/Bro-Netmap.%%LCASE_OPSYS%%-%%ARCH%%.so
+%%NETMAP%%lib/bro/plugins/Bro_Netmap/scripts/__load__.bro
+%%NETMAP%%lib/bro/plugins/Bro_Netmap/scripts/init.bro
 %%BROCTL%%lib/broctl/BroControl/__init__.py
 %%BROCTL%%@preunexec rm -f %D/lib/broctl/BroControl/__init__.pyc
 %%BROCTL%%lib/broctl/BroControl/brocmd.py
@@ -780,5 +786,9 @@ man/man8/bro.8.gz
 %%BROCTL%%@dir lib/broctl/plugins
 %%BROCTL%%@dir lib/broctl/BroControl
 %%BROCTL%%@dir lib/broctl
+%%NETMAP%%@dir lib/bro/plugins/Bro_Netmap/scripts
+%%NETMAP%%@dir lib/bro/plugins/Bro_Netmap/lib
+%%NETMAP%%@dir lib/bro/plugins/Bro_Netmap/broctl
+%%NETMAP%%@dir lib/bro/plugins/Bro_Netmap
 @dir lib/bro/plugins
 %%BROCTL%%@postexec su -fm %%BROUSER%% -c '%D/bin/broctl install; rm -f %D/spool/debug.log'

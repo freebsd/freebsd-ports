@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	s3transfer
-PORTVERSION=	0.1.12
+PORTVERSION=	0.1.13
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,8 @@ COMMENT=	Amazon S3 Transfer Manager for Python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.3.0:devel/py-botocore@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.3.0:devel/py-botocore@${FLAVOR} \
+		${PY_FUTURES}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3.3:devel/py-nose@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock@${FLAVOR}
 
@@ -22,15 +23,9 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=2.2.0:devel/py-futures@${FLAVOR}
-.endif
-
 # setup.py test runs integration tests which fail
 # https://github.com/boto/s3transfer/issues/41
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m nose -v tests/unit tests/functional
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

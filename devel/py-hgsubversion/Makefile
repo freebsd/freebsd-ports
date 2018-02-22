@@ -3,6 +3,7 @@
 
 PORTNAME=	hgsubversion
 PORTVERSION=	1.8.6
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ OPTIONS_DEFINE=	SUBVERTPY
 OPTIONS_DEFAULT=SUBVERTPY
 SUBVERTPY_DESC=	Use subvertpy python bindings
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.options.mk>

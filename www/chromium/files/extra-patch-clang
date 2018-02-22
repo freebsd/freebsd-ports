@@ -27,20 +27,6 @@
    if (*ptr == kFinalTlsValue)
      return;  // We've been called enough times.
    ASSERT_LT(kFinalTlsValue, *ptr);
---- base/tracked_objects_unittest.cc.orig   2015-08-22 15:01:51.000000000 -0400
-+++ base/tracked_objects_unittest.cc    2015-09-03 09:20:53.370191000 -0400
-@@ -58,9 +58,9 @@
-     Births* birth = ThreadData::TallyABirthIfActive(location);
-
-     if (ThreadData::status() == ThreadData::DEACTIVATED)
--      EXPECT_EQ(reinterpret_cast<Births*>(NULL), birth);
-+      EXPECT_EQ(static_cast<Births*>(NULL), birth);
-     else
--      EXPECT_NE(reinterpret_cast<Births*>(NULL), birth);
-+      EXPECT_NE(static_cast<Births*>(NULL), birth);
-   }
-
-   // Helper function to verify the most common test expectations.
 --- media/audio/audio_output_proxy_unittest.cc	2015-04-15 00:18:55.000000000 +0200
 +++ media/audio/audio_output_proxy_unittest.cc	2015-04-18 22:02:38.000000000 +0200
 @@ -387,7 +387,7 @@

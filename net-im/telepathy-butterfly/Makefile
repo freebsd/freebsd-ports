@@ -3,7 +3,7 @@
 
 PORTNAME=	telepathy-butterfly
 PORTVERSION=	0.5.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/papyon/__init__.py:net-im/papyon \
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
-USES=		gmake python:2 shebangfix
+USES=		gmake python:2.7 shebangfix
 SHEBANG_FILES=	telepathy-butterfly
 NO_ARCH=	yes
 

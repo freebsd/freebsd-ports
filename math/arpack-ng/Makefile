@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arpack-ng
-PORTVERSION=	3.4.0
-PORTREVISION=	3
+DISTVERSION=	3.5.0
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,10 +11,9 @@ COMMENT?=	Revised Argand library for solving large-scale eigenvalue problems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf:build fortran libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencollab
-
-USES=		autoreconf:build fortran libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-blas="${BLAS}" \
 		--with-lapack="${LAPACK}" \

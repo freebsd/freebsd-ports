@@ -3,20 +3,21 @@
 
 PORTNAME=	gif2png
 PORTVERSION=	2.5.9
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.catb.org/~esr/gif2png/
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Converts GIF images to a PNG format
 
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		python:run
+USES=		localbase:ldflags python:2.7,run shebangfix
+SHEBANG_FILES=	web2png
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME} bin/web2png \
 		man/man1/gif2png.1.gz \

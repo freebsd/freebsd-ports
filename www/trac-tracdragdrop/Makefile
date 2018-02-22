@@ -3,7 +3,7 @@
 
 PORTNAME=	tracdragdrop
 PORTVERSION=	0.12.0.10.${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://distfiles.cse.tw/ \
 		http://trac-hacks.org/changeset/${SVN_REV}/tracdragdropplugin?old_path=/&format=zip&filename=/
@@ -20,7 +20,7 @@ RUN_DEPENDS=	tracd:www/trac
 SVN_REV=	12822
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
-USES=		python:2 zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	kvirc
 PORTVERSION=	4.2.0
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.gmake.de/pub/kvirc/%SUBDIR%/ \
@@ -81,5 +81,10 @@ pre-fetch-PERL-on:
 post-patch:
 	${REINPLACE_CMD} -e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
 		${WRKSRC}/CMakeLists.txt
+	# Fix error: invalid suffix on literal; C++11 requires a space between literal and identifier
+	${REINPLACE_CMD} -e 's|"KVI_OPTIONS_WIDGET_KEYWORDS|" KVI_OPTIONS_WIDGET_KEYWORDS|g' \
+		${WRKSRC}/src/modules/options/OptionsInstanceManager.cpp
+	${REINPLACE_CMD} -e 's|"KVI_PATH_SEPARATOR|" KVI_PATH_SEPARATOR|g' \
+		${WRKSRC}/src/kvirc/kernel/KviApplication_filesystem.cpp
 
 .include <bsd.port.mk>

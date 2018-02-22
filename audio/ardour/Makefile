@@ -13,6 +13,7 @@ COMMENT=	Multichannel digital audio workstation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat
 LIB_DEPENDS=	liblo.so:audio/liblo \
 		liblrdf.so:textproc/liblrdf \
 		libjack.so:audio/jack \
@@ -80,6 +81,34 @@ post-patch:
 		${WRKSRC}/libs/ardour/session.cc \
 		${WRKSRC}/libs/ardour/session_transport.cc \
 		${WRKSRC}/libs/ardour/track.cc
+	@${REINPLACE_CMD} -e '/missing_source = /s,;, != NULL;,' \
+		${WRKSRC}/gtk2_ardour/editor_region_list.cc
+	@${REINPLACE_CMD} -E 's,(graph_gc|layout) == 0,!&,' \
+		${WRKSRC}/gtk2_ardour/fft_graph.cc \
+		${WRKSRC}/gtk2_ardour/panner2d.cc
+	@${REINPLACE_CMD} -e 's,( *bind,(sigc::bind,' \
+		${WRKSRC}/libs/gtkmm2ext/gtk_ui.cc \
+		${WRKSRC}/gtk2_ardour/ardour_ui2.cc \
+		${WRKSRC}/gtk2_ardour/ardour_ui_ed.cc \
+		${WRKSRC}/gtk2_ardour/audio_clock.cc \
+		${WRKSRC}/gtk2_ardour/audio_region_editor.cc \
+		${WRKSRC}/gtk2_ardour/crossfade_edit.cc \
+		${WRKSRC}/gtk2_ardour/editor.cc \
+		${WRKSRC}/gtk2_ardour/editor_audio_import.cc \
+		${WRKSRC}/gtk2_ardour/editor_canvas.cc \
+		${WRKSRC}/gtk2_ardour/editor_markers.cc \
+		${WRKSRC}/gtk2_ardour/editor_ops.cc \
+		${WRKSRC}/gtk2_ardour/editor_selection.cc \
+		${WRKSRC}/gtk2_ardour/editor_tempodisplay.cc \
+		${WRKSRC}/gtk2_ardour/generic_pluginui.cc \
+		${WRKSRC}/gtk2_ardour/io_selector.cc \
+		${WRKSRC}/gtk2_ardour/level_meter.cc \
+		${WRKSRC}/gtk2_ardour/mixer_strip.cc \
+		${WRKSRC}/gtk2_ardour/mixer_ui.cc \
+		${WRKSRC}/gtk2_ardour/option_editor.cc \
+		${WRKSRC}/gtk2_ardour/plugin_ui.cc \
+		${WRKSRC}/gtk2_ardour/route_time_axis.cc \
+		${WRKSRC}/gtk2_ardour/time_axis_view_item.cc
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/ardour2/templates

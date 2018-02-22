@@ -7,7 +7,7 @@ Streaming SIMD Extensions (SSE) 2
 ARM NEON
 GCC vector extensions
 In the remote case in which none of these optimizations are available,
-Graphene will fall back to a naïve scalar implementation
+Graphene will fall back to a naive scalar implementation
 
 Graphene can, optionally, provide types for integrating with GObject
 properties and signals, as well as introspection information for its

@@ -1,4 +1,2 @@
 The ipacctd is intended for IP accounting.  divert(4) and corresponding
 ipfw(8) rules are used for obtaining IP packets.
-
-WWW: ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/ipacctd/

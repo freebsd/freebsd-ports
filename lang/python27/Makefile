@@ -1,10 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	python27
+PORTNAME=	python
 PORTVERSION=	${PYTHON_PORTVERSION}
 PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
+PKGNAMESUFFIX=	27
 DISTNAME=	Python-${PORTVERSION}
 DIST_SUBDIR=	python
 
@@ -13,9 +14,7 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-BROKEN_SSL=	openssl-devel
-
-USES=		cpe ncurses pathfix pkgconfig readline:port ssl tar:xz shebangfix
+USES=		cpe ncurses pathfix pkgconfig readline:port shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -26,9 +25,6 @@ SHEBANG_FILES=	Lib/lib2to3/pgen2/*.py Lib/lib2to3/tests/*.py Lib/lib2to3/tests/d
 		Lib/platform.py Lib/profile.py Lib/pydoc.py Lib/quopri.py Lib/smtpd.py \
 		Lib/smtplib.py Lib/symbol.py Lib/tabnanny.py Lib/timeit.py Lib/trace.py \
 		Lib/uu.py Lib/webbrowser.py
-
-CPE_VENDOR=	python
-CPE_PRODUCT=	${CPE_VENDOR}
 
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV+=		ac_cv_opt_olimit_ok=no OPT=""				# Null out OPT to respect user CFLAGS and remove optimizations
@@ -43,7 +39,7 @@ MAKE_JOBS_UNSAFE=	yes							# Parser/pgen build bug. See Issue: 200622, 201974
 
 PLIST_SUB=		ABI=${ABIFLAGS} \
 			PORTVERSION=${PORTVERSION} \
-			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. http://bugs.python.org/issue19554
+			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. https://bugs.python.org/issue19554
 
 OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC THREADS
 OPTIONS_DEFAULT=	LIBFFI PYMALLOC THREADS UCS4
@@ -64,7 +60,7 @@ LIBFFI_LIB_DEPENDS=	libffi.so:devel/libffi
 
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
-# Upstream Issue: http://bugs.python.org/issue6299
+# Upstream Issue: https://bugs.python.org/issue6299
 NLS_USES=		gettext
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
@@ -81,8 +77,8 @@ UCS4_CONFIGURE_ON=	--enable-unicode=ucs4
 .include "${.CURDIR}/Makefile.version"
 .include <bsd.port.options.mk>
 
-# http://bugs.python.org/issue22521
-# http://bugs.python.org/issue23042
+# https://bugs.python.org/issue22521
+# https://bugs.python.org/issue23042
 .if !${PORT_OPTIONS:MLIBFFI} && ${ARCH} == i386
 BROKEN=	You must use libffi from ports on i386. Enable the LIBFFI option
 .endif
@@ -93,7 +89,7 @@ PLIST_SUB+=	X86_ONLY=""
 PLIST_SUB+=	X86_ONLY="@comment "
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64 || ${ARCH} == powerpc64 || ${ARCH} == mips64
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == mips64 || ${ARCH} == powerpc64 || ${ARCH} == sparc64
 PLIST_SUB+=	32BIT_ONLY="@comment "
 .else
 PLIST_SUB+=	32BIT_ONLY=""
@@ -107,7 +103,7 @@ MAKE_ENV+=	UNAME_m="powerpc64"
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
-# See http://bugs.freebsd.org/115940 and http://bugs.freebsd.org/193650
+# See https://bugs.freebsd.org/115940 and https://bugs.freebsd.org/193650
 .if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
 PLIST_SUB+=	NO_NIS="@comment "
 .else
@@ -118,11 +114,11 @@ post-patch:
 # readline shared library is present on base before FreeBSD 11 - r268461
 # force setup.py ignore base and use readline from ports
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		"s|lib_dirs,\ \'readline\'|[\'${LOCALBASE}/lib\',\ \'.\'],\ \'readline\'|" \
 		${WRKSRC}/setup.py
 .endif
-	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
+	@${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
 		${WRKSRC}/Lib/cgi.py
 	@${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \

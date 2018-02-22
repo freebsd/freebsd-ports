@@ -13,6 +13,9 @@ COMMENT=	MongoDB Legacy C++ Driver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/APACHE-2.0.txt
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	use of undeclared identifier 'BIO_s_file_internal'
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 MAKE_JOBS_UNSAFE=	yes
@@ -28,7 +31,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-cxx-driver
 
-USES=		scons
+USES=		scons ssl
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--cc=${CC} \
 		--cxx=${CXX}

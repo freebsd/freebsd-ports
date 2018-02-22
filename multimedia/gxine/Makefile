@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gxine
-PORTVERSION=	0.5.908
-PORTREVISION=	5
+PORTVERSION=	0.5.910
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/xine/${PORTNAME}/${PORTVERSION}
 
@@ -16,10 +15,10 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libmozjs185.so:lang/spidermonkey185 \
 		libxine.so:multimedia/libxine
 
-USES=		desktop-file-utils gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gtk20
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-hal --with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--without-hal --with-libintl-prefix=${LOCALBASE} --with-gtk3
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -58,6 +57,7 @@ post-patch:
 		's|@MAKE_PNG_TRUE@|#|' ${WRKSRC}/pixmaps/Makefile.in
 
 post-install:
+	${CP} ${WRKSRC}/pixmaps/logo.mpv ${STAGEDIR}${PREFIX}/share/gxine
 .if ${PORT_OPTIONS:MWEBPLUGIN}
 	@${STRIP_CMD} ${STAGEDIR}${WEBPLUGIN_DIR}/${WEBPLUGIN_FILES}
 .endif

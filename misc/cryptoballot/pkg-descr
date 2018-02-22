@@ -1,0 +1,16 @@
+Cryptoballot in an implementation of a cryptographically secure
+online voting system that includes the blind signature algorithm
+allowing secure and reliable anonymous voting.
+
+Features:
+* All votes are anonymous with an option for the voter to mark their
+  ballot as public.
+* All voters can verify that their vote has been counted.
+* All voters can verify that all the votes have been tallied correctly.
+* All voters can verify that the total number of signed ballots matches
+  the number of votes cast.
+* Auditors with access to the voters list can verify the identities of
+  all voters who cast a ballot, but cannot match which ballot belongs
+  to which voter.
+
+WWW: https://cryptoballot.com

@@ -19,6 +19,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxslt.so:textproc/libxslt
 
 BROKEN_powerpc64=	fails to compile: iterator.h: error: invalid abstract return type
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	member access into incomplete type 'DH' (aka 'dh_st')
 
 USE_LDCONFIG=	yes
 USES=		libtool gmake pathfix pkgconfig compiler:c++11-lang ssl

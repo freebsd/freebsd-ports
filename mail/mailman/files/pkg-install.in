@@ -19,18 +19,28 @@ check_rcfile_fix_perms() {
     )
 }
 
-set -e
-case "$2" in
+add_default_virtuals() {
+    cat >>"$1" <<_EOF
 
+# This and the next three lines added by FreeBSD's post-install script
+DEFAULT_EMAIL_HOST="$(hostname -f)"
+DEFAULT_URL_HOST="$(hostname -f)"
+add_virtualhost(DEFAULT_URL_HOST, DEFAULT_EMAIL_HOST)
+
+_EOF
+}
+
+set -e
+MYTMP="$(mktemp -d "${TMPDIR-/tmp}/mminstall.XXXXXXXXXX")"
+trap "rm -rf \"$MYTMP\"" EXIT
+
+case "$2" in
 POST-INSTALL)
   echo "---> Starting post-install script"
   LC_ALL=C
   export LC_ALL
 
-  MYTMP="$(mktemp -d "${TMPDIR-/tmp}/mminstall.XXXXXXXXXX")"
-  trap "rm -rf \"$MYTMP\"" EXIT
-
-  # fix up permissions - this is under investigation; pkg or libarchive
+ # fix up permissions - this is under investigation; pkg or libarchive
   # goof up the group writable and/or setgid bits
   /usr/bin/find "%%MAILMANDIR%%/qfiles" -maxdepth 1 -type d -exec \
     /bin/chmod u+rwx,g+rwsx,o-w "{}" +
@@ -74,6 +84,11 @@ POST-INSTALL)
 
   echo "---> Running update"
 
+  if test -r /var/tmp/last_mailman_version ; then
+	  mkdir -p "%%MAILMANDIR%%/data"
+	  mv -f /var/tmp/last_mailman_version "%%MAILMANDIR%%/data"
+  fi
+
   LC_ALL=C "%%MAILMANDIR%%/bin/update"
 
   echo "---> Checking crontab(5) file for user \"%%USER%%\""
@@ -83,17 +98,18 @@ POST-INSTALL)
       printf '%s\n' "%%USER%%" >> /var/cron/allow
   fi
 
-  if /usr/bin/crontab -u "%%USER%%" -l >"$MYTMP/crontab" 2>&1 ; then
-      if test -s "$MYTMP/crontab"; then
-          echo "---> \"%%USER%%\" already has a crontab.  Not overwriting it"
-          echo "---> Please merge any changes from the standard crontab file"
+  if /usr/bin/crontab -u "%%USER%%" -l >"$MYTMP/crontab" ; then
+      if test -s "$MYTMP/crontab" && ! cmp -s "$MYTMP/crontab" "%%MAILMANDIR%%/cron/crontab.in"; then
+          echo "---> User \"%%USER%%\" already has a non-default crontab."
+	  echo "---> Not overwriting it."
+          echo "---> Please review and merge any changes from the standard crontab file"
           echo "--->     %%MAILMANDIR%%/cron/crontab.in"
       else
           echo "---> Installing crontab(5) file for user \"%%USER%%\""
           /usr/bin/crontab -u "%%USER%%" "%%MAILMANDIR%%/cron/crontab.in"
       fi
   else
-      echo "---> Creating crontab(5) file for user \"%%USER%%\""
+      echo "---> Installing crontab(5) file for user \"%%USER%%\""
       /usr/bin/crontab -u "%%USER%%" "%%MAILMANDIR%%/cron/crontab.in"
   fi
   rm -f "$MYTMP/crontab"
@@ -104,6 +120,14 @@ POST-INSTALL)
     printf '%s\n' "$output" | egrep -v '^Re-run' || :
   else
     echo "---> rcfile sets mailman_fix_perms to no, skipping check_perms"
+  fi
+
+  # check if we need to add our hostname to the configuration:
+  if cmp -s "%%MAILMANDIR%%/Mailman/mm_cfg.py" "%%MAILMANDIR%%/Mailman/mm_cfg.py.dist" \
+    || test "{'localhost': 'localhost'}" = "$(PYTHONPATH="%%MAILMANDIR%%/bin" "%%PYTHON_CMD%%" -c 'import paths;from Mailman import mm_cfg;_x=dict(mm_cfg.VIRTUAL_HOSTS);print repr(_x);')"
+  then
+    echo "---> adding default host configuration to %%MAILMANDIR%%/Mailman/mm_cfg.py."
+    add_default_virtuals "%%MAILMANDIR%%/Mailman/mm_cfg.py"
   fi
 
   echo "---> Running assorted other checks"
@@ -121,5 +145,68 @@ POST-INSTALL)
 	  echo ""
       fi
   fi
+  ;;
+
+  ####### DEINSTALLATION PART #######
+
+DEINSTALL)
+  echo "---> Starting deinstall script"
+
+  if /usr/bin/crontab -u "%%USER%%" -l | \
+      /usr/bin/diff -B -b - "%%MAILMANDIR%%/cron/crontab.in" >/dev/null 2>&1 ; then
+      echo "---> Zeroing unchanged crontab for \"%%USER%%\""
+      /usr/bin/crontab -u "%%USER%%" -r </dev/null
+      if [ -e /var/cron/allow ]; then
+         grep -v "^%%USER%%$" /var/cron/allow > /var/cron/allow.new$$
+         mv /var/cron/allow.new$$ /var/cron/allow
+      fi
+  else
+      echo "---> Crontab for \"%%USER%%\" modified, not removed: please deinstall"
+      echo "---> it manually if you no longer wish to use Mailman. E.g.:"
+      echo "--->     /usr/bin/crontab -u \"%%USER%%\" -r"
+  fi
+
+  echo "---> Preserving the \"last_mailman_version\" file"
+  /bin/mv -f "%%MAILMANDIR%%/data/last_mailman_version" /var/tmp/ || :
+
+  # If the errorlog is the only existing logfile, delete it.  (If Mailman's
+  # qrunner had not been running, then the process of trying to stop the
+  # qrunner (above) will cause the errorlog to be written to.  Hence, even if
+  # the Mailman port/package is installed and immediately deinstalled, the
+  # errorlog will exist.)
+  if [ "`echo %%MAILMANDIR%%/logs/*`" = "%%MAILMANDIR%%/logs/error" ]; then
+    echo "---> Deleting errorlog (It is the only existing logfile.)"
+    /bin/rm -f "%%MAILMANDIR%%/logs/error"
+  fi
+
+  # attempt removal, but do not care if it is not empty
+  /bin/rmdir "%%MAILMANDIR%%/archives/private/" 2>/dev/null || :
+  
+  # if configuration is unchanged, remove it explicitly,
+  # @sample wouldn't work because we added our hostname
+  cat "%%MAILMANDIR%%/Mailman/mm_cfg.py.dist" >"$MYTMP/mm_cfg.tmp"
+  add_default_virtuals "$MYTMP/mm_cfg.tmp"
+  if cmp -s "%%MAILMANDIR%%/Mailman/mm_cfg.py" "$MYTMP/mm_cfg.tmp" ; then
+    echo "---> Removing default configuration file."
+    rm -f "%%MAILMANDIR%%/Mailman/mm_cfg.py"
+  fi
+  ;;
+
+POST-DEINSTALL)
+  echo "---> Starting post-deinstall script"
+
+  set -- "%%MAILMANDIR%%/lists"/*
+  if [ $# -gt 1 ] || [ "x$1" != "x%%MAILMANDIR%%/lists/*" ] ; then
+    echo '---> %%MAILMANDIR%%/lists is not empty - this installation may have active lists! Listing max. 10:'
+    find "%%MAILMANDIR%%/lists" -mindepth 1 -maxdepth 1 | head -n 10 || :
+    echo "---> Restoring \"last_mailman_version\" file"
+    if test -d "%%MAILMANDIR%%" ; then 
+	/bin/mkdir -p "%%MAILMANDIR%%/data" && \
+        /bin/mv -f /var/tmp/last_mailman_version "%%MAILMANDIR%%/data/"
+    else
+	/bin/rm -f /var/tmp/last_mailman_version
+    fi
+  fi
+
   ;;
 esac

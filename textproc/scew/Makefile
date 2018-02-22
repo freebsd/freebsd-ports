@@ -2,39 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	scew
-PORTVERSION=	1.1.7
-PORTREVISION=	3
+PORTVERSION=	1.1.9
 CATEGORIES=	textproc
-MASTER_SITES=	SAVANNAH/${PORTNAME}/
+MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple C Expat Wrapper
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake libtool pathfix pkgconfig
+OPTIONS_DEFINE=	TEST
+.if defined(MAINTAINER_MODE)
+OPTIONS_DEFAULT=TEST
+.endif
+
+USES=		gmake libtool localbase pathfix pkgconfig
+CONFIGURE_ARGS=	enable_tests=yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-SCEW_EXAMPLES=	print stream write
+TEST_LIB_DEPENDS=	libcheck.so:devel/check
+TEST_VARS=		TEST_TARGET=check TEST_WRKSRC=${WRKSRC}/tests
 
 post-install:
-.for ex in ${SCEW_EXAMPLES}
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/examples/${PORTNAME}_${ex}/${PORTNAME}_${ex} \
-		${STAGEDIR}${PREFIX}/bin
-.endfor
-
-.ifdef MAINTAINER_MODE
-LIB_DEPENDS+=	libcheck.so:devel/check
-regression-test: build
-	${MAKE_CMD} -C ${WRKSRC}/tests check
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/scew_print/scew_print ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/scew_stream/scew_stream ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/scew_write/scew_write ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

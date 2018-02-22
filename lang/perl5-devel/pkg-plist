@@ -518,6 +518,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/EventFacet/Meta.pm
 %%PRIV_LIB%%/Test2/EventFacet/Parent.pm
 %%PRIV_LIB%%/Test2/EventFacet/Plan.pm
+%%PRIV_LIB%%/Test2/EventFacet/Render.pm
 %%PRIV_LIB%%/Test2/EventFacet/Trace.pm
 %%PRIV_LIB%%/Test2/Formatter.pm
 %%PRIV_LIB%%/Test2/Formatter/TAP.pm
@@ -866,6 +867,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/Scalar/Util.pm
 %%ARCH_LIB%%/Socket.pm
 %%ARCH_LIB%%/Storable.pm
+%%ARCH_LIB%%/Storable/Limit.pm
 %%ARCH_LIB%%/Sub/Util.pm
 %%ARCH_LIB%%/Sys/Hostname.pm
 %%ARCH_LIB%%/Sys/Syslog.pm
@@ -1633,6 +1635,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::EventFacet::Meta.3.gz
 %%MAN3%%/Test2::EventFacet::Parent.3.gz
 %%MAN3%%/Test2::EventFacet::Plan.3.gz
+%%MAN3%%/Test2::EventFacet::Render.3.gz
 %%MAN3%%/Test2::EventFacet::Trace.3.gz
 %%MAN3%%/Test2::Formatter.3.gz
 %%MAN3%%/Test2::Formatter::TAP.3.gz

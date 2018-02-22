@@ -16,7 +16,7 @@ COMMENT=	Physically based and unbiased rendering system
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
+LIB_DEPENDS=	${PY_BOOST} \
 		libfftw3.so:math/fftw3 \
 		libOpenImageIO.so:graphics/openimageio
 .if ${DISTVERSION} != 1.4

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dist-Zilla
-PORTVERSION=	6.010
+PORTVERSION=	6.011
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-App-Cmd>=0.330:devel/p5-App-Cmd \
+		p5-Archive-Tar-Wrapper>=0.15:archivers/p5-Archive-Tar-Wrapper \
 		p5-CPAN-Uploader>=0.103004:devel/p5-CPAN-Uploader \
 		p5-Class-Load>=0.17:devel/p5-Class-Load \
 		p5-Config-MVP>=2.200010:devel/p5-Config-MVP \
@@ -48,6 +49,7 @@ BUILD_DEPENDS=	p5-App-Cmd>=0.330:devel/p5-App-Cmd \
 		p5-Sub-Exporter-ForMethods>=0:devel/p5-Sub-Exporter-ForMethods \
 		p5-Term-Encoding>=0:devel/p5-Term-Encoding \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		p5-Term-UI>=0:devel/p5-Term-UI \
 		p5-Text-Glob>=0.08:textproc/p5-Text-Glob \
 		p5-Text-Template>=0:textproc/p5-Text-Template \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \

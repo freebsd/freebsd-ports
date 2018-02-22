@@ -1,4 +1,4 @@
---- src/Standard/Standard_CLocaleSentry.hxx.orig	2016-11-25 09:52:27 UTC
+--- src/Standard/Standard_CLocaleSentry.hxx.orig	2017-08-30 13:28:31 UTC
 +++ src/Standard/Standard_CLocaleSentry.hxx
 @@ -25,7 +25,7 @@
    //! and become part of POSIX since '2008.

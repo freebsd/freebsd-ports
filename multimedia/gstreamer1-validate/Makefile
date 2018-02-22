@@ -3,6 +3,7 @@
 
 PORTNAME=	gstreamer1-validate
 PORTVERSION=	1.12.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-validate/
 DISTNAME=	gst-validate-${PORTVERSION}
@@ -13,7 +14,8 @@ COMMENT=	Gstreamer element validation suite
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
 USES=		gettext-runtime gmake gnome libtool pathfix \
-		pkgconfig python:2 tar:xz
+		pkgconfig python:2.7 shebangfix tar:xz
+SHEBANG_FILES=	tools/gst-validate-launcher.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build

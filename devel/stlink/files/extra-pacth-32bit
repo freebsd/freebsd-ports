@@ -1,0 +1,18 @@
+--- src/common.c.orig	2018-02-19 15:59:51.068865000 +0300
++++ src/common.c	2018-02-19 16:00:23.483652000 +0300
+@@ -1032,13 +1032,13 @@
+         goto on_error;
+     }
+ 
+-    mf->base = (uint8_t*) mmap(NULL, st.st_size, PROT_READ, MAP_SHARED, fd, 0);
++    mf->base = (uint8_t*) mmap(NULL, (size_t)st.st_size, PROT_READ, MAP_SHARED, fd, 0);
+     if (mf->base == MAP_FAILED) {
+         fprintf(stderr, "mmap() == MAP_FAILED\n");
+         goto on_error;
+     }
+ 
+-    mf->len = st.st_size;
++    mf->len = (size_t)st.st_size;
+ 
+     /* success */
+     error = 0;

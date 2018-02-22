@@ -45,6 +45,7 @@ MINIMAL_CONFIGURE_ON=	--with-driver=dvico
 DEBUG_CONFIGURE_ENABLE=	debug
 
 SMODE2_LIB_DEPENDS=	libvga.so:graphics/svgalib
+SMODE2_PLIST_FILES=	bin/smode2
 
 UARTLIRC_RUN_DEPENDS=	uartlirc>=0.3:comms/uartlirc
 

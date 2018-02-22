@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_DNS2
-PORTVERSION=	1.4.3
+DISTVERSION=	1.4.4
 CATEGORIES=	dns net pear
 
 MAINTAINER=	joneum@FreeBSD.org

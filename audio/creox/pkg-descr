@@ -8,4 +8,4 @@ As Creox is a JACK application, the output sound can be routed to the
 other JACK-aware applications, and the audio input can be taken as the
 output from the other JACK client.
 
-WWW: http://stacktrace.dk/project/creox-4/
+WWW: https://stacktrace.dk/project/creox-4/

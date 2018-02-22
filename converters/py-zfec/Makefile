@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zfec
-PORTVERSION=	1.4.24
-PORTREVISION=	1
+DISTVERSION=	1.5.2
 CATEGORIES=	converters python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,25 +13,25 @@ COMMENT=	Fast erasure codec for Python
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
-BUILD_DEPENDS=	darcsver:devel/py-darcsver \
-		unsort:devel/py-pyutil
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0:devel/py-argparse@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyutil>=0:devel/py-pyutil@${FLAVOR}
 
 USES=		python:2.7
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/doc|${DOCSDIR}|g ; \
-		s#(doc_loc, data_fnames)##g' ${WRKSRC}/setup.py
+PORTDOCS=	COPYING.TGPPL.rst README.rst TODO ChangeLog
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/zfec/_fec.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for DOC in COPYING.GPL COPYING.TGPPL.html README.rst TODO changelog
-	${INSTALL_DATA} ${WRKSRC}/${DOC} ${STAGEDIR}${DOCSDIR}
+.for DOC in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${DOC} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
 .include <bsd.port.mk>

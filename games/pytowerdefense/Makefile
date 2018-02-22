@@ -3,7 +3,7 @@
 
 PORTNAME=	pytowerdefense
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PyTowerDefense0.5/Source%20%28Python%202.5%20or%202.6%20and%20Pygame%29/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python:2 shebangfix zip
+USES=		python:2.7 shebangfix zip
 SHEBANG_FILES=	pyconsole.py
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes

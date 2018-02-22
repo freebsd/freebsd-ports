@@ -15,6 +15,8 @@ COMMENT=	Backup software to synchronize files and folders
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/include/zenxml/xml.h:textproc/zenxml
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libnotify.so:devel/libnotify

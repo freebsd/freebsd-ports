@@ -21,3 +21,13 @@
  		window_icons.push_back (icon);
  	}
  	if (!window_icons.empty()) {
+@@ -1862,8 +1862,7 @@ Editor::add_region_context_items (AudioStreamView* sv,
+ 		   become selected.
+ 		*/
+ 
+-		region_menu->signal_map_event().connect (
+-			bind (
++		region_menu->signal_map_event().connect ( bind (
+ 				mem_fun(*this, &Editor::set_selected_regionview_from_map_event), 
+ 				sv, 
+ 				boost::weak_ptr<Region>(region)

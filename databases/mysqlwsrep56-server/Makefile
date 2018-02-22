@@ -13,6 +13,9 @@ COMMENT=	MySQL database enhanced with Galera replication (server package)
 
 LICENSE=	GPLv2
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type 'struct dh_st'
+
 RUN_DEPENDS=	bash:shells/bash \
 		lsof:sysutils/lsof \
 		netcat:net/netcat \

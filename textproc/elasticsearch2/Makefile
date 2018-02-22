@@ -13,7 +13,7 @@ COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
 
-CONFLICTS=	elasticsearch-[0-9]* elasticsearch5-[0-9]*
+CONFLICTS=	elasticsearch-[0-9]* elasticsearch5-[0-9]* elasticsearch6-[0-9]*
 
 USES=		cpe
 NO_ARCH=	yes

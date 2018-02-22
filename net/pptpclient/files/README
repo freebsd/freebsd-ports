@@ -27,7 +27,7 @@ Kill it with ^C when you're done.
 If you want to access the remote system from other hosts on your LAN,
 be sure to turn on IP forwarding on the PPTP client machine.
 
-John Polstra <jdp@freebsd.org>
+John Polstra <jdp@FreeBSD.org>
 
 Starting as a service:
 
@@ -38,4 +38,4 @@ Starting as a service:
 
 NB: LABEL can be omitted if you used "default" for LABEL in ppp.conf(5).
 
-Devin Teske <dteske@freebsd.org>
+Devin Teske <dteske@FreeBSD.org>

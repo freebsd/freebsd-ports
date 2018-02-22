@@ -1,10 +1,12 @@
---- Gemfile.orig	2018-01-24 12:29:46 UTC
+--- Gemfile.orig	2018-01-29 00:12:36 UTC
 +++ Gemfile
-@@ -11,11 +11,11 @@ gem 'uglifier', '~> 3.2'
+@@ -10,12 +10,12 @@ gem 'rails', '~> 5.1.4'
+ gem 'uglifier', '~> 3.2'
  
  gem 'hamlit-rails', '~> 0.2'
- gem 'pg', '~> 0.20'
+-gem 'pg', '~> 0.20'
 -gem 'pghero', '~> 1.7'
++gem 'pg', '>= 0.20'
 +gem 'pghero', '~> 2.0'
  gem 'dotenv-rails', '~> 2.2'
  

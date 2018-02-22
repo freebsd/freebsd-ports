@@ -137,6 +137,7 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/tkcon.tcl
 %%DATADIR%%/wrapper.tcl
 %%DATADIR%%/xchelp.tcl
+%%DATADIR%%/xcircdnull
 %%DATADIR%%/xcircexec
 %%DATADIR%%/xcircps2.pro
 %%DATADIR%%/xcircuit.so

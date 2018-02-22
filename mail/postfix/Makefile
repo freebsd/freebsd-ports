@@ -2,7 +2,8 @@
 # $FreeBSD: head/mail/postfix/Makefile 430486 2017-01-03 17:14:09Z ohauer $
 
 PORTNAME=	postfix
-PORTVERSION=	3.2.5
+#PORTVERSION=	3.3.0
+DISTVERSION=	3.3.0-RC1
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
@@ -24,7 +25,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_NAME_IPL10=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_PERMS_IPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-PORTSCOUT=	limit:^3\.2\.
+PORTSCOUT=	limit:^3\.3\.
 
 CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
 		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* \

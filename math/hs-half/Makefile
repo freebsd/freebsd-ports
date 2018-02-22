@@ -2,6 +2,7 @@
 
 PORTNAME=	half
 PORTVERSION=	0.2.2.3
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -19,6 +19,8 @@ GH_TUPLE=	rust-lang:rust:282fa87 \
 		rust-lang:rust-installer:4f99485:rust_installer/src/rust-installer
 
 BROKEN=		needs to be adapted after changes in lang/rust
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-03-19
 
 CONFLICTS_BUILD=	rust # see FIXME in `pre-fetch` in lang/rust/Makefile
 CONFLICTS_INSTALL=	rust
@@ -30,13 +32,5 @@ RUST_BOOTSTRAP_VERSION=		beta
 
 CARGO_BOOTSTRAP_DIR=		bfee18f73287687c543bda8c35e4e33808792715
 CARGO_BOOTSTRAP_VERSION=	nightly
-
-PORT_LLVM_EXTRACT_ONLY_OFF=	${DISTFILE_llvm}
-PORT_LLVM_GH_TUPLE_OFF=		rust-lang:llvm:ceb177e:llvm
-PORT_LLVM_VARS_OFF=		NOPRECIOUSMAKEVARS=1 # ARCH
-
-post-extract-PORT_LLVM-off:
-	@(${RMDIR} ${WRKSRC}/src/llvm && \
-	  ${MV} ${WRKSRC_llvm} ${WRKSRC}/src/llvm)
 
 .include "${MASTERDIR}/Makefile"

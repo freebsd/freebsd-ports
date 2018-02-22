@@ -2,6 +2,7 @@
 
 PORTNAME=	ufl
 PORTVERSION=	${MMVERSION}0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${MMVERSION}.x/${MMVERSION}.0/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Unified Form Language for finite element discretizations
 
 LICENSE=	LGPL3
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 MMVERSION=	1.2

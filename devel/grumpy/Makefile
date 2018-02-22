@@ -7,14 +7,16 @@ CATEGORIES=	devel
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Python to Go source code transcompiler and runtime
 
-BUILD_DEPENDS=	go:lang/go python:lang/python
+BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_TAGNAME=	348f038
 
-USES=		gmake python
+USES=		gmake python:2.7 shebangfix
+SHEBANG_FILES=	tools/benchcmp tools/coverparse tools/diffrange tools/grumpc
+BINARY_ALIAS=	python=${PYTHON_CMD}
 
 .include <bsd.port.options.mk>
 

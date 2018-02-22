@@ -18,6 +18,7 @@ bin/mysql_embedded
 bin/mysql_fix_extensions
 bin/mysql_install_db
 %%ROCKSDB%%bin/mysql_ldb
+%%ROCKSDB%%bin/myrocks_hotbackup
 bin/mysql_plugin
 bin/mysql_secure_installation
 bin/mysql_setpermission
@@ -157,9 +158,5 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/mysqld_multi.server
 %%DATADIR%%/wsrep.cnf
 %%DATADIR%%/wsrep_notify
-%%MROONGA%%%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%MROONGA%%%%PORTDOCS%%%%DOCSDIR%%/EXCEPTIONS-CLIENT
-%%MROONGA%%%%PORTDOCS%%%%DOCSDIR%%/INSTALL-BINARY
-%%MROONGA%%%%PORTDOCS%%%%DOCSDIR%%/README-wsrep
 %%MROONGA%%share/groonga-normalizer-mysql/README.md
 %%MROONGA%%share/groonga/README.md

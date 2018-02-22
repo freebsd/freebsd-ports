@@ -2,7 +2,7 @@
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:tl}
 PORTVERSION=	0.7.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www devel graphics python
 MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
@@ -18,7 +18,7 @@ RUN_DEPENDS=	urwfonts>0:x11-fonts/urwfonts \
 		dot:graphics/graphviz \
 		tracd:www/trac
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	graphviz
 NO_ARCH=	yes

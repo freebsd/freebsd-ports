@@ -5,7 +5,7 @@ PORTVERSION=	0.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://bitbucket.org/agalanin/fuse-zip/downloads/
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE filesystem to mount ZIP archives with write support
 
 LICENSE=	LGPL3

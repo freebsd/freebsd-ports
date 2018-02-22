@@ -33,9 +33,6 @@ READLINE_USES=			readline
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} != base
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

@@ -22,7 +22,7 @@ GH_ACCOUNT=	mamedev
 GH_PROJECT=	mame				# explicit (master port)
 GH_TAGNAME=	mame${PORTVERSION:S/.//}
 
-USES=		compiler:c11 gmake jpeg pkgconfig python:2,build shebangfix
+USES=		compiler:c11 gmake jpeg pkgconfig python:2.7,build shebangfix
 SHEBANG_FILES=	src/devices/cpu/m6502/m6502make.py \
 		src/devices/cpu/m6809/m6809make.py \
 		src/devices/cpu/mcs96/mcs96make.py \

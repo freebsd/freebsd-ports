@@ -1,0 +1,11 @@
+--- configure.orig	2018-02-11 23:00:45 UTC
++++ configure
+@@ -2920,7 +2920,7 @@ $as_echo "$as_me: Using localstatedir $L
+ 
+ 
+ 
+-    PYTHON_CANDIDATES="python python2.2 python2.1 python2.0 python2 \
++    PYTHON_CANDIDATES="python python2.7 python2.2 python2.1 python2.0 python2 \
+                      python1.6 python1.5"
+ 
+      { $as_echo "$as_me:${as_lineno-$LINENO}: Looking for Python version >= 2.5" >&5
