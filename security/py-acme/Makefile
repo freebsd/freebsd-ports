@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme
-PORTVERSION=	0.21.1
+PORTVERSION=	${ACME_VERSION}
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -33,4 +33,5 @@ NO_ARCH=	yes
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
+.include "version.mk"
 .include <bsd.port.mk>
