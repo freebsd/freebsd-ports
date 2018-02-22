@@ -6,7 +6,7 @@ PORTVERSION=	0.34
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	Gtk client and libraries for SPICE remote desktop servers
 
 LICENSE=	GPLv2
