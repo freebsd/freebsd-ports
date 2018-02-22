@@ -1,7 +1,8 @@
 bin/akmos
+%%BENCH%%bin/akmos_bench
 include/akmos.h
 lib/libakmos.a
 lib/libakmos.so
-lib/libakmos.so.5
-lib/libakmos.so.0.5
+lib/libakmos.so.7
+lib/libakmos.so.0.7
 man/man1/akmos.1.gz
