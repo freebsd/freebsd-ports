@@ -1,0 +1,8 @@
+Luacheck is a static analyzer and a linter for Lua. Luacheck detects various
+issues such as usage of undefined global variables, unused variables and values,
+accessing uninitialized variables, unreachable code and more.
+
+Luacheck supports checking Lua files using syntax of Lua 5.1, Lua 5.2, Lua 5.3
+and LuaJIT.
+
+WWW: https://github.com/mpeterv/luacheck
