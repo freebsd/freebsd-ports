@@ -1,5 +1,5 @@
-TIMESTAMP = 1503118320
-SHA256 (gmt-4.5.16-src.tar.bz2) = 4ef6a55605821c3569279a7088586dfdcf1e779dd01b4c957db096cc60fe959d
-SIZE (gmt-4.5.16-src.tar.bz2) = 39440470
+TIMESTAMP = 1518154044
+SHA256 (gmt-4.5.17-src.tar.bz2) = d69c4e2075f16fb7c153ba77429a7b60e45c44583ebefd7aae63ae05439d1d41
+SIZE (gmt-4.5.17-src.tar.bz2) = 39793235
 SHA256 (gshhg-gmt-2.3.7.tar.gz) = 9bb1a956fca0718c083bef842e625797535a00ce81f175df08b042c2a92cfe7f
 SIZE (gshhg-gmt-2.3.7.tar.gz) = 57052180

@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gmt
-PORTVERSION=	4.5.16
+DISTVERSION=	4.5.17
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.geologi.uio.no/pub/%SUBDIR%/ \
@@ -18,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/legacy
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${GSHHG_DISTNAME}.tar.gz:gshhg
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Generic Mapping Tools - data processing and display software package
 
 LICENSE=	GPLv2 LGPL3
@@ -86,20 +85,20 @@ STRIP_LIBS=	libgmt.so.4 libgmtps.so.4 libpsl.so.4
 GSHHG_DISTNAME=	gshhg-gmt-2.3.7
 
 pre-configure:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} AUTOHEADER="${TRUE}" \
-		${AUTORECONF} -f -i)
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} AUTOHEADER="${TRUE}" \
+		${AUTORECONF} -f -i
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/coast
-	(cd ${WRKDIR}/${GSHHG_DISTNAME} && ${INSTALL_DATA} README.TXT *.nc \
-		${STAGEDIR}${DATADIR}/coast)
+	cd ${WRKDIR}/${GSHHG_DISTNAME} && ${INSTALL_DATA} README.TXT *.nc \
+		${STAGEDIR}${DATADIR}/coast
 .for i in ${STRIP_BINS}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 
 post-install-X11-on:
-	(cd ${WRKSRC}/src/xgrid && ${INSTALL_PROGRAM} xgridedit \
-		${STAGEDIR}${PREFIX}/bin)
+	cd ${WRKSRC}/src/xgrid && ${INSTALL_PROGRAM} xgridedit \
+		${STAGEDIR}${PREFIX}/bin
 
 post-install-SHARED-on:
 .for i in ${STRIP_LIBS}
