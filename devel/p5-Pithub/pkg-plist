@@ -15,6 +15,7 @@
 %%SITE_PERL%%/Pithub/Issues/Events.pm
 %%SITE_PERL%%/Pithub/Issues/Labels.pm
 %%SITE_PERL%%/Pithub/Issues/Milestones.pm
+%%SITE_PERL%%/Pithub/Markdown.pm
 %%SITE_PERL%%/Pithub/Orgs.pm
 %%SITE_PERL%%/Pithub/Orgs/Members.pm
 %%SITE_PERL%%/Pithub/Orgs/Teams.pm
@@ -59,6 +60,7 @@
 %%PERL5_MAN3%%/Pithub::Issues::Events.3.gz
 %%PERL5_MAN3%%/Pithub::Issues::Labels.3.gz
 %%PERL5_MAN3%%/Pithub::Issues::Milestones.3.gz
+%%PERL5_MAN3%%/Pithub::Markdown.3.gz
 %%PERL5_MAN3%%/Pithub::Orgs.3.gz
 %%PERL5_MAN3%%/Pithub::Orgs::Members.3.gz
 %%PERL5_MAN3%%/Pithub::Orgs::Teams.3.gz
