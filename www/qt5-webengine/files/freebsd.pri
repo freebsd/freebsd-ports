@@ -7,8 +7,8 @@ gn_args +=   disable_nacl=true           \
              enable_webrtc=true   \
              enable_hidpi=true      \
              use_dbus=true           \
-             enable_plugins=false	\
-             enable_widevine=false
+             enable_plugins=true	\
+             enable_widevine=true
 
 # Once the port works better, we can think about readding the diverse `use_system_<foo>`
 # for bundled libraries.
