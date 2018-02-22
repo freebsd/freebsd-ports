@@ -22,7 +22,7 @@ BUILD_DEPENDS=	lazbuild:editors/lazarus \
 PORTDOCS=	*
 
 USES=		dos2unix desktop-file-utils
-USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-registry \
+USE_FPC=	cairo chm fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11 regexpr
 USE_XORG=	x11
 DOS2UNIX_FILES=	src/dmhelpmanager.pas
