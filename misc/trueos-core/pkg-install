@@ -16,6 +16,6 @@ if [ $? -eq 0 ] ; then
 fi
 
 # Run the service validation routine to ensure the system services are sane
-${PREFIX}/share/trueos/scripts/validate-services.sh ${PREFIX}/etc/trueos/required-services-server ${PREFIX}/etc/trueos/recommended-services-server
+${PREFIX}/share/trueos/scripts/validate-services.sh ${PREFIX}/etc/trueos/required-services-core ${PREFIX}/etc/trueos/recommended-services-core
 
 exit 0

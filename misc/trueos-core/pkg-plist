@@ -1,0 +1,19 @@
+bin/disable-tor-mode
+bin/enable-tor-mode
+bin/migrate_rc_openrc
+bin/restamp-grub
+bin/trueos-mount
+bin/trueos-unmount
+bin/warden-to-iocage
+etc/devd/automount.conf
+etc/trueos/required-services-core
+etc/trueos/recommended-services-core
+share/trueos/scripts/mkzfsdir.sh
+share/trueos/scripts/reset-firewall
+share/trueos/scripts/reset-firewall-tor
+share/trueos/scripts/rmzfsdir.sh
+share/trueos/scripts/sys-init.sh
+share/trueos/scripts/validate-services.sh
+/boot/brand-trueos.4th
+/boot/logo-trueos.4th
+@sample etc/fonts/local.conf etc/fonts/local.conf.trueos

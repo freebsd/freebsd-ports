@@ -1,5 +1,5 @@
 #!/bin/sh
-# Script to install preload.conf
+# Script to do any post-install system changes
 
 PREFIX=${PKG_PREFIX-/usr/local}
 
@@ -15,153 +15,11 @@ if [ $? -eq 0 ] ; then
    exit 0
 fi
 
-# Copy over customizations for TrueOS
-install -m 644 ${PREFIX}/share/trueos/conf/rc.conf.desktop /etc/rc.conf.trueos
-install -m 644 ${PREFIX}/share/trueos/conf/brand-trueos.4th /boot/brand-trueos.4th
-install -m 755 ${PREFIX}/share/trueos/desktop-defaults/usr/local/etc/init.d/trueosinit /usr/local/etc/init.d/trueosinit
+#Overwrite the Linux printer test page with one
+#  from the original CUPS 1.3 release from Apple (generic test images)
+cp ${PREFIX}/share/cups/data/default-testpage.orig.pdf ${PREFIX}/share/cups/data/default-testpage.pdf
 
-if [ ! -e "${PREFIX}/etc/trueos.conf" ] ; then
-  # Do the first-time setup
-  echo "Doing first-time bootstrap"
-  tar cvf - -C ${PREFIX}/share/trueos/desktop-defaults/ . 2>/dev/null | tar xvpf - -C / 2>/dev/null
-fi
-
-# Copy over some defaults on upgrade
-cp ${PREFIX}/share/trueos/desktop-defaults/etc/devfs.rules /etc/devfs.rules
-
-# Enable the OpenRC services
-
-if [ ! -e "/var/.openrc-migrate-1" ] ; then
-  /sbin/rc-update add ipfw boot
-  /sbin/rc-update add devd boot
-  /sbin/rc-update add devfs boot
-  /sbin/rc-update add routing boot
-  /sbin/rc-update add automount default
-  /sbin/rc-update add statd default
-  /sbin/rc-update add lockd default
-  /sbin/rc-update add rpcbind default
-  /sbin/rc-update add cupsd default
-  /sbin/rc-update add cups_browsed default
-  /sbin/rc-update delete dhcpcd default
-  /sbin/rc-update delete wpa_supplicant default
-  /sbin/rc-update add openntpd default
-  /sbin/rc-update add pcdm default
-  /sbin/rc-update add sysadm default
-  /sbin/rc-update add dbus default
-  /sbin/rc-update add hald default
-  /sbin/rc-update add trueosinit default
-  /sbin/rc-update add moused default
-fi
-touch /var/.openrc-migrate-1
-
-if [ ! -e "/var/.openrc-migrate-2" ] ; then
-  /sbin/rc-update add bsdstats default
-  /sbin/rc-update add automountd default
-  /sbin/rc-update add autounmountd default
-fi
-touch /var/.openrc-migrate-2
-
-if [ ! -e "/var/.openrc-migrate-3" ] ; then
-  if [ -e "/etc/conf.d/modules" ] ; then
-    cat /etc/conf.d/modules | grep -v "modules=" > /etc/conf.d/modules.new
-    mv /etc/conf.d/modules.new /etc/conf.d/modules
-    chmod 755 /etc/conf.d/modules
-  fi
-fi
-touch /var/.openrc-migrate-3
-
-if [ ! -e "/var/.openrc-migrate-4" ] ; then
-  /sbin/rc-update add sndiod default
-fi
-touch /var/.openrc-migrate-4
-
-if [ ! -e "/var/.openrc-migrate-5" ] ; then
-  /sbin/rc-update add mountlate default
-fi
-touch /var/.openrc-migrate-5
-
-if [ ! -e "/var/.openrc-migrate-6" ] ; then
-  /usr/sbin/sysrc -f /etc/rc.conf webcamd_enable=YES
-fi
-touch /var/.openrc-migrate-6
-
-if [ ! -e "/var/.openrc-migrate-7" ] ; then
-  /usr/sbin/sysrc -f /etc/rc.conf kldload_i915-="i915kms"
-fi
-touch /var/.openrc-migrate-7
-
-if [ ! -e "/var/.openrc-migrate-8" ] ; then
-  /usr/sbin/sysrc -f /etc/rc.conf kld_list-="i915kms"
-fi
-touch /var/.openrc-migrate-8
-
-if [ ! -e "/var/.openrc-migrate-9" ] ; then
-  /usr/sbin/sysrc -f /etc/rc.conf kldload_i915kms-="i915kms"
-  /sbin/rc-update add trueosinit default
-fi
-touch /var/.openrc-migrate-9
-
-if [ ! -e "/var/.openrc-migrate-10" ] ; then
-  cat /etc/rc.conf | grep -q "i915kms"
-  if [ $? -eq 0 ] ; then
-    cp /etc/rc.conf /etc/rc.conf.preUpgrade
-    cat /etc/rc.conf | grep -v "i915kms" > /etc/rc.conf.$$
-    mv /etc/rc.conf.$$ /etc/rc.conf
-  fi
-fi
-touch /var/.openrc-migrate-10
-
-if [ ! -e "/var/.openrc-migrate-11" ] ; then
-  /sbin/rc-update add avahi-daemon default
-  /sbin/rc-update add avahi-dnsconfd default
-fi
-touch /var/.openrc-migrate-11
-
-# 11-18-17
-# Prep for 17.12 release
-if [ ! -e "/var/.trueos-migrate-1" ] ; then
-  /sbin/rc-update add ipfw boot
-  /sbin/rc-update add devd boot
-  /sbin/rc-update add devfs boot
-  /sbin/rc-update add routing boot
-  /sbin/rc-update add automount default
-  /sbin/rc-update add statd default
-  /sbin/rc-update add lockd default
-  /sbin/rc-update add rpcbind default
-  /sbin/rc-update add cupsd default
-  /sbin/rc-update add cups_browsed default
-  /sbin/rc-update delete dhcpcd default
-  /sbin/rc-update delete wpa_supplicant default
-  /sbin/rc-update add openntpd default
-  /sbin/rc-update add pcdm default
-  /sbin/rc-update add sysadm default
-  /sbin/rc-update add dbus default
-  /sbin/rc-update add hald default
-  /sbin/rc-update add trueosinit default
-  /sbin/rc-update add moused default
-  /sbin/rc-update add bsdstats default
-  /sbin/rc-update add automountd default
-  /sbin/rc-update add autounmountd default
-  /sbin/rc-update delete sndiod default
-  /sbin/rc-update add mountlate default
-  /sbin/rc-update add avahi-daemon default
-  /sbin/rc-update add avahi-dnsconfd default
-fi
-touch /var/.trueos-migrate-1
-
-# 12-15-17
-# Post-17.12, switch everything back to the new track of services
-# (6-months of testing/fixing the new arrangement)
-if [ ! -e "/var/.trueos-migrate-2" ] ; then
-  #Turning off the linux-based subsystems
-  /sbin/rc-update delete dbus default
-  /sbin/rc-update delete hald default
-  /sbin/rc-update delete cups_browsed default
-  /sbin/rc-update delete avahi-daemon default
-  /sbin/rc-update delete avahi-dnsconfd default
-  #Turning on the BSD-based subsystems
-  /sbin/rc-update add sndiod default
-fi
-touch /var/.trueos-migrate-2
+# Run the service validation routine to ensure the system services are sane
+${PREFIX}/share/trueos/scripts/validate-services.sh ${PREFIX}/etc/trueos/required-services-desktop ${PREFIX}/etc/trueos/recommended-services-desktop
 
 exit 0

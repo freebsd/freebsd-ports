@@ -481,6 +481,7 @@
     SUBDIR += toilet
     SUBDIR += tpp
     SUBDIR += translate
+    SUBDIR += trueos-core
     SUBDIR += trueos-desktop
     SUBDIR += trueos-handbook
     SUBDIR += trueos-meta-hunspell
