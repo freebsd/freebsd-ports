@@ -3,7 +3,7 @@
 
 PORTNAME=	offlineimap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.1.4
+DISTVERSION=	7.1.5
 CATEGORIES=	mail python
 
 MAINTAINER=	mp39590@gmail.com
@@ -22,14 +22,16 @@ OIMAP_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 BUILD_DEPENDS=	${OIMAP_DEPENDS}
 RUN_DEPENDS=	${OIMAP_DEPENDS}
 
+USES=		python:2.7
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	OfflineIMAP
 
-USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_ARCH=	yes
 PORTDOCS=	*
 PORTEXAMPLES=	offlineimap.conf offlineimap.conf.minimal
 
