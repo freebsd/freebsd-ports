@@ -16,6 +16,9 @@ name="Message Bus Daemon"
 supervisor="supervise-daemon"
 supervise_daemon_args="-1 /var/log/dbus.out -2 /var/log/dbus.err"
 
+system_bus_socket="/var/run/dbus/system_bus_socket"
+system_bus_pid="/var/run/dbus/pid"
+
 depend()
 {
 	need localmount
@@ -28,4 +31,31 @@ start_pre()
 	if [ ! -e "/var/db/dbus/machine-id" ] ; then
 	/usr/local/bin/dbus-uuidgen --ensure
 	fi
+}
+
+start_post()
+{
+	#it takes a moment for the system bus to get initialized
+	# pause until it is actually ready before returning
+	# maximum of 5 seconds wait
+	for i in 1 2 3 4 5
+	do
+		if [ -S ${system_bus_socket} ] ; then
+		  #einfo "System bus ready"
+		  break
+		else
+		  #einfo "Waiting for system bus to initialize..."
+		  sleep 1
+		fi
+	done
+	return 0
+}
+
+stop_post()
+{
+  if [ -S ${system_bus_socket} ] ; then
+    rm ${system_bus_socket}
+    rm ${system_bus_pid}
+  fi
+  return 0
 }
