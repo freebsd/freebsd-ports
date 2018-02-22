@@ -892,6 +892,7 @@
     SUBDIR += py-certbot
     SUBDIR += py-certbot-apache
     SUBDIR += py-certbot-dns-cloudflare
+    SUBDIR += py-certbot-dns-cloudxns
     SUBDIR += py-certbot-nginx
     SUBDIR += py-certifi
     SUBDIR += py-cpe
