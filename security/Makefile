@@ -890,6 +890,7 @@
     SUBDIR += py-btchip-python
     SUBDIR += py-cerealizer
     SUBDIR += py-certbot
+    SUBDIR += py-certbot-apache
     SUBDIR += py-certifi
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
