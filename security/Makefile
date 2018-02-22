@@ -891,6 +891,7 @@
     SUBDIR += py-cerealizer
     SUBDIR += py-certbot
     SUBDIR += py-certbot-apache
+    SUBDIR += py-certbot-nginx
     SUBDIR += py-certifi
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
