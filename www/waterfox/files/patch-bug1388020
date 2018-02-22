@@ -98,8 +98,8 @@ index a48a9081e155..e0a74920fbe5 100644
 +            case BufferDescriptor::TYCbCrDescriptor: {
 +              const YCbCrDescriptor& ycbcr = desc.get_YCbCrDescriptor();
 +              reqSize =
-+                ImageDataSerializer::ComputeYCbCrBufferSize(ycbcr.ySize(), ycbcr.yStride(),
-+                                                            ycbcr.cbCrSize(), ycbcr.cbCrStride());
++                ImageDataSerializer::ComputeYCbCrBufferSize(ycbcr.ySize(), ycbcr.ySize().width,
++                                                            ycbcr.cbCrSize(), ycbcr.cbCrSize().width);
 +              break;
 +            }
 +            case BufferDescriptor::TRGBDescriptor: {
