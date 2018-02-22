@@ -6,7 +6,7 @@ PORTVERSION=	0.94
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Compact Disc Input and Control Library
 
 LICENSE=	GPLv3+
