@@ -1,4 +1,3 @@
-include/double-conversion/bignum-dtoa.h
 include/double-conversion/bignum.h
 include/double-conversion/cached-powers.h
 include/double-conversion/diy-fp.h
@@ -8,7 +7,8 @@ include/double-conversion/fixed-dtoa.h
 include/double-conversion/ieee.h
 include/double-conversion/strtod.h
 include/double-conversion/utils.h
+lib/cmake/double-conversion/double-conversionConfig.cmake
+lib/cmake/double-conversion/double-conversionConfigVersion.cmake
+lib/cmake/double-conversion/double-conversionLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/double-conversion/double-conversionLibraryDepends.cmake
 lib/libdouble-conversion.a
-lib/libdouble-conversion.so
-lib/libdouble-conversion.so.0
-lib/libdouble-conversion.so.0.0.0
