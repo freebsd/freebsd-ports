@@ -1,0 +1,6 @@
+py-ta-lib is a Python wrapper for TA-LIB (a marketing analysis library)
+based on Cython.
+
+It is intended to perform marketing analysis in Python programs.
+
+WWW: https://mrjbq7.github.io/ta-lib/
