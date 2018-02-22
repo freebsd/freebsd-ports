@@ -3,7 +3,7 @@
 
 PORTNAME=	elasticsearch
 PORTVERSION=	5.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -51,7 +51,8 @@ ELASTIC_LOGDIR=	/var/log/elasticsearch
 
 SUB_LIST=	SEARCHUSER=${SEARCHUSER} \
 		SEARCHGROUP=${SEARCHGROUP} \
-		PORTVERSION=${PORTVERSION}
+		PORTVERSION=${PORTVERSION} \
+		JAVA=${JAVA}
 SUB_FILES=	pkg-message
 PLIST_SUB+=	SEARCHUSER=${SEARCHUSER} \
 		SEARCHGROUP=${SEARCHGROUP} \
