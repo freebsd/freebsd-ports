@@ -1,0 +1,34 @@
+*****************************************************************
+
+www/caddy does not ship with any in-tree documentation. Online
+documentation can be found at https://caddyserver.com/docs.
+
+To use www/caddy, create a configuration file in the Caddyfile
+format in %%PREFIX%%/www/Caddyfile and enable caddy in your
+rc.conf:
+
+# sysrc caddy_enable="YES"
+# service caddy start
+
+Example Caddyfile
+=================
+mysite.com {
+    root %%PREFIX%%/www/mysite.com
+}
+
+sub.mysite.com {
+    root %%PREFIX%%/www/sub.mysite.com
+    gzip
+    log /var/log/sub.mysite.com/access.log
+}
+
+Automatic HTTPS using letsencrypt.org
+=====================================
+
+Provide an SSL certificate issuer email in your rc.conf. By
+providing an email address you automatically agree to
+letsencrypt.org's general terms and conditions:
+
+caddy_cert_email="your.email@example.org"
+
+*****************************************************************
