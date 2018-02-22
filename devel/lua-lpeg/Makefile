@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parsing Expression Grammars For Lua
 
 LICENSE=	MIT

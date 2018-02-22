@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	net-im
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU console based Jabber client
 
 LICENSE=	GPLv3+

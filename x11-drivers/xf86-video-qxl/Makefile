@@ -4,7 +4,7 @@ PORTNAME=	xf86-video-qxl
 DISTVERSION=	0.1.5
 CATEGORIES=	x11-drivers
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X.Org X server -- QXL display driver
 
 LICENSE=	MIT

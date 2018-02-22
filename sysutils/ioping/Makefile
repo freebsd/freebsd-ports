@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple disk I/0 latency measuring tool
 
 LICENSE=	GPLv3+
