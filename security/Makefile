@@ -899,6 +899,7 @@
     SUBDIR += py-certbot-dns-google
     SUBDIR += py-certbot-dns-luadns
     SUBDIR += py-certbot-dns-nsone
+    SUBDIR += py-certbot-dns-rfc2136
     SUBDIR += py-certbot-nginx
     SUBDIR += py-certifi
     SUBDIR += py-cpe
