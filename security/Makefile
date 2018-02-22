@@ -897,6 +897,7 @@
     SUBDIR += py-certbot-dns-dnsimple
     SUBDIR += py-certbot-dns-dnsmadeeasy
     SUBDIR += py-certbot-dns-google
+    SUBDIR += py-certbot-dns-luadns
     SUBDIR += py-certbot-nginx
     SUBDIR += py-certifi
     SUBDIR += py-cpe
