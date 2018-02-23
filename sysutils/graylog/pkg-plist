@@ -1,11 +1,14 @@
 @sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/server/server.conf.sample
 @sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/server/log4j2.xml.sample
 %%DATADIR%%/graylog.jar
-%%DATADIR%%/plugin/graylog-plugin-anonymous-usage-statistics-%%PORTVERSION%%.jar
+%%DATADIR%%/plugin/graylog-plugin-aws-%%PORTVERSION%%.jar
 %%DATADIR%%/plugin/graylog-plugin-beats-%%PORTVERSION%%.jar
+%%DATADIR%%/plugin/graylog-plugin-cef-%%PORTVERSION%%.jar
 %%DATADIR%%/plugin/graylog-plugin-collector-%%PORTVERSION%%.jar
 %%DATADIR%%/plugin/graylog-plugin-enterprise-integration-%%PORTVERSION%%.jar
 %%DATADIR%%/plugin/graylog-plugin-map-widget-%%PORTVERSION%%.jar
+%%DATADIR%%/plugin/graylog-plugin-netflow-%%PORTVERSION%%.jar
 %%DATADIR%%/plugin/graylog-plugin-pipeline-processor-%%PORTVERSION%%.jar
+%%DATADIR%%/plugin/graylog-plugin-threatintel-%%PORTVERSION%%.jar
 @dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%GRAYLOG_DATA_DIR%%
 @dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%GRAYLOG_LOGS_DIR%%
