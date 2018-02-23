@@ -1,5 +1,6 @@
 bin/c4group
 bin/openclonk
+share/appdata/openclonk.appdata.xml
 share/applications/openclonk.desktop
 share/icons/hicolor/128x128/apps/openclonk.png
 share/icons/hicolor/256x256/apps/openclonk.png
@@ -12,7 +13,16 @@ share/icons/hicolor/64x64/apps/openclonk.png
 %%DATADIR%%/Graphics.ocg
 %%DATADIR%%/Material.ocg
 %%DATADIR%%/Missions.ocf
-%%DATADIR%%/Music.ocg
+%%DATADIR%%/Music.ocg/@CrushedIceCocktail.ogg
+%%DATADIR%%/Music.ocg/Cavern.ogg
+%%DATADIR%%/Music.ocg/IslandDreams.ogg
+%%DATADIR%%/Music.ocg/LucidDream.ogg
+%%DATADIR%%/Music.ocg/Motorway.ogg
+%%DATADIR%%/Music.ocg/Offshore.ogg
+%%DATADIR%%/Music.ocg/TheSkylands.ogg
+%%DATADIR%%/Music.ocg/UrbanBolero.ogg
+%%DATADIR%%/Music.ocg/Version.txt
+%%DATADIR%%/Music.ocg/authors.txt
 %%DATADIR%%/Objects.ocd
 %%DATADIR%%/Parkour.ocf
 %%DATADIR%%/Sound.ocg
