@@ -8,7 +8,7 @@ MASTER_SITES=	http://vu1tur.eu.org/tools/
 
 LICENSE=	GPLv2
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DMG2IMG convert tool
 
 USES=		ssl
