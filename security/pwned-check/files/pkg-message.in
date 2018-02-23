@@ -7,7 +7,7 @@ the following command:
 The database files will be installed into /var/db/pwned-check by default.
 This directory can be changed in %%PREFIX%%/etc/pwned-check.conf.
 
-The installation procedure will fetch 6 GB of compressed data and will
-temporarily need 18 GB of free space in that directory and 13 GB when
+The installation procedure will fetch 9 GB of compressed data and will
+temporarily need 40 GB of free space in that directory and 30 GB when
 the installation is complete.
 -------------------------------------------------------------------------
