@@ -1,7 +1,7 @@
-Colortail works like the standard tail but it can optionally read
-a color config file where it's specified expressions that results
-in colors.  It can be used to quickly get an overview of interesting
-activity by ie. colorize those brightred or some other color of
-your choose.
+Colortail works like tail but can optionally read one or more config files where
+it's specified which patterns results in which colors.
 
-WWW: http://pjek.se/projects/colortail/
+Colortail uses regular expressions (see re_format(7)) to determine which lines
+and parts of lines to print in which colors.
+
+WWW: https://github.com/joakim666/colortail

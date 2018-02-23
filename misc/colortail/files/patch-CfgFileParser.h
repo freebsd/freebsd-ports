@@ -1,5 +1,5 @@
---- CfgFileParser.h.bak	2010-07-31 14:18:50.529980803 +0200
-+++ CfgFileParser.h	2010-07-31 14:18:59.977448567 +0200
+--- CfgFileParser.h.orig	2010-06-02 20:41:36 UTC
++++ CfgFileParser.h
 @@ -24,7 +24,6 @@
  #include "config.h"
  
