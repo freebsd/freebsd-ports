@@ -8,14 +8,21 @@ if [ -z "${portsdir}" ] ; then
 fi
 
 port="ports-mgmt/trueos-ports-src"
+origportdir="${portsdir}/Tools/trueos-ports-src"
 
 ghTag=`git log -n 1 . | grep '^commit ' | awk '{print $2}'`
 verTag=$(date '+%Y%m%d%H%M')
 
-if [ -z "${ghTag}" ] then
+if [ -z "${ghTag}" ] ; then
   #not a git repository - some other checkout of the sources
   exit 1
 fi
+
+if [ -d "${portsdir}/${port}" ] ; then
+  rm -r "${portsdir}/${port}"
+fi
+#Copy the port files over
+cp -R "${origportdir}" "${portsdir}/${port}"
 
 # Set the version numbers
 sed -i '' "s|%%CHGVERSION%%|${verTag}|g" ${portsdir}/${port}/Makefile
@@ -30,11 +37,31 @@ if [ ! $? ] ; then
   exit 1
 fi
 
-
 #generate the pkg-plist
-find ${portsdir} | grep -v "${port}" | sort > ${portsdir}/${port}/pkg-plist
+find ${portsdir} ! -type d | grep -v "${port}" | grep -v "/.git" | sort > ${portsdir}/${port}/pkg-plist
 sed -i '' "s|${portsdir}/|/usr/ports/|g" ${portsdir}/${port}/pkg-plist
-#need to remove the directories from this pkg-plist somehow (or get find to not list dirs)
 
 #If everything is successful now - go ahead and activate the port in the categories Makefile
+cd ${portsdir}/ports-mgmt
+comment="`cat Makefile | grep 'COMMENT ='`"
+  echo "# \$FreeBSD\$
+#
 
+$comment
+" > Makefile.tmp
+
+  for d in `ls`
+  do
+    if [ "$d" = ".." ]; then continue ; fi
+    if [ "$d" = "." ]; then continue ; fi
+    if [ "$d" = "Makefile" ]; then continue ; fi
+    if [ ! -f "$d/Makefile" ]; then continue ; fi
+    echo "    SUBDIR += $d" >> Makefile.tmp
+  done
+  echo "" >> Makefile.tmp
+  echo ".include <bsd.port.subdir.mk>" >> Makefile.tmp
+  mv Makefile.tmp ${portsdir}/ports-mgmt/Makefile
+
+
+#Now return back to the origin directory (just in case)
+cd ${origdir}
