@@ -6,7 +6,7 @@ PORTVERSION=	2.22
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.mikekohn.net/nakenchat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Small (under 50k) chat server with many features
 
 LICENSE=	GPLv2
