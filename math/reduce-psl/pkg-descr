@@ -1,0 +1,19 @@
+		REDUCE Portable Standard Lisp (PSL)
+
+REDUCE is an interactive system for general algebraic computations of
+interest to mathematicians, scientists and engineers. 
+
+PSL was the original implementation of Standard Lisp, but now contains
+many more facilities. It is quite efficient in its use of both space and
+time, and has been optimized for algebraic computation. All PSL versions
+of REDUCE are distributed with sufficient PSL support to run on the given
+computing system. PSL is supported on many architectures and is an ideal
+system for those wanting to run REDUCE as a stand-alone system. The
+principal developer of PSL before it became Open Source was the Konrad
+Zuse Center, Berlin (ZIB).
+
+It is often used as an algebraic calculator for problems that are possible
+to do by hand. However,  REDUCE is designed to support calculations that
+are not feasible by hand.
+
+WWW: http://www.reduce-algebra.com/

@@ -689,6 +689,7 @@
     SUBDIR += randlib
     SUBDIR += rapid
     SUBDIR += reduce
+    SUBDIR += reduce-psl
     SUBDIR += reed-solomon
     SUBDIR += rexx-regmath
     SUBDIR += rkward-kde4
