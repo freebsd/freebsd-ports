@@ -58,11 +58,11 @@ fetchpwfiles ()
 	fi
 	rm -f "$f7z"
     done <<EOF
-pwned-passwords-2.0.txt      31603121046 9405806974 c267424e7d2bb5b10adff4d776fa14b0967bf0cc
+pwned-passwords-1.0.txt      12862899504 5702869528 90d57d16a2dfe00de6cc58d0fa7882229ace4a53
+pwned-passwords-update-1.txt   574389228  262300582 00fc585efad08a4b6323f8e4196aae9207f8b09f
+pwned-passwords-update-2.txt    16791180    8000810 20318090278bbd196945025bc7bf93e99f261f9a
 EOF
     echo "All data files have been successfully downloaded and extracted."
-    rm -f "$DBDIR/pwned-passwords-1.0.txt*"
-    rm -f "$DBDIR/pwned-passwords-update-?.txt*"
 }
 
 # Password lookup

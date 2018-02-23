@@ -29,9 +29,8 @@ plain text password corresponding to a given SHA1 hash.
 .Pp
 If the option
 .Fl u
-is used, the password hash database (9 GB compressed) is downloaded and
-initialized.
-This process will temporarily require some 40 GB of free space in the
+is used, the password hash database is downloaded and initialized.
+This process will temporarily require some 18 GB of free space in the
 database directory, which is
 .Pa /var/db/pwned-check
 by default.
@@ -43,7 +42,7 @@ the download.
 Optional configuration file.
 .It Pa /var/db/pwned-check
 Default location of pwned password hash database.
-Needs up to 40 GB of free space during download, 30 GB when finished.
+Needs 18 GB of free space during download, 13 GB when finished.
 .El
 .Sh EXIT STATUS
 .Nm
