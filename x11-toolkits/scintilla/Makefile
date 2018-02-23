@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scintilla
-PORTVERSION=	3.7.5
-PORTREVISION=	1
+DISTVERSION=	4.0.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
@@ -18,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
-USES=		compiler:c++11-lib gmake iconv pkgconfig tar:tgz
+USES=		compiler:c++14-lang gmake iconv pkgconfig tar:tgz
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
