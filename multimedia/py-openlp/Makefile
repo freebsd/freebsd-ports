@@ -7,7 +7,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Lyrics Projection
 
 LICENSE=	GPLv2
