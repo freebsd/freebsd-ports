@@ -20,7 +20,7 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=3.4.0:devel/py-decorator@${FLAVO
 #		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2.7 shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	examples/graph/atlas.py \
 		examples/multigraph/chess_masters.py \
@@ -50,18 +50,10 @@ GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.2:graphics/py-pygraph
 YAML_DESC=	Reading and writing YAML files
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 3000
-. if ${PORT_OPTIONS:MMPL} || ${PORT_OPTIONS:MGRAPHVIZ}
-BROKEN=		Neither math/py-matplotlib nor graphics/py-graphviz support Python 3.x yet. Please disable both the MPL and GRAPHVIZ options
-. endif
-.endif
-
 PORTEXAMPLES=	*
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
