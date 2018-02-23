@@ -163,6 +163,8 @@
 %%T%%/webapps/docs/funcspecs/fs-memory-realm.html
 %%T%%/webapps/docs/funcspecs/index.html
 %%T%%/webapps/docs/funcspecs/mbean-names.html
+%%T%%/webapps/docs/host-manager-howto.html
+%%T%%/webapps/docs/html-host-manager-howto.html
 %%T%%/webapps/docs/html-manager-howto.html
 %%T%%/webapps/docs/images/add.gif
 %%T%%/webapps/docs/images/asf-logo.svg
@@ -195,6 +197,7 @@
 %%T%%/webapps/docs/logging.html
 %%T%%/webapps/docs/manager-howto.html
 %%T%%/webapps/docs/maven-jars.html
+%%T%%/webapps/docs/mbeans-descriptors.dtd
 %%T%%/webapps/docs/mbeans-descriptors-howto.html
 %%T%%/webapps/docs/monitoring.html
 %%T%%/webapps/docs/proxy-howto.html
@@ -249,6 +252,8 @@
 %%T%%/webapps/examples/WEB-INF/classes/async/Async2.java
 %%T%%/webapps/examples/WEB-INF/classes/async/Async3.class
 %%T%%/webapps/examples/WEB-INF/classes/async/Async3.java
+%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.class
+%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.java
 %%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
 %%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
 %%T%%/webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
