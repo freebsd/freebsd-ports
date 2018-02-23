@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/retail/download/ \
 		http://www.bsdstore.ru/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Program for incremental logfile reader
 
 LICENSE=	GPLv2
