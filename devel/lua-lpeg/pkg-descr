@@ -1,4 +1,15 @@
-LPeg is a new pattern-matching library for Lua,
-based on Parsing Expression Grammars (PEGs).
+LPeg is a new pattern-matching library for Lua, based on Parsing Expression
+Grammars (PEGs).
+
+Following the Snobol tradition, LPeg defines patterns as first-class objects.
+That is, patterns are regular Lua values (represented by userdata). The library
+offers several functions to create and compose patterns. With the use of
+metamethods, several of these functions are provided as infix or prefix
+operators. On the one hand, the result is usually much more verbose than the
+typical encoding of patterns using the so called regular expressions (which
+typically are not regular expressions in the formal sense). On the other hand,
+first-class patterns allow much better documentation (as it is easy to comment
+the code, to break complex definitions in smaller parts, etc.) and are
+extensible, as we can define new functions to create and compose patterns.
 
 WWW: http://www.inf.puc-rio.br/~roberto/lpeg/
