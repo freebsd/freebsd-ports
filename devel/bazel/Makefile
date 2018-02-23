@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bazel
-PORTVERSION=		0.10.0
+DISTVERSION=		0.11.0
 CATEGORIES=		devel java
 MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -22,7 +22,7 @@ BUILD_DEPENDS=		bash:shells/bash \
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=		8
+FINALRC=		4
 
 USES=			shebangfix zip:infozip python
 SHEBANG_REGEX=		.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
