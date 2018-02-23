@@ -42,9 +42,9 @@ fi
 find ${portsdir} ! -type d ! -ipath "*/work/*" ! -ipath "*/.git*" ! -ipath "*/${port}/*"  ! -ipath "*/distfiles/*" | sort > ${portsdir}/${port}/pkg-plist
 sed -i '' "s|${portsdir}/|/usr/ports/|g" ${portsdir}/${port}/pkg-plist
 #Directories
-find ${portsdir} -type d > ${portsdir}/${port}/pkg-plist.dirs
-sed -i '' "s|${portsdir}/|@dir /usr/ports/|g" ${portsdir}/${port}/pkg-plist.dirs
-echo "@dir /usr/ports" >> "${portsdir}/${port}/pkg-plist"
+find ${portsdir} -type d ! -ipath "*/work/*" ! -ipath "*/work" ! -ipath "*/.git*" ! -ipath "*/${port}*"  ! -ipath "*/distfiles/*" ! -ipath "*/distfiles" | sort > ${portsdir}/${port}/pkg-plist.dirs
+sed -i '' "s|${portsdir}|@dir /usr/ports|g" ${portsdir}/${port}/pkg-plist.dirs
+#echo "@dir /usr/ports" >> "${portsdir}/${port}/pkg-plist"
 cat "${portsdir}/${port}/pkg-plist.dirs" >> "${portsdir}/${port}/pkg-plist"
 rm "${portsdir}/${port}/pkg-plist.dirs" #remove the temporary file
 
