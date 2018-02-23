@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	pixiewps
-PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.1
 CATEGORIES=	security
 
 MAINTAINER=	franz@bett.ag
 COMMENT=	Offline WPS bruteforce utility
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/../LICENSE.md
 
-USES=		gmake ssl
+USES=		gmake
 WRKSRC_SUBDIR=	src
 USE_GITHUB=	yes
 GH_ACCOUNT=	wiire
