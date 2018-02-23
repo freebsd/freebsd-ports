@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2018-02-08 07:27:37 UTC
++++ CMakeLists.txt
+@@ -320,8 +320,6 @@ if(READLINE_FOUND)
+ endif()
+ SET(HAVE_LIBREADLINE ${READLINE_FOUND} CACHE INTERNAL "libreadline available")
+ 
+-find_package(GTK3 COMPONENTS gthread gio gobject glib OPTIONAL_COMPONENTS gtksourceview)
+-
+ # Select an audio library
+ find_package("Audio")
+ if(Audio_FOUND)
+@@ -339,8 +337,6 @@ set(HAVE_SDL ${SDL2_FOUND})
+ include_directories(SYSTEM ${SDL2_INCLUDE_DIRS})
+ 
+ # Qt5 for editor
+-find_path(Qt5DIR qt.pro PATHS ${CMAKE_ADDITIONAL_DEPS_PATH}/qt-5.5.0)
+-find_package(Qt5Widgets 5.4 PATHS ${Qt5DIR}/qtbase/lib/cmake/Qt5Widgets)
+ if(Qt5Widgets_FOUND)
+ 	SET(WITH_QT_EDITOR ${Qt5Widgets_FOUND} "Qt editor dialogues available")
+ 	set(CMAKE_AUTOMOC ON)
