@@ -38,7 +38,7 @@ if [ ! $? ] ; then
 fi
 
 #generate the pkg-plist
-find ${portsdir} ! -type d | grep -v "${port}" | grep -v "/.git" | sort > ${portsdir}/${port}/pkg-plist
+find ${portsdir} ! -type d ! -ipath "*/work/*" ! -ipath "*/.git*" ! -ipath "*/${port}/*" | sort > ${portsdir}/${port}/pkg-plist
 sed -i '' "s|${portsdir}/|/usr/ports/|g" ${portsdir}/${port}/pkg-plist
 
 #If everything is successful now - go ahead and activate the port in the categories Makefile

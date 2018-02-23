@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-# NOTE: This port is a template which is filled out when the 
+# NOTE: This port is created from a template when the 
 # <ports_root>/Tools/scripts/set_trueos-ports-src.sh
 # script is run at the outset of the build procedures
 
@@ -22,6 +22,9 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 do-install:
-	@cd ${WRKSRC} && ${CP} -R * "${STAGEDIR}/usr/ports/."
+	@cd ${WRKSRC} \
+	&& ${MKDIR} -p "${STAGEDIR}/usr/ports" \
+	&& ${CP} -R * "${STAGEDIR}/usr/ports/." \
+	&& ${CP} ".arcconfig" "${STAGEDIR}/usr/ports/."
 
 .include <bsd.port.mk>
