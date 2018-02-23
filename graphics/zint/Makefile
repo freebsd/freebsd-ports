@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zint Barcode Generator
 
 LICENSE=	GPLv3+

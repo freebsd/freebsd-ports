@@ -8,7 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://qt-apps.org/CONTENT/content-files/
 DISTNAME=	118297-qtResistors-201001102229
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Calculate resistance of resistor by the colors on the resistor
 
 USES=		qmake

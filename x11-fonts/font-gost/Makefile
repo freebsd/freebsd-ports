@@ -10,7 +10,7 @@ MASTER_SITES=	http://sd.ascon.ru/ftp/Public/Utils/DWG-DXF/ \
 PKGNAMEPREFIX=	font-
 DISTNAME=	TTF_FON
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GOST TrueType fonts
 
 USES=		fonts zip

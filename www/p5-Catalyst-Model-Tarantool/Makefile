@@ -9,7 +9,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tarantool interface for Catalyst based application
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90001:www/p5-Catalyst-Runtime \

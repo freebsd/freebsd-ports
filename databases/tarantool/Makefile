@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tarantool.org/tarantool/1.7/src/
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NoSQL database running in a Lua application server
 
 LICENSE=	BSD2CLAUSE

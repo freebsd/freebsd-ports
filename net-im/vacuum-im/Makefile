@@ -6,7 +6,7 @@ PORTVERSION=	1.2.5
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-im
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crossplatform Jabber client
 
 LICENSE=	GPLv3

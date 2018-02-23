@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	cursor-
 PKGNAMESUFFIX=	-white
 DISTNAME=	Chameleon-White-${PORTVERSION}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chameleon Xcursors theme
 
 LICENSE=	GPLv2

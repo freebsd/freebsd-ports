@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	php5-
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL PHP driver for Tarantool/Box
 
 USES=		php:ext

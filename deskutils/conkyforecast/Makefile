@@ -9,7 +9,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/70673352/ \
 		LOCAL/vg
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weather forecast script for conky
 
 LICENSE=	GPLv3

@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin of glpi to get information of networking devices
 
 LICENSE=	AGPLv3

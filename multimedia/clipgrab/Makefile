@@ -6,7 +6,7 @@ PORTVERSION=	3.4.11
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.clipgrab.de/
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to download videos from YouTube and etc
 
 LICENSE=	GPLv3

@@ -7,7 +7,7 @@ CATEGORIES=	russian
 MASTER_SITES=	http://abloz.com/huzheng/stardict-dic/ru/
 DISTNAME=	${PORTNAME}-user-ru-${PORTVERSION}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-Russian PC-user dictionary
 
 USES=	tar:bzip2

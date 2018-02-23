@@ -6,7 +6,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	www
 MASTER_SITES=	http://cdn.skylable.com/source/
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SXDrive Web app
 
 IGNORE_WITH_PHP=	70 71 72

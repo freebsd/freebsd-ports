@@ -6,7 +6,7 @@ PORTVERSION=	2.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://cdn.skylable.com/source/
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skylable Sx is a reliable, fully distributed cluster solution
 
 LICENSE=	GPLv2

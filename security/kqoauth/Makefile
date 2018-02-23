@@ -5,7 +5,7 @@ PORTNAME=	kqoauth
 PORTVERSION=	0.98
 CATEGORIES=	security
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of OAuth 1.0 in C++ for Qt
 
 LICENSE=	LGPL21

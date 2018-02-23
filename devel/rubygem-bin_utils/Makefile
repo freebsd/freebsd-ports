@@ -6,7 +6,7 @@ PORTVERSION=	0.0.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extracting binary integers from binary string and packing back
 
 USE_RUBY=	yes

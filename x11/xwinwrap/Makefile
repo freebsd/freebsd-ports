@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	LOCAL/vg
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XWinWrap replace a desktop background with a movie or screensaver
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

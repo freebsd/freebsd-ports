@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.sai.msu.su/apache/${PORTNAME}/${PORTNAME}-${PORTVERSION
 PKGNAMESUFFIX=	-cpp
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data serialization system for C++
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs

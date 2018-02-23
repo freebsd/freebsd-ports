@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://utils.kaspersky.com/updater/retranslator_5.0.0.7/FreeBSD_6.3/ \
 		LOCAL/vg
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The update utility for Kaspersky applications
 
 NO_BUILD=	yes

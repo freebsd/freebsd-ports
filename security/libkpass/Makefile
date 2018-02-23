@@ -5,7 +5,7 @@ PORTNAME=	libkpass
 PORTVERSION=	6
 CATEGORIES=	security
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for a reading/writing KeePass 1.x DB
 
 LICENSE=	GPLv3

@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunneling with data compression
 
 NO_BUILD=	yes

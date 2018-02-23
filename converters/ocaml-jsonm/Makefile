@@ -7,7 +7,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://erratique.ch/software/jsonm/releases/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-blocking streaming JSON codec for OCaml
 
 LICENSE=	BSD3CLAUSE

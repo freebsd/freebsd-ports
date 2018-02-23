@@ -6,7 +6,7 @@ PORTVERSION=	0.23
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils java
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images
 
 LICENSE=	GPLv3

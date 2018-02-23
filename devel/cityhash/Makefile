@@ -6,7 +6,7 @@ PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Family of hash functions
 
 LICENSE=	MIT
