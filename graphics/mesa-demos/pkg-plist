@@ -76,6 +76,7 @@ bin/geom-stipple-lines
 bin/geom-wide-lines
 bin/glinfo
 bin/gloss
+bin/glsl-compile-time
 bin/glslstateschange
 bin/glsync
 bin/gltestperf
