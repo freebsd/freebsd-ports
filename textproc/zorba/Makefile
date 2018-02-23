@@ -3,8 +3,8 @@
 
 PORTNAME=	zorba
 PORTVERSION=	2.7.0
-PORTREVISION=	18
-CATEGORIES=	textproc
+PORTREVISION=	19
+CATEGORIES=	textproc java
 MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose C++ XQuery processor
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
 		libicudata.so:devel/icu \
@@ -34,15 +35,18 @@ JAVA_CMAKE_BOOL=	WITH_JAVA
 
 # Both install include/xqc.h
 CONFLICTS=	xqilla-[0-9]*
+CONFLICTS_BUILD=	bison
 
+USES=		cmake:outsource compiler:c++11-lib libedit
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
-USES=		cmake:outsource compiler:c++11-lib
 CXXFLAGS+=	-I${LOCALBASE}/include -O1 # compiler hangs with -O2 on CURRENT
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		-DLOCALBASE:STRING=${LOCALBASE}
+
+MAKE_JOBS_UNSAFE=	yes # due to consistent failures in bison-generated code compilation
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
