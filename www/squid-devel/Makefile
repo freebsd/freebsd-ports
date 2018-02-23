@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.0.22
-PORTREVISION=	1
+PORTVERSION=	4.0.23
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -309,11 +308,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == clang
-CXXFLAGS+=	-Wno-unknown-warning-option
-CXXFLAGS+=	-Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -Wno-dynamic-class-memaccess
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
