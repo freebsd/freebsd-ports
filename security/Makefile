@@ -884,6 +884,7 @@
     SUBDIR += py-acme
     SUBDIR += py-acme-tiny
     SUBDIR += py-artifacts
+    SUBDIR += py-asyncssh
     SUBDIR += py-backports.ssl_match_hostname
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
