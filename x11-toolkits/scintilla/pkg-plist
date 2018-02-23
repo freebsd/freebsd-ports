@@ -1,4 +1,5 @@
 include/scintilla/ILexer.h
+include/scintilla/ILoader.h
 include/scintilla/Platform.h
 include/scintilla/Sci_Position.h
 include/scintilla/SciLexer.h

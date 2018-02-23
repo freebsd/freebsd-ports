@@ -1,21 +1,24 @@
---- makefile.orig	2017-05-24 01:26:25 UTC
+--- makefile.orig	2017-08-16 07:34:01 UTC
 +++ makefile
-@@ -9,14 +9,6 @@
+@@ -9,17 +9,7 @@
  srcdir ?= .
  
  .SUFFIXES: .cxx .c .o .h .a .list
 -ifdef CLANG
--CXX = clang++ -Wno-deprecated-register
+-CXX = clang++
+ CXXWARNFLAGS = -Wall -pedantic -Wno-deprecated-register -Wno-missing-braces
 -CC = clang
 -# Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
 -# thread also need to create Position Independent Executable -> search online documentation
 -SANITIZE = address
 -#SANITIZE = undefined
+-else
+-CXXWARNFLAGS = -Wall -pedantic
 -endif
  ARFLAGS = rc
  RANLIB = touch
  
-@@ -45,7 +37,12 @@ DEL = del /q
+@@ -48,7 +38,12 @@ DEL = del /q
  COMPLIB=$(srcdir)\..\bin\scintilla.a
  else
  DEL = rm -f
@@ -29,7 +32,7 @@
  endif
  
  vpath %.h $(srcdir) $(srcdir)/../src $(srcdir)/../include $(srcdir)/../lexlib
-@@ -98,7 +95,7 @@ GLIB_GENMARSHAL_FLAGS = --prefix=scintil
+@@ -101,7 +96,7 @@ GLIB_GENMARSHAL_FLAGS = --prefix=scintil
  
  LEXOBJS:=$(addsuffix .o,$(basename $(sort $(notdir $(wildcard $(srcdir)/../lexers/Lex*.cxx)))))
  
@@ -38,7 +41,7 @@
  
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
-@@ -119,9 +116,11 @@ $(COMPLIB): Accessor.o CharacterSet.o Le
+@@ -122,9 +117,11 @@ $(COMPLIB): Accessor.o CharacterSet.o De
  	PropSetSimple.o PlatGTK.o \
  	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o ScintillaGTKAccessible.o CellBuffer.o CharacterCategory.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
