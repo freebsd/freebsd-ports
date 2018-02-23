@@ -96,10 +96,10 @@ KACTIVITY_DESC=		Activity Manager daemon
 KACTIVITY_RUN_DEPENDS=	${KDE_PREFIX}/bin/kactivitymanagerd:x11/kactivitymanagerd
 
 PYTHON_DESC=		Python plasmoids support
-PYTHON_RUN_DEPENDS=	${KDE_PREFIX}/share/apps/plasma_scriptengine_python/plasma_importer.py:x11/plasma-scriptengine-python
+PYTHON_RUN_DEPENDS=	${KDE_PREFIX}/share/apps/plasma_scriptengine_python/plasma_importer.py:x11/plasma-scriptengine-python-kde4
 
 RUBY_DESC=		Ruby plasmoids support
-RUBY_RUN_DEPENDS=	${KDE_PREFIX}/share/apps/plasma_scriptengine_ruby/applet.rb:x11/plasma-scriptengine-ruby
+RUBY_RUN_DEPENDS=	${KDE_PREFIX}/share/apps/plasma_scriptengine_ruby/applet.rb:x11/plasma-scriptengine-ruby-kde4
 
 UPOWER_DESC=		Power management via UPower
 UPOWER_RUN_DEPENDS=	${LOCALBASE}/libexec/upowerd:sysutils/upower
