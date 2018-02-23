@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://qt-apps.org/CONTENT/content-files/
 DISTNAME=	140877-easyPaint
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy graphic editing program
 
 LICENSE=	GPLv3

@@ -6,7 +6,7 @@ PORTVERSION=	2.1.36
 PORTREVISION=	5
 CATEGORIES=	audio
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official Last.fm desktop application suite
 
 LICENSE=	GPLv3+

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple notes managment application based on Qt 4
 
 LICENSE=	GPLv3

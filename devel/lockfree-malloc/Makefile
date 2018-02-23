@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/vg
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable drop-in replacement for malloc/free
 
 LICENSE=	LGPL3

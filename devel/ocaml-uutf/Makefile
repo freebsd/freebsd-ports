@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://erratique.ch/software/uutf/releases/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-blocking streaming Unicode codec for OCaml
 
 LICENSE=	BSD3CLAUSE

@@ -9,7 +9,7 @@ MASTER_SITES=	APACHE/${PORTNAME}/stable
 PKGNAMESUFFIX=	-c
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data serialization system for ANSI C
 
 LIB_DEPENDS=	libjansson.so:devel/jansson \

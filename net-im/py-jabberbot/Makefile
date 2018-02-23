@@ -8,7 +8,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	SF/pythonjabberbot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Jabber Bot for Python
 
 LICENSE=	GPLv3

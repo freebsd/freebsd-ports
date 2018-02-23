@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	LOCAL/vg
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Micro-benchmarking NoSQL storage
 
 LICENSE=	BSD2CLAUSE

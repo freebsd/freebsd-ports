@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde4-windeco-
 DISTNAME=	87921-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Transparent KDE4 window decoration
 
 LICENSE=	GPLv2

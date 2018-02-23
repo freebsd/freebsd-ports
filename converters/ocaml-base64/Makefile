@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	converters
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base64 encoding and decoding in OCaml
 
 USE_GITHUB=	yes

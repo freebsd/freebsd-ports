@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	6
 CATEGORIES=	devel
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source lightweight messaging layer
 
 LICENSE=	GPLv3

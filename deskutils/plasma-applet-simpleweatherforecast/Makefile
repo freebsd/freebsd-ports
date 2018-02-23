@@ -9,7 +9,7 @@ MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	92149-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weather plasma applet for KDE4
 
 RUN_DEPENDS=	wget:ftp/wget

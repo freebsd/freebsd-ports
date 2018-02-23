@@ -10,7 +10,7 @@ MASTER_SITES=	http://dev.gentoo.org/~pesa/distfiles/ \
 PKGNAMEPREFIX=	qt4-
 DISTNAME=	qt-${PORTNAME}-${PORTVERSION}_p${DATE}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt APIs for mobile devices and desktop platforms
 
 LICENSE=	LGPL21

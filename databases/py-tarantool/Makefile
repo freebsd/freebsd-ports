@@ -7,7 +7,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Client library for Tarantool Database
 
 LICENSE=	BSD3CLAUSE

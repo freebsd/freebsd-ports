@@ -6,7 +6,7 @@ PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based password database client
 
 LICENSE=	GPLv3

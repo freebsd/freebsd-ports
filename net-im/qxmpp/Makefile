@@ -6,7 +6,7 @@ PORTVERSION=	0.9.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QXmpp is an xmpp client library based on Qt & C++
 
 LICENSE=	LGPL21

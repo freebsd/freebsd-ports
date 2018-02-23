@@ -5,7 +5,7 @@ PORTNAME=	avro
 PORTVERSION=	1.8.1
 CATEGORIES=	devel
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data serialization system
 
 LICENSE=	APACHE20

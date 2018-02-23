@@ -6,7 +6,7 @@ PORTVERSION=	0.5.0
 PORTREVISION=	10
 CATEGORIES=	devel
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low-level I/O storage library which packs data
 
 LICENSE=	GPLv2

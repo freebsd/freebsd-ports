@@ -6,7 +6,7 @@ PORTVERSION=	0.0.${DATE}
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/vg
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration file parser generator
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex

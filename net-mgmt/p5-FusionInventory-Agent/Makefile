@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GBOUGARD/${PORTNAME}-2320targz
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Agent for OCS Inventory server and FusionInventory for GLPI servers
 
 LICENSE=	GPLv2

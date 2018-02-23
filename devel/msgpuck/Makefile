@@ -5,7 +5,7 @@ PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MsgPack binary serialization library in a self-contained header
 
 LICENSE=	BSD2CLAUSE

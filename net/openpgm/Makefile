@@ -7,7 +7,7 @@ DISTVERSION=	5-2-122
 PORTREVISION=	3
 CATEGORIES=	net devel
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the PGM reliable multicast protocol
 
 LICENSE=	LGPL21+

@@ -6,7 +6,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	audio rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Is a simple yet powerful Music Player Daemon library
 
 NO_ARCH=	yes

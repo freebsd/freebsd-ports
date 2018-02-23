@@ -9,7 +9,7 @@ MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	cursor-
 DISTNAME=	76605-Ecliz_Port
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ecliz X cursor theme
 
 NO_BUILD=	yes

@@ -6,7 +6,7 @@ PORTVERSION=	0.3.1
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-only fork of Kross, the KDE scripting framework
 
 LICENSE=	LGPL20+

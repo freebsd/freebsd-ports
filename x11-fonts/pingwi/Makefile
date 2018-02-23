@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.pingwinsoft.ru/system/uploads/16/original/ \
 PKGNAMEPREFIX=	font-
 DISTNAME=	fonts_test
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PingWi Typography fonts
 
 USES=		fonts zip
