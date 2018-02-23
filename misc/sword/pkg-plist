@@ -1,4 +1,5 @@
 bin/diatheke
+bin/emptyvss
 bin/imp2gbs
 bin/imp2ld
 bin/imp2vs
@@ -9,16 +10,20 @@ bin/mod2osis
 bin/mod2vpl
 bin/mod2zmod
 bin/osis2mod
+bin/stripaccents
 bin/tei2mod
 bin/vpl2mod
 bin/vs2osisref
 bin/vs2osisreftxt
 bin/xml2gbs
 @sample etc/sword.conf.sample
+include/sword/bz2comprs.h
 include/sword/canon.h
 include/sword/canon_abbrevs.h
+include/sword/canon_calvin.h
 include/sword/canon_catholic.h
 include/sword/canon_catholic2.h
+include/sword/canon_darbyfr.h
 include/sword/canon_german.h
 include/sword/canon_kjva.h
 include/sword/canon_leningrad.h
@@ -29,6 +34,7 @@ include/sword/canon_nrsv.h
 include/sword/canon_nrsva.h
 include/sword/canon_null.h
 include/sword/canon_orthodox.h
+include/sword/canon_segond.h
 include/sword/canon_synodal.h
 include/sword/canon_synodalprot.h
 include/sword/canon_vulg.h
@@ -49,6 +55,7 @@ include/sword/gbffootnotes.h
 include/sword/gbfheadings.h
 include/sword/gbfhtml.h
 include/sword/gbfhtmlhref.h
+include/sword/gbflatex.h
 include/sword/gbfmorph.h
 include/sword/gbfosis.h
 include/sword/gbfplain.h
@@ -76,6 +83,7 @@ include/sword/osisfootnotes.h
 include/sword/osisglosses.h
 include/sword/osisheadings.h
 include/sword/osishtmlhref.h
+include/sword/osislatex.h
 include/sword/osislemma.h
 include/sword/osismorph.h
 include/sword/osismorphsegmentation.h
@@ -107,6 +115,7 @@ include/sword/rawverse4.h
 include/sword/remotetrans.h
 include/sword/roman.h
 include/sword/rtfhtml.h
+include/sword/rtranspgdrive.h
 include/sword/sapphire.h
 include/sword/scsuutf8.h
 include/sword/stringmgr.h
@@ -137,6 +146,7 @@ include/sword/swtext.h
 include/sword/swversion.h
 include/sword/sysdata.h
 include/sword/teihtmlhref.h
+include/sword/teilatex.h
 include/sword/teiplain.h
 include/sword/teirtf.h
 include/sword/teixhtml.h
@@ -145,6 +155,7 @@ include/sword/thmlgbf.h
 include/sword/thmlheadings.h
 include/sword/thmlhtml.h
 include/sword/thmlhtmlhref.h
+include/sword/thmllatex.h
 include/sword/thmllemma.h
 include/sword/thmlmorph.h
 include/sword/thmlosis.h
@@ -172,6 +183,7 @@ include/sword/utf8html.h
 include/sword/utf8latin1.h
 include/sword/utf8nfc.h
 include/sword/utf8nfkd.h
+include/sword/utf8scsu.h
 include/sword/utf8transliterator.h
 include/sword/utf8utf16.h
 include/sword/utilstr.h
@@ -179,12 +191,16 @@ include/sword/utilxml.h
 include/sword/versekey.h
 include/sword/versetreekey.h
 include/sword/versificationmgr.h
+include/sword/xzcomprs.h
 include/sword/zcom.h
+include/sword/zcom4.h
 include/sword/zipcomprs.h
 include/sword/zld.h
 include/sword/zstr.h
 include/sword/ztext.h
+include/sword/ztext4.h
 include/sword/zverse.h
+include/sword/zverse4.h
 lib/libsword-%%PORTVERSION%%.so
 lib/libsword.a
 lib/libsword.so
@@ -196,6 +212,7 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/ar_EG-cp1256.conf
 %%DATADIR%%/locales.d/ar_EG-utf8.conf
 %%DATADIR%%/locales.d/az-utf8.conf
+%%DATADIR%%/locales.d/be-utf8.conf
 %%DATADIR%%/locales.d/bg-utf8.conf
 %%DATADIR%%/locales.d/bg_BG-cp1251.conf
 %%DATADIR%%/locales.d/cs-utf8.conf
@@ -237,10 +254,12 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/ko.conf
 %%DATADIR%%/locales.d/ko_abbrev-utf8.conf
 %%DATADIR%%/locales.d/ko_abbrev.conf
+%%DATADIR%%/locales.d/kpg-utf8.conf
 %%DATADIR%%/locales.d/la-utf8.conf
 %%DATADIR%%/locales.d/la.conf
 %%DATADIR%%/locales.d/locales.conf
 %%DATADIR%%/locales.d/lt-utf8.conf
+%%DATADIR%%/locales.d/lv-utf8.conf
 %%DATADIR%%/locales.d/mt-utf8.conf
 %%DATADIR%%/locales.d/nb-utf8.conf
 %%DATADIR%%/locales.d/nb.conf
@@ -268,6 +287,7 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/sv-utf8.conf
 %%DATADIR%%/locales.d/sv.conf
 %%DATADIR%%/locales.d/th-utf8.conf
+%%DATADIR%%/locales.d/tr-utf8.conf
 %%DATADIR%%/locales.d/uk-utf8.conf
 %%DATADIR%%/locales.d/uk_UA-cp1251.conf
 %%DATADIR%%/locales.d/uk_UA-koi8-u.conf

@@ -2,23 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	sword
-PORTVERSION=	1.7.4
-PORTREVISION=	10
+PORTVERSION=	1.8.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v${PORTVERSION:R}/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v${PORTVERSION:R}/
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for manipulating Bible texts
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cppunit-config:devel/cppunit
-
-# Workaround for for FreeBSD_11+.
-BUILD_DEPENDS+= clang38:lang/clang38
-CC=		clang38
-CXX=		clang++38
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-conf --with-zlib
