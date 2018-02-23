@@ -1,0 +1,6 @@
+AsyncSSH is a Python package which provides an asynchronous client
+and server implementation of the SSHv2 protocol on top of
+the Python asyncio framework. It requires Python 3.4 or later
+and the Python cryptography library for some cryptographic functions.
+
+WWW: https://github.com/ronf/asyncssh
