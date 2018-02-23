@@ -155,9 +155,12 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/ecc83/ecc83_schlib.lib
 %%DATADIR%%/demos/ecc83/fp-lib-table
 %%DATADIR%%/demos/ecc83/sym-lib-table
+%%DATADIR%%/demos/electric/elec-unifil.dcm
+%%DATADIR%%/demos/electric/elec-unifil.lib
 %%DATADIR%%/demos/electric/electric-cache.lib
 %%DATADIR%%/demos/electric/electric.pro
 %%DATADIR%%/demos/electric/electric.sch
+%%DATADIR%%/demos/electric/sym-lib-table
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy-cache.lib
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.kicad_pcb
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.net
@@ -240,6 +243,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/simulation/sallen_key/sallen_key.sch
 %%DATADIR%%/demos/simulation/sallen_key/sallen_key_schlib.lib
 %%DATADIR%%/demos/simulation/sallen_key/sym-lib-table
+%%DATADIR%%/demos/sonde xilinx/fp-lib-table
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx-cache.lib
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.kicad_pcb
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.net
@@ -299,10 +303,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/scripting/plugins/touch_slider_wizard.py
 %%DATADIR%%/scripting/plugins/uss39_barcode.py
 %%DATADIR%%/scripting/plugins/zip_wizard.py
-%%DATADIR%%/template/gost_landscape.kicad_wks
-%%DATADIR%%/template/gost_portrait.kicad_wks
 %%DATADIR%%/template/kicad.pro
-%%DATADIR%%/template/pagelayout_default.kicad_wks
-%%DATADIR%%/template/pagelayout_logo.kicad_wks
 share/mime/packages/kicad-gerbers.xml
 share/mime/packages/kicad-kicad.xml
