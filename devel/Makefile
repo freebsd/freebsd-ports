@@ -5249,7 +5249,6 @@
     SUBDIR += ruby-gems
     SUBDIR += ruby-korundum-kde4
     SUBDIR += ruby-krossruby-kde4
-    SUBDIR += ruby-ncurses
     SUBDIR += ruby-qtruby-kde4
     SUBDIR += ruby-rbprof
     SUBDIR += ruby-sdl
