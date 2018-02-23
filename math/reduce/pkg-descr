@@ -1,24 +1,20 @@
+		REDUCE Codemist Standard Lisp (CSL) version
+
 REDUCE is an interactive system for general algebraic computations of
-interest to mathematicians, scientists and engineers. It has been
-produced by a collaborative effort involving many contributors. Its
-capabilities include:
+interest to mathematicians, scientists and engineers.
 
-*  expansion and ordering of polynomials and rational functions;
-*  substitutions and pattern matching in a wide variety of forms;
-*  automatic and user controlled simplification of expressions;
-*  calculations with symbolic matrices;
-*  arbitrary precision integer and real arithmetic;
-*  facilities for defining new functions and extending program syntax;
-*  analytic differentiation and integration;
-*  factorization of polynomials;
-*  facilities for the solution of a variety of algebraic equations;
-*  facilities for the output of expressions in a variety of formats;
-*  facilities for generating optimized numerical programs from symbolic input;
-*  calculations with a wide variety of special functions;
-*  Dirac matrix calculations of interest to high energy physicists.
-
-It is often used as an algebraic calculator for problems that are possible
-to do by hand. However,  REDUCE is designed to support calculations that
-are not feasible by hand.
+CSL is a newer Lisp system that continues to evolve and is now written 
+completely in C++, which makes it very easy to port to a new machine. 
+Like PSL, it is a faithful implementation of Standard Lisp and has been 
+optimized for running REDUCE. It requires a very small memory partition 
+for its Lisp support. Furthermore, most of the REDUCE facilities are 
+supported as machine independent pseudocode, which is quite compact. In 
+the worst case, the performance of this system is about a factor of two 
+slower than PSL, though in many cases it matches PSL performance. 
+However, the memory use is smaller. All CSL versions are distributed with 
+sufficient CSL support to run on the given computing system. This is also
+an ideal system for those wishing to embed algebraic calculations in a C 
+or C++ programming environment. The developer of CSL before it became 
+Open Source was Codemist Ltd.
 
 WWW: http://www.reduce-algebra.com/
