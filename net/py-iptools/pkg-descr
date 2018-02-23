@@ -1,0 +1,5 @@
+The iptools package is a collection of utilities for dealing with IP addresses.
+Utilities for manipulating IPv4 and IPv6 addresses including a class that 
+can be used to include CIDR network blocks in Django's INTERNAL_IPS setting.
+
+WWW: https://github.com/bd808/python-iptools
