@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20170614
-PORTREVISION=	1
+PORTVERSION=	20180218
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNREVISION}/:eduke32 \
 		http://www.duke4.org/files/nightfright/hrp/:hrp \
@@ -23,20 +22,20 @@ LICENSE_FILE_BUILDLIC=	${WRKSRC}/source/build/buildlic.txt
 LICENSE_FILE_GPLv2=	${WRKSRC}/source/duke3d/gpl-2.0.txt
 LICENSE_PERMS_BUILDLIC=	dist-mirror pkg-mirror auto-accept
 
+BROKEN_aarch64=		fails to compile: polymost.cpp:2403:18: non-constant-expression cannot be narrowed from type 'long' to 'int32_t' (aka 'int') in initializer list
+
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
 		libvpx.so:multimedia/libvpx \
 		libpng.so:graphics/png
 
-BROKEN_aarch64=		fails to compile: polymost.cpp:2403:18: non-constant-expression cannot be narrowed from type 'long' to 'int32_t' (aka 'int') in initializer list
-
-USES=		gmake pkgconfig tar:xz
+USES=		dos2unix gmake pkgconfig tar:xz
 USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
-SVNREVISION=	6180
+SVNREVISION=	6675
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
