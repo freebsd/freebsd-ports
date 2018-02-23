@@ -479,7 +479,6 @@
     SUBDIR += tkregexp
     SUBDIR += tkrunit
     SUBDIR += toilet
-    SUBDIR += tpp
     SUBDIR += translate
     SUBDIR += ttyrec
     SUBDIR += tudu

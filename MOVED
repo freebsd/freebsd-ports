@@ -10122,3 +10122,6 @@ x11-themes/kde4-wallpapers-freebsd|x11-themes/wallpapers-freebsd-kde4|2018-02-22
 sysutils/ksysguardd|sysutils/ksysguardd-kde4|2018-02-22|Make room for KDE updates
 x11/plasma-scriptengine-ruby|x11/plasma-scriptengine-ruby-kde4|2018-02-22|Make room for KDE updates
 x11/plasma-scriptengine-python|x11/plasma-scriptengine-python-kde4|2018-02-22|Make room for KDE updates
+misc/tpp||2018-02-23|Has expired: Depends on expired devel/ruby-ncurses
+net/raggle||2018-02-23|Has expired: Depends on expired devel/ruby-ncurses
+devel/ruby-ncurses||2018-02-23|Has expired: Marked BROKEN for more than 6 months
