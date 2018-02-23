@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-02-19 11:02:50 UTC
++++ CMakeLists.txt
+@@ -437,6 +437,8 @@ if (NOT DEFINED TEST)
+ 	find_package(CURL)
+ 	if (CURL_FOUND)
+ 		add_definitions(-DUSE_CURL)
++		include_directories(%%PREFIX%%/include)
++		link_directories(%%PREFIX%%/lib)
+ 		message (STATUS "libcurl found")
+ 	else ()
+ 		message (STATUS "libcurl not found")
