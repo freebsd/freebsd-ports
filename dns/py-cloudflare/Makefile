@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudflare
-PORTVERSION=	1.8.1
+PORTVERSION=	2.0.4
 CATEGORIES=	dns python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,10 @@ COMMENT=	wrapper for the Cloudflare v4 API
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
