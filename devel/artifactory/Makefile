@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	artifactory
-PORTVERSION=	5.4.1
+DISTVERSION=	5.8.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://bintray.com/artifact/download/jfrog/artifactory/
 DISTNAME=	jfrog-${PORTNAME}-oss-${PORTVERSION}
@@ -18,13 +18,13 @@ RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-oss-${PORTVERSION}
 
-NO_ARCH=	yes
-USE_JAVA=	yes
 USES=		shebangfix zip
 SHEBANG_FILES=	bin/artifactory.sh
-NO_BUILD=	yes
+USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 JAVA_VENDOR=	openjdk
+NO_BUILD=	yes
+NO_ARCH=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 APP_NAME=	${PORTNAME}

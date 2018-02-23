@@ -34,10 +34,11 @@
 %%APP_HOME%%/misc/tomcat/NGNIX.txt
 %%APP_HOME%%/misc/tomcat/artifactory.httpd.conf
 %%APP_HOME%%/misc/tomcat/artifactory.xml
-%%APP_HOME%%/misc/tomcat/index.html
 %%APP_HOME%%/misc/tomcat/logging.properties
 %%APP_HOME%%/misc/tomcat/server.xml
 %%APP_HOME%%/misc/tomcat/web.xml
+%%APP_HOME%%/misc/tomcat/webapps/ROOT/WEB-INF/rewrite.config
+%%APP_HOME%%/misc/tomcat/webapps/ROOT/index.html
 %%APP_HOME%%/misc/%%APP_HOME%%.config.template.yml
 %%APP_HOME%%/tomcat/LICENSE
 %%APP_HOME%%/tomcat/NOTICE
@@ -65,6 +66,8 @@
 %%APP_HOME%%/tomcat/conf/catalina.policy
 %%APP_HOME%%/tomcat/conf/catalina.properties
 %%APP_HOME%%/tomcat/conf/context.xml
+%%APP_HOME%%/tomcat/conf/jaspic-providers.xml
+%%APP_HOME%%/tomcat/conf/jaspic-providers.xsd
 %%APP_HOME%%/tomcat/conf/logging.properties
 %%APP_HOME%%/tomcat/conf/server.xml
 %%APP_HOME%%/tomcat/conf/web.xml
@@ -72,6 +75,7 @@
 %%APP_HOME%%/tomcat/lib/catalina.jar
 %%APP_HOME%%/tomcat/lib/derby-10.11.1.1.jar
 %%APP_HOME%%/tomcat/lib/el-api.jar
+%%APP_HOME%%/tomcat/lib/jaspic-api.jar
 %%APP_HOME%%/tomcat/lib/servlet-api.jar
 %%APP_HOME%%/tomcat/lib/tomcat-api.jar
 %%APP_HOME%%/tomcat/lib/tomcat-coyote.jar
@@ -86,6 +90,7 @@
 %%APP_HOME%%/webapps/access.war
 @owner artifactory
 @group artifactory
+%%VARDIR%%/tomcat/webapps/ROOT/WEB-INF/rewrite.config
 %%VARDIR%%/tomcat/webapps/ROOT/index.html
 %%VARDIR%%/etc/artifactory.config.xml
 %%VARDIR%%/etc/artifactory.system.properties
@@ -93,6 +98,7 @@
 %%VARDIR%%/etc/mimetypes.xml
 %%VARDIR%%/etc/logback.xml
 @dir %%VARDIR%%/tomcat/work
+@dir %%VARDIR%%/tomcat/webapps/ROOT/WEB-INF
 @dir %%VARDIR%%/tomcat/webapps/ROOT
 @dir %%VARDIR%%/tomcat/webapps
 @dir %%VARDIR%%/tomcat/temp
