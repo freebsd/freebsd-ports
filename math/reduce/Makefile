@@ -14,24 +14,25 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
 
+RUN_DEPENDS=	gnuplot:math/gnuplot
+
+LIB_DEPENDS+=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
+
+MAKE_JOBS_UNSAFE=	yes
+
+SFSUBDIR=	snapshot_2018-01-17
+
 USES=		autoreconf:build libtool gmake ncurses
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--build=${TARGET_SDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 CPPFLAGS+=	-I${NCURSESINC}
 
-SFSUBDIR=	snapshot_2018-01-17
-
 # Avoid GNU_CONFIGURE as it breaks staging
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 
-MAKE_JOBS_UNSAFE=	yes
-
-RUN_DEPENDS=	gnuplot:math/gnuplot
-
-LIB_DEPENDS+=	libpng.so:graphics/png \
-		libtiff.so:graphics/tiff
 USE_XORG=	x11 xext xproto xft
 USES+=		jpeg
 CONFIGURE_ARGS=	--with-csl
@@ -54,7 +55,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}
 	(cd ${REDUCE_BINS}/csl/reduce.fonts && ${COPYTREE_SHARE} . \
 	    ${STAGEDIR}${DATADIR}/reduce.fonts)
-
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/manual/manual.pdf\
 	    ${STAGEDIR}${DOCSDIR}
