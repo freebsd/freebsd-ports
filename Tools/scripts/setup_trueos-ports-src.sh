@@ -38,8 +38,14 @@ if [ ! $? ] ; then
 fi
 
 #generate the pkg-plist
-find ${portsdir} ! -type d ! -ipath "*/work/*" ! -ipath "*/.git*" ! -ipath "*/${port}/*" | sort > ${portsdir}/${port}/pkg-plist
+# Files
+find ${portsdir} ! -type d ! -ipath "*/work/*" ! -ipath "*/.git*" ! -ipath "*/${port}/*"  ! -ipath "*/distfiles/*"| sort > ${portsdir}/${port}/pkg-plist
 sed -i '' "s|${portsdir}/|/usr/ports/|g" ${portsdir}/${port}/pkg-plist
+#Directories
+find ${portsdir} -type d > ${portsdir}/${port}/pkg-plist.dirs
+sed -i '' "s|${portsdir}/|@dir /usr/ports/|g" ${portsdir}/${port}/pkg-plist.dirs
+cat "${portsdir}/${port}/pkg-plist.dirs" >> "${portsdir}/${port}/pkg-plist"
+rm "${portsdir}/${port}/pkg-plist.dirs" #remove the temporary file
 
 #If everything is successful now - go ahead and activate the port in the categories Makefile
 cd ${portsdir}/ports-mgmt
