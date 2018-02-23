@@ -3,7 +3,7 @@
 
 PORTNAME=	mosquitto
 PORTVERSION=	1.4.14
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://mosquitto.org/files/source/
 
@@ -12,7 +12,8 @@ COMMENT=	Open-Source MQTT Broker
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcares.so:dns/c-ares
+LIB_DEPENDS=	libcares.so:dns/c-ares \
+		libuuid.so:misc/e2fsprogs-libuuid
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
 USES=		cmake ssl
