@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	container-diff
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
