@@ -1,13 +1,14 @@
 # Install the EGL demos
 #
---- src/egl/opengl/Makefile.am.orig	2015-12-09 21:04:02 UTC
+--- src/egl/opengl/Makefile.am.orig	2018-02-23 08:50:21 UTC
 +++ src/egl/opengl/Makefile.am
-@@ -50,7 +50,7 @@ endif
- endif
+@@ -57,8 +57,7 @@ endif
  
  if HAVE_EGL
+ bin_PROGRAMS = \
+-	eglinfo
 -noinst_PROGRAMS = \
-+bin_PROGRAMS = \
- 	eglinfo \
++	eglinfo \
  	peglgears \
  	$(EGL_DRM_DEMOS) \
+ 	$(EGL_X11_DEMOS) \
