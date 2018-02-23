@@ -10,6 +10,7 @@
 %%SITE_PERL%%/Net/GitHub/V3/PullRequests.pm
 %%SITE_PERL%%/Net/GitHub/V3/Query.pm
 %%SITE_PERL%%/Net/GitHub/V3/Repos.pm
+%%SITE_PERL%%/Net/GitHub/V3/ResultSet.pm
 %%SITE_PERL%%/Net/GitHub/V3/Search.pm
 %%SITE_PERL%%/Net/GitHub/V3/Users.pm
 %%SITE_PERL%%/Net/GitHub/V4.pm
@@ -25,6 +26,7 @@
 %%PERL5_MAN3%%/Net::GitHub::V3::PullRequests.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V3::Query.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V3::Repos.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::ResultSet.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V3::Search.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V3::Users.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V4.3.gz
