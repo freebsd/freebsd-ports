@@ -6,7 +6,7 @@ PORTVERSION=	0.3.3
 CATEGORIES=	misc
 MASTER_SITES=	http://joakimandersson.se/files/
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	tail(1) replacement with color support
 
 LICENSE=	GPLv2+

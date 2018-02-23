@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://welz.org.za/projects/since/
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View the end of a file like tail(1), but save state between sessions
 
 LICENSE=	GPLv3

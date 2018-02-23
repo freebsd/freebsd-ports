@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Bible study tool
 
 LICENSE=	GPLv2
