@@ -1,0 +1,11 @@
+--- libinterp/mk-pkg-add.orig	2017-02-22 18:01:55 UTC
++++ libinterp/mk-pkg-add
+@@ -20,7 +20,7 @@
+ 
+ set -e
+ 
+-SED=${SED:-sed}
++SED=gsed
+ 
+ srcdir="$1"
+ shift
