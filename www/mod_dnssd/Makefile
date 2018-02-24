@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://0pointer.de/lennart/projects/mod_dnssd/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Apache module that provides DNS-SD capabilities
 
 LICENSE=	APACHE20

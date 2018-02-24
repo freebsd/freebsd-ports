@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	2
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
 
 LICENSE=	APACHE20

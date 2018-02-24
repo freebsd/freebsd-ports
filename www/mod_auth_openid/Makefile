@@ -8,7 +8,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Authentication module for the Apache 2 webserver with OpenID
 
 LICENSE=	MIT
