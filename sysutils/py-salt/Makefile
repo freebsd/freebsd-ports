@@ -3,6 +3,7 @@
 
 PORTNAME=	salt
 PORTVERSION=	2017.7.3
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}boto>=2.32.1:devel/py-boto@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libcloud>=0.14.0:net/py-libcloud@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar@${FLAVOR} \
@@ -57,12 +55,18 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	RAET TCP ZEROMQ
+OPTIONS_DEFINE=	AWS RAET TCP ZEROMQ
 OPTIONS_DEFAULT=ZEROMQ
 
+AWS_DESC=	Install dependencies required for Amazon Web Services
 RAET_DESC=	Install dependencies required for RAET transport
 TCP_DESC=	Install dependencies required for TCP transport
 ZEROMQ_DESC=	Install dependencies required for ZeroMQ transport
+
+# AWS dependencies (Note: the devel/py-botocore port is updated very frequently)
+AWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}boto>=2.32.1:devel/py-boto@${FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore@${FLAVOR}
 
 RAET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libnacl>=1.0.0:security/py-libnacl@${FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ioflo>=1.1.7:devel/py-ioflo@${FLAVOR} \
