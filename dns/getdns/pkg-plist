@@ -1,4 +1,5 @@
 bin/getdns_query
+bin/getdns_server_mon
 %%STUBBY%%bin/stubby
 %%STUBBY%%@sample etc/stubby/stubby.yml.sample
 include/getdns/getdns.h
@@ -24,6 +25,7 @@ libdata/pkgconfig/getdns_ext_event.pc
 %%LIBUV%%lib/libgetdns_ext_uv.so.%%SOVERSION%%
 %%LIBUV%%lib/libgetdns_ext_uv.a
 %%LIBUV%%lib/libgetdns_ext_uv.so
+%%STUBBY%%man/man1/stubby.1.gz
 man/man3/getdns_address.3.gz
 man/man3/getdns_address_sync.3.gz
 man/man3/getdns_cancel_callback.3.gz
