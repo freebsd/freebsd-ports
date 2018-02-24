@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	matplotlib
-PORTVERSION=	1.5.3
-PORTREVISION=	3
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1.2
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,9 +24,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${FLAVOR}
 
-USE_GITHUB=	yes
-
 USES=		compiler:c++11-lib gettext pkgconfig python shebangfix uniquefiles:dirs
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${LOCALBASE}/include
 

@@ -5,4 +5,4 @@ can be used in python scripts, interactively from the python shell (ala matlab
 or mathematica), in web application servers generating dynamic charts, or
 embedded in GTK, Tk or WX applications; see backends.
 
-WWW: http://matplotlib.org/
+WWW: https://matplotlib.org/
