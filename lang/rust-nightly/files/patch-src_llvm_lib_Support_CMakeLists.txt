@@ -1,0 +1,13 @@
+--- src/llvm/lib/Support/CMakeLists.txt.orig	2018-02-09 16:06:37 UTC
++++ src/llvm/lib/Support/CMakeLists.txt
+@@ -13,7 +13,9 @@ elseif( CMAKE_HOST_UNIX )
+     set(system_libs ${system_libs} ${CMAKE_DL_LIBS})
+   endif()
+   if( HAVE_BACKTRACE )
+-    set(system_libs ${system_libs} ${Backtrace_LIBRARIES})
++    get_filename_component(Backtrace_LIBFILE ${Backtrace_LIBRARIES} NAME_WE)
++    STRING(REGEX REPLACE "^lib" "" Backtrace_LIBFILE ${Backtrace_LIBFILE})
++    set(system_libs ${system_libs} ${Backtrace_LIBFILE})
+   endif()
+   if(LLVM_ENABLE_TERMINFO)
+     if(HAVE_TERMINFO)
