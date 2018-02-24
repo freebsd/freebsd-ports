@@ -6,10 +6,11 @@ PORTVERSION=	1.13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dev.yorhel.nl/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Ncurses du(1)
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
