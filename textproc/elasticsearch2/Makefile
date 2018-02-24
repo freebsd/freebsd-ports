@@ -13,6 +13,9 @@ COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Elastic 2.4 EoL is 2018-02-28
+EXPIRATION_DATE=2018-06-01
+
 CONFLICTS=	elasticsearch-[0-9]* elasticsearch5-[0-9]* elasticsearch6-[0-9]*
 
 USES=		cpe

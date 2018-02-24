@@ -12,6 +12,9 @@ COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Elastic 1.7 EoL was 2017-01-16
+EXPIRATION_DATE=2018-04-01
+
 RUN_DEPENDS=	java-sigar>=0:java/sigar
 
 CONFLICTS=	elasticsearch[0-9]-[0-9]*
