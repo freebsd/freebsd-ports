@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge-financial
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
