@@ -1,2 +1,3 @@
-SHA256 (rubygem/thrift-0.9.3.0.gem) = 2b8cb950cacd6265ea3d93ef716a5394c6d5de1f560b665098eba2d06fa1574d
-SIZE (rubygem/thrift-0.9.3.0.gem) = 72192
+TIMESTAMP = 1518214128
+SHA256 (rubygem/thrift-0.11.0.0.gem) = 9b6a5489b79f6843abc4f3d9acd4ece6b50ea254fbb5eb0c9c569ecee701e10a
+SIZE (rubygem/thrift-0.11.0.0.gem) = 85504

@@ -29,6 +29,8 @@ lib/node_modules/thrift/lib/thrift/framed_transport.js
 lib/node_modules/thrift/lib/thrift/http_connection.js
 lib/node_modules/thrift/lib/thrift/index.js
 lib/node_modules/thrift/lib/thrift/input_buffer_underrun_error.js
+lib/node_modules/thrift/lib/thrift/int64_util.js
+lib/node_modules/thrift/lib/thrift/json_parse.js
 lib/node_modules/thrift/lib/thrift/json_protocol.js
 lib/node_modules/thrift/lib/thrift/log.js
 lib/node_modules/thrift/lib/thrift/multiplexed_processor.js

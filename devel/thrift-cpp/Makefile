@@ -3,7 +3,6 @@
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
-PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/thrift/${PORTVERSION}
@@ -38,6 +37,7 @@ OPTIONS_SUB=		yes
 CONFIGURE_ARGS+=	\
 		--without-c_glib \
 		--with-cpp \
+		--with-boost-libdir="${LOCALBASE}/lib" \
 		--without-csharp \
 		--without-erlang \
 		--without-haskell \

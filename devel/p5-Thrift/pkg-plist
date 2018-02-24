@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Thrift.pm
 %%SITE_PERL%%/Thrift/BinaryProtocol.pm
 %%SITE_PERL%%/Thrift/BufferedTransport.pm
+%%SITE_PERL%%/Thrift/Exception.pm
 %%SITE_PERL%%/Thrift/FramedTransport.pm
 %%SITE_PERL%%/Thrift/HttpClient.pm
 %%SITE_PERL%%/Thrift/MemoryBuffer.pm
@@ -15,3 +16,6 @@
 %%SITE_PERL%%/Thrift/ServerSocket.pm
 %%SITE_PERL%%/Thrift/Socket.pm
 %%SITE_PERL%%/Thrift/Transport.pm
+%%SITE_PERL%%/Thrift/Type.pm
+%%SITE_PERL%%/Thrift/UnixServerSocket.pm
+%%SITE_PERL%%/Thrift/UnixSocket.pm

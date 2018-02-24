@@ -1,11 +1,17 @@
 @comment bin/thrift
 include/thrift/c_glib/config.h
 include/thrift/c_glib/processor/thrift_dispatch_processor.h
+include/thrift/c_glib/processor/thrift_multiplexed_processor.h
 include/thrift/c_glib/processor/thrift_processor.h
 include/thrift/c_glib/protocol/thrift_binary_protocol.h
 include/thrift/c_glib/protocol/thrift_binary_protocol_factory.h
+include/thrift/c_glib/protocol/thrift_compact_protocol.h
+include/thrift/c_glib/protocol/thrift_compact_protocol_factory.h
+include/thrift/c_glib/protocol/thrift_multiplexed_protocol.h
 include/thrift/c_glib/protocol/thrift_protocol.h
+include/thrift/c_glib/protocol/thrift_protocol_decorator.h
 include/thrift/c_glib/protocol/thrift_protocol_factory.h
+include/thrift/c_glib/protocol/thrift_stored_message_protocol.h
 include/thrift/c_glib/server/thrift_server.h
 include/thrift/c_glib/server/thrift_simple_server.h
 include/thrift/c_glib/thrift.h
@@ -13,12 +19,15 @@ include/thrift/c_glib/thrift_application_exception.h
 include/thrift/c_glib/thrift_struct.h
 include/thrift/c_glib/transport/thrift_buffered_transport.h
 include/thrift/c_glib/transport/thrift_buffered_transport_factory.h
+include/thrift/c_glib/transport/thrift_fd_transport.h
 include/thrift/c_glib/transport/thrift_framed_transport.h
 include/thrift/c_glib/transport/thrift_framed_transport_factory.h
 include/thrift/c_glib/transport/thrift_memory_buffer.h
+include/thrift/c_glib/transport/thrift_platform_socket.h
 include/thrift/c_glib/transport/thrift_server_socket.h
 include/thrift/c_glib/transport/thrift_server_transport.h
 include/thrift/c_glib/transport/thrift_socket.h
+include/thrift/c_glib/transport/thrift_ssl_socket.h
 include/thrift/c_glib/transport/thrift_transport.h
 include/thrift/c_glib/transport/thrift_transport_factory.h
 lib/libthrift_c_glib.a
