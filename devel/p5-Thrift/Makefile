@@ -3,7 +3,6 @@
 
 PORTNAME=	Thrift
 PORTVERSION=	${THRIFT_PORTVERSION}	# need to keep this in sync with ../thrift see ../thrift/bsd.thrift.mk
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
