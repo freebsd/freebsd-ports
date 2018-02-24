@@ -16,4 +16,4 @@ share/trueos/scripts/sys-init.sh
 share/trueos/scripts/validate-services.sh
 /boot/brand-trueos.4th
 /boot/logo-trueos.4th
-@sample etc/fonts/local.conf etc/fonts/local.conf.trueos
+@sample etc/fonts/local.conf.trueos
