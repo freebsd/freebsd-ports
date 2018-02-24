@@ -86,4 +86,12 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/wkhtmltopdf \
 		${STAGEDIR}${PREFIX}/lib/libwkhtmltox.so.0.12.4
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD
+.if ${COMPILER_TYPE:Mclang} && ${COMPILER_VERSION} >= 60
+BROKEN=		Does not build
+.endif
+.endif
+
+.include <bsd.port.post.mk>
