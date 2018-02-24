@@ -123,7 +123,8 @@ $nr_to_remove = 0;
 foreach my $p (keys %is_installed) {
   if (defined($is_installed{$p})) {
     my $altp = $p; # so that 3.5.0 and 3.5 are the same package numbers
-    $altp =~ s/(\-\d+\.\d+)\.0(\.tar\.gz)$/$1$2/;
+    $altp =~ s/(\-\d+\.\d+)\.0(\.tar\.gz)$/$1$2/ || 
+    $altp =~ s/(\-\d+\.\d+)(\.tar\.gz)$/$1\.0$2/;
     if (!defined($in_tarballs{$p}) && !defined($in_tarballs{$altp})) {
       $to_remove{$p} = $is_installed{$p};
       $nr_to_remove++;
@@ -184,7 +185,8 @@ while (my $p = <$install_prefix/*>) {
 %to_install = ();
 foreach my $n (keys %in_tarballs) {
   my $altn = $n; # so that 3.5 and 3.5.0 are the same package numbers
-  $altn =~ s/(\-\d+\.\d+)(\.tar\.gz)$/$1\.0$2/;
+  $altn =~ s/(\-\d+\.\d+)(\.tar\.gz)$/$1\.0$2/ ||
+  $altn =~ s/(\-\d+\.\d+)\.0(\.tar\.gz)$/$1$2/;
   if (defined($in_tarballs{$n})) {
     if (!defined($is_installed{$n}) && !defined($is_installed{$altn})) {
       my $tar = Archive::Tar->new("$tardir/$n",COMPRESS_GZIP);
