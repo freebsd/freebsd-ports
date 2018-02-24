@@ -161,9 +161,6 @@ NOT_FOR_ARCHS_REASON=	TokuDB not supported on 32-bit platforms, see \
 USE_GCC=	yes
 .endif
 
-post-extract-OQGRAPH-off:
-	@${RM} -r ${WRKSRC}/storage/oqgraph
-
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/mysys/my_default.c
