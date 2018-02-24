@@ -150,7 +150,7 @@ post-extract:
 	 ${LD} -r -o std.xx.o "$$std_o" old_fstat.o; \
 	 ${MV} std.xx.o "$$std_o"; \
 	 ${AR} r "$$libstd" "$$std_o")
-	${TAR} -cz --format=ustar -C ${WRKSRC} -f ${WRKSRC}/rust-std.tar.gz ${RUST_STD_DIR}
+	${TAR} -c --format=ustar -C ${WRKSRC} -f ${WRKSRC}/rust-std.tar.gz ${RUST_STD_DIR}
 	${MV} ${WRKSRC}/rust-std.tar.gz ${WRKSRC}/build/cache/${RUST_STD_BOOTSTRAP}
 .endif
 
