@@ -42,6 +42,7 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/numa.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pmemblk.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poisson-rate-submission.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rados.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rand-zones.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rbd.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-client.fio
