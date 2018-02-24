@@ -4,7 +4,7 @@
 # vim: ts=8 noet
 
 PORTNAME=	ripgrep
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -27,7 +27,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		bitflags-1.0.1 \
 		bytecount-0.3.1 \
 		cfg-if-0.1.2 \
-		clap-2.29.4 \
+		clap-2.30.0 \
 		crossbeam-0.3.2 \
 		encoding_rs-0.7.2 \
 		fnv-1.0.6 \
@@ -57,7 +57,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		unreachable-1.0.0 \
 		utf8-ranges-1.0.0 \
 		void-1.0.2 \
-		walkdir-2.1.3 \
+		walkdir-2.1.4 \
 		winapi-0.3.4 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
@@ -66,11 +66,14 @@ RIPGREP_OUTDIR=	${WRKDIR}/cargo-out
 CARGO_ENV=	RIPGREP_OUTDIR=${RIPGREP_OUTDIR}
 
 PLIST_FILES=	bin/rg \
-		man/man1/rg.1.gz
+		etc/bash_completion.d/rg.bash \
+		man/man1/rg.1.gz \
+		share/fish/completions/rg.fish \
+		share/zsh/site-functions/_rg
+
 PORTDOCS=	CHANGELOG.md FAQ.md GUIDE.md
 
-OPTIONS_DEFINE=	BASH DOCS FISH SIMD ZSH
-OPTIONS_DEFAULT=BASH FISH ZSH
+OPTIONS_DEFINE=	DOCS SIMD
 
 OPTIONS_DEFINE_amd64=	AVX
 OPTIONS_DEFINE_i386=	AVX
@@ -84,9 +87,6 @@ AVX_DESC=	${SSE_DESC:S/SSE/AVX/}
 AVX_VARS=	CARGO_FEATURES+=avx-accel RUSTFLAGS+="-C target-feature=+avx"
 AVX_IMPLIES=	SIMD
 
-BASH_PLIST_FILES=	etc/bash_completion.d/rg.bash
-FISH_PLIST_FILES=	share/fish/completions/rg.fish
-
 # simd crate uses cfg_target_feature which isn't stable yet, so unlock
 # unstable features similar to how lang/rust bootstraps. www/firefox
 # uses the same hack when building with --enable-rust-simd.
@@ -94,32 +94,24 @@ SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=1
 SIMD_VARS=	CARGO_FEATURES+=simd-accel ${SIMD_VARS_${ARCH}}
 SIMD_VARS_i386=	RUSTFLAGS+="-C target-feature=+sse2"
 
-ZSH_PLIST_FILES=	share/zsh/site-functions/_rg
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|OUT_DIR|RIPGREP_OUTDIR|' ${WRKSRC}/build.rs
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rg
 	${INSTALL_MAN} ${RIPGREP_OUTDIR}/rg.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-
-post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.fish \
+		${STAGEDIR}${PREFIX}/share/fish/completions/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKSRC}/complete/_rg \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-
-post-install-FISH-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions/
-	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/
-
-post-install-ZSH-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
-	${INSTALL_DATA} ${WRKSRC}/complete/_rg \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 
 .include <bsd.port.mk>
