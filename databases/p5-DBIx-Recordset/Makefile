@@ -17,9 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-post-configure:
-# bad DBIx::Intrors.3
-		@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 -lax/;' \
-			${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
