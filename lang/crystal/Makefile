@@ -31,7 +31,7 @@ GH_ACCOUNT=	crystal-lang
 
 MAKE_ARGS=	SHELL=sh \
 		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
-		FLAGS="--release --no-debug" \
+		FLAGS="--release --no-debug --progress" \
 		EXPORTS='CRYSTAL_CONFIG_PATH="lib:${PREFIX}/lib/${PORTNAME}"' \
 		CRYSTAL_CACHE_DIR="${WRKDIR}/cache"
 
