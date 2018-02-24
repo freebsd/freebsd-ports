@@ -123,9 +123,10 @@ lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--math.so
 %%ODBC%%lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--odbc.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--process.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--socket.so
+lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--termios.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--threads.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--time.so
-lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--termios.so
+lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--tls-socket.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--zlib.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%-config
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%-package
@@ -202,6 +203,11 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/lib/rnrs/sorting.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/rnrs/syntax-case.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/rnrs/unicode.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/calendar.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/calendar/constants.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/calendar/gregorian.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/calendar/iso.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/calendar/locals.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/comparators.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/crypto.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/dynamic-module.scm
@@ -225,6 +231,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/time-private.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/time-util.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/timezone.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/tls-socket.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/tzdata.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/win-mappings.scm
 %%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a106.scm
@@ -345,6 +352,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/http2/hpack.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/jose.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/jrd.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/json-pointer.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/jwa.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/jwk.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/mime.scm
@@ -728,6 +736,8 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/tools.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/tree-trans.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/txpath-parser.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/toml.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/toml/parser.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/tree.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/time.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/tlv.scm
