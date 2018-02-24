@@ -3,4 +3,22 @@
 Please see %%ETCDIR%% for sample versions of
 elasticsearch.yml and logging.yml.
 
+ElasticSearch requires memory locking of large amounts of RAM.
+You will either need to set:
+
+sysrc elasticsearch_login_class="root"
+
+or
+
+sysctl security.bsd.unprivileged_mlock=1
+
+to prevent the process from failing the bootstrap.
+
+Do note that you need to set
+
+bootstrap.system_call_filter: false
+
+in your elasticsearch.yml file to successfully bootstrap on non-Linux
+OSes now.
+
 ======================================================================

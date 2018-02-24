@@ -1,11 +1,11 @@
---- bin/elasticsearch.orig	2016-12-02 11:42:56 UTC
+--- bin/elasticsearch.orig	2018-02-22 23:11:44 UTC
 +++ bin/elasticsearch
 @@ -112,7 +112,7 @@ ES_HOME=`cd "$ES_HOME"; pwd`
  
  if [ -z "$ES_JVM_OPTIONS" ]; then
      for jvm_options in "$ES_HOME"/config/jvm.options \
 -                      /etc/elasticsearch/jvm.options; do
-+                      %%PREFIX%%/etc/elasticsearch/jvm.options; do
++                      /usr/local/etc/elasticsearch/jvm.options; do
          if [ -r "$jvm_options" ]; then
              ES_JVM_OPTIONS=$jvm_options
              break
