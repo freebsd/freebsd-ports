@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		nss-pam-ldapd
-PORTVERSION=		0.9.8
-PORTREVISION=		1
+PORTVERSION=		0.9.9
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			ZI
