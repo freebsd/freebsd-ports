@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logstash
-PORTVERSION=	5.3.0
+PORTVERSION=	5.6.8
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
 PKGNAMESUFFIX=	5
@@ -29,10 +29,8 @@ LOGSTASH_DIR=	${PREFIX}/${PORTNAME}
 USE_RC_SUBR=	logstash
 
 LOGSTASH_HOME?=	${PREFIX}/${PORTNAME}
-LOGSTASH_RUN?=	/var/run/${PORTNAME}
-LOGSTASH_DATA_DIR?=	/var/db/${PORTNAME}
 
-SUB_LIST=	LOGSTASH_DATA_DIR=${LOGSTASH_DATA_DIR} JAVA_HOME=${JAVA_HOME} \
+SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME}
 
 LOGSTASH_BIN_FILES=	  logstash
@@ -43,8 +41,6 @@ LOGSTASH_JRUBY_BIN_FILES=	ast irb jirb jruby jruby.sh rdoc testrb gem \
 do-install:
 	@${FIND} ${WRKSRC} -name '*.bat' -delete
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${MKDIR} ${STAGEDIR}${LOGSTASH_RUN}
-	${MKDIR} ${STAGEDIR}${LOGSTASH_DATA_DIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${LOGSTASH_DIR})
 	${INSTALL_DATA} ${FILESDIR}/logstash.conf.sample ${STAGEDIR}${ETCDIR}
 .for x in ${LOGSTASH_BIN_FILES}
@@ -53,5 +49,21 @@ do-install:
 .for x in ${LOGSTASH_JRUBY_BIN_FILES}
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_DIR}/${LOGSTASH_JRUBY_SUBDIR}/${x}
 .endfor
+
+post-install:
+	${ECHO} "@sample ${ETCDIR}/logstash.conf.sample" >> ${TMPPLIST}
+	${FIND} -s ${STAGEDIR}${PREFIX}/logstash -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${ECHO} "@dir logstash/data" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/1.9/build_info" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/1.9/cache" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/1.9/doc" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/1.9/extensions" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/1.9/gems/manticore-0.6.1-java/spec/ssl" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/1.9/gems/redis-3.3.5/test/db" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/build_info" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/cache" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/doc" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/extensions" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

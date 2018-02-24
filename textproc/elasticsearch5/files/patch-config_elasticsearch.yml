@@ -1,4 +1,4 @@
---- config/elasticsearch.yml.orig	2016-11-24 10:05:27 UTC
+--- config/elasticsearch.yml.orig	2018-02-16 16:43:35 UTC
 +++ config/elasticsearch.yml
 @@ -31,10 +31,15 @@
  # Path to directory where to store the data (separate multiple locations by comma):
@@ -16,3 +16,10 @@
  #
  # ----------------------------------- Memory -----------------------------------
  #
+@@ -86,3 +91,6 @@
+ # Require explicit names when deleting indices:
+ #
+ #action.destructive_requires_name: true
++
++# Required on non-Linux platforms
++bootstrap.system_call_filter: false

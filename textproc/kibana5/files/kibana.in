@@ -30,12 +30,15 @@ command_args="-f -p ${pidfile} env BABEL_DISABLE_CACHE=1 ${procname} %%WWWDIR%%/
 kibana_precmd()
 {
 	if [ ! -d $(dirname ${pidfile}) ]; then
-		mkdir $(dirname ${pidfile})
-		chown ${kibana_user}:${kibana_group} $(dirname ${pidfile})
+		install -d -o ${kibana_user} -g ${kibana_group} $(dirname ${pidfile})
 	fi
 
 	if [ ! -f ${kibana_log} ]; then
 		install -o ${kibana_user} -g ${kibana_group} -m 640 /dev/null ${kibana_log}
+	fi
+
+	if [ ! -d %%WWWDIR%%/optimize ]; then
+		install -d -o ${kibana_user} -g ${kibana_group} %%WWWDIR%%/optimize
 	fi
 }
 
