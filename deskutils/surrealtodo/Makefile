@@ -29,7 +29,7 @@ OPTIONS_DEFAULT=	APACHE
 LIGHTTPD_DESC=	Use Lighttpd webserver
 
 PGSQL_USE=	PHP=pgsql
-APACHE_USE=	APACHE_RUN=22
+APACHE_USE=	APACHE_RUN=22+
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 
 do-install:
