@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	free42
-DISTVERSION=	2.0.15
+DISTVERSION=	2.0.16
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/upstream/
 DISTNAME=	${PORTNAME}-nologo-${DISTVERSION}
