@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	stockfish
-PORTVERSION=	8
+DISTVERSION=	9
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
-MASTER_SITES=	http://stockfish.s3.amazonaws.com/:src
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src.zip:src
+MASTER_SITES=	http://stockfish.s3.amazonaws.com/
 
 MAINTAINER=	execve@gmail.com
 COMMENT=	Open source chess engine
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/../Copying.txt
 
 NOT_FOR_ARCHS=	sparc64
 BROKEN_aarch64=	Fails to build: cannot detect architecture
@@ -21,13 +21,13 @@ BROKEN_mips64=	Fails to build: cannot detect architecture
 
 USES=		compiler gmake zip
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+NO_WRKSUBDIR=	yes
+WRKSRC_SUBDIR=	src
 MYARCH=		${ARCH}
 MYCC=		${COMPILER_TYPE}
 TGTBLD=		build
 
 PLIST_FILES=	bin/stockfish
-PORTDATA=
 PORTDOCS=	Readme.md
 
 OPTIONS_DEFINE=	DOCS POPCNT
@@ -65,6 +65,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Readme.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../Readme.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
