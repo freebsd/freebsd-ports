@@ -24,10 +24,7 @@ BUILD_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector \
 		p5-libwww>=2:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-Capture>=0:devel/p5-IO-Capture \
-		p5-Pod-Coverage>=0:devel/p5-Pod-Coverage \
-		p5-Test-File>=0:devel/p5-Test-File \
-		p5-Test-Pod>=0:devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
+		p5-Test-File>=0:devel/p5-Test-File
 
 NO_ARCH=	yes
 USES=		perl5
