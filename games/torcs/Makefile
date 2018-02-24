@@ -19,12 +19,13 @@ RUN_DEPENDS=	bash:shells/bash
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		cpe gmake openal:al,alut shebangfix tar:bzip2
+USES=		compiler:c++11-lang cpe gmake openal:al,alut shebangfix tar:bzip2
 CPE_VENDOR=	bernhard_wymann
 SHEBANG_FILES=	src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in \
 		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
 		src/tools/trackgen/trackgen.in \
 		src/modules/telemetry/telemetry.sh robotgen
+USE_CXXSTD=	c++11
 USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr xi xt sm
 USE_GL=		glut glu gl
 GNU_CONFIGURE=	yes
