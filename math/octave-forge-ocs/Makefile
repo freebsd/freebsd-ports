@@ -12,6 +12,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
+BROKEN=		depends upon math/octave-forge-odepkg, which is depreciated
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
