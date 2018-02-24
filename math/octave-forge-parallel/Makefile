@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-parallel
 PORTVERSION=	3.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
