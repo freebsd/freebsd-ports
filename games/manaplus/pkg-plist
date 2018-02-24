@@ -284,6 +284,10 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/test/dir2/file2.txt
 %%DATADIR%%/data/test/dye.png
 %%DATADIR%%/data/test/equipmentwindow.xml
+%%DATADIR%%/data/test/hairstyle01.png
+%%DATADIR%%/data/test/hairstyle01.xml
+%%DATADIR%%/data/test/hairstyle02.png
+%%DATADIR%%/data/test/hairstyle02.xml
 %%DATADIR%%/data/test/hide.png
 %%DATADIR%%/data/test/items.xml
 %%DATADIR%%/data/test/palette.gpl
@@ -765,6 +769,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/wood/window.png
 %%DATADIR%%/data/themes/wood/window.xml
 %%DATADIR%%/data/themes/wood/world.xml
+%%DATADIR%%/data/translations/help/ca.po
 %%DATADIR%%/data/translations/help/cs.po
 %%DATADIR%%/data/translations/help/de.po
 %%DATADIR%%/data/translations/help/es.po
