@@ -21,8 +21,4 @@ USE_PERL5=	configure patch
 post-patch:
 	@${PERL} -pi -e 's/=(?==head)//g' ${WRKSRC}/lib/AMF/Perl.pm
 
-post-configure:
-# dirty hack to deceive irritable pod2man
-	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
