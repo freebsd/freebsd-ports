@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Paris traceroute is network diagnosis and measurement tools
 
+DEPRECATED=	Legacy paris-traceroute is not supported anymore. Use net/scamper instead
+EXPIRATION_DATE=2018-03-31
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}-current
