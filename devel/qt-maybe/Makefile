@@ -5,7 +5,7 @@ PORTNAME=	qt-maybe
 PORTVERSION=	0.0.20151227
 CATEGORIES=	devel
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Implementation of sum/option types using QVariant
 
 LICENSE=	BSD3CLAUSE

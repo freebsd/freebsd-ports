@@ -6,7 +6,7 @@ PORTVERSION=	3.19
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	X11 events recorder and player
 
 LICENSE=	GPLv3

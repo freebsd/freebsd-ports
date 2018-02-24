@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/p${PORTNAME}/p${PORTNAME}/libUPnP%20${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
 
 LICENSE=	BSD3CLAUSE

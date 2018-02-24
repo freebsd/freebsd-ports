@@ -8,7 +8,7 @@ MASTER_SITES=	https://launchpad.net/~tiheum/+archive/ubuntu/equinox/+files/
 PKGNAMEPREFIX=	gnome-icons-
 DISTNAME=	${PORTNAME}-icon-theme_${PORTVERSION}
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Faenza GNOME 2 icon themes
 
 LICENSE=	GPLv3

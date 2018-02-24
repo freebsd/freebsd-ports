@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kadu
 DIST_SUBDIR=	kadu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet communicator supporting Gadu-Gadu and Jabber/XMPP
 
 LICENSE=	GPLv2

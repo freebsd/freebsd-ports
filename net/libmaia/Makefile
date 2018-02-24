@@ -5,7 +5,7 @@ PORTNAME=	libmaia
 PORTVERSION=	0.0.20150218
 CATEGORIES=	net
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	XML-RPC lib for Qt
 
 USE_GITHUB=	yes

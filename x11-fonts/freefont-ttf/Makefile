@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	GNU/freefont
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free UCS Outline Fonts
 
 LICENSE=	GPLv3

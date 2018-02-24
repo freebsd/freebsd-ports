@@ -8,7 +8,7 @@ PORTEPOCH=	3
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://ekg.chmurka.net/
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu client
 
 LICENSE=	GPLv2

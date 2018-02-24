@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=v
 PORTREVISION=	2
 CATEGORIES=	audio python
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Audio tag editor
 
 LICENSE=	GPLv3

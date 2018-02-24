@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.bay12games.com/dwarves/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	df_${DISTVERSION:S|0.||:S|.|_|}_linux32
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Dwarven fortress building game with ASCII graphics (Linux version)
 
 LICENSE=	BAY12

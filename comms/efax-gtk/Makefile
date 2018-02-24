@@ -8,7 +8,7 @@ CATEGORIES=	comms
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend for efax program
 
 LICENSE=	GPLv2

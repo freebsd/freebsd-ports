@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://pl.ekg2.org/
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu, Jabber, and IRC client
 
 LIB_DEPENDS=	libgadu.so:polish/libgadu \

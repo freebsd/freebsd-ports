@@ -6,7 +6,7 @@ PORTVERSION=	1.12.2
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instant messaging library for Gadu-Gadu protocol
 
 LICENSE=	LGPL21

@@ -6,7 +6,7 @@ PORTVERSION=	1.2.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Dependency injection framework for Qt
 
 LICENSE=	LGPL21

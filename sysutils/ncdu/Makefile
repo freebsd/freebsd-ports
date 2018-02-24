@@ -6,7 +6,7 @@ PORTVERSION=	1.13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dev.yorhel.nl/download/
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses du(1)
 
 LICENSE=	MIT

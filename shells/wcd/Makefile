@@ -6,7 +6,7 @@ PORTVERSION=	6.0.1
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line program to change directory fast
 
 LICENSE=	GPLv2

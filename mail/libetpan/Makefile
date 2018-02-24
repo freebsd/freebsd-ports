@@ -5,7 +5,7 @@ PORTNAME=	libetpan
 PORTVERSION=	1.8
 CATEGORIES=	mail ipv6
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail framework for C language
 
 LICENSE=	BSD3CLAUSE

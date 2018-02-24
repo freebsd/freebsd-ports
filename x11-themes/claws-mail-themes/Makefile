@@ -6,7 +6,7 @@ PORTVERSION=	20140629
 CATEGORIES=	x11-themes mail
 MASTER_SITES=	http://www.claws-mail.org/themes/
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Claws Mail icon themes
 
 NO_ARCH=	yes

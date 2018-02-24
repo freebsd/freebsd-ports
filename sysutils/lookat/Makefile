@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.wagemakers.be/downloads/lookat/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to view Un*x text files and manual pages
 
 GNU_CONFIGURE=	yes
