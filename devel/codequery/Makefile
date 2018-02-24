@@ -6,7 +6,7 @@ PORTVERSION=	0.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code understanding, browsing and search tool
 
 LICENSE=	MPL20 MIT

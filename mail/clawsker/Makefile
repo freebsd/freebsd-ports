@@ -6,7 +6,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Applet to edit Claws Mail's hidden preferences
 
 LICENSE=	GPLv3

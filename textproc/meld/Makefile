@@ -6,7 +6,7 @@ PORTVERSION=	3.18.0
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME visual diff and merge tool
 
 LICENSE=	GPLv2

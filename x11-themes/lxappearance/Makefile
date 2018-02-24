@@ -6,7 +6,7 @@ PORTVERSION=	0.6.3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lxde/LXAppearance
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Desktop-independent theme switcher for GTK+
 
 LICENSE=	GPLv2

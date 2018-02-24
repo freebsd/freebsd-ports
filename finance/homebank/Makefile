@@ -5,7 +5,7 @@ PORTVERSION=	5.1.7
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, easy, personal accounting for everyone
 
 LICENSE=	GPLv2
