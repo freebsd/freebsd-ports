@@ -1,29 +1,19 @@
-*** Makefile.PL.orig	Sun Apr 29 19:51:53 2001
---- Makefile.PL	Sun Apr 29 19:52:04 2001
-***************
-*** 8,13 ****
---- 8,14 ----
-  
-  use ExtUtils::MakeMaker;
-  
-+ =item
-  # Ignore the following DBD Drivers
-  
-  %ignore = ('ExampleP' => 1,
-***************
-*** 183,189 ****
-  
-  close FH ;
-      } 
-! 
-  
-  WriteMakefile
-      (
---- 184,190 ----
-  
-  close FH ;
-      } 
-! =cut
-  
-  WriteMakefile
-      (
+--- Makefile.PL.orig	2003-12-04 05:34:01 UTC
++++ Makefile.PL
+@@ -8,6 +8,7 @@
+ 
+ use ExtUtils::MakeMaker;
+ 
++=item
+ # Ignore the following DBD Drivers
+ 
+ %ignore = ('ExampleP' => 1,
+@@ -215,7 +216,7 @@ print FH ");\n" ;
+ 
+ close FH ;
+     } 
+-
++=cut
+ 
+ WriteMakefile
+     (
