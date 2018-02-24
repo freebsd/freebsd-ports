@@ -12,6 +12,10 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
+BROKEN=		not a valid package for Octave version >= 4.2.1
+DEPRECIATED=	not a valid package for Octave version >= 4.2.1
+EXPIRATION_DATE=	2018-04-24
+
 USES+=		dos2unix
 DOS2UNIX_GLOB=	*.diff
 
