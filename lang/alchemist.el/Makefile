@@ -12,7 +12,7 @@ COMMENT=	Elixir Tooling Integration Into Emacs
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	elixir-mode.el${EMACS_PKGNAMESUFFIX}>=0:lang/elixir-mode.el
+RUN_DEPENDS=	elixir-mode.el${EMACS_PKGNAMESUFFIX}>=0:lang/elixir-mode.el@${EMACS_FLAVOR}
 
 USES=		emacs
 USE_GITHUB=	yes
