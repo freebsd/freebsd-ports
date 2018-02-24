@@ -6,7 +6,6 @@ PKGNAMESUFFIX=	-nightly
 DISTNAME=	rustc-nightly-src
 
 MASTERDIR=	${.CURDIR}/../rust
-FILESDIR=	${.CURDIR}/files
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
