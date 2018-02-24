@@ -2,53 +2,63 @@
 # $FreeBSD$
 
 PORTNAME=	remotebox
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+DISTVERSION=	2.4
 CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${PORTVERSION}
 
-MAINTAINER=	ghw@7axu.com
+MAINTAINER=	freebsd_ports@k-worx.org
 COMMENT=	Open Source VirtualBox Client with Remote Management
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
-		p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
-		rdesktop:net/rdesktop
+		p5-SOAP-Lite>=0:net/p5-SOAP-Lite
 
-LICENSE_FILE_GPLv2=	${WRKSRC}/docs/COPYING
-
-NO_BUILD=	yes
 USES=		shebangfix tar:bzip2
+NO_BUILD=	yes
+NO_ARCH=	yes
 SHEBANG_FILES=	remotebox
-INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS
+OPTIONS_RADIO=		RDP
+OPTIONS_RADIO_RDP=	FREERDP RDESKTOP
+OPTIONS_DEFAULT=	FREERDP
+FREERDP_DESC=		Install freerdp (free RDP implementation)
+RDESKTOP_DESC=		Install rdesktop (RDP client for Windows)
+
+FREERDP_RUN_DEPENDS=	xfreerdp:net/freerdp
+RDESKTOP_RUN_DEPENDS=	rdesktop:net/rdesktop
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|docs/remotebox|share/doc/remotebox/remotebox|'  ${WRKSRC}/remotebox
-	@${REINPLACE_CMD} -e 's|$$Bin/|${PREFIX}/|'	${WRKSRC}/remotebox
-	@${REINPLACE_CMD} -e 's|$$Bin/|${PREFIX}/|' ${WRKSRC}/share/remotebox/rbox_gui_init.pl
+	@${REINPLACE_CMD} -e 's|$$Bin/share/remotebox|${DATADIR}|; \
+		s|$$Bin/docs|${DOCSDIR}|' \
+	       	${WRKSRC}/remotebox
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/share/remotebox/*.pl ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/share/remotebox/*.pm ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/share/remotebox/remotebox.xml ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DATADIR}/icons/os
-	${MKDIR} ${STAGEDIR}${DATADIR}/icons/gueststatus
-	${INSTALL_DATA} ${WRKSRC}/share/remotebox/icons/*.png ${STAGEDIR}${DATADIR}/icons
-	${INSTALL_DATA} ${WRKSRC}/share/remotebox/icons/os/*.png ${STAGEDIR}${DATADIR}/icons/os
-	${INSTALL_DATA} ${WRKSRC}/share/remotebox/icons/gueststatus/*.png ${STAGEDIR}${DATADIR}/icons/gueststatus
-	${INSTALL_DATA} ${WRKSRC}/share/remotebox/icons/remotebox.png ${STAGEDIR}${PREFIX}/share/pixmaps
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_SCRIPT} ${WRKSRC}/share/remotebox/remotebox.xml \
+	       ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/icons/os
+	@${MKDIR} ${STAGEDIR}${DATADIR}/icons/gueststatus
+	${INSTALL_DATA} ${WRKSRC}/share/remotebox/icons/*.png \
+	       ${STAGEDIR}${DATADIR}/icons
+	${INSTALL_DATA} ${WRKSRC}/share/remotebox/icons/os/*.png \
+	       ${STAGEDIR}${DATADIR}/icons/os
+	${INSTALL_DATA} ${WRKSRC}/share/remotebox/icons/gueststatus/*.png \
+	       ${STAGEDIR}${DATADIR}/icons/gueststatus
+	${INSTALL_DATA} ${WRKSRC}/share/remotebox/icons/remotebox.png \
+	       ${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/remotebox.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/changelog.txt ${STAGEDIR}${DOCSDIR}
 
