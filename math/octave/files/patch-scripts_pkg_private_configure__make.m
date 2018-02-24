@@ -1,6 +1,6 @@
---- scripts/pkg/private/configure_make.m~	2016-01-08 13:18:07.395384102 +0900
-+++ scripts/pkg/private/configure_make.m	2016-01-08 13:18:53.562389185 +0900
-@@ -88,7 +88,7 @@
+--- scripts/pkg/private/configure_make.m.orig	2017-02-22 18:01:55 UTC
++++ scripts/pkg/private/configure_make.m
+@@ -87,7 +87,7 @@ function configure_make (desc, packdir, 
      endif
  
      if (exist (fullfile (src, "Makefile"), "file"))
