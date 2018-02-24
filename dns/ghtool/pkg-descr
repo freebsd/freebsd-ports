@@ -1,8 +1,6 @@
-To quote from the SourceForge project description:
+gh-tool is a command-line interface to gethostby*, in libresolv/libc.
+It allows one to check the local system's notion of an IP->DNS or
+DNS->IP mapping, including aliases, directly, rather than digging for
+mappings in DNS, which may or may not be relevant.
 
-   gh-tool is a command-line interface to gethostby*, in libresolv/libc.
-   It allows one to check the local system's notion of an IP->DNS or
-   DNS->IP mapping, including aliases, directly, rather than digging for
-   mappings in DNS, which may or may not be relevant.
-
-WWW: http://www.sourceforge.net/projects/gh-tool/
+WWW: https://sourceforge.net/projects/gh-tool/

@@ -6,25 +6,23 @@ PORTVERSION=	1.0
 CATEGORIES=	dns
 MASTER_SITES=	SF/gh-tool/gh-tool/1
 DISTNAME=	ghmain.c
-EXTRACT_SUFX=
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line interface to the resolver library
 
-WRKSRC=		${WRKDIR}
+LICENSE=	NONE
 
-TGT=		gh
-SRC=		gh.c
-
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	${WRKSRC}/${SRC}
 PLIST_FILES=	bin/gh
 
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}/
+
 do-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/${TGT} ${WRKSRC}/${SRC}
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKDIR}/gh ${WRKDIR}/ghmain.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${TGT} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/gh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
