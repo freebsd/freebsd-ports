@@ -5,7 +5,7 @@ PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-${JDK_VENDOR}-
-DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VERSION}-linux-i586
+DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VERSION}-linux-${JAVA_DISTFILE_ARCH}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JDK_VERSION} Development Kit for Linux
@@ -19,7 +19,8 @@ RESTRICTED=	Redistribution of repackaged binaries not permitted
 PKGNAMESUFFIX=	1${JDK_VERSION}
 
 WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}
-PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
+PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} \
+		PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USES=		linux shebangfix
@@ -47,6 +48,22 @@ bash_CMD=	${SH}
 
 .include <bsd.port.pre.mk>
 
+.if ${LINUX_ARCH} == "i386"
+PLIST_SUB+=		JAVA_ARCHLIBDIR="i386" \
+			ECLIPSE_ARCHPATH="x86" \
+			VISUALVM_ARCHLIBDIR="linux" \
+			I386_ONLY="" \
+			AMD64_ONLY="@comment "
+JAVA_DISTFILE_ARCH=	i586
+.else
+PLIST_SUB+=		JAVA_ARCHLIBDIR="amd64" \
+			ECLIPSE_ARCHPATH="x86_64" \
+			VISUALVM_ARCHLIBDIR="linux-amd64" \
+			I386_ONLY="@comment " \
+			AMD64_ONLY=""
+JAVA_DISTFILE_ARCH=	x64
+.endif
+
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
@@ -54,7 +71,7 @@ IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${
 .if ${PORT_OPTIONS:MDEMO}
 DEMO_UPDATE_VERSION=	${JDK_UPDATE_VERSION}
 .if ${DEMO_UPDATE_VERSION} != ${JDK_UPDATE_VERSION}
-DEMO_DISTNAME=	jdk-${JDK_VERSION}u${DEMO_UPDATE_VERSION}-linux-i586-demos
+DEMO_DISTNAME=	jdk-${JDK_VERSION}u${DEMO_UPDATE_VERSION}-linux-${JAVA_DISTFILE_ARCH}-demos
 DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_${DEMO_UPDATE_VERSION}
 .else
 DEMO_DISTNAME=	${DISTNAME}-demos
