@@ -10,7 +10,7 @@ COMMENT=	Neko programming languages and virtual machine
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git ${LOCALBASE}/include/apache22/httpd.h:www/apache22
+BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libapr-1.so:devel/apr1 libaprutil-1.so:devel/apr1 \
 		libpcre.so:devel/pcre libpcreposix.so:devel/pcre \
@@ -27,6 +27,7 @@ GH_ACCOUNT=	HaxeFoundation
 GH_TAGNAME=	f8d55f1
 
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/neko
+USE_APACHE_BUILD=	yes
 
 MAKE_JOBS_UNSAFE=yes
 
