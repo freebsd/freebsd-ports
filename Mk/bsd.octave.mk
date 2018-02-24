@@ -21,6 +21,7 @@ RUN_DEPENDS+=	octave:math/octave \
 LIB_DEPENDS+=	libpcre.so:devel/pcre
 
 USES+=		fortran gmake
+CXXFLAGS+=	-std=gnu++11
 
 DIST_SUBDIR=	octave-forge
 OCTAVE_PKGNAME=	${PORTNAME:S/octave-forge-//}
