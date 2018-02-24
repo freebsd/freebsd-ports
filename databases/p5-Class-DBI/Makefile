@@ -24,8 +24,4 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 USES=		perl5
 USE_PERL5=	configure
 
-post-configure:
-# dirty hack to deceive irritable pod2man
-	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
