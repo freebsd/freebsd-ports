@@ -18,7 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5 dos2unix
 USE_PERL5=	configure
 
-post-configure:
-	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
