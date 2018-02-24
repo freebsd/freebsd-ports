@@ -28,7 +28,7 @@ SUB_FILES=	pkg-deinstall
 
 do-install:
 	${CP} ${WRKSRC}/config/kibana.yml ${STAGEDIR}${PREFIX}/etc/kibana.yml.sample
-	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${WWWDIR}/optimize
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && \
 		${RM} -r bin config node && \
 		${RM} -r optimize && \
