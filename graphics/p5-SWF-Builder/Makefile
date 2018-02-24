@@ -21,7 +21,4 @@ SHEBANG_FILES=	lib/SWF/Builder/ActionScript/Compiler.pm
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-post-configure:
-	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
