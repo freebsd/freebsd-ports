@@ -11,4 +11,4 @@ AXFR and IXFR, DDNS and DNSSEC.  Its key features:
    - EDNS0 and DNSSEC extensions, including NSEC3
    - NSID
 
-WWW: http://www.knot-dns.cz/
+WWW: https://www.knot-dns.cz/

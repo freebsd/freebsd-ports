@@ -102,5 +102,3 @@ sbin/keymgr
 sbin/knotc
 sbin/knotd
 sbin/pykeymgr
-@dir(knot,knot,) /var/db/knot
-@dir(knot,knot,) /var/run/knot
