@@ -13,10 +13,10 @@ COMMENT=	Interface to Git for Emacs
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el@${EMACS_FLAVOR} \
-		with-editor${EMACS_PKGNAMESUFFIX}>=2.5.0:editors/with-editor@${EMACS_FLAVOR}
-RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el@${EMACS_FLAVOR} \
-		with-editor${EMACS_PKGNAMESUFFIX}>=2.5.0:editors/with-editor@${EMACS_FLAVOR}
+BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el \
+		with-editor${EMACS_PKGNAMESUFFIX}>=2.5.0:editors/with-editor
+RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el \
+		with-editor${EMACS_PKGNAMESUFFIX}>=2.5.0:editors/with-editor
 
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
