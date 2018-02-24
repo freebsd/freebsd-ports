@@ -1,18 +1,15 @@
---- Makefile.orig	2017-07-09 16:40:08 UTC
+--- Makefile.orig	2018-02-22 21:13:38 UTC
 +++ Makefile
-@@ -149,7 +149,6 @@ endif
- 
- ifeq ($(COMP),gcc)
- 	comp=gcc
--	CXX=g++
+@@ -205,10 +205,12 @@ ifeq ($(COMP),clang)
+ 	CXX=clang++
  	CXXFLAGS += -pedantic -Wextra -Wshadow
+ ifneq ($(KERNEL),Darwin)
++ifneq ($(KERNEL),FreeBSD)
+ ifneq ($(KERNEL),OpenBSD)
+ 	LDFLAGS += -latomic
+ endif
+ endif
++endif
  
  	ifeq ($(ARCH),armv7)
-@@ -198,7 +197,6 @@ endif
- 
- ifeq ($(COMP),clang)
- 	comp=clang
--	CXX=clang++
- 	CXXFLAGS += -pedantic -Wextra -Wshadow
- 
- 	ifeq ($(ARCH),armv7)
+ 		ifeq ($(OS),Android)
