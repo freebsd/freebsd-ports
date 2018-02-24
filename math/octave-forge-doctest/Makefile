@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-doctest
-PORTVERSION=	0.5.0
-PORTREVISION=	4
+PORTVERSION=	0.6.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -19,6 +18,9 @@ OCTSRC=		${DISTNAME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
+do-build:
+	@${DO_NADA}
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
