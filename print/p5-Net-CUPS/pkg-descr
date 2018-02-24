@@ -1,8 +1,10 @@
-Previous versions of this module attempted to provide a Perl interface
-layer similar to the C interface of CUPS.  This was fine for power users,
-but most people were not looking for this type of interface.
+Net::CUPS is an interface to the Common Unix Printing System API.
 
-This module has now been converted to use an object oriented paradigm
-to facilitate quicker development and ease of use.
+Previous versions of this module attempted to provide a Perl interface layer
+similar to the C interface of CUPS.  This was fine for power users, but most
+people were not looking for this type of interface.
+
+This module has now been converted to use an object oriented paradigm to
+facilitate quicker development and ease of use.
 
 WWW: http://search.cpan.org/dist/Net-CUPS/
