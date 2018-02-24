@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	johannes@perceivon.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AutoRest swagger generator Python client runtime
 
 LICENSE=	MIT

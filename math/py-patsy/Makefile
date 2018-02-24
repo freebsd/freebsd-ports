@@ -7,7 +7,7 @@ CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	johannes@perceivon.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python package for statistical models and design matrices
 
 LICENSE=	BSD3CLAUSE PSFL

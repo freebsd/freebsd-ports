@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Bottleneck-${PORTVERSION}
 
-MAINTAINER=	johannes@perceivon.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of fast NumPy array functions written in Cython
 
 LICENSE=	BSD2CLAUSE
