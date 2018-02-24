@@ -91,13 +91,9 @@ NCURSES_USES=	ncurses
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 			lynx:www/lynx
-
-.include <bsd.port.options.mk>
-
 # Trick neomutt into building manpages and neomuttrc
-.if empty(PORT_OPTIONS:MDOCS)
-BINARY_ALIAS=	xsltproc=true
-.endif
+DOCS_VARS_OFF=		BINARY_ALIAS=xsltproc=true \
+			BINARY_ALIAS+=xmlcatalog=true
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/etc/mime*
