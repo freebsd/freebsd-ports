@@ -23,6 +23,8 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:math/octave-forge-io
 do-build:
 	@${DO_NADA}
 
+NO_ARCH=	yes
+
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}

@@ -23,6 +23,8 @@ RUN_DEPENDS+=	dx:graphics/opendx
 do-build:
 	@${DO_NADA}
 
+NO_ARCH=	yes
+
 post-build:
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 

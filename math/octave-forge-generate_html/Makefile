@@ -21,6 +21,8 @@ OCTSRC=		${DISTNAME}
 do-build:
 	@${DO_NADA}
 
+NO_ARCH=	yes
+
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
