@@ -1,0 +1,8 @@
+Inadyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support.
+
+Commonly available in many GNU/Linux distributions, used in off the shelf
+routers and Internet gateways to automate the task of keeping your Internet
+name in sync with your public IP address. It can also be used in installations
+with redundant (backup) connections to the Internet.
+
+WWW: https://github.com/troglobit/inadyn
