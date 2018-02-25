@@ -9,8 +9,8 @@ PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}-${PORTVERSION:R}.0/:doc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${PORTNAME}-ref-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf:doc \
-		${PORTNAME}-user-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf:doc
+DISTFILES=	${PORTNAME}-ref-${PORTVERSION:R}.0.pdf:doc \
+		${PORTNAME}-user-${PORTVERSION:R}.0.pdf:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -38,10 +38,10 @@ PORTDOCS=	*
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
 
-ATLAS_USES=	blaslapack:atlas
-NETLIB_USES=	blaslapack:netlib
+ATLAS_USES=		blaslapack:atlas
+NETLIB_USES=		blaslapack:netlib
 NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
-OPENBLAS_USES=	blaslapack:openblas
+OPENBLAS_USES=		blaslapack:openblas
 SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse
 TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR}
 
@@ -53,8 +53,8 @@ post-patch:
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|%%GCCLIBDIR%%|$$(${GCCLIBDIR_CMDS})|" \
-	    -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${WRKSRC}/site.cfg
+		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+			${WRKSRC}/site.cfg
 	@${REINPLACE_CMD} -e "s|%%GCCLIBDIR%%|$$(${GCCLIBDIR_CMDS})|" ${WRKSRC}/numpy/distutils/system_info.py
 
 pre-configure-ATLAS-on:
