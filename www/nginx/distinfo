@@ -1,4 +1,4 @@
-TIMESTAMP = 1517046240
+TIMESTAMP = 1519589165
 SHA256 (nginx-1.12.2.tar.gz) = 305f379da1d5fb5aefa79e45c829852ca6983c7cd2a79328f8e084a324cf0416
 SIZE (nginx-1.12.2.tar.gz) = 981687
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -123,8 +123,8 @@ SHA256 (nginx-njs-4ed8a0b_GH0.tar.gz) = 44cd86b48bf6a65e6faf76b59cbf75b6317d62d3
 SIZE (nginx-njs-4ed8a0b_GH0.tar.gz) = 229162
 SHA256 (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = c949d4be6f3442c8e2937046448dc8d8def25c0e0fa6f4e805144cea45eabe80
 SIZE (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = 11280
-SHA256 (eustas-ngx_brotli-47550a2_GH0.tar.gz) = 69ff17c7550a3d5e23040b44e79302431e18e89390e8fc6b6906694620af2565
-SIZE (eustas-ngx_brotli-47550a2_GH0.tar.gz) = 10579
+SHA256 (eustas-ngx_brotli-8cd9dd5_GH0.tar.gz) = 2e5d99efc7073549337cc38cb236819a8b8900fbb8f449b587c6cd9bf3b6c920
+SIZE (eustas-ngx_brotli-8cd9dd5_GH0.tar.gz) = 10585
 SHA256 (calio-form-input-nginx-module-v0.12_GH0.tar.gz) = 5c1869d55897075adb3fdf840b21060dc54669a1f840a36d1539acc7e59dd106
 SIZE (calio-form-input-nginx-module-v0.12_GH0.tar.gz) = 11090
 SHA256 (calio-iconv-nginx-module-v0.14_GH0.tar.gz) = b8b9f355c05c0790226512f6732348a2404d48531688a1fc04ce6768163bf462
