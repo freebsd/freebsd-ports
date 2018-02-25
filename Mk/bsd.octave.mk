@@ -20,7 +20,7 @@ RUN_DEPENDS+=	octave:math/octave \
 		${LOCALBASE}/libexec/octave/load-octave-pkg:math/octave-forge-base
 LIB_DEPENDS+=	libpcre.so:devel/pcre
 
-USES+=		fortran gmake
+USES+=		fortran gmake compiler:c++14-lang
 CXXFLAGS+=	-std=gnu++11
 
 DIST_SUBDIR=	octave-forge
