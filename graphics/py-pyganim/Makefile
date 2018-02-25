@@ -8,16 +8,15 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pyganim-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sprite animation module for Pygame
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${FLAVOR}
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYGAME}
 
 USES=		python zip
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
