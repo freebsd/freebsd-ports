@@ -2,49 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	patsy
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python package for statistical models and design matrices
 
-LICENSE=	BSD3CLAUSE PSFL
+LICENSE=	BSD2CLAUSE PSFL
 LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${FLAVOR}
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
-
-PORTDOCS=	API-reference.rst \
-		R-comparison.rst \
-		builtins-reference.rst \
-		categorical-coding.rst \
-		changes.rst \
-		expert-model-specification.rst \
-		formulas.rst \
-		index.rst \
-		library-developers.rst \
-		overview.rst \
-		py2-versus-py3.rst \
-		quickstart.rst \
-		stateful-transforms.rst \
-
-PORTEXAMPLES=	add_predictors.py \
-		example_lm.py \
-		example_treatment.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.rst ${STAGEDIR}${DOCSDIR}
+
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/doc/_examples/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/_examples/*.py ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
