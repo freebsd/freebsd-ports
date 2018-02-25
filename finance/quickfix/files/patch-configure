@@ -1,0 +1,29 @@
+--- configure.orig	2014-09-15 06:24:18 UTC
++++ configure
+@@ -14863,7 +14863,7 @@ freebsd* | dragonfly*)
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+-      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
++      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
+       need_version=no
+       need_lib_prefix=no
+       ;;
+@@ -16200,7 +16200,7 @@ if test $has_ruby = true
+ then
+     RUBY_CFLAGS="-I${RUBY_PREFIX}"
+ 
+-    RUBY_SITE_PACKAGES=`ruby -e 'require "rbconfig"; print Config::CONFIG["sitedir"], "\n"'`
++    RUBY_SITE_PACKAGES=`ruby -e 'require "rbconfig"; print RbConfig::CONFIG["sitelibdir"], "\n"'`
+ 
+ 
+ $as_echo "#define HAVE_RUBY 1" >>confdefs.h
+@@ -16877,7 +16877,7 @@ timeb tb;
+ }
+ _ACEOF
+ if ac_fn_cxx_try_compile "$LINENO"; then :
+-  has_ftime=true
++  has_ftime=false
+ else
+   has_ftime=false
+ fi

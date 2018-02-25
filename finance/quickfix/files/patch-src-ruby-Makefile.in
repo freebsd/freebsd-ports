@@ -1,0 +1,16 @@
+--- src/ruby/Makefile.in.orig	2014-09-15 06:24:20 UTC
++++ src/ruby/Makefile.in
+@@ -458,9 +458,10 @@ clean-local:
+ 	rm -rf $(local_ruby_lib)
+ 
+ install-exec-local:
+-	cp -f $(top_builddir)/lib/ruby/*.rb $(RUBY_SITE_PACKAGES)
+-	cp -f $(top_builddir)/lib/ruby/quickfix.so $(RUBY_SITE_PACKAGES) || :
+-	cp -f $(top_builddir)/lib/ruby/quickfix.bundle $(RUBY_SITE_PACKAGES) || :
++	$(MKDIR_P) "$(DESTDIR)$(RUBY_SITE_PACKAGES)"
++	cp -f $(top_builddir)/lib/ruby/*.rb $(DESTDIR)$(RUBY_SITE_PACKAGES)
++	cp -f $(top_builddir)/lib/ruby/quickfix.so $(DESTDIR)$(RUBY_SITE_PACKAGES) || :
++	cp -f $(top_builddir)/lib/ruby/quickfix.bundle $(DESTDIR)$(RUBY_SITE_PACKAGES) || :
+ 
+ uninstall-local:
+ 	rm -rf $(RUBY_SITE_PACKAGES)/quickfix*.rb
