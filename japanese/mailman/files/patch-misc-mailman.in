@@ -1,6 +1,6 @@
---- misc/mailman.in.orig	2011-12-11 16:56:23.000000000 +0900
-+++ misc/mailman.in	2012-02-15 06:27:15.000000000 +0900
-@@ -39,16 +39,20 @@
+--- misc/mailman.in.orig	2011-12-11 07:56:23 UTC
++++ misc/mailman.in
+@@ -39,16 +39,20 @@ MAILMANCTL=$MAILMANHOME/bin/mailmanctl
  case "$1" in
  'start')
      #rm -f $MAILMANHOME/locks/*

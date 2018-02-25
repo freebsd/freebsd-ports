@@ -3,9 +3,9 @@ this creates a problem; we create the users just before install.
 
 We remove the testing part.
 
---- configure.in.orig	2011-12-11 16:56:23.000000000 +0900
-+++ configure.in	2012-02-15 06:11:05.000000000 +0900
-@@ -341,28 +341,7 @@
+--- configure.in.orig	2011-12-11 07:56:23 UTC
++++ configure.in
+@@ -341,28 +341,7 @@ AC_DEFUN([MM_FIND_GROUP_NAME], [
  # $2 == user id to check for
  AC_SUBST($1)
  changequote(,)
@@ -35,7 +35,7 @@ We remove the testing part.
  changequote([, ])
  rm -f conftest.out conftest.py])
  
-@@ -373,28 +352,7 @@
+@@ -373,28 +352,7 @@ AC_DEFUN([MM_FIND_USER_NAME], [
  # $2 == user id to check for
  AC_SUBST($1)
  changequote(,)

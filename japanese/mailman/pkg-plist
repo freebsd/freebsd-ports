@@ -1,12 +1,5 @@
-@stopdaemon mailman
-@exec mkdir -p %D/%%MMDIR%%/archives
-@exec mkdir -p %D/%%MMDIR%%/archives/private
-@exec mkdir -p %D/%%MMDIR%%/archives/public
-@exec mkdir -p %D/%%MMDIR%%/lists
-@exec mkdir -p %D/%%MMDIR%%/locks
-@exec mkdir -p %D/%%MMDIR%%/logs
-@exec mkdir -p %D/%%MMDIR%%/qfiles
-@exec mkdir -p %D/%%MMDIR%%/spam
+@postunexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
+@postunexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
 %%IMGDIR%%/PythonPowered.png
 %%IMGDIR%%/mailman.jpg
 %%IMGDIR%%/mm-icon.png
@@ -305,10 +298,7 @@
 %%MMDIR%%/Mailman/htmlformat.pyc
 %%MMDIR%%/Mailman/i18n.py
 %%MMDIR%%/Mailman/i18n.pyc
-@unexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py.dist %D/%%MMDIR%%/Mailman/mm_cfg.py; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
-%%MMDIR%%/Mailman/mm_cfg.py.dist
-@exec if [ ! -f %B/mm_cfg.py ] ; then cp -p %D/%F %B/mm_cfg.py; fi
-@unexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
+@sample %%MMDIR%%/Mailman/mm_cfg.py.dist %%MMDIR%%/Mailman/mm_cfg.py
 %%MMDIR%%/Mailman/versions.py
 %%MMDIR%%/Mailman/versions.pyc
 %%MMDIR%%/bin/add_members
@@ -375,7 +365,7 @@
 %%MMDIR%%/cron/mailpasswds
 %%MMDIR%%/cron/nightly_gzip
 %%MMDIR%%/cron/paths.py
-@unexec rm -f %%MMDIR%%/cron/paths.pyc
+@postunexec rm -f %%MMDIR%%/cron/paths.pyc
 %%MMDIR%%/cron/senddigests
 %%MMDIR%%/data/sitelist.cfg
 %%MMDIR%%/icons/PythonPowered.png
@@ -2249,10 +2239,11 @@
 %%MMDIR%%/tests/test_smtp.py
 %%MMDIR%%/tests/testall.py
 %%PYTHON_SITELIBDIR%%/mailman-info.txt
-@dir %%MMDIR%%/archives/private
-@dir %%MMDIR%%/archives/public
-@dir %%MMDIR%%/lists
-@dir %%MMDIR%%/locks
-@dir %%MMDIR%%/logs
-@dir %%MMDIR%%/qfiles
 @dir %%MMDIR%%/spam
+@dir %%MMDIR%%/qfiles
+@dir %%MMDIR%%/logs
+@dir %%MMDIR%%/locks
+@dir %%MMDIR%%/lists
+@dir %%MMDIR%%/archives/public
+@dir %%MMDIR%%/archives/private
+@dir %%MMDIR%%/archives
