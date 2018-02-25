@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/connectagram/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Word unscrambling game
 
 LICENSE=	GPLv3+
