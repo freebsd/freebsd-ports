@@ -1,6 +1,6 @@
 %%OCCROOT%%/bin/DRAWEXE
 %%OCCROOT%%/bin/custom.sh
-%%OCCROOT%%/bin/custom_%%CC%%_64.sh
+%%OCCROOT%%/bin/custom_%%CC%%_%%BITS%%.sh
 %%OCCROOT%%/bin/draw.sh
 %%OCCROOT%%/bin/env.sh
 %%OCCROOT%%/data/iges/bearing.iges
