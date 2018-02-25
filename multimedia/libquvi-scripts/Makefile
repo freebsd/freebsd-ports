@@ -4,7 +4,8 @@
 PORTNAME=	libquvi-scripts
 PORTVERSION=	0.4.21
 CATEGORIES=	multimedia devel
-MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/
+MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Embedded lua scripts for libquvi and utility scripts
