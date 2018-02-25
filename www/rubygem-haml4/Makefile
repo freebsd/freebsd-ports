@@ -3,6 +3,7 @@
 
 PORTNAME=	haml
 PORTVERSION=	4.0.7
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -21,6 +22,7 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
-PLIST_FILES=	bin/haml
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/haml
 
 .include <bsd.port.mk>
