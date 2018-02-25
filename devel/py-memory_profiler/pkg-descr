@@ -1,6 +1,6 @@
-memory_profiler is a python module for monitoring memory consumption of a
-process as well as line-by-line analysis of memory consumption for python
-programs. It is a pure python module and has the psutil module as optional
-(but highly recommended) dependencies.
+This is a python module for monitoring memory consumption of a process as well
+as line-by-line analysis of memory consumption for python programs. It is a pure
+python module which depends on the psutil module.
 
-WWW: https://github.com/fabianp/memory_profiler/
+WWW: https://pypi.python.org/pypi/memory_profiler
+WWW: https://github.com/pythonprofilers/memory_profiler

@@ -2,24 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	memory_profiler
-PORTVERSION=	0.47
+PORTVERSION=	0.52.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Line-by-line and process memory consumption analysis
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Module for monitoring memory usage of a python program
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	PSUTIL
-OPTIONS_DEFAULT=	PSUTIL
-
-PSUTIL_DESC=	Use psutil for better performance
-PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>1.0.0:sysutils/py-psutil@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
