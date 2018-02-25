@@ -37,7 +37,7 @@ DSSI_CFLAGS=			-I${LOCALBASE}/include/dssi
 DSSI_CMAKE_OFF=			-DDssiEnable:BOOL=OFF
 
 GUI_LIB_DEPENDS=		libfltk.so:x11-toolkits/fltk \
-				libpng16.so:graphics/png \
+				libpng.so:graphics/png \
 				libfontconfig.so:x11-fonts/fontconfig
 GUI_ON=				-DGuiModule:STRING=fltk
 GUI_CMAKE_OFF=			-DGuiModule:STRING=OFF

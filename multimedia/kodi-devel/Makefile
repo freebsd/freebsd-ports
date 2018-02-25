@@ -36,7 +36,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		liblzo2.so:archivers/lzo2 \
 		libpcre.so:devel/pcre \
 		libpcrecpp.so:devel/pcre \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libpostproc.so:multimedia/ffmpeg \
 		libswresample.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
