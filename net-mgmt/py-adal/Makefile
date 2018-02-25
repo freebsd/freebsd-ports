@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Authentication ot Azure Active Directory for python apps
 
 LICENSE=	MIT
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=1.1.0:security/py-cryptography
 		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
