@@ -1,6 +1,7 @@
 Tapi is a tool to automate the testing of your Application Programmer Interfaces
-(APIs).  Features:
+(APIs).
 
+Features:
 - Test you API without writing any code (only edit a json file)
 - Test you APIs in a much more 'natural' way by specifying urls/verbs and what
   the output should be
@@ -12,4 +13,5 @@ Tapi is a tool to automate the testing of your Application Programmer Interfaces
 - Execute arbitrary python scripts to verify response from endpoint is valid
 - Tests your APIs using your own APIs
 
-WWW: https://github.com/jimmyislive/tapi/
+WWW: https://pypi.python.org/pypi/Tapi
+WWW: https://github.com/jimmyislive/tapi
