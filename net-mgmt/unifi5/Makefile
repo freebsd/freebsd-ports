@@ -42,7 +42,7 @@ GROUPS=		unifi
 
 NO_WRKSUBDIR=	yes
 
-CONFLICTS=	unifi2-* unifi3-* unifi4-*
+CONFLICTS=	unifi2-* unifi3-* unifi4-* unifi-devel-*
 
 DIR_LIST=	conf data logs run work
 
