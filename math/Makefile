@@ -397,7 +397,6 @@
     SUBDIR += octave-forge-nurbs
     SUBDIR += octave-forge-ocs
     SUBDIR += octave-forge-oct2mat
-    SUBDIR += octave-forge-octcdf
     SUBDIR += octave-forge-octclip
     SUBDIR += octave-forge-octproj
     SUBDIR += octave-forge-odebvp
@@ -409,7 +408,6 @@
     SUBDIR += octave-forge-parallel
     SUBDIR += octave-forge-pdb
     SUBDIR += octave-forge-plot
-    SUBDIR += octave-forge-pt_br
     SUBDIR += octave-forge-quaternion
     SUBDIR += octave-forge-queueing
     SUBDIR += octave-forge-secs1d
