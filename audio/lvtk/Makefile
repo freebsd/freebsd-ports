@@ -5,7 +5,7 @@ PORTNAME=	lvtk
 PORTVERSION=	1.2.0
 CATEGORIES=	audio
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Wraps the LV2 C API and extensions into easy to use C++ classes
 
 LICENSE=	GPLv3

@@ -5,7 +5,7 @@ PORTNAME=	tiny-network-utilities
 PORTVERSION=	0.150519
 CATEGORIES=	net
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Minimalistic DHCP, UDP proxy, etc server implementations
 
 LICENSE=	BSD4CLAUSE

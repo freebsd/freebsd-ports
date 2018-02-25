@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight Nonlinear LV2 Plugin Container
 
 LICENSE=	ART20

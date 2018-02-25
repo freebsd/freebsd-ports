@@ -6,7 +6,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 port of the MDA plugins by Paul Kellett
 
 LICENSE=	GPLv3

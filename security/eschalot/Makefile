@@ -5,7 +5,7 @@ PORTNAME=	eschalot
 PORTVERSION=	1.2.0
 CATEGORIES=	security
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vanity onion address generator for Tor
 
 LICENSE=	PD

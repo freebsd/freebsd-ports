@@ -6,7 +6,7 @@ PORTVERSION=	4.6.0
 CATEGORIES=	audio
 MASTER_SITES=	http://ccrma.stanford.edu/software/stk/release/
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesis ToolKit in C++
 
 LICENSE=	MIT

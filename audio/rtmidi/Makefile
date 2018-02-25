@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.0
 CATEGORIES=	audio
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Set of C++ classes that provide a common API for realtime MIDI I/O
 
 LICENSE=	MIT

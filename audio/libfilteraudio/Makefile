@@ -5,7 +5,7 @@ PORTNAME=	libfilteraudio
 PORTVERSION=	0.150524
 CATEGORIES=	audio
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight audio filtering library made from webrtc code
 
 LICENSE=	BSD3CLAUSE

@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/midi_matrix.lv2/repository/archive.tar.gz?ref=${PORTVERSION}&dummy=/
 PKGNAMESUFFIX=	-lv2
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 'Midi Matrix' plugin bundle: 'Channel Filter'
 
 LICENSE=	ART20

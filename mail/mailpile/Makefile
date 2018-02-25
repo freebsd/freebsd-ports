@@ -6,7 +6,7 @@ PORTVERSION=	0.5.2
 PORTREVISION=	1
 CATEGORIES=	mail security
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Locally hosted web-browser based mail client
 
 LICENSE=	AGPLv3+

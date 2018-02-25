@@ -7,7 +7,7 @@ CATEGORIES=	net python
 MASTER_SITES=	http://coherence.beebits.net/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	UPnP Device and Service analyzer
 
 LICENSE=	PD

@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bandlimited oscillator plugins for LV2-aware audio applications
 
 LICENSE=	GPLv3

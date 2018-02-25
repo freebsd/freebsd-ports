@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	5
 CATEGORIES=	finance
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Desktop bitcoin management system
 
 LICENSE=	AGPLv3

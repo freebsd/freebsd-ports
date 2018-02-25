@@ -8,7 +8,7 @@ CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Read metdata (tags) of mp3, mp4, wma, ogg, flac and aiff files
 
 LICENSE=	BSD3CLAUSE

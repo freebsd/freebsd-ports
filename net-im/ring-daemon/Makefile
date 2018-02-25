@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	6
 CATEGORIES=	net-im net-p2p
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Daemon part of the Ring VoIP SIP phone and IM
 
 LICENSE=	GPLv3

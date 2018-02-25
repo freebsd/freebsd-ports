@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-g1aa77e5
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SWH Plugins in LV2 format
 
 LICENSE=	GPLv2

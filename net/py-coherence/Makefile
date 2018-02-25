@@ -6,7 +6,7 @@ PORTVERSION=	0.6.6.2
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DLNA/UPnP media server and framework for the digital living
 
 LICENSE=	PD

@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	9
 CATEGORIES=	games
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform entertainment system based on libretro API
 
 LICENSE=	GPLv3
