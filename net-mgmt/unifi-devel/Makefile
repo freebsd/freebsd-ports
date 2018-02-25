@@ -3,7 +3,6 @@
 
 PORTNAME=	unifi
 PORTVERSION=	5.7.15
-PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}-${UNIFI_BUILD}/
 PKGNAMESUFFIX=	-devel
@@ -11,8 +10,8 @@ DISTNAME=	unifi_sysvinit_all
 EXTRACT_SUFX=	.deb
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	feld@FreeBSD.org
-COMMENT=	UniFi Controller v5
+MAINTAINER=	bryce@bryce.net
+COMMENT=	UniFi Controller development release
 
 RUN_DEPENDS=	mongodb>0:databases/mongodb \
 		snappyjava>0:archivers/snappy-java
@@ -25,8 +24,6 @@ EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf -
 
 UNIFI_BUILD=	e9b882be05
-
-CONFLICTS=	unifi5-*
 
 USES=		cpe
 CPE_VENDOR=	ubnt
@@ -47,7 +44,7 @@ GROUPS=		unifi
 
 NO_WRKSUBDIR=	yes
 
-CONFLICTS=	unifi2-* unifi3-* unifi4-*
+CONFLICTS=	unifi2-* unifi3-* unifi4-* unifi5-*
 
 DIR_LIST=	conf data logs run work
 
