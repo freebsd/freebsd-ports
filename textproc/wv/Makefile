@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libwmf.so:graphics/libwmf
 
 USES=		gmake jpeg pkgconfig libtool

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libFOX-1.6.so:x11-toolkits/fox16 \
 		libfreetype.so:print/freetype2 \
 		libgdal.so:graphics/gdal \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libproj.so:graphics/proj \
 		libtiff.so:graphics/tiff \
 		libxerces-c.so:textproc/xerces-c3
