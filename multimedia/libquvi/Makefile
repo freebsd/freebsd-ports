@@ -5,7 +5,8 @@ PORTNAME=	libquvi
 PORTVERSION=	0.4.1
 PORTREVISION=	5
 CATEGORIES=	multimedia devel
-MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/
+MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cross-platform library for parsing flash media stream URLs
