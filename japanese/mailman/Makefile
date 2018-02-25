@@ -3,10 +3,10 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1.14.j7
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	japanese mail
-MASTER_SITES=	http://www.python.jp/doc/contrib/mailman/_static/ \
+MASTER_SITES=	https://docs.python.jp/contrib/mailman/_static/ \
 		LOCAL/tota/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.j/+j/}
 DIST_SUBDIR=	mailman
@@ -21,7 +21,7 @@ CONFLICTS=	mailman-2.1.*
 
 PORTSCOUT=	limit:.*\.j\d+$$
 
-USES=		autoreconf gettext python:2.7 tar:tgz
+USES=		autoreconf gettext python:2.7 shebangfix tar:tgz
 USE_RC_SUBR=	mailman
 
 GNU_CONFIGURE=	yes
@@ -52,6 +52,10 @@ MAILMANDIR=	${PREFIX}/${MM_DIR}
 PLIST_SUB=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR}
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	MAILMANDIR=${MAILMANDIR} USER=${MM_USERNAME} GROUP=${MM_GROUPNAME}
+
+SHEBANG_FILES=	bin/msgfmt.py \
+		tests/onebounce.py \
+		tests/fblast.py
 
 IMGFILES=	PythonPowered.png mailman.jpg mm-icon.png
 

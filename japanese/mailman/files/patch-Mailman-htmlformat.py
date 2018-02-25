@@ -1,6 +1,6 @@
---- Mailman/htmlformat.py.orig	2011-12-11 16:56:23.000000000 +0900
-+++ Mailman/htmlformat.py	2012-02-15 16:46:34.000000000 +0900
-@@ -621,13 +621,13 @@
+--- Mailman/htmlformat.py.orig	2011-12-11 07:56:23 UTC
++++ Mailman/htmlformat.py
+@@ -621,13 +621,13 @@ class DefinitionList(Container):
  #
  from mm_cfg import MAILMAN_URL
  PYTHON_URL  = 'http://www.python.org/'
@@ -16,7 +16,7 @@
  
  
  def MailmanLogo():
-@@ -641,18 +641,18 @@
+@@ -641,18 +641,18 @@ def MailmanLogo():
          pylink = '<img src="%s" alt="Python Powered" ' \
                   'title="Python Powered" border=0>' % \
                   logo(PYTHON_POWERED)
