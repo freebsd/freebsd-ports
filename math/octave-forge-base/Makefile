@@ -22,6 +22,7 @@ USES=		perl5
 SUB_FILES=	load-octave-pkg
 SUB_LIST=	PERL=${PERL}
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/octave/tarballs

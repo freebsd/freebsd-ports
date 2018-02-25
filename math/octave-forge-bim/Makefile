@@ -24,6 +24,8 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/msh.tar.gz:math/octave-forge-msh
 do-build:
 	@${DO_NADA}
 
+NO_ARCH=	yes
+
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
