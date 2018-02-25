@@ -7,22 +7,18 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PORTVERSION:R:R}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library of tools for doing computation in game theory
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=		fails to compile: 'm_number' is a private member of 'Gambit::GamePlayerRep'
-BROKEN_armv7=		fails to compile: 'm_number' is a private member of 'Gambit::GamePlayerRep'
-
 USES=		compiler:c++11-lib
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_WX=		3.0
 USE_CXXSTD=	c++11
 WX_CONF_ARGS=	absolute
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gambit.desktop \

@@ -1,0 +1,11 @@
+--- src/tools/logit/logbehav.imp.orig	2018-02-25 23:16:35 UTC
++++ src/tools/logit/logbehav.imp
+@@ -269,7 +269,7 @@ void LogBehavProfile<T>::GetPayoff(GameT
+   }
+ 
+   if (node->children.Length())  {
+-    int pl = node->infoset->m_player->m_number, iset = node->infoset->m_number;
++    int pl = node->infoset->m_player->GetNumber(), iset = node->infoset->GetNumber(); // fixes the build problem, see https://github.com/gambitproject/gambit/issues/229
+     if (pl == 0) {
+       // chance player
+       for (int act = 1; act <= node->NumChildren(); act++) {
