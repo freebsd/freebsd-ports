@@ -1,5 +1,6 @@
-yunomi provides insights to the internal behavior of an application, providing
+Yunomi provides insights to the internal behavior of an application, providing
 useful statistics and metrics on selected portions of your code. It's a Python
 port of the core portion of a Java Metrics library by Coda Hale.
 
+WWW: https://pypi.python.org/pypi/yunomi
 WWW: https://github.com/dreid/yunomi

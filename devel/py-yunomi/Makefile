@@ -8,23 +8,23 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Metrics library with rate, distribution and timing information
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PORTDOCS=	README.rst \
-		HISTORY.rst
+NO_ARCH=	yes
+USES=		python
+USE_LOCALE=	en_US.UTF-8
+USE_PYTHON=	autoplist concurrent distutils
 
-USES=		python:2.7
-USE_PYTHON=	distutils autoplist
+PORTDOCS=	README.rst HISTORY.rst
 
 OPTIONS_DEFINE=	DOCS
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
