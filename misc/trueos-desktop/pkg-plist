@@ -1,8 +1,6 @@
-etc/sudoers.d
 etc/sudoers.d/trueos-desktop
 etc/init.d/trueosinit
 etc/rc.d/trueosinit
-etc/trueos.conf.dist
 etc/trueos/recommended-services-desktop
 etc/trueos/required-services-desktop
 share/trueos/xstartup-parallel/disable-beep.sh
@@ -62,5 +60,4 @@ share/icons/default/index.theme
 share/cups/data/default-testpage.orig.pdf
 share/fluxbox/styles/bora_blue_4k/theme.cfg
 /usr/share/skel/dot.xprofile
-@sample etc/trueos.conf etc/trueos.conf.dist
-@sample /etc/devfs.rules.trueos /etc/devfs.rules
+@sample /etc/devfs.rules.trueos
