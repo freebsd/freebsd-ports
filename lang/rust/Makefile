@@ -198,6 +198,12 @@ post-patch:
 		done; \
 	done
 
+.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
+CCACHE_VALUE=	true
+.else
+CCACHE_VALUE=	false
+.endif
+
 do-configure:
 	${SED} -E \
 		-e 's,%PREFIX%,${PREFIX},' \
@@ -206,6 +212,7 @@ do-configure:
 		-e 's,%PYTHON_CMD%,${PYTHON_CMD},' \
 		-e 's,%CHANNEL%,${RUST_CHANNEL},' \
 		-e 's,%TARGET%,${RUST_TARGET},' \
+		-e 's,%CCACHE%,${CCACHE_VALUE},' \
 		< ${FILESDIR}/config.toml \
 		> ${WRKSRC}/config.toml
 # The FreeBSD 10 autotools fix may modify some files just before
