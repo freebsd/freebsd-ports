@@ -1,0 +1,17 @@
+%%PORTDOCS%%%%DOCSDIR%%/API-reference.rst
+%%PORTDOCS%%%%DOCSDIR%%/R-comparison.rst
+%%PORTDOCS%%%%DOCSDIR%%/builtins-reference.rst
+%%PORTDOCS%%%%DOCSDIR%%/categorical-coding.rst
+%%PORTDOCS%%%%DOCSDIR%%/changes.rst
+%%PORTDOCS%%%%DOCSDIR%%/expert-model-specification.rst
+%%PORTDOCS%%%%DOCSDIR%%/formulas.rst
+%%PORTDOCS%%%%DOCSDIR%%/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/library-developers.rst
+%%PORTDOCS%%%%DOCSDIR%%/overview.rst
+%%PORTDOCS%%%%DOCSDIR%%/py2-versus-py3.rst
+%%PORTDOCS%%%%DOCSDIR%%/quickstart.rst
+%%PORTDOCS%%%%DOCSDIR%%/spline-regression.rst
+%%PORTDOCS%%%%DOCSDIR%%/stateful-transforms.rst
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/add_predictors.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_lm.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_treatment.py
