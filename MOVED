@@ -10125,3 +10125,5 @@ x11/plasma-scriptengine-python|x11/plasma-scriptengine-python-kde4|2018-02-22|Ma
 misc/tpp||2018-02-23|Has expired: Depends on expired devel/ruby-ncurses
 net/raggle||2018-02-23|Has expired: Depends on expired devel/ruby-ncurses
 devel/ruby-ncurses||2018-02-23|Has expired: Marked BROKEN for more than 6 months
+math/octave-forge-octcdf||2018-02-24|No longer supported upstream
+math/octave-forge-pt_br||2018-02-24|No longer supported upstream
