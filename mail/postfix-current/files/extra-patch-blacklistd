@@ -1,0 +1,69 @@
+# PR 225664: support blacklistd on FreeBSD >= 11.0
+#
+--- src/smtpd/Makefile.in.orig	2017-02-05 23:36:32 UTC
++++ src/smtpd/Makefile.in
+@@ -2,14 +2,14 @@ SHELL	= /bin/sh
+ SRCS	= smtpd.c smtpd_token.c smtpd_check.c smtpd_chat.c smtpd_state.c \
+ 	smtpd_peer.c smtpd_sasl_proto.c smtpd_sasl_glue.c smtpd_proxy.c \
+ 	smtpd_xforward.c smtpd_dsn_fix.c smtpd_milter.c smtpd_resolve.c \
+-	smtpd_expand.c smtpd_haproxy.c
++	smtpd_expand.c smtpd_haproxy.c pfilter.c
+ OBJS	= smtpd.o smtpd_token.o smtpd_check.o smtpd_chat.o smtpd_state.o \
+ 	smtpd_peer.o smtpd_sasl_proto.o smtpd_sasl_glue.o smtpd_proxy.o \
+ 	smtpd_xforward.o smtpd_dsn_fix.o smtpd_milter.o smtpd_resolve.o \
+-	smtpd_expand.o smtpd_haproxy.o
++	smtpd_expand.o smtpd_haproxy.o pfilter.o
+ HDRS	= smtpd_token.h smtpd_check.h smtpd_chat.h smtpd_sasl_proto.h \
+ 	smtpd_sasl_glue.h smtpd_proxy.h smtpd_dsn_fix.h smtpd_milter.h \
+-	smtpd_resolve.h smtpd_expand.h
++	smtpd_resolve.h smtpd_expand.h pfilter.h
+ TESTSRC	= smtpd_token_test.c
+ DEFS	= -I. -I$(INC_DIR) -D$(SYSTYPE)
+ CFLAGS	= $(DEBUG) $(OPT) $(DEFS)
+--- src/smtpd/smtpd_sasl_glue.c.orig	2017-02-19 01:58:21 UTC
++++ src/smtpd/smtpd_sasl_glue.c
+@@ -147,6 +147,7 @@
+ #include "smtpd.h"
+ #include "smtpd_sasl_glue.h"
+ #include "smtpd_chat.h"
++#include "pfilter.h" /* for blacklistd(8) */
+ 
+ #ifdef USE_SASL_AUTH
+ 
+@@ -332,6 +333,10 @@ int     smtpd_sasl_authenticate(SMTPD_ST
+ 	else
+ 	    smtpd_chat_reply(state, "535 5.7.8 Error: authentication failed: %s",
+ 			     STR(state->sasl_reply));
++
++
++	/* notify blacklistd of SASL authentication failure */
++	pfilter_notify(1, vstream_fileno(state->client));
+ 	return (-1);
+     }
+     /* RFC 4954 Section 6. */
+--- src/smtpd/pfilter.h.orig	2018-02-04 15:36:49 UTC
++++ src/smtpd/pfilter.h
+@@ -0,0 +1 @@
++void pfilter_notify(int, int);
+--- src/smtpd/pfilter.c.orig	2018-02-04 15:36:49 UTC
++++ src/smtpd/pfilter.c
+@@ -0,0 +1,19 @@
++#include "pfilter.h"
++#include <stdio.h>	/* for NULL */
++#include <blacklist.h>
++
++static struct blacklist *blstate;
++
++void
++pfilter_notify(int a, int fd)
++{
++	if (blstate == NULL)
++		blstate = blacklist_open();
++	if (blstate == NULL)
++		return;
++	(void)blacklist_r(blstate, a, fd, "smtpd");
++	if (a == 0) {
++		blacklist_close(blstate);
++		blstate = NULL;
++	}
++}
