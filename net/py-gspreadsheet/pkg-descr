@@ -1,8 +1,11 @@
 gspreadsheet is a wrapper around a wrapper to get Google spreadsheets to look
-like csv.DictReader.  If you're used to working with CSVs or a human, you'll
-find that working with Google's Python API for spreadsheets is so frustrating.
-With gspreadsheet, you can adapt your existing csv code to work with Google
-Spreadsheets with just two line changes. As an added bonus, if you alter the
-dict, those changes get saved back to the original spreadsheet.
+like csv.DictReader.
 
+If you're used to working with CSVs or a human, you'll find that working with
+Google's Python API for spreadsheets is so frustrating. With gspreadsheet, you
+can adapt your existing csv code to work with Google Spreadsheets with just two
+line changes. As an added bonus, if you alter the dict, those changes get saved
+back to the original spreadsheet.
+
+WWW: https://pypi.python.org/pypi/gspreadsheet
 WWW: https://github.com/texastribune/gspreadsheet
