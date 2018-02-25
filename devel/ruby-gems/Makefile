@@ -1,11 +1,10 @@
 # Created by: Alexander Novitsky <alecn2002@yandex.ru>
 # $FreeBSD$
-#
+
+PORTNAME=	gems
 # Do not forget to update the following gemspec patches:
 # - security/rubygem-ezcrypto/files/patch-gemspec
 # - www/rubygem-gitlab-grack/files/patch-gemspec
-
-PORTNAME=	gems
 PORTVERSION=	2.7.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://production.cf.rubygems.org/rubygems/
