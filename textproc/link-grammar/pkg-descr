@@ -4,4 +4,4 @@ assigns to it a syntactic structure, which consists of a set of labeled links
 connecting pairs of words. The parser also produces a "constituent"
 representation of a sentence (showing noun phrases, verb phrases, etc.).
 
-WWW: http://www.abisource.com/projects/link-grammar/
+WWW: https://www.abisource.com/projects/link-grammar/
