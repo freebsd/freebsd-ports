@@ -7,7 +7,7 @@ bin/unhfs.sh
 %%DATADIR%%/lib/hfsx.jar
 %%DATADIR%%/lib/hfsx_dmglib.jar
 %%DATADIR%%/lib/iharder-base64.jar
-%%DATADIR%%/lib/swing-layout-1.0.3.jar
+%%DATADIR%%/lib/swing-layout-1.0.4.jar
 %%DATADIR%%/res/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/html/img/HFSExplorer_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
