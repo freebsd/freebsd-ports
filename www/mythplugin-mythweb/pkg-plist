@@ -1,10 +1,6 @@
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
-%%WWWDIR%%/INSTALL
-%%WWWDIR%%/LICENSE
-%%WWWDIR%%/README
-%%WWWDIR%%/%%AP_NAME%%.conf.nginx
 %%WWWDIR%%/Dockerfile
+%%WWWDIR%%/INSTALL
+%%WWWDIR%%/README
 %%WWWDIR%%/classes/Cache.php
 %%WWWDIR%%/classes/Cache/APC.php
 %%WWWDIR%%/classes/Cache/Enabled.php
@@ -255,8 +251,8 @@
 %%WWWDIR%%/modules/tv/lookup_metadata.php
 %%WWWDIR%%/modules/tv/opensearch.php
 %%WWWDIR%%/modules/tv/playerProductInstall.swf
-%%WWWDIR%%/modules/tv/recorded.php
 %%WWWDIR%%/modules/tv/recommended.php
+%%WWWDIR%%/modules/tv/recorded.php
 %%WWWDIR%%/modules/tv/schedules.php
 %%WWWDIR%%/modules/tv/schedules_custom.php
 %%WWWDIR%%/modules/tv/schedules_manual.php
@@ -274,8 +270,8 @@
 %%WWWDIR%%/modules/tv/tmpl/default/list_cell_nodata.php
 %%WWWDIR%%/modules/tv/tmpl/default/list_cell_program.php
 %%WWWDIR%%/modules/tv/tmpl/default/list_data.php
-%%WWWDIR%%/modules/tv/tmpl/default/recorded.php
 %%WWWDIR%%/modules/tv/tmpl/default/recommended.php
+%%WWWDIR%%/modules/tv/tmpl/default/recorded.php
 %%WWWDIR%%/modules/tv/tmpl/default/schedules.php
 %%WWWDIR%%/modules/tv/tmpl/default/schedules_custom.php
 %%WWWDIR%%/modules/tv/tmpl/default/schedules_manual.php
@@ -325,6 +321,7 @@
 %%WWWDIR%%/modules/welcome.php
 %%WWWDIR%%/mythweb.conf.apache
 %%WWWDIR%%/mythweb.conf.lighttpd
+%%WWWDIR%%/mythweb.conf.nginx
 %%WWWDIR%%/mythweb.php
 %%WWWDIR%%/mythweb.pl
 %%WWWDIR%%/skins/clean_blue/backend_log.css
@@ -420,9 +417,9 @@
 %%WWWDIR%%/skins/default/img/flags/commflagged.png
 %%WWWDIR%%/skins/default/img/flags/cutlist.png
 %%WWWDIR%%/skins/default/img/flags/damaged.png
+%%WWWDIR%%/skins/default/img/flags/hd.png
 %%WWWDIR%%/skins/default/img/flags/hd1080.png
 %%WWWDIR%%/skins/default/img/flags/hd720.png
-%%WWWDIR%%/skins/default/img/flags/hd.png
 %%WWWDIR%%/skins/default/img/flags/no.png
 %%WWWDIR%%/skins/default/img/flags/no_autoexpire.png
 %%WWWDIR%%/skins/default/img/flags/processing.png
@@ -671,113 +668,6 @@
 %%WWWDIR%%/skins/wap/img/spacer.gif
 %%WWWDIR%%/skins/wap/style.css
 %%WWWDIR%%/tests/testUPnP.php
-@dir %%WWWDIR%%/tests
-@dir %%WWWDIR%%/skins/wap/img/apple-touch-icons
-@dir %%WWWDIR%%/skins/wap/img
-@dir %%WWWDIR%%/skins/wap
-@dir %%WWWDIR%%/skins/haze_light/img/apple-touch-icons
-@dir %%WWWDIR%%/skins/haze_light/img
-@dir %%WWWDIR%%/skins/haze_light
-@dir %%WWWDIR%%/skins/haze_dark/img/apple-touch-icons
-@dir %%WWWDIR%%/skins/haze_dark/img
-@dir %%WWWDIR%%/skins/haze_dark
-@dir %%WWWDIR%%/skins/grey/img/flags
-@dir %%WWWDIR%%/skins/grey/img/apple-touch-icons
-@dir %%WWWDIR%%/skins/grey/img
-@dir %%WWWDIR%%/skins/grey
-@dir %%WWWDIR%%/skins/elkin/img/music
-@dir %%WWWDIR%%/skins/elkin/img/flags
-@dir %%WWWDIR%%/skins/elkin/img/apple-touch-icons
-@dir %%WWWDIR%%/skins/elkin/img
-@dir %%WWWDIR%%/skins/elkin
-@dir %%WWWDIR%%/skins/default/img/music
-@dir %%WWWDIR%%/skins/default/img/flags
-@dir %%WWWDIR%%/skins/default/img/feelings
-@dir %%WWWDIR%%/skins/default/img/apple-touch-icons
-@dir %%WWWDIR%%/skins/default/img
-@dir %%WWWDIR%%/skins/default
-@dir %%WWWDIR%%/skins/clean_blue/img/music
-@dir %%WWWDIR%%/skins/clean_blue/img/flags
-@dir %%WWWDIR%%/skins/clean_blue/img/apple-touch-icons
-@dir %%WWWDIR%%/skins/clean_blue/img
-@dir %%WWWDIR%%/skins/clean_blue
-@dir %%WWWDIR%%/skins
-@dir %%WWWDIR%%/modules/video/tmpl/default
-@dir %%WWWDIR%%/modules/video/tmpl
-@dir %%WWWDIR%%/modules/video
-@dir %%WWWDIR%%/modules/tv/tmpl/wap
-@dir %%WWWDIR%%/modules/tv/tmpl/rss
-@dir %%WWWDIR%%/modules/tv/tmpl/lite
-@dir %%WWWDIR%%/modules/tv/tmpl/ical
-@dir %%WWWDIR%%/modules/tv/tmpl/default
-@dir %%WWWDIR%%/modules/tv/tmpl
-@dir %%WWWDIR%%/modules/tv/includes
-@dir %%WWWDIR%%/modules/tv/classes
-@dir %%WWWDIR%%/modules/tv
-@dir %%WWWDIR%%/modules/stream/tmpl/lite
-@dir %%WWWDIR%%/modules/stream/tmpl/default
-@dir %%WWWDIR%%/modules/stream/tmpl
-@dir %%WWWDIR%%/modules/stream
-@dir %%WWWDIR%%/modules/status/tmpl/wap
-@dir %%WWWDIR%%/modules/status/tmpl/lite
-@dir %%WWWDIR%%/modules/status/tmpl/default
-@dir %%WWWDIR%%/modules/status/tmpl
-@dir %%WWWDIR%%/modules/status
-@dir %%WWWDIR%%/modules/stats/tmpl/lite
-@dir %%WWWDIR%%/modules/stats/tmpl/default
-@dir %%WWWDIR%%/modules/stats/tmpl
-@dir %%WWWDIR%%/modules/stats
-@dir %%WWWDIR%%/modules/settings/tmpl/lite
-@dir %%WWWDIR%%/modules/settings/tmpl/default
-@dir %%WWWDIR%%/modules/settings/tmpl
-@dir %%WWWDIR%%/modules/settings
-@dir %%WWWDIR%%/modules/remote/tmpl/default
-@dir %%WWWDIR%%/modules/remote/tmpl
-@dir %%WWWDIR%%/modules/remote
-@dir %%WWWDIR%%/modules/mythweb/tmpl/lite
-@dir %%WWWDIR%%/modules/mythweb/tmpl/default
-@dir %%WWWDIR%%/modules/mythweb/tmpl
-@dir %%WWWDIR%%/modules/mythweb
-@dir %%WWWDIR%%/modules/mythtv/tmpl/lite
-@dir %%WWWDIR%%/modules/mythtv/tmpl/default
-@dir %%WWWDIR%%/modules/mythtv/tmpl
-@dir %%WWWDIR%%/modules/mythtv
-@dir %%WWWDIR%%/modules/music/tmpl/default
-@dir %%WWWDIR%%/modules/music/tmpl
-@dir %%WWWDIR%%/modules/music
-@dir %%WWWDIR%%/modules/database/tmpl/default
-@dir %%WWWDIR%%/modules/database/tmpl
-@dir %%WWWDIR%%/modules/database
-@dir %%WWWDIR%%/modules/coverart
-@dir %%WWWDIR%%/modules/backend_log/tmpl/lite
-@dir %%WWWDIR%%/modules/backend_log/tmpl/default
-@dir %%WWWDIR%%/modules/backend_log/tmpl
-@dir %%WWWDIR%%/modules/backend_log
-@dir %%WWWDIR%%/modules/_shared/tmpl/wap
-@dir %%WWWDIR%%/modules/_shared/tmpl/tmpl
-@dir %%WWWDIR%%/modules/_shared/tmpl/lite
-@dir %%WWWDIR%%/modules/_shared/tmpl/default
-@dir %%WWWDIR%%/modules/_shared/tmpl/_errors
-@dir %%WWWDIR%%/modules/_shared/tmpl
-@dir %%WWWDIR%%/modules/_shared/lang
-@dir %%WWWDIR%%/modules/_shared
-@dir %%WWWDIR%%/modules
-@dir %%WWWDIR%%/js/scriptaculous
-@dir %%WWWDIR%%/js/prototip
-@dir %%WWWDIR%%/js/libs/flowplayer
-@dir %%WWWDIR%%/js/libs
-@dir %%WWWDIR%%/js/dialog
-@dir %%WWWDIR%%/js
-@dir %%WWWDIR%%/includes
-@dir(,,775) %%WWWDIR%%/data/tv_icons
-@dir(,,775) %%WWWDIR%%/data/cache
-@dir(,,775) %%WWWDIR%%/data
-@dir %%WWWDIR%%/configuration
-@dir %%WWWDIR%%/classes/UPnP
-@dir %%WWWDIR%%/classes/Database/Query
-@dir %%WWWDIR%%/classes/Database
-@dir %%WWWDIR%%/classes/Cache
-@dir %%WWWDIR%%/classes
-@dir %%WWWDIR%%
-@owner
-@group
+@dir(%%WWWOWN%%,%%WWWGROUP%%,700) %%WWWDIR%%/data/tv_icons
+@dir(%%WWWOWN%%,%%WWWGROUP%%,700) %%WWWDIR%%/data/cache
+@dir(%%WWWOWN%%,%%WWWGROUP%%,700) %%WWWDIR%%/data
