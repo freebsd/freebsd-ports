@@ -9,4 +9,4 @@ to the existing HDF5 API and abstractions, so that Python programs can
 easily deal with HDF5 files and exchange data with other HDF5-aware
 applications.
 
-WWW: http://h5py.alfven.org
+WWW: https://www.h5py.org
