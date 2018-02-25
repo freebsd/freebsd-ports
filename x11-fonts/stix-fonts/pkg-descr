@@ -1,12 +1,5 @@
 The mission of the Scientific and Technical Information Exchange (STIX) font
-creation project is the preparation of a comprehensive set of fonts that serve
-the scientific and engineering community in the process from manuscript creation
-through final publication, both in electronic and print formats. Toward this
-purpose, the STIX fonts will be made available, under royalty-free license, to
-anyone, including publishers, software developers, scientists, students, and the
-general public.
-
-These fonts cover all the symbols in MathML and this port can replace the former
-x11-fonts/mathfonts.
+project is the creation of a comprehensive set of fonts that serve the
+scientific and engineering communities.
 
 WWW: http://www.stixfonts.org/
