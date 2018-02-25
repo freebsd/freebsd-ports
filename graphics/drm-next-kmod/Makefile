@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drm-next-kmod
-PORTVERSION=	g20180117
-PORTREVISION=	3
+PORTVERSION=	4.11.g20180224
 CATEGORIES=	graphics
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -24,14 +23,14 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-drm
-GH_TAGNAME=	cd0b05f
+GH_TAGNAME=	79764d6
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101510
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101511
 IGNORE=		not supported on 10.x or older, no kernel support
 .endif
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000 && ${OSVERSION} < 1200045
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000 && ${OSVERSION} < 1200058
 IGNORE=		not supported on older CURRENT, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD
