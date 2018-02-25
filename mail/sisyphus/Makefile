@@ -11,6 +11,10 @@ COMMENT=	Intelligent Junk Mail Handler
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to configure
+DEPRECATED=	Never built
+EXPIRATION_DATE=	2018-03-25
+
 BUILD_DEPENDS=	glide:devel/go-glide
 
 USES=		go
