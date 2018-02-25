@@ -6,7 +6,7 @@ PORTVERSION=	0.20161114
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	ZXing C++ Library for QR code recognition
 
 LICENSE=	APACHE20

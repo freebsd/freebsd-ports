@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/orbit.lv2/repository/archive.tar.gz?ref=aca0b7a&dummy=/
 PKGNAMESUFFIX=	-lv2
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 plugin bundle from Open Music Kontrollers
 
 LICENSE=	ART20

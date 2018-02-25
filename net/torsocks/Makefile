@@ -6,7 +6,7 @@ PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net security
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easy way to make any app work through Tor
 
 LICENSE=	GPLv2

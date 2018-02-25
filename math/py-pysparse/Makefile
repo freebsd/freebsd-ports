@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast sparse matrix library for Python
 
 LICENSE=	BSD3CLAUSE

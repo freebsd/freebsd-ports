@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net-im net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for Project-Tox
 
 LICENSE=	LGPL3

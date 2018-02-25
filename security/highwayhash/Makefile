@@ -5,7 +5,7 @@ PORTNAME=	highwayhash
 PORTVERSION=	g20170512
 CATEGORIES=	security
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast strong hash functions: SipHash/HighwayHash
 
 LICENSE=	APACHE20

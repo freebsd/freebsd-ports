@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
 CATEGORIES=	audio
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Linear/Logitudinal Time Code (LTC) Library
 
 LICENSE=	LGPL3

@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight and flexible command-line JSON processor
 
 LICENSE=	MIT

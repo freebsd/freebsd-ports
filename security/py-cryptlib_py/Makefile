@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.franken.de/pub/crypt/cryptlib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	cl${PORTVERSION:S/.//g}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pythin binding for cryptlib
 
 LICENSE=	GPLv3

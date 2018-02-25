@@ -7,7 +7,7 @@ CATEGORIES=	security net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python implementation of the Axolotl ratchet protocol
 
 LICENSE=	BSD3CLAUSE

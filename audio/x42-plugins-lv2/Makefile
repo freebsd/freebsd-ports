@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://gareus.org/misc/x42-plugins/
 PKGNAMESUFFIX=	-lv2
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of LV2 plugins (submodules)
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \

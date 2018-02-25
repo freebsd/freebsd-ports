@@ -6,7 +6,7 @@ PORTVERSION=	0.5.2
 PORTREVISION=	3
 CATEGORIES=	devel net
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight Distributed Hash Table implementation
 
 LICENSE=	GPLv3

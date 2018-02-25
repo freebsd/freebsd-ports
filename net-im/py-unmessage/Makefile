@@ -7,7 +7,7 @@ CATEGORIES=	net-im net-p2p python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Privacy enhanced instant messenger
 
 LICENSE=	GPLv3

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://ilk.uvt.nl/downloads/pub/software/
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tilburg Memory Based Learner
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2

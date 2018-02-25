@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Professional-level digital darkroom and photo editor
 
 LICENSE=	BSD3CLAUSE

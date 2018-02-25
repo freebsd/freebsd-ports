@@ -7,7 +7,7 @@ CATEGORIES=	net security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to interact with the cjdns admin interface
 
 LICENSE=	GPLv3

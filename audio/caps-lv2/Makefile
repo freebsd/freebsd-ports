@@ -5,7 +5,7 @@ PORTNAME=	caps-lv2
 PORTVERSION=	g20170626
 CATEGORIES=	audio
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 version of the C* Audio Plugin Suite
 
 LICENSE=	GPLv3

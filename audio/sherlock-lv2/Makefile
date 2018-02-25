@@ -6,7 +6,7 @@ PORTVERSION=	0.14.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Investigative LV2 plugin bundle
 
 LICENSE=	ART20

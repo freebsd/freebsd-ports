@@ -5,7 +5,7 @@ PORTNAME=	vm-to-tor
 PORTVERSION=	0.150519
 CATEGORIES=	security net
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Connect virtual machines to the tor network
 
 LICENSE=	BSD4CLAUSE
