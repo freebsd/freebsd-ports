@@ -12,6 +12,10 @@ COMMENT=	GTK3 app for finding and listening to internet radio stations
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN=		fails to configure
+DEPRECATED=	Never built
+EXPIRATION_DATE=	2018-03-25
+
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib \
