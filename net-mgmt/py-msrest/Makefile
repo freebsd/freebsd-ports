@@ -2,28 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	msrest
-PORTVERSION=	0.4.14
+PORTVERSION=	0.4.26
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	AutoRest swagger generator Python client runtime
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}isodate>=0.5.4:devel/py-isodate@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>0:www/py-requests-oauthlib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2017.4.17:security/py-certifi@${FLAVOR} \
+		${PY_ENUM34} \
+		${PYTHON_PKGNAMEPREFIX}isodate>=0.6.0:devel/py-isodate@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.5.0:www/py-requests-oauthlib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.14:www/py-requests@${FLAVOR}
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34@${FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
