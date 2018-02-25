@@ -1,8 +1,9 @@
-picklefield provides an implementation of a pickled object field.
-Such fields can contain any picklable objects.
+picklefield provides an implementation of a pickled object field. Such fields
+can contain any picklable objects.
 
 It is incredibly useful for storing just about anything in the database
-(provided it is Pickle-able, of course) when there isn't a 'proper' field
-for the job.
+(provided it is Pickle-able, of course) when there isn't a 'proper' field for
+the job.
 
 WWW: https://pypi.python.org/pypi/django-picklefield
+WWW: https://github.com/gintas/django-picklefield
