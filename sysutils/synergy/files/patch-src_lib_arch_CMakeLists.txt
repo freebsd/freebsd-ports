@@ -1,9 +1,9 @@
---- src/lib/arch/CMakeLists.txt.orig	2015-08-03 10:52:29.431081000 +0800
-+++ src/lib/arch/CMakeLists.txt	2015-08-03 10:52:45.330309000 +0800
-@@ -50,5 +50,5 @@
+--- src/lib/arch/CMakeLists.txt.orig	2018-02-25 02:17:23 UTC
++++ src/lib/arch/CMakeLists.txt
+@@ -40,5 +40,5 @@ endif()
  add_library(arch STATIC ${sources})
  
  if (UNIX)
--	target_link_libraries(arch dl ${libs})
-+	target_link_libraries(arch ${libs})
+-    target_link_libraries(arch dl ${libs})
++    target_link_libraries(arch ${CMAKE_DL_LIBS} ${libs})
  endif()

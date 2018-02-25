@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-02-25 02:25:11 UTC
++++ CMakeLists.txt
+@@ -299,7 +299,7 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "Da
+         ${OPENSSL_ROOT}/lib/libssl.a
+         ${OPENSSL_ROOT}/lib/libcrypto.a
+     )
+-elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD")
+     set (OPENSSL_LIBS ssl crypto)
+ else()
+     message (FATAL_ERROR "Couldn't find OpenSSL")
