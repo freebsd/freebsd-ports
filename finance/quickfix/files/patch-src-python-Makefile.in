@@ -1,0 +1,11 @@
+--- src/python/Makefile.in.orig	2014-09-15 06:24:20 UTC
++++ src/python/Makefile.in
+@@ -596,7 +596,7 @@ uninstall-am: uninstall-pythonDATA uninstall-pythonLTL
+ 
+ all-local:
+ 	mkdir -p $(local_python_lib)
+-	ln -sf $(local_python_src)/.libs/_quickfix* $(local_python_lib)
++	find $(local_python_src)/.libs/_quickfix.* -exec ln -s {} $(local_python_lib)/{} \;
+ 	ln -sf $(local_python_src)/*.py $(local_python_lib)
+ 	ln -sf $(top_builddir)/spec spec
+ 
