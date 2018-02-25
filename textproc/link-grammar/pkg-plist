@@ -31,7 +31,6 @@ lib/liblink-grammar.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/linkgrammar/linkgrammar.pyo
 libdata/pkgconfig/link-grammar.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/ady/4.0.affix
@@ -49,6 +48,7 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/any/4.0.dict
 %%DATADIR%%/any/4.0.knowledge
 %%DATADIR%%/any/4.0.regex
+%%DATADIR%%/any/affix-punc
 %%DATADIR%%/any/README.md
 %%DATADIR%%/ar/4.0.affix
 %%DATADIR%%/ar/4.0.constituent-knowledge
@@ -115,6 +115,7 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/units.4.dot
 %%DATADIR%%/en/words/units.5
 %%DATADIR%%/en/words/units.6
+%%DATADIR%%/en/words/units.a
 %%DATADIR%%/en/words/words-medical.adv.1
 %%DATADIR%%/en/words/words-medical.prep.1
 %%DATADIR%%/en/words/words-medical.v.4.1
@@ -480,3 +481,4 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/vn/4.0.dict
 %%DATADIR%%/vn/4.0.knowledge
 %%DATADIR%%/vn/4.0.regex
+man/man1/link-parser.1.gz
