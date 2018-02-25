@@ -1,8 +1,9 @@
-pyaixi is a pure Python implementation of the Monte Carlo-AIXI-Context Tree Weighting
-(MC-AIXI-CTW) artificial intelligence algorithm.
+pyaixi is a pure Python implementation of the Monte Carlo-AIXI-Context Tree
+Weighting (MC-AIXI-CTW) artificial intelligence algorithm.
 
 This is an approximation of the AIXI universal artificial intelligence
 algorithm, which describes a model-based, reinforcement-learning agent capable
 of general learning.
 
+WWW: https://pypi.python.org/pypi/pyaixi
 WWW: https://github.com/gkassel/pyaixi
