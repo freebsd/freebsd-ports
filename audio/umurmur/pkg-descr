@@ -1,5 +1,7 @@
-uMurmur is a minimalistic Mumble server primarily targeted to run on
-routers with an open OS like OpenWRT.
-The server part of Mumble is called Murmur, hence the name uMurmur.
+uMurmur is a minimalistic Mumble server primarily targeted to run on embedded
+computers, like routers, with an open OS like e.g. OpenWRT. The server part of
+Mumble is called Murmur, hence the name uMurmur. It is available as a
+precompiled package for quite a lot distributions. Check your distribution's
+package repository.
 
-WWW: http://code.google.com/p/umurmur
+WWW: http://umurmur.net/
