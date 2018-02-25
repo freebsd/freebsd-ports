@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/:treeline \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:treeline
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Structured information storage program
 
 LICENSE=	GPLv2
