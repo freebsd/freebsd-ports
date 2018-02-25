@@ -1,14 +1,16 @@
-Fastcluster provides Python functions for hierarchical clustering. It generates
+This library provides Python functions for hierarchical clustering. It generates
 hierarchical clusters from distance matrices or from vector data.
 
-Part of this module is intended to replace the functions
-    linkage, single, complete, average, weighted, centroid, median, ward
-in the module scipy.cluster.hierarchy with the same functionality but much
-faster algorithms. Moreover, the function 'linkage_vector' provides
-memory-efficient clustering for vector data.
+Part of this module is intended to replace the functions (linkage, single,
+complete, average, weighted, centroid, median, ward) in the module
+scipy.cluster.hierarchy with the same functionality but much faster algorithms.
+Moreover, the function linkage_vector provides memory-efficient clustering for
+vector data.
 
 The interface is very similar to MATLAB's Statistics Toolbox API to make code
-easier to port from MATLAB to Python/Numpy. The core implementation of this
+easier to port from MATLAB to Python/NumPy. The core implementation of this
 library is in C++ for efficiency.
 
 WWW: http://danifold.net/fastcluster.html
+WWW: https://pypi.python.org/pypi/fastcluster
+WWW: https://github.com/dmuellner/fastcluster
