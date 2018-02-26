@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	2_18_15
-PORTREVISION=	1
+DISTVERSION=	2_18_17
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -28,17 +27,14 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 
 USES=		bison cmake compiler:features cpe desktop-file-utils \
 		fortran gmake pyqt:4 python:2.7 sqlite:3
-
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-
 USE_PYQT=	core gui network qscintilla2 sip sql svg xml webkit_run
-
 USE_QT4=	corelib designer doc gui linguist_build moc_build \
 		network qmake_build rcc_build script sql sql-pgsql \
 		sql-sqlite3 svg testlib uic_build webkit xml
-
 USE_LDCONFIG=	yes
+
 ICON_SIZES=	8 16 22 24 32 36 42 48 64 72 80 96 128 192 256 512
 
 OPTIONS_DEFINE=		PYTHON POSTGIS GRASS SERVER
@@ -55,7 +51,8 @@ TESTS_DESC=		Run the test suite after build process
 
 CMAKE_ARGS+=	-DENABLE_QT5=OFF -DENABLE_PYTHON3=OFF \
 		-DWITH_ORACLE:BOOL=FALSE \
-		-DWITH_GLOBE:BOOL=FALSE
+		-DWITH_GLOBE:BOOL=FALSE \
+		-DPYUIC_PROGRAM:STRING="${LOCALBASE}/bin/pyuic4" # cmake script fails to find it without PYUIC_PROGRAM
 
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
@@ -102,7 +99,7 @@ PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY
 			${PYTHON_PKGNAMEPREFIX}pip>=9.0.1:devel/py-pip@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pygments>=2.1.3:textproc/py-pygments@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.5.1:graphics/py-pyproj@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:databases/pyspatialite \
+			${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:databases/pyspatialite@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pytz>=2016.10:devel/py-pytz@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
@@ -125,7 +122,7 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY_F
 			${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.3:databases/py-psycopg2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pygments>=2.1.3:textproc/py-pygments@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.5.1:graphics/py-pyproj@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:databases/pyspatialite \
+			${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:databases/pyspatialite@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pytz>=2016.10:devel/py-pytz@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
@@ -174,7 +171,7 @@ post-patch:
 		${WRKSRC}/python/ext-libs/CMakeLists.txt
 
 post-install:
-	${RM} ${STAGEDIR}${DATADIR}/python/pytz/tzfile.py.bak
+	@${RM} ${STAGEDIR}${DATADIR}/python/pytz/tzfile.py.bak
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
@@ -188,9 +185,9 @@ post-install:
 .endfor
 
 post-install-TESTS-on:
-	${RM} /tmp/srs.db
+	@${RM} /tmp/srs.db
 
 check:
-	(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check)
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
