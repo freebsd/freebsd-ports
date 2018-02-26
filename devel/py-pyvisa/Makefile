@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hgrecco
 
 USES=		python
+USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
