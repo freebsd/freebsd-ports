@@ -1,8 +1,8 @@
 QSynergy is a comprehensive and easy to use graphical front end for
-Synergy.  Synergy lets a user control more than one computer with
+Synergy. Synergy lets a user control more than one computer with
 a single mouse and keyboard (and has lots and lots of extra features
-on top of that).  Synergy itself only comes with a GUI for MS
-Windows.  QSynergy was written to fill the gap for users on Mac and
-Unix platforms.  Of course, it runs on MS Windows as well.
+on top of that). Synergy itself only comes with a GUI for MS
+Windows. QSynergy was written to fill the gap for users on Mac and
+Unix platforms. Of course, it runs on MS Windows as well.
 
-WWW: http://www.volker-lanz.de/software/qsynergy
+WWW: https://sourceforge.net/projects/qsynergy/
