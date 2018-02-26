@@ -2,6 +2,7 @@
 
 PORTNAME=	pc-networkmanager
 PORTVERSION=	201710031301
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jt@ixsystems.com
@@ -19,6 +20,7 @@ CONFLICTS=	pcbsd-utils*
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		qmake shebangfix tar:xz
+SHEBANG_FILES=	src/NetworkManager/resources/umts_stick
 USE_LDCONFIG=	yes
 USE_QT5=	core gui network svg linguist \
 		buildtools x11extras widgets
