@@ -29,9 +29,9 @@
 -	install $(BINS)/tthsum $(BIN)
 -	install -m644 $(SHARES)/tthsum.1.gz $(MAN)/man1
 +install: tthsum manual
-+	install -d $(BIN) $(STAGEDIR)$(MANPREFIX)/man/man1
-+	install $(BINS)/tthsum $(STAGEDIR)$(PREFIX)/bin
-+	install -m644 $(SHARES)/tthsum.1.gz $(STAGEDIR)$(MANPREFIX)/man/man1
++	install -d $(BIN) $(DESTDIR)$(MANPREFIX)/man/man1
++	install $(BINS)/tthsum $(DESTDIR)$(PREFIX)/bin
++	install -m644 $(SHARES)/tthsum.1.gz $(DESTDIR)$(MANPREFIX)/man/man1
  
  uninstall:
  	$(RM) $(BIN)/tthsum
