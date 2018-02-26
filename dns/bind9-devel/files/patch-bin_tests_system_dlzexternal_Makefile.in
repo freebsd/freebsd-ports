@@ -1,6 +1,6 @@
---- bin/tests/system/dlzexternal/Makefile.in.orig	2016-11-01 20:46:42 UTC
+--- bin/tests/system/dlzexternal/Makefile.in.orig	2018-02-26 06:30:28 UTC
 +++ bin/tests/system/dlzexternal/Makefile.in
-@@ -31,7 +31,7 @@ OBJS =
+@@ -34,7 +34,7 @@ OBJS =
  @BIND9_MAKE_RULES@
  
  CFLAGS =	@CFLAGS@ @SO_CFLAGS@
