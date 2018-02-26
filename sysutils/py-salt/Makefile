@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe@${FLAVOR} \
+		${PY_ENUM34} \
+		${PY_FUTURES} \
 		${PYTHON_PKGNAMEPREFIX}libcloud>=0.14.0:net/py-libcloud@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar@${FLAVOR} \
@@ -78,18 +80,6 @@ ZEROMQ_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq@${FLAVOR}
 ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq@${FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto@${FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-# Python 2.7-3.3 require enum34, unnecessary for Python 3.4+
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34@${FLAVOR}
-.endif
-
-# Python 3+ comes with futures built-in
-.if ${PYTHON_REL} < 3200
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=2.0:devel/py-futures@${FLAVOR}
-.endif
-
 post-patch:
 .for file in conf/minion conf/master doc/man/salt-key.1 \
 	doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \
@@ -108,4 +98,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/master ${STAGEDIR}${ETCDIR}/master.sample
 	${INSTALL_DATA} ${WRKSRC}/conf/minion ${STAGEDIR}${ETCDIR}/minion.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
