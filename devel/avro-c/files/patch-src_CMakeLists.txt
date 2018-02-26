@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2016-05-15 00:38:52 UTC
+--- src/CMakeLists.txt.orig	2017-04-17 23:56:17 UTC
 +++ src/CMakeLists.txt
-@@ -82,12 +82,12 @@ source_group(Avro FILES ${AVRO_SRC})
+@@ -82,7 +82,7 @@ source_group(Avro FILES ${AVRO_SRC})
  # The version.sh script gives us a SOVERSION that uses colon as a
  # separator; we need periods.
  
@@ -9,17 +9,3 @@
  
  add_library(avro-static STATIC ${AVRO_SRC})
  target_link_libraries(avro-static ${JANSSON_LIBRARIES} ${CODEC_LIBRARIES} ${THREADS_LIBRARIES})
- set_target_properties(avro-static PROPERTIES OUTPUT_NAME avro)
- 
- if (NOT WIN32)
- # TODO: Create Windows DLLs. See http://www.cmake.org/Wiki/BuildingWinDLL
- add_library(avro-shared SHARED ${AVRO_SRC})
-@@ -125,7 +127,7 @@ set(prefix ${CMAKE_INSTALL_PREFIX})
- set(VERSION ${AVRO_VERSION})
- configure_file(avro-c.pc.in avro-c.pc)
- install(FILES ${CMAKE_CURRENT_BINARY_DIR}/avro-c.pc
--        DESTINATION lib/pkgconfig)
-+        DESTINATION libdata/pkgconfig)
- 
- add_executable(avrocat avrocat.c)
- target_link_libraries(avrocat avro-static)
