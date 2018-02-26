@@ -11,7 +11,8 @@ MASTER_SITES=	http://tthsum.devs.nu/pkg/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility for generating and checking TTH message digests
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 CONFLICTS=	microdc2-[0-9]*
 
@@ -19,13 +20,10 @@ USES=		gmake
 
 PLIST_FILES=	bin/tthsum man/man1/tthsum.1.gz
 
-MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
+TEST_TARGET=	runtest
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test runtest
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
