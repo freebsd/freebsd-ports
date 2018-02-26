@@ -13,6 +13,8 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_powerpc64=	fails to build: libzfs.c: error: convert_for_assignment: incompatible type for argument 3 of zfs_path_to_zhandle
 
+RUN_DEPENDS=	${PY_ENUM34}
+
 USE_GITHUB=     yes
 GH_ACCOUNT=	freenas
 GH_PROJECT=	py-libzfs
@@ -23,14 +25,8 @@ USE_PYTHON=	autoplist distutils cython
 
 MAKE_ENV=	FREEBSD_SRC=${SRC_BASE}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34@${FLAVOR}
-.endif
-
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=	requires kernel source files in ${SRC_BASE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
