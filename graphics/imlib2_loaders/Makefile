@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imlib2_loaders
-PORTVERSION=	1.4.10
+PORTVERSION=	1.5.0
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	SF/enlightenment/imlib2-src/${PORTVERSION}
