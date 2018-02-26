@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libass
-PORTVERSION=	0.13.7
+PORTVERSION=	0.14.0
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -30,7 +30,7 @@ OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_amd64=	ASM
 OPTIONS_DEFAULT_i386=	ASM
 
-ASM_BUILD_DEPENDS=${LOCALBASE}/bin/yasm:devel/yasm
+ASM_BUILD_DEPENDS=nasm:devel/nasm
 ASM_CONFIGURE_ENABLE=asm
 
 HARFBUZZ_LIB_DEPENDS=libharfbuzz.so:print/harfbuzz
