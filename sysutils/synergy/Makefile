@@ -6,7 +6,7 @@ DISTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
 
 LICENSE=	GPLv2
