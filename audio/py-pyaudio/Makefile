@@ -3,6 +3,7 @@
 
 PORTNAME=	pyaudio
 PORTVERSION=	0.2.11
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,30 +15,30 @@ COMMENT=	Portaudio toolkit bindings for Python
 LICENSE=	MIT
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
-BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 USES=		python gmake
 USE_PYTHON=	distutils autoplist
 
+MAKE_ENV=	PYTHON=${PYTHON_CMD} \
+		SPHINX=sphinx-build-${PYTHON_VER}
+PORTDOCS=	*
 WRKSRC=		${WRKDIR}/PyAudio-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
-PORTDOCS=	*
+
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 
 post-patch:
 	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/setup.py
 
-pre-install:
-	(cd ${BUILD_WRKSRC} && ${MAKE_CMD} PYTHON=${PYTHON_CMD} docs)
+post-build-DOCS-on:
+	(cd ${BUILD_WRKSRC} && ${DO_MAKE_BUILD} docs)
+
+post-install-DOCS-on:
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -path *doctrees*")
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.js ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.inv ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} _static ${STAGEDIR}${DOCSDIR}/
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} _sources ${STAGEDIR}${DOCSDIR}/
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_portaudio.so
 
 .include <bsd.port.mk>
