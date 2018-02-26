@@ -1882,6 +1882,7 @@ llvm%%LLVM_LIB_VER%%/include/llvm/MC/MCAsmInfoDarwin.h
 llvm%%LLVM_LIB_VER%%/include/llvm/MC/MCAsmInfoELF.h
 llvm%%LLVM_LIB_VER%%/include/llvm/MC/MCAsmInfoWasm.h
 llvm%%LLVM_LIB_VER%%/include/llvm/MC/MCAsmLayout.h
+llvm%%LLVM_LIB_VER%%/include/llvm/MC/MCAsmMacro.h
 llvm%%LLVM_LIB_VER%%/include/llvm/MC/MCAssembler.h
 llvm%%LLVM_LIB_VER%%/include/llvm/MC/MCCodeEmitter.h
 llvm%%LLVM_LIB_VER%%/include/llvm/MC/MCCodePadder.h
