@@ -15,7 +15,8 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>1.7,1:math/py-numpy@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llvmlite>=0.12:devel/py-llvmlite@${FLAVOR}
+RUN_DEPENDS=	${PY_ENUM34} \
+		${PYTHON_PKGNAMEPREFIX}llvmlite>=0.12:devel/py-llvmlite@${FLAVOR}
 
 # Uses Python 2.7, 3.4+
 USES=		python fortran
@@ -23,10 +24,9 @@ USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 
-# Requried for Python 2.7
+# Required for Python 2.7
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${FLAVOR} \
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}funcsigs>0:devel/py-funcsigs@${FLAVOR}
 .endif
 
