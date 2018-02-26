@@ -748,7 +748,6 @@
     SUBDIR += trlan
     SUBDIR += truthtable
     SUBDIR += tvmet
-    SUBDIR += ufc
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += unuran
