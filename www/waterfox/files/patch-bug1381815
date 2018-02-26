@@ -1,0 +1,278 @@
+commit 165fab2f8596
+Author: Jan Horak <jhorak@redhat.com>
+Date:   Tue Oct 10 13:35:56 2017 +0200
+
+    Bug 1381815 - fixing dimensions of radio and checkbox for GTK 3.20+; r=karlt
+    
+    In the GTK < 3.20 the size of radio and checkbox toggle is determined by indicator
+    spacing and indicator size. By  GTK 3.20+ it is replaced by standard box model
+    (padding, margin, border). The patch fixes that while keeping the functionality
+    for older GTK. The values are also cached by similar way as scrollbar metrics
+    are cached now.
+    
+    The focus is no longer rendered by GTK but by Mozilla code, so the extra
+    size for toggles has been removed from GetExtraSizeForWidget and toggles
+    no longer render focus indicator.
+    
+    MozReview-Commit-ID: 1Wg5AgHy1Vz
+    
+    --HG--
+    extra : rebase_source : 81437f45b7d32555942d21fccc9de4a561d85111
+---
+ widget/gtk/gtk3drawing.cpp      | 121 ++++++++++++++++++++++++++++++----------
+ widget/gtk/gtkdrawing.h         |  14 +++++
+ widget/gtk/nsNativeThemeGTK.cpp |  32 +----------
+ 3 files changed, 107 insertions(+), 60 deletions(-)
+
+diff --git widget/gtk/gtk3drawing.cpp widget/gtk/gtk3drawing.cpp
+index 4c562b380095..7968aef920f6 100644
+--- widget/gtk/gtk3drawing.cpp
++++ widget/gtk/gtk3drawing.cpp
+@@ -22,6 +22,8 @@ static gboolean checkbox_check_state;
+ static gboolean notebook_has_tab_gap;
+ 
+ static ScrollbarGTKMetrics sScrollbarMetrics[2];
++static ToggleGTKMetrics sCheckboxMetrics;
++static ToggleGTKMetrics sRadioMetrics;
+ 
+ #define ARROW_UP      0
+ #define ARROW_DOWN    G_PI
+@@ -110,6 +112,8 @@ moz_gtk_refresh()
+ 
+     sScrollbarMetrics[GTK_ORIENTATION_HORIZONTAL].initialized = false;
+     sScrollbarMetrics[GTK_ORIENTATION_VERTICAL].initialized = false;
++    sCheckboxMetrics.initialized = false;
++    sRadioMetrics.initialized = false;
+ }
+ 
+ gint
+@@ -308,33 +312,21 @@ moz_gtk_toggle_paint(cairo_t *cr, GdkRectangle* rect,
+                      gboolean isradio, GtkTextDirection direction)
+ {
+     GtkStateFlags state_flags = GetStateFlagsFromGtkWidgetState(state);
+-    gint indicator_size, indicator_spacing;
+     gint x, y, width, height;
+-    gint focus_x, focus_y, focus_width, focus_height;
+     GtkStyleContext *style;
+ 
+-    GtkWidget *widget = GetWidget(isradio ? MOZ_GTK_RADIOBUTTON_CONTAINER :
+-                                            MOZ_GTK_CHECKBUTTON_CONTAINER);
+-    gtk_widget_style_get(widget,
+-                         "indicator_size", &indicator_size,
+-                         "indicator_spacing", &indicator_spacing,
+-                         nullptr);
++    const ToggleGTKMetrics* metrics = GetToggleMetrics(isradio);
+ 
+     // XXX we should assert rect->height >= indicator_size too
+     // after bug 369581 is fixed.
+-    MOZ_ASSERT(rect->width >= indicator_size,
++    MOZ_ASSERT(rect->width >= metrics->minSizeWithBorder.width,
+                "GetMinimumWidgetSize was ignored");
+ 
+     // Paint it center aligned in the rect.
+-    x = rect->x + (rect->width - indicator_size) / 2;
+-    y = rect->y + (rect->height - indicator_size) / 2;
+-    width = indicator_size;
+-    height = indicator_size;
+-
+-    focus_x = x - indicator_spacing;
+-    focus_y = y - indicator_spacing;
+-    focus_width = width + 2 * indicator_spacing;
+-    focus_height = height + 2 * indicator_spacing;
++    width = metrics->minSizeWithBorder.width;
++    height = metrics->minSizeWithBorder.height;
++    x = rect->x + (rect->width - width) / 2;
++    y = rect->y + (rect->height - height) / 2;
+ 
+     if (selected)
+         state_flags = static_cast<GtkStateFlags>(state_flags|checkbox_check_state);
+@@ -348,20 +340,25 @@ moz_gtk_toggle_paint(cairo_t *cr, GdkRectangle* rect,
+     if (gtk_check_version(3, 20, 0) == nullptr) {
+         gtk_render_background(style, cr, x, y, width, height);
+         gtk_render_frame(style, cr, x, y, width, height);
+-    }
+-
+-    if (isradio) {
+-        gtk_render_option(style, cr, x, y, width, height);
+-        if (state->focused) {
+-            gtk_render_focus(style, cr, focus_x, focus_y,
+-                            focus_width, focus_height);
++        // Indicator is inset by the toggle's padding and border.
++        gint indicator_x = x + metrics->borderAndPadding.left;
++        gint indicator_y = y + metrics->borderAndPadding.top;
++        gint indicator_width = metrics->minSizeWithBorder.width -
++            metrics->borderAndPadding.left - metrics->borderAndPadding.right;
++        gint indicator_height = metrics->minSizeWithBorder.height -
++            metrics->borderAndPadding.top - metrics->borderAndPadding.bottom;
++        if (isradio) {
++            gtk_render_option(style, cr, indicator_x, indicator_y,
++                              indicator_width, indicator_height);
++        } else {
++            gtk_render_check(style, cr, indicator_x, indicator_y,
++                             indicator_width, indicator_height);
+         }
+-    }
+-    else {
+-        gtk_render_check(style, cr, x, y, width, height);
+-        if (state->focused) {
+-            gtk_render_focus(style, cr,
+-                             focus_x, focus_y, focus_width, focus_height);
++    } else {
++        if (isradio) {
++            gtk_render_option(style, cr, x, y, width, height);
++        } else {
++            gtk_render_check(style, cr, x, y, width, height);
+         }
+     }
+ 
+@@ -2514,6 +2511,68 @@ SizeFromLengthAndBreadth(GtkOrientation aOrientation,
+         MozGtkSize({aLength, aBreadth}) : MozGtkSize({aBreadth, aLength});
+ }
+ 
++const ToggleGTKMetrics*
++GetToggleMetrics(bool isRadio)
++{
++    ToggleGTKMetrics* metrics;
++    if (isRadio) {
++        metrics = &sRadioMetrics;
++    } else {
++        metrics = &sCheckboxMetrics;
++    }
++    if (metrics->initialized)
++        return metrics;
++
++    metrics->initialized = true;
++    if (gtk_check_version(3,20,0) == nullptr) {
++        GtkStyleContext* style;
++        if (isRadio) {
++            style = GetStyleContext(MOZ_GTK_RADIOBUTTON);
++        } else {
++            style = GetStyleContext(MOZ_GTK_CHECKBUTTON);
++        }
++        GtkStateFlags state_flags = gtk_style_context_get_state(style);
++        gtk_style_context_get(style, state_flags,
++                              "min-height",&(metrics->minSizeWithBorder.height),
++                              "min-width", &(metrics->minSizeWithBorder.width),
++                              nullptr);
++        // Fallback to indicator size if min dimensions are zero
++        if (metrics->minSizeWithBorder.height == 0 ||
++            metrics->minSizeWithBorder.width == 0) {
++            gint indicator_size;
++            gtk_widget_style_get(GetWidget(MOZ_GTK_CHECKBUTTON_CONTAINER),
++                                 "indicator_size", &indicator_size, nullptr);
++            if (metrics->minSizeWithBorder.height == 0) {
++                metrics->minSizeWithBorder.height = indicator_size;
++            }
++            if (metrics->minSizeWithBorder.width == 0) {
++                metrics->minSizeWithBorder.width = indicator_size;
++            }
++        }
++
++        GtkBorder border, padding;
++        gtk_style_context_get_border(style, state_flags, &border);
++        gtk_style_context_get_padding(style, state_flags, &padding);
++        metrics->borderAndPadding.left = border.left + padding.left;
++        metrics->borderAndPadding.right = border.right + padding.right;
++        metrics->borderAndPadding.top = border.top + padding.top;
++        metrics->borderAndPadding.bottom = border.bottom + padding.bottom;
++        metrics->minSizeWithBorder.width += metrics->borderAndPadding.left +
++                                            metrics->borderAndPadding.right;
++        metrics->minSizeWithBorder.height += metrics->borderAndPadding.top +
++                                             metrics->borderAndPadding.bottom;
++    } else {
++        gint indicator_size, indicator_spacing;
++        gtk_widget_style_get(GetWidget(MOZ_GTK_CHECKBUTTON_CONTAINER),
++                             "indicator_size", &indicator_size,
++                             "indicator_spacing", &indicator_spacing,
++                             nullptr);
++        metrics->minSizeWithBorder.width =
++            metrics->minSizeWithBorder.height = indicator_size;
++    }
++    return metrics;
++}
++
+ const ScrollbarGTKMetrics*
+ GetScrollbarMetrics(GtkOrientation aOrientation)
+ {
+diff --git widget/gtk/gtkdrawing.h widget/gtk/gtkdrawing.h
+index 42dbf8287499..909c18f7f525 100644
+--- widget/gtk/gtkdrawing.h
++++ widget/gtk/gtkdrawing.h
+@@ -83,6 +83,12 @@ typedef struct {
+   } border;
+ } ScrollbarGTKMetrics;
+ 
++typedef struct {
++  bool initialized;
++  MozGtkSize minSizeWithBorder;
++  GtkBorder borderAndPadding;
++} ToggleGTKMetrics;
++
+ typedef enum {
+   MOZ_GTK_STEPPER_DOWN        = 1 << 0,
+   MOZ_GTK_STEPPER_BOTTOM      = 1 << 1,
+@@ -391,6 +397,14 @@ moz_gtk_get_tab_border(gint* left, gint* top, gint* right, gint* bottom,
+ gint
+ moz_gtk_checkbox_get_metrics(gint* indicator_size, gint* indicator_spacing);
+ 
++/**
++ * Get metrics of the toggle (radio or checkbox)
++ * isRadio:            [IN] true when requesting metrics for the radio button
++ * returns:    pointer to ToggleGTKMetrics struct
++ */
++const ToggleGTKMetrics*
++GetToggleMetrics(bool isRadio);
++
+ /**
+  * Get the desired size of a GtkRadioButton
+  * indicator_size:     [OUT] the indicator size
+diff --git widget/gtk/nsNativeThemeGTK.cpp widget/gtk/nsNativeThemeGTK.cpp
+index 06e62efbcda8..da3eaa71a6b4 100644
+--- widget/gtk/nsNativeThemeGTK.cpp
++++ widget/gtk/nsNativeThemeGTK.cpp
+@@ -1020,24 +1020,6 @@ nsNativeThemeGTK::GetExtraSizeForWidget(nsIFrame* aFrame, uint8_t aWidgetType,
+     aExtra->left = aExtra->right = 1;
+     break;
+ 
+-  // Include the indicator spacing (the padding around the control).
+-  case NS_THEME_CHECKBOX:
+-  case NS_THEME_RADIO:
+-    {
+-      gint indicator_size, indicator_spacing;
+-
+-      if (aWidgetType == NS_THEME_CHECKBOX) {
+-        moz_gtk_checkbox_get_metrics(&indicator_size, &indicator_spacing);
+-      } else {
+-        moz_gtk_radio_get_metrics(&indicator_size, &indicator_spacing);
+-      }
+-
+-      aExtra->top = indicator_spacing;
+-      aExtra->right = indicator_spacing;
+-      aExtra->bottom = indicator_spacing;
+-      aExtra->left = indicator_spacing;
+-      break;
+-    }
+   case NS_THEME_BUTTON :
+     {
+       if (IsDefaultButton(aFrame)) {
+@@ -1595,17 +1577,9 @@ nsNativeThemeGTK::GetMinimumWidgetSize(nsPresContext* aPresContext,
+   case NS_THEME_CHECKBOX:
+   case NS_THEME_RADIO:
+     {
+-      gint indicator_size, indicator_spacing;
+-
+-      if (aWidgetType == NS_THEME_CHECKBOX) {
+-        moz_gtk_checkbox_get_metrics(&indicator_size, &indicator_spacing);
+-      } else {
+-        moz_gtk_radio_get_metrics(&indicator_size, &indicator_spacing);
+-      }
+-
+-      // Include space for the indicator and the padding around it.
+-      aResult->width = indicator_size;
+-      aResult->height = indicator_size;
++      const ToggleGTKMetrics* metrics = GetToggleMetrics(aWidgetType == NS_THEME_RADIO);
++      aResult->width = metrics->minSizeWithBorder.width;
++      aResult->height = metrics->minSizeWithBorder.height;
+     }
+     break;
+   case NS_THEME_TOOLBARBUTTON_DROPDOWN:
