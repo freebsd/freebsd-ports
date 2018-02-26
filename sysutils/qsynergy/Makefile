@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake
-USE_QT4=	moc_build rcc_build uic_build gui network
+USE_QT4=	moc_build rcc_build uic_build corelib gui network
 
 PLIST_FILES=	bin/qsynergy \
 		share/pixmaps/qsynergy.xpm
