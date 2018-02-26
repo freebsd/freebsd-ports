@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	6.0.0rc2
+DISTVERSION=	6.0.0rc3
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -544,7 +544,7 @@ svn-patch-llvm:
 .if !defined(PATCH_REV)
 .error svn-patch-clang requires that PATCH_REV be set
 .endif
-_PATCH_FILE=${FILESDIR}/clang-patch-svn-${PATCH_REV}
+_PATCH_FILE=${FILESDIR}/clang/patch-svn-${PATCH_REV}
 _LLVM_BASE=http://llvm.org/svn/llvm-project/cfe/trunk
 svn-patch-clang:
 	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
@@ -556,7 +556,7 @@ svn-patch-clang:
 .if !defined(PATCH_REV)
 .error svn-patch-compiler-rt requires that PATCH_REV be set
 .endif
-_PATCH_FILE=${FILESDIR}/compiler-rt-patch-svn-${PATCH_REV}
+_PATCH_FILE=${FILESDIR}/compiler-rt/patch-svn-${PATCH_REV}
 _LLVM_BASE=http://llvm.org/svn/llvm-project/compiler-rt/trunk
 svn-patch-compiler-rt:
 	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
@@ -568,7 +568,7 @@ svn-patch-compiler-rt:
 .if !defined(PATCH_REV)
 .error svn-patch-lldb requires that PATCH_REV be set
 .endif
-_PATCH_FILE=${FILESDIR}/lldb-patch-svn-${PATCH_REV}
+_PATCH_FILE=${FILESDIR}/lldb/patch-svn-${PATCH_REV}
 _LLVM_BASE=http://llvm.org/svn/llvm-project/lldb/trunk
 svn-patch-lldb:
 	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
