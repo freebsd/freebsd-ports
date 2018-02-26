@@ -10,15 +10,13 @@
 #
 # version 	If your port requires only some set of Python versions, you
 # 		can set this to [min]-[max] or min+ or -max or as an
-# 		explicit version or as a meta port version (eg. 3.3-3.4 for
-# 		[min]-[max], 2.7+ or -3.3 for min+ and -max, 2.7 for an
-# 		explicit version or 3 for a meta port version). Example:
+#		explicit version (eg. 3.3-3.4 for [min]-[max], 2.7+ or -3.3
+#		for min+ and -max, 2.7 for an explicit version). Example:
 #
 #			USES=python:2.7		# Only use Python 2.7
 #			USES=python:3.3+	# Use Python 3.3 or newer
 #			USES=python:3.3-3.4	# Use Python 3.3 or 3.4
 #			USES=python:-3.3	# Use any Python up to 3.3
-#			USES=python:2		# Use the Python 2 meta port
 #			USES=python		# Use the set default Python
 #						# version
 #
@@ -306,15 +304,10 @@ _PYTHON_TEST_DEP=	yes
 WARNING+=	"PYTHON_DEFAULT must be a version present in PYTHON2_DEFAULT or PYTHON3_DEFAULT, if you want more Python flavors, set BUILD_ALL_PYTHON_FLAVORS in your make.conf"
 .endif
 
-# Keep this before the FLAVOR selection to get the meta port dependency.
 .if ${_PYTHON_ARGS} == "2"
-_PYTHON_ARGS=		${PYTHON2_DEFAULT}
-_WANTS_META_PORT=	2
-DEV_WARNING+=		"USES=python:2 is deprecated, use USES=python:2.7"
+DEV_ERROR+=		"USES=python:2 is no longer supported, use USES=python:2.7"
 .elif ${_PYTHON_ARGS} == "3"
-_PYTHON_ARGS=		${PYTHON3_DEFAULT}
-_WANTS_META_PORT=	3
-DEV_WARNING+=		"USES=python:3 is deprecated, use USES=python:3.4+ or an appropriate version range"
+DEV_ERROR+=		"USES=python:3 is no longer supported, use USES=python:3.4+ or an appropriate version range"
 .endif  # ${_PYTHON_ARGS} == "2"
 
 .if defined(PYTHON_VERSION)
@@ -682,9 +675,6 @@ PY_BOOST=	lib${PY_BOOST_LIB}.so:devel/boost-python-libs@${PY_FLAVOR}
 .for _stage in PATCH BUILD RUN TEST
 .  if defined(_PYTHON_${_stage}_DEP)
 ${_stage}_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
-.    if defined(_WANTS_META_PORT)
-${_stage}_DEPENDS+=	python${_WANTS_META_PORT}:${_PYTHON_RELPORTDIR}${_WANTS_META_PORT}
-.    endif
 .  endif
 .endfor
 
