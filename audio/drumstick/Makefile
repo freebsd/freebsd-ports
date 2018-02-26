@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	drumstick
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -27,6 +26,8 @@ PULSEAUDIO_CMAKE_BOOL=	USE_PULSEAUDIO
 MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			docbook-xsl>0:textproc/docbook-xsl
 MANPAGES_CMAKE_BOOL=	BUILD_DOCS
+
+PLIST_SUB=	SHL3=${PORTVERSION} SHL1=${PORTVERSION:R:R}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"default.sf2"|"${LOCALBASE}/share/sounds/sf2/FluidR3_GM.sf2"|' \
