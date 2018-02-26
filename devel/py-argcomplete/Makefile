@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tony@git-pull.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bash tab completion for argparse
 
 LICENSE=	APACHE20

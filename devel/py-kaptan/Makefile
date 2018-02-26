@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tony@git-pull.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python config parser for json, yaml
 
 LICENSE=	BSD3CLAUSE
