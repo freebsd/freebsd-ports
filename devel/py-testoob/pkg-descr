@@ -1,4 +1,4 @@
 Testoob is an advanced unit testing framework for Python. It integrates
 effortlessly with existing PyUnit (module 'unittest') test suites.
 
-WWW: http://testoob.sourceforge.net/
+WWW: https://github.com/testoob/testoob
