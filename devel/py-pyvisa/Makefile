@@ -3,28 +3,22 @@
 PORTNAME=	pyvisa
 PORTVERSION=	1.9.0
 CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	PyVISA-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python VISA bindings for GPIB, RS232, and USB instruments
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Python VISA bindings for GPIB, RS232, TCPIP and USB instruments
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyvisa-py>0:devel/py-pyvisa-py@${FLAVOR}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	hgrecco
+RUN_DEPENDS=	${PY_ENUM34} \
+		${PYTHON_PKGNAMEPREFIX}pyvisa-py>=0:devel/py-pyvisa-py@${FLAVOR}
 
 USES=		python
 USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34@${FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
