@@ -1,5 +1,13 @@
-PyVISA-py is a backend for PyVISA.  It implements most of the methods
-for Message Based communication (Serial/USB/GPIB/Ethernet) using
-Python and some cross platform libraries.
+PyVISA started as wrapper for the NI-VISA library and therefore you need to
+install National Instruments VISA library in your system. This works most of the
+time, for most people. But NI-VISA is a proprietary library that only works on
+certain systems. That is when PyVISA-py jumps in.
+
+Starting from version 1.6, PyVISA allows to use different backends. These
+backends can be dynamically loaded. PyVISA-py is one of such backends. It
+implements most of the methods for Message Based communication
+(Serial/USB/GPIB/Ethernet) using Python and some well developed, easy to deploy
+and cross platform libraries.
 
 WWW: https://pypi.python.org/pypi/PyVISA-py
+WWW: https://github.com/pyvisa/pyvisa-py
