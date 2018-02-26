@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+#==========================
+#OpenRC Service for NTPD
+# Written by the TrueOS Project <www.trueos.org>
+# Created by Ken Moore <ken@ixsystems.com> : Feb 26, 2018
+# Available under the 2-Clause BSD License
+#==========================
+
+: ${ntpd_config:=%%PREFIX%%/etc/ntpd.conf}
+
+name="ntpd"
+description="Network Time Protocol Daemon"
+required_files=${ntpd_config}
+
+command="%%PREFIX%%/sbin/ntpd"
+command_args="-f ${ntpd_config} -d -s"
+command_background="true"
+pidfile="/var/run/ntpd.pid"
+supervisor="start-stop-daemon"
+start_stop_daemon_args="--stdout /var/log/ntpd.log --stderr /var/log/ntpd.log"
+
+depend(){
+	need localmount
+}
