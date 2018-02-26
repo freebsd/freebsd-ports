@@ -5,8 +5,7 @@
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.409
-PORTREVISION=	1
+DISTVERSION=	1.1.434
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -73,7 +72,11 @@ pre-build:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cpp/desktop/global-setenv.h
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/rstudio/bin/rstudio ${STAGEDIR}${PREFIX}/bin/rstudio
+	@(echo "#!/bin/sh"; \
+	  echo "# workaround for the problem that RStudio passes /lib with LD_LIBRARY_PATH that causes the /lib/libgcc_s.so.1 conflict with gcc"; \
+	  echo "LD_PRELOAD=${PREFIX}/lib/gcc6/libgcc_s.so ${PREFIX}/lib/rstudio/bin/rstudio \"$@\"" \
+	) > ${STAGEDIR}${PREFIX}/bin/rstudio
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/rstudio
 	@${REINPLACE_CMD} -e 's|^Exec=.*/rstudio|Exec=${PREFIX}/bin/rstudio|' ${STAGEDIR}${PREFIX}/share/applications/rstudio.desktop
 	# There is a variability in .js file names due to the use of random numbers, so we use the automatic plist.
 	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist | ${GREP} -v ^\/ | ${SED} -e 's|%%WWWDIR%%|www/rstudio|' > ${TMPPLIST}
