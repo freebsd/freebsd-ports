@@ -17,8 +17,11 @@ PLIST_FILES=	bin/pbzip2 bin/pbunzip2 \
 		man/man1/pbzip2.1.gz man/man1/pbunzip2.1.gz
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,PRI[iu]MAX, & ,g' ${WRKSRC}/pbzip2.cpp \
+		${WRKSRC}/BZ2StreamScanner.cpp
 # Spell target sources to be understood by both BSD and GNU make(1)
-	@${REINPLACE_CMD} -e 's,$$^,$$>&,' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/-O2/s,^,#, ; s,$$^,$$>&,' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
