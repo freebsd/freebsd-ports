@@ -48,7 +48,7 @@ INFO=		internals \
 		music-glossary
 
 USES=		bison:build gettext ghostscript gmake pkgconfig perl5 \
-		python:-3
+		python:2.7
 USE_TEX=	latex
 USE_PERL5=	build
 USE_GNOME=	pango

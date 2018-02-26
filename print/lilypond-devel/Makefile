@@ -46,7 +46,7 @@ INFO=		internals \
 		music-glossary
 
 USES=		bison:build gettext ghostscript gmake pkgconfig perl5 \
-		compiler:gcc-c++11-lib python:-3
+		compiler:gcc-c++11-lib python:2.7
 USE_CXXSTD=	c++11
 USE_TEX=	latex texmf
 USE_PERL5=	build
