@@ -14,8 +14,8 @@ include/libqalculate/qalculate.h
 include/libqalculate/util.h
 lib/libqalculate.a
 lib/libqalculate.so
-lib/libqalculate.so.10
-lib/libqalculate.so.10.0.0
+lib/libqalculate.so.14
+lib/libqalculate.so.14.0.0
 libdata/pkgconfig/libqalculate.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libqalculate.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libqalculate.mo
@@ -24,8 +24,10 @@ libdata/pkgconfig/libqalculate.pc
 share/qalculate/currencies.xml
 share/qalculate/datasets.xml
 share/qalculate/elements.xml
+share/qalculate/eurofxref-daily.xml
 share/qalculate/functions.xml
 share/qalculate/planets.xml
 share/qalculate/prefixes.xml
+share/qalculate/rates.json
 share/qalculate/units.xml
 share/qalculate/variables.xml
