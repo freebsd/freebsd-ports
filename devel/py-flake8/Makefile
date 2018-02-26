@@ -13,7 +13,8 @@ COMMENT=	Code checking using pep8 and pyflakes
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mccabe>=0.5.0:devel/py-mccabe@${FLAVOR} \
+RUN_DEPENDS=	${PY_ENUM34} \
+		${PYTHON_PKGNAMEPREFIX}mccabe>=0.5.0:devel/py-mccabe@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycodestyle>=2.0.0:devel/py-pycodestyle@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=0.8.1:devel/py-pyflakes@${FLAVOR}
 
@@ -25,9 +26,6 @@ NO_ARCH=	yes
 
 .if ${PYTHON_REL} < 3200
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser@${FLAVOR}
-.endif
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34@${FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
