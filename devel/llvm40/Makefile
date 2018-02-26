@@ -332,10 +332,7 @@ CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.if ${PYTHON_REL} < 3400
-LLDB_BUILD_DEPENDS+= \
-	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
-.endif
+LLDB_BUILD_DEPENDS+= ${PY_ENUM34}
 
 post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
