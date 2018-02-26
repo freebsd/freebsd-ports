@@ -2,33 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	qalculate
-PORTVERSION=	1.0.0
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.2.1
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
+DISTNAME=	${GH_PROJECT}-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (GTK+3 frontend)
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-LIB_DEPENDS=	libcln.so:math/cln \
-		libqalculate.so:math/libqalculate
-RUN_DEPENDS=	gnuplot:math/gnuplot \
-		wget:ftp/wget
 
 BROKEN_powerpc64=	fails to compile:  main.cc: undefined reference to Calculator::temporaryCategory[abi:cxx11]()
 
-USES=		autoreconf compiler:c++11-lang gettext gmake \
+LIB_DEPENDS=	libqalculate.so:math/libqalculate
+RUN_DEPENDS=	gnuplot:math/gnuplot
+
+USES=		compiler:c++11-lang gettext gmake \
 		libtool:build localbase pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2
+
+# USE_GITHUB=	Use MASTER_SITES so that the pre-rolled release is downloaded
+GH_ACCOUNT=	Qalculate
+GH_PROJECT=	${PORTNAME}-gtk
+
 GNU_CONFIGURE=	yes
 DATADIR=	share/${GH_PROJECT}
 DOCSDIR=	share/doc/${GH_PROJECT}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Qalculate
-GH_PROJECT=	${PORTNAME}-gtk
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|po ||g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
