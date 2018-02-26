@@ -1,7 +1,7 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.3.20
+DISTVERSION?=	9.3.21
 PORTREVISION=	0
 PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
@@ -14,6 +14,10 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/bin/pg_controldata src/bin/pg_resetxlog src/pl \
 		src/bin/pg_basebackup
 
-ICU_PATCHFILE?= pg-9314-icu-2016-08-10.diff.gz
+ICU_PATCHFILE=	pg-9314-icu-2016-08-10.diff.gz
 
-.include "${.CURDIR}/../postgresql92-server/Makefile"
+PG_USER?=	pgsql
+PG_GROUP?=	pgsql
+PG_UID?=	70
+
+.include "${.CURDIR}/../postgresql10-server/Makefile"

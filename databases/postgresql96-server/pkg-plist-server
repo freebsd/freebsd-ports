@@ -739,7 +739,6 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/US/Michigan
 %%TZDATA%%%%DATADIR%%/timezone/US/Mountain
 %%TZDATA%%%%DATADIR%%/timezone/US/Pacific
-%%TZDATA%%%%DATADIR%%/timezone/US/Pacific-New
 %%TZDATA%%%%DATADIR%%/timezone/US/Samoa
 %%TZDATA%%%%DATADIR%%/timezone/UTC
 %%TZDATA%%%%DATADIR%%/timezone/Universal

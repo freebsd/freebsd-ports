@@ -110,7 +110,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_ctl-9.5.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_resetxlog-9.5.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_rewind-9.5.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/pl%%PG_USER%%-9.5.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/plpgsql-9.5.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/initdb-9.5.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pg_basebackup-9.5.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pg_controldata-9.5.mo
@@ -736,7 +736,6 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/US/Michigan
 %%TZDATA%%%%DATADIR%%/timezone/US/Mountain
 %%TZDATA%%%%DATADIR%%/timezone/US/Pacific
-%%TZDATA%%%%DATADIR%%/timezone/US/Pacific-New
 %%TZDATA%%%%DATADIR%%/timezone/US/Samoa
 %%TZDATA%%%%DATADIR%%/timezone/UTC
 %%TZDATA%%%%DATADIR%%/timezone/Universal
