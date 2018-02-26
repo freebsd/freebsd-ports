@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdmerge
 PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://download.sippysoft.com/thirdparty/
 DISTNAME=	${PORTNAME}-${GITREVISION}
@@ -16,7 +16,7 @@ LICENSE=	GPLv3+
 RUN_DEPENDS=	rrdtool:databases/rrdtool
 
 USES=		python shebangfix tar:tbz2
-SHEBANG_FILES=	rrdmergetree
+SHEBANG_FILES=	rrdmerge rrdmergetree
 GITREVISION=	b05d69bfac64
 bash_CMD=	/bin/sh
 NO_BUILD=	yes
