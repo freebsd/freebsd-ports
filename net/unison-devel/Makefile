@@ -24,7 +24,7 @@ USES=		gmake
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 MAKE_ARGS=	CFLAGS=""
-CONFLICTS=	unison-[0-9]* unison-nox11-[0-9]*
+CONFLICTS=	unison-[0-9]*
 
 DOCS=		BUGS.txt NEWS README
 EXTRA_DOCS=	${DISTNAME}-manual.html \
