@@ -2,30 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	avro
-PORTVERSION=	1.8.1
-PORTREVISION=	6
+PORTVERSION=	1.8.2
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	devel
-MASTER_SITES=	http://www.sai.msu.su/apache/${PORTNAME}/${PORTNAME}-${PORTVERSION}/ \
-		APACHE/${PORTNAME}/stable
 PKGNAMESUFFIX=	-cpp
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Data serialization system for C++
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	C++ library for Apache Avro
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-USES=		cmake python:build
+USES=		cmake
 USE_LDCONFIG=	yes
+WRKSRC_SUBDIR=	lang/c++
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/lang/c++
+GH_ACCOUNT=	apache
+USE_GITHUB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|COMMAND python|COMMAND "${PYTHON_CMD}"|' \
-		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|BOOST_CHECKPOINT|BOOST_TEST_CHECKPOINT|' \
-		${WRKSRC}/test/SchemaTests.cc
-	@${REINPLACE_CMD} -e 's|BOOST_MESSAGE|BOOST_TEST_MESSAGE|' \
-		${WRKSRC}/test/buffertest.cc
+	@${REINPLACE_CMD} -e 's|$${AVRO_VERSION_MAJOR}.\($${AVRO_VERSION_MINOR}\)|\1|' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
