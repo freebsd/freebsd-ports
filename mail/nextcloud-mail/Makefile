@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mail
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -17,7 +17,7 @@ LICENSE=	AGPLv3
 
 RUN_DEPENDS=	nextcloud>=12:www/nextcloud
 
-USES=		gettext
+USES=		gettext php
 USE_PHP=	imap
 
 NO_BUILD=	yes
