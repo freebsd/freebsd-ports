@@ -9,9 +9,9 @@
 %%WWWDIR%%/controller/proxycontroller.php
 %%WWWDIR%%/controller/settingscontroller.php
 %%WWWDIR%%/controller/viewcontroller.php
-%%WWWDIR%%/css/public/app.css
-%%WWWDIR%%/css/public/app.min.css
-%%WWWDIR%%/css/public/app.min.css.map
+%%WWWDIR%%/css/public/app.min.scss
+%%WWWDIR%%/css/public/app.min.scss.map
+%%WWWDIR%%/css/public/app.scss
 %%WWWDIR%%/css/public/vendor.css
 %%WWWDIR%%/css/public/vendor.min.css
 %%WWWDIR%%/css/public/vendor.min.css.map
@@ -67,6 +67,8 @@
 %%WWWDIR%%/l10n/eo.json
 %%WWWDIR%%/l10n/es.js
 %%WWWDIR%%/l10n/es.json
+%%WWWDIR%%/l10n/es_419.js
+%%WWWDIR%%/l10n/es_419.json
 %%WWWDIR%%/l10n/es_AR.js
 %%WWWDIR%%/l10n/es_AR.json
 %%WWWDIR%%/l10n/es_CL.js
