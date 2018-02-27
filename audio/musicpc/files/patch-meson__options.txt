@@ -1,0 +1,14 @@
+--- meson_options.txt.orig	2018-02-27 07:50:47 UTC
++++ meson_options.txt
+@@ -3,6 +3,11 @@ option('iconv', type: 'combo',
+   value: 'auto',
+   description: 'Enable iconv() support')
+ 
++option('use_sphinx', type: 'combo',
++  choices: ['true', 'false', 'auto'],
++  value: 'auto',
++  description: 'Enable sphinx support for building documentation')
++
+ option('test', type: 'boolean',
+   value: false,
+   description: 'Enable unit tests')

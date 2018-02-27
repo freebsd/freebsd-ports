@@ -1,0 +1,24 @@
+--- meson.build.orig	2018-02-26 15:35:16 UTC
++++ meson.build
+@@ -1,4 +1,4 @@
+-project('mpc', 'c',
++project('musicpc', 'c',
+   version: '0.29',
+   default_options: [
+     'c_std=c99',
+@@ -113,13 +113,13 @@ executable('mpc',
+   install: true
+ )
+ 
+-install_data('AUTHORS', 'COPYING', 'NEWS', 'README.rst',
++install_data('AUTHORS', 'NEWS', 'README.rst',
+   install_dir : join_paths(get_option('datadir'), 'doc', meson.project_name()))
+ 
+ install_data(
+   'contrib/mpd-m3u-handler.sh', 'contrib/mpd-pls-handler.sh',
+   'contrib/mpc-completion.bash',
+-  install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name(), 'contrib'))
++  install_dir: join_paths(get_option('datadir'), 'examples', meson.project_name() ))
+ 
+ if get_option('test')
+   check_dep = dependency('check')
