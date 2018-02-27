@@ -6,7 +6,7 @@ PORTVERSION=	0.91
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	mycroft@virgaria.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yaph is a proxy scanner
 
 GNU_CONFIGURE=	yes

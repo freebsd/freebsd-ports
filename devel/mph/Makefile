@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	SUNSITE/devel/lang/c
 
-MAINTAINER=	chuck@pkix.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimal perfect hashing code generator
 
 BIN_FILES=	emitc mph mphm

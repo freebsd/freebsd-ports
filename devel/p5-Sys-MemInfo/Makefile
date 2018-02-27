@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	terry@sucked-in.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sys::MemInfo - Perl extension for getting Memory information
 
 WRKSRC=	${WRKDIR}/${PORTNAME}

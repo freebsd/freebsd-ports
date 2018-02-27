@@ -7,7 +7,7 @@ CATEGORIES=	www editors
 MASTER_SITES=	http://the-brannons.com/edbrowse/ \
 		http://rithmomachia.org/edbrowse/
 
-MAINTAINER=	david.vionnet@vmailbox.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Line-oriented Web browser and text editor
 
 LICENSE=	GPLv2

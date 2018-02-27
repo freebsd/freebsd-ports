@@ -6,7 +6,7 @@ PORTVERSION=	3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	chuck@pkix.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically remove unwanted files
 
 USES=	tar:bzip2

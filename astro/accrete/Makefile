@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
-MAINTAINER=	chuck@pkix.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Accrete is a physical simulation of solar system planet formation
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX=${STAGEDIR}${PREFIX} \

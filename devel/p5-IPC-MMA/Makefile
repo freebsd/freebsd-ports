@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	peter@vereshagin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved Perl interface to Ralf Engelschall's mm library
 
 BUILD_DEPENDS=	p5-Devel-CheckOS>=0:devel/p5-Devel-CheckOS
