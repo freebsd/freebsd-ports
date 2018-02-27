@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Simple but non-blocking HTTP/HTTPS client
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-AnyEvent>=5.33:devel/p5-AnyEvent \
 		p5-common-sense>=3.3:devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
