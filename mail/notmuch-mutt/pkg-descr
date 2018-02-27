@@ -1,0 +1,10 @@
+Notmuch is a great mail indexing tool that can also be used
+in conjunction with existing Mail User Agents (MUA) instead
+of replacing them.  The advantage of such mixed solutions is
+that users can benefit from Notmuch features (such as full-text
+search and thread reconstruction) without having to change MUA.
+
+The notmuch-mutt script bridges the gap between Notmuch and
+Mutt.
+
+WWW: https://notmuchmail.org/notmuch-mutt/

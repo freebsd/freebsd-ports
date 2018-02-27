@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.25.3
-PORTREVISION=	1
-CATEGORIES=	mail
+PORTVERSION=	0.26
+CATEGORIES?=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
-MAINTAINER=	mp39590@gmail.com
-COMMENT=	Thread-based email index, search, and tagging application
+MAINTAINER=	seschwar@gmail.com
+COMMENT?=	Thread-based email index, search and tagging application
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING-GPL-3
+LICENSE_FILE=	${WRKSRC}/${WRKSRC_SUBDIR:C/[^\/]+/../g}/COPYING-GPL-3
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build due to databases/xapian-core
 
-BUILD_DEPENDS=	c++filt:devel/binutils
+.ifndef MASTERDIR
 LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
 		libxapian.so:databases/xapian-core \
 		libtalloc.so:devel/talloc
@@ -32,58 +31,46 @@ TEST_DEPENDS=	bash:shells/bash \
 
 USES=		gmake pkgconfig python:build,test
 USE_GNOME=	glib20
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
-MAKE_ENV+=	PYTHONCMD=${PYTHON_CMD}
-
-TEST_ENV+=	NOTMUCH_SKIP_TESTS="basic count new insert tagging atomicity \
-		message-property regexp-query" \
-		V=1 \
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+		--prefix=${PREFIX} \
+		--with-bash-completion \
+		--with-retry-lock \
+		--with-zsh-completion \
+		--without-emacs
+CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
+TEST_ENV+=	NOTMUCH_SKIP_TESTS="basic.12 count.14 insert.2[89] insert.3[0-9] message-property.6 regexp-query.21" \
 		TEST_CFLAGS="-g -O0 -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
-		BSD_GDB=${LOCALBASE}/bin/gdb
-
+		TEST_GDB=${LOCALBASE}/bin/gdb \
+		V=1
 TEST_TARGET=	test
+.endif
 
-OPTIONS_DEFINE=	BASH DESKTOP DOXYGEN EMACS MANPAGES MUTT RUBY ZSH
-DESKTOP_DESC=	Install desktop file
-EMACS_DESC=	Install EMACS lisp files (requires emacs)
-MUTT_DESC=	Install notmuch-mutt script
+PKGDIR=		${.CURDIR}
+
+.ifndef MASTERDIR
+OPTIONS_DEFINE=	DOXYGEN MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=	yes
 
-BASH_BUILD_DEPENDS=	bash-completion>=1.90:shells/bash-completion
-BASH_RUN_DEPENDS=	${BASH_BUILD_DEPENDS}
-BASH_CONFIGURE_WITH=	bash-completion
-DESKTOP_CONFIGURE_WITH=	desktop
-DESKTOP_USES=		desktop-file-utils
-DOXYGEN_CONFIGURE_WITH=	api-docs
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-EMACS_CONFIGURE_WITH=	emacs
-EMACS_CONFIGURE_ON=	--emacslispdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
-			--emacsetcdir=${PREFIX}/${EMACS_SITE_LISPDIR}
-EMACS_USES=	emacs
-EMACS_VARS=	PKGNAMESUFFIX=${EMACS_PKGNAMESUFFIX}
+DOXYGEN_CONFIGURE_WITH=	api-docs
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-MUTT_RUN_DEPENDS=	p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu \
-			p5-Mail-Tools>0:mail/p5-Mail-Tools \
-			p5-Mail-Box>0:mail/p5-Mail-Box \
-			p5-String-ShellQuote>0:textproc/p5-String-ShellQuote
-MUTT_USES=	perl5
-RUBY_USE=	RUBY=yes
-ZSH_CONFIGURE_WITH=	zsh-completion
+MANPAGES_CONFIGURE_WITH=	docs
 
-do-build-MUTT-on:
-	${MAKE_CMD} -C ${WRKSRC}/contrib/notmuch-mutt all
-	${GZIP_CMD} ${WRKSRC}/contrib/notmuch-mutt/notmuch-mutt.1
-
-do-install-MUTT-on:
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/notmuch-mutt/notmuch-mutt ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/contrib/notmuch-mutt/notmuch-mutt.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
+# install completions even in absence of shells/bash-completions
+post-configure:
+	@${REINPLACE_CMD} -e '/^WITH_BASH[[:blank:]]*=/s/=.*/= 1/' ${WRKSRC}/Makefile.config
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.5.0.0
+
+# keep poudriere testport happy
+post-install-MANPAGES-on:
+	@${RM} ${STAGEDIR}${MANPREFIX}/man/man1/notmuch-emacs-mua.1.gz
+.endif
 
 .include <bsd.port.mk>

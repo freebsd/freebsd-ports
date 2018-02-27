@@ -274,6 +274,8 @@
     SUBDIR += nohtml
     SUBDIR += normalizemime
     SUBDIR += notmuch
+    SUBDIR += notmuch-emacs
+    SUBDIR += notmuch-mutt
     SUBDIR += nullmailer
     SUBDIR += nullpop
     SUBDIR += offlineimap
