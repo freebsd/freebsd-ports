@@ -1,6 +1,7 @@
-Sys::MemInfo return the total amount of free and used
-physical memory in bytes in totalmem and freemem variables.
-Total amount of free and user swap memory are alse returned
-in totalswap and freeswap variables.
+Sys::MemInfo return the total amount of free and used physical memory in bytes
+in totalmem and freemem variables.
 
-WWW: http://search.cpan.org/dist/Sys-Cpu/
+Total amount of free and user swap memory are also returned in totalswap and
+freeswap variables.
+
+WWW: http://search.cpan.org/dist/Sys-MemInfo/
