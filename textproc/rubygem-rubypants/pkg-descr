@@ -1,6 +1,6 @@
 RubyPants is a Ruby port of the smart-quotes library SmartyPants. The original
-SmartyPants is a free web publishing plug-in for Movable Type,
-Blosxom, and BBEdit that easily translates plain ASCII punctuation characters
-into "smart" typographic punctuation HTML entities.
+SmartyPants is a free web publishing plug-in for Movable Type, Blosxom, and
+BBEdit that easily translates plain ASCII punctuation characters into "smart"
+typographic punctuation HTML entities.
 
 WWW: https://github.com/jmcnevin/rubypants
