@@ -5,7 +5,8 @@ PORTNAME=	unbound
 PORTVERSION=	1.6.8
 PORTREVISION=	2
 CATEGORIES=	dns
-MASTER_SITES=	http://unbound.net/downloads/
+MASTER_SITES=	https://unbound.net/downloads/ \
+		https://distfiles.crux.guru/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Validating, recursive, and caching DNS resolver

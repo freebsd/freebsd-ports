@@ -4,7 +4,8 @@
 PORTNAME=	gc
 PORTVERSION=	7.6.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.hboehm.info/gc/gc_source/
+MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
+		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	boehm-
 .ifdef GC_VARIANT
 PKGNAMESUFFIX=	-${GC_VARIANT}

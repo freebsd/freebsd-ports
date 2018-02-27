@@ -5,7 +5,7 @@ PORTNAME=	ffmpeg
 PORTVERSION=	3.4.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
-MASTER_SITES=	http://ffmpeg.org/releases/
+MASTER_SITES=	https://ffmpeg.org/releases/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server

@@ -21,8 +21,8 @@ PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
 PORTREVISION?=	1 # 0 in libx264
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
-		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
+MASTER_SITES=	https://downloads.videolan.org/pub/videolan/x264/snapshots/ \
+		https://samples.mplayerhq.hu/yuv4mpeg2/:pgo
 DISTNAME=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245-stable
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	x264

@@ -5,7 +5,8 @@ PORTNAME=	xvid
 PORTVERSION=	1.3.4
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://downloads.xvid.org/downloads/
+MASTER_SITES=	https://downloads.xvid.com/downloads/ \
+		https://source.ipfire.org/source-2.x/
 DISTNAME=	${PORTNAME}core-${PORTVERSION}
 
 MAINTAINER=	riggs@FreeBSD.org

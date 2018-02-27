@@ -5,8 +5,8 @@ PORTNAME=	vnstat
 PORTVERSION=	1.15
 PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	http://humdi.net/vnstat/ \
-		http://mirror.mcx2.org/
+MASTER_SITES=	https://humdi.net/vnstat/ \
+		https://source.ipfire.org/source-2.x/
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Console-based network traffic monitor
