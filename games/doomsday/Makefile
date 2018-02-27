@@ -17,14 +17,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfluidsynth.so:audio/fluidsynth
 RUN_DEPENDS=	timidity:audio/timidity
 
-USES=		cmake:outsource compiler:c++11-lib ninja openal pkgconfig python:build
+USES=		cmake:outsource compiler:c++11-lib localbase:ldflags ninja openal pkgconfig python:2.7,build
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2 mixer2
 USE_XORG=	x11 sm ice xext xrandr xxf86vm
 USE_QT5=	buildtools_build core gui network widgets qmake opengl x11extras
-LDFLAGS+=	-L${LOCALBASE}/lib
-CXXFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DDENG_ENABLE_COTIRE=OFF -DDENG_ASSIMP_EMBEDDED=OFF
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
