@@ -2,7 +2,7 @@
 
 PORTNAME=	creduce
 DISTVERSION=	2.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://embed.cs.utah.edu/creduce/
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	llvm-config40:devel/llvm40 \
 		p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \
 		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
-		p5-Sys-CPU>=0:devel/p5-Sys-Cpu \
+		p5-Sys-CPU>=0:devel/p5-Sys-CPU \
 		p5-Getopt-Tabular>=0:devel/p5-Getopt-Tabular
 
 BROKEN_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM

@@ -2,7 +2,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.30.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -18,7 +18,7 @@ ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-Test-LWP-UserAgent>=0:www/p5-Test-LWP-UserAgent \
 		p5-Sys-Mmap>=0:devel/p5-Sys-Mmap \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
-		p5-Sys-CPU>=0:devel/p5-Sys-Cpu \
+		p5-Sys-CPU>=0:devel/p5-Sys-CPU \
 		p5-Sys-MemInfo>=0:devel/p5-Sys-MemInfo \
 		p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-SOAP-WSDL>=0:devel/p5-SOAP-WSDL \
