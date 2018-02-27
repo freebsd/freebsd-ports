@@ -7,7 +7,7 @@
 %%SITE_PERL%%/XML/SAX.pm
 %%SITE_PERL%%/XML/SAX/DocumentLocator.pm
 %%SITE_PERL%%/XML/SAX/Intro.pod
-%%SITE_PERL%%/XML/SAX/ParserDetails.ini
+@comment %%SITE_PERL%%/XML/SAX/ParserDetails.ini
 %%SITE_PERL%%/XML/SAX/ParserFactory.pm
 %%SITE_PERL%%/XML/SAX/PurePerl.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/DTDDecls.pm

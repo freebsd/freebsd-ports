@@ -20,5 +20,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+SUB_FILES=	pkg-install
+SUB_LIST=	PERL=${PERL}
+PKGDEINSTALL=  ${PKGINSTALL}
 
 .include <bsd.port.mk>
