@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	peter@vereshagin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple subroutine alias
 
 LICENSE=	MIT

@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	terry@sucked-in.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sys::CPU - Perl extension for getting CPU information
 
 USES=		dos2unix perl5

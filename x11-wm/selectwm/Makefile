@@ -6,7 +6,7 @@ PORTREVISION=	10
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ordiluc.net/selectwm/
 
-MAINTAINER=	bhaga@absoludicrous.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK application to let you select a window manager when starting X
 
 USES=		pkgconfig tar:bzip2

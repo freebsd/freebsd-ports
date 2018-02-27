@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	peter@vereshagin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FastCGI server for CGI-like applications multiprocessing
 
 BUILD_DEPENDS=	p5-Const-Fast>0:devel/p5-Const-Fast \

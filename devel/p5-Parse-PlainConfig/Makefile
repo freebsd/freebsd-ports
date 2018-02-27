@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	peter@vereshagin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to use plain config files
 
 RUN_DEPENDS=	p5-Paranoid>0:devel/p5-Paranoid \

@@ -5,7 +5,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@michael-fauste.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handle multiple models in one form through jQuery or Prototype
 
 LICENSE=	MIT
