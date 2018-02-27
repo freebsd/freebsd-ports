@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Ultimate music player for Unix-like systems
 
 LICENSE=	GPLv2 LGPL21
