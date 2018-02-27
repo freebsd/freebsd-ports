@@ -3,6 +3,7 @@
 
 PORTNAME=	musicpc
 DISTVERSION=	0.29
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpc/0/
 DISTNAME=	mpc-${PORTVERSION}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
-USES=		meson pkgconfig python tar:xz
+USES=		meson pkgconfig tar:xz
 MESON_ARGS=	--mandir=${MANPREFIX}
 
 PLIST_FILES=	bin/mpc
