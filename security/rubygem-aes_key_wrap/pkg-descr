@@ -1,0 +1,4 @@
+AESKeyWrap is a Ruby implementation of AES Key Wrap (RFC 3394, a.k.a. NIST Key
+Wrap).
+
+WWW: https://github.com/tomdalling/aes_key_wrap
