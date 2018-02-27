@@ -493,7 +493,7 @@ share/pixmaps/tulip.png
 %%DATADIR%%/apiFiles/Python-2.4.api
 %%DATADIR%%/apiFiles/Python-2.5.api
 %%DATADIR%%/apiFiles/Python-2.6.api
-%%DATADIR%%/apiFiles/Python-%%PYTHON_VER%%.api
+%%DATADIR%%/apiFiles/Python-2.7.api
 %%DATADIR%%/apiFiles/Python-3.1.api
 %%DATADIR%%/apiFiles/Python-3.2.api
 %%DATADIR%%/apiFiles/Python-3.3.api
