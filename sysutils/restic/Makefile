@@ -2,13 +2,14 @@
 
 PORTNAME=	restic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	gregf@hugops.pw
 COMMENT=	Fast, secure, efficient backup program
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 USE_GITHUB=	yes
