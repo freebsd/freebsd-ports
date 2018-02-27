@@ -2,44 +2,45 @@
 # $FreeBSD$
 
 PORTNAME=	spyder
-PORTVERSION=	2.3.7
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-CATEGORIES=	devel python
+DISTVERSION=	3.2.7
+CATEGORIES=	devel science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Scientific PYthon Development EnviRonment, an alternative to IDLE
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:graphics/py-qt4-svg@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt4/QtWebKit.so:www/py-qt4-webkit@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:net/py-qt4-network@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}QtAwesome>0:x11-fonts/py-QtAwesome@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}QtPy>=1.3.1:devel/py-QtPy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cloudpickle>=0.3.1:devel/py-cloudpickle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jedi>=0.9.0:devel/py-jedi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nbconvert>=4.0:devel/py-nbconvert@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pep8>=0.6:devel/pep8@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycodestyle>=2.3:devel/py-pycodestyle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qtconsole>=4.3.0:devel/py-qtconsole@${PY_FLAVOR}
 
-NO_ARCH=	yes
-USES=		desktop-file-utils python
-USE_PYTHON=	autoplist distutils
-MAKE_ENV=	USE_SETUPTOOLS=1
-
+USES=		desktop-file-utils python:3.4+ pyqt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	spyder-ide
+USE_PYTHON=	distutils autoplist noflavors
+USE_PYQT=	core_run gui_run network_run sip_run svg_run webkit_run webkitwidgets_run
+NO_ARCH=	yes
 
-DOCSDIR=	${PYTHON_SITELIBDIR}/spyderlib
+DOCSDIR=	${PYTHON_SITELIBDIR}/spyder
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_GROUP=	RECOMMENDED OPTIONAL
 OPTIONS_GROUP_RECOMMENDED=	IPYTHON MATPLOT NUMPY PSUTIL PYFLAKES ROPE SCIPY SPHINX
-OPTIONS_GROUP_OPTIONAL=	JEDI PANDAS PEP8 PYGMENTS PYLINT SYMPY
+OPTIONS_GROUP_OPTIONAL=	PANDAS PYGMENTS PYLINT SYMPY
+OPTIONS_DEFAULT=	IPYTHON MATPLOT NUMPY PSUTIL PYFLAKES ROPE SCIPY SPHINX
 
 IPYTHON_DESC=	IPython Console integration
-JEDI_DESC=	(Experimental) Editor's code completion, go-to-definition and help
 MATPLOT_DESC=	Interactive data plotting in the consoles
 NUMPY_DESC=	N-dimensional arrays
 PANDAS_DESC=	View and edit DataFrames and Series in the Variable Explorer
-PEP8_DESC=	Real-time code style analysis on the Editor
 PSUTIL_DESC=	CPU and memory usage info in the status bar
 PYFLAKES_DESC=	Real-time code analysis on the Editor
 PYGMENTS_DESC=	Syntax highlighting for Matlab, Julia and other file types
@@ -49,26 +50,24 @@ SCIPY_DESC=	Signal/image processing
 SPHINX_DESC=	Rich text help on the Object Inspector
 SYMPY_DESC=	Symbolic mathematics in the IPython Console
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0.6:textproc/py-sphinx@${FLAVOR}
-IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython@${FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.11:net/py-pyzmq@${FLAVOR}
-JEDI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jedi>=0.8.1:devel/py-jedi@${FLAVOR}
-MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.0:math/py-matplotlib@${FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0.6:textproc/py-sphinx@${PY_FLAVOR}
+IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.11:net/py-pyzmq@${PY_FLAVOR}
+MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.0:math/py-matplotlib@${PY_FLAVOR}
 NUMPY_RUN_DEPENDS=	${PYNUMPY}
-PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.13.1:math/py-pandas@${FLAVOR}
-PEP8_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pep8>=0.6:devel/pep8
-PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.3:sysutils/py-psutil@${FLAVOR}
-PYFLAKES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=0.5:devel/py-pyflakes@${FLAVOR}
-PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${FLAVOR}
-PYLINT_RUN_DEPENDS=	pylint${PYTHON_PKGNAMESUFFIX}>=0.25:devel/pylint@${FLAVOR}
-ROPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rope>=0.9.2:devel/py-rope@${FLAVOR}
-SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${FLAVOR}
+PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.13.1:math/py-pandas@${PY_FLAVOR}
+PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.3:sysutils/py-psutil@${PY_FLAVOR}
+PYFLAKES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=0.5:devel/py-pyflakes@${PY_FLAVOR}
+PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${PY_FLAVOR}
+PYLINT_RUN_DEPENDS=	pylint${PYTHON_PKGNAMESUFFIX}>=0.25:devel/pylint@${PY_FLAVOR}
+ROPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rope>=0.9.2:devel/py-rope@${PY_FLAVOR}
+SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 SPHINX_RUN_DEPENDS=	${DOCS_BUILD_DEPENDS}
-SYMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=0.7.3:math/py-sympy@${FLAVOR}
+SYMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=0.7.3:math/py-sympy@${PY_FLAVOR}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|'linux'|'${OPSYS:tl}'|" \
-		${WRKSRC}/setup.py \
-		${WRKSRC}/spyderlib/spyder.py
+	@${REINPLACE_CMD} -e "s|'linux'|'${OPSYS:tl}'|g" \
+		${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s|cmdclass=CMDCLASS||g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
