@@ -16,14 +16,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
 USES=		meson pkgconfig python tar:xz
-MESON_ARGS+=	--mandir=${MANPREFIX}
+MESON_ARGS=	--mandir=${MANPREFIX}
 
 PLIST_FILES=	bin/mpc
 
 OPTIONS_DEFINE=	DOCS EXAMPLES MANPAGES ICONV
 OPTIONS_DEFAULT=	MANPAGES ICONV
 
-MANPAGES_USES=	python
+MANPAGES_USES=	python:env
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 MANPAGES_MESON_TRUE=	use_sphinx
 MANPAGES_PLIST_FILES=	man/man1/mpc.1.gz
