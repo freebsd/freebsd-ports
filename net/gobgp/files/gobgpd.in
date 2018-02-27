@@ -1,0 +1,106 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: gobgpd
+# REQUIRE: netif routing
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+#
+# Define these gobgpd* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/gobgpd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# Add the following lines to /etc/rc.conf to enable gobgpd:
+#
+# gobgpd_enable="YES"
+# gobgpd_config="<default unset>"
+# gobgpd_config_type="<default unset>"
+# gobgpd_flags="<set as needed>"
+# gobgpd_log_level="<set as needed like 'debug'>"
+# gobgpd_stdlog_enable="<default 'NO'>"
+# gobgpd_syslog_host="<set as needed like 'yes'(same as ':') or 'udp:otherhost:514'>"
+# gobgpd_syslog_facility="<set as needed like 'daemon'>"
+# gobgpd_foreground_enable="<default 'NO'>"
+#
+
+. /etc/rc.subr
+
+name="gobgpd"
+rcvar="gobgpd_enable"
+
+load_rc_config $name
+
+: ${gobgpd_enable:=NO}
+: ${gobgpd_stdlog_enable:=NO}
+: ${gobgpd_foreground_enable:=NO}
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/libexec/gobgpd"
+command_args="${gobgpd_flags}${gobgpd_ctype:+ -t ${gobgpd_config_type}}${gobgpd_config:+ -f ${gobgpd_config}}${gobgpd_log_level:+ --log-level=${gobgpd_log_level}}"
+
+start_cmd="gobgpd_start"
+start_precmd="gobgpd_prestart"
+reload_cmd="gobgpd_reload"
+sig_stop="KILL"
+
+gobgpd_prestart () {
+	case "${gobgpd_flags}" in
+	-f*|*-f*|--config-file*|*--config-file*)
+		err 1 "gobgpd_flags includes the --config-file option, use gobgpd_config instead."
+		;;
+	-t*|*-t*|--config-type*|*--config-type*)
+		err 1 "gobgpd_flags includes the --config-type option, use gobgpd_config_type instead."
+		;;
+	-s*|*-s*|--syslog*)
+		err 1 "gobgpd_flags includes the --syslog option, use gobgpd_syslog_host instead."
+		;;
+	--syslog-facility*|*--syslog-facility*)
+		err 1 "gobgpd_flags includes the --syslog-facility option, use gobgpd_syslog_host instead."
+		;;
+	--disable-stdlog*|*--disable-stdlog*)
+		err 1 "gobgpd_flags includes the --disable-stdlog option, use gobgpd_stdlog_enable instead."
+		;;
+	--log-level*|*--log-level*)
+		err 1 "gobgpd_flags includes the --log-level option, use gobgp_log_level instead."
+		;;
+	-d*|*-d*|--dry-run*|*--dry-run*)
+		err 1 "gobgpd_flags doesn't require --dry-run option."
+		;;
+	-h*|*-h*|--help*|*--help*)
+		err 1 "gobgpd_flags doesn't require --help option."
+		;;
+	esac
+
+	case "x${gobgpd_config_type}" in
+	x|xtoml|xyaml|xjson)
+		;;
+	*)
+		err 1 "gobgpd_config_type requires one of 'toml', 'yaml' or 'json'."
+	esac
+
+	if [ -f ${gobgpd_config} ]; then
+		${procname} --dry-run ${command_args} > /dev/null
+		if [ $? -ne 0 ]; then
+			err 1 $(${procname} --dry-run --log-plain ${command_args})
+		fi
+	fi
+}
+
+gobgpd_start () {
+	if checkyesno gobgpd_foreground_enable; then
+		${procname} ${command_args} $(checkyesno gobgpd_stdlog_enable || echo --disable-stdlog) ${gobgpd_syslog_host:+ --syslog=${gobgpd_syslog_host}}${gobgpd_syslog_facility:+ --syslog-facility=${gobgpd_syslog_facility}}
+	else
+		echo "Starting ${name}."
+		/usr/sbin/daemon -c -p ${pidfile} ${procname} ${command_args} $(checkyesno gobgpd_stdlog_enable || echo --disable-stdlog) ${gobgpd_syslog_host:+ --syslog=${gobgpd_syslog_host}}${gobgpd_syslog_facility:+ --syslog-facility=${gobgpd_syslog_facility}}
+	fi
+}
+
+gobgpd_reload () {
+	echo "Graceful Restarting ${name}."
+	${procname} --graceful-restart ${command_args}
+}
+
+run_rc_command "$1"
