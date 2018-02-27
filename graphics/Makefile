@@ -165,6 +165,7 @@
     SUBDIR += eom
     SUBDIR += eos-movrec
     SUBDIR += epdfview
+    SUBDIR += ephoto
     SUBDIR += epix
     SUBDIR += eps2png
     SUBDIR += epstool
