@@ -1,0 +1,3 @@
+bin/snmp_exporter
+bin/snmp_exporter_generator
+%%ETCDIR%%/generator.yml

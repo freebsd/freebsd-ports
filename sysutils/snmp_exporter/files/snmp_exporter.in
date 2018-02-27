@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# PROVIDE: snmp_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# snmp_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable snmp_exporter.
+# snmp_exporter_user (string):          Set user that snmp_exporter will run under
+#               Default is "nobody".
+# snmp_exporter_group (string):         Set group that snmp_exporter will run under
+#               Default is "nobody".
+# snmp_exporter_args (string):          Set extra arguments to pass to snmp_exporter
+#               Default is "".
+# snmp_exporter_listen_address (string):Set ip:port that snmp_exporter will listen on
+#               Default is ":9116".
+# snmp_exporter_config_file (string)    Set the location of the snmp_exporter config
+#                                       configuration file.
+#               Default is "%%PREFIX%%/etc/snmp_exporter/snmp.yml"
+
+. /etc/rc.subr
+
+name=snmp_exporter
+rcvar=snmp_exporter_enable
+
+load_rc_config $name
+
+: ${snmp_exporter_enable:="NO"}
+: ${snmp_exporter_user:="nobody"}
+: ${snmp_exporter_group:="nobody"}
+: ${snmp_exporter_args:=""}
+: ${snmp_exporter_listen_address:=":9116"}
+: ${snmp_exporter_config_file:="%%PREFIX%%/etc/snmp_exporter/snmp.yml"}
+
+pidfile=/var/run/snmp_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/snmp_exporter"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+    --web.listen-address=${snmp_exporter_listen_address} \
+    --config.file=${snmp_exporter_config_file} \
+    ${snmp_exporter_args}"
+
+start_precmd=snmp_exporter_startprecmd
+
+snmp_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${snmp_exporter_user} -g ${snmp_exporter_group} /dev/null ${pidfile};
+    fi
+    if [ ! -d ${snmp_exporter_textfile_dir} ]; then
+        install -d -o ${snmp_exporter_user} -g ${snmp_exporter_group} -m 1755 ${snmp_exporter_textfile_dir}
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
