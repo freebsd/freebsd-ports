@@ -5,7 +5,8 @@ PORTNAME=	xmlcharent
 PORTVERSION=	0.3
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/ \
+		https://library.syr.edu/digital/guides/lavender/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XML character entities

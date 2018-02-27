@@ -4,7 +4,7 @@
 PORTNAME=	mtr
 PORTVERSION=	0.92
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
+MASTER_SITES=	https://www.bitwizard.nl/mtr/files/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

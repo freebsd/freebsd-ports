@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/docbook/xml/simple/${PORTVERSION}/
+MASTER_SITES=	https://www.oasis-open.org/docbook/xml/simple/${PORTVERSION}/
 DISTNAME=	docbook-simple-${PORTVERSION}
 
 MAINTAINER=	gabor@FreeBSD.org

@@ -5,7 +5,8 @@ PORTNAME=	x265
 PORTVERSION=	2.6
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://ftp.videolan.org/pub/videolan/${PORTNAME}/
+MASTER_SITES=	https://downloads.videolan.org/pub/videolan/${PORTNAME}/ \
+		https://mirror.leaseweb.com/videolan/x265/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com

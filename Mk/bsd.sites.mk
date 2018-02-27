@@ -275,6 +275,7 @@ MASTER_SITE_FESTIVAL_OGI+= \
 #
 .if !defined(IGNORE_MASTER_SITE_FREEBSD_ORG)
 MASTER_SITE_FREEBSD_ORG+= \
+	https://download.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
@@ -732,7 +733,7 @@ MASTER_SITE_MYSQL+= \
 
 .if !defined(IGNORE_MASTER_SITE_NETBSD)
 MASTER_SITE_NETBSD+= \
-	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	https://ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.plig.net/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/ \
@@ -746,7 +747,7 @@ MASTER_SITE_NETBSD+= \
 .if !defined(IGNORE_MASTER_SITE_NETLIB)
 MASTER_SITE_NETLIB+= \
 	http://www.netlib.org/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.netlib.org/%SUBDIR%/ \
+	https://ftp.mirrorservice.org/sites/ftp.netlib.org/%SUBDIR%/ \
 	https://www.mirrorservice.org/sites/ftp.netlib.org/%SUBDIR%/ \
 	ftp://ftp.irisa.fr/pub/netlib/%SUBDIR%/ \
 	http://netlib.sandia.gov/%SUBDIR%/
@@ -765,12 +766,14 @@ MASTER_SITE_NVIDIA+= \
 
 .if !defined(IGNORE_MASTER_SITE_OPENBSD)
 MASTER_SITE_OPENBSD+= \
+	https://fastly.cdn.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
+	https://cloudflare.cdn.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
 	https://ftp.OpenBSD.org/pub/OpenBSD/%SUBDIR%/ \
 	https://ftp.eu.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
 	https://ftp3.usa.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
+	https://mirror.leaseweb.com/pub/OpenBSD/%SUBDIR%/ \
 	https://openbsd.hk/pub/OpenBSD/%SUBDIR%/ \
-	https://mirror.aarnet.edu.au/pub/OpenBSD/%SUBDIR%/ \
-	https://mirrors.evowise.com/pub/OpenBSD/%SUBDIR%/
+	https://mirror.aarnet.edu.au/pub/OpenBSD/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_OSSP)

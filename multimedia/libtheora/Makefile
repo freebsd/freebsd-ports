@@ -5,8 +5,8 @@ PORTNAME=	libtheora
 PORTVERSION=	1.1.1
 PORTREVISION=	7
 CATEGORIES=	multimedia
-MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
-		http://distfiles.master.finkmirrors.net/
+MASTER_SITES=	https://downloads.xiph.org/releases/theora/ \
+		https://repo.turris.cz/downloads/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Theora video codec for the Ogg multimedia streaming system

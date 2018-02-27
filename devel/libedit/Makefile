@@ -6,7 +6,7 @@ PORTVERSION=	${EDITVERSION}.${EDITDATE}
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://thrysoee.dk/editline/
+MASTER_SITES=	https://thrysoee.dk/editline/
 DISTNAME=	${PORTNAME}-${EDITDATE}-${EDITVERSION}
 
 MAINTAINER=	bapt@FreeBSD.org
