@@ -1130,6 +1130,7 @@
     SUBDIR += smenu
     SUBDIR += smp_utils
     SUBDIR += snap
+    SUBDIR += snmp_exporter
     SUBDIR += snooze
     SUBDIR += snowlog
     SUBDIR += socket

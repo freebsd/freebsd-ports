@@ -1,0 +1,7 @@
+To generate the snmp.yml configuration file for snmp_exporter,
+edit %%ETCDIR%%/generator.yml and add relevant MIBs, then run
+
+    snmp_exporter_generator generate
+
+To run snmp_exporter, set the snmp_exporter_enable="YES" rcvar
+and point your prometheus instance at port 9116.
