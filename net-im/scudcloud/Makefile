@@ -30,6 +30,7 @@ OPTIONS_DEFINE=	HUNSPELL
 USES=		python:3.4+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils optsuffix
+NO_ARCH=	yes
 
 post-patch:
 		@${REINPLACE_CMD} -i.bak -e 's,%%LOCALBASE%%,${LOCALBASE},1' \
