@@ -1,4 +1,4 @@
---- bjnp-debug.c.orig	2014-09-06 12:38:15 UTC
+--- bjnp-debug.c.orig	2018-02-21 11:40:53 UTC
 +++ bjnp-debug.c
 @@ -20,7 +20,7 @@
  
@@ -9,7 +9,7 @@
  #include <errno.h>
  #include "bjnp.h"
  
-@@ -58,7 +58,7 @@
+@@ -58,7 +58,7 @@ static logtable_entry_t logtable[] = {
  static bjnp_loglevel_t debug_level = LOG_ERROR;
  static FILE *debug_file = NULL;
  static time_t start_sec = 0;
@@ -18,7 +18,7 @@
  
  /*
   * local functions
-@@ -192,9 +192,9 @@
+@@ -192,9 +192,9 @@ bjnp_debug(bjnp_loglevel_t level, const char *fmt, ...
  {
      va_list ap;
      char printbuf[1024];
@@ -30,7 +30,7 @@
  
      if (level <= debug_level) {
          /* print received data into a string */
-@@ -211,16 +211,16 @@
+@@ -211,16 +211,16 @@ bjnp_debug(bjnp_loglevel_t level, const char *fmt, ...
          /* all log messages may go to the own logfile */
  
          if (debug_file != NULL) {
@@ -53,7 +53,7 @@
                      printbuf);
              fflush(debug_file);
          }
-@@ -234,12 +234,12 @@
+@@ -234,12 +234,12 @@ bjnp_set_debug_level(const char *level, const char *fi
       * set debug level to level (string)
       */
  
