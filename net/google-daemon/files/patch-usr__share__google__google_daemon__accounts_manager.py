@@ -1,7 +1,7 @@
 --- ./usr/share/google/google_daemon/accounts_manager.py.orig	2014-08-10 19:54:20.429932607 +0000
 +++ ./usr/share/google/google_daemon/accounts_manager.py	2014-08-10 19:55:06.794964428 +0000
 @@ -1,3 +1,4 @@
-+#!%%PREFIX%%/bin/python
++#!%%PYTHON_CMD%%
  # Copyright 2013 Google Inc. All Rights Reserved.
  #
  # Licensed under the Apache License, Version 2.0 (the "License");
