@@ -2067,6 +2067,7 @@
     SUBDIR += p5-Class-Declare
     SUBDIR += p5-Class-Default
     SUBDIR += p5-Class-Delegation
+    SUBDIR += p5-Class-EHierarchy
     SUBDIR += p5-Class-ErrorHandler
     SUBDIR += p5-Class-Factory
     SUBDIR += p5-Class-Factory-Util
