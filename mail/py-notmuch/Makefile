@@ -1,25 +1,29 @@
 # $FreeBSD$
 
-PORTNAME=	notmuch
-PORTVERSION=	0.25
 CATEGORIES=	mail python
-MASTER_SITES=	http://notmuchmail.org/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	geier@lostpackets.de
-COMMENT=	Python binding of the notmuch mail search and indexing library
-
-LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/../../COPYING-GPL-3
+COMMENT=	Python interface for the Notmuch email search and tagging library
 
 LIB_DEPENDS=	libnotmuch.so:mail/notmuch
 
-WRKSRC_SUBDIR=	bindings/python
-
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+MASTERDIR=	${.CURDIR}/../notmuch
 NO_ARCH=	yes
+PORTDOCS=	python/
+WRKSRC_SUBDIR=	bindings/python
 
-MAKE_ENV+=	PYTHONCMD=${PYTHON_CMD}
+OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.mk>
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+
+do-build-DOCS-on:
+	@${MAKE_CMD} -C ${WRKSRC}/docs html
+
+do-install-DOCS-on:
+	cd ${WRKSRC}/docs/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/python
+	@${RM} ${STAGEDIR}${DOCSDIR}/python/.buildinfo
+
+.include "${MASTERDIR}/Makefile"

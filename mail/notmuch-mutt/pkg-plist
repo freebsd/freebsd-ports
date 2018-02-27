@@ -1,0 +1,3 @@
+%%MANPAGES%%man/man1/notmuch-mutt.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notmuch-mutt.rc
+bin/notmuch-mutt
