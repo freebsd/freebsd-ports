@@ -5,6 +5,10 @@ share/icons/hicolor/scalable/status/audio-volume-high-symbolic.svg
 share/icons/hicolor/scalable/status/audio-volume-low-symbolic.svg
 share/icons/hicolor/scalable/status/audio-volume-medium-symbolic.svg
 share/icons/hicolor/scalable/status/audio-volume-muted-symbolic.svg
+share/icons/hicolor/scalable/status/microphone-sensitivity-high-symbolic.svg
+share/icons/hicolor/scalable/status/microphone-sensitivity-low-symbolic.svg
+share/icons/hicolor/scalable/status/microphone-sensitivity-medium-symbolic.svg
+share/icons/hicolor/scalable/status/microphone-sensitivity-muted-symbolic.svg
 share/locale/bg/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
@@ -14,12 +18,15 @@ share/locale/el/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/en_AU/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
+share/locale/ga/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/he/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
+share/locale/id/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/is/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
+share/locale/ja/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/kk/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/ko/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/lt/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
@@ -32,6 +39,7 @@ share/locale/pt/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
+share/locale/sl/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/sr/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 share/locale/th/LC_MESSAGES/xfce4-pulseaudio-plugin.mo

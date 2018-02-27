@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-pulseaudio-plugin
-PORTVERSION=	0.2.5
+PORTVERSION=	0.3.5
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -16,8 +16,6 @@ LIB_DEPENDS=	libpulse-mainloop-glib.so:audio/pulseaudio \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS=	pavucontrol>=2.0:audio/pavucontrol
-
-PORTSCOUT=	limit:^0\.2\.
 
 USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 GNU_CONFIGURE=	yes
