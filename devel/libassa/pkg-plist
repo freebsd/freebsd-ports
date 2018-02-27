@@ -59,6 +59,7 @@ include/assa-3.5/assa/XDRHack.h
 include/assa-3.5/assa/xdrIOBuffer.h
 lib/libassa-3.5.a
 lib/libassa-3.5.so
+lib/libassa-3.5.so.5
 lib/libassa-3.5.so.5.0.1
 libdata/pkgconfig/assa-3.5.pc
 man/man1/assa-genesis.1.gz
