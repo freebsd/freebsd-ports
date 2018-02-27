@@ -1540,6 +1540,7 @@
     SUBDIR += py-apachelog
     SUBDIR += py-autobahn
     SUBDIR += py-aws-requests-auth
+    SUBDIR += py-azure-common
     SUBDIR += py-azure-storage
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
