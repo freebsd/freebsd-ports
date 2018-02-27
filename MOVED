@@ -10128,3 +10128,4 @@ net/raggle||2018-02-23|Has expired: Depends on expired devel/ruby-ncurses
 devel/ruby-ncurses||2018-02-23|Has expired: Marked BROKEN for more than 6 months
 math/octave-forge-octcdf||2018-02-24|No longer supported upstream
 math/octave-forge-pt_br||2018-02-24|No longer supported upstream
+devel/p5-Sys-Cpu|devel/p5-Sys-CPU|2018-02-27|Rename to match our p5- port naming
