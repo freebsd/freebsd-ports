@@ -1,10 +1,8 @@
 # Created by: Guerkan Karaman <gk.freebsd@googlemail.com>
 # $FreeBSD$
 
-# With helpful hints from net/gpxe
-
 PORTNAME=	ipxe
-PORTVERSION=	20180117
+PORTVERSION=	20180220
 CATEGORIES=	net
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -12,9 +10,8 @@ COMMENT=	Open source network boot firmware
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:sysutils/syslinux \
-		bash:shells/bash \
-		mkisofs:sysutils/cdrtools
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64/i386
 
 USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
@@ -28,12 +25,13 @@ USE_GITHUB=	yes
 #   A: iPXE uses a rolling release model, in which every commit is intended
 #      to be production-ready.  You should always use the latest code.
 #
-GH_TAGNAME=	fbe8c52d0d9cdb3d6f5fe8be8edab54618becc1f
+GH_TAGNAME=	47849be3a900c546cf92066849be0806f4e611d9
 USE_PERL5=	build
 
-MAKE_ARGS=	PERL=${PERL} \
+ALL_TARGET=	bin/ipxe.dsk bin/ipxe.lkrn bin/ipxe.pxe bin/ipxe.usb
+MAKE_ARGS=	HOST_CC=${CC} \
+		PERL=${PERL} \
 		CC=${CC} \
-		HOST_CC=${CC} \
 		AS=${AS} \
 		LD=${LD} \
 		SIZE=${SIZE} \
@@ -42,60 +40,63 @@ MAKE_ARGS=	PERL=${PERL} \
 		OBJCOPY=${OBJCOPY} \
 		NM=${NM} \
 		OBJDUMP=${OBJDUMP} \
+		ARCH=${ARCH:S/amd64/i386/} \
 		NO_WERROR=1 \
 		V=1 \
-		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
-		LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
-WRKSRC_SUBDIR=	src
+		${IPXE_MAKE_ARGS}
+PLIST_FILES=	${ALL_TARGET:S@^bin/@${DATADIR}/@}
 SHEBANG_FILES=	util/geniso util/gensdsk
-
-PLIST_FILES=	%%DATADIR%%/ipxe.dsk \
-		%%DATADIR%%/ipxe.usb \
-		%%DATADIR%%/ipxe.iso \
-		%%DATADIR%%/ipxe.pxe \
-		%%DATADIR%%/ipxe.lkrn
-
 SUB_FILES=	pkg-message
+WRKSRC_SUBDIR=	src
 
-.include <bsd.port.options.mk>
+# Possible options are listed in ${WRKSRC}/config/*.h and
+# http://ipxe.org/buildcfg.  Add a ! prefix to an option to undef it
+# i.e. turn it off.
+_IPXE_BUILDCFG=	branding:PRODUCT_NAME="${PKGNAME} (${OPSYS} ${OSREL}/${ARCH})" \
+		console:CONSOLE_SERIAL \
+		console:KEYBOARD_MAP=us \
+		general:!DOWNLOAD_PROTO_FTP \
+		general:DOWNLOAD_PROTO_HTTPS \
+		general:DOWNLOAD_PROTO_NFS \
+		general:IMAGE_TRUST_CMD \
+		general:NET_PROTO_IPV6 \
+		general:PING_CMD \
+		general:POWEROFF_CMD
 
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64/i386
+OPTIONS_DEFAULT=	ISO
+OPTIONS_DEFINE=		ISO
 
-.if ${ARCH} == "amd64"
-MAKE_ARGS+=	ARCH=i386
+ISO_DESC=	Create bootable CD image
+
+ISO_ALL_TARGET=	bin/ipxe.iso
+ISO_BUILD_DEPENDS=	bash:shells/bash \
+		${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:sysutils/syslinux \
+		mkisofs:sysutils/cdrtools
+ISO_MAKE_ARGS=	ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
+		LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
+
+.include <bsd.port.pre.mk>
+
+# Add user supplied build configuration after port options etc have
+# been processed as they might want to overwrite some settings.
+_IPXE_BUILDCFG+=	${IPXE_BUILDCFG}
+
+do-configure:
+.for _cat _opt in ${_IPXE_BUILDCFG:C/\:/ /}
+	@${ECHO_CMD} '#undef ${_opt:S/^!//:C/(.*)=(.*)/\1/}' >> ${WRKSRC}/config/local/${_cat}.h
+.if ${_opt:N!*}
+	@${ECHO_CMD} '#define ${_opt:C/=/ /:S/^'//:S/'$//}' >> ${WRKSRC}/config/local/${_cat}.h
 .endif
+.endfor
 
-IPXE_EMBED?=	# Allows embedding of iPXE start scripts
-.if ${IPXE_EMBED} != ""
-MAKE_ARGS+=	EMBED="${IPXE_EMBED}"
-.endif
-
-IPXE_TRUST?=	# Path to the root certificates iPXE trusts
-.if ${IPXE_TRUST} != ""
-MAKE_ARGS+=	TRUST="${IPXE_TRUST}"
-.endif
-
-pre-everything::
-	@${ECHO_MSG} "To build iPXE with an embedded script (path must be absolute):"
-	@${ECHO_MSG} "make IPXE_EMBED=/path/to/ipxe/script install clean"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "To build iPXE with new trusted root certificates"
-	@${ECHO_MSG} "(see http://ipxe.org/crypto for more information):"
-	@${ECHO_MSG} "make IPXE_TRUST=/path/to/ca1.crt,/path/to/ca2.crt"
-
-pre-build:
+pre-build-ISO-on:
 # ISO creation fails if isolinux.bin is read only
 	${INSTALL} -m 644 ${LOCALBASE}/share/syslinux/bios/core/isolinux.bin ${WRKSRC}/isolinux.bin
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bin/ipxe.dsk ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bin/ipxe.usb ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bin/ipxe.iso ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bin/ipxe.pxe ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bin/ipxe.lkrn ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${ALL_TARGET} ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
 
 RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
