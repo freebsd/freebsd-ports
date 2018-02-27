@@ -1,2 +1,8 @@
 %%SITE_PERL%%/Parse/PlainConfig.pm
+%%SITE_PERL%%/Parse/PlainConfig/Constants.pm
+%%SITE_PERL%%/Parse/PlainConfig/Legacy.pm
+%%SITE_PERL%%/Parse/PlainConfig/Settings.pm
 %%PERL5_MAN3%%/Parse::PlainConfig.3.gz
+%%PERL5_MAN3%%/Parse::PlainConfig::Constants.3.gz
+%%PERL5_MAN3%%/Parse::PlainConfig::Legacy.3.gz
+%%PERL5_MAN3%%/Parse::PlainConfig::Settings.3.gz
