@@ -25,7 +25,7 @@
 +#if __FreeBSD_version >= 1200058
 +  pt.cmd.opc_fuse = NVME_CMD_SET_OPC(in.opcode);
 +#else
-+  pt.cmd.opc_fuse = in.opcode;
++  pt.cmd.opc = in.opcode;
 +#endif
    pt.cmd.nsid = in.nsid;
    pt.buf = in.buffer;
