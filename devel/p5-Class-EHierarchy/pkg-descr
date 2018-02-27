@@ -1,0 +1,5 @@
+Class::EHierarchy is intended for use as a base class for objects that need
+support for class or object hierarchies. Additional features are also provided
+which can be useful for general property implementation and manipulation.
+
+WWW: http://search.cpan.org/dist/Class-EHierarchy/
