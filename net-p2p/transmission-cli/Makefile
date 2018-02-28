@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	transmission
-PORTVERSION=	2.92
-PORTREVISION?=	3
+PORTVERSION=	2.93
+PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	https://github.com/transmission/transmission-releases/raw/master/ \
 		http://transmission.cachefly.net/
