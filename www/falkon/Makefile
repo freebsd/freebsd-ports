@@ -10,6 +10,8 @@ COMMENT=		Web browser based on the Qt Framework
 LICENSE=			GPLv3
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	kf5-extra-cmake-modules>=0:devel/kf5-extra-cmake-modules
+
 USES=		cmake:outsource desktop-file-utils ssl
 USE_QT5=	core dbus gui location network printsupport qml quick \
 		sql webchannel webengine widgets x11extras \
