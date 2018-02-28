@@ -4,6 +4,7 @@
 PORTNAME=	milkytracker
 PORTVERSION=	1.02.00
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -28,13 +29,6 @@ OPTIONS_DEFINE=	DOCS
 BROKEN_powerpc=		Does not build on powerpc
 BROKEN_powerpc64=	Does not build on powerpc64
 
-.include <bsd.port.pre.mk>
-
-# does not compile with clang 6.0.0
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056
-USE_GCC=	yes
-.endif
-
 post-install:
 .for f in ${ICONS}
 	${INSTALL_DATA} ${WRKSRC}/resources/pictures/${f} \
@@ -46,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
