@@ -63,7 +63,8 @@ CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-lapack="${LAPACKLIB}" \
 		--enable-shared \
 		--disable-jit \
-		--disable-openmp
+		--disable-openmp \
+		--with-qt=4
 
 OPTIONS_DEFINE=	DOCS
 
