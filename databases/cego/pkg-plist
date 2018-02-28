@@ -1,3 +1,11 @@
+%%DATADIR%%/backupManager
+%%DATADIR%%/cgbackup
+%%DATADIR%%/cgmkdb
+%%DATADIR%%/cgrecover
+%%DATADIR%%/cgsimload
+%%DATADIR%%/logManager
+%%DATADIR%%/startdb
+%%DATADIR%%/stopdb
 bin/cego
 bin/cgadm
 bin/cgblow
@@ -118,6 +126,8 @@ include/cego/CegoTableManager.h
 include/cego/CegoTableObject.h
 include/cego/CegoTerm.h
 include/cego/CegoTransactionManager.h
+include/cego/CegoTrigger.h
+include/cego/CegoTriggerObject.h
 include/cego/CegoTupleState.h
 include/cego/CegoTypeConverter.h
 include/cego/CegoView.h
@@ -135,11 +145,3 @@ lib/libcgwrap.a
 lib/libcgwrap.so
 lib/libcgwrap.so.2
 lib/libcgwrap.so.2.0.0
-%%DATADIR%%/backupManager
-%%DATADIR%%/cgbackup
-%%DATADIR%%/cgmkdb
-%%DATADIR%%/cgrecover
-%%DATADIR%%/cgsimload
-%%DATADIR%%/logManager
-%%DATADIR%%/startdb
-%%DATADIR%%/stopdb
