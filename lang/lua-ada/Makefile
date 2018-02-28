@@ -1,10 +1,11 @@
 # Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	lua-ada
+PORTNAME=	ada
 PORTVERSION=	1.0			# made-up; no version info on GH
 PORTREVISION=	1
 CATEGORIES=	lang
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada binding for Lua
@@ -30,8 +31,6 @@ REPLACEMENT=	"-L${LOCALBASE}/lib", "-Wl,-R,${LOCALBASE}/lib",\
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|with "Lua"|with "../../lua.gpr"|' \
 		-e 's|"-L../..", "-llua"|${REPLACEMENT}|' \
@@ -41,12 +40,12 @@ post-patch:
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		gprbuild -Plua --create-missing-dirs)
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-build-EXAMPLES-on:
 	(cd ${WRKSRC}/examples/example1 && ${SETENV} ${MAKE_ENV} \
 		gprbuild -Pexample1 --create-missing-dirs)
 	(cd ${WRKSRC}/examples/example2 && ${SETENV} ${MAKE_ENV} \
 		gprbuild -Pexample2 --create-missing-dirs)
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/lua-ada \
@@ -56,7 +55,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lua.gpr ${STAGEDIR}${PREFIX}/lib/gnat
 	${INSTALL_DATA} ${WRKSRC}/src/*.ad[bs] \
 		${STAGEDIR}${PREFIX}/include/lua-ada
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/example1/bin \
 		${STAGEDIR}${EXAMPLESDIR}/example2/bin
 	${INSTALL_DATA} ${EXDIRPREFIX}1/example1.lua \
@@ -69,6 +69,5 @@ do-install:
 		${STAGEDIR}${EXAMPLESDIR}/example2
 	${INSTALL_PROGRAM} ${EXDIRPREFIX}2/obj/main \
 		${STAGEDIR}${EXAMPLESDIR}/example2/bin/hello-function
-.endif
 
 .include <bsd.port.mk>
