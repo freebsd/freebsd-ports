@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=	eternaltcp
+PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v
-DISTVERSION=	4.2.0
+DISTVERSION=	4.2.1
 CATEGORIES=	net
 
 MAINTAINER=	trevis@silencedpoet.com
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgflags.so:devel/gflags \
 USES=		cmake:outsource ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	MisterTea
-GH_PROJECT=	EternalTCP
+GH_PROJECT=	EternalTerminal
 
 PLIST_FILES=	bin/et bin/etserver
 
