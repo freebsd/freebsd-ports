@@ -4,6 +4,7 @@
 PORTNAME=	avro
 PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-c
 
@@ -31,7 +32,7 @@ GH_ACCOUNT=	apache
 USE_GITHUB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} '/add_subdirectory(docs)/d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} '/SNAPPY_PKG/ s|libsnappy|snappy|; /add_subdirectory(docs)/d' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} '1 s|/bin/bash|/bin/sh|' ${WRKSRC}/version.sh
 	@${REINPLACE_CMD} 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/src/CMakeLists.txt
 
