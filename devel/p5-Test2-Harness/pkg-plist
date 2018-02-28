@@ -19,6 +19,7 @@ bin/yath
 %%SITE_PERL%%/Test2/Formatter/QVF.pm
 %%SITE_PERL%%/Test2/Formatter/Stream.pm
 %%SITE_PERL%%/Test2/Formatter/Test2.pm
+%%SITE_PERL%%/Test2/Formatter/Test2/Composer.pm
 %%SITE_PERL%%/Test2/Harness.pm
 %%SITE_PERL%%/Test2/Harness/Event.pm
 %%SITE_PERL%%/Test2/Harness/Feeder.pm
@@ -77,6 +78,7 @@ bin/yath
 %%PERL5_MAN3%%/App::Yath::Util.3.gz
 %%PERL5_MAN3%%/Test2::Formatter::Stream.3.gz
 %%PERL5_MAN3%%/Test2::Formatter::Test2.3.gz
+%%PERL5_MAN3%%/Test2::Formatter::Test2::Composer.3.gz
 %%PERL5_MAN3%%/Test2::Harness.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Event.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Feeder.3.gz
