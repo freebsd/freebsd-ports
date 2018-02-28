@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	transmission
-PORTVERSION=	2.92
+PORTVERSION=	2.93
 CATEGORIES=	net-p2p
 
 MAINTAINER=	crees@FreeBSD.org

@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	0
 CATEGORIES=	www net-p2p
 PKGNAMESUFFIX=	-web
 

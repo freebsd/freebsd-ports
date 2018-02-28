@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	4
 PKGNAMESUFFIX=	-daemon
 
 MAINTAINER=	crees@FreeBSD.org
