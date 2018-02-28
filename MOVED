@@ -5241,7 +5241,7 @@ devel/rubygem-ruby-statsd|devel/rubygem-statsd|2013-12-05|Rename to match upstre
 x11-themes/lila-xfwm4||2013-12-05|Has expired: Upstream development dead
 science/omnetpp||2013-12-05|Has expired: depends on expired textproc/libxml
 textproc/libxml||2013-12-05|Has expired: No release since 2002, no support from upstream
-deskutils/taskjuggler|deskutils/rubygem-taskjuggler|2013-12-05|Rename to match our rubygems naming
+deskutils/taskjuggler|deskutils/rubygem-taskjuggler|2013-12-05|Rename to match our rubygem- port naming
 www/clickheat||2013-12-07|Has expired: No more activity since 2011
 security/rarcrack||2013-12-08|Has expired: Not active since several years
 java/subversion-java|java/java-subversion|2013-12-08|Rename to reflect subversion child port naming scheme
@@ -6428,7 +6428,7 @@ devel/py-pycosat|math/py-pycosat|2014-08-25|More appropriate primary category
 games/bomns3|games/3omns|2014-08-26|Has expired: Development ceased, use 3omns
 misc/rubygem-mime-types117|misc/rubygem-mime-types1|2014-08-26|Renamed to properly reflect version
 devel/rubygem-json146|devel/rubygem-json|2014-08-28|Has expired: Old version no longer required by dependencies
-archivers/rubygem-bzip2|archivers/rubygem-bzip2-ruby|2014-08-29|Rename to match our rubygems naming
+archivers/rubygem-bzip2|archivers/rubygem-bzip2-ruby|2014-08-29|Rename to match our rubygem- port naming
 ports-mgmt/pkg_add_it||2014-08-30|Has expired: Does not support pkgng
 print/dviselect|print/texlive-base|2014-08-30|Use print/texlive-base instead
 chinese/acroread8-zh_CN||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
@@ -7306,7 +7306,7 @@ biology/boinc-simap||2015-01-01|Has expired: Project shutting down, see http://b
 security/openssh-portable-base||2015-01-01|Has expired: Overwrite-base option/port/pkg will be removed. There is no real need for foot-shooting
 devel/cedet||2015-01-01|Has expired: Fails to build, use Emacs' builtin cedet package instead
 devel/ecb||2015-01-01|Has expired: does not work with newer Emacs versions, use the elpa package instead
-devel/rubygem-little_plugger|devel/rubygem-little-plugger|2015-01-05|Rename to match our rubygems naming
+devel/rubygem-little_plugger|devel/rubygem-little-plugger|2015-01-05|Rename to match our rubygem- port naming
 misc/nagios-base-logos||2015-01-05|Included in nagios distribution
 ports-mgmt/portcheckout||2015-01-06|Has expired: Uses ports cvs repo, which is long gone
 ports-mgmt/pkg_trackinst||2015-01-06|Has expired: Does not support pkgng, generates incorrect pkg-plist
@@ -7364,7 +7364,7 @@ www/mediawiki122||2015-03-01|Has expired: Deprecated by upstream, use www/mediaw
 www/mod_cplusplus||2015-03-01|Has expired: written for apache 2.0, no longer maintained upstream
 www/py-django15||2015-03-01|Has expired: not supported by upstream
 math/isabelle||2015-03-01|Has expired: Broken for more than 6 months
-net/rubygem-openid|net/rubygem-ruby-openid|2015-03-07|Rename to match our rubygems naming
+net/rubygem-openid|net/rubygem-ruby-openid|2015-03-07|Rename to match our rubygem- port naming
 devel/p5-Errno||2015-03-09|Errno is part of Perl
 devel/p5-Class-XSAccessor-Array||2015-03-09|Has been a part of devel/p5-Class-XSAccessor for >5 years. Use that port instead
 multimedia/ffmpeg25|multimedia/ffmpeg26|2015-03-14|ffmpeg upstream now points to 2.6.x series
@@ -7382,10 +7382,10 @@ ports-mgmt/portbuilder||2015-03-31|Has expired: No longer developed and overcome
 devel/subversion16|devel/subversion|2015-03-31|Has expired: EoL, use devel/subversion
 lang/nimrod|lang/nim|2015-04-03|Renamed by upstream
 deskutils/mirall|deskutils/owncloudclient|2015-04-04|Renamed upstream
-mail/rubygem-qmail|mail/rubygem-ruby-qmail|2015-04-05|Rename to match our rubygems naming
-devel/rubygem-transactionsimple|devel/rubygem-transaction-simple|2015-04-05|Rename to match our rubygems naming
-print/rubygem-pdfwriter|print/rubygem-pdf-writer|2015-04-05|Rename to match our rubygems naming
-devel/rubygem-filemagic|devel/rubygem-ruby-filemagic|2015-04-05|Rename to match our rubygems naming
+mail/rubygem-qmail|mail/rubygem-ruby-qmail|2015-04-05|Rename to match our rubygem- port naming
+devel/rubygem-transactionsimple|devel/rubygem-transaction-simple|2015-04-05|Rename to match our rubygem- port naming
+print/rubygem-pdfwriter|print/rubygem-pdf-writer|2015-04-05|Rename to match our rubygem- port naming
+devel/rubygem-filemagic|devel/rubygem-ruby-filemagic|2015-04-05|Rename to match our rubygem- port naming
 emulators/xl|sysutils/xen-tools|2015-04-06|Renamed into xen-tools
 lang/gnatdroid-armv5||2015-04-07|Has expired: Nobody cares enough to fix sigtramp-android.c for ARMv5
 sysutils/puppet27||2015-04-07|Has expired: Does not work with Ruby 2.x
@@ -7494,7 +7494,7 @@ java/eclipse-datatools||2015-04-18|Has expired: evaluation recommendation is to 
 java/eclipse-emf||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
 java/eclipse-pmd||2015-04-18|Has expired: evaluation recommendation is to remove rather than update
 textproc/nltk|textproc/py-nltk|2015-04-19|Renamed for consistency
-devel/rubygem-inline|devel/rubygem-rubyinline|2015-04-21|Rename to match our rubygems naming
+devel/rubygem-inline|devel/rubygem-rubyinline|2015-04-21|Rename to match our rubygem- port naming
 devel/p5-Devel-Profiler|devel/p5-Devel-NYTProf|2015-04-24|Devel::DProf was removed form Perl, use Devel::NYTProf
 audio/filter_audio|audio/libfilteraudio|2015-04-27|audio/filter-audio is renamed into audio/libfilteraudio
 www/p5-Google-Code-Upload||2015-04-30|Has expired: Google Code will be shutting down (http://google-opensource.blogspot.tw/2015/03/farewell-to-google-code.html)
@@ -7502,39 +7502,39 @@ games/wmfortune||2015-04-30|Has expired: Broken for more than 6 months
 devel/p5-base||2015-04-30|Has expired: this port is outdated and base 2.18+ is already in all supported Perl releases
 security/py-certify|security/py-certifi|2015-05-01|security/py-certify is renamed into security/py-certifi
 devel/rubygem-mini_portile||2015-05-03|Has expired: Unneeded port
-devel/rubygem-mirror|devel/rubygem-rubygems-mirror|2015-05-03|Rename to match our rubygems naming
-graphics/rubygem-graphviz|graphics/rubygem-ruby-graphviz|2015-05-03|Rename to match our rubygems naming
+devel/rubygem-mirror|devel/rubygem-rubygems-mirror|2015-05-03|Rename to match our rubygem- port naming
+graphics/rubygem-graphviz|graphics/rubygem-ruby-graphviz|2015-05-03|Rename to match our rubygem- port naming
 x11-fm/walcommander|x11-fm/wcmcommander|2015-05-07|Renamed upstream
 archivers/lz4|archivers/liblz4|2015-05-08|Superseded by archivers/liblz4
 deskutils/libopensync-plugin-python||2015-05-09|Has expired: Unfetchable, devices are not produced anymore
 deskutils/msynctool||2015-05-09|Has expired: Unfetchable, devices are not produced anymore
-devel/ruby-flexmock|devel/rubygem-flexmock|2015-05-10|Rename to match our rubygems naming
+devel/ruby-flexmock|devel/rubygem-flexmock|2015-05-10|Rename to match our rubygem- port naming
 lang/pypy-devel|lang/pypy|2015-05-17|Superseded by lang/pypy
 databases/my2cego|databases/cegobridge|2015-05-19|Superseded by databases/cegobridge
 emulators/wine-compholio|emulators/wine-staging|2015-05-23|Renamed
 emulators/i386-wine-compholio|emulators/i386-wine-staging|2015-05-23|Renamed
-devel/rubygem-bioruby|devel/rubygem-bio|2015-05-23|Rename to match our rubygems naming
-www/rubygem-taggable|www/rubygem-acts_as_taggable|2015-05-23|Rename to match our rubygems naming
+devel/rubygem-bioruby|devel/rubygem-bio|2015-05-23|Rename to match our rubygem- port naming
+www/rubygem-taggable|www/rubygem-acts_as_taggable|2015-05-23|Rename to match our rubygem- port naming
 security/rubygem-meterpreter_bins|security/rubygem-metasploit-payloads|2015-05-23|Renamed upstream
-textproc/rubygem-augeas|textproc/rubygem-ruby-augeas|2015-05-23|Rename to match our rubygems naming
-textproc/rubygem-xslt|textproc/rubygem-ruby-xslt|2015-05-24|Rename to match our rubygems naming
+textproc/rubygem-augeas|textproc/rubygem-ruby-augeas|2015-05-23|Rename to match our rubygem- port naming
+textproc/rubygem-xslt|textproc/rubygem-ruby-xslt|2015-05-24|Rename to match our rubygem- port naming
 net-mgmt/glpi-plugins-tracker-agent|net-mgmt/glpi-plugins-fusioninventory-server|2015-05-24|Has expired: superseded by net-mgmt/glpi-plugins-fusioninventory-server
 net-mgmt/glpi-plugins-tracker-server|net-mgmt/glpi-plugins-fusioninventory-server|2015-05-24|Has expired: superseded by net-mgmt/glpi-plugins-fusioninventory-server
-science/rubygem-netcdf|science/rubygem-ruby-netcdf|2015-05-24|Rename to match our rubygems naming
-security/rubygem-rc4|security/rubygem-ruby-rc4|2015-05-24|Rename to match our rubygems naming
-print/rubygem-colortools|print/rubygem-color-tools|2015-05-24|Rename to match our rubygems naming
+science/rubygem-netcdf|science/rubygem-ruby-netcdf|2015-05-24|Rename to match our rubygem- port naming
+security/rubygem-rc4|security/rubygem-ruby-rc4|2015-05-24|Rename to match our rubygem- port naming
+print/rubygem-colortools|print/rubygem-color-tools|2015-05-24|Rename to match our rubygem- port naming
 security/qtkeychain|security/qtkeychain-qt5|2015-05-24|Renamed to indicate supported QT version
-www/rubygem-layout-yullio|www/rubygem-layout_yullio_generator|2015-05-27|Rename to match our rubygems naming
-net/rubygem-rightaws|net/rubygem-right_aws|2015-05-27|Rename to match our rubygems naming
-net/rubygem-rightflexiscale|net/rubygem-right_flexiscale|2015-05-27|Rename to match our rubygems naming
-net/rubygem-rightgogrid|net/rubygem-right_gogrid|2015-05-27|Rename to match our rubygems naming
-net/rubygem-righthttpconnection|net/rubygem-right_http_connection|2015-05-27|Rename to match our rubygems naming
-net/rubygem-rightslicehost|net/rubygem-right_slicehost|2015-05-27|Rename to match our rubygems naming
-audio/rubygem-shout|audio/rubygem-ruby-shout|2015-05-27|Rename to match our rubygems naming
-devel/rubygem-test|devel/rubygem-rubygems-test|2015-05-29|Rename to match our rubygems naming
-devel/rubygem-deeptest|devel/rubygem-deep_test|2015-05-30|Rename to match our rubygems naming
+www/rubygem-layout-yullio|www/rubygem-layout_yullio_generator|2015-05-27|Rename to match our rubygem- port naming
+net/rubygem-rightaws|net/rubygem-right_aws|2015-05-27|Rename to match our rubygem- port naming
+net/rubygem-rightflexiscale|net/rubygem-right_flexiscale|2015-05-27|Rename to match our rubygem- port naming
+net/rubygem-rightgogrid|net/rubygem-right_gogrid|2015-05-27|Rename to match our rubygem- port naming
+net/rubygem-righthttpconnection|net/rubygem-right_http_connection|2015-05-27|Rename to match our rubygem- port naming
+net/rubygem-rightslicehost|net/rubygem-right_slicehost|2015-05-27|Rename to match our rubygem- port naming
+audio/rubygem-shout|audio/rubygem-ruby-shout|2015-05-27|Rename to match our rubygem- port naming
+devel/rubygem-test|devel/rubygem-rubygems-test|2015-05-29|Rename to match our rubygem- port naming
+devel/rubygem-deeptest|devel/rubygem-deep_test|2015-05-30|Rename to match our rubygem- port naming
 audio/portaudio2|audio/portaudio|2015-05-30|Merged into the main port
-net/rubygem-yadis|net/rubygem-ruby-yadis|2015-05-30|Rename to match our rubygems naming
+net/rubygem-yadis|net/rubygem-ruby-yadis|2015-05-30|Rename to match our rubygem- port naming
 ports-mgmt/porteasy||2015-06-01|Has expired: Does not support pkgng
 textproc/hgrep||2015-06-01|Has expired: Not needed any more, base grep has coloring support
 www/diamanda||2015-06-01|Has expired: Broken for more than 6 months
@@ -8750,7 +8750,7 @@ net-mgmt/rancid|net-mgmt/rancid3|2016-11-27|Has expired: Not supported upstream.
 x11-servers/mga_hal||2016-11-28|Support for MGA_HAL feature was removed from xf86-video-mga in 2011
 audio/lv2core|audio/lv2|2016-11-30|Has expired: Superseded by audio/lv2
 java/jakarta-struts||2016-12-01|Has expired: Port is unmaintained and has known security vulnerabilites
-www/rubygem-url-mount|www/rubygem-url_mount|2016-12-03|Rename to match our rubygems naming
+www/rubygem-url-mount|www/rubygem-url_mount|2016-12-03|Rename to match our rubygem- port naming
 editors/focuswriter-qt4|editors/focuswriter|2016-12-03|Qt4 support was dropped, use editors/focuswriter instead
 graphics/gtkdps||2016-12-04|Has expired: No more upstream. Not used in the ports tree
 security/gsfv||2016-12-04|Has expired: No more upstream
@@ -8883,7 +8883,7 @@ x11-toolkits/linux-f10-tk85||2016-12-31|Removed
 x11-toolkits/linux-f10-blt||2016-12-31|Removed
 net-mgmt/unifi4|net-mgmt/unifi5|2017-01-01|Has expired: EoL as of 2017-01-01
 net/py-simplesoap|net/py-pysimplesoap|2017-01-01|Rename to match upstream naming
-textproc/docdiff|textproc/rubygem-docdiff|2017-01-02|Rename to match our rubygems naming
+textproc/docdiff|textproc/rubygem-docdiff|2017-01-02|Rename to match our rubygem- port naming
 databases/rubygem-dm-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-actionpack
 databases/rubygem-activerecord||2017-01-07|Has expired: Upstream support ended
 devel/rubygem-activesupport||2017-01-07|Has expired: Upstream support ended
@@ -9958,7 +9958,7 @@ databases/pg_statsinfo||2018-02-10|Removed, only for PosgreSQL 9.2
 databases/postgresql-repmgr2||2018-02-10|Removed, only for PostgreSQL 9.2
 www/mod_security-devel|www/mod_security3|2018-02-12|Renamed, upstream has made a release
 devel/pear-channel-htmlpurifier|devel/pear-channel-htmlpurifier.org|2018-02-13|Rename for consistency
-games/lolcat|games/rubygem-lolcat|2018-02-13|Rename to match our rubygems naming
+games/lolcat|games/rubygem-lolcat|2018-02-13|Rename to match our rubygem- port naming
 net-mgmt/prometheus|net-mgmt/prometheus1|2018-02-14|Rename to include major version number in the portname
 textproc/rubygem-tidy||2018-02-14|Has expired: No longer needed and not maintained
 www/rubygem-scrapi||2018-02-14|Has expired: No longer maintained upstream
@@ -9966,14 +9966,14 @@ devel/boost-python3-libs|devel/boost-python-libs@py36|2018-02-15|Flavorize
 net/quagga-esr|net/quagga|2018-02-15|Fixes available, go back to the regular quagga
 sysutils/krename-kde4|sysutils/krename|2018-02-16|Renamed to sysutils/krename
 net/grive|net/grive2|2018-02-17|Has expired: Unmaintained by upstream, use net/grive2 instead
-textproc/rubygem-sass-rails5|textproc/rubygem-sass-rails-rails4|2018-02-18|Rename to match our rubygems naming
+textproc/rubygem-sass-rails5|textproc/rubygem-sass-rails-rails4|2018-02-18|Rename to match our rubygem- port naming
 math/ufc||2018-02-18|Removed: No longer part of FEniCS, rolled into FFC
 devel/elixir-exrm||2018-02-19|Has expired: No longer maintained upstream
 devel/elixir-conform_exrm||2018-02-19|Has expired: No longer maintained upstream
 devel/elixir-sorted_set||2018-02-19|Has expired: No longer maintained upstream
 devel/elixir-red_black_tree||2018-02-19|Has expired: No longer maintained upstream
 emulators/wine-staging|emulators/wine-devel|2018-02-20|Broken for months, abandoned upstream
-misc/rubygem-dotenv-rails|misc/rubygem-dotenv-rails-rails4|2018-02-20|Rename to match our rubygems naming
+misc/rubygem-dotenv-rails|misc/rubygem-dotenv-rails-rails4|2018-02-20|Rename to match our rubygem- port naming
 accessibility/kaccessible|accessibility/kaccessible-kde4|2018-02-22|Make room for KDE updates
 accessibility/kmousetool|accessibility/kmousetool-kde4|2018-02-22|Make room for KDE updates
 accessibility/jovie|accessibility/jovie-kde4|2018-02-22|Make room for KDE updates
