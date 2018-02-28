@@ -10130,3 +10130,14 @@ math/octave-forge-octcdf||2018-02-24|No longer supported upstream
 math/octave-forge-pt_br||2018-02-24|No longer supported upstream
 devel/p5-Sys-Cpu|devel/p5-Sys-CPU|2018-02-27|Rename to match our p5- port naming
 net/eternaltcp|net/eternalterminal|2018-02-28|Renamed on the upstream author request
+databases/rubygem-flipper-active_record010||2018-02-28|Has expired: Use databases/rubygem-flipper-active_record instead
+devel/rubygem-blobstore_client||2018-02-28|Has expired: Only used by deprecated sysutils/rubygem-bosh_cli
+devel/rubygem-bosh-template||2018-02-28|Has expired: Only used by deprecated sysutils/rubygem-bosh_cli
+devel/rubygem-bosh_common||2018-02-28|Has expired: Only used by deprecated sysutils/rubygem-bosh_cli
+devel/rubygem-byebug9||2018-02-28|Has expired: Use devel/rubygem-byebug instead
+devel/rubygem-flipper010||2018-02-28|Has expired: Use devel/rubygem-flipper instead
+devel/rubygem-google-api-client010||2018-02-28|Has expired: Use devel/rubygem-google-api-client instead
+devel/rubygem-progressbar09||2018-02-28|Has expired: Only used by deprecated sysutils/rubygem-bosh_cli
+sysutils/rubygem-bosh_cli||2018-02-28|Has expired: Use net/bosh-cli (CLI v2) instead
+www/rubygem-gon-rails4||2018-02-28|Has expired: It is actually www/rubygem-gon with PKGNAMESUFFIX
+www/rubygem-rack-cors0||2018-02-28|Has expired: Use www/rubygem-rack-cors instead
