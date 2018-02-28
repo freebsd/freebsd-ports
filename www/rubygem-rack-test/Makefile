@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-test
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
