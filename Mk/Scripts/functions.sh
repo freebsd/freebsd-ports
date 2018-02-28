@@ -164,7 +164,7 @@ export_ports_env() {
 
 	validate_env MAKE PORTSDIR
 
-	uses="python"
+	uses="python compiler:features"
 
 	make_env="\
 		_PORTS_ENV_CHECK=1 \
