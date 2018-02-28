@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.16.36
+PORTVERSION=	4.16.41
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -26,8 +26,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.3.28:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.3.6:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=1.3.29:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.3.7:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
@@ -45,6 +45,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
 		rubygem-pdf-reader>=0:print/rubygem-pdf-reader \
+		rubygem-ruby-macho>=0:devel/rubygem-ruby-macho \
 		rubygem-dnsruby>=0:dns/rubygem-dnsruby \
 		rubygem-mqtt>=0:net/rubygem-mqtt \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
@@ -94,6 +95,7 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2017-17562/install-deps.sh \
 		data/exploits/CVE-2017-7494/build.sh \
 		data/exploits/CVE-2017-7494/install-deps.sh \
+		docker/entrypoint.sh \
 		external/source/shellcode/windows/build.sh \
 		external/source/msfJavaToolkit/compile.sh \
 		external/source/msfJavaToolkit/testKeytool.rb \
@@ -102,6 +104,8 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		docker/bin/msfvenom \
 		docker/bin/msfconsole \
 		modules/auxiliary/dos/http/slowloris.py \
+		modules/auxiliary/dos/tcp/claymore_dos.py \
+		modules/auxiliary/scanner/ssl/bleichenbacher_oracle.py \
 		modules/auxiliary/scanner/wproxy/att_open_proxy.py \
 		tools/hardware/killerbee_msfrelay \
 		tools/dev/import-dev-keys.sh \
