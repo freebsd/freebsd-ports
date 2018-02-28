@@ -1,6 +1,6 @@
-bin/scanpbnj
-bin/outputpbnj
 bin/genlist
+bin/outputpbnj
+bin/scanpbnj
 %%PERL5_MAN1%%/genlist.1p.gz
 %%PERL5_MAN1%%/outputpbnj.1p.gz
 %%PERL5_MAN1%%/scanpbnj.1p.gz
