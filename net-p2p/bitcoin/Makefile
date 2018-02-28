@@ -2,15 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.15.1
+PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	3
+PORTREVISION?=	0
 CATEGORIES=	net-p2p finance
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	1ec0c0a01c31.patch:-p1
-
-MAINTAINER=	robbak@robbak.com
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 
 LICENSE=	MIT
@@ -95,6 +92,12 @@ MAKE_ENV+=	V=1
 PLIST_FILES?=	bin/bitcoin-qt man/man1/bitcoin-qt.1.gz \
 		share/applications/bitcoin-qt.desktop share/pixmaps/bitcoin128.png
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1100000
+CONFIGURE_ARGS+=--disable-asm
+.endif
+
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 
 post-install:
@@ -113,4 +116,4 @@ regression-test: build
 
 	@cd ${WRKSRC} && ${GMAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
