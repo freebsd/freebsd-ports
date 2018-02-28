@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pc-sysinstall
-PORTVERSION=	20171211
+PORTVERSION=	20180228
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -16,6 +16,6 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	pc-sysinstall
-GH_TAGNAME=	7caaefb652578eaff8168e3db26d25d31fd634a1
+GH_TAGNAME=	4dcba1788a9151ce88b709fe34efe366009c88b3
 
 .include <bsd.port.mk>
