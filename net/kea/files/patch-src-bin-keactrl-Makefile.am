@@ -1,11 +1,11 @@
---- src/bin/keactrl/Makefile.am.orig	2015-12-28 12:18:05 UTC
+--- src/bin/keactrl/Makefile.am.orig	2018-02-28 03:44:09 UTC
 +++ src/bin/keactrl/Makefile.am
-@@ -38,7 +38,7 @@ install-data-local:
- 	$(mkinstalldirs) $(DESTDIR)/@sysconfdir@/@PACKAGE@
- 	for f in $(CONFIGFILES) ; do	\
- 	  if test ! -f $(DESTDIR)$(sysconfdir)/@PACKAGE@/$$f; then	\
--	    ${INSTALL_DATA} $$f $(DESTDIR)$(sysconfdir)/@PACKAGE@/ ;	\
-+	    ${INSTALL_DATA} $$f $(DESTDIR)$(sysconfdir)/@PACKAGE@/$${f}.sample ;	\
- 	  fi ;	\
+@@ -68,7 +68,7 @@ install-data-local:
+ 			   $(DESTDIR)$(sysconfdir)/@PACKAGE@/$$f.bak; \
+ 		fi; \
+ 		if test ! -f $(DESTDIR)$(sysconfdir)/@PACKAGE@/$$f; then \
+-			${INSTALL_DATA} $$f $(DESTDIR)$(sysconfdir)/@PACKAGE@/; \
++			${INSTALL_DATA} $$f $(DESTDIR)$(sysconfdir)/@PACKAGE@/$${f}.sample; \
+ 		fi; \
  	done
  
