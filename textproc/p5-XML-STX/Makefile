@@ -11,29 +11,33 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure Perl STX processor
 
-BUILD_DEPENDS=	p5-XML-SAX>=0:textproc/p5-XML-SAX \
-		p5-Clone>=0:devel/p5-Clone \
-		p5-XML-NamespaceSupport>=0:textproc/p5-XML-NamespaceSupport
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
+		p5-XML-NamespaceSupport>=0:textproc/p5-XML-NamespaceSupport \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	examples/tester.pl examples/stx-filter.pl
-USE_PERL5=	configure patch
+USE_PERL5=	configure
 NO_ARCH=	yes
+SHEBANG_GLOB=	*.pl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/scripts
-	@${MV} ${WRKSRC}/stx*.pl ${WRKSRC}/scripts
+	@${MV} ${WRKSRC}/*.pl ${WRKSRC}/scripts
 
 post-patch:
-	@${PERL} -pi -e 's!(?=stx\w+\.pl)!scripts/!g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/EXE_FILES/ s|\([[:alpha:]]*\.pl\)|scripts/&|g' ${WRKSRC}/Makefile.PL
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
