@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwraster
-PORTVERSION=	0.95.7
-PORTREVISION=	5
+PORTVERSION=	0.95.8
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/source/release/
 DISTNAME=	WindowMaker-${PORTVERSION}
@@ -19,9 +18,9 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libwebp.so:graphics/webp \
 		libMagickWand-6.so:graphics/ImageMagick
 
-USES=		jpeg libtool pathfix pkgconfig
+USES=		jpeg libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_XORG=	xft xinerama xmu xpm
+USE_XORG=	x11 xext xft xinerama xmu xpm
 BUILD_WRKSRC=	${WRKSRC}/wrlib
 INSTALL_WRKSRC=	${WRKSRC}/wrlib
 GNU_CONFIGURE=	yes
@@ -35,8 +34,6 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--enable-usermenu \
 		--enable-wmreplace \
 		--with-x
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 pre-build:

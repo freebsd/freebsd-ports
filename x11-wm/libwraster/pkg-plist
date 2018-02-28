@@ -2,7 +2,7 @@ bin/get-wraster-flags
 include/wraster.h
 lib/libwraster.a
 lib/libwraster.so
-lib/libwraster.so.5
-lib/libwraster.so.5.0.0
+lib/libwraster.so.6
+lib/libwraster.so.6.0.0
 libdata/pkgconfig/wrlib.pc
 man/man1/get-wraster-flags.1.gz
