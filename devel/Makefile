@@ -5312,7 +5312,6 @@
     SUBDIR += rubygem-binding_of_caller
     SUBDIR += rubygem-bit-struct
     SUBDIR += rubygem-blankslate
-    SUBDIR += rubygem-blobstore_client
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bones
     SUBDIR += rubygem-bootsnap
