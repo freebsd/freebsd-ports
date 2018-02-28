@@ -3,6 +3,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.95.8
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/source/release/
 DISTNAME=	WindowMaker-${PORTVERSION}
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \
 		libMagickWand-6.so:graphics/ImageMagick \
-		libwraster.so:x11-wm/libwraster \
+		libwraster.so.6:x11-wm/libwraster \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libexif.so:graphics/libexif
@@ -26,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:graphics/
 
 USES=		jpeg libtool shebangfix pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
-USE_XORG=	xft xinerama xmu xpm x11 xext
+USE_XORG=	x11 xext xft xinerama xmu xpm
 SHEBANG_FILES=	util/wkdemenu.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no \
