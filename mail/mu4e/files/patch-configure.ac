@@ -1,4 +1,4 @@
---- configure.ac.orig	2016-01-20 18:19:35 UTC
+--- configure.ac.orig	2016-12-04 19:18:18 UTC
 +++ configure.ac
 @@ -30,25 +30,25 @@ AC_SUBST(prefix)
  
@@ -34,18 +34,18 @@
  
  # check for makeinfo
  AC_CHECK_PROG(have_makeinfo,makeinfo,yes,no)
-@@ -110,36 +110,36 @@ AS_IF([test "x$PKG_CONFIG" = "xno"],[
+@@ -124,36 +124,36 @@ AS_IF([test "x$PKG_CONFIG" = "xno"],[
  
  # glib2?
- # we need 2.14 at least, because we use GRegex
--PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.24 gobject-2.0 gio-2.0)
-+#PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.24 gobject-2.0 gio-2.0)
+ # we pick some late-2012 version
+-PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.32 gobject-2.0 gio-2.0)
++#PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.32 gobject-2.0 gio-2.0)
  AC_SUBST(GLIB_CFLAGS)
  AC_SUBST(GLIB_LIBS)
 -glib_version="`$PKG_CONFIG --modversion glib-2.0`"
 +#glib_version="`$PKG_CONFIG --modversion glib-2.0`"
  
- # gmime
+ # gmime, some late-2012 version
 -PKG_CHECK_MODULES(GMIME,gmime-2.6 >= 2.6.7)
 +#PKG_CHECK_MODULES(GMIME,gmime-2.6 >= 2.6.7)
  AC_SUBST(GMIME_CFLAGS)
@@ -92,7 +92,7 @@
  
  AC_SUBST(XAPIAN_CXXFLAGS)
  AC_SUBST(XAPIAN_LIBS)
-@@ -235,37 +235,20 @@ AC_SUBST(MU_DOC_DIR, "${prefix}/share/do
+@@ -249,37 +249,20 @@ AC_SUBST(MU_DOC_DIR, "${prefix}/share/do
  
  ###############################################################################
  # check for pmccabe
