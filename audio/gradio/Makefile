@@ -4,6 +4,7 @@
 PORTNAME=	gradio
 PORTVERSION=	7.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	arved@FreeBSD.org
@@ -12,20 +13,17 @@ COMMENT=	GTK3 app for finding and listening to internet radio stations
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN=		fails to configure
-DEPRECATED=	Never built
-EXPIRATION_DATE=	2018-03-25
-
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
-		libjson-glib-1.0.so:devel/json-glib \
-		libsqlite3.so:databases/sqlite3
+		libjson-glib-1.0.so:devel/json-glib
 
-USES=		meson ninja gettext
+USES=		gettext meson pkgconfig sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	haecker-felix
-USE_GNOME=	glib20 gtk30 gdkpixbuf2 cairo
-USE_GSTREAMER1=	yes
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GSTREAMER1=	mpg123 soup
 INSTALLS_ICONS=	yes
+
+GLIB_SCHEMAS=	de.haeckerfelix.gradio.gschema.xml
 
 .include <bsd.port.mk>
