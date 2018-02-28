@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx@${FLAVOR}
 
-USES=		python:2.7 tar:tgz
+USES=		python tar:tgz
 USE_PYTHON=	flavors
 NO_BUILD=	yes
 SPHINXDIR=	${PYTHON_LIBDIR}/site-packages/sphinx
