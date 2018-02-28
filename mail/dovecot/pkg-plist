@@ -76,6 +76,7 @@ include/dovecot/bits.h
 include/dovecot/bsearch-insert-pos.h
 include/dovecot/buffer.h
 include/dovecot/byteorder.h
+include/dovecot/charset-utf8-private.h
 include/dovecot/charset-utf8.h
 include/dovecot/child-wait.h
 include/dovecot/client-common.h
@@ -310,6 +311,7 @@ include/dovecot/istream-seekable.h
 include/dovecot/istream-sized.h
 include/dovecot/istream-tee.h
 include/dovecot/istream-timeout.h
+include/dovecot/istream-try.h
 include/dovecot/istream-unix.h
 include/dovecot/istream-zlib.h
 include/dovecot/istream.h
@@ -622,6 +624,8 @@ lib/dovecot/lib15_notify_plugin.a
 lib/dovecot/lib15_notify_plugin.so
 lib/dovecot/lib20_autocreate_plugin.a
 lib/dovecot/lib20_autocreate_plugin.so
+lib/dovecot/lib20_charset_alias_plugin.a
+lib/dovecot/lib20_charset_alias_plugin.so
 lib/dovecot/lib20_expire_plugin.a
 lib/dovecot/lib20_expire_plugin.so
 lib/dovecot/lib20_fts_plugin.a
