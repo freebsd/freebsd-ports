@@ -1,7 +1,0 @@
-Byebug is a simple to use, feature rich debugger for Ruby 2. It uses the
-new TracePoint API for execution control and the new Debug Inspector API
-for call stack navigation, so it doesn't depend on internal core sources.
-It's developed as a C extension, so it's fast. And it has a full test
-suite so it's reliable.
-
-WWW: https://github.com/deivid-rodriguez/byebug
