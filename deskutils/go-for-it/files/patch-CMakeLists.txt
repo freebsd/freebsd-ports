@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-02-28 21:31:57 UTC
++++ CMakeLists.txt
+@@ -8,7 +8,7 @@ include (GNUInstallDirs)
+ set (INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
+ set (DATADIR "${INSTALL_PREFIX}/share")
+ 
+-set (APP_ID "com.github.jmoerman.go-for-it")
++set (APP_ID "go-for-it")
+ set (APP_SYSTEM_NAME ${APP_ID} CACHE STRING "Name to used for file names. For example the file name of the .desktop file.")
+ 
+ set (PKGDATADIR ${DATADIR}/${APP_SYSTEM_NAME})
