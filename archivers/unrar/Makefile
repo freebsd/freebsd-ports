@@ -6,7 +6,6 @@ DISTVERSION=	5.50
 PORTEPOCH=	6
 CATEGORIES+=	archivers
 MASTER_SITES=	https://www.rarlab.com/rar/ \
-		https://distfiles.crux.guru/ \
 		LOCAL/sunpoet
 DISTNAME=	unrarsrc-5.5.8
 
