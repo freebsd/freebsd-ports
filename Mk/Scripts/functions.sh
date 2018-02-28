@@ -192,7 +192,6 @@ export_ports_env() {
 		_OSRELEASE \
 		_PERL5_FROM_BIN \
 		_PKG_CHECKED \
-		_PYTHON_DEFAULT_VERSION \
 		_SMP_CPUS \
 	"
 
