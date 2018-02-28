@@ -176,24 +176,8 @@ export_ports_env() {
 
 	make_cmd="${make_env}"
 
-	export_vars="\
-		ARCH \
-		CONFIGURE_MAX_CMD_LEN \
-		HAVE_COMPAT_IA32_KERN \
-		OPSYS \
-		OSREL \
-		OSVERSION \
-		PYTHONBASE \
-		UID \
-		_JAVA_OS_LIST_REGEXP \
-		_JAVA_PORTS_INSTALLED \
-		_JAVA_VENDOR_LIST_REGEXP \
-		_JAVA_VERSION_LIST_REGEXP \
-		_OSRELEASE \
-		_PERL5_FROM_BIN \
-		_PKG_CHECKED \
-		_SMP_CPUS \
-	"
+	export_vars="$(${MAKE} -f ${PORTSDIR}/Mk/bsd.port.mk \
+	    -V PORTS_ENV_VARS ${make_env} USES="${uses}")"
 
 	for var in ${export_vars}; do
 		make_cmd="${make_cmd}${make_cmd:+ }-V ${var}=\${${var}:Q}"
