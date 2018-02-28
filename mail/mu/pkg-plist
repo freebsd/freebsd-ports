@@ -20,6 +20,7 @@ man/man1/mu-view.1.gz
 man/man1/mu.1.gz
 man/man1/mug.1.gz
 man/man5/mu-bookmarks.5.gz
+man/man7/mu-query.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.org
 %%GUILE%%share/guile/site/2.0/mu.scm
 %%GUILE%%share/guile/site/2.0/mu/plot.scm

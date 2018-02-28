@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mu
-PORTVERSION=	0.9.18
+PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -14,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 		libgmime-2.6.so:mail/gmime26
 
+USES=		autoreconf gettext-runtime gmake libtool makeinfo pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	djcb
-
-USES=		autoreconf gettext-runtime gmake libtool makeinfo pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk --disable-mu4e
