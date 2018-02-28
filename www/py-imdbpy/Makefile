@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imdbpy
-PORTVERSION=	6.2
+PORTVERSION=	6.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		SF/${PORTNAME}/IMDbPY/${PORTVERSION}
@@ -29,8 +29,7 @@ SHEBANG_FILES=	docs/goodies/download_applydiffs.py \
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.10.0:databases/py-sqlalchemy-migrate@${FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10@${FLAVOR}
+SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>=0:databases/py-sqlalchemy11@${FLAVOR}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
