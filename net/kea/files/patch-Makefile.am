@@ -1,6 +1,6 @@
---- Makefile.am.orig	2015-12-28 12:18:05 UTC
+--- Makefile.am.orig	2018-02-28 03:44:09 UTC
 +++ Makefile.am
-@@ -106,7 +106,7 @@ cppcheck:
+@@ -115,7 +115,7 @@ cppcheck:
  # These steps are necessary during installation
  install-exec-hook:
  	mkdir -p $(DESTDIR)${localstatedir}/log/
