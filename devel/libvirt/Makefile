@@ -104,6 +104,7 @@ CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 SHLIB_VER=	0.4000.0
 PLIST_SUB+=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
@@ -174,9 +175,6 @@ post-install:
 		${MV} ${STAGEDIR}${ETCDIR}/${file} \
 		${STAGEDIR}${ETCDIR}/${file}.sample; fi
 .endfor
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.pre.mk>
 
