@@ -1,6 +1,6 @@
---- Makefile.orig	2013-11-22 14:17:36.000000000 +0900
-+++ Makefile	2013-12-26 10:08:41.000000000 +0900
-@@ -1,21 +1,31 @@
+--- Makefile.orig	2015-12-12 13:51:41 UTC
++++ Makefile
+@@ -1,18 +1,23 @@
 -CC = cc
 -CFLAGS = -g -O2 -Wall -pedantic
 +CC? = cc
@@ -10,7 +10,7 @@
  # SHAR = shar -T
  PERL = perl
  RM = rm -rf
- VERSION = 2.1.3
+ VERSION = 2.1.4
 -MKDIR = mkdir
 -prefix = /usr/local
 +MKDIR? = mkdir
@@ -18,40 +18,38 @@
 +manprefix = $(DESTDIR)$(MANPREFIX)
  PYTHON2 = python
  PYTHON3 = python
-+BSD_INSTALL_PROGRAM?= ${INSTALL} -s -o root -g wheel -m 555
-+BSD_INSTALL_MAN?= ${INSTALL}    -o root -g wheel -m 444
++BSD_INSTALL_PROGRAM?=	${INSTALL} -s -o root -g wheel -m 555
++BSD_INSTALL_MAN?=	${INSTALL}    -o root -g wheel -m 444
  
  .PHONY: clean install test tar shar
  
-+all: nkf man
++all: nkf
 +
  nkf : nkf.o utf8tbl.o
- 	$(CC) $(CFLAGS) -o nkf nkf.o utf8tbl.o
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o nkf nkf.o utf8tbl.o
  
-+man: nkf.1j nkf.1j.euc
-+
-+nkf.1j.euc: nkf nkf.1j
-+	./nkf -e nkf.1j > nkf.1j.euc
-+
- nkf.o : nkf.c nkf.h utf8tbl.h config.h
- 	$(CC) $(CFLAGS) -c nkf.c
+@@ -47,17 +52,17 @@ install: install-main install-man instal
  
-@@ -45,13 +55,11 @@
- 
- install:
+ install-main:
  	-$(MKDIR) $(prefix)/bin
+-	cp -f nkf $(prefix)/bin/
++	${BSD_INSTALL_PROGRAM} nkf $(prefix)/bin/
+ 
+ install-man:
 -	-$(MKDIR) $(prefix)/man
 -	-$(MKDIR) $(prefix)/man/man1
+-	cp -f nkf.1 $(prefix)/man/man1/
++	-$(MKDIR) $(manprefix)/man
++	-$(MKDIR) $(manprefix)/man/man1
++	${BSD_INSTALL_MAN} nkf.1 $(manprefix)/man/man1/
+ 
+ install-man-ja:
 -	-$(MKDIR) $(prefix)/man/ja
 -	-$(MKDIR) $(prefix)/man/ja/man1
--	cp -f nkf $(prefix)/bin/
--	cp -f nkf.1 $(prefix)/man/man1/
 -	cp -f nkf.1j $(prefix)/man/ja/man1/nkf.1
-+	-$(MKDIR) $(manprefix)/man/man1
++	-$(MKDIR) $(manprefix)/man/ja
 +	-$(MKDIR) $(manprefix)/man/ja/man1
-+	${BSD_INSTALL_PROGRAM} nkf $(prefix)/bin/
-+	${BSD_INSTALL_MAN} nkf.1 $(manprefix)/man/man1/
-+	${BSD_INSTALL_MAN} nkf.1j.euc $(manprefix)/man/ja/man1/nkf.1
++	${BSD_INSTALL_MAN} nkf.1j $(manprefix)/man/ja/man1/nkf.1
  
  shar:
  	-mkdir nkf-$(VERSION)
