@@ -904,6 +904,7 @@
 %%WWWDIR%%/language/da_DK/help/notification_by_mail.html
 %%WWWDIR%%/language/da_DK/help/permalinks.html
 %%WWWDIR%%/language/da_DK/help/photos_add_ftp.html
+%%WWWDIR%%/language/da_DK/help/quick_search.html
 %%WWWDIR%%/language/da_DK/help/search.html
 %%WWWDIR%%/language/da_DK/help/synchronize.html
 %%WWWDIR%%/language/da_DK/help/user_list.html
@@ -933,6 +934,7 @@
 %%WWWDIR%%/language/de_DE/help/notification_by_mail.html
 %%WWWDIR%%/language/de_DE/help/permalinks.html
 %%WWWDIR%%/language/de_DE/help/photos_add_ftp.html
+%%WWWDIR%%/language/de_DE/help/quick_search.html
 %%WWWDIR%%/language/de_DE/help/search.html
 %%WWWDIR%%/language/de_DE/help/synchronize.html
 %%WWWDIR%%/language/de_DE/help/user_list.html
@@ -1163,6 +1165,7 @@
 %%WWWDIR%%/language/fr_FR/help/notification_by_mail.html
 %%WWWDIR%%/language/fr_FR/help/permalinks.html
 %%WWWDIR%%/language/fr_FR/help/photos_add_ftp.html
+%%WWWDIR%%/language/fr_FR/help/quick_search.html
 %%WWWDIR%%/language/fr_FR/help/search.html
 %%WWWDIR%%/language/fr_FR/help/synchronize.html
 %%WWWDIR%%/language/fr_FR/help/user_list.html
@@ -1295,6 +1298,7 @@
 %%WWWDIR%%/language/it_IT/help/notification_by_mail.html
 %%WWWDIR%%/language/it_IT/help/permalinks.html
 %%WWWDIR%%/language/it_IT/help/photos_add_ftp.html
+%%WWWDIR%%/language/it_IT/help/quick_search.html
 %%WWWDIR%%/language/it_IT/help/search.html
 %%WWWDIR%%/language/it_IT/help/synchronize.html
 %%WWWDIR%%/language/it_IT/help/user_list.html
@@ -1395,7 +1399,10 @@
 %%WWWDIR%%/language/lt_LT/common.lang.php
 %%WWWDIR%%/language/lt_LT/help/cat_move.html
 %%WWWDIR%%/language/lt_LT/help/cat_options.html
+%%WWWDIR%%/language/lt_LT/help/help_virtual_links.html
 %%WWWDIR%%/language/lt_LT/help/index.php
+%%WWWDIR%%/language/lt_LT/help/search.html
+%%WWWDIR%%/language/lt_LT/help/user_list.html
 %%WWWDIR%%/language/lt_LT/install.lang.php
 %%WWWDIR%%/language/lt_LT/iso.txt
 %%WWWDIR%%/language/lt_LT/lt_LT.jpg
@@ -1420,6 +1427,7 @@
 %%WWWDIR%%/language/lv_LV/help/notification_by_mail.html
 %%WWWDIR%%/language/lv_LV/help/permalinks.html
 %%WWWDIR%%/language/lv_LV/help/photos_add_ftp.html
+%%WWWDIR%%/language/lv_LV/help/quick_search.html
 %%WWWDIR%%/language/lv_LV/help/search.html
 %%WWWDIR%%/language/lv_LV/help/synchronize.html
 %%WWWDIR%%/language/lv_LV/help/user_list.html
@@ -1464,6 +1472,7 @@
 %%WWWDIR%%/language/nb_NO/help/notification_by_mail.html
 %%WWWDIR%%/language/nb_NO/help/permalinks.html
 %%WWWDIR%%/language/nb_NO/help/photos_add_ftp.html
+%%WWWDIR%%/language/nb_NO/help/quick_search.html
 %%WWWDIR%%/language/nb_NO/help/search.html
 %%WWWDIR%%/language/nb_NO/help/synchronize.html
 %%WWWDIR%%/language/nb_NO/help/user_list.html
@@ -1572,6 +1581,7 @@
 %%WWWDIR%%/language/pt_BR/help/notification_by_mail.html
 %%WWWDIR%%/language/pt_BR/help/permalinks.html
 %%WWWDIR%%/language/pt_BR/help/photos_add_ftp.html
+%%WWWDIR%%/language/pt_BR/help/quick_search.html
 %%WWWDIR%%/language/pt_BR/help/search.html
 %%WWWDIR%%/language/pt_BR/help/synchronize.html
 %%WWWDIR%%/language/pt_BR/help/user_list.html
@@ -1641,6 +1651,7 @@
 %%WWWDIR%%/language/ru_RU/help/notification_by_mail.html
 %%WWWDIR%%/language/ru_RU/help/permalinks.html
 %%WWWDIR%%/language/ru_RU/help/photos_add_ftp.html
+%%WWWDIR%%/language/ru_RU/help/quick_search.html
 %%WWWDIR%%/language/ru_RU/help/search.html
 %%WWWDIR%%/language/ru_RU/help/synchronize.html
 %%WWWDIR%%/language/ru_RU/help/user_list.html
@@ -1738,6 +1749,7 @@
 %%WWWDIR%%/language/sv_SE/help/notification_by_mail.html
 %%WWWDIR%%/language/sv_SE/help/permalinks.html
 %%WWWDIR%%/language/sv_SE/help/photos_add_ftp.html
+%%WWWDIR%%/language/sv_SE/help/quick_search.html
 %%WWWDIR%%/language/sv_SE/help/search.html
 %%WWWDIR%%/language/sv_SE/help/synchronize.html
 %%WWWDIR%%/language/sv_SE/help/user_list.html
@@ -1807,6 +1819,7 @@
 %%WWWDIR%%/language/uk_UA/help/notification_by_mail.html
 %%WWWDIR%%/language/uk_UA/help/permalinks.html
 %%WWWDIR%%/language/uk_UA/help/photos_add_ftp.html
+%%WWWDIR%%/language/uk_UA/help/quick_search.html
 %%WWWDIR%%/language/uk_UA/help/search.html
 %%WWWDIR%%/language/uk_UA/help/synchronize.html
 %%WWWDIR%%/language/uk_UA/help/user_list.html
@@ -1821,6 +1834,7 @@
 %%WWWDIR%%/language/vi_VN/help/help_add_photos.html
 %%WWWDIR%%/language/vi_VN/help/help_misc.html
 %%WWWDIR%%/language/vi_VN/help/index.php
+%%WWWDIR%%/language/vi_VN/help/quick_search.html
 %%WWWDIR%%/language/vi_VN/install.lang.php
 %%WWWDIR%%/language/vi_VN/iso.txt
 %%WWWDIR%%/language/vi_VN/upgrade.lang.php
@@ -1848,6 +1862,7 @@
 %%WWWDIR%%/language/zh_CN/help/notification_by_mail.html
 %%WWWDIR%%/language/zh_CN/help/permalinks.html
 %%WWWDIR%%/language/zh_CN/help/photos_add_ftp.html
+%%WWWDIR%%/language/zh_CN/help/quick_search.html
 %%WWWDIR%%/language/zh_CN/help/search.html
 %%WWWDIR%%/language/zh_CN/help/synchronize.html
 %%WWWDIR%%/language/zh_CN/help/user_list.html
@@ -2401,6 +2416,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/pl_PL/index.php
 %%WWWDIR%%/plugins/TakeATour/language/pl_PL/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/pl_PL/tour_2_7_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/pl_PL/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/pl_PL/tour_first_contact.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/pl_PL/tour_privacy.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/pt_BR/description.txt
@@ -2520,9 +2536,6 @@
 %%WWWDIR%%/plugins/language_switch/flag_sprite.jpg
 %%WWWDIR%%/plugins/language_switch/flag_sprite_original.png
 %%WWWDIR%%/plugins/language_switch/index.php
-%%WWWDIR%%/plugins/language_switch/language_switch_flags.tpl
-%%WWWDIR%%/plugins/language_switch/language_switch.css
-%%WWWDIR%%/plugins/language_switch/language_switch.inc.php
 %%WWWDIR%%/plugins/language_switch/language/af_ZA/description.txt
 %%WWWDIR%%/plugins/language_switch/language/af_ZA/index.php
 %%WWWDIR%%/plugins/language_switch/language/ar_SA/description.txt
@@ -2610,6 +2623,9 @@
 %%WWWDIR%%/plugins/language_switch/language/zh_HK/description.txt
 %%WWWDIR%%/plugins/language_switch/language/zh_TW/description.txt
 %%WWWDIR%%/plugins/language_switch/language/zh_TW/index.php
+%%WWWDIR%%/plugins/language_switch/language_switch.css
+%%WWWDIR%%/plugins/language_switch/language_switch.inc.php
+%%WWWDIR%%/plugins/language_switch/language_switch_flags.tpl
 %%WWWDIR%%/plugins/language_switch/main.inc.php
 %%WWWDIR%%/plugins/language_switch/pem_metadata.txt
 %%WWWDIR%%/plugins/language_switch/style.css
