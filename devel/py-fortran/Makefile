@@ -14,7 +14,7 @@ COMMENT=	Creating extensions to the Python language with Fortran routines
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYNUMERIC}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numeric>0:math/py-numeric@${FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
