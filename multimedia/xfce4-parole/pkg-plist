@@ -10,10 +10,10 @@ include/parole/parole.h
 lib/parole-0/parole-notify.so
 lib/parole-0/tray-icon.so
 share/appdata/parole.appdata.xml
-share/applications/parole.desktop
-share/icons/hicolor/16x16/apps/parole-extension.png
-share/icons/hicolor/16x16/apps/parole-extension-symbolic.svg
+share/applications/org.xfce.Parole.desktop
 share/icons/hicolor/128x128/apps/parole.png
+share/icons/hicolor/16x16/apps/parole-extension-symbolic.svg
+share/icons/hicolor/16x16/apps/parole-extension.png
 share/icons/hicolor/16x16/apps/parole.png
 share/icons/hicolor/24x24/apps/parole.png
 share/icons/hicolor/32x32/apps/parole.png
@@ -43,8 +43,8 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/is/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/it/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/parole.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/parole.mo
@@ -57,6 +57,7 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/te/LC_MESSAGES/parole.mo
@@ -69,4 +70,5 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%DATADIR%%/parole-plugins-0/notify.desktop
 %%DATADIR%%/parole-plugins-0/system-tray.desktop
 share/pixmaps/no-cover.png
-share/pixmaps/parole.png
+share/pixmaps/play.png
+share/pixmaps/replay.png
