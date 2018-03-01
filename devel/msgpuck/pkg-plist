@@ -1,4 +1,4 @@
-include/msgpuck/msgpuck.h
+include/msgpuck.h
 lib/libmsgpuck.a
 lib/libmsgpuck.so
 lib/libmsgpuck.so.1
