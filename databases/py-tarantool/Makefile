@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.5
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client library for Tarantool Database
 
 LICENSE=	BSD3CLAUSE
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
