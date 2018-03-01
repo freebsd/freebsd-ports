@@ -1,3 +1,3 @@
-TIMESTAMP = 1508926478
-SHA256 (prometheus-node_exporter-v0.15.0_GH0.tar.gz) = 87a057081e2034f85e997f9e1343aaf45e1b6ad9fa51411caf97a03fe1c46ccb
-SIZE (prometheus-node_exporter-v0.15.0_GH0.tar.gz) = 1324698
+TIMESTAMP = 1515361500
+SHA256 (prometheus-node_exporter-v0.15.2_GH0.tar.gz) = 940b850376f94580e88b5e99926d92899975d5792d05709cbd9c48dab0a848ad
+SIZE (prometheus-node_exporter-v0.15.2_GH0.tar.gz) = 1327204
