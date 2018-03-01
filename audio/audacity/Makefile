@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.2
 DISTVERSIONPREFIX=	Audacity-
-PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -13,17 +12,19 @@ COMMENT=	GUI editor for digital audio waveforms
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	autogen:devel/autogen \
-		bash:shells/bash \
-		cmake:devel/cmake
-LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libsndfile.so:audio/libsndfile
-
 BROKEN_aarch64=		fails to configure: checking whether C++ compiler accepts -msse... no
 BROKEN_powerpc64=	fails to build
 
-GNU_CONFIGURE=	yes
+BUILD_DEPENDS=	autogen:devel/autogen \
+		bash:shells/bash \
+		cmake:devel/cmake
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libexpat.so:textproc/expat2 \
+		libsoxr.so:audio/libsoxr \
+		libsndfile.so:audio/libsndfile
+
 USES=		autoreconf compiler:c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix localbase
+GNU_CONFIGURE=	yes
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_WITH=	libintl-prefix="${LOCALBASE}"
@@ -36,7 +37,7 @@ DOS2UNIX_GLOB=	Makefile.* *.c* *.h
 SHEBANG_FILES=	lib-src/lv2/build
 USE_GITHUB=	yes
 
-OPTIONS_DEFINE=	NLS DEBUG DOCS ALSA DYNLOAD FFMPEG FLAC ID3TAG LADSPA LAME LV2 \
+OPTIONS_DEFINE=	NLS DEBUG DOCS DYNLOAD FFMPEG FLAC ID3TAG LADSPA LAME LV2 \
 		MAD SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
 OPTIONS_DEFAULT=	FLAC ID3TAG LADSPA MAD \
 			SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
@@ -65,7 +66,7 @@ CONFIGURE_ARGS+=	--disable-option-checking \
 			--with-lib-preference="local" \
 			--with-expat=system \
 			--with-libsndfile=system \
-			--with-libsoxr \
+			--with-libsoxr=system \
 			--with-midi \
 			--with-portaudio \
 			--with-portmixer=yes \
@@ -77,13 +78,6 @@ DEBUG_CONFIGURE_WITH=	debug
 
 DOCS_BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man \
 			docbook2man:textproc/docbook-utils
-
-ALSA_CONFIGURE_OFF=	--disable-alsa
-ALSA_CONFIGURE_WITH=	alsa
-ALSA_CFLAGS=		-I${LOCALBASE}/include
-ALSA_CXXFLAGS=		-I${LOCALBASE}/include
-ALSA_LDFLAGS=		-L${LOCALBASE}/lib
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 DYNLOAD_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libavcodec.pc:multimedia/ffmpeg
 DYNLOAD_BUILD_DEPENDS=	${LOCALBASE}/include/lame/lame.h:audio/lame
@@ -114,7 +108,9 @@ LAME_CPPFLAGS=		-I${LOCALBASE}/include
 LAME_LDFLAGS=		-L${LOCALBASE}/lib
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 
-LV2_CONFIGURE_WITH=	lv2
+LV2_CONFIGURE_WITH=	lv2=system
+LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv \
+			libsuil-0.so:audio/suil
 
 SBSMS_CONFIGURE_WITH=	sbsms
 
