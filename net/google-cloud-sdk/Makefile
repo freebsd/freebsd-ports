@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-sdk
-PORTVERSION=	183.0.0
+PORTVERSION=	191.0.0
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
@@ -16,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/google-cloud-sdk
 
 RUN_DEPENDS=	python:lang/python
+		py27-sqlite3:databases/py27-sqlite3
 
 post-extract:
 	@${RM} -r \
