@@ -1,0 +1,6 @@
+Harvid efficiently provides frame-accurate data and acts as second level
+cache for rendering the video-timeline in Ardour, but it is not limited to 
+that: it has applications for any task that requires a high-performance 
+frame-accurate online image extraction processor.
+
+WWW: https://x42.github.com/harvid/ 
