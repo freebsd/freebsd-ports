@@ -3,6 +3,7 @@
 
 PORTNAME=	ogdf
 PORTVERSION=	2015.05
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.ogdf.net/lib/exe/fetch.php/tech:
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
