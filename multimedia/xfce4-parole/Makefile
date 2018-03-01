@@ -3,6 +3,7 @@
 
 PORTNAME=	parole
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libnotify.so:devel/libnotify \
 		libtag.so:audio/taglib
+RUN_DEPENDS=	xdg-screensaver:devel/xdg-utils
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -24,8 +26,10 @@ CONFIGURE_ARGS=	--enable-notify-plugin \
 		--enable-tray-plugin \
 		--enable-taglib \
 		--disable-mpris2-plugin \
-		--without-html-dir
+		--without-html-dir \
+		--with-gstreamer=1.0
 USE_GNOME=	cairo gtk30 glib20 intltool intlhack
+USE_GSTREAMER1=	core faad flac wavpack rtmp x
 USE_XFCE=	panel
 USE_XORG=	ice sm x11
 USE_LDCONFIG=	yes
@@ -33,56 +37,18 @@ USES=		desktop-file-utils gettext-tools gmake libtool pkgconfig \
 		tar:bzip2 xfce:gtk3
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	CLUTTER NLS
-OPTIONS_SINGLE=	GSTREAMER
-# GST01 (GStreamer 0.10), GST10 (GStreamer 1.0)
-OPTIONS_SINGLE_GSTREAMER=	GST01 GST10
-OPTIONS_GROUP=	GST_PLUG
+OPTIONS_DEFINE=		NLS
+OPTIONS_GROUP=		GST_PLUG
 OPTIONS_GROUP_GST_PLUG=	CDDA HTTP
-# Since 0.5.91 release, GStreamer 1.0 is enabled by default
-OPTIONS_DEFAULT=	GST10 HTTP
-CLUTTER_LIB_DEPENDS=	libclutter-gst-2.0.so:multimedia/clutter-gst \
-	libclutter-gtk-1.0.so:graphics/clutter-gtk3
-CLUTTER_IMPLIES=	GST10
-CLUTTER_CONFIGURE_ENABLE=	clutter
-NLS_USES=	gettext-runtime
+OPTIONS_DEFAULT=	HTTP
+OPTIONS_SUB=		yes
+
+CDDA_USE=		gstreamer1=cdparanoia
+GST_PLUG_DESC=		Additional GStreamer plugins
+HTTP_DESC=		HTTP streaming (libsoup)
+HTTP_USE=		gstreamer1=soup
 NLS_CONFIGURE_ENABLE=	nls
-HTTP_DESC=	HTTP streaming (libsoup)
-GST01_DESC=	GStreamer 0.10
-GST10_DESC=	GStreamer 1.0
-GST_PLUG_DESC=	Additional GStreamer plugins
-CLUTTER_DESC=	Clutter (OpenGL) backend
-OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGST01}
-USE_GSTREAMER=	core faad flac wavpack
-CONFIGURE_ARGS+=--with-gstreamer=0.10
-.endif
-
-.if ${PORT_OPTIONS:MGST10}
-USE_GSTREAMER1=	core faad flac wavpack rtmp x
-CONFIGURE_ARGS+=--with-gstreamer=1.0
-.endif
-
-.if ${PORT_OPTIONS:MCDDA}
-.if ${PORT_OPTIONS:MGST01}
-USE_GSTREAMER+=	cdparanoia
-.endif
-.if ${PORT_OPTIONS:MGST10}
-USE_GSTREAMER1+= cdparanoia
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MHTTP}
-.if ${PORT_OPTIONS:MGST01}
-USE_GSTREAMER+=	soup
-.endif
-.if ${PORT_OPTIONS:MGST10}
-USE_GSTREAMER1+= soup
-.endif
-.endif
+NLS_USES=		gettext-runtime
 
 post-patch:
 # Fix .rc files path
