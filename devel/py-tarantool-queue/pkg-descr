@@ -1,7 +1,4 @@
-Python Bindings for Tarantool Queue
+Python Bindings for Tarantool Queue (https://github.com/tarantool/queue/)
 
-More details about Tarantool Queue on the page:
-https://github.com/tarantool/queue
-
-WWW: https://github.com/tarantool/tarantool-queue-python
 WWW: https://pypi.python.org/pypi/tarantool-queue
+WWW: https://github.com/tarantool/queue-python
