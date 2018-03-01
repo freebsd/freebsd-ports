@@ -1,14 +1,12 @@
-#########################################################
-#
-#
-#        After install you'll need:
-#
-#    Configuration at /etc/rc.conf:
-#
-#   * Enable tarantool on startup:
-#      tarantool_enable="YES"
-#   * Path to storage link files of instances:
-#      tarantool_instances="%%ETCDIR%%/instances.enabled"
-#
-#
-#########################################################
+========================================================================
+
+  After install, you'll need:
+
+  Configuration at /etc/rc.conf:
+
+  * Enable tarantool on startup:
+      tarantool_enable="yes"
+  * Path to storage link files of instances:
+      tarantool_instances="%%ETCDIR%%/instances.enabled"
+
+========================================================================

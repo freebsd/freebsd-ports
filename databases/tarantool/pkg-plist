@@ -1,7 +1,7 @@
 bin/tarantool
 bin/tarantoolctl
-%%ETCDIR%%/default/tarantool
-%%ETCDIR%%/instances.available/example.lua
+etc/tarantool/default/tarantool
+etc/tarantool/instances.available/example.lua
 include/tarantool/lauxlib.h
 include/tarantool/lua.h
 include/tarantool/lua.hpp
@@ -11,8 +11,74 @@ include/tarantool/lualib.h
 include/tarantool/module.h
 man/man1/tarantool.1.gz
 man/man1/tarantoolctl.1.gz
-@dir %%DATADIR%%
-@dir %%ETCDIR%%/instances.available
-@dir lib/tarantool
-@dir(%%TT_USER%%,%%TT_GROUP%%,) %%TT_DATADIR%%
-@dir(%%TT_USER%%,%%TT_GROUP%%,) %%TT_LOGDIR%%
+%%DATADIR%%/luarocks/add.lua
+%%DATADIR%%/luarocks/admin_remove.lua
+%%DATADIR%%/luarocks/build.lua
+%%DATADIR%%/luarocks/build/builtin.lua
+%%DATADIR%%/luarocks/build/cmake.lua
+%%DATADIR%%/luarocks/build/command.lua
+%%DATADIR%%/luarocks/build/make.lua
+%%DATADIR%%/luarocks/cache.lua
+%%DATADIR%%/luarocks/cfg.lua
+%%DATADIR%%/luarocks/command_line.lua
+%%DATADIR%%/luarocks/config_cmd.lua
+%%DATADIR%%/luarocks/deps.lua
+%%DATADIR%%/luarocks/dir.lua
+%%DATADIR%%/luarocks/doc.lua
+%%DATADIR%%/luarocks/download.lua
+%%DATADIR%%/luarocks/fetch.lua
+%%DATADIR%%/luarocks/fetch/cvs.lua
+%%DATADIR%%/luarocks/fetch/git.lua
+%%DATADIR%%/luarocks/fetch/git_file.lua
+%%DATADIR%%/luarocks/fetch/git_http.lua
+%%DATADIR%%/luarocks/fetch/git_https.lua
+%%DATADIR%%/luarocks/fetch/git_ssh.lua
+%%DATADIR%%/luarocks/fetch/hg.lua
+%%DATADIR%%/luarocks/fetch/hg_http.lua
+%%DATADIR%%/luarocks/fetch/hg_https.lua
+%%DATADIR%%/luarocks/fetch/hg_ssh.lua
+%%DATADIR%%/luarocks/fetch/sscm.lua
+%%DATADIR%%/luarocks/fetch/svn.lua
+%%DATADIR%%/luarocks/fs.lua
+%%DATADIR%%/luarocks/fs/lua.lua
+%%DATADIR%%/luarocks/fs/tools.lua
+%%DATADIR%%/luarocks/fs/unix.lua
+%%DATADIR%%/luarocks/fs/unix/tools.lua
+%%DATADIR%%/luarocks/fs/win32.lua
+%%DATADIR%%/luarocks/fs/win32/tools.lua
+%%DATADIR%%/luarocks/help.lua
+%%DATADIR%%/luarocks/index.lua
+%%DATADIR%%/luarocks/install.lua
+%%DATADIR%%/luarocks/lint.lua
+%%DATADIR%%/luarocks/list.lua
+%%DATADIR%%/luarocks/loader.lua
+%%DATADIR%%/luarocks/make.lua
+%%DATADIR%%/luarocks/make_manifest.lua
+%%DATADIR%%/luarocks/manif.lua
+%%DATADIR%%/luarocks/manif_core.lua
+%%DATADIR%%/luarocks/new_version.lua
+%%DATADIR%%/luarocks/pack.lua
+%%DATADIR%%/luarocks/path.lua
+%%DATADIR%%/luarocks/path_cmd.lua
+%%DATADIR%%/luarocks/persist.lua
+%%DATADIR%%/luarocks/purge.lua
+%%DATADIR%%/luarocks/refresh_cache.lua
+%%DATADIR%%/luarocks/remove.lua
+%%DATADIR%%/luarocks/repos.lua
+%%DATADIR%%/luarocks/require.lua
+%%DATADIR%%/luarocks/search.lua
+%%DATADIR%%/luarocks/show.lua
+%%DATADIR%%/luarocks/site_config.lua
+%%DATADIR%%/luarocks/tools/patch.lua
+%%DATADIR%%/luarocks/tools/tar.lua
+%%DATADIR%%/luarocks/tools/zip.lua
+%%DATADIR%%/luarocks/type_check.lua
+%%DATADIR%%/luarocks/unpack.lua
+%%DATADIR%%/luarocks/upload.lua
+%%DATADIR%%/luarocks/upload/api.lua
+%%DATADIR%%/luarocks/upload/multipart.lua
+%%DATADIR%%/luarocks/util.lua
+%%DATADIR%%/luarocks/validate.lua
+%%DATADIR%%/luarocks/write_rockspec.lua
+@dir(tarantool,tarantool,) %%TT_DATADIR%%
+@dir(tarantool,tarantool,) %%TT_LOGDIR%%

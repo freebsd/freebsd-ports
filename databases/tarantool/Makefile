@@ -2,59 +2,62 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	1.7.4.260
-PORTREVISION=	2
+PORTVERSION=	1.9.0
 CATEGORIES=	databases
-MASTER_SITES=	http://download.tarantool.org/tarantool/1.7/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	NoSQL database running in a Lua application server
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=		armv6 powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
-MAKE_JOBS_UNSAFE=yes
-USES=		cmake:noninja compiler:c++11-lang gettext gmake perl5 readline
-USE_LDCONFIG=	yes
-USE_RC_SUBR=	${PORTNAME}
-SUB_FILES=	pkg-message
-
-TT_DATADIR?=	/var/db/tarantool
-TT_RUNDIR?=	/var/run/tarantool
-TT_LOGDIR?=	/var/log/tarantool
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libicui18n.so:devel/icu \
+		libmsgpuck.so:devel/msgpuck \
+		libyaml.so:textproc/libyaml \
+		libzstd.so:archivers/zstd
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_FULL_SYSCONFDIR=${ETCDIR} \
 		-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
-		-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man \
-		-DENABLE_DIST=ON
+		-DCMAKE_INSTALL_MANDIR=${PREFIX}/man
+CMAKE_OFF=	ENABLE_BUNDLED_LIBYAML ENABLE_BUNDLED_MSGPUCK ENABLE_BUNDLED_ZSTD
+CMAKE_ON=	ENABLE_DIST
+MAKE_JOBS_UNSAFE=	yes
+USES=		cmake:noninja compiler:c++11-lang gettext-runtime gmake perl5 readline ssl
+USE_PERL5=	build
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	${PORTNAME}
+
+PLIST_SUB=	TT_DATADIR=${TT_DATADIR} \
+		TT_LOGDIR=${TT_LOGDIR}
+SUB_FILES=	pkg-message
+
+GH_TUPLE=	rtsisyk:luafun:04c99f9:luafun/third_party/luafun \
+		tarantool:luajit:b8587fa:luajit/third_party/luajit \
+		tarantool:luarocks:6e6fe62:luarocks/third_party/luarocks \
+		tarantool:small:22d1bad:small/src/lib/small \
+		tarantool:test-run:ff5fb4f:test_run/test-run
+USE_GITHUB=	yes
 
 USERS=		tarantool
 GROUPS=		tarantool
 
-SUB_LIST+=	PORTNAME=${PORTNAME} \
-	TT_USER=${USERS} \
-	TT_DATADIR=${TT_DATADIR} \
-	TT_LOGDIR=${TT_LOGDIR} \
-	TT_RUNDIR=${TT_RUNDIR}
-
-PLIST_SUB+=	TT_USER=${USERS} \
-	TT_GROUP=${GROUPS} \
-	TT_LOGDIR=${TT_LOGDIR} \
-	TT_DATADIR=${TT_DATADIR} \
-	TT_RUNDIR=${TT_RUNDIR}
+TT_DATADIR?=	/var/db/tarantool
+TT_LOGDIR?=	/var/log/tarantool
+TT_RUNDIR?=	/var/run/tarantool
 
 OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.options.mk>
+DEBUG_CMAKE_BOOL=	ENABLE_BACKTRACE
 
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_BUILD_TYPE=	RelWithDebugInfo
-CMAKE_ARGS+=	-DENABLE_BACKTRACE=ON
-.else
-CMAKE_BUILD_TYPE=	Rel
-CMAKE_ARGS+=	-DENABLE_BACKTRACE=OFF
-.endif
+post-patch:
+	@${ECHO_CMD} ${PORTVERSION}-0 > ${WRKSRC}/VERSION
+	@${GREP} -lr 'msgpuck/msgpuck.h' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|msgpuck/msgpuck.h|msgpuck.h|'
+
+post-install:
+	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/tarantool/
 
 .include <bsd.port.mk>
