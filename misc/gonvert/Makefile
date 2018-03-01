@@ -24,7 +24,7 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!/usr/bin/env python|g ; \
+	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!${PYTHON_CMD}| ; \
 		 s|/usr/share|${PREFIX}/share|g ; \
 		 s|/\.\./pixmaps/|/pixmaps/|g' ${WRKSRC}/gonvert
 
