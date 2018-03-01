@@ -22,6 +22,8 @@ RUN_DEPENDS=	\
 	rubygem-tzinfo>=1.0.0:devel/rubygem-tzinfo \
 	rubygem-tzinfo-data>=1.0.0:devel/rubygem-tzinfo-data
 
+BROKEN=		Error: RubyGem dependency msgpack < 0.6.0 is not satisfied
+
 USE_RUBY=	yes
 PLIST_FILES=	bin/fluent-cat bin/fluent-debug bin/fluent-gem bin/fluentd \
 		"@sample etc/fluentd/fluent.conf.sample"
