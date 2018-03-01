@@ -1,6 +1,7 @@
 bin/xfce4-accessibility-settings
 bin/xfce4-appearance-settings
 bin/xfce4-display-settings
+bin/xfce4-find-cursor
 bin/xfce4-keyboard-settings
 bin/xfce4-mime-settings
 bin/xfce4-mouse-settings
