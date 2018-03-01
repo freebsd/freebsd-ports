@@ -1,0 +1,4 @@
+This small library contains a series of simple tools for constructing and 
+manipulating confounded and fractional factorial designs.
+
+WWW: https://cran.r-project.org/package=conf.design
