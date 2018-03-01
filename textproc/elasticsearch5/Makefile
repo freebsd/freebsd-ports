@@ -3,7 +3,7 @@
 
 PORTNAME=	elasticsearch
 PORTVERSION=	5.6.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -14,6 +14,7 @@ COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash>0:shells/bash \
 		jna>0:devel/jna
 
