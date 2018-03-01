@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	${TR_VER}
-PORTREVISION=	1
+PORTVERSION=	20160226	# 0.1.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	php5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PECL PHP driver for Tarantool/Box
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	PECL PHP driver for Tarantool
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:ext
+
+CONFIGURE_ARGS=	--with-tarantool
+IGNORE_WITH_PHP=70 71 72
+
 USE_GITHUB=	yes
-
 GH_PROJECT=	${PORTNAME}-php
-GH_TAGNAME=	c1c5d5f
-TR_VER=		20151222
-IGNORE_WITH_PHP=	70 71 72
-
-CONFIGURE_ARGS+=	--with-tarantool
+GH_TAGNAME=	0.1.0
 
 .include <bsd.port.mk>
