@@ -486,7 +486,10 @@ DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
 MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_GITHUB:S@%SUBDIR%@${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}/tar.gz/${GH_TAGNAME_${_group}}?dummy=/:${_group}@}
 WRKSRC_${_group}:=	${WRKDIR}/${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_EXTRACT}
 .      if !empty(GH_SUBDIR_${_group})
-_SITES_extract:=	${_SITES_extract} 690:post-extract-gh-${_group}
+# In order to sort the subdir extraction so that foo/bar is moved in before
+# foo/bar/baz, we count the number of / in the path and use it to order the
+# targets.  This handles up to 9 levels.  The max as of r463123 is 4.
+_SITES_extract:=	${_SITES_extract} 69${GH_SUBDIR_${_group}:C=[^/]+= =g:range:[-1]}:post-extract-gh-${_group}
 post-extract-gh-${_group}:
 	@${RMDIR} ${WRKSRC}/${GH_SUBDIR_${_group}} 2>/dev/null || :
 	@${MKDIR} ${WRKSRC}/${GH_SUBDIR_${_group}:H} 2>/dev/null || :
