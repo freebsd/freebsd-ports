@@ -701,7 +701,8 @@ CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_nginx_tarantool}
 .else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_nginx_tarantool}
 .endif
-EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-ngx_http_tarantool-config
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config \
+		${PATCHDIR}/extra-patch-ngx_http_tarantool-src-tp_transcode.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_SECURE_LINK}
