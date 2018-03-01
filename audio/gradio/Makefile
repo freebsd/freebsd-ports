@@ -17,7 +17,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		gettext meson pkgconfig sqlite
+USES=		gettext meson pkgconfig python:3.4+,env sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	haecker-felix
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
@@ -26,4 +26,9 @@ INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	de.haeckerfelix.gradio.gschema.xml
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,python3,${PYTHON_CMD}," ${WRKSRC}/meson_post_install.sh
+
+.include <bsd.port.post.mk>
