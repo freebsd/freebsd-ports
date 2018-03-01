@@ -17,8 +17,6 @@
 #               Set it to required group.
 # elasticsearch_config (path):   Set to %%PREFIX%%/etc/elasticsearch/elasticsearch.yml by default.
 #               Set it to the config file location.
-# elasticsearch_tmp (path):  Set to /var/tmp/elasticsearch by default.
-#		Set it to the path to be used for temp files.
 #
 . /etc/rc.subr
 
@@ -31,7 +29,6 @@ load_rc_config ${name}
 : ${elasticsearch_user=elasticsearch}
 : ${elasticsearch_group=elasticsearch}
 : ${elasticsearch_config=%%PREFIX%%/etc/elasticsearch}
-: ${elasticsearch_tmp=/var/tmp/elasticsearch}
 
 required_files="${elasticsearch_config}/elasticsearch.yml"
 _pidprefix=/var/run/elasticsearch
@@ -42,12 +39,13 @@ extra_commands="console status"
 console_cmd=elasticsearch_console
 start_precmd=elasticsearch_precmd
 command=%%PREFIX%%/lib/elasticsearch/bin/elasticsearch
-command_args="-d --pidfile=${pidfile} -Epath.conf=${elasticsearch_config}"
+command_args="-d --pidfile=${pidfile}"
+
+export ES_PATH_CONF=${elasticsearch_config}
 
 elasticsearch_precmd()
 {
     /usr/bin/install -o ${elasticsearch_user} -g ${elasticsearch_group} /dev/null ${pidfile}
-    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 ${elasticsearch_tmp}
     /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 /var/db/elasticsearch
     /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 /var/log/elasticsearch
 }
@@ -66,15 +64,12 @@ if [ -n "$2" ]; then
             echo "You must define a configuration  (elasticsearch_${profile}_config)"
             exit 1
         fi
+	export ES_PATH_CONF=${elasticsearch_config}
         required_files="${elasticsearch_config}/elasticsearch.yml"
         required_files="${elasticsearch_config}/jvm.options"
         eval elasticsearch_enable="\${elasticsearch_${profile}_enable:-${elasticsearch_enable}}"
-        eval elasticsearch_tmp="\${elasticsearch_${profile}_args:-${elasticsearch_tmp}}"
         pidfile="${_pidprefix}.${profile}.pid"
-	if [ -e ${elasticsearch_config}/jvm.options ]; then
-		export ES_JVM_OPTIONS=${elasticsearch_config}/jvm.options
-	fi
-	command_args="-d --pidfile=${pidfile} -Epath.conf=${elasticsearch_config}"
+	command_args="-d --pidfile=${pidfile}"
 	echo "===> elasticsearch profile: ${profile}"
     else
         echo "$0: extra argument ignored"

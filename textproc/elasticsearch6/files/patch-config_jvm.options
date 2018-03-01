@@ -1,0 +1,11 @@
+--- config/jvm.options.orig	2018-03-01 23:04:45 UTC
++++ config/jvm.options
+@@ -87,7 +87,7 @@
+ 8:-XX:+PrintGCDateStamps
+ 8:-XX:+PrintTenuringDistribution
+ 8:-XX:+PrintGCApplicationStoppedTime
+-8:-Xloggc:logs/gc.log
++8:-Xloggc:${ES_TMPDIR}/gc.log
+ 8:-XX:+UseGCLogFileRotation
+ 8:-XX:NumberOfGCLogFiles=32
+ 8:-XX:GCLogFileSize=64m
