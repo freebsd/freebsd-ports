@@ -12,8 +12,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Bitstream Vera TrueType font collection
 
-USES=	fonts tar:bzip2
+LICENSE=	BITSTREAM_VERA
+LICENSE_NAME=	Bitstream Vera Fonts Copyright
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT.TXT
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+USES=		fonts tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
@@ -23,6 +29,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.TXT ${STAGEDIR}${FONTSDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.TXT ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/RELEASENOTES.TXT ${STAGEDIR}${DOCSDIR}
