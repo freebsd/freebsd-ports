@@ -1,10 +1,10 @@
 lib/ipsec/libcharon.la
 lib/ipsec/libcharon.so
 lib/ipsec/libcharon.so.0
-lib/ipsec/libtpmtss.la
-lib/ipsec/libtpmtss.so
-lib/ipsec/libtpmtss.so.0
-lib/ipsec/libtpmtss.so.0.0.0
+%%TPM%%lib/ipsec/libtpmtss.la
+%%TPM%%lib/ipsec/libtpmtss.so
+%%TPM%%lib/ipsec/libtpmtss.so.0
+%%TPM%%lib/ipsec/libtpmtss.so.0.0.0
 lib/ipsec/libstrongswan.la
 lib/ipsec/libstrongswan.so
 lib/ipsec/libstrongswan.so.0
@@ -23,6 +23,8 @@ lib/ipsec/plugins/libstrongswan-cmac.la
 lib/ipsec/plugins/libstrongswan-cmac.so
 lib/ipsec/plugins/libstrongswan-constraints.la
 lib/ipsec/plugins/libstrongswan-constraints.so
+lib/ipsec/plugins/libstrongswan-counters.la
+lib/ipsec/plugins/libstrongswan-counters.so
 lib/ipsec/plugins/libstrongswan-curve25519.la
 lib/ipsec/plugins/libstrongswan-curve25519.so
 lib/ipsec/plugins/libstrongswan-des.la
@@ -111,6 +113,7 @@ sbin/charon-cmd
 %%DATADIR%%/templates/config/plugins/blowfish.conf
 %%DATADIR%%/templates/config/plugins/cmac.conf
 %%DATADIR%%/templates/config/plugins/constraints.conf
+%%DATADIR%%/templates/config/plugins/counters.conf
 %%DATADIR%%/templates/config/plugins/curve25519.conf
 %%DATADIR%%/templates/config/plugins/des.conf
 %%DATADIR%%/templates/config/plugins/dnskey.conf
@@ -171,12 +174,16 @@ man/man8/charon-cmd.8.gz
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka-3gpp2.so
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.la
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.so
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-mgf1.la
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-mgf1.so
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka-3gpp2.conf
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka-3gpp2.conf.sample
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka.conf
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka.conf.sample
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/gmp.conf
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
+%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/mgf1.conf
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/mgf1.conf.sample
 %%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.la
 %%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.so
 %%EAPDYNAMIC%%%%DATADIR%%/templates/config/plugins/eap-dynamic.conf
@@ -279,6 +286,7 @@ man/man8/charon-cmd.8.gz
 %%SWANCTL%%man/man8/swanctl.8.gz
 %%SWANCTL%%@sample %%ETCDIR%%.d/swanctl.conf.sample
 %%SWANCTL%%@sample etc/swanctl/swanctl.conf.sample
+%%TPM%%bin/tpm_extendpcr
 %%TPM%%@sample %%ETCDIR%%.d/charon/tpm.conf.sample
 %%TPM%%lib/ipsec/plugins/libstrongswan-tpm.la
 %%TPM%%lib/ipsec/plugins/libstrongswan-tpm.so
@@ -317,6 +325,7 @@ man/man8/charon-cmd.8.gz
 @sample %%ETCDIR%%.d/charon/blowfish.conf.sample
 @sample %%ETCDIR%%.d/charon/cmac.conf.sample
 @sample %%ETCDIR%%.d/charon/constraints.conf.sample
+@sample %%ETCDIR%%.d/charon/counters.conf.sample
 @sample %%ETCDIR%%.d/charon/curve25519.conf.sample
 @sample %%ETCDIR%%.d/charon/des.conf.sample
 @sample %%ETCDIR%%.d/charon/dnskey.conf.sample
