@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parole
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -14,9 +13,10 @@ COMMENT=	Lightweight media player for Xfce4 based on GStreamer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtag.so:audio/taglib \
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
 		libnotify.so:devel/libnotify \
-		libdbus-glib-1.so:devel/dbus-glib
+		libtag.so:audio/taglib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -25,9 +25,9 @@ CONFIGURE_ARGS=	--enable-notify-plugin \
 		--enable-taglib \
 		--disable-mpris2-plugin \
 		--without-html-dir
-USE_GNOME=	gtk30 glib20 intltool intlhack
+USE_GNOME=	cairo gtk30 glib20 intltool intlhack
 USE_XFCE=	panel
-USE_XORG=	x11 sm
+USE_XORG=	ice sm x11
 USE_LDCONFIG=	yes
 USES=		desktop-file-utils gettext-tools gmake libtool pkgconfig \
 		tar:bzip2 xfce:gtk3
