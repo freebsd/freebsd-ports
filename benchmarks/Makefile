@@ -3,6 +3,7 @@
 
     COMMENT = Benchmarking tools
 
+    SUBDIR += apib
     SUBDIR += autobench
     SUBDIR += blogbench
     SUBDIR += bombardier
