@@ -100,6 +100,7 @@ share/icons/hicolor/scalable/apps/audacity.svg
 %%NLS%%share/locale/el/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/es/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/audacity.mo
+%%NLS%%share/locale/eu_ES/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacity.mo
