@@ -182,6 +182,7 @@
     SUBDIR += py-scipy
     SUBDIR += py-scoria
     SUBDIR += py-tensorflow
+    SUBDIR += py-veusz
     SUBDIR += py-ws2300
     SUBDIR += pybrain
     SUBDIR += pycdf
@@ -206,7 +207,6 @@
     SUBDIR += tfel
     SUBDIR += udunits
     SUBDIR += v_sim
-    SUBDIR += veusz
     SUBDIR += vmd
     SUBDIR += voro++
     SUBDIR += xfce4-equake-plugin
