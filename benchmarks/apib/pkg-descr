@@ -1,0 +1,16 @@
+apib is a tool that makes it easy to test API servers.  It is supported
+on Unix systems that include the Apache Portable Runtime and OpenSSL.
+
+apib has most of the features of Apache Bench (ab), but is also intended
+to be a more modern replacement.  In particular, it supports:
+
+  - Proper HTTP 1.1 support including keep-alives and chunked encoding
+  - Ability to spawn multiple I/O threads to take advantage of multiple
+    CPU cores
+  - Non-blocking I/O for high concurrency
+  - Support for POST and PUT of large objects
+  - Support for OAuth 1.0 signatures
+  - Ability to output results to a file so they may be automated
+  - Remote CPU monitoring
+
+WWW: https://github.com/apigee/apib
