@@ -225,6 +225,15 @@
        soname_spec='$libname$release$shared_ext$major'
        need_version=no
        need_lib_prefix=no
+@@ -34697,7 +34697,7 @@ $as_echo_n "checking Qt version $ver... 
+   case "$qt_version" in
+     4)
+       QT_MODULES="QtCore QtGui QtNetwork QtOpenGL"
+-      octave_qscintilla_libnames=qscintilla2
++      octave_qscintilla_libnames=qscintilla2_qt4
+     ;;
+     5)
+       QT_MODULES="Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport"
 @@ -35738,7 +35738,7 @@ esac
  fi
  
