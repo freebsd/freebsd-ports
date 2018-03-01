@@ -4,5 +4,5 @@ include/libmspub-0.1/libmspub/MSPUBDocument.h
 include/libmspub-0.1/libmspub/libmspub.h
 lib/libmspub-0.1.so
 lib/libmspub-0.1.so.1
-lib/libmspub-0.1.so.1.0.3
+lib/libmspub-0.1.so.1.0.4
 libdata/pkgconfig/libmspub-0.1.pc
