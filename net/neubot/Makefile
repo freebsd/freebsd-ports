@@ -3,19 +3,22 @@
 
 PORTNAME=	neubot
 PORTVERSION=	0.4.16.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://releases.neubot.org/_packages/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Measures neutrality of your network connection in the background
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		python:2.7 shebangfix
+SHEBANG_FILES=	UNIX/bin/neubot
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USERS=		_neubot
 GROUPS=		_neubot
@@ -38,9 +41,11 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 	${RM} -r ${STAGEDIR}${LSTATEDIR}
 	(cd ${STAGEDIR}${PREFIX} \
-	&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-	-d ${PREFIX} -f ${DATADIR:S;${PREFIX}/;;})
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+		&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PREFIX} -f ${DATADIR:S;${PREFIX}/;;})
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
