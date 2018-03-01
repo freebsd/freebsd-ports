@@ -241,6 +241,7 @@ include/postgresql/server/executor/spi.h
 include/postgresql/server/executor/spi_priv.h
 include/postgresql/server/executor/tstoreReceiver.h
 include/postgresql/server/executor/tuptable.h
+include/postgresql/server/fe_utils/connect.h
 include/postgresql/server/fmgr.h
 include/postgresql/server/foreign/fdwapi.h
 include/postgresql/server/foreign/foreign.h

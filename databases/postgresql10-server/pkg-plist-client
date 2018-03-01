@@ -309,6 +309,7 @@ include/postgresql/server/executor/tablefunc.h
 include/postgresql/server/executor/tqueue.h
 include/postgresql/server/executor/tstoreReceiver.h
 include/postgresql/server/executor/tuptable.h
+include/postgresql/server/fe_utils/connect.h
 include/postgresql/server/fe_utils/mbprint.h
 include/postgresql/server/fe_utils/print.h
 include/postgresql/server/fe_utils/psqlscan.h
@@ -1048,6 +1049,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ja/LC_MESSAGES/pg_config-10.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pg_dump-10.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pgscripts-10.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/psql-10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/ecpg-10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/ecpglib6-10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/libpq5-10.mo
@@ -1091,6 +1093,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/tr/LC_MESSAGES/libpq5-10.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pg_config-10.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pg_dump-10.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pgscripts-10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpg-10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpglib6-10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libpq5-10.mo
