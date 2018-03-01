@@ -3,6 +3,7 @@
 
 PORTNAME=	maradns
 PORTVERSION=	2.0.14
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://maradns.samiam.org/download/2.0/${PORTVERSION}/\
 		SF/${PORTNAME}/MaraDNS/${PORTVERSION}/
@@ -20,11 +21,11 @@ MAKE_ENV=	FLAGS="${CFLAGS}"
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME} zoneserver Deadwood
-USES=		tar:bz2 shebangfix
+USES=		tar:bz2 python:2.7,run shebangfix
 USERS=		bind
 GROUPS=		bind
 INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}
-SHEBANG_FILES=	${WRKSRC}/tools/bind2csv2.py
+SHEBANG_FILES=	tools/bind2csv2.py
 
 OPTIONS_DEFINE=	IPV6 DOCS EXAMPLES CONV
 OPTIONS_SUB=	yes
