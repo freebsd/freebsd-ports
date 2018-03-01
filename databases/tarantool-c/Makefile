@@ -1,23 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool-c
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C client for Tarantool 1.6+
+
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck
 
+CMAKE_OFF=	ENABLE_BUNDLED_MSGPUCK
+USES=		cmake
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tarantool
-GH_TAGNAME=	a251965
-
-USES=		cmake
-CMAKE_ARGS=	-DENABLE_BUNDLED_MSGPUCK=false
+GH_TAGNAME=	7bb49a1
 
 post-patch:
-	@${REINPLACE_CMD} -e '/-O3 -march=native/d' ${WRKSRC}/CMakeLists.txt
+	@${GREP} -lr 'msgpuck/msgpuck.h' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|msgpuck/msgpuck.h|msgpuck.h|'
 
 .include <bsd.port.mk>
