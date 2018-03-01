@@ -13,14 +13,17 @@ COMMENT=	Console Jabber Client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=0:net-im/py-pyxmpp@${PY_FLAVOR}
+DEPRECATED=	Depends on expired net-im/py-xmpp
+EXPIRATION_DATE=2018-04-01
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Jajcus
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=0:net-im/py-pyxmpp@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix
 SHEBANG_FILES=	cjc.in cjc.py cjc/main.py
 NO_ARCH=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Jajcus
 
 PORTDOCS=	*
 
