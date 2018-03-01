@@ -626,6 +626,7 @@
     SUBDIR += php56-pgsql
     SUBDIR += php56-sqlite3
     SUBDIR += php56-sybase_ct
+    SUBDIR += php7-tarantool
     SUBDIR += php70-dba
     SUBDIR += php70-interbase
     SUBDIR += php70-memcache
