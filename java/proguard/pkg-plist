@@ -1,6 +1,7 @@
 bin/proguard
 bin/proguard-gui
 bin/retrace
+%%DATADIR%%/annotations.jar
 %%DATADIR%%/proguard.jar
 %%DATADIR%%/proguardgui.jar
 %%DATADIR%%/retrace.jar
