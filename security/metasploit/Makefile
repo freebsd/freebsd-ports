@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.16.41
+PORTVERSION=	4.16.43
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
