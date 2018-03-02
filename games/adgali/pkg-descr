@@ -1,9 +1,0 @@
-Adgali is an open source game library useful for 2D game development. It
-uses the SDL library for the bitmap, sounds and events, which provides
-accelerated and portable interfaces to the video and sound hardware.
-
-This library provides useful functions for bitmap and sprite display, game
-GUI, sound events and music, generic AI engine, network management and video
-streaming.
-
-WWW: http://adgali.apiou.org/

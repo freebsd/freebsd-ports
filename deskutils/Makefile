@@ -22,7 +22,6 @@
     SUBDIR += calibre
     SUBDIR += cartotheque
     SUBDIR += cdcat
-    SUBDIR += charmap
     SUBDIR += charmtimetracker
     SUBDIR += clipit
     SUBDIR += conduit

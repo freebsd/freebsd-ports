@@ -1,6 +1,0 @@
-Adime is a portable add-on library for Allegro with functions for generating
-Allegro dialogs in a very simple way. Its main purpose is to give as easy an
-API as possible to people who want dialogs for editing many kinds of input
-data.
-
-WWW: http://adime.sourceforge.net/

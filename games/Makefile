@@ -23,7 +23,6 @@
     SUBDIR += abuse_sdl
     SUBDIR += ace-of-penguins
     SUBDIR += acm
-    SUBDIR += adgali
     SUBDIR += adom
     SUBDIR += adonthell
     SUBDIR += aestats
@@ -1012,7 +1011,6 @@
     SUBDIR += tuxpaint-config
     SUBDIR += tuxpaint-fonts
     SUBDIR += tuxpaint-stamps
-    SUBDIR += tuxpuck
     SUBDIR += tuxracer
     SUBDIR += tuxtype
     SUBDIR += twind

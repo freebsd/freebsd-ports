@@ -10142,3 +10142,17 @@ sysutils/rubygem-bosh_cli||2018-02-28|Has expired: Use net/bosh-cli (CLI v2) ins
 www/rubygem-gon-rails4||2018-02-28|Has expired: It is actually www/rubygem-gon with PKGNAMESUFFIX
 science/veusz|science/py-veusz|2018-03-01|Rename to match our py- port naming
 security/obfsproxy|security/py-obfsproxy-tor|2018-03-01|Rename to match our py- port naming
+devel/dotconf++||2018-03-02|Has expired: No upstream, not depend on in the ports tree
+emulators/gnuboy||2018-03-02|Has expired: Latest version is 1.0.5, older version does not fetch
+games/adgali||2018-03-02|Has expired: Mastersite disappeared
+games/tuxpuck||2018-03-02|Has expired: Mastersite disappeared
+japanese/migemo-emacs||2018-03-02|Has expired: Unmaintained
+math/clarence||2018-03-02|Has expired: Mastersite disappeared
+devel/cstringbuffer||2018-03-02|Has expired: Abandonware, no more upstream
+deskutils/charmap||2018-03-02|Has expired: Mastersite disappeared
+devel/afay||2018-03-02|Has expired: Abandonware, not used in the ports tree
+devel/alabastra||2018-03-02|Has expired: Abandonware, not used in the ports tree
+devel/adime||2018-03-02|Has expired: Abandonware, not used in the ports tree
+devel/boaconstructor||2018-03-02|Has expired: Abandonware, does not work with recent python/wxPython
+audio/amp||2018-03-02|Has expired: No more upstream
+devel/alf||2018-03-02|Has expired: Abandonware, unused in the ports tree

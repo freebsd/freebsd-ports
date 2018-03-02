@@ -1,5 +1,0 @@
-cStringBuffer is a library designed to make file I/O to strings easier
-and more platform-neutral. It performs memory management on strings,
-as well as permits typical string operations.
-
-WWW: http://www.translator.cx/software/csb.html

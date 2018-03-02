@@ -49,7 +49,6 @@
     SUBDIR += gngb
     SUBDIR += gngeo
     SUBDIR += gns3
-    SUBDIR += gnuboy
     SUBDIR += gxemul
     SUBDIR += hatari
     SUBDIR += hercules

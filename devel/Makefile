@@ -82,14 +82,10 @@
     SUBDIR += adabooch
     SUBDIR += adacurses
     SUBDIR += adaid
-    SUBDIR += adime
     SUBDIR += aegis
-    SUBDIR += afay
     SUBDIR += ahven
     SUBDIR += aifad
-    SUBDIR += alabastra
     SUBDIR += ald
-    SUBDIR += alf
     SUBDIR += allegro
     SUBDIR += allegro-devel
     SUBDIR += alog
@@ -207,7 +203,6 @@
     SUBDIR += bmake
     SUBDIR += bmkdep
     SUBDIR += bnf
-    SUBDIR += boaconstructor
     SUBDIR += boehm-gc
     SUBDIR += boehm-gc-redirect
     SUBDIR += boehm-gc-threaded
@@ -366,7 +361,6 @@
     SUBDIR += csmith
     SUBDIR += csoap
     SUBDIR += cssc
-    SUBDIR += cstringbuffer
     SUBDIR += ctags
     SUBDIR += ctypes.sh
     SUBDIR += cunit
@@ -458,7 +452,6 @@
     SUBDIR += doctorj
     SUBDIR += dolphin-plugins-kde4
     SUBDIR += dotconf
-    SUBDIR += dotconf++
     SUBDIR += doxygen
     SUBDIR += dparser
     SUBDIR += dprog
