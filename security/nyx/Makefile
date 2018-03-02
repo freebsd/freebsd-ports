@@ -14,11 +14,11 @@ COMMENT=	Command-line monitor for Tor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stem>=1.6.0:security/py-stem@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stem>=1.6.0:security/py-stem@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist noflavors
+USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
 PLIST_FILES=	man/man1/nyx.1.gz
