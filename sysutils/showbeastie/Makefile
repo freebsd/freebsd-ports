@@ -45,12 +45,14 @@ pre-patch:
 		-cf - . | ${TAR} -C ${WRKSRC}/.. -xf -
 
 post-patch:
-	${REINPLACE_CMD} 's|-I.*/\.\./common|-I${SRC_STAND}/common|g' \
+	@${REINPLACE_CMD} 's|-I.*/\.\./common|-I${SRC_STAND}/common|g' \
 		${WRKSRC}/Makefile
-
+	@if [ -f "${WRKSRC}/../defs.mk" ]; then \
+		${REINPLACE_CMD} '/jagged-little-pill/d' ${WRKSRC}/../defs.mk \
+	; fi
 # Make sure building on FreeBSD 11.0/i386 works. Calls to biospci_* are not
 # needed for this program.
-	${REINPLACE_CMD} 's|ifdef __i386__|if 0|g' ${WRKSRC}/loader.c
+	@${REINPLACE_CMD} 's|ifdef __i386__|if 0|g' ${WRKSRC}/loader.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/testmain ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
