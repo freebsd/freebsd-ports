@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	20160226	# 0.1.0
+PORTVERSION=	0.1.0
+PORTEPOCH=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	php5-
 
@@ -19,6 +20,5 @@ IGNORE_WITH_PHP=70 71 72
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-php
-GH_TAGNAME=	0.1.0
 
 .include <bsd.port.mk>
