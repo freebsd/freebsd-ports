@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/CGI::Application.3.gz
-%%PERL5_MAN3%%/CGI::Application::Mailform.3.gz
 %%SITE_PERL%%/CGI/Application.pm
 %%SITE_PERL%%/CGI/Application/Mailform.pm
+%%PERL5_MAN3%%/CGI::Application.3.gz
+%%PERL5_MAN3%%/CGI::Application::Mailform.3.gz
