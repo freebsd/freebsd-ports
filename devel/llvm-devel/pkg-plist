@@ -595,6 +595,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Sema/SemaLambda.h
 %%CLANG%%llvm-devel/include/clang/Sema/Template.h
 %%CLANG%%llvm-devel/include/clang/Sema/TemplateDeduction.h
+%%CLANG%%llvm-devel/include/clang/Sema/TemplateInstCallback.h
 %%CLANG%%llvm-devel/include/clang/Sema/TypoCorrection.h
 %%CLANG%%llvm-devel/include/clang/Sema/Weak.h
 %%CLANG%%llvm-devel/include/clang/Serialization/ASTBitCodes.h
@@ -1895,6 +1896,7 @@ llvm-devel/include/llvm/MC/MCAsmInfoDarwin.h
 llvm-devel/include/llvm/MC/MCAsmInfoELF.h
 llvm-devel/include/llvm/MC/MCAsmInfoWasm.h
 llvm-devel/include/llvm/MC/MCAsmLayout.h
+llvm-devel/include/llvm/MC/MCAsmMacro.h
 llvm-devel/include/llvm/MC/MCAssembler.h
 llvm-devel/include/llvm/MC/MCCodeEmitter.h
 llvm-devel/include/llvm/MC/MCCodePadder.h
@@ -2340,6 +2342,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/linux_syscall_hooks.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/lsan_interface.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/msan_interface.h
+%%COMPILER_RT%%llvm-devel/include/sanitizer/netbsd_syscall_hooks.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/scudo_interface.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/tsan_interface.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/tsan_interface_atomic.h
