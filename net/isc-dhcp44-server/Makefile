@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	dhcp
-PORTVERSION=	4.4.0b1
+ISCVERSION=	4.4.1
+PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 PORTREVISION=	${DHCP_PORTREVISION}
 CATEGORIES=	net
 MASTER_SITES=	ISC/${PORTNAME}/${PORTVERSION:S/P/-P/g} \
 		ZI
 PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	44-${SUBSYS}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/-P/g}
+DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT?=	ISC Dynamic Host Configuration Protocol server
@@ -18,23 +19,24 @@ LICENSE=	MPL20
 
 USES=		gmake
 
-FORBIDDEN=	Serious flaw in 4.4.0 dhcpd, please wait for 4.4.1
-
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	0
 PORTREVISION_CLIENT=	0
 PORTREVISION_RELAY=	0
 
 SUBSYS?=	server
 
 OPTIONS_DEFINE=	IPV6
+OPTIONS_SUB=	yes
 
 .if ${SUBSYS} == server
-OPTIONS_DEFINE+=	PARANOIA LDAP LDAP_SSL BIND_SYMBOLS DHCP4O6
+OPTIONS_DEFINE+=	PARANOIA LDAP LDAP_SSL BIND_SYMBOLS DHCP4O6 \
+			BINLEASES
 OPTIONS_DEFAULT+=	PARANOIA LDAP_SSL
 DHCP4O6_DESC=		Enable DHCPv4-over-DHCPv6 (TSV)
 PARANOIA_DESC=		Enable support for chroot
 LDAP_SSL_DESC=		Support LDAP over SSL/TLS
 BIND_SYMBOLS_DESC=	Enable BIND internal symbol table
+BINLEASES_DESC=		Enable support for binary insertion of leases
 .endif
 
 # PORTREVISION and CONFLICTS handling
@@ -59,8 +61,6 @@ MAN_COMPRESSED=	no
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-D_PATH_DHCLIENT_SCRIPT='\"${PREFIX}/sbin/dhclient-script\"' -D_PATH_DHCLIENT_CONF='\"${PREFIX}/etc/dhclient.conf\"' -D_PATH_DHCPD_CONF='\"${PREFIX}/etc/dhcpd.conf\"'
 SCRIPTS_ENV+=	PKG_PREFIX=${PREFIX}
-
-.include <bsd.port.options.mk>
 
 .if ${SUBSYS} == server
 CONFIGURE_ARGS+=--localstatedir=/var
@@ -87,16 +87,23 @@ REINPLACE_SUB=	PREFIX="${PREFIX}"
 PKGMESSAGE_SUB=	PREFIX="${PREFIX}" MAN1PREFIX="${MAN1PREFIX}" \
 		DOCSDIR="${DOCSDIR}"
 
-.if ${PORT_OPTIONS:MPARANOIA}
-CONFIGURE_ARGS+=--enable-paranoia --enable-early-chroot
-SUB_LIST+=	PARANOIA="yes"
-.else
-SUB_LIST+=	PARANOIA="no"
-.endif
+BINLEASES_CONFIGURE_ENABLE=	binary-leases
+PARANOIA_CONFIGURE_ENABLE=	paranoia early-chroot
+PARANOIA_CONFIGURE_VARS=	PARANOIAOPT="yes"
+PARANOIA_CONFIGURE_VARS_OFF=	PARANOIAOPT="no"
+LDAP_CONFIGURE_WITH=		ldap ldapcrypto
+LDAP_USE=			OPENLDAP
+LDAP_USES=			shebangfix
+LDAP_SSL_CONFIGURE_WITH=	ldapcrypto
+LDAP_SSL_USES=			ssl
+LDAP_SSL_VARS=			LIBS+=-lssl
+IPV6_CONFIGURE_ENABLE=		dhcpv6
+DHCP4O6_CONFIGURE_ENABLE=	dhcpv4o6
+BIND_SYMBOLS_USES=		perl5
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=--with-ldap --with-ldapcrypto
-USE_OPENLDAP=	yes
 LDAP_SCRIPT=	${WRKSRC}/contrib/ldap/dhcpd-conf-to-ldap
 LDAP_SCHEMA=	${WRKSRC}/contrib/ldap/dhcp.schema
 LDAP_README=	${WRKSRC}/contrib/ldap/README.ldap
@@ -104,38 +111,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIBS+=		-L${LOCALBASE}/lib
 PORTDOCS+=	README.ldap
 PLIST_SUB+=	SCHEMA_DIR="${SCHEMA_DIR:S,^${PREFIX}/,,}" LDAP=""
-USES+=		shebangfix
 SHEBANG_FILES=	contrib/ldap/dhcpd-conf-to-ldap
-.else
-PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MLDAP_SSL} && ${PORT_OPTIONS:MLDAP}
-USES+=		ssl
-CONFIGURE_ARGS+=--with-ldapcrypto
-LIBS+=		-lssl
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--enable-dhcpv6
-PLIST_SUB+=	IPV6=""
-.else
-CONFIGURE_ARGS+=--disable-dhcpv6
-PLIST_SUB+=	IPV6="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDHCP4O6}
-CONFIGURE_ARGS+=--enable-dhcpv4o6
-PLIST_SUB+=	DHCP4O6=""
-.else
-CONFIGURE_ARGS+=--disable-dhcpv4o6
-PLIST_SUB+=	DHCP4O6="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MBIND_SYMBOLS}
-USES+=		perl5
-.else
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bind_Makefile.in
+.if empty(PORT_OPTIONS:MBIND_SYMBOLS)
+EXTRA_PATCHES+=${PATCHDIR}/extra-patch-bind_Makefile.in
 .endif
 
 post-patch:
