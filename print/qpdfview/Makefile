@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/226592308/ \
 		https://launchpad.net/${PORTVERSION}/trunk/${PORTVERSION}/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Tabbed DjVu/PDF/PS document viewer
 
 LICENSE=	GPLv2+
