@@ -1,3 +1,3 @@
-TIMESTAMP = 1518803205
-SHA256 (PlexMediaServer-1.11.3.4803-c40bba82e-freebsd-amd64.tar.bz2) = d1e1cfa662134b3031f71fdfeff36f94cfb3f3f4484052bf0a389afc24a9f82c
-SIZE (PlexMediaServer-1.11.3.4803-c40bba82e-freebsd-amd64.tar.bz2) = 85791545
+TIMESTAMP = 1520002176
+SHA256 (PlexMediaServer-1.12.0.4829-6de959918-freebsd-amd64.tar.bz2) = a00f2cfea8a90b1681c987550a1d628a041f9d40af5451094d259a56843b65c0
+SIZE (PlexMediaServer-1.12.0.4829-6de959918-freebsd-amd64.tar.bz2) = 85758192
