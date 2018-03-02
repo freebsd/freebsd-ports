@@ -1,0 +1,6 @@
+Microcode utility for BSD.
+
+As of March 2018, it is still work in progress
+but should do its job for most cases already.
+
+WWW: https://github.com/kernschmelze/cpupdate

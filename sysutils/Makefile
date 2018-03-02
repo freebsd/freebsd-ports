@@ -200,6 +200,7 @@
     SUBDIR += cpuburn
     SUBDIR += cpuid
     SUBDIR += cpulimit
+    SUBDIR += cpupdate
     SUBDIR += cramfs
     SUBDIR += crashme
     SUBDIR += createrepo
