@@ -14,11 +14,4 @@ sysctl security.bsd.unprivileged_mlock=1
 
 to prevent the process from failing the bootstrap.
 
-Do note that you need to set
-
-bootstrap.system_call_filter: false
-
-in your elasticsearch.yml file to successfully bootstrap on non-Linux
-OSes now.
-
 ======================================================================
