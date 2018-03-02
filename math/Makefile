@@ -137,7 +137,6 @@
     SUBDIR += cgal
     SUBDIR += chaco
     SUBDIR += chryzodus
-    SUBDIR += clarence
     SUBDIR += clasp
     SUBDIR += clblas
     SUBDIR += clblast

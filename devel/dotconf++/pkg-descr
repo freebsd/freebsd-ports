@@ -1,6 +1,0 @@
-dotconf++ is a dotconf like configuration file parser written in C++.
-It supports macro substitution from the environment or from the file
-itself, config file inclusion, easy handling of XML like tags,
-checking for required tags, and more.
-
-WWW: http://voodoo.com.ua/dotconfpp.html
