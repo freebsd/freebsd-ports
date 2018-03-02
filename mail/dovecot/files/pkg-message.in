@@ -17,9 +17,9 @@
 
 ---------------------------------------------------------------------
 
-To avoid a risk of mailbox corruption, do not enable the
-security.bsd.see_other_uids or .see_other_guids sysctls if Dovecot
-is storing mail for multiple concurrent users (PR 218392).
+To avoid a risk of mailbox corruption, do not set the
+security.bsd.see_other_uids or .see_other_gids sysctls to 0
+if Dovecot is storing mail for multiple concurrent users (PR 218392).
 
 ---------------------------------------------------------------------
 
