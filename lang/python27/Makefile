@@ -14,21 +14,12 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-# lang/python* ports use CPPFLAGS over CFLAGS due to multiple complex
-# *FLAGS and include ordering bugs/issues in the Python build, that cause
-# modules such as elementtree and pyexpat to fail to build, among other
-# difficult to isolate issues. Do not add to or modify global variables
-# unless the implications and pitfalls are completely understood.
-# See: https://bugs.python.org/issue6299#msg210189
-
 USES=		cpe ncurses pathfix pkgconfig readline:port shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
+CFLAGS+=	-I${OPENSSLINC}
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=      -I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-
+LIBS+=		-L${OPENSSLLIB}
 python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
 SHEBANG_FILES=	Lib/lib2to3/pgen2/*.py Lib/lib2to3/tests/*.py Lib/lib2to3/tests/data/*.py \
 		Lib/idlelib/*.py Lib/encodings/*.py Lib/test/*.py Lib/UserString.py \
@@ -69,6 +60,9 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 LIBFFI_CONFIGURE_ON=	--with-system-ffi
 LIBFFI_LIB_DEPENDS=	libffi.so:devel/libffi
 
+# Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
+# to break in Python 2.7, or preprocessor complaints in Python >= 3.3
+# Upstream Issue: https://bugs.python.org/issue6299
 NLS_USES=		gettext
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
