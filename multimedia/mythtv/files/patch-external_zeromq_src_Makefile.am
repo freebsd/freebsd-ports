@@ -1,5 +1,5 @@
---- external/zeromq/src/Makefile.am.orig	2015-11-16 14:31:23.735432710 +0000
-+++ external/zeromq/src/Makefile.am	2015-11-16 14:28:48.465433398 +0000
+--- external/zeromq/src/Makefile.am.orig	2015-06-16 16:03:30 UTC
++++ external/zeromq/src/Makefile.am
 @@ -1,6 +1,6 @@
  lib_LTLIBRARIES = libmythzmq.la
  

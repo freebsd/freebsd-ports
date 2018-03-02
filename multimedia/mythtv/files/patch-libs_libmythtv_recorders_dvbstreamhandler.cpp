@@ -1,6 +1,6 @@
---- libs/libmythtv/recorders/dvbstreamhandler.cpp.orig	2012-03-05 03:31:31.000000000 +0100
-+++ libs/libmythtv/recorders/dvbstreamhandler.cpp	2012-03-18 11:24:44.309770699 +0100
-@@ -614,7 +614,7 @@
+--- libs/libmythtv/recorders/dvbstreamhandler.cpp.orig	2015-06-16 16:03:30 UTC
++++ libs/libmythtv/recorders/dvbstreamhandler.cpp
+@@ -620,7 +620,7 @@ bool DVBPIDInfo::Open(const QString &dvb_dev, bool use
      {
          struct dmx_pes_filter_params pesFilterParams;
          memset(&pesFilterParams, 0, sizeof(struct dmx_pes_filter_params));
@@ -9,7 +9,7 @@
          pesFilterParams.input    = DMX_IN_FRONTEND;
          pesFilterParams.output   = DMX_OUT_TS_TAP;
          pesFilterParams.flags    = DMX_IMMEDIATE_START;
-@@ -634,7 +634,7 @@
+@@ -640,7 +640,7 @@ bool DVBPIDInfo::Open(const QString &dvb_dev, bool use
      {
          struct dmx_sct_filter_params sctFilterParams;
          memset(&sctFilterParams, 0, sizeof(struct dmx_sct_filter_params));
@@ -18,7 +18,7 @@
          {
              case 0x0: // PAT
                  sctFilterParams.filter.filter[0] = 0;
-@@ -670,7 +670,7 @@
+@@ -676,7 +676,7 @@ bool DVBPIDInfo::Open(const QString &dvb_dev, bool use
                  sctFilterParams.filter.mask[0]   = 0x00;
                  break;
          }
