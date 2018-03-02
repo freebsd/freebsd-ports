@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://mongrel2.org/static/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Is an application, language, and network arch
 
 LICENSE=	BSD3CLAUSE
