@@ -17,9 +17,7 @@ LICENSE=	PSFL
 USES=		cpe ncurses pathfix pkgconfig readline:port shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
-CFLAGS+=	-I${OPENSSLINC}
 GNU_CONFIGURE=	yes
-LIBS+=		-L${OPENSSLLIB}
 python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
 SHEBANG_FILES=	Lib/lib2to3/pgen2/*.py Lib/lib2to3/tests/*.py Lib/lib2to3/tests/data/*.py \
 		Lib/idlelib/*.py Lib/encodings/*.py Lib/test/*.py Lib/UserString.py \
