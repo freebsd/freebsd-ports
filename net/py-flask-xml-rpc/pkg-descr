@@ -1,0 +1,6 @@
+Flask-XML-RPC is an extension for Flask that makes it easy to create APIs
+based on the XML-RPC standard. It features easy registration of methods
+and namespacing, connects seamlessly to your Flask app, and includes
+plenty of testing helpers.
+
+WWW: https://bitbucket.org/leafstorm/flask-xml-rpc/
