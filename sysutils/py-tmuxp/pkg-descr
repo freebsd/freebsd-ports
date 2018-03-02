@@ -1,4 +1,4 @@
 Load and save tmux sessions in JSON or YAML. Control tmux through
 python API.
 
-WWW: https://pypi.python.org/pypi/tmuxp
+WWW: https://github.com/tony/tmuxp/
