@@ -1,0 +1,24 @@
+From c22de0263bb204f59d0041191bd71e6baaeb58cf Mon Sep 17 00:00:00 2001
+From: norberttakacs <norbert.takacs@balabit.com>
+Date: Fri, 2 Mar 2018 07:35:41 +0100
+Subject: [PATCH] syslog-ng-ctl: fix compile issue #1901 on freebsd
+
+sgtty.h doesn't need and cause compile error on freebsd.
+
+Signed-off-by: norberttakacs <norbert.takacs@balabit.com>
+---
+ syslog-ng-ctl/syslog-ng-ctl.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/syslog-ng-ctl/syslog-ng-ctl.c b/syslog-ng-ctl/syslog-ng-ctl.c
+index e827e4bf93..331244c35d 100644
+--- syslog-ng-ctl/syslog-ng-ctl.c.orig
++++ syslog-ng-ctl/syslog-ng-ctl.c
+@@ -32,7 +32,6 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <locale.h>
+-#include <sgtty.h>
+ #include <termios.h>
+ #include <unistd.h>
+ #include <errno.h>
