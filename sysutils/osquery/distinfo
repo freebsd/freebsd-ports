@@ -1,5 +1,5 @@
-TIMESTAMP = 1510683800
-SHA256 (facebook-osquery-2.10.2_GH0.tar.gz) = cf4e809a8667a2155fdd99de26baf3f3774693bcf04db74323e3a9af0a78d40b
-SIZE (facebook-osquery-2.10.2_GH0.tar.gz) = 2352646
-SHA256 (osquery-third-party-2.10.2_GH0.tar.gz) = d11ad89e277a43278c65ffff89f538f3c47e52f5716287f7f0944cdcf2f3730d
-SIZE (osquery-third-party-2.10.2_GH0.tar.gz) = 3496837
+TIMESTAMP = 1519958114
+SHA256 (facebook-osquery-2.11.2_GH0.tar.gz) = f1214cffe694a61857aa9fd111d1d7baadab90f6c8737d23becc831e8e631045
+SIZE (facebook-osquery-2.11.2_GH0.tar.gz) = 2396376
+SHA256 (osquery-third-party-2.11.0_GH0.tar.gz) = 0499456a7e70dabe283c3dc221a65544b0c5c08710905e1f7339bba45c1f1ffa
+SIZE (osquery-third-party-2.11.0_GH0.tar.gz) = 3496854
