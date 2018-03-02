@@ -35,7 +35,7 @@ esac
 name="${name:-dhcpd}" ;
 name=${name##*/isc-}
 
-paranoia=%%PARANOIA%%				# compiled in paranoia?
+paranoia=%%PARANOIAOPT%%				# compiled in paranoia?
 
 load_rc_config ${name}
 
