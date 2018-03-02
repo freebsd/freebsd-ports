@@ -1,4 +1,4 @@
---- setup.py.orig	2017-11-03 11:21:18 UTC
+--- setup.py.orig	2014-12-31 15:34:31 UTC
 +++ setup.py
 @@ -31,12 +31,14 @@ setup(
      install_requires = [
@@ -11,8 +11,8 @@
          'pyyaml'
          ],
  
-+    if sys.version_info < (2, 7):
-+        install_requires.append('argparse')
++    #if sys.version_info < (2, 7):
++    #    install_requires.append('argparse')
 +
      extras_require = {
          'SOCKS': ["txsocksx"]
