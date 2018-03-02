@@ -1,5 +1,5 @@
---- libs/libmythui/mythgesture.cpp.orig	2013-09-18 16:06:08.000000000 -0400
-+++ libs/libmythui/mythgesture.cpp	2014-01-22 08:20:33.000000000 -0500
+--- libs/libmythui/mythgesture.cpp.orig	2015-06-16 16:03:30 UTC
++++ libs/libmythui/mythgesture.cpp
 @@ -28,6 +28,7 @@
  
  #include "mythgesture.h"
@@ -7,8 +7,8 @@
 +#include <cstdlib>
  #include <cmath>
  #include <algorithm>
- 
-@@ -283,7 +284,7 @@
+ #include <complex>
+@@ -284,7 +285,7 @@ bool MythGesture::record(const QPoint & p)
      int dely = p.y() - points.back().y();
  
      /* step by the greatest delta direction */

@@ -1,5 +1,5 @@
---- libs/libmythdvdnav/dvdnav/dvdnav.c.orig	2012-03-18 12:13:45.805789048 +0100
-+++ libs/libmythdvdnav/dvdnav/dvdnav.c	2012-03-18 12:12:47.166812027 +0100
+--- libs/libmythdvdnav/dvdnav/dvdnav.c.orig	2015-06-16 16:03:30 UTC
++++ libs/libmythdvdnav/dvdnav/dvdnav.c
 @@ -33,7 +33,7 @@
  #include <limits.h>
  #include <string.h>

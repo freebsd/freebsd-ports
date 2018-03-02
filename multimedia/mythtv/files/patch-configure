@@ -1,6 +1,6 @@
---- configure.orig	2013-09-18 20:06:08.000000000 +0000
-+++ configure	2013-10-18 11:11:10.000000000 +0000
-@@ -846,28 +846,28 @@
+--- configure.orig	2015-06-16 16:03:30 UTC
++++ configure
+@@ -846,28 +846,28 @@ check_cc(){
      log check_cc "$@"
      cat > $TMPC
      log_file $TMPC
@@ -33,7 +33,7 @@
  }
  
  as_o(){
-@@ -2539,7 +2539,7 @@
+@@ -2539,7 +2539,7 @@ python_default="python"
  
  # machine
  arch_default=$(uname -m)
@@ -42,7 +42,7 @@
  processor=`uname -p 2>/dev/null`
  processor_flags=""
  tune="generic"
-@@ -3931,7 +3931,7 @@
+@@ -3931,7 +3931,7 @@ elif enabled x86; then
          i686|pentiumpro|pentium[23]|pentium-m|athlon|athlon-tbird|athlon-4|athlon-[mx]p|athlon64*|k8*|opteron*|athlon-fx|core2|corei7*|amdfam10|barcelona|atom|bdver*)
              cpuflags="-march=$cpu"
              enable cmov
@@ -51,7 +51,7 @@
          ;;
          # targets that do support conditional mov but on which it's slow
          pentium4|pentium4m|prescott|nocona)
-@@ -4102,7 +4102,6 @@
+@@ -4102,7 +4102,6 @@ case $target_os in
          append CCONFIG "freebsd"
          # Workaround compile errors from missing u_int/uint def
          CPPFLAGS=`echo $CPPFLAGS | sed 's/-D_POSIX_C_SOURCE=200112//'`
@@ -59,7 +59,7 @@
          enable backend
          ;;
      bsd/os)
-@@ -6383,6 +6382,7 @@
+@@ -6389,6 +6388,7 @@ cat <<EOF >> $TMPMAK
  QMAKE_LIBDIR_QT-=${sysroot}${libdir}
  QMAKE_LIBDIR-=${sysroot}${libdir}
  LATE_LIBS+=-L${sysroot}${libdir}
@@ -67,7 +67,7 @@
  EOF
  
  #echo "endif # FFMPEG_CONFIG_MAK" >> $TMPMAK
-@@ -6435,7 +6435,7 @@
+@@ -6441,7 +6441,7 @@ INCDIR=\$(INSTALL_ROOT)$incdir
  BINDIR=\$(INSTALL_ROOT)$bindir
  DATADIR=\$(INSTALL_ROOT)$datadir
  MANDIR=\$(INSTALL_ROOT)$mandir
