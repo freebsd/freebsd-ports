@@ -387,6 +387,7 @@
     SUBDIR += kibana5
     SUBDIR += kibana5-search-guard
     SUBDIR += kibana5-x-pack
+    SUBDIR += kibana6
     SUBDIR += kiss-templates
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
