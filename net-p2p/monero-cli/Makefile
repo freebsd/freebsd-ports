@@ -30,6 +30,7 @@ USES=		cmake compiler:c++11-lib pkgconfig readline ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	monero-project
 GH_PROJECT=	monero
+CFLAGS+=	-D_WANT_SEMUN
 
 OPTIONS_DEFINE=		DOXYGEN
 DOXYGEN_BUILD_DEPENDS=	dot:graphics/graphviz \

@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 		--disable-arts
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-D_WANT_SEMUN
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	ESOUND VORBIS

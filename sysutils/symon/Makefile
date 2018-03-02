@@ -16,6 +16,7 @@ USES=		groff perl5 shebangfix
 SHEBANG_FILES=	client/getsymonitem.pl
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=	-D_WANT_SEMUN
 
 USERS=		_symon
 GROUPS=		_symon

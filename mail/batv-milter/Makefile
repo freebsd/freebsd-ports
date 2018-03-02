@@ -18,6 +18,7 @@ USES=		uidfix ssl
 USE_RC_SUBR=	milter-batv
 
 MAKE_ARGS=	UBINOWN=${UID} UBINGRP=${GID}
+CFLAGS+=	-D_WANT_SEMUN
 
 WCONF=		${WRKSRC}/devtools/Site
 PLIST_FILES=	bin/batv-filter man/man8/batv-filter.8.gz

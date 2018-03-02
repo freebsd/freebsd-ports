@@ -36,6 +36,7 @@ CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread ac_cv_path_CPP=${CPP}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake libtool localbase shebangfix
+CFLAGS+=	-D_WANT_SEMUN
 
 INFO=		freeipmi-faq
 PLIST_SUB=	CACHE_DIR=${CACHE_DIR}

@@ -15,6 +15,7 @@ LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+CFLAGS+=	-D_WANT_SEMUN
 
 PLIST_FILES=	bin/sdig etc/sdig.conf etc/mactable man/man5/sdig.conf.5.gz \
 		man/man8/sdig.8.gz

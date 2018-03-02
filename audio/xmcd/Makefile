@@ -20,6 +20,8 @@ PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH} OPSYS=${OPSYS}
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+CFLAGS+=	-D_WANT_SEMUN
+
 LIBBINDIR=	${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH}
 
 BROKEN_aarch64=		Fails to compile: many undefined symbols in xorg.cf
