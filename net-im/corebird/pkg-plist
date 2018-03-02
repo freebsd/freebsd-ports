@@ -42,6 +42,7 @@ share/metainfo/org.baedert.corebird.appdata.xml
 %%NLS%%share/locale/ro/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/corebird.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/corebird.mo
