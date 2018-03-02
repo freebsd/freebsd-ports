@@ -31,7 +31,7 @@ GSTREAMER_USE=	phonon-gst
 NLS_USE=	l10n
 
 SQL_PLUGINS_DESC=	Install database plugins for QtSql
-SQL_PLUGINS_USE=sql-ibase sql-mysql sql-odbc sql-pgsql sql-sqlite2 \
+SQL_PLUGINS_USE=sql-mysql sql-odbc sql-pgsql sql-sqlite2 \
 		sql-sqlite3
 
 TOOLS_DESC=	Install Qt tools (qmake, moc, etc.)
@@ -43,5 +43,11 @@ TOOLS_USE=	assistant help-tools linguist linguisttools makeqpf \
 .for opt in ${OPTIONS_DEFINE}
 ${opt}_USE:=	${${opt}_USE:S/^/QT4=/:S/$/_run/}
 .endfor
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+SQL_PLUGINS_USE+=	sql-ibase
+.endif
 
 .include <bsd.port.mk>
