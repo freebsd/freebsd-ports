@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 USES=		pathfix pkgconfig tar:bzip2 ssl
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20
+CFLAGS+=	-D_WANT_SEMUN
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

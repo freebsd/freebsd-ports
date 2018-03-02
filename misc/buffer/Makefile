@@ -13,6 +13,7 @@ COMMENT=	Buffer sporadic I/O for faster tape and pipe throughput
 USES=		tar:tgz
 PLIST_FILES=	bin/buffer \
 		man/man1/buffer.1.gz
+CFLAGS+=	-D_WANT_SEMUN
 
 post-patch:
 	@${REINPLACE_CMD} -E \

@@ -16,5 +16,6 @@ USES=		pathfix libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-lynx --disable-doxygen
 INSTALL_TARGET=	install-strip
+CFLAGS+=	-D_WANT_SEMUN
 
 .include <bsd.port.mk>

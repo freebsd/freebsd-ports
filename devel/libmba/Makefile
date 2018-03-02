@@ -14,6 +14,7 @@ COMMENT=	Collection of C modules potentially useful to any project
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	prefix="${STAGEDIR}${PREFIX}"
+CFLAGS+=	-D_WANT_SEMUN
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-g,$$(CFLAGS),' \
