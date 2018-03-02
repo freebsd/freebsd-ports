@@ -1,9 +1,0 @@
-#!/bin/sh
-
-case "$2" in
-POST-DEINSTALL)
-	if [ -d %%WWWDIR%%/optimize ]; then
-		/usr/bin/find %%WWWDIR%%/optimize/ -delete
-	fi
-	;;
-esac
