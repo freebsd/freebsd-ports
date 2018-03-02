@@ -47,6 +47,7 @@ share/FreeFileSync/images/basic-step-start-sync.png
 share/FreeFileSync/images/basic-step-sync-config.png
 share/FreeFileSync/images/calendar-job-added.png
 share/FreeFileSync/images/com-settings-context.png
+share/FreeFileSync/images/command-line-syntax.png
 share/FreeFileSync/images/comparison-settings.png
 share/FreeFileSync/images/comparison-variant-double-click.png
 share/FreeFileSync/images/config-double-click.png
@@ -54,9 +55,9 @@ share/FreeFileSync/images/config-multiple-selection.png
 share/FreeFileSync/images/copy-alternative-path.png
 share/FreeFileSync/images/dialog-drag-move.png
 share/FreeFileSync/images/direct-synchronize.png
-share/FreeFileSync/images/donate.png
 share/FreeFileSync/images/explorer-context.png
 share/FreeFileSync/images/filter-context.png
+share/FreeFileSync/images/filter-zero-file-size.png
 share/FreeFileSync/images/filter.png
 share/FreeFileSync/images/freefilesync-logo.png
 share/FreeFileSync/images/gnome-scheduler.png
@@ -77,7 +78,9 @@ share/FreeFileSync/images/remove-local-settings.png
 share/FreeFileSync/images/save-automator.png
 share/FreeFileSync/images/select-time-span.png
 share/FreeFileSync/images/setup-batch-job.png
+share/FreeFileSync/images/sftp-cloud-picker.png
 share/FreeFileSync/images/sftp-login.png
+share/FreeFileSync/images/sftp-performance.png
 share/FreeFileSync/images/show-thumbnails.png
 share/FreeFileSync/images/sync-settings-context.png
 share/FreeFileSync/images/synchronization-settings.png
@@ -91,13 +94,12 @@ share/FreeFileSync/italian.lng
 share/FreeFileSync/japanese.lng
 share/FreeFileSync/korean.lng
 share/FreeFileSync/lithuanian.lng
-share/FreeFileSync/outdated/norwegian.lng
+share/FreeFileSync/norwegian.lng
 share/FreeFileSync/polish.lng
 share/FreeFileSync/portuguese.lng
 share/FreeFileSync/portuguese_br.lng
 share/FreeFileSync/romanian.lng
 share/FreeFileSync/russian.lng
-share/FreeFileSync/serbian.lng
 share/FreeFileSync/slovak.lng
 share/FreeFileSync/slovenian.lng
 share/FreeFileSync/spanish.lng
