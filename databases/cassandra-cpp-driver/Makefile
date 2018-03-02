@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra-cpp-driver
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
