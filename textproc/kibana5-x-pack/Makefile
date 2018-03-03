@@ -7,7 +7,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/packs/x-pack/
 PKGNAMEPREFIX=	kibana5-
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Kibana 5.0 X-Pack plugins
 
 RUN_DEPENDS:=	kibana5>=5.6.8:textproc/kibana5
