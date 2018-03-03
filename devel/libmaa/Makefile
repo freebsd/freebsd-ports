@@ -2,39 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	libmaa
-PORTVERSION=	1.3.2
-PORTREVISION=	3
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides a few data structures and helpful functions
 
-# The software was licensed as GPLv2. LGPL20 is for the library.
-LICENSE=	LGPL20
-LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
+
+BUILD_DEPENDS=	mk-configure>=0.29.1:devel/mk-configure
 
 OPTIONS_DEFINE=	DOCS
 
-ALL_TARGET=	lib
-GNU_CONFIGURE=	yes
+MAKE_ARGS=	-m ${LOCALBASE}/share/mkc-mk DOCDIR=${DOCSDIR} LIBDIR=${PREFIX}/lib
+NO_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool:build
 
-DOCS=		README doc/libmaa.600dpi.ps
-PLIST_FILES=	include/maa.h \
-		lib/libmaa.a \
-		lib/libmaa.so \
-		lib/libmaa.so.3 \
-		lib/libmaa.so.3.0.0
-PORTDOCS=	${DOCS:T}
+GH_ACCOUNT=	cheusov
+USE_GITHUB=	yes
+
+post-patch:
+	@${AWK} -f ${WRKSRC}/maa/arggram2c < ${WRKSRC}/maa/arggram.txt > ${WRKSRC}/maa/arggram.c
+	@${REINPLACE_CMD} -e '/^FILES *=/ s|LICENSE||' ${WRKSRC}/doc/Makefile
+	@${REINPLACE_CMD} -e '/^#SHLIB_TEENY *=/ s|#||' ${WRKSRC}/maa/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmaa.so.3
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmaa.so
 
 .include <bsd.port.mk>
