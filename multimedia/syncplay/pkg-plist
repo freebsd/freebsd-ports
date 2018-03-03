@@ -19,6 +19,7 @@ lib/syncplay/resources/delete.png
 lib/syncplay/resources/door_in.png
 lib/syncplay/resources/email_go.png
 lib/syncplay/resources/empty_checkbox.png
+lib/syncplay/resources/error.png
 lib/syncplay/resources/eye.png
 lib/syncplay/resources/film_add.png
 lib/syncplay/resources/film_edit.png
@@ -42,10 +43,12 @@ lib/syncplay/resources/page_white_key.png
 lib/syncplay/resources/shield_add.png
 lib/syncplay/resources/shield_edit.png
 lib/syncplay/resources/syncplay.png
+lib/syncplay/resources/syncplayintf.lua
 lib/syncplay/resources/table_refresh.png
 lib/syncplay/resources/tick.png
 lib/syncplay/resources/tick_checkbox.png
 lib/syncplay/resources/timeline_marker.png
+lib/syncplay/resources/user_comment.png
 lib/syncplay/resources/user_key.png
 lib/syncplay/resources/vlc.png
 lib/syncplay/resources/world_add.png
@@ -58,6 +61,7 @@ lib/syncplay/syncplay/constants.py
 lib/syncplay/syncplay/messages.py
 lib/syncplay/syncplay/messages_de.py
 lib/syncplay/syncplay/messages_en.py
+lib/syncplay/syncplay/messages_it.py
 lib/syncplay/syncplay/messages_ru.py
 lib/syncplay/syncplay/players/__init__.py
 lib/syncplay/syncplay/players/basePlayer.py
