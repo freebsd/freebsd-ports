@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mongrel2
-PORTVERSION=	1.7.5
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.11.0
 CATEGORIES=	www
-MASTER_SITES=	http://mongrel2.org/static/downloads/
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Is an application, language, and network arch
@@ -13,8 +12,7 @@ COMMENT=	Is an application, language, and network arch
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libzmq.so:net/libzmq2 \
-		libsqlite3.so:databases/sqlite3
+LIB_DEPENDS=	libzmq.so:net/libzmq4
 
 BROKEN_armv6=	does not build: src/task/task.c:66:11: error: no member named 'arm_r0' in 'mcontext_t'
 BROKEN_armv7=	does not build: src/task/task.c:66:11: error: no member named 'arm_r0' in 'mcontext_t'
@@ -22,33 +20,39 @@ BROKEN_mips=	does not build (tests segfault)
 BROKEN_mips64=	does not build (tests segfault)
 BROKEN_powerpc64=	does not build (tests segfault)
 
-USES=		gmake tar:bzip2
-MAKE_FLAGS=	freebsd
+USES=		gmake localbase:ldflags sqlite tar:bzip2
+USE_GITHUB=	yes
+GH_TUPLE=	ARMmbed:mbedtls:8254ed2:x/src/mbedtls
+ALL_TARGET=	freebsd
 EXAMPLES_LIST=	bbs \
-		chat \
 		configs \
-		http_0mq \
 		kegogi \
-		mp3stream \
-		procer \
 		python \
+		ws \
+		chat \
+		http_0mq \
+		mp3stream \
 		tornado \
 		zcov
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_UNSAFE=	yes
+
+TEST_TARGET=	tests # tests fail on 12: Invalid system call
+TEST_ENV=	${MAKE_ENV} OPTFLAGS=-I${LOCALBASE}/include
+TEST_ARGS=	${MAKE_ARGS}
 
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's#fdclose#my_fdclose#g' ${WRKSRC}/src/*.c \
-		${WRKSRC}/src/task/*.[ch] ${WRKSRC}/tests/*.c
+		${WRKSRC}/src/task/*.[ch] ${WRKSRC}/tests/*.c \
+		${WRKSRC}/tools/filters/*.c
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mongrel2/*/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mongrel2/*/*.so
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 .for example in ${EXAMPLES_LIST}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${example} ${STAGEDIR}/${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${example} ${STAGEDIR}/${EXAMPLESDIR}
 .endfor
 
 .include <bsd.port.mk>

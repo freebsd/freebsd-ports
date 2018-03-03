@@ -1,0 +1,9 @@
+--- src/mbedtls/Makefile.orig	2018-03-03 08:15:18 UTC
++++ src/mbedtls/Makefile
+@@ -1,5 +1,5 @@
+ 
+-DESTDIR=/usr/local
++DESTDIR?=/usr/local
+ PREFIX=mbedtls_
+ 
+ .SILENT:
