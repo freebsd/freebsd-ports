@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minissdpd
-PORTVERSION=	1.5.20180203
+PORTVERSION=	1.5.20180223
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
 		LOCAL/ehaupt
