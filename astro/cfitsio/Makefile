@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.420
+PORTVERSION=	3.430
 CATEGORIES=	astro
-MASTER_SITES=	http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
-		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
+MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
+		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
 		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/ \
 		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/oldvers/ \
 		LOCAL/sunpoet
