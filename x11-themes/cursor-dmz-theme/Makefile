@@ -7,7 +7,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	DEBIAN/pool/main/d/dmz-cursor-theme
 DISTNAME=	dmz-cursor-theme_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	DMZ style neutral scalable cursor theme
 
 LICENSE=	CC-BY-SA-3.0
