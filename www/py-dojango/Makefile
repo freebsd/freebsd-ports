@@ -14,7 +14,7 @@ COMMENT=	Django application for building dojo
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.6:www/py-django111@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.6:www/py-django111@${FLAVOR}
 
 OPTIONS_DEFINE=		JAVA
 
