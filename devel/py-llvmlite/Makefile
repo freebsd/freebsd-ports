@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvmlite
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+DISTVERSION=	0.22.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,21 +16,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_powerpc64=	fails to compile: clang++: not found
 
 BUILD_DEPENDS=	${PY_ENUM34}
+LIB_DEPENDS=	libLLVM-5.0.so:devel/llvm50
 
 # Python 2.7,3.4+
 USES=		python fortran
 USE_PYTHON=	distutils autoplist
 
-# llvmlite-0.13.0 requires devel/llvm38
-LLVM_VER=	39
-
-BUILD_DEPENDS+=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+# llvmlite requires devel/llvm50
+LLVM_VER=	50
 
 MAKE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER}
 
 post-patch:
 # Requried, because Makefile.freebsd does not see VARS from this Makefile
-	${REINPLACE_CMD} -e "s|%%_GCC_VER%%|${_GCC_VER}|" \
+	@${REINPLACE_CMD} -e "s|%%_GCC_VER%%|${_GCC_VER}|" \
 		${WRKSRC}/ffi/Makefile.freebsd
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/llvmlite/binding/libllvmlite.so
 
 .include <bsd.port.mk>
