@@ -4,4 +4,4 @@ and math-heavy Python code can be just-in-time compiled to native machine
 instructions, similar in performance to C, C++ and Fortran, without having to 
 switch languages or Python interpreters.
 
-WWW: http://numba.pydata.org/
+WWW: https://numba.pydata.org/

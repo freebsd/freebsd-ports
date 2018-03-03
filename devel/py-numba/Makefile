@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numba
-PORTVERSION=	0.29.0
-PORTREVISION=	3
+DISTVERSION=	0.37.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,16 +10,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dave@dal.ca
 COMMENT=	Optimizing compiler for Python using LLVM
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>1.7,1:math/py-numpy@${FLAVOR}
 RUN_DEPENDS=	${PY_ENUM34} \
 		${PYTHON_PKGNAMEPREFIX}llvmlite>=0.12:devel/py-llvmlite@${FLAVOR}
 
-# Uses Python 2.7, 3.4+
 USES=		python fortran
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 
 .include <bsd.port.pre.mk>
 
@@ -29,5 +27,8 @@ USE_PYTHON=	distutils autoplist
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}funcsigs>0:devel/py-funcsigs@${FLAVOR}
 .endif
+
+post-install:
+	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name "*.so" | ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.post.mk>
