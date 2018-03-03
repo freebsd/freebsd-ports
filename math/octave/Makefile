@@ -3,7 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math java
 MASTER_SITES=	GNU
 
@@ -35,7 +35,9 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libgl2ps.so:print/gl2ps \
 		libqscintilla2_qt4.so:devel/qscintilla2 \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libdrm.so:graphics/libdrm \
+		libOSMesa.so:graphics/libosmesa
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline \
 		tar:xz compiler:c++14-lang
@@ -57,14 +59,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf" \
 		JAVA_HOME=${JAVA_HOME} \
 		MAKEINFO=${LOCALBASE}/bin/makeinfo \
-		ac_cv_type_max_align_t=yes
+		ac_cv_type_max_align_t=yes \
+		with_OSMesa="-lOSMesa -ldrm"
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 		--with-lapack="${LAPACKLIB}" \
 		--enable-shared \
 		--disable-jit \
 		--disable-openmp \
-		--with-qt=4
+		--with-qt=4 \
+		--with-OSMesa-includedir=${LOCALBASE}/include/GL \
+		--with-OSMesa-libdir=${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 
