@@ -46,7 +46,7 @@ eval ": \${${name}_enable:=\"NO\"}"
 eval ": \${${name}_conf:=%%PREFIX%%/etc/${name}.conf}"	# configuration file
 eval ": \${${name}_withumask:=022}"			# file creation mask
 
-eval ": \${${name}_chuser_enable:=\"%%PARANOIA%%\"}"	# runs w/o privileges?
+eval ": \${${name}_chuser_enable:=\"%%PARANOIAOPT%%\"}"	# runs w/o privileges?
 eval ": \${${name}_withuser:=dhcpd}"			# user name to run as
 eval ": \${${name}_withgroup:=dhcpd}"			# group name to run as
 
