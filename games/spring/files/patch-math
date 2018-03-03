@@ -5,6 +5,16 @@
 +#include <cmath>
  #include <list>
  #include <SDL_events.h>
++++ rts/lib/streflop/SMath.h
+@@ -16,6 +16,8 @@
+ #ifndef STREFLOP_MATH_H
+ #define STREFLOP_MATH_H
+ 
++#include <cmath>
++
+ // just in case, should already be included
+ #include "streflop.h"
+ 
 +++ rts/Sim/Weapons/LaserCannon.cpp	2015-04-07 20:49:52 -0400
 @@ -1,4 +1,6 @@
  /* This file is part of the Spring engine (GPL v2 or later), see LICENSE.html */
