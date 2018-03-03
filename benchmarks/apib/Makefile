@@ -3,10 +3,11 @@
 
 PORTNAME=	apib
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Simple, fast HTTP performance-testing tool
+COMMENT=	Simple and fast HTTP performance testing tool
 
 LICENSE=	APACHE20
 
