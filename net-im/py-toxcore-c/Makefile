@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore-c
-PORTVERSION=	0.170206
-PORTREVISION=	2
+DISTVERSION=	0.180219
 CATEGORIES=	net-im net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,14 +17,14 @@ LIB_DEPENDS=	libtoxcore.so:net-im/tox \
 		libvpx.so:multimedia/libvpx \
 		libopus.so:audio/opus
 
+USES=		localbase python
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
 GH_PROJECT=	py-toxcore-c
-GH_TAGNAME=	ebced1f
-
-USES=		python
+GH_TAGNAME=	2c1b9d6
 USE_PYTHON=	distutils autoplist
 
-CFLAGS+=	-I${LOCALBASE}/include
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pytox.so
 
 .include <bsd.port.mk>
