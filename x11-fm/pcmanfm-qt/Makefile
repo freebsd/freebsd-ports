@@ -6,7 +6,7 @@ PORTVERSION=	0.12.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	LXQT
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	LXQt file manager
 
 LICENSE=	GPLv2
