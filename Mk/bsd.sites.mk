@@ -507,6 +507,137 @@ convert-to-gh-tuple:
 .endif # defined(USE_GITHUB)
 .endif # !defined(IGNORE_MASTER_SITE_GITHUB)
 
+.if !defined(IGNORE_MASTER_SITE_GITLAB)
+#
+# In order to use GitLab your port must define USE_GITLAB and the following
+# variables:
+#
+# GL_SITE       - site URL hosting GitLab and the project
+#                 default: https://gitlab.com
+#
+# GL_ACCOUNT    - account name of the GitLab user hosting the project
+#                 default: ${PORTNAME}
+#
+# GL_PROJECT    - name of the project on GitLab
+#                 default: ${PORTNAME}
+#
+# GL_COMMIT     - the commit hash of the repository, must be the full hash and
+#                 is a required variable for GitLab.
+#
+# GL_SUBDIR     - directory relative to WRKSRC where to move this distfile's
+#                 content after extracting.
+#
+# GL_TUPLE      - above shortened to [site[:port][/webroot]:]account:project:commit:group[/subdir]
+#
+.if defined(USE_GITLAB)
+.  if defined(GL_TUPLE)
+.    for _tuple in ${GL_TUPLE}
+.      if ${_tuple:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\7@:S/^://:C/[a-f0-9]{40}//g}
+check-makevars::
+	@${ECHO_MSG} "The ${_tuple}"
+	@${ECHO_MSG} "GL_TUPLE is improperly formatted or, the commit"
+	@${ECHO_MSG} "section contains something other than [a-f0-9]"
+	@${FALSE}
+.      endif
+.    endfor
+GL_SITE+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\1\8@}
+GL_ACCOUNT+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\5\8@}
+GL_PROJECT+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\6\8@}
+GL_COMMIT+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\7\8@}
+GL_SUBDIR+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\9\8@:M/*:S/^\///}
+.  endif
+
+.  if empty(USE_GITLAB:Mnodefault)
+MASTER_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/repository/${GL_COMMIT}/archive.tar.gz?dummy=/
+.  endif
+GL_SITE_DEFAULT=	https://gitlab.com
+GL_SITE?=	${GL_SITE_DEFAULT}
+GL_ACCOUNT_DEFAULT=	${PORTNAME}
+GL_ACCOUNT?=	${GL_ACCOUNT_DEFAULT}
+GL_PROJECT_DEFAULT=	${PORTNAME}
+GL_PROJECT?=	${GL_PROJECT_DEFAULT}
+_GITLAB_GROUPS=	DEFAULT
+.  for _gl_v in GL_SITE GL_ACCOUNT GL_PROJECT GL_COMMIT GL_SUBDIR
+.    for _v_ex in ${${_gl_v}}
+_GL_GROUPS=	${_v_ex:S/^${_v_ex:C@:[^/:]+$@@}//:S/^://}
+.      if !empty(_GL_GROUPS)
+.        for _group in ${_GL_GROUPS:S/,/ /g}
+.          if ${_group} == all || ${_group} == ALL || ${_group} == default
+check-makevars::
+		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
+		@${ECHO_MSG} "used in group definitions. Please fix your ${_gl_v}"
+		@${FALSE}
+.          endif
+.          if !${_GITLAB_GROUPS:M${_group}}
+_GITLAB_GROUPS+=	${_group}
+.          endif
+${_gl_v}_${_group}=	${_v_ex:C@^(.*):[^/:]+$@\1@}
+.        endfor
+.      else
+${_gl_v}_DEFAULT=	${_v_ex:C@^(.*):[^/:]+$@\1@}
+.      endif
+.    endfor
+.  endfor
+GL_SITE:=	${GL_SITE_DEFAULT}
+GL_ACCOUNT:=	${GL_ACCOUNT_DEFAULT}
+GL_PROJECT:=	${GL_PROJECT_DEFAULT}
+GL_COMMIT:=	${GL_COMMIT_DEFAULT}
+GL_SUBDIR:=	${GL_SUBDIR_DEFAULT}
+
+
+_GITLAB_REV=	0
+DISTNAME:=	${GL_ACCOUNT}-${GL_PROJECT}-${GL_COMMIT}_GL${_GITLAB_REV}
+
+_GITLAB_EXTRACT_SUFX=	.tar.gz
+
+_GITLAB_CLONE_DIR?=	${WRKDIR}/git-clone
+_PORTS_DIRECTORIES+=	${_GITLAB_CLONE_DIR}
+.  if !${USE_GITLAB:Mnodefault}
+DISTFILES+=	${DISTNAME}${_GITLAB_EXTRACT_SUFX}
+git-clone: git-clone-DEFAULT
+git-clone-DEFAULT: ${_GITLAB_CLONE_DIR}
+	@git clone ${GL_SITE_DEFAULT}/${GL_ACCOUNT_DEFAULT}/${GL_PROJECT_DEFAULT}.git ${_GITLAB_CLONE_DIR}/${GL_PROJECT_DEFAULT}
+	@${ECHO_MSG} "Cloned the default GitLab repository into ${_GITLAB_CLONE_DIR}/${GL_PROJECT_DEFAULT}" | ${FMT_80}
+.  endif
+.  if !empty(GL_SUBDIR)
+_SITES_extract:=	690:post-extract-gl-DEFAULT
+post-extract-gl-DEFAULT:
+	@${RMDIR} ${WRKSRC}/${GL_SUBDIR_DEFAULT} 2>/dev/null || :
+	@${MKDIR} ${WRKSRC}/${GL_SUBDIR_DEFAULT:H} 2>/dev/null || :
+	@${LN} -s ${GL_SUBDIR_DEFAULT:C/[^\/]//g:C/\//..\//g:S/^$/./} ${WRKSRC}/${GL_SUBDIR_DEFAULT}
+.  endif
+.  if !empty(_GITLAB_GROUPS:NDEFAULT)
+.    for _group in ${_GITLAB_GROUPS:NDEFAULT}
+# We set GL_SITE earlier, we need to verify its not empty
+.      if empty(GL_SITE_${_group})
+GL_SITE_${_group}=	${GL_SITE_DEFAULT}
+.      endif
+GL_ACCOUNT_${_group}?=	${GL_ACCOUNT_DEFAULT}
+GL_PROJECT_${_group}?=	${GL_PROJECT_DEFAULT}
+
+_GL_TUPLE_OUT:=	${_GL_TUPLE_OUT} ${GL_SITE_${_group}}:${GL_ACCOUNT_${_group}}:${GL_PROJECT_${_group}}:${GL_COMMIT_${_group}}:${_group}/${GL_SUBDIR_${_group}}
+DISTNAME_${_group}:=	${GL_ACCOUNT}-${GL_PROJECT_${_group}}-${GL_COMMIT_${_group}}_GL${_GITLAB_REV}
+DISTFILE_${_group}:=	${DISTNAME_${_group}}${_GITLAB_EXTRACT_SUFX}
+DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
+MASTER_SITES:=	${MASTER_SITES} ${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}/repository/${GL_COMMIT_${_group}}/archive.tar.gz?dummy=/:${_group}
+WRKSRC_${_group}:=	${WRKDIR}/${GL_PROJECT_${_group}}-${GL_COMMIT_${_group}}-${GL_COMMIT_${_group}}
+.      if !empty(GL_SUBDIR_${_group})
+_SITES_extract:=	${_SITES_extract} 690:post-extract-gl-${_group}
+post-extract-gl-${_group}:
+	@${RMDIR} ${WRKSRC}/${GL_SUBDIR_${_group}} 2>/dev/null || :
+	@${MKDIR} ${WRKSRC}/${GL_SUBDIR_${_group}:H} 2>/dev/null || :
+	@${MV} ${WRKSRC_${_group}} ${WRKSRC}/${GL_SUBDIR_${_group}}
+	@${LN} -s ${WRKSRC:T}/${GL_SUBDIR_${_group}} ${WRKSRC_${_group}}
+.      endif
+git-clone: git-clone-${_group}
+git-clone-${_group}: ${_GITLAB_CLONE_DIR}
+	@git clone ${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}.git ${_GITLAB_CLONE_DIR}/${GL_PROJECT_${_group}}
+	@${ECHO_MSG} "Cloned the ${_group} GitLab repository into ${_GITLAB_CLONE_DIR}/${GL_PROJECT_${_group}}" | ${FMT_80}
+.    endfor
+.  endif
+.endif # defined(USE_GITLAB)
+.endif # !defined(IGNORE_MASTER_SITE_GITLAB)
+
 .if !defined(IGNORE_MASTER_SITE_GNOME)
 MASTER_SITE_GNOME+= \
 	https://download.gnome.org/%SUBDIR%/ \
