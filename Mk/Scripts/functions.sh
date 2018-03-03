@@ -162,6 +162,10 @@ validate_env() {
 export_ports_env() {
 	local export_vars make_cmd make_env var results value uses
 
+	if [ -n "${HAVE_PORTS_ENV:-}" ]; then
+		return 0
+	fi
+
 	validate_env MAKE PORTSDIR
 
 	uses="python compiler:features"
@@ -197,6 +201,8 @@ export_ports_env() {
 			echo "export ${var}=\"${value}\""
 		fi
 	done
+	export HAVE_PORTS_ENV=1
+	echo "export HAVE_PORTS_ENV=1"
 }
 
 distinfo_data() {
