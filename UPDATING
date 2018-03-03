@@ -140,8 +140,16 @@ you update your ports collection, before attempting any port upgrades.
      # make FLAVOR=nox install
      # make FLAVOR=devel_full
 
+  An alternative to the default flavor, full, for editors/emacs and
+  editors/emacs-devel can be set in make.conf.  For example, to specify nox as
+  the default flavor for both ports, use
+
+     .if ${.CURDIR:M*/editors/emacs*}
+     FLAVOR?=nox
+     .endif
+
   For ports using Emacs, an alternative to the default flavor, full,
-  can be set in make.conf.  For example, to automatically depend on
+  can be also be set in make.conf.  For example, to automatically depend on
   emacs-nox, use
 
      DEFAULT_VERSIONS+=emacs=nox
