@@ -1,5 +1,9 @@
-MoviePy is a Python module for video editing: cuts, concatenations,
-title insertions, video compositing (a.k.a. non-linear editing),
-video processing, and creation of custom effects. 
+MoviePy is a Python library for video editing: cutting, concatenations, title
+insertions, video compositing (a.k.a. non-linear editing), video processing, and
+creation of custom effects.
 
+MoviePy can read and write all the most common audio and video formats,
+including GIF.
+
+WWW: https://pypi.python.org/pypi/moviepy
 WWW: https://github.com/Zulko/moviepy
