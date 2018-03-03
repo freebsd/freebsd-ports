@@ -14,8 +14,6 @@ COMMENT=	Project aiming to create a new and versatile RTS Engine
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to build with boost 1.66, see bug 224124
-
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libboost_thread.so:devel/boost-libs \
 		libIL.so:graphics/devil \
