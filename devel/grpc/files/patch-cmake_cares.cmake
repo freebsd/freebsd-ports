@@ -1,9 +1,9 @@
---- cmake/cares.cmake.orig	2018-02-01 19:36:08 UTC
+--- cmake/cares.cmake.orig	2018-03-01 18:16:44 UTC
 +++ cmake/cares.cmake
-@@ -30,7 +30,8 @@ if("${gRPC_CARES_PROVIDER}" STREQUAL "mo
-     set(gRPC_INSTALL FALSE)
+@@ -31,7 +31,8 @@ if("${gRPC_CARES_PROVIDER}" STREQUAL "mo
    endif()
  elseif("${gRPC_CARES_PROVIDER}" STREQUAL "package")
+   # Use "CONFIG" as there is no built-in cmake module for c-ares.
 -  find_package(c-ares REQUIRED CONFIG)
 +  find_package(PkgConfig REQUIRED)
 +  pkg_search_module(CARES REQUIRED libcares)
