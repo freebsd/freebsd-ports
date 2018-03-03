@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ohai
-PORTVERSION=	13.7.1
+PORTVERSION=	13.8.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
