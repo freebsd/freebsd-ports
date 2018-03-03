@@ -3,7 +3,7 @@
 
 PORTNAME=	alttab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	x11
 
 MAINTAINER=	dg@syrec.org
@@ -25,6 +25,8 @@ GH_ACCOUNT=	sagb
 PLIST_FILES=	bin/alttab \
 		man/man1/alttab.1.gz
 
-PORTDOCS=	README xmonad.md
+PORTDOCS=	README \
+		alttab.ad \
+		wm-setup.md
 
 .include <bsd.port.mk>
