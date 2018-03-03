@@ -12,8 +12,6 @@ COMMENT=	User-space fs with on-access antivirus scanning
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to build with boost 1.65, see bug 220725
-
 LIB_DEPENDS=	libccgnu2.so:devel/commoncpp \
 		libPocoNet.so:devel/poco-ssl \
 		librlog.so:devel/rlog
@@ -22,9 +20,7 @@ RUN_DEPENDS=	clamd:security/clamav
 
 GNU_CONFIGURE=	yes
 
-USES=		fuse
-
-CPPFLAGS+=	-I${LOCALBASE}/include/boost/tr1
+USES=		compiler:c++11-lib fuse
 
 PLIST_FILES=	bin/clamfs \
 		man/man1/clamfs.1.gz
