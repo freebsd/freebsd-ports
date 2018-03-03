@@ -13,6 +13,8 @@ COMMENT=	PECL PHP driver for Tarantool
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+PORTSCOUT=	ignore:1
+
 USES=		php:ext
 
 CONFIGURE_ARGS=	--with-tarantool
