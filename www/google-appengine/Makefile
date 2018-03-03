@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.9.51
-PORTREVISION=	1
+DISTVERSION=	1.9.66
 CATEGORIES=	www devel python
 MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
@@ -18,7 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:databases/py-sqlite3@
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6:security/py-pycrypto@${PY_FLAVOR}
 
+WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
+
+USES=		gettext python:2.7 shebangfix zip
 NO_BUILD=	yes
+SHEBANG_FILES=	${GAESCRIPTS}
 
 OPTIONS_DEFINE=	EXAMPLES MYSQL PHP
 OPTIONS_DEFAULT=	MYSQL
@@ -26,11 +29,6 @@ OPTIONS_DEFAULT=	MYSQL
 PORTDATA=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	${GAESCRIPTS:C,^| ,bin/&,g}
-
-USES=		gettext python:2.7 shebangfix zip
-SHEBANG_FILES=	${GAESCRIPTS}
-
-WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
 
 LN_OPTS=	-sf
 
@@ -49,8 +47,6 @@ PHP_VARS=	gaedatadir+=php want_mysql_ver=55
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${GAEDATADIR}" ${STAGEDIR}${DATADIR})
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/demos && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	(cd ${STAGEDIR}${PREFIX}/bin && \
 	for S in ${GAESCRIPTS}; do \
 	${INSTALL_SCRIPT} ${WRKSRC}/$${S} ${STAGEDIR}${DATADIR}; \
@@ -60,5 +56,8 @@ do-install:
 
 	(cd ${STAGEDIR}${DATADIR} && \
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${DATADIR} -f ${GAEDATADIR:Nphp} -q)
+
+do-install-EXAMPLES-on:
+	cd ${WRKSRC}/demos && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
