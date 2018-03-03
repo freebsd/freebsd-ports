@@ -8,7 +8,7 @@ MASTER_SITES=	https://oss.sonatype.org/content/repositories/releases/com/floragu
 PKGNAMEPREFIX=	elasticsearch5-
 DISTNAME=	search-guard-5-${DISTVERSION}
 
-MAINTAINER=	000.fbsd@quip.cz
+MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Elasticsearch Search Guard plugin
 
 LICENSE=	APACHE20

@@ -10,7 +10,7 @@ MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
 PKGNAMESUFFIX?=	6
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20

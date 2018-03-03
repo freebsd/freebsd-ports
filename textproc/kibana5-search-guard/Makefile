@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/floragunncom/search-guard-kibana-plugin/release
 PKGNAMEPREFIX=	kibana5-
 DISTNAME=	searchguard-kibana-5.3.0-2
 
-MAINTAINER=	000.fbsd@quip.cz
+MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Kibana 5.3 Search Guard plugin
 
 LICENSE=	APACHE20
