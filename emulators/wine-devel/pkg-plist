@@ -624,6 +624,7 @@ include/wine/windows/opnrst.idl
 include/wine/windows/optary.h
 include/wine/windows/optary.idl
 include/wine/windows/patchapi.h
+include/wine/windows/pathcch.h
 include/wine/windows/pdh.h
 include/wine/windows/pdhmsg.h
 include/wine/windows/perflib.h
@@ -2125,6 +2126,7 @@ lib/wine/fakedlls/winepath.exe
 lib/wine/fakedlls/wineps.drv
 %%WINE32%%lib/wine/fakedlls/wineps16.drv16
 %%WINE32%%lib/wine/fakedlls/winevdm.exe
+lib/wine/fakedlls/winevulkan.dll
 %%X11%%lib/wine/fakedlls/winex11.drv
 %%WINE32%%lib/wine/fakedlls/wing.dll16
 lib/wine/fakedlls/wing32.dll
@@ -2775,6 +2777,7 @@ lib/wine/winepath.exe.so
 lib/wine/wineps.drv.so
 %%WINE32%%lib/wine/wineps16.drv16.so
 %%WINE32%%lib/wine/winevdm.exe.so
+lib/wine/winevulkan.dll.so
 %%X11%%lib/wine/winex11.drv.so
 %%WINE32%%lib/wine/wing.dll16.so
 lib/wine/wing32.dll.so
