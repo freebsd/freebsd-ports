@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/P/p/:S/r/-RC/:S/b/-beta/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
+IGNORE=		It appears the development branch of NTP is dead.
+
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libmd5.so:www/libwww
 
