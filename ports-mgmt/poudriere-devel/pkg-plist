@@ -40,6 +40,7 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/common.sh
 %%DATADIR%%/daemon.sh
 %%DATADIR%%/distclean.sh
+%%DATADIR%%/foreachport.sh
 %%DATADIR%%/html/assets/DataTables-1.10.0/css/jquery.dataTables.min.css
 %%DATADIR%%/html/assets/DataTables-1.10.0/css/jquery.dataTables_themeroller.min.css
 %%DATADIR%%/html/assets/DataTables-1.10.0/images/back_disabled.png
