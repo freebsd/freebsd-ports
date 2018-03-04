@@ -1,4 +1,6 @@
+bin/flea
 bin/mutt
+bin/muttbug
 @(,mail,2755) bin/mutt_dotlock
 bin/pgpewrap
 bin/pgpring
