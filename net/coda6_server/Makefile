@@ -14,6 +14,8 @@ PKGNAMESUFFIX=	-${CODA_SUITE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server programs for a replicated high-performance network file system
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	liblwp.so:devel/lwp \
 		librpc2.so:devel/rpc2 \
 		librvmlwp.so:devel/rvm
