@@ -9,6 +9,8 @@ MASTER_SITES=	http://line.to/mac/soft/du2ps/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter for converting output of du to PostScript file
 
+LICENSE=	MIT
+
 # Nkf is required for just converting character code of japanese manual
 BUILD_DEPENDS=	nkf:japanese/nkf
 
