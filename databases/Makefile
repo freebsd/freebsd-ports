@@ -1042,6 +1042,7 @@
     SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += useracc
+    SUBDIR += usql
     SUBDIR += vfront
     SUBDIR += virtualpg
     SUBDIR += virtuoso
