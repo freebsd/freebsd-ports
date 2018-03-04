@@ -34,10 +34,10 @@ LD_FLAG_STRING=	-s \
 
 do-build:
 	( cd ${GO_WRKSRC}/cmd/prometheus ; \
-		${SETENV} ${GO_ENV} go install -ldflags "${LD_FLAG_STRING}" )
+		${SETENV} ${MAKE_ENV} ${GO_ENV} go install -ldflags "${LD_FLAG_STRING}" )
 
 	( cd ${GO_WRKSRC}/cmd/promtool ; \
-		${SETENV} ${GO_ENV} go install -ldflags "${LD_FLAG_STRING}" )
+		${SETENV} ${MAKE_ENV} ${GO_ENV} go install -ldflags "${LD_FLAG_STRING}" )
 
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/prometheus ${STAGEDIR}${PREFIX}/bin

@@ -34,7 +34,7 @@ PLIST_FILES=	bin/obfs4proxy \
 do-build:
 	@${RLN} ${WRKSRC} ${WRKSRC}/obfs4proxy/src/git.torproject.org/pluggable-transports/obfs4.git
 	@cd ${WRKSRC}/obfs4proxy && \
-		${SETENV} GOPATH=${WRKSRC}/obfs4proxy go build
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}/obfs4proxy go build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obfs4proxy/obfs4proxy ${STAGEDIR}${PREFIX}/bin
