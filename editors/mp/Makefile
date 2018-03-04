@@ -12,11 +12,7 @@ COMMENT=	Programming text editor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to compile: conflicting types for __wcwidth
-BROKEN_armv6=		fails to compile: conflicting types for __wcwidth
-BROKEN_armv7=		fails to compile: conflicting types for __wcwidth
-
-USES=		iconv ncurses
+USES=		gmake iconv ncurses
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config.sh
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-win32 --without-kde4
@@ -37,8 +33,9 @@ GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 GTK3_USE=		gnome=cairo,gdkpixbuf2,gtk30
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	pcre
-QT4_USE=		qt4=corelib,gui,moc_build
-QT4_CONFIGURE_ENV=	CPP="${CXX}" CCLINK="${CXX}"
+QT4_USE=		qt4=corelib,gui,moc_build \
+			xorg=x11
+QT4_CONFIGURE_ENV=	CPP="${CXX}" CCLINK="${CXX}" MOC="${MOC}"
 QT4_CONFIGURE_WITH=	qt4
 
 .include <bsd.port.options.mk>
@@ -72,20 +69,17 @@ QT_NONSTANDARD=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|<ncursesw/|<| ; \
-		 s|-I/usr/local/include|| ; \
+		's|-I/usr/local/include|| ; \
 		 s|-L/usr/local/lib|| ; \
 		 s|-lncursesw|${LDFLAGS} -lncursesw| ; \
 		 /gtk+/s|3.0|${CONFOPT_GTK}.0| ; \
 		 /OK/s|3.0|${CONFOPT_GTK}.0| ; \
 		 /CONFOPT_GTK/s|3|${CONFOPT_GTK}|' ${WRKSRC}/config.sh
 	@${REINPLACE_CMD} -e \
-		's|<ncursesw/|<|g' ${WRKSRC}/mpv_curses.c
-	@${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}| ; \
 		 s|%%ICONV_PREFIX%%|${ICONV_PREFIX}| ; \
 		 s|%%ICONV_LIB%%|${ICONV_LIB}|g' ${WRKSRC}/mpdm/config.sh
-.for i in mpdm/mpdm.h mpdm/mpdm_s.c mpsl/mpsl_d.c
+.for i in mpdm/mpdm.h mpsl/mpsl_d.c
 	@${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/${i}
 .endfor
@@ -104,7 +98,6 @@ do-install:
 
 do-install-NLS-on:
 .for lang in de es it nl ru sv
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/minimum-profit.mo
 .endfor
