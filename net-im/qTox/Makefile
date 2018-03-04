@@ -3,8 +3,8 @@
 
 PORTNAME=	qTox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.0
-PORTREVISION=	1
+DISTVERSION=	1.13.0-134
+DISTVERSIONSUFFIX=	-g3780acff
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,12 +27,11 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext openal:soft pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	qTox
-USE_GNOME=	gtk20 cairo
+USE_GNOME=	gtk20 gdkpixbuf2 cairo
 USE_QT5=	core gui network xml opengl sql sql-sqlite3_run widgets svg \
 		concurrent_build buildtools_build linguisttools_build qmake_build testlib_build
 CMAKE_ARGS=	-DGIT_DESCRIBE:STRING=${FULLVERSION}
-INSTALLS_ICONS=	yes
+CMAKE_OFF=	USE_CCACHE
 
 OPTIONS_DEFINE=			FILTERAUDIO PLATFORM_EXTENSIONS
 OPTIONS_DEFAULT=		FILTERAUDIO PLATFORM_EXTENSIONS
@@ -47,7 +46,7 @@ PLATFORM_EXTENSIONS_USE=	XORG=x11,xscrnsaver
 PLIST_FILES=	bin/qtox \
 		share/applications/qtox.desktop \
 		share/icons/hicolor/scalable/apps/qtox.svgz \
-		share/appdata/qTox.appdata.xml
+		share/metainfo/qTox.appdata.xml
 .for SZ in 14 16 22 24 32 36 48 64 72 96 128 192 256 512
 PLIST_FILES+=	share/icons/hicolor/${SZ}x${SZ}/apps/qtox.png
 .endfor
