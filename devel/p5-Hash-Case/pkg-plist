@@ -1,7 +1,3 @@
-%%PERL5_MAN3%%/Hash::Case.3.gz
-%%PERL5_MAN3%%/Hash::Case::Lower.3.gz
-%%PERL5_MAN3%%/Hash::Case::Preserve.3.gz
-%%PERL5_MAN3%%/Hash::Case::Upper.3.gz
 %%SITE_PERL%%/Hash/Case.pm
 %%SITE_PERL%%/Hash/Case.pod
 %%SITE_PERL%%/Hash/Case/Lower.pm
@@ -10,3 +6,7 @@
 %%SITE_PERL%%/Hash/Case/Preserve.pod
 %%SITE_PERL%%/Hash/Case/Upper.pm
 %%SITE_PERL%%/Hash/Case/Upper.pod
+%%PERL5_MAN3%%/Hash::Case.3.gz
+%%PERL5_MAN3%%/Hash::Case::Lower.3.gz
+%%PERL5_MAN3%%/Hash::Case::Preserve.3.gz
+%%PERL5_MAN3%%/Hash::Case::Upper.3.gz
