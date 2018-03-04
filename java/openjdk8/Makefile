@@ -234,7 +234,7 @@ CONFIGURE_ARGS+=	--disable-ccache \
 CONFIGURE_SCRIPT=	../../configure
 CONFIGURE_WRKSRC=	${WRKSRC}/common/autoconf
 
-OPTIONS_DEFINE=		ALSA POLICY TZUPDATE X11
+OPTIONS_DEFINE=		ALSA POLICY TZUPDATE X11 FONTCONFIG
 OPTIONS_DEFINE_armv6=	FPUHACK
 OPTIONS_DEFINE_armv7=	FPUHACK
 OPTIONS_DEFAULT=	ALSA POLICY TZUPDATE X11
@@ -264,6 +264,7 @@ X11_MAKE_ENV_OFF=	BUILD_HEADLESS_ONLY=1 \
 			MAKEFLAGS=X_CFLAGS="-I${LOCALBASE}/include"
 X11_MAKE_ENV_ON=	MAKEFLAGS=""
 X11_USE=		XORG=x11,xext,xi,xrender,xt,xtst
+FONTCONFIG_IMPLIES=	X11
 
 JAVAVMS_COMMENT=	OpenJDK${JDK_MAJOR_VERSION}
 
@@ -384,6 +385,9 @@ post-extract:
 post-extract-TEST-on:
 	@${LN} -sf ${WRKDIR}/jtreg/linux/bin ${WRKDIR}/jtreg/
 
+do-patch-FONTCONFIG-on:
+	@${PATCH} -d ${PATCH_WRKSRC} < ${PATCHDIR}/fontconfig.patch
+
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${RMDIR} ${WRKSRC}/jdk/src/macosx/classes/java/net \
@@ -396,6 +400,7 @@ post-patch:
 	    -e 's|%%OBJCOPY%%|${OBJCOPY}|' \
 	    ${WRKSRC}/configure \
 	    ${WRKSRC}/common/autoconf/toolchain.m4 \
+	    ${WRKSRC}/jdk/make/lib/Awt2dLibraries.gmk \
 	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
 	    ${WRKSRC}/jdk/src/share/classes/sun/print/PSPrinterJob.java \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java

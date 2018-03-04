@@ -1,0 +1,222 @@
+--- jdk/src/share/native/sun/font/freetypeScaler.c.orig	2017-01-20 17:04:07 UTC
++++ jdk/src/share/native/sun/font/freetypeScaler.c
+@@ -38,6 +38,8 @@
+ #include FT_SIZES_H
+ #include FT_OUTLINE_H
+ #include FT_SYNTHESIS_H
++#include FT_LCD_FILTER_H
++#include <fontconfig/fontconfig.h>
+ 
+ #include "fontscaler.h"
+ 
+@@ -693,6 +695,132 @@ static void CopyFTSubpixelVToSubpixel(co
+     }
+ }
+ 
++typedef struct {
++    FT_Render_Mode ftRenderMode;
++    int ftLoadFlags;
++    FT_LcdFilter ftLcdFilter;
++} RenderingProperties;
++
++static FcPattern* matchedPattern(const FcChar8* family, double ptSize) {
++    FcPattern* pattern = FcPatternCreate();
++    if (!pattern)
++        return 0;
++
++    FcPatternAddString(pattern, FC_FAMILY, family);
++    FcPatternAddBool(pattern, FC_SCALABLE, FcTrue);
++    FcPatternAddDouble(pattern, FC_SIZE, ptSize);
++
++    FcConfigSubstitute(0, pattern, FcMatchPattern);
++    FcDefaultSubstitute(pattern);
++
++    FcResult res;
++    FcPattern *match = FcFontMatch(0, pattern, &res);
++    FcPatternDestroy(pattern);
++    return (res == FcResultMatch) ? match : NULL;
++}
++
++static void readFontconfig(const FcChar8* family, double ptSize, jint aaType, RenderingProperties* rp) {
++    FcPattern *pattern = matchedPattern(family, ptSize);
++
++    FT_Render_Mode ftRenderMode = FT_RENDER_MODE_NORMAL;
++    int ftLoadFlags = FT_LOAD_DEFAULT;
++    FT_LcdFilter ftLcdFilter = FT_LCD_FILTER_DEFAULT;
++    FcBool fcAntialias = 0;
++    char horizontal = 1;
++
++    // subpixel order
++    if (aaType == TEXT_AA_ON)
++        ftRenderMode = FT_RENDER_MODE_NORMAL;
++    else if (aaType == TEXT_AA_OFF)
++        ftRenderMode = FT_RENDER_MODE_MONO;
++    else {
++        int fcRGBA = FC_RGBA_UNKNOWN;
++        if (pattern)
++            FcPatternGetInteger(pattern, FC_RGBA, 0, &fcRGBA);
++        switch (fcRGBA) {
++        case FC_RGBA_NONE:
++            ftRenderMode = FT_RENDER_MODE_NORMAL;
++            break;
++        case FC_RGBA_RGB:
++        case FC_RGBA_BGR:
++            ftRenderMode = FT_RENDER_MODE_LCD;
++            horizontal = 1;
++            break;
++        case FC_RGBA_VRGB:
++        case FC_RGBA_VBGR:
++            ftRenderMode = FT_RENDER_MODE_LCD_V;
++            horizontal = 0;
++            break;
++        default:
++            ftRenderMode = FT_RENDER_MODE_NORMAL;
++            break;
++        }
++    }
++
++    // loading mode
++    if (aaType == TEXT_AA_OFF)
++        ftLoadFlags |= FT_LOAD_TARGET_MONO;
++    else {
++        int fcHintStyle = FC_HINT_NONE;
++        if (pattern)
++            FcPatternGetInteger(pattern, FC_HINT_STYLE, 0, &fcHintStyle);
++        switch (fcHintStyle) {
++        case FC_HINT_NONE:
++            ftLoadFlags |= FT_LOAD_NO_HINTING;
++            break;
++        case FC_HINT_SLIGHT:
++            ftLoadFlags |= FT_LOAD_TARGET_LIGHT;
++            break;
++        case FC_HINT_MEDIUM:
++            ftLoadFlags |= FT_LOAD_TARGET_NORMAL;
++            break;
++        case FC_HINT_FULL:
++            if (aaType == TEXT_AA_ON)
++                ftLoadFlags |= FT_LOAD_TARGET_NORMAL;
++            else
++                ftLoadFlags |= horizontal ? FT_LOAD_TARGET_LCD : FT_LOAD_TARGET_LCD_V;
++            break;
++        default:
++            ftLoadFlags |= FT_LOAD_TARGET_NORMAL;
++            break;
++        }
++    }
++
++    // autohinting
++    FcBool fcAutohint = 0;
++    if (pattern && FcPatternGetBool(pattern, FC_AUTOHINT, 0, &fcAutohint) == FcResultMatch)
++        if (fcAutohint)
++            ftLoadFlags |= FT_LOAD_FORCE_AUTOHINT;
++
++    // LCD filter
++    int fcLCDFilter = FC_LCD_DEFAULT;
++    if (pattern)
++        FcPatternGetInteger(pattern, FC_LCD_FILTER, 0, &fcLCDFilter);
++    switch (fcLCDFilter) {
++    case FC_LCD_NONE:
++        ftLcdFilter = FT_LCD_FILTER_NONE;
++        break;
++    case FC_LCD_DEFAULT:
++        ftLcdFilter = FT_LCD_FILTER_DEFAULT;
++        break;
++    case FC_LCD_LIGHT:
++        ftLcdFilter = FT_LCD_FILTER_LIGHT;
++        break;
++    case FC_LCD_LEGACY:
++        ftLcdFilter = FT_LCD_FILTER_LEGACY;
++        break;
++    default:
++        ftLcdFilter = FT_LCD_FILTER_DEFAULT;
++        break;
++    }
++
++    if (pattern)
++        FcPatternDestroy(pattern);
++
++    rp->ftRenderMode = ftRenderMode;
++    rp->ftLoadFlags = ftLoadFlags;
++    rp->ftLcdFilter = ftLcdFilter;
++}
+ 
+ /*
+  * Class:     sun_font_FreetypeFontScaler
+@@ -726,32 +850,15 @@ Java_sun_font_FreetypeFontScaler_getGlyp
+         return ptr_to_jlong(getNullGlyphImage());
+     }
+ 
+-    /* if algorithmic styling is required then we do not request bitmap */
+-    if (context->doBold || context->doItalize) {
+-        renderFlags =  FT_LOAD_DEFAULT;
+-    }
+-
+-    /* NB: in case of non identity transform
+-     we might also prefer to disable transform before hinting,
+-     and apply it explicitly after hinting is performed.
+-     Or we can disable hinting. */
+-
+-    /* select appropriate hinting mode */
+-    if (context->aaType == TEXT_AA_OFF) {
+-        target = FT_LOAD_TARGET_MONO;
+-    } else if (context->aaType == TEXT_AA_ON) {
+-        target = FT_LOAD_TARGET_NORMAL;
+-    } else if (context->aaType == TEXT_AA_LCD_HRGB ||
+-               context->aaType == TEXT_AA_LCD_HBGR) {
+-        target = FT_LOAD_TARGET_LCD;
+-    } else {
+-        target = FT_LOAD_TARGET_LCD_V;
+-    }
+-    renderFlags |= target;
++    RenderingProperties renderingProperties;
++    readFontconfig((const FcChar8 *) scalerInfo->face->family_name,
++                   context->ptsz, context->aaType, &renderingProperties);
+ 
+     glyph_index = FT_Get_Char_Index(scalerInfo->face, glyphCode);
+ 
+-    error = FT_Load_Glyph(scalerInfo->face, glyphCode, renderFlags);
++    FT_Library_SetLcdFilter(scalerInfo->library, renderingProperties.ftLcdFilter);
++    error = FT_Load_Glyph(scalerInfo->face, glyphCode, renderingProperties.ftLoadFlags);
++
+     if (error) {
+         //do not destroy scaler yet.
+         //this can be problem of particular context (e.g. with bad transform)
+@@ -770,9 +877,7 @@ Java_sun_font_FreetypeFontScaler_getGlyp
+ 
+     /* generate bitmap if it is not done yet
+      e.g. if algorithmic styling is performed and style was added to outline */
+-    if (ftglyph->format == FT_GLYPH_FORMAT_OUTLINE) {
+-        FT_Render_Glyph(ftglyph, FT_LOAD_TARGET_MODE(target));
+-    }
++    FT_Render_Glyph(ftglyph, renderingProperties.ftRenderMode);
+ 
+     width  = (UInt16) ftglyph->bitmap.width;
+     height = (UInt16) ftglyph->bitmap.rows;
+@@ -1001,11 +1106,14 @@ static FT_Outline* getFTOutline(JNIEnv* 
+         return NULL;
+     }
+ 
+-    renderFlags = FT_LOAD_NO_HINTING | FT_LOAD_NO_BITMAP;
++    RenderingProperties renderingProperties;
++    readFontconfig((const FcChar8 *) scalerInfo->face->family_name,
++                   context->ptsz, context->aaType, &renderingProperties);
+ 
+     glyph_index = FT_Get_Char_Index(scalerInfo->face, glyphCode);
+ 
+-    error = FT_Load_Glyph(scalerInfo->face, glyphCode, renderFlags);
++    error = FT_Load_Glyph(scalerInfo->face, glyphCode, renderingProperties.ftLoadFlags);
++
+     if (error) {
+         return NULL;
+     }
+--- jdk/make/lib/Awt2dLibraries.gmk.orig	2015-07-18 14:30:01.000000000 -0700
++++ jdk/make/lib/Awt2dLibraries.gmk	2015-07-18 14:30:08.000000000 -0700
+@@ -943,7 +943,7 @@
+     LDFLAGS_SUFFIX_linux := -lawt $(LIBM) $(LIBCXX) -ljava -ljvm -lc, \
+     LDFLAGS_SUFFIX_solaris := -lawt -lawt_headless -lc $(LIBM) $(LIBCXX) -ljava -ljvm, \
+     LDFLAGS_SUFFIX_aix := -lawt -lawt_headless $(LIBM) $(LIBCXX) -ljava -ljvm,\
+-    LDFLAGS_SUFFIX_bsd := -lawt $(LIBM) $(LIBCXX) -ljava -ljvm -lc, \
++    LDFLAGS_SUFFIX_bsd := -L%%LOCALBASE%%/lib -lfontconfig -lawt $(LIBM) $(LIBCXX) -ljava -ljvm -lc, \
+     LDFLAGS_SUFFIX_macosx := -lawt $(LIBM) $(LIBCXX) -undefined dynamic_lookup \
+         -ljava -ljvm, \
+     LDFLAGS_SUFFIX_windows := $(WIN_JAVA_LIB) advapi32.lib user32.lib gdi32.lib \
