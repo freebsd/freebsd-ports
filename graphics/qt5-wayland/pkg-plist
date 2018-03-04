@@ -266,7 +266,7 @@
 %%QT_PLUGINDIR%%/platforms/libqwayland-xcomposite-glx.so
 %%QT_PLUGINDIR%%/wayland-decoration-client/libbradient.so
 %%QT_PLUGINDIR%%/wayland-graphics-integration-client/libdrm-egl-server.so
-%%QT_PLUGINDIR%%/wayland-graphics-integration-client/libwayland-egl.so
+%%QT_PLUGINDIR%%/wayland-graphics-integration-client/libqt-plugin-wayland-egl.so
 %%QT_PLUGINDIR%%/wayland-graphics-integration-client/libxcomposite-egl.so
 %%QT_PLUGINDIR%%/wayland-graphics-integration-client/libxcomposite-glx.so
 %%QT_PLUGINDIR%%/wayland-graphics-integration-server/libdrm-egl-server.so
