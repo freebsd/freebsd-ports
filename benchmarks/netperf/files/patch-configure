@@ -1,19 +1,19 @@
---- configure.orig	2015-07-20 17:30:24 UTC
+--- configure.orig	2017-09-21 17:32:54 UTC
 +++ configure
-@@ -6567,7 +6567,7 @@ fi
+@@ -6817,7 +6817,7 @@ fi
  done
  
  		case "$host" in
--		*-*-freebsd78.*)
+-		*-*-freebsd[7-9].* | *-*-freebsd1[0-1].* )
 +		*-*-freebsd[7-9].* | *-*-freebsd[1-9][0-9].*)
  			# FreeBSD 7.x and later SCTP support doesn't need -lsctp.
  			;;
  		*)
-@@ -7142,7 +7142,7 @@ ac_cv_lib_kstat=ac_cv_lib_kstat_main
+@@ -7392,7 +7392,7 @@ ac_cv_lib_kstat=ac_cv_lib_kstat_main
  			enable_cpuutil="kstat - auto"
  			NETCPU_SOURCE="kstat"
  			;;
--                     *-*-freebsd[4-8].* | *-*-netbsd[1-9].* )
+-                     *-*-freebsd[4-9].* | *-*-freebsd1[0-1].* | *-*-netbsd[1-9].* )
 +                     *-*-freebsd[4-9].* | *-*-freebsd[1-9][0-9].* | *-*-netbsd[1-9].* )
  			use_cpuutil=true
  
