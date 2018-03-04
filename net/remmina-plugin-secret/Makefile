@@ -1,7 +1,7 @@
 # Created by: Koichiro IWAO <meta+ports@vmeta.jp>
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-gnome
+PKGNAMESUFFIX=	-secret
 
 COMMENT=	Remmina plugin for GNOME Keyring
 

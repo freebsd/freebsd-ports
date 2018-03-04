@@ -3,7 +3,7 @@
 
 PORTNAME=	remmina
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.2.0-rcgit.24
+DISTVERSION=	1.2.0-rcgit.27
 CATEGORIES=	net gnome
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -12,14 +12,18 @@ COMMENT=	GTK+ Remote Desktop Client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libsoup-2.4.so:devel/libsoup
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	Remmina
 
-USES=		cmake:outsource desktop-file-utils gettext localbase:ldflags pathfix pkgconfig shared-mime-info
+USES=		cmake:outsource desktop-file-utils gettext localbase:ldflags pathfix \
+		pkgconfig shared-mime-info ssl
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	ice sm x11 xext
-PATHFIX_WRKSRC=		${WRKSRC}/remmina
+PATHFIX_WRKSRC=	${WRKSRC}/remmina
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	--build=build \
 		-DWITH_APPINDICATOR:BOOL=false

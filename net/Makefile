@@ -1136,9 +1136,10 @@
     SUBDIR += redir
     SUBDIR += relayd
     SUBDIR += remmina
-    SUBDIR += remmina-plugin-gnome
+    SUBDIR += remmina-plugin-exec
     SUBDIR += remmina-plugin-nx
     SUBDIR += remmina-plugin-rdp
+    SUBDIR += remmina-plugin-secret
     SUBDIR += remmina-plugin-telepathy
     SUBDIR += remmina-plugin-vnc
     SUBDIR += remmina-plugin-xdmcp

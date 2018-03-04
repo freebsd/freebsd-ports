@@ -10156,3 +10156,4 @@ devel/adime||2018-03-02|Has expired: Abandonware, not used in the ports tree
 devel/boaconstructor||2018-03-02|Has expired: Abandonware, does not work with recent python/wxPython
 audio/amp||2018-03-02|Has expired: No more upstream
 devel/alf||2018-03-02|Has expired: Abandonware, unused in the ports tree
+net/remmina-plugin-gnome|net/remmina-plugin-secret|2018-03-04|Renamed upstream
