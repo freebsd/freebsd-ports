@@ -169,6 +169,7 @@
     SUBDIR += skype
     SUBDIR += skype-devel
     SUBDIR += skype4
+    SUBDIR += slack-term
     SUBDIR += teamwords
     SUBDIR += telegram
     SUBDIR += telegram-desktop

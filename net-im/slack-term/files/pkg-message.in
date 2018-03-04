@@ -1,0 +1,14 @@
+==============================================================================
+
+To do the initial %%PORTNAME%% configuration, get a Slack token from
+https://api.slack.com/docs/oauth-test-tokens and create ~/slack-term.json with
+the following format:
+
+{
+    "slack_token": "yourslacktokenhere"
+}
+
+See %%DOCSDIR%%/README.md or the online documentation for more configuration
+options.
+
+==============================================================================
