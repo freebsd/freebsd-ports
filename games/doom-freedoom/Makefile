@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	freedoom
-PORTVERSION=	0.10.1
+DISTVERSION=	0.11.3
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Complete Doom-based game IWAD that is Free Software
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		zip
 NO_BUILD=	yes
@@ -16,8 +19,8 @@ NO_ARCH=	yes
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
-PLIST_FILES=	%%DATADIR%%/freedoom1.wad \
-		%%DATADIR%%/freedoom2.wad
+PLIST_FILES=	${DATADIR}/freedoom1.wad \
+		${DATADIR}/freedoom2.wad
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
