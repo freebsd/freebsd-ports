@@ -227,7 +227,7 @@ RUN_DEPENDS+=	p5-Mail-DKIM>=0:mail/p5-Mail-DKIM
 RUN_DEPENDS+=	file>=4.21:sysutils/file
 .endif
 
-# archviers/rar is a 32-bit binary port, we don't want the install to fail
+# archivers/rar is a 32-bit binary port, we don't want the install to fail
 # at that port, therefore we will block instantly here if the platform does
 # not suit rar.
 .if ${PORT_OPTIONS:MRAR}

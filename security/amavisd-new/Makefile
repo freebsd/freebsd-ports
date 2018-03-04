@@ -147,15 +147,14 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:mail/altermime
 RUN_DEPENDS+=	file>=4.21:sysutils/file
 .endif
 
-# archviers/rar is a 32-bit binary port, we don't want the install to fail
+# archivers/rar is a 32-bit binary port, we don't want the install to fail
 # at that port, therefore we will block instantly here if the platform does
 # not suit rar.
-
 .if ${PORT_OPTIONS:MRAR}
 .if ${ARCH} == "i386"
 RUN_DEPENDS+=	${LOCALBASE}/bin/rar:archivers/rar
 .else
-IGNORE=	archviers/rar is a 32-bit binary port and is not compatible with ${ARCH}
+IGNORE=	archivers/rar is a 32-bit binary port and is not compatible with ${ARCH}
 .endif
 .endif
 
