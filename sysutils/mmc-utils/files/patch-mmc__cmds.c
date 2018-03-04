@@ -1,18 +1,19 @@
---- mmc_cmds.c.orig	2017-01-25 19:03:34 UTC
+--- mmc_cmds.c.orig	2018-02-26 22:10:51 UTC
 +++ mmc_cmds.c
-@@ -32,7 +32,11 @@
+@@ -28,7 +28,12 @@
  #include <errno.h>
  #include <stdint.h>
  #include <assert.h>
 +#if defined(__linux__)
- #include <linux/fs.h>
+ #include <linux/fs.h> /* for BLKGETSIZE */
 +#elif defined(__FreeBSD__)
-+#include <sys/disk.h>
++#include <stddef.h> /* for offsetof() */
++#include <sys/disk.h> /* for DIOCG{MEDIA,SECTOR}SIZE */
 +#endif
  
  #include "mmc.h"
  #include "mmc_cmds.h"
-@@ -120,8 +124,19 @@ static __u32 get_size_in_blks(int fd)
+@@ -120,8 +125,19 @@ static __u32 get_size_in_blks(int fd)
  {
  	int res;
  	int size;
@@ -32,7 +33,7 @@
  	if (res) {
  		fprintf(stderr, "Error getting device size, errno: %d\n",
  			errno);
-@@ -1506,13 +1521,18 @@ int do_read_extcsd(int nargs, char **arg
+@@ -1530,13 +1546,18 @@ int do_read_extcsd(int nargs, char **arg
  	/* A441/A43: reserved	[197] [195] [193] [190] [188]
  	 * [186] [184] [182] [180] [176] */
  

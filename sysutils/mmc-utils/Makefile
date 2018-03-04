@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mmc-utils
-PORTVERSION=	20170320
-DISTVERSIONSUFFIX=	-37c86e60
-PORTREVISION=	1
+PORTVERSION=	20180122
+DISTVERSIONSUFFIX=	-7bcad171
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/marius
 
@@ -46,7 +45,7 @@ maintainer-fetch:
 	@git clone ${MMC_GITURL} ${WRKSRC}
 	@cd ${WRKSRC} && git reset --hard ${DISTVERSIONSUFFIX:S|^-||}
 	@${TAR} -cyf ${_DISTDIR:S|/$||}/${DISTFILES:M${PORTNAME}-*} \
-		-C ${WRKSRC}/.. --exclude .git .
+		-C ${WRKSRC}/.. --exclude .git* .
 	@${MAKE} makesum
 	@${MAKE} clean
 

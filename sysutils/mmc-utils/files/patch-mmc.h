@@ -1,11 +1,10 @@
---- mmc.h.orig	2017-01-25 19:03:34 UTC
+--- mmc.h.orig	2018-02-26 22:10:51 UTC
 +++ mmc.h
-@@ -17,8 +17,22 @@
+@@ -17,10 +17,26 @@
   * those modifications are Copyright (c) 2016 SanDisk Corp.
   */
  
 +#if defined(__linux__)
- #include <asm-generic/int-ll64.h>
  #include <linux/mmc/ioctl.h>
 +#elif defined(__FreeBSD__)
 +#include <dev/mmc/mmc_ioctl.h>
@@ -20,6 +19,11 @@
 +typedef int64_t  __s64;
 +typedef uint64_t __u64;
 +#endif
- #include <stdio.h>
  
- #define CHECK(expr, msg, err_stmt) { if (expr) { fprintf(stderr, msg); err_stmt; } }
++#if 0
+ /* From kernel linux/major.h */
+ #define MMC_BLOCK_MAJOR			179
++#endif
+ 
+ /* From kernel linux/mmc/mmc.h */
+ #define MMC_SWITCH		6	/* ac	[31:0] See below	R1b */
