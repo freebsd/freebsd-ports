@@ -1867,6 +1867,7 @@
     SUBDIR += py-sockjs-tornado
     SUBDIR += py-splinter
     SUBDIR += py-spyne
+    SUBDIR += py-sseclient
     SUBDIR += py-surl
     SUBDIR += py-textile
     SUBDIR += py-tmdb3
