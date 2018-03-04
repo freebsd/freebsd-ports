@@ -56,7 +56,7 @@ post-patch:
 
 do-build:
 	@(cd ${WRKSRC}/${GH_SUBDIR} && \
-		${SETENV} GOPATH=${WRKSRC} go build -tags "sqlite pam cert" -p ${MAKE_JOBS_NUMBER} -o ${PORTNAME})
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -tags "sqlite pam cert" -p ${MAKE_JOBS_NUMBER} -o ${PORTNAME})
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}

@@ -31,7 +31,7 @@ LICENSE=	GPLv3
 
 do-build:
 .for bin in ${BIN_FILES}
-	cd ${WRKSRC}/src/github.com/david415/HoneyBadger/cmd/${bin}; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build
+	cd ${WRKSRC}/src/github.com/david415/HoneyBadger/cmd/${bin}; ${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build
 .endfor
 
 do-install:

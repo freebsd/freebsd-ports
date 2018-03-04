@@ -42,7 +42,7 @@ GH_TUPLE+=	\
 PLIST_FILES=	bin/rclone
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}; ${SETENV} GOPATH=${WRKSRC} go build .
+	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME} && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build .
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

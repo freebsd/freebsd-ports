@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-build:
 	cd ${WRKSRC} ; \
-		${SETENV} GOPATH=${WRKSRC} go build -o bin/go-bindata ./go-bindata/
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o bin/go-bindata ./go-bindata/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} \

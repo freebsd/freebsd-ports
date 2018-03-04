@@ -23,7 +23,7 @@ PLIST_FILES=	bin/epazote
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}; \
-	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
+	${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
 	"-X main.version=${PORTVERSION}" -o epazote cmd/epazote/main.go;
 
 do-install:

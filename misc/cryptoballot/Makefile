@@ -36,7 +36,7 @@ PLIST_FILES=	${PROGS:C/.*\//bin\//}
 do-build:
 .for p in ${PROGS}
 	@cd ${WRKSRC}/${GH_SUBDIR}/${p}/ && \
-		${SETENV} GOPATH=${WRKSRC} go build -o ${p:C/.*\///}
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o ${p:C/.*\///}
 .endfor
 
 do-install:
