@@ -11,6 +11,4 @@ USE_GNOME+=	cairo
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-PLIST_SUB+=	ICONS="" SSH=""
-
 .include "${MASTERDIR}/Makefile"

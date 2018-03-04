@@ -10,6 +10,4 @@ LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-PLIST_SUB+=	ICONS="@comment "
-
 .include "${MASTERDIR}/Makefile"
