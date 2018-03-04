@@ -1,0 +1,9 @@
+nostt is a command line reader for NOS Teletekst, the Dutch public teletext
+system (like Ceefax in the UK). It supports color and has an interactive mode.
+
+Note that teletext supports 6-cell (2x3) block drawing characters. The NOS
+viewer and API use a custom font with these characters in the "private use"
+0xF000 Unicode range. Because such characters are not usually available on
+terminals, they are replaced by % characaters.
+
+WWW: https://github.com/sjmulder/nostt
