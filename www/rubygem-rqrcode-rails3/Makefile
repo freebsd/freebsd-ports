@@ -10,11 +10,11 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Render QR codes with Rails 3
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-rqrcode>=0.4.2:www/rubygem-rqrcode
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
