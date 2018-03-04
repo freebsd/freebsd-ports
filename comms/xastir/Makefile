@@ -23,13 +23,14 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
 		libjasper.so:graphics/jasper \
 		libwmflite.so:graphics/libwmf
+
 GNU_CONFIGURE=	yes
 USES=		gettext gmake jpeg motif python:run shebangfix
 USE_GCC=	yes
 USE_XORG=	x11 xt xext sm ice
 USE_GNOME+=	libxml2
 SHEBANG_FILES=	scripts/gpx2shape scripts/values.pl.in
-SHEBANG_REGEX=	./scripts/.*\.(sh|pl|py) 
+SHEBANG_REGEX=	./scripts/.*\.(sh|pl|py)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Xastir
@@ -38,7 +39,7 @@ GH_PROJECT=	Xastir
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DAVIS SHAPELIB DBFAWK MAGICK CURL GEOTIFF GDAL GPSMAN FESTIVAL \
-		RTREE ERRORPOP BDB 
+		RTREE ERRORPOP BDB
 
 DAVIS_DESC=	Include Davis Weatherstation Support
 SHAPELIB_DESC=	Include Shapelib support
