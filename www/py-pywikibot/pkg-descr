@@ -1,4 +1,7 @@
 The Pywikibot framework is a Python library that interfaces with the
 MediaWiki API version 1.14 or higher.
 
+Also included are various general function scripts that can be adapted
+for different tasks.
+
 WWW: https://www.mediawiki.org/wiki/Pywikibot
