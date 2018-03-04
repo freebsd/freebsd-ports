@@ -13,6 +13,8 @@ COMMENT=	Convert your videos quickly, easily, and all at once
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	lazbuild:editors/lazarus
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
