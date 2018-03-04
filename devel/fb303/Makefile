@@ -14,6 +14,8 @@ COMMENT=	Facebook Bassline
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libthrift.so:devel/thrift-cpp
 BUILD_DEPENDS=	thrift:devel/thrift
 
