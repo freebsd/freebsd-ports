@@ -1,2 +1,3 @@
-SHA256 (netperf-2.7.0.tar.gz) = 9170c4758463bc5342dcdbfc88a40b586fcc9d7ccca048ecbb3b2d49387a28b9
-SIZE (netperf-2.7.0.tar.gz) = 1299801
+TIMESTAMP = 1519739687
+SHA256 (HewlettPackard-netperf-2.7.1.p20170921-d566775bf_GH0.tar.gz) = 66fc216436bdd9dbdb726cc43d6d09a7c5356b4569546fb3dce833ed45ea5b70
+SIZE (HewlettPackard-netperf-2.7.1.p20170921-d566775bf_GH0.tar.gz) = 2010861

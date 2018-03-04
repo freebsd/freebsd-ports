@@ -4,7 +4,9 @@ man/man1/netperf.1.gz
 man/man1/netserver.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arr_script
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bloat.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/find_max_burst.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/packet_byte_script
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/remote_hosts
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/runemomni.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/runemomniagg2.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/runemomniaggdemo.sh
