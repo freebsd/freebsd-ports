@@ -3,7 +3,7 @@
 
 PORTNAME=	pyaudio
 PORTVERSION=	0.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 USES=		python gmake
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 
 MAKE_ENV=	PYTHON=${PYTHON_CMD} \
 		SPHINX=sphinx-build-${PYTHON_VER}
