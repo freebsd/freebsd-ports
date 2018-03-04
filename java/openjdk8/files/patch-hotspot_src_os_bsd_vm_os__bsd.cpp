@@ -224,3 +224,26 @@
    if (addr == requested_addr) {
       return requested_addr;
    }
+@@ -4010,15 +4010,19 @@
+ }
+ 
+ void os::set_native_thread_name(const char *name) {
+-#if defined(__APPLE__) && MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
+-  // This is only supported in Snow Leopard and beyond
+   if (name != NULL) {
++#if defined(__APPLE__) && MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
++    // This is only supported in Snow Leopard and beyond
+     // Add a "Java: " prefix to the name
+     char buf[MAXTHREADNAMESIZE];
+     snprintf(buf, sizeof(buf), "Java: %s", name);
+     pthread_setname_np(buf);
+-  }
++#elif defined(__FreeBSD__)
++    char buf[MAXCOMLEN+1];
++    strlcpy(buf, name, sizeof(buf));
++    pthread_set_name_np(pthread_self(), buf);
+ #endif
++  }
+ }
+ 
+ bool os::distribute_processes(uint length, uint* distribution) {
