@@ -111,15 +111,6 @@ USE_XORG+=	xcb
 MESA_LLVM_VER?=	50
 BUILD_DEPENDS+=	llvm${MESA_LLVM_VER}>0:devel/llvm${MESA_LLVM_VER}
 MOZ_EXPORT+=	LLVM_CONFIG=llvm-config${MESA_LLVM_VER}
-.if ${MOZILLA_VER:R:R} < 58
-MOZ_EXPORT+=	BINDGEN_CFLAGS="${BINDGEN_CFLAGS}"
-. if ! ${USE_MOZILLA:M-nspr}
-BINDGEN_CFLAGS+=-isystem${LOCALBASE}/include/nspr
-. endif
-. if ! ${USE_MOZILLA:M-pixman}
-BINDGEN_CFLAGS+=-isystem${LOCALBASE}/include/pixman-1
-. endif
-.endif # MOZILLA_VER < 58
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSREL} == 11.1
