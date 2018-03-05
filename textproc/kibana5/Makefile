@@ -4,7 +4,7 @@
 PORTNAME=	kibana
 PORTVERSION=	5.6.8
 DISTVERSIONSUFFIX=	-linux-x86
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
@@ -15,7 +15,7 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	node>=0.8.0:www/node
+RUN_DEPENDS=	node6>=6.12.2:www/node6
 
 CONFLICTS=	kibana[3-4]*
 
