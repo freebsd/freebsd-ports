@@ -174,17 +174,15 @@ pre-build-MANPAGES-off:
 .endfor
 
 post-install:
-.if !defined(WITH_DEBUG)
-.	for lib in ${LDB_BINS} ${LDB_LIBS}
+.for lib in ${LDB_BINS} ${LDB_LIBS}
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${lib}
-.	endfor
-.	if !defined(NO_PYTHON)
-			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.so
-			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb.so
-.		if defined(SAMBA4_PYTHON3)
-			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.${SAMBA4_PYTHON3_SO_ABI}.so
-			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SAMBA4_PYTHON3_SITELIBDIR}/ldb.${SAMBA4_PYTHON3_SO_ABI}.so
-.		endif
+.endfor
+.if !defined(NO_PYTHON)
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.so
+		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb.so
+.	if defined(SAMBA4_PYTHON3)
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.${SAMBA4_PYTHON3_SO_ABI}.so
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SAMBA4_PYTHON3_SITELIBDIR}/ldb.${SAMBA4_PYTHON3_SO_ABI}.so
 .	endif
 .endif
 
