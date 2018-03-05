@@ -60,6 +60,7 @@ lib/seed7/lib/comp/fil_act.s7i
 lib/seed7/lib/comp/flt_act.s7i
 lib/seed7/lib/comp/gkb_act.s7i
 lib/seed7/lib/comp/hsh_act.s7i
+lib/seed7/lib/comp/inline.s7i
 lib/seed7/lib/comp/int_act.s7i
 lib/seed7/lib/comp/itf_act.s7i
 lib/seed7/lib/comp/kbd_act.s7i
