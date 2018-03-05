@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 		libgmime-2.6.so:mail/gmime26
 
-USES=		autoreconf gettext-runtime gmake libtool makeinfo pkgconfig
+USES=		autoreconf compiler:c++14-lang gettext-runtime gmake \
+		libtool makeinfo pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	djcb
 USE_GNOME=	glib20
