@@ -40,7 +40,6 @@ POST-DEINSTALL)
   echo "---> Starting post-deinstall script"
 
   # try to kill all empty directories - necessary on pkg_add-based systems
-  find "%%MAILMANDIR%%" -depth -type d -exec rmdir '{}' + >/dev/null 2>&1 || :
   if [ -d "%%MAILMANDIR%%" ]; then
     echo '---> %%MAILMANDIR%% is not empty - this installation may have active lists!'
     ls -lRB "%%MAILMANDIR%%" | head -n200 || :
