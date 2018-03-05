@@ -11,14 +11,12 @@ PORTREVISION=	0
 PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
-MASTER_SITES=	LOCAL/mat/bind \
-		https://gitlab.isc.org/isc-projects/bind9/repository/${HASH}/archive.tar.bz2?d/
+MASTER_SITES=	LOCAL/mat/bind
 .if defined(BIND_TOOLS_SLAVE)
 PKGNAMESUFFIX=	-tools
 .else
 PKGNAMESUFFIX=	9-devel
 .endif
-DISTNAME=	${PORTNAME}9-${HASH}-${HASH}
 
 MAINTAINER=	mat@FreeBSD.org
 .if defined(BIND_TOOLS_SLAVE)
@@ -31,8 +29,12 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.0a0.2018.02.26
-HASH=		e1d6c9a6631f2db967d1a6331b5a177b78e08b89
+ISCVERSION=	9.13.0a0.2018.03.02
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.isc.org
+GL_ACCOUNT=	isc-projects
+GL_PROJECT=	bind9
+GL_COMMIT=	8529e124eaf13447835a1a0f6453f2812a780710
 
 USES=	cpe libedit tar:bz2
 
@@ -232,10 +234,10 @@ BROKEN=	OpenSSL from the base system does not support GOST, add \
 .endif
 
 post-extract:
-	echo "SRCID=${HASH}" > ${WRKSRC}/srcid
+	echo "SRCID=${GL_COMMIT}" > ${WRKSRC}/srcid
 
 post-patch:
-	@${REINPLACE_CMD} -e '/RELEASETYPE=/s#$$#-${HASH}#' \
+	@${REINPLACE_CMD} -e '/RELEASETYPE=/s#$$#-${GL_COMMIT}#' \
 		${WRKSRC}/version
 .if defined(BIND_TOOLS_SLAVE)
 	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
