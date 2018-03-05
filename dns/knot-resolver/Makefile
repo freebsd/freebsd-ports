@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	knot-resolver
-PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTVERSION=	1.5.3
+PORTREVISION=	0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -28,7 +28,6 @@ MAKE_ARGS+=	PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig
 MAKE_ARGS+=	lmdb_CFLAGS=-I${PREFIX}/include lmdb_LIBS=-llmdb
 
 USES=		gmake libedit libtool pkgconfig tar:xz
-USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	COOKIES DNSTAP DOXYGEN GO MEMCACHED REDIS TRUSTANCHOR
@@ -66,7 +65,7 @@ MEMCACHED_DESC=			memcached in-memory data-backend
 MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 MEMCACHED_MAKE_ARGS_ON=		HAS_libmemcached=yes
 MEMCACHED_MAKE_ARGS_OFF=	HAS_libmemcached=no
-MEMCACHED_PLIST_FILES=		lib/kdns_modules/kmemcached.so
+MEMCACHED_PLIST_FILES=		lib/kdns_modules/memcached.so
 
 REDIS_DESC=			redis in-memory data-backend
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
