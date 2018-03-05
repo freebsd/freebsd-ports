@@ -1,6 +1,6 @@
---- Makefile.orig	2018-02-15 17:41:52 UTC
+--- Makefile.orig	2018-02-28 16:27:58 UTC
 +++ Makefile
-@@ -21,7 +21,7 @@ VERSION=0.09.16
+@@ -21,7 +21,7 @@ VERSION=0.09.18
  # Codename "portable pressure producer"
  #
  
@@ -9,12 +9,3 @@
  
  #
  # Pedantic flags
-@@ -345,7 +345,7 @@ personality.h:
- stress-personality.c: personality.h
- 
- perf.o: perf.c perf-event.c
--	@gcc -E perf-event.c | grep "PERF_COUNT" | sed 's/,/ /' | awk {'print "#define _SNG_" $$1 " (1)"'} > perf-event.h
-+	@$(CC) -E perf-event.c | grep "PERF_COUNT" | sed 's/,/ /' | awk {'print "#define _SNG_" $$1 " (1)"'} > perf-event.h
- 	@echo CC $<
- 	@$(CC) $(CFLAGS) -c -o $@ $<
- 
