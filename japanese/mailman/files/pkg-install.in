@@ -16,6 +16,14 @@ POST-INSTALL)
 
   echo "---> Running update"
 
+  for DIR in logs archives lists locks data spam qfiles \
+             archives/private archives/public
+  do
+      if [ ! -e "%%MAILMANDIR%%/$DIR" ]; then
+          /bin/mkdir -p "%%MAILMANDIR%%/$DIR"
+      fi
+  done
+
   LC_ALL=C "%%MAILMANDIR%%/bin/update" || exit 1
 
   echo "---> Checking crontab(5) file for user \"%%USER%%\""
