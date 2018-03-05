@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=		falkon
-DISTVERSION=		2.1.99.20180209
+DISTVERSION=		3.0.0
 CATEGORIES=		www
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Web browser based on the Qt Framework
 
 LICENSE=			GPLv3
-LICENSE_FILE=		${WRKSRC}/LICENSE
+LICENSE_FILE=		${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	kf5-extra-cmake-modules>=0:devel/kf5-extra-cmake-modules
 
@@ -21,14 +21,12 @@ USE_XORG=	xcb
 USE_LDCONFIG=	yes
 USE_GITHUB=		yes
 GH_ACCOUNT=	KDE
-GH_TAGNAME=	31e4d5f
+GH_TAGNAME=	0118c0cb966b2c15823945730a7aaa5b3dca545d
 
 OPTIONS_DEFINE=	KWALLET
 OPTIONS_SUB=	yes
 KWALLET_DESC=	KDE5 Wallet Integration
 KWALLET_USE=	kde=wallet
 KWALLET_USES=	kde:5
-
-CONFLICTS_INSTALL=	qupzilla-qt[45]*
 
 .include <bsd.port.mk>
