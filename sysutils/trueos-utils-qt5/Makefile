@@ -1,11 +1,10 @@
-# Created by: Joe Maloney <jmaloney@ixsystems.com>
 # $FreeBSD$
 
 PORTNAME=	trueos-utils-qt5
-PORTVERSION=	201711020906
+PORTVERSION=	201803051002
 CATEGORIES=	sysutils
 
-MAINTAINER=	jmaloney@ixsystems.com
+MAINTAINER=	jt@ixsystems.com
 COMMENT=	TrueOS QT5 Utilities
 
 LICENSE=	BSD2CLAUSE
@@ -36,6 +35,6 @@ QMAKE_ARGS=     CONFIG+="configure"
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	trueos-utils-qt5
-GH_TAGNAME=	9090004b25e04d78b1da85294188adc2a669598d
+GH_TAGNAME=	269b05a54038145b77df910ca1a7de108d168d30
 
 .include <bsd.port.mk>
