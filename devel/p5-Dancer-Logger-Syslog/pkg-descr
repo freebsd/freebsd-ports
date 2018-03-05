@@ -1,0 +1,15 @@
+Dancer logger engine for Sys::Syslog
+
+This module implements a logger engine that sends log messages to syslog,
+through the Sys::Syslog module.
+
+The setting __logger__ should be set to `syslog` in order to use this session
+engine in a Dancer application.
+
+You can also specify the other configuration via the 'syslog' config key, e.g.
+
+    syslog:
+      facility: 'local0'
+      ident: 'my_app'
+
+WWW: http://search.cpan.org/dist/Dancer-Logger-Syslog/
