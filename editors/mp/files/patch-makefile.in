@@ -1,0 +1,19 @@
+--- makefile.in.orig	2018-02-19 12:22:50 UTC
++++ makefile.in
+@@ -36,13 +36,13 @@ dep:
+ 	gcc -MM *.c `cat config.cflags` > makefile.depend
+ 
+ $(APPNAME): $(OBJS) $(MPDM)/libmpdm.a $(MPSL)/libmpsl.a
+-	$(CCLINK) $(CFLAGS) $(OBJS) `cat config.ldflags` -o $@
++	$(CCLINK) $(LDFLAGS) $(OBJS) `cat config.ldflags` -o $@
+ 
+ mpv_kde4.o: mpv_kde4.cpp mpv_qk_common.moc
+-	$(CPP) $(CFLAGS) -I. `cat config.cflags` -c $<
++	$(CPP) $(CXXFLAGS) -I. `cat config.cflags` -c $<
+ 
+ mpv_qt4.o: mpv_qt4.cpp mpv_qk_common.moc
+-	$(CPP) $(CFLAGS) -I. `cat config.cflags` -c $<
++	$(CPP) $(CXXFLAGS) -I. `cat config.cflags` -c $<
+ 
+ mpv_qk_common.moc: mpv_qk_common.cpp
+ 	$(MOC) -o $@ $<
