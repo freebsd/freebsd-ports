@@ -2,88 +2,102 @@
 # $FreeBSD$
 
 PORTNAME=	mp
-DISTVERSION=	5.2.11
+DISTVERSION=	5.2.13
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/mp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Programming text editor
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv ncurses
+USES=		gmake iconv
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config.sh
-CONFIGURE_ARGS=	--prefix=${PREFIX} --without-win32 --without-kde4
+CONFIGURE_ARGS=	--prefix=${PREFIX} --docdir=${DOCSDIR} \
+		--without-win32 --without-kde4
+CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}" \
+		ICONV_LIB="${ICONV_LIB}" \
+		ICONV_PREFIX="${ICONV_PREFIX}" \
+		NCURSESINC="${NCURSESINC}" \
+		NCURSESLIB="${NCURSESLIB}"
+LDFLAGS+=	-Wl,--as-needed
 
 DATADIR=	${PREFIX}/share/mp-5
 
 OPTIONS_DEFINE=		DOCS NLS PCRE
-OPTIONS_RADIO=		GUI
-OPTIONS_RADIO_GUI=	GTK2 GTK3 QT4
-OPTIONS_DEFAULT=	PCRE
+OPTIONS_SINGLE=		GUI
+OPTIONS_SINGLE_GUI=	ANSI GTK2 GTK3 NCURSES QT4 QT5
+OPTIONS_DEFAULT=	NCURSES PCRE
 OPTIONS_SUB=		yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_WITH=	gettext
-GTK2_USE=		gnome=cairo,gdkpixbuf2,gtk20
-GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
-GTK3_USE=		gnome=cairo,gdkpixbuf2,gtk30
+
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	pcre
+
+ANSI_DESC=		ANSI terminal support
+ANSI_CONFIGURE_WITH=	ansi
+
+GTK2_USE=		gnome=cairo,gdkpixbuf2,gtk20
+GTK2_CONFIGURE_ON=	--with-gtk=2
+
+GTK3_USE=		gnome=cairo,gdkpixbuf2,gtk30
+GTK3_CONFIGURE_ON=	--with-gtk=3
+
+NCURSES_USES=		ncurses
+NCURSES_CONFIGURE_WITH=	curses
+
 QT4_USE=		qt4=corelib,gui,moc_build \
 			xorg=x11
-QT4_CONFIGURE_ENV=	CPP="${CXX}" CCLINK="${CXX}" MOC="${MOC}"
 QT4_CONFIGURE_WITH=	qt4
+
+QT5_USES=		compiler:c++11-lang
+QT5_USE=		cxxstd=-std=c++11 \
+			gl=gl \
+			qt5=buildtools_build,core,gui,widgets
+QT5_CONFIGURE_WITH=	qt5
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MQT4}
+.if ${PORT_OPTIONS:MGTK*} || ${PORT_OPTIONS:MQT*}
 USES+=		pkgconfig
 PLIST_SUB+=	GUI=""
 .else
 PLIST_SUB+=	GUI="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}
-DESKTOP_ENTRIES="Minimum Profit" "" "mp-5" "mp" "Develpment;TextEditor;GTK;" ""
+.if ${PORT_OPTIONS:MGTK*}
+DESKTOP_ENTRIES="Minimum Profit" "" "mp" "mp-5" "Utility;TextEditor;GTK;" ""
 .else
 CONFIGURE_ARGS+=	--without-gtk
-CONFOPT_GTK=	0
 .endif
 
-.if ${PORT_OPTIONS:MGTK2}
-CONFOPT_GTK=	2
-.endif
-
-.if ${PORT_OPTIONS:MGTK3}
-CONFOPT_GTK=	3
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-DESKTOP_ENTRIES="Minimum Profit" "" "mp-5" "mp" "Development;TextEditor;Qt;" ""
+.if ${PORT_OPTIONS:MQT*}
+DESKTOP_ENTRIES="Minimum Profit" "" "mp" "mp-5" "Utility;TextEditor;Qt;" ""
+CONFIGURE_ARGS+=--with-moc=${MOC}
+CONFIGURE_ENV+=	CCLINK="${CXX}"
 QT_NONSTANDARD=	yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-I/usr/local/include|| ; \
-		 s|-L/usr/local/lib|| ; \
-		 s|-lncursesw|${LDFLAGS} -lncursesw| ; \
-		 /gtk+/s|3.0|${CONFOPT_GTK}.0| ; \
-		 /OK/s|3.0|${CONFOPT_GTK}.0| ; \
-		 /CONFOPT_GTK/s|3|${CONFOPT_GTK}|' ${WRKSRC}/config.sh
-	@${REINPLACE_CMD} -e \
-		's|%%LOCALBASE%%|${LOCALBASE}| ; \
-		 s|%%ICONV_PREFIX%%|${ICONV_PREFIX}| ; \
-		 s|%%ICONV_LIB%%|${ICONV_LIB}|g' ${WRKSRC}/mpdm/config.sh
 .for i in mpdm/mpdm.h mpsl/mpsl_d.c
 	@${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/${i}
 .endfor
 
+do-configure:
+	@(for CONFIGURE_WRKSRC in ${WRKSRC}/mpdm ${WRKSRC}/mpsl ${WRKSRC}; \
+	  do \
+	    cd $${CONFIGURE_WRKSRC} && \
+	      ${SETENV} CC="${CC}" CPP="${CXX}" \
+	      CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+	      LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
+	      ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}; \
+	  done;)
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp-5 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mpsl/mpsl ${STAGEDIR}${PREFIX}/bin
@@ -92,7 +106,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/mp_*.mpsl ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/lang/*.mpsl ${STAGEDIR}${DATADIR}/lang
-.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MQT4}
+.if ${PORT_OPTIONS:MGTK*} || ${PORT_OPTIONS:MQT*}
 	${INSTALL_DATA} ${WRKSRC}/mp.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
 

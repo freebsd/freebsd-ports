@@ -1,6 +1,6 @@
 Fix build with aarch64, armv6, and armv7
 
---- mpdm_s.o ---
+#--- mpdm_s.o ---
 mpdm_s.c:1070:5: error: conflicting types for '__wcwidth'
 int wcwidth(wchar_t);
     ^
