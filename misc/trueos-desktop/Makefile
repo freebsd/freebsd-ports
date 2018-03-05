@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-desktop
-PORTVERSION=	201802271624
+PORTVERSION=	201803051337
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -24,7 +24,6 @@ RUN_DEPENDS=	trueos-core>=0:misc/trueos-core \
 		${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
 		${LOCALBASE}/bin/xvkbd:x11/xvkbd \
 		cups-filters>=0:print/cups-filters \
-		drm-next-kmod>=g20170918:graphics/drm-next-kmod \
 		trueos-handbook>=0:misc/trueos-handbook \
 		lumina>=0:x11/lumina \
 		foomatic-db>=0:print/foomatic-db \
@@ -49,7 +48,7 @@ MAKE_ARGS=	STAGEDIR=${STAGEDIR}  TYPE=desktop
 USE_GITHUB=     yes
 GH_ACCOUNT=     trueos
 GH_PROJECT=     trueos-core
-GH_TAGNAME=     d80895d0c48646854bcefc8546d5ae26a903efb8
+GH_TAGNAME=     e14ca39a863e2b5d0c4b4f396f75089970fd101d
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/pixmaps

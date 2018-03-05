@@ -1,2 +1,3 @@
 etc/trueos/required-services-server
 etc/trueos/recommended-services-server
+@sample /etc/devfs.rules.trueos /etc/devfs.rules
