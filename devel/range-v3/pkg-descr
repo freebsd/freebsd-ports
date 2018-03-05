@@ -1,0 +1,8 @@
+Range library for C++11/14/17. This code is the basis of a formal proposal to
+add range support to the C++ standard library.
+
+Range v3 is a library for the future C++. Not only does it work well with
+today's C++ -- move semantics, lambdas, automatically deduced types and all --
+it also anticipates tomorrow's C++ with Concepts.
+
+WWW: https://github.com/ericniebler/range-v3

@@ -5208,6 +5208,7 @@
     SUBDIR += radare2
     SUBDIR += ragel
     SUBDIR += raknet
+    SUBDIR += range-v3
     SUBDIR += rapidjson
     SUBDIR += raylib
     SUBDIR += rbenv
