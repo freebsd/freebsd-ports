@@ -3,7 +3,7 @@
 
 PORTNAME=	p4
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 # Perforce stupidly rerolls their distfiles on a regular basis, updating the
 # files' timestamps when they do, which changes the zip file's checksum.  Work
@@ -23,6 +23,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${JAM}:devel/jam
 
+# p4 links libssl and libcrypto statically, so specify :build
+USES=		ssl:build
+
 PLIST_FILES=	bin/p4
 
 .include <bsd.port.pre.mk>
@@ -36,6 +39,8 @@ do-build:
 		CCFLAGS="${CFLAGS}" \
 		LINKFLAGS="${LDFLAGS}" \
 		OSVER=${OSVER} \
+		SSL="yes" \
+		SSLPREFIX=${OPENSSLLIB} \
 		${JAM} -dx -j${MAKE_JOBS_NUMBER} || true
 
 do-install:
