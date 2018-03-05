@@ -13,6 +13,8 @@ COMMENT=	Open source JavaScript engine by Google
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
 CONFLICTS_INSTALL=	v8-[0-9]*
