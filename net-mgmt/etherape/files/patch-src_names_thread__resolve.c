@@ -1,6 +1,6 @@
---- src/thread_resolve.c.orig	2015-06-06 07:18:29 UTC
-+++ src/thread_resolve.c
-@@ -161,6 +161,10 @@ thread_pool_routine(void *dt)
+--- src/names/thread_resolve.c.orig	2017-03-18 16:11:42 UTC
++++ src/names/thread_resolve.c
+@@ -162,6 +162,10 @@ thread_pool_routine(void *dt)
  
        pthread_mutex_unlock(&resolvemtx);
     }
@@ -11,7 +11,7 @@
     return NULL;
  }
  
-@@ -279,9 +283,6 @@ thread_close(void)
+@@ -280,9 +284,6 @@ thread_close(void)
  {
    /* thread pool shutdown */ 
    stop_threads();

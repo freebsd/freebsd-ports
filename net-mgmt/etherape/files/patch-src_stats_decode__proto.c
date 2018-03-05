@@ -1,6 +1,6 @@
---- src/decode_proto.c.orig	2014-02-02 18:38:16 UTC
-+++ src/decode_proto.c
-@@ -27,6 +27,15 @@
+--- src/stats/decode_proto.c.orig	2017-03-18 16:11:42 UTC
++++ src/stats/decode_proto.c
+@@ -25,6 +25,15 @@
  #include "appdata.h"
  #include <ctype.h>
  #include <string.h>

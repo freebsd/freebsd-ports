@@ -2,23 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	etherape
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.16
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Graphical network traffic monitor tool modeled after Etherman
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake iconv pathfix pkgconfig
-USE_GNOME=	gnomedocutils libglade2 libgnomeui
-GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		yelp-tools>=0:textproc/yelp-tools
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libpopt.so:devel/popt
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		gettext gmake iconv localbase pathfix pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 libglade2 libgnomecanvas
+GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog FAQ NEWS README README.bugs TODO
 
