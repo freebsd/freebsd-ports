@@ -600,7 +600,7 @@ git-clone-DEFAULT: ${_GITLAB_CLONE_DIR}
 	@${ECHO_MSG} "Cloned the default GitLab repository into ${_GITLAB_CLONE_DIR}/${GL_PROJECT_DEFAULT}" | ${FMT_80}
 .  endif
 .  if !empty(GL_SUBDIR)
-_SITES_extract:=	690:post-extract-gl-DEFAULT
+_SITES_extract:=	69${GL_SUBDIR_${_group}:C=[^/]+= =g:[#]}:post-extract-gl-DEFAULT
 post-extract-gl-DEFAULT:
 	@${RMDIR} ${WRKSRC}/${GL_SUBDIR_DEFAULT} 2>/dev/null || :
 	@${MKDIR} ${WRKSRC}/${GL_SUBDIR_DEFAULT:H} 2>/dev/null || :
