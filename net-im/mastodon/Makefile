@@ -3,7 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -119,12 +119,12 @@ do-build:
 	@${RM} ${WRKSRC}/Gemfile.lock
 	HOME=${WRKSRC_mn} yarn config set yarn-offline-mirror ${WRKSRC_mn} --offline
 	HOME=${WRKSRC_mn} yarn config set nodedir ${LOCALBASE} --offline
-	HOME=${WRKSRC_mn} yarn config set python ${PYTHON_CMD}
+	HOME=${WRKSRC_mn} yarn config set python ${PYTHON_CMD} --offline
 	@${CP} ${FILESDIR}/yarn.lock.in ${WRKSRC}/yarn.lock
 	(cd ${WRKSRC};\
 		HOME=${WRKSRC_mn} yarn --offline;\
-		SECRET_KEY_BASE=x RAILS_ENV=production rails --trace\
-		assets:precompile)
+		SECRET_KEY_BASE=x RAILS_ENV=production rails webpacker:binstubs;\
+		SECRET_KEY_BASE=x RAILS_ENV=production rails --trace assets:precompile)
 	(cd ${WRKSRC}/public/assets &&\
 		${MV} .sprockets-manifest-*.json .sprockets-manifest-${X}.json &&\
 		${MV} doorkeeper/application-*.css doorkeeper/application-${XX}.css &&\
