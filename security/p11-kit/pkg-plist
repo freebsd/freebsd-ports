@@ -43,6 +43,7 @@ share/gtk-doc/html/p11-kit/p11-kit.devhelp2
 share/gtk-doc/html/p11-kit/p11-kit.html
 share/gtk-doc/html/p11-kit/pkcs11-conf.html
 share/gtk-doc/html/p11-kit/reference.html
+share/gtk-doc/html/p11-kit/remoting.html
 share/gtk-doc/html/p11-kit/right-insensitive.png
 share/gtk-doc/html/p11-kit/right.png
 share/gtk-doc/html/p11-kit/sharing-managed.html
