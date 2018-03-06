@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Ogg-Vorbis-Header
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,5 +22,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Ogg/Vorbis/Header/Header.so
 
 .include <bsd.port.mk>
