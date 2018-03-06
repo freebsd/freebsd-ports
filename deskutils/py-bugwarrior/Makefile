@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugwarrior
-PORTVERSION=	1.3.0
+PORTVERSION=	1.5.1
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,15 +22,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twiggy>0:devel/py-twiggy@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.2:devel/py-Jinja2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycurl>0:ftp/py-pycurl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}future>=0.16.0:devel/py-future@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dogpile.cache>=0.5.3:devel/py-dogpile.cache@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0.9.1:devel/py-lockfile@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}configparser>=0:devel/py-configparser@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${FLAVOR}
 
 OPTIONS_DEFINE=		BUGZILLA JIRA PHABRICATOR
-OPTIONS_DEFAULT=	BUGZILLA PHABRICATOR
+OPTIONS_DEFAULT=	BUGZILLA JIRA PHABRICATOR
 
 BUGZILLA_DESC=			Enable Bugzilla support
 BUGZILLA_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}python-bugzilla>0:devel/py-python-bugzilla@${FLAVOR}

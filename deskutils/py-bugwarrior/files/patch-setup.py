@@ -1,17 +1,24 @@
---- setup.py.orig	2016-01-09 17:19:18 UTC
+--- setup.py.orig	2017-05-25 15:38:59 UTC
 +++ setup.py
-@@ -46,11 +46,13 @@ setup(name='bugwarrior',
-           "pyxdg",
+@@ -38,7 +38,7 @@ setup(name='bugwarrior',
+           "dogpile.cache>=0.5.3",
+           "lockfile>=0.9.1",
+           "click",
+-          "future!=0.16.0",
++          "future",
        ],
+       extras_require=dict(
+           keyring=["keyring", "dbus-python"],
+@@ -50,9 +50,11 @@ setup(name='bugwarrior',
+           bugzilla=["python-bugzilla"],
+       ),
        tests_require=[
 -          "Mock",
 +          "mock",
-           "unittest2",
            "nose",
-           "jira>=0.22",
-           "megaplan>=1.4",
+           "responses",
 +          "pypandoc",
 +          "pyac",
-       ],
-       test_suite='nose.collector',
-       entry_points="""
+           "bugwarrior[jira]",
+           "bugwarrior[megaplan]",
+           "bugwarrior[activecollab]",
