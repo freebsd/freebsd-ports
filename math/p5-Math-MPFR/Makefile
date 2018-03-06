@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-MPFR
-PORTVERSION=	4.0
+PORTVERSION=	4.01
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,9 @@ TEST_DEPENDS=	p5-Math-GMP>=0:math/p5-Math-GMP \
 
 USE_PERL5=	configure
 USES=		localbase perl5
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| -lquadmath||' ${WRKSRC}/Makefile.PL
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/MPFR/MPFR.so
