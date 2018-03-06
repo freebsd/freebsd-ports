@@ -2,7 +2,7 @@
 
 PORTNAME=	lumina-calculator
 PORTVERSION=	1.4.2
-PORTREVISION=	201803061317
+PORTREVISION=	201803061453
 CATEGORIES=	deskutils
 
 MAINTAINER=	jt@ixsystems.com
@@ -34,7 +34,7 @@ USE_QT5=	core gui widgets network svg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	89ad0095d7da09158778b5afae9beeaa0bd98d38
+GH_TAGNAME=	9b8419b162767929191b20d848b1b9e3d65cab69
 WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}
 
 .if${PORT_OPTIONS:MI18N}
