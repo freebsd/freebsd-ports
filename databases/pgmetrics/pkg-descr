@@ -1,0 +1,4 @@
+pgmetrics collects and displays various information and statistics from a
+running PostgreSQL server to aid in troubleshooting, monitoring and automation.
+
+WWW: https://pgmetrics.io/
