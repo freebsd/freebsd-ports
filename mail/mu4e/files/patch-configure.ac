@@ -1,6 +1,6 @@
 --- configure.ac.orig	2018-02-03 12:02:45 UTC
 +++ configure.ac
-@@ -37,12 +37,12 @@ AC_SUBST(prefix)
+@@ -37,29 +37,29 @@ AC_SUBST(prefix)
  
  # AC_PROG_CXX *before* AC_PROG_CC, otherwise configure won't error out
  # when a c++ compiler is not found. Weird, huh?
@@ -16,9 +16,12 @@
 -AC_HEADER_STDC
 +#AC_HEADER_STDC
  
- AX_CXX_COMPILE_STDCXX_14
- m4_ifdef([AX_COMPILER_FLAGS],[AX_COMPILER_FLAGS(,,[yes])])
-@@ -50,16 +50,16 @@ AX_VALGRIND_CHECK
+-AX_CXX_COMPILE_STDCXX_14
+-m4_ifdef([AX_COMPILER_FLAGS],[AX_COMPILER_FLAGS(,,[yes])])
+-AX_VALGRIND_CHECK
++#AX_CXX_COMPILE_STDCXX_14
++#m4_ifdef([AX_COMPILER_FLAGS],[AX_COMPILER_FLAGS(,,[yes])])
++#AX_VALGRIND_CHECK
  
  # for now, use AM_PROG_LIBTOOL, as we don't want to require
  # a too new setup for autotools/libtool
