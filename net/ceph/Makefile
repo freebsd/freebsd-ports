@@ -3,8 +3,7 @@
 
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.2.2
-PORTREVISION=	1
+DISTVERSION=	12.2.4
 CATEGORIES=	net
 
 MAINTAINER=	wjw@digiware.nl
@@ -25,9 +24,9 @@ BUILD_DEPENDS=	\
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	\
 	${PY_BOOST} \
+	libboost_python.so:devel/boost-python-libs \
 	libboost_thread.so:devel/boost-libs \
 	libleveldb.so:databases/leveldb \
-	libldap.so:net/openldap24-client \
 	libnss3.so:security/nss \
 	libcryptopp.so:security/cryptopp \
 	libsnappy.so:archivers/snappy \
@@ -47,14 +46,16 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable@${PY_FLAVOR}
 
 CONFLICTS_INSTALL=	ceph-devel
+PORTSCOUT=	limit:^v12\.
 
 USES=	gmake cmake:outsource,noninja python:2.7 fuse gettext-runtime shebangfix
 USE_PYTHON=	cython
+USE_OPENLDAP=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ceph:DEFAULT
 GH_TUPLE+=	ceph:ceph-erasure-code-corpus:2d7d78b:ceph_erasure_code_corpus/ceph-erasure-code-corpus
 GH_TUPLE+=	ceph:ceph-object-corpus:f0ba19f:ceph_object_corpus/ceph-object-corpus
-GH_TUPLE+=	ceph:civetweb:de23828:civetweb/src/civetweb
+GH_TUPLE+=	ceph:civetweb:bdaa39a:civetweb/src/civetweb
 GH_TUPLE+=	01org:isa-l_crypto:603529a:isa_l_crypto/src/crypto/isa-l/isa-l_crypto
 GH_TUPLE+=	ceph:gf-complete:7e61b44:gf_complete/src/erasure-code/jerasure/gf-complete
 GH_TUPLE+=	ceph:jerasure:96c76b8:jerasure/src/erasure-code/jerasure/jerasure
@@ -62,14 +63,12 @@ GH_TUPLE+=	ceph:googletest:fdb8504:googletest/src/googletest
 GH_TUPLE+=	ceph:isa-l:7e1a337:isa_l/src/isa-l
 GH_TUPLE+=	ceph:lua:1fce39c:lua/src/lua
 GH_TUPLE+=	ceph:rapidjson:f54b0e4:rapidjson/src/rapidjson
-GH_TUPLE+=	ceph:rocksdb:e15382c:rocksdb/src/rocksdb
+GH_TUPLE+=	ceph:rocksdb:62782e7:rocksdb/src/rocksdb
 GH_TUPLE+=	ceph:xxHash:1f40c65:xxHash/src/xxHash
 GH_TUPLE+=	facebook:zstd:dc99312:zstd/src/zstd
 
 CMAKE_BUILD_TYPE=	Release
 CMAKE_ARGS=	\
-	-D CMAKE_C_LINK_FLAGS:STRING=" -fuse-ld=/usr/bin/ld.lld" \
-	-D CMAKE_CXX_LINK_FLAGS:STRING=" -fuse-ld=/usr/bin/ld.lld" \
 	-D WITH_SYSTEM_BOOST:BOOL=ON \
 	-D CEPH_MAN_DIR:STRING=man \
 	-D WITH_LTTNG:BOOL=OFF \
