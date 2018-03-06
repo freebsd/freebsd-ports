@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	send2trash
-PORTVERSION=	1.3.0
+DISTVERSION=	1.5.0
 CATEGORIES=	deskutils
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,8 @@ COMMENT=	Small package that sends files to the Trash
 LICENSE=	BSD3CLAUSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
+NO_ARCH=	yes
 
 PORTDOCS=	CHANGES.rst README.rst
 OPTIONS_DEFINE=	DOCS
