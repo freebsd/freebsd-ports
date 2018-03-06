@@ -11,6 +11,7 @@ MAINTAINER=	ports@caomhin.org
 COMMENT=	Python module for RAR archive reading
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	unrar:archivers/unrar
 
