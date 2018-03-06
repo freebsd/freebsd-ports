@@ -3,7 +3,7 @@
 
 PORTNAME=	django-transaction-hooks
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Django database backends to register transaction-commit hooks
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.6.1:www/py-django18@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.8:www/py-django@${FLAVOR}
 
 NO_ARCH=	yes
 
