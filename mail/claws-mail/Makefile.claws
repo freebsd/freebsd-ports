@@ -4,7 +4,7 @@ PORTVERSION=	3.16.0
 CATEGORIES?=	mail
 MASTER_SITES=	http://www.claws-mail.org/download.php?file=releases/
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 
 LICENSE=	GPLv3
 
