@@ -3,20 +3,21 @@
 # Provide support for ports requiring Emacs.  This includes flavors with proper
 # dependencies and useful variables.
 #
-# Feature:		emacs
-# Usage:		USES=emacs or USES=emacs:args
+# Feature:	emacs
+# Usage:	USES=emacs or USES=emacs:args
 # Valid ARGS:	build, run
 #
-# build			Indicates that Emacs is needed at build time.
-# run			Indicates that Emacs is needed at run time.
+# build		Indicates that Emacs is needed at build time.
+# run		Indicates that Emacs is needed at run time.
 #
 # If build and run are omitted from the argument list, Emacs will be added to
 # BUILD_DEPENDS and RUN_DEPENDS.  EMACS_NO_DEPENDS can be set to prevent both
 # Emacs dependencies.
 #
 # Variables, which can be set in make.conf:
-# DEFAULT_VERSIONS+=          The default flavor for Emacs ports can be added to
-#                             DEFAULT_VERSIONS.  For example,
+# DEFAULT_VERSIONS+=          The default flavor for Emacs ports (ports with
+#                             USES=emacs, but not the Emacs ports themselves)
+#                             can be added to DEFAULT_VERSIONS.  For example,
 #                             DEFAULT_VERSIONS+= emacs=nox
 #                             Valid flavors: full canna nox devel_full devel_nox
 #                             Flavors specified on the command line take precedence.
