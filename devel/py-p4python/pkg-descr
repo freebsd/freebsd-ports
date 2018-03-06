@@ -1,4 +1,4 @@
 The Python bindings for the Perforce Client API provide convenient classes
 within Python for communicating with Perforce SCM servers.
 
-WWW: https://www.perforce.com/perforce/doc.current/manuals/p4script/03_python.html
+WWW: https://www.perforce.com/perforce/r14.2/manuals/p4script/python.programming.html
