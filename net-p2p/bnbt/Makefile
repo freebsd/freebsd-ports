@@ -9,7 +9,7 @@ MASTER_SITES=	http://opensource.depthstrike.com/${PORTNAME}/
 DISTNAME=	${SNAPSHOT}-${PORTNAME}${PORTVERSION:C/\.//}-src
 SNAPSHOT=	20060727
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ BitTorrent Tracker
 
 OPTIONS_DEFINE=	MYSQL DOCS

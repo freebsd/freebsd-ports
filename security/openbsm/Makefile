@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/
 DISTNAME=	openbsm-${DISTVERSION}
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Basic Security Module (BSM) Audit Implementation
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE

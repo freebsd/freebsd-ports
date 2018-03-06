@@ -9,7 +9,7 @@ CATEGORIES=	net
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LOOSIFER
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive shell used to administer ldap directories
 
 BUILD_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \

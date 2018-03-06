@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	net-p2p devel
 MASTER_SITES=	SF
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library implementing the core BitTorrent protocol
 
 LIB_DEPENDS=	libcurl.so:ftp/curl

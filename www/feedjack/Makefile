@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.feedjack.org/download/
 DISTNAME=	Feedjack-${PORTVERSION}
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Feed aggregator written in Python using the Django framework
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:textproc/py-feedparser@${FLAVOR} \
