@@ -592,6 +592,7 @@
     SUBDIR += pgloader
     SUBDIR += pgloader3
     SUBDIR += pglogical
+    SUBDIR += pgmetrics
     SUBDIR += pgmodeler
     SUBDIR += pgpool
     SUBDIR += pgpool-II-33
