@@ -1,4 +1,4 @@
---- Gemfile.orig	2018-02-05 13:37:24 UTC
+--- Gemfile.orig	2018-02-16 17:13:43 UTC
 +++ Gemfile
 @@ -12,8 +12,8 @@ gem 'sprockets', '~> 3.7.0'
  gem 'default_value_for', '~> 3.0.0'
@@ -11,6 +11,15 @@
  
  gem 'rugged', '~> 0.26.0'
  gem 'grape-route-helpers', '~> 2.1.0'
+@@ -23,7 +23,7 @@ gem 'faraday', '~> 0.12'
+ # Authentication libraries
+ gem 'devise', '~> 4.2'
+ gem 'doorkeeper', '~> 4.2.0'
+-gem 'doorkeeper-openid_connect', '~> 1.2.0'
++gem 'doorkeeper-openid_connect', '~> 1.2'
+ gem 'omniauth', '~> 1.4.2'
+ gem 'omniauth-auth0', '~> 1.4.1'
+ gem 'omniauth-azure-oauth2', '~> 0.0.9'
 @@ -109,7 +109,7 @@ gem 'fog-rackspace', '~> 0.1.1'
  gem 'fog-aliyun', '~> 0.2.0'
  
