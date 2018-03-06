@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-hijack
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Allows DJango superusers to login as other users
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.8:www/py-django@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
