@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.7.50
-PORTREVISION=	20180105
+PORTVERSION=	2.11.50
+PORTREVISION=	20180306
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-riscv
 
@@ -15,8 +15,9 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 BROKEN_powerpc64=	fails to compile: async.c: internal compiler error: Segmentation fault
 
 USE_GITHUB=	yes
-GH_TUPLE=	riscv:riscv-qemu:8d56aad \
-		qemu:dtc:65cc4d2:dtc/dtc
+GH_TUPLE=	riscv:riscv-qemu:6256f8a \
+		qemu:dtc:e543880:dtc/dtc \
+		qemu:keycodemapdb:6b3d716:keycodemapdb/ui/keycodemapdb
 
 HAS_CONFIGURE=	yes
 USES=	gmake libtool makeinfo pkgconfig python:2.7,build
