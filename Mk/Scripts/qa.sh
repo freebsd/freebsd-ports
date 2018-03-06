@@ -515,6 +515,8 @@ proxydeps_suggest_uses() {
 	elif [ ${pkg} = "multimedia/gstreamer1" ]; then warn "you need to use USE_GSTREAMER1+=yes"
 	elif [ ${pkg} = "multimedia/gstreamer1-plugins" ]; then warn "you need to use USE_GSTREAMER1+=yes"
 	elif [ ${pkg} = "multimedia/gstreamer1-plugins-bad" ]; then warn "you need to use USE_GSTREAMER1+=bad"
+	# boost related
+	elif [ ${pkg} = "devel/boost-python-libs" ]; then warn "you need to add LIB_DEPENDS+=\${PY_BOOST} and maybe USES+=python"
 	# sdl-related
 	elif [ ${pkg} = 'devel/sdl12' ]; then
 		warn "you need USE_SDL+=sdl"
