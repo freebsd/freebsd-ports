@@ -103,6 +103,7 @@
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
+    SUBDIR += blackbox_exporter
     SUBDIR += boxbackup
     SUBDIR += boxbackup-devel
     SUBDIR += brasero
