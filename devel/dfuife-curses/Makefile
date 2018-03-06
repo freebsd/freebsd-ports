@@ -10,6 +10,8 @@ MASTER_SITES=	http://people.xmms2.org/~alex/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DFUI curses frontend
 
+LICENSE=	BSD3CLAUSE
+
 LIB_DEPENDS=	libaura3.so:devel/libaura \
 		libdfui4.so:devel/libdfui
 
