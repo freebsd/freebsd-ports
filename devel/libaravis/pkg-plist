@@ -49,6 +49,7 @@ include/aravis-0.6/arvgcregisternode.h
 include/aravis-0.6/arvgcstring.h
 include/aravis-0.6/arvgcstructentrynode.h
 include/aravis-0.6/arvgcswissknife.h
+include/aravis-0.6/arvgcvalueindexednode.h
 include/aravis-0.6/arvgvcp.h
 include/aravis-0.6/arvgvdevice.h
 include/aravis-0.6/arvgvfakecamera.h

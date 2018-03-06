@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2018-01-29 16:03:28 UTC
++++ Makefile.am
+@@ -20,7 +20,7 @@ if ARAVIS_BUILD_GST_0_10_PLUGIN
+ SUBDIRS += gst-0.10
+ endif
+ 
+-SUBDIRS += tests po docs
++SUBDIRS += po docs
+ 
+ aravisdocdir = ${docdir}/aravis-@ARAVIS_API_VERSION@
+ aravisdoc_DATA = 	\

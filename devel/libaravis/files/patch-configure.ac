@@ -1,0 +1,11 @@
+--- configure.ac.orig	2018-01-29 16:03:28 UTC
++++ configure.ac
+@@ -268,7 +268,7 @@ GOBJECT_INTROSPECTION_CHECK([0.10.0])
+    AM_CONDITIONAL([HAVE_INTROSPECTION], [false])
+    enable_introspection=no])
+ 
+-GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
++
+ AM_CONDITIONAL([BUILD_GTK_DOC], [test "x$enable_gtk_doc" = "xyes" || test ! -f "autogen.sh"])
+ 
+ APPSTREAM_XML
