@@ -1,0 +1,13 @@
+python-nss is a Python binding for NSS (Network Security Services)
+and NSPR (Netscape Portable Runtime). NSS provides cryptography
+services supporting SSL, TLS, PKI, PKIX, X509, PKCS*, etc. NSS is
+an alternative to OpenSSL and used extensively by major software
+projects. NSS is FIPS-140 certified.
+
+NSS is built upon NSPR because NSPR provides an abstraction of
+common operating system services, particularly in the areas of
+networking and process management. Python also provides an abstraction
+of common operating system services but because NSS and NSPR are
+tightly bound, python-nss exposes elements of NSPR.
+
+WWW: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Python_binding_for_NSS
