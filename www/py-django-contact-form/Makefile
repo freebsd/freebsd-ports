@@ -3,6 +3,7 @@
 
 PORTNAME=	django-contact-form
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Generic contact-form application for Django
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=0:www/py-django111@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.11:www/py-django@${FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}akismet>=0:devel/py-akismet@${FLAVOR}
 
 NO_ARCH=	yes
