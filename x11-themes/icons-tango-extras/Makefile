@@ -8,7 +8,7 @@ MASTER_SITES=	http://tango.freedesktop.org/releases/ \
 		GENTOO
 DISTNAME=	tango-icon-theme-extras-${PORTVERSION}
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extra set of icons from the Tango project
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:x11-themes/icon-naming-utils \

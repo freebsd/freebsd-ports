@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.hping.org/visitors/
 DISTNAME=	${PORTNAME}-0.7
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast and easy to use web log analyzer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_0.7

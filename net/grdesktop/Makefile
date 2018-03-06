@@ -7,7 +7,7 @@ PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for the remote desktop client (rdesktop)
 
 RUN_DEPENDS=	rdesktop:net/rdesktop

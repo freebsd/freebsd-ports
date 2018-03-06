@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://incise.org/files/dev/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ridiculously tiny window manager
 
 OPTIONS_DEFINE=	DOCS
