@@ -10,6 +10,7 @@
     SUBDIR += bashc
     SUBDIR += ch
     SUBDIR += dash
+    SUBDIR += envy
     SUBDIR += es
     SUBDIR += esh
     SUBDIR += fd
