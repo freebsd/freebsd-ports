@@ -10,6 +10,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Internationalized Domain Names in Applications (IDNA)
 
+LICENSE=	BSD3CLAUSE PSFL
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE.rst
+
 USES=		python	# Actually, 2.6-2.7,3.3-3.6
 USE_PYTHON=	autoplist concurrent distutils
 
