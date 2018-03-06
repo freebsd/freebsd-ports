@@ -1,0 +1,2 @@
+bin/blackbox_exporter
+@sample etc/blackbox_exporter.yml.sample
