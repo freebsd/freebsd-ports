@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tanglet/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Single player word finding game based on Boggle
 
 LICENSE=	GPLv3+
