@@ -45,7 +45,7 @@ index 029ff8504795..2c3a40caa1ba 100644
  if CONFIG['MOZ_WEBM_ENCODER']:
      external_dirs += ['media/libmkv']
  
-@@ -51,12 +60,9 @@ external_dirs += [
+@@ -51,11 +60,8 @@ external_dirs += [
      'media/kiss_fft',
      'media/libcubeb',
      'media/libnestegg',
@@ -53,11 +53,10 @@ index 029ff8504795..2c3a40caa1ba 100644
      'media/libopus',
 -    'media/libtheora',
      'media/libspeex_resampler',
-     'media/libstagefright',
 -    'media/libsoundtouch',
+     'media/mp4parse-rust',
      'media/psshparser'
  ]
- 
 diff --git config/system-headers.mozbuild config/system-headers.mozbuild
 index 09d3db5ca8c0..c6533b84c470 100644
 --- config/system-headers.mozbuild
@@ -180,7 +179,7 @@ index 86b051c58d33..fb6186dce78b 100644
 +if CONFIG['MOZ_SYSTEM_SOUNDTOUCH']:
 +    CXXFLAGS += CONFIG['MOZ_SOUNDTOUCH_CFLAGS']
 +
- if CONFIG['MOZ_ANDROID_HLS_SUPPORT']:
+ if CONFIG['MOZ_ANDROID_HLS_SUPPORT'] and CONFIG['MOZ_BUILD_MOBILE_ANDROID_WITH_GRADLE']:
      DEFINES['MOZ_ANDROID_HLS_SUPPORT'] = True
  
 diff --git dom/media/platforms/ffmpeg/ffvpx/FFVPXRuntimeLinker.cpp dom/media/platforms/ffmpeg/ffvpx/FFVPXRuntimeLinker.cpp
@@ -280,7 +279,7 @@ index c7f85eebff95..aae7b814adb5 100644
 +    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
 +
  # Suppress warnings in third-party code.
- if CONFIG['GNU_CC'] or CONFIG['CLANG_CL']:
+ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl', 'gcc'):
      CFLAGS += ['-Wno-type-limits']
 diff --git media/libtremor/README_MOZILLA media/libtremor/README_MOZILLA
 index ee67b53a05c5..81c971773d55 100644
@@ -320,7 +319,7 @@ index adf393782cc9..923b76231107 100644
 +++ media/libvorbis/moz.build
 @@ -56,3 +56,6 @@ FINAL_LIBRARY = 'gkmedias'
  # Suppress warnings in third-party code.
- if CONFIG['GNU_CC']:
+ if CONFIG['CC_TYPE'] in ('clang', 'gcc'):
      CFLAGS += ['-Wno-uninitialized']
 +
 +if CONFIG['MOZ_SYSTEM_OGG']:
