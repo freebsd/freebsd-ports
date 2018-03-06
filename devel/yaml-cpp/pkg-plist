@@ -96,5 +96,5 @@ lib/cmake/yaml-cpp/yaml-cpp-targets.cmake
 %%TEST%%lib/libgtest_main.so
 lib/libyaml-cpp.so
 lib/libyaml-cpp.so.0
-lib/libyaml-cpp.so.0.6.0
+lib/libyaml-cpp.so.0.6.2
 libdata/pkgconfig/yaml-cpp.pc
