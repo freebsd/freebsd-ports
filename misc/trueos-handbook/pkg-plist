@@ -105,6 +105,9 @@ share/trueos/handbook/_images/wine1a.png
 share/trueos/handbook/_images/wine2a.png
 share/trueos/handbook/_images/wine3.png
 share/trueos/handbook/_images/writer1.png
+share/trueos/handbook/_sources/advanced.rst.txt
+share/trueos/handbook/_sources/appendix_a.rst.txt
+share/trueos/handbook/_sources/dualboot.rst.txt
 share/trueos/handbook/_sources/helpsupport.rst.txt
 share/trueos/handbook/_sources/install.rst.txt
 share/trueos/handbook/_sources/introducing.rst.txt
@@ -150,6 +153,7 @@ share/trueos/handbook/_static/searchtools.js
 share/trueos/handbook/_static/transparentfireball.png
 share/trueos/handbook/_static/trueos.ico
 share/trueos/handbook/_static/trueoslogo.png
+share/trueos/handbook/_static/TrueNAS_Ad.png
 share/trueos/handbook/_static/underscore-1.3.1.js
 share/trueos/handbook/_static/underscore.js
 share/trueos/handbook/_static/up-pressed.png
