@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli_foreman
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Foreman commands for Hammer CLI
 LICENSE=	GPLv3+
 
 RUN_DEPENDS=	rubygem-apipie-bindings>=0.2.2:devel/rubygem-apipie-bindings \
-		rubygem-hammer_cli>=${PORTVERSION}:sysutils/rubygem-hammer_cli \
+		rubygem-hammer_cli>=${PORTVERSION:R}.0:sysutils/rubygem-hammer_cli \
 		rubygem-rest-client>=1.8.0:www/rubygem-rest-client
 
 NO_ARCH=	yes
