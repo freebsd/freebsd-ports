@@ -35,7 +35,7 @@ GH_TUPLE=	citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
 		herumi:xbyak:v5.53-1-gc5da377:xbyak/externals/xbyak \
 		lsalzman:enet:39a72ab:enet/externals/enet \
 		neobrain:nihstro:fd69de1:nihstro/externals/nihstro \
-		weidai11:cryptopp:CRYPTOPP_6_0_0:cryptopp/externals/cryptopp/cryptopp
+		weidai11:cryptopp:CRYPTOPP_6_1_0:cryptopp/externals/cryptopp/cryptopp
 
 USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
 USE_SDL=	sdl2
