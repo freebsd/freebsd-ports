@@ -1,8 +1,7 @@
 astLib is a set of Python modules that provides some tools for research
-astronomers. It can be used for astronomical plots, some statistics,
-common calculations, coordinate conversions, and manipulating FITS images
-with World Coordinate System (WCS) information through PyWCSTools - a
-simple wrapping of WCSTools by Doug Mink. PyWCSTools is distributed (and
-developed) as part of astLib.
+astronomers. It can be used for simple plots, statistics, common calculations,
+coordinate conversions, and manipulating FITS images with World Coordinate
+System (WCS) information through PyWCSTools - a simple wrapping of WCSTools by
+Jessica Mink. PyWCSTools is distributed (and developed) as part of astLib.
 
-WWW: http://astlib.sourceforge.net/
+WWW: https://pypi.python.org/pypi/astLib
