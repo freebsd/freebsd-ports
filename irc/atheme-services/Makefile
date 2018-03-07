@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	atheme-services
-PORTVERSION=	7.2.7
+PORTVERSION=	7.2.9
 CATEGORIES=	irc ipv6 net
 MASTER_SITES=	https://github.com/atheme/atheme/releases/download/v${PORTVERSION}/
 DISTNAME=	atheme-${PORTVERSION}
