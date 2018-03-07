@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preview FreeBSD loader logos
 
 LICENSE=	BSD2CLAUSE
@@ -15,6 +15,7 @@ LICENSE=	BSD2CLAUSE
 BROKEN_armv6=		fails to link: testmain uses VFP register arguments, dict.o does not
 BROKEN_armv7=		fails to link: testmain uses VFP register arguments, dict.o does not
 BROKEN_mips64=		fails to link: relocation truncated to fit: R_MIPS_26 against `__assert@@FBSD_1.0'
+BROKEN_FreeBSD_12=	fails to build: ficl/Makefile line 13: Could not find bsd.stand.mk
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=	requires kernel source files in ${SRC_BASE}
