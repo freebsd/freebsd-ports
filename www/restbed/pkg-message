@@ -1,0 +1,14 @@
+======================================================================
+You installed restbed, the framework to build RESTful applications
+in C++11.
+
+Currently restbed has the caveat that it only works correctly on
+FreeBSD with this sysctl variable value: net.inet6.ip6.v6only=0.
+This value is not the default.
+
+When net.inet6.ip6.v6only=1, tests don't pass, and applications using
+this library can fail.
+
+See https://github.com/Corvusoft/restbed/issues/231 for further
+information.
+======================================================================
