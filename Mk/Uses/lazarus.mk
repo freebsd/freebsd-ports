@@ -1,4 +1,3 @@
-#
 # $FreeBSD$
 #
 # Support for Lazarus-based ports.
