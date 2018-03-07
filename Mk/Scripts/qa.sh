@@ -669,6 +669,13 @@ proxydeps() {
 
 				# If we don't already depend on it, and we don't provide it
 				if ! listcontains ${dep_file_pkg} "${LIB_RUN_DEPENDS} ${PKGORIGIN}"; then
+					# If the package has a flavor, check that the dependency is not on that particular flavor.
+					flavor=$(pkg annotate -q -S "${dep_file_pkg}" flavor)
+					if [ -n "${flavor}" ]; then
+						if listcontains ${dep_file_pkg}@${flavor} "${LIB_RUN_DEPENDS} ${PKGORIGIN}"; then
+							continue
+						fi
+					fi
 					err "${file} is linked to ${dep_file} from ${dep_file_pkg} but it is not declared as a dependency"
 					proxydeps_suggest_uses ${dep_file_pkg} ${dep_file}
 					rc=1
