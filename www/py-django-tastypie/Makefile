@@ -18,7 +18,7 @@ MY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mimeparse>=0.1.4:devel/py-mimeparse@${FLAVOR}
 BUILD_DEPENDS=	${MY_DEPENDS}
 
 RUN_DEPENDS?=	${MY_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}django111>=1.5:www/py-django111@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}django110>=1.5:www/py-django110@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
