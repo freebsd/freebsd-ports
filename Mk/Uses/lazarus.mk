@@ -2,7 +2,7 @@
 #
 # Support for Lazarus-based ports.
 #
-# Feature:      lazaurs
+# Feature:      lazarus
 # Usage:        USES=lazarus
 # Valid ARGS:   (none), gtk2, qt4, qt5
 #
