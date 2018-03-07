@@ -1,0 +1,9 @@
+Tox is a decentralized, secure messenger with audio and video chat capabilities.
+You can see it as an alternative to Skype.
+
+This is only the core library. To use it, you have to install a client, like
+e.g. net-im/toxic, net-im/qTox or net-im/uTox.
+
+This legacy version must be used only with uTox (untill a new release).
+
+WWW: http://tox.chat/

@@ -195,6 +195,7 @@
     SUBDIR += tkabber
     SUBDIR += tkabber-plugins
     SUBDIR += tox
+    SUBDIR += tox12
     SUBDIR += toxic
     SUBDIR += turpial
     SUBDIR += twirssi
