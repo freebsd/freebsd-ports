@@ -1,5 +1,5 @@
---- base/process/process_metrics_freebsd.cc.orig	2018-01-04 21:05:38.000000000 +0100
-+++ base/process/process_metrics_freebsd.cc	2018-01-27 20:04:35.262483000 +0100
+--- base/process/process_metrics_freebsd.cc.orig	2018-02-24 16:25:08.000000000 +0100
++++ base/process/process_metrics_freebsd.cc	2018-03-03 19:25:40.067505000 +0100
 @@ -12,6 +12,10 @@
  #include "base/macros.h"
  #include "base/memory/ptr_util.h"
@@ -11,7 +11,19 @@
  namespace base {
  
  ProcessMetrics::ProcessMetrics(ProcessHandle process)
-@@ -118,6 +122,60 @@
+@@ -25,6 +29,11 @@
+   return WrapUnique(new ProcessMetrics(process));
+ }
+ 
++bool GetVmStatInfo(VmStatInfo* vmstat) {
++  NOTIMPLEMENTED();
++  return false;
++}
++
+ size_t ProcessMetrics::GetPagefileUsage() const {
+   struct kinfo_proc info;
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
+@@ -118,6 +127,60 @@
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);

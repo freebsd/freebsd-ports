@@ -1,0 +1,10 @@
+--- components/crash/core/common/BUILD.gn.orig	2018-03-03 20:58:02.430388000 +0100
++++ components/crash/core/common/BUILD.gn	2018-03-03 20:58:21.875946000 +0100
+@@ -38,7 +38,6 @@
+       "crash_key_internal.h",
+     ]
+ 
+-    deps += [ "//third_party/breakpad:client" ]
+   }
+ }
+ 

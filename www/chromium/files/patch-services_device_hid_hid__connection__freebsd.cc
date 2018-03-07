@@ -1,11 +1,11 @@
---- device/hid/hid_connection_freebsd.cc.orig	2018-01-26 21:53:10.787158000 +0100
-+++ device/hid/hid_connection_freebsd.cc	2018-01-26 21:53:10.788129000 +0100
+--- services/device/hid/hid_connection_freebsd.cc.orig	2018-03-04 05:38:54.417710000 +0100
++++ services/device/hid/hid_connection_freebsd.cc	2018-03-04 08:44:44.849710000 +0100
 @@ -0,0 +1,280 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
-+#include "device/hid/hid_connection_freebsd.h"
++#include "services/device/hid/hid_connection_freebsd.h"
 +
 +#include <dev/usb/usbhid.h>
 +#include <dev/usb/usb_ioctl.h>
@@ -21,7 +21,7 @@
 +#include "base/threading/thread_restrictions.h"
 +#include "base/threading/thread_task_runner_handle.h"
 +#include "components/device_event_log/device_event_log.h"
-+#include "device/hid/hid_service.h"
++#include "services/device/hid/hid_service.h"
 +
 +namespace device {
 +
@@ -45,7 +45,7 @@
 +  // Must be called on a thread that has a base::MessageLoopForIO.
 +  void Start() {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-+    base::ThreadRestrictions::AssertIOAllowed();
++    base::AssertBlockingAllowed();
 +
 +    file_watcher_ = base::FileDescriptorWatcher::WatchReadable(
 +        fd_.get(), base::Bind(&BlockingTaskHelper::OnFileCanReadWithoutBlocking,

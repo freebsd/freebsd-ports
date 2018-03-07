@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	63.0.3239.132
-PORTREVISION=	1
+PORTVERSION=	64.0.3282.186
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -31,7 +30,8 @@ BUILD_DEPENDS+=	gperf:devel/gperf \
 .endif
 
 .if !defined(GN_ONLY)
-LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
+LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+		libspeechd.so:accessibility/speech-dispatcher \
 		libsnappy.so:archivers/snappy \
 		libFLAC.so:audio/flac \
 		libopus.so:audio/opus \
