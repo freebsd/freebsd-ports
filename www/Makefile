@@ -1941,6 +1941,7 @@
     SUBDIR += reportmagic
     SUBDIR += repos-style
     SUBDIR += resin3
+    SUBDIR += restbed
     SUBDIR += retawq
     SUBDIR += revive-adserver
     SUBDIR += rnews
