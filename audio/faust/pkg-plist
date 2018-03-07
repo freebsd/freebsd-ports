@@ -960,6 +960,7 @@ man/man1/faust.1.gz
 %%DATADIR%%/webaudio/osc.js
 %%DATADIR%%/webaudio/osc.wasm
 %%DATADIR%%/webaudio/qrcode.js
+%%DATADIR%%/webaudio/wasm-standalone-node-wrapper.js
 %%DATADIR%%/webaudio/wasm-standalone-node-wrapper-double.js
 %%DATADIR%%/webaudio/webComponent/index.html
 %%DATADIR%%/webaudio/webComponent/template/faustTemplate.html
