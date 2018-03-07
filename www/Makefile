@@ -1649,6 +1649,7 @@
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django-tinymce
     SUBDIR += py-django-voting
+    SUBDIR += py-django110
     SUBDIR += py-django111
     SUBDIR += py-django18
     SUBDIR += py-django20
