@@ -27,7 +27,7 @@ do-build:
 	@${RLN} ${WRKSRC} ${WRKSRC}/github.com/${GH_ACCOUNT}/${PORTNAME}
 	@${RLN} ${WRKSRC} ${WRKSRC}/src
 	@cd ${WRKSRC} && \
-		${SETENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
+		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
 		go build -ldflags "-X main.Version=${DISTVERSION}" -o bin/${PORTNAME}
 
 do-install:

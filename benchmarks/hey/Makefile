@@ -24,7 +24,7 @@ do-build:
 		cd src/github.com/rakyll/hey; \
 		${LN} -s ../../../../requester . )
 	( cd ${WRKSRC}; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} CC=clang \
+		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} CC=clang \
 		go build ${BUILD_FLAGS} )
 
 do-install:

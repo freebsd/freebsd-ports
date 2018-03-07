@@ -26,7 +26,7 @@ USE_RC_SUBR=	amazon-ssm-agent
 
 do-build:
 	@cd ${WRKSRC};							\
-	    ${SETENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor CGO_ENABLED=0	\
+	    ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor CGO_ENABLED=0	\
 	    go build -ldflags "-s -w" -o amazon-ssm-agent		\
 	    agent/agent.go agent/agent_unix.go agent/agent_parser.go
 

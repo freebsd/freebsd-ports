@@ -15,8 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	blttll
 
 do-build:
-	cd ${WRKSRC} && \
-		go build -o fixc main.go
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} go build -o fixc main.go
 
 do-install:
 	 ${INSTALL_PROGRAM} ${WRKSRC}/fixc ${STAGEDIR}${PREFIX}/bin

@@ -56,7 +56,7 @@ post-extract:
 .endfor
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/sensu && ${SETENV} GOPATH=${WRKSRC} go install ./...
+	@cd ${WRKSRC}/src/github.com/sensu && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go install ./...
 
 do-install:
 	${MKDIR} ${STAGEDIR}${UCHIWA_LOGDIR} \

@@ -21,8 +21,8 @@ post-extract:
 	@${MV} ${WRKSRC}/jfrog-cli ${WRKSRC}/jfrog-client ${WRKSRC}/src/github.com/jfrogdev/jfrog-cli-go
 
 do-build:
-	cd ${WRKSRC}/src/github.com/jfrogdev/jfrog-cli-go ; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go install ./...
+	@cd ${WRKSRC}/src/github.com/jfrogdev/jfrog-cli-go ; \
+		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go install ./...
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/jfrog ${STAGEDIR}${PREFIX}/bin/jfrog

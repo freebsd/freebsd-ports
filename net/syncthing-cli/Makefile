@@ -17,7 +17,7 @@ GH_TAGNAME=	9594d39
 PLIST_FILES=	bin/syncthing-cli
 
 do-build:
-	@cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC}/Godeps/_workspace:${WRKSRC} go build
+	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}/Godeps/_workspace:${WRKSRC} go build
 	@${MV} ${WRKSRC}/syncthing-cli-${GH_TAGNAME} ${WRKSRC}/syncthing-cli
 
 do-install:

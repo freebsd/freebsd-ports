@@ -51,7 +51,7 @@ PLIST_FILES=	bin/circonus-agentd "@dir ${ETCDIR}"
 
 do-build:
 	( cd ${WRKSRC}; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} \
+		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} \
 		go build ${BUILD_FLAGS} -o bin/circonus-agentd )
 
 do-install:

@@ -22,7 +22,7 @@ GROUPS=		syncthing
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; \
-		${SETENV} go run build.go -no-upgrade=true -version v${PORTVERSION}
+		${SETENV} ${MAKE_ENV} go run build.go -no-upgrade=true -version v${PORTVERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/bin/syncthing \

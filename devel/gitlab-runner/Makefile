@@ -66,7 +66,7 @@ do-build:
 	@${MKDIR} ${WRKSRC}/src/gitlab.com/gitlab-org
 	@${LN} -s ${WRKSRC} ${WRKSRC}/src/gitlab.com/gitlab-org/gitlab-runner
 	@cd ${WRKSRC} && \
-		${SETENV} CGO_ENABLED=0 GOPATH=${WRKSRC} go build \
+		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} go build \
 			-ldflags="${GO_LDFLAGS}" \
 			-o gitlab-runner
 

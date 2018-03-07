@@ -23,7 +23,7 @@ PORTDOCS=	README.rst CHANGELOG.rst
 
 do-build:
 	@cd ${WRKSRC}/${GH_SUBDIR} && \
-		${SETENV} GOPATH=${WRKSRC} go build -o ${PORTNAME} ./cmd/sops
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o ${PORTNAME} ./cmd/sops
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

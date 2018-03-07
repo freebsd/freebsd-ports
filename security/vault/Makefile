@@ -27,7 +27,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 do-build:
 	@cd ${WRKSRC}; \
-		${SETENV} ${BUILD_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
+		${SETENV} ${MAKE_ENV} ${BUILD_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
 		go build \
 		-ldflags "\
 		-X github.com/hashicorp/vault/version.Version=${PORTVERSION} \

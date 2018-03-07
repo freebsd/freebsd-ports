@@ -27,7 +27,7 @@ PLIST_FILES=	bin/serf
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}; \
-		${SETENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor/ \
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor/ \
 		go build -o bin/${PORTNAME} ./cmd/serf/
 
 do-install:
