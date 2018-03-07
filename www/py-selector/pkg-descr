@@ -1,13 +1,13 @@
 WSGI request delegation. (AKA routing.)
 
-This distribution provides WSGI middleware for "RESTful" dispatch of
-requests to WSGI applications by URL path and HTTP request
-method. Selector now also comes with components for environ-based
-dispatch and on-the-fly middleware composition. There is a very simple
-optional mini-language for path matching expressions. Alternately we
-can easily use regular expressions directly or even create our own
-mini-language. There is a simple "mapping file" format that can be
-used. There are no architecture specific features (to MVC or
-whatever). Neither are there any framework specific features.
+This distribution provides WSGI middleware for “RESTful” mapping of URL paths to
+WSGI applications. Selector now also comes with components for environ based
+dispatch and on-the-fly middleware composition. There is a very simple optional
+mini-language for path expressions. Alternately we can easily use regular
+expressions directly or even create our own mini-language. There is a simple
+“mapping file” format that can be used. There are no architecture specific
+features (to MVC or whatever). Neither are there any framework specific
+features.
 
+WWW: https://pypi.python.org/pypi/selector
 WWW: https://github.com/lukearno/selector

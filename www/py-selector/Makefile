@@ -10,9 +10,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WSGI request delegation (a.k.a. routing)
 
-LICENSE=	MIT
+LICENSE=	GPLv2 MIT
+LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}resolver>=0.2.1:devel/py-resolver@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}resolver>=0:devel/py-resolver@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
