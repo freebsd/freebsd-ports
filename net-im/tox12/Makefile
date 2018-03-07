@@ -2,27 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore
-PORTVERSION=	0.2.0
+PORTVERSION=	0.1.11
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
+PKGNAMESUFFIX=	-legacy
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	ProjectTox-Core library, a decentralized and secure messenger
+COMMENT=	ProjectTox-Core library, a decentralized and secure messenger (legacy)
 
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	checkmk:devel/check
 LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
-		libmsgpackc.so:devel/msgpack		\
 		libsndfile.so:audio/libsndfile		\
-		libportaudio.so:audio/portaudio		\
 		libsodium.so:security/libsodium		\
 		libopencv_core.so:graphics/opencv-core	\
 		libopus.so:audio/opus			\
 		libconfig.so:devel/libconfig
+TEST_DEPENDS=	${LOCALBASE}/lib/libmsgpackc.so:devel/msgpack	\
+		${LOCALBASE}/lib/libportaudio.so:audio/portaudio
 
-CONFLICTS=	toxcore-legacy-0.1.*
+CONFLICTS=	tox-0.2*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
@@ -30,7 +32,7 @@ GH_PROJECT=	c-toxcore
 
 USES=		cmake compiler:c11 libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-PLIST_SUB=	VER=${PORTVERSION:C/0.//}.0 SO=2
+PLIST_SUB=	VER=${PORTVERSION:C/0.//}.0 SO=1
 
 OPTIONS_DEFINE=		DAEMON
 OPTIONS_SUB=		yes
