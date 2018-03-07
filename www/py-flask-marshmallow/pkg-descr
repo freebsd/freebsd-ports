@@ -1,0 +1,7 @@
+Flask-Marshmallow is a thin integration layer for Flask (a Python web
+framework) and marshmallow (an object serialization/deserialization
+library) that adds additional features to marshmallow, including URL and
+Hyperlinks fields for HATEOAS-ready APIs. It also (optionally)
+integrates with Flask-SQLAlchemy.
+
+WWW: https://flask-marshmallow.readthedocs.io/
