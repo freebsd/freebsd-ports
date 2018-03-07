@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dilay
-DISTVERSION=	1.6.1-11
-DISTVERSIONSUFFIX=	-g1c129887  # master has the fix for missing #include
+DISTVERSION=	1.7.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
