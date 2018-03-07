@@ -2325,6 +2325,7 @@
     SUBDIR += trac-customfieldadmin
     SUBDIR += trac-datefield
     SUBDIR += trac-defaultcc
+    SUBDIR += trac-devel
     SUBDIR += trac-discussion
     SUBDIR += trac-downloads
     SUBDIR += trac-email2trac
