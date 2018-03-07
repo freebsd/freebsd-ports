@@ -1,8 +1,8 @@
---- third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp.orig	2017-12-31 05:03:16.422190000 +0100
-+++ third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp	2017-12-31 05:11:19.941348000 +0100
+--- third_party/pdfium/fxjs/cjs_publicmethods.cpp.orig	2018-03-04 04:22:35.417744000 +0100
++++ third_party/pdfium/fxjs/cjs_publicmethods.cpp	2018-03-04 04:28:41.888908000 +0100
 @@ -70,6 +70,103 @@
-                                      L"July",    L"August",   L"September",
-                                      L"October", L"November", L"December"};
+                                       L"July",    L"August",   L"September",
+                                       L"October", L"November", L"December"};
  
 +#if defined(__FreeBSD__)
 +/*
@@ -63,7 +63,7 @@
 +    *decpt = r2;
 +    if (p1 < &buf[0]) {
 +	buf[0] = '\0';
-+	return (buf);
++        return (buf);
 +    }
 +    while (p <= p1 && p < &buf[NDIG]) {
 +	arg *= 10;
@@ -101,6 +101,6 @@
 +}
 +#endif // defined(__FreeBSD__)
 +
- ByteString StrTrim(const ByteString& pStr) {
-   ByteString result(pStr);
-   result.TrimLeft(' ');
+ template <typename T>
+ T StrTrim(const T& str) {
+   T result = str;

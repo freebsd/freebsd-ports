@@ -1,6 +1,6 @@
---- content/renderer/render_thread_impl.cc.orig	2017-12-15 02:04:18.000000000 +0100
-+++ content/renderer/render_thread_impl.cc	2017-12-24 14:46:13.319958000 +0100
-@@ -219,12 +219,22 @@
+--- content/renderer/render_thread_impl.cc.orig	2018-02-24 16:25:14.000000000 +0100
++++ content/renderer/render_thread_impl.cc	2018-03-04 01:40:50.991485000 +0100
+@@ -224,12 +224,22 @@
  #include "content/common/external_ipc_dumper.h"
  #endif
  
@@ -23,34 +23,34 @@
  using base::ThreadRestrictions;
  using blink::WebDocument;
  using blink::WebFrame;
-@@ -929,7 +939,7 @@
+@@ -973,7 +983,7 @@
    GetConnector()->BindInterface(mojom::kBrowserServiceName,
                                  mojo::MakeRequest(&storage_partition_service_));
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   ChildProcess::current()->SetIOThreadPriority(base::ThreadPriority::DISPLAY);
-   ChildThreadImpl::current()->SetThreadPriority(
-       categorized_worker_pool_->background_worker_thread_id(),
-@@ -1147,7 +1157,7 @@
+   render_message_filter()->SetThreadPriority(
+       ChildProcess::current()->io_thread_id(), base::ThreadPriority::DISPLAY);
+   render_message_filter()->SetThreadPriority(
+@@ -1184,7 +1194,7 @@
        FROM_HERE,
        base::BindOnce(base::IgnoreResult(&ThreadRestrictions::SetIOAllowed),
                       false));
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   ChildThreadImpl::current()->SetThreadPriority(compositor_thread_->ThreadId(),
-                                                 base::ThreadPriority::DISPLAY);
+   render_message_filter()->SetThreadPriority(compositor_thread_->ThreadId(),
+                                              base::ThreadPriority::DISPLAY);
  #endif
-@@ -1458,7 +1468,7 @@
-   const bool enable_video_accelerator =
+@@ -1499,7 +1509,7 @@
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode);
    const bool enable_gpu_memory_buffer_video_frames =
+       !is_gpu_compositing_disabled_ &&
 -#if defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+       !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames);
+ #elif defined(OS_WIN)
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames) &&
-       !cmd_line->HasSwitch(switches::kDisableGpuCompositing) &&
-       !gpu_channel_host->gpu_info().software_rendering;
-@@ -1778,7 +1788,26 @@
+@@ -1847,7 +1857,26 @@
        blink_stats.blink_gc_total_allocated_bytes / 1024;
    std::unique_ptr<base::ProcessMetrics> metric(
        base::ProcessMetrics::CreateCurrentProcessMetrics());

@@ -1,6 +1,6 @@
---- chrome/browser/interstitials/chrome_controller_client.cc.orig	2017-12-15 02:04:09.000000000 +0100
-+++ chrome/browser/interstitials/chrome_controller_client.cc	2017-12-24 01:30:40.740189000 +0100
-@@ -46,7 +46,7 @@
+--- chrome/browser/ssl/ssl_error_controller_client.cc.orig	2018-03-03 21:13:39.612526000 +0100
++++ chrome/browser/ssl/ssl_error_controller_client.cc	2018-03-03 21:14:15.298290000 +0100
+@@ -55,7 +55,7 @@
  #if defined(OS_ANDROID)
    chrome::android::OpenDateAndTimeSettings();
  
@@ -9,9 +9,9 @@
    struct ClockCommand {
      const char* const pathname;
      const char* const argument;
-@@ -130,7 +130,7 @@
+@@ -185,7 +185,7 @@
  
- bool ChromeControllerClient::CanLaunchDateAndTimeSettings() {
+ bool SSLErrorControllerClient::CanLaunchDateAndTimeSettings() {
  #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_MACOSX) || \
 -    defined(OS_WIN)
 +    defined(OS_WIN) || defined(OS_BSD)

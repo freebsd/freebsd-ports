@@ -1,9 +1,9 @@
---- services/service_manager/public/cpp/standalone_service/standalone_service.cc.orig	2017-06-05 19:03:11 UTC
-+++ services/service_manager/public/cpp/standalone_service/standalone_service.cc
-@@ -70,6 +70,8 @@ void RunStandaloneService(const StandaloneServiceCallb
-       *base::CommandLine::ForCurrentProcess();
-   if (command_line.HasSwitch(switches::kEnableSandbox))
-     sandbox = InitializeSandbox();
+--- services/service_manager/public/cpp/standalone_service/standalone_service.cc.orig	2018-02-24 16:25:18.000000000 +0100
++++ services/service_manager/public/cpp/standalone_service/standalone_service.cc	2018-03-04 03:53:12.449254000 +0100
+@@ -59,6 +59,8 @@
+             command_line.GetSwitchValueASCII(switches::kServiceSandboxType)),
+         SandboxLinux::PreSandboxHook(), sandbox_options);
+   }
 +#elif defined(OS_BSD)
 +  NOTIMPLEMENTED();
  #endif

@@ -1,6 +1,6 @@
---- content/app/content_main_runner.cc.orig	2017-12-15 02:04:16.000000000 +0100
-+++ content/app/content_main_runner.cc	2017-12-24 12:20:00.837482000 +0100
-@@ -83,10 +83,10 @@
+--- content/app/content_main_runner.cc.orig	2018-02-24 16:25:14.000000000 +0100
++++ content/app/content_main_runner.cc	2018-03-03 23:04:17.370076000 +0100
+@@ -82,10 +82,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -13,16 +13,7 @@
  #include "content/zygote/zygote_main.h"
  #endif
  
-@@ -307,7 +307,7 @@
- };
- 
- #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && \
--    !defined(OS_FUCHSIA)
-+    !defined(OS_FUCHSIA) && !defined(OS_BSD)
- // On platforms that use the zygote, we have a special subset of
- // subprocesses that are launched via the zygote.  This function
- // fills in some process-launching bits around ZygoteMain().
-@@ -432,7 +432,7 @@
+@@ -429,7 +429,7 @@
    }
  
  #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && \
@@ -31,7 +22,7 @@
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -502,10 +502,10 @@
+@@ -499,10 +499,10 @@
          kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  

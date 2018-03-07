@@ -1,5 +1,5 @@
---- base/process/process_metrics.h.orig	2017-12-23 20:56:16.823419000 +0100
-+++ base/process/process_metrics.h	2017-12-23 20:58:52.195249000 +0100
+--- base/process/process_metrics.h.orig	2018-02-24 16:25:08.000000000 +0100
++++ base/process/process_metrics.h	2018-03-03 19:17:04.829273000 +0100
 @@ -103,7 +103,7 @@
    size_t image;
  };
@@ -72,3 +72,12 @@
    int buffers = 0;
    int cached = 0;
    int active_anon = 0;
+@@ -437,7 +437,7 @@
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
+         // defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_BSD)
+ // Parse the data found in /proc/<pid>/stat and return the sum of the
+ // CPU-related ticks.  Returns -1 on parse error.
+ // Exposed for testing.
