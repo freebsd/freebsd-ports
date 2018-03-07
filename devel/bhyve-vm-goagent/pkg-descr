@@ -4,4 +4,4 @@ memory usage, cpu, disk and ethernet configuration.
 
 It supports virtio-console as well as WebSocket protocol.
 
-WWW: https://github.com/araujobsd/bhyve-vm-goagent
+WWW: https://github.com/freenas/bhyve-vm-goagent
