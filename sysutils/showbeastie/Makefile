@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Preview FreeBSD loader logos
 
 LICENSE=	BSD2CLAUSE
