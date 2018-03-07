@@ -2,7 +2,7 @@
 
 PORTNAME=	uTox
 PORTVERSION=	0.11.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -11,7 +11,7 @@ COMMENT=	Lightweight Tox client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox12 \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libvpx.so:multimedia/libvpx \
 		libfilteraudio.so:audio/libfilteraudio\
 		libopus.so:audio/opus
-RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox
+RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox12
 
 USE_GITHUB=	yes
 GH_TAGNAME=	1835eae
