@@ -4,8 +4,12 @@ bin/pyrcc5
 %%PYTHON_SITELIBDIR%%/PyQt5/QtXml.pyi
 %%PYTHON_SITELIBDIR%%/PyQt5/pylupdate.so
 %%PYTHON_SITELIBDIR%%/PyQt5/pylupdate_main.py
+%%PYTHON_SITELIBDIR%%/PyQt5/pylupdate_main.pyc
+%%PYTHON_SITELIBDIR%%/PyQt5/pylupdate_main.pyo
 %%PYTHON_SITELIBDIR%%/PyQt5/pyrcc.so
 %%PYTHON_SITELIBDIR%%/PyQt5/pyrcc_main.py
+%%PYTHON_SITELIBDIR%%/PyQt5/pyrcc_main.pyc
+%%PYTHON_SITELIBDIR%%/PyQt5/pyrcc_main.pyo
 %%PYQT_SIPDIR%%/QtXml/QtXmlmod.sip
 %%PYQT_SIPDIR%%/QtXml/qdom.sip
 %%PYQT_SIPDIR%%/QtXml/qxml.sip
