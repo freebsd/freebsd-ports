@@ -26,7 +26,7 @@ post-extract:
 	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src/
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/prometheus/consul_exporter; ${SETENV} CGO_ENABLED=0 ${BUILD_ENV} GOPATH=${WRKSRC} go build \
+	@cd ${WRKSRC}/src/github.com/prometheus/consul_exporter; ${SETENV} ${MAKE_ENV} CGO_ENABLED=0 ${BUILD_ENV} GOPATH=${WRKSRC} go build \
 		-ldflags "\
 		-X github.com/prometheus/consul_exporter/version.Version=${PORTVERSION}  \
 		-X github.com/prometheus/consul_exporter/version.VersionPrerelease=  \

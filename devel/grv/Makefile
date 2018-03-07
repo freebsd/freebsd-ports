@@ -37,7 +37,7 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} GOPATH=${WRKSRC} go build ./cmd/${PORTNAME}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build ./cmd/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

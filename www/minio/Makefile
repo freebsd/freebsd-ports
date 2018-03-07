@@ -30,7 +30,7 @@ SUB_LIST=	USER="${USERS}" \
 
 do-build:
 	@cd ${WRKSRC}/${GH_SUBDIR} ; \
-	${SETENV} GOPATH=${WRKSRC} CGO_ENABLED=0 go build \
+	${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} CGO_ENABLED=0 go build \
 		--ldflags '-X github.com/minio/minio/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} -X github.com/minio/minio/cmd.ReleaseTag=${GH_TAGNAME} -X github.com/minio/minio/cmd.CommitID=${COMMIT_ID} -X github.com/minio/minio/cmd.GOPATH=${WRKSRC} -s -w' -o ${WRKSRC}/bin/minio
 
 do-install:

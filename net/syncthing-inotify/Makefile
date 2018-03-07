@@ -16,7 +16,7 @@ GH_SUBDIR=	src/github.com/syncthing/syncthing-inotify
 PLIST_FILES=	bin/syncthing-inotify
 
 do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR} ; ${SETENV} CGO_ENABLED=0 GOPATH=${WRKSRC} go build
+	@cd ${WRKSRC}/${GH_SUBDIR} ; ${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} go build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/syncthing-inotify ${STAGEDIR}${PREFIX}/bin/

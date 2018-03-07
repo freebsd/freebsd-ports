@@ -29,7 +29,7 @@ post-extract:
 	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src/
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/hashicorp/consul; ${SETENV} CGO_ENABLED=0 ${BUILD_ENV} GOPATH=${WRKSRC} go build \
+	@cd ${WRKSRC}/src/github.com/hashicorp/consul; ${SETENV} ${MAKE_ENV} CGO_ENABLED=0 ${BUILD_ENV} GOPATH=${WRKSRC} go build \
 		-ldflags "\
 		-X github.com/hashicorp/consul/version.Version=${PORTVERSION}  \
 		-X github.com/hashicorp/consul/version.VersionPrerelease=  \

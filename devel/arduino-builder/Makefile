@@ -41,7 +41,7 @@ do-patch-TOOLS-on:
 			${WRKSRC}/arduino-builder.options
 
 do-build:
-	@( cd ${WRKSRC} ; ${SETENV} ${GO_ENV} go build arduino.cc/arduino-builder )
+	@( cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GO_ENV} go build arduino.cc/arduino-builder )
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

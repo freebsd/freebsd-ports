@@ -19,7 +19,7 @@ PLIST_FILES=	bin/${PORTNAME}
 COMPILEINFO=	${OPSYS}${OSREL}-${ARCH}-${GH_TAGNAME}
 
 do-build:
-	(cd ${WRKSRC} && ${SETENV} ${GO_ENV} go build -o ${PORTNAME} -ldflags "-X main.compileInfo=${COMPILEINFO}" main.go)
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} go build -o ${PORTNAME} -ldflags "-X main.compileInfo=${COMPILEINFO}" main.go
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

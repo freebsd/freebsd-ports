@@ -24,7 +24,7 @@ USE_RC_SUBR=	consul-template
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/consul-template ; \
-		${SETENV} GOPATH=${WRKSRC} go build
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
 
 do-install:
 	${INSTALL_PROGRAM} \

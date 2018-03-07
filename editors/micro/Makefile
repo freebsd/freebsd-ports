@@ -42,7 +42,7 @@ PORTDOCS=	README.md
 
 do-build:
 	@(cd ${WRKSRC} ; \
-		${SETENV} GOPATH=${WRKSRC} go build -ldflags \
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -ldflags \
 		"-s -w -X main.Version=${PORTVERSION} -X main.CommitHash=${BUILD_HASH} -X 'main.CompileDate=${BUILD_DATE}' " ./cmd/micro )
 
 do-install:

@@ -25,7 +25,7 @@ post-patch:
 
 do-build:
 	@(cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
-		${SETENV} GO15VENDOREXPERIMENT=1 GOPATH=${WRKSRC} go build -o bin/exercism exercism/main.go)
+		${SETENV} ${MAKE_ENV} GO15VENDOREXPERIMENT=1 GOPATH=${WRKSRC} go build -o bin/exercism exercism/main.go)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/bin/exercism ${STAGEDIR}${PREFIX}/bin

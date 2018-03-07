@@ -82,7 +82,7 @@ GH_SUBDIR=	src/github.com/gobuffalo/buffalo
 PLIST_FILES=	bin/buffalo
 
 do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR}/buffalo ; ${SETENV} GOPATH=${WRKSRC} go build
+	@cd ${WRKSRC}/${GH_SUBDIR}/buffalo ; ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/${GH_SUBDIR}/buffalo/buffalo

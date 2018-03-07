@@ -25,7 +25,7 @@ GH_SUBDIR=	src/github.com/buger/goreplay
 PLIST_FILES=	bin/${PORTNAME}
 
 do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR} ; ${SETENV} GOPATH=${WRKSRC} go build
+	@cd ${WRKSRC}/${GH_SUBDIR} ; ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/goreplay \

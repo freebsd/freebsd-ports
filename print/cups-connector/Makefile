@@ -37,7 +37,7 @@ post-patch:
 do-build:
 .for bin in ${BIN_FILES}
 	@cd ${WRKSRC}/src/github.com/google/cups-connector; ${SETENV} \
-		${BUILD_ENV} GOPATH=${WRKSRC} go build -o \
+		${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o \
 		${WRKSRC}/bin/${bin} ./${bin}
 .endfor
 

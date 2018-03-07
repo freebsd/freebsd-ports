@@ -24,7 +24,7 @@ post-patch:
 .endfor
 
 do-build:
-	cd ${WRKSRC}/src/golang.org/x/review ; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go install ./...
+	@cd ${WRKSRC}/src/golang.org/x/review ; ${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go install ./...
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

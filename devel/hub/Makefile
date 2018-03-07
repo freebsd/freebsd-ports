@@ -22,7 +22,7 @@ PLIST_FILES=	bin/hub \
 		share/zsh/site-functions/_hub \
 		man/man1/hub.1.gz
 do-build:
-	@cd ${WRKSRC} ; ${SETENV} ${LOCALBASE}/bin/bash script/build
+	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash script/build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/hub ${STAGEDIR}${PREFIX}/bin
