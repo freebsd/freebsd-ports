@@ -1,6 +1,7 @@
 bin/lumina-mediaplayer
 man/man1/lumina-mediaplayer.1.gz
 share/applications/lumina-mediaplayer.desktop
+share/applications/lumina-mediaplayer-pandora.desktop
 %%I18N%%share/lumina-desktop/i18n/l-mediap_af.qm
 %%I18N%%share/lumina-desktop/i18n/l-mediap_ar.qm
 %%I18N%%share/lumina-desktop/i18n/l-mediap_az.qm

@@ -3,6 +3,7 @@ etc/init.d/trueosinit
 etc/rc.d/trueosinit
 etc/trueos/recommended-services-desktop
 etc/trueos/required-services-desktop
+share/icons/hicolor/pixmaps/apps
 share/trueos/xstartup-parallel/disable-beep.sh
 share/trueos/xstartup-parallel/load-xresources.sh
 share/trueos/xstartup/enable-inputmethod.sh
@@ -60,4 +61,5 @@ share/icons/default/index.theme
 share/cups/data/default-testpage.orig.pdf
 share/fluxbox/styles/bora_blue_4k/theme.cfg
 /usr/share/skel/dot.xprofile
-@sample /etc/devfs.rules.trueos
+@sample /etc/devfs.rules.trueos /etc/devfs.rules
+@sample /etc/crontab.trueos /etc/crontab
