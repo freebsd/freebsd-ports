@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	go-ethereum
-PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.8.2
 CATEGORIES=	net-p2p
 
 MAINTAINER=	me@enriquefynn.com
