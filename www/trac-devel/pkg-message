@@ -1,0 +1,15 @@
+*******************************************************************************
+
+From 0.12.x to 1.0.x
+---------------------
+You should be careful to check that the plugins you depend on have
+been ported to 1.0.x, as they most probably won't work without adaptation
+due to the numerous internal changes that occurred during 1.0.x development.
+
+See: http://trac.edgewall.org/wiki/TracDev/ApiChanges/1.0
+
+Consult the upgrade instructions at:
+
+  http://trac.edgewall.org/wiki/TracUpgrade
+
+*******************************************************************************
