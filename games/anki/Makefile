@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-DISTVERSION=	2.0.47
+DISTVERSION=	2.0.48
 CATEGORIES=	games python
 MASTER_SITES=	https://apps.ankiweb.net/downloads/current/
 DISTNAME=	anki-${PORTVERSION}-source
