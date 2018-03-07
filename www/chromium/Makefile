@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	63.0.3239.132
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -61,7 +62,7 @@ LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 		libfontconfig.so:x11-fonts/fontconfig
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		noto>0:x11-fonts/noto
+		noto-lite>0:x11-fonts/noto-lite
 
 BROKEN_FreeBSD_11_aarch64=	components/safe_browsing_db/v4_rice.cc:120:18: use of overloaded operator '&' is ambiguous
 BROKEN_FreeBSD_12_aarch64=	third_party/skia/src/core/SkCpu.cpp:84:27: use of undeclared identifier 'getauxval'
