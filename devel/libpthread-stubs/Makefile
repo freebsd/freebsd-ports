@@ -9,9 +9,12 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	This library provides weak aliases for pthread functions
 
-USES=		libtool pathfix tar:bzip2
-USE_LDCONFIG=	yes
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		pathfix tar:bzip2
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	libdata/pkgconfig/pthread-stubs.pc
 
