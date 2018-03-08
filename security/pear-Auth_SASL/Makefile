@@ -10,7 +10,7 @@ COMMENT=	PEAR abstraction of various SASL mechanism responses
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	pear-Auth>=0:security/pear-Auth
+BUILD_DEPENDS=	${PEAR_PKGNAMEPREFIX}Auth>=0:security/pear-Auth@${PHP_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

@@ -13,9 +13,9 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/GPL
 
 RUN_DEPENDS=	${ADODB_DIR}/adodb.inc.php:databases/adodb5 \
-		${LOCALBASE}/share/pear/Image/Graph.php:graphics/pear-Image_Graph \
-		${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail \
-		${LOCALBASE}/share/pear/Mail/mime.php:mail/pear-Mail_Mime
+		${LOCALBASE}/share/pear/Image/Graph.php:graphics/pear-Image_Graph@${PHP_FLAVOR} \
+		${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail@${PHP_FLAVOR} \
+		${LOCALBASE}/share/pear/Mail/mime.php:mail/pear-Mail_Mime@${PHP_FLAVOR}
 
 USE_PHP=	gd gettext pcre session zlib ctype
 

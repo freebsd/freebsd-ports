@@ -19,6 +19,6 @@ CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config
 
 .include <bsd.port.pre.mk>
 
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}php5-
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${PHP_PKGNAMEPREFIX}
 
 .include <bsd.port.post.mk>

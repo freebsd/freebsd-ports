@@ -8,8 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR::HTML_Select is a class for generating HTML form select elements
 
-BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
-RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
+BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common@${PHP_FLAVOR}
 
 USES=		pear
 

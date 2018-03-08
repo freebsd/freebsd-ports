@@ -17,6 +17,6 @@ USE_HORDE_RUN=	Horde_Exception \
 #USE_HORDE_RUN+=	Horde_Mime
 
 # Optional but we want it
-RUN_DEPENDS+=	${PEARDIR}/Net/SMTP.php:net/pear-Net_SMTP
+RUN_DEPENDS+=	${PEARDIR}/Net/SMTP.php:net/pear-Net_SMTP@${PHP_FLAVOR}
 
 .include <bsd.port.mk>

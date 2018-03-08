@@ -3,7 +3,7 @@
 PORTNAME=	wicked
 PORTVERSION=	2.0.8
 CATEGORIES=	www pear
-PKGNAMEPREFIX=	horde-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Wiki Application
@@ -11,7 +11,7 @@ COMMENT=	Horde Wiki Application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	${PEARDIR}/Text/Wiki.php:www/pear-Text_Wiki
+RUN_DEPENDS+=	${PEARDIR}/Text/Wiki.php:www/pear-Text_Wiki@${PHP_FLAVOR}
 
 USES=	horde cpe php
 USE_PHP=	gettext

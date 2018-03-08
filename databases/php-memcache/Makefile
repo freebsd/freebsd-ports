@@ -4,10 +4,10 @@
 PORTNAME=	memcache
 PORTVERSION=	3.0.9
 CATEGORIES=	databases
-PKGNAMEPREFIX=	php71-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Memcached extension for PHP 7.1
+COMMENT=	Memcached extension for PHP
 
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,8 +17,7 @@ OPTIONS_DEFINE=	EXAMPLES
 PORTSCOUT=	skipv:start
 
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
-IGNORE_WITH_PHP=56 70 72
-PHP_VER=	71
+IGNORE_WITH_PHP=56
 USE_CSTD=	gnu89
 USE_PHP=	session:build zlib:build
 USES=		dos2unix php:ext

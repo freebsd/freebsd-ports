@@ -8,8 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Finance Validation class
 
-BUILD_DEPENDS=	pear-Validate>=0.5.0:devel/pear-Validate
-RUN_DEPENDS=	pear-Validate>=0.5.0:devel/pear-Validate
+BUILD_DEPENDS=	${PEAR_PKGNAMEPREFIX}Validate>=0.5.0:devel/pear-Validate@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Validate>=0.5.0:devel/pear-Validate@${PHP_FLAVOR}
 
 USES=		pear
 

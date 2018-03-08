@@ -40,7 +40,7 @@ NLS_USE=	php=intl
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
 MYSQL_USE=	PHP=pdo_mysql
 LDAP_USE=	PHP=ldap
-PDF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick
+PDF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
 
 post-patch:
 	${REINPLACE_CMD} 's%\(/etc/icingaweb2\)%${PREFIX}\1%g' \

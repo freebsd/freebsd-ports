@@ -8,8 +8,8 @@ CATEGORIES=	devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR NITF XML parser
 
-BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
-RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
+BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}
 
 NO_ARCH=	yes
 USES=		pear

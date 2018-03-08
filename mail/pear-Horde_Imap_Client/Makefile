@@ -3,7 +3,7 @@
 PORTNAME=	Horde_Imap_Client
 PORTVERSION=	2.29.15
 CATEGORIES=	mail www pear
-PKGNAMEPREFIX=	pear-
+PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde IMAP abstraction interface
@@ -24,6 +24,6 @@ SASL_DESC=	Support SASL Authentication
 
 IMAP_USE=	PHP=imap
 MBSTRING_USE=	PHP=mbstring
-SASL_RUN_DEPENDS=	${PEARDIR}/Auth/SASL.php:security/pear-Auth_SASL
+SASL_RUN_DEPENDS=	${PEARDIR}/Auth/SASL.php:security/pear-Auth_SASL@${PHP_FLAVOR}
 
 .include <bsd.port.mk>

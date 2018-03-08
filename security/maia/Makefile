@@ -108,26 +108,26 @@ USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
 		mcrypt pdo pdo_sqlite posix session simplexml sockets \
 		sqlite3 tokenizer xml wddx xmlreader xmlwriter xmlrpc
 
-RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:mail/pear-Mail_Mime \
-		${PEAR_DIR}/Mail/mimeDecode.php:mail/pear-Mail_mimeDecode \
-		${PEAR_DIR}/DB.php:databases/pear-DB \
-		${PEAR_DIR}/Pager/Pager.php:devel/pear-Pager \
-		${PEAR_DIR}/Net/Socket.php:net/pear-Net_Socket \
-		${PEAR_DIR}/Net/SMTP.php:net/pear-Net_SMTP \
-		${PEAR_DIR}/Log.php:sysutils/pear-Log \
-		${PEAR_DIR}/HTMLPurifier.php:devel/pear-htmlpurifier \
-		${PEAR_DIR}/Net/IMAP.php:mail/pear-Net_IMAP \
-		${PEAR_DIR}/Net/POP3.php:net/pear-Net_POP3 \
-		${PEAR_DIR}/Auth/SASL.php:security/pear-Auth_SASL \
-		${PEAR_DIR}/Image/Color.php:graphics/pear-Image_Color \
-		${PEAR_DIR}/Image/Canvas.php:graphics/pear-Image_Canvas \
-		${PEAR_DIR}/Image/Graph.php:graphics/pear-Image_Graph \
-		${PEAR_DIR}/Numbers/Roman.php:textproc/pear-Numbers_Roman \
-		${PEAR_DIR}/Numbers/Words.php:textproc/pear-Numbers_Words \
-		${PEAR_DIR}/MDB2.php:databases/pear-MDB2 \
-		${PEAR_DIR}/MDB2/Driver/mysql.php:databases/pear-MDB2_Driver_mysql \
-		${LOCALBASE}/share/smarty/Smarty.class.php:www/smarty2 \
-		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/scrypt.so:security/pecl-scrypt
+RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:mail/pear-Mail_Mime@${PHP_FLAVOR} \
+		${PEAR_DIR}/Mail/mimeDecode.php:mail/pear-Mail_mimeDecode@${PHP_FLAVOR} \
+		${PEAR_DIR}/DB.php:databases/pear-DB@${PHP_FLAVOR} \
+		${PEAR_DIR}/Pager/Pager.php:devel/pear-Pager@${PHP_FLAVOR} \
+		${PEAR_DIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR} \
+		${PEAR_DIR}/Net/SMTP.php:net/pear-Net_SMTP@${PHP_FLAVOR} \
+		${PEAR_DIR}/Log.php:sysutils/pear-Log@${PHP_FLAVOR} \
+		${PEAR_DIR}/HTMLPurifier.php:devel/pear-htmlpurifier@${PHP_FLAVOR} \
+		${PEAR_DIR}/Net/IMAP.php:mail/pear-Net_IMAP@${PHP_FLAVOR} \
+		${PEAR_DIR}/Net/POP3.php:net/pear-Net_POP3@${PHP_FLAVOR} \
+		${PEAR_DIR}/Auth/SASL.php:security/pear-Auth_SASL@${PHP_FLAVOR} \
+		${PEAR_DIR}/Image/Color.php:graphics/pear-Image_Color@${PHP_FLAVOR} \
+		${PEAR_DIR}/Image/Canvas.php:graphics/pear-Image_Canvas@${PHP_FLAVOR} \
+		${PEAR_DIR}/Image/Graph.php:graphics/pear-Image_Graph@${PHP_FLAVOR} \
+		${PEAR_DIR}/Numbers/Roman.php:textproc/pear-Numbers_Roman@${PHP_FLAVOR} \
+		${PEAR_DIR}/Numbers/Words.php:textproc/pear-Numbers_Words@${PHP_FLAVOR} \
+		${PEAR_DIR}/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR} \
+		${PEAR_DIR}/MDB2/Driver/mysql.php:databases/pear-MDB2_Driver_mysql@${PHP_FLAVOR} \
+		${LOCALBASE}/share/smarty/Smarty.class.php:www/smarty2@${PHP_FLAVOR} \
+		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/scrypt.so:security/pecl-scrypt@${PHP_FLAVOR}
 PLIST_SUB+=     WEBHOST=""
 .else
 PLIST_SUB+=     WEBHOST="@comment "

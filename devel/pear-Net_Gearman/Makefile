@@ -11,8 +11,8 @@ COMMENT=	Gearman client libraray for PHP
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:devel/pear
-RUN_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:devel/pear
+BUILD_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR}
+RUN_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR}
 
 USE_PHP=	json mbstring sockets
 USES=		pear php

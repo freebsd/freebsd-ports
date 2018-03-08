@@ -5,7 +5,6 @@ PORTNAME=	memcached
 PORTVERSION=	2.2.0
 PORTREVISION=	5
 CATEGORIES=	databases
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for interfacing with memcached via libmemcached library

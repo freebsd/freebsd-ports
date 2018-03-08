@@ -2,20 +2,22 @@
 #
 # Common code for PEAR channels
 
-PKGNAMEPREFIX?=	pear-channel-
+PKGNAMEPREFIX?=	${PEAR_PKGNAMEPREFIX}channel-
 
 MASTER_SITES?=	#no master sites
 DISTFILES?=	#no distfiles
 
-BUILD_DEPENDS?=	${LOCALBASE}/bin/pear:devel/pear
-RUN_DEPENDS?=	${LOCALBASE}/bin/pear:devel/pear
+USES+=	pear:env
+
+BUILD_DEPENDS?=	${LOCALBASE}/bin/pear:devel/pear@${PHP_FLAVOR}
+RUN_DEPENDS?=	${LOCALBASE}/bin/pear:devel/pear@${PHP_FLAVOR}
 
 NO_BUILD?=	yes
 
 LPEARDIR?=	share/pear
 
 PEAR_CHANNEL_ALIAS?=	${PORTNAME}
-PEAR_CHANNEL_REG?=	${FILESDIR}/${PEAR_CHANNEL_HOST}.reg
+PEAR_CHANNEL_REG?=	${.CURDIR}/files/${PEAR_CHANNEL_HOST}.reg
 
 PLIST_FILES=	${LPEARDIR}/.channels/.alias/${PEAR_CHANNEL_ALIAS}.txt \
 		${LPEARDIR}/.channels/${PEAR_CHANNEL_HOST}.reg

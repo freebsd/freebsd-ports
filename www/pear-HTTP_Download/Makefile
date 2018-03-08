@@ -8,8 +8,8 @@ CATEGORIES=	www devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to send HTTP downloads
 
-BUILD_DEPENDS=	${PEARDIR}/HTTP/Header.php:www/pear-HTTP_Header
-RUN_DEPENDS=	${PEARDIR}/HTTP/Header.php:www/pear-HTTP_Header
+BUILD_DEPENDS=	${PEARDIR}/HTTP/Header.php:www/pear-HTTP_Header@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/HTTP/Header.php:www/pear-HTTP_Header@${PHP_FLAVOR}
 
 USES=		pear
 

@@ -8,8 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Parser to replace UBB style tags with their HTML equivalents
 
-BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
-RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
+BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common@${PHP_FLAVOR}
 
 USES=	pear
 

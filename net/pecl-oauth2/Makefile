@@ -3,7 +3,6 @@
 PORTNAME=	oauth
 PORTVERSION=	2.0.2
 CATEGORIES=	net pear
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Php interface to the OAuth Protocol

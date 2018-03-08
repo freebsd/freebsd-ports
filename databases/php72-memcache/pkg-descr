@@ -1,8 +1,0 @@
-Memcached is a caching daemon designed especially for dynamic web applications
-to decrease database load by storing objects in memory. This extension allows
-you to work with memcached through handy OO and procedural interfaces.
-
-Note that this port uses unofficial development from
-https://github.com/websupport-sk/pecl-memcache (NON_BLOCKING_IO_php7 branch).
-
-WWW: https://github.com/websupport-sk/pecl-memcache

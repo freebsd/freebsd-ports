@@ -10,8 +10,8 @@ COMMENT=	PEAR Database Abstraction Layer
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
-RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
+BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR}
 
 USES=	pear
 

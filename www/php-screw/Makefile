@@ -1,11 +1,12 @@
 # Created by: Alex Dupre <sysadmin@alexdupre.com>
 # $FreeBSD$
 
-PORTNAME=	php-screw
+PORTNAME=	screw
 PORTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 DISTNAME=	php_screw-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 

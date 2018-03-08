@@ -13,6 +13,6 @@ PEAR_GRAPGHVIZ_DESC=	PEAR::GraphViz support
 
 USES=		pear
 
-PEAR_GRAPGHVIZ_RUN_DEPENDS=	${PEARDIR}/GraphViz.php:graphics/pear-Image_GraphViz
+PEAR_GRAPGHVIZ_RUN_DEPENDS=	${PEARDIR}/GraphViz.php:graphics/pear-Image_GraphViz@${PHP_FLAVOR}
 
 .include <bsd.port.mk>

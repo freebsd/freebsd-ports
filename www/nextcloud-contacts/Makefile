@@ -17,6 +17,7 @@ LICENSE=	AGPLv3
 
 RUN_DEPENDS=	nextcloud>=11:www/nextcloud
 
+USES=		php
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -14,10 +14,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	convert:graphics/ImageMagick \
 		zip:archivers/zip \
 		${UNZIP_CMD}:archivers/unzip \
-		${LOCALBASE}/share/pear/PEAR.php:devel/pear \
-		${LOCALBASE}/share/pear/Auth/Auth.php:security/pear-Auth \
-		${LOCALBASE}/share/pear/MDB2.php:databases/pear-MDB2 \
-		${LOCALBASE}/share/pear/HTML/Template/IT.php:devel/pear-HTML_Template_IT
+		${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR} \
+		${LOCALBASE}/share/pear/Auth/Auth.php:security/pear-Auth@${PHP_FLAVOR} \
+		${LOCALBASE}/share/pear/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR} \
+		${LOCALBASE}/share/pear/HTML/Template/IT.php:devel/pear-HTML_Template_IT@${PHP_FLAVOR}
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_GITHUB=	yes
@@ -37,8 +37,8 @@ SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
 OPTIONS_DEFINE=		SCORM2004 Checker Mail
 SCORM2004_USE=		php=json
-Checker_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request
-Mail_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail
+Checker_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
+Mail_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail@${PHP_FLAVOR}
 
 EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/_mocha \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/express \

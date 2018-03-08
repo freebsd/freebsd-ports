@@ -4,7 +4,7 @@
 PORTNAME=	Version
 DISTVERSION=	2.0.1
 CATEGORIES=	devel pear
-PKGNAMEPREFIX=	pear-SebastianBergmann_
+PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}SebastianBergmann_
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Managing the version number of Git-hosted PHP projects
@@ -12,10 +12,8 @@ COMMENT=	Managing the version number of Git-hosted PHP projects
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pear-channel-phpunit>=20110327:devel/pear-channel-phpunit
-RUN_DEPENDS=	pear-channel-phpunit>=20110327:devel/pear-channel-phpunit
-
-USES=	php
+USES=	pear:env
+PEAR_CHANNEL=	phpunit
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	${PORTNAME:tl}

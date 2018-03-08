@@ -4,7 +4,7 @@
 PORTNAME=	Horde_Crypt
 DISTVERSION=	2.7.11
 CATEGORIES=	security www pear
-PKGNAMEPREFIX=	pear-
+PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Cryptography API

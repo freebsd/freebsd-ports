@@ -10,9 +10,9 @@ COMMENT=	PEAR Class to Create UML Representation of PHP Code
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear \
-		${PEARDIR}/Console/CommandLine.php:devel/pear-Console_CommandLine
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear@${PHP_FLAVOR} \
+		${PEARDIR}/Console/CommandLine.php:devel/pear-Console_CommandLine@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear@${PHP_FLAVOR}
 
 BROKEN_powerpc64=	fails to package: Signal 11
 

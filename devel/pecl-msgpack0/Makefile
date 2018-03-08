@@ -4,7 +4,6 @@
 PORTNAME=	msgpack
 PORTVERSION=	0.5.7
 CATEGORIES=	devel
-PKGNAMESUFFIX=	0
 
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	Provides API for communicating with MessagePack serialization

@@ -3,7 +3,6 @@
 PORTNAME=	Horde_Db
 PORTVERSION=	2.4.0
 CATEGORIES=	databases www pear
-PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Database Libraries

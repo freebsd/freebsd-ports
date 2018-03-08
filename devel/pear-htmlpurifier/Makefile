@@ -8,15 +8,12 @@ CATEGORIES=	devel pear www
 MASTER_SITES=	http://htmlpurifier.org/get/ \
 		LOCAL
 DISTNAME=	HTMLPurifier-${PORTVERSION}
-PKGNAMEPREFIX=	pear-
+PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	PHP HTML filter library
 
 LICENSE=	LGPL21
-
-BUILD_DEPENDS=	${PEARDIR}/.channels/htmlpurifier.org.reg:devel/pear-channel-htmlpurifier.org
-RUN_DEPENDS=	${PEARDIR}/.channels/htmlpurifier.org.reg:devel/pear-channel-htmlpurifier.org
 
 PEAR_CHANNEL=	htmlpurifier.org
 USES=	pear

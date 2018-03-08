@@ -10,10 +10,10 @@ COMMENT=	XML-RPC client/server library
 
 LICENSE=	PHP301
 
-BUILD_DEPENDS=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite \
-		${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2
-RUN_DEPENDS=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite \
-		${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2
+BUILD_DEPENDS=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite@${PHP_FLAVOR} \
+		${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite@${PHP_FLAVOR} \
+		${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2@${PHP_FLAVOR}
 
 USE_PHP=	curl
 USES=	pear

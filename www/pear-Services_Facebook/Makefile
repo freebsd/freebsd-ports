@@ -8,8 +8,8 @@ CATEGORIES=	www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP interface to Facebook's API
 
-BUILD_DEPENDS=	${PEARDIR}/Validate.php:devel/pear-Validate
-RUN_DEPENDS=	${PEARDIR}/Validate.php:devel/pear-Validate
+BUILD_DEPENDS=	${PEARDIR}/Validate.php:devel/pear-Validate@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Validate.php:devel/pear-Validate@${PHP_FLAVOR}
 
 USES=		pear php
 USE_PHP=	curl

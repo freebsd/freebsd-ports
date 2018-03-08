@@ -4,7 +4,7 @@
 PORTNAME=	FinderFacade
 PORTVERSION=	1.2.2
 CATEGORIES=	devel pear
-PKGNAMEPREFIX=	pear-SebastianBergmann_
+PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}SebastianBergmann_
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Convenience wrapper for Symfony Finder component
@@ -12,16 +12,16 @@ COMMENT=	Convenience wrapper for Symfony Finder component
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pear-TheSeer_fDOMDocument>=1.6.6:devel/pear-TheSeer_fDOMDocument \
-		pear-Symfony_Component_Finder>=2.3.4:devel/pear-Symfony_Component_Finder \
-		pear-channel-phpunit>=20110327:devel/pear-channel-phpunit
+BUILD_DEPENDS=	${PEAR_PKGNAMEPREFIX}TheSeer_fDOMDocument>=1.6.6:devel/pear-TheSeer_fDOMDocument@${PHP_FLAVOR} \
+		${PEAR_PKGNAMEPREFIX}Symfony_Component_Finder>=2.3.4:devel/pear-Symfony_Component_Finder@${PHP_FLAVOR} \
 
-RUN_DEPENDS=	pear-TheSeer_fDOMDocument>=1.6.6:devel/pear-TheSeer_fDOMDocument \
-		pear-Symfony_Component_Finder>=2.3.4:devel/pear-Symfony_Component_Finder \
-		pear-channel-phpunit>=20110327:devel/pear-channel-phpunit
+RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}TheSeer_fDOMDocument>=1.6.6:devel/pear-TheSeer_fDOMDocument@${PHP_FLAVOR} \
+		${PEAR_PKGNAMEPREFIX}Symfony_Component_Finder>=2.3.4:devel/pear-Symfony_Component_Finder@${PHP_FLAVOR} \
 
 NO_ARCH=	yes
 
+USES=		pear:env
+PEAR_CHANNEL=	phpunit
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	finder-facade

@@ -8,8 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR internationalization package
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear@${PHP_FLAVOR}
 
 USES=		pear
 

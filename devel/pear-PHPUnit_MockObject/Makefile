@@ -4,7 +4,6 @@
 PORTNAME=	PHPUnit_MockObject
 PORTVERSION=	4.0.1
 CATEGORIES=	devel pear
-PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Mock Object library for PHPUnit

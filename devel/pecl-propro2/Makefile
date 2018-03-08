@@ -5,7 +5,6 @@ PORTNAME=	propro
 PORTVERSION=	2.0.1
 PORTREVISION=	1
 CATEGORIES=	devel
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Facility to manage extension object properties

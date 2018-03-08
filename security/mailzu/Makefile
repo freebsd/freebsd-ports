@@ -15,10 +15,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:security/amavisd-new \
-		${PEARDIR}/DB.php:databases/pear-DB \
-		${PEARDIR}/Mail/mime.php:mail/pear-Mail_Mime \
-		${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
-		${PEARDIR}/Mail/mimeDecode.php:mail/pear-Mail_mimeDecode
+		${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR} \
+		${PEARDIR}/Mail/mime.php:mail/pear-Mail_Mime@${PHP_FLAVOR} \
+		${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR} \
+		${PEARDIR}/Mail/mimeDecode.php:mail/pear-Mail_mimeDecode@${PHP_FLAVOR}
 
 PEARDIR?=	${LOCALBASE}/share/pear
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

@@ -6,7 +6,7 @@ PORTVERSION=	0.9.38
 PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://download.suhosin.org/
-PKGNAMEPREFIX=	php-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PHP extension that implements high-level protections

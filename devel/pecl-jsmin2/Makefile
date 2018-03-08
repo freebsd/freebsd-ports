@@ -4,7 +4,6 @@
 PORTNAME=	jsmin
 PORTVERSION=	2.0.1
 CATEGORIES=	devel
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	pascal.christen@hostpoint.ch
 COMMENT=	PHP extension for minifying JavaScript

@@ -6,7 +6,7 @@ PORTVERSION=	4.0.2
 PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	https://vault.trustcommerce.com/downloads/
-PKGNAMEPREFIX=	php-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-php
 
 MAINTAINER=	mbowie@buzmo.com

@@ -11,12 +11,10 @@ COMMENT=	Primary package containing the Doctrine ORM
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/pear.doctrine-project.org.reg:devel/pear-channel-doctrine
-RUN_DEPENDS=	${PEARDIR}/.channels/pear.doctrine-project.org.reg:devel/pear-channel-doctrine \
-	${PEARDIR}/Doctrine/Common/Version.php:databases/pear-DoctrineCommon \
-	${PEARDIR}/Doctrine/DBAL/Version.php:databases/pear-DoctrineDBAL \
-	${PEARDIR}/Symfony/Component/Console/Application.php:devel/pear-Symfony_Component_Console \
-	${PEARDIR}/Symfony/Component/Yaml/Yaml.php:textproc/pear-Symfony_Component_Yaml
+RUN_DEPENDS=	${PEARDIR}/Doctrine/Common/Version.php:databases/pear-DoctrineCommon@${PHP_FLAVOR} \
+	${PEARDIR}/Doctrine/DBAL/Version.php:databases/pear-DoctrineDBAL@${PHP_FLAVOR} \
+	${PEARDIR}/Symfony/Component/Console/Application.php:devel/pear-Symfony_Component_Console@${PHP_FLAVOR} \
+	${PEARDIR}/Symfony/Component/Yaml/Yaml.php:textproc/pear-Symfony_Component_Yaml@${PHP_FLAVOR}
 
 USES=	pear
 PEAR_CHANNEL=	doctrine

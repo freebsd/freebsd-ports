@@ -5,7 +5,6 @@ PORTNAME=	mailparse
 PORTVERSION=	2.1.6
 PORTREVISION=	1
 CATEGORIES=	mail www
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to create and decode MIME messages

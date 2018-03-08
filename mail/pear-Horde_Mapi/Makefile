@@ -4,7 +4,7 @@ PORTNAME=	Horde_Mapi
 PORTVERSION=	1.0.8
 PORTREVISION=	1
 CATEGORIES=	mail www pear
-PKGNAMEPREFIX=	pear-
+PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde MAPI utility library
@@ -15,6 +15,6 @@ USE_HORDE_RUN=	Horde_Date \
 
 USE_PHP+=	bcmath
 
-RUN_DEPENDS+=	${PEARDIR}/Math/BigInteger.php:math/pear-Math_BigInteger
+RUN_DEPENDS+=	${PEARDIR}/Math/BigInteger.php:math/pear-Math_BigInteger@${PHP_FLAVOR}
 
 .include <bsd.port.mk>

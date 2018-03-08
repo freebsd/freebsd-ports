@@ -5,7 +5,7 @@ PORTNAME=	scalar_objects
 PORTVERSION=	0.0.20140124
 PORTREVISION=	2
 CATEGORIES=	devel
-PKGNAMEPREFIX=	php-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Support method calls on primitive types in PHP

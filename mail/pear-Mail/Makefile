@@ -16,6 +16,6 @@ PEAR_NET_SMTP_DESC=	PEAR::Net_SMTP support
 
 USES=	pear
 
-PEAR_NET_SMTP_RUN_DEPENDS=	${PEARDIR}/Net/SMTP.php:net/pear-Net_SMTP
+PEAR_NET_SMTP_RUN_DEPENDS=	${PEARDIR}/Net/SMTP.php:net/pear-Net_SMTP@${PHP_FLAVOR}
 
 .include <bsd.port.mk>

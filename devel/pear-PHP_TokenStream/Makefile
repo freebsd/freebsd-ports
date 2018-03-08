@@ -4,13 +4,13 @@
 PORTNAME=	PHP_TokenStream
 PORTVERSION=	1.4.11
 CATEGORIES=	devel pear
-PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Wrapper around PHP tokenizer extension
 
 LICENSE=	BSD3CLAUSE
 
+USES=		pear:env
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	php-token-stream
