@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lynis
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	security
 MASTER_SITES=	https://cisofy.com/files/
 
