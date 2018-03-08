@@ -1,5 +1,14 @@
 --- main.c.orig	2013-06-19 11:23:58 UTC
 +++ main.c
+@@ -25,7 +25,7 @@
+  * SUCH DAMAGE.
+  */
+ 
+-#include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
 @@ -608,7 +608,8 @@ tun2raw(struct connection *c)
  	ip4 = (struct ipv4_header *)(buf - sizeof(*ip4));
  	ip4->ver_hlen = 4 << 4 | sizeof(*ip4) >> 2;
