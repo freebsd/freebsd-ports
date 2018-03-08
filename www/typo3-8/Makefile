@@ -5,7 +5,7 @@ PORTNAME=	typo3
 PORTVERSION=	${PORT_V_MAJOR}.${PORT_V_MINOR}.${PORT_V_PATCH}
 CATEGORIES=	www
 MASTER_SITES=	https://typo3.azureedge.net/typo3/${PORTVERSION}/
-PKGNAMESUFFIX=	-${PORT_V_MAJOR}
+PKGNAMESUFFIX=	-${PORT_V_MAJOR}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	freebsd-ports@charlieroot.de
 COMMENT=	Typo3 content management system
@@ -17,7 +17,7 @@ IGNORE_WITH_PHP=	56
 
 PORTSCOUT=	limit:^${PORT_V_MAJOR}\.${PORT_V_MINOR}\.
 
-USES=		cpe php:web shebangfix
+USES=		cpe php:web,flavors shebangfix
 SHEBANG_GLOB=	*.sh *.php
 NO_BUILD=	yes
 NO_ARCH=	yes
