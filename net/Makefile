@@ -1446,6 +1446,7 @@
     SUBDIR += vblade
     SUBDIR += vde
     SUBDIR += vde2
+    SUBDIR += viamillipede
     SUBDIR += vinagre
     SUBDIR += vino
     SUBDIR += vmware-vsphere-cli
