@@ -3,7 +3,7 @@
 
 PORTNAME=	sublime
 PORTVERSION=	2.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 DISTNAME=	Sublime%20Text%202.0.2
@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sublime Text is a sophisticated text editor for code, markup and prose
 
 INSTALLS_ICONS=	yes
-USES=		linux tar:bzip2
+USES=		desktop-file-utils linux tar:bzip2
 USE_LINUX=	xorglibs gtk2
 WRKSRC=		${WRKDIR}/"Sublime Text 2"
 
@@ -29,7 +29,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/
-
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
+	@${INSTALL_DATA} ${FILESDIR}/sublime_text.desktop ${STAGEDIR}${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/Icon/16x16/sublime_text.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps/
 	@${INSTALL_DATA} ${WRKSRC}/Icon/32x32/sublime_text.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps/
 	@${INSTALL_DATA} ${WRKSRC}/Icon/48x48/sublime_text.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/

@@ -1,4 +1,5 @@
 bin/sublime
+share/applications/sublime_text.desktop
 share/icons/hicolor/128x128/apps/sublime_text.png
 share/icons/hicolor/16x16/apps/sublime_text.png
 share/icons/hicolor/256x256/apps/sublime_text.png
