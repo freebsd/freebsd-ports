@@ -5,7 +5,7 @@ PORTNAME=	moodle
 PORTVERSION=	3.4.1
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable34/
-PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
+PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Course management system based on social constructionism
@@ -16,7 +16,7 @@ CONFLICTS=	moodle31-3.1.[0-9]* moodle32-3.2.[0-9]* moodle33-3.3.[0-9]*
 
 IGNORE_WITH_PHP=	56
 
-USES=		cpe php tar:tgz
+USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom fileinfo gd hash iconv intl json mbstring \
 		opcache openssl pcre session simplexml soap spl tokenizer \
 		xml xmlreader xmlrpc zip zlib
