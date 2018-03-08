@@ -8,8 +8,8 @@ CATEGORIES=	www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Pager Renderer for pear-Structures_DataGrid
 
-RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
-		${PEARDIR}/Pager/Pager.php:devel/pear-Pager
+RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@${PHP_FLAVOR} \
+		${PEARDIR}/Pager/Pager.php:devel/pear-Pager@${PHP_FLAVOR}
 
 USES=		pear
 

@@ -10,10 +10,10 @@ DISTNAME=	Net_GeoIP-1.0.0RC1
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Library to perform geo-location lookups of IP addresses
 
-BUILD_DEPENDS=	${PEARDIR}/Cache.php:sysutils/pear-Cache \
-		${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
-RUN_DEPENDS=	${PEARDIR}/Cache.php:sysutils/pear-Cache \
-		${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
+BUILD_DEPENDS=	${PEARDIR}/Cache.php:sysutils/pear-Cache@${PHP_FLAVOR} \
+		${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Cache.php:sysutils/pear-Cache@${PHP_FLAVOR} \
+		${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer@${PHP_FLAVOR}
 
 USES=		pear
 

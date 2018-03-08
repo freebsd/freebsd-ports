@@ -4,7 +4,6 @@
 PORTNAME=	bitset
 PORTVERSION=	2.0.4
 CATEGORIES=	math
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PECL extension for manipulating bitsets

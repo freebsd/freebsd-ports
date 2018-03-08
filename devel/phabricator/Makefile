@@ -56,9 +56,9 @@ GD_USE=		PHP=gd
 .if ${PORT_OPTIONS:MOPCACHE}
 USE_PHP+=	opcache
 .	if ${PHP_VER} >= 70
-RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu
+RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
 .	else
-RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu4
+RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu4@${PHP_FLAVOR}
 .	endif
 .endif
 

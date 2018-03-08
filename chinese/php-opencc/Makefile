@@ -4,7 +4,7 @@
 PORTNAME=	opencc
 PORTVERSION=	0.0.0.20161110
 CATEGORIES=	chinese
-PKGNAMEPREFIX=	php-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	OpenCC shared extension for php

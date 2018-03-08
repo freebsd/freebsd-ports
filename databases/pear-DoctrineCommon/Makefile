@@ -11,9 +11,6 @@ COMMENT=	Shared code for Doctrine PHP object relational mapper
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/pear.doctrine-project.org.reg:devel/pear-channel-doctrine
-RUN_DEPENDS=	${PEARDIR}/.channels/pear.doctrine-project.org.reg:devel/pear-channel-doctrine
-
 USES=	pear
 PEAR_CHANNEL=	doctrine
 

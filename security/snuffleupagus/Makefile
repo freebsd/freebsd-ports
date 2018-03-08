@@ -4,6 +4,7 @@ PORTNAME=	snuffleupagus
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.2.1
 CATEGORIES=	security
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Security module for PHP 7+

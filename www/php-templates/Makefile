@@ -1,12 +1,13 @@
 # Created by: vanilla
 # $FreeBSD$
 
-PORTNAME=	php-templates
+PORTNAME=	templates
 PORTVERSION=	1.7.2
 PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.7:ext \
 		SF/${PORTNAME}/${PORTNAME}-doc/html:doc
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 DISTNAME=	php_templates-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:ext
 DISTFILES+=	php_templates-doc-eng-1.1${EXTRACT_SUFX}:doc

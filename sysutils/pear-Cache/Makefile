@@ -9,8 +9,8 @@ CATEGORIES=	sysutils www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR framework for caching of arbitrary data
 
-BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
-RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
+BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 
 USES=		pear
 

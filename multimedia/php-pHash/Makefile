@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia devel
 MASTER_SITES=	http://phash.org/releases/ \
 		http://www.cyberbotx.com/pHash/
-PKGNAMEPREFIX=	php-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	PHP extension for the pHash perceptual hash library

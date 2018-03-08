@@ -8,8 +8,8 @@ CATEGORIES=	www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP interface to Compete SnapShop API
 
-BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
-RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
+BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 
 USES=		pear
 

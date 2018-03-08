@@ -8,8 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	HTMLSortForm Renderer for pear-Structures_DataGrid
 
-RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
-		${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm
+RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@${PHP_FLAVOR} \
+		${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm@${PHP_FLAVOR}
 
 USES=		pear
 

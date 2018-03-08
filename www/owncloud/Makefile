@@ -41,7 +41,7 @@ MYSQL_USES=	mysql
 PGSQL_USES=	pgsql
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
-SMB_RUN_DEPENDS=	pecl-smbclient>=0.8.0:net/pecl-smbclient
+SMB_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}smbclient>=0.8.0:net/pecl-smbclient@${PHP_FLAVOR}
 SSL_USE=	PHP=openssl
 
 do-install:

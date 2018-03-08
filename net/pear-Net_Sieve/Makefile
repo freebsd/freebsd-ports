@@ -10,8 +10,8 @@ COMMENT=	PEAR class to handle talking to timsieved
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
-RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
 
 USES=	pear
 

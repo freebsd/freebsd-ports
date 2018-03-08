@@ -16,6 +16,9 @@
 #	- web      : Want the Apache Module or the CGI version of PHP.
 #	- embed    : Want the embedded library version of PHP.
 #	- pecl     : Fetches from PECL.
+#	- flavors  : Generates flavors for supported versions.
+#		     (implied by phpize,ext,zend,pecl)
+#	- noflavors: Prevents generation of flavor.
 #
 # If the port requires a predefined set of PHP extensions, they can be
 # listed in this way:
@@ -43,7 +46,6 @@
 #
 # The port can set these options in its Makefile before bsd.port.pre.mk:
 #
-# DEFAULT_PHP_VER=N - Use PHP version N if PHP is not yet installed.
 # IGNORE_WITH_PHP=N - The port doesn't work with PHP version N.
 #
 # You may combine multiple WANT_PHP_* knobs.
@@ -57,10 +59,6 @@
 PHP_Include_MAINTAINER=	ale@FreeBSD.org
 
 _INCLUDE_USES_PHP_MK=	yes
-
-.  if defined(DEFAULT_PHP_VER)
-WARNING+=	"DEFAULT_PHP_VER is defined, consider using DEFAULT_VERSIONS=php=${DEFAULT_PHP_VER} instead"
-.  endif
 
 .  if defined(USE_PHPIZE) && empty(php_ARGS:Mphpize)
 php_ARGS+=	phpize
@@ -84,6 +82,9 @@ php_ARGS+=	embed
 .  if ${php_ARGS:Mbuild} && ( ${php_ARGS:Mphpize} || ${php_ARGS:Mext} || ${php_ARGS:Mzend} )
 DEV_WARNING+=	"USES=php:build is included in USES=php:phpize, USES=php:ext, and USES=php:zend, so it is not needed"
 .  endif
+.  if ${php_ARGS:Mflavors} && ( ${php_ARGS:Mphpize} || ${php_ARGS:Mext} || ${php_ARGS:Mzend} || ${php_ARGS:Mpecl} )
+DEV_WARNINGS+=	"USES=php:flavors is included in phpize, ext, zend and pecl, so it is not needed."
+.  endif
 .  if ${php_ARGS:Mphpize} && ( ${php_ARGS:Mext} || ${php_ARGS:Mzend} )
 DEV_WARNING+=	"USES=php:phpize is included in USES=php:ext and USES=php:zend, so it is not needed"
 .  endif
@@ -94,26 +95,91 @@ DEV_WARNING+=	"USES=php:ext is included in USES=php:zend, so it is not needed"
 DEV_WARNING+=	"USES=php:ext is included in USES=php:pecl, so it is not needed"
 .  endif
 
+.  if ( ${php_ARGS:Mphpize} || ${php_ARGS:Mext} || ${php_ARGS:Mzend} || ${php_ARGS:Mpecl} ) && !${php_ARGS:Mnoflavors}
+php_ARGS+=	flavors
+.  endif
+
+.  if ${php_ARGS:Mnoflavors} && ${php_ARGS:Mflavors}
+php_ARGS:=	${php_ARGS:Nflavors}
+.  endif
+
+
 .  if ${php_ARGS:Mpecl}
 php_ARGS+=	ext
+.    if !defined(USE_GITHUB)
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
+.    endif
+PKGNAMEPREFIX=	${PECL_PKGNAMEPREFIX}
 DIST_SUBDIR=	PECL
 .  endif
 
 PHPBASE?=	${LOCALBASE}
+
+_ALL_PHP_VERSIONS=	56 70 71 72
+
+# Make the already installed PHP the default one.
 .  if exists(${PHPBASE}/etc/php.conf)
 .include "${PHPBASE}/etc/php.conf"
 .    if !defined(PHP_EXT_DIR)
 PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBASE}/lib/php/\(.*\),\1,p'
 .    endif
-.  else
-DEFAULT_PHP_VER?=	${PHP_DEFAULT:S/.//}
+_INSTALLED_PHP_VER:=	${PHP_VER}
+# If we have an installed version of PHP, and this does not support it, set
+# IGNORE to fail early as you cannot install two different versions of PHP at
+# the same time anyway.
+.    if defined(IGNORE_WITH_PHP) && ${IGNORE_WITH_PHP:M${_INSTALLED_PHP_VER}}
+IGNORE=	does not work with PHP versions "${IGNORE_WITH_PHP}" and "${_INSTALLED_PHP_VER}" is installed.
+.    endif
 
+.  else
+PHP_VER?=	${PHP_DEFAULT:S/.//}
+.  endif # .if exists(${PHPBASE}/etc/php.conf)
+
+# Use the "default" php version as th first version for flavors, so that it
+# gets to be the default flavor.
+_ALL_FLAVOR_VERSIONS=	${PHP_VER} ${_ALL_PHP_VERSIONS:N${PHP_VER}}
+
+# If we want flavors, fill in FLAVORS with the allowed PHP versions, if some
+# cannot be used, or all of them if they all can.
+# Then if there is no flavor set, use the first one as the default.
+.  if ${php_ARGS:Mflavors}
+.    if empty(FLAVORS)
+.      if defined(IGNORE_WITH_PHP)
+.        for _v in ${_ALL_FLAVOR_VERSIONS}
+.          if empty(IGNORE_WITH_PHP:M${_v})
+# Avoid a leading space in FLAVORS.
+.            if empty(FLAVORS)
+FLAVORS:=	php${_v}
+.            else
+FLAVORS:=	${FLAVORS} php${_v}
+.            endif
+.          endif
+.        endfor
+.      else # defined(IGNORE_WITH_PHP)
+FLAVORS:=	${_ALL_FLAVOR_VERSIONS:S/^/php/}
+.      endif # defined(IGNORE_WITH_PHP)
+.    endif
+.    if empty(FLAVOR)
+FLAVOR=	${FLAVORS:[1]}
+.    endif
+.  endif
+
+# This variable is for dependencies lines, so you write:
+# ${PHP_PKGNAMEPREFIX}foo:devel/php-foo@${PHP_FLAVOR}
+PHP_FLAVOR=	php${PHP_VER}
+
+# So, we have PHP flavors, set PHP_VER accordingly.
+.  if ${FLAVOR:Mphp[0-9][0-9]}
+PHP_VER=	${FLAVOR:S/^php//}
+.  endif
+
+# If lang/php is not installed, or if we have a php flavor but want a non
+# default one, we need to overwrite those.
+.  if empty(PHP_EXT_DIR) || empty(PHP_EXT_INC) || \
+	(${FLAVOR:Mphp[0-9][0-9]} && ${FLAVOR} != ${FLAVORS:[1]})
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-PHP_VER?=	${DEFAULT_PHP_VER}
 .    if ${PHP_VER} == 72
 PHP_EXT_DIR=   20170718
 PHP_EXT_INC=    pcre spl
@@ -132,6 +198,8 @@ PHP_EXT_DIR=	20131226
 PHP_EXT_INC=	pcre spl
 .    endif
 
+# Try to figure out what the PHP_EXT_DIR should be WRT the
+# installed Apache port.
 HTTPD?=		${LOCALBASE}/sbin/httpd
 .    if exists(${HTTPD})
 APACHE_THR!=	${HTTPD} -V | ${AWK} '/threaded/ {print $2}'
@@ -148,8 +216,12 @@ PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-debug
 .    endif
 PHP_SAPI?=	""
-.  endif	# .if exists(${PHPBASE}/etc/php.conf)
-PHP_EXT_INC?=	""
+.  endif # empty(PHP_EXT_DIR) || empty(PHP_EXT_INC) || (${FLAVOR:Mphp[0-9][0-9]} && ${FLAVOR} != ${FLAVORS:[1]})
+
+# Set a few PKGNAME(PRE|SUF)FIX to be used in ports.
+PHP_PKGNAMEPREFIX=	php${PHP_VER}-
+PHP_PKGNAMESUFFIX=	-php${PHP_VER}
+PECL_PKGNAMEPREFIX=	php${PHP_VER}-pecl-
 
 .  if defined(IGNORE_WITH_PHP)
 .    for VER in ${IGNORE_WITH_PHP}
@@ -220,7 +292,7 @@ BUILD_DEPENDS+=	${PHPBASE}/bin/phpize:${PHP_PORT} \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-php-config=${PHPBASE}/bin/php-config
 
-configure-message: phpize-message do-phpize
+_USES_configure+=	190:phpize-message 250:do-phpize
 
 phpize-message:
 	@${ECHO_MSG} "===>  PHPizing for ${PKGNAME}"
@@ -308,9 +380,9 @@ _USE_PHP_VER72=	${_USE_PHP_ALL} sodium
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 .    if ${PHP_VER} == 70 || ${PHP_VER} == 71 || ${PHP_VER} == 72
-bitset_DEPENDS=	math/pecl-bitset
+bitset_DEPENDS=	math/pecl-bitset@${PHP_FLAVOR}
 .    else
-bitset_DEPENDS=	math/pecl-bitset2
+bitset_DEPENDS=	math/pecl-bitset2@${PHP_FLAVOR}
 .    endif
 bz2_DEPENDS=	archivers/php${PHP_VER}-bz2
 calendar_DEPENDS=	misc/php${PHP_VER}-calendar
@@ -329,31 +401,31 @@ gettext_DEPENDS=devel/php${PHP_VER}-gettext
 gmp_DEPENDS=	math/php${PHP_VER}-gmp
 hash_DEPENDS=	security/php${PHP_VER}-hash
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
-igbinary_DEPENDS=	converters/pecl-igbinary
+igbinary_DEPENDS=	converters/pecl-igbinary@${PHP_FLAVOR}
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
 .    if ${PHP_VER} == 70 || ${PHP_VER} == 71 || ${PHP_VER} == 72
 intl_DEPENDS=	devel/php${PHP_VER}-intl
 .    else
-intl_DEPENDS=	devel/pecl-intl
+intl_DEPENDS=	devel/pecl-intl@${PHP_FLAVOR}
 .    endif
 json_DEPENDS=	devel/php${PHP_VER}-json
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 .    if ${PHP_VER} >= 72
-mcrypt_DEPENDS=	security/pecl-mcrypt
+mcrypt_DEPENDS=	security/pecl-mcrypt@${PHP_FLAVOR}
 .    else
 mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
 .    endif
 .    if ${PHP_VER} >= 70
-memcache_DEPENDS=	databases/php${PHP_VER}-memcache
+memcache_DEPENDS=	databases/php-memcache@${PHP_FLAVOR}
 .    else
-memcache_DEPENDS=	databases/pecl-memcache
+memcache_DEPENDS=	databases/pecl-memcache@${PHP_FLAVOR}
 .    endif
 .    if ${PHP_VER} >= 70
-memcached_DEPENDS=	databases/pecl-memcached
+memcached_DEPENDS=	databases/pecl-memcached@${PHP_FLAVOR}
 .    else
-memcached_DEPENDS=	databases/pecl-memcached2
+memcached_DEPENDS=	databases/pecl-memcached2@${PHP_FLAVOR}
 .    endif
 mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysql_DEPENDS=	databases/php${PHP_VER}-mysql
@@ -364,7 +436,7 @@ oci8_DEPENDS=	databases/php${PHP_VER}-oci8
 opcache_DEPENDS=	www/php${PHP_VER}-opcache
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
-pdf_DEPENDS=	print/pecl-pdflib
+pdf_DEPENDS=	print/pecl-pdflib@${PHP_FLAVOR}
 pdo_DEPENDS=	databases/php${PHP_VER}-pdo
 pdo_dblib_DEPENDS=	databases/php${PHP_VER}-pdo_dblib
 pdo_firebird_DEPENDS=	databases/php${PHP_VER}-pdo_firebird
@@ -376,10 +448,10 @@ pgsql_DEPENDS=	databases/php${PHP_VER}-pgsql
 phar_DEPENDS=	archivers/php${PHP_VER}-phar
 posix_DEPENDS=	sysutils/php${PHP_VER}-posix
 pspell_DEPENDS=	textproc/php${PHP_VER}-pspell
-radius_DEPENDS=	net/pecl-radius
+radius_DEPENDS=	net/pecl-radius@${PHP_FLAVOR}
 readline_DEPENDS=	devel/php${PHP_VER}-readline
 recode_DEPENDS=	converters/php${PHP_VER}-recode
-redis_DEPENDS=	databases/pecl-redis
+redis_DEPENDS=	databases/pecl-redis@${PHP_FLAVOR}
 session_DEPENDS=www/php${PHP_VER}-session
 shmop_DEPENDS=	devel/php${PHP_VER}-shmop
 simplexml_DEPENDS=	textproc/php${PHP_VER}-simplexml

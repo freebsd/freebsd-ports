@@ -50,7 +50,7 @@ LDAP_USE=	php=ldap
 SOCKETS_USE=	php=sockets
 
 MEMCACHED_RUN_DEPENDS=	memcached:databases/memcached
-IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick
+IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
 XCACHE_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:www/xcache
 
 pre-install:

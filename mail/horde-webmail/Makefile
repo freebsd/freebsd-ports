@@ -3,7 +3,7 @@
 PORTNAME=	webmail
 PORTVERSION=	5.2.22
 CATEGORIES=	mail www pear
-PKGNAMEPREFIX=	horde-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Groupware Webmail Edition

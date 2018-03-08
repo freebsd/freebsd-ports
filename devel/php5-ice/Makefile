@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 CATEGORIES=	devel
-PKGNAMEPREFIX=	php5-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	freebsd@grem.de
 COMMENT=	Ice (Internet Communications Engine) language mapping for PHP
@@ -23,8 +23,8 @@ PLIST=		${.CURDIR}/pkg-plist
 
 MAKE_ARGS+=	PHP_EXT_DIR=${PHP_EXT_DIR} ICE_HOME=${LOCALBASE} \
 		PHP_HOME=${LOCALBASE} OPTIMIZE=yes
-USES+=	php:build
-IGNORE_WITH_PHP=70 71
+USES+=	php:build,flavors
+IGNORE_WITH_PHP=70 71 72
 BUILD_WRKSRC=	${WRKSRC}/php
 INSTALL_WRKSRC=	${WRKSRC}/php
 

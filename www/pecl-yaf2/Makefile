@@ -4,7 +4,6 @@
 PORTNAME=	yaf
 PORTVERSION=	2.3.5
 CATEGORIES=	www
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	MVC framework written as a C PHP extension

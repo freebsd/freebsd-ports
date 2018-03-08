@@ -6,7 +6,7 @@ PORTVERSION=	0.19.2
 PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
-PKGNAMESUFFIX=	-php
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP library for parsing, writing, and creating RSS

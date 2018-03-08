@@ -8,8 +8,8 @@ CATEGORIES=	graphics www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	OO PEAR graph rendering package
 
-RUN_DEPENDS=	${PEARDIR}/Log.php:sysutils/pear-Log \
-		${PEARDIR}/Image/Canvas.php:graphics/pear-Image_Canvas
+RUN_DEPENDS=	${PEARDIR}/Log.php:sysutils/pear-Log@${PHP_FLAVOR} \
+		${PEARDIR}/Image/Canvas.php:graphics/pear-Image_Canvas@${PHP_FLAVOR}
 
 USES=		dos2unix pear
 DOS2UNIX_REGEX=	.*php$$

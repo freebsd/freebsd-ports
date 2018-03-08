@@ -1,6 +1,6 @@
 COMMENT=	The ${PHP_MODNAME} shared extension for php
 
-USES+=	php:ext
+USES+=	php:ext,noflavors
 PHP_MODNAME=	${PKGNAMESUFFIX:S/-//}
 PHP_VER=	56
 IGNORE_WITH_PHP=	70

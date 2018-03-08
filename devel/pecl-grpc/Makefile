@@ -18,4 +18,10 @@ BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option
 
 USES=		php:pecl
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${FLAVOR} == php72 && ${ARCH} == i386
+BROKEN=		error: fastcall calling convention ignored on variadic function [-Werror,-Wignored-attributes]
+.endif
+
+.include <bsd.port.post.mk>

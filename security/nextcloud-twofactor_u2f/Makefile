@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	nextcloud>=12:www/nextcloud
 
+USES=		php
 NO_BUILD=	yes
 NO_ARCH=	yes
 

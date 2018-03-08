@@ -5,7 +5,7 @@ PORTNAME=	pdo_cassandra
 PORTVERSION=	0.2.1
 PORTREVISION=	14
 CATEGORIES=	databases
-PKGNAMEPREFIX=	php5-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PDO driver for Apache Cassandra

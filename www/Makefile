@@ -2418,10 +2418,7 @@
     SUBDIR += ufdbguard
     SUBDIR += unit
     SUBDIR += unit-go
-    SUBDIR += unit-php56
-    SUBDIR += unit-php70
-    SUBDIR += unit-php71
-    SUBDIR += unit-php72
+    SUBDIR += unit-php
     SUBDIR += usermanager
     SUBDIR += uwsgi
     SUBDIR += uwsgitop

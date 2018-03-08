@@ -3,7 +3,7 @@
 PORTNAME=	ansel
 PORTVERSION=	3.0.8
 CATEGORIES=	www pear graphics
-PKGNAMEPREFIX=	horde-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Photo Management and Web Gallery

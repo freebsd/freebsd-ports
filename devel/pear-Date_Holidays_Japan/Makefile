@@ -7,8 +7,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Japan
 
-BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays
-RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays
+BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays@${PHP_FLAVOR}
 
 USES=		pear
 

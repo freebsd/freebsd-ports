@@ -6,13 +6,14 @@ PORTVERSION=	1.10.5
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://mirror.bsdproject.de/
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR framework for PHP
 
 LICENSE=	PHP301
 
-USES=		cpe php:cli tar:bzip2
+USES=		cpe php:cli,flavors tar:bzip2
 CPE_VENDOR=	php
 NO_BUILD=	yes
 NO_ARCH=	yes

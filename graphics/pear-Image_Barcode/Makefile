@@ -14,6 +14,6 @@ USES=		pear php
 OPTIONS_DEFINE=		PEAR_PHP_COMPAT
 PEAR_PHP_COMPAT_DESC=	PEAR::PHP_Compat support
 
-PEAR_PHP_COMPAT_RUN_DEPENDS=	${PEARDIR}/PHP/Compat.php:devel/pear-PHP_Compat
+PEAR_PHP_COMPAT_RUN_DEPENDS=	${PEARDIR}/PHP/Compat.php:devel/pear-PHP_Compat@${PHP_FLAVOR}
 
 .include <bsd.port.mk>

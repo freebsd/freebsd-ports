@@ -5,6 +5,7 @@ PORTNAME=	xcache
 DISTVERSION=	3.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${DISTVERSION}/
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Fast and stable php opcode cacher

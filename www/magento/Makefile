@@ -28,7 +28,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 MAGENTODIR?=	www/magento
 
-OAUTH_RUN_DEPENDS=	pecl-oauth>=1.2.3:net/pecl-oauth
+OAUTH_RUN_DEPENDS=	pecl-oauth>=1.2.3:net/pecl-oauth@${PHP_FLAVOR}
 REDIS_USE=	php=redis
 
 # First need to submit the port

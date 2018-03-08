@@ -18,7 +18,7 @@ RUN_DEPENDS=	nextcloud>=9:www/nextcloud
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-
+USES=		php
 NO_BUILD=	yes
 NO_ARCH=	yes
 

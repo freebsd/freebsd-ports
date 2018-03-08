@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180308:
+  AFFECTS: */php* */pecl* */pear*
+  AUTHOR: mat@FreeBSD.org
+
+  PHP extensions and modules have been flavored.
+
+  People using Poudriere 3.2+ and binary packages do not have to do anything.
+
+  PHP modules and extensions may have change their names from php5- or php7- to
+  fully versionned phpXY-.
+  PECL extensions and PEAR modules package names have changed from pecl- and
+  pear- to phpXX-pecl and phpXX-pear-.
+
+  For other people, to build the PHP 7.2 version of, for example,
+  databases/php-memcached, you need to run:
+
+    # make FLAVOR=php72 install
+
 20180220:
   AFFECTS: users of www/nextcloud
   AUTHOR: brnrd@FreeBSD.org

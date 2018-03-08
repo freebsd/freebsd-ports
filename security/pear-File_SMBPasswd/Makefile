@@ -8,8 +8,8 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class for managing SAMBA style password files
 
-BUILD_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP
-RUN_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP
+BUILD_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP@${PHP_FLAVOR}
 
 USES=		pear php
 USE_PHP=	hash

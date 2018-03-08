@@ -5,17 +5,15 @@ PORTNAME=	ConsoleTools
 PORTVERSION=	1.6.1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://components.ez.no/get/
-PKGNAMEPREFIX=	pear-${PEAR_CHANNEL}_
+PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}${PEAR_CHANNEL}_
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Set of classes to do different actions with the console
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	pear-ezc_Base>=1.8:devel/pear-ezc_Base \
-		${PEARDIR}/.channels/components.ez.no.reg:devel/pear-channel-ezc
-RUN_DEPENDS=	pear-ezc_Base>=1.8:devel/pear-ezc_Base \
-		${PEARDIR}/.channels/components.ez.no.reg:devel/pear-channel-ezc
+BUILD_DEPENDS=	${PEAR_PKGNAMEPREFIX}ezc_Base>=1.8:devel/pear-ezc_Base@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}ezc_Base>=1.8:devel/pear-ezc_Base@${PHP_FLAVOR}
 
 PEAR_CHANNEL=	ezc
 USES=	pear

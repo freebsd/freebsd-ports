@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/release/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/
-PKGNAMEPREFIX=	php-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	PHP extension for Puzzle library to find similar pictures

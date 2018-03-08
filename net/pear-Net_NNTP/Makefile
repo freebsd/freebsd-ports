@@ -14,8 +14,8 @@ LICENSE_NAME=	W3C IPR SOFTWARE NOTICE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
-RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
 
 NO_ARCH=	yes
 

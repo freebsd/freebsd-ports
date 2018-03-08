@@ -11,7 +11,7 @@ COMMENT=	PHP IP Address Management IPv4/IPv6
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear
+RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

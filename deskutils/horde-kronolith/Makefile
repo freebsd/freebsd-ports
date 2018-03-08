@@ -4,7 +4,7 @@
 PORTNAME=	kronolith
 PORTVERSION=	4.2.23
 CATEGORIES=	deskutils www pear
-PKGNAMEPREFIX=	horde-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde web based calendar
@@ -54,9 +54,9 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_View
 
-RUN_DEPENDS+=	${PEARDIR}/Date.php:devel/pear-Date
+RUN_DEPENDS+=	${PEARDIR}/Date.php:devel/pear-Date@${PHP_FLAVOR}
 
-DATE_HOLIDAYS_RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays
+DATE_HOLIDAYS_RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays@${PHP_FLAVOR}
 
 TIMEOBJECTS_USE=	HORDE_RUN=timeobjects
 XMLWRITER_USE=	PHP=xmlwriter

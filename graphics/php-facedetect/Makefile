@@ -5,7 +5,7 @@ PORTNAME=	facedetect
 PORTVERSION=	1.1
 PORTREVISION=	6
 CATEGORIES=	graphics
-PKGNAMEPREFIX=	php-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Face detection extension for PHP using OpenCV library

@@ -8,8 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR XML Transformations in PHP
 
-BUILD_DEPENDS=	${PEARDIR}/XML/Util.php:devel/pear-XML_Util
-RUN_DEPENDS:=	${PEARDIR}/XML/Util.php:devel/pear-XML_Util
+BUILD_DEPENDS=	${PEARDIR}/XML/Util.php:devel/pear-XML_Util@${PHP_FLAVOR}
+RUN_DEPENDS:=	${PEARDIR}/XML/Util.php:devel/pear-XML_Util@${PHP_FLAVOR}
 
 USES=		pear
 

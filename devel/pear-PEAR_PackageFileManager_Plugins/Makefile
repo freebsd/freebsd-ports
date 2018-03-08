@@ -8,8 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	The plugins for PEAR_PackageFileManager
 
-BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
-RUN_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
+BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer@${PHP_FLAVOR}
 
 LICENSE=	BSD2CLAUSE
 

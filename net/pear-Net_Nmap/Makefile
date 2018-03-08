@@ -10,8 +10,8 @@ COMMENT=	Simple Wrapper Class for the Nmap Utility
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
-RUN_DEPENDS:=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
+BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}
+RUN_DEPENDS:=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}
 
 USES=		pear
 

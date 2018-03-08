@@ -10,6 +10,43 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20180308:
+AUTHOR: mat@FreeBSD.org
+
+  Ports using USES=php:phpize, php:ext, php:zend, and php:pecl are now
+  flavored.  They will automatically get flavors (php56, php70, php71, php72)
+  depending of the versions they support (set with IGNORE_WITH_PHP).  As a
+  consequence, ports using USES=pear and USES=horde are also flavored.
+
+  As all packages must have different package names, the following variables
+  must be used in PKGNAMEPREFIX/SUFFIX:
+
+    Variable                     + Values                +
+    --------------------------------------------------------------------------------------
+    PHP_PKGNAMEPREFIX            | php56- php72-         | PHP Extensions
+                                 |                       | and modules
+    --------------------------------------------------------------------------------------
+    PHP_PKGNAMESUFFIX            | -php56 -php72         | PHP Applications
+    --------------------------------------------------------------------------------------
+    PECL_PKGNAMEPREFIX           | php56-pecl-           | PECL extensions
+                                 |                       | automatic
+    --------------------------------------------------------------------------------------
+    PEAR_PKGNAMEPREFIX           | php56-pear-           | PEAR modules
+                                 |                       | without PEAR_CHANNEL
+    PEAR_<channel>_PKGNAMEPREFIX | php56-pear-channel-   | with PEAR_CHANNEL
+                                 |                       | automatic
+
+  In all the ports with PHP dependencies, the *_DEPENDS entries MUST end with
+  the flavor so that the framework knows which to build/use.  This is done by
+  appending '@${PHP_FLAVOR}' after the origin.  For example:
+
+    RUN_DEPENDS=  ${PEAR_PKGNAMEPREFIX}Validate>=0.5.0:devel/pear-Validate@${PHP_FLAVOR} \
+                  ${PECL_PKGNAMEPREFIX}smbclient>=0.8.0:net/pecl-smbclient@${PHP_FLAVOR} \
+
+  PHP applications (for example, www/wordpress) can also get flavors, add the
+  flavors keyword to USES=php, for example: USES=php:flavors, and add
+  ${PHP_PKGNAMESUFFIX} to its PKGNAMESUFFIX.
+
 20180125:
 AUTHOR: mat@FreeBSD.org
 

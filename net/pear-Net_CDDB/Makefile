@@ -8,12 +8,12 @@ CATEGORIES=	net audio www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class that access and query CDDB audio-CD servers
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
-		${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request \
-		${PEARDIR}/MDB2.php:databases/pear-MDB2
-RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
-		${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request \
-		${PEARDIR}/MDB2.php:databases/pear-MDB2
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR} \
+		${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR} \
+		${PEARDIR}/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR} \
+		${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR} \
+		${PEARDIR}/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR}
 
 USES=		dos2unix pear
 

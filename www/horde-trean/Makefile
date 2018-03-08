@@ -3,7 +3,7 @@
 PORTNAME=	trean
 PORTVERSION=	1.1.9
 CATEGORIES=	www pear
-PKGNAMEPREFIX=	horde-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}horde-
 
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Bookmark Manager

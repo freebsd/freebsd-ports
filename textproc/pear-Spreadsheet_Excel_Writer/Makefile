@@ -10,8 +10,8 @@ COMMENT=	PEAR class for writing Microsoft Excel files
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PEARDIR}/OLE.php:devel/pear-OLE
-RUN_DEPENDS=	${PEARDIR}/OLE.php:devel/pear-OLE
+BUILD_DEPENDS=	${PEARDIR}/OLE.php:devel/pear-OLE@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/OLE.php:devel/pear-OLE@${PHP_FLAVOR}
 
 USES=	pear
 NO_ARCH=	yes

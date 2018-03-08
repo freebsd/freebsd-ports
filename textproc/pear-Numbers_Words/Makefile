@@ -8,8 +8,8 @@ CATEGORIES=	textproc pear
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	PEAR package provides methods for spelling numerals in words
 
-BUILD_DEPENDS=	${PEARDIR}/Math/BigInteger.php:math/pear-Math_BigInteger
-RUN_DEPENDS=	${PEARDIR}/Math/BigInteger.php:math/pear-Math_BigInteger
+BUILD_DEPENDS=	${PEARDIR}/Math/BigInteger.php:math/pear-Math_BigInteger@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Math/BigInteger.php:math/pear-Math_BigInteger@${PHP_FLAVOR}
 
 USES=		pear
 

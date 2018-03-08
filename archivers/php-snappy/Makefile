@@ -4,7 +4,7 @@
 PORTNAME=	snappy
 PORTVERSION=	0.1.9
 CATEGORIES=	archivers
-PKGNAMEPREFIX=	php-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP extension for the snappy compression algorithm

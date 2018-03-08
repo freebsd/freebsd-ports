@@ -6,7 +6,7 @@ PORTVERSION=	0.7.2
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://alexeyrybak.com/blitz/
-PKGNAMEPREFIX=	php5-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 DISTNAME=	blitz-${PORTVERSION}-devel
 
 MAINTAINER=	komarov@valerka.net

@@ -5,6 +5,7 @@ DISTVERSION=	5.7.27
 CATEGORIES=	devel www
 MASTER_SITES=	https://phar.phpunit.de/
 EXTRACT_SUFX=	.phar
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Testing framework for unit tests
@@ -18,7 +19,7 @@ CONFLICTS_INSTALL=	phpunit6
 
 PORTSCOUT=	limit:^5\.7\.[0-9]*
 
-USES=		cpe php
+USES=		cpe php:flavors
 CPE_VENDOR=	phpunit_project
 USE_PHP=	dom json spl pcre phar
 

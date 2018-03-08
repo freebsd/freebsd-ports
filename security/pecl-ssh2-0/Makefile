@@ -4,7 +4,6 @@
 PORTNAME=	ssh2
 PORTVERSION=	0.13
 CATEGORIES=	security pear
-PKGNAMESUFFIX=	-0
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to the libssh2 library

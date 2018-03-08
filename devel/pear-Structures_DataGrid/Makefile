@@ -8,7 +8,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Full-featured tabular structured data management package
 
-RUN_DEPENDS=	${PEARDIR}/Console/Table.php:devel/pear-Console_Table
+RUN_DEPENDS=	${PEARDIR}/Console/Table.php:devel/pear-Console_Table@${PHP_FLAVOR}
 
 USES=		pear
 
