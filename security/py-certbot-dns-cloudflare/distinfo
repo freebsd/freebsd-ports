@@ -1,3 +1,3 @@
-TIMESTAMP = 1518080463
-SHA256 (certbot-dns-cloudflare-0.21.1.tar.gz) = b284188339f24019312480829a7357ba2b932ded39aa7ff768e26d038a45a782
-SIZE (certbot-dns-cloudflare-0.21.1.tar.gz) = 12938
+TIMESTAMP = 1520546848
+SHA256 (certbot-dns-cloudflare-0.22.0.tar.gz) = f6ceeafaadbe2fae50f7c7ec9bcaef67e35b0ef9c06fba047c52f095913e5c9f
+SIZE (certbot-dns-cloudflare-0.22.0.tar.gz) = 12920

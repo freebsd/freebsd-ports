@@ -1,3 +1,3 @@
-TIMESTAMP = 1518081734
-SHA256 (certbot-dns-cloudxns-0.21.1.tar.gz) = 4dca77bf1eae36578513da1ca75e350bccc8cb5536f157bca7615bc49f1bb7b0
-SIZE (certbot-dns-cloudxns-0.21.1.tar.gz) = 11373
+TIMESTAMP = 1520546915
+SHA256 (certbot-dns-cloudxns-0.22.0.tar.gz) = c5d5acc460da57f587e89f75b8412b0925d83fd271a9bcbc1606ee5a67faa1ba
+SIZE (certbot-dns-cloudxns-0.22.0.tar.gz) = 11352
