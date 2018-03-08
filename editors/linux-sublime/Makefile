@@ -10,7 +10,7 @@ DISTNAME=	Sublime%20Text%202.0.2
 PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Sublime Text is a sophisticated text editor for code, markup and prose
+COMMENT=	Sophisticated text editor for code, markup and prose
 
 INSTALLS_ICONS=	yes
 USES=		desktop-file-utils linux tar:bzip2
