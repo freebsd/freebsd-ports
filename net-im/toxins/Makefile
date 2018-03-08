@@ -1,0 +1,35 @@
+# $FreeBSD$
+
+PORTNAME=	toxins
+DISTVERSION=	g20180214
+CATEGORIES=	net-im
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Collection of small programs using toxcore
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+LIB_DEPENDS=	libsodium.so:security/libsodium \
+		libtoxcore.so:net-im/tox
+
+USES=		gmake pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	TokTok
+GH_TAGNAME=	e7bb43c
+ALL_TARGET=	build
+
+PROGS=		irc_syncbot tox_shell tox_sync echobot
+
+PLIST_FILES=	${PROGS:S/^/bin\//}
+
+post-patch:
+	@${RM} -r ${WRKSRC}/toxvpn # will be in a separate port
+	@${REINPLACE_CMD} -e 's|-static -ltoxcore|`pkg-config --cflags --libs toxcore`|' ${WRKSRC}/*/Makefile
+
+do-install:
+.for f in ${PROGS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f}/${f} ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
+
+.include <bsd.port.mk>
