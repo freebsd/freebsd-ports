@@ -1,0 +1,7 @@
+include/catch/catch.hpp
+include/catch/catch_reporter_automake.hpp
+include/catch/catch_reporter_tap.hpp
+include/catch/catch_reporter_teamcity.hpp
+lib/cmake/Catch2/Catch2Config.cmake
+lib/cmake/Catch2/Catch2ConfigVersion.cmake
+libdata/pkgconfig/catch.pc
