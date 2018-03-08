@@ -30,6 +30,7 @@ pathfix:
 .for file in ${PATHFIX_CMAKELISTSTXT}
 	@${FIND} ${PATHFIX_WRKSRC} -name "${file}" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[{]CMAKE_INSTALL_LIBDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
+		s|[{]CMAKE_INSTALL_DATAROOTDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
 		s|[{]INSTALL_LIB_DIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
 		s|[{]INSTALL_LIBDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
 		s|[{]LIB_DESTINATION[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
