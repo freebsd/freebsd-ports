@@ -1,5 +1,6 @@
 @comment bin/hb-ot-shape-closure
 @comment bin/hb-shape
+@comment bin/hb-subset
 @comment bin/hb-view
 @comment include/harfbuzz/hb-blob.h
 @comment include/harfbuzz/hb-buffer.h
@@ -24,9 +25,14 @@ include/harfbuzz/hb-icu.h
 @comment include/harfbuzz/hb-set.h
 @comment include/harfbuzz/hb-shape-plan.h
 @comment include/harfbuzz/hb-shape.h
+@comment include/harfbuzz/hb-subset-glyf.hh
+@comment include/harfbuzz/hb-subset-plan.hh
+@comment include/harfbuzz/hb-subset-private.hh
+@comment include/harfbuzz/hb-subset.h
 @comment include/harfbuzz/hb-unicode.h
 @comment include/harfbuzz/hb-version.h
 @comment include/harfbuzz/hb.h
+@comment lib/cmake/harfbuzz/harfbuzz-config.cmake
 @comment lib/girepository-1.0/HarfBuzz-0.0.typelib
 @comment lib/libharfbuzz-gobject.so
 @comment lib/libharfbuzz-gobject.so.0
@@ -34,10 +40,14 @@ include/harfbuzz/hb-icu.h
 lib/libharfbuzz-icu.so
 lib/libharfbuzz-icu.so.0
 lib/libharfbuzz-icu.so.%%LIBVER%%
+@comment lib/libharfbuzz-subset.so
+@comment lib/libharfbuzz-subset.so.0
+@comment lib/libharfbuzz-subset.so.%%LIBVER%%
 @comment lib/libharfbuzz.so
 @comment lib/libharfbuzz.so.0
 @comment lib/libharfbuzz.so.%%LIBVER%%
 @comment libdata/pkgconfig/harfbuzz-gobject.pc
 libdata/pkgconfig/harfbuzz-icu.pc
+@comment libdata/pkgconfig/harfbuzz-subset.pc
 @comment libdata/pkgconfig/harfbuzz.pc
 @comment share/gir-1.0/HarfBuzz-0.0.gir
