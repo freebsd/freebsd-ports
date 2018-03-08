@@ -2,6 +2,7 @@
 
 PORTNAME=	polybar
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	capt_redbeard@protonmail.com
