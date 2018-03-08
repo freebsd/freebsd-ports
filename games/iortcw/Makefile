@@ -3,6 +3,7 @@
 
 PORTNAME=	iortcw
 DISTVERSION=	1.51
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -43,9 +44,13 @@ MP_DESC=	Build multiplayer support
 SP_DESC=	Build singleplayer support
 
 SP_ALL_TARGET=	sp
+SP_DESKTOP_ENTRIES=	"Return to Castle Wolfenstein" "Return to Castle Wolfenstein" \
+			"${DATADIR}/wolf512.png" "iowolfsp" "Game;" false
 SP_INSTALL_TARGET=	sp-install
 
 MP_ALL_TARGET=	mp
+MP_DESKTOP_ENTRIES=	"Return to Castle Wolfenstein (MP)" "Return to Castle Wolfenstein Multiplayer" \
+			"${DATADIR}/wolf512.png" "iowolfmp" "Game;" false
 MP_INSTALL_TARGET=	mp-install
 
 post-extract:
@@ -54,6 +59,10 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} '/\.git\/index/d' ${WRKSRC}/SP/Makefile
 	@${REINPLACE_CMD} '/\.git\/index/d' ${WRKSRC}/MP/Makefile
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/MP/misc/wolf512.png ${STAGEDIR}${DATADIR}
 
 post-install-MP-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/iowolfmp ${STAGEDIR}${PREFIX}/bin/iowolfmp

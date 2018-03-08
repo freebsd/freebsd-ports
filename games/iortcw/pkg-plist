@@ -15,3 +15,4 @@
 %%SP%%%%WOLFDIR%%/renderer_sp_opengl1_%%ARCH%%.so
 %%SP%%%%WOLFDIR%%/renderer_sp_rend2_%%ARCH%%.so
 %%SP%%bin/iowolfsp
+%%DATADIR%%/wolf512.png
