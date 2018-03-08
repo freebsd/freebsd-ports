@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libopenraw
-PORTVERSION=	0.1.1
-PORTREVISION=	6
+PORTVERSION=	0.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
@@ -18,14 +17,12 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/variant.hpp:devel/boost-libs
 USES=		compiler:c++11-lib jpeg libtool localbase pkgconfig tar:bz2
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include \
 		--disable-silent-rules
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-
-# Unhide SEEK_SET to fix build with GCC 4.9 (ports/193528).
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
 
 OPTIONS_DEFINE=		GNOME TEST
 OPTIONS_DEFAULT=	GNOME
@@ -36,7 +33,10 @@ GNOME_USES=		gettext-runtime
 GNOME_USE=		GNOME=glib20,gdkpixbuf2
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E \
+		-e 's|\{libdir\}/pkgconfig|{prefix}/libdata/pkgconfig|g' \
+		-e '/^(CFLAGS|CXXFLAGS)/s|-g||g' \
+		${WRKSRC}/configure
 
 post-patch-TEST-off:
 	@${REINPLACE_CMD} -e 's|testsuite ||' ${WRKSRC}/Makefile.in
