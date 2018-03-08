@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_Sieve
-DISTVERSION=	1.4.2
+DISTVERSION=	1.4.3
 CATEGORIES=	net www pear
 
 MAINTAINER=	joneum@FreeBSD.org
