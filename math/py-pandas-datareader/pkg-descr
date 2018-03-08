@@ -1,0 +1,10 @@
+Extract financial data from a wide range of Internet sources into a Pandas
+DataFrame. This was previously found in Pandas (https://pandas.pydata.org) in
+pandas.io.data and pandas.io.wb.
+
+Where you previously used
+  from pandas.io import data, wb
+Now you should use
+  from pandas_datareader import data, wb
+
+WWW: https://github.com/pydata/pandas-datareader
