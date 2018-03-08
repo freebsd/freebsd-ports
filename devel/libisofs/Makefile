@@ -3,6 +3,7 @@
 
 PORTNAME=	libisofs
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
