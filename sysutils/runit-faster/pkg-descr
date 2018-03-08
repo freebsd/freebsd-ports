@@ -1,0 +1,15 @@
+Runit is a daemontools replacement with the following features:
+
+- Service supervision
+- Clean process state
+- Reliable logging facility
+- Fast system bootup and shutdown
+- Packaging friendly
+- Small code size
+
+This very experimental port comes with a complete suite of
+configuration files and services to replace init(8) and rc(8) with
+runit for initializing your system.  Heavily inspired by Void Linux'
+init scripts.
+
+WWW: http://smarden.org/runit/

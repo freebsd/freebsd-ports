@@ -1,0 +1,90 @@
+Since init lacks this code in FreeBSD (utx-logout is performed in pam_lastlog)
+we will simply make utmpset.c a noop if utmpx is present.
+
+http://lists.freebsd.org/pipermail/freebsd-ports/2011-May/067872.html
+
+--- src/tryuwtmpx.c.orig	2014-08-10 18:22:35 UTC
++++ src/tryuwtmpx.c
+@@ -1,9 +1,9 @@
+ #include <sys/types.h>
+ #include <utmpx.h>
+ 
+-struct futmpx ut;
++struct utmpx ut;
+ 
+ int main(void) {
+-  char *s =ut.ut_name;
++  char *s =ut.ut_user;
+   return(0);
+ }
+--- src/utmpset.c.orig	2014-08-10 18:22:35 UTC
++++ src/utmpset.c
+@@ -22,6 +22,11 @@ const char *progname;
+ void usage(void) { strerr_die4x(1, "usage: ", progname, USAGE, "\n"); }
+ 
+ int utmp_logout(const char *line) {
++
++#ifdef _UW_TMP_UTMPX
++  int ok = 1; /* do_nada(); */
++#else /* _UW_TMP_UTMP */
++
+   int fd;
+   uw_tmp ut;
+   int ok =-1;
+@@ -45,9 +50,13 @@ int utmp_logout(const char *line) {
+     break;
+   }
+   close(fd);
++#endif /* _UW_TMP_UTMPX */
+   return(ok);
+ }
+ int wtmp_logout(const char *line) {
++#ifdef _UW_TMP_UTMPX
++  return 1; /* do_nada(); */
++#else /* _UW_TMP_UTMP */
+   int fd;
+   int len;
+   struct stat st;
+@@ -79,6 +88,7 @@ int wtmp_logout(const char *line) {
+   }
+   close(fd);
+   return(1);
++#endif /* _UW_TMP_UTMPX */
+ }
+ 
+ int main (int argc, const char * const *argv, const char * const *envp) {
+--- src/uw_tmp.h1.orig	2014-08-10 18:22:35 UTC
++++ src/uw_tmp.h1
+@@ -3,6 +3,8 @@
+ 
+ /* sysdep: -utmpx */
+ 
++#ifndef _UW_TMP_UTMP
++#define _UW_TMP_UTMP
+ #ifdef _PATH_UTMP
+ #define UW_TMP_UFILE _PATH_UTMP
+ #define UW_TMP_WFILE _PATH_WTMP
+@@ -17,3 +19,4 @@
+ #endif
+ 
+ typedef struct utmp uw_tmp;
++#endif /* _UW_TMP_UTMP */
+--- src/uw_tmp.h2.orig	2014-08-10 18:22:35 UTC
++++ src/uw_tmp.h2
+@@ -3,11 +3,12 @@
+ 
+ /* sysdep: +utmpx */
+ 
+-#define UW_TMP_UFILE _UTMPX_FILE
+-#define UW_TMP_WFILE _WTMPX_FILE
+-
++#ifndef _UW_TMP_UTMPX
++#define _UW_TMP_UTMPX
+ #ifndef ut_time
+ #define ut_time ut_tv.tv_sec
+ #endif
+ 
+-typedef struct futmpx uw_tmp;
++typedef struct utmpx uw_tmp;
++
++#endif /* _UW_TMP_UTMPX */

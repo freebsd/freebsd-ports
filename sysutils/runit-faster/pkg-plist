@@ -1,0 +1,13 @@
+man/man8/chpst.8.gz
+man/man8/runit-init.8.gz
+man/man8/runit.8.gz
+man/man8/runsv.8.gz
+man/man8/runsvchdir.8.gz
+man/man8/runsvdir.8.gz
+man/man8/sv.8.gz
+man/man8/svlogd.8.gz
+man/man8/utmpset.8.gz
+@postexec [ ! -e %%RUNITDIR%%/runsvdir/current ] && cd %%RUNITDIR%%/runsvdir && ln -s default current
+@postunexec rm -f %%RUNITDIR%%/runsvdir/current
+@postexec ln -sf /var/run/runit/runsvdir/current /var/service
+@postunexec rm -f /var/service
