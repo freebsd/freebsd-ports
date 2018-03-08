@@ -86,6 +86,7 @@
     SUBDIR += py-pycurl
     SUBDIR += py-pyftpdlib
     SUBDIR += py-requests-ftp
+    SUBDIR += py-sftp
     SUBDIR += py-tftpy
     SUBDIR += quftp
     SUBDIR += rexx-curl
