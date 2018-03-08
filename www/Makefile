@@ -1894,6 +1894,7 @@
     SUBDIR += py-webhelpers
     SUBDIR += py-webkitgtk
     SUBDIR += py-webob
+    SUBDIR += py-weboob
     SUBDIR += py-websocket-client
     SUBDIR += py-webunit
     SUBDIR += py-werkzeug
