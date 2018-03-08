@@ -2,9 +2,4 @@ bin/potrace
 bin/mkbitmap
 man/man1/potrace.1.gz
 man/man1/mkbitmap.1.gz
-%%LIBRARY%%include/potracelib.h
-%%LIBRARY%%lib/libpotrace.a
-%%LIBRARY%%lib/libpotrace.so
-%%LIBRARY%%lib/libpotrace.so.0
-%%LIBRARY%%lib/libpotrace.so.0.0.5
 %%PORTDOCS%%%%DOCSDIR%%/placement.pdf
