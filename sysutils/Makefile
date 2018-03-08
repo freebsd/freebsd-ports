@@ -1078,6 +1078,7 @@
     SUBDIR += rubygem-yell
     SUBDIR += rundeck
     SUBDIR += runit
+    SUBDIR += runit-faster
     SUBDIR += runwhen
     SUBDIR += s6
     SUBDIR += s6-rc
