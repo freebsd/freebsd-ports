@@ -1,0 +1,12 @@
+A collection of small utilities, mostly written in C or C++, that use toxcore.
+
+List of toxins:
+* irc_syncbot: Bot that synchronizes an IRC channel and a Tox group chat
+  (conference).
+* tox_shell: Proof of concept SSH-like server software using Tox. Testing
+  program, not intended for actual use.
+* tox_sync: Bittorrent-sync-like software using Tox. Syncs two directories
+  together.
+* echobot: Bot that accepts all friend requests and echoes all messages.
+
+WWW: https://github.com/TokTok/toxins
