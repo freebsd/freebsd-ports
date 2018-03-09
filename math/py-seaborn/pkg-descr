@@ -1,0 +1,6 @@
+Seaborn is a library for making attractive and informative
+statistical graphics in Python, aiming to make visualization
+a central part of exploring and understanding data.
+It is a complement to matplotlib, not a replacement for it.
+
+WWW: https://seaborn.pydata.org/

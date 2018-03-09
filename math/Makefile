@@ -668,6 +668,7 @@
     SUBDIR += py-pyvtk
     SUBDIR += py-roman
     SUBDIR += py-scientific
+    SUBDIR += py-seaborn
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-symeig
