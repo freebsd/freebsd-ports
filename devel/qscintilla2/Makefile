@@ -3,6 +3,7 @@
 
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITES_QSCI2}
@@ -11,7 +12,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 port of the Scintilla C++ editor class
 
-USES=		qmake pyqt:4
+USES=		compiler:c++11-lib qmake pyqt:4
 USE_PYQT=	#
 USE_QT4=	moc_build corelib gui xml designer
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
