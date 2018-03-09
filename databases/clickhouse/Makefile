@@ -5,6 +5,7 @@ PORTNAME=	clickhouse
 PORTVERSION=	1.1.54342
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
+PORTREVISION=	1
 CATEGORIES=	databases
 
 PATCH_SITES=	https://github.com/proller/${GH_PROJECT}/commit/
