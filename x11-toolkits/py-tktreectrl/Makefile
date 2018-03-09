@@ -8,20 +8,18 @@ MASTER_SITES=	SF/tkintertreectrl/TkinterTreectrl-${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TkinterTreectrl-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	TkTreectrl Python bindings
 
 LICENSE=	PD
 
 LIB_DEPENDS=	libtreectrl.so.1:x11-toolkits/tktreectrl # no libtreectrl.so is provided by x11-toolkits/tktreectrl
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/Pmw/__init__.py:x11-toolkits/py-Pmw@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Pmw>=0:x11-toolkits/py-Pmw@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${FLAVOR}
 
-USES=		python:2.7 tk:run zip # 2.7 is only because x11-toolkits/py-Pmw has USES=python:2.7
-USE_PYTHON=	distutils autoplist
+# Restrict python to 2.7 because x11-toolkits/py-Pmw is not ready for python 3 yet
+USES=		python:2.7 tk:run zip
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
-
-PYDISTUTILS_PKGNAME=	TkinterTreectrl
-PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
 
 .include <bsd.port.mk>
