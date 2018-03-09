@@ -9,6 +9,8 @@ COMMENT=	PAM plugin for MySQL
 
 LICENSE=	GPLv2+
 
+BROKEN_powerpc64=	fails to configure: CMake Error at cmake/os/FreeBSD.cmake:34: Unsupported compiler!
+
 RUN_DEPENDS=# This plugin has no run dependencies. It should work with any desired mysql client/server.
 
 MASTERDIR=	${.CURDIR}/../percona57-server

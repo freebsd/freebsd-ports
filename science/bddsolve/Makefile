@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	BDD-based satisfiability and reachability solver
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc=		fails to compile due to running out of virtual memory
+BROKEN_powerpc64=	fails to build: undefined reference to boost::program_options::options_description::options_description
 
 LIB_DEPENDS+=	libbdd.so:science/buddy \
 		libboost_program_options.so:devel/boost-libs
@@ -20,7 +21,6 @@ USES=		zip
 NO_WRKSUBDIR=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lbdd -lboost_program_options
-BROKEN_powerpc=	Does not compile due to running out of virtual memory
 
 OPTIONS_DEFINE=	EXAMPLES
 

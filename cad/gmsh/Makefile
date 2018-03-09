@@ -15,8 +15,8 @@ LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+=	${WRKSRC}/LICENSE.txt
 
-BROKEN_FreeBSD_12_i386=	Does not build on FreeBSD 12 i386 due to a clang bug: https://llvm.org/bugs/show_bug.cgi?id=21903
-BROKEN_powerpc64=	Does not build on powerpc64
+BROKEN_FreeBSD_12_i386=	fails to build on FreeBSD 12 i386 due to a clang bug: https://llvm.org/bugs/show_bug.cgi?id=21903
+BROKEN_powerpc64=	fails to build: .rodata._Z7pow_intRKdRKi referenced in section .got of CMakeFiles/gmsh.dir/Numeric/bezierBasis.cpp.o: defined in discarded section
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \

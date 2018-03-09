@@ -13,8 +13,8 @@ COMMENT=	MySQL database enhanced with Galera replication (server package)
 
 LICENSE=	GPLv2
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type 'struct dh_st'
+NOT_FOR_ARCHS=		aarch64 armv6 armv7 powerpc64
+NOT_FOR_ARCHS_REASON=	error: Unsupported platform
 
 RUN_DEPENDS=	bash:shells/bash \
 		lsof:sysutils/lsof \
@@ -23,13 +23,11 @@ RUN_DEPENDS=	bash:shells/bash \
 		socat:net/socat
 LIB_DEPENDS=	libevent.so:devel/libevent liblz4.so:archivers/liblz4
 
-BROKEN_powerpc64=	Does not build
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type 'struct dh_st'
 
 DATADIR=	${PREFIX}/share/mysql
 ETCDIR=		${PREFIX}/etc/mysql
-
-NOT_FOR_ARCHS=	aarch64 armv6 armv7 powerpc64
-NOT_FOR_ARCHS_REASON=	error: Unsupported platform
 
 USES=		bison \
 		cmake:outsource,noninja \
