@@ -9,6 +9,8 @@ COMMENT=	Multithreaded SQL database (client)
 
 LICENSE=	GPLv2+
 
+BROKEN_powerpc64=	fails to configure: CMake Error at cmake/os/FreeBSD.cmake:34: Unsupported compiler!
+
 MASTERDIR=	${.CURDIR}/../percona57-server
 
 OPTIONS_EXCLUDE=TOKUDB

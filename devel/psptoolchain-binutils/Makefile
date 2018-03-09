@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	psptoolchain-
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	PlayStation Portable development toolchain ${PORTNAME}
 
-BROKEN_aarch64=		Does not package: ansidecl.h: No such file or directory
-BROKEN_mips64=		Does not package: ansidecl.h: No such file or directory
-BROKEN_powerpc64=	Does not build
+BROKEN_aarch64=		fails to package: ansidecl.h: No such file or directory
+BROKEN_mips64=		fails to package: ansidecl.h: No such file or directory
+BROKEN_powerpc64=	fails to package: ansidecl.h: No such file or directory
 
 USES=		gmake tar:bzip2 libtool
 
