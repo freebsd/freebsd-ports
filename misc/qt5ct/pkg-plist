@@ -3,3 +3,14 @@ bin/qt5ct
 %%QT_PLUGINDIR%%/styles/libqt5ct-style.so
 share/applications/qt5ct.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/colors/airy.conf
+%%DATADIR%%/colors/darker.conf
+%%DATADIR%%/colors/dusk.conf
+%%DATADIR%%/colors/sand.conf
+%%DATADIR%%/colors/simple.conf
+%%DATADIR%%/colors/waves.conf
+%%DATADIR%%/qss/fusion-fixes.qss
+%%DATADIR%%/qss/scrollbar-simple.qss
+%%DATADIR%%/qss/sliders-simple.qss
+%%DATADIR%%/qss/tooltip-simple.qss
+%%DATADIR%%/qss/traynotification-simple.qss
