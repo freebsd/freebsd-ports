@@ -2264,6 +2264,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/commons-httpclient-3.1-patched.jar
 %%DATADIR%%/lib/commons-imaging-1.0-RC.jar
 %%DATADIR%%/lib/commons-logging-1.2.jar
+%%DATADIR%%/lib/eddsa-0.2.0.jar
 %%DATADIR%%/lib/extensions.jar
 %%DATADIR%%/lib/fluent-hc-4.5.2.jar
 %%DATADIR%%/lib/forms_rt.jar
@@ -2282,6 +2283,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/isorelax.jar
 %%DATADIR%%/lib/jaxen-1.1.3.jar
 %%DATADIR%%/lib/jayatana-1.2.4.jar
+%%DATADIR%%/lib/jbcrypt-1.0.0.jar
 %%DATADIR%%/lib/jdom.jar
 %%DATADIR%%/lib/jediterm-pty-2.6.jar
 %%DATADIR%%/lib/jgoodies-forms.jar
@@ -2331,7 +2333,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/streamex-0.6.5.jar
 %%DATADIR%%/lib/swingx-core-1.6.2.jar
 %%DATADIR%%/lib/trang-core.jar
-%%DATADIR%%/lib/trilead-ssh2.jar
+%%DATADIR%%/lib/trilead-ssh2-build-217-jenkins-11.jar
 %%DATADIR%%/lib/trove4j.jar
 %%DATADIR%%/lib/util.jar
 %%DATADIR%%/lib/velocity.jar
