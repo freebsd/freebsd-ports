@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tclreadline
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel tcl
 
@@ -24,9 +24,5 @@ GH_ACCOUNT=	flightaware
 USE_LDCONFIG=	yes
 TCL_PKG=	${PORTNAME}${PORTVERSION}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} TCL_PKG=${TCL_PKG}
-
-post-patch:
-	${REINPLACE_CMD} '/^MINOR/s|2|3|' ${WRKSRC}/configure.ac
-	${REINPLACE_CMD} '890s|=.*$$|= NULL;|' ${WRKSRC}/tclreadline.c
 
 .include <bsd.port.mk>
