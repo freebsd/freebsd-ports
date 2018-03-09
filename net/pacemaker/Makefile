@@ -11,6 +11,8 @@ COMMENT=	Scalable High-Availability cluster resource manager
 
 LICENSE=	GPLv2
 
+BROKEN_armv6=		fails to install: help2man: can't get '--help' info from pacemakerd
+
 BUILD_DEPENDS=	bash:shells/bash \
 		corosync:net/corosync \
 		getopt>=0:misc/getopt
@@ -24,9 +26,6 @@ RUN_DEPENDS=	bash:shells/bash \
 		corosync:net/corosync \
 		getopt>=0:misc/getopt \
 		ocf-tester:net-mgmt/resource-agents
-
-BROKEN_armv6=		fails to install: help2man: can't get '--help' info from pacemakerd
-BROKEN_powerpc64=	fails to build
 
 CONFLICTS=	heartbeat-[0-9]*
 

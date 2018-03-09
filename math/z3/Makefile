@@ -11,7 +11,6 @@ COMMENT=	Z3 Theorem Prover
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_powerpc64=	Does not build
 # compiler picks ${LOCALBASE}/include/dictionary.h from iniparser
 CONFLICTS=		iniparser-*
 
