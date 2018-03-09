@@ -1,3 +1,25 @@
+------------------------------------------------------------------------
+r441843 | kib | 2017-05-27 05:06:40 -0700 (Sat, 27 May 2017) | 6 lines
+
+Fix lang/rust after ino64 src commit.
+
+Approved by:  bapt, dumbbell
+Sponsored by:   The FreeBSD Foundation
+Differential revision:  https://reviews.freebsd.org/D10799
+
+------------------------------------------------------------------------
+
+commit 969ad2b73cdc928b88f6db8f31916bbe294764c0
+Author: Bryan Drewery <bryan@shatow.net>
+Date:   Thu Mar 1 12:35:01 2018 -0800
+
+    Link against kevent@FBSD_1.0 to fix ABI compat with FreeBSD12.
+    
+    struct kevent was modified in FreeBSD12.  The @FBSD_1.0 symbol supports the old
+    structure ABI still.
+    
+    This allows the `mio` crate tests to now pass on FreeBSD12.
+
 --- ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/aarch64.rs.orig	2017-04-24 18:56:45.000000000 +0000
 +++ ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/aarch64.rs	2017-05-30 07:55:40.703709000 +0000
 @@ -7,10 +7,12 @@
@@ -142,6 +164,14 @@
  pub type mode_t = u16;
  pub type pthread_attr_t = *mut ::c_void;
  pub type rlim_t = i64;
+@@ -1052,6 +1052,7 @@ extern {
+                        serv: *mut ::c_char,
+                        servlen: ::size_t,
+                        flags: ::c_int) -> ::c_int;
++    #[cfg_attr(target_os = "freebsd", link_name = "kevent@FBSD_1.0")]
+     pub fn kevent(kq: ::c_int,
+                   changelist: *const ::kevent,
+                   nchanges: ::c_int,
 --- ./src/libstd/os/freebsd/raw.rs.orig	2017-04-24 18:53:46.000000000 +0000
 +++ ./src/libstd/os/freebsd/raw.rs	2017-05-25 16:25:42.304715000 +0000
 @@ -38,32 +38,52 @@
@@ -383,3 +413,11 @@
  pub type mode_t = u16;
  pub type pthread_attr_t = *mut ::c_void;
  pub type rlim_t = i64;
+@@ -1052,6 +1052,7 @@ extern {
+                        serv: *mut ::c_char,
+                        servlen: ::size_t,
+                        flags: ::c_int) -> ::c_int;
++    #[cfg_attr(target_os = "freebsd", link_name = "kevent@FBSD_1.0")]
+     pub fn kevent(kq: ::c_int,
+                   changelist: *const ::kevent,
+                   nchanges: ::c_int,
