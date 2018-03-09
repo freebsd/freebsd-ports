@@ -1435,6 +1435,7 @@
     SUBDIR += unison-devel
     SUBDIR += unison232
     SUBDIR += unison240
+    SUBDIR += unison248
     SUBDIR += unix2tcp
     SUBDIR += uplog
     SUBDIR += urelay
