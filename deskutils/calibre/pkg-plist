@@ -699,6 +699,7 @@ lib/calibre/calibre/gui2/actions/toc_edit.py
 lib/calibre/calibre/gui2/actions/tweak_epub.py
 lib/calibre/calibre/gui2/actions/unpack_book.py
 lib/calibre/calibre/gui2/actions/view.py
+lib/calibre/calibre/gui2/actions/virtual_library.py
 lib/calibre/calibre/gui2/add_filters.py
 lib/calibre/calibre/gui2/add.py
 lib/calibre/calibre/gui2/auto_add.py
@@ -1733,6 +1734,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/view-refresh.png
 %%DATADIR%%/images/view.png
 %%DATADIR%%/images/viewer.png
+%%DATADIR%%/images/vl.png
 %%DATADIR%%/images/window-close.png
 %%DATADIR%%/images/wizard.png
 %%DATADIR%%/jacket/stylesheet.css
