@@ -1,3 +1,9 @@
-TIMESTAMP = 1501722772
-SHA256 (plan9port/9fans-plan9port-20170723-4a8c0c7_GH0.tar.gz) = 0b48f908f4212a7b5c266d369f5ee38640f72cceecdedea324e8fd2ec4207089
-SIZE (plan9port/9fans-plan9port-20170723-4a8c0c7_GH0.tar.gz) = 23469932
+TIMESTAMP = 1520599448
+SHA256 (plan9port/pgw.tar.bz2) = de3af82012b3380612b56fa0c1a2ed8daf619a0215189fc59eab9919ec47ea15
+SIZE (plan9port/pgw.tar.bz2) = 9406367
+SHA256 (plan9port/roget.tar.bz2) = b24f051354dabe58f1d825e29db386091c84aec98125dbe499adeca51a32a836
+SIZE (plan9port/roget.tar.bz2) = 482956
+SHA256 (plan9port/scat.tgz) = a995f52544a712f2bdb87f531638d4c846224fa9212d034e3bd8e809cb99be1e
+SIZE (plan9port/scat.tgz) = 5145346
+SHA256 (plan9port/9fans-plan9port-20180205-4798a8a5560552480efde5fe8b1f7963a25a96d3_GH0.tar.gz) = 4bbc118d699924760079c57f81d71d743d6ccf58827bce17bc2844a71faf3564
+SIZE (plan9port/9fans-plan9port-20180205-4798a8a5560552480efde5fe8b1f7963a25a96d3_GH0.tar.gz) = 23434357
