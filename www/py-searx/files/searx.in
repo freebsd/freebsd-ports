@@ -30,16 +30,17 @@ rcvar=searx_enable
 : ${searx_flags:=""}
 
 # daemon
-searx_pidfile="/var/run/${name}.pid"
-python="%%PREFIX%%/bin/python2.7"
-procname="%%PREFIX%%/lib/python2.7/site-packages/${name}/webapp.py"
+pidfile="/var/run/${name}.pid"
+python="%%PYTHON_CMD%%"
+script_py="%%PYTHON_SITELIBDIR%%/${name}/webapp.py"
 command=/usr/sbin/daemon
-command_args=" -c -f -P ${searx_pidfile} ${python} ${procname}"
+procname="daemon"
+command_args=" -c -f -P ${pidfile} ${python} ${script_py}"
 start_precmd="searx_precmd"
 
 searx_precmd()
 {
-    install -o ${searx_user} /dev/null ${searx_pidfile}
+    install -o ${searx_user} /dev/null ${pidfile}
 }
 
 load_rc_config $name
