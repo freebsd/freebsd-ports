@@ -33,36 +33,48 @@ usage ()
 # Fetch files with pwned password hashes
 fetchpwfiles ()
 {
-    umask 022
-    mkdir -p $DBDIR || errexit "No write permission on data directory."
-    local f s_txt s_txt_7z hash
-    while read f s_txt s_txt_7z hash
-    do
-	local f7z="$f.7z"
-	echo "Checking '$DBDIR/$f' ..."
-	local s_txt_is=$(stat -f %z $f 2>/dev/null)
-	if [ "$s_txt_is" != "$s_txt" ]; then
-	    echo "Fetching '$DBDIR/$f' ..."
-	    fetch -S $s_txt_7z "$URLBASE/$f7z" || errexit "Could not fetch '$URLBASE/$f7z'"
-	    local hash_is=$(sha1 -q "$f7z")
-	    if [ "$hash_is" != "$hash" ]; then
+	umask 022
+	mkdir -p $DBDIR || errexit "No write permission on data directory."
+	local f s_txt s_txt_7z hash
+	while read f s_txt s_txt_7z hash
+	do
+		local f7z="$f.7z"
+		echo "Checking '$DBDIR/$f' ..."
+		local s_txt_is=$(stat -f %z $f 2>/dev/null)
+		if [ "$s_txt_is" != "$s_txt" ]; then
+			local s_txt_7z_is=$(stat -f %z $f7z 2>/dev/null)
+			if [ "$s_txt_7z_is" != "$s_txt_7z" ]; then
+				echo "Fetching '$DBDIR/$f7z' ..."
+				fetch -S $s_txt_7z "$URLBASE/$f7z" || errexit "Could not fetch '$URLBASE/$f7z'."
+			fi
+			echo "Checking '$DBDIR/$f7z' ..."
+			local hash_is=$(sha1 -q "$f7z")
+			if [ "$hash_is" != "$hash" ]; then
+				rm -f "$f7z"
+				errexit "File '$f7z' fails SHA1 check: '$hash_is' should be '$hash'."
+			fi
+			echo "Extracting '$DBDIR/$f' ..."
+			tar xOf "$f7z" | cut -d ":" -f 1 > "$f" || errexit "Decompression of file '$f7z' failed."
+			local s_txt_is=$(stat -f %z "$f")
+			if [ "$s_txt_is" != "$s_txt" ]; then
+				rm -f "$f"
+				errexit "File '$f' has size $s_txt_is after decompression, should be $s_txt."
+			fi
+		fi
 		rm -f "$f7z"
-		errexit "File '$f7z' fails SHA1 check: '$hash_is' should be '$hash'."
-	    fi
-	    tar xf $f7z
-	    local s_txt_is=$(stat -f %z $f)
-	    if [ "$s_txt_is" != "$s_txt" ]; then
-		rm -f "$f"
-		errexit "File '$f' has size $s_txt_is after decompression, should be $s_txt."
-	    fi
-	fi
-	rm -f "$f7z"
-    done <<EOF
-pwned-passwords-1.0.txt      12862899504 5702869528 90d57d16a2dfe00de6cc58d0fa7882229ace4a53
-pwned-passwords-update-1.txt   574389228  262300582 00fc585efad08a4b6323f8e4196aae9207f8b09f
-pwned-passwords-update-2.txt    16791180    8000810 20318090278bbd196945025bc7bf93e99f261f9a
+	done <<EOF
+pwned-passwords-ordered-2.0.txt 20567110522 9647404191 87437926c6293d034a259a2b86a2d077e7fd5a63
 EOF
-    echo "All data files have been successfully downloaded and extracted."
+	echo "All data files have been successfully downloaded and extracted."
+	# delete old data files (their content is included in the new datafiles)
+	while read f
+	do
+	      rm -f $f $f.7z
+	done <<EOF
+pwned-passwords-1.0.txt
+pwned-passwords-update-1.txt
+pwned-passwords-update-2.txt
+EOF
 }
 
 # Password lookup
