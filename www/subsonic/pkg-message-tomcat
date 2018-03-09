@@ -1,3 +1,0 @@
-Create a manager-gui capable user in Tomcat's conf/tomcat-users.xml,
-then access the Manager at http://127.0.0.1:8080/manager/html
-(if using the default Tomcat HTTP port) and deploy Subsonic.

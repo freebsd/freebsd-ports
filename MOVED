@@ -10169,3 +10169,27 @@ www/unit-php70|www/unit-php@php70|2018-03-08|Merge into flavorized version
 www/unit-php71|www/unit-php@php71|2018-03-08|Merge into flavorized version
 www/unit-php72|www/unit-php@php72|2018-03-08|Merge into flavorized version
 databases/php70-memcached|databases/php-memcached|2018-03-08|Move to flavorized version.
+www/openxmldir||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/hastymail2||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/dalbum||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/iwebcal||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/impresscms||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/freeway||2018-03-08|Has expired: Unmaintained upstream, all www files wrongly belongs to www user.
+www/xaraya||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/subsonic||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/phpwebapp||2018-03-08|Has expired: Unmaintained upstream, all www files wrongly belongs to www user.
+www/hastymail||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/b2evolution||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/textpattern||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/eventum||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/quickie||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/jinzora||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/zen-cart||2018-03-08|Has expired: Unmaintained, no upstream, all www files wrongly belongs to www user.
+www/bblog||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/extjs||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/geeklog||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/lilurl||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/zikula||2018-03-08|Has expired: Unmaintained, no upstream, all www files wrongly belongs to www user.
+www/yii||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/phpmp||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+www/lionwiki||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
