@@ -24,7 +24,7 @@ GH_TAGNAME=	0118c0cb966b2c15823945730a7aaa5b3dca545d
 
 OPTIONS_DEFINE=	KWALLET
 OPTIONS_SUB=	yes
-KWALLET_DESC=	KDE5 Wallet Integration
-KWALLET_USE=	kde=wallet
+KWALLET_DESC=	KDE5 Wallet Integration (if installed)
+KWALLET_USE=	kde=wallet_build
 
 .include <bsd.port.mk>
