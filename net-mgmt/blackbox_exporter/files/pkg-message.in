@@ -1,0 +1,15 @@
+To start blackbox_exporter, create a configuration file at
+%%PREFIX%%/etc/blackbox_exporter.yml and run
+"sysrc blackbox_exporter_enable=yes".
+
+For details about the configuration file format, visit
+https://github.com/prometheus/blackbox_exporter/blob/%%GH_TAGNAME%%/CONFIGURATION.md
+
+Since blackbox_exporter allows setting arbitrary probe
+targets via HTTP parameters, it is set to listen on localhost
+only by default. To change the listen address, set the
+blackbox_exporter_listen_address rcvar.
+
+To use the 'ping' module, blackbox_exporter needs to run with
+root privileges. To run blackbox_exporter with root privileges,
+run "sysrc blackbox_exporter_user=root".
