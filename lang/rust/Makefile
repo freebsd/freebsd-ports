@@ -3,6 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.24.0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		LOCAL/dumbbell/rust:rust_bootstrap \
@@ -92,7 +93,7 @@ PLIST_FILES=		lib/rustlib/components \
 
 .include <bsd.port.pre.mk>
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-ino64
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-abi
 .endif
 
 X_PY_ENV=	HOME="${WRKDIR}" \
