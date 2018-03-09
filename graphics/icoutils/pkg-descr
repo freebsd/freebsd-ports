@@ -1,23 +1,21 @@
-The icoutils are a set of program for extracting and converting images in
-Microsoft Windows(R) icon and cursor files.  These files usually have the
-extension .ico or .cur, but they can also be embedded in executables and
+The icoutils are a set of command-line programs for extracting and converting
+images in Microsoft Windows(R) icon and cursor files. These files usually have
+the extension .ico or .cur, but they can also be embedded in executables and
 libraries (.dll-files).
 
 The icotool program converts icon and cursor files into a set of PNG images.
-(Each icon/cursor file may contain multiple images, usually of different
-sizes and with different number of colors.)  Icotool can also create
-icon/cursor files from PNG images.
+(Each icon/cursor file may contain multiple images, usually of different sizes
+and with different number of colors.) Icotool can also create icon/cursor files
+from PNG images.
 
-The wrestool program can extract both icons and cursors from 32-bit ("PE")
-and 16-bit ("NE") executables and libraries.  It writes .ico and .cur files
-that can be used on Windows(R) operating systems as well.  Other types of
-embedded resourced can be extracted, however only in raw form -- icons and
-cursors require additional conversion before they can be saved as icon and
-cursor files.
+The wrestool program can extract both icons and cursors from 32-bit ("PE") and
+16-bit ("NE") executables and libraries. It writes .ico and .cur files that can
+be used on Windows(R) operating systems as well. Other types of embedded
+resourced can be extracted, however only in raw form - icons and cursors require
+additional conversion before they can be saved as icon and cursor files.
 
-The extresso script automates the tasks of extracting and converting icons.
-This is done with the help of of special resource scripts.  The purpose of
-these scripts are to give names to the icons in the executables and
-libraries.
+The extresso script automates the tasks of extracting and converting icons. This
+is done with the help of of special resource scripts. The purpose of these
+scripts are to give names to the icons in the executables and libraries.
 
-WWW: http://www.nongnu.org/icoutils/
+WWW: https://www.nongnu.org/icoutils/
