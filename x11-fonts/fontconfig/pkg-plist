@@ -53,6 +53,7 @@ etc/fonts/conf.d/60-latin.conf
 etc/fonts/conf.d/65-fonts-persian.conf
 etc/fonts/conf.d/65-nonlatin.conf
 etc/fonts/conf.d/69-unifont.conf
+etc/fonts/conf.d/70-no-bitmaps.conf
 etc/fonts/conf.d/80-delicious.conf
 etc/fonts/conf.d/90-synthetic.conf
 etc/fonts/conf.d/README
