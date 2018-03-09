@@ -4,6 +4,7 @@
 PORTNAME=	matplotlib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,6 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libtcl86.so:lang/tcl86
 RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>0:devel/py-backports.functools_lru_cache@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cycler>0:devel/py-cycler@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:devel/py-dateutil@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${FLAVOR} \
