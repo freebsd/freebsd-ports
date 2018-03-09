@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: blackbox_exporter
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
@@ -10,13 +12,13 @@
 # blackbox_exporter_enable (bool):          Set to NO by default.
 #               Set it to YES to enable blackbox_exporter.
 # blackbox_exporter_user (string):          Set user that blackbox_exporter will run under
-#               Default is "nobody".
+#               Default is "prometheus".
 # blackbox_exporter_group (string):         Set group that blackbox_exporter will run under
-#               Default is "nobody".
+#               Default is "prometheus".
 # blackbox_exporter_args (string):          Set extra arguments to pass to blackbox_exporter
 #               Default is "".
 # blackbox_exporter_listen_address (string):Set ip:port that blackbox_exporter will listen on
-#               Default is ":9115".
+#               Default is "localhost:9115".
 # blackbox_exporter_config (string):        Set configuration file of blackbox_exporter
 #               Default is "%%PREFIX%%/etc/blackbox_exporter.yml".
 # blackbox_exporter_log_file (string):      Set log file of blackbox_exporter
@@ -25,20 +27,20 @@
 . /etc/rc.subr
 
 name=blackbox_exporter
+desc="Blackbox exporter for use with Prometheus"
 rcvar=blackbox_exporter_enable
 
 load_rc_config $name
 
-: ${blackbox_exporter_enable:="NO"}
-: ${blackbox_exporter_user:="nobody"}
-: ${blackbox_exporter_group:="nobody"}
-: ${blackbox_exporter_args:=""}
-: ${blackbox_exporter_listen_address:=":9115"}
-: ${blackbox_exporter_config:="%%PREFIX%%/etc/blackbox_exporter.yml"}
-: ${blackbox_exporter_log_file:="/var/log/blackbox_exporter.log"}
+: ${blackbox_exporter_enable:=NO}
+: ${blackbox_exporter_user:=prometheus}
+: ${blackbox_exporter_group:=prometheus}
+: ${blackbox_exporter_listen_address=localhost:9115}
+: ${blackbox_exporter_config="%%PREFIX%%/etc/blackbox_exporter.yml"}
+: ${blackbox_exporter_log_file=/var/log/blackbox_exporter.log}
 
 pidfile=/var/run/blackbox_exporter.pid
-command="/usr/sbin/daemon"
+command=/usr/sbin/daemon
 procname="%%PREFIX%%/bin/blackbox_exporter"
 command_args="-p ${pidfile} /usr/bin/env ${procname} \
     --web.listen-address=${blackbox_exporter_listen_address} \
@@ -54,6 +56,8 @@ blackbox_exporter_startprecmd()
             -o ${blackbox_exporter_user} \
             -g ${blackbox_exporter_group} \
             /dev/null ${pidfile};
+    else
+        chown ${blackbox_exporter_user}:${blackbox_exporter_group} ${pidfile};
     fi
     if [ ! -e ${blackbox_exporter_log_file} ]; then
         install \
@@ -61,8 +65,9 @@ blackbox_exporter_startprecmd()
             -g ${blackbox_exporter_group} \
             -m 640 \
             /dev/null ${blackbox_exporter_log_file};
+    else
+        chown ${blackbox_exporter_user}:${blackbox_exporter_group} ${blackbox_exporter_log_file};
     fi
 }
 
-load_rc_config $name
 run_rc_command "$1"
