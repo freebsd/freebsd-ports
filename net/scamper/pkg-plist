@@ -10,7 +10,9 @@ bin/sc_radargun
 bin/sc_remoted
 bin/sc_speedtrap
 bin/sc_tbitblind
+bin/sc_tbitpmtud
 bin/sc_tracediff
+bin/sc_ttlexp
 bin/sc_warts2csv
 bin/sc_warts2json
 bin/sc_warts2pcap
@@ -33,12 +35,16 @@ man/man1/sc_radargun.1.gz
 man/man1/sc_remoted.1.gz
 man/man1/sc_speedtrap.1.gz
 man/man1/sc_tbitblind.1.gz
+man/man1/sc_tbitpmtud.1.gz
 man/man1/sc_tracediff.1.gz
+man/man1/sc_ttlexp.1.gz
+man/man1/sc_warts2csv.1.gz
 man/man1/sc_warts2json.1.gz
 man/man1/sc_warts2pcap.1.gz
 man/man1/sc_warts2text.1.gz
 man/man1/sc_wartscat.1.gz
 man/man1/sc_wartsdump.1.gz
+man/man1/sc_wartsfix.1.gz
 man/man1/scamper.1.gz
 man/man3/libscamperfile.3.gz
 man/man5/warts.5.gz
