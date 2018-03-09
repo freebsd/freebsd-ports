@@ -8,22 +8,28 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	FastCGI server for CGI-like applications multiprocessing
 
-BUILD_DEPENDS=	p5-Const-Fast>0:devel/p5-Const-Fast \
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	p5-CGI-Fast>=0:www/p5-CGI-Fast \
+		p5-Const-Fast>0:devel/p5-Const-Fast \
 		p5-FCGI>0:www/p5-FCGI \
 		p5-FCGI-ProcManager>0:www/p5-FCGI-ProcManager
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>0:devel/p5-Test-Most \
 		p5-Test-Strict>0:devel/p5-Test-Strict
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+USE_RC_SUBR=	fcgi_spawn
 
-USE_RC_SUBR+=	fcgi_spawn
+DOCSDIR=	${PREFIX}/share/doc/p5-${PORTNAME}
 
-OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_DEFINE=	DOCS MYSQL PGSQL
 MYSQL_DESC=	MySQL dependency to run on RC start
 PGSQL_DESC=	PgSQL dependency to run on RC start
 
@@ -44,12 +50,11 @@ SUB_LIST+=	PGSQL=
 .endif
 
 post-install:
-	${ECHO} ${WITH_MYSQL} ${SUB_LIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fcgi_spawn
-	${INSTALL_DATA} ${WRKSRC}/fcgi_spawn.conf.sample \
-		${STAGEDIR}${PREFIX}/etc/fcgi_spawn
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/README \
-		${STAGEDIR}${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/fcgi_spawn.conf.sample ${STAGEDIR}${PREFIX}/etc/fcgi_spawn
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

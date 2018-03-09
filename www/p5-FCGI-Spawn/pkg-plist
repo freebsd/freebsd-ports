@@ -1,8 +1,8 @@
-%%SITE_PERL%%/FCGI/Spawn.pm
-%%SITE_PERL%%/FCGI/Spawn/BinUtils.pm
-%%PERL5_MAN3%%/FCGI::Spawn.3.gz
-%%PERL5_MAN3%%/FCGI::Spawn::BinUtils.3.gz
-%%PERL5_MAN1%%/fcgi_spawn.1.gz
 bin/fcgi_spawn
 etc/fcgi_spawn/fcgi_spawn.conf.sample
-share/doc/p5-FCGI-Spawn/README
+%%SITE_PERL%%/FCGI/Spawn.pm
+%%SITE_PERL%%/FCGI/Spawn/BinUtils.pm
+%%PERL5_MAN1%%/fcgi_spawn.1.gz
+%%PERL5_MAN3%%/FCGI::Spawn.3.gz
+%%PERL5_MAN3%%/FCGI::Spawn::BinUtils.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
