@@ -1,20 +1,21 @@
---- client/CMakeLists.txt.orig	2014-03-15 18:08:38.000000000 +0100
-+++ client/CMakeLists.txt	2014-03-22 19:41:40.272474641 +0100
-@@ -37,9 +37,11 @@
-   TARGET_LINK_LIBRARIES(mysql ${EDITLINE_LIBRARY})
+--- client/CMakeLists.txt	2018-02-01 14:51:01.000000000 +0100
++++ client/CMakeLists.txt.new	2018-02-20 15:53:56.534072000 +0100
+@@ -37,10 +37,12 @@
+   TARGET_LINK_LIBRARIES(mysql ${MY_READLINE_LIBRARY})
  ENDIF(UNIX)
  
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqltest perconaserverclient regex)
+ ADD_DEPENDENCIES(mysqltest GenError)
 +ENDIF()
  
- 
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
-@@ -51,15 +53,19 @@
- MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
+ TARGET_LINK_LIBRARIES(mysqlcheck perconaserverclient)
+@@ -52,15 +54,19 @@
  TARGET_LINK_LIBRARIES(mysqlimport perconaserverclient)
+ SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysql_upgrade mysql_upgrade.c)
@@ -32,7 +33,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc sql_string.cc
                       ../sql/rpl_filter.cc ../sql/sql_list.cc)
-@@ -81,8 +87,6 @@
+@@ -82,8 +88,6 @@
  ENDIF(WIN32)
  
  SET_TARGET_PROPERTIES (
