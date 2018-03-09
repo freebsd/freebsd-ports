@@ -118,7 +118,7 @@ index e06ae3457a47..93faa61594a3 100755
 +if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android'):
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk3', 'android'):
      CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
      CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
 diff --git gfx/skia/moz.build gfx/skia/moz.build
@@ -132,7 +132,7 @@ index 2118677ca3a8..e4978b413784 100644
 +if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android'):
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk3', 'android'):
      CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
      CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
 diff --git gfx/thebes/moz.build gfx/thebes/moz.build
@@ -152,7 +152,7 @@ index 56f1b9fe3f4b..0ac1100b0df3 100644
 +if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
  
- if CONFIG['CLANG_CXX']:
+ if CONFIG['CC_TYPE'] == 'clang':
      # Suppress warnings from Skia header files.
 diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
 index cb1233c56d7e..06fb1f9f174b 100644
@@ -172,7 +172,7 @@ index 79c26e3e7001..c4d93bc5f7dc 100644
 +++ netwerk/dns/moz.build
 @@ -73,3 +73,6 @@ USE_LIBS += ['icu']
  
- if CONFIG['GNU_CXX']:
+ if CONFIG['CC_TYPE'] in ('clang', 'gcc'):
      CXXFLAGS += ['-Wno-error=shadow']
 +
 +if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
@@ -249,7 +249,7 @@ index 9297e4d6f501..d8e273887e4b 100644
 +option('--with-system-harfbuzz',
 +       help="Use system harfbuzz (located with pkgconfig)")
 +
-+system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 1.7.2',
++system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 1.7.4',
 +                                    when='--with-system-harfbuzz')
 +
 +set_config('MOZ_SYSTEM_HARFBUZZ', depends_if(system_harfbuzz)(lambda _: True))
