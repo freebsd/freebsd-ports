@@ -208,6 +208,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/cookie_table/cookie_table_module.js
 %%DATADIR%%/resources/inspector/coverage/coverage_module.js
 %%DATADIR%%/resources/inspector/coverage_test_runner/coverage_test_runner_module.js
+%%DATADIR%%/resources/inspector/cpu_profiler_test_runner/cpu_profiler_test_runner_module.js
 %%DATADIR%%/resources/inspector/data_grid/data_grid_module.js
 %%DATADIR%%/resources/inspector/data_grid_test_runner/data_grid_test_runner_module.js
 %%DATADIR%%/resources/inspector/device_mode_test_runner/device_mode_test_runner_module.js
@@ -258,8 +259,8 @@ bin/chrome
 %%DATADIR%%/resources/inspector/extensions_test_runner/extensions_test_runner_module.js
 %%DATADIR%%/resources/inspector/formatter_worker.js
 %%DATADIR%%/resources/inspector/formatter/formatter_module.js
-%%DATADIR%%/resources/inspector/gonzales/gonzales_module.js
 %%DATADIR%%/resources/inspector/har_importer/har_importer_module.js
+%%DATADIR%%/resources/inspector/heap_profiler_test_runner/heap_profiler_test_runner_module.js
 %%DATADIR%%/resources/inspector/heap_snapshot_model/heap_snapshot_model_module.js
 %%DATADIR%%/resources/inspector/heap_snapshot_worker.js
 %%DATADIR%%/resources/inspector/heap_snapshot_worker/heap_snapshot_worker_module.js
@@ -279,11 +280,8 @@ bin/chrome
 %%DATADIR%%/resources/inspector/performance_test_runner/performance_test_runner_module.js
 %%DATADIR%%/resources/inspector/product_registry_impl/product_registry_impl_module.js
 %%DATADIR%%/resources/inspector/profiler/profiler_module.js
-%%DATADIR%%/resources/inspector/profiler_test_runner/profiler_test_runner_module.js
 %%DATADIR%%/resources/inspector/quick_open/quick_open_module.js
 %%DATADIR%%/resources/inspector/resources/resources_module.js
-%%DATADIR%%/resources/inspector/sass/sass_module.js
-%%DATADIR%%/resources/inspector/sass_test_runner/sass_test_runner_module.js
 %%DATADIR%%/resources/inspector/screencast/screencast_module.js
 %%DATADIR%%/resources/inspector/sdk_test_runner/sdk_test_runner_module.js
 %%DATADIR%%/resources/inspector/security/security_module.js
@@ -303,10 +301,10 @@ bin/chrome
 %%DATADIR%%/snapshot_blob.bin
 %%DATADIR%%/swiftshader/libEGL.so
 %%DATADIR%%/swiftshader/libGLESv2.so
-%%DATADIR%%/test_ime_driver.service
 %%DATADIR%%/ui.service
 %%DATADIR%%/v8_context_snapshot.bin
 %%DATADIR%%/views_mus_resources.pak
+%%DATADIR%%/viz.service
 %%DEBUG%%%%DATADIR%%/character_data_generator
 %%DEBUG%%%%DATADIR%%/libVkLayer_core_validation.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_object_tracker.so

@@ -5,7 +5,7 @@
  const size_t kCodeRangeAreaAlignment = 64 * KB;  // OS page on PPC Linux
  #else
 +#if defined(__FreeBSD__)
-+const size_t kMaximalCodeRangeSize = 256 * MB;
++const size_t kMaximalCodeRangeSize = 512 * MB;
 +#else
  const size_t kMaximalCodeRangeSize = 512 * MB;
 +#endif

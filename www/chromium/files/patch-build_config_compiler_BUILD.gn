@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2018-01-04 21:05:38.000000000 +0100
-+++ build/config/compiler/BUILD.gn	2018-01-20 16:53:24.701867000 +0100
-@@ -47,7 +47,7 @@
+--- build/config/compiler/BUILD.gn.orig	2018-02-24 16:25:08.000000000 +0100
++++ build/config/compiler/BUILD.gn	2018-03-03 19:36:38.111753000 +0100
+@@ -48,7 +48,7 @@
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -9,7 +9,7 @@
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -222,7 +222,7 @@
+@@ -223,7 +223,7 @@
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
          !(is_android && use_order_profiling) && !is_mac && !is_ios &&
@@ -18,7 +18,7 @@
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -326,8 +326,6 @@
+@@ -327,8 +327,6 @@
        "-Wl,-z,relro",
      ]
      if (!using_sanitizer) {
@@ -27,7 +27,7 @@
        # Functions interposed by the sanitizers can make ld think
        # that some libraries aren't needed when they actually are,
        # http://crbug.com/234010. As workaround, disable --as-needed.
-@@ -424,7 +422,7 @@
+@@ -425,7 +423,7 @@
    # TODO(hans): Remove this once Clang generates better optimized debug info by
    # default. https://crbug.com/765793
    if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
@@ -36,7 +36,7 @@
      cflags += [
        "-Xclang",
        "-mllvm",
-@@ -638,7 +636,7 @@
+@@ -622,7 +620,7 @@
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -45,7 +45,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1261,23 +1259,8 @@
+@@ -1280,27 +1278,8 @@
          # TODO(hans): https://crbug.com/637306
          "-Wno-address-of-packed-member",
  
@@ -65,11 +65,15 @@
 -        "-Wno-null-pointer-arithmetic",
 -
 -        # TODO(hans): https://crbug.com/767059
--        "-Wno-tautological-unsigned-enum-zero-compare",
+-        # Disable -Wtautological-constant-compare (and implicitly also
+-        # -Wtautological-unsigned-enum-zero-compare), but re-enable
+-        # useful sub-diagnostics in that group.
+-        "-Wno-tautological-constant-compare",
+-        "-Wtautological-constant-out-of-range-compare",
        ]
-     } else if (use_xcode_clang && xcode_version_int >= 830) {
-       # This is necessary to allow a progressive transition from using xcode 8.0
-@@ -1861,7 +1844,7 @@
+     } else if (use_xcode_clang) {
+       cflags += [
+@@ -1920,7 +1899,7 @@
          # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
          cflags += [ "-gdwarf-3" ]
        }
@@ -78,7 +82,7 @@
      }
      if (use_debug_fission && !is_nacl) {
        cflags += [ "-gsplit-dwarf" ]
-@@ -1875,7 +1858,7 @@
+@@ -1934,7 +1913,7 @@
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      if (!is_mac && !is_ios && !is_nacl && target_cpu != "x86" &&

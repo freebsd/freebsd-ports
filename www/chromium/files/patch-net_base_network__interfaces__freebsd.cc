@@ -217,7 +217,7 @@
 +    return false;
 +
 +  // getifaddrs() may require IO operations.
-+  base::ThreadRestrictions::AssertIOAllowed();
++  base::AssertBlockingAllowed();
 +
 +  ifaddrs* interfaces;
 +  if (getifaddrs(&interfaces) < 0) {

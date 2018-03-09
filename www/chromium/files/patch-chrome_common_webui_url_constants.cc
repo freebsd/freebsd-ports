@@ -1,33 +1,15 @@
---- chrome/common/url_constants.cc.orig	2017-09-05 21:05:14.000000000 +0200
-+++ chrome/common/url_constants.cc	2017-09-07 14:47:04.280263000 +0200
-@@ -146,7 +146,7 @@
- const char kChromeUIMetroFlowURL[] = "chrome://make-metro/";
- #endif
- 
--#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
-+#if ((defined(OS_BSD) || defined(OS_LINUX)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
- const char kChromeUITabModalConfirmDialogURL[] =
-     "chrome://tab-modal-confirm-dialog/";
- #endif
-@@ -164,7 +164,7 @@
+--- chrome/common/webui_url_constants.cc.orig	2018-02-24 16:25:11.000000000 +0100
++++ chrome/common/webui_url_constants.cc	2018-03-03 22:39:51.818055000 +0100
+@@ -226,7 +226,7 @@
  const char kChromeUICastURL[] = "chrome://cast/";
  #endif
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
- 
-@@ -283,7 +283,7 @@
- const char kChromeUISigninDiceInternalsHost[] = "signin-dice-internals";
- #endif
- 
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- const char kChromeUIDiscardsHost[] = "discards";
- #endif
- 
-@@ -291,7 +291,7 @@
+@@ -235,11 +235,11 @@
  const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
  #endif
  
@@ -36,16 +18,19 @@
  const char kChromeUISandboxHost[] = "sandbox";
  #endif
  
-@@ -346,7 +346,7 @@
- const char kChromeUIMetroFlowHost[] = "make-metro";
- #endif
- 
 -#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
 +#if ((defined(OS_BSD) || defined(OS_LINUX)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
  
-@@ -749,7 +749,7 @@
+@@ -380,13 +380,13 @@
+     kChromeUIInternetConfigDialogHost,
+     kChromeUIInternetDetailDialogHost,
+ #endif
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+     kChromeUIDiscardsHost,
+ #endif
  #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
      kChromeUILinuxProxyConfigHost,
  #endif

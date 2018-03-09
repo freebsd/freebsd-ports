@@ -1,15 +1,60 @@
---- components/policy/resources/policy_templates.json.orig	2017-09-07 05:55:36.848121000 +0200
-+++ components/policy/resources/policy_templates.json	2017-09-07 05:57:05.892892000 +0200
-@@ -2237,7 +2237,7 @@
-           'name': 'GSSAPILibraryName',
-           'type': 'string',
-           'schema': { 'type': 'string' },
--          'supported_on': ['chrome.linux:9-'],
-+          'supported_on': ['chrome.linux:9-', 'chrome.bsd:9-'],
-           'features': {
-             'dynamic_refresh': False,
-             'per_profile': False,
-@@ -4883,7 +4883,7 @@
+--- components/policy/resources/policy_templates.json.orig	2018-02-24 16:25:13.000000000 +0100
++++ components/policy/resources/policy_templates.json	2018-03-03 23:01:15.812578000 +0100
+@@ -593,7 +593,7 @@
+       'name': 'HomepageLocation',
+       'type': 'string',
+       'schema': { 'type': 'string' },
+-      'supported_on': ['chrome.*:8-', 'chrome_os:11-'],
++      'supported_on': ['chrome.*:8-', 'chrome_os:11-', 'chrome.bsd:9-'],
+       'features': {
+         'can_be_recommended': True,
+         'dynamic_refresh': True,
+@@ -621,7 +621,7 @@
+       'name': 'HomepageIsNewTabPage',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.*:8-', 'chrome_os:11-'],
++      'supported_on': ['chrome.*:8-', 'chrome_os:11-', 'chrome.bsd:9-'],
+       'features': {
+         'can_be_recommended': True,
+         'dynamic_refresh': True,
+@@ -648,7 +648,7 @@
+       'name': 'NewTabPageLocation',
+       'type': 'string',
+       'schema': { 'type': 'string' },
+-      'supported_on': ['chrome.*:58-', 'chrome_os:58-'],
++      'supported_on': ['chrome.*:58-', 'chrome_os:58-', 'chrome.bsd:9-'],
+       'features': {
+         'can_be_recommended': True,
+         'dynamic_refresh': True,
+@@ -1339,7 +1339,7 @@
+       'name': 'RemoteAccessHostMatchUsername',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:25-', 'chrome.mac:25-', 'chrome_os:42-'],
++      'supported_on': ['chrome.linux:25-', 'chrome.mac:25-', 'chrome_os:42-', 'chrome.bsd:25-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -2567,7 +2567,7 @@
+       'name': 'GSSAPILibraryName',
+       'type': 'string',
+       'schema': { 'type': 'string' },
+-      'supported_on': ['chrome.linux:9-'],
++      'supported_on': ['chrome.linux:9-', 'chrome.bsd:9-'],
+       'features': {
+         'dynamic_refresh': False,
+         'per_profile': False,
+@@ -2619,7 +2619,7 @@
+       'name': 'NtlmV2Enabled',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:63-','chrome.mac:63-','chrome_os:63-','android:63-','webview_android:63-'],
++      'supported_on': ['chrome.linux:63-','chrome.mac:63-','chrome_os:63-','android:63-','webview_android:63-', 'chrome.bsd:63-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -5229,7 +5229,7 @@
        'name': 'RequireOnlineRevocationChecksForLocalAnchors',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -18,7 +63,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -5793,7 +5793,7 @@
+@@ -6157,7 +6157,7 @@
        'name': 'BackgroundModeEnabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -27,3 +72,12 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
+@@ -6669,7 +6669,7 @@
+       'name': 'FullscreenAllowed',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win:31-', 'chrome.linux:31-', 'chrome_os:31-'],
++      'supported_on': ['chrome.win:31-', 'chrome.linux:31-', 'chrome_os:31-', 'chrome.bsd:31-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': True,

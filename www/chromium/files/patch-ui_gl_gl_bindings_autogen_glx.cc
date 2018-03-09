@@ -1,14 +1,6 @@
---- ui/gl/gl_bindings_autogen_glx.cc.orig	2017-12-15 02:04:52.000000000 +0100
-+++ ui/gl/gl_bindings_autogen_glx.cc	2017-12-30 20:41:29.231707000 +0100
-@@ -73,6 +73,7 @@
-   fn.glXGetFBConfigsFn = reinterpret_cast<glXGetFBConfigsProc>(
-       GetGLProcAddress("glXGetFBConfigs"));
-   fn.glXGetMscRateOMLFn = 0;
-+  fn.glXGetProcAddressARBFn = 0;
-   fn.glXGetSelectedEventFn = reinterpret_cast<glXGetSelectedEventProc>(
-       GetGLProcAddress("glXGetSelectedEvent"));
-   fn.glXGetSyncValuesOMLFn = 0;
-@@ -120,6 +121,8 @@
+--- ui/gl/gl_bindings_autogen_glx.cc.orig	2018-02-24 16:25:37.000000000 +0100
++++ ui/gl/gl_bindings_autogen_glx.cc	2018-03-04 04:53:49.532617000 +0100
+@@ -115,6 +115,8 @@
  
    ext.b_GLX_ARB_create_context =
        HasExtension(extensions, "GLX_ARB_create_context");
@@ -17,7 +9,7 @@
    ext.b_GLX_EXT_swap_control = HasExtension(extensions, "GLX_EXT_swap_control");
    ext.b_GLX_EXT_texture_from_pixmap =
        HasExtension(extensions, "GLX_EXT_texture_from_pixmap");
-@@ -147,6 +150,11 @@
+@@ -142,6 +144,11 @@
              GetGLProcAddress("glXCreateContextAttribsARB"));
    }
  
@@ -29,7 +21,7 @@
    if (ext.b_GLX_SGIX_fbconfig) {
      fn.glXGetFBConfigFromVisualSGIXFn =
          reinterpret_cast<glXGetFBConfigFromVisualSGIXProc>(
-@@ -348,6 +356,10 @@
+@@ -343,6 +350,10 @@
    return driver_->fn.glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
@@ -40,7 +32,7 @@
  void GLXApiBase::glXGetSelectedEventFn(Display* dpy,
                                         GLXDrawable drawable,
                                         unsigned long* mask) {
-@@ -648,6 +660,11 @@
+@@ -643,6 +654,11 @@
    return glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
@@ -52,7 +44,7 @@
  void TraceGLXApi::glXGetSelectedEventFn(Display* dpy,
                                          GLXDrawable drawable,
                                          unsigned long* mask) {
-@@ -1070,6 +1087,14 @@
+@@ -1065,6 +1081,14 @@
                   << static_cast<const void*>(denominator) << ")");
    bool result =
        glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);

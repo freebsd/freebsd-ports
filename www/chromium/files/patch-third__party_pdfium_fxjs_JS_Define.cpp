@@ -1,6 +1,6 @@
---- third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig	2017-12-15 02:05:39.000000000 +0100
-+++ third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp	2017-12-24 18:51:32.588224000 +0100
-@@ -37,7 +37,12 @@
+--- third_party/pdfium/fxjs/JS_Define.cpp.orig	2018-03-04 04:13:13.591977000 +0100
++++ third_party/pdfium/fxjs/JS_Define.cpp	2018-03-04 04:14:44.297142000 +0100
+@@ -30,7 +30,12 @@
    long timezone = 0;
    _get_timezone(&timezone);
  #endif  // _FX_PLATFORM_ == _FX_PLATFORM_WINDOWS_

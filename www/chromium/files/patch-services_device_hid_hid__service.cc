@@ -1,15 +1,15 @@
---- device/hid/hid_service.cc.orig	2017-09-21 15:04:58.000000000 -0700
-+++ device/hid/hid_service.cc	2017-12-03 15:37:32.167748000 -0800
+--- services/device/hid/hid_service.cc.orig	2018-02-24 16:25:18.000000000 +0100
++++ services/device/hid/hid_service.cc	2018-03-04 05:38:54.425730000 +0100
 @@ -16,6 +16,8 @@
  
  #if defined(OS_LINUX) && defined(USE_UDEV)
- #include "device/hid/hid_service_linux.h"
+ #include "services/device/hid/hid_service_linux.h"
 +#elif defined(OS_BSD)
-+#include "device/hid/hid_service_freebsd.h"
++#include "services/device/hid/hid_service_freebsd.h"
  #elif defined(OS_MACOSX)
- #include "device/hid/hid_service_mac.h"
+ #include "services/device/hid/hid_service_mac.h"
  #elif defined(OS_WIN)
-@@ -42,6 +44,8 @@
+@@ -36,6 +38,8 @@
  std::unique_ptr<HidService> HidService::Create() {
  #if defined(OS_LINUX) && defined(USE_UDEV)
    return base::WrapUnique(new HidServiceLinux());

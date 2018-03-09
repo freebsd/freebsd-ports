@@ -1,5 +1,5 @@
---- third_party/webrtc/rtc_base/physicalsocketserver.cc.orig	2017-09-05 21:06:53.000000000 +0200
-+++ third_party/webrtc/rtc_base/physicalsocketserver.cc	2017-09-07 06:01:51.591383000 +0200
+--- third_party/webrtc/rtc_base/physicalsocketserver.cc.orig	2018-02-24 16:26:17.000000000 +0100
++++ third_party/webrtc/rtc_base/physicalsocketserver.cc	2018-03-04 04:38:51.589837000 +0100
 @@ -60,7 +60,7 @@
  
  #endif  // WEBRTC_POSIX
@@ -42,6 +42,6 @@
        break;
 -#elif defined(WEBRTC_MAC) || defined(BSD) || defined(__native_client__)
 +#elif defined(WEBRTC_MAC) || defined(WEBRTC_BSD) || defined(__native_client__)
-       LOG(LS_WARNING) << "Socket::OPT_DONTFRAGMENT not supported.";
+       RTC_LOG(LS_WARNING) << "Socket::OPT_DONTFRAGMENT not supported.";
        return -1;
  #elif defined(WEBRTC_POSIX)

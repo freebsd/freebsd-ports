@@ -1,6 +1,6 @@
---- chrome/app/generated_resources.grd.orig	2017-12-15 02:04:07.000000000 +0100
-+++ chrome/app/generated_resources.grd	2017-12-24 00:06:55.397820000 +0100
-@@ -6903,7 +6903,7 @@
+--- chrome/app/generated_resources.grd.orig	2018-02-24 16:25:09.000000000 +0100
++++ chrome/app/generated_resources.grd	2018-03-03 20:22:12.855371000 +0100
+@@ -6919,7 +6919,7 @@
          Google Payments
        </message>
  
@@ -9,7 +9,7 @@
          <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
            Themes
          </message>
-@@ -6911,7 +6911,7 @@
+@@ -6927,7 +6927,7 @@
        <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
          Reset to default theme
        </message>
@@ -18,12 +18,12 @@
          <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
            Use GTK+ theme
          </message>
-@@ -8061,7 +8061,7 @@
+@@ -8076,7 +8076,7 @@
          Set as default
        </message>
  
 -      <if expr="is_linux and not chromeos">
 +      <if expr="is_posix and not chromeos">
-         <message name="IDS_SHOW_WINDOW_DECORATIONS_MENU" desc="The menu entry text in the tab strip context menu.  This toggles the system title bar and window borders (window decorations) on linux.">
-           Use system title bar and borders
+         <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
+           Minimize
          </message>
