@@ -1,5 +1,5 @@
---- client/CMakeLists.txt	2015-11-03 12:14:08.000000000 +0100
-+++ client/CMakeLists.txt.new	2015-11-06 10:28:27.753882068 +0100
+--- client/CMakeLists.txt	2018-02-01 14:51:01.000000000 +0100
++++ client/CMakeLists.txt.new	2018-02-20 13:41:20.066976000 +0100
 @@ -31,17 +31,20 @@
  COPY_OPENSSL_DLLS(copy_openssl_client)
  
@@ -15,7 +15,7 @@
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqltest perconaserverclient regex)
- 
+ ADD_DEPENDENCIES(mysqltest GenError)
  
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
