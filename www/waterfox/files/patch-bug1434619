@@ -1,0 +1,54 @@
+commit 98c3940f8b16
+Author: Simon Sapin <simon.sapin@exyr.org>
+Date:   Wed Jan 31 11:01:26 2018 -0600
+
+    servo: Merge #19914 - Remove #![deny(warnings)] (from servo:dont-deny); r=nox
+    
+    We already have https://github.com/servo/servo/pull/19612 to deny warnings at the time of landing into master. But it’s not useful to break the build when later compiler with a more recent Rust version that has introduced new warnings:
+    
+    https://bugzilla.mozilla.org/show_bug.cgi?id=1434619
+    
+    Source-Repo: https://github.com/servo/servo
+    Source-Revision: 7546c37f1e921a112fef5828c59c6738a98c3f30
+---
+ servo/components/style/lib.rs           | 1 -
+ servo/ports/geckolib/lib.rs             | 1 -
+ servo/support/gecko/nsstring/src/lib.rs | 1 -
+ 3 files changed, 3 deletions(-)
+
+diff --git servo/components/style/lib.rs servo/components/style/lib.rs
+index d789c1d3305d..8a343496e6de 100644
+--- servo/components/style/lib.rs
++++ servo/components/style/lib.rs
+@@ -23,7 +23,6 @@
+ //! [cssparser]: ../cssparser/index.html
+ //! [selectors]: ../selectors/index.html
+ 
+-#![deny(warnings)]
+ #![deny(missing_docs)]
+ 
+ #![recursion_limit = "500"]  // For define_css_keyword_enum! in -moz-appearance
+diff --git servo/ports/geckolib/lib.rs servo/ports/geckolib/lib.rs
+index ca57307c245a..15c42509a811 100644
+--- servo/ports/geckolib/lib.rs
++++ servo/ports/geckolib/lib.rs
+@@ -2,7 +2,6 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-#![deny(warnings)]
+ 
+ extern crate cssparser;
+ extern crate env_logger;
+diff --git servo/support/gecko/nsstring/src/lib.rs servo/support/gecko/nsstring/src/lib.rs
+index 0321e38f8bbf..d5c5f147c480 100644
+--- servo/components/style/gecko_bindings/nsstring_vendor/src/lib.rs
++++ servo/components/style/gecko_bindings/nsstring_vendor/src/lib.rs
+@@ -113,7 +113,6 @@
+ //! which invoke their member's destructors through C++ code.
+ 
+ #![allow(non_camel_case_types)]
+-#![deny(warnings)]
+ 
+ #[macro_use]
+ extern crate bitflags;
