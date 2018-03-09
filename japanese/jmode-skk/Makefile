@@ -9,8 +9,6 @@ COMMENT=	XIM server for SKK input method
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 MASTERDIR=	${.CURDIR}/../../japanese/jmode
 DESCR=		${.CURDIR}/pkg-descr
 
