@@ -6,7 +6,7 @@ PORTVERSION=	0.32.3
 CATEGORIES=	graphics
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
 
 LICENSE=	GPLv3+
