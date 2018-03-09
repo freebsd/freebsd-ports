@@ -3,7 +3,7 @@
 
 PORTNAME=	openscad
 PORTVERSION=	2015.03
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	cad
 MASTER_SITES=	http://files.openscad.org/
 DISTNAME=	openscad-${PORTVERSION}.src
@@ -23,7 +23,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libharfbuzz.so:print/harfbuzz \
 		libopencsg.so:graphics/opencsg
 
-USES=		bison compiler:c++11-lang desktop-file-utils eigen:3 gettext-tools pkgconfig qmake shebangfix
+USES=		bison compiler:c++11-lang desktop-file-utils eigen:3 gettext-tools \
+		pkgconfig python:run qmake shebangfix
 SHEBANG_FILES=	libraries/MCAD/get_submodules.py
 USE_GL=		glu glew
 USE_QT4=	corelib gui opengl moc_build uic_build rcc_build
