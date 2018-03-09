@@ -27,11 +27,11 @@ o Work around StreamingListenerTest with GCC 4.2
  //   GTEST_OS_FUCHSIA  - Fuchsia
  //   GTEST_OS_HPUX     - HP-UX
  //   GTEST_OS_LINUX    - Linux
-@@ -610,6 +612,7 @@ typedef struct _RTL_CRITICAL_SECTION GTEST_CRITICAL_SE
+@@ -623,6 +625,7 @@ typedef struct _RTL_CRITICAL_SECTION GTEST_CRITICAL_SE
  // to your compiler flags.
- #define GTEST_HAS_PTHREAD                                                      \
-   (GTEST_OS_LINUX || GTEST_OS_MAC || GTEST_OS_HPUX || GTEST_OS_QNX ||          \
-+   GTEST_OS_GNU_KFREEBSD || GTEST_OS_DRAGONFLY || GTEST_OS_OPENBSD ||          \
+ #define GTEST_HAS_PTHREAD                                             \
+   (GTEST_OS_LINUX || GTEST_OS_MAC || GTEST_OS_HPUX || GTEST_OS_QNX || \
++   GTEST_OS_GNU_KFREEBSD || GTEST_OS_DRAGONFLY || GTEST_OS_OPENBSD || \
     GTEST_OS_FREEBSD || GTEST_OS_NACL || GTEST_OS_NETBSD || GTEST_OS_FUCHSIA)
  #endif  // GTEST_HAS_PTHREAD
  
