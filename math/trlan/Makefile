@@ -14,8 +14,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thick-restart Lanczos method for eigenproblems
 
-BROKEN_powerpc64=	Does not build
-
 USES=		fortran
 USE_LDCONFIG=	yes
 
@@ -63,10 +61,10 @@ do-build:
 		${WRKSRC}/libtrlan.a -Wl,--no-whole-archive -Wl,--as-needed
 
 do-install:
-	@${INSTALL_DATA} ${WRKDIR}/libtrlan.* ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKDIR}/libtrlan.* ${STAGEDIR}${PREFIX}/lib
 	@${LN} -sf libtrlan.so.1 ${STAGEDIR}${PREFIX}/lib/libtrlan.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/SUN && ${INSTALL_DATA} ${PORTEXAMPLES} \
 	${STAGEDIR}${EXAMPLESDIR}
