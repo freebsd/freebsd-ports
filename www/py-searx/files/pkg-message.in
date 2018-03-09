@@ -1,0 +1,15 @@
+======================================================================
+You installed Searx: privacy-respecting, hackable metasearch engine.
+
+It is recommended to run Searx as a service:
+# sysrc searx_enable="YES"
+# service searx start
+
+It allows you to search the Internet through the local website at
+http://localhost:8888
+
+By default, Searx uses the network of long running Searx instances.
+You can see the list here: http://stats.searx.oe5tpo.com
+
+Please adjust Searx settings in %%PREFIX%%/etc/searx-settings.yml
+======================================================================
