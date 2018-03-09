@@ -56,7 +56,7 @@ rabbitmq_start()
 
 	mkdir -p ${RABBITMQ_LOG_BASE}
  
-	chown ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOG_BASE}
+	chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOG_BASE}
 
 	if [ -f ${RABBITMQ_HOME}/.erlang.cookie ]; then
 		chmod 600 ${RABBITMQ_HOME}/.erlang.cookie
