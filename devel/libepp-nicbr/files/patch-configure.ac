@@ -1,0 +1,31 @@
+From 72fa94e12e2c6252d1dec843b15226ba54ee6188 Mon Sep 17 00:00:00 2001
+From: Roger Leigh <rleigh@codelibre.net>
+Date: Sun, 3 Sep 2017 18:54:28 +0100
+Subject: [PATCH 05/13] devel/libepp-nicbr: Patch to correct use of CXXFLAGS in
+ configure.ac
+
+---
+ devel/libepp-nicbr/files/patch-configure.ac | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 devel/libepp-nicbr/files/patch-configure.ac
+
+diff --git a/devel/libepp-nicbr/files/patch-configure.ac b/devel/libepp-nicbr/files/patch-configure.ac
+new file mode 100644
+index 000000000000..9da8c3a8ef4e
+--- /dev/null
++++ b/devel/libepp-nicbr/files/patch-configure.ac
+@@ -0,0 +1,11 @@
++--- configure.ac.orig	2017-09-03 17:27:58 UTC
+++++ configure.ac
++@@ -74,7 +74,7 @@ AC_ARG_WITH([no-secdns-1-0],
++ )
++ 
++ CFLAGS="$CFLAGS -I../include"
++-CXXFLAGS="${CFLAGS}"
+++CXXFLAGS="${CXXFLAGS} -I../include"
++ 
++ #Check for xerves-c library
++ xercesc_path="/usr/local"
+-- 
+2.14.1
+
