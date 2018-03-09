@@ -3,7 +3,7 @@
 
 PORTNAME=	logstash
 PORTVERSION=	6.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
 PKGNAMESUFFIX=	6

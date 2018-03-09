@@ -65,7 +65,7 @@ logdir="/var/log"
 
 pidfile=/var/run/${name}/${name}.pid
 
-extra_commands=configtest
+extra_commands="configtest reload"
 start_precmd="logstash_precmd"
 configtest_cmd=configtest
 
