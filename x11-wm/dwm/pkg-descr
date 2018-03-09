@@ -6,4 +6,4 @@ It consists of a single binary, configuration is done at compile-time by a
 single config.h file. dwm reads from standard input to print arbitrary status
 text such as the date and/or system load.
 
-WWW: http://dwm.suckless.org
+WWW: https://dwm.suckless.org/
