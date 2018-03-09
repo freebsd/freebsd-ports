@@ -1,5 +1,0 @@
-lilURL is a simple PHP/MySQL script for generating lil? URLs. It's similar
-to TinyURL, Shorl, MakeAShorterLink, etc, but you can run it on your own
-server. Requires PHP and MySQL. Supports mod_rewrite.
-
-WWW: http://lilurl.sourceforge.net

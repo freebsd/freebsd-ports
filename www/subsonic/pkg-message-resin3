@@ -1,2 +1,0 @@
-Enable or restart resin3, then you can access Subsonic at
-http://127.0.0.1:8080/subsonic/ if using the default Resin HTTP port.
