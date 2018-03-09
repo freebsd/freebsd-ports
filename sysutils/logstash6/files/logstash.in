@@ -16,8 +16,8 @@
 #   Logstash installation directory.
 #
 # logstash_config (string):
-#   Default value: /usr/local/etc/${name}/${name}.conf
-#   Logstash configuration file path.
+#   Default value: /usr/local/etc/${name}
+#   Logstash configuration path.
 #
 # logstash_log (bool):
 #   Set to "NO" by default.
@@ -56,21 +56,18 @@ logdir="/var/log"
 
 : ${logstash_enable="NO"}
 : ${logstash_home="%%LOGSTASH_HOME%%"}
-: ${logstash_config="%%ETCDIR%%/${name}.conf"}
+: ${logstash_config="%%ETCDIR%%"}
 : ${logstash_log="YES"}
 : ${logstash_log_dir="${logdir}/${name}"}
 : ${logstash_java_home="%%JAVA_HOME%%"}
 : ${logstash_java_opts=""}
 : ${logstash_opts=""}
 
-piddir=/var/run/${name}
-pidfile=${piddir}/${name}.pid
+pidfile=/var/run/${name}/${name}.pid
 
-if [ -d $piddir ]; then
-  mkdir -p $piddir
-fi
-
+extra_commands=configtest
 start_precmd="logstash_precmd"
+configtest_cmd=configtest
 
 logstash_cmd="${logstash_home}/bin/logstash"
 procname="${logstash_java_home}/bin/java"
@@ -82,7 +79,7 @@ if checkyesno logstash_log; then
   logstash_log_options=" -l ${logstash_log_dir}" 
 fi
 
-logstash_args="-f ${logstash_config} ${logstash_log_options} ${logstash_opts}"
+logstash_args="--path.settings ${logstash_config} ${logstash_log_options} ${logstash_opts}"
 
 JAVA_OPTS="${logstash_java_opts}"
 JAVA_HOME="${logstash_java_home}"
@@ -99,9 +96,19 @@ PATH=/usr/local/bin:$PATH
 
 logstash_precmd()
 {
+    /usr/bin/install -d -o root -g wheel -m 755 ${pidfile%/*}
     /usr/bin/install -d -o root -g wheel -m 755 ${logstash_log_dir}
     /usr/bin/install -d -o root -g wheel -m 755 /var/db/logstash
     /usr/bin/install -d -o root -g wheel -m 755 /var/run/logstash
+}
+
+configtest()
+{
+    echo "${name} configtest:"
+    echo "WARNING: this does not check validity of Grok patterns!"
+    echo "WARNING: this does not check validity of Grok patterns!"
+    echo "WARNING: this does not check validity of Grok patterns!"
+    ${logstash_cmd} --path.settings ${logstash_config} --config.test_and_exit
 }
 
 
