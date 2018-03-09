@@ -1,22 +1,9 @@
-This is a port of the bulk of the Plan 9 software build environment to Unix.
-It tries to reproduce the Plan 9 build environment as faithfully as possible,
-providing u.h and libc.h, and blithely redefining tokens such as open, dup,
-and accept in order to provide implementations that better mimic the Plan 9
-semantics.  The result is a somewhat more complicated and less Unix-friendly
-environment, but Plan 9 programs can typically be compiled with little or no
-changes.
+Plan 9 is a distributed computing environment built at Bell Labs
+starting in the late 1980s.  Plan 9 became a convenient platform for
+experimenting with new ideas, applications, and services.
 
-The port includes the following:
+Plan 9 from User Space (aka plan9port) is a port of many Plan 9
+programs from their native Plan 9 environment to Unix-like operating
+systems.
 
-  - Sources for Linux, FreeBSD, and SunOS
-
-  - lib9 (nee libc), libString, libbin, libbio, libcomplete, libdraw,
-    liblibflate, frame, libfs, libhtml, libhttpd, libip, libmux, libplumb,
-    liblibregexp, libsec, thread, and libventi
-
-  - 9term, acme, hoc, plumber, rio (nee 9wm), sam, and samterm, along with
-    many small utilities and manual pages
-
-  - Plan 9 bitmap fonts
-
-WWW: http://swtch.com/plan9port/
+WWW: https://9fans.github.io/plan9port/

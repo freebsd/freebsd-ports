@@ -1,30 +1,8 @@
-You should benefit from adding these to your profile environment (example
-for sh/bash, adjust for tcsh as appropriate):
+The plan9port tools consist of many small binaries intimately tied
+together, some of them conflicting with %%OPSYS%% base utilities.  To
+avoid runtime conflicts, you may wish to append
+%%PREFIX%%/plan9/bin to your PATH.
 
-	PLAN9=%%PREFIX%%/plan9; export PLAN9
-	PATH=$PATH:$PLAN9/bin; export PATH
+Alternatively, plan9port tools can be run with %%PREFIX%%/bin/9
 
-You can also install a default plumbing file if you want:
-
-	$ mkdir -p ${HOME}/lib
-	$ %%PREFIX%%/plan9/plumb/initial.plumbing ${HOME}/lib/plumbing
-
-When installing from the port (as your normal user), you can simply type
-(while in the port directory) to do the same:
-
-	make install-user
-
-BEWARE:  This port can cause some problems if you try to install certain
-software (including, but not limited to our Ports Collection):
-
-  - Ports that require `archivers/zip' to build (e.g. `www/mozilla').  If
-   `$PLAN9/bin/zip' would be found as `zip' command (via $PATH) and used,
-    it could easily fail since it does not share options with "standard"
-   `zip' (at least not all of them)
-
-  - `x11/kdebase3' build can result in crash in `fish.cpp' file if you try
-    to build it with $PLAN9.  We suggest you to unset PLAN9 before building
-    any ports that fail with similar symptoms (or unset it for all ports
-    just to be on the safe side)
-
-  - venti/fmt* commands work only with normal files
+    9 man 1 intro
