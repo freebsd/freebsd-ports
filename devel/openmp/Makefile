@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmp
-DISTVERSION=	5.0.1
+DISTVERSION=	6.0.0
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	devel
 MASTER_SITES=	http://llvm.org/releases/${DISTVERSION}/
@@ -18,9 +18,12 @@ USES=		cmake compiler:c++11-lib perl5 tar:xz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/omp.h \
+		include/ompt.h \
 		lib/libgomp.so \
 		lib/libiomp5.so \
+		lib/libomp.so \
 		lib/libomp.so.0 \
-		lib/libomp.so
+		lib/libomptarget.so \
+		lib/libomptarget.so.0
 
 .include <bsd.port.mk>
