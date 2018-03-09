@@ -6,17 +6,20 @@ PORTVERSION=	2.4.1
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Multi-column hierarchical listbox widget
 
-USES=		tk:86,tea
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+USES=		tk:tea
+USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
 USE_XORG=	x11
 TCL_PKG=	treectrl${PORTVERSION}
-USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
-PLIST_SUB=	TCL_PKG=${TCL_PKG}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/FreeBSD-\*/FreeBSD-*|DragonFly-*/' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/FreeBSD-\*/&|DragonFly-*/' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
