@@ -200,7 +200,7 @@ post-patch:
 	done
 
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
-CCACHE_VALUE=	true
+CCACHE_VALUE=	"${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache"
 .else
 CCACHE_VALUE=	false
 .endif
