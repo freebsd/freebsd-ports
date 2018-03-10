@@ -3,7 +3,7 @@
 
 PORTNAME=	cclient
 PORTVERSION=	2007f
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -25,8 +25,6 @@ OPTIONS_DEFINE=	SSL SSL_AND_PLAINTEXT IPV6 MBX_DEFAULT
 OPTIONS_DEFAULT=	SSL
 SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
 MBX_DEFAULT_DESC=	Use MBX as default mailbox format
-
-BROKEN_SSL=	openssl-devel
 
 ALL_TARGET=	bsf
 MAKE_JOBS_UNSAFE=	yes
