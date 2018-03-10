@@ -3,6 +3,7 @@
 
 PORTNAME=	bctoolbox
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/bctoolbox
 
