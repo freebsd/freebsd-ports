@@ -3,7 +3,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.12.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
@@ -50,7 +50,7 @@ PLIST_SUB=	PREFERRED_HINTING=${PREFERRED_HINTING}
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
 OPTIONS_DEFINE=	DOCS NO_BITMAPS
-OPTIONS_DEFAULT=HINTING_SLIGHT NO_BITMAPS
+OPTIONS_DEFAULT=HINTING_SLIGHT
 OPTIONS_SUB=	yes
 
 NO_BITMAPS_DESC=	Reject bitmap fonts by default
