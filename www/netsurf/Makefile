@@ -32,8 +32,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 RUN_DEPENDS=	duk:lang/duktape \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-BROKEN_powerpc64=	fails to compile: dukky.h:40: expected declaration specifiers or '...' before 'dom_string'
-
 USES=		bison desktop-file-utils gettext-runtime gmake iconv jpeg \
 		localbase pkgconfig shebangfix ssl
 ALL_TARGET=	#empty
