@@ -2,34 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	seqan-apps
-PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	seqan-v
-PORTREVISION=	9
+DISTVERSION=	2.4.0
 CATEGORIES=	biology
 
 MAINTAINER=	h2+fbsdports@fsfe.org
-COMMENT=	Official Bioinformatic applications based on the SeqAn library
+COMMENT=	Official bioinformatic applications based on the SeqAn library
 
 LICENSE=	BSD3CLAUSE LGPL3 GPLv3
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
-BROKEN_aarch64=		fails to compile: Error: unknown mnemonic rep -- rep
-BROKEN_armv6=		fails to compile: Error: bad instruction rep
-BROKEN_armv7=		fails to compile: Error: bad instruction rep
-BROKEN_powerpc64=	fails to compile: Error: unrecognized opcode: rep
-
+USES=		cmake:outsource compiler:openmp # once #199603 is resolved, add c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	seqan
 GH_PROJECT=	seqan
-
-# once #199603 is resolved, do the following instead of USE_GCC
-# USES=		cmake:outsource compiler:openmp,c++14-lang
-USES=		cmake:outsource
 CMAKE_ARGS=	-DSEQAN_BUILD_SYSTEM="SEQAN_RELEASE_APPS"
 
-USE_GCC=	yes
+OPTIONS_RADIO=		ARCH
+OPTIONS_RADIO_ARCH=	SSE4 AVX2 NATIVE
+SSE4_DESC=		Use SSE4 and POPCNT instructions
+SSE4_CMAKE_ON=		-DSEQAN_ARCH_SSE4:BOOL=TRUE
+AVX2_DESC=		Use SSE4, AVX2 and POPCNT instructions
+AVX2_CMAKE_ON=		-DSEQAN_ARCH_AVX2:BOOL=TRUE
+NATIVE_DESC=		Use all available instruction sets (-march=native)
+NATIVE_CMAKE_ON=	-DSEQAN_ARCH_NATIVE:BOOL=TRUE
 
 .include <bsd.port.pre.mk>
 
