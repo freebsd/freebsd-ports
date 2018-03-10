@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.1.29
+PORTVERSION=		1.2.2
 PORTREVISION=		1
 PORTEPOCH=		0
 CATEGORIES=		databases
@@ -22,12 +22,7 @@ LDB_DEPENDS=		talloc>=2.1.8:devel/talloc \
 			tdb>=1.3.12,1:databases/tdb \
 			popt>=0:devel/popt
 
-CONFLICTS_INSTALL=	ldb1[23]-1.*
-
-#FLAVORS=		default nopython
-#nopython_PKGNAMESUFFIX=	-nopython
-#nopython_CONFLICTS=	ldb
-#default_CONFLICTS=	ldb-nopython
+CONFLICTS=		ldb1[23]-1.*
 
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
@@ -43,7 +38,7 @@ CONFIGURE_ARGS+=	--bundled-libraries=!talloc,!tevent,!tdb,!popt \
 			--with-privatelibdir=${PREFIX}/lib/ldb
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
-			--with-openldap=${LOCALBASE} \
+			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
 			--disable-rpath \
 			--without-gettext
 
@@ -148,13 +143,13 @@ post-install:
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.so
 			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb.so
 .else
-.for f in		include/pyldb.h \
+.for file in		include/pyldb.h \
 			lib/libpyldb-util.so \
 			lib/libpyldb-util.so.1 \
 			lib/ldb/libpytalloc-util.so.2
 				${RM} ${STAGEDIR}${PREFIX}/${file}
 .endfor
-.for f in		${PYTHON_SITELIBDIR}/ldb.so \
+.for file in		${PYTHON_SITELIBDIR}/ldb.so \
 			${PYTHON_SITELIBDIR}/_ldb_text.py \
 			${PYTHON_SITELIBDIR}/_tdb_text.py \
 			${PYTHON_SITELIBDIR}/_tevent.so \
