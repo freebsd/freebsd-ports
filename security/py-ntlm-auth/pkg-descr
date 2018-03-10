@@ -1,0 +1,21 @@
+This library handles the low-level details of NTLM authentication for use
+in authenticating with a service that uses NTLM. It will create and parse
+the 3 different message types in the order required and produce a base64
+encoded value that can be attached to the HTTP header.
+
+The goal of this library is to offer full NTLM support including signing and
+sealing of messages as well as supporting MIC for message integrity and the
+ability to customise and set limits on the messages sent. Please see Features
+and Backlog for a list of what is and is not currently supported.
+
+Features:
+* LM, NTLM and NTLMv2 authentication
+* NTLM1 and NTLM2 extended session security
+* Set the The NTLM Compatibility level when sending messages
+* Channel Binding Tokens support, need to pass in the SHA256 hash
+  of the certificate for it to work
+* Support for MIC to enhance the integrity of the messages
+* Support for session security with signing and sealing messages
+  after authentication happens
+
+WWW: https://github.com/jborean93/ntlm-auth
