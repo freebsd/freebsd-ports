@@ -2,4 +2,4 @@ django-tables2 simplifies the task of turning sets of data into HTML tables.
 It has native support for pagination and sorting, does for HTML tables what
 django.forms does for HTML forms.
 
-WWW: https://github.com/bradleyayers/django-tables2/
+WWW: https://github.com/jieter/django-tables2
