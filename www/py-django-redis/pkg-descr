@@ -14,4 +14,4 @@ Why use django-redis?
  * Unix sockets supported by default.
  * Pluggable parsers.
 
-WWW: https://github.com/niwinz/django-redis/
+WWW: https://github.com/niwinz/django-redis
