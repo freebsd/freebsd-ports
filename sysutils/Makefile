@@ -49,6 +49,7 @@
     SUBDIR += areca-cli
     SUBDIR += ascpu
     SUBDIR += asfsm
+    SUBDIR += asmctl
     SUBDIR += asmem
     SUBDIR += asmon
     SUBDIR += asusoled

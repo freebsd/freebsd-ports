@@ -1,0 +1,13 @@
+Asmctl is a command line tool for Apple System Management Controller,
+which controls the keyboard backlight and LCD backlight.
+
+Assigning following key bindings work similar to Apple MacBook series.
+
+| key |      assign       |
+|-----|-------------------|
+| F1  | asmctl video down |
+| F2  | asmctl video up   |
+| F5  | asmctl key down   |
+| F6  | asmctl key up     |
+
+WWW: https://github.com/yuichiro-naito/asmctl
