@@ -1,11 +1,11 @@
---- lib/utils/CMakeLists.txt.orig	2014-01-25 20:13:54 UTC
+--- lib/utils/CMakeLists.txt.orig	2017-06-04 19:20:38 UTC
 +++ lib/utils/CMakeLists.txt
-@@ -13,7 +13,7 @@ set(qtcurve_utils_SRCS
-   x11helpers.c
-   x11wrap.c)
- set(qtcurve_utils_LINKS
--  m rt dl ${LIBEXECINFO_LIBRARIES} pthread)
-+  m rt ${CMAKE_DL_LIBS} ${LIBEXECINFO_LIBRARIES} pthread)
+@@ -20,7 +20,7 @@ set(qtcurve_utils_SRCS
+ set(qtcurve_utils_LINKS ${LIBEXECINFO_LIBRARIES} pthread)
  
- include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+ if(NOT APPLE)
+-  set(qtcurve_utils_LINKS ${qtcurve_utils_LINKS} m rt dl)
++  set(qtcurve_utils_LINKS ${qtcurve_utils_LINKS} m rt)
+ endif()
  
+ include_directories("${CMAKE_CURRENT_BINARY_DIR}") 

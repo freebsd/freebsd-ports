@@ -158,6 +158,7 @@
     SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
     SUBDIR += qtcurve-kde4
+    SUBDIR += qtcurve-kf5
     SUBDIR += qtcurve-qt4
     SUBDIR += qtcurve-qt5
     SUBDIR += qtcurve-utils
