@@ -3,4 +3,4 @@ multiple users, playback buffers, DCC bouncing, SASL authentication
 and SSL encryption. It can be extended with dynamically loaded modules
 written in C++ or Perl.
 
-WWW: http://znc.in/
+WWW: https://wiki.znc.in/ZNC
