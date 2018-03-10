@@ -10,9 +10,8 @@ COMMENT=		Web browser based on the Qt Framework
 LICENSE=			GPLv3
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	kf5-extra-cmake-modules>=0:devel/kf5-extra-cmake-modules
-
-USES=		cmake:outsource desktop-file-utils ssl
+USES=		cmake:outsource desktop-file-utils ssl kde:5
+USE_KDE=	ecm_build
 USE_QT5=	core dbus gui location network printsupport qml quick \
 		sql webchannel webengine widgets x11extras \
 		buildtools_build qmake_build
@@ -25,8 +24,7 @@ GH_TAGNAME=	0118c0cb966b2c15823945730a7aaa5b3dca545d
 
 OPTIONS_DEFINE=	KWALLET
 OPTIONS_SUB=	yes
-KWALLET_DESC=	KDE5 Wallet Integration
-KWALLET_USE=	kde=wallet
-KWALLET_USES=	kde:5
+KWALLET_DESC=	KDE5 Wallet Integration (if installed)
+KWALLET_USE=	kde=wallet_build
 
 .include <bsd.port.mk>
