@@ -1,10 +1,3 @@
 lib/libqtcurve-utils.so
-lib/libqtcurve-utils.so.1
-lib/libqtcurve-utils.so.1.0
-%%NLS%%share/locale/ko/LC_MESSAGES/qtcurve.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/qtcurve.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/qtcurve.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/qtcurve.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/qtcurve.mo
-%%NLS%%share/locale/zh_HK/LC_MESSAGES/qtcurve.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/qtcurve.mo
+lib/libqtcurve-utils.so.2
+lib/libqtcurve-utils.so.2.0

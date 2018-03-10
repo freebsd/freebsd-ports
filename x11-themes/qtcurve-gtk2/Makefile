@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcurve
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	QtCurve GTK+ 2.x engine and theme
 

@@ -1,5 +1,5 @@
---- lib/utils/fd_utils.c.orig	2014-01-25 20:13:54 UTC
-+++ lib/utils/fd_utils.c
+--- lib/utils/fd_utils.cpp.orig	2014-01-25 20:13:54 UTC
++++ lib/utils/fd_utils.cpp
 @@ -21,6 +21,7 @@
  
  #include "fd_utils.h"

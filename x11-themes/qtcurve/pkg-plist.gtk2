@@ -1,7 +1,7 @@
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libqtcurve.so
 lib/libqtcurve-cairo.so
-lib/libqtcurve-cairo.so.0
-lib/libqtcurve-cairo.so.0.1
+lib/libqtcurve-cairo.so.1
+lib/libqtcurve-cairo.so.1.0
 share/themes/QtCurve/gtk-2.0/gtkrc
 share/themes/QtCurve/gtk-2.0/icons3
 share/themes/QtCurve/gtk-2.0/icons4

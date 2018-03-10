@@ -3,9 +3,9 @@
 PORTNAME=	qtcurve
 PORTREVISION=	0
 
-COMMENT=	QtCurve KDE 4 widget style and window decoration
+COMMENT=	QtCurve KDE Frameworks 5 widget style and window decoration
 
-QTCURVE_SLAVE=	kde4
+QTCURVE_SLAVE=	kf5
 
 MASTERDIR=	${.CURDIR}/../qtcurve
 
