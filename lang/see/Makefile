@@ -3,7 +3,7 @@
 
 PORTNAME=	see
 PORTVERSION=	3.1.1424
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://download.openpkg.org/components/cache/see/ \
 		http://lil.fr.distfiles.macports.org/see/ \
