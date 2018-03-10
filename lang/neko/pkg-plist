@@ -6,11 +6,15 @@ include/neko.h
 include/neko_elf.h
 include/neko_mod.h
 include/neko_vm.h
+lib/cmake/Neko/NekoConfig.cmake
+lib/cmake/Neko/NekoConfigVersion.cmake
+lib/cmake/Neko/NekoTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Neko/NekoTargets.cmake
 lib/libneko.so
 lib/libneko.so.2
-lib/libneko.so.2.1.0
-lib/neko/mod_neko2.ndll
-lib/neko/mod_tora2.ndll
+lib/libneko.so.2.2.0
+%%APACHE%%lib/neko/mod_neko2.ndll
+%%APACHE%%lib/neko/mod_tora2.ndll
 lib/neko/mysql.ndll
 lib/neko/mysql5.ndll
 lib/neko/nekoml.std
@@ -19,4 +23,4 @@ lib/neko/sqlite.ndll
 lib/neko/ssl.ndll
 lib/neko/std.ndll
 lib/neko/zlib.ndll
-lib/neko/ui.ndll
+%%UI%%lib/neko/ui.ndll
