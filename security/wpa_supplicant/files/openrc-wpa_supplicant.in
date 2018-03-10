@@ -73,7 +73,8 @@ start()
 	for i in $(find_wireless)
 	do
 		export OPENRC_SILENT=TRUE
-		ln -fs %%PREFIX%%/etc/init.d/wpa_supplicant %%PREFIX%%/etc/init.d/wpa_supplicant.${i}
+		rm  %%PREFIX%%/etc/init.d/wpa_supplicant.${i} >/dev/null 2>/dev/null
+		cp %%PREFIX%%/etc/init.d/wpa_supplicant %%PREFIX%%/etc/init.d/wpa_supplicant.${i}
 		/sbin/service wpa_supplicant.${i} start
 	done
 	return 0
@@ -104,7 +105,8 @@ stop()
 	for i in $(find_wireless)
 	do
 		export OPENRC_SILENT=TRUE
-		ln -fs %%PREFIX%%/etc/init.d/wpa_supplicant %%PREFIX%%/etc/init.d/wpa_supplicant.${i}
+		rm %%PREFIX%%/etc/init.d/wpa_supplicant.${i} >/dev/null 2>/dev/null
+		cp %%PREFIX%%/etc/init.d/wpa_supplicant %%PREFIX%%/etc/init.d/wpa_supplicant.${i}
 		/sbin/service wpa_supplicant.${i} stop
 	done
 	return 0

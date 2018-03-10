@@ -149,7 +149,7 @@ start()
 		fi
 		return $stat
 	fi
-	
+
         # Spawn the network sub-services
 	for int in $(interfaces); do
 		check_dhcpcd "$int"
@@ -161,7 +161,8 @@ start()
 
 		# We have a device that needs dhcpcd
 		export OPENRC_SILENT=TRUE
-		ln -fs %%PREFIX%%/etc/init.d/dhcpcd %%PREFIX%%/etc/init.d/dhcpcd.${int}
+		rm  %%PREFIX%%/etc/init.d/dhcpcd.${int} >/dev/null 2>/dev/null
+		cp %%PREFIX%%/etc/init.d/dhcpcd %%PREFIX%%/etc/init.d/dhcpcd.${int}
 		/sbin/service dhcpcd.${int} start
 	done
 	return 0
@@ -183,7 +184,7 @@ stop()
 		fi
 		return $stat
 	fi
-	
+
         # Spawn the network sub-services
 	for int in $(interfaces); do
 		check_dhcpcd "$int"
@@ -191,7 +192,8 @@ stop()
 
 		# We have a device that needs dhcpcd
 		export OPENRC_SILENT=TRUE
-		ln -fs %%PREFIX%%/etc/init.d/dhcpcd %%PREFIX%%/etc/init.d/dhcpcd.${int}
+		rm %%PREFIX%%/etc/init.d/dhcpcd.${int} >/dev/null 2>/dev/null
+		cp %%PREFIX%%/etc/init.d/dhcpcd %%PREFIX%%/etc/init.d/dhcpcd.${int}
 		/sbin/service dhcpcd.${int} stop
 	done
 	return 0
