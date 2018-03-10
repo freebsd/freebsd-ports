@@ -4,7 +4,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	only available for x86 architectures
 
-BUILD_DEPENDS=	clang${CLANG_VERSION}:devel/llvm${CLANG_VERSION}
+LIB_DEPENDS=	libLLVM.so:devel/llvm${CLANG_VERSION}
 
 USES=		bison gmake python:build shebangfix
 USE_GITHUB=	yes
