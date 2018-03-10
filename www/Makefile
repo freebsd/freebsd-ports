@@ -1861,6 +1861,7 @@
     SUBDIR += py-spyne
     SUBDIR += py-sseclient
     SUBDIR += py-surl
+    SUBDIR += py-swapper
     SUBDIR += py-textile
     SUBDIR += py-tmdb3
     SUBDIR += py-tornado
