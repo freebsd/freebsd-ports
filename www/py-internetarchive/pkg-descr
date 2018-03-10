@@ -1,0 +1,5 @@
+This package installs a command-line tool named ia for using Archive.org
+from the command-line. It also installs the internetarchive Python module
+for programatic access to archive.org.
+
+WWW: https://github.com/jjjake/internetarchive
