@@ -1836,6 +1836,7 @@
     SUBDIR += py-requests-oauthlib
     SUBDIR += py-requests-toolbelt
     SUBDIR += py-requests1
+    SUBDIR += py-requests_ntlm
     SUBDIR += py-restclient
     SUBDIR += py-rfc3986
     SUBDIR += py-rfc3987
