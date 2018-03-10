@@ -18,6 +18,8 @@ USES=		python:2.7 shebangfix
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
+PORTSCOUT=	ignore:1
+
 SHEBANG_FILES=	doc/examples/*.py
 
 .include <bsd.port.mk>
