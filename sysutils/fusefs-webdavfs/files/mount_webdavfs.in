@@ -1,0 +1,33 @@
+#!/bin/sh
+
+mountprog=%%PREFIX%%/sbin/mount.webdavfs
+
+while getopts "fo:DF:T:" opt
+do
+  case "$opt" in
+  o)	case "$OPTARG" in
+	username=*)		username=${OPTARG#username=}	;;
+	password=*)		password=${OPTARG#password=}	;;
+	rw)							;;
+	*)			options="$options,$OPTARG"	;;
+	esac ;;
+  T)	traceopts="$traceopts,$OPTARG"	;;
+  *)	flags="$flags -$opt $OPTARG"	;;
+  esac
+done
+shift $((OPTIND - 1))
+
+[ -n "$username" ] && options="$options,username=$username"
+[ -n "$password" ] && options="$options,password=$password"
+options=${options#,}
+
+traceopts=${traceopts#,}
+[ -n "$traceopts" ] && flags="$flags -T $traceopts"
+
+if [ -z "$options" ]; then
+  exec $mountprog $flags "$@"
+else
+  exec $mountprog $flags -o "$options" "$@"
+fi
+
+
