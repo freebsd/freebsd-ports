@@ -222,6 +222,7 @@
     SUBDIR += gmpc-mserver
     SUBDIR += gmpc-shout
     SUBDIR += gmpc-wikipedia
+    SUBDIR += gmsynth-lv2
     SUBDIR += gmtp
     SUBDIR += gmusicbrowser
     SUBDIR += gnaural
