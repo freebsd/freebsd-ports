@@ -1,13 +1,13 @@
-#!/bin/sh
-#
-# $FreeBSD: head/net/samba42/files/samba_server.in 388794 2015-06-08 00:55:40Z timur $
+#!/sbin/openrc-run
 #
 
-# PROVIDE: samba_server
-# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv ntpd
-# BEFORE: LOGIN
-# KEYWORD: shutdown
-#
+depend()
+{
+	provide samba_server
+	need ldconfig resolv ntpd
+	keyword -shutdown
+}
+
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
@@ -23,24 +23,24 @@
 #samba_server_config="%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%"
 #
 
-. /etc/rc.subr
-
 name="samba_server"
-rcvar=${name}_enable
+
+# Common flags
+command_args=${samba_server_configfile_arg}
+samba_flags=${samba_flags="--daemon"}
+nmbd_flags=${nmbd_flags="--daemon"}
+smbd_flags=${smbd_flags="--daemon"}
+winbindd_flags=${winbindd_flags="--daemon"}
+
+# Requirements
+required_files="${samba_server_config}"
+required_dirs="${samba_server_lockdir}"
+
 # Defaults
 samba_server_config_default="%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%"
 smbcontrol_command="%%PREFIX%%/bin/smbcontrol"
 # Custom commands
 extra_commands="reload status"
-
-start_precmd="samba_server_prestart"
-restart_precmd="samba_server_checkconfig"
-reload_precmd="samba_server_checkconfig"
-start_cmd="samba_server_cmd"
-stop_cmd="samba_server_cmd"
-status_cmd="samba_server_cmd"
-reload_cmd="samba_server_reload_cmd"
-rcvar_cmd="samba_server_rcvar_cmd"
 
 samba_server_checkconfig() {
     echo -n "Performing sanity check on Samba configuration: "
@@ -52,7 +52,36 @@ samba_server_checkconfig() {
     fi
 }
 
-samba_server_prestart() {
+start()
+{
+	samba_server_cmd start
+	return $?
+
+}
+
+stop()
+{
+	samba_server_cmd stop
+	return $?
+}
+
+status()
+{
+	samba_server_cmd status
+	return $?
+}
+
+restart_pre() {
+	samba_server_checkconfig
+	return $?
+}
+
+reload_pre() {
+	samba_server_checkconfig
+	return $?
+}
+
+start_pre() {
     # Make sure we have our RUNDIR, even if it's on a tmpfs
     if [ -d "${samba_server_piddir}" -o ! -e "${samba_server_piddir}" ]; then
 	install -d -m 0755 "${samba_server_piddir}"
@@ -68,23 +97,7 @@ samba_server_prestart() {
     samba_server_checkconfig
 }
 
-samba_server_rcvar_cmd() {
-    local name rcvar
-    rcvar=${name}_enable
-    # Prevent recursive calling
-    unset "${rc_arg}_cmd" "${rc_arg}_precmd" "${rc_arg}_postcmd"
-    # Check master variable
-    run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
-    # Check dependent variables
-    for name in ${samba_daemons}; do
-	# XXX
-	rcvars=''; v=''
-	rcvar=${name}_enable
-	run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
-    done
-}
-
-samba_server_reload_cmd() {
+reload() {
     local name rcvar command pidfile force_run
     # Prevent recursive calling
     unset "${rc_arg}_cmd" "${rc_arg}_precmd" "${rc_arg}_postcmd"
@@ -109,6 +122,7 @@ samba_server_reload_cmd() {
 }
 
 samba_server_cmd() {
+    rc_arg="$1"
     local name rcvar rcvars v command pidfile samba_daemons result force_run
     # Prevent recursive calling
     unset "${rc_arg}_cmd" "${rc_arg}_precmd" "${rc_arg}_postcmd"
@@ -131,7 +145,7 @@ samba_server_cmd() {
 	pidfile="${samba_server_piddir}/${name}.pid"
 	# Daemon should be enabled and running
 	if ( [ -n "${rcvar}" ] && checkyesno "${rcvar}" ) || [ -n "$force_run" ]; then
-	    run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
+	    start-stop-daemon --pidfile ${pidfile} --start $command -- ${rc_extra_args}
 	    # If any of the commands failed, take it as a global result
 	    result=$((${result} || $?))
 	fi
@@ -189,14 +203,3 @@ samba_server_config_init() {
 
 # Load configuration variables
 samba_server_config_init
-# Common flags
-command_args=${samba_server_configfile_arg}
-samba_flags=${samba_flags="--daemon"}
-nmbd_flags=${nmbd_flags="--daemon"}
-smbd_flags=${smbd_flags="--daemon"}
-winbindd_flags=${winbindd_flags="--daemon"}
-# Requirements
-required_files="${samba_server_config}"
-required_dirs="${samba_server_lockdir}"
-
-run_rc_command "$1"
