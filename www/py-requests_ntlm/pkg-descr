@@ -1,0 +1,6 @@
+This package allows for HTTP NTLM authentication using the requests library.
+
+NTLM is a suite of authentication and session security protocols used in
+various Microsoft network protocol implementations.
+
+WWW: https://github.com/requests/requests-ntlm
