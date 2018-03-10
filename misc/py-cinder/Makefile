@@ -3,6 +3,7 @@
 
 PORTNAME=	cinder
 PORTVERSION=	9.1.1
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	https://fossies.org/linux/misc/openstack/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

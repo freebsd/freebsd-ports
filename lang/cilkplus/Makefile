@@ -3,7 +3,7 @@
 
 PORTNAME=	cilkplus
 PORTVERSION=	20160603
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel
 MASTER_SITES=	https://www.cilkplus.org/sites/default/files/runtime_source/
 PKGNAMESUFFIX=	-rtl

@@ -2,6 +2,7 @@
 
 PORTNAME=	libpololu-avr
 PORTVERSION=	151002
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jonathan@FreeBSD.org

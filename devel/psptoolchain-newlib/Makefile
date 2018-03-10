@@ -3,7 +3,7 @@
 
 PORTNAME=		newlib
 PORTVERSION=		1.20.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		devel
 MASTER_SITES=		ftp://sources.redhat.com/pub/ \
 			SOURCEWARE/${PORTNAME}

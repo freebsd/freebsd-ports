@@ -3,6 +3,7 @@
 
 PORTNAME=	arduino-bsd-mk
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://xse.com/leres/arduino/arduino-bsd-mk/ \
 		LOCAL/leres/arduino-bsd-mk

@@ -3,6 +3,7 @@
 
 PORTNAME=	florist-gpl
 PORTVERSION=	2017
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

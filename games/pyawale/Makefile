@@ -3,7 +3,7 @@
 
 PORTNAME=	pyawale
 PORTVERSION=	0.4.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/pyawale/
 

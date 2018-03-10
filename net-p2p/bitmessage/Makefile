@@ -3,6 +3,7 @@
 
 PORTNAME=	bitmessage
 DISTVERSION=	0.6.3.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org

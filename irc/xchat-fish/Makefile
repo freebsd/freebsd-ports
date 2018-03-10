@@ -4,7 +4,7 @@
 
 PORTNAME=	fish
 DISTVERSION=	0.98
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc security
 MASTER_SITES=	http://wirehack7.opsys.de/FiSH/xchat/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/

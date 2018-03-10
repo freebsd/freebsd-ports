@@ -3,7 +3,7 @@
 
 PORTNAME=	zlib
 PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel archivers
 MASTER_SITES=	http://zlib.net/ \
 		SF/libpng/${PORTNAME}/${PORTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	libspark2012
 PORTVERSION=	2012
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 

@@ -1,7 +1,7 @@
 # Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
 
-PORTREVISION=		3
+PORTREVISION=		4
 
 PKGNAMESUFFIX=		-stage2
 

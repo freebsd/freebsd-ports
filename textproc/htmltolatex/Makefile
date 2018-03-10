@@ -3,7 +3,7 @@
 
 PORTNAME=	htmltolatex
 PORTVERSION=	1
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	textproc
 MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 DISTNAME=	${PORTNAME}

@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMEPREFIX=	sparc64-
 PLIST=	${.CURDIR}/pkg-plist
 

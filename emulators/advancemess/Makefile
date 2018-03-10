@@ -3,6 +3,7 @@
 
 PORTNAME=	advancemess
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/amadvance/advancemame/releases/download/${DISTNAME}/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	elfutils
 PORTVERSION=	0.170
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 

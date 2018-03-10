@@ -3,7 +3,7 @@
 
 PORTNAME=	bombz
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/ \
 		SF/nemysisfreebsdp/games/:icons

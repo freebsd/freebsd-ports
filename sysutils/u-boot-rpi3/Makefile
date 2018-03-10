@@ -2,6 +2,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	2017.01
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/:uboot \
 		LOCAL/db:bootfiles

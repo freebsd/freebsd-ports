@@ -3,7 +3,7 @@
 
 PORTNAME=	arpack++
 PORTVERSION=	1.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	http://www.ime.unicamp.br/%7echico/arpack++/
 DISTNAME=	${PORTNAME}

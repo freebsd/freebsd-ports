@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arpack-ng
+PORTREVISION=	1
 PKGNAMESUFFIX=	-mpich
 
 COMMENT=	Revised Argand library for solving large-scale eigenvalue problems with MPI support

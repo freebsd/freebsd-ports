@@ -3,7 +3,7 @@
 
 PORTNAME=	spblas
 DISTVERSION=	1_02
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://math.nist.gov/spblas/:1 LOCAL/bf/:1 NL/blas/blast-forum/:2
 DISTFILES=	nist_spblas_${DISTVERSION}.zip:1

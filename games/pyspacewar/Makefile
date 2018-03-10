@@ -3,6 +3,7 @@
 
 PORTNAME=	pyspacewar
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	games python
 DIST_SUBDIR=	python
 

@@ -3,6 +3,7 @@
 
 MASTERDIR=	${.CURDIR}/../../palm/jpilot
 
+PORTREVISION=	1
 CATEGORIES=	japanese
 
 MAINTAINER=	ports@FreeBSD.org

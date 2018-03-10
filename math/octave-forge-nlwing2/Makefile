@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-nlwing2
 PORTVERSION=	1.2.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

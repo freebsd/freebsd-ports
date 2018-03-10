@@ -3,6 +3,7 @@
 
 PORTNAME=	marvel
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://download.elasticsearch.org/elasticsearch/marvel/
 PKGNAMEPREFIX=	elasticsearch-plugin-

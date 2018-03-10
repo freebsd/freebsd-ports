@@ -2,7 +2,7 @@
 
 PORTNAME=	x10
 PORTVERSION=	2.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang devel java
 MASTER_SITES=	http://dist.codehaus.org/x10/dependencies/ \
 		SF

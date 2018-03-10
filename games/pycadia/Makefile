@@ -3,7 +3,7 @@
 
 PORTNAME=	pycadia
 PORTVERSION=	0.5.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games python
 MASTER_SITES=	GENTOO \
 		SF/nemysisfreebsdp/games/

@@ -3,7 +3,7 @@
 
 PORTNAME=	mirrormagic
 PORTVERSION=	2.0.2
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/ \
 		http://mirror.amdmi3.ru/distfiles/

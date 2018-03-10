@@ -2,7 +2,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	2015.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/:source1 \
 		http://www.compulab.co.il/wp-content/uploads/2015/10/:source2

@@ -3,7 +3,7 @@
 
 PORTNAME=	noweb
 PORTVERSION=	2.11b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://www.eecs.harvard.edu/pub/nr/
 

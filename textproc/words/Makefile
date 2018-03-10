@@ -3,7 +3,7 @@
 
 PORTNAME=	words
 PORTVERSION=	1.97F
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://archives.nd.edu/whitaker/
 DISTNAME=	${PORTNAME}all

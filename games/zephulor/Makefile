@@ -3,7 +3,7 @@
 
 PORTNAME=	zephulor
 PORTVERSION=	1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF/apz/apz/stable/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

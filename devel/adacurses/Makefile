@@ -3,7 +3,7 @@
 
 PORTNAME=	adacurses
 PORTVERSION=	20150808
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/AdaCurses/
 DISTNAME=	AdaCurses-${PORTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	hypre
 DISTVERSION=	2.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://computation.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods/download/
 

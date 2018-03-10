@@ -3,7 +3,7 @@
 
 PORTNAME=	nlopt
 PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://ab-initio.mit.edu/nlopt/
 
