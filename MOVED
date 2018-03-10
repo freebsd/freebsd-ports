@@ -10194,3 +10194,4 @@ www/zikula||2018-03-08|Has expired: Unmaintained, no upstream, all www files wro
 www/yii||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
 www/phpmp||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
 www/lionwiki||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user.
+emulators/i386-wine-staging|i386-emulators/wine-devel|2018-03-10|Broken for months, abandoned upstream
