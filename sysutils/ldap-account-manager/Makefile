@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	6.0.1
+DISTVERSION=	6.2.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	p5-Quota>=0:sysutils/p5-Quota \
 		p5-perl-ldap>=0:net/p5-perl-ldap
 
+USES=		perl5 php:web tar:bzip2
+USE_PHP=	gettext hash iconv ldap pcre session simplexml xml json zip openssl curl gd
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		gettext perl5 php:web tar:bzip2
-USE_PHP=	gettext hash iconv ldap mcrypt pcre session simplexml spl xml json zip openssl
 
 SHORTNAME=	lam
 PORTDOCS=	docs HISTORY README copyright
@@ -27,6 +27,12 @@ CONFIGS=	config.cfg addressbook.conf samba3.conf unix.conf windows_samba4.conf
 WRITEABLES=	config sess tmp
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${PHP_VER} <= 72
+USE_PHP+=	mcrypt
+.endif
 
 do-install:
 	@${ECHO_CMD} '@preexec if [ -f %D/${WWWDIR_REL}/config/shells ]; then ${RM} %D/${WWWDIR_REL}/config/shells; fi' >> ${TMPPLIST}
@@ -51,4 +57,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
