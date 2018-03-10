@@ -4348,6 +4348,7 @@
     SUBDIR += py-configargparse
     SUBDIR += py-configobj
     SUBDIR += py-configparser
+    SUBDIR += py-confusable_homoglyphs
     SUBDIR += py-constantly
     SUBDIR += py-construct
     SUBDIR += py-construct28
