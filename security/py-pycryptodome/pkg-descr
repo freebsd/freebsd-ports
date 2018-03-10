@@ -17,4 +17,4 @@ PyCrypto (2.6.1):
 * Cleaner RSA and DSA key generation (largely based on FIPS 186-4)
 * Major clean ups and simplification of the code base
 
-WWW: https://pypi.python.org/pypi/pycryptodome
+WWW: https://www.pycryptodome.org/en/latest/
