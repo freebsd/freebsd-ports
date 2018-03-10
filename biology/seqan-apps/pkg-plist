@@ -48,6 +48,7 @@ bin/stellar
 bin/tree_recon
 bin/yara_indexer
 bin/yara_mapper
+man/man1/sak.1.gz
 share/doc/alf/LICENSE
 share/doc/alf/README
 share/doc/alf/example/small.fasta
@@ -117,7 +118,6 @@ share/doc/rep_sep/README
 share/doc/sak/LICENSE
 share/doc/sak/README
 share/doc/sak/README.sak.txt
-share/doc/sak/man/sak.1
 share/doc/sam2matrix/LICENSE
 share/doc/sam2matrix/README
 share/doc/samcat/LICENSE
