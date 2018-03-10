@@ -114,16 +114,15 @@ command="%%PREFIX%%/bin/${name}"
 command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir}"
 extra_commands="reload"
 
+# clear user setting in conf file: it should be done through the command line
+if grep -q "^User ${tor_user}$" ${tor_conf}; then
+  sed -i '' -e "s/^User ${tor_user}$//" ${tor_conf}
+fi
+
 if [ $tor_setuid = "YES" ]; then
-  if ! grep -q "^User ${tor_user}$" ${tor_conf}; then
-    echo "User ${tor_user}" >> ${tor_conf}
-  fi
+  command_args="${command_args} --User ${tor_user}"
   tor_user="root"
   tor_group="wheel"
-else
-  if grep -q "^User ${tor_user}$" ${tor_conf}; then
-    sed -i '' -e "s/^User ${tor_user}$//" ${tor_conf}
-  fi
 fi
 
 if ! run_rc_command "$1"; then
