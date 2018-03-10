@@ -3,7 +3,10 @@
 PORTNAME=	traefik
 PORTVERSION=	1.5.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net
+MASTER_SITES=	LOCAL/riggs/${PORTNAME}:webui
+DISTFILES=	${PORTNAME}-webui-static-${PORTVERSION}${EXTRACT_SUFX}:webui
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	High availability reverse proxy and load balancer
@@ -33,6 +36,21 @@ TRAEFIK_BUILD_ENV=	${MAKE_ENV} \
 TRAEFIK_LDARGS=	-ldflags "-s -w \
 		-X github.com/containous/traefik/version.Version=${DISTVERSION} \
 		-X github.com/containous/traefik/version.BuildDate=`date -u '+%Y-%m-%d_%I:%M:%S%p'`"
+
+# Recipe for building the web UI
+# Note this is not done during a standard port build as
+# it downloads node modules from the internet during build.
+# Instead, we use the pre-generated from LOCAL.
+# BUILD_DEPENDS+=	npm:www/npm \
+#		yarnpkg:www/yarn
+#USES+=		python:2.7,build
+#pre-build:
+#	@cd ${WRKSRC}/webui; \
+#	yarn install && \
+#	yarn run build
+
+post-extract:
+	@${MV} ${WRKDIR}/static ${WRKSRC}
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/containous/traefik; \
