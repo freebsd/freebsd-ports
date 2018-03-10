@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gc
-PORTVERSION=	7.6.2
+PORTVERSION=	7.6.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
 		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
@@ -36,15 +36,19 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 OPTIONS_DEFINE=	DEBUG
 
 .ifdef GC_VARIANT
-INSTLIBS=	cord gccpp
+CORDLIBS=	cord
 GCLIBS=		gc
+GCCPPLIBS=	gccpp
 PLIST=		${NONEXISTENT}
-PLIST_FILES=	${INSTLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
-		${INSTLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${INSTLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.0,} \
+PLIST_FILES=	${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
+		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
+		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.0,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
-		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.2,} \
-		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.2.2.1,} \
+		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
+		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.2,} \
+		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
+		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
+		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.1,} \
 		libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 RUN_DEPENDS+=	${LOCALBASE}/include/gc/gc.h:devel/boehm-gc
 . if ${GC_VARIANT} == "redirect"

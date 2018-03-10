@@ -1,5 +1,5 @@
---- include/gc_pthread_redirects.h.orig	2018-01-04 15:41:42.535207000 +0100
-+++ include/gc_pthread_redirects.h	2018-01-04 15:42:01.806411000 +0100
+--- include/gc_pthread_redirects.h.orig	2018-01-04 14:41:42 UTC
++++ include/gc_pthread_redirects.h
 @@ -44,12 +44,8 @@
  
  # ifndef GC_NO_PTHREAD_SIGMASK
