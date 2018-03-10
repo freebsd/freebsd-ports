@@ -609,7 +609,6 @@
     SUBDIR += pgworksheet
     SUBDIR += php-mdcached
     SUBDIR += php-memcache
-    SUBDIR += php-memcached
     SUBDIR += php-xapian
     SUBDIR += php5-pdo_cassandra
     SUBDIR += php5-tarantool
