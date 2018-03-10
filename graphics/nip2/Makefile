@@ -3,6 +3,7 @@
 
 PORTNAME=	nip2
 PORTVERSION=	8.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${PORTVERSION}/
 

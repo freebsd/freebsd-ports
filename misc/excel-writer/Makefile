@@ -3,7 +3,7 @@
 
 PORTNAME=	excel-writer
 PORTVERSION=	15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	excel_writer_${PORTVERSION}

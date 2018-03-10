@@ -3,7 +3,7 @@
 
 PORTNAME=	harminv
 PORTVERSION=	1.3.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/harminv/
 

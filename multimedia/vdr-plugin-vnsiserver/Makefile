@@ -3,6 +3,7 @@
 
 PORTNAME=	vdr-plugin-vnsiserver
 PORTVERSION=	14.0.20150330
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org

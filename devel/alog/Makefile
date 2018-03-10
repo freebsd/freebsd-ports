@@ -3,6 +3,7 @@
 
 PORTNAME=	alog
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libalog-${PORTVERSION}

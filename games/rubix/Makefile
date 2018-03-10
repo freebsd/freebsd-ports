@@ -3,7 +3,7 @@
 
 PORTNAME=	rubix
 PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://sed.free.fr/rubix/ \
 		http://mirror.mcx2.org/

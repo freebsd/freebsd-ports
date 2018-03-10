@@ -3,7 +3,7 @@
 
 PORTNAME=	ncs
 PORTVERSION=	2.0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science parallel
 MASTER_SITES=	http://code-saturne.org/releases/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	gforth
 PORTVERSION=	0.7.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 		GNU

@@ -3,7 +3,7 @@
 
 PORTNAME=	ironsides
 PORTVERSION=	${SNAPSHOT:S/_//g}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://ironsides.martincarlisle.com/
 DISTNAME=	ironsides_authoritative-${SNAPSHOT}

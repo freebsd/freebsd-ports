@@ -3,7 +3,7 @@
 
 PORTNAME=		psptoolchain
 PORTVERSION=		20111215
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		devel
 
 MAINTAINER=		tphilipp@potion-studios.com

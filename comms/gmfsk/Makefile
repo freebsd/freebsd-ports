@@ -3,7 +3,7 @@
 
 PORTNAME=	gmfsk
 PORTVERSION=	0.6
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://gmfsk.connect.fi/ \
 		http://he.fi/pub/ham/unix/linux/hfmodems/ \

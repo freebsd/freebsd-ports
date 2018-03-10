@@ -3,7 +3,7 @@
 
 PORTNAME=	funktrackergold
 DISTVERSION=	1.5-2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SUNSITE/apps/sound/players
 

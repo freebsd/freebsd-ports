@@ -3,7 +3,7 @@
 
 PORTNAME=	ecs
 PORTVERSION=	2.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://code-saturne.org/releases/
 

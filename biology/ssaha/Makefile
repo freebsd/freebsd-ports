@@ -3,7 +3,7 @@
 
 PORTNAME=	ssaha
 PORTVERSION=	3.1c
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/ssaha/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}

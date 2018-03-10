@@ -3,7 +3,7 @@
 
 PORTNAME=	schiff
 PORTVERSION=	16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	SF/pygamebook/${PORTNAME:S/s/S/}/${PORTNAME}${PORTVERSION}.py/ \
 		SF/nemysisfreebsdp/games/:icons

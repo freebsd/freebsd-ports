@@ -3,7 +3,7 @@
 
 PORTNAME=	ltl
 PORTVERSION=	1.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 

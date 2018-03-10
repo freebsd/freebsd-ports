@@ -3,6 +3,7 @@
 
 PORTNAME=	bsdowl
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/michipili/bsdowl/releases/download/v${PORTVERSION}/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	v_sim
 PORTVERSION=	3.7.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	http://inac.cea.fr/L_Sim/V_Sim/download/
 

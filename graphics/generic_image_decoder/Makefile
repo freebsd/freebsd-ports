@@ -3,6 +3,7 @@
 
 PORTNAME=	generic_image_decoder
 PORTVERSION=	06
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	gid-${PORTVERSION}

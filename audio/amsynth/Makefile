@@ -2,6 +2,7 @@
 
 PORTNAME=	amsynth
 DISTVERSION=	1.8.0.g20171103
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	hello@blubee.me

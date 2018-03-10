@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr
 PORTVERSION=	1.7.29
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 DIST_SUBDIR=	vdr

@@ -3,7 +3,7 @@
 
 PORTNAME=	pythonsudoku
 PORTVERSION=	0.13
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/Python%20Sudoku/${PORTVERSION}/ \
 		SF/nemysisfreebsdp/games/:icons

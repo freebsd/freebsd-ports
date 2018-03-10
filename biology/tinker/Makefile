@@ -3,7 +3,7 @@
 
 PORTNAME=	tinker
 PORTVERSION=	7.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology
 MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 

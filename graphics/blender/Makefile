@@ -3,7 +3,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.79
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \

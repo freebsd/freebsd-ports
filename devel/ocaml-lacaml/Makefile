@@ -3,7 +3,7 @@
 
 PORTNAME=	lacaml
 PORTVERSION=	8.0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/mmottl/lacaml/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-

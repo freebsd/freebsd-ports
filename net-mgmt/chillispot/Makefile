@@ -3,7 +3,7 @@
 
 PORTNAME=	chillispot
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.chillispot.info/download/ \
 		http://www.geeklan.co.uk/files/ \

@@ -3,7 +3,7 @@
 
 PORTNAME=	glance
 PORTVERSION=	13.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc python
 MASTER_SITES=	https://fossies.org/linux/misc/openstack/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

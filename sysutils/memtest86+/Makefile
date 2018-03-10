@@ -3,7 +3,7 @@
 
 PORTNAME=	memtest86+
 PORTVERSION=	5.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest.org/download/${PORTVERSION}/
 

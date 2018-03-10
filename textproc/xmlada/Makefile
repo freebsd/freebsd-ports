@@ -3,6 +3,7 @@
 
 PORTNAME=	xmlada
 PORTVERSION=	17.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org

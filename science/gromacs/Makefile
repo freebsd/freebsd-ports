@@ -3,7 +3,7 @@
 
 PORTNAME=	gromacs
 PORTVERSION=	5.0.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 

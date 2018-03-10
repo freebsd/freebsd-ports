@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blas
-PORTREVISION=	3
+PORTREVISION=	4
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Basic Linear Algebra Subroutines

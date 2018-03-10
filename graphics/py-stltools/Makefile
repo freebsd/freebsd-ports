@@ -3,7 +3,7 @@
 
 PORTNAME=		stltools
 PORTVERSION=		3.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics python
 MASTER_SITES=		http://rsmith.home.xs4all.nl/files/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}

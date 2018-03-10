@@ -3,7 +3,7 @@
 
 PORTNAME=	twitch
 PORTVERSION=	1.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Twitch/${PORTVERSION}/ \
                 SF/nemysisfreebsdp/${CATEGORIES}/:icons

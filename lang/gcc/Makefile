@@ -3,6 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCC_DEFAULT}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	# not applicable
 DISTFILES=	# not applicable

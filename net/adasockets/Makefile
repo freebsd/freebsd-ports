@@ -3,6 +3,7 @@
 
 PORTNAME=	adasockets
 PORTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rfc1149.net/download/adasockets/
 

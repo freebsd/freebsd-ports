@@ -3,7 +3,7 @@
 
 PORTNAME=	bouncy
 PORTVERSION=	r6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games python
 MASTER_SITES=	http://media.pyweek.org/dl/3/bouncy/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:icons

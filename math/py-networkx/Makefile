@@ -3,7 +3,7 @@
 
 PORTNAME=	networkx
 PORTVERSION=	1.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math python
 MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 		CHEESESHOP

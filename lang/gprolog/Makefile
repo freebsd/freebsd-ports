@@ -3,7 +3,7 @@
 
 PORTNAME=	gprolog
 PORTVERSION=	1.4.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gprolog.org/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	xml_ez_out
 PORTVERSION=	1.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mckae.com/xml_ezout/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

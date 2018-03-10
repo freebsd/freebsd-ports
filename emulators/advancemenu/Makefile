@@ -3,6 +3,7 @@
 
 PORTNAME=	advancemenu
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/amadvance/advancemame/releases/download/${DISTNAME}/
 

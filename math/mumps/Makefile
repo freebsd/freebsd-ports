@@ -3,7 +3,7 @@
 
 PORTNAME=	mumps
 PORTVERSION=	4.10.0	# Please do not upgrade to 5+: if needed repocopy to math/mumps5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/		\
 		http://graal.ens-lyon.fr/MUMPS/		\

@@ -3,7 +3,7 @@
 
 PORTNAME=	yzis
 PORTVERSION=	1.0.a.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	editors
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
 		http://contribs.martymac.org/FreeBSD-ports/distfiles/

@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMEPREFIX=	aarch64-none-elf-
 COMMENT=	GNU Compiler Collection for bare metal arm cross-development
 GCC_TARGET=	aarch64-none-elf

@@ -3,6 +3,7 @@
 
 PORTNAME=	sbsigntool
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpad.net/ubuntu/+archive/primary/+files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig

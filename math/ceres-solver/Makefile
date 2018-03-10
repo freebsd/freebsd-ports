@@ -2,7 +2,7 @@
 
 PORTNAME=	ceres-solver
 DISTVERSION=	1.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
