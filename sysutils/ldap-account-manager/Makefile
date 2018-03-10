@@ -28,12 +28,6 @@ WRITEABLES=	config sess tmp
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${PHP_VER} <= 72
-USE_PHP+=	mcrypt
-.endif
-
 do-install:
 	@${ECHO_CMD} '@preexec if [ -f %D/${WWWDIR_REL}/config/shells ]; then ${RM} %D/${WWWDIR_REL}/config/shells; fi' >> ${TMPPLIST}
 .for CONFIG in ${CONFIGS}
@@ -57,4 +51,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
