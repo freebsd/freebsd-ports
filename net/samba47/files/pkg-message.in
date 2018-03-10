@@ -8,8 +8,8 @@ How to start: http://wiki.samba.org/index.php/Samba4/HOWTO
 
 * All the logs are under: %%SAMBA4_LOGDIR%%
 
-* Provisioning script is: %%PREFIX%%/bin/samba-tool
-
+%%AD_DC%%* Provisioning script is: %%PREFIX%%/bin/samba-tool
+%%AD_DC%%
 %%NSUPDATE%%You will need to specify location of the 'nsupdate' command in the
 %%NSUPDATE%%%%SAMBA4_CONFIG%% file:
 %%NSUPDATE%%
