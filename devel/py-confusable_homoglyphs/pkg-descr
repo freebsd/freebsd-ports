@@ -1,0 +1,7 @@
+A homoglyph is one of two or more graphemes, characters, or glyphs with shapes
+that appear identical or very similar homoglyph. Unicode homoglyphs can be a
+nuisance on the web. confusable_homoglyphs helps to detect confusable usage of
+unicode homoglyphs and prevent homograph attacks.
+
+WWW: https://pypi.python.org/pypi/confusable_homoglyphs
+WWW: https://github.com/vhf/confusable_homoglyphs
