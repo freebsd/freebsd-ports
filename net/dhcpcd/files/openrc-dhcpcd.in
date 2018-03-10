@@ -161,9 +161,7 @@ start()
 
 		# We have a device that needs dhcpcd
 		export OPENRC_SILENT=TRUE
-		rm  %%PREFIX%%/etc/init.d/dhcpcd.${int} >/dev/null 2>/dev/null
-		cp %%PREFIX%%/etc/init.d/dhcpcd %%PREFIX%%/etc/init.d/dhcpcd.${int}
-		/sbin/service dhcpcd.${int} start
+		/etc/rc.devd dhcpcd.$int start
 	done
 	return 0
 }
@@ -192,9 +190,7 @@ stop()
 
 		# We have a device that needs dhcpcd
 		export OPENRC_SILENT=TRUE
-		rm %%PREFIX%%/etc/init.d/dhcpcd.${int} >/dev/null 2>/dev/null
-		cp %%PREFIX%%/etc/init.d/dhcpcd %%PREFIX%%/etc/init.d/dhcpcd.${int}
-		/sbin/service dhcpcd.${int} stop
+		/etc/rc.devd dhcpcd.$int stop
 	done
 	return 0
 }
