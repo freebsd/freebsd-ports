@@ -1,3 +1,5 @@
 bin/kapacitor
 bin/kapacitord
+@dir(%%KAPACITORD_USER%%,%%KAPACITORD_GROUP%%,0750) %%KAPACITORD_DBDIR%%
+@dir(%%KAPACITORD_USER%%,%%KAPACITORD_GROUP%%,0750) %%KAPACITORD_LOGDIR%%
 @sample etc/kapacitor.conf.sample
