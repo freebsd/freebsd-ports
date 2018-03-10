@@ -29,7 +29,7 @@ OPTIONS_DEFINE_mips=	EC
 OPTIONS_DEFAULT_mips=	EC
 .endif
 OPTIONS_GROUP=	CIPHERS HASHES OPTIMIZE PROTOCOLS
-OPTIONS_GROUP_CIPHERS=	EXPCIPHERS RC5
+OPTIONS_GROUP_CIPHERS=	RC5
 OPTIONS_GROUP_HASHES=	MD2
 OPTIONS_GROUP_OPTIMIZE=	ASM SSE2
 OPTIONS_GROUP_PROTOCOLS=	SCTP SSL2 SSL3
@@ -40,7 +40,6 @@ OPTIONS_SUB=	yes
 ASM_DESC=	Optimized Assembler code
 CIPHERS_DESC=	Cipher Suite support
 EC_DESC=	Optimize NIST elliptic curves
-EXPCIPHERS_DESC=	Include experimental ciphers
 HASHES_DESC=	Hash Function Support
 I386_DESC=	Optimize for i386 (instead of i486+)
 MAN3_DESC=	Install API manpages (section 3)
@@ -100,6 +99,10 @@ THREADS_CONFIGURE_OFF=	no-threads
 ZLIB_CONFIGURE_ON=	zlib zlib-dynamic
 ZLIB_CONFIGURE_OFF=	no-zlib no-zlib-dynamic
 
+CONFIGURE_ARGS=		no-gmp
+
+.include "version.mk"
+
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} != gcc && ${COMPILER_VERSION} != 42
@@ -113,34 +116,22 @@ IGNORE=	the OpenSSL port can not be installed over the base version
 OPENSSLDIR?=	${PREFIX}/openssl
 PLIST_SUB+=	OPENSSLDIR=${OPENSSLDIR:S=^${PREFIX}/==}
 
-.include "version.mk"
-
 .if ${PORT_OPTIONS:MASM}
 BROKEN_sparc64=		option ASM generates illegal instructions
 .endif
-
-CONFIGURE_ARGS+=	no-gmp
 
 post-patch:
 	${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
 		${WRKSRC}/crypto/des/Makefile
 	${REINPLACE_CMD} -e 's|SHLIB_VERSION_NUMBER "1.0.0"|SHLIB_VERSION_NUMBER "${OPENSSL_SHLIBVER}"|' \
 		${WRKSRC}/crypto/opensslv.h
-	${REINPLACE_CMD} -e 's|ERR_R_MALLOC_ERROR|ERR_R_MALLOC_FAILURE|' \
-		${WRKSRC}/crypto/bio/bss_dgram.c
-.if ${PORT_OPTIONS:MEXPCIPHERS}
-	${REINPLACE_CMD} -e 's|TLS1_ALLOW_EXPERIMENTAL_CIPHERSUITES	0|TLS1_ALLOW_EXPERIMENTAL_CIPHERSUITES	1|' \
-		${WRKSRC}/ssl/tls1.h
-.endif
 
 post-patch-MAN3-off:
 	${GREP} -L openssl_manual_section ${WRKSRC}/doc/crypto/*.pod | ${XARGS} ${RM}
-	${RM} -r ${WRKSRC}/doc/ssl/*.pod
 	${REINPLACE_CMD} -e 's|pod doc/ssl/\*\.pod|pod|' ${WRKSRC}/Makefile.org
 
 do-configure:
-	${REINPLACE_CMD} -e "s|options 386|options|" \
-		${WRKSRC}/config
+	${REINPLACE_CMD} -e "s|options 386|options|" ${WRKSRC}/config
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
@@ -155,15 +146,9 @@ post-configure:
 		${WRKSRC}/Makefile
 
 post-install-SHARED-on:
-.for i in libcrypto libssl
-	${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/$i.so.${OPENSSL_SHLIBVER}
-	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib/$i.so
-.endfor
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl
-.for i in 4758cca aep atalla capi chil cswift gmp gost nuron padlock sureware ubsec
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines/lib${i}.so
-.endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl \
+	${STAGEDIR}${PREFIX}/lib/lib*.so.${OPENSSL_SHLIBVER} \
+	${STAGEDIR}${PREFIX}/lib/engines/lib*.so
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180310:
+  AFFECTS: users of security/openssl
+  AUTHOR: brnrd@FreeBSD.org
+
+  The EXPCIPHERS option has been removed from the security/openssl port.
+  Use the security/openssl-unsafe port if you require this feature.
+
 20180309:
   AFFECTS: users of net/unison
   AUTHOR: madpilot@FreeBSD.org
