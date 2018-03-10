@@ -26,6 +26,8 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Charset/Arabic.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Baltic.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Cyrillic.pm
+%%SITE_PERL%%/Image/ExifTool/Charset/DOSLatin1.pm
+%%SITE_PERL%%/Image/ExifTool/Charset/DOSLatinUS.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Greek.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Hebrew.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/JIS.pm
@@ -77,6 +79,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
 %%SITE_PERL%%/Image/ExifTool/Geotag.pm
+%%SITE_PERL%%/Image/ExifTool/GoPro.pm
 %%SITE_PERL%%/Image/ExifTool/H264.pm
 %%SITE_PERL%%/Image/ExifTool/HP.pm
 %%SITE_PERL%%/Image/ExifTool/HTML.pm
@@ -162,6 +165,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/PrintIM.pm
 %%SITE_PERL%%/Image/ExifTool/Qualcomm.pm
 %%SITE_PERL%%/Image/ExifTool/QuickTime.pm
+%%SITE_PERL%%/Image/ExifTool/QuickTimeStream.pl
 %%SITE_PERL%%/Image/ExifTool/README
 %%SITE_PERL%%/Image/ExifTool/RIFF.pm
 %%SITE_PERL%%/Image/ExifTool/RSRC.pm
@@ -170,6 +174,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Rawzor.pm
 %%SITE_PERL%%/Image/ExifTool/Real.pm
 %%SITE_PERL%%/Image/ExifTool/Reconyx.pm
+%%SITE_PERL%%/Image/ExifTool/Red.pm
 %%SITE_PERL%%/Image/ExifTool/Ricoh.pm
 %%SITE_PERL%%/Image/ExifTool/Samsung.pm
 %%SITE_PERL%%/Image/ExifTool/Sanyo.pm
@@ -205,6 +210,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/XMPStruct.pl
 %%SITE_PERL%%/Image/ExifTool/ZIP.pm
 %%SITE_PERL%%/Image/ExifTool/iWork.pm
+%%PERL5_MAN1%%/exiftool.1.gz
 %%PERL5_MAN3%%/File::RandomAccess.3.gz
 %%PERL5_MAN3%%/Image::ExifTool.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::AES.3.gz
@@ -251,6 +257,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::GPS.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GeoTiff.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Geotag.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::GoPro.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::H264.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::HP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::HTML.3.gz
@@ -336,6 +343,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::PrintIM.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Qualcomm.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::QuickTime.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::QuickTimeStream.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::RIFF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::RSRC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::RTF.3.gz
@@ -343,6 +351,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Rawzor.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Real.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Reconyx.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Red.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Ricoh.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Samsung.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Sanyo.3.gz
@@ -378,4 +387,3 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::XMPStruct.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ZIP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::iWork.3.gz
-%%PERL5_MAN1%%/exiftool.1.gz
