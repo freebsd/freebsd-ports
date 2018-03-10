@@ -1,0 +1,19 @@
+--- Makefile.orig	2018-03-10 23:08:50 UTC
++++ Makefile
+@@ -136,13 +136,13 @@ FLUID_SRC = \
+             fluidsynth/src/fluid_settings.c \
+             fluidsynth/src/fluid_sys.c
+ 
+-CPPFLAGS += -Ifluidsynth -I fluidsynth/fluidsynth -DHAVE_CONFIG_H -D DEFAULT_SOUNDFONT=\"\"
+-DSP_SRC  = src/$(LV2NAME).c $(FLUID_SRC)
++FS_CFLAGS = `pkg-config --cflags --libs fluidsynth` -DHAVE_CONFIG_H -D DEFAULT_SOUNDFONT=\"\"
++DSP_SRC  = src/$(LV2NAME).c # $(FLUID_SRC)
+ DSP_DEPS = $(DSP_SRC)
+ 
+ $(BUILDDIR)$(LV2NAME)$(LIB_EXT): $(DSP_DEPS) Makefile
+ 	@mkdir -p $(BUILDDIR)
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -std=c99 \
++	$(CC) $(FS_CFLAGS) $(CFLAGS) -std=c99 \
+ 	  -o $(BUILDDIR)$(LV2NAME)$(LIB_EXT) $(DSP_SRC) \
+ 	  -shared $(LV2LDFLAGS) $(LDFLAGS) $(LOADLIBES)
+ 	$(STRIP) $(STRIPFLAGS) $(BUILDDIR)$(LV2NAME)$(LIB_EXT)
