@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ksql
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.5
 CATEGORIES=	devel databases
 MASTER_SITES=	http://kristaps.bsd.lv/ksql/snapshots/
 
