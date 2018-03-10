@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-desktop
-PORTVERSION=	201803051337
+PORTVERSION=	201803101536
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -38,6 +38,7 @@ RUN_DEPENDS=	trueos-core>=0:misc/trueos-core \
 		xv>=0:graphics/xv \
 		socat>=0:net/socat \
 		mesa-demos>=0:graphics/mesa-demos \
+		/boot/modules/drm.ko:graphics/drm-next-kmod \
 		xdg-user-dirs>=0:devel/xdg-user-dirs
 
 CONFLICTS=      pcbsd-utils-[0-9]* trueos-server-[0-9]*
@@ -48,7 +49,7 @@ MAKE_ARGS=	STAGEDIR=${STAGEDIR}  TYPE=desktop
 USE_GITHUB=     yes
 GH_ACCOUNT=     trueos
 GH_PROJECT=     trueos-core
-GH_TAGNAME=     e14ca39a863e2b5d0c4b4f396f75089970fd101d
+GH_TAGNAME=     b814979c207f4e5e538f877f9a86d56819fadcf3
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/pixmaps
