@@ -1,0 +1,8 @@
+FUSE webdav filesystem.
+
+This filesystem behaves like a real network filesystem - no unnecessary
+copying of entire files. Currently, it claims read-write support for
+Apache's mod_dav and PHP's SabreDav (used by e.g. NextCloud) only.
+It forces read-only mode for other DAV servers.
+
+WWW: https://github.com/miquels/webdavfs
