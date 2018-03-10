@@ -3,6 +3,7 @@
 
 PORTNAME=	aes_key_wrap
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+
+SHEBANG_FILES=	bin/setup
 
 .include <bsd.port.mk>
