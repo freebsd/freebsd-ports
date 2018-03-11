@@ -31,7 +31,7 @@ USES+=		apache:run,2.2+
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 .endif
 
-USES=		perl5
+USES+=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
