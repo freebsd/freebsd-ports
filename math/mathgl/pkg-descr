@@ -1,0 +1,6 @@
+Mathgl is a cross-platform library for making high-quality scientific graphics.
+It provides fast data plotting and handling of large data arrays, as well as
+window and console modes and for easy embedding into other programs. Mathgl
+integrates into fltk, qt and opengl applications.
+
+WWW: http://mathgl.sourceforge.net

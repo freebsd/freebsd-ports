@@ -301,6 +301,7 @@
     SUBDIR += lybniz
     SUBDIR += mate-calc
     SUBDIR += math77
+    SUBDIR += mathgl
     SUBDIR += mathmod
     SUBDIR += mathomatic
     SUBDIR += matio
