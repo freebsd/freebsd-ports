@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig tar:bzip2
-USE_APACHE=	24
+USES=		apache:2.4 libtool pkgconfig tar:bzip2
 
 DBDIR=		${PREFIX}/var/db/${PORTNAME}
 PLIST_SUB=	SED="${SED}" WWWGRP=${WWWGRP} WWWOWN=${WWWOWN}

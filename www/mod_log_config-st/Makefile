@@ -13,8 +13,7 @@ COMMENT=	Modified version of mod_log_config for Apache 2.2.x
 
 LICENSE=	APACHE11
 
-USES=		tar:xz
-USE_APACHE=	22
+USES=		apache:2.2 tar:xz
 AP_FAST_BUILD=	yes
 SRC_FILE=	mod_log_config.c
 SHORTMODNAME=	log_config

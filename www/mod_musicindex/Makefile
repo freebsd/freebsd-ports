@@ -14,8 +14,7 @@ COMMENT=	Apache module that allows downloading and streaming of audio
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libarchive localbase:ldflags
-USE_APACHE=	22
+USES=		apache:2.2 libarchive localbase:ldflags
 
 OPTIONS_DEFINE=	NLS FLAC MP3 MP4 VORBIS LIBARCHIVE FILECACHE MYSQLCACHE DOCS
 OPTIONS_DEFAULT=MP3 LIBARCHIVE FILECACHE

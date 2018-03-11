@@ -15,7 +15,7 @@ COMMENT=	Bandwidth and Connection control per Virtual Host or Directory
 LICENSE=	APACHE20
 
 WRKSRC=		${WRKDIR}/mod_bw
-USE_APACHE=	22
+USES=		apache:2.2
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

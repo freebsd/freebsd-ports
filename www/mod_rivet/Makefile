@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libitcl.so:lang/itcl
 
-USES+=		gmake libtool tcl:85+,tea
-USE_APACHE=	22-24
+USES+=		apache:2.2-2.4 gmake libtool tcl:85+,tea
 USE_LDCONFIG=	${PREFIX}/lib/rivet
 
 INSTALL_TARGET=	install-strip

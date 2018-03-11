@@ -13,8 +13,7 @@ COMMENT=	Alternative FastCGI module for Apache2
 
 LICENSE=	APACHE20
 
-USE_APACHE=	22+
-USES=		cpe
+USES=		apache:2.2+ cpe
 CPE_VENDOR=	apache
 
 HAS_CONFIGURE=		yes

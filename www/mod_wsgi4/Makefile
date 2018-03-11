@@ -15,8 +15,7 @@ LICENSE=	APACHE20
 
 CONFLICTS_INSTALL=${PKGNAMEPREFIX}mod_wsgi3.* mod_wsgi3.*
 
-USES=		gettext python
-USE_APACHE=	22+
+USES=		apache:2.2+ gettext python
 USE_PYTHON=	flavors
 
 GNU_CONFIGURE=	yes

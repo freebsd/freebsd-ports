@@ -30,7 +30,7 @@ OPTIONS_EXCLUDE=DOCS
 SYMLINK_DESC=	Create passenger symlink
 
 .if ${FLAVOR} == apache
-USE_APACHE=	22+
+USES+=		apache:2.2+
 .endif
 
 USE_RUBY=	yes

@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 WRKSRC=		${WRKDIR}/lestrrat-mod_reproxy-0f945ff
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

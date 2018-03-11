@@ -14,8 +14,7 @@ COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 
 LICENSE=	GPLv2
 
-USE_APACHE=	22
-USES=		libtool
+USES=		apache:2.2 libtool
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.options.mk>

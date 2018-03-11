@@ -24,8 +24,7 @@ BUILD_DEPENDS=	greadlink:sysutils/coreutils \
 		bash:shells/bash
 
 ONLY_FOR_ARCHS=	amd64 i386
-USE_APACHE=	22
-USES=		compiler gmake python:2.7 ssl tar:xz
+USES=		apache:2.2 compiler gmake python:2.7 ssl tar:xz
 REINPLACE_ARGS=	-i ""
 BINARY_ALIAS=	python=${PYTHON_CMD}
 

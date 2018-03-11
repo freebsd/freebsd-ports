@@ -14,7 +14,7 @@ COMMENT=	Allows users authentication based on external mechanisms
 
 LICENSE=	APACHE20
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	auth_external

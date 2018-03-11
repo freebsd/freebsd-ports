@@ -12,8 +12,7 @@ COMMENT=	Apache module for authenticating users with GSSAPI
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf bison gssapi:mit,flags libtool ssl
-USE_APACHE=	24+
+USES=		autoreconf apache:2.4+ bison gssapi:mit,flags libtool ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	modauthgssapi
 GNU_CONFIGURE=	yes

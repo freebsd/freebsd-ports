@@ -13,8 +13,7 @@ COMMENT=	Debugging and profiling tools for mod_perl
 
 RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 
-USES=		perl5
+USES=		apache:run,2.2+ perl5
 USE_PERL5=	configure
-USE_APACHE_RUN=	22+
 
 .include <bsd.port.mk>

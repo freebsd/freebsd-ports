@@ -15,8 +15,7 @@ COMMENT=	Allows you to limit the number of simultaneous connexions
 
 LICENSE=	APACHE20
 
-USE_APACHE=	22+
-USES=		tar:bzip2
+USES=		apache:2.2+ tar:bzip2
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

@@ -19,8 +19,7 @@ BROKEN_powerpc64=	Does not build
 LIB_DEPENDS=	libopkele.so:devel/libopkele \
 		libsqlite3.so:databases/sqlite3
 
-USES=		autoreconf cpe gmake libtool pkgconfig
-USE_APACHE=	22+
+USES=		apache:2.2+ autoreconf cpe gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	bmuller
 

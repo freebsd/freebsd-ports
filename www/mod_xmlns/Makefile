@@ -15,7 +15,7 @@ COMMENT=	Apache module for XML namespaces
 LICENSE=	GPLv2
 
 USE_GNOME=	libxml2
-USE_APACHE=	22+
+USES=		apache:2.2+
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

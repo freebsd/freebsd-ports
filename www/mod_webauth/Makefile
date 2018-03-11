@@ -13,8 +13,7 @@ COMMENT=	Apache module for authenticating users with Kerberos v5
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsasl2.so:security/cyrus-sasl2
 
-USES=		libtool pathfix pkgconfig ssl
-USE_APACHE=	22+
+USES=		apache:2.2+ libtool pathfix pkgconfig ssl
 USE_OPENLDAP=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

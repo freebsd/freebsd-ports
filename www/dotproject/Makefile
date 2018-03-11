@@ -13,12 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 IGNORE_WITH_PHP=	70 71 72
 
-USES=		cpe shebangfix php:web
+USES=		apache:run,2.2+ cpe shebangfix php:web
 SHEBANG_FILES=	misc/cvs2cl/cvs2cl.pl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	gd mysql session zlib
-USE_APACHE_RUN=	22+
 
 SUB_FILES=	pkg-message
 

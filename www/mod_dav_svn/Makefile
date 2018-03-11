@@ -18,7 +18,7 @@ PKGDIR=		${.CURDIR}
 
 SVN_BUILD_ADDONS=	yes
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 
 .include "${MASTERDIR}/Makefile.common"
 

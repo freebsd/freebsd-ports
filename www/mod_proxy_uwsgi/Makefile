@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}mod_proxy_
 MAINTAINER=	schmidt@ze.tum.de
 COMMENT=	Apache proxy module to pass requests to uwsgi
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

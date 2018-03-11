@@ -21,8 +21,7 @@ RUN_DEPENDS=	mono:lang/mono \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --man=${PREFIX}/man
 INSTALL_TARGET=	install
-USES=		libtool mono pkgconfig
-USE_APACHE=	22+
+USES=		apache:2.2+ libtool mono pkgconfig
 
 .include <bsd.port.pre.mk>
 

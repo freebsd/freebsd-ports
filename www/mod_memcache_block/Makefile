@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	netik
 GH_TAGNAME=	7b1fcec
 
-USE_APACHE=	22
+USES=		apache:2.2
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_INC=		${LOCALBASE}/include/libmemcached

@@ -13,7 +13,7 @@ COMMENT=	Allows setting environment variables based on request attributes
 
 LICENSE=	APACHE20
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	${WRKSRC}/apache2/${MODULENAME}.c

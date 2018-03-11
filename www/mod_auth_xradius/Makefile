@@ -13,8 +13,7 @@ COMMENT=	Enables RADIUS authentication
 
 LICENSE=	APACHE20
 
-USE_APACHE=	22+
-USES=	tar:bzip2
+USES=		apache:2.2+ tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_xradius.so

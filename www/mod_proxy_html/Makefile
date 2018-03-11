@@ -17,11 +17,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_xml2enc.so:www/mod_xml2enc
 
 SUB_FILES=	pkg-message
-USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	proxy_html
-USES=		tar:bzip2
+USES=		apache:2.2 tar:bzip2
 USE_GNOME=	libxml2
 
 AP_INC+=	${LOCALBASE}/include/libxml2 -I${WRKSRC}

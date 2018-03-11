@@ -16,11 +16,10 @@ LICENSE=	GPLv2
 
 # included in apache24
 # http://httpd.apache.org/docs/2.4/mod/mod_xml2enc.html
-USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	xml2enc
-USES=	tar:bzip2
+USES=		apache:2.2 tar:bzip2
 USE_GNOME=	libxml2
 
 AP_INC+=	${LOCALBASE}/include/libxml2 -I${WRKSRC}

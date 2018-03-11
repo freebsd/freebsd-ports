@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 MANUAL_PACKAGE_BUILD=	devel/apr1 with pgsql option required
 

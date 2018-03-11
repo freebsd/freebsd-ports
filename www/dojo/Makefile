@@ -19,7 +19,7 @@ OPTIONS_SUB=		yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=		22+
+USES=			apache:run,2.2+
 CONFDIR=		${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=		${APACHEETCDIR}/Includes
 PLIST_SUB+=		CONFDIR=${CONFDIR_REL}

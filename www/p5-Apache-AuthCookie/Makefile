@@ -23,9 +23,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-URI>=1.71:net/p5-URI
 
 NO_ARCH=	yes
-USE_APACHE=	22+
 USE_PERL5=	configure
-USES=		perl5
+USES=		apache:2.2+ perl5
 
 .include <bsd.port.pre.mk>
 

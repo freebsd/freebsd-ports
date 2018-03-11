@@ -13,8 +13,7 @@ COMMENT=	Apache module for non-ASCII filename interoperability
 
 LICENSE=	APACHE11
 
-USE_APACHE=	22+
-USES=		iconv gmake
+USES=		apache:2.2+ iconv gmake
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

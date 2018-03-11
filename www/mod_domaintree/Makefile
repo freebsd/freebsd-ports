@@ -12,7 +12,7 @@ MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Hostname to filesystem mapper for Apache 2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

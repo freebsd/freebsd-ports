@@ -13,7 +13,7 @@ COMMENT=	Allows you to keep your virtual host configuration in a LDAP directory
 
 LICENSE=	BSD3CLAUSE
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 USE_OPENLDAP=	yes
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

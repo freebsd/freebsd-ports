@@ -15,9 +15,8 @@ LICENSE=	APACHE11
 
 MANUAL_PACKAGE_BUILD=	needs apr with LDAP and DBD options enabled
 
-USES=		php:mod,build cpe
+USES=		apache:2.2+ php:mod,build cpe
 CPE_VENDOR=	xavier_beaudouin
-USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	*.c

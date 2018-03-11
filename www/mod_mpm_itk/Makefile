@@ -15,7 +15,7 @@ COMMENT=	This MPM allows you to run each vhost under a separate uid and gid
 
 LICENSE=	APACHE20
 
-USE_APACHE=	24
+USES=		apache:2.4
 GNU_CONFIGURE=	yes
 
 AP_FAST_BUILD=	yes

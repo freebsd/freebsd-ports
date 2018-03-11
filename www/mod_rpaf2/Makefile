@@ -17,7 +17,7 @@ GH_ACCOUNT=	gnif
 
 DOCS=	README.md
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 SHORTMODNAME=	rpaf
 
