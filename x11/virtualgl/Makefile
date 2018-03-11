@@ -49,4 +49,8 @@ PLIST_SUB+=	I386="@comment "
 PLIST_SUB+=	AMD64=""
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^#define CHECKGL/s,m);, &,' \
+		${WRKSRC}/server/VirtualDrawable.cpp
+
 .include <bsd.port.post.mk>
