@@ -4,3 +4,5 @@ It simultaneously transmits bidirectional flows to an endpoint
 and measures the resulting flow bandwidths and QoS. The
 results are written as vector and scalar files. The vector
 files can e.g. be used to create plots of the results.
+
+WWW: https://www.uni-due.de/~be0001/netperfmeter/
