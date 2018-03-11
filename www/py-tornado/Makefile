@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tornado
-PORTVERSION=	4.5.3
+PORTVERSION=	5.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,7 @@ USE_PYTHON=	autoplist distutils
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${FLAVOR}
 .endif
 
 .if ${PYTHON_REL} < 3500
