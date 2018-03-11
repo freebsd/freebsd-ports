@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-assets
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
