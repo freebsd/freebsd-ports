@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://people.freebsd.org/~maho/mxico/
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rotating Object on the screen (Zalgaller polyhedra)
 
 LICENSE=	MIT

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Enhanced Metafile Library
 
 LICENSE=	LGPL21

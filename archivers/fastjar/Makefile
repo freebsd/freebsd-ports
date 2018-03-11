@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers java
 MASTER_SITES=	LOCAL/maho/fastjar
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Version of JDK's `jar' command written entirely in C
 
 LICENSE=	GPLv2

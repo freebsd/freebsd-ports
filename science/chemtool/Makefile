@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw organic molecules easily and store them
 
 LIB_DEPENDS=	libEMF.so:graphics/libemf
