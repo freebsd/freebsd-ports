@@ -7,7 +7,7 @@ CATEGORIES=	graphics audio
 MASTER_SITES=	SF/${PORTNAME:tl:S/lib//}/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/lib//}-${DISTVERSION}-Source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Awesome music visualiser
 
 LICENSE=	LGPL21+
