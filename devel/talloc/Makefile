@@ -79,11 +79,6 @@ PLIST_FILES+=		lib/libpytalloc-util.%%SAMBA4_PYTHON3_SO_ABI%%.so \
 .endif
 .endif
 
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219455
-.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
-.info EXTRA_PATCHES+=		${FILESDIR}/powerpc-patch-lib_replace_wscript
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MMANPAGES}
