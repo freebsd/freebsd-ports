@@ -13,6 +13,9 @@ COMMENT=	Multiple Streaming Engine
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained upstream, crashes at runtime
+EXPIRATION_DATE=	2018-03-31
+
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis
 
