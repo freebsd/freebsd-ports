@@ -11,7 +11,7 @@ COMMENT=	Useful tools for dealing with hex files
 LICENSE=	HEXTOOLS
 LICENSE_NAME=	License of hextools
 LICENSE_FILE=	${WRKDIR}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 NO_WRKSUBDIR=	yes
 
