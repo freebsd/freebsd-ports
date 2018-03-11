@@ -4882,6 +4882,7 @@
     SUBDIR += py-rwt
     SUBDIR += py-sanetime
     SUBDIR += py-sarge
+    SUBDIR += py-schema
     SUBDIR += py-scripttest
     SUBDIR += py-sdl2
     SUBDIR += py-selection
