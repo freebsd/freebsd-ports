@@ -15,6 +15,8 @@ COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+BROKEN_FreeBSD_12_aarch64=	fails to configure: cannot compute sizeof (long long)
+
 .include "${.CURDIR}/Makefile.common"
 
 LANGS=			c c++ ada
