@@ -1,3 +1,4 @@
+%%TOOLS%%bin/cryptest
 include/cryptopp/3way.h
 include/cryptopp/adler32.h
 include/cryptopp/aes.h
@@ -143,6 +144,7 @@ include/cryptopp/zinflate.h
 include/cryptopp/zlib.h
 lib/libcryptopp.a
 lib/libcryptopp.so
-lib/libcryptopp.so.%%LIBVERSION%%
+lib/libcryptopp.so.%%SOVERSION%%
 lib/libcryptopp.so.%%PORTVERSION%%
+%%TOOLS%%%%DATADIR%%/TestData/usage.dat
 %%PORTDOCS%%%%DOCSDIR%%/README
