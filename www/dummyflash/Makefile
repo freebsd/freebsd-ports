@@ -11,6 +11,9 @@ DISTNAME=	unix-sdk-3.0b5
 MAINTAINER=	darius@dons.net.au
 COMMENT=	Silently consume flash MIME types
 
+DEPRECATED=	Unused, unmaintained, and obsolete
+EXPIRATION_DATE=	2018-03-25
+
 USE_XORG=	x11
 BUILD_WRKSRC=	${WRKSRC}/PluginSDK30b5/examples/UnixTemplate/Unix
 NO_WRKSUBDIR=	yes
