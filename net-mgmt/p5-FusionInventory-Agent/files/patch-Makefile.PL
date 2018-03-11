@@ -4,9 +4,9 @@ Fix some locations specific to the ports tree i.e.
 - Set LOCALSTATEDIR to /var/run as done in this ports tree
 - Install agent.cfg as agent.cfg.sample
 
---- Makefile.PL.orig	2015-11-10 20:54:31 UTC
+--- Makefile.PL.orig	2018-02-22 21:27:09 UTC
 +++ Makefile.PL
-@@ -142,22 +142,12 @@ sub constants {
+@@ -157,22 +157,12 @@ sub constants {
  
      # for some reason, initialising variables from the global scope doesn't work
      %variables = (
@@ -30,7 +30,7 @@ Fix some locations specific to the ports tree i.e.
      );
  
      # allow variables defined on command line to override defaults
-@@ -205,11 +195,7 @@ sub install {
+@@ -220,11 +210,7 @@ sub install {
  
  config_install :
  	install -d -m 755 $(DESTDIR)$(SYSCONFDIR)
@@ -40,6 +40,6 @@ Fix some locations specific to the ports tree i.e.
 -	    install -m 644 etc/agent.cfg $(DESTDIR)$(SYSCONFDIR)/agent.cfg; \
 -	fi
 +	install -m 644 etc/agent.cfg $(DESTDIR)$(SYSCONFDIR)/agent.cfg.sample
- 
- data_install :
- 	install -d -m 755 $(DESTDIR)$(DATADIR)
+ 	$(ABSPERLRUN) -pi \
+ 	    -e "s|=> undef, # SYSCONFDIR.*|=> '$(SYSCONFDIR)',|;" \
+ 	        $(DESTDIR)$(DATADIR)/lib/FusionInventory/Agent/Config.pm
