@@ -9,7 +9,7 @@
 -BDFTOPCF	= $(X11BINDIR)/bdftopcf
 -MKDIRHIER	= $(X11BINDIR)/mkdirhier	# 'mkdir -p' may also work.
 -MKFONTDIR	= $(X11BINDIR)/mkfontdir
-+X11FONTDIR	= $(DESTDIR)$(DATADIR)
++X11FONTDIR	= $(DESTDIR)$(FONTSDIR)
 +BDFTOPCF	= bdftopcf
 +MKDIRHIER	= mkdir -p	# 'mkdir -p' may also work.
 +MKFONTDIR	= mkfontdir

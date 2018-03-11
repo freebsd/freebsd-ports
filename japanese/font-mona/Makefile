@@ -3,6 +3,7 @@
 
 PORTNAME=	mona
 PORTVERSION=	2.90
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SF/monafont/monafont/monafont-${PORTVERSION}
 PKGNAMEPREFIX=	ja-font-
@@ -15,20 +16,13 @@ BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontdir:x11-fonts/mkfontdir
 
 USES=		fonts perl5 tar:bzip2
-FONTNAME=	misc
 USE_PERL5=	build
 NO_ARCH=	yes
-MAKE_ENV=	DATADIR="${DATADIR}"
-SUB_FILES=	pkg-install
-SUB_LIST=	FONTSALIAS="${DATADIR}/fonts.alias"
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-install
+MAKE_ENV=	FONTSDIR="${FONTSDIR}"
+SUB_FILES=	pkg-message
 ALL_TARGET=	bdf
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${STAGEDIR}${FONTSDIR} && \
-	    ${LN} -s ../../../${DATADIR_REL}/*.pcf.gz .
-	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
