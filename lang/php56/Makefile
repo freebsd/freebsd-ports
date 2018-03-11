@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=--enable-fpm \
 
 .if defined(PKGNAMEPREFIX)
 USE_APACHE=	22+
-.include "${PORTSDIR}/Mk/bsd.apache.mk"
+.include "${PORTSDIR}/Mk/Uses/apache.mk"
 .if ${PORT_OPTIONS:MAP2FILTER}
 CONFIGURE_ARGS+=--with-apxs2filter=${APXS}
 .else

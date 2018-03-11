@@ -33,8 +33,8 @@ PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
 
 .include <bsd.port.pre.mk>
 
-# Provider is build iff apache24 is in use
-.if ${APACHE_VERSION:M22}
+# Provider is built if apache24 is in use
+.if ${APACHE_VERSION:M2.2}
 PLIST_SUB+=	AP22="@comment "
 .else
 PLIST_SUB+=	AP22=""
