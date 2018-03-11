@@ -5,7 +5,7 @@ PORTVERSION=	0.1.7
 CATEGORIES=	net
 MASTER_SITES=	http://dumpsterventures.com/jason/httpry/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Packet sniffer designed for displaying and logging HTTP traffic
 
 USE_RC_SUBR=	httpry

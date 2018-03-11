@@ -7,7 +7,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.semicomplete.com/files/fastest_sites/
 EXTRACT_SUFX=	.py
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sort MASTER_SITE_* based upon TCP handshake times
 
 USES=		python shebangfix

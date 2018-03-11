@@ -6,7 +6,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://pseudo-flaw.net/tftpgrab/ \
 		http://www.atarininja.org/~wxs/distfiles/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TFTP stream extractor
 
 GNU_CONFIGURE=	yes

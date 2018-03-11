@@ -7,7 +7,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	SF/${PORTNAME}-ids/${PORTNAME}/2.9.0/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network surveillance engine
 
 LICENSE=	GPLv2
