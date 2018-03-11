@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION?=	5
 AVIDEMUX_VERSION=	2.6.11
 MASTER_SITES=	\
 		SF/avidemux/avidemux/${PORTVERSION}
