@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_md
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -18,9 +18,8 @@ LIB_DEPENDS=	libaprutil-1.so:devel/apr1 \
 		libcurl.so:ftp/curl \
 		libjansson.so:devel/jansson
 
-USES=		autoreconf libtool ssl
+USES=		apache:2.4+ autoreconf libtool ssl
 USE_GITHUB=	yes
-USE_APACHE=	24+
 
 INSTALL_TARGET=	install-strip
 
@@ -29,7 +28,8 @@ GH_PROJECT=	mod_md
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
-		--with-jansson=${LOCALBASE}
+		--with-jansson=${LOCALBASE} \
+		--without-boulder
 
 DOCSDIR=	share/doc/mod_md
 PORTDOCS=	README README.md
