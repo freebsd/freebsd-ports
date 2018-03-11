@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bmake
-PORTVERSION=	20171126
+PORTVERSION=	20180222
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/
-DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-20170505.tar.gz
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Portable version of NetBSD 'make' utility
@@ -15,9 +14,6 @@ LICENSE=	BSD3CLAUSE
 PORTSCOUT=	skipv:200910007
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USES=		python:2.7,build shebangfix
-SHEBANG_FILES=	${WRKDIR}/mk/meta2deps.py
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's/^\.Nx/NetBSD/' ${WRKDIR}/bmake/bmake.1
@@ -30,7 +26,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/obj/bmake ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/bmake/bmake.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${SH} ${WRKDIR}/mk/install-mk ${STAGEDIR}${PREFIX}/share/mk
+	${SH} ${WRKSRC}/mk/install-mk -v ${STAGEDIR}${PREFIX}/share/mk
+	${CHMOD} -x ${STAGEDIR}${PREFIX}/share/mk/meta2deps.py
 	cd ${STAGEDIR}${PREFIX} ;					\
 	    ${FIND} share/mk -type f -o -type l				\
 		| ${SORT}						\
