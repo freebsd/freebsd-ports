@@ -6,7 +6,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/_BSD/Bit-Twist%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libpcap-based Ethernet packet generator, with PCAP editor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

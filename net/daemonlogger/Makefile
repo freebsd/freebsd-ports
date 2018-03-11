@@ -5,7 +5,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.snort.org/users/roesch/code/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Packet sniffer capable of running as a daemon and as a software tap
 
 LIB_DEPENDS=	libdnet.so:net/libdnet

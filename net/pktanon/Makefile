@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.tm.uka.de/software/pktanon/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network trace anonymizer
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \

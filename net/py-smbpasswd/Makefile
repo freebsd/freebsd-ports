@@ -9,7 +9,7 @@ MASTER_SITES=	http://barryp.org/static/media/software/download/py-${PORTNAME}/${
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMB/CIFS password generation utility for Python
 
 LICENSE=	GPLv2
