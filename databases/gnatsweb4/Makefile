@@ -15,9 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-MIME-Base64>=0:converters/p5-MIME-Base64
 
-USE_APACHE_RUN=	22+
-
-USES=		perl5 shebangfix
+USES=		apache:run,2.2+ perl5 shebangfix
 SHEBANG_FILES=	gnatsweb.pl
 USE_PERL5=	run
 NO_BUILD=	yes

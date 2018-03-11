@@ -100,7 +100,7 @@ USE_RC_SUBR+=	maiad
 # setting USE_ variables. C'est la vie.
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
+USES+=		apache:run,2.2+
 .endif
 
 .if ${PORT_OPTIONS:MWEBHOST}

@@ -397,7 +397,7 @@ CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 .	if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 .	else
-USE_APACHE_RUN=	22+
+USES+=		apache:2.2+
 .	endif
 LIB_DEPENDS+=	libgd.so:graphics/gd
 RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD
