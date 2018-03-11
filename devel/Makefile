@@ -812,7 +812,6 @@
     SUBDIR += go-godef
     SUBDIR += go-goregen
     SUBDIR += go-hashicorp-logutils
-    SUBDIR += go-json-rest
     SUBDIR += go-logrus
     SUBDIR += go-metrics
     SUBDIR += go-nuid
