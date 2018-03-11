@@ -44,7 +44,7 @@ REDIS_RUN_DEPENDS=		redis-server:databases/redis
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
+USES=		apache:run,2.2+
 .elif ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:www/lighttpd
 .elif ${PORT_OPTIONS:MHIAWATHA}

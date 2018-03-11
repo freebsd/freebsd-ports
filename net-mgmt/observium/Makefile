@@ -76,7 +76,7 @@ PORTDOCS=	INSTALL README VERSION
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 
 .if ${PORT_OPTIONS:MAPACHEMOD}
-USE_APACHE_RUN=	22+
+USES+=	apache:run,2.2+
 .endif
 .if !defined(PACKAGE_BUILDING)
 USES+=	php:mod

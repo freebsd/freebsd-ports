@@ -26,8 +26,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-Output>=0:devel/p5-Test-Output \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 
-USES=		perl5
+USES=		apache:2.2+ perl5
 USE_PERL5=	configure
-USE_APACHE=	22+
 
 .include <bsd.port.mk>

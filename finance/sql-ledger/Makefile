@@ -17,10 +17,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message sql-ledger-httpd.conf
-USES=		perl5 pgsql shebangfix
+USES=		apache:run,2.2+ perl5 pgsql shebangfix
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl
 NO_ARCH=	yes
-USE_APACHE_RUN=	22+
 
 ROOT_DIRS=	SL bin css doc images js locale spool sql templates users
 ROOT_FILES=	VERSION favicon.ico index.html menu.ini

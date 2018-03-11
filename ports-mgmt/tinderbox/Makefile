@@ -80,7 +80,7 @@ RUN_DEPENDS+=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
+USES+=		apache:run,2.2+
 .elif ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:www/lighttpd
 .elif ${PORT_OPTIONS:MHIAWATHA}

@@ -20,8 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-Apache-DBI-mp[12]*
 
-USES=		perl5
+USES=		apache:2.2+ perl5
 USE_PERL5=	configure
-USE_APACHE?=	22+
 
 .include <bsd.port.mk>
