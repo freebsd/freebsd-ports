@@ -1,0 +1,11 @@
+--- examples/CMakeLists.txt.orig	2017-07-20 06:27:54 UTC
++++ examples/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ file(COPY ${CMAKE_SOURCE_DIR}/examples/iris.dat DESTINATION ${CMAKE_BINARY_DIR}/examples)
+ file(COPY ${CMAKE_SOURCE_DIR}/examples/Equirectangular-projection.jpg DESTINATION ${CMAKE_BINARY_DIR}/examples)
+ add_executable(mgl_example wnd_samples.cpp full_test.cpp samples.cpp)
+-target_link_libraries(mgl_example mgl-static ${getopt_lib-static})
++#target_link_libraries(mgl_example mgl-static ${getopt_lib-static})
+ 
+ if(MGL_HAVE_FLTK)
+ 	include_directories(${FLTK_INCLUDE_DIR})
