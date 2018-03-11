@@ -5,43 +5,41 @@
 # links to the static library, so bump PORTREVISION of dependent
 # ports when appropriate.
 
-PORTNAME=		cryptopp
-PORTVERSION=		5.6.5
-PORTREVISION=	3
-CATEGORIES=		security
-MASTER_SITES=		http://www.cryptopp.com/
-DISTNAME=		cryptopp${PORTVERSION:S/.//g}
+PORTNAME=	cryptopp
+PORTVERSION=	5.6.5
+PORTREVISION=	4
+CATEGORIES=	security
+MASTER_SITES=	http://www.cryptopp.com/
+DISTNAME=	cryptopp${PORTVERSION:S/.//g}
 
-MAINTAINER=		jhale@FreeBSD.org
-COMMENT=		Free C++ class library of Cryptographic Primitives
+MAINTAINER=	jhale@FreeBSD.org
+COMMENT=	Free C++ class library of Cryptographic Primitives
 
-LICENSE=		BSL
-LICENSE_FILE=		${WRKSRC}/License.txt
+LICENSE=	BSL
+LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=			cpe gmake zip:infozip
-USE_LDCONFIG=		yes
+BROKEN_powerpc=	does not compile; unrecognized C++ options
 
-CPE_PRODUCT=		crypto++
-CPE_VENDOR=		cryptopp
-
-BROKEN_powerpc=		does not compile; unrecognized C++ options
+USES=		cpe gmake zip
+USE_LDCONFIG=	yes
+CPE_PRODUCT=	crypto++
+CPE_VENDOR=	cryptopp
 
 EXTRACT_BEFORE_ARGS=	-aq
 NO_WRKSUBDIR=		yes
 
-CXXFLAGS+=		-Wno-deprecated-declarations -fPIC
-MAKEFILE=		GNUmakefile
-ALL_TARGET=		static shared
-TEST_TARGET=		test
+CXXFLAGS+=	-Wno-deprecated-declarations -fPIC
+MAKEFILE=	GNUmakefile
+ALL_TARGET=	static shared
 
-LIBVERSION=		${PORTVERSION:R:R}
-PLIST_SUB+=		LIBVERSION=${LIBVERSION} \
-			PORTVERSION=${PORTVERSION}
+SOVERSION=	${PORTVERSION:R:R}
+PLIST_SUB+=	SOVERSION=${SOVERSION} \
+		PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=		DEBUG DOCS FULL_DEBUG THREADS
+OPTIONS_DEFINE=		DEBUG DOCS FULL_DEBUG THREADS TOOLS
 OPTIONS_DEFINE_amd64=	SIMD
 OPTIONS_DEFINE_i386=	SIMD
-OPTIONS_DEFAULT=	THREADS
+OPTIONS_DEFAULT=	THREADS TOOLS
 OPTIONS_SUB=		yes
 
 # Always compile with -DNDEBUG for release. Otherwise, sensitive
@@ -51,6 +49,12 @@ FULL_DEBUG_DESC=	Build with full debugging support (SECURITY RISK!!!)
 FULL_DEBUG_CXXFLAGS=	-DCRYPTOPP_DEBUG
 FULL_DEBUG_CXXFLAGS_OFF=-DNDEBUG
 FULL_DEBUG_IMPLIES=	DEBUG
+
+# Disable this option to run the regression tests.
+TOOLS_DESC=		Install encryption/decryption tools
+TOOLS_MAKE_ENV=		CRYPTOPP_DATA_DIR=${DATADIR}/
+TOOLS_ALL_TARGET=	cryptest.exe
+TOOLS_TEST_TARGET_OFF=	test
 
 THREADS_LDFLAGS=	-lpthread
 
@@ -97,7 +101,7 @@ pre-configure-FULL_DEBUG-on:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcryptopp.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libcryptopp.so ${STAGEDIR}${PREFIX}/lib/libcryptopp.so.${PORTVERSION}
-	${LN} -fs libcryptopp.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcryptopp.so.${LIBVERSION}
+	${LN} -fs libcryptopp.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcryptopp.so.${SOVERSION}
 	${LN} -fs libcryptopp.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcryptopp.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/cryptopp
 	(for i in `${FIND} ${WRKSRC}/ -name '*.h' \
@@ -109,5 +113,10 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${STAGEDIR}${DOCSDIR}/README
+
+do-install-TOOLS-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/TestData
+	${INSTALL_PROGRAM} ${WRKSRC}/cryptest.exe ${STAGEDIR}${PREFIX}/bin/cryptest
+	${INSTALL_DATA} ${WRKSRC}/TestData/usage.dat ${STAGEDIR}${DATADIR}/TestData
 
 .include <bsd.port.post.mk>
