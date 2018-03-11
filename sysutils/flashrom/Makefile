@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.flashrom.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mizhka@gmail.com
 COMMENT=	Utility for reading, writing, verifying, and erasing flash ROM chips
 
 LICENSE=	GPLv2
