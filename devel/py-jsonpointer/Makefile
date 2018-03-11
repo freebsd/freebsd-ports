@@ -2,6 +2,7 @@
 
 PORTNAME=	jsonpointer
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +15,6 @@ LICENSE=	BSD3CLAUSE
 NO_ARCH=	yes
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
