@@ -27,12 +27,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.xml ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/hponcfg_reformat.xsl ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/locfg.pl ${STAGEDIR}${PREFIX}/bin/locfg
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/iLO_perl_xml.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/linux-LOsamplescripts3.00.0-2.txt \
 		${STAGEDIR}${DOCSDIR}/linux-LOsamplescripts.txt
 
-regression-test: build
+do-test:
 	@${PERL} -c ${WRKSRC}/locfg.pl
 
 .include <bsd.port.mk>
