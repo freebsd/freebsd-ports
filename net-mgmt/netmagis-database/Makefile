@@ -6,6 +6,8 @@ PKGNAMESUFFIX=	-database
 
 COMMENT=	Utilities for the netmagis database server
 
+LICENSE=	CECILL-B
+
 RUN_DEPENDS=	netmagis-config:net-mgmt/netmagis-common \
 		pwgen:sysutils/pwgen \
 		tcltls>=1.4.1:devel/tcltls \

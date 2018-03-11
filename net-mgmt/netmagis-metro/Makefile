@@ -6,6 +6,8 @@ PKGNAMESUFFIX=	-metro
 
 COMMENT=	Netmagis metrology module
 
+LICENSE=	CECILL-B
+
 RUN_DEPENDS+=	netmagis-config:net-mgmt/netmagis-common \
 		p5-DBD-Pg>0:databases/p5-DBD-Pg \
 		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
