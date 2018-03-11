@@ -10196,3 +10196,4 @@ www/phpmp||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs t
 www/lionwiki||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user
 databases/php-memcached|databases/pecl-memcached|2018-03-10|Remove duplicate port, use databases/pecl-memcached instead
 emulators/i386-wine-staging|emulators/i386-wine-devel|2018-03-10|Broken for months, abandoned upstream
+archivers/quazip-qt5|archivers/quazip@qt5|2018-03-11|Moved to a flavoured version

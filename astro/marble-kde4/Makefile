@@ -2,13 +2,13 @@
 
 PORTNAME=	marble
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE
 
-LIB_DEPENDS=	libquazip.so:archivers/quazip
+LIB_DEPENDS=	libquazip.so:archivers/quazip@qt4
 
 USES=		cmake:outsource kde:4 shared-mime-info tar:xz
 USE_KDE=	kdelibs automoc4

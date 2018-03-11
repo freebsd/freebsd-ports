@@ -3,7 +3,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.18.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	astro
 
 MAINTAINER=	dev2@heesakkers.info
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libproj.so:graphics/proj \
-		libquazip5.so:archivers/quazip-qt5
+		libquazip5.so:archivers/quazip@qt5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
