@@ -19,8 +19,7 @@ BUILD_DEPENDS=	p5-Audio-Wav>=0:audio/p5-Audio-Wav \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
-USE_APACHE=	22+
+USES=		apache:2.2+ perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 

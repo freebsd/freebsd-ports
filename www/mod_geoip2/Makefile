@@ -16,7 +16,7 @@ RUN_DEPENDS=	GeoIP>=1.4.4:net/GeoIP
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	geoip-api-mod_geoip2
-USE_APACHE=	22+
+USES=		apache:2.2+
 MODULENAME=	mod_geoip
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

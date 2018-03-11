@@ -21,10 +21,9 @@ BROKEN_powerpc64=	Does not build: error: curl/curl.h: No such file or directory
 
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib
-USES=		autoreconf libtool
+USES=		apache:2.2+ autoreconf libtool
 USE_GNOME=	libxml2
 USE_GCC=	any
-USE_APACHE=	22+
 
 SUB_FILES=	pkg-message zzz_authnz_crowd.conf
 SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} \

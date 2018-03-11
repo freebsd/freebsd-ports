@@ -13,11 +13,10 @@ COMMENT=	Apache 2.x Internet Content Acceleration module
 
 #LICENSE=	AL11
 
-USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 MAKE_ENV+=	"APXS=${APXS}"
-USES=		gmake
+USES=		apache:2.2+ gmake
 
 PORTDOCS=	commands.txt samples.txt
 PORTEXAMPLES=	mod_gzip2.conf.sample

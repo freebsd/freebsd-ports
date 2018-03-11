@@ -20,8 +20,7 @@ CONFIGURE_ARGS=	--with-openssl-incdir=${OPENSSLINC} \
 				--with-apxs=${APXS}
 MAKE_ARGS+=	APXS=${APXS}
 
-USES=		ssl
-USE_APACHE=	22+
+USES=		apache:2.2+ ssl
 AP_EXTRAS+=	-DMOD_TSA_VERSION=\\\"mod_tsa/${PORTVERSION}\\\"
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

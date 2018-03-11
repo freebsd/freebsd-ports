@@ -13,7 +13,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Apache H264 streaming module
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-apxs="${APXS}"

@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Cito
 GH_PROJECT=	w4py
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_EXTRAS=	marshal.c

@@ -16,7 +16,7 @@ LICENSE_NAME=	Academic Free License 1.2
 LICENSE_FILE=	${WRKSRC}/LICENSE.AFL
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

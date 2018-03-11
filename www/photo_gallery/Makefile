@@ -15,8 +15,7 @@ RUN_DEPENDS=	anytopnm:graphics/netpbm\
 		p5-Image-Info>=0:graphics/p5-Image-Info\
 		p5-URI>=0:net/p5-URI
 
-USE_APACHE_RUN=	22+
-USES=		perl5 shebangfix tar
+USES=		apache:run,2.2+ perl5 shebangfix tar
 SHEBANG_FILES=	index.cgi
 perl_OLD_CMD=	/usr/pkg/bin/perl
 NO_BUILD=	yes

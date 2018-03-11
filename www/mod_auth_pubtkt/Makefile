@@ -11,7 +11,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	mk@neon1.net
 COMMENT=	Apache module to provide public key ticket based authentication
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	src/mod_auth_pubtkt.c

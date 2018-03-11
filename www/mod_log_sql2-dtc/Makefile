@@ -21,8 +21,7 @@ DBI_CONFIGURE_OFF=	--without-dbi
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 
 GNU_CONFIGURE=	yes
-USES=		gmake tar:bzip2
-USE_APACHE=	22
+USES=		apache:2.2 gmake tar:bzip2
 USE_MYSQL=	yes
 
 CONFIGURE_ARGS+=	--with-apxs=${APXS}

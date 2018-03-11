@@ -13,7 +13,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for rewriting URI references in XML
 
 USE_GNOME=	libxml2
-USE_APACHE=	22+
+USES=		apache:2.2+
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

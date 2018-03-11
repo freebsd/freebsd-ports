@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-USE_APACHE=	22
+USES=		apache:2.2
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 PORTDOCS=	${PORTNAME}.html

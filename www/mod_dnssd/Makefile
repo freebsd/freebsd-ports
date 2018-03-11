@@ -16,8 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
-USES=		gmake pkgconfig
-USE_APACHE=	22+
+USES=		apache:2.2+ gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	APR_CFLAGS="`${LOCALBASE}/bin/apr-1-config --cflags --cppflags --includes`" \
 		APR_LIBS="`${LOCALBASE}/bin/apr-1-config --ldflags`"

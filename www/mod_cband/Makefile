@@ -18,8 +18,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE
 LICENSE_FILE_BSD4CLAUSE=	${WRKSRC}/libpatricia.copyright
 
-USES=		tar:tgz
-USE_APACHE=	22
+USES=		apache:2.2 tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs=${APXS}
 ALL_TARGET=	#

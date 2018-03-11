@@ -12,7 +12,7 @@ COMMENT=	Apache module that makes Apache respect hosts.allow and hosts.deny
 
 LICENSE=	APACHE20
 
-USE_APACHE=	22
+USES=		apache:2.2
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

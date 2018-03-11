@@ -44,7 +44,7 @@ BITS=		${ARCH:S/amd64/64/:S/x86_64/64/:S/i386/32/}bits
 WRKSRC=		${WRKDIR}/thunder
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
+USES+=		apache:run,2.2+
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}

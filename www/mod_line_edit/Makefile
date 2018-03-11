@@ -15,7 +15,7 @@ COMMENT=	Apache module for simple text rewriting
 
 LICENSE=	GPLv2
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

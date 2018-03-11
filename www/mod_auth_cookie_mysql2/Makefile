@@ -13,7 +13,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows authentication against MySQL database via secure cookie
 
 USE_MYSQL=	yes
-USE_APACHE=	22+
+USES=		apache:2.2+
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

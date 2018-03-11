@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
-USES=		gmake tar:bzip2
-USE_APACHE=	22+
+USES=		apache:2.2+ gmake tar:bzip2
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 

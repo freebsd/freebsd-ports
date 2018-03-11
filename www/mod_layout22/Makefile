@@ -15,7 +15,7 @@ CONFLICTS=	mod_layout-3.* mod_layout-4.*
 
 PORTSCOUT=	limit:^5
 
-USE_APACHE=	22
+USES=		apache:2.2+
 
 MAKE_ARGS+=	builddir=${WRKSRC}
 

@@ -22,8 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Output>=0:devel/p5-Test-Output
 
-USE_APACHE_RUN=	22+
-USES=		perl5
+USES=		apache:run,2.2+ perl5
 USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

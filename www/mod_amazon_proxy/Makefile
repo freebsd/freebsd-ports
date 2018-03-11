@@ -12,7 +12,7 @@ COMMENT=	Amazon Auth Proxy for Product Advertising API
 
 LIB_DEPENDS=	libapreq2.so:www/libapreq2
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_LIB=	${LOCALBASE}/lib -lcrypto
 

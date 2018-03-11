@@ -10,7 +10,7 @@ COMMENT=	Apache module to support atomic deploys
 
 LICENSE=	MIT
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 USE_GITHUB=	yes

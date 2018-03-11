@@ -82,7 +82,7 @@ ODBC_DESC=	Install ODBC support for PHP
 PGSQL_DESC=	Install PostgreSQL support for PHP
 SQLITE_DESC=	Install SQLite support for PHP
 
-APACHE_VARS=	USE_APACHE_RUN=22+
+APACHE_USES=	apache:run,2.2+
 DOCS_VARS=	SUB_LIST+=HASHMARK=
 DOCS_VARS_OFF=	SUB_LIST+=HASHMARK=\#
 MSSQL_VARS=	USE_PHP+=mssql

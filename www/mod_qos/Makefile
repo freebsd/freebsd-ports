@@ -12,7 +12,7 @@ COMMENT=	QoS for Apache
 
 LICENSE=	GPLv2+
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 AP_GENPLIST=	yes
 AP_FAST_BUILD=	yes
 

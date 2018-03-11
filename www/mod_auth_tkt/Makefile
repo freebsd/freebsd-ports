@@ -10,10 +10,9 @@ MASTER_SITES=	LOCAL/kuriyama \
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Lightweight single-sign-on authentication module for apache
 
-USES=		shebangfix
+USES=		apache:2.2+ shebangfix
 SHEBANG_FILES=	../cgi/login.cgi \
 		../cgi/logout.cgi
-USE_APACHE=	22+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PATCH_STRIP=	-p1

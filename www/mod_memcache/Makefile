@@ -13,7 +13,7 @@ COMMENT=	Apache 2.2.x module to manage apr_memcache connections
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 USE_GITHUB=	yes
 GH_ACCOUNT=	joshrotenberg
 GH_PROJECT=	modmemcache

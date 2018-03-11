@@ -17,13 +17,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jasig
-USES=		ssl
+USES=		apache:2.2+ ssl
 
 HAS_CONFIGURE=	yes
 # configure requires LDFLAGS to find libpcre
 LDFLAGS+=	-L${AP_LIB}
 
-USE_APACHE=	22+
 AP_LIB=		${LOCALBASE}/lib
 AP_EXTRAS=	-lpcre -lssl -lcrypto
 

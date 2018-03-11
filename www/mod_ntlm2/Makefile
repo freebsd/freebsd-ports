@@ -12,8 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	NTLM authentication module for the Apache2 webserver
 
-USES=		samba:build
-USE_APACHE=	22
+USES=		apache:2.2 samba:build
 MAKE_ENV=	APXS=${APXS}
 
 do-install:

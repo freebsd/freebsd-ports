@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication
 
-USE_APACHE=	22+
+USES=		apache:2.2+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	*.html

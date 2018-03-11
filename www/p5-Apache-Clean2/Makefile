@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2 \
 		p5-HTML-Clean>=0.8:www/p5-HTML-Clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		apache:2.2+ perl5
 USE_PERL5=	configure
-USE_APACHE=	22+
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 

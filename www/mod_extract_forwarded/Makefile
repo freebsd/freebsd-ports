@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	YOSHFUJI
 YOSHFUJI_DESC=	yoshfuji patch (support IPv6 addr in config, etc)
 #OPTIONS_DEFAULT=	YOSHFUJI
 
-USE_APACHE=	22
+USES=		apache:2.2
 WRKSRC=		${WRKDIR}/extract_forwarded
 PORTDOCS=	INSTALL README
 PATCH_STRIP=	-p1

@@ -17,8 +17,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apache2-apxs=${APXS} \
 		--with-expat=${LOCALBASE} \
 		--enable-perl-glue --with-perl=${PERL}
-USES=		libtool perl5
-USE_APACHE=	22+
+USES=		apache:2.2+ libtool perl5
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 

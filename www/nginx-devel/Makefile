@@ -885,9 +885,8 @@ LIB_DEPENDS+=	libapr-1.so:devel/apr1 \
 		libluajit-5.1.so:lang/luajit \
 		libpcre.so:devel/pcre \
 		libyajl.so:devel/yajl
-USE_APACHE=	22+
 USE_GNOME+=	libxml2
-USES+=		pkgconfig shebangfix
+USES+=		apache:2.2+ pkgconfig shebangfix
 MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION:S/RC/rc/}/:modsecurity
 DISTFILES+=	modsecurity-${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
