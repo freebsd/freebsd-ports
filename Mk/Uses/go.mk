@@ -62,6 +62,12 @@ PLIST_SUB+=	GO_LIBDIR=${GO_LIBDIR} \
 		GO_SRCDIR=${GO_SRCDIR} \
 		GO_PKGNAME=${GO_PKGNAME}
 
+_USES_POST+=	go
+.endif # !defined(_INCLUDE_USES_GO_MK)
+
+.if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_GO_POST_MK)
+_INCLUDE_USES_GO_POST_MK=	yes
+
 .if !target(post-extract)
 post-extract:
 	@${MKDIR} ${GO_WRKSRC:H}
@@ -90,4 +96,4 @@ do-install:
 .endfor
 .endif
 
-.endif
+.endif # defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_GO_POST_MK)
