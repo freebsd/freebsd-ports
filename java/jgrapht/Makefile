@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/JGraphT/Version%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java package for mathematical graph-theory objects and algorithms
 
+BROKEN=		fails to build
+
 USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.xml *.java
 USE_JAVA=	yes
