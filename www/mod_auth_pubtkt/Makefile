@@ -18,7 +18,7 @@ SRC_FILE=	src/mod_auth_pubtkt.c
 
 .include <bsd.port.pre.mk>
 
-.if ${APACHE_VERSION} > 22
+.if ${APACHE_VERSION} > 2.2
 AP_EXTRAS=	-DAPACHE24
 .else
 AP_EXTRAS=	-DAPACHE22

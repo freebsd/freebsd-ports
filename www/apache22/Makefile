@@ -31,8 +31,7 @@ CONFLICTS_INSTALL=	caudium14-1.* \
 DEPRECATED=		Upstream propose EoL of apache 2.2.x during the next 12 months
 EXPIRATION_DATE=	2017-07-01
 
-USE_APACHE=	common22
-USES=		autoreconf bdb cpe iconv libtool perl5 tar:bzip2
+USES=		apache:server,2.2 autoreconf bdb cpe iconv libtool perl5 tar:bzip2
 
 USE_PERL5=	run
 USE_RC_SUBR=	apache22 htcacheclean

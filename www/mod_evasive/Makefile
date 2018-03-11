@@ -30,7 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/mail|/usr/bin/mail|g" \
 		${WRKSRC}/mod_evasive.c ${WRKSRC}/mod_evasive20.c \
 		${WRKSRC}/mod_evasiveNSAPI.c
-.if ${APACHE_VERSION:M24}
+.if ${APACHE_VERSION:M2.4}
 	@${REINPLACE_CMD} -e 's/remote_ip/client_ip/g' ${WRKSRC}/mod_evasive20.c
 .endif
 

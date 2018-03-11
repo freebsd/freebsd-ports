@@ -22,7 +22,7 @@ AP_GENPLIST=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${APACHE_VERSION} == 24
+.if ${APACHE_VERSION} == 2.4
 EXTRA_PATCHES=	${FILESDIR}/apache24-compat-mod__scgi.c
 .endif
 
