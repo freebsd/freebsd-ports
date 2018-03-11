@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	netperfmeter
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.6
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.uni-due.de/~be0001/netperfmeter/download/
+MASTER_SITES=	https://www.uni-due.de/~be0001/netperfmeter/download/
 
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	Network Performance Meter
@@ -12,8 +12,12 @@ COMMENT=	Network Performance Meter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-USES=		gmake shebangfix
-SHEBANG_FILES=	src/pdfmetadata
+USES=		cmake shebangfix
+CMAKE_ON=	BUILD_PLOT_PROGRAMS
+CMAKE_OFF=	BUILD_TEST_PROGRAMS WITH_NEAT
+SHEBANG_FILES=	src/pdfembedfonts src/pdfmetadata src/plot-netperfmeter-results
+
+post-patch:
+	@${REINPLACE_CMD} 's,share/man,man,' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
