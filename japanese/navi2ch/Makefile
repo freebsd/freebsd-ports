@@ -35,7 +35,7 @@ LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 
 OPTIONS_DEFINE=	DOCS X11
 OPTIONS_DEFAULT=X11
-X11_RUN_DEPENDS=${LOCALBASE}/share/mona/monak12.pcf.gz:japanese/font-mona
+X11_RUN_DEPENDS=${LOCALBASE}/share/fonts/mona/monak12.pcf.gz:japanese/font-mona
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
