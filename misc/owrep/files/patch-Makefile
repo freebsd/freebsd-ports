@@ -1,6 +1,6 @@
---- Makefile.orig	2017-05-30 23:54:30 UTC
+--- Makefile.orig	2018-03-04 22:14:18 UTC
 +++ Makefile
-@@ -5,10 +5,10 @@
+@@ -5,11 +5,6 @@
  #
  CC?=		clang
  #
@@ -8,14 +8,11 @@
 -INSTALL_MAN1=	/usr/local/man/man1
 -INSTALL_MAN5=	/usr/local/man/man5
 -INSTALL_ETC=	/usr/local/etc
-+INSTALL_TO =	$(DESTDIR)/$(PREFIX)/bin
-+INSTALL_MAN1=	$(DESTDIR)/$(PREFIX)/man/man1
-+INSTALL_MAN5=	$(DESTDIR)/$(PREFIX)/man/man5
-+INSTALL_ETC=	$(DESTDIR)/$(PREFIX)/etc
- #
+-#
  PRODUCT =	owrep
  #
-@@ -38,7 +38,7 @@ CFLAGS+=	-O2 $(COMFLAGS) -I /usr/local/i
+ SRC =		owrep.c config.c extract.c lookup.c massage.c netio.c output.c
+@@ -38,20 +33,11 @@ CFLAGS+=	-O2 $(COMFLAGS) -I /usr/local/i
  all:		$(PRODUCT)
  #
  $(PRODUCT):	$(OBJ)
@@ -24,18 +21,16 @@
  #
  depend:
  		mkdep $(CFLAGS) $(SRC)
-@@ -46,10 +46,10 @@ depend:
- install:	$(PRODUCT)
- 		gzip -f -k $(MAN1)
- 		gzip -f -k $(MAN5)
+ #
+-install:	$(PRODUCT)
+-		gzip -f -k $(MAN1)
+-		gzip -f -k $(MAN5)
 -		install -s -g wheel -o root $(PRODUCT) $(INSTALL_TO)
 -		install -g wheel -o root $(MAN1).gz $(INSTALL_MAN1)
 -		install -g wheel -o root $(MAN5).gz $(INSTALL_MAN5)
 -		install -g wheel -o root $(CONF) $(INSTALL_ETC)
-+		install -s $(PRODUCT) $(INSTALL_TO)
-+		install $(MAN1).gz $(INSTALL_MAN1)
-+		install $(MAN5).gz $(INSTALL_MAN5)
-+		install $(CONF) $(INSTALL_ETC)
- 		rm -f $(MAN1).gz $(MAN5).gz
- #
+-		rm -f $(MAN1).gz $(MAN5).gz
+-#
  distfile:
+ 		@mkdir -p $(DISTNAME)
+ 		@cp -a $(SRC) $(HDR) $(DISTNAME)
