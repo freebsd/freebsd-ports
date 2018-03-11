@@ -13,6 +13,9 @@ COMMENT=	Sans-serif and monospaced Web Font for small screens
 
 LICENSE=	OFL11
 
+DEPRECATED=	Unused with no apparent use case
+EXPIRATION_DATE=	2018-03-25
+
 USES=		zip
 NO_ARCH=	yes
 NO_BUILD=	yes
