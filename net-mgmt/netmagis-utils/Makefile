@@ -6,6 +6,8 @@ PKGNAMESUFFIX=	-utils
 
 COMMENT=	Netmagis command-line utilities
 
+LICENSE=	CECILL-B
+
 RUN_DEPENDS=	netmagis-config:net-mgmt/netmagis-common
 
 MASTERDIR=	${.CURDIR}/../netmagis-common

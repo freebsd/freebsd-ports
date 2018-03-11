@@ -6,6 +6,8 @@ PKGNAMESUFFIX=	-www
 
 COMMENT=	Netmagis web module
 
+LICENSE=	CECILL-B
+
 RUN_DEPENDS=	netmagis-config:net-mgmt/netmagis-common \
 		dot:graphics/graphviz \
 		pwgen:sysutils/pwgen \
