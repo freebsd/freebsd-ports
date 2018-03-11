@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 DIST_SUBDIR=	spooles
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SParse Object Oriented Linear Equations Solver
 
 LICENSE=	PD

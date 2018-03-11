@@ -12,7 +12,7 @@ DISTFILES+=		manpages-${PORTVERSION}.tgz
 .endif
 DIST_SUBDIR=	lapack
 
-MAINTAINER?=	maho@FreeBSD.org
+MAINTAINER?=	fortran@FreeBSD.org
 COMMENT?=	A library of Fortran 77 subroutines for linear algebra
 
 LICENSE=	BSD3CLAUSE

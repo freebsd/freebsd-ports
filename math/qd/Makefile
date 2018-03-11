@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.berkeley.edu/~yozo/software/
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	Double-Double and Quad-Double Arithmetic
 
 GNU_CONFIGURE=	yes

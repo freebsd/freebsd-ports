@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	Fortran-to-C converter and its run-time libraries
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip

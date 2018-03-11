@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
 
 LICENSE=	GPLv2 LGPL21

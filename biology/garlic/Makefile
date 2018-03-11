@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.zucic.org/sources/garlic-${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Molecular viewer, editor, and visualization program
 
 USES=		gmake
