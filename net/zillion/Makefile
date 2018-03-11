@@ -16,7 +16,7 @@ LICENSE_TEXT=	License of this software is declared as 'BSD license' in ZillionCl
 		of the source archive. But it is not clear which versions of the BSD license (2, \
 		3 or 4 clause) it is. There is also a reference to a LICENSE file which is \
 		supposed to be included in the source archive, but it is in fact not included.
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		gnustep
 USE_GNUSTEP=	back build
