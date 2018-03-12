@@ -1,0 +1,4 @@
+Ruby::Enum provides enum-like behavior for Ruby. Enums can be defined and
+accessed either as constants or class methods.
+
+WWW: https://github.com/dblock/ruby-enum
