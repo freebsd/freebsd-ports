@@ -3,7 +3,7 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.10.11
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
 		ftp://ftp.centerim.org/mobshots/
@@ -12,18 +12,19 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	frank@altpeter.de
 COMMENT=	Text mode menu- and window-driven IM interface
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		iconv gmake ncurses perl5 pkgconfig python:run shebangfix ssl
+USES=		iconv gmake ncurses perl5 pkgconfig python:2.7,run shebangfix ssl
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --with-openssl
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFLICTS=	centericq-[0-9]* centerim-[0-9]*
 
-SHEBANG_FILES=	misc/cimformathistory misc/cimextracthistory.pl
+SHEBANG_FILES=	misc/cimformathistory misc/cimextracthistory.pl misc/CenterIMLog2HTML.py
 SHEBANG_LANG=	gawk
 gawk_OLD_CMD=	/bin/gawk
 gawk_CMD=	/usr/bin/awk
@@ -69,6 +70,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/)
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/)
 
 .include <bsd.port.mk>
