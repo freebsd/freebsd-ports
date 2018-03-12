@@ -5851,6 +5851,7 @@
     SUBDIR += rubygem-tty-command
     SUBDIR += rubygem-tty-cursor
     SUBDIR += rubygem-tty-font
+    SUBDIR += rubygem-tty-markdown
     SUBDIR += rubygem-tty-platform
     SUBDIR += rubygem-tty-screen
     SUBDIR += rubygem-tty-tree
