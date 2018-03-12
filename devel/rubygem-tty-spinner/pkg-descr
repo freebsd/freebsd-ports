@@ -1,0 +1,5 @@
+TTY::Spinner provides independent spinner component for TTY toolkit. It supports
+a terminal spinner for tasks that have non-deterministic time frame.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-spinner
