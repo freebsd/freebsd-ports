@@ -1,0 +1,6 @@
+TTY is a toolbox for developing beautiful command line clients in Ruby with a
+fluid interface for gathering input, querying terminal properties and displaying
+information.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty
