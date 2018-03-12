@@ -1342,7 +1342,6 @@
     SUBDIR += libdatrie
     SUBDIR += libdbusmenu
     SUBDIR += libdbusmenu-qt
-    SUBDIR += libdbusmenu-qt5
     SUBDIR += libddoc
     SUBDIR += libdevq
     SUBDIR += libdfui
