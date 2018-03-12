@@ -1,0 +1,13 @@
+Equatable allows ruby objects to implement equality comparison and inspection
+methods.
+
+By including this module, a class indicates that its instances have explicit
+general contracts for hash, == and eql? methods. Specifically eql? contract
+requires that it implements an equivalence relation. By default each instance of
+the class is equal only to itself. This is a right behaviour when you have
+distinct objects. Howerver, it is the responsibility of any class to clearly
+define their equality. Failure to do so may prevent instances to behave as
+expected when for instance Array#uniq is invoked or when they are used as Hash
+keys.
+
+WWW: https://github.com/piotrmurach/equatable

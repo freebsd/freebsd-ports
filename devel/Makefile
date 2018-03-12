@@ -5407,6 +5407,7 @@
     SUBDIR += rubygem-elif
     SUBDIR += rubygem-enumerize
     SUBDIR += rubygem-equalizer
+    SUBDIR += rubygem-equatable
     SUBDIR += rubygem-errand
     SUBDIR += rubygem-et-orbi
     SUBDIR += rubygem-eventmachine
