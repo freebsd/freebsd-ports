@@ -33,6 +33,7 @@
 %%SITE_PERL%%/Test2/Event/Skip.pm
 %%SITE_PERL%%/Test2/Event/Subtest.pm
 %%SITE_PERL%%/Test2/Event/TAP/Version.pm
+%%SITE_PERL%%/Test2/Event/V2.pm
 %%SITE_PERL%%/Test2/Event/Waiting.pm
 %%SITE_PERL%%/Test2/EventFacet.pm
 %%SITE_PERL%%/Test2/EventFacet/About.pm
@@ -84,6 +85,7 @@
 %%PERL5_MAN3%%/Test2::Event::Skip.3.gz
 %%PERL5_MAN3%%/Test2::Event::Subtest.3.gz
 %%PERL5_MAN3%%/Test2::Event::TAP::Version.3.gz
+%%PERL5_MAN3%%/Test2::Event::V2.3.gz
 %%PERL5_MAN3%%/Test2::Event::Waiting.3.gz
 %%PERL5_MAN3%%/Test2::EventFacet.3.gz
 %%PERL5_MAN3%%/Test2::EventFacet::About.3.gz
@@ -111,6 +113,7 @@
 %%PERL5_MAN3%%/Test2::Transition.3.gz
 %%PERL5_MAN3%%/Test2::Util.3.gz
 %%PERL5_MAN3%%/Test2::Util::ExternalMeta.3.gz
+%%PERL5_MAN3%%/Test2::Util::Facets2Legacy.3.gz
 %%PERL5_MAN3%%/Test2::Util::HashBase.3.gz
 %%PERL5_MAN3%%/Test2::Util::Trace.3.gz
 %%PERL5_MAN3%%/Test::Builder.3.gz
