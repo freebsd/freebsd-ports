@@ -10,6 +10,8 @@ COMMENT=	Proxy for using WebDriver clients with Gecko-based browsers
 
 LICENSE=	MPL20
 
+BROKEN=		fails to build
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
