@@ -1,0 +1,5 @@
+A suite of tools designed to build attractive command line interfaces
+('CLIs'). Includes tools for drawing rules, boxes, trees, and
+'Unicode' symbols with 'ASCII' alternatives.
+
+WWW: https://cran.r-project.org/web/packages/cli/
