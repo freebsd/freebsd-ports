@@ -11,6 +11,7 @@ COMMENT=	gem5 Simulator System
 BUILD_DEPENDS=	swig3.0:devel/swig30 \
 		scons:devel/scons
 
+BROKEN=			fails to build
 BROKEN_armv6=		fails to link: undefined reference to HDLcd::BUS_OPTIONS_RESETV
 BROKEN_armv7=		fails to link: undefined reference to HDLcd::BUS_OPTIONS_RESETV
 BROKEN_i386=		does not build
