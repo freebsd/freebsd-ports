@@ -43,3 +43,4 @@ etc/vsftpd.conf.dist
 %%PORTDOCS%%%%DOCSDIR%%/SPEED
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/TUNING
+@dir /var/ftp
