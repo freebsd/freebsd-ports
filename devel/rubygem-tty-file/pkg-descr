@@ -1,0 +1,8 @@
+TTY::File supports file and directory manipulation utility methods.
+
+Though Ruby's File and FileUtils libraries provide very robust apis for dealing
+with files, this library aims to provide a level of abstraction that is much
+more convenient, with useful logging capabilities.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-file
