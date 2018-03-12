@@ -5850,6 +5850,7 @@
     SUBDIR += rubygem-tty-cursor
     SUBDIR += rubygem-tty-font
     SUBDIR += rubygem-tty-platform
+    SUBDIR += rubygem-tty-screen
     SUBDIR += rubygem-turn
     SUBDIR += rubygem-typed-array
     SUBDIR += rubygem-tzinfo
