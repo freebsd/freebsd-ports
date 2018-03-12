@@ -104,6 +104,7 @@ share/osinfo/os/debian.org/debian-7.xml
 share/osinfo/os/debian.org/debian-8.xml
 share/osinfo/os/debian.org/debian-9.xml                                                                                                                                                           
 share/osinfo/os/debian.org/debian-testing.xml
+share/osinfo/os/endlessos.com/eos-3.3.xml                                                                                                                                                         
 share/osinfo/os/fedoraproject.org/fedora-1.xml
 share/osinfo/os/fedoraproject.org/fedora-10.xml
 share/osinfo/os/fedoraproject.org/fedora-11.xml
@@ -123,6 +124,7 @@ share/osinfo/os/fedoraproject.org/fedora-23.xml
 share/osinfo/os/fedoraproject.org/fedora-24.xml
 share/osinfo/os/fedoraproject.org/fedora-25.xml
 share/osinfo/os/fedoraproject.org/fedora-26.xml                                                                                                                                                   
+share/osinfo/os/fedoraproject.org/fedora-27.xml                                                                                                                                                   
 share/osinfo/os/fedoraproject.org/fedora-3.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
@@ -136,6 +138,7 @@ share/osinfo/os/freebsd.org/freebsd-10.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.1.xml
 share/osinfo/os/freebsd.org/freebsd-10.2.xml
 share/osinfo/os/freebsd.org/freebsd-10.3.xml
+share/osinfo/os/freebsd.org/freebsd-10.4.xml                                                                                                                                                      
 share/osinfo/os/freebsd.org/freebsd-11.0.xml
 share/osinfo/os/freebsd.org/freebsd-11.1.xml                                                                                                                                                      
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
@@ -182,6 +185,7 @@ share/osinfo/os/freebsd.org/freebsd-9.0.xml
 share/osinfo/os/freebsd.org/freebsd-9.1.xml
 share/osinfo/os/freebsd.org/freebsd-9.2.xml
 share/osinfo/os/freebsd.org/freebsd-9.3.xml
+share/osinfo/os/freedos.org/freedos-1.2.xml                                                                                                                                                       
 share/osinfo/os/gnome.org/gnome-3.6.xml
 share/osinfo/os/gnome.org/gnome-3.8.xml
 share/osinfo/os/gnome.org/gnome-continuous-3.10.xml
@@ -232,6 +236,7 @@ share/osinfo/os/microsoft.com/win-2.1.xml
 share/osinfo/os/microsoft.com/win-2k.xml
 share/osinfo/os/microsoft.com/win-2k12.xml
 share/osinfo/os/microsoft.com/win-2k12r2.xml
+share/osinfo/os/microsoft.com/win-2k16.xml                                                                                                                                                        
 share/osinfo/os/microsoft.com/win-2k3.xml
 share/osinfo/os/microsoft.com/win-2k3r2.xml
 share/osinfo/os/microsoft.com/win-2k8.xml
@@ -263,6 +268,11 @@ share/osinfo/os/netbsd.org/netbsd-3.0.xml
 share/osinfo/os/netbsd.org/netbsd-4.0.xml
 share/osinfo/os/netbsd.org/netbsd-5.0.xml
 share/osinfo/os/netbsd.org/netbsd-5.1.xml
+share/osinfo/os/netbsd.org/netbsd-6.0.xml                                                                                                                                                         
+share/osinfo/os/netbsd.org/netbsd-6.1.xml                                                                                                                                                         
+share/osinfo/os/netbsd.org/netbsd-7.0.xml                                                                                                                                                         
+share/osinfo/os/netbsd.org/netbsd-7.1.1.xml                                                                                                                                                       
+share/osinfo/os/netbsd.org/netbsd-7.1.xml                                                                                                                                                         
 share/osinfo/os/novell.com/netware-4.xml
 share/osinfo/os/novell.com/netware-5.xml
 share/osinfo/os/novell.com/netware-6.xml
@@ -281,6 +291,10 @@ share/osinfo/os/openbsd.org/openbsd-5.5.xml
 share/osinfo/os/openbsd.org/openbsd-5.6.xml
 share/osinfo/os/openbsd.org/openbsd-5.7.xml
 share/osinfo/os/openbsd.org/openbsd-5.8.xml
+share/osinfo/os/openbsd.org/openbsd-5.9.xml                                                                                                                                                       
+share/osinfo/os/openbsd.org/openbsd-6.0.xml                                                                                                                                                       
+share/osinfo/os/openbsd.org/openbsd-6.1.xml                                                                                                                                                       
+share/osinfo/os/openbsd.org/openbsd-6.2.xml                                                                                                                                                       
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
 share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -295,6 +309,7 @@ share/osinfo/os/opensuse.org/opensuse-13.1.xml
 share/osinfo/os/opensuse.org/opensuse-13.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.2.xml
+share/osinfo/os/opensuse.org/opensuse-42.3.xml                                                                                                                                                    
 share/osinfo/os/opensuse.org/opensuse-factory.xml
 share/osinfo/os/opensuse.org/opensuse-tumbleweed.xml
 share/osinfo/os/opensuse.org/opensuse-unknown.xml
@@ -392,6 +407,7 @@ share/osinfo/os/suse.com/sled-11.4.xml
 share/osinfo/os/suse.com/sled-11.xml
 share/osinfo/os/suse.com/sled-12.1.xml
 share/osinfo/os/suse.com/sled-12.2.xml
+share/osinfo/os/suse.com/sled-12.3.xml                                                                                                                                                            
 share/osinfo/os/suse.com/sled-12.xml
 share/osinfo/os/suse.com/sled-9.xml
 share/osinfo/os/suse.com/sles-10.1.xml
@@ -406,8 +422,10 @@ share/osinfo/os/suse.com/sles-11.4.xml
 share/osinfo/os/suse.com/sles-11.xml
 share/osinfo/os/suse.com/sles-12.1.xml
 share/osinfo/os/suse.com/sles-12.2.xml
+share/osinfo/os/suse.com/sles-12.3.xml                                                                                                                                                            
 share/osinfo/os/suse.com/sles-12.xml
 share/osinfo/os/suse.com/sles-9.xml
+share/osinfo/os/system76.com/popos-17.10.xml                                                                                                                                                      
 share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-11.04.xml
@@ -423,6 +441,7 @@ share/osinfo/os/ubuntu.com/ubuntu-15.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-16.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-16.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-17.04.xml 
+share/osinfo/os/ubuntu.com/ubuntu-17.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
