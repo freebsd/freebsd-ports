@@ -1,0 +1,4 @@
+The Elasticsearch::DSL library provides a Ruby API for the Elasticsearch Query
+DSL.
+
+WWW: https://github.com/elastic/elasticsearch-ruby/tree/master/elasticsearch-dsl
