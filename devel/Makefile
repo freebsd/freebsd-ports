@@ -1701,6 +1701,7 @@
     SUBDIR += mercator
     SUBDIR += mercurial
     SUBDIR += mercurialeclipse
+    SUBDIR += mergify
     SUBDIR += meson
     SUBDIR += mico
     SUBDIR += mime
