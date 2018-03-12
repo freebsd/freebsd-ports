@@ -5600,6 +5600,7 @@
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-native-package-installer
     SUBDIR += rubygem-naught
+    SUBDIR += rubygem-necromancer
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-nenv
     SUBDIR += rubygem-nesty

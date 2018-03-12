@@ -1,0 +1,4 @@
+Necromancer provides independent type conversion component for TTY toolkit. It
+supports conversion from one object type to another with a bit of black magic.
+
+WWW: https://github.com/piotrmurach/necromancer
