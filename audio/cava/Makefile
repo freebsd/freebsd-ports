@@ -4,7 +4,7 @@ PORTNAME=	cava
 DISTVERSION=	0.6.0
 CATEGORIES=	audio
 
-MAINTAINER=	omar.polo@protonmail.com
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Console-based Audio Visualizer for ALSA, MPD, PulseAudio, and sndio
 
 LICENSE=	MIT
