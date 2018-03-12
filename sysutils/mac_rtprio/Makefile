@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	amutu@amutu.com
-COMMENT=	Simple MAC framework policy to manage access for setting realtime priorities by selected GID
+COMMENT=	MAC policy to manage access for setting realtime priorities by GID
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
