@@ -1,0 +1,29 @@
+--- test/CMakeLists.txt.orig	2018-02-16 23:52:29 UTC
++++ test/CMakeLists.txt
+@@ -8,12 +8,12 @@
+ 
+ cmake_minimum_required(VERSION 3.1)
+ 
+-if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+-    project(xtensor-test)
++#if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
++    #project(xtensor-test)
+ 
+-    find_package(xtensor REQUIRED CONFIG)
+-    set(XTENSOR_INCLUDE_DIR ${xtensor_INCLUDE_DIRS})
+-endif ()
++    #find_package(xtensor REQUIRED CONFIG)
++    include_directories(staged-include)
++#endif ()
+ 
+ message(STATUS "Forcing tests build type to Release")
+ set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
+@@ -156,7 +156,7 @@ add_executable(${XTENSOR_TARGET} ${XTENS
+ if(DOWNLOAD_GTEST OR GTEST_SRC_DIR)
+     add_dependencies(${XTENSOR_TARGET} gtest_main)
+ endif()
+-target_link_libraries(${XTENSOR_TARGET} xtensor ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(${XTENSOR_TARGET} ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+ 
+ add_custom_target(xtest COMMAND test_xtensor DEPENDS ${XTENSOR_TARGET})
+ 

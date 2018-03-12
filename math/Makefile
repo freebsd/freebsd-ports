@@ -773,6 +773,7 @@
     SUBDIR += xplot
     SUBDIR += xppaut
     SUBDIR += xspread
+    SUBDIR += xtensor
     SUBDIR += yacas
     SUBDIR += z3
     SUBDIR += zimpl
