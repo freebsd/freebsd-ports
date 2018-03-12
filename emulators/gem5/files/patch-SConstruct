@@ -1,6 +1,6 @@
---- SConstruct.orig	2015-04-21 15:32:43 UTC
-+++ SConstruct
-@@ -534,6 +534,9 @@ Export('MakeAction')
+--- SConstruct.orig	2015-04-21 11:32:43.000000000 -0400
++++ SConstruct	2018-03-11 21:17:31.106873000 -0400
+@@ -534,6 +534,9 @@
  main['LTO_CCFLAGS'] = []
  main['LTO_LDFLAGS'] = []
  
@@ -10,7 +10,7 @@
  # According to the readme, tcmalloc works best if the compiler doesn't
  # assume that we're using the builtin malloc and friends. These flags
  # are compiler-specific, so we need to set them after we detect which
-@@ -785,13 +788,8 @@ if main['GCC'] and compareVersions(gcc_v
+@@ -785,13 +788,8 @@
  swig_flags=Split('-c++ -python -modern -templatereduce $_CPPINCFLAGS')
  main.Append(SWIGFLAGS=swig_flags)
  
@@ -26,3 +26,14 @@
  main['TIMEOUT'] =  timeout_version and \
      compareVersions(timeout_version[-1], '8.13') >= 0
  
+@@ -922,8 +920,8 @@
+     # version of python, see above for instructions on how to invoke
+     # scons with the appropriate PATH set.
+     #
+-    # First we check if python2-config exists, else we use python-config
+-    python_config = readCommand(['which', 'python2-config'],
++    # First we check if python2.7-config exists, else we use python-config
++    python_config = readCommand(['which', 'python2.7-config'],
+                                 exception='').strip()
+     if not os.path.exists(python_config):
+         python_config = readCommand(['which', 'python-config'],
