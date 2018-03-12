@@ -30,7 +30,7 @@ OPTIONS_GROUP_REPLAYGAIN=	FLAC MP3 VORBIS WAVPACK
 OPTIONS_SUB=		yes
 
 BPM_DESC=		Beats per minute
-BPM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aubio>=0.4.5:audio/py-aubio@${FLAVOR}
+BPM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aubio>=0.4.5:audio/py-aubio@${PY_FLAVOR}
 
 MOODBAR_DESC=		Generate moodbar files
 MOODBAR_RUN_DEPENDS=	moodbar:audio/moodbar
