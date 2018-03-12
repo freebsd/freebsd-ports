@@ -1,0 +1,7 @@
+Mergify is a tool to merge changes from a branch one commit at a time.
+This is most useful when merging changes to a highly diverged fork
+of a project.
+
+It only supports Git.
+
+WWW: https://github.com/brooksdavis/mergify
