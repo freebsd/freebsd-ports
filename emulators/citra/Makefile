@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20180309
+PORTVERSION=	s20180311
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	33a0e87a
+GH_TAGNAME=	6c63bb11
 GH_TUPLE=	citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:d1d4705:dynarmic/externals/dynarmic \
 		benhoyt:inih:r40:inih/externals/inih/inih \
@@ -56,12 +56,14 @@ CURL_CMAKE_BOOL=ENABLE_WEB_SERVICE USE_SYSTEM_CURL
 
 SDL_CMAKE_BOOL=	ENABLE_SDL2
 SDL_PLIST_FILES=bin/${PORTNAME} \
+		bin/${PORTNAME}-room \
 		man/man6/${PORTNAME}.6.gz
 
 QT5_USES=	desktop-file-utils shared-mime-info
 QT5_USE=	QT5=qmake_build,buildtools_build,concurrent_build,core,gui,opengl,widgets
 QT5_CMAKE_BOOL=	ENABLE_QT
 QT5_PLIST_FILES=bin/${PORTNAME}-qt \
+		"@comment bin/${PORTNAME}-room" \
 		man/man6/${PORTNAME}-qt.6.gz \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
