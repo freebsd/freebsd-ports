@@ -1,3 +1,5 @@
+etc/xdg/kxmlrpcclient.categories
+etc/xdg/kxmlrpcclient.renamecategories
 include/KF5/KXmlRpcClient/KXmlRpcClient/Client
 include/KF5/KXmlRpcClient/kxmlrpcclient/client.h
 include/KF5/KXmlRpcClient/kxmlrpcclient/kxmlrpcclient_export.h

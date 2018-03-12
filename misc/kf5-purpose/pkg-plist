@@ -1,3 +1,4 @@
+etc/xdg/purpose.categories
 include/KF5/purpose/Purpose/AlternativesModel
 include/KF5/purpose/Purpose/Configuration
 include/KF5/purpose/Purpose/Job
@@ -134,7 +135,16 @@ share/locale/es/LC_MESSAGES/purpose_pastebin.mo
 share/locale/es/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/es/LC_MESSAGES/purpose_saveas.mo
 share/locale/es/LC_MESSAGES/purpose_youtube.mo
+share/locale/fi/LC_MESSAGES/libpurpose_quick.mo
+share/locale/fi/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/fi/LC_MESSAGES/purpose_email.mo
+share/locale/fi/LC_MESSAGES/purpose_imgur.mo
+share/locale/fi/LC_MESSAGES/purpose_ktp-sendfile.mo
+share/locale/fi/LC_MESSAGES/purpose_nextcloud.mo
+share/locale/fi/LC_MESSAGES/purpose_pastebin.mo
 share/locale/fi/LC_MESSAGES/purpose_reviewboard.mo
+share/locale/fi/LC_MESSAGES/purpose_saveas.mo
+share/locale/fi/LC_MESSAGES/purpose_youtube.mo
 share/locale/fr/LC_MESSAGES/libpurpose_quick.mo
 share/locale/fr/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/fr/LC_MESSAGES/purpose_email.mo
@@ -191,7 +201,15 @@ share/locale/nl/LC_MESSAGES/purpose_pastebin.mo
 share/locale/nl/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/nl/LC_MESSAGES/purpose_saveas.mo
 share/locale/nl/LC_MESSAGES/purpose_youtube.mo
+share/locale/nn/LC_MESSAGES/libpurpose_quick.mo
+share/locale/nn/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/nn/LC_MESSAGES/purpose_email.mo
+share/locale/nn/LC_MESSAGES/purpose_imgur.mo
 share/locale/nn/LC_MESSAGES/purpose_ktp-sendfile.mo
+share/locale/nn/LC_MESSAGES/purpose_nextcloud.mo
+share/locale/nn/LC_MESSAGES/purpose_pastebin.mo
+share/locale/nn/LC_MESSAGES/purpose_saveas.mo
+share/locale/nn/LC_MESSAGES/purpose_youtube.mo
 share/locale/pl/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pl/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/pl/LC_MESSAGES/purpose_email.mo
