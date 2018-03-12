@@ -1,0 +1,6 @@
+TTY::Which provides cross-platform executables search component for TTY toolkit.
+It supports platform independent implementation of Unix which utility that
+searches for executable file in the path variable.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-which

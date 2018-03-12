@@ -5852,6 +5852,7 @@
     SUBDIR += rubygem-tty-platform
     SUBDIR += rubygem-tty-screen
     SUBDIR += rubygem-tty-tree
+    SUBDIR += rubygem-tty-which
     SUBDIR += rubygem-turn
     SUBDIR += rubygem-typed-array
     SUBDIR += rubygem-tzinfo
