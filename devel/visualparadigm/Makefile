@@ -7,7 +7,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	https://eu5.visual-paradigm.com/visual-paradigm/vpce${PORTVERSION:R}/${PORTVERSION:E}/
 DISTNAME=	Visual_Paradigm_CE_${PORTVERSION:C/\./_/g}_Unix_InstallFree
 
-MAINTAINER=	fernando.apesteguia@gmail.com
+MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Visual modeling tool for all kinds of UML diagrams
 
 LICENSE=	VPCEL

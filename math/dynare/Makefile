@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 
-MAINTAINER=	fernando.apesteguia@gmail.com
+MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Software platform for handling a wide class of economic models
 
 LICENSE=	GPLv3
