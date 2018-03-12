@@ -13,6 +13,7 @@ COMMENT=	Ruby implementation of AES Key Wrap
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
 
