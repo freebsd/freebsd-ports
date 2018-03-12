@@ -1,6 +1,26 @@
 FreeBSD 10.3 lacks __cxa_thread_atexit, so revert
 https://github.com/RPCS3/rpcs3/commit/c1450ad61627
 
+--- rpcs3/Emu/VFS.cpp.orig	2018-03-12 20:29:35 UTC
++++ rpcs3/Emu/VFS.cpp
+@@ -18,7 +18,7 @@ bool vfs::mount(const std::string& dev_name, const std
+ {
+ 	const auto table = fxm::get_always<vfs_manager>();
+ 
+-	safe_writer_lock lock(table->mutex);
++	writer_lock lock(table->mutex);
+ 
+ 	return table->mounted.emplace(dev_name, path).second;
+ }
+@@ -27,7 +27,7 @@ std::string vfs::get(const std::string& vpath, const s
+ {
+ 	const auto table = fxm::get_always<vfs_manager>();
+ 
+-	safe_reader_lock lock(table->mutex);
++	reader_lock lock(table->mutex);
+ 
+ 	std::smatch match;
+ 
 --- Utilities/Log.cpp.orig	2017-09-19 12:07:07 UTC
 +++ Utilities/Log.cpp
 @@ -255,7 +255,7 @@ void logs::message::broadcast(const char* fmt, const f
