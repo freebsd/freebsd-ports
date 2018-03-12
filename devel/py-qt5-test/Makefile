@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	test
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 
 MAINTAINER=	kde@FreeBSD.org

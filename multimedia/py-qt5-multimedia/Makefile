@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	multimedia
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia devel python
 
 MAINTAINER=	kde@FreeBSD.org
