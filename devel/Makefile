@@ -5855,6 +5855,7 @@
     SUBDIR += rubygem-tty-pager
     SUBDIR += rubygem-tty-platform
     SUBDIR += rubygem-tty-progressbar
+    SUBDIR += rubygem-tty-prompt
     SUBDIR += rubygem-tty-reader
     SUBDIR += rubygem-tty-screen
     SUBDIR += rubygem-tty-spinner

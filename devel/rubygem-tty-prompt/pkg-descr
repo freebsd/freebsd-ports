@@ -1,0 +1,6 @@
+TTY::Prompt provides independent prompt component for TTY toolkit. It supports a
+beautiful and powerful interactive command line prompt with a robust API for
+getting and validating complex inputs.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-prompt
