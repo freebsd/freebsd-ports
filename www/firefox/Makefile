@@ -3,11 +3,11 @@
 
 PORTNAME=	firefox
 DISTVERSION=	59.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	https://hg.mozilla.org/releases/mozilla-release/archive/
-DISTNAME=	${MASTER_SITES:M*hg*:S,/archive/,,:T}-e9128973a480c8aedf3a2e1c67d3e168613fa17c
+DISTNAME=	${MASTER_SITES:M*hg*:S,/archive/,,:T}-c61f5f5ead48c78a80c80db5c489bdc7cfaf8175
 DISTFILES=	${DISTNAME:C/.*-//}${EXTRACT_SUFX}
 DIST_SUBDIR=	firefox
 
