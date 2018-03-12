@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ltl
-PORTVERSION=	1.9.1
-PORTREVISION=	5
+DISTVERSION=	2.0.19
 CATEGORIES=	math
 MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 
 MAINTAINER=	rossiya@gmail.com
 COMMENT=	C++ class SSE library for scientific computing
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblapack.so:math/lapack \
 		libblas.so:math/blas
