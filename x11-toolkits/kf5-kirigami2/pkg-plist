@@ -43,6 +43,11 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionIconGroup.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItem.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItemBase.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItemQt510.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItemQt59.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionsMenu.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/CornerShadow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/DefaultListItemBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/EdgeShadow.qml
