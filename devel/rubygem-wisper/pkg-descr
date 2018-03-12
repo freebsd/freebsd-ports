@@ -1,0 +1,11 @@
+Wisper is a micro library providing Ruby objects with Publish-Subscribe
+capabilities.
+
+It supports:
+- Decouple core business logic from external concerns in Hexagonal style
+  architectures.
+- Use as an alternative to ActiveRecord callbacks and Observers in Rails apps.
+- Connect objects based on context without permanence.
+- Publish events synchronously or asynchronously.
+
+WWW: https://github.com/krisleech/wisper
