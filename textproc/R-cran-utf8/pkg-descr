@@ -1,0 +1,4 @@
+Process and print 'UTF-8' encoded international text (Unicode).
+Input, validate, normalize, encode, format, and display.
+
+WWW: https://cran.r-project.org/web/packages/utf8/
