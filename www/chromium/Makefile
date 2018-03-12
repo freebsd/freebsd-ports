@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	64.0.3282.186
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -50,7 +51,6 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libwebp.so:graphics/webp \
 		libavcodec.so:multimedia/ffmpeg \
 		libopenh264.so:multimedia/openh264 \
-		libcups.so:print/cups \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
@@ -118,7 +118,6 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_allocator_shim=false \
 		use_aura=true \
 		use_bundled_fontconfig=false \
-		use_cups=true \
 		use_custom_libcxx=false \
 		use_gtk3=true \
 		use_lld=true \
@@ -145,13 +144,13 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=	CODECS DEBUG DRIVER GCONF KERBEROS TEST
+OPTIONS_DEFINE=	CODECS CUPS DEBUG DRIVER GCONF KERBEROS TEST
 CODECS_DESC=	Compile and enable patented codecs like H.264
 DRIVER_DESC=	Install chromedriver
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 
-OPTIONS_DEFAULT=	ALSA CODECS DRIVER GCONF KERBEROS
+OPTIONS_DEFAULT=	ALSA CODECS CUPS DRIVER GCONF KERBEROS
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -166,6 +165,10 @@ CODECS_VARS=		GN_ARGS+=ffmpeg_branding="Chrome" \
 CODECS_VARS_OFF=	GN_ARGS+=ffmpeg_branding="Chromium" \
 			GN_ARGS+=proprietary_codecs=false \
 			GN_ARGS+=enable_hevc_demuxing=false
+
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
+CUPS_VARS=		GN_ARGS+=use_cups=true
+CUPS_VARS_OFF=		GN_ARGS+=use_cups=false
 
 DEBUG_VARS=		BUILDTYPE=Debug \
 			GN_ARGS+=is_debug=true \
