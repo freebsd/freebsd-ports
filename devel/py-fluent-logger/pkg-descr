@@ -1,0 +1,12 @@
+Many web/mobile applications generate huge amount of event logs (cf. login,
+logout, purchase, follow, etc). To analyze these event logs could be really
+valuable for improving the service. However, the challenge is collecting these
+logs easily and reliably.
+
+Fluentd solves that problem by having: easy installation, small footprint,
+plugins, reliable buffering, log forwarding, etc.
+
+fluent-logger-python is a Python library, to record the events from Python
+application.
+
+WWW: https://github.com/fluent/fluent-logger-python
