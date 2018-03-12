@@ -1,0 +1,7 @@
+TTY::Command provides independent command execution component for TTY toolkit.
+It runs external commands with pretty output logging and capture stdout, stderr
+and exit status. Redirect stdin, stdout and stderr of each command to a file or
+a string.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-command
