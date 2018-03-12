@@ -1,0 +1,14 @@
+Simple MAC framework policy to disable access to networking for
+certain group.  Running kldload mac_nonet.ko to load the kernel
+module.  The load action require root permissions.
+
+Set gid that shouldn't access the network: 
+    sysctl security.mac.nonet.gid=31337
+and enable enforcing:
+     sysctl security.mac.nonet.enabled=1
+     
+Any call to socket(2) from user in this group will end with EPERM.
+You can also select group that can access only AF_UNIX sockets with
+security.mac.nonet.local_gid.
+
+WWW: https://github.com/pbiernacki/mac_nonet
