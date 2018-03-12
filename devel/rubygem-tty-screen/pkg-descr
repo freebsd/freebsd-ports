@@ -1,0 +1,6 @@
+TTY::Screen provides independent terminal screen size detection component for
+TTY toolkit. It supports terminal screen size detection which works on various
+OS platforms and supports MRI, JRuby and Rubinius interpreters.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-screen
