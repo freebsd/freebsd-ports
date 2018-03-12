@@ -1,6 +1,8 @@
 include/LTL/ltl/acconfig.h
 include/LTL/ltl/ascio.h
 include/LTL/ltl/config.h
+include/LTL/ltl/convolve.h
+include/LTL/ltl/fftw.h
 include/LTL/ltl/fits.h
 include/LTL/ltl/fitsio.h
 include/LTL/ltl/fmatrix.h
@@ -44,6 +46,7 @@ include/LTL/ltl/marray/cast.h
 include/LTL/ltl/marray/eval.h
 include/LTL/ltl/marray/eval_reduc.h
 include/LTL/ltl/marray/expr.h
+include/LTL/ltl/marray/expr_base.h
 include/LTL/ltl/marray/expr_iter.h
 include/LTL/ltl/marray/expr_ops.h
 include/LTL/ltl/marray/index_iter.h
@@ -52,9 +55,9 @@ include/LTL/ltl/marray/marray_iter.h
 include/LTL/ltl/marray/marray_methods.h
 include/LTL/ltl/marray/marray_ops.h
 include/LTL/ltl/marray/merge.h
+include/LTL/ltl/marray/partial_reduc.h
 include/LTL/ltl/marray/reductions.h
 include/LTL/ltl/marray/reductions_sse.h
-include/LTL/ltl/marray/partial_reduc.h
 include/LTL/ltl/marray/shape.h
 include/LTL/ltl/marray/shape_iter.h
 include/LTL/ltl/marray/simplevec.h
@@ -72,11 +75,13 @@ include/LTL/ltl/misc/range.h
 include/LTL/ltl/misc/staticinit.h
 include/LTL/ltl/misc/stdint_hack.h
 include/LTL/ltl/misc/swapbytes.h
+include/LTL/ltl/misc/type_name.h
 include/LTL/ltl/misc/type_promote.h
 include/LTL/ltl/nonlinlsqfit.h
 include/LTL/ltl/statistics.h
 include/LTL/ltl/util/command_line_reader.h
 include/LTL/ltl/util/config_file_reader.h
+include/LTL/ltl/util/gnuplot.h
 include/LTL/ltl/util/option.h
 include/LTL/ltl/util/option_parser.h
 include/LTL/ltl/util/region.h
