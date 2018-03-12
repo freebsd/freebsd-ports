@@ -1,0 +1,5 @@
+Pastel provides independent coloring component for TTY toolkit. It supports
+terminal output styling with intuitive and clean API that doesn't monkey patch
+String class. Pastel is minimal and focused to work in all terminal emulators.
+
+WWW: https://github.com/piotrmurach/pastel
