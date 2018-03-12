@@ -5850,6 +5850,7 @@
     SUBDIR += rubygem-tty-color
     SUBDIR += rubygem-tty-command
     SUBDIR += rubygem-tty-cursor
+    SUBDIR += rubygem-tty-editor
     SUBDIR += rubygem-tty-font
     SUBDIR += rubygem-tty-markdown
     SUBDIR += rubygem-tty-pager

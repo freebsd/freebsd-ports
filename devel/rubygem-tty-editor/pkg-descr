@@ -1,0 +1,5 @@
+TTY::Editor provides independent component for TTY toolkit. It opens a file or
+text in the user's preferred editor.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-editor
