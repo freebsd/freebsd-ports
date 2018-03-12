@@ -1,0 +1,8 @@
+TTY::Reader provides independent reader component for TTY toolkit. It is a pure
+Ruby library that provides a set of methods for processing keyboard input in
+character, line and multiline modes. In addition it maintains history of entered
+input with an ability to recall and re-edit those inputs and register to listen
+for keystroke events.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-reader
