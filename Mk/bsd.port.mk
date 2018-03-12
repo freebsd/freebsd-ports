@@ -1492,6 +1492,11 @@ IGNORE=	Unknown flavor '${FLAVOR}', possible flavors: ${FLAVORS}.
 FLAVOR=	${FLAVORS:[1]}
 .endif
 
+# Reorder FLAVORS so the default is first if set by the port.
+.if empty(_FLAVOR) && !empty(FLAVORS) && !empty(FLAVOR)
+FLAVORS:=	${FLAVOR} ${FLAVORS:N${FLAVOR}}
+.endif
+
 .if !empty(FLAVOR) && !defined(_DID_FLAVORS_HELPERS)
 _DID_FLAVORS_HELPERS=	yes
 _FLAVOR_HELPERS_OVERRIDE=	DESCR PLIST PKGNAMEPREFIX PKGNAMESUFFIX
