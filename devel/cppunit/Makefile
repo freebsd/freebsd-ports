@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 OPTIONS_SUB=	yes
 USE_LDCONFIG=	yes
-USES=		libtool pathfix
+USES=		libtool pathfix compiler:c++11-lang
 
 SUB_FILES=	cppunit-config
 SUB_LIST+=	DISTVERSION=${DISTVERSION}
