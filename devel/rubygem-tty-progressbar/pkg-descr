@@ -1,0 +1,5 @@
+TTY::ProgressBar provides independent progress bars component for TTY toolkit.
+It supports a flexible progress bars drawing in terminal emulators.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-progressbar
