@@ -1,0 +1,7 @@
+CommonMarker is a Ruby wrapper for libcmark-gfm, GitHub's fork of the reference
+parser for CommonMark. It passes all of the C tests, and is therefore
+spec-complete. It also includes extensions to the CommonMark spec as documented
+in the GitHub Flavored Markdown spec, such as support for tables,
+strikethroughs, and autolinking.
+
+WWW: https://github.com/gjtorikian/commonmarker
