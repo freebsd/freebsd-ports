@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sql
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases devel python
 

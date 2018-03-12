@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	scripttools
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel python
 

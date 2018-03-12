@@ -53,7 +53,7 @@
 %%QT_LIBDIR%%/libqscintilla2_qt4.so
 %%QT_LIBDIR%%/libqscintilla2_qt4.so.13
 %%QT_LIBDIR%%/libqscintilla2_qt4.so.13.1
-%%QT_LIBDIR%%/libqscintilla2_qt4.so.13.1.0
+%%QT_LIBDIR%%/libqscintilla2_qt4.so.13.1.1
 %%QT_MKSPECDIR%%/features/qscintilla2.prf
 share/qt4/qsci/api/python/Python-2.4.api
 share/qt4/qsci/api/python/Python-2.5.api
@@ -65,6 +65,7 @@ share/qt4/qsci/api/python/Python-3.3.api
 share/qt4/qsci/api/python/Python-3.4.api
 share/qt4/qsci/api/python/Python-3.5.api
 share/qt4/qsci/api/python/Python-3.6.api
+share/qt4/qsci/api/python/Python-3.7.api
 %%NLS%%share/qt4/translations/qscintilla_cs.qm
 %%NLS%%share/qt4/translations/qscintilla_de.qm
 %%NLS%%share/qt4/translations/qscintilla_es.qm
