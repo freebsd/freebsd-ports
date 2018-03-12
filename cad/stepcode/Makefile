@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	cad
 
-MAINTAINER=	fernando.apesteguia@gmail.com
+MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Generates C++ and Python from ISO10303 files
 
 LICENSE=	BSD3CLAUSE

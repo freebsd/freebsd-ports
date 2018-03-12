@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://files.na.mcneel.com/opennurbs/5.0/2013-07-11/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	fernando.apesteguia@gmail.com
+MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Tools to accurately transfer 3-D geometry between applications
 
 LICENSE_FILE=	${WRKSRC}/readme.txt

@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 CATEGORIES=	cad
 
-MAINTAINER=	fernando.apesteguia@gmail.com
+MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Create a 3D model of an aircraft defined by engineering parameters
 
 LICENSE=	NOSA13
