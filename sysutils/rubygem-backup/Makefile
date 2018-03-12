@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backup
-PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTVERSION=	4.4.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -62,10 +61,9 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:devel/rubygem-CFPropertyList \
 		rubygem-net-sftp>=2.1.2:security/rubygem-net-sftp \
 		rubygem-net-ssh>=3.2.0:security/rubygem-net-ssh \
 		rubygem-netrc>=0.11.0:net/rubygem-netrc \
-		rubygem-nokogiri>=1.6.8:textproc/rubygem-nokogiri \
+		rubygem-nokogiri>=1.8.2:textproc/rubygem-nokogiri \
 		rubygem-open4>=1.3.0:devel/rubygem-open4 \
 		rubygem-pagerduty>=2.0.0:www/rubygem-pagerduty \
-		rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config \
 		rubygem-qiniu>=6.5.1:net/rubygem-qiniu \
 		rubygem-rest-client>=1.7.3:www/rubygem-rest-client \
 		rubygem-ruby-hmac>=0.4.0:security/rubygem-ruby-hmac \
