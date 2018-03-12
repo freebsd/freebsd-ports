@@ -2,7 +2,7 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	x11 kde kde-applications
 PKGNAMESUFFIX=	-kde4
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libqalculate.so:math/libqalculate \
 		libprison.so:graphics/prison \
 		libboost_thread.so:devel/boost-libs \
-		libdbusmenu-qt.so:devel/libdbusmenu-qt \
+		libdbusmenu-qt.so:devel/libdbusmenu-qt@qt4 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
