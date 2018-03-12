@@ -1,0 +1,4 @@
+Chewy provides functionality for Elasticsearch index handling, documents import
+mappings and chainable query DSL.
+
+WWW: https://github.com/toptal/chewy
