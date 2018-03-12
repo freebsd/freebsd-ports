@@ -1,0 +1,5 @@
+TTY::Prompt provides independent directory or hash data rendering component for
+TTY toolkit. It prints directory or structured data in a tree like format.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-tree
