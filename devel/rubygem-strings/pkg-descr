@@ -1,0 +1,4 @@
+The Strings is a set of useful functions such as fold, truncate, wrap, and many
+more for transforming strings.
+
+WWW: https://github.com/piotrmurach/strings
