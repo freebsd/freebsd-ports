@@ -7523,7 +7523,6 @@ net-mgmt/glpi-plugins-tracker-server|net-mgmt/glpi-plugins-fusioninventory-serve
 science/rubygem-netcdf|science/rubygem-ruby-netcdf|2015-05-24|Rename to match our rubygem- port naming
 security/rubygem-rc4|security/rubygem-ruby-rc4|2015-05-24|Rename to match our rubygem- port naming
 print/rubygem-colortools|print/rubygem-color-tools|2015-05-24|Rename to match our rubygem- port naming
-security/qtkeychain|security/qtkeychain-qt5|2015-05-24|Renamed to indicate supported QT version
 www/rubygem-layout-yullio|www/rubygem-layout_yullio_generator|2015-05-27|Rename to match our rubygem- port naming
 net/rubygem-rightaws|net/rubygem-right_aws|2015-05-27|Rename to match our rubygem- port naming
 net/rubygem-rightflexiscale|net/rubygem-right_flexiscale|2015-05-27|Rename to match our rubygem- port naming
@@ -10198,3 +10197,5 @@ databases/php-memcached|databases/pecl-memcached|2018-03-10|Remove duplicate por
 emulators/i386-wine-staging|emulators/i386-wine-devel|2018-03-10|Broken for months, abandoned upstream
 archivers/quazip-qt5|archivers/quazip@qt5|2018-03-11|Moved to a flavoured version
 devel/go-json-rest||2018-03-11|Go libraries aren't allowed (GH/ant0ine/go-json-rest)
+security/qtkeychain-qt4|security/qtkeychain@qt4|2018-03-12|Moved to a flavoured version
+security/qtkeychain-qt5|security/qtkeychain@qt5|2018-03-12|Moved to a flavoured version

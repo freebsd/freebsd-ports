@@ -4,6 +4,7 @@
 PORTNAME=	owncloudclient
 PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yonas@fizk.net
@@ -12,7 +13,7 @@ COMMENT=	OwnCloud Desktop Syncing Client
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
-		libqt5keychain.so:security/qtkeychain-qt5
+		libqt5keychain.so:security/qtkeychain@qt5
 
 USES=		cmake:outsource,noninja compiler:c++11-lib gmake iconv \
 		localbase:ldflags pkgconfig sqlite ssl
