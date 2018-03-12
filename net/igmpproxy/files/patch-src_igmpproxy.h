@@ -1,12 +1,5 @@
-This reverts commit 7fcb7900b757b64cf58e6b2d1d473de289945e8d.
----
- src/igmpproxy.h | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/src/igmpproxy.h b/src/igmpproxy.h
-index ad1063b..6980e35 100644
---- a/src/igmpproxy.h
-+++ b/src/igmpproxy.h
+--- src/igmpproxy.h.orig	2018-02-13 19:17:30 UTC
++++ src/igmpproxy.h
 @@ -35,9 +35,6 @@
  *   igmpproxy.h - Header file for common includes.
  */
@@ -27,6 +20,3 @@ index ad1063b..6980e35 100644
  /*
   * Limit on length of route data
   */
--- 
-2.15.1
-
