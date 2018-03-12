@@ -5857,6 +5857,7 @@
     SUBDIR += rubygem-tty-progressbar
     SUBDIR += rubygem-tty-reader
     SUBDIR += rubygem-tty-screen
+    SUBDIR += rubygem-tty-spinner
     SUBDIR += rubygem-tty-tree
     SUBDIR += rubygem-tty-which
     SUBDIR += rubygem-turn
