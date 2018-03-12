@@ -27,14 +27,15 @@ man/man8/poudriere.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf.sample
 %%DATADIR%%/MANIFESTS
+%%DATADIR%%/api.sh
 %%DATADIR%%/awk/dependency_loop.awk
 %%DATADIR%%/awk/humanize.awk
 %%DATADIR%%/awk/json.awk
 %%DATADIR%%/awk/json_jail.awk
 %%DATADIR%%/awk/json_top.awk
+%%DATADIR%%/awk/parse_MOVED.awk
 %%DATADIR%%/awk/processonelog2.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
-%%DATADIR%%/api.sh
 %%DATADIR%%/bulk.sh
 %%DATADIR%%/clean.sh
 %%DATADIR%%/common.sh
