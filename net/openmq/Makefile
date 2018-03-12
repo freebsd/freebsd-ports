@@ -18,6 +18,8 @@ COMMENT=	Open Message Queue - Java Message Service Broker ${CLIENT_COMMENT}
 LICENSE=	GPLv2 CDDL
 LICENSE_COMB=	dual
 
+BROKEN=		fails to build
+
 SRCDIST=	mq4_5_2p1-source.zip
 BOOTJARS=	javaee-api-6.0.jar:2 \
 		grizzly-nio-framework-1.9.18a.jar:3 \
