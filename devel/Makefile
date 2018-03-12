@@ -5847,6 +5847,7 @@
     SUBDIR += rubygem-trollop
     SUBDIR += rubygem-trollop1
     SUBDIR += rubygem-tty-color
+    SUBDIR += rubygem-tty-cursor
     SUBDIR += rubygem-turn
     SUBDIR += rubygem-typed-array
     SUBDIR += rubygem-tzinfo

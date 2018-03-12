@@ -1,0 +1,7 @@
+TTY::Cursor provides independent cursor movement component for TTY toolkit. It
+supports terminal cursor positioning, visibility and text manipulation. The
+purpose of this library is to help move the terminal cursor around and
+manipulate text by using intuitive method calls.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-cursor
