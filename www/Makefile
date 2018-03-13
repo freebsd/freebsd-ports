@@ -1865,6 +1865,7 @@
     SUBDIR += py-textile
     SUBDIR += py-tmdb3
     SUBDIR += py-tornado
+    SUBDIR += py-tornado4
     SUBDIR += py-trello
     SUBDIR += py-treq
     SUBDIR += py-turbogears2

@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	tornado
-PORTVERSION=	5.0
+PORTVERSION=	4.5.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
-CONFLICTS=	py[0-9]*-tornado4-*
+CONFLICTS=	py[0-9]*-tornado-*
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -20,7 +21,8 @@ USE_PYTHON=	autoplist distutils
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${FLAVOR}
 .endif
 
 .if ${PYTHON_REL} < 3500
