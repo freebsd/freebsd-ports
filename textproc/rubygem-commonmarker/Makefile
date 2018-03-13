@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commonmarker
-PORTVERSION=	0.17.8
+PORTVERSION=	0.17.9
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
