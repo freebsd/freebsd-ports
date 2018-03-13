@@ -1,5 +1,5 @@
---- source3/libads/kerberos_keytab.c.orig	2017-12-23 14:23:53.247467000 +0100
-+++ source3/libads/kerberos_keytab.c	2017-12-23 18:57:07.135340000 +0100
+--- source3/libads/kerberos_keytab.c.orig	2017-12-23 15:23:53 UTC
++++ source3/libads/kerberos_keytab.c
 @@ -32,8 +32,6 @@
  
  #ifdef HAVE_KRB5

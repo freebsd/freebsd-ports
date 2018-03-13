@@ -1,4 +1,4 @@
---- source3/modules/vfs_streams_xattr.c.orig	2017-09-17 19:15:34 UTC
+--- source3/modules/vfs_streams_xattr.c.orig	2017-09-17 22:15:34 UTC
 +++ source3/modules/vfs_streams_xattr.c
 @@ -1,10 +1,10 @@
  /*
@@ -54,7 +54,7 @@
 -	TALLOC_FREE(ea.value.data);
 -	return result;
 +	pea->value = data_blob_talloc(mem_ctx, NULL, attr_size);
-+	if(pea->value.data == NULL) {
++	if(pea->value.data == NULL && attr_size) {
 +		DEBUG(5,
 +			("get_xattr_value: for EA '%s' failed to allocate %lu bytes\n",
 +			ea_name, (unsigned long)attr_size)
@@ -400,7 +400,7 @@
  	/* Create an smb_filename with stream_name == NULL. */
  	smb_fname_base = synthetic_smb_fname(talloc_tos(),
  					sio->base,
-@@ -1228,40 +1293,43 @@ static int streams_xattr_ftruncate(struc
+@@ -1228,40 +1293,46 @@ static int streams_xattr_ftruncate(struc
  					NULL,
  					fsp->fsp_name->flags);
  	if (smb_fname_base == NULL) {
@@ -430,7 +430,8 @@
 -	if (tmp == NULL) {
 -		TALLOC_FREE(ea.value.data);
 +	/* That can both shrink and expand */
-+	if(!data_blob_realloc(talloc_tos(), &ea.value, offset)) {
++	/* XXX: If offset == 0 the result of talloc_realloc is NULL, but still valid */
++	if(offset && !data_blob_realloc(talloc_tos(), &ea.value, offset)) {
 +		TALLOC_FREE(frame);
  		errno = ENOMEM;
  		return -1;
@@ -450,16 +451,19 @@
 -	ea.value.length = offset + 1;
 -	ea.value.data[offset] = 0;
 -
++	/* XXX: We should use ea.value.length here, but when offset == 0
++	   it's not reset to 0 in data_blob_realloc() */
  	ret = SMB_VFS_SETXATTR(fsp->conn,
  			       fsp->fsp_name,
  			       sio->xattr_name,
- 			       ea.value.data, ea.value.length, 0);
+-			       ea.value.data, ea.value.length, 0);
 -	TALLOC_FREE(ea.value.data);
++			       ea.value.data, offset, 0);
 +	TALLOC_FREE(frame);
  
  	if (ret == -1) {
  		return -1;
-@@ -1279,9 +1347,9 @@ static int streams_xattr_fallocate(struc
+@@ -1279,9 +1350,9 @@ static int streams_xattr_fallocate(struc
          struct stream_io *sio =
  		(struct stream_io *)VFS_FETCH_FSP_EXTENSION(handle, fsp);
  

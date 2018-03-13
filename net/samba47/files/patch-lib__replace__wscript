@@ -1,4 +1,4 @@
---- lib/replace/wscript.orig	2017-11-02 11:38:36 UTC
+--- lib/replace/wscript.orig	2017-08-24 11:27:53 UTC
 +++ lib/replace/wscript
 @@ -81,7 +81,7 @@ def configure(conf):
      conf.CHECK_HEADERS('sys/atomic.h')

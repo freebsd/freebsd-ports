@@ -1,4 +1,4 @@
---- ctdb/wscript.orig	2017-12-13 06:03:35 UTC
+--- ctdb/wscript.orig	2018-03-13 13:18:01 UTC
 +++ ctdb/wscript
 @@ -86,6 +86,9 @@ def set_options(opt):
      opt.add_option('--enable-ceph-reclock',
@@ -51,19 +51,17 @@
  
      sed_expr1 = 's|/usr/local/var/lib/ctdb|%s|g'  % (bld.env.CTDB_VARDIR)
      sed_expr2 = 's|/usr/local/etc/ctdb|%s|g'      % (bld.env.CTDB_ETCDIR)
-@@ -718,6 +727,11 @@ def build(bld):
+@@ -718,6 +727,9 @@ def build(bld):
      bld.install_dir(bld.env.CTDB_RUNDIR)
      bld.install_dir(bld.env.CTDB_VARDIR)
  
-+    if bld.env.ctdb_tests:
-+        build_tests(bld)
++    if not bld.env.ctdb_tests:
++        return
 +
-+
-+def build_tests(bld):
      # Unit tests
      ctdb_unit_tests = [
          'db_hash_test',
-@@ -828,7 +842,9 @@ def build(bld):
+@@ -828,7 +840,9 @@ def build(bld):
                                ib_deps,
                           install_path='${CTDB_TEST_LIBEXECDIR}')
  

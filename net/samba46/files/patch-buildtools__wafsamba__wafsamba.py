@@ -1,5 +1,5 @@
---- ./buildtools/wafsamba/wafsamba.py.orig	2015-07-21 09:47:48.000000000 +0000
-+++ ./buildtools/wafsamba/wafsamba.py	2015-10-05 20:12:39.057228568 +0000
+--- ./buildtools/wafsamba/wafsamba.py.orig	2015-07-21 09:47:48 UTC
++++ ./buildtools/wafsamba/wafsamba.py
 @@ -892,7 +892,7 @@
      bld.env.SAMBA_EXPAND_XSL = bld.srcnode.abspath() + '/docs-xml/xslt/expand-sambadoc.xsl'
      bld.env.SAMBA_MAN_XSL = bld.srcnode.abspath() + '/docs-xml/xslt/man.xsl'
