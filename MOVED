@@ -10201,3 +10201,4 @@ security/qtkeychain-qt4|security/qtkeychain@qt4|2018-03-12|Moved to a flavoured 
 security/qtkeychain-qt5|security/qtkeychain@qt5|2018-03-12|Moved to a flavoured version
 devel/libdbusmenu-qt5|devel/libdbusmenu-qt@qt5|2018-03-12|Moved to a flavoured version
 finance/electrum2|finance/electrum|2018-03-13|Has expired: Vulnerable legacy port, please use finance/electrum instead
+math/py-gsl|math/py-pygsl|2018-03-13|Rename to match PyPI naming
