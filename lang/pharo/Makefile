@@ -9,7 +9,7 @@ MASTER_SITES=	https://gforge.inria.fr/frs/download.php/30620/
 DISTNAME=	Pharo-${DISTVERSION}-${SVNVERSION}
 EXTRACT_ONLY=	Pharo-${DISTVERSION}-${SVNVERSION}.zip
 
-MAINTAINER=	mutoh@openedu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pharo is Smalltalk-inspired environment
 
 LICENSE=	APACHE20 MIT
