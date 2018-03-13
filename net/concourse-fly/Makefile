@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	concourse
-PORTVERSION=	3.9.1
+PORTVERSION=	3.9.2
 CATEGORIES=	net sysutils
 MASTER_SITES=	LOCAL/dumbbell/concourse/
 PKGNAMESUFFIX=	-fly
