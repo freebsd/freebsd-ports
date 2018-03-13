@@ -16,13 +16,31 @@
 . /etc/rc.subr
 
 name=dsbmd
+command=%%PREFIX%%/libexec/dsbmd
 rcvar=dsbmd_enable
+pidfile=/var/run/dsbmd.pid
+stop_cmd=dsbmd_stop
 
 load_rc_config $name
 
-: ${dsbmd_enable:=NO}
+: ${dsbmd_enable:="NO"}
 
-command=%%PREFIX%%/libexec/${name}
-pidfile=/var/run/${name}.pid
+dsbmd_stop()
+{
+	if [ -f ${pidfile} ]; then
+		echo "Stopping ${name}."
+		pid=$(cat ${pidfile})
+		n=0
+		while [ $n -lt 5 ]; do
+			kill ${pid} 2>/dev/null || return 0
+			n=$(($n + 1))
+			sleep 1
+		done
+		kill -KILL ${pid} 2>/dev/null
+	else
+		echo "${name} is not running."
+		return 1
+	fi
+}
 
 run_rc_command "$1"
