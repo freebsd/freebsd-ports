@@ -7,7 +7,7 @@ CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/ht-source
 DISTNAME=	ht-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	File editor/viewer/analyzer for executables
 
 LICENSE=	GPLv2
