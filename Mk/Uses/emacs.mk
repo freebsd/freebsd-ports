@@ -73,7 +73,7 @@ FLAVORS=	full canna nox devel_full devel_nox
 .for flavor in ${EMACS_FLAVORS_EXCLUDE}
 FLAVORS:=	${FLAVORS:N${flavor}}
 .endfor
-.else
+.elif !defined(EMACS_NO_DEPENDS)
 FLAVORS=	full
 .endif
 
