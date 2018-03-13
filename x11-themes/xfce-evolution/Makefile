@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce-evolution
-DISTVERSION=	4.3.1
+DISTVERSION=	4.5.1
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -33,10 +33,12 @@ EXTRAFILES=	ABOUT \
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes
 	@cd ${WRKSRC} && \
-		${COPYTREE_SHARE} "Xfce*" ${STAGEDIR}${PREFIX}/share/themes;
-	@for f in ${EXTRAFILES}; do ${RM} ${STAGEDIR}${PREFIX}/share/themes/Xfce\ Evolution/$${f}; done
+		${COPYTREE_SHARE} "Xfce*" ${STAGEDIR}${PREFIX}/share/themes
+	@cd ${STAGEDIR}${PREFIX}/share/themes/Xfce\ Evolution && ${RM} ${EXTRAFILES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
-	@${LN} -s ../../../share/themes/Xfce\ Evolution/90-qt5.conf ${STAGEDIR}/${PREFIX}/etc/fonts/conf.avail/90-qt5.conf
-	@${LN} -s ../conf.avail/90-qt5.conf ${STAGEDIR}/${PREFIX}/etc/fonts/conf.d/90-qt5.conf
+	@${RLN} ${STAGEDIR}${PREFIX}/share/themes/Xfce\ Evolution/90-qt5.conf \
+		${STAGEDIR}/${PREFIX}/etc/fonts/conf.avail/90-qt5.conf
+	@${RLN} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/90-qt5.conf \
+		${STAGEDIR}/${PREFIX}/etc/fonts/conf.d/90-qt5.conf
 
 .include <bsd.port.mk>
