@@ -14,6 +14,9 @@ COMMENT=	High-level Python Web framework
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Outdated version. Use www/py-django instead
+EXPIRATION_DATE=2018-03-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${FLAVOR}
 
 SNAPSHOTDATE=	20150709
