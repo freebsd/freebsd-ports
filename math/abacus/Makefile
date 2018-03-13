@@ -12,6 +12,9 @@ COMMENT=	Branch-And-CUt System
 
 LICENSE=	LGPL21+
 
+DEPRECATED=	Unmaintained and has a broken shared library
+EXPIRATION_DATE=2018-03-31
+
 LIB_DEPENDS=	libClp.so:math/coinmp
 
 NO_WRKSUBDIR=	yes
