@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		2.4.4
-PORTREVISION?=		2
+DISTVERSION=		2.4.5
+PORTREVISION?=		0
 CATEGORIES=		security net
 MASTER_SITES=		https://swupdate.openvpn.net/community/releases/ \
 			https://build.openvpn.net/downloads/releases/
@@ -109,6 +109,22 @@ post-configure:
 	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
 	    ${WRKSRC}/src/plugins/auth-pam/Makefile \
 	    ${WRKSRC}/src/plugins/down-root/Makefile
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMBEDTLS}
+_tlslibs=libmbedtls libmbedx509 libmbedcrypto
+.else
+# OpenSSL
+_tlslibs=libssl libcrypto
+.endif
+
+# sanity check that we don't inherit incompatible SSL libs through,
+# for instance, pkcs11-helper:
+post-build:
+	@a=$$(LC_ALL=C ldd -f '%o\n' ${WRKSRC}/src/openvpn/openvpn \
+	|	${SORT} -u) ; set -- $$(for i in ${_tlslibs} ; do ${PRINTF} '%s\n' "$$a" | ${GREP} $${i}.so | wc -l ; done | ${SORT} -u) ;\
+	if test "$$*" != "1" ; then ${ECHO_CMD} >&2 "${.CURDIR} FAILED: either of ${_tlslibs} libraries linked multiple times" ; ${PRINTF} '%s\n' "$$a"; ${RM} ${BUILD_COOKIE} ; exit 1 ; fi
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so
