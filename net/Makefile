@@ -1448,6 +1448,7 @@
     SUBDIR += vblade
     SUBDIR += vde
     SUBDIR += vde2
+    SUBDIR += vether-kmod
     SUBDIR += viamillipede
     SUBDIR += vinagre
     SUBDIR += vino
