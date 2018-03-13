@@ -176,6 +176,7 @@ include/osg/TransferFunction
 include/osg/Transform
 include/osg/TriangleFunctor
 include/osg/TriangleIndexFunctor
+include/osg/TriangleLinePointIndexFunctor
 include/osg/Types
 include/osg/Uniform
 include/osg/UserDataContainer
@@ -570,6 +571,12 @@ include/osgViewer/ViewerEventHandlers
 include/osgViewer/api/X11/GraphicsHandleX11
 include/osgViewer/api/X11/GraphicsWindowX11
 include/osgViewer/api/X11/PixelBufferX11
+include/osgViewer/config/AcrossAllScreens
+include/osgViewer/config/PanoramicSphericalDisplay
+include/osgViewer/config/SingleScreen
+include/osgViewer/config/SingleWindow
+include/osgViewer/config/SphericalDisplay
+include/osgViewer/config/WoWVxDisplay
 include/osgVolume/Export
 include/osgVolume/FixedFunctionTechnique
 include/osgVolume/Layer
