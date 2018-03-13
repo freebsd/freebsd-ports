@@ -1,4 +1,3 @@
-# Created by: Fernando Apesteguia <fernando.apesteguia@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	openvsp
