@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	queuelib
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,14 @@ COMMENT=	Collection of persistent (disk-based) queues
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+TEST_DEPENDS:=	${RUN_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+TEST_TARGET=	test
+DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP}
 
 .include <bsd.port.mk>
