@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyscard>0:security/py-pyscard@${FLAVOR} \
 		u2f-host:security/libu2f-host \
 		ykpers>0:security/ykpers
 
-USES=		python:3.6
+USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
