@@ -5,6 +5,7 @@ PORTNAME=	mdnsd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7G-107
 DISTVERSIONSUFFIX=	-gf4aee59
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns
 
@@ -17,12 +18,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	Pro
+USE_LDCONFIG=	yes
 
-PLIST_FILES=	bin/mdnsd bin/mquery
+PLIST_FILES=	bin/mdnsd bin/mquery lib/liblibmdnsd.so
 
 do-install:
-.for f in mdnsd mquery
-	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	cd ${CONFIGURE_WRKSRC} && ${INSTALL_PROGRAM} mdnsd mquery \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${CONFIGURE_WRKSRC}/libmdnsd/liblibmdnsd.so \
+		${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
