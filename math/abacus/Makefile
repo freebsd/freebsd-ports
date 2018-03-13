@@ -3,7 +3,7 @@
 
 PORTNAME=	abacus
 DISTVERSION=	3.2betaU1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	http://www.informatik.uni-koeln.de/abacus/
 
@@ -11,9 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Branch-And-CUt System
 
 LICENSE=	LGPL21+
-
-DEPRECATED=	Unmaintained and has a broken shared library
-EXPIRATION_DATE=	2018-03-31
 
 LIB_DEPENDS=	libClp.so:math/coinmp
 
@@ -23,6 +20,7 @@ USES=		gmake perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 ALL_TARGET=	abacus
+CXXFLAGS+=	-fPIC
 MAKE_ARGS=	CCC="${CXX}" PERL="${PERL}" STRIP="${STRIP_CMD} -x" \
 		ARCHIVE="${AR} ${ARFLAGS}" CCFLAG_DEBOPT="${CXXFLAGS}" \
 		OSI_INCLUDE="${LOCALBASE}/include/coin"

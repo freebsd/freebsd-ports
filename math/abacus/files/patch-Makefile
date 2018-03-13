@@ -1,5 +1,5 @@
---- Makefile.orig	2012-01-06 14:29:04.000000000 +0100
-+++ Makefile	2013-09-05 14:35:52.000000000 +0200
+--- Makefile.orig	2012-01-06 13:29:04 UTC
++++ Makefile
 @@ -177,6 +177,11 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cc
  	$(CCC)  $(CCFLAGS) $(ADDFLAGS) -c $< -o $@
  	$(STRIP) $@
@@ -12,7 +12,7 @@
  
  #######################################################################
  #
-@@ -523,15 +524,20 @@
+@@ -523,15 +528,22 @@ $(LIBDIR)/stuff/interface-osi.a: $(OSI_O
  	$(ARCHIVE) $@ $(OSI_O)
  
  # The basic ABACUS library
@@ -27,7 +27,9 @@
  
 +$(LIBDIR)/stuff/abacus-base.so.1: $(ABACUS_O:%.o=%.So)
 +	rm -f $@
-+	$(CCC) $(LDFLAGS) -shared -o $@ $(ABACUS_O:%.o=%.So)
++	$(CCC) $(LDFLAGS) -shared -o $@ $(ABACUS_O:%.o=%.So) \
++	    `find $(LIBDIR)/temp -name \*.o | xargs -n1` \
++	    `find $(LIBDIR)/stuff -name \*.o | xargs -n1` \
 +
  # Build the library distribution directory (lib and lib/stuff)
 -lib-all: subdirs abacus-base lpif interface $(ADDITIONAL_LIB_ALL)
@@ -35,7 +37,7 @@
  
  # Create a tar file containing all necessary stuff to compile ABACUS on
  # a remote system.
-@@ -571,6 +577,7 @@
+@@ -571,6 +583,7 @@ have_lib = $(wildcard $(LIBDIR)/libabacu
  
  abacus: lib-all
  	cp $(LIBDIR)/stuff/abacus-base.a $(LIBDIR)/libabacus-osi.a
