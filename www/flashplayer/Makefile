@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashplayer
-PORTVERSION=	28.0
+PORTVERSION=	29.0
 CATEGORIES=	www multimedia
 DISTFILES=
 
