@@ -640,7 +640,6 @@
     SUBDIR += py-gmpy2
     SUBDIR += py-gnuplot
     SUBDIR += py-graphillion
-    SUBDIR += py-gsl
     SUBDIR += py-igraph
     SUBDIR += py-intspan
     SUBDIR += py-keras
@@ -663,6 +662,7 @@
     SUBDIR += py-pyasp
     SUBDIR += py-pybloom
     SUBDIR += py-pycosat
+    SUBDIR += py-pygsl
     SUBDIR += py-pyhull
     SUBDIR += py-pymc
     SUBDIR += py-pysparse
