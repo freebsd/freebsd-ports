@@ -37,8 +37,8 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/share/themes/Xfce\ Evolution && ${RM} ${EXTRAFILES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
 	@${RLN} ${STAGEDIR}${PREFIX}/share/themes/Xfce\ Evolution/90-qt5.conf \
-		${STAGEDIR}/${PREFIX}/etc/fonts/conf.avail/90-qt5.conf
+		${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/90-qt5.conf
 	@${RLN} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/90-qt5.conf \
-		${STAGEDIR}/${PREFIX}/etc/fonts/conf.d/90-qt5.conf
+		${STAGEDIR}${PREFIX}/etc/fonts/conf.d/90-qt5.conf
 
 .include <bsd.port.mk>
