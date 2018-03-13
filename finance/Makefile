@@ -26,7 +26,6 @@
     SUBDIR += bitcoin-armory
     SUBDIR += cbb
     SUBDIR += electrum
-    SUBDIR += electrum2
     SUBDIR += expense
     SUBDIR += fixc
     SUBDIR += frontaccounting

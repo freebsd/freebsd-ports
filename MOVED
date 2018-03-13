@@ -10200,3 +10200,4 @@ devel/go-json-rest||2018-03-11|Go libraries aren't allowed (GH/ant0ine/go-json-r
 security/qtkeychain-qt4|security/qtkeychain@qt4|2018-03-12|Moved to a flavoured version
 security/qtkeychain-qt5|security/qtkeychain@qt5|2018-03-12|Moved to a flavoured version
 devel/libdbusmenu-qt5|devel/libdbusmenu-qt@qt5|2018-03-12|Moved to a flavoured version
+finance/electrum2|finance/electrum|2018-03-13|Has expired: Vulnerable legacy port, please use finance/electrum instead
