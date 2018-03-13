@@ -9,6 +9,8 @@ MASTER_SITES=	LOCAL/culot
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Compilation of quotes from Nietzsche's Thus spoke Zarathustra
 
+LICENSE=	NONE
+
 SUB_FILES=	pkg-message
 
 .if exists(/usr/games/strfile)
