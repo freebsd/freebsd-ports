@@ -1,6 +1,6 @@
---- package.json.orig	2018-01-24 12:29:46 UTC
+--- package.json.orig	2018-03-09 12:11:43 UTC
 +++ package.json
-@@ -5,15 +5,9 @@
+@@ -5,14 +5,9 @@
      "node": ">=6"
    },
    "scripts": {
@@ -9,15 +9,14 @@
      "build:production": "cross-env RAILS_ENV=production ./bin/webpack",
      "manage:translations": "node ./config/webpack/translationRunner.js",
 -    "start": "node ./streaming/index.js",
--    "test": "npm run test:lint && npm run test:jest",
+-    "test": "npm-run-all test:lint test:jest",
 -    "test:lint": "eslint -c .eslintrc.yml --ext=js app/javascript/ config/webpack/ streaming/",
--    "test:jest": "cross-env NODE_ENV=test jest --coverage",
--    "postinstall": "npm rebuild node-sass"
+-    "test:jest": "cross-env NODE_ENV=test jest --coverage"
 +    "start": "node ./streaming/index.js"
    },
    "repository": {
      "type": "git",
-@@ -118,24 +112,5 @@
+@@ -119,24 +114,5 @@
      "webpack-manifest-plugin": "^1.2.1",
      "webpack-merge": "^4.1.1",
      "websocket.js": "^0.1.12"

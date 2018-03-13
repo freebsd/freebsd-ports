@@ -1,13 +1,10 @@
 ############################################################
 
-Version 2.2.0 includes database migrations and a step "to
-fix a past issue with bugged out home timelines."
+Version 2.3.0 includes database migrations.
 
 As the mastodon user, run
 
 % RAILS_ENV=production rails db:migrate
-% RAILS_ENV=production rails \
-  mastodon:maintenance:remove_regeneration_markers
 
 Some options may now be set in rc.conf.  See the comments in
 the rc scripts (mastodon_web, mastodon_workers, and

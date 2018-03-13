@@ -2,11 +2,10 @@
 
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=	5
+DISTVERSION=	2.3.1
 CATEGORIES=	net-im www
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Social-compatible microblogging server
 
 LICENSE=	AGPLv3
@@ -17,12 +16,10 @@ BUILD_DEPENDS=	yarn>:www/yarn\
 LIB_DEPENDS=	libidn2.so:dns/libidn2
 RUN_DEPENDS=	${BR_DEPENDS}
 
-BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg\
-		libpqtypes>1.5.0:databases/libpqtypes\
+BR_DEPENDS=	libpqtypes>1.5.0:databases/libpqtypes\
 		rubygem-pkg-config>=1.2.3:devel/rubygem-pkg-config\
 		rubygem-puma>=3.10:www/rubygem-puma\
 		rubygem-rails5>=5.1.4:www/rubygem-rails5\
-		rubygem-uglifier>=3.2.0:www/rubygem-uglifier\
 		rubygem-hamlit-rails-rails5>=0.2.0:www/rubygem-hamlit-rails-rails5\
 		rubygem-pg>=0.21.0:databases/rubygem-pg\
 		rubygem-pghero-rails5>=2.0.0:databases/rubygem-pghero-rails5\
@@ -33,17 +30,25 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg\
 		rubygem-fog-openstack>=0.1:net/rubygem-fog-openstack\
 		rubygem-paperclip-rails5>=5.1.0:devel/rubygem-paperclip-rails5\
 		rubygem-paperclip-av-transcoder>=0.6:multimedia/rubygem-paperclip-av-transcoder\
+		rubygem-streamio-ffmpeg>=3.0:multimedia/rubygem-streamio-ffmpeg\
 		rubygem-active_model_serializers>=0.10:databases/rubygem-active_model_serializers\
 		rubygem-addressable>=2.5:www/rubygem-addressable\
 		rubygem-bootsnap>=0:devel/rubygem-bootsnap\
 		rubygem-browser>=2.4.0:www/rubygem-browser\
 		rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes\
 		rubygem-iso-639>=0.2.8:textproc/rubygem-iso-639\
+		rubygem-chewy>=0.10:textproc/rubygem-chewy\
 		rubygem-cld3>=3.2.0:textproc/rubygem-cld3\
 		rubygem-devise-rails5>=4.4:devel/rubygem-devise-rails5\
 		rubygem-devise-two-factor-rails5>=3.0:security/rubygem-devise-two-factor-rails5\
+		rubygem-devise_pam_authenticatable2>=8.0:security/rubygem-devise_pam_authenticatable2\
+		rubygem-net-ldap>=0.10:net/rubygem-net-ldap\
+		rubygem-omniauth-cas>=1.1:security/rubygem-omniauth-cas\
+		rubygem-omniauth-saml>=1.10:security/rubygem-omniauth-saml\
+		rubygem-omniauth>=1.2:security/rubygem-omniauth\
 		rubygem-doorkeeper-rails5>=4.2:security/rubygem-doorkeeper-rails5\
 		rubygem-fast_blank>=1.0:devel/rubygem-fast_blank\
+		rubygem-fastimage>=0:graphics/rubygem-fastimage\
 		rubygem-goldfinger>=2.1:www/rubygem-goldfinger\
 		rubygem-hiredis>=0.6:databases/rubygem-hiredis\
 		rubygem-redis-namespace>=1.5:databases/rubygem-redis-namespace\
@@ -71,7 +76,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg\
 		rubygem-mario-redis-lock>=1.2:databases/rubygem-mario-redis-lock\
 		rubygem-rqrcode>=0.10:www/rubygem-rqrcode\
 		rubygem-ruby-oembed>=0.12:www/rubygem-ruby-oembed\
-		rubygem-progressbar>=1.4:devel/rubygem-progressbar\
+		rubygem-ruby-progressbar>=1.4:devel/rubygem-ruby-progressbar\
 		rubygem-sanitize>=4.4:textproc/rubygem-sanitize\
 		rubygem-sidekiq>=5.0:devel/rubygem-sidekiq\
 		rubygem-sidekiq-scheduler>=2.1:devel/rubygem-sidekiq-scheduler\
@@ -81,12 +86,15 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg\
 		rubygem-simple_form-rails5>=3.4:devel/rubygem-simple_form-rails5\
 		rubygem-sprockets-rails-rails5>=3.2:devel/rubygem-sprockets-rails-rails5\
 		rubygem-strong_migrations>=0.1.9:devel/rubygem-strong_migrations\
+		rubygem-tty-command>=0:devel/rubygem-tty-command\
+		rubygem-tty-prompt>=0:devel/rubygem-tty-prompt\
 		rubygem-twitter-text1>=1.14:textproc/rubygem-twitter-text1\
 		rubygem-tzinfo-data>=1.2017:devel/rubygem-tzinfo-data\
 		rubygem-webpacker-rails5>=3.0:devel/rubygem-webpacker-rails5\
 		rubygem-webpush>=0.3.2_1:security/rubygem-webpush\
 		rubygem-json-ld-preloaded>=2.2.1:converters/rubygem-json-ld-preloaded\
 		rubygem-rdf-normalize>=0.3.1:www/rubygem-rdf-normalize\
+		rubygem-private_address_check>=0.4.1:net/rubygem-private_address_check\
 		rubygem-lograge-rails5>=0.7:www/rubygem-lograge-rails5\
 		rubygem-redis-rails-rails5>=5.0.2:www/rubygem-redis-rails-rails5
 
@@ -94,7 +102,7 @@ USES=		gmake gnome pgsql python:2.7,build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tootsuite jehops:mn
 GH_PROJECT=	mastodon_node:mn
-GH_TAGNAME=	2.2.0:mn
+GH_TAGNAME=	2.3.0:mn
 USE_GNOME=	libxml2 libxslt
 USE_RC_SUBR=	mastodon_stream mastodon_web mastodon_workers
 USE_RUBY=	yes
@@ -123,8 +131,8 @@ do-build:
 	@${CP} ${FILESDIR}/yarn.lock.in ${WRKSRC}/yarn.lock
 	(cd ${WRKSRC};\
 		HOME=${WRKSRC_mn} yarn --offline;\
-		SECRET_KEY_BASE=x RAILS_ENV=production rails webpacker:binstubs;\
-		SECRET_KEY_BASE=x RAILS_ENV=production rails --trace assets:precompile)
+		OTP_SECRET=x SECRET_KEY_BASE=x RAILS_ENV=production rails --trace webpacker:binstubs;\
+		HOME=${WRKSRC_mn} OTP_SECRET=x SECRET_KEY_BASE=x RAILS_ENV=production rails --trace assets:precompile)
 	(cd ${WRKSRC}/public/assets &&\
 		${MV} .sprockets-manifest-*.json .sprockets-manifest-${X}.json &&\
 		${MV} doorkeeper/application-*.css doorkeeper/application-${XX}.css &&\
