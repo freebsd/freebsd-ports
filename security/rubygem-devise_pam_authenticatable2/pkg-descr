@@ -3,4 +3,4 @@ PAM (Pluggable Authentication Modulues) via the rpam2 gem.  This allows you to
 authenticate against the local host's authentication system including local
 account usernames and passwords.
 
-WWW: http://github.com/devkral/devise_pam_authenticatable2
+WWW: https://github.com/devkral/devise_pam_authenticatable2
