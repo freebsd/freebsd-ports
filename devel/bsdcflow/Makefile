@@ -17,12 +17,7 @@ CONFLICTS=	gnucflow-[0-9]* cflow-[0-9]*
 USES=		gmake
 MAKE_ENV=	MANDIR=${PREFIX}/man
 MAKE_JOBS_UNSAFE=	yes
-
-PLIST_FILES=	bin/asmgraph bin/cgraph	bin/cflow \
-		man/man1/asmgraph.1.gz man/man1/cflow.1.gz \
-		man/man1/cgraph.1.gz
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/gnu
+WRKSRC_SUBDIR=	gnu
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cgraph

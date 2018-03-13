@@ -1,0 +1,6 @@
+bin/asmgraph
+bin/cflow
+bin/cgraph
+man/man1/asmgraph.1.gz
+man/man1/cflow.1.gz
+man/man1/cgraph.1.gz
