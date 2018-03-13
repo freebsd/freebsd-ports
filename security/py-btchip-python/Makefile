@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	btchip-python
-PORTVERSION=	0.1.24
+PORTVERSION=	0.1.26
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mnemonic>=0:security/py-mnemonic@${FLAVOR} \
 USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 GH_ACCOUNT=	LedgerHQ
 
