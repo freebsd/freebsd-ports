@@ -34,7 +34,7 @@ CPE_UPDATE=	${PATCHLEVEL}
 PATCHES=	1 2 3
 PATCHLEVEL=	${PATCHES:O:[-1]}
 .for patch in ${PATCHES}
-PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
+PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:C|.*(...)$|\1|}
 .endfor
 
 post-patch-TERMCAP-on:
