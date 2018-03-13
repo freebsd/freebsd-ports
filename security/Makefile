@@ -1011,6 +1011,7 @@
     SUBDIR += py-vulndb
     SUBDIR += py-yara
     SUBDIR += py-yubioath-desktop
+    SUBDIR += py-yubikey-manager
     SUBDIR += py-zope.app.authentication
     SUBDIR += py-zope.app.localpermission
     SUBDIR += py-zope.app.principalannotation
