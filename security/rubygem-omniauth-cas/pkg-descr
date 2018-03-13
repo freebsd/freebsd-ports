@@ -1,0 +1,4 @@
+Use the Central Authentication Service (CAS) single sign-on protocol for the web
+with Ruby and OmniAuth.
+
+WWW: https://github.com/dlindahl/omniauth-cas
