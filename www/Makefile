@@ -1906,6 +1906,7 @@
     SUBDIR += qt5-webkit
     SUBDIR += qt5-websockets
     SUBDIR += qt5-websockets-qml
+    SUBDIR += quark
     SUBDIR += qupzilla-qt4
     SUBDIR += qupzilla-qt5
     SUBDIR += qutebrowser
