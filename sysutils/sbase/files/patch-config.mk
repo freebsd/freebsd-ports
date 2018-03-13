@@ -1,17 +1,15 @@
 --- config.mk.orig	2017-11-11 02:19:32 UTC
 +++ config.mk
-@@ -2,8 +2,8 @@
+@@ -2,8 +2,6 @@
  VERSION = 0.0
  
  # paths
 -PREFIX = /usr/local
 -MANPREFIX = $(PREFIX)/share/man
-+PREFIX ?= /usr/local
-+MANPREFIX = $(PREFIX)/man
  
  CC = cc
  AR = ar
-@@ -11,6 +11,6 @@ RANLIB = ranlib
+@@ -11,6 +9,6 @@ RANLIB = ranlib
  
  # for NetBSD add -D_NETBSD_SOURCE
  # -lrt might be needed on some systems
