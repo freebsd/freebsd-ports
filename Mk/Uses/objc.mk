@@ -17,7 +17,15 @@ objc_ARGS?=
 IGNORE=	USES=objc only accepts no arguments or 'compiler'
 .endif
 
+_CC_hash:=	${CC:hash}
+
+.if defined(_OBJC_CCVERSION_${_CC_hash})
+_CCVERSION=	${_OBJC_CCVERSION_${_CC_hash}}
+.else
 _CCVERSION!=	${CC} --version
+_OBJC_CCVERSION_${_CC_hash}=	${_CCVERSION}
+PORTS_ENV_VARS+=	_OBJC_CCVERSION_${_CC_hash}
+.endif
 COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:tW:C/([0-9]).([0-9]).*/\1\2/g}
 .if ${_CCVERSION:Mclang}
 COMPILER_TYPE=	clang
@@ -27,11 +35,17 @@ COMPILER_TYPE=	gcc
 
 ALT_COMPILER_VERSION=	0
 ALT_COMPILER_TYPE=	none
-_ALTCCVERSION=	
+_ALTCCVERSION=		none
+.if defined(_OBJC_ALTCCVERSION_${_CC_hash})
+_ALTCCVERSION=	${_OBJC_ALTCCVERSION_${_CC_hash}}
+.else
 .if ${COMPILER_TYPE} == gcc && exists(/usr/bin/clang)
 _ALTCCVERSION!=	/usr/bin/clang --version
 .elif ${COMPILER_TYPE} == clang && exists(/usr/bin/gcc)
 _ALTCCVERSION!=	/usr/bin/gcc --version
+.endif
+_OBJC_ALTCCVERSION_${_CC_hash}=	${_ALTCCVERSION}
+PORTS_ENV_VARS+=		_OBJC_ALTCCVERSION_${_CC_hash}
 .endif
 
 ALT_COMPILER_VERSION=	${_ALTCCVERSION:M[0-9].[0-9]*:tW:C/([0-9]).([0-9]).*/\1\2/g}
