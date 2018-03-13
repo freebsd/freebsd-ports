@@ -168,7 +168,7 @@ export_ports_env() {
 
 	validate_env MAKE PORTSDIR
 
-	uses="python compiler:features"
+	uses="python compiler:features objc"
 
 	make_env="\
 		_PORTS_ENV_CHECK=1 \
