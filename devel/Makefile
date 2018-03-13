@@ -23,6 +23,7 @@
     SUBDIR += R-cran-caTools
     SUBDIR += R-cran-caret
     SUBDIR += R-cran-chron
+    SUBDIR += R-cran-classInt
     SUBDIR += R-cran-cli
     SUBDIR += R-cran-crayon
     SUBDIR += R-cran-data.table
