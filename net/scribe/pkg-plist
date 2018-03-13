@@ -4,7 +4,7 @@ lib/libscribe.a
 %%SITE_PERL%%/Scribe/Thrift/Constants.pm
 %%SITE_PERL%%/Scribe/Thrift/Types.pm
 %%SITE_PERL%%/Scribe/Thrift/scribe.pm
-%%PYTHON_SITELIBDIR%%/scribe-2.0-py2.7.egg-info
+%%PYTHON_SITELIBDIR%%/scribe-2.0-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/scribe/__init__.py
 %%PYTHON_SITELIBDIR%%/scribe/__init__.pyc
 %%PYTHON_SITELIBDIR%%/scribe/constants.py
