@@ -10,9 +10,10 @@ MASTER_SITES=	http://ipmsg.org/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popup style message communication tool for GNOME2
 
-LICENSE=	GPLv2+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake pathfix pkgconfig ssl
+USES=		gettext gmake localbase:ldflags pathfix pkgconfig ssl
 USE_GNOME=	gnomeprefix intltool libgnomeui
 USE_GSTREAMER=	vorbis
 GNU_CONFIGURE=	yes
@@ -20,9 +21,6 @@ CONFIGURE_ARGS=	--disable-doxygen-doc \
 		--enable-systray \
 		--disable-applet \
 		--with-ssl=${OPENSSLBASE}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	g2ipmsg.schemas
 
