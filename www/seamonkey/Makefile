@@ -36,7 +36,6 @@ USE_GL=		gl
 USES=		tar:xz
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 
-MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--enable-application=suite
 
 USE_MOZILLA=	-soundtouch
