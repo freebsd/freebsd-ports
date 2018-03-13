@@ -1,0 +1,5 @@
+The streamio-ffmpeg gem is a simple, yet powerful wrapper around the ffmpeg
+command for reading metadata and transcoding movies.  Other features include:
+watermarking, taking screenshots, and creating slideshows from stills.
+
+WWW: http://github.com/streamio/streamio-ffmpeg
