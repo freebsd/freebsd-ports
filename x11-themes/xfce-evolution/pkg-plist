@@ -5,6 +5,7 @@ share/themes/Xfce Evolution Bronze/00.10
 share/themes/Xfce Evolution Bronze/00.20
 share/themes/Xfce Evolution Bronze/00.30
 share/themes/Xfce Evolution Bronze/00.40
+share/themes/Xfce Evolution Bronze/gtk-2.0/assets
 share/themes/Xfce Evolution Bronze/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-bright.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-explicit.css
@@ -12,11 +13,21 @@ share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/tabs-notebook.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/tweaks.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/assets
 share/themes/Xfce Evolution Bronze/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-bright.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-explicit.css
@@ -24,8 +35,15 @@ share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/focus-rectangle-on.css
-share/themes/Xfce Evolution Bronze/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution Bronze/gtk-3.0/options/tabs-button-v2.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/tabs-button.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/tabs-notebook.css
@@ -37,6 +55,7 @@ share/themes/Xfce Evolution Crux/00.10
 share/themes/Xfce Evolution Crux/00.20
 share/themes/Xfce Evolution Crux/00.30
 share/themes/Xfce Evolution Crux/00.40
+share/themes/Xfce Evolution Crux/gtk-2.0/assets
 share/themes/Xfce Evolution Crux/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-bright.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-explicit.css
@@ -44,11 +63,21 @@ share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/tabs-notebook.css
 share/themes/Xfce Evolution Crux/gtk-2.0/tweaks.css
 share/themes/Xfce Evolution Crux/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Crux/gtk-3.0/assets
 share/themes/Xfce Evolution Crux/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-bright.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-explicit.css
@@ -56,8 +85,15 @@ share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/focus-rectangle-on.css
-share/themes/Xfce Evolution Crux/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution Crux/gtk-3.0/options/tabs-button-v2.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/tabs-button.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/tabs-notebook.css
@@ -69,6 +105,7 @@ share/themes/Xfce Evolution Devilsclaw/00.10
 share/themes/Xfce Evolution Devilsclaw/00.20
 share/themes/Xfce Evolution Devilsclaw/00.30
 share/themes/Xfce Evolution Devilsclaw/00.40
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/assets
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-bright.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-explicit.css
@@ -76,11 +113,21 @@ share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/tabs-notebook.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/tweaks.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/assets
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-bright.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-explicit.css
@@ -88,8 +135,15 @@ share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/focus-rectangle-on.css
-share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tabs-button-v2.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tabs-button.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tabs-notebook.css
@@ -101,6 +155,7 @@ share/themes/Xfce Evolution Graphite/00.10
 share/themes/Xfce Evolution Graphite/00.20
 share/themes/Xfce Evolution Graphite/00.30
 share/themes/Xfce Evolution Graphite/00.40
+share/themes/Xfce Evolution Graphite/gtk-2.0/assets
 share/themes/Xfce Evolution Graphite/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-bright.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-explicit.css
@@ -108,11 +163,21 @@ share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/tabs-notebook.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/tweaks.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/assets
 share/themes/Xfce Evolution Graphite/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-bright.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-explicit.css
@@ -120,8 +185,15 @@ share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/focus-rectangle-on.css
-share/themes/Xfce Evolution Graphite/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution Graphite/gtk-3.0/options/tabs-button-v2.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/tabs-button.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/tabs-notebook.css
@@ -133,6 +205,7 @@ share/themes/Xfce Evolution Greybird/00.10
 share/themes/Xfce Evolution Greybird/00.20
 share/themes/Xfce Evolution Greybird/00.30
 share/themes/Xfce Evolution Greybird/00.40
+share/themes/Xfce Evolution Greybird/gtk-2.0/assets
 share/themes/Xfce Evolution Greybird/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-bright.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-explicit.css
@@ -140,11 +213,21 @@ share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/tabs-notebook.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/tweaks.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/assets
 share/themes/Xfce Evolution Greybird/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-bright.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-explicit.css
@@ -152,8 +235,15 @@ share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/focus-rectangle-on.css
-share/themes/Xfce Evolution Greybird/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution Greybird/gtk-3.0/options/tabs-button-v2.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/tabs-button.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/tabs-notebook.css
@@ -165,6 +255,7 @@ share/themes/Xfce Evolution Rainyday/00.10
 share/themes/Xfce Evolution Rainyday/00.20
 share/themes/Xfce Evolution Rainyday/00.30
 share/themes/Xfce Evolution Rainyday/00.40
+share/themes/Xfce Evolution Rainyday/gtk-2.0/assets
 share/themes/Xfce Evolution Rainyday/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-bright.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-explicit.css
@@ -172,11 +263,21 @@ share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/tabs-notebook.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/tweaks.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/assets
 share/themes/Xfce Evolution Rainyday/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-bright.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-explicit.css
@@ -184,8 +285,15 @@ share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/focus-rectangle-on.css
-share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tabs-button-v2.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tabs-button.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tabs-notebook.css
@@ -197,6 +305,7 @@ share/themes/Xfce Evolution Raleigh/00.10
 share/themes/Xfce Evolution Raleigh/00.20
 share/themes/Xfce Evolution Raleigh/00.30
 share/themes/Xfce Evolution Raleigh/00.40
+share/themes/Xfce Evolution Raleigh/gtk-2.0/assets
 share/themes/Xfce Evolution Raleigh/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-bright.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-explicit.css
@@ -204,11 +313,21 @@ share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/tabs-notebook.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/tweaks.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/assets
 share/themes/Xfce Evolution Raleigh/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-bright.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-explicit.css
@@ -216,8 +335,15 @@ share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/focus-rectangle-on.css
-share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tabs-button-v2.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tabs-button.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tabs-notebook.css
@@ -229,6 +355,7 @@ share/themes/Xfce Evolution Redmond/00.10
 share/themes/Xfce Evolution Redmond/00.20
 share/themes/Xfce Evolution Redmond/00.30
 share/themes/Xfce Evolution Redmond/00.40
+share/themes/Xfce Evolution Redmond/gtk-2.0/assets
 share/themes/Xfce Evolution Redmond/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-bright.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-explicit.css
@@ -236,11 +363,21 @@ share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/tabs-notebook.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/tweaks.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/assets
 share/themes/Xfce Evolution Redmond/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-bright.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-explicit.css
@@ -248,8 +385,15 @@ share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/focus-rectangle-on.css
-share/themes/Xfce Evolution Redmond/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution Redmond/gtk-3.0/options/tabs-button-v2.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/tabs-button.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/tabs-notebook.css
@@ -261,6 +405,7 @@ share/themes/Xfce Evolution Straw/00.10
 share/themes/Xfce Evolution Straw/00.20
 share/themes/Xfce Evolution Straw/00.30
 share/themes/Xfce Evolution Straw/00.40
+share/themes/Xfce Evolution Straw/gtk-2.0/assets
 share/themes/Xfce Evolution Straw/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-bright.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-explicit.css
@@ -268,11 +413,21 @@ share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/tabs-notebook.css
 share/themes/Xfce Evolution Straw/gtk-2.0/tweaks.css
 share/themes/Xfce Evolution Straw/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Straw/gtk-3.0/assets
 share/themes/Xfce Evolution Straw/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-bright.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-explicit.css
@@ -280,8 +435,15 @@ share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/focus-rectangle-on.css
-share/themes/Xfce Evolution Straw/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution Straw/gtk-3.0/options/tabs-button-v2.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/tabs-button.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/tabs-notebook.css
@@ -309,6 +471,15 @@ share/themes/Xfce Evolution/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution/gtk-2.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution/gtk-2.0/options/panel-light-1.css
+share/themes/Xfce Evolution/gtk-2.0/options/panel-light-2.css
+share/themes/Xfce Evolution/gtk-2.0/options/panel-light-3.css
+share/themes/Xfce Evolution/gtk-2.0/options/panel-light-mono.css
+share/themes/Xfce Evolution/gtk-2.0/options/panel-light.css
 share/themes/Xfce Evolution/gtk-2.0/options/tabs-button.css
 share/themes/Xfce Evolution/gtk-2.0/options/tabs-flat.css
 share/themes/Xfce Evolution/gtk-2.0/options/tabs-notebook.css
@@ -417,9 +588,16 @@ share/themes/Xfce Evolution/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution/gtk-3.0/options/focus-rectangle-off.css
 share/themes/Xfce Evolution/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution/gtk-3.0/options/panel-light-1.css
+share/themes/Xfce Evolution/gtk-3.0/options/panel-light-2.css
+share/themes/Xfce Evolution/gtk-3.0/options/panel-light-3.css
+share/themes/Xfce Evolution/gtk-3.0/options/panel-light-mono.css
+share/themes/Xfce Evolution/gtk-3.0/options/panel-light.css
+share/themes/Xfce Evolution/gtk-3.0/options/tabs-button-1.css
+share/themes/Xfce Evolution/gtk-3.0/options/tabs-button-2.css
 share/themes/Xfce Evolution/gtk-3.0/options/tabs-button.css
-share/themes/Xfce Evolution/gtk-3.0/options/tabs-button-v1.css
-share/themes/Xfce Evolution/gtk-3.0/options/tabs-button-v2.css
 share/themes/Xfce Evolution/gtk-3.0/options/tabs-flat.css
 share/themes/Xfce Evolution/gtk-3.0/options/tabs-notebook.css
 share/themes/Xfce Evolution/gtk-3.0/settings.ini
