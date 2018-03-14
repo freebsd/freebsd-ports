@@ -4,7 +4,7 @@
 PORTNAME=	kibana
 PORTVERSION=	6.2.2
 DISTVERSIONSUFFIX=	-linux-x86_64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
@@ -26,15 +26,16 @@ USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-deinstall
 
 do-install:
-	${CP} ${WRKSRC}/config/kibana.yml ${STAGEDIR}${PREFIX}/etc/kibana.yml.sample
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	cd ${WRKSRC} && \
-		${RM} -r bin config node && \
-		${RM} -r optimize && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/config/kibana.yml ${STAGEDIR}${ETCDIR}/kibana.yml.sample
+	(cd ${WRKSRC} && \
+		${RM} -r config node optimize && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${WWWDIR}/config
+	${CHMOD} +x ${STAGEDIR}${WWWDIR}/bin/*
 
 post-install:
-	${ECHO} "@sample etc/kibana.yml.sample" >> ${TMPPLIST}
+	${ECHO} "@sample ${ETCDIR}/kibana.yml.sample" >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${ECHO} "@dir(www,www) ${WWWDIR}/data" >> ${TMPPLIST}
