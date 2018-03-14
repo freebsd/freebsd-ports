@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pipenv
-PORTVERSION=	11.4.0
+PORTVERSION=	11.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,13 @@ USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}idna>=0:dns/py-idna@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0.14:security/py-openssl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ordereddict>=0:devel/py-ordereddict@${FLAVOR}
+.endif
 
 .if ${PYTHON_REL} < 3400
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib>=0:devel/py-pathlib@${FLAVOR}
