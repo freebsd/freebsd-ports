@@ -1,35 +1,13 @@
-Link to intl and add option to disable NLS support
+Fix icons path
 
---- CMakeLists.txt.orig	2017-10-28 17:32:57.000000000 +0200
-+++ CMakeLists.txt	2017-11-10 09:58:26.005609000 +0100
-@@ -9,6 +9,7 @@
- find_package(ZLIB REQUIRED)
- # libgc is a dependency of Guile that still needs to be provided
- find_package(GC REQUIRED)
-+find_library(INTL intl)
- 
- # Optionally set data dir and locale dir
- set(TRACKBALLS_LOCALE_DIR "" CACHE FILEPATH "Folder to install locale files to. Empty means default.")
-@@ -60,7 +61,7 @@
- # Construct executable file
- file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
- add_executable(trackballs ${sources} guile.cc.x)
--target_link_libraries(trackballs ${GUILE_LIBRARIES} ${OPENGL_LIBRARIES} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_MIXER_LIBRARY} ${SDL2_TTF_LIBRARY} ${ZLIB_LIBRARIES} ${GC_LIBRARIES} m)
-+target_link_libraries(trackballs ${GUILE_LIBRARIES} ${OPENGL_LIBRARIES} ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_MIXER_LIBRARY} ${SDL2_TTF_LIBRARY} ${ZLIB_LIBRARIES} ${GC_LIBRARIES} ${INTL} m)
- install(TARGETS trackballs DESTINATION bin)
- 
- # Data files
-@@ -103,6 +104,8 @@
-         DESTINATION ${TRACKBALLS_SHARE}/../applications)
- 
- # Translations!
-+option(DISABLE_NLS "Disable native language support (NLS)" OFF)
-+if(NOT DISABLE_NLS)
- find_package(Gettext)
- file(GLOB po_files po/*.po)
- foreach(po_file ${po_files})
-@@ -110,3 +113,4 @@
-   GETTEXT_PROCESS_PO_FILES( ${lang} ALL PO_FILES ${po_file} )
-   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${lang}.gmo DESTINATION ${TRACKBALLS_LOCALE}/${lang}/LC_MESSAGES/ RENAME trackballs.mo)
+--- CMakeLists.txt.orig	2018-03-13 22:03:27.136767000 +0100
++++ CMakeLists.txt	2018-03-13 22:06:01.398703000 +0100
+@@ -113,7 +113,7 @@
+           RENAME trackballs.png)
  endforeach()
-+endif()
+ install(FILES ${PROJECT_SOURCE_DIR}/share/icons/trackballs.svg
+-        DESTINATION ${TRACKBALLS_ICON}/icons/hicolor/scalable/apps/)
++        DESTINATION ${TRACKBALLS_ICON}/scalable/apps/)
+ install(FILES ${PROJECT_SOURCE_DIR}/share/icons/trackballs.desktop
+         DESTINATION ${TRACKBALLS_APPL})
+ 
