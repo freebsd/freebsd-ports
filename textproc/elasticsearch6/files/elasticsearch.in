@@ -29,6 +29,7 @@ load_rc_config ${name}
 : ${elasticsearch_user=elasticsearch}
 : ${elasticsearch_group=elasticsearch}
 : ${elasticsearch_config=%%PREFIX%%/etc/elasticsearch}
+: ${elasticsearch_login_class=root}
 
 required_files="${elasticsearch_config}/elasticsearch.yml"
 _pidprefix=/var/run/elasticsearch
