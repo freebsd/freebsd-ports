@@ -5,7 +5,7 @@ DISTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	x11-themes
 
-MAINTAINER=	lbdm@privacychain.ch
+MAINTAINER=	lebarondemerde@privacychain.ch
 COMMENT=	Simple SDDM theme inspired on the FBSD SLiM theme
 
 LICENSE=	CC-BY-SA-3.0

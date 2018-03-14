@@ -4,7 +4,7 @@ PORTNAME=	powerdxx
 DISTVERSION=	0.3.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	lbdm@privacychain.ch
+MAINTAINER=	lebarondemerde@privacychain.ch
 COMMENT=	CPU clock speed/frequency daemon
 
 LICENSE=	ISCL
