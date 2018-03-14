@@ -10,6 +10,7 @@ include/sodium/crypto_auth_hmacsha512256.h
 include/sodium/crypto_box.h
 include/sodium/crypto_box_curve25519xchacha20poly1305.h
 include/sodium/crypto_box_curve25519xsalsa20poly1305.h
+include/sodium/crypto_core_ed25519.h
 include/sodium/crypto_core_hchacha20.h
 include/sodium/crypto_core_hsalsa20.h
 include/sodium/crypto_core_salsa20.h
@@ -31,6 +32,7 @@ include/sodium/crypto_pwhash_argon2id.h
 include/sodium/crypto_pwhash_scryptsalsa208sha256.h
 include/sodium/crypto_scalarmult.h
 include/sodium/crypto_scalarmult_curve25519.h
+include/sodium/crypto_scalarmult_ed25519.h
 include/sodium/crypto_secretbox.h
 include/sodium/crypto_secretbox_xchacha20poly1305.h
 include/sodium/crypto_secretbox_xsalsa20poly1305.h
@@ -60,7 +62,7 @@ include/sodium/version.h
 lib/libsodium.a
 lib/libsodium.so
 lib/libsodium.so.23
-lib/libsodium.so.23.0.0
+lib/libsodium.so.23.1.0
 libdata/pkgconfig/libsodium.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
