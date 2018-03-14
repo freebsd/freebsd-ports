@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	giacxcas
-DISTVERSION=	1.2.3-55
-PORTREVISION=	4
+DISTVERSION=	1.4.9-57
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/
@@ -12,25 +11,28 @@ DISTFILES=	giac_${DISTVERSION}${EXTRACT_SUFX}:giac \
 		fltk-giac.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libgmp.so:math/gmp \
-		libpng.so:graphics/png \
-		libpari.so:math/pari \
+LIB_DEPENDS=	libao.so:audio/libao \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libgsl.so:math/gsl \
+		libglpk.so:math/glpk \
+		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
-		libgsl.so:math/gsl
+		libpari.so:math/pari \
+		libpng.so:graphics/png
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 NO_CDROM=	French documentation is for non-commercial use only
 
 GNU_CONFIGURE=	yes
 USES=		blaslapack desktop-file-utils fortran gettext gmake jpeg \
-		libtool readline shebangfix
+		libtool ncurses readline shebangfix
 USE_GL=		gl
 USE_XORG=	x11 xcursor xext xft xi xinerama
 USE_TEX=	latex:build dvipsk:build
@@ -71,6 +73,9 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 #    installed  with USE_GCC
 CONFIGURE_ARGS+=	--disable-ntl
 
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 post-extract:
 	@${FIND} ${WRKSRC}/examples/Exemples -name "._*" -delete
 
@@ -102,16 +107,12 @@ pre-configure:
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}")
 
 pre-build:
-	@(cd ${COCOALIB-GIAC} && ${DO_MAKE_BUILD} \
-		CXXFLAGS_SPECIFIC="${CXXFLAGS}" library)
-	@(cd ${FLTKDEV-GIAC}/src && ${DO_MAKE_BUILD})
-
-post-install-DOCS-on:
-	@${LN} -sf ../doc/giac ${STAGEDIR}${DATADIR}/doc
+	@cd ${COCOALIB-GIAC} && ${DO_MAKE_BUILD} \
+		CXXFLAGS_SPECIFIC="${CXXFLAGS}" library
+	@cd ${FLTKDEV-GIAC}/src && ${DO_MAKE_BUILD}
 
 post-install-EXAMPLES-on:
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "Exemples [a-z]*" \
-		${STAGEDIR}${EXAMPLESDIR})
-	@${LN} -sf ../examples/giac ${STAGEDIR}${DATADIR}/examples
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "Exemples [a-z]*" \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
