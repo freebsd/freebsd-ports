@@ -243,6 +243,7 @@ share/irssi/scripts/postpone.pl
 share/irssi/scripts/ppl.pl
 share/irssi/scripts/q_username.pl
 share/irssi/scripts/query.pl
+share/irssi/scripts/query-connection-notifier.pl
 share/irssi/scripts/queryresume.pl
 share/irssi/scripts/quiet.pl
 share/irssi/scripts/quitrand.pl

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	irssi-scripts
-PORTVERSION=	20131030
-PORTREVISION=	1
+PORTVERSION=	20160301
 CATEGORIES=	irc
-MASTER_SITES=	http://ftp.debian.org/debian/pool/main/i/${PORTNAME}/
-DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	DEBIAN
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Collection of useful scripts for the irssi IRC-client
@@ -15,7 +14,7 @@ RUN_DEPENDS=	irssi:irc/irssi
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		shebangfix
+USES=		shebangfix tar:xz
 SHEBANG_FILES=	scripts/*.pl
 perl_OLD_CMD=	/usr/pkg/bin/perl /usr/bin/irssi
 NO_BUILD=	yes
