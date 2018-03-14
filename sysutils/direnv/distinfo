@@ -1,3 +1,3 @@
-TIMESTAMP = 1515613465
-SHA256 (zimbatm-direnv-v2.14.0_GH0.tar.gz) = 917838827cb753153b91cb2d10c0d7c20cbaa85aa2dde520ee23653a74268ccd
-SIZE (zimbatm-direnv-v2.14.0_GH0.tar.gz) = 46186
+TIMESTAMP = 1520998537
+SHA256 (direnv-direnv-v2.15.2_GH0.tar.gz) = 35076978e2ccbd367043e8aa33ba4268c03270a68bac3789262dacb3b26115c2
+SIZE (direnv-direnv-v2.15.2_GH0.tar.gz) = 91070
