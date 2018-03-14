@@ -1,0 +1,33 @@
+# $FreeBSD$
+#
+# This entry runs the 'msiklm' utility upon device attach to set
+# a default keyboard backlight theme.
+
+# You may adjust ARGS to suit your preference.
+# Generally, the ARGS syntax is "<colors> <brightness> <mode>".
+# Some examples are listed below, but consult 'msiklm help' and
+# %%DOCSDIR%%/README.md
+# for more detailed information.
+
+# Confirm the ARGS work as expected by running (as superuser):
+#   msiklm <ARGS>
+# before placing in the options substatement below.
+
+# Examples:
+#   set ARGS "red,white,blue high wave";
+#   set ARGS "green,blue,red medium breathe";
+#   set ARGS "orange low";
+#   set ARGS "off";
+
+options {
+	set ARGS "red,blue,green high normal";
+};
+
+notify 100 {
+	match "system"		"USB";
+	match "subsystem"	"DEVICE";
+	match "type"		"ATTACH";
+	match "vendor"		"0x1770";
+	match "product"		"0xff00";
+	action "%%PREFIX%%/bin/msiklm $ARGS";
+};

@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+ A sample devd(8) configuration file has been installed as:
+   %%PREFIX%%/etc/devd/msiklm.conf.sample
+
+ You may want to copy this file to:
+   %%PREFIX%%/etc/devd/msiklm.conf
+ and configure it to your liking if you want msiklm to automatically
+ set your keyboard backlight to a default upon system boot/resume.
+
+-----------------------------------------------------------------------
