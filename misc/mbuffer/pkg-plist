@@ -1,0 +1,3 @@
+bin/mbuffer
+@sample etc/mbuffer.rc.sample
+man/man1/mbuffer.1.gz
