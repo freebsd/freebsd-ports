@@ -3,7 +3,7 @@
 
 PORTNAME=	clusterssh
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	4.13.1
+DISTVERSION=	4.13.2
 CATEGORIES=	security net
 
 MAINTAINER=	ehaupt@FreeBSD.org
