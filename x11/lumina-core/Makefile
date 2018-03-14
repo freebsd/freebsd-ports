@@ -2,7 +2,7 @@
 
 PORTNAME=	lumina-core
 PORTVERSION=	1.4.2
-PORTREVISION=	201803061453
+PORTREVISION=	201803131031
 CATEGORIES=	x11
 
 MAINTAINER=	jt@ixsystems.com
@@ -49,7 +49,7 @@ USE_QT5=	core gui widgets network svg multimedia imageformats \
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	9b8419b162767929191b20d848b1b9e3d65cab69
+GH_TAGNAME=	e1dae8c03e02869f752ca6210ea276e32545f11a
 WRKSRC_SUBDIR=	src-qt5/core
 
 #Setup the qmake configuration options
