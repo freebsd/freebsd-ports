@@ -387,9 +387,7 @@
     SUBDIR += mathopd
     SUBDIR += mattermost-server
     SUBDIR += mattermost-webapp
-    SUBDIR += mediawiki123
     SUBDIR += mediawiki127
-    SUBDIR += mediawiki128
     SUBDIR += mediawiki129
     SUBDIR += mediawiki130
     SUBDIR += mergelog
