@@ -13,6 +13,9 @@ COMMENT?=	XML parser library for GNOME
 
 .if !defined(REFERENCE_PORT)
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USES+=		cpe gmake iconv libtool pathfix pkgconfig shebangfix
 CPE_VENDOR=	xmlsoft
