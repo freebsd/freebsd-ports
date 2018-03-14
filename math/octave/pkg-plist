@@ -845,6 +845,7 @@ share/icons/hicolor/x/apps/octave.png
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/plist_t1.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/plist_t2.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/plist_t3.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classdef/struct_wrapper.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classes/@Blork/Blork.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classes/@Blork/bleek.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/classes/@Blork/display.m
