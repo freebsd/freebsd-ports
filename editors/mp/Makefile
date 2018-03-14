@@ -50,6 +50,7 @@ GTK3_CONFIGURE_ON=	--with-gtk=3
 
 NCURSES_USES=		ncurses
 NCURSES_CONFIGURE_WITH=	curses
+NCURSES_CFLAGS=		-I${NCURSESBASE}/include
 
 QT4_USE=		qt4=corelib,gui,moc_build \
 			xorg=x11
