@@ -1,0 +1,10 @@
+--- Gemfile.lock.orig	2018-03-14 22:30:17 UTC
++++ Gemfile.lock
+@@ -604,6 +604,7 @@ PLATFORMS
+   java
+ 
+ DEPENDENCIES
++  atomic (<= 1.1.99)
+   benchmark-ips
+   builder (~> 3.2.2)
+   ci_reporter_rspec (= 1.0.0)
