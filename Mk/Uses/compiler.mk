@@ -145,12 +145,12 @@ _LANG=c
 .if ${CXXSTD:M${std}}
 _LANG=c++
 .endif
-.if defined(CC_OUTPUT_${std:hash}_${_CC_hash})
-OUTPUT_${std}=	${CC_OUTPUT_${std:hash}_${_CC_hash}}
+.if defined(CC_OUTPUT_${_CC_hash}_${std:hash})
+OUTPUT_${std}=	${CC_OUTPUT_${_CC_hash}_${std:hash}}
 .else
 OUTPUT_${std}!=	${CC} -std=${std} -c -x ${_LANG} /dev/null -o /dev/null 2>&1; echo yes
-CC_OUTPUT_${std:hash}_${_CC_hash}=	${OUTPUT_${std}}
-PORTS_ENV_VARS+=			CC_OUTPUT_${std:hash}_${_CC_hash}
+CC_OUTPUT_${_CC_hash}_${std:hash}=	${OUTPUT_${std}}
+PORTS_ENV_VARS+=			CC_OUTPUT_${_CC_hash}_${std:hash}
 .endif
 .if !${OUTPUT_${std}:M*error*}
 COMPILER_FEATURES+=	${std}
