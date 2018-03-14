@@ -13,7 +13,7 @@ COMMENT=	Simple yet powerful audio player
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BROKEN=		fails to build
+BROKEN=		fails to build: sdk/scx/Socket.hpp:188:5: invalid operands to binary expression
 
 USES=		cmake
 USE_LDCONFIG=	yes
