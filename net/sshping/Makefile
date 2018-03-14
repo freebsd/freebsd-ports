@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sshping
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -24,13 +24,6 @@ LDFLAGS+=	-lssh
 
 PLIST_FILES=	bin/sshping man/man1/sshping.1.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1100511
-BUILD_DEPENDS=	clang40:devel/llvm40
-CXX=		clang++40
-.endif
-
 do-build:
 	${CXX} ${CXXFLAGS} ${LDFLAGS} -I ${WRKSRC}/ext \
 		${WRKSRC}/src/sshping.cxx -o ${WRKSRC}/bin/sshping
@@ -41,4 +34,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
