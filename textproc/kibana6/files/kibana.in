@@ -15,17 +15,20 @@ rcvar=kibana_enable
 load_rc_config $name
 
 : ${kibana_enable:="NO"}
-: ${kibana_config:="%%PREFIX%%/etc/kibana.yml"}
+: ${kibana_config:="%%ETCDIR%%/kibana.yml"}
 : ${kibana_user:="www"}
 : ${kibana_group:="www"}
 : ${kibana_log:="/var/log/kibana.log"}
+
+export BABEL_DISABLE_CACHE=1
+export NODE_ENV=production
 
 required_files="${kibana_config}"
 pidfile="/var/run/${name}/${name}.pid"
 start_precmd="kibana_precmd"
 procname="%%LOCALBASE%%/bin/node"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} env BABEL_DISABLE_CACHE=1 ${procname} %%WWWDIR%%/src/cli serve --config ${kibana_config} --log-file ${kibana_log}"
+command_args="-f -p ${pidfile} ${procname} --no-warnings %%WWWDIR%%/src/cli serve --config ${kibana_config} --log-file ${kibana_log}"
 
 kibana_precmd()
 {
@@ -39,6 +42,10 @@ kibana_precmd()
 
 	if [ ! -d %%WWWDIR%%/optimize ]; then
 		install -d -o ${kibana_user} -g ${kibana_group} %%WWWDIR%%/optimize
+	else
+		# We may have installed a plugin as root which will cause files in here
+		# to be owned by root:wheel. Fix with a chown.
+		chown -R ${kibana_user}:${kibana_group} %%WWWDIR%%/optimize
 	fi
 }
 
