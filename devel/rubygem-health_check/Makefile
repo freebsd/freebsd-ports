@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	health_check
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Simple health check of Rails app for uptime monitoring
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-rails4>=4.0:www/rubygem-rails4
+RUN_DEPENDS=	rubygem-railties4>=4.0:www/rubygem-railties4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
