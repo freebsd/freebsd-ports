@@ -1,3 +1,3 @@
-TIMESTAMP = 1517077409
-SHA256 (cloudfoundry-bosh-cli-2.0.48-v2.0.48_GH0.tar.gz) = 846840d078d539e8642335511c4ceba941a710e0e65a8c1cc592155ae88d787d
-SIZE (cloudfoundry-bosh-cli-2.0.48-v2.0.48_GH0.tar.gz) = 4182093
+TIMESTAMP = 1521021680
+SHA256 (cloudfoundry-bosh-cli-3.0.1-v3.0.1_GH0.tar.gz) = 8259197bf67a9cd7f7a2a3318ba2dfdf5049ea95b8f1a7149e1501d151bfbc62
+SIZE (cloudfoundry-bosh-cli-3.0.1-v3.0.1_GH0.tar.gz) = 3304728
