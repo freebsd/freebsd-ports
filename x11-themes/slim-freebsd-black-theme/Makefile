@@ -4,7 +4,7 @@ PORTNAME=	slim-freebsd-black-theme
 DISTVERSION=	1.0
 CATEGORIES=	x11-themes
 
-MAINTAINER=	lbdm@privacychain.ch
+MAINTAINER=	lebarondemerde@privacychain.ch
 COMMENT=	Simple FreeBSD SLiM theme inspired on the FreeBSD SLiM theme
 
 LICENSE=	CC-BY-SA-3.0

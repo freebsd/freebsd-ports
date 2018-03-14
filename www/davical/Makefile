@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	r
 DISTVERSION=	1.1.7
 CATEGORIES?=	www
 
-MAINTAINER=	lbdm@privacychain.ch
+MAINTAINER=	lebarondemerde@privacychain.ch
 COMMENT=	Simple CalDAV server using a postgres backend
 
 LICENSE=	GPLv2 LGPL21
