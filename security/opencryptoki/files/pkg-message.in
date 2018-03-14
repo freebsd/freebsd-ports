@@ -2,6 +2,6 @@ To run pkcsslotd automatically, add the following line to /etc/rc.conf
 
 pkcsslotd_enable="YES"
 
-To use PKCS#11 token, add your_account to '%%GROUPS%%' like following:
+To use PKCS#11 token, add your_account to '%%GROUPS%%':
 
-# pw groupadd %%GROUPS%% -m your_account
+# pw groupmod %%GROUPS%% -m your_account
