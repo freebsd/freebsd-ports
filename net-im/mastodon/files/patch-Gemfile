@@ -1,4 +1,4 @@
---- Gemfile.orig	2018-03-09 12:11:43 UTC
+--- Gemfile.orig	2018-03-13 15:16:51 UTC
 +++ Gemfile
 @@ -9,15 +9,15 @@ gem 'puma', '~> 3.10'
  gem 'rails', '~> 5.1.4'
@@ -20,6 +20,15 @@
  gem 'paperclip-av-transcoder', '~> 0.6'
  gem 'streamio-ffmpeg', '~> 3.0'
  
+@@ -32,7 +32,7 @@ gem 'cld3', '~> 3.2.0'
+ gem 'devise', '~> 4.4'
+ gem 'devise-two-factor', '~> 3.0'
+ 
+-gem 'devise_pam_authenticatable2', '~> 8.0', install_if: -> { ENV['PAM_ENABLED'] == 'true' }
++gem 'devise_pam_authenticatable2', '>= 8.0', install_if: -> { ENV['PAM_ENABLED'] == 'true' }
+ gem 'net-ldap', '~> 0.10'
+ gem 'omniauth-cas', '~> 1.1'
+ gem 'omniauth-saml', '~> 1.10'
 @@ -47,7 +47,7 @@ gem 'redis-namespace', '~> 1.5'
  gem 'htmlentities', '~> 4.3'
  gem 'http', '~> 3.0'
