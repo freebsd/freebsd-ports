@@ -686,6 +686,7 @@
     SUBDIR += mountsmb2
     SUBDIR += mpiexec
     SUBDIR += mptd
+    SUBDIR += msiklm
     SUBDIR += msktutil
     SUBDIR += msyslog
     SUBDIR += mtpfs
