@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eio
-PORTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
