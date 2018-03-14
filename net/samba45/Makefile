@@ -13,6 +13,9 @@ COMMENT?=			Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=			GPLv3
 
+DEPRECATED=			yes
+EXPIRATION_DATE=		2018-06-13
+
 CONFLICTS?=			samba4-4.0.* samba4[1-46-9]-4.* p5-Parse-Pidl-4.*
 
 #EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
