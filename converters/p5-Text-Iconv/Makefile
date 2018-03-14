@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to iconv() codeset conversion function
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 USES=		perl5 iconv:translit
 USE_PERL5=	configure
 CONFIGURE_ARGS+=INC="-I${ICONV_PREFIX}/include ${CFLAGS}" \
