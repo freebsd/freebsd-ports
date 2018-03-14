@@ -257,6 +257,7 @@
     SUBDIR += libpredict
     SUBDIR += libpri
     SUBDIR += libsupertone
+    SUBDIR += libsweep-lidar
     SUBDIR += libutf
     SUBDIR += lifelines
     SUBDIR += lingoteach
