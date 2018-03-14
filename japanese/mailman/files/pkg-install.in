@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: branches/2018Q1/japanese/mailman/files/pkg-install.in 360783 2014-07-05 17:42:23Z tota $
 
 PATH=/bin:/usr/bin:/usr/sbin
 
@@ -15,6 +15,14 @@ POST-INSTALL)
   /bin/chmod g+s "%%MAILMANDIR%%" || exit 1
 
   echo "---> Running update"
+
+  for DIR in logs archives lists locks data spam qfiles \
+             archives/private archives/public
+  do
+      if [ ! -e "%%MAILMANDIR%%/$DIR" ]; then
+          /bin/mkdir -p "%%MAILMANDIR%%/$DIR"
+      fi
+  done
 
   LC_ALL=C "%%MAILMANDIR%%/bin/update" || exit 1
 
