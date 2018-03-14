@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	runit
-DISTVERSION=	2.1.2-0.1.14
-RUNITVERSION=	${DISTVERSION:C/(.*)-(.*)/\1/}
-CONFVERSION=	${DISTVERSION:C/(.*)-(.*)/\2/}
+DISTVERSION=	${RUNITVERSION}-${CONFVERSION}
+RUNITVERSION=	2.1.2
+CONFVERSION=	0.1.16
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/runit/ \
 		http://www.bayofrum.net/dist/runit/ \
