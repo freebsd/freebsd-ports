@@ -3,7 +3,7 @@
 PORTNAME=	biber
 PORTVERSION=	2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print perl5
 PKGNAMEPREFIX=	latex-
 DIST_SUBDIR=	TeX
@@ -37,6 +37,7 @@ __DEPENDS= \
 	p5-Regexp-Common>0:textproc/p5-Regexp-Common \
 	p5-Text-BibTeX>0:textproc/p5-Text-BibTeX \
 	p5-Text-Roman>0:textproc/p5-Text-Roman \
+	p5-URI>0:net/p5-URI \
 	p5-Unicode-Collate>0:textproc/p5-Unicode-Collate \
 	p5-Unicode-LineBreak>0:textproc/p5-Unicode-LineBreak \
 	p5-XML-LibXML-Simple>0:textproc/p5-XML-LibXML-Simple \
@@ -51,5 +52,7 @@ USE_PERL5=	modbuild
 USE_TEX=	texmf
 USE_GITHUB=	yes
 GH_ACCOUNT=	plk
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
