@@ -14,6 +14,10 @@ COMMENT=	Enhanced wiki and issue tracking system for software projects
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+CONFLICTS_INSTALL=	trac-devel
+
+PORTSCOUT=	limit:^1\.2\.[0-9]*
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Genshi>=0.7:textproc/py-genshi@${FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${FLAVOR} \
