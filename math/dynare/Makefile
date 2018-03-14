@@ -21,8 +21,8 @@ LIB_DEPENDS=	libumfpack.so:math/suitesparse \
 		libfftw3_threads.so:math/fftw3 \
 		libfftw3f_threads.so:math/fftw3-float
 
-GNU_CONFIGURE=	yes
 USES=		fortran gmake localbase pkgconfig shebangfix tar:xz
+GNU_CONFIGURE=	yes
 SHEBANG_FILES=	matlab/modules/reporting/success.sh
 
 INFO=	dynare
@@ -36,6 +36,8 @@ OPTIONS_SUB=		yes
 MATLAB_CONFIGURE_ENABLE=	matlab
 OCTAVE_CONFIGURE_ENABLE=	octave
 OCTAVE_BUILD_DEPENDS=		octave:math/octave
+OCTAVE_USES=			compiler:c++14-lang
+OCTAVE_VARS=			CXXFLAGS=--std=c++14 # https://github.com/DynareTeam/dynare/issues/1599
 
 ONLY_FOR_ARCH=	i386 amd64
 ARCH_amd64=	64
