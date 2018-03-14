@@ -12,11 +12,10 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	FUSE based filesystem with replication at the filesystem level
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/doc/copyright
 
+USES=		fuse localbase:ldflags
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		fuse
 
 PLIST_FILES=	bin/chironfs bin/chirctl man/man8/chironfs.8.gz
 PORTDOCS=	*
