@@ -1,6 +1,6 @@
---- test/CMakeLists.txt.orig	2018-02-16 23:52:29 UTC
+--- test/CMakeLists.txt.orig	2018-03-13 17:07:19 UTC
 +++ test/CMakeLists.txt
-@@ -8,12 +8,12 @@
+@@ -8,12 +8,13 @@
  
  cmake_minimum_required(VERSION 3.1)
  
@@ -13,17 +13,27 @@
 -    set(XTENSOR_INCLUDE_DIR ${xtensor_INCLUDE_DIRS})
 -endif ()
 +    #find_package(xtensor REQUIRED CONFIG)
++    #set(XTENSOR_INCLUDE_DIR ${xtensor_INCLUDE_DIRS})
 +    include_directories(staged-include)
 +#endif ()
  
  message(STATUS "Forcing tests build type to Release")
  set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
-@@ -156,7 +156,7 @@ add_executable(${XTENSOR_TARGET} ${XTENS
+@@ -158,7 +158,7 @@ endforeach()
+ foreach(filename IN LISTS XTENSOR_TESTS)
+     string(REPLACE ".cpp" "" targetname ${filename})
+     add_executable(${targetname} ${COMMON_BASE} ${filename} ${XTENSOR_HEADERS})
+-    target_link_libraries(${targetname} xtensor ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
++    target_link_libraries(${targetname} ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+     if(DOWNLOAD_GTEST OR GTEST_SRC_DIR)
+         add_dependencies(${targetname} gtest_main)
+     endif()
+@@ -169,7 +169,7 @@ add_executable(${XTENSOR_TARGET} ${COMMO
  if(DOWNLOAD_GTEST OR GTEST_SRC_DIR)
      add_dependencies(${XTENSOR_TARGET} gtest_main)
  endif()
 -target_link_libraries(${XTENSOR_TARGET} xtensor ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 +target_link_libraries(${XTENSOR_TARGET} ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
  
- add_custom_target(xtest COMMAND test_xtensor DEPENDS ${XTENSOR_TARGET})
+ add_custom_target(xtest COMMAND ${XTENSOR_TARGET} DEPENDS ${XTENSOR_TARGET})
  
