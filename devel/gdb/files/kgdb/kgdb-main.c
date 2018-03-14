@@ -379,6 +379,10 @@ main(int argc, char *argv[])
 	add_arg(&args, "-iex");
 	add_arg(&args, "set prompt (kgdb) ");
 
+	/* Change osabi to assume a FreeBSD kernel. */
+	add_arg(&args, "-iex");
+	add_arg(&args, "set osabi FreeBSD/kernel");
+
 	/* Open the vmcore if requested. */
 	if (vmcore != NULL) {
 		add_arg(&args, "-ex");

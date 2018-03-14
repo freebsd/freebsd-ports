@@ -1,0 +1,32 @@
+commit b999e2038dbc54e2c8b1c390f8b8fe50d0f1d10a
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Tue Jan 9 13:35:17 2018 -0800
+
+    Don't return stale data from fbsd_pid_to_exec_file for kernel processes.
+    
+    For processes without an associated executable (such as kernel processes),
+    the kern.proc.pathname.<pid> system control node returns a length of zero
+    without modifying the user's buffer.  Detect this case and return NULL
+    rather than the previous contents of the static buffer 'buf'.
+    
+    gdb/ChangeLog:
+    
+            * fbsd-nat.c (fbsd_pid_to_exec_file) [KERN_PROC_PATHNAME]: Return
+            NULL for an empty pathname.
+
+diff --git gdb/fbsd-nat.c gdb/fbsd-nat.c
+index ec4eed9abe..d0aaf89145 100644
+--- gdb/fbsd-nat.c
++++ gdb/fbsd-nat.c
+@@ -63,7 +63,10 @@ fbsd_pid_to_exec_file (struct target_ops *self, int pid)
+   mib[3] = pid;
+   buflen = sizeof buf;
+   if (sysctl (mib, 4, buf, &buflen, NULL, 0) == 0)
+-    return buf;
++    /* The kern.proc.pathname.<pid> sysctl returns a length of zero
++       for processes without an associated executable such as kernel
++       processes.  */
++    return buflen == 0 ? NULL : buf;
+ #endif
+ 
+   xsnprintf (name, PATH_MAX, "/proc/%d/exe", pid);

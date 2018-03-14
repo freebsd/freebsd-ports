@@ -27,25 +27,22 @@
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD$");
 
-#include <fcntl.h>
-#include <libgen.h>
-
-#include <defs.h>
-#include <command.h>
-#include <completer.h>
-#include <environ.h>
-#include <exec.h>
-#include <frame-unwind.h>
-#include <inferior.h>
-#include <objfiles.h>
-#include <gdbcore.h>
-#include <language.h>
+#include "defs.h"
+#include "command.h"
+#include "completer.h"
+#include "environ.h"
+#include "exec.h"
+#include "frame-unwind.h"
+#include "inferior.h"
+#include "objfiles.h"
+#include "gdbcore.h"
+#include "language.h"
 #include "solib.h"
-#include <solist.h>
+#include "solist.h"
 
 #include "kgdb.h"
 
-struct lm_info {
+struct lm_info_kld : public lm_info_base {
 	CORE_ADDR base_address;
 };
 
@@ -199,7 +196,7 @@ read_pointer (CORE_ADDR address)
  * Try to find this kld in the kernel linker's list of linker files.
  */
 static int
-find_kld_address (char *arg, CORE_ADDR *address)
+find_kld_address (const char *arg, CORE_ADDR *address)
 {
 	struct kld_info *info;
 	CORE_ADDR kld;
@@ -314,7 +311,7 @@ load_kld (char *path, CORE_ADDR base_addr, int from_tty)
 }
 
 static void
-kgdb_add_kld_cmd (char *arg, int from_tty)
+kgdb_add_kld_cmd (const char *arg, int from_tty)
 {
 	char path[PATH_MAX];
 	CORE_ADDR base_addr;
@@ -349,26 +346,30 @@ kgdb_add_kld_cmd (char *arg, int from_tty)
 static void
 kld_relocate_section_addresses (struct so_list *so, struct target_section *sec)
 {
-	static CORE_ADDR curr_addr;
+  lm_info_kld *li = (lm_info_kld *) so->lm_info;
+  static CORE_ADDR curr_addr;
 
-	if (sec == so->sections)
-		curr_addr = so->lm_info->base_address;
+  if (sec == so->sections)
+    curr_addr = li->base_address;
 
-	adjust_section_address(sec, &curr_addr);
+  adjust_section_address(sec, &curr_addr);
 }
 
 static void
 kld_free_so (struct so_list *so)
 {
+  lm_info_kld *li = (lm_info_kld *) so->lm_info;
 
-	xfree(so->lm_info);
+  delete li;
 }
 
 static void
 kld_clear_so (struct so_list *so)
 {
-	if (so->lm_info != NULL)
-		so->lm_info->base_address = 0;
+  lm_info_kld *li = (lm_info_kld *) so->lm_info;
+
+  if (li != NULL)
+    li->base_address = 0;
 }
 
 static void
@@ -460,8 +461,10 @@ kld_current_sos (void)
 
 		newobj = XCNEW (struct so_list);
 
-		newobj->lm_info = XNEW (struct lm_info);
-		newobj->lm_info->base_address = 0;
+		lm_info_kld *li = new lm_info_kld;
+		li->base_address = 0;
+
+		newobj->lm_info = li;
 
 		/* Read the base filename and store it in so_original_name. */
 		target_read_string(read_pointer(kld + info->off_filename),
@@ -504,9 +507,8 @@ kld_current_sos (void)
 			    sizeof(newobj->so_name));
 
 		/* Read this kld's base address. */
-		newobj->lm_info->base_address = read_pointer(kld +
-		    info->off_address);
-		if (newobj->lm_info->base_address == 0) {
+		li->base_address = read_pointer(kld + info->off_address);
+		if (li->base_address == 0) {
 			warning(
 			    "kld_current_sos: Invalid address for kld \"%s\"",
 			    newobj->so_original_name);
@@ -523,7 +525,7 @@ kld_current_sos (void)
 }
 
 static int
-kld_open_symbol_file_object (void *from_ttyp)
+kld_open_symbol_file_object (int from_tty)
 {
 
 	return (0);
@@ -553,8 +555,6 @@ kld_find_and_open_solib (const char *solib, unsigned o_flags,
 		*temp_pathname = xstrdup(path);
 	return (fd);
 }
-
-void _initialize_kld_target(void);
 
 void
 _initialize_kld_target(void)

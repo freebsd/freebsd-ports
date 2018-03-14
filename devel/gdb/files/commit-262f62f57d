@@ -1,0 +1,43 @@
+commit 262f62f57d987269152412a55c458a03adc6ddd6
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Tue Jan 9 13:35:17 2018 -0800
+
+    Use gdb::unique_xmalloc_ptr<> instead of a deleter that invokes free().
+    
+    Since xfree() always wraps free(), it is safe to use the xfree deleter
+    for buffers allocated by library routines such as kinfo_getvmmap() that
+    must be released via free().
+    
+    gdb/ChangeLog:
+    
+            * fbsd-nat.c (struct free_deleter): Remove.
+            (fbsd_find_memory_regions): Use gdb::unique_xmalloc_ptr<>.
+
+diff --git gdb/fbsd-nat.c gdb/fbsd-nat.c
+index d0aaf89145..81f8e27a2d 100644
+--- gdb/fbsd-nat.c
++++ gdb/fbsd-nat.c
+@@ -81,14 +81,6 @@ fbsd_pid_to_exec_file (struct target_ops *self, int pid)
+ }
+ 
+ #ifdef HAVE_KINFO_GETVMMAP
+-/* Deleter for std::unique_ptr that invokes free.  */
+-
+-template <typename T>
+-struct free_deleter
+-{
+-  void operator() (T *ptr) const { free (ptr); }
+-};
+-
+ /* Iterate over all the memory regions in the current inferior,
+    calling FUNC for each memory region.  OBFD is passed as the last
+    argument to FUNC.  */
+@@ -102,7 +94,7 @@ fbsd_find_memory_regions (struct target_ops *self,
+   uint64_t size;
+   int i, nitems;
+ 
+-  std::unique_ptr<struct kinfo_vmentry, free_deleter<struct kinfo_vmentry>>
++  gdb::unique_xmalloc_ptr<struct kinfo_vmentry>
+     vmentl (kinfo_getvmmap (pid, &nitems));
+   if (vmentl == NULL)
+     perror_with_name (_("Couldn't fetch VM map entries."));

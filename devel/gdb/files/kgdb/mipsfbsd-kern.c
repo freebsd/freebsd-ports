@@ -30,24 +30,19 @@
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD: head/gnu/usr.bin/gdb/kgdb/trgt_mips.c 249878 2013-04-25 04:53:01Z imp $");
 
-#include <sys/types.h>
+#include "defs.h"
+#include "frame-unwind.h"
+#include "osabi.h"
+#include "regcache.h"
+#include "solib.h"
+#include "trad-frame.h"
+#include "mips-tdep.h"
+
 #ifdef __mips__
 #include <machine/asm.h>
 #include <machine/pcb.h>
 #include <machine/frame.h>
 #endif
-#include <string.h>
-
-#include <defs.h>
-#include <frame-unwind.h>
-//#include <target.h>
-//#include <gdbthread.h>
-//#include <inferior.h>
-#include "osabi.h"
-#include <regcache.h>
-#include "solib.h"
-#include "trad-frame.h"
-#include <mips-tdep.h>
 
 #include "kgdb.h"
 
@@ -92,7 +87,7 @@ _Static_assert(FBSD_PCB_REG_PC == PCB_REG_PC, "PCB_REG_PC mismatch");
 static void
 mipsfbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 {
-  struct gdbarch *gdbarch = get_regcache_arch (regcache);
+  struct gdbarch *gdbarch = regcache->arch ();
   size_t regsize = mips_isa_regsize (gdbarch);
   gdb_byte buf[regsize * (FBSD_PCB_REG_PC + 1)];
 
@@ -102,35 +97,35 @@ mipsfbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 			  sizeof(buf)) != 0)
     return;
 
-  regcache_raw_supply_unsigned (regcache, MIPS_ZERO_REGNUM, 0);
-  regcache_raw_supply (regcache, MIPS_S2_REGNUM - 2,
-		       buf + (regsize * FBSD_PCB_REG_S0));
-  regcache_raw_supply (regcache, MIPS_S2_REGNUM - 1,
-		       buf + (regsize * FBSD_PCB_REG_S1));
-  regcache_raw_supply (regcache, MIPS_S2_REGNUM,
-		       buf + (regsize * FBSD_PCB_REG_S2));
-  regcache_raw_supply (regcache, MIPS_S2_REGNUM + 1,
-		       buf + (regsize * FBSD_PCB_REG_S3));
-  regcache_raw_supply (regcache, MIPS_S2_REGNUM + 2,
-		       buf + (regsize * FBSD_PCB_REG_S4));
-  regcache_raw_supply (regcache, MIPS_S2_REGNUM + 3,
-		       buf + (regsize * FBSD_PCB_REG_S5));
-  regcache_raw_supply (regcache, MIPS_S2_REGNUM + 4,
-		       buf + (regsize * FBSD_PCB_REG_S6));
-  regcache_raw_supply (regcache, MIPS_S2_REGNUM + 5,
-		       buf + (regsize * FBSD_PCB_REG_S7));
-  regcache_raw_supply (regcache, MIPS_SP_REGNUM,
-		       buf + (regsize * FBSD_PCB_REG_SP));
-  regcache_raw_supply (regcache, MIPS_S2_REGNUM + 6,
-		       buf + (regsize * FBSD_PCB_REG_S8));
-  regcache_raw_supply (regcache, MIPS_RA_REGNUM,
-		       buf + (regsize * FBSD_PCB_REG_RA));
-  regcache_raw_supply (regcache, MIPS_PS_REGNUM,
-		       buf + (regsize * FBSD_PCB_REG_SR));
-  regcache_raw_supply (regcache, MIPS_GP_REGNUM,
-		       buf + (regsize * FBSD_PCB_REG_GP));
-  regcache_raw_supply (regcache, MIPS_EMBED_PC_REGNUM,
-		       buf + (regsize * FBSD_PCB_REG_PC));
+  regcache->raw_supply_unsigned (MIPS_ZERO_REGNUM, 0);
+  regcache->raw_supply (MIPS_S2_REGNUM - 2,
+			buf + (regsize * FBSD_PCB_REG_S0));
+  regcache->raw_supply (MIPS_S2_REGNUM - 1,
+			buf + (regsize * FBSD_PCB_REG_S1));
+  regcache->raw_supply (MIPS_S2_REGNUM,
+			buf + (regsize * FBSD_PCB_REG_S2));
+  regcache->raw_supply (MIPS_S2_REGNUM + 1,
+			buf + (regsize * FBSD_PCB_REG_S3));
+  regcache->raw_supply (MIPS_S2_REGNUM + 2,
+			buf + (regsize * FBSD_PCB_REG_S4));
+  regcache->raw_supply (MIPS_S2_REGNUM + 3,
+			buf + (regsize * FBSD_PCB_REG_S5));
+  regcache->raw_supply (MIPS_S2_REGNUM + 4,
+			buf + (regsize * FBSD_PCB_REG_S6));
+  regcache->raw_supply (MIPS_S2_REGNUM + 5,
+			buf + (regsize * FBSD_PCB_REG_S7));
+  regcache->raw_supply (MIPS_SP_REGNUM,
+			buf + (regsize * FBSD_PCB_REG_SP));
+  regcache->raw_supply (MIPS_S2_REGNUM + 6,
+			buf + (regsize * FBSD_PCB_REG_S8));
+  regcache->raw_supply (MIPS_RA_REGNUM,
+			buf + (regsize * FBSD_PCB_REG_RA));
+  regcache->raw_supply (MIPS_PS_REGNUM,
+			buf + (regsize * FBSD_PCB_REG_SR));
+  regcache->raw_supply (MIPS_GP_REGNUM,
+			buf + (regsize * FBSD_PCB_REG_GP));
+  regcache->raw_supply (MIPS_EMBED_PC_REGNUM,
+			buf + (regsize * FBSD_PCB_REG_PC));
 }
 
 static struct trad_frame_cache *
@@ -291,8 +286,6 @@ mipsfbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
   fbsd_vmcore_set_supply_pcb (gdbarch, mipsfbsd_supply_pcb);
   fbsd_vmcore_set_cpu_pcb_addr (gdbarch, kgdb_trgt_stop_pcb);
 }
-
-void _initialize_mips_kgdb_tdep (void);
 
 void
 _initialize_mips_kgdb_tdep (void)
