@@ -27,34 +27,24 @@
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD$");
 
-#include <sys/param.h>
-#include <sys/proc.h>
-#include <sys/sysctl.h>
-#include <sys/user.h>
-#include <err.h>
-#include <fcntl.h>
-#include <kvm.h>
-
-#include <defs.h>
-#include <readline/readline.h>
-#include <readline/tilde.h>
-#include <command.h>
+#include "defs.h"
+#include "command.h"
 #include "elf-bfd.h"
-#include <exec.h>
 #include "filenames.h"
-#include <frame-unwind.h>
-#include <gdb.h>
-#include <gdbcore.h>
-#include <gdbthread.h>
+#include "gdbcore.h"
+#include "gdbthread.h"
 #include "gdb_obstack.h"
-#include <inferior.h>
-#include <language.h>
+#include "inferior.h"
 #include "objfiles.h"
 #include "osabi.h"
-#include <regcache.h>
-#include <solib.h>
-#include <target.h>
-#include <ui-out.h>
+#include "solib.h"
+#include "target.h"
+#include "value.h"
+#include "readline/tilde.h"
+
+#include <sys/user.h>
+#include <fcntl.h>
+#include <kvm.h>
 
 #include "kgdb.h"
 
@@ -503,20 +493,18 @@ kgdb_trgt_remove_breakpoint(struct target_ops *ops, struct gdbarch *gdbarch,
 }
 
 static void
-kgdb_switch_to_thread(int tid)
+kgdb_switch_to_thread(const char *arg, int tid)
 {
-	char buf[16];
-	int thread_id;
+  struct thread_info *tp;
 
-	thread_id = ptid_to_global_thread_id(fbsd_vmcore_ptid(tid));
-	if (thread_id == 0)
-		error ("invalid tid");
-	snprintf(buf, sizeof(buf), "%d", thread_id);
-	gdb_thread_select(current_uiout, buf, NULL);
+  tp = find_thread_ptid (fbsd_vmcore_ptid (tid));
+  if (tp == NULL)
+    error ("invalid tid");
+  thread_select (arg, tp);
 }
 
 static void
-kgdb_set_proc_cmd (char *arg, int from_tty)
+kgdb_set_proc_cmd (const char *arg, int from_tty)
 {
 	CORE_ADDR addr;
 	struct kthr *thr;
@@ -538,11 +526,11 @@ kgdb_set_proc_cmd (char *arg, int from_tty)
 		if (thr == NULL)
 			error("invalid proc address");
 	}
-	kgdb_switch_to_thread(thr->tid);
+	kgdb_switch_to_thread(arg, thr->tid);
 }
 
 static void
-kgdb_set_tid_cmd (char *arg, int from_tty)
+kgdb_set_tid_cmd (const char *arg, int from_tty)
 {
 	CORE_ADDR addr;
 	struct kthr *thr;
@@ -558,7 +546,7 @@ kgdb_set_tid_cmd (char *arg, int from_tty)
 			error("invalid thread address");
 		addr = thr->tid;
 	}
-	kgdb_switch_to_thread(addr);
+	kgdb_switch_to_thread(arg, addr);
 }
 
 static int
@@ -567,8 +555,6 @@ kgdb_trgt_return_one(struct target_ops *ops)
 
 	return 1;
 }
-
-void _initialize_kgdb_target(void);
 
 void
 _initialize_kgdb_target(void)

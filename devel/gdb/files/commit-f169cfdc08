@@ -1,0 +1,84 @@
+commit f169cfdc08761a3d9fcd587ad8661102672403ec
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Tue Oct 24 21:06:00 2017 -0700
+
+    Workaround a FreeBSD ptrace() bug with clearing thread events.
+    
+    When multiple threads within a process wish to report STOPPED events
+    from wait(), the kernel picks one thread event as the thread event to
+    report.  The chosen thread event is retrieved via PT_LWPINFO by
+    passing the process ID as the request pid.  If multiple events are
+    pending, then the subsequent wait() after resuming a process will
+    report another STOPPED event after resuming the process to handle the
+    next thread event and so on.
+    
+    A single thread event is cleared as a side effect of resuming the
+    process with PT_CONTINUE, PT_STEP, etc.  In older kernels, however,
+    the request pid was used to select which thread's event was cleared
+    rather than always clearing the event that was just reported.  To
+    avoid clearing the event of the wrong LWP, always pass the process ID
+    instead of an LWP ID to PT_CONTINUE or PT_SYSCALL.
+    
+    In the case of stepping, the process ID cannot be used with PT_STEP
+    since it would step the thread that reported an event which may not be
+    the thread indicated by PTID.  For stepping, use PT_SETSTEP to enable
+    stepping on the desired thread before resuming the process via
+    PT_CONTINUE instead of using PT_STEP.
+    
+    This manifested as a failure in the
+    gdb.threads/continue-pending-status.exp test.  Specifically, if thread
+    2 reported a breakpoint and the test thus switched to thread 3 before
+    continuing, thread 3's event (if any) was discarded and thread 2's
+    breakpoint remained pending and was reported a second time as a
+    duplicate event.  As a result, the PC was decremented twice for the
+    same breakpoint resulting in an illegal instruction fault on x86.
+    
+    gdb/ChangeLog:
+    
+            * fbsd-nat.c (fbsd_resume): Use PT_SETSTEP for stepping and a
+            wildcard process pid for super_resume for kernels with a
+            specific bug.
+
+diff --git gdb/fbsd-nat.c gdb/fbsd-nat.c
+index b352418813..3a216abf18 100644
+--- gdb/fbsd-nat.c
++++ gdb/fbsd-nat.c
+@@ -1143,6 +1143,38 @@ fbsd_resume (struct target_ops *ops,
+ 	}
+       ptid = inferior_ptid;
+     }
++
++#if __FreeBSD_version < 1200052
++  /* When multiple threads within a process wish to report STOPPED
++     events from wait(), the kernel picks one thread event as the
++     thread event to report.  The chosen thread event is retrieved via
++     PT_LWPINFO by passing the process ID as the request pid.  If
++     multiple events are pending, then the subsequent wait() after
++     resuming a process will report another STOPPED event after
++     resuming the process to handle the next thread event and so on.
++
++     A single thread event is cleared as a side effect of resuming the
++     process with PT_CONTINUE, PT_STEP, etc.  In older kernels,
++     however, the request pid was used to select which thread's event
++     was cleared rather than always clearing the event that was just
++     reported.  To avoid clearing the event of the wrong LWP, always
++     pass the process ID instead of an LWP ID to PT_CONTINUE or
++     PT_SYSCALL.
++
++     In the case of stepping, the process ID cannot be used with
++     PT_STEP since it would step the thread that reported an event
++     which may not be the thread indicated by PTID.  For stepping, use
++     PT_SETSTEP to enable stepping on the desired thread before
++     resuming the process via PT_CONTINUE instead of using
++     PT_STEP.  */
++  if (step)
++    {
++      if (ptrace (PT_SETSTEP, get_ptrace_pid (ptid), NULL, 0) == -1)
++	perror_with_name (("ptrace"));
++      step = 0;
++    }
++  ptid = ptid_t (ptid.pid ());
++#endif
+   super_resume (ops, ptid, step, signo);
+ }
+ 

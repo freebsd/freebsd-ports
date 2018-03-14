@@ -27,26 +27,24 @@
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD$");
 
-#include <sys/param.h>
-#include <sys/proc.h>
+#include "defs.h"
+#include "frame-unwind.h"
+#include "gdbcore.h"
+#include "inferior.h"
+#include "osabi.h"
+#include "regcache.h"
+#include "progspace.h"
+#include "solib.h"
+#include "trad-frame.h"
+#include "i386-tdep.h"
+
 #ifdef __i386__
+#include <sys/proc.h>
 #include <machine/pcb.h>
 #include <machine/frame.h>
 #include <machine/segments.h>
 #include <machine/tss.h>
 #endif
-#include <string.h>
-
-#include <defs.h>
-#include <frame-unwind.h>
-#include "gdbcore.h"
-#include <inferior.h>
-#include "osabi.h"
-#include <regcache.h>
-#include "progspace.h"
-#include "solib.h"
-#include "trad-frame.h"
-#include <i386-tdep.h>
 
 #include "kgdb.h"
 
@@ -135,14 +133,14 @@ i386fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
       if (target_read_memory(pcb_addr + i386fbsd_pcb_offset[i], buf, sizeof buf)
 	  != 0)
 	continue;
-      regcache_raw_supply(regcache, i, buf);
+      regcache->raw_supply(i, buf);
     }
-  regcache_raw_supply_unsigned(regcache, I386_CS_REGNUM, CODE_SEL);
-  regcache_raw_supply_unsigned(regcache, I386_DS_REGNUM, DATA_SEL);
-  regcache_raw_supply_unsigned(regcache, I386_ES_REGNUM, DATA_SEL);
-  regcache_raw_supply_unsigned(regcache, I386_FS_REGNUM, PRIV_SEL);
-  regcache_raw_supply_unsigned(regcache, I386_GS_REGNUM, DATA_SEL);
-  regcache_raw_supply_unsigned(regcache, I386_SS_REGNUM, DATA_SEL);
+  regcache->raw_supply_unsigned(I386_CS_REGNUM, CODE_SEL);
+  regcache->raw_supply_unsigned(I386_DS_REGNUM, DATA_SEL);
+  regcache->raw_supply_unsigned(I386_ES_REGNUM, DATA_SEL);
+  regcache->raw_supply_unsigned(I386_FS_REGNUM, PRIV_SEL);
+  regcache->raw_supply_unsigned(I386_GS_REGNUM, DATA_SEL);
+  regcache->raw_supply_unsigned(I386_SS_REGNUM, DATA_SEL);
 }
 
 #ifdef __i386__
@@ -461,8 +459,6 @@ i386fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 	fbsd_vmcore_set_supply_pcb(gdbarch, i386fbsd_supply_pcb);
 	fbsd_vmcore_set_cpu_pcb_addr(gdbarch, kgdb_trgt_stop_pcb);
 }
-
-void _initialize_i386_kgdb_tdep(void);
 
 void
 _initialize_i386_kgdb_tdep(void)

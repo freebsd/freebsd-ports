@@ -27,23 +27,22 @@
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD$");
 
-#include <sys/types.h>
-#ifdef __amd64__
-#include <machine/pcb.h>
-#include <machine/frame.h>
-#endif
-#include <string.h>
-
-#include <defs.h>
-#include <frame-unwind.h>
+#include "defs.h"
+#include "frame-unwind.h"
 #include "gdbcore.h"
 #include "osabi.h"
-#include <regcache.h>
+#include "regcache.h"
 #include "solib.h"
 #include "stack.h"
 #include "symtab.h"
 #include "trad-frame.h"
-#include <amd64-tdep.h>
+#include "amd64-tdep.h"
+#include "x86-xstate.h"
+
+#ifdef __amd64__
+#include <machine/pcb.h>
+#include <machine/frame.h>
+#endif
 
 #include "kgdb.h"
 
@@ -88,11 +87,11 @@ amd64fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
       if (target_read_memory(pcb_addr + amd64fbsd_pcb_offset[i], buf,
 			     sizeof buf) != 0)
 	continue;
-      regcache_raw_supply(regcache, i, buf);
+      regcache->raw_supply(i, buf);
     }
 
-  regcache_raw_supply_unsigned(regcache, AMD64_CS_REGNUM, CODE_SEL);
-  regcache_raw_supply_unsigned(regcache, AMD64_SS_REGNUM, DATA_SEL);
+  regcache->raw_supply_unsigned(AMD64_CS_REGNUM, CODE_SEL);
+  regcache->raw_supply_unsigned(AMD64_SS_REGNUM, DATA_SEL);
 }
 
 static const int amd64fbsd_trapframe_offset[] = {
@@ -204,6 +203,7 @@ amd64fbsd_trapframe_sniffer (const struct frame_unwind *self,
 
   find_pc_partial_function (get_frame_func (this_frame), &name, NULL, NULL);
   return (name && ((strcmp (name, "calltrap") == 0)
+		   || (strcmp (name, "fast_syscall_common") == 0)
 		   || (strcmp (name, "fork_trampoline") == 0)
 		   || (strcmp (name, "mchk_calltrap") == 0)
 		   || (strcmp (name, "nmi_calltrap") == 0)
@@ -223,7 +223,8 @@ static void
 amd64fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 {
 
-	amd64_init_abi(info, gdbarch);
+	amd64_init_abi(info, gdbarch,
+		       amd64_target_description (X86_XSTATE_SSE_MASK));
 
 	frame_unwind_prepend_unwinder(gdbarch, &amd64fbsd_trapframe_unwind);
 
@@ -232,8 +233,6 @@ amd64fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 	fbsd_vmcore_set_supply_pcb(gdbarch, amd64fbsd_supply_pcb);
 	fbsd_vmcore_set_cpu_pcb_addr(gdbarch, kgdb_trgt_stop_pcb);
 }
-
-void _initialize_amd64_kgdb_tdep(void);
 
 void
 _initialize_amd64_kgdb_tdep(void)
