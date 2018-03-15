@@ -85,6 +85,7 @@ BUILD_MODE=	Release
 BUILD_CMD=	${SETENV} ${MAKE_ENV} PATH=/bin:/usr/bin:${PATH} ${MAKE_CMD}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		${SETENV} BUILD_COMMAND="${BUILD_WRKSRC}/mozcmake" \
+		    PATH="${PATH}" \
 		    GYP_DEFINES="${GYP_DEFINES}" \
 		    PYTHONPATH=${PYTHON_SITELIBDIR}/gyp \
 		    CC_host="${CC}" \
