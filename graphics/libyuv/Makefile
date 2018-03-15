@@ -11,10 +11,11 @@ COMMENT=	Library for freeswitch yuv graphics manipulation
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_aarch64=		Fails to compile: undefined reference to SplitUVRow_NEON
+BROKEN_armv7=		Fails to compile: undefined reference to SplitUVRow_NEON
+
 MAKE_JOBS_UNSAFE=	yes
 CXXFLAGS+=		-fPIC
 USE_LDCONFIG=		yes
-
-BROKEN_aarch64=		Fails to compile: undefined reference to SplitUVRow_NEON
 
 .include <bsd.port.mk>
