@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.43.8
+PORTVERSION=	1.44.0
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -20,6 +20,8 @@ PORTSCOUT=	ignore	# cannot handle the version in the directory
 
 .if !defined(MASTERDIR)
 BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_armv6=		fails to build: Tests failed: f_pre_1970_date_encoding
+BROKEN_armv7=		fails to build: Tests failed: f_pre_1970_date_encoding
 .endif
 
 USES=		cpe gmake makeinfo pkgconfig tar:xz
