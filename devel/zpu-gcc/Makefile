@@ -20,7 +20,7 @@ BROKEN_powerpc64=	fails to compile: libgcc2.h: conflicting types for '__structdi
 WRKSRC=		${WRKDIR}/${DISTNAME}/toolchain
 USES=		gettext gmake makeinfo
 MANDIRS=	${PREFIX}/zpu/man
-INFO=		zpuc/cpp zpuc/cppinternals zpuc/dir zpuc/gcc zpuc/gccinstal \
+INFO=		zpuc/cpp zpuc/cppinternals zpuc/gcc zpuc/gccinstall \
 		    zpuc/gccint
 
 post-patch:
@@ -33,6 +33,10 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC} && ${SH} install.sh
+
+post-stage:
+	@${RM} ${STAGEDIR}${PREFIX}/zpu/lib/libiberty.a
+	@${RMDIR} ${STAGEDIR}${PREFIX}/zpu/include
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} CONFIG_SITE=${CONFIG_SITE} ${SH} build.sh
