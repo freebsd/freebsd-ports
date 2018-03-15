@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	mbedtls
-PORTVERSION=	2.6.0
-DISTVERSIONSUFFIX=	-apache
+PORTVERSION=	2.7.1
+DISTVERSIONPREFIX=${PORTNAME}-
 CATEGORIES=	security devel
-MASTER_SITES=	https://tls.mbed.org/download/
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	SSL/TLS and cryptography library
@@ -12,13 +11,14 @@ COMMENT=	SSL/TLS and cryptography library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/apache-2.0.txt
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ARMmbed
+
 ALL_TARGET=	no_test
 TEST_TARGET=	test
 MAKE_ENV=	SHARED=1
 USES=		gmake tar:tgz
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/mbedtls-${PORTVERSION}
 
 CONFLICTS_INSTALL=	polarssl13-[0-9]*
 

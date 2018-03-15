@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polarssl
-PORTVERSION=	1.3.21
+PORTVERSION=	1.3.22
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	https://polarssl.org/download/
@@ -13,6 +13,9 @@ COMMENT=	SSL/TLS and cryptography library
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	has reached end of life
+EXPIRATION_DATE=2018-04-30
 
 ALL_TARGET=	no_test
 MAKE_ENV=	SHARED=1

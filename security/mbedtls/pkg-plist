@@ -98,6 +98,7 @@ include/mbedtls/platform.h
 include/mbedtls/platform_time.h
 include/mbedtls/ripemd160.h
 include/mbedtls/rsa.h
+include/mbedtls/rsa_internal.h
 include/mbedtls/sha1.h
 include/mbedtls/sha256.h
 include/mbedtls/sha512.h
@@ -117,7 +118,7 @@ include/mbedtls/x509_csr.h
 include/mbedtls/xtea.h
 lib/libmbedcrypto.a
 lib/libmbedcrypto.so
-lib/libmbedcrypto.so.0
+lib/libmbedcrypto.so.2
 lib/libmbedtls.a
 lib/libmbedtls.so
 lib/libmbedtls.so.10
