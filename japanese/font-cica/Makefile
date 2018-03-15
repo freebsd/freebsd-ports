@@ -40,9 +40,6 @@ do-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
-		"! ( -name Cica-Bold.ttf \
-		-o -name Cica-BoldItalic.ttf \
-		-o -name Cica-Regular.ttf \
-		-o -name Cica-RegularItalic.ttf )"
+		"! -name *\.ttf"
 
 .include <bsd.port.mk>

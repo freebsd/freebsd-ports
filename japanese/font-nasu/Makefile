@@ -41,9 +41,6 @@ do-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
-		"! ( -name Nasu-Bold-20141215.ttf \
-		-o -name Nasu-Regular-20141215.ttf \
-		-o -name NasuM-Bold-20141215.ttf \
-		-o -name NasuM-Regular-20141215.ttf )"
+		"! -name *\.ttf"
 
 .include <bsd.port.mk>
