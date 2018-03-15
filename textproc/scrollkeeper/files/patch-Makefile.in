@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Dec  6 17:36:32 2003
-+++ Makefile.in	Sat Dec  6 17:37:57 2003
-@@ -193,18 +193,6 @@
+--- Makefile.in.orig	2018-03-15 21:38:13 UTC
++++ Makefile.in
+@@ -193,18 +193,6 @@ EXTRA_DIST = \
  	scrollkeeper-spec.txt
  
  
@@ -19,7 +19,7 @@
  scrollkeeper_localstate_dir = $(localstatedir)/@SCROLLKEEPER_PARTIAL_DB_DIR@
  
  ACLOCAL_AMFLAGS = -I m4
-@@ -222,7 +210,7 @@
+@@ -222,7 +210,7 @@ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
  CONFIG_CLEAN_FILES = intl/Makefile scrollkeeper.spec
  DIST_SOURCES =
@@ -28,7 +28,7 @@
  
  
  RECURSIVE_TARGETS = info-recursive dvi-recursive pdf-recursive \
-@@ -564,7 +552,6 @@
+@@ -564,7 +552,6 @@ check: check-recursive
  all-am: Makefile $(DATA) config.h
  installdirs: installdirs-recursive
  installdirs-am:
@@ -36,3 +36,11 @@
  
  install: install-recursive
  install-exec: install-exec-recursive
+@@ -611,7 +598,6 @@ info-am:
+ 
+ install-data-am: install-scrollkeeperdocDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+ install-exec-am:
+ 
