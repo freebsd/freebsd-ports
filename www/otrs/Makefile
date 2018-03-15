@@ -13,6 +13,7 @@ MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Open Ticket Request System
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-DBI>=0:databases/p5-DBI \
@@ -180,11 +181,5 @@ do-install:
 #	--web-group=${WWWOWN} \
 #	--otrs-user=${PORTNAME} \
 #	--admin-group=wheel  ${STAGEDIR}${OTRSDIR}
-
-x-generate-plist:
-	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
-	| ${SED} -E '\
-		s=share/doc/${PORTNAME}=%%DOCSDIR%%=; \
-	')> temp-pkg-plist
 
 .include <bsd.port.post.mk>
