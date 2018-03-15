@@ -37,13 +37,15 @@ TOOLBOX_RUN_DEPENDS=	labltk:x11-toolkits/ocaml-labltk
 TOOLBOX_BUILD_DEPENDS=	${TOOLBOX_RUN_DEPENDS}
 
 post-install:
-	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/ocamlfind \
-	    ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/findlib/make_wizard
 	cd ${STAGEDIR}${PREFIX} && \
 	    ${STRIP_CMD} bin/ocamlfind \
 	    ${OCAML_SITELIBDIR}/findlib/findlib.cmxs \
 	    ${OCAML_SITELIBDIR}/findlib/findlib_dynload.cmxs \
 	    ${OCAML_SITELIBDIR}/findlib/findlib_top.cmxs
+
+post-install-TOOLBOX-on:
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/ocamlfind \
+	    ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/findlib/make_wizard
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
