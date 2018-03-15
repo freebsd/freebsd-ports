@@ -158,7 +158,7 @@ XML_CONFIGURE_OFF=	--without-plugins="xml" --without-plugins="rss" \
 
 ET_CONFIGURE_OFF=	--without-optionals="et"
 
-.endif # !XMMS_SLAVE
+.endif # !XMMS2_SLAVE
 
 .include <bsd.port.options.mk>
 
