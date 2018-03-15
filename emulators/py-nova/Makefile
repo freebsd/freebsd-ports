@@ -3,7 +3,7 @@
 
 PORTNAME=	nova
 PORTVERSION=	14.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators python
 MASTER_SITES=	https://fossies.org/linux/misc/openstack/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -73,7 +73,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10@$
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0:databases/py-sqlparse@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libvirt>=0:devel/py-libvirt@${FLAVOR} \
 		e2fsprogs>=0:sysutils/e2fsprogs \
-		arping>=0:net/arping
+		arping>=0:net/arping \
+		bash:shells/bash
 
 EXTRA_PATCHES=	${FILESDIR}/01-firewall-manager.patch:-p1 \
 		${FILESDIR}/02-freebsd-l3.patch:-p1 \
@@ -87,7 +88,9 @@ EXTRA_PATCHES=	${FILESDIR}/01-firewall-manager.patch:-p1 \
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	nova/tests/live_migration/hooks/*.sh \
+		nova/CA/*.sh nova/cloudpipe/bootscript.template
 USE_PYTHON=	autoplist distutils noegginfo
 
 USE_RC_SUBR=	nova-api \
