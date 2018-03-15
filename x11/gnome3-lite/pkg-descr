@@ -4,4 +4,4 @@ This metaport installs the pieces of the GNOME 3 desktop that
 are needed to provide a functional desktop. The x11/gnome3
 meta port, contains the full version of the GNOME 3 desktop environment.
 
-WWW: http://www.FreeBSD.org/gnome/
+WWW: https://www.FreeBSD.org/gnome/
