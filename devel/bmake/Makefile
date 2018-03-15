@@ -15,6 +15,8 @@ PORTSCOUT=	skipv:200910007
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}
+
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's/^\.Nx/NetBSD/' ${WRKDIR}/bmake/bmake.1
 
