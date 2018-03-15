@@ -14,14 +14,14 @@ COMMENT=	Utility for capturing audio streams from programs with OSS output
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=		aarch64 armv6 armv7
+NOT_FOR_ARCHS_REASON=	fails to build: error: Cannot determine endian-ness of processor
+
 BUILD_DEPENDS=	sox:audio/sox
 RUN_DEPENDS=	sox:audio/sox
 
 USES=		alias libtool
 GNU_CONFIGURE=	yes
-
-NOT_FOR_ARCHS=		aarch64 armv6
-NOT_FOR_ARCHS_REASON=	fails to build: error: Cannot determine endian-ness of processor
 
 OPTIONS_DEFINE=	DOCS
 
