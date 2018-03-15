@@ -1,6 +1,6 @@
   ======================= pkg plugin activation ========================
   In order to use the pkg-provides plugin you need to enable plugins in pkg.
-  To do this, uncomment the following lines in %%LOCALBASE%%etc/pkg.conf file
+  To do this, uncomment the following lines in %%LOCALBASE%%/etc/pkg.conf file
   and add pkg-provides to the supported plugin list
 
   PKG_PLUGINS_DIR = "%%LOCALBASE%%/lib/pkg/";
