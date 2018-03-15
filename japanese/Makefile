@@ -63,6 +63,7 @@
     SUBDIR += font-aozoramincho
     SUBDIR += font-ayu18
     SUBDIR += font-ayu20
+    SUBDIR += font-cica
     SUBDIR += font-elisa10
     SUBDIR += font-elisa8
     SUBDIR += font-genjyuugothic
