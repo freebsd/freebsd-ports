@@ -67,11 +67,11 @@ addentries()
 		done
 		for FAM in 1m 1mn 2m
 		do
-			make_xlfd ${ENC} mgenplus-${FAM}-bold.ttf adobe "mgen+ ${FAM}" c bold
-			make_xlfd ${ENC} mgenplus-${FAM}-light.ttf adobe "mgen+ ${FAM}" c extralight
-			make_xlfd ${ENC} mgenplus-${FAM}-medium.ttf adobe "mgen+ ${FAM}" c medium
-			make_xlfd ${ENC} mgenplus-${FAM}-regular.ttf adobe "mgen+ ${FAM}" c book
-			make_xlfd ${ENC} mgenplus-${FAM}-thin.ttf adobe "mgen+ ${FAM}" c thin
+			make_xlfd ${ENC} mgenplus-${FAM}-bold.ttf adobe "mgen+ ${FAM}" m bold
+			make_xlfd ${ENC} mgenplus-${FAM}-light.ttf adobe "mgen+ ${FAM}" m extralight
+			make_xlfd ${ENC} mgenplus-${FAM}-medium.ttf adobe "mgen+ ${FAM}" m medium
+			make_xlfd ${ENC} mgenplus-${FAM}-regular.ttf adobe "mgen+ ${FAM}" m book
+			make_xlfd ${ENC} mgenplus-${FAM}-thin.ttf adobe "mgen+ ${FAM}" m thin
 		done
 	done
 }

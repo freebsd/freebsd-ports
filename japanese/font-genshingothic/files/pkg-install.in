@@ -69,13 +69,13 @@ addentries()
 		make_xlfd ${ENC} GenShinGothic-P-Bold.ttf adobe "gen shin gothic p" p bold
 		make_xlfd ${ENC} GenShinGothic-P-Heavy.ttf adobe "gen shin gothic p" p black
 
-		make_xlfd ${ENC} GenShinGothic-Monospace-ExtraLight.ttf adobe "gen shin gothic monospace" c thin
-		make_xlfd ${ENC} GenShinGothic-Monospace-Light.ttf adobe "gen shin gothic monospace" c extralight
-		make_xlfd ${ENC} GenShinGothic-Monospace-Normal.ttf adobe "gen shin gothic monospace" c light
-		make_xlfd ${ENC} GenShinGothic-Monospace-Regular.ttf adobe "gen shin gothic monospace" c book
-		make_xlfd ${ENC} GenShinGothic-Monospace-Medium.ttf adobe "gen shin gothic monospace" c medium
-		make_xlfd ${ENC} GenShinGothic-Monospace-Bold.ttf adobe "gen shin gothic monospace" c bold
-		make_xlfd ${ENC} GenShinGothic-Monospace-Heavy.ttf adobe "gen shin gothic monospace" c black
+		make_xlfd ${ENC} GenShinGothic-Monospace-ExtraLight.ttf adobe "gen shin gothic monospace" m thin
+		make_xlfd ${ENC} GenShinGothic-Monospace-Light.ttf adobe "gen shin gothic monospace" m extralight
+		make_xlfd ${ENC} GenShinGothic-Monospace-Normal.ttf adobe "gen shin gothic monospace" m light
+		make_xlfd ${ENC} GenShinGothic-Monospace-Regular.ttf adobe "gen shin gothic monospace" m book
+		make_xlfd ${ENC} GenShinGothic-Monospace-Medium.ttf adobe "gen shin gothic monospace" m medium
+		make_xlfd ${ENC} GenShinGothic-Monospace-Bold.ttf adobe "gen shin gothic monospace" m bold
+		make_xlfd ${ENC} GenShinGothic-Monospace-Heavy.ttf adobe "gen shin gothic monospace" m black
 	done
 }
 

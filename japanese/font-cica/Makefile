@@ -2,7 +2,7 @@
 
 PORTNAME=	cica
 PORTVERSION=	2.1.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://github.com/miiton/Cica/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	ja-font-

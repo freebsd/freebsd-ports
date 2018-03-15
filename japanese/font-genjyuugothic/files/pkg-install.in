@@ -69,13 +69,13 @@ addentries()
 		make_xlfd ${ENC} GenJyuuGothic-P-Bold.ttf adobe "gen jyuu gothic p" p bold
 		make_xlfd ${ENC} GenJyuuGothic-P-Heavy.ttf adobe "gen jyuu gothic p" p black
 
-		make_xlfd ${ENC} GenJyuuGothic-Monospace-ExtraLight.ttf adobe "gen jyuu gothic monospace" c thin
-		make_xlfd ${ENC} GenJyuuGothic-Monospace-Light.ttf adobe "gen jyuu gothic monospace" c extralight
-		make_xlfd ${ENC} GenJyuuGothic-Monospace-Normal.ttf adobe "gen jyuu gothic monospace" c light
-		make_xlfd ${ENC} GenJyuuGothic-Monospace-Regular.ttf adobe "gen jyuu gothic monospace" c book
-		make_xlfd ${ENC} GenJyuuGothic-Monospace-Medium.ttf adobe "gen jyuu gothic monospace" c medium
-		make_xlfd ${ENC} GenJyuuGothic-Monospace-Bold.ttf adobe "gen jyuu gothic monospace" c bold
-		make_xlfd ${ENC} GenJyuuGothic-Monospace-Heavy.ttf adobe "gen jyuu gothic monospace" c black
+		make_xlfd ${ENC} GenJyuuGothic-Monospace-ExtraLight.ttf adobe "gen jyuu gothic monospace" m thin
+		make_xlfd ${ENC} GenJyuuGothic-Monospace-Light.ttf adobe "gen jyuu gothic monospace" m extralight
+		make_xlfd ${ENC} GenJyuuGothic-Monospace-Normal.ttf adobe "gen jyuu gothic monospace" m light
+		make_xlfd ${ENC} GenJyuuGothic-Monospace-Regular.ttf adobe "gen jyuu gothic monospace" m book
+		make_xlfd ${ENC} GenJyuuGothic-Monospace-Medium.ttf adobe "gen jyuu gothic monospace" m medium
+		make_xlfd ${ENC} GenJyuuGothic-Monospace-Bold.ttf adobe "gen jyuu gothic monospace" m bold
+		make_xlfd ${ENC} GenJyuuGothic-Monospace-Heavy.ttf adobe "gen jyuu gothic monospace" m black
 	done
 }
 
