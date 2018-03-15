@@ -4,7 +4,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.14
-PORTREVISION=	14
+PORTREVISION=	15
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
@@ -45,7 +45,6 @@ post-patch:
 		${WRKSRC}/extract/dtds/Makefile.in
 
 post-install:
-	@${RM} ${STAGEDIR}/var/log/scrollkeeper.log
 	@${MKDIR} ${STAGEDIR}/var/db/scrollkeeper
 
 .include <bsd.port.mk>
