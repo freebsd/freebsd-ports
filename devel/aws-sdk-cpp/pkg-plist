@@ -4789,6 +4789,8 @@ include/aws/ecs/model/DeviceCgroupPermission.h
 include/aws/ecs/model/DiscoverPollEndpointRequest.h
 include/aws/ecs/model/DiscoverPollEndpointResult.h
 include/aws/ecs/model/Failure.h
+include/aws/ecs/model/HealthCheck.h
+include/aws/ecs/model/HealthStatus.h
 include/aws/ecs/model/HostEntry.h
 include/aws/ecs/model/HostVolumeProperties.h
 include/aws/ecs/model/KernelCapabilities.h
@@ -6381,12 +6383,12 @@ include/aws/glue/model/GetPlanRequest.h
 include/aws/glue/model/GetPlanResult.h
 include/aws/glue/model/GetTableRequest.h
 include/aws/glue/model/GetTableResult.h
+include/aws/glue/model/GetTableVersionRequest.h
+include/aws/glue/model/GetTableVersionResult.h
 include/aws/glue/model/GetTableVersionsRequest.h
 include/aws/glue/model/GetTableVersionsResult.h
 include/aws/glue/model/GetTablesRequest.h
 include/aws/glue/model/GetTablesResult.h
-include/aws/glue/model/GetTableVersionRequest.h
-include/aws/glue/model/GetTableVersionResult.h
 include/aws/glue/model/GetTriggerRequest.h
 include/aws/glue/model/GetTriggerResult.h
 include/aws/glue/model/GetTriggersRequest.h
@@ -9801,6 +9803,7 @@ include/aws/pinpoint/model/BaiduChannelRequest.h
 include/aws/pinpoint/model/BaiduChannelResponse.h
 include/aws/pinpoint/model/BaiduMessage.h
 include/aws/pinpoint/model/CampaignEmailMessage.h
+include/aws/pinpoint/model/CampaignHook.h
 include/aws/pinpoint/model/CampaignLimits.h
 include/aws/pinpoint/model/CampaignResponse.h
 include/aws/pinpoint/model/CampaignSmsMessage.h
@@ -9813,6 +9816,8 @@ include/aws/pinpoint/model/CreateAppResult.h
 include/aws/pinpoint/model/CreateApplicationRequest.h
 include/aws/pinpoint/model/CreateCampaignRequest.h
 include/aws/pinpoint/model/CreateCampaignResult.h
+include/aws/pinpoint/model/CreateExportJobRequest.h
+include/aws/pinpoint/model/CreateExportJobResult.h
 include/aws/pinpoint/model/CreateImportJobRequest.h
 include/aws/pinpoint/model/CreateImportJobResult.h
 include/aws/pinpoint/model/CreateSegmentRequest.h
@@ -9861,6 +9866,10 @@ include/aws/pinpoint/model/EndpointResponse.h
 include/aws/pinpoint/model/EndpointSendConfiguration.h
 include/aws/pinpoint/model/EndpointUser.h
 include/aws/pinpoint/model/EventStream.h
+include/aws/pinpoint/model/ExportJobRequest.h
+include/aws/pinpoint/model/ExportJobResource.h
+include/aws/pinpoint/model/ExportJobResponse.h
+include/aws/pinpoint/model/ExportJobsResponse.h
 include/aws/pinpoint/model/Format.h
 include/aws/pinpoint/model/Frequency.h
 include/aws/pinpoint/model/GCMChannelRequest.h
@@ -9900,12 +9909,18 @@ include/aws/pinpoint/model/GetEndpointRequest.h
 include/aws/pinpoint/model/GetEndpointResult.h
 include/aws/pinpoint/model/GetEventStreamRequest.h
 include/aws/pinpoint/model/GetEventStreamResult.h
+include/aws/pinpoint/model/GetExportJobRequest.h
+include/aws/pinpoint/model/GetExportJobResult.h
+include/aws/pinpoint/model/GetExportJobsRequest.h
+include/aws/pinpoint/model/GetExportJobsResult.h
 include/aws/pinpoint/model/GetGcmChannelRequest.h
 include/aws/pinpoint/model/GetGcmChannelResult.h
 include/aws/pinpoint/model/GetImportJobRequest.h
 include/aws/pinpoint/model/GetImportJobResult.h
 include/aws/pinpoint/model/GetImportJobsRequest.h
 include/aws/pinpoint/model/GetImportJobsResult.h
+include/aws/pinpoint/model/GetSegmentExportJobsRequest.h
+include/aws/pinpoint/model/GetSegmentExportJobsResult.h
 include/aws/pinpoint/model/GetSegmentImportJobsRequest.h
 include/aws/pinpoint/model/GetSegmentImportJobsResult.h
 include/aws/pinpoint/model/GetSegmentRequest.h
@@ -9930,6 +9945,7 @@ include/aws/pinpoint/model/MessageRequest.h
 include/aws/pinpoint/model/MessageResponse.h
 include/aws/pinpoint/model/MessageResult.h
 include/aws/pinpoint/model/MessageType.h
+include/aws/pinpoint/model/Mode.h
 include/aws/pinpoint/model/PutEventStreamRequest.h
 include/aws/pinpoint/model/PutEventStreamResult.h
 include/aws/pinpoint/model/QuietTime.h
@@ -10421,6 +10437,7 @@ include/aws/redshift/model/RebootClusterResult.h
 include/aws/redshift/model/RecurringCharge.h
 include/aws/redshift/model/ReservedNode.h
 include/aws/redshift/model/ReservedNodeOffering.h
+include/aws/redshift/model/ReservedNodeOfferingType.h
 include/aws/redshift/model/ResetClusterParameterGroupRequest.h
 include/aws/redshift/model/ResetClusterParameterGroupResult.h
 include/aws/redshift/model/ResponseMetadata.h
@@ -10439,6 +10456,7 @@ include/aws/redshift/model/Snapshot.h
 include/aws/redshift/model/SnapshotCopyGrant.h
 include/aws/redshift/model/SourceType.h
 include/aws/redshift/model/Subnet.h
+include/aws/redshift/model/SupportedPlatform.h
 include/aws/redshift/model/TableRestoreStatus.h
 include/aws/redshift/model/TableRestoreStatusType.h
 include/aws/redshift/model/Tag.h
@@ -11497,6 +11515,7 @@ include/aws/servicediscovery/model/CreatePublicDnsNamespaceRequest.h
 include/aws/servicediscovery/model/CreatePublicDnsNamespaceResult.h
 include/aws/servicediscovery/model/CreateServiceRequest.h
 include/aws/servicediscovery/model/CreateServiceResult.h
+include/aws/servicediscovery/model/CustomHealthStatus.h
 include/aws/servicediscovery/model/DeleteNamespaceRequest.h
 include/aws/servicediscovery/model/DeleteNamespaceResult.h
 include/aws/servicediscovery/model/DeleteServiceRequest.h
@@ -11519,6 +11538,7 @@ include/aws/servicediscovery/model/GetOperationResult.h
 include/aws/servicediscovery/model/GetServiceRequest.h
 include/aws/servicediscovery/model/GetServiceResult.h
 include/aws/servicediscovery/model/HealthCheckConfig.h
+include/aws/servicediscovery/model/HealthCheckCustomConfig.h
 include/aws/servicediscovery/model/HealthCheckType.h
 include/aws/servicediscovery/model/HealthStatus.h
 include/aws/servicediscovery/model/Instance.h
@@ -11553,6 +11573,7 @@ include/aws/servicediscovery/model/ServiceChange.h
 include/aws/servicediscovery/model/ServiceFilter.h
 include/aws/servicediscovery/model/ServiceFilterName.h
 include/aws/servicediscovery/model/ServiceSummary.h
+include/aws/servicediscovery/model/UpdateInstanceCustomHealthStatusRequest.h
 include/aws/servicediscovery/model/UpdateServiceRequest.h
 include/aws/servicediscovery/model/UpdateServiceResult.h
 include/aws/shield/ShieldClient.h
@@ -14110,8 +14131,8 @@ libdata/pkgconfig/aws-cpp-sdk-application-autoscaling.pc
 libdata/pkgconfig/aws-cpp-sdk-appstream.pc
 libdata/pkgconfig/aws-cpp-sdk-appsync.pc
 libdata/pkgconfig/aws-cpp-sdk-athena.pc
-libdata/pkgconfig/aws-cpp-sdk-autoscaling.pc
 libdata/pkgconfig/aws-cpp-sdk-autoscaling-plans.pc
+libdata/pkgconfig/aws-cpp-sdk-autoscaling.pc
 libdata/pkgconfig/aws-cpp-sdk-batch.pc
 libdata/pkgconfig/aws-cpp-sdk-budgets.pc
 libdata/pkgconfig/aws-cpp-sdk-ce.pc
