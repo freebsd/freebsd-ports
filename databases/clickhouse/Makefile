@@ -2,14 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	clickhouse
-PORTVERSION=	1.1.54342
+PORTVERSION=	1.1.54362
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	1
 CATEGORIES=	databases
-
-PATCH_SITES=	https://github.com/proller/${GH_PROJECT}/commit/
-PATCHFILES=	05b203574ae2.patch:-p1
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	ClickHouse is an column-oriented database management system
