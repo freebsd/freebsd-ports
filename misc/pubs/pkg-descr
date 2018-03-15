@@ -1,0 +1,14 @@
+Pubs brings your bibliography to the command line.
+
+Pubs organizes your bibliographic documents together with the bibliographic
+data associated to them and provides command line access to basic and advanced
+manipulation of your library.
+
+Pubs is built with the following principles in mind:
+* all papers are referenced using unique citation keys,
+* bibliographic data (i.e. pure bibtex information) is kept separated from
+  metadata (including links to pdf or tags),
+* everything is stored in plain text so it can be manually edited or version
+  controlled.
+
+WWW: https://github.com/pubs/pubs
