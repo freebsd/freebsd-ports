@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Path-Tiny
-PORTVERSION=	0.098
+PORTVERSION=	0.104
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Test-MockRandom>=0:devel/p5-Test-MockRandom \
-	p5-Test-FailWarnings>=0:devel/p5-Test-FailWarnings
+		p5-Test-FailWarnings>=0:devel/p5-Test-FailWarnings
 
 NO_ARCH=	yes
 USES=		perl5
