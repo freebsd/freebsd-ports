@@ -30,7 +30,7 @@ runsvdir_start()
 {
 	/bin/test -d ${runsvdir_path} || /bin/mkdir -p ${runsvdir_path}
 	/usr/bin/env -i \
-	PATH=/command:%%PREFIX%%/sbin:%%PREFIX%%/bin:/sbin:/bin:/usr/sbin:/usr/bin \
+	PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%PREFIX%%/bin:%%PREFIX%%/sbin:/rescue \
 	/usr/sbin/daemon -c -f \
 	${command} ${runsvdir_path}
 }
