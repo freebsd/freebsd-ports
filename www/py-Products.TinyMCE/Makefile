@@ -2,6 +2,7 @@
 
 PORTNAME=	Products.TinyMCE
 PORTVERSION=	1.3.19
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.imaging>=1.0.2:www/py-plone.app.im
 		${PYTHON_PKGNAMEPREFIX}zope.schema>0:devel/py-zope.schema@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2.7 zip
+USES=		python:2.7 shebangfix zip
 USE_PYTHON=	autoplist distutils
+
+python_OLD_CMD=	/opt/local/bin/python2.4
+SHEBANG_FILES=	Products/TinyMCE/utils/generate-po.py \
+		Products/TinyMCE/utils/compile-mo.py
 
 .include <bsd.port.mk>
