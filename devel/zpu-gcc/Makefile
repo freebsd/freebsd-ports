@@ -35,6 +35,6 @@ do-install:
 	cd ${WRKSRC} && ${SH} install.sh
 
 do-build:
-	cd ${WRKSRC} && ${SH} build.sh
+	cd ${WRKSRC} && ${SETENV} CONFIG_SITE=${CONFIG_SITE} ${SH} build.sh
 
 .include <bsd.port.mk>
