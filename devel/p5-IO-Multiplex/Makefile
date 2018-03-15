@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Multiplex
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	IO::Multiplex - Manage IO on many file handles
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
 
-# http://search.cpan.org/dist/IO-Multiplex/Changes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
