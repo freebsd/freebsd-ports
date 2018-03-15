@@ -1,21 +1,21 @@
 Revert https://github.com/RPCS3/rpcs3/commit/cf1c45dfe86e for Qt 5.7 compatibility
 
---- rpcs3/CMakeLists.txt.orig	2018-02-23 22:38:43 UTC
+--- rpcs3/CMakeLists.txt.orig	2018-03-13 15:55:03 UTC
 +++ rpcs3/CMakeLists.txt
 @@ -6,12 +6,12 @@ set(CMAKE_CXX_STANDARD 14)
  include(CheckCXXCompilerFlag)
  
  # Qt section
--find_package(Qt5 5.10 COMPONENTS Widgets Network)
-+find_package(Qt5 5.7 COMPONENTS Widgets Network)
+-find_package(Qt5 5.10 COMPONENTS Widgets Network Qml)
++find_package(Qt5 5.7 COMPONENTS Widgets Network Qml)
  if(WIN32)
  	find_package(Qt5 5.10 COMPONENTS WinExtras REQUIRED)
- 	set(RPCS3_QT_LIBS Qt5::Widgets Qt5::WinExtras Qt5::Network)
+ 	set(RPCS3_QT_LIBS Qt5::Widgets Qt5::WinExtras Qt5::Network Qt5::Qml)
  else()
 -	find_package(Qt5 5.10 COMPONENTS DBus Gui)
 +	find_package(Qt5 5.7 COMPONENTS DBus Gui)
  	if(Qt5DBus_FOUND)
- 		set(RPCS3_QT_LIBS Qt5::Widgets Qt5::DBus Qt5::Network)
+ 		set(RPCS3_QT_LIBS Qt5::Widgets Qt5::DBus Qt5::Network Qt5::Qml)
  		add_definitions(-DHAVE_QTDBUS)
 --- rpcs3/main.cpp.orig	2018-02-21 20:18:14 UTC
 +++ rpcs3/main.cpp
