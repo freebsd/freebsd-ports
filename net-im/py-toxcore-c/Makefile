@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore-c
-DISTVERSION=	0.180219
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
+PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +23,6 @@ USES=		localbase python
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
 GH_PROJECT=	py-toxcore-c
-GH_TAGNAME=	2c1b9d6
 USE_PYTHON=	distutils autoplist
 
 post-install:
