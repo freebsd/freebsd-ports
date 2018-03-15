@@ -4,3 +4,4 @@ lib/libasr.so
 lib/libasr.so.0
 lib/libasr.so.0.0.2
 %%MAN3%%man/man3/asr_run.3.gz
+%%NO_MAN3%%man/cat3/asr_run.3.gz
