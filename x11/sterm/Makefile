@@ -7,7 +7,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/st/
 DISTNAME=	st-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Simple X terminal
 
 LICENSE=	MITX
