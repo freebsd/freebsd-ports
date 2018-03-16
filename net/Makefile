@@ -149,7 +149,6 @@
     SUBDIR += fpc-ldap
     SUBDIR += fpc-pcap
     SUBDIR += fping
-    SUBDIR += freebsd-tftp
     SUBDIR += freebsd-uucp
     SUBDIR += freediameter
     SUBDIR += freenet6
