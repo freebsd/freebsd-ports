@@ -1,5 +1,5 @@
-TIMESTAMP = 1485416056
-SHA256 (godotengine-godot-2.1.2-stable_GH0.tar.gz) = 29b3131449f8ca908be800c4c07020efaa9f90a29b6bc1be8a18a331dc34b49a
-SIZE (godotengine-godot-2.1.2-stable_GH0.tar.gz) = 14399692
-SHA256 (godotengine-godot-demo-projects-dfa1274_GH0.tar.gz) = 42420f7f473b1391a13f226473d1cc850605f24d2865220e4c5acde05f1c340c
-SIZE (godotengine-godot-demo-projects-dfa1274_GH0.tar.gz) = 18423807
+TIMESTAMP = 1520319042
+SHA256 (godotengine-godot-3.0.2-stable_GH0.tar.gz) = 15bc91dcbc92fe49624118678fcab119ff332dc295b25f4921700a4ee498b651
+SIZE (godotengine-godot-3.0.2-stable_GH0.tar.gz) = 18812660
+SHA256 (godotengine-godot-demo-projects-d69cc10a0b8a_GH0.tar.gz) = b798d0bb56a643fdb175df463990904523495dd5546bc00bbe762e0645b7c94a
+SIZE (godotengine-godot-demo-projects-d69cc10a0b8a_GH0.tar.gz) = 140126782
