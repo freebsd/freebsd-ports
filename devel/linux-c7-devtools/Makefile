@@ -34,7 +34,7 @@ SRC_DISTFILES=	binutils-2.25.1-32.base.el7_4.2${SRC_SUFX}:SOURCE \
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
 
-CONFLICT=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 # LICENSE=	Various GNU
 

@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 USES=	tar:bzip2 gmake python:2.7,build ssl
 
-CONFLICT=	uboot-mkimage
+CONFLICTS=	uboot-mkimage
 ALL_TARGET=	tools-only
 MAKE_ARGS=	ARCH=sandbox \
 		CC="${CC}" \

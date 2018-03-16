@@ -10,7 +10,7 @@ COMMENT=	ASN.1 structure parser library (Linux CentOS ${LINUX_DIST_VER})
 
 LICENSE=	LGPL21+
 
-CONFLICT=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	1.el7
