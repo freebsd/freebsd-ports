@@ -1,0 +1,40 @@
+commit d6284e2e2fa3
+Author: Nicolas Silva <nsilva@mozilla.com>
+Date:   Mon Mar 12 13:36:00 2018 +0100
+
+    Bug 1440717 - Use RefPtr for CompositingRenderTargetOGL::mGL. r=Bas a=jcristau
+    
+    --HG--
+    extra : rebase_source : f3b0ec3793901a9546bb013f9e4271786dc1d9e2
+    extra : source : b6d2d55223d2aa5cb85bbdf33075d1d38f2a9a30
+---
+ gfx/layers/opengl/CompositingRenderTargetOGL.cpp | 2 +-
+ gfx/layers/opengl/CompositingRenderTargetOGL.h   | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git gfx/layers/opengl/CompositingRenderTargetOGL.cpp gfx/layers/opengl/CompositingRenderTargetOGL.cpp
+index 1f6357e114fc..2206df13d131 100644
+--- gfx/layers/opengl/CompositingRenderTargetOGL.cpp
++++ gfx/layers/opengl/CompositingRenderTargetOGL.cpp
+@@ -61,7 +61,7 @@ CompositingRenderTargetOGL::BindRenderTarget()
+         msg.AppendPrintf("Framebuffer not complete -- CheckFramebufferStatus returned 0x%x, "
+                          "GLContext=%p, IsOffscreen()=%d, mFBO=%d, aFBOTextureTarget=0x%x, "
+                          "aRect.width=%d, aRect.height=%d",
+-                         result, mGL, mGL->IsOffscreen(), mFBO, mInitParams.mFBOTextureTarget,
++                         result, mGL.get(), mGL->IsOffscreen(), mFBO, mInitParams.mFBOTextureTarget,
+                          mInitParams.mSize.width, mInitParams.mSize.height);
+         NS_WARNING(msg.get());
+       }
+diff --git gfx/layers/opengl/CompositingRenderTargetOGL.h gfx/layers/opengl/CompositingRenderTargetOGL.h
+index 34cf95cd43ba..9b4959fbae4f 100644
+--- gfx/layers/opengl/CompositingRenderTargetOGL.h
++++ gfx/layers/opengl/CompositingRenderTargetOGL.h
+@@ -185,7 +185,7 @@ private:
+    * the target is always cleared at the end of a frame.
+    */
+   RefPtr<CompositorOGL> mCompositor;
+-  GLContext* mGL;
++  RefPtr<GLContext> mGL;
+   GLuint mTextureHandle;
+   GLuint mFBO;
+ };

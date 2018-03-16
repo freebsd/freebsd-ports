@@ -1,0 +1,177 @@
+commit 028c6e8c32ea
+Author: Monty Montgomery <monty@xiph.org>
+Date:   Thu Mar 15 18:12:05 2018 -0400
+
+    Bug 1446062 - Vorbis fix. r=jmspeex, a=lizzard
+    
+    --HG--
+    extra : source : 6b4e98424f0dcc024fcad48608ada351e4075e59
+    extra : intermediate-source : 1dfbedb54c39abae38da9329f4a79571fee74661
+---
+ media/libvorbis/lib/vorbis_codebook.c | 48 ++++++++---------------------------
+ 1 file changed, 10 insertions(+), 38 deletions(-)
+
+diff --git media/libvorbis/lib/vorbis_codebook.c media/libvorbis/lib/vorbis_codebook.c
+index 321a28faa0cc..78672e222d85 100644
+--- media/libvorbis/lib/vorbis_codebook.c
++++ media/libvorbis/lib/vorbis_codebook.c
+@@ -386,7 +386,7 @@ long vorbis_book_decodevs_add(codebook *book,float *a,oggpack_buffer *b,int n){
+       t[i] = book->valuelist+entry[i]*book->dim;
+     }
+     for(i=0,o=0;i<book->dim;i++,o+=step)
+-      for (j=0;j<step;j++)
++      for (j=0;o+j<n && j<step;j++)
+         a[o+j]+=t[j][i];
+   }
+   return(0);
+@@ -398,41 +398,12 @@ long vorbis_book_decodev_add(codebook *book,float *a,oggpack_buffer *b,int n){
+     int i,j,entry;
+     float *t;
+ 
+-    if(book->dim>8){
+-      for(i=0;i<n;){
+-        entry = decode_packed_entry_number(book,b);
+-        if(entry==-1)return(-1);
+-        t     = book->valuelist+entry*book->dim;
+-        for (j=0;j<book->dim;)
+-          a[i++]+=t[j++];
+-      }
+-    }else{
+-      for(i=0;i<n;){
+-        entry = decode_packed_entry_number(book,b);
+-        if(entry==-1)return(-1);
+-        t     = book->valuelist+entry*book->dim;
+-        j=0;
+-        switch((int)book->dim){
+-        case 8:
+-          a[i++]+=t[j++];
+-        case 7:
+-          a[i++]+=t[j++];
+-        case 6:
+-          a[i++]+=t[j++];
+-        case 5:
+-          a[i++]+=t[j++];
+-        case 4:
+-          a[i++]+=t[j++];
+-        case 3:
+-          a[i++]+=t[j++];
+-        case 2:
+-          a[i++]+=t[j++];
+-        case 1:
+-          a[i++]+=t[j++];
+-        case 0:
+-          break;
+-        }
+-      }
++    for(i=0;i<n;){
++      entry = decode_packed_entry_number(book,b);
++      if(entry==-1)return(-1);
++      t     = book->valuelist+entry*book->dim;
++      for(j=0;i<n && j<book->dim;)
++        a[i++]+=t[j++];
+     }
+   }
+   return(0);
+@@ -470,12 +441,13 @@ long vorbis_book_decodevv_add(codebook *book,float **a,long offset,int ch,
+   long i,j,entry;
+   int chptr=0;
+   if(book->used_entries>0){
+-    for(i=offset/ch;i<(offset+n)/ch;){
++    int m=(offset+n)/ch;
++    for(i=offset/ch;i<m;){
+       entry = decode_packed_entry_number(book,b);
+       if(entry==-1)return(-1);
+       {
+         const float *t = book->valuelist+entry*book->dim;
+-        for (j=0;j<book->dim;j++){
++        for (j=0;i<m && j<book->dim;j++){
+           a[chptr++][i]+=t[j];
+           if(chptr==ch){
+             chptr=0;
+
+commit fbddf2078fef
+Author: Thomas Daede <daede003@umn.edu>
+Date:   Thu Mar 15 21:47:09 2018 -0700
+
+    Bug 1446062: libtremor Vorbis fix.  r=jmspeex  a=dveditz
+    
+    --HG--
+    extra : transplant_source : %D3%CE8%8D%D3%C0%D3%C7%BE%7D%F2m%5DM%E3%A0%E4%0CW%F3
+---
+ media/libtremor/lib/tremor_codebook.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+diff --git media/libtremor/lib/tremor_codebook.c media/libtremor/lib/tremor_codebook.c
+index f8b798384134..1e1ae8a916b0 100644
+--- media/libtremor/lib/tremor_codebook.c
++++ media/libtremor/lib/tremor_codebook.c
+@@ -258,7 +258,7 @@ long vorbis_book_decodevs_add(codebook *book,ogg_int32_t *a,
+ 	t[i] = book->valuelist+entry[i]*book->dim;
+       }
+       for(i=0,o=0;i<book->dim;i++,o+=step)
+-	for (j=0;j<step;j++)
++	for (j=0;o+j<n && j<step;j++)
+ 	  a[o+j]+=t[j][i]>>shift;
+     }else{
+       for (i = 0; i < step; i++) {
+@@ -267,7 +267,7 @@ long vorbis_book_decodevs_add(codebook *book,ogg_int32_t *a,
+ 	t[i] = book->valuelist+entry[i]*book->dim;
+       }
+       for(i=0,o=0;i<book->dim;i++,o+=step)
+-	for (j=0;j<step;j++)
++	for (j=0;o+j<n && j<step;j++)
+ 	  a[o+j]+=t[j][i]<<-shift;
+     }
+   }
+@@ -287,7 +287,7 @@ long vorbis_book_decodev_add(codebook *book,ogg_int32_t *a,
+ 	entry = decode_packed_entry_number(book,b);
+ 	if(entry==-1)return(-1);
+ 	t     = book->valuelist+entry*book->dim;
+-	for (j=0;j<book->dim;)
++	for (j=0;i<n && j<book->dim;)
+ 	  a[i++]+=t[j++]>>shift;
+       }
+     }else{
+@@ -295,7 +295,7 @@ long vorbis_book_decodev_add(codebook *book,ogg_int32_t *a,
+ 	entry = decode_packed_entry_number(book,b);
+ 	if(entry==-1)return(-1);
+ 	t     = book->valuelist+entry*book->dim;
+-	for (j=0;j<book->dim;)
++	for (j=0;i<n && j<book->dim;)
+ 	  a[i++]+=t[j++]<<-shift;
+       }
+     }
+@@ -352,15 +352,15 @@ long vorbis_book_decodevv_add(codebook *book,ogg_int32_t **a,\
+     long i,j,entry;
+     int chptr=0;
+     int shift=point-book->binarypoint;
+-    
++    int m=offset+n;
+     if(shift>=0){
+       
+-      for(i=offset;i<offset+n;){
++      for(i=offset;i<m;){
+ 	entry = decode_packed_entry_number(book,b);
+ 	if(entry==-1)return(-1);
+ 	{
+ 	  const ogg_int32_t *t = book->valuelist+entry*book->dim;
+-	  for (j=0;j<book->dim;j++){
++	  for (j=0;i<m && j<book->dim;j++){
+ 	    a[chptr++][i]+=t[j]>>shift;
+ 	    if(chptr==ch){
+ 	      chptr=0;
+@@ -371,12 +371,12 @@ long vorbis_book_decodevv_add(codebook *book,ogg_int32_t **a,\
+       }
+     }else{
+       
+-      for(i=offset;i<offset+n;){
++      for(i=offset;i<m;){
+ 	entry = decode_packed_entry_number(book,b);
+ 	if(entry==-1)return(-1);
+ 	{
+ 	  const ogg_int32_t *t = book->valuelist+entry*book->dim;
+-	  for (j=0;j<book->dim;j++){
++	  for (j=0;i<m && j<book->dim;j++){
+ 	    a[chptr++][i]+=t[j]<<-shift;
+ 	    if(chptr==ch){
+ 	      chptr=0;
