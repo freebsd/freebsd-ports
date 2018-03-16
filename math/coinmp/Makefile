@@ -22,10 +22,11 @@ USES=	libtool pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 CXXFLAGS+=	-ffast-math
 
-OPTIONS_DEFINE=	DEBUG DOCS FORTRAN GLPK
+OPTIONS_DEFINE=	DEBUG DOCS FORTRAN GLPK PARALLEL
 
 FORTRAN_DESC=	Use BLAS/LAPACK with the Fortran interface
 GLPK_DESC=	GNU Linear Programming Kit support
+PARALLEL_DESC=	Enable CBC threads support
 
 PORTDOCS=	*
 
@@ -39,6 +40,8 @@ GLPK_LIB_DEPENDS=	libglpk.so:math/glpk
 GLPK_CONFIGURE_ON=	--with-gmpl-incdir=${LOCALBASE}/include	\
 			--with-gmpl-lib="-L${LOCALBASE}/lib -lglpk"
 GLPK_CONFIGURE_OFF=	--disable-glpk-libcheck
+
+PARALLEL_CONFIGURE_ON=	--enable-cbc-parallel
 
 STRIP_FILES=	libCoinUtils libOsi libOsiClp libOsiCommonTests libClp libClpSolver \
 		libCgl libCbc libCbcSolver libOsiCbc libCoinMP
