@@ -31,7 +31,7 @@ BROKEN_SSL_REASON_libressl=		random crashes with 7.6 PR 223000
 
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
-			OVERWRITE_BASE SCTP LDNS NONECIPHER
+			SCTP LDNS NONECIPHER
 OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
@@ -42,7 +42,6 @@ HPN_DESC=		HPN-SSH patch
 LDNS_DESC=		SSHFP/LDNS support
 X509_DESC=		x509 certificate patch
 SCTP_DESC=		SCTP support
-OVERWRITE_BASE_DESC=	EOL, No longer supported.
 HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 MIT_DESC=		MIT Kerberos (security/krb5)
@@ -177,10 +176,6 @@ CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 .endif
 
 EMPTYDIR=		/var/empty
-
-.if ${PORT_OPTIONS:MOVERWRITE_BASE} || defined(OPENSSH_OVERWRITE_BASE)
-IGNORE=	Overwrite base option is no longer supported.
-.endif
 
 USE_RC_SUBR=		openssh
 
