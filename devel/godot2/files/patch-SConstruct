@@ -1,0 +1,36 @@
+--- SConstruct.orig	2016-11-15 18:44:21 UTC
++++ SConstruct
+@@ -65,7 +65,7 @@ elif (os.name == "nt"):
+     if (os.getenv("VSINSTALLDIR") == None or platform_arg == "android"):
+         custom_tools = ['mingw']
+ 
+-env_base = Environment(tools=custom_tools)
++env_base = Environment(tools=custom_tools, ENV = os.environ)
+ if 'TERM' in os.environ:
+     env_base['ENV']['TERM'] = os.environ['TERM']
+ env_base.AppendENVPath('PATH', os.getenv('PATH'))
+@@ -247,15 +247,16 @@ if selected_platform in platform_list:
+     if env["extra_suffix"] != '':
+         env.extra_suffix += '.' + env["extra_suffix"]
+ 
+-    CCFLAGS = env.get('CCFLAGS', '')
+-    env['CCFLAGS'] = ''
+-
+-    env.Append(CCFLAGS=string.split(str(CCFLAGS)))
+-
+-    CFLAGS = env.get('CFLAGS', '')
+-    env['CFLAGS'] = ''
+-
++    env['CC'] = os.environ['CC']
++    env['CXX'] = os.environ['CXX']
++    
++    CFLAGS = os.environ['CFLAGS']
++    env['CFLAGS'] = []
+     env.Append(CFLAGS=string.split(str(CFLAGS)))
++    
++    CCFLAGS = os.environ['CXXFLAGS']
++    env['CCFLAGS'] = []
++    env.Append(CCFLAGS=string.split(str(CCFLAGS)))
+ 
+     LINKFLAGS = env.get('LINKFLAGS', '')
+     env['LINKFLAGS'] = ''

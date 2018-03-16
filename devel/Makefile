@@ -833,6 +833,8 @@
     SUBDIR += godep
     SUBDIR += godot
     SUBDIR += godot-tools
+    SUBDIR += godot2
+    SUBDIR += godot2-tools
     SUBDIR += goffice
     SUBDIR += goffice010
     SUBDIR += gogland-eap
