@@ -1,0 +1,80 @@
+commit dd719e911e2c
+Author: Gijs Kruitbosch <gijskruitbosch@gmail.com>
+Date:   Wed Dec 20 18:57:48 2017 +0000
+
+    Bug 1422643 - deal with tabs in the protocol in js paste detection code, r=florian,valentin
+    
+    MozReview-Commit-ID: Ax5LGkIedkY
+    
+    --HG--
+    extra : rebase_source : 85a9871a4de44652fe3bbfd455af389fe27d7714
+    extra : source : 6ad5ec88a8982d83b8097fd76a2383aae94711c6
+---
+ browser/base/content/browser.js                      | 20 ++++++++++++--------
+ .../browser_removeUnsafeProtocolsFromURLBarPaste.js  | 15 +++++++++++++++
+ 2 files changed, 27 insertions(+), 8 deletions(-)
+
+diff --git browser/base/content/browser.js browser/base/content/browser.js
+index e6e60cd202a0..5306800ebaca 100755
+--- browser/base/content/browser.js
++++ browser/base/content/browser.js
+@@ -6053,14 +6053,18 @@ function middleMousePaste(event) {
+ function stripUnsafeProtocolOnPaste(pasteData) {
+   // Don't allow pasting javascript URIs since we don't support
+   // LOAD_FLAGS_DISALLOW_INHERIT_PRINCIPAL for those.
+-  let changed = false;
+-  let pasteDataNoJS = pasteData.replace(/\r?\n/g, "")
+-                               .replace(/^(?:\W*javascript:)+/i,
+-                                        () => {
+-                                                changed = true;
+-                                                return "";
+-                                              });
+-  return changed ? pasteDataNoJS : pasteData;
++  while (true) {
++    let scheme = "";
++    try {
++      scheme = Services.io.extractScheme(pasteData);
++    } catch (ex) { }
++    if (scheme != "javascript") {
++      break;
++    }
++
++    pasteData = pasteData.substring(pasteData.indexOf(":") + 1);
++  }
++  return pasteData;
+ }
+ 
+ // handleDroppedLink has the following 2 overloads:
+diff --git browser/base/content/test/urlbar/browser_removeUnsafeProtocolsFromURLBarPaste.js browser/base/content/test/urlbar/browser_removeUnsafeProtocolsFromURLBarPaste.js
+index 27129297b0a3..70ecaa048626 100644
+--- browser/base/content/test/urlbar/browser_removeUnsafeProtocolsFromURLBarPaste.js
++++ browser/base/content/test/urlbar/browser_removeUnsafeProtocolsFromURLBarPaste.js
+@@ -9,6 +9,7 @@ var pairs = [
+   ["javascript:document.domain", "document.domain"],
+   [" \u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0008\u0009javascript:document.domain", "document.domain"],
+   ["java\nscript:foo", "foo"],
++  ["java\tscript:foo", "foo"],
+   ["http://\nexample.com", "http://example.com"],
+   ["http://\nexample.com\n", "http://example.com"],
+   ["data:text/html,<body>hi</body>", "data:text/html,<body>hi</body>"],
+@@ -20,6 +21,20 @@ var pairs = [
+   ["data:data:text/html,javascript:alert('hi!')", "data:data:text/html,javascript:alert('hi!')"],
+ ];
+ 
++let supportsNullBytes = AppConstants.platform == "macosx";
++// Note that \u000d (\r) is missing here; we test it separately because it
++// makes the test sad on Windows.
++let gobbledygook = "\u000a\u000b\u000c\u000e\u000f\u0010\u0011\u0012\u0013\u0014javascript:foo";
++if (supportsNullBytes) {
++  gobbledygook = "\u0000" + gobbledygook;
++}
++pairs.push([gobbledygook, "foo"]);
++
++let supportsReturnWithoutNewline = AppConstants.platform != "win";
++if (supportsReturnWithoutNewline) {
++  pairs.push(["java\rscript:foo", "foo"]);
++}
++
+ var clipboardHelper = Cc["@mozilla.org/widget/clipboardhelper;1"].getService(Ci.nsIClipboardHelper);
+ 
+ function paste(input, cb) {
