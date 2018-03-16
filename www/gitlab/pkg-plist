@@ -12281,7 +12281,6 @@
 @sample %%WWWDIR%%/lib/support/nginx/gitlab-ssl.sample
 @owner root
 @group wheel
-@dir /usr
 @dir /usr/home
 @dir(git,git,) /usr/home/git
 @dir(git,git,2770) /usr/home/git/repositories
