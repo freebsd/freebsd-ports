@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.1
 CATEGORIES=	science
-MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
+MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
 		LOCAL/sunpoet
 
