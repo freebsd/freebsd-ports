@@ -1,8 +1,9 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
+z Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gdb
 PORTVERSION=	8.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -36,6 +37,7 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--without-libunwind-ia64
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
+CFLAGS+=	-Wno-unknown-warning-option
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 EXTRA_PATCHES=	${FILESDIR}/commit-d2176225dc \
