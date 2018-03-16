@@ -277,9 +277,7 @@
 : ${ac_cv_func_bsearch=yes}
 : ${ac_cv_func_btowc=yes}
 : ${ac_cv_func_bzero=yes}
-: ${ac_cv_func_cabs=yes}
 : ${ac_cv_func_calloc=yes}
-: ${ac_cv_func_ceil=yes}
 : ${ac_cv_func_chown=yes}
 : ${ac_cv_func_clock=yes}
 : ${ac_cv_func_clock_gettime=yes}
