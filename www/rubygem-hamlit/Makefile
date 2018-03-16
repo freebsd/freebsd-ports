@@ -16,8 +16,10 @@ RUN_DEPENDS=	rubygem-temple>=0.8.0:devel/rubygem-temple \
 		rubygem-thor>=0:devel/rubygem-thor \
 		rubygem-tilt>=0:devel/rubygem-tilt
 
-USE_RUBY=	yes
+CONFLICTS_INSTALL=	rubygem-hamlit26
+
 USES=		gem shebangfix
+USE_RUBY=	yes
 SHEBANG_FILES=	bin/setup bin/test bin/ruby
 
 PLIST_FILES=	bin/hamlit
