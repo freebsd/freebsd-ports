@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-header
 
 COMMENT=	Install an avahi-gtk* header to avoid conflict
 
-CONFLICT=	avahi-gtk-0.6.[0-2]*
+CONFLICTS=	avahi-gtk-0.6.[0-2]*
 
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-ui
