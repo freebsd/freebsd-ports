@@ -302,7 +302,6 @@
 : ${ac_cv_func_ffsl=yes}
 : ${ac_cv_func_ffsll=yes}
 : ${ac_cv_func_fileno=yes}
-: ${ac_cv_func_floor=yes}
 : ${ac_cv_func_fls=yes}
 : ${ac_cv_func_flsl=yes}
 : ${ac_cv_func_flsll=yes}
