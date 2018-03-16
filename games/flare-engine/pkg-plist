@@ -1,0 +1,4 @@
+bin/flare
+man/man6/flare.6.gz
+share/applications/flare.desktop
+share/icons/hicolor/scalable/apps/flare.svg

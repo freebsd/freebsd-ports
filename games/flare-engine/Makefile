@@ -2,20 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	flare
-PORTVERSION=	0.19
-PORTREVISION=	3
+PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}-game/Linux/
-DISTNAME=	${PORTNAME}-engine.${PORTVERSION}
 PKGNAMESUFFIX=	-engine
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Libre Action Roleplaying Engine
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	clintbellanger
+GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 
 USES=		cmake compiler:env
-USE_SDL=	sdl mixer image ttf
+USE_SDL=	sdl2 mixer2 image2 ttf2
 CMAKE_BUILD_TYPE=	#empty
 
 CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare" -DMANDIR="man"
@@ -23,19 +26,13 @@ CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare" -DMANDIR="man"
 PORTDOCS=	*
 PORTDATA=	*
 
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/flare.1.gz
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${COMPILER_TYPE} == "clang"
-	@${REINPLACE_CMD} -e 's|-fwhole-program||' ${WRKSRC}/CMakeLists.txt
-.endif
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/flare
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.engine ${STAGEDIR}${DOCSDIR}/
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/flare
 
-.include <bsd.port.post.mk>
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.engine.md ${STAGEDIR}${DOCSDIR}/
+
+.include <bsd.port.mk>
