@@ -1,0 +1,12 @@
+QUICK-START GUIDE
+
+It's two in the morning and someone posted a link to your website on
+slashdot.  Don't panic, it takes only a minute to set up Varnish in
+front of your web server:
+
+1) Install Varnish
+2) Reconfigure your web server to listen on localhost:8080
+3) sysrc varnishd_enable=YES
+4) service varnishd start
+
+Refer to the documentation for more advanced configuration.
