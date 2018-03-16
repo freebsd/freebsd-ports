@@ -1,0 +1,141 @@
+commit 15353262e8f3
+Author: Johann Hofmann <jhofmann@mozilla.com>
+Date:   Tue Jun 13 12:10:39 2017 +0200
+
+    Bug 1366357 - Use origin instead of documentURI for WebRTC permission requests. r=florian
+    
+    MozReview-Commit-ID: IkccA65Ma3a
+    
+    --HG--
+    extra : rebase_source : 9c1f2c895949b1dae617b0c2a1039a5494cd8b2a
+---
+ .../test/popupNotifications/browser_displayURI.js  | 79 ++++++++++++++++++----
+ browser/modules/ContentWebRTC.jsm                  |  1 +
+ browser/modules/webrtcUI.jsm                       |  8 ++-
+ 3 files changed, 73 insertions(+), 15 deletions(-)
+
+diff --git browser/base/content/test/popupNotifications/browser_displayURI.js browser/base/content/test/popupNotifications/browser_displayURI.js
+index 10a8199dab54..df2bfb54fe25 100644
+--- browser/base/content/test/popupNotifications/browser_displayURI.js
++++ browser/base/content/test/popupNotifications/browser_displayURI.js
+@@ -1,19 +1,11 @@
+ /*
+- * Make sure that the origin is shown for ContentPermissionPrompt
+- * consumers e.g. geolocation.
+-*/
+-
+-add_task(async function test_displayURI() {
+-  await BrowserTestUtils.withNewTab({
+-    gBrowser,
+-    url: "https://test1.example.com/",
+-  }, async function(browser) {
++ * Make sure that the correct origin is shown for permission prompts.
++ */
++
++async function check(contentTask) {
++  await BrowserTestUtils.withNewTab("https://test1.example.com/", async function(browser) {
+     let popupShownPromise = waitForNotificationPanel();
+-    await ContentTask.spawn(browser, null, async function() {
+-      content.navigator.geolocation.getCurrentPosition(function(pos) {
+-        // Do nothing
+-      });
+-    });
++    await ContentTask.spawn(browser, null, contentTask);
+     let panel = await popupShownPromise;
+     let notification = panel.children[0];
+     let body = document.getAnonymousElementByAttribute(notification,
+@@ -21,4 +13,63 @@ add_task(async function test_displayURI() {
+                                                        "popup-notification-body");
+     ok(body.innerHTML.includes("example.com"), "Check that at least the eTLD+1 is present in the markup");
+   });
++
++  let channel = NetUtil.newChannel({
++    uri: getRootDirectory(gTestPath),
++    loadUsingSystemPrincipal: true,
++  });
++  channel = channel.QueryInterface(Ci.nsIFileChannel);
++
++  return BrowserTestUtils.withNewTab(channel.file.path, async function(browser) {
++    let popupShownPromise = waitForNotificationPanel();
++    await ContentTask.spawn(browser, null, contentTask);
++    let panel = await popupShownPromise;
++    let notification = panel.children[0];
++    let body = document.getAnonymousElementByAttribute(notification,
++                                                       "class",
++                                                       "popup-notification-body");
++    if (notification.id == "geolocation-notification") {
++      ok(body.innerHTML.includes("local file"), `file:// URIs should be displayed as local file.`);
++    } else {
++      ok(body.innerHTML.includes("Unknown origin"), "file:// URIs should be displayed as unknown origin.");
++    }
++  });
++}
++
++add_task(async function setup() {
++  await SpecialPowers.pushPrefEnv({set: [
++    ["media.navigator.permission.fake", true],
++    ["media.navigator.permission.force", true],
++  ]});
+ });
++
++add_task(async function test_displayURI_geo() {
++  await check(async function() {
++    content.navigator.geolocation.getCurrentPosition(() => {});
++  });
++});
++
++add_task(async function test_displayURI_camera() {
++  await check(async function() {
++    content.navigator.mediaDevices.getUserMedia({video: true, fake: true});
++  });
++});
++
++add_task(async function test_displayURI_geo_blob() {
++  await check(async function() {
++    let text = "<script>navigator.geolocation.getCurrentPosition(() => {})</script>";
++    let blob = new Blob([text], {type: "text/html"});
++    let url = content.URL.createObjectURL(blob);
++    content.location.href = url;
++  });
++});
++
++add_task(async function test_displayURI_camera_blob() {
++  await check(async function() {
++    let text = "<script>navigator.mediaDevices.getUserMedia({video: true, fake: true})</script>";
++    let blob = new Blob([text], {type: "text/html"});
++    let url = content.URL.createObjectURL(blob);
++    content.location.href = url;
++  });
++});
++
+diff --git browser/modules/ContentWebRTC.jsm browser/modules/ContentWebRTC.jsm
+index f717f6abbc0a..1cbe0832cba1 100644
+--- browser/modules/ContentWebRTC.jsm
++++ browser/modules/ContentWebRTC.jsm
+@@ -216,6 +216,7 @@ function prompt(aContentWindow, aWindowID, aCallID, aConstraints, aDevices, aSec
+   let request = {
+     callID: aCallID,
+     windowID: aWindowID,
++    origin: aContentWindow.origin,
+     documentURI: aContentWindow.document.documentURI,
+     secure: aSecure,
+     requestTypes,
+diff --git browser/modules/webrtcUI.jsm browser/modules/webrtcUI.jsm
+index 6bc97eb7305c..3efdf946352b 100644
+--- browser/modules/webrtcUI.jsm
++++ browser/modules/webrtcUI.jsm
+@@ -368,7 +368,13 @@ function prompt(aBrowser, aRequest) {
+   aBrowser.dispatchEvent(new aBrowser.ownerGlobal
+                                      .CustomEvent("PermissionStateChange"));
+ 
+-  let uri = Services.io.newURI(aRequest.documentURI);
++  let uri;
++  try {
++    // This fails for principals that serialize to "null", e.g. file URIs.
++    uri = Services.io.newURI(aRequest.origin);
++  } catch (e) {
++    uri = Services.io.newURI(aRequest.documentURI);
++  }
+   let host = getHost(uri);
+   let chromeDoc = aBrowser.ownerDocument;
+   let stringBundle = chromeDoc.defaultView.gNavigatorBundle;

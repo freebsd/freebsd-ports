@@ -1,0 +1,66 @@
+commit 0d38343e3589
+Author: Gijs Kruitbosch <gijskruitbosch@gmail.com>
+Date:   Tue Dec 12 10:53:10 2017 -0600
+
+    Bug 1424261, r=bz
+    
+    --HG--
+    extra : rebase_source : 2bead652bbfd4cd251b431e04e3002c38c1a7a7b
+---
+ caps/nsScriptSecurityManager.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git caps/nsScriptSecurityManager.cpp caps/nsScriptSecurityManager.cpp
+index 736eab415b8d..e557f4f1a0b7 100644
+--- caps/nsScriptSecurityManager.cpp
++++ caps/nsScriptSecurityManager.cpp
+@@ -840,7 +840,7 @@ nsScriptSecurityManager::CheckLoadURIFlags(nsIURI *aSourceURI,
+ 
+     // Check for chrome target URI
+     bool hasFlags = false;
+-    rv = NS_URIChainHasFlags(aTargetBaseURI,
++    rv = NS_URIChainHasFlags(aTargetURI,
+                              nsIProtocolHandler::URI_IS_UI_RESOURCE,
+                              &hasFlags);
+     NS_ENSURE_SUCCESS(rv, rv);
+
+commit 3c59d5240166
+Author: Gijs Kruitbosch <gijskruitbosch@gmail.com>
+Date:   Tue Dec 12 10:53:50 2017 -0600
+
+    Bug 1424261, r=valentin
+    
+    --HG--
+    extra : rebase_source : 9f4c9c619dbccc2575b2a9d3e4304a54d41acad5
+---
+ image/decoders/icon/nsIconURI.cpp | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git image/decoders/icon/nsIconURI.cpp image/decoders/icon/nsIconURI.cpp
+index 5958bd9d1436..5f096674bd35 100644
+--- image/decoders/icon/nsIconURI.cpp
++++ image/decoders/icon/nsIconURI.cpp
+@@ -218,7 +218,10 @@ nsMozIconURI::SetSpec(const nsACString& aSpec)
+ 
+   nsAutoCString iconSpec(aSpec);
+   if (!Substring(iconSpec, 0,
+-                 MOZICON_SCHEME_LEN).EqualsLiteral(MOZICON_SCHEME)) {
++                 MOZICON_SCHEME_LEN).EqualsLiteral(MOZICON_SCHEME) ||
++      (!Substring(iconSpec, MOZICON_SCHEME_LEN, 7).EqualsLiteral("file://") &&
++       // Checking for the leading '//' will match both the '//stock/' and '//.foo' cases:
++       !Substring(iconSpec, MOZICON_SCHEME_LEN, 2).EqualsLiteral("//"))) {
+     return NS_ERROR_MALFORMED_URI;
+   }
+ 
+@@ -298,6 +301,11 @@ nsMozIconURI::SetSpec(const nsACString& aSpec)
+   ioService->NewURI(iconPath, nullptr, nullptr, getter_AddRefs(uri));
+   mIconURL = do_QueryInterface(uri);
+   if (mIconURL) {
++    // The inner URI should be a 'file:' one. If not, bail.
++    bool isFile = false;
++    if (!NS_SUCCEEDED(mIconURL->SchemeIs("file", &isFile)) || !isFile) {
++      return NS_ERROR_MALFORMED_URI;
++    }
+     mFileName.Truncate();
+   } else if (mFileName.IsEmpty()) {
+     return NS_ERROR_MALFORMED_URI;
