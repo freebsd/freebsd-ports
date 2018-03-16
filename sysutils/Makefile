@@ -953,7 +953,6 @@
     SUBDIR += py-tmuxp
     SUBDIR += py-uptime
     SUBDIR += py-zdaemon
-    SUBDIR += py-zfs
     SUBDIR += pydf
     SUBDIR += qchroot
     SUBDIR += qdirstat

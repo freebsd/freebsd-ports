@@ -10205,3 +10205,4 @@ finance/electrum2|finance/electrum|2018-03-13|Has expired: Vulnerable legacy por
 math/py-gsl|math/py-pygsl|2018-03-13|Rename to match PyPI naming
 www/mediawiki123|www/mediawiki127|2018-03-14|Has expired: Upstream no longer maintained
 www/mediawiki128|www/mediawiki130|2018-03-14|Has expired: Upstream no longer maintained
+sysutils/py-zfs||2018-03-16|Not needed since ZFS 28
