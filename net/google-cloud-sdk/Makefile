@@ -3,7 +3,7 @@
 
 PORTNAME=	google-cloud-sdk
 PORTVERSION=	183.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -15,7 +15,8 @@ USES=		python
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/google-cloud-sdk
 
-RUN_DEPENDS=	python:lang/python
+RUN_DEPENDS=	python:lang/python \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 post-extract:
 	@${RM} -r \
