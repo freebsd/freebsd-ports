@@ -10,10 +10,7 @@ COMMENT=	Sndio module for PulseAudio
 
 LICENSE=	ISCL
 
-BROKEN_armv6=	fails to link: ld: cannot find -lpulsecore-
-BROKEN_armv7=	fails to link: ld: cannot find -lpulsecore-
-
-LIB_DEPENDS+=	libsndio.so:audio/sndio \
+LIB_DEPENDS=	libsndio.so:audio/sndio \
 		libpulse.so:audio/pulseaudio
 
 USES=		pkgconfig
