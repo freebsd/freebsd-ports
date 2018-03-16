@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	hte
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1.g20161206
 CATEGORIES=	editors
-MASTER_SITES=	SF/${PORTNAME}/ht-source
-DISTNAME=	ht-${PORTVERSION}
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	File editor/viewer/analyzer for executables
@@ -13,7 +11,13 @@ COMMENT=	File editor/viewer/analyzer for executables
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ncurses tar:bzip2
+BROKEN_FreeBSD_10=	misgenerated yacc code
+
+USES=		autoreconf compiler:c++14-lang makeinfo ncurses tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	sebastianbiallas
+GH_PROJECT=	ht
+GH_TAGNAME=	e9e63373148da5d7df397d8075740d8c096ecb1d
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/hte
@@ -32,11 +36,12 @@ X11_USE=		XORG=x11
 X11_USES=		localbase:ldflags
 X11_CONFIGURE_ENABLE=	x11-textmode
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^CXXFLAGS=.*$$|CXXFLAGS="$$CXXFLAGS"|g ; \
-		 s|^CFLAGS=.*$$|CFLAGS="$$CFLAGS"|g ; \
-		 s|-L/usr/X11/lib -L/usr/X11R6/lib|$$LDFLAGS|g' \
-			${WRKSRC}/configure
+MAKE_JOBS_UNSAFE=	yes
+
+pre-build:
+	${MAKE} -C ${WRKSRC}/tools
+	${MAKE} -C ${WRKSRC}/doc
+	${MAKE} -C ${WRKSRC} htdoc.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ht ${STAGEDIR}${PREFIX}/bin/hte
