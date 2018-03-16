@@ -1,8 +1,4 @@
 bin/asp-perl
-%%PERL5_MAN3%%/Apache::ASP.3.gz
-%%PERL5_MAN3%%/Apache::ASP::CGI::Table.3.gz
-%%PERL5_MAN3%%/Bundle::Apache::ASP.3.gz
-%%PERL5_MAN3%%/Bundle::Apache::ASP::Extra.3.gz
 %%SITE_PERL%%/Apache/ASP.pm
 %%SITE_PERL%%/Apache/ASP/ApacheCommon.pm
 %%SITE_PERL%%/Apache/ASP/Application.pm
@@ -30,3 +26,7 @@ bin/asp-perl
 %%SITE_PERL%%/Bundle/Apache/ASP.pm
 %%SITE_PERL%%/Bundle/Apache/ASP/Extra.pm
 %%PERL5_MAN1%%/asp-perl.1.gz
+%%PERL5_MAN3%%/Apache::ASP.3.gz
+%%PERL5_MAN3%%/Apache::ASP::CGI::Table.3.gz
+%%PERL5_MAN3%%/Bundle::Apache::ASP.3.gz
+%%PERL5_MAN3%%/Bundle::Apache::ASP::Extra.3.gz
