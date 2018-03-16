@@ -11,7 +11,7 @@ LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer) (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICT=	linux-c6-${LINUXNAME}-[0-9]*
+CONFLICTS=	linux-c6-${LINUXNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../${PORTNAME}2/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}

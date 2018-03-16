@@ -12,7 +12,7 @@ COMMENT=	Advanced directory tree synchronisation tool
 
 LICENSE=	MIT
 
-CONFLICT_INSTALL=p5-File-Dirsync
+CONFLICTS_INSTALL=	p5-File-Dirsync
 
 USES=		python zip
 USE_PYTHON=	autoplist distutils

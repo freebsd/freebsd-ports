@@ -11,7 +11,7 @@ LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Common UNIX Printing System libraries
 
-CONFLICT=	linux-c6-${LINUXNAME}-[0-9]*
+CONFLICTS=	linux-c6-${LINUXNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
