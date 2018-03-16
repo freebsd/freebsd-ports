@@ -2,19 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	flare
-PORTVERSION=	0.19
-PORTREVISION=	1
+PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}-game/Linux/
-DISTNAME=	${PORTNAME}-game.${PORTVERSION}
 PKGNAMESUFFIX=	-game
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Free Libre Action Roleplaying Engine
+COMMENT=	Free Libre Action Roleplaying Engine: game data
 
-LICENSE=	GPLv3
+LICENSE=	CC-BY-SA-3.0
 
 RUN_DEPENDS=	flare:games/flare-engine
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	clintbellanger
+GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 
 USES=		cmake
 CMAKE_BUILD_TYPE=	#empty
@@ -23,17 +25,13 @@ NO_ARCH=	yes
 
 CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare"
 
-PLIST_FILES=	share/applications/flare.desktop \
-		share/icons/hicolor/scalable/apps/flare.svg
 PORTDOCS=	*
 PORTDATA=	*
 
-DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}
-
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
