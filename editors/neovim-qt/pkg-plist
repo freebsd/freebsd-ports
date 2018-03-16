@@ -1,0 +1,7 @@
+bin/nvim-qt
+share/applications/nvim-qt.desktop
+%%DATADIR%%/runtime/README.md
+%%DATADIR%%/runtime/doc/nvim_gui_shim.txt
+%%DATADIR%%/runtime/doc/tags
+%%DATADIR%%/runtime/plugin/nvim_gui_shim.vim
+share/pixmaps/nvim-qt.png

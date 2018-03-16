@@ -197,6 +197,7 @@
     SUBDIR += ne
     SUBDIR += nedit
     SUBDIR += neovim
+    SUBDIR += neovim-qt
     SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
     SUBDIR += omegaT
