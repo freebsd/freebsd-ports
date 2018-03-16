@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://www.defuze.org/oss/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	WebSocket package for Python
 
 LICENSE=	BSD3CLAUSE
