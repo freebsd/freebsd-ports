@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-kgio>=2.6:devel/rubygem-kgio \
 USES=		gem shebangfix
 USE_RUBY=	yes
 
-CONFLICT_INSTALL=	rubygems-unicorn
+CONFLICTS_INSTALL=	rubygem-unicorn
 PORTSCOUT=	limit:^5\.1
 
 PLIST_FILES=	bin/unicorn bin/unicorn_rails
