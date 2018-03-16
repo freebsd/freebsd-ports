@@ -88,7 +88,7 @@ LBL_CF_RUN_DEPENDS=	${LOCALBASE}/bin/cf:sysutils/lbl-cf
 NETMAP_GH_TUPLE=	bro:bro-netmap:cf88debf487b31ab30dc3b5bac64783b4e49997e:bro_netmap
 NETMAP_USE=		GITHUB=nodefault
 PERFTOOLS_CMAKE_BOOL=	ENABLE_PERFTOOLS
-PERFTOOLS_RUN_DEPENDS=	${LOCALBASE}/bin/pprof:devel/google-perftools
+PERFTOOLS_RUN_DEPENDS=	${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
 PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
 
 .include <bsd.port.options.mk>
