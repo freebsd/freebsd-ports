@@ -316,6 +316,7 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/ja/gdkcut-pixbuf.xml
 %%DOCSDIR%%/ja/gdkcutter-pixbuf.xml
 %%DOCSDIR%%/ja/nested-circle.png
+%%DOCSDIR%%/ja/profile.txt
 %%DOCSDIR%%/ja/soupcut-assertions-helper.xml
 %%DOCSDIR%%/ja/soupcut-assertions.xml
 %%DOCSDIR%%/ja/soupcut-client.xml
