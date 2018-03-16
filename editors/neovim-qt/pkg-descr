@@ -1,0 +1,5 @@
+neovim is a Qt5 GUI for neovim.
+Commands for interacting with the GUI are regular commands,
+available in the documentation.
+
+WWW: https://github.com/equalsraf/neovim-qt/
