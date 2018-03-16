@@ -1,6 +1,6 @@
---- abcde.orig	2017-01-18 13:56:14 UTC
+--- abcde.orig	2018-03-15 16:01:58 UTC
 +++ abcde
-@@ -2012,7 +2012,10 @@ do_discid ()
+@@ -2108,7 +2108,10 @@ do_discid ()
  
  				LEADOUT="$(echo "$CDPARANOIAOUTPUT" | grep -Eo '^TOTAL[[:space:]]+([[:digit:]]+)' | get_last)"
  				OFFSETS="$(echo "$CDPARANOIAOUTPUT" | sed -n -e's/^ .* \([0-9]\+\) \[.*/\1/p')"
@@ -11,4 +11,4 @@
 +				esac
  				;;
  			*)
- 				case "$CDDBMETHOD" in
+ 				# Calculate the cddb discid in all
