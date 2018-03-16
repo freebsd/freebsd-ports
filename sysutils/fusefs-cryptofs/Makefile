@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Encrypted filesystem for FUSE
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
@@ -23,7 +24,7 @@ DOCS=		README cryptofs.conf
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
