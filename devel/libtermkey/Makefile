@@ -3,6 +3,7 @@
 
 PORTNAME=	libtermkey
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.leonerd.org.uk/code/libtermkey/
 
