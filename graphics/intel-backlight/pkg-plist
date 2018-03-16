@@ -1,0 +1,3 @@
+%%SUID%%@(,,4555) bin/intel_backlight
+%%NO_SUID%%@(,,0555) bin/intel_backlight
+man/man1/intel_backlight.1.gz

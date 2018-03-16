@@ -1,29 +1,3 @@
 Control backlight on various modern Intel(R) GPUs.
 
-See here for a list of supported chipsets:
-https://github.com/grembo/intel_backlight_fbsd/blob/master/intel_chipset.h
-
-See here for the original project this has been taken from:
-http://cgit.freedesktop.org/xorg/app/intel-gpu-tools/
-
-Usage:
-  $ sudo intel_backlight
-  current backlight value: 30% (281/937)
-  $ sudo intel_backlight 50
-  current backlight value: 15% (141/937)
-  set backlight to 50% (469/937)
-  $ sudo intel_backlight incr
-  current backlight value: 50% (469/937)
-  set backlight to 51% (478/937)
-  $ sudo intel_backlight incr
-  current backlight value: 51% (478/937)
-  set backlight to 60% (562/937)
-  $ sudo intel_backlight incr
-  current backlight value: 60% (562/937)
-  set backlight to 70% (656/937)
-  $ sudo intel_backlight decr
-  current backlight value: 70% (656/937)
-  set backlight to 60% (562/937)
-  $ sudo intel_backlight decr
-  current backlight value: 60% (562/937)
-  set backlight to 51% (478/937)
+WWW: https://github.com/FreeBSDDesktop/intel_backlight_fbsd

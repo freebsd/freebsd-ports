@@ -2,11 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=		intel-backlight
-PORTVERSION=		20170831
+DISTVERSION=		20180303
 CATEGORIES=		graphics
 
 MAINTAINER=		jmd@freebsd.org
 COMMENT=		Control backlight on various modern Intel(R) GPUs
+
+LICENSE=		MIT
+LICENSE_FILE=		${WRKSRC}/COPYING
+
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	This hardware is only found on Intel x86 systems
 
 LIB_DEPENDS=		libdrm.so:graphics/libdrm \
 			libpciaccess.so:devel/libpciaccess
@@ -14,24 +20,20 @@ LIB_DEPENDS=		libdrm.so:graphics/libdrm \
 USE_GITHUB=		yes
 GH_ACCOUNT=		FreeBSDDesktop
 GH_PROJECT=		intel_backlight_fbsd
-GH_TAGNAME=		baba3e6
+GH_TAGNAME=		7339989
 
-PLIST_FILES=		bin/intel_backlight
-PORTEXAMPLES=		isl_backlight.sh
+PORTEXAMPLES=		asmc_backlight.sh \
+			isl_backlight.sh
 
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	This hardware is only found on Intel x86 systems
+INSTALL_TARGET=		install-strip
 
-do-build:
-	cd ${WRKSRC} && \
-	${CC} ${CFLAGS} -o intel_backlight -I${PREFIX}/include \
-	-I${PREFIX}/include/libdrm  -L${PREFIX}/lib -ldrm_intel \
-	-lpciaccess intel_reg_map.c intel_mmio.c intel_backlight.c \
-	intel_drm.c intel_pci.c
+OPTIONS_SUB=		yes
+OPTIONS_DEFINE=		EXAMPLES SUID
+OPTIONS_DEFAULT=	SUID
+SUID_DESC=		Install intel_backlight with the setuid bit set
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/intel_backlight ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/isl_backlight.sh ${STAGEDIR}${EXAMPLESDIR}
+do-install-EXAMPLES-on:
+	cd ${WRKSRC} &&	${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR}
 
+.include <bsd.port.options.mk>
 .include <bsd.port.mk>
