@@ -15,6 +15,9 @@ COMMENT=	X11 IRC client using the GTK+ 2 toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained upstream, use irc/hexchat instead
+EXPIRATION_DATE=	2018-04-15
+
 CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 
 USES=		cpe gettext gmake libtool pathfix pkgconfig tar:bzip2
