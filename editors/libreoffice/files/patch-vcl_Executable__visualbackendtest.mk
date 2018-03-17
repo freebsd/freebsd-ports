@@ -11,9 +11,7 @@
 -	-ldl \
 +	-lm $(DLOPEN_LIBS) \
  	-lpthread \
--    -lGL \
 -    -lX11 \
-+	-lGL \
 +	-lX11 \
  ))
  

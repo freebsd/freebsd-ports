@@ -2,7 +2,6 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	5
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -13,11 +12,10 @@ EXTRACT_ONLY:=	${DISTFILES}
 
 COMMENT=	Full integrated office productivity suite
 
-CONFLICTS_BUILD=	mdds0
-
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		zip:archivers/zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
+		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		${LOCALBASE}/bin/gperf:devel/gperf \
 		${LOCALBASE}/include/mdds-1.2/mdds/global.hpp:devel/mdds \
@@ -32,12 +30,15 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
+		libltdl.so:devel/libltdl \
 		liborcus-0.13.so:devel/liborcus \
+		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
 		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \
 		liblcms2.so:graphics/lcms2 \
 		libcdr-0.1.so:graphics/libcdr01 \
+		libepoxy.so:graphics/libepoxy \
 		libetonyek-0.1.so:graphics/libetonyek01 \
 		libfreehand-0.1.so:graphics/libfreehand \
 		libgltf-0.0.so:graphics/libgltf \
@@ -49,20 +50,24 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libCoinMP.so:math/coinmp \
 		liblpsolve55.so:math/lp_solve \
 		libcmis-0.5.so:net/libcmis \
+		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libmspub-0.1.so:print/libmspub01 \
 		libpagemaker-0.0.so:print/libpagemaker \
 		libnss3.so:security/nss \
+		libxmlsec1-nss.so:security/xmlsec1 \
 		libclucene-core.so:textproc/clucene \
 		libexpat.so:textproc/expat2 \
 		libhunspell-1.6.so:textproc/hunspell \
 		libhyphen.so:textproc/hyphen \
 		libabw-0.1.so:textproc/libabw \
 		libe-book-0.1.so:textproc/libe-book \
+		libepubgen-0.1.so:textproc/libepubgen \
 		libexttextcat-2.0.so:textproc/libexttextcat \
 		libmwaw-0.3.so:textproc/libmwaw03 \
 		libodfgen-0.1.so:textproc/libodfgen01 \
+		libqxp-0.0.so:textproc/libqxp \
 		librevenge-0.0.so:textproc/librevenge \
 		libstaroffice-0.0.so:textproc/libstaroffice \
 		libvisio-0.1.so:textproc/libvisio01 \
@@ -71,7 +76,9 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libxml2.so:textproc/libxml2 \
 		libxslt.so:textproc/libxslt \
 		libmythes-1.2.so:textproc/mythes \
+		libraptor2.so:textproc/raptor2 \
 		librdf.so:textproc/redland \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libserf-1.so:www/serf
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
@@ -82,9 +89,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
-DISTFILES+=	4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
-		86b1daaa438f5a7bea9a52d7b9799ac0-xmlsec1-1.2.23.tar.gz:src \
-		cppunit-1.13.2.tar.gz:src
+DISTFILES+=	4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src
 
 NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -93,35 +98,38 @@ NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
 MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
 .endif
 
-CONFLICTS_INSTALL=	libreoffice4-4.*
-
-INSTALL_TARGET=	distro-pack-install-strip
+INSTALL_TARGET=	distro-pack-install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
+
+SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USE_GL=		gl glew glu
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_QT4=	# empty but required
-USE_XORG=	xaw xrandr
-USES=		autoreconf:build bison compiler:c++11-lib cpe gmake jpeg \
-		perl5 pkgconfig python shared-mime-info tar:xz
+USE_XORG=	ice sm x11 xaw xext xinerama xrandr xrender
+USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
+		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz
 
-OPTIONS_DEFINE=	CUPS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
+OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
 		TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS GTK2 MMEDIA
 
+GTK2_DESC=	GTK+ 2 GUI toolkit support
 GTK3_DESC=	GTK+ 3 GUI toolkit support (experimental)
-JAVA_DESC=	Add Java support (XML filters, macros)
-MMEDIA_DESC=	Enable multimedia backend for impress
+JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
+MMEDIA_DESC=	Enable multimedia backend for Impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 SDK_DESC=	Build with SDK
 SYSTRAY_DESC=	Enable systemtray quickstarter
 TEST_DESC=	Run all regression tests
-WEBDAV_DESC=	Enable webdav protocol
+WEBDAV_DESC=	Enable WebDAV protocol
 
 CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
+
+DOCS_CONFIGURE_WITH=	help
 
 GNOME_CONFIGURE_ENABLE=	dbus dconf
 GNOME_IMPLIES=	GTK2
@@ -227,9 +235,9 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-mergelibs \
 		--disable-online-update \
 		--enable-cairo-canvas \
-		--enable-graphite \
 		--enable-python=system \
 		--enable-release-build \
+		--disable-pdfium \
 		--exec-prefix=${PREFIX} \
 		--with-alloc=system \
 		--with-boost=${LOCALBASE} \
@@ -241,6 +249,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-gnu-patch=${LOCALBASE}/bin/gpatch \
 		--with-os-version=${OSVERSION} \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
+		--with-system-cppunit \
 		--with-system-curl \
 		--with-system-dicts \
 		--with-system-libs \
@@ -250,8 +259,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-zlib \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
-		--without-myspell-dicts \
-		--without-system-cppunit
+		--without-myspell-dicts
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		GNUTAR="${TAR}" \
@@ -268,8 +276,6 @@ MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
 MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
-
-_MAKE_JOBS=	#
 
 .include <bsd.port.pre.mk>
 
@@ -311,7 +317,7 @@ post-install:
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
-.for subdir in appdata application-registry applications bash-completion icons mime mime-info mimelnk
+.for subdir in appdata application-registry applications bash-completion icons mime mime-info
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
