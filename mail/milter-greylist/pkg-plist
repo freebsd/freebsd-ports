@@ -1,5 +1,5 @@
 libexec/milter-greylist
 man/man5/greylist.conf.5.gz
 man/man8/milter-greylist.8.gz
-etc/mail/greylist.conf.sample
+@sample etc/mail/greylist.conf.sample
 @dir(mailnull,mailnull,) /var/milter-greylist
