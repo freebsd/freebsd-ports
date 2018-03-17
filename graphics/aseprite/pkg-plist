@@ -103,9 +103,9 @@ bin/aseprite
 %%DATADIR%%/data/widgets/convolution_matrix.xml
 %%DATADIR%%/data/widgets/despeckle.xml
 %%DATADIR%%/data/widgets/duplicate_sprite.xml
+%%DATADIR%%/data/widgets/export_file.xml
 %%DATADIR%%/data/widgets/export_sprite_sheet.xml
 %%DATADIR%%/data/widgets/file_selector.xml
-%%DATADIR%%/data/widgets/file_selector_extras.xml
 %%DATADIR%%/data/widgets/font_popup.xml
 %%DATADIR%%/data/widgets/frame_properties.xml
 %%DATADIR%%/data/widgets/frame_tag_properties.xml
