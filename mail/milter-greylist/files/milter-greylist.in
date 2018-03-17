@@ -20,6 +20,8 @@ name="miltergreylist"
 rcvar=miltergreylist_enable
 
 command="%%PREFIX%%/libexec/milter-greylist"
+extra_commands="configtest"
+configtest_cmd="%%PREFIX%%/libexec/milter-greylist -c"
 
 load_rc_config $name
 

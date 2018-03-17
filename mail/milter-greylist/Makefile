@@ -3,7 +3,7 @@
 
 PORTNAME=	milter-greylist
 PORTVERSION=	4.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
 		http://fossies.org/unix/privat/
@@ -13,7 +13,6 @@ COMMENT=	Easy-to-use greylist milter for sendmail and postfix
 
 LICENSE=	BSD3CLAUSE
 
-CONFLICTS=	milter-greylist-devel-[1-9]*.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAKE_JOBS_UNSAFE=	yes
