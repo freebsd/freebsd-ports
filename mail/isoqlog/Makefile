@@ -13,13 +13,12 @@ COMMENT=	Qmail, postfix, sendmail, exim MTA log analysis program
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
 USES=		gmake
-
-OPTIONS_DEFINE=	DOCS
+GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
 
 PORTDOCS=	*
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
