@@ -156,7 +156,6 @@ samba_server_cmd() {
 samba_server_config_init() {
     local name
     # Load configuration
-    load_rc_config "${name}"
     # Defaults
     samba_server_enable=${samba_server_enable:=NO}
     samba_server_config=${samba_server_config=${samba_server_config_default}}
@@ -175,7 +174,6 @@ samba_server_config_init() {
     esac
     # Load daemons configuration
     for name in ${samba_daemons}; do
-	load_rc_config "${name}"
 	# If samba_server_enable is 'YES'
 	if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
 	    if [ "${name}" != "winbindd" ]; then

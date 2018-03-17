@@ -21,4 +21,5 @@ start_stop_daemon_args="--stdout /var/log/ntpd.log --stderr /var/log/ntpd.log"
 
 depend(){
 	need localmount
+	provide ntpd
 }
