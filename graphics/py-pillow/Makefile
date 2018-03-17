@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pillow
-PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,6 +13,9 @@ LICENSE=	PIL
 LICENSE_NAME=	Standard PIL License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${FLAVOR}
 
 OPTIONS_DEFINE=		FREETYPE JPEG JPEG2000 LCMS PNG TIFF TKINTER WEBP
 OPTIONS_DEFAULT=	FREETYPE JPEG JPEG2000 PNG TKINTER WEBP
@@ -53,6 +55,7 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_VARS=		PYDISTUTILS_BUILDARGS+="--enable-webp --enable-webpmux"
 WEBP_VARS_OFF=		PYDISTUTILS_BUILDARGS+="--disable-webp --disable-webpmux"
 
+# Python 2.7,3.4+
 USES=		cpe python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
@@ -71,9 +74,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PIL/*.so
 
 do-test:
-	@cd ${WRKSRC} && \
-	${PYTHON_CMD} ${PYSETUP} build_ext -i && \
-	${PYTHON_CMD} selftest.py && \
-	${PYTHON_CMD} -m nose -vx Tests/test_*.py
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.post.mk>
