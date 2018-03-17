@@ -3,8 +3,7 @@
 #
 # This is a set of Makefile macros which allow to build the
 # localized language packages for devel/eric6:
-# chinese/eric6, french/eric6, german/eric6, portuguese/eric6, russian/eric6
-# devel/cs-eric6, devel/es-eric6, devel/it-eric6, devel/tr-eric6
+# german/eric6, russian/eric6, devel/es-eric6
 
 .include "${.CURDIR}/../../devel/eric6/bsd.eric6.mk"
 
