@@ -1,0 +1,4 @@
+idna-ssl patches ssl.match_hostname for Unicode(idna) domains support.
+
+WWW: https://pypi.python.org/pypi/idna_ssl
+WWW: https://github.com/aio-libs/idna-ssl
