@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180317:
+  AFFECTS: users of multimedia/plexpy
+  AUTHOR: feld@FreeBSD.org
+
+  Plexpy project has been renamed to Tautulli due to copyright
+  infringement. The software also has received a major update. Please
+  see the following upgrade instructions:
+
+  - Install multimedia/tautulli
+  - Create /var/db/tautulli, owned by the user you will run the daemon as
+    (default: nobody).
+  - Copy your config.ini and plexpy.db to /var/db/tautulli
+  - Enable the service and start the software
+
+   Tautulli should automatically find your database file, rename it to
+   tautulli.db, and perform the required updates.
+
 20180310:
   AFFECTS: users of security/openssl
   AUTHOR: brnrd@FreeBSD.org
