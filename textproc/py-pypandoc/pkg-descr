@@ -1,0 +1,6 @@
+Pypandoc provides a thin wrapper for pandoc, a universal document converter.
+
+To use pandoc filters, you must have the relevant filters installed on your
+machine.
+
+WWW: https://github.com/bebraw/pypandoc
