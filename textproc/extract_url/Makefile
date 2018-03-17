@@ -17,13 +17,14 @@ BUILD_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake perl5
-MAKE_ARGS=	all prefix=${PREFIX} man_prefix=${PREFIX}
-SUB_FILES=	pkg-message
-NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	m3m0ryh0l3
 GH_PROJECT=	extracturl
+
+MAKE_ARGS=	all prefix=${PREFIX} man_prefix=${PREFIX}
+SUB_FILES=	pkg-message
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/extract_url \
 		share/extract_url/extract_urlview.sample \

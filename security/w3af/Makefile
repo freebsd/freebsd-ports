@@ -48,10 +48,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:devel/py-lxml@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vulndb>=0.0.17:security/py-vulndb@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=2.6.1:textproc/py-markdown@${FLAVOR}
 
+USES=		gettext python:2.7 shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	andresriancho
 
-USES=		gettext python:2.7 shebangfix
 USE_PYTHON=	flavors
 SHEBANG_FILES=	tools/* w3af_console w3af_gui
 NO_BUILD=	yes
