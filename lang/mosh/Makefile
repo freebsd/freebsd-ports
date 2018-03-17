@@ -3,7 +3,7 @@
 
 PORTNAME=	mosh
 PORTVERSION=	0.2.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/mosh-scheme/
 PKGNAMESUFFIX=	-scheme
