@@ -84,6 +84,10 @@
     SUBDIR += font-screen-cyrillic
     SUBDIR += font-sony-misc
     SUBDIR += font-sun-misc
+    SUBDIR += font-tex-gyre-bonum-math
+    SUBDIR += font-tex-gyre-pagella-math
+    SUBDIR += font-tex-gyre-schola-math
+    SUBDIR += font-tex-gyre-termes-math
     SUBDIR += font-util
     SUBDIR += font-winitzki-cyrillic
     SUBDIR += font-xfree86-type1
