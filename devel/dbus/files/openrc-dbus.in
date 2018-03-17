@@ -12,7 +12,7 @@
 command=%%PREFIX%%/bin/dbus-daemon
 pidfile=/var/run/dbus.pid
 command_args="${dbusd_args---system} --nofork"
-name="Message Bus Daemon"
+name="dbus"
 supervisor="supervise-daemon"
 supervise_daemon_args="-1 /var/log/dbus.out -2 /var/log/dbus.err"
 
