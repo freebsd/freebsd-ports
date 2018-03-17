@@ -1,0 +1,4 @@
+This is a collection of normalized lua functions for Lua 5.1 (including LuaJIT),
+5.2 and 5.3.
+
+WWW: https://github.com/lua-stdlib/normalize
