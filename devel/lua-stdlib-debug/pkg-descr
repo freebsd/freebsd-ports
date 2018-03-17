@@ -1,0 +1,4 @@
+This is a debug hints management library for Lua 5.1 (including LuaJIT),
+5.2 and 5.3.
+
+WWW: https://github.com/lua-stdlib/_debug

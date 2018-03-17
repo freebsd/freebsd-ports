@@ -1672,6 +1672,7 @@
     SUBDIR += lua-lunit
     SUBDIR += lua-posix
     SUBDIR += lua-pty
+    SUBDIR += lua-stdlib-debug
     SUBDIR += lua-sysctl
     SUBDIR += lua51-bitop
     SUBDIR += lua51-cjson
