@@ -12,14 +12,15 @@ COMMENT=	Create several groups (clusters) of objects from a list in Python
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PORTSCOUT=	skipv:regression
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	exhuma
 GH_PROJECT=	python-cluster
 
-NO_ARCH=	yes
-USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
+
+PORTSCOUT=	skipv:regression
 
 .include <bsd.port.mk>
