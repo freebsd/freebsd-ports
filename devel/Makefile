@@ -3211,6 +3211,7 @@
     SUBDIR += p5-Proc-Simple
     SUBDIR += p5-Proc-Wait3
     SUBDIR += p5-Proc-WaitStat
+    SUBDIR += p5-Progress-Any
     SUBDIR += p5-Project-Gantt
     SUBDIR += p5-Project-Libs
     SUBDIR += p5-Pthread-GetThreadId

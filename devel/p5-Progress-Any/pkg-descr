@@ -1,0 +1,10 @@
+Progress::Any is an interface for applications that want to display progress to
+users. It decouples progress updating and output, rather similar to how Log::Any
+decouples log producers and consumers (output). The API is also rather similar
+to Log::Any, except Adapter is called Output and category is called task.
+
+Progress::Any records position/target and calculates elapsed time, estimated
+remaining time, and percentage of completion. One or more output modules
+(Progress::Any::Output::*) display this information.
+
+WWW: http://search.cpan.org/dist/Progress-Any/
