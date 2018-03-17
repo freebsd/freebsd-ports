@@ -7,14 +7,12 @@ lib/libshotwell-plugin-common.a
 lib/libshotwell-plugin-common.so
 lib/libshotwell-plugin-common.so.0
 lib/libshotwell-plugin-common.so.0.0.0
-lib/shotwell/plugins/builtin/shotwell-data-imports.so
 lib/shotwell/plugins/builtin/shotwell-publishing-extras.so
 lib/shotwell/plugins/builtin/shotwell-publishing.so
 lib/shotwell/plugins/builtin/shotwell-transitions.so
 libexec/shotwell/shotwell-settings-migrator
 libexec/shotwell/shotwell-video-thumbnailer
 man/man1/shotwell.1.gz
-share/appdata/shotwell.appdata.xml
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
 share/help/C/shotwell/edit-adjustments.page
@@ -34,7 +32,6 @@ share/help/C/shotwell/figures/shotwell_logo.png
 share/help/C/shotwell/figures/trash_process.png
 share/help/C/shotwell/formats.page
 share/help/C/shotwell/import-camera.page
-share/help/C/shotwell/import-f-spot.page
 share/help/C/shotwell/import-file.page
 share/help/C/shotwell/import-memorycard.page
 share/help/C/shotwell/index.page
@@ -77,7 +74,6 @@ share/help/cs/shotwell/figures/shotwell_logo.png
 share/help/cs/shotwell/figures/trash_process.png
 share/help/cs/shotwell/formats.page
 share/help/cs/shotwell/import-camera.page
-share/help/cs/shotwell/import-f-spot.page
 share/help/cs/shotwell/import-file.page
 share/help/cs/shotwell/import-memorycard.page
 share/help/cs/shotwell/index.page
@@ -120,7 +116,6 @@ share/help/de/shotwell/figures/shotwell_logo.png
 share/help/de/shotwell/figures/trash_process.png
 share/help/de/shotwell/formats.page
 share/help/de/shotwell/import-camera.page
-share/help/de/shotwell/import-f-spot.page
 share/help/de/shotwell/import-file.page
 share/help/de/shotwell/import-memorycard.page
 share/help/de/shotwell/index.page
@@ -163,7 +158,6 @@ share/help/el/shotwell/figures/shotwell_logo.png
 share/help/el/shotwell/figures/trash_process.png
 share/help/el/shotwell/formats.page
 share/help/el/shotwell/import-camera.page
-share/help/el/shotwell/import-f-spot.page
 share/help/el/shotwell/import-file.page
 share/help/el/shotwell/import-memorycard.page
 share/help/el/shotwell/index.page
@@ -206,7 +200,6 @@ share/help/es/shotwell/figures/shotwell_logo.png
 share/help/es/shotwell/figures/trash_process.png
 share/help/es/shotwell/formats.page
 share/help/es/shotwell/import-camera.page
-share/help/es/shotwell/import-f-spot.page
 share/help/es/shotwell/import-file.page
 share/help/es/shotwell/import-memorycard.page
 share/help/es/shotwell/index.page
@@ -249,7 +242,6 @@ share/help/hu/shotwell/figures/shotwell_logo.png
 share/help/hu/shotwell/figures/trash_process.png
 share/help/hu/shotwell/formats.page
 share/help/hu/shotwell/import-camera.page
-share/help/hu/shotwell/import-f-spot.page
 share/help/hu/shotwell/import-file.page
 share/help/hu/shotwell/import-memorycard.page
 share/help/hu/shotwell/index.page
@@ -292,7 +284,6 @@ share/help/lv/shotwell/figures/shotwell_logo.png
 share/help/lv/shotwell/figures/trash_process.png
 share/help/lv/shotwell/formats.page
 share/help/lv/shotwell/import-camera.page
-share/help/lv/shotwell/import-f-spot.page
 share/help/lv/shotwell/import-file.page
 share/help/lv/shotwell/import-memorycard.page
 share/help/lv/shotwell/index.page
@@ -335,7 +326,6 @@ share/help/pt_BR/shotwell/figures/shotwell_logo.png
 share/help/pt_BR/shotwell/figures/trash_process.png
 share/help/pt_BR/shotwell/formats.page
 share/help/pt_BR/shotwell/import-camera.page
-share/help/pt_BR/shotwell/import-f-spot.page
 share/help/pt_BR/shotwell/import-file.page
 share/help/pt_BR/shotwell/import-memorycard.page
 share/help/pt_BR/shotwell/index.page
@@ -378,7 +368,6 @@ share/help/sv/shotwell/figures/shotwell_logo.png
 share/help/sv/shotwell/figures/trash_process.png
 share/help/sv/shotwell/formats.page
 share/help/sv/shotwell/import-camera.page
-share/help/sv/shotwell/import-f-spot.page
 share/help/sv/shotwell/import-file.page
 share/help/sv/shotwell/import-memorycard.page
 share/help/sv/shotwell/index.page
@@ -477,3 +466,4 @@ share/locale/vi/LC_MESSAGES/shotwell.mo
 share/locale/zh_CN/LC_MESSAGES/shotwell.mo
 share/locale/zh_HK/LC_MESSAGES/shotwell.mo
 share/locale/zh_TW/LC_MESSAGES/shotwell.mo
+share/metainfo/shotwell.appdata.xml
