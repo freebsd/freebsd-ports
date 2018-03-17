@@ -3,11 +3,10 @@
 #
 # This is a set of Makefile macros that are common between devel/eric6 and
 # localized language packages for devel/eric6:
-# chinese/eric6, french/eric6, german/eric6, portuguese/eric6, russian/eric6
-# devel/cs-eric6, devel/es-eric6, devel/it-eric6, devel/tr-eric6
+# german/eric6, russian/eric6, devel/es-eric6
 
 PORTNAME=	eric6
-PORTVERSION=	18.02
+PORTVERSION=	18.03
 MASTER_SITES=	SF/eric-ide/${PORTNAME}/stable/${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
