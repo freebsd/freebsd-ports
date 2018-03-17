@@ -21,6 +21,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g	\
 		--program-transform-name=s/stat/nustat/
 CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
+.ifdef QEMU_EMULATING
+# XXX bug 224740: configure hangs
+CONFIGURE_ENV+=	gl_cv_func_printf_enomem=no
+.endif
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
