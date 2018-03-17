@@ -7,5 +7,6 @@ minimally sized program. It's highly configurable and handle pragmas to control
 it from within your code. Additionally, it is possible to write plugins to add
 your own checks.
 
+WWW: https://www.pylint.org/
 WWW: https://pypi.python.org/pypi/pylint
 WWW: https://github.com/PyCQA/pylint
