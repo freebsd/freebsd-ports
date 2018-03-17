@@ -1,11 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdbq
-PORTVERSION=	0.0.20180215
+PORTVERSION=	1.0.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	dns
 
 MAINTAINER=	truckman@FreeBSD.org
-COMMENT=	Shortened version of the dnsdb query testing tool
+COMMENT=	DNSDB API Client, C Version
 
 LICENSE=		APACHE20 ISCL
 LICENSE_COMB=		multi
@@ -18,7 +19,6 @@ LIB_DEPENDS=	libjansson.so:devel/jansson \
 USES=		localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	dnsdb
-GH_TAGNAME=	273f985f03a4b92a8d641f064dc54faf28222e36
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
