@@ -1,3 +1,4 @@
-A Python port of the YUI CSS compression algorithm.
+This is a Python port of the YUI CSS Compressor.
 
 WWW: https://pypi.python.org/pypi/cssmin
+WWW: https://github.com/zacharyvoase/cssmin
