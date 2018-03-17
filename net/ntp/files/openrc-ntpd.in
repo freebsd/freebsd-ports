@@ -16,7 +16,6 @@ command="%%PREFIX%%/sbin/ntpd"
 command_args="-f ${ntpd_config} -d -s"
 command_background="true"
 pidfile="/var/run/ntpd.pid"
-supervisor="start-stop-daemon"
 start_stop_daemon_args="--stdout /var/log/ntpd.log --stderr /var/log/ntpd.log"
 
 depend(){
