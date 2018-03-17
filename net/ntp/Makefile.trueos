@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	ntpd
+USE_OPENRC_SUBR=	openrc-ntpd
