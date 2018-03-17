@@ -1,0 +1,7 @@
+%%PORTDOCS%%%%DOCSDIR%%/lua52-stdlib-debug/AUTHORS.md
+%%PORTDOCS%%%%DOCSDIR%%/lua52-stdlib-debug/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/lua52-stdlib-debug/README.md
+%%PORTDOCS%%%%DOCSDIR%%/lua52-stdlib-debug/index.html
+%%PORTDOCS%%%%DOCSDIR%%/lua52-stdlib-debug/ldoc.css
+%%LUA_MODSHAREDIR%%/std/_debug/init.lua
+%%LUA_MODSHAREDIR%%/std/_debug/version.lua
