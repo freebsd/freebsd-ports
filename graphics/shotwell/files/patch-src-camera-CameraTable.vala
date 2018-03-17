@@ -1,4 +1,4 @@
---- src/camera/CameraTable.vala.orig	2017-02-25 22:55:36 UTC
+--- src/camera/CameraTable.vala.orig	2018-03-10 06:42:15 UTC
 +++ src/camera/CameraTable.vala
 @@ -26,7 +26,6 @@ public class CameraTable {
      
@@ -83,7 +83,7 @@
  
      private void update_camera_table() throws GPhotoError {
          // need to do this because virtual ports come and go in the USB world (and probably others)
-@@ -326,22 +282,7 @@ public class CameraTable {
+@@ -326,23 +282,7 @@ public class CameraTable {
              }
              
              // Get display name for camera.
@@ -103,11 +103,12 @@
 -                    display_name = device.get_property("ID_MODEL");
 -                }
 -            }
+-
 +            // in absence of udev, we fall back to the GPhoto name
-             if (null == display_name) {
-                 // Default to GPhoto detected name.
-                 display_name = name;
-@@ -381,14 +322,8 @@ public class CameraTable {
+             if (port.has_prefix("disk:")) {
+                 try {
+                     var mount = File.new_for_path (port.substring(5)).find_enclosing_mount();
+@@ -391,14 +331,8 @@ public class CameraTable {
              camera_added(camera);
          }
      }

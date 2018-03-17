@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.26.4
-PORTREVISION=	1
+PORTVERSION=	0.28.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
@@ -22,6 +21,7 @@ LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libgcr-ui-3.so:security/gcr \
 		libgdata.so:devel/libgdata \
 		libgee-0.8.so:devel/libgee \
+		libgstapp-1.0.so:multimedia/gstreamer1-plugins \
 		libgstreamer-1.0.so:multimedia/gstreamer1 \
 		liblcms2.so:graphics/lcms2 \
 		libjson-glib-1.0.so:devel/json-glib \
@@ -33,7 +33,8 @@ LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libunique-1.0.so:x11-toolkits/unique \
 		libraw.so:graphics/libraw \
-		librest-0.7.so:devel/librest
+		librest-0.7.so:devel/librest \
+		libxml2.so:textproc/libxml2
 
 USES=		autoreconf gettext desktop-file-utils gmake libtool pkgconfig \
 		sqlite tar:xz
@@ -50,7 +51,7 @@ PORTSCOUT=	limitw:1,even
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	OPENMP NLS
-OPENMP_DESC=	libraw uses OpenMP (implies GCC 4.9+)
+OPENMP_DESC=	libraw uses OpenMP (implies GCC)
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext

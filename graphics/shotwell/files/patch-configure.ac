@@ -1,9 +1,9 @@
---- configure.ac.orig	2017-03-26 06:57:42 UTC
+--- configure.ac.orig	2018-03-17 13:41:22 UTC
 +++ configure.ac
 @@ -114,7 +114,6 @@ PKG_CHECK_MODULES(SHOTWELL, [
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
-                              gtk+-3.0 >= 3.14.0
+                              gtk+-3.0 >= 3.18.0
 -                             gudev-1.0 >= 145
                               libexif >= 0.6.16
                               libgphoto2 >= 2.5.0
