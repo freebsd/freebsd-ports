@@ -14,11 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	curl:ftp/curl
 
+USES=		python:2.7
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	reorx
 
-NO_ARCH=	yes
-USES=		python:2.7
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
