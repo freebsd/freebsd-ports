@@ -1,0 +1,8 @@
+stdlib is a library of modules for common programming tasks, including list,
+table and functional operations, objects, pickling, pretty-printing and
+command-line option parsing.
+
+stdlib has no run-time prerequisites beyond a standard Lua system, though it
+will take advantage of strict and typecheck if they are installed.
+
+WWW: https://github.com/lua-stdlib/lua-stdlib
