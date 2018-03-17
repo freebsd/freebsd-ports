@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgpg-error
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
@@ -23,6 +23,7 @@ GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
 CPP+=			-P
 CONFIGURE_ARGS=		--enable-static=yes
+INSTALL_TARGET=		install-strip
 
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG} --with-libintl-prefix=${LOCALBASE}
