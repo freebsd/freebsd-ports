@@ -4,6 +4,7 @@
 PORTNAME=	posix
 PORTVERSION=	34.0.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -12,6 +13,8 @@ COMMENT=	Lua bindings for POSIX APIs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}stdlib-normalize>=0:devel/lua-stdlib-normalize
 
 USES=		lua shebangfix
 SHEBANG_FILES=	build-aux/luke
