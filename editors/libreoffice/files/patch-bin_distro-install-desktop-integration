@@ -1,5 +1,5 @@
---- bin/distro-install-desktop-integration.orig	2017-05-03 16:46:29 UTC
-+++ bin/distro-install-desktop-integration
+--- bin/distro-install-desktop-integration.orig	2018-02-23 01:45:41.000000000 +0800
++++ bin/distro-install-desktop-integration	2018-03-16 09:45:26.157822000 +0800
 @@ -99,7 +99,7 @@ cp -a workdir/CustomTarget/sysui/share/libreoffice/* "
  cp -a "${SRCDIR?}"/sysui/desktop/share/create_tree.sh "$sysui_temp"
  cd $sysui_temp
@@ -34,7 +34,7 @@
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
      -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
-@@ -145,7 +145,7 @@ if test -f $DESTDIR/gid_Module_Root_Brand ; then
+@@ -144,7 +144,7 @@ if test -f $DESTDIR/gid_Module_Root_Brand ; then
                 $PREFIXDIR/share/mime/packages \
                 $PREFIXDIR/share/mime-info \
                 $PREFIXDIR/share/icons ; do
@@ -43,20 +43,25 @@
      done
  fi
  
-@@ -177,12 +177,12 @@ ln -sf $INSTALLDIR/program/soffice $DESTDIR$PREFIXDIR/
+@@ -172,16 +172,16 @@ test -f $DESTDIR/gid_Module_Optional_Xsltfiltersamples
+ #       you cannot include this link directly into the package
+ #       For example, the Novell package mark this symlink as %ghost
+ #	and update it in %post and %postun
+-ln -sf $INSTALLDIR/program/soffice $DESTDIR$PREFIXDIR/bin/soffice
++ln -sf ../lib/libreoffice/program/soffice $DESTDIR$PREFIXDIR/bin/soffice
  test -f $DESTDIR/gid_Module_Root_Brand && echo "$PREFIXDIR/bin/soffice" >>$DESTDIR/gid_Module_Root_Brand
  
  # create bash completion
 -mkdir -p $DESTDIR/usr/share/bash-completion/completions
--"${SRCDIR?}"/bin/generate-bash-completion bin/bash-completion.in $DESTDIR/usr/share/bash-completion/completions/$INSTALLDIRNAME.sh
+-"${SRCDIR?}"/bin/generate-bash-completion.py bin/bash-completion.in $DESTDIR/usr/share/bash-completion/completions/$INSTALLDIRNAME.sh
 -test -f $DESTDIR/gid_Module_Root_Brand && echo "/usr/share/bash-completion/completions/$INSTALLDIRNAME.sh" >>$DESTDIR/gid_Module_Root_Brand
 +mkdir -p $DESTDIR/${PREFIXDIR}/share/bash-completion/completions
-+"${SRCDIR?}"/bin/generate-bash-completion bin/bash-completion.in $DESTDIR${PREFIXDIR}/share/bash-completion/completions/$INSTALLDIRNAME.sh
++"${SRCDIR?}"/bin/generate-bash-completion.py bin/bash-completion.in $DESTDIR${PREFIXDIR}/share/bash-completion/completions/$INSTALLDIRNAME.sh
 +test -f $DESTDIR/gid_Module_Root_Brand && echo "${PREFIXDIR}/share/bash-completion/completions/$INSTALLDIRNAME.sh" >>$DESTDIR/gid_Module_Root_Brand
  if test "$WITH_COMPAT_OOWRAPPERS" = "TRUE" ; then
--    "${SRCDIR?}"/bin/generate-bash-completion --compat-oowrappers bin/bash-completion.in $DESTDIR/usr/share/bash-completion/completions/ooffice.sh
+-    "${SRCDIR?}"/bin/generate-bash-completion.py --compat-oowrappers bin/bash-completion.in $DESTDIR/usr/share/bash-completion/completions/ooffice.sh
 -    test -f $DESTDIR/gid_Module_Root_Brand && echo "/usr/share/bash-completion/completions/ooffice.sh" >>$DESTDIR/gid_Module_Root_Brand
-+    "${SRCDIR?}"/bin/generate-bash-completion --compat-oowrappers bin/bash-completion.in $DESTDIR${PREFIXDIR}/share/bash-completion/completions/ooffice.sh
++    "${SRCDIR?}"/bin/generate-bash-completion.py --compat-oowrappers bin/bash-completion.in $DESTDIR${PREFIXDIR}/share/bash-completion/completions/ooffice.sh
 +    test -f $DESTDIR/gid_Module_Root_Brand && echo "${PREFIXDIR}/share/bash-completion/completions/ooffice.sh" >>$DESTDIR/gid_Module_Root_Brand
  fi
  

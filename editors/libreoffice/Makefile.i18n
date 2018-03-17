@@ -20,6 +20,8 @@ DIST_SUBDIR=	libreoffice/i18n
 
 COMMENT?=	${LO_I18N} language pack for ${PORTNAME}
 
+DESCR?=	${.CURDIR}/../../editors/libreoffice/pkg-descr.i18n
+
 RUN_DEPENDS?=	libreoffice:editors/libreoffice
 
 NO_ARCH=	yes
