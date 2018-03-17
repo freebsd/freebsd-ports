@@ -6,4 +6,4 @@ These tools include:
 - A session that is used to maintain client settings across requests
  (based on the requests Python library)
 
-WWW: http://docs.openstack.org/developer/keystoneauth/api/keystoneauth1.html
+WWW: https://docs.openstack.org/keystoneauth/latest/
