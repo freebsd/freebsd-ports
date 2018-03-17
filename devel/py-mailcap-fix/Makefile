@@ -12,11 +12,12 @@ COMMENT=	Mailcap module that correctly handles windcard entries
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
+USES=		python
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	michael-lazar
 
-NO_ARCH=	yes
-USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
