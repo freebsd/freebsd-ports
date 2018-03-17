@@ -6,7 +6,7 @@
 # consul_alerts_env (string):   Set environment variables used with consul-alerts
 #                               Default is "".
 
-export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 
 name=consul_alerts
 
