@@ -1,0 +1,40 @@
+#!/bin/sh
+# Created by: Mark Felder <feld@FreeBSD.org>
+#
+# $FreeBSD$
+#
+# PROVIDE: tautulli
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable Tautulli:
+#
+# tautulli_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=tautulli
+rcvar=tautulli_enable
+load_rc_config $name
+
+: ${tautulli_enable:=NO}
+: ${tautulli_user=nobody}
+
+command_interpreter=%%PYTHON_CMD%%
+command=%%WWWDIR%%/Tautulli.py
+command_args="-d --nolaunch --datadir /var/db/tautulli"
+start_precmd=tautulli_prestart
+
+tautulli_prestart()
+{
+	if ! [ -e /etc/localtime ] ; then
+		echo "Tautulli needs the system timezone to be set."
+		echo "Please run /usr/sbin/tzsetup"
+		exit 1
+	fi
+	
+	install -d -o ${tautulli_user} /var/db/tautulli
+}
+
+run_rc_command "$1"
