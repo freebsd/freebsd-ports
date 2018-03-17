@@ -1,5 +1,8 @@
-This is a client for the OpenStack Nova API. There's a Python
-API (the novaclient module), and a command-line script (nova).
-Each implements 100% of the OpenStack Nova API.
+This is a client for OpenStack Nova API. There's a Python API (the novaclient
+module), and a command-line script (installed as nova). Each implements the
+entire OpenStack Nova API.
 
-WWW: https://pypi.python.org/pypi/python-novaclient
+You'll need credentials for an OpenStack cloud that implements the Compute API,
+such as TryStack, HP, or Rackspace, in order to use the nova client.
+
+WWW: https://docs.openstack.org/python-novaclient/latest/
