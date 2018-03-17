@@ -4,4 +4,4 @@ in human readable text format in a version control system to make changes and
 auditing easier. It also has a flexible template system, so creating many
 similarly configured jobs is easy.
 
-WWW: http://docs.openstack.org/infra/jenkins-job-builder/
+WWW: https://docs.openstack.org/infra/jenkins-job-builder/
