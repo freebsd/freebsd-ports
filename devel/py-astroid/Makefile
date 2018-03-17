@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	astroid
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,12 +23,9 @@ USES=		python
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>=0:devel/py-backports.functools_lru_cache@${FLAVOR}
-.endif
-
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>=0:devel/py-singledispatch@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>=0:devel/py-backports.functools_lru_cache@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}singledispatch>=0:devel/py-singledispatch@${FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
