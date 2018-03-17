@@ -56,9 +56,4 @@ post-install-DOCS-on:
 	${MV} ${STAGEDIR}${PREFIX}/share/coin/doc ${STAGEDIR}${DOCSDIR}
 	${RM} -r ${STAGEDIR}${PREFIX}/share/coin
 
-.if defined(MAINTAINER_MODE)
-regression-test:
-	(cd ${WRKSRC}; ${MAKE_CMD} test)
-.endif
-
 .include <bsd.port.mk>
