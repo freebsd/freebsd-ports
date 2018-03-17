@@ -3,8 +3,8 @@
 
 PORTNAME=	silo
 PORTVERSION=	4.10.2
-PORTREVISION=	6
 DISTVERSIONSUFFIX=	-bsd
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	http://wci.llnl.gov/content/assets/docs/simulation/computer-codes/${PORTNAME}/silo-${PORTVERSION}/
 
@@ -14,11 +14,12 @@ COMMENT=	Mesh and field I/O library and scientific database
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+USES=		gmake libtool readline
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool readline
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=			FORTRAN HDF5 PYTHON QT4
 OPTIONS_DEFAULT=		HDF5

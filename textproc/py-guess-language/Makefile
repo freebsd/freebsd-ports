@@ -11,8 +11,8 @@ COMMENT=	Guess the natural language of a text in Python
 
 LICENSE=	LGPL21+
 
-NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
