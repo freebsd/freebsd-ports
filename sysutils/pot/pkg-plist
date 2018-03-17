@@ -14,8 +14,10 @@ bin/pot
 %%DATADIR%%/de-init.sh
 %%DATADIR%%/destroy.sh
 %%DATADIR%%/help.sh
+%%DATADIR%%/info.sh
 %%DATADIR%%/init.sh
 %%DATADIR%%/list.sh
+%%DATADIR%%/promote.sh
 %%DATADIR%%/rename.sh
 %%DATADIR%%/revert.sh
 %%DATADIR%%/set-rss.sh
@@ -24,4 +26,5 @@ bin/pot
 %%DATADIR%%/start.sh
 %%DATADIR%%/stop.sh
 %%DATADIR%%/term.sh
+%%DATADIR%%/version.sh
 %%DATADIR%%/vnet-start.sh

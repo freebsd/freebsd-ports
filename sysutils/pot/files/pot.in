@@ -1,0 +1,66 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: pot
+# REQUIRE: LOGIN
+# KEYWORD: shutdown nojail
+
+. /etc/rc.subr
+
+name="pot"
+desc="Pot containers"
+procname="pot"
+rcvar=pot_enable
+start_cmd="pot_start"
+stop_cmd="pot_stop"
+restart_cmd="pot_restart"
+status_cmd="pot_status"
+
+load_rc_config $name
+: ${pot_enable:=NO}
+: ${pot_list:=""}
+
+pot_start()
+{
+	local _pname
+	for _pname in $pot_list ; do
+		if pot info -qp $_pname ; then
+			pot start $_pname
+		else
+			echo "pot start: pot $_pnmame not found"
+		fi
+	done
+}
+
+pot_stop()
+{
+	local _pname
+	for _pname in $pot_list ; do
+		if pot info -qp $_pname ; then
+			pot stop $_pname
+		else
+			echo "pot stop: pot $_pname not found"
+		fi
+	done
+}
+
+pot_restart()
+{
+	pot_stop
+	sleep 5
+	pot_start
+}
+
+pot_status()
+{
+	local _p
+	for _p in $pot_list ; do
+		if pot info -qrp $_p ; then
+			echo "pot $_p is up and running"
+		else
+			echo "pot $_p is not running"
+		fi
+	done
+}
+
+run_rc_command "$1"
