@@ -3,12 +3,12 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.18.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The GNU music typesetter
+COMMENT=	GNU music typesetter
 
 LICENSE=	GPLv3
 
@@ -26,13 +26,13 @@ BUILD_DEPENDS=	pdftexi2dvi:print/texinfo \
 		zip:archivers/zip \
 		texi2html:textproc/texi2html \
 		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:print/gsfonts
-
-RUN_DEPENDS=	mftrace:print/mftrace \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
-
 LIB_DEPENDS=	libguile.so:lang/guile \
 		libgmp.so:math/gmp \
-		libfreetype.so:print/freetype2
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libltdl.so:devel/libltdl
+RUN_DEPENDS=	mftrace:print/mftrace \
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
 
 INFO=		internals \
 		lilypond-changes \
@@ -55,7 +55,7 @@ USE_GNOME=	pango
 
 MAKEFILE=	GNUmakefile
 GNU_MAKEFILE=	yes
-MAKE_JOBS_UNSAFE=	yes
+#MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts \
