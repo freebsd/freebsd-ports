@@ -5,7 +5,7 @@ PORTVERSION=	1.8
 PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://user.it.uu.se/~adavid/utils/ \
-		http://distro.ibiblio.org/pub/linux/distributions/pdaxrom/src/ \
+		http://distro.ibiblio.org/pdaxrom/src/ \
 		http://ftp.nluug.nl/os/Linux/distr/pdaxrom/src/ \
 		http://www.sourcefiles.org/Multimedia/MP3/Tools/Miscellaneous/
 
