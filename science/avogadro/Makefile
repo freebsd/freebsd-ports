@@ -13,9 +13,13 @@ COMMENT=	Advanced molecular editor and viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to package: Unable to access file avogadro/pythonerror.h: No such file or directory
+BROKEN_armv6=		fails to compile: eigen2/Eigen/src/Core/Assign.h: you mixed different numeric types in 'Eigen::ei_static_assert<false>'
+BROKEN_armv7=		fails to compile: eigen2/Eigen/src/Core/Assign.h: you mixed different numeric types in 'Eigen::ei_static_assert<false>'
+
 LIB_DEPENDS=	libopenbabel.so:science/openbabel
 
-# We need to add a RUN_DEPENDS on eigen2, as the cmake file shiped with 
+# We need to add a RUN_DEPENDS on eigen2, as the cmake file shiped with
 # avogadro to use it, contains 'find_package(Eigen2 REQUIRED)'.
 USES=		cmake desktop-file-utils eigen:2,build,run pkgconfig tar:bzip2
 USE_GL=		glu gl
