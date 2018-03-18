@@ -12,6 +12,8 @@ DIST_SUBDIR=	crafty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Large opening book for crafty
 
+BROKEN=		conflicts with games/crafty
+
 BUILD_DEPENDS=	crafty:games/crafty
 RUN_DEPENDS=	crafty:games/crafty
 
