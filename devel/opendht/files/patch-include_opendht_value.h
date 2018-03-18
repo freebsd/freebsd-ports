@@ -1,4 +1,4 @@
---- include/opendht/value.h.orig	2016-05-13 00:23:45 UTC
+--- include/opendht/value.h.orig	2016-11-12 22:38:27 UTC
 +++ include/opendht/value.h
 @@ -26,6 +26,11 @@
  
@@ -9,6 +9,6 @@
 +#include <netinet/in.h>
 +#endif
 +
- #ifndef _WIN32
- #include <netinet/in.h>
- #include <netdb.h>
+ #include <string>
+ #include <sstream>
+ #include <bitset>

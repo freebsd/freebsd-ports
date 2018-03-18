@@ -1,0 +1,9 @@
+--- doc/CMakeLists.txt.orig	2018-03-15 06:08:59 UTC
++++ doc/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ if (OPENDHT_TOOLS)
+-	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dhtnode.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
++	INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dhtnode.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
+ endif ()
+ 
+ if (OPENDHT_DOCUMENTATION)
