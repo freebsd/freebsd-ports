@@ -1,0 +1,14 @@
+PgSanity checks the syntax of PostgreSQL SQL files.
+
+It does this by leveraging the ecpg command which is traditionally
+used for preparing C files with embedded SQL for compilation.
+However, as part of that preparation, ecpg checks the embedded SQL
+statements for syntax errors using the exact same parser that is in
+PostgreSQL.
+
+So the approach that PgSanity takes is to take a file that has a list
+of bare SQL in it, make that file look like a C file with embedded
+SQL, run it through ecpg and let ecpg report on the syntax errors of
+the SQL.
+
+WWW: https://github.com/markdrago/pgsanity
