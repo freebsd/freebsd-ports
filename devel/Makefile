@@ -4655,6 +4655,7 @@
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
     SUBDIR += py-omniorb-3
+    SUBDIR += py-opendht
     SUBDIR += py-openstacksdk
     SUBDIR += py-opster
     SUBDIR += py-optik
