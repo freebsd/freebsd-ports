@@ -13,6 +13,10 @@ COMMENT=	GUI for testing CD/DVD quality and transfer rate
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to compile: qpx_mmc_defs.h:608:4: constant expression evaluates to -1 which cannot be narrowed to type 'char'
+BROKEN_armv6=		fails to compile: qpx_mmc_defs.h:608:4: constant expression evaluates to -1 which cannot be narrowed to type 'char'
+BROKEN_armv7=		fails to compile: qpx_mmc_defs.h:608:4: constant expression evaluates to -1 which cannot be narrowed to type 'char'
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake tar:bzip2
