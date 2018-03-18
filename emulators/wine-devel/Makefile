@@ -3,6 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	3.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://mirrors.ibiblio.org/wine/source/3.x/ \
@@ -29,7 +30,9 @@ CONFLICTS_INSTALL=	wine-[0-9]* wine-staging-[0-9]* i386-wine-[0-9]* \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--verbose --disable-tests \
+CONFIGURE_ARGS+=--verbose \
+		--disable-kerberos \
+		--disable-tests \
 		--without-alsa --without-capi --without-dbus \
 		--without-gettext --without-gettextpo \
 		--without-gphoto --without-gsm --without-gstreamer \
