@@ -3,6 +3,6 @@ for the Postfix mail transfer agent.  DKIM is a scheme to sign and verify
 e-mail messages on a per-domain basis.
 
 Details regarding the protocol and other issues related to the draft standard
-can be found at http://mipassoc.org/dkim/.
+can be found at http://www.dkim.org/.
 
 WWW: http://dkimproxy.sourceforge.net/
