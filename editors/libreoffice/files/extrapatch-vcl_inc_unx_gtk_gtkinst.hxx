@@ -1,4 +1,4 @@
---- vcl/inc/unx/gtk/gtkinst.hxx.orig	2016-10-28 14:50:26 UTC
+--- vcl/inc/unx/gtk/gtkinst.hxx.orig	2018-02-22 17:45:41 UTC
 +++ vcl/inc/unx/gtk/gtkinst.hxx
 @@ -46,7 +46,7 @@ class GtkPrintWrapper;
  class GenPspGraphics;
