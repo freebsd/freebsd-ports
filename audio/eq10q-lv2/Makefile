@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to compile: unknown FP unit 'sse'
 BROKEN_armv6=		fails to compile: unknown FP unit 'sse'
+BROKEN_armv7=		fails to compile: unknown FP unit 'sse'
 BROKEN_mips64=		fails to compile: unknown FP unit 'sse'
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
