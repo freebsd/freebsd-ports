@@ -17,17 +17,13 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 CONFLICTS=	libasr-[0-9]*
+
+USES=		groff libtool ssl:build
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-mantype="man"
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	MAN3
-OPTIONS_SUB=	yes
-
-MAN3_DESC=	Install API manpages (section 3)
-MAN3_USES=	groff
-MAN3_CONFIGURE_OFF=	ac_cv_path_GROFF="" ac_cv_path_NROFF="" ac_cv_path_MANDOC=""
-
-USES=		libtool ssl:build
-USE_LDCONFIG=	yes
+CFLAGS+=	-I${OPENSSLINC}
 
 .include <bsd.port.mk>
