@@ -1868,7 +1868,6 @@ lib/wine/fakedlls/itss.dll
 lib/wine/fakedlls/joy.cpl
 lib/wine/fakedlls/jscript.dll
 lib/wine/fakedlls/jsproxy.dll
-lib/wine/fakedlls/kerberos.dll
 lib/wine/fakedlls/kernel32.dll
 lib/wine/fakedlls/kernelbase.dll
 %%WINE32%%lib/wine/fakedlls/keyboard.drv16
@@ -2347,7 +2346,6 @@ lib/wine/itss.dll.so
 lib/wine/joy.cpl.so
 lib/wine/jscript.dll.so
 lib/wine/jsproxy.dll.so
-lib/wine/kerberos.dll.so
 lib/wine/kernel32.dll.so
 lib/wine/kernelbase.dll.so
 %%WINE32%%lib/wine/keyboard.drv16.so
