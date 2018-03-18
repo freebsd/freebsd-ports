@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	silktools
-PORTVERSION=	3.16.0
+PORTVERSION=	3.16.1
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 DISTNAME=	silk-${PORTVERSION}
 
-MAINTAINER=	torres.73a@gmail.com
+MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Tools for large-scale network capture analysis
 
 LICENSE=	GPLR GPLv2
