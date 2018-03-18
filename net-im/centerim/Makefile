@@ -11,17 +11,21 @@ MASTER_SITES=	http://www.centerim.org/download/releases/ \
 MAINTAINER=	frank@altpeter.de
 COMMENT=	Text mode menu- and window-driven IM interface
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv gmake ncurses pkgconfig shebangfix ssl
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libcurl.so:ftp/curl \
+		libgpg-error.so:security/libgpg-error
+
+USES=		iconv gmake ncurses pkgconfig python shebangfix ssl
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-ssl --with-openssl
 CONFLICTS=	centericq-[0-9]* centerim-devel-[0-9]*
 
-SHEBANG_FILES=	misc/cimformathistory misc/cimextracthistory.pl
-SHEBANG_LANG=	gawk
+SHEBANG_FILES=	misc/CenterIMLog2HTML.py misc/cimformathistory misc/cimextracthistory.pl
 gawk_OLD_CMD=	/bin/gawk
 gawk_CMD=	/usr/bin/awk
 
@@ -36,7 +40,7 @@ RSS_DESC=	RSS Support
 LJ_DESC=	LiveJournal Support
 GG_DESC=	Gadu-Gadu Protocol Support
 
-OPTIONS_DEFAULT=        MULTIBYTE FRIBIDI MSN YAHOO IRC JABBER GPGME RSS LJ GG
+OPTIONS_DEFAULT=	MULTIBYTE FRIBIDI MSN YAHOO IRC JABBER GPGME RSS LJ GG
 
 OPTIONS_SUB=	yes
 
@@ -59,8 +63,6 @@ GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_OFF=	--with-gpgme-prefix=/nonexistent
 
 post-patch:
-	@${REINPLACE_CMD} -e '1 s|/usr/bin/python|/usr/bin/env python|' \
-		${WRKSRC}/misc/CenterIMLog2HTML.py
 	@${REINPLACE_CMD} -e 's|-R$$found_dir|-Wl,-rpath,$$found_dir|' \
 		${WRKSRC}/configure
 
