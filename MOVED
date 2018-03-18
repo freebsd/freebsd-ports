@@ -10207,3 +10207,6 @@ www/mediawiki128|www/mediawiki130|2018-03-14|Has expired: Upstream no longer mai
 sysutils/py-zfs||2018-03-16|Not needed since ZFS 28
 net/freebsd-tftp||2018-03-16|Imported into base in FreeBSD 8.0
 multimedia/plexpy|multimedia/tautulli|2018-03-17|Project renamed due to copyright infringement
+net-im/ring-daemon||2018-03-18|Ring can't build because it depends on custom bundled versions of other packages
+net-im/ring-libclient||2018-03-18|Ring can't build because it depends on custom bundled versions of other packages
+net-im/ring-gnome||2018-03-18|Ring can't build because it depends on custom bundled versions of other packages
