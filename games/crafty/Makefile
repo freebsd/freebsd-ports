@@ -16,6 +16,7 @@ EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Chess program for playing and analyzing games
 
+BROKEN_aarch64=		fails to compile: invokes x86 assembler
 BROKEN_armv6=		fails to compile: invokes x86 assembler
 BROKEN_armv7=		fails to compile: invokes x86 assembler
 
