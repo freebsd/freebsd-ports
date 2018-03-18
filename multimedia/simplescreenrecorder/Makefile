@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	simplescreenrecorder
-DISTVERSION=	0.3.9
+DISTVERSION=	0.3.10-2
+DISTVERSIONSUFFIX=	-g7439813
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,11 +23,14 @@ USE_XORG=	x11 xext xfixes xi
 
 CMAKE_ON=	WITH_QT5
 CMAKE_OFF=	WITH_GLINJECT  # doesn't yet work on FreeBSD: https://github.com/MaartenBaert/ssr/issues/586#issuecomment-343780107
+CMAKE_OFF+=	WITH_OPENGL_RECORDING  # extra option requiried when GLInject is off, because this makes OpenGL recording dysfunctional
 
 OPTIONS_DEFINE=		PULSEAUDIO JACK
 OPTIONS_DEFAULT=	PULSEAUDIO
+
 PULSEAUDIO_CMAKE_BOOL=	WITH_PULSEAUDIO
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+
 JACK_CMAKE_BOOL=	WITH_JACK
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
