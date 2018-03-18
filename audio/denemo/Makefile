@@ -12,6 +12,10 @@ COMMENT=	Graphical score editor
 
 LICENSE=	GPLv3+
 
+BROKEN_armv6=	fails to package: tar: Pathname cannot be converted from UTF-8 to current locale
+BROKEN_armv7=	fails to package: tar: Pathname cannot be converted from UTF-8 to current locale
+BROKEN_mips=	fails to package: tar: Pathname cannot be converted from UTF-8 to current locale
+
 LIB_DEPENDS=	libaubio.so:audio/aubio \
 		libfluidsynth.so:audio/fluidsynth \
 		libjack.so:audio/jack \
