@@ -11,6 +11,9 @@ DISTNAME=	blitz-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library for scientific computing
 
+BROKEN_armv6=		fails to compile: ../blitz/blitz.h:58:12: 'iostream.h' file not found
+BROKEN_armv7=		fails to compile: ../blitz/blitz.h:58:12: 'iostream.h' file not found
+
 OPTIONS_DEFINE=	DOCS
 
 DOCS_USE=	TEX=dvipsk,formats
