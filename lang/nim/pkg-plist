@@ -4,10 +4,15 @@ etc/nimdoc.cfg
 etc/nimdoc.tex.cfg
 lib/arch/x86/amd64.S
 lib/arch/x86/i386.S
+lib/core/allocators.nim
 lib/core/locks.nim
 lib/core/macros.nim
+lib/core/refs.nim
 lib/core/rlocks.nim
+lib/core/seqs.nim
+lib/core/strs.nim
 lib/core/typeinfo.nim
+lib/core/typelayouts.nim
 lib/cycle.h
 lib/deprecated/core/unsigned.nim
 lib/deprecated/pure/actors.nim
@@ -30,6 +35,7 @@ lib/impure/osinfo_win.nim
 lib/impure/rdstdin.nim
 lib/impure/re.nim
 lib/impure/ssl.nim
+lib/js/asyncjs.nim
 lib/js/dom.nim
 lib/js/jsconsole.nim
 lib/js/jsffi.nim
@@ -54,6 +60,7 @@ lib/posix/posix_other_consts.nim
 lib/posix/termios.nim
 lib/prelude.nim
 lib/pure/algorithm.nim
+lib/pure/async.nim
 lib/pure/asyncdispatch.nim
 lib/pure/asyncdispatch.nim.cfg
 lib/pure/asyncfile.nim
@@ -64,8 +71,6 @@ lib/pure/asyncmacro.nim
 lib/pure/asyncnet.nim
 lib/pure/asyncstreams.nim
 lib/pure/base64.nim
-lib/pure/basic2d.nim
-lib/pure/basic3d.nim
 lib/pure/bitops.nim
 lib/pure/browsers.nim
 lib/pure/cgi.nim
@@ -94,6 +99,7 @@ lib/pure/concurrency/threadpool.nim.cfg
 lib/pure/cookies.nim
 lib/pure/coro.nim
 lib/pure/coro.nimcfg
+lib/pure/cstrutils.nim
 lib/pure/db_common.nim
 lib/pure/distros.nim
 lib/pure/dynlib.nim
@@ -102,7 +108,6 @@ lib/pure/endians.nim
 lib/pure/events.nim
 lib/pure/fenv.nim
 lib/pure/future.nim
-lib/pure/gentabs.nim
 lib/pure/hashes.nim
 lib/pure/htmlgen.nim
 lib/pure/htmlparser.nim
@@ -112,12 +117,12 @@ lib/pure/httpserver.nim
 lib/pure/includes/asynccommon.nim
 lib/pure/includes/osenv.nim
 lib/pure/includes/oserr.nim
-lib/pure/ioselectors.nim
 lib/pure/ioselects/ioselectors_epoll.nim
 lib/pure/ioselects/ioselectors_kqueue.nim
 lib/pure/ioselects/ioselectors_poll.nim
 lib/pure/ioselects/ioselectors_select.nim
 lib/pure/json.nim
+lib/pure/lenientops.nim
 lib/pure/lexbase.nim
 lib/pure/logging.nim
 lib/pure/marshal.nim
@@ -132,7 +137,6 @@ lib/pure/net.nim
 lib/pure/nimprof.nim
 lib/pure/nimprof.nim.cfg
 lib/pure/nimtracker.nim
-lib/pure/numeric.nim
 lib/pure/oids.nim
 lib/pure/options.nim
 lib/pure/os.nim
@@ -147,11 +151,9 @@ lib/pure/parsesql.nim
 lib/pure/parseutils.nim
 lib/pure/parsexml.nim
 lib/pure/pegs.nim
-lib/pure/poly.nim
 lib/pure/punycode.nim
 lib/pure/random.nim
 lib/pure/rationals.nim
-lib/pure/romans.nim
 lib/pure/ropes.nim
 lib/pure/scgi.nim
 lib/pure/securehash.nim
@@ -161,6 +163,7 @@ lib/pure/smtp.nim
 lib/pure/smtp.nim.cfg
 lib/pure/stats.nim
 lib/pure/streams.nim
+lib/pure/strformat.nim
 lib/pure/strmisc.nim
 lib/pure/strscans.nim
 lib/pure/strtabs.nim
@@ -180,6 +183,7 @@ lib/pure/xmldom.nim
 lib/pure/xmldomparser.nim
 lib/pure/xmlparser.nim
 lib/pure/xmltree.nim
+lib/std/sha1.nim
 lib/stdlib.nimble
 lib/system.nim
 lib/system/alloc.nim
@@ -203,6 +207,7 @@ lib/system/gc2.nim
 lib/system/gc_common.nim
 lib/system/gc_ms.nim
 lib/system/gc_regions.nim
+lib/system/genodealloc.nim
 lib/system/hti.nim
 lib/system/inclrtl.nim
 lib/system/jssys.nim
@@ -222,13 +227,9 @@ lib/system/sysstr.nim
 lib/system/threads.nim
 lib/system/timers.nim
 lib/system/widestrs.nim
-lib/upcoming/asyncdispatch.nim
 lib/windows/registry.nim
 lib/windows/winlean.nim
 lib/wrappers/iup.nim
-lib/wrappers/joyent_http_parser.nim
-lib/wrappers/libsvm.nim
-lib/wrappers/libuv.nim
 lib/wrappers/linenoise/LICENSE.txt
 lib/wrappers/linenoise/README.markdown
 lib/wrappers/linenoise/linenoise.c
@@ -238,7 +239,6 @@ lib/wrappers/mysql.nim
 lib/wrappers/odbcsql.nim
 lib/wrappers/openssl.nim
 lib/wrappers/pcre.nim
-lib/wrappers/pdcurses.nim
 lib/wrappers/postgres.nim
 lib/wrappers/sqlite3.nim
 lib/wrappers/tinyc.nim
@@ -263,6 +263,8 @@ nim/compiler/commands.nim
 nim/compiler/condsyms.nim
 nim/compiler/debuginfo.nim
 nim/compiler/depends.nim
+nim/compiler/destroyer.nim
+nim/compiler/dfa.nim
 nim/compiler/docgen.nim
 nim/compiler/docgen2.nim
 nim/compiler/evalffi.nim
@@ -271,6 +273,7 @@ nim/compiler/extccomp.nim
 nim/compiler/filter_tmpl.nim
 nim/compiler/filters.nim
 nim/compiler/forloops.nim
+nim/compiler/gorgeimpl.nim
 nim/compiler/guards.nim
 nim/compiler/hlo.nim
 nim/compiler/idents.nim
@@ -281,6 +284,7 @@ nim/compiler/jsgen.nim
 nim/compiler/jstypes.nim
 nim/compiler/lambdalifting.nim
 nim/compiler/lexer.nim
+nim/compiler/liftlocals.nim
 nim/compiler/lists.nim
 nim/compiler/llstream.nim
 nim/compiler/lookups.nim
@@ -289,6 +293,7 @@ nim/compiler/magicsys.nim
 nim/compiler/main.nim
 nim/compiler/mapping.txt
 nim/compiler/modulegraphs.nim
+nim/compiler/modulepaths.nim
 nim/compiler/modules.nim
 nim/compiler/msgs.nim
 nim/compiler/ndi.nim
@@ -324,6 +329,8 @@ nim/compiler/procfind.nim
 nim/compiler/readme.txt
 nim/compiler/renderer.nim
 nim/compiler/reorder.nim
+nim/compiler/rod.nim
+nim/compiler/rodimpl.nim
 nim/compiler/rodread.nim
 nim/compiler/rodutils.nim
 nim/compiler/rodwrite.nim
@@ -334,7 +341,6 @@ nim/compiler/sem.nim
 nim/compiler/semasgn.nim
 nim/compiler/semcall.nim
 nim/compiler/semdata.nim
-nim/compiler/semdestruct.nim
 nim/compiler/semexprs.nim
 nim/compiler/semfields.nim
 nim/compiler/semfold.nim
