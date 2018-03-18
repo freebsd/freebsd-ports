@@ -10,6 +10,9 @@ MASTER_SITES=	SF/ospace/OSLauncher/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	On-line strategy game
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	${PYGAME}
 
 USES=		python:2.7
@@ -28,5 +31,6 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} res ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 	${INSTALL_DATA} ${WRKSRC}/outerspace ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/outerspace ${STAGEDIR}${PREFIX}/bin
+	@${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PYTHON_CMD}|' ${STAGEDIR}${PREFIX}/bin/outerspace
 
 .include <bsd.port.mk>
