@@ -16,6 +16,9 @@ EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Chess program for playing and analyzing games
 
+BROKEN_armv6=		fails to compile: invokes x86 assembler
+BROKEN_armv7=		fails to compile: invokes x86 assembler
+
 WRKSRC=		${WRKDIR}
 
 USES=		gmake zip
@@ -36,7 +39,7 @@ OPT=		-DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == amd64 || ${ARCH} == i386
 OPT+=		-DCPUS=4
 .else
 OPT+=		-DCPUS=1 # disables x86 assembler
