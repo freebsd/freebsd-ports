@@ -12,14 +12,16 @@ CATEGORIES=	devel
 MASTER_SITES=	LOCAL/asomers/perforce/p4 \
 		https://swarm.workshop.perforce.com/projects/perforce_software-p4/archives/
 DISTNAME=	${YEAR}-${MAJOR}
-DIST_SUBDIR=	perforce/p4
 DISTFILES=	${ZIP_FILES}
+DIST_SUBDIR=	perforce/p4
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Perforce client
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_mips64=	fails to install: /wrkdirs/usr/ports/devel/p4/work/2016-1/p4-bin/p4: No such file or directory
 
 BUILD_DEPENDS=	${JAM}:devel/jam
 
