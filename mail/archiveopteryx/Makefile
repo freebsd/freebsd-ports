@@ -12,9 +12,11 @@ COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	jam:devel/jam
+BROKEN_armv6=		fails to build: core/md5.cpp:55:5: 'register' storage class specifier is deprecated and incompatible with C++17
+BROKEN_armv7=		fails to build: core/md5.cpp:55:5: 'register' storage class specifier is deprecated and incompatible with C++17
+BROKEN_powerpc64=	fails to build: /bin/sh: clang: not found
 
-BROKEN_powerpc64=	Does not build: /bin/sh: clang: not found
+BUILD_DEPENDS=	jam:devel/jam
 
 USES=		perl5 ssl tar:bzip2
 USE_PERL5=	build
