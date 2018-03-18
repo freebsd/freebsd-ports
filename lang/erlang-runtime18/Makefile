@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	18.3.4.7
+PORTVERSION=	18.3.4.8
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -19,7 +19,7 @@ PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 PATCHFILES=	patch-otp-18.3.1 patch-otp-18.3.2 patch-otp-18.3.3 \
 		patch-otp-18.3.4 patch-otp-18.3.4.1 patch-otp-18.3.4.2 \
 		patch-otp-18.3.4.3 patch-otp-18.3.4.4 patch-otp-18.3.4.5 \
-		patch-otp-18.3.4.6 patch-otp-18.3.4.7
+		patch-otp-18.3.4.6 patch-otp-18.3.4.7 patch-otp-18.3.4.8
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -63,7 +63,7 @@ APP_UPGRADE=	erts               7.3  7.3.1.4 \
 		lib/eldap        1.2.1  1.2.1.1 \
 		lib/inets          6.2  6.2.4.1 \
 		lib/mnesia      4.13.3   4.13.4 \
-		lib/ssh          4.2.2  4.2.2.4 \
+		lib/ssh          4.2.2  4.2.2.5 \
 		lib/ssl            7.3  7.3.3.2
 
 .include <bsd.port.options.mk>
