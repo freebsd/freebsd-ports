@@ -11,6 +11,11 @@ COMMENT=	SoundFonts as LV2 plugins via FluidSynth
 
 LICENSE=	LGPL20
 
+BROKEN_aarch64=		fails to compile: unknown FP unit 'sse'
+BROKEN_armv6=		fails to compile: unknown FP unit 'sse'
+BROKEN_armv7=		fails to compile: unknown FP unit 'sse'
+BROKEN_mips64=		fails to compile: unknown FP unit 'sse'
+
 BUILD_DEPENDS=	7z:archivers/p7zip \
 		lv2>0:audio/lv2
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
