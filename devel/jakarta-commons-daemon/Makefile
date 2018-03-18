@@ -15,6 +15,7 @@ COMMENT=	Wrapper code to start/stop a Java application as a daemon
 
 LICENSE=	APACHE20
 
+BROKEN_aarch64=		fails to compile: 'jni_md.h' file not found
 BROKEN_armv6=		fails to compile: 'jni_md.h' file not found
 BROKEN_armv7=		fails to compile: 'jni_md.h' file not found
 
