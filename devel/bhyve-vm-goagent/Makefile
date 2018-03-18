@@ -11,7 +11,7 @@ COMMENT=	Agent developed in Go that runs inside guest vm
 
 LICENSE=	BSD2CLAUSE
 
-NO_PACKAGE=	should be recompiled for a particular FreeBSD arch
+BROKEN=		attempts to download dependencies during build
 
 ONLY_FOR_ARCHS=	amd64 i386
 
