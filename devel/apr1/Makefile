@@ -160,7 +160,7 @@ do-install:
 
 	-${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} ${STRIP_CMD}
 
-test: build
+do-test:
 	@${ECHO_MSG} "# ===> ${.TARGET} apr-${APR_VERSION}"
 	-(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test)
 	@${ECHO_MSG} "# ===> ${.TARGET} apr-util-${APU_VERSION}"
