@@ -20,7 +20,7 @@ PLIST_FILES=	bin/${PORTNAME}
 do-build:
 	cd ${WRKSRC}; \
 		${LN} -s vendor src; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags "-X main.version=${PORTVERSION}" .
+		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags "-X main.version=${PORTVERSION}" .
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

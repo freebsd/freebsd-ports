@@ -27,7 +27,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 do-build:
 	cd ${GO_WRKSRC} && \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
+		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
 			-ldflags "-X main.GitDescribe=${DISTVERSIONFULL}" -o bin/${PORTNAME}
 
 do-install:

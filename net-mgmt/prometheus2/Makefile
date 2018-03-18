@@ -36,7 +36,7 @@ PROMETHEUS_BINARIES=	prometheus promtool
 do-build:
 .for bin in ${PROMETHEUS_BINARIES}
 	( cd ${GO_WRKSRC}/cmd/${bin} ; \
-		${SETENV} ${GO_ENV} go install -ldflags "${LD_FLAG_STRING}" )
+		${SETENV} ${MAKE_ENV} ${GO_ENV} go install -ldflags "${LD_FLAG_STRING}" )
 .endfor
 
 do-install:

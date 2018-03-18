@@ -45,7 +45,7 @@ post-extract:
 
 do-build:
 	@cd ${WRKSRC}; \
-	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags "-X main.buildVersion=${DISTVERSION}"
+	${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags "-X main.buildVersion=${DISTVERSION}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pms-${GH_TAGNAME} ${STAGEDIR}${PREFIX}/bin/${GO_PKGNAME}

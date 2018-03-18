@@ -24,7 +24,7 @@ USERS=		prometheus
 GROUPS=		prometheus
 
 do-build:
-	(cd ${GO_WRKSRC} ; ${SETENV} ${GO_ENV} go install)
+	@(cd ${GO_WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GO_ENV} go install)
 
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/pushgateway ${STAGEDIR}${PREFIX}/bin

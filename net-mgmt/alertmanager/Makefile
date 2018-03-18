@@ -23,8 +23,8 @@ USERS=		alertmanager
 GROUPS=		alertmanager
 
 do-build:
-	@cd ${GO_WRKSRC}/cmd/alertmanager && ${SETENV} ${GO_ENV} go install
-	@cd ${GO_WRKSRC}/cmd/amtool && ${SETENV} ${GO_ENV} go install
+	@cd ${GO_WRKSRC}/cmd/alertmanager && ${SETENV} ${MAKE_ENV} ${GO_ENV} go install
+	@cd ${GO_WRKSRC}/cmd/amtool && ${SETENV} ${MAKE_ENV} ${GO_ENV} go install
 
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/alertmanager ${STAGEDIR}${PREFIX}/bin

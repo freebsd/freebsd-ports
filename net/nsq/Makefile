@@ -42,7 +42,7 @@ TARGETS=	nsqd nsqlookupd nsqadmin nsq_pubsub nsq_to_nsq nsq_to_file \
 .for _t in ${TARGETS}
 build-${_t}:
 	cd ${GO_WRKSRC}/apps/${_t}; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build \
+		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build \
 			-ldflags "-X main.GitDescribe=${DISTVERSIONFULL}" -o bin/${_t}
 install-${_t}:
 	${INSTALL_PROGRAM} ${GO_WRKSRC}/apps/${_t}/bin/${_t} \

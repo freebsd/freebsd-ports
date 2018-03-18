@@ -27,6 +27,6 @@ PLIST_FILES=	bin/jid
 
 do-build:
 	@(cd ${WRKSRC}; \
-		${SETENV} ${GO_ENV} GOPATH=${WRKSRC} ${GO_CMD} build -v -o ${GO_WRKDIR_BIN}/jid cmd/jid/jid.go)
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} ${GO_CMD} build -v -o ${GO_WRKDIR_BIN}/jid cmd/jid/jid.go)
 
 .include <bsd.port.mk>
