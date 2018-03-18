@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	unalz
-PORTVERSION=	0.65
-PORTREVISION=	2
+DISTVERSION=	0.66
 CATEGORIES=	archivers
-MASTER_SITES=	http://BSDforge.com/projects/source/archivers/unalz/
+MASTER_SITES=	https://BSDforge.com/projects/source/archivers/unalz/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Extracts AlZip archives
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/readme.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		dos2unix iconv tar:tgz
+USES=		iconv tar:xz
 MAKE_ARGS+=	CPP="${CXX}" CC="${CC}" OBJ="${UNALZ_OBJS}" \
 		LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	posix-utf8
