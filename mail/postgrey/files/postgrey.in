@@ -34,6 +34,7 @@ load_rc_config $name
 : ${postgrey_flags:=--inet=10023}
 
 command=%%PREFIX%%/sbin/postgrey
+extra_commands=reload
 pidfile=%%PG_RUNDIR%%/postgrey.pid
 required_dirs="${postgrey_dbdir} %%PG_RUNDIR%%"
 
