@@ -24,13 +24,13 @@ GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}; \
-	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
+	${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
 	"-s -w -X main.version=${PORTVERSION}" -o immortal cmd/immortal/main.go;
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}; \
-	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
+	${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
 	"-s -w -X main.version=${PORTVERSION}" -o immortalctl cmd/immortalctl/main.go;
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}; \
-	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
+	${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
 	"-s -w -X main.version=${PORTVERSION}" -o immortaldir cmd/immortaldir/main.go;
 
 do-install:

@@ -27,7 +27,7 @@ GROUPS=		nomad
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/nomad && \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
+		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
 			-ldflags "-X main.GitDescribe=${DISTVERSIONFULL}" -o bin/nomad
 
 do-install:

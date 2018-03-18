@@ -28,7 +28,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}; \
-	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
+	${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
 	"-s -w -X main.version=${PORTVERSION}" -o ssh-vault cmd/ssh-vault/main.go;
 
 do-install:

@@ -21,7 +21,7 @@ USE_RC_SUBR=	fabio
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/fabiolb/fabio; \
-	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
+	${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
 		-ldflags "-X main.GitDescribe=v${PORTVERSION}" -o bin/fabio
 
 do-install:
