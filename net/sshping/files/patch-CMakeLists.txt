@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2018-03-15 21:50:52 UTC
++++ CMakeLists.txt
+@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8)
+ #find_package(libssh)
+ 
+ # Build the sshping binary
+-set(CMAKE_CXX_FLAGS "-I ../ext/ -Wall")
++set(CMAKE_CXX_FLAGS "-I ${CMAKE_CURRENT_SOURCE_DIR}/ext/ -Wall")
+ add_executable(${PROJECT_NAME} src/sshping.cxx)
+ target_link_libraries(${PROJECT_NAME} ssh)
+ install(TARGETS ${PROJECT_NAME} DESTINATION bin CONFIGURATIONS Release)
+@@ -16,7 +16,7 @@ if (P2M)
+     message(STATUS "pod2man found, use the 'man' target to build")
+ endif (P2M)
+ set(DOC_DIR  ${CMAKE_SOURCE_DIR}/doc)
+-set(P2M_OPTS -c "ssh-based ping test utility" -d 2018-03-13 -r v0.1.3)
++set(P2M_OPTS --section=8 -c "ssh-based ping test utility" -d 2018-03-13 -r v0.1.3)
+ set(MAN_SRC  ${DOC_DIR}/sshping.pod)
+ set(MAN_TGT  ${DOC_DIR}/sshping.8)
+ add_custom_command(
