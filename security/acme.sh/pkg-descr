@@ -1,6 +1,8 @@
 ACME protocol client written in shell
 
 - Full ACME protocol implementation.
+- Support ACME v1 and ACME v2.
+- Support ACME v2 wildcard certs.
 - Simple, powerful and very easy to use. You only need 3 minutes to learn it.
 - Bash, dash and sh compatible.
 - Simplest shell script for Let's Encrypt free certificate client.
@@ -9,5 +11,6 @@ ACME protocol client written in shell
 - Just one script to issue, renew and install your certificates automatically.
 - DOES NOT require root/sudoer access.
 - Docker friendly.
+- IPv6 support.
 
 WWW: https://github.com/Neilpang/acme.sh/

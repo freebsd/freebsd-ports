@@ -14,8 +14,10 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/deploy/nginx.sh
 %%EXAMPLESDIR%%/deploy/opensshd.sh
 %%EXAMPLESDIR%%/deploy/pureftpd.sh
+%%EXAMPLESDIR%%/deploy/ssh.sh
 %%EXAMPLESDIR%%/deploy/strongswan.sh
 %%EXAMPLESDIR%%/deploy/unifi.sh
+%%EXAMPLESDIR%%/deploy/vault_cli.sh
 %%EXAMPLESDIR%%/deploy/vsftpd.sh
 %%EXAMPLESDIR%%/dnsapi/README.md
 %%EXAMPLESDIR%%/dnsapi/dns_ad.sh
@@ -27,10 +29,12 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_cloudns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_cx.sh
 %%EXAMPLESDIR%%/dnsapi/dns_cyon.sh
+%%EXAMPLESDIR%%/dnsapi/dns_da.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dgon.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dnsimple.sh
 %%EXAMPLESDIR%%/dnsapi/dns_do.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dp.sh
+%%EXAMPLESDIR%%/dnsapi/dns_dreamhost.sh
 %%EXAMPLESDIR%%/dnsapi/dns_duckdns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dyn.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dynu.sh
@@ -58,3 +62,4 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_unoeuro.sh
 %%EXAMPLESDIR%%/dnsapi/dns_vscale.sh
 %%EXAMPLESDIR%%/dnsapi/dns_yandex.sh
+%%EXAMPLESDIR%%/dnsapi/dns_zonomi.sh
