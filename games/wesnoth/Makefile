@@ -2,7 +2,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.12.6
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
@@ -16,7 +16,8 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libvorbisfile.so:audio/libvorbis \
 		libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
@@ -28,10 +29,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
 PORTSCOUT=	limitw:1,even
 
+USES=		cmake cpe pkgconfig python:run shebangfix tar:bzip2
 USE_SDL=	image mixer net ttf
 USE_LDCONFIG=	yes
-USE_GNOME=	pango
-USES=		cmake cpe pkgconfig python:run shebangfix tar:bzip2
+USE_GNOME=	cairo pango
+USE_XORG=	ice sm x11 xext
 SHEBANG_FILES=	data/tools/about_cfg_to_wiki \
 		data/tools/campaign2wiki.py \
 		data/tools/castle-cutter/mk-castle.sh \
@@ -49,7 +51,8 @@ SHEBANG_FILES=	data/tools/about_cfg_to_wiki \
 		data/tools/wmlindent data/tools/wmllint \
 		data/tools/wmllint-1.4 data/tools/wmllint_gui \
 		data/tools/wmlmove data/tools/wmlscope data/tools/wmlunits \
-		data/tools/wmlvalidator
+		data/tools/wmlvalidator \
+		data/tools/GUI.pyw
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	battle_for_wesnoth
 CMAKE_ARGS=	-DMANDIR="man" -DENABLE_STRICT_COMPILATION=off
