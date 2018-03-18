@@ -21,7 +21,8 @@
 -$BASE_URL="http://www.bundesbank.de";
 +$BASE_URL="https://www.bundesbank.de";
  $MAIN_URL="$BASE_URL";
- $MAIN_DOC="$MAIN_URL/Redaktion/DE/Standardartikel/Kerngeschaeftsfelder/Unbarer_Zahlungsverkehr/bankleitzahlen_download.html";
+-$MAIN_DOC="$MAIN_URL/Redaktion/DE/Standardartikel/Kerngeschaeftsfelder/Unbarer_Zahlungsverkehr/bankleitzahlen_download.html";
++$MAIN_DOC="$MAIN_URL/Redaktion/DE/Standardartikel/Aufgaben/Unbarer_Zahlungsverkehr/bankleitzahlen_download.html";
  
  if ($debug == 0) {
    if ($WGET ne "NO") {
