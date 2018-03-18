@@ -12,6 +12,8 @@ COMMENT=	Enterprise scalable realtime graphing platform
 
 LICENSE=	APACHE20
 
+BROKEN=		conflicting dependencies (django18 and django111)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:graphics/py-cairo@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}carbon>=${PORTVERSION}:databases/py-carbon@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django18>=1.4:www/py-django18@${FLAVOR} \
