@@ -12,6 +12,9 @@ COMMENT=	Approximately-maximum-likelihood phylogenetic trees from alignments
 
 LICENSE=	GPLv2+
 
+BROKEN_armv6=		fails to compile: FastTree-2.1.10.c:305:10: 'omp.h' file not found
+BROKEN_armv7=		fails to compile: FastTree-2.1.10.c:305:10: 'omp.h' file not found
+
 USES=		compiler:openmp
 
 NO_WRKSUBDIR=	yes
