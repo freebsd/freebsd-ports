@@ -20,6 +20,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_renice
 %%DATADIR%%/completions/_repomanage
 %%DATADIR%%/completions/_reptyr
+%%DATADIR%%/completions/_rfkill
 %%DATADIR%%/completions/_rtcwake
 %%DATADIR%%/completions/_runuser
 %%DATADIR%%/completions/_su
@@ -53,6 +54,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/apt-cache
 %%DATADIR%%/completions/apt-get
 %%DATADIR%%/completions/aptitude
+%%DATADIR%%/completions/aptitude-curses
 %%DATADIR%%/completions/arch
 %%DATADIR%%/completions/arm-koji
 %%DATADIR%%/completions/arping
@@ -89,6 +91,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/cardctl
 %%DATADIR%%/completions/cc
 %%DATADIR%%/completions/ccache
+%%DATADIR%%/completions/ccze
 %%DATADIR%%/completions/cdrecord
 %%DATADIR%%/completions/cfagent
 %%DATADIR%%/completions/cfrun
@@ -158,6 +161,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/dumpe2fs
 %%DATADIR%%/completions/e2freefrag
 %%DATADIR%%/completions/e2label
+%%DATADIR%%/completions/ebtables
 %%DATADIR%%/completions/edquota
 %%DATADIR%%/completions/eog
 %%DATADIR%%/completions/ether-wake
@@ -196,6 +200,9 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/genaliases
 %%DATADIR%%/completions/gendiff
 %%DATADIR%%/completions/genisoimage
+%%DATADIR%%/completions/geoiplookup
+%%DATADIR%%/completions/geoiplookup6
+%%DATADIR%%/completions/getconf
 %%DATADIR%%/completions/getent
 %%DATADIR%%/completions/gfortran
 %%DATADIR%%/completions/gkrellm
@@ -307,6 +314,8 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/lpr
 %%DATADIR%%/completions/lrzip
 %%DATADIR%%/completions/lsof
+%%DATADIR%%/completions/lsscsi
+%%DATADIR%%/completions/lsusb
 %%DATADIR%%/completions/lua
 %%DATADIR%%/completions/luac
 %%DATADIR%%/completions/luseradd
@@ -380,8 +389,10 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/newusers
 %%DATADIR%%/completions/ngrep
 %%DATADIR%%/completions/nmap
+%%DATADIR%%/completions/nproc
 %%DATADIR%%/completions/nslookup
 %%DATADIR%%/completions/ntpdate
+%%DATADIR%%/completions/oggdec
 %%DATADIR%%/completions/openssl
 %%DATADIR%%/completions/opera
 %%DATADIR%%/completions/optipng
@@ -395,6 +406,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/pdlzip
 %%DATADIR%%/completions/perl
 %%DATADIR%%/completions/perldoc
+%%DATADIR%%/completions/perltidy
 %%DATADIR%%/completions/pgrep
 %%DATADIR%%/completions/phing
 %%DATADIR%%/completions/pidof
@@ -443,6 +455,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/puppetmasterd
 %%DATADIR%%/completions/puppetqd
 %%DATADIR%%/completions/puppetrun
+%%DATADIR%%/completions/pv
 %%DATADIR%%/completions/pvchange
 %%DATADIR%%/completions/pvcreate
 %%DATADIR%%/completions/pvdisplay
@@ -458,10 +471,13 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/py.test
 %%DATADIR%%/completions/py.test-2
 %%DATADIR%%/completions/py.test-3
+%%DATADIR%%/completions/pycodestyle
 %%DATADIR%%/completions/pydoc
 %%DATADIR%%/completions/pydoc3
 %%DATADIR%%/completions/pyflakes
 %%DATADIR%%/completions/pylint
+%%DATADIR%%/completions/pylint-2
+%%DATADIR%%/completions/pylint-3
 %%DATADIR%%/completions/pypy
 %%DATADIR%%/completions/pypy3
 %%DATADIR%%/completions/python
@@ -481,6 +497,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/quotacheck
 %%DATADIR%%/completions/quotaoff
 %%DATADIR%%/completions/quotaon
+%%DATADIR%%/completions/radvdump
 %%DATADIR%%/completions/ralsh
 %%DATADIR%%/completions/rcs
 %%DATADIR%%/completions/rcsdiff
@@ -492,7 +509,6 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/repquota
 %%DATADIR%%/completions/resolvconf
 %%DATADIR%%/completions/rfcomm
-%%DATADIR%%/completions/rfkill
 %%DATADIR%%/completions/ri
 %%DATADIR%%/completions/rlog
 %%DATADIR%%/completions/rmlist
@@ -562,6 +578,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/tightvncviewer
 %%DATADIR%%/completions/timeout
 %%DATADIR%%/completions/tipc
+%%DATADIR%%/completions/tox
 %%DATADIR%%/completions/tracepath
 %%DATADIR%%/completions/tracepath6
 %%DATADIR%%/completions/tshark
@@ -615,6 +632,8 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/wsimport
 %%DATADIR%%/completions/wtf
 %%DATADIR%%/completions/wvdial
+%%DATADIR%%/completions/xdg-mime
+%%DATADIR%%/completions/xdg-settings
 %%DATADIR%%/completions/xfreerdp
 %%DATADIR%%/completions/xgamma
 %%DATADIR%%/completions/xhost
