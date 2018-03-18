@@ -17,9 +17,10 @@ OPTIONS_DEFINE=	DOCS
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USES=		python:2.7 zip
+USES=		python:2.7 shebangfix zip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 NO_ARCH=	yes
+SHEBANG_FILES=	Filetype.py Main.py PkgInstall.py PrintProfile.py RootShell.py aap.py aap
 
 do-install:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ./aap PREFIX="${STAGEDIR}/${PREFIX}" \
