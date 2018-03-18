@@ -13,6 +13,9 @@ COMMENT=	Systems integration framework. Expander
 
 LICENSE=	MIT
 
+DEPRECATED=	Use textproc/rubygem-fast_xs instead
+EXPIRATION_DATE=2018-03-31
+
 RUN_DEPENDS=	rubygem-hoe>=2.3.2:devel/rubygem-hoe
 
 PORTSCOUT=	limit:^0.7
