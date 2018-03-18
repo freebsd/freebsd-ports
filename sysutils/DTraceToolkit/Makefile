@@ -3,17 +3,21 @@
 
 PORTNAME=	dtrace-toolkit
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of useful scripts for DTrace
 
+LICENSE=	CDDL
+LICENSE_FILE=	${WRKSRC}/Docs/cddl1.txt
+
+USES=		perl5 python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	opendtrace
 GH_PROJECT=	toolkit
 GH_TAGNAME=	f36d00b
-USES=		shebangfix
+USE_RUBY=	yes
 SHEBANG_LANG=	sh
 sh_OLD_CMD=	/usr/bin/sh ./sh
 sh_CMD=		${SH}
@@ -74,13 +78,13 @@ SHEBANG_FILES=	Apps/shellsnoop \
 NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}; ${TAR} --exclude '*.orig' -cf - . ) | \
-		(cd ${STAGEDIR}${DATADIR}/; ${TAR} xvf -)
-	${LN} -fs ${DATADIR}/hotkernel ${STAGEDIR}${PREFIX}/bin/hotkernel
-	${LN} -fs ${DATADIR}/procsystime ${STAGEDIR}${PREFIX}/bin/procsystime
-	${LN} -fs ${DATADIR}/opensnoop ${STAGEDIR}${PREFIX}/bin/opensnoop
-	${LN} -fs ${DATADIR}/Apps/shellsnoop ${STAGEDIR}${PREFIX}/bin/shellsnoop
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${TAR} --exclude '*.orig' -cf - . ) | \
+		(cd ${STAGEDIR}${DATADIR}/ && ${TAR} xvf -)
+	${RLN} -s ${STAGEDIR}${DATADIR}/hotkernel ${STAGEDIR}${PREFIX}/bin/hotkernel
+	${RLN} -s ${STAGEDIR}${DATADIR}/procsystime ${STAGEDIR}${PREFIX}/bin/procsystime
+	${RLN} -s ${STAGEDIR}${DATADIR}/opensnoop ${STAGEDIR}${PREFIX}/bin/opensnoop
+	${RLN} -s ${STAGEDIR}${DATADIR}/Apps/shellsnoop ${STAGEDIR}${PREFIX}/bin/shellsnoop
 
 .for MANPAGE in hotkernel procsystime opensnoop shellsnoop
 	${INSTALL_MAN} ${WRKSRC}/Man/man1m/${MANPAGE}.1m \
