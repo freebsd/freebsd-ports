@@ -39,7 +39,6 @@ INTEL_PACK=		microcode-20180312.tgz
 INTEL_DESC=		Download Intel microcode pack ${INTEL_PACK}
 INTEL_MASTER_SITES=	https://downloadmirror.intel.com/27591/eng/:intel
 INTEL_DISTFILES=	${INTEL_PACK}:intel
-
 INTEL_DIR=		${WRKDIR}/intel-ucode
 
 do-install:

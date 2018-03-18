@@ -5,5 +5,5 @@ NOTE: The following directories
 %%INTEL_DIR%%
 
 contain Intel and/or platomav/CPUMicrocodes collections respectively
-if you have just built the port with corresponging CPM/INTEL option(s) enabled
+if you have just built the port with corresponding CPM/INTEL option(s) enabled
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
