@@ -11,6 +11,9 @@ COMMENT=	Graphical font manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		fails to compile: src/fminfodisplay.cpp:155:17: no matching function for call to 'qMax'
+BROKEN_armv7=		fails to compile: src/fminfodisplay.cpp:155:17: no matching function for call to 'qMax'
+
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
