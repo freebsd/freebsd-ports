@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hans
-PORTVERSION=	0.4.4
+DISTVERSION=	1.0
 CATEGORIES=	net security
 MASTER_SITES=	SF/hanstunnel/source
 
@@ -18,8 +18,7 @@ LICENSE_PERMS_FPL=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		dos2unix
 DOS2UNIX_FILES=	${LICENSE_FILE_FPL}
 MAKE_ARGS=	GCC="${CC}" GPP="${CXX}" \
-		CFLAGS="${CFLAGS} -c" LDFLAGS="${LDFLAGS}" \
-		TUN_DEV_FILE="src/tun_dev_freebsd.c"
+		CFLAGS="${CFLAGS} -c" LDFLAGS="${LDFLAGS}"
 PLIST_FILES=	bin/hans
 TARGET_ORDER_OVERRIDE=	040:dos2unix # Fix formatting for 050:ask-license
 MAKE_JOBS_UNSAFE=	yes
