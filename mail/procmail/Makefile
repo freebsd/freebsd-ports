@@ -19,6 +19,10 @@ COMMENT=	Local mail delivery agent
 
 LICENSE=	GPLv2
 
+.if defined(QEMU_EMULATING) && "${QEMU_EMULATING}" == "1"
+BROKEN=		fails to build under qemu: killing runaway build after 21600 seconds with no output
+.endif
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 INSTALL_TARGET=	install.bin install.man
