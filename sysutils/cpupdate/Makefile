@@ -11,6 +11,9 @@ COMMENT=	CPU microcode update utility
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	contains microcode specific to certain x86 processors
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	kernschmelze
 GH_PROJECT=	${PORTNAME}
