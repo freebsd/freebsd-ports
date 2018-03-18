@@ -3,6 +3,7 @@
 PORTNAME=	testssl.sh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.5-2
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,6 +19,7 @@ USES=		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	drwetter
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SHEBANG_FILES=	testssl.sh utils/*
