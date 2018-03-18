@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.3.6.5
+PORTVERSION=	19.3.6.6
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -11,10 +11,12 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://www.erlang.se/doc/:erlangse			\
 		http://www.erlang.se/publications/:publications		\
 		http://www.sics.se/~joe/thesis/:joe			\
+		http://olgeni.olgeni.com/~olgeni/distfiles/:local	\
 		LOCAL/olgeni:local
 DISTNAME=	otp_src_${ERL_RELEASE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
-		${ERLANG_MAN}:erlangorg
+		${ERLANG_MAN}:erlangorg			\
+		preloaded-${PORTVERSION}${EXTRACT_SUFX}:local
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -23,7 +25,7 @@ PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3 \
 		patch-otp-19.3.4 patch-otp-19.3.5 patch-otp-19.3.6 \
 		patch-otp-19.3.6.1 patch-otp-19.3.6.2 patch-otp-19.3.6.3 \
-		patch-otp-19.3.6.4 patch-otp-19.3.6.5
+		patch-otp-19.3.6.4 patch-otp-19.3.6.5 patch-otp-19.3.6.6
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -84,8 +86,8 @@ APP_UPGRADE=	erts            8.3  8.3.5.4 \
 		lib/dialyzer    3.1    3.1.1 \
 		lib/inets     6.3.6    6.3.9 \
 		lib/mnesia   4.14.3 4.14.3.1 \
-		lib/ssh       4.4.1  4.4.2.1 \
-		lib/ssl       8.1.1  8.1.3.1 \
+		lib/ssh       4.4.1  4.4.2.2 \
+		lib/ssl       8.1.1  8.1.3.1.1 \
 		lib/xmerl    1.3.13   1.3.14
 EI_VSN=		3.9.3
 SNMP_VSN=	5.2.5
@@ -224,6 +226,7 @@ pre-configure:
 .if ! ${PORT_OPTIONS:MWX}
 	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
 .endif
+	cd ${WRKSRC} && ${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/preloaded-${PORTVERSION}${EXTRACT_SUFX}
 
 post-configure:
 .if ${PORT_OPTIONS:MODBC}

@@ -1,8 +1,10 @@
-TIMESTAMP = 1513604303
+TIMESTAMP = 1521405035
 SHA256 (erlang/otp_src_19.3.tar.gz) = fe4a00651db39b8542b04530a48d24b2f2e7e0b77cbe93d728c9f05325bdfe83
 SIZE (erlang/otp_src_19.3.tar.gz) = 68510871
 SHA256 (erlang/otp_doc_man_19.3.tar.gz) = f8192ffdd7367083c055695eeddf198155da43dcc221aed1d870d1e3871dd95c
 SIZE (erlang/otp_doc_man_19.3.tar.gz) = 1410781
+SHA256 (erlang/preloaded-19.3.6.6.tar.gz) = 462eab6ba61516addc0166d41c30c3bda5f9770946608d6596e38f73352dbc58
+SIZE (erlang/preloaded-19.3.6.6.tar.gz) = 330068
 SHA256 (erlang/otp_doc_html_19.3.tar.gz) = dc3e3a82d1aba7f0deac1ddb81b7d6f8dee9a75e1d42b90c677a2b645f19a00c
 SIZE (erlang/otp_doc_html_19.3.tar.gz) = 35818689
 SHA256 (erlang/armstrong_thesis_2003.pdf) = da585b914eb07350e2d6f727db5eb0fb1551f49fc1270f7d4dc079f2c8c1ab7a
@@ -39,3 +41,5 @@ SHA256 (erlang/patch-otp-19.3.6.4) = 662dab96ceed33b4b29c835d82bf6b4f8feaa8f7528
 SIZE (erlang/patch-otp-19.3.6.4) = 10622
 SHA256 (erlang/patch-otp-19.3.6.5) = f830bd6328f2a9e8cb70750bb7e91a8db045b5fc13fe854710fdffce158788d1
 SIZE (erlang/patch-otp-19.3.6.5) = 13254
+SHA256 (erlang/patch-otp-19.3.6.6) = 6bb2da20ad241e86f847ba351dce23ecf5a82f0e6df8eceb83fe2ed4b05d8d2f
+SIZE (erlang/patch-otp-19.3.6.6) = 12542
