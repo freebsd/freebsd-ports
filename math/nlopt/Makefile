@@ -14,6 +14,9 @@ LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		fails to package: Unable to access file site-packages/_nlopt.a:No such file or directory
+BROKEN_armv7=		fails to package: Unable to access file site-packages/_nlopt.a:No such file or directory
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libguile-2.0.so:lang/guile2
 BUILD_DEPENDS=	swig3.0:devel/swig30 \
