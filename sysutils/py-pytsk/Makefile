@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytsk
-PORTVERSION=	20171109
+PORTVERSION=	20180225
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/
