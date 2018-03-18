@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stix
-PORTVERSION=	1.2.0.4
+PORTVERSION=	1.2.0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ GH_PROJECT=	python-${PORTNAME}
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	concurrent distutils autoplist
 
 PORTDOCS=	README.rst
 PORTEXAMPLES=	*
