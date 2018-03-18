@@ -10,6 +10,8 @@ COMMENT=	Netgraph IP accounting
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_armv6=		fails to build: ng_ipacct_hash.h:52:2: implicit declaration of function 'MALLOC' is invalid in C99
+BROKEN_armv7=		fails to build: ng_ipacct_hash.h:52:2: implicit declaration of function 'MALLOC' is invalid in C99
 BROKEN_powerpc64=	fails to build: pcpu.h: error: size of array '__assert_0' is negative
 
 USE_GITHUB=	yes
