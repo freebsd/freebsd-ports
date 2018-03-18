@@ -10,14 +10,17 @@ MASTER_SITES=	http://decibel.silent-blade.org/uploads/Main/
 MAINTAINER=	somicide@gmail.com
 COMMENT=	Fast GTK+ audio player with an clean and user friendly interface
 
+LICENSE=	GPLv2
+
+BROKEN_armv6=	fails to package: Unable to access file locale/ar/LC_MESSAGES/decibel-audio-player.mo:No such file or directory
+BROKEN_armv7=	fails to package: Unable to access file locale/ar/LC_MESSAGES/decibel-audio-player.mo:No such file or directory
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.80:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=1.11:audio/py-mutagen@${PY_FLAVOR}
 
-LICENSE=	GPLv2
-
+USES=		gmake gettext desktop-file-utils python:2.7
 USE_GNOME=	pygnome2 pygtk2
 USE_GSTREAMER=	python good bad
-USES=		gmake gettext desktop-file-utils python:2.7
 NO_BUILD=	yes
 
 #Audio gstreamer plugins
