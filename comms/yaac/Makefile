@@ -11,6 +11,8 @@ COMMENT=	Platform-independent Java application for the APRS network
 
 LICENSE=	LGPL3
 
+BROKEN_armv7=	fails to package: yaac/build.xml:205: yaac/work/yaac/YAAC/site does not exist
+
 JAVA_VERSION=	1.6+
 USES=		zip
 USE_ANT=	yes
