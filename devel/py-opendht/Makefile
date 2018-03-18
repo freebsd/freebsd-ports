@@ -11,8 +11,6 @@ COMMENT=	Lightweight Distributed Hash Table implementation
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-BROKEN_FreeBSD_10=	devel/opendht dependency doesn't build on 10
-
 LIB_DEPENDS=	libopendht.so:devel/opendht \
 		libgnutls.so:security/gnutls
 

@@ -11,6 +11,8 @@ COMMENT=	Lightweight Distributed Hash Table implementation
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_10=	Missing __cxa_thread_atexit
+
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libmsgpackc.so:devel/msgpack \
 		libnettle.so:security/nettle \
@@ -38,10 +40,4 @@ PROXY_SERVER_LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp \
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSREL} == 10.3
-BROKEN=	Missing __cxa_thread_atexit
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
