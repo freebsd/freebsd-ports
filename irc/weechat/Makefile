@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -22,8 +22,10 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DENABLE_GUILE=no \
 		-DLIBDATADIR=${LOCALBASE}/libdata
 
-OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE GNUTLS ICON ICONV MANPAGES NLS
-OPTIONS_DEFAULT=	ASPELL BACKTRACE CA_BUNDLE CHARSET GNUTLS ICON LUA MANPAGES PERL PYTHON RUBY TCL
+OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE GNUTLS HEADLESS ICON ICONV \
+			MANPAGES NLS
+OPTIONS_DEFAULT=	ASPELL BACKTRACE CA_BUNDLE CHARSET GNUTLS HEADLESS \
+			ICON LUA MANPAGES PERL PYTHON RUBY TCL
 OPTIONS_SUB=		yes
 
 # BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
@@ -34,11 +36,11 @@ OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET JAVASCRIPT LUA PERL PYTHON PHP RUBY TCL
 
 BACKTRACE_DESC=		Provide crash backtraces
 CA_BUNDLE_DESC=		Include CA bundle for certificate verification
-ICON_DESC=		Desktop icon
-
-PLUGINS_DESC=		Weechat Plugins
 CHARSET_DESC=		Charset plugin (implies ICONV)
+ICON_DESC=		Desktop icon
+HEADLESS_DESC=		Build headless weechat as well
 JAVASCRIPT_DESC=	Javascript script support
+PLUGINS_DESC=		Weechat Plugins
 PYTHON_DESC=		Python script support
 RUBY_DESC=		Ruby script support
 
@@ -53,6 +55,7 @@ CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root
 CHARSET_IMPLIES=	ICONV
 DOCS_CMAKE_BOOL=	ENABLE_DOC
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
+HEADLESS_CMAKE_BOOL=	ENABLE_HEADLESS
 ICONV_USES=		iconv
 JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
