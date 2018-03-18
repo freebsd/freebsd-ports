@@ -13,6 +13,8 @@ DISTFILES=	xchada01.lzh
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display a dancing girl "ChaCha."
 
+BROKEN=		unfetchable
+
 USES=		lha
 USE_XORG=	x11
 MAKEFILE=	makefile
