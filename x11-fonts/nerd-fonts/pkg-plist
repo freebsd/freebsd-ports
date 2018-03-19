@@ -6,6 +6,10 @@
 %%FONTSDIR%%/3270/Narrow/complete/3270 Narrow Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/3270/Narrow/complete/3270 Narrow Nerd Font Complete.otf
 %%FONTSDIR%%/3270/Narrow/complete/3270 Narrow Nerd Font Complete.ttf
+%%FONTSDIR%%/3270/Semi-Narrow/complete/3270 Semi-Narrow Nerd Font Complete Mono.otf
+%%FONTSDIR%%/3270/Semi-Narrow/complete/3270 Semi-Narrow Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/3270/Semi-Narrow/complete/3270 Semi-Narrow Nerd Font Complete.otf
+%%FONTSDIR%%/3270/Semi-Narrow/complete/3270 Semi-Narrow Nerd Font Complete.ttf
 %%FONTSDIR%%/AnonymousPro/complete/Anonymice Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/AnonymousPro/complete/Anonymice Nerd Font Complete.ttf
 %%FONTSDIR%%/Arimo/Bold-Italic/complete/Arimo Bold Italic Nerd Font Complete Mono.ttf
@@ -18,6 +22,10 @@
 %%FONTSDIR%%/Arimo/Regular/complete/Arimo Regular Nerd Font Complete.ttf
 %%FONTSDIR%%/AurulentSansMono/complete/AurulentSansMono-Regular Nerd Font Complete Mono.otf
 %%FONTSDIR%%/AurulentSansMono/complete/AurulentSansMono-Regular Nerd Font Complete.otf
+%%FONTSDIR%%/BigBlueTerminal/complete/BigBlue Terminal 437TT Nerd Font Complete Mono.TTF
+%%FONTSDIR%%/BigBlueTerminal/complete/BigBlue Terminal 437TT Nerd Font Complete.TTF
+%%FONTSDIR%%/BigBlueTerminal/complete/BigBlue TerminalPlus Nerd Font Complete Mono.TTF
+%%FONTSDIR%%/BigBlueTerminal/complete/BigBlue TerminalPlus Nerd Font Complete.TTF
 %%FONTSDIR%%/BitstreamVeraSansMono/Bold-Italic/complete/Bitstream Vera Sans Mono Bold Oblique Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/BitstreamVeraSansMono/Bold-Italic/complete/Bitstream Vera Sans Mono Bold Oblique Nerd Font Complete.ttf
 %%FONTSDIR%%/BitstreamVeraSansMono/Bold/complete/Bitstream Vera Sans Mono Bold Nerd Font Complete Mono.ttf
@@ -26,6 +34,14 @@
 %%FONTSDIR%%/BitstreamVeraSansMono/Italic/complete/Bitstream Vera Sans Mono Oblique Nerd Font Complete.ttf
 %%FONTSDIR%%/BitstreamVeraSansMono/Regular/complete/Bitstream Vera Sans Mono Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/BitstreamVeraSansMono/Regular/complete/Bitstream Vera Sans Mono Nerd Font Complete.ttf
+%%FONTSDIR%%/CodeNewRoman/Beta/complete/Code New Roman Nerd Font Complete Mono.otf
+%%FONTSDIR%%/CodeNewRoman/Beta/complete/Code New Roman Nerd Font Complete.otf
+%%FONTSDIR%%/CodeNewRoman/Bold/complete/Code New Roman Bold Nerd Font Complete Mono.otf
+%%FONTSDIR%%/CodeNewRoman/Bold/complete/Code New Roman Bold Nerd Font Complete.otf
+%%FONTSDIR%%/CodeNewRoman/Italic/complete/Code New Roman Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/CodeNewRoman/Italic/complete/Code New Roman Italic Nerd Font Complete.otf
+%%FONTSDIR%%/CodeNewRoman/Regular/complete/Code New Roman Nerd Font Complete Mono.otf
+%%FONTSDIR%%/CodeNewRoman/Regular/complete/Code New Roman Nerd Font Complete.otf
 %%FONTSDIR%%/CodeNewRoman/complete/Code New Roman Bold Nerd Font Complete Mono.otf
 %%FONTSDIR%%/CodeNewRoman/complete/Code New Roman Bold Nerd Font Complete.otf
 %%FONTSDIR%%/CodeNewRoman/complete/Code New Roman Italic Nerd Font Complete Mono.otf
@@ -59,41 +75,55 @@
 %%FONTSDIR%%/FantasqueSansMono/Regular/complete/Fantasque Sans Mono Regular Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/FantasqueSansMono/Regular/complete/Fantasque Sans Mono Regular Nerd Font Complete.ttf
 %%FONTSDIR%%/FiraCode/Bold/complete/Fura Code Bold Nerd Font Complete Mono.otf
+%%FONTSDIR%%/FiraCode/Bold/complete/Fura Code Bold Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/FiraCode/Bold/complete/Fura Code Bold Nerd Font Complete.otf
+%%FONTSDIR%%/FiraCode/Bold/complete/Fura Code Bold Nerd Font Complete.ttf
 %%FONTSDIR%%/FiraCode/Light/complete/Fura Code Light Nerd Font Complete Mono.otf
+%%FONTSDIR%%/FiraCode/Light/complete/Fura Code Light Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/FiraCode/Light/complete/Fura Code Light Nerd Font Complete.otf
+%%FONTSDIR%%/FiraCode/Light/complete/Fura Code Light Nerd Font Complete.ttf
 %%FONTSDIR%%/FiraCode/Medium/complete/Fura Code Medium Nerd Font Complete Mono.otf
+%%FONTSDIR%%/FiraCode/Medium/complete/Fura Code Medium Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/FiraCode/Medium/complete/Fura Code Medium Nerd Font Complete.otf
+%%FONTSDIR%%/FiraCode/Medium/complete/Fura Code Medium Nerd Font Complete.ttf
 %%FONTSDIR%%/FiraCode/Regular/complete/Fura Code Regular Nerd Font Complete Mono.otf
+%%FONTSDIR%%/FiraCode/Regular/complete/Fura Code Regular Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/FiraCode/Regular/complete/Fura Code Regular Nerd Font Complete.otf
+%%FONTSDIR%%/FiraCode/Regular/complete/Fura Code Regular Nerd Font Complete.ttf
 %%FONTSDIR%%/FiraCode/Retina/complete/Fura Code Retina Nerd Font Complete Mono.otf
+%%FONTSDIR%%/FiraCode/Retina/complete/Fura Code Retina Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/FiraCode/Retina/complete/Fura Code Retina Nerd Font Complete.otf
+%%FONTSDIR%%/FiraCode/Retina/complete/Fura Code Retina Nerd Font Complete.ttf
 %%FONTSDIR%%/FiraMono/Bold/complete/Fura Mono Bold Nerd Font Complete Mono.otf
 %%FONTSDIR%%/FiraMono/Bold/complete/Fura Mono Bold Nerd Font Complete.otf
 %%FONTSDIR%%/FiraMono/Medium/complete/Fura Mono Medium Nerd Font Complete Mono.otf
 %%FONTSDIR%%/FiraMono/Medium/complete/Fura Mono Medium Nerd Font Complete.otf
 %%FONTSDIR%%/FiraMono/Regular/complete/Fura Mono Regular Nerd Font Complete Mono.otf
 %%FONTSDIR%%/FiraMono/Regular/complete/Fura Mono Regular Nerd Font Complete.otf
-%%FONTSDIR%%/Go-Mono/complete/Go Mono Bold Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Go-Mono/complete/Go Mono Bold Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/Go-Mono/complete/Go Mono Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Go-Mono/complete/Go Mono Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/Go-Mono/complete/Go Mono Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Go-Mono/complete/Go Mono Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/Go-Mono/complete/Go Mono Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Go-Mono/complete/Go Mono Nerd Font Complete.ttf
-%%FONTSDIR%%/Gohu/complete/GohuFont-Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Gohu/complete/GohuFont-Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/Gohu/complete/GohuFont-Medium Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Gohu/complete/GohuFont-Medium Nerd Font Complete.ttf
-%%FONTSDIR%%/Hack/Bold/complete/Knack Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Hack/Bold/complete/Knack Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/Hack/BoldItalic/complete/Knack Bold Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Hack/BoldItalic/complete/Knack Bold Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/Hack/Italic/complete/Knack Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Hack/Italic/complete/Knack Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/Hack/Regular/complete/Knack Regular Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Hack/Regular/complete/Knack Regular Nerd Font Complete.ttf
+%%FONTSDIR%%/Go-Mono/Bold-Italic/complete/Go Mono Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Go-Mono/Bold-Italic/complete/Go Mono Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Go-Mono/Bold/complete/Go Mono Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Go-Mono/Bold/complete/Go Mono Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Go-Mono/Italic/complete/Go Mono Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Go-Mono/Italic/complete/Go Mono Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Go-Mono/Regular/complete/Go Mono Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Go-Mono/Regular/complete/Go Mono Nerd Font Complete.ttf
+%%FONTSDIR%%/Gohu/11/complete/GohuFont Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Gohu/11/complete/GohuFont Nerd Font Complete.ttf
+%%FONTSDIR%%/Gohu/14/complete/GohuFont Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Gohu/14/complete/GohuFont Nerd Font Complete.ttf
+%%FONTSDIR%%/Gohu/uni-11/complete/GohuFont Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Gohu/uni-11/complete/GohuFont Nerd Font Complete.ttf
+%%FONTSDIR%%/Gohu/uni-14/complete/GohuFont Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Gohu/uni-14/complete/GohuFont Nerd Font Complete.ttf
+%%FONTSDIR%%/Hack/Bold/complete/Hack Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Hack/Bold/complete/Hack Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Hack/BoldItalic/complete/Hack Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Hack/BoldItalic/complete/Hack Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Hack/Italic/complete/Hack Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Hack/Italic/complete/Hack Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Hack/Regular/complete/Hack Regular Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Hack/Regular/complete/Hack Regular Nerd Font Complete.ttf
 %%FONTSDIR%%/Hasklig/Black-Italic/complete/Hasklug Black Italic Nerd Font Complete Mono.otf
 %%FONTSDIR%%/Hasklig/Black-Italic/complete/Hasklug Black Italic Nerd Font Complete.otf
 %%FONTSDIR%%/Hasklig/Black/complete/Hasklug Black Nerd Font Complete Mono.otf
@@ -132,58 +162,100 @@
 %%FONTSDIR%%/Hermit/Medium/complete/Hurmit Medium Nerd Font Complete.otf
 %%FONTSDIR%%/Inconsolata/complete/Inconsolata Nerd Font Complete Mono.otf
 %%FONTSDIR%%/Inconsolata/complete/Inconsolata Nerd Font Complete.otf
-%%FONTSDIR%%/InconsolataGo/complete/InconsolataGo Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/InconsolataGo/complete/InconsolataGo Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/InconsolataGo/complete/InconsolataGo Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/InconsolataGo/complete/InconsolataGo Nerd Font Complete.ttf
-%%FONTSDIR%%/InconsolataLGC/complete/Inconsolata LGC Bold Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/InconsolataLGC/complete/Inconsolata LGC Bold Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/InconsolataLGC/complete/Inconsolata LGC Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/InconsolataLGC/complete/Inconsolata LGC Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/InconsolataLGC/complete/Inconsolata LGC Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/InconsolataLGC/complete/Inconsolata LGC Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/InconsolataLGC/complete/Inconsolata LGC Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/InconsolataLGC/complete/Inconsolata LGC Nerd Font Complete.ttf
+%%FONTSDIR%%/InconsolataGo/Bold/complete/InconsolataGo Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/InconsolataGo/Bold/complete/InconsolataGo Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/InconsolataGo/Regular/complete/InconsolataGo Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/InconsolataGo/Regular/complete/InconsolataGo Nerd Font Complete.ttf
+%%FONTSDIR%%/InconsolataLGC/Bold-Italic/complete/Inconsolata LGC Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/InconsolataLGC/Bold-Italic/complete/Inconsolata LGC Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/InconsolataLGC/Bold/complete/Inconsolata LGC Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/InconsolataLGC/Bold/complete/Inconsolata LGC Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/InconsolataLGC/Italic/complete/Inconsolata LGC Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/InconsolataLGC/Italic/complete/Inconsolata LGC Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/InconsolataLGC/Regular/complete/Inconsolata LGC Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/InconsolataLGC/Regular/complete/Inconsolata LGC Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Bold-Italic/complete/Iosevka Bold Italic Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Bold-Italic/complete/Iosevka Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Bold-Italic/complete/Iosevka Term Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Bold-Italic/complete/Iosevka Term Bold Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Bold-Oblique/complete/Iosevka Bold Oblique Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Bold-Oblique/complete/Iosevka Bold Oblique Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Bold-Oblique/complete/Iosevka Term Bold Oblique Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Bold-Oblique/complete/Iosevka Term Bold Oblique Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Bold/complete/Iosevka Bold Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Bold/complete/Iosevka Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Bold/complete/Iosevka Term Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Bold/complete/Iosevka Term Bold Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Extra-Light-Italic/complete/Iosevka Extralight Italic Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Extra-Light-Italic/complete/Iosevka Extralight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Extra-Light-Italic/complete/Iosevka Term Extralight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Extra-Light-Italic/complete/Iosevka Term Extralight Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Extra-Light-Oblique/complete/Iosevka Extralight Oblique Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Extra-Light-Oblique/complete/Iosevka Extralight Oblique Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Extra-Light-Oblique/complete/Iosevka Term Extralight Oblique Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Extra-Light-Oblique/complete/Iosevka Term Extralight Oblique Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Extra-Light/complete/Iosevka Extralight Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Extra-Light/complete/Iosevka Extralight Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Extra-Light/complete/Iosevka Term Extralight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Extra-Light/complete/Iosevka Term Extralight Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Heavy-Italic/complete/Iosevka Heavy Italic Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Heavy-Italic/complete/Iosevka Heavy Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Heavy-Italic/complete/Iosevka Term Heavy Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Heavy-Italic/complete/Iosevka Term Heavy Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Heavy-Oblique/complete/Iosevka Heavy Oblique Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Heavy-Oblique/complete/Iosevka Heavy Oblique Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Heavy-Oblique/complete/Iosevka Term Heavy Oblique Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Heavy-Oblique/complete/Iosevka Term Heavy Oblique Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Heavy/complete/Iosevka Heavy Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Heavy/complete/Iosevka Heavy Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Heavy/complete/Iosevka Term Heavy Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Heavy/complete/Iosevka Term Heavy Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Italic/complete/Iosevka Italic Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Italic/complete/Iosevka Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Italic/complete/Iosevka Term Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Italic/complete/Iosevka Term Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Light-Italic/complete/Iosevka Light Italic Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Light-Italic/complete/Iosevka Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Light-Italic/complete/Iosevka Term Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Light-Italic/complete/Iosevka Term Light Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Light-Oblique/complete/Iosevka Light Oblique Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Light-Oblique/complete/Iosevka Light Oblique Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Light-Oblique/complete/Iosevka Term Light Oblique Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Light-Oblique/complete/Iosevka Term Light Oblique Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Light/complete/Iosevka Light Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Light/complete/Iosevka Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Light/complete/Iosevka Term Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Light/complete/Iosevka Term Light Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Medium-Italic/complete/Iosevka Medium Italic Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Medium-Italic/complete/Iosevka Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Medium-Italic/complete/Iosevka Term Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Medium-Italic/complete/Iosevka Term Medium Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Medium-Oblique/complete/Iosevka Medium Oblique Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Medium-Oblique/complete/Iosevka Medium Oblique Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Medium-Oblique/complete/Iosevka Term Medium Oblique Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Medium-Oblique/complete/Iosevka Term Medium Oblique Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Medium/complete/Iosevka Medium Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Medium/complete/Iosevka Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Medium/complete/Iosevka Term Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Medium/complete/Iosevka Term Medium Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Oblique/complete/Iosevka Oblique Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Oblique/complete/Iosevka Oblique Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Oblique/complete/Iosevka Term Oblique Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Oblique/complete/Iosevka Term Oblique Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Regular/complete/Iosevka Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Regular/complete/Iosevka Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Regular/complete/Iosevka Term Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Regular/complete/Iosevka Term Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Thin-Italic/complete/Iosevka Term Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Thin-Italic/complete/Iosevka Term Thin Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Thin-Italic/complete/Iosevka Thin Italic Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Thin-Italic/complete/Iosevka Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Thin-Oblique/complete/Iosevka Term Thin Oblique Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Thin-Oblique/complete/Iosevka Term Thin Oblique Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Thin-Oblique/complete/Iosevka Thin Oblique Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Thin-Oblique/complete/Iosevka Thin Oblique Nerd Font Complete.ttf
+%%FONTSDIR%%/Iosevka/Thin/complete/Iosevka Term Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Iosevka/Thin/complete/Iosevka Term Thin Nerd Font Complete.ttf
 %%FONTSDIR%%/Iosevka/Thin/complete/Iosevka Thin Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Iosevka/Thin/complete/Iosevka Thin Nerd Font Complete.ttf
 %%FONTSDIR%%/Lekton/Bold/complete/Lekton-Bold Nerd Font Complete Mono.ttf
@@ -194,16 +266,92 @@
 %%FONTSDIR%%/Lekton/Regular/complete/Lekton Nerd Font Complete.ttf
 %%FONTSDIR%%/LiberationMono/complete/Literation Mono Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/LiberationMono/complete/Literation Mono Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Black/complete/M+ 1c black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Black/complete/M+ 1c black Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Black/complete/M+ 1p black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Black/complete/M+ 1p black Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Black/complete/M+ 2c black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Black/complete/M+ 2c black Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Black/complete/M+ 2p black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Black/complete/M+ 2p black Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 1c bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 1c bold Nerd Font Complete.ttf
 %%FONTSDIR%%/MPlus/Bold/complete/M+ 1m bold Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/MPlus/Bold/complete/M+ 1m bold Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 1mn bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 1mn bold Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 1p bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 1p bold Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 2c bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 2c bold Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 2m bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 2m bold Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 2p bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Bold/complete/M+ 2p bold Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Heavy/complete/M+ 1c heavy Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Heavy/complete/M+ 1c heavy Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Heavy/complete/M+ 1p heavy Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Heavy/complete/M+ 1p heavy Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Heavy/complete/M+ 2c heavy Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Heavy/complete/M+ 2c heavy Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Heavy/complete/M+ 2p heavy Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Heavy/complete/M+ 2p heavy Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 1c light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 1c light Nerd Font Complete.ttf
 %%FONTSDIR%%/MPlus/Light/complete/M+ 1m light Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/MPlus/Light/complete/M+ 1m light Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 1mn light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 1mn light Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 1p light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 1p light Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 2c light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 2c light Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 2m light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 2m light Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 2p light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Light/complete/M+ 2p light Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 1c medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 1c medium Nerd Font Complete.ttf
 %%FONTSDIR%%/MPlus/Medium/complete/M+ 1m medium Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/MPlus/Medium/complete/M+ 1m medium Nerd Font Complete.ttf
-%%FONTSDIR%%/MPlus/Regular/complete/M+ 1m regular Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/MPlus/Regular/complete/M+ 1m regular Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 1mn medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 1mn medium Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 1p medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 1p medium Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 2c medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 2c medium Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 2m medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 2m medium Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 2p medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Medium/complete/M+ 2p medium Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 1c Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 1c Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 1m Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 1m Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 1mn Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 1mn Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 1p Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 1p Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 2c Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 2c Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 2m Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 2m Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 2p Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Regular/complete/M+ 2p Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 1c thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 1c thin Nerd Font Complete.ttf
 %%FONTSDIR%%/MPlus/Thin/complete/M+ 1m thin Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/MPlus/Thin/complete/M+ 1m thin Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 1mn thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 1mn thin Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 1p thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 1p thin Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 2c thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 2c thin Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 2m thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 2m thin Nerd Font Complete.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 2p thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/MPlus/Thin/complete/M+ 2p thin Nerd Font Complete.ttf
 %%FONTSDIR%%/Meslo/L-DZ/complete/Meslo LG L DZ Regular Nerd Font Complete Mono.otf
 %%FONTSDIR%%/Meslo/L-DZ/complete/Meslo LG L DZ Regular Nerd Font Complete.otf
 %%FONTSDIR%%/Meslo/L/complete/Meslo LG L Regular Nerd Font Complete Mono.otf
@@ -222,22 +370,722 @@
 %%FONTSDIR%%/Monofur/Italic/complete/monofur italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Monofur/Regular/complete/monofur Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Monofur/Regular/complete/monofur Nerd Font Complete.ttf
-%%FONTSDIR%%/Monoid/complete/Monoid Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Monoid/complete/Monoid Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/Monoid/complete/Monoid Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Monoid/complete/Monoid Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/Monoid/complete/Monoid Regular Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Monoid/complete/Monoid Regular Nerd Font Complete.ttf
-%%FONTSDIR%%/Monoid/complete/Monoid Retina Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Monoid/complete/Monoid Retina Nerd Font Complete.ttf
-%%FONTSDIR%%/Mononoki/complete/mononoki Bold Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Mononoki/complete/mononoki Bold Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/Mononoki/complete/mononoki Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Mononoki/complete/mononoki Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/Mononoki/complete/mononoki Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Mononoki/complete/mononoki Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/Mononoki/complete/mononoki-Regular Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Mononoki/complete/mononoki-Regular Nerd Font Complete.ttf
+%%FONTSDIR%%/Monoid/Bold/complete/Monoid Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Monoid/Bold/complete/Monoid Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Monoid/Italic/complete/Monoid Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Monoid/Italic/complete/Monoid Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Monoid/Regular/complete/Monoid Regular Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Monoid/Regular/complete/Monoid Regular Nerd Font Complete.ttf
+%%FONTSDIR%%/Monoid/Retina/complete/Monoid Retina Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Monoid/Retina/complete/Monoid Retina Nerd Font Complete.ttf
+%%FONTSDIR%%/Mononoki/Bold-Italic/complete/mononoki Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Mononoki/Bold-Italic/complete/mononoki Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Mononoki/Bold/complete/mononoki Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Mononoki/Bold/complete/mononoki Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Mononoki/Italic/complete/mononoki Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Mononoki/Italic/complete/mononoki Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Mononoki/Regular/complete/mononoki-Regular Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Mononoki/Regular/complete/mononoki-Regular Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Emoji/complete/Noto Emoji Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Emoji/complete/Noto Emoji Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Mono/complete/Noto Mono Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Mono/complete/Noto Mono Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Condensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Regular Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Regular Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display SemiCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Display/complete/Noto Sans Display Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Condensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Regular Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Regular Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono SemiCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans-Mono/complete/Noto Sans Mono Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Condensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Regular Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Regular Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans SemiCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Sans/complete/Noto Sans Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Condensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Regular Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Regular Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display SemiCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif-Display/complete/Noto Serif Display Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Condensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Regular Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Regular Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Black Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Black Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Black Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed ExtraBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed ExtraBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed ExtraBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed ExtraBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed ExtraLight Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Light Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed SemiBold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed SemiBold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed SemiBold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed SemiBold Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif SemiCondensed Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Noto/Serif/complete/Noto Serif Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/OpenDyslexic/Alta-Bold-Italic/complete/OpenDyslexicAlta Bold Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/OpenDyslexic/Alta-Bold-Italic/complete/OpenDyslexicAlta Bold Italic Nerd Font Complete.otf
+%%FONTSDIR%%/OpenDyslexic/Alta-Bold/complete/OpenDyslexicAlta Bold Nerd Font Complete Mono.otf
+%%FONTSDIR%%/OpenDyslexic/Alta-Bold/complete/OpenDyslexicAlta Bold Nerd Font Complete.otf
+%%FONTSDIR%%/OpenDyslexic/Alta-Italic/complete/OpenDyslexicAlta Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/OpenDyslexic/Alta-Italic/complete/OpenDyslexicAlta Italic Nerd Font Complete.otf
+%%FONTSDIR%%/OpenDyslexic/Alta-Regular/complete/OpenDyslexicAlta Regular Nerd Font Complete Mono.otf
+%%FONTSDIR%%/OpenDyslexic/Alta-Regular/complete/OpenDyslexicAlta Regular Nerd Font Complete.otf
+%%FONTSDIR%%/OpenDyslexic/Bold-Italic/complete/OpenDyslexic Bold Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/OpenDyslexic/Bold-Italic/complete/OpenDyslexic Bold Italic Nerd Font Complete.otf
+%%FONTSDIR%%/OpenDyslexic/Bold/complete/OpenDyslexic Bold Nerd Font Complete Mono.otf
+%%FONTSDIR%%/OpenDyslexic/Bold/complete/OpenDyslexic Bold Nerd Font Complete.otf
+%%FONTSDIR%%/OpenDyslexic/Italic/complete/OpenDyslexic Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/OpenDyslexic/Italic/complete/OpenDyslexic Italic Nerd Font Complete.otf
+%%FONTSDIR%%/OpenDyslexic/Mono-Regular/complete/OpenDyslexicMono Regular Nerd Font Complete Mono.otf
+%%FONTSDIR%%/OpenDyslexic/Mono-Regular/complete/OpenDyslexicMono Regular Nerd Font Complete.otf
+%%FONTSDIR%%/OpenDyslexic/Regular/complete/OpenDyslexic Regular Nerd Font Complete Mono.otf
+%%FONTSDIR%%/OpenDyslexic/Regular/complete/OpenDyslexic Regular Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Mono/Bold/complete/Overpass Mono Bold Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Mono/Bold/complete/Overpass Mono Bold Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Mono/Light/complete/Overpass Mono Light Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Mono/Light/complete/Overpass Mono Light Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Mono/Regular/complete/Overpass Mono Regular Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Mono/Regular/complete/Overpass Mono Regular Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Mono/Semi-Bold/complete/Overpass Mono SemiBold Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Mono/Semi-Bold/complete/Overpass Mono SemiBold Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Bold-Italic/complete/Overpass Bold Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Bold-Italic/complete/Overpass Bold Italic Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Bold/complete/Overpass Bold Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Bold/complete/Overpass Bold Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Extra-Bold-Italic/complete/Overpass ExtraBold Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Extra-Bold-Italic/complete/Overpass ExtraBold Italic Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Extra-Bold/complete/Overpass ExtraBold Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Extra-Bold/complete/Overpass ExtraBold Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Extra-Light-Italic/complete/Overpass ExtraLight Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Extra-Light-Italic/complete/Overpass ExtraLight Italic Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Extra-Light/complete/Overpass ExtraLight Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Extra-Light/complete/Overpass ExtraLight Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Heavy-Italic/complete/Overpass Heavy Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Heavy-Italic/complete/Overpass Heavy Italic Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Heavy/complete/Overpass Heavy Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Heavy/complete/Overpass Heavy Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Italic/complete/Overpass Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Italic/complete/Overpass Italic Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Light-Italic/complete/Overpass Light Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Light-Italic/complete/Overpass Light Italic Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Light/complete/Overpass Light Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Light/complete/Overpass Light Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Regular/complete/Overpass Regular Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Regular/complete/Overpass Regular Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Semi-Bold-Italic/complete/Overpass SemiBold Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Semi-Bold-Italic/complete/Overpass SemiBold Italic Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Semi-Bold/complete/Overpass SemiBold Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Semi-Bold/complete/Overpass SemiBold Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Thin-Italic/complete/Overpass Thin Italic Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Thin-Italic/complete/Overpass Thin Italic Nerd Font Complete.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Thin/complete/Overpass Thin Nerd Font Complete Mono.otf
+%%FONTSDIR%%/Overpass/Non-Mono/Thin/complete/Overpass Thin Nerd Font Complete.otf
 %%FONTSDIR%%/ProFont/profontiix/complete/ProFont IIx Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/ProFont/profontiix/complete/ProFont IIx Nerd Font Complete.ttf
 %%FONTSDIR%%/ProggyClean/Latin2/complete/ProggyCleanTT CE Nerd Font Complete Mono.ttf
@@ -246,50 +1094,62 @@
 %%FONTSDIR%%/ProggyClean/Regular/complete/ProggyCleanTT Nerd Font Complete.ttf
 %%FONTSDIR%%/ProggyClean/SlashedZero/complete/ProggyCleanTTSZ Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/ProggyClean/SlashedZero/complete/ProggyCleanTTSZ Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Bold Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Bold Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Light Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Light Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Light Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Light Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Medium Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Medium Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Medium Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Medium Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Thin Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Thin Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Thin Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/RobotoMono/complete/Roboto Mono Thin Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Bold-Italic/complete/Roboto Mono Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Bold-Italic/complete/Roboto Mono Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Bold/complete/Roboto Mono Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Bold/complete/Roboto Mono Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Italic/complete/Roboto Mono Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Italic/complete/Roboto Mono Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Light-Italic/complete/Roboto Mono Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Light-Italic/complete/Roboto Mono Light Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Light/complete/Roboto Mono Light Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Light/complete/Roboto Mono Light Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Medium-Italic/complete/Roboto Mono Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Medium-Italic/complete/Roboto Mono Medium Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Medium/complete/Roboto Mono Medium Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Medium/complete/Roboto Mono Medium Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Regular/complete/Roboto Mono Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Regular/complete/Roboto Mono Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Thin-Italic/complete/Roboto Mono Thin Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Thin-Italic/complete/Roboto Mono Thin Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/RobotoMono/Thin/complete/Roboto Mono Thin Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/RobotoMono/Thin/complete/Roboto Mono Thin Nerd Font Complete.ttf
 %%FONTSDIR%%/ShareTechMono/complete/Shure Tech Mono Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/ShareTechMono/complete/Shure Tech Mono Nerd Font Complete.ttf
+%%FONTSDIR%%/SourceCodePro/Black-Italic/complete/Sauce Code Pro Black Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SourceCodePro/Black-Italic/complete/Sauce Code Pro Black Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/SourceCodePro/Black/complete/Sauce Code Pro Black Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/SourceCodePro/Black/complete/Sauce Code Pro Black Nerd Font Complete.ttf
+%%FONTSDIR%%/SourceCodePro/Bold-Italic/complete/Sauce Code Pro Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SourceCodePro/Bold-Italic/complete/Sauce Code Pro Bold Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/SourceCodePro/Bold/complete/Sauce Code Pro Bold Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/SourceCodePro/Bold/complete/Sauce Code Pro Bold Nerd Font Complete.ttf
 %%FONTSDIR%%/SourceCodePro/Extra-Light/complete/Sauce Code Pro ExtraLight Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/SourceCodePro/Extra-Light/complete/Sauce Code Pro ExtraLight Nerd Font Complete.ttf
+%%FONTSDIR%%/SourceCodePro/ExtraLight-Italic/complete/Sauce Code Pro ExtraLight Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SourceCodePro/ExtraLight-Italic/complete/Sauce Code Pro ExtraLight Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/SourceCodePro/Light-Italic/complete/Sauce Code Pro Light Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SourceCodePro/Light-Italic/complete/Sauce Code Pro Light Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/SourceCodePro/Light/complete/Sauce Code Pro Light Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/SourceCodePro/Light/complete/Sauce Code Pro Light Nerd Font Complete.ttf
+%%FONTSDIR%%/SourceCodePro/Medium-Italic/complete/Sauce Code Pro Medium Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SourceCodePro/Medium-Italic/complete/Sauce Code Pro Medium Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/SourceCodePro/Medium/complete/Sauce Code Pro Medium Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/SourceCodePro/Medium/complete/Sauce Code Pro Medium Nerd Font Complete.ttf
 %%FONTSDIR%%/SourceCodePro/Regular/complete/Sauce Code Pro Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/SourceCodePro/Regular/complete/Sauce Code Pro Nerd Font Complete.ttf
+%%FONTSDIR%%/SourceCodePro/Semibold-Italic/complete/Sauce Code Pro Semibold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SourceCodePro/Semibold-Italic/complete/Sauce Code Pro Semibold Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/SourceCodePro/Semibold/complete/Sauce Code Pro Semibold Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/SourceCodePro/Semibold/complete/Sauce Code Pro Semibold Nerd Font Complete.ttf
-%%FONTSDIR%%/SpaceMono/complete/Space Mono Bold Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/SpaceMono/complete/Space Mono Bold Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/SpaceMono/complete/Space Mono Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/SpaceMono/complete/Space Mono Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/SpaceMono/complete/Space Mono Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/SpaceMono/complete/Space Mono Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/SpaceMono/complete/Space Mono Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/SpaceMono/complete/Space Mono Nerd Font Complete.ttf
+%%FONTSDIR%%/SpaceMono/Bold-Italic/complete/Space Mono Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SpaceMono/Bold-Italic/complete/Space Mono Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/SpaceMono/Bold/complete/Space Mono Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SpaceMono/Bold/complete/Space Mono Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/SpaceMono/Italic/complete/Space Mono Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SpaceMono/Italic/complete/Space Mono Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/SpaceMono/Regular/complete/Space Mono Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/SpaceMono/Regular/complete/Space Mono Nerd Font Complete.ttf
 %%FONTSDIR%%/Terminus/terminus-ttf-4.40.1/Bold/complete/Terminess (TTF) Bold Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Terminus/terminus-ttf-4.40.1/Bold/complete/Terminess (TTF) Bold Nerd Font Complete.ttf
 %%FONTSDIR%%/Terminus/terminus-ttf-4.40.1/BoldItalic/complete/Terminess (TTF) Bold Italic Nerd Font Complete Mono.ttf
@@ -298,14 +1158,14 @@
 %%FONTSDIR%%/Terminus/terminus-ttf-4.40.1/Italic/complete/Terminess (TTF) Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Terminus/terminus-ttf-4.40.1/Regular/complete/Terminess (TTF) Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Terminus/terminus-ttf-4.40.1/Regular/complete/Terminess (TTF) Nerd Font Complete.ttf
-%%FONTSDIR%%/Tinos/complete/Tinos Bold Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Tinos/complete/Tinos Bold Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/Tinos/complete/Tinos Bold Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Tinos/complete/Tinos Bold Nerd Font Complete.ttf
-%%FONTSDIR%%/Tinos/complete/Tinos Italic Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Tinos/complete/Tinos Italic Nerd Font Complete.ttf
-%%FONTSDIR%%/Tinos/complete/Tinos Nerd Font Complete Mono.ttf
-%%FONTSDIR%%/Tinos/complete/Tinos Nerd Font Complete.ttf
+%%FONTSDIR%%/Tinos/Bold-Italic/complete/Tinos Bold Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Tinos/Bold-Italic/complete/Tinos Bold Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Tinos/Bold/complete/Tinos Bold Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Tinos/Bold/complete/Tinos Bold Nerd Font Complete.ttf
+%%FONTSDIR%%/Tinos/Italic/complete/Tinos Italic Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Tinos/Italic/complete/Tinos Italic Nerd Font Complete.ttf
+%%FONTSDIR%%/Tinos/Regular/complete/Tinos Nerd Font Complete Mono.ttf
+%%FONTSDIR%%/Tinos/Regular/complete/Tinos Nerd Font Complete.ttf
 %%FONTSDIR%%/Ubuntu/Bold-Italic/complete/Ubuntu Bold Italic Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/Ubuntu/Bold-Italic/complete/Ubuntu Bold Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/Ubuntu/Bold/complete/Ubuntu Bold Nerd Font Complete Mono.ttf
@@ -332,3 +1192,4 @@
 %%FONTSDIR%%/UbuntuMono/Regular-Italic/complete/Ubuntu Mono Italic Nerd Font Complete.ttf
 %%FONTSDIR%%/UbuntuMono/Regular/complete/Ubuntu Mono Nerd Font Complete Mono.ttf
 %%FONTSDIR%%/UbuntuMono/Regular/complete/Ubuntu Mono Nerd Font Complete.ttf
+@dir %%FONTSDIR%%/SourceCodePro/Italic
