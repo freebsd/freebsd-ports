@@ -19,7 +19,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-regression-test: build
+do-test:
 	cd ${WRKSRC} && ${SH} ./test_odo
 
 .include <bsd.port.mk>
