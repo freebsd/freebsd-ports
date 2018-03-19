@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	font-awesome
-DISTVERSION=	5.0.2
+DISTVERSION=	5.0.8
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://use.fontawesome.com/releases/v${DISTVERSION}/
 DISTNAME=	fontawesome-free-${DISTVERSION}
