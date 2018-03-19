@@ -145,6 +145,7 @@ include/isc/commandline.h
 include/isc/condition.h
 include/isc/counter.h
 include/isc/crc64.h
+include/isc/deprecated.h
 include/isc/dir.h
 include/isc/entropy.h
 include/isc/errno.h
@@ -170,6 +171,7 @@ include/isc/lang.h
 include/isc/lex.h
 include/isc/lfsr.h
 include/isc/lib.h
+include/isc/likely.h
 include/isc/list.h
 include/isc/log.h
 include/isc/magic.h
@@ -271,6 +273,7 @@ include/pk11/pk11.h
 include/pk11/result.h
 include/pk11/site.h
 include/pkcs11/cryptoki.h
+include/pkcs11/eddsa.h
 include/pkcs11/pkcs11.h
 include/pkcs11/pkcs11f.h
 include/pkcs11/pkcs11t.h

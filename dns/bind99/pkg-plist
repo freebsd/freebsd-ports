@@ -146,6 +146,7 @@ include/isc/lang.h
 include/isc/lex.h
 include/isc/lfsr.h
 include/isc/lib.h
+include/isc/likely.h
 include/isc/list.h
 include/isc/log.h
 include/isc/magic.h
