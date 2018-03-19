@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	solidity
-PORTVERSION=	0.4.19
+PORTVERSION=	0.4.21
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -29,6 +29,7 @@ PLIST_FILES=	bin/solc
 
 pre-patch:
 		@${CP} ${FILESDIR}/jsoncpp.cmake ${WRKSRC}/cmake/
+		@${REINPLACE_CMD} '/jsoncpp/d' ${WRKSRC}/libdevcore/CMakeLists.txt
 		@${REINPLACE_CMD} '/EthCcache/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
