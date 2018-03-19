@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	python-bitcoinrpc
-PORTVERSION=	0.3.0.20150403
+PORTVERSION=	1.0
 CATEGORIES=	net finance python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Enhanced version of python-jsonrpc for use with Bitcoin
 
-LICENSE=	LGPL20
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	jgarzik
-GH_TAGNAME=	f607fe7
-
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
