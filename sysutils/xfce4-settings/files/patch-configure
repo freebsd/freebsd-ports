@@ -1,6 +1,6 @@
---- ./configure.orig	2013-05-05 16:12:59.000000000 +0000
-+++ ./configure	2013-05-05 23:07:53.000000000 +0000
-@@ -13286,7 +13286,7 @@
+--- configure.orig	2018-03-18 20:52:52 UTC
++++ configure
+@@ -13868,7 +13868,7 @@ $as_echo "#define HAVE_LC_MESSAGES 1" >>confdefs.h
  
      fi
    fi

@@ -26,6 +26,7 @@ share/icons/hicolor/128x128/devices/xfce-display-internal.png
 share/icons/hicolor/128x128/devices/xfce-display-mirror.png
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-settings.mo
