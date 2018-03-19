@@ -9,7 +9,8 @@ COMMENT=	Output disk SMART values
 
 LICENSE=	ISCL
 
-IGNORE_FreeBSD_10=	Requires FreeBSD 11
+BROKEN_FreeBSD_12=	Build error: https://github.com/ctuffli/smart/issues/3
+IGNORE_FreeBSD_10=	Requires FreeBSD 11 or later
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ctuffli
