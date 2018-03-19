@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180319:
+  AFFECTS: users of dns/dnsmasq
+  AUTHOR: mandree@FreeBSD.org
+
+  Note that with dnsmasq 2.79, some parts of the interface have changed in an
+  incompatible way versus previous versions. This comprises changed recursion
+  behaviour, signature support, a change for SIGINT (vs. SIGHUP) behaviour.
+
+  Please see the CHANGELOG that ships with dnsmasq for details.
+
 20180317:
   AFFECTS: users of multimedia/plexpy
   AUTHOR: feld@FreeBSD.org
@@ -78,7 +88,7 @@ you update your ports collection, before attempting any port upgrades.
 
   to the CONFIG array before the updater will run.
 
-20180214
+20180214:
   AFFECTS: users of lang/ruby23
   AUTHOR: swills@FreeBSD.org
 
