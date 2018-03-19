@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libRmath
-DISTVERSION=	3.4.3
-PORTREVISION=	1
+DISTVERSION=	3.4.4
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -38,7 +37,7 @@ OPTIONS_EXCLUDE_armv6=	FLANG
 OPTIONS_EXCLUDE_armv7=	FLANG
 OPTIONS_EXCLUDE_i386=	FLANG
 
-FLANG_DESC=		Use flang instead of the default Fortran compiler
+FLANG_DESC=		Use experimental flang instead of default Fortran compiler
 FLANG_USES=		fortran:flang
 FLANG_USES_OFF=		fortran
 
