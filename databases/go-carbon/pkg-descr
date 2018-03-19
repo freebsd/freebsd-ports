@@ -1,0 +1,4 @@
+go-carbon is a go implementation of the carbon component of the graphite
+project. It has support for multiple cpu's and can achieve higher concurrency.
+
+WWW: https://github.com/lomik/go-carbon
