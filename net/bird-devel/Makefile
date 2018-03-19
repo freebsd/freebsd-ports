@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	melifaro@ipfw.ru
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Dynamic IP routing daemon (devel version)
 
 LICENSE=	GPLv2
