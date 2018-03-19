@@ -1,0 +1,8 @@
+Started from an idea on twitter and used to reduce the dependencies of a port,
+here is a python script to produce dependencies' graph of a(ll) FreeBSD port(s).
+
+'portgraph' produces a graph (.dot and svg) representing the dependencies needed
+for a given port or all ports thanks to graphviz and the power of make 
+{build,run}-depends-list.
+
+WWW: https://gitlab.com/lbartoletti/portgraph
