@@ -1,0 +1,8 @@
+To set the default PCM to the sndio plugin, create ~/.asoundrc with
+
+pcm.!default {
+	type sndio
+}
+
+Optionally, use the 'volume' option to set the initial volume and
+'device' to set the device to use.
