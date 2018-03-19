@@ -1,6 +1,6 @@
---- Configure.orig	2017-12-27 00:27:43 UTC
+--- Configure.orig	2018-03-18 22:55:57 UTC
 +++ Configure
-@@ -3861,7 +3861,10 @@ esac
+@@ -3864,7 +3864,10 @@ esac
  . ./posthint.sh
  
  : who configured the system
@@ -12,7 +12,7 @@
  case "$cf_by" in
  "")
  	cf_by=`(logname) 2>/dev/null`
-@@ -5042,7 +5045,7 @@ esac
+@@ -5045,7 +5048,7 @@ esac
  : Now check and see which directories actually exist, avoiding duplicates
  for xxx in $dlist
  do
@@ -21,7 +21,7 @@
  		case " $libpth " in
  		*" $xxx "*) ;;
  		*) libpth="$libpth $xxx";;
-@@ -9583,8 +9586,7 @@ prefixvar=siteman3dir
+@@ -9586,8 +9589,7 @@ prefixvar=siteman3dir
  
  : determine where add-on public executable scripts go
  case "$sitescript" in

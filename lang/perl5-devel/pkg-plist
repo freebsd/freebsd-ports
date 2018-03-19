@@ -507,6 +507,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/Event/Skip.pm
 %%PRIV_LIB%%/Test2/Event/Subtest.pm
 %%PRIV_LIB%%/Test2/Event/TAP/Version.pm
+%%PRIV_LIB%%/Test2/Event/V2.pm
 %%PRIV_LIB%%/Test2/Event/Waiting.pm
 %%PRIV_LIB%%/Test2/EventFacet.pm
 %%PRIV_LIB%%/Test2/EventFacet/About.pm
@@ -514,6 +515,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/EventFacet/Assert.pm
 %%PRIV_LIB%%/Test2/EventFacet/Control.pm
 %%PRIV_LIB%%/Test2/EventFacet/Error.pm
+%%PRIV_LIB%%/Test2/EventFacet/Hub.pm
 %%PRIV_LIB%%/Test2/EventFacet/Info.pm
 %%PRIV_LIB%%/Test2/EventFacet/Meta.pm
 %%PRIV_LIB%%/Test2/EventFacet/Parent.pm
@@ -1625,6 +1627,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::Event::Skip.3.gz
 %%MAN3%%/Test2::Event::Subtest.3.gz
 %%MAN3%%/Test2::Event::TAP::Version.3.gz
+%%MAN3%%/Test2::Event::V2.3.gz
 %%MAN3%%/Test2::Event::Waiting.3.gz
 %%MAN3%%/Test2::EventFacet.3.gz
 %%MAN3%%/Test2::EventFacet::About.3.gz
@@ -1632,6 +1635,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::EventFacet::Assert.3.gz
 %%MAN3%%/Test2::EventFacet::Control.3.gz
 %%MAN3%%/Test2::EventFacet::Error.3.gz
+%%MAN3%%/Test2::EventFacet::Hub.3.gz
 %%MAN3%%/Test2::EventFacet::Info.3.gz
 %%MAN3%%/Test2::EventFacet::Meta.3.gz
 %%MAN3%%/Test2::EventFacet::Parent.3.gz
@@ -1651,6 +1655,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::Transition.3.gz
 %%MAN3%%/Test2::Util.3.gz
 %%MAN3%%/Test2::Util::ExternalMeta.3.gz
+%%MAN3%%/Test2::Util::Facets2Legacy.3.gz
 %%MAN3%%/Test2::Util::HashBase.3.gz
 %%MAN3%%/Test2::Util::Trace.3.gz
 %%MAN3%%/Test::Builder.3.gz
