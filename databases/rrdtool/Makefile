@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -20,7 +20,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 USE_RC_SUBR=	rrdcached
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake groff libtool pathfix pkgconfig shebangfix
+USES=		gmake libtool pathfix pkgconfig shebangfix
 USE_GNOME=	glib20 libxml2
 INSTALL_TARGET=	install-strip
 
@@ -38,6 +38,10 @@ PYTHON_DESC=	Build PYTHON bindings
 RUBY_DESC=	Build RUBY bindings
 
 DEJAVU_RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu
+
+DOCS_CONFIGURE_ENABLE=	docs
+DOCS_USES=		groff
+
 GRAPH_CONFIGURE_OFF=	--disable-rrdcgi --disable-rrd_graph
 GRAPH_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libpng.so:graphics/png
@@ -75,10 +79,6 @@ post-extract:
 
 	@${REINPLACE_CMD} -E 's|(^rrdtool_LDADD = librrd.la)|\1 $$\(ALL_LIBS\)|' \
 		${WRKSRC}/src/Makefile.in
-
-post-extract-DOCS-off:
-	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| doc | |' \
-		${WRKSRC}/Makefile.in
 
 post-extract-EXAMPLES-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
