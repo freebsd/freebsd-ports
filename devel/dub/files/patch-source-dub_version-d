@@ -1,6 +1,6 @@
---- source/dub/version_.d	2017-03-12 14:11:08.909785000 -0500
-+++ source/dub/version_.d	2017-03-12 14:11:30.324980000 -0500
+--- source/dub/version_.d.orig	2018-01-21 22:30:48 UTC
++++ source/dub/version_.d
 @@ -1,2 +1,2 @@
  module dub.version_;
--enum dubVersion = "v1.2.1-beta.1";
+-enum dubVersion = "v1.7.1";
 +enum dubVersion = "v%%PORTVERSION%%";
