@@ -20,6 +20,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traitlets>=0:devel/py-traitlets@${FLAVOR} \
 
 USES=		pyqt:4 python
 USE_PYQT=	core gui svg
-USE_PYTHON=	distutils flavors autoplist
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
