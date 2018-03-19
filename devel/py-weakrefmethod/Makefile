@@ -14,13 +14,7 @@ LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 3400
-IGNORE=		is included in python 3.4+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
