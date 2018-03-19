@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: go-carbon
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `go-carbon':
+#
+# go_carbon_enable="YES"
+#
+# optional:
+#
+# go_carbon_conf (flags):      Set extra flags here. More options in go-carbon(1)
+#                               Default is empty "".
+# go_carbon_user (user):        Set user to run go-carbon.
+#                               Default is "carbon".
+
+. /etc/rc.subr
+
+name="go-carbon"
+rcvar="go_carbon_enable"
+
+: ${go_carbon_enable:="NO"}
+: ${go_carbon_user:="carbon"}
+: ${go_carbon_config:="/usr/local/etc/go-carbon/go-carbon.conf"}
+
+start_cmd="go_carbon_start"
+stop_cmd="go_carbon_stop"
+status_cmd="go_carbon_status"
+procname="/usr/local/bin/go-carbon"
+pidfile="/var/run/$name.pid"
+
+# read configuration and set defaults
+load_rc_config "$name"
+
+go_carbon_start()
+{
+	${procname} -config ${go_carbon_config} -daemon -pidfile ${pidfile}
+}
+
+go_carbon_stop()
+{
+	kill -TERM `cat /var/run/go-carbon.pid`
+}
+
+go_carbon_status()
+{
+	echo "go-carbon is running as pid" `cat /var/run/go-carbon.pid`
+}
+
+run_rc_command "$1"

@@ -94,6 +94,7 @@
     SUBDIR += gigabase
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
+    SUBDIR += go-carbon
     SUBDIR += gomdb
     SUBDIR += gosqlite3
     SUBDIR += gqlplus
