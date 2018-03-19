@@ -21,6 +21,7 @@
     SUBDIR += alienwah
     SUBDIR += alsa-lib
     SUBDIR += alsa-plugins
+    SUBDIR += alsa-sndio
     SUBDIR += alsa-utils
     SUBDIR += alure
     SUBDIR += amarok-kde4

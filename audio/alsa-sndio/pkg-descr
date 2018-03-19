@@ -1,0 +1,8 @@
+The alsa-sndio plugin provides a PCM that connects to a sndiod server
+as a fallback for applications that don't support sndio.
+
+Only playback is supported and the plugin does not report accurate
+buffer positions at the moment.  Do not expect this to work in a good
+way for video playback, browsers, etc.
+
+WWW: https://github.com/Duncaen/alsa-sndio
