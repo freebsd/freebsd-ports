@@ -1,0 +1,17 @@
+Acronym stands for "Postgres Upgrades Manager". It is a database migration
+management tool very similar to flyway-db or Liquibase, based on metadata
+tables.
+
+Pum is python program that can be used via command line or directly from
+another python program.
+
+Pum permits the followings operations on Postgres databases:
+
+  - check the differences between two databases
+  - create a backup (dump file) of a database
+  - restore a database from a backup
+  - upgrade a database applying delta files
+
+and some other useful operations.
+
+WWW: https://github.com/opengisch/pum
