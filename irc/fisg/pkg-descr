@@ -1,4 +1,2 @@
 FISG is a tool that creates statistics from IRC logs. FISG supports
 various logfile formats and has a very fast parsing engine.
-
-WWW: http://www.tnsp.org/fisg.php
