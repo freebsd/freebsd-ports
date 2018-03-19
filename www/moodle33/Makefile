@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	3.3.4
+PORTVERSION=	3.3.5
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable33/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
