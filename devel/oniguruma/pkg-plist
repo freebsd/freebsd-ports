@@ -3,6 +3,6 @@ include/oniggnu.h
 include/onigposix.h
 include/oniguruma.h
 lib/libonig.so
-lib/libonig.so.4
-lib/libonig.so.4.0.0
+lib/libonig.so.5
+lib/libonig.so.5.0.0
 libdata/pkgconfig/oniguruma.pc
