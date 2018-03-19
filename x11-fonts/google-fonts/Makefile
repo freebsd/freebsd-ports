@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-fonts
-DISTVERSION=	0.0.0.20171112
+DISTVERSION=	0.0.0.20180316
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	dg@syrec.org
@@ -13,7 +13,7 @@ LICENSE_COMB=	multi
 RUN_DEPENDS=	anonymous-pro>0:x11-fonts/anonymous-pro \
 		comfortaa-ttf>0:x11-fonts/comfortaa-ttf \
 		croscorefonts>0:x11-fonts/croscorefonts-fonts-ttf \
-		noto>0:x11-fonts/noto \
+		noto-lite>0:x11-fonts/noto-lite \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		sourcecodepro-ttf>0:x11-fonts/sourcecodepro-ttf \
 		sourcesanspro-ttf>0:x11-fonts/sourcesanspro-ttf \
@@ -27,7 +27,7 @@ NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	fonts
-GH_TAGNAME=	a16b830
+GH_TAGNAME=	699ce8c
 
 SUB_FILES=	pkg-message
 
@@ -40,7 +40,6 @@ EXCLUSIONS=	ofl/anonymous-pro \
 		apache/cousine \
 		apache/tinos \
 		ofl/notosans \
-		ofl/notosanstamil \
 		ofl/notoserif \
 		apache/roboto \
 		apache/robotocondensed \
