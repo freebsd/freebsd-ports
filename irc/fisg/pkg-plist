@@ -1,7 +1,5 @@
 bin/fisg
 man/man1/fisg.1.gz
-%%EXAMPLESDIR%%/example.cfg
-%%EXAMPLESDIR%%/users.cfg
 %%DATADIR%%/blue-h.png
 %%DATADIR%%/blue-v.png
 %%DATADIR%%/c64.css
