@@ -12,6 +12,9 @@ COMMENT=	Speech server for Festival Lite used by yasr and Emacspeak
 BUILD_DEPENDS=	flite:audio/flite
 RUN_DEPENDS=	flite:audio/flite
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 ALL_TARGET=	eflite
