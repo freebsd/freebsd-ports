@@ -4052,6 +4052,7 @@ _FLAVOR_RECURSIVE_SH= \
 		${FALSE}; \
 	fi; \
 	for dir in $${recursive_dirs}; do \
+		unset flavor; \
 		case $${dir} in \
 			*@*) \
 				flavor=$${dir\#*@}; \
@@ -4238,6 +4239,7 @@ PACKAGE-DEPENDS-LIST?= \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
 	for dir in ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,}; do \
+		unset flavor; \
 		case $${dir} in \
 		*@*) \
 			flavor=$${dir\#*@}; \
