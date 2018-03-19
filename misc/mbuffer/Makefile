@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mbuffer
-PORTVERSION=	2017.10.11
+PORTVERSION=	2018.03.18
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Tool for buffering data streams
 
 LICENSE=	GPLv3
@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 # by mbuffer.c due to being "unable to send from buffers".
 CONFIGURE_ARGS=	ac_cv_search_sendfile=no
 MAKE_ARGS=	SHELL=/bin/sh
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	MHASH
 OPTIONS_DEFAULT=	MHASH
