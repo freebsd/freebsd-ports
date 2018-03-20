@@ -6,6 +6,7 @@
     SUBDIR += 3dm
     SUBDIR += 44bsd-more
     SUBDIR += 915resolution
+    SUBDIR += DTraceToolkit
     SUBDIR += LPRng
     SUBDIR += LPRngTool
     SUBDIR += UEFITool
@@ -211,7 +212,6 @@
     SUBDIR += curly
     SUBDIR += currtime
     SUBDIR += cw
-    SUBDIR += DTraceToolkit
     SUBDIR += daa2iso
     SUBDIR += dae
     SUBDIR += daemonize
@@ -1211,6 +1211,7 @@
     SUBDIR += tmpwatch
     SUBDIR += tmux
     SUBDIR += tmux-mem-cpu-load
+    SUBDIR += tmux23
     SUBDIR += topless
     SUBDIR += torque
     SUBDIR += toshctl
