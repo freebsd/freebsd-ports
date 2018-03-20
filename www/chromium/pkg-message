@@ -1,7 +1,8 @@
+--I--
 For correct operation, shared memory support has to be enabled
 in Chromium by performing the following command as root :
 
-sysctl kern.ipc.shm_allow_removed=1
+# sysctl kern.ipc.shm_allow_removed=1
 
 To preserve this setting across reboots, append the following
 to /etc/sysctl.conf :
@@ -9,3 +10,14 @@ to /etc/sysctl.conf :
 kern.ipc.shm_allow_removed=1
 
 FreeBSD 11.0-R and newer have this set by default.
+
+--II--
+Chromium has a known problem of hanging tabs. The workaround
+for this problem is to mount ~/.cache/chromium as memory-fs.
+In order to do this, before you run chromium, please run these
+commands once as root for each user who uses chromium (replace
+{user}/{group} with your user/group names):
+
+# [ -d ~{user}/.cache/chromium ] || mkdir ~{user}/.cache/chromium
+# echo "md $(echo ~{user})/.cache/chromium mfs rw,late,-w{user}:{group},-s300m 2 0" >> /etc/fstab
+# mount ~{user}/.cache/chromium
