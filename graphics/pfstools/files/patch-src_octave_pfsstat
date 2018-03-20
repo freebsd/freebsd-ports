@@ -1,0 +1,11 @@
+--- src/octave/pfsstat.orig	2017-11-13 17:38:28 UTC
++++ src/octave/pfsstat
+@@ -25,6 +25,8 @@
+ #
+ # See man page for more information
+ 
++pkg load signal;
++
+ pin = pfsopen( "stdin" );
+ 
+ #fprintf( stderr, "l = %d\n", length( argv ) );

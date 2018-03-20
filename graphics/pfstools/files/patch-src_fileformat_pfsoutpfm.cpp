@@ -1,6 +1,6 @@
---- src/fileformat/pfsoutpfm.cpp.orig	2005-06-15 13:36:54 UTC
+--- src/fileformat/pfsoutpfm.cpp.orig	2018-01-19 06:59:44 UTC
 +++ src/fileformat/pfsoutpfm.cpp
-@@ -74,7 +74,7 @@ void writePFMFileColor( FILE *fh, int wi
+@@ -85,7 +85,7 @@ void writePFMFileColor( FILE *fh, int wi
      }
      int written = fwrite( line, sizeof( float ), lineSize, fh );
      if( written != lineSize )
@@ -9,7 +9,7 @@
    }
    delete[] line;  
  }
-@@ -94,7 +94,7 @@ void writePFMFileGrayscale( FILE *fh, in
+@@ -109,7 +109,7 @@ void writePFMFileGrayscale( FILE *fh, in
      }
      int written = fwrite( line, sizeof( float ), lineSize, fh );
      if( written != lineSize )

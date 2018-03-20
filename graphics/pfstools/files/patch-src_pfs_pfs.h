@@ -1,14 +1,6 @@
---- src/pfs/pfs.h.orig	2006-03-01 17:21:16 UTC
+--- src/pfs/pfs.h.orig	2018-02-26 13:58:05 UTC
 +++ src/pfs/pfs.h
-@@ -115,6 +115,7 @@ namespace pfs
-   class TagIterator 
-     {
-     public:
-+      virtual ~TagIterator() {};
-       /**
-        * Get next item on the list.
-        *
-@@ -135,6 +136,7 @@ namespace pfs
+@@ -141,6 +141,7 @@ namespace pfs
    class TagContainer
      {
      public:
@@ -16,7 +8,7 @@
        /**
         * Get a string tag of the name tagName from the TagContainer.
         * @param tagName name of the tag to retrieve
-@@ -181,6 +183,7 @@ namespace pfs
+@@ -187,6 +188,7 @@ namespace pfs
   */
    class Channel : public Array2D {
    public:
@@ -24,15 +16,7 @@
      /**
       * Gets width of the channel (in pixels).
       * This is a synonym for Array2D::getCols().
-@@ -226,6 +229,7 @@ namespace pfs
-   class ChannelIterator 
-     {
-     public:
-+      virtual ~ChannelIterator() {};
-       /**
-        * Get next item on the list.
-        */
-@@ -580,7 +584,9 @@ namespace pfs
+@@ -596,7 +598,9 @@ namespace pfs
         */
        Exception( const char* const message )
  	{
@@ -43,12 +27,12 @@
  	}
  			
        ~Exception() {};
-@@ -590,7 +596,7 @@ namespace pfs
+@@ -606,7 +610,7 @@ namespace pfs
         *
         * @return text description of the cause for the exception
         */
 -      const char* getMessage()
-+      const char* getMessage() const
++      const char* getMessage() const throw()
          {
            return msg;
  	}
