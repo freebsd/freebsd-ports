@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	futures
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Backport of the concurrent.futures package from Python 3.2
+COMMENT=	Backport of the concurrent.futures package from Python 3
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
