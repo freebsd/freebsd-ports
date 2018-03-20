@@ -13,7 +13,8 @@ COMMENT=	Python module to parse metadata in video files
 
 LICENSE=	APACHE20
 
-USES=		python:2.7
+USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
