@@ -1,0 +1,36 @@
+--- CMakeLists.txt.orig	2018-03-20 06:20:43 UTC
++++ CMakeLists.txt
+@@ -29,7 +29,7 @@ set (pfstools_VERSION_MINOR ${CPACK_PACK
+ set (pfslib_version 1.2)
+ set(CMAKE_LEGACY_CYGWIN_WIN32 0)
+  
+-set (MAN_DIR "${CMAKE_INSTALL_PREFIX}/share/man/man1" CACHE PATH "The directory where the man pages are")
++set (MAN_DIR "${CMAKE_INSTALL_PREFIX}/man/man1" CACHE PATH "The directory where the man pages are")
+ 
+ include( CheckCXXSourceCompiles )
+ 
+@@ -57,12 +57,12 @@ endif( HAS_BRANCH_PREDICTION )
+ # ======== Find bash =======
+ 
+ # TODO: What if the check fails
+-find_program (BASH_EXECUTABLE bash)
++#find_program (BASH_EXECUTABLE bash)
+ message( "Using bash: ${BASH_EXECUTABLE}" )
+ 
+ # ======== Find perl =======
+ 
+-find_program (PERL_EXECUTABLE perl)
++#find_program (PERL_EXECUTABLE perl) # XXX Isn't found in poudriere builds for some reasoson, providing it as an argument
+ if( PERL_EXECUTABLE )
+ 	message( "Using perl: ${PERL_EXECUTABLE}" )
+ else( PERL_EXECUTABLE )
+@@ -250,6 +250,9 @@ if( WITH_FFTW )
+   else( NOT FFTW_FOUND )
+     set( HAVE_FFTW3F 1 )
+     set( HAVE_FFTW3 1 )
++    if( NOT "${FFTW_INCLUDE_DIRS}" STREQUAL "" )
++      include_directories ("${FFTW_INCLUDE_DIRS}")
++    endif( NOT "${FFTW_INCLUDE_DIRS}" STREQUAL "" )
+   endif( NOT FFTW_FOUND )
+ 
+ else( WITH_FFTW )

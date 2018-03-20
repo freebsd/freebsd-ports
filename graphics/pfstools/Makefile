@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pfstools
-PORTVERSION=	1.8.5
-PORTREVISION=	5
+DISTVERSION=	2.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -11,73 +10,104 @@ MAINTAINER=	fbsd@any.com.ru
 COMMENT=	Tools for manipulating HDR images and video frames
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
-PFS_BUILD=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
-PLIST_SUB+=	PFS_BASE=${PREFIX}
+CONFLICTS=	pfstmo-1.* pfscalibration-1.*
 
-USES=		gmake libtool pathfix pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	${PFS_BUILD}
-CONFIGURE_ARGS+=	--disable-jpeghdr --disable-matlab \
-		--with-bash=${LOCALBASE}/bin/bash
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-lthr
+
+USES=		cmake:outsource tar:tgz dos2unix jpeg perl5
+USE_PERL5=	run
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	NETPBM OPENEXR TIFF QT IMAGEMAGICK GDAL OCTAVE OPENGL
-QT_DESC=	Compile programs that use QT library
-GDAL_DESC=	Compile programs that use GDAL library
+CMAKE_VERBOSE=	yes
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON \
+		-DWITH_MATLAB=OFF \
+		-DBASH_EXECUTABLE:STRING=${LOCALBASE}/bin/bash \
+		-DPERL_EXECUTABLE:STRING=${PERL}
+
+DOS2UNIX_GLOB=	*.txt *.cmake \
+		*.h *.c *.cpp \
+		*.1
+
+MANCOMPRESSED=	yes
+
+OPTIONS_DEFINE=	TIFF OPENEXR IMAGEMAGICK NETPBM \
+		OCTAVE FFTW GSL \
+		ALIGN GLVIEW VIEW \
+		OPENMP
+OPTIONS_DEFAULT=	TIFF FFTW GSL
+NO_OPTIONS_SORT=	yes
+OPTIONS_SUB=	yes
 OCTAVE_DESC=	Compile octave interface functions
+GSL_DESC=	Use Gnu Scientific Libarary required for some TMOs
+ALIGN_DESC=	Compile pfsalign, requires OpenCV w/NONFREE and libexif
+VIEW_DESC=	Compile pfsview, requires QT5
+GLVIEW_DESC=	Compile pfsglview, requires GLUT
 
-OPTIONS_DEFAULT=	TIFF
-OPTIONS_SUB=		yes
+TIFF_CMAKE_BOOL=	WITH_TIFF
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-NETPBM_CONFIGURE_ENABLE=	netpbm
-NETPBM_LIB_DEPENDS=		libnetpbm.so:graphics/netpbm
+OPENEXR_CMAKE_BOOL=	WITH_OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+			libIex-2_2.so:graphics/ilmbase
 
-OPENEXR_CONFIGURE_ENABLE=	openexr
-OPENEXR_CONFIGURE_ON=		--with-exrdir=${LOCALBASE}/include/OpenEXR
-OPENEXR_LIB_DEPENDS=		libIlmImf.so:graphics/OpenEXR
-
-TIFF_CONFIGURE_ENABLE=		tiff
-TIFF_LIB_DEPENDS=		libtiff.so:graphics/tiff
-
-QT_CONFIGURE_ENABLE=		qt
-QT_USE=				QT4=moc_build,corelib,gui
-
-IMAGEMAGICK_CONFIGURE_ENABLE=	imagemagick
+IMAGEMAGICK_CMAKE_BOOL=	WITH_ImageMagick
 IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 
-GDAL_CONFIGURE_ENABLE=		gdal
-GDAL_LIB_DEPENDS=		libgdal.so:graphics/gdal
+NETPBM_CMAKE_BOOL=	WITH_NetPBM
+NETPBM_LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
+NETPBM_IMPLIES=		TIFF
 
-OPENGL_CONFIGURE_ENABLE=	opengl
-OPENGL_USE=			GL=glut
+OCTAVE_CMAKE_BOOL=	WITH_Octave
+OCTAVE_PATCH_DEPENDS=	octave-config:math/octave
+OCTAVE_BUILD_DEPENDS=	mkoctfile:math/octave
+OCTAVE_RUN_DEPENDS=	octave:math/octave
+OCTAVE_USES=		shebangfix
+OCTAVE_CXXFLAGS=	-std=c++11
 
-OCTAVE_CONFIGURE_ENABLE=	octave
-OCTAVE_PATCH_DEPENDS=		octave-config:math/octave
-OCTAVE_BUILD_DEPENDS=		mkoctfile:math/octave
-OCTAVE_RUN_DEPENDS=		octave:math/octave
-OCTAVE_USES=			shebangfix
+FFTW_CMAKE_BOOL=	WITH_FFTW
+FFTW_CMAKE_ON=		-DFFTW_INCLUDE_DIRS=${LOCALBASE}/include
+FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+			libfftw3f.so:math/fftw3-float
+
+GSL_CMAKE_BOOL=		WITH_GSL
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
+
+ALIGN_CMAKE_BOOL=	WITH_OpenCV # requires NONFREE=on which isn't a default
+ALIGN_LIB_DEPENDS=	libopencv_nonfree.so:graphics/opencv \
+			libexif.so:graphics/libexif
+
+GLVIEW_CMAKE_BOOL=	WITH_pfsglview
+GLVIEW_CMAKE_ON=	-DGLUT_INCLUDE_DIRS=${LOCALBASE}/include
+GLVIEW_USE=		GL=glut GL=gl,glu
+
+VIEW_CMAKE_BOOL=	WITH_QT
+VIEW_USE=		QT5=buildtools_build,qmake_build,widgets
+VIEW_USE=		GL=glut GL=gl,glu QT5=core,gui,widgets
+
+OPENMP_USES=		compiler:openmp
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIMAGEMAGICK} && !${PORT_OPTIONS:MOPENMP}
+USES+=		compiler:c++11-lib
+.endif
 
 .if ${PORT_OPTIONS:MOCTAVE}
 OCTAVE_BASE?=	${LOCALBASE}
 OCTAVE_VERSION!=${OCTAVE_BASE}/bin/octave-config -v 2>&1 || ${ECHO} "0"
 OCTAVE_SITE_OCT!=${OCTAVE_BASE}/bin/octave-config --oct-site-dir 2>&1 || ${ECHO} ""
 OCTAVE_SITE_M!=	${OCTAVE_BASE}/bin/octave-config --m-site-dir 2>&1 || ${ECHO} ""
-PLIST_SUB+=	\
-		OCTAVE_BASE=${OCTAVE_BASE} \
+PLIST_SUB=	OCTAVE_BASE=${OCTAVE_BASE} \
 		OCTAVE_SITE_M=${OCTAVE_SITE_M:S|^${OCTAVE_BASE}/||} \
 		OCTAVE_SITE_OCT=${OCTAVE_SITE_OCT:S|^${OCTAVE_BASE}/||}
-SHEBANG_FILES=	src/octave/*
-SHEBANG_LANG+=	octave
+SHEBANG_FILES=	src/octave/pfs*
+SHEBANG_LANG=	octave
+octave_OLD_CMD?=/usr/bin/octave
+octave_CMD?=	${OCTAVE_BASE}/bin/octave-cli
 .endif
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib//libpfs-1.2.so.0.0.0
 
 .include <bsd.port.mk>
