@@ -528,9 +528,7 @@
     SUBDIR += elixir-plug
     SUBDIR += elixir-poison
     SUBDIR += elixir-quantum
-    SUBDIR += elixir-simple_bayes
     SUBDIR += elixir-smppex
-    SUBDIR += elixir-stemmer
     SUBDIR += elixir-swarm
     SUBDIR += elixir-timex
     SUBDIR += elixir-tirexs

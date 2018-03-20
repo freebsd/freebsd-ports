@@ -1,8 +1,0 @@
-This module is very similar to Sam Tregar's HTML::Template module
-but works much faster and contains extra functionality.
-
-The CTPP2 template language dialect contains 10 operators: <TMPL_var>,
-<TMPL_if>, <TMPL_elsif>, <TMPL_else>, <TMPL_unless>, <TMPL_loop>,
-<TMPL_foreach>, <TMPL_udf>, <TMPL_include> and <TMPL_comment>.
-
-WWW: http://ctpp.havoc.ru/en/

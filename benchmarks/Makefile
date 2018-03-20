@@ -15,7 +15,6 @@
     SUBDIR += dbs
     SUBDIR += dhrystone
     SUBDIR += dkftpbench
-    SUBDIR += expedite
     SUBDIR += fhourstones
     SUBDIR += filebench
     SUBDIR += fio
