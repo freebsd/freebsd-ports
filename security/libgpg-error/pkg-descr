@@ -2,3 +2,5 @@ libgpg-error is a library that defines common error values
 for all GnuPG components.  Among these are GPG, GPGSM, GPGME,
 GPG-Agent, libgcrypt, pinentry, SmartCard Daemon
 and possibly more in the future.
+
+WWW: https://www.gnupg.org/software/libgpg-error/
