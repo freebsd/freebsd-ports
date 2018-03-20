@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cpupdate
-DISTVERSION=	g20180302
+DISTVERSION=	g20180320
 CATEGORIES=	sysutils
 
 MAINTAINER=	eugen@FreeBSD.org
@@ -10,6 +10,8 @@ COMMENT=	CPU microcode update utility for x86
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_RC_SUBR=	${PORTNAME}
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	specific to x86 processors
@@ -20,9 +22,9 @@ SUB_LIST=	CPM_DIR=${CPM_DIR} INTEL_DIR=${INTEL_DIR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	kernschmelze
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	58bc0ca
+GH_TAGNAME=	b0df539
 
-PLIST_FILES=	bin/${PORTNAME} man/man8/${PORTNAME}.8.gz
+PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 
 CPM_ACCOUNT=	platomav
 CPM_PROJECT=	CPUMicrocodes
@@ -41,8 +43,11 @@ INTEL_MASTER_SITES=	https://downloadmirror.intel.com/27591/eng/:intel
 INTEL_DISTFILES=	${INTEL_PACK}:intel
 INTEL_DIR=		${WRKDIR}/intel-ucode
 
+post-patch:
+	${REINPLACE_CMD} -e "s,/usr/local/share/cpupdate,${DATADIR},g" ${WRKSRC}/cpupdate.h
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
