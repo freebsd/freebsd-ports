@@ -20,14 +20,15 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.8:databases/py-sqlite3@${PY_F
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 	libtotem-plparser.so:multimedia/totem-pl-parser
 
-USES=	shebangfix python:3.4+ pkgconfig gettext gmake sqlite tar:xz
+USES=		python:3.4+ pkgconfig gettext gmake shebangfix sqlite tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 pygobject3 introspection:build intltool intlhack
 USE_GSTREAMER1=	yes mpg123 ogg flac opus libav faad good speex
 USE_PYTHON=	py3kplist
 INSTALLS_ICONS=	yes
 
-SHEBANG_FILES=	src/*.py
+SHEBANG_FILES=	lollypop.in \
+		src/*.py
 
 GLIB_SCHEMAS=	org.gnome.Lollypop.gschema.xml
 
