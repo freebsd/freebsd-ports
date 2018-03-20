@@ -3,10 +3,10 @@
 
 PORTNAME=	zerotier
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
-MAINTAINER=	dch@skunkwerks.at
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Network virtualization everywhere
 
 LICENSE=	GPLv3
