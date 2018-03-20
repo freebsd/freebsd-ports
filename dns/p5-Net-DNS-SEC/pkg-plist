@@ -2,6 +2,7 @@
 %%SITE_ARCH%%/Net/DNS/SEC/DSA.pm
 %%SITE_ARCH%%/Net/DNS/SEC/ECCGOST.pm
 %%SITE_ARCH%%/Net/DNS/SEC/ECDSA.pm
+%%SITE_ARCH%%/Net/DNS/SEC/EdDSA.pm
 %%SITE_ARCH%%/Net/DNS/SEC/Keyset.pm
 %%SITE_ARCH%%/Net/DNS/SEC/Private.pm
 %%SITE_ARCH%%/Net/DNS/SEC/RSA.pm
@@ -11,6 +12,7 @@
 %%PERL5_MAN3%%/Net::DNS::SEC::DSA.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::ECCGOST.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::ECDSA.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::EdDSA.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::Keyset.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::Private.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::RSA.3.gz
