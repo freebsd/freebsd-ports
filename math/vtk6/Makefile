@@ -130,6 +130,7 @@ USE_QT4=	gui_build gui_run network_build network_run sql_build sql_run \
 		moc_build uic_build qmake_build rcc_build opengl webkit_build \
 		webkit_run
 CMAKE_ARGS+=	-DVTK_QT_VERSION:STRING="4"
+PLIST_SUB+=	QTV="qt4"
 .endif
 
 .if ${PORT_OPTIONS:MQT5}
@@ -137,6 +138,7 @@ USE_QT5=	gui_build gui_run network_build network_run sql_build sql_run \
 		qmake_build opengl webkit_build buildtools webkit_run
 CMAKE_ARGS+=	-DVTK_QT_VERSION:STRING="5" \
 		-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5
+PLIST_SUB+=	QTV="qt5"
 .endif
 
 .if ${PORT_OPTIONS:MQT4} || ${PORT_OPTIONS:MQT5}
