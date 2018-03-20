@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: cpupdate
+# REQUIRE: FILESYSTEMS kldxref
+# BEFORE:  netif
+# KEYWORD: nojail
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# cpupdate_enable (bool):		Set to NO by default.
+#					Set it to YES to enable cpupdate.
+# cpupdate_flags (string):		Command line flags for cpupdate.
+#					Default is "".
+
+. /etc/rc.subr
+
+name=cpupdate
+rcvar=cpupdate_enable
+
+load_rc_config $name
+
+: ${cpupdate_enable:="NO"}
+: ${cpupdate_flags="-w -u"}
+command=%%PREFIX%%/sbin/${name}
+
+run_rc_command "$1"

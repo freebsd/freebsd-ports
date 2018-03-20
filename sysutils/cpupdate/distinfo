@@ -1,7 +1,7 @@
-TIMESTAMP = 1521367334
+TIMESTAMP = 1521545124
 SHA256 (microcode-20180312.tgz) = 0b381face2df1b0a829dc4fa8fa93f47f39e11b1c9c22ebd44f8614657c1e779
 SIZE (microcode-20180312.tgz) = 3789662
-SHA256 (kernschmelze-cpupdate-g20180302-58bc0ca_GH0.tar.gz) = a44ff576290051b68241cb8e5af8874db8dbdb1d728a349d9ba1a174a5fc2483
-SIZE (kernschmelze-cpupdate-g20180302-58bc0ca_GH0.tar.gz) = 12574
+SHA256 (kernschmelze-cpupdate-g20180320-b0df539_GH0.tar.gz) = 5edb60b1ce5534f85c83676dc475e44800f4e5a2d4df7376ba0187e9b5cc17e9
+SIZE (kernschmelze-cpupdate-g20180320-b0df539_GH0.tar.gz) = 4566043
 SHA256 (platomav-CPUMicrocodes-2ece631_GH0.tar.gz) = bc45bad50b1c2bf86e0a4810d98d8e84328e84dd506d45774079bc87cfb01e15
 SIZE (platomav-CPUMicrocodes-2ece631_GH0.tar.gz) = 4577042
