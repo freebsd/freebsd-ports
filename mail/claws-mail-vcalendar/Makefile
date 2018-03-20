@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vcalendar
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	vCalendar plugin for Claws Mail
 
