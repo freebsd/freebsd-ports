@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kcgi
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	www devel
 MASTER_SITES=	http://kristaps.bsd.lv/kcgi/snapshots/
 

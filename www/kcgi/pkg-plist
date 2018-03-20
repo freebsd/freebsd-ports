@@ -9,6 +9,7 @@ lib/libkcgijson.a
 lib/libkcgiregress.a
 lib/libkcgixml.a
 man/man3/kcgi.3.gz
+man/man3/kcgi_buf_write.3.gz
 man/man3/kcgi_writer_disable.3.gz
 man/man3/kcgihtml.3.gz
 man/man3/kcgijson.3.gz
