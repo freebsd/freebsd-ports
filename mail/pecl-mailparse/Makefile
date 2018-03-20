@@ -11,9 +11,8 @@ COMMENT=	PECL extension to create and decode MIME messages
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	56
-
 USES=		php:pecl
 USE_PHP=	mbstring:build
+IGNORE_WITH_PHP=	56
 
 .include <bsd.port.mk>

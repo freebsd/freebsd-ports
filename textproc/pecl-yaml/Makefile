@@ -11,10 +11,9 @@ COMMENT=	YAML-1.1 parser and emitter
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	56
-
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	56
 
 .include <bsd.port.mk>
