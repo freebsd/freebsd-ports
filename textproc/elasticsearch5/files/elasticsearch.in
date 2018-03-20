@@ -34,7 +34,7 @@ load_rc_config ${name}
 : ${elasticsearch_tmp=/var/tmp/elasticsearch}
 
 required_files="${elasticsearch_config}/elasticsearch.yml"
-_pidprefix=/var/run/elasticsearch
+_pidprefix=/var/run/elasticsearch/elasticsearch
 pidfile=${_pidprefix}.pid
 procname=%%JAVA%%
 
@@ -46,7 +46,7 @@ command_args="-d --pidfile=${pidfile} -Epath.conf=${elasticsearch_config}"
 
 elasticsearch_precmd()
 {
-    /usr/bin/install -o ${elasticsearch_user} -g ${elasticsearch_group} /dev/null ${pidfile}
+    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 ${pidfile%/*}
     /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 ${elasticsearch_tmp}
     /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 /var/db/elasticsearch
     /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 755 /var/log/elasticsearch

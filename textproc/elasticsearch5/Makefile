@@ -3,7 +3,7 @@
 
 PORTNAME=	elasticsearch
 PORTVERSION=	5.6.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
