@@ -9,7 +9,7 @@
 #	graphics/libkface
 #	graphics/libkipiplugins
 # These ports now lead independent lives:
-#	astro/libkgeomap (part of KDE Applications)
+#	astro/libkgeomap-kde4 (part of KDE Applications)
 #	net/libkvkontakte (part of KDE Applications)
 #	net/libmediawiki (part of digiKam 4.12)
 

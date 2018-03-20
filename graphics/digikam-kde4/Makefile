@@ -3,7 +3,7 @@
 
 PORTNAME=	digikam
 PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	2
 CATEGORIES=	graphics kde
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		liblqr-1.so:graphics/liblqr-1 \
 		libkface.so:graphics/libkface \
 		libpgf.so:graphics/libpgf \
-		libkgeomap.so:astro/libkgeomap \
+		libkgeomap.so:astro/libkgeomap-kde4 \
 		libboost_graph.so:devel/boost-libs
 
 USES+=		eigen:3 pkgconfig shebangfix
