@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snort
-DISTVERSION=	3.0.0-a4.242
+DISTVERSION=	3.0.0-a4.243
 PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
@@ -13,8 +13,6 @@ COMMENT=	Lightweight network intrusion detection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to package
-
 BUILD_DEPENDS=	daq>=2.2.2:net/daq \
 		bash>0:shells/bash
 LIB_DEPENDS=	libpcre.so:devel/pcre \
@@ -22,38 +20,50 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpcap.so:net/libpcap \
 		libluajit-5.1.so:lang/luajit \
 		libhwloc.so:devel/hwloc
+
 RUN_DEPENDS=	daq>=2.2.2:net/daq
 
-USES=		cmake compiler:c++11-lang cpe libtool pathfix pkgconfig ssl
+USES=		cmake compiler:c++11-lang cpe libtool pathfix pkgconfig ssl iconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 USE_GITHUB=	yes
 GH_ACCOUNT=	snortadmin
 GH_PROJECT=	snort3
-GH_TAGNAME=	BUILD_242
+GH_TAGNAME=	BUILD_243
 
-OPTIONS_DEFINE=		DEBUG DOCS LRGPCAP
+USE_LDCONFIG=   yes
 
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=		ADDRESSSANITIZER DEBUG DOCS LARGEPCAP PIE THREADSANITIZER STATICDAQ
+OPTIONS_DEFINE_amd64= 	HYPERSCAN TSC
+OPTIONS_DEFAULT=	DOCS STATICDAQ
 
-LRGPCAP_DESC=		Pcaps larger than 2GB
-DEBUG_DESC=		Enable debugging symbols+core dumps
+ADDRESSSANITIZER_DESC=	Enable address sanitizer
+DEBUG_DESC=		Enable debug
+DOCS_DESC=		Enable documentation
+# FLATBUFFERS_DESC=	Enable flatbuffers support      // Doesn't get detected
+HYPERSCAN_DESC=		Enable high-performance regular expression lib
+LARGEPCAP_DESC=		Enable support for pcaps larger than 2 GB
+PIE_DESC=		Enable PIE (Broken)
+STATICDAQ_DESC=		Link static DAQ modules
+THREADSANITIZER_DESC=	Enable thread sanitizer
+TSC_DESC=		Use timestamp counter register clock (x86 only)
 
-DEBUG_CONFIGURE_ENABLE=	debug debug-msgs
-DEBUG_CONFIGURE_DISABLE=	corefiles
-DEBUG_MAKE_ENV=		DONTSTRIP="yes"
-LRGPCAP_CONFIGURE_ENABLE=	large-pcap
+ADDRESSSANITIZER_CMAKE_BOOL= ENABLE_ADDRESS_SANITIZER
+DEBUG_CMAKE_BOOL=	ENABLE_COREFILES ENABLE_GDB
+DOCS_CMAKE_BOOL=	MAKE_HTML_DOC MAKE_PDF_DOC MAKE_TEXT_DOC
+LARGEPCAP_CMAKE_BOOL=	ENABLE_LARGE_PCAP
+PIE_CMAKE_BOOL=		ENABLE_PIE
+STATICDAQ_CMAKE_BOOL=	ENABLE_STATIC_DAQ
+THREADSANITIZER_CMAKE_BOOL= ENABLE_THREAD_SANITIZER
+TSC_CMAKE_BOOL=		ENABLE_TSC_CLOCK
+
+# FLATBUFFERS_LIB_DEPENDS=	libflatbuffers.so:devel/flatbuffers
+HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
 
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1004000
 EXTRA_PATCHES=	${PATCHDIR}/freebsd103_patch-src_memory_memory__allocator.h
 .endif
-
-.include <bsd.port.options.mk>
-
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
 
 CONFLICTS=	snort-2*
 

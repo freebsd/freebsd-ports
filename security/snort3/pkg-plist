@@ -69,9 +69,10 @@ include/snort/log/u2_packet.h
 include/snort/log/unified2.h
 include/snort/lua/snort_config.lua
 include/snort/lua/snort_plugin.lua
+include/snort/main/analyzer_command.h
 include/snort/main/policy.h
 include/snort/main/snort_config.h
-include/snort/main/snort_%%CMAKE_BUILD_TYPE%%.h
+include/snort/main/snort_debug.h
 include/snort/main/snort_types.h
 include/snort/main/thread.h
 include/snort/managers/codec_manager.h
