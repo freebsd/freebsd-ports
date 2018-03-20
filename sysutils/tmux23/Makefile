@@ -2,33 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	tmux
-PORTVERSION=	2.6
-PORTREVISION=	1
+DISTVERSION=	2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
+PKGNAMESUFFIX=	23
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	mat@FreeBSD.org
-COMMENT=	Terminal Multiplexer
+MAINTAINER=	000.fbsd@quip.cz
+COMMENT=	Terminal Multiplexer (old stable version 2.3)
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	tmux23
+CONFLICTS_INSTALL=	tmux
 
-USES=		pkgconfig ncurses
-
+USES=		ncurses pkgconfig
 USE_GITHUB=	nodefault
 GH_TUPLE=	imomaliev:tmux-bash-completion:ef56d3e:bash
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --enable-utempter
+CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
 
 PLIST_FILES=	bin/tmux \
 		man/man1/tmux.1.gz \
 		etc/bash_completion.d/tmux
 
-PORTDOCS=	CHANGES README TODO
+PORTDOCS=	CHANGES FAQ README TODO
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES LIBEVENT_STATIC BACKSPACE
@@ -50,15 +49,17 @@ post-configure-LIBEVENT_STATIC-on:
 	${REINPLACE_CMD} -e '/LIBS/s|-levent[^[:blank:]]*|${LESTATIC}|' \
 		${WRKSRC}/${MAKEFILE}
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tmux ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tmux.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC_bash}/completions/tmux ${STAGEDIR}${PREFIX}/etc/bash_completion.d/tmux
 
-post-install-DOCS-on:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
-post-install-EXAMPLES-on:
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example* ${STAGEDIR}${EXAMPLESDIR}
 
