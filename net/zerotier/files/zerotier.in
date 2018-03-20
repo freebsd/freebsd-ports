@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: zerotier
-# REQUIRE: LOGIN
+# REQUIRE: FILESYSTEMS netif
+# BEFORE:  pf ipfw
 # KEYWORD: shutdown
 #
 # Add these lines to /etc/rc.conf.local or /etc/rc.conf
