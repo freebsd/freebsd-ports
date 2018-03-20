@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${FLAVOR}
 
+PORTSCOUT=	skipv:1.1.0  # broken
+
 USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
