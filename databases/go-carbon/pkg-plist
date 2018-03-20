@@ -1,6 +1,6 @@
 bin/%%GO_PKGNAME%%
-%%ETCDIR%%/%%GO_PKGNAME%%.conf
-%%ETCDIR%%/storage-aggregation.conf
-%%ETCDIR%%/storage-schemas.conf
+@sample %%ETCDIR%%/%%GO_PKGNAME%%.conf.sample
+@sample %%ETCDIR%%/storage-aggregation.conf.sample
+@sample %%ETCDIR%%/storage-schemas.conf.sample
 @dir(carbon,carbon,0750) /var/db/%%GO_PKGNAME%%
 @dir(carbon,carbon,0750) /var/log/%%GO_PKGNAME%%

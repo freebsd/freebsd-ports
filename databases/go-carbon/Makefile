@@ -3,6 +3,7 @@
 PORTNAME=		go-carbon
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.12.0
+PORTREVISION=		1
 CATEGORIES=		databases
 
 MAINTAINER=		a.andersson.thn@gmail.com
@@ -31,8 +32,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/var/log/go-carbon
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/go-carbon
 	${INSTALL_PROGRAM} ${WRKSRC}/go-carbon ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL} ${WRKSRC}/deploy/go-carbon.conf ${STAGEDIR}${PREFIX}/etc/go-carbon/
-	${INSTALL} ${WRKSRC}/deploy/storage-aggregation.conf ${STAGEDIR}${PREFIX}/etc/go-carbon/
-	${INSTALL} ${WRKSRC}/deploy/storage-schemas.conf ${STAGEDIR}${PREFIX}/etc/go-carbon/
+	${INSTALL_DATA} ${WRKSRC}/deploy/go-carbon.conf ${STAGEDIR}${PREFIX}/etc/go-carbon/go-carbon.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/deploy/storage-aggregation.conf ${STAGEDIR}${PREFIX}/etc/go-carbon/storage-aggregation.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/deploy/storage-schemas.conf ${STAGEDIR}${PREFIX}/etc/go-carbon/storage-schemas.conf.sample
 
 .include <bsd.port.mk>
