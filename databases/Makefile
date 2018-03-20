@@ -13,7 +13,7 @@
     SUBDIR += adminer
     SUBDIR += adodb
     SUBDIR += adodb5
-    SUBDIR += akonadi
+    SUBDIR += akonadi-kde4
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
     SUBDIR += apq

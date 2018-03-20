@@ -10211,3 +10211,4 @@ net-im/ring-daemon||2018-03-18|Ring can't build because it depends on custom bun
 net-im/ring-libclient||2018-03-18|Ring can't build because it depends on custom bundled versions of other packages
 net-im/ring-gnome||2018-03-18|Ring can't build because it depends on custom bundled versions of other packages
 astro/libkgeomap|astro/libkgeomap-kde4|2018-03-20|Make room for KDE updates
+databases/akonadi|databases/akonadi-kde4|2018-03-20|Make room for KDE updates
