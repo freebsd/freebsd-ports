@@ -3,7 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	4.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -50,11 +50,9 @@ USES=		cpe gem
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
 
-OPTIONS_DEFINE=	PASSENGER MEMCACHE_CLIENT
-PASSENGER_DESC=	Passenger backend
+OPTIONS_DEFINE=	MEMCACHE_CLIENT
 MEMCACHE_CLIENT_DESC=	MemCache-Client support
 
 MEMCACHE_CLIENT_RUN_DEPENDS=	rubygem-memcache-client>=1.2.0:databases/rubygem-memcache-client
-PASSENGER_RUN_DEPENDS=	rubygem-passenger-*>=2.2.15:www/rubygem-passenger
 
 .include <bsd.port.mk>
