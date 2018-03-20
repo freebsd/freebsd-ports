@@ -10,9 +10,8 @@ COMMENT=	PECL extension with routines for statistical computation
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	56
-
 USES=		php:pecl
+IGNORE_WITH_PHP=	56
 CONFLICTS=	pecl-stats-1*
 
 PORTSCOUT=	limit:^2.*

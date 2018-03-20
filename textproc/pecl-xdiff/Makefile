@@ -11,11 +11,10 @@ COMMENT=	PECL extension to create/apply binary and text patches
 
 LICENSE=	PHP301
 
-IGNORE_WITH_PHP=	70 71 72
-
 LIB_DEPENDS=	libxdiff.so:textproc/libxdiff
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	70 71 72
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -12,11 +12,10 @@ COMMENT=	Php Interface to the OAuth Protocol
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	70 71 72
-
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	70 71 72
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
