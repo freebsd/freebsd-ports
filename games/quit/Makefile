@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES?=	games
 MASTER_SITES=	http://megaui.net/fukuchi/archive/shortshort/
 
-MAINTAINER?=	meta+ports@vmeta.jp
+MAINTAINER?=	meta@FreeBSD.org
 COMMENT=	Bicycle with trailers like "sl"
 
 MANLANG=	ja

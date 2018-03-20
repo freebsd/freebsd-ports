@@ -10,7 +10,7 @@ CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR?=	${PORTNAME}
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
 
 LICENSE=	APACHE20

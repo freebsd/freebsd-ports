@@ -6,7 +6,7 @@ PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net x11-servers
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	High-performance, platform-neutral implementation of VNC
 
 LICENSE=	GPLv2+

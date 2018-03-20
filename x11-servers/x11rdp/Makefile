@@ -18,7 +18,7 @@ DISTNAME=	${PORTNAME}_xorg71
 DISTFILES=	${PORTNAME}_xorg71_r${X11RDPREVISION}.tar.gz:x11rdp
 DIST_SUBDIR=	xrdp
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	X11 server for xrdp
 
 LICENSE=	MIT

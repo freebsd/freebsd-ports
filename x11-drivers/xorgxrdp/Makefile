@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-drivers
 DIST_SUBDIR=	xrdp
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	X.Org driver enabling use through an RDP session with xrdp
 
 LICENSE=	MIT

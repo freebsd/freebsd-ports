@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
 
 LICENSE=	GPLv2
