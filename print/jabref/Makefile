@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jabref
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 PORTEPOCH=	1
 CATEGORIES=	print java editors
 MASTER_SITES=	http://builds.jabref.org/ \
