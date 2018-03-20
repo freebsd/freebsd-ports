@@ -356,7 +356,7 @@ workspace_PORT=		x11/kde-workspace-kde4
 workspace_LIB=		libkworkspace.so
 
 # Non-Software Compilation components
-akonadi_PORT=		databases/akonadi
+akonadi_PORT=		databases/akonadi-kde4
 akonadi_LIB=		libakonadiprotocolinternals.so
 
 attica_PORT=		x11-toolkits/attica
