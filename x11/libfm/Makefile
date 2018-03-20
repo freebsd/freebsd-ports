@@ -6,7 +6,7 @@ PORTVERSION=	1.2.5
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/LibFM/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT?=	Core library of PCManFM file manager
 
 LICENSE=	LGPL21
