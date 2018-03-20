@@ -5,7 +5,7 @@ PORTNAME=	miruo
 PORTVERSION=	0.9.6b
 CATEGORIES=	net
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Pretty-print TCP session monitor/analyzer
 
 LICENSE=	GPLv3

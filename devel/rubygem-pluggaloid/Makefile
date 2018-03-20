@@ -1,4 +1,4 @@
-# Created by: Koichiro IWAO <meta+ports@vmeta.jp>
+# Created by: Koichiro IWAO <meta@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pluggaloid

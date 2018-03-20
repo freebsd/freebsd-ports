@@ -5,7 +5,7 @@ PORTNAME=	cli53
 DISTVERSION=	0.8.12
 CATEGORIES=	dns
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Command line management of Route53 domains
 
 LICENSE=	MIT

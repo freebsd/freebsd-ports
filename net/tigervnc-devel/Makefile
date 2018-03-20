@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	net x11-servers
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	High-performance, platform-neutral implementation of VNC
 
 LICENSE=	GPLv2+

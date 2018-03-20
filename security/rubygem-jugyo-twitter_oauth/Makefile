@@ -6,7 +6,7 @@ DISTVERSION=	0.5.0.pre5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Fork of Twitter OAuth REST API client library for Ruby
 
 LICENSE=	MIT

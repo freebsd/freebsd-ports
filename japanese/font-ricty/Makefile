@@ -11,7 +11,7 @@ DISTFILES=	ricty_generator-${PORTVERSION}.sh ricty_discord_converter.pe
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	# nothing
 
-MAINTAINER?=	meta+ports@vmeta.jp
+MAINTAINER?=	meta@FreeBSD.org
 COMMENT?=	Ricty - fonts for programming
 
 LICENSE=	OFL11

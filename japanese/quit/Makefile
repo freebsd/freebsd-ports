@@ -3,7 +3,7 @@
 
 CATEGORIES=	japanese games
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../games/quit
 

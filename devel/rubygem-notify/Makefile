@@ -6,7 +6,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Desktop notify for many platform
 
 LICENSE=	MIT

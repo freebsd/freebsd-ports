@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	HTML5 desktop notifier plugin for roundcube
 
 LICENSE=	GPLv3

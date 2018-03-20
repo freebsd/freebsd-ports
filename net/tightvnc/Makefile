@@ -8,7 +8,7 @@ CATEGORIES=	net java
 MASTER_SITES=	SF/vnc-tight/TightVNC-unix/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Enhanced version of VNC
 
 LICENSE=	GPLv2
