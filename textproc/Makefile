@@ -586,7 +586,6 @@
     SUBDIR += p5-Geo-Parse-OSM
     SUBDIR += p5-Getopt-Lucid
     SUBDIR += p5-Google-Data-JSON
-    SUBDIR += p5-HTML-CTPP2
     SUBDIR += p5-HTML-Copy
     SUBDIR += p5-HTML-Entities-ImodePictogram
     SUBDIR += p5-HTML-Entities-Interpolate
@@ -1491,7 +1490,6 @@
     SUBDIR += rubygem-compass
     SUBDIR += rubygem-compass-core
     SUBDIR += rubygem-compass-import-once
-    SUBDIR += rubygem-compass-rails
     SUBDIR += rubygem-creole
     SUBDIR += rubygem-css_parser
     SUBDIR += rubygem-cssmin

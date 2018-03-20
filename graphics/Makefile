@@ -102,7 +102,6 @@
     SUBDIR += clutter-gtk
     SUBDIR += clutter-gtk3
     SUBDIR += cluttermm
-    SUBDIR += code-eli
     SUBDIR += cogl
     SUBDIR += colmap
     SUBDIR += colord

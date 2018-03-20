@@ -1,8 +1,0 @@
-pg_rman is an online backup and restore tool for PostgreSQL.
-
-The goal of the pg_rman project is providing a method for online
-backup and PITR as easy as pg_dump. Also, it maintains a backup
-catalog per database cluster. Users can maintain old backups including
-archive logs with one command.
-
-WWW: https://github.com/ossc-db/pg_rman
