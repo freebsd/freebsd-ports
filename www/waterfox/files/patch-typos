@@ -1,5 +1,15 @@
 Mismerges found by comparing changes with Firefox 56
 
+--- browser/components/customizableui/CustomizeMode.jsm
++++ browser/components/customizableui/CustomizeMode.jsm
+@@ -735,7 +735,6 @@ CustomizeMode.prototype = {
+       // Put the tip contents in the popup.
+       let bundle = this.document.getElementById("bundle_browser");
+       const kLabelClass = "customization-tipPanel-link";
+-      // eslint-disable-next-line no-unsanitized/property
+       messageNode.unsafeSetInnerHTML(bundle.getFormattedString("customizeTips.tip0", [
+         "<label class=\"customization-tipPanel-em\" value=\"" +
+           bundle.getString("customizeTips.tip0.hint") + "\"/>",
 --- dom/base/nsNodeUtils.cpp.orig
 +++ dom/base/nsNodeUtils.cpp
 @@ -589,6 +589,7 @@ nsNodeUtils::CloneAndAdopt(nsINode *aNode, bool aClone, bool aDeep,
@@ -10,6 +20,26 @@ Mismerges found by comparing changes with Firefox 56
            if (elem) {
              elem->NodeInfoChanged(newDoc);
            }
+--- dom/xslt/nsIDocumentTransformer.h
++++ dom/xslt/nsIDocumentTransformer.h
+@@ -7,6 +7,7 @@
+ 
+ #include "nsISupports.h"
+ 
++class nsIContent;
+ class nsIDocument;
+ class nsIDOMNode;
+ class nsIURI;
+--- gfx/2d/DrawTargetD2D1.cpp
++++ gfx/2d/DrawTargetD2D1.cpp
+@@ -1251,6 +1251,7 @@ DrawTargetD2D1::CleanupD2D()
+   }
+ }
+ 
++void
+ DrawTargetD2D1::FlushInternal(bool aHasDependencyMutex /* = false */)
+ {
+   if (IsDeviceContextValid()) {
 --- security/nss/lib/softoken/softkver.h.orig
 +++ security/nss/lib/softoken/softkver.h
 @@ -26,6 +26,6 @@
