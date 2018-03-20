@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme-tiny
-DISTVERSION=	0.0.g2017-11-14
+DISTVERSION=	4.0.3
 CATEGORIES=	security python
 
 MAINTAINER=	mat@FreeBSD.org
@@ -16,17 +16,22 @@ SHEBANG_FILES=	acme_tiny.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	diafygi
-GH_TAGNAME=	4ed1395
 
-SUB_FILES=	pkg-message
 NO_BUILD=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/acme_tiny ${DOCSDIR}/README.md
+PLIST_FILES=	bin/acme_tiny
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_SUB_FILES=	pkg-message
+PORTDOCS=	README.md
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/acme_tiny.py ${STAGEDIR}${PREFIX}/bin/acme_tiny
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
