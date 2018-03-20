@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sterm
-PORTVERSION=	0.7
+DISTVERSION=	0.8
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/st/
 DISTNAME=	st-${PORTVERSION}
@@ -10,10 +10,8 @@ DISTNAME=	st-${PORTVERSION}
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Simple X terminal
 
-LICENSE=	MITX
-LICENSE_NAME=	MIT/X Consortium License
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
@@ -23,9 +21,15 @@ USE_XORG=	x11 xext xft
 
 PLIST_FILES=	bin/st man/man1/st.1.gz
 
-PORTDOCS=	README
+# This way we avoid running tic on st.info which does not work as expected.
+BINARY_ALIAS=	tic=true
+
+PORTDATA=	config.def.h st.info
+PORTDOCS=	FAQ LEGACY README TODO
 
 OPTIONS_DEFINE=	DOCS
+
+SUB_FILES=	pkg-message
 
 pre-everything::
 	@${ECHO_MSG} "You can build st with your own config.h using the ST_CONF knob:"
@@ -34,23 +38,23 @@ pre-everything::
 post-patch:
 .if defined(ST_CONF)
 	@${ECHO_MSG} "creating config.h from ${ST_CONF}"
-	@${CP} ${ST_CONF} ${WRKSRC}/config.h
+	@${LN} -sf ${ST_CONF} ${WRKSRC}/config.h
 .endif
 	@${REINPLACE_CMD} -e 's|^VERSION = .*|VERSION = ${PORTVERSION}|' \
 		-e 's|^PREFIX = .*|PREFIX = ${PREFIX}|' \
-		-e 's|^LOCALBASE = .*|LOCALBASE = ${LOCALBASE}|' \
 		-e "s|^MANPREFIX = .*|MANPREFIX = ${MANPREFIX}/man|" \
 		-e "s|^X11INC = .*|X11INC = ${LOCALBASE}/include|" \
 		-e "s|^X11LIB = .*|X11LIB = ${LOCALBASE}/lib|" \
+		-e "s|^CPPFLAGS =|CPPFLAGS +=|" \
 		${WRKSRC}/config.mk
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/st
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDATA} ${STAGEDIR}${DATADIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
