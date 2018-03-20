@@ -20,6 +20,6 @@ start_pre()
 
 depend() {
 	provide musicpd
-	need mixer oss avahi_daemon 
+	need mixer avahi_daemon 
 	keyword -shutdown
 }
