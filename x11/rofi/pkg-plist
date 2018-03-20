@@ -11,6 +11,7 @@ man/man1/rofi-theme-selector.1.gz
 man/man1/rofi.1.gz
 man/man5/rofi-theme.5.gz
 %%DATADIR%%/themes/Adapta-Nokto.rasi
+%%DATADIR%%/themes/Arc-Dark.rasi
 %%DATADIR%%/themes/Arc.rasi
 %%DATADIR%%/themes/DarkBlue.rasi
 %%DATADIR%%/themes/Indego.rasi
@@ -23,6 +24,7 @@ man/man5/rofi-theme.5.gz
 %%DATADIR%%/themes/c64.rasi
 %%DATADIR%%/themes/dmenu.rasi
 %%DATADIR%%/themes/glue_pro_blue.rasi
+%%DATADIR%%/themes/gruvbox-common.rasi
 %%DATADIR%%/themes/gruvbox-dark-hard.rasi
 %%DATADIR%%/themes/gruvbox-dark-soft.rasi
 %%DATADIR%%/themes/gruvbox-dark.rasi
