@@ -5,7 +5,8 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20180320: users of x11/sterm
+20180320:
+  AFFECTS: users of x11/sterm
   AUTHOR: pkubaj@anongoth.pl
 
   The user-defined options in config.h have changed.  You should
