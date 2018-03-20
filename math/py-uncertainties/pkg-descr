@@ -1,0 +1,21 @@
+The uncertainties package is a free, cross-platform program that transparently
+handles calculations with numbers with uncertainties (like 3.14+/-0.01). It can
+also yield the derivatives of any expression.
+
+The uncertainties package takes the pain and complexity out of uncertainty
+calculations. Error propagation is not to be feared anymore!
+
+Calculations of results with uncertainties, or of derivatives, can be performed
+either in an interactive session (as with a calculator), or in programs written
+in the Python programming language. Existing calculation code can run with
+little or no change.
+
+Whatever the complexity of a calculation, this package returns its result with
+an uncertainty as predicted by linear error propagation theory. It automatically
+calculates derivatives and uses them for calculating uncertainties. Almost all
+uncertainty calculations are performed analytically.
+
+Correlations between variables are automatically handled, which sets this module
+a part from many existing error propagation codes.
+
+WWW: https://uncertainties-python-package.readthedocs.io/en/latest/
