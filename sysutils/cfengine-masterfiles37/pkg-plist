@@ -50,6 +50,7 @@
 %%EXAMPLESDIR%%/masterfiles/controls/3.7/reports.cf
 %%EXAMPLESDIR%%/masterfiles/controls/3.7/update_def.cf
 %%EXAMPLESDIR%%/masterfiles/controls/3.7/update_def_inputs.cf
+%%EXAMPLESDIR%%/masterfiles/inventory/aix.cf
 %%EXAMPLESDIR%%/masterfiles/inventory/any.cf
 %%EXAMPLESDIR%%/masterfiles/inventory/debian.cf
 %%EXAMPLESDIR%%/masterfiles/inventory/freebsd.cf

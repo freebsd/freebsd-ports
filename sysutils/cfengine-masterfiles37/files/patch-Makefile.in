@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2018-01-31 05:59:51.000000000 -0800
++++ Makefile.in	2018-03-20 12:32:06.042218000 -0700
+@@ -325,7 +325,7 @@
+ EXTRA_DIST = README.md inventory/README.md lib/README.md CONTRIBUTING.md LICENSE
+ 
+ # Do not reveal usernames of the buildslave
+-TAR_OPTIONS = --owner=0 --group=0
++export TAR_OPTIONS = --owner=0 --group=0
+ all: all-recursive
+ 
+ .SUFFIXES:
+@@ -818,8 +818,6 @@
+ 	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
+ 	pdf-am ps ps-am tags tags-am uninstall uninstall-am \
+ 	uninstall-nobase_dist_masterfilesDATA
+-
+-export TAR_OPTIONS
+ 
+ # Store the permissions properly in the tarball for acceptance tests to succeed
+ dist-hook:

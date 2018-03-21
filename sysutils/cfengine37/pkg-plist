@@ -279,6 +279,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/report_diffs.cf
 %%DOCSDIR%%/examples/report_state.cf
 %%DOCSDIR%%/examples/reporting.cf
+%%DOCSDIR%%/examples/reports.cf
 %%DOCSDIR%%/examples/reporttofile.cf
 %%DOCSDIR%%/examples/resolveconf.cf
 %%DOCSDIR%%/examples/returnszero.cf
@@ -298,6 +299,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/service_catalogue_separate.cf
 %%DOCSDIR%%/examples/service_disable.cf
 %%DOCSDIR%%/examples/service_start.cf
+%%DOCSDIR%%/examples/services.cf
 %%DOCSDIR%%/examples/services_concept.cf
 %%DOCSDIR%%/examples/services_win.cf
 %%DOCSDIR%%/examples/setuidlog.cf
