@@ -1,0 +1,9 @@
+%%SITE_PERL%%/DSC/extractor.pm
+%%SITE_PERL%%/DSC/extractor/config.pm
+%%SITE_PERL%%/DSC/grapher.pm
+%%SITE_PERL%%/DSC/grapher/config.pm
+%%SITE_PERL%%/DSC/grapher/plot.pm
+%%SITE_PERL%%/DSC/grapher/template.pm
+%%SITE_PERL%%/DSC/grapher/text.pm
+%%SITE_PERL%%/DSC/ploticus.pm
+%%SITE_PERL%%/DSC/putfile.pm
