@@ -1,0 +1,8 @@
+--- Makefile.orig	2018-03-21 11:37:45 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-VERSION=$(shell git describe --tags --always | sed 's/^v//')
++VERSION?=$(shell git describe --tags --always | sed 's/^v//')
+ 
+ 
+ build:
