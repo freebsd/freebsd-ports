@@ -1,0 +1,47 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: grok_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# grok_exporter_enable (bool):            Set to NO by default.
+#               Set it to YES to enable grok_exporter.
+# grok_exporter_config (string):          Set path to config file
+#               Default is "%%ETCDIR%%/config.yml".
+# grok_exporter_user (string):            Set user that grok_exporter will run under
+#               Default is "nobody".
+# grok_exporter_group (string):           Set group that grok_exporter will run under
+#               Default is "nobody".
+
+. /etc/rc.subr
+
+name=grok_exporter
+desc="Grok prometheus exporter"
+rcvar=grok_exporter_enable
+
+load_rc_config $name
+
+: ${grok_exporter_enable:=NO}
+: ${grok_exporter_config:=%%ETCDIR%%/config.yml}
+: ${grok_exporter_user:=nobody}
+: ${grok_exporter_group:=nobody}
+
+pidfile=/var/run/grok_exporter.pid
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/grok_exporter
+command_args="-p ${pidfile} /usr/bin/env ${procname} -config ${grok_exporter_config}"
+
+start_precmd=grok_exporter_startprecmd
+
+grok_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${grok_exporter_user} -g ${grok_exporter_group} /dev/null ${pidfile};
+    fi
+}
+
+run_rc_command "$1"

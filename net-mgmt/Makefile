@@ -76,6 +76,7 @@
     SUBDIR += gnu-ipcalc
     SUBDIR += grepcidr
     SUBDIR += grepip
+    SUBDIR += grok_exporter
     SUBDIR += gsnmp
     SUBDIR += guifi-snpservices
     SUBDIR += hastmon

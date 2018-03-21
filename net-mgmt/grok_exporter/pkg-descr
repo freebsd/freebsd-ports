@@ -1,0 +1,12 @@
+Grok is a tool to parse crappy unstructured log data into something structured
+and queryable. Grok is heavily used in Logstash to provide log data as input for
+ElasticSearch.
+
+Grok ships with about 120 predefined patterns for syslog logs, apache and other
+webserver logs, mysql logs, etc. It is easy to extend Grok with custom patterns.
+
+The grok_exporter aims at porting Grok from the ELK stack to Prometheus
+monitoring. The goal is to use Grok patterns for extracting Prometheus metrics
+from arbitrary log files.
+
+WWW: https://github.com/fstab/grok_exporter
