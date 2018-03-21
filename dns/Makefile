@@ -63,6 +63,7 @@
     SUBDIR += doc
     SUBDIR += dq
     SUBDIR += drool
+    SUBDIR += dsp
     SUBDIR += dynip
     SUBDIR += erlang-idna
     SUBDIR += ez-ipupdate
