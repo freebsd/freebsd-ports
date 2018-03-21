@@ -1,0 +1,5 @@
+TIMESTAMP = 1513652246
+SHA256 (fstab-grok_exporter-v0.2.3_GH0.tar.gz) = 2dd92d93b59979d409e11c2e5ca3fce28299529f63dde3423234264c0a846338
+SIZE (fstab-grok_exporter-v0.2.3_GH0.tar.gz) = 470262
+SHA256 (logstash-plugins-logstash-patterns-core-6d25c13_GH0.tar.gz) = 7f4986b695d82bcfd585b47635607267ce473a601df504672072b242ae7c607f
+SIZE (logstash-plugins-logstash-patterns-core-6d25c13_GH0.tar.gz) = 27383
