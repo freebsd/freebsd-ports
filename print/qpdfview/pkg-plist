@@ -19,7 +19,9 @@ share/icons/hicolor/scalable/apps/qpdfview.svg
 %%DATADIR%%/help_fr.html
 %%DATADIR%%/help_gl.html
 %%DATADIR%%/help_it.html
+%%DATADIR%%/help_ja.html
 %%DATADIR%%/help_ko.html
+%%DATADIR%%/help_lt.html
 %%DATADIR%%/help_ms.html
 %%DATADIR%%/help_pl.html
 %%DATADIR%%/help_pt.html
