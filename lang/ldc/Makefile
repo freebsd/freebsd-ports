@@ -49,7 +49,9 @@ post-patch:
 		${WRKSRC}/cmake/Modules/FindLLVM.cmake
 
 pre-configure:
-	@cd ${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/} && ${CMAKE_BIN} .
-	@cd ${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/} && ${MAKE}
+	@cd ${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/} && \
+	    ${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} .
+	@cd ${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/} && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE}
 
 .include <bsd.port.post.mk>
