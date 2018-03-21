@@ -1,0 +1,10 @@
+DSC (originally developed by The Measurement Factory and now developed
+by DNS-OARC) is a system for collecting and exploring statistics from
+busy DNS servers. It uses a distributed architecture with collectors
+running on or near nameservers sending their data to one or more
+central presenters for display and archiving. Collectors use pcap to
+sniff network traffic. They transmit aggregated data to the presenter
+as XML data. dsc is configurable to allow the administrator to capture
+any kind of data that he or she chooses. 
+
+WWW: https://www.dns-oarc.net/dsc/
