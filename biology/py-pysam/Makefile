@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysam
-DISTVERSION=	0.14
+DISTVERSION=	0.14.1
 CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,6 @@ USES=		gmake python
 USE_PYTHON=	autoplist distutils cython cython_run
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pysam/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pysam/*.so
 
 .include <bsd.port.mk>
