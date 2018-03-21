@@ -49,6 +49,7 @@
     SUBDIR += libiconv
     SUBDIR += libticonv
     SUBDIR += libutf-8
+    SUBDIR += lua51-iconv
     SUBDIR += lua-iconv
     SUBDIR += lua-json
     SUBDIR += mimelib
