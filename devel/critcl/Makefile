@@ -14,8 +14,6 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_aarch64=		fails to package: Unable to access file freebsd-aarch64/md5c.so: No such file or directory
-
 RUN_DEPENDS=	${LOCALBASE}/lib/Trf/pkgIndex.tcl:devel/tcl-trf	\
 		${LOCALBASE}/lib/tcllib/cmdline/pkgIndex.tcl:devel/tcllib
 
@@ -26,7 +24,7 @@ GH_ACCOUNT=	andreas-kupries
 TEST_TARGET=	test
 
 PLIST_SUB+=	VER=${PORTVERSION} \
-		ARCH=${ARCH:C/arm.*/arm/:S/i386/ix86/}
+		ARCH=${ARCH:C/arm.*/arm/:S/i386/ix86/:S/aarch64/arm/}
 PORTDOCS=	*
 
 NO_BUILD=	yes
