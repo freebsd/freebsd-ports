@@ -1,6 +1,16 @@
---- CMakeLists.txt.orig	2011-07-31 11:50:34.000000000 +0400
-+++ CMakeLists.txt	2012-03-05 05:54:52.485029323 +0400
-@@ -588,7 +588,7 @@
+--- CMakeLists.txt.orig	2017-08-28 16:50:49 UTC
++++ CMakeLists.txt
+@@ -252,6 +252,9 @@ ENDIF()
+ 
+ INCLUDE_DIRECTORIES(
+     ${OpenSceneGraph_SOURCE_DIR}/include
++)
++
++INCLUDE_DIRECTORIES(SYSTEM
+     ${OPENGL_INCLUDE_DIR}
+ )
+ 
+@@ -846,7 +849,7 @@ ENDIF()
  
  IF(UNIX AND NOT WIN32 AND NOT APPLE)
    IF(CMAKE_SIZEOF_VOID_P MATCHES "8")
@@ -9,7 +19,7 @@
        MARK_AS_ADVANCED(LIB_POSTFIX)
    ENDIF()
  ENDIF()
-@@ -972,7 +972,7 @@
+@@ -1275,7 +1278,7 @@ FOREACH(PKGCONFIG_FILE ${PKGCONFIG_FILES
      ${PROJECT_BINARY_DIR}/packaging/pkgconfig/${PKGCONFIG_FILE}.pc
      @ONLY
      )
