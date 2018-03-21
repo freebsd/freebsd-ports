@@ -1,6 +1,0 @@
-Pfstmo package contains the implementation of state-of-the-art tone
-mapping operators. The motivation here is to provide an implementation
-of tone mapping operators suitable for convenient processing of both
-static images and animations.
-
-WWW: http://www.mpi-inf.mpg.de/resources/tmo/
