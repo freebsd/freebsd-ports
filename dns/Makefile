@@ -119,6 +119,7 @@
     SUBDIR += openresolv
     SUBDIR += p5-AnyEvent-CacheDNS
     SUBDIR += p5-AnyEvent-DNS-EtcHosts
+    SUBDIR += p5-App-DSC-DataTool
     SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-BIND-Config-Parser
     SUBDIR += p5-DNS-Config
