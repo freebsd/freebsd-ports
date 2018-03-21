@@ -21,8 +21,6 @@ USE_GNOME=	introspection:build
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_UNSAFE= yes
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
