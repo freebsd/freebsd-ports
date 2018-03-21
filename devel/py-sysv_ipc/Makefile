@@ -1,8 +1,7 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sysv_ipc
-PORTVERSION=	0.7.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://semanchuk.com/philip/sysv_ipc/ \
 		CHEESESHOP
