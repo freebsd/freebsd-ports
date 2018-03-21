@@ -1,0 +1,7 @@
+###########################################
+
+Before you configure:
+To obtain MaxMind's GeoIP tables,
+run %%LOCALBASE%%/bin/geoipupdate.sh manually.
+
+###########################################
