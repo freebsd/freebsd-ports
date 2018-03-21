@@ -10,13 +10,16 @@ MASTER_SITES=	GNU
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library to evaluate mathematical functions
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	flex>=2.5.39_1:textproc/flex
 LIB_DEPENDS=	libguile.so:lang/guile
 
+USES=		libtool localbase makeinfo pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LEXLIB=-lfl_pic MAKEINFO="${MAKEINFO} --no-split"
 USE_LDCONFIG=	yes
-USES=		libtool localbase makeinfo pathfix
 INSTALL_TARGET=	install-strip
 
 INFO=		libmatheval
