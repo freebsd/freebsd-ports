@@ -780,7 +780,6 @@
     SUBDIR += pencil
     SUBDIR += peps
     SUBDIR += perceptualdiff
-    SUBDIR += pfstmo
     SUBDIR += pfstools
     SUBDIR += pgplot
     SUBDIR += pho
