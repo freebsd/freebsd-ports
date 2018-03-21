@@ -1,6 +1,6 @@
 bin/caf
 bin/cafrun
-include/OpenCoarrays-1.9.3_GNU-%%GCC_VER%%/opencoarrays.mod
+include/OpenCoarrays-%%PORTVERSION%%_GNU-%%GCC_VER%%/opencoarrays.mod
 include/libcaf-gfortran-descriptor.h
 include/libcaf.h
 include/opencoarrays.mod
