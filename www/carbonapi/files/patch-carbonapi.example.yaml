@@ -1,0 +1,19 @@
+--- carbonapi.example.yaml.orig	2018-03-20 21:04:44 UTC
++++ carbonapi.example.yaml
+@@ -106,7 +106,7 @@ upstreams:
+ # If not zero, enabled cache for find requests
+ # This parameter controls when it will expire (in seconds)
+ # Default: 600 (10 minutes)
+-graphTemplates: graphTemplates.example.yaml
++graphTemplates: /usr/local/etc/carbonapi/graphTemplates.example.yaml
+ expireDelaySec: 10
+ # Uncomment this to get the behavior of graphite-web as proposed in https://github.com/graphite-project/graphite-web/pull/2239
+ # Beware this will make darkbackground graphs less readable
+@@ -125,6 +125,6 @@ logger:
+       encodingTime: "iso8601"
+       encodingDuration: "seconds"
+     - logger: ""
+-      file: "carbonapi.log"
++      file: "/var/log/carbonapi/carbonapi.log"
+       level: "info"
+       encoding: "json"
