@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-oauth2
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
