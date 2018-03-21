@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	qpdfview
-PORTVERSION=	0.4.16
-PORTREVISION=	8
+DISTVERSION=	0.4.17beta1
 CATEGORIES=	print
-MASTER_SITES=	https://launchpadlibrarian.net/226592308/ \
-		https://launchpad.net/${PORTVERSION}/trunk/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpadlibrarian.net/294276875/ \
+		https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Tabbed DjVu/PDF/PS document viewer
