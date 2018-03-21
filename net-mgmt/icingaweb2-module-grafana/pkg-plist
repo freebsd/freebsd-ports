@@ -5,6 +5,7 @@
 %%WWWDIR%%/RELEASE.md
 %%WWWDIR%%/application/controllers/ConfigController.php
 %%WWWDIR%%/application/controllers/GraphController.php
+%%WWWDIR%%/application/controllers/ImgController.php
 %%WWWDIR%%/application/controllers/ShowController.php
 %%WWWDIR%%/application/forms/Config/GeneralConfigForm.php
 %%WWWDIR%%/application/forms/Graph/GraphForm.php
