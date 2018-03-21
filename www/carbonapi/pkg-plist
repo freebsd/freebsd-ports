@@ -1,0 +1,6 @@
+bin/carbonapi
+%%ETCDIR%%/carbonapi.example.toml
+%%ETCDIR%%/carbonapi.example.yaml
+%%ETCDIR%%/graphTemplates.example.toml
+%%ETCDIR%%/graphTemplates.example.yaml
+@dir(carbon,carbon,0750) /var/log/carbonapi

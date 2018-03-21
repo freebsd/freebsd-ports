@@ -1,0 +1,42 @@
+# $FreeBSD$
+#
+# PROVIDE: carbonapi
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable carbonapi
+# carbonapi_enable="YES"
+#
+# carbonapi_enable (bool): 	Set to YES to enable carbonapi
+#				Default: NO
+# carbonapi_conf (str):		carbonapi configration file
+#				Default: empty
+# carbonapi_user (str):		carbonapi daemon user
+#				Default: carbon
+# carbonapi_group (str):		carbonapi daemon group
+#				Default: carbon
+
+. /etc/rc.subr
+
+name="carbonapi"
+rcvar=carbonapi_enable
+load_rc_config $name
+
+: ${carbonapi_enable:="NO"}
+: ${carbonapi_user:="carbon"}
+: ${carbonapi_group:="carbon"}
+: ${carbonapi_conf:=""}
+: ${carbonapi_options:="-config ${carbonapi_conf}"} 
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/carbonapi"
+command=/usr/sbin/daemon
+command_args="-f -c -p ${pidfile} ${procname} ${carbonapi_options}"
+start_precmd="carbonapi_precmd"
+
+carbonapi_precmd()
+{
+    install -o ${carbonapi_user} /dev/null ${pidfile}
+}
+
+run_rc_command "$1"

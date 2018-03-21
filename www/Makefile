@@ -62,6 +62,7 @@
     SUBDIR += calamaris-devel
     SUBDIR += caldavzap
     SUBDIR += calendarserver
+    SUBDIR += carbonapi
     SUBDIR += castget
     SUBDIR += cblog
     SUBDIR += cgi-lib

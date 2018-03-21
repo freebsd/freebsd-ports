@@ -1,0 +1,19 @@
+--- carbonapi.example.toml.orig	2018-03-20 21:03:28 UTC
++++ carbonapi.example.toml
+@@ -11,7 +11,7 @@ maxBatchSize = 100
+ pidFile = ""
+ sendGlobsAsIs = false
+ tz = ""
+-graphTemplates = "graphTemplates.example.toml"
++graphTemplates = "/usr/local/etc/carbonapi/graphTemplates.example.toml"
+ 
+ [cache]
+ defaultTimeoutSec = 60
+@@ -35,7 +35,7 @@ logger = ""
+ 
+ [[logger]]
+ encoding = "json"
+-file = "carbonapi.log"
++file = "/var/log/carbonapi/carbonapi.log"
+ level = "info"
+ logger = ""
