@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-rdp
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Remmina plugin for RDP protocol
 
