@@ -1,0 +1,4 @@
+carbonzipper is part of the go implementation of the carbon stack. It sits
+between carbonapi and go-carbon
+
+WWW: https://github.com/go-graphite/carbonzipper/

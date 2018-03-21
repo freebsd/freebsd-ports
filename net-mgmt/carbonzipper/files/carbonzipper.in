@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: carbonzipper
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable carbonzipper
+# carbonzipper_enable="YES"
+#
+# carbonzipper_enable (bool): 	Set to YES to enable carbonzipper
+#				Default: NO
+# carbonzipper_conf (str):		carbonzipper configration file
+#				Default: empty
+# carbonzipper_user (str):		carbonzipper daemon user
+#				Default: carbon
+# carbonzipper_group (str):		carbonzipper daemon group
+#				Default: carbon
+
+. /etc/rc.subr
+
+name="carbonzipper"
+rcvar=carbonzipper_enable
+load_rc_config $name
+
+: ${carbonzipper_enable:="NO"}
+: ${carbonzipper_user:="carbon"}
+: ${carbonzipper_group:="carbon"}
+: ${carbonzipper_conf:=""}
+: ${carbonzipper_options:="-config ${carbonzipper_conf}"} 
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/carbonzipper"
+command=/usr/sbin/daemon
+command_args="-f -c -p ${pidfile} ${procname} ${carbonzipper_options}"
+start_precmd="carbonzipper_precmd"
+
+carbonzipper_precmd()
+{
+    install -o ${carbonzipper_user} /dev/null ${pidfile}
+}
+
+run_rc_command "$1"
