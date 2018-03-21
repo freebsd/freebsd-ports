@@ -1,2 +1,3 @@
-SHA256 (sysv_ipc-0.7.0.tar.gz) = 6c352fff22619dcb8dac4e57ba715038494002212c5d53af448805956f9b937b
-SIZE (sysv_ipc-0.7.0.tar.gz) = 93362
+TIMESTAMP = 1521622853
+SHA256 (sysv_ipc-1.0.0.tar.gz) = cd70548a92218ede2da499080b31e52f1d7cf60716c5cc7d468ec89e8b73c530
+SIZE (sysv_ipc-1.0.0.tar.gz) = 99433
