@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.13.9
+PORTVERSION=	1.13.10
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -112,6 +112,7 @@ OPTIONS_DEFINE=	\
 	LUA \
 	MEMC \
 	MODSECURITY \
+	MODSECURITY3 \
 	NAXSI \
 	PASSENGER \
 	POSTGRES \
@@ -223,6 +224,7 @@ LET_DESC=			3rd party let module
 LUA_DESC=			3rd party lua module
 MEMC_DESC=			3rd party memc (memcached) module
 MODSECURITY_DESC=		3rd party mod_security module
+MODSECURITY3_DESC=		3rd party mod_security v3 module
 NAXSI_DESC=			3rd party naxsi module
 PASSENGER_DESC=			3rd party passenger module
 POSTGRES_DESC=			3rd party postgres module
@@ -893,6 +895,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 .endif
 
+.if ${PORT_OPTIONS:MMODSECURITY3}
+LIB_DEPENDS+=	libmodsecurity.so:www/mod_security3
+GH_TUPLE+=	SpiderLabs:ModSecurity-nginx:c0ae166:modsec
+CONFIGURE_ARGS+=--add-module=${WRKSRC_modsec}
+.endif
+
 .if ${PORT_OPTIONS:MNAXSI}
 NGINX_NAXSI_VERSION=	0.55.3
 GH_ACCOUNT+=	nbs-system:naxsi
@@ -911,7 +919,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.1.12
+PASSENGER_VERSION=	5.2.1
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 .if ${PORT_OPTIONS:MDSO}
@@ -1139,7 +1147,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
 .endif
 
 .if ${PORT_OPTIONS:MBROTLI}
-NGINX_BROTLI_VERSION=	8cd9dd5
+NGINX_BROTLI_VERSION=	6a11744
 LIB_DEPENDS+=	libbrotlicommon.so:archivers/brotli
 GH_ACCOUNT+=	eustas:brotli
 GH_PROJECT+=	ngx_brotli:brotli
