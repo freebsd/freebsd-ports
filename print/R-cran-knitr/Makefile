@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knitr
-PORTVERSION=	1.17
-PORTREVISION=	1
+PORTVERSION=	1.20
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,7 +12,6 @@ COMMENT=	General-Purpose Package for Dynamic Report Generation in R
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-evaluate>=0.10:devel/R-cran-evaluate \
-		R-cran-digest>0:security/R-cran-digest \
 		R-cran-highr>0:textproc/R-cran-highr \
 		R-cran-markdown>0:textproc/R-cran-markdown \
 		R-cran-stringr>=0.6:textproc/R-cran-stringr \
