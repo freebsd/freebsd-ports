@@ -1,6 +1,0 @@
-PFScalibration package provides an implementation of the Robertson
-et al. 2003 method for the photometric calibration of cameras and
-for the recovery of high dynamic range (HDR) images from the set
-of low dynamic range (LDR) exposures.
-
-WWW: http://www.mpii.mpg.de/resources/hdr/calibration/pfs.html
