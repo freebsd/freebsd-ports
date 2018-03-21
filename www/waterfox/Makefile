@@ -3,7 +3,14 @@
 PORTNAME=	waterfox
 DISTVERSION=	56.0.4-72
 DISTVERSIONSUFFIX=	-ga9c77bbb9f25
+PORTREVISION=	1
 CATEGORIES=	www ipv6
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	ad38ad1b4750.patch:-p1 \
+		557f604cc4b3.patch:-p1 \
+		75c3dd6b9888.patch:-p1 \
+		${NULL}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Distilled fork of Firefox
