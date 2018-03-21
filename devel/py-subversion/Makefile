@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PORTREVISION=	1
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Python bindings for version control system

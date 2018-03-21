@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=	ruby-
+PORTREVISION=	1
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Ruby bindings for version control system

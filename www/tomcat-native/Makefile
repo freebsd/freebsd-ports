@@ -3,6 +3,7 @@
 
 PORTNAME=	tomcat-native
 PORTVERSION=	1.2.16
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/tomcat/tomcat-connectors/native/${PORTVERSION}/source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

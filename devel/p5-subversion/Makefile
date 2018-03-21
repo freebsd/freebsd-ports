@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=	p5-
-PORTREVISION=	0
+PORTREVISION=	1
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Perl bindings for Version control system
