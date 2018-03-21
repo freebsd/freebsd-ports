@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	msp430-debug-stack
-PORTVERSION=	3.10.001.000
-PORTREVISION=	7
+PORTVERSION=	3.12.000.004
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ti.com/lit/sw/slac460x/ \
 		http://www.ti.com/lit/ug/slau320z/:doc1 \
