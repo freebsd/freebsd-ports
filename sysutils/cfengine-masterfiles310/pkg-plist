@@ -46,6 +46,7 @@
 %%EXAMPLESDIR%%/masterfiles/controls/reports.cf
 %%EXAMPLESDIR%%/masterfiles/controls/update_def.cf
 %%EXAMPLESDIR%%/masterfiles/controls/update_def_inputs.cf
+%%EXAMPLESDIR%%/masterfiles/inventory/aix.cf
 %%EXAMPLESDIR%%/masterfiles/inventory/any.cf
 %%EXAMPLESDIR%%/masterfiles/inventory/debian.cf
 %%EXAMPLESDIR%%/masterfiles/inventory/freebsd.cf
@@ -108,6 +109,7 @@
 %%EXAMPLESDIR%%/masterfiles/services/autorun/hello.cf
 %%EXAMPLESDIR%%/masterfiles/services/main.cf
 %%EXAMPLESDIR%%/masterfiles/sketches/meta/api-runfile.cf
+%%EXAMPLESDIR%%/masterfiles/standalone_self_upgrade.cf
 %%EXAMPLESDIR%%/masterfiles/templates/cf-apache.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-consumer.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-execd.service.mustache
@@ -120,6 +122,8 @@
 %%EXAMPLESDIR%%/masterfiles/templates/cfengine3.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cfengine_watchdog.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/host_info_report.mustache
+%%EXAMPLESDIR%%/masterfiles/templates/json_multiline.mustache
+%%EXAMPLESDIR%%/masterfiles/templates/json_serial.mustache
 %%EXAMPLESDIR%%/masterfiles/update.cf
 %%EXAMPLESDIR%%/modules/packages/apt_get
 %%EXAMPLESDIR%%/modules/packages/freebsd_ports
@@ -127,3 +131,4 @@
 %%EXAMPLESDIR%%/modules/packages/pkg
 %%EXAMPLESDIR%%/modules/packages/pkgsrc
 %%EXAMPLESDIR%%/modules/packages/yum
+%%EXAMPLESDIR%%/modules/packages/zypper
