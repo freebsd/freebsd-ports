@@ -10219,3 +10219,4 @@ devel/elixir-stemmer||2018-03-20|Has expired: Broken for more than 6 months
 benchmarks/expedite||2018-03-20|Has expired: Broken for more than 6 months
 textproc/p5-HTML-CTPP2||2018-03-20|Has expired: Broken for more than 6 months
 textproc/rubygem-compass-rails||2018-03-20|Has expired: Broken for more than 6 months
+graphics/pfscalibration||2018-03-20|Deprecated: pfs-calibration is a part of pfstools (from version 2.0)

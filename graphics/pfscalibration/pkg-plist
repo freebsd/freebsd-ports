@@ -1,9 +1,0 @@
-bin/dcraw2hdrgen
-bin/jpeg2hdrgen
-bin/pfshdrcalibrate
-bin/pfsinhdrgen
-bin/pfsmergehdr
-man/man1/jpeg2hdrgen.1.gz
-man/man1/dcraw2hdrgen.1.gz
-man/man1/pfsinhdrgen.1.gz
-man/man1/pfshdrcalibrate.1.gz
