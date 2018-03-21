@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: carbon_relay_ng
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable carbon_relay_ng
+# carbon_relay_ng_enable="YES"
+#
+# carbon_relay_ng_enable (bool): 	Set to YES to enable carbon_relay_ng
+#				Default: NO
+# carbon_relay_ng_conf (str):		carbon_relay_ng configration file
+#				Default: empty
+# carbon_relay_ng_user (str):		carbon_relay_ng daemon user
+#				Default: carbon
+# carbon_relay_ng_group (str):		carbon_relay_ng daemon group
+#				Default: carbon
+
+. /etc/rc.subr
+
+name="carbon_relay_ng"
+rcvar=carbon_relay_ng_enable
+load_rc_config $name
+
+: ${carbon_relay_ng_enable:="NO"}
+: ${carbon_relay_ng_user:="carbon"}
+: ${carbon_relay_ng_group:="carbon"}
+: ${carbon_relay_ng_conf:=""}
+
+pidfile="/var/run/carbon-relay-ng/${name}.pid"
+procname="%%PREFIX%%/bin/carbon-relay-ng"
+command=/usr/sbin/daemon
+command_args="-f -c -p ${pidfile} ${procname} ${carbon_relay_ng_conf}"
+start_precmd="carbon_relay_ng_precmd"
+
+carbon_relay_ng_precmd()
+{
+    install -o ${carbon_relay_ng_user} /dev/null ${pidfile}
+}
+
+run_rc_command "$1"

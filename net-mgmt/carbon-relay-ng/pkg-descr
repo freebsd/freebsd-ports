@@ -1,0 +1,6 @@
+carbon-relay-ng is a middleware that sit's between graphite capable metrics
+collectors and and carbon instances such as databases/go-carbon and 
+databases/py-carbon. It can do sharding and replication to any carbon
+storage.
+
+WWW: https://github.com/graphite-ng/carbon-relay-ng
