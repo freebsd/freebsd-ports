@@ -4,10 +4,10 @@ PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.10.001.000
 PORTREVISION=	7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ti.com/lit/sw/slac460v/ \
+MASTER_SITES=	http://www.ti.com/lit/sw/slac460x/ \
 		http://www.ti.com/lit/ug/slau320z/:doc1 \
 		http://www.ti.com/lit/ug/slau656b/:doc2
-DISTFILES=	slac460v.zip \
+DISTFILES=	slac460x.zip \
 		slau320z.pdf:doc1 \
 		slau656b.pdf:doc2
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
