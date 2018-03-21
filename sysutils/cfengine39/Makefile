@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.9.1
-PORTREVISION=	5
+PORTVERSION=	3.9.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 
@@ -31,7 +30,7 @@ USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		autoreconf:build \
+USES=		autoreconf \
 		cpe gmake libtool localbase shebangfix ssl
 USE_GNOME=	libxml2
 SHEBANG_FILES=	examples/remake_outputs.pl
