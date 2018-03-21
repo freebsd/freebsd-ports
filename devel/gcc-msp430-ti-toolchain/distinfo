@@ -1,4 +1,4 @@
-TIMESTAMP = 1505760597
+TIMESTAMP = 1521644330
 SHA256 (gcc-6.4.0.tar.xz) = 850bf21eafdfe5cd5f6827148184c08c4a0852a37ccf36ce69855334d2c914d4
 SIZE (gcc-6.4.0.tar.xz) = 76156220
 SHA256 (binutils-2.26.tar.bz2) = c2ace41809542f5237afc7e3b8f32bb92bc7bc53c6232a84463c423b0714ecd9
@@ -9,7 +9,7 @@ SHA256 (newlib-2.4.0.tar.gz) = 545b3d235e350d2c61491df8b9f775b1b972f191380db8f52
 SIZE (newlib-2.4.0.tar.gz) = 17574364
 SHA256 (msp430-gcc-6.4.0.32_source-patches.tar.bz2) = 86cdb63e289044ddd1b88e4abf125cd137639dfd6b7cd4e674b94ac3c88828af
 SIZE (msp430-gcc-6.4.0.32_source-patches.tar.bz2) = 39465
-SHA256 (msp430-gcc-support-files-1.201.zip) = 85731a9ecc57883436a3156baf7809a321c8d1faf696055a20f82a675f82eb9a
-SIZE (msp430-gcc-support-files-1.201.zip) = 21963878
+SHA256 (msp430-gcc-support-files-1.204.zip) = 401630dbaad23db17ad2edfba31a16f4a1fd1588e131140b5ca3a416b7534e11
+SIZE (msp430-gcc-support-files-1.204.zip) = 21631764
 SHA256 (slau591c.pdf) = 250554606c61bea6a3ceabe7c16bb01f5722509dc1cb74c1b6666551b23ffd2f
 SIZE (slau591c.pdf) = 44202
