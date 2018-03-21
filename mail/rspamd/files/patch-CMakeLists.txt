@@ -1,10 +1,12 @@
---- CMakeLists.txt.orig	2017-06-06 15:07:59 UTC
+--- CMakeLists.txt.orig	2018-03-12 16:46:32 UTC
 +++ CMakeLists.txt
-@@ -1302,6 +1302,24 @@ ELSE(WANT_SYSTEMD_UNITS MATCHES "ON")
- ENDIF(WANT_SYSTEMD_UNITS MATCHES "ON")
+@@ -1307,6 +1307,26 @@ ENDFOREACH(CONF_FILE)
+ SET(MAIN_CONF "conf/rspamd.conf")
  IF(BUILD_PORT)
  	INSTALL_IF_NOT_EXISTS(${MAIN_CONF} ${CONFDIR} "rspamd.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/actions.conf" ${CONFDIR} "actions.conf" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/common.conf" ${CONFDIR} "common.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/groups.conf" ${CONFDIR} "groups.conf" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/logging.inc" ${CONFDIR} "logging.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/options.inc" ${CONFDIR} "options.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/worker-controller.inc" ${CONFDIR} "worker-controller.inc" ".sample")

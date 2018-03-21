@@ -8,11 +8,11 @@ bin/rspamd_stats
 %%CGP%%bin/rspamd-cgp-helper
 etc/newsyslog.conf.d/rspamd.newsyslog.conf
 @sample %%ETCDIR%%/2tld.inc.sample
-@sample %%ETCDIR%%/actions.conf
+@sample %%ETCDIR%%/actions.conf.sample
 @sample %%ETCDIR%%/common.conf.sample
 @sample %%ETCDIR%%/composites.conf.sample
 @sample %%ETCDIR%%/dmarc_whitelist.inc.sample
-@sample %%ETCDIR%%/groups.conf
+@sample %%ETCDIR%%/groups.conf.sample
 @sample %%ETCDIR%%/logging.inc.sample
 @sample %%ETCDIR%%/maillist.inc.sample
 @sample %%ETCDIR%%/metrics.conf.sample
@@ -63,12 +63,10 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/url_reputation.conf
 %%ETCDIR%%/modules.d/url_tags.conf
 %%ETCDIR%%/modules.d/whitelist.conf
-%%ETCDIR%%/options.inc
-%%ETCDIR%%/options.inc.sample
+@sample %%ETCDIR%%/options.inc.sample
 %%ETCDIR%%/redirectors.inc
-%%ETCDIR%%/rspamd.conf
-%%ETCDIR%%/rspamd.conf.sample
-%%ETCDIR%%/rspamd.newsyslog.conf.sample
+@sample %%ETCDIR%%/rspamd.conf.sample
+@sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
 %%ETCDIR%%/scores.d/fuzzy_group.conf
 %%ETCDIR%%/scores.d/headers_group.conf
 %%ETCDIR%%/scores.d/hfilter_group.conf
@@ -80,20 +78,13 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/scores.d/statistics_group.conf
 %%ETCDIR%%/scores.d/subject_group.conf
 %%ETCDIR%%/scores.d/surbl_group.conf
-%%ETCDIR%%/spf_dkim_whitelist.inc
-%%ETCDIR%%/spf_dkim_whitelist.inc.sample
-%%ETCDIR%%/statistic.conf
-%%ETCDIR%%/statistic.conf.sample
-%%ETCDIR%%/surbl-whitelist.inc
-%%ETCDIR%%/surbl-whitelist.inc.sample
-%%ETCDIR%%/worker-controller.inc
-%%ETCDIR%%/worker-controller.inc.sample
-%%ETCDIR%%/worker-fuzzy.inc
-%%ETCDIR%%/worker-fuzzy.inc.sample
-%%ETCDIR%%/worker-normal.inc
-%%ETCDIR%%/worker-normal.inc.sample
-%%ETCDIR%%/worker-proxy.inc
-%%ETCDIR%%/worker-proxy.inc.sample
+@sample %%ETCDIR%%/spf_dkim_whitelist.inc.sample
+@sample %%ETCDIR%%/statistic.conf.sample
+@sample %%ETCDIR%%/surbl-whitelist.inc.sample
+@sample %%ETCDIR%%/worker-controller.inc.sample
+@sample %%ETCDIR%%/worker-fuzzy.inc.sample
+@sample %%ETCDIR%%/worker-normal.inc.sample
+@sample %%ETCDIR%%/worker-proxy.inc.sample
 lib/rspamd/librspamd-actrie.so
 %%TORCH%%lib/rspamd/libTH.so
 %%TORCH%%lib/rspamd/libTHNN.so
@@ -441,6 +432,7 @@ man/man8/rspamd.8.gz
 %%TORCH%%%%DATADIR%%/lib/torch/init.lua
 %%TORCH%%%%DATADIR%%/lib/torch/paths.lua
 %%TORCH%%%%DATADIR%%/lib/torch/test.lua
+%%DATADIR%%/lib/lua_squeeze_rules.lua
 %%DATADIR%%/lua/antivirus.lua
 %%DATADIR%%/lua/arc.lua
 %%DATADIR%%/lua/asn.lua
