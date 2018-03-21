@@ -1,0 +1,47 @@
+commit bbc0805e28db
+Author: Matthew Gregan <kinetik@flim.org>
+Date:   Thu Aug 24 16:18:34 2017 +1200
+
+    Bug 1393284 - Update libnestegg to 369d153.  r=rillian
+    From 94bad012a2d4ec824d751c574443e3946187c4ea Mon Sep 17 00:00:00 2001
+---
+ media/libnestegg/README_MOZILLA    | 2 +-
+ media/libnestegg/include/nestegg.h | 1 +
+ media/libnestegg/src/nestegg.c     | 2 +-
+ 3 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git media/libnestegg/README_MOZILLA media/libnestegg/README_MOZILLA
+index b48a8341801d..384a2874d137 100644
+--- media/libnestegg/README_MOZILLA
++++ media/libnestegg/README_MOZILLA
+@@ -5,4 +5,4 @@ Makefile.in build files for the Mozilla build system.
+ 
+ The nestegg git repository is: https://github.com/kinetiknz/nestegg
+ 
+-The git commit ID used was af26fc354ec9eadf5fcd34fb01223be3f6f8a773.
++The git commit ID used was 369d153d5d176f58e2742fc843b3ed134d7c64f4.
+diff --git media/libnestegg/include/nestegg.h media/libnestegg/include/nestegg.h
+index 32fc7d602491..998df9e78e78 100644
+--- media/libnestegg/include/nestegg.h
++++ media/libnestegg/include/nestegg.h
+@@ -249,6 +249,7 @@ int nestegg_track_type(nestegg * context, unsigned int track);
+     @param track   Zero based track number.
+     @retval #NESTEGG_CODEC_VP8     Track codec is VP8.
+     @retval #NESTEGG_CODEC_VP9     Track codec is VP9.
++    @retval #NESTEGG_CODEC_AV1     Track codec is AV1.
+     @retval #NESTEGG_CODEC_VORBIS  Track codec is Vorbis.
+     @retval #NESTEGG_CODEC_OPUS    Track codec is Opus.
+     @retval #NESTEGG_CODEC_UNKNOWN Track codec is unknown.
+diff --git media/libnestegg/src/nestegg.c media/libnestegg/src/nestegg.c
+index d9be77aaca1b..b9283c31f5b2 100644
+--- media/libnestegg/src/nestegg.c
++++ media/libnestegg/src/nestegg.c
+@@ -2174,7 +2174,7 @@ nestegg_duration(nestegg * ctx, uint64_t * duration)
+     return -1;
+ 
+   if (unscaled_duration != unscaled_duration ||
+-      unscaled_duration < 0 || unscaled_duration > (double) UINT64_MAX ||
++      unscaled_duration < 0 || unscaled_duration >= (double) UINT64_MAX ||
+       (uint64_t) unscaled_duration > UINT64_MAX / tc_scale)
+     return -1;
+ 
