@@ -1,5 +1,6 @@
 %%DATADIR%%/COPYING.linux
 %%DATADIR%%/LICENCE.broadcom
+%%DATADIR%%/armstub8.bin
 %%DATADIR%%/bcm2708-rpi-0-w.dtb
 %%DATADIR%%/bcm2708-rpi-b-plus.dtb
 %%DATADIR%%/bcm2708-rpi-b.dtb
