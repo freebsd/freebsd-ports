@@ -25,7 +25,7 @@ CPE_VENDOR=	gnu
 CONFLICTS=	cfengine-masterfiles3[0-9]-* cfengine-masterfiles31[02-9]-* \
 		cfengine-masterfiles-3.*
 
-RUN_DEPENDS=	cf-agent:sysutils/cfengine3${PKGNAMESUFFIX}
+RUN_DEPENDS=	cf-agent:sysutils/cfengine${PKGNAMESUFFIX}
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
