@@ -1,6 +1,6 @@
---- configure.orig	2016-01-20 02:07:12 UTC
+--- configure.orig	2017-06-28 06:21:45 UTC
 +++ configure
-@@ -14169,7 +14169,7 @@ fi
+@@ -14803,7 +14803,7 @@ fi
  	  end
  	end
  	ruby_glib2_path = ruby_glib2_gem.full_gem_path

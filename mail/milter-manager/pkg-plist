@@ -6,6 +6,7 @@ bin/milter-test-client-libmilter
 bin/milter-test-server
 etc/cron.d/milter-manager-log
 %%ETCDIR%%/applicable-conditions/authentication.conf
+%%ETCDIR%%/applicable-conditions/dnsbl.conf
 %%ETCDIR%%/applicable-conditions/remote-network.conf
 %%ETCDIR%%/applicable-conditions/restrict-accounts.conf
 %%ETCDIR%%/applicable-conditions/s25r.conf
@@ -133,7 +134,9 @@ lib/milter-manager/binding/lib/milter/manager/child-context.rb
 lib/milter-manager/binding/lib/milter/manager/clamav-milter-config-parser.rb
 lib/milter-manager/binding/lib/milter/manager/condition-table.rb
 lib/milter-manager/binding/lib/milter/manager/connection-check-context.rb
+lib/milter-manager/binding/lib/milter/manager/debian-detector.rb
 lib/milter-manager/binding/lib/milter/manager/debian-init-detector.rb
+lib/milter-manager/binding/lib/milter/manager/debian-systemd-detector.rb
 lib/milter-manager/binding/lib/milter/manager/detector.rb
 lib/milter-manager/binding/lib/milter/manager/enma-socket-detector.rb
 lib/milter-manager/binding/lib/milter/manager/exception.rb
@@ -151,7 +154,11 @@ lib/milter-manager/binding/lib/milter/manager/postfix-regexp-table.rb
 lib/milter-manager/binding/lib/milter/manager/rcng-detector.rb
 lib/milter-manager/binding/lib/milter/manager/redhat-detector.rb
 lib/milter-manager/binding/lib/milter/manager/redhat-init-detector.rb
+lib/milter-manager/binding/lib/milter/manager/redhat-systemd-detector.rb
 lib/milter-manager/binding/lib/milter/manager/redhat-upstart-detector.rb
+lib/milter-manager/binding/lib/milter/manager/rmilter-socket-detector.rb
+lib/milter-manager/binding/lib/milter/manager/rspamd-proxy-detector.rb
+lib/milter-manager/binding/lib/milter/manager/systemd-detector.rb
 lib/milter-manager/binding/lib/milter/server.rb
 lib/milter-manager/binding/lib/milter/server/testing.rb
 lib/milter-manager/libmilter.so
