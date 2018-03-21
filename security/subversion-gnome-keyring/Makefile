@@ -3,6 +3,7 @@
 
 PKGNAMESUFFIX=	-gnome-keyring
 CATEGORIES=	security gnome
+PORTREVISION=	1
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Gnome KWyring integration for Version control system
