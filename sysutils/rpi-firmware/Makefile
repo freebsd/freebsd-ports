@@ -2,6 +2,7 @@
 
 PORTNAME=	rpi-firmware
 PORTVERSION=	1.20171029
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	manu@freebsd.org
@@ -20,18 +21,15 @@ NO_BUILD=	yes
 
 INSTALL_DIR=	${PREFIX}/share/${PORTNAME}
 
+do-patch:
+	${CP} ${FILESDIR}/config.txt ${WRKSRC}/boot/
+
+post-patch:
+	${RM} ${WRKSRC}/boot/kernel.img
+	${RM} ${WRKSRC}/boot/kernel7.img
+
 do-install:
-	${MKDIR} ${STAGEDIR}/${INSTALL_DIR}
-	${INSTALL_DATA} ${LICENSE_FILE} ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/bootcode.bin ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/fixup_cd.dat ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/fixup_db.dat ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/fixup_x.dat ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/fixup.dat ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/start_cd.elf ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/start_db.elf ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/start_x.elf ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/start.elf ${STAGEDIR}/${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/boot/config.txt ${STAGEDIR}/${INSTALL_DIR}/
+	${MKDIR} -p ${STAGEDIR}/${INSTALL_DIR}
+	cd ${WRKSRC}/boot && ${COPYTREE_SHARE} . ${STAGEDIR}/${INSTALL_DIR}/
 
 .include <bsd.port.mk>

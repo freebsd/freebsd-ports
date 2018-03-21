@@ -1,0 +1,4 @@
+init_uart_clock=3000000
+enable_uart=1
+kernel=u-boot.bin
+kernel7=u-boot.bin
