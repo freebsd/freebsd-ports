@@ -92,8 +92,13 @@ PLIST_FILES=		lib/rustlib/components \
 			lib/rustlib/rust-installer-version
 
 .include <bsd.port.pre.mk>
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
+# ABI patch needed to address ino64 before fixes upstreamed.
+# https://github.com/rust-lang/rust/issues/42681
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031 && !defined(NIGHTLY_DATE)
+NEED_ABI_PATCH=		1
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-abi
+.else
+NEED_ABI_PATCH=		0
 .endif
 
 X_PY_ENV=	HOME="${WRKDIR}" \
@@ -135,13 +140,13 @@ post-extract:
 		${WRKSRC}/build/cache/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUSTC_BOOTSTRAP} \
 		${WRKSRC}/build/cache/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}
-.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1200031
+.if ${NEED_ABI_PATCH} == 0
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP} \
 		${WRKSRC}/build/cache/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}
 .endif
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${CARGO_BOOTSTRAP} \
 		${WRKSRC}/build/cache/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
+.if ${NEED_ABI_PATCH} == 1
 	${TAR} -x -C ${WRKSRC} -f ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP}
 	${CC} ${CFLAGS} -fPIC -c -o ${WRKSRC}/old_fstat.o ${FILESDIR}/old_fstat.c
 	(set -ex; cd ${WRKSRC}; \
