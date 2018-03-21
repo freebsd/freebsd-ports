@@ -52,6 +52,7 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/FUJIFILM X100T.dcp
 %%DATADIR%%/dcpprofiles/Leaf Aptus 75.dcp
 %%DATADIR%%/dcpprofiles/LG Mobile LG-H815.dcp
+%%DATADIR%%/dcpprofiles/MINOLTA DYNAX 7D.dcp
 %%DATADIR%%/dcpprofiles/Nikon D200.dcp
 %%DATADIR%%/dcpprofiles/NIKON D300.dcp
 %%DATADIR%%/dcpprofiles/Nikon D3000.dcp
@@ -61,7 +62,7 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Nikon D5100.dcp
 %%DATADIR%%/dcpprofiles/NIKON D5600.dcp
 %%DATADIR%%/dcpprofiles/NIKON D600.dcp
-%%DATADIR%%/dcpprofiles/Nikon D700.dcp
+%%DATADIR%%/dcpprofiles/NIKON D700.dcp
 %%DATADIR%%/dcpprofiles/Nikon D7000.dcp
 %%DATADIR%%/dcpprofiles/NIKON D7200.dcp
 %%DATADIR%%/dcpprofiles/NIKON D750.dcp
@@ -96,10 +97,12 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Pentax K200D.dcp
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-1.dcp
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-3.dcp
+%%DATADIR%%/dcpprofiles/SONY DSLR-A580.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A700.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A900.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6000.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7M2.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-7RM3.dcp
 %%DATADIR%%/dcpprofiles/Sony NEX-5N.dcp
 %%DATADIR%%/dcpprofiles/Sony SLT-A55V.dcp
 %%DATADIR%%/dcpprofiles/SONY SLT-A99V.dcp
@@ -196,6 +199,8 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/curveType-parametric.png
 %%DATADIR%%/images/curveType-spline.png
 %%DATADIR%%/images/curveType-unchanged.png
+%%DATADIR%%/images/Dark/actions/adj-black.png
+%%DATADIR%%/images/Dark/actions/adj-white.png
 %%DATADIR%%/images/Dark/actions/ajd-ca-blue1.png
 %%DATADIR%%/images/Dark/actions/ajd-ca-blue2.png
 %%DATADIR%%/images/Dark/actions/ajd-ca-red1.png
@@ -214,6 +219,7 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Dark/actions/arrow-right.png
 %%DATADIR%%/images/Dark/actions/arrow-up-small.png
 %%DATADIR%%/images/Dark/actions/arrow-up.png
+%%DATADIR%%/images/Dark/actions/atom.png
 %%DATADIR%%/images/Dark/actions/beforeafter.png
 %%DATADIR%%/images/Dark/actions/cglabel0.png
 %%DATADIR%%/images/Dark/actions/cglabel1.png
@@ -260,6 +266,8 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Dark/actions/editednot-small.png
 %%DATADIR%%/images/Dark/actions/editednotg-small.png
 %%DATADIR%%/images/Dark/actions/editmodehand.png
+%%DATADIR%%/images/Dark/actions/equalizer-narrow.png
+%%DATADIR%%/images/Dark/actions/equalizer-wide.png
 %%DATADIR%%/images/Dark/actions/expanderClosed.png
 %%DATADIR%%/images/Dark/actions/expanderDisabled.png
 %%DATADIR%%/images/Dark/actions/expanderEnabled.png
@@ -272,6 +280,9 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Dark/actions/filterclear.png
 %%DATADIR%%/images/Dark/actions/fullscreen-exit.png
 %%DATADIR%%/images/Dark/actions/fullscreen.png
+%%DATADIR%%/images/Dark/actions/gamut-hist.png
+%%DATADIR%%/images/Dark/actions/gamut-softproof.png
+%%DATADIR%%/images/Dark/actions/gamut-warning.png
 %%DATADIR%%/images/Dark/actions/grayrated.png
 %%DATADIR%%/images/Dark/actions/gtk-add.png
 %%DATADIR%%/images/Dark/actions/gtk-apply.png
@@ -307,6 +318,7 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Dark/actions/gtk-zoom-in.png
 %%DATADIR%%/images/Dark/actions/gtk-zoom-out-small.png
 %%DATADIR%%/images/Dark/actions/gtk-zoom-out.png
+%%DATADIR%%/images/Dark/actions/HDR-thumbnail.png
 %%DATADIR%%/images/Dark/actions/histBar.png
 %%DATADIR%%/images/Dark/actions/histBarg.png
 %%DATADIR%%/images/Dark/actions/histBlue.png
@@ -351,6 +363,7 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Dark/actions/perspective-h2.png
 %%DATADIR%%/images/Dark/actions/perspective-v1.png
 %%DATADIR%%/images/Dark/actions/perspective-v2.png
+%%DATADIR%%/images/Dark/actions/PixelShift-thumbnail.png
 %%DATADIR%%/images/Dark/actions/popuparrow.png
 %%DATADIR%%/images/Dark/actions/previewmodeB-off.png
 %%DATADIR%%/images/Dark/actions/previewmodeB-on.png
@@ -489,6 +502,8 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/histValue.png
 %%DATADIR%%/images/image-editor.png
 %%DATADIR%%/images/info.png
+%%DATADIR%%/images/Light/actions/adj-black.png
+%%DATADIR%%/images/Light/actions/adj-white.png
 %%DATADIR%%/images/Light/actions/ajd-ca-blue1.png
 %%DATADIR%%/images/Light/actions/ajd-ca-blue2.png
 %%DATADIR%%/images/Light/actions/ajd-ca-red1.png
@@ -507,6 +522,7 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Light/actions/arrow-right.png
 %%DATADIR%%/images/Light/actions/arrow-up-small.png
 %%DATADIR%%/images/Light/actions/arrow-up.png
+%%DATADIR%%/images/Light/actions/atom.png
 %%DATADIR%%/images/Light/actions/beforeafter.png
 %%DATADIR%%/images/Light/actions/cglabel0.png
 %%DATADIR%%/images/Light/actions/cglabel1.png
@@ -553,6 +569,8 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Light/actions/editednot-small.png
 %%DATADIR%%/images/Light/actions/editednotg-small.png
 %%DATADIR%%/images/Light/actions/editmodehand.png
+%%DATADIR%%/images/Light/actions/equalizer-narrow.png
+%%DATADIR%%/images/Light/actions/equalizer-wide.png
 %%DATADIR%%/images/Light/actions/expanderClosed.png
 %%DATADIR%%/images/Light/actions/expanderDisabled.png
 %%DATADIR%%/images/Light/actions/expanderEnabled.png
@@ -565,6 +583,9 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Light/actions/filterclear.png
 %%DATADIR%%/images/Light/actions/fullscreen-exit.png
 %%DATADIR%%/images/Light/actions/fullscreen.png
+%%DATADIR%%/images/Light/actions/gamut-hist.png
+%%DATADIR%%/images/Light/actions/gamut-softproof.png
+%%DATADIR%%/images/Light/actions/gamut-warning.png
 %%DATADIR%%/images/Light/actions/grayrated.png
 %%DATADIR%%/images/Light/actions/gtk-add.png
 %%DATADIR%%/images/Light/actions/gtk-apply.png
@@ -600,6 +621,7 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Light/actions/gtk-zoom-in.png
 %%DATADIR%%/images/Light/actions/gtk-zoom-out-small.png
 %%DATADIR%%/images/Light/actions/gtk-zoom-out.png
+%%DATADIR%%/images/Light/actions/HDR-thumbnail.png
 %%DATADIR%%/images/Light/actions/histBar.png
 %%DATADIR%%/images/Light/actions/histBarg.png
 %%DATADIR%%/images/Light/actions/histBlue.png
@@ -644,6 +666,7 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/images/Light/actions/perspective-h2.png
 %%DATADIR%%/images/Light/actions/perspective-v1.png
 %%DATADIR%%/images/Light/actions/perspective-v2.png
+%%DATADIR%%/images/Light/actions/PixelShift-thumbnail.png
 %%DATADIR%%/images/Light/actions/popuparrow.png
 %%DATADIR%%/images/Light/actions/previewmodeB-off.png
 %%DATADIR%%/images/Light/actions/previewmodeB-on.png
@@ -832,13 +855,13 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/languages/Swedish
 %%DATADIR%%/languages/Turkish
 %%DATADIR%%/options
+%%DATADIR%%/profiles/Auto-Matched Curve - ISO High.pp3
+%%DATADIR%%/profiles/Auto-Matched Curve - ISO Low.pp3
+%%DATADIR%%/profiles/Auto-Matched Curve - ISO Medium.pp3
 %%DATADIR%%/profiles/Black-and-White/Black-and-White 1.pp3
 %%DATADIR%%/profiles/Black-and-White/Black-and-White 2.pp3
 %%DATADIR%%/profiles/Black-and-White/Black-and-White 3.pp3
 %%DATADIR%%/profiles/Black-and-White/Black-and-White 4.pp3
-%%DATADIR%%/profiles/Default ISO High.pp3
-%%DATADIR%%/profiles/Default ISO Medium.pp3
-%%DATADIR%%/profiles/Default.pp3
 %%DATADIR%%/profiles/Faded/Faded Amber 1 TM Bright.pp3
 %%DATADIR%%/profiles/Faded/Faded Amber 1 TM.pp3
 %%DATADIR%%/profiles/Faded/Faded Amber 1.pp3
@@ -879,10 +902,10 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/profiles/Generic/Punchy 1.pp3
 %%DATADIR%%/profiles/Generic/Punchy 2.pp3
 %%DATADIR%%/profiles/Non-raw/Brighten.pp3
-%%DATADIR%%/profiles/Pentax Pixel Shift/PS ISO High.pp3
-%%DATADIR%%/profiles/Pentax Pixel Shift/PS ISO Low.pp3
-%%DATADIR%%/profiles/Pentax Pixel Shift/PS ISO Medium.pp3
-%%DATADIR%%/profiles/Pentax Pixel Shift/PS No Motion.pp3
+%%DATADIR%%/profiles/Pixel Shift/PS ISO High.pp3
+%%DATADIR%%/profiles/Pixel Shift/PS ISO Low.pp3
+%%DATADIR%%/profiles/Pixel Shift/PS ISO Medium.pp3
+%%DATADIR%%/profiles/Pixel Shift/PS No Motion.pp3
 %%DATADIR%%/profiles/Pop/Pop 1.pp3
 %%DATADIR%%/profiles/Pop/Pop 2 L.pp3
 %%DATADIR%%/profiles/Pop/Pop 3 Skin.pp3
@@ -900,6 +923,9 @@ share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/profiles/Skintones/Skintones - Studio.pp3
 %%DATADIR%%/profiles/Skintones/Skintones - StudioBase 1 TM.pp3
 %%DATADIR%%/profiles/Skintones/Skintones - StudioBase 1.pp3
+%%DATADIR%%/profiles/Standard Film Curve - ISO High.pp3
+%%DATADIR%%/profiles/Standard Film Curve - ISO Low.pp3
+%%DATADIR%%/profiles/Standard Film Curve - ISO Medium.pp3
 %%DATADIR%%/sounds/BatchComplete.wav
 %%DATADIR%%/sounds/Empty.wav
 %%DATADIR%%/sounds/ProcessComplete.wav
