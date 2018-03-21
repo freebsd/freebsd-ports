@@ -1412,7 +1412,7 @@ USES+=	apache:${USE_APACHE:C/2([0-9])/2.\1/g}
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
 
-.if defined(WANT_GNOME) || defined(USE_GNOME) || defined(INSTALLS_ICONS)
+.if defined(USE_GNOME) || defined(INSTALLS_ICONS)
 USES+=	gnome
 .endif
 
