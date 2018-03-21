@@ -25,7 +25,7 @@ post-install:
 do-test:
 	@${RLN} ${STAGEDIR}${PREFIX}/include ${WRKSRC}/test/staged-include
 	@cd ${WRKSRC}/test && \
-		${CMAKE_BIN} ${CMAKE_ARGS} . && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} . && \
 		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} && \
 		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} xtest
 

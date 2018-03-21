@@ -113,9 +113,11 @@ INSTALL_WRKSRC2=	${CONFIGURE_WRKSRC2}
 pre-configure-BROKER-on:
 	${MKDIR} ${CONFIGURE_WRKSRC2}
 	(cd ${CONFIGURE_WRKSRC2} && \
+	    ${SETENV} ${CONFIGURE_ENV} \
 	    ${CMAKE_BIN} ${CMAKE_ARGS2} ${WRKSRC_actor_framework})
 	${MKDIR} ${STAGEDIR2}
 	(cd ${BUILD_WRKSRC2} && \
+	    ${SETENV} ${MAKE_ENV:NDESTDIR=*} \
 	    ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} install)
 	${LN} -s libcaf_core_static.a ${STAGEDIR2}${PREFIX}/lib/libcaf_core.a
 	${LN} -s libcaf_io_static.a ${STAGEDIR2}${PREFIX}/lib/libcaf_io.a
