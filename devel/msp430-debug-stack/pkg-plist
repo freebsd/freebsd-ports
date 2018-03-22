@@ -7,6 +7,6 @@ include/libmsp430/MSP430_FET.h
 include/libmsp430/MSP430_HIL.h
 lib/libmsp430.so
 lib/libmsp430.a
-%%PORTDOCS%%%%DOCSDIR%%/slau320z.pdf
+%%PORTDOCS%%%%DOCSDIR%%/slau320ac.pdf
 %%PORTDOCS%%%%DOCSDIR%%/slau656b.pdf
 etc/devd/mspfet.conf
