@@ -1,14 +1,12 @@
-# Created by: Mathieu Arnold <mat@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	yadifa
-PORTVERSION=	2.2.3
-DISTVERSIONSUFFIX=	-6711
-PORTREVISION=	2
+DISTVERSION=	2.3.8
+DISTVERSIONSUFFIX=	-7713
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	freebsd@dns.company
 COMMENT=	Authoritative nameserver with DNSSEC capabilities
 
 LICENSE=	BSD3CLAUSE
