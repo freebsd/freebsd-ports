@@ -1,11 +1,11 @@
---- examples/CMakeLists.txt.orig	2017-07-20 06:27:54 UTC
+--- examples/CMakeLists.txt.orig	2018-03-22 07:29:50 UTC
 +++ examples/CMakeLists.txt
-@@ -1,7 +1,7 @@
- file(COPY ${CMAKE_SOURCE_DIR}/examples/iris.dat DESTINATION ${CMAKE_BINARY_DIR}/examples)
- file(COPY ${CMAKE_SOURCE_DIR}/examples/Equirectangular-projection.jpg DESTINATION ${CMAKE_BINARY_DIR}/examples)
+@@ -3,7 +3,7 @@ file(COPY ${CMAKE_SOURCE_DIR}/examples/E
+ file(COPY ${CMAKE_SOURCE_DIR}/examples/samples.cpp DESTINATION ${CMAKE_BINARY_DIR}/examples)
+ file(COPY ${CMAKE_SOURCE_DIR}/examples/wnd_samples.cpp DESTINATION ${CMAKE_BINARY_DIR}/examples)
  add_executable(mgl_example wnd_samples.cpp full_test.cpp samples.cpp)
 -target_link_libraries(mgl_example mgl-static ${getopt_lib-static})
 +#target_link_libraries(mgl_example mgl-static ${getopt_lib-static})
- 
- if(MGL_HAVE_FLTK)
- 	include_directories(${FLTK_INCLUDE_DIR})
+ if(CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_COMPILER_IS_GNUCXX AND enable-lcov)
+ 	setup_target_for_coverage(
+ 	    NAME mgl_coverage

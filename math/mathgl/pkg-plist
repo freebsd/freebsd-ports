@@ -47,7 +47,10 @@ include/mgl2/vect.h
 include/mgl2/vectors.fs
 include/mgl2/volume.h
 include/mgl2/wnd.h
-lib/cmake/mathgl2/mathgl2-config.cmake
+lib/cmake/mathgl/MathGL2Config.cmake
+lib/cmake/mathgl/MathGL2ConfigVersion.cmake
+lib/cmake/mathgl/MathGLTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mathgl/MathGLTargets.cmake
 lib/libmgl2-glut.so
 lib/libmgl2-glut.so.%%SHLIB_VER%%
 %%QT5%%lib/libmgl2-qt.so
