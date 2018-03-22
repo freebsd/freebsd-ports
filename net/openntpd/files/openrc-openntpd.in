@@ -15,7 +15,7 @@
 
 #Cleaned up by Ken Moore <ken@ixsystems.com> 6/20/17
 
-name="ntpd"
+name="openntpd"
 command=%%PREFIX%%/sbin/ntpd
 required_files=$openntpd_config
 pidfile=/var/run/ntpd.pid
@@ -26,5 +26,6 @@ start_stop_daemon_args="--stdout /var/log/openntpd.log --stderr /var/log/openntp
 
 depend()
 {
-	need localmount net-online
+	need localmount
+	provide ntpd
 }
