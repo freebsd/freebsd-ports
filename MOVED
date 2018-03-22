@@ -10220,3 +10220,4 @@ textproc/p5-HTML-CTPP2||2018-03-20|Has expired: Broken for more than 6 months
 textproc/rubygem-compass-rails||2018-03-20|Has expired: Broken for more than 6 months
 graphics/pfscalibration||2018-03-20|Deprecated: pfs-calibration is a part of pfstools (from version 2.0)
 graphics/pfstmo||2018-03-20|Deprecated: pfstmo is a part of pfstools
+games/timeseal||2018-03-22|Has expired: Abandoned, outdated, requires COMPAT_43 kernel option which was removed from GENERIC in FreeBSD 7.0
