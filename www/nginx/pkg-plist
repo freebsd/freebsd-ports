@@ -14,6 +14,10 @@
 %%WWWDATA%%@exec chmod a-w %D/www/nginx-dist
 %%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
 sbin/nginx
+share/vim/vimfiles/ftdetect/nginx.vim
+share/vim/vimfiles/ftplugin/nginx.vim
+share/vim/vimfiles/indent/nginx.vim
+share/vim/vimfiles/syntax/nginx.vim
 @dir %%NGINX_TMPDIR%%
 @dir %%NGINX_LOGDIR%%
 man/man8/nginx.8.gz
