@@ -1,4 +1,4 @@
---- lib/epson-escpr-api.c.orig	2016-06-29 23:37:45 UTC
+--- lib/epson-escpr-api.c.orig	2017-03-24 04:35:04 UTC
 +++ lib/epson-escpr-api.c
 @@ -62,6 +62,7 @@
  
