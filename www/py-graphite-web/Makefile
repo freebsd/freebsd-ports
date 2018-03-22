@@ -3,6 +3,7 @@
 
 PORTNAME=	graphite-web
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,6 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:graphics/py-cairo@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-tagging>=0.3.1:www/py-django-tagging@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django>=1.4:www/py-django@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scandir>=0:sysutils/py-scandir@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${FLAVOR} \
 		xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype
 
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
