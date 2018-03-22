@@ -3,6 +3,7 @@
 
 PORTNAME=	carbon
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,10 +13,11 @@ COMMENT=	Backend storage application for graphite
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4:www/py-django@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=1.1.0:devel/py-cachetools@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=0:security/py-service_identity@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}txamqp>=0.3:net/py-txamqp@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whisper>=0.9.10:databases/py-whisper@${FLAVOR}
 
 NO_ARCH=	yes
