@@ -1,0 +1,35 @@
+# $FreeBSD$
+
+PORTNAME=	rdkit
+DISTVERSIONPREFIX=	Release_
+DISTVERSION=	2017_09_3
+CATEGORIES=	science
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Collection of cheminformatics and machine-learning software
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/license.txt
+
+BUILD_DEPENDS=	flex:textproc/flex
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+
+USES=		bison:build cmake:outsource eigen:3
+USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
+CMAKE_OFF=	RDK_BUILD_PYTHON_WRAPPERS RDK_INSTALL_INTREE RDK_USE_FLEXBISON \
+		RDK_INSTALL_STATIC_LIBS RDK_SWIG_STATIC RDK_PGSQL_STATIC
+CMAKE_ARGS=	-DFREEBSD_DOCSDIR:PATH=${DOCSDIR}
+
+DATADIR=	${PREFIX}/share/RDKit
+DOCSDIR=	${PREFIX}/share/doc/RDKit
+
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	*
+
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
+
+.include <bsd.port.mk>

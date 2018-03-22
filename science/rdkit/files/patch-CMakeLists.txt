@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-03-22 06:56:06 UTC
++++ CMakeLists.txt
+@@ -338,7 +338,7 @@ if(NOT RDK_INSTALL_INTREE)
+       PATTERN ".svn" EXCLUDE
+       )
+   install(DIRECTORY Docs DESTINATION
+-      ${RDKit_ShareDir}
++      ${FREEBSD_DOCSDIR}
+       COMPONENT docs
+       PATTERN ".svn" EXCLUDE
+       PATTERN "_build" EXCLUDE

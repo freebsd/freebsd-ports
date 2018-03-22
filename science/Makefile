@@ -189,6 +189,7 @@
     SUBDIR += pynn
     SUBDIR += qcl
     SUBDIR += qtresistors
+    SUBDIR += rdkit
     SUBDIR += rubygem-ai4r
     SUBDIR += rubygem-cdo
     SUBDIR += rubygem-ruby-dcl
