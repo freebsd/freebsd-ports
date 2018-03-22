@@ -1,6 +1,16 @@
---- xbmc/windowing/wayland/WinSystemWayland.cpp.orig	2018-01-05 12:46:19 UTC
+--- xbmc/windowing/wayland/ShellSurfaceXdgShell.h.orig	2018-03-21 13:02:45 UTC
++++ xbmc/windowing/wayland/ShellSurfaceXdgShell.h
+@@ -22,6 +22,7 @@
+ #include "Connection.h"
+ #include "ShellSurface.h"
+ 
++#include <wayland-client-protocol.hpp>
+ #include <wayland-extra-protocols.hpp>
+ 
+ namespace KODI
+--- xbmc/windowing/wayland/WinSystemWayland.cpp.orig	2018-03-21 13:02:45 UTC
 +++ xbmc/windowing/wayland/WinSystemWayland.cpp
-@@ -1308,7 +1308,7 @@ void CWinSystemWayland::PrepareFramePresentation()
+@@ -1331,7 +1331,7 @@ void CWinSystemWayland::PrepareFramePresentation()
      };
      feedback.on_presented() = [this,iter](std::uint32_t tvSecHi, std::uint32_t tvSecLo, std::uint32_t tvNsec, std::uint32_t refresh, std::uint32_t seqHi, std::uint32_t seqLo, wayland::presentation_feedback_kind flags)
      {
@@ -9,3 +19,13 @@
        std::int64_t latency{KODI::LINUX::TimespecDifference(iter->submissionTime, tv)};
        std::uint64_t msc{(static_cast<std::uint64_t>(seqHi) << 32) + seqLo};
        m_presentationFeedbackHandlers.Invoke(tv, refresh, m_syncOutputID, m_syncOutputRefreshRate, msc);
+--- xbmc/windowing/wayland/WinSystemWayland.h.orig	2018-03-21 13:02:45 UTC
++++ xbmc/windowing/wayland/WinSystemWayland.h
+@@ -28,6 +28,7 @@
+ #include <set>
+ 
+ #include <wayland-client.hpp>
++#include <wayland-client-protocol.hpp>
+ #include <wayland-cursor.hpp>
+ #include <wayland-extra-protocols.hpp>
+ 

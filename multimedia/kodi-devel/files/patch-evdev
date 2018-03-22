@@ -1,43 +1,37 @@
---- xbmc/platform/linux/input/LinuxInputDevices.cpp.orig	2017-12-17 12:10:14 UTC
+--- xbmc/platform/linux/input/LinuxInputDevices.cpp.orig	2018-03-21 13:02:45 UTC
 +++ xbmc/platform/linux/input/LinuxInputDevices.cpp
-@@ -30,6 +30,9 @@
- #include "system.h"
- #if defined(HAS_LINUX_EVENTS)
+@@ -31,7 +31,11 @@
+ typedef unsigned long kernel_ulong_t;
+ #define BITS_PER_LONG    (sizeof(long)*8)
  
-+#ifdef TARGET_FREEBSD
++#if defined(TARGET_FREEBSD)
 +#include <dev/evdev/input.h>
-+#else
- #include <linux/version.h>
- 
- #if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,16)
-@@ -38,6 +41,7 @@ typedef unsigned long kernel_ulong_t;
- #endif
- 
++#elif defined(TARGET_LINUX)
  #include <linux/input.h>
 +#endif
  
  #if defined(HAVE_LIBUDEV)
  #include <libudev.h>
-@@ -77,8 +81,10 @@ typedef unsigned long kernel_ulong_t;
+@@ -71,8 +75,10 @@ typedef unsigned long kernel_ulong_t;
  #define XBMC_BUTTON_WHEELDOWN 5
  #endif
  
-+#ifndef TARGET_FREEBSD
++#ifdef TARGET_LINUX
  #include <linux/keyboard.h>
  #include <linux/kd.h>
 +#endif
  
  #include <string.h>
  #include <unistd.h>
-@@ -352,6 +358,7 @@ XBMCKey CLinuxInputDevice::TranslateKey(unsigned short
+@@ -346,6 +352,7 @@ XBMCKey CLinuxInputDevice::TranslateKey(unsigned short
  
  int CLinuxInputDevice::KeyboardGetSymbol(unsigned short value)
  {
-+#ifndef TARGET_FREEBSD
++#ifdef TARGET_LINUX
    unsigned char type = KTYP(value);
    unsigned char index = KVAL(value);
  
-@@ -409,12 +416,16 @@ int CLinuxInputDevice::KeyboardGetSymbol(unsigned shor
+@@ -403,12 +410,16 @@ int CLinuxInputDevice::KeyboardGetSymbol(unsigned shor
      break;
  */
    }
@@ -55,7 +49,7 @@
    struct kbentry entry;
  
    entry.kb_table = table;
-@@ -429,6 +440,7 @@ unsigned short CLinuxInputDevice::KeyboardReadValue(un
+@@ -423,6 +434,7 @@ unsigned short CLinuxInputDevice::KeyboardReadValue(un
    }
  
    return entry.kb_value;
@@ -63,7 +57,7 @@
  }
  
  XBMCMod CLinuxInputDevice::UpdateModifiers(XBMC_Event& devt)
-@@ -1371,6 +1383,9 @@ driver_open_device_error:
+@@ -1365,6 +1377,9 @@ driver_open_device_error:
   */
  bool CLinuxInputDevice::GetKeymapEntry(KeymapEntry& entry)
  {
@@ -73,7 +67,7 @@
    int code = entry.code;
    unsigned short value;
    //DFBInputDeviceKeyIdentifier identifier;
-@@ -1421,6 +1436,7 @@ bool CLinuxInputDevice::GetKeymapEntry(KeymapEntry& en
+@@ -1415,6 +1430,7 @@ bool CLinuxInputDevice::GetKeymapEntry(KeymapEntry& en
    entry.altShift = value; //KeyboardGetSymbol(code, value, LI_KEYLEVEL_ALT_SHIFT);
  
    return true;
@@ -81,7 +75,7 @@
  }
  
  /*
---- xbmc/windowing/wayland/InputProcessorPointer.cpp.orig	2017-12-17 12:10:14 UTC
+--- xbmc/windowing/wayland/InputProcessorPointer.cpp.orig	2018-03-21 13:02:45 UTC
 +++ xbmc/windowing/wayland/InputProcessorPointer.cpp
 @@ -22,7 +22,11 @@
  
@@ -93,9 +87,9 @@
  #include <linux/input-event-codes.h>
 +#endif
  
- #include "input/MouseStat.h"
+ #include "input/mouse/MouseStat.h"
  
---- xbmc/windowing/wayland/WindowDecorator.cpp.orig	2017-12-17 12:10:14 UTC
+--- xbmc/windowing/wayland/WindowDecorator.cpp.orig	2018-03-21 13:02:45 UTC
 +++ xbmc/windowing/wayland/WindowDecorator.cpp
 @@ -25,7 +25,11 @@
  #include <cmath>
@@ -108,4 +102,4 @@
 +#endif
  
  #include "threads/SingleLock.h"
- #include "utils/EndianSwap.h"
+ #include "Util.h"

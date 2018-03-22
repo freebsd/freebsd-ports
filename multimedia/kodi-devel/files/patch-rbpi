@@ -33,17 +33,7 @@
 +xbmc/cores/RetroPlayer/process/rbpi cores/RetroPlayer/process/rbpi
 +xbmc/cores/VideoPlayer/Process/rbpi cores/VideoPlayer/Process/rbpi
  xbmc/freebsd               freebsdsupport
---- xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/MMALRenderer.h.orig	2018-01-04 22:35:33 UTC
-+++ xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/MMALRenderer.h
-@@ -31,6 +31,7 @@
- #include "cores/VideoSettings.h"
- #include "cores/VideoPlayer/DVDStreamInfo.h"
- #include "guilib/Geometry.h"
-+#include "platform/linux/RBP.h"
- #include "threads/Thread.h"
- 
- // worst case number of buffers. 12 for decoder. 8 for multi-threading in ffmpeg. NUM_BUFFERS for renderer.
---- xbmc/windowing/rpi/WinSystemRpi.cpp.orig	2018-01-05 07:10:41 UTC
+--- xbmc/windowing/rpi/WinSystemRpi.cpp.orig	2018-02-09 09:50:14 UTC
 +++ xbmc/windowing/rpi/WinSystemRpi.cpp
 @@ -32,9 +32,16 @@
  #include "settings/DisplaySettings.h"
@@ -59,10 +49,10 @@
 +#ifdef HAS_SNDIO
 +#include "cores/AudioEngine/Sinks/AESinkSNDIO.h"
 +#endif
+ #include "powermanagement/linux/LinuxPowerSyscall.h"
  
  #include <EGL/egl.h>
- #include <EGL/eglplatform.h>
-@@ -54,7 +61,36 @@ CWinSystemRpi::CWinSystemRpi()
+@@ -55,7 +62,36 @@ CWinSystemRpi::CWinSystemRpi()
  
    m_winEvents.reset(new CWinEventsLinux());
    AE::CAESinkFactory::ClearSinks();
@@ -97,6 +87,6 @@
 +     CAESinkPi::Register();
 +#endif
 +  }
+   CLinuxPowerSyscall::Register();
  }
  
- CWinSystemRpi::~CWinSystemRpi()
