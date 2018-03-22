@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	Lohit
-PORTVERSION=	20130612
-PORTREVISION=	2
+PORTVERSION=	20140220
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://fedorahosted.org/releases/l/o/lohit/
+MASTER_SITES=	https://releases.pagure.org/lohit/
 DISTNAME=	lohit-ttf-${PORTVERSION}
 
 MAINTAINER=	gabor@FreeBSD.org
@@ -23,7 +22,7 @@ PLIST_FILES=	${FONTSDIR}/Lohit-Assamese.ttf \
 		${FONTSDIR}/Lohit-Kannada.ttf \
 		${FONTSDIR}/Lohit-Malayalam.ttf \
 		${FONTSDIR}/Lohit-Marathi.ttf \
-		${FONTSDIR}/Lohit-Nepali.ttf \
+#		${FONTSDIR}/Lohit-Nepali.ttf \
 		${FONTSDIR}/Lohit-Oriya.ttf \
 		${FONTSDIR}/Lohit-Punjabi.ttf \
 		${FONTSDIR}/Lohit-Tamil-Classical.ttf \
