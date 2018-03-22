@@ -8,7 +8,7 @@
 @owner www
 %%WWWDIR%%/db/.gitkeep
 @owner
-%%WWWDIR%%/lib/api.rb
+%%WWWDIR%%/lib/app.rb
 %%WWWDIR%%/lib/bitwarden.rb
 %%WWWDIR%%/lib/bitwarden_ruby.rb
 %%WWWDIR%%/lib/cipher.rb
@@ -18,6 +18,10 @@
 %%WWWDIR%%/lib/folder.rb
 %%WWWDIR%%/lib/helper.rb
 %%WWWDIR%%/lib/user.rb
+%%WWWDIR%%/lib/helpers/request_helpers.rb
+%%WWWDIR%%/lib/routes/api.rb
+%%WWWDIR%%/lib/routes/icons.rb
+%%WWWDIR%%/lib/routes/identity.rb
 %%WWWDIR%%/spec/cipher_spec.rb
 %%WWWDIR%%/spec/cipherstring_spec.rb
 %%WWWDIR%%/spec/db_spec.rb
@@ -28,6 +32,7 @@
 %%WWWDIR%%/tools/1password_import.rb
 %%WWWDIR%%/tools/activate_totp.rb
 %%WWWDIR%%/tools/bitwarden_import.rb
+%%WWWDIR%%/tools/keepass_import.rb
 %%WWWDIR%%/tools/lastpass_import.rb
 %%WWWDIR%%/tools/mitm.rb
 @dir(www,www,0750) %%WWWDIR%%/db
