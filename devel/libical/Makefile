@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
-USES=		cmake pathfix perl5
+USES=		cmake compiler:c++11-lib pathfix perl5
 USE_GITHUB=	yes
 USE_GNOME=	introspection:build
 USE_PERL5=	build
