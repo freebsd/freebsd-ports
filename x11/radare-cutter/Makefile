@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	radare-cutter
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	swills@FreeBSD.org
@@ -23,8 +22,8 @@ USE_QT5=	buildtools_build core gui svg widgets
 
 WRKSRC_SUBDIR=	src
 
-PLIST_FILES=	bin/cutter \
-		share/applications/cutter.desktop \
+PLIST_FILES=	bin/Cutter \
+		share/applications/Cutter.desktop \
 		share/pixmaps/cutter.svg
 
 .include <bsd.port.mk>
