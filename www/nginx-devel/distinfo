@@ -1,4 +1,4 @@
-TIMESTAMP = 1521673519
+TIMESTAMP = 1521762706
 SHA256 (nginx-1.13.10.tar.gz) = 336182104d90be3c40c874f7f06f87dbb357da1dc74ea573ad081a0f29a94885
 SIZE (nginx-1.13.10.tar.gz) = 1014863
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -133,3 +133,5 @@ SHA256 (calio-form-input-nginx-module-v0.12_GH0.tar.gz) = 5c1869d55897075adb3fdf
 SIZE (calio-form-input-nginx-module-v0.12_GH0.tar.gz) = 11090
 SHA256 (calio-iconv-nginx-module-v0.14_GH0.tar.gz) = b8b9f355c05c0790226512f6732348a2404d48531688a1fc04ce6768163bf462
 SIZE (calio-iconv-nginx-module-v0.14_GH0.tar.gz) = 13133
+SHA256 (SpiderLabs-ModSecurity-nginx-c0ae166_GH0.tar.gz) = 06790c202c7b11b8d17c3d92b3d9cf505db80fda0864d37db03508f8393ed2bb
+SIZE (SpiderLabs-ModSecurity-nginx-c0ae166_GH0.tar.gz) = 26298
