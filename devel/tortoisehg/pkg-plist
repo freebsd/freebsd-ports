@@ -320,6 +320,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/config.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/config.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/config.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/configitems.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/configitems.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/configitems.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/debugthg.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/debugthg.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/debugthg.pyo
@@ -511,6 +514,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/hg-qguard.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpop-all.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpop.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpush-all.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpush-move.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpush.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-rebase.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-recover.svg
