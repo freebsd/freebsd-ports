@@ -52,7 +52,7 @@ TESTSBIN=	cgwrite cgread test_partial
 .if ${PORT_OPTIONS:MTOOLS}
 USES+=		tk
 USE_GL=		gl glu
-USE_XORG=	xmu
+USE_XORG=	x11 xmu
 CMAKE_ARGS+=	-DCGNS_BUILD_CGNSTOOLS:BOOL=TRUE			\
 		-DTCL_INCLUDE_PATH:STRING="${TCL_INCLUDEDIR}"	\
 		-DTK_INCLUDE_PATH:STRING="${TK_INCLUDEDIR}"
@@ -63,12 +63,10 @@ PLIST_SUB=	TOOLS="@comment "
 
 LIBVER=		${PORTVERSION:R}
 
-.if ${PORT_OPTIONS:MTESTS}
-regression-test:
-. for pg in ${TESTSBIN}
+do-test-TESTS-on:
+.for pg in ${TESTSBIN}
 	@(cd ${BUILD_WRKSRC}/src/tests; ./${pg})
-. endfor
-.endif
+.endfor
 
 post-install:
 	${LN} -sf libcgns.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib/libcgns.so.${LIBVER:R}
