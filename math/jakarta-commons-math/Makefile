@@ -18,6 +18,8 @@ COMMENT=	Java library of self-contained mathematics and statistics components
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6 1.7
