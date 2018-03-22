@@ -12,6 +12,8 @@ COMMENT=	Java solution for real time and embedded systems
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to build
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
 USE_ANT=	yes
