@@ -20,7 +20,7 @@
 : ${postgresql_class:="default"}
 : ${postgresql_profiles:=""}
 : ${postgresql_user:="%%PG_USER%%"}
-: ${postgresql_data:="/usr/home/${postgresql_user}/data96"}
+: ${postgresql_data:="/var/db/${postgresql_user}/data96"}
 
 # If you have any profiles defined in /etc/conf.d/postgres, e.g.:
 #   postgresql_profiles="profile1"
