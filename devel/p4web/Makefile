@@ -13,6 +13,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce server
 
+BROKEN=		unfetchable
+
 # 10.x (and higher) needs compat libs
 LIB_DEPENDS=	libstdc++.so.6:misc/compat9x
 
