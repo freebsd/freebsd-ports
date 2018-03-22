@@ -2,8 +2,7 @@
 
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
-PORTREVISION=	1
+DISTVERSION=	2.3.2
 CATEGORIES=	net-im www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -103,7 +102,7 @@ USES=		gmake gnome pgsql python:2.7,build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tootsuite jehops:mn
 GH_PROJECT=	mastodon_node:mn
-GH_TAGNAME=	2.3.0:mn
+GH_TAGNAME=	2.3.2:mn
 USE_GNOME=	libxml2 libxslt
 USE_RC_SUBR=	mastodon_stream mastodon_web mastodon_workers
 USE_RUBY=	yes
