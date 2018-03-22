@@ -1,4 +1,4 @@
---- lib/Makefile.am.orig	2016-06-29 23:57:44 UTC
+--- lib/Makefile.am.orig	2017-03-24 04:35:04 UTC
 +++ lib/Makefile.am
 @@ -44,7 +44,7 @@ DEFINES 		+=	-DGCOMSW_ASYNCJOB_SUPPORT
  DEFINES 	    +=	-DGCOMSW_RAWFILE_SUPPORT

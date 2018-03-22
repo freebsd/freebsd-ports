@@ -1,4 +1,4 @@
---- src/Makefile.am.orig	2015-08-04 02:35:06 UTC
+--- src/Makefile.am.orig	2017-03-24 04:35:04 UTC
 +++ src/Makefile.am
 @@ -28,7 +28,11 @@ cupsfilter_PROGRAMS =\
  epson_escpr_wrapper_CFLAGS =\

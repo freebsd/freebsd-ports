@@ -1,4 +1,4 @@
---- lib/epson-usb.c.orig	2014-08-19 02:29:44 UTC
+--- lib/epson-usb.c.orig	2017-03-24 04:35:04 UTC
 +++ lib/epson-usb.c
 @@ -2325,7 +2325,7 @@ static EPS_ERR_CODE   GetSerialNumber (
  		EPS_RETURN( ret );

@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	epson-inkjet-printer-escpr
-PORTVERSION=	1.6.17
+PORTVERSION=	1.6.19
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/06/66/09/4ac2bf69bb1ddf4a9ad525596615cbb40fe4dad5/
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/07/07/57/91f8069e80d17a5dade2f18eda1ade2d49297840/
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
@@ -23,6 +23,8 @@ SUB_FILES=	pkg-message
 PORTDOCS=	AUTHORS COPYING NEWS README README.ja
 
 OPTIONS_DEFINE=	DOCS
+
+PORTSCOUT=	ignore	# MASTER_SITES is changed in each version
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,4 +1,4 @@
---- configure.ac.orig	2015-10-23 06:30:33 UTC
+--- configure.ac.orig	2018-03-08 02:38:54 UTC
 +++ configure.ac
 @@ -58,9 +58,9 @@ AC_ARG_WITH([cupsfilterdir],
  if test "xno" = "x${with_cupsfilterdir}"; then
