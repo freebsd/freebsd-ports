@@ -14,7 +14,7 @@ COMMENT=	Full-featured Linux BTRFS, Ext4, XFS as a FUSE module
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_11=	Inconsistent kallsyms data
+BROKEN=		inconsistent kallsyms data
 
 BUILD_DEPENDS=	gnubc>0:math/gnubc
 
