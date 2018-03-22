@@ -1,4 +1,4 @@
---- Gemfile.orig	2018-03-13 15:16:51 UTC
+--- Gemfile.orig	2018-03-22 13:13:46 UTC
 +++ Gemfile
 @@ -9,15 +9,15 @@ gem 'puma', '~> 3.10'
  gem 'rails', '~> 5.1.4'
@@ -20,16 +20,7 @@
  gem 'paperclip-av-transcoder', '~> 0.6'
  gem 'streamio-ffmpeg', '~> 3.0'
  
-@@ -32,7 +32,7 @@ gem 'cld3', '~> 3.2.0'
- gem 'devise', '~> 4.4'
- gem 'devise-two-factor', '~> 3.0'
- 
--gem 'devise_pam_authenticatable2', '~> 8.0', install_if: -> { ENV['PAM_ENABLED'] == 'true' }
-+gem 'devise_pam_authenticatable2', '>= 8.0', install_if: -> { ENV['PAM_ENABLED'] == 'true' }
- gem 'net-ldap', '~> 0.10'
- gem 'omniauth-cas', '~> 1.1'
- gem 'omniauth-saml', '~> 1.10'
-@@ -47,7 +47,7 @@ gem 'redis-namespace', '~> 1.5'
+@@ -49,7 +49,7 @@ gem 'redis-namespace', '~> 1.5'
  gem 'htmlentities', '~> 4.3'
  gem 'http', '~> 3.0'
  gem 'http_accept_language', '~> 2.1'
@@ -38,7 +29,7 @@
  gem 'idn-ruby', require: 'idn'
  gem 'kaminari', '~> 1.1'
  gem 'link_header', '~> 0.0'
-@@ -64,11 +64,11 @@ gem 'rack-cors', '~> 0.4', require: 'rac
+@@ -66,11 +66,11 @@ gem 'rack-cors', '~> 0.4', require: 'rac
  gem 'rack-timeout', '~> 0.4'
  gem 'rails-i18n', '~> 5.0'
  gem 'rails-settings-cached', '~> 0.6'
@@ -49,10 +40,10 @@
  gem 'ruby-oembed', '~> 0.12', require: 'oembed'
 -gem 'ruby-progressbar', '~> 1.4'
 +gem 'ruby-progressbar', '>= 1.4'
- gem 'sanitize', '~> 4.4'
+ gem 'sanitize', '~> 4.6.4'
  gem 'sidekiq', '~> 5.0'
  gem 'sidekiq-scheduler', '~> 2.1'
-@@ -88,50 +88,10 @@ gem 'webpush'
+@@ -90,50 +90,10 @@ gem 'webpush'
  gem 'json-ld-preloaded', '~> 2.2.1'
  gem 'rdf-normalize', '~> 0.3.1'
  
