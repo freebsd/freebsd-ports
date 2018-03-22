@@ -1,11 +1,4 @@
 ############################################################
-
-Version 2.3.0 includes database migrations.
-
-As the mastodon user, run
-
-% RAILS_ENV=production rails db:migrate
-
 Some options may now be set in rc.conf.  See the comments in
 the rc scripts (mastodon_web, mastodon_workers, and
 mastodon_stream) for details.
