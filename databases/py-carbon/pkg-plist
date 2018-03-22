@@ -1,4 +1,5 @@
 bin/carbon-aggregator.py
+bin/carbon-aggregator-cache.py
 bin/carbon-cache.py
 bin/carbon-client.py
 bin/carbon-relay.py
@@ -27,13 +28,13 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.py
 %%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.pyc
 %%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.pyo
-%%PYTHON_SITELIBDIR%%/carbon/amqp0-8.xml
 %%PYTHON_SITELIBDIR%%/carbon/amqp_listener.py
 %%PYTHON_SITELIBDIR%%/carbon/amqp_listener.pyc
 %%PYTHON_SITELIBDIR%%/carbon/amqp_listener.pyo
 %%PYTHON_SITELIBDIR%%/carbon/amqp_publisher.py
 %%PYTHON_SITELIBDIR%%/carbon/amqp_publisher.pyc
 %%PYTHON_SITELIBDIR%%/carbon/amqp_publisher.pyo
+%%PYTHON_SITELIBDIR%%/carbon/amqp0-8.xml
 %%PYTHON_SITELIBDIR%%/carbon/cache.py
 %%PYTHON_SITELIBDIR%%/carbon/cache.pyc
 %%PYTHON_SITELIBDIR%%/carbon/cache.pyo
@@ -58,6 +59,9 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/carbon/hashing.py
 %%PYTHON_SITELIBDIR%%/carbon/hashing.pyc
 %%PYTHON_SITELIBDIR%%/carbon/hashing.pyo
+%%PYTHON_SITELIBDIR%%/carbon/http.py
+%%PYTHON_SITELIBDIR%%/carbon/http.pyc
+%%PYTHON_SITELIBDIR%%/carbon/http.pyo
 %%PYTHON_SITELIBDIR%%/carbon/instrumentation.py
 %%PYTHON_SITELIBDIR%%/carbon/instrumentation.pyc
 %%PYTHON_SITELIBDIR%%/carbon/instrumentation.pyo
@@ -106,6 +110,9 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/carbon/writer.py
 %%PYTHON_SITELIBDIR%%/carbon/writer.pyc
 %%PYTHON_SITELIBDIR%%/carbon/writer.pyo
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_cache_plugin.py
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_cache_plugin.pyc
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_cache_plugin.pyo
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.pyc
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.pyo
