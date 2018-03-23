@@ -1,6 +1,6 @@
 bin/openrct2
 bin/openrct2-cli
-lib/libopenrct2.a
+lib/libopenrct2.so
 man/man6/openrct2.6.gz
 share/applications/openrct2-savegame.desktop
 share/applications/openrct2-scenario.desktop
