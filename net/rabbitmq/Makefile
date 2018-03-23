@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.6.14
-PORTREVISION=	1
+PORTVERSION=	3.7.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -14,12 +13,13 @@ COMMENT=	RabbitMQ is an implementation of AMQP
 LICENSE=	MPL11
 LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ
 
-BUILD_DEPENDS=	erlang-runtime19>=19.0:lang/erlang-runtime19 \
+BUILD_DEPENDS=	erlang-runtime19>=19.3:lang/erlang-runtime19 \
+		elixir:lang/elixir \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson \
 		xmlto:textproc/xmlto \
 		zip:archivers/zip \
 		rsync:net/rsync
-RUN_DEPENDS=	erlang-runtime19>=19.0:lang/erlang-runtime19
+RUN_DEPENDS=	erlang-runtime19>=19.3:lang/erlang-runtime19
 
 OPTIONS_DEFINE=	ADMIN
 OPTIONS_SUB=	yes
@@ -30,6 +30,7 @@ ADMIN_USES_OFF=	python:build
 
 ALL_TARGET=	all manpages
 USES=		cpe gmake shebangfix tar:xz
+USE_LOCALE=	en_US.UTF-8
 USE_RC_SUBR=	rabbitmq
 NO_ARCH=	yes
 
@@ -62,18 +63,18 @@ post-patch:
 		${SCRIPTS_DIR}/rabbitmq-env \
 		${SCRIPTS_DIR}/rabbitmq-plugins \
 		${SCRIPTS_DIR}/rabbitmq-defaults \
-		${WRKSRC}/deps/rabbit/docs/rabbitmq-env.conf.5.xml
+		${WRKSRC}/deps/rabbit/docs/rabbitmq-env.conf.5
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rabbitmq
 	@${MKDIR} ${STAGEDIR}/var/db/rabbitmq/mnesia
 	@${MKDIR} ${STAGEDIR}/var/log/rabbitmq
 	${INSTALL_DATA} ${WRKSRC}/deps/rabbit/docs/rabbitmq.config.example \
-		${STAGEDIR}${PREFIX}/etc/rabbitmq/rabbitmq.config.sample
+	${STAGEDIR}${PREFIX}/etc/rabbitmq/rabbitmq.config.sample
 .for _file in rabbitmq-defaults rabbitmq-env rabbitmq-plugins rabbitmq-server rabbitmqctl
 	${LN} -s ../lib/erlang/lib/rabbitmq_server-${PORTVERSION}/sbin/${_file} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-.for _file in rabbitmq-plugins.1 rabbitmq-server.1 rabbitmqctl.1
+.for _file in rabbitmq-plugins.8 rabbitmq-server.8 rabbitmqctl.8
 	${INSTALL_MAN} ${WRKSRC}/deps/rabbit/docs/${_file} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/deps/rabbit/docs/rabbitmq-env.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
