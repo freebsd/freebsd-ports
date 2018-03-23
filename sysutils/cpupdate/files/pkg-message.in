@@ -5,5 +5,8 @@ NOTE: The following directories
 %%INTEL_DIR%%
 
 contain Intel and/or platomav/CPUMicrocodes collections respectively
-if you have just built the port with corresponding CPM/INTEL option(s) enabled
+if you have just built the port with corresponding CPM/INTEL option(s) enabled.
+In this case you can run "make install-microcodes" to install them to
+
+%%DATADIR%%
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
