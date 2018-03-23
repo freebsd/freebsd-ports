@@ -3,7 +3,7 @@
 
 PORTNAME=	exfat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.7
+DISTVERSION=	1.2.8
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -23,10 +23,9 @@ LICENSE_PERMS_MSPAT=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 LIB_DEPENDS=	libublio.so:devel/libublio
 
+USES=		autoreconf fuse localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	relan
-
-USES=		autoreconf fuse localbase pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SUBDIRS="libexfat fuse"
 
