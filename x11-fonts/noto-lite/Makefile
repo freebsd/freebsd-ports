@@ -2,6 +2,7 @@
 
 PORTNAME=	noto
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://noto-website.storage.googleapis.com/pkgs/ \
 		https://github.com/googlei18n/noto-emoji/raw/master/:emoji
@@ -17,10 +18,10 @@ LICENSE=	APACHE20 OFL11
 LICENSE_COMB=	multi
 
 USES=		fonts zip
+FONTNAME=	noto-lite
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-CONFLICTS_INSTALL=	noto*
 
 LIST=	NotoEmoji-Regular.ttf NotoSans-Bold.ttf NotoSans-BoldItalic.ttf NotoSans-Italic.ttf NotoSans-Regular.ttf NotoSansLinearB-Regular.ttf NotoSansSymbols-Regular.ttf NotoSerif-Bold.ttf NotoSerif-BoldItalic.ttf NotoSerif-Italic.ttf NotoSerif-Regular.ttf
 
