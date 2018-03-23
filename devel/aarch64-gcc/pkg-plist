@@ -8,9 +8,6 @@ bin/%%GCC_TARGET%%-gcc-nm
 bin/%%GCC_TARGET%%-gcc-ranlib
 bin/%%GCC_TARGET%%-gcov
 bin/%%GCC_TARGET%%-gcov-tool
-lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include-fixed/README
-lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include-fixed/limits.h
-lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include-fixed/syslimits.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/arm_acle.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/arm_neon.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/float.h

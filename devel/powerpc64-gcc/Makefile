@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	powerpc64-
@@ -48,7 +48,8 @@ CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--with-gmp=${LOCALBASE} \
 		--with-pkgversion="FreeBSD Ports Collection for ${PKGNAMEPREFIX:C/-//g}" \
 		--with-system-zlib \
-		--with-gcc-include-dir=/usr/include/c++/v1/ \
+		--with-gxx-include-dir=/usr/include/c++/v1/ \
+		--with-sysroot="/" \
 		--with-as=${LOCALBASE}/bin/${BU_PREFIX}-as \
 		--with-ld=${LOCALBASE}/bin/${BU_PREFIX}-ld
 
@@ -61,6 +62,8 @@ INSTALL_TARGET?=	install-gcc
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBSTDCXX/ s/stdc\+\+/c\+\+/g ' \
 		${WRKSRC}//gcc/cp/g++spec.c
+	@${REINPLACE_CMD} -e '/LOCAL_INCLUDE_DIR/ d ' \
+		${WRKSRC}//gcc/Makefile.in
 
 .if ${TARGETARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
@@ -94,6 +97,7 @@ post-install:
 .endfor
 	@${RM} ${STAGEDIR}${PREFIX}/info/*
 	@${RM} ${STAGEDIR}${PREFIX}/man/man7/*
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
 
 # This port and all its slave ports fail on aarch64 -- but not all
 # the same way.  Provide this definition for the master.
