@@ -1,0 +1,4 @@
+The Minio Python Client SDK provides simple APIs to access any Amazon
+S3 compatible object storage server.
+
+WWW: https://github.com/minio/minio-py
