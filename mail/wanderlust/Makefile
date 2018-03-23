@@ -2,37 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	wanderlust
-PORTVERSION=	2.14.0
-PORTREVISION=	19
+PORTVERSION=	2.15.9.b.${SNAPDATE}
 CATEGORIES=	mail elisp
-MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
-		http://www.jpl.org/elips/wl/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
-DISTNAME=	wl-${DISTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Mail and news system for Emacs
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	semi${EMACS_PKGNAMESUFFIX}>0:editors/semi@${EMACS_FLAVOR} \
-		emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR}
-RUN_DEPENDS=	semi${EMACS_PKGNAMESUFFIX}>0:editors/semi@${EMACS_FLAVOR} \
-		emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR}
+BUILD_DEPENDS=	emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR} \
+		semi${EMACS_PKGNAMESUFFIX}>0:editors/semi@${EMACS_FLAVOR} \
+		x-face-e21${EMACS_PKGNAMESUFFIX}>0:mail/x-face-e21@${EMACS_FLAVOR}
+RUN_DEPENDS=	emacs-w3m${EMACS_PKGNAMESUFFIX}>0:www/emacs-w3m@${EMACS_FLAVOR} \
+		semi${EMACS_PKGNAMESUFFIX}>0:editors/semi@${EMACS_FLAVOR}
 
 USES=		emacs
 EMACS_FLAVORS_EXCLUDE=	devel_full devel_nox # www/emacs-w3m fails to configure
+USE_GITHUB=	yes
+GH_TAGNAME=	f0c8c4e
 
 NO_ARCH=	yes
-CONFLICTS=	wanderlust-devel
+SNAPDATE=	20180317
 
 MAKE_ARGS+=	EMACS=${EMACS_CMD} \
 		FLAGS="-batch -q -no-site-file" \
 		LISPDIR=${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR} \
 		INFODIR=${STAGEDIR}${PREFIX}/${INFO_PATH} \
 		PIXMAPDIR=${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/etc/wl/icons
-ALL_TARGET=	all info
-INSTALL_TARGET=	install install-info
 
 INFO=		wl wl-ja
 PORTDATA=	ja.Emacs

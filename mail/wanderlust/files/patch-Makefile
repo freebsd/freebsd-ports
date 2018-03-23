@@ -1,4 +1,4 @@
---- Makefile.orig	2005-01-23 10:10:44 UTC
+--- Makefile.orig	2017-06-28 06:06:07 UTC
 +++ Makefile
 @@ -91,7 +91,7 @@ install-package:
  		$(PACKAGEDIR) $(PIXMAPDIR)
@@ -9,3 +9,15 @@
  
  install-info:
  	$(EMACS) $(FLAGS) -l WL-MK -f install-wl-info $(INFODIR)
+@@ -109,9 +109,9 @@ mostlyclean-dvi:
+ clean-dvi: mostlyclean-dvi
+ 	rm -f doc/*.dvi
+ 
+-all: elc
++all: elc info
+ 
+-install: install-elc
++install: install-elc install-info
+ 
+ uninstall: uninstall-elc
+ 

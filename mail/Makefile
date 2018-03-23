@@ -741,7 +741,6 @@
     SUBDIR += vqadmin
     SUBDIR += vrfy
     SUBDIR += wanderlust
-    SUBDIR += wanderlust-devel
     SUBDIR += websieve
     SUBDIR += whoson
     SUBDIR += wmbiff
