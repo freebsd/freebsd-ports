@@ -10233,4 +10233,4 @@ net-im/ktp-send-file|net-im/ktp-send-file-kde4|2018-03-23|Make room for KDE upda
 net-im/ktp-text-ui|net-im/ktp-text-ui-kde4|2018-03-23|Make room for KDE updates
 net-im/kde-telepathy|net-im/telepathy-kde4|2018-03-23|Make room for KDE updates
 net-im/plasma-applet-ktp|net-im/plasma-applet-ktp-kde4|2018-03-23|Make room for KDE updates
-multimedia/gmencoder||2918-03-23|Abandonware, does not support modern codecs
+multimedia/gmencoder||2018-03-23|Abandonware, does not support modern codecs
