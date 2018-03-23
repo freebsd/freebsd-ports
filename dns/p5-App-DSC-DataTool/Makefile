@@ -1,13 +1,11 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
 # $FreeBSD$
 
-PORTNAME=	App-DSC-DataTool
+PORTNAME=	p5-App-DSC-DataTool
 PORTVERSION=	0.03
 CATEGORIES=	dns perl5
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/downloads/dsc/
-PKGNAMEPREFIX=	p5-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Tool for converting, exporting, merging and transforming DSC data
