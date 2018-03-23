@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtkwave
-PORTVERSION=	3.3.87
+PORTVERSION=	3.3.88
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 
@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--disable-mime-update
 USE_GNOME=	cairo gtk20
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	TCL GCONF
+OPTIONS_DEFINE=	TCL GCONF EXAMPLES
 TCL_DESC=	Enable support for TCL/TK
 TCL_USES=	tcl tk
 TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR} \
@@ -32,6 +32,9 @@ GCONF_CONFIGURE_WITH=	gconf
 GCONF_USE=		GNOME=gconf2
 
 PORTDOCS=	gtkwave.odt
+
+post-patch-EXAMPLES-off:
+	${REINPLACE_CMD} '/^SUBDIRS/s|examples||' ${WRKSRC}/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
