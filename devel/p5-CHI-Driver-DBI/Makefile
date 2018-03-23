@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JSWARTZ
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremybbaggs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use DBI for CHI unified cache interface storage
 
 BUILD_DEPENDS=	p5-CHI>=0.241:devel/p5-CHI \

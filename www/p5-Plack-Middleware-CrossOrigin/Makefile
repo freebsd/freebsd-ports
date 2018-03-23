@@ -6,7 +6,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremybbaggs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plack Middleware headers to allow Cross-Origin Resource Sharing
 
 LICENSE=	GPLv1

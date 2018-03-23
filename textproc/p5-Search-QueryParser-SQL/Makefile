@@ -6,7 +6,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremybbaggs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to turn free-text queries into SQL WHERE clauses
 
 LICENSE=	GPLv2
