@@ -1,0 +1,4 @@
+The daemon consul-replicate integrates with Consul to perform
+cross-data-center K/V replication.
+
+WWW: https://github.com/hashicorp/consul-replicate

@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: consul-replicate
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# consul_replicate_enable (bool):   Set to NO by default.
+#                                   Set it to YES to enable consul.
+# consul_replicate_user (user):     Set user to run consul.
+#                                   Default is "consul".
+# consul_replcate_group (group):    Set group to run consul.
+#                                   Default is "consul".
+
+. /etc/rc.subr
+
+name=consul_replicate
+rcvar=consul_replicate_enable
+
+load_rc_config $name
+
+: ${consul_replicate_enable:="NO"}
+: ${consul_replicate_user:="consul"}
+: ${consul_replicate_group:="consul"}
+
+pidfile=/var/run/consul-replicate.pid
+procname="%%PREFIX%%/bin/consul-replicate"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} /usr/bin/env ${consul_replicate_env} ${procname} -config '%%PREFIX%%/etc/consul-replicate.d' ${consul_replicate_args}"
+
+start_precmd=consul_replicate_startprecmd
+
+consul_replicate_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${consul_replicate_user} -g ${consul_replicate_group} /dev/null ${pidfile};
+        fi
+}
+
+run_rc_command "$1"
