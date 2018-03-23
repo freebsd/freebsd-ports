@@ -9,6 +9,7 @@ Some features available on other platforms are not implemented:
 - Gamepad API (requires libusbhid backend)
 - WebVR (requires open source runtime)
 - U2F Security Keys (requires libusbhid backend)
+- TCP fast open
 
 ======================================================================
 
