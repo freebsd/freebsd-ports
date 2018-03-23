@@ -1,11 +1,12 @@
---- src/openrct2/config/Config.cpp.orig	2017-08-09 22:02:59 UTC
+--- src/openrct2/config/Config.cpp.orig	2018-03-18 20:26:14 UTC
 +++ src/openrct2/config/Config.cpp
-@@ -591,6 +591,8 @@ namespace Config
+@@ -602,6 +602,9 @@ namespace Config
+      */
+     static std::string FindRCT2Path()
      {
++
++	return "%%DATADIR%%";
++
          log_verbose("config_find_rct2_path(...)");
  
-+        return "%%DATADIR%%";
-+
-         static const utf8 * searchLocations[] =
-         {
-             "C:\\GOG Games\\RollerCoaster Tycoon 2 Triple Thrill Pack",
+         static constexpr const utf8 * searchLocations[] =
