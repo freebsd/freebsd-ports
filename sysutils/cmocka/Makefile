@@ -2,6 +2,7 @@
 
 PORTNAME=	cmocka
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cmocka.org/files/1.1/ \
 		LOCAL/dteske
