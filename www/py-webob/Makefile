@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webob
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,31 +12,25 @@ COMMENT=	WSGI request and response Python object
 
 LICENSE=	MIT
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${FLAVOR}
+
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons-sphinx-themes>=0:textproc/py-pylons-sphinx-themes@${FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx@${FLAVOR}
+DOCS_VARS=	PYDISTUTILS_BUILD_TARGET+="build_sphinx -a -E"
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS TESTS
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-TESTS_BUILD_DEPENDS=	nosetests:devel/py-nose
-TESTS_DESC=	Run tests with Nose
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PYDISTUTILS_BUILD_TARGET+=	build_sphinx -a -E
-
-post-install:
+post-install-DOCS-on:
 	@(cd ${WRKSRC}/build/sphinx/html && \
 	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -name objectiv.inv")
-.endif
-
-.if ${PORT_OPTIONS:MTESTS}
-PYDISTUTILS_BUILD_TARGET+=	nosetests
-.endif
 
 .include <bsd.port.mk>
