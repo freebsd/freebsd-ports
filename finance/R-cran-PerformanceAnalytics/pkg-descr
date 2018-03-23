@@ -6,4 +6,4 @@ regular scale, but most functions will work with irregular return
 data as well, and increasing numbers of functions will work with
 P&L or price data where possible.
 
-WWW: http://cran.r-project.org/web/packages/PerformanceAnalytics/
+WWW: https://cran.r-project.org/web/packages/PerformanceAnalytics/
