@@ -1,13 +1,11 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
 # $FreeBSD$
 
-PORTNAME=	DSC
+PORTNAME=	p5-DSC
 PORTVERSION=	2.04
 CATEGORIES=	dns perl5
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/downloads/dsc/
-PKGNAMEPREFIX=	p5-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	DNS Statistics Presenter Perl Library
