@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	aldo
-PORTVERSION=	0.7.5
-PORTREVISION=	6
+DISTVERSION=	0.7.7
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	lambert@lambertfam.org
 COMMENT=	Morse code training program
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libao.so:audio/libao
 
+USES=		compiler:c++0x gmake localbase tar:bzip2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-USES=		gmake libtool tar:bzip2
-USE_GCC=	any
 
 PLIST_FILES=	bin/aldo \
 		man/man1/aldo.1.gz
