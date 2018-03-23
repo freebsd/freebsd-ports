@@ -36,6 +36,12 @@ OPTIONS_DEFINE=		BASH DOCS DTRACE JSON PIE PROPRIETARY READLINE SNMP XML ZSH
 OPTIONS_DEFAULT=	BASH JSON PROPRIETARY SNMP XML ZSH
 OPTIONS_SUB=	yes
 
+# ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
+OPTIONS_EXCLUDE_aarch64=	DTRACE
+# dt_modtext:opensolaris/lib/libdtrace/common/dt_link.c: arm not implemented
+OPTIONS_EXCLUDE_armv6=		DTRACE
+OPTIONS_EXCLUDE_armv7=		DTRACE
+
 DTRACE_DESC=		DTrace support
 JSON_DESC=		JSON output support
 PIE_DESC=		Build PIE (position independant executables)
