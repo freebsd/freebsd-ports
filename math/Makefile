@@ -665,6 +665,7 @@
     SUBDIR += py-pygsl
     SUBDIR += py-pyhull
     SUBDIR += py-pymc
+    SUBDIR += py-pymc3
     SUBDIR += py-pysparse
     SUBDIR += py-pyvtk
     SUBDIR += py-roman
