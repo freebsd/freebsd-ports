@@ -16,6 +16,8 @@ bin/gnatsd
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/basic.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/reload/file_rotate.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/reload/file_rotate1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/invalid.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/max_connections.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/max_payload.conf
