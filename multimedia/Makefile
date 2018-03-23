@@ -74,7 +74,6 @@
     SUBDIR += gcfilms
     SUBDIR += gdialog
     SUBDIR += gdvrecv
-    SUBDIR += gmencoder
     SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
     SUBDIR += gmimms
