@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	theano
-PORTVERSION=	0.9.0
-PORTREVISION=	3
+DISTVERSION=	1.0.1
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP/source/T/Theano
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Theano-${DISTVERSION}
 
@@ -20,6 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		compiler:openmp python
 USE_PYTHON=	concurrent distutils autoplist
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	CXX=${CXX}
