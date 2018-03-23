@@ -2,4 +2,4 @@ DNS Statistics Presenter (DSP) is a tool used for exploring statistics
 from busy DNS servers collected by DNS Statistics Collector (DSC).
 This is the Perl library that is used to extract and graph DSC data.
 
-WWW: https://www.dns-oarc.net/dsc/
+WWW: https://www.dns-oarc.net/tools/dsc/
