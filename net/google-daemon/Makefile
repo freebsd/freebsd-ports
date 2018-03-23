@@ -9,6 +9,9 @@ CATEGORIES=	net
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Google daemon for use with Google Cloud Compute Engine
 
+DEPRECATED=	Please use sysutils/py-google-compute-engine instead
+EXPIRATION_DATE=2018-04-24
+
 BUILD_DEPENDS=	python:lang/python
 RUN_DEPENDS=	python:lang/python \
 		sudo:security/sudo
