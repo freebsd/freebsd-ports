@@ -1,6 +1,0 @@
-bin/gmencoder
-man/man1/gmencoder.1.gz
-share/pixmaps/gmencoder/media-pause.png
-share/pixmaps/gmencoder/media-play.png
-%%NLS%%share/locale/es/LC_MESSAGES/gmencoder.mo
-%%NLS%%share/locale/en/LC_MESSAGES/gmencoder.mo
