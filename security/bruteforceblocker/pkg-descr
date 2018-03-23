@@ -8,4 +8,4 @@ of fails, script puts this IP to the pf's table and blocks any further
 traffic to the that box from given IP (this also depends on
 configuration done in pf.conf).
 
-WWW: http://danger.rulez.sk/projects/bruteforceblocker/
+WWW: http://danger.rulez.sk/index.php/bruteforceblocker/
