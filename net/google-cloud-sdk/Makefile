@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-sdk
-PORTVERSION=	183.0.0
-PORTREVISION=	2
+PORTVERSION=	194.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
