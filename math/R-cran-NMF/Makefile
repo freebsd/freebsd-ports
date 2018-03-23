@@ -2,18 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	NMF
-PORTVERSION=	0.20.6
-PORTREVISION=	2
+PORTVERSION=	0.21.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Algorithms and Framework for Nonnegative Matrix Factorization
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
-RUN_DEPENDS=	R-cran-pkgmaker>=0.20:devel/R-cran-pkgmaker \
+CRAN_DEPENDS=	R-cran-pkgmaker>=0.20:devel/R-cran-pkgmaker \
 		R-cran-registry>0:devel/R-cran-registry \
 		R-cran-rngtools>=1.2.3:devel/R-cran-rngtools \
 		R-cran-stringr>=1.0.0:textproc/R-cran-stringr \
@@ -25,6 +23,8 @@ RUN_DEPENDS=	R-cran-pkgmaker>=0.20:devel/R-cran-pkgmaker \
 		R-cran-doParallel>0:devel/R-cran-doParallel \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-reshape2>0:devel/R-cran-reshape2
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
 
