@@ -1,6 +1,6 @@
---- configure.orig	2007-11-05 09:22:11 UTC
+--- configure.orig	2012-03-31 11:55:36 UTC
 +++ configure
-@@ -2220,9 +2220,6 @@ am__tar='${AMTAR} chof - "$$tardir"'; am
+@@ -2725,9 +2725,6 @@ am__tar='$${TAR-tar} chof - "$$tardir"' 
  
  
  

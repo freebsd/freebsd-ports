@@ -1,6 +1,6 @@
---- include/Makefile.in.orig	2017-03-24 13:33:28 UTC
+--- include/Makefile.in.orig	2012-03-31 11:55:36 UTC
 +++ include/Makefile.in
-@@ -101,7 +101,7 @@ PATH_SEPARATOR = @PATH_SEPARATOR@
+@@ -105,7 +105,7 @@ PATH_SEPARATOR = @PATH_SEPARATOR@
  SET_MAKE = @SET_MAKE@
  SHELL = @SHELL@
  STRIP = @STRIP@
