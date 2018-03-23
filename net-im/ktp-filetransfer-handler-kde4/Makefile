@@ -1,18 +1,17 @@
 # $FreeBSD$
 
-PORTNAME=	ktp-send-file
+PORTNAME=	ktp-filetransfer-handler
 PORTVERSION=	${KTP_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
+PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE instant messaging file transfer application
+COMMENT=	KDE instant messaging file transfer handler
 
 LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4 \
-		libktpcommoninternalsprivate.so:net-im/ktp-common-internals
-RUN_DEPENDS=	${KDE_PREFIX}/lib/kde4/libexec/ktp-filetransfer-handler:net-im/ktp-filetransfer-handler \
-		${KDE_PREFIX}/bin/ktp-contactlist:net-im/ktp-contact-list
+		libktpcommoninternalsprivate.so:net-im/ktp-common-internals-kde4
 
 USES=		cmake gettext kde:4 tar:bzip2
 USE_KDE=	kdelibs automoc4
