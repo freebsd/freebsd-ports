@@ -1,10 +1,8 @@
---- deps/rabbit/scripts/rabbitmq-plugins.orig	2017-03-16 21:19:29 UTC
+--- deps/rabbit/scripts/rabbitmq-plugins.orig	2018-03-14 11:00:24 UTC
 +++ deps/rabbit/scripts/rabbitmq-plugins
-@@ -25,6 +25,7 @@ if [ -z "$ERL_CRASH_DUMP_SECONDS" ]; the
- fi
- 
- RABBITMQ_USE_LONGNAME=${RABBITMQ_USE_LONGNAME} \
-+HOME=/var/db/rabbitmq \
- exec ${ERL_DIR}erl \
-     -pa "${RABBITMQ_HOME}/ebin" \
-     -noinput \
+@@ -29,4 +29,5 @@ set -a
+ # shellcheck source=./rabbitmq-env
+ . "${0%/*}"/rabbitmq-env
+
++HOME=/var/db/rabbitmq
+ run_escript rabbitmqctl_escript "${ESCRIPT_DIR:?must be defined}"/rabbitmq-plugins --formatter=plugins -q "$@"

@@ -55,7 +55,7 @@ rabbitmq_start()
 	fi
 
 	mkdir -p ${RABBITMQ_LOG_BASE}
- 
+
 	chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOG_BASE}
 
 	if [ -f ${RABBITMQ_HOME}/.erlang.cookie ]; then
@@ -70,10 +70,15 @@ rabbitmq_start()
 rabbitmq_stop()
 {
 	echo "Stopping ${name}."
-	[ -f ${daemon_pidfile} ] && read daemon_pid < ${daemon_pidfile}
-	debug "Running: ${rabbitmq_ctl} stop ${pidfile}"
-	su -m ${rabbitmq_user} -c "sh -c \"${rabbitmq_ctl} stop ${pidfile}\"" >/dev/null 2>&1
-	[ -n "${daemon_pid}" ] && wait_for_pids ${daemon_pid}
+	if [ -f ${daemon_pidfile} ]; then
+		read daemon_pid < ${daemon_pidfile}
+		debug "Running: ${rabbitmq_ctl} stop ${pidfile}"
+		su -m ${rabbitmq_user} -c "sh -c \"${rabbitmq_ctl} stop ${pidfile}\"" >/dev/null 2>&1
+		[ -n "${daemon_pid}" ] && wait_for_pids ${daemon_pid}
+	else
+		debug "Running: ${rabbitmq_ctl} stop"
+		su -m ${rabbitmq_user} -c "sh -c \"${rabbitmq_ctl} stop\"" >/dev/null 2>&1
+	fi
 }
 
 run_rc_command "$1"
