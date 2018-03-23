@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.21.0
-PORTREVISION=	1
+DISTVERSION=	3.22.0
 CATEGORIES=	databases
-MASTER_SITES=	https://www.sqlite.org/2017/ http://www2.sqlite.org/2017/ http://www3.sqlite.org/2017/
+MASTER_SITES=	https://www.sqlite.org/2018/ http://www2.sqlite.org/2018/ http://www3.sqlite.org/2018/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
@@ -14,28 +13,33 @@ COMMENT=	SQL database engine in a C library
 LICENSE=	PD
 
 USES=		libtool ncurses pathfix
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 MAKE_JOBS_UNSAFE=	yes
 
 # Compilation Options For SQLite https://www.sqlite.org/compile.html
-OPTIONS_DEFINE=	FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
-		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
-		EXTENSION ARMOR STMT DBPAGE DBSTAT FTS5 JSON1 RBU NULL_TRIM \
-		LIKENOTBLOB STSHELL FTS3_TOKEN SESSION UNKNOWN_SQL
-OPTIONS_SINGLE=	RAMT
-OPTIONS_RADIO=	STAT
-OPTIONS_GROUP=	UNICODE RTREEG RL
+OPTIONS_DEFINE=		FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY METADATA \
+			DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
+			EXTENSION ARMOR STMT DBPAGE DBSTAT FTS5 RBU NULL_TRIM \
+			LIKENOTBLOB STSHELL FTS3_TOKEN UNKNOWN_SQL
+OPTIONS_SINGLE=		RAMT
+OPTIONS_RADIO=		STAT
+OPTIONS_GROUP=		OPT_EXT OPT_FUNC UNICODE RTREEG RL
 
+OPTIONS_GROUP_OPT_EXT=	JSON1 SESSION
+OPTIONS_GROUP_OPT_FUNC=	OFFSET SOUNDEX
+
+OPT_EXT_DESC=		Optional extensions
+OPT_FUNC_DESC=		Optional functions
 UPD_DEL_LIMIT_DESC=	ORDER BY and LIMIT on UPDATE and DELETE
 URI_DESC=		Enable use the URI filename
 URI_AUTHORITY_DESC=	Allow convert URL into a UNC
-SOUNDEX_DESC=		Enables the soundex() SQL function
+SOUNDEX_DESC=		Enable the soundex() SQL function
 METADATA_DESC=		Enable column metadata
 DIRECT_READ_DESC=	File is read directly from disk
-MEMMAN_DESC=		Allows it to release unused memory
+MEMMAN_DESC=		Allow it to release unused memory
 SECURE_DELETE_DESC=	Overwrite deleted information with zeros
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 EXTENSION_DESC=		Allow loadable extensions
@@ -44,8 +48,11 @@ STSHELL_DESC=		Statically link libsqlite3 into shell
 # https://sqlite.org/compile.html#enable_null_trim
 NULL_TRIM_DESC=		Omits NULL columns at the ends of rows
 
+# http://www.sqlite.org/compile.html#enable_offset_sql_func
+OFFSET_DESC=		Enable sqlite_offset() returning record's file offset
+
 # https://www.sqlite.org/sessionintro.html
-SESSION_DESC=		Enable the Session Extension
+SESSION_DESC=		Enable the session extension
 
 # https://sqlite.org/compile.html#like_doesnt_match_blobs
 LIKENOTBLOB_DESC=	LIKE does not match blobs
@@ -54,7 +61,7 @@ LIKENOTBLOB_DESC=	LIKE does not match blobs
 ARMOR_DESC=		Detect misuse of the API
 
 # http://sqlite.org/compile.html#enable_unknown_sql_function
-UNKNOWN_SQL_DESC=	suppress unknown function errors
+UNKNOWN_SQL_DESC=	Suppress unknown function errors
 
 # https://www.sqlite.org/fts3.html
 # https://www.sqlite.org/compile.html#enable_fts3_parenthesis
@@ -71,10 +78,10 @@ FTS3_TOKEN_DESC=	Enable two-args version fts3_tokenizer
 JSON1_DESC=		Enable the JSON1 extension
 
 # https://www.sqlite.org/rbu.html
-RBU_DESC=		Enable the Resumable Bulk Update
+RBU_DESC=		Enable the resumable bulk update
 
 # https://www.sqlite.org/c3ref/stmt_scanstatus.html
-STMT_DESC=		Prepared Statement Scan Status
+STMT_DESC=		Prepared statement scan status
 
 # https://www.sqlite.org/tempfiles.html#tempstore
 OPTIONS_SINGLE_RAMT=	TS0 TS1 TS2 TS3
@@ -86,7 +93,7 @@ TS3_DESC=		Always use memory
 
 # https://www.sqlite.org/queryplanner-ng.html#qpstab
 OPTIONS_RADIO_STAT=	STAT3 STAT4
-STAT_DESC=		Which query planner to use, Stability or ...
+STAT_DESC=		Which query planner to use, stability or ...
 STAT3_DESC=		collect histogram data from leftmost column
 STAT4_DESC=		collect histogram data from all columns
 
@@ -201,6 +208,8 @@ SESSION_CONFIGURE_ENABLE=	session
 UNKNOWN_SQL_CPPFLAGS=	-DSQLITE_ENABLE_UNKNOWN_SQL_FUNCTION=1
 
 NULL_TRIM_CPPFLAGS=	-DSQLITE_ENABLE_NULL_TRIM=1
+
+OFFSET_CPPFLAGS=	-DSQLITE_ENABLE_OFFSET_SQL_FUNC=1
 
 .include <bsd.port.options.mk>
 
