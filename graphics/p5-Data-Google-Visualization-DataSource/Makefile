@@ -7,7 +7,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremybbaggs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl helper class for the Google Chart Tools Datasource Protocol
 
 LICENSE=	ART10 GPLv1+

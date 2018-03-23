@@ -6,7 +6,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremybbaggs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse a query into a structure suitable for external search engines
 
 LICENSE=	GPLv2

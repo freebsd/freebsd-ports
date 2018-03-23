@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHROMATIC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremybbaggs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for the PDF::API2 modules
 
 RUN_DEPENDS=	p5-PDF-API2>=0:textproc/p5-PDF-API2

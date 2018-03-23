@@ -7,7 +7,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremybbaggs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily create Google DataTable objects for the Google Visulization API
 
 LICENSE=	ART10 GPLv1+

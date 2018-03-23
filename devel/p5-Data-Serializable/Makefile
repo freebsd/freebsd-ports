@@ -6,7 +6,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jeremybbaggs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moose role that adds serialization support to any class
 
 LICENSE=	GPLv3
