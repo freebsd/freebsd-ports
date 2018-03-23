@@ -3,6 +3,7 @@
 
 PORTNAME=	filelight
 PORTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,6 +11,8 @@ COMMENT=	Map of concentric segmented-rings representing file system
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
+
+CONFLICTS_INSTALL=      ${PORTNAME}-kde4*
 
 USES=		cmake:outsource desktop-file-utils gettext kde:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons doctools \

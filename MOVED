@@ -9516,7 +9516,6 @@ devel/py3-enum34||2017-09-03|Removed, Python 3.3 only
 security/clambc||2017-09-14|Has expired: Practically unmaintained, featuring issues elsewhere solved 6 years ago
 devel/cmake-modules||2017-09-14|Deleted, merged into devel/cmake
 devel/cargo|lang/rust|2017-09-15|Merged with lang/rust
-sysutils/filelight-kde4|sysutils/filelight|2017-09-16|Renamed to sysutils/filelight
 security/gnupg22|security/gnupg|2017-09-19|Removed, security/gnupg is now gnupg22
 mail/milter-greylist-devel|mail/milter-greylist|2017-09-22|Has expired: mail/milter-greylist provides same version and options
 devel/libexecinfo||2017-09-22|Is present in the base system of all supported releases
