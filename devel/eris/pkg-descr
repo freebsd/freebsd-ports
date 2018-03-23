@@ -2,4 +2,4 @@ Eris, the WorldForge client entity library is designed to simplify client
 development (and avoid duplicating effort) by providing a common framework to
 deal with server communications.
 
-WWW: http://www.worldforge.org/dev/eng/libraries/eris
+WWW: https://www.worldforge.org/index.php/components/eris/
