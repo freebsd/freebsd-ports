@@ -3,7 +3,7 @@
 
 PORTNAME=	google-cloud-sdk
 PORTVERSION=	183.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -11,7 +11,7 @@ DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Google Cloud SDK for Google Cloud Platform
 
-USES=		python
+USES=		python:2.7
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/google-cloud-sdk
 
