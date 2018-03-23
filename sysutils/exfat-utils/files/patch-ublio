@@ -31,12 +31,12 @@ index b45db3f..2bcda4b 100644
  AC_CONFIG_FILES([
 diff --git libexfat/io.c libexfat/io.c
 index 60f28e2..14c0151 100644
---- libexfat/io.c
-+++ libexfat/io.c
-@@ -37,12 +37,20 @@
- #include <sys/ioctl.h>
- #endif
+--- libexfat/io.c	2018-02-03 09:01:42.000000000 +0100
++++ libexfat/io.c	2018-03-18 15:45:43.573290677 +0100
+@@ -38,12 +38,20 @@
+ #elif __linux__
  #include <sys/mount.h>
+ #endif
 +#ifdef USE_UBLIO
 +#include <sys/uio.h>
 +#include <ublio.h>
@@ -53,8 +53,8 @@ index 60f28e2..14c0151 100644
 +#endif
  };
  
- static int open_ro(const char* spec)
-@@ -74,6 +82,9 @@ struct exfat_dev* exfat_open(const char* spec, enum exfat_mode mode)
+ static bool is_open(int fd)
+@@ -80,6 +88,9 @@
  {
  	struct exfat_dev* dev;
  	struct stat stbuf;
@@ -62,9 +62,9 @@ index 60f28e2..14c0151 100644
 +	struct ublio_param up;
 +#endif
  
- 	dev = malloc(sizeof(struct exfat_dev));
- 	if (dev == NULL)
-@@ -211,6 +222,24 @@ struct exfat_dev* exfat_open(const char* spec, enum exfat_mode mode)
+ 	/* The system allocates file descriptors sequentially. If we have been
+ 	   started with stdin (0), stdout (1) or stderr (2) closed, the system
+@@ -235,6 +246,24 @@
  		}
  	}
  
@@ -89,7 +89,7 @@ index 60f28e2..14c0151 100644
  	return dev;
  }
  
-@@ -218,6 +247,13 @@ int exfat_close(struct exfat_dev* dev)
+@@ -242,6 +271,13 @@
  {
  	int rc = 0;
  
@@ -103,7 +103,7 @@ index 60f28e2..14c0151 100644
  	if (close(dev->fd) != 0)
  	{
  		exfat_error("failed to close device: %s", strerror(errno));
-@@ -231,6 +267,13 @@ int exfat_fsync(struct exfat_dev* dev)
+@@ -255,6 +291,13 @@
  {
  	int rc = 0;
  
@@ -117,7 +117,7 @@ index 60f28e2..14c0151 100644
  	if (fsync(dev->fd) != 0)
  	{
  		exfat_error("fsync failed: %s", strerror(errno));
-@@ -251,29 +294,56 @@ off_t exfat_get_size(const struct exfat_dev* dev)
+@@ -275,29 +318,56 @@
  
  off_t exfat_seek(struct exfat_dev* dev, off_t offset, int whence)
  {
