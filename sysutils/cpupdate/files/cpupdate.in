@@ -13,7 +13,7 @@
 # cpupdate_enable (bool):		Set to NO by default.
 #					Set it to YES to enable cpupdate.
 # cpupdate_flags (string):		Command line flags for cpupdate.
-#					Default is "".
+#					Default is "-w -u".
 
 . /etc/rc.subr
 
