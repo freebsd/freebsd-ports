@@ -8,6 +8,9 @@ CATEGORIES=	net
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Startup scripts that interact with Google Compute Engine VMs
 
+DEPRECATED=	Please use sysutils/py-google-compute-engine instead
+EXPIRATION_DATE=2018-04-24
+
 BUILD_DEPENDS=	python:lang/python
 RUN_DEPENDS=	python:lang/python \
 		curl:ftp/curl \
