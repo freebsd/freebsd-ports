@@ -10221,3 +10221,16 @@ textproc/rubygem-compass-rails||2018-03-20|Has expired: Broken for more than 6 m
 graphics/pfscalibration||2018-03-20|Deprecated: pfs-calibration is a part of pfstools (from version 2.0)
 graphics/pfstmo||2018-03-20|Deprecated: pfstmo is a part of pfstools
 games/timeseal||2018-03-22|Has expired: Abandoned, outdated, requires COMPAT_43 kernel option which was removed from GENERIC in FreeBSD 7.0
+net-im/ktp-accounts-kcm|net-im/ktp-accounts-kcm-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-approver|net-im/ktp-approver-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-auth-handler|net-im/ktp-auth-handler-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-common-internals|net-im/ktp-common-internals-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-contact-list|net-im/ktp-contact-list-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-contact-runner|net-im/ktp-contact-runner-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-desktop-applets|net-im/ktp-desktop-applets-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-filetransfer-handler|net-im/ktp-filetransfer-handler-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-kded-integration-module|net-im/ktp-kded-integration-module-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-send-file|net-im/ktp-send-file-kde4|2018-03-23|Make room for KDE updates
+net-im/ktp-text-ui|net-im/ktp-text-ui-kde4|2018-03-23|Make room for KDE updates
+net-im/kde-telepathy|net-im/telepathy-kde4|2018-03-23|Make room for KDE updates
+net-im/plasma-applet-ktp|net-im/plasma-applet-ktp-kde4|2018-03-23|Make room for KDE updates
