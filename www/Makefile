@@ -1040,6 +1040,7 @@
     SUBDIR += p5-HTTP-Thin
     SUBDIR += p5-HTTP-Tiny
     SUBDIR += p5-HTTP-Tiny-SPDY
+    SUBDIR += p5-HTTP-Tiny-UA
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTP-XSCookies
     SUBDIR += p5-HTTPD-Log-Filter

@@ -1,0 +1,3 @@
+HTTP::Tiny::UA extends HTTP::Tiny with higher-level convenience features.
+
+WWW: http://search.cpan.org/dist/HTTP-Tiny-UA/

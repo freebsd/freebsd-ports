@@ -1,0 +1,4 @@
+%%SITE_PERL%%/HTTP/Tiny/UA.pm
+%%SITE_PERL%%/HTTP/Tiny/UA/Response.pm
+%%PERL5_MAN3%%/HTTP::Tiny::UA.3.gz
+%%PERL5_MAN3%%/HTTP::Tiny::UA::Response.3.gz
