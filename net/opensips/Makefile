@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		opensips
-PORTVERSION=		2.2.3
-PORTREVISION=	5
+DISTVERSION=		2.2.6
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
@@ -34,9 +33,11 @@ GINSTALL=		ginstall
 WRKSRC=			${WRKDIR}/opensips-${PORTVERSION}
 DOCSDIR=		share/doc/opensips
 
-USE_RC_SUBR=		opensips
+USERS=			opensips
+GROUPS=			opensips
 
 USES=			gmake ncurses perl5 pkgconfig python:2.7 shebangfix ssl
+USE_RC_SUBR=		opensips
 USE_GCC=		yes
 
 NOPRECIOUSMAKEVARS=	yes
@@ -52,16 +53,16 @@ MEMCACHED_DESC=		Build with memcached support
 TESTS_DESC=		Install smoke tests
 
 LDAP_USE=		OPENLDAP=client
-MYSQL_USE=		MYSQL=client
-PGSQL_USES+=		pgsql
+MYSQL_USES=		mysql:client
+PGSQL_USES=		pgsql
 
-PGSQL_BUILD_DEPENDS+=	p5-DBD-Pg>=3.4:databases/p5-DBD-Pg
-RADIUS_LIB_DEPENDS+=	libradiusclient-ng.so:net/radiusclient
-HTTP_LIB_DEPENDS+=	libmicrohttpd.so:www/libmicrohttpd
-GEOIP_LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
-MEMCACHED_LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
-UNIXODBC_LIB_DEPENDS+=	libodbc.so:databases/unixODBC
-SQLITE_LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
+PGSQL_BUILD_DEPENDS=	p5-DBD-Pg>=3.4:databases/p5-DBD-Pg
+RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
+HTTP_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
+UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 SHEBANG_FILES=		ccopts.sh \
 			ccver.sh \
@@ -69,12 +70,12 @@ SHEBANG_FILES=		ccopts.sh \
 			modules/jabber/doc/jabberreg.pl \
 			modules/seas/doc/xml2sgml.sh \
 			modules/sipcapture/examples/partrotate_unixtimestamp.pl \
-			packaging/debian/common/rules \
+			packaging/debian/rules \
 			packaging/freebsd/files/pkg-deinstall.in \
 			packaging/freebsd/files/pkg-install.in \
 			packaging/gentoo/opensips.init \
 			packaging/redhat_fedora/opensips.init \
-			packaging/redhat_fedora/opensips.m4cfg \
+			packaging/redhat_fedora/opensips-m4cfg \
 			packaging/rpm/opensips.init \
 			packaging/solaris/berkeley-postinstall \
 			packaging/solaris/berkeley-preinstall \
@@ -116,6 +117,7 @@ SHEBANG_FILES=		ccopts.sh \
 			test/18.sh \
 			test/19.sh \
 			test/2.sh \
+			test/20.sh \
 			test/21.sh \
 			test/22.sh \
 			test/23.sh \
@@ -177,7 +179,7 @@ EXTRA_MODULES+=		db_unixodbc
 .endif
 
 .if ${PORT_OPTIONS:MTLS}
-EXTRA_MODULES+=		proto_tls
+EXTRA_MODULES+=		proto_tls proto_wss tls_mgm
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
@@ -220,6 +222,10 @@ do-install-TESTS-on:
 do-install-EXAMPLES-on:
 	(cp -r ${WRKSRC}/examples ${STAGEDIR}${PREFIX}/share/examples/opensips)
 
+post-install:
+	@cd ${STAGEDIR}${PREFIX}/sbin && ${STRIP_CMD} opensips osipsconfig opensipsunix
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opensips/modules/*.so
+
 post-install-RADIUS-on:
 	(mv ${STAGEDIR}${ETCDIR}/dictionary.opensips ${STAGEDIR}${ETCDIR}/dictionary.opensips.sample)
 
@@ -238,7 +244,7 @@ post-install-RADIUS-on:
 .for i in	aaa_radius.so acc.so alias_db.so auth.so auth_aaa.so auth_db.so auth_diameter.so \
 		avpops.so b2b_entities.so b2b_logic.so b2b_sca.so benchmark.so cachedb_local.so \
 		cachedb_memcached.so cachedb_sql.so call_center.so call_control.so carrierroute.so \
-		cfgutils.so closeddial.so cpl-c.so db_cachedb.so db_flatstore.so db_mysql.so \
+		cfgutils.so closeddial.so cpl_c.so db_cachedb.so db_flatstore.so db_mysql.so \
 		db_postgres.so db_text.so db_unixodbc.so db_virtual.so dialog.so dialplan.so \
 		dispatcher.so diversion.so dns_cache.so domain.so domainpolicy.so drouting.so \
 		enum.so event_datagram.so event_rabbitmq.so event_route.so event_xmlrpc.so exec.so \
@@ -254,7 +260,9 @@ post-install-RADIUS-on:
 		sms.so speeddial.so sst.so statistics.so stun.so textops.so tlsops.so tm.so uac.so \
 		uac_auth.so uac_redirect.so uac_registrant.so uri.so userblacklist.so usrloc.so \
 		xcap.so xcap_client.so xmpp.so topology_hiding.so fraud_detection.so rtpengine.so \
-		proto_ws.so proto_tls.so cachedb_redis.so db_sqlite.so
+		proto_ws.so proto_tls.so cachedb_redis.so db_sqlite.so proto_bin.so tls_mgm.so \
+		tls_mgm.so event_flatstore.so event_virtual.so proto_hep.so proto_wss.so \
+		clusterer.so sql_cacher.so
 		@if [ -e ${STAGEDIR}${PREFIX}/lib/opensips/modules/${i} ]; then \
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opensips/modules/${i}; \
 		fi

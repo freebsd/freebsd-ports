@@ -23,8 +23,10 @@ rcvar=`set_rcvar`
 load_rc_config opensips
 
 opensips_enable=${opensips_enable:-"NO"}
-opensips_shmem_size=${opensips_shmem_size:-"32"}
-opensips_pkmem_size=${opensips_pkmem_size:-"2"}
+opensips_shmem_size=${opensips_shmem_size:-"64"}
+opensips_pkmem_size=${opensips_pkmem_size:-"4"}
+opensips_user=${opensips_user:-"opensips"}
+opensips_group=${opensips_group:-"opensips"}
 
 command="${prefix}/sbin/opensips"
 command_args="-m ${opensips_shmem_size} -M ${opensips_pkmem_size}"

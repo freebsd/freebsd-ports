@@ -161,7 +161,7 @@ anvil:*:217:
 zap:*:218:
 sddm:*:219:
 bs:*:220:
-# free: 221
+opensips:*:221:
 rtpproxy:*:222:
 # free: 223
 # free: 224

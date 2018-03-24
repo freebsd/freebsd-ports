@@ -1,37 +1,45 @@
 #
-# $Id$
-#
 # OpenSIPS residential configuration script
-#     by OpenSIPS Solutions <team@opensips-solutions.com>
 #
-# This script was generated via "make menuconfig", from
-#   the "Residential" scenario.
+# This script was originally generated via 
+# 'CC=gcc6 gmake menuconfig', from the "Residential" scenario.
 # You can enable / disable more features / functionalities by
-#   re-generating the scenario with different options.#
+# re-generating the scenario with different options.
+#
+# To generate an opensips script in FreeBSD, run the following commands,
+# after installing the port / package.
+# $ cd /usr/ports/net/opensips
+# $ make patch
+# $ cd work/opensips-*/
+# $ CC=gcc6 gmake menuconfig
+# $ ls tmp/
+#
+# As the FreeBSD port maintainer, I have tailored it a little
+# to resemble the (hopefully) sane set of defaults for a residential
+# SIP router running on FreeBSD and using PostgreSQL as backend database.
+# For other supported databases, it should be as simple as changing all
+# the db_url variables throughout this script.
 #
 # Please refer to the Core CookBook at:
-#      http://www.opensips.org/Resources/DocsCookbooks
-# for a explanation of possible statements, functions and parameters.
+# http://www.opensips.org/Resources/DocsCookbooks
+# for an explanation of possible statements, functions and parameters.
 #
 
 
 ####### Global Parameters #########
 
-debug=3
+log_level=3
 log_stderror=no
 log_facility=LOG_LOCAL0
 
-fork=yes
 children=4
 
 /* uncomment the following lines to enable debugging */
-#debug=6
-#fork=no
-#log_stderror=yes
+#debug_mode=yes
 
 /* uncomment the next line to enable the auto temporary blacklisting of 
    not available destinations (default disabled) */
-disable_dns_blacklist=yes
+#disable_dns_blacklist=no
 
 /* uncomment the next line to enable IPv6 lookup after IPv4 dns 
    lookup failures (default disabled) */
@@ -42,17 +50,15 @@ disable_dns_blacklist=yes
 auto_aliases=no
 
 
-listen=udp:127.0.0.1:5060   # CUSTOMIZE ME
+listen=udp:192.168.10.12:5060   # CUSTOMIZE ME
+listen=tcp:192.168.10.12:5060   # CUSTOMIZE ME 
+listen=tls:192.168.10.12:5061   # CUSTOMIZE ME 
+#advertised_address=12.34.56.78   # CUSTOMIZE ME (for running behind a NAT router)
+#alias=12.34.56.78   # CUSTOMIZE ME
+alias="domain1.net"   # CUSTOMIZE ME
+#alias="domain2.com"   # CUSTOMIZE ME
 
-#listen=tcp:127.0.0.1:5060   # CUSTOMIZE ME 
-#listen=tls:127.0.0.1:5061   # CUSTOMIZE ME 
-
-#advertised_address=111.222.333.444   # CUSTOMIZE ME
-
-#alias=111.222.333.444   # CUSTOMIZE ME
-#alias=example.org   # CUSTOMIZE ME
-
-db_default_url="postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+db_default_url="postgres://dbuser:dbpass@dbhostname/dbname"
 
 ####### Modules Section ########
 
@@ -92,6 +98,7 @@ modparam("mi_fifo", "fifo_mode", 0666)
 #### URI module
 loadmodule "uri.so"
 modparam("uri", "use_uri_table", 0)
+  
 
 
 
@@ -101,7 +108,6 @@ loadmodule "db_postgres.so"
 #### MYSQL module
 #loadmodule "db_mysql.so"
 
-
 #### HTTPD module
 #loadmodule "httpd.so"
 #modparam("httpd", "port", 8888)
@@ -110,15 +116,16 @@ loadmodule "db_postgres.so"
 loadmodule "usrloc.so"
 modparam("usrloc", "nat_bflag", "NAT")
 modparam("usrloc", "db_mode",   2)
-modparam("usrloc", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
-modparam("usrloc", "hash_size", 11)
+modparam("usrloc", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
+#modparam("usrloc", "hash_size", 11)   # increases size of userloc hash table
 
 
 #### REGISTRAR module
 loadmodule "registrar.so"
 modparam("registrar", "tcp_persistent_flag", "TCP_PERSISTENT")
 modparam("registrar", "received_avp", "$avp(received_nh)")
-modparam("registrar", "max_contacts", 10)
+/* uncomment the next line not to allow more than 10 contacts per AOR */
+#modparam("registrar", "max_contacts", 10)
 
 #### ACCounting module
 loadmodule "acc.so"
@@ -129,11 +136,8 @@ modparam("acc", "report_cancels", 0)
    if you enable this parameter, be sure the enable "append_fromtag"
    in "rr" module */
 modparam("acc", "detect_direction", 0)
-modparam("acc", "failed_transaction_flag", "ACC_FAILED")
-/* account triggers (flags) */
-modparam("acc", "db_flag", "ACC_DO")
-modparam("acc", "db_missed_flag", "ACC_MISSED")
-modparam("acc", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("acc", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
+
 
 
 #### AUTHentication modules
@@ -141,31 +145,34 @@ loadmodule "auth.so"
 loadmodule "auth_db.so"
 modparam("auth_db", "calculate_ha1", yes)
 modparam("auth_db", "password_column", "password")
-modparam("auth_db", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("auth_db", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
 modparam("auth_db", "load_credentials", "")
+
 
 
 #### ALIAS module
 loadmodule "alias_db.so"
-modparam("alias_db", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("alias_db", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
+
 
 
 #### DOMAIN module
 loadmodule "domain.so"
-modparam("domain", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("domain", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
 modparam("domain", "db_mode", 1)   # Use caching
 modparam("auth_db|usrloc|uri", "use_domain", 1)
+
 
 
 #### PRESENCE modules
 loadmodule "xcap.so"
 loadmodule "presence.so"
 loadmodule "presence_xml.so"
-modparam("xcap|presence", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("xcap|presence", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
 modparam("presence_xml", "force_active", 1)
 modparam("presence", "server_address", "sip:127.0.0.1:5060") # CUSTOMIZE ME
-modparam("presence", "subs_htable_size", 11)
-modparam("presence", "pres_htable_size", 11)
+#modparam("presence", "subs_htable_size", 11)   # increases size of presence subs hash table
+#modparam("presence", "pres_htable_size", 11)   # increases size of presence pres hash table
 #modparam("presence", "max_expires_subscribe", 600)
 #modparam("presence", "max_expires_publish", 600)
 
@@ -175,23 +182,31 @@ loadmodule "dialog.so"
 modparam("dialog", "dlg_match_mode", 1)
 modparam("dialog", "default_timeout", 21600)  # 6 hours timeout
 modparam("dialog", "db_mode", 2)
-modparam("dialog", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("dialog", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
+
 
 
 ####  NAT modules
 loadmodule "nathelper.so"
 modparam("nathelper", "natping_interval", 10)
 modparam("nathelper", "ping_nated_only", 1)
+modparam("nathelper", "sipping_bflag", "SIP_PING_FLAG")
+modparam("nathelper", "sipping_from", "sip:pinger@127.0.0.1") #CUSTOMIZE ME
 modparam("nathelper", "received_avp", "$avp(received_nh)")
 
 loadmodule "rtpproxy.so"
-modparam("rtpproxy", "rtpproxy_sock", "udp:localhost:22222") # CUSTOMIZE ME
+modparam("rtpproxy", "rtpproxy_sock", "udp:localhost:12221") # CUSTOMIZE ME (make sure rtpproxy port matches server)
 
 
 ####  DIALPLAN module
 loadmodule "dialplan.so"
-modparam("dialplan", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("dialplan", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
 
+
+
+####  DYNAMMIC ROUTING module
+loadmodule "drouting.so"
+modparam("drouting", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
 
 
 
@@ -199,18 +214,31 @@ modparam("dialplan", "db_url", "postgres://opensips:opensipsrw@localhost/opensip
 #loadmodule "mi_http.so"
 
 
+#### UDP module
 loadmodule "proto_udp.so"
 
-#loadmodule "proto_tcp.so" 
-#loadmodule "proto_tls.so"
-#modparam("proto_tls","verify_cert", "1")
-#modparam("proto_tls","require_cert", "0")
-#modparam("proto_tls","tls_method", "TLSv1")
-#modparam("proto_tls","certificate", "/usr/local/etc/opensips/tls/user/user-cert.pem")
-#modparam("proto_tls","private_key", "/usr/local/etc/opensips/tls/user/user-privkey.pem")
-#modparam("proto_tls","ca_list", "/usr/local/etc/opensips/tls/user/user-calist.pem")
 
+#### TCP module
+loadmodule "proto_tcp.so" 
+#modparam("proto_tcp", "tcp_send_timeout", 200)
+#modparam("proto_tcp", "tcp_max_msg_chunks", 8)
+
+
+#### TLS modules
+loadmodule "proto_tls.so"
+loadmodule "tls_mgm.so"
+modparam("tls_mgm","verify_cert", "1")
+modparam("tls_mgm","require_cert", "0")
+modparam("tls_mgm","tls_method", "TLSv1")
+#modparam("tls_mgm","ca_dir", "/usr/local/etc/opensips/tls/user/")
+modparam("tls_mgm","certificate", "/usr/local/etc/opensips/tls/user/user-cert.pem")
+modparam("tls_mgm","private_key", "/usr/local/etc/opensips/tls/user/user-privkey.pem")
+modparam("tls_mgm","ca_list", "/usr/local/etc/opensips/tls/user/user-calist.pem")
+#modparam("tls_mgm", "tls_send_timeout", 200)
+#modparam("tls_mgm", "tls_handshake_timeout", 119)
+#modparam("proto_tls", "tls_max_msg_chunks", 8)
  
+
 
 ####### Routing Logic ########
 
@@ -246,8 +274,9 @@ route{
 			}
 			
 			if (is_method("BYE")) {
-				setflag(ACC_DO); # do accounting ...
-				setflag(ACC_FAILED); # ... even if the transaction fails
+				# do accounting even if the transaction fails
+				do_accounting("db","failed");
+				
 			} else if (is_method("INVITE")) {
 				# even if in most of the cases is useless, do RR for
 				# re-INVITEs alos, as some buggy clients do change route set
@@ -294,7 +323,7 @@ route{
 
 	t_check_trans();
 
-	if ( !(is_method("REGISTER")  ) ) {
+	if ( !(is_method("REGISTER")  || is_from_gw() ) ) {
 		
 		if (is_from_local())
 		{
@@ -347,7 +376,8 @@ route{
 			exit;
 		}
 		
-		setflag(ACC_DO); # do accounting
+		do_accounting("db");
+		
 	}
 
 	
@@ -372,7 +402,6 @@ route{
 
 	if (is_method("REGISTER"))
 	{
-		
 		# authenticate the REGISTER requests
 		if (!www_authorize("", "subscriber"))
 		{
@@ -387,6 +416,10 @@ route{
 		}
 
 		if ( proto==TCP || proto==TLS || 0 ) setflag(TCP_PERSISTENT);
+
+		if (isflagset(NAT)) {
+			setbflag(SIP_PING_FLAG);
+		}
 
 		if (!save("location"))
 			sl_reply_error();
@@ -408,6 +441,17 @@ route{
 	# apply transformations from dialplan table
 	dp_translate("0","$rU/$rU");
 
+	
+	if ($rU=~"^\+[1-9][0-9]+$") {
+		
+		if (!do_routing("0")) {
+			send_reply("500","No PSTN Route found");
+			exit;
+		}
+		
+		route(relay);
+		exit;
+	}
 	 
 
 	# do lookup with method filtering
@@ -417,15 +461,17 @@ route{
 			exit;
 		}
 		
-		t_newtran();
-		t_reply("404", "Not Found");
-		exit;
+		# redirect to a different VM system
+		$du = "sip:127.0.0.2:5060"; # CUSTOMIZE ME
+		route(relay);
+		
 	} 
 
 	if (isbflagset(NAT)) setflag(NAT);
 
 	# when routing via usrloc, log the missed calls also
-	setflag(ACC_MISSED);
+	do_accounting("db","missed");
+	
 	route(relay);
 }
 
@@ -504,6 +550,12 @@ failure_route[missed_call] {
 	##}
 
 	
+	# redirect the failed to a different VM system
+	if (t_check_status("486|408")) {
+		$du = "sip:127.0.0.2:5060"; # CUSTOMIZE ME
+		# do not set the missed call flag again
+		route(relay);
+	}
 }
 
 
