@@ -1,0 +1,15 @@
+--- man/CMakeLists.txt.orig	2017-12-20 15:03:02 UTC
++++ man/CMakeLists.txt
+@@ -3,6 +3,12 @@ if(SPHINX_FOUND)
+     # Sphinx cache with pickled ReST documents
+     set(SPHINX_CACHE_DIR "${CMAKE_CURRENT_BINARY_DIR}/_doctrees")
+ 
++    if(WITH_DOC)
++       add_custom_target(man ALL DEPENDS doc-man COMMENT "Building manual pages...")
++    else(WITH_DOC)
++       add_custom_target(man DEPENDS doc-maan COMMENT "Building manual pages...")
++    endif(WITH_DOC)
++
+     # HTML output directory
+     set(SPHINX_MAN_DIR      "${CMAKE_CURRENT_BINARY_DIR}/man1")
+     install(DIRECTORY ${SPHINX_MAN_DIR} DESTINATION ${CMAKE_INSTALL_MANDIR} OPTIONAL)
