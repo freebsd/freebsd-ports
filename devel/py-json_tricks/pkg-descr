@@ -1,0 +1,12 @@
+The pyjson-tricks package brings several pieces of functionality to python
+handling of json files:
+
+* Store and load numpy arrays in human-readable format.
+* Store and load class instances both generic and customized.
+* Store and load date/times as a dictionary (including timezone).
+* Preserve map order {} using OrderedDict.
+* Allow for comments in json files by starting lines with #.
+* Sets, complex numbers, Decimal, Fraction, enums, compression,
+  duplicate keys, etc.
+
+WWW: https://github.com/mverleg/pyjson_tricks
