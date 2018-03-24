@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpam2
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
