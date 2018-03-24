@@ -1,7 +1,3 @@
-%%RADIUS%%@sample %%ETCDIR%%/dictionary.opensips.sample
-@sample %%ETCDIR%%/opensips.cfg.sample
-@sample %%ETCDIR%%/opensipsctlrc.sample
-@sample %%ETCDIR%%/osipsconsolerc.sample
 %%TLS%%%%ETCDIR%%/tls/README
 %%TLS%%%%ETCDIR%%/tls/ca.conf
 %%TLS%%%%ETCDIR%%/tls/request.conf
@@ -101,7 +97,7 @@ lib/opensips/modules/proto_bin.so
 lib/opensips/modules/proto_hep.so
 %%TLS%%lib/opensips/modules/proto_tls.so
 lib/opensips/modules/proto_ws.so
-lib/opensips/modules/proto_wss.so
+%%TLS%%lib/opensips/modules/proto_wss.so
 lib/opensips/modules/pua.so
 lib/opensips/modules/pua_bla.so
 lib/opensips/modules/pua_dialoginfo.so
@@ -132,7 +128,7 @@ lib/opensips/modules/sst.so
 lib/opensips/modules/statistics.so
 lib/opensips/modules/stun.so
 lib/opensips/modules/textops.so
-lib/opensips/modules/tls_mgm.so
+%%TLS%%lib/opensips/modules/tls_mgm.so
 lib/opensips/modules/tm.so
 lib/opensips/modules/topology_hiding.so
 lib/opensips/modules/uac.so
@@ -680,3 +676,10 @@ sbin/osipsconsole
 %%TESTS%%tests/opensips/subscribe_notify.csv
 %%TESTS%%tests/opensips/subscribe_notify_scenario.xml
 %%TESTS%%tests/opensips/unregister.sip
+@mode 600
+@sample %%ETCDIR%%/opensipsctlrc.sample
+@sample %%ETCDIR%%/osipsconsolerc.sample
+%%RADIUS%%@sample %%ETCDIR%%/dictionary.opensips.sample
+@owner opensips
+@group opensips
+@sample %%ETCDIR%%/opensips.cfg.sample
