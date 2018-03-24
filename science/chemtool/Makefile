@@ -2,36 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	chemtool
-PORTVERSION=	1.6.11
-PORTREVISION=	5
+DISTVERSION=	1.6.14
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Draw organic molecules easily and store them
 
-LIB_DEPENDS=	libEMF.so:graphics/libemf
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libEMF.so:graphics/libemf \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	transfig:print/transfig
 
 USES=		gmake pkgconfig
-USE_GNOME=	gtk20
-USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF
-LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-emf=yes --with-localedir=${PREFIX}
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_XORG=	x11
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	NLS EXAMPLES
+OPTIONS_SUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} 's/-lstdc++//' ${WRKSRC}/configure
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/chemtool ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src-cht/cht ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/chemtool.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/cht.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+PORTEXAMPLES=	*
+
+do-install-EXAMPLES-on:
 	cd ${WRKSRC}/examples && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
 
