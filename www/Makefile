@@ -2453,6 +2453,7 @@
     SUBDIR += webreport
     SUBDIR += webresolve
     SUBDIR += websh
+    SUBDIR += websocketd
     SUBDIR += webstats
     SUBDIR += webstone
     SUBDIR += webstone-ssl

@@ -1,0 +1,8 @@
+websocketd is a small command-line tool that will wrap an existing command-line
+interface program, and allow it to be accessed via a WebSocket.
+
+WebSocket-capable applications can now be built very easily in any language. As
+long as you can write an executable program that reads `STDIN` and writes to
+`STDOUT`, you can build a WebSocket server.
+
+WWW: http://websocketd.com/

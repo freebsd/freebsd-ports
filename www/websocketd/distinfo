@@ -1,0 +1,5 @@
+TIMESTAMP = 1521782495
+SHA256 (websocketd-0.3.0-freebsd_amd64.zip) = 89e3c0b007a643c870c6b59eecb611cb0757780fcabe402bbb6cbb190ab478be
+SIZE (websocketd-0.3.0-freebsd_amd64.zip) = 2555193
+SHA256 (websocketd-0.3.0-freebsd_386.zip) = b5de6e70273ba0be28b9ee3c76491f6502045def69c8acdf0db5142502439f1e
+SIZE (websocketd-0.3.0-freebsd_386.zip) = 2404543
