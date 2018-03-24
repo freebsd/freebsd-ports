@@ -5,7 +5,7 @@ PORTVERSION=	1.1.5
 PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	textproc
-MASTER_SITES=	SFJP/senna/46945
+MASTER_SITES=	OSDN/senna/46945
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Embeddable Fulltext Search Engine

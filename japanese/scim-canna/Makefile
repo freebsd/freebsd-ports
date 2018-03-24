@@ -5,7 +5,7 @@ PORTNAME=	scim-canna
 PORTVERSION=	1.0.0
 PORTREVISION=	15
 CATEGORIES=	japanese
-MASTER_SITES=	SFJP/scim-imengine/18849
+MASTER_SITES=	OSDN/scim-imengine/18849
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Canna

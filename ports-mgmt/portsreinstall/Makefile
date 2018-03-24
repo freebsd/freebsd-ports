@@ -4,7 +4,7 @@
 PORTNAME=	portsreinstall
 PORTVERSION=	3.3.2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SFJP/${PORTNAME}/67120/ \
+MASTER_SITES=	OSDN/${PORTNAME}/67120/ \
 		http://www.mwghennndo.com/software/${PORTNAME}/
 
 MAINTAINER=	sakaue.mamoru@mwghennndo.com

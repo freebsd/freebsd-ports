@@ -4,7 +4,7 @@
 PORTNAME=	milter-manager
 PORTVERSION=	2.1.1
 CATEGORIES=	mail ruby
-MASTER_SITES=	SFJP/${PORTNAME}/67935
+MASTER_SITES=	OSDN/${PORTNAME}/67935
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super milter that can invoke several milters selectively

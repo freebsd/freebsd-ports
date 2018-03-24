@@ -5,7 +5,7 @@ PORTNAME=	scim-anthy
 PORTVERSION=	1.2.7
 PORTREVISION=	5
 CATEGORIES=	japanese
-MASTER_SITES=	SFJP/scim-imengine/37309
+MASTER_SITES=	OSDN/scim-imengine/37309
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Anthy

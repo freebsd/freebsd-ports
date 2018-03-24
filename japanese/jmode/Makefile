@@ -5,7 +5,7 @@ PORTNAME=	jmode
 PORTVERSION=	0.6.7
 PORTREVISION=	9
 CATEGORIES=	japanese
-MASTER_SITES=	SFJP/anthy/5467
+MASTER_SITES=	OSDN/anthy/5467
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	XIM server for Anthy input method
