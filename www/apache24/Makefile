@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.29
-PORTREVISION=	2
+PORTVERSION=	2.4.33
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -18,8 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libapr-1.so:devel/apr1 \
 		libpcre.so:devel/pcre
 
-CONFLICTS_INSTALL=	caudium14-1.* \
-			apache-*-2.2.* apache22-*
+CONFLICTS_INSTALL=	apache22-*
 
 USES=		apache:server,2.4 autoreconf cpe iconv libtool perl5 tar:bzip2
 USE_PERL5=	run
@@ -42,22 +40,12 @@ SUB_LIST+=	MPMF="000_mpm_prefork_fallback.conf"
 USERS=		www
 GROUPS=		www
 
-# for slave ports
-.if !defined(MASTERDIR)
-APACHEDIR=	${.CURDIR}
-.else
-APACHEDIR=	${MASTERDIR}
-.endif
-
 WITH_HTTP_PORT?=	80
 WITH_SSL_PORT?=		443
 
-.if !defined(WITH_DEBUG)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-server_buildmark.c
-.endif
-
-.include "${APACHEDIR}/Makefile.options"
-.include "${APACHEDIR}/Makefile.options.desc"
+.include "${.CURDIR}/Makefile.options"
+.include "${.CURDIR}/Makefile.options.desc"
+OPTIONS_SUB=	yes
 
 # IMPLIES
 AUTHN_DBD_IMPLIES=		DBD
@@ -65,54 +53,63 @@ HEARTBEAT_IMPLIES=		WATCHDOG STATUS
 HEARTMONITOR_IMPLIES=		WATCHDOG STATUS
 LBMETHOD_HEARTBEAT_IMPLIES=	WATCHDOG STATUS HEARTMONITOR
 PROXY_HCHECK_IMPLIES=		WATCHDOG
+PROXY_HTTP2_IMPLIES=		PROXY_BALANCER
+.for module in ${PROXY_ENABLED_MODULES:NPROXY} ${PROXY_DISABLED_MODULES}
+${module}_IMPLIES=		PROXY
+.endfor
+.for module in ${SESSION_ENABLED_MODULES:NSESSION} ${SESSION_DISABLED_MODULES}
+${module}_IMPLIES=		SESSION
+.endfor
 
-# MPM
+# Multi-Processing Modules options handling
 MPM_PREFORK_CONFIGURE_ON=	--with-mpm=prefork
 MPM_WORKER_CONFIGURE_ON=	--with-mpm=worker
 MPM_EVENT_CONFIGURE_ON=		--with-mpm=event
+MPM_SHARED_CONFIGURE_ON=	--enable-mpms-shared=all
+MPM_SHARED_SUB_LIST=		MPM_FALLBACK_CHECK=""
+MPM_SHARED_SUB_LIST_OFF=	MPM_FALLBACK_CHECK="\#"
 
 AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
-
-# http://httpd.apache.org/docs/2.4/bind.html
-IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
-
-LDAP_CONFIGURE_ON=		--enable-ldap=shared
-
-BROTLI_CONFIGURE_ON=		--with-brotli=${LOCALBASE}
+BROTLI_CONFIGURE_WITH=		brotli=${LOCALBASE}
 BROTLI_LIB_DEPENDS=		libbrotlicommon.so:archivers/brotli
 HTTP2_CONFIGURE_ON=		--with-nghttp2=${LOCALBASE}
 HTTP2_LIB_DEPENDS=		libnghttp2.so:www/libnghttp2
+IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
+LDAP_CONFIGURE_ON=		--enable-ldap=shared
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
-LUA_CONFIGURE_WITH=		lua
+LUA_CONFIGURE_ENV=		LUA_CFLAGS="-I${LUA_INCDIR}" \
+				LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
+LUA_CONFIGURE_WITH=		lua=${LOCALBASE}
 LUA_USES=			lua
+MD_CONFIGURE_ON=		--with-curl=${LOCALBASE} \
+				--with-jansson=${LOCALBASE} \
+				--with-openssl=${OPENSSLBASE}
+MD_LIB_DEPENDS=			libcurl.so:ftp/curl \
+				libjansson.so:devel/jansson
+MD_USES=			ssl
+PROXY_HTML_USE=			GNOME=libxml2
 PROXY_HTTP2_CONFIGURE_ON=	--with-nghttp2=${LOCALBASE}
 PROXY_HTTP2_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
 SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
+XML2ENC_USE=			GNOME=libxml2
 
-# Note:
-# OpenSSL version (base/ports) depends how devel/apr1 was build
+# Note: OpenSSL version (base/ports) depends how devel/apr1 was built
 #  apu-1-config --(includes|ldflags) and apr_rules.mk
 SSL_CFLAGS=			-I${OPENSSLINC}
 SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
 SSL_LDFLAGS=			-L${OPENSSLLIB}
 SSL_USES=			ssl
 
-.include <bsd.port.options.mk>
 ETC_SUBDIRS=		Includes envvars.d extra modules.d
 
 APR_CONFIG?=		${LOCALBASE}/bin/apr-1-config
 APU_CONFIG?=		${LOCALBASE}/bin/apu-1-config
-
-# APU modules used by AUTHN_DBD DBD
-APU_DBD_MYSQL?=		${LOCALBASE}/lib/apr-util-1/apr_dbd_mysql.so
-APU_DBD_PGSQL?=		${LOCALBASE}/lib/apr-util-1/apr_dbd_pgsql.so
-APU_DBD_SQLITE3?=	${LOCALBASE}/lib/apr-util-1/apr_dbd_sqlite3.so
-# APU module used by AUTHNZ_LDAP LDAP
 APU_LDAP?=		${LOCALBASE}/lib/apr-util-1/apr_ldap.so
-# APU module used by SESSION_CRYPTO
 APU_CRYPTO_OPENSSL?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_openssl.so
 APU_CRYPTO_NSS?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_nss.so
+
+.include <bsd.port.pre.mk>
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
@@ -121,45 +118,88 @@ CONFIGURE_ARGS+=--prefix=${PREFIX_RELDEST} \
 		--with-port=${WITH_HTTP_PORT} \
 		--with-sslport=${WITH_SSL_PORT} \
 		--with-expat=${LOCALBASE} \
-		--with-iconv=${ICONV_PREFIX} \
 		--enable-http \
 		--with-pcre=${LOCALBASE} \
 		--with-apr=${APR_CONFIG} \
 		--with-apr-util=${APU_CONFIG}
 
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}" \
+CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" \
 		CONFIG_SHELL="${SH}"
 
 MAKE_ENV+=	EXPR_COMPAT=yes \
 		INSTALL_MAN="${INSTALL_MAN}" \
 		DATADIR=${DATADIR}
 
+.for module in ${ALL_MODULES}
+.if ${PORT_OPTIONS:M${module}}
+CONFIGURE_ARGS+=	--enable-${module:S/_/-/g:tl}
+.else
+CONFIGURE_ARGS+=	--disable-${module:S/_/-/g:tl}
+.endif
+.endfor
+
 #=====================================================
-# CONFIGURE_ARGS will be handled in Makefile.modules,
 # here we do only OPTIONS fixups
 
-.if ${PORT_OPTIONS:MLUA}
-CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" \
-		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
+# Check for APR-util module exists
+.if exists(${APU_CONFIG})
+.  if (${PORT_OPTIONS:MLDAP} || ${PORT_OPTIONS:MAUTHNZ_LDAP}) && !exists(${APU_LDAP})
+IGNORE=	LDAP and AUTHNZ_LDAP requires APR-util to have LDAP support built in.\
+	Please rebuild APR with LDAP support
+.  endif
+.  if ${PORT_OPTIONS:MSESSION_CRYPTO} && \
+	!(exists(${APU_CRYPTO_OPENSSL}) || exists(${APU_CRYPTO_NSS}))
+IGNORE=	SESSION_CRYPTO requires APR-util to have crypto openssl support build in.\
+	Please rebuild APR with crypto openssl support
+.  endif
+.endif	# exists APU_CONFIG
+
+.if ( ${PORT_OPTIONS:MAUTH_BASIC} || ${PORT_OPTIONS:MAUTH_DIGEST} ) && \
+	empty(PORT_OPTIONS:MAUTHN*)
+IGNORE=	AUTH_BASIC and AUTH_DIGEST need at least one AUTHN provider
 .endif
 
-.if ${PORT_OPTIONS:MPROXY_HTML} || ${PORT_OPTIONS:MXML2ENC}
-USE_GNOME=	libxml2
+.if ${PORT_OPTIONS:MAUTH_BASIC} && empty(PORT_OPTIONS:MAUTHZ*)
+IGNORE=	AUTH_BASIC need at least one AUTHZ provider
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${APACHEDIR}/Makefile.modules"
+# Non options-NG option handling
+.if ${PORT_OPTIONS:MXML2ENC} || ${PORT_OPTIONS:MPROXY_HTML}
+CONFIGURE_ARGS+=	--with-libxml2=${LOCALBASE}/include/libxml2
+.else
+CONFIGURE_ARGS+=	--without-libxml2
+.endif
+
+# WITH_STATIC_SUPPORT, WITH_DEBUG, WITH_EXCEPTION_HOOK 
+# Only to be used for special builds
+.if defined(WITH_STATIC_SUPPORT)
+CONFIGURE_ARGS+=	--enable-static-support
+.endif
+.if defined(WITH_DEBUG)
+# debug overrides CFLAGS
+DEBUG_FLAGS?=	-O0 -g -ggdb3
+CFLAGS=		${DEBUG_FLAGS}
+CONFIGURE_ARGS+=	--enable-maintainer-mode
+WITH_EXCEPTION_HOOK=	yes
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-server_buildmark.c
+.endif
+.if defined(WITH_EXCEPTION_HOOK)
+CONFIGURE_ARGS+=	--enable-exception-hook
+.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 &&\
 	${PORT_OPTIONS:MHTTP2} && ${OPENSSLBASE} == /usr
-SUB_FILES+=    pkg-message
+SUB_FILES+=		pkg-message
 .endif
 
+pre-extract-SUEXEC-on:
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "suexec builds with user '${USERS}' and docroot '${PREFIX}/www' by default,"
+	@${ECHO_CMD} "use SUEXEC_DOCROOT and SUEXEC_USERDIR in /etc/make.conf to adjust."
+	@${ECHO_CMD} ""
+
 post-extract:
-# remove possible leftover .svn directories in the sources
-	@${FIND} ${WRKSRC} -type d -name .svn -print | ${XARGS} ${RM} -r
-# limit grep results ...
-	@${FIND} ${WRKSRC} -type f \( -name 'NWGNU*' -o -name '*.ds?' -o -name '*.dep' -o -name '*.mak' -o -name '*.win' -o -name '*.vbs' -o -name '*.wsf' \) -delete
 # make sure the configure script contains our patches, preserve the original script for comparsion
 	-${MV} -v ${WRKSRC}/configure ${WRKSRC}/configure.upstream
 
@@ -183,7 +223,7 @@ pre-configure::
 	@${ECHO_MSG}	"  You can check your modules configuration by using make show-modules"
 	@${ECHO_MSG}	""
 # silence autotools
-	-${MV} -v ${WRKSRC}/configure.in ${WRKSRC}/configure.ac
+	-@${MV} -v ${WRKSRC}/configure.in ${WRKSRC}/configure.ac 2>/dev/null
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
