@@ -12,6 +12,7 @@ COMMENT=	Like parent, but with version checks
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_PERL5=	configure
