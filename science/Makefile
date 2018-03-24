@@ -171,6 +171,7 @@
     SUBDIR += py-pyaixi
     SUBDIR += py-pydicom
     SUBDIR += py-pymol
+    SUBDIR += py-pyosf
     SUBDIR += py-pysal
     SUBDIR += py-pyteomics
     SUBDIR += py-pyteomics.biolccc
