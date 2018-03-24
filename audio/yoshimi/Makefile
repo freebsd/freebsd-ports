@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yoshimi
-DISTVERSION=	1.5.6
+DISTVERSION=	1.5.7
 CATEGORIES=	audio
 
 MAINTAINER=	hello@blubee.me
