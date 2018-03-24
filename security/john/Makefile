@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/j/ \
 		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
-		http://distro.ibiblio.org/pub/linux/distributions/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
+		http://distro.ibiblio.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
 		http://gd.tuwien.ac.at/opsys/linux/openwall/projects/john/${DISTVERSION:C/-.*//}/
 
 MAINTAINER=	danfe@FreeBSD.org
