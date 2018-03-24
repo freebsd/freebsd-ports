@@ -70,6 +70,7 @@ KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
 KDE_APPLICATIONS_VERSION?=	17.12.3
+KDE_APPLICATIONS_SHLIB_VER?=	5.7.3
 KDE_APPLICATIONS_BRANCH?=	stable
 # Upstream moves old software to Attic/. Specify the newest applications release there.
 # Only the major version is used for the comparison.
@@ -132,6 +133,8 @@ CONFLICTS_INSTALL?=	${PORTNAME}-kde4-[0-9]*
 MASTER_SITES?=		KDE/Attic/applications/${KDE_APPLICATIONS_VERSION}/src
 .      else
 MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/applications/${KDE_APPLICATIONS_VERSION}/src
+# Further pass along a SHLIB_VER PLIST_SUB
+PLIST_SUB+=             KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER}
 .      endif
 DIST_SUBDIR?=		KDE/applications/${KDE_APPLICATIONS_VERSION}
 .    elif ${_KDE_CATEGORY:Mkde-frameworks}
