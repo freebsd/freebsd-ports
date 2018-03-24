@@ -53,7 +53,6 @@ man/man1/mkvpropedit.1.gz
 %%MANTRANS%%man/zh_CN/man1/mkvmerge.1.gz
 %%MANTRANS%%man/zh_CN/man1/mkvpropedit.1.gz
 %%MANTRANS%%%%QT5%%man/zh_CN/man1/mkvtoolnix-gui.1.gz
-%%QT5%%share/applications/org.bunkus.mkvinfo.desktop
 %%QT5%%share/applications/org.bunkus.mkvtoolnix-gui.desktop
 %%QT5%%share/icons/hicolor/128x128/apps/mkvextract.png
 %%QT5%%share/icons/hicolor/128x128/apps/mkvinfo.png
