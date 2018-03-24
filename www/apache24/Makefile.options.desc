@@ -22,20 +22,6 @@ IPV4_MAPPED_DESC=		Allow IPv6 sockets to handle IPv4 connections
 LUAJIT_DESC=			LuaJit Support
 
 # =====================================
-# static support (tbd)
-STATIC_AB_DESC=			static linked ab
-STATIC_CHECKGID_DESC=		static linked checkgid
-STATIC_FCGISTARTER_DESC=	static linked fcgistarter
-STATIC_HTCACHECLEAN_DESC=	static linked htcacheclean
-STATIC_HTDBM_DESC=		static linked htdbm
-STATIC_HTDIGEST_DESC=		static linked htdigest
-STATIC_HTPASSWD_DESC=		static linked htpasswd
-STATIC_HTTXT2DBM_DESC=		static linked httxt2dbm
-STATIC_LOGRESOLVE_DESC=		static linked logresolve
-STATIC_ROTATELOGS_DESC=		static linked rotatelogs
-STATIC_SUPPORT_DESC=		static linked support binaries
-
-# =====================================
 # modules
 # DESC from modules/*/config.m4 files
 ACCESS_COMPAT_DESC=		mod_access compatibility
@@ -119,6 +105,7 @@ LOG_FORENSIC_DESC=		Forensic logging
 LUA_DESC=			Apache Lua Framework
 
 MACRO_DESC=			Define and use macros in configuration files
+MD_DESC=			Managing domains across virtual hosts, certificate provisioning via the ACME protocol
 MIME_DESC=			Mapp file-ext. to MIME (recommended)
 MIME_MAGIC_DESC=		Automagically determining MIME type
 
@@ -142,6 +129,7 @@ PROXY_HTML_DESC=		Fix HTML Links in a Reverse Proxy
 PROXY_HTTP_DESC=		HTTP support module for mod_proxy
 PROXY_HTTP2_DESC=		HTTP/2 support module for h2 and h2c
 PROXY_SCGI_DESC=		SCGI gateway module for mod_proxy
+PROXY_UWSGI_DESC=		UWSGI gateway module for mod_proxy
 PROXY_WSTUNNEL_DESC=		Websockets Tunnel module for mod_proxy
 
 RATELIMIT_DESC=			Output Bandwidth Limiting
