@@ -47,6 +47,7 @@ man/man1/escputil.1.gz
 man/man8/cups-calibrate.8.gz
 man/man8/cups-genppd.8.gz
 man/man8/cups-genppdupdate.8.gz
+sbin/cups-genppd
 sbin/cups-genppd.5.2
 sbin/cups-genppdupdate
 share/cups/calibrate.ppm

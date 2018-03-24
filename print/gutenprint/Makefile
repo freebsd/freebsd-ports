@@ -4,7 +4,7 @@
 
 PORTNAME=	gutenprint
 PORTVERSION=	5.2.13
-PORTREVISION?=	1	# also print/gimp-gutenprint
+PORTREVISION?=	2	# also print/gimp-gutenprint
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 
@@ -52,6 +52,9 @@ post-install:
 .if defined(GUT_SLAVE) && ${GUT_SLAVE} == "gimp"
 	@(cd ${WRKSRC}/src/gutenprintui2 && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+.endif
+.if !defined(GUT_SLAVE)
+	@${LN} -s cups-genppd.5.2 ${STAGEDIR}${LOCALBASE}/sbin/cups-genppd
 .endif
 
 .include <bsd.port.mk>

@@ -19,14 +19,14 @@
 +      <height value="576"/>
 +      <unit value="english-extended"/>
 +    </paper>
-+    <paper name="6.25x9TopFoldCard">
++    <paper name="6_25x9TopFoldCard">
 +      <description translate="value" value="4.5x6.25 Top Fold Card (6.25x9)"/>
 +      <comment value="4.5in x 6.25in Top Fold Card (6.25x9 paper)"/>
 +      <width value="450"/>
 +      <height value="648"/>
 +      <unit value="english-extended"/>
 +    </paper>
-+    <paper name="5.5x8.5TopFoldCard">
++    <paper name="5_5x8_5TopFoldCard">
 +      <description translate="value" value="4.25x5.5 Top Fold Card (5.5x8.5)"/>
 +      <comment value="4.25in x 5.5in Top Fold Card (5.5x8.5 paper)"/>
 +      <width value="396"/>
@@ -40,14 +40,14 @@
 +      <height value="576"/>
 +      <unit value="english-extended"/>
 +    </paper>
-+    <paper name="8.5x11TopFoldCard">
++    <paper name="8_5x11TopFoldCard">
 +      <description translate="value" value="5.5x8.5 Top Fold Card (8.5x11)"/>
 +      <comment value="5.5in x 8.5in Top Fold Card (8.5x11 paper)"/>
 +      <width value="612"/>
 +      <height value="792"/>
 +      <unit value="english-extended"/>
 +    </paper>
-+    <paper name="5.25x10.5TopFoldCard">
++    <paper name="5_25x10_5TopFoldCard">
 +      <description translate="value" value="5.25x5.25 Top Fold Card (5.25x10.5)"/>
 +      <comment value="5.25in x 5.25in Top Fold Card (5.25x10.5 paper)"/>
 +      <width value="378"/>
