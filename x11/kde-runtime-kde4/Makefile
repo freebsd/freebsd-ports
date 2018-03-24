@@ -58,6 +58,9 @@ ZEITGEIST_RUN_DEPENDS=	zeitgeist-daemon:sysutils/zeitgeist
 # http://mail.kde.org/pipermail/kde-freebsd/2010-March/008015.html
 CMAKE_ARGS+=	-DWITH_ALSA:BOOL=OFF
 
+# Override KDE_APPLICATIONS_VERSION
+KDE_APPLICATIONS_VERSION=	16.12.3
+
 post-extract:
 # Don't install share/icons/hicolor/index.theme to avoid conflcit with
 # hicolor-icon-theme port
