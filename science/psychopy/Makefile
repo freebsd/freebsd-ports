@@ -2,35 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	psychopy
-PORTVERSION=	1.85.6
-PORTREVISION=	1
+DISTVERSION=	1.90.0
 CATEGORIES=	science python
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Psychophysics toolkit for Python
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=0:graphics/py-pyglet@${FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}json_tricks>0:devel/py-json_tricks@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:math/py-matplotlib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.6.0:science/py-scipy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyglet>0:graphics/py-pyglet@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyOpenGL>0:graphics/py-PyOpenGL@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyosf>0:science/py-pyosf@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sounddevice>0:audio/py-sounddevice@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}SoundFile>0:audio/py-SoundFile@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xlrd>0:textproc/py-xlrd@${FLAVOR} \
 		dejavu>0:x11-fonts/dejavu \
 		${PYGAME} \
 		${PYNUMPY}
 
-NO_ARCH=	yes
-
-USE_GITHUB=	yes
-
 USES=		fortran python:2.7
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 USE_WX=		2.8
 WX_COMPS=	python
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/psychopy
 
