@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupen64plus-qt
-PORTVERSION=	1.10
-PORTREVISION=	1
+DISTVERSION=	1.11
 CATEGORIES=	emulators
 
 MAINTAINER=	maintainer@hasting.email
@@ -10,15 +9,19 @@ COMMENT=	Basic launcher for Mupen64Plus
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		wrong dependencies, mupen64plus executable is not provided by emulators/mupen64plus
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2018-05-19
-
-LIB_DEPENDS=	libquazip.so:archivers/quazip@qt4
-RUN_DEPENDS=	mupen64plus:emulators/mupen64plus
+LIB_DEPENDS=	libquazip5.so:archivers/quazip@qt5
+RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
+		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:emulators/mupen64plus-audio-sdl \
+		${LOCALBASE}/lib/mupen64plus/mupen64plus-input-sdl.so:emulators/mupen64plus-input-sdl \
+		${LOCALBASE}/lib/mupen64plus/mupen64plus-rsp-hle.so:emulators/mupen64plus-rsp-hle \
+		${LOCALBASE}/lib/mupen64plus/mupen64plus-video-rice.so:emulators/mupen64plus-video-rice \
+		mupen64plus:emulators/mupen64plus-ui-console
 
 USES=		qmake
-USE_QT4=	corelib gui moc_build network rcc_build sql sql-sqlite3_run uic_build xml
+USE_GL=		gl
+USE_QT5=	core gui network sql widgets xml \
+		buildtools_build \
+		sql-sqlite3_run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dh4
