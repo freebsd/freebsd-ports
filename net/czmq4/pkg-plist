@@ -39,7 +39,7 @@ include/zuuid.h
 lib/libczmq.a
 lib/libczmq.so
 lib/libczmq.so.4
-lib/libczmq.so.4.1.0
+lib/libczmq.so.4.1.1
 libdata/pkgconfig/libczmq.pc
 man/man1/zmakecert.1.gz
 man/man3/zactor.3.gz
@@ -77,6 +77,7 @@ man/man3/ztimerset.3.gz
 man/man3/ztrie.3.gz
 man/man3/zuuid.3.gz
 man/man7/czmq.7.gz
+share/zproject/czmq/python_cffi.slurp
 share/zproject/czmq/zactor.api
 share/zproject/czmq/zargs.api
 share/zproject/czmq/zarmour.api
