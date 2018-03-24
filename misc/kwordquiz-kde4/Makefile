@@ -9,7 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Flash card trainer for KDE 4
 
 USES=		cmake:outsource kde:4 tar:xz
-USE_KDE=	kdelibs libkdeedu automoc4
+USE_KDE=	kdelibs libkeduvocdocument automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>
