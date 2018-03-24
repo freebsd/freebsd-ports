@@ -1,0 +1,26 @@
+commit 4694ff76f300
+Author: Punam <pdahiya@mozilla.com>
+Date:   Tue Mar 13 17:54:18 2018 -0700
+
+    Bug 1444521 - Preferences UI save to cloud downloads event listener. r=jaws, a=jcristau
+    
+    MozReview-Commit-ID: LbKr1rpXn4q
+    
+    --HG--
+    extra : source : 2cab87e3a891fcdf4ef78b1dc01a6b7b5e69c853
+---
+ browser/components/preferences/in-content/main.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git browser/components/preferences/in-content-new/main.js browser/components/preferences/in-content-new/main.js
+index 711a9e2cc424..5a579f4a49db 100644
+--- browser/components/preferences/in-content-new/main.js
++++ browser/components/preferences/in-content-new/main.js
+@@ -410,6 +410,7 @@ var gMainPane = {
+     setEventListener("typeColumn", "click", gMainPane.sort);
+     setEventListener("actionColumn", "click", gMainPane.sort);
+     setEventListener("chooseFolder", "command", gMainPane.chooseFolder);
++    setEventListener("saveWhere", "command", gMainPane.handleSaveToCommand);
+     setEventListener("browser.download.dir", "change", gMainPane.displayDownloadDirPref);
+     setEventListener("saveWhere", "command", gMainPane.handleSaveToCommand);
+ 
