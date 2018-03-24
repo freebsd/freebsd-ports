@@ -1,0 +1,122 @@
+'\" t
+.\"     Title: ping_pong
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 11/20/2017
+.\"    Manual: CTDB - clustered TDB database
+.\"    Source: ctdb
+.\"  Language: English
+.\"
+.TH "PING_PONG" "1" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+ping_pong \- measures the ping\-pong byte range lock latency
+.SH "SYNOPSIS"
+.HP \w'\fBping_pong\fR\ 'u
+\fBping_pong\fR {\-r | \-w | \-rw} [\-m] [\-c] {\fIFILENAME\fR} {\fINUM\-LOCKS\fR}
+.SH "DESCRIPTION"
+.PP
+ping_pong measures the byte range lock latency\&. It is especially useful on a cluster of nodes sharing a common lock manager as it will give some indication of the lock manager\*(Aqs performance under stress\&.
+.PP
+FILENAME is a file on shared storage to use for byte range locking tests\&.
+.PP
+NUM\-LOCKS is the number of byte range locks, so needs to be (strictly) greater than the number of nodes in the cluster\&.
+.SH "OPTIONS"
+.PP
+\-r
+.RS 4
+test read performance
+.RE
+.PP
+\-w
+.RS 4
+test write performance
+.RE
+.PP
+\-m
+.RS 4
+use mmap
+.RE
+.PP
+\-c
+.RS 4
+validate the locks
+.RE
+.SH "EXAMPLES"
+.PP
+Testing lock coherence
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      ping_pong test\&.dat N
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Testing lock coherence with lock validation
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      ping_pong \-c test\&.dat N
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Testing IO coherence
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      ping_pong \-rw test\&.dat N
+    
+.fi
+.if n \{\
+.RE
+.\}
+.SH "SEE ALSO"
+.PP
+\fBctdb\fR(7),
+\m[blue]\fB\%https://wiki.samba.org/index.php/Ping_pong\fR\m[]
+.SH "AUTHOR"
+.br
+.PP
+This documentation was written by Mathieu Parent
+.SH "COPYRIGHT"
+.br
+Copyright \(co 2002 Andrew Tridgell
+.br
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version\&.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU General Public License for more details\&.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, see
+\m[blue]\fB\%http://www.gnu.org/licenses\fR\m[]\&.
+.sp

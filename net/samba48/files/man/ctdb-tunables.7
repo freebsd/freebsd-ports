@@ -1,0 +1,409 @@
+'\" t
+.\"     Title: ctdb-tunables
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 11/20/2017
+.\"    Manual: CTDB - clustered TDB database
+.\"    Source: ctdb
+.\"  Language: English
+.\"
+.TH "CTDB\-TUNABLES" "7" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+ctdb-tunables \- CTDB tunable configuration variables
+.SH "DESCRIPTION"
+.PP
+CTDB\*(Aqs behaviour can be configured by setting run\-time tunable variables\&. This lists and describes all tunables\&. See the
+\fBctdb\fR(1)
+\fBlistvars\fR,
+\fBsetvar\fR
+and
+\fBgetvar\fR
+commands for more details\&.
+.PP
+Unless otherwise stated, tunables should be set to the same value on all nodes\&. Setting tunables to different values across nodes may produce unexpected results\&. Future releases may set (some or most) tunables globally across the cluster but doing so is currently a manual process\&.
+.PP
+The tunable variables are listed alphabetically\&.
+.SS "AllowClientDBAttach"
+.PP
+Default: 1
+.PP
+When set to 0, clients are not allowed to attach to any databases\&. This can be used to temporarily block any new processes from attaching to and accessing the databases\&. This is mainly used for detaching a volatile database using \*(Aqctdb detach\*(Aq\&.
+.SS "AllowMixedVersions"
+.PP
+Default: 0
+.PP
+CTDB will not allow incompatible versions to co\-exist in a cluster\&. If a version mismatch is found, then losing CTDB will shutdown\&. To disable the incompatible version check, set this tunable to 1\&.
+.PP
+For version checking, CTDB uses major and minor version\&. For example, CTDB 4\&.6\&.1 and CTDB CTDB 4\&.6\&.2 are matching versions; CTDB 4\&.5\&.x and CTDB 4\&.6\&.y do not match\&.
+.PP
+CTDB with version check support will lose to CTDB without version check support\&. Between two different CTDB versions with version check support, one running for less time will lose\&. If the running time for both CTDB versions with version check support is equal (to seconds), then the older version will lose\&. The losing CTDB daemon will shutdown\&.
+.SS "AllowUnhealthyDBRead"
+.PP
+Default: 0
+.PP
+When set to 1, ctdb allows database traverses to read unhealthy databases\&. By default, ctdb does not allow reading records from unhealthy databases\&.
+.SS "ControlTimeout"
+.PP
+Default: 60
+.PP
+This is the default setting for timeout for when sending a control message to either the local or a remote ctdb daemon\&.
+.SS "DatabaseHashSize"
+.PP
+Default: 100001
+.PP
+Number of the hash chains for the local store of the tdbs that ctdb manages\&.
+.SS "DatabaseMaxDead"
+.PP
+Default: 5
+.PP
+Maximum number of dead records per hash chain for the tdb databses managed by ctdb\&.
+.SS "DBRecordCountWarn"
+.PP
+Default: 100000
+.PP
+When set to non\-zero, ctdb will log a warning during recovery if a database has more than this many records\&. This will produce a warning if a database grows uncontrollably with orphaned records\&.
+.SS "DBRecordSizeWarn"
+.PP
+Default: 10000000
+.PP
+When set to non\-zero, ctdb will log a warning during recovery if a single record is bigger than this size\&. This will produce a warning if a database record grows uncontrollably\&.
+.SS "DBSizeWarn"
+.PP
+Default: 1000000000
+.PP
+When set to non\-zero, ctdb will log a warning during recovery if a database size is bigger than this\&. This will produce a warning if a database grows uncontrollably\&.
+.SS "DeferredAttachTO"
+.PP
+Default: 120
+.PP
+When databases are frozen we do not allow clients to attach to the databases\&. Instead of returning an error immediately to the client, the attach request from the client is deferred until the database becomes available again at which stage we respond to the client\&.
+.PP
+This timeout controls how long we will defer the request from the client before timing it out and returning an error to the client\&.
+.SS "DisableIPFailover"
+.PP
+Default: 0
+.PP
+When set to non\-zero, ctdb will not perform failover or failback\&. Even if a node fails while holding public IPs, ctdb will not recover the IPs or assign them to another node\&.
+.PP
+When this tunable is enabled, ctdb will no longer attempt to recover the cluster by failing IP addresses over to other nodes\&. This leads to a service outage until the administrator has manually performed IP failover to replacement nodes using the \*(Aqctdb moveip\*(Aq command\&.
+.SS "ElectionTimeout"
+.PP
+Default: 3
+.PP
+The number of seconds to wait for the election of recovery master to complete\&. If the election is not completed during this interval, then that round of election fails and ctdb starts a new election\&.
+.SS "EnableBans"
+.PP
+Default: 1
+.PP
+This parameter allows ctdb to ban a node if the node is misbehaving\&.
+.PP
+When set to 0, this disables banning completely in the cluster and thus nodes can not get banned, even it they break\&. Don\*(Aqt set to 0 unless you know what you are doing\&.
+.SS "EventScriptTimeout"
+.PP
+Default: 30
+.PP
+Maximum time in seconds to allow an event to run before timing out\&. This is the total time for all enabled scripts that are run for an event, not just a single event script\&.
+.PP
+Note that timeouts are ignored for some events ("takeip", "releaseip", "startrecovery", "recovered") and converted to success\&. The logic here is that the callers of these events implement their own additional timeout\&.
+.SS "FetchCollapse"
+.PP
+Default: 1
+.PP
+This parameter is used to avoid multiple migration requests for the same record from a single node\&. All the record requests for the same record are queued up and processed when the record is migrated to the current node\&.
+.PP
+When many clients across many nodes try to access the same record at the same time this can lead to a fetch storm where the record becomes very active and bounces between nodes very fast\&. This leads to high CPU utilization of the ctdbd daemon, trying to bounce that record around very fast, and poor performance\&. This can improve performance and reduce CPU utilization for certain workloads\&.
+.SS "HopcountMakeSticky"
+.PP
+Default: 50
+.PP
+For database(s) marked STICKY (using \*(Aqctdb setdbsticky\*(Aq), any record that is migrating so fast that hopcount exceeds this limit is marked as STICKY record for
+\fIStickyDuration\fR
+seconds\&. This means that after each migration the sticky record will be kept on the node
+\fIStickyPindown\fRmilliseconds and prevented from being migrated off the node\&.
+.PP
+This will improve performance for certain workloads, such as locking\&.tdb if many clients are opening/closing the same file concurrently\&.
+.SS "IPAllocAlgorithm"
+.PP
+Default: 2
+.PP
+Selects the algorithm that CTDB should use when doing public IP address allocation\&. Meaningful values are:
+.PP
+0
+.RS 4
+Deterministic IP address allocation\&.
+.sp
+This is a simple and fast option\&. However, it can cause unnecessary address movement during fail\-over because each address has a "home" node\&. Works badly when some nodes do not have any addresses defined\&. Should be used with care when addresses are defined across multiple networks\&.
+.RE
+.PP
+1
+.RS 4
+Non\-deterministic IP address allocation\&.
+.sp
+This is a relatively fast option that attempts to do a minimise unnecessary address movements\&. Addresses do not have a "home" node\&. Rebalancing is limited but it usually adequate\&. Works badly when addresses are defined across multiple networks\&.
+.RE
+.PP
+2
+.RS 4
+LCP2 IP address allocation\&.
+.sp
+Uses a heuristic to assign addresses defined across multiple networks, usually balancing addresses on each network evenly across nodes\&. Addresses do not have a "home" node\&. Minimises unnecessary address movements\&. The algorithm is complex, so is slower than other choices for a large number of addresses\&. However, it can calculate an optimal assignment of 900 addresses in under 10 seconds on modern hardware\&.
+.RE
+.PP
+If the specified value is not one of these then the default will be used\&.
+.SS "KeepaliveInterval"
+.PP
+Default: 5
+.PP
+How often in seconds should the nodes send keep\-alive packets to each other\&.
+.SS "KeepaliveLimit"
+.PP
+Default: 5
+.PP
+After how many keepalive intervals without any traffic should a node wait until marking the peer as DISCONNECTED\&.
+.PP
+If a node has hung, it can take
+\fIKeepaliveInterval\fR
+* (\fIKeepaliveLimit\fR
++ 1) seconds before ctdb determines that the node is DISCONNECTED and performs a recovery\&. This limit should not be set too high to enable early detection and avoid any application timeouts (e\&.g\&. SMB1) to kick in before the fail over is completed\&.
+.SS "LockProcessesPerDB"
+.PP
+Default: 200
+.PP
+This is the maximum number of lock helper processes ctdb will create for obtaining record locks\&. When ctdb cannot get a record lock without blocking, it creates a helper process that waits for the lock to be obtained\&.
+.SS "LogLatencyMs"
+.PP
+Default: 0
+.PP
+When set to non\-zero, ctdb will log if certains operations take longer than this value, in milliseconds, to complete\&. These operations include "process a record request from client", "take a record or database lock", "update a persistent database record" and "vaccum a database"\&.
+.SS "MaxQueueDropMsg"
+.PP
+Default: 1000000
+.PP
+This is the maximum number of messages to be queued up for a client before ctdb will treat the client as hung and will terminate the client connection\&.
+.SS "MonitorInterval"
+.PP
+Default: 15
+.PP
+How often should ctdb run the \*(Aqmonitor\*(Aq event in seconds to check for a node\*(Aqs health\&.
+.SS "MonitorTimeoutCount"
+.PP
+Default: 20
+.PP
+How many \*(Aqmonitor\*(Aq events in a row need to timeout before a node is flagged as UNHEALTHY\&. This setting is useful if scripts can not be written so that they do not hang for benign reasons\&.
+.SS "NoIPFailback"
+.PP
+Default: 0
+.PP
+When set to 1, ctdb will not perform failback of IP addresses when a node becomes healthy\&. When a node becomes UNHEALTHY, ctdb WILL perform failover of public IP addresses, but when the node becomes HEALTHY again, ctdb will not fail the addresses back\&.
+.PP
+Use with caution! Normally when a node becomes available to the cluster ctdb will try to reassign public IP addresses onto the new node as a way to distribute the workload evenly across the clusternode\&. Ctdb tries to make sure that all running nodes have approximately the same number of public addresses it hosts\&.
+.PP
+When you enable this tunable, ctdb will no longer attempt to rebalance the cluster by failing IP addresses back to the new nodes\&. An unbalanced cluster will therefore remain unbalanced until there is manual intervention from the administrator\&. When this parameter is set, you can manually fail public IP addresses over to the new node(s) using the \*(Aqctdb moveip\*(Aq command\&.
+.SS "NoIPHostOnAllDisabled"
+.PP
+Default: 0
+.PP
+If no nodes are HEALTHY then by default ctdb will happily host public IPs on disabled (unhealthy or administratively disabled) nodes\&. This can cause problems, for example if the underlying cluster filesystem is not mounted\&. When set to 1 and a node is disabled, any IPs hosted by this node will be released and the node will not takeover any IPs until it is no longer disabled\&.
+.SS "NoIPTakeover"
+.PP
+Default: 0
+.PP
+When set to 1, ctdb will not allow IP addresses to be failed over to other nodes\&. Any IP addresses already hosted on healthy nodes will remain\&. Usually IP addresses hosted on unhealthy nodes will also remain, if NoIPHostOnAllDisabled is 0\&. However, if NoIPHostOnAllDisabled is 1 then IP addresses will be released by unhealthy nodes and will become un\-hosted\&.
+.SS "PullDBPreallocation"
+.PP
+Default: 10*1024*1024
+.PP
+This is the size of a record buffer to pre\-allocate for sending reply to PULLDB control\&. Usually record buffer starts with size of the first record and gets reallocated every time a new record is added to the record buffer\&. For a large number of records, this can be very inefficient to grow the record buffer one record at a time\&.
+.SS "QueueBufferSize"
+.PP
+Default: 1024
+.PP
+This is the maximum amount of data (in bytes) ctdb will read from a socket at a time\&.
+.PP
+For a busy setup, if ctdb is not able to process the TCP sockets fast enough (large amount of data in Recv\-Q for tcp sockets), then this tunable value should be increased\&. However, large values can keep ctdb busy processing packets and prevent ctdb from handling other events\&.
+.SS "RecBufferSizeLimit"
+.PP
+Default: 1000000
+.PP
+This is the limit on the size of the record buffer to be sent in various controls\&. This limit is used by new controls used for recovery and controls used in vacuuming\&.
+.SS "RecdFailCount"
+.PP
+Default: 10
+.PP
+If the recovery daemon has failed to ping the main dameon for this many consecutive intervals, the main daemon will consider the recovery daemon as hung and will try to restart it to recover\&.
+.SS "RecdPingTimeout"
+.PP
+Default: 60
+.PP
+If the main dameon has not heard a "ping" from the recovery dameon for this many seconds, the main dameon will log a message that the recovery daemon is potentially hung\&. This also increments a counter which is checked against
+\fIRecdFailCount\fR
+for detection of hung recovery daemon\&.
+.SS "RecLockLatencyMs"
+.PP
+Default: 1000
+.PP
+When using a reclock file for split brain prevention, if set to non\-zero this tunable will make the recovery dameon log a message if the fcntl() call to lock/testlock the recovery file takes longer than this number of milliseconds\&.
+.SS "RecoverInterval"
+.PP
+Default: 1
+.PP
+How frequently in seconds should the recovery daemon perform the consistency checks to determine if it should perform a recovery\&.
+.SS "RecoverTimeout"
+.PP
+Default: 120
+.PP
+This is the default setting for timeouts for controls when sent from the recovery daemon\&. We allow longer control timeouts from the recovery daemon than from normal use since the recovery dameon often use controls that can take a lot longer than normal controls\&.
+.SS "RecoveryBanPeriod"
+.PP
+Default: 300
+.PP
+The duration in seconds for which a node is banned if the node fails during recovery\&. After this time has elapsed the node will automatically get unbanned and will attempt to rejoin the cluster\&.
+.PP
+A node usually gets banned due to real problems with the node\&. Don\*(Aqt set this value too small\&. Otherwise, a problematic node will try to re\-join cluster too soon causing unnecessary recoveries\&.
+.SS "RecoveryDropAllIPs"
+.PP
+Default: 120
+.PP
+If a node is stuck in recovery, or stopped, or banned, for this many seconds, then ctdb will release all public addresses on that node\&.
+.SS "RecoveryGracePeriod"
+.PP
+Default: 120
+.PP
+During recoveries, if a node has not caused recovery failures during the last grace period in seconds, any records of transgressions that the node has caused recovery failures will be forgiven\&. This resets the ban\-counter back to zero for that node\&.
+.SS "RepackLimit"
+.PP
+Default: 10000
+.PP
+During vacuuming, if the number of freelist records are more than
+\fIRepackLimit\fR, then the database is repacked to get rid of the freelist records to avoid fragmentation\&.
+.PP
+Databases are repacked only if both
+\fIRepackLimit\fR
+and
+\fIVacuumLimit\fR
+are exceeded\&.
+.SS "RerecoveryTimeout"
+.PP
+Default: 10
+.PP
+Once a recovery has completed, no additional recoveries are permitted until this timeout in seconds has expired\&.
+.SS "SeqnumInterval"
+.PP
+Default: 1000
+.PP
+Some databases have seqnum tracking enabled, so that samba will be able to detect asynchronously when there has been updates to the database\&. Everytime a database is updated its sequence number is increased\&.
+.PP
+This tunable is used to specify in milliseconds how frequently ctdb will send out updates to remote nodes to inform them that the sequence number is increased\&.
+.SS "StatHistoryInterval"
+.PP
+Default: 1
+.PP
+Granularity of the statistics collected in the statistics history\&. This is reported by \*(Aqctdb stats\*(Aq command\&.
+.SS "StickyDuration"
+.PP
+Default: 600
+.PP
+Once a record has been marked STICKY, this is the duration in seconds, the record will be flagged as a STICKY record\&.
+.SS "StickyPindown"
+.PP
+Default: 200
+.PP
+Once a STICKY record has been migrated onto a node, it will be pinned down on that node for this number of milliseconds\&. Any request from other nodes to migrate the record off the node will be deferred\&.
+.SS "TakeoverTimeout"
+.PP
+Default: 9
+.PP
+This is the duration in seconds in which ctdb tries to complete IP failover\&.
+.SS "TDBMutexEnabled"
+.PP
+Default: 1
+.PP
+This parameter enables TDB_MUTEX_LOCKING feature on volatile databases if the robust mutexes are supported\&. This optimizes the record locking using robust mutexes and is much more efficient that using posix locks\&.
+.SS "TickleUpdateInterval"
+.PP
+Default: 20
+.PP
+Every
+\fITickleUpdateInterval\fR
+seconds, ctdb synchronizes the client connection information across nodes\&.
+.SS "TraverseTimeout"
+.PP
+Default: 20
+.PP
+This is the duration in seconds for which a database traverse is allowed to run\&. If the traverse does not complete during this interval, ctdb will abort the traverse\&.
+.SS "VacuumFastPathCount"
+.PP
+Default: 60
+.PP
+During a vacuuming run, ctdb usually processes only the records marked for deletion also called the fast path vacuuming\&. After finishing
+\fIVacuumFastPathCount\fR
+number of fast path vacuuming runs, ctdb will trigger a scan of complete database for any empty records that need to be deleted\&.
+.SS "VacuumInterval"
+.PP
+Default: 10
+.PP
+Periodic interval in seconds when vacuuming is triggered for volatile databases\&.
+.SS "VacuumLimit"
+.PP
+Default: 5000
+.PP
+During vacuuming, if the number of deleted records are more than
+\fIVacuumLimit\fR, then databases are repacked to avoid fragmentation\&.
+.PP
+Databases are repacked only if both
+\fIRepackLimit\fR
+and
+\fIVacuumLimit\fR
+are exceeded\&.
+.SS "VacuumMaxRunTime"
+.PP
+Default: 120
+.PP
+The maximum time in seconds for which the vacuuming process is allowed to run\&. If vacuuming process takes longer than this value, then the vacuuming process is terminated\&.
+.SS "VerboseMemoryNames"
+.PP
+Default: 0
+.PP
+When set to non\-zero, ctdb assigns verbose names for some of the talloc allocated memory objects\&. These names are visible in the talloc memory report generated by \*(Aqctdb dumpmemory\*(Aq\&.
+.SH "SEE ALSO"
+.PP
+\fBctdb\fR(1),
+\fBctdbd\fR(1),
+\fBctdbd.conf\fR(5),
+\fBctdb\fR(7),
+\m[blue]\fB\%http://ctdb.samba.org/\fR\m[]
+.SH "AUTHOR"
+.br
+.PP
+This documentation was written by Ronnie Sahlberg, Amitay Isaacs, Martin Schwenke
+.SH "COPYRIGHT"
+.br
+Copyright \(co 2007 Andrew Tridgell, Ronnie Sahlberg
+.br
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version\&.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU General Public License for more details\&.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, see
+\m[blue]\fB\%http://www.gnu.org/licenses\fR\m[]\&.
+.sp

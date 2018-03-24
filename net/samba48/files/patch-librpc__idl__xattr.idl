@@ -1,0 +1,13 @@
+Signed-off-by: Alexander Zagrebin <alex@zagrebin.ru>
+
+--- librpc/idl/xattr.idl.orig	2017-12-17 05:40:37 UTC
++++ librpc/idl/xattr.idl	2017-12-17
+@@ -168,7 +168,7 @@ interface xattr
+ 		      can discard if this doesn't match the underlying ACL hash.
+ 	*/
+ 
+-	const char *XATTR_NTACL_NAME = "security.NTACL";
++	const char *XATTR_NTACL_NAME = "user.NTACL";
+ 
+ 	const int XATTR_SD_HASH_SIZE = 64;
+ 	const int XATTR_SD_HASH_TYPE_NONE = 0x0;
