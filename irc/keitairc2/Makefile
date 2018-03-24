@@ -4,7 +4,7 @@
 PORTNAME=		keitairc
 PORTVERSION=		2.0
 CATEGORIES=		irc
-MASTER_SITES=		SFJP/${PORTNAME}/47485
+MASTER_SITES=		OSDN/${PORTNAME}/47485
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC proxy for mobilephone that have a web interface

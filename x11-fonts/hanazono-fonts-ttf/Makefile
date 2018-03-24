@@ -4,7 +4,7 @@
 PORTNAME=	hanazono-fonts-ttf
 PORTVERSION=	20170904
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SFJP/hanazono-font/68253
+MASTER_SITES=	OSDN/hanazono-font/68253
 DISTNAME=	${PORTNAME:C/-.*//}-${PORTVERSION}
 
 MAINTAINER=	lichray@gmail.com

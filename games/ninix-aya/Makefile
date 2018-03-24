@@ -5,7 +5,7 @@ PORTNAME=	ninix-aya
 PORTVERSION=	4.4
 PORTREVISION=	6
 CATEGORIES=	games
-MASTER_SITES=	SFJP/${PORTNAME}/58500
+MASTER_SITES=	OSDN/${PORTNAME}/58500
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop mascot program compatible with "Ukagaka"
