@@ -5,7 +5,7 @@
   *
   */
 +
-+#if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) \   
++#if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) \
 +	|| defined(__DragonFly__) \
 +	|| defined(__OpenBSD__)) && (defined(i386) || defined(__i386__))
  #include "config.h"
