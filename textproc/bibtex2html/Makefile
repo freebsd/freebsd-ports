@@ -3,12 +3,14 @@
 
 PORTNAME=	bibtex2html
 PORTVERSION=	1.98
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/bibtex2html/
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Tools for searching BibTeX and translating from BibTeX to HTML
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ocaml:lang/ocaml
 
