@@ -1,7 +1,3 @@
-%%WWWDIR%%/.gitattributes
-%%WWWDIR%%/.gitignore
-%%WWWDIR%%/CONTRIBUTING.md
-%%WWWDIR%%/LICENSE
 %%WWWDIR%%/admin/backups/.htaccess
 %%WWWDIR%%/admin/backups/index.html
 %%WWWDIR%%/admin/inc/class_form.php
@@ -212,8 +208,6 @@
 %%WWWDIR%%/editpost.php
 %%WWWDIR%%/forumdisplay.php
 %%WWWDIR%%/global.php
-%%WWWDIR%%/htaccess-nginx.txt
-%%WWWDIR%%/htaccess.txt
 %%WWWDIR%%/images/arrow_down.png
 %%WWWDIR%%/images/attachtypes/blank.png
 %%WWWDIR%%/images/attachtypes/css.png
@@ -649,6 +643,7 @@
 %%WWWDIR%%/install/resources/upgrade4.php
 %%WWWDIR%%/install/resources/upgrade40.php
 %%WWWDIR%%/install/resources/upgrade41.php
+%%WWWDIR%%/install/resources/upgrade42.php
 %%WWWDIR%%/install/resources/upgrade5.php
 %%WWWDIR%%/install/resources/upgrade6.php
 %%WWWDIR%%/install/resources/upgrade7.php
