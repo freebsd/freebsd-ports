@@ -2,15 +2,18 @@ Fetchconfig is a Perl script for retrieving configurations of various network
 devices. It currently supports a variety of devices, such as:
 
   * 3Com MSR
-  * Cisco IOS
-  * Cisco ASA
-  * Cisco Catalyst
+  * Audiocodes Mediant
+  * Cisco ASA/CatOS/IOS/IOS-XR/SG300
+  * Coriant 8600
+  * Dell PowerConnect
   * FortiGate
+  * Juniper JunOS
   * MikroTik
-  * ProCurve
+  * NEC Univerge IX
+  * HPE ProCurve
   * Parks
   * Alcatel Ethernet Routers (Riverstone)
-  * Dell PowerConnect switches
   * Old Terayon 3200/3500 CMTS
+  * Tellabs MSR
 
-WWW: http://www.nongnu.org/fetchconfig/
+WWW: https://github.com/udhos/fetchconfig
