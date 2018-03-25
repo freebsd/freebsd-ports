@@ -1,13 +1,7 @@
-%%DATADIR%%/fonts.alias
+%%FONTSDIR%%/fonts.alias
 %%FONTSDIR%%/kaname-latin1.pcf.gz
 %%FONTSDIR%%/knm12p.pcf.gz
 %%FONTSDIR%%/knm12pb.pcf.gz
 %%FONTSDIR%%/knmhn12x.pcf.gz
 %%FONTSDIR%%/knmzn12x.pcf.gz
 %%FONTSDIR%%/knmzn12xb.pcf.gz
-%%DATADIR%%/kaname-latin1.pcf.gz
-%%DATADIR%%/knm12p.pcf.gz
-%%DATADIR%%/knm12pb.pcf.gz
-%%DATADIR%%/knmhn12x.pcf.gz
-%%DATADIR%%/knmzn12x.pcf.gz
-%%DATADIR%%/knmzn12xb.pcf.gz
