@@ -1,0 +1,4 @@
+A flexible DNS proxy, with support for modern encrypted DNS protocols such as 
+DNSCrypt v2 and DNS-over-HTTP/2.
+
+WWW: https://github.com/jedisct1/dnscrypt-proxy
