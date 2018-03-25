@@ -25,7 +25,6 @@ lib/mythtv/plugins/libmythmusic.so
 %%MYTHSHARE%%/i18n/mythmusic_sv.qm
 %%MYTHSHARE%%/music_settings.xml
 %%MYTHSHARE%%/musicmenu.xml
-%%MYTHSHARE%%/mythmusic/streams.xml
 %%MYTHSHARE%%/themes/default-wide/mm-titlelines.png
 %%MYTHSHARE%%/themes/default-wide/mm_blackhole_border.png
 %%MYTHSHARE%%/themes/default-wide/mm_volume_background.png

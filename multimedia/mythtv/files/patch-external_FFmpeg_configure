@@ -1,22 +1,29 @@
---- external/FFmpeg/configure.orig	2015-06-16 16:03:30 UTC
+Fix arch detection
+Fix runtime crashes on i386: enforce stack-alignment=16
+
+--- external/FFmpeg/configure.orig	2018-02-01 11:15:37 UTC
 +++ external/FFmpeg/configure
-@@ -2167,8 +2167,8 @@ yasmexe_default="yasm"
- nogas=":"
+@@ -3189,12 +3189,7 @@ target_os_default=$(tolower $(uname -s))
+ host_os=$target_os_default
  
  # machine
--arch_default=$(uname -m)
--cpu="generic"
+-if test "$target_os_default" = aix; then
+-    arch_default=$(uname -p)
+-    strip_default="strip -X32_64"
+-else
+-    arch_default=$(uname -m)
+-fi
 +arch_default=$(uname -p)
-+cpu="i686"
+ cpu="generic"
+ intrinsics="none"
  
- # OS
- target_os_default=$(tolower $(uname -s))
-@@ -3137,7 +3137,7 @@ elif enabled x86; then
-         i686|pentiumpro|pentium[23]|pentium-m|athlon|athlon-tbird|athlon-4|athlon-[mx]p|athlon64*|k8*|opteron*|athlon-fx|core2|corei7*|amdfam10|barcelona|atom|bdver*)
-             cpuflags="-march=$cpu"
-             enable cmov
--            enable fast_cmov
-+            disable fast_cmov
-         ;;
-         # targets that do support conditional mov but on which it's slow
-         pentium4|pentium4m|prescott|nocona)
+@@ -6217,6 +6212,9 @@ elif enabled llvm_gcc; then
+ elif enabled clang; then
+     check_cflags -mllvm -stack-alignment=16
+     check_cflags -mstack-alignment=16
++    if enabled x86_32; then
++        check_cflags -mstackrealign
++    fi
+     check_cflags -Qunused-arguments
+     check_cflags -Werror=implicit-function-declaration
+     check_cflags -Werror=missing-prototypes

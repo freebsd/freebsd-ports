@@ -1,4 +1,4 @@
---- configure.orig	2015-06-16 16:03:30 UTC
+--- configure.orig	2018-02-01 11:15:37 UTC
 +++ configure
 @@ -227,6 +227,10 @@ add_cxxflags(){
      append ECXXFLAGS "$@"
@@ -11,22 +11,27 @@
  check_cxx(){
      log check_cxx "$@"
      cat > $TMPCXX
-@@ -561,6 +565,10 @@ OPENGLV=$(cat mythconfig.mak | grep -e "
- EXTRALIBS=$(cat mythconfig.mak | grep -e "^EXTRALIBS=")
- EXTRALIBS=${EXTRALIBS#EXTRALIBS=}
+@@ -559,6 +563,10 @@ CXXPPFLAGS=${CXXPPFLAGS#CXXPPFLAGS=}
+ OPENGLV=$(cat mythconfig.mak | grep -e "^CONFIG_OPENGL_VIDEO=yes")
+ OPENGLES=$(cat mythconfig.mak | grep -e "^HAVE_GLES2_GL2_H=yes")
  
 +add_cppflags "-I${prefix}/include"
 +add_cxxflags "-I${prefix}/include"
 +add_ldflags "-L${prefix}/lib"
 +
- if is_qmake4 $qmake || is_qmake4 qmake-qt4; then
-     if is_qmake4 qmake-qt4; then
-         qmake=qmake-qt4
-@@ -657,6 +665,7 @@ if enabled music ; then
+ EXTRALIBS=$(cat mythconfig.mak | grep -e "^EXTRALIBS=")
+ EXTRALIBS=${EXTRALIBS#EXTRALIBS=}
+ 
+@@ -689,8 +697,10 @@ if enabled music ; then
          echo "MythMusic requires FLAC."
      fi
  
-+    enable cdio
-     if ! check_lib cdio/cdio.h cdio_open -lcdio || ! check_lib cdio/cdda.h cdio_cddap_open -lcdio_cdda || ! check_lib cdio/paranoia.h cdio_paranoia_init -lcdio_paranoia ; then
-         disable cdio
+-    if ! check_lib cdio/cdio.h cdio_open -lcdio || ! check_lib cdio/cdda.h cdio_cddap_open -lcdio_cdda || ! check_lib cdio/paranoia.h cdio_paranoia_init -lcdio_paranoia ; then
+-        disable cdio
++    if enabled cdio; then
++       if ! check_lib cdio/cdio.h cdio_open -lcdio || ! check_lib cdio/paranoia/cdda.h cdio_cddap_open -lcdio_cdda || ! check_lib cdio/paranoia/paranoia.h cdio_paranoia_init -lcdio_paranoia ; then
++         disable cdio
++       fi
      fi
+ 
+     if ! check_lib lame/lame.h lame_init -lmp3lame ; then
