@@ -1,0 +1,11 @@
+Whistle is a simple tool that allow your application components to communicate
+with each other by dispatching events and listening to them.
+
+Whistle is an Event Dispatcher library for the Python 3.5+ language. It's
+largely inspired from Symfony's EventDispatcher component.
+
+Using an event dispatcher is a great way to write loosely coupled extensible
+code, having each part only communicate using light events.
+
+WWW: https://python-whistle.github.io/
+WWW: https://github.com/python-whistle/whistle
