@@ -7,12 +7,20 @@
 #	/usr/ports should be shared with buildjail and hosts.
 #
 #
-#	Intended to run within a jailed System:
-#	---------------------------------------
+#	Intended to run within a jailed build system:
+#	---------------------------------------------
 #
 #
 #	pkg_update update-ports
 #		Starts "make update" for the ports tree.
+#
+#
+#	pkg_update update-pkg
+#		force rebuild of pkg tools.
+#
+#
+#	pkg_update repo
+#		force rebuild of pkg repo.
 #
 #
 #	pkg_update make-packages
@@ -82,16 +90,10 @@
 #	pkg_update fetch-recursive-distfiles
 #		Fetch distfiles for list of ports and their dependecies.
 #
-#	pkg_update show-extra-files
-#		list files in portsdir that are not updated by update-ports
-#
 #
 #
 #	Intended to run on a host:
 #	--------------------------
-#
-#	pkg_update dependency-update
-#		Try to fix as much dependecy problens in installed ports.
 #
 #	pkg_update fix-moved-ports
 #		Check installed packages for moved ports. Then register
@@ -160,16 +162,6 @@
 #	pkg_update show-missing-reinstall
 #		For each port recorded from "make-deinstall-list" warn
 #		if no new package is found.
-#
-#	pkg_update make-easy-update
-#		Try to generate the ordered sequence of pkg_deinstall
-#		and pkg_add commands to update your old packages.
-#
-#	pkg_update replace-package
-#		Overwrite the installed package with a new one and
-#		register dependencies and dependant packages.
-#		Warning: Don't do this when the ABI of the this
-#		package or the ABI of its dependencies has changed.
 #
 #	pkg_update clean-reinstall
 #		For each port recorded from "make-deinstall-list",
