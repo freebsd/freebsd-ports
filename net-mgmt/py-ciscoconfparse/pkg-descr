@@ -1,0 +1,24 @@
+ciscoconfparse parses through Cisco IOS-style configurations. It can:
+
+- Audit existing router / switch / firewall / wlc configurations
+- Retrieve portions of the configuration
+- Modify existing configurations
+- Build new configurations
+
+It can also parse other vendor configurations:
+
+- Juniper Networks JunOS
+- F5 Networks configurations
+- Palo Alto Networks Firewall configurations
+
+The module handles anything that has a Cisco IOS style of configuration, e.g.:
+
+- Cisco IOS/IOS-XE/IOS-XR/Aironet/ASA/CatOS/Nexus
+- Arista EOS
+- Brocade
+- HP Switches
+- Force 10 Switches
+- Dell PowerConnect Switches
+- Enterasys, Extreme Networks, Screenos
+
+WWW: http://www.pennington.net/py/ciscoconfparse/
