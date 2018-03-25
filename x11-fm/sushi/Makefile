@@ -21,7 +21,8 @@ RUN_DEPENDS=	nautilus:x11-fm/nautilus
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		compiler:c11 gettext gmake gnome libtool pathfix pkgconfig tar:xz
+USE_CSTD=	c11
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gtksourceview3 intlhack introspection:build
 USE_LDCONFIG=	yes

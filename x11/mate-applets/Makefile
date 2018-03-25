@@ -26,7 +26,9 @@ PORTSCOUT=	limitw:1,even
 
 #USES=		autoreconf:build gettext gmake libtool localbase pathfix \
 #		pkgconfig python shebangfix tar:xz
-USES=		gettext gmake libtool localbase pkgconfig python:2.7 shebangfix tar:xz
+USES=		compiler:c11 gettext gmake libtool localbase pkgconfig \
+		python:2.7 shebangfix tar:xz
+USE_CSTD=	c11
 #USE_MATE=	desktop icontheme libmateweather panel polkit settingsdaemon
 USE_MATE=	libmateweather panel
 USE_XORG=	ice sm x11
