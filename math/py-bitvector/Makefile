@@ -1,10 +1,10 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
 
 PORTNAME=	bitvector
-PORTVERSION=	3.4.7
+PORTVERSION=	3.4.8
 CATEGORIES=	math python
-MASTER_SITES=	https://engineering.purdue.edu/kak/dist/
+MASTER_SITES=	CHEESESHOP \
+		https://engineering.purdue.edu/kak/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	BitVector-${PORTVERSION}
 
