@@ -1,0 +1,14 @@
+Mondrian is a small library that will make you use python logging module, once
+and for all.
+
+Most python coders who avoids the systematic usage of logging in their projects
+does so because it feels complicated to setup, but it's not.
+
+Mondrian configures the python standard logging module with reasonable defaults,
+and enhance its default output formatters for better readability.
+
+Mondrian provides a one-call interface to its configuration, with pretty
+formatters that makes you feel great.
+
+WWW: https://python-mondrian.github.io/
+WWW: https://github.com/python-mondrian/mondrian
