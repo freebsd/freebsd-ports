@@ -24,15 +24,6 @@
    else()
      message(WARNING "unknown CPU: ${CPU}")
    endif()
---- cmake/treedata/freebsd/subdirs.txt.orig	2018-01-05 00:21:32 UTC
-+++ cmake/treedata/freebsd/subdirs.txt
-@@ -9,4 +9,6 @@ xbmc/storage/linux         storage/linux
- xbmc/filesystem/posix      filesystem/posix
- xbmc/utils/posix           utils_posix
- xbmc/platform/posix        posix
-+xbmc/cores/RetroPlayer/process/rbpi cores/RetroPlayer/process/rbpi
-+xbmc/cores/VideoPlayer/Process/rbpi cores/VideoPlayer/Process/rbpi
- xbmc/freebsd               freebsdsupport
 --- xbmc/windowing/rpi/WinSystemRpi.cpp.orig	2018-02-09 09:50:14 UTC
 +++ xbmc/windowing/rpi/WinSystemRpi.cpp
 @@ -32,9 +32,16 @@

@@ -1,13 +1,34 @@
+--- cmake/modules/FindWaylandpp.cmake.orig	2018-03-21 13:02:45 UTC
++++ cmake/modules/FindWaylandpp.cmake
+@@ -10,7 +10,7 @@
+ # WAYLANDPP_DEFINITIONS  - the waylandpp definitions
+ # WAYLANDPP_SCANNER      - path to wayland-scanner++
+ 
+-pkg_check_modules(WAYLANDPP wayland-client++ wayland-egl++ wayland-cursor++)
++pkg_check_modules(WAYLANDPP wayland-client++ wayland-client-extra++ wayland-egl++ wayland-cursor++)
+ pkg_check_modules(PC_WAYLANDPP_SCANNER wayland-scanner++)
+ if(WAYLANDPP_FOUND)
+   pkg_get_variable(PC_WAYLANDPP_PKGDATADIR wayland-client++ pkgdatadir)
+--- cmake/treedata/freebsd/subdirs.txt.orig	2018-03-21 13:02:45 UTC
++++ cmake/treedata/freebsd/subdirs.txt
+@@ -9,4 +9,7 @@ xbmc/storage/linux         storage/linux
+ xbmc/filesystem/posix      filesystem/posix
+ xbmc/utils/posix           utils_posix
+ xbmc/platform/posix        posix
++xbmc/cores/RetroPlayer/process/rbpi cores/RetroPlayer/process/rbpi
++xbmc/cores/VideoPlayer/Process/rbpi cores/VideoPlayer/Process/rbpi
+ xbmc/freebsd               freebsdsupport
++xbmc/windowing/linux       windowing/linux
 --- xbmc/windowing/wayland/ShellSurfaceXdgShell.h.orig	2018-03-21 13:02:45 UTC
 +++ xbmc/windowing/wayland/ShellSurfaceXdgShell.h
-@@ -22,6 +22,7 @@
- #include "Connection.h"
+@@ -23,6 +23,7 @@
  #include "ShellSurface.h"
  
-+#include <wayland-client-protocol.hpp>
  #include <wayland-extra-protocols.hpp>
++#include <wayland-client-protocol-extra.hpp>
  
  namespace KODI
+ {
 --- xbmc/windowing/wayland/WinSystemWayland.cpp.orig	2018-03-21 13:02:45 UTC
 +++ xbmc/windowing/wayland/WinSystemWayland.cpp
 @@ -1331,7 +1331,7 @@ void CWinSystemWayland::PrepareFramePresentation()
@@ -21,11 +42,11 @@
        m_presentationFeedbackHandlers.Invoke(tv, refresh, m_syncOutputID, m_syncOutputRefreshRate, msc);
 --- xbmc/windowing/wayland/WinSystemWayland.h.orig	2018-03-21 13:02:45 UTC
 +++ xbmc/windowing/wayland/WinSystemWayland.h
-@@ -28,6 +28,7 @@
- #include <set>
- 
+@@ -30,6 +30,7 @@
  #include <wayland-client.hpp>
-+#include <wayland-client-protocol.hpp>
  #include <wayland-cursor.hpp>
  #include <wayland-extra-protocols.hpp>
++#include <wayland-client-protocol-extra.hpp>
  
+ #include "Connection.h"
+ #include "Output.h"
