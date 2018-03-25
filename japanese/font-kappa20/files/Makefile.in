@@ -55,8 +55,8 @@ fonts.alias: Makefile
 	) | sort > $@
 
 install:
-	mkdir -p ${DESTDIR}%%DATADIR%%
-	${BSD_INSTALL_DATA} ${PCF_ALL} fonts.alias ${DESTDIR}%%DATADIR%%
+	mkdir -p ${DESTDIR}%%FONTSDIR%%
+	${BSD_INSTALL_DATA} ${PCF_ALL} fonts.alias ${DESTDIR}%%FONTSDIR%%
 
 clean::
 	rm ${MADE_BOLD} ${MADE_ITALIC} ${PCF_ALL}
