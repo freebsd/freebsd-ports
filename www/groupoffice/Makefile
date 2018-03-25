@@ -3,7 +3,7 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.2.85
+DISTVERSION=	6.2.88
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 
@@ -61,7 +61,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 	@${TOUCH} ${STAGEDIR}${WWWDIR}/config.php.sample
 
 .include <bsd.port.mk>

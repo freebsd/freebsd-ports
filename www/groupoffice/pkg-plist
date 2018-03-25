@@ -36,7 +36,6 @@
 %%WWWDIR%%/go/base/Model.php
 %%WWWDIR%%/go/base/Module.php
 %%WWWDIR%%/go/base/ModuleCollection.php
-%%WWWDIR%%/go/base/Object.php
 %%WWWDIR%%/go/base/Observable.php
 %%WWWDIR%%/go/base/Request.php
 %%WWWDIR%%/go/base/Router.php
@@ -1256,6 +1255,7 @@
 %%WWWDIR%%/modules/addressbook/Utils.php
 %%WWWDIR%%/modules/addressbook/controller/AddressbookController.php
 %%WWWDIR%%/modules/addressbook/controller/AddresslistController.php
+%%WWWDIR%%/modules/addressbook/controller/AddresslistgroupController.php
 %%WWWDIR%%/modules/addressbook/controller/CompanyController.php
 %%WWWDIR%%/modules/addressbook/controller/ContactController.php
 %%WWWDIR%%/modules/addressbook/controller/ExportContactsWithCompaniesController.php
@@ -1316,6 +1316,7 @@
 %%WWWDIR%%/modules/addressbook/model/Addresslist.php
 %%WWWDIR%%/modules/addressbook/model/AddresslistCompany.php
 %%WWWDIR%%/modules/addressbook/model/AddresslistContact.php
+%%WWWDIR%%/modules/addressbook/model/AddresslistGroup.php
 %%WWWDIR%%/modules/addressbook/model/BirthdaysPortletSetting.php
 %%WWWDIR%%/modules/addressbook/model/Company.php
 %%WWWDIR%%/modules/addressbook/model/Contact.php
@@ -1383,9 +1384,14 @@
 %%WWWDIR%%/modules/addressbook/themes/Group-Office/images/selected.gif
 %%WWWDIR%%/modules/addressbook/themes/Group-Office/images/unknown-person.png
 %%WWWDIR%%/modules/addressbook/themes/Group-Office/style.css
+%%WWWDIR%%/modules/addressbook/views/Extjs3/AddresslistGroupDialog.js
+%%WWWDIR%%/modules/addressbook/views/Extjs3/AddresslistGroupGrid.js
+%%WWWDIR%%/modules/addressbook/views/Extjs3/AddresslistGroupGridDialog.js
+%%WWWDIR%%/modules/addressbook/views/Extjs3/AddresslistsGroupedMultiSelectGrid.js
 %%WWWDIR%%/modules/addressbook/views/Extjs3/AddresslistsSettingspanel.js
 %%WWWDIR%%/modules/addressbook/views/Extjs3/BirthdaysPortlet.js
 %%WWWDIR%%/modules/addressbook/views/Extjs3/PhotoPanel.js
+%%WWWDIR%%/modules/addressbook/views/Extjs3/SelectAddresslistGroup.js
 %%WWWDIR%%/modules/addressbook/views/Extjs3/Settings.js
 %%WWWDIR%%/modules/addressbook/views/Extjs3/unsubscribe.php
 %%WWWDIR%%/modules/addressbook/views/Extjs3/unsubscribed.php
@@ -4426,40 +4432,6 @@
 %%WWWDIR%%/modules/sync/z-push/install.sh
 %%WWWDIR%%/modules/sync/z-push/z-push-admin.php
 %%WWWDIR%%/modules/sync/z-push/z-push-top.php
-%%WWWDIR%%/modules/syncml/Response.php
-%%WWWDIR%%/modules/syncml/Server.php
-%%WWWDIR%%/modules/syncml/SyncmlModule.php
-%%WWWDIR%%/modules/syncml/backend/AbstractBackend.php
-%%WWWDIR%%/modules/syncml/backend/go/Backend.php
-%%WWWDIR%%/modules/syncml/backend/go/store/Event.php
-%%WWWDIR%%/modules/syncml/backend/go/store/Todo.php
-%%WWWDIR%%/modules/syncml/backend/go/store/VCard.php
-%%WWWDIR%%/modules/syncml/controller/DeviceController.php
-%%WWWDIR%%/modules/syncml/exception/ImportFailure.php
-%%WWWDIR%%/modules/syncml/exception/NotFound.php
-%%WWWDIR%%/modules/syncml/index.php
-%%WWWDIR%%/modules/syncml/install/install.sql
-%%WWWDIR%%/modules/syncml/install/uninstall.sql
-%%WWWDIR%%/modules/syncml/install/updates.php
-%%WWWDIR%%/modules/syncml/language/cs.php
-%%WWWDIR%%/modules/syncml/language/de.php
-%%WWWDIR%%/modules/syncml/language/en.php
-%%WWWDIR%%/modules/syncml/language/es.php
-%%WWWDIR%%/modules/syncml/language/fr.php
-%%WWWDIR%%/modules/syncml/language/nl.php
-%%WWWDIR%%/modules/syncml/language/pt_BR.php
-%%WWWDIR%%/modules/syncml/language/th.php
-%%WWWDIR%%/modules/syncml/model/Anchor.php
-%%WWWDIR%%/modules/syncml/model/Device.php
-%%WWWDIR%%/modules/syncml/model/Map.php
-%%WWWDIR%%/modules/syncml/store/AbstractStore.php
-%%WWWDIR%%/modules/syncml/store/AbstractVCalendarStore.php
-%%WWWDIR%%/modules/syncml/store/AbstractVCardStore.php
-%%WWWDIR%%/modules/syncml/store/AbstractVTodoStore.php
-%%WWWDIR%%/modules/syncml/views/Extjs3/themes/Default/images/syncml.png
-%%WWWDIR%%/modules/syncml/xml/response.xml
-%%WWWDIR%%/modules/syncml/xml/responseOudeSyncmlServer.xml
-%%WWWDIR%%/modules/syncml/xml/test.xml
 %%WWWDIR%%/modules/tasks/AddTaskPanel.js
 %%WWWDIR%%/modules/tasks/CategoryDialog.js
 %%WWWDIR%%/modules/tasks/ContinueTaskDialog.js
@@ -6568,6 +6540,7 @@
 %%WWWDIR%%/vendor/sabre/xml/tests/phpunit.xml.dist
 %%WWWDIR%%/vendor/swiftmailer/swiftmailer/.gitattributes
 %%WWWDIR%%/vendor/swiftmailer/swiftmailer/.gitignore
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/.travis.yml
 %%WWWDIR%%/vendor/swiftmailer/swiftmailer/CHANGES
 %%WWWDIR%%/vendor/swiftmailer/swiftmailer/LICENSE
 %%WWWDIR%%/vendor/swiftmailer/swiftmailer/README
@@ -9762,24 +9735,3 @@
 %%WWWDIR%%/views/Responsive/resources/GO.js
 %%WWWDIR%%/views/Responsive/resources/message.js
 %%WWWDIR%%/views/Responsive/resources/template.js
-@dir %%WWWDIR%%/modules/cron/model
-@dir %%WWWDIR%%/modules/exactonline/vendor/guzzlehttp/guzzle/build
-@dir %%WWWDIR%%/modules/exactonline/vendor/guzzlehttp/guzzle/docs
-@dir %%WWWDIR%%/modules/exactonline/vendor/guzzlehttp/guzzle/tests
-@dir %%WWWDIR%%/modules/groups/model
-@dir %%WWWDIR%%/modules/manualsite/views/site/assets/js
-@dir %%WWWDIR%%/modules/modules/themes/Default/images/16x16
-@dir %%WWWDIR%%/modules/pr2analyzer/install
-@dir %%WWWDIR%%/modules/pr2analyzer/model
-@dir %%WWWDIR%%/modules/scanbox/install
-@dir %%WWWDIR%%/modules/sieve/install/updatescripts
-@dir %%WWWDIR%%/modules/tasks/install/updatescripts
-@dir %%WWWDIR%%/modules/tickets/extern
-@dir %%WWWDIR%%/modules/users/install/updatescripts
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/dd
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/tree
-@dir %%WWWDIR%%/views/Extjs3/language
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/treeview
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/buttons
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/treeview
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/treeview
