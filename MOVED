@@ -10236,3 +10236,4 @@ net-im/plasma-applet-ktp|net-im/plasma-applet-ktp-kde4|2018-03-23|Make room for 
 multimedia/gmencoder||2018-03-23|Abandonware, does not support modern codecs
 mail/wanderlust-devel|mail/wanderlust|2018-03-23|Removed, use mail/wanderlust instead
 graphics/skanlite|graphics/skanlite-kde4|2018-03-25|Make room for KDE updates
+lang/x10||2018-03-25|Has expired: Broken for more than 6 months

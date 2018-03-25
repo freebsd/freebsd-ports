@@ -364,7 +364,6 @@
     SUBDIR += v8-devel
     SUBDIR += vala
     SUBDIR += visualworks
-    SUBDIR += x10
     SUBDIR += yabasic
     SUBDIR += yap
     SUBDIR += yap-devel
