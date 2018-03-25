@@ -3,7 +3,7 @@
 
 PORTNAME=	naga10
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA013391/fonts/
 PKGNAMEPREFIX=	ja-font-
@@ -16,13 +16,9 @@ BUILD_DEPENDS=	mkbold:x11-fonts/mkbold-mkitalic \
 		bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
-FONTNAME=	misc
 NO_ARCH=	yes
-SUB_FILES=	Makefile pkg-install
-SUB_LIST=	FONTSALIAS="${DATADIR}/fonts.alias"
+SUB_FILES=	Makefile pkg-message
 MAKEFILE=	${WRKDIR}/Makefile
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-install
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
@@ -30,10 +26,7 @@ OPTIONS_DEFINE=	DOCS
 pre-build: apply-slist
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${STAGEDIR}${FONTSDIR} && \
-	    ${LN} -s ../../../${DATADIR_REL}/*.pcf.gz .
+	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${STAGEDIR}${FONTSDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
