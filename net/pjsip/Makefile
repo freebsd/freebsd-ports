@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	AMR DEBUG EXTSRTP FFMPEG G711 G722 G7221 GSM ILBC IPV6 \
 		SHARED SOUND SPEEX SPEEXAEC V4L VIDEO WEBRTC
 OPTIONS_DEFAULT=G711 G722 G7221 GSM ILBC L16 SHARED SPEEX SPEEXAEC
 
-EXTSRTP_DESC=	Use libsrtp port (needed to get SRTP support in asterisk13 pjsip backend)
+EXTSRTP_DESC=	Use libsrtp port (needed to get SRTP support in asterisk pjsip backend)
 G711_DESC=	G.711 codec support
 G722_DESC=	G.722 codec support
 G7221_DESC=	G.722.1 codec support
