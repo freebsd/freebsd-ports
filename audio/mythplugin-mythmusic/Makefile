@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mythmusic
-PORTVERSION=	0.27.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	29.1
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
 
@@ -14,30 +13,34 @@ COMMENT=	Music playing plugin for MythTV
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
-		libFLAC.so:audio/flac \
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libmp3lame.so:audio/lame \
+		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
-		libtag.so:audio/taglib \
-		libfftw3f.so:math/fftw3-float
-BUILD_DEPENDS=	mythfrontend:multimedia/mythtv
+		libmyth-29.so:multimedia/mythtv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
+USE_LDCONFIG=	yes
+USE_QT5=	buildtools_build core gui qmake_build sql xml
 
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-all \
+		--enable-mythmusic
+DESTDIRNAME=	INSTALL_ROOT
+PLIST_SUB=	MYTHSHARE="share/mythtv"
 WRKSRC_SUBDIR=	mythplugins
 
-USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build
-HAS_CONFIGURE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/mythtv/plugins
-DESTDIRNAME=	INSTALL_ROOT
+OPTIONS_DEFINE=	CDIO FFTW
 
-PLIST_SUB=	MYTHSHARE="share/mythtv"
+CDIO_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
+			libcdio_paranoia.so:sysutils/libcdio-paranoia
+CDIO_CONFIGURE_ENABLE=	cdio
 
-QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
-
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-all \
-		--enable-mythmusic --enable-fftw --enable-opengl
+FFTW_DESC=		FFTW3-based visualizations
+FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
+FFTW_CONFIGURE_ENABLE=	fftw
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
@@ -45,5 +48,8 @@ post-patch:
 		${WRKSRC}/mythmusic/mythmusic/mythmusic.pro
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|g' \
 		${WRKSRC}/configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mythtv/plugins/libmythmusic.so
 
 .include <bsd.port.mk>

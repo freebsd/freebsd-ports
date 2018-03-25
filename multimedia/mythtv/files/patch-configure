@@ -1,6 +1,6 @@
---- configure.orig	2015-06-16 16:03:30 UTC
+--- configure.orig	2018-01-11 12:39:22 UTC
 +++ configure
-@@ -846,28 +846,28 @@ check_cc(){
+@@ -1003,35 +1003,35 @@ check_cc(){
      log check_cc "$@"
      cat > $TMPC
      log_file $TMPC
@@ -24,6 +24,14 @@
 +    check_cmd $cxx $CPPFLAGS $CXXFLAGS $ECXXFLAGS -I${prefix}/include "$@" $CXX_C -o $TMPO $TMPCPP
  }
  
+ check_objcc(){
+     log check_objcc "$@"
+     cat > $TMPM
+     log_file $TMPM
+-    check_cmd $objcc -Werror=missing-prototypes $CPPFLAGS $CFLAGS $OBJCFLAGS "$@" $OBJCC_C $(cc_o $TMPO) $TMPM
++    check_cmd $objcc -Werror=missing-prototypes $CPPFLAGS $CFLAGS $OBJCFLAGS -I${prefix}/include "$@" $OBJCC_C $(cc_o $TMPO) $TMPM
+ }
+ 
  check_cpp(){
      log check_cpp "$@"
      cat > $TMPC
@@ -33,46 +41,12 @@
  }
  
  as_o(){
-@@ -2539,7 +2539,7 @@ python_default="python"
- 
- # machine
- arch_default=$(uname -m)
--cpu="generic"
-+cpu="i686"
- processor=`uname -p 2>/dev/null`
- processor_flags=""
- tune="generic"
-@@ -3931,7 +3931,7 @@ elif enabled x86; then
-         i686|pentiumpro|pentium[23]|pentium-m|athlon|athlon-tbird|athlon-4|athlon-[mx]p|athlon64*|k8*|opteron*|athlon-fx|core2|corei7*|amdfam10|barcelona|atom|bdver*)
-             cpuflags="-march=$cpu"
-             enable cmov
--            enable fast_cmov
-+            disable fast_cmov
-         ;;
-         # targets that do support conditional mov but on which it's slow
-         pentium4|pentium4m|prescott|nocona)
-@@ -4102,7 +4102,6 @@ case $target_os in
-         append CCONFIG "freebsd"
-         # Workaround compile errors from missing u_int/uint def
-         CPPFLAGS=`echo $CPPFLAGS | sed 's/-D_POSIX_C_SOURCE=200112//'`
--        disable ivtv
-         enable backend
-         ;;
-     bsd/os)
-@@ -6389,6 +6388,7 @@ cat <<EOF >> $TMPMAK
- QMAKE_LIBDIR_QT-=${sysroot}${libdir}
- QMAKE_LIBDIR-=${sysroot}${libdir}
- LATE_LIBS+=-L${sysroot}${libdir}
-+FREETYPE_CFLAGS-= -I/usr/local/include
- EOF
- 
- #echo "endif # FFMPEG_CONFIG_MAK" >> $TMPMAK
-@@ -6441,7 +6441,7 @@ INCDIR=\$(INSTALL_ROOT)$incdir
+@@ -8840,7 +8840,7 @@ INCDIR=\$(INSTALL_ROOT)$incdir
  BINDIR=\$(INSTALL_ROOT)$bindir
  DATADIR=\$(INSTALL_ROOT)$datadir
  MANDIR=\$(INSTALL_ROOT)$mandir
--CFLAGS=${CFLAGS} -w
-+CFLAGS=${CFLAGS} -I/usr/local/include -w
+-CFLAGS=${CFLAGS} -DFF_API_OLD_DECODE_AUDIO=1 -w
++CFLAGS=${CFLAGS} -DFF_API_OLD_DECODE_AUDIO=1 -I${prefix}/include -w
  endif # FFMPEG_CONFIG_MAK
  EOF
  

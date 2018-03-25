@@ -1,4 +1,4 @@
---- libs/libmythui/mythpainter.cpp.orig	2015-06-16 16:03:30 UTC
+--- libs/libmythui/mythpainter.cpp.orig	2018-01-11 12:39:22 UTC
 +++ libs/libmythui/mythpainter.cpp
 @@ -1,6 +1,7 @@
  #include <stdint.h>
