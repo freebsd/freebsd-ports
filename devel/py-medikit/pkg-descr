@@ -1,0 +1,12 @@
+Medikit automates keeping your projects' boilerplate files and directory sane
+and up to date.
+
+It (optionally) generates and maintains a bunch of files, updating them
+according to rules you define.
+
+It's not a dependency. All changes are commited in your source tree.
+
+You write amazing code, Medikit focuses on keeping it clean and ordered.
+
+WWW: https://python-medikit.github.io/
+WWW: https://github.com/python-medikit/medikit
