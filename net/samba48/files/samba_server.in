@@ -31,7 +31,7 @@ rcvar=${name}_enable
 samba_server_config_default="%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%"
 smbcontrol_command="%%PREFIX%%/bin/smbcontrol"
 # Custom commands
-extra_commands="reload status"
+extra_commands="reload status configtest"
 
 start_precmd="samba_server_prestart"
 restart_precmd="samba_server_checkconfig"
@@ -39,6 +39,7 @@ reload_precmd="samba_server_checkconfig"
 start_cmd="samba_server_cmd"
 stop_cmd="samba_server_cmd"
 status_cmd="samba_server_cmd"
+configtest_cmd="samba_server_checkconfig"
 reload_cmd="samba_server_reload_cmd"
 rcvar_cmd="samba_server_rcvar_cmd"
 
@@ -61,10 +62,6 @@ samba_server_prestart() {
     if [ -d "${samba_server_privatedir}" -o ! -e "${samba_server_privatedir}" ]; then
 	install -d -m 0700 "${samba_server_privatedir}"
     fi
-#    # Remove smbd.pid before starting up samba(needed for s3fs)
-#    if [ -e "${samba_server_piddir}/smbd.pid" ] ; then
-#	rm -f "${samba_server_piddir}/smbd.pid"
-#    fi
     samba_server_checkconfig
 }
 

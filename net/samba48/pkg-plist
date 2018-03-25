@@ -40,6 +40,7 @@ sbin/smbd
 sbin/winbindd
 %%AD_DC%%sbin/samba
 %%AD_DC%%sbin/samba_dnsupdate
+%%AD_DC%%sbin/samba_gpoupdate
 %%AD_DC%%sbin/samba_kcc
 %%AD_DC%%sbin/samba_spnupdate
 %%AD_DC%%sbin/samba_upgradedns
@@ -221,7 +222,7 @@ lib/samba4/private/libevents-samba4.so
 lib/samba4/private/libflag-mapping-samba4.so
 lib/samba4/private/libgenrand-samba4.so
 lib/samba4/private/libgensec-samba4.so
-lib/samba4/private/libgpo-samba4.so
+lib/samba4/private/libgpext-samba4.so
 lib/samba4/private/libgse-samba4.so
 lib/samba4/private/libgssapi-samba4.so.2
 lib/samba4/private/libhcrypto-samba4.so.5
@@ -303,6 +304,7 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%lib/shared-modules/ldb/dirsync.so
 %%AD_DC%%lib/shared-modules/ldb/dns_notify.so
 %%AD_DC%%lib/shared-modules/ldb/dsdb_notification.so
+%%AD_DC%%lib/shared-modules/ldb/encrypted_secrets.so
 %%AD_DC%%lib/shared-modules/ldb/extended_dn_in.so
 %%AD_DC%%lib/shared-modules/ldb/extended_dn_out.so
 %%AD_DC%%lib/shared-modules/ldb/extended_dn_store.so
@@ -337,9 +339,11 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%lib/shared-modules/ldb/subtree_delete.so
 %%AD_DC%%lib/shared-modules/ldb/subtree_rename.so
 %%AD_DC%%lib/shared-modules/ldb/tombstone_reanimate.so
+%%AD_DC%%lib/shared-modules/ldb/unique_object_sids.so
 %%AD_DC%%lib/shared-modules/ldb/update_keytab.so
 %%AD_DC%%lib/shared-modules/ldb/vlv.so
 %%AD_DC%%lib/shared-modules/ldb/wins_ldb.so
+%%AD_DC%%lib/shared-modules/process_model/prefork.so
 %%AD_DC%%lib/shared-modules/process_model/standard.so
 %%AD_DC%%lib/shared-modules/service/cldap.so
 %%AD_DC%%lib/shared-modules/service/dcerpc.so
@@ -389,6 +393,7 @@ lib/shared-modules/vfs/streams_xattr.so
 lib/shared-modules/vfs/syncops.so
 lib/shared-modules/vfs/time_audit.so
 lib/shared-modules/vfs/unityed_media.so
+lib/shared-modules/vfs/virusfilter.so
 lib/shared-modules/vfs/worm.so
 lib/shared-modules/vfs/xattr_tdb.so
 lib/shared-modules/vfs/zfsacl.so
@@ -431,6 +436,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/_glue.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/_ldb.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/auth.so
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/colour.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/common.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/compat.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/credentials.so
@@ -473,11 +479,19 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/dcerpc/xattr.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/descriptor.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/dnsserver.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/domain_update.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/drs_utils.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/dsdb_dns.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/dsdb.so
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/emulate/__init__.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/emulate/traffic_packets.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/emulate/traffic.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/forest_update.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/gensec.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/getopt.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/gpclass.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/gpo.so
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/graph.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/hostconfig.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/idmap.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/join.py
@@ -489,6 +503,8 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/kcc/ldif_import_export.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/messaging.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/ms_display_specifiers.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/ms_forest_updates_markdown.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/ms_schema_markdown.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/ms_schema.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/ndr.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/net.so
@@ -514,6 +530,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/netcmd/spn.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/netcmd/testparm.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/netcmd/user.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/netcmd/visualize.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/ntacls.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/ntstatus.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/param.so
@@ -551,8 +568,13 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/auth_log.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/auth.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/__init__.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/check_output.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/ndrdump.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/samba_dnsupdate.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/smbcontrol.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_learner.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_replay.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_summary.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/common.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/core.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/credentials.py
@@ -579,11 +601,17 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dns_wildcard.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dns.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/docs.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dsdb_lock.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dsdb_schema_attributes.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dsdb.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/emulate/__init__.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/emulate/traffic_packet.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/emulate/traffic.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/encrypted_secrets.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/gensec.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/get_opt.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/glue.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/graph.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/hostconfig.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/join.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/kcc/__init__.py
@@ -591,6 +619,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/kcc/graph.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/kcc/kcc_utils.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/kcc/ldif_import_export.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/krb5_credentials.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/libsmb_samba_internal.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/lsa_string.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/messaging.py
@@ -599,7 +628,8 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/netcmd.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/netlogonsvc.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/ntacls.py
-%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/ntlmauth.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/ntlmdisabled.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/pam_winbind_warn_pwd_expire.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/pam_winbind.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/param.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/password_hash_fl2003.py
@@ -607,6 +637,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/password_hash_gpgme.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/password_hash_ldap.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/password_hash.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/password_quality.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/policy.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/posixacl.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/provision.py
@@ -618,9 +649,11 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/fsmo.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/gpo.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/group.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/help.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/join.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/ntacl.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/processes.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/provision_password_check.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/rodc.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/sites.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/timecmd.py
@@ -628,6 +661,8 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_virtualCryptSHA.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_wdigest.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/visualize_drs.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/visualize.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba3.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samba3sam.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/samdb.py
@@ -635,17 +670,18 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/source.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/strings.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/subunitrun.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/tdb_util.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/unicodenames.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/upgrade.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovision.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovisionneeddc.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/xattr.py
-%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/werror.so
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/third_party/__init__.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/upgrade.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/upgradehelpers.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/web_server/__init__.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/werror.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/xattr.py
-%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/third_party/__init__.py
 %%SAMBA4_PYTHON2%%@unexec find %D/%%PYTHON_SITELIBDIR%%/samba -name '*.py[co]' -delete >/dev/null 2>&1
 %%SAMBA4_PYTHON2%%@dir %%PYTHON_SITELIBDIR%%/samba/web_server
 %%SAMBA4_PYTHON2%%@dir %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool
@@ -662,6 +698,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/_glue.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/_ldb.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/auth.cpython-36m.so
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/colour.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/common.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/compat.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/credentials.cpython-36m.so
@@ -704,9 +741,16 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/dcerpc/xattr.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/descriptor.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/dnsserver.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/domain_update.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/drs_utils.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/emulate/__init__.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/emulate/traffic_packets.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/emulate/traffic.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/forest_update.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/gensec.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/getopt.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/gpclass.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/graph.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/hostconfig.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/idmap.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/join.py
@@ -716,7 +760,10 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/kcc/graph.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/kcc/kcc_utils.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/kcc/ldif_import_export.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/messaging.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/ms_display_specifiers.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/ms_forest_updates_markdown.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/ms_schema_markdown.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/ms_schema.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/ndr.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/net.cpython-36m.so
@@ -741,19 +788,24 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/netcmd/spn.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/netcmd/testparm.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/netcmd/user.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/netcmd/visualize.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/ntacls.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/ntstatus.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/param.cpython-36m.so
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/posix_eadb.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/provision/__init__.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/provision/backend.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/provision/common.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/provision/kerberos_implementation.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/provision/kerberos.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/provision/sambadns.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/registry.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/remove_dc.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/samba3/__init__.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/samdb.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/schema.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/sd_utils.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/security.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/sites.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/subnets.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/subunit/__init__.py
@@ -769,8 +821,13 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/auth_log.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/auth.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/blackbox/__init__.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/blackbox/check_output.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/blackbox/ndrdump.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/blackbox/samba_dnsupdate.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/blackbox/smbcontrol.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/blackbox/traffic_learner.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/blackbox/traffic_replay.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/blackbox/traffic_summary.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/common.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/core.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/credentials.py
@@ -797,11 +854,17 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dns_wildcard.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dns.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/docs.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dsdb_lock.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dsdb_schema_attributes.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dsdb.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/emulate/__init__.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/emulate/traffic_packet.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/emulate/traffic.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/encrypted_secrets.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/gensec.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/get_opt.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/glue.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/graph.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/hostconfig.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/join.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/kcc/__init__.py
@@ -809,6 +872,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/kcc/graph.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/kcc/kcc_utils.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/kcc/ldif_import_export.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/krb5_credentials.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/libsmb_samba_internal.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/lsa_string.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/messaging.py
@@ -817,7 +881,8 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/netcmd.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/netlogonsvc.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/ntacls.py
-%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/ntlmauth.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/ntlmdisabled.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/pam_winbind_warn_pwd_expire.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/pam_winbind.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/param.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/password_hash_fl2003.py
@@ -825,6 +890,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/password_hash_gpgme.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/password_hash_ldap.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/password_hash.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/password_quality.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/policy.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/posixacl.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/provision.py
@@ -836,9 +902,11 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/fsmo.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/gpo.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/group.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/help.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/join.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/ntacl.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/processes.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/provision_password_check.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/rodc.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/sites.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/timecmd.py
@@ -846,6 +914,8 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/user_virtualCryptSHA.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/user_wdigest.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/user.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/visualize_drs.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba_tool/visualize.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba3.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samba3sam.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/samdb.py
@@ -853,6 +923,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/source.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/strings.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/subunitrun.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/tdb_util.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/unicodenames.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/upgrade.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/upgradeprovision.py
@@ -861,6 +932,9 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/upgrade.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/upgradehelpers.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/web_server/__init__.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/werror.cpython-36m.so
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/xattr_native.cpython-36m.so
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/xattr_tdb.cpython-36m.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/xattr.py
 %%SAMBA4_PYTHON3%%@unexec find %D/%%PYTHON_SITELIBDIR%%/samba -name '*.py[co]' -delete >/dev/null 2>&1
 %%SAMBA4_PYTHON3%%@dir %%SAMBA4_PYTHON3_SITELIBDIR%%/samba/web_server
@@ -907,11 +981,27 @@ lib/shared-modules/vfs/zfsacl.so
 @dir %%DATADIR%%/perl5/Parse/Pidl
 @dir %%DATADIR%%/perl5/Parse
 @dir %%DATADIR%%/perl5
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Attributes__Windows_Server_2012_R2.ldf
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Attributes__Windows_Server_2016.ldf
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Classes__Windows_Server_2012_R2.ldf
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Classes__Windows_Server_2016.ldf
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/Attributes_for_AD_DS__Windows_Server_2008_R2.ldf
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/Attributes_for_AD_DS__Windows_Server_2012.ldf
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/Classes_for_AD_DS__Windows_Server_2008_R2.ldf
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/Classes_for_AD_DS__Windows_Server_2012.ldf
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/licence.txt
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Attributes.txt
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Classes.txt
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_R2_Attributes.txt
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_R2_Classes.txt
+%%AD_DC%%%%DATADIR%%/setup/adprep/fix-forest-rev.ldf
+%%AD_DC%%%%DATADIR%%/setup/adprep/WindowsServerDocs/Forest-Wide-Updates.md
+%%AD_DC%%%%DATADIR%%/setup/adprep/WindowsServerDocs/Sch49.ldf.diff
+%%AD_DC%%%%DATADIR%%/setup/adprep/WindowsServerDocs/Sch50.ldf.diff
+%%AD_DC%%%%DATADIR%%/setup/adprep/WindowsServerDocs/Sch51.ldf.diff
+%%AD_DC%%%%DATADIR%%/setup/adprep/WindowsServerDocs/Sch57.ldf.diff
+%%AD_DC%%%%DATADIR%%/setup/adprep/WindowsServerDocs/Sch59.ldf.diff
+%%AD_DC%%%%DATADIR%%/setup/adprep/WindowsServerDocs/Schema-Updates.md
 %%AD_DC%%%%DATADIR%%/setup/aggregate_schema.ldif
 %%AD_DC%%%%DATADIR%%/setup/cn=samba.ldif
 %%AD_DC%%%%DATADIR%%/setup/DB_CONFIG
@@ -921,6 +1011,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k8.txt
 %%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k8R2.txt
 %%AD_DC%%%%DATADIR%%/setup/dns_update_list
+%%AD_DC%%%%DATADIR%%/setup/extended-rights.ldif
 %%AD_DC%%%%DATADIR%%/setup/fedora-ds-init.ldif
 %%AD_DC%%%%DATADIR%%/setup/fedorads-dna.ldif
 %%AD_DC%%%%DATADIR%%/setup/fedorads-index.ldif
@@ -1044,6 +1135,8 @@ man/man5/smbgetrc.5.gz
 man/man5/smbpasswd.5.gz
 man/man7/libsmbclient.7.gz
 man/man7/samba.7.gz
+man/man7/traffic_learner.7.gz
+man/man7/traffic_replay.7.gz
 man/man7/winbind_krb5_locator.7.gz
 man/man8/cifsdd.8.gz
 man/man8/eventlogadm.8.gz
@@ -1061,6 +1154,7 @@ man/man8/net.8.gz
 man/man8/nmbd.8.gz
 man/man8/pam_winbind.8.gz
 man/man8/pdbedit.8.gz
+man/man8/samba_gpoupdate.8.gz
 man/man8/samba-regedit.8.gz
 man/man8/samba-tool.8.gz
 man/man8/samba.8.gz
@@ -1089,6 +1183,7 @@ man/man8/vfs_glusterfs.8.gz
 man/man8/vfs_linux_xfs_sgid.8.gz
 man/man8/vfs_media_harmony.8.gz
 man/man8/vfs_netatalk.8.gz
+man/man8/vfs_nfs4acl_xattr.8.gz
 man/man8/vfs_offline.8.gz
 man/man8/vfs_prealloc.8.gz
 man/man8/vfs_preopen.8.gz
@@ -1105,6 +1200,7 @@ man/man8/vfs_syncops.8.gz
 man/man8/vfs_time_audit.8.gz
 man/man8/vfs_tsmsm.8.gz
 man/man8/vfs_unityed_media.8.gz
+man/man8/vfs_virusfilter.8.gz
 man/man8/vfs_worm.8.gz
 man/man8/vfs_xattr_tdb.8.gz
 man/man8/vfs_zfsacl.8.gz

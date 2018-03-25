@@ -23,27 +23,21 @@ FreeBSD specific information
 
 * Provisioning script is: %%PREFIX%%/bin/samba-tool
 
-Samba4 provisioning requires file system(s) with POSIX ACLs support. At
-the moment that is UFS2 only. You have to add 'acls' option to the mount
-flags to get things working.
+Samba4 provisioning requires file system(s) with the ACLs support. On
+UFS2 you need to enable POSIX ACLs by adding 'acls' option to the mount
+flags, on ZFS you need to use NFSv4 ACLs and `zfsacl` VFS module to get
+provisioning work.
 
-It is known that ZFS-only installations don't work out of the box with
-Samba4. In partucular, s3fs service requires POSIX ACLs during provi-
-sioning. It is possible to work around that requirement by specifying:
+There is a hack in the code, that makes provisioning work on UFS2 and in
+the jails on the price of using USER extattr(2) namespace, which is less
+secure than SYSTEM namespace, as can be edited not only by root user, but
+also by the owner of the file.
 
-    # samba-tool domain provision --interactive --use-xattrs=no --use-ntvfs
+For the provisioning on ZFS you need to use additional parameters to the
+samba-tool, that would explicitly add `zfsacl` to the default `vfs objects`:
 
-And removing later in '%%SAMBA4_CONFIG%%' options like:
-
-    'server services', 'dcerpc endpoint servers', 'posix:eadb'
-
-and adding 'vfs objects = zfsacl' as well. Still this isn't supported
-and tested configuration, so use it at your own risk.
-
-You may find this tutorial useful, if you happen to run Samba4 on
-ZFS-root:
-
-    o http://glsan.com/community/samba4
+    # samba-tool domain provision --interactive \
+            --option="vfs objects"="dfs_samba4 zfsacl"
 
 To run this port you need to perform the following steps:
 ---------------------------------------------------------
@@ -51,9 +45,6 @@ To run this port you need to perform the following steps:
 0. If you had Samba3 port installed before, please, *take backups* of
 all the relevant files. That includes 'smb.conf' file and all the
 content of the '/var/db/samba/' directory.
-
-If you had Samba4-devel installation before to my knowledge the best
-option would be to start from scratch.
 
 1a. Create new '%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%' file by running:
 
@@ -75,8 +66,8 @@ Stop them, if necessary.
 
 4. Run '%%PREFIX%%/etc/rc.d/samba_server start' or reboot.
 
-WARNING! This port is still experimental and if you need any asistance,
-please, check archives of samba@lists.samba.org and ask there for help.
+Please, check archives of samba@lists.samba.org and ask there for help,
+if necessary:
 
     https://lists.samba.org/archive/samba/
 

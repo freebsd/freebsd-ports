@@ -1,0 +1,24 @@
+--- source3/libnet/libnet_join.c.orig	2018-02-25 04:01:39 UTC
++++ source3/libnet/libnet_join.c
+@@ -2652,9 +2652,9 @@ static WERROR libnet_DomainJoin(TALLOC_C
+ 		DEBUG(5, ("failed to precreate account in ou %s: %s",
+ 			r->in.account_ou, ads_errstr(ads_status)));
+ 	}
+-#endif /* HAVE_ADS */
+ 
+  rpc_join:
++#endif /* HAVE_ADS */
+ 	if ((r->in.join_flags & WKSSVC_JOIN_FLAGS_JOIN_UNSECURE) &&
+ 	    (r->in.join_flags & WKSSVC_JOIN_FLAGS_MACHINE_PWD_PASSED)) {
+ 		status = libnet_join_joindomain_rpc_unsecure(mem_ctx, r, cli);
+--- source3/libsmb/namequery_dc.c.orig	2018-02-25 02:59:41.002983000 +0100
++++ source3/libsmb/namequery_dc.c	2018-02-25 02:59:56.770533000 +0100
+@@ -32,7 +32,7 @@
+  Is this our primary domain ?
+ **********************************************************************/
+ 
+-#ifdef HAVE_KRB5
++#ifdef HAVE_ADS
+ static bool is_our_primary_domain(const char *domain)
+ {
+ 	int role = lp_server_role();
