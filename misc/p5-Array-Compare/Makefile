@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Array-Compare
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
@@ -23,7 +23,7 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
-PLIST_FILES=	%%SITE_PERL%%/Array/Compare.pm \
-		%%PERL5_MAN3%%/Array::Compare.3.gz
+PLIST_FILES=	${SITE_PERL}/Array/Compare.pm \
+		${SITE_MAN3}/Array::Compare.3.gz
 
 .include <bsd.port.mk>
