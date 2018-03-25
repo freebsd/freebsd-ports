@@ -1,12 +1,4 @@
-%%DATADIR%%/fonts.alias.26
-%%DATADIR%%/kanji26.pcf.gz
-%%DATADIR%%/kanji26b.pcf.gz
-%%DATADIR%%/kanji26bi.pcf.gz
-%%DATADIR%%/kanji26i.pcf.gz
-%%DATADIR%%/kanji24.pcf.gz
-%%DATADIR%%/kanji24b.pcf.gz
-%%DATADIR%%/kanji24bi.pcf.gz
-%%DATADIR%%/kanji24i.pcf.gz
+%%FONTSDIR%%/fonts.alias.26
 %%FONTSDIR%%/kanji26.pcf.gz
 %%FONTSDIR%%/kanji26b.pcf.gz
 %%FONTSDIR%%/kanji26bi.pcf.gz
