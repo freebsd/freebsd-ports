@@ -3,22 +3,22 @@
 
 PORTNAME=	kanji
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=   PORTS_JP/${DISTNAME}
+MASTER_SITES=	PORTS_JP/${DISTNAME}
 PKGNAMEPREFIX=	ja-font-
 PKGNAMESUFFIX?=	18
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}
 DISTFILES?=	573.z 574.z 575.z 576.z 577.z 578.z 579.z 580.z 581.z
 DIST_SUBDIR=	${DISTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	${PKGNAMESUFFIX}-dot Kanji font
 
 BUILD_DEPENDS=	mkbold:x11-fonts/mkbold-mkitalic \
 		bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
-FONTNAME=	misc
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		${GZCAT}
@@ -28,8 +28,8 @@ EXTRACT_AFTER_ARGS=	| ${SED} '/bin\/sh/,/exit 0/!d' \
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 MAKEFILE=	${WRKDIR}/Makefile
-SUB_FILES=	Makefile pkg-install
-SUB_LIST=	FONTSALIAS="${DATADIR}/fonts.alias.${PKGNAMESUFFIX}" \
+SUB_FILES=	Makefile pkg-install pkg-message
+SUB_LIST=	FONTSALIAS="${FONTSDIR}/fonts.alias.${PKGNAMESUFFIX}" \
 		SRCS="${SRCS}"
 PORTDOCS=	README.${PORTNAME}${PKGNAMESUFFIX}
 
@@ -53,10 +53,7 @@ pre-build: apply-slist
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/fonts.alias.${PKGNAMESUFFIX} \
-	    ${STAGEDIR}${DATADIR}/fonts.alias.${PKGNAMESUFFIX}
-	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${STAGEDIR}${FONTSDIR} && \
-	    ${LN} -s ../../../${DATADIR_REL}/*.pcf.gz .
+	    ${STAGEDIR}${FONTSDIR}/fonts.alias.${PKGNAMESUFFIX}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

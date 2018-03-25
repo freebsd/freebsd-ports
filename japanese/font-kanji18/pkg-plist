@@ -1,12 +1,4 @@
-%%DATADIR%%/fonts.alias.18
-%%DATADIR%%/kanji18.pcf.gz
-%%DATADIR%%/kanji18b.pcf.gz
-%%DATADIR%%/kanji18bi.pcf.gz
-%%DATADIR%%/kanji18i.pcf.gz
-%%DATADIR%%/kanji16.pcf.gz
-%%DATADIR%%/kanji16b.pcf.gz
-%%DATADIR%%/kanji16bi.pcf.gz
-%%DATADIR%%/kanji16i.pcf.gz
+%%FONTSDIR%%/fonts.alias.18
 %%FONTSDIR%%/kanji18.pcf.gz
 %%FONTSDIR%%/kanji18b.pcf.gz
 %%FONTSDIR%%/kanji18bi.pcf.gz
