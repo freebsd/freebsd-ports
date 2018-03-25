@@ -509,6 +509,7 @@ VORBIS_DESC?=		Ogg Vorbis audio codec support
 VPX_DESC?=		VP8/VP9 video codec support
 WAV_DESC?=		WAV audio format support
 WAVPACK_DESC?=		WavPack lossless audio format support
+WAYLAND_DESC?=		Wayland (graphics) support
 WEBGL_DESC?=		WebGL 2D/3D graphics rendering support
 WEBKIT_DESC?=		WebKit webpage renderer support
 WEBP_DESC?=		WebP image format support
