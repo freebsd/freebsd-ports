@@ -251,5 +251,4 @@ btsync_*		net-p2p/btsync		Redistribution forbidden by license
 sas2ircu-*		sysutils/sas2ircu	May not be redistributed. Must accept license to download.
 snes9x-*		emulators/snes9x-gtk	Commercial users must seek permission from copyright holders.
 rainloop-1.*.zip	mail/rainloop		Redistribution in any form is prohibited
-frr-*			net/frr			possible GPL violation of Quagga project
 lha-114i.tar.gz		archivers/lha		Binary only redistribution is prohibited. Non-network redistribution such as CDROM requires prior notification to author. Commercial use whose main purpose is to provide the functions of this program is prohibited.

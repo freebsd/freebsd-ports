@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: frr
-# REQUIRE: netif routing 
+# REQUIRE: netif routing
 # KEYWORD: nojailvnet shutdown
 
 # Add the following line to /etc/rc.conf to enable frr:
@@ -43,7 +43,7 @@ command_args="-d"
 load_rc_config $name
 : ${frr_enable:="NO"}
 : ${frr_flags:=""}
-: ${frr_daemons:="zebra ripd ripngd ospfd ospf6d bgpd isisd"}
+: ${frr_daemons:="zebra ripd ripngd ospfd ospf6d bgpd isisd eigrpd babeld"}
 : ${frr_vtysh_boot:="NO"}
 : ${frr_wait_for:=""}
 : ${frr_wait_seconds:="90"}
