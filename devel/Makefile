@@ -662,6 +662,7 @@
     SUBDIR += fujaba
     SUBDIR += funnelweb
     SUBDIR += fuzzylite
+    SUBDIR += ga
     SUBDIR += gaa
     SUBDIR += gamin
     SUBDIR += gauche-readline

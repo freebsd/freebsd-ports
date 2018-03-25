@@ -1,0 +1,11 @@
+The Global Arrays (GA) toolkit provides a shared memory style programming
+environment in the context of distributed array data structures (called
+"global arrays"). From the user perspective, a global array can be used
+as if it was stored in shared memory. All details of the data distribution,
+addressing, and data access are encapsulated in the global array objects.
+Information about the actual data distribution and locality can be easily
+obtained and taken advantage of whenever data locality is important. The
+primary target architectures for which GA was developed are massively-parallel
+distributed-memory and scalable shared-memory systems.
+
+WWW: https://github.com/GlobalArrays/ga
