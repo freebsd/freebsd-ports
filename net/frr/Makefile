@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	frr
-PORTVERSION=	3.0.3
+PORTVERSION=	4.0
 DISTVERSIONPREFIX=	frr-
 CATEGORIES=	net ipv6
 
@@ -11,25 +11,24 @@ COMMENT=	IP routing protocol suite including BGP, IS-IS, OSPF and RIP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gawk:lang/gawk
+BUILD_DEPENDS=	gawk:lang/gawk \
+				python:lang/python
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
-RESTRICTED=	possible GPL violation of Quagga project
-
 CONFLICTS=	openbgpd openospfd zebra quagga-esr quagga
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	FRRouting
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		autoreconf bison gmake pkgconfig libtool makeinfo readline
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	FRRouting
+
 INFO=		frr
 
-OPTIONS_DEFINE=		FPM LDPD PAM SHELLACCESS TCPSOCKETS VTYSH MULTIPATH TCMALLOC
-OPTIONS_DEFAULT=	VTYSH
+OPTIONS_DEFINE=		FPM LDPD PAM SHELLACCESS TCPSOCKETS VTYSH MULTIPATH TCMALLOC RPKI
+OPTIONS_DEFAULT=	VTYSH RPKI
 OPTIONS_SUB=	yes
 # SNMP option build failed
 # checksum.c:79:21: warning: implicit declaration of function 'typeof' is
@@ -41,6 +40,7 @@ FPM_DESC=		Enable Forwarding Plane Manager support
 LDPD_DESC=		Build ldpd
 MULTIPATH_DESC=		Enable multipath function
 PAM_DESC=		Use libpam for PAM support in vtysh
+RPKI_DESC=		Add BGP RPKI (RFC 6810) support
 SHELLACCESS_DESC=	Allow users to access shell/telnet/ssh
 SNMP_DESC=		SNMP support
 TCMALLOC_DESC=		Use tcmalloc
@@ -60,6 +60,7 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--enable-vty-group=frrvty \
 		--sysconfdir=${ETCDIR} \
 		--localstatedir=/var/run/frr \
+		--disable-nhrpd \
 		--disable-pimd
 
 SHELLACCESS_CONFIGURE_ENABLE=	shell-access
@@ -67,6 +68,9 @@ FPM_CONFIGURE_ENABLE=		fpm
 PAM_CONFIGURE_WITH=		libpam
 LDPD_CONFIGURE_ENABLE=		ldpd
 MULTIPATH_CONFIGURE_ON=		--enable-multipath=64
+RPKI_CONFIGURE_ENABLE=	rpki
+RPKI_LIB_DEPENDS=		librtr.so:net-mgmt/rtrlib \
+						libssh.so:security/libssh
 TCMALLOC_CONFIGURE_ENABLE=	tcmalloc
 TCMALLOC_LIB_DEPENDS=		libtcmalloc.so:devel/google-perftools
 SNMP_CONFIGURE_ENABLE=		snmp

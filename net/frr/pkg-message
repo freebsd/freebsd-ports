@@ -1,0 +1,8 @@
+FRR's OSPF daemons tries to allocate big socket buffer, so generate warning
+messages like:
+"setsockopt_so_sendbuf: fd 6: SO_SNDBUF set to 1048576 (requested 8388608)"
+To prevent such message kern.ipc.maxsockbuf can be increased:
+sysctl kern.ipc.maxsockbuf=16777216
+
+Error messages like "if_ioctl(SIOCGIFMEDIA) failed: Invalid argument" are
+under investigation but seems harmless.
