@@ -3,6 +3,7 @@
 
 PORTNAME=	kaname12
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	LOCAL/hrs
 PKGNAMEPREFIX=	ja-font-
@@ -16,27 +17,19 @@ COMMENT=	12-dot Kanji font
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
-FONTNAME=	misc
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
-SUB_FILES=	Makefile pkg-install
-SUB_LIST=	FONTSALIAS="${DATADIR}/fonts.alias"
+SUB_FILES=	Makefile pkg-message
 MAKEFILE=	${WRKDIR}/Makefile
 PORTDOCS=	readme readme.kaname_bdf kaname.doc \
 		readme.knm gijutsu-siryou.doc
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-install
 
 OPTIONS_DEFINE=	DOCS
 
 pre-build: apply-slist
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${STAGEDIR}${FONTSDIR} && \
-	    ${LN} -s ../../../${DATADIR_REL}/*.pcf.gz .
+	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${STAGEDIR}${FONTSDIR}
 
 post-install-DOCS-on:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-doc

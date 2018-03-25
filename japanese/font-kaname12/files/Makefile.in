@@ -10,11 +10,11 @@ knmhn12x.pcf.gz: knmhn12x.bdf
 	bdftopcf ${.ALLSRC} | gzip -9 > ${.TARGET}
 
 .for F in ${PCF}
-${DESTDIR}%%DATADIR%%/$F: $F
-	mkdir -p ${DESTDIR}%%DATADIR%%
+${DESTDIR}%%FONTSDIR%%/$F: $F
+	mkdir -p ${DESTDIR}%%FONTSDIR%%
 	${BSD_INSTALL_DATA} ${.ALLSRC} ${.TARGET}
 
-install: ${DESTDIR}%%DATADIR%%/$F
+install: ${DESTDIR}%%FONTSDIR%%/$F
 all: ${F}
 .endfor
 
