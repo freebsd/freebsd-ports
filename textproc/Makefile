@@ -1304,6 +1304,7 @@
     SUBDIR += py-feedparser
     SUBDIR += py-gambit-elasticsearch
     SUBDIR += py-genshi
+    SUBDIR += py-gfm
     SUBDIR += py-guess-language
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
