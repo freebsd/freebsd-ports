@@ -1,0 +1,4 @@
+Enables Github-flavored Markdown for the py-markdown module. It aims for
+maximal compatibility with GitHub's rendering.
+
+WWW: https://github.com/Zopieux/py-gfm 
