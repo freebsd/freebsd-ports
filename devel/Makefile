@@ -4438,6 +4438,7 @@
     SUBDIR += py-fastnumbers
     SUBDIR += py-filemagic
     SUBDIR += py-fileutils
+    SUBDIR += py-first
     SUBDIR += py-five.customerize
     SUBDIR += py-five.formlib
     SUBDIR += py-five.globalrequest
