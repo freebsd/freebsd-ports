@@ -30,16 +30,6 @@ Mismerges found by comparing changes with Firefox 56
  class nsIDocument;
  class nsIDOMNode;
  class nsIURI;
---- gfx/2d/DrawTargetD2D1.cpp
-+++ gfx/2d/DrawTargetD2D1.cpp
-@@ -1251,6 +1251,7 @@ DrawTargetD2D1::CleanupD2D()
-   }
- }
- 
-+void
- DrawTargetD2D1::FlushInternal(bool aHasDependencyMutex /* = false */)
- {
-   if (IsDeviceContextValid()) {
 --- security/nss/lib/softoken/softkver.h.orig
 +++ security/nss/lib/softoken/softkver.h
 @@ -26,6 +26,6 @@
