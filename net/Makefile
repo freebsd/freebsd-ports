@@ -1288,7 +1288,6 @@
     SUBDIR += rubygem-xmlrpc
     SUBDIR += rude
     SUBDIR += s3ql
-    SUBDIR += samba44
     SUBDIR += samba45
     SUBDIR += samba46
     SUBDIR += samba47
