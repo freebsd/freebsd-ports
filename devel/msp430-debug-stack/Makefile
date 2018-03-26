@@ -2,7 +2,7 @@
 
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.12.000.004
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ti.com/lit/sw/slac460x/ \
 		http://www.ti.com/lit/ug/slau320ac/:doc1 \
@@ -11,7 +11,7 @@ DISTFILES=	slac460x.zip \
 		slau320ac.pdf:doc1 \
 		slau656b.pdf:doc2
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=	slac460v.zip
+EXTRACT_ONLY=	slac460x.zip
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	TI MSP430 debugging interface library
