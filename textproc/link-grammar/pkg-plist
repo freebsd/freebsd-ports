@@ -129,8 +129,11 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/words.adj.3
 %%DATADIR%%/en/words/words.adv.1
 %%DATADIR%%/en/words/words.adv.2
-%%DATADIR%%/en/words/words.adv.3
+%%DATADIR%%/en/words/words.adv.3-const
+%%DATADIR%%/en/words/words.adv.3-vowel
 %%DATADIR%%/en/words/words.adv.4
+%%DATADIR%%/en/words/words.lang.3-const
+%%DATADIR%%/en/words/words.lang.3-vowel
 %%DATADIR%%/en/words/words.n.1-const
 %%DATADIR%%/en/words/words.n.1-vowel
 %%DATADIR%%/en/words/words.n.1.gerund
