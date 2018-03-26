@@ -4,7 +4,8 @@
 LLVM_PREFIX="%%LLVM_PREFIX%%"
 LLVM_SUFFIX="%%LLVM_SUFFIX%%"
 
-tool=${0##*/}
+tool=$(/bin/realpath $0)
+tool=${tool##*/}
 tool="${LLVM_PREFIX}/bin/${tool%${LLVM_SUFFIX}}"
 LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}${LLVM_PREFIX}/lib" \
     "${tool}" "${@}"
