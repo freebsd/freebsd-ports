@@ -12,6 +12,8 @@ COMMENT=	Combined array and automatic differentiation library in C++
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_10_amd64=	error: use of undeclared identifier '_mm_undefined_ps'
+
 USES=		autoreconf gmake fortran blaslapack:openblas libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
