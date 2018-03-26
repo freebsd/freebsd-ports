@@ -6,6 +6,7 @@
     SUBDIR += affiche
     SUBDIR += alarm-clock-applet
     SUBDIR += anamnesis
+    SUBDIR += anydesk
     SUBDIR += appwrapper
     SUBDIR += aspostit
     SUBDIR += autocutsel
