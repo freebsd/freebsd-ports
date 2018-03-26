@@ -51,7 +51,7 @@ include/chemps2/TwoDM.h
 include/chemps2/TwoIndex.h
 include/chemps2/Wigner.h
 lib/libchemps2.so
-lib/libchemps2.so.2
+lib/libchemps2.so.3
 share/cmake/CheMPS2/CheMPS2Config.cmake
 share/cmake/CheMPS2/CheMPS2ConfigVersion.cmake
 share/cmake/CheMPS2/CheMPS2Targets-shared-%%CMAKE_BUILD_TYPE%%.cmake
