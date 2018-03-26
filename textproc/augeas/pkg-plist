@@ -1,18 +1,19 @@
+bin/augmatch
 bin/augparse
 bin/augtool
-bin/augdump
 bin/fadot
 include/augeas.h
 include/fa.h
 lib/libaugeas.a
 lib/libaugeas.so
 lib/libaugeas.so.0
-lib/libaugeas.so.0.23.0
+lib/libaugeas.so.0.24.0
 lib/libfa.a
 lib/libfa.so
 lib/libfa.so.1
-lib/libfa.so.1.4.5
+lib/libfa.so.1.5.1
 libdata/pkgconfig/augeas.pc
+man/man1/augmatch.1.gz
 man/man1/augparse.1.gz
 man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/access.aug
@@ -75,6 +76,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/getcap.aug
 %%DATADIR%%/lenses/dist/group.aug
 %%DATADIR%%/lenses/dist/grub.aug
+%%DATADIR%%/lenses/dist/grubenv.aug
 %%DATADIR%%/lenses/dist/gshadow.aug
 %%DATADIR%%/lenses/dist/gtkbookmarks.aug
 %%DATADIR%%/lenses/dist/host_conf.aug
@@ -171,6 +173,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/quote.aug
 %%DATADIR%%/lenses/dist/rabbitmq.aug
 %%DATADIR%%/lenses/dist/radicale.aug
+%%DATADIR%%/lenses/dist/rancid.aug
 %%DATADIR%%/lenses/dist/redis.aug
 %%DATADIR%%/lenses/dist/reprepro_uploaders.aug
 %%DATADIR%%/lenses/dist/resolv.aug
@@ -272,6 +275,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_getcap.aug
 %%DATADIR%%/lenses/dist/tests/test_group.aug
 %%DATADIR%%/lenses/dist/tests/test_grub.aug
+%%DATADIR%%/lenses/dist/tests/test_grubenv.aug
 %%DATADIR%%/lenses/dist/tests/test_gshadow.aug
 %%DATADIR%%/lenses/dist/tests/test_gtkbookmarks.aug
 %%DATADIR%%/lenses/dist/tests/test_host_conf.aug
@@ -369,6 +373,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_quote.aug
 %%DATADIR%%/lenses/dist/tests/test_rabbitmq.aug
 %%DATADIR%%/lenses/dist/tests/test_radicale.aug
+%%DATADIR%%/lenses/dist/tests/test_rancid.aug
 %%DATADIR%%/lenses/dist/tests/test_redis.aug
 %%DATADIR%%/lenses/dist/tests/test_reprepro_uploaders.aug
 %%DATADIR%%/lenses/dist/tests/test_resolv.aug
