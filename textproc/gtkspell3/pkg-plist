@@ -3,7 +3,7 @@ lib/girepository-1.0/GtkSpell-3.0.typelib
 lib/libgtkspell3-3.a
 lib/libgtkspell3-3.so
 lib/libgtkspell3-3.so.0
-lib/libgtkspell3-3.so.0.1.0
+lib/libgtkspell3-3.so.0.2.0
 libdata/pkgconfig/gtkspell3-3.0.pc
 share/gir-1.0/GtkSpell-3.0.gir
 share/locale/af/LC_MESSAGES/gtkspell3.mo

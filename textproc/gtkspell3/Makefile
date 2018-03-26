@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtkspell3
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	textproc gnome
 MASTER_SITES=	SF/gtkspell/${PORTVERSION}
 
@@ -13,12 +13,10 @@ BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 USE_GNOME=	gtk30 intlhack introspection:build
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake localbase libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGEt=	install-strip
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|docs||' ${WRKSRC}/Makefile.in
