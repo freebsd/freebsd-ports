@@ -40,6 +40,7 @@
     SUBDIR += ansible
     SUBDIR += ansible1
     SUBDIR += ansible23
+    SUBDIR += ansible24
     SUBDIR += anvil
     SUBDIR += apachetop
     SUBDIR += apcpwr
