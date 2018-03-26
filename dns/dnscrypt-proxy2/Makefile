@@ -22,8 +22,8 @@ GH_ACCOUNT=	jedisct1
 USERS=		_dnscrypt-proxy
 GROUPS=		_dnscrypt-proxy
 
-PORTDOCS=	${WRKSRC}/README.*
-PORTEXAMPLES=	${WRKSRC}/${PORTNAME}/example*
+PORTDOCS=	README.*
+PORTEXAMPLES=	example*
 
 CONFLICTS_INSTALL=	dnscrypt-proxy
 
@@ -40,11 +40,11 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/${PORTNAME} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 post-install:
 	# After install examples because of the priv drop issue with Go
