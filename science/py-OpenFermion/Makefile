@@ -2,7 +2,8 @@
 
 PORTNAME=	OpenFermion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4
+DISTVERSION=	0.4-29
+DISTVERSIONSUFFIX=	-g781d0a7
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,8 +26,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	quantumlib
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
-
-post-patch: # workaround for https://github.com/quantumlib/OpenFermion/issues/289 (non-ascii file)
-	@truncate -s 0 ${WRKSRC}/README.rst
 
 .include <bsd.port.mk>
