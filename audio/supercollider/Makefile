@@ -36,7 +36,7 @@ CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE}/lib/qt5 \
 		-DLIBSCSYNTH=ON
 
 DESKTOP_ENTRIES="SuperCollider IDE" "" "${LOCALBASE}/share/pixmaps/sc_ide.svg" \
-		"scide" "" ${FALSE}
+		"scide" "" false
 
 OPTIONS_DEFINE=		HELP SUPERNOVA
 OPTIONS_DEFAULT=	HELP SUPERNOVA
