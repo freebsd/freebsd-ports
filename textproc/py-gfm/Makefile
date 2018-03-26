@@ -4,7 +4,6 @@ PORTNAME=	gfm
 DISTVERSION=	0.1.3
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	freebsd_ports@k-worx.org
 COMMENT=	Github-flavored Markdown for the py-markdown module
