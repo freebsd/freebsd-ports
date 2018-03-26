@@ -1,0 +1,33 @@
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+After installing mqttwarn for the first time, we recommend making the
+following change to supervisord configuration settings:
+
+1 - Add to /etc/rc.conf:
+
+supervisord_enable="YES"
+supervisord_config="%%PREFIX%%/etc/supervisord/supervisord.conf"
+
+2 - Create this directory:
+
+mkdir %%PREFIX%%/etc/supervisord
+
+3 - Move the configuration file:
+
+mv -i %%PREFIX%%/etc/supervisord.conf %%PREFIX%%/etc/supervisord/
+
+4 - Create  %%PREFIX%%/etc/supervisord/mqttwarn.conf with the following content:
+
+[program:mqttwarn]
+command = %%PREFIX%%/sbin/mqttwarn
+user = mqttwarn
+environment=MQTTWARNINI="%%PREFIX%%/etc/mqttwarn/mqttwarn.ini",MQTTWARNLOG="/var/log/mqttwarn/mqttwarn.log"
+
+
+5 - Add this to the end of %%PREFIX%%/etc/supervisord/supervisord.conf
+
+[include]
+files = mqttwarn.conf
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 

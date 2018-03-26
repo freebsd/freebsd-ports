@@ -931,6 +931,7 @@
     SUBDIR += py-halite
     SUBDIR += py-honcho
     SUBDIR += py-iowait
+    SUBDIR += py-mqttwarn
     SUBDIR += py-nagiosplugin
     SUBDIR += py-nomad
     SUBDIR += py-pkginfo
