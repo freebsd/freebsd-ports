@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsonpatch
-PORTVERSION=	1.9
+DISTVERSION=	1.21
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,14 +9,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	harm@weites.com
 COMMENT=	Apply JSON-Patches (RFC 6902)
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer@${FLAVOR}
-
 LICENSE=	BSD3CLAUSE
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer@${FLAVOR}
 
-regression-test: build
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+NO_ARCH=	yes
+
+do-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} tests.py
 	@cd ${WRKSRC} && ${PYTHON_CMD} ext_tests.py
 
