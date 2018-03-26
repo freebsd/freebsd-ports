@@ -82,6 +82,7 @@
     SUBDIR += kst2
     SUBDIR += lamprop
     SUBDIR += libaec
+    SUBDIR += libcint
     SUBDIR += libctl
     SUBDIR += libefp
     SUBDIR += libgeodecomp
