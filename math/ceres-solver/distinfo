@@ -1,5 +1,3 @@
-TIMESTAMP = 1501744176
-SHA256 (ceres-solver-ceres-solver-1.13.0_GH0.tar.gz) = 51ccb201b61ac71501fb6ccef158f078a750bc796ee6a271cd535cfe338202e5
-SIZE (ceres-solver-ceres-solver-1.13.0_GH0.tar.gz) = 3586772
-SHA256 (f58eacf082dd.patch) = c372934476fae4a11e3a62f0037feeb65d01c27f05b95257b05335f4dfe999a6
-SIZE (f58eacf082dd.patch) = 2495
+TIMESTAMP = 1521691214
+SHA256 (ceres-solver-ceres-solver-1.14.0_GH0.tar.gz) = 1296330fcf1e09e6c2f926301916f64d4a4c5c0ff12d460a9bc5d4c48411518f
+SIZE (ceres-solver-ceres-solver-1.14.0_GH0.tar.gz) = 3654161
