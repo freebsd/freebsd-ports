@@ -29,12 +29,12 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.0a0.2018.03.19
+ISCVERSION=	9.13.0a0.2018.03.21
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	92a3ff9182c3e15b75b295181c52f83016a40e51
+GL_COMMIT=	52909b5dbeadf13ecbf43e8ee573af23eebd6859
 
 USES=	cpe libedit tar:bz2
 
