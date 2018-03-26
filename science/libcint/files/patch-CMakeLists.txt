@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2018-03-26 22:49:26 UTC
++++ CMakeLists.txt
+@@ -25,7 +25,11 @@ if(QUADMATH_FOUND)
+   set(HAVE_QUADMATH_H 1 CACHE INTERNAL "Have QUADMATH")
+ endif()
+ 
+-find_package(BLAS REQUIRED)
++# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=226959
++#find_package(BLAS REQUIRED)
++set(BLAS_FOUND ON)
++set(BLAS_LINKER_FLAGS -L${CMAKE_INSTALL_PREFIX}/lib -lopenblas -lopenblasp)
++set(BLAS_LIBRARIES ${CMAKE_INSTALL_PREFIX}/lib/libopenblas.so ${CMAKE_INSTALL_PREFIX}/lib/libopenblasp.so)
+ 
+ include(CheckFunctionExists)
+ set(CMAKE_REQUIRED_INCLUDES math.h)
