@@ -7,7 +7,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.unrealircd.com/downloads/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal - the next generation ircd
 
 LICENSE=	GPLv2
