@@ -1,3 +1,3 @@
-TIMESTAMP = 1510553265
-SHA256 (mcollective-2.11.4.tar.gz) = 62d8f260640600ab2f4ffdeb59212f117a89c6c38a549cf292ffc3beddf24c4b
-SIZE (mcollective-2.11.4.tar.gz) = 929282
+TIMESTAMP = 1521881721
+SHA256 (mcollective-2.12.0.tar.gz) = 139c43ce45fd4b38815650933d04f386d05e95cb102ad9e45e54387bfbb98064
+SIZE (mcollective-2.12.0.tar.gz) = 930419
