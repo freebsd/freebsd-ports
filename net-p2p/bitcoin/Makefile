@@ -4,7 +4,7 @@
 PORTNAME=	bitcoin
 PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -37,9 +37,14 @@ TESTS_PLIST_FILES=	bin/test_bitcoin-qt \
 .endif
 
 OPTIONS_DEFINE?=	DBUS DEBUG HARDENING QRCODES TESTS UPNP WALLET ZMQ
-OPTIONS_DEFAULT?=	DBUS HARDENING QRCODES UPNP WALLET
+OPTIONS_SINGLE=		BDBVER
+OPTIONS_SINGLE_BDBVER=	BDB48 BDBMODERN
+OPTIONS_DEFAULT?=	BDBMODERN DBUS HARDENING QRCODES UPNP WALLET
 OPTIONS_SUB=		yes
 
+BDBVER_DESC=	Berkeley DB version to use for wallet
+BDB48_DESC=	Use BDB 4.8 (compatible with 5.x and 6.x)
+BDBMODERN_DESC=	Use BDB 5.x or 6.x (not compatible with 4.8)
 HARDENING_DESC=	Attempt to harden binaries (PIE for ASLR, NX Stack)
 QRCODES_DESC=	Display QR Codes
 TESTS_DESC=	Build test binary and unit tests
@@ -71,7 +76,6 @@ QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 WALLET_CONFIGURE_ENABLE=	wallet
 WALLET_CXXFLAGS=		-I${BDB_INCLUDE_DIR}
 WALLET_LIBS=			-L${BDB_LIB_DIR}
-WALLET_USES=			bdb:48
 
 ZMQ_CONFIGURE_ENABLE=	zmq
 ZMQ_BUILD_DEPENDS=	libzmq4>0:net/libzmq4
@@ -93,6 +97,13 @@ PLIST_FILES?=	bin/bitcoin-qt man/man1/bitcoin-qt.1.gz \
 		share/applications/bitcoin-qt.desktop share/pixmaps/bitcoin128.png
 
 .include <bsd.port.pre.mk>
+
+.if empty(PORT_OPTIONS:MBDB48)
+WALLET_CONFIGURE_ON=		--with-incompatible-bdb
+WALLET_USES=			bdb:5+
+.else
+WALLET_USES=			bdb:48
+.endif
 
 .if ${OSVERSION} < 1100000
 CONFIGURE_ARGS+=--disable-asm
