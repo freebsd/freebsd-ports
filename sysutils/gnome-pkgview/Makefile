@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-pkgview
 PORTVERSION=	1.0.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.mikegtn.net/packages/gnome-pkgview/
 

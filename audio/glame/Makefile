@@ -3,7 +3,7 @@
 
 PORTNAME=	glame
 PORTVERSION=	2.0.1
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libguile.so:lang/guile
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
+CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split" ac_cv_path_ESD_CONFIG=no
 USES=		gettext gmake pathfix pkgconfig libtool makeinfo
 USE_GNOME=	gnomeprefix libgnomeui
 USE_XORG=	xbitmaps x11

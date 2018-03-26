@@ -2,7 +2,7 @@
 
 PORTNAME=	kb
 PORTVERSION=	8.04
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.db.net/downloads/
 DISTFILES=	kb_src-${PORTVERSION}.tar.gz kb_inst-${PORTVERSION}.tar.gz
@@ -10,6 +10,7 @@ DISTFILES=	kb_src-${PORTVERSION}.tar.gz kb_inst-${PORTVERSION}.tar.gz
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio contest logger
 
+USES=		pkgconfig
 USE_GNOME=	libgnome gtk20 libbonobo
 NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${FILESDIR}/pkg_message

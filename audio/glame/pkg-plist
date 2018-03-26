@@ -1,8 +1,6 @@
 bin/cglame
 bin/glame
 bin/glame-convert.sh
-lib/glame/audio_io_esd.a
-lib/glame/audio_io_esd.so
 lib/glame/audio_io_oss.a
 lib/glame/audio_io_oss.so
 lib/glame/debug.a

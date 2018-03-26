@@ -3,7 +3,7 @@
 
 PORTNAME=	gwget
 PORTVERSION=	1.0.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	ftp gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,7 @@ RUN_DEPENDS=	wget:ftp/wget
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=	NOTIFY
 
-USES=		gettext gmake libtool pathfix tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix gtk20 gconf2 intltool libgnomeui
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

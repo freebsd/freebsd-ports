@@ -3,7 +3,7 @@
 
 PORTNAME=	gpass
 PORTVERSION=	0.5.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	security gnome
 MASTER_SITES=	https://github.com/raffael-sfm/gpass/releases/download/${PORTVERSION}/
 

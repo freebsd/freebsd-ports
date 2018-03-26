@@ -3,6 +3,7 @@
 
 PORTNAME=	gregexp
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://dentrassi.de/download/gregexp/${PORTVERSION}/
 
