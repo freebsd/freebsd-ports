@@ -16,6 +16,7 @@ LICENSE=	LGPL21
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${FLAVOR}
 
 NO_ARCH=	yes
+USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
