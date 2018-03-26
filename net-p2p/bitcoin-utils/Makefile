@@ -10,7 +10,9 @@ NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	does not support big-endian architectures
 
 OPTIONS_DEFINE=		DEBUG HARDENING TESTS
-OPTIONS_DEFAULT=	HARDENING TESTS
+# BDBMODERN is a choice for BDBVER, introduced via OPTIONS_SINGLE=BDBVER
+# from ${MASTERDIR}/Makefile
+OPTIONS_DEFAULT=	BDBMODERN HARDENING TESTS
 
 CONFIGURE_ARGS=	--without-daemon \
 		--without-gui \
