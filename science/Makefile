@@ -202,7 +202,6 @@
     SUBDIR += silo
     SUBDIR += simlib
     SUBDIR += simsmith
-    SUBDIR += siril
     SUBDIR += step-kde4
     SUBDIR += svmlight
     SUBDIR += szip
