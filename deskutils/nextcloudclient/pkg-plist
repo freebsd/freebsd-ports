@@ -1,6 +1,6 @@
 bin/nextcloud
 bin/nextcloudcmd
-etc/Nextcloud/sync-exclude.lst.sample
+@sample etc/Nextcloud/sync-exclude.lst.sample
 include/nextcloudsync/creds/abstractcredentials.h
 include/nextcloudsync/creds/httpcredentials.h
 include/nextcloudsync/mirall/account.h
