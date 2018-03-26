@@ -2,7 +2,7 @@
 
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.12.000.004
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ti.com/lit/sw/slac460x/ \
 		http://www.ti.com/lit/ug/slau320ac/:doc1 \
@@ -25,7 +25,7 @@ USES=		compiler:c++11-lib dos2unix gmake zip:infozip
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}
-DOS2UNIX_REGEX=	.*\.(cpp|h)
+DOS2UNIX_REGEX=	.*/Makefile|.*\.(cpp|h)
 
 MAKE_ARGS+=	BOOST_DIR=${LOCALBASE} \
 		HIDAPI_DIR=${LOCALBASE}
