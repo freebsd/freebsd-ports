@@ -32,7 +32,7 @@ lib/kicad/plugins/kicad_netlist_reader.py
 lib/kicad/plugins/netlist_form_OrcadPcb2.xsl
 lib/kicad/plugins/netlist_form_cadstar-RINF.xsl
 lib/kicad/plugins/netlist_form_cadstar.xsl
-lib/kicad/plugins/netlist_form_pads-pcb.xsl
+lib/kicad/plugins/netlist_form_pads-pcb.asc.xsl
 lib/libkicad_3dsg.so
 lib/libkicad_3dsg.so.2.0.0
 %%PYTHON_SITELIBDIR%%/_pcbnew.so
