@@ -193,6 +193,7 @@
     SUBDIR += tkabber-plugins
     SUBDIR += tox
     SUBDIR += tox12
+    SUBDIR += toxbot
     SUBDIR += toxic
     SUBDIR += toxins
     SUBDIR += turpial
