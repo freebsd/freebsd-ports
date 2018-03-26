@@ -32,7 +32,7 @@ PLIST_FILES=	bin/sweethome3d \
 		${JAVAJARDIR}/${JARNAME} \
 		share/pixmaps/sweethome3d-icon.png
 
-DESKTOP_ENTRIES="Sweet Home 3D" "" "${PORTNAME}-icon" "${PORTNAME}" "" ${FALSE}
+DESKTOP_ENTRIES="Sweet Home 3D" "" "${PORTNAME}-icon" "${PORTNAME}" "" false
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/install/${JARNAME} ${STAGEDIR}${JAVAJARDIR}/${JARNAME}

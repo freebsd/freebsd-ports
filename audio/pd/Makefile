@@ -30,7 +30,7 @@ CONFIGURE_ENV=	ac_cv_lib_pthread_pthread_create=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-DESKTOP_ENTRIES="Pd" "" "${PREFIX}/lib/pd/tcl/pd.ico" "pd" "" ${FALSE}
+DESKTOP_ENTRIES="Pd" "" "${PREFIX}/lib/pd/tcl/pd.ico" "pd" "" false
 
 OPTIONS_DEFINE=		ALSA DOCS JACK
 OPTIONS_DEFAULT=	JACK
