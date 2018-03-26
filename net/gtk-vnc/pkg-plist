@@ -55,6 +55,7 @@ share/locale/gd/LC_MESSAGES/gtk-vnc.mo
 share/locale/gl/LC_MESSAGES/gtk-vnc.mo
 share/locale/guc/LC_MESSAGES/gtk-vnc.mo
 share/locale/he/LC_MESSAGES/gtk-vnc.mo
+share/locale/hr/LC_MESSAGES/gtk-vnc.mo
 share/locale/hu/LC_MESSAGES/gtk-vnc.mo
 share/locale/id/LC_MESSAGES/gtk-vnc.mo
 share/locale/it/LC_MESSAGES/gtk-vnc.mo
@@ -64,6 +65,7 @@ share/locale/lt/LC_MESSAGES/gtk-vnc.mo
 share/locale/lv/LC_MESSAGES/gtk-vnc.mo
 share/locale/nb/LC_MESSAGES/gtk-vnc.mo
 share/locale/nds/LC_MESSAGES/gtk-vnc.mo
+share/locale/nl/LC_MESSAGES/gtk-vnc.mo
 share/locale/oc/LC_MESSAGES/gtk-vnc.mo
 share/locale/pa/LC_MESSAGES/gtk-vnc.mo
 share/locale/pl/LC_MESSAGES/gtk-vnc.mo
