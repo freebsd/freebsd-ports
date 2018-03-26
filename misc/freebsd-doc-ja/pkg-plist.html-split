@@ -239,6 +239,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-advisories.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-portaudit.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-resourcelimits.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sendmail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/serial.html
