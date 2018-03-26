@@ -3,6 +3,7 @@
 
 PORTNAME=	etherape
 PORTVERSION=	0.9.16
+PORTREVISION=	1
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpopt.so:devel/popt
 
 USES=		gettext gmake iconv localbase pathfix pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 libglade2 libgnomecanvas
+USE_GNOME=	cairo gdkpixbuf2 libglade2 libgnomecanvas libgnomeui
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog FAQ NEWS README README.bugs TODO
