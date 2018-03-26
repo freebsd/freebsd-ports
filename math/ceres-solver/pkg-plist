@@ -3,6 +3,7 @@ include/ceres/autodiff_local_parameterization.h
 include/ceres/c_api.h
 include/ceres/ceres.h
 include/ceres/conditioned_cost_function.h
+include/ceres/context.h
 include/ceres/cost_function.h
 include/ceres/cost_function_to_functor.h
 include/ceres/covariance.h
@@ -12,6 +13,7 @@ include/ceres/dynamic_autodiff_cost_function.h
 include/ceres/dynamic_cost_function.h
 include/ceres/dynamic_cost_function_to_functor.h
 include/ceres/dynamic_numeric_diff_cost_function.h
+include/ceres/evaluation_callback.h
 include/ceres/fpclassify.h
 include/ceres/gradient_checker.h
 include/ceres/gradient_problem.h
@@ -40,6 +42,9 @@ include/ceres/problem.h
 include/ceres/rotation.h
 include/ceres/sized_cost_function.h
 include/ceres/solver.h
+include/ceres/tiny_solver.h
+include/ceres/tiny_solver_autodiff_function.h
+include/ceres/tiny_solver_cost_function_adapter.h
 include/ceres/types.h
 include/ceres/version.h
 lib/cmake/Ceres/CeresConfig.cmake
