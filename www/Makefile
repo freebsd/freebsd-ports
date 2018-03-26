@@ -120,7 +120,6 @@
     SUBDIR += drupal8
     SUBDIR += drush
     SUBDIR += dtse
-    SUBDIR += dummyflash
     SUBDIR += e107
     SUBDIR += e2guardian
     SUBDIR += edbrowse
@@ -160,7 +159,6 @@
     SUBDIR += feedjack
     SUBDIR += ffproxy
     SUBDIR += fgallery
-    SUBDIR += fira-webfont
     SUBDIR += firefox
     SUBDIR += firefox-esr
     SUBDIR += firefox-esr-i18n
