@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-schedule
 PORTVERSION=	2.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-2/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,7 @@ OPTIONS_SUB=	yes
 BUILD_DEPENDS=	yelp:x11/yelp
 RUN_DEPENDS=	yelp:x11/yelp
 
-USES=		gmake pathfix python:2.7
+USES=		gmake pathfix pkgconfig python:2.7
 USE_GNOME=	gnomeprefix pygnome2 gnomedocutils intltool
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes

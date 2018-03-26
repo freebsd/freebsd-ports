@@ -3,7 +3,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	https://s3.amazonaws.com/freebsd-eclipse-dist/
 DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \

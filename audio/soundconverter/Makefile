@@ -3,7 +3,7 @@
 
 PORTNAME=	soundconverter
 PORTVERSION=	2.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	https://launchpad.net/soundconverter/trunk/2.1.6/+download/ \
 		http://BSDforge.com/projects/source/audio/soundconverter/

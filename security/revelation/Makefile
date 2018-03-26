@@ -3,7 +3,7 @@
 
 PORTNAME=	revelation
 PORTVERSION=	0.4.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security gnome
 MASTER_SITES=	https://bitbucket.org/erikg/revelation/downloads/
 

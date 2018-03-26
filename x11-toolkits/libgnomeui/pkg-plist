@@ -56,7 +56,7 @@ lib/libgnomeui-2.a
 lib/libgnomeui-2.la
 lib/libgnomeui-2.so
 lib/libgnomeui-2.so.0
-lib/libgnomeui-2.so.0.2400.4
+lib/libgnomeui-2.so.0.2400.5
 libdata/pkgconfig/libgnomeui-2.0.pc
 share/locale/af/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/am/LC_MESSAGES/libgnomeui-2.0.mo
@@ -109,6 +109,7 @@ share/locale/kn/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ko/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ku/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/la/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/lg/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/li/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/lt/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/lv/LC_MESSAGES/libgnomeui-2.0.mo

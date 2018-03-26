@@ -3,7 +3,7 @@
 
 PORTNAME=	gretools
 PORTVERSION=	1.2.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games gnome
 MASTER_SITES=	http://randomwalker.info/gretools/${PORTVERSION:R}/
 

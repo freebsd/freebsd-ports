@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/gnome-commander/${PORTVERSION:R}

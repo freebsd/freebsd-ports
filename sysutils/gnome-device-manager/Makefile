@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-device-manager
 PORTVERSION=	0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
