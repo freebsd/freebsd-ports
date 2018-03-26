@@ -1,14 +1,14 @@
---- plugins/node.d/bind9_rndc.in.orig	2014-11-24 21:46:24 UTC
+--- plugins/node.d/bind9_rndc.in.orig	2018-03-25 14:01:24 UTC
 +++ plugins/node.d/bind9_rndc.in
-@@ -63,6 +63,7 @@ use strict;
- my $rndc = defined($ENV{rndc}) ? $ENV{rndc} : '/usr/sbin/rndc';
+@@ -65,6 +65,7 @@ my $rndc = defined($ENV{rndc}) ? $ENV{rn
+ my $rndc_options = defined($ENV{rndc_options}) ? $ENV{rndc_options} : '';
  my $querystats = $ENV{querystats} || '/var/run/named.stats';
  my %IN;
 +my @IN_KEYS;
  
  # attempt to create log file if it doesn't exist
  if ( ! -r $querystats ) {
-@@ -124,20 +125,13 @@ chomp $line;
+@@ -126,20 +127,13 @@ chomp $line;
  if ($line eq '++ Incoming Requests ++') {
      # new format
  
@@ -36,7 +36,7 @@
  
      # jump to server stats section
      while ($line ne '++ Name Server Statistics ++') {
-@@ -197,11 +191,11 @@ if (defined($ARGV[0]) and ($ARGV[0] eq '
+@@ -199,11 +193,11 @@ if (defined($ARGV[0]) and ($ARGV[0] eq '
      print "graph_vlabel queries / \${graph_period}\n";
      print "graph_category BIND\n";
  

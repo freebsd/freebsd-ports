@@ -1,4 +1,4 @@
---- plugins/node.d/squeezebox_.in.orig	2014-11-24 21:46:24 UTC
+--- plugins/node.d/squeezebox_.in.orig	2018-03-25 14:01:24 UTC
 +++ plugins/node.d/squeezebox_.in
 @@ -157,7 +157,7 @@ if [ "$CMD" = "years" ]; then
  		printf "graph_order y"
@@ -19,7 +19,7 @@
  		printf "y%s.value " ${year}
  		printf "%b" "albums 0 0 year:${year}\nexit\n" | $NC $HOST $PORT | sed 's/%3A/:/g' | cut -d ':' -f 3
 @@ -183,7 +183,7 @@ elif [ "$CMD" = "signalstrength" -o "$CM
-             echo "graph_category Squeezebox"
+             echo "graph_category radio"
              COUNT=$(printf "%b" "player count ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 3)
              (( COUNT-- ))
 -            for ID in $(seq 0 $COUNT); do
