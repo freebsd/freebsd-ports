@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# PROVIDE: webhook
+# REQUIRE: NETWORKING SYSLOG
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable webhook:
+#
+# webhook_enable="YES"
+
+. /etc/rc.subr
+
+desc="webhook daemon"
+name=webhook
+rcvar=webhook_enable
+
+load_rc_config $name
+
+: ${webhook_conf:=%%PREFIX%%/etc/webhook.yaml}
+: ${webhook_enable:=NO}
+: ${webhook_facility:=daemon}
+: ${webhook_priority:=debug}
+: ${webhook_user:=nobody}
+
+pidfile=/var/run/${name}.pid
+extra_commands=reload
+sig_reload=USR1
+
+procname=%%PREFIX%%/sbin/${name}
+command=/usr/sbin/daemon
+command_args="%%DAEMONARGS%% -p ${pidfile} ${procname} \
+	-hooks ${webhook_conf} ${webhook_options}"
+
+start_precmd="install -o ${webhook_user} /dev/null ${pidfile}"
+reload_cmd="pkill -SIGUSR1-U ${webhook_user} -F {pidfile} ${procname}"
+
+run_rc_command "$1"
