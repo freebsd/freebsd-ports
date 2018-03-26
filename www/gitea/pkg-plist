@@ -507,6 +507,7 @@ sbin/gitea
 %%DATADIR%%/options/locale/locale_fi-FI.ini
 %%DATADIR%%/options/locale/locale_fr-FR.ini
 %%DATADIR%%/options/locale/locale_hu-HU.ini
+%%DATADIR%%/options/locale/locale_id-ID.ini
 %%DATADIR%%/options/locale/locale_it-IT.ini
 %%DATADIR%%/options/locale/locale_ja-JP.ini
 %%DATADIR%%/options/locale/locale_ko-KR.ini
@@ -519,9 +520,11 @@ sbin/gitea
 %%DATADIR%%/options/locale/locale_pl-PL.ini
 %%DATADIR%%/options/locale/locale_pt-BR.ini
 %%DATADIR%%/options/locale/locale_ru-RU.ini
+%%DATADIR%%/options/locale/locale_ru-UA.ini
 %%DATADIR%%/options/locale/locale_sr-SP.ini
 %%DATADIR%%/options/locale/locale_sv-SE.ini
 %%DATADIR%%/options/locale/locale_tr-TR.ini
+%%DATADIR%%/options/locale/locale_uk-UA.ini
 %%DATADIR%%/options/locale/locale_zh-CN.ini
 %%DATADIR%%/options/locale/locale_zh-HK.ini
 %%DATADIR%%/options/locale/locale_zh-TW.ini
@@ -539,6 +542,7 @@ sbin/gitea
 %%DATADIR%%/public/img/auth/twitter.png
 %%DATADIR%%/public/img/avatar_default.png
 %%DATADIR%%/public/img/checkmark.png
+%%DATADIR%%/public/img/dingtalk.ico
 %%DATADIR%%/public/img/discord.png
 %%DATADIR%%/public/img/favicon.ico
 %%DATADIR%%/public/img/favicon.png
@@ -1907,6 +1911,8 @@ sbin/gitea
 %%DATADIR%%/public/vendor/plugins/simplemde/LICENSE
 %%DATADIR%%/public/vendor/plugins/simplemde/simplemde.min.css
 %%DATADIR%%/public/vendor/plugins/simplemde/simplemde.min.js
+%%DATADIR%%/public/vendor/plugins/tribute/tribute.css
+%%DATADIR%%/public/vendor/plugins/tribute/tribute.min.js
 %%DATADIR%%/public/vendor/plugins/vue/LICENSE
 %%DATADIR%%/public/vendor/plugins/vue/vue.min.js
 %%DATADIR%%/templates/admin/auth/edit.tmpl
@@ -1932,6 +1938,14 @@ sbin/gitea
 %%DATADIR%%/templates/base/footer.tmpl
 %%DATADIR%%/templates/base/head.tmpl
 %%DATADIR%%/templates/base/paginate.tmpl
+%%DATADIR%%/templates/custom/body_inner_post.tmpl
+%%DATADIR%%/templates/custom/body_inner_pre.tmpl
+%%DATADIR%%/templates/custom/body_outer_post.tmpl
+%%DATADIR%%/templates/custom/body_outer_pre.tmpl
+%%DATADIR%%/templates/custom/extra_links.tmpl
+%%DATADIR%%/templates/custom/extra_tabs.tmpl
+%%DATADIR%%/templates/custom/footer.tmpl
+%%DATADIR%%/templates/custom/header.tmpl
 %%DATADIR%%/templates/explore/navbar.tmpl
 %%DATADIR%%/templates/explore/organizations.tmpl
 %%DATADIR%%/templates/explore/repo_list.tmpl
@@ -1994,8 +2008,10 @@ sbin/gitea
 %%DATADIR%%/templates/repo/issue/search.tmpl
 %%DATADIR%%/templates/repo/issue/view.tmpl
 %%DATADIR%%/templates/repo/issue/view_content.tmpl
+%%DATADIR%%/templates/repo/issue/view_content/add_reaction.tmpl
 %%DATADIR%%/templates/repo/issue/view_content/comments.tmpl
 %%DATADIR%%/templates/repo/issue/view_content/pull.tmpl
+%%DATADIR%%/templates/repo/issue/view_content/reactions.tmpl
 %%DATADIR%%/templates/repo/issue/view_content/sidebar.tmpl
 %%DATADIR%%/templates/repo/issue/view_title.tmpl
 %%DATADIR%%/templates/repo/migrate.tmpl
@@ -2013,6 +2029,7 @@ sbin/gitea
 %%DATADIR%%/templates/repo/settings/githook_edit.tmpl
 %%DATADIR%%/templates/repo/settings/githooks.tmpl
 %%DATADIR%%/templates/repo/settings/hook_delete_modal.tmpl
+%%DATADIR%%/templates/repo/settings/hook_dingtalk.tmpl
 %%DATADIR%%/templates/repo/settings/hook_discord.tmpl
 %%DATADIR%%/templates/repo/settings/hook_gitea.tmpl
 %%DATADIR%%/templates/repo/settings/hook_gogs.tmpl

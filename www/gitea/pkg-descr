@@ -1,3 +1,6 @@
 A self-hosted Git service.
 
-WWW: https://github.com/go-gitea/gitea/
+Gitea is a community managed fork of Gogs, lightweight code hosting solution
+written in Go and published under the MIT license.
+
+WWW: https://gitea.io/en-US/

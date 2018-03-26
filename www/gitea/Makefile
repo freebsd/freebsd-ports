@@ -3,7 +3,7 @@
 
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.3
+DISTVERSION=	1.4.0
 CATEGORIES=	www
 
 MAINTAINER=	stb@lassitu.de
@@ -54,20 +54,19 @@ post-patch:
 	# automatic method to obtain the version number in the Gitea build
 	# system only works when sources are checked out from git.
 	# See https://github.com/go-gitea/gitea/issues/1136#issuecomment-311622745
-	${SED} -Ei .orig \
+	@${SED} -Ei .orig \
 		-e 's#^(var Version = )"[^"]+"#\1"${PORTVERSION}"#' \
 		${GO_WRKSRC}/main.go
 
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${MKDIR} ${STAGEDIR}${ETCDIR}/conf
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf
 	${INSTALL_DATA} ${WRKDIR}/app.ini.sample ${STAGEDIR}${ETCDIR}/conf/app.ini.sample
-	${INSTALL_DATA} ${GO_WRKSRC}/conf/app.ini ${STAGEDIR}${ETCDIR}/conf/app.ini.defaults
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${GO_WRKSRC} && ${COPYTREE_SHARE} "options public templates" ${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${GO_WRKSRC}/custom/conf/app.ini.sample ${STAGEDIR}${ETCDIR}/conf/app.ini.defaults
+	cd ${GO_WRKSRC} && ${COPYTREE_SHARE} "options public templates" ${STAGEDIR}${DATADIR}
 
-	${MKDIR} ${STAGEDIR}${DESTDIR}/var/db/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${DESTDIR}/var/log/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${DESTDIR}/var/run/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DESTDIR}/var/db/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DESTDIR}/var/log/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DESTDIR}/var/run/${PORTNAME}
 
 .include <bsd.port.mk>
