@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	52.6.0
-PORTREVISION=	2
+DISTVERSION=	52.7.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -13,7 +12,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 BUILD_DEPENDS=	nspr>=4.13.1:devel/nspr \
-		nss>=3.28.3:security/nss \
+		nss>=3.28.6:security/nss \
 		libevent>=2.0.21_2:devel/libevent \
 		harfbuzz>=1.4.1:print/harfbuzz \
 		graphite2>=1.3.8:graphics/graphite2 \
