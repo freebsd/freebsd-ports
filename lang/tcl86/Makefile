@@ -18,13 +18,12 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=	TCLMAN TZDATA MODULES THREADS DEBUG
+OPTIONS_DEFINE=	TCLMAN TZDATA THREADS DEBUG
 OPTIONS_DEFINE_amd64=	DTRACE
-OPTIONS_DEFAULT=MODULES THREADS
+OPTIONS_DEFAULT=THREADS
 OPTIONS_DEFAULT_amd64=	DTRACE
 TCLMAN_DESC=	Install Tcl function manpages
 TZDATA_DESC=	Install Tcl timezone data
-MODULES_DESC=	Install Tcl common modules
 OPTIONS_SUB=	yes
 
 .if !exists(/usr/sbin/dtrace)
@@ -37,7 +36,7 @@ PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
-INSTALL_TARGET=	install-strip install-libraries
+INSTALL_TARGET=	install-strip install-libraries install-modules
 TEST_TARGET=	test-tcl
 
 USE_LDCONFIG=	yes
@@ -59,7 +58,6 @@ PLIST_SUB=	TCL_VER=${TCL_VER} \
 
 TCLMAN_INSTALL_TARGET=	install-doc
 TZDATA_INSTALL_TARGET=	install-tzdata
-MODULES_INSTALL_TARGET=	install-modules
 THREADS_CONFIGURE_ENABLE=	threads
 DEBUG_CONFIGURE_ENABLE=	symbols
 DTRACE_CONFIGURE_ENABLE=	dtrace
