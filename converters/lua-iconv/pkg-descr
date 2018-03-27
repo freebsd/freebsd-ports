@@ -1,3 +1,6 @@
-LuaIconv is a Lua binding to iconv library.
+Lua-iconv is POSIX 'iconv' binding for the Lua Programming Language. The iconv
+library converts a sequence of characters from one codeset into a sequence of
+corresponding characters in another codeset. The codesets are those specified
+in the iconv.new() call that returned the conversion descriptor, cd.
 
-WWW: http://luaforge.net/projects/lua-iconv/
+WWW: http://ittner.github.io/lua-iconv/
