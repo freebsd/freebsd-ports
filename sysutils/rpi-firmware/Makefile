@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpi-firmware
-PORTVERSION=	1.20171029
-PORTREVISION=	2
+PORTVERSION=	1.20180326
 CATEGORIES=	sysutils
 
 MAINTAINER=	manu@freebsd.org
@@ -19,7 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	raspberrypi gonzoua:pscimon
 GH_PROJECT=	firmware rpi3-psci-monitor:pscimon
 PSCI_TAG=	2b8890a
-GH_TAGNAME=	${PSCI_TAG}:pscimon
+FW_TAG=		75de5d7
+GH_TAGNAME=	${FW_TAG} ${PSCI_TAG}:pscimon
 PSCI_MONITOR=	rpi3-psci-monitor-${PSCI_TAG}
 PSCI_DIR=	${WRKDIR}/${PSCI_MONITOR}
 
@@ -34,7 +34,7 @@ post-patch:
 	${RM} ${WRKSRC}/boot/kernel7.img
 
 do-install:
-	${MKDIR} -p ${STAGEDIR}/${INSTALL_DIR}
+	${MKDIR} ${STAGEDIR}/${INSTALL_DIR}
 	cd ${WRKSRC}/boot && ${COPYTREE_SHARE} . ${STAGEDIR}/${INSTALL_DIR}/
 	${INSTALL_DATA} ${PSCI_DIR}/armstub8.bin ${STAGEDIR}/${INSTALL_DIR}/
 
