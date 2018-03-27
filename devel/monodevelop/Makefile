@@ -71,7 +71,7 @@ GH_TUPLE=	icsharpcode:RefactoringEssentials:70e434d:1/external/RefactoringEssent
 		mono:nuget-binary:58f8910:11/external/nuget-binary \
 		mono:xwt:f981e41:12/external/xwt
 
-USES=		autoreconf desktop-file-utils gettext gmake mono:nuget pathfix shared-mime-info ssl
+USES=		autoreconf desktop-file-utils gettext gmake mono:nuget pathfix pkgconfig shared-mime-info ssl
 USE_GNOME=	gtksharp20 gnomesharp20
 INSTALLS_ICONS=	yes
 
