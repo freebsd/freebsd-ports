@@ -1,7 +1,10 @@
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Application.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.DateLibrary.Calendar.beam
+lib/elixir/lib/quantum/ebin/Elixir.Quantum.DateLibrary.InvalidDateTimeForTimezoneError.beam
+lib/elixir/lib/quantum/ebin/Elixir.Quantum.DateLibrary.InvalidTimezoneError.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.DateLibrary.Timex.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.DateLibrary.beam
+lib/elixir/lib/quantum/ebin/Elixir.Quantum.ExecutionBroadcaster.JobInPastError.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.ExecutionBroadcaster.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Executor.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.ExecutorSupervisor.beam
