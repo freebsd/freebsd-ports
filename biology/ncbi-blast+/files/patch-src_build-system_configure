@@ -1,11 +1,30 @@
---- src/build-system/configure.orig	2016-09-09 21:04:16.000000000 +0900
-+++ src/build-system/configure	2016-12-02 15:04:04.258800000 +0900
-@@ -1715,7 +1715,7 @@
-       | --silent | --cache-file=* | -C | --config-cache | -n | --no-create \
-       | --no-recursion | --prefix=* | --exec-prefix=* | --bindir=* \
+--- src/build-system/configure.orig	2017-10-18 15:21:39 UTC
++++ src/build-system/configure
+@@ -1755,7 +1755,7 @@ for x_arg in "$@" ; do
        | --libdir=* | --includedir=* | --build=* | --host=* | --target=* \
+       | --mandir=* | --infodir=* | --docdir=* | --htmldir=* \
+       | --datadir=* | --sysconfdir=* | --localstatedir=* \
 -      | --with-runpath=* | --with-relative-runpath=* \
 +      | --with-runpath=* | --with-relative-runpath=* | --localstatedir=* \
        | --with-experimental=* | --with-extra-action=* | --with-build-root=* \
        | --with-fake-root=* | --with-build-root-sfx=* | --with-check=* \
        | --with-check-tools=* | --with-ftds=[0-9]* | --with-fastcgi=[0-9]* \
+@@ -1828,9 +1828,7 @@ Fine tuning of the installation director
+   --oldincludedir=DIR    C header files for non-gcc [/usr/include]
+   --datarootdir=DIR      read-only arch.-independent data root [PREFIX/share]
+   --datadir=DIR          read-only architecture-independent data [DATAROOTDIR]
+-  --infodir=DIR          info documentation [DATAROOTDIR/info]
+   --localedir=DIR        locale-dependent data [DATAROOTDIR/locale]
+-  --mandir=DIR           man documentation [DATAROOTDIR/man]
+   --docdir=DIR           documentation root [DATAROOTDIR/doc/ncbi-tools--]
+   --htmldir=DIR          html documentation [DOCDIR]
+   --dvidir=DIR           dvi documentation [DOCDIR]
+@@ -8086,7 +8084,7 @@ case "$host_os:$compiler" in
+ esac
+ 
+ if test "$with_mt" != "no" ; then
+-   CPPFLAGS="$CPPFLAGS -D_MT -D_REENTRANT -D_THREAD_SAFE"
++   CPPFLAGS="$CPPFLAGS -D_MT -D_REENTRANT -D_THREAD_SAFE -D__RUNETYPE_INTERNAL -D__RUNETYPE_INTERNAL"
+    LIBS="$LIBS $THREAD_LIBS"
+    case "$host_os:$compiler" in
+      solaris2.??:* | solaris*:GCC | *:Compaq | irix* | aix* | darwin* | cygwin*)

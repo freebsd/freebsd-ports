@@ -1,11 +1,32 @@
---- src/build-system/Makefile.in.top.orig	2014-11-13 01:41:55.000000000 +0900
-+++ src/build-system/Makefile.in.top	2016-12-02 16:39:58.415910000 +0900
-@@ -51,7 +51,7 @@
+--- src/build-system/Makefile.in.top.orig	2018-03-27 03:40:40 UTC
++++ src/build-system/Makefile.in.top
+@@ -37,21 +37,21 @@ check: $(PROJECTS)
+ 	fi
+ 
+ install-toolkit:
+-	-$(RMDIR) $(pincludedir)
+-	$(INSTALL) -d $(bindir) $(libdir) $(pincludedir)
+-	$(INSTALL) $(lbindir)/* $(bindir)
+-	$(INSTALL) -m 644 $(llibdir)/*.* $(libdir)
++	-$(RMDIR) $(DESTDIR)$(pincludedir)
++	$(INSTALL) -d $(DESTDIR)$(bindir) $(DESTDIR)$(libdir) $(DESTDIR)$(pincludedir)
++	$(INSTALL) $(lbindir)/* $(DESTDIR)$(bindir)
++	$(INSTALL) -m 644 $(llibdir)/*.* $(DESTDIR)$(libdir)
+ 	if test -d $(llibdir)/ncbi; then \
+-	    cp -pPR $(llibdir)/ncbi $(libdir)/; \
++	    cp -pPR $(llibdir)/ncbi $(DESTDIR)$(libdir)/; \
+ 	fi
+-	-rm -f $(libdir)/lib*-static.a
+-	cd $(libdir)  && \
++	-rm -f $(DESTDIR)$(libdir)/lib*-static.a
++	cd $(DESTDIR)$(libdir)  && \
+ 	    for x in *.a; do \
+ 	        $(LN_S) "$$x" "`$(BASENAME) \"$$x\" .a`-static.a"; \
  	    done
- 	cd $(includedir0) && find * -name CVS -prune -o -print |\
-             cpio -pd $(pincludedir)
--	$(INSTALL) -m 644 $(incdir)/* $(pincludedir)
-+	cd $(incdir) && find * | cpio -pd $(pincludedir)
+ 	for d in $(includedir0) $(incdir); do \
+ 	    cd $$d && find * -name .svn -prune -o -print | \
+-                cpio -pd $(pincludedir) ; \
++                cpio -pd $(DESTDIR)$(pincludedir) ; \
+ 	done
  ## set up appropriate build and status directories somewhere under $(libdir)?
  
- install-gbench:
