@@ -3,10 +3,13 @@
 
 PORTNAME=	dbus-c++
 PORTVERSION=	0.9.1
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	pw
+PORTREVISION=	2
 CATEGORIES=	devel gnome
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	7fca13b03d1d4af585714293358cf1f76664f41d.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ API for D-BUS
@@ -17,11 +20,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libdbus-1.so:devel/dbus
 
+USES=		autoreconf compiler:c++11-lib gettext gmake libtool localbase pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-volz
 GH_PROJECT=	dbus-cplusplus
-
-USES=		autoreconf compiler:c++11-lib gettext gmake libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

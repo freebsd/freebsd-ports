@@ -1,3 +1,5 @@
-TIMESTAMP = 1463946343
+TIMESTAMP = 1522134003
 SHA256 (andreas-volz-dbus-cplusplus-v0.9.1pw_GH0.tar.gz) = b38ac2abdc86888b6ed32b66242599f42a76153dd9b6e502436bbb8f7e3bf02f
 SIZE (andreas-volz-dbus-cplusplus-v0.9.1pw_GH0.tar.gz) = 117815
+SHA256 (7fca13b03d1d4af585714293358cf1f76664f41d.patch) = bdb3bdd9ff20afa633df8bf42bdc2d2f17c21576eb217c8c01a589694d804b5a
+SIZE (7fca13b03d1d4af585714293358cf1f76664f41d.patch) = 680
