@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	gzdoom
-PORTVERSION=	3.1.0
+PORTVERSION=	3.3.0
 DISTVERSIONPREFIX=	g
 CATEGORIES=	games
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	GL-enhanced source port for Doom-engine games
 
 LICENSE=	BSD3CLAUSE GPLv3 LGPL3
