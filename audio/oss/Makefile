@@ -23,6 +23,7 @@ USE_GNOME=	gtk20
 USE_RC_SUBR=	oss
 SUB_FILES=	pkg-install pkg-deinstall
 ONLY_FOR_ARCHS=	amd64 i386
+LLD_UNSAFE=	yes
 
 KMODDIR=	${PREFIX}/lib/oss/modules
 
