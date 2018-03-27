@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-03-27 22:12:33 UTC
++++ CMakeLists.txt
+@@ -268,7 +268,7 @@ if (NOT BUILD_SHARED_LIBS)
+ endif()
+ 
+ install(
+-  TARGETS woff2common woff2dec woff2enc
++  TARGETS woff2common woff2dec woff2enc woff2_decompress woff2_compress woff2_info
+   ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
