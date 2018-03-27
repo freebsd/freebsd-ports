@@ -4518,6 +4518,7 @@
     SUBDIR += py-imgkit
     SUBDIR += py-incremental
     SUBDIR += py-inflect
+    SUBDIR += py-inflection
     SUBDIR += py-iniparse
     SUBDIR += py-initgroups
     SUBDIR += py-instant
