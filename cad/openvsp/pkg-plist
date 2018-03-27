@@ -11,6 +11,8 @@ CustomScripts/TransportFuse.vsppart
 LICENSE
 README.md
 airfoil/23015.af
+airfoil/Hershey_AR10.avl
+airfoil/Hershey_AR10_AVL.dat
 airfoil/N0012_VSP.af
 airfoil/N0012_VSP_sym.af
 airfoil/VKT_e0.1_k0.1_t10.dat
@@ -28,10 +30,13 @@ bin/vspaero
 bin/vspscript
 bin/vspslicer
 bin/vspviewer
+matlab/BezierAirfoilExample.m
+matlab/BezierCtrlToCoordPnts.m
 matlab/OpenVSPParasiteDragPlotData.m
 matlab/plotDegenPlate.m
 matlab/plotDegenStick.m
 matlab/plotDegenSurf.m
+scripts/AirfoilExport.vspscript
 scripts/CFDMesh.vspscript
 scripts/CpSlicer.vspscript
 scripts/CreateEditGeom.vspscript
@@ -41,7 +46,7 @@ scripts/FEAMesh.vspscript
 scripts/Fuselage.vspscript
 scripts/Master_VSP_VV_Script.vspscript
 scripts/ParasiteDragScriptTest.vspscript
-scripts/SeligAirfoilExport.vspscript
+scripts/SingleAirfoilExport.vspscript
 scripts/SnapToDemo.vspscript
 scripts/Stack.vspscript
 scripts/StructuresParmContainerTest.vspscript
@@ -57,8 +62,12 @@ scripts/TestMeasure.vspscript
 scripts/TestSVG.vspscript
 scripts/TestSaveLoad.vspscript
 scripts/TestSurfQuery.vspscript
+scripts/VKTAirfoil.vspscript
 scripts/Wing.vspscript
 %%DATADIR%%/23015.af
+%%DATADIR%%/AirfoilExport.vspscript
+%%DATADIR%%/BezierAirfoilExample.m
+%%DATADIR%%/BezierCtrlToCoordPnts.m
 %%DATADIR%%/Box.vsppart
 %%DATADIR%%/BoxGroup.vsppart
 %%DATADIR%%/CFDMesh.vspscript
@@ -71,6 +80,8 @@ scripts/Wing.vspscript
 %%DATADIR%%/DumpResults.vspscript
 %%DATADIR%%/FEAMesh.vspscript
 %%DATADIR%%/Fuselage.vspscript
+%%DATADIR%%/Hershey_AR10.avl
+%%DATADIR%%/Hershey_AR10_AVL.dat
 %%DATADIR%%/LICENSE
 %%DATADIR%%/Master_VSP_VV_Script.vspscript
 %%DATADIR%%/N0012_VSP.af
@@ -81,8 +92,8 @@ scripts/Wing.vspscript
 %%DATADIR%%/PodMan.vsppart
 %%DATADIR%%/Seat.vsppart
 %%DATADIR%%/SeatGroup.vsppart
-%%DATADIR%%/SeligAirfoilExport.vspscript
 %%DATADIR%%/SharkTeeth.tga
+%%DATADIR%%/SingleAirfoilExport.vspscript
 %%DATADIR%%/SnapToDemo.vspscript
 %%DATADIR%%/Stack.vspscript
 %%DATADIR%%/StructuresParmContainerTest.vspscript
@@ -99,6 +110,7 @@ scripts/Wing.vspscript
 %%DATADIR%%/TestSaveLoad.vspscript
 %%DATADIR%%/TestSurfQuery.vspscript
 %%DATADIR%%/TransportFuse.vsppart
+%%DATADIR%%/VKTAirfoil.vspscript
 %%DATADIR%%/VKT_e0.1_k0.1_t10.dat
 %%DATADIR%%/VSPBoxXSec.PNG
 %%DATADIR%%/VSPCircXSec.PNG
