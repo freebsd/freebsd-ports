@@ -26,6 +26,7 @@ CONFIGURE_ENV=	ac_cv_func_inotify_init=no
 CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
 		--without-doxygen --with-cpuflags=none --disable-musicbrainz
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 INSTALL_ICONS=	yes
 
