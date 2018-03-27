@@ -401,6 +401,7 @@
     SUBDIR += py-pyfiglet
     SUBDIR += py-pyprind
     SUBDIR += py-python-geohash
+    SUBDIR += py-python-utils
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-qt5-demo
