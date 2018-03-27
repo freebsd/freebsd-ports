@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-memcached \
 		--without-sphinx-build \
 		--enable-libmemcachedprotocol
+TEST_TARGET=	check
 
 LIBS+=		-lexecinfo
 CXXFLAGS+=	-D__STDC_CONSTANT_MACROS -pthread
@@ -56,8 +57,5 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
-
-regression-test: build
-	@cd ${WRKSRC} && ${GMAKE} check
 
 .include <bsd.port.mk>
