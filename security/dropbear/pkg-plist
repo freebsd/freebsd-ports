@@ -1,9 +1,9 @@
 bin/dbclient
 bin/dropbearconvert
 bin/dropbearkey
-sbin/dropbear
 man/man1/dbclient.1.gz
 man/man1/dropbearconvert.1.gz
 man/man1/dropbearkey.1.gz
 man/man8/dropbear.8.gz
-@dir etc/dropbear
+sbin/dropbear
+@dir %%ETCDIR%%
