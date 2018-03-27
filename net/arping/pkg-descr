@@ -4,6 +4,4 @@ it's taken and even if the computer blocks ping (and everything else) you still
 get an entry in your arp cache. But what if you aren't on a routable net? Then
 you're screwed. Or you use arping.
 
-WWW: http://www.habets.pp.se/synscan/programs.php
-
-Roman Shterenzon <roman@xpert.com>
+WWW: http://www.habets.pp.se/synscan/programs.php?prog=arping
