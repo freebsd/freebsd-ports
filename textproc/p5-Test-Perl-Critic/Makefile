@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Perl-Critic
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Perl-Critic>=0:textproc/p5-Perl-Critic \
-		p5-MCE>=1.52:devel/p5-MCE
+BUILD_DEPENDS=	p5-MCE>=1.827:devel/p5-MCE \
+		p5-Perl-Critic>=0:textproc/p5-Perl-Critic
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
