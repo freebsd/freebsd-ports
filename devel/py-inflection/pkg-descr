@@ -1,0 +1,5 @@
+Inflection is a string transformation library. It singularizes and pluralizes
+English words and transforms strings from CamelCase to underscored string.
+Inflection is a port of Ruby on Rails' inflector to Python.
+
+WWW: https://github.com/jpvanhal/inflection
