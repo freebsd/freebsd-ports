@@ -2,6 +2,7 @@
 
 PORTNAME=	ccl
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	ftp://ftp.clozure.com/pub/release/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsdx86
