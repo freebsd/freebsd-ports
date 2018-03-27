@@ -1,0 +1,7 @@
+Small Python server for receiving notications and tossing them into mtqq.
+
+This will form part of a centralized message distribution system.
+
+A client for this server is sysutils/hare
+
+WWW: https://github.com/jpmens/hared-hare
