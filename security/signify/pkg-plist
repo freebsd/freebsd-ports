@@ -1,7 +1,4 @@
 bin/signify
-%%ETCDIR%%/openbsd-60-base.pub
-%%ETCDIR%%/openbsd-60-fw.pub
-%%ETCDIR%%/openbsd-60-pkg.pub
 %%ETCDIR%%/openbsd-61-base.pub
 %%ETCDIR%%/openbsd-61-fw.pub
 %%ETCDIR%%/openbsd-61-pkg.pub
@@ -13,4 +10,9 @@ bin/signify
 %%ETCDIR%%/openbsd-63-base.pub
 %%ETCDIR%%/openbsd-63-fw.pub
 %%ETCDIR%%/openbsd-63-pkg.pub
+%%ETCDIR%%/openbsd-63-syspatch.pub
+%%ETCDIR%%/openbsd-64-base.pub
+%%ETCDIR%%/openbsd-64-fw.pub
+%%ETCDIR%%/openbsd-64-pkg.pub
+%%ETCDIR%%/openbsd-64-syspatch.pub
 man/man1/signify.1.gz
