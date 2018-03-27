@@ -43,6 +43,10 @@
 %%SITE_ARCH%%/Crypt/Digest/BLAKE2s_224.pm
 %%SITE_ARCH%%/Crypt/Digest/BLAKE2s_256.pm
 %%SITE_ARCH%%/Crypt/Digest/CHAES.pm
+%%SITE_ARCH%%/Crypt/Digest/Keccak224.pm
+%%SITE_ARCH%%/Crypt/Digest/Keccak256.pm
+%%SITE_ARCH%%/Crypt/Digest/Keccak384.pm
+%%SITE_ARCH%%/Crypt/Digest/Keccak512.pm
 %%SITE_ARCH%%/Crypt/Digest/MD2.pm
 %%SITE_ARCH%%/Crypt/Digest/MD4.pm
 %%SITE_ARCH%%/Crypt/Digest/MD5.pm
@@ -147,6 +151,10 @@
 %%PERL5_MAN3%%/Crypt::Digest::BLAKE2s_224.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::BLAKE2s_256.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::CHAES.3.gz
+%%PERL5_MAN3%%/Crypt::Digest::Keccak224.3.gz
+%%PERL5_MAN3%%/Crypt::Digest::Keccak256.3.gz
+%%PERL5_MAN3%%/Crypt::Digest::Keccak384.3.gz
+%%PERL5_MAN3%%/Crypt::Digest::Keccak512.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::MD2.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::MD4.3.gz
 %%PERL5_MAN3%%/Crypt::Digest::MD5.3.gz
