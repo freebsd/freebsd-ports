@@ -18,16 +18,15 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=	TCLMAN TZDATA MODULES THREADS
-OPTIONS_DEFAULT=MODULES THREADS
+OPTIONS_DEFINE=	TCLMAN TZDATA THREADS
+OPTIONS_DEFAULT=THREADS
 TCLMAN_DESC=	Install Tcl function manpages
 TZDATA_DESC=	Install Tcl timezone data
-MODULES_DESC=	Install Tcl common modules
 OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//:S/rc1//}/unix
 ALL_TARGET=	all
-INSTALL_TARGET=	install install-libraries
+INSTALL_TARGET=	install install-libraries install-tm
 TEST_TARGET=	do-test
 
 USE_LDCONFIG=	yes
@@ -48,7 +47,6 @@ PLIST_SUB=	TCL_VER=${TCL_VER} \
 		SHORT_TCL_VER=${SHORT_TCL_VER}
 
 TCLMAN_VARS=	INSTALL_TARGET+=install-doc
-MODULES_VARS=	INSTALL_TARGET+=install-tm
 THREADS_CONFIGURE_ENABLE=	threads
 TZDATA_CONFIGURE_WITH=		tzdata
 
