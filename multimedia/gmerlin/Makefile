@@ -45,9 +45,9 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--disable-alsa --disable-alsamixer
 CDDB_LIB_DEPENDS=	libcddb.so:audio/libcddb
 CDDB_CONFIGURE_OFF=	--disable-cddb
-CDIO_LIB_DEPENDS=	libcdio.so:sysutils/libcdio
+CDIO_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
+			libcdio_cdda.so:sysutils/libcdio-paranoia
 CDIO_CONFIGURE_OFF=	--disable-libcdio
-CDIO_BROKEN=		fails to build with new libcdio
 ESOUND_USE=		gnome=esound
 ESOUND_CONFIGURE_OFF=	--disable-esd
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
