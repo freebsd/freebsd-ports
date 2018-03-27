@@ -6,6 +6,7 @@
 %%DATADIR%%/bcm2708-rpi-b.dtb
 %%DATADIR%%/bcm2708-rpi-cm.dtb
 %%DATADIR%%/bcm2709-rpi-2-b.dtb
+%%DATADIR%%/bcm2710-rpi-3-b-plus.dtb
 %%DATADIR%%/bcm2710-rpi-3-b.dtb
 %%DATADIR%%/bcm2710-rpi-cm3.dtb
 %%DATADIR%%/bootcode.bin
@@ -25,6 +26,7 @@
 %%DATADIR%%/overlays/allo-digione.dtbo
 %%DATADIR%%/overlays/allo-piano-dac-pcm512x-audio.dtbo
 %%DATADIR%%/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo
+%%DATADIR%%/overlays/applepi-dac.dtbo
 %%DATADIR%%/overlays/at86rf233.dtbo
 %%DATADIR%%/overlays/audioinjector-addons.dtbo
 %%DATADIR%%/overlays/audioinjector-wm8731-audio.dtbo
@@ -39,10 +41,13 @@
 %%DATADIR%%/overlays/dwc2.dtbo
 %%DATADIR%%/overlays/enc28j60-spi2.dtbo
 %%DATADIR%%/overlays/enc28j60.dtbo
+%%DATADIR%%/overlays/exc3000.dtbo
 %%DATADIR%%/overlays/fe-pi-audio.dtbo
 %%DATADIR%%/overlays/goodix.dtbo
 %%DATADIR%%/overlays/googlevoicehat-soundcard.dtbo
+%%DATADIR%%/overlays/gpio-ir-tx.dtbo
 %%DATADIR%%/overlays/gpio-ir.dtbo
+%%DATADIR%%/overlays/gpio-key.dtbo
 %%DATADIR%%/overlays/gpio-poweroff.dtbo
 %%DATADIR%%/overlays/gpio-shutdown.dtbo
 %%DATADIR%%/overlays/hifiberry-amp.dtbo
@@ -68,11 +73,14 @@
 %%DATADIR%%/overlays/justboom-dac.dtbo
 %%DATADIR%%/overlays/justboom-digi.dtbo
 %%DATADIR%%/overlays/lirc-rpi.dtbo
+%%DATADIR%%/overlays/mbed-dac.dtbo
 %%DATADIR%%/overlays/mcp23017.dtbo
 %%DATADIR%%/overlays/mcp23s17.dtbo
 %%DATADIR%%/overlays/mcp2515-can0.dtbo
 %%DATADIR%%/overlays/mcp2515-can1.dtbo
 %%DATADIR%%/overlays/mcp3008.dtbo
+%%DATADIR%%/overlays/mcp3202.dtbo
+%%DATADIR%%/overlays/media-center.dtbo
 %%DATADIR%%/overlays/midi-uart0.dtbo
 %%DATADIR%%/overlays/midi-uart1.dtbo
 %%DATADIR%%/overlays/mmc.dtbo
@@ -83,6 +91,7 @@
 %%DATADIR%%/overlays/pi3-disable-bt.dtbo
 %%DATADIR%%/overlays/pi3-disable-wifi.dtbo
 %%DATADIR%%/overlays/pi3-miniuart-bt.dtbo
+%%DATADIR%%/overlays/pibell.dtbo
 %%DATADIR%%/overlays/piscreen.dtbo
 %%DATADIR%%/overlays/piscreen2r.dtbo
 %%DATADIR%%/overlays/pisound.dtbo
@@ -92,9 +101,9 @@
 %%DATADIR%%/overlays/pitft35-resistive.dtbo
 %%DATADIR%%/overlays/pps-gpio.dtbo
 %%DATADIR%%/overlays/pwm-2chan.dtbo
+%%DATADIR%%/overlays/pwm-ir-tx.dtbo
 %%DATADIR%%/overlays/pwm.dtbo
 %%DATADIR%%/overlays/qca7000.dtbo
-%%DATADIR%%/overlays/raspidac3.dtbo
 %%DATADIR%%/overlays/rotary-encoder.dtbo
 %%DATADIR%%/overlays/rpi-backlight.dtbo
 %%DATADIR%%/overlays/rpi-cirrus-wm5102.dtbo
@@ -106,6 +115,7 @@
 %%DATADIR%%/overlays/rpi-tv.dtbo
 %%DATADIR%%/overlays/rra-digidac1-wm8741-audio.dtbo
 %%DATADIR%%/overlays/sc16is750-i2c.dtbo
+%%DATADIR%%/overlays/sc16is752-i2c.dtbo
 %%DATADIR%%/overlays/sc16is752-spi1.dtbo
 %%DATADIR%%/overlays/sdhost.dtbo
 %%DATADIR%%/overlays/sdio-1bit.dtbo
@@ -124,8 +134,13 @@
 %%DATADIR%%/overlays/spi2-1cs.dtbo
 %%DATADIR%%/overlays/spi2-2cs.dtbo
 %%DATADIR%%/overlays/spi2-3cs.dtbo
+%%DATADIR%%/overlays/superaudioboard.dtbo
+%%DATADIR%%/overlays/sx150x.dtbo
 %%DATADIR%%/overlays/tinylcd35.dtbo
+%%DATADIR%%/overlays/uart0.dtbo
 %%DATADIR%%/overlays/uart1.dtbo
+%%DATADIR%%/overlays/upstream-aux-interrupt.dtbo
+%%DATADIR%%/overlays/upstream.dtbo
 %%DATADIR%%/overlays/vc4-fkms-v3d.dtbo
 %%DATADIR%%/overlays/vc4-kms-v3d.dtbo
 %%DATADIR%%/overlays/vga666.dtbo
