@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	colorama
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Cross-platform API to print colored terminal text from Python apps
 
 LICENSE=	BSD3CLAUSE
