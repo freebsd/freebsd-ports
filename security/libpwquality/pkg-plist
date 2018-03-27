@@ -7,10 +7,11 @@ lib/libpwquality.so
 lib/libpwquality.so.1
 lib/libpwquality.so.1.0.2
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality-1.2.4-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality-1.4.0-py%%PYTHON_VER%%.egg-info
 libdata/pkgconfig/pwquality.pc
 man/man1/pwmake.1.gz
 man/man1/pwscore.1.gz
+man/man3/pwquality.3.gz
 man/man5/pwquality.conf.5.gz
 share/locale/ar/LC_MESSAGES/libpwquality.mo
 share/locale/as/LC_MESSAGES/libpwquality.mo
@@ -36,7 +37,6 @@ share/locale/kn/LC_MESSAGES/libpwquality.mo
 share/locale/ko/LC_MESSAGES/libpwquality.mo
 share/locale/ml/LC_MESSAGES/libpwquality.mo
 share/locale/mr/LC_MESSAGES/libpwquality.mo
-share/locale/mr_IN/LC_MESSAGES/libpwquality.mo
 share/locale/nb/LC_MESSAGES/libpwquality.mo
 share/locale/nl/LC_MESSAGES/libpwquality.mo
 share/locale/or/LC_MESSAGES/libpwquality.mo
@@ -47,6 +47,7 @@ share/locale/pt_BR/LC_MESSAGES/libpwquality.mo
 share/locale/ru/LC_MESSAGES/libpwquality.mo
 share/locale/si/LC_MESSAGES/libpwquality.mo
 share/locale/sk/LC_MESSAGES/libpwquality.mo
+share/locale/sq/LC_MESSAGES/libpwquality.mo
 share/locale/sr/LC_MESSAGES/libpwquality.mo
 share/locale/sr@latin/LC_MESSAGES/libpwquality.mo
 share/locale/sv/LC_MESSAGES/libpwquality.mo
@@ -54,6 +55,7 @@ share/locale/ta/LC_MESSAGES/libpwquality.mo
 share/locale/te/LC_MESSAGES/libpwquality.mo
 share/locale/tr/LC_MESSAGES/libpwquality.mo
 share/locale/uk/LC_MESSAGES/libpwquality.mo
+share/locale/ur/LC_MESSAGES/libpwquality.mo
 share/locale/vi/LC_MESSAGES/libpwquality.mo
 share/locale/zh_CN/LC_MESSAGES/libpwquality.mo
 share/locale/zh_TW/LC_MESSAGES/libpwquality.mo
