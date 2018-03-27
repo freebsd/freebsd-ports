@@ -20,6 +20,7 @@ LIB_DEPENDS=	libxine.so:multimedia/libxine \
 USES=		cmake gettext kde:4 localbase
 USE_KDE=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
+LLD_UNSAFE=	yes
 
 OPTIONS_DEFINE=	MENCODER MPLAYER DVDAUTHOR
 MENCODER_DESC=	MEncoder support
