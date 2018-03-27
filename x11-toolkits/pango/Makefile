@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pango
-PORTVERSION=	1.40.6
+PORTVERSION=	1.42.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,8 @@ USES=		tar:xz
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfribidi.so:converters/fribidi
 RUN_DEPENDS=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype \
 		${FONTENCOD}:x11-fonts/encodings
 
@@ -32,7 +33,7 @@ USE_GNOME=	cairo glib20 introspection:build referencehack
 INSTALL_TARGET=	install-strip
 
 VERSION=	1.8.0
-LIBVERSION=	0.4000.6
+LIBVERSION=	0.4200.0
 PLIST_SUB+=     VERSION=${VERSION} LIBVERSION=${LIBVERSION}
 
 FONTSCALE=	${LOCALBASE}/share/fonts/TTF/luximb.ttf
