@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	1.1.0g
+PORTVERSION=	1.1.0h
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -21,29 +21,29 @@ CONFLICTS_INSTALL=	libressl-[0-9]* \
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ENV=	PERL="${PERL}"
-CONFIGURE_ARGS=	--openssldir=${OPENSSLDIR}
+CONFIGURE_ARGS=	--openssldir=${OPENSSLDIR} \
+		--prefix=${PREFIX}
 
 OPTIONS_GROUP=	CIPHERS HASHES OPTIMIZE PROTOCOLS
 OPTIONS_GROUP_CIPHERS=	IDEA JPAKE RC2 RC4 RC5
 OPTIONS_GROUP_HASHES=	MD2 MD4 MDC2 RMD160
 OPTIONS_GROUP_OPTIMIZE=	ASM SSE2 THREADS
 OPTIONS_DEFINE_i386=	I386
-OPTIONS_GROUP_PROTOCOLS=	NEXTPROTONEG SCTP SSL3 TLS1 TLS1_1
+OPTIONS_GROUP_PROTOCOLS=	DH NEXTPROTONEG SCTP SSL3 TLS1 TLS1_1
 
 OPTIONS_DEFINE=	ASYNC MAN3 RFC3779 SHARED ZLIB
 
 .if ${MACHINE_ARCH} == "amd64"
 OPTIONS_GROUP_OPTIMIZE+=	EC
-OPTIONS_DEFAULT+=		EC
 .elif ${MACHINE_ARCH} == "mips64el"
 OPTIONS_GROUP_OPTIMIZE+=	EC
-OPTIONS_DEFAULT+=		EC
 .endif
-OPTIONS_DEFAULT=	ASM ASYNC MAN3 MD4 RC2 RC4 RMD160 SCTP SHARED SSE2 THREADS TLS1 TLS1_1
+OPTIONS_DEFAULT=	ASM ASYNC DH EC MAN3 MD4 RC2 RC4 RMD160 SCTP SHARED SSE2 THREADS TLS1 TLS1_1
 
 ASM_DESC=	Assembler code
 ASYNC_DESC=	Asynchronous mode
 CIPHERS_DESC=	Cipher Suite Support
+DH_DESC=	Diffie-Helmann protocol Support
 EC_DESC=	Optimize NIST elliptic curves
 HASHES_DESC=	Hash Function Support
 I386_DESC=	i386 (instead of i486+)
@@ -84,7 +84,7 @@ ${_option:tu}_CONFIGURE_ON=	enable-${_option}
 .endfor
 
 # Upstream default enabled options
-.for _option in asm async idea md4 mdc2 md_ghost94 nextprotoneg rfc3779 \
+.for _option in asm async dh idea md4 mdc2 md_ghost94 nextprotoneg rfc3779 \
 	rmd160 sse2 threads tls1 tls1_1 zlib
 ${_option:tu}_CONFIGURE_OFF=	no-${_option}
 .endfor
@@ -131,14 +131,8 @@ post-configure:
 		${WRKSRC}/include/openssl/opensslv.h
 
 post-install-SHARED-on:
-.for i in libcrypto libssl
-	${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/$i.so.${OPENSSL_SHLIBVER}
-	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib/$i.so
-.endfor
-.for i in capi padlock
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines-1.1/${i}.so
-.endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.${OPENSSL_SHLIBVER} \
+		${STAGEDIR}${PREFIX}/lib/engines-1.1/*.so
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl
