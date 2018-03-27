@@ -272,6 +272,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/AST/OperationKinds.def
 %%CLANG%%llvm-devel/include/clang/AST/OperationKinds.h
 %%CLANG%%llvm-devel/include/clang/AST/ParentMap.h
+%%CLANG%%llvm-devel/include/clang/AST/PrettyDeclStackTrace.h
 %%CLANG%%llvm-devel/include/clang/AST/PrettyPrinter.h
 %%CLANG%%llvm-devel/include/clang/AST/QualTypeNames.h
 %%CLANG%%llvm-devel/include/clang/AST/RawCommentList.h
@@ -587,7 +588,6 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Sema/Overload.h
 %%CLANG%%llvm-devel/include/clang/Sema/Ownership.h
 %%CLANG%%llvm-devel/include/clang/Sema/ParsedTemplate.h
-%%CLANG%%llvm-devel/include/clang/Sema/PrettyDeclStackTrace.h
 %%CLANG%%llvm-devel/include/clang/Sema/Scope.h
 %%CLANG%%llvm-devel/include/clang/Sema/ScopeInfo.h
 %%CLANG%%llvm-devel/include/clang/Sema/Sema.h
@@ -1242,6 +1242,7 @@ llvm-devel/include/llvm-c/BitReader.h
 llvm-devel/include/llvm-c/BitWriter.h
 llvm-devel/include/llvm-c/Comdat.h
 llvm-devel/include/llvm-c/Core.h
+llvm-devel/include/llvm-c/DataTypes.h
 llvm-devel/include/llvm-c/DebugInfo.h
 llvm-devel/include/llvm-c/Disassembler.h
 llvm-devel/include/llvm-c/ErrorHandling.h
@@ -1397,7 +1398,6 @@ llvm-devel/include/llvm/Analysis/MustExecute.h
 llvm-devel/include/llvm/Analysis/ObjCARCAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/ObjCARCAnalysisUtils.h
 llvm-devel/include/llvm/Analysis/ObjCARCInstKind.h
-llvm-devel/include/llvm/Analysis/ObjectUtils.h
 llvm-devel/include/llvm/Analysis/OptimizationRemarkEmitter.h
 llvm-devel/include/llvm/Analysis/OrderedBasicBlock.h
 llvm-devel/include/llvm/Analysis/PHITransAddr.h
@@ -1426,6 +1426,7 @@ llvm-devel/include/llvm/Analysis/TargetTransformInfoImpl.h
 llvm-devel/include/llvm/Analysis/Trace.h
 llvm-devel/include/llvm/Analysis/TypeBasedAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/TypeMetadataUtils.h
+llvm-devel/include/llvm/Analysis/Utils/Local.h
 llvm-devel/include/llvm/Analysis/ValueLattice.h
 llvm-devel/include/llvm/Analysis/ValueLatticeUtils.h
 llvm-devel/include/llvm/Analysis/ValueTracking.h
@@ -1561,7 +1562,6 @@ llvm-devel/include/llvm/CodeGen/MachineRegisterInfo.h
 llvm-devel/include/llvm/CodeGen/MachineSSAUpdater.h
 llvm-devel/include/llvm/CodeGen/MachineScheduler.h
 llvm-devel/include/llvm/CodeGen/MachineTraceMetrics.h
-llvm-devel/include/llvm/CodeGen/MachineValueType.h
 llvm-devel/include/llvm/CodeGen/MacroFusion.h
 llvm-devel/include/llvm/CodeGen/PBQP/CostAllocator.h
 llvm-devel/include/llvm/CodeGen/PBQP/Graph.h
@@ -1604,16 +1604,13 @@ llvm-devel/include/llvm/CodeGen/TargetCallingConv.h
 llvm-devel/include/llvm/CodeGen/TargetFrameLowering.h
 llvm-devel/include/llvm/CodeGen/TargetInstrInfo.h
 llvm-devel/include/llvm/CodeGen/TargetLowering.h
-llvm-devel/include/llvm/CodeGen/TargetLoweringObjectFile.h
 llvm-devel/include/llvm/CodeGen/TargetLoweringObjectFileImpl.h
-llvm-devel/include/llvm/CodeGen/TargetOpcodes.def
 llvm-devel/include/llvm/CodeGen/TargetOpcodes.h
 llvm-devel/include/llvm/CodeGen/TargetPassConfig.h
 llvm-devel/include/llvm/CodeGen/TargetRegisterInfo.h
 llvm-devel/include/llvm/CodeGen/TargetSchedule.h
 llvm-devel/include/llvm/CodeGen/TargetSubtargetInfo.h
 llvm-devel/include/llvm/CodeGen/UnreachableBlockElim.h
-llvm-devel/include/llvm/CodeGen/ValueTypes.h
 llvm-devel/include/llvm/CodeGen/ValueTypes.td
 llvm-devel/include/llvm/CodeGen/VirtRegMap.h
 llvm-devel/include/llvm/CodeGen/WinEHFuncInfo.h
@@ -1624,7 +1621,6 @@ llvm-devel/include/llvm/Config/Targets.def
 llvm-devel/include/llvm/Config/abi-breaking.h
 llvm-devel/include/llvm/Config/llvm-config.h
 llvm-devel/include/llvm/DebugInfo/CodeView/AppendingTypeTableBuilder.h
-llvm-devel/include/llvm/DebugInfo/CodeView/CVDebugRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVSymbolVisitor.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVTypeVisitor.h
@@ -1722,6 +1718,7 @@ llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIADataStream.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumDebugStreams.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumInjectedSources.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumLineNumbers.h
+llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumSectionContribs.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumSourceFiles.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumSymbols.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumTables.h
@@ -1729,6 +1726,7 @@ llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAError.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAInjectedSource.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIALineNumber.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIARawSymbol.h
+llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIASectionContrib.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIASession.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIASourceFile.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIASupport.h
@@ -1740,6 +1738,7 @@ llvm-devel/include/llvm/DebugInfo/PDB/IPDBEnumChildren.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBInjectedSource.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBLineNumber.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBRawSymbol.h
+llvm-devel/include/llvm/DebugInfo/PDB/IPDBSectionContrib.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBSession.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBSourceFile.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBTable.h
@@ -1963,6 +1962,7 @@ llvm-devel/include/llvm/IR/Value.h
 llvm-devel/include/llvm/IR/ValueHandle.h
 llvm-devel/include/llvm/IR/ValueMap.h
 llvm-devel/include/llvm/IR/ValueSymbolTable.h
+llvm-devel/include/llvm/IR/ValueTypes.h
 llvm-devel/include/llvm/IR/Verifier.h
 llvm-devel/include/llvm/IRReader/IRReader.h
 llvm-devel/include/llvm/InitializePasses.h
@@ -2061,6 +2061,7 @@ llvm-devel/include/llvm/Object/Binary.h
 llvm-devel/include/llvm/Object/COFF.h
 llvm-devel/include/llvm/Object/COFFImportFile.h
 llvm-devel/include/llvm/Object/COFFModuleDefinition.h
+llvm-devel/include/llvm/Object/CVDebugRecord.h
 llvm-devel/include/llvm/Object/Decompressor.h
 llvm-devel/include/llvm/Object/ELF.h
 llvm-devel/include/llvm/Object/ELFObjectFile.h
@@ -2146,7 +2147,6 @@ llvm-devel/include/llvm/Support/Casting.h
 llvm-devel/include/llvm/Support/CheckedArithmetic.h
 llvm-devel/include/llvm/Support/Chrono.h
 llvm-devel/include/llvm/Support/CodeGen.h
-llvm-devel/include/llvm/Support/CodeGenCWrappers.h
 llvm-devel/include/llvm/Support/CodeGenCoverage.h
 llvm-devel/include/llvm/Support/CommandLine.h
 llvm-devel/include/llvm/Support/Compiler.h
@@ -2191,6 +2191,7 @@ llvm-devel/include/llvm/Support/Locale.h
 llvm-devel/include/llvm/Support/LockFileManager.h
 llvm-devel/include/llvm/Support/LowLevelTypeImpl.h
 llvm-devel/include/llvm/Support/MD5.h
+llvm-devel/include/llvm/Support/MachineValueType.h
 llvm-devel/include/llvm/Support/ManagedStatic.h
 llvm-devel/include/llvm/Support/MathExtras.h
 llvm-devel/include/llvm/Support/Memory.h
@@ -2230,6 +2231,7 @@ llvm-devel/include/llvm/Support/StringSaver.h
 llvm-devel/include/llvm/Support/SwapByteOrder.h
 llvm-devel/include/llvm/Support/SystemUtils.h
 llvm-devel/include/llvm/Support/TarWriter.h
+llvm-devel/include/llvm/Support/TargetOpcodes.def
 llvm-devel/include/llvm/Support/TargetParser.h
 llvm-devel/include/llvm/Support/TargetRegistry.h
 llvm-devel/include/llvm/Support/TargetSelect.h
@@ -2250,6 +2252,7 @@ llvm-devel/include/llvm/Support/Watchdog.h
 llvm-devel/include/llvm/Support/Win64EH.h
 llvm-devel/include/llvm/Support/WindowsError.h
 llvm-devel/include/llvm/Support/WithColor.h
+llvm-devel/include/llvm/Support/X86DisassemblerDecoderCommon.h
 llvm-devel/include/llvm/Support/X86TargetParser.def
 llvm-devel/include/llvm/Support/YAMLParser.h
 llvm-devel/include/llvm/Support/YAMLTraits.h
@@ -2268,6 +2271,7 @@ llvm-devel/include/llvm/TableGen/SetTheory.h
 llvm-devel/include/llvm/TableGen/StringMatcher.h
 llvm-devel/include/llvm/TableGen/StringToOffsetTable.h
 llvm-devel/include/llvm/TableGen/TableGenBackend.h
+llvm-devel/include/llvm/Target/CodeGenCWrappers.h
 llvm-devel/include/llvm/Target/GenericOpcodes.td
 llvm-devel/include/llvm/Target/GlobalISel/RegisterBank.td
 llvm-devel/include/llvm/Target/GlobalISel/SelectionDAGCompat.td
@@ -2276,6 +2280,7 @@ llvm-devel/include/llvm/Target/Target.td
 llvm-devel/include/llvm/Target/TargetCallingConv.td
 llvm-devel/include/llvm/Target/TargetIntrinsicInfo.h
 llvm-devel/include/llvm/Target/TargetItinerary.td
+llvm-devel/include/llvm/Target/TargetLoweringObjectFile.h
 llvm-devel/include/llvm/Target/TargetMachine.h
 llvm-devel/include/llvm/Target/TargetOptions.h
 llvm-devel/include/llvm/Target/TargetSchedule.td
@@ -2286,7 +2291,6 @@ llvm-devel/include/llvm/ToolDrivers/llvm-dlltool/DlltoolDriver.h
 llvm-devel/include/llvm/ToolDrivers/llvm-lib/LibDriver.h
 llvm-devel/include/llvm/Transforms/AggressiveInstCombine/AggressiveInstCombine.h
 llvm-devel/include/llvm/Transforms/Coroutines.h
-llvm-devel/include/llvm/Transforms/GCOVProfiler.h
 llvm-devel/include/llvm/Transforms/IPO.h
 llvm-devel/include/llvm/Transforms/IPO/AlwaysInliner.h
 llvm-devel/include/llvm/Transforms/IPO/ArgumentPromotion.h
@@ -2308,18 +2312,19 @@ llvm-devel/include/llvm/Transforms/IPO/LowerTypeTests.h
 llvm-devel/include/llvm/Transforms/IPO/PartialInlining.h
 llvm-devel/include/llvm/Transforms/IPO/PassManagerBuilder.h
 llvm-devel/include/llvm/Transforms/IPO/SCCP.h
+llvm-devel/include/llvm/Transforms/IPO/SampleProfile.h
 llvm-devel/include/llvm/Transforms/IPO/StripDeadPrototypes.h
 llvm-devel/include/llvm/Transforms/IPO/SyntheticCountsPropagation.h
 llvm-devel/include/llvm/Transforms/IPO/ThinLTOBitcodeWriter.h
 llvm-devel/include/llvm/Transforms/IPO/WholeProgramDevirt.h
 llvm-devel/include/llvm/Transforms/InstCombine/InstCombine.h
 llvm-devel/include/llvm/Transforms/InstCombine/InstCombineWorklist.h
-llvm-devel/include/llvm/Transforms/InstrProfiling.h
 llvm-devel/include/llvm/Transforms/Instrumentation.h
 llvm-devel/include/llvm/Transforms/Instrumentation/BoundsChecking.h
+llvm-devel/include/llvm/Transforms/Instrumentation/GCOVProfiler.h
+llvm-devel/include/llvm/Transforms/Instrumentation/InstrProfiling.h
+llvm-devel/include/llvm/Transforms/Instrumentation/PGOInstrumentation.h
 llvm-devel/include/llvm/Transforms/ObjCARC.h
-llvm-devel/include/llvm/Transforms/PGOInstrumentation.h
-llvm-devel/include/llvm/Transforms/SampleProfile.h
 llvm-devel/include/llvm/Transforms/Scalar.h
 llvm-devel/include/llvm/Transforms/Scalar/ADCE.h
 llvm-devel/include/llvm/Transforms/Scalar/AlignmentFromAssumptions.h
@@ -2391,7 +2396,6 @@ llvm-devel/include/llvm/Transforms/Utils/ImportedFunctionsInliningStatistics.h
 llvm-devel/include/llvm/Transforms/Utils/IntegerDivision.h
 llvm-devel/include/llvm/Transforms/Utils/LCSSA.h
 llvm-devel/include/llvm/Transforms/Utils/LibCallsShrinkWrap.h
-llvm-devel/include/llvm/Transforms/Utils/Local.h
 llvm-devel/include/llvm/Transforms/Utils/LoopSimplify.h
 llvm-devel/include/llvm/Transforms/Utils/LoopUtils.h
 llvm-devel/include/llvm/Transforms/Utils/LoopVersioning.h
@@ -2742,6 +2746,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%CLANG%%llvm-devel/lib/libclangCodeGen.a
 %%CLANG%%llvm-devel/lib/libclangCrossTU.a
 %%CLANG%%llvm-devel/lib/libclangDaemon.a
+%%CLANG%%llvm-devel/lib/libclangDoc.a
 %%CLANG%%llvm-devel/lib/libclangDriver.a
 %%CLANG%%llvm-devel/lib/libclangDynamicASTMatchers.a
 %%CLANG%%llvm-devel/lib/libclangEdit.a
