@@ -11,7 +11,7 @@
 +CC ?= cc
 +LD ?= cc
 +CFLAGS +=	-I. `pkg-config --cflags cairo gtk+-2.0` -Wall -fomit-frame-pointer -funroll-loops -ffast-math -c -fPIC
-+LDFLAGS +=	-shared -Lwidgets -L../plugin/library -lc -lm -linv_widgets -linv_common `pkg-config --libs cairo gtk+-2.0` -fPIC
++LDFLAGS +=	-shared -Lwidgets -L../plugin/library -lc -lm -linv_widgets -linv_common `pkg-config --libs cairo gtk+-2.0`
  
  
  GUIS		=	inv_compressor_gui.so \
