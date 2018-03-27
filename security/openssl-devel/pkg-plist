@@ -357,6 +357,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/BIO_get_write_guarantee.3.gz
 %%MAN3%%man/man3/BIO_gets.3.gz
 %%MAN3%%man/man3/BIO_hostserv_priorities.3.gz
+%%MAN3%%man/man3/BIO_info_cb.3.gz
 %%MAN3%%man/man3/BIO_int_ctrl.3.gz
 %%MAN3%%man/man3/BIO_listen.3.gz
 %%MAN3%%man/man3/BIO_lookup.3.gz
@@ -1273,7 +1274,6 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/EVP_MD_CTX_copy_ex.3.gz
 %%MAN3%%man/man3/EVP_MD_CTX_free.3.gz
 %%MAN3%%man/man3/EVP_MD_CTX_md.3.gz
-%%MAN3%%man/man3/EVP_MD_CTX_md_data.3.gz
 %%MAN3%%man/man3/EVP_MD_CTX_new.3.gz
 %%MAN3%%man/man3/EVP_MD_CTX_reset.3.gz
 %%MAN3%%man/man3/EVP_MD_CTX_size.3.gz
@@ -1634,6 +1634,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/OCSP_resp_get0_certs.3.gz
 %%MAN3%%man/man3/OCSP_resp_get0_id.3.gz
 %%MAN3%%man/man3/OCSP_resp_get0_produced_at.3.gz
+%%MAN3%%man/man3/OCSP_resp_get0_signer.3.gz
 %%MAN3%%man/man3/OCSP_response_create.3.gz
 %%MAN3%%man/man3/OCSP_response_get1_basic.3.gz
 %%MAN3%%man/man3/OCSP_response_status.3.gz
@@ -2840,6 +2841,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/X509_digest.3.gz
 %%MAN3%%man/man3/X509_dup.3.gz
 %%MAN3%%man/man3/X509_free.3.gz
+%%MAN3%%man/man3/X509_get0_authority_key_id.3.gz
 %%MAN3%%man/man3/X509_get0_extensions.3.gz
 %%MAN3%%man/man3/X509_get0_notAfter.3.gz
 %%MAN3%%man/man3/X509_get0_notBefore.3.gz
@@ -2900,7 +2902,6 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/X509v3_get_ext_by_critical.3.gz
 %%MAN3%%man/man3/X509v3_get_ext_count.3.gz
 %%MAN3%%man/man3/bio.3.gz
-%%MAN3%%man/man3/bio_info_cb.3.gz
 %%MAN3%%man/man3/custom_ext_add_cb.3.gz
 %%MAN3%%man/man3/custom_ext_free_cb.3.gz
 %%MAN3%%man/man3/custom_ext_parse_cb.3.gz
