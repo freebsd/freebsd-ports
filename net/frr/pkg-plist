@@ -102,7 +102,7 @@ lib/libfrrospfapiclient.a
 lib/libfrrospfapiclient.so
 lib/libfrrospfapiclient.so.0
 lib/libfrrospfapiclient.so.0.0.0
-lib/frr/modules/bgpd_rpki.so
+%%RPKI%%lib/frr/modules/bgpd_rpki.so
 man/man1/frr.1.gz
 man/man8/eigrpd.8.gz
 man/man8/frr-args.8.gz
