@@ -1575,6 +1575,7 @@
     SUBDIR += py-django-evolution
     SUBDIR += py-django-extensions
     SUBDIR += py-django-filer
+    SUBDIR += py-django-filter
     SUBDIR += py-django-formtools
     SUBDIR += py-django-guardian
     SUBDIR += py-django-happenings
