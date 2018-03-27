@@ -22,6 +22,7 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doc
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
