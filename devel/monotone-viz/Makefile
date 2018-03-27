@@ -24,7 +24,7 @@ RUN_DEPENDS=	dot:graphics/graphviz \
 		bash:shells/bash \
 		lablgtk2:x11-toolkits/ocaml-lablgtk2
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
