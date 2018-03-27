@@ -1,3 +1,6 @@
+bin/woff2_compress
+bin/woff2_decompress
+bin/woff2_info
 include/woff2/decode.h
 include/woff2/encode.h
 include/woff2/output.h

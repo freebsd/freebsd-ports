@@ -1,3 +1,5 @@
-Font compression reference code
+The reference implementation of the Web Open Font Format 2.0, including
+libraries for decoding and encoding fonts, and command line utilities
+to convert between TTF and WOFF2.
 
 WWW: https://github.com/google/woff2
