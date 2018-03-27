@@ -1,15 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	libhdhomerun
-PORTVERSION=	20150826
+PORTVERSION=	20171221
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.silicondust.com/hdhomerun/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	sam@middling.me.uk
+MAINTAINER=	dor.bsd@xm0.uk
 COMMENT=	Library and command line utility for interfacing with HDHomeRun device
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake tar:tgz
 USE_LDCONFIG=	yes
