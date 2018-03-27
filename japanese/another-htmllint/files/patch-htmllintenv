@@ -1,5 +1,5 @@
---- htmllintenv.orig	2007-05-19 17:36:51.000000000 +0900
-+++ htmllintenv	2014-12-07 10:59:19.092555161 +0900
+--- htmllintenv.orig	2007-05-19 08:36:51 UTC
++++ htmllintenv
 @@ -5,15 +5,15 @@
  #   アクセス権をうまく工夫して、他人から見えないようにしてください。
  
@@ -20,7 +20,7 @@
  $GATEWAYURL = $HTMLDIR.'htmllint.html'; # ゲイトウェイサーヴィス HTML
  $EXPLAIN    = $HTMLDIR.'explain.html';  # 解説用 HTML (HTML用)
  $CGIROOT    = $HTMLDIR;                 # CGIの場所
-@@ -80,12 +80,12 @@
+@@ -80,12 +80,12 @@ $MAXHTMLSIZE = 512;
  #$KANJICODE = 'JIS';    # JIS/EUC/SJIS/UTF8 のいずれか
  
  # Lynx (不要あるいは未実装ならコメントアウト)
@@ -35,7 +35,7 @@
  
  # 得点記録用ログファイル (不要ならコメントアウト)
  #   # の部分は年月に置き換わります
-@@ -100,7 +100,7 @@
+@@ -100,7 +100,7 @@ $MAXHTMLSIZE = 512;
  #@EXCEPTSCORES = qw(uso800.ac.jp);
  
  # Muquit's Access Counter CGI (不要あるいは未実装ならコメントアウト)

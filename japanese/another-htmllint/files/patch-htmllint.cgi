@@ -1,6 +1,6 @@
---- htmllint.cgi.orig	2014-12-07 10:16:56.651728605 +0900
-+++ htmllint.cgi	2014-12-07 10:22:52.118705399 +0900
-@@ -28,6 +28,8 @@
+--- htmllint.cgi.orig	2018-03-26 05:12:09 UTC
++++ htmllint.cgi
+@@ -28,6 +28,8 @@ my $MAC = $^O =~ /MacOS/oi;
  my $OS2; #UNSUPPORTED;
  my $UNIX = !($WIN || $MAC || $OS2);
  
