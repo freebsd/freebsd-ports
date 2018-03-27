@@ -19,6 +19,7 @@ USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-hal --with-libintl-prefix=${LOCALBASE} --with-gtk3
+LLD_UNSAFE=	yes
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
