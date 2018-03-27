@@ -36,6 +36,7 @@ man/man3/kvalid_string.3.gz
 man/man8/kfcgi.8.gz
 sbin/kfcgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/samplepp.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-cgi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-fcgi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/template.xml
