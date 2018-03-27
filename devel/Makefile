@@ -6117,6 +6117,7 @@
     SUBDIR += websvn
     SUBDIR += wininfo
     SUBDIR += wizardkit
+    SUBDIR += woff2
     SUBDIR += wxGlade
     SUBDIR += wxformbuilder
     SUBDIR += xa65
