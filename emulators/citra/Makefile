@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20180321
+PORTVERSION=	s20180326
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -17,7 +17,7 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/license.txt
 LICENSE_FILE_MIT=	${WRKSRC}/externals/enet/LICENSE
 LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 
-BUILD_DEPENDS=	boost-libs>=1.63:devel/boost-libs
+BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs
 
 # backend_x64/hostloc.h:93:8: fatal error: no type named 'Reg64' in namespace 'Xbyak'
 ONLY_FOR_ARCHS=	amd64
@@ -25,8 +25,9 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	d03f72eb
-GH_TUPLE=	citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
+GH_TAGNAME=	d823759e
+GH_TUPLE=	citra-emu:ext-libressl-portable:49f073a:libressl/externals/libressl \
+		citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:d1d4705:dynarmic/externals/dynarmic \
 		benhoyt:inih:r40:inih/externals/inih/inih \
 		catchorg:Catch2:v2.1.1:catch/externals/catch \
@@ -43,16 +44,10 @@ EXTRA_PATCHES_FreeBSD_10=	${PATCHDIR}/extra-patch-c++14
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 
-OPTIONS_DEFINE=	CURL
-OPTIONS_DEFAULT=CURL
 OPTIONS_MULTI=	GUI
 OPTIONS_MULTI_GUI=	QT5 SDL
 OPTIONS_SLAVE?=	SDL
 OPTIONS_EXCLUDE:=	${OPTIONS_MULTI_GUI}
-
-CURL_GH_TUPLE=	whoshuu:cpr:1.3.0-12-gb5758fb:cpr/externals/cpr
-CURL_LIB_DEPENDS=libcurl.so:ftp/curl
-CURL_CMAKE_BOOL=ENABLE_WEB_SERVICE USE_SYSTEM_CURL
 
 SDL_CMAKE_BOOL=	ENABLE_SDL2
 SDL_PLIST_FILES=bin/${PORTNAME} \
