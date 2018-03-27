@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails-html-sanitizer
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	Sanitize HTML fragments in Rails applications
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-loofah>=2.2.2:textproc/rubygem-loofah
+RUN_DEPENDS=	rubygem-loofah>=2.0:textproc/rubygem-loofah
 
 NO_ARCH=	yes
 USE_RUBY=	yes
