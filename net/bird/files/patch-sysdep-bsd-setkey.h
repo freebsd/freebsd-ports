@@ -1,5 +1,5 @@
---- sysdep/bsd/setkey.h	2017-05-15 14:04:47.215628000 +0300
-+++ sysdep/bsd/setkey.h	2017-05-15 14:05:36.850028000 +0300
+--- sysdep/bsd/setkey.h.orig	2018-03-22 12:32:46 UTC
++++ sysdep/bsd/setkey.h
 @@ -158,12 +158,14 @@ sk_set_md5_in_sasp_db(sock *s, ip_addr local, ip_addr 
      if (len > TCP_KEYLEN_MAX)
        ERR_MSG("The password for TCP MD5 Signature is too long");

@@ -1,0 +1,11 @@
+--- tools/gendist.orig	2018-03-26 21:29:43 UTC
++++ tools/gendist
+@@ -5,7 +5,7 @@
+ #
+ 
+ set -e
+-AC=`if [ -x /usr/bin/autoconf2.50 ] ; then echo autoconf2.50 ; else echo autoconf ; fi`
++AC=autoreconf
+ $AC
+ ./configure
+ make distclean
