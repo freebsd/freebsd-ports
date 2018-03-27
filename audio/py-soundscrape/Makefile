@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	soundscrape
-PORTVERSION=	0.30.1
+PORTVERSION=	0.30.2
 CATEGORIES=	audio python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -26,6 +25,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.31.0:audio/py-mutagen@${FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Miserlou
+GH_PROJECT=	SoundScrape
+GH_TAGNAME=	efc63b9
 
 NO_ARCH=	yes
 
