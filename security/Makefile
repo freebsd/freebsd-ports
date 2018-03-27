@@ -1183,6 +1183,7 @@
     SUBDIR += secpanel
     SUBDIR += sectok
     SUBDIR += secure_delete
+    SUBDIR += setaudit 
     SUBDIR += sguil
     SUBDIR += sha
     SUBDIR += sha1collisiondetection

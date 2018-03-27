@@ -1,0 +1,12 @@
+With setaudit it is possible to specify audit configurations on a process
+directly at the runtime.
+
+All audit events are redirected to the auditd(8), an audit log management
+daemon.
+
+Example of enabling all exe related audit events performed by a command and its
+child processes:
+
+  # setaudit -m ex command
+
+WWW: https://github.com/csjayp/setaudit
