@@ -1630,6 +1630,7 @@
     SUBDIR += py-django-tastypie
     SUBDIR += py-django-templatetag-sugar
     SUBDIR += py-django-threaded-multihost
+    SUBDIR += py-django-timezone-field
     SUBDIR += py-django-tinymce
     SUBDIR += py-django-voting
     SUBDIR += py-django111
