@@ -12,7 +12,9 @@ COMMENT=	OpenID Connect extension for Doorkeeper
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-doorkeeper>=4.3:security/rubygem-doorkeeper \
+CONFLICTS_INSTALL=	rubygem-doorkeeper-openid_connect
+
+RUN_DEPENDS=	rubygem-doorkeeper42>=4.0:security/rubygem-doorkeeper42 \
 		rubygem-json-jwt>=1.6:www/rubygem-json-jwt
 
 NO_ARCH=	yes
