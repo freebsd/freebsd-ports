@@ -1,4 +1,5 @@
-Load and save tmux sessions in JSON or YAML. Control tmux through
-python API.
+tmuxp is a tmux session manager built on libtmux. It supports to load and save
+tmux sessions via json and YAML, tmuxinator and teamocil style.
 
-WWW: https://github.com/tony/tmuxp/
+WWW: https://pypi.python.org/pypi/tmuxp
+WWW: https://github.com/tmux-python/tmuxp
