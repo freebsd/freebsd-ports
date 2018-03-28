@@ -2,16 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	LearnBayes
-PORTVERSION=	2.15
-PORTREVISION=	2
+PORTVERSION=	2.15.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Functions for Learning Bayesian Inference
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 USES=	cran:auto-plist
 
