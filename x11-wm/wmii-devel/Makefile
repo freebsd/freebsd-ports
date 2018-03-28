@@ -9,7 +9,7 @@ MASTER_SITES=	http://dl.suckless.org/wmii/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}+ixp-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Dynamic, minimalist window manager for X11
 
 LICENSE=	MIT
