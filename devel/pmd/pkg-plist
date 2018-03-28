@@ -55,7 +55,7 @@ bin/pmd
 %%DATADIR%%/pmd-vm-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-xml-%%PORTVERSION%%.jar
 %%DATADIR%%/reactfx-2.0-M5.jar
-%%DATADIR%%/rhino-1.7.7.jar
+%%DATADIR%%/rhino-1.7.7.2.jar
 %%DATADIR%%/richtextfx-0.8.1.jar
 %%DATADIR%%/saxon-9.1.0.8-dom.jar
 %%DATADIR%%/saxon-9.1.0.8.jar
