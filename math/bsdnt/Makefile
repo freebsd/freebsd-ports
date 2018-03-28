@@ -2,6 +2,7 @@
 
 PORTNAME=	bsdnt
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,7 +16,7 @@ USES=		gmake shebangfix
 SHEBANG_FILES=	configure
 USE_GITHUB=	yes
 GH_ACCOUNT=	wbhart
-GH_TAGNAME=	72e20a7
+GH_TAGNAME=	de98bde
 
 USE_LDCONFIG=	yes
 
