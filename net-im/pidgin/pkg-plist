@@ -42,6 +42,7 @@ include/pidgin/gtksourceundomanager.h
 include/pidgin/gtksourceview-marshal.h
 include/pidgin/gtkstatus-icon-theme.h
 include/pidgin/gtkstatusbox.h
+include/pidgin/gtkstyle.h
 include/pidgin/gtkthemes.h
 include/pidgin/gtkutils.h
 include/pidgin/gtkwhiteboard.h
@@ -71,6 +72,7 @@ lib/pidgin/themeedit.so
 lib/pidgin/ticker.so
 lib/pidgin/timestamp.so
 lib/pidgin/timestamp_format.so
+lib/pidgin/transparency.so
 %%VV%%lib/pidgin/vvconfig.so
 lib/pidgin/xmppconsole.so
 lib/pidgin/xmppdisco.so
