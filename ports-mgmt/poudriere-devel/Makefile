@@ -63,13 +63,13 @@ post-install:
 	    ${STAGEDIR}${DATADIR}/MANIFESTS
 
 post-install-BASH-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
-	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_poudriere \
-	    ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
-
-post-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKSRC}/completions/bash/poudriere \
 	    ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
+
+post-install-ZSH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_poudriere \
+	    ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 
 .include <bsd.port.mk>
