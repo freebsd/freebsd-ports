@@ -15,6 +15,7 @@
 %%WWWDIR%%/controller/AuthController.php
 %%WWWDIR%%/controller/BatchEditController.php
 %%WWWDIR%%/controller/CoreController.php
+%%WWWDIR%%/controller/CorrectionController.php
 %%WWWDIR%%/controller/CronController.php
 %%WWWDIR%%/controller/DeveloperController.php
 %%WWWDIR%%/controller/ExportController.php
