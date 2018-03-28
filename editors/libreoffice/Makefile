@@ -280,9 +280,6 @@ MAKE_ENV+=	verbose=1
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-.if ${COMPILER_FEATURES:Mlibstdc++}
-BROKEN=		Build with system libstdc++ is unsupported
-.endif
 .if (${OSVERSION} >= 1200000 && ${OSVERSION} < 1200003) || \
     (${OSVERSION} >= 1100500 && ${OSVERSION} < 1100501) || \
     (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100122) || \
@@ -304,6 +301,9 @@ CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    ${WRKSRC}/shell/source/unix/exec/shellexec.cxx
+.if ${COMPILER_FEATURES:Mlibstdc++}
+	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
+.endif
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
