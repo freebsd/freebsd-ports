@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	check_ssl_cert
-PORTVERSION=	1.63.0
+PORTVERSION=	1.64.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -13,10 +13,8 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	expect:lang/expect \
 		p5-TimeDate>=0:devel/p5-TimeDate
 
-NO_ARCH=	yes
 NO_BUILD=	yes
 
-USES=		ssl:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	matteocorti
 GV_PROJECT=	check_ssl_cert
