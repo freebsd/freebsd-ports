@@ -1,8 +1,7 @@
-# Created by: Koichiro IWAO <meta+ports@vmeta.jp>
 # $FreeBSD$
 
 PORTNAME=	xorgxrdp
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-drivers
 DIST_SUBDIR=	xrdp
@@ -23,7 +22,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	neutrinolabs
 GH_PROJECT=	xrdp:xrdp
-GH_TAGNAME=	v0.9.5:xrdp
+GH_TAGNAME=	v0.9.6:xrdp
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
