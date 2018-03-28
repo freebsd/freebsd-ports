@@ -16,6 +16,7 @@ RUN_DEPENDS=	expect:lang/expect \
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+USES=		ssl:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	matteocorti
 GV_PROJECT=	check_ssl_cert
