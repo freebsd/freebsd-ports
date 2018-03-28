@@ -4954,6 +4954,7 @@
     SUBDIR += py-sure
     SUBDIR += py-sysctl
     SUBDIR += py-sysv_ipc
+    SUBDIR += py-swagger-spec-validator
     SUBDIR += py-tables
     SUBDIR += py-tabulate
     SUBDIR += py-tapi

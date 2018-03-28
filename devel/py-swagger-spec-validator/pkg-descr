@@ -1,0 +1,5 @@
+Swagger Spec Validator is a Python library that validates Swagger Specs against
+the Swagger 1.2 or Swagger 2.0 specification. The validator aims to check for
+full compliance with the specification.
+
+WWW: https://github.com/Yelp/swagger_spec_validator
