@@ -7,6 +7,7 @@
     SUBDIR += artemis
     SUBDIR += avida
     SUBDIR += babel
+    SUBDIR += bamtools
     SUBDIR += bcftools
     SUBDIR += bedtools
     SUBDIR += biococoa
