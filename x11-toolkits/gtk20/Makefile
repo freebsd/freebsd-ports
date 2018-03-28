@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk
-PORTVERSION=	2.24.32
+PORTVERSION=	2.24.32		# sync with graphics/gtk-update-icon-cache
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	2
