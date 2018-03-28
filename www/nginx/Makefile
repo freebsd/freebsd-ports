@@ -205,7 +205,7 @@ IGNORE=		requires at least HTTP or MAIL to \
 IGNORE=		CT option requires OpenSSL 1.0.2, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_REWRITE} || defined(USE_HTTP_REWRITE)
+.if !${PORT_OPTIONS:MHTTP_REWRITE} && !defined(USE_HTTP_REWRITE)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
 .endif
 
