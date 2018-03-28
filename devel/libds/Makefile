@@ -14,7 +14,8 @@ COMMENT=	ANSI Generic Data Structures Library
 LICENSE=	BSD4CLAUSE
 
 USE_LDCONFIG=	yes
-# LLD_UNSAFE - requires directly-invoked linker to provide library search paths
+# Requires directly-invoked linker to provide library search paths.
+LLD_UNSAFE=	yes
 BINARY_ALIAS=	ld=ld.bfd
 ALL_TARGET=	gcc
 

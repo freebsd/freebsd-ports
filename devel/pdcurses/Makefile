@@ -18,7 +18,8 @@ USE_LDCONFIG=	yes
 USE_XORG=	x11 xext sm ice xt xaw xmu xpm
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
-# LLD_UNSAFE - requires directly-invoked linker to provide library search paths
+# Requires directly-invoked linker to provide library search paths.
+LLD_UNSAFE=	yes
 BINARY_ALIAS=	ld=ld.bfd
 
 WRKSRC_SUBDIR=	x11
