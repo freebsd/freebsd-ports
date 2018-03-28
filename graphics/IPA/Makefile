@@ -21,4 +21,10 @@ MAKE_JOBS_UNSAFE=	yes
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/IPA/IPA.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502600
+BROKEN=		Does not build
+.endif
+
+.include <bsd.port.post.mk>
