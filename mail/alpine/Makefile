@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	alpine
-PORTVERSION=	2.21.1
+DISTVERSION=	2.21.999
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	http://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
@@ -29,18 +29,18 @@ CONFIGURE_ARGS+=	--with-debug-level=2 \
 MAKE_ARGS+=		CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 # When you update please double check that the commit corresponds to
 # the actual version you've set in PORTVERSION.
-GIT_COMMIT=		843b2f16abfd949e09b1c5465387b1b0f724994a
-GIT_COMMIT_SHORT=	843b2f1
+GIT_COMMIT=		349642a84039a4b026513c32a3b4f8594acd50df
+GIT_COMMIT_SHORT=	349642a
 WRKSRC=			${WRKDIR}/alpine-${GIT_COMMIT_SHORT}
 
-OPTIONS_DEFINE=		ASPELL CONS25 DOCS IPV6 LDAP MOUSE NLS PASSFILE THREADS
+OPTIONS_DEFINE=		ASPELL CONS25 DOCS IPV6 LDAP MOUSE NLS NTLM PASSFILE THREADS
 OPTIONS_DEFAULT=	ASPELL MOUSE THREADS
 .if defined(PICO_ALPINE_SLAVE)
 OPTIONS_EXCLUDE=	CONS25 IPV6 LDAP PASSFILE
 .endif
 
 CONS25_DESC=	Add a patch to support color for default console
-MAILDIR_DESC=	Add a patch for maildir support
+NTLM_DESC=	Support for Windows NT Lan Manager authentication
 PASSFILE_DESC=	Support for a stored password file
 
 # Option ASPELL
@@ -65,6 +65,10 @@ MOUSE_CONFIGURE_ENABLE=		mouse
 
 # Option NLS
 NLS_CONFIGURE_ENABLE=		nls
+
+# Option NTLM
+NTLM_CONFIGURE_WITH=		ntlm
+NTLM_LIB_DEPENDS=		libntlm.so:security/libntlm
 
 # Option PASSFILE
 PASSFILE_CONFIGURE_WITH=	passfile
