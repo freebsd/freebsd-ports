@@ -8,6 +8,7 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/example.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/exim.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/hddtemp.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/libreswan.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/load_average.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/mem_apps.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/mysql.conf.sample
@@ -24,13 +25,17 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/backend.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/beanstalkd.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/bind_rndc.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/btrfs.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ceph.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/couchdb.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/cpu.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/disks.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/elasticsearch.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/entropy.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/fping.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/fronius.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/haproxy.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/httpcheck.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipc.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipfs.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipmi.conf.sample
@@ -45,6 +50,8 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/net.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/netfilter.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/nginx.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/nginx_plus.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/portcheck.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/postgres.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/qos.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ram.conf.sample
@@ -52,6 +59,7 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/retroshare.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/softnet.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/squid.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/stiebeleltron.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/swap.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_conn.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_listen.conf.sample
@@ -81,6 +89,7 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/apache.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/beanstalk.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/bind_rndc.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ceph.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/chrony.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/couchdb.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/cpufreq.conf.sample
@@ -95,6 +104,8 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/go_expvar.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/haproxy.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/hddtemp.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/httpcheck.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/icecast.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ipfs.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/isc_dhcpd.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/mdstat.conf.sample
@@ -102,9 +113,12 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/mongodb.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/mysql.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/nginx.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/nginx_plus.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/nsd.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ntpd.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ovpn_status_log.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/phpfpm.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/portcheck.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/postfix.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/postgres.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/powerdns.conf.sample
@@ -114,8 +128,10 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/samba.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/sensors.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/smartd_log.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/springboot.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/squid.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/tomcat.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/traefik.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/varnish.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/web_log.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/statsd.d/example.conf.sample
@@ -129,6 +145,7 @@ libexec/netdata/charts.d/cpufreq.chart.sh
 libexec/netdata/charts.d/example.chart.sh
 libexec/netdata/charts.d/exim.chart.sh
 libexec/netdata/charts.d/hddtemp.chart.sh
+libexec/netdata/charts.d/libreswan.chart.sh
 libexec/netdata/charts.d/load_average.chart.sh
 libexec/netdata/charts.d/mem_apps.chart.sh
 libexec/netdata/charts.d/mysql.chart.sh
@@ -175,6 +192,7 @@ libexec/netdata/python.d/README.md
 libexec/netdata/python.d/apache.chart.py
 libexec/netdata/python.d/beanstalk.chart.py
 libexec/netdata/python.d/bind_rndc.chart.py
+libexec/netdata/python.d/ceph.chart.py
 libexec/netdata/python.d/chrony.chart.py
 libexec/netdata/python.d/couchdb.chart.py
 libexec/netdata/python.d/cpufreq.chart.py
@@ -190,6 +208,8 @@ libexec/netdata/python.d/freeradius.chart.py
 libexec/netdata/python.d/go_expvar.chart.py
 libexec/netdata/python.d/haproxy.chart.py
 libexec/netdata/python.d/hddtemp.chart.py
+libexec/netdata/python.d/httpcheck.chart.py
+libexec/netdata/python.d/icecast.chart.py
 libexec/netdata/python.d/ipfs.chart.py
 libexec/netdata/python.d/isc_dhcpd.chart.py
 libexec/netdata/python.d/mdstat.chart.py
@@ -197,9 +217,12 @@ libexec/netdata/python.d/memcached.chart.py
 libexec/netdata/python.d/mongodb.chart.py
 libexec/netdata/python.d/mysql.chart.py
 libexec/netdata/python.d/nginx.chart.py
+libexec/netdata/python.d/nginx_plus.chart.py
 libexec/netdata/python.d/nsd.chart.py
+libexec/netdata/python.d/ntpd.chart.py
 libexec/netdata/python.d/ovpn_status_log.chart.py
 libexec/netdata/python.d/phpfpm.chart.py
+libexec/netdata/python.d/portcheck.chart.py
 libexec/netdata/python.d/postfix.chart.py
 libexec/netdata/python.d/postgres.chart.py
 libexec/netdata/python.d/powerdns.chart.py
@@ -297,8 +320,10 @@ libexec/netdata/python.d/retroshare.chart.py
 libexec/netdata/python.d/samba.chart.py
 libexec/netdata/python.d/sensors.chart.py
 libexec/netdata/python.d/smartd_log.chart.py
+libexec/netdata/python.d/springboot.chart.py
 libexec/netdata/python.d/squid.chart.py
 libexec/netdata/python.d/tomcat.chart.py
+libexec/netdata/python.d/traefik.chart.py
 libexec/netdata/python.d/varnish.chart.py
 libexec/netdata/python.d/web_log.chart.py
 sbin/netdata
@@ -311,7 +336,7 @@ sbin/netdata
 %%DATADIR%%/web/css/bootstrap-slider-10.0.0.min.css
 %%DATADIR%%/web/css/bootstrap-theme-3.3.7.min.css
 %%DATADIR%%/web/css/bootstrap-toggle-2.2.2.min.css
-%%DATADIR%%/web/css/c3-0.4.11.min.css
+%%DATADIR%%/web/css/c3-0.4.18.min.css
 %%DATADIR%%/web/css/morris-0.5.1.css
 %%DATADIR%%/web/dashboard.css
 %%DATADIR%%/web/dashboard.html
@@ -357,10 +382,12 @@ sbin/netdata
 %%DATADIR%%/web/lib/bootstrap-table-1.11.0.min.js
 %%DATADIR%%/web/lib/bootstrap-table-export-1.11.0.min.js
 %%DATADIR%%/web/lib/bootstrap-toggle-2.2.2.min.js
-%%DATADIR%%/web/lib/c3-0.4.11.min.js
-%%DATADIR%%/web/lib/d3-3.5.17.min.js
-%%DATADIR%%/web/lib/dygraph-combined-dd74404.js
-%%DATADIR%%/web/lib/dygraph-smooth-plotter-dd74404.js
+%%DATADIR%%/web/lib/c3-0.4.18.min.js
+%%DATADIR%%/web/lib/clipboard-polyfill-be05dad.js
+%%DATADIR%%/web/lib/d3-4.12.2.min.js
+%%DATADIR%%/web/lib/d3pie-0.2.1-netdata-3.js
+%%DATADIR%%/web/lib/dygraph-c91c859.min.js
+%%DATADIR%%/web/lib/dygraph-smooth-plotter-c91c859.js
 %%DATADIR%%/web/lib/fontawesome-all-5.0.1.min.js
 %%DATADIR%%/web/lib/gauge-1.3.2.min.js
 %%DATADIR%%/web/lib/jquery-2.2.4.min.js
@@ -380,6 +407,7 @@ sbin/netdata
 %%DATADIR%%/web/old/index.js
 %%DATADIR%%/web/old/netdata.js
 %%DATADIR%%/web/old/theme.css
+%%DATADIR%%/web/refresh-badges.js
 %%DATADIR%%/web/registry.html
 %%DATADIR%%/web/robots.txt
 %%DATADIR%%/web/sitemap.xml
