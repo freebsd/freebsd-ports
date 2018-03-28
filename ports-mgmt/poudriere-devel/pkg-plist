@@ -22,7 +22,6 @@ libexec/poudriere/rexec
 libexec/poudriere/sh
 libexec/poudriere/timeout
 libexec/poudriere/timestamp
-libexec/poudriere/tsort
 man/man8/poudriere.8.gz
 man/man8/poudriere-bulk.8.gz
 man/man8/poudriere-distclean.8.gz
@@ -108,4 +107,5 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/queue.sh
 %%DATADIR%%/status.sh
 %%DATADIR%%/testport.sh
+%%BASH%%share/bash-completion/completions/poudriere
 %%ZSH%%share/zsh/site-functions/_poudriere
