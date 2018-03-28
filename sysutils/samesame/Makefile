@@ -21,17 +21,18 @@ CONFIGURE_ARGS=	--enable-samechflags --enable-samechmod \
 		--mandir="${MANPREFIX}/man" --prefix="${PREFIX}" \
 		--includedir="${LOCALBASE}/include" --libdir="${LOCALBASE}/lib"
 USES=		tar:bzip2
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=			DEBUG DISK_STORAGE LOW_MEMORY_PROFILE \
-				EXPERIMENTAL PROFILER TEST
+				EXPERIMENTAL PROFILER
 OPTIONS_SUB=			yes
 DISK_STORAGE_DESC=		Allows temporarily storage on disk
 LOW_MEMORY_PROFILE_DESC=	Low memory profile reduces functionality
 EXPERIMENTAL_DESC=		Enables experimental functionality
 PROFILER_DESC=			Enables gprof support
-TEST_DESC=			Run quality assurance test
 
 DISK_STORAGE_CONFIGURE_ENABLE=	disk-storage
+LOW_MEMORY_PROFILE_CONFIGURE_ON=	--enable-low-memory-profile --disable-read-onces
 EXPERIMENTAL_CONFIGURE_ENABLE=	experimental fsort #checksums preread
 PROFILE_CONFIGURE_ENABLE=	profiler
 DEBUG_CONFIGURE_ENABLE=		debug
@@ -42,22 +43,8 @@ DEBUG_CONFIGURE_ENABLE=		debug
 INSTALL_TARGET=		install
 .endif
 
-.if ${PORT_OPTIONS:MLOW_MEMORY_PROFILE}
-CONFIGURE_ARGS+=	--enable-low-memory-profile --disable-read-onces
-.endif
-
-regression-test: build
-	@cd ${WRKSRC}; ${MAKE} check
-
-post-build:
-.if ${PORT_OPTIONS:MTEST}
-	@cd ${WRKSRC}; ${MAKE} check
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MDISK_STORAGE}
+post-install-DISK_STORAGE-on:
 	${INSTALL_SCRIPT} ${FILESDIR}/samesame.sh \
 		${STAGEDIR}${PREFIX}/etc/rc.d/
-.endif
 
 .include <bsd.port.mk>
