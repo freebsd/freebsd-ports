@@ -1,0 +1,9 @@
+#######################################################################
+
+%%LOCALBASE%%/sbin/birdc was added to /etc/shells
+To assign it to a user, the user needs to be in group wheel.
+
+Alternatively you could use security/sudo to grant a user access to it,
+which would allow '%%LOCALBASE%%/sbin/birdc -r' to restrict to read-only.
+
+#######################################################################
