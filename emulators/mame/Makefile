@@ -1,7 +1,7 @@
 # Created by: alepulver
 # $FreeBSD$
 
-PORTNAME=	mame
+PORTNAME?=	mame
 PORTVERSION=	0.195
 CATEGORIES=	emulators
 
