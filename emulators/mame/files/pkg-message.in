@@ -5,8 +5,4 @@ An example configuration file has been installed in
 Should you create a "~/.%%MTARGET%%" directory and place it here or
 launch "%%MTARGET%% -createconfig" and place the %%MTARGET%%.ini created instead.
 
-If you have a non-qwerty keyboard, you should put in your %%MTARGET%%.ini :
-keymap      1
-keymap_file %%DATADIR%%/keymaps/km-XX.txt
-
 ==============================================================================
