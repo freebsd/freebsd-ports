@@ -1,8 +1,8 @@
---- src/osd/eminline.h.orig	2015-05-24 15:52:19 UTC
+--- src/osd/eminline.h.orig	2018-02-27 15:59:06 UTC
 +++ src/osd/eminline.h
-@@ -88,7 +88,7 @@ _osd_exchange64(INT64 volatile *ptr, INT
+@@ -21,7 +21,7 @@
  
- #endif
+ #if defined(__GNUC__)
  
 -#if defined(__i386__) || defined(__x86_64__)
 +#if defined(__i386__) || defined(__x86_64__) || defined(__amd64__)
