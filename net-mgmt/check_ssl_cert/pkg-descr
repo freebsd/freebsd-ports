@@ -1,0 +1,6 @@
+A Nagios/Icinga plugin for checking X.509 certificates.
+Functionality includes checks for certificate validity, issuing
+Certificate Authority, certificate attributes, state of TLS servers
+and checks agains SSL Labs' assesment service.
+
+WWW: https://matteocorti.github.io/check_ssl_cert/
