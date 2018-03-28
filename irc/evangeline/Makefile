@@ -18,7 +18,8 @@ USES=		gmake tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
 		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
-# LLD_UNSAFE - requires directly-invoked linker to provide library search paths
+# Requires directly-invoked linker to provide library search paths.
+LLD_UNSAFE=	yes
 BINARY_ALIAS=	ld=ld.bfd
 
 PLIST_FILES=	bin/evangeline
