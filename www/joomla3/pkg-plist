@@ -130,6 +130,7 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.8.0-2017-07-31.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.8.2-2017-10-14.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.8.4-2018-01-16.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.8.6-2018-02-14.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.0.0.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.0.1.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.0.2.sql
@@ -204,6 +205,7 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.8.0-2017-07-31.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.8.2-2017-10-14.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.8.4-2018-01-16.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.8.6-2018-02-14.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.2-2012-03-05.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.3-2012-03-13.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.4-2012-03-18.sql
@@ -284,6 +286,7 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.8.0-2017-07-31.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.8.2-2017-10-14.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.8.4-2018-01-16.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.8.6-2018-02-14.sql
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/default.php
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/default.xml
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/langforum.php
@@ -1503,6 +1506,8 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_remember.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_sef.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_sef.sys.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_sessiongc.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_sessiongc.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_stats.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_stats.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_updatenotification.ini
@@ -2268,6 +2273,8 @@
 %%WWWDIR%%/cli/finder_indexer.php
 %%WWWDIR%%/cli/garbagecron.php
 %%WWWDIR%%/cli/index.html
+%%WWWDIR%%/cli/sessionGc.php
+%%WWWDIR%%/cli/sessionMetadataGc.php
 %%WWWDIR%%/cli/update_cron.php
 %%WWWDIR%%/codeception.yml
 %%WWWDIR%%/components/com_ajax/ajax.php
@@ -3939,6 +3946,7 @@
 %%WWWDIR%%/libraries/src/Schema/ChangeItem/SqlsrvChangeItem.php
 %%WWWDIR%%/libraries/src/Schema/ChangeSet.php
 %%WWWDIR%%/libraries/src/Session/Exception/UnsupportedStorageException.php
+%%WWWDIR%%/libraries/src/Session/MetadataManager.php
 %%WWWDIR%%/libraries/src/Session/Session.php
 %%WWWDIR%%/libraries/src/String/PunycodeHelper.php
 %%WWWDIR%%/libraries/src/Table/Asset.php
@@ -5655,6 +5663,7 @@
 %%WWWDIR%%/plugins/authentication/joomla/joomla.xml
 %%WWWDIR%%/plugins/authentication/ldap/ldap.php
 %%WWWDIR%%/plugins/authentication/ldap/ldap.xml
+%%WWWDIR%%/plugins/captcha/recaptcha/postinstall/actions.php
 %%WWWDIR%%/plugins/captcha/recaptcha/recaptcha.php
 %%WWWDIR%%/plugins/captcha/recaptcha/recaptcha.xml
 %%WWWDIR%%/plugins/captcha/recaptcha/recaptchalib.php
@@ -5836,6 +5845,8 @@
 %%WWWDIR%%/plugins/system/remember/remember.xml
 %%WWWDIR%%/plugins/system/sef/sef.php
 %%WWWDIR%%/plugins/system/sef/sef.xml
+%%WWWDIR%%/plugins/system/sessiongc/sessiongc.php
+%%WWWDIR%%/plugins/system/sessiongc/sessiongc.xml
 %%WWWDIR%%/plugins/system/stats/field/base.php
 %%WWWDIR%%/plugins/system/stats/field/data.php
 %%WWWDIR%%/plugins/system/stats/field/uniqueid.php
@@ -6877,5 +6888,5 @@
 %%WWWDIR%%/tmp/index.html
 %%WWWDIR%%/web.config.txt
 @dir %%WWWDIR%%/tests/unit/tmp
-@owner
 @group
+@owner
