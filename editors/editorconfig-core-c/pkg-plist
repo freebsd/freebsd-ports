@@ -6,3 +6,8 @@ lib/libeditorconfig.so
 lib/libeditorconfig.so.%%SHLIB_MAJOR%%
 lib/libeditorconfig.so.%%SHLIB_VER%%
 lib/libeditorconfig_static.a
+libdata/pkgconfig/editorconfig.pc
+man/man1/editorconfig.1.gz
+man/man3/editorconfig.h.3.gz
+man/man3/editorconfig_handle.h.3.gz
+man/man5/editorconfig-format.5.gz
