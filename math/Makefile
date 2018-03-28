@@ -189,6 +189,7 @@
     SUBDIR += fpc-numlib
     SUBDIR += freemat
     SUBDIR += fxt
+    SUBDIR += g2o
     SUBDIR += galculator
     SUBDIR += gambit
     SUBDIR += gap
