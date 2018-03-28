@@ -16,6 +16,7 @@ BROKEN_aarch64=		fails to compile: unknown FP unit 'sse'
 BROKEN_armv6=		fails to compile: unknown FP unit 'sse'
 BROKEN_armv7=		fails to compile: unknown FP unit 'sse'
 BROKEN_mips64=		fails to compile: unknown FP unit 'sse'
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-msse"
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
