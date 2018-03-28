@@ -6,4 +6,4 @@ algorithms for summarizing posterior distributions defined by the
 user. It also contains functions for regression models, hierarchical
 models, Bayesian tests, and illustrations of Gibbs sampling.
 
-WWW: http://cran.r-project.org/web/packages/LearnBayes/
+WWW: https://cran.r-project.org/web/packages/LearnBayes/
