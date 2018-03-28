@@ -1,0 +1,20 @@
+WARNING: This is highly experimental.
+
+Here are a few examples of what you can do right now:
+
+    my $yppl = YAML::PP::Loader->new;
+    my @documents = $yppl->load_string($yaml);
+
+    # load file
+    my $yppl = YAML::PP::Loader->new;
+    my @documents = $yppl->load_file($filename);
+
+    # The loader offers JSON::PP, boolean.pm or pureperl 1/0 (default)
+    # for booleans
+    my $yppl = YAML::PP::Loader->new(boolean => 'JSON::PP');
+    my ($data1, $data2) = $yppl->load_string($yaml);
+
+    my $yppd = YAML::PP::Dumper->new();
+    my $yaml = $yppd->dump_string($data1, $data2);
+
+WWW: https://github.com/perlpunk/YAML-PP-p5

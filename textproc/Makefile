@@ -1146,6 +1146,7 @@
     SUBDIR += p5-XML-XUpdate-LibXML
     SUBDIR += p5-YAML
     SUBDIR += p5-YAML-LibYAML
+    SUBDIR += p5-YAML-PP
     SUBDIR += p5-YAML-Shell
     SUBDIR += p5-YAML-Syck
     SUBDIR += p5-YAML-Tiny
