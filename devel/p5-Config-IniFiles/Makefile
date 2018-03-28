@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-IniFiles
-PORTVERSION=	2.94
+PORTVERSION=	2.95
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,9 @@ COMMENT=	Read .ini-style configuration files
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-IO-stringy>0:devel/p5-IO-stringy
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5
