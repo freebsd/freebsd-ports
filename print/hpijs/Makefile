@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	hplip-[0-9]*
 
+DEPRECATED=	Unsupported since 2005, please migrate to print/hplip
+EXPIRATION_DATE=2018-09-30
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cups-install
 CPPFLAGS+=	-I${LOCALBASE}/include
