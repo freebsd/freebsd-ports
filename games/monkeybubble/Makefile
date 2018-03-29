@@ -3,7 +3,7 @@
 
 PORTNAME=	monkeybubble
 PORTVERSION=	0.4.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games gnome
 MASTER_SITES=	http://home.gna.org/monkeybubble/downloads/
 DISTNAME=	monkey-bubble-${PORTVERSION}
@@ -14,13 +14,11 @@ COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomedocutils gnomeprefix intlhack \
-		librsvg2 libgnomeui esound
-USE_GSTREAMER=	yes
+USES=		gmake libtool localbase pathfix pkgconfig
+USE_GNOME=	gnomedocutils gnomeprefix intlhack librsvg2 libgnomeui
+USE_GSTREAMER=	good vorbis
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lm
+LIBS+=		-lm
 INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	monkey-bubble.schemas
@@ -31,7 +29,6 @@ post-patch:
 		 s|-Werror||g'
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/net/message-handler.c \
-		${WRKSRC}/src/net/simple-server.c \
-		${WRKSRC}/src/ui/main.c
+		${WRKSRC}/src/net/simple-server.c
 
 .include <bsd.port.mk>
