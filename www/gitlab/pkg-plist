@@ -6159,6 +6159,7 @@
 %%WWWDIR%%/db/migrate/20171230123729_add_rebase_commit_sha_to_merge_requests_ce.rb
 %%WWWDIR%%/db/migrate/20180113220114_rework_redirect_routes_indexes.rb
 %%WWWDIR%%/db/migrate/20180208183958_schedule_populate_untracked_uploads_if_needed.rb
+%%WWWDIR%%/db/migrate/20180223144945_add_allow_local_requests_from_hooks_and_services_to_application_settings.rb
 %%WWWDIR%%/db/migrate/limits_to_mysql.rb
 %%WWWDIR%%/db/migrate/markdown_cache_limits_to_mysql.rb
 %%WWWDIR%%/db/migrate/merge_request_diff_file_limits_to_mysql.rb
@@ -6274,6 +6275,7 @@
 %%WWWDIR%%/db/post_migrate/20171219121201_normalize_extern_uid_from_identities.rb
 %%WWWDIR%%/db/post_migrate/20171221140220_schedule_issues_closed_at_type_change.rb
 %%WWWDIR%%/db/post_migrate/20180202111106_remove_project_labels_group_id.rb
+%%WWWDIR%%/db/post_migrate/20180220150310_remove_empty_extern_uid_auth0_identities.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
@@ -8435,6 +8437,7 @@
 %%WWWDIR%%/lib/gitlab/hook_data/issuable_builder.rb
 %%WWWDIR%%/lib/gitlab/hook_data/issue_builder.rb
 %%WWWDIR%%/lib/gitlab/hook_data/merge_request_builder.rb
+%%WWWDIR%%/lib/gitlab/http.rb
 %%WWWDIR%%/lib/gitlab/i18n.rb
 %%WWWDIR%%/lib/gitlab/i18n/metadata_entry.rb
 %%WWWDIR%%/lib/gitlab/i18n/po_linter.rb
@@ -8574,6 +8577,7 @@
 %%WWWDIR%%/lib/gitlab/prometheus/queries/query_additional_metrics.rb
 %%WWWDIR%%/lib/gitlab/prometheus_client.rb
 %%WWWDIR%%/lib/gitlab/protocol_access.rb
+%%WWWDIR%%/lib/gitlab/proxy_http_connection_adapter.rb
 %%WWWDIR%%/lib/gitlab/quick_actions/command_definition.rb
 %%WWWDIR%%/lib/gitlab/quick_actions/dsl.rb
 %%WWWDIR%%/lib/gitlab/quick_actions/extractor.rb
@@ -8925,6 +8929,7 @@
 %%WWWDIR%%/qa/spec/scenario/bootable_spec.rb
 %%WWWDIR%%/qa/spec/scenario/entrypoint_spec.rb
 %%WWWDIR%%/qa/spec/spec_helper.rb
+%%WWWDIR%%/rubocop/cop/gitlab/httparty.rb
 %%WWWDIR%%/rubocop/cop/gitlab/module_with_instance_variables.rb
 %%WWWDIR%%/rubocop/cop/include_sidekiq_worker.rb
 %%WWWDIR%%/rubocop/cop/migration/add_column.rb
@@ -10778,6 +10783,7 @@
 %%WWWDIR%%/spec/lib/gitlab/hook_data/issuable_builder_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/hook_data/issue_builder_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/hook_data/merge_request_builder_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/http_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/i18n/metadata_entry_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/i18n/po_linter_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/i18n/translation_entry_spec.rb
@@ -11046,6 +11052,7 @@
 %%WWWDIR%%/spec/migrations/remove_assignee_id_from_issue_spec.rb
 %%WWWDIR%%/spec/migrations/remove_dot_git_from_usernames_spec.rb
 %%WWWDIR%%/spec/migrations/remove_duplicate_mr_events_spec.rb
+%%WWWDIR%%/spec/migrations/remove_empty_extern_uid_auth0_identities_spec.rb
 %%WWWDIR%%/spec/migrations/remove_empty_fork_networks_spec.rb
 %%WWWDIR%%/spec/migrations/remove_project_labels_group_id_spec.rb
 %%WWWDIR%%/spec/migrations/remove_soft_removed_objects_spec.rb
@@ -11429,6 +11436,7 @@
 %%WWWDIR%%/spec/routing/openid_connect_spec.rb
 %%WWWDIR%%/spec/routing/project_routing_spec.rb
 %%WWWDIR%%/spec/routing/routing_spec.rb
+%%WWWDIR%%/spec/rubocop/cop/gitlab/httparty_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/gitlab/module_with_instance_variables_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/include_sidekiq_worker_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/migration/add_concurrent_foreign_key_spec.rb

@@ -1,4 +1,4 @@
---- Gemfile.orig	2018-02-16 17:13:43 UTC
+--- Gemfile.orig	2018-03-16 19:14:20 UTC
 +++ Gemfile
 @@ -12,8 +12,8 @@ gem 'sprockets', '~> 3.7.0'
  gem 'default_value_for', '~> 3.0.0'
@@ -18,7 +18,7 @@
 -gem 'doorkeeper-openid_connect', '~> 1.2.0'
 +gem 'doorkeeper-openid_connect', '~> 1.2'
  gem 'omniauth', '~> 1.4.2'
- gem 'omniauth-auth0', '~> 1.4.1'
+ gem 'omniauth-auth0', '~> 2.0.0'
  gem 'omniauth-azure-oauth2', '~> 0.0.9'
 @@ -109,7 +109,7 @@ gem 'fog-rackspace', '~> 0.1.1'
  gem 'fog-aliyun', '~> 0.2.0'
@@ -47,7 +47,7 @@
  
  # Colored output to console
  gem 'rainbow', '~> 2.2'
-@@ -209,7 +209,7 @@ gem 'kubeclient', '~> 2.2.0'
+@@ -209,11 +209,11 @@ gem 'kubeclient', '~> 2.2.0'
  gem 'd3_rails', '~> 3.5.0'
  
  # Sanitize user input
@@ -56,6 +56,11 @@
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
+-gem 'loofah', '~> 2.0.3'
++gem 'loofah', '>= 2.0.3'
+ 
+ # Working with license
+ gem 'licensee', '~> 8.7.0'
 @@ -273,7 +273,7 @@ gem 'batch-loader', '~> 1.2.1'
  gem 'peek', '~> 1.0.1'
  gem 'peek-gc', '~> 0.0.2'
