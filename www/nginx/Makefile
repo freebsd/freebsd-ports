@@ -98,7 +98,7 @@ OPTIONS_SUB=	yes
 ${opt}_IMPLIES=	MAIL
 .endfor
 
-.for opt in ${OPTIONS_GROUP_HTTPGRP:NHTTP}
+.for opt in ${OPTIONS_GROUP_HTTPGRP:NHTTP} WWW
 ${opt}_IMPLIES=	HTTP
 .endfor
 
@@ -117,8 +117,6 @@ FILE_AIO_CONFIGURE_ON=	--with-file-aio
 IPV6_CONFIGURE_OFF=	--with-cc-opt="-DNGX_HAVE_INET6=0 -I ${LOCALBASE}/include"
 IPV6_CATEGORIES=	ipv6
 THREADS_CONFIGURE_ON=	--with-threads
-WWW_PLIST_SUB=		WWWDATA=""
-WWW_PLIST_SUB_OFF=	WWWDATA="@comment "
 
 # Bundled modules
 GOOGLE_PERFTOOLS_LIB_DEPENDS=	libprofiler.so:devel/google-perftools
@@ -130,7 +128,6 @@ HTTP_CONFIGURE_ON=		--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_tem
 				--http-uwsgi-temp-path=${NGINX_TMPDIR}/uwsgi_temp \
 				--http-log-path=${NGINX_ACCESSLOG}
 HTTP_CONFIGURE_OFF=		--without-http
-HTTP_PLIST_SUB=			WWWDATA="@comment "
 HTTP_ADDITION_CONFIGURE_ON=	--with-http_addition_module
 HTTP_AUTH_REQ_CONFIGURE_ON=	--with-http_auth_request_module
 HTTP_CACHE_CONFIGURE_OFF=	--without-http-cache
@@ -314,13 +311,6 @@ do-install:
 .for i in fastcgi_params mime.types scgi_params uwsgi_params
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${STAGEDIR}${ETCDIR}/${i}-dist
 .endfor
-.if ${PORT_OPTIONS:MHTTP} && ${PORT_OPTIONS:MWWW}
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/nginx-dist
-.for i in index.html 50x.html
-	${INSTALL_DATA} ${WRKSRC}/html/${i} ${STAGEDIR}${PREFIX}/www/nginx-dist
-.endfor
-	${ECHO_CMD} "" >>${STAGEDIR}${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-.endif
 
 do-install-HTTP_PERL-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/nginx
@@ -350,8 +340,9 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 	${CAT} ${WRKSRC}/conf/nginx.conf >> ${STAGEDIR}${ETCDIR}/nginx.conf-dist
 
-post-install-DSO-on:
-	(cd ${STAGEDIR}${PREFIX} && ${FIND} ${MODULESDIR:S|${PREFIX}/||} \
-		! -type d >>${TMPPLIST})
+post-install-WWW-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/nginx-dist
+	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/nginx-dist && \
+	${TOUCH} ${STAGEDIR}${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING)
 
 .include <bsd.port.post.mk>
