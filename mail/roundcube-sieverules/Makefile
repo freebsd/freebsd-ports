@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 
-MAINTAINER=	anes@anes.su
+MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Roundcube webmail sieve plugin
 
 LICENSE=	GPLv3
