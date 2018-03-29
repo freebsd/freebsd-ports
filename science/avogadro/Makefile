@@ -13,7 +13,6 @@ COMMENT=	Advanced molecular editor and viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to package: Unable to access file avogadro/pythonerror.h: No such file or directory
 BROKEN_armv6=		fails to compile: eigen2/Eigen/src/Core/Assign.h: you mixed different numeric types in 'Eigen::ei_static_assert<false>'
 BROKEN_armv7=		fails to compile: eigen2/Eigen/src/Core/Assign.h: you mixed different numeric types in 'Eigen::ei_static_assert<false>'
 
