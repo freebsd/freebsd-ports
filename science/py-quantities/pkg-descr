@@ -1,0 +1,9 @@
+Quantities is designed to handle arithmetic and conversions of physical
+quantities, which have a magnitude, dimensionality specified by various units,
+and possibly an uncertainty. See the tutorial for examples. Quantities builds
+on the popular numpy library and is designed to work with numpy ufuncs, many
+of which are already supported. Quantities is actively developed, and while
+the current features and API are stable, test coverage is incomplete so the
+package is not suggested for mission-critical applications.
+
+WWW: https://github.com/python-quantities/python-quantities
