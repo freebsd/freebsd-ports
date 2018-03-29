@@ -1,6 +1,6 @@
 --- common_arm.h.orig	2016-09-01 03:58:42 UTC
 +++ common_arm.h
-@@ -93,6 +93,13 @@ static inline int blas_quickdivide(blasi
+@@ -93,6 +93,17 @@ static inline int blas_quickdivide(blasint x, blasint
  
  #endif
  
@@ -10,6 +10,10 @@
 +#define fnmacd vmls.f64
 +#define fnmuls vnmul.f32
 +#define fnmuld vnmul.f64
++#define fldmias vldmia
++#define fstmias vstmia
++#define fldmiad vldmia
++#define fstmiad vstmia
 +#endif
  
  #ifndef F_INTERFACE
