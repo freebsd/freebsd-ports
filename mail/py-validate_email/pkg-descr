@@ -1,0 +1,4 @@
+Verifies and checks if an e-mail address is valid, properly formatted and really
+exists. It can optionally check the MX records of the e-mail domain.
+ 
+WWW: https://github.com/syrusakbary/validate_email
