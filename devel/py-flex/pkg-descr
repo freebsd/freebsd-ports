@@ -1,0 +1,10 @@
+Validation tooling for Swagger 2.0 specifications.
+
+Features:
+
+- Validate swagger schemas.
+- JSON Schema Validation
+- Validation of request/response objects against schema.
+- Command Line Interface.
+
+WWW: https://github.com/pipermerriam/flex
