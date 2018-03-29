@@ -4,7 +4,7 @@ PORTNAME=	synergy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,12 +28,16 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 MAKE_JOBS_UNSAFE=yes
 
-PLIST_FILES=	bin/synergyc bin/synergys bin/synergy-core \
-		man/man1/synergyc.1.gz man/man1/synergys.1.gz
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
 OPTIONS_DEFINE=	EXAMPLES
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|return "/etc"|return "${PREFIX}/etc"|' \
+		${WRKSRC}/src/lib/arch/unix/ArchFileUnix.cpp
+	@${REINPLACE_CMD} -e 's|/etc/synergy.conf|${PREFIX}/etc/synergy.conf|' \
+		${WRKSRC}/doc/synergys.man
 
 do-install:
 .for f in synergyc synergys synergy-core
@@ -43,6 +47,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${f}.man \
 		${STAGEDIR}${MANPREFIX}/man/man1/${f}.1
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/synergy.conf.example-basic ${STAGEDIR}${PREFIX}/etc/synergy.conf.sample # server config
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
