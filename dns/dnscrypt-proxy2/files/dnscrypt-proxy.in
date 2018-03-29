@@ -6,12 +6,16 @@
 # REQUIRE: cleanvar SERVERS
 # BEFORE:  dnsmasq local_unbound unbound named
 #
-# These are some lines to configure dnscrypt-proxy on /etc/rc.conf:
+# Options to configure dnscrypt-proxy via /etc/rc.conf:
 #
-# dnscrypt_proxy_enable	(bool):	Enable service on boot.	Default: NO
-# dnscrypt_proxy_conf	(str):	Config file to use.	Default: %%PREFIX%%/etc/dnscrypt-proxy.toml
-# dnscrypt_proxy_uid	(str):	Set to "_dnscrypt-proxy" by default.
+# dnscrypt_proxy_enable (bool)	Enable service on boot
+#				Default: NO
 #
+# dnscrypt_proxy_conf (str)	Config file to use
+#				Default: %%PREFIX%%/etc/dnscrypt-proxy.toml
+#
+# dnscrypt_proxy_uid (str)	User to run dnscrypt_proxy as
+#				Default: _dnscrypt-proxy
 
 . /etc/rc.subr
 

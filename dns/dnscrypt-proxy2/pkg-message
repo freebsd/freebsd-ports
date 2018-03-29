@@ -1,16 +1,14 @@
 =====================================================================
-Version 2 of dnscrypt-proxy is written in Go and in FreeBSD it's
-not capable to drop root privileges after binding a low port (53),
-Go issue [1][2].
+Version 2 of dnscrypt-proxy is written in Go and therefore isn't capable
+of dropping privileges after binding to a low port on FreeBSD.
 
-For default dnscrypt-proxy2 is listening in port 5353 using username
-_dnscrypt-proxy.
+By default, the dnscrypt-proxy2 port will listen on (tcp/udp) port 5353
+as the _dnscrypt-proxy user.
 
-You can change your rc.conf/config to use port 53 and root but it's
-not recommended.
+It's possible to change back to port 53, but not recommended.
 
-It's needed some tweaks to use dnscrypt-proxy2 on port 5353 on your
-machine, some examples below to redirect localhost port 53 to 5353:
+Below are a few examples on how to redirect local connections from port
+5353 to 53.
 
 [ipfw]
 
@@ -34,13 +32,9 @@ machine, some examples below to redirect localhost port 53 to 5353:
   server:
     interface: 127.0.0.1
     do-not-query-localhost: no
-    hide-identity: yes
-    hide-version: yes
 
   forward-zone:
     name: "."
     forward-addr: 127.0.0.1@5353
 
-[1] - https://github.com/jedisct1/dnscrypt-proxy/issues/199
-[2] - https://github.com/golang/go/issues/13838
 =====================================================================
