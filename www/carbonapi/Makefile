@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		carbonapi
-DISTVERSION=		0.10.0.1
+DISTVERSION=		0.11.0
 CATEGORIES=		www
 
 MAINTAINER=		a.andersson.thn@gmail.com
@@ -40,6 +40,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/carbonapi ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/carbonapi.example.toml ${STAGEDIR}${PREFIX}/etc/carbonapi
 	${INSTALL_DATA} ${WRKSRC}/carbonapi.example.yaml ${STAGEDIR}${PREFIX}/etc/carbonapi
+	${INSTALL_DATA} ${WRKSRC}/graphiteWeb.example.yaml ${STAGEDIR}${PREFIX}/etc/carbonapi
 	${INSTALL_DATA} ${WRKSRC}/graphTemplates.example.toml ${STAGEDIR}${PREFIX}/etc/carbonapi
 	${INSTALL_DATA} ${WRKSRC}/graphTemplates.example.yaml ${STAGEDIR}${PREFIX}/etc/carbonapi
 
