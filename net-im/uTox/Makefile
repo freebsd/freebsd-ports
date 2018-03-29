@@ -29,7 +29,6 @@ USES=		cmake compiler:c11 desktop-file-utils localbase:ldflags openal:al	\
 		pkgconfig
 USE_XORG=	x11 xext xrender
 LLD_UNSAFE=	yes
-BINARY_ALIAS=	ld=ld.bfd
 
 OPTIONS_DEFINE=		DBUS
 OPTIONS_DEFAULT=	DBUS

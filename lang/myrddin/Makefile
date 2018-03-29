@@ -20,9 +20,8 @@ CONFIGURE_ARGS=	--prefix "${PREFIX}"
 TEST_TARGET=	check
 WRKSRC=	${WRKDIR}/mc
 
-# Myrddin is LLD_UNSAFE:
 # ld: error: <internal>: section sh_addralign is not a power of 2
-BINARY_ALIAS=	ld=ld.bfd
+LLD_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DEBUG VIM
 OPTIONS_DEFAULT=	VIM

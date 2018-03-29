@@ -26,7 +26,6 @@ GH_TAGNAME=	2bf3950
 
 MAKE_JOBS_UNSAFE=	yes
 LLD_UNSAFE=	yes
-BINARY_ALIAS=	ld=ld.bfd
 
 SUB_FILES=	pkg-message
 
