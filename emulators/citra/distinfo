@@ -1,6 +1,6 @@
-TIMESTAMP = 1522067490
-SHA256 (citra-emu-citra-s20180326-d823759e_GH0.tar.gz) = e9a37c3328a186beac05592f8b684a7523ca45595d219d54480f58806ab1e7c7
-SIZE (citra-emu-citra-s20180326-d823759e_GH0.tar.gz) = 1880739
+TIMESTAMP = 1522165923
+SHA256 (citra-emu-citra-s20180327-74465389_GH0.tar.gz) = 7937b64a2d7c85014672545a10aac249ff1d56897ce5c70374c8983f75fe30d2
+SIZE (citra-emu-citra-s20180327-74465389_GH0.tar.gz) = 1889532
 SHA256 (citra-emu-ext-libressl-portable-49f073a_GH0.tar.gz) = e630a13befd2261f011862dc210cfb90655e8fe3ea6b24c3c8131888580e7015
 SIZE (citra-emu-ext-libressl-portable-49f073a_GH0.tar.gz) = 1792347
 SHA256 (citra-emu-ext-soundtouch-019d208_GH0.tar.gz) = f48c211bbabe7ad79e1c504af1082756c74241be6bab4aca13140803f4b694e7
@@ -21,5 +21,3 @@ SHA256 (neobrain-nihstro-fd69de1_GH0.tar.gz) = cebeb307aad4b9fbc4d26eb54c01c90e1
 SIZE (neobrain-nihstro-fd69de1_GH0.tar.gz) = 110417
 SHA256 (weidai11-cryptopp-CRYPTOPP_6_1_0_GH0.tar.gz) = 69ee71fdff9cc0d56634712703c8eba97204bf58feacdfe1a94df87faffeff55
 SIZE (weidai11-cryptopp-CRYPTOPP_6_1_0_GH0.tar.gz) = 7195344
-SHA256 (whoshuu-cpr-1.3.0-12-gb5758fb_GH0.tar.gz) = 84ea509dc08766d7182b867b78ba6dd16f3352d85b18b0654661079b8617dae4
-SIZE (whoshuu-cpr-1.3.0-12-gb5758fb_GH0.tar.gz) = 34100

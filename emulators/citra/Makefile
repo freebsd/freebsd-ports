@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20180326
+PORTVERSION=	s20180327
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	d823759e
+GH_TAGNAME=	74465389
 GH_TUPLE=	citra-emu:ext-libressl-portable:49f073a:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:d1d4705:dynarmic/externals/dynarmic \
