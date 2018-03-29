@@ -107,7 +107,8 @@ USES+=			pkgconfig
 # Other ports from other Qt modules will automatically build examples and
 # tests if the directories exist because of mkspecs/features/qt_parts.prf.
 EXTRACT_AFTER_ARGS?=	${DISTNAME:S,$,/examples,:S,^,--exclude ,} \
-				${DISTNAME:S,$,/tests,:S,^,--exclude ,}
+						${DISTNAME:S,$,/tests,:S,^,--exclude ,} \
+						--no-same-owner --no-same-permissions
 . endif # ! ${_QT_VERSION:M4*}
 
 CONFIGURE_ENV+=	MAKE="${MAKE:T}"

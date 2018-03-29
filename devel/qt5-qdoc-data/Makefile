@@ -6,6 +6,7 @@
 
 PORTNAME=	qdoc-data
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 MASTER_SITES=	QT/official_releases/qt/${QT5_VERSION:R}/${QT5_VERSION}/submodules/
 PKGNAMEPREFIX=	qt5-
