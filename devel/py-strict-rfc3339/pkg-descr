@@ -1,0 +1,14 @@
+Simple and lightweight python module to validate, parse and generate RFC3339
+time strings. It was initially created as a part of habitat in response to
+difficulty using other libraries.
+
+It can convert UNIX timestamps to and from RFC3339, either producing strings
+with a UTC offset (Z) or with the offset that the C time module reports is
+the local timezone offset. It has minimal dependencies (none beyond those
+that come with Python) and avoids the error-prone act of dealing with
+timezones as much as possible.
+
+Besides that, it's designed to be strict and stick closely to RFC3339, with a
+couple of very small caveats. It's also fully unit tested.
+
+WWW: http://www.danielrichman.co.uk/libraries/strict-rfc3339.html

@@ -4947,6 +4947,7 @@
     SUBDIR += py-stopit
     SUBDIR += py-strategies
     SUBDIR += py-streamparse
+    SUBDIR += py-strict-rfc3339
     SUBDIR += py-structlog
     SUBDIR += py-stsci.distutils
     SUBDIR += py-subprocess32
