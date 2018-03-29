@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multimarkdown
-DISTVERSION=	6.3.0
+DISTVERSION=	6.3.2
 CATEGORIES=	textproc
 DIST_SUBDIR=	${PORTNAME}
 
