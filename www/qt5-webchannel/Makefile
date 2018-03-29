@@ -2,6 +2,7 @@
 
 PORTNAME=	webchannel
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -15,6 +16,6 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 # The default EXTRACT_AFTER_ARGS value excludes examples/ from the extracted
 # tarball, which we need during the build.
-EXTRACT_AFTER_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions
 
 .include <bsd.port.mk>
