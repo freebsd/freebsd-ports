@@ -1,11 +1,7 @@
---- etc/CMakeLists.txt.orig	2017-11-16 10:44:26.000000000 +0100
-+++ etc/CMakeLists.txt	2017-11-20 17:15:33.564461000 +0100
-@@ -25,42 +25,42 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux"
-   configure_file(logrotate.d/icinga2.cmake ${CMAKE_CURRENT_BINARY_DIR}/logrotate.d/icinga2 @ONLY)
+--- etc/CMakeLists.txt.orig	2018-03-22 10:26:19 UTC
++++ etc/CMakeLists.txt
+@@ -24,39 +24,39 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux"
  endif()
- 
--install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/init.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
-+install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/init.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
  
  if(NOT WIN32)
 -  install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/constants.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
