@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr
 
-USES=		python:2.7 zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 post-install:
