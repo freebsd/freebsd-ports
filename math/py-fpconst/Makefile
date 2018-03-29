@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for handling IEEE 754 floating point special values
 
+LICENSE=	APACHE20
+
+NO_ARCH=	yes
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
