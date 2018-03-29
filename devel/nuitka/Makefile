@@ -4,7 +4,7 @@
 PORTNAME=	nuitka
 PORTVERSION=	0.5.29.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://nuitka.net/releases/
+MASTER_SITES=	https://nuitka.net/releases/
 DISTNAME=	Nuitka-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
