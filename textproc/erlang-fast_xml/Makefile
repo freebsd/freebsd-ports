@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fast_xml
-PORTVERSION=	1.1.28
+PORTVERSION=	1.1.29
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	erlang-
 
@@ -9,8 +9,6 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang XML parsing and manipulation library
 
 LICENSE=	APACHE20
-
-BROKEN=		checksum and size mismatch
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
