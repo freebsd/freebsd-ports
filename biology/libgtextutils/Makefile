@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgtextutils
-PORTVERSION=	0.7
+DISTVERSION=	0.7
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
