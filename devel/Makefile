@@ -4980,6 +4980,7 @@
     SUBDIR += py-tinyarray
     SUBDIR += py-tinyrpc
     SUBDIR += py-tipper
+    SUBDIR += py-toolz
     SUBDIR += py-tooz
     SUBDIR += py-toposort
     SUBDIR += py-total-ordering
