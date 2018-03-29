@@ -24,6 +24,8 @@ CONFIGURE_ARGS=		o all
 # configures and builds in one step
 NO_BUILD=		yes
 USE_LDCONFIG=		yes
+LLD_UNSAFE=		yes
+BINARY_ALIAS=		ld=ld.bfd
 
 DOCFILES=	rexx.info rexx.ref rexx.summary rexx.tech
 RMEFILES=	README README.Y2K README.bugreport README.docs \
