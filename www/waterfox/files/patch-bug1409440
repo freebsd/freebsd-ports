@@ -1,0 +1,89 @@
+commit 362d0bb251e6
+Author: Andrew Osmond <aosmond@mozilla.com>
+Date:   Tue Mar 27 09:01:14 2018 -0400
+
+    Bug 1409440. r=tnikkel, a=RyanVM
+    
+    --HG--
+    extra : source : 52c14d32d9812951c12d92b2594056fc15c5de80
+---
+ image/Downscaler.cpp      | 14 ++++++++++----
+ image/DownscalingFilter.h | 14 ++++++++++----
+ 2 files changed, 20 insertions(+), 8 deletions(-)
+
+diff --git image/Downscaler.cpp image/Downscaler.cpp
+index 475d18319a19..f97d067720b6 100644
+--- image/Downscaler.cpp
++++ image/Downscaler.cpp
+@@ -195,13 +195,14 @@ Downscaler::CommitRow()
+     int32_t inLineToRead = filterOffset + mLinesInBuffer;
+     MOZ_ASSERT(mCurrentInLine <= inLineToRead, "Reading past end of input");
+     if (mCurrentInLine == inLineToRead) {
++      MOZ_RELEASE_ASSERT(mLinesInBuffer < mWindowCapacity, "Need more rows than capacity!");
+       mXFilter.ConvolveHorizontally(mRowBuffer.get(), mWindow[mLinesInBuffer++], mHasAlpha);
+     }
+ 
+     MOZ_ASSERT(mCurrentOutLine < mTargetSize.height,
+                "Writing past end of output");
+ 
+-    while (mLinesInBuffer == filterLength) {
++    while (mLinesInBuffer >= filterLength) {
+       DownscaleInputLine();
+ 
+       if (mCurrentOutLine == mTargetSize.height) {
+@@ -297,9 +298,14 @@ Downscaler::DownscaleInputLine()
+ 
+   // Shift the buffer. We're just moving pointers here, so this is cheap.
+   mLinesInBuffer -= diff;
+-  mLinesInBuffer = max(mLinesInBuffer, 0);
+-  for (int32_t i = 0; i < mLinesInBuffer; ++i) {
+-    swap(mWindow[i], mWindow[filterLength - mLinesInBuffer + i]);
++  mLinesInBuffer = min(max(mLinesInBuffer, 0), mWindowCapacity);
++
++  // If we already have enough rows to satisfy the filter, there is no need
++  // to swap as we won't be writing more before the next convolution.
++  if (filterLength > mLinesInBuffer) {
++    for (int32_t i = 0; i < mLinesInBuffer; ++i) {
++      swap(mWindow[i], mWindow[filterLength - mLinesInBuffer + i]);
++    }
+   }
+ }
+ 
+diff --git image/DownscalingFilter.h image/DownscalingFilter.h
+index 6f516d0e0d90..764aade2e63b 100644
+--- image/DownscalingFilter.h
++++ image/DownscalingFilter.h
+@@ -232,13 +232,14 @@ protected:
+     int32_t inputRowToRead = filterOffset + mRowsInWindow;
+     MOZ_ASSERT(mInputRow <= inputRowToRead, "Reading past end of input");
+     if (mInputRow == inputRowToRead) {
++      MOZ_RELEASE_ASSERT(mRowsInWindow < mWindowCapacity, "Need more rows than capacity!");
+       mXFilter.ConvolveHorizontally(mRowBuffer.get(), mWindow[mRowsInWindow++], mHasAlpha);
+     }
+ 
+     MOZ_ASSERT(mOutputRow < mNext.InputSize().height,
+                "Writing past end of output");
+ 
+-    while (mRowsInWindow == filterLength) {
++    while (mRowsInWindow >= filterLength) {
+       DownscaleInputRow();
+ 
+       if (mOutputRow == mNext.InputSize().height) {
+@@ -297,9 +298,14 @@ private:
+ 
+     // Shift the buffer. We're just moving pointers here, so this is cheap.
+     mRowsInWindow -= diff;
+-    mRowsInWindow = std::max(mRowsInWindow, 0);
+-    for (int32_t i = 0; i < mRowsInWindow; ++i) {
+-      std::swap(mWindow[i], mWindow[filterLength - mRowsInWindow + i]);
++    mRowsInWindow = std::min(std::max(mRowsInWindow, 0), mWindowCapacity);
++
++    // If we already have enough rows to satisfy the filter, there is no need
++    // to swap as we won't be writing more before the next convolution.
++    if (filterLength > mRowsInWindow) {
++      for (int32_t i = 0; i < mRowsInWindow; ++i) {
++        std::swap(mWindow[i], mWindow[filterLength - mRowsInWindow + i]);
++      }
+     }
+   }
+ 
