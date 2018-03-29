@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	igraph
-DISTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSION=	1.2.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,8 +12,7 @@ COMMENT=	Network Analysis and Visualization
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgmp.so:math/gmp
-CRAN_DEPENDS=	R-cran-irlba>0:math/R-cran-irlba \
-		R-cran-magrittr>0:devel/R-cran-magrittr \
+CRAN_DEPENDS=	R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-pkgconfig>=2.0.0:devel/R-cran-pkgconfig
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
