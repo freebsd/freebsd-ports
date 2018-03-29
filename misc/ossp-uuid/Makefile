@@ -12,7 +12,11 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	ISO-C API and CLI for generating Universally Unique Identifiers
 
 LICENSE=	MIT
+.if defined(SLAVEPORT) && ${SLAVEPORT}=="perl"
+LICENSE_FILE=	${WRKSRC}/../README
+.else
 LICENSE_FILE=	${WRKSRC}/README
+.endif
 
 GNU_CONFIGURE=	yes
 USES+=		libtool pathfix
