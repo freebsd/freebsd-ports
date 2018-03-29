@@ -1,4 +1,5 @@
 NXEngine is a complete open-source clone/rewrite of the masterpiece
 jump-and-run platformer Doukutsu Monogatari (also known as Cave Story).
+This is a somewhat upgraded/refactored version of nxengine.
 
-WWW: http://nxengine.sourceforge.net/
+WWW: https://github.com/nxengine/nxengine-evo
