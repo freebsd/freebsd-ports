@@ -20,6 +20,9 @@ LICENSE_GROUPS_SENDMAIL=FSF OSI
 LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	checking for library containing SSL_library_init... no
+
 GNU_CONFIGURE=	yes
 NO_OPTIONS_SORT=yes
 USES=		libtool perl5 pkgconfig shebangfix ssl

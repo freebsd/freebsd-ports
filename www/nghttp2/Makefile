@@ -12,6 +12,9 @@ COMMENT=	HTTP/2.0 C Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	error: use of undeclared identifier 'SSL_get0_next_proto_negotiated'
+
 BUILD_DEPENDS=	libnghttp2>=${PORTVERSION}:www/libnghttp2
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
