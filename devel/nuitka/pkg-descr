@@ -3,4 +3,4 @@ and compiles every construct that CPython 2.6, 2.7, 3.2, 3.3 and 3.4 offer.
 It translates Python code into a C++ program that then uses "libpython" to
 execute in the same way as CPython does, in a very compatible way.
 
-WWW: http://nuitka.net/
+WWW: https://nuitka.net/
