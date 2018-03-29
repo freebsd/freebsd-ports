@@ -21,7 +21,6 @@ USES=		gmake tcl:tea
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_src$//}
 LLD_UNSAFE=	yes
-BINARY_ALIAS=	ld=ld.bfd
 
 INFO=		${PORTNAME} ${PORTNAME}-zlib
 

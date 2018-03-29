@@ -25,7 +25,6 @@ PLIST_SUB=	TCLX_VER=${PORTVERSION:R}
 ALL_TARGET=	binaries libraries
 INSTALL_TARGET=	install-binaries install-libraries
 LLD_UNSAFE=	yes
-BINARY_ALIAS=	ld=ld.bfd
 
 .include <bsd.port.pre.mk>
 

@@ -16,7 +16,6 @@ GNU_CONFIGURE=	yes
 USES=		desthack gmake webplugin:native
 USE_XORG=	x11 xt
 LLD_UNSAFE=	yes
-BINARY_ALIAS=	ld=ld.bfd
 
 WEBPLUGIN_FILES=mozplugger.so
 MAKE_ENV=	WEBPLUGINS_DIR="${WEBPLUGIN_DIR}"

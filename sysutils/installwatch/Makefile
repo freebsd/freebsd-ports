@@ -14,9 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes
-# Requires directly-invoked linker to provide library search paths.
-LLD_UNSAFE=	yes
-BINARY_ALIAS=	ld=ld.bfd
+LLD_UNSAFE=	yes	# Needs linker to provide library search paths.
 
 PLIST_FILES=	bin/installwatch lib/installwatch.so
 PORTDOCS=	BUGS CHANGELOG README TODO

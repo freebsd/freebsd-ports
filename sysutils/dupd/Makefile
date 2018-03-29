@@ -18,7 +18,6 @@ GH_TAGNAME=	v1.4:libbloom
 
 USES=	gmake ssl sqlite:3
 LLD_UNSAFE=	yes
-BINARY_ALIAS=	ld=ld.bfd
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 

@@ -14,9 +14,7 @@ COMMENT=	ANSI Generic Data Structures Library
 LICENSE=	BSD4CLAUSE
 
 USE_LDCONFIG=	yes
-# Requires directly-invoked linker to provide library search paths.
-LLD_UNSAFE=	yes
-BINARY_ALIAS=	ld=ld.bfd
+LLD_UNSAFE=	yes	# Needs linker to provide library search paths.
 ALL_TARGET=	gcc
 
 HTML=		avltree.html heap.html parray.html set.html \
