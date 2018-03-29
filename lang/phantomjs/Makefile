@@ -14,6 +14,8 @@ BROKEN_powerpc64=	fails to build: g++48: not found
 BROKEN_sparc64=		does not link on sparc64
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Platform.h: Not supported ARM architecture
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	error: member access into incomplete type 'X509' (aka 'x509_st')
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \

@@ -18,6 +18,9 @@ COMMENT=		MIT implementation of RFC 4120 network authentication service
 
 LICENSE=		MIT
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	error: "This file is obsolete; please update your software."
+
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[34]-[0-9]* \
 			krb5-1.[0-9]* krb5-devel-*
 

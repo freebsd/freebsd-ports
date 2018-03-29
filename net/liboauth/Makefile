@@ -12,6 +12,9 @@ COMMENT=	C library implementing the OAuth Core standard
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.MIT
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	error: variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		libtool pkgconfig ssl

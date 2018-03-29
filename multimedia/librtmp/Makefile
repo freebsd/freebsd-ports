@@ -11,6 +11,9 @@ COMMENT=	RTMP stream library
 
 LICENSE=	GPLv2
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	error: incomplete definition of type 'struct dh_st'
+
 USES=		pkgconfig tar:bz2 ssl
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${OPENSSLINC}

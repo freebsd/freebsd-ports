@@ -12,6 +12,9 @@ DISTNAME=	Botan-${PORTVERSION}
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Portable, easy to use, and efficient C++ crypto library
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	error: variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 

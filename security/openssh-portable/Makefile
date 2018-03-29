@@ -26,7 +26,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
 
 ETCOLD=			${PREFIX}/etc
 
-BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type struct rsa_st
+BROKEN_SSL=	openssl-devel libressl
+BROKEN_SSL_REASON_openssl-devel=	error: OpenSSL >= 1.1.0 is not yet supported
 BROKEN_SSL_REASON_libressl=		random crashes with 7.6 PR 223000
 
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
