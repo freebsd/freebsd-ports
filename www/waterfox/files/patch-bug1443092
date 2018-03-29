@@ -1,0 +1,64 @@
+commit a70f63a1ef81
+Author: Botond Ballo <botond@mozilla.com>
+Date:   Fri Mar 9 17:26:24 2018 -0500
+
+    Bug 1443092 - Avoid calling SVGAnimatedEnumeration::AnimVal() from nsSVGUtils::GetBBox(). r=jwatt, a=RyanVM
+    
+    AnimVal() is a DOM getter, and it flushes animations, which we don't want
+    in GetBBox() which is called from display list building cide and
+    FrameLayerBuilder.
+    
+    MozReview-Commit-ID: 80DyTcGs5io
+---
+ dom/svg/SVGClipPathElement.cpp | 7 +++++++
+ dom/svg/SVGClipPathElement.h   | 4 ++++
+ layout/svg/nsSVGUtils.cpp      | 3 +--
+ 3 files changed, 12 insertions(+), 2 deletions(-)
+
+diff --git dom/svg/SVGClipPathElement.cpp dom/svg/SVGClipPathElement.cpp
+index 4220c206a3f1..86b361012fa4 100644
+--- dom/svg/SVGClipPathElement.cpp
++++ dom/svg/SVGClipPathElement.cpp
+@@ -53,6 +53,13 @@ SVGClipPathElement::GetEnumInfo()
+                             ArrayLength(sEnumInfo));
+ }
+ 
++bool
++SVGClipPathElement::IsUnitsObjectBoundingBox() const
++{
++  return mEnumAttributes[CLIPPATHUNITS].GetAnimValue() == SVG_UNIT_TYPE_OBJECTBOUNDINGBOX;
++}
++
++
+ //----------------------------------------------------------------------
+ // nsIDOMNode methods
+ 
+diff --git dom/svg/SVGClipPathElement.h dom/svg/SVGClipPathElement.h
+index c5f8eb765246..d8ca24d28a20 100644
+--- dom/svg/SVGClipPathElement.h
++++ dom/svg/SVGClipPathElement.h
+@@ -37,6 +37,10 @@ public:
+   // WebIDL
+   already_AddRefed<SVGAnimatedEnumeration> ClipPathUnits();
+ 
++  // This is an internal method that does not flush style, and thus
++  // the answer may be out of date if there's a pending style flush.
++  bool IsUnitsObjectBoundingBox() const;
++
+ protected:
+ 
+   enum { CLIPPATHUNITS };
+diff --git layout/svg/nsSVGUtils.cpp layout/svg/nsSVGUtils.cpp
+index 714f35f9f549..cd9fae39dec6 100644
+--- layout/svg/nsSVGUtils.cpp
++++ layout/svg/nsSVGUtils.cpp
+@@ -1183,8 +1183,7 @@ nsSVGUtils::GetBBox(nsIFrame* aFrame, uint32_t aFlags,
+       if (clipPathFrame) {
+         SVGClipPathElement *clipContent =
+           static_cast<SVGClipPathElement*>(clipPathFrame->GetContent());
+-        RefPtr<SVGAnimatedEnumeration> units = clipContent->ClipPathUnits();
+-        if (units->AnimVal() == SVG_UNIT_TYPE_OBJECTBOUNDINGBOX) {
++        if (clipContent->IsUnitsObjectBoundingBox()) {
+           matrix.PreTranslate(gfxPoint(x, y));
+           matrix.PreScale(width, height);
+         } else if (aFrame->IsSVGForeignObjectFrame()) {

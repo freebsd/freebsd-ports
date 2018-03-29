@@ -1,0 +1,338 @@
+commit 5d7b84950d03
+Author: vinoth <cegvinoth@gmail.com>
+Date:   Thu Mar 22 21:02:16 2018 +0200
+
+    Bug 1416045. r=mayhemer, a=RyanVM
+    
+    Reviewers: mayhemer
+    
+    Reviewed By: mayhemer
+    
+    Subscribers: freddyb, dveditz, mayhemer, ckerschb, vinoth
+    
+    Tags: PHID-PROJ-wkydohdk6pajyfn2llkb
+    
+    Bug #: 1416045
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D675
+    
+    --HG--
+    extra : source : a0a2092724797e534549cc2d80dc9c423bfaf43d
+    extra : amend_source : f1ddea498e322b79b6d1b9af45c7e04832f43ed1
+---
+ .../test/csp/file_multipart_testserver.sjs         | 110 ++++++++++++++++++++-
+ dom/security/test/csp/test_multipartchannel.html   |  42 +++++++-
+ netwerk/streamconv/converters/nsMultiMixedConv.cpp |  36 +++++++
+ netwerk/streamconv/converters/nsMultiMixedConv.h   |   3 +
+ 4 files changed, 182 insertions(+), 9 deletions(-)
+
+diff --git dom/security/test/csp/file_multipart_testserver.sjs dom/security/test/csp/file_multipart_testserver.sjs
+index d2eb58c82b52..3934df0a9572 100644
+--- dom/security/test/csp/file_multipart_testserver.sjs
++++ dom/security/test/csp/file_multipart_testserver.sjs
+@@ -1,8 +1,11 @@
+ // SJS file specifically for the needs of bug
+-// Bug 1223743 - CSP: Check baseChannel for CSP when loading multipart channel
++// Bug 1416045/Bug 1223743 - CSP: Check baseChannel for CSP when loading multipart channel
+ 
+ var CSP = "script-src 'unsafe-inline', img-src 'none'";
+-var BOUNDARY = "fooboundary"
++var rootCSP = "script-src 'unsafe-inline'";
++var part1CSP = "img-src *";
++var part2CSP = "img-src 'none'";
++var BOUNDARY = "fooboundary";
+ 
+ // small red image
+ const IMG_BYTES = atob(
+@@ -14,16 +17,72 @@ var RESPONSE = `
+   var myImg = new Image;
+   myImg.src = "file_multipart_testserver.sjs?img";
+   myImg.onerror = function(e) {
+-    window.parent.postMessage("img-blocked", "*");
++    window.parent.postMessage({"test": "rootCSP_test",
++                               "msg": "img-blocked"}, "*");
+   };
+   myImg.onload = function() {
+-    window.parent.postMessage("img-loaded", "*");
++    window.parent.postMessage({"test": "rootCSP_test",
++                               "msg": "img-loaded"}, "*");
+   };
+   document.body.appendChild(myImg);
+   </script>
+ `;
+ 
+-var myTimer;
++var RESPONSE1 = `
++  <body>
++  <script>
++  var triggerNextPartFrame = document.createElement('iframe');
++  var myImg = new Image;
++  myImg.src = "file_multipart_testserver.sjs?img";
++  myImg.onerror = function(e) {
++    window.parent.postMessage({"test": "part1CSP_test",
++                               "msg": "part1-img-blocked"}, "*");
++    triggerNextPartFrame.src = 'file_multipart_testserver.sjs?sendnextpart';
++  };
++  myImg.onload = function() {
++    window.parent.postMessage({"test": "part1CSP_test",
++                               "msg": "part1-img-loaded"}, "*");
++    triggerNextPartFrame.src = 'file_multipart_testserver.sjs?sendnextpart';
++  };
++  document.body.appendChild(myImg);
++  document.body.appendChild(triggerNextPartFrame);
++  </script>
++  </body>
++`;
++
++var RESPONSE2 = `
++  <body>
++  <script>
++  var myImg = new Image;
++  myImg.src = "file_multipart_testserver.sjs?img";
++  myImg.onerror = function(e) {
++    window.parent.postMessage({"test": "part2CSP_test",
++                               "msg": "part2-img-blocked"}, "*");
++  };
++  myImg.onload = function() {
++    window.parent.postMessage({"test": "part2CSP_test",
++                               "msg": "part2-img-loaded"}, "*");
++  };
++  document.body.appendChild(myImg);
++  </script>
++  </body>
++`;
++
++function setGlobalState(data, key)
++{
++  x = { data: data, QueryInterface: function(iid) { return this } };
++  x.wrappedJSObject = x;
++  setObjectState(key, x);
++}
++
++function getGlobalState(key)
++{
++  var data;
++  getObjectState(key, function(x) {
++    data = x && x.wrappedJSObject.data;
++  });
++  return data;
++}
+ 
+ function handleRequest(request, response)
+ {
+@@ -39,6 +98,29 @@ function handleRequest(request, response)
+     return;
+   }
+ 
++  if (request.queryString == "partcspdoc") {
++    response.setHeader("Content-Security-Policy", rootCSP, false);
++    response.setHeader("Content-Type",
++                       "multipart/x-mixed-replace; boundary=" + BOUNDARY, false);
++    response.setStatusLine(request.httpVersion, 200, "OK");
++    response.processAsync();
++    response.write("--"+BOUNDARY+"\r\n");
++    sendNextPart(response, 1);
++    return;
++  }
++
++  if (request.queryString == "sendnextpart") {
++    response.setStatusLine(request.httpVersion, 204, "No content");
++    var blockedResponse = getGlobalState("root-document-response");
++    if (typeof blockedResponse == "object") {
++      sendNextPart(blockedResponse, 2);
++      sendClose(blockedResponse);
++    } else {
++      dump("Couldn't find the stored response object.");
++    }
++    return;
++  }
++
+   if (request.queryString == "img") {
+     response.setHeader("Content-Type", "image/png");
+     response.write(IMG_BYTES);
+@@ -48,3 +130,21 @@ function handleRequest(request, response)
+   // we should never get here - return something unexpected
+   response.write("d'oh");
+ }
++
++function sendClose(response) {
++  response.write("--"+BOUNDARY+"--\r\n");
++  response.finish();
++}
++
++function sendNextPart(response, partNumber) {
++  response.write("Content-type: text/html" + "\r\n");
++  if (partNumber == 1) {
++    response.write("Content-Security-Policy:" + part1CSP + "\r\n");
++    response.write(RESPONSE1);
++    setGlobalState(response, "root-document-response");
++  } else {
++    response.write("Content-Security-Policy:" + part2CSP + "\r\n");
++    response.write(RESPONSE2);
++  }
++  response.write("--"+BOUNDARY+"\r\n");
++}
+diff --git dom/security/test/csp/test_multipartchannel.html dom/security/test/csp/test_multipartchannel.html
+index 120f9712d0e0..1c03157cc0b4 100644
+--- dom/security/test/csp/test_multipartchannel.html
++++ dom/security/test/csp/test_multipartchannel.html
+@@ -2,32 +2,66 @@
+ <html>
+ <head>
+   <meta charset="utf-8">
+-  <title>Bug 1223743 - CSP: Check baseChannel for CSP when loading multipart channel</title>
++  <title>Bug 1416045/Bug 1223743 - CSP: Check baseChannel for CSP when loading multipart channel</title>
+   <!-- Including SimpleTest.js so we can use waitForExplicitFinish !-->
+   <script type="text/javascript" src="/tests/SimpleTest/SimpleTest.js"></script>
+   <link rel="stylesheet" type="text/css" href="/tests/SimpleTest/test.css" />
+ </head>
+ <body>
+ <iframe style="width:100%;" id="testframe"></iframe>
++<iframe style="width:100%;" id="testPartCSPframe"></iframe>
+ 
+ <script class="testbody" type="text/javascript">
+ 
++var testsToRunMultipartCSP = {
++  rootCSP_test: false,
++  part1CSP_test: false,
++  part2CSP_test: false,
++};
++
+ SimpleTest.waitForExplicitFinish();
+ 
++function checkTestsCompleted() {
++  for (var prop in testsToRunMultipartCSP) {
++    // some test hasn't run yet so we're not done
++    if (!testsToRunMultipartCSP[prop]) {
++      return;
++    }
++  }
++  window.removeEventListener("message", receiveMessage);
++  SimpleTest.finish();
++}
+ /* Description of the test:
+  * We apply a CSP to a multipart channel and then try to load an image
+  * within a segment making sure the image is blocked correctly by CSP.
++ * We also provide CSP for each part and try to load an image in each
++ * part and make sure the image is loaded in first part and blocked in
++ * second part correctly based on its CSP accordingly.
+  */
+ 
+ window.addEventListener("message", receiveMessage);
+ function receiveMessage(event) {
+-  is(event.data, "img-blocked", "image should be blocked");
+-  window.removeEventListener("message", receiveMessage);
+-  SimpleTest.finish();
++  switch (event.data.test) {
++    case "rootCSP_test":
++      is(event.data.msg, "img-blocked", "image should be blocked");
++      testsToRunMultipartCSP["rootCSP_test"] = true;
++      break;
++    case "part1CSP_test":
++      is(event.data.msg, "part1-img-loaded", "Part1 image should be loaded");
++      testsToRunMultipartCSP["part1CSP_test"] = true;
++      break;
++    case "part2CSP_test":
++      is(event.data.msg, "part2-img-blocked", "Part2 image should be blocked");
++      testsToRunMultipartCSP["part2CSP_test"] = true;
++      break;
++  }
++  checkTestsCompleted();
+ }
+ 
+ // start the test
+ document.getElementById("testframe").src = "file_multipart_testserver.sjs?doc";
++document.getElementById("testPartCSPframe").src =
++                                    "file_multipart_testserver.sjs?partcspdoc";
+ 
+ </script>
+ </body>
+diff --git netwerk/streamconv/converters/nsMultiMixedConv.cpp netwerk/streamconv/converters/nsMultiMixedConv.cpp
+index 1af800eb8d90..80cb030a6fab 100644
+--- netwerk/streamconv/converters/nsMultiMixedConv.cpp
++++ netwerk/streamconv/converters/nsMultiMixedConv.cpp
+@@ -488,6 +488,12 @@ nsMultiMixedConv::OnStartRequest(nsIRequest *request, nsISupports *ctxt)
+         if (NS_FAILED(rv)) {
+             return rv;
+         }
++        nsCString csp;
++        rv = httpChannel->GetResponseHeader(NS_LITERAL_CSTRING("content-security-policy"),
++                                            csp);
++        if (NS_SUCCEEDED(rv)) {
++          mRootContentSecurityPolicy = csp;
++        }
+     } else {
+         // try asking the channel directly
+         rv = mChannel->GetContentType(contentType);
+@@ -528,6 +534,10 @@ nsMultiMixedConv::OnStartRequest(nsIRequest *request, nsISupports *ctxt)
+       mTokenizer.AddCustomToken("content-range", mTokenizer.CASE_INSENSITIVE, false);
+     mHeaderTokens[HEADER_RANGE] =
+       mTokenizer.AddCustomToken("range", mTokenizer.CASE_INSENSITIVE, false);
++    mHeaderTokens[HEADER_CONTENT_SECURITY_POLICY] =
++      mTokenizer.AddCustomToken("content-security-policy",
++                                mTokenizer.CASE_INSENSITIVE,
++                                false);
+ 
+     mLFToken = mTokenizer.AddCustomToken("\n", mTokenizer.CASE_SENSITIVE, false);
+     mCRLFToken = mTokenizer.AddCustomToken("\r\n", mTokenizer.CASE_SENSITIVE, false);
+@@ -1001,6 +1011,7 @@ nsMultiMixedConv::HeadersToDefault()
+     mContentLength = UINT64_MAX;
+     mContentType.Truncate();
+     mContentDisposition.Truncate();
++    mContentSecurityPolicy.Truncate();
+     mIsByteRangeRequest = false;
+ }
+ 
+@@ -1053,6 +1064,31 @@ nsMultiMixedConv::ProcessHeader()
+       }
+       break;
+     }
++    case HEADER_CONTENT_SECURITY_POLICY: {
++      mContentSecurityPolicy = mResponseHeaderValue;
++      mContentSecurityPolicy.CompressWhitespace();
++      nsCOMPtr<nsIHttpChannel> httpChannel = do_QueryInterface(mChannel);
++      if (httpChannel) {
++        nsCString resultCSP = mRootContentSecurityPolicy;
++        if (!mContentSecurityPolicy.IsEmpty()) {
++          // We are updating the root channel CSP header respectively for
++          // each part as: CSP-root + CSP-partN, where N is the part number.
++          // Here we append current part's CSP to root CSP and reset CSP
++          // header for each part.
++          if (!resultCSP.IsEmpty()) {
++            resultCSP.Append(";");
++          }
++          resultCSP.Append(mContentSecurityPolicy);
++        }
++        nsresult rv = httpChannel->SetResponseHeader(
++                        NS_LITERAL_CSTRING("Content-Security-Policy"),
++                        resultCSP, false);
++        if (NS_FAILED(rv)) {
++          return NS_ERROR_CORRUPTED_CONTENT;
++        }
++      }
++      break;
++    }
+     case HEADER_UNKNOWN:
+       // We ignore anything else...
+       break;
+diff --git netwerk/streamconv/converters/nsMultiMixedConv.h netwerk/streamconv/converters/nsMultiMixedConv.h
+index b46a094608a5..fdd7e73c7fd1 100644
+--- netwerk/streamconv/converters/nsMultiMixedConv.h
++++ netwerk/streamconv/converters/nsMultiMixedConv.h
+@@ -151,6 +151,8 @@ protected:
+     nsCOMPtr<nsISupports> mContext;
+     nsCString           mContentType;
+     nsCString           mContentDisposition;
++    nsCString           mContentSecurityPolicy;
++    nsCString           mRootContentSecurityPolicy;
+     uint64_t            mContentLength;
+     uint64_t            mTotalSent;
+ 
+@@ -198,6 +200,7 @@ protected:
+       HEADER_SET_COOKIE,
+       HEADER_CONTENT_RANGE,
+       HEADER_RANGE,
++      HEADER_CONTENT_SECURITY_POLICY,
+       HEADER_UNKNOWN
+     } mResponseHeader;
+     // Cumulated value of a response header.
