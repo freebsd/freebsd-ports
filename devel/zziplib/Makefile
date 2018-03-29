@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XMLTO=":"
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 PORTSCOUT=	limit:^0\.
 
@@ -28,9 +29,5 @@ OPTIONS_SUB=	yes
 
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_ENABLE=	sdl
-
-regression-test:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
