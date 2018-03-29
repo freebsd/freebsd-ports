@@ -1,0 +1,252 @@
+commit e75ef89e7d0f
+Author: Lee Salzman <lsalzman@mozilla.com>
+Date:   Wed Mar 28 00:34:13 2018 -0400
+
+    Bug 1441941 - Limit allocations in SkTDArray. r=jrmuizel, a=RyanVM
+---
+ gfx/skia/skia/include/core/SkTypes.h        |   6 ++
+ gfx/skia/skia/include/private/SkTDArray.h   |   8 ++-
+ gfx/skia/skia/src/core/SkMallocPixelRef.cpp |  13 ++++
+ gfx/skia/skia/src/core/SkMath.cpp           |  15 ++++
+ gfx/skia/skia/src/core/SkSafeMath.h         | 106 ++++++++++++++++++++++++++++
+ 5 files changed, 145 insertions(+), 3 deletions(-)
+
+diff --git gfx/skia/skia/include/core/SkTypes.h gfx/skia/skia/include/core/SkTypes.h
+index beb2be51432b..ed138f930fd3 100644
+--- gfx/skia/skia/include/core/SkTypes.h
++++ gfx/skia/skia/include/core/SkTypes.h
+@@ -235,6 +235,7 @@ template <typename D, typename S> D SkTo(S s) {
+ #define SK_MaxU32   0xFFFFFFFF
+ #define SK_MinU32   0
+ #define SK_NaN32    ((int) (1U << 31))
++#define SK_MaxSizeT SIZE_MAX
+ 
+ /** Returns true if the value can be represented with signed 16bits
+  */
+diff --git gfx/skia/skia/include/private/SkMalloc.h gfx/skia/skia/include/private/SkMalloc.h
+index ee5590063bc8..19d29634bd70 100644
+--- gfx/skia/skia/include/private/SkMalloc.h
++++ gfx/skia/skia/include/private/SkMalloc.h
+@@ -46,6 +46,11 @@ SK_API extern void* sk_calloc(size_t size);
+  */
+ SK_API extern void* sk_calloc_throw(size_t size);
+ 
++// Performs a safe multiply count * elemSize, checking for overflow
++SK_API extern void* sk_calloc_throw(size_t count, size_t elemSize);
++SK_API extern void* sk_malloc_throw(size_t count, size_t elemSize);
++SK_API extern void* sk_realloc_throw(void* buffer, size_t count, size_t elemSize);
++
+ /** Called internally if we run out of memory. The platform implementation must
+     not return, but should either throw an exception or otherwise exit.
+ */
+diff --git gfx/skia/skia/include/private/SkTDArray.h gfx/skia/skia/include/private/SkTDArray.h
+index 4c58d478fe63..36986d81e9fe 100644
+--- gfx/skia/skia/include/private/SkTDArray.h
++++ gfx/skia/skia/include/private/SkTDArray.h
+@@ -22,7 +22,7 @@ public:
+         fReserve = fCount = 0;
+         fArray = NULL;
+         if (count) {
+-            fArray = (T*)sk_malloc_throw(count * sizeof(T));
++            fArray = (T*)sk_malloc_throw(count, sizeof(T));
+             memcpy(fArray, src, sizeof(T) * count);
+             fReserve = fCount = count;
+         }
+@@ -353,7 +353,7 @@ public:
+ 
+     void shrinkToFit() {
+         fReserve = fCount;
+-        fArray = (T*)sk_realloc_throw(fArray, fReserve * sizeof(T));
++        fArray = (T*)sk_realloc_throw(fArray, fReserve, sizeof(T));
+     }
+ 
+ private:
+@@ -366,6 +366,7 @@ private:
+      *  This is the same as calling setCount(count() + delta).
+      */
+     void adjustCount(int delta) {
++        SkASSERT_RELEASE(fCount <= std::numeric_limits<int>::max() - delta);
+         this->setCount(fCount + delta);
+     }
+ 
+@@ -379,9 +380,10 @@ private:
+      */
+     void resizeStorageToAtLeast(int count) {
+         SkASSERT(count > fReserve);
++        SkASSERT_RELEASE(count <= std::numeric_limits<int>::max() - std::numeric_limits<int>::max() / 5 - 4);
+         fReserve = count + 4;
+         fReserve += fReserve / 4;
+-        fArray = (T*)sk_realloc_throw(fArray, fReserve * sizeof(T));
++        fArray = (T*)sk_realloc_throw(fArray, fReserve, sizeof(T));
+     }
+ };
+ 
+diff --git gfx/skia/skia/src/core/SkMallocPixelRef.cpp gfx/skia/skia/src/core/SkMallocPixelRef.cpp
+index ed3a97b7e0f5..c2da0ecec8bb 100644
+--- gfx/skia/skia/src/core/SkMallocPixelRef.cpp
++++ gfx/skia/skia/src/core/SkMallocPixelRef.cpp
+@@ -8,8 +8,21 @@
+ #include "SkMallocPixelRef.h"
+ #include "SkBitmap.h"
+ #include "SkReadBuffer.h"
++#include "SkSafeMath.h"
+ #include "SkWriteBuffer.h"
+ 
++void* sk_calloc_throw(size_t count, size_t elemSize) {
++    return sk_calloc_throw(SkSafeMath::Mul(count, elemSize));
++}
++
++void* sk_malloc_throw(size_t count, size_t elemSize) {
++    return sk_malloc_throw(SkSafeMath::Mul(count, elemSize));
++}
++
++void* sk_realloc_throw(void* buffer, size_t count, size_t elemSize) {
++    return sk_realloc_throw(buffer, SkSafeMath::Mul(count, elemSize));
++}
++
+ // assumes ptr was allocated via sk_malloc
+ static void sk_free_releaseproc(void* ptr, void*) {
+     sk_free(ptr);
+diff --git gfx/skia/skia/src/core/SkMath.cpp gfx/skia/skia/src/core/SkMath.cpp
+index 6eff790c85c5..2196d6913c9c 100644
+--- gfx/skia/skia/src/core/SkMath.cpp
++++ gfx/skia/skia/src/core/SkMath.cpp
+@@ -9,6 +9,7 @@
+ #include "SkFixed.h"
+ #include "SkFloatBits.h"
+ #include "SkFloatingPoint.h"
++#include "SkSafeMath.h"
+ #include "SkScalar.h"
+ 
+ #define sub_shift(zeros, x, n)  \
+@@ -84,3 +85,18 @@ float SkScalarSinCos(float radians, float* cosValue) {
+     }
+     return sinValue;
+ }
++
++///////////////////////////////////////////////////////////////////////////////////////////////////
++
++size_t SkSafeMath::Add(size_t x, size_t y) {
++    SkSafeMath tmp;
++    size_t sum = tmp.add(x, y);
++    return tmp.ok() ? sum : SK_MaxSizeT;
++}
++
++size_t SkSafeMath::Mul(size_t x, size_t y) {
++    SkSafeMath tmp;
++    size_t prod = tmp.mul(x, y);
++    return tmp.ok() ? prod : SK_MaxSizeT;
++}
++
+diff --git gfx/skia/skia/src/core/SkSafeMath.h gfx/skia/skia/src/core/SkSafeMath.h
+new file mode 100644
+index 000000000000..0bc0fbfac473
+--- /dev/null
++++ gfx/skia/skia/src/core/SkSafeMath.h
+@@ -0,0 +1,106 @@
++/*
++ * Copyright 2017 Google Inc.
++ *
++ * Use of this source code is governed by a BSD-style license that can be
++ * found in the LICENSE file.
++ */
++
++#ifndef SkSafeMath_DEFINED
++#define SkSafeMath_DEFINED
++
++#include "SkTypes.h"
++
++// SkSafeMath always check that a series of operations do not overflow.
++// This must be correct for all platforms, because this is a check for safety at runtime.
++
++class SkSafeMath {
++public:
++    SkSafeMath() = default;
++
++    bool ok() const { return fOK; }
++    explicit operator bool() const { return fOK; }
++
++    size_t mul(size_t x, size_t y) {
++        return sizeof(size_t) == sizeof(uint64_t) ? mul64(x, y) : mul32(x, y);
++    }
++
++    size_t add(size_t x, size_t y) {
++        size_t result = x + y;
++        fOK &= result >= x;
++        return result;
++    }
++
++    /**
++     *  Return a + b, unless this result is an overflow/underflow. In those cases, fOK will
++     *  be set to false, and it is undefined what this returns.
++     */
++    int addInt(int a, int b) {
++        if (b < 0 && a < std::numeric_limits<int>::min() - b) {
++            fOK = false;
++            return a;
++        } else if (b > 0 && a > std::numeric_limits<int>::max() - b) {
++            fOK = false;
++            return a;
++        }
++        return a + b;
++    }
++
++    size_t alignUp(size_t x, size_t alignment) {
++        SkASSERT(alignment && !(alignment & (alignment - 1)));
++        return add(x, alignment - 1) & ~(alignment - 1);
++    }
++
++    template <typename T> T castTo(size_t value) {
++        if (!SkTFitsIn<T>(value)) {
++            fOK = false;
++        }
++        return static_cast<T>(value);
++    }
++
++    // These saturate to their results
++    static size_t Add(size_t x, size_t y);
++    static size_t Mul(size_t x, size_t y);
++    static size_t Align4(size_t x) {
++        SkSafeMath safe;
++        return safe.alignUp(x, 4);
++    }
++
++private:
++    uint32_t mul32(uint32_t x, uint32_t y) {
++        uint64_t bx = x;
++        uint64_t by = y;
++        uint64_t result = bx * by;
++        fOK &= result >> 32 == 0;
++        return result;
++    }
++
++    uint64_t mul64(uint64_t x, uint64_t y) {
++        if (x <= std::numeric_limits<uint64_t>::max() >> 32
++            && y <= std::numeric_limits<uint64_t>::max() >> 32) {
++            return x * y;
++        } else {
++            auto hi = [](uint64_t x) { return x >> 32; };
++            auto lo = [](uint64_t x) { return x & 0xFFFFFFFF; };
++
++            uint64_t lx_ly = lo(x) * lo(y);
++            uint64_t hx_ly = hi(x) * lo(y);
++            uint64_t lx_hy = lo(x) * hi(y);
++            uint64_t hx_hy = hi(x) * hi(y);
++            uint64_t result = 0;
++            result = this->add(lx_ly, (hx_ly << 32));
++            result = this->add(result, (lx_hy << 32));
++            fOK &= (hx_hy + (hx_ly >> 32) + (lx_hy >> 32)) == 0;
++
++            #if defined(SK_DEBUG) && defined(__clang__) && defined(__x86_64__)
++                auto double_check = (unsigned __int128)x * y;
++                SkASSERT(result == (double_check & 0xFFFFFFFFFFFFFFFF));
++                SkASSERT(!fOK || (double_check >> 64 == 0));
++            #endif
++
++            return result;
++        }
++    }
++    bool fOK = true;
++};
++
++#endif//SkSafeMath_DEFINED

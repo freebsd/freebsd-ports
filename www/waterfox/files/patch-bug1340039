@@ -1,0 +1,232 @@
+commit 753d522440f6
+Author: Hector Zhao <bzhao@mozilla.com>
+Date:   Wed Mar 14 16:44:36 2018 +0800
+
+    Bug 1340039 - Set contentPolicyType when copying image, and pass it between processes. r=smaug, a=jcristau
+    
+    MozReview-Commit-ID: CJj1a1Lj699
+    
+    --HG--
+    extra : source : 445ec9da938f984a6fe2fe163c7f3d7be4710a77
+---
+ dom/base/nsContentUtils.cpp      | 2 ++
+ dom/base/nsContentUtils.h        | 1 +
+ dom/base/nsCopySupport.cpp       | 1 +
+ dom/events/EventStateManager.cpp | 5 ++++-
+ dom/ipc/ContentParent.cpp        | 2 ++
+ dom/ipc/ContentParent.h          | 1 +
+ dom/ipc/PBrowser.ipdl            | 3 ++-
+ dom/ipc/PContent.ipdl            | 1 +
+ dom/ipc/TabChild.cpp             | 4 +++-
+ dom/ipc/TabChild.h               | 3 ++-
+ dom/ipc/TabParent.cpp            | 6 ++++--
+ dom/ipc/TabParent.h              | 3 ++-
+ widget/nsClipboardProxy.cpp      | 5 ++++-
+ 13 files changed, 29 insertions(+), 8 deletions(-)
+
+diff --git dom/base/nsContentUtils.cpp dom/base/nsContentUtils.cpp
+index fe773465faba..63e1ac06bf2d 100644
+--- dom/base/nsContentUtils.cpp
++++ dom/base/nsContentUtils.cpp
+@@ -7986,6 +7986,7 @@ nsresult
+ nsContentUtils::IPCTransferableToTransferable(const IPCDataTransfer& aDataTransfer,
+                                               const bool& aIsPrivateData,
+                                               nsIPrincipal* aRequestingPrincipal,
++                                              const nsContentPolicyType& aContentPolicyType,
+                                               nsITransferable* aTransferable,
+                                               mozilla::dom::nsIContentParent* aContentParent,
+                                               mozilla::dom::TabChild* aTabChild)
+@@ -8051,6 +8052,7 @@ nsContentUtils::IPCTransferableToTransferable(const IPCDataTransfer& aDataTransf
+ 
+   aTransferable->SetIsPrivateData(aIsPrivateData);
+   aTransferable->SetRequestingPrincipal(aRequestingPrincipal);
++  aTransferable->SetContentPolicyType(aContentPolicyType);
+   return NS_OK;
+ }
+ 
+diff --git dom/base/nsContentUtils.h dom/base/nsContentUtils.h
+index 356d3841b9e9..9ef79a569ea3 100644
+--- dom/base/nsContentUtils.h
++++ dom/base/nsContentUtils.h
+@@ -2845,6 +2845,7 @@ public:
+   static nsresult IPCTransferableToTransferable(const mozilla::dom::IPCDataTransfer& aDataTransfer,
+                                                 const bool& aIsPrivateData,
+                                                 nsIPrincipal* aRequestingPrincipal,
++                                                const nsContentPolicyType& aContentPolicyType,
+                                                 nsITransferable* aTransferable,
+                                                 mozilla::dom::nsIContentParent* aContentParent,
+                                                 mozilla::dom::TabChild* aTabChild);
+diff --git dom/base/nsCopySupport.cpp dom/base/nsCopySupport.cpp
+index 0f680c21c126..5e2d4065b3b7 100644
+--- dom/base/nsCopySupport.cpp
++++ dom/base/nsCopySupport.cpp
+@@ -680,6 +680,7 @@ static nsresult AppendImagePromise(nsITransferable* aTransferable,
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+   aTransferable->SetRequestingPrincipal(node->NodePrincipal());
++  aTransferable->SetContentPolicyType(nsIContentPolicy::TYPE_INTERNAL_IMAGE);
+ 
+   // add the dataless file promise flavor
+   return aTransferable->AddDataFlavor(kFilePromiseMime);
+diff --git dom/events/EventStateManager.cpp dom/events/EventStateManager.cpp
+index 4423e3aecc5e..bdc1bb6e50c9 100644
+--- dom/events/EventStateManager.cpp
++++ dom/events/EventStateManager.cpp
+@@ -5469,8 +5469,11 @@ EventStateManager::DoContentCommandEvent(WidgetContentCommandEvent* aEvent)
+             transferable->GetIsPrivateData(&isPrivateData);
+             nsCOMPtr<nsIPrincipal> requestingPrincipal;
+             transferable->GetRequestingPrincipal(getter_AddRefs(requestingPrincipal));
++            nsContentPolicyType contentPolicyType = nsIContentPolicy::TYPE_OTHER;
++            transferable->GetContentPolicyType(&contentPolicyType);
+             remote->SendPasteTransferable(ipcDataTransfer, isPrivateData,
+-                                          IPC::Principal(requestingPrincipal));
++                                          IPC::Principal(requestingPrincipal),
++                                          contentPolicyType);
+             rv = NS_OK;
+           } else {
+             nsCOMPtr<nsICommandController> commandController = do_QueryInterface(controller);
+diff --git dom/ipc/ContentParent.cpp dom/ipc/ContentParent.cpp
+index e27f3eedc1b1..3c3d2fbc3735 100644
+--- dom/ipc/ContentParent.cpp
++++ dom/ipc/ContentParent.cpp
+@@ -2605,6 +2605,7 @@ mozilla::ipc::IPCResult
+ ContentParent::RecvSetClipboard(const IPCDataTransfer& aDataTransfer,
+                                 const bool& aIsPrivateData,
+                                 const IPC::Principal& aRequestingPrincipal,
++                                const uint32_t& aContentPolicyType,
+                                 const int32_t& aWhichClipboard)
+ {
+   nsresult rv;
+@@ -2619,6 +2620,7 @@ ContentParent::RecvSetClipboard(const IPCDataTransfer& aDataTransfer,
+   rv = nsContentUtils::IPCTransferableToTransferable(aDataTransfer,
+                                                      aIsPrivateData,
+                                                      aRequestingPrincipal,
++                                                     aContentPolicyType,
+                                                      trans, this, nullptr);
+   NS_ENSURE_SUCCESS(rv, IPC_OK());
+ 
+diff --git dom/ipc/ContentParent.h dom/ipc/ContentParent.h
+index 1977cfbfd651..a1311bd39403 100644
+--- dom/ipc/ContentParent.h
++++ dom/ipc/ContentParent.h
+@@ -976,6 +976,7 @@ private:
+   virtual mozilla::ipc::IPCResult RecvSetClipboard(const IPCDataTransfer& aDataTransfer,
+                                                    const bool& aIsPrivateData,
+                                                    const IPC::Principal& aRequestingPrincipal,
++                                                   const uint32_t& aContentPolicyType,
+                                                    const int32_t& aWhichClipboard) override;
+ 
+   virtual mozilla::ipc::IPCResult RecvGetClipboard(nsTArray<nsCString>&& aTypes,
+diff --git dom/ipc/PBrowser.ipdl dom/ipc/PBrowser.ipdl
+index 3a7b21271fec..b1cf9efbe964 100644
+--- dom/ipc/PBrowser.ipdl
++++ dom/ipc/PBrowser.ipdl
+@@ -720,7 +720,8 @@ child:
+      */
+     async PasteTransferable(IPCDataTransfer aDataTransfer,
+                             bool aIsPrivateData,
+-                            Principal aRequestingPrincipal);
++                            Principal aRequestingPrincipal,
++                            uint32_t aContentPolicyType);
+ 
+     /**
+      * Activate event forwarding from client to parent.
+diff --git dom/ipc/PContent.ipdl dom/ipc/PContent.ipdl
+index 7e33b2920cbe..4ab9da3cc105 100644
+--- dom/ipc/PContent.ipdl
++++ dom/ipc/PContent.ipdl
+@@ -837,6 +837,7 @@ parent:
+     async SetClipboard(IPCDataTransfer aDataTransfer,
+                        bool aIsPrivateData,
+                        Principal aRequestingPrincipal,
++                       uint32_t aContentPolicyType,
+                        int32_t aWhichClipboard);
+ 
+     // Given a list of supported types, returns the clipboard data for the
+diff --git dom/ipc/TabChild.cpp dom/ipc/TabChild.cpp
+index 50725636d280..72df59ea98c0 100644
+--- dom/ipc/TabChild.cpp
++++ dom/ipc/TabChild.cpp
+@@ -2164,7 +2164,8 @@ TabChild::RecvNormalPrioritySelectionEvent(const WidgetSelectionEvent& aEvent)
+ mozilla::ipc::IPCResult
+ TabChild::RecvPasteTransferable(const IPCDataTransfer& aDataTransfer,
+                                 const bool& aIsPrivateData,
+-                                const IPC::Principal& aRequestingPrincipal)
++                                const IPC::Principal& aRequestingPrincipal,
++                                const uint32_t& aContentPolicyType)
+ {
+   nsresult rv;
+   nsCOMPtr<nsITransferable> trans =
+@@ -2175,6 +2176,7 @@ TabChild::RecvPasteTransferable(const IPCDataTransfer& aDataTransfer,
+   rv = nsContentUtils::IPCTransferableToTransferable(aDataTransfer,
+                                                      aIsPrivateData,
+                                                      aRequestingPrincipal,
++                                                     aContentPolicyType,
+                                                      trans, nullptr, this);
+   NS_ENSURE_SUCCESS(rv, IPC_OK());
+ 
+diff --git dom/ipc/TabChild.h dom/ipc/TabChild.h
+index f18906568c1c..48bd8e9eb86e 100644
+--- dom/ipc/TabChild.h
++++ dom/ipc/TabChild.h
+@@ -454,7 +454,8 @@ public:
+   virtual mozilla::ipc::IPCResult
+   RecvPasteTransferable(const IPCDataTransfer& aDataTransfer,
+                         const bool& aIsPrivateData,
+-                        const IPC::Principal& aRequestingPrincipal) override;
++                        const IPC::Principal& aRequestingPrincipal,
++                        const uint32_t& aContentPolicyType) override;
+ 
+   virtual mozilla::ipc::IPCResult
+   RecvActivateFrameEvent(const nsString& aType, const bool& aCapture) override;
+diff --git dom/ipc/TabParent.cpp dom/ipc/TabParent.cpp
+index d4e3d11ea2e9..ae43c24e8891 100644
+--- dom/ipc/TabParent.cpp
++++ dom/ipc/TabParent.cpp
+@@ -2312,11 +2312,13 @@ TabParent::SendSelectionEvent(WidgetSelectionEvent& aEvent)
+ bool
+ TabParent::SendPasteTransferable(const IPCDataTransfer& aDataTransfer,
+                                  const bool& aIsPrivateData,
+-                                 const IPC::Principal& aRequestingPrincipal)
++                                 const IPC::Principal& aRequestingPrincipal,
++                                 const uint32_t& aContentPolicyType)
+ {
+   return PBrowserParent::SendPasteTransferable(aDataTransfer,
+                                                aIsPrivateData,
+-                                               aRequestingPrincipal);
++                                               aRequestingPrincipal,
++                                               aContentPolicyType);
+ }
+ 
+ /*static*/ TabParent*
+diff --git dom/ipc/TabParent.h dom/ipc/TabParent.h
+index c31827499403..e3c2601ce0b4 100644
+--- dom/ipc/TabParent.h
++++ dom/ipc/TabParent.h
+@@ -497,7 +497,8 @@ public:
+ 
+   bool SendPasteTransferable(const IPCDataTransfer& aDataTransfer,
+                              const bool& aIsPrivateData,
+-                             const IPC::Principal& aRequestingPrincipal);
++                             const IPC::Principal& aRequestingPrincipal,
++                             const uint32_t& aContentPolicyType);
+ 
+   static TabParent* GetFrom(nsFrameLoader* aFrameLoader);
+ 
+diff --git widget/nsClipboardProxy.cpp widget/nsClipboardProxy.cpp
+index f7d863475b13..4fb90721c0b6 100644
+--- widget/nsClipboardProxy.cpp
++++ widget/nsClipboardProxy.cpp
+@@ -37,8 +37,11 @@ nsClipboardProxy::SetData(nsITransferable *aTransferable,
+   aTransferable->GetIsPrivateData(&isPrivateData);
+   nsCOMPtr<nsIPrincipal> requestingPrincipal;
+   aTransferable->GetRequestingPrincipal(getter_AddRefs(requestingPrincipal));
++  nsContentPolicyType contentPolicyType = nsIContentPolicy::TYPE_OTHER;
++  aTransferable->GetContentPolicyType(&contentPolicyType);
+   child->SendSetClipboard(ipcDataTransfer, isPrivateData,
+-                          IPC::Principal(requestingPrincipal), aWhichClipboard);
++                          IPC::Principal(requestingPrincipal),
++                          contentPolicyType, aWhichClipboard);
+ 
+   return NS_OK;
+ }

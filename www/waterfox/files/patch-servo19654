@@ -1,0 +1,44 @@
+commit 61f3d7e4e83b
+Author: Emilio Cobos Álvarez <emilio@crisal.io>
+Date:   Wed Jan 3 12:01:42 2018 -0600
+
+    servo: Merge #19654 - style: Allow building stylo with rust nightly (from emilio:geckolib-nightly); r=jdm
+    
+    See individual commits for details.
+    
+    Source-Repo: https://github.com/servo/servo
+    Source-Revision: f71fb8bddc28060320c233701898541112322d66
+    
+    --HG--
+    extra : subtree_source : https%3A//hg.mozilla.org/projects/converted-servo-linear
+    extra : subtree_revision : 8f8b2ccece94cc9df26c8c41afba04032fe9d506
+---
+ servo/components/style/gecko/wrapper.rs                  | 2 +-
+ servo/components/style/gecko_bindings/sugar/ownership.rs | 1 -
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+diff --git servo/components/style/gecko/wrapper.rs servo/components/style/gecko/wrapper.rs
+index 034dd94590e2..a516d5db7d0d 100644
+--- servo/components/style/gecko/wrapper.rs
++++ servo/components/style/gecko/wrapper.rs
+@@ -1398,7 +1398,7 @@ impl<'le> Eq for GeckoElement<'le> {}
+ 
+ impl<'le> Hash for GeckoElement<'le> {
+     fn hash<H: Hasher>(&self, state: &mut H) {
+-        (self.0 as *const _).hash(state);
++        (self.0 as *const RawGeckoElement).hash(state);
+     }
+ }
+ 
+diff --git servo/components/style/gecko_bindings/sugar/ownership.rs servo/components/style/gecko_bindings/sugar/ownership.rs
+index b0ac00368eae..8695efaaa40f 100644
+--- servo/components/style/gecko_bindings/sugar/ownership.rs
++++ servo/components/style/gecko_bindings/sugar/ownership.rs
+@@ -109,7 +109,6 @@ pub unsafe trait HasArcFFI : HasFFI {
+     ///
+     /// &GeckoType -> &Arc<ServoType>
+     fn as_arc<'a>(ptr: &'a &Self::FFIType) -> &'a RawOffsetArc<Self> {
+-        debug_assert!(!(ptr as *const _).is_null());
+         unsafe {
+             transmute::<&&Self::FFIType, &RawOffsetArc<Self>>(ptr)
+         }

@@ -1,0 +1,71 @@
+commit 6ad2160158ba (origin/beta)
+Author: Matthew Gaudet <mgaudet@mozilla.com>
+Date:   Fri Mar 23 13:10:08 2018 -0700
+
+    Bug 1448136 - Ensure Debug OSR transition is respected in InstanceOf Fallback stub. r=jandem, a=RyanVM
+    
+    --HG--
+    extra : source : af66807a5c4b8366dc98d3aae7d55124003a1039
+---
+ js/src/jit-test/tests/cacheir/bug1448136.js | 23 +++++++++++++++++++++++
+ js/src/jit/BaselineIC.cpp                   |  9 ++++++++-
+ 2 files changed, 31 insertions(+), 1 deletion(-)
+
+diff --git js/src/jit-test/tests/cacheir/bug1448136.js js/src/jit-test/tests/cacheir/bug1448136.js
+new file mode 100644
+index 000000000000..6256cb751e34
+--- /dev/null
++++ js/src/jit-test/tests/cacheir/bug1448136.js
+@@ -0,0 +1,23 @@
++print = function(s) { return s.toString(); }
++assertEq = function(a,b) {
++  try { print(a); print(b); } catch(exc) {}
++}
++g = newGlobal();
++g.parent = this;
++g.eval("(" + function() {
++  Debugger(parent).onExceptionUnwind = function(frame) {
++    frame.older
++  }
++} + ")()")
++function a() {};
++function b() {};
++for (let _ of Array(100))
++  assertEq(b instanceof a, true);
++function c(){};
++function d(){};
++function e(){};
++Object.defineProperty(a, Symbol.hasInstance, {value: assertEq });
++let funcs = [a, b, c, d];
++for (let f of funcs)
++  assertEq(e instanceof f, true);
++
+diff --git js/src/jit/BaselineIC.cpp js/src/jit/BaselineIC.cpp
+index 69aabacda0cd..20440b4a980b 100644
+--- js/src/jit/BaselineIC.cpp
++++ js/src/jit/BaselineIC.cpp
+@@ -4146,9 +4146,12 @@ TryAttachInstanceOfStub(JSContext* cx, BaselineFrame* frame, ICInstanceOf_Fallba
+ }
+ 
+ static bool
+-DoInstanceOfFallback(JSContext* cx, BaselineFrame* frame, ICInstanceOf_Fallback* stub,
++DoInstanceOfFallback(JSContext* cx, BaselineFrame* frame, ICInstanceOf_Fallback* stub_,
+                      HandleValue lhs, HandleValue rhs, MutableHandleValue res)
+ {
++    // This fallback stub may trigger debug mode toggling.
++    DebugModeOSRVolatileStub<ICInstanceOf_Fallback*> stub(ICStubEngine::Baseline, frame, stub_);
++
+     FallbackICSpew(cx, stub, "InstanceOf");
+ 
+     if (!rhs.isObject()) {
+@@ -4163,6 +4166,10 @@ DoInstanceOfFallback(JSContext* cx, BaselineFrame* frame, ICInstanceOf_Fallback*
+ 
+     res.setBoolean(cond);
+ 
++    // Check if debug mode toggling made the stub invalid.
++    if (stub.invalid())
++        return true;
++
+     if (!obj->is<JSFunction>()) {
+         stub->noteUnoptimizableAccess();
+         return true;
