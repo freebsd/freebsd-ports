@@ -1,0 +1,7 @@
+SymCXX is an experimental Python package (with its core implemented in C++)
+for symbolic manipulation with limited scope (as in minimal). It tries to stay
+compatible with the API of SymPy. Its main goal is to explore designs related
+to automatic differentiation and numerical evaluation similar to SymEngine's
+Lambdify functionality.
+
+WWW: https://github.com/bjodah/symcxx

@@ -676,6 +676,7 @@
     SUBDIR += py-seaborn
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
+    SUBDIR += py-symcxx
     SUBDIR += py-symeig
     SUBDIR += py-sympy
     SUBDIR += py-theano
