@@ -76,8 +76,8 @@
 %%MPIDIR%%/include/openmpi/ompi/mpiext/cuda/c/mpiext_cuda_c.h
 %%MPIDIR%%/lib/libmca_common_ompio.la
 %%MPIDIR%%/lib/libmca_common_ompio.so
-%%MPIDIR%%/lib/libmca_common_ompio.so.40
-%%MPIDIR%%/lib/libmca_common_ompio.so.40.0.0
+%%MPIDIR%%/lib/libmca_common_ompio.so.41
+%%MPIDIR%%/lib/libmca_common_ompio.so.41.0.0
 %%MPIDIR%%/lib/libmca_common_sm.la
 %%MPIDIR%%/lib/libmca_common_sm.so
 %%MPIDIR%%/lib/libmca_common_sm.so.40
@@ -85,7 +85,7 @@
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.40
-%%MPIDIR%%/lib/libmpi.so.40.0.0
+%%MPIDIR%%/lib/libmpi.so.40.0.1
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.40
@@ -105,11 +105,11 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.40
-%%MPIDIR%%/lib/libopen-pal.so.40.0.0
+%%MPIDIR%%/lib/libopen-pal.so.40.1.0
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.40
-%%MPIDIR%%/lib/libopen-rte.so.40.0.0
+%%MPIDIR%%/lib/libopen-rte.so.40.0.1
 %%MPIDIR%%/lib/monitoring_prof.la
 %%MPIDIR%%/lib/monitoring_prof.so
 %%MPIDIR%%/lib/mpi.mod
