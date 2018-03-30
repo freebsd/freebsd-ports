@@ -1,5 +1,5 @@
---- bin/tartarus.orig	2016-08-08 16:38:21.322171000 +0000
-+++ bin/tartarus	2016-08-08 16:39:07.701706000 +0000
+--- bin/tartarus.orig	2018-03-30 17:57:10.233266000 +0100
++++ bin/tartarus	2018-03-30 17:57:45.818667000 +0100
 @@ -41,6 +41,8 @@
  set -f
  shopt -s nocasematch
@@ -78,7 +78,7 @@
              local EXITCODE=$?
              # exit code 1 means that some files have changed while backing them
              # up, we think that is OK for now
-@@ -678,17 +711,24 @@
+@@ -678,21 +711,28 @@
          # define storage procedure
          storage() {
              # stay silent, but print error messages if aborting
@@ -113,3 +113,8 @@
              local FILE=$(constructFilename)
              local URL="$PROTO://$STORAGE_FTP_SERVER/$STORAGE_FTP_DIR/$FILE"
              debug "Uploading backup to $URL..."
+-            curl $OPTS --upload-file - "$URL"
++            curl $OPTS --ftp-create-dirs --upload-file - "$URL"
+         }
+     ;;
+     FILE)

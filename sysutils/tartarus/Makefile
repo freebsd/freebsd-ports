@@ -3,7 +3,7 @@
 
 PORTNAME=	tartarus
 PORTVERSION=	0.9.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wertarbyte.de/tartarus/ \
 		http://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
