@@ -1,0 +1,7 @@
+kr enables SSH to authenticate with a key stored in a Krypton (iOS or
+Android) mobile app. kr runs as an SSH agent, called krd. When a Krypton
+private key operation is needed for authentication, krd routes this
+request to the paired mobile phone, where the user decides whether to
+allow the operation or not. The private key never leaves the phone.
+
+WWW: https://krypt.co

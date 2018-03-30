@@ -1,0 +1,13 @@
+TIMESTAMP = 1522346317
+SHA256 (kryptco-kr-2.3.1_GH0.tar.gz) = 1bc552e8acd06197499e8bc3f3a63334266eadb256bdf1abec7916ebd9295807
+SIZE (kryptco-kr-2.3.1_GH0.tar.gz) = 1878064
+SHA256 (atotto-clipboard-bb272b8_GH0.tar.gz) = 7385442ce255d762509d40ab6f2e5cb3645eebb5bc8b1c7bc25e275ec40452e3
+SIZE (atotto-clipboard-bb272b8_GH0.tar.gz) = 3729
+SHA256 (kryptco-qr-eb334d7_GH0.tar.gz) = 9e131483f12fbce2079f08ae6d47efa31335b8f8dbbcaaba97e0a600572a00ac
+SIZE (kryptco-qr-eb334d7_GH0.tar.gz) = 12224
+SHA256 (kryptco-gf256-bbd714a_GH0.tar.gz) = 0d785bbba438b099ac83368cade518695d0561539f9187bb4d00ca097532be81
+SIZE (kryptco-gf256-bbd714a_GH0.tar.gz) = 2277
+SHA256 (urfave-cli-b438abf_GH0.tar.gz) = e665f01314672565dd89d916529e39e35fee6c60738a2c537375d98c1fb80e18
+SIZE (urfave-cli-b438abf_GH0.tar.gz) = 45955
+SHA256 (op-go-logging-970db52_GH0.tar.gz) = e162503746867342a1a981ba38ca6ce214c8debede6819bbe1517f4da3bbeede
+SIZE (op-go-logging-970db52_GH0.tar.gz) = 37177
