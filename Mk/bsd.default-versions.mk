@@ -60,7 +60,7 @@ MYSQL_DEFAULT?=		5.6
 # Possible values: 5.22, 5.24, 5.26, devel
 .if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
-PERL5_DEFAULT?=		5.24
+PERL5_DEFAULT?=		5.26
 .elif !defined(PERL5_DEFAULT)
 # There's no need to replace development versions, like "5.23" with "devel"
 # because 1) nobody is supposed to use it outside of poudriere, and 2) it must
