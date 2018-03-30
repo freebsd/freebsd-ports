@@ -1,0 +1,15 @@
+Arb is an implementation of ball arithmetic, also known as mid-rad interval
+arithmetic. Ball arithmetic is an extension of floating-point arithmetic in
+which an error bound is attached to each variable. This allows computing
+rigorously with real and complex numbers.
+
+With plain floating-point arithmetic, the user must do an error analysis to
+guarantee that results are correct. Manual error analysis is time-consuming and
+bug-prone. Ball arithmetic effectively makes error analysis automatic.
+
+Arb is designed for computer algebra and computational number theory, but may be
+useful in any area demanding reliable or precise numerical computing. Arb scales
+seamlessly from tens of digits up to billions of digits. Efficiency is achieved
+by low level optimizations and use of asymptotically fast algorithms.
+
+WWW: http://arblib.org/

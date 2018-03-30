@@ -110,6 +110,7 @@
     SUBDIR += analitza-kde4
     SUBDIR += ann
     SUBDIR += apc
+    SUBDIR += arb
     SUBDIR += aribas
     SUBDIR += armadillo
     SUBDIR += arpack
