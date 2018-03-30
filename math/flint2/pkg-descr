@@ -1,0 +1,11 @@
+FLINT is a C library for doing number theory, maintained by William Hart.
+
+FLINT supports arithmetic with numbers, polynomials, power series and matrices
+over many base rings, including:
+* Multiprecision integers and rationals
+* Integers modulo n
+* p-adic numbers
+* Finite fields (prime and non-prime order)
+* Real and complex numbers (via the Arb extension library)
+
+WWW: http://www.flintlib.org/

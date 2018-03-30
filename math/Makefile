@@ -183,6 +183,7 @@
     SUBDIR += fftw3-quad
     SUBDIR += fityk
     SUBDIR += flann
+    SUBDIR += flint2
     SUBDIR += form
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
