@@ -40,7 +40,7 @@
 %%WWWDIR%%/js/public/vendor.js
 %%WWWDIR%%/js/public/vendor.min.js
 %%WWWDIR%%/js/public/vendor.min.js.map
-%%WWWDIR%%/l10n/.tx/config
+%%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/af.js
 %%WWWDIR%%/l10n/af.json
 %%WWWDIR%%/l10n/ar.js
@@ -63,8 +63,6 @@
 %%WWWDIR%%/l10n/el.json
 %%WWWDIR%%/l10n/en_GB.js
 %%WWWDIR%%/l10n/en_GB.json
-%%WWWDIR%%/l10n/eo.js
-%%WWWDIR%%/l10n/eo.json
 %%WWWDIR%%/l10n/es.js
 %%WWWDIR%%/l10n/es.json
 %%WWWDIR%%/l10n/es_419.js
