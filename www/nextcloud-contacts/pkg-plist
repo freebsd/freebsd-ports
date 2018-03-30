@@ -1,6 +1,7 @@
 %%WWWDIR%%/appinfo/app.php
 %%WWWDIR%%/appinfo/info.xml
 %%WWWDIR%%/appinfo/routes.php
+%%WWWDIR%%/appinfo/signature.json
 %%WWWDIR%%/css/_animations.scss
 %%WWWDIR%%/css/_contactlist.scss
 %%WWWDIR%%/css/_details.scss
@@ -42,11 +43,10 @@
 %%WWWDIR%%/js/vendor/ui-bootstrap/ui-bootstrap-tpls.js
 %%WWWDIR%%/js/vendor/ui-bootstrap/ui-bootstrap.js
 %%WWWDIR%%/js/vendor/ui-select/select.js
-%%WWWDIR%%/js/vendor/ui-select/select.min.css.map
 %%WWWDIR%%/js/vendor/ui-select/select.min.js
 %%WWWDIR%%/js/vendor/ui-select/select.min.js.map
 %%WWWDIR%%/js/vendor/vcard/vcard.js
-%%WWWDIR%%/l10n/.tx/config
+%%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/af.js
 %%WWWDIR%%/l10n/af.json
 %%WWWDIR%%/l10n/ar.js
