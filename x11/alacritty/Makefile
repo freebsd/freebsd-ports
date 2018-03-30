@@ -2,6 +2,7 @@
 
 PORTNAME=	alacritty
 PORTVERSION=	g20180126
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	zeising@FreeBSD.org
@@ -20,9 +21,6 @@ GH_ACCOUNT=	jwilm
 GH_TAGNAME=	b82622e9948d1c90fc628739c7f328816214fb33
 GH_TUPLE=	jwilm:rust-fontconfig:be2b94de833ec69cf767186262a5fb8360fa5b45:servofontconfig \
 		jwilm:libfontconfig:5c1845e1bffa11cf4d3e6fb27f456bf5c814ce1b:servofontconfigsys
-
-EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${OSREL:R}}
-EXTRA_PATCHES_FreeBSD_12=	${PATCHDIR}/extra-patch-freebsd12
 
 PLIST_FILES=	bin/alacritty \
 		${DESKTOPDIR:S,^${PREFIX}/,,}/Alacritty.desktop
@@ -92,7 +90,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		lazy_static-1.0.0 \
 		lazycell-0.4.0 \
 		lazycell-0.6.0 \
-		libc-0.2.36 \
+		libc-0.2.39 \
 		libloading-0.4.3 \
 		libz-sys-1.0.18 \
 		linked-hash-map-0.5.0 \
