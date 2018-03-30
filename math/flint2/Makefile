@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	flint2
-DISTVERSION=	g20170804
+DISTVERSION=	g20180323
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	d900af4ca348b054c0e6b2a6645a54744ec9e74b.patch:-p1 # fix 32-bit failure: https://github.com/fredrik-johansson/flint2/pull/22
+PATCHFILES=	95c58b723a9463c27d35e182dfcba6d347eca624.patch:-p1 # cmake fixes: https://github.com/wbhart/flint2/pull/459
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast library for number theory
@@ -16,15 +16,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
-USES=		gmake
+USES=		cmake:outsource
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 USE_GITHUB=	yes
-GH_ACCOUNT=	fredrik-johansson
-GH_TAGNAME=	5f2a264
+GH_ACCOUNT=	wbhart
+GH_TAGNAME=	83008bd
 USE_LDCONFIG=	yes
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libflint.so.*
+CMAKE_ON=	BUILD_SHARED_LIBS
 
 .include <bsd.port.mk>
