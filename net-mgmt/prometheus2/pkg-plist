@@ -1,0 +1,4 @@
+bin/prometheus
+bin/promtool
+@sample etc/prometheus.yml.sample
+@dir(prometheus,prometheus) /var/db/prometheus
