@@ -1,0 +1,173 @@
+commit ece500858fb2
+Author: Jonathan Kew <jkew@mozilla.com>
+Date:   Wed Mar 28 10:17:51 2018 +0100
+
+    Bug 1448771 - Update hnjstdio to handle additional functions from stdio.h that libhyphen wants to use. r=glandium, a=RyanVM
+    
+    --HG--
+    extra : source : 846bcaa210aa2264bec412c0595113964fafc972
+---
+ intl/hyphenation/glue/hnjalloc.h   |  6 +++++
+ intl/hyphenation/glue/hnjstdio.cpp | 50 ++++++++++++++++++++++++++------------
+ 2 files changed, 41 insertions(+), 15 deletions(-)
+
+diff --git intl/hyphenation/glue/hnjalloc.h intl/hyphenation/glue/hnjalloc.h
+index fec3a4bc9009..5cee1be1b6d7 100644
+--- intl/hyphenation/glue/hnjalloc.h
++++ intl/hyphenation/glue/hnjalloc.h
+@@ -31,6 +31,8 @@
+ #define fopen(path,mode)      hnjFopen(path,mode)
+ #define fclose(file)          hnjFclose(file)
+ #define fgets(buf,count,file) hnjFgets(buf,count,file)
++#define feof(file)            hnjFeof(file)
++#define fgetc(file)           hnjFgetc(file)
+ 
+ typedef struct hnjFile_ hnjFile;
+ 
+@@ -44,6 +46,10 @@ int hnjFclose(hnjFile* f);
+ 
+ char* hnjFgets(char* s, int n, hnjFile* f);
+ 
++int hnjFeof(hnjFile* f);
++
++int hnjFgetc(hnjFile* f);
++
+ #ifdef __cplusplus
+ }
+ #endif
+diff --git intl/hyphenation/glue/hnjstdio.cpp intl/hyphenation/glue/hnjstdio.cpp
+index 660ebaf13291..8d50ae17f57b 100644
+--- intl/hyphenation/glue/hnjstdio.cpp
++++ intl/hyphenation/glue/hnjstdio.cpp
+@@ -22,6 +22,7 @@ struct hnjFile_ {
+     char                     mBuffer[BUFSIZE];
+     uint32_t                 mCurPos;
+     uint32_t                 mLimit;
++    bool                     mEOF;
+ };
+ 
+ // replacement for fopen()
+@@ -58,6 +59,7 @@ hnjFopen(const char* aURISpec, const char* aMode)
+     f->mStream = instream;
+     f->mCurPos = 0;
+     f->mLimit = 0;
++    f->mEOF = false;
+ 
+     return f;
+ }
+@@ -79,6 +81,27 @@ hnjFclose(hnjFile* f)
+     return result;
+ }
+ 
++// replacement for fgetc()
++int
++hnjFgetc(hnjFile* f)
++{
++    if (f->mCurPos >= f->mLimit) {
++        f->mCurPos = 0;
++
++        nsresult rv = f->mStream->Read(f->mBuffer, BUFSIZE, &f->mLimit);
++        if (NS_FAILED(rv)) {
++            f->mLimit = 0;
++        }
++
++        if (f->mLimit == 0) {
++            f->mEOF = true;
++            return EOF;
++        }
++    }
++
++    return f->mBuffer[f->mCurPos++];
++}
++
+ // replacement for fgets()
+ // (not a full reimplementation, but sufficient for libhyphen's needs)
+ char*
+@@ -88,24 +111,15 @@ hnjFgets(char* s, int n, hnjFile* f)
+ 
+     int i = 0;
+     while (i < n - 1) {
+-        if (f->mCurPos < f->mLimit) {
+-            char c = f->mBuffer[f->mCurPos++];
+-            s[i++] = c;
+-            if (c == '\n' || c == '\r') {
+-                break;
+-            }
+-            continue;
+-        }
+-
+-        f->mCurPos = 0;
++        int c = hnjFgetc(f);
+ 
+-        nsresult rv = f->mStream->Read(f->mBuffer, BUFSIZE, &f->mLimit);
+-        if (NS_FAILED(rv)) {
+-            f->mLimit = 0;
+-            return nullptr;
++        if (c == EOF) {
++            break;
+         }
+ 
+-        if (f->mLimit == 0) {
++        s[i++] = c;
++
++        if (c == '\n' || c == '\r') {
+             break;
+         }
+     }
+@@ -117,3 +131,9 @@ hnjFgets(char* s, int n, hnjFile* f)
+     s[i] = '\0'; // null-terminate the returned string
+     return s;
+ }
++
++int
++hnjFeof(hnjFile* f)
++{
++    return f->mEOF ? EOF : 0;
++}
+
+commit 5174306ad60c
+Author: Jonathan Kew <jkew@mozilla.com>
+Date:   Mon Mar 26 20:35:48 2018 +0100
+
+    Bug 1448771 - Merge fix from upstream. r=ryanvm, a=RyanVM
+    
+    --HG--
+    extra : source : f5db47b5c6416a3cef546de1aa9089d98109f95f
+---
+ intl/hyphenation/hyphen/hyphen.c | 22 ++++++++++++++++++----
+ 1 file changed, 18 insertions(+), 4 deletions(-)
+
+diff --git intl/hyphenation/hyphen/hyphen.c intl/hyphenation/hyphen/hyphen.c
+index 9a132d0262f2..9f2b7112c848 100644
+--- intl/hyphenation/hyphen/hyphen.c
++++ intl/hyphenation/hyphen/hyphen.c
+@@ -438,11 +438,25 @@ for (k = 0; k < 2; k++) {
+   }
+ 
+   if (k == 0 || nextlevel) {
+-    while (fgets (buf, sizeof(buf), f) != NULL) {
++    while (fgets(buf, sizeof(buf), f) != NULL) {
++      
++      /* discard lines that don't fit in buffer */
++      if (!feof(f) && strchr(buf, '\n') == NULL) {
++        int c;
++        while ((c = fgetc(f)) != '\n' && c != EOF);
++        /* issue warning if not a comment */
++        if (buf[0] != '%') {
++          fprintf(stderr, "Warning: skipping too long pattern (more than %lu chars)\n", sizeof(buf));
++        }
++        continue;
++      }
++      
+       if (strncmp(buf, "NEXTLEVEL", 9) == 0) {
+-	nextlevel = 1;
+-	break;
+-      } else if (buf[0] != '%') hnj_hyphen_load_line(buf, dict[k], hashtab);
++        nextlevel = 1;
++        break;
++      } else if (buf[0] != '%') {
++        hnj_hyphen_load_line(buf, dict[k], hashtab);
++      }
+     }
+   } else if (k == 1) {
+     /* default first level: hyphen and ASCII apostrophe */
