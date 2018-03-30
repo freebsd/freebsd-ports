@@ -1,4 +1,5 @@
 bin/fc-solve
+bin/fc_solve_find_index_s2ints.py
 bin/find-freecell-deal-index.py
 bin/freecell-solver-fc-pro-range-solve
 bin/freecell-solver-multi-thread-solve
