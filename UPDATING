@@ -35,6 +35,10 @@ you update your ports collection, before attempting any port upgrades.
   incompatible way versus previous versions. This comprises changed recursion
   behaviour, signature support, a change for SIGINT (vs. SIGHUP) behaviour.
 
+  Note especially that dnsmasq will no longer answer non-recursive queries
+  unless it is marked authoritative!  Be sure to see the manual page for the
+  various --auth-* options, such as --auth-zone.
+
   Please see the CHANGELOG that ships with dnsmasq for details.
 
 20180317:
