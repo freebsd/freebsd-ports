@@ -1,0 +1,9 @@
+=========================================================================
+If you want to run log-courier, add to /etc/rc.conf
+
+	log_courier_enable="YES"
+
+Do not forget to edit your configuration file:
+
+	Default: ${PREFIX}/etc/log-courier.conf
+=========================================================================

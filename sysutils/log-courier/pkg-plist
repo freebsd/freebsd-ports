@@ -1,0 +1,2 @@
+bin/log-courier
+@sample etc/log-courier.conf.example etc/log-courier.conf
