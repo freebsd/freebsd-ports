@@ -13,6 +13,7 @@ COMMENT=	Webapp of Mattermost server
 LICENSE=	APACHE20
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WWWDIR=		${PREFIX}/www/mattermost
 
@@ -25,11 +26,9 @@ GROUPS=		${MATTERMOSTD_GROUP}
 PLIST_SUB=	MATTERMOSTD_USER=${MATTERMOSTD_USER} \
 			MATTERMOSTD_GROUP=${MATTERMOSTD_GROUP}
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
-	${CP} -R ${WRKDIR}/mattermost/client ${STAGEDIR}${WWWDIR}
+	cd ${WRKDIR}/mattermost && ${COPYTREE_SHARE} client ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/client/plugins
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
