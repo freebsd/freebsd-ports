@@ -1,0 +1,33 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: log_courier
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable logstash-forwarder:
+# log_courier_enable (bool):	Set to YES to logstash-forwarder
+#				Default: NO
+# log_courier_flags (str):	Extra flags passed to log-courier
+# log_courier_conf (str):	log-courier configuration file
+#				Default: ${PREFIX}/etc/log-courier.conf
+
+. /etc/rc.subr
+
+name="log_courier"
+rcvar=log_courier_enable
+
+load_rc_config ${name}
+
+logdir="/var/log"
+
+: ${log_courier_enable="NO"}
+: ${log_courier_flags=""}
+: ${log_courier_conf="%%PREFIX%%/etc/log-courier.conf"}
+
+log_courier_cmd="%%PREFIX%%/bin/log-courier"
+command="/usr/sbin/daemon"
+command_args="${log_courier_cmd} -config ${log_courier_conf}"
+
+run_rc_command "$1"

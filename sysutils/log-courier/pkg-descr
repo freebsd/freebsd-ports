@@ -1,0 +1,6 @@
+Log Courier is a lightweight tool created to ship log files speedily and
+securely, with low resource usage, to remote Logstash instances.
+
+It is developed to be efficient, reliable, scalable, and easy to use.
+
+WWW: https://github.com/driskell/log-courier
