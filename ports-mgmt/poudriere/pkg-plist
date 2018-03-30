@@ -37,7 +37,6 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/awk/processonelog2.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
 %%DATADIR%%/bulk.sh
-%%DATADIR%%/clean.sh
 %%DATADIR%%/common.sh
 %%DATADIR%%/daemon.sh
 %%DATADIR%%/distclean.sh
