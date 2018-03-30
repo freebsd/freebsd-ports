@@ -1,3 +1,37 @@
+bin/svclone
+%%ROOT%%@dir %%RUNITDIR%%
+%%ROOT%%@dir %%RUNITDIR%%/core-services
+%%RUNITDIR%%/1
+%%RUNITDIR%%/2
+%%RUNITDIR%%/3
+%%RUNITDIR%%/core-services/11-kld.sh
+%%RUNITDIR%%/core-services/11-set-defaults.sh
+%%RUNITDIR%%/core-services/21-swap.sh
+%%RUNITDIR%%/core-services/31-enable-dumpdev.sh
+%%RUNITDIR%%/core-services/31-fsck.sh
+%%RUNITDIR%%/core-services/31-mount.sh
+%%RUNITDIR%%/core-services/33-microcode_update.sh
+%%RUNITDIR%%/core-services/33-var.sh
+%%RUNITDIR%%/core-services/41-entropy.sh
+%%RUNITDIR%%/core-services/41-hostid.sh
+%%RUNITDIR%%/core-services/41-hostname.sh
+%%RUNITDIR%%/core-services/41-ldconfig.sh
+%%RUNITDIR%%/core-services/41-loopback.sh
+%%RUNITDIR%%/core-services/41-mixer.sh
+%%RUNITDIR%%/core-services/41-nextboot.sh
+%%RUNITDIR%%/core-services/41-rctl.sh
+%%RUNITDIR%%/core-services/43-bhyve-bridge.sh
+%%RUNITDIR%%/core-services/51-pf.sh
+%%RUNITDIR%%/core-services/99-cleanup.sh
+%%RUNITDIR%%/core-services/99-mount-late.sh
+%%RUNITDIR%%/core-services/99-qemu_user_static.sh
+%%RUNITDIR%%/ctrlaltdel
+%%RUNITDIR%%/functions
+%%RUNITDIR%%/jail
+%%RUNITDIR%%/reboot
+@dir %%RUNITDIR%%/runsvdir
+@dir %%RUNITDIR%%/runsvdir/default
+%%RUNITDIR%%/stopit
 man/man8/chpst.8.gz
 man/man8/runit-init.8.gz
 man/man8/runit.8.gz
@@ -7,7 +41,17 @@ man/man8/runsvdir.8.gz
 man/man8/sv.8.gz
 man/man8/svlogd.8.gz
 man/man8/utmpset.8.gz
+sbin/chpst
+%%ROOT%%/sbin/runit
+%%NO_ROOT%%sbin/runit
+%%ROOT%%/sbin/runit-init
+%%NO_ROOT%%sbin/runit-init
+sbin/runsv
+sbin/runsvchdir
+sbin/runsvdir
+sbin/sv
+sbin/svlogd
+sbin/utmpset
 @postexec [ ! -e %%RUNITDIR%%/runsvdir/current ] && cd %%RUNITDIR%%/runsvdir && ln -s default current
-@postunexec rm -f %%RUNITDIR%%/runsvdir/current
-@postexec ln -sf /var/run/runit/runsvdir/current /var/service
-@postunexec rm -f /var/service
+@postexec ln -sF /var/run/runit/runsvdir/current /var/service
+@rmtry /var/service

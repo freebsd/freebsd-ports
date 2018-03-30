@@ -4,7 +4,7 @@
 PORTNAME=	runit
 DISTVERSION=	${RUNITVERSION}-${CONFVERSION}
 RUNITVERSION=	2.1.2
-CONFVERSION=	0.1.17
+CONFVERSION=	0.1.18
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/runit/ \
 		http://www.bayofrum.net/dist/runit/ \
@@ -25,17 +25,20 @@ RUN_DEPENDS=	snooze:sysutils/snooze
 CONFLICTS_INSTALL=	runit
 
 PLIST_SUB=	RUNITDIR=${RUNITDIR}
+SUB_FILES=	pkg-message
+SUB_LIST=	RUNITDIR=${RUNITDIR}
 USE_RC_SUBR=	runsvdir
 WRKSRC=		${WRKDIR}/admin/runit-${RUNITVERSION}
 
 OPTIONS_DEFINE=	DOCS ROOT
+OPTIONS_SUB=	yes
 
 ROOT_DESC=	Install bootstrap files into /etc/runit and /sbin
 
 PORTDOCS=	*
 
 ROOT_VARS=	RUNITDIR=/etc/runit SBINDIR=/sbin
-ROOT_VARS_OFF=	RUNITDIR=${PREFIX}/etc/runit SBINDIR=${PREFIX}/sbin
+ROOT_VARS_OFF=	RUNITDIR=${ETCDIR} SBINDIR=${PREFIX}/sbin
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/service/,/var/service,' \
@@ -56,7 +59,11 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${RUNITDIR} ${STAGEDIR}${SBINDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${SBINDIR}
+	cd ${WRKSRC}/command && ${INSTALL_PROGRAM} runit runit-init \
+		${STAGEDIR}${SBINDIR}
+	cd ${WRKSRC}/command && ${INSTALL_PROGRAM} \
+		chpst runsv runsvchdir runsvdir sv svlogd utmpset \
+		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/man/*.8 ${STAGEDIR}${PREFIX}/man/man8
 	@${DO_MAKE_BUILD} -C ${WRKDIR}/freebsd-runit-${CONFVERSION} \
 		DESTDIR=${STAGEDIR} \
@@ -76,20 +83,15 @@ do-install-DOCS-on:
 	cd ${WRKSRC} && ${INSTALL_DATA} \
 		package/CHANGES package/README package/THANKS doc/*.html \
 		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/freebsd-runit-${CONFVERSION}/docs/runit-faster.md \
+		${STAGEDIR}${DOCSDIR}
 
 post-install:
 # Micromanaging pkg-plist is no fun here...  Generate it on the fly
 # instead.
-	@${FIND} -s ${STAGEDIR}${RUNITDIR} ${STAGEDIR}${PREFIX}/etc/sv ${STAGEDIR}${SBINDIR} \
-		-not -type d | ${SORT} | ${SED} \
-		-e 's,^${STAGEDIR},,' \
-		-e 's,^${PREFIX}/,,' \
+	@${FIND} -s ${STAGEDIR}${PREFIX}/etc/sv -not -type d | ${SORT} | \
+		${SED} -e 's,^${STAGEDIR},,' -e 's,^${PREFIX}/,,' \
 		>> ${TMPPLIST}
-	@${FIND} -s ${STAGEDIR}${RUNITDIR} ${STAGEDIR}${PREFIX}/etc/sv ${STAGEDIR}${SBINDIR} \
-	 	-type d | ${SORT} | ${SED} \
-	 	-e 's,^${STAGEDIR},,' \
-		-e 's,^${PREFIX}/,,' \
-	 	-e 's,^,@dir ,' >> ${TMPPLIST}
 
 do-test:
 	@cd ${WRKSRC} && package/check
