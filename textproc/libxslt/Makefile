@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.29
-PORTREVISION?=	1
+PORTVERSION=	1.1.32
+PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	http://xmlsoft.org/sources/ \
 		https://mirror.umd.edu/xbmc/build-deps/sources/
@@ -14,7 +14,7 @@ COMMENT?=	The XSLT C library for GNOME
 
 .if !defined(REFERENCE_PORT)
 
-USES+=		cpe gmake libtool pathfix
+USES+=		cpe gmake localbase libtool pathfix
 CPE_VENDOR=	xmlsoft
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -22,8 +22,6 @@ USE_LDCONFIG=	yes
 USE_GNOME?=	libxml2
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 LICENSE=	MIT
 
