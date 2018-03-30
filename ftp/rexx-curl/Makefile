@@ -25,6 +25,7 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rexx=regina
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/rexx${PORTNAME}
 DATADIR=	${PREFIX}/share/rexx${PORTNAME}
