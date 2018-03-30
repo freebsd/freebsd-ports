@@ -30,10 +30,6 @@ CPE_PRODUCT=	http_server
 PORTDOCS=	*
 SUB_FILES=	pkg-install pkg-deinstall
 
-# XXX: before running makepatch please run the command
-# `$SED -e 's/PATCH_PATH_SEPARATOR=/PATCH_PATH_SEPARATOR?=/' Mk/bsd.port.mk
-PATCH_PATH_SEPARATOR=	__
-
 # Fallback MPM after switching from static to modular MPM
 SUB_LIST+=	MPMF="000_mpm_prefork_fallback.conf"
 
@@ -194,10 +190,8 @@ SUB_FILES+=		pkg-message
 .endif
 
 pre-extract-SUEXEC-on:
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "suexec builds with user '${USERS}' and docroot '${PREFIX}/www' by default,"
-	@${ECHO_CMD} "use SUEXEC_DOCROOT and SUEXEC_USERDIR in /etc/make.conf to adjust."
-	@${ECHO_CMD} ""
+	@${ECHO_CMD} -e "\nsuexec builds with user '${USERS}' and docroot '${PREFIX}/www' by default,"
+	@${ECHO_CMD} -e "use SUEXEC_DOCROOT and SUEXEC_USERDIR in /etc/make.conf to adjust.\n"
 
 post-extract:
 # make sure the configure script contains our patches, preserve the original script for comparsion
@@ -219,9 +213,6 @@ post-patch:
 	${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
 pre-configure::
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"  You can check your modules configuration by using make show-modules"
-	@${ECHO_MSG}	""
 # silence autotools
 	-@${MV} -v ${WRKSRC}/configure.in ${WRKSRC}/configure.ac 2>/dev/null
 
@@ -229,6 +220,7 @@ post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
 		${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}," \
 			${WRKSRC}/docs/conf/extra/httpd-userdir.conf
+	${REINPLACE_CMD} -e "/EXTRA_LDFLAGS/s|-L/usr/lib||g" ${WRKSRC}/build/config_vars.mk
 	${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}," -e "s,%%WWWGRP%%,${WWWGRP}," \
 		${WRKSRC}/docs/conf/httpd.conf
 	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
