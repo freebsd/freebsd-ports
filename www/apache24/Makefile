@@ -128,7 +128,7 @@ MAKE_ENV+=	EXPR_COMPAT=yes \
 
 .for module in ${ALL_MODULES}
 .if ${PORT_OPTIONS:M${module}}
-CONFIGURE_ARGS+=	--enable-${module:S/_/-/g:tl}
+CONFIGURE_ARGS+=	--enable-${module:S/_/-/g:tl}=shared
 .else
 CONFIGURE_ARGS+=	--disable-${module:S/_/-/g:tl}
 .endif
@@ -190,8 +190,10 @@ SUB_FILES+=		pkg-message
 .endif
 
 pre-extract-SUEXEC-on:
-	@${ECHO_CMD} -e "\nsuexec builds with user '${USERS}' and docroot '${PREFIX}/www' by default,"
-	@${ECHO_CMD} -e "use SUEXEC_DOCROOT and SUEXEC_USERDIR in /etc/make.conf to adjust.\n"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "suexec builds with user '${USERS}' and docroot '${PREFIX}/www' by default,"
+	@${ECHO_CMD} -e "use SUEXEC_DOCROOT and SUEXEC_USERDIR in /etc/make.conf to adjust."
+	@${ECHO_CMD} ""
 
 post-extract:
 # make sure the configure script contains our patches, preserve the original script for comparsion
