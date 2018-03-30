@@ -192,7 +192,7 @@ SUB_FILES+=		pkg-message
 pre-extract-SUEXEC-on:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "suexec builds with user '${USERS}' and docroot '${PREFIX}/www' by default,"
-	@${ECHO_CMD} -e "use SUEXEC_DOCROOT and SUEXEC_USERDIR in /etc/make.conf to adjust."
+	@${ECHO_CMD} "use SUEXEC_DOCROOT and SUEXEC_USERDIR in /etc/make.conf to adjust."
 	@${ECHO_CMD} ""
 
 post-extract:
