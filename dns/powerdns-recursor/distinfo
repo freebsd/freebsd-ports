@@ -1,3 +1,3 @@
-TIMESTAMP = 1516634099
-SHA256 (pdns-recursor-4.1.1.tar.bz2) = 8feb03c7141997775cb52c131579e8e34c9896ea8bb77276328f5f6cc4e1396b
-SIZE (pdns-recursor-4.1.1.tar.bz2) = 1224544
+TIMESTAMP = 1522338047
+SHA256 (pdns-recursor-4.1.2.tar.bz2) = db4652f171c41bcd4345d6ad094b85a4d546caab72fd02fe523c73a8ce44ed76
+SIZE (pdns-recursor-4.1.2.tar.bz2) = 1219927
