@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmpi
-PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTVERSION=	2.1.3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	2
@@ -13,14 +12,14 @@ COMMENT=	High Performance Message Passing Library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv6=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
+BROKEN_armv7=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
+BROKEN_sparc64=		fails to compile on sparc64
+
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libltdl.so:devel/libltdl \
 		libevent.so:devel/libevent \
 		libmunge.so:security/munge
-
-BROKEN_armv6=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
-BROKEN_armv7=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
-BROKEN_sparc64=		fails to compile on sparc64
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
