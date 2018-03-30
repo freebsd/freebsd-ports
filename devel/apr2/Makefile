@@ -29,6 +29,7 @@ CPE_VERSION=	${PORTVERSION:S|.${SNAPDATE}||}
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
+TEST_TARGET=		test
 
 OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		DEVELOPER_ONLY
@@ -124,10 +125,5 @@ pre-install:
 
 post-install:
 	${FIND} ${STAGEDIR}/${PREFIX}/lib -name \*.so | ${XARGS} ${STRIP_CMD}
-
-test:	build
-	@-make test -C ${WRKSRC}
-
-#regression-test:	test
 
 .include <bsd.port.mk>
