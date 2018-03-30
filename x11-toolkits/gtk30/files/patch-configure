@@ -1,6 +1,22 @@
---- configure.orig	2016-10-24 05:10:09.000000000 +0200
-+++ configure	2016-11-15 07:54:17.741400000 +0100
-@@ -27913,9 +27913,7 @@ fi
+--- configure.orig	2018-03-12 21:34:40 UTC
++++ configure
+@@ -4108,9 +4108,15 @@ GAIL_LT_CURRENT_MINUS_AGE=0
+ 
+ # Workaround for https://bugzilla.gnome.org/show_bug.cgi?id=721346 until fixed upstream in autoconf-archive
+ if test "$cross_compiling" = "no"; then
++  if test -n "$CC"; then
++    CC_FOR_BUILD=$CC
++  fi
+   if test -n "$CFLAGS"; then
+     CFLAGS_FOR_BUILD=$CFLAGS
+   fi
++  if test -n "$CPP"; then
++    CPP_FOR_BUILD=$CPP
++  fi
+   if test -n "$CPPFLAGS"; then
+     CPPFLAGS_FOR_BUILD=$CPPFLAGS
+   fi
+@@ -27955,9 +27961,7 @@ fi
  if test "$have_cups" = "yes"; then
    GTK_PRINT_BACKENDS="$GTK_PRINT_BACKENDS,cups"
  fi
