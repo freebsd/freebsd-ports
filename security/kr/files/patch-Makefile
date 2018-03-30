@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-01-09 20:17:55 UTC
++++ Makefile
+@@ -66,7 +66,7 @@ endif
+ endif
+ 	cd kr; go build $(GO_TAGS) -o ../bin/kr
+ 	cd krd/main; CGO_LDFLAGS="$(CGO_LDFLAGS)" go build $(GO_TAGS) -o ../../bin/krd
+-	cd pkcs11shim; make; cp target/release/kr-pkcs11.so ../lib/
++	cd pkcs11shim; gmake; cp target/release/kr-pkcs11.so ../lib/
+ 	cd krssh; CGO_LDFLAGS="$(CGO_LDFLAGS)" go build $(GO_TAGS) -o ../bin/krssh
+ 	cd krgpg; go build $(GO_TAGS) -o ../bin/krgpg
+ 
