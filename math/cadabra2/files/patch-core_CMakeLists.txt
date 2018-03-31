@@ -1,0 +1,19 @@
+--- core/CMakeLists.txt.orig	2018-03-31 17:08:45 UTC
++++ core/CMakeLists.txt
+@@ -197,7 +197,6 @@ include_directories(
+   "."
+   "../libs/internal/include"
+   "../libs/whereami"
+-  "../client_server/jsoncpp"
+   ${Boost_INCLUDE_DIRS}
+   )
+ # FIXME: 2nd line is to find Config.hh
+@@ -246,7 +245,7 @@ target_link_libraries(cadabra2python 
+   )
+ 
+ # cadabra2cadabra
+-add_executable(cadabra2cadabra cadabra2cadabra.cc DataCell.cc ../client_server/jsoncpp/jsoncpp.cpp ../libs/whereami/whereami.c InstallPrefix.cc)
++add_executable(cadabra2cadabra cadabra2cadabra.cc DataCell.cc ../libs/whereami/whereami.c InstallPrefix.cc)
+ target_link_libraries(cadabra2cadabra ${Boost_LIBRARIES})
+ 
+ # Mathematica WSTP test
