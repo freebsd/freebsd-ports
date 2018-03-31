@@ -14,7 +14,7 @@ COMMENT=	GNU Compiler Collection 8
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 powerpc powerpc64 powerpcspe sparc64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
@@ -63,6 +63,9 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 .elif ${ARCH} == powerpc64
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
 USE_GCC=	yes
+
+.elif ${ARCH} == powerpcspe
+CONFIGURE_ARGS+=	--with-cpu=8540 --enable-e500_double --without-fp
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
