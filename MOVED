@@ -10243,3 +10243,9 @@ mail/sisyphus||2018-03-26|Has expired: Never built
 www/fira-webfont||2018-03-26|Has expired: Unused with no apparent use case
 www/dummyflash||2018-03-26|Has expired: Unused, unmaintained, and obsolete
 devel/guikachu||2018-03-26|Has expired: Broken for more than 9 months
+www/npm4|www/npm|2018-03-31|Has expired: Use www/npm instead
+devel/lua-lpeg51|devel/lua-lpeg|2018-03-31|Has expired: Use devel/lua-lpeg instead
+net/p5-Net-Jaiku||2018-03-31|Has expired: Upstream disappeared and jaiku.com returns 404
+www/py-django-devel|www/py-django|2018-03-31|Has expired: Outdated version. Use www/py-django instead
+security/rubygem-rpam2-3|security/rubygem-rpam2|2018-03-31|Has expired: Use security/rubygem-rpam2 instead
+textproc/rubygem-fast_xs073|textproc/rubygem-fast_xs|2018-03-31|Has expired: Use textproc/rubygem-fast_xs instead
