@@ -1,5 +1,0 @@
-This extension provides a PAM (Pluggable Authentication Modules) integration to
-ruby.  It is inspired by rpam but provides more functionality and is licensed
-under the MIT license.
-
-WWW: https://github.com/devkral/rpam2
