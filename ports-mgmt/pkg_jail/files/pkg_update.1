@@ -1,5 +1,5 @@
-.\" $Id$
-.TH PKG_UPDATE 1 "April 2010" "FreeBSD" "User Manuals"
+.\" $Id: pkg_update.1,v 2.0 2018/03/31 06:54:50 cvs Exp $
+.TH PKG_UPDATE 1 "April 2017" "FreeBSD" "User Manuals"
 .SH NAME
 pkg_update \- Easy handling of jailed packages builds.
 .SH SYNOPSIS
@@ -12,6 +12,12 @@ is a script to handle an clean jail for package-builds.
 .TP
 .B update-ports
 Start "make update" for the ports tree.
+.TP
+.B update-pkg
+Force rebuild of pkg tools.
+.TP
+.B repo
+Force rebuild of pkg repo.
 .TP
 .B make-packages
 Builds a port and its dependencies in a clean /usr/local.
@@ -49,12 +55,6 @@ Fetch distfiles for list of ports.
 .TP
 .B fetch-recursive-distfiles
 Fetch distfiles for list of ports and their dependecies.
-.TP
-.B show-extra-files
-List files in portsdir that are not updated by cvsup
-.TP
-.B dependency-update
-Try to fix as much dependecy problens in installed ports.
 .TP
 .B fix-moved-ports
 Check installed packages for moved ports.
@@ -118,16 +118,6 @@ try to to install the new package if it exists.
 .B show-missing-reinstall
 For each port recorded from "make-deinstall-list" warn
 if no new package is found.
-.TP
-.B make-easy-update
-Try to generate the ordered sequence of pkg_deinstall
-and pkg_add commands to update your old packages.
-.TP
-.B replace-package
-Overwrite the installed package with a new one and
-register dependencies and dependant packages.
-Warning: Don't do this when the ABI of the this
-package or the ABI of its dependencies has changed.
 .TP
 .B clean-reinstall
 For each port recorded from "make-deinstall-list",
