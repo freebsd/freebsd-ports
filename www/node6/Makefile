@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	6.12.2
+PORTVERSION=	6.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -12,6 +12,8 @@ COMMENT=	V8 JavaScript for client and server (6.x LTS)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 
 OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS DTRACE
 OPTIONS_DEFAULT=DTRACE
@@ -39,11 +41,8 @@ USES=		compiler:c++11-lib gmake python:2,build pkgconfig \
 		localbase shebangfix
 
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	node[458]-[0-9]* node-[0-9]*
-
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--without-npm \
