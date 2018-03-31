@@ -1569,7 +1569,6 @@
     SUBDIR += py-django-crispy-forms
     SUBDIR += py-django-datetime-widget
     SUBDIR += py-django-debug-toolbar
-    SUBDIR += py-django-devel
     SUBDIR += py-django-dpaste
     SUBDIR += py-django-evolution
     SUBDIR += py-django-extensions
