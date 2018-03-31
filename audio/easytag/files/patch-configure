@@ -1,0 +1,11 @@
+--- configure.orig	2018-03-31 02:06:04 UTC
++++ configure
+@@ -18871,7 +18871,7 @@ return ID3Tag_Link ();
+   return 0;
+ }
+ _ACEOF
+-for ac_lib in '' "id3" "id3 -lstdc++" "id3 -lz" "id3 -lz -lstdc++"; do
++for ac_lib in "id3 -lstdc++" "id3 -lz -lstdc++"; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
