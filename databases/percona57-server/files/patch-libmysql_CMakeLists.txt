@@ -1,25 +1,25 @@
---- libmysql/CMakeLists.txt.orig	2016-11-27 19:44:54 UTC
+--- libmysql/CMakeLists.txt.orig	2018-03-09 22:41:36 UTC
 +++ libmysql/CMakeLists.txt
-@@ -231,7 +231,7 @@ IF(WIN32)
- ENDIF()
- 
+@@ -235,7 +235,7 @@
+ ADD_SUBDIRECTORY(authentication_ldap)
+   
  # Merge several convenience libraries into one big perconaserverclient
--MERGE_LIBRARIES(perconaserverclient STATIC ${LIBS} COMPONENT Development)
-+MERGE_LIBRARIES(perconaserverclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
+-MERGE_CONVENIENCE_LIBRARIES(perconaserverclient ${LIBS} COMPONENT Development)
++MERGE_CONVENIENCE_LIBRARIES(perconaserverclient ${LIBS} COMPONENT Development SKIP_INSTALL)
  
  # Visual Studio users need debug  static library for debug projects
  IF(MSVC)
-@@ -273,7 +273,8 @@ IF(NOT DISABLE_SHARED)
+@@ -271,7 +271,8 @@
    # and link them together into shared library.
-   MERGE_LIBRARIES(libmysql SHARED ${LIBS}
+   MERGE_LIBRARIES_SHARED(libmysql ${LIBS}
      EXPORTS ${CLIENT_API_FUNCTIONS} ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
 -    COMPONENT SharedLibraries)
-+    COMPONENT SharedLibraries NOINSTALL)
++    COMPONENT SharedLibraries SKIP_INSTALL)
 +IF(FALSE)
    IF(UNIX)
      # libtool compatability
      IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
-@@ -329,6 +330,7 @@ ENDIF()
+@@ -327,6 +328,7 @@
  # to initialize api_calls[] array in api_test.c
  #
  SET(CLIENT_API_FUNCTION_LIST "")

@@ -124,7 +124,6 @@ lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.20
 lib/mysql/libmysqlclient.so
 lib/mysql/libmysqlclient.so.20
-lib/mysql/libmysqlservices.a
 lib/mysql/libperconaserverclient.a
 lib/mysql/libperconaserverclient.so
 lib/mysql/libperconaserverclient.so.20
