@@ -1,27 +1,35 @@
---- client_server/CMakeLists.txt.orig	2017-04-14 09:26:53 UTC
+--- client_server/CMakeLists.txt.orig	2018-03-30 09:33:27 UTC
 +++ client_server/CMakeLists.txt
-@@ -90,21 +90,21 @@ add_definitions("-D_WEBSOCKETPP_CPP11_ST
+@@ -28,7 +28,6 @@ find_package(Boost 1.53.0 COMPONENTS sys
+ set(CADABRA_SERVER_SRC
+   Server.cc 
+   Snoop.cc 
+-  jsoncpp/jsoncpp.cpp 
+   ../core/CdbPython.cc 
+   ../core/Stopwatch.cc 
+   ../core/ProgressMonitor.cc
+@@ -43,7 +42,6 @@ set(CADABRA_CLIENT_SRC
+   ../core/DataCell.cc 
+   Actions.cc 
+   Snoop.cc 
+-  jsoncpp/jsoncpp.cpp
+   ../libs/whereami/whereami.c
+   ../core/InstallPrefix.cc
+ #  ../libs/sqlite3/sqlite3.c
+@@ -58,7 +56,6 @@ include_directories(
+   "../core"
+   "../libs/pybind11/include"
+   "websocketpp" 
+-  "jsoncpp"
+   "../libs/internal/include"
+   "../libs/whereami"
+   ${Boost_INCLUDE_DIRS}
+@@ -114,7 +111,7 @@ add_executable(cadabra2html cadabra2html
+ target_link_libraries(cadabra2html cadabra_client)
  
- # Create the server library
- #link_directories(${UUID_LIBRARY_DIRS})
--add_library(cadabra_server SHARED Server.cc Snoop.cc jsoncpp/jsoncpp.cpp ../core/CdbPython.cc ../core/Stopwatch.cc ../core/ProgressMonitor.cc)
-+add_library(cadabra_server SHARED Server.cc Snoop.cc ../core/CdbPython.cc ../core/Stopwatch.cc ../core/ProgressMonitor.cc)
- target_link_libraries(cadabra_server ${Boost_LIBRARIES} ${SNOOP_LIBRARIES} sqlite3 ${PYTHON_LIBRARIES} ${GLIBMM3_LIBRARIES})
- if (WIN32)
-    target_link_libraries(cadabra_server ws2_32 mswsock)
- endif()
- 
- # Create the client library.
--add_library(cadabra_client SHARED ComputeThread.cc DocumentThread.cc DataCell.cc Actions.cc Snoop.cc jsoncpp/jsoncpp.cpp)
-+add_library(cadabra_client SHARED ComputeThread.cc DocumentThread.cc DataCell.cc Actions.cc Snoop.cc)
- target_link_libraries(cadabra_client ${Boost_LIBRARIES} sqlite3 ${PYTHON_LIBRARIES} ${GLIBMM3_LIBRARIES})
- if (WIN32)
-    target_link_libraries(cadabra_client ws2_32)
- endif()
- 
- # Create server binary
--include_directories("." "./websocketpp" "./jsoncpp")
-+include_directories("." "./websocketpp")
- add_executable(cadabra-server cadabra-server.cc)
- add_executable(cadabra2html cadabra2html.cc DataCell.cc)
- add_executable(cadabra2cadabra cadabra2cadabra.cc DataCell.cc)
+ # Client library
+-add_library(cadabra_client STATIC ${CADABRA_CLIENT_SRC})
++add_library(cadabra_client SHARED ${CADABRA_CLIENT_SRC})
+ target_link_libraries(cadabra_client
+   ${Boost_LIBRARIES}
+   ${SQLITE3_LIBRARIES}
