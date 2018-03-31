@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: matterircd
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Options to configure matterircd via /etc/rc.conf:
+#
+# matterircd_enable (bool)	Enable service on boot
+#				Default: NO
+#
+# matterircd_conf (str)		Config file to use
+#				Default: ${PREFIX}/etc/matterircd.toml
+#
+# matterircd_uid (str)		User to run matterircd as
+#				Default: matterircd
+#
+# matterircd_flags (str)	Extra flags passed to matterircd
+#
+
+. /etc/rc.subr
+
+name="matterircd"
+rcvar="matterircd_enable"
+pidfile="/var/run/matterircd.pid"
+procname="%%PREFIX%%/bin/matterircd"
+
+load_rc_config $name
+
+: ${matterircd_enable:="NO"}
+: ${matterircd_uid:="matterircd"}
+: ${matterircd_flags:=""}
+: ${matterircd_conf:="%%PREFIX%%/etc/matterircd.toml"}
+: ${matterircd_options:="${matterircd_flags} -conf=${matterircd_conf}"}
+
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -u ${matterircd_uid} -S -T ${name} ${procname} ${matterircd_options}"
+
+run_rc_command "$1"
