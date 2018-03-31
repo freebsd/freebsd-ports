@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 
 # devel/bugzilla{44,50} still depend on this port
 DEPRECATED=	Deprecated by upstream, use Net::SMTP instead
-EXPIRATION_DATE=2018-03-31
+EXPIRATION_DATE=2018-04-30
 
 BUILD_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
