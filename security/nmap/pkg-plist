@@ -62,6 +62,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/data/http-folders.txt
 %%DATADIR%%/nselib/data/http-sql-errors.lst
 %%DATADIR%%/nselib/data/http-web-files-extensions.lst
+%%DATADIR%%/nselib/data/idnaMappings.lua
 %%DATADIR%%/nselib/data/ike-fingerprints.lua
 %%DATADIR%%/nselib/data/jdwp-class/JDWPExecCmd.class
 %%DATADIR%%/nselib/data/jdwp-class/JDWPExecCmd.java
@@ -114,6 +115,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/http.lua
 %%DATADIR%%/nselib/httpspider.lua
 %%DATADIR%%/nselib/iax2.lua
+%%DATADIR%%/nselib/idna.lua
 %%DATADIR%%/nselib/ike.lua
 %%DATADIR%%/nselib/imap.lua
 %%DATADIR%%/nselib/informix.lua
@@ -145,6 +147,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/multicast.lua
 %%DATADIR%%/nselib/mysql.lua
 %%DATADIR%%/nselib/natpmp.lua
+%%DATADIR%%/nselib/nbd.lua
 %%DATADIR%%/nselib/ncp.lua
 %%DATADIR%%/nselib/ndmp.lua
 %%DATADIR%%/nselib/netbios.lua
@@ -160,6 +163,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/pop3.lua
 %%DATADIR%%/nselib/pppoe.lua
 %%DATADIR%%/nselib/proxy.lua
+%%DATADIR%%/nselib/punycode.lua
 %%DATADIR%%/nselib/rdp.lua
 %%DATADIR%%/nselib/re.lua
 %%DATADIR%%/nselib/redis.lua
@@ -205,6 +209,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/wsdd.lua
 %%DATADIR%%/nselib/xdmcp.lua
 %%DATADIR%%/nselib/xmpp.lua
+%%DATADIR%%/nselib/zlib.luadoc
 %%DATADIR%%/scripts/acarsd-info.nse
 %%DATADIR%%/scripts/address-info.nse
 %%DATADIR%%/scripts/afp-brute.nse
@@ -288,6 +293,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/daap-get-library.nse
 %%DATADIR%%/scripts/daytime.nse
 %%DATADIR%%/scripts/db2-das-info.nse
+%%DATADIR%%/scripts/deluge-rpc-brute.nse
 %%DATADIR%%/scripts/dhcp-discover.nse
 %%DATADIR%%/scripts/dict-info.nse
 %%DATADIR%%/scripts/distcc-cve2004-2687.nse
@@ -352,6 +358,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/hddtemp-info.nse
 %%DATADIR%%/scripts/hnap-info.nse
 %%DATADIR%%/scripts/hostmap-bfk.nse
+%%DATADIR%%/scripts/hostmap-crtsh.nse
 %%DATADIR%%/scripts/hostmap-ip2hosts.nse
 %%DATADIR%%/scripts/hostmap-robtex.nse
 %%DATADIR%%/scripts/http-adobe-coldfusion-apsa1301.nse
@@ -366,6 +373,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-axis2-dir-traversal.nse
 %%DATADIR%%/scripts/http-backup-finder.nse
 %%DATADIR%%/scripts/http-barracuda-dir-traversal.nse
+%%DATADIR%%/scripts/http-bigip-cookie.nse
 %%DATADIR%%/scripts/http-brute.nse
 %%DATADIR%%/scripts/http-cakephp-version.nse
 %%DATADIR%%/scripts/http-chrono.nse
@@ -408,6 +416,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-iis-webdav-vuln.nse
 %%DATADIR%%/scripts/http-internal-ip-disclosure.nse
 %%DATADIR%%/scripts/http-joomla-brute.nse
+%%DATADIR%%/scripts/http-jsonp-detection.nse
 %%DATADIR%%/scripts/http-litespeed-sourcecode-download.nse
 %%DATADIR%%/scripts/http-ls.nse
 %%DATADIR%%/scripts/http-majordomo2-dir-traversal.nse
@@ -445,6 +454,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-tplink-dir-traversal.nse
 %%DATADIR%%/scripts/http-trace.nse
 %%DATADIR%%/scripts/http-traceroute.nse
+%%DATADIR%%/scripts/http-trane-info.nse
 %%DATADIR%%/scripts/http-unsafe-output-escaping.nse
 %%DATADIR%%/scripts/http-useragent-tester.nse
 %%DATADIR%%/scripts/http-userdir-enum.nse
@@ -576,6 +586,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/mysql-vuln-cve2012-2122.nse
 %%DATADIR%%/scripts/nat-pmp-info.nse
 %%DATADIR%%/scripts/nat-pmp-mapport.nse
+%%DATADIR%%/scripts/nbd-info.nse
 %%DATADIR%%/scripts/nbstat.nse
 %%DATADIR%%/scripts/ncp-enum-users.nse
 %%DATADIR%%/scripts/ncp-serverinfo.nse
@@ -643,6 +654,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/rpcap-brute.nse
 %%DATADIR%%/scripts/rpcap-info.nse
 %%DATADIR%%/scripts/rpcinfo.nse
+%%DATADIR%%/scripts/rsa-vuln-roca.nse
 %%DATADIR%%/scripts/rsync-brute.nse
 %%DATADIR%%/scripts/rsync-list-modules.nse
 %%DATADIR%%/scripts/rtsp-methods.nse
@@ -663,6 +675,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/smb-enum-domains.nse
 %%DATADIR%%/scripts/smb-enum-groups.nse
 %%DATADIR%%/scripts/smb-enum-processes.nse
+%%DATADIR%%/scripts/smb-enum-services.nse
 %%DATADIR%%/scripts/smb-enum-sessions.nse
 %%DATADIR%%/scripts/smb-enum-shares.nse
 %%DATADIR%%/scripts/smb-enum-users.nse
@@ -754,6 +767,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/telnet-encryption.nse
 %%DATADIR%%/scripts/telnet-ntlm-info.nse
 %%DATADIR%%/scripts/tftp-enum.nse
+%%DATADIR%%/scripts/tls-alpn.nse
 %%DATADIR%%/scripts/tls-nextprotoneg.nse
 %%DATADIR%%/scripts/tls-ticketbleed.nse
 %%DATADIR%%/scripts/tn3270-screen.nse

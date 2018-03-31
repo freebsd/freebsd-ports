@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	nmap
-DISTVERSION=	7.60
+DISTVERSION=	7.70
 PORTREVISION=	0
 CATEGORIES=	security ipv6
-MASTER_SITES=	http://nmap.org/dist/ \
+MASTER_SITES=	https://nmap.org/dist/ \
 		LOCAL/ohauer
 
 MAINTAINER?=	ohauer@FreeBSD.org
 COMMENT?=	Port scanning utility for large networks
 
 # nmap-6.47 => svn.nmap.org/nmap-releases/nmap-6.47 (r33605)
-# http://nmap.org/book/man-legal.html
+# https://nmap.org/book/man-legal.html
 # Install the nmap modified license because of
 # http://insecure.org/news/download-com-fiasco.html
 LICENSE=	GPLv2
@@ -26,14 +26,21 @@ USES=		tar:bzip2 gmake cpe
 GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	DOCS SSL
-OPTIONS_DEFAULT=SSL
+OPTIONS_DEFINE=	DOCS PCAP SSH2 SSL
+OPTIONS_DEFAULT=PCAP SSH2 SSL
 
+PCAP_DESC=		Build with libpcap from nmap
+SSH2_DESC=		SSH2 protocol support
+
+PCAP_CONFIGURE_ON=	--with-libpcap=included
+SSH2_CONFIGURE_ON=	--with-libssh2=included
+SSH2_CONFIGURE_OFF=	--without-libssh2
+SSH2_IMPLIES=		SSL
 SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_CONFIGURE_OFF=	--without-openssl
 SSL_CFLAGS=		-I${OPENSSLINC}
-SSL_VARS=		STRIP_FILES=ncat
+SSL_VARS=		STRIP_FILES+=ncat
 
 DOCS=	CHANGELOG HACKING
 STRIP_FILES+=	nmap nping

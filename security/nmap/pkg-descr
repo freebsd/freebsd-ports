@@ -12,7 +12,7 @@ Refer to the separate port security/zenmap for those parts of the
 Nmap toolset which depend on python.  The translated manual pages
 for Nmap are contained in security/nmap-i18n-man.
 
-WWW: http://nmap.org/
+WWW: https://nmap.org/
 
 See the web page and the Phrack Magazine article (Volume 7, Issue 51
-September 01, 1997, article 11 of 17) http://nmap.org/p51-11.html
+September 01, 1997, article 11 of 17) https://nmap.org/p51-11.html
