@@ -20,6 +20,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 USES=		gmake localbase pkgconfig tar:tgz
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
+LLD_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 post-install:
