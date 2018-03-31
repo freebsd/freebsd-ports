@@ -5,4 +5,4 @@ and, in the context of running multiple processes and servers, unreadable
 default logging output.  Rails' default approach to log everything is great
 during development, it's terrible when running it in production.
 
-WWW: https://github.com/roidrage/lograge/
+WWW: https://github.com/roidrage/lograge
