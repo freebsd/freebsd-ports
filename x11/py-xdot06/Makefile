@@ -21,4 +21,6 @@ USE_GNOME=	pygtk2
 
 CONFLICTS_INSTALL=	py*-xdot
 
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.mk>
