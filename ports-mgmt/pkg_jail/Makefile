@@ -2,6 +2,7 @@
 
 PORTNAME=	pkg_jail
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty
