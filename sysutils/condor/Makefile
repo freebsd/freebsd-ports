@@ -1,12 +1,11 @@
 # Created by: Andy Pavlo
 # $FreeBSD$
-#
-# Note: Make sure there are no older versions of HTCondor installed during
+
+# Note: Make sure there are no other versions of HTCondor installed during
 #       build.  The build system may pick up incompatible headers and libs.
 
 PORTNAME=	condor
-PORTVERSION=	8.4.9
-PORTREVISION=	8
+DISTVERSION=	8.4.12
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
@@ -17,18 +16,17 @@ COMMENT=	High-throughput computing on distributively owned resources
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
-BROKEN=		fails to build
+BROKEN_powerpc64=	fails to build
 
-LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
+LIB_DEPENDS=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
-		${PY_BOOST} \
-		libexpat.so:textproc/expat2
+		libexpat.so:textproc/expat2 \
+		${PY_BOOST}
 
-WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
+# Does not work with Python 3
+USES=		cmake:noninja cpe perl5 pgsql python:2.7 shebangfix ssl
 USE_LDCONFIG=	yes
-# Does not build with Python 3
-USES=		cmake cpe perl5 pgsql python:2.7 shebangfix ssl
 CPE_VENDOR=	condor_project
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
@@ -37,11 +35,11 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup \
 		src/condor_job_router/condor_router_history
 
+WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
-# Does not build with Python 3
-CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
+CMAKE_ARGS=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS} \
 		-DPYTHON_INCLUDE_DIR:PATH=${LOCALBASE}/include/${PYTHON_VERSION} \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/lib${PYTHON_VERSION}.so
@@ -61,7 +59,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \
-	   ${PRINTF} "         Please make sure your build environment has that much before continuing.\n" )
+	   ${PRINTF} "         Please make sure your build environment has that much space before continuing.\n" )
 
 post-patch:
 	@${REINPLACE_CMD} \

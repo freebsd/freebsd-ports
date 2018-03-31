@@ -1,14 +1,13 @@
 Condor is a open-source, specialized workload management system for
-compute-intensive jobs. Like other full-featured batch systems, Condor
-provides a job queuing mechanism, scheduling policy, priority scheme,
-resource monitoring, and resource management. Users submit their serial
-or parallel jobs to Condor, Condor places them into a queue, chooses
-when and where to run the jobs based upon a policy, carefully monitors
-their progress, and ultimately informs the user upon completion. Condor
-also contains mechanisms to submit jobs to grid-sites and supports many
-different grid toolkits.
+compute-intensive jobs. Like other full-featured batch systems, Condor provides
+a job queuing mechanism, scheduling policy, priority scheme, resource
+monitoring, and resource management. Users submit their serial or parallel jobs
+to Condor, Condor places them into a queue, chooses when and where to run the
+jobs based upon a policy, carefully monitors their progress, and ultimately
+informs the user upon completion. Condor also contains mechanisms to submit
+jobs to grid-sites and supports many different grid toolkits.
 
-It is developed at the University of Wisconsin-Madison's Department
-of Computer Sciences.
+It is developed at the University of Wisconsin-Madison's Department of Computer
+Sciences.
 
 WWW: http://research.cs.wisc.edu/condor/
