@@ -1,3 +1,3 @@
-TIMESTAMP = 1475844209
-SHA256 (condor_src-8.4.9-all-all.tar.gz) = 56be45f54c014680dfd5439749b02fb9da4a11fb5645ff36d22dd0ccef1043ce
-SIZE (condor_src-8.4.9-all-all.tar.gz) = 17379991
+TIMESTAMP = 1522374768
+SHA256 (condor_src-8.4.12-all-all.tar.gz) = d1544f41f31931fdaa9bfed8cb5f7e669b6e1e53c300888fda05cb29b6091c2a
+SIZE (condor_src-8.4.12-all-all.tar.gz) = 17391439
