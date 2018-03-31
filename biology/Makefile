@@ -109,6 +109,7 @@
     SUBDIR += sim4
     SUBDIR += slclust
     SUBDIR += ssaha
+    SUBDIR += stacks
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
     SUBDIR += tinker
