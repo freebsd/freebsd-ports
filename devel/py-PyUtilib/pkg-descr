@@ -1,0 +1,6 @@
+The PyUtilib project supports a collection of Python utilities, including a
+well-developed component architecture and extensions to the PyUnit testing
+framework. PyUtilib has been developed to support several Python-centric
+projects, especially Pyomo.
+
+WWW: https://github.com/PyUtilib/pyutilib
