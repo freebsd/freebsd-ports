@@ -2,7 +2,7 @@
 
 PORTNAME=	ga
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.6.5
+DISTVERSION=	5.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		autoreconf fortran gmake libtool localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	GlobalArrays
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-peigs --enable-shared --disable-static
+CONFIGURE_ARGS=	--enable-peigs --enable-shared --disable-static --with-blas4
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
