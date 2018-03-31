@@ -1,0 +1,9 @@
+pysym is an experimental Python package for symbolic manipulation with limited
+scope (as in minimal). It tries to stay compatible with the API of SymPy. It
+should be viewed as a prototype and not as a "production" package.
+
+The capabilities include:
+* Differentiation
+* (slow) numerical evaluation (including "lambdify" support)
+
+WWW: https://github.com/bjodah/pysym
