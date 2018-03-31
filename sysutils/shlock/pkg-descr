@@ -1,5 +1,5 @@
-The historical, and still very useful process-locking program. Use to
-make sure that your shell script is the only version of itself running
-on your system. There are many other creative ways to use this program.
+The historical, and still very useful process-locking program. Use to make sure
+that your shell script is the only version of itself running on your system.
+There are many other creative ways to use this program.
 
-WWW: https://www.isc.org/software/inn/
+WWW: https://www.eyrie.org/~eagle/software/inn/

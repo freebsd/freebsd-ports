@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ISC/inn
 DISTNAME=	inn-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create lock files for use in shell scripts
 
 LICENSE=	ISCL
