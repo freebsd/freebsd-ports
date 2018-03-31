@@ -1,0 +1,16 @@
+===
+
+If you would like to use the stacks web interface, follow the instructions at:
+
+    http://catchenlab.life.illinois.edu/stacks/manual-v1/#install
+
+You will need to install databases/p5-DBD-mysql to allow the optional
+wrapper scripts to interact with the database server.
+
+To set up the web server, you will need an apache server such as www/apache24,
+MySQL server and client packages such as databases/mysql56-client and 
+databases/mysql56-server, and PHP interface modules such as
+databases/php56-mysql (php56 will be automatically installed as a dependency),
+and lastly textproc/p5-Spreadsheet-WriteExcel.
+
+===
