@@ -7,7 +7,7 @@ CATEGORIES=	textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logic-less templates for Python
 
 LICENSE=	MIT
