@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	mathgl
-DISTVERSION=	2.4.2
+DISTVERSION=	2.4.2.1
 CATEGORIES=	math graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION:R}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for high-quality scientific data visualization
