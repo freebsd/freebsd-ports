@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httparty
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
