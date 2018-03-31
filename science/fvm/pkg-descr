@@ -2,4 +2,4 @@ FVM stands for Finite Volume Mesh.
 It is intended to provide finite volume mesh I/O and some other services such
 as interpolation, possibly in parallel using MPI.
 
-WWW: http://www.code-saturne.org/
+WWW: https://www.code-saturne.org/
