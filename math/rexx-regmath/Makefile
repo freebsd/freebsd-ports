@@ -22,6 +22,7 @@ CFLAGS+=	-Wno-incompatible-pointer-types
 
 WRKSRC=		${WRKDIR}/math
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 MAKEFILE=	Makefile.bsd
 
 PLIST_FILES=	lib/librexxmath.so lib/librxmath.so man/man1/regmath.1.gz
