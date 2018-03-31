@@ -10,6 +10,8 @@ MASTER_SITES=	SF \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
 
+LICENSE=	GPLv2+
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		tar:xz
