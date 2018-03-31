@@ -1,6 +1,16 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2017-07-25 21:04:55.000000000 +0200
-+++ content/browser/child_process_launcher_helper_linux.cc	2017-08-02 00:41:59.942814000 +0200
-@@ -66,6 +66,7 @@
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2018-03-20 23:05:23.000000000 +0100
++++ content/browser/child_process_launcher_helper_linux.cc	2018-03-24 23:20:38.539917000 +0100
+@@ -17,7 +17,9 @@
+ #include "content/public/common/content_switches.h"
+ #include "content/public/common/result_codes.h"
+ #include "content/public/common/sandboxed_process_launcher_delegate.h"
++#if !defined(OS_BSD)
+ #include "content/public/common/zygote_handle.h"
++#endif
+ #include "gpu/config/gpu_switches.h"
+ #include "services/service_manager/sandbox/linux/sandbox_linux.h"
+ 
+@@ -70,6 +72,7 @@
      int* launch_result) {
    *is_synchronous_launch = true;
  
@@ -8,7 +18,7 @@
    ZygoteHandle zygote_handle =
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
            ? nullptr
-@@ -82,6 +83,7 @@
+@@ -101,6 +104,7 @@
      process.zygote = zygote_handle;
      return process;
    }
@@ -16,7 +26,7 @@
  
    Process process;
    process.process = base::LaunchProcess(*command_line(), options);
-@@ -100,10 +102,12 @@
+@@ -118,10 +122,12 @@
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead,
      int* exit_code) {
@@ -29,7 +39,7 @@
    if (known_dead) {
      return base::GetKnownDeadTerminationStatus(
          process.process.Handle(), exit_code);
-@@ -122,13 +126,17 @@
+@@ -140,13 +146,17 @@
      ChildProcessLauncherHelper::Process process) {
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.

@@ -1,23 +1,16 @@
---- content/common/BUILD.gn.orig	2018-02-24 16:25:14.000000000 +0100
-+++ content/common/BUILD.gn	2018-03-04 05:26:02.504662000 +0100
-@@ -503,7 +503,7 @@
+--- content/common/BUILD.gn.orig	2018-03-20 23:05:24.000000000 +0100
++++ content/common/BUILD.gn	2018-03-29 12:47:23.480593000 +0200
+@@ -431,6 +431,13 @@
+     libs += [ "android" ]
    }
  
-   if (!use_seccomp_bpf) {
--    if (is_linux && current_cpu != "s390x" && current_cpu != "ppc64") {
-+    if (is_linux && current_cpu != "s390x" && current_cpu != "ppc64" && !is_bsd) {
-       sources -= [
-         "sandbox_linux/bpf_base_policy_linux.cc",
-         "sandbox_linux/bpf_base_policy_linux.h",
-@@ -519,6 +519,11 @@
-         "sandbox_linux/bpf_renderer_policy_linux.h",
-         "sandbox_linux/bpf_utility_policy_linux.cc",
-         "sandbox_linux/bpf_utility_policy_linux.h",
-+      ]
-+    }
-+    if (is_bsd) {
-+      sources -= [
-+        "quarantine/quarantine_linux.cc",
-       ]
-     }
-   }
++  if (is_bsd) {
++    sources -= [
++      "quarantine/quarantine_linux.cc",
++      "sandbox_init_linux.cc",
++    ]
++  }
++
+   if (is_debug && !is_component_build && enable_plugins) {
+     # Content depends on the PPAPI message logging stuff; if this isn't here,
+     # some unit test binaries won't compile. This only worked in release mode

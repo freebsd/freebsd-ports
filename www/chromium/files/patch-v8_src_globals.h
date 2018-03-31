@@ -1,14 +1,14 @@
---- v8/src/globals.h.orig	2017-06-05 19:04:29 UTC
-+++ v8/src/globals.h
-@@ -184,7 +184,11 @@ const size_t kCodeRangeAreaAlignment = 256 * MB;
- const size_t kMaximalCodeRangeSize = 512 * MB;
- const size_t kCodeRangeAreaAlignment = 64 * KB;  // OS page on PPC Linux
+--- v8/src/globals.h.orig	2018-03-20 23:06:56.000000000 +0100
++++ v8/src/globals.h	2018-03-24 19:21:33.728280000 +0100
+@@ -195,7 +195,11 @@
+ constexpr size_t kMaximalCodeRangeSize = 512 * MB;
+ constexpr size_t kCodeRangeAreaAlignment = 64 * KB;  // OS page on PPC Linux
  #else
 +#if defined(__FreeBSD__)
-+const size_t kMaximalCodeRangeSize = 512 * MB;
+ constexpr size_t kMaximalCodeRangeSize = 512 * MB;
 +#else
- const size_t kMaximalCodeRangeSize = 512 * MB;
++constexpr size_t kMaximalCodeRangeSize = 512 * MB;
 +#endif
- const size_t kCodeRangeAreaAlignment = 4 * KB;  // OS page.
+ constexpr size_t kCodeRangeAreaAlignment = 4 * KB;  // OS page.
  #endif
  #if V8_OS_WIN

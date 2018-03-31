@@ -192,12 +192,10 @@ bin/chrome
 %%DATADIR%%/resources/inspector/accessibility_test_runner/accessibility_test_runner_module.js
 %%DATADIR%%/resources/inspector/animation/animation_module.js
 %%DATADIR%%/resources/inspector/application_test_runner/application_test_runner_module.js
-%%DATADIR%%/resources/inspector/audits/audits_module.js
 %%DATADIR%%/resources/inspector/audits2/audits2_module.js
 %%DATADIR%%/resources/inspector/audits2_test_runner/audits2_test_runner_module.js
 %%DATADIR%%/resources/inspector/audits2_worker.js
 %%DATADIR%%/resources/inspector/audits2_worker/audits2_worker_module.js
-%%DATADIR%%/resources/inspector/audits_test_runner/audits_test_runner_module.js
 %%DATADIR%%/resources/inspector/bindings_test_runner/bindings_test_runner_module.js
 %%DATADIR%%/resources/inspector/changes/changes_module.js
 %%DATADIR%%/resources/inspector/cm/cm_module.js
@@ -309,7 +307,6 @@ bin/chrome
 %%DEBUG%%%%DATADIR%%/libVkLayer_core_validation.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_object_tracker.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_parameter_validation.so
-%%DEBUG%%%%DATADIR%%/libVkLayer_swapchain.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_threading.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_unique_objects.so
 %%DRIVER%%bin/chromedriver

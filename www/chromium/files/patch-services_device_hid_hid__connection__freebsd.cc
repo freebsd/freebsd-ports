@@ -1,6 +1,6 @@
---- services/device/hid/hid_connection_freebsd.cc.orig	2018-03-04 05:38:54.417710000 +0100
-+++ services/device/hid/hid_connection_freebsd.cc	2018-03-04 08:44:44.849710000 +0100
-@@ -0,0 +1,280 @@
+--- services/device/hid/hid_connection_freebsd.cc.orig	2018-03-26 19:51:55.335784000 -0700
++++ services/device/hid/hid_connection_freebsd.cc	2018-03-26 22:43:54.916775000 -0700
+@@ -0,0 +1,277 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -52,11 +52,11 @@
 +                              base::Unretained(this)));
 +  }
 +
-+  void Write(scoped_refptr<net::IOBuffer> buffer,
-+             size_t size,
++  void Write(scoped_refptr<base::RefCountedBytes> buffer,
 +             WriteCallback callback) {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-+    char *data = buffer->data();
++    auto data = buffer->front();
++    size_t size = buffer->size();
 +    // if report id is 0, it shouldn't be included
 +    if (data[0] == 0) {
 +      data++;
@@ -75,12 +75,12 @@
 +  }
 +
 +  void GetFeatureReport(uint8_t report_id,
-+                        scoped_refptr<net::IOBufferWithSize> buffer,
++                        scoped_refptr<base::RefCountedBytes> buffer,
 +                        ReadCallback callback) {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +    struct usb_gen_descriptor ugd;
 +    ugd.ugd_report_type = UHID_FEATURE_REPORT;
-+    ugd.ugd_data = buffer->data();
++    ugd.ugd_data = buffer->front();
 +    ugd.ugd_maxlen = buffer->size();
 +    int result = HANDLE_EINTR(
 +        ioctl(fd_.get(), USB_GET_REPORT, &ugd));
@@ -98,21 +98,20 @@
 +    }
 +  }
 +
-+  void SendFeatureReport(scoped_refptr<net::IOBuffer> buffer,
-+                         size_t size,
++  void SendFeatureReport(scoped_refptr<base::RefCountedBytes> buffer,
 +                         WriteCallback callback) {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +    struct usb_gen_descriptor ugd;
 +    ugd.ugd_report_type = UHID_FEATURE_REPORT;
-+    ugd.ugd_data = buffer->data();
-+    ugd.ugd_maxlen = size;
++    ugd.ugd_data = buffer->front();
++    ugd.ugd_maxlen = buffer->size();
 +    // FreeBSD does not require report id if it's not used
-+    if (buffer->data()[0] == 0) {
-+      ugd.ugd_data = buffer->data() + 1;
-+      ugd.ugd_maxlen = size - 1;
++    if (buffer->front()[0] == 0) {
++      ugd.ugd_data = buffer->front() + 1;
++      ugd.ugd_maxlen = buffer->size() - 1;
 +    } else {
-+      ugd.ugd_data = buffer->data();
-+      ugd.ugd_maxlen = size;
++      ugd.ugd_data = buffer->front();
++      ugd.ugd_maxlen = buffer->size();
 +    }
 +    int result = HANDLE_EINTR(
 +        ioctl(fd_.get(), USB_SET_REPORT, &ugd));
@@ -130,8 +129,8 @@
 +  void OnFileCanReadWithoutBlocking() {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +
-+    scoped_refptr<net::IOBuffer> buffer(new net::IOBuffer(report_buffer_size_));
-+    char* data = buffer->data();
++    scoped_refptr<base::RefCountedBytes> buffer(new base::RefCountedBytes(report_buffer_size_));
++    unsigned char* data = buffer->front();
 +    size_t length = report_buffer_size_;
 +    if (!has_report_id_) {
 +      // FreeBSD will not prefix the buffer with a report ID if report IDs are not
@@ -210,14 +209,13 @@
 +  ProcessReadQueue();
 +}
 +
-+void HidConnectionFreeBSD::PlatformWrite(scoped_refptr<net::IOBuffer> buffer,
-+                                     size_t size,
++void HidConnectionFreeBSD::PlatformWrite(scoped_refptr<base::RefCountedBytes> buffer,
 +                                     WriteCallback callback) {
 +
 +  blocking_task_runner_->PostTask(
 +      FROM_HERE,
 +      base::BindOnce(&BlockingTaskHelper::Write, base::Unretained(helper_.get()),
-+                 buffer, size, std::move(callback)));
++                 buffer, std::move(callback)));
 +}
 +
 +void HidConnectionFreeBSD::PlatformGetFeatureReport(uint8_t report_id,
@@ -225,8 +223,8 @@
 +  // The first byte of the destination buffer is the report ID being requested
 +  // and is overwritten by the feature report.
 +  DCHECK_GT(device_info()->max_feature_report_size(), 0u);
-+  scoped_refptr<net::IOBufferWithSize> buffer(
-+      new net::IOBufferWithSize(device_info()->max_feature_report_size() + 1));
++  scoped_refptr<base::RefCountedBytes> buffer(
++      new base::RefCountedBytes(device_info()->max_feature_report_size() + 1));
 +  if (report_id != 0)
 +    buffer->data()[0] = report_id;
 +
@@ -238,17 +236,16 @@
 +}
 +
 +void HidConnectionFreeBSD::PlatformSendFeatureReport(
-+    scoped_refptr<net::IOBuffer> buffer,
-+    size_t size,
++    scoped_refptr<base::RefCountedBytes> buffer,
 +    WriteCallback callback) {
 +  blocking_task_runner_->PostTask(
 +      FROM_HERE,
 +      base::BindOnce(&BlockingTaskHelper::SendFeatureReport,
-+                 base::Unretained(helper_.get()), buffer, size, std::move(callback)));
++                 base::Unretained(helper_.get()), buffer, std::move(callback)));
 +}
 +
 +void HidConnectionFreeBSD::ProcessInputReport(
-+    scoped_refptr<net::IOBuffer> buffer,
++    scoped_refptr<base::RefCountedBytes> buffer,
 +    size_t size) {
 +  DCHECK(thread_checker().CalledOnValidThread());
 +  DCHECK_GE(size, 1u);
