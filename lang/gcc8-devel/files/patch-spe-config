@@ -1,0 +1,15 @@
+--- UTC
+Index: gcc/config.gcc
+===================================================================
+--- gcc/config.gcc.old	2017-04-05 17:48:03.045750000 -0500
++++ gcc/config.gcc	2017-04-05 17:49:22.143572000 -0500
+@@ -2383,6 +2383,9 @@
+ 		tmake_file="${tmake_file} rs6000/t-freebsd64"
+ 		extra_options="${extra_options} rs6000/linux64.opt"
+ 		;;
++	    powerpcspe-*)
++		tm_file="${tm_file} powerpcspe/freebsd.h powerpcspe/linuxspe.h powerpcspe/e500.h"
++		;;
+ 	     *)
+ 	        tm_file="${tm_file} rs6000/freebsd.h"
+ 		;;
