@@ -1,5 +1,0 @@
-This module allows easy access to Feeds, Presences and Users at jaiku.com.
-It requires an API key retreivable from http://api.jaiku.com/ for each
-username you wish to authenticate.
-
-WWW: http://search.cpan.org/dist/Net-Jaiku/

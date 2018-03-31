@@ -671,7 +671,6 @@
     SUBDIR += p5-Net-Ident
     SUBDIR += p5-Net-Ifconfig-Wrapper
     SUBDIR += p5-Net-Interface
-    SUBDIR += p5-Net-Jaiku
     SUBDIR += p5-Net-Jifty
     SUBDIR += p5-Net-LDAP-AutoDNs
     SUBDIR += p5-Net-LDAP-AutoServer
