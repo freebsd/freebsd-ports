@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pglogical
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	databases
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -16,7 +16,7 @@ WANT_PGSQL=	client server
 USE_GITHUB=	yes
 GH_ACCOUNT=	2ndQuadrant
 GH_PROJECT=	pglogical pglogical_dump:dump
-GH_TAGNAME=	REL2_1_1 9f3b0b1:dump
+GH_TAGNAME=	REL2_2_0 f66606d:dump
 GH_SUBDIR=	pglogical_dump:dump
 
 MAKE_ARGS=	USE_PGXS=1
