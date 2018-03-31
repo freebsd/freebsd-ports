@@ -2198,7 +2198,6 @@ lib/wine/fakedlls/winebrowser.exe
 lib/wine/fakedlls/winebus.sys
 lib/wine/fakedlls/winecfg.exe
 lib/wine/fakedlls/wineconsole.exe
-%%STAGING%%lib/wine/fakedlls/wined3d-csmt.dll
 lib/wine/fakedlls/wined3d.dll
 lib/wine/fakedlls/winedbg.exe
 lib/wine/fakedlls/winedevice.exe
@@ -2867,7 +2866,6 @@ lib/wine/winebrowser.exe.so
 lib/wine/winebus.sys.so
 lib/wine/winecfg.exe.so
 lib/wine/wineconsole.exe.so
-%%STAGING%%lib/wine/wined3d-csmt.dll.so
 lib/wine/wined3d.dll.so
 lib/wine/winedbg.exe.so
 lib/wine/winedevice.exe.so
