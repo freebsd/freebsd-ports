@@ -1,5 +1,5 @@
---- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig	2017-09-05 21:06:52.000000000 +0200
-+++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp	2017-09-07 00:17:09.604043000 +0200
+--- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig	2018-03-20 23:06:53.000000000 +0100
++++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp	2018-03-24 18:42:49.216641000 +0100
 @@ -25,7 +25,7 @@
  
  #if defined(__ANDROID__)
@@ -9,7 +9,7 @@
  #include "Main/libX11.hpp"
  #endif
  
-@@ -118,7 +118,7 @@
+@@ -119,7 +119,7 @@
  		// FIXME: Check if display_id is the default display
  	}
  
@@ -18,16 +18,25 @@
  		if(!libX11)
  		{
  			return success(HEADLESS_DISPLAY);
-@@ -174,7 +174,7 @@
- 	if(dpy == EGL_NO_DISPLAY && name == EGL_EXTENSIONS)
+@@ -176,7 +176,7 @@
  	{
  		return success(
+ 			"EGL_KHR_client_get_all_proc_addresses "
 -#if defined(__linux__) && !defined(__ANDROID__)
 +#if (defined(__linux__) || defined(__FreeBSD__)) && !defined(__ANDROID__)
  			"EGL_KHR_platform_gbm "
  			"EGL_KHR_platform_x11 "
  #endif
-@@ -1073,7 +1073,7 @@
+@@ -944,7 +944,7 @@
+ 
+ 	if(context)
+ 	{
+-		#if defined(__linux__) && !defined(__ANDROID__)
++		#if (defined(__linux__) || defined(__FreeBSD__)) && !defined(__ANDROID__)
+ 			egl::Display *display = context->getDisplay();
+ 
+ 			if(!display)
+@@ -1110,7 +1110,7 @@
  {
  	TRACE("(EGLenum platform = 0x%X, void *native_display = %p, const EGLint *attrib_list = %p)", platform, native_display, attrib_list);
  

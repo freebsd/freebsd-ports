@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	64.0.3282.186
-PORTREVISION=	2
+PORTVERSION=	65.0.3325.181
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -50,12 +49,13 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
 		libavcodec.so:multimedia/ffmpeg \
+		libvpx.so:multimedia/libvpx \
 		libopenh264.so:multimedia/openh264 \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libgcrypt.so:security/libgcrypt \
-		libgnome-keyring.so:security/libgnome-keyring \
+		libsecret-1.so:security/libsecret \
 		libnss3.so:security/nss \
 		libexpat.so:textproc/expat2 \
 		libxml2.so:textproc/libxml2 \
@@ -111,7 +111,6 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_webrtc=true \
 		fieldtrial_testing_like_official_build=true \
 		is_clang=true \
-		is_official_build=true \
 		toolkit_views=true \
 		treat_warnings_as_errors=false \
 		use_allocator="none" \
@@ -119,6 +118,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_aura=true \
 		use_bundled_fontconfig=false \
 		use_custom_libcxx=false \
+		use_gnome_keyring=false \
 		use_gtk3=true \
 		use_lld=true \
 		use_sysroot=false \
@@ -144,13 +144,13 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=	CODECS CUPS DEBUG DRIVER GCONF KERBEROS TEST
+OPTIONS_DEFINE=	CODECS CUPS DEBUG DRIVER KERBEROS TEST
 CODECS_DESC=	Compile and enable patented codecs like H.264
 DRIVER_DESC=	Install chromedriver
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 
-OPTIONS_DEFAULT=	ALSA CODECS CUPS DRIVER GCONF KERBEROS
+OPTIONS_DEFAULT=	ALSA CODECS CUPS DRIVER KERBEROS
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -174,18 +174,15 @@ DEBUG_VARS=		BUILDTYPE=Debug \
 			GN_ARGS+=is_debug=true \
 			GN_ARGS+=is_component_build=false \
 			GN_BOOTSTRAP_FLAGS+=--debug \
-			WANTSPACE="lots of free diskspace (~ 8.5GB)"
+			WANTSPACE="lots of free disk space (~ 12GB)"
 DEBUG_VARS_OFF=		BUILDTYPE=Release \
 			GN_ARGS+=is_debug=false \
+			GN_ARGS+=is_official_build=true \
 			GN_ARGS+=symbol_level=0 \
 			GN_ARGS+=remove_webcore_debug_symbols=true \
-			WANTSPACE="a fair amount of free diskspace (~ 3.7GB)"
+			WANTSPACE="a fair amount of free disk space (~ 5.8GB)"
 
 DRIVER_MAKE_ARGS=	chromedriver
-
-GCONF_USE=		GNOME=gconf2
-GCONF_VARS=		GN_ARGS+=use_gconf=true
-GCONF_VARS_OFF=		GN_ARGS+=use_gconf=false
 
 KERBEROS_VARS=		GN_ARGS+=use_kerberos=true
 KERBEROS_VARS_OFF=	GN_ARGS+=use_kerberos=false
@@ -223,10 +220,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++-old
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++-new
 .endif
 
-.if ${ARCH} == aarch64
-GN_ARGS+=	use_vulcanize=false
-.endif
-
 .if !defined(GN_ONLY)
 pre-everything::
 	@${ECHO_MSG}
@@ -252,7 +245,7 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		ffmpeg flac freetype harfbuzz-ng libdrm libwebp libxml libxslt openh264 opus snappy yasm || ${FALSE}
+		ffmpeg flac freetype harfbuzz-ng libdrm libvpx libwebp libxml libxslt openh264 opus snappy yasm || ${FALSE}
 .endif
 
 do-configure:

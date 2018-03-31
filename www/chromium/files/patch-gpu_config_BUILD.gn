@@ -1,13 +1,14 @@
---- gpu/config/BUILD.gn.orig	2017-06-05 19:03:08 UTC
-+++ gpu/config/BUILD.gn
-@@ -99,6 +99,10 @@ source_set("config_sources") {
+--- gpu/config/BUILD.gn.orig	2018-03-20 23:05:26.000000000 +0100
++++ gpu/config/BUILD.gn	2018-03-26 13:38:50.564110000 +0200
+@@ -107,6 +107,11 @@
      "gpu_util.h",
    ]
  
 +  if (is_bsd) {
 +    sources -= [ "gpu_info_collector_linux.cc" ]
++    sources += [ "gpu_info_collector_freebsd.cc" ]
 +  }
 +
-   sources += process_json_outputs
- 
-   configs += [
+   if (is_fuchsia) {
+     sources += [ "gpu_info_collector_fuchsia.cc" ]
+   }

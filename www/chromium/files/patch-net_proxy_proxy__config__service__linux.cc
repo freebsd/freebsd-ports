@@ -1,24 +1,24 @@
---- net/proxy/proxy_config_service_linux.cc.orig	2017-07-25 21:04:58.000000000 +0200
-+++ net/proxy/proxy_config_service_linux.cc	2017-08-02 14:35:59.532886000 +0200
-@@ -11,7 +11,9 @@
+--- net/proxy/proxy_config_service_linux.cc.orig	2018-03-20 23:05:28.000000000 +0100
++++ net/proxy/proxy_config_service_linux.cc	2018-03-24 18:11:27.991396000 +0100
+@@ -6,7 +6,9 @@
+ 
+ #include <errno.h>
  #include <limits.h>
- #include <stdio.h>
- #include <stdlib.h>
 +#if !defined(OS_BSD)
  #include <sys/inotify.h>
 +#endif
  #include <unistd.h>
  
  #include <map>
-@@ -855,6 +857,7 @@
+@@ -483,6 +485,7 @@
+   return default_value;
  }
- #endif  // defined(USE_GIO)
  
 +#if !defined(OS_BSD)
- // This is the KDE version that reads kioslaverc and simulates gconf.
+ // This is the KDE version that reads kioslaverc and simulates gsettings.
  // Doing this allows the main Delegate code, as well as the unit tests
  // for it, to stay the same - and the settings map fairly well besides.
-@@ -1348,6 +1351,7 @@
+@@ -976,6 +979,7 @@
  
    DISALLOW_COPY_AND_ASSIGN(SettingGetterImplKDE);
  };
@@ -26,7 +26,7 @@
  
  }  // namespace
  
-@@ -1549,8 +1553,10 @@
+@@ -1173,8 +1177,10 @@
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:
