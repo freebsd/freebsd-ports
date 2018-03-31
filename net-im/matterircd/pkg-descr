@@ -1,0 +1,6 @@
+Minimal IRC server which integrates with Mattermost and Slack.
+
+Connect to your local/remote Mattermost installation or to Slack via your
+IRC-client.
+
+WWW: https://github.com/42wim/matterircd
