@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.49.2
+PORTVERSION=	2.49.3
 CATEGORIES=	www mail news editors irc
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}/langpack \
 		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build1/linux-i686/xpi \
