@@ -625,6 +625,7 @@
     SUBDIR += pure-rational
     SUBDIR += py-Diofant
     SUBDIR += py-PyWavelets
+    SUBDIR += py-Pyomo
     SUBDIR += py-altgraph
     SUBDIR += py-apgl
     SUBDIR += py-basemap
