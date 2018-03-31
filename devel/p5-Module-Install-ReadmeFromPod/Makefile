@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Install-ReadmeFromPod
-PORTVERSION=	0.26
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Module-Install>=1.00:devel/p5-Module-Install \
-		p5-Capture-Tiny>=0.05:devel/p5-Capture-Tiny
+		p5-IO-All>=0:devel/p5-IO-All \
+		p5-Pod-Markdown>=2.0:textproc/p5-Pod-Markdown
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Capture-Tiny>=0.05:devel/p5-Capture-Tiny \
+		p5-Test-InDistDir>=0:devel/p5-Test-InDistDir
 
 USES=		perl5
 USE_PERL5=	configure
