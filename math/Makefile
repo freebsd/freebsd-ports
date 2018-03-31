@@ -672,6 +672,7 @@
     SUBDIR += py-pymc
     SUBDIR += py-pymc3
     SUBDIR += py-pysparse
+    SUBDIR += py-pysym
     SUBDIR += py-pyvtk
     SUBDIR += py-roman
     SUBDIR += py-scientific
