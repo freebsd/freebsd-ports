@@ -23,6 +23,6 @@ load_rc_config ${name}
 : ${dnsdist_enable:=NO}
 
 command=/usr/local/sbin/${name}
-command_args="-u ${dnsdist_priv_user} -g ${dnsdist_priv_group} -d"
+command_args="-u ${dnsdist_priv_user} -g ${dnsdist_priv_group}"
 
 run_rc_command "$1"
