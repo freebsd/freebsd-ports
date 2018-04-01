@@ -1,0 +1,7 @@
+The levmar is GPL'ed ANSI C implementation of the Levenberg-Marquardt (LM)
+optimization algorithm. The LM algorithm provides a numerical solution to the
+problem of minimizing a function over a parameter space of a function. The
+levmar library provides implementation of both unconstrained and constrained LM
+algorithms (box, linear equation, and linear inequality constraints).
+
+WWW: https://github.com/bjodah/levmar
