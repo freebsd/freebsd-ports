@@ -1,6 +1,5 @@
 bin/librecad
 bin/ttf2lff
-share/appdata/librecad.appdata.xml
 share/applications/librecad.desktop
 %%DATADIR%%/fonts/OpenGostTypeA-Regular.lff
 %%DATADIR%%/fonts/OpenGostTypeB-Regular.lff
@@ -48,7 +47,6 @@ share/applications/librecad.desktop
 %%DATADIR%%/fonts/symeteo.lff
 %%DATADIR%%/fonts/symusic.lff
 %%DATADIR%%/fonts/unicode.lff
-%%DATADIR%%/fonts/wqy-unicode.lff
 %%DATADIR%%/library/algoritm/alg1.dxf
 %%DATADIR%%/library/algoritm/alg10.dxf
 %%DATADIR%%/library/algoritm/alg11.dxf
@@ -1385,6 +1383,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/patterns/triangle_b.dxf
 %%DATADIR%%/plugins/libalign.so
 %%DATADIR%%/plugins/libasciifile.so
+%%DATADIR%%/plugins/libgear.so
 %%DATADIR%%/plugins/libimportshp.so
 %%DATADIR%%/plugins/liblist.so
 %%DATADIR%%/plugins/libpicfile.so
@@ -1431,6 +1430,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/librecad_ja.qm
 %%DATADIR%%/qm/librecad_ko.qm
 %%DATADIR%%/qm/librecad_lv.qm
+%%DATADIR%%/qm/librecad_mk.qm
 %%DATADIR%%/qm/librecad_nl.qm
 %%DATADIR%%/qm/librecad_no.qm
 %%DATADIR%%/qm/librecad_pa.qm
@@ -1488,6 +1488,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_ja.qm
 %%DATADIR%%/qm/plugins_ko.qm
 %%DATADIR%%/qm/plugins_lv.qm
+%%DATADIR%%/qm/plugins_mk.qm
 %%DATADIR%%/qm/plugins_nl.qm
 %%DATADIR%%/qm/plugins_no.qm
 %%DATADIR%%/qm/plugins_pa.qm
@@ -1505,4 +1506,5 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_uk.qm
 %%DATADIR%%/qm/plugins_zh_cn.qm
 %%DATADIR%%/qm/plugins_zh_tw.qm
+share/metainfo/librecad.appdata.xml
 share/pixmaps/librecad.png
