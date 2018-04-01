@@ -1,0 +1,17 @@
+pyneqsys provides a convenience class for representing and solving non-linear
+equation systems from symbolic expressions (provided e.g. with the help of
+SymPy).
+
+The numerical root finding is perfomed using either:
+* scipy: scipy.optimize.root
+* mpmath (arbitrary precision): mpmath.calculus.optimization.MDNewton
+* kinsol (from SUNDIALS): pykinsol.solve
+* nleq2 (ZIB library free for academic use): pynleq2.solve
+* levmar (Levenberg-Marquardt): levmar.levmar
+
+In addition to offering a unified interface to different solvers, pyneqsys can
+also derive the Jacobian analytically (when using pyneqsys.SymbolicSys). This
+is useful since doing so manually is widely recognized as both tedious and error
+prone.
+
+WWW: https://github.com/bjodah/pyneqsys
