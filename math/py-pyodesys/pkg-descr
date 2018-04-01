@@ -1,0 +1,15 @@
+pyodesys provides a straightforward way of numerically integrating systems of
+ordinary differential equations (initial value problems). It unifies the
+interface of several libraries for performing the numerical integration as well
+as several libraries for symbolic representation. It also provides a convenience
+class for representing and integrating ODE systems defined by symbolic
+expressions, e.g. SymPy expressions. This allows the user to write concise code
+and rely on pyodesys to handle the subtle differences between libraries.
+
+The numerical integration is performed using either:
+* scipy.integrate.ode
+* pygslodeiv2
+* pyodeint
+* pycvodes
+
+WWW: https://github.com/bjodah/pyodesys
