@@ -1,0 +1,7 @@
+pynleq2 provides a Python binding to the NLEQ2 algorithm from CodeLib
+distributed by Zuse Institute Berlin (ZIB).
+
+pynleq2 can be used as a backend for pyneqsys (math/py-pyneqsys)
+to solve non-linear symbolic equation systems.
+
+WWW: https://github.com/bjodah/pynleq2
