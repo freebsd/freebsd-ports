@@ -1,7 +1,0 @@
---- storage/innobase/CMakeLists.txt.orig        2018-02-04 02:30:31 UTC
-+++ storage/innobase/CMakeLists.txt
-@@ -520,4 +520,3 @@ MYSQL_ADD_PLUGIN(innobase ${INNOBASE_SOU
-   MODULE_OUTPUT_NAME ha_innodb
-   LINK_LIBRARIES ${ZLIB_LIBRARY} ${LIBSYSTEMD} ${LINKER_SCRIPT})
-
--ADD_DEPENDENCIES(innobase GenError)
