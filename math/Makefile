@@ -323,6 +323,7 @@
     SUBDIR += mpexpr
     SUBDIR += mpfr
     SUBDIR += mpir
+    SUBDIR += mppp
     SUBDIR += mprime
     SUBDIR += msieve
     SUBDIR += mtl
