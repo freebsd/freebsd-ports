@@ -481,6 +481,7 @@
     SUBDIR += osslsigncode
     SUBDIR += otpw
     SUBDIR += outguess
+    SUBDIR += owasp-dependency-check
     SUBDIR += p11-kit
     SUBDIR += p5-Apache-Htpasswd
     SUBDIR += p5-App-Genpass
