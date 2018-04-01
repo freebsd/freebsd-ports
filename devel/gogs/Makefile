@@ -2,8 +2,7 @@
 
 PORTNAME=	gogs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.34
-PORTREVISION=	2
+DISTVERSION=	0.11.43
 CATEGORIES=	devel www
 
 MAINTAINER=	dg@syrec.org
@@ -73,6 +72,8 @@ do-install:
 	@${LN} -sf ${GOGS_DBDIR}/data ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/data
 	@${MKDIR} ${STAGEDIR}${GOGS_LOGDIR}
 	@${LN} -sf ${GOGS_LOGDIR} ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/log
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
