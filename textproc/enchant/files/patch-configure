@@ -1,6 +1,6 @@
---- configure.orig	2013-08-16 18:30:56.000000000 +0200
-+++ configure	2013-08-16 18:31:33.000000000 +0200
-@@ -18213,7 +18213,7 @@
+--- configure.orig	2010-04-01 20:56:39 UTC
++++ configure
+@@ -18213,7 +18213,7 @@ if test "x$ac_cv_lib_aspell_get_aspell_dict_info_list"
  fi
  
  

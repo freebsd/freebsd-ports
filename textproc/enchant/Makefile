@@ -3,7 +3,7 @@
 
 PORTNAME=	enchant
 PORTVERSION=	1.6.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	gnome2
@@ -47,11 +47,16 @@ HUNSPELL_CONFIGURE_ON=	--with-system-myspell=yes \
 ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 ISPELL_CONFIGURE_ENABLE=	ispell
 
-ZEMBEREK_LIb_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+ZEMBEREK_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+			libdbus-glib-1.so:devel/dbus-glib
 ZEMBEREK_CONFIGURE_ENABLE=	zemberek
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|MKDIRPROG-mkdir|MKDIRPROG-mkdir -p|g' \
 		${WRKSRC}/install-sh
+
+post-install:
+	@cd ${STAGEDIR}${PREFIX}/share/enchant/ && \
+		${MV} enchant.ordering enchant1.ordering
 
 .include <bsd.port.mk>

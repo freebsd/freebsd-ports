@@ -176,6 +176,7 @@
     SUBDIR += en-hunspell
     SUBDIR += en-mythes
     SUBDIR += enchant
+    SUBDIR += enchant2
     SUBDIR += eo-aspell
     SUBDIR += eqe
     SUBDIR += erlang-edown
