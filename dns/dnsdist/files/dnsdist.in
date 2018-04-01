@@ -22,7 +22,10 @@ load_rc_config ${name}
 : ${dnsdist_priv_group:=_dnsdist}
 : ${dnsdist_enable:=NO}
 
-command=/usr/local/sbin/${name}
-command_args="-u ${dnsdist_priv_user} -g ${dnsdist_priv_group}"
+pidfile=/var/run/${name}.pid
+
+command=/usr/sbin/daemon
+actual_command=/usr/local/sbin/${name}
+command_args="-c -f -r -P ${pidfile} ${actual_command} -u ${dnsdist_priv_user} -g ${dnsdist_priv_group} --supervised"
 
 run_rc_command "$1"
