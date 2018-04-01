@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tripwire
-PORTVERSION=	2.4.3.6
+PORTVERSION=	2.4.3.7
 CATEGORIES=	security
 
 MAINTAINER=	cy@FreeBSD.org
