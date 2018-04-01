@@ -36,6 +36,7 @@ USE_CXXSTD=	gnu++98
 USE_GL=		gl glu
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
+LLD_UNSAFE=	yes
 
 WRKDIR_DIASPORA=${WRKDIR}/Diaspora_R1_Linux/Diaspora
 WRKSRC=		${WRKDIR_DIASPORA}/fs2_open
