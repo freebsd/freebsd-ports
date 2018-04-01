@@ -6,4 +6,4 @@ To use this app, you need a capture card supported by the bktr(4) driver.
 Examples include the Hauppauge Wincast/TV, the STB TV PCI, and the Intel
 Smart Video Recorder III.  See the 'bktr' man page for more information.
 
-WWW: http://people.FreeBSD.org/~rhh/fxtv/
+WWW: https://people.freebsd.org/~rhh/fxtv/
