@@ -30,6 +30,7 @@ USE_SDL=	sdl2
 USE_GL=		gl glu glew
 USE_XORG=	x11 xcursor
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 DOS2UNIX_GLOB=	*.h *.hpp *.cpp
 
 USES=		cmake compiler:c++11-lib dos2unix openal:al tar:lzma
