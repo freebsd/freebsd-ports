@@ -1,0 +1,12 @@
+sym provides a unified wrapper to some symbolic manipulation libraries in
+Python. It makes it easy for library authors to test their packages against
+several symbolic manipulation libraries.
+
+Currently the following Python pacakges are available as "backends":
+* SymPy
+* SymEngine
+* PySym
+* SymCXX
+* Diofant
+
+WWW: https://github.com/bjodah/sym
