@@ -3,7 +3,7 @@
 
 PORTNAME=	dnsdist
 DISTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/ \
 		LOCAL/cpm
@@ -22,9 +22,10 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libsodium.so:security/libsodium
 
 GNU_CONFIGURE=	yes
-USES=		bison compiler cpe gmake libedit libtool localbase lua:52 \
+USES=		bison compiler cpe gmake libedit libtool localbase \
 		pkgconfig tar:bz2
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
+		--enable-dns-over-tls \
 		--enable-dnscrypt \
 		--enable-libsodium \
 		--enable-re2
@@ -35,6 +36,30 @@ USERS=		_dnsdist
 GROUPS=		_dnsdist
 
 USE_RC_SUBR=	dnsdist
+
+OPTIONS_DEFINE=		FSTRM LUAJIT SNMP
+OPTIONS_DEFAULT=	GNUTLS OPENSSL
+OPTIONS_MULTI=		TLS
+OPTIONS_MULTI_TLS=	GNUTLS OPENSSL
+
+FSTRM_DESC=	dnstap support (see dnstap.info)
+LUAJIT_DESC=	Use LuaJIT instead of Lua
+
+FSTRM_LIB_DEPENDS=	libfstrm.so:devel/fstrm
+FSTRM_CONFIGURE_ENABLE=	fstrm
+
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_ENABLE=gnutls
+
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit
+LUAJIT_USES_OFF=	lua
+LUAJIT_CONFIGURE_WITH=	luajit
+
+OPENSSL_USES=		ssl
+OPENSSL_CONFIGURE_ENABLE=libssl
+
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+SNMP_CONFIGURE_WITH=	net-snmp
 
 .include <bsd.port.pre.mk>
 
