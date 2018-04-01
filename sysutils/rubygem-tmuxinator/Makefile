@@ -13,12 +13,21 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-erubis>=2.6:www/rubygem-erubis \
 		rubygem-thor>=0.15.0:devel/rubygem-thor \
-		rubygem-xdg>=2.2.3:devel/rubygem-xdg \
-		tmux:sysutils/tmux
+		rubygem-xdg>=2.2.3:devel/rubygem-xdg
 
 USES=		gem
 USE_RUBY=	yes
 NO_ARCH=	yes
+
+OPTIONS_DEFAULT=	TMUX
+OPTIONS_SINGLE=		TMUX
+OPTIONS_SINGLE_TMUX=	TMUX TMUX23
+
+TMUX23_DESC=		Enable tmux23
+TMUX_DESC=		Enable tmux
+
+TMUX_RUN_DEPENDS=	tmux:sysutils/tmux
+TMUX23_RUN_DEPENDS=	tmux:sysutils/tmux23
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
