@@ -1,0 +1,7 @@
+Ipopt (Interior Point OPTimizer, pronounced eye-pea-Opt) is a software package
+for large-scale nonlinear optimization.
+
+cyipopt is a python wrapper around Ipopt. It enables using Ipopt from the
+comfort of the great Python scripting language.
+
+WWW: https://github.com/matthias-k/cyipopt
