@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180401:
+  AFFECTS: users of mail/dovecot and mail/dovecot-pigeonhole
+  AUTHOR: adamw@FreeBSD.org
+
+  Dovecot has been upgraded to 2.3.1, and pigeonhole to 0.5.1. Most
+  existing dovecot installations MUST be modified for 2.3, but for
+  most users the modifications are simple.
+
+  Modify your Dovecot conf.d/ files before spinning up 2.3.1. The
+  upgrading instructions are detailed here:
+
+  	https://wiki2.dovecot.org/Upgrading/2.3
+
 20180330:
   AFFECTS: users of lang/perl5*
   AUTHOR: mat@FreeBSD.org

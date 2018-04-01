@@ -17,14 +17,23 @@
 
 ---------------------------------------------------------------------
 
-To avoid a risk of mailbox corruption, do not set the
-security.bsd.see_other_uids or .see_other_gids sysctls to 0
-if Dovecot is storing mail for multiple concurrent users (PR 218392).
+ To avoid a risk of mailbox corruption, do not set the
+ security.bsd.see_other_uids or .see_other_gids sysctls to 0
+ if Dovecot is storing mail for multiple concurrent users (PR 218392).
 
 ---------------------------------------------------------------------
 
  If you want to be able to search within attachments using the
  decode2text plugin, you'll need to install textproc/catdoc, and
  one of graphics/xpdf or graphics/poppler-utils.
+
+---------------------------------------------------------------------
+
+ There are some potentially breaking changes in Dovecot 2.3. If you
+ are upgrading from Dovecot 2.2:
+ 
+   * Read https://wiki2.dovecot.org/Upgrading/2.3
+   * Merge the configuration file changes from
+     %%ETCDIR%%/examples-config/
 
 ---------------------------------------------------------------------
