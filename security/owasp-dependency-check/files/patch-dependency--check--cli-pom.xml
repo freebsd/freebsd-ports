@@ -1,0 +1,18 @@
+--- dependency-check-cli/pom.xml.orig	2018-01-29 03:12:27 UTC
++++ dependency-check-cli/pom.xml
+@@ -91,7 +91,15 @@ Copyright (c) 2012 - Jeremy Long. All Ri
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-assembly-plugin</artifactId>
+                 <configuration>
++                    <archive>
++                        <manifest>
++                            <mainClass>org.owasp.dependencycheck.App</mainClass>
++                        </manifest>
++                    </archive>
+                     <attach>false</attach> <!-- don't install/deploy this archive -->
++                    <descriptorRefs>
++                        <descriptorRef>jar-with-dependencies</descriptorRef>
++                    </descriptorRefs>
+                 </configuration>
+                 <executions>
+                     <execution>

@@ -1,0 +1,5 @@
+TIMESTAMP = 1522498032
+SHA256 (owasp-dependency-check-3.1.1-maven-repository.tar.gz) = 27d27cfa9659c0c4b03dc311e994570641caa2b5db558731bea2a1904fca31b9
+SIZE (owasp-dependency-check-3.1.1-maven-repository.tar.gz) = 110896009
+SHA256 (jeremylong-DependencyCheck-v3.1.1_GH0.tar.gz) = 63c89d2263a5dd01f7cc44e22b1172989192b928ff1b650277ffec13e5d168eb
+SIZE (jeremylong-DependencyCheck-v3.1.1_GH0.tar.gz) = 70973557
