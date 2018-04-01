@@ -1,0 +1,4 @@
+C implementation of Python 3 functools.lru_cache. Provides speedup of 10-30x
+over standard library. Passes test suite from standard library for lru_cache.
+
+WWW: https://github.com/pbrady/fastcache
