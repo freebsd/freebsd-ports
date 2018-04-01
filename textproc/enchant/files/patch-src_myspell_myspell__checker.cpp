@@ -1,6 +1,6 @@
 --- src/myspell/myspell_checker.cpp.orig	2010-04-01 20:53:37 UTC
 +++ src/myspell/myspell_checker.cpp
-@@ -427,7 +427,7 @@ MySpellChecker::requestDictionary(const 
+@@ -427,7 +427,7 @@ MySpellChecker::requestDictionary(const char *szLang)
  	if(myspell == NULL){
  		return false;
  	}

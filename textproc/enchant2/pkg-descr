@@ -1,0 +1,10 @@
+Enchant aims to provide a simple but comprehensive abstraction for dealing
+with different spell checking libraries in a consistent way. A client, such
+as a text editor or word processor, need not know anything about a specific
+spell-checker, and since all back-ends are plugins, new spell-checkers can
+be added without needing any change to the program using Enchant.
+
+Enchant can be configured by the user, who can even add spell-checker
+plugins if desired.
+
+WWW: https://abiword.github.io/enchant/
