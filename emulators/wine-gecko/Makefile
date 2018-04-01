@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	wine-gecko
-DISTVERSION=	2.40
+DISTVERSION=	2.47
 CATEGORIES=	emulators
-MASTER_SITES=	SF/wine/Wine%20Gecko/${DISTVERSION}
+MASTER_SITES=	http://dl.winehq.org/wine/wine-gecko/${DISTVERSION}/
 DISTNAME=	wine_gecko-${DISTVERSION}-x86
 EXTRACT_SUFX=	.msi
 EXTRACT_ONLY=
