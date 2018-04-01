@@ -397,6 +397,7 @@
     SUBDIR += midori
     SUBDIR += mimetex
     SUBDIR += mini_httpd
+    SUBDIR += miniflux
     SUBDIR += miniminiweb
     SUBDIR += minio
     SUBDIR += minio-client
