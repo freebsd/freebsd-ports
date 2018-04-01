@@ -12,10 +12,10 @@ COMMENT=	X11-based TV display and capture application (for use with bt848 driver
 
 LICENSE=	BSD2CLAUSE
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libXaw3d.so:x11-toolkits/Xaw3d
-
-ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		gmake jpeg tar:tgz
 MAKE_ENV=	X11BASE=${LOCALBASE}
