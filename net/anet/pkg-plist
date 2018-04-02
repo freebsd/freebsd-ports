@@ -1,3 +1,5 @@
+include/anet/anet-arp.adb
+include/anet/anet-arp.ads
 include/anet/anet-byte_swapping.adb
 include/anet/anet-byte_swapping.ads
 include/anet/anet-constants.ads
@@ -5,8 +7,6 @@ include/anet/anet-errno.adb
 include/anet/anet-errno.ads
 include/anet/anet-ipv4.adb
 include/anet/anet-ipv4.ads
-include/anet/anet-net_ifaces.adb
-include/anet/anet-net_ifaces.ads
 include/anet/anet-os.adb
 include/anet/anet-os.ads
 include/anet/anet-os_constants.ads
@@ -23,6 +23,8 @@ include/anet/anet-sockets-inet-iface.adb
 include/anet/anet-sockets-inet-iface.ads
 include/anet/anet-sockets-inet.adb
 include/anet/anet-sockets-inet.ads
+include/anet/anet-sockets-net_ifaces.adb
+include/anet/anet-sockets-net_ifaces.ads
 include/anet/anet-sockets-thin-inet.adb
 include/anet/anet-sockets-thin-inet.ads
 include/anet/anet-sockets-thin-netdev-requests.ads
@@ -45,11 +47,11 @@ include/anet/anet-util.adb
 include/anet/anet-util.ads
 include/anet/anet.adb
 include/anet/anet.ads
+lib/anet/anet-arp.ali
 lib/anet/anet-byte_swapping.ali
 lib/anet/anet-constants.ali
 lib/anet/anet-errno.ali
 lib/anet/anet-ipv4.ali
-lib/anet/anet-net_ifaces.ali
 lib/anet/anet-os.ali
 lib/anet/anet-os_constants.ali
 lib/anet/anet-receivers-datagram.ali
@@ -59,6 +61,7 @@ lib/anet/anet-socket_families.ali
 lib/anet/anet-sockets-filters.ali
 lib/anet/anet-sockets-inet-iface.ali
 lib/anet/anet-sockets-inet.ali
+lib/anet/anet-sockets-net_ifaces.ali
 lib/anet/anet-sockets-thin-inet.ali
 lib/anet/anet-sockets-thin-netdev-requests.ali
 lib/anet/anet-sockets-thin-netdev.ali
