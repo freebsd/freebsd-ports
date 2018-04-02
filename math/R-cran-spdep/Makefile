@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spdep
-DISTVERSION=	0.6-15
-PORTREVISION=	1
+DISTVERSION=	0.7-4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,6 +12,7 @@ COMMENT=	Spatial dependence: weighting schemes, statistics, and models
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-sp>=1.0:math/R-cran-sp \
+		R-cran-spData>=0.2.6.0:math/R-cran-spData \
 		R-cran-LearnBayes>0:math/R-cran-LearnBayes \
 		R-cran-deldir>0:math/R-cran-deldir \
 		R-cran-coda>0:math/R-cran-coda \
