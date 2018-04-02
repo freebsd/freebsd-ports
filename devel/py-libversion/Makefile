@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libversion
-PORTVERSION=	0.2.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Python bindings for libversion
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libversion.a:devel/libversion
+LIB_DEPENDS=	libversion.so:devel/libversion
 
 USES=		python:3.6+ pkgconfig
 USE_PYTHON=	autoplist distutils
