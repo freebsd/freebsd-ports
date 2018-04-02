@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-PORTVERSION=	4.0.3
+DISTVERSION=	4.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
@@ -30,7 +30,7 @@ TEST_TARGET=		check
 OPTIONS_DEFINE=		GEOIP HTP_PORT IPFW JSON NETMAP NSS PORTS_PCAP PRELUDE \
 			REDIS SC TESTS
 OPTIONS_DEFINE_amd64=	HYPERSCAN
-OPTIONS_DEFAULT=	HTP_PORT IPFW JSON NETMAP PRELUDE
+OPTIONS_DEFAULT=	IPFW JSON NETMAP PRELUDE
 OPTIONS_SUB=		yes
 
 OPTIONS_RADIO=		SCRIPTS
@@ -83,6 +83,7 @@ LUAJIT_CONFIGURE_ON=		--enable-luajit
 
 NSS_LIB_DEPENDS=		libnss3.so:security/nss \
 				libnspr4.so:devel/nspr
+NSS_CONFIGURE_OFF=		--disable-nss --disable-nspr
 NSS_CONFIGURE_ON=		--with-libnss-includes=${LOCALBASE}/include/nss/nss \
 				--with-libnss-libraries=${LOCALBASE}/lib \
 				--with-libnspr-libraries=${LOCALBASE}/lib \
@@ -136,12 +137,12 @@ RULES_FILES=	app-layer-events.rules decoder-events.rules dns-events.rules files.
 LOGS_DIR?=	/var/log/${PORTNAME}
 
 pre-patch:
-	${CP} ${FILESDIR}/ax_check_compile_flag.m4 ${WRKSRC}/m4
+	@${CP} ${FILESDIR}/ax_check_compile_flag.m4 ${WRKSRC}/m4
 
 post-install:
-	${MKDIR} ${STAGEDIR}${CONFIG_DIR}
-	${MKDIR} ${STAGEDIR}${RULES_DIR}
-	${MKDIR} ${STAGEDIR}${LOGS_DIR}
+	@${MKDIR} ${STAGEDIR}${CONFIG_DIR}
+	@${MKDIR} ${STAGEDIR}${RULES_DIR}
+	@${MKDIR} ${STAGEDIR}${LOGS_DIR}
 .for f in ${CONFIG_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${CONFIG_DIR}/${f}.sample
 .endfor
