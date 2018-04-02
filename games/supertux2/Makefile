@@ -17,6 +17,7 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs \
 
 BROKEN_FreeBSD_10=	does not build on 10.x
 
+LLD_UNSAFE=	yes
 USE_SDL=	sdl2 image2
 USE_GL=		glew
 USES=		cmake:outsource compiler:c++11-lib dos2unix iconv \
