@@ -5,7 +5,7 @@ PORTNAME=	servlet-api
 PORTVERSION=	2.5
 PORTREVISION=	3
 CATEGORIES=	www java
-MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/maven2/javax/servlet/servlet-api/2.5/ \
+MASTER_SITES=	http://maven.ibiblio.org/maven2/javax/servlet/servlet-api/2.5/ \
 		http://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
