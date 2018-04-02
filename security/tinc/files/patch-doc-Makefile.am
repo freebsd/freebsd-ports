@@ -1,0 +1,41 @@
+From 0a95c77f23352aafb08edd85da1c044c02bcb0b7 Mon Sep 17 00:00:00 2001
+From: Guus Sliepen <guus@tinc-vpn.org>
+Date: Sat, 4 Nov 2017 19:52:08 +0100
+Subject: [PATCH] Fix building documentation when using OpenBSD's make.
+
+---
+ doc/Makefile.am | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/doc/Makefile.am b/doc/Makefile.am
+index fed46b7..60afb12 100644
+--- doc/Makefile.am
++++ doc/Makefile.am
+@@ -6,7 +6,7 @@ man_MANS = tincd.8 tinc.conf.5
+ 
+ EXTRA_DIST = tincinclude.texi.in tincd.8.in tinc.conf.5.in sample-config
+ 
+-CLEANFILES = *.html tincd.8 tinc.conf.5 tincinclude.texi
++CLEANFILES = *.html tincd.8 tinc.conf.5 tincinclude.texi tinc.info
+ 
+ texi2html: tinc.texi
+ 	$(AM_V_GEN)texi2html -split=chapter $<
+@@ -25,12 +25,12 @@ substitute = sed \
+ 	-e s,'@localstatedir\@',"$(localstatedir)",g
+ 
+ tincd.8: $(srcdir)/tincd.8.in
+-	$(AM_V_GEN)$(substitute) $< > $@
++	$(AM_V_GEN)$(substitute) $(srcdir)/tincd.8.in > $@
+ 
+ tinc.conf.5: $(srcdir)/tinc.conf.5.in
+-	$(AM_V_GEN)$(substitute) $< > $@
++	$(AM_V_GEN)$(substitute) $(srcdir)/tinc.conf.5.in > $@
+ 
+ tincinclude.texi: $(srcdir)/tincinclude.texi.in
+-	$(AM_V_GEN)$(substitute) $< > $@
++	$(AM_V_GEN)$(substitute) $(srcdir)/tincinclude.texi.in > $@
+ 
+ tinc.texi: tincinclude.texi
+-- 
+2.16.2
+

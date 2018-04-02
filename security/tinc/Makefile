@@ -3,6 +3,7 @@
 
 PORTNAME=	tinc
 PORTVERSION=	1.0.33
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.tinc-vpn.org/packages/ \
 		http://www.tinc-vpn.org/packages/
@@ -14,7 +15,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
-USES=		cpe ssl makeinfo
+USES=		cpe ssl makeinfo autoreconf
 CPE_VENDOR=	tinc-vpn
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
