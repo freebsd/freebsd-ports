@@ -9,8 +9,7 @@ CATEGORIES=	editors
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	EditorConfig core library and executable written in C
 
-BROKEN=		fails to package
-
+BUILD_DEPENDS=	doxygen:devel/doxygen
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		cmake
