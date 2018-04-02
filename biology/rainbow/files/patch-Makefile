@@ -1,0 +1,10 @@
+--- Makefile.orig	2015-07-27 18:28:54 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+-CC=gcc
+-CFLAGS= -W -O2 -Wall -Wno-self-assign -Wno-unused-function
++CC?=gcc
++CFLAGS?= -W -O2 -Wall -Wno-self-assign -Wno-unused-function
+ DFLAGS= -D_FILE_OFFSET_BITS=64
+ GLIBS=-lm
+ GENERIC_SRC= string.h bitvec.h file_reader.h hashset.h sort.h list.h dna.h heap.h stdaln.h vector.h

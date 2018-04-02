@@ -96,6 +96,7 @@
     SUBDIR += pycogent
     SUBDIR += pyfasta
     SUBDIR += python-nexus
+    SUBDIR += rainbow
     SUBDIR += recombine
     SUBDIR += ruby-bio
     SUBDIR += rubygem-bio
