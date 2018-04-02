@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsecret
-PORTVERSION=	0.18.5
+PORTVERSION=	0.18.6
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		vala:lang/vala
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase pkgconfig tar:xz
 USE_GNOME=	glib20 libxslt:build intltool \
 		introspection:build
 USE_LDCONFIG=	yes
