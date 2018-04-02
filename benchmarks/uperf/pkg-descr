@@ -1,0 +1,24 @@
+Unified Performance Tool (or uperf for short) is a network
+performance tool that supports modelling and replay of various
+networking patterns.  It represents a new kind of benchmarking tool
+(like filebench) where instead of running a fixed benchmark or
+workload, a description (or model) of the workload is provided and
+the tool generates the load according to the model.  By distilling
+the benchmark or workload into a model, you can now do various
+things like change the scale of the workload, change different
+parameters, change protocols, etc and analyse the effect of these
+changes on your model.
+
+Some of the questions you could answer using uperf are:
+ * Bandwidth and latency (unidirectional and bi-directional) with different
+   protocols like TCP, UDP, SCTP, SSL
+ * Connection setup and teardown scalability for different protocols
+ * Effect of noise on ongoing network connections
+ * Does it matter if I use processes instead of threads to do network
+   communication?
+ * What is the L2 cache miss rate for connection setup?
+ * Is sendfilev(3EXT) (with one file) equivalent to sendfilev(3EXT)?
+ * Understand TCP, UDP, SCTP, SSL performance under a variety of conditions
+ * Test various TCP Congestion control algorithms
+
+WWW: http://uperf.org/
