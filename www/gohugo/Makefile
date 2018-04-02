@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37.1
+DISTVERSION=	0.38
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -20,7 +20,7 @@ GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 		PuerkitoBio:purell:0bcb03f:purell/src/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2a:urlesc/src/github.com/PuerkitoBio/urlesc \
-		alecthomas:chroma:563aadc:chroma/src/github.com/alecthomas/chroma \
+		alecthomas:chroma:85c342e:chroma/src/github.com/alecthomas/chroma \
 		bep:gitmap:de8030e:gitmap/src/github.com/bep/gitmap \
 		chaseadamsio:goorgeous:dcf1ef8:goorgeous/src/github.com/chaseadamsio/goorgeous \
 		cpuguy83:go-md2man:a65d4d2:go_md2man/src/github.com/cpuguy83/go-md2man \
@@ -51,15 +51,16 @@ GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 		pelletier:go-toml:acdc450:go_toml/src/github.com/pelletier/go-toml \
 		pmezard:go-difflib:792786c:go_difflib/src/github.com/pmezard/go-difflib \
 		russross:blackfriday:55d61fa:blackfriday/src/github.com/russross/blackfriday \
+		sanity-io:litter:ae543b7:litter/src/github.com/sanity-io/litter \
 		shurcooL:sanitized_anchor_name:86672fc:sanitized_anchor_name/src/github.com/shurcooL/sanitized_anchor_name \
-		spf13:afero:bb8f192:afero/src/github.com/spf13/afero \
+		spf13:afero:6364489:afero/src/github.com/spf13/afero \
 		spf13:cast:8965335:cast/src/github.com/spf13/cast \
 		spf13:cobra:be77323:cobra/src/github.com/spf13/cobra \
 		spf13:fsync:12a01e6:fsync/src/github.com/spf13/fsync \
 		spf13:jWalterWeatherman:7c0cea3:jWalterWeatherman/src/github.com/spf13/jwalterweatherman \
 		spf13:nitro:24d7ef3:nitro/src/github.com/spf13/nitro \
 		spf13:pflag:e57e3ee:pflag/src/github.com/spf13/pflag \
-		spf13:viper:25b30aa:viper/src/github.com/spf13/viper \
+		spf13:viper:b5e8006:viper/src/github.com/spf13/viper \
 		stretchr:testify:12b6f73:testify/src/github.com/stretchr/testify \
 		yosssi:ace:ea038f4:ace/src/github.com/yosssi/ace \
 		golang:image:12117c1:image/src/golang.org/x/image \
