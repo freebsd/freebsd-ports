@@ -1,0 +1,10 @@
+Rainbow provides an ultra-fast and memory-efficient solution to clustering and
+assembling short genetic sequence reads produced by Restriction site Associated
+DNA Sequencing (RAD-seq).  It does this by, first, clustering reads using a
+spaced seed method, then it divides potential groups into haplotypes in a
+top-down manner.  Next, along a guide tree, it iteratively merges sibling
+leaves in a bottom-up manner if they are similar enough.  Finally, Rainbow uses
+a greedy algorithm to locally assemble merged reads into contigs.  Both optimal
+and suboptimal assembly results are output.
+
+WWW: http://sourceforge.net/projects/bio-rainbow/
