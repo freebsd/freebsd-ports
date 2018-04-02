@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	V8 JavaScript for client and server (4.x LTS)
+DEPRECATED=	Node.js v4.x reaches end-of-life on 2018-04-30, see https://github.com/nodejs/Release
+EXPIRATION_DATE=	2018-04-30
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
