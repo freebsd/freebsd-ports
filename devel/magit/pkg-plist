@@ -15,6 +15,8 @@
 %%ELISPDIR%%/magit-bookmark.elc
 %%ELISPDIR%%/magit-branch.el
 %%ELISPDIR%%/magit-branch.elc
+%%ELISPDIR%%/magit-collab.el
+%%ELISPDIR%%/magit-collab.elc
 %%ELISPDIR%%/magit-commit.el
 %%ELISPDIR%%/magit-commit.elc
 %%ELISPDIR%%/magit-core.el
@@ -35,14 +37,14 @@
 %%ELISPDIR%%/magit-log.elc
 %%ELISPDIR%%/magit-margin.el
 %%ELISPDIR%%/magit-margin.elc
+%%ELISPDIR%%/magit-merge.el
+%%ELISPDIR%%/magit-merge.elc
 %%ELISPDIR%%/magit-mode.el
 %%ELISPDIR%%/magit-mode.elc
 %%ELISPDIR%%/magit-notes.el
 %%ELISPDIR%%/magit-notes.elc
 %%ELISPDIR%%/magit-obsolete.el
 %%ELISPDIR%%/magit-obsolete.elc
-%%ELISPDIR%%/magit-popup.el
-%%ELISPDIR%%/magit-popup.elc
 %%ELISPDIR%%/magit-process.el
 %%ELISPDIR%%/magit-process.elc
 %%ELISPDIR%%/magit-refs.el
@@ -51,6 +53,8 @@
 %%ELISPDIR%%/magit-remote.elc
 %%ELISPDIR%%/magit-repos.el
 %%ELISPDIR%%/magit-repos.elc
+%%ELISPDIR%%/magit-reset.el
+%%ELISPDIR%%/magit-reset.elc
 %%ELISPDIR%%/magit-section.el
 %%ELISPDIR%%/magit-section.elc
 %%ELISPDIR%%/magit-sequence.el
@@ -63,6 +67,8 @@
 %%ELISPDIR%%/magit-submodule.elc
 %%ELISPDIR%%/magit-subtree.el
 %%ELISPDIR%%/magit-subtree.elc
+%%ELISPDIR%%/magit-tag.el
+%%ELISPDIR%%/magit-tag.elc
 %%ELISPDIR%%/magit-utils.el
 %%ELISPDIR%%/magit-utils.elc
 %%ELISPDIR%%/magit-version.el
