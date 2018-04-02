@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anet
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libanet-${PORTVERSION}
@@ -13,6 +12,8 @@ COMMENT=	Networking library for Ada
 
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	gprbuild:devel/gprbuild
 
 USES=		ada tar:bzip2
 ALL_TARGET=	build_lib
