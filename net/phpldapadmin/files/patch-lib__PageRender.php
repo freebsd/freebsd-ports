@@ -1,6 +1,6 @@
---- ./lib/PageRender.php.orig	2012-10-01 07:54:14.000000000 +0100
-+++ ./lib/PageRender.php	2014-05-03 07:57:44.744575309 +0100
-@@ -287,7 +287,7 @@
+--- lib/PageRender.php.orig	2012-10-01 06:54:14 UTC
++++ lib/PageRender.php
+@@ -287,7 +287,7 @@ class PageRender extends Visitor {
  						break;
  
  					default:
@@ -9,7 +9,7 @@
  				}
  
  				$vals = array_unique($vals);
-@@ -957,7 +957,7 @@
+@@ -957,7 +957,7 @@ class PageRender extends Visitor {
  		if (trim($val))
  			$enc_type = get_enc_type($val);
  		else
@@ -18,7 +18,7 @@
  
  		$obfuscate_password = obfuscate_password_display($enc_type);
  
-@@ -982,7 +982,7 @@
+@@ -982,7 +982,7 @@ class PageRender extends Visitor {
  		if (trim($val))
  			$enc_type = get_enc_type($val);
  		else

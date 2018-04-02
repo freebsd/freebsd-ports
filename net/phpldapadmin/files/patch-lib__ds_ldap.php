@@ -1,6 +1,6 @@
---- ./lib/ds_ldap.php.orig	2012-10-01 07:54:14.000000000 +0100
-+++ ./lib/ds_ldap.php	2014-05-03 07:57:44.746572911 +0100
-@@ -1116,13 +1116,24 @@
+--- lib/ds_ldap.php.orig	2012-10-01 06:54:14 UTC
++++ lib/ds_ldap.php
+@@ -1116,13 +1116,24 @@ class ldap extends DS {
  
  		if (is_array($dn)) {
  			$a = array();
