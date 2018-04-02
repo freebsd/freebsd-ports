@@ -3,24 +3,25 @@ individual features instead but API isn't compatible with OpenSSL 1.1.x.
 
 https://github.com/libevent/libevent/commit/d057c45e8f48
 
---- openssl-compat.h.orig	2017-01-25 23:37:15 UTC
+--- openssl-compat.h.orig	2018-03-22 19:50:46 UTC
 +++ openssl-compat.h
 @@ -1,7 +1,7 @@
  #ifndef OPENSSL_COMPAT_H
  #define OPENSSL_COMPAT_H
  
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x20700000L)
  
  static inline BIO_METHOD *BIO_meth_new(int type, const char *name)
  {
-@@ -30,6 +30,6 @@ static inline BIO_METHOD *BIO_meth_new(i
+@@ -32,4 +32,8 @@ static inline BIO_METHOD *BIO_meth_new(i
  
- #define TLS_method SSLv23_method
+ #endif /* (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER) */
  
--#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
-+#endif /* (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER) */
- 
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER >= 0x20700000L
++#define BIO_get_init(b) (b)->init
++#endif
++
  #endif /* OPENSSL_COMPAT_H */
 --- sample/https-client.c.orig	2017-01-25 23:37:15 UTC
 +++ sample/https-client.c
