@@ -113,7 +113,6 @@ share/elmersolver/lib/AdvectionDiffusion.so
 share/elmersolver/lib/AdvectionReaction.so
 share/elmersolver/lib/ArteryOutlet.so
 share/elmersolver/lib/ArtificialCompressibility.so
-share/elmersolver/lib/CMakeFiles.so
 share/elmersolver/lib/CircuitsAndDynamics.so
 share/elmersolver/lib/CoilSolver.so
 share/elmersolver/lib/CompressibleNS.so
