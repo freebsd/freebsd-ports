@@ -1,0 +1,43 @@
+# $FreeBSD$
+
+PORTNAME=	magit-popup
+PORTVERSION=	2.12.3
+DISTVERSIONPREFIX=	v
+CATEGORIES=	devel elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
+
+MAINTAINER=	yasu@utahime.org
+COMMENT=	Define prefix-infix-suffix command combos
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
+BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el@${EMACS_FLAVOR}
+
+USES=		emacs gmake makeinfo
+USE_GITHUB=	yes
+GH_ACCOUNT=	magit
+
+INFO=		magit-popup
+MAKE_ENV+=	LOAD_PATH="-L ${PREFIX}/${EMACS_SITE_LISPDIR}"
+NO_ARCH=	yes
+PORTDOCS=	README.md
+
+PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/magit-popup.el \
+		${EMACS_VERSION_SITE_LISPDIR}/magit-popup.elc \
+		${EMACS_VERSION_SITE_LISPDIR}/magit-popup-autoloads.el
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.el* \
+		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
