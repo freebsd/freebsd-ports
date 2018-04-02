@@ -1,6 +1,6 @@
---- ./lib/ds_ldap_pla.php.orig	2012-10-01 07:54:14.000000000 +0100
-+++ ./lib/ds_ldap_pla.php	2014-05-03 07:57:44.748572937 +0100
-@@ -16,7 +16,7 @@
+--- lib/ds_ldap_pla.php.orig	2012-10-01 06:54:14 UTC
++++ lib/ds_ldap_pla.php
+@@ -16,7 +16,7 @@ class ldap_pla extends ldap {
  	function __construct($index) {
  		parent::__construct($index);
  

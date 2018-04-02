@@ -1,6 +1,6 @@
---- ./lib/TemplateRender.php.orig	2014-05-03 07:58:18.076584893 +0100
-+++ ./lib/TemplateRender.php	2014-05-03 07:59:18.859574787 +0100
-@@ -2466,7 +2466,7 @@
+--- lib/TemplateRender.php.orig	2012-10-01 06:54:14 UTC
++++ lib/TemplateRender.php
+@@ -2466,7 +2466,7 @@ function deleteAttribute(attrName,friend
  		if ($val = $attribute->getValue($i))
  			$default = get_enc_type($val);
  		else

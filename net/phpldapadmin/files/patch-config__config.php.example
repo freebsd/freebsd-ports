@@ -1,6 +1,6 @@
---- ./config/config.php.example.orig	2014-05-03 08:00:05.933577117 +0100
-+++ ./config/config.php.example	2014-05-03 08:00:38.259564444 +0100
-@@ -379,7 +379,7 @@
+--- config/config.php.example.orig	2012-10-01 06:54:14 UTC
++++ config/config.php.example
+@@ -379,7 +379,7 @@ $servers->setValue('server','name','My L
  
  /* Default password hashing algorithm. One of md5, ssha, sha, md5crpyt, smd5,
     blowfish, crypt or leave blank for now default algorithm. */
@@ -9,7 +9,7 @@
  
  /* If you specified 'cookie' or 'session' as the auth_type above, you can
     optionally specify here an attribute to use when logging in. If you enter
-@@ -546,7 +546,7 @@
+@@ -546,7 +546,7 @@ $servers->setValue('sasl','authz_id_rege
  $servers->setValue('sasl','authz_id_replacement','$1');
  $servers->setValue('sasl','props',null);
  
