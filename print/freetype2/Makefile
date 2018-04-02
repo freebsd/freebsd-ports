@@ -3,6 +3,7 @@
 
 PORTNAME=	freetype2
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
@@ -36,17 +37,19 @@ PORTDOCS=	reference CHANGES formats.txt LICENSE.TXT raster.txt
 CPE_PRODUCT=	freetype
 CPE_VENDOR=	freetype
 
-OPTIONS_DEFINE=		DEBUG DOCS LCD_FILTERING LONG_PCF_NAMES PNG \
+OPTIONS_DEFINE=		DEBUG DOCS LONG_PCF_NAMES PNG \
 		TABLE_VALIDATION
 OPTIONS_GROUP=		SUBPIXEL_HINTING
 OPTIONS_GROUP_SUBPIXEL_HINTING=	V38 V40
 OPTIONS_RADIO=		SIZE_METRICS_CHOICE
 OPTIONS_RADIO_SIZE_METRICS_CHOICE=	FIX_SIZE_METRICS TT_SIZE_METRICS
-OPTIONS_DEFAULT=	LCD_FILTERING V40
+OPTIONS_DEFAULT=	V40
 
 PNG_DESC=		Png compressed OpenType embedded bitmaps support
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
+
+EXTRA_PATCHES=	${FILESDIR}/correct-flex-features.patch:-p1
 
 TABLE_VALIDATION_DESC=	TrueType GX/AAT and OpenType table validation
 
@@ -54,9 +57,6 @@ SIZE_METRICS_CHOICE_DESC=	Size metrics for TrueType fonts
 FIX_SIZE_METRICS_DESC=	Fix metrics on size request for scalable fonts (alternative method)
 FIX_SIZE_METRICS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-fix_size_metrics.diff
 TT_SIZE_METRICS_DESC=	TrueType-like size metrics for 'light' auto-hinting
-
-LCD_FILTERING_DESC?=	Sub-pixel rendering (patented)
-LCD_FILTERING_CFLAGS=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
 
 LONG_PCF_NAMES_DESC=	Enable long PCF family names
 
