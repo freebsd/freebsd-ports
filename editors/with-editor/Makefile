@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	with-editor
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -12,7 +11,7 @@ MAINTAINER=	yasu@utahime.org
 COMMENT=	Use the Emacsclient as the $$EDITOR of child processes
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
