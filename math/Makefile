@@ -109,6 +109,7 @@
     SUBDIR += ambit
     SUBDIR += analitza-kde4
     SUBDIR += ann
+    SUBDIR += antic
     SUBDIR += apc
     SUBDIR += arb
     SUBDIR += aribas
