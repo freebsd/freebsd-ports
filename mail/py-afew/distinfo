@@ -1,3 +1,5 @@
-TIMESTAMP = 1505037424
-SHA256 (afew-1.2.0.tar.gz) = b94cef31f2c740ffa3100dcbb7839d015973a49cdeadde295dd1f751da3a3c88
-SIZE (afew-1.2.0.tar.gz) = 31831
+TIMESTAMP = 1522736217
+SHA256 (afew-1.3.0.tar.gz) = ff790342fccd2a83e8e23bd508c16ca93bbab5eabd8132fec272de492b7d0504
+SIZE (afew-1.3.0.tar.gz) = 33361
+SHA256 (1d290ab4d631fdcec60b79fd3a4f873e774adac2.patch) = f483fe1f865a69ced5a9637d3e2b92abffaf42ff798a41b4fc569668aabc0c2b
+SIZE (1d290ab4d631fdcec60b79fd3a4f873e774adac2.patch) = 5486
