@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpipam
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CFGFILE=	config.php
@@ -24,7 +25,8 @@ SUB_LIST=	DISTNAME=${DISTNAME}
 OPTIONS_DEFINE=	LDAP
 
 USES=		gettext php:web tar:
-USE_PHP=	ctype gettext gmp json mysqli pcntl session simplexml
+USE_PHP=	filter gettext gmp json mbstring openssl \
+		pcntl pdo pdo_mysql session simplexml sockets
 LDAP_USE=	PHP=ldap
 
 pre-install:
@@ -33,14 +35,7 @@ pre-install:
 	fi
 
 do-install:
-	cd ${WRKSRC} ; \
-	for src in $$( ${FIND} . ! -name '*.orig') ; do \
-		dst=${STAGEDIR}${WWWDIR}$${src#.} ; \
-		if ${TEST} -d "$$src" ; then \
-			${MKDIR} "$$dst" ; \
-		else \
-			${INSTALL_DATA} "$$src" "$$dst" ; \
-		fi \
-	done
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} \
+		"! -name *.orig")
 
 .include <bsd.port.mk>
