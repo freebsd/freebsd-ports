@@ -11,6 +11,8 @@ COMMENT=	Git remote helper to interact with Mercurial repositories
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build against git-2.17.*
+
 BUILD_DEPENDS=	${NONEXISTENT}:devel/git:configure
 RUN_DEPENDS=	git:devel/git \
 		hg:devel/mercurial
