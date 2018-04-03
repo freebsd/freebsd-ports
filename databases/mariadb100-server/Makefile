@@ -2,7 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.0.34
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -159,6 +159,15 @@ NOT_FOR_ARCHS_REASON=	TokuDB not supported on 32-bit platforms, see \
 .if ${ARCH} == 'i386'
 # Server segfaults on i386 when built with clang >= 3.4
 USE_GCC=	yes
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1101515 || \
+	${OSVERSION} >= 1200000 && ${OSVERSION} < 1200057
+SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
+.else
+SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 .endif
 
 post-patch:
