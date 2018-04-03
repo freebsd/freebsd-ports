@@ -165,10 +165,10 @@
     SUBDIR += rcctools
     SUBDIR += recode
     SUBDIR += rubygem-base32
-    SUBDIR += rubygem-bsdconv
     SUBDIR += rubygem-json-ld
     SUBDIR += rubygem-json-ld-preloaded
     SUBDIR += rubygem-po_to_json
+    SUBDIR += rubygem-ruby-bsdconv
     SUBDIR += rubygem-url_safe_base64
     SUBDIR += rubygem-xdr
     SUBDIR += shftool
