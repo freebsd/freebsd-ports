@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gmp-ecm
-PORTVERSION=	6.3
-PORTREVISION=	2
+DISTVERSION=	7.0.4
 CATEGORIES=	math
-MASTER_SITES=	https://gforge.inria.fr/frs/download.php/26838/
-DISTNAME=	ecm-${PORTVERSION}
+MASTER_SITES=	https://gforge.inria.fr/frs/download.php/file/36224/
+DISTNAME=	ecm-${DISTVERSION}
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Elliptic Curve Method for Integer Factorization
@@ -20,12 +19,18 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFLICTS=	ecm-[0-9]*
 
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_XSLTPROC=no \
-		--with-gmp=${LOCALBASE}
-USES=		libtool
+		--with-gmp=${LOCALBASE} \
+		--enable-shared \
+		--disable-static
+INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/ecm include/ecm.h lib/libecm.a \
+PLIST_FILES=	bin/ecm include/ecm.h \
+		lib/libecm.so \
+		lib/libecm.so.1 \
+		lib/libecm.so.1.0.0 \
 		man/man1/ecm.1.gz
 
 post-patch:
