@@ -1,3 +1,3 @@
-TIMESTAMP = 1485280556
-SHA256 (oslo.context-2.12.0.tar.gz) = cd9bdc4deeb2db3a66604f890bbd3d9c2195da0b03969488b58307a287b6aa12
-SIZE (oslo.context-2.12.0.tar.gz) = 25505
+TIMESTAMP = 1521261840
+SHA256 (oslo.context-2.20.0.tar.gz) = 7def9507139fdebe5f341c1bfb8b86d29d071efaa80d072d6e999bc76f4e3846
+SIZE (oslo.context-2.20.0.tar.gz) = 28203
