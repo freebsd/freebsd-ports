@@ -552,7 +552,6 @@
     SUBDIR += msilbc
     SUBDIR += mumble
     SUBDIR += murmur
-    SUBDIR += muse
     SUBDIR += musepack
     SUBDIR += musescore
     SUBDIR += musicbox-tag-editor

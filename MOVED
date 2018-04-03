@@ -10249,3 +10249,8 @@ net/p5-Net-Jaiku||2018-03-31|Has expired: Upstream disappeared and jaiku.com ret
 www/py-django-devel|www/py-django|2018-03-31|Has expired: Outdated version. Use www/py-django instead
 security/rubygem-rpam2-3|security/rubygem-rpam2|2018-03-31|Has expired: Use security/rubygem-rpam2 instead
 textproc/rubygem-fast_xs073|textproc/rubygem-fast_xs|2018-03-31|Has expired: Use textproc/rubygem-fast_xs instead
+math/abacus||2018-04-03|Has expired: Unmaintained and has a broken shared library
+audio/muse||2018-04-03|Has expired: Unmaintained upstream, crashes at runtime
+net/paris-traceroute|net/scamper|2018-04-03|Has expired: Legacy paris-traceroute is not supported anymore. Use net/scamper instead
+net-im/cjc||2018-04-03|Has expired: Depends on expired net-im/py-xmpp
+net-im/py-pyxmpp||2018-04-03|Has expired: Obsoleted in favor of PyXMPP2

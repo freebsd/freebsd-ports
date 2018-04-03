@@ -1,5 +1,0 @@
-Paris traceroute is a new version of the well-known network diagnosis
-and measurement tool. It addresses problems caused by load balancers
-with the initial implementation of traceroute.
-
-WWW: http://paris-traceroute.net/

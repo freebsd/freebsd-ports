@@ -868,7 +868,6 @@
     SUBDIR += packetdrill
     SUBDIR += packter-agent
     SUBDIR += panoptis
-    SUBDIR += paris-traceroute
     SUBDIR += passlogd
     SUBDIR += pathneck
     SUBDIR += pbnc
