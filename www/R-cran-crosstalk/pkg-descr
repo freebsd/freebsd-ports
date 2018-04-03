@@ -1,0 +1,5 @@
+Provides building blocks for allowing HTML widgets to communicate
+with each other, with Shiny or without (i.e. static .html files).
+Currently supports linked brushing and filtering.
+
+WWW: https://cran.r-project.org/web/packages/crosstalk/
