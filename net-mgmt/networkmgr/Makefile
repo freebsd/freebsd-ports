@@ -5,7 +5,7 @@ PORTNAME=	networkmgr
 DISTVERSION=	2.5
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ericturgeon.bsd@gmail.com
+MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	FreeBSD/GhostBSD network conection manager
 
 LICENSE=	BSD3CLAUSE

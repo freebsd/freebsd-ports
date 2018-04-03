@@ -6,7 +6,7 @@ PORTVERSION=	0.4.7
 CATEGORIES=	audio
 MASTER_SITES=	SF/lxde/LXMusic%20%28music%20player%29/LXMusic%20${PORTVERSION:R}.x/
 
-MAINTAINER=	ericturgeon@ghostbsd.org
+MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	LXDE music player based on xmms2
 
 LICENSE=	MIT GPLv2
