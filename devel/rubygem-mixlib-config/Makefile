@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mixlib-config
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
