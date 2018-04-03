@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.26
+PORTVERSION=	0.26.1
 CATEGORIES?=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -66,7 +66,7 @@ post-configure:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.5.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.5.1.0
 
 # keep poudriere testport happy
 post-install-MANPAGES-on:
