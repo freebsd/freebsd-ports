@@ -7,9 +7,14 @@ bin/git-upload-archive
 bin/git-upload-pack
 %%GUI%%bin/gitk
 etc/bash_completion.d/git.sh
+%%PERL%%%%SITE_PERL%%/FromCPAN/Error.pm
+%%PERL%%%%SITE_PERL%%/FromCPAN/Mail/Address.pm
 %%PERL%%%%SITE_PERL%%/Git.pm
 %%PERL%%%%SITE_PERL%%/Git/I18N.pm
 %%PERL%%%%SITE_PERL%%/Git/IndexInfo.pm
+%%PERL%%%%SITE_PERL%%/Git/LoadCPAN.pm
+%%PERL%%%%SITE_PERL%%/Git/LoadCPAN/Error.pm
+%%PERL%%%%SITE_PERL%%/Git/LoadCPAN/Mail/Address.pm
 %%PERL%%%%SITE_PERL%%/Git/Packet.pm
 %%PERL%%%%SITE_PERL%%/Git/SVN.pm
 %%PERL%%%%SITE_PERL%%/Git/SVN/Editor.pm
@@ -365,14 +370,6 @@ man/man1/git.1.gz
 %%GUI%%man/man1/gitk.1.gz
 man/man1/gitremote-helpers.1.gz
 man/man1/gitweb.1.gz
-%%PERL%%man/man3/Git.3.gz
-%%PERL%%man/man3/Git::I18N.3.gz
-%%PERL%%man/man3/Git::SVN::Editor.3.gz
-%%PERL%%man/man3/Git::SVN::Fetcher.3.gz
-%%PERL%%man/man3/Git::SVN::Memoize::YAML.3.gz
-%%PERL%%man/man3/Git::SVN::Prompt.3.gz
-%%PERL%%man/man3/Git::SVN::Ra.3.gz
-%%PERL%%man/man3/Git::SVN::Utils.3.gz
 man/man5/gitattributes.5.gz
 man/man5/githooks.5.gz
 man/man5/gitignore.5.gz
@@ -659,6 +656,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.16.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.16.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.16.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.17.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1199,6 +1197,8 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/http-protocol.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/index-format.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/index-format.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/long-running-process-protocol.html
+%%HTMLDOCS%%%%DOCSDIR%%/technical/long-running-process-protocol.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/pack-format.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/pack-format.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/pack-heuristics.html
