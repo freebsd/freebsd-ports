@@ -15,9 +15,11 @@ ONLY_FOR_ARCHS_REASON=	not yet ported to any arch other than x86
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libexpat.so:textproc/expat2 \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
+USES=		compiler:c11 gmake jpeg pkgconfig python:2.7,build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
 GH_PROJECT=	mame				# explicit (master port)
@@ -28,10 +30,11 @@ OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1100055
-USE_GCC=	6
+BUILD_DEPENDS+=	clang50:devel/llvm50
+CC=		clang50
+CXX=		clang++50
 .endif
 
-USES=		compiler:c11 gmake jpeg pkgconfig python:2.7,build shebangfix
 SHEBANG_FILES=	src/devices/cpu/m6502/m6502make.py \
 		src/devices/cpu/m6809/m6809make.py \
 		src/devices/cpu/mcs96/mcs96make.py \
@@ -39,7 +42,7 @@ SHEBANG_FILES=	src/devices/cpu/m6502/m6502make.py \
 USE_XORG=	x11 xext xi xinerama xrender
 USE_GL=		gl
 USE_SDL=	sdl2 ttf2
-USE_QT5=	buildtools gui qmake_build widgets
+USE_QT5=	buildtools core gui qmake_build widgets
 MTARGET?=	mame
 MSUBTARGET?=	mame
 CFLAGS+=	-I${LOCALBASE}/include
@@ -112,8 +115,9 @@ do-install:
 		${STAGEDIR}${PREFIX}/libexec/mame)
 .endif
 .if ${MSUBTARGET:Mmess}
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} castool chdman imgtool jedutil \
-		ldresample ldverify romcmp testkeys unidasm \
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} castool chdman floptool imgtool jedutil \
+		ldresample ldverify nltool nlwav pngcmp regrep romcmp split src2html \
+		srcclean unidasm \
 		${STAGEDIR}${PREFIX}/libexec/mess)
 .endif
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${STAGEDIR}${DATADIR})
