@@ -1515,6 +1515,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dae/va__1_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dae/va__1_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dae/va__1_8c__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/db6/structglob__error__args.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/db7/struct_str_node.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/db7/structruby__gc__params__t.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/db9/cris_2ffi_8c.html
@@ -3119,6 +3120,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/da2/pathname_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/da2/pathname_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/da2/pathname_8c__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/da5/structprint__to__arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/da5/structsort__by__data.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/da6/structgen__ivtbl.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/dab/ossl__x509ext_8c.html
@@ -3670,6 +3672,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d4b/nkf_2nkf-utf8_2config_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d4e/struct____siov.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d4e/structrb__classext__struct.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d52/structruby__glob__funcs__t.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d53/cls__align__sint16_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d53/cls__align__sint16_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d53/return__fl3_8c__incl.map
@@ -7548,6 +7551,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarHeader/header-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarHeader/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarHeader/oct-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarHeader/strict_oct-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarHeader/update_checksum-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarInvalidError/cdesc-TarInvalidError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/bytes_read-i.ri
@@ -7622,8 +7626,10 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/files-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/gzip_to-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/initialize-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Package/mkdir_p_safe-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/read_checksums-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Package/realpath-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/security_policy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/setup_signer-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/spec-i.ri
@@ -11540,6 +11546,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/debug-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/errors-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/fips_mode%3d-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/OpenSSL/mem_check_start-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/OpenSSL/print_mem_leaks-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/%3d%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/%5b%5d%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/%5b%5d-i.ri
@@ -11551,13 +11559,11 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/eql%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/freeze-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/hash-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/OpenStruct/initialize_copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/json_create-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/marshal_dump-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/marshal_load-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/new-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/OpenStruct/respond_to_missing%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/to_h-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/to_json-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenStruct/to_s-i.ri
@@ -17117,8 +17123,11 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPRequest/user-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/%5b%5d%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/%5b%5d-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/ChunkedWrapper/cdesc-ChunkedWrapper.ri
+%%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/InvalidHeader/cdesc-InvalidHeader.ri
 %%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/body-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/cdesc-HTTPResponse.ri
+%%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/check_header-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/chunked%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/chunked%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/WEBrick/HTTPResponse/config-i.ri
