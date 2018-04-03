@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	icat
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Displays images in 256-color capable terminals
+
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
