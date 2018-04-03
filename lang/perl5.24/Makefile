@@ -15,9 +15,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-# Uncomment when the default Perl is switched to 5.26
-#DEPRECATED=	Support ends three years after .0 release, please upgrade to a more recent version of Perl
-#EXPIRATION_DATE=2019-05-09
+DEPRECATED=	Support ends three years after .0 release, please upgrade to a more recent version of Perl
+EXPIRATION_DATE=2019-05-09
 
 TEST_TARGET=	test_harness
 TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
