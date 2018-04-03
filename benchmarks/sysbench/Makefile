@@ -11,7 +11,7 @@ COMMENT=	Scriptable database and system performance benchmark
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	xxd:editors/vim
+BUILD_DEPENDS=	xxd:editors/vim-console
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libluajit-5.1.so:lang/luajit
 
