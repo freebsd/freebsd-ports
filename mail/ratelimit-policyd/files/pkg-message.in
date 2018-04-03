@@ -1,0 +1,37 @@
+This package must be integrated with Postfix to be effective:
+
+ * Add a new MySQL user account for ratelimit-policyd with the
+   following permissions:
+
+    GRANT USAGE ON *.* TO 'policyd'@'localhost' IDENTIFIED BY '<YourPassword>';
+    GRANT SELECT, INSERT, UPDATE, DELETE ON `policyd`.* TO 'policyd'@'localhost';
+
+ * Create a database 'policyd' and a table 'ratelimit':
+
+    mysql -u root -p < %%LOCALBASE%%/share/ratelimit-policyd/mysql-schema.sql
+
+ * Edit the configuration in %%LOCALBASE%%/etc/ratelimit-policyd.cfg
+
+ * Enable the ratelimit-policyd service in rc.conf:
+
+    sysrc ratelimit_policyd_enable="YES"
+
+ * Start the service:
+
+    service ratelimit-policyd start
+
+ * Add or modify the postfix data restriction class
+   'smtpd_sender_restrictions' in main.cf:
+
+    smtpd_sender_restrictions =
+        check_sender_access mysql:%%LOCALBASE%%/etc/postfix/clients.cf,
+        check_policy_service inet:127.0.0.1:10032
+
+    check_policy_service must be after check_sender_access (if you are using it)
+
+ * Reload Postfix:
+
+    postfix reload
+
+ * See the documentation in %%LOCALBASE%%/share/ratelimit-policyd/README.md
+   or visit https://github.com/MirLach/ratelimit-policyd
