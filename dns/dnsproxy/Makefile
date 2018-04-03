@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	proxy for DNS queries
 
 LIB_DEPENDS=	libevent.so:devel/libevent
