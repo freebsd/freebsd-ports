@@ -1,6 +1,6 @@
---- ui-gtk/UgtkMenubar-ui.c.orig	2015-03-25 09:15:42 UTC
+--- ui-gtk/UgtkMenubar-ui.c.orig	2018-01-08 00:04:26 UTC
 +++ ui-gtk/UgtkMenubar-ui.c
-@@ -657,13 +657,6 @@ static void ugtk_menubar_help_init (Ugtk
+@@ -745,13 +745,6 @@ static void ugtk_menubar_help_init (Ugtk
  	gtk_menu_shell_append ((GtkMenuShell*)menu, menu_item);
  	menubar->help.keyboard_shortcuts = menu_item;
  
