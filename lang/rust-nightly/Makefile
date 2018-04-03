@@ -14,7 +14,7 @@ CONFLICTS_INSTALL=	rust
 
 # Which source to pull:
 #   https://static.rust-lang.org/dist/${NIGHTLY_DATE}/rustc-nightly-src.tar.gz
-NIGHTLY_DATE=			2018-03-28
+NIGHTLY_DATE=			2018-04-03
 NIGHTLY_SUBDIR=			${NIGHTLY_DATE}/
 
 # See WRKSRC/src/stage0.txt for this date
