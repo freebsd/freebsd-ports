@@ -1,42 +1,50 @@
 # $FreeBSD$
 
 PORTNAME=	afew
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+PATCH_SITES=	https://github.com/afewmail/${PORTNAME}/commit/
+PATCHFILES=	1d290ab4d631fdcec60b79fd3a4f873e774adac2.patch:-p1 # fix of the documentation build
+
 MAINTAINER=	seschwar@gmail.com
-COMMENT=	Initial tagging script for notmuch mail
+COMMENT=	Initial tagging script for Notmuch mail
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}notmuch>=0:mail/py-notmuch@${FLAVOR} \
-	notmuch:mail/notmuch
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dkimpy>0:mail/py-dkimpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}notmuch>0:mail/py-notmuch@${PY_FLAVOR} \
+		notmuch:mail/notmuch
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils autoplist noflavors
+NO_ARCH=	yes
 
-OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFINE=	MANPAGES DOCS
 OPTIONS_DEFAULT=	MANPAGES
 
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${FLAVOR}
 MANPAGES_PLIST_FILES=	man/man1/afew.1.gz
 
-NO_ARCH=	yes
+PORTDOCS=	*
 
 post-build-MANPAGES-on:
-	${MAKE} -C ${WRKSRC}/docs SPHINXBUILD=sphinx-build-${PYTHON_VER} man
+	@${MAKE_CMD} -C ${WRKSRC}/docs SPHINXBUILD=sphinx-build-${PYTHON_VER} man
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/docs/build/man/afew.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/build/man/afew.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
+post-build-DOCS-on:
+	@${MAKE_CMD} -C ${WRKSRC}/docs SPHINXBUILD=sphinx-build-${PYTHON_VER} html
 
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}subprocess32>=0:devel/py-subprocess32
-.endif
+post-install-DOCS-on:
+	cd ${WRKSRC}/docs/build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
