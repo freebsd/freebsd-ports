@@ -1,0 +1,27 @@
+commit 91f4336a7ddc
+Author: Michal Novotny <michal.novotny@gmail.com>
+Date:   Mon Apr 2 12:59:18 2018 -0400
+
+    Bug 1436809 - Check that stream message was converted to string correctly. r=valentin, a=abillings
+    
+    --HG--
+    extra : rebase_source : c81e8000cd7e41d8928e6ee0c6eb6ee823debc23
+    extra : source : b229809d17ff18263becfad6f9777c9ab0165279
+---
+ netwerk/protocol/websocket/WebSocketChannel.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git netwerk/protocol/websocket/WebSocketChannel.cpp netwerk/protocol/websocket/WebSocketChannel.cpp
+index a08655f95d8c..a17b2f382d23 100644
+--- netwerk/protocol/websocket/WebSocketChannel.cpp
++++ netwerk/protocol/websocket/WebSocketChannel.cpp
+@@ -1052,6 +1052,9 @@ public:
+     nsresult rv = NS_ReadInputStreamToString(mMsg.pStream, *temp, mLength);
+ 
+     NS_ENSURE_SUCCESS(rv, rv);
++    if (temp->Length() != mLength) {
++      return NS_ERROR_UNEXPECTED;
++    }
+ 
+     mMsg.pStream->Close();
+     mMsg.pStream->Release();
