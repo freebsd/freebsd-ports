@@ -1,0 +1,20 @@
+--- Makefile.orig	2017-11-07 19:42:14 UTC
++++ Makefile
+@@ -1,10 +1,11 @@
+-CC=gcc
+-CFLAGS=-g -Wall -O2 -Wno-unused-function
++CC ?=		gcc
++CFLAGS ?=	-g -Wall -O2 -Wno-unused-function
++LDFLAGS +=	-lz -lm
+ 
+-all:seqtk
++all: seqtk
+ 
+-seqtk:seqtk.c khash.h kseq.h
+-		$(CC) $(CFLAGS) seqtk.c -o $@ -lz -lm
++seqtk: seqtk.c khash.h kseq.h
++	$(CC) $(CFLAGS) seqtk.c -o $@ $(LDFLAGS)
+ 
+ clean:
+-		rm -fr gmon.out *.o ext/*.o a.out seqtk trimadap *~ *.a *.dSYM session*
++	rm -fr gmon.out *.o ext/*.o a.out seqtk trimadap *~ *.a *.dSYM session*
