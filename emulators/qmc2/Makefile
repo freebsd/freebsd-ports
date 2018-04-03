@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	qmc2
-PORTVERSION=	0.192
+PORTVERSION=	0.195
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	danilo@FreeBSD.org
-COMMENT=	Qt4 based UNIX MAME/MESS frontend
+COMMENT=	Qt based UNIX MAME/MESS frontend
 
 RUN_DEPENDS=	mame>=0.154:emulators/mame \
 		mess>=0.154:emulators/mess
@@ -19,10 +19,10 @@ NO_WRKSUBDIR=	yes
 USES=		gmake tar:bzip2
 USE_XORG=	x11 xmu
 USE_GL=		gl glu
-USE_QT4=	corelib declarative gui moc_build \
-		network opengl phonon qmake_build \
-		qtestlib rcc_build script scripttools \
-		sql svg uic_build webkit xml xmlpatterns
+USE_QT5=	buildtools_build core gui multimedia \
+		network opengl quick qmake_build qml \
+		testlib script scripttools sql svg \
+		webkit widgets xml xmlpatterns
 USE_SDL=	sdl
 
 CXXFLAGS+=	-I${LOCALBASE}/include/SDL/
