@@ -18,6 +18,15 @@
  
  TODO_FILTERS=
  TODO_FILTERS+=ANSI
+@@ -262,7 +254,7 @@ installdir:
+ 	mkdir -p ${DESTDIR}${PREFIX}/share/bsdconv/to
+ 
+ libbsdconv: src/libbsdconv*.c src/bsdconv.h | builddir
+-	$(CC) ${CFLAGS} src/libbsdconv.c -fPIC -shared -o build/lib/${SHLIBNAME} ${LIBS}
++	$(CC) ${CFLAGS} src/libbsdconv.c -fPIC -shared -Wl,-soname,${SHLIBNAME} -o build/lib/${SHLIBNAME} ${LIBS}
+ 
+ bsdconv: libbsdconv meta src/bsdconv.h src/bsdconv.c | builddir
+ 	$(CC) ${CFLAGS} src/bsdconv.c -L./build/lib/ -o build/bin/bsdconv -lbsdconv ${LIBS}
 @@ -334,12 +326,12 @@ clean:
  install: install_main install_filters install_scorers install_basic install_chinese install_ebcdic
  

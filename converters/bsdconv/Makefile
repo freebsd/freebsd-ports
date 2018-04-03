@@ -3,6 +3,7 @@
 
 PORTNAME=	bsdconv
 PORTVERSION=	11.5
+PORTREVISION=	1
 CATEGORIES=	converters
 
 MAINTAINER=	buganini@gmail.com
