@@ -4,7 +4,7 @@
 PORTNAME=	telegram-purple
 PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	pidgin:net-im/pidgin
 RUN_DEPENDS=	pidgin:net-im/pidgin
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libwebp.so:graphics/webp
+		libwebp.so:graphics/webp \
+		libpurple.so:net-im/libpurple
 
 BROKEN_armv6=		fails to link: undefined reference to 'backtrace'
 BROKEN_sparc64=		fails to compile: assertion fails
