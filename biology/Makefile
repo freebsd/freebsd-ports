@@ -115,6 +115,7 @@
     SUBDIR += t_coffee
     SUBDIR += tinker
     SUBDIR += treepuzzle
+    SUBDIR += trimadap
     SUBDIR += trimmomatic
     SUBDIR += ugene
     SUBDIR += vcftools
