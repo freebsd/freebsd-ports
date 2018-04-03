@@ -1,11 +1,11 @@
---- configure.orig	2015-07-26 22:21:39 UTC
-+++ configure
-@@ -3638,7 +3638,7 @@ $as_echo "APRINCLUDEDIR is $APRINCLUDEDI
-                 APXSCC="`$APXS -q CC`"
-                 APXSCFLAGS="`${APXS} -q CFLAGS` `${APXS} -q EXTRA_CFLAGS` -DHAVE_APR ${APRINCLUDEDIR}"
-                 APXSCPPFLAGS="`${APXS} -q EXTRA_CPPFLAGS`"
--                APXSLDFLAGS="`$APXS -q LDFLAGS`"
-+                APXSLDFLAGS="`$APXS -q LDFLAGS|sed -e 's#/usr/local/lib#-L/usr/local/lib#' -e 's/-pthread//'`"
-                 APACHE_CONFIG_VARS="`${APXS} -q exp_installbuilddir`/config_vars.mk"
-                 LIBTOOL=`$APXS -q LIBTOOL`
-             fi
+--- configure.orig	2018-04-03 10:38:30.054077000 +0200
++++ configure	2018-04-03 10:39:11.773574000 +0200
+@@ -3655,7 +3655,7 @@
+             APXSCC="`$APXS -q CC`"
+             APXSCFLAGS="`${APXS} -q CFLAGS` `${APXS} -q EXTRA_CFLAGS` -DHAVE_APR ${APRINCLUDEDIR}"
+             APXSCPPFLAGS="`${APXS} -q EXTRA_CPPFLAGS`"
+-            APXSLDFLAGS="`$APXS -q LDFLAGS`"
++            APXSLDFLAGS="`$APXS -q LDFLAGS|sed -e 's#/usr/local/lib#-L/usr/local/lib#' -e 's/-pthread//'`"
+             APACHE_CONFIG_VARS="`${APXS} -q exp_installbuilddir`/config_vars.mk"
+             LIBTOOL=`$APXS -q LIBTOOL`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: building connector for \"$WEBSERVER\"" >&5
