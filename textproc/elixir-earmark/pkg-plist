@@ -17,7 +17,6 @@ lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.CLI.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Context.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Error.beam
-lib/elixir/lib/earmark/ebin/Elixir.Earmark.Global.Messages.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.AttrParser.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.HtmlHelpers.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.LeexHelpers.beam
@@ -78,7 +77,6 @@ lib/elixir/lib/earmark/lib/earmark/block.ex
 lib/elixir/lib/earmark/lib/earmark/cli.ex
 lib/elixir/lib/earmark/lib/earmark/context.ex
 lib/elixir/lib/earmark/lib/earmark/error.ex
-lib/elixir/lib/earmark/lib/earmark/global/messages.ex
 lib/elixir/lib/earmark/lib/earmark/helpers.ex
 lib/elixir/lib/earmark/lib/earmark/helpers/attr_parser.ex
 lib/elixir/lib/earmark/lib/earmark/helpers/html_helpers.ex
