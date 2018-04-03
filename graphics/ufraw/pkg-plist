@@ -1,10 +1,8 @@
+bin/dcraw
 bin/nikon-curve
+bin/ufraw
 bin/ufraw-batch
-bin/ufraw-dcraw
-%%GIMP%%libexec/gimp/2.2/plug-ins/ufraw-gimp
 man/man1/ufraw.1.gz
-share/appdata/ufraw.appdata.xml
-share/applications/ufraw.desktop
 share/locale/ca/LC_MESSAGES/ufraw.mo
 share/locale/cs/LC_MESSAGES/ufraw.mo
 share/locale/da/LC_MESSAGES/ufraw.mo
@@ -25,4 +23,3 @@ share/locale/sv/LC_MESSAGES/ufraw.mo
 share/locale/zh_CN/LC_MESSAGES/ufraw.mo
 share/locale/zh_TW/LC_MESSAGES/ufraw.mo
 share/pixmaps/ufraw.png
-%%GTK2%%bin/ufraw
