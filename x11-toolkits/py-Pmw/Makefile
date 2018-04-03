@@ -2,35 +2,45 @@
 # $FreeBSD$
 
 PORTNAME=	Pmw
-PORTVERSION=	1.3.2
-PORTREVISION=	4
+PORTVERSION=	2.0.1
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}.${PORTVERSION}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	High-level compound graphics widgets for Python
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR}
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR}
 
-USES=		python:2.7 shebangfix
-USE_PYTHON=	distutils
-SHEBANG_FILES=	Pmw/Pmw_1_3/bin/bundlepmw.py
+USES=		dos2unix python shebangfix
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
+SHEBANG_FILES=	Pmw/Pmw_*/bin/bundlepmw.py
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-PMWVERSION=	${DISTNAME:R:S/./_/g}
-PLIST_SUB=	PMWVERSION="${PMWVERSION}"
+PLIST_SUB=	PMWVERSION=${PMWVERSION}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3000
+PMWVERSION=	Pmw_1_3_3
+.else
+PMWVERSION=	Pmw_2_0_1
+.endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DOCSDIR} \
-		${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/Pmw/${PMWVERSION}/bin; ${PAX} -rw . ${STAGEDIR}${DATADIR})
-	@(cd ${WRKSRC}/Pmw/${PMWVERSION}/doc; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.for d in  contrib demos
-	@(cd ${WRKSRC}/Pmw/${PMWVERSION};  ${COPYTREE_SHARE} $d ${STAGEDIR}${EXAMPLESDIR})
-.endfor
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/Pmw/${PMWVERSION}/bin && ${PAX} -rw . ${STAGEDIR}${DATADIR})
 
-.include <bsd.port.mk>
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/Pmw/${PMWVERSION}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/Pmw/${PMWVERSION} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/Pmw/${PMWVERSION} && ${COPYTREE_SHARE} demos ${STAGEDIR}${EXAMPLESDIR})
+
+.include <bsd.port.post.mk>
