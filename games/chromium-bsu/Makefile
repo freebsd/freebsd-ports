@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style, top-scrolling space shooter
 
+LICENSE=	ART10
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libGLC.so:graphics/quesoglc
 
 GNU_CONFIGURE=	yes
