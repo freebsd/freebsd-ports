@@ -1,6 +1,5 @@
 Fix potential crashes found by ASan/Clang/GCC
 Fix an infinite loop in lcmScriptDeleteMain()
-Avoid accidental rounding from abs()
 
 --- openbor.c.orig	2017-04-22 14:20:08 UTC
 +++ openbor.c
@@ -64,23 +63,3 @@ Avoid accidental rounding from abs()
      if (value > maxvalue)
      {
          value = maxvalue;
-@@ -21710,8 +21716,8 @@ int reset_backpain(entity *ent)
-         if (ent->normaldamageflipdir == DIRECTION_RIGHT) ent->direction = DIRECTION_RIGHT;
-         else ent->direction = DIRECTION_LEFT;
- 
--        if(ent->direction == DIRECTION_RIGHT) ent->velocity.x = -1*abs(ent->velocity.x);
--        else ent->velocity.x = abs(ent->velocity.x);
-+        if(ent->direction == DIRECTION_RIGHT) ent->velocity.x = -1*ABS(ent->velocity.x);
-+        else ent->velocity.x = ABS(ent->velocity.x);
- 
-         return 1;
-     }
-@@ -25831,7 +25837,7 @@ int common_try_wander(entity *target, in
-         mod = -mod;
-     }
-     //if ((self->sortid / 100) % 2)
--    if (abs(rand32()) % 2)
-+    if (rand32() % 2)
-     {
-         mod = 3 - mod;
-     }
