@@ -1,11 +1,10 @@
 # Created by: buganini@gmail.com
 # $FreeBSD$
 
-PORTNAME=	bsdconv
+PORTNAME=	ruby-bsdconv
 PORTVERSION=	11.3.1
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Ruby wrapper for bsdconv
