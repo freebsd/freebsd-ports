@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		docker
-PORTVERSION=		17.12.0
+PORTVERSION=		18.03.0
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-ce
 CATEGORIES=		sysutils
@@ -24,5 +24,9 @@ GO_TARGET=	${GO_PKGNAME}/cli/cmd/docker
 
 pre-build:
 		@${MV} ${GO_WRKSRC}/components/* ${GO_WRKSRC}/
+		@${CP} ${FILESDIR}/default_store_freebsd.go \
+			${GO_WRKSRC}/cli/cli/config/credentials/
+		@${CP} ${FILESDIR}/pass_freebsd.go \
+			${GO_WRKSRC}/cli/vendor/github.com/docker/docker-credential-helpers/pass/
 
 .include <bsd.port.mk>

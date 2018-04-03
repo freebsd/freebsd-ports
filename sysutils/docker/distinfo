@@ -1,3 +1,3 @@
-TIMESTAMP = 1515075041
-SHA256 (docker-docker-ce-v17.12.0-ce_GH0.tar.gz) = 1303483c878ded1c0e19f323f04316cef6d4c0c895f85c412af6468647d18ef9
-SIZE (docker-docker-ce-v17.12.0-ce_GH0.tar.gz) = 11008332
+TIMESTAMP = 1522780844
+SHA256 (docker-docker-ce-v18.03.0-ce_GH0.tar.gz) = 07651973b4a4adac86599b5c1abc9b1c82aa143ac18205ff399afa814d403280
+SIZE (docker-docker-ce-v18.03.0-ce_GH0.tar.gz) = 12751925
