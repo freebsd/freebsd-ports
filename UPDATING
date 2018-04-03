@@ -104,12 +104,18 @@ you update your ports collection, before attempting any port upgrades.
 
   PHP extensions and modules have been flavored.
 
-  People using Poudriere 3.2+ and binary packages do not have to do anything.
+  People using Poudriere 3.2+ and binary packages do not have to do anything if
+  they are using PHP applications.
 
   PHP modules and extensions may have change their names from php5- or php7- to
   fully versionned phpXY-.
   PECL extensions and PEAR modules package names have changed from pecl- and
   pear- to phpXX-pecl and phpXX-pear-.
+
+  To rename an installed package to match the new naming scheme, for example,
+  for the imagick pecl extension, run:
+
+    # pkg set -n pecl-imagick:php56-pecl-imagick
 
   For other people, to build the PHP 7.2 version of, for example,
   databases/php-memcached, you need to run:
