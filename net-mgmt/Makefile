@@ -375,6 +375,7 @@
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
     SUBDIR += unifi-devel
+    SUBDIR += unifi-lts
     SUBDIR += unifi5
     SUBDIR += victorops-nagios
     SUBDIR += vidalia
