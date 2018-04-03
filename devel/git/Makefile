@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.16.3
+DISTVERSION=	2.17.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -25,7 +25,7 @@ GROUPS=		git_daemon
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake shebangfix ssl tar:xz
+USES=		autoreconf gmake iconv shebangfix ssl tar:xz
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS+=	DEVELOPER_CFLAGS=
@@ -154,7 +154,7 @@ post-patch:
 .for FILE in ${RMMAN7}
 	@${RM} ${WRKDIR}/man7/${FILE}
 .endfor
-	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
+	@${REINPLACE_CMD} -e "s,%%SITE_PERL%%,${SITE_PERL},g" ${WRKSRC}/Makefile
 
 post-patch-CONTRIB-on:
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," \
