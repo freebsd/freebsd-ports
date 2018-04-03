@@ -28,7 +28,7 @@ PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 
 CPM_ACCOUNT=	platomav
 CPM_PROJECT=	CPUMicrocodes
-CPM_TAGNAME=	a0371d6
+CPM_TAGNAME=	8f56a62
 
 OPTIONS_DEFINE=		CPM INTEL
 CPM_DESC=		Download platomav/CPUMicrocodes collection
