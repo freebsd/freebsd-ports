@@ -1,9 +1,0 @@
-TIMESTAMP = 1486166232
-SHA256 (u-boot-2017.01.tar.bz2) = 6c425175f93a4bcf2ec9faf5658ef279633dbd7856a293d95bd1ff516528ecf2
-SIZE (u-boot-2017.01.tar.bz2) = 12224884
-SHA256 (rpi3-boot-files-2016.05.tar.bz2) = 8d5a2e453c9140d989133bc7cd991456138f4eb6c9722cd9eee4af4c1722e216
-SIZE (rpi3-boot-files-2016.05.tar.bz2) = 6905733
-SHA256 (rpi3-psci-monitor-master.tgz) = 47bbda7baede4e0a018869e9a7a9a05e37de5f8255ce6b5939c90bbd4f42f5a2
-SIZE (rpi3-psci-monitor-master.tgz) = 5033
-SHA256 (gonzoua-rpi3-psci-monitor-5782052_GH0.tar.gz) = 0d1095492a31a6bcb726b688a75769959099bc4d1701c888e46711b1d528c3ae
-SIZE (gonzoua-rpi3-psci-monitor-5782052_GH0.tar.gz) = 5110
