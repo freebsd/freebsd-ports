@@ -2,7 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.2.14
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -192,6 +192,15 @@ post-install:
 
 .if defined(WITH_OPENSSL_PORT)
 GSSAPI_BASE_IGNORE=	BASE_GSSAPI is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1101515 || \
+	${OSVERSION} >= 1200000 && ${OSVERSION} < 1200057
+SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
+.else
+SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 .endif
 
 .include <bsd.port.pre.mk>
