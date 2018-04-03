@@ -1,3 +1,3 @@
-TIMESTAMP = 1522689609
-SHA256 (flake8-builtins-1.2.1.tar.gz) = 5d9687d470fec564689599aae12422b39c1bc6e6ed92291d2e8d7a1ebc9e983b
-SIZE (flake8-builtins-1.2.1.tar.gz) = 16730
+TIMESTAMP = 1522762726
+SHA256 (flake8-builtins-1.2.2.tar.gz) = ad59b8bf6c9595c485003e6ccbf6da3b90c8e0e94279ab250f2113e698272b71
+SIZE (flake8-builtins-1.2.2.tar.gz) = 16807
