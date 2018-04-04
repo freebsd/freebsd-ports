@@ -163,7 +163,7 @@ USE_GCC=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1101515 || \
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1101514 || \
 	${OSVERSION} >= 1200000 && ${OSVERSION} < 1200057
 SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .else
