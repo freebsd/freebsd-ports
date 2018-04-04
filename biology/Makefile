@@ -78,6 +78,7 @@
     SUBDIR += p5-TrimGalore
     SUBDIR += p5-transdecoder
     SUBDIR += paml
+    SUBDIR += pear-merger
     SUBDIR += phrap
     SUBDIR += phred
     SUBDIR += phylip
