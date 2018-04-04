@@ -4,6 +4,7 @@ bin/yath
 %%SITE_PERL%%/App/Yath/Command/failed.pm
 %%SITE_PERL%%/App/Yath/Command/help.pm
 %%SITE_PERL%%/App/Yath/Command/init.pm
+%%SITE_PERL%%/App/Yath/Command/projects.pm
 %%SITE_PERL%%/App/Yath/Command/reload.pm
 %%SITE_PERL%%/App/Yath/Command/replay.pm
 %%SITE_PERL%%/App/Yath/Command/run.pm
@@ -68,6 +69,7 @@ bin/yath
 %%PERL5_MAN3%%/App::Yath::Command::failed.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::help.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::init.3.gz
+%%PERL5_MAN3%%/App::Yath::Command::projects.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::reload.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::replay.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::run.3.gz
