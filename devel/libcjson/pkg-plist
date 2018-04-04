@@ -8,11 +8,11 @@ lib/cmake/cJSON/cjson_utils-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cJSON/cjson_utils.cmake
 lib/libcjson.a
 lib/libcjson.so
-lib/libcjson.so.%%SHLIB_VER%%
+lib/libcjson.so.1
 lib/libcjson.so.%%PORTVERSION%%
 lib/libcjson_utils.a
 lib/libcjson_utils.so
-lib/libcjson_utils.so.%%SHLIB_VER%%
+lib/libcjson_utils.so.1
 lib/libcjson_utils.so.%%PORTVERSION%%
 libdata/pkgconfig/libcjson.pc
 libdata/pkgconfig/libcjson_utils.pc
