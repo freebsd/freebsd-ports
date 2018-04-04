@@ -2,6 +2,7 @@
 
 PORTNAME=	gitlab-linguist
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	GitHub Language detection
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-charlock_holmes>=0.6.6:textproc/rubygem-charlock_holmes \
-		rubygem-escape_utils-rails4>=0.2.4:textproc/rubygem-escape_utils-rails4 \
+		rubygem-escape_utils>=0.2.4:textproc/rubygem-escape_utils \
 		rubygem-mime-types1>=1.19:misc/rubygem-mime-types1
 
 # bin/linguist
