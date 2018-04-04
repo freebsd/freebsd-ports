@@ -4978,6 +4978,7 @@
     SUBDIR += py-testinfra
     SUBDIR += py-testoob
     SUBDIR += py-testpath
+    SUBDIR += py-testresources
     SUBDIR += py-testtools
     SUBDIR += py-threema-msgapi
     SUBDIR += py-thrift
