@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	3.3.1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	3.6.0
 CATEGORIES=	www
-MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=${DISTVERSIONPREFIX}${PORTVERSION}&dummy=/
 
 MAINTAINER=	idefix@fechner.net
 COMMENT=	Smart reverse proxy for GitLab
@@ -17,14 +15,15 @@ BUILD_DEPENDS=	go>=1.5.3:lang/go
 
 MAKE_JOBS_UNSAFE=yes
 USES=	gmake
+USE_GITLAB=	yes
+GL_ACCOUNT=	gitlab-org
+# Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
+GL_COMMIT=	51fe78e3acd65292b15402db17179e362e88a65e
 
 PLIST_FILES=	bin/gitlab-workhorse \
 		bin/gitlab-zip-cat \
 		bin/gitlab-zip-metadata
-PLIST_DIRS=	%%WWWDIR%%
-
-post-extract:
-	@${MV} ${WRKDIR}/${DISTNAME}-* ${WRKDIR}/${DISTNAME}
+PLIST_DIRS=	${WWWDIR}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}
