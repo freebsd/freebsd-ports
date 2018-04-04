@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Async-HTTP
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,7 +28,7 @@ TEST_DEPENDS=	p5-IO-Async-SSL>=0.12:security/p5-IO-Async-SSL \
 OPTIONS_DEFINE=	SSL
 
 NO_ARCH=	yes
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 USES=		perl5
 
 SSL_BUILD_DEPENDS=	p5-IO-Async-SSL>=0.12:security/p5-IO-Async-SSL
