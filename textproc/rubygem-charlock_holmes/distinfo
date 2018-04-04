@@ -1,3 +1,5 @@
 TIMESTAMP = 1504489308
 SHA256 (rubygem/charlock_holmes-0.7.5.gem) = 9e942575e702c96e3747f494756a72eee008a185d6c7ebd1049c4dd0b529b625
 SIZE (rubygem/charlock_holmes-0.7.5.gem) = 10752
+SHA256 (rubygem/018be8532670.patch) = f54871c047f27ad057720c1f3ef7578bb87edc2c9e5ee3623a3d26b9dde40f13
+SIZE (rubygem/018be8532670.patch) = 2324

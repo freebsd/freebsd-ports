@@ -16,6 +16,7 @@ BUILD_DEPENDS=	cppunit-config:devel/cppunit
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-conf --with-zlib
+CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

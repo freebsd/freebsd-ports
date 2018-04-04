@@ -1,0 +1,31 @@
+--- src/libedataserver/e-alphabet-index-private.cpp.orig	2017-05-08 12:04:10 UTC
++++ src/libedataserver/e-alphabet-index-private.cpp
+@@ -76,7 +76,7 @@ _e_alphabet_index_cxx_get_index (EAlphabetIndex  *alph
+ 				 const gchar     *word)
+ {
+ 	UErrorCode status = U_ZERO_ERROR;
+-	UnicodeString string;
++	icu::UnicodeString string;
+ 	gint index;
+ 
+ 	g_return_val_if_fail (alphabet_index != NULL, -1);
+@@ -129,7 +129,7 @@ _e_alphabet_index_cxx_get_labels (EAlphabetIndex  *alp
+ 
+ 	for (i = 0; alphabet_index->priv->nextBucket (status); i++) {
+ 		UAlphabeticIndexLabelType label_type;
+-		UnicodeString ustring;
++		icu::UnicodeString ustring;
+ 		std::string string;
+ 
+ 		label_type = alphabet_index->priv->getBucketLabelType ();
+--- src/libedataserver/e-transliterator-private.cpp.orig	2017-05-08 12:04:10 UTC
++++ src/libedataserver/e-transliterator-private.cpp
+@@ -74,7 +74,7 @@ gchar *
+ _e_transliterator_cxx_transliterate (ETransliterator  *transliterator,
+ 				     const gchar      *str)
+ {
+-	UnicodeString transform;
++	icu::UnicodeString transform;
+ 	std::string sourceUTF8;
+ 	std::string targetUTF8;
+ 
