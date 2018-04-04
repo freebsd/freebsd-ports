@@ -1,2 +1,4 @@
 %%SITE_PERL%%/Config/Model/Tester.pm
+%%SITE_PERL%%/Config/Model/Tester/Setup.pm
 %%PERL5_MAN3%%/Config::Model::Tester.3.gz
+%%PERL5_MAN3%%/Config::Model::Tester::Setup.3.gz
