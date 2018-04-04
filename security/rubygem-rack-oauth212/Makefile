@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-activesupport4>=2.3:devel/rubygem-activesupport4 \
 		rubygem-multi_json>=1.3.6:devel/rubygem-multi_json \
 		rubygem-rack16>=1.1:www/rubygem-rack16
 
-PORTSCOUNT=	limit:^1\.2
+PORTSCOUT=	limit:^1\.2\.
 
 NO_ARCH=	yes
 USES=		gem
