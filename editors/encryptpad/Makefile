@@ -4,6 +4,7 @@
 PORTNAME=	encryptpad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0.2
+PORTREVISION=	1
 CATEGORIES=	editors security
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
