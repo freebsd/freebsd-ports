@@ -23,8 +23,8 @@ include/atomic_ops/sysdeps/gcc/hppa.h
 include/atomic_ops/sysdeps/gcc/ia64.h
 include/atomic_ops/sysdeps/gcc/m68k.h
 include/atomic_ops/sysdeps/gcc/mips.h
-include/atomic_ops/sysdeps/gcc/nios2.h
 include/atomic_ops/sysdeps/gcc/powerpc.h
+include/atomic_ops/sysdeps/gcc/riscv.h
 include/atomic_ops/sysdeps/gcc/s390.h
 include/atomic_ops/sysdeps/gcc/sh.h
 include/atomic_ops/sysdeps/gcc/sparc.h
