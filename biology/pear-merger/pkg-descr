@@ -1,0 +1,5 @@
+PEAR is an ultrafast, memory-efficient and highly accurate paired-end read
+merger. It is fully parallelized and can run with as low as just a few
+kilobytes of memory.
+
+WWW: http://sco.h-its.org/exelixis/web/software/pear/
