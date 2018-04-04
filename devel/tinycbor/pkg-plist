@@ -6,5 +6,5 @@ include/tinycbor/tinycbor-version.h
 lib/libtinycbor.a
 lib/libtinycbor.so
 lib/libtinycbor.so.0
-lib/libtinycbor.so.0.5.0
+lib/libtinycbor.so.%%PORTVERSION%%
 libdata/pkgconfig/tinycbor.pc
