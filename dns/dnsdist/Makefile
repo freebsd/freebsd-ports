@@ -64,11 +64,15 @@ SNMP_CONFIGURE_WITH=	net-snmp
 
 .include <bsd.port.pre.mk>
 
-# Fix dnsdist binaries when building on FreeBSD 10.3
+# Fix dnsdist binary when building on FreeBSD 10.x
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
 BUILD_DEPENDS+=	clang50:devel/llvm50
 CC=		clang50
 CXX=		clang++50
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1004000
+BROKEN=		fails to link due to lack of thread_local
 .endif
 
 post-install:
