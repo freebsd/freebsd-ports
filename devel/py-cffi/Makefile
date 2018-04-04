@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cffi
-PORTVERSION=	1.11.2
+PORTVERSION=	1.11.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,11 +28,6 @@ USE_PYTHON=	autoplist distutils
 CFLAGS+=	-Wno-shift-negative-value
 .endif
 .endif
-
-# Tests assume gcc, and fail on pure clang systems
-# Fixed in https://bitbucket.org/cffi/cffi/issues/271
-post-patch:
-	${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/testing/cffi0/test_ownlib.py
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_cffi_backend.so
