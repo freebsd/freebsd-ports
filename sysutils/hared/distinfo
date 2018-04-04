@@ -1,0 +1,13 @@
+TIMESTAMP = 1522849010
+SHA256 (jpmens-hared-hare-1.0-41-ge17cdc6_GH0.tar.gz) = f16038eaf12d7060462f36af60017141be748f5f9be0ebcd064fb39004156179
+SIZE (jpmens-hared-hare-1.0-41-ge17cdc6_GH0.tar.gz) = 16023
+SHA256 (go-gcfg-gcfg-f02745a_GH0.tar.gz) = cd1eb3b45b0cc06da82118bcd5cb15fa9f65b4ccb39d67050b666028f8bb9233
+SIZE (go-gcfg-gcfg-f02745a_GH0.tar.gz) = 28580
+SHA256 (go-warnings-warnings-27b9fab_GH0.tar.gz) = 1db6ca861b2f9f3a53e3dff65d6c2d1b675f2fc7c81dc4f5672e1aaf79b9fe7b
+SIZE (go-warnings-warnings-27b9fab_GH0.tar.gz) = 4200
+SHA256 (eclipse-paho.mqtt.golang-d4f545e_GH0.tar.gz) = 86a30f0018915f8f871d4946b1fcacaffec720fda689bdee024d9f91b00e1904
+SIZE (eclipse-paho.mqtt.golang-d4f545e_GH0.tar.gz) = 66673
+SHA256 (golang-net-9dfe398_GH0.tar.gz) = 0295d04500c538c0d5d18cf6969d26fa670b706b90660819b0018f601c163065
+SIZE (golang-net-9dfe398_GH0.tar.gz) = 925910
+SHA256 (gorilla-websocket-7a8dacf_GH0.tar.gz) = b47fcf26b1a73dda5bd409746669ec5ebe8c28bc96c70d82c00dfa7185eb1db7
+SIZE (gorilla-websocket-7a8dacf_GH0.tar.gz) = 42985
