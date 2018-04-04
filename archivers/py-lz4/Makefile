@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lz4
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,6 @@ BUILD_DEPENDS=	liblz4>=1.7.5:archivers/liblz4 \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${FLAVOR}
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecation>=0:devel/py-deprecation@${FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${FLAVOR}
 
 USE_PYTHON=	distutils py3kplist
