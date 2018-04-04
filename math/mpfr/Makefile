@@ -14,7 +14,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Library for multiple-precision floating-point computations
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 #PATCH_DEPENDS=	gpatch:devel/patch
 LIB_DEPENDS=	libgmp.so:math/gmp
@@ -33,8 +34,5 @@ USE_LDCONFIG=	yes
 INFO=		mpfr
 
 PORTDOCS=	*
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
