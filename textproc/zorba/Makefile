@@ -41,6 +41,7 @@ USES=		cmake:outsource compiler:c++11-lib libedit
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
+CXXFLAGS+=	-DU_USING_ICU_NAMESPACE=1
 CXXFLAGS+=	-I${LOCALBASE}/include -O1 # compiler hangs with -O2 on CURRENT
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
