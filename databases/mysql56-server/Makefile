@@ -3,7 +3,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.6.39
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.6
 PKGNAMESUFFIX?=	56-server
@@ -131,6 +131,15 @@ PERFSCHM_SUB_LIST+=		PERFSCHEMRC=""
 PERFSCHM_SUB_LIST_OFF+=		PERFSCHEMRC="--skip-performance-schema"
 FEDERATED_SUB_LIST+=		FEDER="--federated"
 FEDERATED_SUB_LIST_OFF+=	FEDER=""
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1101514 || \
+	${OSVERSION} >= 1200000 && ${OSVERSION} < 1200057
+SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
+.else
+SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 .endif
 
 .include <bsd.port.pre.mk>
