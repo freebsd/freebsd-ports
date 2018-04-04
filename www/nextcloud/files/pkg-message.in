@@ -1,19 +1,3 @@
-
-***********************************************************************
-*                         MIGRATION FROM OWNCLOUD                     *
-***********************************************************************
-
-If you are migrating from existing owncloud instance, you should do
-the following steps:
-
-- Copy/Move owncloud/data directory to nextcloud/data (don't forget
-        hidden files)
-- Copy/Move owncloud/config/config.php to nextcloud/config/config.php
-- Change the datadirectory in nextcloud/config/config.php
-- Ensure nextcloud/data and nextcloud/config/config.php are owned by 
-        www user and group
-
-
 ***********************************************************************
 *                         POST INSTALL CONFIGURATION                  *
 ***********************************************************************
@@ -39,5 +23,27 @@ And restart Apache.
 After a version migration you should upgrade your nextcloud instance
 using command line:
 
-* cd /usr/local/www/nextcloud
-* su -m www -c "php ./occ upgrade"
+  cd %%WWWDIR%%
+  su -m www -c "php ./occ upgrade"
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                    /!\ NEXTCLOUD 13.0.1 UPDATE /!\
+
+The nextcloud 13.0.1 package changes the location of the bundled apps.
+After updating to 13.0.1 you MUST adapt your configuration. You MUST
+add an additional entry to the "apps-paths" array in config/config.php
+
+    1 =>
+    array (
+      'path' => '%%WWWDIR%%/apps-pkg',
+      'url' => '/apps-pkg',
+      'writable' => false,
+    ),
+
+For the default installation, the fix can be applied with:
+
+  cd %%WWWDIR%%
+  su -m www -c "php ./occ config:import < %%DATADIR%%/fix-apps_paths.json
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

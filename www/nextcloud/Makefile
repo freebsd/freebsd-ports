@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloud
-DISTVERSION=	13.0.0
+DISTVERSION=	13.0.1
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/prereleases/
 
-MAINTAINER=	loic.blot@unix-experience.fr
+MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Personal cloud which runs on your own server
 
 LICENSE=	AGPLv3
@@ -25,31 +25,37 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
 
-OPTIONS_DEFINE=	EXIF LDAP SMB SSL
+OPTIONS_DEFINE=	EXIF LDAP OPCACHE SMB SSL
 OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	EXIF LDAP MYSQL SMB SSL
+OPTIONS_DEFAULT=	EXIF LDAP MYSQL OPCACHE SMB SSL
 
 DB_DESC=	Database backend(s)
 EXIF_DESC=	Image rotation support
+OPCACHE_DESC=	Enable (Nextcloud recommended) OpCache
 
 EXIF_USE=	PHP=exif
 LDAP_USE=	PHP=ldap
 MYSQL_USES=	mysql
 MYSQL_USE=	PHP=pdo_mysql
+OPCACHE_USE=	PHP=opcache
 PGSQL_USES=	pgsql
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
+SMB_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}smbclient>=0.9.0:net/pecl-smbclient@${PHP_FLAVOR}
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
-SMB_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}smbclient>=0.8.0:net/pecl-smbclient@${PHP_FLAVOR}
 SSL_USE=	PHP=openssl
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/var/www/|${WWWDIR}|' ${WRKSRC}/config/config.sample.php
+	@${REINPLACE_CMD} -e 's|/var/www/${PORTNAME}|${WWWDIR}|' ${WRKSRC}/config/config.sample.php
+	@${MV} ${WRKSRC}/apps ${WRKSRC}/apps-pkg
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 	@${RM} ${STAGEDIR}${WWWDIR}/updater/updater.phar
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/apps
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/fix-apps_paths.json ${STAGEDIR}${DATADIR}/fix-apps_paths.json
 
 .include <bsd.port.mk>
