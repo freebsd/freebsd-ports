@@ -1,6 +1,15 @@
---- config.yml.example.orig	2016-07-26 21:04:16 UTC
+--- config.yml.example.orig	2018-02-06 17:56:45 UTC
 +++ config.yml.example
-@@ -43,7 +43,7 @@ redis:
+@@ -25,7 +25,7 @@ http_settings:
+   self_signed_cert: false
+ 
+ # File used as authorized_keys for gitlab user
+-auth_file: "/home/git/.ssh/authorized_keys"
++auth_file: "/usr/home/git/.ssh/authorized_keys"
+ 
+ # File that contains the secret key for verifying access to GitLab.
+ # Default is .gitlab_shell_secret in the gitlab-shell directory.
+@@ -37,7 +37,7 @@ auth_file: "/home/git/.ssh/authorized_ke
  
  # Log file.
  # Default is gitlab-shell.log in the root directory.

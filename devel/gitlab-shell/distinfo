@@ -1,3 +1,3 @@
-TIMESTAMP = 1516803476
-SHA256 (gitlab-shell-v5.11.0.tar.gz) = b63cba3452f82d719ebbc74a3cf95314d38051327dfe38def3fe6a04e56a9929
-SIZE (gitlab-shell-v5.11.0.tar.gz) = 714049
+TIMESTAMP = 1522769153
+SHA256 (gitlab-org-gitlab-shell-ec2806f1f2ad10b7ec68b1835c54c11915387a6a_GL0.tar.gz) = f68d6f6925e2d54e5ff8acac8c0b5f47ab5804492e363bb097fd3b19b7e405c2
+SIZE (gitlab-org-gitlab-shell-ec2806f1f2ad10b7ec68b1835c54c11915387a6a_GL0.tar.gz) = 782621
