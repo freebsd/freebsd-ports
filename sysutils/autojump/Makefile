@@ -11,7 +11,8 @@ DISTNAME=	autojump_v${PORTVERSION}
 MAINTAINER=	neeraj.verma.ports@vermatech.com
 COMMENT=	Tool that acts as a complement to cd
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:shells/bash
 
@@ -19,6 +20,7 @@ USES=		python:run shebangfix
 NO_BUILD=	yes
 SHEBANG_FILES=	autojump jumpapplet
 SUB_FILES=	pkg-install
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/autojump \
 		bin/jumpapplet \
@@ -27,10 +29,6 @@ PLIST_FILES=	bin/autojump \
 		share/autojump/autojump.zsh \
 		share/autojump/icon.png \
 		share/zsh/site-functions/_j
-
-post-patch:
-	@${REINPLACE_CMD} -e '/#!\/usr\/bin/s|python|env &|' \
-		${WRKSRC}/autojump
 
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${SH} ./install.sh \
