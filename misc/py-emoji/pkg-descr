@@ -1,0 +1,5 @@
+emoji provides emoji support for python. The entire set of Emoji codes as
+defined by the unicode consortium is supported, in addition to a bunch of
+aliases.
+
+WWW: https://github.com/carpedm20/emoji

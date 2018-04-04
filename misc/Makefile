@@ -390,6 +390,7 @@
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer
     SUBDIR += py-crudini
+    SUBDIR += py-emoji
     SUBDIR += py-fuzzy
     SUBDIR += py-glance
     SUBDIR += py-osd
