@@ -105,7 +105,7 @@ include/vrtdataset.h
 lib/gdalplugins/.keepme
 lib/libgdal.a
 lib/libgdal.so
-lib/libgdal.so.%%SHLIB_VER%%
+lib/libgdal.so.2
 lib/libgdal.so.%%PORTVERSION%%
 libdata/pkgconfig/gdal.pc
 %%DATADIR%%/GDALLogoBW.svg
