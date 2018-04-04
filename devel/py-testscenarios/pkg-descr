@@ -1,0 +1,7 @@
+Testscenarios provides clean dependency injection for python unittest style
+tests. This can be used for interface testing (testing many implementations via
+a single test suite) or for classic dependency injection (provide tests with
+dependencies externally to the test code itself, allowing easy testing in
+different situations).
+
+WWW: https://pypi.python.org/pypi/testscenarios
