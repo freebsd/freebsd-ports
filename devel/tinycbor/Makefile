@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tinycbor
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,6 +17,8 @@ LIB_DEPENDS=	libcjson.so:devel/libcjson
 INSTALL_TARGET=	install-strip
 MAKE_ARGS=	SOVERSION=${PORTVERSION:R:R}
 USES=		gmake localbase pathfix
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	intel
 GH_PROJECT=	tinycbor
