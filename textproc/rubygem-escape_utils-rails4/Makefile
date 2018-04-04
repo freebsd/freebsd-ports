@@ -13,6 +13,9 @@ COMMENT=	Faster string escaping routines for your web apps
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use textproc/rubygem-escape_utils instead
+EXPIRATION_DATE=2018-04-30
+
 USE_RUBY=	yes
 USES=		gem
 
