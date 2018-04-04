@@ -1,0 +1,7 @@
+Small Go server for receiving notifications and tossing them into MQTT.
+
+This will form part of a centralized message distribution system.
+
+A client for this server is sysutils/hare.
+
+WWW: https://github.com/jpmens/hared-hare
