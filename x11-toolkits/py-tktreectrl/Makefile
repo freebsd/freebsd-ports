@@ -13,12 +13,12 @@ COMMENT=	TkTreectrl Python bindings
 
 LICENSE=	PD
 
-LIB_DEPENDS=	libtreectrl.so.1:x11-toolkits/tktreectrl # no libtreectrl.so is provided by x11-toolkits/tktreectrl
+# x11-toolkits/tktreectrl does not provide libtreectrl.so
+LIB_DEPENDS=	libtreectrl.so.1:x11-toolkits/tktreectrl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Pmw>=0:x11-toolkits/py-Pmw@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${FLAVOR}
 
-# Restrict python to 2.7 because x11-toolkits/py-Pmw is not ready for python 3 yet
-USES=		python:2.7 tk:run zip
+USES=		python tk:run zip
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
