@@ -53,7 +53,7 @@ MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 USES=		gmake iconv jpeg localbase tar:xz
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_VER=${PORTVERSION:R:R}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/php-gdal graphics/py-gdal
 
