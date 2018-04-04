@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fonttools
-PORTVERSION=	3.24.2
+PORTVERSION=	3.25.0
 CATEGORIES=	print python
 #MASTER_SITES=	CHEESESHOP
 MASTER_SITES=	https://files.pythonhosted.org/packages/source/F/FontTools/
