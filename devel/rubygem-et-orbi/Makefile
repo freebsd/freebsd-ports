@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	et-orbi
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
