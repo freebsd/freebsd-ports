@@ -17,4 +17,6 @@ IGNORE_WITH_PHP=70 71 72
 USES=		compiler:c++11-lib php:pecl
 USE_CXXSTD=	gnu++11
 
+CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
+
 .include <bsd.port.mk>
