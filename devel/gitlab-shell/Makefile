@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	5.11.0
+PORTVERSION=	6.0.3
 CATEGORIES=	devel
-MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=v${PORTVERSION}&dummy=/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 LICENSE=	MIT
 
@@ -15,17 +13,21 @@ COMMENT=	GitLab Shell handles git commands for GitLab
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		go>=1.5.3:lang/go
 
+USE_GITLAB=	yes
+GL_ACCOUNT=	gitlab-org
+# Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
+GL_COMMIT=	ec2806f1f2ad10b7ec68b1835c54c11915387a6a
+
 USERS=		git
 GROUPS=		git
-
-post-extract:
-	@${MV} ${WRKDIR}/${DISTNAME}-* ${WRKDIR}/${DISTNAME}
 
 post-patch:
 	${MV} ${WRKSRC}/config.yml.example ${WRKSRC}/config.yml.sample
 
+do-build:
+	export GOCACHE=${WRKSRC}/go && ${WRKSRC}/bin/compile
+
 pre-install:
-	${WRKSRC}/bin/compile
 	${RM} -rf ${WRKSRC}/go
 	${RM} -rf ${WRKSRC}/go_build
 
