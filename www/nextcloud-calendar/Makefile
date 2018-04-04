@@ -3,6 +3,7 @@
 
 PORTNAME=	calendar
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -15,7 +16,7 @@ COMMENT=	Calendar app for Nextcloud
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	nextcloud>=12:www/nextcloud
+RUN_DEPENDS=	nextcloud>=13:www/nextcloud
 
 USES=		php
 NO_BUILD=	yes
@@ -27,7 +28,7 @@ NEXTCLOUD_GROUPNAME?=	${WWWGRP}
 PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
 
-WWWDIR=		${PREFIX}/www/nextcloud/apps/${PORTNAME}
+WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}

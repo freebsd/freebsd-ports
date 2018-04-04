@@ -3,6 +3,7 @@
 
 PORTNAME=	twofactor_u2f
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
@@ -15,13 +16,13 @@ COMMENT=	U2F multi-factor auth app for Nextcloud
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud>=12:www/nextcloud
+RUN_DEPENDS=	nextcloud>=13.0.1:www/nextcloud
 
 USES=		php
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-WWWDIR=		${PREFIX}/www/nextcloud/apps/${PORTNAME}
+WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
