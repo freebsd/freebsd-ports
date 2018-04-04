@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180404:
+  AFFECTS: users of www/nextcloud
+  AUTHOR: brnrd@FreeBSD.org
+
+  With the 13.0.1 update the path for Apps bundled with the package has
+  changed from "apps" to "apps-pkg". You must add an entry to the
+  "apps_paths" array in config/config.php of your nextcloud installation,
+  a patch for the default installation can be applied with:
+
+  # cd /usr/local/www/nextcloud
+  # su -m www -c "php ./occ config:import < /usr/local/share/nextcloud/fix-apps_paths.json
+
 20180401:
   AFFECTS: users of mail/dovecot and mail/dovecot-pigeonhole
   AUTHOR: adamw@FreeBSD.org
