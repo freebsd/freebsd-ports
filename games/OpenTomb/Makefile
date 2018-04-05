@@ -3,7 +3,7 @@
 
 PORTNAME=	OpenTomb
 DISTVERSIONPREFIX=	win32-
-DISTVERSION=	2017-08-05_alpha
+DISTVERSION=	2018-02-03_alpha
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USE_GITHUB=	yes
-
 USES=		cmake lua openal
+USE_GITHUB=	yes
 USE_SDL=	sdl2
 LLD_UNSAFE=	yes
 SUB_FILES=	OpenTomb
