@@ -2,6 +2,7 @@
 
 PORTNAME=	libcdio-paranoia
 PORTVERSION=	10.2+0.94+1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/libcdio
 
