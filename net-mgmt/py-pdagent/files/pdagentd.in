@@ -34,7 +34,7 @@ pdagent_mkdirs="/var/db/pdagent /var/db/pdagent/outqueue /var/db/pdagent/db /var
 pdagentd_precmd()
 {
 	for i in ${pdagent_mkdirs}; do
-		install -d -o ${pdagentd_user} -g ${pdagentd_group} -m 775 ${i}
+		install -d -o ${pdagentd_user} -g ${pdagentd_group} -m 770 ${i}
 	done
 
 	chown -R ${pdagentd_user}:${pdagentd_group} /var/db/pdagent
