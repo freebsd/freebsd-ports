@@ -15,7 +15,7 @@ you update your ports collection, before attempting any port upgrades.
   a patch for the default installation can be applied with:
 
   # cd /usr/local/www/nextcloud
-  # su -m www -c "php ./occ config:import < /usr/local/share/nextcloud/fix-apps_paths.json
+  # su -m www -c "php ./occ config:import < /usr/local/share/nextcloud/fix-apps_paths.json"
 
 20180401:
   AFFECTS: users of mail/dovecot and mail/dovecot-pigeonhole

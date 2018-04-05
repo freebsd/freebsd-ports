@@ -44,6 +44,6 @@ add an additional entry to the "apps-paths" array in config/config.php
 For the default installation, the fix can be applied with:
 
   cd %%WWWDIR%%
-  su -m www -c "php ./occ config:import < %%DATADIR%%/fix-apps_paths.json
+  su -m www -c "php ./occ config:import < %%DATADIR%%/fix-apps_paths.json"
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
