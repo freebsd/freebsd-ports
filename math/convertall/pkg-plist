@@ -1,4 +1,5 @@
 bin/convertall
+share/applications/convertall.desktop
 %%DATADIR%%/__pycache__/cmdline.cpython-%%PYTHON_SUFFIX%%.%%PYTHON_PYOEXTENSION%%
 %%DATADIR%%/__pycache__/cmdline.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/__pycache__/convertall.cpython-%%PYTHON_SUFFIX%%.%%PYTHON_PYOEXTENSION%%
@@ -42,7 +43,8 @@ bin/convertall
 %%NLS%%%%DATADIR%%/data/units_ru.dat
 %%DATADIR%%/helpview.py
 %%DATADIR%%/icondict.py
-%%DATADIR%%/icons/convertall.svg
+%%DATADIR%%/icons/convertall-icon.png
+%%DATADIR%%/icons/convertall-icon.svg
 %%DATADIR%%/icons/convertall_lg.png
 %%DATADIR%%/icons/convertall_med.png
 %%DATADIR%%/icons/convertall_sm.png
@@ -82,3 +84,4 @@ bin/convertall
 %%NLS%%%%DOCSDIR%%/README_es.html
 %%NLS%%%%DOCSDIR%%/README_fr.html
 %%NLS%%%%DOCSDIR%%/README_ru.html
+share/icons/hicolor/scalable/apps/convertall-icon.svg
