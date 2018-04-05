@@ -6,13 +6,14 @@ DISTVERSION=	4.7.9
 CATEGORIES=	databases www
 MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Set of PHP-scripts to manage MySQL over the web
 
 LICENSE=	GPLv2
 
-USES=		cpe php:web tar:xz
+USES=		cpe php:web,flavors tar:xz
 CPE_PRODUCT=	${PORTNAME:tl}
 
 NO_ARCH=	yes
