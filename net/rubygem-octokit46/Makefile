@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-sawyer>=0.8.0:www/rubygem-sawyer
 
-PORTSCOUT=	limit=^4\.6\.
+PORTSCOUT=	limit:^4\.6\.
 
 NO_ARCH=	yes
 USES=		gem
