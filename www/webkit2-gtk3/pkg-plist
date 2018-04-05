@@ -1,4 +1,5 @@
 bin/MiniBrowser-4
+bin/WebKitWebDriver
 bin/jsc-4
 include/webkitgtk-4.0/JavaScriptCore/JSBase.h
 include/webkitgtk-4.0/JavaScriptCore/JSContextRef.h
@@ -8,8 +9,10 @@ include/webkitgtk-4.0/JavaScriptCore/JSTypedArray.h
 include/webkitgtk-4.0/JavaScriptCore/JSValueRef.h
 include/webkitgtk-4.0/JavaScriptCore/JavaScript.h
 include/webkitgtk-4.0/JavaScriptCore/WebKitAvailability.h
+include/webkitgtk-4.0/webkit2/WebKitApplicationInfo.h
 include/webkitgtk-4.0/webkit2/WebKitAuthenticationRequest.h
 include/webkitgtk-4.0/webkit2/WebKitAutocleanups.h
+include/webkitgtk-4.0/webkit2/WebKitAutomationSession.h
 include/webkitgtk-4.0/webkit2/WebKitBackForwardList.h
 include/webkitgtk-4.0/webkit2/WebKitBackForwardListItem.h
 include/webkitgtk-4.0/webkit2/WebKitColorChooserRequest.h
@@ -41,6 +44,8 @@ include/webkitgtk-4.0/webkit2/WebKitNavigationPolicyDecision.h
 include/webkitgtk-4.0/webkit2/WebKitNetworkProxySettings.h
 include/webkitgtk-4.0/webkit2/WebKitNotification.h
 include/webkitgtk-4.0/webkit2/WebKitNotificationPermissionRequest.h
+include/webkitgtk-4.0/webkit2/WebKitOptionMenu.h
+include/webkitgtk-4.0/webkit2/WebKitOptionMenuItem.h
 include/webkitgtk-4.0/webkit2/WebKitPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitPlugin.h
 include/webkitgtk-4.0/webkit2/WebKitPolicyDecision.h
@@ -66,6 +71,7 @@ include/webkitgtk-4.0/webkit2/WebKitWebExtensionAutocleanups.h
 include/webkitgtk-4.0/webkit2/WebKitWebHitTestResult.h
 include/webkitgtk-4.0/webkit2/WebKitWebInspector.h
 include/webkitgtk-4.0/webkit2/WebKitWebPage.h
+include/webkitgtk-4.0/webkit2/WebKitWebProcessEnumTypes.h
 include/webkitgtk-4.0/webkit2/WebKitWebResource.h
 include/webkitgtk-4.0/webkit2/WebKitWebView.h
 include/webkitgtk-4.0/webkit2/WebKitWebViewBase.h
@@ -84,6 +90,8 @@ include/webkitgtk-4.0/webkitdom/WebKitDOMCSSStyleDeclaration.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMCSSStyleSheet.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMCSSValue.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMCharacterData.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMClientRect.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMClientRectList.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMComment.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMCustom.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMCustomUnstable.h
@@ -191,19 +199,19 @@ lib/girepository-1.0/WebKit2-4.0.typelib
 lib/girepository-1.0/WebKit2WebExtension-4.0.typelib
 lib/libjavascriptcoregtk-4.0.so
 lib/libjavascriptcoregtk-4.0.so.18
-lib/libjavascriptcoregtk-4.0.so.18.5.13
+lib/libjavascriptcoregtk-4.0.so.18.7.8
 lib/libwebkit2gtk-4.0.so
 lib/libwebkit2gtk-4.0.so.37
-lib/libwebkit2gtk-4.0.so.37.19.9
+lib/libwebkit2gtk-4.0.so.37.28.0
 lib/webkit2gtk-4.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-4.0.pc
 libdata/pkgconfig/webkit2gtk-4.0.pc
 libdata/pkgconfig/webkit2gtk-web-extension-4.0.pc
 libexec/webkit2gtk-4.0/MiniBrowser
-libexec/webkit2gtk-4.0/WebKitDatabaseProcess
 libexec/webkit2gtk-4.0/WebKitNetworkProcess
 libexec/webkit2gtk-4.0/WebKitPluginProcess
 %%NPAPI%%libexec/webkit2gtk-4.0/WebKitPluginProcess2
+libexec/webkit2gtk-4.0/WebKitStorageProcess
 libexec/webkit2gtk-4.0/WebKitWebProcess
 libexec/webkit2gtk-4.0/jsc
 share/gir-1.0/JavaScriptCore-4.0.gir

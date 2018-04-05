@@ -1,6 +1,6 @@
---- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig	2015-08-06 08:21:27 UTC
+--- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig	2018-03-05 09:28:05 UTC
 +++ Source/JavaScriptCore/assembler/ARM64Assembler.h
-@@ -2862,6 +2862,8 @@ public:
+@@ -2856,6 +2856,8 @@ class ARM64Assembler { (public)
      {
  #if OS(IOS)
          sys_cache_control(kCacheFunctionPrepareForExecution, code, size);

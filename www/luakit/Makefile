@@ -3,6 +3,7 @@
 
 PORTNAME=	luakit
 PORTVERSION=	2017.08.10
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ports@textmail.me

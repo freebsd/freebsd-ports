@@ -2,6 +2,7 @@
 
 PORTNAME=	showdown
 DISTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	dg@syrec.org
