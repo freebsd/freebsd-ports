@@ -81,12 +81,13 @@ X# http://www.ofb.net/~jheiss/sendmail/tlsandrelay.shtml
 X#
 X# You may need to add this to your sendmail.mc file:
 X
-Xdefine(`confCACERT_PATH', `MAIL_SETTINGS_DIR`'certs')dnl
-Xdefine(`confCACERT', `confCACERT_PATH/CA/cacert.pem')dnl
-Xdefine(`confSERVER_CERT', `confCACERT_PATH/sendmailcert.pem')dnl
-Xdefine(`confSERVER_KEY', `confCACERT_PATH/private/sendmailkey.pem')dnl
-Xdefine(`confCLIENT_CERT', `confCACERT_PATH/sendmailcert.pem')dnl
-Xdefine(`confCLIENT_KEY', `confCACERT_PATH/private/sendmailkey.pem')dnl
+Xdefine(`confCACERT_PATH', `MAIL_SETTINGS_DIR`'certs/verify')dnl
+Xdefine(`confCACERT', `MAIL_SETTINGS_DIR`'certs/chain.pem')dnl
+Xdefine(`confSERVER_CERT', `MAIL_SETTINGS_DIR`'certs/sendmailcert.pem')dnl
+Xdefine(`confSERVER_KEY', `MAIL_SETTINGS_DIR`'certs/private/sendmailkey.pem')dnl
+Xdefine(`confCLIENT_CERT', `MAIL_SETTINGS_DIR`'certs/sendmailcert.pem')dnl
+Xdefine(`confCLIENT_KEY', `MAIL_SETTINGS_DIR`'certs/private/sendmailkey.pem')dnl
+Xdefine(`confDH_PARAMETERS', `MAIL_SETTINGS_DIR`'certs/dhparam')dnl
 X
 END-of-files/tls.m4
 exit
