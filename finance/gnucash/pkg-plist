@@ -592,6 +592,7 @@ share/applications/gnucash.desktop
 %%DATADIR%%/accounts/en_GB/acctchrt_spouseinc.gnucash-xea
 %%DATADIR%%/accounts/en_GB/acctchrt_spouseretire.gnucash-xea
 %%DATADIR%%/accounts/en_GB/uk-vat.gnucash-xea
+%%DATADIR%%/accounts/en_IN/acctchrt_gstindia.gnucash-xea
 %%DATADIR%%/accounts/es_ES/acctchrt_brokerage.gnucash-xea
 %%DATADIR%%/accounts/es_ES/acctchrt_carloan.gnucash-xea
 %%DATADIR%%/accounts/es_ES/acctchrt_cdmoneymkt.gnucash-xea
@@ -815,9 +816,13 @@ share/applications/gnucash.desktop
 %%DATADIR%%/accounts/pt_PT/acctchrt_retiremt.gnucash-xea
 %%DATADIR%%/accounts/pt_PT/acctchrt_spouseinc.gnucash-xea
 %%DATADIR%%/accounts/pt_PT/acctchrt_spouseretire.gnucash-xea
+%%DATADIR%%/accounts/ru/acctchrt_auto.gnucash-xea
+%%DATADIR%%/accounts/ru/acctchrt_autoloan.gnucash-xea
 %%DATADIR%%/accounts/ru/acctchrt_common.gnucash-xea
 %%DATADIR%%/accounts/ru/acctchrt_homeloan.gnucash-xea
 %%DATADIR%%/accounts/ru/acctchrt_homeown.gnucash-xea
+%%DATADIR%%/accounts/ru/acctchrt_kids.gnucash-xea
+%%DATADIR%%/accounts/ru/acctchrt_otherloan.gnucash-xea
 %%DATADIR%%/accounts/ru/acctchrt_renter.gnucash-xea
 %%DATADIR%%/accounts/sk/acctchrt_brokerage.gnucash-xea
 %%DATADIR%%/accounts/sk/acctchrt_carloan.gnucash-xea

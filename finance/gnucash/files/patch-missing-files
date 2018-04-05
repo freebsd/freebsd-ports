@@ -1,0 +1,1372 @@
+--- src/optional/python-bindings/__init__.py.orig	2018-04-04 21:00:06 UTC
++++ src/optional/python-bindings/__init__.py
+@@ -0,0 +1,11 @@
++# import all the symbols from gnucash_core, so basic gnucash stuff can be
++# loaded with:
++# >>> from gnucash import thingy
++# instead of
++# >>> from gnucash.gnucash_core import thingy
++from gnucash_core import *
++##  @file
++#   @brief helper file for the importing of gnucash
++#   @author Mark Jenkins, ParIT Worker Co-operative <mark@parit.ca>
++#   @author Jeff Green,   ParIT Worker Co-operative <jeff@parit.ca>
++#   @ingroup python_bindings
+--- src/optional/python-bindings/function_class.py.orig	2018-04-04 21:44:51 UTC
++++ src/optional/python-bindings/function_class.py
+@@ -0,0 +1,227 @@
++# function_class.py -- Library for making python classes from a set
++#                      of functions. 
++#
++# Copyright (C) 2008 ParIT Worker Co-operative <paritinfo@parit.ca>
++# This program is free software; you can redistribute it and/or
++# modify it under the terms of the GNU General Public License as
++# published by the Free Software Foundation; either version 2 of
++# the License, or (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program; if not, contact:
++# Free Software Foundation           Voice:  +1-617-542-5942
++# 51 Franklin Street, Fifth Floor    Fax:    +1-617-542-2652
++# Boston, MA  02110-1301,  USA       gnu@gnu.org
++#
++# @author Mark Jenkins, ParIT Worker Co-operative <mark@parit.ca>
++
++##  @file
++#   @brief Library for making python classes from a set of functions.
++#   @author Mark Jenkins, ParIT Worker Co-operative <mark@parit.ca>
++#   @author Jeff Green,   ParIT Worker Co-operative <jeff@parit.ca>
++#   @ingroup python_bindings
++
++INSTANCE_ARGUMENT = "instance"
++
++class ClassFromFunctions(object):
++    """Inherit this class to give yourself a python class that wraps a set of
++    functions that together constitute the methods of the class.
++
++    The method functions must all have as a first argument an object
++    holding the instance data. There must also be a function that
++    returns a new instance of the class, the constructor.
++
++    Your subclass must define
++    _module - The module where the method functions, including the
++    constructor can be found
++    _new_instance - The name of a function that serves as a constructor,
++    returning the instance data.
++
++    To access the instance data, use the read-only property instance.
++
++    To add some functions from _module as methods, call classmethods like
++    add_method and add_methods_with_prefix.
++    """
++    def __new__(cls, *args, **kargs):
++        # why reimpliment __new__? Because later on we're going to
++        # use new to avoid creating new instances when existing instances
++        # already exist with the same __instance value, or equivalent __instance
++        # values, where this is desirable...
++        return super(ClassFromFunctions, cls).__new__(cls)
++    
++    def __init__(self, *args, **kargs):
++        """Construct a new instance, using either the function
++        self._module[self._new_instance] or using existing instance
++        data. (specified with the keyword argument, instance)
++
++        Pass the arguments that should be passed on to
++        self._module[self._new_instance] . Any arguments of that
++        are instances of ClassFromFunctions will be switched with the instance
++        data. (by calling the .instance property)
++        """
++        if INSTANCE_ARGUMENT in kargs:
++            self.__instance = kargs[INSTANCE_ARGUMENT]
++        else:
++            self.__instance = getattr(self._module, self._new_instance)(
++                *process_list_convert_to_instance(args) )
++
++    def get_instance(self):
++        """Get the instance data.
++
++        You can also call the instance property
++        """
++        return self.__instance
++
++    instance = property(get_instance)
++
++    # CLASS METHODS
++
++    @classmethod
++    def add_method(cls, function_name, method_name):
++        """Add the function, method_name to this class as a method named name
++        """
++        def method_function(self, *meth_func_args):
++            return getattr(self._module, function_name)(
++                self.instance,
++                *process_list_convert_to_instance(meth_func_args) )
++        
++        setattr(cls, method_name, method_function)
++        setattr(method_function, "__name__", method_name)
++        return method_function
++
++    @classmethod
++    def ya_add_classmethod(cls, function_name, method_name):
++        """Add the function, method_name to this class as a classmethod named name
++        
++        Taken from function_class and slightly modified.
++        """
++        def method_function(self, *meth_func_args):
++            return getattr(self._module, function_name)(
++                self,
++                *process_list_convert_to_instance(meth_func_args) )
++        
++        setattr(cls, method_name, classmethod(method_function))
++        setattr(method_function, "__name__", method_name)
++        return method_function    
++
++    @classmethod
++    def ya_add_method(cls, function_name, method_name):
++        """Add the function, method_name to this class as a method named name
++        
++        Taken from function_class and slightly modified.
++        """
++        def method_function(self, *meth_func_args):
++            return getattr(self._module, function_name)(
++                self,
++                *process_list_convert_to_instance(meth_func_args) )
++        
++        setattr(cls, method_name, method_function)
++        setattr(method_function, "__name__", method_name)
++        return method_function
++
++    @classmethod
++    def add_methods_with_prefix(cls, prefix):
++        """Add a group of functions with the same prefix 
++        """
++        for function_name, function_value, after_prefix in \
++            extract_attributes_with_prefix(cls._module, prefix):
++                cls.add_method(function_name, after_prefix)
++    
++    @classmethod
++    def add_constructor_and_methods_with_prefix(cls, prefix, constructor):
++        """Add a group of functions with the same prefix, and set the
++        _new_instance attribute to prefix + constructor
++        """
++        cls.add_methods_with_prefix(prefix)
++        cls._new_instance = prefix + constructor
++
++    @classmethod
++    def decorate_functions(cls, decorator, *args):
++        for function_name in args:
++            setattr( cls, function_name,
++                     decorator( getattr(cls, function_name) ) )
++
++def method_function_returns_instance(method_function, cls):
++    """A function decorator that is used to decorate method functions that
++    return instance data, to return instances instead.
++
++    You can't use this decorator with @, because this function has a second
++    argument.
++    """
++    assert( 'instance' == INSTANCE_ARGUMENT )
++    def new_function(*args):
++        kargs = { INSTANCE_ARGUMENT : method_function(*args) }
++        if kargs['instance'] == None:
++            return None
++        else:
++            return cls( **kargs )
++    
++    return new_function
++
++def method_function_returns_instance_list(method_function, cls):
++    def new_function(*args):
++        return [ cls( **{INSTANCE_ARGUMENT: item} )
++                 for item in method_function(*args) ]
++    return new_function
++
++def methods_return_instance_lists(cls, function_dict):
++    for func_name, instance_name in function_dict.iteritems():
++        setattr(cls, func_name,
++                method_function_returns_instance_list(
++                getattr(cls, func_name), instance_name))
++
++def default_arguments_decorator(function, *args):
++    """Decorates a function to give it default, positional arguments
++
++    You can't use this decorator with @, because this function has more
++    than one argument.
++    """
++    def new_function(*function_args):
++        new_argset = list(function_args)
++        new_argset.extend( args[ len(function_args): ] )
++        return function( *new_argset )
++    return new_function
++    
++def return_instance_if_value_has_it(value):
++    """Return value.instance if value is an instance of ClassFromFunctions,
++    else return value
++    """
++    if isinstance(value, ClassFromFunctions):
++        return value.instance
++    else:
++        return value
++
++def process_list_convert_to_instance( value_list ):
++    """Return a list built from value_list, where if a value is in an instance
++    of ClassFromFunctions, we put value.instance in the list instead.
++
++    Things that are not instances of ClassFromFunctions are returned to
++    the new list unchanged.
++    """
++    return [ return_instance_if_value_has_it(value)
++             for value in value_list ]
++
++def extract_attributes_with_prefix(obj, prefix):
++    """Generator that iterates through the attributes of an object and
++    for any attribute that matches a prefix, this yields
++    the attribute name, the attribute value, and the text that appears
++    after the prefix in the name
++    """
++    for attr_name, attr_value in obj.__dict__.iteritems():
++        if attr_name.startswith(prefix):
++            after_prefix = attr_name[ len(prefix): ]
++            yield attr_name, attr_value, after_prefix
++
++def methods_return_instance(cls, function_dict):
++    """Iterates through a dictionary of function name strings and instance names
++    and sets the function to return the associated instance 
++    """
++    for func_name, instance_name in function_dict.iteritems():
++        setattr(cls, func_name, 
++            method_function_returns_instance( getattr(cls, func_name), instance_name))
++
+--- src/optional/python-bindings/gnucash_business.py.orig	2018-04-04 23:06:43 UTC
++++ src/optional/python-bindings/gnucash_business.py
+@@ -0,0 +1,370 @@
++# gnucash_business.py -- High level python wrapper classes for the business
++#                        parts of GnuCash
++#
++# Copyright (C) 2008,2010 ParIT Worker Co-operative <paritinfo@parit.ca>
++# This program is free software; you can redistribute it and/or
++# modify it under the terms of the GNU General Public License as
++# published by the Free Software Foundation; either version 2 of
++# the License, or (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program; if not, contact:
++# Free Software Foundation           Voice:  +1-617-542-5942
++# 51 Franklin Street, Fifth Floor    Fax:    +1-617-542-2652
++# Boston, MA  02110-1301,  USA       gnu@gnu.org
++#
++# @author Mark Jenkins, ParIT Worker Co-operative <mark@parit.ca>
++# @author Jeff Green,   ParIT Worker Co-operative <jeff@parit.ca>
++##  @file
++#   @brief High level python wrapper classes for the business parts of GnuCash
++#   @author Mark Jenkins, ParIT Worker Co-operative <mark@parit.ca>
++#   @author Jeff Green,   ParIT Worker Co-operative <jeff@parit.ca>
++#   @ingroup python_bindings
++
++import gnucash_core_c
++
++from function_class import \
++     ClassFromFunctions, extract_attributes_with_prefix, \
++     default_arguments_decorator, method_function_returns_instance, \
++     methods_return_instance, methods_return_instance_lists
++
++from gnucash_core import \
++     GnuCashCoreClass, GncNumeric, GncCommodity, Transaction, \
++     Split, Book, GncLot, Account
++
++from gnucash_core_c import GNC_OWNER_CUSTOMER, GNC_OWNER_JOB, \
++    GNC_OWNER_EMPLOYEE, GNC_OWNER_VENDOR, \
++    GNC_PAYMENT_CASH, GNC_PAYMENT_CARD, \
++    GNC_DISC_PRETAX, GNC_DISC_SAMETIME, GNC_DISC_POSTTAX, \
++    GNC_TAXINCLUDED_YES, GNC_TAXINCLUDED_NO, GNC_TAXINCLUDED_USEGLOBAL, \
++    GNC_AMT_TYPE_VALUE, GNC_AMT_TYPE_PERCENT, GNC_ID_INVOICE
++
++import datetime
++
++class GnuCashBusinessEntity(GnuCashCoreClass):
++    def __init__(self, book=None, id=None, currency=None, name=None,
++                 instance=None):
++        if instance == None:
++            if book==None or id==None or currency==None:
++                raise Exception(
++                    "you must call GnuCashBusinessEntity.__init__ "
++                    "with either a book, id, and currency, or an existing "
++                    "low level swig proxy in the argument instance")
++            GnuCashCoreClass.__init__(self, book)
++            self.BeginEdit()
++            self.SetID(id)
++            self.SetCurrency(currency)
++            if name != None:
++                self.SetName(name)
++            self.CommitEdit()
++        else:
++            GnuCashCoreClass.__init__(self, instance=instance)
++
++class Customer(GnuCashBusinessEntity): pass
++                         
++class Employee(GnuCashBusinessEntity): pass
++
++class Vendor(GnuCashBusinessEntity): pass
++
++class Job(GnuCashBusinessEntity):
++    # override the superclass constructor, as Job doesn't require
++    # a currency but it does require an owner
++    def __init__(self, book=None, id=None, owner=None, name=None,
++                 instance=None):
++        if instance == None:
++            if book==None or id==None or owner==None:
++                raise Exception(
++                    "you must call Job.__init__ "
++                    "with either a book, id, and owner or an existing "
++                    "low level swig proxy in the argument instance")
++            GnuCashCoreClass.__init__(self, book)
++            self.SetID(id)
++            self.SetOwner(owner)
++            if name != None:
++                self.SetName(name)
++        else:
++            GnuCashCoreClass.__init__(self, instance=instance)    
++
++class Address(GnuCashCoreClass): pass
++    
++class BillTerm(GnuCashCoreClass): pass
++
++class TaxTable(GnuCashCoreClass):
++    def __init__(self, book=None, name=None, first_entry=None, instance=None):
++        if instance == None:
++            if book==None or name==None or first_entry==None:
++                raise Exception(
++                    "you must call TaxTable.__init__  with either a "
++                    "book, name, and first_entry, or an existing "
++                    "low level swig proxy in the argument instance")
++            GnuCashCoreClass.__init__(self, book)
++            self.SetName(name)
++            self.AddEntry(first_entry)
++        else:
++            GnuCashCoreClass.__init__(self, instance=instance)
++
++class TaxTableEntry(GnuCashCoreClass):
++    def __init__(self, account=None, percent=True, amount=None, instance=None):
++        """TaxTableEntry constructor
++        
++        You must provide an account, or be initizing this with an existing
++        swig proxy object via the instance keyword argument.
++        
++        You may also optionally set the percent keyword argument to False to get
++        a fixed value instead of percentage based tax (which is the default, or
++        when percent=True).
++        
++        The tax will be zero percent or zero unless you set the amount keyword
++        argument to a GncNumeric value as well.
++        """
++
++        if instance == None:
++            if account==None:
++                raise Exception(
++                    "you must call TaxTableEntry.__init__  with either a "
++                    "account or an existing "
++                    "low level swig proxy in the argument instance")
++            GnuCashCoreClass.__init__(self)
++            self.SetAccount(account)
++            if percent:
++                self.SetType(GNC_AMT_TYPE_PERCENT)
++            else:
++                self.SetType(GNC_AMT_TYPE_VALUE)
++            if amount != None:
++                self.SetAmount(amount)
++        else:
++            GnuCashCoreClass.__init__(self, instance=instance)        
++
++class Invoice(GnuCashCoreClass):
++    def __init__(self, book=None, id=None, currency=None, owner=None,
++                 date_opened=None, instance=None):
++        """Invoice Contstructor
++
++        You must provide a book, id, currency and owner
++        (Customer, Job, Employee, Vendor) or an existing swig proxy object
++        in the keyword argument instance.
++
++        Optionally, you may provide a date the invoice is opened on
++        (datetime.date or datetime.datetime), otherwise today's date is used.
++        """
++        if instance == None:
++            if book==None or id==None or currency==None or owner==None:
++                raise Exception(
++                    "you must call Invoice.__init__ "
++                    "with either a book, id, currency and owner, or an existing"
++                    "low level swig proxy in the argument instance")
++            GnuCashCoreClass.__init__(self, book)
++            self.BeginEdit()
++            self.SetID(id)
++            self.SetCurrency(currency)
++            self.SetOwner(owner)
++            if date_opened == None:
++                date_opened = datetime.date.today()
++            self.SetDateOpened(date_opened)
++            self.CommitEdit()
++        else:
++            GnuCashCoreClass.__init__(self, instance=instance)
++
++class Bill(Invoice):
++    pass
++
++def decorate_to_return_instance_instead_of_owner(dec_function):
++    def new_get_owner_function(self):
++        (owner_type, instance) = dec_function(self)
++        if owner_type == GNC_OWNER_CUSTOMER:
++            return Customer(instance=instance)
++        elif owner_type == GNC_OWNER_JOB:
++            return Job(instance=instance)
++        elif owner_type == GNC_OWNER_EMPLOYEE:
++            return Employee(instance=instance)
++        elif owner_type == GNC_OWNER_VENDOR:
++            return Vendor(instance=instance)
++        else:
++            return None
++    return new_get_owner_function
++
++class Entry(GnuCashCoreClass):
++    def __init__(self, book=None, invoice=None, date=None, instance=None):
++        """Invoice Entry constructor
++        
++        You must provide a book or be initizing this with an existing
++        swig proxy object via the instance keyword argument.
++
++        The optional invoice argument can be set to a Bill or Invoice
++        that you would like to associate the entry with. You might as well
++        assign one now, as an Entry can't exist without one, but you can
++        always use Invoice.AddEntry or Bill.AddEntry later on.
++
++        By default, the entry will be set to today's date unless you
++        override with the date argument.
++        """
++        if instance == None:
++            if book==None:
++                raise Exception(
++                    "you must call Entry.__init__  with either a "
++                    "book or an existing "
++                    "low level swig proxy in the argument instance")
++            GnuCashCoreClass.__init__(self, book)
++
++            if date == None:
++                date = datetime.date.today()
++            self.SetDate(date)
++            if invoice != None:
++                invoice.AddEntry(self)
++        else:
++
++            GnuCashCoreClass.__init__(self, instance=instance)
++
++    def test_type(self, invoice):
++        if invoice.GetTypeString() == "Invoice" and self.GetInvoice() == None:
++            raise Exception("Entry type error. Check that Entry type matches Invoice.")
++        if invoice.GetTypeString() == "Bill" and self.GetBill() == None:
++            raise Exception("Entry type error. Check that Entry type matches Bill.")
++
++
++# Owner
++GnuCashBusinessEntity.add_methods_with_prefix('gncOwner')
++
++owner_dict = {
++                    'GetCustomer' : Customer,
++                    'GetVendor' : Vendor,
++                    'GetEmployee' : Employee,
++                    'GetJob' : Job,
++                    'GetAddr' : Address,
++                    'GetCurrency' : GncCommodity,
++                    'GetEndOwner': GnuCashBusinessEntity,
++                    'GetBalanceInCurrency': GncNumeric,
++              }
++methods_return_instance(GnuCashBusinessEntity, owner_dict)
++
++methods_return_instance_lists(
++    GnuCashBusinessEntity, {
++        'GetCommoditiesList': GncCommodity
++    })
++
++# Customer
++Customer.add_constructor_and_methods_with_prefix('gncCustomer', 'Create')
++
++customer_dict = {
++                    'GetAddr' : Address,
++                    'GetShipAddr' : Address,
++                    'GetDiscount' : GncNumeric,
++                    'GetCredit' : GncNumeric,
++                    'GetTerms' : BillTerm,
++                    'GetCurrency' : GncCommodity,
++                    'GetTaxTable': TaxTable,
++                }
++methods_return_instance(Customer, customer_dict)
++
++# Employee
++Employee.add_constructor_and_methods_with_prefix('gncEmployee', 'Create')
++
++employee_dict = {
++                    'GetBook' : Book,
++                    'GetAddr' : Address,
++                    'GetWorkday' : GncNumeric,
++                    'GetRate' : GncNumeric,
++                    'GetCurrency' : GncCommodity
++                }
++methods_return_instance(Employee, employee_dict)
++
++# Vendor
++Vendor.add_constructor_and_methods_with_prefix('gncVendor', 'Create')
++
++vendor_dict =   {
++                    'GetAddr' : Address,
++                    'GetTerms' : BillTerm,
++                    'GetCurrency' : GncCommodity,
++                    'GetTaxTable': TaxTable,
++                }
++methods_return_instance(Vendor, vendor_dict)
++
++# Job
++Job.add_constructor_and_methods_with_prefix('gncJob', 'Create')
++Job.decorate_functions(
++    decorate_to_return_instance_instead_of_owner,
++    'GetOwner')
++
++# Address
++Address.add_constructor_and_methods_with_prefix('gncAddress', 'Create')
++
++# BillTerm
++BillTerm.add_constructor_and_methods_with_prefix('gncBillTerm', 'Create')
++
++billterm_dict = {
++                    'LookupByName' : BillTerm,
++                    'GetDiscount' : GncNumeric,
++                    'GetParent' : BillTerm,
++                    'ReturnChild' : BillTerm
++                }
++methods_return_instance(BillTerm, billterm_dict)
++
++# TaxTable
++TaxTable.add_constructor_and_methods_with_prefix('gncTaxTable', 'Create')
++
++taxtable_dict = {
++                    'GetParent': TaxTable,
++                }
++methods_return_instance(TaxTable, taxtable_dict)
++
++# TaxTableEntry
++TaxTableEntry.add_constructor_and_methods_with_prefix(
++    'gncTaxTableEntry', 'Create')
++
++taxtableentry_dict = {
++                         'GetAccount': Account,
++                         'GetAmount': GncNumeric,
++                     }
++
++# Invoice
++Invoice.add_constructor_and_methods_with_prefix('gncInvoice', 'Create')
++methods_return_instance_lists(
++    Invoice, { 'GetEntries': Entry })
++
++# Bill
++Bill.add_methods_with_prefix('gncBill')
++
++invoice_dict = {
++                   'GetTerms': BillTerm,
++                   'GetCurrency': GncCommodity,
++                   'GetToChargeAmount': GncNumeric,
++                   'GetPostedLot': GncLot,
++                   'GetPostedTxn': Transaction,
++                   'GetPostedAcc': Account,
++                   'GetTotal': GncNumeric,
++                   'GetTotalOf': GncNumeric,
++                   'GetTotalSubtotal': GncNumeric,
++                   'GetTotalTax': GncNumeric,
++                   'PostToAccount': Transaction,
++                   'GetBook': Book,
++               }
++methods_return_instance(Invoice, invoice_dict)
++Invoice.decorate_functions(
++    decorate_to_return_instance_instead_of_owner,
++    'GetOwner', 'GetBillTo')
++
++# Entry
++Entry.add_constructor_and_methods_with_prefix('gncEntry', 'Create')
++
++entry_dict = {
++                 'GetQuantity': GncNumeric,
++                 'GetInvAccount': Account,
++                 'GetInvPrice': GncNumeric,
++                 'GetInvDiscount': GncNumeric,
++                 'GetInvTaxTable': TaxTable,
++                 'GetBillAccount': Account,
++                 'GetBillPrice': GncNumeric,
++                 'GetBillTaxTable': TaxTable,
++                 'Copy': Entry,
++                 'GetInvoice': Invoice,
++                 'GetBill': Invoice
++             }
++methods_return_instance(Entry, entry_dict)             
++Entry.decorate_functions(
++    decorate_to_return_instance_instead_of_owner,
++    'GetBillTo' )
+--- src/optional/python-bindings/gnucash_core.py.orig	2018-04-04 22:55:00 UTC
++++ src/optional/python-bindings/gnucash_core.py
+@@ -0,0 +1,752 @@
++# gnucash_core.py -- High level python wrapper classes for the core parts
++#                    of GnuCash
++#
++# Copyright (C) 2008 ParIT Worker Co-operative <paritinfo@parit.ca>
++# This program is free software; you can redistribute it and/or
++# modify it under the terms of the GNU General Public License as
++# published by the Free Software Foundation; either version 2 of
++# the License, or (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program; if not, contact:
++# Free Software Foundation           Voice:  +1-617-542-5942
++# 51 Franklin Street, Fifth Floor    Fax:    +1-617-542-2652
++# Boston, MA  02110-1301,  USA       gnu@gnu.org
++#
++# @author Mark Jenkins, ParIT Worker Co-operative <mark@parit.ca>
++# @author Jeff Green,   ParIT Worker Co-operative <jeff@parit.ca>
++
++# The following is for doxygen
++## @file
++#  @brief High level python wrapper classes for the core parts of GnuCash
++#  @author Mark Jenkins, ParIT Worker Co-operative <mark@parit.ca>
++#  @author Jeff Green,   ParIT Worker Co-operative <jeff@parit.ca>
++#  @ingroup python_bindings
++
++import gnucash_core_c
++
++from function_class import \
++     ClassFromFunctions, extract_attributes_with_prefix, \
++     default_arguments_decorator, method_function_returns_instance, \
++     methods_return_instance, process_list_convert_to_instance, \
++     method_function_returns_instance_list, methods_return_instance_lists
++
++from gnucash_core_c import gncInvoiceLookup, gncInvoiceGetInvoiceFromTxn, \
++    gncInvoiceGetInvoiceFromLot, gncEntryLookup, gncInvoiceLookup, \
++    gncCustomerLookup, gncVendorLookup, gncJobLookup, gncEmployeeLookup, \
++    gncTaxTableLookup, gncTaxTableLookupByName, gnc_search_invoice_on_id, \
++    gnc_search_customer_on_id, gnc_search_bill_on_id , gnc_search_vendor_on_id, \
++    gncInvoiceNextID, gncCustomerNextID, gncTaxTableGetTables, gncVendorNextID
++
++class GnuCashCoreClass(ClassFromFunctions):
++    _module = gnucash_core_c
++
++    def do_lookup_create_oo_instance(self, lookup_function, cls, *args):
++        thing = lookup_function(self.get_instance(), *args)
++        if thing != None:
++            thing = cls(instance=thing)
++        return thing
++
++
++class GnuCashBackendException(Exception):
++    def __init__(self, msg, errors):
++        Exception.__init__(self, msg)
++        self.errors = errors
++
++class Session(GnuCashCoreClass):
++    """A GnuCash book editing session
++
++    To commit changes to the session you may need to call save,
++    (this is always the case with the file backend).
++
++    When you're down with a session you may need to call end()
++
++    Every Session has a Book in the book attribute, which you'll definitely
++    be interested in, as every GnuCash entity (Transaction, Split, Vendor,
++    Invoice..) is associated with a particular book where it is stored.
++    """
++
++    def __init__(self, book_uri=None, ignore_lock=False, is_new=False,
++                 force_new= False):
++        """A convenient constructor that allows you to specify a book URI,
++        begin the session, and load the book.
++
++        This can give you the power of calling
++        qof_session_new, qof_session_begin, and qof_session_load all in one!
++
++        book_uri can be None to skip the calls to qof_session_begin and
++        qof_session_load, or it can be a string like "file:/test.xac"
++
++        qof_session_load is only called if is_new is set to False
++
++        is_new is passed to qof_session_begin as the argument create,
++        and force_new as the argument force. Is_new will create a new
++        database or file; force will force creation even if it will
++        destroy an existing dataset.
++
++        ignore_lock is passed to qof_session_begin's argument of the
++        same name and is used to break an existing lock on a dataset.
++
++
++
++        This function can raise a GnuCashBackendException. If it does,
++        you don't need to cleanup and call end() and destroy(), that is handled
++        for you, and the exception is raised.
++        """
++        GnuCashCoreClass.__init__(self)
++        if book_uri is not None:
++            try:
++                self.begin(book_uri, ignore_lock, is_new, force_new)
++                # Take care of backend inconsistency
++                # New xml file can't be loaded, new sql store
++                # has to be loaded before it can be altered
++                # Any existing store obviously has to be loaded
++                # More background: https://bugzilla.gnome.org/show_bug.cgi?id=726891
++                if book_uri[:3] != "xml" or not is_new:
++                    self.load()
++            except GnuCashBackendException, backend_exception:
++                self.end()
++                self.destroy()
++                raise
++
++    def raise_backend_errors(self, called_function="qof_session function"):
++        """Raises a GnuCashBackendException if there are outstanding
++        QOF_BACKEND errors.
++
++        set called_function to name the function that was last called
++        """
++        errors = self.pop_all_errors()
++        if errors != ():
++            raise GnuCashBackendException(
++                "call to %s resulted in the "
++                "following errors, %s" % (called_function, backend_error_dict[errors[0]]),
++                errors )
++
++    def generate_errors(self):
++        """A generator that yields any outstanding QofBackend errors
++        """
++        while self.get_error() is not ERR_BACKEND_NO_ERR:
++            error = self.pop_error()
++            yield error
++
++    def pop_all_errors(self):
++        """Returns any accumulated qof backend errors as a tuple
++        """
++        return tuple( self.generate_errors() )
++
++    # STATIC METHODS
++    @staticmethod
++    def raise_backend_errors_after_call(function):
++        """A function decorator that results in a call to
++        raise_backend_errors after execution.
++        """
++        def new_function(self, *args):
++            return_value = function(self, *args)
++            self.raise_backend_errors(function.__name__)
++            return return_value
++        return new_function
++
++class Book(GnuCashCoreClass):
++    """A Book encapsulates all of the GnuCash data, it is the place where
++    all GnuCash entities (Transaction, Split, Vendor, Invoice...), are
++    stored. You'll notice that all of the constructors for those entities
++    need a book to be associated with.
++
++    The most common way to get a book is through the book property in the
++    Session class, that is, create a session that connects to some storage,
++    such as through 'my_session = Session('file:my_books.xac')', and access
++    the book via the book property, 'my_session.book'
++
++    If you would like to create a Book without any backing storage, call the
++    Book constructor without any parameters, 'Book()'. You can later merge
++    such a book into a book with actual store by using merge_init.
++
++    Methods of interest
++    get_root_account -- Returns the root level Account
++    get_table -- Returns a commodity lookup table, of type GncCommodityTable
++    """
++    def InvoiceLookup(self, guid):
++        from gnucash_business import Invoice
++        return self.do_lookup_create_oo_instance(
++            gncInvoiceLookup, Invoice, guid.get_instance() )
++
++    def EntryLookup(self, guid):
++        from gnucash_business import Entr
++        return self.do_lookup_create_oo_instance(
++            gncEntryLookup, Entry, guid.get_instance() )
++
++    def CustomerLookup(self, guid):
++        from gnucash_business import Customer
++        return self.do_lookup_create_oo_instance(
++            gncCustomerLookup, Customer, guid.get_instance())
++
++    def JobLookup(self, guid):
++        from gnucash_business import Job
++        return self.do_lookup_create_oo_instance(
++            gncJobLookup, Job, guid.get_instance() )
++
++    def VendorLookup(self, guid):
++        from gnucash_business import Vendor
++        return self.do_lookup_create_oo_instance(
++            gncVendorLookup, Vendor, guid.get_instance() )
++
++    def EmployeeLookup(self, guid):
++        from gnucash_business import Employee
++        return self.do_lookup_create_oo_instance(
++            gncEmployeeLookup, Employee, guid.get_instance() )
++
++    def TaxTableLookup(self, guid):
++        from gnucash_business import TaxTable
++        return self.do_lookup_create_oo_instance(
++            gncTaxTableLookup, TaxTable, guid.get_instance() )
++
++    def TaxTableLookupByName(self, name):
++        from gnucash_business import TaxTable
++        return self.do_lookup_create_oo_instance(
++            gncTaxTableLookupByName, TaxTable, name)
++
++    def TaxTableGetTables(self):
++        from gnucash_business import TaxTable
++        return [ TaxTable(instance=item) for item in gncTaxTableGetTables(self.instance) ]
++
++    def BillLoookupByID(self, id):
++        from gnucash_business import Bill
++        return self.do_lookup_create_oo_instance(
++            gnc_search_bill_on_id, Bill, id)
++
++    def InvoiceLookupByID(self, id):
++        from gnucash_business import Invoice
++        return self.do_lookup_create_oo_instance(
++            gnc_search_invoice_on_id, Invoice, id)
++
++    def CustomerLookupByID(self, id):
++        from gnucash_business import Customer
++        return self.do_lookup_create_oo_instance(
++            gnc_search_customer_on_id, Customer, id)
++
++    def VendorLookupByID(self, id):
++        from gnucash_business import Vendor
++        return self.do_lookup_create_oo_instance(
++            gnc_search_vendor_on_id, Vendor, id)
++            
++    def InvoiceNextID(self, customer):
++      ''' Return the next invoice ID. 
++      This works but I'm not entirely happy with it.  FIX ME'''
++      from gnucash.gnucash_core_c import gncInvoiceNextID
++      return gncInvoiceNextID(self.get_instance(),customer.GetEndOwner().get_instance()[1])
++      
++    def BillNextID(self, vendor):
++      ''' Return the next Bill ID. '''
++      from gnucash.gnucash_core_c import gncInvoiceNextID
++      return gncInvoiceNextID(self.get_instance(),vendor.GetEndOwner().get_instance()[1])
++
++    def CustomerNextID(self):
++      ''' Return the next Customer ID. '''
++      from gnucash.gnucash_core_c import gncCustomerNextID
++      return gncCustomerNextID(self.get_instance())
++    
++    def VendorNextID(self):
++      ''' Return the next Vendor ID. '''
++      from gnucash.gnucash_core_c import gncVendorNextID
++      return gncVendorNextID(self.get_instance())
++
++class GncNumeric(GnuCashCoreClass):
++    """Object used by GnuCash to store all numbers. Always consists of a
++    numerator and denominator.
++
++    The constants GNC_DENOM_AUTO,
++    GNC_HOW_RND_FLOOR, GNC_HOW_RND_CEIL, GNC_HOW_RND_TRUNC,
++    GNC_HOW_RND_PROMOTE, GNC_HOW_RND_ROUND_HALF_DOWN,
++    GNC_HOW_RND_ROUND_HALF_UP, GNC_HOW_RND_ROUND, GNC_HOW_RND_NEVER,
++    GNC_HOW_DENOM_EXACT, GNC_HOW_DENOM_REDUCE, GNC_HOW_DENOM_LCD,
++    and GNC_HOW_DENOM_FIXED are available for arithmetic
++    functions like GncNumeric.add
++
++    Look at gnc-numeric.h to see how to use these
++    """
++
++    def __init__(self, num=0, denom=1, **kargs):
++        """Constructor that allows you to set the numerator and denominator or
++        leave them blank with a default value of 0 (not a good idea since there
++        is currently no way to alter the value after instantiation)
++        """
++        GnuCashCoreClass.__init__(self, num, denom, **kargs)
++        #if INSTANCE_ARG in kargs:
++        #    GnuCashCoreClass.__init__(**kargs)
++        #else:
++        #    self.set_denom(denom) # currently undefined
++        #    self.set_num(num)     # currently undefined
++
++    def __unicode__(self):
++        """Returns a human readable numeric value string as UTF8."""
++        if self.denom() == 0:
++            return "Division by zero"
++        else:
++            value_float = self.to_double() 
++            value_str   = u"{0:.{1}f}".format(value_float,2) ## The second argument is the precision. It would be nice to be able to make it configurable.
++            return value_str
++
++    def __str__(self):
++        """returns a human readable numeric value string as bytes."""
++        return unicode(self).encode('utf-8')
++
++class GncPrice(GnuCashCoreClass):
++    '''
++    Each priceEach price in the database represents an "instantaneous"
++    quote for a given commodity with respect to another commodity.
++    For example, a given price might represent the value of LNUX in USD on 2001-02-03.
++
++    Fields:
++      * commodity: the item being priced.
++      * currency: the denomination of the value of the item being priced.
++      * value: the value of the item being priced.
++      * time: the time the price was valid.
++      * source: a string describing the source of the quote. These strings will be something like this:
++      "Finance::Quote", "user:misc", "user:foo", etc. If the quote came from a user, as a matter of policy,
++      you *must* prefix the string you give with "user:". For now, the only other reserved values are
++      "Finance::Quote" and "old-file-import". Any string used must be added to the source_list array in
++      dialog-price-edit-db.c so that it can be properly translated. (There are unfortunately many strings
++      in users' databases, so this string must be translated on output instead of always being used in untranslated form).
++      * type: the type of quote - types possible right now are bid, ask, last, nav, and
++      unknown.Each price in the database represents an "instantaneous" quote for a given
++      commodity with respect to another commodity.
++      For example, a given price might represent the value of LNUX in USD on 2001-02-03.
++
++      See also http://code.gnucash.org/docs/head/group__Price.html
++    '''
++    pass
++GncPrice.add_methods_with_prefix('gnc_price_')
++
++
++class GncPriceDB(GnuCashCoreClass):
++    '''
++    a simple price database for gnucash.
++    The PriceDB is intended to be a database of price quotes, or more specifically,
++    a database of GNCPrices. For the time being, it is still a fairly simple
++    database supporting only fairly simple queries. It is expected that new
++    queries will be added as needed, and that there is some advantage to delaying
++    complex queries for now in the hope that we get a real DB implementation
++    before they're really needed.
++
++    Every QofBook contains a GNCPriceDB, accessible via gnc_pricedb_get_db.
++
++    Definition in file gnc-pricedb.h.
++    See also http://code.gnucash.org/docs/head/gnc-pricedb_8h.html
++    '''
++
++GncPriceDB.add_methods_with_prefix('gnc_pricedb_')
++PriceDB_dict =  {
++                'lookup_latest' : GncPrice,
++                'lookup_nearest_in_time' : GncPrice,
++                'lookup_latest_before' : GncPrice,
++                'convert_balance_latest_price' : GncNumeric,
++                'convert_balance_nearest_price' : GncNumeric,
++                }
++methods_return_instance(GncPriceDB,PriceDB_dict)
++GncPriceDB.get_prices = method_function_returns_instance_list(
++    GncPriceDB.get_prices, GncPrice )
++
++
++class GncCommodity(GnuCashCoreClass): pass
++
++class GncCommodityTable(GnuCashCoreClass):
++    """A CommodityTable provides a way to store and lookup commodities.
++    Commodities are primarily currencies, but other tradable things such as
++    stocks, mutual funds, and material substances are possible.
++
++    Users of this library should not create their own CommodityTable, instead
++    the get_table method from the Book class should be used.
++
++    This table is automatically populated with the GnuCash default commodity's
++    which includes most of the world's currencies.
++    """
++
++    pass
++
++class GncCommodityNamespace(GnuCashCoreClass):
++    pass
++
++class GncLot(GnuCashCoreClass):
++    def GetInvoiceFromLot(self):
++        from gnucash_business import Invoice
++        return self.do_lookup_create_oo_instance(
++            gncInvoiceGetInvoiceFromLot, Invoice )
++
++class Transaction(GnuCashCoreClass):
++    """A GnuCash Transaction
++
++    Consists of at least one (generally two) splits to represent a transaction
++    between two accounts.
++
++
++    Has a GetImbalance() method that returns a list of all the imbalanced
++    currencies. Each list item is a two element tuple, the first element is
++    the imbalanced commodity, the second element is the value.
++
++    Warning, the commodity.get_instance() value can be None when there
++    is no currency set for the transaction.
++    """
++    _new_instance = 'xaccMallocTransaction'
++    def GetNthSplit(self, n):
++        return self.GetSplitList().pop(n)
++
++    def GetInvoiceFromTxn(self):
++        from gnucash_business import Transaction
++        return self.do_lookup_create_oo_instance(
++            gncInvoiceGetInvoiceFromTxn, Transaction )
++
++def decorate_monetary_list_returning_function(orig_function):
++    def new_function(self):
++        # warning, item.commodity has been shown to be None
++        # when the transaction doesn't have a currency
++        return [(GncCommodity(instance=item.commodity),
++                 GncNumeric(instance=item.value))
++                for item in orig_function(self) ]
++    return new_function
++
++class Split(GnuCashCoreClass):
++    """A GnuCash Split
++
++    The most basic representation of a movement of currency from one account to
++    another.
++    """
++    _new_instance = 'xaccMallocSplit'
++
++class Account(GnuCashCoreClass):
++    """A GnuCash Account.
++
++    A fundamental entity in accounting, an Account provides representation
++    for a financial object, such as a ACCT_TYPE_BANK account, an
++    ACCT_TYPE_ASSET (like a building),
++    a ACCT_TYPE_LIABILITY (such as a bank loan), a summary of some type of
++    ACCT_TYPE_EXPENSE, or a summary of some source of ACCT_TYPE_INCOME .
++
++    The words in upper case are the constants that GnuCash and this library uses
++    to describe account type. Here is the full list:
++    ACCT_TYPE_ASSET, ACCT_TYPE_BANK, ACCT_TYPE_CASH, ACCT_TYPE_CHECKING, \
++    ACCT_TYPE_CREDIT, ACCT_TYPE_EQUITY, ACCT_TYPE_EXPENSE, ACCT_TYPE_INCOME, \
++    ACCT_TYPE_LIABILITY, ACCT_TYPE_MUTUAL, ACCT_TYPE_PAYABLE, \
++    ACCT_TYPE_RECEIVABLE, ACCT_TYPE_STOCK, ACCT_TYPE_ROOT, ACCT_TYPE_TRADING
++
++    These are not strings, they are attributes you can import from this
++    module
++    """
++    _new_instance = 'xaccMallocAccount'
++
++class GUID(GnuCashCoreClass):
++    _new_instance = 'guid_new_return'
++
++# Session
++Session.add_constructor_and_methods_with_prefix('qof_session_', 'new')
++
++def one_arg_default_none(function):
++    return default_arguments_decorator(function, None, None)
++Session.decorate_functions(one_arg_default_none, "load", "save")
++
++Session.decorate_functions( Session.raise_backend_errors_after_call,
++                            "begin", "load", "save", "end")
++Session.get_book = method_function_returns_instance(
++    Session.get_book, Book )
++
++Session.book = property( Session.get_book )
++
++# import all of the session backend error codes into this module
++this_module_dict = globals()
++for error_name, error_value, error_name_after_prefix in \
++    extract_attributes_with_prefix(gnucash_core_c, 'ERR_'):
++    this_module_dict[ error_name ] = error_value
++
++#backend error codes used for reverse lookup
++backend_error_dict = {}
++for error_name, error_value, error_name_after_prefix in \
++    extract_attributes_with_prefix(gnucash_core_c, 'ERR_'):
++    backend_error_dict[ error_value ] = error_name
++
++# GncNumeric denominator computation schemes
++# Used for the denom argument in arithmetic functions like GncNumeric.add
++from gnucash.gnucash_core_c import GNC_DENOM_AUTO
++
++# GncNumeric rounding instructions
++# used for the how argument in arithmetic functions like GncNumeric.add
++from gnucash.gnucash_core_c import \
++    GNC_HOW_RND_FLOOR, GNC_HOW_RND_CEIL, GNC_HOW_RND_TRUNC, \
++    GNC_HOW_RND_PROMOTE, GNC_HOW_RND_ROUND_HALF_DOWN, \
++    GNC_HOW_RND_ROUND_HALF_UP, GNC_HOW_RND_ROUND, GNC_HOW_RND_NEVER
++
++# GncNumeric denominator types
++# used for the how argument in arithmetic functions like GncNumeric.add
++from gnucash.gnucash_core_c import \
++    GNC_HOW_DENOM_EXACT, GNC_HOW_DENOM_REDUCE, GNC_HOW_DENOM_LCD, \
++    GNC_HOW_DENOM_FIXED
++
++# import account types
++from gnucash.gnucash_core_c import \
++    ACCT_TYPE_ASSET, ACCT_TYPE_BANK, ACCT_TYPE_CASH, ACCT_TYPE_CHECKING, \
++    ACCT_TYPE_CREDIT, ACCT_TYPE_EQUITY, ACCT_TYPE_EXPENSE, ACCT_TYPE_INCOME, \
++    ACCT_TYPE_LIABILITY, ACCT_TYPE_MUTUAL, ACCT_TYPE_PAYABLE, \
++    ACCT_TYPE_RECEIVABLE, ACCT_TYPE_STOCK, ACCT_TYPE_ROOT, ACCT_TYPE_TRADING
++
++#Book
++Book.add_constructor_and_methods_with_prefix('qof_book_', 'new')
++Book.add_method('gnc_book_get_root_account', 'get_root_account')
++Book.add_method('gnc_book_set_root_account', 'set_root_account')
++Book.add_method('gnc_commodity_table_get_table', 'get_table')
++Book.add_method('gnc_pricedb_get_db', 'get_price_db')
++Book.add_method('qof_book_increment_and_format_counter', 'increment_and_format_counter')
++
++#Functions that return Account
++Book.get_root_account = method_function_returns_instance(
++    Book.get_root_account, Account )
++#Functions that return GncCommodityTable
++Book.get_table = method_function_returns_instance(
++    Book.get_table, GncCommodityTable )
++#Functions that return GNCPriceDB
++Book.get_price_db = method_function_returns_instance(
++    Book.get_price_db, GncPriceDB)
++
++# GncNumeric
++GncNumeric.add_constructor_and_methods_with_prefix('gnc_numeric_', 'create')
++
++gncnumeric_dict =   {
++                        'same' : GncNumeric,
++                        'add' : GncNumeric,
++                        'sub' : GncNumeric,
++                        'mul' : GncNumeric,
++                        'div' : GncNumeric,
++                        'neg' : GncNumeric,
++                        'abs' : GncNumeric,
++                        'add_fixed' : GncNumeric,
++                        'sub_fixed' : GncNumeric,
++                        'add_with_error' : GncNumeric,
++                        'sub_with_error' : GncNumeric,
++                        'mul_with_error' : GncNumeric,
++                        'div_with_error' : GncNumeric,
++                        'convert' : GncNumeric,
++                        'reduce' : GncNumeric
++                    }
++methods_return_instance(GncNumeric, gncnumeric_dict)
++
++# GncCommodity
++GncCommodity.add_constructor_and_methods_with_prefix('gnc_commodity_', 'new')
++#Functions that return GncCommodity
++GncCommodity.clone = method_function_returns_instance(
++    GncCommodity.clone, GncCommodity )
++
++# GncCommodityTable
++GncCommodityTable.add_methods_with_prefix('gnc_commodity_table_')
++commoditytable_dict =   {
++                            'lookup' : GncCommodity,
++                            'lookup_unique' : GncCommodity,
++                            'find_full' : GncCommodity,
++                            'insert' : GncCommodity,
++                            'add_namespace': GncCommodityNamespace,
++                            'find_namespace': GncCommodityNamespace,
++                        }
++methods_return_instance(GncCommodityTable, commoditytable_dict)
++
++methods_return_instance_lists(
++    GncCommodityTable, { 'get_namespaces': GncCommodityNamespace,
++                         'get_namespaces_list': GncCommodityNamespace,
++                         'get_commodities': GncCommodity,
++                         'get_quotable_commodities': GncCommodity,
++                         
++                       } )
++
++# GncCommodityNamespace
++GncCommodityNamespace.add_methods_with_prefix('gnc_commodity_namespace_')
++GncCommodityNamespace.get_commodity_list = \
++    method_function_returns_instance_list(
++    GncCommodityNamespace.get_commodity_list, GncCommodity )
++
++# GncLot
++GncLot.add_constructor_and_methods_with_prefix('gnc_lot_', 'new')
++
++gnclot_dict =   {
++                    'get_account' : Account,
++                    'get_book' : Book,
++                    'get_earliest_split' : Split,
++                    'get_latest_split' : Split,
++                    'get_balance' : GncNumeric,
++                    'lookup' : GncLot,
++                    'make_default' : GncLot
++                }
++methods_return_instance(GncLot, gnclot_dict)
++
++# Transaction
++Transaction.add_methods_with_prefix('xaccTrans')
++Transaction.add_method('gncTransGetGUID', 'GetGUID');
++
++trans_dict =    {
++                    'GetSplit': Split,
++                    'FindSplitByAccount': Split,
++                    'Clone': Transaction,
++                    'Reverse': Transaction,
++                    'GetReversedBy': Transaction,
++                    'GetImbalanceValue': GncNumeric,
++                    'GetAccountValue': GncNumeric,
++                    'GetAccountAmount': GncNumeric,
++                    'GetAccountConvRate': GncNumeric,
++                    'GetAccountBalance': GncNumeric,
++                    'GetCurrency': GncCommodity,
++                    'GetGUID': GUID
++                }
++ 
++methods_return_instance(Transaction, trans_dict)
++methods_return_instance_lists(
++    Transaction, { 'GetSplitList': Split,
++                       })
++Transaction.decorate_functions(
++    decorate_monetary_list_returning_function, 'GetImbalance')
++
++# Split
++Split.add_methods_with_prefix('xaccSplit')
++Split.add_method('gncSplitGetGUID', 'GetGUID');
++
++split_dict =    {
++                    'GetBook': Book,
++                    'GetAccount': Account,
++                    'GetParent': Transaction,
++                    'Lookup': Split,
++                    'GetOtherSplit': Split,
++                    'GetAmount': GncNumeric,
++                    'GetValue': GncNumeric,
++                    'GetSharePrice': GncNumeric,
++                    'ConvertAmount': GncNumeric,
++                    'GetBaseValue': GncNumeric,
++                    'GetBalance': GncNumeric,
++                    'GetClearedBalance': GncNumeric,
++                    'GetReconciledBalance': GncNumeric,
++                    'VoidFormerAmount': GncNumeric,
++                    'VoidFormerValue': GncNumeric,
++                    'GetGUID': GUID
++                }
++methods_return_instance(Split, split_dict)
++
++Split.account = property( Split.GetAccount, Split.SetAccount )
++Split.parent = property( Split.GetParent, Split.SetParent )
++
++# Account
++Account.add_methods_with_prefix('xaccAccount')
++Account.add_methods_with_prefix('gnc_account_')
++Account.add_method('gncAccountGetGUID', 'GetGUID');
++
++account_dict =  {
++                    'get_book' : Book,
++                    'Lookup' : Account,
++                    'get_parent' : Account,
++                    'get_root' : Account,
++                    'nth_child' : Account,
++                    'lookup_by_code' : Account,
++                    'lookup_by_name' : Account,
++                    'lookup_by_full_name' : Account,
++                    'FindTransByDesc' : Transaction,
++                    'FindSplitByDesc' : Split,
++                    'GetBalance' : GncNumeric,
++                    'GetClearedBalance' : GncNumeric,
++                    'GetReconciledBalance' : GncNumeric,
++                    'GetPresentBalance' : GncNumeric,
++                    'GetProjectedMinimumBalance' : GncNumeric,
++                    'GetBalanceAsOfDate' : GncNumeric,
++                    'ConvertBalanceToCurrency' : GncNumeric,
++                    'ConvertBalanceToCurrencyAsOfDate' : GncNumeric,
++                    'GetBalanceInCurrency' : GncNumeric,
++                    'GetClearedBalanceInCurrency' : GncNumeric,
++                    'GetReconciledBalanceInCurrency' : GncNumeric,
++                    'GetPresentBalanceInCurrency' : GncNumeric,
++                    'GetProjectedMinimumBalanceInCurrency' : GncNumeric,
++                    'GetBalanceAsOfDateInCurrency' : GncNumeric,
++                    'GetBalanceChangeForPeriod' : GncNumeric,
++                    'GetCommodity' : GncCommodity,
++                    'GetGUID': GUID
++                }
++methods_return_instance(Account, account_dict)
++methods_return_instance_lists(
++    Account, { 'GetSplitList': Split,
++               'get_children': Account,
++               'get_children_sorted': Account,
++               'get_descendants': Account,
++               'get_descendants_sorted': Account
++                       })
++Account.name = property( Account.GetName, Account.SetName )
++
++#GUID
++GUID.add_methods_with_prefix('guid_')
++GUID.add_method('xaccAccountLookup', 'AccountLookup')
++GUID.add_method('xaccTransLookup', 'TransLookup')
++GUID.add_method('xaccSplitLookup', 'SplitLookup')
++
++## define addition methods for GUID object - do we need these
++GUID.add_method('guid_to_string', 'to_string')
++#GUID.add_method('string_to_guid', 'string_to_guid')
++
++guid_dict = {
++                'copy' : GUID,
++                'TransLookup': Transaction,
++                'AccountLookup': Account,
++                'SplitLookup': Split
++            }
++methods_return_instance(GUID, guid_dict)
++
++#GUIDString
++class GUIDString(GnuCashCoreClass):
++    pass
++
++GUIDString.add_constructor_and_methods_with_prefix('string_', 'to_guid')
++
++#Query
++from gnucash_core_c import \
++    QOF_QUERY_AND, \
++    QOF_QUERY_OR, \
++    QOF_QUERY_NAND, \
++    QOF_QUERY_NOR, \
++    QOF_QUERY_XOR
++
++from gnucash_core_c import \
++    QOF_STRING_MATCH_NORMAL, \
++    QOF_STRING_MATCH_CASEINSENSITIVE
++
++from gnucash_core_c import \
++    QOF_COMPARE_LT, \
++    QOF_COMPARE_LTE, \
++    QOF_COMPARE_EQUAL, \
++    QOF_COMPARE_GT, \
++    QOF_COMPARE_GTE, \
++    QOF_COMPARE_NEQ
++
++from gnucash_core_c import \
++    INVOICE_TYPE
++
++from gnucash_core_c import \
++    INVOICE_IS_PAID
++
++class Query(GnuCashCoreClass):
++    pass
++
++Query.add_constructor_and_methods_with_prefix('qof_query_', 'create')
++
++Query.add_method('qof_query_set_book', 'set_book')
++Query.add_method('qof_query_search_for', 'search_for')
++Query.add_method('qof_query_run', 'run')
++Query.add_method('qof_query_add_term', 'add_term')
++Query.add_method('qof_query_add_boolean_match', 'add_boolean_match')
++Query.add_method('qof_query_destroy', 'destroy')
++
++class QueryStringPredicate(GnuCashCoreClass):
++    pass
++
++QueryStringPredicate.add_constructor_and_methods_with_prefix('qof_query_', 'string_predicate')
++
++class QueryBooleanPredicate(GnuCashCoreClass):
++    pass
++
++QueryBooleanPredicate.add_constructor_and_methods_with_prefix('qof_query_', 'boolean_predicate')
++
++class QueryInt32Predicate(GnuCashCoreClass):
++    pass
++
++QueryInt32Predicate.add_constructor_and_methods_with_prefix('qof_query_', 'int32_predicate')
