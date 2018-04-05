@@ -1,5 +1,6 @@
 bin/getmail
 bin/getmail_fetch
+bin/getmail-gmail-xoauth-tokens
 bin/getmail_maildir
 bin/getmail_mbox
 man/man1/getmail.1.gz
