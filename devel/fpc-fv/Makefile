@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-fv
 
 COMMENT=	FreeVision is a Free Pascal unit for Delphi support
 
+USES=		fpc
 USE_FPC=	rtl-console rtl-extra
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

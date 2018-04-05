@@ -17,6 +17,7 @@ BUILD_DEPENDS=	lazbuild:editors/lazarus \
 		fpcres:lang/fpc-utils
 RUN_DEPENDS=	transmission-daemon:net-p2p/transmission-daemon
 
+USES=		fpc
 USE_FPC=	cairo fcl-base fcl-image fcl-net pasjpeg rtl-objpas rtl-extra \
 		x11
 USES=		iconv zip

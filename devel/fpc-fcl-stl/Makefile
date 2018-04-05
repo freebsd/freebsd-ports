@@ -1,12 +1,12 @@
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-stl
+PORTREVISION=	1
 
 COMMENT=	Free Pascal generic container library (FCL)
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

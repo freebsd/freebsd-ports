@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-gtk2
 
 COMMENT=	Free Pascal interface to the GTK2 libraries
 
+USES=		fpc
 USE_FPC=	cairo fcl-base fcl-image fcl-res pasjpeg rtl-objpas x11
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

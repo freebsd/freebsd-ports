@@ -15,7 +15,7 @@ LICENSE=	LGPL3
 BUILD_DEPENDS=	lazbuild:editors/lazarus \
 		fpcres:lang/fpc-utils
 
-USES=		dos2unix zip
+USES=		dos2unix fpc zip
 USE_FPC=	cairo chm fcl-base fcl-image pasjpeg rtl-objpas x11
 USE_GNOME=	#
 
@@ -43,7 +43,7 @@ QT5_DESC=		Use qt5 interface
 
 OPTIONS_DEFAULT=	GTK2 7Z
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
@@ -124,4 +124,4 @@ do-install:
 		${INSTALL_DATA} peazip.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_SCRIPT} ${WRKDIR}/pea ${WRKDIR}/pealauncher ${WRKDIR}/peazip ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

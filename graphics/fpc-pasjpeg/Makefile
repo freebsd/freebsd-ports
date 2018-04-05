@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-pasjpeg
 
 COMMENT=	Handling JPEG files with Pascal
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

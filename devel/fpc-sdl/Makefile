@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-sdl
 
 COMMENT=	Free Pascal interface to SDL library
 
+USES=		fpc
 USE_FPC=	pthreads x11
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

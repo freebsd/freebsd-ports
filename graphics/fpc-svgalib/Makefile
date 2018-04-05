@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-svgalib
 
 COMMENT=	Free Pascal interface to the SVGA graphics library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

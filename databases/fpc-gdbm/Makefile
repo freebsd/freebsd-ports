@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-gdbm
 
 COMMENT=	Free Pascal interface to the GNU database system
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

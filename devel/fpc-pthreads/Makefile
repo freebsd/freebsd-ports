@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-pthreads
 
 COMMENT=	Free Pascal wrapper for the pthreads library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

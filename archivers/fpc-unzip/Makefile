@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-unzip
 
 COMMENT=	Free Pascal routines for unzipping zip files
 
-USE_FPC=	yes
+USES=	fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

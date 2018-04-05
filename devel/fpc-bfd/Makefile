@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-bfd
 
 COMMENT=	Free Pascal interface for the GNU Binary Format description
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

@@ -10,7 +10,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Meta port to install Free Pascal units
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		metaport
+USES=		fpc:run metaport
 
 BUILDNAME=	${ARCH}-${OPSYS:tl}
 
@@ -118,7 +118,6 @@ UNITS_SELECTED+=	${OPT:tl:S/rtl_/rtl-/:S/fcl_/fcl-/}
 .	endif
 .endfor
 
-USE_FPC_RUN=	yes
 USE_FPC=	${UNITS_SELECTED}
 
 .include <bsd.port.mk>

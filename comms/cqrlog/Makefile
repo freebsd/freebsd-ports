@@ -18,7 +18,7 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib
 USE_GITHUB=	yes
 GH_ACCOUNT=	ok2cqr
 
-USES=		shebangfix
+USES=		fpc shebangfix
 SHEBANG_FILES=	tools/cqrlog-apparmor-fix \
 		voice_keyer/voice_keyer.sh
   

@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-rexx
 
 COMMENT=	Free Pascal interface to the rexx-regina library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-cairo
 
 COMMENT=	Free Pascal interface to cairo library
 
+USES=		fpc
 USE_FPC=	fcl-base fcl-image fcl-res pasjpeg rtl-objpas x11
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

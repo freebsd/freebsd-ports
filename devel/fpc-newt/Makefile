@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-newt
 
 COMMENT=	Free Pascal interface to newt library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

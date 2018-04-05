@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-fftw
 
 COMMENT=	Free Pascal interface to the FFTW3 library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

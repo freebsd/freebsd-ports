@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-oracle
 
 COMMENT=	Free Pascal interface to Oracle
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

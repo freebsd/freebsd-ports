@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-libcurl
 
 COMMENT=	Free Pascal interface to libcurl
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

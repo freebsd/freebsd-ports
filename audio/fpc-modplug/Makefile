@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-modplug
 
 COMMENT=	Free Pascal interface to modplug library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

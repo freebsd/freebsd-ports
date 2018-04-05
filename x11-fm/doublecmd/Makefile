@@ -21,7 +21,7 @@ BUILD_DEPENDS=	lazbuild:editors/lazarus \
 
 PORTDOCS=	*
 
-USES=		dos2unix desktop-file-utils
+USES=		dos2unix desktop-file-utils fpc
 USE_FPC=	cairo chm fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11 regexpr
 USE_XORG=	x11
