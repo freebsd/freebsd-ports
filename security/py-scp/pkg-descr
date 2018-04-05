@@ -1,0 +1,5 @@
+The scp.py module uses a paramiko transport to send and recieve files via the
+scp1 protocol. This is the protocol as referenced from the openssh scp program,
+and has only been tested with this implementation.
+
+WWW: https://github.com/jbardin/scp.py
