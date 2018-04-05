@@ -19,21 +19,14 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
-USES=		compiler:c11 gmake jpeg pkgconfig python:2.7,build shebangfix
+USES=		compiler:c++14-lang gmake jpeg pkgconfig python:2.7,build shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
 GH_PROJECT=	mame				# explicit (master port)
 GH_TAGNAME=	mame${PORTVERSION:S/.//}
 
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1100055
-BUILD_DEPENDS+=	clang50:devel/llvm50
-CC=		clang50
-CXX=		clang++50
-.endif
 
 SHEBANG_FILES=	src/devices/cpu/m6502/m6502make.py \
 		src/devices/cpu/m6809/m6809make.py \
