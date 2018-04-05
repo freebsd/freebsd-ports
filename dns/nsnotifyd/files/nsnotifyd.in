@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# Author: Mark Felder <feld@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+# PROVIDE: nsnotifyd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable nsnotifyd:
+# nsnotifyd_enable="YES"
+# nsnotifyd_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name=nsnotifyd
+rcvar=nsnotifyd_enable
+
+load_rc_config $name
+
+: ${nsnotifyd_enable:=NO}
+
+command="/usr/local/bin/nsnotifyd"
+start_precmd=precmd
+
+precmd()
+{
+    if [ "${nsnotifyd_flags}x" = "x" ]; then
+        echo "Please set your required service options via nsnotifyd_flags in /etc/rc.conf."
+        echo "Check the contents of man nsnotifyd for more details."
+        exit 1
+    fi
+}
+
+run_rc_command "$1"
