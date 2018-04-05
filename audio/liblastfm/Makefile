@@ -3,7 +3,7 @@
 
 PORTNAME=	liblastfm
 PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -12,15 +12,14 @@ COMMENT=	Qt C++ library for the Last.fm webservices
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	lastfm
-
-USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 USE_QT4=	corelib dbus network sql xml \
 		moc_build qmake_build rcc_build
 
-CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=ON
+CMAKE_ON=	BUILD_WITH_QT4
 
 OPTIONS_DEFINE=		FINGERPRINT TEST
 OPTIONS_DEFAULT=	FINGERPRINT
