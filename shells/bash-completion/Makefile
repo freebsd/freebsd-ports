@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_armv6=	fails to build: gmake: install-recursive: Error 1
 BROKEN_armv7=	fails to build: gmake: install-recursive: Error 1
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 OPTIONS_DEFINE=	CMAKE_MODULES DOCS
 OPTIONS_SINGLE=	BASH
 OPTIONS_SINGLE_BASH=	BASH_SHARED BASH_STATIC
