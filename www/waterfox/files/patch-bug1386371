@@ -1,0 +1,103 @@
+commit 503070ad8daa
+Author: Matt Brubeck <mbrubeck@mozilla.com>
+Date:   Thu Aug 10 11:38:10 2017 -0700
+
+    Bug 1386371 - Disable LTO by default, but enable in automation. r=froydnj
+    
+    MozReview-Commit-ID: 2DIY9ex3Mch
+    
+    --HG--
+    extra : rebase_source : 61f2f073adabfa7c46c324470a308adab23e7781
+---
+ build/moz.configure/toolchain.configure      |  1 +
+ config/rules.mk                              | 14 ++++++++++++--
+ python/mozbuild/mozbuild/frontend/emitter.py |  1 -
+ toolkit/library/gtest/rust/Cargo.toml        |  1 -
+ toolkit/library/rust/Cargo.toml              |  1 -
+ 5 files changed, 13 insertions(+), 5 deletions(-)
+
+diff --git build/moz.configure/toolchain.configure build/moz.configure/toolchain.configure
+index eba0fbf65538..6a89676385c4 100755
+--- build/moz.configure/toolchain.configure
++++ build/moz.configure/toolchain.configure
+@@ -1126,6 +1126,7 @@ def developer_options(value):
+         return True
+ 
+ add_old_configure_assignment('DEVELOPER_OPTIONS', developer_options)
++set_config('DEVELOPER_OPTIONS', developer_options)
+ 
+ # Linker detection
+ # ==============================================================
+diff --git config/rules.mk config/rules.mk
+index dc16e99c6e4d..9897c203feb4 100644
+--- config/rules.mk
++++ config/rules.mk
+@@ -862,6 +862,16 @@ cargo_build_flags += --color=always
+ endif
+ endif
+ 
++# These flags are passed via `cargo rustc` and only apply to the final rustc
++# invocation (i.e., only the top-level crate, not its dependencies).
++cargo_rustc_flags = $(CARGO_RUSTCFLAGS)
++ifndef DEVELOPER_OPTIONS
++ifndef MOZ_DEBUG_RUST
++# Enable link-time optimization for release builds.
++cargo_rustc_flags += -C lto
++endif
++endif
++
+ # Cargo currently supports only two interesting profiles for building:
+ # development and release.  Those map (roughly) to --enable-debug and
+ # --disable-debug in Gecko, respectively, but there's another axis that we'd
+@@ -939,7 +949,7 @@ endef
+ #
+ #   $(call CARGO_BUILD)
+ define CARGO_BUILD
+-$(call RUN_CARGO,build,$(1))
++$(call RUN_CARGO,rustc,$(1))
+ endef
+ 
+ define CARGO_CHECK
+@@ -984,7 +994,7 @@ endif
+ # build.
+ force-cargo-library-build:
+ 	$(REPORT_BUILD)
+-	$(call CARGO_BUILD,$(target_cargo_env_vars)) --lib $(cargo_target_flag) $(rust_features_flag)
++	$(call CARGO_BUILD,$(target_cargo_env_vars)) --lib $(cargo_target_flag) $(rust_features_flag) -- $(cargo_rustc_flags)
+ 
+ $(RUST_LIBRARY_FILE): force-cargo-library-build
+ 
+diff --git python/mozbuild/mozbuild/frontend/emitter.py python/mozbuild/mozbuild/frontend/emitter.py
+index 815126d145b3..07a33caca893 100644
+--- python/mozbuild/mozbuild/frontend/emitter.py
++++ python/mozbuild/mozbuild/frontend/emitter.py
+@@ -480,7 +480,6 @@ class TreeMetadataEmitter(LoggingMixin):
+                     expected_profile = {
+                         'opt-level': 2,
+                         'rpath': False,
+-                        'lto': True,
+                         'debug-assertions': False,
+                         'panic': 'abort',
+                     }
+diff --git toolkit/library/gtest/rust/Cargo.toml toolkit/library/gtest/rust/Cargo.toml
+index a7a64486c684..c9f942c88033 100644
+--- toolkit/library/gtest/rust/Cargo.toml
++++ toolkit/library/gtest/rust/Cargo.toml
+@@ -42,6 +42,5 @@ panic = "abort"
+ [profile.release]
+ opt-level = 2
+ rpath = false
+-lto = true
+ debug-assertions = false
+ panic = "abort"
+diff --git toolkit/library/rust/Cargo.toml toolkit/library/rust/Cargo.toml
+index f67669513d38..fd5668729199 100644
+--- toolkit/library/rust/Cargo.toml
++++ toolkit/library/rust/Cargo.toml
+@@ -40,6 +40,5 @@ panic = "abort"
+ [profile.release]
+ opt-level = 2
+ rpath = false
+-lto = true
+ debug-assertions = false
+ panic = "abort"
