@@ -8,6 +8,9 @@ CATEGORIES=	security
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	SSH and Git commit/tag signing using a key stored in Krypton
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	Uses 64bit types
+
 BUILD_DEPENDS=	rust>=1.19.0_2:lang/rust \
 		bash>0:shells/bash
 
