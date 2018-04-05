@@ -192,6 +192,12 @@ bin/OpenTomb
 %%DATADIR%%/scripts/strings/getstring.lua
 %%DATADIR%%/scripts/strings/italian/generic.lua
 %%DATADIR%%/scripts/strings/italian/global_items.lua
+%%DATADIR%%/scripts/strings/portuguese-ptbr/generic.lua
+%%DATADIR%%/scripts/strings/portuguese-ptbr/global_items.lua
+%%DATADIR%%/scripts/strings/portuguese-ptbr/sys_notify.lua
+%%DATADIR%%/scripts/strings/portuguese-ptpt/generic.lua
+%%DATADIR%%/scripts/strings/portuguese-ptpt/global_items.lua
+%%DATADIR%%/scripts/strings/portuguese-ptpt/sys_notify.lua
 %%DATADIR%%/scripts/strings/russian/generic.lua
 %%DATADIR%%/scripts/strings/russian/global_items.lua
 %%DATADIR%%/scripts/strings/russian/sys_notify.lua
