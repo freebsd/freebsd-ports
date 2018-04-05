@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	5.0.7
+PORTVERSION=	5.0.8
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -18,8 +18,8 @@ RUN_DEPENDS=	rubygem-bundler>=1.16.1:sysutils/rubygem-bundler \
 		rubygem-fastimage>=2.1.1:graphics/rubygem-fastimage \
 		rubygem-hikidoc>=0.1.0:textproc/rubygem-hikidoc \
 		rubygem-mail>=2.7.0:mail/rubygem-mail \
-		rubygem-rack16>=1.6.8:www/rubygem-rack16 \
-		rubygem-rake>=12.1.0:devel/rubygem-rake
+		rubygem-rack>=2.0.4:www/rubygem-rack \
+		rubygem-rake>=12.3.1:devel/rubygem-rake
 
 USES=		shebangfix
 USE_RUBY=	yes
