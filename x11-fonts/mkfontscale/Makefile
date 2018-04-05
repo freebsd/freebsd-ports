@@ -10,6 +10,9 @@ COMMENT=	Creates an index of scalable font files for X
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	app
 USE_XORG=	xproto fontenc
 
