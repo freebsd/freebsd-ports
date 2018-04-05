@@ -1393,6 +1393,7 @@
     SUBDIR += py-syck
     SUBDIR += py-tabletext
     SUBDIR += py-terminaltables
+    SUBDIR += py-textfsm
     SUBDIR += py-texttable
     SUBDIR += py-tinycss
     SUBDIR += py-toronado
