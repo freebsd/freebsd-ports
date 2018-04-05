@@ -20,8 +20,8 @@ rcvar=pdagentd_enable
 load_rc_config $name
 
 : ${pdagentd_enable="NO"}
-: ${pdagentd_user:="nobody"}
-: ${pdagentd_group:="nogroup"}
+: ${pdagentd_user:="pdagent"}
+: ${pdagentd_group:="pdagent"}
 
 pidfile="/var/run/pdagent/pdagentd.pid"
 command="%%PREFIX%%/bin/pdagentd.py"
@@ -37,12 +37,10 @@ pdagentd_precmd()
 		install -d -o ${pdagentd_user} -g ${pdagentd_group} -m 775 ${i}
 	done
 
-	if [ ! -d /var/log/pdagent ]; then
-		install -d -o ${pdagentd_user} /var/log/pdagent
-	fi
-	if [ ! -d /var/run/pdagent ]; then
-		install -d -o ${pdagentd_user} /var/run/pdagent
-	fi
+	chown -R ${pdagentd_user}:${pdagentd_group} /var/db/pdagent
+
+	install -d -o ${pdagentd_user} /var/log/pdagent
+	install -d -o ${pdagentd_user} /var/run/pdagent
 }
 
 run_rc_command "$1"

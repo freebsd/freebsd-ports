@@ -4,6 +4,7 @@
 PORTNAME=	pdagent
 PORTVERSION=	1.4
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,6 +26,9 @@ GH_ACCOUNT=	PagerDuty
 SUB_LIST+=	PYTHON_CMD="${PYTHON_CMD}"
 
 BINFILES=	pd-queue pd-send pdagentd.py
+
+USERS=	pdagent
+GROUPS=	pdagent
 
 do-patch:
 	${REINPLACE_CMD} -e 's|/var/lib/pdagent|/var/db/pdagent|' -e 's|/etc|${ETCDIR}|' ${WRKSRC}/pdagent/confdirs.py
