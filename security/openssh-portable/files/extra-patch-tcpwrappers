@@ -35,15 +35,15 @@ index 289e13d..e6a900b 100644
  .Xr sshd_config 5 ,
 diff --git sshd.c sshd.c
 index 0ade557..045f149 100644
---- sshd.c
-+++ sshd.c
+--- sshd.c.orig	2018-04-04 15:34:54.865684000 -0700
++++ sshd.c	2018-04-04 15:40:20.964130000 -0700
 @@ -1,4 +1,4 @@
--/* $OpenBSD: sshd.c,v 1.421 2014/03/26 19:58:37 tedu Exp $ */
+-/* $OpenBSD: sshd.c,v 1.506 2018/03/03 03:15:51 djm Exp $ */
 +/* $OpenBSD: sshd.c,v 1.422 2014/03/27 23:01:27 markus Exp $ */
  /*
   * Author: Tatu Ylonen <ylo@cs.hut.fi>
   * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-@@ -123,6 +123,13 @@
+@@ -131,6 +131,13 @@
  #include "version.h"
  #include "ssherr.h"
  
@@ -57,10 +57,11 @@ index 0ade557..045f149 100644
  /* Re-exec fds */
  #define REEXEC_DEVCRYPTO_RESERVED_FD	(STDERR_FILENO + 1)
  #define REEXEC_STARTUP_PIPE_FD		(STDERR_FILENO + 2)
-@@ -1971,6 +1978,24 @@ main(int ac, char **av)
- #ifdef SSH_AUDIT_EVENTS
- 	audit_connection_from(remote_ip, remote_port);
+@@ -2072,6 +2079,25 @@ main(int ac, char **av)
  #endif
+ 
+ 	rdomain = ssh_packet_rdomain_in(ssh);
++
 +#ifdef LIBWRAP
 +	allow_severity = options.log_facility|LOG_INFO;
 +	deny_severity = options.log_facility|LOG_WARNING;
