@@ -1,10 +1,10 @@
+bin/cdxa2mpeg
 bin/vcd-info
 bin/vcdimager
-bin/cdxa2mpeg
 bin/vcdxbuild
 bin/vcdxgen
-bin/vcdxrip
 bin/vcdxminfo
+bin/vcdxrip
 include/libvcd/files.h
 include/libvcd/files_private.h
 include/libvcd/inf.h
