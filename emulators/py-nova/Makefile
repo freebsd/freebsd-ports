@@ -13,6 +13,8 @@ COMMENT=	OpenStack compute service
 
 LICENSE=	APACHE20
 
+BROKEN=		depends on conflicting dependencies
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr@${FLAVOR}
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
