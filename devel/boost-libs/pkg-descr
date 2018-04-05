@@ -16,4 +16,4 @@ libraries are proposed for TR2.
 NOTE: This package does not contain Boost.Python, it's in
 devel/boost-python-libs.
 
-WWW: http://www.boost.org/
+WWW: https://www.boost.org/
