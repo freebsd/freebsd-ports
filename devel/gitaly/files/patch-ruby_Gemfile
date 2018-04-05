@@ -1,0 +1,10 @@
+--- ruby/Gemfile.orig	2018-02-25 18:31:26 UTC
++++ ruby/Gemfile
+@@ -12,7 +12,3 @@ gem 'grpc', '~> 1.8.0'
+ # Locked until https://github.com/google/protobuf/issues/4210 is closed
+ gem 'google-protobuf', '= 3.5.1'
+ 
+-group :development, :test do
+-  gem 'gitlab-styles', '~> 2.0.0', require: false
+-  gem 'rspec', require: false
+-end
