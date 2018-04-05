@@ -1,6 +1,6 @@
---- Source/JavaScriptCore/assembler/ARMAssembler.h.orig	2014-12-02 14:49:22.000000000 +0100
-+++ Source/JavaScriptCore/assembler/ARMAssembler.h	2014-12-26 10:35:15.394821543 +0100
-@@ -1104,6 +1104,8 @@
+--- Source/JavaScriptCore/assembler/ARMAssembler.h.orig	2018-02-19 07:45:14 UTC
++++ Source/JavaScriptCore/assembler/ARMAssembler.h
+@@ -1202,6 +1202,8 @@ namespace JSC {
                  linuxPageFlush(current, current + page);
  
              linuxPageFlush(current, end);
