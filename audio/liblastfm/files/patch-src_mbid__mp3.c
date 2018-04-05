@@ -4,7 +4,7 @@ warning: logical not is only applied to the left hand side of this comparison [-
 
 --- src/mbid_mp3.c.orig	2014-10-02 14:05:46 UTC
 +++ src/mbid_mp3.c
-@@ -94,7 +94,7 @@ int getMP3_MBID(const char *path, char m
+@@ -94,7 +94,7 @@ int getMP3_MBID(const char *path, char mbid[MBID_BUFFE
  
     while (s) {
        mfile(3,head,fp,&s);
