@@ -1,21 +1,23 @@
---- config.toml.example.orig	2017-10-28 10:50:48.245547000 +0200
-+++ config.toml.example	2017-10-28 10:56:00.467310000 +0200
-@@ -1,6 +1,6 @@
+--- config.toml.example.orig	2018-02-08 14:44:53 UTC
++++ config.toml.example
+@@ -1,9 +1,9 @@
  # Example Gitaly configuration file
  
 -socket_path = "/home/git/gitlab/tmp/sockets/private/gitaly.socket"
 +socket_path = "/usr/local/www/gitlab/tmp/sockets/private/gitaly.socket"
  
+ # The directory where Gitaly's executables are stored
+-bin_dir = "/home/git/gitaly"
++bin_dir = "/usr/local/share/gitaly/bin/"
+ 
  # # Optional: listen on a TCP socket. This is insecure (no authentication)
  # listen_addr = "localhost:9999"
-@@ -10,14 +10,20 @@
- # prometheus_listen_addr = "localhost:9236"
+@@ -14,12 +14,12 @@ bin_dir = "/home/git/gitaly"
  #
  
--# # Git executable settings
+ # # Git executable settings
 -# [git]
 -# bin_path = "/usr/bin/git"
-+# Git executable settings
 +[git]
 +bin_path = "/usr/local/bin/git"
  
@@ -24,12 +26,23 @@
 -path = "/home/git/repositories"
 +path = "/usr/home/git/repositories"
  
-+[gitaly-ruby]
-+dir = "/usr/local/bin/ruby"
-+
-+[gitlab-shell]
-+dir = "/usr/local/share/gitlab-shell/bin/gitlab-shell"
-+
  # # You can optionally configure more storages for this Gitaly instance to serve up
  #
- # [[storage]]
+@@ -40,7 +40,7 @@ path = "/home/git/repositories"
+ 
+ [gitaly-ruby]
+ # The directory where gitaly-ruby is installed
+-dir = "/home/git/gitaly/ruby"
++dir = "/usr/local/share/gitaly/ruby"
+ 
+ # # Gitaly-ruby resident set size (RSS) that triggers a memory restart (bytes)
+ # max_rss = 300000000
+@@ -53,7 +53,7 @@ dir = "/home/git/gitaly/ruby"
+ 
+ [gitlab-shell]
+ # The directory where gitlab-shell is installed
+-dir = "/home/git/gitlab-shell"
++dir = "/usr/local/share/gitlab-shell/bin"
+ 
+ # # You can adjust the concurrency of each RPC endpoint
+ # [[concurrency]]
