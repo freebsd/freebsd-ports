@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	signify
-PORTVERSION=	0.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+DISTVERSION=	0.7
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -25,15 +24,13 @@ GH_PROJECT=	outils
 ALL_TARGET=	src/usr.bin/signify/signify
 
 post-patch:
-# sys/cdefs.h and sys/limits.h override is not needed on FreeBSD
-	${RM} ${WRKSRC}/src/liboutils/include/sys/cdefs.h
-	${RM} ${WRKSRC}/src/liboutils/include/sys/limits.h
+# The sys/* overrides are not needed on FreeBSD
+	@${RM} ${WRKSRC}/src/liboutils/include/sys/*
 # Replace /etc/signify paths in man page and signify's safe path to
 # point to /usr/local/etc/signify
-	${REINPLACE_CMD} 's|/etc/signify/|${ETCDIR}/|g' \
+	@${REINPLACE_CMD} 's|/etc/signify|${ETCDIR}|g' \
 		${WRKSRC}/src/usr.bin/signify/signify.c \
 		${WRKSRC}/src/usr.bin/signify/signify.1
-	${REINPLACE_CMD} -e 's|-lcrypto||' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/usr.bin/signify/signify \
