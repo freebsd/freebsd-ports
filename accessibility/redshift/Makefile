@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	accessibility
 MASTER_SITES=	http://launchpad.net/redshift/trunk/${PORTVERSION}/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Adjusts the color temperature of your screen
 
 LICENSE=	GPLv3
