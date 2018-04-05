@@ -1,0 +1,14 @@
+bin/demchop
+bin/fillvoids
+bin/gdalchop
+bin/genapts850
+bin/hgtchop
+bin/ogr-decode
+bin/poly2ogr
+bin/srtmchop
+bin/terrafit
+bin/test_array
+bin/testassem
+bin/tg-construct
+share/TerraGear/default_priorities.txt
+share/TerraGear/usgsmap.txt
