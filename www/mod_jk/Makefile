@@ -12,6 +12,8 @@ DISTNAME=	tomcat-connectors-${PORTVERSION}-src
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 
+LICENSE=	APACHE20
+
 USES=		apache:2.2+ gmake
 APACHE_VER=	2.0
 GNU_CONFIGURE=	yes
@@ -20,6 +22,10 @@ CONFIGURE_ARGS+=	--with-apxs=${APXS}
 WRKSRC=		${WRKDIR}/tomcat-connectors-${PORTVERSION}-src/native
 
 SUB_FILES=	mod_jk.conf.sample pkg-message
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|APXSLDFLAGS=@APXSLDFLAGS@|APXSLDFLAGS=@LDFLAGS@|g' \
+	  	${WRKSRC}/apache-2.0/Makefile.in
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
