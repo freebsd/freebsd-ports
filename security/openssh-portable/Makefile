@@ -89,7 +89,7 @@ EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI}
-BROKEN=	No patch for 7.6 yet.
+BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
 # Patch from:
 # http://sources.debian.net/data/main/o/openssh/1:7.4p1-5/debian/patches/gssapi.patch
 # which was originally based on 5.7 patch from
@@ -104,7 +104,7 @@ PATCHFILES+=	openssh-7.4p1-gsskex-all-20141021-debian-rh-20161228.patch.gz:-p1:g
 
 # http://www.psc.edu/index.php/hpn-ssh https://github.com/rapier1/hpn-ssh https://github.com/rapier1/openssh-portable
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
-BROKEN=			Not yet updated for 7.6+ and disabled in base
+BROKEN=			HPN: Not yet updated for ${DISTVERSION} and disabled in base
 PORTDOCS+=		HPN-README
 HPN_VERSION=		14v5
 HPN_DISTVERSION=	6.7p1
