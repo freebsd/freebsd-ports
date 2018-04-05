@@ -315,6 +315,7 @@
     SUBDIR += py-ncclient
     SUBDIR += py-pdagent
     SUBDIR += py-pyang
+    SUBDIR += py-pyeapi
     SUBDIR += py-pynsca
     SUBDIR += py-pysmi
     SUBDIR += py-pyzabbix
