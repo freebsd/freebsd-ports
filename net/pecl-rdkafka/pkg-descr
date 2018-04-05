@@ -1,0 +1,5 @@
+This PHP extension is is a thin librdkafka binding providing support for
+Apache Kafka. It supports the high level and low level consumers, producer,
+and metadata APIs. The API resembles as much as possible to librdkafka.
+
+WWW: https://github.com/arnaud-lb/php-rdkafka

@@ -929,6 +929,7 @@
     SUBDIR += pecl-oauth
     SUBDIR += pecl-oauth2
     SUBDIR += pecl-radius
+    SUBDIR += pecl-rdkafka
     SUBDIR += pecl-smbclient
     SUBDIR += pecl-yaz
     SUBDIR += pecl-yp
