@@ -3,6 +3,7 @@
 PORTNAME=	grok_exporter
 PORTVERSION=	0.2.3
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -20,6 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fstab logstash-plugins:plugins
 GH_PROJECT=	logstash-patterns-core:plugins
 GH_TAGNAME=	6d25c13:plugins
+USERS=		prometheus
+GROUPS=		prometheus
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 USE_RC_SUBR=	grok_exporter
