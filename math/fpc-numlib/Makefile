@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-numlib
 
 COMMENT=	Free Pascal unit to numerical methods
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-xforms
 
 COMMENT=	X-Forms interface for Free Pascal
 
+USES=		fpc
 USE_FPC=	x11
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

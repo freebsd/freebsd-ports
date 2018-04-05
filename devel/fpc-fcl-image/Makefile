@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-fcl-image
 
 COMMENT=	Free Pascal image loading and conversion libraries (FCL)
 
+USES=		fpc
 USE_FPC=	fcl-base fcl-res pasjpeg rtl-objpas
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

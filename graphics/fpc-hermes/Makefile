@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-hermes
 
 COMMENT=	Free Pascal hermes unit
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

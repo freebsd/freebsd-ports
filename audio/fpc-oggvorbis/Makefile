@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-oggvorbis
 
 COMMENT=	Free Pascal interface to ogg & vorbis libraries
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

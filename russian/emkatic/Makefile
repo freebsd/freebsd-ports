@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 BUILD_DEPENDS=	lazbuild:editors/lazarus \
 		fpcres:lang/fpc-utils
 
+USES=		fpc
 USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-xml pasjpeg rtl-extra x11
 
 PROJECT_FILE=	emkatic.lpi

@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-dts
 
 COMMENT=	Free Pascal interface to the dts library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

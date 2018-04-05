@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-fcl-base
 
 COMMENT=	Free Pascal Component Library base
 
+USES=		fpc
 USE_FPC=	fcl-res rtl-objpas
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

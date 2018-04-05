@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-libgd
 
 COMMENT=	Free Pascal interface to libgd for producing graphics files
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-dblib
 
 COMMENT=	Free Pascal DB-Library and FreeTDS unit
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

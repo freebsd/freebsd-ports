@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-mad
 
 COMMENT=	Free Pascal interface to mad library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

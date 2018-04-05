@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-dbus
 
 COMMENT=	Free Pascal interface to dbus library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

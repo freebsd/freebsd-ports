@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-lua
 
 COMMENT=	Free Pascal interface to the lua interpreter
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

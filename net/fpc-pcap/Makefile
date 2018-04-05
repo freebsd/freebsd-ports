@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-pcap
 
 COMMENT=	Free Pascal unit for libpcap library
 
+USES=		fpc
 USE_FPC=	rtl-extra
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

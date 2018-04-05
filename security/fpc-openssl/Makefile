@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-openssl
 
 COMMENT=	Free Pascal unit for OpenSSL
 
+USES=		fpc
 USE_FPC=	rtl-extra
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

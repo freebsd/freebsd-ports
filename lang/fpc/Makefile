@@ -21,7 +21,7 @@ DIST_SUBDIR=	freepascal
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
-USES=		gmake iconv
+USES+=		gmake iconv
 ONLY_FOR_ARCHS=	i386 amd64
 LLD_UNSAFE=	yes	# Links object with invalid section header alignment
 BOOTVER=	3.0.4

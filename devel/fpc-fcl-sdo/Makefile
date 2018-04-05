@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-fcl-sdo
 
 COMMENT=	Free Pascal Service Data Objects implementation (FCL)
 
+USES=		fpc
 USE_FPC=	dblib fcl-base fcl-db fcl-json fcl-xml ibase mysql odbc \
 		oracle postgres pxlib rtl-extra sqlite
 

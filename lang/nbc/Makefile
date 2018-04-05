@@ -20,7 +20,7 @@ ROBOCTL_DESC=		Include roboctl to communicate with the NXT
 
 ROBOCTL_RUN_DEPENDS=	legoctl:devel/roboctl
 
-USES=			dos2unix gmake tar:tgz
+USES=			dos2unix fpc gmake tar:tgz
 USE_FPC=		fcl-base fcl-image pasjpeg rtl-objpas
 
 PLIST_FILES=		bin/nbc \

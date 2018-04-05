@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-openal
 
 COMMENT=	Free Pascal interface to openal library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

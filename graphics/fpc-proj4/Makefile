@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-proj4
 
 COMMENT=	Free Pascal interface to proj library
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

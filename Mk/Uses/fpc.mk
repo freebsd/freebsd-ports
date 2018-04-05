@@ -1,41 +1,42 @@
 #
 # $FreeBSD$
 #
-# bsd.fpc.mk - Support for FreePascal based ports.
+# Support for FPC-based ports. This automatically will install free pascal 
+# compiler and units.
 #
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
+# Feature:      fpc
+# Usage:        USES=fpc
+# Valid ARGS:   (none), run, base, all
 #
-# For FreeBSD committers:
-# Please send all suggested changes to the maintainer instead of committing
-# them to SVN yourself.
+# run			- Free pascal units will be registered also as run dependencies.
 #
-# USE_FPC		- If you set this to "yes", this automatically will install
-#			  free pascal compiler, if you need install additional fpc
-#			  units, they can be listed there (USE_FPC= gtk x11 opengl).
+# base			- This automatically will install all base units of fpc 
+#			  (gdbint graph ibase libasync hash httpd mysql netdb odbc 
+#			  oracle pasjpeg paszlib pthreads postgres regexpr and sqlite).
 #
-# USE_FPC_RUN		- If you set this to "yes", free pascal units will be 
-#			  registered also as run dependencies.
+# all			- This automatically will install all free pascal units.
 #
-# WANT_FPC_BASE		- If you set this to "yes", this automatically will install
-#			  all base units of fpc (gdbint graph ibase libasync hash 
-#			  httpd mysql netdb odbc oracle pasjpeg paszlib pthreads 
-#		 	  postgres regexpr and sqlite).
+# if you need install additional fpc units, they can be listed there (USE_FPC=gtk2 x11 opengl).
 #
-# WANT_FPC_ALL		- If you set this to "yes", this automatically will install
-#			  all free pascal units.
-#
+# Example:
+#	
+#	USES+=	fpc:run
+#	USE_FPC=gtk2
 #
 
-.if !defined(_FPCMKINCLUDED)
+.if !defined(_INCLUDE_USES_FPC_MK)
 
-_FPCMKINCLUDED=	yes
+FPC_Include_MAINTAINER= acm@FreeBSD.org
+
+_INCLUDE_USES_FPC_MK=   yes
 
 .if defined(DEFAULT_FPC_VER)
 WARNING+=	"DEFAULT_FPC_VER is defined, consider using DEFAULT_VERSIONS=fpc=${DEFAULT_FPC_VER} instead"
 .endif
 
-FPC_Include_MAINTAINER=	freebsd-fpc@FreeBSD.org
-FPC_Pre_Include=	bsd.fpc.mk
+.if ${fpc_ARGS:Nrun:Nbase:Nall}
+IGNORE=		Unknown argument for USES=fpc: ${fpc_ARGS:Nrun:Nbase:Nall}
+.endif
 
 DEFAULT_FPC_VER=	${FPC_DEFAULT}
 # When adding a version, please keep the comment in
@@ -79,24 +80,16 @@ _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi \
 		sdl sqlite svgalib symbolic syslog unzip users utmp uuid x11 \
 		xforms zlib
 
-.if defined(WANT_FPC_BASE)
-.       if ${WANT_FPC_BASE:tl} == "yes"
+.if ${fpc_ARGS:Mbase}
 USE_FPC=	gdbint graph httpd22 httpd24 ibase mysql odbc oracle pasjpeg \
 		postgres pthreads regexpr sqlite
-.       else
-IGNORE= unknown value, please use "yes" instead of
-.       endif
 .endif
 
-.if defined(WANT_FPC_ALL)
-.	if ${WANT_FPC_ALL:tl} == "yes"
+.if ${fpc_ARGS:Mall}
 USE_FPC=	${_FPC_ALL_UNITS}
-.	else
-IGNORE=	unknown value, please use "yes" instead of
-.	endif
 .endif
 
-.if ${USE_FPC:tl} != "yes"
+.if defined(USE_FPC) && ${USE_FPC:tl} != "yes"
 .	for UNITS in ${USE_FPC}
 .		if ${_FPC_ALL_UNITS:M${UNITS}}==""
 IGNORE= cannot install: unknown FPC unit ${UNITS}
@@ -200,29 +193,13 @@ zlib_UNIT=	devel/fpc-zlib
 
 .endif
 
-.if defined(_POSTMKINCLUDED) && defined(USE_FPC)
+.if defined(USE_FPC)
 .	for UNIT in ${USE_FPC}
 .		if ${_FPC_ALL_UNITS:M${UNIT}} != ""
 BUILD_DEPENDS+= ${MKINSTDIR}/${UNIT}.fpm:${${UNIT:S/-/_/}_UNIT}
-.			if defined(USE_FPC_RUN)
+.			if ${fpc_ARGS:Mrun} || ${fpc_ARGS:Mbase}
 RUN_DEPENDS+=   ${MKINSTDIR}/${UNIT}.fpm:${${UNIT:S/-/_/}_UNIT}
 .			endif
-
-security-check: fpc-check-install
 .		endif
 .	endfor
-
-fpc-check-install:
-.if defined(UNITPREFIX) && defined(PKGNAMESUFFIX)
-	@${ECHO_CMD} "#################################################################"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} " The following freepascal unit has been installed in your system:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} " * ${UNITPREFIX}${PKGNAMESUFFIX:S/-//}                           "
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "#################################################################"
 .endif
-
-.endif
-#.endif
-# End of bsd.fpc.mk file

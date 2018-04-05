@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-fastcgi
 
 COMMENT=	Free Pascal fastcgi unit
 
-USE_FPC=	yes
+USES=		fpc
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

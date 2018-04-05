@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-httpd24
 
 COMMENT=	Free Pascal headers for Apache 2.4 series web server
 
+USES=		fpc
 USE_FPC=	rtl-extra
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

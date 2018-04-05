@@ -19,7 +19,7 @@ EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	${WRKSRC}
 
-USE_FPC=	yes
+USES=		fpc
 
 PLIST_FILES=	bin/checkmol bin/matchmol
 

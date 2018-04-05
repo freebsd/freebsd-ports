@@ -21,6 +21,7 @@ EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	${WRKSRC}
 
+USES=		fpc
 USE_FPC=	rtl-objpas
 
 PLIST_FILES=	bin/mol2eps bin/mol2ps bin/mol2svg %%DATADIR%%/color.conf
