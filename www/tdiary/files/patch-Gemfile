@@ -1,4 +1,4 @@
---- Gemfile.orig	2017-12-29 12:13:03 UTC
+--- Gemfile.orig	2018-03-29 10:07:52 UTC
 +++ Gemfile
 @@ -6,40 +6,3 @@ gem 'fastimage'
  gem 'emot'
@@ -29,9 +29,9 @@
 -    gem 'launchy'
 -    gem 'sequel'
 -    gem 'sqlite3'
--    gem 'jasmine'
+-    gem 'jasmine', '< 3'
 -    gem 'simplecov', require: false
--    gem 'coveralls', '~> 0.7.12', require: false
+-    gem 'coveralls', require: false
 -  end
 -end
 -
