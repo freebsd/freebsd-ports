@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast factorization of big integers using MPQS and GNFS
 
+BROKEN=		missing build depends
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecm.a:math/gmp-ecm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
