@@ -312,6 +312,7 @@
     SUBDIR += py-junos-eznc
     SUBDIR += py-msrest
     SUBDIR += py-msrestazure
+    SUBDIR += py-napalm
     SUBDIR += py-ncclient
     SUBDIR += py-pdagent
     SUBDIR += py-pyIOSXR
