@@ -1,0 +1,23 @@
+Multi-vendor library to simplify Paramiko SSH connections to network devices.
+
+Supports following platforms:
+
+- Arista vEOS
+- Cisco ASA/IOS/IOS-XE/IOS-XR/NX-OS/SG300/WLC
+- HP Comware7/ProCurve
+- Juniper JunOS
+- Linux
+
+Following platforms are also supported:
+
+- Alcatel AOS6/AOS8
+- Avaya ERS/VSP
+- Brocade VDX/MLX/NetIron
+- Calix B6
+- Dell-Force10 and Dell PowerConnect
+- Huawei, Mellanox, NetApp cDOT, Palo Alto PAN-OS
+- Pluribus, Ruckus ICX/FastIron, Ubiquiti EdgeSwitch, Vyatta VyOS
+
+There is also experimental support for more platforms not listed here.
+
+WWW: https://github.com/ktbyers/netmiko
