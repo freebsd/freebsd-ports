@@ -21,35 +21,36 @@
 
 . /etc/rc.subr
 
-name="go-carbon"
+name="go_carbon"
 rcvar="go_carbon_enable"
+load_rc_config $name
 
 : ${go_carbon_enable:="NO"}
 : ${go_carbon_user:="carbon"}
 : ${go_carbon_config:="/usr/local/etc/go-carbon/go-carbon.conf"}
 
-start_cmd="go_carbon_start"
-stop_cmd="go_carbon_stop"
-status_cmd="go_carbon_status"
-procname="/usr/local/bin/go-carbon"
 pidfile="/var/run/$name.pid"
+procname="%%PREFIX%%/bin/go-carbon"
+command=/usr/sbin/daemon
+command_args="-f -c -p ${pidfile} ${procname} -config ${go_carbon_config}"
 
-# read configuration and set defaults
-load_rc_config "$name"
+extra_commands="reload"
+reload_command="go_carbon_reload"
+start_precmd="go_carbon_precmd"
 
-go_carbon_start()
+go_carbon_precmd()
 {
-	${procname} -config ${go_carbon_config} -daemon -pidfile ${pidfile}
+	install -o ${go_carbon_user} /dev/null ${pidfile}
 }
 
-go_carbon_stop()
+carbonapi_reload()
 {
-	kill -TERM `cat /var/run/go-carbon.pid`
-}
-
-go_carbon_status()
-{
-	echo "go-carbon is running as pid" `cat /var/run/go-carbon.pid`
+	if [ -n "$pid" ]; then
+		kill -HUP $pid
+		echo "go-carbon config reloaded."
+	else
+		echo "go-carbon not running."
+	fi
 }
 
 run_rc_command "$1"
