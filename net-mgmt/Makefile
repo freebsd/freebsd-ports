@@ -311,6 +311,7 @@
     SUBDIR += py-ipy
     SUBDIR += py-msrest
     SUBDIR += py-msrestazure
+    SUBDIR += py-ncclient
     SUBDIR += py-pdagent
     SUBDIR += py-pyang
     SUBDIR += py-pynsca

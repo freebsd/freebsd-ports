@@ -1,0 +1,13 @@
+ncclient is a Python library for NETCONF clients. It aims to offer
+an intuitive API that sensibly maps the XML-encoded nature of
+NETCONF to Python constructs and idioms, and make writing
+network-management scripts easier. Other key features are:
+
+- Supports all operations and capabilities defined in RFC 4741.
+- Request pipelining.
+- Asynchronous RPC requests.
+- Keeping XML out of the way unless really needed.
+- Extensible. New transport mappings and capabilities/operations
+  can be easily added.
+
+WWW: https://github.com/ncclient/ncclient
