@@ -317,6 +317,7 @@
     SUBDIR += py-pyang
     SUBDIR += py-pyeapi
     SUBDIR += py-pynsca
+    SUBDIR += py-pynxos
     SUBDIR += py-pysmi
     SUBDIR += py-pyzabbix
     SUBDIR += py-snmp4
