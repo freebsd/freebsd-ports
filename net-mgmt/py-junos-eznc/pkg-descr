@@ -1,0 +1,15 @@
+Junos PyEZ is a Python library to remotely manage/automate Junos
+devices.
+
+Junos PyEZ is designed to provide the same capabilities as a user
+would have on the Junos CLI, but in an environment built for
+automation tasks. These capabilities include, but are not limited to:
+- Remote connectivity and management of Junos devices via NETCONF
+- Provide "facts" about the device such as software-version, serial-number, etc
+- Retrieve "operational" or "run-state" information as Tables/Views
+- Retrieve configuration information as Tables/Views
+- Make configuration changes in unstructured and structured ways
+- Provide common utilities for tasks such as secure copy of files and software
+  updates
+
+WWW: https://github.com/Juniper/py-junos-eznc
