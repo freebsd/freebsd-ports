@@ -309,6 +309,7 @@
     SUBDIR += py-dnsdiag
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
+    SUBDIR += py-junos-eznc
     SUBDIR += py-msrest
     SUBDIR += py-msrestazure
     SUBDIR += py-ncclient
