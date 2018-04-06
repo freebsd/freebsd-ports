@@ -20,7 +20,7 @@ NO_ARCH=	yes
 USERS=		radicale
 GROUPS=		radicale
 USE_RC_SUBR=	radicale
-SUB_LIST=	USERS="${USERS}" PYTHON_CMD="${PYTHON_CMD}"
+SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}"
 
 OPTIONS_DEFINE=	HTTP LDAP
 HTTP_DESC=	HTTP authentication support
@@ -30,19 +30,17 @@ LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=0:net/py-ldap@${FLAVOR}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MLDAP}
+.if ${PORT_OPTIONS:MLDAP}
 USES+=		python:2.7
 .else
 USES+=		python
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's,= /etc,= ${PREFIX}/etc,g' ${WRKSRC}/config
-	${REINPLACE_CMD} 's,~/.config/radicale,${DATADIR},g' ${WRKSRC}/config
+	@${REINPLACE_CMD} 's|~/.config/radicale|${DATADIR}|; s|/etc|${PREFIX}/etc|' ${WRKSRC}/config
 
 post-install:
-	${MKDIR} ${STAGEDIR}/${ETCDIR}
-	${MKDIR} ${STAGEDIR}/${DATADIR}
+	${MKDIR} ${STAGEDIR}/${ETCDIR} ${STAGEDIR}/${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/config ${STAGEDIR}/${ETCDIR}/config.sample
 	${INSTALL_DATA} ${WRKSRC}/logging ${STAGEDIR}/${ETCDIR}/logging.sample
 

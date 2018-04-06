@@ -25,8 +25,8 @@ load_rc_config $name
 
 : ${radicale_enable:=NO}
 : ${radicale_config=%%PREFIX%%/etc/radicale/config}
-: ${radicale_user=%%USERS%%}
-: ${radicale_group=%%GROUPS%%}
+: ${radicale_user:=radicale}
+: ${radicale_group:=radicale}
 
 pidfile=/var/run/radicale/radicale.pid
 command=%%PREFIX%%/bin/radicale
