@@ -1,0 +1,6 @@
+Tablib is an format-agnostic tabular dataset library, written in Python. It
+allows one to import, export, and manipulate tabular data sets. Advanced
+features include, segregation, dynamic columns, tags & filtering, and seamless
+format import & export.
+
+WWW: http://python-tablib.org
