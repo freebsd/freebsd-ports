@@ -1,4 +1,4 @@
---- pam_module/pam_oslogin_login.cc.orig	2017-12-13 23:47:59 UTC
+--- pam_module/pam_oslogin_login.cc.orig	2018-02-27 22:53:04 UTC
 +++ pam_module/pam_oslogin_login.cc
 @@ -14,7 +14,6 @@
  
