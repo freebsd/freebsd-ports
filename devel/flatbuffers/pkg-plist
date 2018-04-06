@@ -14,13 +14,11 @@ include/flatbuffers/registry.h
 include/flatbuffers/stl_emulation.h
 include/flatbuffers/util.h
 lib/cmake/flatbuffers/FlatbuffersConfig.cmake
+lib/cmake/flatbuffers/FlatbuffersConfigVersion.cmake
 lib/cmake/flatbuffers/FlatbuffersSharedTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/flatbuffers/FlatbuffersSharedTargets.cmake
-lib/cmake/flatbuffers/FlatbuffersTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/flatbuffers/FlatbuffersTargets.cmake
 lib/cmake/flatbuffers/FlatcTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/flatbuffers/FlatcTargets.cmake
-lib/libflatbuffers.a
 lib/libflatbuffers.so
 lib/libflatbuffers.so.1
 lib/libflatbuffers.so.%%SHLIB_VER%%
