@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=0:devel/py-attrs@${FLAVOR} \
 USES=		desktop-file-utils python:3.5+ pyqt:5
 USE_PYQT=	core opengl printsupport sql widgets qml
 USE_QT5=	sql-sqlite3
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist noflavors
 
 NO_ARCH=	yes
 PLIST_FILES=	share/applications/${PORTNAME}-${PYTHON_VER}.desktop
