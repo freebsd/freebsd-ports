@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	10.4.6
+PORTVERSION=	10.5.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -25,12 +25,14 @@ BUILD_DEPENDS=	gem:devel/ruby-gems
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
 RUN_DEPENDS=	git>=2.14.3:devel/git \
-	gitlab-shell>=5.11.0:devel/gitlab-shell\
-	gitlab-workhorse>=3.3.1:www/gitlab-workhorse \
+	gitlab-shell>=6.0.3:devel/gitlab-shell \
+	gitlab-workhorse>=3.6.0:www/gitlab-workhorse \
+	gitaly>=0.82.0:devel/gitaly \
+	gitlab-pages>=0.6.0:www/gitlab-pages \
 	redis>=2.8.23:databases/redis \
 	npm>=4.3.0:www/npm \
 	yarn>=0.17.0:www/yarn \
-	rubygem-rails4>=4.2.8:www/rubygem-rails4 \
+	rubygem-rails4>=4.2.10:www/rubygem-rails4 \
 	rubygem-rails-deprecated_sanitizer>=1.0.3:devel/rubygem-rails-deprecated_sanitizer \
 	rubygem-responders>=2.0:www/rubygem-responders \
 	rubygem-sprockets3>=3.7:devel/rubygem-sprockets3 \
@@ -89,7 +91,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-fog-aliyun>=0.2.0:net/rubygem-fog-aliyun \
 	rubygem-google-api-client>=0.13.6:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4:textproc/rubygem-unf \
-	rubygem-seed-fu236>=2.3.6:databases/rubygem-seed-fu236 \
+	rubygem-seed-fu>=2.3.7:databases/rubygem-seed-fu \
 	rubygem-html-pipeline1>=1.11.0:textproc/rubygem-html-pipeline1 \
 	rubygem-deckar01-task_list>=2.0.0:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.6.2:textproc/rubygem-gitlab-markup \
@@ -104,7 +106,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-rouge2>=2.0:textproc/rubygem-rouge2 \
 	rubygem-truncato>=0.7.9:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=2.7.0:devel/rubygem-bootstrap_form \
-	rubygem-nokogiri>=1.8.1:textproc/rubygem-nokogiri  \
+	rubygem-nokogiri>=1.8.2:textproc/rubygem-nokogiri \
 	rubygem-diffy31>=3.1.0:textproc/rubygem-diffy31 \
 	rubygem-unicorn51>=5.1.0:www/rubygem-unicorn51 \
 	rubygem-unicorn-worker-killer044>=0.4.4:www/rubygem-unicorn-worker-killer044 \
@@ -141,6 +143,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-mousetrap-rails>=1.4.6:www/rubygem-mousetrap-rails \
 	rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 	rubygem-oj2>=2.17.4:devel/rubygem-oj2 \
+	rubygem-fast_blank>=0:devel/rubygem-fast_blank \
 	rubygem-chronic>=0.10.2:devel/rubygem-chronic \
 	rubygem-chronic_duration>=0.10.6:devel/rubygem-chronic_duration \
 	rubygem-webpack-rails>=0.9.10:www/rubygem-webpack-rails \
@@ -173,7 +176,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-peek-rblineprof>=0.2.0:devel/rubygem-peek-rblineprof \
 	rubygem-peek-redis>=1.2.0:devel/rubygem-peek-redis \
 	rubygem-peek-sidekiq>=1.0.3:devel/rubygem-peek-sidekiq \
-	rubygem-prometheus-client-mmap>=0.7.0.beta44:devel/rubygem-prometheus-client-mmap \
+	rubygem-prometheus-client-mmap>=0.9.1:devel/rubygem-prometheus-client-mmap \
 	rubygem-octokit46>=4.6.2:net/rubygem-octokit46 \
 	rubygem-mail_room>=0.9.1:mail/rubygem-mail_room \
 	rubygem-email_reply_trimmer>=0.1:mail/rubygem-email_reply_trimmer \
@@ -187,8 +190,9 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-rbnacl4<=4.0.2:security/rubygem-rbnacl4 \
 	rubygem-rbnacl-libsodium>=0:security/rubygem-rbnacl-libsodium \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=0.39.0:net/rubygem-gitaly-proto \
+	rubygem-gitaly-proto084>=0.84.0:net/rubygem-gitaly-proto084 \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
+	rubygem-google-protobuf351>=3.5.1:devel/rubygem-google-protobuf351 \
 	rubygem-toml-rb03>=0.3.15:www/rubygem-toml-rb03 \
 	rubygem-flipper011>=0.11.0:devel/rubygem-flipper011 \
 	rubygem-flipper-active_record011>=0.11.0:databases/rubygem-flipper-active_record011 \
@@ -198,7 +202,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-asset_sync220>=2.2.0:net/rubygem-asset_sync220 \
 	rubygem-rinku>=1.7.3:www/rubygem-rinku
 
-PGSQL_RUN_DEPENDS=	rubygem-pg0>=0.18.2:databases/rubygem-pg0 \
+PGSQL_RUN_DEPENDS=	rubygem-pg018>=0.18.2:databases/rubygem-pg018 \
 	rubygem-peek-pg>=1.3.0:databases/rubygem-peek-pg
 MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.5:databases/rubygem-mysql2 \
 	rubygem-peek-mysql2>=1.1.0:databases/rubygem-peek-mysql2
