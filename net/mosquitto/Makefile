@@ -3,14 +3,14 @@
 
 PORTNAME=	mosquitto
 PORTVERSION=	1.4.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://mosquitto.org/files/source/
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Open-Source MQTT Broker
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	EPL
 
 LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libuuid.so:misc/e2fsprogs-libuuid
