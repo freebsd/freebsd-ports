@@ -4,7 +4,7 @@ PORTNAME=	seahub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAHUB_VER}
 DISTVERSIONSUFFIX=	-pro
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -12,6 +12,8 @@ COMMENT=	Web frontend for Seafile
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${PY_FLAVOR}
 
 RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:net-mgmt/seafile-server \
@@ -35,17 +37,18 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR} \
 		${PY_FUTURES}
 
-USES=		python:-2.7 shebangfix
+USES=		gettext-tools:build python:-2.7 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 SHEBANG_FILES=	*.sh tests/*.sh *.template *.py tools/*.py seahub/*.py
 
 NO_ARCH=	yes
-NO_BUILD=	yes
 
 OPTIONS_DEFINE=		SEAFOBJ SEAFDAV NLS
 OPTIONS_DEFAULT=	SEAFOBJ SEAFDAV
 OPTIONS_SUB=		yes
+
+ALL_TARGET=	locale
 
 SEAFOBJ_DESC=		Enable Seafile file object modeling support
 SEAFDAV_DESC=		Enable Seafile WsgiDav-based support
