@@ -1,0 +1,10 @@
+Test::Log::Log4perl can be used to test that you're logging the right thing with
+Log::Log4perl. It checks that we get what, and only what, we expect logged by
+your code.
+
+The basic process is very simple. Within your test script you get one or more
+loggers from Test::Log::Log4perl with the get_logger method just like you would
+with Log::Log4perl. You're going to use these loggers to declare what you think
+the code you're going to test should be logging.
+
+WWW: http://search.cpan.org/dist/Test-Log-Log4perl/
