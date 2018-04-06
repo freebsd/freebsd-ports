@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	oksh
-DISTVERSION=	20180111
+DISTVERSION=	20180401
 CATEGORIES=	shells
 MASTER_SITES=	https://devio.us/~bcallah/oksh/
 
