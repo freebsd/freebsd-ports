@@ -1326,6 +1326,7 @@
     SUBDIR += py-markdown
     SUBDIR += py-markdown2
     SUBDIR += py-mistune
+    SUBDIR += py-mkdocs
     SUBDIR += py-mwparserfromhell
     SUBDIR += py-nltk
     SUBDIR += py-numpydoc
