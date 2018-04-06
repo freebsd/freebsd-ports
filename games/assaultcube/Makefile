@@ -25,6 +25,7 @@ LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	# empty
+LLD_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/AssaultCube_v${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/source/src
 SUB_FILES=	${PLIST_FILES:Mbin/*:T}
@@ -77,8 +78,8 @@ post-patch: .SILENT
 		s|-I/usr/include || ; \
 		s|sdl-config|$$(SDL_CONFIG)| ; \
 		s|$$(USRLIB)|$$(LOCALBASE)/lib| ; \
-		/^CLIENT_LIBS=/s|$$| -lintl| ; \
-		/^SERVER_LIBS=/s|$$| -L$$(LOCALBASE)/lib|' \
+		/^CLIENT_LIBS=/s|$$| $$(LDFLAGS) -lintl| ; \
+		/^SERVER_LIBS=/s|$$| $$(LDFLAGS) -L$$(LOCALBASE)/lib|' \
 		${BUILD_WRKSRC}/Makefile
 .if ${PORT_OPTIONS:MPORT_ENET}
 	${SED} -i '.port_enet.bak' -e 's/libenet // ; \
