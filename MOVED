@@ -10256,4 +10256,4 @@ net-im/cjc||2018-04-03|Has expired: Depends on expired net-im/py-xmpp
 net-im/py-pyxmpp||2018-04-03|Has expired: Obsoleted in favor of PyXMPP2
 converters/php5-bsdconv|converters/php-bsdconv|2018-04-03|It supports PHP 7 since 11.5.0
 converters/rubygem-bsdconv|converters/rubygem-ruby-bsdconv|2018-04-03|Rename to match our rubygem- port naming
-www/piwik|www/matomo|2008-04-06|Project renamed
+www/piwik|www/matomo|2018-04-06|Project renamed
