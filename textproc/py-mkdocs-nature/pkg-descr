@@ -1,0 +1,8 @@
+The MkDocs-Nature theme is a clone of the "greenish" Sphinx theme of the same
+name and supports a number of features which are configurable by the end user:
+
+- Theme Variables
+- Search
+- Code Highlighting
+
+WWW: https://waylan.github.io/mkdocs-nature
