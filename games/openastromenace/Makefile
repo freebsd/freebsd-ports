@@ -25,6 +25,7 @@ USE_GL=		gl glu
 USE_SDL=	sdl
 WRKSRC=		${WRKDIR}/AstroMenace
 CMAKE_ARGS=	-DDATADIR="${DATADIR}"
+LLD_UNSAFE=	yes
 
 PLIST_FILES=	bin/AstroMenace \
 		share/pixmaps/${PORTNAME}.png
