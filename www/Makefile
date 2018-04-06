@@ -385,6 +385,7 @@
     SUBDIR += man2web
     SUBDIR += mathjax
     SUBDIR += mathopd
+    SUBDIR += matomo
     SUBDIR += mattermost-server
     SUBDIR += mattermost-webapp
     SUBDIR += mediawiki127
@@ -1489,7 +1490,6 @@
     SUBDIR += phpvirtualbox
     SUBDIR += pivotx
     SUBDIR += piwigo
-    SUBDIR += piwik
     SUBDIR += planet
     SUBDIR += plexwatchweb
     SUBDIR += plone
