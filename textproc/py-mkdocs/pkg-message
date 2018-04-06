@@ -1,0 +1,3 @@
+If you are using the Python v3.x version and a non-Unicode locale you'll get a runtime error when mkdocs is executed..
+
+In that case please set the locale to a Unicode locale first, e.g. en_US.UTF-8 or similar, before starting mkdocs.
