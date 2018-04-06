@@ -1394,6 +1394,7 @@
     SUBDIR += py-stemming
     SUBDIR += py-syck
     SUBDIR += py-tabletext
+    SUBDIR += py-tablib
     SUBDIR += py-terminaltables
     SUBDIR += py-textfsm
     SUBDIR += py-texttable
