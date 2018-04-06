@@ -27,6 +27,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	raduprv
 GH_PROJECT=	Eternal-Lands
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lX11
+LLD_UNSAFE=	yes
 
 ALL_TARGET=	el.bin
 MAKEFILE=	Makefile.bsd
