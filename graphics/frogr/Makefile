@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	frogr
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -18,17 +18,19 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgcrypt.so:security/libgcrypt
 
-USES=		gmake tar:xz pkgconfig gettext-runtime gettext-tools
+USES=		meson ninja tar:xz pkgconfig gettext-runtime gettext-tools
 USE_GNOME=	libxml2 glib20 gtk30
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-header-bar
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MESON_ARGS=	-Denable-header-bar=true
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		VIDEO
 OPTIONS_DEFAULT=	VIDEO
 
-VIDEO_CONFIGURE_ENABLE=	video
+VIDEO_MESON_TRUE=	enable-video
 VIDEO_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1
 
 .include <bsd.port.mk>
