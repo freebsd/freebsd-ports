@@ -1714,6 +1714,7 @@
     SUBDIR += py-kallithea
     SUBDIR += py-lesscpy
     SUBDIR += py-libsass
+    SUBDIR += py-livereload
     SUBDIR += py-mechanize
     SUBDIR += py-meld
     SUBDIR += py-meld3
