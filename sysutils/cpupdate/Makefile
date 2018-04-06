@@ -3,6 +3,7 @@
 
 PORTNAME=	cpupdate
 DISTVERSION=	g20180323
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	eugen@FreeBSD.org
@@ -28,7 +29,7 @@ PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 
 CPM_ACCOUNT=	platomav
 CPM_PROJECT=	CPUMicrocodes
-CPM_TAGNAME=	8f56a62
+CPM_TAGNAME=	079248c
 
 OPTIONS_DEFINE=		CPM INTEL
 CPM_DESC=		Download platomav/CPUMicrocodes collection
@@ -63,7 +64,7 @@ install-microcodes:
 .if ${PORT_OPTIONS:MCPM}
 	${RM} -rf ${CPM_DATADIR}
 	${MKDIR} ${CPM_DATADIR}
-	(cpupdate -IC -S ${CPM_DIR}/Intel -T ${CPM_DATADIR})
+	cpupdate -IC -S ${CPM_DIR}/Intel -T ${CPM_DATADIR}
 .endif
 .for _o in INTEL CPM
 .if ${PORT_OPTIONS:M${_o}}
