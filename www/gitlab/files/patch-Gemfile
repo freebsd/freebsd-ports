@@ -1,26 +1,15 @@
---- Gemfile.orig	2018-03-16 19:14:20 UTC
+--- Gemfile.orig	2018-04-03 16:35:11 UTC
 +++ Gemfile
-@@ -12,8 +12,8 @@ gem 'sprockets', '~> 3.7.0'
+@@ -12,7 +12,7 @@ gem 'sprockets', '~> 3.7.0'
  gem 'default_value_for', '~> 3.0.0'
  
  # Supported DBs
 -gem 'mysql2', '~> 0.4.10', group: :mysql
--gem 'pg', '~> 0.18.2', group: :postgres
 +gem 'mysql2', '>= 0.4.10', group: :mysql
-+gem 'pg', '>= 0.18.2', group: :postgres
+ gem 'pg', '~> 0.18.2', group: :postgres
  
  gem 'rugged', '~> 0.26.0'
- gem 'grape-route-helpers', '~> 2.1.0'
-@@ -23,7 +23,7 @@ gem 'faraday', '~> 0.12'
- # Authentication libraries
- gem 'devise', '~> 4.2'
- gem 'doorkeeper', '~> 4.2.0'
--gem 'doorkeeper-openid_connect', '~> 1.2.0'
-+gem 'doorkeeper-openid_connect', '~> 1.2'
- gem 'omniauth', '~> 1.4.2'
- gem 'omniauth-auth0', '~> 2.0.0'
- gem 'omniauth-azure-oauth2', '~> 0.0.9'
-@@ -109,7 +109,7 @@ gem 'fog-rackspace', '~> 0.1.1'
+@@ -113,7 +113,7 @@ gem 'fog-rackspace', '~> 0.1.1'
  gem 'fog-aliyun', '~> 0.2.0'
  
  # for Google storage
@@ -29,7 +18,7 @@
  
  # for aws storage
  gem 'unf', '~> 0.1.4'
-@@ -144,7 +144,7 @@ group :unicorn do
+@@ -148,7 +148,7 @@ group :unicorn do
  end
  
  # State machine
@@ -38,7 +27,7 @@
  
  # Issue tags
  gem 'acts-as-taggable-on', '~> 4.0'
-@@ -159,7 +159,7 @@ gem 'sidekiq-limit_fetch', '~> 3.4', req
+@@ -163,7 +163,7 @@ gem 'sidekiq-limit_fetch', '~> 3.4', req
  gem 'rufus-scheduler', '~> 3.4'
  
  # HTTP requests
@@ -47,7 +36,7 @@
  
  # Colored output to console
  gem 'rainbow', '~> 2.2'
-@@ -209,11 +209,11 @@ gem 'kubeclient', '~> 2.2.0'
+@@ -213,11 +213,11 @@ gem 'kubeclient', '~> 2.2.0'
  gem 'd3_rails', '~> 3.5.0'
  
  # Sanitize user input
@@ -61,7 +50,7 @@
  
  # Working with license
  gem 'licensee', '~> 8.7.0'
-@@ -273,7 +273,7 @@ gem 'batch-loader', '~> 1.2.1'
+@@ -280,7 +280,7 @@ gem 'batch-loader', '~> 1.2.1'
  gem 'peek', '~> 1.0.1'
  gem 'peek-gc', '~> 0.0.2'
  gem 'peek-host', '~> 1.0.0'
@@ -70,7 +59,7 @@
  gem 'peek-performance_bar', '~> 1.3.0'
  gem 'peek-pg', '~> 1.3.0', group: :postgres
  gem 'peek-rblineprof', '~> 0.2.0'
-@@ -282,97 +282,11 @@ gem 'peek-sidekiq', '~> 1.0.3'
+@@ -289,97 +289,11 @@ gem 'peek-sidekiq', '~> 1.0.3'
  
  # Metrics
  group :metrics do
@@ -79,7 +68,7 @@
 -  gem 'influxdb', '~> 0.2', require: false
 -
    # Prometheus
-   gem 'prometheus-client-mmap', '~> 0.7.0.beta44'
+   gem 'prometheus-client-mmap', '~> 0.9.1'
    gem 'raindrops', '~> 0.18'
  end
  
@@ -114,7 +103,7 @@
 -  gem 'spinach-rerun-reporter', '~> 0.0.2'
 -  gem 'rspec_profiling', '~> 0.0.5'
 -  gem 'rspec-set', '~> 0.1.3'
--  gem 'rspec-parameterized'
+-  gem 'rspec-parameterized', require: false
 -
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
 -  gem 'minitest', '~> 5.7.0'
@@ -130,15 +119,15 @@
 -  gem 'spring-commands-rspec', '~> 1.0.4'
 -  gem 'spring-commands-spinach', '~> 1.1.0'
 -
--  gem 'gitlab-styles', '~> 2.2.0', require: false
+-  gem 'gitlab-styles', '~> 2.3', require: false
 -  # Pin these dependencies, otherwise a new rule could break the CI pipelines
--  gem 'rubocop', '~> 0.52.0'
--  gem 'rubocop-rspec', '~> 1.20.1'
+-  gem 'rubocop', '~> 0.52.1'
+-  gem 'rubocop-rspec', '~> 1.22.1'
 -
 -  gem 'scss_lint', '~> 0.56.0', require: false
 -  gem 'haml_lint', '~> 0.26.0', require: false
 -  gem 'simplecov', '~> 0.14.0', require: false
--  gem 'flay', '~> 2.8.0', require: false
+-  gem 'flay', '~> 2.10.0', require: false
 -  gem 'bundler-audit', '~> 0.5.0', require: false
 -
 -  gem 'benchmark-ips', '~> 2.3.0', require: false
@@ -168,21 +157,10 @@
  gem 'octokit', '~> 4.6.2'
  
  gem 'mail_room', '~> 0.9.1'
-@@ -403,7 +317,7 @@ group :ed25519 do
- end
+@@ -427,3 +341,6 @@ gem 'grape_logging', '~> 1.7'
  
- # Gitaly GRPC client
--gem 'gitaly-proto', '~> 0.64.0', require: 'gitaly'
-+gem 'gitaly-proto', '>= 0.64.0', require: 'gitaly'
- 
- gem 'toml-rb', '~> 0.3.15', require: false
- 
-@@ -416,5 +330,8 @@ gem 'flipper-active_support_cache_store'
- gem 'lograge', '~> 0.5'
- gem 'grape_logging', '~> 1.7'
- 
-+gem 'rinku'
-+
-+
  # Asset synchronization
  gem 'asset_sync', '~> 2.2.0'
++
++# Make sure this is always present, as it is missing upstream but is required
++gem 'rinku'
