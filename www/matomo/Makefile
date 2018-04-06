@@ -1,10 +1,11 @@
-# Created by: Wen heping <wenheping@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	piwik
-PORTVERSION=	3.2.1
+PORTNAME=	matomo
+DISTVERSION=	3.4.0
 CATEGORIES=	www
-MASTER_SITES=	http://builds.piwik.org/
+MASTER_SITES=	http://builds.matomo.org/
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
+DISTNAME=	piwik-${DISTVERSION}
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Open Source Web Analytics Software Program
@@ -13,9 +14,13 @@ LICENSE=	GPLv3
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-USE_PHP=	ctype dom gd filter hash iconv json session xml zlib \
-		mbstring simplexml
-WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USES=		cpe shebangfix php:flavors
+USE_PHP=	bcmath bz2 ctype curl dom fileinfo filter gd hash iconv intl json \
+		mbstring mcrypt memcache mysqli openssl pcre pdo posix readline session \
+		simplexml soap sockets sqlite3 tidy tokenizer xml opcache zip zlib
+
+WRKSRC=		${WRKDIR}/piwik
 
 OPTIONS_DEFINE=	PHPPDOMYSQL PHPMYSQLI
 OPTIONS_DEFAULT=	PHPPDOMYSQL
@@ -26,7 +31,6 @@ PHPMYSQLI_USE=	PHP=mysqli
 
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-USES=		cpe shebangfix php
 SHEBANG_FILES=	misc/log-analytics/import_logs.py
 
 pre-install:
