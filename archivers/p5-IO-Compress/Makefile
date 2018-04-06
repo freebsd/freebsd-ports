@@ -18,8 +18,6 @@ BUILD_DEPENDS=	p5-Compress-Raw-Bzip2>=${PORTVERSION}:archivers/p5-Compress-Raw-B
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 
-CONFLICTS_INSTALL=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-IO-Compress-Bzip2-2*
-
 NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
