@@ -9973,10 +9973,7 @@ devel/elixir-red_black_tree||2018-02-19|Has expired: No longer maintained upstre
 emulators/wine-staging|emulators/wine-devel|2018-02-20|Broken for months, abandoned upstream
 misc/rubygem-dotenv-rails|misc/rubygem-dotenv-rails-rails4|2018-02-20|Rename to match our rubygem- port naming
 accessibility/kaccessible|accessibility/kaccessible-kde4|2018-02-22|Make room for KDE updates
-accessibility/kmousetool|accessibility/kmousetool-kde4|2018-02-22|Make room for KDE updates
 accessibility/jovie|accessibility/jovie-kde4|2018-02-22|Make room for KDE updates
-accessibility/kmouth|accessibility/kmouth-kde4|2018-02-22|Make room for KDE updates
-accessibility/kmag|accessibility/kmag-kde4|2018-02-22|Make room for KDE updates
 misc/klettres|misc/klettres-kde4|2018-02-22|Make room for KDE updates
 misc/kwordquiz|misc/kwordquiz-kde4|2018-02-22|Make room for KDE updates
 misc/libkdeedu|misc/libkdeedu-kde4|2018-02-22|Make room for KDE updates
