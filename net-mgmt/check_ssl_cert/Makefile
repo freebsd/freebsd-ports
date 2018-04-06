@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	check_ssl_cert
-PORTVERSION=	1.65.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.66.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -19,7 +19,7 @@ NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	matteocorti
-GH_PROJECT=	check_ssl_cert
+
 PLIST_FILES=	libexec/nagios/check_ssl_cert \
 		${MANPREFIX}/man/man1/check_ssl_cert.1.gz
 
