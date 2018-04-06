@@ -13,8 +13,6 @@ bin/grpc_python_plugin
 bin/grpc_ruby_plugin
 bin/grpc_verify_jwt
 include/benchmark/benchmark.h
-include/benchmark/benchmark_api.h
-include/benchmark/reporter.h
 include/grpc++/alarm.h
 include/grpc++/channel.h
 include/grpc++/client_context.h
@@ -270,3 +268,4 @@ lib/libgrpc_plugin_support.so.2.0.0
 lib/libgrpc_unsecure.so
 lib/libgrpc_unsecure.so.1
 lib/libgrpc_unsecure.so.%%SOVERSION%%
+libdata/pkgconfig/benchmark.pc
