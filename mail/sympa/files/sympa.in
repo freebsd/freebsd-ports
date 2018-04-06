@@ -38,6 +38,7 @@ extra_commands=status
 sympadir=%%PREFIX%%/libexec/sympa
 
 sympaconf=%%ETCDIR%%/sympa.conf
+echo_opt="-n"
 
 sub_status()
 {
@@ -72,7 +73,6 @@ sub_module_start()
 		return 1
 	fi
 	$sympadir/$1.pl $startparam && echo "success" || echo "failure"
-	echo
 }
 
 sub_start()
@@ -142,7 +142,6 @@ sub_stop()
 	else
 	    echo 'died'
 	fi
-	echo
     else
 	echo "Module $1.pl not running"
     fi
@@ -167,7 +166,6 @@ sympa_start()
 		sub_start bounced
 		sub_start task_manager
 		touch /var/spool/lock/sympa
-		echo
 	else
 		echo "Sympa seems active. No action will be taken."
 		echo "Try \"sympa status\" or \"sympa restart"\".
