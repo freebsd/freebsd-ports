@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-remote-gcrypt
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
