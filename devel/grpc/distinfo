@@ -1,5 +1,5 @@
-TIMESTAMP = 1520000484
-SHA256 (grpc-grpc-v1.10.0_GH0.tar.gz) = 39a73de6fa2a03bdb9c43c89a4283e09880833b3c1976ef3ce3edf45c8cacf72
-SIZE (grpc-grpc-v1.10.0_GH0.tar.gz) = 13160605
-SHA256 (google-benchmark-v1.3.0_GH0.tar.gz) = f19559475a592cbd5ac48b61f6b9cedf87f0b6775d1443de54cfe8f53940b28d
-SIZE (google-benchmark-v1.3.0_GH0.tar.gz) = 105485
+TIMESTAMP = 1522984684
+SHA256 (grpc-grpc-v1.10.1_GH0.tar.gz) = 4f7aca656d1fa4586b1cf1980415601f7c198f89e691bf13429f9b46440ee250
+SIZE (grpc-grpc-v1.10.1_GH0.tar.gz) = 13161268
+SHA256 (google-benchmark-v1.4.0_GH0.tar.gz) = 616f252f37d61b15037e3c2ef956905baf9c9eecfeab400cb3ad25bae714e214
+SIZE (google-benchmark-v1.4.0_GH0.tar.gz) = 125274
