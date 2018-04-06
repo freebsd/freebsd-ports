@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	klog
-PORTVERSION=	0.9.2.3
+PORTVERSION=	0.9.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake
-USE_QT5=	buildtools_build core gui linguisttools_build network \
+USE_QT5=	buildtools_build core gui linguisttools_build multimedia network \
 		printsupport sql sql-sqlite3_run widgets
 DESKTOP_ENTRIES=	"KLog" "Simple Amateur Radio Logging Program" \
 		"" "klog" "Network;HamRadio;" \
@@ -22,6 +22,11 @@ PLIST_FILES=	bin/klog \
 		${DATADIR}/translations/klog_ca.qm \
 		${DATADIR}/translations/klog_es.qm \
 		${DATADIR}/translations/klog_ja.qm \
+		${DATADIR}/translations/klog_da.qm \
+		${DATADIR}/translations/klog_fi.qm \
+		${DATADIR}/translations/klog_hr.qm \
+		${DATADIR}/translations/klog_it.qm \
+		${DATADIR}/translations/klog_pl.qm \
 		man/man1/klog.1.gz
 
 post-patch:
@@ -30,13 +35,13 @@ post-patch:
 		s|);|, "${DATADIR}/translations/");|' \
 			${WRKSRC}/main.cpp
 
-post-build:
-	${LRELEASE} ${WRKSRC}/${PORTNAME}.pro
+#post-build:
+#	${LRELEASE} ${WRKSRC}/${PORTNAME}.pro
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/klog ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/target/klog ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}/translations
-	${INSTALL_DATA} ${WRKSRC}/translations/klog_*.qm \
+	${INSTALL_DATA} ${WRKSRC}/build/target/translations/klog_*.qm \
 		${STAGEDIR}${DATADIR}/translations
 	${INSTALL_MAN} ${WRKSRC}/klog.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
