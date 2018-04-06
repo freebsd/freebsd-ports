@@ -30,6 +30,7 @@ WX_CONF_ARGS=	absolute
 USES=		autoreconf dos2unix gmake iconv jpeg openal:al,alut perl5 pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
+LLD_UNSAFE=	yes
 
 DOS2UNIX_GLOB=	*.h *.cpp
 
