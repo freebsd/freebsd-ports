@@ -133,6 +133,11 @@ CONFLICTS_INSTALL?=	${PORTNAME}-kde4-[0-9]*
 MASTER_SITES?=		KDE/Attic/applications/${KDE_APPLICATIONS_VERSION}/src
 .      else
 MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/applications/${KDE_APPLICATIONS_VERSION}/src
+# Let bsd.port.mk create the plist-entries for the documentation.
+# KDE Applications ports install their documentation to
+# ${PREFIX}/share/doc.
+DOCSDIR=		${PREFIX}/share/doc
+PORTDOCS?=		HTML/*
 # Further pass along a SHLIB_VER PLIST_SUB
 PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER}
 .      endif
