@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-sdk
-PORTVERSION=	195.0.0
+PORTVERSION=	196.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -31,7 +31,8 @@ do-install:
 	( cd ${WRKSRC} ; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/google-cloud-sdk )
 .for x in bq gcloud git-credential-gcloud.sh gsutil
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/google-cloud-sdk/bin/${x}
-	${LN} -s ${PREFIX}/google-cloud-sdk/bin/${x} ${STAGEDIR}${PREFIX}/bin/${x}
+	${RLN} ${STAGEDIR}${PREFIX}/google-cloud-sdk/bin/${x} \
+		${STAGEDIR}${PREFIX}/bin/${x}
 .endfor
 
 .include <bsd.port.mk>
