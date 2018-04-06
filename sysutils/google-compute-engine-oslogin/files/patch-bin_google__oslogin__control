@@ -1,6 +1,6 @@
---- bin/google_oslogin_control.orig	2017-12-13 23:47:59 UTC
+--- bin/google_oslogin_control.orig	2018-02-27 22:53:04 UTC
 +++ bin/google_oslogin_control
-@@ -65,29 +65,31 @@ overwrite_file() {
+@@ -65,22 +65,24 @@ overwrite_file() {
  
  remove_from_config() {
    config=$1
@@ -30,17 +30,20 @@
  }
  
  add_to_pam_config() {
-   remove_from_config ${pam_config}
--  sed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_admin}" ${pam_config}.new
--  sed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_login}" ${pam_config}.new
--  sed -i "/pam_loginuid.so/ a${added_comment}\n${pam_homedir}" ${pam_config}.new
-+  gsed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_admin}" ${pam_config}.new
-+  gsed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_login}" ${pam_config}.new
-+  gsed -i "/session.*pam_permit.so/ a${added_comment}\n${pam_homedir}" ${pam_config}.new
+@@ -97,9 +99,9 @@ ${pam_homedir}
+ "
+     echo "${added_config}$(cat ${pam_config}.new)" > ${pam_config}.new
+   else
+-    sed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_admin}" ${pam_config}.new
+-    sed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_login}" ${pam_config}.new
+-    sed -i "/pam_loginuid.so/ a${added_comment}\n${pam_homedir}" ${pam_config}.new
++    gsed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_admin}" ${pam_config}.new
++    gsed -i "/account.*pam_nologin.so/ a${added_comment}\n${pam_login}" ${pam_config}.new
++    gsed -i "/session.*pam_permit.so/ a${added_comment}\n${pam_homedir}" ${pam_config}.new
+   fi
  }
  
- restart_service() {
-@@ -100,7 +102,7 @@ restart_service() {
+@@ -113,7 +115,7 @@ restart_service() {
      fi
    fi
    if which service > /dev/null 2>&1; then
