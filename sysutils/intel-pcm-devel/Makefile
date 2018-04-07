@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	intel-pcm
-PORTVERSION=	201710
+DISTVERSION=	g20180319
 CATEGORIES=	sysutils
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	imp@FreeBSD.org
+MAINTAINER=	egypcio@googlemail.com
 COMMENT=	Process Count Monitor (PCM) for Intel processors
 
 LICENSE=	BSD3CLAUSE
@@ -18,9 +19,9 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	opcm
 GH_PROJECT=	pcm
-GH_TAGNAME=	201710
+GH_TAGNAME=	e7e3dcc
 
-CONFLICTS_INSTALL=	intel-pcm-devel
+CONFLICTS_INSTALL=	intel-pcm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/*.x ${STAGEDIR}${PREFIX}/sbin
