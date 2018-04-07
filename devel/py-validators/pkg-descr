@@ -1,0 +1,10 @@
+Python has all kinds of data validation tools, but every one of them seems to
+require defining a schema or form. This is a simple validation library where
+validating a simple value does not require defining a form or a schema.
+
+  >>> import validators
+
+  >>> validators.email('someone@example.com')
+  True
+
+WWW: https://pypi.python.org/pypi/validators
