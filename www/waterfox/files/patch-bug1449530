@@ -1,0 +1,151 @@
+commit 23ab7188ecaa
+Author: Alexander Surkov <surkov.alexander@gmail.com>
+Date:   Thu Apr 5 16:07:35 2018 -0400
+
+    Bug 1449530 - Clean up ATK states mapping. r=eeejay, a=RyanVM
+---
+ accessible/atk/AccessibleWrap.cpp | 46 ++++++++++++++++++++++-----------------
+ accessible/atk/nsStateMap.h       | 21 +++++++-----------
+ accessible/base/States.h          |  5 +++++
+ 3 files changed, 39 insertions(+), 33 deletions(-)
+
+diff --git accessible/atk/AccessibleWrap.cpp accessible/atk/AccessibleWrap.cpp
+index 3abfff51cd18..0a4c44f1b4f4 100644
+--- accessible/atk/AccessibleWrap.cpp
++++ accessible/atk/AccessibleWrap.cpp
+@@ -930,9 +930,8 @@ TranslateStates(uint64_t aState, AtkStateSet* aStateSet)
+     aState &= ~states::EDITABLE;
+ 
+   // Convert every state to an entry in AtkStateMap
+-  uint32_t stateIndex = 0;
+   uint64_t bitMask = 1;
+-  while (gAtkStateMap[stateIndex].stateMapEntryType != kNoSuchState) {
++  for (auto stateIndex = 0U; stateIndex < gAtkStateMapLen; stateIndex++) {
+     if (gAtkStateMap[stateIndex].atkState) { // There's potentially an ATK state for this
+       bool isStateOn = (aState & bitMask) != 0;
+       if (gAtkStateMap[stateIndex].stateMapEntryType == kMapOpposite) {
+@@ -943,7 +942,6 @@ TranslateStates(uint64_t aState, AtkStateSet* aStateSet)
+       }
+     }
+     bitMask <<= 1;
+-    ++ stateIndex;
+   }
+ }
+ 
+@@ -1539,24 +1537,32 @@ a11y::ProxyCaretMoveEvent(ProxyAccessible* aTarget, int32_t aOffset)
+ void
+ MaiAtkObject::FireStateChangeEvent(uint64_t aState, bool aEnabled)
+ {
+-    int32_t stateIndex = AtkStateMap::GetStateIndexFor(aState);
+-    if (stateIndex >= 0) {
+-        NS_ASSERTION(gAtkStateMap[stateIndex].stateMapEntryType != kNoSuchState,
+-                     "No such state");
+-
+-        if (gAtkStateMap[stateIndex].atkState != kNone) {
+-            NS_ASSERTION(gAtkStateMap[stateIndex].stateMapEntryType != kNoStateChange,
+-                         "State changes should not fired for this state");
+-
+-            if (gAtkStateMap[stateIndex].stateMapEntryType == kMapOpposite)
+-                aEnabled = !aEnabled;
+-
+-            // Fire state change for first state if there is one to map
+-            atk_object_notify_state_change(&parent,
+-                                           gAtkStateMap[stateIndex].atkState,
+-                                           aEnabled);
+-        }
++  auto state = aState;
++  int32_t stateIndex = -1;
++  while (state > 0) {
++    ++stateIndex;
++    state >>= 1;
++  }
++
++  MOZ_ASSERT(stateIndex >= 0 && stateIndex < static_cast<int32_t>(gAtkStateMapLen),
++             "No ATK state for internal state was found");
++  if (stateIndex < 0 || stateIndex >= static_cast<int32_t>(gAtkStateMapLen)) {
++    return;
++  }
++
++  if (gAtkStateMap[stateIndex].atkState != kNone) {
++    MOZ_ASSERT(gAtkStateMap[stateIndex].stateMapEntryType != kNoStateChange,
++                 "State changes should not fired for this state");
++
++    if (gAtkStateMap[stateIndex].stateMapEntryType == kMapOpposite) {
++      aEnabled = !aEnabled;
+     }
++
++    // Fire state change for first state if there is one to map
++    atk_object_notify_state_change(&parent,
++                                   gAtkStateMap[stateIndex].atkState,
++                                   aEnabled);
++  }
+ }
+ 
+ void
+diff --git accessible/atk/nsStateMap.h accessible/atk/nsStateMap.h
+index 38aad5365a4e..d715d215a953 100644
+--- accessible/atk/nsStateMap.h
++++ accessible/atk/nsStateMap.h
+@@ -7,6 +7,8 @@
+ #include <atk/atk.h>
+ #include "AccessibleWrap.h"
+ 
++#include <type_traits>
++
+ /******************************************************************************
+ The following accessible states aren't translated, just ignored:
+   STATE_READONLY:        Supported indirectly via EXT_STATE_EDITABLE
+@@ -39,7 +41,6 @@ enum EStateMapEntryType {
+   kMapDirectly,
+   kMapOpposite,   // For example, UNAVAILABLE is the opposite of ENABLED
+   kNoStateChange, // Don't fire state change event
+-  kNoSuchState
+ };
+ 
+ const AtkStateType kNone = ATK_STATE_INVALID;
+@@ -47,16 +48,6 @@ const AtkStateType kNone = ATK_STATE_INVALID;
+ struct AtkStateMap {
+   AtkStateType atkState;
+   EStateMapEntryType stateMapEntryType;
+-
+-  static int32_t GetStateIndexFor(uint64_t aState)
+-  {
+-    int32_t stateIndex = -1;
+-    while (aState > 0) {
+-      ++ stateIndex;
+-      aState >>= 1;
+-    }
+-    return stateIndex;  // Returns -1 if not mapped
+-  }
+ };
+ 
+ 
+@@ -110,6 +101,10 @@ static const AtkStateMap gAtkStateMap[] = {                     // Cross Platfor
+   { ATK_STATE_SENSITIVE,                      kMapDirectly },   // states::SENSITIVE               = 1 << 45
+   { ATK_STATE_EXPANDABLE,                     kMapDirectly },   // states::EXPANDABLE              = 1 << 46
+   { kNone,                                    kMapDirectly },   // states::PINNED                  = 1 << 47
+-  { ATK_STATE_ACTIVE,                         kMapDirectly },   // states::CURRENT                 = 1 << 48
+-  { kNone,                                    kNoSuchState },   //                                 = 1 << 49
++  { ATK_STATE_ACTIVE,                         kMapDirectly }    // states::CURRENT                 = 1 << 48
+ };
++
++static const auto gAtkStateMapLen = std::extent<decltype(gAtkStateMap)>::value;
++
++static_assert(((uint64_t) 0x1) << (gAtkStateMapLen - 1) == mozilla::a11y::states::LAST_ENTRY,
++              "ATK states map is out of sync with internal states");
+diff --git accessible/base/States.h accessible/base/States.h
+index 786d36076b18..637b08de1231 100644
+--- accessible/base/States.h
++++ accessible/base/States.h
+@@ -283,6 +283,11 @@ namespace states {
+    */
+   const uint64_t CURRENT = ((uint64_t) 0x1) << 48;
+ 
++  /**
++   * Not a real state, used for static assertions.
++   */
++  const uint64_t LAST_ENTRY = CURRENT;
++
+ } // namespace states
+ } // namespace a11y
+ } // namespace mozilla

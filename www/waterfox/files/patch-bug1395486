@@ -1,0 +1,53 @@
+commit c978a96e849c
+Author: Chung-Sheng Fu <cfu@mozilla.com>
+Date:   Thu Aug 31 17:06:22 2017 +0800
+
+    Bug 1395486 - Move resource://gre-resource/plaintext.css to resource://content-accessible/plaintext.css. r=heycam
+    
+    MozReview-Commit-ID: Efz2Z78W2ix
+    
+    --HG--
+    extra : rebase_source : 0522f382acd14372c6fea0a695f1d09300810912
+---
+ layout/style/jar.mn                   | 1 -
+ layout/style/moz.build                | 1 +
+ parser/html/nsHtml5PlainTextUtils.cpp | 2 +-
+ 3 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git layout/style/jar.mn layout/style/jar.mn
+index 81af0f7540fc..4a4418218290 100644
+--- layout/style/jar.mn
++++ layout/style/jar.mn
+@@ -6,7 +6,6 @@ toolkit.jar:
+ *  res/ua.css                                (res/ua.css)
+ *  res/html.css                              (res/html.css)
+    res/quirk.css                             (res/quirk.css)
+-   res/plaintext.css                         (res/plaintext.css)
+    res/counterstyles.css                     (res/counterstyles.css)
+    res/noscript.css                          (res/noscript.css)
+    res/noframes.css                          (res/noframes.css)
+diff --git layout/style/moz.build layout/style/moz.build
+index d4fbd0fef384..b5b19ee62232 100644
+--- layout/style/moz.build
++++ layout/style/moz.build
+@@ -304,6 +304,7 @@ RESOURCE_FILES += [
+ 
+ CONTENT_ACCESSIBLE_FILES += [
+     'ImageDocument.css',
++    'res/plaintext.css',
+     'res/viewsource.css',
+     'TopLevelImageDocument.css',
+     'TopLevelVideoDocument.css',
+diff --git parser/html/nsHtml5PlainTextUtils.cpp parser/html/nsHtml5PlainTextUtils.cpp
+index e68522987784..920c5eee89d1 100644
+--- parser/html/nsHtml5PlainTextUtils.cpp
++++ parser/html/nsHtml5PlainTextUtils.cpp
+@@ -22,7 +22,7 @@ nsHtml5PlainTextUtils::NewLinkAttributes()
+   nsHtml5String type = nsHtml5Portability::newStringFromLiteral("text/css");
+   linkAttrs->addAttribute(nsHtml5AttributeName::ATTR_TYPE, type, -1);
+   nsHtml5String href = nsHtml5Portability::newStringFromLiteral(
+-    "resource://gre-resources/plaintext.css");
++    "resource://content-accessible/plaintext.css");
+   linkAttrs->addAttribute(nsHtml5AttributeName::ATTR_HREF, href, -1);
+ 
+   nsresult rv;

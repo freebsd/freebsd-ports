@@ -1,0 +1,26 @@
+commit 37c440a66fbb
+Author: accakks <aakanksha.jain8@gmail.com>
+Date:   Fri Mar 23 20:04:34 2018 +0530
+
+    Bug 1437880 - Disable "Remove Selected" button in the site data manager dialog if a website is deselected. r=prathiksha, a=RyanVM
+    
+    MozReview-Commit-ID: 7YhXjg84QSx
+    
+    --HG--
+    extra : source : e7de3b21524c2d56a5c82ecde470b43f3ddb2d87
+---
+ browser/components/preferences/siteDataSettings.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git browser/components/preferences/siteDataSettings.js browser/components/preferences/siteDataSettings.js
+index 2be61084a8bd..141a4ec850ba 100644
+--- browser/components/preferences/siteDataSettings.js
++++ browser/components/preferences/siteDataSettings.js
+@@ -263,6 +263,7 @@ let gSiteDataSettings = {
+   onClickTreeCol(e) {
+     this._sortSites(this._sites, e.target);
+     this._buildSitesList(this._sites);
++    this._list.clearSelection();
+   },
+ 
+   onCommandSearch() {
