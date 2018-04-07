@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	traefik
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}:webui
 DISTFILES=	${PORTNAME}-webui-static-${PORTVERSION}${EXTRACT_SUFX}:webui
@@ -51,6 +50,10 @@ TRAEFIK_LDARGS=	-ldflags "-s -w \
 
 post-extract:
 	@${MV} ${WRKDIR}/static ${WRKSRC}
+	# Install a sample configuration file which works by default
+	# without manual tweaking
+	${REINPLACE_CMD} -e 's|:80|:8088|' \
+			 -e 's|\[docker|# \[docker|' ${WRKSRC}/traefik.sample.toml
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/containous/traefik; \
