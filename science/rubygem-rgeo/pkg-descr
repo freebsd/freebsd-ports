@@ -1,0 +1,21 @@
+RGeo is a geospatial data library for Ruby.
+
+RGeo is a key component for writing location-aware applications in the Ruby
+programming language. At its core is an implementation of the industry standard
+OGC Simple Features Specification, which provides data representations of
+geometric objects such as points, lines, and polygons, along with a set of
+geometric analysis operations. This makes it ideal for modeling geolocation
+data. It also supports a suite of optional add-on modules that provide various
+geolocation-related services.
+
+Use the core rgeo gem to:
+- Represent spatial and geolocation data objects such as points, lines, and
+  polygons in your Ruby application.
+- Perform standard spatial analysis operations such as finding intersections,
+  creating buffers, and computing lengths and areas.
+- Correctly handle spherical geometry, and compute geographic projections for
+  map display and data analysis.
+- Read and write location data in the WKT and WKB representations used by
+  spatial databases.
+
+WWW: https://github.com/rgeo/rgeo
