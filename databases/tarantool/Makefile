@@ -3,6 +3,7 @@
 
 PORTNAME=	tarantool
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
