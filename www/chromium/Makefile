@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	65.0.3325.181
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
