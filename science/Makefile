@@ -199,6 +199,7 @@
     SUBDIR += rubygem-cdo
     SUBDIR += rubygem-rgeo
     SUBDIR += rubygem-rgeo-geojson
+    SUBDIR += rubygem-rgeo-proj4
     SUBDIR += rubygem-ruby-dcl
     SUBDIR += rubygem-ruby-netcdf
     SUBDIR += sigrok-cli
