@@ -12,6 +12,9 @@
 #
 # cpupdate_enable (bool):		Set to NO by default.
 #					Set it to YES to enable cpupdate.
+# cpupdate_irbs_enable (bool):		Enable Indirect Branch Restricted
+#					Speculation after start of cpupdate.
+#					Default is YES.
 # cpupdate_flags (string):		Command line flags for cpupdate.
 #					Default is "-w -u".
 
@@ -19,11 +22,18 @@
 
 name=cpupdate
 rcvar=cpupdate_enable
+start_postcmd="cpupdate_poststart"
 
 load_rc_config $name
 
 : ${cpupdate_enable:="NO"}
 : ${cpupdate_flags="-w -u"}
+: ${cpupdate_irbs_enable="YES"}
 command=%%PREFIX%%/sbin/${name}
+
+cpupdate_poststart() {
+  checkyesno cpupdate_irbs_enable && sysctl -i hw.ibrs_disable=0
+  return 0
+}
 
 run_rc_command "$1"
