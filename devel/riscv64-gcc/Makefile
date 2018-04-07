@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	7.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	riscv64-
 
@@ -32,6 +32,7 @@ GCC_TARGET=	${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS=	--target=${GCC_TARGET} \
+		--with-gxx-include-dir=/usr/include/c++/v1/ \
 		--with-sysroot=/ \
 		--without-newlib \
 		--without-headers \
@@ -59,12 +60,22 @@ CONFIGURE_ARGS=	--target=${GCC_TARGET} \
 ALL_TARGET=	inhibit-libc=true all-gcc
 INSTALL_TARGET=	inhibit-libc=true install-gcc
 
+# Force build of a cross compiler even if the target matches the host.
+CFLAGS+=	-DCROSS_DIRECTORY_STRUCTURE
+
 PLIST_SUB=	GCC_TARGET=${GCC_TARGET} \
 		GCC_VERSION=${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/LIBSTDCXX/ s/stdc\+\+/c\+\+/g ' \
+		${WRKSRC}//gcc/cp/g++spec.c
+	@${REINPLACE_CMD} -e '/LOCAL_INCLUDE_DIR/ d ' \
+		${WRKSRC}//gcc/Makefile.in
 
 post-install:
 	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH} ] ; then ${RM} -r ${STAGEDIR}${PREFIX}/${INFO_PATH}; fi
 	@${RM} ${STAGEDIR}${PREFIX}/man/man7/*
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
 
 BROKEN_aarch64=		fails to package
 
