@@ -1,0 +1,4 @@
+RGeo::Shapefile is an optional module for RGeo for reading geospatial data from
+ESRI shapefiles.
+
+WWW: https://github.com/rgeo/rgeo-shapefile
