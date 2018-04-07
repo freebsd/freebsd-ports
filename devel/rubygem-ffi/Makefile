@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ffi
-PORTVERSION=	1.9.18
+PORTVERSION=	1.9.23
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extension for dynamic libraries & binding functions
 
 LICENSE=	BSD3CLAUSE
