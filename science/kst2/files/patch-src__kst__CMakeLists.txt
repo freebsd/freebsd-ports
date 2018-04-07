@@ -1,6 +1,6 @@
---- src/kst/CMakeLists.txt.orig	2014-04-07 16:11:03 UTC
+--- src/kst/CMakeLists.txt.orig	2018-04-05 13:33:30 UTC
 +++ src/kst/CMakeLists.txt
-@@ -37,9 +37,7 @@
+@@ -37,9 +37,7 @@ kst_install_executable()
  if(UNIX AND NOT APPLE)
  	set(man ${CMAKE_BINARY_DIR}/${kst_binary_name}.1)
  	configure_file(${kst_dir}/src/kst/kst.1.txt ${man})
@@ -11,13 +11,3 @@
  
  	set(k ${kst_dir}/src/kst)
  #	install(FILES ${k}/kstplugin.desktop
-@@ -49,8 +47,7 @@
- #	              ${k}/kstfilter.desktop
- #	              ${k}/kstextension.desktop
- #	                                 DESTINATION share/servicetypes/kst)
--	install(FILES ${k}/kst2.desktop   DESTINATION share/applnk/Graphics)
--	install(FILES ${k}/x-kst2.desktop DESTINATION share/mimelink/application)
-+	install(FILES ${k}/x-kst2.desktop DESTINATION share/mimelnk/application)
- 	install(FILES ${k}/kst2.desktop   DESTINATION share/applications)
- 
- #       icons
