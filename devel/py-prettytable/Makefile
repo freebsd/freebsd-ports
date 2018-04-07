@@ -11,6 +11,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for displaying tabular data in an ASCII table format
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 
