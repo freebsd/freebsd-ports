@@ -931,6 +931,7 @@
     SUBDIR += rubygem-dbd-odbc
     SUBDIR += rubygem-dbd-pg
     SUBDIR += rubygem-dbd-sqlite3
+    SUBDIR += rubygem-dbf
     SUBDIR += rubygem-dbi
     SUBDIR += rubygem-dm-aggregates
     SUBDIR += rubygem-dm-chunked_query
