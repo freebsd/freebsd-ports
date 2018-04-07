@@ -1,18 +1,19 @@
---- CMakeLists.txt.orig	2014-07-20 09:38:16 UTC
+--- CMakeLists.txt.orig	2018-04-05 13:33:30 UTC
 +++ CMakeLists.txt
-@@ -64,11 +64,6 @@
+@@ -72,12 +72,6 @@ endif()
  project(Kst)
  
  
 -if(kst_release)
 -    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+-    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DQT_NO_WARNING_OUTPUT")
 -else()
 -    set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
 -endif()
  
  
  if(kst_sanitize)
-@@ -226,11 +219,6 @@
+@@ -239,11 +233,6 @@ message(STATUS)
  # React on options
  
  
