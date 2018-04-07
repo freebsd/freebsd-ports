@@ -130,6 +130,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/c64_cass.xml
 %%DATADIR%%/hash/c64_flop.xml
 %%DATADIR%%/hash/c65_flop.xml
+%%DATADIR%%/hash/camplynx_flop.xml
 %%DATADIR%%/hash/casloopy.xml
 %%DATADIR%%/hash/cbm2_cart.xml
 %%DATADIR%%/hash/cbm2_flop.xml
@@ -230,6 +231,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/ibmpcjr_cart.xml
 %%DATADIR%%/hash/ibmpcjr_flop.xml
 %%DATADIR%%/hash/interact.xml
+%%DATADIR%%/hash/interpro.xml
 %%DATADIR%%/hash/intv.hsi
 %%DATADIR%%/hash/intv.xml
 %%DATADIR%%/hash/intvecs.xml
@@ -375,6 +377,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/pofo.xml
 %%DATADIR%%/hash/poisk1_flop.xml
 %%DATADIR%%/hash/pokemini.xml
+%%DATADIR%%/hash/poly_flop.xml
 %%DATADIR%%/hash/princ.xml
 %%DATADIR%%/hash/pro128_cart.xml
 %%DATADIR%%/hash/pro128_cass.xml
