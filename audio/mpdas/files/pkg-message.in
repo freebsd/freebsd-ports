@@ -8,7 +8,11 @@ your home directory or in %%PREFIX%%/etc/mpdasrc.
 Syntax is easy. Example:
 
 username = lastfmuser
-password = 5f4dcc3b5aa765d61d8327deb882cf99
+password = password
+
+NOTE:
+As of version 0.4.3 the password is set in plaintext, whereas
+previously it had to be an MD5 hash.
 
 Use the runas variable to change the UID the process runs in.
 
