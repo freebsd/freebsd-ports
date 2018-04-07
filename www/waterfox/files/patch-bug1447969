@@ -1,0 +1,26 @@
+commit 7cc076355a82
+Author: Gijs Kruitbosch <gijskruitbosch@gmail.com>
+Date:   Wed Mar 28 14:57:09 2018 +0100
+
+    Bug 1447969 - r=nchevobbe,a=abillings
+    
+    --HG--
+    extra : rebase_source : e87a95170d907ddbc486e8536cee8685d6fe4a50
+---
+ devtools/client/debugger/new/debugger.js     | 2 +-
+ devtools/client/webconsole/console-output.js | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git devtools/client/webconsole/console-output.js devtools/client/webconsole/console-output.js
+index 98fa15cb2858..701a38e970bd 100644
+--- devtools/client/webconsole/console-output.js
++++ devtools/client/webconsole/console-output.js
+@@ -29,7 +29,7 @@ const defer = require("devtools/shared/defer");
+ const MAX_STRING_GRIP_LENGTH = 36;
+ const {ELLIPSIS} = require("devtools/shared/l10n");
+ 
+-const validProtocols = /^(http|https|ftp|data|javascript|resource|chrome):/i;
++const validProtocols = /^(http|https|ftp|resource|chrome):/i;
+ 
+ // Constants for compatibility with the Web Console output implementation before
+ // bug 778766.

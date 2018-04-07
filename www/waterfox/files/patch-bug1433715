@@ -1,0 +1,72 @@
+commit bd563cddc5dd
+Author: Jan Henning <jh+bugzilla@buttercookie.de>
+Date:   Sun Jan 28 23:01:42 2018 +0100
+
+    Bug 1433715 - Make fallback folder icon content-accessible. r=Gijs, a=RyanVM
+    
+    The skin used on Firefox for Android doesn't style directory listing, hence we
+    fall back to using the default icon from gre/res/html. As of bug 863246, this
+    location is no longer accessible from content as a resource://, hence the file
+    needs moving into the special content-accessible directory.
+    
+    MozReview-Commit-ID: obtefafqul
+    
+    --HG--
+    extra : source : 2703a2d5b196fb2fb61929e0ce5d3596799d52cd
+---
+ browser/installer/package-manifest.in             | 1 -
+ layout/generic/moz.build                          | 2 +-
+ mobile/android/installer/package-manifest.in      | 1 -
+ netwerk/streamconv/converters/nsIndexedToHTML.cpp | 2 +-
+ 4 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git browser/installer/package-manifest.in browser/installer/package-manifest.in
+index b215cada67ce..015568109c48 100644
+--- browser/installer/package-manifest.in
++++ browser/installer/package-manifest.in
+@@ -690,7 +690,6 @@
+ #endif
+ @RESPATH@/res/fonts/*
+ @RESPATH@/res/dtd/*
+-@RESPATH@/res/html/*
+ @RESPATH@/res/language.properties
+ #ifdef XP_MACOSX
+ @RESPATH@/res/MainMenu.nib/
+diff --git layout/generic/moz.build layout/generic/moz.build
+index 13d64901ebf6..c277ca131e81 100644
+--- layout/generic/moz.build
++++ layout/generic/moz.build
+@@ -212,7 +212,7 @@ LOCAL_INCLUDES += [
+ 
+ JAR_MANIFESTS += ['jar.mn']
+ 
+-RESOURCE_FILES.html = [
++CONTENT_ACCESSIBLE_FILES.html = [
+     'folder.png',
+ ]
+ 
+diff --git mobile/android/installer/package-manifest.in mobile/android/installer/package-manifest.in
+index 01c8bc32408d..3489bd812787 100644
+--- mobile/android/installer/package-manifest.in
++++ mobile/android/installer/package-manifest.in
+@@ -469,7 +469,6 @@
+ @BINPATH@/res/table-remove-row.gif
+ @BINPATH@/res/grabber.gif
+ @BINPATH@/res/dtd/*
+-@BINPATH@/res/html/*
+ @BINPATH@/res/language.properties
+ 
+ #ifndef MOZ_ANDROID_EXCLUDE_FONTS
+diff --git netwerk/streamconv/converters/nsIndexedToHTML.cpp netwerk/streamconv/converters/nsIndexedToHTML.cpp
+index f18c39e99c8c..91372de3a617 100644
+--- netwerk/streamconv/converters/nsIndexedToHTML.cpp
++++ netwerk/streamconv/converters/nsIndexedToHTML.cpp
+@@ -351,7 +351,7 @@ nsIndexedToHTML::DoOnStartRequest(nsIRequest* request, nsISupports *aContext,
+                          "  vertical-align: middle;\n"
+                          "}\n"
+                          ".dir::before {\n"
+-                         "  content: url(resource://gre/res/html/folder.png);\n"
++                         "  content: url(resource://content-accessible/html/folder.png);\n"
+                          "}\n"
+                          "</style>\n"
+                          "<link rel=\"stylesheet\" media=\"screen, projection\" type=\"text/css\""
