@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpdas
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	audio
 MASTER_SITES=	http://50hz.ws/mpdas/
 
