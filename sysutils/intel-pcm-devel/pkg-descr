@@ -1,0 +1,7 @@
+Processor Counter Monitor (PCM) is an application programming interface (API)
+and a set of tools based on the API to monitor performance and energy metrics
+of Intel(r) Core(tm), Xeon(r) and Atom(tm) processors.
+
+This requires the 'cpuctl' module to be loaded.
+
+WWW: https://github.com/opcm/pcm
