@@ -1,0 +1,4 @@
+Tautulli now runs as a dedicated user. If you are upgrading from a
+previous release you may need to fix permissions of the data directory:
+
+chown -R tautulli:tautulli /var/db/tautulli

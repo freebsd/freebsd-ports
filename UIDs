@@ -838,7 +838,7 @@ vuls:*:888:888::0:0:VULnerability Scanner:/var/db/vuls:/usr/sbin/nologin
 mattermost:*:889:889::0:0:Mattermost:/usr/local/www/mattermost:/usr/sbin/nologin
 matterircd:*:890:890::0:0:Matterircd User:/nonexistent:/usr/sbin/nologin
 # free: 891
-# free: 892
+tautulli:*:892:892::0:0:Tautulli user:/nonexistent:/usr/sbin/nologin
 logstash:*:893:893::0:0:Logstash user:/nonexistent:/usr/sbin/nologin
 arangodb:*:894:894::0:0:ArangoDB pseudo-user:/var/db/arangodb:/usr/sbin/nologin
 snmptt:*:895:895::0:0:SNMPTT User:/var/spool/snmptt:/usr/sbin/nologin
