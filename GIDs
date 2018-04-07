@@ -827,13 +827,13 @@ chronyd:*:849:
 # free: 884
 # free: 885
 # free: 886
-# free: 887
+pdagent:*:887:
 vuls:*:888:
 mattermost:*:889:
 matterircd:*:890:
 # free: 891
 # free: 892
-# free: 893
+logstash:*:893:
 arangodb:*:894:
 snmptt:*:895:
 istat:*:896:

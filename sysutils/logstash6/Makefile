@@ -3,7 +3,7 @@
 
 PORTNAME=	logstash
 PORTVERSION=	6.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
 PKGNAMESUFFIX=	6
@@ -25,6 +25,9 @@ JAVA_VERSION=	1.8+
 JAVA_RUN=	yes
 NO_BUILD=	yes
 
+USERS=	logstash
+GROUPS=	logstash
+
 LOGSTASH_DIR=	${PREFIX}/${PORTNAME}
 
 USE_RC_SUBR=	logstash
@@ -35,7 +38,7 @@ SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME}
 
 LOGSTASH_CONF_FILES=	jvm.options log4j2.properties logstash.yml pipelines.yml
-LOGSTASH_JRUBY_SUBDIR=	  vendor/jruby/bin
+LOGSTASH_JRUBY_SUBDIR=	vendor/jruby/bin
 LOGSTASH_JRUBY_BIN_FILES=	ast irb jirb jruby jruby.sh rdoc testrb gem \
 				jgem jirb_swing jruby.bash jrubyc rake ri
 
@@ -65,7 +68,7 @@ post-install:
 .endfor
 	${FIND} -s ${STAGEDIR}${PREFIX}/logstash -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
-	${ECHO} "@dir logstash/data" >> ${TMPPLIST}
+	${ECHO} "@dir(logstash,logstash,) logstash/data" >> ${TMPPLIST}
 	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/build_info" >> ${TMPPLIST}
 	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/cache" >> ${TMPPLIST}
 	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/doc" >> ${TMPPLIST}

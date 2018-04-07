@@ -55,6 +55,8 @@ load_rc_config ${name}
 logdir="/var/log"
 
 : ${logstash_enable="NO"}
+: ${logstash_user="logstash"}
+: ${logstash_group="logstash"}
 : ${logstash_home="%%LOGSTASH_HOME%%"}
 : ${logstash_config="%%ETCDIR%%"}
 : ${logstash_log="YES"}
@@ -96,10 +98,10 @@ PATH=/usr/local/bin:$PATH
 
 logstash_precmd()
 {
-    /usr/bin/install -d -o root -g wheel -m 755 ${pidfile%/*}
-    /usr/bin/install -d -o root -g wheel -m 755 ${logstash_log_dir}
-    /usr/bin/install -d -o root -g wheel -m 755 /var/db/logstash
-    /usr/bin/install -d -o root -g wheel -m 755 /var/run/logstash
+    /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 ${pidfile%/*}
+    /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 ${logstash_log_dir}
+    /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 /var/db/logstash
+    /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 /var/run/logstash
 }
 
 configtest()
