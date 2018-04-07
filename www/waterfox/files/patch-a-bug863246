@@ -1,0 +1,1209 @@
+commit 6a8ee766d639
+Author: Chung-Sheng Fu <cfu@mozilla.com>
+Date:   Thu Jun 8 17:44:09 2017 +0800
+
+    Bug 863246 - Content can only load resource:// URIs declared content-accessible in manifests r=billm,bz
+    
+    bz:
+        caps/nsScriptSecurityManager.cpp
+    
+    billm:
+        browser/extensions/activity-stream/jar.mn
+        browser/extensions/onboarding/jar.mn
+        chrome/RegistryMessageUtils.h
+        chrome/nsChromeRegistry.h
+        chrome/nsChromeRegistryChrome.cpp
+        chrome/nsChromeRegistryContent.cpp
+        netwerk/protocol/res/SubstitutingProtocolHandler.cpp
+        netwerk/protocol/res/SubstitutingProtocolHandler.h
+        netwerk/protocol/res/nsIResProtocolHandler.idl
+        netwerk/protocol/res/nsISubstitutingProtocolHandler.idl
+        netwerk/protocol/res/nsResProtocolHandler.cpp
+        netwerk/protocol/res/nsResProtocolHandler.h
+        xpcom/components/ManifestParser.cpp
+    
+    MozReview-Commit-ID: 1RXeNn7jdBf
+    
+    --HG--
+    extra : rebase_source : 83000448abf58b7956c2eb122604d7ab38ad0f7c
+---
+ browser/extensions/activity-stream/jar.mn          |  2 +-
+ browser/extensions/onboarding/jar.mn               |  4 +-
+ browser/extensions/shield-recipe-client/jar.mn     |  4 +-
+ caps/nsScriptSecurityManager.cpp                   | 54 ++++++++++++++++++----
+ chrome/RegistryMessageUtils.h                      | 10 +++-
+ chrome/nsChromeRegistryChrome.cpp                  | 10 +++-
+ chrome/nsChromeRegistryContent.cpp                 |  2 +-
+ .../protocol/res/SubstitutingProtocolHandler.cpp   | 53 +++++++++++++++++----
+ netwerk/protocol/res/SubstitutingProtocolHandler.h | 26 +++++++++--
+ netwerk/protocol/res/nsIResProtocolHandler.idl     |  1 +
+ .../res/nsISubstitutingProtocolHandler.idl         | 10 ++++
+ netwerk/protocol/res/nsResProtocolHandler.cpp      | 37 +++++++++++++--
+ netwerk/protocol/res/nsResProtocolHandler.h        |  3 +-
+ xpcom/components/ManifestParser.cpp                |  4 +-
+ 14 files changed, 183 insertions(+), 37 deletions(-)
+
+diff --git caps/nsScriptSecurityManager.cpp caps/nsScriptSecurityManager.cpp
+index 5dcb7f7ec424..4b797faf1eb3 100644
+--- caps/nsScriptSecurityManager.cpp
++++ caps/nsScriptSecurityManager.cpp
+@@ -53,6 +53,7 @@
+ #include "nsIURIFixup.h"
+ #include "nsCDefaultURIFixup.h"
+ #include "nsIChromeRegistry.h"
++#include "nsIResProtocolHandler.h"
+ #include "nsIContentSecurityPolicy.h"
+ #include "nsIAsyncVerifyRedirectCallback.h"
+ #include "mozilla/Preferences.h"
+@@ -915,10 +916,9 @@ nsScriptSecurityManager::CheckLoadURIFlags(nsIURI *aSourceURI,
+     NS_ENSURE_SUCCESS(rv, rv);
+     if (hasFlags) {
+         if (aFlags & nsIScriptSecurityManager::ALLOW_CHROME) {
+-
+-            // For now, don't change behavior for resource:// or moz-icon:// and
+-            // just allow them.
+-            if (!targetScheme.EqualsLiteral("chrome")) {
++            // For now, don't change behavior for moz-icon:// and just allow it.
++            if (!targetScheme.EqualsLiteral("chrome")
++                    && !targetScheme.EqualsLiteral("resource")) {
+                 return NS_OK;
+             }
+ 
+@@ -939,15 +939,51 @@ nsScriptSecurityManager::CheckLoadURIFlags(nsIURI *aSourceURI,
+                 return NS_OK;
+             }
+ 
+-            // Allow the load only if the chrome package is whitelisted.
+-            nsCOMPtr<nsIXULChromeRegistry> reg(do_GetService(
+-                                                 NS_CHROMEREGISTRY_CONTRACTID));
+-            if (reg) {
++            if (targetScheme.EqualsLiteral("resource")) {
++                // Mochitests that need to load resource:// URIs not declared
++                // content-accessible in manifests should set the preference
++                // "security.all_resource_uri_content_accessible" true.
++                static bool sSecurityPrefCached = false;
++                static bool sAllResourceUriContentAccessible = false;
++                if (!sSecurityPrefCached) {
++                    sSecurityPrefCached = true;
++                    Preferences::AddBoolVarCache(
++                            &sAllResourceUriContentAccessible,
++                            "security.all_resource_uri_content_accessible",
++                            false);
++                }
++                if (sAllResourceUriContentAccessible) {
++                    return NS_OK;
++                }
++
++                nsCOMPtr<nsIProtocolHandler> ph;
++                rv = sIOService->GetProtocolHandler("resource", getter_AddRefs(ph));
++                NS_ENSURE_SUCCESS(rv, rv);
++                if (!ph) {
++                    return NS_ERROR_DOM_BAD_URI;
++                }
++
++                nsCOMPtr<nsIResProtocolHandler> rph = do_QueryInterface(ph);
++                if (!rph) {
++                    return NS_ERROR_DOM_BAD_URI;
++                }
++
+                 bool accessAllowed = false;
+-                reg->AllowContentToAccess(aTargetBaseURI, &accessAllowed);
++                rph->AllowContentToAccess(aTargetBaseURI, &accessAllowed);
+                 if (accessAllowed) {
+                     return NS_OK;
+                 }
++            } else {
++                // Allow the load only if the chrome package is whitelisted.
++                nsCOMPtr<nsIXULChromeRegistry> reg(
++                        do_GetService(NS_CHROMEREGISTRY_CONTRACTID));
++                if (reg) {
++                    bool accessAllowed = false;
++                    reg->AllowContentToAccess(aTargetBaseURI, &accessAllowed);
++                    if (accessAllowed) {
++                        return NS_OK;
++                    }
++                }
+             }
+         }
+ 
+diff --git chrome/RegistryMessageUtils.h chrome/RegistryMessageUtils.h
+index cb9db55b7ccd..d8cfa616852a 100644
+--- chrome/RegistryMessageUtils.h
++++ chrome/RegistryMessageUtils.h
+@@ -42,12 +42,14 @@ struct SubstitutionMapping
+   nsCString scheme;
+   nsCString path;
+   SerializedURI resolvedURI;
++  uint32_t flags;
+ 
+   bool operator ==(const SubstitutionMapping& rhs) const
+   {
+     return scheme.Equals(rhs.scheme) &&
+            path.Equals(rhs.path) &&
+-           resolvedURI == rhs.resolvedURI;
++           resolvedURI == rhs.resolvedURI &&
++           flags == rhs.flags;
+   }
+ };
+ 
+@@ -140,19 +142,23 @@ struct ParamTraits<SubstitutionMapping>
+     WriteParam(aMsg, aParam.scheme);
+     WriteParam(aMsg, aParam.path);
+     WriteParam(aMsg, aParam.resolvedURI);
++    WriteParam(aMsg, aParam.flags);
+   }
+ 
+   static bool Read(const Message* aMsg, PickleIterator* aIter, paramType* aResult)
+   {
+     nsCString scheme, path;
+     SerializedURI resolvedURI;
++    uint32_t flags;
+ 
+     if (ReadParam(aMsg, aIter, &scheme) &&
+         ReadParam(aMsg, aIter, &path) &&
+-        ReadParam(aMsg, aIter, &resolvedURI)) {
++        ReadParam(aMsg, aIter, &resolvedURI) &&
++        ReadParam(aMsg, aIter, &flags)) {
+       aResult->scheme = scheme;
+       aResult->path = path;
+       aResult->resolvedURI = resolvedURI;
++      aResult->flags = flags;
+       return true;
+     }
+     return false;
+diff --git chrome/nsChromeRegistryChrome.cpp chrome/nsChromeRegistryChrome.cpp
+index 8df9079d1cbd..ae10e65bd381 100644
+--- chrome/nsChromeRegistryChrome.cpp
++++ chrome/nsChromeRegistryChrome.cpp
+@@ -927,7 +927,15 @@ nsChromeRegistryChrome::ManifestResource(ManifestProcessingContext& cx, int line
+     return;
+   }
+ 
+-  rv = rph->SetSubstitution(host, resolved);
++  // By default, Firefox resources are not content-accessible unless the
++  // manifests opts in.
++  bool contentAccessible = (flags & nsChromeRegistry::CONTENT_ACCESSIBLE);
++
++  uint32_t substitutionFlags = 0;
++  if (contentAccessible) {
++    substitutionFlags |= nsIResProtocolHandler::ALLOW_CONTENT_ACCESS;
++  }
++  rv = rph->SetSubstitutionWithFlags(host, resolved, substitutionFlags);
+   if (NS_FAILED(rv)) {
+     LogMessageWithContext(cx.GetManifestURI(), lineno, nsIScriptError::warningFlag,
+                           "Warning: cannot set substitution for '%s'.",
+diff --git chrome/nsChromeRegistryContent.cpp chrome/nsChromeRegistryContent.cpp
+index a066f32f13d2..75141204d0b5 100644
+--- chrome/nsChromeRegistryContent.cpp
++++ chrome/nsChromeRegistryContent.cpp
+@@ -114,7 +114,7 @@ nsChromeRegistryContent::RegisterSubstitution(const SubstitutionMapping& aSubsti
+       return;
+   }
+ 
+-  rv = sph->SetSubstitution(aSubstitution.path, resolvedURI);
++  rv = sph->SetSubstitutionWithFlags(aSubstitution.path, resolvedURI, aSubstitution.flags);
+   if (NS_FAILED(rv))
+     return;
+ }
+diff --git netwerk/protocol/res/SubstitutingProtocolHandler.cpp netwerk/protocol/res/SubstitutingProtocolHandler.cpp
+index d6971b036bdb..1fd362bfb1ff 100644
+--- netwerk/protocol/res/SubstitutingProtocolHandler.cpp
++++ netwerk/protocol/res/SubstitutingProtocolHandler.cpp
+@@ -117,14 +117,15 @@ nsresult
+ SubstitutingProtocolHandler::CollectSubstitutions(InfallibleTArray<SubstitutionMapping>& aMappings)
+ {
+   for (auto iter = mSubstitutions.ConstIter(); !iter.Done(); iter.Next()) {
+-    nsCOMPtr<nsIURI> uri = iter.Data();
++    SubstitutionEntry& entry = iter.Data();
++    nsCOMPtr<nsIURI> uri = entry.baseURI;
+     SerializedURI serialized;
+     if (uri) {
+       nsresult rv = uri->GetSpec(serialized.spec);
+       NS_ENSURE_SUCCESS(rv, rv);
+       uri->GetOriginCharset(serialized.charset);
+     }
+-    SubstitutionMapping substitution = { mScheme, nsCString(iter.Key()), serialized };
++    SubstitutionMapping substitution = { mScheme, nsCString(iter.Key()), serialized, entry.flags };
+     aMappings.AppendElement(substitution);
+   }
+ 
+@@ -131,7 +132,7 @@ SubstitutingProtocolHandler::CollectSubstitutions(InfallibleTArray<SubstitutionM
+ }
+ 
+ nsresult
+-SubstitutingProtocolHandler::SendSubstitution(const nsACString& aRoot, nsIURI* aBaseURI)
++SubstitutingProtocolHandler::SendSubstitution(const nsACString& aRoot, nsIURI* aBaseURI, uint32_t aFlags)
+ {
+   if (GeckoProcessType_Content == XRE_GetProcessType()) {
+     return NS_OK;
+@@ -150,6 +151,7 @@ SubstitutingProtocolHandler::SendSubstitution(const nsACString& aRoot, nsIURI* a
+     nsresult rv = aBaseURI->GetSpec(mapping.resolvedURI.spec);
+     NS_ENSURE_SUCCESS(rv, rv);
+   }
++  mapping.flags = aFlags;
+ 
+   for (uint32_t i = 0; i < parents.Length(); i++) {
+     Unused << parents[i]->SendRegisterChromeItem(mapping);
+@@ -292,11 +294,19 @@ SubstitutingProtocolHandler::AllowPort(int32_t port, const char *scheme, bool *_
+ 
+ nsresult
+ SubstitutingProtocolHandler::SetSubstitution(const nsACString& root, nsIURI *baseURI)
++{
++  // Add-ons use this API but they should not be able to make anything
++  // content-accessible.
++  return SetSubstitutionWithFlags(root, baseURI, 0);
++}
++
++nsresult
++SubstitutingProtocolHandler::SetSubstitutionWithFlags(const nsACString& root, nsIURI *baseURI, uint32_t flags)
+ {
+   if (!baseURI) {
+     mSubstitutions.Remove(root);
+     NotifyObservers(root, baseURI);
+-    return SendSubstitution(root, baseURI);
++    return SendSubstitution(root, baseURI, flags);
+   }
+ 
+   // If baseURI isn't a same-scheme URI, we can set the substitution immediately.
+@@ -310,9 +320,11 @@ SubstitutingProtocolHandler::SetSubstitution(const nsACString& root, nsIURI *bas
+       return NS_ERROR_INVALID_ARG;
+     }
+ 
+-    mSubstitutions.Put(root, baseURI);
++    SubstitutionEntry& entry = mSubstitutions.GetOrInsert(root);
++    entry.baseURI = baseURI;
++    entry.flags = flags;
+     NotifyObservers(root, baseURI);
+-    return SendSubstitution(root, baseURI);
++    return SendSubstitution(root, baseURI, flags);
+   }
+ 
+   // baseURI is a same-type substituting URI, let's resolve it first.
+@@ -324,9 +336,11 @@ SubstitutingProtocolHandler::SetSubstitution(const nsACString& root, nsIURI *bas
+   rv = mIOService->NewURI(newBase, nullptr, nullptr, getter_AddRefs(newBaseURI));
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+-  mSubstitutions.Put(root, newBaseURI);
++  SubstitutionEntry& entry = mSubstitutions.GetOrInsert(root);
++  entry.baseURI = newBaseURI;
++  entry.flags = flags;
+   NotifyObservers(root, baseURI);
+-  return SendSubstitution(root, newBaseURI);
++  return SendSubstitution(root, newBaseURI, flags);
+ }
+ 
+ nsresult
+@@ -334,10 +348,29 @@ SubstitutingProtocolHandler::GetSubstitution(const nsACString& root, nsIURI **re
+ {
+   NS_ENSURE_ARG_POINTER(result);
+ 
+-  if (mSubstitutions.Get(root, result))
++  SubstitutionEntry entry;
++  if (mSubstitutions.Get(root, &entry)) {
++    nsCOMPtr<nsIURI> baseURI = entry.baseURI;
++    baseURI.forget(result);
+     return NS_OK;
++  }
++
++  uint32_t flags;
++  return GetSubstitutionInternal(root, result, &flags);
++}
+ 
+-  return GetSubstitutionInternal(root, result);
++nsresult
++SubstitutingProtocolHandler::GetSubstitutionFlags(const nsACString& root, uint32_t* flags)
++{
++  *flags = 0;
++  SubstitutionEntry entry;
++  if (mSubstitutions.Get(root, &entry)) {
++    *flags = entry.flags;
++    return NS_OK;
++  }
++
++  nsCOMPtr<nsIURI> baseURI;
++  return GetSubstitutionInternal(root, getter_AddRefs(baseURI), flags);
+ }
+ 
+ nsresult
+diff --git netwerk/protocol/res/SubstitutingProtocolHandler.h netwerk/protocol/res/SubstitutingProtocolHandler.h
+index a08bd40de427..874eb1f9d04f 100644
+--- netwerk/protocol/res/SubstitutingProtocolHandler.h
++++ netwerk/protocol/res/SubstitutingProtocolHandler.h
+@@ -9,9 +9,9 @@
+ 
+ #include "nsISubstitutingProtocolHandler.h"
+ 
+-#include "nsInterfaceHashtable.h"
+ #include "nsIOService.h"
+ #include "nsISubstitutionObserver.h"
++#include "nsDataHashtable.h"
+ #include "nsStandardURL.h"
+ #include "mozilla/chrome/RegistryMessageUtils.h"
+ #include "mozilla/Maybe.h"
+@@ -44,13 +44,16 @@ protected:
+   virtual ~SubstitutingProtocolHandler() {}
+   void ConstructInternal();
+ 
+-  MOZ_MUST_USE nsresult SendSubstitution(const nsACString& aRoot, nsIURI* aBaseURI);
++  MOZ_MUST_USE nsresult SendSubstitution(const nsACString& aRoot, nsIURI* aBaseURI, uint32_t aFlags);
++
++  nsresult GetSubstitutionFlags(const nsACString& root, uint32_t* flags);
+ 
+   // Override this in the subclass to try additional lookups after checking
+   // mSubstitutions.
+-  virtual MOZ_MUST_USE nsresult GetSubstitutionInternal(const nsACString& aRoot, nsIURI** aResult)
++  virtual MOZ_MUST_USE nsresult GetSubstitutionInternal(const nsACString& aRoot, nsIURI** aResult, uint32_t* aFlags)
+   {
+     *aResult = nullptr;
++    *aFlags = 0;
+     return NS_ERROR_NOT_AVAILABLE;
+   }
+ 
+@@ -74,13 +77,28 @@ protected:
+   nsIIOService* IOService() { return mIOService; }
+ 
+ private:
++  struct SubstitutionEntry
++  {
++    SubstitutionEntry()
++        : flags(0)
++    {
++    }
++
++    ~SubstitutionEntry()
++    {
++    }
++
++    nsCOMPtr<nsIURI> baseURI;
++    uint32_t flags;
++  };
++
+   // Notifies all observers that a new substitution from |aRoot| to
+   // |aBaseURI| has been set/installed for this protocol handler.
+   void NotifyObservers(const nsACString& aRoot, nsIURI* aBaseURI);
+ 
+   nsCString mScheme;
+   Maybe<uint32_t> mFlags;
+-  nsInterfaceHashtable<nsCStringHashKey,nsIURI> mSubstitutions;
++  nsDataHashtable<nsCStringHashKey, SubstitutionEntry> mSubstitutions;
+   nsCOMPtr<nsIIOService> mIOService;
+ 
+   // The list of observers added with AddObserver that will be
+diff --git netwerk/protocol/res/nsIResProtocolHandler.idl netwerk/protocol/res/nsIResProtocolHandler.idl
+index 56c597f4c73f..7046f2f1d452 100644
+--- netwerk/protocol/res/nsIResProtocolHandler.idl
++++ netwerk/protocol/res/nsIResProtocolHandler.idl
+@@ -11,4 +11,5 @@
+ [scriptable, uuid(241d34ac-9ed5-46d7-910c-7a9d914aa0c5)]
+ interface nsIResProtocolHandler : nsISubstitutingProtocolHandler
+ {
++  boolean allowContentToAccess(in nsIURI url);
+ };
+diff --git netwerk/protocol/res/nsISubstitutingProtocolHandler.idl netwerk/protocol/res/nsISubstitutingProtocolHandler.idl
+index 11be8a5b1e0b..af0f02c28493 100644
+--- netwerk/protocol/res/nsISubstitutingProtocolHandler.idl
++++ netwerk/protocol/res/nsISubstitutingProtocolHandler.idl
+@@ -14,6 +14,11 @@ interface nsISubstitutionObserver;
+ [scriptable, uuid(154c64fd-a69e-4105-89f8-bd7dfe621372)]
+ interface nsISubstitutingProtocolHandler : nsIProtocolHandler
+ {
++  /**
++   * Content script may access files in this package.
++   */
++  const short ALLOW_CONTENT_ACCESS = 1;
++
+   /**
+    * Sets the substitution for the root key:
+    *   resource://root/path ==> baseURI.resolve(path)
+@@ -25,6 +30,11 @@ interface nsISubstitutingProtocolHandler : nsIProtocolHandler
+    */
+   [must_use] void setSubstitution(in ACString root, in nsIURI baseURI);
+ 
++  /**
++   * Same as setSubstitution, but with specific flags.
++   */
++  [must_use] void setSubstitutionWithFlags(in ACString root, in nsIURI baseURI, in uint32_t flags);
++
+   /**
+    * Gets the substitution for the root key.
+    *
+diff --git netwerk/protocol/res/nsResProtocolHandler.cpp netwerk/protocol/res/nsResProtocolHandler.cpp
+index 265bab9ec9dc..57b615e67b07 100644
+--- netwerk/protocol/res/nsResProtocolHandler.cpp
++++ netwerk/protocol/res/nsResProtocolHandler.cpp
+@@ -61,16 +61,36 @@ NS_IMPL_QUERY_INTERFACE(nsResProtocolHandler, nsIResProtocolHandler,
+ NS_IMPL_ADDREF_INHERITED(nsResProtocolHandler, SubstitutingProtocolHandler)
+ NS_IMPL_RELEASE_INHERITED(nsResProtocolHandler, SubstitutingProtocolHandler)
+ 
++NS_IMETHODIMP
++nsResProtocolHandler::AllowContentToAccess(nsIURI *aURI, bool *aResult)
++{
++    *aResult = false;
++
++    nsAutoCString host;
++    nsresult rv = aURI->GetAsciiHost(host);
++    NS_ENSURE_SUCCESS(rv, rv);
++
++    uint32_t flags;
++    rv = GetSubstitutionFlags(host, &flags);
++    NS_ENSURE_SUCCESS(rv, rv);
++
++    *aResult = flags & nsISubstitutingProtocolHandler::ALLOW_CONTENT_ACCESS;
++    return NS_OK;
++}
++
+ nsresult
+-nsResProtocolHandler::GetSubstitutionInternal(const nsACString& root, nsIURI **result)
++nsResProtocolHandler::GetSubstitutionInternal(const nsACString& aRoot,
++                                              nsIURI** aResult,
++                                              uint32_t* aFlags)
+ {
+     nsAutoCString uri;
+ 
+-    if (!ResolveSpecialCases(root, NS_LITERAL_CSTRING("/"), NS_LITERAL_CSTRING("/"), uri)) {
++    if (!ResolveSpecialCases(aRoot, NS_LITERAL_CSTRING("/"), NS_LITERAL_CSTRING("/"), uri)) {
+         return NS_ERROR_NOT_AVAILABLE;
+     }
+ 
+-    return NS_NewURI(result, uri);
++    *aFlags = 0; // No content access.
++    return NS_NewURI(aResult, uri);
+ }
+ 
+ bool
+@@ -98,3 +118,14 @@ nsResProtocolHandler::SetSubstitution(const nsACString& aRoot, nsIURI* aBaseURI)
+     MOZ_ASSERT(!aRoot.Equals(kGRE));
+     return SubstitutingProtocolHandler::SetSubstitution(aRoot, aBaseURI);
+ }
++
++nsresult
++nsResProtocolHandler::SetSubstitutionWithFlags(const nsACString& aRoot,
++                                               nsIURI* aBaseURI,
++                                               uint32_t aFlags)
++{
++    MOZ_ASSERT(!aRoot.Equals(""));
++    MOZ_ASSERT(!aRoot.Equals(kAPP));
++    MOZ_ASSERT(!aRoot.Equals(kGRE));
++    return SubstitutingProtocolHandler::SetSubstitutionWithFlags(aRoot, aBaseURI, aFlags);
++}
+diff --git netwerk/protocol/res/nsResProtocolHandler.h netwerk/protocol/res/nsResProtocolHandler.h
+index 3f6243667586..56bde73c0c1c 100644
+--- netwerk/protocol/res/nsResProtocolHandler.h
++++ netwerk/protocol/res/nsResProtocolHandler.h
+@@ -34,6 +34,7 @@ public:
+     MOZ_MUST_USE nsresult Init();
+ 
+     NS_IMETHOD SetSubstitution(const nsACString& aRoot, nsIURI* aBaseURI) override;
++    NS_IMETHOD SetSubstitutionWithFlags(const nsACString& aRoot, nsIURI* aBaseURI, uint32_t aFlags) override;
+ 
+     NS_IMETHOD GetSubstitution(const nsACString& aRoot, nsIURI** aResult) override
+     {
+@@ -61,7 +62,7 @@ public:
+     }
+ 
+ protected:
+-    MOZ_MUST_USE nsresult GetSubstitutionInternal(const nsACString& aRoot, nsIURI** aResult) override;
++    MOZ_MUST_USE nsresult GetSubstitutionInternal(const nsACString& aRoot, nsIURI** aResult, uint32_t* aFlags) override;
+     virtual ~nsResProtocolHandler() {}
+ 
+     MOZ_MUST_USE bool ResolveSpecialCases(const nsACString& aHost,
+diff --git xpcom/components/ManifestParser.cpp xpcom/components/ManifestParser.cpp
+index ea1a243bae1f..63d7d56523d4 100644
+--- xpcom/components/ManifestParser.cpp
++++ xpcom/components/ManifestParser.cpp
+@@ -56,7 +56,7 @@ struct ManifestDirective
+ 
+   bool allowbootstrap;
+ 
+-  // The contentaccessible flags only apply to content directives.
++  // The contentaccessible flags only apply to content/resource directives.
+   bool contentflags;
+ 
+   // Function to handle this directive. This isn't a union because C++ still
+@@ -123,7 +123,7 @@ static const ManifestDirective kParsingTable[] = {
+     nullptr, &nsChromeRegistry::ManifestOverride, nullptr
+   },
+   {
+-    "resource",         2, false, true, true, true, false,
++    "resource",         2, false, true, true, true, true,
+     nullptr, &nsChromeRegistry::ManifestResource, nullptr
+   }
+ };
+
+commit e5b80e9a8fc1
+Author: Chung-Sheng Fu <cfu@mozilla.com>
+Date:   Thu Jun 8 17:52:46 2017 +0800
+
+    Bug 863246 - Move resources that need to be exposed to web content to locations that are marked as contentaccessible r=billm
+    
+    MozReview-Commit-ID: ArhSHKPYOr8
+    
+    --HG--
+    extra : rebase_source : 888f7ce8f9db809ad5abbe6340af74e9dfb1d73b
+---
+ browser/installer/package-manifest.in        | 6 +++---
+ devtools/client/jsonview/converter-child.js  | 2 +-
+ devtools/client/jsonview/viewer-config.js    | 8 ++++----
+ devtools/shared/jar.mn                       | 2 ++
+ dom/html/ImageDocument.cpp                   | 4 ++--
+ dom/html/VideoDocument.cpp                   | 2 +-
+ dom/xml/resources/XMLPrettyPrint.css         | 2 +-
+ layout/style/jar.mn                          | 2 +-
+ layout/style/moz.build                       | 4 ++++
+ mobile/android/installer/package-manifest.in | 5 +++--
+ parser/html/nsHtml5ViewSourceUtils.cpp       | 2 +-
+ python/mozbuild/mozbuild/frontend/context.py | 8 ++++++++
+ python/mozbuild/mozpack/chrome/manifest.py   | 1 +
+ python/mozbuild/mozpack/packager/formats.py  | 1 +
+ toolkit/content/browser-content.js           | 2 +-
+ 15 files changed, 34 insertions(+), 17 deletions(-)
+
+diff --git browser/installer/package-manifest.in browser/installer/package-manifest.in
+index 641cc024892f..6c4ae941aef2 100644
+--- browser/installer/package-manifest.in
++++ browser/installer/package-manifest.in
+@@ -683,9 +683,6 @@
+ @RESPATH@/res/EditorOverride.css
+ @RESPATH@/res/contenteditable.css
+ @RESPATH@/res/designmode.css
+-@RESPATH@/res/ImageDocument.css
+-@RESPATH@/res/TopLevelImageDocument.css
+-@RESPATH@/res/TopLevelVideoDocument.css
+ @RESPATH@/res/table-add-column-after-active.gif
+ @RESPATH@/res/table-add-column-after-hover.gif
+ @RESPATH@/res/table-add-column-after.gif
+@@ -716,6 +713,9 @@
+ @RESPATH@/res/MainMenu.nib/
+ #endif
+ 
++; Content-accessible resources.
++@RESPATH@/contentaccessible/*
++
+ ; svg
+ @RESPATH@/res/svg.css
+ @RESPATH@/components/dom_svg.xpt
+diff --git devtools/client/jsonview/converter-child.js devtools/client/jsonview/converter-child.js
+index d272dad00fb1..19060088ae6b 100644
+--- devtools/client/jsonview/converter-child.js
++++ devtools/client/jsonview/converter-child.js
+@@ -208,7 +208,7 @@ function initialHTML(doc) {
+ 
+   // The base URI is prepended to all URIs instead of using a <base> element
+   // because the latter can be blocked by a CSP base-uri directive (bug 1316393)
+-  let baseURI = "resource://devtools/client/jsonview/";
++  let baseURI = "resource://devtools-client-jsonview/";
+ 
+   let style = doc.createElement("link");
+   style.rel = "stylesheet";
+diff --git devtools/client/jsonview/viewer-config.js devtools/client/jsonview/viewer-config.js
+index 387a0dd4ebfb..429bf9b07298 100644
+--- devtools/client/jsonview/viewer-config.js
++++ devtools/client/jsonview/viewer-config.js
+@@ -21,14 +21,14 @@
+  * of the code base, so it's consistent and modules can be easily reused.
+  */
+ require.config({
+-  baseUrl: "resource://devtools/client/jsonview/",
++  baseUrl: "resource://devtools-client-jsonview/",
+   paths: {
+-    "devtools/client/shared": "resource://devtools/client/shared",
++    "devtools/client/shared": "resource://devtools-client-shared",
+     "devtools/shared": "resource://devtools/shared",
+     "devtools/client/shared/vendor/react":
+       JSONView.debug
+-      ? "resource://devtools/client/shared/vendor/react-dev"
+-      : "resource://devtools/client/shared/vendor/react"
++      ? "resource://devtools-client-shared/vendor/react-dev"
++      : "resource://devtools-client-shared/vendor/react"
+   }
+ });
+ 
+diff --git devtools/shared/jar.mn devtools/shared/jar.mn
+index 4d0823550c5a..82dc7741b213 100644
+--- devtools/shared/jar.mn
++++ devtools/shared/jar.mn
+@@ -4,6 +4,8 @@
+ 
+ devtools.jar:
+ %   resource devtools %modules/devtools/
++%   resource devtools-client-jsonview resource://devtools/client/jsonview/ contentaccessible=yes
++%   resource devtools-client-shared resource://devtools/client/shared/ contentaccessible=yes
+ # The typical approach would be to list all the resource files in this manifest
+ # for installation.  Instead of doing this, use the DevToolsModules syntax via
+ # moz.build files to do the installation so that we can enforce correct paths
+diff --git dom/html/ImageDocument.cpp dom/html/ImageDocument.cpp
+index d5c686c27b9f..6e0d31275a49 100644
+--- dom/html/ImageDocument.cpp
++++ dom/html/ImageDocument.cpp
+@@ -279,9 +279,9 @@ ImageDocument::SetScriptGlobalObject(nsIScriptGlobalObject* aScriptGlobalObject)
+     target->AddEventListener(NS_LITERAL_STRING("keypress"), this, false);
+ 
+     if (GetReadyStateEnum() != nsIDocument::READYSTATE_COMPLETE) {
+-      LinkStylesheet(NS_LITERAL_STRING("resource://gre/res/ImageDocument.css"));
++      LinkStylesheet(NS_LITERAL_STRING("resource://content-accessible/ImageDocument.css"));
+       if (!nsContentUtils::IsChildOfSameType(this)) {
+-        LinkStylesheet(NS_LITERAL_STRING("resource://gre/res/TopLevelImageDocument.css"));
++        LinkStylesheet(NS_LITERAL_STRING("resource://content-accessible/TopLevelImageDocument.css"));
+         LinkStylesheet(NS_LITERAL_STRING("chrome://global/skin/media/TopLevelImageDocument.css"));
+       }
+     }
+diff --git dom/html/VideoDocument.cpp dom/html/VideoDocument.cpp
+index 1bd898564a47..9ca616a5ec53 100644
+--- dom/html/VideoDocument.cpp
++++ dom/html/VideoDocument.cpp
+@@ -74,7 +74,7 @@ VideoDocument::SetScriptGlobalObject(nsIScriptGlobalObject* aScriptGlobalObject)
+   if (aScriptGlobalObject) {
+     if (!nsContentUtils::IsChildOfSameType(this) &&
+         GetReadyStateEnum() != nsIDocument::READYSTATE_COMPLETE) {
+-      LinkStylesheet(NS_LITERAL_STRING("resource://gre/res/TopLevelVideoDocument.css"));
++      LinkStylesheet(NS_LITERAL_STRING("resource://content-accessible/TopLevelVideoDocument.css"));
+       LinkStylesheet(NS_LITERAL_STRING("chrome://global/skin/media/TopLevelVideoDocument.css"));
+       LinkScript(NS_LITERAL_STRING("chrome://global/content/TopLevelVideoDocument.js"));
+     }
+diff --git dom/xml/resources/XMLPrettyPrint.css dom/xml/resources/XMLPrettyPrint.css
+index efc7ab5e5e17..13bb61e71532 100644
+--- dom/xml/resources/XMLPrettyPrint.css
++++ dom/xml/resources/XMLPrettyPrint.css
+@@ -3,7 +3,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-@import url("resource://gre-resources/viewsource.css");
++@import url("resource://content-accessible/viewsource.css");
+ 
+ #header {
+   background-color: #ccc;
+diff --git layout/style/jar.mn layout/style/jar.mn
+index af8c15d4fab5..81af0f7540fc 100644
+--- layout/style/jar.mn
++++ layout/style/jar.mn
+@@ -7,7 +7,6 @@ toolkit.jar:
+ *  res/html.css                              (res/html.css)
+    res/quirk.css                             (res/quirk.css)
+    res/plaintext.css                         (res/plaintext.css)
+-   res/viewsource.css                        (res/viewsource.css)
+    res/counterstyles.css                     (res/counterstyles.css)
+    res/noscript.css                          (res/noscript.css)
+    res/noframes.css                          (res/noframes.css)
+@@ -33,3 +32,4 @@ toolkit.jar:
+    res/accessiblecaret-tilt-right@2.25x.png  (res/accessiblecaret-tilt-right@2.25x.png)
+ 
+ % resource gre-resources %res/
++% resource content-accessible resource://gre/contentaccessible/ contentaccessible=yes
+diff --git layout/style/moz.build layout/style/moz.build
+index 0d1f261454f9..d4fbd0fef384 100644
+--- layout/style/moz.build
++++ layout/style/moz.build
+@@ -300,7 +300,11 @@ JAR_MANIFESTS += ['jar.mn']
+ RESOURCE_FILES += [
+     'contenteditable.css',
+     'designmode.css',
++]
++
++CONTENT_ACCESSIBLE_FILES += [
+     'ImageDocument.css',
++    'res/viewsource.css',
+     'TopLevelImageDocument.css',
+     'TopLevelVideoDocument.css',
+ ]
+diff --git mobile/android/installer/package-manifest.in mobile/android/installer/package-manifest.in
+index 0fc95bb838c8..ebbf39b171b6 100644
+--- mobile/android/installer/package-manifest.in
++++ mobile/android/installer/package-manifest.in
+@@ -459,8 +459,6 @@
+ @BINPATH@/res/EditorOverride.css
+ @BINPATH@/res/contenteditable.css
+ @BINPATH@/res/designmode.css
+-@BINPATH@/res/TopLevelImageDocument.css
+-@BINPATH@/res/TopLevelVideoDocument.css
+ @BINPATH@/res/table-add-column-after-active.gif
+ @BINPATH@/res/table-add-column-after-hover.gif
+ @BINPATH@/res/table-add-column-after.gif
+@@ -490,6 +488,9 @@
+ @BINPATH@/res/fonts/*.properties
+ #endif
+ 
++; Content-accessible resources.
++@BINPATH@/contentaccessible/*
++
+ ; svg
+ @BINPATH@/res/svg.css
+ @BINPATH@/components/dom_svg.xpt
+diff --git parser/html/nsHtml5ViewSourceUtils.cpp parser/html/nsHtml5ViewSourceUtils.cpp
+index b2f635bffe52..d94865d0acee 100644
+--- parser/html/nsHtml5ViewSourceUtils.cpp
++++ parser/html/nsHtml5ViewSourceUtils.cpp
+@@ -50,7 +50,7 @@ nsHtml5ViewSourceUtils::NewLinkAttributes()
+   nsHtml5String type = nsHtml5Portability::newStringFromLiteral("text/css");
+   linkAttrs->addAttribute(nsHtml5AttributeName::ATTR_TYPE, type, -1);
+   nsHtml5String href = nsHtml5Portability::newStringFromLiteral(
+-    "resource://gre-resources/viewsource.css");
++    "resource://content-accessible/viewsource.css");
+   linkAttrs->addAttribute(nsHtml5AttributeName::ATTR_HREF, href, -1);
+   return linkAttrs;
+ }
+diff --git python/mozbuild/mozbuild/frontend/context.py python/mozbuild/mozbuild/frontend/context.py
+index b06f39e3ee34..e97ee820bc79 100644
+--- python/mozbuild/mozbuild/frontend/context.py
++++ python/mozbuild/mozbuild/frontend/context.py
+@@ -2090,6 +2090,14 @@ SPECIAL_VARIABLES = {
+            RESOURCE_FILES.fonts += ['bar.res']
+         """),
+ 
++    'CONTENT_ACCESSIBLE_FILES': (lambda context: context['FINAL_TARGET_FILES'].contentaccessible, list,
++        """List of files which can be accessed by web content through resource:// URIs.
++
++        ``CONTENT_ACCESSIBLE_FILES`` is used to list the files to be exported
++        to ``dist/bin/contentaccessible``. Files can also be appended to a
++        field to indicate which subdirectory they should be exported to.
++        """),
++
+     'EXTRA_JS_MODULES': (lambda context: context['FINAL_TARGET_FILES'].modules, list,
+         """Additional JavaScript files to distribute.
+ 
+diff --git python/mozbuild/mozpack/chrome/manifest.py python/mozbuild/mozpack/chrome/manifest.py
+index 0781d0383304..05b97c8b9e09 100644
+--- python/mozbuild/mozpack/chrome/manifest.py
++++ python/mozbuild/mozpack/chrome/manifest.py
+@@ -38,6 +38,7 @@ class ManifestEntry(object):
+         'xpcnativewrappers',
+         'tablet',
+         'process',
++        'contentaccessible',
+     ]
+ 
+     def __init__(self, base, *flags):
+diff --git python/mozbuild/mozpack/packager/formats.py python/mozbuild/mozpack/packager/formats.py
+index f31d775646a7..ffafd5f520b4 100644
+--- python/mozbuild/mozpack/packager/formats.py
++++ python/mozbuild/mozpack/packager/formats.py
+@@ -339,4 +339,5 @@ class OmniJarSubFormatter(PiecemealFormatter):
+             'greprefs.js',
+             'hyphenation',
+             'update.locale',
++            'contentaccessible',
+         ]
+diff --git toolkit/content/browser-content.js toolkit/content/browser-content.js
+index 4d2a8fca47a5..f478618c1b5b 100644
+--- toolkit/content/browser-content.js
++++ toolkit/content/browser-content.js
+@@ -1340,7 +1340,7 @@ var ViewSelectionSource = {
+       return undefined;
+ 
+     // serialize
+-    const VIEW_SOURCE_CSS = "resource://gre-resources/viewsource.css";
++    const VIEW_SOURCE_CSS = "resource://content-accessible/viewsource.css";
+     const BUNDLE_URL = "chrome://global/locale/viewSource.properties";
+ 
+     let bundle = Services.strings.createBundle(BUNDLE_URL);
+
+commit da32016d7637
+Author: Chung-Sheng Fu <cfu@mozilla.com>
+Date:   Mon Aug 7 15:55:39 2017 +0800
+
+    Bug 863246 - Use system principal to load debugger scripts r=billm,bkelly
+    
+    MozReview-Commit-ID: DPvbR1As2UV
+    
+    --HG--
+    extra : rebase_source : c185be0d4d2180dd3dd7d0fbcfdd1035f3b4ddf3
+---
+ dom/workers/ScriptLoader.cpp | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git dom/workers/ScriptLoader.cpp dom/workers/ScriptLoader.cpp
+index 0948e8b1f860..461c7f4cd925 100644
+--- dom/workers/ScriptLoader.cpp
++++ dom/workers/ScriptLoader.cpp
+@@ -894,10 +894,19 @@ private:
+   {
+     AssertIsOnMainThread();
+     MOZ_ASSERT(aIndex < mLoadInfos.Length());
++    MOZ_ASSERT_IF(IsMainWorkerScript(), mWorkerScriptType != DebuggerScript);
+ 
+     WorkerPrivate* parentWorker = mWorkerPrivate->GetParent();
+ 
+-    nsIPrincipal* principal = mWorkerPrivate->GetPrincipal();
++    // For JavaScript debugging, the devtools server must run on the same
++    // thread as the debuggee, indicating the worker uses content principal.
++    // However, in Bug 863246, web content will no longer be able to load
++    // resource:// URIs by default, so we need system principal to load
++    // debugger scripts.
++    nsIPrincipal* principal = (mWorkerScriptType == DebuggerScript) ?
++                              nsContentUtils::GetSystemPrincipal() :
++                              mWorkerPrivate->GetPrincipal();
++
+     nsCOMPtr<nsILoadGroup> loadGroup = mWorkerPrivate->GetLoadGroup();
+     MOZ_DIAGNOSTIC_ASSERT(principal);
+ 
+
+commit 90189a558c02
+Author: Chung-Sheng Fu <cfu@mozilla.com>
+Date:   Wed Jul 19 17:30:01 2017 +0800
+
+    Bug 863246 - Fix test failures r=Gijs
+    
+    MozReview-Commit-ID: 8tUr27zvs8z
+    
+    --HG--
+    extra : rebase_source : 997ace66c37098701d433508c682ed7621a78479
+---
+ .../test/static/browser_all_files_referenced.js    |  6 ++-
+ .../content/test/static/browser_parsable_css.js    | 60 ++++++++++++----------
+ caps/tests/mochitest/test_bug292789.html           |  7 ++-
+ .../platform/content/test/test_clipboard.html      | 25 +++++++--
+ .../test/mixedcontentblocker/test_bug803225.html   |  7 ++-
+ .../htmlparser/tests/reftest/bug482921-1-ref.html  |  2 +-
+ .../htmlparser/tests/reftest/bug482921-2-ref.html  |  2 +-
+ .../htmlparser/tests/reftest/bug535530-2-ref.html  |  2 +-
+ .../htmlparser/tests/reftest/bug704667-1-ref.html  |  2 +-
+ .../htmlparser/tests/reftest/bug731234-1-ref.html  |  2 +-
+ .../htmlparser/tests/reftest/bug910588-1-ref.html  |  2 +-
+ 11 files changed, 75 insertions(+), 42 deletions(-)
+
+diff --git browser/base/content/test/static/browser_all_files_referenced.js browser/base/content/test/static/browser_all_files_referenced.js
+index e875020ab490..87c5f96af7c3 100644
+--- browser/base/content/test/static/browser_all_files_referenced.js
++++ browser/base/content/test/static/browser_all_files_referenced.js
+@@ -176,7 +176,6 @@ var whitelist = [
+   {file: "resource://gre/modules/accessibility/AccessFu.jsm"},
+   // Bug 1351637
+   {file: "resource://gre/modules/sdk/bootstrap.js"},
+-
+ ];
+ 
+ whitelist = new Set(whitelist.filter(item =>
+@@ -478,7 +477,8 @@ function findChromeUrlsFromArray(array, prefix) {
+ 
+     // Only keep strings that look like real chrome or resource urls.
+     if (/chrome:\/\/[a-zA-Z09 -]+\/(content|skin|locale)\//.test(string) ||
+-        /resource:\/\/gre.*\.[a-z]+/.test(string))
++        /resource:\/\/gre.*\.[a-z]+/.test(string) ||
++        string.startsWith("resource://content-accessible/"))
+       gReferencesFromCode.add(string);
+   }
+ }
+@@ -540,6 +540,8 @@ add_task(async function checkAllTheFiles() {
+   let devtoolsPrefixes = ["chrome://webide/",
+                           "chrome://devtools",
+                           "resource://devtools/",
++                          "resource://devtools-client-jsonview/",
++                          "resource://devtools-client-shared/",
+                           "resource://app/modules/devtools",
+                           "resource://gre/modules/devtools"];
+   let chromeFiles = [];
+diff --git browser/base/content/test/static/browser_parsable_css.js browser/base/content/test/static/browser_parsable_css.js
+index 20d69bd9b1d1..20b12a9820c9 100644
+--- browser/base/content/test/static/browser_parsable_css.js
++++ browser/base/content/test/static/browser_parsable_css.js
+@@ -17,7 +17,7 @@ let whitelist = [
+   {sourceName: /devtools\/client\/debugger\/new\/debugger.css/i,
+    isFromDevTools: true},
+    // Reps uses cross-browser CSS.
+-   {sourceName: /devtools\/client\/shared\/components\/reps\/reps.css/i,
++   {sourceName: /devtools-client-shared\/components\/reps\/reps.css/i,
+    isFromDevTools: true},
+   // PDFjs is futureproofing its pseudoselectors, and those rules are dropped.
+   {sourceName: /web\/viewer\.css$/i,
+@@ -288,41 +288,49 @@ add_task(async function checkAllTheCSS() {
+   // Wait for all manifest to be parsed
+   await Promise.all(manifestPromises);
+ 
+-  // We build a list of promises that get resolved when their respective
+-  // files have loaded and produced no errors.
+-  let allPromises = [];
+-
+   // filter out either the devtools paths or the non-devtools paths:
+   let isDevtools = SimpleTest.harnessParameters.subsuite == "devtools";
+   let devtoolsPathBits = ["webide", "devtools"];
+   uris = uris.filter(uri => isDevtools == devtoolsPathBits.some(path => uri.spec.includes(path)));
+ 
+-  for (let uri of uris) {
+-    let linkEl = doc.createElement("link");
++  let loadCSS = chromeUri => new Promise(resolve => {
++    let linkEl, onLoad, onError;
++    onLoad = e => {
++      processCSSRules(linkEl.sheet);
++      resolve();
++      linkEl.removeEventListener("load", onLoad);
++      linkEl.removeEventListener("error", onError);
++    };
++    onError = e => {
++      ok(false, "Loading " + linkEl.getAttribute("href") + " threw an error!");
++      resolve();
++      linkEl.removeEventListener("load", onLoad);
++      linkEl.removeEventListener("error", onError);
++    };
++    linkEl = doc.createElement("link");
+     linkEl.setAttribute("rel", "stylesheet");
+-    allPromises.push(new Promise(resolve => {
+-      let onLoad = (e) => {
+-        processCSSRules(linkEl.sheet);
+-        resolve();
+-        linkEl.removeEventListener("load", onLoad);
+-        linkEl.removeEventListener("error", onError);
+-      };
+-      let onError = (e) => {
+-        ok(false, "Loading " + linkEl.getAttribute("href") + " threw an error!");
+-        resolve();
+-        linkEl.removeEventListener("load", onLoad);
+-        linkEl.removeEventListener("error", onError);
+-      };
+-      linkEl.addEventListener("load", onLoad);
+-      linkEl.addEventListener("error", onError);
+-      linkEl.setAttribute("type", "text/css");
+-      let chromeUri = convertToCodeURI(uri.spec);
+-      linkEl.setAttribute("href", chromeUri + kPathSuffix);
+-    }));
++    linkEl.setAttribute("type", "text/css");
++    linkEl.addEventListener("load", onLoad);
++    linkEl.addEventListener("error", onError);
++    linkEl.setAttribute("href", chromeUri + kPathSuffix);
+     doc.head.appendChild(linkEl);
++  });
++
++  // We build a list of promises that get resolved when their respective
++  // files have loaded and produced no errors.
++  const kInContentCommonCSS = "chrome://global/skin/in-content/common.css";
++  let allPromises = uris.map((uri) => convertToCodeURI(uri.spec))
++                    .filter((uri) => uri !== kInContentCommonCSS);
++
++  // Make sure chrome://global/skin/in-content/common.css is loaded before other
++  // stylesheets in order to guarantee the --in-content variables can be
++  // correctly referenced.
++  if (allPromises.length !== uris.length) {
++    await loadCSS(kInContentCommonCSS);
+   }
+ 
+   // Wait for all the files to have actually loaded:
++  allPromises = allPromises.map(loadCSS);
+   await Promise.all(allPromises);
+ 
+   // Check if all the files referenced from CSS actually exist.
+diff --git caps/tests/mochitest/test_bug292789.html caps/tests/mochitest/test_bug292789.html
+index 6b30e207771c..000cf6c12b8f 100644
+--- caps/tests/mochitest/test_bug292789.html
++++ caps/tests/mochitest/test_bug292789.html
+@@ -100,7 +100,12 @@ function loadImage(uri, expect, callback) {
+ }
+ 
+ // Start off the script src test, and have it start the img tests when complete.
+-testScriptSrc(runImgTest);
++// Temporarily allow content to access all resource:// URIs.
++SpecialPowers.pushPrefEnv({
++  set: [
++    ["security.all_resource_uri_content_accessible", true]
++  ]
++}, () => testScriptSrc(runImgTest));
+ </script>
+ </pre>
+ </body>
+diff --git devtools/shared/platform/content/test/test_clipboard.html devtools/shared/platform/content/test/test_clipboard.html
+index 75d1c9eee4b7..832e9fc0c3c1 100644
+--- devtools/shared/platform/content/test/test_clipboard.html
++++ devtools/shared/platform/content/test/test_clipboard.html
+@@ -15,12 +15,8 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1290230
+ "use strict";
+ var exports = {}
+ </script>
+-
+-  <script type="application/javascript"
+-	  src="resource://devtools/shared/platform/content/clipboard.js"></script>
+-
+ </head>
+-<body onload="do_tests()">
++<body onload="pre_do_tests()">
+ <script type="application/javascript">
+ "use strict";
+ 
+@@ -31,6 +27,25 @@ function doCopy(e) {
+   copyString(RESULT);
+ }
+ 
++async function pre_do_tests() {
++  // Temporarily allow content to access all resource:// URIs.
++  await SpecialPowers.pushPrefEnv({
++    set: [
++      ["security.all_resource_uri_content_accessible", true]
++    ]
++  });
++
++  // Load script.
++  await (() => new Promise((resolve) => {
++    var script = document.createElement("script");
++    script.onload = resolve;
++    script.src = "resource://devtools/shared/platform/content/clipboard.js";
++    document.head.appendChild(script);
++  }))();
++
++  do_tests();
++}
++
+ function do_tests() {
+   let elt = document.querySelector("#key");
+   elt.addEventListener("keydown", doCopy);
+diff --git dom/security/test/mixedcontentblocker/test_bug803225.html dom/security/test/mixedcontentblocker/test_bug803225.html
+index 3037da87c6de..75e76c8f7fee 100644
+--- dom/security/test/mixedcontentblocker/test_bug803225.html
++++ dom/security/test/mixedcontentblocker/test_bug803225.html
+@@ -19,8 +19,11 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=803225
+ 
+   //Cycle through 4 different preference settings.
+   function changePrefs(callback) {
+-    let newPrefs = [["security.mixed_content.block_display_content", settings[counter][0]],
+-                    ["security.mixed_content.block_active_content", settings[counter][1]]];
++    let newPrefs = [
++      ["security.all_resource_uri_content_accessible", true], // Temporarily allow content to access all resource:// URIs.
++      ["security.mixed_content.block_display_content", settings[counter][0]],
++      ["security.mixed_content.block_active_content", settings[counter][1]]
++    ];
+ 
+     SpecialPowers.pushPrefEnv({"set": newPrefs}, function () {
+       blockDisplay = SpecialPowers.getBoolPref("security.mixed_content.block_display_content");
+diff --git parser/htmlparser/tests/reftest/bug482921-1-ref.html parser/htmlparser/tests/reftest/bug482921-1-ref.html
+index d388a14bc518..71c0f91c088d 100644
+--- parser/htmlparser/tests/reftest/bug482921-1-ref.html
++++ parser/htmlparser/tests/reftest/bug482921-1-ref.html
+@@ -1,4 +1,4 @@
+-<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://gre-resources/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="doctype">&lt;!DOCTYPE html&gt;</span>
++<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+ <span id></span><span>&lt;<span class="start-tag">html</span>&gt;</span>
+ <span id></span><span>&lt;<span class="start-tag">head</span>&gt;</span>
+ <span id></span><span>&lt;<span class="start-tag">title</span>&gt;</span><span>Title</span><span>&lt;/<span class="end-tag">title</span>&gt;</span>
+diff --git parser/htmlparser/tests/reftest/bug482921-2-ref.html parser/htmlparser/tests/reftest/bug482921-2-ref.html
+index 44f6c03dff4a..d764c70bca50 100644
+--- parser/htmlparser/tests/reftest/bug482921-2-ref.html
++++ parser/htmlparser/tests/reftest/bug482921-2-ref.html
+@@ -1,4 +1,4 @@
+-<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://gre-resources/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
++<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+ <span id></span><span class="pi">&lt;?foo bar?&gt;</span>
+ <span id></span><span>&lt;<span class="start-tag">html</span>&gt;</span>
+ <span id></span><span>&lt;<span class="start-tag">head</span>&gt;</span>
+diff --git parser/htmlparser/tests/reftest/bug535530-2-ref.html parser/htmlparser/tests/reftest/bug535530-2-ref.html
+index 5931b9b16be6..54c12912181f 100644
+--- parser/htmlparser/tests/reftest/bug535530-2-ref.html
++++ parser/htmlparser/tests/reftest/bug535530-2-ref.html
+@@ -1,4 +1,4 @@
+-<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://gre-resources/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="doctype">&lt;!DOCTYPE html&gt;</span>
++<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+ <span id></span>XX<span class="error">&amp;</span>XX
+ <span id></span>XX<span class="error">&amp;</span>nXX
+ <span id></span>XX<span class="error">&amp;</span>noXX
+diff --git parser/htmlparser/tests/reftest/bug704667-1-ref.html parser/htmlparser/tests/reftest/bug704667-1-ref.html
+index db05bd5245d8..a7a939f3a481 100644
+--- parser/htmlparser/tests/reftest/bug704667-1-ref.html
++++ parser/htmlparser/tests/reftest/bug704667-1-ref.html
+@@ -1,4 +1,4 @@
+-<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://gre-resources/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="error comment">&lt;!--&gt;</span> <span class="error comment">&lt;!X&gt;</span>
++<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="error comment">&lt;!--&gt;</span> <span class="error comment">&lt;!X&gt;</span>
+ <span id></span>
+ </pre>
+ <!-- View source CSS matches the <pre id> and <span id> elements and produces line numbers. -->
+diff --git parser/htmlparser/tests/reftest/bug731234-1-ref.html parser/htmlparser/tests/reftest/bug731234-1-ref.html
+index 31b808ec4d4e..897b73ea1bbb 100644
+--- parser/htmlparser/tests/reftest/bug731234-1-ref.html
++++ parser/htmlparser/tests/reftest/bug731234-1-ref.html
+@@ -1,4 +1,4 @@
+-<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://gre-resources/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="doctype">&lt;!DOCTYPE html&gt;</span><span>
++<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css"></head><body id="viewsource" class="wrap highlight"><pre id><span class="doctype">&lt;!DOCTYPE html&gt;</span><span>
+ <span id></span></span><span>&lt;<span class="start-tag">body</span>&gt;</span><span>
+ <span id></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>X
+ <span id></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span> &gt;</span><span>X
+diff --git parser/htmlparser/tests/reftest/bug910588-1-ref.html parser/htmlparser/tests/reftest/bug910588-1-ref.html
+index da9c6867ab1b..46133dd2c48f 100644
+--- parser/htmlparser/tests/reftest/bug910588-1-ref.html
++++ parser/htmlparser/tests/reftest/bug910588-1-ref.html
+@@ -1,2 +1,2 @@
+-<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://gre-resources/viewsource.css"></head><body id="viewsource" class="highlight" style="-moz-tab-size: 4"><pre id="line1"><span></span><span class="doctype">&lt;!DOCTYPE html&gt;</span><span></span><span>&lt;<span class="start-tag">table</span>&gt;</span><span></span><span title="Start tag “input” seen in “table”." class="error">&lt;<span class="start-tag">input</span> <span class="attribute-name">type</span>=<a class="attribute-value">hidden</a>&gt;</span><span></span><span>&lt;/<span class="end-tag">table</span>&gt;</span><span>
++<!DOCTYPE html><html><head><title></title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css"></head><body id="viewsource" class="highlight" style="-moz-tab-size: 4"><pre id="line1"><span></span><span class="doctype">&lt;!DOCTYPE html&gt;</span><span></span><span>&lt;<span class="start-tag">table</span>&gt;</span><span></span><span title="Start tag “input” seen in “table”." class="error">&lt;<span class="start-tag">input</span> <span class="attribute-name">type</span>=<a class="attribute-value">hidden</a>&gt;</span><span></span><span>&lt;/<span class="end-tag">table</span>&gt;</span><span>
+ <span id="line2"></span></span></pre></body></html>
+
+commit 72b72cc0b4b8
+Author: Chung-Sheng Fu <cfu@mozilla.com>
+Date:   Thu Jun 8 17:54:41 2017 +0800
+
+    Bug 863246 - Add test cases r=billm
+    
+    MozReview-Commit-ID: 9oXWNOREemX
+    
+    --HG--
+    extra : rebase_source : ff74bcd4d60964b7656a8c6131dbf8132d00e214
+---
+ .../test/mochitest/mochitest.ini                   |  2 +
+ .../mochitest/test_bug863246_resource_uri.html     | 51 ++++++++++++++++++++++
+ 2 files changed, 53 insertions(+)
+
+diff --git browser/components/resistfingerprinting/test/mochitest/mochitest.ini browser/components/resistfingerprinting/test/mochitest/mochitest.ini
+index 1399554529e0..4f09fffd85d5 100644
+--- browser/components/resistfingerprinting/test/mochitest/mochitest.ini
++++ browser/components/resistfingerprinting/test/mochitest/mochitest.ini
+@@ -1,5 +1,6 @@
+ [DEFAULT]
+ tags = resistfingerprinting
++
+ support-files =
+   file_animation_api.html
+   worker_child.js
+@@ -12,3 +13,4 @@ scheme = https
+ [test_hide_gamepad_info.html]
+ support-files = test_hide_gamepad_info_iframe.html
+ [test_speech_synthesis.html]
++[test_bug863246_resource_uri.html]
+diff --git browser/components/resistfingerprinting/test/mochitest/test_bug863246_resource_uri.html browser/components/resistfingerprinting/test/mochitest/test_bug863246_resource_uri.html
+new file mode 100644
+index 000000000000..13dad300ff05
+--- /dev/null
++++ browser/components/resistfingerprinting/test/mochitest/test_bug863246_resource_uri.html
+@@ -0,0 +1,51 @@
++<!DOCTYPE html>
++<meta charset="utf8">
++<script src="/tests/SimpleTest/SimpleTest.js"></script>
++<script src="/tests/SimpleTest/SpawnTask.js"></script>
++<script>
++/* global SimpleTest SpecialPowers add_task */
++
++function waitForDOMContentLoaded() {
++  return new Promise((aResolve) => {
++    document.addEventListener("DOMContentLoaded", aResolve);
++  });
++}
++
++function testResourceUri(aTest, aUri, aContentAccessible) {
++  return new Promise((aResolve) => {
++    let link = document.createElement("link");
++    link.rel = "stylesheet";
++    link.onload = () => {
++      SimpleTest.ok(aContentAccessible, aTest);
++      aResolve();
++    };
++    link.onerror = () => {
++      SimpleTest.ok(!aContentAccessible, aTest);
++      aResolve();
++    };
++    link.href = aUri;
++    document.head.appendChild(link);
++  });
++}
++
++add_task(async function() {
++  await waitForDOMContentLoaded();
++  await testResourceUri(
++      "resource://content-accessible is content-accessible",
++      "resource://content-accessible/viewsource.css",
++      true);
++  await testResourceUri(
++      "resource://gre-resources is not content-accessible",
++      "resource://gre-resources/html.css",
++      false);
++  await SpecialPowers.pushPrefEnv({
++    set: [
++      ["security.all_resource_uri_content_accessible", true]
++    ]
++  });
++  await testResourceUri(
++      "security.all_resource_uri_content_accessible = true, resource://gre-resources is now content-accessible",
++      "resource://gre-resources/html.css",
++      true);
++});
++</script>

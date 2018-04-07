@@ -1,0 +1,28 @@
+commit fb1d12efaddd
+Author: Kris Maglione <maglione.k@gmail.com>
+Date:   Wed Apr 4 17:01:59 2018 -0700
+
+    Bug 1436482 - Always use the principal URI as the principal URI. r=mixedpuppy, a=jcristau
+    
+    MozReview-Commit-ID: 7oePANQBCxK
+    
+    --HG--
+    extra : source : 07ab807639ee42a407a9bdb0d374206c0f17678d
+---
+ toolkit/components/extensions/WebExtensionPolicy.cpp | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git toolkit/components/extensions/WebExtensionPolicy.cpp toolkit/components/extensions/WebExtensionPolicy.cpp
+index d59507fcdd59..2580bc932dd1 100644
+--- toolkit/components/extensions/WebExtensionPolicy.cpp
++++ toolkit/components/extensions/WebExtensionPolicy.cpp
+@@ -681,8 +681,7 @@ DocInfo::Principal() const
+ const URLInfo&
+ DocInfo::PrincipalURL() const
+ {
+-  if (!URL().InheritsPrincipal() ||
+-      !(Principal() && Principal()->GetIsCodebasePrincipal())) {
++  if (!(Principal() && Principal()->GetIsCodebasePrincipal())) {
+     return URL();
+   }
+ 
