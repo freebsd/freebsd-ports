@@ -1,17 +1,15 @@
 # Created by: kbyanc@posi.net
 # $FreeBSD$
-#    $MCom: ports/audio/grip/Makefile,v 1.4 2007/05/19 21:35:57 marcus Exp $
 
 PORTNAME=	grip
-PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTVERSION=	3.7.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/grip/${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GTK front-end to external cd rippers and audio encoders
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
@@ -20,13 +18,13 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libid3.so:audio/id3lib \
 		libpopt.so:devel/popt
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool localbase pathfix pkgconfig
 USE_XORG=	ice sm x11 xext
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix libgnomeui vte
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-werror
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	CDPARANOIA CDDA2WAV LAME VORBIS FAAC FLAC NLS
 OPTIONS_DEFAULT=	CDPARANOIA VORBIS
@@ -45,7 +43,6 @@ FLAC_RUN_DEPENDS=	flac:audio/flac
 LAME_RUN_DEPENDS=	lame:audio/lame
 VORBIS_RUN_DEPENDS=	ogg123:audio/vorbis-tools
 NLS_USES=	gettext
-NLS_CONFIGURE_OFF=	--disable-nls
 
 .if defined(WITH_CDROM_DEVICE)
 DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
@@ -63,8 +60,5 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/src/grip.c
-	@${REINPLACE_CMD} -e 's|{"xingmp3enc","-B %b -Q %w","mp3"},||; \
-		s|{"l3enc","-br %b %w %m","mp3"},|{"faac","--no-midside -w -q 100 --artist %a --album %d --track %t --title %n --year %y --genre %g -b %b %w -o %m", "m4a"},|' \
-		${WRKSRC}/src/gripcfg.c
 
 .include <bsd.port.mk>
