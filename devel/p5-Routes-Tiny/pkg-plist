@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Routes/Tiny.pm
+%%SITE_PERL%%/Routes/Tiny/Match.pm
+%%SITE_PERL%%/Routes/Tiny/Pattern.pm
+%%PERL5_MAN3%%/Routes::Tiny.3.gz
+%%PERL5_MAN3%%/Routes::Tiny::Match.3.gz
+%%PERL5_MAN3%%/Routes::Tiny::Pattern.3.gz
