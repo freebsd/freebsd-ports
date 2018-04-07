@@ -1,6 +1,6 @@
---- src/basic_fun.cpp.orig	2016-04-29 17:03:25 UTC
+--- src/basic_fun.cpp.orig	2018-03-28 19:12:21 UTC
 +++ src/basic_fun.cpp
-@@ -6523,7 +6523,7 @@ namespace lib {
+@@ -8067,7 +8067,7 @@ template <typename Ty, typename T2>  sta
  	  {
  	    // check if the data we get is a port this allows us to correctly parse things like a.com:80
  	    p = e + 1;
@@ -9,7 +9,7 @@
  	    if ((*p == '\0' || *p == '/') && (p - e) < 7) goto parse_port;
  	    urlstru->InitTag("SCHEME", DStringGDL(string(s, (e - s))));
  	    length -= ++e - s;
-@@ -6574,7 +6574,7 @@ namespace lib {
+@@ -8118,7 +8118,7 @@ template <typename Ty, typename T2>  sta
        parse_port:
  	p = e + 1;
  	pp = p;

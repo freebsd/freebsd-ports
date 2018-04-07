@@ -1,6 +1,6 @@
---- src/gshhs.cpp.orig	2016-04-29 17:03:25 UTC
+--- src/gshhs.cpp.orig	2018-03-28 19:12:21 UTC
 +++ src/gshhs.cpp
-@@ -175,7 +175,7 @@ private:
+@@ -235,7 +235,7 @@ else
          double ss = h.south * GSHHS_SCL;
          double nn = h.north * GSHHS_SCL;
          char source = (src == 1) ? 'W' : 'C'; // Either WVS or CIA (WDBII) pedigree 
