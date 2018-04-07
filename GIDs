@@ -832,7 +832,7 @@ vuls:*:888:
 mattermost:*:889:
 matterircd:*:890:
 # free: 891
-# free: 892
+tautulli:*:892:
 logstash:*:893:
 arangodb:*:894:
 snmptt:*:895:

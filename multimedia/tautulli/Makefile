@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tautulli
-PORTVERSION=	2.0.22
+PORTVERSION=	2.0.28
+DISTVERSIONPREFIX=v
 PORTREVISION=	0
 CATEGORIES=	multimedia python
-DISTVERSIONPREFIX=v
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Monitoring, analytics, and notifications for Plex Media Server
@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USE_RC_SUBR=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 USES=		python:2.7 shebangfix
@@ -29,6 +28,11 @@ GH_ACCOUNT=	Tautulli
 GH_PROJECT=	Tautulli
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+USE_RC_SUBR=	${PORTNAME}
+
+USERS=	tautulli
+GROUPS=	tautulli
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
