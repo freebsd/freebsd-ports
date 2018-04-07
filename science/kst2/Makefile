@@ -16,9 +16,9 @@ KST_DATE=	20180405
 
 USES=		cmake:outsource desktop-file-utils pkgconfig \
 		shared-mime-info
-_USE_QT4=	gui xml designer svg linguisttools_build \
+_USE_QT4=	corelib gui xml designer network svg linguisttools_build \
 		qmake_build moc_build rcc_build uic_build
-_USE_QT5=	concurrent network printsupport widgets xml \
+_USE_QT5=	concurrent core gui network printsupport svg widgets xml \
 		buildtools_build linguisttools_build qmake_build
 USE_LDCONFIG=	yes
 
