@@ -1117,6 +1117,7 @@
     SUBDIR += rubygem-omniauth-cas
     SUBDIR += rubygem-omniauth-cas3
     SUBDIR += rubygem-omniauth-gitlab
+    SUBDIR += rubygem-omniauth-jwt
     SUBDIR += rubygem-omniauth-multipassword
     SUBDIR += rubygem-omniauth-oauth2-generic
     SUBDIR += rubygem-omniauth-saml

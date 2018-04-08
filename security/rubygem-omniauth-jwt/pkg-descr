@@ -1,0 +1,10 @@
+JSON Web Token (JWT) is a simple way to send verified information between two
+parties online. This can be useful as a mechanism for providing Single Sign-On
+(SSO) to an application by allowing an authentication server to send a validated
+claim and log the user in. This is how Zendesk does SSO, for example.
+
+OmniAuth::JWT provides a clean, simple wrapper on top of JWT so that you can
+easily implement this kind of SSO either between your own applications or allow
+third parties to delegate authentication.
+
+WWW: https://github.com/mbleigh/omniauth-jwt
