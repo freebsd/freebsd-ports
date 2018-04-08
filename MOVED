@@ -10082,7 +10082,6 @@ net/zeroconf-ioslave|net/zeroconf-ioslave-kde4|2018-02-22|Make room for KDE upda
 net/krfb|net/krfb-kde4|2018-02-22|Make room for KDE updates
 net/krdc|net/krdc-kde4|2018-02-22|Make room for KDE updates
 net/kget|net/kget-kde4|2018-02-22|Make room for KDE updates
-astro/marble|astro/marble-kde4|2018-02-22|Make room for KDE updates
 astro/kstars|astro/kstars-kde4|2018-02-22|Make room for KDE updates
 japanese/kiten|japanese/kiten-kde4|2018-02-22|Make room for KDE updates
 comms/kremotecontrol|comms/kremotecontrol-kde4|2018-02-22|Make room for KDE updates
@@ -10194,7 +10193,6 @@ multimedia/plexpy|multimedia/tautulli|2018-03-17|Project renamed due to copyrigh
 net-im/ring-daemon||2018-03-18|Ring can't build because it depends on custom bundled versions of other packages
 net-im/ring-libclient||2018-03-18|Ring can't build because it depends on custom bundled versions of other packages
 net-im/ring-gnome||2018-03-18|Ring can't build because it depends on custom bundled versions of other packages
-astro/libkgeomap|astro/libkgeomap-kde4|2018-03-20|Make room for KDE updates
 databases/akonadi|databases/akonadi-kde4|2018-03-20|Make room for KDE updates
 graphics/code-eli||2018-03-20|Has expired: Broken for more than 6 months
 databases/pg_rman||2018-03-20|Has expired: Broken for more than 6 months
