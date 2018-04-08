@@ -12,9 +12,8 @@ COMMENT=	PHP environment security auditing tool
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		zip
+USES=		php:web zip
 USE_PHP=	pcre
-WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 
