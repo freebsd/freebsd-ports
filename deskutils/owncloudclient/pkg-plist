@@ -10,12 +10,15 @@ include/owncloudsync/mirall/progressdispatcher.h
 include/owncloudsync/mirall/syncengine.h
 include/owncloudsync/mirall/syncfileitem.h
 include/owncloudsync/mirall/syncresult.h
+lib/libownclouddolphinpluginhelper.so
 lib/libowncloudsync.so
 lib/libowncloudsync.so.0
 lib/libowncloudsync.so.%%VERSION%%
 lib/owncloud/libocsync.so
 lib/owncloud/libocsync.so.0
 lib/owncloud/libocsync.so.%%VERSION%%
+%%QT_PLUGINDIR%%/kf5/overlayicon/ownclouddolphinoverlayplugin.so
+%%QT_PLUGINDIR%%/ownclouddolphinactionplugin.so
 %%PORTDOCS%%man/man1/owncloud.1.gz
 %%PORTDOCS%%man/man1/owncloudcmd.1.gz
 share/applications/owncloud.desktop
@@ -230,6 +233,7 @@ share/icons/hicolor/72x72/apps/ownCloud_sync.png
 share/icons/hicolor/72x72/apps/ownCloud_sync_shared.png
 share/icons/hicolor/72x72/apps/ownCloud_warn.png
 share/icons/hicolor/72x72/apps/ownCloud_warn_shared.png
+share/kservices5/ownclouddolphinactionplugin.desktop
 share/nautilus-python/extensions/syncstate-ownCloud.py
 share/nemo-python/extensions/syncstate-ownCloud.py
 share/owncloud/i18n/client_TW.qm

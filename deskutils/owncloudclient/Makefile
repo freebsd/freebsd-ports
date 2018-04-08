@@ -2,32 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	owncloudclient
-PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	2.4.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yonas@fizk.net
 COMMENT=	OwnCloud Desktop Syncing Client
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		cmake:outsource,noninja compiler:c++11-lib gmake iconv \
-		localbase:ldflags pkgconfig sqlite ssl
+USES=		cmake:outsource,noninja compiler:c++11-lib gmake iconv kde:5 \
+		localbase:ldflags pkgconfig sqlite
 USE_QT5=	buildtools_build concurrent core dbus gui linguist_build network \
 		qmake_build sql webkit widgets xml
+USE_KDE=	completion config coreaddons jobwidgets kio service widgetsaddons
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=OFF \
 		-DCMAKE_INSTALL_MANDIR:STRING=man \
 		-DWITH_STACK_PROTECTOR:BOOL=OFF
-USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	owncloud
 GH_PROJECT=	client
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DEBUG DOCS
 
@@ -50,6 +49,6 @@ post-patch:
 .endif
 
 pre-configure:
-	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)
+	@cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample
 
 .include <bsd.port.post.mk>
