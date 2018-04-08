@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.13.10
+PORTVERSION=	1.13.11
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -919,7 +919,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.2.1
+PASSENGER_VERSION=	5.2.3
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 .if ${PORT_OPTIONS:MDSO}
@@ -1073,7 +1073,7 @@ CONFIGURE_ARGS+=--with-http_v2_module
 .if ${PORT_OPTIONS:MNJS}
 GH_ACCOUNT+=	nginx:njs
 GH_PROJECT+=	njs:njs
-GH_TAGNAME+=	3995aba:njs
+GH_TAGNAME+=	7dcacb4:njs
 .if ${PORT_OPTIONS:MDSO}
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_njs}/nginx
 .else
