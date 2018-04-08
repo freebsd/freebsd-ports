@@ -12,7 +12,7 @@ LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
 RUN_DEPENDS=	${LOCALBASE}/bin/twopi:graphics/graphviz
 
-USES=		apache:run,2.2+ shebangfix
+USES=		apache:run,2.2+ php:web shebangfix
 SHEBANG_FILES=	include/languages/extract_newlines.sh \
 		include/languages/util-all \
 		include/languages/util-bzr-update \
@@ -29,7 +29,6 @@ PGSQL_DESC=	Use PostgreSQL backend (experimental)
 
 USE_PHP=	curl filter gd gettext hash json ldap mbstring mysql \
 		snmp session xml zip zlib
-WANT_PHP_WEB=	yes
 
 SUB_FILES+=	pandora_console.conf pkg-message newsyslog.conf
 SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}

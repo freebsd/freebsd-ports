@@ -14,7 +14,7 @@ PLIST=		${PKGDIR}/pkg-plist.frontend
 
 USE_PHP=	bcmath ctype gd pcre snmp sockets mbstring session dom xml \
 		xmlreader xmlwriter simplexml gettext ldap
-WANT_PHP_WEB=	yes
+USES=		php:web
 
 OPTIONS_DEFINE=	MYSQL MYSQLI PGSQL SQLITE ORACLE
 OPTIONS_DEFAULT=	MYSQL MYSQLI
@@ -22,23 +22,12 @@ MYSQLI_DESC=	MySQLI backend
 
 MYSQL_VARS=	IGNORE_WITH_PHP+=70
 
+MYSQL_USE=	PHP=mysql
+MYSQLI_USE=	PHP=mysqli
+PGSQL_USE=	PHP=pgsql
+SQLITE_USE=	PHP=sqlite3
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MMYSQLI}
-USE_PHP+=	mysqli
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	sqlite3
-.endif
 
 .if ${PORT_OPTIONS:MORACLE}
 ZABBIX_REQUIRE=
