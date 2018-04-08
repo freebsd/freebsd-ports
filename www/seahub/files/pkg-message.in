@@ -1,6 +1,17 @@
+To generate a new config,
+cd %%PREFIX%%/%%SEAFILE_SERVER%%
+Then choose sqlite or mysql, mysql needs to be setup with root.
+sqlite: ./setup-seafile.sh
+mysql: ./setup-seafile-mysql.sh
+Further instructions will be provided after the setup script is finished.
+
+
 If a new config is created, run this to setup admin.
 
 %%PREFIX%%/%%SEAFILE_SERVER%%/reset-admin.sh
-If a new config is created, run this to setup admin.
 
-%%PREFIX%%/%%SEAFILE_SERVER%%/reset-admin.sh
+
+Don't forget to run update scripts after every minor and major update located in
+	%%PREFIX%%/%%SEAFILE_SERVER%%/upgrade
+
+Patch updates (5.1.x) don't require these scripts, however do required a restarted.
