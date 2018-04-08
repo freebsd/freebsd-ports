@@ -11,11 +11,13 @@ DISTNAME=	Sjeng-Free-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess engine supporting chess variations
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
+USES=		localbase
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgdbm
 
 PLIST_FILES=	bin/sjeng
 
