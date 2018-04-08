@@ -9969,13 +9969,7 @@ emulators/wine-staging|emulators/wine-devel|2018-02-20|Broken for months, abando
 misc/rubygem-dotenv-rails|misc/rubygem-dotenv-rails-rails4|2018-02-20|Rename to match our rubygem- port naming
 accessibility/kaccessible|accessibility/kaccessible-kde4|2018-02-22|Make room for KDE updates
 accessibility/jovie|accessibility/jovie-kde4|2018-02-22|Make room for KDE updates
-misc/klettres|misc/klettres-kde4|2018-02-22|Make room for KDE updates
-misc/kwordquiz|misc/kwordquiz-kde4|2018-02-22|Make room for KDE updates
 misc/libkdeedu|misc/libkdeedu-kde4|2018-02-22|Make room for KDE updates
-misc/kgeography|misc/kgeography-kde4|2018-02-22|Make room for KDE updates
-misc/artikulate|misc/artikulate-kde4|2018-02-22|Make room for KDE updates
-misc/parley|misc/parley-kde4|2018-02-22|Make room for KDE updates
-misc/ktouch|misc/ktouch-kde4|2018-02-22|Make room for KDE updates
 science/step|science/step-kde4|2018-02-22|Make room for KDE updates
 science/kalzium|science/kalzium-kde4|2018-02-22|Make room for KDE updates
 sysutils/kuser|sysutils/kuser-kde4|2018-02-22|Make room for KDE updates
