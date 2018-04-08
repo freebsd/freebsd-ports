@@ -632,6 +632,8 @@ libksane5_LIB=		libKF5Sane.so
 
 marble4_PORT=		astro/marble-kde4
 marble4_LIB=		libmarblewidget.so
+marble5_PORT=		astro/marble
+marble5_LIB=		libmarblewidget-qt5.so
 
 okular4_PORT=		graphics/okular-kde4
 okular4_LIB=		libokularcore.so
