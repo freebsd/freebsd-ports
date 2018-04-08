@@ -26,7 +26,7 @@ SUB_FILES=	pkg-message
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	sockets
-WANT_PHP_WEB=	yes
+USES=		php:web
 
 OPTIONS_DEFINE=	IMAP LDAP DOCS
 OPTIONS_MULTI=	SQL
