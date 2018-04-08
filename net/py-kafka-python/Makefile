@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	kafka-python
-PORTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	net python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	christer.edwards@gmail.com
-COMMENT=	Pure Python client for Apache Kafka
+COMMENT=	Pure python client for Apache Kafka
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_GITHUB=	yes
-GH_ACCOUNT=	dpkp
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
