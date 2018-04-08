@@ -1,0 +1,9 @@
+JE and jconsole have been installed in %%LOCALBASE%%/lib/j/bin.
+
+Addons are installed in %%LOCALBASE%%/share/j/addons and system files
+in %%LOCALBASE%%/share/j/system.
+
+This port installs ONLY the base system. In order to install
+additional addons, use the JAL, running jconsole as root:
+
+http://code.jsoftware.com/wiki/JAL/Package_Manager/jpkg
