@@ -1,0 +1,9 @@
+Kapman is a clone of the well known game Pac-Man.
+
+You must run through the maze to eat all pills without being captured
+by a ghost.  By eating an energizer, Kapman gets the ability to eat
+ghosts for a few seconds.  When a stage is cleared of pills and
+energizer the player is taken to the next stage with slightly
+increased game speed.
+
+WWW: http://www.kde.org/applications/games/kapman/

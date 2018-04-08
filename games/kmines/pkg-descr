@@ -1,0 +1,5 @@
+KMines is a classic Minesweeper game.  The idea is to uncover all
+the squares without blowing up any mines.  When a mine is blown up,
+the game is over.
+
+WWW: http://www.kde.org/applications/games/kmines/

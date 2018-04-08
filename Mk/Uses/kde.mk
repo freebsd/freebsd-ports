@@ -611,9 +611,13 @@ libkdcraw5_LIB=		libKF5KDcraw.so
 
 libkdegames4_PORT=	games/libkdegames-kde4
 libkdegames4_LIB=	libkdegames.so
+libkdegames5_PORT=	games/libkdegames
+libkdegames5_LIB=	libKF5KDEGames.so
 
 libkeduvocdocument4_PORT=	misc/libkdeedu-kde4
 libkeduvocdocument4_LIB=	libkeduvocdocument.so
+libkeduvocdocument5_PORT=	misc/libkeduvocdocument
+libkeduvocdocument5_LIB=	libKEduVocDocument.so
 
 libkexiv24_PORT=	graphics/libkexiv2-kde4
 libkexiv24_LIB=		libkexiv2.so

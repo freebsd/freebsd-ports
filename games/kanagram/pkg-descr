@@ -1,0 +1,13 @@
+Kanagram is a game based on anagrams of words: the puzzle is solved
+when the letters of the scrambled word are put back in the correct
+order. There is no limit on either time taken, or the amount of
+attempts to solve the word.
+
+FEATURES
+- Several word lists included.
+- Hints and cheat help system.
+- Word lists editor.
+- Word lists distribution via KNewStuff.
+- Scalable user interface appropriate for children.
+
+WWW: http://www.kde.org/applications/education/kanagram
