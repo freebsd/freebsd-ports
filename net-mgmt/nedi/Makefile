@@ -17,14 +17,13 @@ RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
 		p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 		p5-DBI>=0:databases/p5-DBI
 
-USES=		perl5 shebangfix tar:tgz
+USES=		php:web perl5 shebangfix tar:tgz
 SHEBANG_FILES=	*.pl html/inc/Devsend.pl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 USE_PHP=	session snmp mysql
-WANT_PHP_WEB=	yes
 
 SUB_FILES=	pkg-message
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}

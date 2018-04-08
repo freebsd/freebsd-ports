@@ -16,10 +16,8 @@ RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
-USES=		perl5
-USE_MYSQL=	server
+USES=		mysql:server php:mod perl5
 USE_PHP=	mysql
-WANT_PHP_MOD=	yes
 IGNORE_WITH_PHP=	70 71
 
 NO_BUILD=	yes
