@@ -18,9 +18,7 @@ USE_PHP=	curl \
 		session \
 		xml
 
-USES=	gettext
-
-WANT_PHP_MOD=	yes
+USES=	gettext php:mod
 
 OPTIONS_DEFINE=	ADDONS NLS
 OPTIONS_SINGLE=	DB
@@ -32,7 +30,7 @@ OPTIONS_SUB=	yes
 NLS_USES=		gettext
 PGSQL_USES=	pgsql
 WANT_PGSQL=	server
-MYSQL_USE=	MYSQL=server
+MYSQL_USES=	mysql:server
 
 ADDONS_DISTFILES=	${PORTNAME}-addons-${PORTVERSION}${EXTRACT_SUFX}
 NO_BUILD=	yes

@@ -30,16 +30,16 @@ OPTIONS_DEFAULT=	APACHE
 PHPMOD_DESC=	Use PHP module for Apache
 NGINX_DESC=	Use Nginx
 
-APACHE_USE=	APACHE_RUN=22+
+APACHE_USES=		apache:run,2.2+
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 NGINX_RUN_DEPENDS=	nginx:www/nginx
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHPMOD}
-WANT_PHP_MOD=	yes
+USES+=	php:mod
 .else
-WANT_PHP_CGI=	yes
+USES+=	php:cgi
 .endif
 
 # Set files to ignore.
