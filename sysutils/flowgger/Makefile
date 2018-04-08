@@ -5,7 +5,7 @@ DISTVERSION=	0.2.6-28
 DISTVERSIONSUFFIX=	-gab572a0
 CATEGORIES=	sysutils
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast data collector
 
 LICENSE=	MPL20

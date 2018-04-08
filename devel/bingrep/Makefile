@@ -4,7 +4,7 @@ PORTNAME=	bingrep
 PORTVERSION=	g20171111
 CATEGORIES=	devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grep through binaries
 
 LICENSE=	MIT
