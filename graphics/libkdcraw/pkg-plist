@@ -1,0 +1,17 @@
+include/KF5/KDCRAW/KDCRAW/DcrawInfoContainer
+include/KF5/KDCRAW/KDCRAW/KDcraw
+include/KF5/KDCRAW/KDCRAW/RawDecodingSettings
+include/KF5/KDCRAW/KDCRAW/RawFiles
+include/KF5/KDCRAW/kdcraw/dcrawinfocontainer.h
+include/KF5/KDCRAW/kdcraw/kdcraw.h
+include/KF5/KDCRAW/kdcraw/libkdcraw_export.h
+include/KF5/KDCRAW/kdcraw/rawdecodingsettings.h
+include/KF5/KDCRAW/kdcraw/rawfiles.h
+include/KF5/libkdcraw_version.h
+lib/cmake/KF5KDcraw/KF5KDcrawConfig.cmake
+lib/cmake/KF5KDcraw/KF5KDcrawConfigVersion.cmake
+lib/cmake/KF5KDcraw/KF5KDcrawTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF5KDcraw/KF5KDcrawTargets.cmake
+lib/libKF5KDcraw.so
+lib/libKF5KDcraw.so.5
+lib/libKF5KDcraw.so.5.0.0
