@@ -19,7 +19,7 @@ PLIST=		${WRKDIR}/plist
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
-WANT_PHP_WEB=	yes
+USES=		php:web
 
 USERS?=		${WWWOWN}
 GROUPS?=	${WWWGRP}
