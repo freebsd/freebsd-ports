@@ -595,6 +595,8 @@ baloo-widgets4_LIB=	libbaloowidgets.so
 
 kate4_PORT=		editors/kate-kde4
 kate4_LIB=		libkateinterfaces.so
+kate5_PORT=		editors/kate
+kate5_PATH=		${QT_PLUGINDIR}/ktexteditor/katebacktracebrowserplugin.so
 
 libkcddb4_PORT=		audio/libkcddb-kde4
 libkcddb4_LIB=		libkcddb.so
