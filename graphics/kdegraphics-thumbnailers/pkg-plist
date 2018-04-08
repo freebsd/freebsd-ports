@@ -1,0 +1,4 @@
+%%QT_PLUGINDIR%%/gsthumbnail.so
+%%QT_PLUGINDIR%%/rawthumbnail.so
+share/kservices5/gsthumbnail.desktop
+share/kservices5/rawthumbnail.desktop

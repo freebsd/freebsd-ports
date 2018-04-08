@@ -604,6 +604,8 @@ libkcompactdisc4_LIB=	libkcompactdisc.so
 
 libkdcraw4_PORT=	graphics/libkdcraw-kde4
 libkdcraw4_LIB=		libkdcraw.so
+libkdcraw5_PORT=	graphics/libkdcraw
+libkdcraw5_LIB=		libKF5KDcraw.so
 
 libkdegames4_PORT=	games/libkdegames-kde4
 libkdegames4_LIB=	libkdegames.so
@@ -613,18 +615,26 @@ libkeduvocdocument4_LIB=	libkeduvocdocument.so
 
 libkexiv24_PORT=	graphics/libkexiv2-kde4
 libkexiv24_LIB=		libkexiv2.so
+libkexiv25_PORT=	graphics/libkexiv2
+libkexiv25_LIB=		libKF5KExiv2.so
 
 libkipi4_PORT=		graphics/libkipi-kde4
 libkipi4_LIB=		libkipi.so
+libkipi5_PORT=		graphics/libkipi
+libkipi5_LIB=		libKF5Kipi.so
 
 libksane4_PORT=		graphics/libksane-kde4
 libksane4_LIB=		libksane.so
+libksane5_PORT=		graphics/libksane
+libksane5_LIB=		libKF5Sane.so
 
 marble4_PORT=		astro/marble-kde4
 marble4_LIB=		libmarblewidget.so
 
 okular4_PORT=		graphics/okular-kde4
 okular4_LIB=		libokularcore.so
+okular5_PORT=		graphics/okular
+okular5_LIB=		libOkular5Core.so
 # ====================== end of multiversion components ========================
 
 # ====================== select the proper multiversion component ==============

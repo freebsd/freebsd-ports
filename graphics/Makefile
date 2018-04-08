@@ -342,6 +342,7 @@
     SUBDIR += gts
     SUBDIR += guetzli
     SUBDIR += guilib
+    SUBDIR += gwenview
     SUBDIR += gwenview-kde4
     SUBDIR += gx
     SUBDIR += hdr_tools
@@ -405,13 +406,18 @@
     SUBDIR += jpgraph2
     SUBDIR += jpgtn
     SUBDIR += jslice
+    SUBDIR += kamera
     SUBDIR += kamera-kde4
+    SUBDIR += kcolorchooser
     SUBDIR += kcolorchooser-kde4
     SUBDIR += kcoloredit
     SUBDIR += kdegraphics-kde4
+    SUBDIR += kdegraphics-mobipocket
     SUBDIR += kdegraphics-mobipocket-kde4
     SUBDIR += kdegraphics-strigi-analyzer-kde4
+    SUBDIR += kdegraphics-svgpart
     SUBDIR += kdegraphics-svgpart-kde4
+    SUBDIR += kdegraphics-thumbnailers
     SUBDIR += kdegraphics-thumbnailers-kde4
     SUBDIR += kdiagram
     SUBDIR += kf5-kimageformats
@@ -419,6 +425,7 @@
     SUBDIR += kf5-prison
     SUBDIR += kgraphviewer
     SUBDIR += kiconedit
+    SUBDIR += kimagemapeditor
     SUBDIR += kipi-plugin-acquireimages
     SUBDIR += kipi-plugin-advancedslideshow
     SUBDIR += kipi-plugin-batchprocess
@@ -463,6 +470,7 @@
     SUBDIR += kix-kmod
     SUBDIR += klatexformula
     SUBDIR += kludge3d
+    SUBDIR += kolourpaint
     SUBDIR += kolourpaint-kde4
     SUBDIR += kphotoalbum-kde4
     SUBDIR += kpovmodeler
@@ -518,11 +526,15 @@
     SUBDIR += libiptcdata
     SUBDIR += libjpeg-turbo
     SUBDIR += libjxr
+    SUBDIR += libkdcraw
     SUBDIR += libkdcraw-kde4
+    SUBDIR += libkexiv2
     SUBDIR += libkexiv2-kde4
     SUBDIR += libkface
+    SUBDIR += libkipi
     SUBDIR += libkipi-kde4
     SUBDIR += libkipiplugins
+    SUBDIR += libksane
     SUBDIR += libksane-kde4
     SUBDIR += libkscreen
     SUBDIR += liblqr-1
@@ -631,6 +643,7 @@
     SUBDIR += ocrad
     SUBDIR += ocre
     SUBDIR += ogre3d
+    SUBDIR += okular
     SUBDIR += okular-kde4
     SUBDIR += opencollada
     SUBDIR += opencolorio
@@ -1025,6 +1038,7 @@
     SUBDIR += sk1libs
     SUBDIR += skanlite-kde4
     SUBDIR += smillaenlarger
+    SUBDIR += spectacle
     SUBDIR += springgraph
     SUBDIR += squish
     SUBDIR += ssocr

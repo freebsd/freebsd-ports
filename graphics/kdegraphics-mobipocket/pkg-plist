@@ -1,0 +1,12 @@
+include/qmobipocket/mobipocket.h
+include/qmobipocket/qfilestream.h
+include/qmobipocket/qmobipocket_export.h
+lib/cmake/QMobipocket/QMobipocketConfig.cmake
+lib/cmake/QMobipocket/QMobipocketConfigVersion.cmake
+lib/cmake/QMobipocket/QMobipocketTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/QMobipocket/QMobipocketTargets.cmake
+lib/libqmobipocket.so
+lib/libqmobipocket.so.2
+lib/libqmobipocket.so.2.0.0
+%%QT_PLUGINDIR%%/mobithumbnail.so
+share/kservices5/mobithumbnail.desktop

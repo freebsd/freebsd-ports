@@ -4532,10 +4532,8 @@ graphics/divxcalc||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/ecg2png||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/flip||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/fractorama||2013-07-26|Has expired: Depends on Qt 3.x
-graphics/gwenview||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/imgseek||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kalbum||2013-07-26|Has expired: Depends on Qt 3.x
-graphics/kamera||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kbarcode||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kdegraphics3||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kipi-plugins||2013-07-26|Has expired: Depends on Qt 3.x
@@ -4544,10 +4542,7 @@ graphics/kooka||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kradview||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kuickshow||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/landscape||2013-07-26|Has expired: Depends on Qt 3.x
-graphics/libkdcraw||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/libkexif||2013-07-26|Has expired: Depends on Qt 3.x
-graphics/libkexiv2||2013-07-26|Has expired: Depends on Qt 3.x
-graphics/libkipi||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/libqglviewer||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/libx3dtk||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/potracegui||2013-07-26|Has expired: Depends on Qt 3.x
@@ -10100,12 +10095,8 @@ math/kbruch|math/kbruch-kde4|2018-02-22|Make room for KDE updates
 math/kig|math/kig-kde4|2018-02-22|Make room for KDE updates
 math/kcalc|math/kcalc-kde4|2018-02-22|Make room for KDE updates
 math/rocs|math/rocs-kde4|2018-02-22|Make room for KDE updates
-graphics/kolourpaint|graphics/kolourpaint-kde4|2018-02-22|Make room for KDE updates
 graphics/ksnapshot|graphics/ksnapshot-kde4|2018-02-22|Make room for KDE updates
-graphics/okular|graphics/okular-kde4|2018-02-22|Make room for KDE updates
-graphics/libksane|graphics/libksane-kde4|2018-02-22|Make room for KDE updates
 graphics/ksaneplugin|graphics/ksaneplugin-kde4|2018-02-22|Make room for KDE updates
-graphics/kcolorchooser|graphics/kcolorchooser-kde4|2018-02-22|Make room for KDE updates
 graphics/kqtquickcharts|graphics/kqtquickcharts-kde4|2018-02-22|Make room for KDE updates
 x11/kde4-baseapps|x11/kde-baseapps-kde4|2018-02-22|Make room for KDE updates
 x11/kde4-runtime|x11/kde-runtime-kde4|2018-02-22|Make room for KDE updates
