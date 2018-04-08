@@ -251,6 +251,7 @@
     SUBDIR += libeatmydata
     SUBDIR += libisocodes
     SUBDIR += libkdeedu-kde4
+    SUBDIR += libkeduvocdocument
     SUBDIR += liblxi
     SUBDIR += libmetalink
     SUBDIR += libpostal
