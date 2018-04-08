@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+exec %%LOCALBASE%%/lib/j/bin/jconsole -jprofile %%LOCALBASE%%/share/j/profile.ijs
