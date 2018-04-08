@@ -2,8 +2,8 @@
 
 PORTNAME=	get_iplayer
 PORTVERSION=	3.13
+DISTVERSIONPREFIX=v
 CATEGORIES=	net multimedia
-MASTER_SITES=	GH
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Search, index, or stream archive video from BBC iPlayer
@@ -23,8 +23,6 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 USES=		perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	get-iplayer
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	07535670
 USE_PERL5=	run
 SHEBANG_FILES=	${PORTNAME} ${PORTNAME}.cgi
 NO_BUILD=	yes
