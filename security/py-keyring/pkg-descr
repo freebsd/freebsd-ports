@@ -4,4 +4,4 @@ storage. It supports OSX, KDE, Gnome and Windows's native password storing
 services. Besides this, it is shipped with kinds of Python implemented keyring
 for the left environments.
 
-WWW: https://pypi.python.org/pypi/keyring
+WWW: https://github.com/jaraco/keyring
