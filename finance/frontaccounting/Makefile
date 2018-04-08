@@ -26,25 +26,16 @@ OPTIONS_DEFAULT=	APACHE MYSQL_SERVER
 
 MYSQL_SERVER_DESC=	MySQL server support
 NGINX_DESC=		NGINX web server
+
+APACHE_USES=		apache:run,2.2+ php:web
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
+LIGHTTPD_USES=		php:web
 NGINX_RUN_DEPENDS=	nginx:www/nginx
+NGINX_USES=		php:web
 MYSQL_SERVER_USE=	MYSQL=server
-APACHE_USE=		APACHE_RUN=22+
 NLS_USES=		gettext
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPACHE}
-WANT_PHP_WEB=yes
-.endif
-
-.if ${PORT_OPTIONS:MLIGHTTPD}
-WANT_PHP_WEB=yes
-.endif
-
-.if ${PORT_OPTIONS:MNGINX}
-WANT_PHP_WEB=yes
-.endif
 
 .if !${PORT_OPTIONS:MDOCS}
 PORTDOCSARGS=	'-not -path "./doc*"'
