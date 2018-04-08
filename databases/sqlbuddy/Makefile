@@ -19,7 +19,7 @@ GH_TAGNAME=	b2cdc2b
 NO_BUILD=	yes
 
 USE_PHP=	ctype pcre session mysql
-WANT_PHP_WEB=	yes
+USES=		php:web
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
