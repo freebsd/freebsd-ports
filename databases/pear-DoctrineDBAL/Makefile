@@ -23,11 +23,10 @@ ODBC_DESC=	Install PHP DBO driver for ODBC
 PGSQL_DESC=	Install PHP DBO driver for PostgreSQL
 SQLITE_DESC=	Install PHP DBO driver for SQLite
 
-USES=		pear
+USES=		pear php:cli
 PEAR_CHANNEL=	doctrine
 
 USE_PHP=	pdo
-WANT_PHP_CLI=	yes
 
 DBLIB_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:databases/php${PHP_VER}-pdo_dblib
 MYSQL_USE=	PHP=pdo_mysql
