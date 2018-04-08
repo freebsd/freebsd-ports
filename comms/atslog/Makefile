@@ -50,7 +50,7 @@ LIBWRAP_CONFIGURE_OFF=	--disable-libwrap
 
 .if ${PORT_OPTIONS:MWWW}
 USE_PHP=	pcre
-WANT_PHP_WEB=	yes
+USES+=		php:web
 .if ${PORT_OPTIONS:MWWWGD}
 USE_PHP+=	gd
 .endif
