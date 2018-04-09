@@ -9,6 +9,9 @@ MASTER_SITES=	https://download.elastic.co/kibana/kibana/ \
 		http://download.elastic.co/kibana/kibana/
 PKGNAMESUFFIX?=	45
 
+DEPRECATED?=	End of Life was 2017-09-30
+EXPIRATION_DATE?=	2018-06-01
+
 MAINTAINER=	kozlov.sergey.404@gmail.com
 COMMENT=	Browser based analytics and search interface to ElasticSearch
 
