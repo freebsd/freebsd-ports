@@ -1401,7 +1401,7 @@
 %%WWWDIR%%/misc/others/widget_example_lastvisits.html
 %%WWWDIR%%/misc/proxy-hide-piwik-url/README.md
 %%WWWDIR%%/misc/user/index.html
-%%WWWDIR%%/piwik.js
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/piwik.js
 %%WWWDIR%%/piwik.php
 %%WWWDIR%%/plugins/API/API.php
 %%WWWDIR%%/plugins/API/Controller.php
@@ -7818,5 +7818,7 @@
 @dir %%WWWDIR%%/plugins/ExampleTheme/screenshots
 @dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Resources
 @dir %%WWWDIR%%/vendor/szymach/c-pchart/app/cache
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache/tracker
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache
 @dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config

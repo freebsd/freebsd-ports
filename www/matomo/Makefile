@@ -2,6 +2,7 @@
 
 PORTNAME=	matomo
 DISTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://builds.matomo.org/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -43,6 +44,7 @@ pre-install:
 	fi
 
 do-install:
+	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/cache/tracker
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
