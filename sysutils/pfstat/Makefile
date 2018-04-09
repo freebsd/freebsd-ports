@@ -3,20 +3,24 @@
 
 PORTNAME=	pfstat
 PORTVERSION=	2.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils net
-MASTER_SITES=	http://www.benzedrine.cx/
+MASTER_SITES=	https://www.benzedrine.ch/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Utility to render graphical statistics for pf
 
-LIB_DEPENDS=	libgd.so:graphics/gd
+LICENSE=	BSD2CLAUSE
+
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libpng.so:graphics/png
+
+USES=		iconv jpeg
+
+USE_RC_SUBR=	pfstatd
 
 MAKE_ARGS=	"LD_GD=gd"
 MAKE_ENV+=	__MAKE_CONF=/dev/null
-USES=		iconv
-
-USE_RC_SUBR=	pfstatd
 
 PLIST_FILES=	bin/pfstat \
 		bin/pfstatd \
