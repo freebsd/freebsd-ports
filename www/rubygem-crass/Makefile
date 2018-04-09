@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	crass
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
