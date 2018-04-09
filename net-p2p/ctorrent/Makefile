@@ -11,6 +11,11 @@ DISTNAME=	${PORTNAME}-dnh${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	BitTorrent Client written in C for FreeBSD and Linux
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=	ssl
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ctorrent
