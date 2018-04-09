@@ -1287,6 +1287,7 @@
     SUBDIR += py-docutils
     SUBDIR += py-dsv
     SUBDIR += py-elasticsearch
+    SUBDIR += py-elasticsearch-async
     SUBDIR += py-elasticsearch5
     SUBDIR += py-elasticsearch-curator
     SUBDIR += py-elasticsearch-dsl-py
