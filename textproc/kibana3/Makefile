@@ -12,6 +12,9 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
+DEPRECATED=	End of Life was 2015-11-15
+EXPIRATION_DATE=	2018-06-01
+
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
