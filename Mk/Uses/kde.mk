@@ -582,6 +582,8 @@ xmlrpcclient_LIB=	libKF5XmlRpcClient.so
 # ====================== multiversion component ================================
 akonadi4_PORT=		databases/akonadi-kde4
 akonadi4_LIB=		libakonadiprotocolinternals.so
+akonadi5_PORT=		databases/akonadi
+akonadi5_LIB=		libKF5AkonadiPrivate.so
 
 attica4_PORT=		x11-toolkits/attica
 attica4_LIB=		libattica.so
