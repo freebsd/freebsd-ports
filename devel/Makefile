@@ -455,6 +455,7 @@
     SUBDIR += dmalloc
     SUBDIR += dmucs
     SUBDIR += doctorj
+    SUBDIR += dolphin-plugins
     SUBDIR += dolphin-plugins-kde4
     SUBDIR += dotconf
     SUBDIR += doxygen
