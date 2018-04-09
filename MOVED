@@ -10156,3 +10156,9 @@ textproc/py-curator-py|textproc/py-elasticsearch-curator|2018-04-09|Follow exist
 sysutils/memtest|sysutils/memtester|2018-04-09|Use actual upstream name
 textproc/elasticsearch5-x-pack||2018-04-09|Use elasticsearch-plugin to install X-Pack
 textproc/kibana5-x-pack||2018-04-09|Use kibana-plugin to install X-Pack
+textproc/elasticsearch||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-plugin-hq||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-plugin-marvel||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-plugin-migration||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-plugin-sql||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-river-rabbitmq||2018-04-09|ElasticSearch 1.x End of Life
