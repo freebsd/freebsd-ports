@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-DISTVERSION=	3.22.0
-PORTREVISION=	2
+DISTVERSION=	3.23.0
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2018/ http://www2.sqlite.org/2018/ http://www3.sqlite.org/2018/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
@@ -30,7 +29,7 @@ OPTIONS_RADIO=		STAT
 OPTIONS_GROUP=		OPT_EXT OPT_FUNC UNICODE RTREEG RL
 
 OPTIONS_GROUP_OPT_EXT=	JSON1 SESSION
-OPTIONS_GROUP_OPT_FUNC=	OFFSET SOUNDEX
+OPTIONS_GROUP_OPT_FUNC=	OFFSET SER1 SOUNDEX
 
 OPT_EXT_DESC=		Optional extensions
 OPT_FUNC_DESC=		Optional functions
@@ -51,6 +50,9 @@ NULL_TRIM_DESC=		Omits NULL columns at the ends of rows
 
 # http://www.sqlite.org/compile.html#enable_offset_sql_func
 OFFSET_DESC=		Enable sqlite_offset() returning record's file offset
+
+# https://www.sqlite.org/compile.html#enable_deserialize
+SER1_DESC=		Enable the sqlite3_[de]serialize() interface
 
 # https://www.sqlite.org/sessionintro.html
 SESSION_DESC=		Enable the session extension
@@ -211,6 +213,8 @@ UNKNOWN_SQL_CPPFLAGS=	-DSQLITE_ENABLE_UNKNOWN_SQL_FUNCTION=1
 NULL_TRIM_CPPFLAGS=	-DSQLITE_ENABLE_NULL_TRIM=1
 
 OFFSET_CPPFLAGS=	-DSQLITE_ENABLE_OFFSET_SQL_FUNC=1
+
+SER1_CPPFLAGS=	-DSQLITE_ENABLE_DESERIALIZE=1
 
 .include <bsd.port.options.mk>
 
