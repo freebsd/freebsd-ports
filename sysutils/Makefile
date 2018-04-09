@@ -650,9 +650,9 @@
     SUBDIR += megarc
     SUBDIR += memdump
     SUBDIR += memfetch
-    SUBDIR += memtest
     SUBDIR += memtest86
     SUBDIR += memtest86+
+    SUBDIR += memtester
     SUBDIR += metalog
     SUBDIR += mfid
     SUBDIR += mgeupsd

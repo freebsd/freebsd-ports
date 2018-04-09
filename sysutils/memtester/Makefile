@@ -6,10 +6,11 @@ PORTVERSION=	4.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/old-versions/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Utility to test for faulty memory subsystem
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 

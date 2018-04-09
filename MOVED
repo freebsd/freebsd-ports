@@ -10185,3 +10185,4 @@ converters/php5-bsdconv|converters/php-bsdconv|2018-04-03|It supports PHP 7 sinc
 converters/rubygem-bsdconv|converters/rubygem-ruby-bsdconv|2018-04-03|Rename to match our rubygem- port naming
 www/piwik|www/matomo|2018-04-06|Project renamed
 textproc/py-curator-py|textproc/py-elasticsearch-curator|2018-04-09|Follow existing Elasticsearch naming conventions
+sysutils/memtest|sysutils/memtester|2018-04-09|Use actual upstream name
