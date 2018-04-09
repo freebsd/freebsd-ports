@@ -1,0 +1,19 @@
+# $FreeBSD$
+
+PORTNAME=	kompare
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	textproc kde kde-applications
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Diff/Patch Frontend
+
+LIB_DEPENDS=	libkomparediff2.so:textproc/libkomparediff2
+
+USES=		cmake:outsource gettext kde:5 tar:xz
+USE_KDE=	auth codecs completion config configwidgets coreaddons \
+		doctools ecm i18n iconthemes jobwidgets kio parts service \
+		sonnet texteditor textwidgets widgetsaddons xmlgui
+USE_QT5=	core dbus gui network printsupport widgets xml \
+		buildtools_build qmake_build
+
+.include <bsd.port.mk>
