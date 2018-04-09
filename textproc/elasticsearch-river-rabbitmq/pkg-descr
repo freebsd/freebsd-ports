@@ -1,5 +1,0 @@
-The RabbitMQ River plugin allows index bulk format messages into
-ElasticSearch. RabbitMQ River allows to automatically index a
-RabbitMQ queue.
-
-WWW: https://github.com/elasticsearch/elasticsearch-river-rabbitmq
