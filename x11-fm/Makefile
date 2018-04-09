@@ -6,6 +6,7 @@
     SUBDIR += caja
     SUBDIR += catseye-fm
     SUBDIR += deforaos-browser
+    SUBDIR += dolphin
     SUBDIR += doublecmd
     SUBDIR += emelfm2
     SUBDIR += ezfm
@@ -13,6 +14,7 @@
     SUBDIR += gentoo
     SUBDIR += gnome-commander2
     SUBDIR += gprename
+    SUBDIR += konqueror
     SUBDIR += krusader2
     SUBDIR += librfm
     SUBDIR += libtubo
