@@ -4704,7 +4704,6 @@ security/kovpn||2013-07-26|Has expired: Depends on Qt 3.x
 security/kssh||2013-07-26|Has expired: Depends on Qt 3.x
 security/qca-tls||2013-07-26|Has expired: Depends on Qt 3.x
 security/qtfw||2013-07-26|Has expired: Depends on Qt 3.x
-sysutils/k3b||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kcpuload||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kdeadmin3||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/keep||2013-07-26|Has expired: Depends on Qt 3.x
@@ -9970,14 +9969,9 @@ accessibility/kaccessible|accessibility/kaccessible-kde4|2018-02-22|Make room fo
 accessibility/jovie|accessibility/jovie-kde4|2018-02-22|Make room for KDE updates
 misc/libkdeedu|misc/libkdeedu-kde4|2018-02-22|Make room for KDE updates
 sysutils/kuser|sysutils/kuser-kde4|2018-02-22|Make room for KDE updates
-sysutils/kdf|sysutils/kdf-kde4|2018-02-22|Make room for KDE updates
 sysutils/sweeper|sysutils/sweeper-kde4|2018-02-22|Make room for KDE updates
-sysutils/kcron|sysutils/kcron-kde4|2018-02-22|Make room for KDE updates
 sysutils/nepomuk-widgets|sysutils/nepomuk-widgets-kde4|2018-02-22|Make room for KDE updates
-sysutils/baloo-widgets|sysutils/baloo-widgets-kde4|2018-02-22|Make room for KDE updates
 sysutils/nepomuk-core|sysutils/nepomuk-core-kde4|2018-02-22|Make room for KDE updates
-sysutils/kfloppy|sysutils/kfloppy-kde4|2018-02-22|Make room for KDE updates
-sysutils/ksystemlog|sysutils/ksystemlog-kde4|2018-02-22|Make room for KDE updates
 sysutils/baloo|sysutils/baloo-kde4|2018-02-22|Make room for KDE updates
 sysutils/kfilemetadata|sysutils/kfilemetadata-kde4|2018-02-22|Make room for KDE updates
 editors/kate-plugin-pate|editors/kate-plugin-pate-kde4|2018-02-22|Make room for KDE updates

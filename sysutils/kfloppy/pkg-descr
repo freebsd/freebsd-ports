@@ -1,0 +1,7 @@
+KFloppy is a utility that provides a straightforward graphical means
+to format 3.5" and 5.25" floppy disks.
+
+Make sure that your floppy disk is not mounted. KFloppy cannot format
+a mounted floppy disk.
+
+WWW: http://utils.kde.org
