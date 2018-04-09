@@ -13,7 +13,11 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Basic inter-process locks
 
+LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USES=		python zip
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
