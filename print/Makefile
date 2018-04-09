@@ -97,6 +97,7 @@
     SUBDIR += hyperlatex
     SUBDIR += indexinfo
     SUBDIR += jabref
+    SUBDIR += print-manager
     SUBDIR += print-manager-kde4
     SUBDIR += kde_poster
     SUBDIR += kover
