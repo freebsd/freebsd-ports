@@ -107,6 +107,7 @@
     SUBDIR += alt-ergo
     SUBDIR += amath
     SUBDIR += ambit
+    SUBDIR += analitza
     SUBDIR += analitza-kde4
     SUBDIR += ann
     SUBDIR += antic
@@ -132,6 +133,7 @@
     SUBDIR += calc
     SUBDIR += calcoo
     SUBDIR += calctool
+    SUBDIR += cantor
     SUBDIR += cantor-kde4
     SUBDIR += cblas
     SUBDIR += ccmath
@@ -267,11 +269,16 @@
     SUBDIR += jsmath-fonts
     SUBDIR += jtransforms
     SUBDIR += jts
+    SUBDIR += kalgebra
     SUBDIR += kalgebra-kde4
+    SUBDIR += kbruch
     SUBDIR += kbruch-kde4
+    SUBDIR += kcalc
     SUBDIR += kcalc-kde4
+    SUBDIR += kig
     SUBDIR += kig-kde4
     SUBDIR += kktdirect
+    SUBDIR += kmplot
     SUBDIR += kmplot-kde4
     SUBDIR += labplot
     SUBDIR += lambda
@@ -713,6 +720,7 @@
     SUBDIR += rexx-regmath
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams
+    SUBDIR += rocs
     SUBDIR += rocs-kde4
     SUBDIR += rpcalc
     SUBDIR += rpy
