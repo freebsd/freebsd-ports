@@ -1,12 +1,9 @@
 bin/filelight
 etc/xdg/filelightrc
-%%QT_PLUGINDIR%%/filelightpart.so
 share/applications/org.kde.filelight.desktop
-share/kservices5/filelightpart.desktop
-share/kxmlgui5/filelightpart/filelightpartui.rc
+share/icons/hicolor/128x128/apps/filelight.png
 share/icons/hicolor/16x16/apps/filelight.png
 share/icons/hicolor/22x22/apps/filelight.png
-share/icons/hicolor/32x32/actions/views_filelight.png
 share/icons/hicolor/32x32/apps/filelight.png
 share/icons/hicolor/48x48/apps/filelight.png
 share/icons/hicolor/64x64/apps/filelight.png
@@ -56,3 +53,4 @@ share/locale/ug/LC_MESSAGES/filelight.mo
 share/locale/uk/LC_MESSAGES/filelight.mo
 share/locale/zh_CN/LC_MESSAGES/filelight.mo
 share/locale/zh_TW/LC_MESSAGES/filelight.mo
+share/metainfo/org.kde.filelight.appdata.xml
