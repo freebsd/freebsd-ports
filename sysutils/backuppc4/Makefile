@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backuppc
-PORTVERSION=	4.1.5
+PORTVERSION=	4.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
 		SF
@@ -21,11 +21,11 @@ RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
 
 CONFLICTS=	backuppc backuppc-devel
 
-USE_RC_SUBR=	backuppc
-
 USES=		perl5
+
 NO_BUILD=	yes
 NO_ARCH=	yes
+USE_RC_SUBR=	backuppc
 
 USERS=		backuppc
 GROUPS=		backuppc
