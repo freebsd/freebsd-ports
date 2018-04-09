@@ -1,3 +1,3 @@
-TIMESTAMP = 1521359918
-SHA256 (zstandard-0.8.2.tar.gz) = fa247b90191e3d98acbee809d0578b3b5586f77890b08a0323b3f0748a243fce
-SIZE (zstandard-0.8.2.tar.gz) = 463526
+TIMESTAMP = 1523254934
+SHA256 (zstandard-0.9.0.tar.gz) = bda1071c4c635f5eeac594505bdd712cfff10608f688199019462b8c81b93b9f
+SIZE (zstandard-0.9.0.tar.gz) = 558068
