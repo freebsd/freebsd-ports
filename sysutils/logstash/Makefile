@@ -11,6 +11,9 @@ COMMENT=	Tool for managing events and logs
 
 LICENSE=	APACHE20
 
+DEPRECATED=	End of Life was 2018-02-8
+EXPIRATION_DATE=	2018-07-09
+
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 CONFLICTS=	logstash5-[0-9]*
