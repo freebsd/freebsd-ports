@@ -1,0 +1,5 @@
+Cantor is a KDE Application aimed to provide a nice interface for
+doing mathematics and scientific computing. It doesn't implement its
+own computation logic, but instead is built around different backends.
+
+WWW: http://edu.kde.org/cantor
