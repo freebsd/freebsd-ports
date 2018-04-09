@@ -1,0 +1,10 @@
+The Kross scripting framework provides full Python, Ruby and KDE JavaScript
+scripting support. The goal was to limit the work needed on applications to
+have them fully scriptable and to provide a modular way to transparently
+integrate additional interpreters and in that way extend your application
+with a new scripting-backend without any new line of code and even without
+any recompile. To achieve this internally Qt's introspection-functionality
+like signals, slots, properties, enums, QVariant, QObject, QMetaObject,
+QMetaType, etc. are used to deal with functionality at runtime.
+
+WWW: https://techbase.kde.org/Development/Tutorials/Kross/Introduction
