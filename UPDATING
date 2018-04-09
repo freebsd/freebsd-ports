@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180409:
+  AFFECTS: users of net-im/matterircd
+  AUTHOR: norrland@nullbyte.se
+
+  Matterircd has been updated to 0.17.0 and mattermost configuration settings
+  need to be migrated to [mattermost] section. See matterircd.toml.sample.
+
 20180404:
   AFFECTS: users of www/nextcloud
   AUTHOR: brnrd@FreeBSD.org
