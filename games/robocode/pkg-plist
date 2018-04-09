@@ -180,7 +180,6 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/roborumble/roborumble.txt
 %%DATADIR%%/roborumble/teamrumble.txt
 %%DATADIR%%/roborumble/twinduel.txt
-%%DATADIR%%/robots/META-INF/MANIFEST.MF
 %%DATADIR%%/robots/sample/Corners.class
 %%DATADIR%%/robots/sample/Corners.java
 %%DATADIR%%/robots/sample/Corners.properties
