@@ -1,4 +1,4 @@
---- conf.d/Makefile.in.orig	2009-09-19 13:55:58 UTC
+--- conf.d/Makefile.in.orig	2017-03-28 09:13:48 UTC
 +++ conf.d/Makefile.in
 @@ -20,14 +20,14 @@ install:
  	lst="`ls -1 @srcdir@/*.conf @srcdir@/*.sample @srcdir@/*.default 2>/dev/null | sed 's/\.sample//g; s/\.default//g; s/[^ ]*\*\.[^ ]*//g' | sort | uniq`" ; \
