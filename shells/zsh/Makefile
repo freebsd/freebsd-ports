@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zsh
-DISTVERSION=	5.4.2
-PORTREVISION=	1
+DISTVERSION=	5.5
 CATEGORIES=	shells
 MASTER_SITES=	http://www.zsh.org/pub/ \
 		SF \
@@ -34,7 +33,8 @@ CONFIGURE_ARGS=	--with-tcsetpgrp \
 		--enable-multibyte \
 		--enable-zsh-secure-free \
 		--sysconfdir=${PREFIX}/etc
-CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
+CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no \
+		ac_cv_header_sys_capability_h=no
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
@@ -107,6 +107,7 @@ post-install:
 	(${STAGEDIR}${PREFIX}/bin/zsh -fc ' \
 		setopt extendedglob nomark_dirs; \
 		cd ${STAGEDIR}/${DATADIR}/${ZSH_VER} ; \
+		rm -f functions/**/*.orig ; \
 		for i in functions/**/*(/) ; do \
 			zcompile -U -M $$i.zwc $$i/*~*.zwc(^/) ; \
 			${CHMOD} 644 $$i.zwc ; \
