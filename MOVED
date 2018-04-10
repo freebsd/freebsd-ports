@@ -8712,7 +8712,6 @@ www/hydra||2016-11-01|Has expired: Broken for more than 6 months
 math/py-pyfst||2016-11-01|Has expired: Broken for more than 6 months
 archivers/ruby-zip||2016-11-01|Has expired: Broken will all supported versions of Ruby
 devel/ruby-langscan||2016-11-01|Has expired: Broken will all supported versions of Ruby
-math/octave-forge-dicom||2016-11-01|Has expired: Broken for more than 6 months
 graphics/linux-c6-libGLU|graphics/linux-c6-dri|2016-11-04|Unused
 graphics/linux-c7-libGLU|graphics/linux-c7-dri|2016-11-04|Unused
 multimedia/libmovtar||2016-11-05|Not used anymore, abandonware
