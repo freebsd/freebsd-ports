@@ -264,7 +264,17 @@ _USE_FRAMEWORKS_ALL=	ecm \
 			${_USE_FRAMEWORKS_PORTING} \
 			${_USE_FRAMEWORKS_EXTRA}
 
-_USE_KDEPIM5_ALL=	syndication
+# List of components of the KDE PIM distribution (part of applications).
+_USE_KDEPIM5_ALL=	akonadicontacts akonadimime akonadinotes \
+			akonadicalendar akonadisearch alarmcalendar \
+			blog calendarcore calendarsupport calendarutils \
+			contacts eventviews gapi \
+			grantleetheme gravatar identitymanagement imap \
+			incidenceeditor kdepim-apps-libs \
+			kontactinterface kpimdav \
+			ksmtp ldap libkdepim libkleo libksieve mailcommon \
+			mailimporter mailtransport mbox messagelib \
+			mime pimcommon pimtextedit syndication tnef
 
 _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
 			${_USE_KDEPIM5_ALL} \
@@ -582,8 +592,113 @@ xmlrpcclient_LIB=	libKF5XmlRpcClient.so
 # ====================== end of frameworks components ==========================
 
 # ====================== pim5 components =======================================
+akonadicontacts_PORT=	net/akonadi-contacts
+akonadicontacts_LIB=	libKF5AkonadiContact.so
+
+akonadimime_PORT=	net/akonadi-mime
+akonadimime_LIB=	libKF5AkonadiMime.so
+
+akonadinotes_PORT=	net/akonadi-notes
+akonadinotes_LIB=	libKF5AkonadiNotes.so
+
+akonadicalendar_PORT=	net/akonadi-calendar
+akonadicalendar_LIB=	libKF5AkonadiCalendar.so
+
+akonadisearch_PORT=	net/akonadi-search
+akonadisearch_LIB=	libKF5AkonadiSearchCore.so
+
+alarmcalendar_PORT=	net/kalarmcal
+alarmcalendar_LIB=	libKF5AlarmCalendar.so
+
+blog_PORT=		net/kblog
+blog_LIB=		libKF5Blog.so
+
+calendarsupport_PORT=	net/calendarsupport
+calendarsupport_LIB=	libKF5CalendarSupport.so
+
+calendarcore_PORT=	net/kcalcore
+calendarcore_LIB=	libKF5CalendarCore.so
+
+calendarutils_PORT=	net/kcalutils
+calendarutils_LIB=	libKF5CalendarUtils.so
+
+contacts_PORT=		net/kcontacts
+contacts_LIB=		libKF5Contacts.so
+
+eventviews_PORT=	net/eventviews
+eventviews_LIB=		libKF5EventViews.so
+
+gapi_PORT=		net/libkgapi
+gapi_LIB=		libKPimGAPICore.so
+
+grantleetheme_PORT=	deskutils/grantleetheme
+grantleetheme_LIB=	libKF5GrantleeTheme.so
+
+gravatar_PORT=		net/libgravatar
+gravatar_LIB=		libKF5Gravatar.so
+
+identitymanagement_PORT=	net/kidentitymanagement
+identitymanagement_LIB=		libKF5IdentityManagement.so
+
+imap_PORT=		net/kimap
+imap_LIB=		libKF5IMAP.so
+
+incidenceeditor_PORT=	net/incidenceeditor
+incidenceeditor_LIB=	libKF5IncidenceEditor.so
+
+kdepim-apps-libs_PORT=	deskutils/kdepim-apps-libs
+kdepim-apps-libs_LIB=	libKF5SendLater.so
+
+kontactinterface_PORT=	net/kontactinterface
+kontactinterface_LIB=	libKF5KontactInterface.so
+
+kpimdav_PORT=		net/kdav
+kpimdav_LIB=		libKPimKDAV.so
+
+ksmtp_PORT=		net/ksmtp
+ksmtp_LIB=		libKPimSMTP.so
+
+ldap_PORT=		net/kldap
+ldap_LIB=		libKF5Ldap.so
+
+libkdepim_PORT=		deskutils/libkdepim
+libkdepim_LIB=		libKF5Libkdepim.so
+
+libkleo_PORT=		security/libkleo
+libkleo_LIB=		libKF5Libkleo.so
+
+libksieve_PORT=		net/libksieve
+libksieve_LIB=		libKF5KSieve.so
+
+mailcommon_PORT=	net/mailcommon
+mailcommon_LIB=		libKF5MailCommon.so
+
+mailimporter_PORT=	net/mailimporter
+mailimporter_LIB=	libKF5MailImporter.so
+
+mailtransport_PORT=	net/kmailtransport
+mailtransport_LIB=	libKF5MailTransport.so
+
+mbox_PORT=		net/kmbox
+mbox_LIB=		libKF5Mbox.so
+
+messagelib_PORT=	net/messagelib
+messagelib_LIB=		libKF5MessageList.so
+
+mime_PORT=		net/kmime
+mime_LIB=		libKF5Mime.so
+
+pimcommon_PORT=		net/pimcommon
+pimcommon_LIB=		libKF5PimCommon.so
+
+pimtextedit_PORT=	net/kpimtextedit
+pimtextedit_LIB=	libKF5PimTextEdit.so
+
 syndication_PORT=	net/syndication
 syndication_LIB=	libKF5Syndication.so
+
+tnef_PORT=		net/ktnef
+tnef_LIB=		libKF5Tnef.so
 # ====================== end of pim5 components ================================
 
 # ====================== multiversion component ================================

@@ -341,6 +341,7 @@
     SUBDIR += libgringotts
     SUBDIR += libhijack
     SUBDIR += libident
+    SUBDIR += libkleo
     SUBDIR += libkpass
     SUBDIR += libksba
     SUBDIR += libmcrypt

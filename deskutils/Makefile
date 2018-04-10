@@ -94,6 +94,7 @@
     SUBDIR += go-for-it
     SUBDIR += gourmet
     SUBDIR += gpicker
+    SUBDIR += grantleetheme
     SUBDIR += griffith
     SUBDIR += growl-for-linux
     SUBDIR += gruler
@@ -125,6 +126,7 @@
     SUBDIR += kchmviewer
     SUBDIR += kdeconnect
     SUBDIR += kdepim
+    SUBDIR += kdepim-apps-libs
     SUBDIR += kdepim-kde4
     SUBDIR += kdepim-runtime-kde4
     SUBDIR += kdepimlibs-kde4
@@ -133,6 +135,7 @@
     SUBDIR += ksshaskpass
     SUBDIR += latte-dock
     SUBDIR += launchy
+    SUBDIR += libkdepim
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += libstreamanalyzer
     SUBDIR += libstreams
