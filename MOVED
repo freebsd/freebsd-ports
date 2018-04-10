@@ -864,7 +864,6 @@ devel/tclxml-libxml2|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
 devel/tclxml-expat|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
 www/tcldom|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
 www/tcldom-libxml2|devel/tclxml|2009-11-26|Port now is part of devel/tclxml
-lang/erlang-doc||2009-11-27|Documentation now part of lang/erlang package
 devel/gtkmozedit||2009-11-27|No longer under development, does not build with libxul
 finance/p5-HTML-Query|www/p5-HTML-Query|2009-11-28|Moved to www category
 graphics/clutter-cairo|graphics/clutter|2009-11-28|This port is obsolete, all functionality is now in graphics/clutter
