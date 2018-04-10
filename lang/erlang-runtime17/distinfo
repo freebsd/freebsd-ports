@@ -1,9 +1,8 @@
+TIMESTAMP = 1523196156
 SHA256 (erlang/otp_src_17.5.tar.gz) = 3c28820c981b30c50df8ac2a4a238e5813454fa3ed2ad530bc7948a282846474
 SIZE (erlang/otp_src_17.5.tar.gz) = 67242289
-SHA256 (erlang/otp_doc_man_17.5.tar.gz) = 85b1b2a1011fc01af550f1fe9e5a599a4c5f2a35d264d2804af1d05590a857c3
-SIZE (erlang/otp_doc_man_17.5.tar.gz) = 1363320
-SHA256 (erlang/otp_doc_html_17.5.tar.gz) = baba1d373c1faacf4a1a6ec1220d57d0cb2b977edb74f32cd58dc786361c6cf5
-SIZE (erlang/otp_doc_html_17.5.tar.gz) = 33510258
+SHA256 (erlang/preloaded-17.5.6.9.tar.gz) = 7997454f61ddbc3c090403899b2848519018b69f2c4853035149aece1a3f8937
+SIZE (erlang/preloaded-17.5.6.9.tar.gz) = 297377
 SHA256 (erlang/patch-otp-17.5.1) = e95b17b539b84b2408cbdd8af68ea96ad239a1b38117243d21ebb809ab3ca1c3
 SIZE (erlang/patch-otp-17.5.1) = 36012
 SHA256 (erlang/patch-otp-17.5.2) = 9c70e90c3b040ab1e136738f355f0925f64afd5a4b28f1c9a6f4035f2bf03b1b
