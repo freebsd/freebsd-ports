@@ -6,7 +6,7 @@
  }
 +#elif defined(__FreeBSD__)
 +
-+#if __has_include(<sys/auxv.h>)
++#if 0 // __has_include(<sys/auxv.h>)
 +#include <sys/auxv.h>
 +#else
 +#include <sys/param.h>
