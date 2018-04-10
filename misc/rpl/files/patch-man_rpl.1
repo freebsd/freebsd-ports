@@ -1,0 +1,11 @@
+--- man/rpl.1.orig	2002-07-24 16:03:14 UTC
++++ man/rpl.1
+@@ -135,7 +135,7 @@ Honor Escapes
+ .RS
+ .I
+ rpl
+-will honor escape sequences in old_string and new_string.  Standard escapes such as "\t" (tab), "\n" (newline), "\r" (carriage return) are processed, as well as any octal or hexidecimal ASCII codes. Octal ASCII codes start with a '\' and are comprised of three digits [0-7] (e.g. '\015'). Hexidecimal ASCII codes start with '\0x' followed by two characters [0-f] (e.g. '\0x0d'). The 'x' and the [a-f] may be upper or lowercase. When you use this switch you must escape all backslash ('\') characters with another backslash (e.g. '\\').
++will honor escape sequences in old_string and new_string.  Standard escapes such as "\\t" (tab), "\\n" (newline), "\\r" (carriage return) are processed, as well as any octal or hexidecimal ASCII codes. Octal ASCII codes start with a '\\' and are comprised of three digits [0-7] (e.g. '\\015'). Hexidecimal ASCII codes start with '\\0x' followed by two characters [0-f] (e.g. '\\0x0d'). The 'x' and the [a-f] may be upper or lowercase. When you use this switch you must escape all backslash ('\\') characters with another backslash (e.g. '\\\\').
+ .RE
+ .TP
+ .BI \-f
