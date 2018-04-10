@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.13.0.2
+PORTVERSION=	4.13.1
 CATEGORIES=	archivers
-MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R:R}.x/
+MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R}.x/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	rodrigo@FreeBSD.org
