@@ -1,0 +1,9 @@
+Konsole is a terminal program for KDE.
+
+As well as being a standalone program, it is also used by other KDE
+programs such as the Kate editor and KDevelop development environment
+to provide easy access to a terminal window. Konsole's features and
+usage are explained and illustrated in the Konsole handbook, which can
+be accessed by browsing to "help:/konsole" in Konqueror.
+
+WWW: http://konsole.kde.org
