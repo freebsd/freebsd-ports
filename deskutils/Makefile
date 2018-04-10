@@ -124,6 +124,7 @@
     SUBDIR += kcharselect-kde4
     SUBDIR += kchmviewer
     SUBDIR += kdeconnect
+    SUBDIR += kdepim
     SUBDIR += kdepim-kde4
     SUBDIR += kdepim-runtime-kde4
     SUBDIR += kdepimlibs-kde4
