@@ -24,27 +24,20 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	build/make/ads2gas.pl
 CONFIGURE_ENV=	ASFLAGS="${ASFLAGS}"
-# Only explicitly list ARCHs with SIMD optimizations
-CONFIGURE_ARGS_aarch64=	--target=arm64-linux-gcc
-CONFIGURE_ARGS_amd64=	--target=x86_64-linux-gcc
-CONFIGURE_ARGS_armv7=	--target=armv7-linux-gcc
-CONFIGURE_ARGS_i386=	--target=x86-linux-gcc
-CONFIGURE_ARGS+=${CONFIGURE_ARGS_${ARCH}} \
-		--prefix=${PREFIX} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-install-docs \
 		--disable-install-srcs \
 		--enable-pic \
 		--enable-vp8 \
 		--enable-vp9
 MAKE_ARGS+=	verbose=yes
-ASFLAGS+=	${ASFLAGS_${ARCH}}
-ASFLAGS_armv7=	-meabi=5
+ASFLAGS+=	${ASFLAGS_${MACHINE}}
+ASFLAGS_arm=	-meabi=5
 ALL_TARGET=	# empty
 
 # armv7 is actually armv6 target before FreeBSD 12.0
 .if ${CFLAGS:M-march=armv7*}
-CONFIGURE_ARGS+=	${CONFIGURE_ARGS_armv7}
-ASFLAGS+=		${ASFLAGS_armv7}
+CONFIGURE_ARGS+=	--target=armv7-linux-gcc
 .endif
 
 OPTIONS_DEFINE=	DEBUG MULTIRES POSTPROC RTCPU SHARED SIZE_LIMIT TEST THREADS
@@ -76,7 +69,7 @@ TEST_CONFIGURE_OFF=	--disable-unit-tests
 THREADS_CONFIGURE_OFF=	--disable-multithread
 
 post-patch:
-	@${REINPLACE_CMD} 's|\(link_with_cc\)=gcc|\1=$${CC}|' \
+	@${REINPLACE_CMD} -E '/gcctarget|link_with_cc/s/gcc[[:>:]]/$${CC}/' \
 		${WRKSRC}/build/make/configure.sh
 	@${REINPLACE_CMD} 's|sparc-solaris-gcc|sparc-linux-gcc|' \
 		${WRKSRC}/configure
