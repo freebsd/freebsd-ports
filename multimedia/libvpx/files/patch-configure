@@ -3,6 +3,14 @@
 
 --- configure.orig	2018-01-24 22:25:44 UTC
 +++ configure
+@@ -101,6 +101,7 @@ EOF
+ all_platforms="${all_platforms} arm64-android-gcc"
+ all_platforms="${all_platforms} arm64-darwin-gcc"
+ all_platforms="${all_platforms} arm64-linux-gcc"
++all_platforms="${all_platforms} armv6-linux-gcc"
+ all_platforms="${all_platforms} armv7-android-gcc"   #neon Cortex-A8
+ all_platforms="${all_platforms} armv7-darwin-gcc"    #neon Cortex-A8
+ all_platforms="${all_platforms} armv7-linux-rvct"    #neon Cortex-A8
 @@ -116,6 +117,7 @@ all_platforms="${all_platforms} mips32-linux-gcc"
  all_platforms="${all_platforms} mips64-linux-gcc"
  all_platforms="${all_platforms} ppc64-linux-gcc"
