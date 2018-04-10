@@ -1,26 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	libktorrent
-DISTVERSION=	1.3.1
-PORTREVISION=	17
+DISTVERSION=	2.1.0
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION:C,^1,4,:C,-.*,,}/
+DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Torrent library from KTorrent project
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
+
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgmp.so:math/gmp \
-		libqca.so:devel/qca
+		libqca-qt5.so:devel/qca-qt5
 
-USES=		cmake:outsource gettext kde:4 tar:bzip2
-USE_KDE=	kdelibs automoc4
-USE_QT4=	qtestlib_build qmake_build moc_build rcc_build uic_build
-USE_LDCONFIG=	yes
+USES=		cmake:outsource gettext kde:5
+USE_KDE=	archive completion config coreaddons crash ecm i18n \
+		jobwidgets kio service solid widgetsaddons
+USE_QT5=	core gui network testlib xml \
+		buildtools_build qmake_build
 
-SHLIB_VER=	5.0.1
-PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \
-		SHLIB_SHVER=${SHLIB_VER:R:R}
+USE_GITHUB=	yes
+GH_ACCOUNT=	KDE
+GH_TAGNAME=	eb79ad2
 
 .include <bsd.port.mk>

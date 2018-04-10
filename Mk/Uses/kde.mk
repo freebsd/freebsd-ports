@@ -264,8 +264,10 @@ _USE_FRAMEWORKS_ALL=	ecm \
 			${_USE_FRAMEWORKS_PORTING} \
 			${_USE_FRAMEWORKS_EXTRA}
 
+_USE_KDEPIM5_ALL=	syndication
 
 _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
+			${_USE_KDEPIM5_ALL} \
 			${_USE_KDE_BOTH}
 
 # ====================== kde4 components =======================================
@@ -578,6 +580,11 @@ xmlgui_LIB=		libKF5XmlGui.so
 xmlrpcclient_PORT=	net/kf5-kxmlrpcclient
 xmlrpcclient_LIB=	libKF5XmlRpcClient.so
 # ====================== end of frameworks components ==========================
+
+# ====================== pim5 components =======================================
+syndication_PORT=	net/syndication
+syndication_LIB=	libKF5Syndication.so
+# ====================== end of pim5 components ================================
 
 # ====================== multiversion component ================================
 akonadi4_PORT=		databases/akonadi-kde4
