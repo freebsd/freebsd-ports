@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		carbon-relay-ng
-DISTVERSIONPREFIX=	v
-DISTVERSION=		0.9.4
+DISTVERSION=		0.10.0
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		a.andersson.thn@gmail.com
