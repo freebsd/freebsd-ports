@@ -9,8 +9,11 @@ usage message.
 location of channel list file is ~/.szap/channels.conf
 
 one line of the szap channel file has the following format:
+
 name:frequency_MHz:polarization[coderate][delivery][modulation][rolloff]:sat_no:symbolrate:vpid:apid:service_id
+
 one line of the VDR channel file has the following format:
+
 name:frequency_MHz:polarization[coderate][delivery][modulation][rolloff]:sat_no:symbolrate:vpid:apid:tpid:?:service_id:?:?:?
 
-WWW: http://www.linuxtv.org/wiki/index.php/Szap-s2
+WWW: https://www.linuxtv.org/wiki/index.php/Szap-s2
