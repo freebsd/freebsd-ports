@@ -1,7 +1,16 @@
---version is a GNUism which BSD diff doesn't support
+- Add missing targets when toolchain != generic-gnu
+- --version is a GNUism which BSD diff doesn't support
 
 --- configure.orig	2018-01-24 22:25:44 UTC
 +++ configure
+@@ -116,6 +117,7 @@ all_platforms="${all_platforms} mips32-linux-gcc"
+ all_platforms="${all_platforms} mips64-linux-gcc"
+ all_platforms="${all_platforms} ppc64-linux-gcc"
+ all_platforms="${all_platforms} ppc64le-linux-gcc"
++all_platforms="${all_platforms} sparc-linux-gcc"
+ all_platforms="${all_platforms} sparc-solaris-gcc"
+ all_platforms="${all_platforms} x86-android-gcc"
+ all_platforms="${all_platforms} x86-darwin8-gcc"
 @@ -170,7 +170,7 @@ for t in ${all_targets}; do
      [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
  done
