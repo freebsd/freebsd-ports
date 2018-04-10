@@ -1,0 +1,594 @@
+bin/ktp-log-viewer
+lib/libexec/ktp-adiumxtra-protocol-handler
+lib/libexec/ktp-text-ui
+lib/libktpchat.so
+lib/libktpimagesharer.so
+%%QT_PLUGINDIR%%/kcm_ktp_chat_appearance.so
+%%QT_PLUGINDIR%%/kcm_ktp_chat_behavior.so
+%%QT_PLUGINDIR%%/kcm_ktp_chat_messages.so
+%%QT_PLUGINDIR%%/kcm_ktp_chat_otr.so
+%%QT_PLUGINDIR%%/kcm_ktp_logviewer_behavior.so
+%%QT_PLUGINDIR%%/kcm_ktptextui_message_filter_emoticons.so
+%%QT_PLUGINDIR%%/kcm_ktptextui_message_filter_latex.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_bugzilla.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_emoticons.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_formatting.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_geopoint.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_highlight.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_images.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_latex.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_otr.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_searchexpansion.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_tts.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_urlexpansion.so
+%%QT_PLUGINDIR%%/ktptextui_message_filter_youtube.so
+share/applications/org.kde.ktplogviewer.desktop
+share/dbus-1/services/org.freedesktop.Telepathy.Client.KTp.TextUi.service
+share/kservices5/adiumxtra.protocol
+share/kservices5/kcm_ktp_chat_appearance.desktop
+share/kservices5/kcm_ktp_chat_behavior.desktop
+share/kservices5/kcm_ktp_chat_messages.desktop
+share/kservices5/kcm_ktp_chat_otr.desktop
+share/kservices5/kcm_ktp_logviewer_behavior.desktop
+share/kservices5/kcm_ktptextui_message_filter_emoticons.desktop
+share/kservices5/kcm_ktptextui_message_filter_latex.desktop
+share/kservices5/ktptextui_message_filter_bugzilla.desktop
+share/kservices5/ktptextui_message_filter_emoticons.desktop
+share/kservices5/ktptextui_message_filter_formatting.desktop
+share/kservices5/ktptextui_message_filter_geopoint.desktop
+share/kservices5/ktptextui_message_filter_highlight.desktop
+share/kservices5/ktptextui_message_filter_images.desktop
+share/kservices5/ktptextui_message_filter_latex.desktop
+share/kservices5/ktptextui_message_filter_otr.desktop
+share/kservices5/ktptextui_message_filter_searchexpansion.desktop
+share/kservices5/ktptextui_message_filter_tts.desktop
+share/kservices5/ktptextui_message_filter_urlexpansion.desktop
+share/kservices5/ktptextui_message_filter_youtube.desktop
+share/kservicetypes5/ktptxtui_message_filter.desktop
+share/ktelepathy/Template.html
+share/ktelepathy/longurl.js
+share/ktelepathy/longurlServices.json
+share/ktelepathy/showBugzillaInfo.js
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Info.plist
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Footer.html
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Header.html
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Incoming/Content.html
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Incoming/NextContent.html
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Incoming/SenderColors.txt
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Outgoing/Content.html
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Outgoing/NextContent.html
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Status.html
+share/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/main.css
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Info.plist
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Footer.html
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Header.html
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Incoming/Content.html
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Incoming/NextContent.html
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Outgoing/Content.html
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Outgoing/NextContent.html
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Status.html
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Styles/Header.css
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Template.html
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Topic.html
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/img/sidebar_header_bg.png
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/lib/jquery.js
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/lib/livepipe.js
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/lib/scrollbar.js
+share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/main.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Info.plist
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Demo.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Footer.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Header.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Incoming/Content.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Incoming/Context.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Incoming/NextContent.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Incoming/NextContext.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Incoming/buddy_icon.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Outgoing/Content.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Outgoing/Context.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Outgoing/NextContent.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Outgoing/NextContext.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Outgoing/buddy_icon.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Status.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Styles/Header.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Styles/Topic.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Styles/alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Styles/main.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Styles/noname.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Topic.html
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Green Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Green No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Green No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Green.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Red Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Red No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Red No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Red.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Steel Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Steel No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Steel No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Steel.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Yellow Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Yellow No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Yellow No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Blue on Yellow.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Blue Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Blue No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Blue No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Blue.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Red Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Red No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Red No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Red.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Steel Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Steel No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Steel No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Steel.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Yellow Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Yellow No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Yellow No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Green on Yellow.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Blue Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Blue No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Blue No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Blue.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Green Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Green No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Green No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Green.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Steel Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Steel No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Steel No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Steel.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Yellow Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Yellow No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Yellow No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Red on Yellow.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Blue Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Blue No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Blue No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Blue.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Green Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Green No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Green No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Green.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Red Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Red No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Red No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Red.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Yellow Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Yellow No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Yellow No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Steel on Yellow.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Blue Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Blue No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Blue No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Blue.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Green Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Green No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Green No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Green.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Red Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Red No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Red No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Red.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Steel Alternating.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Steel No Names Alt.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Steel No Names.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants/Yellow on Steel.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/DummyContact.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/alert.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/blueBackground.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/blueBackground.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/blueCurves.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/blueCurves.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/blueIndicator.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/blueIndicator.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/blueIndicator2.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/blueIndicatorAlt.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/greenBackground.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/greenBackground.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/greenCurves.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/greenCurves.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/greenIndicator.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/greenIndicator.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/greenIndicator2.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/greenIndicatorAlt.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/redBackground.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/redBackground.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/redCurves.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/redCurves.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/redIndicator.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/redIndicator.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/redIndicator2.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/redIndicatorAlt.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/silverBackground.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/silverCurves.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/steelBackground.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/steelBackground.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/steelCurves.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/steelCurves.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/steelHeading.jpg
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/steelIndicator.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/steelIndicator.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/steelIndicator2.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/steelIndicatorAlt.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/typing-left.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/typing-right.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowBackground.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowBackground.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowCurves.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowCurves.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowHeading.jpg
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowIndicator.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowIndicator.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowIndicator2.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowIndicatorAlt.gif
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowTL.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images/yellowTR.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/incoming_icon.png
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/outgoing_icon.png
+share/ktp-log-viewer/log-viewer.rc
+share/kxmlgui5/ktp-text-ui/chatwindow.rc
+share/locale/ar/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ar/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ar/LC_MESSAGES/ktp-filters.mo
+share/locale/ar/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/ar/LC_MESSAGES/ktpchat.mo
+share/locale/ast/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ast/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ast/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/ast/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/ast/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ast/LC_MESSAGES/ktp-filters.mo
+share/locale/ast/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/ast/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ast/LC_MESSAGES/ktpchat.mo
+share/locale/bs/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/bs/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/bs/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/bs/LC_MESSAGES/ktp-filters.mo
+share/locale/bs/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/bs/LC_MESSAGES/ktp-text-ui.mo
+share/locale/bs/LC_MESSAGES/ktpchat.mo
+share/locale/ca/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ca/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ca/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/ca/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/ca/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ca/LC_MESSAGES/ktp-filters.mo
+share/locale/ca/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/ca/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ca/LC_MESSAGES/ktpchat.mo
+share/locale/ca@valencia/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ca@valencia/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ca@valencia/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/ca@valencia/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/ca@valencia/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ca@valencia/LC_MESSAGES/ktp-filters.mo
+share/locale/ca@valencia/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/ca@valencia/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ca@valencia/LC_MESSAGES/ktpchat.mo
+share/locale/cs/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/cs/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/cs/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/cs/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/cs/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/cs/LC_MESSAGES/ktp-filters.mo
+share/locale/cs/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/cs/LC_MESSAGES/ktp-text-ui.mo
+share/locale/cs/LC_MESSAGES/ktpchat.mo
+share/locale/da/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/da/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/da/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/da/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/da/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/da/LC_MESSAGES/ktp-filters.mo
+share/locale/da/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/da/LC_MESSAGES/ktp-text-ui.mo
+share/locale/da/LC_MESSAGES/ktpchat.mo
+share/locale/de/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/de/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/de/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/de/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/de/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/de/LC_MESSAGES/ktp-filters.mo
+share/locale/de/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/de/LC_MESSAGES/ktp-text-ui.mo
+share/locale/de/LC_MESSAGES/ktpchat.mo
+share/locale/el/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/el/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/el/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/el/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/el/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/el/LC_MESSAGES/ktp-filters.mo
+share/locale/el/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/el/LC_MESSAGES/ktp-text-ui.mo
+share/locale/el/LC_MESSAGES/ktpchat.mo
+share/locale/en_GB/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/en_GB/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/en_GB/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/en_GB/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/en_GB/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/en_GB/LC_MESSAGES/ktp-filters.mo
+share/locale/en_GB/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/en_GB/LC_MESSAGES/ktp-text-ui.mo
+share/locale/en_GB/LC_MESSAGES/ktpchat.mo
+share/locale/es/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/es/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/es/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/es/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/es/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/es/LC_MESSAGES/ktp-filters.mo
+share/locale/es/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/es/LC_MESSAGES/ktp-text-ui.mo
+share/locale/es/LC_MESSAGES/ktpchat.mo
+share/locale/et/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/et/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/et/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/et/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/et/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/et/LC_MESSAGES/ktp-filters.mo
+share/locale/et/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/et/LC_MESSAGES/ktp-text-ui.mo
+share/locale/et/LC_MESSAGES/ktpchat.mo
+share/locale/fi/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/fi/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/fi/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/fi/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/fi/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/fi/LC_MESSAGES/ktp-filters.mo
+share/locale/fi/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/fi/LC_MESSAGES/ktp-text-ui.mo
+share/locale/fi/LC_MESSAGES/ktpchat.mo
+share/locale/fr/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/fr/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/fr/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/fr/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/fr/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/fr/LC_MESSAGES/ktp-filters.mo
+share/locale/fr/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/fr/LC_MESSAGES/ktp-text-ui.mo
+share/locale/fr/LC_MESSAGES/ktpchat.mo
+share/locale/ga/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ga/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ga/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ga/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ga/LC_MESSAGES/ktpchat.mo
+share/locale/gl/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/gl/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/gl/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/gl/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/gl/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/gl/LC_MESSAGES/ktp-filters.mo
+share/locale/gl/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/gl/LC_MESSAGES/ktp-text-ui.mo
+share/locale/gl/LC_MESSAGES/ktpchat.mo
+share/locale/hu/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/hu/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/hu/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/hu/LC_MESSAGES/ktp-filters.mo
+share/locale/hu/LC_MESSAGES/ktp-text-ui.mo
+share/locale/hu/LC_MESSAGES/ktpchat.mo
+share/locale/ia/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ia/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ia/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/ia/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/ia/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ia/LC_MESSAGES/ktp-filters.mo
+share/locale/ia/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/ia/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ia/LC_MESSAGES/ktpchat.mo
+share/locale/it/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/it/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/it/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/it/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/it/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/it/LC_MESSAGES/ktp-filters.mo
+share/locale/it/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/it/LC_MESSAGES/ktp-text-ui.mo
+share/locale/it/LC_MESSAGES/ktpchat.mo
+share/locale/ja/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ja/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ja/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/ja/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/ja/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ja/LC_MESSAGES/ktp-filters.mo
+share/locale/ja/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/ja/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ja/LC_MESSAGES/ktpchat.mo
+share/locale/kk/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/kk/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/kk/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/kk/LC_MESSAGES/ktp-filters.mo
+share/locale/kk/LC_MESSAGES/ktp-text-ui.mo
+share/locale/kk/LC_MESSAGES/ktpchat.mo
+share/locale/km/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/km/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/km/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/km/LC_MESSAGES/ktp-text-ui.mo
+share/locale/km/LC_MESSAGES/ktpchat.mo
+share/locale/ko/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ko/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ko/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/ko/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/ko/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ko/LC_MESSAGES/ktp-filters.mo
+share/locale/ko/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/ko/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ko/LC_MESSAGES/ktpchat.mo
+share/locale/lt/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/lt/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/lt/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/lt/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/lt/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/lt/LC_MESSAGES/ktp-filters.mo
+share/locale/lt/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/lt/LC_MESSAGES/ktp-text-ui.mo
+share/locale/lt/LC_MESSAGES/ktpchat.mo
+share/locale/mr/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/mr/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/mr/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/mr/LC_MESSAGES/ktp-filters.mo
+share/locale/mr/LC_MESSAGES/ktp-text-ui.mo
+share/locale/mr/LC_MESSAGES/ktpchat.mo
+share/locale/nb/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/nb/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/nb/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/nb/LC_MESSAGES/ktp-filters.mo
+share/locale/nb/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/nb/LC_MESSAGES/ktp-text-ui.mo
+share/locale/nb/LC_MESSAGES/ktpchat.mo
+share/locale/nds/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/nds/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/nds/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/nds/LC_MESSAGES/ktp-filters.mo
+share/locale/nds/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/nds/LC_MESSAGES/ktp-text-ui.mo
+share/locale/nds/LC_MESSAGES/ktpchat.mo
+share/locale/nl/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/nl/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/nl/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/nl/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/nl/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/nl/LC_MESSAGES/ktp-filters.mo
+share/locale/nl/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/nl/LC_MESSAGES/ktp-text-ui.mo
+share/locale/nl/LC_MESSAGES/ktpchat.mo
+share/locale/nn/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/nn/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/nn/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/nn/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/nn/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/nn/LC_MESSAGES/ktp-filters.mo
+share/locale/nn/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/nn/LC_MESSAGES/ktp-text-ui.mo
+share/locale/nn/LC_MESSAGES/ktpchat.mo
+share/locale/pa/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/pa/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/pa/LC_MESSAGES/ktp-filters.mo
+share/locale/pa/LC_MESSAGES/ktp-text-ui.mo
+share/locale/pa/LC_MESSAGES/ktpchat.mo
+share/locale/pl/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/pl/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/pl/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/pl/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/pl/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/pl/LC_MESSAGES/ktp-filters.mo
+share/locale/pl/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/pl/LC_MESSAGES/ktp-text-ui.mo
+share/locale/pl/LC_MESSAGES/ktpchat.mo
+share/locale/pt/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/pt/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/pt/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/pt/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/pt/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/pt/LC_MESSAGES/ktp-filters.mo
+share/locale/pt/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/pt/LC_MESSAGES/ktp-text-ui.mo
+share/locale/pt/LC_MESSAGES/ktpchat.mo
+share/locale/pt_BR/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/pt_BR/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/pt_BR/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/pt_BR/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/pt_BR/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/pt_BR/LC_MESSAGES/ktp-filters.mo
+share/locale/pt_BR/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/pt_BR/LC_MESSAGES/ktp-text-ui.mo
+share/locale/pt_BR/LC_MESSAGES/ktpchat.mo
+share/locale/ro/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ro/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ro/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ro/LC_MESSAGES/ktp-filters.mo
+share/locale/ro/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/ro/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ro/LC_MESSAGES/ktpchat.mo
+share/locale/ru/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ru/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ru/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/ru/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/ru/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ru/LC_MESSAGES/ktp-filters.mo
+share/locale/ru/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/ru/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ru/LC_MESSAGES/ktpchat.mo
+share/locale/sk/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/sk/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/sk/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/sk/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/sk/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/sk/LC_MESSAGES/ktp-filters.mo
+share/locale/sk/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/sk/LC_MESSAGES/ktp-text-ui.mo
+share/locale/sk/LC_MESSAGES/ktpchat.mo
+share/locale/sl/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/sl/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/sl/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/sl/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/sl/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/sl/LC_MESSAGES/ktp-filters.mo
+share/locale/sl/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/sl/LC_MESSAGES/ktp-text-ui.mo
+share/locale/sl/LC_MESSAGES/ktpchat.mo
+share/locale/sr/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/sr/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/sr/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/sr/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/sr/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/sr/LC_MESSAGES/ktp-filters.mo
+share/locale/sr/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/sr/LC_MESSAGES/ktp-text-ui.mo
+share/locale/sr/LC_MESSAGES/ktpchat.mo
+share/locale/sv/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/sv/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/sv/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/sv/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/sv/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/sv/LC_MESSAGES/ktp-filters.mo
+share/locale/sv/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/sv/LC_MESSAGES/ktp-text-ui.mo
+share/locale/sv/LC_MESSAGES/ktpchat.mo
+share/locale/tr/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/tr/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/tr/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/tr/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/tr/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/tr/LC_MESSAGES/ktp-filters.mo
+share/locale/tr/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/tr/LC_MESSAGES/ktp-text-ui.mo
+share/locale/tr/LC_MESSAGES/ktpchat.mo
+share/locale/ug/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/ug/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/ug/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ug/LC_MESSAGES/ktp-filters.mo
+share/locale/ug/LC_MESSAGES/ktp-text-ui.mo
+share/locale/ug/LC_MESSAGES/ktpchat.mo
+share/locale/uk/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/uk/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/uk/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/uk/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/uk/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/uk/LC_MESSAGES/ktp-filters.mo
+share/locale/uk/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/uk/LC_MESSAGES/ktp-text-ui.mo
+share/locale/uk/LC_MESSAGES/ktpchat.mo
+share/locale/wa/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/zh_CN/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/zh_CN/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/zh_CN/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/zh_CN/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/zh_CN/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/zh_CN/LC_MESSAGES/ktp-filters.mo
+share/locale/zh_CN/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/zh_CN/LC_MESSAGES/ktp-text-ui.mo
+share/locale/zh_CN/LC_MESSAGES/ktpchat.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_ktp_chat_messages.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_ktp_chat_otr.mo
+share/locale/zh_TW/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/zh_TW/LC_MESSAGES/ktp-filters.mo
+share/locale/zh_TW/LC_MESSAGES/ktp-log-viewer.mo
+share/locale/zh_TW/LC_MESSAGES/ktp-text-ui.mo
+share/locale/zh_TW/LC_MESSAGES/ktpchat.mo
+share/telepathy/clients/KTp.TextUi.client
