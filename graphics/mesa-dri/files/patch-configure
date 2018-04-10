@@ -1,5 +1,47 @@
---- configure.orig	2017-12-21 17:31:27 UTC
+--- configure.orig	2018-01-23 18:08:55 UTC
 +++ configure
+@@ -21895,12 +21895,13 @@ case "$host_os" in
+ darwin*)
+     ;;
+ *)
+-    for ac_func in clock_gettime
++    for ac_func in clock_gettime clock_nanosleep
+ do :
+-  ac_fn_c_check_func "$LINENO" "clock_gettime" "ac_cv_func_clock_gettime"
+-if test "x$ac_cv_func_clock_gettime" = xyes; then :
++  as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
++ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
++if eval test \"x\$"$as_ac_var"\" = x"yes"; then :
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_CLOCK_GETTIME 1
++#define `$as_echo "HAVE_$ac_func" | $as_tr_cpp` 1
+ _ACEOF
+  CLOCK_LIB=
+ else
+@@ -22559,11 +22559,20 @@ $as_echo "yes" >&6; }
+ fi
+ fi
+ 
+-ac_fn_c_check_header_mongrel "$LINENO" "linux/futex.h" "ac_cv_header_linux_futex_h" "$ac_includes_default"
+-if test "x$ac_cv_header_linux_futex_h" = xyes; then :
+-  DEFINES="$DEFINES -DHAVE_LINUX_FUTEX_H"
++for ac_header in linux/futex.h sys/umtx.h
++do :
++  as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
++ac_fn_c_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "#include <errno.h>
++     #include <sys/types.h>
++"
++if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
++  cat >>confdefs.h <<_ACEOF
++#define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
++_ACEOF
++ DEFINES="$DEFINES -DHAVE_LINUX_FUTEX_H"
+ fi
+ 
++done
+ 
+ 
+ # Check whether --enable-selinux was given.
 @@ -23308,7 +23308,7 @@ fi
  
  
@@ -9,26 +51,6 @@
      dri3_default=yes
      ;;
  *)
-@@ -27028,9 +27028,19 @@ if test "x$enable_opencl" = xyes; then
-         as_fn_error $? "cannot enable OpenCL without Gallium" "$LINENO" 5
-     fi
- 
-+    if test "x$acv_mesa_CLANG" = xno; then
-+
-+    GCC_VERSION=`$CC -dumpversion`
-+    if test $? -eq 0; then
-+        GCC_VERSION_MAJOR=`echo $GCC_VERSION | cut -d. -f1`
-+        GCC_VERSION_MINOR=`echo $GCC_VERSION | cut -d. -f2`
-+    fi
-+
-     if test $GCC_VERSION_MAJOR -lt 4 -o $GCC_VERSION_MAJOR -eq 4 -a $GCC_VERSION_MINOR -lt 7; then
-         as_fn_error $? "gcc >= 4.7 is required to build clover" "$LINENO" 5
-     fi
-+# end of clang test.
-+    fi
- 
-     if test "x$have_libclc" = xno; then
-         as_fn_error $? "pkg-config cannot find libclc.pc which is required to build clover.
 @@ -27096,9 +27106,6 @@ rm -f core conftest.err conftest.$ac_obj
          CLANG_LIBDIR=${LLVM_LIBDIR}
      fi

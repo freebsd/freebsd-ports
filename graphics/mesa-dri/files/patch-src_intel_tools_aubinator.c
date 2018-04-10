@@ -3,7 +3,7 @@
 #
 --- src/intel/tools/aubinator.c.orig	2017-10-02 15:49:02 UTC
 +++ src/intel/tools/aubinator.c
-@@ -1237,7 +1237,7 @@ int main(int argc, char *argv[])
+@@ -637,7 +637,7 @@ int main(int argc, char *argv[])
     /* mmap a terabyte for our gtt space. */
     gtt_size = 1ull << 40;
     gtt = mmap(NULL, gtt_size, PROT_READ | PROT_WRITE,
