@@ -1,4 +1,4 @@
---- Makefile.in.orig	2015-05-08 09:34:48 UTC
+--- Makefile.in.orig	2017-03-28 09:13:41 UTC
 +++ Makefile.in
 @@ -230,8 +230,8 @@ install-noconf: all
  	for i in $(MAN8) ; do \

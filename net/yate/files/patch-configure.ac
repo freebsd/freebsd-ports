@@ -1,0 +1,12 @@
+--- configure.ac.orig	2018-04-05 08:59:36 UTC
++++ configure.ac
+@@ -109,7 +109,8 @@ if [[ "x$ac_cv_no_overload_virt" = "xyes
+ fi
+ AC_MSG_RESULT([$ac_cv_no_overload_virt])
+ 
+-GCC_UNRESOLVED_SYMBOLS="-Wl,--unresolved-symbols=ignore-in-shared-libs"
++#GCC_UNRESOLVED_SYMBOLS="-Wl,--unresolved-symbols=ignore-in-shared-libs"
++GCC_UNRESOLVED_SYMBOLS=""
+ ld_unresolved_symbols=no
+ AC_MSG_CHECKING([if ld supports reporting unresolved symbols])
+ SAVE_CFLAGS="$CFLAGS"

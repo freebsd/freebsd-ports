@@ -2,28 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	yate
-DISTVERSION=	5.5.0p1
+DISTVERSION=	6.0.0p1
 CATEGORIES=	net
-MASTER_SITES=	http://yate.null.ro/tarballs/yate5/
-DISTNAME=	${PORTNAME}-5.5.0-1
+MASTER_SITES=	http://yate.null.ro/tarballs/yate6/
+DISTNAME=	${PORTNAME}-6.0.0-1
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Yet Another Telephony Engine
 
 LICENSE=	GPLv2
 
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 sparc64
+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libspeex.so:audio/speex \
 		libgsm.so:audio/gsm
 
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 sparc64
-
 USES=		autoreconf bison gmake shebangfix
+USE_GCC=	yes
 SHEBANG_FILES=	share/scripts/banbrutes.php \
 		share/scripts/leavemail.php \
 		share/scripts/queue_in.php \
 		share/scripts/queue_out.php \
 		share/scripts/route.php \
+		share/scripts/tts.sh \
 		share/scripts/voicemail.php
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -32,15 +34,14 @@ CONFIGURE_ARGS=	--without-fdsize \
 		--without-libqt4 \
 		--with-zlib=/usr
 
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
+MAKE_JOBS_UNSAFE=yes
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	yate
 USERS=		yate
 GROUPS=		yate
 
-OPTIONS_DEFINE=	AMRNB DOCS DAHDI H323 ILBC MYSQL PGSQL SCTP SPANDSP SQLITE SSL
+OPTIONS_DEFINE=	AMRNB DOCS DAHDI H323 ILBC MYSQL PGSQL SCTP SPANDSP SQLITE
 OPTIONS_DEFAULT=SCTP
 
 AMRNB_DESC=	Adaptive Multi-Rate Narrowband support
@@ -62,16 +63,15 @@ DAHDI_LIB_DEPENDS=	libpri.so:misc/libpri \
 			libopenr2.so:misc/openr2
 
 H323_CONFIGURE_WITH=	openh323=${LOCALBASE}
-H323_LIB_DEPENDS=	libopenh323.so:net/h323plus
+H323_LIB_DEPENDS=	libopenh323.so:net/h323plus \
+			libpt.so:devel/ptlib
 
 ILBC_CONFIGURE_ENABLE=	ilbc
 ILBC_LIB_DEPENDS=	libilbc.so:net/ilbc
 
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_USE=		mysql=yes
-
-SSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
-SSL_USES=		ssl
+MYSQL_USES=		ssl
 
 PGSQL_CONFIGURE_WITH=	libpq=${LOCALBASE}
 PGSQL_USES=		pgsql
@@ -89,8 +89,10 @@ post-extract:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yate
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyate*.so.5.5.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyate*.so.6.0.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/*.yate
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/radio/*.yate
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/sig/*.yate
 .for dir in client server jabber sip
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/${dir}/*.yate
 .endfor
