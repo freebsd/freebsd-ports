@@ -1,0 +1,39 @@
+# $FreeBSD$
+
+PORTNAME=	kdepim-addons
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	deskutils kde kde-applications
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	KDE PIM addons
+
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libgpg-error.so:security/libgpg-error \
+		libgpgme.so:security/gpgme \
+		libgpgmepp.so:security/gpgme-cpp \
+		libqgpgme.so:security/gpgme-qt5
+
+USES=		cmake:outsource compiler:c++11-lib gettext grantlee:5 kde:5 \
+		pkgconfig tar:xz
+USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
+		dbusaddons ecm i18n iconthemes itemmodels itemviews jobwidgets \
+		kdeclarative khtml kio prison service sonnet syntaxhighlighting \
+		textwidgets wallet widgetsaddons xmlgui
+# pim components
+USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadiimportwizard \
+		akonadimime akonadinotes calendarcore calendarsupport \
+		calendarutils contacts eventviews gapi grantleetheme \
+		gravatar identitymanagement imap incidenceeditor \
+		kdepim-apps-libs libkdepim libkleo libksieve mailcommon \
+		mailimporter mailtransport messagelib mime pimcommon \
+		pimtextedit tnef
+USE_QT5=	core dbus gui location network printsupport qml quick testlib \
+		webchannel webengine widgets xml \
+		buildtools_build qmake_build
+USE_LDCONFIG=	yes
+
+DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
+
+.include <bsd.port.mk>

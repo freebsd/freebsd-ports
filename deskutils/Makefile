@@ -4,6 +4,10 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
     SUBDIR += affiche
+    SUBDIR += akonadi-calendar-tools
+    SUBDIR += akonadi-import-wizard
+    SUBDIR += akonadiconsole
+    SUBDIR += akregator
     SUBDIR += alarm-clock-applet
     SUBDIR += anamnesis
     SUBDIR += anydesk
@@ -94,6 +98,7 @@
     SUBDIR += go-for-it
     SUBDIR += gourmet
     SUBDIR += gpicker
+    SUBDIR += grantlee-editor
     SUBDIR += grantleetheme
     SUBDIR += griffith
     SUBDIR += growl-for-linux
@@ -122,15 +127,28 @@
     SUBDIR += ithought
     SUBDIR += jjclient
     SUBDIR += jlj
+    SUBDIR += kaddressbook
+    SUBDIR += kalarm
+    SUBDIR += kcharselect
     SUBDIR += kcharselect-kde4
     SUBDIR += kchmviewer
     SUBDIR += kdeconnect
     SUBDIR += kdepim
+    SUBDIR += kdepim-addons
     SUBDIR += kdepim-apps-libs
     SUBDIR += kdepim-kde4
+    SUBDIR += kdepim-runtime
     SUBDIR += kdepim-runtime-kde4
     SUBDIR += kdepimlibs-kde4
     SUBDIR += kdeplasma-addons-kde4
+    SUBDIR += keditbookmarks
+    SUBDIR += kfind
+    SUBDIR += kmail
+    SUBDIR += kmail-account-wizard
+    SUBDIR += knotes
+    SUBDIR += kontact
+    SUBDIR += korganizer
+    SUBDIR += kruler
     SUBDIR += kruler-kde4
     SUBDIR += ksshaskpass
     SUBDIR += latte-dock
@@ -155,6 +173,7 @@
     SUBDIR += lumina-xdg-entry
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
+    SUBDIR += mbox-importer
     SUBDIR += mdh
     SUBDIR += mencal
     SUBDIR += menumaker
@@ -187,6 +206,8 @@
     SUBDIR += parcellite
     SUBDIR += phpcollab
     SUBDIR += phpicalendar
+    SUBDIR += pim-data-exporter
+    SUBDIR += pim-sieve-editor
     SUBDIR += pinot
     SUBDIR += plan
     SUBDIR += planner
