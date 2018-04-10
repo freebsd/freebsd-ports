@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	2.05
+PORTVERSION=	2.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	HTML Form Creation, Rendering and Validation Framework
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Clone>=0.31:devel/p5-Clone \
 		p5-Config-Any>=0.18:devel/p5-Config-Any \
@@ -27,9 +28,11 @@ BUILD_DEPENDS=	p5-Clone>=0.31:devel/p5-Clone \
 		p5-HTML-TokeParser-Simple>=3.14:www/p5-HTML-TokeParser-Simple \
 		p5-HTTP-Message>=1.64:www/p5-HTTP-Message \
 		p5-Hash-Flatten>=0:devel/p5-Hash-Flatten \
+		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Moose>=2:devel/p5-Moose \
 		p5-MooseX-Aliases>=0:devel/p5-MooseX-Aliases \
+		p5-MooseX-Attribute-Chained>=1.0.2:devel/p5-MooseX-Attribute-Chained \
 		p5-Number-Format>=0:textproc/p5-Number-Format \
 		p5-Path-Class>=0:devel/p5-Path-Class \
 		p5-Readonly>=0:devel/p5-Readonly \
@@ -40,7 +43,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install
 TEST_DEPENDS=	p5-CGI>=0:www/p5-CGI \
 		p5-Test-Aggregate>=0.371:devel/p5-Test-Aggregate \
-		p5-Test-Exception>=0:devel/p5-Test-Exception
+		p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-RequiresInternet>=0:devel/p5-Test-RequiresInternet
 
 NO_ARCH=	yes
 USES=		perl5
