@@ -23,6 +23,8 @@ DISTVERSION2=	8d
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+TEST_TARGET=	test
+TEST_ENV=	LD_LIBRARY_PATH=${WRKSRC}/.libs
 
 ADDITIONAL_HEADER=	jinclude.h jpegint.h
 
@@ -39,11 +41,6 @@ post-extract:
 
 post-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o jpegexiforient jpegexiforient.c
-
-test: build
-	${SETENV} LD_LIBRARY_PATH=${WRKSRC}/.libs ${MAKE} -C ${WRKSRC} test
-
-regression-test:	test
 
 post-install:
 .for header in ${ADDITIONAL_HEADER}
