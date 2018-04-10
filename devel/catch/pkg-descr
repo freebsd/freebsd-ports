@@ -3,4 +3,4 @@ automated test framework for C++ and Objective-C (and, maybe, C). It is
 implemented entirely in a set of header files, but is packaged up as a single
 header for extra convenience.
 
-WWW: https://github.com/philsquared/Catch
+WWW: https://github.com/catchorg/Catch2
