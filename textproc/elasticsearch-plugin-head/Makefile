@@ -5,7 +5,7 @@ PORTVERSION=	2015.12.16
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elasticsearch-plugin-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	ElasticSearch Head Plugin
 
 LICENSE=	APACHE20

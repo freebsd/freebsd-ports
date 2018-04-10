@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elasticsearch2-plugin-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	ElasticSearch Migration Plugin
 
 LICENSE=	APACHE20
