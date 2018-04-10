@@ -1,0 +1,7 @@
+Bento4 is a C++ class library and tools to read and write ISO-MP4 files.
+This format is defined in international specifications ISO/IEC 14496-12,
+14496-14 and 14496-15.
+The format is a derivative of the Apple Quicktime file format,
+so Bento4 can be used to read and write most Quicktime files as well.
+
+WWW: https://www.bento4.com
