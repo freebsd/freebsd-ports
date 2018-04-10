@@ -4696,7 +4696,6 @@ russian/ksocrat||2013-07-26|Has expired: Depends on Qt 3.x
 science/gsystem||2013-07-26|Has expired: Depends on Qt 3.x
 science/kmovisto||2013-07-26|Has expired: Depends on Qt 3.x
 science/kst||2013-07-26|Has expired: Depends on Qt 3.x
-security/kgpg||2013-07-26|Has expired: Depends on Qt 3.x
 security/klamav||2013-07-26|Has expired: Depends on Qt 3.x
 security/kopete-otr||2013-07-26|Has expired: Depends on Qt 3.x
 security/kovpn||2013-07-26|Has expired: Depends on Qt 3.x
@@ -9991,7 +9990,6 @@ x11/libkonq|x11/libkonq-kde4|2018-02-22|Make room for KDE updates
 deskutils/superkaramba|deskutils/superkaramba-kde4|2018-02-22|Make room for KDE updates
 deskutils/kdeplasma-addons|deskutils/kdeplasma-addons-kde4|2018-02-22|Make room for KDE updates
 multimedia/dragon|multimedia/dragon-kde4|2018-02-22|Make room for KDE updates
-security/kwalletmanager|security/kwalletmanager-kde4|2018-02-22|Make room for KDE updates
 games/pairs|games/pairs-kde4|2018-02-22|Make room for KDE updates
 audio/kio-audiocd|audio/kio-audiocd-kde4|2018-02-22|Make room for KDE updates
 audio/kscd|audio/kscd-kde4|2018-02-22|Make room for KDE updates
