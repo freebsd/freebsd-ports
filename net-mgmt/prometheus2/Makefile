@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	prometheus
-PORTVERSION=	2.1.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.2.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -12,12 +12,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go gmake
-USE_GITHUB=	yes
-GH_ACCOUNT=	prometheus
-GH_PROJECT=	prometheus
-
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
-
+USE_GITHUB=	yes
 USE_RC_SUBR=	prometheus
 
 USERS=		prometheus
@@ -30,7 +26,6 @@ LD_FLAG_STRING=	-s \
 				${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
 				${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
 				${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
-
 PROMETHEUS_BINARIES=	prometheus promtool
 
 do-build:
@@ -43,7 +38,6 @@ do-install:
 .for bin in ${PROMETHEUS_BINARIES}
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${bin} ${STAGEDIR}${PREFIX}/bin
 .endfor
-
 	${INSTALL_DATA} \
 		${WRKSRC}/documentation/examples/prometheus.yml \
 		${STAGEDIR}${LOCALBASE}/etc/prometheus.yml.sample
