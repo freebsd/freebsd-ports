@@ -3,8 +3,7 @@
 
 PORTNAME=	libmesh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +18,8 @@ USES=		autoreconf eigen:3 gmake libtool
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libMesh
-CONFIGURE_ARGS=	--with-methods=opt \
+CONFIGURE_ARGS=	--disable-static \
+		--with-methods=opt \
 		--with-thread-model=pthread \
 		--datarootdir=${DATADIR} \
 		--enable-amr \
@@ -32,10 +32,9 @@ CONFIGURE_ARGS=	--with-methods=opt \
 MAKE_ARGS=	LDFLAGS="-pthread -lexecinfo"
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=			GLPK HDF5 MPI SFCURVES EXAMPLES
-OPTIONS_DEFAULT=		MPI SFCURVES
+OPTIONS_DEFINE=			GLPK HDF5 MPI EXAMPLES
+OPTIONS_DEFAULT=		MPI
 GLPK_DESC=			Glpk linear programming solver library
-SFCURVES_DESC=			Sfcurves library
 
 GLPK_CONFIGURE_ENABLE=		glpk
 GLPK_LIB_DEPENDS=		libglpk.so:math/glpk
@@ -61,6 +60,7 @@ post-install:
 		contrib \
 		libdata/pkgconfig/Make.common # https://github.com/libMesh/libmesh/issues/1539
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmesh_opt.so.0.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmetaphysicl.so.0.0.0
 
 post-install-EXAMPLES-on:
 	# https://github.com/libMesh/libmesh/issues/1541
