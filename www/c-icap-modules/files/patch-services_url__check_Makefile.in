@@ -1,10 +1,10 @@
---- services/url_check/Makefile.in.orig	2016-01-03 23:26:26 UTC
+--- services/url_check/Makefile.in.orig	2018-04-10 21:33:16 UTC
 +++ services/url_check/Makefile.in
-@@ -843,7 +843,6 @@
+@@ -855,7 +855,6 @@ uninstall-man: uninstall-man8
  
  install-data-local:
- 	$(INSTALL) srv_url_check.conf $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf.default
+ 	$(INSTALL) $(srcdir)/srv_url_check.conf $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf.default
 -	if test ! -f $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf; then $(INSTALL) srv_url_check.conf $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf; fi
  	$(mkinstalldirs) $(DESTDIR)$(cicapdatadir)/templates/srv_url_check/en
- 	$(INSTALL) $(TMPLS) $(DESTDIR)$(cicapdatadir)/templates/srv_url_check/en/
+ 	for f in $(TMPLS); do  $(INSTALL) $(srcdir)/$$f $(DESTDIR)$(cicapdatadir)/templates/srv_url_check/en/; done
  
