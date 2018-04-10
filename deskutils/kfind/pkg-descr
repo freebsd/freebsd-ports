@@ -1,0 +1,5 @@
+KFind can be used as a standalone search tool, launched by KRunner or from your
+menu. It is also integrated into Konqueror as "Find File" in the "Tools" menu.
+It allows you to find files by name, type or content.
+
+WWW: https://www.kde.org/applications/utilities/kfind/

@@ -1,0 +1,19 @@
+# $FreeBSD$
+
+PORTNAME=	kfind
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	deskutils kde kde-applications
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Find files and folders
+
+USES=		cmake:outsource gettext kde:5 tar:xz
+USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
+		coreaddons crash ecm guiaddons i18n iconthemes itemviews \
+		jobwidgets kdelibs4support kio notifications parts service \
+		solid sonnet textwidgets unitconversion widgetsaddons \
+		windowsystem xmlgui
+USE_QT5=	core dbus gui network printsupport widgets xml \
+		buildtools_build qmake_build
+
+.include <bsd.port.mk>

@@ -265,13 +265,13 @@ _USE_FRAMEWORKS_ALL=	ecm \
 			${_USE_FRAMEWORKS_EXTRA}
 
 # List of components of the KDE PIM distribution (part of applications).
-_USE_KDEPIM5_ALL=	akonadicontacts akonadimime akonadinotes \
+_USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
 			akonadicalendar akonadisearch alarmcalendar \
 			blog calendarcore calendarsupport calendarutils \
-			contacts eventviews gapi \
-			grantleetheme gravatar identitymanagement imap \
-			incidenceeditor kdepim-apps-libs \
-			kontactinterface kpimdav \
+			contacts eventviews gapi grantleetheme \
+			gravatar identitymanagement imap \
+			incidenceeditor kdepim-addons kdepim-apps-libs \
+			kdepim-runtime5 kontactinterface kpimdav \
 			ksmtp ldap libkdepim libkleo libksieve mailcommon \
 			mailimporter mailtransport mbox messagelib \
 			mime pimcommon pimtextedit syndication tnef
@@ -591,9 +591,13 @@ xmlrpcclient_PORT=	net/kf5-kxmlrpcclient
 xmlrpcclient_LIB=	libKF5XmlRpcClient.so
 # ====================== end of frameworks components ==========================
 
+
 # ====================== pim5 components =======================================
 akonadicontacts_PORT=	net/akonadi-contacts
 akonadicontacts_LIB=	libKF5AkonadiContact.so
+
+akonadiimportwizard_PORT=	deskutils/akonadi-import-wizard
+akonadiimportwizard_LIB=	libKPimImportWizard.so
 
 akonadimime_PORT=	net/akonadi-mime
 akonadimime_LIB=	libKF5AkonadiMime.so
@@ -646,8 +650,14 @@ imap_LIB=		libKF5IMAP.so
 incidenceeditor_PORT=	net/incidenceeditor
 incidenceeditor_LIB=	libKF5IncidenceEditor.so
 
+kdepim-addons_PORT=	deskutils/kdepim-addons
+kdepim-addons_PATH=	${KDE_PREFIX}/lib/contacteditor/editorpageplugins/cryptopageplugin.so
+
 kdepim-apps-libs_PORT=	deskutils/kdepim-apps-libs
 kdepim-apps-libs_LIB=	libKF5SendLater.so
+
+kdepim-runtime5_PORT=	deskutils/kdepim-runtime
+kdepim-runtime5_LIB=	libakonadi-filestore.so.5
 
 kontactinterface_PORT=	net/kontactinterface
 kontactinterface_LIB=	libKF5KontactInterface.so
