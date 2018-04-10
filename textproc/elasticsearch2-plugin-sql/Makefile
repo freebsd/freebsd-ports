@@ -7,7 +7,7 @@ MASTER_SITES=	https://github.com/NLPchina/elasticsearch-sql/releases/download/${
 PKGNAMEPREFIX=	elasticsearch2-plugin-
 DISTNAME=	elasticsearch-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	ElasticSearch SQL plugin
 
 LICENSE=	APACHE20
