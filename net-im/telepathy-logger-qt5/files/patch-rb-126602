@@ -1,0 +1,63 @@
+From 2ef469161eade460d781642b6a7f4c8e52b494cf Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@gmail.com>
+Date: Sat, 2 Jan 2016 13:16:52 +0100
+Subject: [PATCH] Fix linking against gobject-2.0 on FreeBSD
+
+The cmake module file cmake/modules/FindGObject.cmake uses pkgconfig. Therefore
+the library returned in GOBJECT_LIBRARY does not contain the absolute path.
+
+This makes linking fail with
+| [ 91%] Linking CXX shared library libtelepathy-logger-qt.so
+| /usr/bin/ld: cannot find -lgobject-2.0
+
+This patch extend FindGObject.cmake to also export GOBJECT_LIBRARY_DIRS as
+provided by pkgconfig, and adding it to the link_directories in
+TelepathyLoggerQt/CMakeLists.txt
+---
+ TelepathyLoggerQt/CMakeLists.txt | 2 ++
+ cmake/modules/FindGObject.cmake  | 5 ++++-
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/TelepathyLoggerQt/CMakeLists.txt b/TelepathyLoggerQt/CMakeLists.txt
+index 9790bdf..fd55eb5 100644
+--- TelepathyLoggerQt/CMakeLists.txt
++++ TelepathyLoggerQt/CMakeLists.txt
+@@ -83,6 +83,8 @@ set(telepathy_logger_qt_GEN_HEADERS
+ qt5_wrap_cpp(telepathy_logger_qt_SRCS ${telepathy_logger_qt_GEN_HEADERS})
+ 
+ ################# Add target ##########################
++# add GObject library location to link directories
++link_directories(${GOBJECT_LIBRARY_DIRS})
+ 
+ add_library(telepathy-logger-qt SHARED
+     ${telepathy_logger_qt_SRCS}
+diff --git a/cmake/modules/FindGObject.cmake b/cmake/modules/FindGObject.cmake
+index 1507b43..fd56fa4 100644
+--- cmake/modules/FindGObject.cmake
++++ cmake/modules/FindGObject.cmake
+@@ -4,6 +4,7 @@
+ #  GOBJECT_FOUND - system has GObject
+ #  GOBJECT_INCLUDE_DIR - the GObject include directory
+ #  GOBJECT_LIBRARIES - the libraries needed to use GObject
++#  GOBJECT_LIBRARY_DIRS - the directory the libraries are in
+ #  GOBJECT_DEFINITIONS - Compiler switches required for using GObject
+ 
+ # Copyright (c) 2008 Helio Chissini de Castro, <helio@kde.org>
+@@ -55,6 +56,8 @@ ELSE (WIN32)
+ SET (GOBJECT_LIBRARIES ${PKG_GOBJECT2_LIBRARIES})
+ ENDIF (WIN32)
+ 
++SET (GOBJECT_LIBRARY_DIRS ${PKG_GOBJECT2_LIBRARY_DIRS})
++
+ IF (GOBJECT_INCLUDE_DIR AND GOBJECT_LIBRARIES)
+    SET(GOBJECT_FOUND TRUE)
+ ELSE (GOBJECT_INCLUDE_DIR AND GOBJECT_LIBRARIES)
+@@ -72,4 +75,4 @@ ELSE (GOBJECT_FOUND)
+     ENDIF(GObject_FIND_REQUIRED)
+ ENDIF (GOBJECT_FOUND)
+ 
+-MARK_AS_ADVANCED(GOBJECT_INCLUDE_DIR GOBJECT_LIBRARIES)
++MARK_AS_ADVANCED(GOBJECT_INCLUDE_DIR GOBJECT_LIBRARIES GOBJECT_LIBRARY_DIRS)
+-- 
+2.6.4
+
