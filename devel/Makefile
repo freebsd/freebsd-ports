@@ -1439,7 +1439,7 @@
     SUBDIR += libixp
     SUBDIR += libjson++
     SUBDIR += libk8055
-    SUBDIR += libkgapi
+    SUBDIR += libkgapi-kde4
     SUBDIR += libklel
     SUBDIR += libkolab
     SUBDIR += liblangtag
