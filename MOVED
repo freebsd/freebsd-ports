@@ -10141,3 +10141,4 @@ textproc/elasticsearch-plugin-marvel||2018-04-09|ElasticSearch 1.x End of Life
 textproc/elasticsearch-plugin-migration||2018-04-09|ElasticSearch 1.x End of Life
 textproc/elasticsearch-plugin-sql||2018-04-09|ElasticSearch 1.x End of Life
 textproc/elasticsearch-river-rabbitmq||2018-04-09|ElasticSearch 1.x End of Life
+devel/libkgapi|devel/libkgapi-kde4|2018-04-11|Make room for KDE updates

@@ -3,7 +3,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE4_KDEPIM_VERSION}
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libassuan.so:security/libassuan \
 		libsasl2.so:security/cyrus-sasl2 \
 		libboost_thread.so:devel/boost-libs \
-		libkgapi2.so:devel/libkgapi
+		libkgapi2.so:devel/libkgapi-kde4
 RUN_DEPENDS=	${KDE_PREFIX}/bin/accountwizard:deskutils/kdepim-runtime-kde4 \
 		${LOCALBASE}/bin/gmd5sum:sysutils/coreutils
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	kdepim-runtime
 PORTVERSION=	${KDE4_KDEPIM_VERSION}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -13,7 +13,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE PIM tools and services
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libkgapi2.so:devel/libkgapi \
+		libkgapi2.so:devel/libkgapi-kde4 \
 		libkolab.so:devel/libkolab \
 		libkolabxml.so:textproc/libkolabxml \
 		libkfbapi.so:net/libkfbapi \
