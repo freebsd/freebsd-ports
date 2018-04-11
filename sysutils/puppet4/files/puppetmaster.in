@@ -28,11 +28,11 @@ command_args="master ${puppetmaster_flags}"
 unset puppetmaster_flags
 
 pidfile="${puppetmaster_rundir}/master.pid"
-puppet_manifest="$($command config print manifest)"
 
 start_precmd="puppetmaster_checkconfig"
 restart_precmd="puppetmaster_checkconfig"
 puppetmaster_checkconfig() {
+	puppet_manifest="$($command config print manifest)"
 	cat << EOT
 ================================================================================
 The Rack and WEBrick Puppet master servers are deprecated and will be removed
