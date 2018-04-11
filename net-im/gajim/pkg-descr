@@ -1,23 +1,24 @@
-The goal of Gajim is to provide a full featured and easy to use Jabber
+The goal of Gajim is to provide a full featured and easy to use XMPP
 client. Gajim works nicely with GNOME, but does not require it to run.
 It is released under the GNU General Public License.
 
 FEATURES:
- * Tabbed chat window
- * Group chat support (with MUC protocol)
- * Emoticons, Avatars, File transfer, Room Bookmarks
+ * Tabbed chat window and single window modes
+ * Group chat support (with Multi-User Chat protocol)
+ * Emoticons, avatars, PEP (user activity, mood and tune)
  * Audio / video conferences
- * Metacontacts Support
- * Trayicon, Speller, extented chat history functionalities
+ * File transfer, room bookmarks
+ * Metacontacts support
+ * Trayicon, speller, extended chat history functionalities
  * TLS, GPG and End-To-End encryption support (with SSL legacy support)
- * Transport Registration support
- * Service Discovery including Nodes
+ * Transport registration support
+ * Service discovery including nodes, user search
  * Wikipedia, dictionary and search engine lookup
  * Multiple accounts support
- * DBus Capabilities
- * XML Console
+ * DBus capabilities
+ * XML console
  * Link local (bonjour / zeroconf), BOSH
  * Other features via plugins
- * Gajim is available in 25 languages
+ * Gajim is available in 29 languages
 
-WWW: http://www.gajim.org/
+WWW: https://gajim.org/
