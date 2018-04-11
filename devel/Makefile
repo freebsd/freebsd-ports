@@ -8,6 +8,7 @@
     SUBDIR += ElectricFence
     SUBDIR += ORBit2
     SUBDIR += ORBit2-reference
+    SUBDIR += R-cran-abind
     SUBDIR += R-cran-BH
     SUBDIR += R-cran-Defaults
     SUBDIR += R-cran-Hmisc
