@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	catch
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.2
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/catchorg/Catch2/archive/
-DISTNAME=	v${DISTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Header-only test framework for C++
@@ -14,7 +13,9 @@ LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		compiler:c++14-lang cmake pathfix
-WRKSRC=		${WRKDIR}/Catch2-${DISTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	catchorg
+GH_PROJECT=	Catch2
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR=${DOCSDIR}
 PORTDOCS=	*
