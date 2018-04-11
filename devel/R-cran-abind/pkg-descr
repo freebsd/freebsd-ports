@@ -1,0 +1,7 @@
+Combine multidimensional arrays into a single array. This is a
+generalization of 'cbind' and 'rbind'. Works with vectors, matrices,
+and higher-dimensional arrays. Also provides functions 'adrop',
+'asub', and 'afill' for manipulating, extracting and replacing data
+in arrays.
+
+WWW: https://cran.r-project.org/web/packages/abind/
