@@ -3,6 +3,7 @@
 
 PORTNAME=	librdkafka
 PORTVERSION=	0.11.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -19,11 +20,10 @@ BROKEN_powerpc64=	fails to build: cc: Internal error: Segmentation fault (progra
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
-USES=		gmake python:build shebangfix ssl
+USES=		gmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	edenhill
 
-SHEBANG_FILES=	lds-gen.py
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ARGS+=	--disable-sasl --enable-ssl
