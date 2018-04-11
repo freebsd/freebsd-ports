@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: slapd
-# REQUIRE: FILESYSTEMS ldconfig
+# REQUIRE: FILESYSTEMS ldconfig netif
 # BEFORE: SERVERS
 # KEYWORD: shutdown
 
