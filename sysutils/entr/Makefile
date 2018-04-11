@@ -17,9 +17,7 @@ WRKSRC=		${WRKDIR}/eradman-entr-d5110481f5b9
 
 MAKEFILE=	Makefile.bsd
 MAKE_ARGS=	MANPREFIX=${MANPREFIX}/man
+TEST_TARGET=	test
 PLIST_FILES=	bin/entr man/man1/entr.1.gz
-
-regression-test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} ${MAKE_ARGS} test)
 
 .include <bsd.port.mk>
