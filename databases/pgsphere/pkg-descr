@@ -1,3 +1,4 @@
-pgSphere provides spherical data types, functions, and operators for PostgreSQL.
+PgSphere provides spherical data types, functions, operators, and indexing for
+PostgreSQL.
 
-WWW: http://pgsphere.projects.postgresql.org/
+WWW: https://pgsphere.github.io/

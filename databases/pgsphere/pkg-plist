@@ -1,0 +1,5 @@
+lib/postgresql/pg_sphere.so
+%%PORTDOCS%%%%DOCSDIR%%/extension/COPYRIGHT.pg_sphere
+%%PORTDOCS%%%%DOCSDIR%%/extension/README.pg_sphere
+%%DATADIR%%/extension/pg_sphere--1.0.sql
+%%DATADIR%%/extension/pg_sphere.control
