@@ -1,0 +1,7 @@
+Tool suite used to flash firmware (aka ROMs) onto Samsung mobile devices.
+
+Heimdall connects to a mobile device over USB and interact with software running
+on device known as Loke. Loke and Heimdall communicate via the custom
+Samsung-developed protocol sometimes referred to as the 'Odin protocol'.
+
+WWW: https://glassechidna.com.au/heimdall/
