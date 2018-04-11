@@ -1,0 +1,85 @@
+commit 66fbcba45541
+Author: Alex Gaynor <agaynor@mozilla.com>
+Date:   Mon Apr 9 10:48:09 2018 -0400
+
+    Bug 1445234 - Use ContiguousEnumSerializer for serializing nsCursor. r=smaug, a=RyanVM
+    
+    --HG--
+    extra : source : a2385811ffdc30f153b8d5853f198c89020bf5ce
+    extra : amend_source : bc18c122db5db07a99a839f5421b49e9c5229160
+---
+ dom/ipc/PBrowser.ipdl       | 3 ++-
+ dom/ipc/TabParent.cpp       | 4 ++--
+ dom/ipc/TabParent.h         | 4 ++--
+ widget/WidgetMessageUtils.h | 6 ++++++
+ 4 files changed, 12 insertions(+), 5 deletions(-)
+
+diff --git dom/ipc/PBrowser.ipdl dom/ipc/PBrowser.ipdl
+index b1cf9efbe964..024ebc5b6cf7 100644
+--- dom/ipc/PBrowser.ipdl
++++ dom/ipc/PBrowser.ipdl
+@@ -69,6 +69,7 @@ using mozilla::CommandInt from "mozilla/EventForwards.h";
+ using mozilla::WritingMode from "mozilla/WritingModes.h";
+ using mozilla::layers::TouchBehaviorFlags from "mozilla/layers/APZUtils.h";
+ using nsIWidget::TouchPointerState from "nsIWidget.h";
++using nsCursor from "nsIWidget.h";
+ using struct LookAndFeelInt from "mozilla/widget/WidgetMessageUtils.h";
+ using class mozilla::dom::MessagePort from "mozilla/dom/MessagePort.h";
+ using class mozilla::dom::ipc::StructuredCloneData from "mozilla/dom/ipc/StructuredCloneData.h";
+@@ -366,7 +367,7 @@ parent:
+      *   Invalidate any locally cached cursor settings and force an
+      *   update.
+      */
+-    async SetCursor(uint32_t value, bool force);
++    async SetCursor(nsCursor value, bool force);
+ 
+     /**
+      * Set the native cursor using a custom image.
+diff --git dom/ipc/TabParent.cpp dom/ipc/TabParent.cpp
+index ae43c24e8891..86bb854962be 100644
+--- dom/ipc/TabParent.cpp
++++ dom/ipc/TabParent.cpp
+@@ -1723,9 +1723,9 @@ TabParent::RecvAsyncMessage(const nsString& aMessage,
+ }
+ 
+ mozilla::ipc::IPCResult
+-TabParent::RecvSetCursor(const uint32_t& aCursor, const bool& aForce)
++TabParent::RecvSetCursor(const nsCursor& aCursor, const bool& aForce)
+ {
+-  mCursor = static_cast<nsCursor>(aCursor);
++  mCursor = aCursor;
+   mCustomCursor = nullptr;
+ 
+   nsCOMPtr<nsIWidget> widget = GetWidget();
+diff --git dom/ipc/TabParent.h dom/ipc/TabParent.h
+index e3c2601ce0b4..7d62663835d7 100644
+--- dom/ipc/TabParent.h
++++ dom/ipc/TabParent.h
+@@ -274,8 +274,8 @@ public:
+                             nsTArray<nsCString>&& aEnabledCommands,
+                             nsTArray<nsCString>&& aDisabledCommands) override;
+ 
+-  virtual mozilla::ipc::IPCResult
+-  RecvSetCursor(const uint32_t& aValue, const bool& aForce) override;
++  virtual mozilla::ipc::IPCResult RecvSetCursor(const nsCursor& aValue,
++                                                const bool& aForce) override;
+ 
+   virtual mozilla::ipc::IPCResult RecvSetCustomCursor(const nsCString& aUri,
+                                                       const uint32_t& aWidth,
+diff --git widget/WidgetMessageUtils.h widget/WidgetMessageUtils.h
+index 8ab831a206da..2add8fd9533e 100644
+--- widget/WidgetMessageUtils.h
++++ widget/WidgetMessageUtils.h
+@@ -34,6 +34,12 @@ struct ParamTraits<LookAndFeelInt>
+   }
+ };
+ 
++template<>
++struct ParamTraits<nsCursor>
++  : public ContiguousEnumSerializer<nsCursor, eCursor_standard, eCursorCount>
++{
++};
++
+ } // namespace IPC
+ 
+ #endif // WidgetMessageUtils_h
