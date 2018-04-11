@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firacode
-PORTVERSION=	1.204
+PORTVERSION=	1.205
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/tonsky/FiraCode/releases/download/${PORTVERSION}/
 DISTNAME=	FiraCode_${PORTVERSION}
