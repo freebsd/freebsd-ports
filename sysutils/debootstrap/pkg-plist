@@ -24,6 +24,10 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/jaunty
 %%DATADIR%%/scripts/jessie
 %%DATADIR%%/scripts/jessie-kfreebsd
+%%DATADIR%%/scripts/kali
+%%DATADIR%%/scripts/kali-dev
+%%DATADIR%%/scripts/kali-last-snapshot
+%%DATADIR%%/scripts/kali-rolling
 %%DATADIR%%/scripts/karmic
 %%DATADIR%%/scripts/lenny
 %%DATADIR%%/scripts/lucid
