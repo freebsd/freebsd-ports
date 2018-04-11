@@ -1,23 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	sandsifter
-PORTVERSION=	0.1
+PORTVERSION=	0.20170906
 CATEGORIES=	security
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Processor fuzzer for x86 CPUs
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=Designed for x86
 
 BUILD_DEPENDS=	${LOCALBASE}/include/capstone/capstone.h:devel/capstone3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>0:devel/py-capstone
 
 USES=		gmake python localbase shebangfix
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=Designed for x86
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	xoreaxeaxeax
-GH_TAGNAME=	dff63246fed84d90118441b8ba5b5d3bdd094427
+GH_TAGNAME=	8375e6123d093629e3e4437d7903839fd0742c2a
 SHEBANG_FILES=	sifter.py summarize.py
 
 OPTIONS_DEFINE=	DOCS
