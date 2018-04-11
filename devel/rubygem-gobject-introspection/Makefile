@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobject-introspection
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
