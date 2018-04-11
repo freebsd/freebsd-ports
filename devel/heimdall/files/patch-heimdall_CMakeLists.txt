@@ -1,0 +1,8 @@
+--- heimdall/CMakeLists.txt.orig	2017-05-11 18:34:25 UTC
++++ heimdall/CMakeLists.txt
+@@ -45,4 +45,4 @@ use_large_files(heimdall YES)
+ add_executable(heimdall ${HEIMDALL_SOURCE_FILES})
+ 
+ target_link_libraries(heimdall PRIVATE pit)
+-target_link_libraries(heimdall PRIVATE usb-1.0)
++target_link_libraries(heimdall PRIVATE usb)
