@@ -1,438 +1,158 @@
-commit 56cb3a82e6f1
+commit fde468da7b64
 Author: Andrew Osmond <aosmond@mozilla.com>
-Date:   Wed Feb 7 09:33:12 2018 -0500
+Date:   Tue Apr 10 09:40:02 2018 -0400
 
-    Bug 1388020. r=nical a=RyanVM
-    
-    --HG--
-    extra : source : fd15c14e5efb1874591f4e113c1ae1c49154804f
+    Bug 1388020. r=nical, a=RyanVM
 ---
- gfx/layers/client/TextureClient.h                |  2 +-
- gfx/layers/composite/TextureHost.cpp             | 65 +++++++++++++++++++-----
- gfx/layers/composite/X11TextureHost.cpp          | 13 +++--
- gfx/layers/d3d11/TextureD3D11.cpp                |  6 +--
- gfx/layers/opengl/MacIOSurfaceTextureHostOGL.cpp |  8 +++
- gfx/layers/opengl/TextureHostOGL.cpp             | 25 ++-------
- gfx/tests/gtest/TestLayers.h                     | 16 ++++++
- gfx/tests/gtest/TestTextureCompatibility.cpp     | 12 +++--
- gfx/tests/gtest/TestTextures.cpp                 |  7 ++-
- gfx/tests/gtest/TextureHelper.h                  |  3 +-
- 10 files changed, 108 insertions(+), 49 deletions(-)
+ gfx/gl/GLTextureImage.cpp            |  3 +++
+ gfx/gl/GLUploadHelpers.cpp           | 31 ++++++++++++++++++++++++++++++-
+ gfx/gl/GLUploadHelpers.h             |  2 ++
+ gfx/gl/TextureImageEGL.cpp           |  4 ++++
+ gfx/layers/composite/TextureHost.cpp |  3 +--
+ gfx/layers/opengl/TextureHostOGL.cpp |  4 +---
+ 6 files changed, 41 insertions(+), 6 deletions(-)
 
-diff --git gfx/layers/client/TextureClient.h gfx/layers/client/TextureClient.h
-index e56ea21841ad..81be2867ca7a 100644
---- gfx/layers/client/TextureClient.h
-+++ gfx/layers/client/TextureClient.h
-@@ -761,7 +761,7 @@ protected:
-   friend void TestTextureClientSurface(TextureClient*, gfxImageSurface*);
-   friend void TestTextureClientYCbCr(TextureClient*, PlanarYCbCrData&);
-   friend already_AddRefed<TextureHost> CreateTextureHostWithBackend(
--    TextureClient*, LayersBackend&);
-+    TextureClient*, ISurfaceAllocator*, LayersBackend&);
+diff --git gfx/gl/GLTextureImage.cpp gfx/gl/GLTextureImage.cpp
+index c91d558af441..65678432dace 100644
+--- gfx/gl/GLTextureImage.cpp
++++ gfx/gl/GLTextureImage.cpp
+@@ -149,6 +149,9 @@ BasicTextureImage::DirectUpdate(gfx::DataSourceSurface* aSurf, const nsIntRegion
+                                &uploadSize,
+                                needInit,
+                                aFrom);
++    if (mTextureFormat == SurfaceFormat::UNKNOWN) {
++        return false;
++    }
  
- #ifdef GFX_DEBUG_TRACK_CLIENTS_IN_POOL
- public:
+     if (uploadSize > 0) {
+         UpdateUploadSize(uploadSize);
+diff --git gfx/gl/GLUploadHelpers.cpp gfx/gl/GLUploadHelpers.cpp
+index 75165eedf787..ca1c890a486d 100644
+--- gfx/gl/GLUploadHelpers.cpp
++++ gfx/gl/GLUploadHelpers.cpp
+@@ -27,6 +27,23 @@ DataOffset(const IntPoint& aPoint, int32_t aStride, SurfaceFormat aFormat)
+   return data;
+ }
+ 
++static bool
++CheckUploadBounds(const IntSize& aDst, const IntSize& aSrc, const IntPoint& aOffset)
++{
++  if (aOffset.x < 0 || aOffset.y < 0 ||
++      aOffset.x >= aSrc.width ||
++      aOffset.y >= aSrc.height) {
++    MOZ_ASSERT_UNREACHABLE("Offset outside source bounds");
++    return false;
++  }
++  if (aDst.width > (aSrc.width - aOffset.x) ||
++      aDst.height > (aSrc.height - aOffset.y)) {
++    MOZ_ASSERT_UNREACHABLE("Source has insufficient data");
++    return false;
++  }
++  return true;
++}
++
+ static GLint GetAddressAlignment(ptrdiff_t aAddress)
+ {
+     if (!(aAddress & 0x7)) {
+@@ -375,6 +392,7 @@ TexImage2DHelper(GLContext* gl,
+ SurfaceFormat
+ UploadImageDataToTexture(GLContext* gl,
+                          unsigned char* aData,
++                         const gfx::IntSize& aDataSize,
+                          int32_t aStride,
+                          SurfaceFormat aFormat,
+                          const nsIntRegion& aDstRegion,
+@@ -498,6 +516,10 @@ UploadImageDataToTexture(GLContext* gl,
+         // Upload each rect in the region to the texture
+         for (auto iter = aDstRegion.RectIter(); !iter.Done(); iter.Next()) {
+             const IntRect& rect = iter.Get();
++            if (!CheckUploadBounds(rect.Size(), aDataSize, rect.TopLeft())) {
++                return SurfaceFormat::UNKNOWN;
++            }
++
+             const unsigned char* rectData =
+                 aData + DataOffset(rect.TopLeft(), aStride, aFormat);
+ 
+@@ -534,10 +556,17 @@ UploadSurfaceToTexture(GLContext* gl,
+ 
+     int32_t stride = aSurface->Stride();
+     SurfaceFormat format = aSurface->GetFormat();
++    gfx::IntSize size = aSurface->GetSize();
++    if (!CheckUploadBounds(aSize, size, aSrcPoint)) {
++        return SurfaceFormat::UNKNOWN;
++    }
++
+     unsigned char* data = aSurface->GetData() +
+         DataOffset(aSrcPoint, stride, format);
++    size.width -= aSrcPoint.x;
++    size.height -= aSrcPoint.y;
+ 
+-    return UploadImageDataToTexture(gl, data, stride, format,
++    return UploadImageDataToTexture(gl, data, size, stride, format,
+                                     aDstRegion, aTexture, aSize,
+                                     aOutUploadSize, aNeedInit,
+                                     aTextureUnit, aTextureTarget);
+diff --git gfx/gl/GLUploadHelpers.h gfx/gl/GLUploadHelpers.h
+index 866d44adbed0..f732d2b3834f 100644
+--- gfx/gl/GLUploadHelpers.h
++++ gfx/gl/GLUploadHelpers.h
+@@ -28,6 +28,7 @@ class GLContext;
+  * \param gl The GL Context to use.
+  * \param aData Start of image data of surface to upload.
+  *              Corresponds to the first pixel of the texture.
++ * \param aDataSize The image data's size.
+  * \param aStride The image data's stride.
+  * \param aFormat The image data's format.
+  * \param aDstRegion Region of the texture to upload.
+@@ -46,6 +47,7 @@ class GLContext;
+ gfx::SurfaceFormat
+ UploadImageDataToTexture(GLContext* gl,
+                          unsigned char* aData,
++                         const gfx::IntSize& aDataSize,
+                          int32_t aStride,
+                          gfx::SurfaceFormat aFormat,
+                          const nsIntRegion& aDstRegion,
+diff --git gfx/gl/TextureImageEGL.cpp gfx/gl/TextureImageEGL.cpp
+index 87a547c26925..3bb2987d1da5 100644
+--- gfx/gl/TextureImageEGL.cpp
++++ gfx/gl/TextureImageEGL.cpp
+@@ -119,6 +119,10 @@ TextureImageEGL::DirectUpdate(gfx::DataSourceSurface* aSurf, const nsIntRegion&
+                              &uploadSize,
+                              needInit,
+                              aFrom);
++    if (mTextureFormat == SurfaceFormat::UNKNOWN) {
++        return false;
++    }
++
+     if (uploadSize > 0) {
+         UpdateUploadSize(uploadSize);
+     }
 diff --git gfx/layers/composite/TextureHost.cpp gfx/layers/composite/TextureHost.cpp
-index a48a9081e155..e0a74920fbe5 100644
+index e7d87e238913..c93037384744 100644
 --- gfx/layers/composite/TextureHost.cpp
 +++ gfx/layers/composite/TextureHost.cpp
-@@ -116,15 +116,9 @@ TextureHost::CreateIPDLActor(HostIPCAllocator* aAllocator,
-                              uint64_t aSerial,
-                              const wr::MaybeExternalImageId& aExternalImageId)
- {
--  if (aSharedData.type() == SurfaceDescriptor::TSurfaceDescriptorBuffer &&
--      aSharedData.get_SurfaceDescriptorBuffer().data().type() == MemoryOrShmem::Tuintptr_t &&
--      !aAllocator->IsSameProcess())
--  {
--    NS_ERROR("A client process is trying to peek at our address space using a MemoryTexture!");
--    return nullptr;
--  }
-   TextureParent* actor = new TextureParent(aAllocator, aSerial, aExternalImageId);
-   if (!actor->Init(aSharedData, aLayersBackend, aFlags)) {
-+    actor->ActorDestroy(ipc::IProtocol::ActorDestroyReason::FailedConstructor);
-     delete actor;
-     return nullptr;
-   }
-@@ -232,6 +226,11 @@ TextureHost::Create(const SurfaceDescriptor& aDesc,
- 
- #ifdef MOZ_X11
-     case SurfaceDescriptor::TSurfaceDescriptorX11: {
-+      if (!aDeallocator->IsSameProcess()) {
-+        NS_ERROR("A client process is trying to peek at our address space using a X11Texture!");
-+        return nullptr;
-+      }
-+
-       const SurfaceDescriptorX11& desc = aDesc.get_SurfaceDescriptorX11();
-       result = MakeAndAddRef<X11TextureHost>(aFlags, desc);
-       break;
-@@ -248,7 +247,7 @@ TextureHost::Create(const SurfaceDescriptor& aDesc,
-       MOZ_CRASH("GFX: Unsupported Surface type host");
-   }
- 
--  if (WrapWithWebRenderTextureHost(aDeallocator, aBackend, aFlags)) {
-+  if (result && WrapWithWebRenderTextureHost(aDeallocator, aBackend, aFlags)) {
-     MOZ_ASSERT(aExternalImageId.isSome());
-     result = new WebRenderTextureHost(aDesc, aFlags, result, aExternalImageId.ref());
-   }
-@@ -269,13 +268,49 @@ CreateBackendIndependentTextureHost(const SurfaceDescriptor& aDesc,
-       const MemoryOrShmem& data = bufferDesc.data();
-       switch (data.type()) {
-         case MemoryOrShmem::TShmem: {
--          result = new ShmemTextureHost(data.get_Shmem(),
--                                        bufferDesc.desc(),
--                                        aDeallocator,
--                                        aFlags);
-+          const ipc::Shmem& shmem = data.get_Shmem();
-+          const BufferDescriptor& desc = bufferDesc.desc();
-+          if (!shmem.IsReadable()) {
-+            // We failed to map the shmem so we can't verify its size. This
-+            // should not be a fatal error, so just create the texture with
-+            // nothing backing it.
-+            result = new ShmemTextureHost(shmem, desc, aDeallocator, aFlags);
-+            break;
-+          }
-+
-+          size_t bufSize = shmem.Size<char>();
-+          size_t reqSize = SIZE_MAX;
-+          switch (desc.type()) {
-+            case BufferDescriptor::TYCbCrDescriptor: {
-+              const YCbCrDescriptor& ycbcr = desc.get_YCbCrDescriptor();
-+              reqSize =
-+                ImageDataSerializer::ComputeYCbCrBufferSize(ycbcr.ySize(), ycbcr.cbCrSize());
-+              break;
-+            }
-+            case BufferDescriptor::TRGBDescriptor: {
-+              const RGBDescriptor& rgb = desc.get_RGBDescriptor();
-+              reqSize = ImageDataSerializer::ComputeRGBBufferSize(rgb.size(), rgb.format());
-+              break;
-+            }
-+            default:
-+              gfxCriticalError() << "Bad buffer host descriptor " << (int)desc.type();
-+              MOZ_CRASH("GFX: Bad descriptor");
-+          }
-+
-+          if (bufSize < reqSize) {
-+            NS_ERROR("A client process gave a shmem too small to fit for its descriptor!");
-+            return nullptr;
-+          }
-+
-+          result = new ShmemTextureHost(shmem, desc, aDeallocator, aFlags);
-           break;
-         }
-         case MemoryOrShmem::Tuintptr_t: {
-+          if (!aDeallocator->IsSameProcess()) {
-+            NS_ERROR("A client process is trying to peek at our address space using a MemoryTexture!");
-+            return nullptr;
-+          }
-+
-           result = new MemoryTextureHost(reinterpret_cast<uint8_t*>(data.get_uintptr_t()),
-                                          bufferDesc.desc(),
-                                          aFlags);
-@@ -293,6 +329,11 @@ CreateBackendIndependentTextureHost(const SurfaceDescriptor& aDesc,
+@@ -888,8 +888,7 @@ BufferTextureHost::Upload(nsIntRegion *aRegion)
+         mFirstSource = mCompositor->CreateDataTextureSource(mFlags|TextureFlags::RGB_FROM_YCBCR);
+         mFirstSource->SetOwner(this);
+       }
+-      mFirstSource->Update(surf, aRegion);
+-      return true;
++      return mFirstSource->Update(surf, aRegion);
      }
- #ifdef XP_WIN
-     case SurfaceDescriptor::TSurfaceDescriptorDIB: {
-+      if (!aDeallocator->IsSameProcess()) {
-+        NS_ERROR("A client process is trying to peek at our address space using a DIBTexture!");
-+        return nullptr;
-+      }
-+
-       result = new DIBTextureHost(aFlags, aDesc);
-       break;
-     }
-diff --git gfx/layers/composite/X11TextureHost.cpp gfx/layers/composite/X11TextureHost.cpp
-index e2251f0c531a..94cb3f2f9594 100644
---- gfx/layers/composite/X11TextureHost.cpp
-+++ gfx/layers/composite/X11TextureHost.cpp
-@@ -23,10 +23,9 @@ X11TextureHost::X11TextureHost(TextureFlags aFlags,
-                                const SurfaceDescriptorX11& aDescriptor)
-  : TextureHost(aFlags)
- {
--  RefPtr<gfxXlibSurface> surface = aDescriptor.OpenForeign();
--  mSurface = surface.get();
-+  mSurface = aDescriptor.OpenForeign();
  
--  if (!(aFlags & TextureFlags::DEALLOCATE_CLIENT)) {
-+  if (mSurface && !(aFlags & TextureFlags::DEALLOCATE_CLIENT)) {
-     mSurface->TakePixmap();
-   }
- }
-@@ -34,7 +33,7 @@ X11TextureHost::X11TextureHost(TextureFlags aFlags,
- bool
- X11TextureHost::Lock()
- {
--  if (!mCompositor) {
-+  if (!mCompositor || !mSurface) {
-     return false;
-   }
- 
-@@ -75,6 +74,9 @@ X11TextureHost::SetTextureSourceProvider(TextureSourceProvider* aProvider)
- SurfaceFormat
- X11TextureHost::GetFormat() const
- {
-+  if (!mSurface) {
-+    return SurfaceFormat::UNKNOWN;
-+  }
-   gfxContentType type = mSurface->GetContentType();
- #ifdef GL_PROVIDER_GLX
-   if (mCompositor->GetBackendType() == LayersBackend::LAYERS_OPENGL) {
-@@ -87,6 +89,9 @@ X11TextureHost::GetFormat() const
- IntSize
- X11TextureHost::GetSize() const
- {
-+  if (!mSurface) {
-+    return IntSize();
-+  }
-   return mSurface->GetSize();
- }
- 
-diff --git gfx/layers/d3d11/TextureD3D11.cpp gfx/layers/d3d11/TextureD3D11.cpp
-index 379686418ef0..4ad758849b93 100644
---- gfx/layers/d3d11/TextureD3D11.cpp
-+++ gfx/layers/d3d11/TextureD3D11.cpp
-@@ -763,10 +763,6 @@ CreateTextureHostD3D11(const SurfaceDescriptor& aDesc,
- {
-   RefPtr<TextureHost> result;
-   switch (aDesc.type()) {
--    case SurfaceDescriptor::TSurfaceDescriptorBuffer: {
--      result = CreateBackendIndependentTextureHost(aDesc, aDeallocator, aBackend, aFlags);
--      break;
--    }
-     case SurfaceDescriptor::TSurfaceDescriptorD3D10: {
-       result = new DXGITextureHostD3D11(aFlags,
-                                         aDesc.get_SurfaceDescriptorD3D10());
-@@ -778,7 +774,7 @@ CreateTextureHostD3D11(const SurfaceDescriptor& aDesc,
-       break;
-     }
-     default: {
--      NS_WARNING("Unsupported SurfaceDescriptor type");
-+      MOZ_ASSERT_UNREACHABLE("Unsupported SurfaceDescriptor type");
-     }
-   }
-   return result.forget();
-diff --git gfx/layers/opengl/MacIOSurfaceTextureHostOGL.cpp gfx/layers/opengl/MacIOSurfaceTextureHostOGL.cpp
-index 291b0eb3d0dc..f363bb5a7cf7 100644
---- gfx/layers/opengl/MacIOSurfaceTextureHostOGL.cpp
-+++ gfx/layers/opengl/MacIOSurfaceTextureHostOGL.cpp
-@@ -32,6 +32,8 @@ MacIOSurfaceTextureHostOGL::~MacIOSurfaceTextureHostOGL()
- GLTextureSource*
- MacIOSurfaceTextureHostOGL::CreateTextureSourceForPlane(size_t aPlane)
- {
-+  MOZ_ASSERT(mSurface);
-+
-   GLuint textureHandle;
-   gl::GLContext* gl = mProvider->GetGLContext();
-   gl->fGenTextures(1, &textureHandle);
-@@ -94,11 +96,17 @@ MacIOSurfaceTextureHostOGL::SetTextureSourceProvider(TextureSourceProvider* aPro
- 
- gfx::SurfaceFormat
- MacIOSurfaceTextureHostOGL::GetFormat() const {
-+  if (!mSurface) {
-+    return gfx::SurfaceFormat::UNKNOWN;
-+  }
-   return mSurface->GetFormat();
- }
- 
- gfx::SurfaceFormat
- MacIOSurfaceTextureHostOGL::GetReadFormat() const {
-+  if (!mSurface) {
-+    return gfx::SurfaceFormat::UNKNOWN;
-+  }
-   return mSurface->GetReadFormat();
- }
- 
+     RefPtr<DataTextureSource> srcY;
 diff --git gfx/layers/opengl/TextureHostOGL.cpp gfx/layers/opengl/TextureHostOGL.cpp
-index bdcd8778c10d..2b28c19a126d 100644
+index 02c398b51fe7..ec6ba913123f 100644
 --- gfx/layers/opengl/TextureHostOGL.cpp
 +++ gfx/layers/opengl/TextureHostOGL.cpp
-@@ -26,10 +26,6 @@
- #include "mozilla/layers/MacIOSurfaceTextureHostOGL.h"
- #endif
- 
--#ifdef GL_PROVIDER_GLX
--#include "mozilla/layers/X11TextureHost.h"
--#endif
--
- using namespace mozilla::gl;
- using namespace mozilla::gfx;
- 
-@@ -46,14 +42,6 @@ CreateTextureHostOGL(const SurfaceDescriptor& aDesc,
- {
-   RefPtr<TextureHost> result;
-   switch (aDesc.type()) {
--    case SurfaceDescriptor::TSurfaceDescriptorBuffer: {
--      result = CreateBackendIndependentTextureHost(aDesc,
--                                                   aDeallocator,
--                                                   aBackend,
--                                                   aFlags);
--      break;
--    }
--
- #ifdef MOZ_WIDGET_ANDROID
-     case SurfaceDescriptor::TSurfaceTextureDescriptor: {
-       const SurfaceTextureDescriptor& desc = aDesc.get_SurfaceTextureDescriptor();
-@@ -88,14 +76,6 @@ CreateTextureHostOGL(const SurfaceDescriptor& aDesc,
+@@ -161,9 +161,7 @@ TextureImageTextureSourceOGL::Update(gfx::DataSourceSurface* aSurface,
      }
- #endif
+   }
  
--#ifdef GL_PROVIDER_GLX
--    case SurfaceDescriptor::TSurfaceDescriptorX11: {
--      const auto& desc = aDesc.get_SurfaceDescriptorX11();
--      result = new X11TextureHost(aFlags, desc);
--      break;
--    }
--#endif
+-  mTexImage->UpdateFromDataSource(aSurface, aDestRegion, aSrcOffset);
 -
-     case SurfaceDescriptor::TSurfaceDescriptorSharedGLTexture: {
-       const auto& desc = aDesc.get_SurfaceDescriptorSharedGLTexture();
-       result = new GLTextureHost(aFlags, desc.texture(),
-@@ -105,7 +85,10 @@ CreateTextureHostOGL(const SurfaceDescriptor& aDesc,
-                                  desc.hasAlpha());
-       break;
-     }
--    default: return nullptr;
-+    default: {
-+      MOZ_ASSERT_UNREACHABLE("Unsupported SurfaceDescriptor type");
-+      break;
-+    }
-   }
-   return result.forget();
- }
-diff --git gfx/tests/gtest/TestLayers.h gfx/tests/gtest/TestLayers.h
-index 18e351f7718c..fc6b750f1c62 100644
---- gfx/tests/gtest/TestLayers.h
-+++ gfx/tests/gtest/TestLayers.h
-@@ -8,6 +8,22 @@
- 
- #include "Layers.h"
- #include "nsTArray.h"
-+#include "mozilla/layers/ISurfaceAllocator.h"
-+
-+namespace mozilla {
-+namespace layers {
-+
-+class TestSurfaceAllocator final : public ISurfaceAllocator
-+{
-+public:
-+  TestSurfaceAllocator() {}
-+  ~TestSurfaceAllocator() override {}
-+
-+  bool IsSameProcess() const override { return true; }
-+};
-+
-+} // layers
-+} // mozilla
- 
- /* Create layer tree from a simple layer tree description syntax.
-  * Each index is either the first letter of the layer type or
-diff --git gfx/tests/gtest/TestTextureCompatibility.cpp gfx/tests/gtest/TestTextureCompatibility.cpp
-index 45db4943ed1c..0815823b81ce 100644
---- gfx/tests/gtest/TestTextureCompatibility.cpp
-+++ gfx/tests/gtest/TestTextureCompatibility.cpp
-@@ -14,6 +14,7 @@
- #include "mozilla/layers/TextureClient.h"
- #include "mozilla/layers/TextureHost.h"
- #include "mozilla/RefPtr.h"
-+#include "TestLayers.h"
- #include "TextureHelper.h"
- 
- using mozilla::gfx::Feature;
-@@ -22,6 +23,7 @@ using mozilla::layers::BasicCompositor;
- using mozilla::layers::Compositor;
- using mozilla::layers::CompositorOptions;
- using mozilla::layers::LayersBackend;
-+using mozilla::layers::TestSurfaceAllocator;
- using mozilla::layers::TextureClient;
- using mozilla::layers::TextureHost;
- using mozilla::widget::CompositorWidget;
-@@ -31,8 +33,9 @@ using mozilla::widget::InProcessCompositorWidget;
-  * This function will create the possible TextureClient and TextureHost pairs
-  * according to the given backend.
-  */
--void
-+static void
- CreateTextureWithBackend(LayersBackend& aLayersBackend,
-+                         ISurfaceAllocator* aDeallocator,
-                          nsTArray<RefPtr<TextureClient>>& aTextureClients,
-                          nsTArray<RefPtr<TextureHost>>& aTextureHosts)
- {
-@@ -43,7 +46,8 @@ CreateTextureWithBackend(LayersBackend& aLayersBackend,
- 
-   for (uint32_t i = 0; i < aTextureClients.Length(); i++) {
-     aTextureHosts.AppendElement(
--      CreateTextureHostWithBackend(aTextureClients[i], aLayersBackend));
-+      CreateTextureHostWithBackend(aTextureClients[i], aDeallocator,
-+                                   aLayersBackend));
-   }
+-  return true;
++  return mTexImage->UpdateFromDataSource(aSurface, aDestRegion, aSrcOffset);
  }
  
-@@ -115,13 +119,15 @@ CheckCompatibilityWithBasicCompositor(LayersBackend aBackends,
- TEST(Gfx, TestTextureCompatibility)
- {
-   nsTArray<LayersBackend> backendHints;
-+  RefPtr<TestSurfaceAllocator> deallocator = new TestSurfaceAllocator();
- 
-   GetPlatformBackends(backendHints);
-   for (uint32_t i = 0; i < backendHints.Length(); i++) {
-     nsTArray<RefPtr<TextureClient>> textureClients;
-     nsTArray<RefPtr<TextureHost>> textureHosts;
- 
--    CreateTextureWithBackend(backendHints[i], textureClients, textureHosts);
-+    CreateTextureWithBackend(backendHints[i], deallocator,
-+                             textureClients, textureHosts);
-     CheckCompatibilityWithBasicCompositor(backendHints[i], textureHosts);
-   }
- }
-diff --git gfx/tests/gtest/TestTextures.cpp gfx/tests/gtest/TestTextures.cpp
-index 19b94b867117..291eb55ca7e5 100644
---- gfx/tests/gtest/TestTextures.cpp
-+++ gfx/tests/gtest/TestTextures.cpp
-@@ -5,6 +5,7 @@
- 
- #include "gtest/gtest.h"
- #include "gmock/gmock.h"
-+#include "TestLayers.h"
- 
- #include "mozilla/gfx/2D.h"
- #include "mozilla/gfx/Tools.h"
-@@ -147,7 +148,8 @@ void TestTextureClientSurface(TextureClient* texture, gfxImageSurface* surface)
-   ASSERT_NE(descriptor.type(), SurfaceDescriptor::Tnull_t);
- 
-   // host deserialization
--  RefPtr<TextureHost> host = CreateBackendIndependentTextureHost(descriptor, nullptr,
-+  RefPtr<TestSurfaceAllocator> deallocator = new TestSurfaceAllocator();
-+  RefPtr<TextureHost> host = CreateBackendIndependentTextureHost(descriptor, deallocator,
-                                                                  LayersBackend::LAYERS_NONE,
-                                                                  texture->GetFlags());
- 
-@@ -193,7 +195,8 @@ void TestTextureClientYCbCr(TextureClient* client, PlanarYCbCrData& ycbcrData) {
-   ASSERT_EQ(ycbcrDesc.stereoMode(), ycbcrData.mStereoMode);
- 
-   // host deserialization
--  RefPtr<TextureHost> textureHost = CreateBackendIndependentTextureHost(descriptor, nullptr,
-+  RefPtr<TestSurfaceAllocator> deallocator = new TestSurfaceAllocator();
-+  RefPtr<TextureHost> textureHost = CreateBackendIndependentTextureHost(descriptor, deallocator,
-                                                                         LayersBackend::LAYERS_NONE,
-                                                                         client->GetFlags());
- 
-diff --git gfx/tests/gtest/TextureHelper.h gfx/tests/gtest/TextureHelper.h
-index 144a237b17d4..770f7464f829 100644
---- gfx/tests/gtest/TextureHelper.h
-+++ gfx/tests/gtest/TextureHelper.h
-@@ -140,6 +140,7 @@ CreateTextureClientWithBackend(LayersBackend aLayersBackend)
-  */
- already_AddRefed<TextureHost>
- CreateTextureHostWithBackend(TextureClient* aClient,
-+                             ISurfaceAllocator* aDeallocator,
-                              LayersBackend& aLayersBackend)
- {
-   if (!aClient) {
-@@ -153,7 +154,7 @@ CreateTextureHostWithBackend(TextureClient* aClient,
-   aClient->ToSurfaceDescriptor(descriptor);
- 
-   wr::MaybeExternalImageId id = Nothing();
--  return TextureHost::Create(descriptor, nullptr, aLayersBackend,
-+  return TextureHost::Create(descriptor, aDeallocator, aLayersBackend,
-                              aClient->GetFlags(), id);
- }
- 
+ void
