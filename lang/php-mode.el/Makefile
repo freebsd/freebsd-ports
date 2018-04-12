@@ -3,6 +3,7 @@
 
 PORTNAME=	php-mode.el
 PORTVERSION=	1.19.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang elisp
 
@@ -17,9 +18,13 @@ GH_PROJECT=	${PORTNAME:S/.el$//}
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-PLIST_FILES=	share/emacs/site-lisp/php-mode.el
+PLIST_FILES=	share/emacs/site-lisp/php-mode.el \
+		share/emacs/site-lisp/php-project.el
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/php-mode.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/php-mode.el
+	${INSTALL_DATA} \
+		${WRKSRC}/php-mode.el \
+		${WRKSRC}/php-project.el \
+		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/
 
 .include <bsd.port.mk>
