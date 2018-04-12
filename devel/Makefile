@@ -4136,6 +4136,7 @@
     SUBDIR += protobuf
     SUBDIR += protobuf-c
     SUBDIR += protobuf25
+    SUBDIR += protozero
     SUBDIR += pructl
     SUBDIR += psptoolchain
     SUBDIR += psptoolchain-binutils

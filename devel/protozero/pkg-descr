@@ -1,0 +1,13 @@
+Minimalistic protocol buffer decoder and encoder in C++.
+
+Designed for high performance. Suitable for writing zero copy parsers
+and encoders with minimal need for run-time allocation of memory.
+
+Low-level: this is designed to be a building block for writing a
+very customized decoder for a stable protobuf schema. If your
+protobuf schema is changing frequently or lazy decoding is not
+critical for your application then this approach offers no value:
+just use the C++ API that can be generated with the Google Protobufs
+protoc program.
+
+WWW: https://github.com/mapbox/protozero
