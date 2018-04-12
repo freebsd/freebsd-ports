@@ -1,15 +1,15 @@
---- examples/Makefile.orig	2017-10-27 09:00:53 UTC
+--- examples/Makefile.orig	2018-04-11 12:39:15 UTC
 +++ examples/Makefile
-@@ -84,7 +84,7 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
+@@ -84,7 +84,7 @@ EXTRA_FILES = use_tiff_stream use_jpeg_b
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = `grep 'cimg_version\ ' ../CImg.h | tail -c4 | head -c3`
+ VERSION = `grep 'cimg_version\ ' ../CImg.h | tail -c4 | head -c3`
 -X11PATH      = /usr/X11R6
 +X11PATH      = $(LOCALBASE)
  EXEPFX       =
  ifeq ($(MSYSTEM),MINGW32)
  EXESFX       = .exe
-@@ -103,7 +103,7 @@ CXXVER       = "icpc \( `$(CXX) -v 2>&1`
+@@ -107,7 +107,7 @@ CXXVER       = "icpc \( `$(CXX) -v 2>&1`
  CFLAGS       = -I..
  LIBS         =
  else
@@ -18,131 +18,102 @@
  LIBS         = -lm
  endif
  
-@@ -127,12 +127,12 @@ CIMG_VT100_CFLAGS = -Dcimg_use_vt100
+@@ -131,12 +131,12 @@ VT100_CFLAGS = -Dcimg_use_vt100
  
  # Flags to enable code optimization by the compiler.
  ifeq ($(notdir $(CXX)),g++)
--CIMG_OPT_CFLAGS = -O3 -mtune=generic
-+CIMG_OPT_CFLAGS = -mtune=generic
+-OPT_CFLAGS = -Ofast -mtune=generic
++OPT_CFLAGS = -mtune=generic
  else
  ifeq ($(notdir $(CXX)),icpc)
- CIMG_OPT_CFLAGS = -fast
+ OPT_CFLAGS = -fast
  else
--CIMG_OPT_CFLAGS = -O3
-+CIMG_OPT_CFLAGS = # -O3 - handled by the port CFLAGS
+-OPT_CFLAGS = -Ofast
++OPT_CFLAGS = # -Ofast - handled by the port CFLAGS
  endif
  endif
  
-@@ -147,7 +147,7 @@ endif
- 
- # Flags to enable OpenCV support.
- CIMG_OPENCV_DEFINE = -Dcimg_use_opencv
--CIMG_OPENCV_INCDIR = `pkg-config opencv --cflags || echo -I/usr/include/opencv` -I/usr/include/opencv
-+CIMG_OPENCV_INCDIR = `pkg-config opencv --cflags || echo -I$(LOCALBASE)/include/opencv` -I$(LOCALBASE)/include/opencv
- CIMG_OPENCV_CFLAGS = $(CIMG_OPENCV_DEFINE) $(CIMG_OPENCV_INCDIR)
- CIMG_OPENCV_LIBS = `pkg-config opencv --libs || echo -lopencv_core -lopencv_highgui`
- 
-@@ -159,7 +159,7 @@ CIMG_NODISPLAY_CFLAGS = -Dcimg_display=0
- CIMG_X11_DEFINE = -Dcimg_display=1
- CIMG_X11_INCDIR = `pkg-config --cflags x11 || echo -I/usr/X11R6/include`
- CIMG_X11_CFLAGS = $(CIMG_X11_DEFINE) $(CIMG_X11_INCDIR)
--CIMG_X11_LIBS = `pkg-config --libs x11 || echo -L/usr/X11R6/lib -lX11` -lpthread
-+CIMG_X11_LIBS = `pkg-config --libs x11 || echo -L$(LOCALBASE)/X11R6/lib -lX11` -lpthread
- 
- # Flags to enable fast image display, using the XSHM library (when using X11).
- # !!! Seems to randomly crash when used on MacOSX and 64bits systems, so use it only when necessary !!!
-@@ -199,7 +199,7 @@ CIMG_JPEG_LIBS = -ljpeg
- CIMG_TIFF_DEFINE = -Dcimg_use_tiff
- CIMG_TIFF_INCDIR =
- CIMG_TIFF_CFLAGS = $(CIMG_TIFF_DEFINE) $(CIMG_TIFF_INCDIR)
--CIMG_TIFF_LIBS = -ltiff
-+CIMG_TIFF_LIBS = -ltiff -ltiffxx
+@@ -203,7 +203,7 @@ JPEG_LIBS = -ljpeg
+ TIFF_DEFINE = -Dcimg_use_tiff
+ TIFF_INCDIR =
+ TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
+-TIFF_LIBS = -ltiff
++TIFF_LIBS = -ltiff  -ltiffxx
  
  # Flags to enable native support for MINC2 image files, using the MINC2 library.
  # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
-@@ -210,15 +210,15 @@ CIMG_MINC2_LIBS = -lminc_io -lvolume_io2
- 
+@@ -215,16 +215,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lmi
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
--CIMG_OPENEXR_DEFINE = -Dcimg_use_openexr
--CIMG_OPENEXR_INCDIR = -I/usr/include/OpenEXR
--CIMG_OPENEXR_CFLAGS = $(CIMG_OPENEXR_DEFINE) $(CIMG_OPENEXR_INCDIR)
--CIMG_OPENEXR_LIBS = -lIlmImf -lHalf
-+#CIMG_OPENEXR_DEFINE = -Dcimg_use_openexr
-+#CIMG_OPENEXR_INCDIR = -I$(LOCALBASE)/include/OpenEXR
-+#CIMG_OPENEXR_CFLAGS = $(CIMG_OPENEXR_DEFINE) $(CIMG_OPENEXR_INCDIR)
-+#CIMG_OPENEXR_LIBS = -lIlmImf -lHalf
+ OPENEXR_DEFINE = -Dcimg_use_openexr
+-OPENEXR_INCDIR = -I/usr/include/OpenEXR
++OPENEXR_INCDIR = -I$(LOCALBASE)/include/OpenEXR
+ OPENEXR_CFLAGS = $(OPENEXR_DEFINE) $(OPENEXR_INCDIR)
+ OPENEXR_LIBS = -lIlmImf -lHalf
  
  # Flags to enable native support for various video files, using the FFMPEG library.
  # ( http://www.ffmpeg.org/ )
- CIMG_FFMPEG_DEFINE = -Dcimg_use_ffmpeg -D__STDC_CONSTANT_MACROS
--CIMG_FFMPEG_INCDIR = -I/usr/include/libavcodec -I/usr/include/libavformat -I/usr/include/libswscale -I/usr/include/ffmpeg
-+CIMG_FFMPEG_INCDIR = -I$(LOCALBASE)/include/libavcodec -I$(LOCALBASE)/include/libavformat -I$(LOCALBASE)/include/libswscale -I$(LOCALBASE)/include/ffmpeg
- CIMG_FFMPEG_CFLAGS = $(CIMG_FFMPEG_DEFINE) $(CIMG_FFMPEG_INCDIR)
- CIMG_FFMPEG_LIBS = -lavcodec -lavformat -lswscale
+-FFMPEG_DEFINE = -Dcimg_use_ffmpeg -D__STDC_CONSTANT_MACROS
+-FFMPEG_INCDIR = -I/usr/include/libavcodec -I/usr/include/libavformat -I/usr/include/libswscale -I/usr/include/ffmpeg
+-FFMPEG_CFLAGS = $(FFMPEG_DEFINE) $(FFMPEG_INCDIR)
+-FFMPEG_LIBS = -lavcodec -lavformat -lswscale
++#FFMPEG_DEFINE = -Dcimg_use_ffmpeg -D__STDC_CONSTANT_MACROS
++FFMPEG_INCDIR = -I$(LOCALBASE)/include/libavcodec -I$(LOCALBASE)/include/libavformat -I$(LOCALBASE)/include/libswscale -I$(LOCALBASE)/include/ffmpeg
++#FFMPEG_CFLAGS = $(FFMPEG_DEFINE) $(FFMPEG_INCDIR)
++#FFMPEG_LIBS = -lavcodec -lavformat -lswscale
  
-@@ -236,10 +236,10 @@ CIMG_CURL_INCDIR =
- CIMG_CURL_CFLAGS = $(CIMG_CURL_DEFINE)
- CIMG_CURL_LIBS = -lcurl
+ # Flags to enable native support for compressed .cimgz files, using the Zlib library.
+ # ( http://www.zlib.net/ )
+@@ -260,18 +260,21 @@ endif
  
--# Flags to enable native support of most classical image file formats, using the Magick++ library.
-+# Flags to enable native support of most classical image file formats, using the GraphicsMagick++ library.
- # ( http://www.imagemagick.org/Magick++/ )
- CIMG_MAGICK_DEFINE = -Dcimg_use_magick
--CIMG_MAGICK_INCDIR = `pkg-config --cflags GraphicsMagick++ || echo -I$(USR)/$(INCLUDE)/GraphicsMagick`
-+CIMG_MAGICK_INCDIR = `pkg-config --cflags GraphicsMagick++ || echo -I$(LOCALBASE)/$(INCLUDE)/GraphicsMagick`
- CIMG_MAGICK_CFLAGS = $(CIMG_MAGICK_DEFINE) $(CIMG_MAGICK_INCDIR)
- CIMG_MAGICK_LIBS = `pkg-config --libs GraphicsMagick++ || echo -lGraphicsMagick++`
- 
-@@ -258,16 +258,19 @@ endif
+ # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
- CIMG_LAPACK_DEFINE = -Dcimg_use_lapack
- CIMG_LAPACK_INCDIR =
--CIMG_LAPACK_CFLAGS = $(CIMG_LAPACK_DEFINE) $(CIMG_LAPACK_INCDIR)
--CIMG_LAPACK_LIBS = -lblas -llapack
-+#CIMG_LAPACK_CFLAGS = $(CIMG_LAPACK_DEFINE) $(CIMG_LAPACK_INCDIR)
-+#CIMG_LAPACK_LIBS = -lblas -llapack
+-LAPACK_DEFINE = -Dcimg_use_lapack
++#LAPACK_DEFINE = -Dcimg_use_lapack
+ LAPACK_INCDIR =
+-LAPACK_CFLAGS = $(LAPACK_DEFINE) $(LAPACK_INCDIR)
+-LAPACK_LIBS = -lblas -llapack
++#LAPACK_CFLAGS = $(LAPACK_DEFINE) $(LAPACK_INCDIR)
++#LAPACK_LIBS = -lblas -llapack
  
  # Flags to enable the use of the Board library
  # ( http://libboard.sourceforge.net/ )
- CIMG_BOARD_DEFINE = -Dcimg_use_board
--CIMG_BOARD_INCDIR = -I/usr/include/board
-+CIMG_BOARD_INCDIR = -I$(LOCALBASE)/include/board
- CIMG_BOARD_CFLAGS = $(CIMG_BOARD_DEFINE) $(CIMG_BOARD_INCDIR)
- CIMG_BOARD_LIBS = -lboard
+ BOARD_DEFINE = -Dcimg_use_board
+-BOARD_INCDIR = -I/usr/include/board
++BOARD_INCDIR = -I$(LOCALBASE)/include/board
+ BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
+ BOARD_LIBS = -lboard
  
 +# Flags to compile on FreeBSD
-+CIMG_FREEBSD_LDFLAGS = $(LDFLAGS) -ansi -ffast-math  -I$(X11PATH)/include $(EXTRA_FLAGS) -lX11 -L$(X11PATH)/lib
++FREEBSD_LDFLAGS = $(LDFLAGS) -ansi -ffast-math  -I$(X11PATH)/include $(EXTRA_FLAGS) -lX11 -L$(X11PATH)/lib
 +
  # Flags to compile on Sun Solaris
- CIMG_SOLARIS_LIBS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
+ SOLARIS_LIBS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
-@@ -342,7 +345,8 @@ $(CIMG_XSHM_CFLAGS)" \
- $(CIMG_X11_LIBS) \
- $(CIMG_TIFF_LIBS) \
- $(CIMG_LAPACK_LIBS) \
--$(CIMG_XSHM_LIBS)" \
-+$(CIMG_XSHM_LIBS) \
+@@ -347,6 +350,7 @@ $(X11_LIBS) \
+ $(TIFF_LIBS) \
+ $(LAPACK_LIBS) \
+ $(XSHM_LIBS)" \
 +$(PTHREAD_LIBS)" \
- all $(CIMG_EXTRA_FILES)
+ all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -435,8 +439,10 @@ $(CIMG_ZLIB_CFLAGS) \
- $(CIMG_CURL_CFLAGS) \
- $(CIMG_OPENCV_CFLAGS) \
- $(CIMG_MAGICK_CFLAGS) \
-+$(CIMG_LAPACK_CFLAGS) \
- $(CIMG_FFTW3_CFLAGS)" \
+@@ -439,8 +443,10 @@ $(ZLIB_CFLAGS) \
+ $(CURL_CFLAGS) \
+ $(OPENCV_CFLAGS) \
+ $(MAGICK_CFLAGS) \
++$(LAPACK_CFLAGS) \
+ $(FFTW3_CFLAGS)" \
  "CONF_LIBS = \
-+$(CIMG_FREEBSD_LDFLAGS) \
- $(CIMG_X11_LIBS) \
- $(CIMG_XSHM_LIBS) \
- $(CIMG_XRANDR_LIBS) \
-@@ -448,6 +454,7 @@ $(CIMG_ZLIB_LIBS) \
- $(CIMG_CURL_LIBS) \
- $(CIMG_OPENCV_LIBS) \
- $(CIMG_MAGICK_LIBS) \
-+$(CIMG_LAPACK_LIBS) \
- $(CIMG_FFTW3_LIBS)" \
++$(FREEBSD_LDFLAGS) \
+ $(X11_LIBS) \
+ $(XSHM_LIBS) \
+ $(XRANDR_LIBS) \
+@@ -452,6 +458,7 @@ $(ZLIB_LIBS) \
+ $(CURL_LIBS) \
+ $(OPENCV_LIBS) \
+ $(MAGICK_LIBS) \
++$(LAPACK_LIBS) \
+ $(FFTW3_LIBS)" \
  "STRIP_EXE=true" \
- all $(CIMG_EXTRA_FILES)
+ all $(EXTRA_FILES)

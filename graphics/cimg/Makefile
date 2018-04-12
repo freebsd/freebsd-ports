@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.2
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -29,7 +29,7 @@ BROKEN_powerpc64=	invokes x86 assembler
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
 GH_PROJECT=	CImg
-GH_TAGNAME=	v.${DISTVERSION:S/.//g}
+GH_TAGNAME=	v.${DISTVERSION}
 
 .if !defined(WITHOUT_LAPACK)
 . if defined(WITH_ATLAS)
@@ -58,6 +58,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl			\
 		libpng.so:graphics/png			\
 		libtiff.so:graphics/tiff		\
 		libHalf.so:graphics/ilmbase		\
+		libIlmImf.so:graphics/OpenEXR		\
 		libgimp-2.0.so:graphics/gimp-app	\
 		libfftw3.so:math/fftw3			\
 		libopencv_legacy.so:graphics/opencv	\
@@ -112,19 +113,21 @@ pre-configure-DOCS-off:
 
 pre-configure:
 . if !defined(WITHOUT_FFMPEG)
-	${REINPLACE_CMD} -e 's|#CIMG_FFMPEG_CFLAGS|CIMG_FFMPEG_CFLAGS|'	\
-		-e 's|#CIMG_FFMPEG_LDFLAGS|CIMG_FFMPEG_LDFLAGS|'	\
+	${REINPLACE_CMD} -e 's|#FFMPEG_CFLAGS|FFMPEG_CFLAGS|'	\
+		-e 's|#FFMPEG_DEFINE|FFMPEG_DEFINE|'		\
+		-e 's|#FFMPEG_LIBS|FFMPEG_LIBS|'		\
 		${BUILD_WRKSRC}/Makefile
 . endif
 . if !defined(WITHOUT_LAPACK)
-	${REINPLACE_CMD} -e 's|#CIMG_LAPACK_CFLAGS|CIMG_LAPACK_CFLAGS|'			\
-		-e 's|#CIMG_LAPACK_LIBS|CIMG_LAPACK_LIBS|'			\
+	${REINPLACE_CMD} -e 's|#LAPACK_CFLAGS|LAPACK_CFLAGS|'			\
+		-e 's|#LAPACK_DEFINE|LAPACK_DEFINE|'				\
+		-e 's|#LAPACK_LIBS|LAPACK_LIBS|'				\
 		-e 's|-lblas -llapack|-L${LOCALBASE}/lib ${BLASLIB} ${LAPACKLIB}|'	\
 		${BUILD_WRKSRC}/Makefile
 . endif
 . if defined(WITH_XSHM)
-	${REINPLACE_CMD} -e 's|CIMG_XSHM_CFLAGS = #|CIMG_XSHM_CFLAGS =|'	\
-		-e 's|CIMG_XSHM_LDFLAGS = #|CIMG_XSHM_LDFLAGS =|'		\
+	${REINPLACE_CMD} -e 's|XSHM_CFLAGS = #|XSHM_CFLAGS =|'	\
+		-e 's|XSHM_LDFLAGS = #|XSHM_LDFLAGS =|'		\
 		${BUILD_WRKSRC}/Makefile
 . endif
 	${REINPLACE_CMD} -e 's|-pedantic|${CFLAGS}|' ${BUILD_WRKSRC}/Makefile
