@@ -8,7 +8,6 @@
     SUBDIR += ElectricFence
     SUBDIR += ORBit2
     SUBDIR += ORBit2-reference
-    SUBDIR += R-cran-abind
     SUBDIR += R-cran-BH
     SUBDIR += R-cran-Defaults
     SUBDIR += R-cran-Hmisc
@@ -16,6 +15,7 @@
     SUBDIR += R-cran-R6
     SUBDIR += R-cran-RUnit
     SUBDIR += R-cran-Rcpp
+    SUBDIR += R-cran-abind
     SUBDIR += R-cran-bindr
     SUBDIR += R-cran-bindrcpp
     SUBDIR += R-cran-bit
@@ -4975,9 +4975,9 @@
     SUBDIR += py-subversion
     SUBDIR += py-subvertpy
     SUBDIR += py-sure
+    SUBDIR += py-swagger-spec-validator
     SUBDIR += py-sysctl
     SUBDIR += py-sysv_ipc
-    SUBDIR += py-swagger-spec-validator
     SUBDIR += py-tables
     SUBDIR += py-tabulate
     SUBDIR += py-tapi
