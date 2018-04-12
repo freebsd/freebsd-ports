@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	croniter
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.20
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil@${FLAVOR}
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
