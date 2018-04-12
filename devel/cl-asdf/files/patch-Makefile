@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-03-07 21:53:28 UTC
++++ Makefile
+@@ -101,7 +101,7 @@ noext:
+ load: build/asdf.lisp
+ 	./test/run-tests.sh -t $l $(all_lisp)
+ 
+-install: archive
++install:
+ 
+ bump: bump-version
+ 	git commit -a -m "Bump version to $$(eval a=$$(cat version.lisp-expr) ; echo $$a)"
