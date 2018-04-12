@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pipenv
-PORTVERSION=	11.9.0
+PORTVERSION=	11.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${
 .endif
 
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib>=0:devel/py-pathlib@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib2>=2.1.0:devel/py-pathlib2@${FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
