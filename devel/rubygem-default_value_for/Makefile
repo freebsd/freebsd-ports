@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	default_value_for
-PORTVERSION=	3.0.5
+PORTVERSION=	3.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Define default values for ActiveRecord models in a declarative manner
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-RUN_DEPENDS=	rubygem-activerecord4>=4.1.4:databases/rubygem-activerecord4
+RUN_DEPENDS=	rubygem-activerecord4>=3.2.0:databases/rubygem-activerecord4
 
 NO_ARCH=	yes
 USE_RUBY=	yes
