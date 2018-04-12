@@ -1,3 +1,3 @@
-TIMESTAMP = 1521545152
-SHA256 (certbot-dns-google-0.22.2.tar.gz) = b38ef3e6b2c46dbfd6efcc52de075d76db6eab92c633e5d6a6a99b806b8a4309
-SIZE (certbot-dns-google-0.22.2.tar.gz) = 15842
+TIMESTAMP = 1523008592
+SHA256 (certbot-dns-google-0.23.0.tar.gz) = 696a07a91808620e32326eb5db8e923fc96698e81e2ed5a8b5f757993420e690
+SIZE (certbot-dns-google-0.23.0.tar.gz) = 22105
