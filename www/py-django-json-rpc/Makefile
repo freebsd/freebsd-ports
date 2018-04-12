@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	django-json-rpc
-PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTVERSION=	0.7.2
 CATEGORIES=	www python
-MASTER_SITES=	http://wiki.pcbsd.org/ports/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhixson@gmail.com
@@ -15,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${F
 
 LICENSE=	MIT
 
-USES=		python tar:bzip2
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
