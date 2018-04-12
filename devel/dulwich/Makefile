@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dulwich
-PORTVERSION=	0.15.0
+PORTVERSION=	0.18.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTDOCS=	AUTHORS CONTRIBUTING NEWS README.md TODO conclusion.txt \
+PORTDOCS=	AUTHORS NEWS README.md TODO conclusion.txt \
 		file-format.txt index.txt introduction.txt object-store.txt \
 		performance.txt porcelain.txt protocol.txt remote.txt repo.txt tag.txt
 PORTEXAMPLES=	clone.py config.py diff.py latest_change.py
