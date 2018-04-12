@@ -1,6 +1,11 @@
---- config.mk.orig	2017-07-23 04:09:50 UTC
+--- config.mk.orig	2018-04-11 10:59:06 UTC
 +++ config.mk
-@@ -9,10 +9,10 @@ MANPREFIX = ${PREFIX}/man
+@@ -5,14 +5,14 @@ VERSION = 4
+ 
+ # paths
+ PREFIX = /usr/local
+-MANPREFIX = $(PREFIX)/share/man
++MANPREFIX = $(PREFIX)/man
  
  # flags
  CPPFLAGS = -D_DEFAULT_SOURCE
@@ -8,8 +13,8 @@
 -LDFLAGS  = -s
 +CFLAGS   += -std=c99 -pedantic -Wall -Wextra -Os -I${LOCALBASE}/include
 +LDFLAGS  = -s -L${LOCALBASE}/lib
- PNG-LDFLAGS = -lpng
- JPG-LDFLAGS = -ljpeg
+ PNG-LDLIBS = -lpng
+ JPG-LDLIBS = -ljpeg
  
  # compiler and linker
 -CC = cc
