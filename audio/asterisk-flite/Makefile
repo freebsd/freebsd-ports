@@ -1,8 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	asterisk-flite
+PORTNAME=	flite
 PORTVERSION=	3.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -11,8 +12,19 @@ COMMENT=	Flite dialplan application for Asterisk
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libflite.so:audio/flite
-BUILD_DEPENDS=	asterisk:net/asterisk13
-RUN_DEPENDS=	asterisk:net/asterisk13
+
+FLAVORS=			asterisk13 asterisk15
+FLAVOR?=			${FLAVORS[1]}
+
+asterisk13_PKGNAMEPREFIX=	asterisk13-
+asterisk13_CONFLICTS_INSTALL=	asterisk15-flite
+asterisk13_BUILD_DEPENDS=	asterisk:net/asterisk13
+asterisk13_RUN_DEPENDS=		asterisk:net/asterisk13
+
+asterisk15_PKGNAMEPREFIX=	asterisk15-
+asterisk15_CONFLICTS_INSTALL=	asterisk13-flite
+asterisk15_BUILD_DEPENDS=	asterisk:net/asterisk15
+asterisk15_RUN_DEPENDS=		asterisk:net/asterisk15
 
 USES=		compiler gmake localbase
 INSTALL_TARGET=	install samples
@@ -26,6 +38,10 @@ GH_PROJECT=	Asterisk-Flite
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-fblocks
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/ASTERISK_REGISTER_FILE/d' \
+		${WRKSRC}/app_flite.c
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/asterisk/modules/app_flite.so
