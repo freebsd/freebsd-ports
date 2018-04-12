@@ -5,11 +5,11 @@ Changed paths:
 
 Canonicize the host name before looking it up in the host file.
 
---- ssh.c.orig	2010-08-16 09:59:31.000000000 -0600
-+++ ssh.c	2010-08-25 17:55:01.000000000 -0600
-@@ -699,6 +699,23 @@
- 		    "h", host, (char *)NULL);
- 	}
+--- ssh.c.orig	2018-04-02 05:38:28 UTC
++++ ssh.c
+@@ -1281,6 +1281,23 @@ main(int ac, char **av)
+ 	ssh_digest_free(md);
+ 	conn_hash_hex = tohex(conn_hash, ssh_digest_bytes(SSH_DIGEST_SHA1));
  
 +	/* Find canonic host name. */
 +	if (strchr(host, '.') == 0) {
@@ -28,6 +28,6 @@ Canonicize the host name before looking it up in the host file.
 +		}
 +	}
 +
- 	if (options.local_command != NULL) {
- 		char thishost[NI_MAXHOST];
- 
+ 	/*
+ 	 * Expand tokens in arguments. NB. LocalCommand is expanded later,
+ 	 * after port-forwarding is set up, so it may pick up any local
