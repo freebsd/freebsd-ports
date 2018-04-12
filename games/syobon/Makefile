@@ -11,6 +11,8 @@ DISTFILES=	${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX}
 
+LICENSE=	NONE
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform game as Super Mario Bros
 
@@ -25,20 +27,19 @@ ALL_TARGET=	${PORTNAME}
 MAKE_ENV=	GAMEDATA="${DATADIR}"
 
 PORTDOCS=	README.txt
-OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Syobon Action" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-.for d in BGM SE res
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
-.endfor
-
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "BGM SE res" ${STAGEDIR}${DATADIR})
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
