@@ -1,8 +1,7 @@
-# Created by: Nikolai Lifanov <lifanov@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nxengine
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 MASTER_SITES+=	https://www.cavestory.org/downloads/:data \
