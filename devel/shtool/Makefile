@@ -10,13 +10,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	The GNU Portable Shell Tool
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		perl5
-USE_PERL5=	build
 GNU_CONFIGURE=	yes
-
-regression-test: test
-
-test: build
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
+TEST_TARGET=	test
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
