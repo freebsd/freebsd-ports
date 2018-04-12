@@ -1,7 +1,7 @@
 Source: https://webdav.seas.upenn.edu/viewvc/unison/branches/2.40/src/update.mli?view=patch&r1=435&r2=457&pathrev=457
 
---- ./update.mli	2010/04/15 17:29:31	435
-+++ ./update.mli	2010/07/19 13:05:04	457
+--- update.mli.orig	2009-05-02 02:31:27 UTC
++++ update.mli
 @@ -1,7 +1,7 @@
  (* Unison file synchronizer: src/update.mli *)
  (* Copyright 1999-2009, Benjamin C. Pierce (see COPYING for details) *)
