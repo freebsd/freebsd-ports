@@ -2,7 +2,7 @@
 
 PORTNAME=	designer
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -38,5 +38,8 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/src/designer/images/designer.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/designer-qt5.png
+	# The generated .pc file refers to a nonexistent other .pc file
+	${REINPLACE_CMD} -e '/^Requires/s/Qt5UiPlugin//' \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/Qt5Designer.pc
 
 .include <bsd.port.mk>
