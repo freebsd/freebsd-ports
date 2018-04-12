@@ -1,6 +1,9 @@
 @sample etc/victorops/env.sh.sample
 @sample etc/victorops/proxy.sh.sample
 @sample etc/nagios/victorops.cfg-sample
+@sample etc/icinga2/victorops.conf.sample
+@sample etc/icinga2/vo_test_svc.conf.sample
+etc/icinga2/services.png
 etc/periodic/daily/400.victorops
 libexec/victorops/check_test_svc
 libexec/victorops/check_victorops_cmds
@@ -15,5 +18,6 @@ libexec/victorops/stop_forwarder
 libexec/victorops/url_encode.sed
 libexec/victorops/utils
 @dir etc/nagios
+@dir etc/icinga2
 @dir etc/victorops
 @dir /var/log/victorops
