@@ -1,7 +1,7 @@
---- dulwich.egg-info/SOURCES.txt.orig	2016-07-05 22:58:54 UTC
+--- dulwich.egg-info/SOURCES.txt.orig	2018-01-24 22:39:28 UTC
 +++ dulwich.egg-info/SOURCES.txt
-@@ -73,123 +73,6 @@ dulwich/contrib/paramiko_vendor.py
- dulwich/contrib/swift.py
+@@ -76,125 +76,7 @@ dulwich/contrib/swift.py
+ dulwich/contrib/test_release_robot.py
  dulwich/contrib/test_swift.py
  dulwich/contrib/test_swift_smoke.py
 -dulwich/tests/__init__.py
@@ -15,6 +15,7 @@
 -dulwich/tests/test_grafts.py
 -dulwich/tests/test_greenthreads.py
 -dulwich/tests/test_hooks.py
+-dulwich/tests/test_ignore.py
 -dulwich/tests/test_index.py
 -dulwich/tests/test_lru_cache.py
 -dulwich/tests/test_missing_obj_finder.py
@@ -124,3 +125,6 @@
  examples/clone.py
  examples/config.py
  examples/diff.py
+-examples/latest_change.py
+\ No newline at end of file
++examples/latest_change.py
