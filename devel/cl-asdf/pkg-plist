@@ -1,7 +1,5 @@
 @sample etc/asdf-init.lisp.default etc/asdf-init.lisp
-%%LIB32DIR%%/common-lisp/asdf/asdf-ecl.lisp
 %%LIB32DIR%%/common-lisp/asdf/asdf.asd
 %%LIB32DIR%%/common-lisp/asdf/asdf.lisp
-%%LIB32DIR%%/common-lisp/asdf/wild-modules.lisp
 %%LIB32DIR%%/common-lisp/system-registry/asdf.asd
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
