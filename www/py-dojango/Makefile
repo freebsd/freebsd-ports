@@ -9,6 +9,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Django application for building dojo
 
+LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.6:www/py-django18@${FLAVOR}
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
@@ -16,8 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	william-gr
 GH_PROJECT=	dojango
 GH_TAGNAME=	87507e5
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.6:www/py-django18@${FLAVOR}
 
 OPTIONS_DEFINE=		JAVA
 
