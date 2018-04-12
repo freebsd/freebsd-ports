@@ -304,6 +304,6 @@ include/botan-2/botan/zlib.h
 lib/libbotan-2.a
 lib/libbotan-2.so
 lib/libbotan-2.so.5
-lib/libbotan-2.so.5.5.0
+lib/libbotan-2.so.5.6.0
 %%PYTHON_SITELIBDIR%%/botan2.py
 libdata/pkgconfig/botan-2.pc
