@@ -787,6 +787,7 @@
     SUBDIR += py-htsql
     SUBDIR += py-htsql-mysql
     SUBDIR += py-htsql-pgsql
+    SUBDIR += py-influxdb
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
     SUBDIR += py-lmdb
