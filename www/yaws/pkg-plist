@@ -54,6 +54,7 @@ lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ticker.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_trace.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_vdir.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_websockets.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ws_sup.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_xmlrpc.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_zlib.beam
 lib/erlang/lib/yaws-%%VERSION%%/examples/ebin/advanced_echo_callback.beam
