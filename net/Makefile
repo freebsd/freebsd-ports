@@ -1063,6 +1063,7 @@
     SUBDIR += py-netif
     SUBDIR += py-netifaces
     SUBDIR += py-netlib
+    SUBDIR += py-netsnmpagent
     SUBDIR += py-netstring
     SUBDIR += py-nnpy
     SUBDIR += py-ntplib
