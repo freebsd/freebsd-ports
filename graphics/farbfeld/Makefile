@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	farbfeld
-PORTVERSION=	3
+DISTVERSION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	http://dl.suckless.org/farbfeld/
+MASTER_SITES=	https://dl.suckless.org/farbfeld/
 
 MAINTAINER=	aaron@baugher.biz
-COMMENT=	Lossless, uncompressed graphics format
+COMMENT=	Lossless image format which is easy to parse, pipe and compress
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
