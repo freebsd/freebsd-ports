@@ -343,6 +343,11 @@ MASTER_SITE_GENTOO+= \
 	ftp://gentoo.inode.at/source/%SUBDIR%/
 .endif
 
+# Keep this before USE_GITHUB
+.if !empty(MASTER_SITES:M*/github.com/*/archive/*)
+DEV_WARNING+=	"MASTER_SITES contains ${MASTER_SITES:M*/github.com/*/archive/*}, please use USE_GITHUB instead."
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_GITHUB)
 #
 # In order to use GitHub your port must define USE_GITHUB and the following
