@@ -180,7 +180,7 @@ carbon:*:230:230::0:0:osrm:/nonexistent:/usr/sbin/nologin
 # free: 232
 # free: 233
 kafka:*:234:234::0:0:Apache Kafka user:/nonexistent:/usr/sbin/nologin
-# free: 235
+openhab:*:235:235::0:0:openHAB user:/var/db/openhab2/home:/usr/sbin/nologin
 # free: 236
 # free: 237
 # free: 238
