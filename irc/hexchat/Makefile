@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hexchat
-PORTVERSION=	2.12.4
+PORTVERSION=	2.14.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	irc gnome ipv6
 
@@ -12,24 +12,21 @@ COMMENT=	IRC chat program with GTK and Text Frontend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	devel/autoconf-archive>0:devel/autoconf-archive
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 LIB_DEPENDS=	libproxy.so:net/libproxy \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdbus-1.so:devel/dbus \
 		libfreetype.so:print/freetype2
+RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes
 
-USES=		autoreconf gmake desktop-file-utils libtool pkgconfig ssl
+USES=		meson ninja desktop-file-utils libtool pkgconfig ssl shebangfix \
+		gettext-tools
 USE_GNOME=	cairo gtk20 intltool libxml2
 USE_XORG=	x11
 USE_GITHUB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-openssl --enable-gtkfe --disable-sysinfo \
-		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
-		LUA=lua-${LUA_VER}
+MESON_ARGS=	-Dwith-ssl=true -Dwith-gtk=true -Dwith-sysinfo=false
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-
-MAKE_ARGS=	OBJC="${CC}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
@@ -38,8 +35,8 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		CA_BUNDLE CANBERRA DBUS DOCS FISHLIM LUA NLS NOTIFY \
-			PERL PYTHON SOCKS TEXTFE
+OPTIONS_DEFINE=		CA_BUNDLE CANBERRA DBUS DOCS FISHLIM LUA NOTIFY \
+			PERL PYTHON TEXTFE
 
 OPTIONS_DEFAULT=	CA_BUNDLE CANBERRA DBUS NOTIFY PERL PYTHON
 
@@ -49,38 +46,31 @@ CA_BUNDLE_DESC=		Include CA bundle for SSL verification
 CANBERRA_DESC=		Audio support via Libcanberra
 FISHLIM_DESC=		FiSHLiM plugin
 TEXTFE_DESC=		Text frontend
-SOCKS_DESC=		SOCKS proxy support, FORBIDDEN in FreeBSD 10+
 
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+CA_BUNDLE_VARS=	CA_BUNDLE="${LOCALBASE}/share/certs/ca-root-nss.crt"
+CA_BUNDLE_VARS_OFF=	CA_BUNDLE=NULL
 CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
-CANBERRA_CONFIGURE_ENABLE=libcanberra
+CANBERRA_MESON_TRUE=	with-libcanberra
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
-DBUS_CONFIGURE_ENABLE=	dbus
+DBUS_MESON_TRUE=	with-dbus
 DBUS_USE=		GNOME=gconf2
-FISHLIM_CONFIGURE_ENABLE=fishlim
-LUA_CONFIGURE_ENABLE=	lua
+FISHLIM_MESON_TRUE=	with-fishlim
+LUA_MESON_ON=		-Dwith-lua=lua-${LUA_VER}
+LUA_MESON_OFF=		-Dwith-lua=false
 LUA_USES=		lua
 LUA_USE=		GCC=any
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
-NLS_USES_OFF=		gettext-tools # doesn't build otherwise
-NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
-NOTIFY_CONFIGURE_ENABLE=libnotify
-PERL_CONFIGURE_ENABLE=	perl
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+NOTIFY_MESON_TRUE=	with-libnotify
+PERL_MESON_TRUE=	with-perl
 PERL_USES=		perl5
-PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USES=		python
-SOCKS_LIB_DEPENDS=	libsocks.so:net/dante
-SOCKS_CONFIGURE_ENABLE=	socks
-TEXTFE_CONFIGURE_ENABLE=textfe
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCA_BUNDLE}
-CA_BUNDLE=	"${LOCALBASE}/share/certs/ca-root-nss.crt"
-.else
-CA_BUNDLE=	NULL
-.endif
+PYTHON_MESON_ON=	-Dwith-python=python-${PYTHON_VER}
+PYTHON_MESON_OFF=	-Dwith-python=false
+PYTHON_USES=		python:3.4+ shebangfix
+PYTHON_VARS=		SHEBANG_FILES=meson_post_install.py
+PYTHON_VARS+=		SHEBANG_FILES=plugins/perl/generate_header.py
+PYTHON_VARS+=		SHEBANG_FILES=src/common/make-te.py
+TEXTFE_MESON_TRUE=	with-text
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CA_BUNDLE%%|${CA_BUNDLE}|' \
