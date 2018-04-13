@@ -22,7 +22,7 @@
  apscheduler>=3.2.0
  terminaltables>=3.1.0
  colorclass>=2.2.0
-@@ -26,7 +23,7 @@ colorclass>=2.2.0
+@@ -26,10 +23,10 @@ colorclass>=2.2.0
  cherrypy>=3.7.0
  flask>=0.7
  flask-restful>=0.3.3
@@ -31,3 +31,7 @@
  flask-compress>=1.2.1
  flask-login>=0.4.0
  flask-cors>=2.1.2
+ pyparsing>=2.0.3
+-zxcvbn-python
++zxcvbn
+ future>=0.15.2

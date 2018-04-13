@@ -3,6 +3,7 @@
 
 PORTNAME=	flexget
 PORTVERSION=	2.13.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy12>0:databases/py-sqlalchemy12@${F
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}guessit>=2.1.4:multimedia/py-guessit@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pynzb>0:news/py-pynzb@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zxcvbn-python>0:security/py-zxcvbn-python@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zxcvbn>0:security/py-zxcvbn@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plumbum>=1.2:sysutils/py-plumbum@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorclass>=2.2.0:textproc/py-colorclass@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=5.2.1:textproc/py-feedparser@${FLAVOR} \
