@@ -1,6 +1,8 @@
---- kmymoney/CMakeLists.txt.orig	2015-04-25 17:17:55 UTC
+Don't update XDG mimetypes during build. This is done by the ports framework.
+
+--- kmymoney/CMakeLists.txt.orig	2017-12-23 22:27:53 UTC
 +++ kmymoney/CMakeLists.txt
-@@ -109,7 +109,6 @@ install(PROGRAMS kmymoney.appdata.xml
+@@ -114,7 +114,6 @@ install(FILES org.kde.kmymoney.appdata.xml
  install(FILES x-kmymoney.xml
    DESTINATION ${XDG_MIME_INSTALL_DIR})
  

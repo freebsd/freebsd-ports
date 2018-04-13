@@ -1,0 +1,15 @@
+Suppress numerous CMake warnings. Upstream has CMP0071 set to OLD behavior
+in the 5.x version, and build fails if set to NEW.
+
+--- CMakeLists.txt.orig	2018-04-12 15:58:03 UTC
++++ CMakeLists.txt
+@@ -9,6 +9,9 @@ set(CMAKE_AUTOMOC TRUE)
+ 
+ # cmake 2.6 proposed to add this policy
+ if(COMMAND cmake_policy)
++  if(POLICY CMP0071)
++    cmake_policy(SET CMP0071 OLD)
++  endif(POLICY CMP0071)
+   if(POLICY CMP0017)
+     cmake_policy(SET CMP0017 NEW)
+   endif(POLICY CMP0017)
