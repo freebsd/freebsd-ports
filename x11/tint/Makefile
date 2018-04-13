@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tint2
-PORTVERSION=	16.1
+PORTVERSION=	16.2
 CATEGORIES=	x11
 
 MAINTAINER=	yamagi@yamagi.org
