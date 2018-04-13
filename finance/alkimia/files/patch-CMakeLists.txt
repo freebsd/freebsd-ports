@@ -1,0 +1,34 @@
+Make tests conditional
+
+--- CMakeLists.txt.orig	2018-03-15 19:28:26 UTC
++++ CMakeLists.txt
+@@ -15,7 +15,7 @@ include(FeatureSummary)
+ # check for PkgConfig, Qt and MPIR/GMP
+ find_package(PkgConfig)
+ if(BUILD_QT4)
+-    find_package(Qt4 REQUIRED COMPONENTS QtCore QtDBus QtTest)
++    find_package(Qt4 REQUIRED COMPONENTS QtCore QtDBus)
+     set(QT_USE_LIBSPREFIX Qt4::Qt)
+     set(ALKIMIA_LIB_SUFFIX "")
+     set(ALKIMIA_INCLUDE_SUFFIX "Qt4")
+@@ -23,7 +23,7 @@ if(BUILD_QT4)
+     set(PC_TARGET_QTPREFIX Qt)
+     set(PC_TARGET_SUFFIX)
+ else()
+-    find_package(Qt5 REQUIRED COMPONENTS Core DBus Test)
++    find_package(Qt5 REQUIRED COMPONENTS Core DBus)
+     set(QT_USE_LIBSPREFIX Qt5::)
+     set(ALKIMIA_LIB_SUFFIX "5")
+     set(ALKIMIA_INCLUDE_SUFFIX "Qt5")
+@@ -56,6 +56,10 @@ find_package(Doxygen)
+ feature_summary(WHAT ALL)
+ 
+ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
++include_directories(${MP_INCLUDE_DIR})
+ 
+ add_subdirectory(src)
+-add_subdirectory(autotests)
++
++if(BUILD_TESTING)
++    add_subdirectory(autotests)
++endif()

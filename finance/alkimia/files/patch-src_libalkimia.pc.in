@@ -1,0 +1,25 @@
+--- src/libalkimia.pc.in.orig	2018-03-15 19:28:26 UTC
++++ src/libalkimia.pc.in
+@@ -3,9 +3,9 @@
+ 
+ # General installation directories
+ prefix=@CMAKE_INSTALL_PREFIX@
+-exec_prefix=@CMAKE_INSTALL_PREFIX@
+-libdir=@KDE4_LIB_DIR@
+-includedir=@INCLUDE_INSTALL_DIR@
++exec_prefix=${prefix}
++libdir=${exec_prefix}/@LIB_INSTALL_DIR@
++includedir=${prefix}/@INCLUDE_INSTALL_DIR@
+ 
+ # Human-readable name
+ Name: Alkimia
+@@ -13,7 +13,7 @@ Name: Alkimia
+ Description: A library for financial data handling
+ Version: @ALKIMIA_LIB_VERSION@
+ 
+-Libs: -lalkimia@PC_TARGET_SUFFIX@
+-Libs.private: -l@PC_LIB@ -l@PC_TARGET_QTPREFIX@Core -l@PC_TARGET_QTPREFIX@DBus -lstdc++
++Libs: -L${libdir} -lalkimia@PC_TARGET_SUFFIX@
++Libs.private: -l@PC_LIB@ -l@PC_TARGET_QTPREFIX@Core -l@PC_TARGET_QTPREFIX@DBus
+ Cflags: -I${includedir} -I@MP_INCLUDE_DIR@
+ 
