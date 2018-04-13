@@ -1,0 +1,88 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: openhab2
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# openhab2_enable (bool):	Set to NO by default.
+#				Set it to YES to enable openhab2.
+# openhab2_user (username):	Set to openhab by default.
+# openhab2_group (groupname):	Set to openhab by default.
+# openhab2_http_port (port):	Set to 8080 by default.
+# openhab2_https_port (port):	Set to 8443 by default.
+# openhab2_listen_address (IP):	Set to 0.0.0.0 for http/https by default.
+# openhab2_backup_dir (path):	Set to /var/db/openhab2/backups by default.
+# openhab2_java_opts (string):	Empty by default. You can add additional java
+#				options like -Duser.timezone=Europe/Berlin and/or
+#				-Dgnu.io.rxtx.SerialPorts=/dev/cuau0
+# openhab2_home_dir (path):	Set to %%PREFIX%%/libexec/openhab2 by default.
+# openhab2_conf_dir (path):	Set to %%PREFIX%%/etc/openhab2 by default.
+# openhab2_runtime_dir (path):	Set to %%PREFIX%%/libexec/openhab2/runtime by default.
+# openhab2_userdata_dir (path):	Set to /var/db/openhab2/userdata by default.
+# openhab2_log_dir (path):	Set to /var/log/openhab2 by default.
+
+. /etc/rc.subr
+
+name=openhab2
+rcvar=openhab2_enable
+
+load_rc_config $name
+
+: ${openhab2_enable:="NO"}
+: ${openhab2_user:="openhab"}
+: ${openhab2_group:="openhab"}
+: ${openhab2_http_port:="8080"}
+: ${openhab2_https_port:="8443"}
+: ${openhab2_listen_address:="0.0.0.0"}
+: ${openhab2_backup_dir:="/var/db/openhab2/backups"}
+: ${openhab2_home_dir:="%%PREFIX%%/libexec/openhab2"}
+: ${openhab2_conf_dir:="%%PREFIX%%/etc/openhab2"}
+: ${openhab2_runtime_dir:="%%PREFIX%%/libexec/openhab2/runtime"}
+: ${openhab2_userdata_dir:="/var/db/openhab2/userdata"}
+: ${openhab2_log_dir:="/var/log/openhab2"}
+
+export OPENHAB_USER="${openhab2_user}"
+export OPENHAB_GROUP="${openhab2_group}"
+export OPENHAB_HTTP_PORT="${openhab2_http_port}"
+export OPENHAB_HTTPS_PORT="${openhab2_https_port}"
+export OPENHAB_HTTP_ADDRESS="${openhab2_listen_address}"
+export OPENHAB_BACKUPS="${openhab2_backup_dir}"
+export EXTRA_JAVA_OPTS="${openhab2_java_opts}"
+export OPENHAB_HOME="${openhab2_home_dir}"
+export OPENHAB_CONF="${openhab2_conf_dir}"
+export OPENHAB_RUNTIME="${openhab2_runtime_dir}"
+export OPENHAB_USERDATA="${openhab2_userdata_dir}"
+export OPENHAB_LOGDIR="${openhab2_log_dir}"
+
+#command=${OPENHAB_HOME}/start.sh
+#command_args="server"
+pidfile=/var/run/${name}/${name}.pid
+
+command=/usr/sbin/daemon
+command_args="-p ${pidfile} -t openhab2 ${OPENHAB_HOME}/start.sh server"
+
+openhab2_stop() {
+	${OPENHAB_RUNTIME}/bin/stop
+}
+
+openhab2_status() {
+	case "$(${OPENHAB_RUNTIME}/bin/status 2>&1)" in
+		"Not Running ...")
+			echo ${name} is not running,
+			;;
+		"Running ...")
+			echo ${name} is running.
+			;;
+	esac
+}
+
+stop_cmd="openhab2_stop"
+status_cmd="openhab2_status"
+
+
+run_rc_command "$1"
