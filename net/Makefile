@@ -1254,6 +1254,7 @@
     SUBDIR += rubygem-gitaly-proto
     SUBDIR += rubygem-gitaly-proto083
     SUBDIR += rubygem-gitaly-proto084
+    SUBDIR += rubygem-gitaly-proto088
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-gitlab_omniauth-ldap1
     SUBDIR += rubygem-grpc
