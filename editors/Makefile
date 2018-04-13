@@ -66,6 +66,7 @@
     SUBDIR += jove
     SUBDIR += jucipp
     SUBDIR += jupp
+    SUBDIR += kakoune
     SUBDIR += kate
     SUBDIR += kate-kde4
     SUBDIR += kate-plugin-pate-kde4
