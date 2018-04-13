@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tile38
-DISTVERSION=	1.11.1
+DISTVERSION=	1.12.0
 CATEGORIES=	databases
 
 MAINTAINER=	a.andersson.thn@gmail.com
