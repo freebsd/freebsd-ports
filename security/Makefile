@@ -1035,7 +1035,7 @@
     SUBDIR += py-zope.security
     SUBDIR += py-zope.securitypolicy
     SUBDIR += py-zope.session
-    SUBDIR += py-zxcvbn-python
+    SUBDIR += py-zxcvbn
     SUBDIR += qtkeychain
     SUBDIR += quantis
     SUBDIR += quantis-kmod
