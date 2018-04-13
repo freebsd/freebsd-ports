@@ -17,8 +17,6 @@ include/libmate-slab/app-resizer.h
 include/libmate-slab/app-shell.h
 include/libmate-slab/application-tile.h
 include/libmate-slab/bookmark-agent.h
-include/libmate-slab/directory-tile.h
-include/libmate-slab/document-tile.h
 include/libmate-slab/double-click-detector.h
 include/libmate-slab/libslab-utils.h
 include/libmate-slab/mate-utils.h
@@ -27,13 +25,10 @@ include/libmate-slab/nld-marshal.c
 include/libmate-slab/nld-marshal.h
 include/libmate-slab/search-bar.h
 include/libmate-slab/search-context-picker.h
-include/libmate-slab/search-entry-watermark.h
-include/libmate-slab/search-entry.h
 include/libmate-slab/shell-window.h
 include/libmate-slab/slab-mate-util.h
 include/libmate-slab/slab-section.h
 include/libmate-slab/slab.h
-include/libmate-slab/system-tile.h
 include/libmate-slab/tile.h
 include/mate-window-settings-2.0/mate-window-manager.h
 include/mate-window-settings-2.0/mate-wm-manager.h

@@ -119,8 +119,6 @@ share/locale/zh_CN/LC_MESSAGES/mate-menus.mo
 share/locale/zh_HK/LC_MESSAGES/mate-menus.mo
 share/locale/zh_TW/LC_MESSAGES/mate-menus.mo
 %%DATADIR%%/examples/mate-menus-ls.py
-share/mate/desktop-directories/GNOME.directory
-share/mate/desktop-directories/KDE.directory
 share/mate/desktop-directories/mate-audio-video.directory
 share/mate/desktop-directories/mate-development.directory
 share/mate/desktop-directories/mate-education.directory

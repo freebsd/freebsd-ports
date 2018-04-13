@@ -32,7 +32,6 @@ share/applications/caja-home.desktop
 share/applications/caja.desktop
 share/applications/mate-network-scheme.desktop
 %%DATADIR%%/browser.xml
-%%DATADIR%%/caja-desktop-3.14.css
 %%DATADIR%%/caja-desktop.css
 %%DATADIR%%/caja-extras.placeholder
 %%DATADIR%%/caja-suggested.placeholder
@@ -139,13 +138,17 @@ share/locale/en_GB/LC_MESSAGES/caja.mo
 share/locale/eo/LC_MESSAGES/caja.mo
 share/locale/es/LC_MESSAGES/caja.mo
 share/locale/es_AR/LC_MESSAGES/caja.mo
+share/locale/es_CL/LC_MESSAGES/caja.mo
 share/locale/es_CO/LC_MESSAGES/caja.mo
+share/locale/es_ES/LC_MESSAGES/caja.mo
 share/locale/es_MX/LC_MESSAGES/caja.mo
+share/locale/es_PR/LC_MESSAGES/caja.mo
 share/locale/et/LC_MESSAGES/caja.mo
 share/locale/eu/LC_MESSAGES/caja.mo
 share/locale/fa/LC_MESSAGES/caja.mo
 share/locale/fi/LC_MESSAGES/caja.mo
 share/locale/fr/LC_MESSAGES/caja.mo
+share/locale/fr_CA/LC_MESSAGES/caja.mo
 share/locale/frp/LC_MESSAGES/caja.mo
 share/locale/fur/LC_MESSAGES/caja.mo
 share/locale/fy/LC_MESSAGES/caja.mo
@@ -166,8 +169,10 @@ share/locale/it/LC_MESSAGES/caja.mo
 share/locale/ja/LC_MESSAGES/caja.mo
 share/locale/ka/LC_MESSAGES/caja.mo
 share/locale/kk/LC_MESSAGES/caja.mo
+share/locale/km/LC_MESSAGES/caja.mo
 share/locale/kn/LC_MESSAGES/caja.mo
 share/locale/ko/LC_MESSAGES/caja.mo
+share/locale/ks/LC_MESSAGES/caja.mo
 share/locale/ku/LC_MESSAGES/caja.mo
 share/locale/ku_IQ/LC_MESSAGES/caja.mo
 share/locale/ky/LC_MESSAGES/caja.mo

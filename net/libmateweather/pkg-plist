@@ -21,7 +21,6 @@ libdata/pkgconfig/mateweather.pc
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/left.png
-%%PORTDOCS%%%%DOCSDIR%%/libmateweather-mateweather-mateconf.html
 %%PORTDOCS%%%%DOCSDIR%%/libmateweather-mateweather-prefs.html
 %%PORTDOCS%%%%DOCSDIR%%/libmateweather-mateweather-xml.html
 %%PORTDOCS%%%%DOCSDIR%%/libmateweather-weather.html

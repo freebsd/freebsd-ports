@@ -53,6 +53,6 @@
  
 -AS_AC_EXPAND(DATADIR, "${datadir}")
 +AS_AC_EXPAND(DATADIR, $datadir)
- AS_AC_EXPAND(PYTHONDIR, $pythondir)
  AS_AC_EXPAND(BUILDERDIR, $builderdir)
- 
+
+ AC_SUBST(VERSION) 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-control-center
-PORTVERSION=	1.18.2
+PORTVERSION=	1.20.2
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

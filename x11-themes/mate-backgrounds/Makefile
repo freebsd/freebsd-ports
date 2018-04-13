@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-backgrounds
-PORTVERSION=	1.18.0
+PORTVERSION=	1.20.0
 CATEGORIES=	x11-themes graphics mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

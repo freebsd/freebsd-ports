@@ -29,7 +29,6 @@ share/dbus-1/services/org.mate.panel.applet.WnckletFactory.service
 %%PORTDOCS%%%%DOCSDIR%%-applet/index.html
 %%PORTDOCS%%%%DOCSDIR%%-applet/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%-applet/left.png
-%%PORTDOCS%%%%DOCSDIR%%-applet/mate-panel-applet-Panel-Applet-MateConf-Utilities.html
 %%PORTDOCS%%%%DOCSDIR%%-applet/mate-panel-applet-mate-panel-applet.html
 %%PORTDOCS%%%%DOCSDIR%%-applet/mate-panel-applet.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%-applet/mate-panel-applet.html
@@ -301,6 +300,7 @@ share/locale/ko/LC_MESSAGES/mate-panel.mo
 share/locale/ku/LC_MESSAGES/mate-panel.mo
 share/locale/ku_IQ/LC_MESSAGES/mate-panel.mo
 share/locale/ky/LC_MESSAGES/mate-panel.mo
+share/locale/la/LC_MESSAGES/mate-panel.mo
 share/locale/li/LC_MESSAGES/mate-panel.mo
 share/locale/lt/LC_MESSAGES/mate-panel.mo
 share/locale/lv/LC_MESSAGES/mate-panel.mo
