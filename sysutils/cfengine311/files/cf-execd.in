@@ -19,7 +19,7 @@
 name="cf_execd"
 rcvar=cf_execd_enable
 
-command="%%PREFIX%%/sbin/cf-execd"
+command="%%PREFIX%%/bin/cf-execd"
 
 load_rc_config $name
 
