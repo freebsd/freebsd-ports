@@ -2,6 +2,7 @@
 
 PORTNAME=	kmymoney
 PORTVERSION=	4.8.1.1
+PORTREVISION=	1
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
@@ -13,8 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_graph.so:devel/boost-libs \
-		libalkimia.so:finance/libalkimia \
-		libgmp.so:math/gmp \
+		libalkimia.so:finance/alkimia-qt4 \
 		libgpgme.so:security/gpgme \
 		libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error

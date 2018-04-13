@@ -1,7 +1,9 @@
 Suppress numerous CMake warnings. Upstream has CMP0071 set to OLD behavior
 in the 5.x version, and build fails if set to NEW.
 
---- CMakeLists.txt.orig	2018-04-12 15:58:03 UTC
+Allow building with LibAlkimia 7.x
+
+--- CMakeLists.txt.orig	2017-12-23 22:30:29 UTC
 +++ CMakeLists.txt
 @@ -9,6 +9,9 @@ set(CMAKE_AUTOMOC TRUE)
  
@@ -13,3 +15,28 @@ in the 5.x version, and build fails if set to NEW.
    if(POLICY CMP0017)
      cmake_policy(SET CMP0017 NEW)
    endif(POLICY CMP0017)
+@@ -118,11 +121,19 @@ if(DOXYGEN_FOUND)
+ endif(DOXYGEN_FOUND)
+ 
+ find_package(LibAlkimia REQUIRED)
+-#TODO: remove when LibAlkimia minimum version will be raised
+-if (NOT LIBALKIMIA_LIBRARIES AND LIBALKIMIA_LIBRARY)
+-  # LibAlkimia 4.3.2 does not properly define LIBALKIMIA_LIBRARIES
+-  find_package(GMP REQUIRED)
+-  set(LIBALKIMIA_LIBRARIES ${GMP_LIBRARIES} ${LIBALKIMIA_LIBRARY} )
++if("${LibAlkimia_VERSION_MAJOR}" EQUAL 7 OR "${LibAlkimia_VERSION_MAJOR}" GREATER 7)
++  set(LIBALKIMIA_LIBRARIES Alkimia::alkimia)
++else()
++  #TODO: remove when LibAlkimia minimum version will be raised
++  if (NOT "${LIBALKIMIA_LIBRARIES}" AND "${LIBALKIMIA_LIBRARY}")
++    # LibAlkimia 4.3.2 does not properly define LIBALKIMIA_LIBRARIES
++    find_package(GMP REQUIRED)
++    set(LIBALKIMIA_LIBRARIES ${GMP_LIBRARIES} ${LIBALKIMIA_LIBRARY} )
++  endif()
++endif()
++# make sure LIBALKIMIA_LIBRARIES is set
++if("${LibAlkimia_FOUND}" AND NOT "${LIBALKIMIA_LIBRARIES}")
++  set(LIBALKIMIA_LIBRARIES Alkimia::alkimia)
+ endif()
+ # make sure we have the matching version of LibAlkimia (not too new)
+ if(${LibAlkimia_FOUND})

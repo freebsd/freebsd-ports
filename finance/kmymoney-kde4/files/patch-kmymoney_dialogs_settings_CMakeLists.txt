@@ -1,0 +1,20 @@
+Fix intermittent build failures when kmymoneysettings.h is not generated
+early enough.
+
+--- kmymoney/dialogs/settings/CMakeLists.txt.orig	2018-04-13 10:02:11 UTC
++++ kmymoney/dialogs/settings/CMakeLists.txt
+@@ -4,6 +4,8 @@ add_custom_command(
+   COMMAND ${KDE4_KCFGC_EXECUTABLE} -d ${CMAKE_CURRENT_BINARY_DIR}/ ${CMAKE_SOURCE_DIR}/kmymoney/kmymoney.kcfg ${CMAKE_SOURCE_DIR}/kmymoney/kmymoneysettings.kcfgc
+   )
+ 
++add_custom_target(generate-kmymoneysettings_h DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/kmymoneysettings.h)
++
+ set (libsettings_a_SOURCES
+   ${CMAKE_CURRENT_BINARY_DIR}/kmymoneysettings.cpp
+   ksettingscolors.cpp
+@@ -31,4 +33,5 @@ kde4_add_ui_files(libsettings_a_SOURCES ${libsettings_
+ 
+ kde4_add_library(settings STATIC ${libsettings_a_SOURCES})
+ 
++add_dependencies(settings generate-kmymoneysettings_h)
+ add_dependencies(settings widgets kmm_config)

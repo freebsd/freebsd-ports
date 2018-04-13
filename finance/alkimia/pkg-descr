@@ -1,8 +1,7 @@
 Libalkimia is a library with common classes and functionality used by finance
-applications for KDE 4.
+applications for KDE.
 
 Currently, it supports a common class to represent monetary values with
 arbitrary precision.
 
 WWW: http://community.kde.org/Alkimia/libalkimia
-WWW: http://kde-apps.org/content/show.php/libalkimia?content=137323
