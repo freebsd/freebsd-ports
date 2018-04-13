@@ -12,6 +12,6 @@ COMMENT=	Microsoft Azure common code
 LICENSE=	APACHE20
 
 USES=		python zip
-USE_PYTHON=	autoplist distutils concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
