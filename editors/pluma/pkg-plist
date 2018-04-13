@@ -133,10 +133,9 @@ share/applications/pluma.desktop
 %%PORTDOCS%%%%DOCSDIR%%/left.png
 %%PORTDOCS%%%%DOCSDIR%%/pluma-PlumaPrintJob.html
 %%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-app.html
-%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-convert.html
 %%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-debug.html
 %%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-document.html
-%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-encodings-option-menu.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-encodings-combo-box.html
 %%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-encodings.html
 %%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-file-chooser-dialog.html
 %%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-help.html
@@ -386,6 +385,7 @@ share/locale/eu/LC_MESSAGES/pluma.mo
 share/locale/fa/LC_MESSAGES/pluma.mo
 share/locale/fi/LC_MESSAGES/pluma.mo
 share/locale/fr/LC_MESSAGES/pluma.mo
+share/locale/fr_CA/LC_MESSAGES/pluma.mo
 share/locale/ga/LC_MESSAGES/pluma.mo
 share/locale/gl/LC_MESSAGES/pluma.mo
 share/locale/gu/LC_MESSAGES/pluma.mo
@@ -398,6 +398,7 @@ share/locale/id/LC_MESSAGES/pluma.mo
 share/locale/is/LC_MESSAGES/pluma.mo
 share/locale/it/LC_MESSAGES/pluma.mo
 share/locale/ja/LC_MESSAGES/pluma.mo
+share/locale/jv/LC_MESSAGES/pluma.mo
 share/locale/ka/LC_MESSAGES/pluma.mo
 share/locale/kk/LC_MESSAGES/pluma.mo
 share/locale/kn/LC_MESSAGES/pluma.mo

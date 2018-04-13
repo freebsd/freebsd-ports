@@ -91,7 +91,6 @@ share/applications/eom.desktop
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/up.png
-%%DATADIR%%/eom-3.18.css
 %%DATADIR%%/eom-image-properties-dialog.ui
 %%DATADIR%%/eom-multiple-save-as-dialog.ui
 %%DATADIR%%/eom-preferences-dialog.ui

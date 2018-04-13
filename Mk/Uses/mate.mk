@@ -130,9 +130,8 @@ panel_BUILD_DEPENDS=	${panel_DETECT}:x11/mate-panel
 panel_LIB_DEPENDS=	libmate-panel-applet-4.so:x11/mate-panel
 panel_RUN_DEPENDS=	${panel_DETECT}:x11/mate-panel
 
-polkit_DETECT=		${LOCALBASE}/libdata/pkgconfig/polkit-gtk-mate-1.pc
+polkit_DETECT=		${LOCALBASE}/libexec/polkit-mate-authentication-agent-1
 polkit_BUILD_DEPENDS=	${polkit_DETECT}:sysutils/mate-polkit
-polkit_LIB_DEPENDS=	libpolkit-gtk-mate-1.so:sysutils/mate-polkit
 polkit_RUN_DEPENDS=	${polkit_DETECT}:sysutils/mate-polkit
 
 pluma_DETECT=		${LOCALBASE}/libdata/pkgconfig/pluma.pc

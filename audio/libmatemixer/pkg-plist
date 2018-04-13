@@ -69,6 +69,7 @@ share/locale/es_MX/LC_MESSAGES/libmatemixer.mo
 share/locale/et/LC_MESSAGES/libmatemixer.mo
 share/locale/eu/LC_MESSAGES/libmatemixer.mo
 share/locale/fa/LC_MESSAGES/libmatemixer.mo
+share/locale/fi/LC_MESSAGES/libmatemixer.mo
 share/locale/fr/LC_MESSAGES/libmatemixer.mo
 share/locale/fr_CA/LC_MESSAGES/libmatemixer.mo
 share/locale/frp/LC_MESSAGES/libmatemixer.mo
@@ -80,11 +81,13 @@ share/locale/is/LC_MESSAGES/libmatemixer.mo
 share/locale/it/LC_MESSAGES/libmatemixer.mo
 share/locale/ja/LC_MESSAGES/libmatemixer.mo
 share/locale/jv/LC_MESSAGES/libmatemixer.mo
+share/locale/kk/LC_MESSAGES/libmatemixer.mo
 share/locale/ko/LC_MESSAGES/libmatemixer.mo
 share/locale/ku_IQ/LC_MESSAGES/libmatemixer.mo
 share/locale/lt/LC_MESSAGES/libmatemixer.mo
 share/locale/ms/LC_MESSAGES/libmatemixer.mo
 share/locale/nb/LC_MESSAGES/libmatemixer.mo
+share/locale/ne/LC_MESSAGES/libmatemixer.mo
 share/locale/nl/LC_MESSAGES/libmatemixer.mo
 share/locale/oc/LC_MESSAGES/libmatemixer.mo
 share/locale/pl/LC_MESSAGES/libmatemixer.mo

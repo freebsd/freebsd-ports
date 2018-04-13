@@ -557,6 +557,7 @@ share/locale/en_CA/LC_MESSAGES/mate-utils.mo
 share/locale/en_GB/LC_MESSAGES/mate-utils.mo
 share/locale/eo/LC_MESSAGES/mate-utils.mo
 share/locale/es/LC_MESSAGES/mate-utils.mo
+share/locale/es_AR/LC_MESSAGES/mate-utils.mo
 share/locale/es_CO/LC_MESSAGES/mate-utils.mo
 share/locale/es_MX/LC_MESSAGES/mate-utils.mo
 share/locale/et/LC_MESSAGES/mate-utils.mo
@@ -564,6 +565,7 @@ share/locale/eu/LC_MESSAGES/mate-utils.mo
 share/locale/fa/LC_MESSAGES/mate-utils.mo
 share/locale/fi/LC_MESSAGES/mate-utils.mo
 share/locale/fr/LC_MESSAGES/mate-utils.mo
+share/locale/fr_CA/LC_MESSAGES/mate-utils.mo
 share/locale/frp/LC_MESSAGES/mate-utils.mo
 share/locale/ga/LC_MESSAGES/mate-utils.mo
 share/locale/gl/LC_MESSAGES/mate-utils.mo
