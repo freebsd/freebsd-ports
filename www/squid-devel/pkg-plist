@@ -2174,8 +2174,9 @@ libexec/squid/digest_file_auth
 libexec/squid/ext_file_userip_acl
 %%AUTH_KERB%%%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/ext_kerberos_ldap_group_acl
 %%AUTH_LDAP%%libexec/squid/ext_ldap_group_acl
+%%BDB%%libexec/squid/ext_session_acl
 %%AUTH_SQL%%libexec/squid/ext_sql_session_acl
-libexec/squid/ext_time_quota_acl
+%%BDB%%libexec/squid/ext_time_quota_acl
 libexec/squid/ext_unix_group_acl
 %%AUTH_SMB%%libexec/squid/ext_wbinfo_group_acl
 libexec/squid/helper-mux
@@ -2211,8 +2212,9 @@ man/man8/cachemgr.cgi.8.gz
 man/man8/digest_file_auth.8.gz
 man/man8/ext_file_userip_acl.8.gz
 %%AUTH_LDAP%%man/man8/ext_ldap_group_acl.8.gz
+%%BDB%%man/man8/ext_session_acl.8.gz
 %%AUTH_SQL%%man/man8/ext_sql_session_acl.8.gz
-man/man8/ext_time_quota_acl.8.gz
+%%BDB%%man/man8/ext_time_quota_acl.8.gz
 man/man8/ext_unix_group_acl.8.gz
 %%AUTH_SMB%%man/man8/ext_wbinfo_group_acl.8.gz
 %%AUTH_KERB%%man/man8/negotiate_kerberos_auth.8.gz
