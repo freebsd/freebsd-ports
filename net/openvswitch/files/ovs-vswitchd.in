@@ -18,11 +18,15 @@ start_precmd="ovs_vswitchd_precmd"
 load_rc_config $name
 
 : ${ovs_vswitchd_enable="NO"}
+: ${ovs_vswitchd_flags=""}
+: ${ovs_vswitchd_logfile="/var/log/openvswitch/${name}.log"}
+: ${ovs_vswitchd_pidfile="/var/run/openvswitch/${name}.pid"}
 
 ovs_vswitchd_precmd() {
 	load_kld if_tap || return 1
 }
 
-command_args="--detach --pidfile"
+command_args="--detach --log-file=${ovs_vswitchd_logfile} \
+			--pidfile=${ovs_vswitchd_pidfile} ${ovs_vswitchd_flags}"
 
 run_rc_command "$1"
