@@ -1,0 +1,44 @@
+--- meson.build.orig	2018-03-14 02:26:31 UTC
++++ meson.build
+@@ -16,11 +16,21 @@ cc = meson.get_compiler('c')
+ libgio_dep = dependency('gio-2.0', version: '>= 2.34.0')
+ libgmodule_dep = dependency('gmodule-2.0')
+ global_deps = []
++libssl_dep_found = false
+ if cc.get_id() == 'msvc'
+   libssl_dep = cc.find_library('libeay32')
+ else
+   libssl_dep = dependency('openssl', version: '>= 0.9.8',
+-                          required: get_option('with-ssl'))
++                          required: false)
++  if not libssl_dep.found()
++    libssl_dep = [
++        cc.find_library('ssl', required: get_option('with-ssl')),
++        cc.find_library('crypto', required: get_option('with-ssl'))
++    ]
++    libssl_dep_found = libssl_dep[0].found()
++  else
++    libssl_dep_found = libssl_dep.found()
++  endif
+ endif
+ 
+ config_h = configuration_data()
+@@ -49,7 +59,7 @@ config_h.set('GLIB_VERSION_MIN_REQUIRED'
+ config_h.set('HAVE_MEMRCHR', cc.has_function('memrchr'))
+ config_h.set('HAVE_STRINGS_H', cc.has_header('strings.h'))
+ 
+-if libssl_dep.found()
++if libssl_dep_found
+   config_h.set('HAVE_X509_GET_SIGNATURE_NID',
+     cc.has_function('X509_get_signature_nid', dependencies: libssl_dep)
+   )
+@@ -131,9 +141,6 @@ global_ldflags = []
+ test_ldflags = [
+   '-Wl,-z,relro',
+   '-Wl,-z,now',
+-  # mingw
+-  '-Wl,--dynamicbase',
+-  '-Wl,--nxcompat',
+ ]
+ foreach ldflag : test_ldflags
+   if cc.has_argument(ldflag) and cc.links('int main (void) { return 0; }', args: ldflag)
