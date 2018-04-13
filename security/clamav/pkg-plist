@@ -4,7 +4,7 @@ bin/clamconf
 bin/clamdscan
 bin/clamdtop
 bin/clamscan
-bin/clamsubmit
+%%JSON%%bin/clamsubmit
 bin/freshclam
 bin/sigtool
 %%MILTER%%sbin/clamav-milter
@@ -31,7 +31,7 @@ man/man1/clamconf.1.gz
 man/man1/clamdscan.1.gz
 man/man1/clamdtop.1.gz
 man/man1/clamscan.1.gz
-man/man1/clamsubmit.1.gz
+%%JSON%%man/man1/clamsubmit.1.gz
 man/man1/freshclam.1.gz
 man/man1/sigtool.1.gz
 man/man5/clamav-milter.conf.5.gz
