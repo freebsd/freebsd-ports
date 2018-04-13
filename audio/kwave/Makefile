@@ -34,4 +34,14 @@ ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 PULSEAUDIO_CMAKE_BOOL=		WITH_PULSEAUDIO
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.  if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000 && ${OSVERSION} < 1101505
+BUILD_DEPENDS+=		llvm50>=0:devel/llvm50
+# Build is broken on 11.x as clang is not new enough.
+# Workaround by manually setting CC to clang50.
+CC=		${LOCALBASE}/bin/clang50
+CXX=		${LOCALBASE}/bin/clang++50
+.  endif
+
+.include <bsd.port.post.mk>
