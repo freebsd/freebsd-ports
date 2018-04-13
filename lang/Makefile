@@ -46,6 +46,7 @@
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
     SUBDIR += cocor
+    SUBDIR += coffeescript
     SUBDIR += cparser
     SUBDIR += crystal
     SUBDIR += csharp-mode.el
