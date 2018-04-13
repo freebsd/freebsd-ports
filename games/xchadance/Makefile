@@ -6,14 +6,11 @@ PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/ \
-		ftp://relay1.tomsk.gov.ru/pub/FreeBSD/ports/distfiles/ \
-		ftp://ftp.rediris.es/sites/ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/motoyuki/
+		LOCAL/nyan
 DISTFILES=	xchada01.lzh
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display a dancing girl "ChaCha."
-
-BROKEN=		unfetchable
 
 USES=		lha
 USE_XORG=	x11
