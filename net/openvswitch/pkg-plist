@@ -60,6 +60,8 @@ include/openvswitch/ofp-prop.h
 include/openvswitch/ofp-util.h
 include/openvswitch/ofpbuf.h
 include/openvswitch/packets.h
+include/openvswitch/poll-loop.h
+include/openvswitch/rconn.h
 include/openvswitch/shash.h
 include/openvswitch/thread.h
 include/openvswitch/token-bucket.h
@@ -74,28 +76,28 @@ include/openvswitch/vlog.h
 include/ovn/actions.h
 include/ovn/expr.h
 include/ovn/lex.h
-lib/libofproto-2.8.so.0
-lib/libofproto-2.8.so.0.0.1
+lib/libofproto-2.9.so.0
+lib/libofproto-2.9.so.0.0.0
 lib/libofproto.a
 lib/libofproto.so
-lib/libopenvswitch-2.8.so.0
-lib/libopenvswitch-2.8.so.0.0.1
+lib/libopenvswitch-2.9.so.0
+lib/libopenvswitch-2.9.so.0.0.0
 lib/libopenvswitch.a
 lib/libopenvswitch.so
-lib/libovn-2.8.so.0
-lib/libovn-2.8.so.0.0.1
+lib/libovn-2.9.so.0
+lib/libovn-2.9.so.0.0.0
 lib/libovn.a
 lib/libovn.so
-lib/libovsdb-2.8.so.0
-lib/libovsdb-2.8.so.0.0.1
+lib/libovsdb-2.9.so.0
+lib/libovsdb-2.9.so.0.0.0
 lib/libovsdb.a
 lib/libovsdb.so
-lib/libsflow-2.8.so.0
-lib/libsflow-2.8.so.0.0.1
+lib/libsflow-2.9.so.0
+lib/libsflow-2.9.so.0.0.0
 lib/libsflow.a
 lib/libsflow.so
-lib/libvtep-2.8.so.0
-lib/libvtep-2.8.so.0.0.1
+lib/libvtep-2.9.so.0
+lib/libvtep-2.9.so.0.0.0
 lib/libvtep.a
 lib/libvtep.so
 libdata/pkgconfig/libofproto.pc
@@ -183,27 +185,20 @@ sbin/ovsdb-server
 %%DATADIR%%/python/ovstest/udp.py
 %%DATADIR%%/python/ovstest/util.py
 %%DATADIR%%/python/ovstest/vswitch.py
-%%DATADIR%%/scripts/ovn-bugtool-nbctl-show
-%%DATADIR%%/scripts/ovn-bugtool-sbctl-lflow-list
-%%DATADIR%%/scripts/ovn-bugtool-sbctl-show
-%%DATADIR%%/scripts/ovn-ctl
-%%DATADIR%%/scripts/ovndb-servers.ocf
-%%DATADIR%%/scripts/ovs-bugtool-bfd-show
-%%DATADIR%%/scripts/ovs-bugtool-bond-show
-%%DATADIR%%/scripts/ovs-bugtool-cfm-show
-%%DATADIR%%/scripts/ovs-bugtool-conntrack-dump
-%%DATADIR%%/scripts/ovs-bugtool-coverage-show
 %%DATADIR%%/scripts/ovs-bugtool-daemons-ver
 %%DATADIR%%/scripts/ovs-bugtool-fdb-show
-%%DATADIR%%/scripts/ovs-bugtool-lacp-show
-%%DATADIR%%/scripts/ovs-bugtool-list-dbs
-%%DATADIR%%/scripts/ovs-bugtool-memory-show
+%%DATADIR%%/scripts/ovs-bugtool-get-dpdk-nic-numa
+%%DATADIR%%/scripts/ovs-bugtool-qos-configs
+%%DATADIR%%/scripts/ovn-bugtool-nbctl-show
 %%DATADIR%%/scripts/ovs-bugtool-ovs-appctl-dpif
-%%DATADIR%%/scripts/ovs-bugtool-ovs-ofctl-dump-flows
-%%DATADIR%%/scripts/ovs-bugtool-ovs-ofctl-show
-%%DATADIR%%/scripts/ovs-bugtool-ovsdb-dump
+%%DATADIR%%/scripts/ovs-bugtool-ovs-bridge-datapath-type
+%%DATADIR%%/scripts/ovs-bugtool-ovs-ofctl-loop-over-bridges
+%%DATADIR%%/scripts/ovs-bugtool-ovs-vswitchd-threads-affinity
+%%DATADIR%%/scripts/ovn-bugtool-sbctl-lflow-list
+%%DATADIR%%/scripts/ovn-bugtool-sbctl-show
 %%DATADIR%%/scripts/ovs-bugtool-tc-class-show
-%%DATADIR%%/scripts/ovs-bugtool-vsctl-show
+%%DATADIR%%/scripts/ovn-ctl
+%%DATADIR%%/scripts/ovndb-servers.ocf
 %%DATADIR%%/scripts/ovs-check-dead-ifs
 %%DATADIR%%/scripts/ovs-ctl
 %%DATADIR%%/scripts/ovs-lib
@@ -214,4 +209,6 @@ sbin/ovsdb-server
 @dir /var/lib/openvswitch/pki
 @dir /var/lib/openvswitch
 @dir /var/lib
+@dir /var/log/openvswitch
+@dir /var/run/openvswitch
 @dir %%ETCDIR%%
