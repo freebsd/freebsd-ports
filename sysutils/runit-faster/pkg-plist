@@ -6,7 +6,9 @@ bin/svclone
 %%RUNITDIR%%/3
 %%RUNITDIR%%/core-services/11-kld.sh
 %%RUNITDIR%%/core-services/11-set-defaults.sh
+@sample %%RUNITDIR%%/core-services/12-console.sh.sample
 %%RUNITDIR%%/core-services/21-swap.sh
+@sample %%RUNITDIR%%/core-services/30-geli.sh.sample
 %%RUNITDIR%%/core-services/31-enable-dumpdev.sh
 %%RUNITDIR%%/core-services/31-fsck.sh
 %%RUNITDIR%%/core-services/31-mount.sh
@@ -20,7 +22,8 @@ bin/svclone
 %%RUNITDIR%%/core-services/41-mixer.sh
 %%RUNITDIR%%/core-services/41-nextboot.sh
 %%RUNITDIR%%/core-services/41-rctl.sh
-%%RUNITDIR%%/core-services/43-bhyve-bridge.sh
+@sample %%RUNITDIR%%/core-services/44-bhyve-network.sh.sample
+@sample %%RUNITDIR%%/core-services/44-jail-network.sh.sample
 %%RUNITDIR%%/core-services/51-pf.sh
 %%RUNITDIR%%/core-services/99-cleanup.sh
 %%RUNITDIR%%/core-services/99-mount-late.sh
@@ -39,6 +42,7 @@ man/man8/runsv.8.gz
 man/man8/runsvchdir.8.gz
 man/man8/runsvdir.8.gz
 man/man8/sv.8.gz
+man/man8/svclone.8.gz
 man/man8/svlogd.8.gz
 man/man8/utmpset.8.gz
 sbin/chpst
