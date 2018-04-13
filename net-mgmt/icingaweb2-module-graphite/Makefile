@@ -2,7 +2,7 @@
 
 PORTNAME=	icingaweb2-module-graphite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	1.0.1
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org

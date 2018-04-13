@@ -1,3 +1,3 @@
-TIMESTAMP = 1511884500
-SHA256 (icinga-icingaweb2-module-graphite-v0.9.0_GH0.tar.gz) = 41dd96513c93dab56bacacae4318898232180a9acbf79031a81503ad07dba06c
-SIZE (icinga-icingaweb2-module-graphite-v0.9.0_GH0.tar.gz) = 321599
+TIMESTAMP = 1523611695
+SHA256 (icinga-icingaweb2-module-graphite-v1.0.1_GH0.tar.gz) = d7ec9cc847d52888bdbf6e50f04ff48683dc69450b69dab8d057b0e5b0a9790f
+SIZE (icinga-icingaweb2-module-graphite-v1.0.1_GH0.tar.gz) = 329327
