@@ -19,7 +19,7 @@
 name="cf_serverd"
 rcvar=cf_serverd_enable
 
-command="%%PREFIX%%/sbin/cf-serverd"
+command="%%PREFIX%%/bin/cf-serverd"
 
 load_rc_config $name
 

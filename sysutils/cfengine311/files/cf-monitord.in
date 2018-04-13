@@ -19,7 +19,7 @@
 name="cf_monitord"
 rcvar=cf_monitord_enable
 
-command="%%PREFIX%%/sbin/cf-monitord"
+command="%%PREFIX%%/bin/cf-monitord"
 
 load_rc_config $name
 
