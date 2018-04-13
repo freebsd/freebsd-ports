@@ -175,7 +175,7 @@ carbon:*:230:
 # free: 232
 # free: 233
 kafka:*:234:
-# free: 235
+openhab:*:235:
 # free: 236
 # free: 237
 # free: 238
