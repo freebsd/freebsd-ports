@@ -299,6 +299,7 @@
     SUBDIR += nut
     SUBDIR += ondir
     SUBDIR += opencyc
+    SUBDIR += openhab2
     SUBDIR += openmvg
     SUBDIR += openr2
     SUBDIR += orville-write

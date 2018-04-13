@@ -1,0 +1,10 @@
+The openHAB2 user interface "Paper UI" writes to /var/db/openhab2
+(config) and to %%ETCDIR%% (when installing add-onds).
+The config in %%ETCDIR%% is evaluated additionally to
+/var/db/openhab2.
+
+See %%PREFIX%%/etc/rc.d/openhab2 for environment variables you need
+to set by hand (all "export"-ones) if you want to execute some of
+the openHAB2 commands from the shell directly.
+
+When the openHAB2 docs talk about "userdata", look into /var/db/openhab2.
