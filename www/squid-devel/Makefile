@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.0.23
+PORTVERSION=	4.0.24
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -29,13 +29,11 @@ BROKEN_powerpc64=	fails to link: ext_time_quota_acl.cc: undefined reference to s
 
 CONFLICTS=	squid*-3.*
 
-USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz bdb
+USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	squid
-CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
-LDFLAGS+=	-L${BDB_LIB_DIR}
 
 USERS=		squid
 GROUPS=		squid
@@ -50,7 +48,7 @@ OPTIONS_GROUP=	AUTH
 OPTIONS_RADIO=	FW
 OPTIONS_GROUP_AUTH=AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB AUTH_SQL
 OPTIONS_RADIO_FW=TP_IPF TP_IPFW TP_PF
-OPTIONS_DEFINE=	ARP_ACL CACHE_DIGESTS DEBUG DELAY_POOLS DOCS ECAP ESI EXAMPLES \
+OPTIONS_DEFINE=	ARP_ACL BDB CACHE_DIGESTS DEBUG DELAY_POOLS DOCS ECAP ESI EXAMPLES \
 		FOLLOW_XFF FS_AUFS FS_DISKD FS_ROCK HTCP ICAP ICMP IDENT IPV6 \
 		KQUEUE LARGEFILE LAX_HTTP NETTLE PCRE SNMP SSL SSL_CRTD \
 		STACKTRACES VIA_DB WCCP WCCPV2
@@ -77,6 +75,7 @@ AUTH_SMB_USES=			samba:run
 AUTH_SMB_VARS=			BASIC_AUTH+=SMB EXTERNAL_ACL+=wbinfo_group
 AUTH_SQL_RUN_DEPENDS=		p5-DBI>=1.08:databases/p5-DBI
 AUTH_SQL_VARS=			EXTERNAL_ACL+=SQL_session
+BDB_USES=			bdb
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
 DELAY_POOLS_CONFIGURE_ENABLE=	delay-pools
 ECAP_CFLAGS=			-I${LOCALBASE}/include
@@ -152,9 +151,6 @@ GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-mit-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
 GSSAPI_MIT_PLIST_SUB=		AUTH_KERB=""
 
-# TODO:
-# add an option for external_acl/session (requires some kind of external
-# Berkeley DB support, unsure which one)
 ARP_ACL_DESC=		ARP/MAC/EUI based authentification
 AUTH_DESC=		Authentication helpers
 AUTH_LDAP_DESC=		Install LDAP authentication helpers
@@ -162,6 +158,7 @@ AUTH_NIS_DESC=		Install NIS/YP authentication helpers
 AUTH_SASL_DESC=		Install SASL authentication helpers
 AUTH_SMB_DESC=		Install SMB auth. helpers (req. Samba)
 AUTH_SQL_DESC=		Install SQL based auth
+BDB_DESC=		Berkeley DB support required for session and time quota external helpers
 CACHE_DIGESTS_DESC=	Use cache digests
 DEBUG_DESC=		Build with extended debugging support
 DELAY_POOLS_DESC=	Delay pools (bandwidth limiting)
@@ -238,7 +235,7 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 # Authentication methods and modules:
 
 BASIC_AUTH+=	DB SMB_LM NCSA PAM POP3 RADIUS fake getpwnam
-EXTERNAL_ACL+=	file_userip time_quota unix_group
+EXTERNAL_ACL+=	file_userip unix_group
 
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MAUTH_NIS} && !defined(NO_NIS) && !defined(WITHOUT_NIS)
@@ -255,6 +252,13 @@ PLIST_SUB+=	AUTH_KERB="@comment "
 EXTERNAL_ACL+=	kerberos_ldap_group
 . endif
 NEGOTIATE_AUTH=	kerberos wrapper
+.endif
+
+# The session and time_quota external helpers require Berkeley DB support:
+.if ${PORT_OPTIONS:MBDB}
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
+LDFLAGS+=	-L${BDB_LIB_DIR}
+EXTERNAL_ACL+=	time_quota session
 .endif
 
 # Storage schemes:
