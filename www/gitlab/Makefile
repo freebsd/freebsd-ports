@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	10.5.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 
 MAINTAINER=	idefix@fechner.net
@@ -37,7 +37,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-rails-deprecated_sanitizer>=1.0.3:devel/rubygem-rails-deprecated_sanitizer \
 	rubygem-responders>=2.0:www/rubygem-responders \
 	rubygem-sprockets3>=3.7:devel/rubygem-sprockets3 \
-	rubygem-default_value_for>=3.0.1:devel/rubygem-default_value_for \
+	rubygem-default_value_for30>=3.0.1:devel/rubygem-default_value_for30 \
 	rubygem-rugged>=0.26.0:devel/rubygem-rugged \
 	rubygem-grape-route-helpers>=2.1.0:devel/rubygem-grape-route-helpers \
 	rubygem-faraday>=0.12.0:www/rubygem-faraday \
