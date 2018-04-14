@@ -1,5 +1,5 @@
 You can think of pss as an enhanced grep designed to search
 inside source code files. pss is very similar to the Perl ack
-tool (see https://bitbucket.org/eliben/pss/wiki/PssAndAck).
+tool (see https://github.com/eliben/pss/wiki/pss-and-ack).
 
-WWW: https://bitbucket.org/eliben/pss
+WWW: https://github.com/eliben/pss
