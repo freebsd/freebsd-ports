@@ -1,0 +1,23 @@
+In CMake 3.11, CHECK_INCLUDE_FILES() respects CMAKE_REQUIRED_LIBRARIES,
+which this module doesn't expect. Temporarily reset the required libraries
+while finding the headers.
+
+--- plugins/codec_ogg/CMakeLists.txt.orig	2018-03-01 22:57:03 UTC
++++ plugins/codec_ogg/CMakeLists.txt
+@@ -95,6 +95,8 @@ IF (WITH_OGG_OPUS OR WITH_OGG_VORBIS)
+             ${VORBISENC_LIBRARIES}
+         )
+ 
++        SET(_vorbis_CMR ${CMAKE_REQUIRED_LIBRARIES})
++        SET(CMAKE_REQUIRED_LIBRARIES )
+         CHECK_INCLUDE_FILES(
+             "vorbis/codec.h;vorbis/vorbisenc.h"
+             HAVE_OGG_VORBIS_HEADERS
+@@ -102,6 +104,7 @@ IF (WITH_OGG_OPUS OR WITH_OGG_VORBIS)
+         IF (NOT HAVE_OGG_VORBIS_HEADERS)
+             MESSAGE(FATAL_ERROR "ogg vorbis header files are missing")
+         ENDIF (NOT HAVE_OGG_VORBIS_HEADERS)
++        SET(CMAKE_REQUIRED_LIBRARIES ${_vorbis_CMR})
+ 
+ 
+         SET(HAVE_OGG_VORBIS ON CACHE BOOL "enable Vorbis codec")
