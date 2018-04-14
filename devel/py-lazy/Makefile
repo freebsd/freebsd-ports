@@ -10,10 +10,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Lazy attributes for Python objects
 
+LICENSE=	BSD2CLAUSE
+
 USES=		python zip
 USE_PYTHON=	distutils autoplist
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
