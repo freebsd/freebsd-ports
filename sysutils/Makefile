@@ -891,7 +891,6 @@
     SUBDIR += polkit-gnome
     SUBDIR += polkit-kde
     SUBDIR += polkit-qt
-    SUBDIR += polkit-qt5
     SUBDIR += pot
     SUBDIR += powerdxx
     SUBDIR += powerman
