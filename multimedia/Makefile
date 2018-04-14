@@ -147,8 +147,7 @@
     SUBDIR += gstreamer1-plugins-vpx
     SUBDIR += gstreamer1-plugins-x264
     SUBDIR += gstreamer1-plugins-x265
-    SUBDIR += gstreamer1-qt4
-    SUBDIR += gstreamer1-qt5
+    SUBDIR += gstreamer1-qt
     SUBDIR += gstreamer1-rtsp-server
     SUBDIR += gstreamer1-vaapi
     SUBDIR += gstreamer1-validate

@@ -2,13 +2,14 @@
 
 PORTNAME=	ktp-call-ui
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Voice/Video Call UI for Telepathy
 
 LIB_DEPENDS=	libKTpCommonInternals.so:net-im/ktp-common-internals \
-		libQt5GStreamer-1.0.so:multimedia/gstreamer1-qt5 \
+		libQt5GStreamer-1.0.so:multimedia/gstreamer1-qt@qt5 \
 		libboost_thread.so:devel/boost-libs \
 		libfarstream-0.2.so:net-im/farstream \
 		libtelepathy-farstream.so:net-im/telepathy-farstream \

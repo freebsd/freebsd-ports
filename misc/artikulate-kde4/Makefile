@@ -2,13 +2,13 @@
 
 PORTNAME=	artikulate
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Pronunciation trainer for KDE
 
-LIB_DEPENDS=	libQtGStreamer-1.0.so:multimedia/gstreamer1-qt4 \
+LIB_DEPENDS=	libQtGStreamer-1.0.so:multimedia/gstreamer1-qt@qt4 \
 		libboost_thread.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/kde4/imports/org/kde/charts/qmldir:graphics/kqtquickcharts-kde4
 
