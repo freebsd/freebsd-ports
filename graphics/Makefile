@@ -98,6 +98,7 @@
     SUBDIR += chbg
     SUBDIR += cimg
     SUBDIR += cinepaint
+    SUBDIR += cloudcompare
     SUBDIR += clutter
     SUBDIR += clutter-gtk
     SUBDIR += clutter-gtk3
