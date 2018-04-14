@@ -1,0 +1,4 @@
+googleapis-common-protos provides common gRPC and protocol buffer classes used
+in Google APIs.
+
+WWW: https://github.com/googleapis/googleapis
