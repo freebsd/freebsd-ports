@@ -4612,7 +4612,6 @@
     SUBDIR += py-libtaxii
     SUBDIR += py-libtmux
     SUBDIR += py-libusb1
-    SUBDIR += py-libusb115
     SUBDIR += py-libversion
     SUBDIR += py-libvirt
     SUBDIR += py-libzfs
