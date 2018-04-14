@@ -7,6 +7,7 @@ etc/mtree/uucp-local.mtree
 etc/periodic/daily/340.uucp
 etc/periodic/daily/410.status-uucp
 etc/periodic/weekly/300.uucp
+@dir(uucp,uucp,750) etc/uucp
 etc/uucp/call.sample
 etc/uucp/config.sample
 etc/uucp/dial.sample
@@ -48,10 +49,10 @@ libexec/uucp/uucico
 @mode
 @owner
 @group
-@preexec pw usermod uucp -s %D/libexec/uucp/uucico
-@preexec mtree -deU -f %D/etc/mtree/uucp-var.mtree -p /var
-@preexec mtree -deU -f %D/etc/mtree/uucp-local.mtree -p %D
-@preexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ; echo "suucp               4031/tcp  #UUCP over SSL";  echo "suucp               4031/udp  #UUCP over SSL") > /etc/services
+@postexec pw usermod uucp -s %D/libexec/uucp/uucico
+@postexec mtree -deU -f %D/etc/mtree/uucp-var.mtree -p /var
+@postexec mtree -deU -f %D/etc/mtree/uucp-local.mtree -p %D
+@postexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ; echo "suucp               4031/tcp  #UUCP over SSL";  echo "suucp               4031/udp  #UUCP over SSL") > /etc/services
 @postunexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ) > /etc/services
 %%VAR_LOG%%@dir(uucp,uucp,775) /var/log/uucp
 @dir(uucp,uucp,775) /var/spool/uucp/.Preserve
