@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Common protocol buffer types used by Google APIs
 
+LICENSE=	APACHE20
+
 RUN_DEPENDS=	rubygem-google-protobuf>=3.0:devel/rubygem-google-protobuf
 
 USES=		gem
