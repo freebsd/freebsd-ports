@@ -1,0 +1,9 @@
+s-tui is a terminal UI for monitoring the computer. s-tui allows to monitor:
+
+- CPU temperature/utilization/frequency/power
+- performance dips caused by thermal throttling
+
+s-tui requires minimal resources and no X-server. There are also built in
+options for stressing the CPU (support for stress/stress-ng).
+
+WWW: https://github.com/amanusk/s-tui
