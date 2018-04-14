@@ -158,6 +158,7 @@
     SUBDIR += py-better-bencode
     SUBDIR += py-bsdconv
     SUBDIR += py-iconv
+    SUBDIR += py-pint
     SUBDIR += py-rencode
     SUBDIR += py-unidecode
     SUBDIR += py-webencodings
