@@ -1,44 +1,48 @@
 # $FreeBSD$
 
 PORTNAME=	edbrowse
-PORTVERSION=	3.5.1
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.7.3
 CATEGORIES=	www editors
-MASTER_SITES=	http://the-brannons.com/edbrowse/ \
-		http://rithmomachia.org/edbrowse/
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	885fbc5f18ae61f9af9faa3e9d25c67a65148f6a.patch:-p1
+
+MAINTAINER=	alfix86@gmail.com
 COMMENT=	Line-oriented Web browser and text editor
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${UNZIP_CMD}:archivers/unzip
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libmozjs-24.so:lang/spidermonkey24 \
-		libcurl.so:ftp/curl
-
 BROKEN_powerpc64=	fails to link: html.o: undefined reference to std::__cxx11::basic_string
 
-USES=		compiler:c11 readline zip ssl
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libcurl.so:ftp/curl \
+		libtidy.so:www/tidy-lib \
+		libtidy5.so:www/tidy-html5 \
+		libduktape.so:lang/duktape-lib
+
+USES=		cmake:outsource perl5 readline
+USE_GITHUB=	yes
+GH_ACCOUNT=	CMB
+USE_PERL5=	build
+
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
-WRKBASE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKSRC=		${WRKBASE}/src
+PORTDOCS=	*
 
-MAKEFILE=	makefile.bsd
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/edbrowse ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKBASE}/doc/man-edbrowse-debian.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/edbrowse.1
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/man-edbrowse-debian.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKBASE}/CHANGES ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKBASE}/COPYING ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKBASE}/README ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKBASE}/doc && \
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && \
 		${FIND} . \( -name setup.ebrc -or -name "man-edbrowse*" \) -delete  && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
