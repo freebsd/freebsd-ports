@@ -5534,6 +5534,7 @@
     SUBDIR += rubygem-google-api-client
     SUBDIR += rubygem-google-protobuf
     SUBDIR += rubygem-google-protobuf351
+    SUBDIR += rubygem-googleapis-common-protos
     SUBDIR += rubygem-googleapis-common-protos-types
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
