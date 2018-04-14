@@ -2,14 +2,14 @@
 
 PORTNAME=	kopete
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-im kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multi-protocol instant messenger
 
 LIB_DEPENDS=	libidn.so:dns/libidn \
-		libqca.so:devel/qca \
+		libqca.so:devel/qca@qt4 \
 		libotr.so.5:security/libotr \
 		libgadu.so:polish/libgadu \
 		libkleo.so:deskutils/kdepim-kde4 \

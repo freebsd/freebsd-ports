@@ -3,7 +3,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	2.8.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libtag-extras.so:audio/taglib-extras \
 		liblastfm.so:audio/liblastfm \
 		libqjson.so:devel/qjson \
-		libqca.so:devel/qca \
+		libqca.so:devel/qca@qt4 \
 		libdbus-1.so:devel/dbus
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:devel/qtscriptgenerator
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:devel/qtscriptgenerator \

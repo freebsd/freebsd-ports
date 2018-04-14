@@ -4,6 +4,7 @@
 PORTNAME=	qoauth
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net devel security
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +13,7 @@ COMMENT=	Qt 4 support for OAuth-powered network services
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libqca.so:devel/qca
+LIB_DEPENDS=	libqca.so:devel/qca@qt4
 
 USES=		qmake:outsource
 USE_LDCONFIG=	yes

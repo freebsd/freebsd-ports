@@ -2,6 +2,7 @@
 
 PORTNAME=	libktorrent
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p kde
 DIST_SUBDIR=	KDE/${PORTNAME}
 
@@ -12,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgmp.so:math/gmp \
-		libqca-qt5.so:devel/qca-qt5
+		libqca-qt5.so:devel/qca@qt5
 
 USES=		cmake:outsource gettext kde:5
 USE_KDE=	archive completion config coreaddons crash ecm i18n \

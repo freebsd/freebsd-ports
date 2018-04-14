@@ -2,7 +2,7 @@
 
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Extra plasmoids for KDE SC 4
 
 LIB_DEPENDS=	libqalculate.so:math/libqalculate \
 		libqwt.so:x11-toolkits/qwt5 \
-		libqca.so:devel/qca \
+		libqca.so:devel/qca@qt4 \
 		libqoauth.so:net/qoauth \
 		libqjson.so:devel/qjson
 CONFLICTS_INSTALL=	plasma-applet-icontasks-0.[89].*

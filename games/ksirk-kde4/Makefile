@@ -2,13 +2,13 @@
 
 PORTNAME=	ksirk
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
-LIB_DEPENDS=	libqca.so:devel/qca
+LIB_DEPENDS=	libqca.so:devel/qca@qt4
 
 USES=		cmake:outsource kde:4 tar:xz
 USE_KDE=	kdelibs libkdegames automoc4

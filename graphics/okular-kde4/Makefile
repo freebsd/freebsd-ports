@@ -2,7 +2,7 @@
 
 PORTNAME=	okular
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	KDE 4 universal document viewer
 
 LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 		libkscreen.so:graphics/libkscreen \
-		libqca.so:devel/qca \
+		libqca.so:devel/qca@qt4 \
 		libtiff.so:graphics/tiff \
 		libpoppler-qt4.so:graphics/poppler-qt4 \
 		libspectre.so:print/libspectre \

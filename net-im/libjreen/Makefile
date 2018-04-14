@@ -3,6 +3,7 @@
 PORTNAME=	libjreen
 PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	akuz84@gmail.com
@@ -10,7 +11,7 @@ COMMENT=	Qt4 based jabber library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libqca.so:devel/qca \
+LIB_DEPENDS=	libqca.so:devel/qca@qt4 \
 		libspeex.so:audio/speex
 
 GH_ACCOUNT=	euroelessar
