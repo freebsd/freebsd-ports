@@ -3,14 +3,19 @@
 
 PORTNAME=	qca
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}/src
+PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT?=	Cross-platform crypto API for Qt 4
+COMMENT=	Cross-platform crypto API for Qt ${FLAVOR:C/qt//}
 
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+
+FLAVORS=	qt4 qt5
+FLAVOR?=	${FLAVORS:[1]}
 
 USES=		cmake:outsource tar:xz
 CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no \
@@ -20,13 +25,15 @@ CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no \
 CONFIGURE_ENV=	QC_CERTSTORE_PATH=${LOCALBASE}/share/certs/ca-root-nss.crt
 USE_LDCONFIG=	yes
 
-.if defined(PKGNAMESUFFIX)
+.  if ${FLAVOR} == qt4
+CMAKE_ON=	QT4_BUILD
+USE_QT4=	corelib moc_build qmake_build rcc_build
+.  else
 CMAKE_ARGS+=	-DQCA_SUFFIX=qt5
 USE_QT5=	core buildtools_build qmake_build
-.else
-USE_QT4=	corelib moc_build qmake_build rcc_build
-CMAKE_ARGS+=	-DQT4_BUILD=yes
-.endif
+.  endif
+qt4_PLIST=	${.CURDIR}/pkg-plist.qt4
+qt5_PLIST=	${.CURDIR}/pkg-plist.qt5
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 

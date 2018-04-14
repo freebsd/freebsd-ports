@@ -3,14 +3,14 @@
 
 PORTNAME=	psi
 PORTVERSION=	0.15
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 based Jabber client
 
-LIB_DEPENDS=	libqca.so:devel/qca \
+LIB_DEPENDS=	libqca.so:devel/qca@qt4 \
 		libminizip.so:archivers/minizip
 
 HAS_CONFIGURE=	yes

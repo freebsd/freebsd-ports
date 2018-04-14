@@ -3,7 +3,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.3.1
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libchromaprint.so:audio/chromaprint \
 		libprotobuf.so:devel/protobuf \
-		libqca.so:devel/qca \
+		libqca.so:devel/qca@qt4 \
 		libqjson.so:devel/qjson \
 		libfftw3.so:math/fftw3 \
 		libechonest.so:audio/libechonest \

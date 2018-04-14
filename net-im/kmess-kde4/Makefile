@@ -3,14 +3,14 @@
 
 PORTNAME=	kmess
 PORTVERSION=	2.0.6.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net-im kde
 MASTER_SITES=	SF/${PORTNAME}/Latest%20versions/${PORTVERSION}/
 
 MAINTAINER=	syncer@gmail.com
 COMMENT=	MSN Messenger client for KDE
 
-LIB_DEPENDS=	libqca.so:devel/qca \
+LIB_DEPENDS=	libqca.so:devel/qca@qt4 \
 		libgif.so:graphics/giflib
 
 USES=		cmake gettext kde:4 tar:bzip2
