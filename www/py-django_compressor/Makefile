@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	django_compressor
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	changlp@cs.nctu.edu.tw
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Compresses linked and inline JavaScript/CSS into a single cached file
 
 LICENSE=	MIT
