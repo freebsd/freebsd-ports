@@ -1,2 +1,5 @@
-SHA256 (edbrowse-3.5.1.zip) = e379cffb1098cfedf56ceedaaa7e20064551a0737ad6cd8ad5124fdfb18d9a5f
-SIZE (edbrowse-3.5.1.zip) = 745277
+TIMESTAMP = 1523728031
+SHA256 (CMB-edbrowse-v3.7.3_GH0.tar.gz) = ae7717c4c30297a01185ae2705fd55a7cd5f5484db05d5dfc02b7932b5766498
+SIZE (CMB-edbrowse-v3.7.3_GH0.tar.gz) = 707515
+SHA256 (885fbc5f18ae61f9af9faa3e9d25c67a65148f6a.patch) = b15a2931dccd85643450b50915ba877d24bec3b078daca2e4a41c23aaa660a93
+SIZE (885fbc5f18ae61f9af9faa3e9d25c67a65148f6a.patch) = 880
