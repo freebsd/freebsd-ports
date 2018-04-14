@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagcon
-PORTVERSION=	0.0.31
+PORTVERSION=	0.0.32
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.vanheusden.com/nagcon/
 
