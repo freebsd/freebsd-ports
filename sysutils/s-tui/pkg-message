@@ -1,0 +1,7 @@
+======================================================================
+If you want to enable CPU stress testing you'll need to install additionally one
+of the following ports:
+
+- benchmarks/stress-ng
+- sysutils/stress
+======================================================================
