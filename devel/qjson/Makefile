@@ -1,33 +1,35 @@
 # $FreeBSD$
 
 PORTNAME=	qjson
-PORTVERSION=	0.9.0
-PORTREVISION?=	0
+DISTVERSION=	0.9.0
+PORTREVISION=	2
 CATEGORIES=	devel
+PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library to manage JSON objects with Qt
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.lib
 
+FLAVORS=	qt4 qt5
+FLAVOR?=	${FLAVORS:[1]}
+
+USES=		cmake pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	flavio
-USES=		cmake pathfix
 USE_LDCONFIG=	yes
 
-.if empty(PKGNAMESUFFIX)
+.  if ${FLAVOR} == qt4
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
-CMAKE_ARGS+=	-DQT4_BUILD:BOOL=TRUE
+CMAKE_ON=	QT4_BUILD
 PLIST_SUB=	QT5="@comment " NO_QT5=""
-.else
-PORTSCOUT=	ignore:1
-
+.  else
 USE_QT5=	core buildtools_build qmake_build
-CMAKE_ARGS+=	-DQT4_BUILD:BOOL=FALSE
+CMAKE_OFF=	QT4_BUILD
 PLIST_SUB=	QT5="" NO_QT5="@comment "
 QT_SUFFIX=	-qt5
-.endif
+.  endif
 
 _DOCSDIR=	${DOCSDIR}${QT_SUFFIX}
 DOCSDIR_REL=	${_DOCSDIR:S,^${PREFIX}/,,}

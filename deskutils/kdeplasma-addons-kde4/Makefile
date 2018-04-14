@@ -2,7 +2,7 @@
 
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +12,7 @@ LIB_DEPENDS=	libqalculate.so:math/libqalculate \
 		libqwt.so:x11-toolkits/qwt5 \
 		libqca.so:devel/qca@qt4 \
 		libqoauth.so:net/qoauth \
-		libqjson.so:devel/qjson
+		libqjson.so:devel/qjson@qt4
 CONFLICTS_INSTALL=	plasma-applet-icontasks-0.[89].*
 
 USES=		cmake:outsource eigen:2 kde:4 pkgconfig shared-mime-info tar:xz

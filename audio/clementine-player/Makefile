@@ -3,7 +3,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.3.1
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libchromaprint.so:audio/chromaprint \
 		libprotobuf.so:devel/protobuf \
 		libqca.so:devel/qca@qt4 \
-		libqjson.so:devel/qjson \
+		libqjson.so:devel/qjson@qt4 \
 		libfftw3.so:math/fftw3 \
 		libechonest.so:audio/libechonest \
 		libcryptopp.so:security/cryptopp

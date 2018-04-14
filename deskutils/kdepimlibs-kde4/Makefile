@@ -3,7 +3,7 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_KDEPIM_VERSION}
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libical.so:devel/libical \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libprison.so:graphics/prison \
-		libqjson.so:devel/qjson
+		libqjson.so:devel/qjson@qt4
 
 USES=		cmake:outsource kde:4 shared-mime-info shebangfix tar:xz
 USE_KDE=	kdelibs akonadi \

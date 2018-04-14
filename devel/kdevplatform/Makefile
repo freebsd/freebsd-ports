@@ -3,7 +3,7 @@
 
 PORTNAME=	kdevplatform
 PORTVERSION=	${KDEVELOP_VERSION:S/4./1./}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/${KDEVELOP_BRANCH}/kdevelop/${KDEVELOP_VERSION}
 DIST_SUBDIR=	KDE/kdevelop/${KDEVELOP_VERSION}
@@ -13,7 +13,7 @@ COMMENT=	Set of libraries for KDE IDE-like programs
 
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libboost_thread.so:devel/boost-libs \
-		libqjson.so:devel/qjson
+		libqjson.so:devel/qjson@qt4
 
 USES=		cmake:outsource compiler:c++11-lib grantlee:4 kde:4 shebangfix \
 		tar:xz
