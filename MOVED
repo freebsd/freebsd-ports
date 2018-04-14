@@ -10148,5 +10148,5 @@ devel/py-libusb115|devel/py-libusb1|2018-04-14|Unused and unmaintained upstream
 devel/qca-qt5|devel/qca@qt5|2018-04-14|Moved to a flavoured version
 devel/qjson-qt5|devel/qjson@qt5|2018-04-14|Moved to a flavoured version
 sysutils/polkit-qt5|sysutils/polkit-qt@qt5|2018-04-14|Moved to flavoured version
-multimedia/gstreamer1-qt4|multiemdia/gstreamer1-qt@qt4|2018-04-14|Moved to a flavoured version
+multimedia/gstreamer1-qt4|multimedia/gstreamer1-qt@qt4|2018-04-14|Moved to a flavoured version
 multimedia/gstreamer1-qt5|multimedia/gstreamer1-qt@qt5|2018-04-14|Moved to a flavoured version
