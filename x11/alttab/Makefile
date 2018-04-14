@@ -3,7 +3,7 @@
 
 PORTNAME=	alttab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	x11
 
 MAINTAINER=	dg@syrec.org
@@ -15,12 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		pkgconfig
-USE_XORG=	x11 xft xrender
-GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
+USES=		localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	sagb
+GNU_CONFIGURE=	yes
+USE_XORG=	x11 xft xrandr xrender
 
 PLIST_FILES=	bin/alttab \
 		man/man1/alttab.1.gz
