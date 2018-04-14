@@ -2,13 +2,14 @@
 
 PORTNAME=	artikulate
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Pronunciation trainer for KDE
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libQt5GStreamer-1.0.so:multimedia/gstreamer1-qt5
+		libQt5GStreamer-1.0.so:multimedia/gstreamer1-qt@qt5
 
 USES=		cmake:outsource gettext kde:5 tar:xz
 USE_KDE=	archive attica auth codecs config configwidgets coreaddons \
