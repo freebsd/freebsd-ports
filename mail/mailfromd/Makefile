@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mailfromd
-PORTVERSION=	8.4
-PORTREVISION=	1
+PORTVERSION=	8.5
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
