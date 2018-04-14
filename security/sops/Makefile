@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sops
-DISTVERSION=	3.0.2
+DISTVERSION=	3.0.3
 CATEGORIES=	security editors
 
 MAINTAINER=	dg@syrec.org
