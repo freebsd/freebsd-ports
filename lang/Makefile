@@ -57,6 +57,7 @@
     SUBDIR += dmd1
     SUBDIR += dmd2
     SUBDIR += duktape
+    SUBDIR += duktape-lib
     SUBDIR += ecl
     SUBDIR += elan
     SUBDIR += elixir

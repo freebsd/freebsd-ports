@@ -1,0 +1,16 @@
+--- Makefile.sharedlibrary.orig	2017-09-23 01:06:08 UTC
++++ Makefile.sharedlibrary
+@@ -44,11 +44,11 @@ all: libduktape.so.$(REAL_VERSION) libdu
+ # to $INSTALL_PREFIX/include on installation.
+ 
+ libduktape.so.$(REAL_VERSION):
+-	gcc -shared -fPIC -Wall -Wextra -Os -Wl,-soname,libduktape.so.$(SONAME_VERSION) \
++	$(CC) -shared $(CFLAGS) -fPIC -Wall -Wextra -Wl,-soname,libduktape.so.$(SONAME_VERSION) \
+ 		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
+ 
+ libduktaped.so.$(REAL_VERSION):
+-	gcc -shared -fPIC -g -Wall -Wextra -Os -Wl,-soname,libduktaped.so.$(SONAME_VERSION) \
++	$(CC) -shared $(CFLAGS) -fPIC -Wall -Wextra -Wl,-soname,libduktaped.so.$(SONAME_VERSION) \
+ 		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
+ 
+ # Symlinks depend on platform conventions.
