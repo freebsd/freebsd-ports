@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-GitGot
-PORTVERSION=	1.335
+PORTVERSION=	1.336
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Tool to make it easier to manage multiple git repositories
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
