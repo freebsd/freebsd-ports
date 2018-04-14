@@ -19,11 +19,14 @@ include/axa/open_nmsg_out.h
 include/axa/protocol.h
 include/axa/socket.h
 include/axa/trie.h
+include/axa/version.h
 include/axa/wire.h
+include/axa/yajl_shortcuts.h
+include/libmy/b64_encode.h
 lib/libaxa.a
 lib/libaxa.so
-lib/libaxa.so.0
-lib/libaxa.so.0.0.0
+lib/libaxa.so.1
+lib/libaxa.so.1.0.0
 libdata/pkgconfig/libaxa.pc
 man/man1/radtool.1.gz
 man/man1/radtunnel.1.gz
