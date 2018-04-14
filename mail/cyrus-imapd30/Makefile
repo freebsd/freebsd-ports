@@ -3,7 +3,6 @@
 PORTNAME=	cyrus-imapd
 PORTVERSION=	3.0.5
 PORTREVISION=	1
-#PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		https://www.cyrusimap.org/releases/
@@ -102,7 +101,7 @@ XAPIAN_DESC=		Enable Xapian support
 XAPIAN_CONFIGURE_ENABLE=xapian
 XAPIAN_LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
-OPTIONS_RADIO=			GSSAPI
+OPTIONS_RADIO=			GSSAPI READLINE
 OPTIONS_RADIO_GSSAPI=		GSSAPI_HEIMDAL GSSAPI_MIT
 .if exists(/usr/lib/libkrb5.a)
 OPTIONS_RADIO_GSSAPI+=		GSSAPI_BASE
@@ -117,6 +116,12 @@ GSSAPI_HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 				--with-gss_impl=mit
+
+OPTIONS_RADIO_READLINE=		READLINE_GNU READLINE_PERL
+READLINE_GNU_DESC=		Use Term::Readline::GNU for cyradm
+READLINE_GNU_RUN_DEPENDS=	p5-Term-ReadLine-Gnu>=0:devel/p5-Term-ReadLine-Gnu
+READLINE_PERL_DESC=		Use Term::Readline::Perl for cyradm
+READLINE_PERL_RUN_DEPENDS=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
 
 MANDIRS=	${CYRUS_PREFIX}/man
 
