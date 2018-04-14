@@ -1,0 +1,36 @@
+--- src/CMakeLists.txt.orig	2018-04-12 13:48:26 UTC
++++ src/CMakeLists.txt
+@@ -121,14 +121,12 @@ if (NOT WIN32) ## todo review
+     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+ endif()
+ 
+-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D__FILENAME__='\"$(subst ${CMAKE_SOURCE_DIR}/,,$(abspath $<))\"'")
+-
+ if (ASAN)
+   set(CMAKE_C_ASAN "-fsanitize=address -fno-omit-frame-pointer")
+ endif()
+ 
+ set(CMAKE_C_FLAGS_DEBUG "-O0 -g -ggdb -Werror -DDEBUG -D_DEBUG -UNDEBUG -Wno-unused-variable ${CMAKE_C_ASAN}")
+-set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG ${CMAKE_C_ASAN}")
++set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG ${CMAKE_C_ASAN}")
+ set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} -g")
+ 
+ 
+@@ -151,7 +149,7 @@ file(GLOB PROJECT_GENERATED_HDRS ${PROJECT_GENERATED_D
+ list(APPEND ALL_HDRS ${PROJECT_GENERATED_HDRS})
+ 
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/tmpl/libiowow.pc.in ${PROJECT_GENERATED_DIR}/libiowow.pc @ONLY)
+-install(FILES ${PROJECT_GENERATED_DIR}/libiowow.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++install(FILES ${PROJECT_GENERATED_DIR}/libiowow.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}data/pkgconfig)
+ 
+ foreach(MODULE IN LISTS MODULES)
+     if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE}/CMakeLists.txt)
+@@ -216,8 +214,6 @@ endif()
+ 
+ 
+ install(FILES
+-        ${CMAKE_SOURCE_DIR}/LICENSE
+-        ${CMAKE_SOURCE_DIR}/INSTALL
+         ${CMAKE_SOURCE_DIR}/Changelog
+         DESTINATION ${CMAKE_INSTALL_DOCDIR})
+ install(FILES
