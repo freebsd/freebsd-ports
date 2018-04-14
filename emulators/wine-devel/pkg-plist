@@ -886,6 +886,7 @@ include/wine/windows/wmiutils.h
 include/wine/windows/wmiutils.idl
 include/wine/windows/wmp.h
 include/wine/windows/wmp.idl
+include/wine/windows/wmpids.h
 include/wine/windows/wmsbuffer.h
 include/wine/windows/wmsbuffer.idl
 include/wine/windows/wmsdk.h
@@ -2111,6 +2112,7 @@ lib/wine/fakedlls/softpub.dll
 %%WINE32%%lib/wine/fakedlls/sound.drv16
 lib/wine/fakedlls/spoolss.dll
 lib/wine/fakedlls/spoolsv.exe
+lib/wine/fakedlls/srclient.dll
 lib/wine/fakedlls/sspicli.dll
 lib/wine/fakedlls/start.exe
 lib/wine/fakedlls/stdole2.tlb
@@ -2779,6 +2781,7 @@ lib/wine/softpub.dll.so
 %%WINE32%%lib/wine/sound.drv16.so
 lib/wine/spoolss.dll.so
 lib/wine/spoolsv.exe.so
+lib/wine/srclient.dll.so
 lib/wine/sspicli.dll.so
 lib/wine/start.exe.so
 lib/wine/stdole2.tlb.so
