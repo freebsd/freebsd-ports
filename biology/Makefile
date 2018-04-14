@@ -115,6 +115,7 @@
     SUBDIR += stacks
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
+    SUBDIR += tabixpp
     SUBDIR += tinker
     SUBDIR += treepuzzle
     SUBDIR += trimadap
