@@ -22,6 +22,7 @@ CONFLICTS_INSTALL=	hdf-4.[0-9]* netcdf-3.[0-9]* netcdf3-3.[0-9]*
 
 OPTIONS_DEFINE=	DAP DOCS DOXYGEN SZIP
 OPTIONS_DEFAULT=DAP SZIP
+OPTIONS_SUB=	yes
 DAP_DESC=	Build DAP client and remote testing
 SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
 
