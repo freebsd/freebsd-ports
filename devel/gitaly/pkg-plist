@@ -9,10 +9,13 @@
 %%DATADIR%%/ruby/lib/gitaly_server/commit_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/conflicts_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/diff_service.rb
+%%DATADIR%%/ruby/lib/gitaly_server/exception_sanitizer_interceptor.rb
 %%DATADIR%%/ruby/lib/gitaly_server/operations_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/ref_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/remote_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/repository_service.rb
+%%DATADIR%%/ruby/lib/gitaly_server/sentry.rb
+%%DATADIR%%/ruby/lib/gitaly_server/sentry_interceptor.rb
 %%DATADIR%%/ruby/lib/gitaly_server/utils.rb
 %%DATADIR%%/ruby/lib/gitaly_server/wiki_service.rb
 %%DATADIR%%/ruby/lib/gitlab/config.rb
@@ -25,9 +28,13 @@
 %%DATADIR%%/ruby/spec/gitaly/ref_service_spec.rb
 %%DATADIR%%/ruby/spec/gitaly/repository_service_spec.rb
 %%DATADIR%%/ruby/spec/integration_helper.rb
+%%DATADIR%%/ruby/spec/lib/gitaly_server/exception_sanitizer_interceptor_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/utils_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitaly_server/sentry/url_sanitizer_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitaly_server/sentry_interceptor_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/config_spec.rb
 %%DATADIR%%/ruby/spec/spec_helper.rb
+%%DATADIR%%/ruby/spec/support/sentry.rb
 %%DATADIR%%/ruby/spec/test_repo_helper.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/ORIGIN
 %%DATADIR%%/ruby/vendor/gitlab_git/REVISION
