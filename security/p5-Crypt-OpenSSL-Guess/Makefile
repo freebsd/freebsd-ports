@@ -1,0 +1,21 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	Crypt-OpenSSL-Guess
+PORTVERSION=	0.01
+CATEGORIES=	security perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Guess OpenSSL include path
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
+USE_PERL5=	modbuildtiny
+USES=		perl5
+
+.include <bsd.port.mk>
