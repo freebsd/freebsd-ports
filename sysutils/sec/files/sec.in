@@ -34,9 +34,9 @@ command="%%PREFIX%%/bin/sec"
 command_args="-detach"
 command_interpreter="%%PERL%%"
 extra_commands="reload"
-pidfile="/var/run/sec.pid"
+pidfile="/var/run/sec/sec.pid"
 
-start_precmd="sec_checkconfig"
+start_precmd="sec_precmd"
 reload_precmd="sec_checkconfig"
 restart_precmd="sec_checkconfig"
 sig_reload=HUP
@@ -45,6 +45,17 @@ load_rc_config "${name}"
 [ -z "${sec_enable}" ]       && sec_enable="NO"
 [ -z "${sec_flags}" ]        && sec_flags="-log=/var/log/sec.log"
 [ -z "${sec_configfile}" ]   && sec_configfile="%%PREFIX%%/etc/sec.conf"
+
+sec_precmd() {
+  dn=`dirname ${pidfile}`
+  if [ ! -d ${dn} ]; then
+    mkdir -p ${dn}
+    if [ -n $sec_user ]; then
+	/usr/sbin/chown ${sec_user} ${dn}
+    fi
+  fi
+  sec_checkconfig
+}
 
 sec_checkconfig() {
   if [ -z $instance ]
@@ -75,7 +86,7 @@ then
 	do
                 # Iterate through all instances
                 name="sec_${instance}"
-                pidfile="/var/run/sec_${instance}.pid"
+                pidfile="/var/run/sec/sec_${instance}.pid"
                 eval required_files=\$sec_${instance}_configfile
                 eval sec_${instance}_flags="\"-conf=\$sec_${instance}_configfile -pid=\$pidfile \$sec_${instance}_flags\""
 
