@@ -3,13 +3,13 @@
 
 PORTNAME=	ark
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
 
-LIB_DEPENDS=	libqjson.so:devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -2,7 +2,7 @@
 
 PORTNAME=	libkvkontakte
 PORTVERSION=	4.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/digikam
@@ -13,7 +13,7 @@ COMMENT=	KDE library for accessing vk.com
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libqjson.so:devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
 USES=		cmake:outsource gettext kde:4 pkgconfig tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build

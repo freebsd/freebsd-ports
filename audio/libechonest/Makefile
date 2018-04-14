@@ -3,7 +3,7 @@
 
 PORTNAME=	libechonest
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	Collection of C++/Qt classes designed to use the APIs of The Echo Nest
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqjson.so:devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
 GH_ACCOUNT=	lfranchi
 

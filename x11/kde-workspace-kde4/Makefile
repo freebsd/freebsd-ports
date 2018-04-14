@@ -2,7 +2,7 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	x11 kde kde-applications
 PKGNAMESUFFIX=	-kde4
 
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libck-connector.so:sysutils/consolekit2 \
 		libpci.so:devel/libpci \
 		libhal.so:sysutils/hal \
-		libqjson.so:devel/qjson \
+		libqjson.so:devel/qjson@qt4 \
 		libcln.so:math/cln \
 		libqalculate.so:math/libqalculate \
 		libprison.so:graphics/prison \

@@ -2,7 +2,7 @@
 
 PORTNAME=	libkgapi
 PORTVERSION=	2.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/libkgapi/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
@@ -13,7 +13,7 @@ COMMENT=	KDE-based library for accessing various Google services
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libqjson.so:devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
 USES=		cmake:outsource kde:4 tar:bzip2
 USE_KDE=	automoc4 kdelibs pimlibs

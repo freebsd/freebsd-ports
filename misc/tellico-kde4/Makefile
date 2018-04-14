@@ -3,7 +3,7 @@
 
 PORTNAME=	tellico
 PORTVERSION=	2.3.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexempi.so:textproc/exempi \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libpoppler-qt4.so:graphics/poppler-qt4 \
-		libqjson.so:devel/qjson \
+		libqjson.so:devel/qjson@qt4 \
 		libtag.so:audio/taglib \
 		libyaz.so:net/yaz
 
