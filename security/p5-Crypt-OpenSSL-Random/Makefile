@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-Random
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RURBAN
@@ -13,6 +13,9 @@ COMMENT=	Perl5 interface to the OpenSSL pseudo-random number generator
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	p5-Crypt-OpenSSL-Guess>=0:security/p5-Crypt-OpenSSL-Guess
 
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 USES=		perl5 ssl
