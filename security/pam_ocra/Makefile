@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pam_ocra
-DISTVERSION=	1.4
+DISTVERSION=	1.5
 CATEGORIES=	security
 
 MAINTAINER=	sg2342@googlemail.com
