@@ -661,6 +661,7 @@
     SUBDIR += openjpeg15
     SUBDIR += openjump
     SUBDIR += opennurbs
+    SUBDIR += openorienteering-mapper
     SUBDIR += openrm
     SUBDIR += openshadinglanguage
     SUBDIR += opensubdiv

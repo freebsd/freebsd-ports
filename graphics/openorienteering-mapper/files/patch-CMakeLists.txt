@@ -1,0 +1,47 @@
+--- CMakeLists.txt.orig	2018-03-11 14:00:07 UTC
++++ CMakeLists.txt
+@@ -69,6 +69,11 @@ option(Mapper_DEBUG_TRANSLATIONS "Debug 
+ # Used for some Linux distributions which do not provide the polyclipping lib.
+ option(Mapper_BUILD_CLIPPER "Build the Clipper package from source" OFF)
+ 
++option(Mapper_WITH_DOCS "Build and/or install documentation" ON)
++option(Mapper_WITH_EXAMPLES "Build and/or install examples" ON)
++option(Mapper_WITH_NLS "Native Language Support" ON)
++option(Mapper_WITH_TEST "Build the test suite" ON)
++
+ option(Mapper_USE_GDAL   "Use the GDAL library" ON)
+ 
+ if(CMAKE_BUILD_TYPE MATCHES Release|MinSizeRel|RelWithDebInfo)
+@@ -227,10 +232,20 @@ endif()
+ 
+ # Subdirectories
+ 
+-add_subdirectory("doc/manual")
+-add_subdirectory("examples")
++if (Mapper_WITH_DOCS)
++	add_subdirectory("doc/manual")
++endif()
++if (Mapper_WITH_EXAMPLES)
++	add_subdirectory("examples")
++endif()
+ add_subdirectory("symbol sets")
+-add_subdirectory("translations")
++if (Mapper_WITH_NLS)
++	add_subdirectory("translations")
++else()
++	execute_process(COMMAND "${CMAKE_COMMAND}" -E make_directory "packaging/linux")
++	execute_process(COMMAND "${CMAKE_COMMAND}" -E copy "${PROJECT_SOURCE_DIR}/packaging/linux/Mapper.desktop" "packaging/linux/")
++	execute_process(COMMAND "${CMAKE_COMMAND}" -E copy "${PROJECT_SOURCE_DIR}/packaging/linux/openorienteering-mapper.xml" "packaging/linux/")
++endif()
+ add_subdirectory("3rd-party/qbezier")
+ if(NOT ANDROID)
+ 	add_subdirectory("3rd-party/qtsingleapplication")
+@@ -250,7 +265,7 @@ if(CMAKE_CROSSCOMPILING)
+ 	add_custom_target(TEST_WARNING ALL
+ 	  COMMENT "Crosscompiling, skipping all tests")
+ 	add_dependencies(TEST_WARNING Mapper)
+-else()
++elseif(Mapper_WITH_TEST)
+ 	enable_testing()
+ 	add_subdirectory("test")
+ endif()

@@ -1,0 +1,8 @@
+--- packaging/custom_install.cmake.in.orig	2018-03-11 14:00:07 UTC
++++ packaging/custom_install.cmake.in
+@@ -215,4 +215,4 @@ endif()
+ set(runtime "")
+ set(dirs "@MAPPER_LIB_HINTS@")
+ handle_qt_conf()
+-fixup_bundle_portable("${runtime}" "${dirs}")
++#fixup_bundle_portable("${runtime}" "${dirs}")
