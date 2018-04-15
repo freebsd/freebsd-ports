@@ -10,7 +10,7 @@ COMMENT=	Library that provides thread building blocks
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=		amd64 armv6 i386
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 
 USES=	compiler gmake tar:tgz
