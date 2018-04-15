@@ -1,0 +1,8 @@
+Seasonal unit roots and seasonal stability tests. P-values based
+on response surface regressions are available for both tests.
+P-values based on bootstrap are available for seasonal unit root
+tests. A parallel implementation of the bootstrap method requires
+a CUDA capable GPU with compute capability >= 3.0, otherwise a
+debugging version fully coded in R is used.
+
+WWW: https://cran.r-project.org/web/packages/uroot/
