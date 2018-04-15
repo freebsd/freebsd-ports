@@ -25,6 +25,7 @@ MAKE_ARGS=	CC="${CC}" CPP="${CPP}" CXX="${CXX}"
 CFLAGS+=	-fexceptions -fvisibility=hidden
 CFLAGS_aarch64=	-fPIC
 CFLAGS_amd64=	-fPIC
+CFLAGS_armv7=	-fPIC
 
 PLIST_FILES=	include/FreeImage.h \
 		include/FreeImagePlus.h \
