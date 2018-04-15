@@ -1,0 +1,50 @@
+bin/urbackupclientctl
+%%GUI%%bin/urbackupclientgui
+sbin/urbackupclientbackend
+@(,,0444) man/man1/urbackupclientbackend.1.gz
+@mode 0700
+@sample etc/urbackup/mariadbdump.conf.sample
+@sample etc/urbackup/mariadbxtrabackup.conf.sample
+@sample etc/urbackup/postgresbase.conf.sample
+@sample etc/urbackup/postgresqldump.conf.sample
+share/urbackup/scripts/list
+share/urbackup/scripts/mariadbdump
+share/urbackup/scripts/mariadbpostbackup
+share/urbackup/scripts/mariadbprebackup
+share/urbackup/scripts/mariadbxtrabackup
+share/urbackup/scripts/postgresbase
+share/urbackup/scripts/postgresqldump
+share/urbackup/scripts/postgresqlpostbackup
+share/urbackup/scripts/postgresqlprebackup
+share/urbackup/scripts/restore-mariadbbackup
+share/urbackup/scripts/setup-mariadbbackup
+share/urbackup/scripts/setup-postgresbackup
+@mode 0644
+share/urbackup/updates_h.dat
+%%GUI%%share/urbackup/info.txt
+%%GUI%%share/urbackup/logo1.png
+%%GUI%%share/urbackup/backup-bad.xpm
+%%GUI%%share/urbackup/backup-indexing.xpm
+%%GUI%%share/urbackup/backup-no-recent.xpm
+%%GUI%%share/urbackup/backup-no-server.xpm
+%%GUI%%share/urbackup/backup-ok.xpm
+%%GUI%%share/urbackup/backup-progress-pause.xpm
+%%GUI%%share/urbackup/backup-progress.xpm
+%%GUI%%share/urbackup/lang/cs/urbackup.mo
+%%GUI%%share/urbackup/lang/da/urbackup.mo
+%%GUI%%share/urbackup/lang/de/urbackup.mo
+%%GUI%%share/urbackup/lang/es/urbackup.mo
+%%GUI%%share/urbackup/lang/fa/urbackup.mo
+%%GUI%%share/urbackup/lang/fr/urbackup.mo
+%%GUI%%share/urbackup/lang/it/urbackup.mo
+%%GUI%%share/urbackup/lang/nl/urbackup.mo
+%%GUI%%share/urbackup/lang/pl/urbackup.mo
+%%GUI%%share/urbackup/lang/pt_BR/urbackup.mo
+%%GUI%%share/urbackup/lang/ru/urbackup.mo
+%%GUI%%share/urbackup/lang/sk/urbackup.mo
+%%GUI%%share/urbackup/lang/uk/urbackup.mo
+%%GUI%%share/urbackup/lang/zh_CN/urbackup.mo
+%%GUI%%share/urbackup/lang/zh_TW/urbackup.mo
+@dir(,,0700) /var/urbackup/data
+@dir(urbackup,urbackup,0755) /var/urbackup
+@mode 555

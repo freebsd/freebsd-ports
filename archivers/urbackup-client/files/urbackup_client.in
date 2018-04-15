@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: urbackup_client
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# urbackup_client_enable (bool):	Set to NO by default.
+#					Set it to YES to enable the UrBackup Client Backend.
+
+. /etc/rc.subr
+
+name=urbackup_client
+desc="UrBackup Client Backend"
+rcvar=urbackup_client_enable
+
+load_rc_config $name
+
+: ${urbackup_client_enable:=NO}
+
+command=%%PREFIX%%/sbin/urbackupclientbackend
+pidfile=/var/run/urbackupclientbackend.pid
+
+command_args="-d -w $pidfile"
+
+run_rc_command "$1"
