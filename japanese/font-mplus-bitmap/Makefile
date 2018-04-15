@@ -3,6 +3,7 @@
 
 PORTNAME=	mplus
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	OSDN/${PORTNAME}-fonts/5030/
 PKGNAMEPREFIX=	ja-font-
@@ -15,14 +16,10 @@ COMMENT=	M+ Bitmap fonts
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
-FONTNAME=	misc
 NO_BUILD=	yes
 NO_ARCH=	yes
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-install
-SUB_FILES=	pkg-install
-SUB_LIST=	FONTSALIAS="${DATADIR}/fonts.alias"
-DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
+SUB_FILES=	pkg-message
+FONTSDIR=	${PREFIX}/share/fonts/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PORTDOCS=	INSTALL_E LICENSE_E README_E \
 		INSTALL_J LICENSE_J README_J
@@ -35,14 +32,11 @@ post-extract:
 	    fonts_j/fonts.alias | ${SORT} -r > ${WRKDIR}/fonts.alias
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && \
-	    ${SETENV} DESTDIR="${STAGEDIR}${DATADIR}" \
-	    ${SH} ${WRKSRC}/install_mplus_fonts
-	${INSTALL_DATA} ${WRKDIR}/fonts.alias ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${STAGEDIR}${FONTSDIR} && \
-	    ${LN} -s -f ../../../${DATADIR_REL}/*.pcf.gz .
+	cd ${WRKSRC} && \
+	    ${SETENV} DESTDIR="${STAGEDIR}${FONTSDIR}" \
+	    ${SH} ${WRKSRC}/install_mplus_fonts
+	${INSTALL_DATA} ${WRKDIR}/fonts.alias ${STAGEDIR}${FONTSDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
