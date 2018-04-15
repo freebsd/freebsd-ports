@@ -111,6 +111,7 @@
     SUBDIR += seqtools
     SUBDIR += sim4
     SUBDIR += slclust
+    SUBDIR += smithwaterman
     SUBDIR += ssaha
     SUBDIR += stacks
     SUBDIR += tRNAscan-SE
