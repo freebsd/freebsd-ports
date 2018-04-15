@@ -3,7 +3,7 @@
 
 PORTNAME=	shinonome
 PORTVERSION=	0.9.11.p1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://openlab.jp/efont/dist/shinonome/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -16,14 +16,9 @@ COMMENT=	Shinonome Japanese fonts, 12/14/16 dots
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts tar:bzip2
-FONTNAME=	misc
 NO_ARCH=	yes
+SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME:C/^font-//}-${PORTVERSION:C/.p.*$//}
-DATADIR=	${PREFIX}/share/font-${PORTNAME}
-SUB_FILES=	pkg-install
-SUB_LIST=	FONTSALIAS=${DATADIR}/fonts.alias
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-install
 
 PORTDOCS=	AUTHORS BUGS ChangeLog ChangeLog.0 DESIGN.12 DESIGN.14	\
 		DESIGN.16 DESIGN.18 INSTALL README THANKS TODO LICENSE
@@ -60,12 +55,9 @@ do-build:
 	@${ECHO_CMD} "Done"
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${FONTNAMES:C/$/.pcf.gz/} fonts.alias \
-	    ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${STAGEDIR}${FONTSDIR} && ${LN} -s -f \
-	    ../../../${DATADIR_REL}/*.pcf.gz .
+	cd ${WRKSRC} && ${INSTALL_DATA} ${FONTNAMES:C/$/.pcf.gz/} fonts.alias \
+	    ${STAGEDIR}${FONTSDIR}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
