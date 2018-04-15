@@ -1,0 +1,23 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+archivers/urbackup-server includes an RC script:
+%%PREFIX%%/etc/rc.d/urbackup_server
+
+TO START URBACKUP SERVER ON BOOT:
+sysrc urbackup_server_enable=YES
+
+START MANUALLY:
+service urbackup_server start
+
+Once started, visit the following to configure:
+http://localhost:55414
+
+SECURITY WARNING:
+This port sets the SUID/SGID bits on the following files:
+%%PREFIX%%/bin/urbackup_mount_helper
+%%PREFIX%%/bin/urbackup_snapshot_helper
+
+For details, see:
+https://www.urbackup.org/administration_manual.html
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

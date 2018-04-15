@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: urbackup_server
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# urbackup_server_enable (bool):	Set to NO by default.
+#					Set it to YES to enable the UrBackup Server.
+
+. /etc/rc.subr
+
+name=urbackup_server
+desc="UrBackup Daemon"
+rcvar=urbackup_server_enable
+
+load_rc_config $name
+
+: ${urbackup_server_enable:=NO}
+
+command=%%PREFIX%%/bin/urbackupsrv
+pidfile=/var/run/urbackupsrv.pid
+
+command_args="run -d -w $pidfile"
+
+run_rc_command "$1"

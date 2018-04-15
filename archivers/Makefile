@@ -246,6 +246,7 @@
     SUBDIR += unzoo
     SUBDIR += upx
     SUBDIR += urbackup-client
+    SUBDIR += urbackup-server
     SUBDIR += xar
     SUBDIR += xarchive
     SUBDIR += xarchiver
