@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pmacct
-DISTVERSION=	1.6.2
+DISTVERSION=	1.7.0
 PORTREVISION=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/

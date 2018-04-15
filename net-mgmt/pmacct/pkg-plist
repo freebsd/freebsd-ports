@@ -29,6 +29,7 @@ sbin/sfacctd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow_to_rd.map.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnuplot-example.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnuplot.script.example
+%%WITH_KAFKA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kafka/kafka_confluent_consumer.py
 %%WITH_KAFKA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kafka/kafka_consumer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lpref.map.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med.map.example
@@ -71,6 +72,7 @@ sbin/sfacctd
 %%WITH_SQLITE3%%%%DATADIR%%/README.sqlite3
 %%DATADIR%%/README.tag2
 %%DATADIR%%/README.timestamp
+%%DATADIR%%/README.tunnel
 %%WITH_PGSQL%%%%DATADIR%%/pmacct-create-db.pgsql
 %%WITH_MYSQL%%%%DATADIR%%/pmacct-create-db_bgp_v1.mysql
 %%WITH_MYSQL%%%%DATADIR%%/pmacct-create-db_v1.mysql
