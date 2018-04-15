@@ -638,6 +638,7 @@
     SUBDIR += pure-mpfr
     SUBDIR += pure-rational
     SUBDIR += py-Diofant
+    SUBDIR += py-PySCIPOpt
     SUBDIR += py-PyWavelets
     SUBDIR += py-Pyomo
     SUBDIR += py-altgraph
