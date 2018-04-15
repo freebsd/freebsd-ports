@@ -2,6 +2,7 @@
 
 PORTNAME=	kakoune
 DISTVERSION=	2018.04.13
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/mawww/kakoune/releases/download/v${DISTVERSION}/
 
@@ -19,10 +20,14 @@ DATADIR=	${PREFIX}/share/kak
 DOCSDIR=	${PREFIX}/share/doc/kak
 WRKSRC_SUBDIR=	src
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DEBUG DOCS
+
+DEBUG_MAKE_ARGS=	debug=yes
+DEBUG_MAKE_ARGS_OFF=	debug=no
 
 post-patch:
-	@${REINPLACE_CMD} 's,/share/man/,/man/,' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,/share/man/,/man/,' -e '/-O3/d' \
+		${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kak
