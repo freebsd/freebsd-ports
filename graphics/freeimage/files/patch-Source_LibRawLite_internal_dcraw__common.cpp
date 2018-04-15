@@ -1,7 +1,17 @@
+https://github.com/LibRaw/LibRaw/commit/f4c0b98581a6
 https://github.com/LibRaw/LibRaw/commit/2cef10389486
 
 --- Source/LibRawLite/internal/dcraw_common.cpp.orig	2014-02-07 19:48:10 UTC
 +++ Source/LibRawLite/internal/dcraw_common.cpp
+@@ -2027,7 +2027,7 @@ void CLASS quicktake_100_load_raw()
+ 
+ void CLASS kodak_radc_load_raw()
+ {
+-  static const char src[] = {
++  static const signed char src[] = {
+     1,1, 2,3, 3,4, 4,2, 5,7, 6,5, 7,6, 7,8,
+     1,0, 2,1, 3,3, 4,4, 5,2, 6,7, 7,6, 8,5, 8,8,
+     2,1, 2,3, 3,0, 3,2, 3,4, 4,6, 5,5, 6,7, 6,8,
 @@ -3782,22 +3782,22 @@ void CLASS vng_interpolate()
      -2,+0,+0,-1,0,0x06, -2,+0,+0,+0,1,0x02, -2,+0,+0,+1,0,0x03,
      -2,+1,-1,+0,0,0x04, -2,+1,+0,-1,1,0x04, -2,+1,+0,+0,0,0x06,
