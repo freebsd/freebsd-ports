@@ -4,7 +4,7 @@
 PORTNAME=	mplayer-skins
 PORTVERSION=	1.1.4
 CATEGORIES=	multimedia
-MASTER_SITES=	MPLAYERHQ/skins
+MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/skins/
 DISTFILES=	# filled in later after options
 DIST_SUBDIR=	mplayer-skins
 

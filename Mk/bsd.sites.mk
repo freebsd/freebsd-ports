@@ -845,20 +845,6 @@ MASTER_SITE_MOZILLA_ADDONS+= \
 	http://kyoto-mz-dl.sinet.ad.jp/pub/mozilla.org/%SUBDIR%/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_MPLAYERHQ)
-MASTER_SITE_MPLAYERHQ+= \
-	http://www.mplayerhq.hu/MPlayer/%SUBDIR%/ \
-	https://www1.mplayerhq.hu/MPlayer/%SUBDIR%/ \
-	http://www2.mplayerhq.hu/MPlayer/%SUBDIR%/ \
-	http://www3.mplayerhq.hu/MPlayer/%SUBDIR%/ \
-	http://www4.mplayerhq.hu/MPlayer/%SUBDIR%/ \
-	http://www5.mplayerhq.hu/MPlayer/%SUBDIR%/ \
-	ftp://ftp.mplayerhq.hu/MPlayer/%SUBDIR%/ \
-	ftp://ftp1.mplayerhq.hu/MPlayer/%SUBDIR%/ \
-	ftp://ftp4.mplayerhq.hu/MPlayer/%SUBDIR%/ \
-	ftp://ftp5.mplayerhq.hu/MPlayer/%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_MYSQL)
 MASTER_SITE_MYSQL+= \
 	ftp://ftp.fi.muni.cz/pub/mysql/Downloads/%SUBDIR%/ \
