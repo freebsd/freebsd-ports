@@ -3,8 +3,10 @@ include/libsigrokdecode/version.h
 lib/libsigrokdecode.a
 lib/libsigrokdecode.so
 lib/libsigrokdecode.so.4
-lib/libsigrokdecode.so.4.0.0
+lib/libsigrokdecode.so.4.1.0
 libdata/pkgconfig/libsigrokdecode.pc
+%%DATADIR%%/decoders/ac97/__init__.py
+%%DATADIR%%/decoders/ac97/pd.py
 %%DATADIR%%/decoders/ade77xx/__init__.py
 %%DATADIR%%/decoders/ade77xx/lists.py
 %%DATADIR%%/decoders/ade77xx/pd.py
@@ -36,6 +38,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/common/sdcard/mod.py
 %%DATADIR%%/decoders/common/srdhelper/__init__.py
 %%DATADIR%%/decoders/common/srdhelper/mod.py
+%%DATADIR%%/decoders/counter/__init__.py
+%%DATADIR%%/decoders/counter/pd.py
 %%DATADIR%%/decoders/dali/__init__.py
 %%DATADIR%%/decoders/dali/lists.py
 %%DATADIR%%/decoders/dali/pd.py
@@ -45,6 +49,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/dmx512/pd.py
 %%DATADIR%%/decoders/ds1307/__init__.py
 %%DATADIR%%/decoders/ds1307/pd.py
+%%DATADIR%%/decoders/ds243x/__init__.py
+%%DATADIR%%/decoders/ds243x/pd.py
 %%DATADIR%%/decoders/ds28ea00/__init__.py
 %%DATADIR%%/decoders/ds28ea00/pd.py
 %%DATADIR%%/decoders/dsi/__init__.py
@@ -62,6 +68,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/em4305/pd.py
 %%DATADIR%%/decoders/gpib/__init__.py
 %%DATADIR%%/decoders/gpib/pd.py
+%%DATADIR%%/decoders/graycode/__init__.py
+%%DATADIR%%/decoders/graycode/pd.py
 %%DATADIR%%/decoders/guess_bitrate/__init__.py
 %%DATADIR%%/decoders/guess_bitrate/pd.py
 %%DATADIR%%/decoders/i2c/__init__.py
@@ -90,6 +98,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/lm75/pd.py
 %%DATADIR%%/decoders/lpc/__init__.py
 %%DATADIR%%/decoders/lpc/pd.py
+%%DATADIR%%/decoders/maple_bus/__init__.py
+%%DATADIR%%/decoders/maple_bus/pd.py
 %%DATADIR%%/decoders/max7219/__init__.py
 %%DATADIR%%/decoders/max7219/pd.py
 %%DATADIR%%/decoders/mdio/__init__.py
@@ -103,6 +113,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/mlx90614/pd.py
 %%DATADIR%%/decoders/modbus/__init__.py
 %%DATADIR%%/decoders/modbus/pd.py
+%%DATADIR%%/decoders/morse/__init__.py
+%%DATADIR%%/decoders/morse/pd.py
 %%DATADIR%%/decoders/mrf24j40/__init__.py
 %%DATADIR%%/decoders/mrf24j40/lists.py
 %%DATADIR%%/decoders/mrf24j40/pd.py
@@ -126,6 +138,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/pwm/pd.py
 %%DATADIR%%/decoders/qi/__init__.py
 %%DATADIR%%/decoders/qi/pd.py
+%%DATADIR%%/decoders/rc_encode/__init__.py
+%%DATADIR%%/decoders/rc_encode/pd.py
 %%DATADIR%%/decoders/rfm12/__init__.py
 %%DATADIR%%/decoders/rfm12/pd.py
 %%DATADIR%%/decoders/rgb_led_spi/__init__.py
@@ -134,6 +148,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/rgb_led_ws281x/pd.py
 %%DATADIR%%/decoders/rtc8564/__init__.py
 %%DATADIR%%/decoders/rtc8564/pd.py
+%%DATADIR%%/decoders/sda2506/__init__.py
+%%DATADIR%%/decoders/sda2506/pd.py
 %%DATADIR%%/decoders/sdcard_sd/__init__.py
 %%DATADIR%%/decoders/sdcard_sd/pd.py
 %%DATADIR%%/decoders/sdcard_spi/__init__.py
