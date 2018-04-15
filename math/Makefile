@@ -29,6 +29,7 @@
     SUBDIR += R-cran-Rmpfr
     SUBDIR += R-cran-Rsolnp
     SUBDIR += R-cran-SparseM
+    SUBDIR += R-cran-uroot
     SUBDIR += R-cran-VGAM
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-assertthat
