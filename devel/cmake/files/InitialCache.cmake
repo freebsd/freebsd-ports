@@ -13,7 +13,13 @@ set(BUILD_TESTING OFF CACHE BOOL "Build the testing tree.")
 set(LIBLZMA_INCLUDE_DIR "/usr/include" CACHE PATH
     "Directory where LibLZMA headers are located.")
 set(LIBLZMA_LIBRARY "/usr/lib/liblzma.so" CACHE PATH
-    "LibLZMA library to link against..")
+    "LibLZMA library to link against.")
+
+# Similarly for libarchive
+set(LibArchive_INCLUDE_DIR "/usr/include" CACHE PATH
+    "Directory where LibArchive headers are located.")
+set(LibArchive_LIBRARY "/usr/lib/libthr.so;/usr/lib/libarchive.so" CACHE PATH
+    "LibArchive library to link against.")
 
 # Modern FreeBSD systems are assumed to have libpkg installed,
 # so enable its use in CPack for the direct generation of FreeBSD
