@@ -1,17 +1,10 @@
-bin/check_epollexclusive
-bin/gen_hpack_tables
-bin/gen_legal_metadata_characters
-bin/gen_percent_encoding_tables
 bin/grpc_cpp_plugin
-bin/grpc_create_jwt
 bin/grpc_csharp_plugin
 bin/grpc_node_plugin
 bin/grpc_objective_c_plugin
 bin/grpc_php_plugin
-bin/grpc_print_google_default_creds_token
 bin/grpc_python_plugin
 bin/grpc_ruby_plugin
-bin/grpc_verify_jwt
 include/benchmark/benchmark.h
 include/grpc++/alarm.h
 include/grpc++/channel.h
@@ -232,6 +225,9 @@ lib/cmake/grpc/gRPCConfig.cmake
 lib/cmake/grpc/gRPCConfigVersion.cmake
 lib/cmake/grpc/gRPCTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/grpc/gRPCTargets.cmake
+lib/libaddress_sorting.so
+lib/libaddress_sorting.so.1
+lib/libaddress_sorting.so.%%SOVERSION%%
 lib/libbenchmark.so
 lib/libbenchmark.so.0
 lib/libbenchmark.so.0.0.0

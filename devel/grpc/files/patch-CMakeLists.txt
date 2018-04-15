@@ -1,6 +1,14 @@
---- CMakeLists.txt.orig	2018-03-01 18:16:44 UTC
+--- CMakeLists.txt.orig	2018-04-13 18:08:11 UTC
 +++ CMakeLists.txt
-@@ -666,6 +666,7 @@ add_library(gpr
+@@ -664,6 +664,7 @@ add_library(address_sorting
+   third_party/address_sorting/address_sorting_posix.c
+   third_party/address_sorting/address_sorting_windows.c
+ )
++set_target_properties(address_sorting PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(address_sorting PROPERTIES COMPILE_PDB_NAME "address_sorting"
+@@ -784,6 +785,7 @@ add_library(gpr
    src/core/lib/profiling/basic_timers.cc
    src/core/lib/profiling/stap_timers.cc
  )
@@ -8,7 +16,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(gpr PROPERTIES COMPILE_PDB_NAME "gpr"
-@@ -1032,6 +1033,7 @@ add_library(grpc
+@@ -1211,6 +1213,7 @@ add_library(grpc
    src/core/ext/filters/workarounds/workaround_utils.cc
    src/core/plugin_registry/grpc_plugin_registry.cc
  )
@@ -16,7 +24,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc PROPERTIES COMPILE_PDB_NAME "grpc"
-@@ -1343,6 +1345,7 @@ add_library(grpc_cronet
+@@ -1581,6 +1584,7 @@ add_library(grpc_cronet
    src/core/ext/filters/load_reporting/server_load_reporting_plugin.cc
    src/core/plugin_registry/grpc_cronet_plugin_registry.cc
  )
@@ -24,7 +32,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_cronet PROPERTIES COMPILE_PDB_NAME "grpc_cronet"
-@@ -2220,6 +2223,7 @@ add_library(grpc_unsecure
+@@ -2509,6 +2513,7 @@ add_library(grpc_unsecure
    src/core/ext/filters/workarounds/workaround_utils.cc
    src/core/plugin_registry/grpc_unsecure_plugin_registry.cc
  )
@@ -32,7 +40,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_unsecure PROPERTIES COMPILE_PDB_NAME "grpc_unsecure"
-@@ -2429,6 +2433,7 @@ add_library(grpc++
+@@ -2722,6 +2727,7 @@ add_library(grpc++
    src/cpp/util/time_cc.cc
    src/cpp/codegen/codegen_init.cc
  )
@@ -40,7 +48,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++ PROPERTIES COMPILE_PDB_NAME "grpc++"
-@@ -2969,6 +2974,7 @@ add_library(grpc++_cronet
+@@ -3282,6 +3288,7 @@ add_library(grpc++_cronet
    third_party/nanopb/pb_decode.c
    third_party/nanopb/pb_encode.c
  )
@@ -48,7 +56,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_cronet PROPERTIES COMPILE_PDB_NAME "grpc++_cronet"
-@@ -3231,6 +3237,7 @@ add_library(grpc++_error_details
+@@ -3546,6 +3553,7 @@ add_library(grpc++_error_details
    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/status/status.grpc.pb.h
    src/cpp/util/error_details.cc
  )
@@ -56,7 +64,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_error_details PROPERTIES COMPILE_PDB_NAME "grpc++_error_details"
-@@ -3355,6 +3362,7 @@ add_library(grpc++_reflection
+@@ -3676,6 +3684,7 @@ add_library(grpc++_reflection
    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/reflection/v1alpha/reflection.pb.h
    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/reflection/v1alpha/reflection.grpc.pb.h
  )
@@ -64,7 +72,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_reflection PROPERTIES COMPILE_PDB_NAME "grpc++_reflection"
-@@ -3834,6 +3842,7 @@ add_library(grpc++_unsecure
+@@ -4172,6 +4181,7 @@ add_library(grpc++_unsecure
    src/cpp/util/time_cc.cc
    src/cpp/codegen/codegen_init.cc
  )
@@ -72,7 +80,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_unsecure PROPERTIES COMPILE_PDB_NAME "grpc++_unsecure"
-@@ -4206,6 +4215,7 @@ add_library(grpc_plugin_support
+@@ -4549,6 +4559,7 @@ add_library(grpc_plugin_support
    src/compiler/python_generator.cc
    src/compiler/ruby_generator.cc
  )
@@ -80,7 +88,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_plugin_support PROPERTIES COMPILE_PDB_NAME "grpc_plugin_support"
-@@ -4700,6 +4710,7 @@ endif (gRPC_BUILD_TESTS)
+@@ -5061,6 +5072,7 @@ endif (gRPC_BUILD_TESTS)
  add_library(grpc_csharp_ext SHARED
    src/csharp/ext/grpc_csharp_ext.c
  )
