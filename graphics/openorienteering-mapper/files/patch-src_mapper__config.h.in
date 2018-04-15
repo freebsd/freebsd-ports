@@ -1,0 +1,10 @@
+--- src/mapper_config.h.in.orig	2018-03-11 14:00:07 UTC
++++ src/mapper_config.h.in
+@@ -30,6 +30,7 @@
+ 
+ #cmakedefine Mapper_DEBUG_TRANSLATIONS
+ #cmakedefine Mapper_PACKAGE_NAME
++#cmakedefine Mapper_WITH_DOCS
+ #define MAPPER_DATA_DESTINATION  "@CMAKE_INSTALL_PREFIX@/@MAPPER_DATA_DESTINATION@"
+ #define MAPPER_ABOUT_DESTINATION "@CMAKE_INSTALL_PREFIX@/@MAPPER_ABOUT_DESTINATION@"
+ 
