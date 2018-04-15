@@ -1,0 +1,5 @@
+This plugin will add man pages support to ruby gems. Instead of adding a new
+command like gem-man it will try to link the files to a place the man command
+automatically discovers.
+
+WWW: https://github.com/bitboxer/manpages
