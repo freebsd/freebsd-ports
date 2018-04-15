@@ -837,7 +837,7 @@ pdagent:*:887:887::0:0:PagerDuty Agent:/nonexistent:/usr/sbin/nologin
 vuls:*:888:888::0:0:VULnerability Scanner:/var/db/vuls:/usr/sbin/nologin
 mattermost:*:889:889::0:0:Mattermost:/usr/local/www/mattermost:/usr/sbin/nologin
 matterircd:*:890:890::0:0:Matterircd User:/nonexistent:/usr/sbin/nologin
-# free: 891
+urbackup:*:891:891::0:0:UrBackup Server:/var/urbackup:/usr/sbin/nologin
 tautulli:*:892:892::0:0:Tautulli user:/nonexistent:/usr/sbin/nologin
 logstash:*:893:893::0:0:Logstash user:/nonexistent:/usr/sbin/nologin
 arangodb:*:894:894::0:0:ArangoDB pseudo-user:/var/db/arangodb:/usr/sbin/nologin
