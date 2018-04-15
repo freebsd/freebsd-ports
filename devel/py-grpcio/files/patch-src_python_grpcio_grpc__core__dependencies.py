@@ -1,6 +1,6 @@
---- src/python/grpcio/grpc_core_dependencies.py.orig	2018-02-01 19:43:12 UTC
+--- src/python/grpcio/grpc_core_dependencies.py.orig	2018-04-13 19:56:08 UTC
 +++ src/python/grpcio/grpc_core_dependencies.py
-@@ -629,53 +629,4 @@ CORE_SOURCE_FILES = [
+@@ -631,53 +631,4 @@ CORE_SOURCE_FILES = [
      'third_party/zlib/trees.c',
      'third_party/zlib/uncompr.c',
      'third_party/zlib/zutil.c',
