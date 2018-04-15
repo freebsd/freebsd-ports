@@ -19,7 +19,7 @@ USES=		python:2.7 scons tar:bzip2
 USE_PYTHON=	flavors
 USE_LDCONFIG=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
-MAKE_ARGS+=	prefix=${PREFIX} use_env=1
+MAKE_ARGS+=	prefix=${PREFIX} use_env=1 BOOSTLIB="${PY_BOOST_LIB}"
 
 post-patch:
 	${REINPLACE_CMD} -e 's|python_inc_path\]|python_inc_path,\
