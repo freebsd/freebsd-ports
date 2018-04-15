@@ -12,6 +12,7 @@ lib/cgit/filters/owner-example.lua
 lib/cgit/filters/simple-authentication.lua
 lib/cgit/filters/syntax-highlighting.py
 lib/cgit/filters/syntax-highlighting.sh
+%%ASCIIDOC%%man/man5/cgitrc.5.gz
 %%WWWDIR%%/cgit.cgi
 %%WWWDIR%%/cgit.css
 %%WWWDIR%%/cgit.png
