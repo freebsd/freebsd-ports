@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	8.33.1
+PORTVERSION=	8.34.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -123,6 +123,12 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--enable-imdiag --enable-imfile --enable-impstats --enable-mail --enable-omprog --enable-omstdout --enable-omuxsock --enable-rfc3195 --disable-testbench
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200061
+CONFIGURE_ARGS+=	--enable-imuxsock-rfc5424
+.else
+CONFIGURE_ARGS+=	--disable-imuxsock-rfc5424
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
 		${WRKSRC}/tools/syslogd.c
@@ -137,7 +143,7 @@ post-patch:
 post-install-DOCS-on:
 .for SQL in ${PORTDOCS:M*.sql}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${SQL:H}
-	@${INSTALL_DATA} ${WRKSRC}/${SQL} ${STAGEDIR}${DOCSDIR}/${SQL} 
+	${INSTALL_DATA} ${WRKSRC}/${SQL} ${STAGEDIR}${DOCSDIR}/${SQL}
 .endfor
 
 .include <bsd.port.post.mk>

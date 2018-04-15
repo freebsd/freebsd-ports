@@ -1,0 +1,13 @@
+--- config.h.in.orig	2018-04-14 15:52:32 UTC
++++ config.h.in
+@@ -18,6 +18,10 @@
+ /* Indicator that RELP is present */
+ #undef ENABLE_RELP
+ 
++/* Indicator that syslog(3) sends RFC5424 format via the local unix
++   socket, rather than the traditional RFC3164 */
++#undef ENABLE_IMUXSOCK_RFC5424
++
+ /* Regular expressions support enabled. */
+ #undef FEATURE_REGEXP
+ 
