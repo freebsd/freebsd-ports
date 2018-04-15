@@ -8,12 +8,14 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	vanhu@FreeBSD.org
 COMMENT=	KAME racoon IKE daemon, ipsec-tools version
+
+LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	racoon-[0-9]*
 
