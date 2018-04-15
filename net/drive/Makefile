@@ -4,6 +4,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.3.9.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,15 +21,15 @@ PLIST_FILES=	bin/drive
 
 GH_ACCOUNT=	odeke-em
 GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/../src/github.com/boltdb/bolt \
-		cheggaaa:pb:v2.0.4:cheggaaa_pb/../src/github.com/cheggaaa/pb \
-		fatih:color:v1.5.0:fatih_color/../src/github.com/fatih/color \
-		golang:crypto:6914964:golang_crypto/../src/golang.org/x/crypto \
-		golang:net:ab54850:golang_net/../src/golang.org/x/net \
-		golang:oauth2:b53b38a:golang_oauth2/../src/golang.org/x/oauth2 \
-		google:google-api-go-client:295e4bb:google_googleapigoclient/../src/google.golang.org/api \
-		GoogleCloudPlatform:google-cloud-go:v0.10.0:GoogleCloudPlatform_googlecloudgo/../src/cloud.google.com/go \
-		mattn:go-colorable:v0.0.8:mattn_gocolorable/../src/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.2:mattn_goisatty/../src/github.com/mattn/go-isatty \
+		cheggaaa:pb:v2.0.6:cheggaaa_pb/../src/github.com/cheggaaa/pb \
+		fatih:color:v1.6.0:fatih_color/../src/github.com/fatih/color \
+		golang:crypto:d644981:golang_crypto/../src/golang.org/x/crypto \
+		golang:net:61147c4:golang_net/../src/golang.org/x/net \
+		golang:oauth2:921ae39:golang_oauth2/../src/golang.org/x/oauth2 \
+		google:google-api-go-client:dde16f2:google_googleapigoclient/../src/google.golang.org/api \
+		GoogleCloudPlatform:google-cloud-go:v0.21.0:GoogleCloudPlatform_googlecloudgo/../src/cloud.google.com/go \
+		mattn:go-colorable:v0.0.9:mattn_gocolorable/../src/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.3:mattn_goisatty/../src/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.2:mattn_gorunewidth/../src/github.com/mattn/go-runewidth \
 		odeke-em:cache:baf8e43:odekeem_cache/../src/github.com/odeke-em/cache \
 		odeke-em:cli-spinner:610063b:odekeem_clispinner/../src/github.com/odeke-em/cli-spinner \
@@ -44,7 +45,7 @@ GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/../src/github.com/boltdb/bolt \
 		odeke-em:semalim:9c88bf5:odekeem_semalim/../src/github.com/odeke-em/semalim \
 		odeke-em:statos:292960a:odekeem_statos/../src/github.com/odeke-em/statos \
 		skratchdot:open-golang:75fb7ed:skratchdot_opengolang/../src/github.com/skratchdot/open-golang \
-		VividCortex:ewma:v1.1:VividCortex_ewma/../src/github.com/VividCortex/ewma
+		VividCortex:ewma:v1.1.1:VividCortex_ewma/../src/github.com/VividCortex/ewma
 USE_GITHUB=	yes
 
 post-patch:
