@@ -103,9 +103,6 @@ RTCPU_CONFIGURE_ON=	--enable-runtime-cpudetection
 RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 RTMP_CONFIGURE_OFF=	--disable-librtmp
 
-SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:multimedia/schroedinger
-SCHROEDINGER_CONFIGURE_OFF=	--disable-libschroedinger-lavc
-
 SDL_USE=		SDL=sdl
 SDL_LIB_DEPENDS=	libaa.so:graphics/aalib
 SDL_CONFIGURE_OFF=	--disable-sdl

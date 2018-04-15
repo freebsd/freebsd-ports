@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 MPLAYER_PORT_VERSION=	1.3.0
-MPLAYER_SNAPSHOT_DATE=	2017-12-20
+MPLAYER_SNAPSHOT_DATE=	2018-04-13
 MASTER_SITES=	LOCAL/riggs/mplayer
 DISTNAME=	mplayer-${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
 WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
@@ -38,7 +38,6 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-ggiwmh \
 		--disable-liba52 \
 		--disable-libbs2b \
-		--disable-libdirac-lavc \
 		--disable-libilbc \
 		--disable-libnut \
 		--disable-libvorbis \
