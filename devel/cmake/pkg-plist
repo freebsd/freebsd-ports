@@ -173,7 +173,6 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/generator/CodeLite.rst
 %%DATADIR%%/Help/generator/Eclipse CDT4.rst
 %%DATADIR%%/Help/generator/Green Hills MULTI.rst
-%%DATADIR%%/Help/generator/KDevelop3.rst
 %%DATADIR%%/Help/generator/Kate.rst
 %%DATADIR%%/Help/generator/MSYS Makefiles.rst
 %%DATADIR%%/Help/generator/MinGW Makefiles.rst
@@ -289,6 +288,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/ExternalData.rst
 %%DATADIR%%/Help/module/ExternalProject.rst
 %%DATADIR%%/Help/module/FeatureSummary.rst
+%%DATADIR%%/Help/module/FetchContent.rst
 %%DATADIR%%/Help/module/FindALSA.rst
 %%DATADIR%%/Help/module/FindASPELL.rst
 %%DATADIR%%/Help/module/FindAVIFile.rst
@@ -337,6 +337,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/FindICU.rst
 %%DATADIR%%/Help/module/FindITK.rst
 %%DATADIR%%/Help/module/FindIce.rst
+%%DATADIR%%/Help/module/FindIconv.rst
 %%DATADIR%%/Help/module/FindIcotool.rst
 %%DATADIR%%/Help/module/FindImageMagick.rst
 %%DATADIR%%/Help/module/FindIntl.rst
@@ -537,6 +538,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/policy/CMP0069.rst
 %%DATADIR%%/Help/policy/CMP0070.rst
 %%DATADIR%%/Help/policy/CMP0071.rst
+%%DATADIR%%/Help/policy/CMP0072.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -624,10 +626,12 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_sf/COMPILE_DEFINITIONS.rst
 %%DATADIR%%/Help/prop_sf/COMPILE_DEFINITIONS_CONFIG.rst
 %%DATADIR%%/Help/prop_sf/COMPILE_FLAGS.rst
+%%DATADIR%%/Help/prop_sf/COMPILE_OPTIONS.rst
 %%DATADIR%%/Help/prop_sf/EXTERNAL_OBJECT.rst
 %%DATADIR%%/Help/prop_sf/Fortran_FORMAT.rst
 %%DATADIR%%/Help/prop_sf/GENERATED.rst
 %%DATADIR%%/Help/prop_sf/HEADER_FILE_ONLY.rst
+%%DATADIR%%/Help/prop_sf/INCLUDE_DIRECTORIES.rst
 %%DATADIR%%/Help/prop_sf/KEEP_EXTENSION.rst
 %%DATADIR%%/Help/prop_sf/LABELS.rst
 %%DATADIR%%/Help/prop_sf/LANGUAGE.rst
@@ -646,6 +650,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_sf/VS_DEPLOYMENT_LOCATION.rst
 %%DATADIR%%/Help/prop_sf/VS_INCLUDE_IN_VSIX.rst
 %%DATADIR%%/Help/prop_sf/VS_RESOURCE_GENERATOR.rst
+%%DATADIR%%/Help/prop_sf/VS_SHADER_DISABLE_OPTIMIZATIONS.rst
+%%DATADIR%%/Help/prop_sf/VS_SHADER_ENABLE_DEBUG.rst
 %%DATADIR%%/Help/prop_sf/VS_SHADER_ENTRYPOINT.rst
 %%DATADIR%%/Help/prop_sf/VS_SHADER_FLAGS.rst
 %%DATADIR%%/Help/prop_sf/VS_SHADER_MODEL.rst
@@ -703,6 +709,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/ARCHIVE_OUTPUT_NAME.rst
 %%DATADIR%%/Help/prop_tgt/ARCHIVE_OUTPUT_NAME_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/AUTOGEN_BUILD_DIR.rst
+%%DATADIR%%/Help/prop_tgt/AUTOGEN_PARALLEL.rst
 %%DATADIR%%/Help/prop_tgt/AUTOGEN_TARGET_DEPENDS.rst
 %%DATADIR%%/Help/prop_tgt/AUTOMOC.rst
 %%DATADIR%%/Help/prop_tgt/AUTOMOC_COMPILER_PREDEFINES.rst
@@ -769,6 +776,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_CONFIGURATIONS.rst
+%%DATADIR%%/Help/prop_tgt/IMPORTED_GLOBAL.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_IMPLIB.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_IMPLIB_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_LIBNAME.rst
@@ -916,6 +924,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/release/3.0.rst
 %%DATADIR%%/Help/release/3.1.rst
 %%DATADIR%%/Help/release/3.10.rst
+%%DATADIR%%/Help/release/3.11.rst
 %%DATADIR%%/Help/release/3.2.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
@@ -962,6 +971,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_ARGC.rst
 %%DATADIR%%/Help/variable/CMAKE_ARGV0.rst
+%%DATADIR%%/Help/variable/CMAKE_AUTOGEN_PARALLEL.rst
 %%DATADIR%%/Help/variable/CMAKE_AUTOMOC.rst
 %%DATADIR%%/Help/variable/CMAKE_AUTOMOC_COMPILER_PREDEFINES.rst
 %%DATADIR%%/Help/variable/CMAKE_AUTOMOC_DEPEND_FILTERS.rst
@@ -986,6 +996,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_CACHE_PATCH_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_CFG_INTDIR.rst
 %%DATADIR%%/Help/variable/CMAKE_CL_64.rst
+%%DATADIR%%/Help/variable/CMAKE_CODEBLOCKS_COMPILER_ID.rst
 %%DATADIR%%/Help/variable/CMAKE_CODEBLOCKS_EXCLUDE_EXTERNAL_FILES.rst
 %%DATADIR%%/Help/variable/CMAKE_CODELITE_USE_TARGETS.rst
 %%DATADIR%%/Help/variable/CMAKE_COLOR_MAKEFILE.rst
@@ -1003,6 +1014,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_CTEST_COMMAND.rst
 %%DATADIR%%/Help/variable/CMAKE_CUDA_EXTENSIONS.rst
 %%DATADIR%%/Help/variable/CMAKE_CUDA_HOST_COMPILER.rst
+%%DATADIR%%/Help/variable/CMAKE_CUDA_SEPARABLE_COMPILATION.rst
 %%DATADIR%%/Help/variable/CMAKE_CUDA_STANDARD.rst
 %%DATADIR%%/Help/variable/CMAKE_CUDA_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/variable/CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES.rst
@@ -1067,6 +1079,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_Fortran_MODOUT_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_Fortran_MODULE_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_GENERATOR.rst
+%%DATADIR%%/Help/variable/CMAKE_GENERATOR_INSTANCE.rst
 %%DATADIR%%/Help/variable/CMAKE_GENERATOR_PLATFORM.rst
 %%DATADIR%%/Help/variable/CMAKE_GENERATOR_TOOLSET.rst
 %%DATADIR%%/Help/variable/CMAKE_GNUtoMS.rst
@@ -1088,6 +1101,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE.rst
 %%DATADIR%%/Help/variable/CMAKE_INCLUDE_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_INSTALL_DEFAULT_COMPONENT_NAME.rst
+%%DATADIR%%/Help/variable/CMAKE_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.rst
 %%DATADIR%%/Help/variable/CMAKE_INSTALL_MESSAGE.rst
 %%DATADIR%%/Help/variable/CMAKE_INSTALL_NAME_DIR.rst
 %%DATADIR%%/Help/variable/CMAKE_INSTALL_PREFIX.rst
@@ -1098,6 +1112,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION.rst
 %%DATADIR%%/Help/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_IOS_INSTALL_COMBINED.rst
+%%DATADIR%%/Help/variable/CMAKE_JOB_POOLS.rst
 %%DATADIR%%/Help/variable/CMAKE_JOB_POOL_COMPILE.rst
 %%DATADIR%%/Help/variable/CMAKE_JOB_POOL_LINK.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_MACHINE.rst
@@ -1127,6 +1142,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_LANG_CREATE_SHARED_MODULE.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_CREATE_STATIC_LIBRARY.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_CONFIG.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_CONFIG_INIT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_DEBUG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_DEBUG_INIT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_INIT.rst
@@ -1136,6 +1153,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_RELEASE_INIT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO_INIT.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_DEBUG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_MINSIZEREL.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_RELEASE.rst
@@ -1190,6 +1208,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_MODULE_LINKER_FLAGS_INIT.rst
 %%DATADIR%%/Help/variable/CMAKE_MODULE_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_MSVCIDE_RUN_PATH.rst
+%%DATADIR%%/Help/variable/CMAKE_NETRC.rst
+%%DATADIR%%/Help/variable/CMAKE_NETRC_FILE.rst
 %%DATADIR%%/Help/variable/CMAKE_NINJA_OUTPUT_PATH_PREFIX.rst
 %%DATADIR%%/Help/variable/CMAKE_NOT_USING_CONFIG_FLAGS.rst
 %%DATADIR%%/Help/variable/CMAKE_NO_BUILTIN_CHRPATH.rst
@@ -1283,11 +1303,13 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_ATTRIBUTE_an-attribute.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_GENERATE_SCHEME.rst
+%%DATADIR%%/Help/variable/CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY.rst
 %%DATADIR%%/Help/variable/CMAKE_XCODE_PLATFORM_TOOLSET.rst
 %%DATADIR%%/Help/variable/CPACK_ABSOLUTE_DESTINATION_FILES.rst
 %%DATADIR%%/Help/variable/CPACK_COMPONENT_INCLUDE_TOPLEVEL_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CPACK_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION.rst
 %%DATADIR%%/Help/variable/CPACK_INCLUDE_TOPLEVEL_DIRECTORY.rst
+%%DATADIR%%/Help/variable/CPACK_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.rst
 %%DATADIR%%/Help/variable/CPACK_INSTALL_SCRIPT.rst
 %%DATADIR%%/Help/variable/CPACK_PACKAGING_INSTALL_PREFIX.rst
 %%DATADIR%%/Help/variable/CPACK_SET_DESTDIR.rst
@@ -1349,6 +1371,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CTEST_P4_COMMAND.rst
 %%DATADIR%%/Help/variable/CTEST_P4_OPTIONS.rst
 %%DATADIR%%/Help/variable/CTEST_P4_UPDATE_OPTIONS.rst
+%%DATADIR%%/Help/variable/CTEST_RUN_CURRENT_SCRIPT.rst
 %%DATADIR%%/Help/variable/CTEST_SCP_COMMAND.rst
 %%DATADIR%%/Help/variable/CTEST_SITE.rst
 %%DATADIR%%/Help/variable/CTEST_SOURCE_DIRECTORY.rst
@@ -1406,10 +1429,10 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/AddFileDependencies.cmake
 %%DATADIR%%/Modules/AndroidTestUtilities.cmake
 %%DATADIR%%/Modules/AndroidTestUtilities/PushToAndroidDevice.cmake
-%%DATADIR%%/Modules/AutogenInfo.cmake.in
 %%DATADIR%%/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
 %%DATADIR%%/Modules/BasicConfigVersion-ExactVersion.cmake.in
 %%DATADIR%%/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+%%DATADIR%%/Modules/BasicConfigVersion-SameMinorVersion.cmake.in
 %%DATADIR%%/Modules/BundleUtilities.cmake
 %%DATADIR%%/Modules/CMake.cmake
 %%DATADIR%%/Modules/CMakeASM-ATTInformation.cmake
@@ -1473,9 +1496,9 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/CMakeFindEclipseCDT4.cmake
 %%DATADIR%%/Modules/CMakeFindFrameworks.cmake
 %%DATADIR%%/Modules/CMakeFindJavaCommon.cmake
-%%DATADIR%%/Modules/CMakeFindKDevelop3.cmake
 %%DATADIR%%/Modules/CMakeFindKate.cmake
 %%DATADIR%%/Modules/CMakeFindPackageMode.cmake
+%%DATADIR%%/Modules/CMakeFindSublimeText2.cmake
 %%DATADIR%%/Modules/CMakeFindWMake.cmake
 %%DATADIR%%/Modules/CMakeFindXCode.cmake
 %%DATADIR%%/Modules/CMakeForceCompiler.cmake
@@ -1487,6 +1510,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/CMakeGraphVizOptions.cmake
 %%DATADIR%%/Modules/CMakeIOSInstallCombined.cmake
 %%DATADIR%%/Modules/CMakeImportBuildSettings.cmake
+%%DATADIR%%/Modules/CMakeInitializeConfigs.cmake
 %%DATADIR%%/Modules/CMakeJOMFindMake.cmake
 %%DATADIR%%/Modules/CMakeJavaCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeJavaInformation.cmake
@@ -1697,6 +1721,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Compiler/MIPSpro-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MIPSpro-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/MIPSpro-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/MSVC-ASM.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-DetermineCompiler.cmake
@@ -1771,6 +1796,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/ExternalProject.cmake
 %%DATADIR%%/Modules/FLTKCompatibility.cmake
 %%DATADIR%%/Modules/FeatureSummary.cmake
+%%DATADIR%%/Modules/FetchContent.cmake
+%%DATADIR%%/Modules/FetchContent/CMakeLists.cmake.in
 %%DATADIR%%/Modules/FindALSA.cmake
 %%DATADIR%%/Modules/FindASPELL.cmake
 %%DATADIR%%/Modules/FindAVIFile.cmake
@@ -1823,6 +1850,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/FindHg.cmake
 %%DATADIR%%/Modules/FindICU.cmake
 %%DATADIR%%/Modules/FindIce.cmake
+%%DATADIR%%/Modules/FindIconv.cmake
 %%DATADIR%%/Modules/FindIcotool.cmake
 %%DATADIR%%/Modules/FindImageMagick.cmake
 %%DATADIR%%/Modules/FindIntl.cmake
@@ -2206,6 +2234,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero.cmake
+%%DATADIR%%/Modules/Platform/Windows-Flang-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-G95-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-C-ABI.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-C.cmake
