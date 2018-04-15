@@ -1,3 +1,9 @@
 OpenStack Image Service Store Library.
 
+The glance_store library supports the creation, deletion and gather of data
+assets from/to a set of several, different, storage technologies.
+
+This library has been extracted from the Glance source code for the specific use
+of the Glance and Glare projects.
+
 WWW: https://pypi.python.org/pypi/glance_store
