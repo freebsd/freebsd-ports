@@ -1,4 +1,4 @@
---- lib/dbd/pg/database.rb.orig	2018-03-17 05:55:55 UTC
+--- lib/dbd/pg/database.rb.orig	2018-04-15 06:18:20 UTC
 +++ lib/dbd/pg/database.rb
 @@ -48,7 +48,7 @@ class DBI::DBD::Pg::Database < DBI::Base
          hash['tty'] ||= ''
@@ -18,7 +18,33 @@
          raise DBI::OperationalError.new(err.message)
      end
  
-@@ -443,7 +443,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -96,7 +96,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+         else
+             return false
+         end
+-    rescue PGError
++    rescue PG::Error
+         return false
+     ensure
+         answer.clear if answer
+@@ -426,7 +426,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+     def __blob_import(file)
+         start_transaction unless @in_transaction
+         @connection.lo_import(file)
+-    rescue PGError => err
++    rescue PG::Error => err
+         raise DBI::DatabaseError.new(err.message) 
+     end
+ 
+@@ -436,27 +436,27 @@ class DBI::DBD::Pg::Database < DBI::Base
+     def __blob_export(oid, file)
+         start_transaction unless @in_transaction
+         @connection.lo_export(oid.to_i, file)
+-    rescue PGError => err
++    rescue PG::Error => err
+         raise DBI::DatabaseError.new(err.message) 
+     end
+ 
      #
      # Create a BLOB.
      #
@@ -26,8 +52,11 @@
 +    def __blob_create(mode=PG::Connection::INV_READ)
          start_transaction unless @in_transaction
          @connection.lo_creat(mode)
-     rescue PGError => err
-@@ -453,7 +453,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+-    rescue PGError => err
++    rescue PG::Error => err
+         raise DBI::DatabaseError.new(err.message) 
+     end
+ 
      #
      # Open a BLOB.
      #
@@ -35,7 +64,20 @@
 +    def __blob_open(oid, mode=PG::Connection::INV_READ)
          start_transaction unless @in_transaction
          @connection.lo_open(oid.to_i, mode)
-     rescue PGError => err
+-    rescue PGError => err
++    rescue PG::Error => err
+         raise DBI::DatabaseError.new(err.message) 
+     end
+ 
+@@ -466,7 +466,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+     def __blob_unlink(oid)
+         start_transaction unless @in_transaction
+         @connection.lo_unlink(oid.to_i)
+-    rescue PGError => err
++    rescue PG::Error => err
+         raise DBI::DatabaseError.new(err.message) 
+     end
+ 
 @@ -474,7 +474,7 @@ class DBI::DBD::Pg::Database < DBI::Base
      # Read a BLOB and return the data.
      #
@@ -54,7 +96,7 @@
          raise DBI::DatabaseError.new(err.message) 
      end
  
-@@ -494,7 +494,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -494,14 +494,14 @@ class DBI::DBD::Pg::Database < DBI::Base
      #
      def __blob_write(oid, value)
          start_transaction unless @in_transaction
@@ -63,6 +105,14 @@
          res = @connection.lo_write(blob, value)
          # FIXME not sure why PG doesn't like to close here -- seems to be
          # working but we should make sure it's not eating file descriptors
+         # up before release.
+         # @connection.lo_close(blob)
+         return res
+-    rescue PGError => err
++    rescue PG::Error => err
+         raise DBI::DatabaseError.new(err.message)
+     end
+ 
 @@ -510,7 +510,7 @@ class DBI::DBD::Pg::Database < DBI::Base
      #
      def __set_notice_processor(proc)
