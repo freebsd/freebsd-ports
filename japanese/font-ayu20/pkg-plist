@@ -1,10 +1,4 @@
-%%DATADIR%%/10x20gm.pcf.gz
-%%DATADIR%%/10x20gmi.pcf.gz
-%%DATADIR%%/10x20grkm.pcf.gz
-%%DATADIR%%/10x20grkmi.pcf.gz
-%%DATADIR%%/k20gm.pcf.gz
-%%DATADIR%%/k20gmi.pcf.gz
-%%DATADIR%%/fonts.alias
+%%FONTSDIR%%/fonts.alias
 %%FONTSDIR%%/10x20gm.pcf.gz
 %%FONTSDIR%%/10x20gmi.pcf.gz
 %%FONTSDIR%%/10x20grkm.pcf.gz

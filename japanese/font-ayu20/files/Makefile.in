@@ -27,8 +27,8 @@ ${PCF_ALL}: ${.TARGET:S/.pcf.gz/.bdf/}
 	bdftopcf $> | ${GZIP_CMD} -c > $@
 
 install:
-	mkdir -p ${DESTDIR}%%DATADIR%%
-	${BSD_INSTALL_DATA} ${PCF_ALL} ${DESTDIR}%%DATADIR%%
+	mkdir -p ${DESTDIR}%%FONTSDIR%%
+	${BSD_INSTALL_DATA} ${PCF_ALL} ${DESTDIR}%%FONTSDIR%%
 
 clean::
 	rm ${MADE_BOLD} ${MADE_ITALIC} ${PCF_ALL}
