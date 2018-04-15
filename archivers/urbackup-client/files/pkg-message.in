@@ -1,0 +1,25 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+archivers/urbackup-client includes an RC script:
+%%PREFIX%%/etc/rc.d/urbackup_client
+
+TO START URBACKUP CLIENT ON BOOT:
+sysrc urbackup_client_enable=YES
+
+START MANUALLY:
+service urbackup_client start
+
+If the GTK2 GUI was built, it can be launched via:
+%%PREFIX%%/bin/urbackupclientctl
+
+NOTE: For client configuration or to view logs, the GTK2 GUI 
+needs to have one of the following in its PATH:
+	- kdesu (e.g., %%PREFIX%%/lib/kde4/libexec/)
+		(port: x11/kde-runtime)
+	- gksu (e.g., %%PREFIX%%/bin/)
+		(port: sysutils/gksu)
+
+The client can also be configured via the UrBackup Server, or
+%%PREFIX%%/bin/urbackupclientctl
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
