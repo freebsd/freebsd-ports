@@ -1,0 +1,4 @@
+Rly is a lexer and parser generator for Ruby (O RLY?), based on ideas and
+solutions of Python's Ply (in some places it's a total rip off actually).
+
+WWW: https://github.com/farcaller/rly
