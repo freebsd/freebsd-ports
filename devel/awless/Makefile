@@ -1,9 +1,8 @@
-# Created by: Dmitri Goutnik <dg@syrec.org>
 # $FreeBSD$
 
 PORTNAME=	awless
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.9
+DISTVERSION=	0.1.10
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
