@@ -1,8 +1,0 @@
---- build/gyp_chromium.old	2012-05-14 20:42:30.000000000 +0900
-+++ build/gyp_chromium	2012-05-14 22:00:42.000000000 +0900
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!/usr/bin/env python
- 
- # Copyright 2010 Google Inc.
- #

@@ -1,5 +1,0 @@
-@unexec /usr/bin/sed -i '' 's/mod_ssl_with_npn.so/mod_ssl.so/g' %D/%%APACHEETCDIR%%/httpd.conf
-%%APACHEMODDIR%%/mod_spdy.so
-%%APACHEMODDIR%%/mod_ssl_with_npn.so
-%%APACHEETCDIR%%/Includes/mod_spdy.conf
-@exec /usr/bin/sed -i '' -e 's/mod_ssl.so/mod_ssl_with_npn.so/g' %D/%%APACHEETCDIR%%/httpd.conf
