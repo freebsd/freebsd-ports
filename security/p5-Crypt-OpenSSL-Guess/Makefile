@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-Guess
-PORTVERSION=	0.01
+PORTVERSION=	0.11
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-USE_PERL5=	modbuildtiny
+USE_PERL5=	configure
 USES=		perl5
 
 .include <bsd.port.mk>
