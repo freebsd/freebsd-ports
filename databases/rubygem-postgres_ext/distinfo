@@ -1,3 +1,3 @@
-TIMESTAMP = 1463295349
-SHA256 (rubygem/postgres_ext-3.0.0.gem) = ec311a5550a0ad7a26ca9a3d1aaf3cb0a9a4e75fa49d6a3f6c4d055d1c0e77d1
-SIZE (rubygem/postgres_ext-3.0.0.gem) = 21504
+TIMESTAMP = 1523894138
+SHA256 (rubygem/postgres_ext-3.0.1.gem) = b81d084b00f3398d403d7b3277f15dad1562466347d097895a27b0ddbf54215a
+SIZE (rubygem/postgres_ext-3.0.1.gem) = 24064
