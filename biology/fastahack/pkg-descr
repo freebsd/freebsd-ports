@@ -1,0 +1,7 @@
+Fastahack is a small application for indexing and extracting sequences and
+subsequences from FASTA files.  The included Fasta.cpp library provides a FASTA
+reader and indexer that can be embedded into applications which would benefit
+from directly reading subsequences from FASTA files.  The library automatically
+handles index file generation and use.
+
+WWW: https://github.com/ekg/fastahack

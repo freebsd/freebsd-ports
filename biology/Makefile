@@ -26,6 +26,7 @@
     SUBDIR += emboss
     SUBDIR += fasta
     SUBDIR += fasta3
+    SUBDIR += fastahack
     SUBDIR += fastdnaml
     SUBDIR += fastool
     SUBDIR += fastqc
