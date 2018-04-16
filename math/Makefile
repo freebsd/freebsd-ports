@@ -342,6 +342,7 @@
     SUBDIR += msieve
     SUBDIR += mtl
     SUBDIR += mtrxmath
+    SUBDIR += multichoose
     SUBDIR += mumps
     SUBDIR += mumps-edf
     SUBDIR += mumps-mpich
