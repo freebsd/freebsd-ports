@@ -3,6 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -71,13 +72,19 @@ IGNORE=	you cannot enable OCSP stapling with gnutls
 .endif
 .endif
 
-# DMARC implies SPF
+# DMARC implies SPF and DKIM
 .if ${PORT_OPTIONS:MDMARC}
 .if ! ${PORT_OPTIONS:MSPF} || ! ${PORT_OPTIONS:MDKIM}
 IGNORE=	you cannot enable DMARC without SPF and DKIM support
 .endif
 .endif
 
+# ARC implies SPF and DKIM
+.if ${PORT_OPTIONS:MARC}
+.if ! ${PORT_OPTIONS:MSPF} || ! ${PORT_OPTIONS:MDKIM}
+IGNORE=	you cannot enable ARC without SPF and DKIM support
+.endif
+.endif
 # DANE implies DNSSEC
 .if ${PORT_OPTIONS:MDANE}
 .if ! ${PORT_OPTIONS:MDNSSEC} || ! ${PORT_OPTIONS:MTLS}
@@ -208,6 +215,10 @@ SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DSN=),\1,'
 
 .if ${PORT_OPTIONS:MDANE}
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DANE=),\1,'
+.endif
+
+.if ${PORT_OPTIONS:MARC}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_ARC=),\1,'
 .endif
 
 .if !${PORT_OPTIONS:MEVENT}
@@ -460,7 +471,7 @@ SEDLIST+=	-e 's,^(ALT_CONFIG_PREFIX=),\# \1,'
 .if ${PORT_OPTIONS:MSPF}
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,-DSPF,' \
 		-e 's,XX_SPF_LIBS_XX,-L${LOCALBASE}/lib -lspf2 -lpthread,' \
-		-e 's,^\# (EXPERIMENTAL_SPF=),\1,'
+		-e 's,^\# (SUPPORT_SPF=),\1,'
 .else
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
 		-e 's,XX_SPF_LIBS_XX,,'
