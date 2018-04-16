@@ -1,13 +1,13 @@
 # Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	0
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS_INSTALL=	subversion-1.[^9].[0-9]* \
-			subversion1[^9]-1.[^9].[0-9]*
+CONFLICTS_INSTALL=	subversion-1.[0-9].[0-9]* \
+			subversion1[0-9]-1.[0-9].[0-9]*
 
 USE_RC_SUBR=	svnserve
 
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	\
 		TEST		\
 		TOOLS
 
-OPTIONS_DEFAULT=FREEBSD_TEMPLATE \
+OPTIONS_DEFAULT=FREEBSD_TEMPLATE LZ4 \
 		SERF TOOLS
 
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
@@ -80,12 +80,6 @@ BDB_BUILD_DEPENDS=	yes
 OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/!:C!(\.so|\.[0-9]+)?:!.a:!}
 BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
 LIB_DEPENDS=
-.endif
-
-.if ${PORT_OPTIONS:MBDB}
-CONFIGURE_ARGS+=	--enable-bdb6
-.else
-CONFIGURE_ARGS+=	--without-berkeley-db
 .endif
 
 .if make(repository)
@@ -230,7 +224,6 @@ _mkrepos:	.USE
 .endif
 
 svn-build-outputs-hack:
-	(cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} -p0 < ${PATCHDIR}/extra-patch-build.conf)
 	(cd ${WRKSRC} && python2 gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_fs_x,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
 	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk.addons
 

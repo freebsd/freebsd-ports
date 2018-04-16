@@ -3,7 +3,7 @@
 
 PKGNAMEPREFIX=	java-
 CATEGORIES=	java
-PORTREVISION=	2
+PORTREVISION=	0
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Java bindings for Version control system
