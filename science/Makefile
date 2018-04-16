@@ -53,6 +53,7 @@
     SUBDIR += fastcap
     SUBDIR += fasthenry
     SUBDIR += fisicalab
+    SUBDIR += fsom
     SUBDIR += fvcom
     SUBDIR += fvcom-mpi
     SUBDIR += fvm
