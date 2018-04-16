@@ -34,13 +34,13 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.0a0.2018.04.06
+ISCVERSION=	9.13.0a0.2018.04.13
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	76fa1c181c6fc5ea8e7b52186bfaab6edd6b49bb
+GL_COMMIT=	293d9132d736e2ed8abb4595a4a9cef178beaee9
 
 # XXX: remove tar:bz2
 USES=	cpe libedit tar:bz2
