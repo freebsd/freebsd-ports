@@ -17,10 +17,10 @@ bin/llvm-dis-devel
 bin/llvm-dlltool-devel
 bin/llvm-dwarfdump-devel
 bin/llvm-dwp-devel
+bin/llvm-exegesis-devel
 bin/llvm-extract-devel
 bin/llvm-link-devel
 bin/llvm-mc-devel
-bin/llvm-mcmarkup-devel
 bin/llvm-modextract-devel
 bin/llvm-mt-devel
 bin/llvm-nm-devel
@@ -149,6 +149,7 @@ llvm-devel/bin/llvm-dis
 llvm-devel/bin/llvm-dlltool
 llvm-devel/bin/llvm-dwarfdump
 llvm-devel/bin/llvm-dwp
+llvm-devel/bin/llvm-exegesis
 llvm-devel/bin/llvm-extract
 llvm-devel/bin/llvm-lib
 llvm-devel/bin/llvm-link
@@ -156,7 +157,6 @@ llvm-devel/bin/llvm-lto
 llvm-devel/bin/llvm-lto2
 llvm-devel/bin/llvm-mc
 llvm-devel/bin/llvm-mca
-llvm-devel/bin/llvm-mcmarkup
 llvm-devel/bin/llvm-modextract
 llvm-devel/bin/llvm-mt
 llvm-devel/bin/llvm-nm
@@ -442,6 +442,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/VirtualFileSystem.h
 %%CLANG%%llvm-devel/include/clang/Basic/Visibility.h
 %%CLANG%%llvm-devel/include/clang/Basic/X86Target.def
+%%CLANG%%llvm-devel/include/clang/Basic/XRayInstr.h
 %%CLANG%%llvm-devel/include/clang/Basic/XRayLists.h
 %%CLANG%%llvm-devel/include/clang/Basic/arm_fp16.inc
 %%CLANG%%llvm-devel/include/clang/Basic/arm_neon.inc
@@ -1032,6 +1033,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Interpreter/CommandObjectRegexCommand.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/CommandOptionValidators.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/CommandReturnObject.h
+%%LLDB%%llvm-devel/include/lldb/Interpreter/OptionArgParser.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupArchitecture.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupBoolean.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupFile.h
@@ -1245,6 +1247,7 @@ llvm-devel/include/llvm-c/Core.h
 llvm-devel/include/llvm-c/DataTypes.h
 llvm-devel/include/llvm-c/DebugInfo.h
 llvm-devel/include/llvm-c/Disassembler.h
+llvm-devel/include/llvm-c/DisassemblerTypes.h
 llvm-devel/include/llvm-c/ErrorHandling.h
 llvm-devel/include/llvm-c/ExecutionEngine.h
 llvm-devel/include/llvm-c/IRReader.h
@@ -1259,6 +1262,7 @@ llvm-devel/include/llvm-c/TargetMachine.h
 llvm-devel/include/llvm-c/Transforms/IPO.h
 llvm-devel/include/llvm-c/Transforms/PassManagerBuilder.h
 llvm-devel/include/llvm-c/Transforms/Scalar.h
+llvm-devel/include/llvm-c/Transforms/Utils.h
 llvm-devel/include/llvm-c/Transforms/Vectorize.h
 llvm-devel/include/llvm-c/Types.h
 llvm-devel/include/llvm-c/lto.h
@@ -1474,7 +1478,7 @@ llvm-devel/include/llvm/CodeGen/AtomicExpandUtils.h
 llvm-devel/include/llvm/CodeGen/BasicTTIImpl.h
 llvm-devel/include/llvm/CodeGen/CalcSpillWeights.h
 llvm-devel/include/llvm/CodeGen/CallingConvLower.h
-llvm-devel/include/llvm/CodeGen/CommandFlags.def
+llvm-devel/include/llvm/CodeGen/CommandFlags.inc
 llvm-devel/include/llvm/CodeGen/CostTable.h
 llvm-devel/include/llvm/CodeGen/DAGCombine.h
 llvm-devel/include/llvm/CodeGen/DFAPacketizer.h
@@ -1495,6 +1499,7 @@ llvm-devel/include/llvm/CodeGen/GlobalISel/CallLowering.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/Combiner.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/CombinerHelper.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/CombinerInfo.h
+llvm-devel/include/llvm/CodeGen/GlobalISel/ConstantFoldingMIRBuilder.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/GISelWorkList.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/IRTranslator.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/InstructionSelect.h
@@ -1611,6 +1616,7 @@ llvm-devel/include/llvm/CodeGen/TargetRegisterInfo.h
 llvm-devel/include/llvm/CodeGen/TargetSchedule.h
 llvm-devel/include/llvm/CodeGen/TargetSubtargetInfo.h
 llvm-devel/include/llvm/CodeGen/UnreachableBlockElim.h
+llvm-devel/include/llvm/CodeGen/ValueTypes.h
 llvm-devel/include/llvm/CodeGen/ValueTypes.td
 llvm-devel/include/llvm/CodeGen/VirtRegMap.h
 llvm-devel/include/llvm/CodeGen/WinEHFuncInfo.h
@@ -1962,7 +1968,6 @@ llvm-devel/include/llvm/IR/Value.h
 llvm-devel/include/llvm/IR/ValueHandle.h
 llvm-devel/include/llvm/IR/ValueMap.h
 llvm-devel/include/llvm/IR/ValueSymbolTable.h
-llvm-devel/include/llvm/IR/ValueTypes.h
 llvm-devel/include/llvm/IR/Verifier.h
 llvm-devel/include/llvm/IRReader/IRReader.h
 llvm-devel/include/llvm/InitializePasses.h
@@ -2043,7 +2048,7 @@ llvm-devel/include/llvm/MC/MCSymbolELF.h
 llvm-devel/include/llvm/MC/MCSymbolMachO.h
 llvm-devel/include/llvm/MC/MCSymbolWasm.h
 llvm-devel/include/llvm/MC/MCTargetOptions.h
-llvm-devel/include/llvm/MC/MCTargetOptionsCommandFlags.def
+llvm-devel/include/llvm/MC/MCTargetOptionsCommandFlags.inc
 llvm-devel/include/llvm/MC/MCValue.h
 llvm-devel/include/llvm/MC/MCWasmObjectWriter.h
 llvm-devel/include/llvm/MC/MCWasmStreamer.h
@@ -2104,6 +2109,7 @@ llvm-devel/include/llvm/PassInfo.h
 llvm-devel/include/llvm/PassRegistry.h
 llvm-devel/include/llvm/PassSupport.h
 llvm-devel/include/llvm/Passes/PassBuilder.h
+llvm-devel/include/llvm/Passes/PassPlugin.h
 llvm-devel/include/llvm/ProfileData/Coverage/CoverageMapping.h
 llvm-devel/include/llvm/ProfileData/Coverage/CoverageMappingReader.h
 llvm-devel/include/llvm/ProfileData/Coverage/CoverageMappingWriter.h
@@ -2182,6 +2188,7 @@ llvm-devel/include/llvm/Support/GenericDomTreeConstruction.h
 llvm-devel/include/llvm/Support/GlobPattern.h
 llvm-devel/include/llvm/Support/GraphWriter.h
 llvm-devel/include/llvm/Support/Host.h
+llvm-devel/include/llvm/Support/InitLLVM.h
 llvm-devel/include/llvm/Support/JamCRC.h
 llvm-devel/include/llvm/Support/KnownBits.h
 llvm-devel/include/llvm/Support/LEB128.h
@@ -2376,6 +2383,7 @@ llvm-devel/include/llvm/Transforms/Scalar/Sink.h
 llvm-devel/include/llvm/Transforms/Scalar/SpeculateAroundPHIs.h
 llvm-devel/include/llvm/Transforms/Scalar/SpeculativeExecution.h
 llvm-devel/include/llvm/Transforms/Scalar/TailRecursionElimination.h
+llvm-devel/include/llvm/Transforms/Utils.h
 llvm-devel/include/llvm/Transforms/Utils/ASanStackFrameLayout.h
 llvm-devel/include/llvm/Transforms/Utils/AddDiscriminators.h
 llvm-devel/include/llvm/Transforms/Utils/BasicBlockUtils.h
@@ -2396,6 +2404,7 @@ llvm-devel/include/llvm/Transforms/Utils/ImportedFunctionsInliningStatistics.h
 llvm-devel/include/llvm/Transforms/Utils/IntegerDivision.h
 llvm-devel/include/llvm/Transforms/Utils/LCSSA.h
 llvm-devel/include/llvm/Transforms/Utils/LibCallsShrinkWrap.h
+llvm-devel/include/llvm/Transforms/Utils/LoopRotationUtils.h
 llvm-devel/include/llvm/Transforms/Utils/LoopSimplify.h
 llvm-devel/include/llvm/Transforms/Utils/LoopUtils.h
 llvm-devel/include/llvm/Transforms/Utils/LoopVersioning.h
@@ -2408,6 +2417,7 @@ llvm-devel/include/llvm/Transforms/Utils/OrderedInstructions.h
 llvm-devel/include/llvm/Transforms/Utils/PredicateInfo.h
 llvm-devel/include/llvm/Transforms/Utils/PromoteMemToReg.h
 llvm-devel/include/llvm/Transforms/Utils/SSAUpdater.h
+llvm-devel/include/llvm/Transforms/Utils/SSAUpdaterBulk.h
 llvm-devel/include/llvm/Transforms/Utils/SSAUpdaterImpl.h
 llvm-devel/include/llvm/Transforms/Utils/SanitizerStats.h
 llvm-devel/include/llvm/Transforms/Utils/SimplifyIndVar.h
@@ -2496,6 +2506,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/bmi2intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/bmiintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/cetintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/cldemoteintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/clflushoptintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/clwbintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/clzerointrin.h
@@ -2555,6 +2566,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/varargs.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/vecintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/vpclmulqdqintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/wbnoinvdintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/wmmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/x86intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/xmmintrin.h
@@ -2577,6 +2589,7 @@ llvm-devel/lib/cmake/llvm/CheckLinkerFlag.cmake
 llvm-devel/lib/cmake/llvm/ChooseMSVCCRT.cmake
 llvm-devel/lib/cmake/llvm/CrossCompile.cmake
 llvm-devel/lib/cmake/llvm/DetermineGCCCompatible.cmake
+llvm-devel/lib/cmake/llvm/FindLibpfm.cmake
 llvm-devel/lib/cmake/llvm/FindOCaml.cmake
 llvm-devel/lib/cmake/llvm/FindSphinx.cmake
 llvm-devel/lib/cmake/llvm/GenerateVersionFromCVS.cmake
@@ -2731,10 +2744,9 @@ llvm-devel/lib/libLLVMXCoreInfo.a
 llvm-devel/lib/libLLVMXRay.a
 llvm-devel/lib/libLLVMipo.a
 llvm-devel/lib/libLTO.so
-llvm-devel/lib/libLTO.so.%%LLVM_LIB_VER%%
-llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
+llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%
+llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%svn
 %%CLANG%%llvm-devel/lib/libclang.so
-%%CLANG%%llvm-devel/lib/libclang.so.%%LLVM_LIB_VER%%
 %%CLANG%%llvm-devel/lib/libclang.so.%%LLVM_MAJOR%%
 %%CLANG%%llvm-devel/lib/libclangARCMigrate.a
 %%CLANG%%llvm-devel/lib/libclangAST.a
@@ -2808,7 +2820,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%LLD%%llvm-devel/lib/liblldWasm.a
 %%LLD%%llvm-devel/lib/liblldYAML.a
 %%LLDB%%llvm-devel/lib/liblldb.so
-%%LLDB%%llvm-devel/lib/liblldb.so.%%LLVM_LIB_VER%%
+%%LLDB%%llvm-devel/lib/liblldb.so.%%LLVM_MAJOR%%
 %%LLDB%%llvm-devel/lib/liblldb.so.%%LLVM_RELEASE%%
 %%LLDB%%llvm-devel/lib/liblldbBase.a
 %%LLDB%%llvm-devel/lib/liblldbBreakpoint.a
