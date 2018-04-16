@@ -25,6 +25,8 @@ PLIST_FILES=	bin/lolcat \
 post-build:
 	@${REINPLACE_CMD} -e 's|man/lolcat.6|&.gz|' ${WRKSRC}/${GEMSPEC}
 
+# compress the manpage manually instead of MANDIRS because of the order in
+# _STAGE_SEQ: 820:gem-autoplist 850:compress-man
 post-install:
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/man/lolcat.6
 
