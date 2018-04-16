@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smenu
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -15,6 +15,7 @@ USES=	localbase ncurses:port
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-gen
+GH_TAGNAME=	0ff0326
 
 GNU_CONFIGURE=	yes
 
