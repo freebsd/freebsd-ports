@@ -1,0 +1,16 @@
+Compare version strings:
+
+This function compares strings S1 and S2:
+
+    By PREFIX in the same way as strcmp.
+
+    Then by VERSION (most similarly to version compare of Debian's dpkg).
+    Leading zeros in version numbers are ignored.
+
+    If both (PREFIX and VERSION) are equal, strcmp function is used for
+    comparison. So this function can return 0 if (and only if) strings S1 and
+    S2 are identical.
+
+It returns number >0 for S1 > S2, 0 for S1 == S2 and number <0 for S1 < S2.
+
+WWW: https://github.com/ekg/filevercmp
