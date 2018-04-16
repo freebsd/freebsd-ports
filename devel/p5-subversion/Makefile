@@ -33,9 +33,6 @@ CONFIGURE_ARGS+=	--without-gnome-keyring \
 ALL_TARGET=	swig-pl-lib swig-pl
 INSTALL_TARGET=	install-swig-pl
 
-#CPPFLAGS+=	-I${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE \
-#		-Isubversion/bindings/swig/proxy
-
 pre-install:
 	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile
 
