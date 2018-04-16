@@ -2,25 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	pam_pwdfile
-PORTVERSION=	0.99
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	http://cpbotha.net/files/pam_pwdfile/
 
-MAINTAINER=	mschout@gkg.net
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Pam module for authenticating with flat passwd files
+
+USE_GITHUB=     yes
+GH_ACCOUNT=     tiwe-de
+GH_PROJECT=	libpam-pwdfile
+GH_TAGNAME=	v${PORTVERSION}
 
 USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 PLIST_FILES=	lib/pam_pwdfile.so
-PORTDOCS=	README INSTALL changelog
+PORTDOCS=	README INSTALL
 CFLAGS+=	-I${WRKSRC}
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|#include <features.h>||g' ${WRKSRC}/pam_pwdfile.c
+#	${REINPLACE_CMD} -e 's|#include <features.h>||g' ${WRKSRC}/pam_pwdfile.c
 	${CP} ${FILESDIR}/_pam_macros.h ${WRKSRC}
 
 post-install:
