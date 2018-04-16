@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	canonicaljson
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Canonical JSON
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frozendict>=0.4:devel/py-frozendict@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frozendict>=1.0:devel/py-frozendict@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.6.5:devel/py-simplejson@${FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR}
 
