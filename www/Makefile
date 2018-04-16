@@ -463,7 +463,6 @@
     SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_uwsgi
     SUBDIR += mod_proxy_xml
-    SUBDIR += mod_python33
     SUBDIR += mod_python35
     SUBDIR += mod_qos
     SUBDIR += mod_realdoc
