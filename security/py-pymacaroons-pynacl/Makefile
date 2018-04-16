@@ -8,7 +8,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	security devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Macaroon library for Python
 
 LICENSE=	MIT
