@@ -1,0 +1,6 @@
+FSOM is a tiny C library for managing SOM (Self-Organizing Maps) neural
+networks, a type of artificial neural network (ANN) that is trained using
+unsupervised learning to produce a low-dimensional (typically two-dimensional),
+discretized representation of the input space of the training samples.
+
+WWW: https://github.com/ekg/fsom
