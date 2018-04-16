@@ -12,13 +12,11 @@ DISTNAME=	spectools-2011-08-R1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL
 
-USES=		gmake ncurses pkgconfig
+USES=		gmake localbase:ldflags ncurses pkgconfig
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	spectool_net spectool_raw
 
 PORTDOCS=	README
@@ -51,7 +49,7 @@ do-install-NCURSES-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/spectool_curses ${STAGEDIR}/${PREFIX}/bin
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>
