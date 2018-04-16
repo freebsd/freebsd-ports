@@ -56,6 +56,7 @@ APXS?=		${LOCALBASE}/sbin/apxs
 SUB_FILES=	pkg-message resin3ctl
 USE_RC_SUBR=	resin3
 NO_ARCH=	yes
+APACHE22_BROKEN=The Apache 2.2 port has been deleted
 
 .include <bsd.port.options.mk>
 
