@@ -2,7 +2,7 @@
 
 PORTNAME=	intervaltree
 DISTVERSION=	g20151213
-CATEGORIES=	wip math
+CATEGORIES=	math
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Minimal C++ interval tree implementation
