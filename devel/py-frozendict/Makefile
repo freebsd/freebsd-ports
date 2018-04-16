@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	frozendict
-PORTVERSION=	0.5
+PORTVERSION=	1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Immutable dictionary implementation for Python
 
 LICENSE=	MIT
