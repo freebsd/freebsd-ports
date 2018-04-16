@@ -3,17 +3,17 @@
 
 PORTNAME=	pam_pwdfile
 PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Pam module for authenticating with flat passwd files
 
+USES=		uidfix
 USE_GITHUB=     yes
 GH_ACCOUNT=     tiwe-de
 GH_PROJECT=	libpam-pwdfile
-GH_TAGNAME=	v${PORTVERSION}
 
-USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 PLIST_FILES=	lib/pam_pwdfile.so
