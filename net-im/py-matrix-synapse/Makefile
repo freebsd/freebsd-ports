@@ -3,7 +3,7 @@
 
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.2
+DISTVERSION=	0.27.4
 PORTREVISION=	0
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}frozendict>=0.5:devel/py-frozendict@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unpaddedbase64>=1.1.0:devel/py-unpaddedbase64@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}canonicaljson>=1.0.0:devel/py-canonicaljson@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}canonicaljson>=1.1.3:devel/py-canonicaljson@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}signedjson>=1.0.0:security/py-signedjson@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pynacl>=1.2.1:security/py-pynacl@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0:security/py-service_identity@${FLAVOR} \
