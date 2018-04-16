@@ -1,20 +1,29 @@
---- deps/hiredis/Makefile.orig	2014-07-29 12:17:48.000000000 +0400
-+++ deps/hiredis/Makefile	2014-09-10 02:32:25.000000000 +0400
-@@ -25,10 +25,10 @@
+--- deps/hiredis/Makefile.orig	2017-05-01 19:46:31.733229000 -0400
++++ deps/hiredis/Makefile	2017-05-01 19:48:37.150358000 -0400
+@@ -15,7 +15,7 @@
+ HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
  
+ # Installation related variables and target
+-PREFIX?=/usr/local
++PREFIX?=${PREFIX}
+ INCLUDE_PATH?=include/hiredis
+ LIBRARY_PATH?=lib
+ PKGCONF_PATH?=pkgconfig
+@@ -38,10 +38,10 @@
  # Fallback to gcc when $CC is not in $PATH.
  CC:=$(shell sh -c 'type $(CC) >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
+ CXX:=$(shell sh -c 'type $(CXX) >/dev/null 2>/dev/null && echo $(CXX) || echo g++')
 -OPTIMIZATION?=-O3
 +#OPTIMIZATION?=-O3
  WARNINGS=-Wall -W -Wstrict-prototypes -Wwrite-strings
--DEBUG?= -g -ggdb
--REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG) $(ARCH)
-+#DEBUG?= -g -ggdb
-+REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG)
+-DEBUG_FLAGS?= -g -ggdb
+-REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(ARCH)
++#DEBUG_FLAGS?= -g -ggdb
++REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS)
  REAL_LDFLAGS=$(LDFLAGS) $(ARCH)
  
  DYLIBSUFFIX=so
-@@ -47,6 +47,15 @@
+@@ -60,6 +60,15 @@
    DYLIB_MAKE_CMD=$(CC) -G -o $(DYLIBNAME) -h $(DYLIB_MINOR_NAME) $(LDFLAGS)
    INSTALL= cp -r
  endif
@@ -29,13 +38,4 @@
 +endif
  ifeq ($(uname_S),Darwin)
    DYLIBSUFFIX=dylib
-   DYLIB_MINOR_NAME=$(LIBNAME).$(HIREDIS_MAJOR).$(HIREDIS_MINOR).$(DYLIBSUFFIX)
-@@ -124,7 +133,7 @@
- 	$(CC) -MM *.c
- 
- # Installation related variables and target
--PREFIX?=/usr/local
-+PREFIX?=${PREFIX}
- INSTALL_INCLUDE_PATH= $(PREFIX)/include/hiredis
- INSTALL_LIBRARY_PATH= $(PREFIX)/lib
- 
+   DYLIB_MINOR_NAME=$(LIBNAME).$(HIREDIS_SONAME).$(DYLIBSUFFIX)
