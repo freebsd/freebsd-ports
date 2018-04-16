@@ -3,7 +3,7 @@
 
 PORTNAME=	postgrey
 PORTVERSION=	1.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
@@ -30,21 +30,21 @@ NO_BUILD=	yes
 POD2MAN?=	pod2man
 PORTDOCS=	README Changes README.exim
 
-PG_DBDIR?=	/var/db/postgrey
-PG_GROUP?=	postgrey
-PG_RUNDIR?=	/var/run/postgrey
-PG_USER?=	postgrey
+POSTGREY_DBDIR?=	/var/db/postgrey
+POSTGREY_GROUP?=	postgrey
+POSTGREY_RUNDIR?=	/var/run/postgrey
+POSTGREY_USER?=		postgrey
 
-SUB_LIST=	PG_DBDIR=${PG_DBDIR} \
-		PG_RUNDIR=${PG_RUNDIR}
+SUB_LIST=	POSTGREY_DBDIR=${POSTGREY_DBDIR} \
+		POSTGREY_RUNDIR=${POSTGREY_RUNDIR}
 
-PLIST_SUB+=	PG_DBDIR=${PG_DBDIR} \
-		PG_GROUP=${PG_GROUP} \
-		PG_RUNDIR=${PG_RUNDIR} \
-		PG_USER=${PG_USER}
+PLIST_SUB+=	POSTGREY_DBDIR=${POSTGREY_DBDIR} \
+		POSTGREY_GROUP=${POSTGREY_GROUP} \
+		POSTGREY_RUNDIR=${POSTGREY_RUNDIR} \
+		POSTGREY_USER=${POSTGREY_USER}
 
-USERS=		${PG_USER}
-GROUPS=		${PG_GROUP}
+USERS=		${POSTGREY_USER}
+GROUPS=		${POSTGREY_GROUP}
 
 MANPAGES=	postgrey.1 policy-test.1 postgreyreport.1
 ETCFILES=	whitelist_clients whitelist_recipients
@@ -54,11 +54,11 @@ SHEBANG_FILES=	postgrey policy-test contrib/postgreyreport
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#nogroup#${PG_GROUP}#' \
+	@${REINPLACE_CMD} -e 's#nogroup#${POSTGREY_GROUP}#' \
 		-e 's#/etc/main.cf#/etc/postfix/main.cf#' ${WRKSRC}/postgrey
 	@${REINPLACE_CMD} -e 's#/etc/postfix#${PREFIX}&#' \
 		${WRKSRC}/postgrey ${WRKSRC}/postgrey_whitelist_*
-	@${REINPLACE_CMD} -e 's#/var/spool/postfix/postgrey#${PG_DBDIR}#' \
+	@${REINPLACE_CMD} -e 's#/var/spool/postfix/postgrey#${POSTGREY_DBDIR}#' \
 		${WRKSRC}/postgrey ${WRKSRC}/contrib/postgreyreport
 
 do-install:
@@ -69,8 +69,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/policy-test ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/postgreyreport \
 		${STAGEDIR}${PREFIX}/sbin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/postfix ${STAGEDIR}${PG_DBDIR} \
-		${STAGEDIR}${PG_RUNDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/postfix ${STAGEDIR}${POSTGREY_DBDIR} \
+		${STAGEDIR}${POSTGREY_RUNDIR}
 .for i in ${ETCFILES}
 	${INSTALL_DATA} ${WRKSRC}/postgrey_${i} \
 		${STAGEDIR}${PREFIX}/etc/postfix/postgrey_${i}.sample

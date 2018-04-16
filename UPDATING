@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180416:
+  AFFECTS: users of mail/postgrey
+  AUTHOR: ports.maintainer@evilphi.com
+
+  If you use any of the optional make.conf variables to specify the
+  postgrey user, group, db dir, or run dir when building the port, you will
+  need to change the prefix from PG_ to POSTGREY_*.  The variables were
+  renamed to solve a namespace collision with the PostgreSQL ports.
+
 20180412:
   AFFECTS: users of devel/php-composer
   AUTHOT: madpilot@FreeBSD.org
