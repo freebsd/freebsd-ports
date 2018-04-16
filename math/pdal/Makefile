@@ -3,7 +3,7 @@
 
 PORTNAME=	pdal
 DISTVERSION=	1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math databases graphics
 
 MAINTAINER=	lbartoletti@tuxfamily.org
