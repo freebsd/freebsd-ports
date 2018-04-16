@@ -1,0 +1,6 @@
+Efficient loopless multiset combination generation algorithm which is
+(approximately) described in "Loopless algorithms for generating permutations,
+combinations, and other combinatorial configurations." G Ehrlich - Journal of
+the ACM (JACM), 1973. (Algorithm 7.)
+
+WWW: https://github.com/ekg/multichoose
