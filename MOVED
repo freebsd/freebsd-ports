@@ -10172,3 +10172,4 @@ www/mod_vhost_ldap||2018-04-16|Removed
 www/mod_whatkilledus||2018-04-16|Removed
 www/mod_xml2enc||2018-04-16|Removed
 www/apache22||2018-04-16|Has expired: Upstream propose EoL of apache 2.2.x during the next 12 months
+www/mod_python33||2018-04-16|Removed
