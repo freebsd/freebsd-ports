@@ -323,6 +323,7 @@
     SUBDIR += fileprune
     SUBDIR += fileschanged
     SUBDIR += filetype
+    SUBDIR += filevercmp
     SUBDIR += filewatcherd
     SUBDIR += finfo
     SUBDIR += firstboot-freebsd-update
