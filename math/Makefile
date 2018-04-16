@@ -143,6 +143,7 @@
     SUBDIR += ccmath
     SUBDIR += ceres-solver
     SUBDIR += cgal
+    SUBDIR += cgl
     SUBDIR += chaco
     SUBDIR += chryzodus
     SUBDIR += clasp
