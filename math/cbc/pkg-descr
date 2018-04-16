@@ -1,0 +1,8 @@
+Cbc (Coin-or branch and cut) is an open-source mixed integer programming solver
+written in C++. It can be used as a callable library or using a stand-alone
+executable. It can be called through AMPL (natively), GAMS (using the links
+provided by the Optimization Services and GAMSlinks projects), MPL (through the
+CoinMP project), AIMMS (through the AIMMSlinks project), PuLP, CMPL, OpenSolver
+for Excel, JuMP, or MiniZinc.
+
+WWW: https://projects.coin-or.org/Cbc
