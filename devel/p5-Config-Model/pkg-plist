@@ -49,6 +49,7 @@
 %%SITE_PERL%%/Config/Model/WarpedNode.pm
 %%SITE_PERL%%/Config/Model/Warper.pm
 %%SITE_PERL%%/Config/Model/application.d/multistrap
+%%SITE_PERL%%/Config/Model/log4perl.conf
 %%SITE_PERL%%/Config/Model/models/Fstab.pl
 %%SITE_PERL%%/Config/Model/models/Fstab.pod
 %%SITE_PERL%%/Config/Model/models/Fstab/CommonOptions.pl
