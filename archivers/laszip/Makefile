@@ -2,22 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	laszip
-PORTVERSION=	2.1.0
+PORTVERSION=	3.2.2
 CATEGORIES=	archivers
-MASTER_SITES=	http://download.osgeo.org/laszip/
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Library for lossless LAS compression
 
-LICENSE=	LGPL3
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
 
-CMAKE_DEFS+=	-DCMAKE_USE_PTHREADS:BOOL=ON
+USE_GITHUB=	yes
+GH_PROJECT=	LASzip
 
-post-install:
-	@${LN} -s liblaszip.so.5.0.0 ${STAGEDIR}${PREFIX}/lib/liblaszip.so.5
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
