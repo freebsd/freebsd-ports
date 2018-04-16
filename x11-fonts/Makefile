@@ -164,6 +164,7 @@
     SUBDIR += paratype
     SUBDIR += pcf2bdf
     SUBDIR += pingwi
+    SUBDIR += plex-ttf
     SUBDIR += powerline-fonts
     SUBDIR += profont
     SUBDIR += proggy_fonts
