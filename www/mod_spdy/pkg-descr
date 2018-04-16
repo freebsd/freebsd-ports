@@ -1,6 +1,0 @@
-mod_spdy is an Apache 2.x filter module that provides SPDY support in the
-Apache HTTPD web server. Because mod_spdy is an Apache module, it can be
-loaded into currently deployed Apache HTTPD 2.x web servers using mod_so.
-
-
-WWW: https://developers.google.com/speed/spdy/mod_spdy/

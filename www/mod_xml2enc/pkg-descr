@@ -1,7 +1,0 @@
-mod_xml2enc is a transcoding module that can be used to extend the
-internationalisation support of libxml2-based filter modules by
-converting encoding before and/or after the filter has run.
-Thus an unsupported input charset can be converted to UTF-8,
-and output can also be converted to another charset if required.
-
-WWW: http://apache.webthing.com/mod_xml2enc/

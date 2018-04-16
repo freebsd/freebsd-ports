@@ -1,6 +1,0 @@
-This module provides the mod_auth_basic authentication front-end a way to
-authenticate users by checking credentials via the Cyrus SASL library.
-This may be interesting for setups where other daemons (e.g. for SMTP, IMAP or
-LDAP) already running at a machine use SASL to authenticate users.
-
-WWW: http://mod-authn-sasl.sourceforge.net/
