@@ -7,5 +7,5 @@ sbin/postgrey
 sbin/policy-test
 sbin/postgreyreport
 @dir etc/postfix
-@dir(%%PG_USER%%,%%PG_GROUP%%,750) %%PG_DBDIR%%
-@dir(%%PG_USER%%,%%PG_GROUP%%,750) %%PG_RUNDIR%%
+@dir(%%POSTGREY_USER%%,%%POSTGREY_GROUP%%,750) %%POSTGREY_DBDIR%%
+@dir(%%POSTGREY_USER%%,%%POSTGREY_GROUP%%,750) %%POSTGREY_RUNDIR%%
