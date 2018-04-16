@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imdbpy
-PORTVERSION=	6.4.1
+PORTVERSION=	6.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		SF/${PORTNAME}/IMDbPY/${PORTVERSION}
@@ -12,24 +12,24 @@ DISTNAME=	IMDbPY-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Retrieve and manage the data of the IMDb movie database
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${FLAVOR}
 
-OPTIONS_DEFINE=	DOCS SQLALCHEMY
-OPTIONS_DEFAULT=SQLALCHEMY
-SQLALCHEMY_DESC=SQLAlchemy support
+OPTIONS_DEFINE=	DOCS
+OPTIONS_RADIO=	SQLALCHEMY
+OPTIONS_RADIO_SQLALCHEMY=	SQLALCHEMY11 SQLALCHEMY12
+SQLALCHEMY11_DESC=	Use SQLAlchemy 1.1.x as backend
+SQLALCHEMY12_DESC=	Use SQLAlchemy 1.2.x as backend
 
 NO_ARCH=	yes
 USES=		python shebangfix
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	docs/goodies/download_applydiffs.py \
 		docs/goodies/reduce.sh
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
-SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>=0:databases/py-sqlalchemy11@${FLAVOR}
+SQLALCHEMY11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>=0:databases/py-sqlalchemy11@${FLAVOR}
+SQLALCHEMY12_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy12>=0:databases/py-sqlalchemy12@${FLAVOR}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
