@@ -2,7 +2,7 @@
 
 PORTNAME=	libcint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.10
+DISTVERSION=	3.0.11
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,6 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/cint.h \
 		lib/libcint.so \
-		lib/libcint.so.3.0.6
+		lib/libcint.so.3.0.11
 
 .include <bsd.port.mk>
