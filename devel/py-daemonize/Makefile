@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enables code to run as a daemon process on Unix-like systems
 
 LICENSE=	MIT

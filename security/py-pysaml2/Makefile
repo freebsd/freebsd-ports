@@ -8,7 +8,7 @@ CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python implementation of SAML Version 2
 
 LICENSE=	APACHE20

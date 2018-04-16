@@ -7,7 +7,7 @@ CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SPDX license list query tool
 
 LICENSE=	BSD2CLAUSE

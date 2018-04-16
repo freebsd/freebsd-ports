@@ -8,7 +8,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	security devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sign JSON with Ed25519 signatures
 
 LICENSE=	APACHE20

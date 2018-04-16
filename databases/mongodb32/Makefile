@@ -10,7 +10,7 @@ MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://download.mongodb.org/src/
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${PORTVERSION}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed document-oriented "NoSQL" database
 
 # mongodb is AGPLv3, C++ driver is APACHE20

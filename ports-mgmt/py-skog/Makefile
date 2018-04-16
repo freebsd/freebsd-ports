@@ -7,7 +7,7 @@ CATEGORIES=	ports-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate visual dependency trees for FreeBSD ports
 
 LICENSE=	BSD2CLAUSE

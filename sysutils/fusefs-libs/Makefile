@@ -7,7 +7,7 @@ DISTVERSION=	2_9_5
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-libs
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE allows filesystem implementation in userspace
 
 LICENSE=	LGPL21

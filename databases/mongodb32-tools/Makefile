@@ -6,7 +6,7 @@ PORTVERSION=	3.2.11
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for MongoDB
 
 LICENSE=	APACHE20

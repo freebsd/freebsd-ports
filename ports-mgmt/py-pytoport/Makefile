@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brendan+freebsd@bbqsrc.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate FreeBSD ports from Python modules on PyPI
 
 LICENSE=	BSD2CLAUSE
