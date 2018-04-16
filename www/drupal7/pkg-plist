@@ -69,6 +69,7 @@
 %%DRUPAL_BASE%%/includes/password.inc
 %%DRUPAL_BASE%%/includes/path.inc
 %%DRUPAL_BASE%%/includes/registry.inc
+%%DRUPAL_BASE%%/includes/request-sanitizer.inc
 %%DRUPAL_BASE%%/includes/session.inc
 %%DRUPAL_BASE%%/includes/stream_wrappers.inc
 %%DRUPAL_BASE%%/includes/tablesort.inc
