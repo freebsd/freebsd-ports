@@ -3,7 +3,7 @@
 
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 BIN_DISTNAMES=	binutils-2.25.1-32.base.el7_4.2 \
 		glibc-headers-2.17-196.el7_4.2 \
@@ -23,10 +23,10 @@ DISTFILES_amd64=${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 		kernel-headers-3.10.0-693.21.1.el7${EXTRACT_SUFX_amd64}:amd64
 DISTFILES_i386=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:i386/} \
-		kernel-headers-3.10.0-693.17.1.el7.centos.plus${EXTRACT_SUFX_i386}:i386
+		kernel-headers-3.10.0-693.21.1.el7.centos.plus${EXTRACT_SUFX_i386}:i386
 SRC_DISTFILES=	binutils-2.25.1-32.base.el7_4.2${SRC_SUFX}:SOURCE \
 		glibc-2.17-196.el7_4.2${SRC_SUFX}:SOURCE \
-		kernel-3.10.0-693.17.1.el7${SRC_SUFX}:SOURCE \
+		kernel-3.10.0-693.21.1.el7${SRC_SUFX}:SOURCE \
 		libmpc-1.0.1-3.el7${SRC_SUFX}:SOURCE \
 		mpfr-3.1.1-4.el7${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-16.el7_4.2${SRC_SUFX}:SOURCE
