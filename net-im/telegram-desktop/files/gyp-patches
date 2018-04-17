@@ -1,6 +1,6 @@
---- Telegram/gyp/qt_rcc.gypi.orig	2017-09-05 17:38:38 UTC
+--- Telegram/gyp/qt_rcc.gypi.orig	2018-01-03 10:46:01 UTC
 +++ Telegram/gyp/qt_rcc.gypi
-@@ -28,7 +28,7 @@
+@@ -15,7 +15,7 @@
        '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/qrc/qrc_<(RULE_INPUT_ROOT).cpp',
      ],
      'action': [
@@ -9,9 +9,26 @@
        '-name', '<(RULE_INPUT_ROOT)',
        '-no-compress',
        '<(RULE_INPUT_PATH)',
---- Telegram/gyp/qt.gypi.orig	2017-09-05 17:38:38 UTC
+--- Telegram/gyp/qt_moc.gypi.orig	2018-01-03 10:46:01 UTC
++++ Telegram/gyp/qt_moc.gypi
+@@ -12,12 +12,12 @@
+       '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
+     ],
+     'action': [
+-      '<(qt_loc)/bin/moc<(exe_ext)',
++      '%%QT_BINDIR%%/moc',
+ 
+       # Silence "Note: No relevant classes found. No output generated."
+       '--no-notes',
+ 
+-      '<!@(python -c "for s in \'<@(_defines)\'.split(\' \'): print(\'-D\' + s)")',
++      '<!@(%%PYTHON_CMD%% -c "for s in \'<@(_defines)\'.split(\' \'): print(\'-D\' + s)")',
+       # '<!@(python -c "for s in \'<@(_include_dirs)\'.split(\' \'): print(\'-I\' + s)")',
+       '<(RULE_INPUT_PATH)',
+       '-o', '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
+--- Telegram/gyp/qt.gypi.orig	2018-01-03 10:46:01 UTC
 +++ Telegram/gyp/qt.gypi
-@@ -27,25 +27,21 @@
+@@ -14,25 +14,21 @@
                [ 'build_macold', {
                  'qt_version%': '5.3.2',
                }, {
@@ -39,7 +56,7 @@
              }]
            ]
          },
-@@ -85,44 +81,24 @@
+@@ -72,44 +68,25 @@
              ],
            }],
            [ 'build_linux', {
@@ -56,7 +73,7 @@
 -              'qgenericbearer',
 -              'qnmbearer',
                '<@(qt_libs)',
--              'Qt5DBus',
+               'Qt5DBus',
                'Qt5Core',
 -              'qtpcre',
 -              'Xi',
@@ -90,7 +107,7 @@
        ],
      },
      'qt_libs_debug': [ '<@(qt_libs_debug)' ],
-@@ -140,11 +116,6 @@
+@@ -127,11 +104,6 @@
      # '<!@(python <(DEPTH)/list_sources.py [sources] <(qt_moc_list_sources_arg))'
      # where [sources] contains all your source files
      'qt_moc_list_sources_arg': '--moc-prefix SHARED_INTERMEDIATE_DIR/<(_target_name)/moc/moc_',
@@ -98,17 +115,18 @@
 -    'linux_path_xkbcommon%': '/usr/local',
 -    'linux_lib_ssl%': '/usr/local/ssl/lib/libssl.a',
 -    'linux_lib_crypto%': '/usr/local/ssl/lib/libcrypto.a',
--    'linux_lib_icu%': '/usr/lib/libicutu.a /usr/lib/libicui18n.a /usr/lib/libicuuc.a /usr/lib/libicudata.a',
+-    'linux_lib_icu%': 'libicutu.a libicui18n.a libicuuc.a libicudata.a',
    },
  
    'configurations': {
-@@ -193,15 +164,17 @@
+@@ -180,18 +152,18 @@
    },
  
    'include_dirs': [
 -    '<(qt_loc)/include',
 -    '<(qt_loc)/include/QtCore',
 -    '<(qt_loc)/include/QtGui',
+-    '<(qt_loc)/include/QtDBus',
 -    '<(qt_loc)/include/QtCore/<(qt_version)',
 -    '<(qt_loc)/include/QtGui/<(qt_version)',
 -    '<(qt_loc)/include/QtCore/<(qt_version)/QtCore',
@@ -116,33 +134,44 @@
 +    '%%QT_INCDIR%%',
 +    '%%QT_INCDIR%%/QtCore',
 +    '%%QT_INCDIR%%/QtGui',
++    '%%QT_INCDIR%%/QtDBus',
 +    '%%QT_INCDIR%%/QtCore/<(qt_version)',
 +    '%%QT_INCDIR%%/QtGui/<(qt_version)',
 +    '%%QT_INCDIR%%/QtCore/<(qt_version)/QtCore',
 +    '%%QT_INCDIR%%/QtGui/<(qt_version)/QtGui',
    ],
    'library_dirs': [
+-    '<(qt_loc)/lib',
+-    '<(qt_loc)/plugins',
 +    '%%LOCALBASE%%/lib',
 +    '%%QT_LIBDIR%%/',
-     '<(qt_loc)/lib',
-     '<(qt_loc)/plugins',
      '<(qt_loc)/plugins/bearer',
-@@ -220,25 +193,20 @@
+     '<(qt_loc)/plugins/platforms',
+     '<(qt_loc)/plugins/imageformats',
+@@ -204,33 +176,20 @@
+   ],
+   'conditions': [
+     [ 'build_linux', {
+-      'dependencies': [
+-        '<(DEPTH)/linux_glibc_wraps.gyp:linux_glibc_wraps',
+-      ],
+       'library_dirs': [
          '<(qt_loc)/plugins/platforminputcontexts',
        ],
        'libraries': [
+-        '<(PRODUCT_DIR)/obj.target/liblinux_glibc_wraps.a',
 -        '<(linux_path_xkbcommon)/lib/libxkbcommon.a',
          '<@(qt_libs_release)',
 -        '<(linux_lib_ssl)',
 -        '<(linux_lib_crypto)',
 -        '<!@(python -c "for s in \'<(linux_lib_icu)\'.split(\' \'): print(s)")',
+-        '-lxcb',
 +        '-lcrypto',
-         '-lxcb',
          '-lX11',
-         '-lX11-xcb',
-         '-ldbus-1',
+-        '-lX11-xcb',
+-        '-ldbus-1',
 -        '-ldl',
-         '-lgthread-2.0',
+-        '-lgthread-2.0',
          '-lglib-2.0',
          '-lpthread',
        ],
@@ -153,35 +182,41 @@
        'ldflags': [
 -        '-static-libstdc++',
          '-pthread',
-         '-g',
          '-rdynamic',
-@@ -260,12 +228,12 @@
-       '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
-     ],
-     'action': [
--      '<(qt_loc)/bin/moc<(exe_ext)',
-+      '%%QT_BINDIR%%/moc',
- 
-       # Silence "Note: No relevant classes found. No output generated."
-       '--no-notes',
- 
--      '<!@(python -c "for s in \'<@(_defines)\'.split(\' \'): print(\'-D\' + s)")',
-+      '<!@(%%PYTHON_CMD%% -c "for s in \'<@(_defines)\'.split(\' \'): print(\'-D\' + s)")',
-       # '<!@(python -c "for s in \'<@(_include_dirs)\'.split(\' \'): print(\'-I\' + s)")',
-       '<(RULE_INPUT_PATH)',
-       '-o', '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
---- Telegram/gyp/telegram_linux.gypi.orig	2017-09-05 17:38:38 UTC
+       ],
+--- Telegram/gyp/telegram_linux.gypi.orig	2018-01-03 10:46:01 UTC
 +++ Telegram/gyp/telegram_linux.gypi
-@@ -33,7 +33,7 @@
+@@ -7,7 +7,7 @@
+ {
+   'conditions': [[ 'build_linux', {
+     'variables': {
+-      'not_need_gtk%': '<!(python -c "print(\'TDESKTOP_DISABLE_GTK_INTEGRATION\' in \'<(build_defines)\')")',
++      'not_need_gtk%': '<!(%%PYTHON_CMD%% -c "print(\'TDESKTOP_DISABLE_GTK_INTEGRATION\' in \'<(build_defines)\')")',
+       'pkgconfig_libs': [
+ # In order to work libxkbcommon must be linked statically,
+ # PKGCONFIG links it like "-L/usr/local/lib -lxkbcommon"
+@@ -20,10 +20,11 @@
        'linux_path_va%': '/usr/local',
        'linux_path_vdpau%': '/usr/local',
-       'linux_path_breakpad%': '<(libs_loc)/breakpad',
+       'linux_path_breakpad%': '/usr/local',
 -      'linux_path_opus_include%': '<(libs_loc)/opus/include',
 +      'linux_path_opus_include%': '%%LOCALBASE%%/include/opus',
+       'linux_path_range%': '/usr/local',
      },
      'include_dirs': [
++      '/usr/include/openssl-1.0',
        '/usr/local/include',
-@@ -52,48 +52,34 @@
+       '<(linux_path_ffmpeg)/include',
+       '<(linux_path_openal)/include',
+@@ -32,6 +33,7 @@
+       '<(linux_path_range)/include',
+     ],
+     'library_dirs': [
++      '/usr/lib/openssl-1.0',
+       '/usr/local/lib',
+       '<(linux_path_ffmpeg)/lib',
+       '<(linux_path_openal)/lib',
+@@ -40,25 +42,15 @@
        '<(linux_path_breakpad)/lib',
      ],
      'libraries': [
@@ -216,37 +251,51 @@
  #      '<!(pkg-config 2> /dev/null --libs <@(pkgconfig_libs))',
      ],
      'cflags_cc': [
--      '<!(pkg-config 2> /dev/null --cflags appindicator-0.1)',
--      '<!(pkg-config 2> /dev/null --cflags gtk+-2.0)',
--      '<!(pkg-config 2> /dev/null --cflags glib-2.0)',
-+#      '<!(pkg-config 2> /dev/null --cflags appindicator-0.1)',
-+      '<!(pkg-config 2> /dev/null --cflags gtk+-3.0)',
-       '<!(pkg-config 2> /dev/null --cflags dee-1.0)',
+@@ -67,7 +59,6 @@
+     'ldflags': [
+       '-Wl,-wrap,aligned_alloc',
+       '-Wl,-wrap,secure_getenv',
+-      '-Wl,-wrap,clock_gettime',
+       '-Wl,--no-as-needed,-lrt',
      ],
      'configurations': {
-       'Release': {
-         'cflags': [
--          '-Ofast',
--          '-flto',
-+          %%CFLAGS%%
-           '-fno-strict-aliasing',
-         ],
-         'cflags_cc': [
--          '-Ofast',
--          '-flto',
-+          %%CXXFLAGS%%
-           '-fno-strict-aliasing',
-         ],
-         'ldflags': [
--          '-Ofast',
--          '-flto',
-+          %%LDFLAGS%%
-         ],
+@@ -86,7 +77,7 @@
        },
      },
---- Telegram/gyp/Telegram.gyp.orig	2017-09-05 17:38:38 UTC
+     'conditions': [
+-      [ '"<!(uname -p)" == "x86_64"', {
++      [ '"<!(uname -m)" == "x86_64"', {
+         # 32 bit version can't be linked with debug info or LTO,
+         # virtual memory exhausted :(
+         'cflags_c': [ '-g' ],
+@@ -94,9 +85,9 @@
+         'ldflags': [ '-g' ],
+         'configurations': {
+           'Release': {
+-            'cflags_c': [ '-flto' ],
+-            'cflags_cc': [ '-flto' ],
+-            'ldflags': [ '-flto' ],
++            'cflags_c': [ %%CFLAGS%% ],
++            'cflags_cc': [ %%CXXFLAGS%% ],
++            'ldflags': [ %%LDFLAGS%% ],
+           },
+         },
+       }, {
+@@ -105,10 +96,7 @@
+         ],
+       }], ['not_need_gtk!="True"', {
+         'cflags_cc': [
+-          '<!(pkg-config 2> /dev/null --cflags appindicator-0.1)',
+-          '<!(pkg-config 2> /dev/null --cflags gtk+-2.0)',
+-          '<!(pkg-config 2> /dev/null --cflags glib-2.0)',
+-          '<!(pkg-config 2> /dev/null --cflags dee-1.0)',
++          '<!(pkg-config 2> /dev/null --cflags gtk+-3.0)',
+         ],
+       }]
+     ],
+--- Telegram/gyp/Telegram.gyp.orig	2018-01-03 10:46:01 UTC
 +++ Telegram/gyp/Telegram.gyp
-@@ -61,7 +61,7 @@
+@@ -49,7 +49,7 @@
          'pt-BR',
        ],
        'build_defines%': '',
@@ -255,12 +304,13 @@
      },
      'includes': [
        'common_executable.gypi',
-@@ -80,28 +80,19 @@
+@@ -69,30 +69,20 @@
        'codegen.gyp:codegen_numbers',
        'codegen.gyp:codegen_style',
        'tests/tests.gyp:tests',
 -      'utils.gyp:Updater',
        '../ThirdParty/libtgvoip/libtgvoip.gyp:libtgvoip',
+       'crl.gyp:crl',
      ],
  
      'defines': [
@@ -276,18 +326,19 @@
        '<(SHARED_INTERMEDIATE_DIR)',
 -      '<(libs_loc)/breakpad/src',
 -      '<(libs_loc)/lzma/C',
--      '<(libs_loc)/libexif-0.6.20',
--      '<(libs_loc)/zlib-1.2.8',
+-      '<(libs_loc)/zlib',
 -      '<(libs_loc)/ffmpeg',
 -      '<(libs_loc)/openal-soft/include',
 -      '<(libs_loc)/opus/include',
+-      '<(libs_loc)/range-v3/include',
 -      '<(minizip_loc)',
+-      '<(sp_media_key_tap_loc)',
 +      '%%LOCALBASE%%/include/minizip',
-       '<(sp_media_key_tap_loc)',
        '<(emoji_suggestions_loc)',
        '<(submodules_loc)/GSL/include',
-@@ -113,7 +104,7 @@
-       '<!@(<(list_sources_command) <(qt_moc_list_sources_arg))',
+       '<(submodules_loc)/variant/include',
+@@ -105,7 +95,7 @@
+       'telegram_sources.txt',
      ],
      'sources!': [
 -      '<!@(<(list_sources_command) <(qt_moc_list_sources_arg) --exclude_for <(build_os))',
@@ -295,7 +346,7 @@
      ],
      'conditions': [
        [ '"<(official_build_target)" != ""', {
---- Telegram/ThirdParty/libtgvoip/libtgvoip.gyp.orig	2017-07-06 17:16:18 UTC
+--- Telegram/ThirdParty/libtgvoip/libtgvoip.gyp.orig	2018-02-06 06:51:56 UTC
 +++ Telegram/ThirdParty/libtgvoip/libtgvoip.gyp
 @@ -13,11 +13,12 @@
          'variables': {
@@ -311,7 +362,16 @@
          ],
          'direct_dependent_settings': {
            'include_dirs': [
-@@ -371,12 +372,13 @@
+@@ -259,7 +260,7 @@
+             },
+           ],
+           [
+-            '"<(OS)" != "linux"', {
++            '"<(OS)" != "freebsd"', {
+               'sources/': [['exclude', '<(tgvoip_src_loc)/os/linux/']],
+             },
+           ],
+@@ -378,12 +379,13 @@
              },
            ],
            [
@@ -326,9 +386,9 @@
                ],
                'direct_dependent_settings': {
                  'libraries': [
---- Telegram/gyp/codegen_rules.gypi.orig	2017-12-11 17:08:58 UTC
+--- Telegram/gyp/codegen_rules.gypi.orig	2018-02-06 06:53:18 UTC
 +++ Telegram/gyp/codegen_rules.gypi
-@@ -28,7 +28,7 @@
+@@ -15,7 +15,7 @@
        '<(SHARED_INTERMEDIATE_DIR)/update_dependent_styles.timestamp',
      ],
      'action': [
@@ -337,7 +397,7 @@
        '-I', '<(res_loc)', '-I', '<(src_loc)',
        '-o', '<(SHARED_INTERMEDIATE_DIR)/update_dependent_styles.timestamp',
        '<@(style_files)',
-@@ -39,13 +39,13 @@
+@@ -26,13 +26,13 @@
      'inputs': [
        '<(DEPTH)/update_dependent.py',
        '<@(qrc_files)',
@@ -353,7 +413,7 @@
        '-o', '<(SHARED_INTERMEDIATE_DIR)/update_dependent_qrc.timestamp',
        '<@(qrc_files)',
      ],
-@@ -122,7 +122,7 @@
+@@ -109,7 +109,7 @@
        '<(SHARED_INTERMEDIATE_DIR)/scheme.h',
      ],
      'action': [
@@ -362,9 +422,9 @@
        '-o', '<(SHARED_INTERMEDIATE_DIR)', '<(res_loc)/scheme.tl',
      ],
      'message': 'codegen_scheme-ing scheme.tl..',
---- Telegram/gyp/tests/tests.gyp.orig	2017-12-11 17:12:35 UTC
+--- Telegram/gyp/tests/tests.gyp.orig	2018-02-06 06:53:50 UTC
 +++ Telegram/gyp/tests/tests.gyp
-@@ -26,7 +26,7 @@
+@@ -13,7 +13,7 @@
      'src_loc': '../../SourceFiles',
      'submodules_loc': '../../ThirdParty',
      'mac_target': '10.10',

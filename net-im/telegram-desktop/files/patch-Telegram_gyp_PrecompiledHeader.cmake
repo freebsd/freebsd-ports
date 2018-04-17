@@ -1,4 +1,4 @@
---- Telegram/gyp/PrecompiledHeader.cmake.orig	2017-09-05 17:38:38 UTC
+--- Telegram/gyp/PrecompiledHeader.cmake.orig	2018-01-03 10:46:01 UTC
 +++ Telegram/gyp/PrecompiledHeader.cmake
 @@ -79,7 +79,7 @@ function(export_all_flags _filename _sou
  endfunction()

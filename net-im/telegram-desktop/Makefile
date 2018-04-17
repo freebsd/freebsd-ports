@@ -2,7 +2,7 @@
 
 PORTNAME=	telegram-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.23
+DISTVERSION=	1.2.17
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -12,14 +12,15 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	dee>0:devel/dee \
-		gyp:devel/py-gyp@${PY_FLAVOR}
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libavformat.so:multimedia/ffmpeg \
+		gyp:devel/py-gyp@${PY_FLAVOR} \
+		range-v3>0:devel/range-v3 \
+		pulseaudio>0:audio/pulseaudio \
+		alsa-lib>0:audio/alsa-lib
+LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
 		libminizip.so:archivers/minizip \
 		libopenal.so:audio/openal-soft \
-		libopus.so:audio/opus \
-		libpulse.so:audio/pulseaudio
+		libopus.so:audio/opus
 
 USES=		cmake:noninja,outsource desktop-file-utils gmake pkgconfig python:2.7,build ssl
 USE_GITHUB=	yes
@@ -27,23 +28,37 @@ GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
 GH_TUPLE=	catchorg:Catch2:5ca44b68:catch/Telegram/ThirdParty/Catch \
 		mapbox:variant:550ac2f:variant/Telegram/ThirdParty/variant \
-		Microsoft:GSL:c5851a8:gsl/Telegram/ThirdParty/GSL \
-		telegramdesktop:libtgvoip:757a5d8e:libtgvoip/Telegram/ThirdParty/libtgvoip
+		Microsoft:GSL:9d65e74:gsl/Telegram/ThirdParty/GSL \
+		telegramdesktop:libtgvoip:6e0e102:libtgvoip/Telegram/ThirdParty/libtgvoip \
+		telegramdesktop:crl:344cbde9:crl/Telegram/ThirdParty/crl
 USE_GNOME=	glib20 gtk30
-USE_QT5=	core gui imageformats network widgets buildtools_build qmake_build
+USE_QT5=	core gui imageformats network widgets buildtools_build qmake_build dbus
 USE_XORG=	x11 xcb
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/out/Release
 
 GYP_DEFINES=	TDESKTOP_DISABLE_CRASH_REPORTS,TDESKTOP_DISABLE_AUTOUPDATE,TDESKTOP_DISABLE_REGISTER_CUSTOM_SCHEME
 
+# Telegram uses OpenAL for its audio, but libtgvoip (for voice calls) can use PulseAudio or ALSA.
+# It dynamically loads PulseAudio, and if this fails, it loads ALSA.
+# If both of them are not installed, then voice calls do not work, but other functionalities still work.
+OPTIONS_MULTI=	AUDIO
+OPTIONS_MULTI_AUDIO=	ALSA PULSEAUDIO
+OPTIONS_DEFAULT=	ALSA
+
+AUDIO_DESC=	Audio backend for voice calls
+
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+
 .include <bsd.port.pre.mk>
 
+# This port needs C++17 libs/compiler.
+# Currently, this is not supported by USES=compiler
+# Using clang does not work: libc++ in base does not support C++17.
+# Using gcc does not work: using both libc++ and libstdc++ causes crashes.
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-CC=		clang40
-CXX=		clang++40
-BUILD_DEPENDS+=	clang++40:devel/llvm40
-RUN_DEPENDS+=	clang++40:devel/llvm40
+BROKEN=		Need C++17 support in compiler and runtime
 .endif
 
 post-patch:

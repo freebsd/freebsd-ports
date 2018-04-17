@@ -1,11 +1,12 @@
---- Telegram/SourceFiles/ui/text/text_block.cpp.orig	2017-09-05 17:38:38 UTC
+--- Telegram/SourceFiles/ui/text/text_block.cpp.orig	2018-04-08 17:34:33 UTC
 +++ Telegram/SourceFiles/ui/text/text_block.cpp
-@@ -330,7 +330,7 @@ TextBlock::TextBlock(const style::font &
- 		SignalHandlers::setCrashAnnotationRef("CrashString", &part);
+@@ -332,6 +332,9 @@ TextBlock::TextBlock(const style::font &
  
  		QStackTextEngine engine(part, blockFont->f);
--		QTextLayout layout(&engine);
+ 		BlockParser parser(&engine, this, minResizeWidth, _from, part);
 +		QTextLayout layout(part, blockFont->f);
- 		layout.beginLayout();
- 		layout.createLine();
++		layout.beginLayout();
++		layout.createLine();
  
+ 		CrashReports::ClearAnnotationRef("CrashString");
+ 	}
