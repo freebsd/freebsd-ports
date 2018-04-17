@@ -14,6 +14,9 @@
 # pgpool_conf (file):		Set location of your config.
 #				Default is "%%PREFIX%%/etc/pgpool.conf"
 # pgpool_user (uid):		User ID to run as (default nobody)
+# pgpool_stop_mode (string): 	Shutdown mode
+#       			Default is "smart"
+#       			Possibilities are "smart", "fast", or "immediate"
 #
 
 . /etc/rc.subr
@@ -26,10 +29,11 @@ load_rc_config $name
 : ${pgpool_enable="NO"}
 : ${pgpool_conf="%%PREFIX%%/etc/pgpool.conf"}
 : ${pgpool_user="nobody"}
+: ${pgpool_stop_mode="smart"}
 
 command="%%PREFIX%%/bin/pgpool"
 command_args="-f ${pgpool_conf}"
-stop_cmd="${command} ${command_args} stop"
+stop_cmd="${command} -m ${pgpool_stop_mode} ${command_args} stop"
 
 required_files="${pgpool_conf}"
 
