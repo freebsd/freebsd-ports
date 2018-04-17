@@ -77,6 +77,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_bsdconfig
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_bsdinstall
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_chflags
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_cksum
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_csup
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_cu
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_cvsup
