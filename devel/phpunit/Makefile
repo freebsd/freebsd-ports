@@ -7,7 +7,7 @@ MASTER_SITES=	https://phar.phpunit.de/
 EXTRACT_SUFX=	.phar
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Testing framework for unit tests
 
 LICENSE=	BSD3CLAUSE
