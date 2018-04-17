@@ -1,5 +1,5 @@
 bin/cwirc_frontend
-lib/xchat/plugins/cwirc.so
+lib/hexchat/plugins/cwirc.so
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/LISEZMOI
 %%DOCSDIR%%/README
