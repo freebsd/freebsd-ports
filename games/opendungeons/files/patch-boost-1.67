@@ -1,0 +1,13 @@
+https://github.com/OpenDungeons/OpenDungeons/pull/1287
+
+--- CMakeLists.txt.orig	2016-08-24 19:52:29 UTC
++++ CMakeLists.txt
+@@ -634,7 +634,7 @@ endif()
+ 
+ # MSVC automatically links boost
+ if(NOT MSVC)
+-    target_link_libraries(${PROJECT_BINARY_NAME} ${Boost_LIBRARIES})
++    target_link_libraries(${PROJECT_BINARY_NAME} ${Boost_LIBRARIES} Threads::Threads)
+ endif()
+ 
+ # Link sfml
