@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	adacurses
-PORTVERSION=	20150808
-PORTREVISION=	5
+DISTVERSION=	20180127
 CATEGORIES=	devel
-MASTER_SITES=	ftp://invisible-island.net/AdaCurses/
-DISTNAME=	AdaCurses-${PORTVERSION}
+MASTER_SITES=	ftp://ftp.invisible-island.net/AdaCurses/
+DISTNAME=	AdaCurses-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada95 bindings for ncurses
@@ -24,8 +23,6 @@ PORTDOCS=	ada Ada95.html
 PLIST_SUB=	atic=adacurses/terminal_interface-curses
 
 OPTIONS_DEFINE=	DOCS
-
-MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/(INSTALL_PROG)/d' -e 's|@ADAGEN_LDFLAGS@||' \
