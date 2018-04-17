@@ -5,7 +5,7 @@ PORTVERSION=	0.0.${ALPHA_VERSION}
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ambitious dungeon builder with roguelike elements
 
 LICENSE=	GPLv2 OFL11
