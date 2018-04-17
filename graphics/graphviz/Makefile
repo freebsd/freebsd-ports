@@ -20,7 +20,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libexpat.so:textproc/expat2 \
 		libgd.so:${GD_PORT}
 
-USES=		cpe pathfix shebangfix gmake bison groff pkgconfig libtool:keepla jpeg
+USES=		cpe pathfix shebangfix gmake bison groff pkgconfig \
+		libtool:keepla localbase:ldflags jpeg
 GNU_CONFIGURE=	yes
 # sincos is broken on armv6, see ports/220591
 CFLAGS_armv6=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
@@ -29,8 +30,6 @@ CFLAGS_armv6=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
 CFLAGS_armv7=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
 		-fno-builtin-sincosf -fno-builtin-sinf -fno-builtin-cosf \
 		-fno-builtin-sincosl -fno-builtin-sinl -fno-builtin-cosl
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAKE_ENV=	EXPR_COMPAT=yes
@@ -256,7 +255,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|GTS_LIBS)|GTS_LIBS) $$(MATH_LIBS)|' \
 		${WRKSRC}/cmd/smyrna/Makefile.in
 	${CP} ${WRKSRC}/lib/cgraph/cgraph.h ${WRKSRC}/plugin/ming/
-.if ${OSVERSION} >= 1100093
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100093
 	${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
 		${WRKSRC}/lib/sfio/*.[ch]
 .endif
