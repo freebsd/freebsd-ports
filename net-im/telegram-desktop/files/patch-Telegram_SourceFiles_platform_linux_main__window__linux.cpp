@@ -1,18 +1,18 @@
---- Telegram/SourceFiles/platform/linux/main_window_linux.cpp.orig	2017-09-05 17:38:38 UTC
+--- Telegram/SourceFiles/platform/linux/main_window_linux.cpp.orig	2018-04-08 17:34:33 UTC
 +++ Telegram/SourceFiles/platform/linux/main_window_linux.cpp
-@@ -36,7 +36,9 @@ namespace {
- bool noQtTrayIcon = false, tryAppIndicator = false;
+@@ -25,7 +25,9 @@ bool noQtTrayIcon = false, tryAppIndicat
  bool useGtkBase = false, useAppIndicator = false, useStatusIcon = false, trayIconChecked = false, useUnityCount = false;
  
+ #ifndef TDESKTOP_DISABLE_GTK_INTEGRATION
 +#ifdef HAVE_APPINDICATOR
  AppIndicator *_trayIndicator = 0;
 +#endif
  GtkStatusIcon *_trayIcon = 0;
  GtkWidget *_trayMenu = 0;
  GdkPixbuf *_trayPixbuf = 0;
-@@ -274,7 +276,9 @@ void MainWindow::workmodeUpdated(DBIWork
- 	if (mode == dbiwmWindowOnly) {
+@@ -279,7 +281,9 @@ void MainWindow::workmodeUpdated(DBIWork
  		if (noQtTrayIcon) {
+ #ifndef TDESKTOP_DISABLE_GTK_INTEGRATION
  			if (useAppIndicator) {
 +#ifdef HAVE_APPINDICATOR
  				Libs::app_indicator_set_status(_trayIndicator, APP_INDICATOR_STATUS_PASSIVE);
@@ -20,9 +20,9 @@
  			} else if (useStatusIcon) {
  				Libs::gtk_status_icon_set_visible(_trayIcon, false);
  			}
-@@ -288,7 +292,9 @@ void MainWindow::workmodeUpdated(DBIWork
- 	} else {
+@@ -295,7 +299,9 @@ void MainWindow::workmodeUpdated(DBIWork
  		if (noQtTrayIcon) {
+ #ifndef TDESKTOP_DISABLE_GTK_INTEGRATION
  			if (useAppIndicator) {
 +#ifdef HAVE_APPINDICATOR
  				Libs::app_indicator_set_status(_trayIndicator, APP_INDICATOR_STATUS_ACTIVE);
@@ -30,7 +30,7 @@
  			} else if (useStatusIcon) {
  				Libs::gtk_status_icon_set_visible(_trayIcon, true);
  			}
-@@ -305,7 +311,9 @@ void MainWindow::psUpdateIndicator() {
+@@ -314,7 +320,9 @@ void MainWindow::psUpdateIndicator() {
  	if (iconFile.exists()) {
  		QByteArray path = QFile::encodeName(iconFile.absoluteFilePath()), name = QFile::encodeName(iconFile.fileName());
  		name = name.mid(0, name.size() - 4);
@@ -40,7 +40,7 @@
  	} else {
  		useAppIndicator = false;
  	}
-@@ -392,11 +400,15 @@ void MainWindow::LibsLoaded() {
+@@ -407,11 +415,15 @@ void MainWindow::LibsLoaded() {
  			&& (Libs::g_object_ref_sink != nullptr)
  			&& (Libs::g_object_unref != nullptr);
  
@@ -51,20 +51,20 @@
  			&& (Libs::app_indicator_set_menu != nullptr)
  			&& (Libs::app_indicator_set_icon_full != nullptr);
 +#else
-+    useAppIndicator = false;
++	useAppIndicator = false;
 +#endif
  
  	if (tryAppIndicator && useGtkBase && useAppIndicator) {
  		noQtTrayIcon = true;
-@@ -439,6 +451,7 @@ void MainWindow::psCreateTrayIcon() {
- 		return;
+@@ -456,6 +468,7 @@ void MainWindow::psCreateTrayIcon() {
  	}
  
+ #ifndef TDESKTOP_DISABLE_GTK_INTEGRATION
 +#ifdef HAVE_APPINDICATOR
  	if (useAppIndicator) {
  		DEBUG_LOG(("Trying to create AppIndicator"));
  		_trayMenu = Libs::gtk_menu_new();
-@@ -469,6 +482,7 @@ void MainWindow::psCreateTrayIcon() {
+@@ -486,6 +499,7 @@ void MainWindow::psCreateTrayIcon() {
  			useAppIndicator = false;
  		}
  	}
@@ -72,7 +72,7 @@
  	if (useStatusIcon) {
  		if (Libs::gdk_init_check(0, 0)) {
  			if (!_trayMenu) _trayMenu = Libs::gtk_menu_new();
-@@ -585,10 +599,12 @@ MainWindow::~MainWindow() {
+@@ -604,10 +618,12 @@ MainWindow::~MainWindow() {
  		Libs::g_object_unref(_trayMenu);
  		_trayMenu = nullptr;
  	}

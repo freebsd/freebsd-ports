@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/base/lambda.h.orig	2017-09-05 17:38:38 UTC
+--- Telegram/SourceFiles/base/lambda.h.orig	2018-01-03 10:46:01 UTC
 +++ Telegram/SourceFiles/base/lambda.h
-@@ -212,11 +212,14 @@ protected:
+@@ -226,11 +226,14 @@ protected:
  
  template <typename Lambda, typename Return, typename ...Args>
  struct vtable_once : public vtable_once_impl<Lambda, is_large<Lambda>, Return, Args...> {
@@ -17,7 +17,7 @@
  
  template <typename Lambda, bool IsLarge, typename Return, typename ...Args> struct vtable_impl;
  
-@@ -262,12 +265,14 @@ struct vtable_impl<Lambda, false, Return
+@@ -276,12 +279,14 @@ struct vtable_impl<Lambda, false, Return
  
  template <typename Lambda, typename Return, typename ...Args>
  struct vtable : public vtable_impl<Lambda, is_large<Lambda>, Return, Args...> {
@@ -35,7 +35,7 @@
  } // namespace lambda_internal
  
  template <typename Return, typename ...Args>
-@@ -346,7 +351,7 @@ public:
+@@ -360,7 +365,7 @@ public:
  	// Copy / move construct / assign from an arbitrary type.
  	template <typename Lambda, typename = std::enable_if_t<std::is_convertible<decltype(std::declval<Lambda>()(std::declval<Args>()...)),Return>::value>>
  	lambda_once(Lambda other) {
@@ -44,7 +44,7 @@
  		lambda_internal::vtable_once<Lambda, Return, Args...>::construct_move_lambda_method(data_.storage, &other);
  	}
  	template <typename Lambda, typename = std::enable_if_t<std::is_convertible<decltype(std::declval<Lambda>()(std::declval<Args>()...)),Return>::value>>
-@@ -354,7 +359,7 @@ public:
+@@ -368,7 +373,7 @@ public:
  		if (data_.vtable) {
  			data_.vtable->destruct(data_.storage);
  		}
@@ -53,7 +53,7 @@
  		lambda_internal::vtable_once<Lambda, Return, Args...>::construct_move_lambda_method(data_.storage, &other);
  		return *this;
  	}
-@@ -424,7 +429,7 @@ public:
+@@ -443,7 +448,7 @@ public:
  
  	// Copy / move construct / assign from an arbitrary type.
  	template <typename Lambda, typename = std::enable_if_t<std::is_convertible<decltype(std::declval<Lambda>()(std::declval<Args>()...)),Return>::value>>
@@ -62,7 +62,7 @@
  		lambda_internal::vtable<Lambda, Return, Args...>::construct_move_lambda_method(this->data_.storage, &other);
  	}
  	template <typename Lambda, typename = std::enable_if_t<std::is_convertible<decltype(std::declval<Lambda>()(std::declval<Args>()...)),Return>::value>>
-@@ -432,7 +437,7 @@ public:
+@@ -451,7 +456,7 @@ public:
  		if (this->data_.vtable) {
  			this->data_.vtable->destruct(this->data_.storage);
  		}

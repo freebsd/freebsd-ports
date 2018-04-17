@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/ui/twidget.cpp.orig	2017-09-05 17:38:38 UTC
+--- Telegram/SourceFiles/ui/twidget.cpp.orig	2018-01-03 10:46:01 UTC
 +++ Telegram/SourceFiles/ui/twidget.cpp
-@@ -191,9 +191,9 @@ void sendSynteticMouseEvent(QWidget *wid
+@@ -235,9 +235,9 @@ void sendSynteticMouseEvent(QWidget *wid
  			, button
  			, QGuiApplication::mouseButtons() | button
  			, QGuiApplication::keyboardModifiers()
