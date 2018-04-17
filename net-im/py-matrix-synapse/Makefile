@@ -8,7 +8,7 @@ PORTREVISION=	0
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Matrix protocol reference homeserver
 
 LICENSE=	APACHE20
