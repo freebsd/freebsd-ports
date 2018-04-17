@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	spdx
-DISTVERSION=	2.3.0
+DISTVERSION=	2.5.0
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SPDX license list database
 
 LICENSE=	CC0-1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.3+
-USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
