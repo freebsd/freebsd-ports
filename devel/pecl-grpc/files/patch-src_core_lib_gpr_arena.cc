@@ -1,6 +1,6 @@
---- src/core/lib/gpr/arena.cc.orig	2018-03-13 15:03:48 UTC
+--- src/core/lib/gpr/arena.cc.orig	2018-04-16 17:48:12 UTC
 +++ src/core/lib/gpr/arena.cc
-@@ -83,7 +83,7 @@ void* gpr_arena_alloc(gpr_arena* arena, 
+@@ -128,7 +128,7 @@ void* gpr_arena_alloc(gpr_arena* arena, size_t size) {
            ROUND_UP_TO_ALIGNMENT_SIZE(sizeof(zone)) + next_z_size));
        next_z->size_begin = z->size_end;
        next_z->size_end = z->size_end + next_z_size;
