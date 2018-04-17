@@ -30,6 +30,8 @@ USE_LDCONFIG=	yes
 # Settings -> Configure KMyMoney... -> Encryption
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Gpgmepp
 
+CONFLICTS_INSTALL=	kmymoney
+
 SHEBANG_FILES=	kmymoney/misc/financequote.pl
 
 OPTIONS_GROUP=		PLUGINS
