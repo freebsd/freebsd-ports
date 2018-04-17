@@ -1,0 +1,8 @@
+bin/webtidy5
+%%SITE_ARCH%%/HTML/Tidy5.pm
+%%SITE_ARCH%%/HTML/Tidy5/Message.pm
+%%SITE_ARCH%%/Test/HTML/Tidy5.pm
+%%SITE_ARCH%%/auto/HTML/Tidy5/Tidy5.so
+%%PERL5_MAN3%%/HTML::Tidy5.3.gz
+%%PERL5_MAN3%%/HTML::Tidy5::Message.3.gz
+%%PERL5_MAN3%%/Test::HTML::Tidy5.3.gz
