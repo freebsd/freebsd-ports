@@ -102,6 +102,11 @@ lib/libfrrospfapiclient.a
 lib/libfrrospfapiclient.so
 lib/libfrrospfapiclient.so.0
 lib/libfrrospfapiclient.so.0.0.0
+%%FPM%%lib/frr/modules/zebra_fpm.so
+%%FPM%%lib/libfrrfpm_pb.a
+%%FPM%%lib/libfrrfpm_pb.so
+%%FPM%%lib/libfrrfpm_pb.so.0
+%%FPM%%lib/libfrrfpm_pb.so.0.0.0
 %%RPKI%%lib/frr/modules/bgpd_rpki.so
 man/man1/frr.1.gz
 man/man8/eigrpd.8.gz
