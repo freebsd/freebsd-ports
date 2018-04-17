@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mapyrus
-PORTVERSION=	1.401
+PORTVERSION=	1.801
 PORTREVISION=	0
 CATEGORIES=	graphics print java
 MASTER_SITES=	SF
@@ -11,6 +11,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Software for creating plots of points, lines, etc
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/userdoc/COPYING
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
