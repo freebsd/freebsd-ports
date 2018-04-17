@@ -101,7 +101,7 @@ MASTER_SITE_BERLIOS+= \
 .if !defined(IGNORE_MASTER_SITE_CHEESESHOP)
 MASTER_SITE_CHEESESHOP+= \
 	https://files.pythonhosted.org/packages/%SUBDIR%/ \
-	https://pypi.python.org/packages/%SUBDIR%/
+	https://pypi.org/packages/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
