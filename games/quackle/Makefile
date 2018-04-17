@@ -7,7 +7,7 @@ PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scrabble-like word game utilizing Qt4
 
 LICENSE=	GPLv3
