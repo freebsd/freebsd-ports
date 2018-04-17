@@ -11,8 +11,7 @@ DISTNAME=	aMule-${PORTVERSION}
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	All-platform eMule p2p client
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
@@ -107,7 +106,7 @@ XAS_USE=	PERL5+=run
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "i386" && ( ${OSVERSION} >= 1000024 || ${CXX:T} == "clang++" )
+.if ${ARCH} == "i386"
 CPPFLAGS+=	-DCRYPTOPP_DISABLE_ASM
 .endif
 
@@ -115,23 +114,21 @@ CPPFLAGS+=	-DCRYPTOPP_DISABLE_ASM
 CONFLICTS+=		ed2k-hash*
 .endif
 
-post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's/test.*-print-file-name.*`/true/' \
+post-patch:
+	@${REINPLACE_CMD} -e 's/test.*-print-file-name.*`/true/' \
 		-e '/if.*test/s/==/=/' \
 		${WRKSRC}/configure
-.if ! ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' \
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' \
 		${WRKSRC}/docs/Makefile.in
-.endif
-.if ${PORT_OPTIONS:MPLASMAMULE}
-	${REINPLACE_CMD} -e 's|@prefix@|${KDE_PREFIX}|' \
+
+post-patch-PLASMAMULE-on:
+	@${REINPLACE_CMD} -e 's|@prefix@|${KDE_PREFIX}|' \
 		-e 's|LDFLAGS =|& -L${KDE_PREFIX}/lib |' \
 		${WRKSRC}/src/utils/plasmamule/Makefile.in
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MFILEVIEW}
+post-install-FILEVIEW-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/utils/fileview/mulefileview ${STAGEDIR}${PREFIX}/bin
-.endif
 
 .include <bsd.port.mk>
