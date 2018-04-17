@@ -36,6 +36,7 @@
     SUBDIR += grisbi
     SUBDIR += homebank
     SUBDIR += jgnash
+    SUBDIR += kmymoney
     SUBDIR += kmymoney-kde4
     SUBDIR += ktoblzcheck
     SUBDIR += ledger
