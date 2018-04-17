@@ -1,9 +1,9 @@
 Add prototype for localePath() and adjust comments to reflect current
 website layout
 
---- src/UrlBuilder.h.orig	2014-10-02 14:05:46 UTC
+--- src/UrlBuilder.h.orig	2015-02-06 16:49:40 UTC
 +++ src/UrlBuilder.h
-@@ -44,9 +44,11 @@ namespace lastfm
+@@ -44,10 +44,12 @@ namespace lastfm
  
          QUrl url() const;
  
@@ -11,12 +11,14 @@ website layout
 +        /** www.last.fm becomes the local version, e.g. www.last.fm/de */
          static QUrl localize( QUrl );
 -        /** www.last.fm becomes m.last.fm, localisation is preserved */
+-        static QUrl mobilize( QUrl );
 + 
 +        /** DEPRECATED: Returns url as-is since the mobile website redirects
 +         *  to the main website */
-         static QUrl mobilize( QUrl );
++        Q_DECL_DEPRECATED static QUrl mobilize( QUrl );
  
          /** Use this to URL encode any database item (artist, track, album). It
+           * internally calls UrlEncodeSpecialChars to double encode some special
 @@ -60,7 +62,10 @@ namespace lastfm
            */
          static QByteArray encode( QString );
