@@ -49,14 +49,7 @@ OPTIONS_DEFAULT=	GIT
 
 GIT_DESC=	GIT support
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.6:net/py-ldap@${FLAVOR}
-.endif
-
-.if ${PORT_OPTIONS:MGIT}
-RUN_DEPENDS+=	${LOCALBASE}/bin/git:devel/git
-.endif
+LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.6:net/py-ldap@${FLAVOR}
+GIT_RUN_DEPENDS=	git:devel/git
 
 .include <bsd.port.mk>
