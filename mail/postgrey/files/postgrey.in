@@ -12,7 +12,7 @@
 # postgrey_enable (bool)        Set to 'YES' to enable
 #                               Default: NO
 # postgrey_dbdir (path)         Location of postgrey database files.
-#                               Default: %%PG_DBDIR%%
+#                               Default: %%POSTGREY_DBDIR%%
 # postgrey_flags (extra args)   Additional command-line parameters.
 #                               Default: --inet=10023
 #
@@ -30,13 +30,13 @@ rcvar=postgrey_enable
 load_rc_config $name
 
 : ${postgrey_enable:=NO}
-: ${postgrey_dbdir:=%%PG_DBDIR%%}
+: ${postgrey_dbdir:=%%POSTGREY_DBDIR%%}
 : ${postgrey_flags:=--inet=10023}
 
 command=%%PREFIX%%/sbin/postgrey
 extra_commands=reload
-pidfile=%%PG_RUNDIR%%/postgrey.pid
-required_dirs="${postgrey_dbdir} %%PG_RUNDIR%%"
+pidfile=%%POSTGREY_RUNDIR%%/postgrey.pid
+required_dirs="${postgrey_dbdir} %%POSTGREY_RUNDIR%%"
 
 command_args="-d --pidfile=${pidfile} --dbdir=${postgrey_dbdir}"
 
