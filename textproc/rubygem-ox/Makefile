@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ox
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
