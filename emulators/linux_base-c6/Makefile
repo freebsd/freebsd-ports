@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	bash-4.1.2-48.el6 \
@@ -42,11 +42,11 @@ LIB_DISTNAMES=	bzip2-libs-1.0.5-7.el6_0 \
 		libblkid-2.17.2-12.28.el6_9.2 \
 		libcap-2.16-5.5.el6 \
 		libcom_err-1.41.12-23.el6 \
-		libgcc-4.4.7-18.el6 \
+		libgcc-4.4.7-18.el6_9.2 \
 		libidn-1.18-2.el6 \
 		libselinux-2.0.94-7.el6 \
 		libsepol-2.0.41-4.el6 \
-		libstdc++-4.4.7-18.el6 \
+		libstdc++-4.4.7-18.el6_9.2 \
 		libuuid-2.17.2-12.28.el6_9.2 \
 		ncurses-libs-5.7-4.20090207.el6 \
 		nss-softokn-freebl-3.14.3-23.3.el6_8 \
@@ -76,7 +76,7 @@ SRC_DISTFILES=	acl-2.2.49-7.el6_9.1${SRC_SUFX}:SOURCE \
 		findutils-4.4.2-9.el6${SRC_SUFX}:SOURCE \
 		freetype-2.3.11-17.el6${SRC_SUFX}:SOURCE \
 		gamin-0.1.10-9.el6${SRC_SUFX}:SOURCE \
-		gcc-4.4.7-18.el6${SRC_SUFX}:SOURCE \
+		gcc-4.4.7-18.el6_9.2${SRC_SUFX}:SOURCE \
 		gdbm-1.8.0-39.el6${SRC_SUFX}:SOURCE \
 		glib2-2.28.8-9.el6${SRC_SUFX}:SOURCE \
 		glibc-2.12-1.209.el6_9.2${SRC_SUFX}:SOURCE \
