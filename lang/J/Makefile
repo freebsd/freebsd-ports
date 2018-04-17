@@ -8,7 +8,7 @@ MAINTAINER=	sevenjp@gmail.com
 COMMENT=	J programming language
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKDIR}/jsource-j806-release/license.txt
+LICENSE_FILE=	${WRKDIR}/jsource-${JVERSION}/license.txt
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON_amd64=	Not built or tested for other archs. i386 needs hostdefs and netdefs files to be generated.
@@ -28,10 +28,10 @@ GH_PROJECT=	jsource
 GH_TAGNAME=	${JVERSION}
 
 # J is released with ports-unfriendly versioning
-JVERSION=	j806-release
+JVERSION=	j808-release
 
 BIN_FILES=	jconsole
-LIB_FILES=	libj.so libtsdll.so libjavx.so
+LIB_FILES=	libj.so libtsdll.so
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/j/bin
