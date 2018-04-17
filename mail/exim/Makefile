@@ -3,7 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -151,6 +151,9 @@ CONFIG_FILE_PATH?=	${PREFIX}/etc/exim/configure
 ALT_CONFIG_PREFIX?=	${PREFIX}/etc/exim/
 
 EXIM_DYNAMIC_LDFLAGS=	-fPIC -rdynamic -export-dynamic
+# Avoid too many warnings due to Exim code style
+EXIM_WARN_FLAGS?=	-Wno-logical-op-parentheses -Wno-macro-redefined -Wno-parentheses -Wno-dangling-else
+CFLAGS+=	${EXIM_WARN_FLAGS}
 
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
@@ -214,7 +217,7 @@ SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DSN=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MDANE}
-SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DANE=),\1,'
+SEDLIST+=	-e 's,^\# (SUPPORT_DANE=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MARC}
