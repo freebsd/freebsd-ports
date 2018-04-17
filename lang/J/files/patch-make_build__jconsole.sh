@@ -1,4 +1,4 @@
---- make/build_jconsole.sh.orig	2018-02-24 19:49:42 UTC
+--- make/build_jconsole.sh.orig	2018-04-09 17:54:22 UTC
 +++ make/build_jconsole.sh
 @@ -1,9 +1,8 @@
  #!/usr/local/bin/bash
@@ -7,12 +7,12 @@
 -. jvars.sh
 +. make/jvars.sh
  
--common=" -fPIC -O1 -Wextra -Wno-unused-parameter "
-+common=" -fPIC -Wextra -Wno-unused-parameter "
+-common=" -fPIC -O1 -Wextra "
++common=" -fPIC -Wextra "
  
  case $jplatform\_$1 in
  
-@@ -31,6 +30,14 @@ darwin_j64)
+@@ -27,6 +26,14 @@ darwin_j64)
  COMPILE="$common -DREADLINE -mmacosx-version-min=10.5"
  LINK=" -ledit -ldl -lncurses -mmacosx-version-min=10.5 -o jconsole "
  ;;

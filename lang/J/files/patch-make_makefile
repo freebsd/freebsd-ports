@@ -1,11 +1,9 @@
---- make/makefile.orig	2018-02-24 19:45:08 UTC
+--- make/makefile.orig	2016-11-25 19:04:24 UTC
 +++ make/makefile
-@@ -3,7 +3,7 @@ vpath % $(jgit)/jsrc
- %.o: %.c
- 	$(CC) -c $(CFLAGS) $(CFLAGS_FMA) -o$@ $^
+@@ -1,5 +1,5 @@
+ vpath % $(jgit)/jsrc
  
 -CFLAGS=$(COMPILE)
 +CFLAGS+=$(COMPILE)
- $(OBJS_FMA) : CFLAGS_FMA := -mfma 
- $(TARGET) : $(OBJS) $(OBJS_FMA)
- 	$(CC)  $(OBJS) $(OBJS_FMA) $(LINK)
+ $(TARGET) : $(OBJS)
+ 	$(CC)  $(OBJS) $(LINK)

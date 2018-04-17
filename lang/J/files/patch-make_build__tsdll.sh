@@ -1,4 +1,4 @@
---- make/build_tsdll.sh.orig	2018-02-24 19:49:42 UTC
+--- make/build_tsdll.sh.orig	2018-04-09 18:00:06 UTC
 +++ make/build_tsdll.sh
 @@ -1,9 +1,8 @@
  #!/usr/local/bin/bash
@@ -12,7 +12,7 @@
  
  case $jplatform\_$1 in
  
-@@ -38,6 +37,16 @@ TARGET=libtsdll.dylib
+@@ -33,6 +32,16 @@ TARGET=libtsdll.dylib
  COMPILE="$common "
  LINK=" -dynamiclib -o libtsdll.dylib "
  ;;

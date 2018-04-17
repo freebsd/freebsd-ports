@@ -1,14 +1,6 @@
---- jlibrary/system/main/stdlib.ijs.orig	2018-02-22 18:45:28 UTC
+--- jlibrary/system/main/stdlib.ijs.orig	2016-11-25 19:04:24 UTC
 +++ jlibrary/system/main/stdlib.ijs
-@@ -35,6 +35,7 @@ if. notdef 'UNAME' do.
-   end.
- end.
- 'libc.so.6 setlocale > x i *c'&(15!:0)^:(UNAME-:'Linux') 1;,'C'
-+'libc.so.7 setlocale > x i *c'&(15!:0)^:(UNAME-:'FreeBSD') 1;,'C'
- if. notdef 'IFRASPI' do.
-   if. UNAME -: 'Linux' do.
-     cpu=. 2!:0 'cat /proc/cpuinfo'
-@@ -97,6 +98,7 @@ if. (<'home') -.@e. {."1 SystemFolders d
+@@ -93,6 +93,7 @@ if. (<'home') -.@e. {."1 SystemFolders d
    elseif. 'Android'-:UNAME do. t=. '/sdcard'
    elseif. 'Darwin'-:UNAME do. t=. (0-:t){::'';~t=. 2!:5'HOME'
    elseif. 'Linux'-:UNAME do. t=. (0-:t){::'';~t=. 2!:5'HOME'
@@ -16,7 +8,7 @@
    elseif. do. t=. ''
    end.
    if. (''-:t)+.((,'/')-:t)+.('/root'-:t)+.('/usr/'-:5{.t) do.
-@@ -111,6 +113,7 @@ if. (<'temp') -.@e. {."1 SystemFolders d
+@@ -107,6 +108,7 @@ if. (<'temp') -.@e. {."1 SystemFolders d
    elseif. 'Android'-:UNAME do. t=. '/sdcard'
    elseif. 'Darwin'-:UNAME do. 1!:5 ::] <t=. '/tmp/',":2!:6''
    elseif. 'Linux'-:UNAME do. 1!:5 ::] <t=. '/tmp/',":2!:6''
@@ -24,7 +16,7 @@
    elseif. do. t=. ''
    end.
    SystemFolders=: SystemFolders, 'temp';t
-@@ -123,14 +126,14 @@ end.
+@@ -119,14 +121,14 @@ end.
  18!:4 <'z'
  18!:4 <'z'
  UNXLIB=: ([: <;._1 ' ',]);._2 (0 : 0)
@@ -44,8 +36,8 @@
  (<r,c) {:: UNXLIB_z_
  )
  18!:4 <'z'
-@@ -1344,7 +1347,7 @@ require 'pacman'
- x do_install_jpacman_ y
+@@ -1337,7 +1339,7 @@ require 'pacman'
+ do_install_jpacman_ y
  )
  getqtbin=: 3 : 0
 -if. (<UNAME) -.@e. 'Linux';'Darwin';'Win' do. return. end.
