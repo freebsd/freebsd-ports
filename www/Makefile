@@ -1627,6 +1627,7 @@
     SUBDIR += py-djangorestframework-xml
     SUBDIR += py-djangotoolbox
     SUBDIR += py-dojango
+    SUBDIR += py-drf-yasg
     SUBDIR += py-dtflickr
     SUBDIR += py-evernote
     SUBDIR += py-falcon
