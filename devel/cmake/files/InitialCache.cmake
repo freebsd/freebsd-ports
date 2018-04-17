@@ -15,14 +15,5 @@ set(LIBLZMA_INCLUDE_DIR "/usr/include" CACHE PATH
 set(LIBLZMA_LIBRARY "/usr/lib/liblzma.so" CACHE PATH
     "LibLZMA library to link against.")
 
-# Similarly for libarchive
-set(LibArchive_INCLUDE_DIR "/usr/include" CACHE PATH
-    "Directory where LibArchive headers are located.")
-set(LibArchive_LIBRARY "/usr/lib/libthr.so;/usr/lib/libarchive.so" CACHE PATH
-    "LibArchive library to link against.")
-
-# Modern FreeBSD systems are assumed to have libpkg installed,
-# so enable its use in CPack for the direct generation of FreeBSD
-# packages from software (outside of ports, say) that uses CMake.
-set(CPACK_ENABLE_FREEBSD_PKG ON CACHE BOOL "Enable pkg(8) generator in CPack")
-
+# Don't even try
+set(CPACK_ENABLE_FREEBSD_PKG OFF CACHE BOOL "Enable pkg(8) generator in CPack")
