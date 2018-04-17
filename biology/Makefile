@@ -124,6 +124,7 @@
     SUBDIR += trimmomatic
     SUBDIR += ugene
     SUBDIR += vcftools
+    SUBDIR += vcflib
     SUBDIR += velvet
     SUBDIR += wise
     SUBDIR += xmolwt
