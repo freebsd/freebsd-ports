@@ -1621,6 +1621,7 @@
     SUBDIR += py-django_openstack_auth
     SUBDIR += py-django_polymorphic
     SUBDIR += py-djangorestframework
+    SUBDIR += py-djangorestframework36
     SUBDIR += py-djangorestframework-csv
     SUBDIR += py-djangorestframework-filters
     SUBDIR += py-djangorestframework-xml
