@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://launchpad.net/gigalomania/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}src
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source 2D real time strategy god game
 
 USES=		zip
