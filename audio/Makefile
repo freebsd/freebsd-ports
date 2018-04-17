@@ -412,6 +412,7 @@
     SUBDIR += libkcompactdisc
     SUBDIR += libkcompactdisc-kde4
     SUBDIR += liblastfm
+    SUBDIR += liblastfm-qt5
     SUBDIR += liblo
     SUBDIR += liblscp
     SUBDIR += libltc
