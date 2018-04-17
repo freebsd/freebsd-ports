@@ -2,9 +2,9 @@ include/girara/callbacks.h
 include/girara/commands.h
 include/girara/completion.h
 include/girara/config.h
-include/girara/css-definitions.h
 include/girara/datastructures.h
 include/girara/entry.h
+include/girara/girara-version.h
 include/girara/girara.h
 include/girara/input-history.h
 include/girara/log.h
@@ -16,11 +16,9 @@ include/girara/statusbar.h
 include/girara/template.h
 include/girara/types.h
 include/girara/utils.h
-include/girara/version.h
-lib/libgirara-gtk3.a
 lib/libgirara-gtk3.so
 lib/libgirara-gtk3.so.3
-lib/libgirara-gtk3.so.3.0
+lib/libgirara-gtk3.so.3.1
 libdata/pkgconfig/girara-gtk3.pc
 %%NLS%%share/locale/de/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/el/LC_MESSAGES/libgirara-gtk3-3.mo
@@ -29,6 +27,7 @@ libdata/pkgconfig/girara-gtk3.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/he/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libgirara-gtk3-3.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libgirara-gtk3-3.mo
