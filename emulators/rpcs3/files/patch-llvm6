@@ -43,7 +43,7 @@ Based on https://github.com/hcorion/rpcs3/commit/017958c93018
 +#if LLVM_VERSION_MAJOR < 5
  	void deregisterEHFrames(u8* addr, u64 load_addr, std::size_t size) override
 +#else
-+	virtual void deregisterEHFrames() override
++	void deregisterEHFrames() override
 +#endif
  	{
  	}
