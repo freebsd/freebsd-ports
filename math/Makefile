@@ -691,6 +691,7 @@
     SUBDIR += py-pycosat
     SUBDIR += py-pygsl
     SUBDIR += py-pyhull
+    SUBDIR += py-pyipopt
     SUBDIR += py-pymc
     SUBDIR += py-pymc3
     SUBDIR += py-pyneqsys
