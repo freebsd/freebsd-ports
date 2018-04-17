@@ -1,0 +1,12 @@
+===============================================================================
+
+KDE Applications versions of Akonadi, KMail, and Kontact use large
+messages on the local machine. The default size on FreeBSD is too
+small, which causes local connection problems, and Akonadi-based
+applications will be flaky (e.g. mailboxes do not display, messages
+cannot be found). Increasing the buffer size is recommended:
+
+	sysctl net.local.stream.recvspace=65536
+	sysctl net.local.stream.sendspace=65536
+
+===============================================================================
