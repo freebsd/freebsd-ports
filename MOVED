@@ -10173,3 +10173,7 @@ www/mod_whatkilledus||2018-04-16|Apache 2.2 End of Life
 www/mod_xml2enc||2018-04-16|Apache 2.2 End of Life
 www/apache22||2018-04-16|Apache 2.2 End of Life
 www/mod_python33||2018-04-16|Apache 2.2 End of Life
+irc/xchat||2018-04-17|Has expired: Unmaintained upstream, use irc/hexchat instead
+irc/xchat-fish|irc/hexchat-fish|2018-04-17|Removed, master port irc/xchat expired
+irc/xchat-mircryption||2018-04-17|Removed, master port irc/xchat expired
+irc/xchat-ruby||2018-04-17|Removed, master port irc/xchat expired
