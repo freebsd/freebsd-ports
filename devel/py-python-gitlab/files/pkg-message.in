@@ -1,0 +1,4 @@
+Add %%PREFIX%%/etc/python-gitlab.cfg or ~/.python-gitlab.cfg
+
+See https://github.com/python-gitlab/python-gitlab/blob/master/docs/cli.rst
+for CLI configutation details
