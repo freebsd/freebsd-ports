@@ -1680,6 +1680,7 @@
     SUBDIR += py-html
     SUBDIR += py-html5-parser
     SUBDIR += py-html5lib
+    SUBDIR += py-httmock
     SUBDIR += py-http-parser
     SUBDIR += py-httpie
     SUBDIR += py-httplib2

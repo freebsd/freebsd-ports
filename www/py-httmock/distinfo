@@ -1,0 +1,5 @@
+TIMESTAMP = 1522615776
+SHA256 (py-httmock/httmock-1.2.6.tar.gz) = 4696306d1ff835c3ca865fdef2684d7e130b4120cc00126f862ba4797b1602ac
+SIZE (py-httmock/httmock-1.2.6.tar.gz) = 4399
+SHA256 (py-httmock/tests.py) = 544bcd2a837b7493df8062b16611de4e53fc2761ffa25e9553a2ffdbc0972d2c
+SIZE (py-httmock/tests.py) = 11680
