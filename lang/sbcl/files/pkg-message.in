@@ -1,0 +1,8 @@
+
+========================================================================
+For Common Lisp ports requiring the asdf system definition library from
+devel/cl-asdf, %%PREFIX%%/etc/asdf-init.lisp has been set to load in
+%%PREFIX%%/etc/sbclrc.  If you plan to use Quicklisp, you must remove
+this line from %%PREFIX%%/etc/sbclrc.
+========================================================================
+
