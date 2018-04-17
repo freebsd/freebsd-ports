@@ -1,0 +1,10 @@
+The purpose of AlgoPy is the evaluation of higher-order derivatives in the
+forward and reverse mode of Algorithmic Differentiation (AD) of functions
+that are implemented as Python programs. Particular focus are functions that
+contain numerical linear algebra functions as they often appear in statistically
+motivated functions. The intended use of AlgoPy is for easy prototyping at
+reasonable execution speeds. More precisely, for a typical program a directional
+derivative takes order 10 times as much time as time as the function evaluation.
+This is approximately also true for the gradient.
+
+WWW: https://pythonhosted.org/algopy/
