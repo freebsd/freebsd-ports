@@ -9,6 +9,7 @@
 %%PERL5_MAN3%%/PPIx::Regexp::StringTokenizer.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure::Assertion.3.gz
+%%PERL5_MAN3%%/PPIx::Regexp::Structure::Atomic_Script_Run.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure::BranchReset.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure::Capture.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure::CharClass.3.gz
@@ -41,6 +42,7 @@
 %%PERL5_MAN3%%/PPIx::Regexp::Token::Greediness.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token::GroupType.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token::GroupType::Assertion.3.gz
+%%PERL5_MAN3%%/PPIx::Regexp::Token::GroupType::Atomic_Script_Run.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token::GroupType::BranchReset.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token::GroupType::Code.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token::GroupType::Modifier.3.gz
@@ -73,6 +75,7 @@
 %%SITE_PERL%%/PPIx/Regexp/StringTokenizer.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/Assertion.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Atomic_Script_Run.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/BranchReset.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/Capture.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/CharClass.pm
@@ -105,6 +108,7 @@
 %%SITE_PERL%%/PPIx/Regexp/Token/Greediness.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/GroupType.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/GroupType/Assertion.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/GroupType/Atomic_Script_Run.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/GroupType/BranchReset.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/GroupType/Code.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/GroupType/Modifier.pm
