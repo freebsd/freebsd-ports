@@ -123,10 +123,6 @@
     SUBDIR += unreal
     SUBDIR += weechat
     SUBDIR += xaric
-    SUBDIR += xchat
-    SUBDIR += xchat-fish
-    SUBDIR += xchat-mircryption
-    SUBDIR += xchat-ruby
     SUBDIR += znc
 
 .include <bsd.port.subdir.mk>
