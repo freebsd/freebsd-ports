@@ -1,0 +1,69 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: gitlab_pages
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable gitlab_pages:
+#
+# gitlab_pages_enable (bool):  Set to "NO" by default.
+#                              Set it to "YES" to enable gitlab-pages
+# gitlab_pages_dir (str):      Set to "/var/tmp/gitlab_pages" by default.
+#                              Set it to directory to run gitlab-pages in
+# gitlab_pages_user (str):     Set to "gitlab-pages" by default.
+#                              Set it to user to run gitlab_pages under
+# gitlab_pages_group (str):    Set to "gitlab-pages" by default.
+#                              Set it to group to run gitlab-pages under
+#
+
+. /etc/rc.subr
+
+name="gitlab_pages"
+rcvar="gitlab_pages_enable"
+
+load_rc_config $name
+
+: ${gitlab_pages_enable:="NO"}
+: ${gitlab_pages_dir:="/var/tmp/gitlab_pages"}
+: ${gitlab_pages_user:="gitlab-pages"}
+: ${gitlab_pages_group:="gitlab-pages"}
+
+export HOME=${gitlab_pages_dir}
+export PATH=${PATH}:%%PREFIX%%/bin
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} %%PREFIX%%/bin/gitlab-pages run"
+gitlab_pages_chdir="${gitlab_pages_dir}"
+
+procname=%%PREFIX%%/bin/gitlab-pages
+
+start_precmd="gitlab_pages_startprecmd"
+list_cmd="listfunc"
+register_cmd="registerfunc"
+
+listfunc()
+{
+        su -m ${gitlab_pages_user} -c "env HOME=${gitlab_pages_dir} %%PREFIX%%/bin/gitlab-pages list"
+}
+
+registerfunc()
+{
+        su -m ${gitlab_pages_user} -c "env HOME=${gitlab_pages_dir} %%PREFIX%%/bin/gitlab-pages register"
+}
+
+gitlab_pages_startprecmd()
+{
+        if [ ! -e "${pidfile}" ]; then
+                install -g ${gitlab_pages_group} -o ${gitlab_pages_user} -- /dev/null "${pidfile}";
+        fi
+        if [ ! -d "${gitlab_pages_dir}" ]; then
+                install -d -o "${gitlab_pages_user}" -g "${gitlab_pages_group}" "${gitlab_pages_dir}"
+        fi
+}
+
+extra_commands="list register"
+run_rc_command $1
