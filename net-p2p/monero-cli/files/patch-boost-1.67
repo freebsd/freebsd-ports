@@ -1,0 +1,50 @@
+Regressed by https://github.com/boostorg/thread/commit/fea3e33128aa
+
+In file included from src/cryptonote_basic/hardfork.cpp:33:
+In file included from src/blockchain_db/blockchain_db.h:42:
+In file included from src/cryptonote_basic/hardfork.h:31:
+contrib/epee/include/syncobj.h:37:10: fatal error: 'boost/thread/v2/thread.hpp' file not found
+#include <boost/thread/v2/thread.hpp>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from src/rpc/daemon_handler.cpp:29:
+In file included from src/rpc/daemon_handler.h:36:
+In file included from src/p2p/net_node.h:41:
+In file included from contrib/epee/include/net/levin_server_cp2.h:32:
+In file included from contrib/epee/include/net/abstract_tcp_server2.h:324:
+contrib/epee/include/net/abstract_tcp_server2.inl:44:10: fatal error: 'boost/thread/v2/thread.hpp' file not found
+#include <boost/thread/v2/thread.hpp> // TODO
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- contrib/epee/include/syncobj.h.orig	2018-03-24 15:56:14 UTC
++++ contrib/epee/include/syncobj.h
+@@ -34,7 +34,13 @@
+ #include <boost/thread/locks.hpp>
+ #include <boost/thread/mutex.hpp>
+ #include <boost/thread/recursive_mutex.hpp>
++
++#include <boost/version.hpp>
++#if BOOST_VERSION < 106700
+ #include <boost/thread/v2/thread.hpp>
++#else
++#include <boost/thread/condition_variable.hpp>
++#endif
+ 
+ namespace epee
+ {
+--- contrib/epee/include/net/abstract_tcp_server2.inl.orig	2018-03-24 15:56:14 UTC
++++ contrib/epee/include/net/abstract_tcp_server2.inl
+@@ -41,7 +41,14 @@
+ #include <boost/utility/value_init.hpp>
+ #include <boost/asio/deadline_timer.hpp>
+ #include <boost/date_time/posix_time/posix_time.hpp> // TODO
++
++#include <boost/version.hpp>
++#if BOOST_VERSION < 106700
+ #include <boost/thread/v2/thread.hpp> // TODO
++#else
++#include <boost/thread/condition_variable.hpp> // TODO
++#endif
++
+ #include "misc_language.h"
+ #include "pragma_comp_defs.h"
+ 
