@@ -107,6 +107,7 @@
     SUBDIR += meep
     SUBDIR += mei
     SUBDIR += metaf2xml
+    SUBDIR += metaphysicl
     SUBDIR += minc2
     SUBDIR += mol2ps
     SUBDIR += mpb

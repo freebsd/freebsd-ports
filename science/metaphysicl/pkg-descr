@@ -1,0 +1,16 @@
+MetaPhysicL is a set of template classes and metaprogramming tools
+useful for the generation of physics codes which are optimized at
+compile-time.
+
+This includes many classes which are designed to be compatible with
+generic codes written for plain numeric data types like float and
+double, but which may provide more featureful output:
+* DualNumber, for automatic differentiation. 
+* NumberArray, for vectorization.
+* SparseNumberArray and SparseNumberStruct, for homogeneous or
+  heterogeneous sparse vectors whose structure can be inferred at
+  compile time.
+* EquationSet, for the automatic assembly of physics equations into
+  evaluation codes.
+
+WWW: https://github.com/roystgnr/MetaPhysicL
