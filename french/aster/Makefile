@@ -395,7 +395,7 @@ post-install:
 .endfor
 
 .if defined(MAINTAINER_MODE)
-regression-test:	install
+do-test:
 	@${ECHO_MSG} "Note: homard must be installed to run some steps succesfully."
 	${CP} ${inst_dir}/${VE}/astout.export /tmp/
 	(cd ${inst_dir}/${VE} &&	\
