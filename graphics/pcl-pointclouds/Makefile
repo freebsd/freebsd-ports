@@ -3,7 +3,7 @@
 PORTNAME=	pcl
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics math
 PKGNAMESUFFIX=	-pointclouds
 
@@ -12,6 +12,8 @@ COMMENT=	Point Cloud Library
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN=		https://github.com/PointCloudLibrary/pcl/issues/2284
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \

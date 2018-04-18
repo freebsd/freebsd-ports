@@ -3,7 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/

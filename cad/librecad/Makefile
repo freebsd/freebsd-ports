@@ -2,6 +2,7 @@
 
 PORTNAME=	librecad
 DISTVERSION=	2.2.0-rc1
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	jhale@FreeBSD.org

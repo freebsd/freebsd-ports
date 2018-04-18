@@ -2,7 +2,7 @@
 
 PORTNAME=	kdenetwork-strigi-analyzers
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net kde kde-kde4
 PKGNAMESUFFIX=	-kde4
 

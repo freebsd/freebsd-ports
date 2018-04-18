@@ -3,7 +3,7 @@
 
 PORTNAME=	agave
 PORTVERSION=	0.4.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://download.gna.org/colorscheme/releases/
 

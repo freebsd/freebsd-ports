@@ -4,6 +4,7 @@
 PORTNAME=	seqan-apps
 DISTVERSIONPREFIX=	seqan-v
 DISTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	h2+fbsdports@fsfe.org

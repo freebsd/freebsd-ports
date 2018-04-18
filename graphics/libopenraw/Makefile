@@ -3,6 +3,7 @@
 
 PORTNAME=	libopenraw
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
