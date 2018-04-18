@@ -1,6 +1,6 @@
 Make tests conditional
 
---- CMakeLists.txt.orig	2018-03-15 19:28:26 UTC
+--- CMakeLists.txt.orig	2018-04-11 16:05:28 UTC
 +++ CMakeLists.txt
 @@ -15,7 +15,7 @@ include(FeatureSummary)
  # check for PkgConfig, Qt and MPIR/GMP
@@ -20,11 +20,8 @@ Make tests conditional
      set(QT_USE_LIBSPREFIX Qt5::)
      set(ALKIMIA_LIB_SUFFIX "5")
      set(ALKIMIA_INCLUDE_SUFFIX "Qt5")
-@@ -56,6 +56,10 @@ find_package(Doxygen)
- feature_summary(WHAT ALL)
- 
- add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-+include_directories(${MP_INCLUDE_DIR})
+@@ -59,4 +59,7 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_F
+ include_directories(${MP_INCLUDE_DIR})
  
  add_subdirectory(src)
 -add_subdirectory(autotests)

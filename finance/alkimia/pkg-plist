@@ -10,5 +10,5 @@ lib/cmake/LibAlkimia%%QTVER_SUFFIX%%-%%VER%%/LibAlkimia%%QTVER_SUFFIX%%Targets-%
 lib/cmake/LibAlkimia%%QTVER_SUFFIX%%-%%VER%%/LibAlkimia%%QTVER_SUFFIX%%Targets.cmake
 lib/libalkimia%%QTVER_SUFFIX%%.so
 lib/libalkimia%%QTVER_SUFFIX%%.so.7
-lib/libalkimia%%QTVER_SUFFIX%%.so.7.0.1
+lib/libalkimia%%QTVER_SUFFIX%%.so.7.0.2
 libdata/pkgconfig/libalkimia%%QTVER_SUFFIX%%.pc
