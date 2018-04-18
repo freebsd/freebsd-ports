@@ -367,8 +367,8 @@ post-patch-CLANG-on:
 	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/git-clang-format
 
 post-patch-COMPILER_RT-on:
-	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-canonical-syscalls
-	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-ino64
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt/patch-lib_sanitizer__common_sanitizer__linux.cc
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt/patch-lib_sanitizer__common_sanitizer__platfrom__limit__posix.h
 
 post-build-COMPILER_RT-on:
 	${MKDIR} ${WRKDIR}/compiler-rt-build
