@@ -1105,6 +1105,7 @@
     SUBDIR += runit
     SUBDIR += runit-faster
     SUBDIR += runwhen
+    SUBDIR += rw
     SUBDIR += s-tui
     SUBDIR += s6
     SUBDIR += s6-rc

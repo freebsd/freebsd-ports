@@ -1,0 +1,5 @@
+rw is a command line program which copies information between files or byte
+streams. The rw command is designed to be a replacement for dd with 
+standard style command line flags.
+
+WWW: https://sortix.org/rw/
