@@ -1,0 +1,75 @@
+Regressed by https://github.com/boostorg/date_time/commit/f9f2aaf5216c
+
+gr-blocks/lib/message_strobe_impl.cc:93:35: error: no matching conversion for functional-style cast from 'float' to 'boost::posix_time::milliseconds' (aka 'subsecond_duration<boost::posix_time::time_duration, 1000>')
+        boost::this_thread::sleep(boost::posix_time::milliseconds(d_period_ms));
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/boost/date_time/time_duration.hpp:270:30: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'float' to 'const boost::date_time::subsecond_duration<boost::posix_time::time_duration, 1000>' for 1st argument
+  class BOOST_SYMBOL_VISIBLE subsecond_duration : public base_duration
+                             ^
+/usr/local/include/boost/date_time/time_duration.hpp:286:59: note: candidate template ignored: disabled by 'enable_if' [with T = float]
+                                typename boost::enable_if<boost::is_integral<T>, void>::type* = 0) :
+                                                          ^
+
+Regressed by https://github.com/boostorg/thread/commit/1e84b978b2bb
+
+/usr/local/bin/ld: CMakeFiles/tags_demo.dir/tags_demo.cc.o: undefined reference to symbol 'pthread_condattr_init@@FBSD_1.0'
+//lib/libthr.so.3: error adding symbols: DSO missing from command line
+c++: error: linker command failed with exit code 1 (use -v to see invocation)
+*** [gr-uhd/examples/c++/tags_demo] Error code 1
+
+--- gr-blocks/lib/message_strobe_impl.cc.orig	2017-02-27 23:19:00 UTC
++++ gr-blocks/lib/message_strobe_impl.cc
+@@ -90,7 +90,7 @@ namespace gr {
+     void message_strobe_impl::run()
+     {
+       while(!d_finished) {
+-        boost::this_thread::sleep(boost::posix_time::milliseconds(d_period_ms));
++        boost::this_thread::sleep(boost::posix_time::milliseconds(long(d_period_ms)));
+         if(d_finished) {
+           return;
+         }
+--- gr-blocks/lib/message_strobe_random_impl.cc.orig	2017-02-27 23:19:00 UTC
++++ gr-blocks/lib/message_strobe_random_impl.cc
+@@ -108,7 +108,7 @@ namespace gr {
+     void message_strobe_random_impl::run()
+     {
+       while(!d_finished) {
+-        boost::this_thread::sleep(boost::posix_time::milliseconds(std::max(0.0f,next_delay())));
++        boost::this_thread::sleep(boost::posix_time::milliseconds(long(std::max(0.0f,next_delay()))));
+         if(d_finished) {
+           return;
+         }
+--- gr-uhd/examples/c++/CMakeLists.txt.orig	2017-02-27 23:19:00 UTC
++++ gr-uhd/examples/c++/CMakeLists.txt
+@@ -37,6 +37,11 @@ link_directories(${Boost_LIBRARY_DIRS})
+ add_executable(tags_demo tags_demo.cc)
+ target_link_libraries(tags_demo gnuradio-uhd)
+ 
++if(UNIX AND NOT APPLE)
++    # Boost.Thread 1.67+ headers reference pthread_condattr_*
++    target_link_libraries(tags_demo pthread)
++endif(UNIX AND NOT APPLE)
++
+ INSTALL(TARGETS
+     tags_demo
+     DESTINATION ${GR_PKG_UHD_EXAMPLES_DIR}
+--- gr-uhd/lib/usrp_block_impl.cc.orig	2017-02-27 23:19:00 UTC
++++ gr-uhd/lib/usrp_block_impl.cc
+@@ -128,7 +128,7 @@ bool usrp_block_impl::_wait_for_locked_sensor(
+ 
+   while (true) {
+     if ((not first_lock_time.is_not_a_date_time()) and
+-        (boost::get_system_time() > (first_lock_time + boost::posix_time::seconds(LOCK_TIMEOUT)))) {
++        (boost::get_system_time() > (first_lock_time + boost::posix_time::seconds(long(LOCK_TIMEOUT))))) {
+       break;
+     }
+ 
+@@ -139,7 +139,7 @@ bool usrp_block_impl::_wait_for_locked_sensor(
+     else {
+       first_lock_time = boost::system_time(); //reset to 'not a date time'
+ 
+-      if (boost::get_system_time() > (start + boost::posix_time::seconds(LOCK_TIMEOUT))){
++      if (boost::get_system_time() > (start + boost::posix_time::seconds(long(LOCK_TIMEOUT)))){
+         return false;
+       }
+     }
