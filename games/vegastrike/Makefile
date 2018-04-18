@@ -54,6 +54,8 @@ BROKEN_aarch64=		Fails to compile: POSH cannot determine target CPU
 post-patch:
 	@${REINPLACE_CMD} -E 's,/usr/(local|X11R6),${LOCALBASE},' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/-lboost_python/-l${PY_BOOST_LIB}/' \
+		${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${BIN_FILES:S|bin|${WRKSRC}|} \
