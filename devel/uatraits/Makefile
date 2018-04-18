@@ -26,4 +26,8 @@ CONFIGURE_ENV=	crypto_CFLAGS="-I${OPENSSLINC}" \
 		crypto_LIBS="-L${OPENSSLLIB} -lcrypto"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/\[boost_python]/[${PY_BOOST_LIB}]/' \
+		${WRKSRC}/config/ax_boost_python.m4
+
 .include <bsd.port.mk>
