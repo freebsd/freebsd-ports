@@ -1,0 +1,13 @@
+--- contrib/x265_10bit/module.defs.orig	2017-12-24 00:33:48 UTC
++++ contrib/x265_10bit/module.defs
+@@ -19,6 +19,10 @@ X265_10.CONFIGURE.static      =
+ X265_10.CONFIGURE.shared      = -DENABLE_SHARED=OFF
+ X265_10.CONFIGURE.extra       = -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DENABLE_LIBNUMA=OFF -DEXPORT_C_API=OFF
+ 
++ifneq (x86_64,$(BUILD.machine))
++    X265_10.CONFIGURE.extra       += -DENABLE_ASSEMBLY=0
++endif
++
+ ifneq (none,$(X265_10.GCC.g))
+     X265_10.CONFIGURE.extra += -DCMAKE_BUILD_TYPE=Debug
+ endif
