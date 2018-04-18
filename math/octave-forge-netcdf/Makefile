@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-netcdf
-PORTVERSION=	1.0.11
-PORTREVISION=	4
+PORTVERSION=	1.0.12
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,9 +13,10 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
+GNU_CONFIGURE=	yes
 
 LIB_DEPENDS+=	libnetcdf.so:science/netcdf
 
