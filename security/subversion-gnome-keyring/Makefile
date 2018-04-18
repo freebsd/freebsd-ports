@@ -3,7 +3,7 @@
 
 PKGNAMESUFFIX=	-gnome-keyring
 CATEGORIES=	security gnome
-PORTREVISION=	2
+PORTREVISION=	3
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Gnome KWyring integration for Version control system
@@ -19,7 +19,7 @@ SVN_BUILD_ADDONS=	yes
 
 .include "${MASTERDIR}/Makefile.common"
 
-LIB_DEPENDS+=		libgnome-keyring.so:security/libgnome-keyring
+LIB_DEPENDS+=		libsecret-1.so:security/libsecret
 
 CONFIGURE_ARGS+=	--with-gnome-keyring
 
