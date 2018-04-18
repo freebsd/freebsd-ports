@@ -1,0 +1,20 @@
+--- Makefile.orig	2018-02-08 14:44:53 UTC
++++ Makefile
+@@ -11,7 +11,7 @@ INSTALL_DEST_DIR := $(DESTDIR)$(PREFIX)/
+ COVERAGE_DIR := $(TARGET_DIR)/cover
+ ASSEMBLY_ROOT := $(TARGET_DIR)/assembly
+ export GITALY_TEST_RUBY_DIR := $(BUILD_DIR)/ruby
+-BUNDLE_FLAGS ?= --deployment
++BUNDLE_FLAGS ?= --local
+ 
+ BUILDTIME = $(shell date -u +%Y%m%d.%H%M%S)
+ VERSION_PREFIXED = $(shell git describe)
+@@ -56,7 +56,7 @@ build:	.ruby-bundle $(TARGET_SETUP)
+ 	cp $(foreach cmd,$(COMMANDS),$(BIN_BUILD_DIR)/$(cmd)) $(BUILD_DIR)/
+ 
+ .ruby-bundle:	ruby/Gemfile.lock ruby/Gemfile
+-	cd ruby && bundle install $(BUNDLE_FLAGS)
++	cd ruby && rm Gemfile.lock && bundle install $(BUNDLE_FLAGS)
+ 	touch $@
+ 
+ # TODO: confirm what references this target? Omnibus? Source installs?
