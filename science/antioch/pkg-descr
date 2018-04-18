@@ -1,0 +1,6 @@
+A New Templated Implementation Of Chemistry for Hydrodynamics (Antioch) was
+initiated to centralize work within the realm of hypersonic aerodynamics,
+based on the libMesh finite element library. It's features include
+thread-safety and high performance.
+
+WWW: https://libantioch.github.io/

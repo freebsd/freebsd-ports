@@ -1,0 +1,13 @@
+--- configure.ac.orig	2018-04-18 05:44:31 UTC
++++ configure.ac
+@@ -265,8 +265,8 @@ AC_SUBST(ANTIOCH_STAMPED_FILES)
+ # to make it $datadir/antioch_default_files
+ # then we define the default files
+ # Need to make sure to have the `/` at the end
+-ANTIOCH_DEFAULT_FILES_SOURCE_PATH_TMP=$TOP_SEARCH_DIR/share/antioch_default_files/
+-ANTIOCH_DEFAULT_FILES_INSTALL_PATH_TMP=$prefix/share/antioch_default_files/
++ANTIOCH_DEFAULT_FILES_SOURCE_PATH_TMP=$TOP_SEARCH_DIR/share/antioch/default_files/
++ANTIOCH_DEFAULT_FILES_INSTALL_PATH_TMP=$prefix/share/antioch/default_files/
+ ANTIOCH_SHARE_XML_INPUT_FILES_SOURCE_PATH_TMP=$TOP_SEARCH_DIR/share/xml_inputs/
+ ANTIOCH_SHARE_XML_INPUT_FILES_INSTALL_PATH_TMP=$prefix/share/xml_inputs/
+ ANTIOCH_TESTING_INPUT_FILES_PATH_TMP=$TOP_SEARCH_DIR/test/input_files/
