@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://mechtilde.de/Loook/Downloads/
 DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple Python tool that search in LibreOffice/OpenOffice files
 
 LICENSE=	GPLv2+
