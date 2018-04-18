@@ -1,0 +1,6 @@
+Toot is a Mastodon CLI client written in Python, which lets you log into your
+Mastodon account, search for users and hashtags, display timelines, post
+(toot), upload media files and perform account related actions such us
+following, muting and blocking.
+
+WWW: https://github.com/ihabunek/toot
