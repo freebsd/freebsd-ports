@@ -51,6 +51,7 @@ post-patch:
 		 s|'-g'|''| ; \
 		 s|'-DGSCULPT_FPU_X86'|''| ; \
 		 s|'[(]-O2.*-O[)]'|''| ; \
+		 s|'boost_python'|'${PY_BOOST_LIB}'|; \
 		 /^cppLibs/s|BackgroundModel|BackgroundMesh|" \
 		${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e \
