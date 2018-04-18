@@ -1,0 +1,15 @@
+--- share/Makefile.am.orig	2018-04-13 14:56:50 UTC
++++ share/Makefile.am
+@@ -1,10 +1,10 @@
+ aclocaldir = $(prefix)/share/aclocal
+ aclocal_DATA = $(top_srcdir)/share/aclocal/*
+ 
+-antioch_default_filesdir = $(prefix)/share/antioch_default_files
++antioch_default_filesdir = $(prefix)/share/antioch/default_files
+ antioch_default_files_DATA = $(top_srcdir)/share/antioch_default_files/*
+ 
+-xml_inputsdir = $(prefix)/share/xml_inputs
++xml_inputsdir = $(prefix)/share/antioch/xml_inputs
+ xml_inputs_DATA = $(top_srcdir)/share/xml_inputs/*
+ 
+ EXTRA_DIST  = $(aclocal_DATA)
