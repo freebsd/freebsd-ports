@@ -403,22 +403,35 @@ libexec/openhab2/start_debug.sh
 @sample share/openhab2/etc/users.properties /var/db/openhab2/userdata/etc/users.properties
 @sample share/openhab2/etc/version.properties /var/db/openhab2/userdata/etc/version.properties
 @sample share/openhab2/tmp/README /var/db/openhab2/userdata/etc/README
-@sample %%ETCDIR%%/html/index.html.sample
+@dir %%ETCDIR%%
+@dir %%ETCDIR%%/html
+@dir %%ETCDIR%%/icons
+@dir %%ETCDIR%%/icons/classic
+@dir %%ETCDIR%%/items
+@dir %%ETCDIR%%/persistence
+@dir %%ETCDIR%%/rules
+@dir %%ETCDIR%%/scripts
+@dir %%ETCDIR%%/services
+@dir %%ETCDIR%%/sitemaps
+@dir %%ETCDIR%%/sounds
+@dir %%ETCDIR%%/things
+@dir %%ETCDIR%%/transform
+@sample(openhab,openhab,640) %%ETCDIR%%/html/index.html.sample
 %%ETCDIR%%/html/readme.txt
 %%ETCDIR%%/icons/classic/readme.txt
 %%ETCDIR%%/items/readme.txt
 %%ETCDIR%%/persistence/readme.txt
 %%ETCDIR%%/rules/readme.txt
 %%ETCDIR%%/scripts/readme.txt
-@sample %%ETCDIR%%/services/addons.cfg.sample
+@sample(openhab,openhab,640) %%ETCDIR%%/services/addons.cfg.sample
 %%ETCDIR%%/services/readme.txt
-@sample %%ETCDIR%%/services/runtime.cfg.sample
+@sample(openhab,openhab,640) %%ETCDIR%%/services/runtime.cfg.sample
 %%ETCDIR%%/sitemaps/readme.txt
 %%ETCDIR%%/sounds/barking.mp3
 %%ETCDIR%%/sounds/doorbell.mp3
 %%ETCDIR%%/things/readme.txt
-@sample %%ETCDIR%%/transform/de.map.sample
-@sample %%ETCDIR%%/transform/en.map.sample
+@sample(openhab,openhab,640) %%ETCDIR%%/transform/de.map.sample
+@sample(openhab,openhab,640) %%ETCDIR%%/transform/en.map.sample
 %%ETCDIR%%/transform/readme.txt
 @dir /var/run/openhab2
 @dir /var/db/openhab2/home
