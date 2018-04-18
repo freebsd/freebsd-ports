@@ -105,6 +105,8 @@ CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=ON -DUSE_PYTHON3:BOOL=OFF \
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/doc/OpenImageIO|${DOCSDIR}|g' \
 		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e '/find_/s/ boost_python[[:>:]]/ ${PY_BOOST_LIB}/' \
+		${WRKSRC}/src/cmake/externalpackages.cmake
 
 post-install:
 .if ${SLAVE_PORT} == no
