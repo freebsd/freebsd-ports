@@ -416,7 +416,7 @@ nomad:*:472:
 minio:*:473:
 gitlab-runner:*:474:
 traefik:*:475:
-# free: 476
+gitlab-pages:*:476:
 # free: 477
 prometheus:*:478:
 alertmanager:*:479:
