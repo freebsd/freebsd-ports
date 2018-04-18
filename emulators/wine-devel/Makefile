@@ -169,11 +169,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
 
-check-wine-devel-vs-wine-staging:
+check-wine-devel-vs-staging:
 	@${GREP} %%STAGING%% pkg-plist | while read f; do \
 	  f=`echo $$f | ${SED} -e 's/%%STAGING%%//'`; \
 	  if [ -f "$$STAGEDIR/$$PREFIX/$$f" ]; then \
-	    ${PRINTF} "%s no longer contigent on %%STAGING%%?\n" "$$f"; \
+	    ${PRINTF} "%s no longer contingent on %%STAGING%%?\n" "$$f"; \
 	  fi \
 	done
 
