@@ -1,0 +1,191 @@
+Regressed by https://github.com/boostorg/date_time/commit/f9f2aaf5216c
+
+src/rbd_replay/Replayer.cc:353:65: error: no matching conversion for functional-style cast from 'float' to 'boost::posix_time::microseconds' (aka 'subsecond_duration<boost::posix_time::time_duration, 1000000>')
+    boost::system_time sub_release_time(action_completed_time + boost::posix_time::microseconds(dep.time_delta * m_latency_multiplier / 1000));
+                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/boost/date_time/time_duration.hpp:270:30: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'float' to 'const boost::date_time::subsecond_duration<boost::posix_time::time_duration, 1000000>' for 1st argument
+  class BOOST_SYMBOL_VISIBLE subsecond_duration : public base_duration
+                             ^
+/usr/local/include/boost/date_time/time_duration.hpp:270:30: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'float' to 'boost::date_time::subsecond_duration<boost::posix_time::time_duration, 1000000>' for 1st argument
+/usr/local/include/boost/date_time/time_duration.hpp:286:59: note: candidate template ignored: disabled by 'enable_if' [with T = float]
+                                typename boost::enable_if<boost::is_integral<T>, void>::type* = 0) :
+                                                          ^
+
+src/test/librbd/test_mock_Journal.cc:485:42: error: reference to '_1' is ambiguous
+      std::bind(&invoke_replay_complete, _1, 0));
+                                         ^
+/usr/local/include/boost/bind/placeholders.hpp:46:38: note: candidate found by name lookup is 'boost::placeholders::_1'
+BOOST_STATIC_CONSTEXPR boost::arg<1> _1;
+                                     ^
+/usr/include/c++/v1/functional:2021:21: note: candidate found by name lookup is 'std::__1::placeholders::_1'
+constexpr __ph<1>   _1{};
+                    ^
+
+--- src/rbd_replay/Replayer.cc.orig	2018-02-26 21:47:18 UTC
++++ src/rbd_replay/Replayer.cc
+@@ -350,7 +350,7 @@ void Replayer::wait_for_actions(const action::Dependen
+     dout(DEPGRAPH_LEVEL) << "Finished waiting for " << dep.id << " after " << micros << " microseconds" << dendl;
+     // Apparently the nanoseconds constructor is optional:
+     // http://www.boost.org/doc/libs/1_46_0/doc/html/date_time/details.html#compile_options
+-    boost::system_time sub_release_time(action_completed_time + boost::posix_time::microseconds(dep.time_delta * m_latency_multiplier / 1000));
++    boost::system_time sub_release_time(action_completed_time + boost::posix_time::microseconds(long(dep.time_delta * m_latency_multiplier / 1000)));
+     if (sub_release_time > release_time) {
+       release_time = sub_release_time;
+     }
+--- src/test/librbd/test_mock_Journal.cc.orig	2018-02-26 21:47:18 UTC
++++ src/test/librbd/test_mock_Journal.cc
+@@ -214,7 +214,6 @@ using ::testing::Return;
+ using ::testing::SaveArg;
+ using ::testing::SetArgPointee;
+ using ::testing::WithArg;
+-using namespace std::placeholders;
+ 
+ ACTION_P2(StartReplay, wq, ctx) {
+   wq->queue(ctx, 0);
+@@ -482,7 +481,7 @@ class TestMockJournal : public TestMockFixture { (publ
+     expect_get_max_append_size(mock_journaler, 1 << 16);
+     expect_start_replay(
+       mock_image_ctx, mock_journaler,
+-      std::bind(&invoke_replay_complete, _1, 0));
++      std::bind(&invoke_replay_complete, std::placeholders::_1, 0));
+ 
+     MockJournalReplay mock_journal_replay;
+     expect_stop_replay(mock_journaler);
+@@ -530,7 +529,7 @@ TEST_F(TestMockJournal, StateTransitions) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_ready, _1));
++    std::bind(&invoke_replay_ready, std::placeholders::_1));
+ 
+   ::journal::MockReplayEntry mock_replay_entry;
+   MockJournalReplay mock_journal_replay;
+@@ -539,11 +538,11 @@ TEST_F(TestMockJournal, StateTransitions) {
+   expect_try_pop_front(mock_image_ctx, mock_journaler, true, mock_replay_entry);
+   expect_replay_process(mock_journal_replay);
+   expect_try_pop_front(mock_image_ctx, mock_journaler, false, mock_replay_entry,
+-                       std::bind(&invoke_replay_ready, _1));
++                       std::bind(&invoke_replay_ready, std::placeholders::_1));
+   expect_try_pop_front(mock_image_ctx, mock_journaler, true, mock_replay_entry);
+   expect_replay_process(mock_journal_replay);
+   expect_try_pop_front(mock_image_ctx, mock_journaler, false, mock_replay_entry,
+-                       std::bind(&invoke_replay_complete, _1, 0));
++                       std::bind(&invoke_replay_complete, std::placeholders::_1, 0));
+ 
+   expect_stop_replay(mock_journaler);
+   expect_shut_down_replay(mock_image_ctx, mock_journal_replay, 0);
+@@ -599,7 +598,7 @@ TEST_F(TestMockJournal, ReplayCompleteError) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_complete, _1, -EINVAL));
++    std::bind(&invoke_replay_complete, std::placeholders::_1, -EINVAL));
+ 
+   MockJournalReplay mock_journal_replay;
+   expect_stop_replay(mock_journaler);
+@@ -613,7 +612,7 @@ TEST_F(TestMockJournal, ReplayCompleteError) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_complete, _1, 0));
++    std::bind(&invoke_replay_complete, std::placeholders::_1, 0));
+ 
+   expect_stop_replay(mock_journaler);
+   expect_shut_down_replay(mock_image_ctx, mock_journal_replay, 0);
+@@ -645,14 +644,14 @@ TEST_F(TestMockJournal, FlushReplayError) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_ready, _1));
++    std::bind(&invoke_replay_ready, std::placeholders::_1));
+ 
+   ::journal::MockReplayEntry mock_replay_entry;
+   MockJournalReplay mock_journal_replay;
+   expect_try_pop_front(mock_image_ctx, mock_journaler, true, mock_replay_entry);
+   expect_replay_process(mock_journal_replay);
+   expect_try_pop_front(mock_image_ctx, mock_journaler, false, mock_replay_entry,
+-                       std::bind(&invoke_replay_complete, _1, 0));
++                       std::bind(&invoke_replay_complete, std::placeholders::_1, 0));
+   expect_stop_replay(mock_journaler);
+   expect_shut_down_replay(mock_image_ctx, mock_journal_replay, -EINVAL);
+   expect_shut_down_journaler(mock_journaler);
+@@ -664,7 +663,7 @@ TEST_F(TestMockJournal, FlushReplayError) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_complete, _1, 0));
++    std::bind(&invoke_replay_complete, std::placeholders::_1, 0));
+ 
+   expect_stop_replay(mock_journaler);
+   expect_shut_down_replay(mock_image_ctx, mock_journal_replay, 0);
+@@ -696,7 +695,7 @@ TEST_F(TestMockJournal, CorruptEntry) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_ready, _1));
++    std::bind(&invoke_replay_ready, std::placeholders::_1));
+ 
+   ::journal::MockReplayEntry mock_replay_entry;
+   MockJournalReplay mock_journal_replay;
+@@ -713,7 +712,7 @@ TEST_F(TestMockJournal, CorruptEntry) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_complete, _1, 0));
++    std::bind(&invoke_replay_complete, std::placeholders::_1, 0));
+   expect_stop_replay(mock_journaler);
+   expect_shut_down_replay(mock_image_ctx, mock_journal_replay, 0);
+   expect_start_append(mock_journaler);
+@@ -744,7 +743,7 @@ TEST_F(TestMockJournal, StopError) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_complete, _1, 0));
++    std::bind(&invoke_replay_complete, std::placeholders::_1, 0));
+ 
+   MockJournalReplay mock_journal_replay;
+   expect_stop_replay(mock_journaler);
+@@ -777,7 +776,7 @@ TEST_F(TestMockJournal, ReplayOnDiskPreFlushError) {
+ 
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_ready, _1));
++    std::bind(&invoke_replay_ready, std::placeholders::_1));
+ 
+   ::journal::MockReplayEntry mock_replay_entry;
+   MockJournalReplay mock_journal_replay;
+@@ -803,7 +802,7 @@ TEST_F(TestMockJournal, ReplayOnDiskPreFlushError) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler, {
+-      std::bind(&invoke_replay_complete, _1, 0)
++      std::bind(&invoke_replay_complete, std::placeholders::_1, 0)
+     });
+ 
+   expect_stop_replay(mock_journaler);
+@@ -857,14 +856,14 @@ TEST_F(TestMockJournal, ReplayOnDiskPostFlushError) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_ready, _1));
++    std::bind(&invoke_replay_ready, std::placeholders::_1));
+ 
+   ::journal::MockReplayEntry mock_replay_entry;
+   MockJournalReplay mock_journal_replay;
+   expect_try_pop_front(mock_image_ctx, mock_journaler, true, mock_replay_entry);
+   expect_replay_process(mock_journal_replay);
+   expect_try_pop_front(mock_image_ctx, mock_journaler, false, mock_replay_entry,
+-                       std::bind(&invoke_replay_complete, _1, 0));
++                       std::bind(&invoke_replay_complete, std::placeholders::_1, 0));
+   expect_stop_replay(mock_journaler);
+ 
+   Context *on_flush = nullptr;
+@@ -880,7 +879,7 @@ TEST_F(TestMockJournal, ReplayOnDiskPostFlushError) {
+   expect_get_max_append_size(mock_journaler, 1 << 16);
+   expect_start_replay(
+     mock_image_ctx, mock_journaler,
+-    std::bind(&invoke_replay_complete, _1, 0));
++    std::bind(&invoke_replay_complete, std::placeholders::_1, 0));
+ 
+   expect_stop_replay(mock_journaler);
+   expect_shut_down_replay(mock_image_ctx, mock_journal_replay, 0);
