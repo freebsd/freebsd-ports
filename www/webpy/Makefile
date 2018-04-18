@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webpy
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	www python
 MASTER_SITES=	http://webpy.org/static/ \
 		CHEESESHOP
