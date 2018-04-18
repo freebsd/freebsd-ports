@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-kwallet
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security kde
 
 MAINTAINER=	lev@FreeBSD.org
@@ -23,7 +23,7 @@ USES+=			kde:4
 
 .include "${MASTERDIR}/Makefile.common"
 
-CONFIGURE_ARGS+=	--with-kwallet=${KDE_PREFIX}
+CONFIGURE_ARGS+=	--with-kwallet=${KDE_PREFIX}/include/kde4:${KDE_PREFIX}/lib
 
 ALL_TARGET=	kwallet-lib
 INSTALL_TARGET=	install-kwallet-lib
