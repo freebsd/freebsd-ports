@@ -1,0 +1,25 @@
+In file included from src/third_party/yaml-cpp-0.5.3/src/nodebuilder.cpp:5:
+In file included from src/third_party/yaml-cpp-0.5.3/include/yaml-cpp/node/detail/node.h:14:
+In file included from src/third_party/yaml-cpp-0.5.3/include/yaml-cpp/node/detail/node_ref.h:13:
+In file included from src/third_party/yaml-cpp-0.5.3/include/yaml-cpp/node/detail/node_data.h:20:
+In file included from src/third_party/yaml-cpp-0.5.3/include/yaml-cpp/node/iterator.h:13:
+src/third_party/yaml-cpp-0.5.3/include/yaml-cpp/node/detail/iterator.h:48:54: error: no member named 'next' in namespace 'boost'
+  void increment() { this->base_reference() = boost::next(this->base()); }
+                                              ~~~~~~~^
+
+--- src/third_party/yaml-cpp-0.5.3/include/yaml-cpp/node/detail/iterator.h.orig	2018-02-16 21:50:58 UTC
++++ src/third_party/yaml-cpp-0.5.3/include/yaml-cpp/node/detail/iterator.h
+@@ -11,7 +11,13 @@
+ #include "yaml-cpp/node/ptr.h"
+ #include "yaml-cpp/node/detail/node_iterator.h"
+ #include <boost/iterator/iterator_adaptor.hpp>
++
++#include <boost/version.hpp>
++#if BOOST_VERSION < 106700
+ #include <boost/utility.hpp>
++#else
++#include <boost/next_prior.hpp>
++#endif
+ 
+ namespace YAML {
+ namespace detail {
