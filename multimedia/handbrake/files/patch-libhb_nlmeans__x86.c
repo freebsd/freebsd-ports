@@ -1,4 +1,4 @@
---- libhb/nlmeans_x86.c.orig	2017-02-25 20:56:19 UTC
+--- libhb/nlmeans_x86.c.orig	2017-10-05 21:17:34 UTC
 +++ libhb/nlmeans_x86.c
 @@ -10,7 +10,7 @@
  

@@ -1,8 +1,0 @@
---- scripts/mingw-w64-build.orig	2017-02-25 20:56:19 UTC
-+++ scripts/mingw-w64-build
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/bin/env bash
- # mingw-w64-build - download and build mingw-w64 toolchain
- #
- # Project: https://github.com/bradleysepos/mingw-w64-build

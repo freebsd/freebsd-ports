@@ -1,8 +1,0 @@
---- scripts/mac-toolchain-build.orig	2017-02-25 20:56:19 UTC
-+++ scripts/mac-toolchain-build
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/bin/env bash
- 
- # mac only
- if [[ "$(uname)" != "Darwin" ]]; then

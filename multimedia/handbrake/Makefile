@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	handbrake
-PORTVERSION=	1.0.7
-PORTREVISION=	5
+DISTVERSION=	1.1.0
 CATEGORIES=	multimedia
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	naito.yuichiro@gmail.com
 COMMENT=	Versatile DVD ripper and video transcoder
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	bash:shells/bash \
 		yasm:devel/yasm \
@@ -34,26 +35,14 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libopus.so:audio/opus \
 		libjansson.so:devel/jansson
 
-BROKEN_aarch64=		invokes x86 assembler
-BROKEN_armv6=		invokes x86 assembler
-BROKEN_armv7=		invokes x86 assembler
-BROKEN_mips=		invokes x86 assembler
-BROKEN_mips64=		invokes x86 assembler
-BROKEN_sparc64=		invokes x86 assembler
-BROKEN_powerpc64=	invokes x86 assembler
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	HandBrake
-GH_PROJECT=	HandBrake
-
-CONTRIB_FILES=	fdk-aac-0.1.4.tar.gz \
-		libav-12.tar.gz \
-		libbluray-0.9.3.tar.bz2 \
-		libdvdnav-5.0.1.tar.bz2 \
-		libdvdread-5.0.0-6-gcb1ae87.tar.gz \
-		libvpx-1.5.0.tar.bz2 \
-		x265_2.1-1.tar.gz
-MASTER_SITES+=	http://download.handbrake.fr/contrib/:contrib
+CONTRIB_FILES=	fdk-aac-0.1.5.tar.gz \
+		libav-12.3.tar.gz \
+		libbluray-1.0.2.tar.bz2 \
+		libdvdnav-5.0.3.tar.bz2 \
+		libdvdread-5.0.3.tar.bz2 \
+		libvpx-1.6.1.tar.bz2 \
+		x265_2.6.tar.gz
+MASTER_SITES+=	https://download.handbrake.fr/contrib/:contrib
 DISTFILES+=	${CONTRIB_FILES:S/$/:contrib/}
 
 .if !defined(PACKAGE_BUILDING)
@@ -62,10 +51,15 @@ LIB_DEPENDS+=	libdvdcss.so:multimedia/libdvdcss
 .endif
 
 GNU_CONFIGURE=	yes
-USE_GCC=	yes
 USES=		autoreconf:build compiler:features gmake iconv \
 		libtool:build localbase:ldflags pkgconfig python:2.7,build
 MAKE_ENV=	V=1 ACLOCAL=${LOCALBASE}/bin/aclocal
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	HandBrake
+GH_PROJECT=	HandBrake
+
+USE_GCC=	yes
 
 CONFIGURE_ARGS=	--force --enable-x265
 CONFIGURE_TARGET=	build
@@ -98,23 +92,18 @@ LICENSE_NAME_FDK_AAC=		Software License for The Fraunhofer FDK AAC Codec Library
 LICENSE_FILE_FDK_AAC=		${WRKDIR}/${DISTFILES:Mfdk*:R:R}/NOTICE
 LICENSE_PERMS_FDK_AAC=		dist-mirror pkg-mirror auto-accept
 
-.include <bsd.port.options.mk>
-
 # Recent GNU binutils are required to handle inline SSSE3 asm (in x264), and
 # to support --exclude-libs option for ld(1) when building GUI program
-.if ${PORT_OPTIONS:MX11}
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-CONFIGURE_ARGS+=	--disable-gtk-update-checks --disable-gst
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
-LIB_DEPENDS+=	libvpx.so:multimedia/libvpx \
-		libdbus-glib-1.so:devel/dbus-glib \
-		libnotify.so:devel/libnotify
-USES+=		gettext desktop-file-utils
-USE_GNOME+=	gtk30 intltool cairo gdkpixbuf2
-.else
-CONFIGURE_ARGS+=	--disable-gtk
-.endif
+X11_CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
+X11_MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
+X11_CONFIGURE_ON=	--disable-gtk-update-checks
+X11_CONFIGURE_OFF=	--disable-gtk
+X11_BUILD_DEPENDS=	${LOCALBASE}/bin/ld:devel/binutils
+X11_LIB_DEPENDS=	libvpx.so:multimedia/libvpx \
+			libnotify.so:devel/libnotify
+X11_USES=	gettext desktop-file-utils
+X11_USE=	gstreamer1=gdkpixbuf,libav \
+		gnome=gtk30,intltool,cairo,gdkpixbuf2
 
 # HandBrake tries to fetch its dependencies during build phase, which is not
 # considered good in FreeBSD.  Instead, we will provided the downloaded files.
