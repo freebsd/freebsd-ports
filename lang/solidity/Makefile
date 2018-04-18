@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	SMT
 SMT_DESC=	SMT Checker
 SMT_LIB_DEPENDS=libz3.so:math/z3
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
 
 CMAKE_ARGS+=	-DUSE_LD_GOLD=OFF -DTESTS=OFF \
 		-DJSONCPP_INCLUDE_DIR:STRING="${LOCALBASE}/include/jsoncpp" \
