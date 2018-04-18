@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-zeromq
-PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTVERSION=	1.3.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,7 +15,7 @@ LIB_DEPENDS+=	libzmq.so:net/libzmq4
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
