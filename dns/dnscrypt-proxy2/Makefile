@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	2.0.8
-CATEGORIES=	dns security
+PORTVERSION=	2.0.10
+CATEGORIES=	dns security ipv6
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	egypcio@googlemail.com
@@ -22,6 +22,10 @@ GH_ACCOUNT=	jedisct1
 USERS=		_dnscrypt-proxy
 GROUPS=		_dnscrypt-proxy
 
+PLIST_SUB=	USER="${USERS}" GROUP="${GROUPS}"
+SUB_LIST=	USER="${USERS}" GROUP="${GROUPS}"
+SUB_FILES=	pkg-message
+
 PORTDOCS=	README.*
 PORTEXAMPLES=	example*
 
@@ -36,7 +40,7 @@ do-build:
 		go build -ldflags "-s -w" -o ${WRKDIR}/sbin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/sbin/${PORTNAME} ${STAGEDIR}${LOCALBASE}/sbin
+	${INSTALL_PROGRAM} ${WRKDIR}/sbin/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -47,11 +51,13 @@ do-install-EXAMPLES-on:
 	cd ${WRKSRC}/${PORTNAME} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 post-install:
-	# After install examples because of the priv drop issue with Go
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	# After 'install' examples because of the priv drop issue with Go.
+	# Keeping original example files.
 	@${REINPLACE_CMD} -e \
 		"s#\['127.0.0.1:53', '\[::1\]:53'\]#\['127.0.0.1:5353'\]#" \
 		${WRKSRC}/${PORTNAME}/example-${PORTNAME}.toml
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/example-${PORTNAME}.toml \
-		${STAGEDIR}${LOCALBASE}/etc/${PORTNAME}.toml.sample
+		${STAGEDIR}${ETCDIR}/${PORTNAME}.toml.sample
 
 .include <bsd.port.mk>

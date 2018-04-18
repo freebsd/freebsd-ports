@@ -4,7 +4,7 @@
 #
 # PROVIDE: dnscrypt_proxy
 # REQUIRE: cleanvar SERVERS
-# BEFORE:  dnsmasq local_unbound unbound named
+# BEFORE:  dnsmasq local_unbound named nsmasq pdns unbound
 #
 # Options to configure dnscrypt-proxy via /etc/rc.conf:
 #
@@ -12,10 +12,13 @@
 #				Default: NO
 #
 # dnscrypt_proxy_conf (str)	Config file to use
-#				Default: %%PREFIX%%/etc/dnscrypt-proxy.toml
+#				Default: %%ETCDIR%%/dnscrypt-proxy.toml
+#
+# dnscrypt_proxy_suexec (bool)	Run dnscrypt_proxy as root
+#				Default: NO
 #
 # dnscrypt_proxy_uid (str)	User to run dnscrypt_proxy as
-#				Default: _dnscrypt-proxy
+#				Default: %%USER%%
 
 . /etc/rc.subr
 
@@ -26,9 +29,12 @@ procname="%%PREFIX%%/sbin/dnscrypt-proxy"
 
 load_rc_config $name
 
-: ${dnscrypt_proxy_enable:=NO}
-: ${dnscrypt_proxy_conf:=%%PREFIX%%/etc/dnscrypt-proxy.toml}
-: ${dnscrypt_proxy_uid:=_dnscrypt-proxy}
+: ${dnscrypt_proxy_enable:="NO"}
+: ${dnscrypt_proxy_conf:="%%ETCDIR%%/dnscrypt-proxy.toml"}
+: ${dnscrypt_proxy_suexec:="NO"}
+: ${dnscrypt_proxy_uid:="%%USER%%"}
+
+checkyesno dnscrypt_proxy_suexec && dnscrypt_proxy_uid="root"
 
 command="/usr/sbin/daemon"
 command_args="-p ${pidfile} -u ${dnscrypt_proxy_uid} -f ${procname} -config ${dnscrypt_proxy_conf}"

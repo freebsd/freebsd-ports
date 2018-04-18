@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180417:
+  AFFECTS: users of dns/dnscrypt-proxy2
+  AUTHOR: egypcio@googlemail.com
+
+  DNSCrypt-Proxy 2 has been updated to 2.0.10 and the configuration file
+  has changed from ${PREFIX}/etc/dnscrypt-proxy.toml to
+  ${PREFIX}/etc/dnscrypt-proxy/dnscrypt-proxy.toml.
+
 20180416:
   AFFECTS: users of mail/postgrey
   AUTHOR: ports.maintainer@evilphi.com
