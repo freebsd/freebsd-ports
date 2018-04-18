@@ -12,7 +12,9 @@ COMMENT=	POrtable Computing Language (POCL)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to package
+BROKEN_FreeBSD_10=	pocl is not supported on 10.x
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	only tested on x86
 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION} \
 		opencl>=2.1:devel/opencl
@@ -21,15 +23,11 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libltdl.so:devel/libltdl
 RUN_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION}
 
-BROKEN_FreeBSD_10=	pocl is not supported on 10.x
-ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	only tested on x86
-
 LLVM_VERSION=	${MESA_LLVM_VER:U40}
 
-USE_LDCONFIG=	yes
+USES=		cmake:outsource localbase:ldflags ncurses pkgconfig
 USE_CXXSTD=	gnu++11
-USES=		cmake localbase:ldflags ncurses pkgconfig
+USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DWITH_LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config" \
 		-DPOCL_INSTALL_PKGCONFIG_DIR="${PREFIX}/libdata/pkgconfig" \

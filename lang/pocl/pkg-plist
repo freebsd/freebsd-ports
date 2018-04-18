@@ -16,10 +16,10 @@ libdata/pkgconfig/pocl.pc
 %%DATADIR%%/include/pocl.h
 %%DATADIR%%/include/pocl_device.h
 %%DATADIR%%/include/pocl_types.h
-%%DATADIR%%/kernel-%%ARCH%%-unknown-%%OPSYS%%%%OSREL%%-avx.bc
-%%DATADIR%%/kernel-%%ARCH%%-unknown-%%OPSYS%%%%OSREL%%-avx2.bc
-%%DATADIR%%/kernel-%%ARCH%%-unknown-%%OPSYS%%%%OSREL%%-avx512.bc
-%%DATADIR%%/kernel-%%ARCH%%-unknown-%%OPSYS%%%%OSREL%%-avx_fma4.bc
-%%DATADIR%%/kernel-%%ARCH%%-unknown-%%OPSYS%%%%OSREL%%-sse2.bc
-%%DATADIR%%/kernel-%%ARCH%%-unknown-%%OPSYS%%%%OSREL%%-sse41.bc
-%%DATADIR%%/kernel-%%ARCH%%-unknown-%%OPSYS%%%%OSREL%%-ssse3.bc
+%%DATADIR%%/kernel-%%ARCH%%-portbld-%%OPSYS%%%%OSREL%%-avx.bc
+%%DATADIR%%/kernel-%%ARCH%%-portbld-%%OPSYS%%%%OSREL%%-avx2.bc
+%%DATADIR%%/kernel-%%ARCH%%-portbld-%%OPSYS%%%%OSREL%%-avx512.bc
+%%DATADIR%%/kernel-%%ARCH%%-portbld-%%OPSYS%%%%OSREL%%-avx_fma4.bc
+%%DATADIR%%/kernel-%%ARCH%%-portbld-%%OPSYS%%%%OSREL%%-sse2.bc
+%%DATADIR%%/kernel-%%ARCH%%-portbld-%%OPSYS%%%%OSREL%%-sse41.bc
+%%DATADIR%%/kernel-%%ARCH%%-portbld-%%OPSYS%%%%OSREL%%-ssse3.bc
