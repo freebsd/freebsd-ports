@@ -1,21 +1,30 @@
-KeePassXC is a community fork of KeePassX with the goal to extend and improve
-it with new features and bugfixes to provide a feature-rich, fully
-cross-platform and modern open-source password manager.
+KeePassXC is a community fork of KeePassX, a native cross-platform port of
+KeePass Password Safe, with the goal to extend and improve it with new features
+and bugfixes to provide a feature-rich, fully cross-platform and modern
+open-source password manager.
 
-Additional features compared to KeePassX:
-  * Auto-Type on all three major platforms (Linux, Windows, OS X)
-  * Stand-alone password generator
-  * Password strength meter
-  * A generator for time-based one-time passwords
-  * Using website favicons as entry icons
-  * Merging of databases
-  * Automatic reload when the database changed on disk
-  * KeePassHTTP support for use with PassIFox in Mozilla Firefox and
-    chromeIPass in Google Chrome or Chromium.
-  * YubiKey challenge-response support for strengthening 
-    your database encryption key
-  * Support for Twofish encryption
+Main Features
+
+  * Secure storage of passwords and other private data with AES, Twofish or
+    ChaCha20 encryption
+  * Cross-platform, runs on Linux, Windows and macOS without modifications
+  * File format compatibility with KeePass2, KeePassX, MacPass, KeeWeb and many
+    others (KDBX 3.1 and 4.0)
+  * SSH Agent integration
+  * Auto-Type on all supported platforms for automagically filling in login
+    forms
+  * Key file and YubiKey challenge-response support for additional security
+  * TOTP generation (including Steam Guard)
+  * CSV import from other password managers (e.g., LastPass)
   * Command line interface
-  * Many bug fixes
+  * Stand-alone password and passphrase generator
+  * Password strength meter
+  * Custom icons for database entries and download of website favicons
+  * Database merge functionality
+  * Automatic reload when the database was changed externally
+  * Browser integration with KeePassXC-Browser for Google Chrome, Chromium,
+    Vivaldi, and Mozilla Firefox.
+  * (Legacy) KeePassHTTP support for use with KeePassHTTP-Connector available
+    for Mozilla Firefox and Google Chrome, and passafari for Safari.
 
 WWW: https://keepassxc.org
