@@ -2,6 +2,7 @@
 
 PORTNAME=	opendungeons
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org

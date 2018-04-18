@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	boost-jam
-PORTREVISION=	1
 COMMENT=	Build tool from the boost.org
 
 PLIST_FILES=	bin/bjam

@@ -3,7 +3,7 @@
 
 PORTNAME=	frogatto
 PORTVERSION=	1.3.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com

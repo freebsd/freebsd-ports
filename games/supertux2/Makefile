@@ -2,7 +2,7 @@
 
 PORTNAME=	supertux
 PORTVERSION=	0.4.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/SuperTux/supertux/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	2

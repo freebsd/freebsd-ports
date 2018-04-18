@@ -3,7 +3,7 @@
 
 PORTNAME=	orthanc-dicomweb
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science net
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-dicom-web/
 DISTNAME=	OrthancDicomWeb-${PORTVERSION}
