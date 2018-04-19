@@ -8,6 +8,7 @@ bin/grep
 bin/lzegrep
 bin/lzfgrep
 bin/lzgrep
+bin/rgrep
 bin/xzegrep
 bin/xzfgrep
 bin/xzgrep
@@ -23,6 +24,7 @@ man/man1/grep.1.gz
 man/man1/lzegrep.1.gz
 man/man1/lzfgrep.1.gz
 man/man1/lzgrep.1.gz
+man/man1/rgrep.1.gz
 man/man1/xzegrep.1.gz
 man/man1/xzfgrep.1.gz
 man/man1/xzgrep.1.gz
