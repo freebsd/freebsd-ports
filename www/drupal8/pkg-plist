@@ -2216,6 +2216,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/Routing/UrlGeneratorTrait.php
 %%WWWDIR%%/core/lib/Drupal/Core/Routing/UrlMatcher.php
 %%WWWDIR%%/core/lib/Drupal/Core/Routing/routing.api.php
+%%WWWDIR%%/core/lib/Drupal/Core/Security/RequestSanitizer.php
 %%WWWDIR%%/core/lib/Drupal/Core/Serialization/Yaml.php
 %%WWWDIR%%/core/lib/Drupal/Core/Session/AccountInterface.php
 %%WWWDIR%%/core/lib/Drupal/Core/Session/AccountProxy.php
