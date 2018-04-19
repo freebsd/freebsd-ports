@@ -4,4 +4,4 @@ threads, and is linked directly against the net-snmp library for minmumal SNMP
 polling overhead. Spine is a replacement for the default cmd.php poller so you
 must decide if using Spine makes sense for your installation.
 
-WWW: http://cacti.net/spine_info.php
+WWW: https://cacti.net/spine_info.php
