@@ -3,7 +3,7 @@
 
 PORTNAME=	crlibm
 DISTVERSION=	1.0beta4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://lipforge.ens-lyon.fr/frs/download.php/%SUBDIR%/:1,2,3 \
 		LOCAL/bf/crlibm:4
