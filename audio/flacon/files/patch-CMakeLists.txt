@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2016-01-29 18:07:49 UTC
+--- CMakeLists.txt.orig	2018-04-17 16:48:51 UTC
 +++ CMakeLists.txt
-@@ -324,7 +324,7 @@ configure_file(
- add_custom_command(TARGET ${PROJECT_NAME}
-     COMMAND gzip -c ${CMAKE_CURRENT_BINARY_DIR}/flacon.1 > ${CMAKE_CURRENT_BINARY_DIR}/flacon.1.gz
- )
--install(FILES ${CMAKE_CURRENT_BINARY_DIR}/flacon.1.gz DESTINATION share/man/man1)
-+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/flacon.1.gz DESTINATION man/man1)
+@@ -314,7 +314,7 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+ else()
+     install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
+     install(FILES   ${QM_FILES}             DESTINATION ${TRANSLATIONS_DIR})
+-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/flacon.1.gz DESTINATION share/man/man1)
++    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/flacon.1.gz DESTINATION man/man1)
  
- # Add make dist target **************************
- if(NOT CPACK_PACKAGE_VERSION)
+     install(FILES   ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.desktop DESTINATION "share/applications")
+     install(FILES   images/mainicon/flacon-16x16.png   DESTINATION "share/icons/hicolor/16x16/apps"    RENAME "flacon.png")
