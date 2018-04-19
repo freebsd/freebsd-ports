@@ -27,6 +27,7 @@ bin/nucBed
 bin/pairToBed
 bin/pairToPair
 bin/randomBed
+bin/shiftBed
 bin/shuffleBed
 bin/slopBed
 bin/sortBed

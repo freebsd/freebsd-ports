@@ -1,29 +1,30 @@
-# Created by: Scott Cheloha <scottcheloha@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	bedtools
-PORTVERSION=	2.25.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.27.1
 CATEGORIES=	biology
-MASTER_SITES=	GITHUB
 
-MAINTAINER=	scottcheloha@gmail.com
-COMMENT=	Toolset for genome arithmetic
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Toolset for genome set arithmetic such as intersect, union
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		gmake python
 USE_GITHUB=	yes
 GH_ACCOUNT=	arq5x
 GH_PROJECT=	bedtools2
 
-USES=		gmake python
-#NO_ARCH=	yes
+pre-build:
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|@\$$(CXX)|$$(CXX)|g' \
+		${WRKSRC}/*/Makefile \
+		${WRKSRC}/*/*/Makefile \
+		${WRKSRC}/*/*/*/Makefile \
+		${WRKSRC}/*/*/*/*/Makefile
 
-MAKE_JOBS_UNSAFE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' \
-		${WRKSRC}/Makefile
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
 
 .include <bsd.port.mk>
