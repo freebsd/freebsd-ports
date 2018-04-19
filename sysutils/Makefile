@@ -944,6 +944,7 @@
     SUBDIR += py-halite
     SUBDIR += py-hared
     SUBDIR += py-honcho
+    SUBDIR += py-hpilo
     SUBDIR += py-iowait
     SUBDIR += py-mqttwarn
     SUBDIR += py-nagiosplugin

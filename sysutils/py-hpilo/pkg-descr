@@ -1,0 +1,4 @@
+This module provide a python library and command-line tool that make 
+easier to interact with HP iLO management interface.
+
+WWW: https://github.com/seveas/python-hpilo
