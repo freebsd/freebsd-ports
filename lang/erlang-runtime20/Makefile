@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	20.3.2
-PORTREVISION=	1
+PORTVERSION=	20.3.3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg			\
 		http://erlang.stacken.kth.se/download/:erlangorg		\
@@ -19,7 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-20.3.1 patch-otp-20.3.2
+PATCHFILES=	patch-otp-20.3.1 patch-otp-20.3.2 patch-otp-20.3.3
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
