@@ -23,6 +23,7 @@ MAKE_ENV+=	CALCPAGER="${CALCPAGER}" CAT="${CAT}" CHMOD="${CHMOD}" \
 		CP="${CP}" GMAKE="${MAKE_CMD}" LN="${LN}" MKDIR="${MKDIR}" \
 		MV="${MV}" RM="${RM}" SED="${SED}" TOUCH="${TOUCH}" \
 		TRUE="${TRUE}"
+TEST_TARGET=	check
 .if !exists(/usr/lib/libreadline.so)
 MAKE_ARGS=	READLINE_INCLUDE="-I${LOCALBASE}/include" \
 		READLINE_LIB="-L${LOCALBASE}/lib -lreadline"
@@ -30,11 +31,8 @@ MAKE_ARGS=	READLINE_INCLUDE="-I${LOCALBASE}/include" \
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-regression-test: build
-	( cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check )
-
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/calc \
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/calc \
 		${STAGEDIR}${PREFIX}/lib/lib*.so
 
 .include <bsd.port.mk>
