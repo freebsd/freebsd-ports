@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	YouCompleteMe
-DISTVERSION=	g20180210
-PORTREVISION=	1
+DISTVERSION=	g20180417
 CATEGORIES=	devel
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -28,11 +27,14 @@ RUN_DEPENDS=	vim:editors/vim \
 USES=		cmake python:2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	Valloric
-GH_TAGNAME=	c2a7b3c
-GH_TUPLE=	Valloric:ycmd:aa04988:ycm/third_party/ycmd \
+GH_TAGNAME=	6975efd
+GH_TUPLE=	Valloric:ycmd:2f87e12:ycm/third_party/ycmd \
 		vheon:JediHTTP:d283a73:ycmd5/third_party/ycmd/third_party/JediHTTP
 
 CMAKE_SOURCE_PATH+=	${WRKSRC}/third_party/ycmd/cpp
+
+PLIST_SUB=		VIMFILESDIR=share/vim/vimfiles \
+			YCMDDIR=share/vim/vimfiles/third_party/ycmd
 
 SUB_FILES=		pkg-message pkg-install pkg-deinstall
 SUB_LIST=		VIMFILESDIR="${VIMFILESDIR}"
@@ -46,8 +48,8 @@ GO_DESC=		Go Semantic Completion Support
 MONO_DESC=		C\# Semantic Completion Support
 RUST_DESC=		Rust Semantic Completion Support
 
-C_CMAKE_ON=		-DPATH_TO_LLVM_ROOT=${LOCALBASE}/llvm40
-C_LIB_DEPENDS=		libclang.so:devel/llvm40
+C_CMAKE_ON=		-DPATH_TO_LLVM_ROOT=${LOCALBASE}/llvm60
+C_LIB_DEPENDS=		libclang.so:devel/llvm60
 
 GO_RUN_DEPENDS=		gocode:devel/go-gocode \
 			godef:devel/go-godef
