@@ -2,6 +2,7 @@
 
 PORTNAME=	qore
 PORTVERSION=	0.8.12
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	estrabd@gmail.com
