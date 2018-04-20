@@ -2529,6 +2529,7 @@
     SUBDIR += p5-File-ConfigDir
     SUBDIR += p5-File-Copy-Link
     SUBDIR += p5-File-Copy-Recursive
+    SUBDIR += p5-File-Copy-Recursive-Reduced
     SUBDIR += p5-File-CountLines
     SUBDIR += p5-File-CreationTime
     SUBDIR += p5-File-DesktopEntry
