@@ -9,6 +9,7 @@ libexec/xpdf/pdftops
 libexec/xpdf/pdftotext
 %%X11%%libexec/xpdf/xpdf
 %%X11%%bin/xpdf
+%%X11%%%%DESKTOPDIR%%/xpdf.desktop
 etc/man.d/xpdf.conf
 %%DATADIR%%/man/man1/pdfdetach.1.gz
 %%DATADIR%%/man/man1/pdffonts.1.gz
