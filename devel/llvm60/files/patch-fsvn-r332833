@@ -1,0 +1,1623 @@
+commit f13397cb22ae77e9b18e29273e2920bd63c17ef1
+Author: dim <dim@FreeBSD.org>
+Date:   Fri Apr 20 18:20:55 2018 +0000
+
+    Recommit r332501, with an additional upstream fix for "Cannot lower
+    EFLAGS copy that lives out of a basic block!" errors on i386.
+    
+    Pull in r325446 from upstream clang trunk (by me):
+    
+      [X86] Add 'sahf' CPU feature to frontend
+    
+      Summary:
+      Make clang accept `-msahf` (and `-mno-sahf`) flags to activate the
+      `+sahf` feature for the backend, for bug 36028 (Incorrect use of
+      pushf/popf enables/disables interrupts on amd64 kernels).  This was
+      originally submitted in bug 36037 by Jonathan Looney
+      <jonlooney@gmail.com>.
+    
+      As described there, GCC also uses `-msahf` for this feature, and the
+      backend already recognizes the `+sahf` feature. All that is needed is
+      to teach clang to pass this on to the backend.
+    
+      The mapping of feature support onto CPUs may not be complete; rather,
+      it was chosen to match LLVM's idea of which CPUs support this feature
+      (see lib/Target/X86/X86.td).
+    
+      I also updated the affected test case (CodeGen/attr-target-x86.c) to
+      match the emitted output.
+    
+      Reviewers: craig.topper, coby, efriedma, rsmith
+    
+      Reviewed By: craig.topper
+    
+      Subscribers: emaste, cfe-commits
+    
+      Differential Revision: https://reviews.llvm.org/D43394
+    
+    Pull in r328944 from upstream llvm trunk (by Chandler Carruth):
+    
+      [x86] Expose more of the condition conversion routines in the public
+      API for X86's instruction information. I've now got a second patch
+      under review that needs these same APIs. This bit is nicely
+      orthogonal and obvious, so landing it. NFC.
+    
+    Pull in r329414 from upstream llvm trunk (by Craig Topper):
+    
+      [X86] Merge itineraries for CLC, CMC, and STC.
+    
+      These are very simple flag setting instructions that appear to only
+      be a single uop. They're unlikely to need this separation.
+    
+    Pull in r329657 from upstream llvm trunk (by Chandler Carruth):
+    
+      [x86] Introduce a pass to begin more systematically fixing PR36028
+      and similar issues.
+    
+      The key idea is to lower COPY nodes populating EFLAGS by scanning the
+      uses of EFLAGS and introducing dedicated code to preserve the
+      necessary state in a GPR. In the vast majority of cases, these uses
+      are cmovCC and jCC instructions. For such cases, we can very easily
+      save and restore the necessary information by simply inserting a
+      setCC into a GPR where the original flags are live, and then testing
+      that GPR directly to feed the cmov or conditional branch.
+    
+      However, things are a bit more tricky if arithmetic is using the
+      flags.  This patch handles the vast majority of cases that seem to
+      come up in practice: adc, adcx, adox, rcl, and rcr; all without
+      taking advantage of partially preserved EFLAGS as LLVM doesn't
+      currently model that at all.
+    
+      There are a large number of operations that techinaclly observe
+      EFLAGS currently but shouldn't in this case -- they typically are
+      using DF.  Currently, they will not be handled by this approach.
+      However, I have never seen this issue come up in practice. It is
+      already pretty rare to have these patterns come up in practical code
+      with LLVM. I had to resort to writing MIR tests to cover most of the
+      logic in this pass already.  I suspect even with its current amount
+      of coverage of arithmetic users of EFLAGS it will be a significant
+      improvement over the current use of pushf/popf. It will also produce
+      substantially faster code in most of the common patterns.
+    
+      This patch also removes all of the old lowering for EFLAGS copies,
+      and the hack that forced us to use a frame pointer when EFLAGS copies
+      were found anywhere in a function so that the dynamic stack
+      adjustment wasn't a problem. None of this is needed as we now lower
+      all of these copies directly in MI and without require stack
+      adjustments.
+    
+      Lots of thanks to Reid who came up with several aspects of this
+      approach, and Craig who helped me work out a couple of things
+      tripping me up while working on this.
+    
+      Differential Revision: https://reviews.llvm.org/D45146
+    
+    Pull in r329673 from upstream llvm trunk (by Chandler Carruth):
+    
+      [x86] Model the direction flag (DF) separately from the rest of
+      EFLAGS.
+    
+      This cleans up a number of operations that only claimed te use EFLAGS
+      due to using DF. But no instructions which we think of us setting
+      EFLAGS actually modify DF (other than things like popf) and so this
+      needlessly creates uses of EFLAGS that aren't really there.
+    
+      In fact, DF is so restrictive it is pretty easy to model. Only STD,
+      CLD, and the whole-flags writes (WRFLAGS and POPF) need to model
+      this.
+    
+      I've also somewhat cleaned up some of the flag management instruction
+      definitions to be in the correct .td file.
+    
+      Adding this extra register also uncovered a failure to use the
+      correct datatype to hold X86 registers, and I've corrected that as
+      necessary here.
+    
+      Differential Revision: https://reviews.llvm.org/D45154
+    
+    Pull in r330264 from upstream llvm trunk (by Chandler Carruth):
+    
+      [x86] Fix PR37100 by teaching the EFLAGS copy lowering to rewrite
+      uses across basic blocks in the limited cases where it is very
+      straight forward to do so.
+    
+      This will also be useful for other places where we do some limited
+      EFLAGS propagation across CFG edges and need to handle copy rewrites
+      afterward. I think this is rapidly approaching the maximum we can and
+      should be doing here. Everything else begins to require either heroic
+      analysis to prove how to do PHI insertion manually, or somehow
+      managing arbitrary PHI-ing of EFLAGS with general PHI insertion.
+      Neither of these seem at all promising so if those cases come up,
+      we'll almost certainly need to rewrite the parts of LLVM that produce
+      those patterns.
+    
+      We do now require dominator trees in order to reliably diagnose
+      patterns that would require PHI nodes. This is a bit unfortunate but
+      it seems better than the completely mysterious crash we would get
+      otherwise.
+    
+      Differential Revision: https://reviews.llvm.org/D45673
+    
+    Together, these should ensure clang does not use pushf/popf sequences to
+    save and restore flags, avoiding problems with unrelated flags (such as
+    the interrupt flag) being restored unexpectedly.
+    
+    Requested by:   jtl
+    PR:             225330
+    MFC after:      1 week
+
+diff --git llvm/include/llvm/CodeGen/MachineBasicBlock.h b/contrib/llvm/include/llvm/CodeGen/MachineBasicBlock.h
+index 0c9110cbaa8..89210e16629 100644
+--- include/llvm/CodeGen/MachineBasicBlock.h
++++ include/llvm/CodeGen/MachineBasicBlock.h
+@@ -449,6 +449,13 @@ class MachineBasicBlock
+   /// Replace successor OLD with NEW and update probability info.
+   void replaceSuccessor(MachineBasicBlock *Old, MachineBasicBlock *New);
+ 
++  /// Copy a successor (and any probability info) from original block to this
++  /// block's. Uses an iterator into the original blocks successors.
++  ///
++  /// This is useful when doing a partial clone of successors. Afterward, the
++  /// probabilities may need to be normalized.
++  void copySuccessor(MachineBasicBlock *Orig, succ_iterator I);
++
+   /// Transfers all the successors from MBB to this machine basic block (i.e.,
+   /// copies all the successors FromMBB and remove all the successors from
+   /// FromMBB).
+diff --git llvm/lib/CodeGen/MachineBasicBlock.cpp b/contrib/llvm/lib/CodeGen/MachineBasicBlock.cpp
+index 209abf34d88..cd67449e3ac 100644
+--- lib/CodeGen/MachineBasicBlock.cpp
++++ lib/CodeGen/MachineBasicBlock.cpp
+@@ -646,6 +646,14 @@ void MachineBasicBlock::replaceSuccessor(MachineBasicBlock *Old,
+   removeSuccessor(OldI);
+ }
+ 
++void MachineBasicBlock::copySuccessor(MachineBasicBlock *Orig,
++                                      succ_iterator I) {
++  if (Orig->Probs.empty())
++    addSuccessor(*I, Orig->getSuccProbability(I));
++  else
++    addSuccessorWithoutProb(*I);
++}
++
+ void MachineBasicBlock::addPredecessor(MachineBasicBlock *Pred) {
+   Predecessors.push_back(Pred);
+ }
+diff --git llvm/lib/Target/X86/Disassembler/X86Disassembler.cpp b/contrib/llvm/lib/Target/X86/Disassembler/X86Disassembler.cpp
+index c58254ae38c..b3c491b3de5 100644
+--- lib/Target/X86/Disassembler/X86Disassembler.cpp
++++ lib/Target/X86/Disassembler/X86Disassembler.cpp
+@@ -265,13 +265,10 @@ MCDisassembler::DecodeStatus X86GenericDisassembler::getInstruction(
+ /// @param reg        - The Reg to append.
+ static void translateRegister(MCInst &mcInst, Reg reg) {
+ #define ENTRY(x) X86::x,
+-  uint8_t llvmRegnums[] = {
+-    ALL_REGS
+-    0
+-  };
++  static constexpr MCPhysReg llvmRegnums[] = {ALL_REGS};
+ #undef ENTRY
+ 
+-  uint8_t llvmRegnum = llvmRegnums[reg];
++  MCPhysReg llvmRegnum = llvmRegnums[reg];
+   mcInst.addOperand(MCOperand::createReg(llvmRegnum));
+ }
+ 
+diff --git llvm/lib/Target/X86/X86.h b/contrib/llvm/lib/Target/X86/X86.h
+index 36132682429..642dda8f422 100644
+--- lib/Target/X86/X86.h
++++ lib/Target/X86/X86.h
+@@ -66,6 +66,9 @@ FunctionPass *createX86OptimizeLEAs();
+ /// Return a pass that transforms setcc + movzx pairs into xor + setcc.
+ FunctionPass *createX86FixupSetCC();
+ 
++/// Return a pass that lowers EFLAGS copy pseudo instructions.
++FunctionPass *createX86FlagsCopyLoweringPass();
++
+ /// Return a pass that expands WinAlloca pseudo-instructions.
+ FunctionPass *createX86WinAllocaExpander();
+ 
+diff --git llvm/lib/Target/X86/X86FlagsCopyLowering.cpp b/contrib/llvm/lib/Target/X86/X86FlagsCopyLowering.cpp
+new file mode 100644
+index 00000000000..1b6369b7bfd
+--- /dev/null
++++ lib/Target/X86/X86FlagsCopyLowering.cpp
+@@ -0,0 +1,777 @@
++//====- X86FlagsCopyLowering.cpp - Lowers COPY nodes of EFLAGS ------------===//
++//
++//                     The LLVM Compiler Infrastructure
++//
++// This file is distributed under the University of Illinois Open Source
++// License. See LICENSE.TXT for details.
++//
++//===----------------------------------------------------------------------===//
++/// \file
++///
++/// Lowers COPY nodes of EFLAGS by directly extracting and preserving individual
++/// flag bits.
++///
++/// We have to do this by carefully analyzing and rewriting the usage of the
++/// copied EFLAGS register because there is no general way to rematerialize the
++/// entire EFLAGS register safely and efficiently. Using `popf` both forces
++/// dynamic stack adjustment and can create correctness issues due to IF, TF,
++/// and other non-status flags being overwritten. Using sequences involving
++/// SAHF don't work on all x86 processors and are often quite slow compared to
++/// directly testing a single status preserved in its own GPR.
++///
++//===----------------------------------------------------------------------===//
++
++#include "X86.h"
++#include "X86InstrBuilder.h"
++#include "X86InstrInfo.h"
++#include "X86Subtarget.h"
++#include "llvm/ADT/ArrayRef.h"
++#include "llvm/ADT/DenseMap.h"
++#include "llvm/ADT/STLExtras.h"
++#include "llvm/ADT/ScopeExit.h"
++#include "llvm/ADT/SmallPtrSet.h"
++#include "llvm/ADT/SmallSet.h"
++#include "llvm/ADT/SmallVector.h"
++#include "llvm/ADT/SparseBitVector.h"
++#include "llvm/ADT/Statistic.h"
++#include "llvm/CodeGen/MachineBasicBlock.h"
++#include "llvm/CodeGen/MachineConstantPool.h"
++#include "llvm/CodeGen/MachineDominators.h"
++#include "llvm/CodeGen/MachineFunction.h"
++#include "llvm/CodeGen/MachineFunctionPass.h"
++#include "llvm/CodeGen/MachineInstr.h"
++#include "llvm/CodeGen/MachineInstrBuilder.h"
++#include "llvm/CodeGen/MachineModuleInfo.h"
++#include "llvm/CodeGen/MachineOperand.h"
++#include "llvm/CodeGen/MachineRegisterInfo.h"
++#include "llvm/CodeGen/MachineSSAUpdater.h"
++#include "llvm/CodeGen/TargetInstrInfo.h"
++#include "llvm/CodeGen/TargetRegisterInfo.h"
++#include "llvm/CodeGen/TargetSchedule.h"
++#include "llvm/CodeGen/TargetSubtargetInfo.h"
++#include "llvm/IR/DebugLoc.h"
++#include "llvm/MC/MCSchedule.h"
++#include "llvm/Pass.h"
++#include "llvm/Support/CommandLine.h"
++#include "llvm/Support/Debug.h"
++#include "llvm/Support/raw_ostream.h"
++#include <algorithm>
++#include <cassert>
++#include <iterator>
++#include <utility>
++
++using namespace llvm;
++
++#define PASS_KEY "x86-flags-copy-lowering"
++#define DEBUG_TYPE PASS_KEY
++
++STATISTIC(NumCopiesEliminated, "Number of copies of EFLAGS eliminated");
++STATISTIC(NumSetCCsInserted, "Number of setCC instructions inserted");
++STATISTIC(NumTestsInserted, "Number of test instructions inserted");
++STATISTIC(NumAddsInserted, "Number of adds instructions inserted");
++
++namespace llvm {
++
++void initializeX86FlagsCopyLoweringPassPass(PassRegistry &);
++
++} // end namespace llvm
++
++namespace {
++
++// Convenient array type for storing registers associated with each condition.
++using CondRegArray = std::array<unsigned, X86::LAST_VALID_COND + 1>;
++
++class X86FlagsCopyLoweringPass : public MachineFunctionPass {
++public:
++  X86FlagsCopyLoweringPass() : MachineFunctionPass(ID) {
++    initializeX86FlagsCopyLoweringPassPass(*PassRegistry::getPassRegistry());
++  }
++
++  StringRef getPassName() const override { return "X86 EFLAGS copy lowering"; }
++  bool runOnMachineFunction(MachineFunction &MF) override;
++  void getAnalysisUsage(AnalysisUsage &AU) const override;
++
++  /// Pass identification, replacement for typeid.
++  static char ID;
++
++private:
++  MachineRegisterInfo *MRI;
++  const X86InstrInfo *TII;
++  const TargetRegisterInfo *TRI;
++  const TargetRegisterClass *PromoteRC;
++  MachineDominatorTree *MDT;
++
++  CondRegArray collectCondsInRegs(MachineBasicBlock &MBB,
++                                  MachineInstr &CopyDefI);
++
++  unsigned promoteCondToReg(MachineBasicBlock &MBB,
++                            MachineBasicBlock::iterator TestPos,
++                            DebugLoc TestLoc, X86::CondCode Cond);
++  std::pair<unsigned, bool>
++  getCondOrInverseInReg(MachineBasicBlock &TestMBB,
++                        MachineBasicBlock::iterator TestPos, DebugLoc TestLoc,
++                        X86::CondCode Cond, CondRegArray &CondRegs);
++  void insertTest(MachineBasicBlock &MBB, MachineBasicBlock::iterator Pos,
++                  DebugLoc Loc, unsigned Reg);
++
++  void rewriteArithmetic(MachineBasicBlock &TestMBB,
++                         MachineBasicBlock::iterator TestPos, DebugLoc TestLoc,
++                         MachineInstr &MI, MachineOperand &FlagUse,
++                         CondRegArray &CondRegs);
++  void rewriteCMov(MachineBasicBlock &TestMBB,
++                   MachineBasicBlock::iterator TestPos, DebugLoc TestLoc,
++                   MachineInstr &CMovI, MachineOperand &FlagUse,
++                   CondRegArray &CondRegs);
++  void rewriteCondJmp(MachineBasicBlock &TestMBB,
++                      MachineBasicBlock::iterator TestPos, DebugLoc TestLoc,
++                      MachineInstr &JmpI, CondRegArray &CondRegs);
++  void rewriteCopy(MachineInstr &MI, MachineOperand &FlagUse,
++                   MachineInstr &CopyDefI);
++  void rewriteSetCC(MachineBasicBlock &TestMBB,
++                    MachineBasicBlock::iterator TestPos, DebugLoc TestLoc,
++                    MachineInstr &SetCCI, MachineOperand &FlagUse,
++                    CondRegArray &CondRegs);
++};
++
++} // end anonymous namespace
++
++INITIALIZE_PASS_BEGIN(X86FlagsCopyLoweringPass, DEBUG_TYPE,
++                      "X86 EFLAGS copy lowering", false, false)
++INITIALIZE_PASS_END(X86FlagsCopyLoweringPass, DEBUG_TYPE,
++                    "X86 EFLAGS copy lowering", false, false)
++
++FunctionPass *llvm::createX86FlagsCopyLoweringPass() {
++  return new X86FlagsCopyLoweringPass();
++}
++
++char X86FlagsCopyLoweringPass::ID = 0;
++
++void X86FlagsCopyLoweringPass::getAnalysisUsage(AnalysisUsage &AU) const {
++  AU.addRequired<MachineDominatorTree>();
++  MachineFunctionPass::getAnalysisUsage(AU);
++}
++
++namespace {
++/// An enumeration of the arithmetic instruction mnemonics which have
++/// interesting flag semantics.
++///
++/// We can map instruction opcodes into these mnemonics to make it easy to
++/// dispatch with specific functionality.
++enum class FlagArithMnemonic {
++  ADC,
++  ADCX,
++  ADOX,
++  RCL,
++  RCR,
++  SBB,
++};
++} // namespace
++
++static FlagArithMnemonic getMnemonicFromOpcode(unsigned Opcode) {
++  switch (Opcode) {
++  default:
++    report_fatal_error("No support for lowering a copy into EFLAGS when used "
++                       "by this instruction!");
++
++#define LLVM_EXPAND_INSTR_SIZES(MNEMONIC, SUFFIX)                              \
++  case X86::MNEMONIC##8##SUFFIX:                                               \
++  case X86::MNEMONIC##16##SUFFIX:                                              \
++  case X86::MNEMONIC##32##SUFFIX:                                              \
++  case X86::MNEMONIC##64##SUFFIX:
++
++#define LLVM_EXPAND_ADC_SBB_INSTR(MNEMONIC)                                    \
++  LLVM_EXPAND_INSTR_SIZES(MNEMONIC, rr)                                        \
++  LLVM_EXPAND_INSTR_SIZES(MNEMONIC, rr_REV)                                    \
++  LLVM_EXPAND_INSTR_SIZES(MNEMONIC, rm)                                        \
++  LLVM_EXPAND_INSTR_SIZES(MNEMONIC, mr)                                        \
++  case X86::MNEMONIC##8ri:                                                     \
++  case X86::MNEMONIC##16ri8:                                                   \
++  case X86::MNEMONIC##32ri8:                                                   \
++  case X86::MNEMONIC##64ri8:                                                   \
++  case X86::MNEMONIC##16ri:                                                    \
++  case X86::MNEMONIC##32ri:                                                    \
++  case X86::MNEMONIC##64ri32:                                                  \
++  case X86::MNEMONIC##8mi:                                                     \
++  case X86::MNEMONIC##16mi8:                                                   \
++  case X86::MNEMONIC##32mi8:                                                   \
++  case X86::MNEMONIC##64mi8:                                                   \
++  case X86::MNEMONIC##16mi:                                                    \
++  case X86::MNEMONIC##32mi:                                                    \
++  case X86::MNEMONIC##64mi32:                                                  \
++  case X86::MNEMONIC##8i8:                                                     \
++  case X86::MNEMONIC##16i16:                                                   \
++  case X86::MNEMONIC##32i32:                                                   \
++  case X86::MNEMONIC##64i32:
++
++    LLVM_EXPAND_ADC_SBB_INSTR(ADC)
++    return FlagArithMnemonic::ADC;
++
++    LLVM_EXPAND_ADC_SBB_INSTR(SBB)
++    return FlagArithMnemonic::SBB;
++
++#undef LLVM_EXPAND_ADC_SBB_INSTR
++
++    LLVM_EXPAND_INSTR_SIZES(RCL, rCL)
++    LLVM_EXPAND_INSTR_SIZES(RCL, r1)
++    LLVM_EXPAND_INSTR_SIZES(RCL, ri)
++    return FlagArithMnemonic::RCL;
++
++    LLVM_EXPAND_INSTR_SIZES(RCR, rCL)
++    LLVM_EXPAND_INSTR_SIZES(RCR, r1)
++    LLVM_EXPAND_INSTR_SIZES(RCR, ri)
++    return FlagArithMnemonic::RCR;
++
++#undef LLVM_EXPAND_INSTR_SIZES
++
++  case X86::ADCX32rr:
++  case X86::ADCX64rr:
++  case X86::ADCX32rm:
++  case X86::ADCX64rm:
++    return FlagArithMnemonic::ADCX;
++
++  case X86::ADOX32rr:
++  case X86::ADOX64rr:
++  case X86::ADOX32rm:
++  case X86::ADOX64rm:
++    return FlagArithMnemonic::ADOX;
++  }
++}
++
++static MachineBasicBlock &splitBlock(MachineBasicBlock &MBB,
++                                     MachineInstr &SplitI,
++                                     const X86InstrInfo &TII) {
++  MachineFunction &MF = *MBB.getParent();
++
++  assert(SplitI.getParent() == &MBB &&
++         "Split instruction must be in the split block!");
++  assert(SplitI.isBranch() &&
++         "Only designed to split a tail of branch instructions!");
++  assert(X86::getCondFromBranchOpc(SplitI.getOpcode()) != X86::COND_INVALID &&
++         "Must split on an actual jCC instruction!");
++
++  // Dig out the previous instruction to the split point.
++  MachineInstr &PrevI = *std::prev(SplitI.getIterator());
++  assert(PrevI.isBranch() && "Must split after a branch!");
++  assert(X86::getCondFromBranchOpc(PrevI.getOpcode()) != X86::COND_INVALID &&
++         "Must split after an actual jCC instruction!");
++  assert(!std::prev(PrevI.getIterator())->isTerminator() &&
++         "Must only have this one terminator prior to the split!");
++
++  // Grab the one successor edge that will stay in `MBB`.
++  MachineBasicBlock &UnsplitSucc = *PrevI.getOperand(0).getMBB();
++
++  // Analyze the original block to see if we are actually splitting an edge
++  // into two edges. This can happen when we have multiple conditional jumps to
++  // the same successor.
++  bool IsEdgeSplit =
++      std::any_of(SplitI.getIterator(), MBB.instr_end(),
++                  [&](MachineInstr &MI) {
++                    assert(MI.isTerminator() &&
++                           "Should only have spliced terminators!");
++                    return llvm::any_of(
++                        MI.operands(), [&](MachineOperand &MOp) {
++                          return MOp.isMBB() && MOp.getMBB() == &UnsplitSucc;
++                        });
++                  }) ||
++      MBB.getFallThrough() == &UnsplitSucc;
++
++  MachineBasicBlock &NewMBB = *MF.CreateMachineBasicBlock();
++
++  // Insert the new block immediately after the current one. Any existing
++  // fallthrough will be sunk into this new block anyways.
++  MF.insert(std::next(MachineFunction::iterator(&MBB)), &NewMBB);
++
++  // Splice the tail of instructions into the new block.
++  NewMBB.splice(NewMBB.end(), &MBB, SplitI.getIterator(), MBB.end());
++
++  // Copy the necessary succesors (and their probability info) into the new
++  // block.
++  for (auto SI = MBB.succ_begin(), SE = MBB.succ_end(); SI != SE; ++SI)
++    if (IsEdgeSplit || *SI != &UnsplitSucc)
++      NewMBB.copySuccessor(&MBB, SI);
++  // Normalize the probabilities if we didn't end up splitting the edge.
++  if (!IsEdgeSplit)
++    NewMBB.normalizeSuccProbs();
++
++  // Now replace all of the moved successors in the original block with the new
++  // block. This will merge their probabilities.
++  for (MachineBasicBlock *Succ : NewMBB.successors())
++    if (Succ != &UnsplitSucc)
++      MBB.replaceSuccessor(Succ, &NewMBB);
++
++  // We should always end up replacing at least one successor.
++  assert(MBB.isSuccessor(&NewMBB) &&
++         "Failed to make the new block a successor!");
++
++  // Now update all the PHIs.
++  for (MachineBasicBlock *Succ : NewMBB.successors()) {
++    for (MachineInstr &MI : *Succ) {
++      if (!MI.isPHI())
++        break;
++
++      for (int OpIdx = 1, NumOps = MI.getNumOperands(); OpIdx < NumOps;
++           OpIdx += 2) {
++        MachineOperand &OpV = MI.getOperand(OpIdx);
++        MachineOperand &OpMBB = MI.getOperand(OpIdx + 1);
++        assert(OpMBB.isMBB() && "Block operand to a PHI is not a block!");
++        if (OpMBB.getMBB() != &MBB)
++          continue;
++
++        // Replace the operand for unsplit successors
++        if (!IsEdgeSplit || Succ != &UnsplitSucc) {
++          OpMBB.setMBB(&NewMBB);
++
++          // We have to continue scanning as there may be multiple entries in
++          // the PHI.
++          continue;
++        }
++
++        // When we have split the edge append a new successor.
++        MI.addOperand(MF, OpV);
++        MI.addOperand(MF, MachineOperand::CreateMBB(&NewMBB));
++        break;
++      }
++    }
++  }
++
++  return NewMBB;
++}
++
++bool X86FlagsCopyLoweringPass::runOnMachineFunction(MachineFunction &MF) {
++  DEBUG(dbgs() << "********** " << getPassName() << " : " << MF.getName()
++               << " **********\n");
++
++  auto &Subtarget = MF.getSubtarget<X86Subtarget>();
++  MRI = &MF.getRegInfo();
++  TII = Subtarget.getInstrInfo();
++  TRI = Subtarget.getRegisterInfo();
++  MDT = &getAnalysis<MachineDominatorTree>();
++  PromoteRC = &X86::GR8RegClass;
++
++  if (MF.begin() == MF.end())
++    // Nothing to do for a degenerate empty function...
++    return false;
++
++  SmallVector<MachineInstr *, 4> Copies;
++  for (MachineBasicBlock &MBB : MF)
++    for (MachineInstr &MI : MBB)
++      if (MI.getOpcode() == TargetOpcode::COPY &&
++          MI.getOperand(0).getReg() == X86::EFLAGS)
++        Copies.push_back(&MI);
++
++  for (MachineInstr *CopyI : Copies) {
++    MachineBasicBlock &MBB = *CopyI->getParent();
++
++    MachineOperand &VOp = CopyI->getOperand(1);
++    assert(VOp.isReg() &&
++           "The input to the copy for EFLAGS should always be a register!");
++    MachineInstr &CopyDefI = *MRI->getVRegDef(VOp.getReg());
++    if (CopyDefI.getOpcode() != TargetOpcode::COPY) {
++      // FIXME: The big likely candidate here are PHI nodes. We could in theory
++      // handle PHI nodes, but it gets really, really hard. Insanely hard. Hard
++      // enough that it is probably better to change every other part of LLVM
++      // to avoid creating them. The issue is that once we have PHIs we won't
++      // know which original EFLAGS value we need to capture with our setCCs
++      // below. The end result will be computing a complete set of setCCs that
++      // we *might* want, computing them in every place where we copy *out* of
++      // EFLAGS and then doing SSA formation on all of them to insert necessary
++      // PHI nodes and consume those here. Then hoping that somehow we DCE the
++      // unnecessary ones. This DCE seems very unlikely to be successful and so
++      // we will almost certainly end up with a glut of dead setCC
++      // instructions. Until we have a motivating test case and fail to avoid
++      // it by changing other parts of LLVM's lowering, we refuse to handle
++      // this complex case here.
++      DEBUG(dbgs() << "ERROR: Encountered unexpected def of an eflags copy: ";
++            CopyDefI.dump());
++      report_fatal_error(
++          "Cannot lower EFLAGS copy unless it is defined in turn by a copy!");
++    }
++
++    auto Cleanup = make_scope_exit([&] {
++      // All uses of the EFLAGS copy are now rewritten, kill the copy into
++      // eflags and if dead the copy from.
++      CopyI->eraseFromParent();
++      if (MRI->use_empty(CopyDefI.getOperand(0).getReg()))
++        CopyDefI.eraseFromParent();
++      ++NumCopiesEliminated;
++    });
++
++    MachineOperand &DOp = CopyI->getOperand(0);
++    assert(DOp.isDef() && "Expected register def!");
++    assert(DOp.getReg() == X86::EFLAGS && "Unexpected copy def register!");
++    if (DOp.isDead())
++      continue;
++
++    MachineBasicBlock &TestMBB = *CopyDefI.getParent();
++    auto TestPos = CopyDefI.getIterator();
++    DebugLoc TestLoc = CopyDefI.getDebugLoc();
++
++    DEBUG(dbgs() << "Rewriting copy: "; CopyI->dump());
++
++    // Scan for usage of newly set EFLAGS so we can rewrite them. We just buffer
++    // jumps because their usage is very constrained.
++    bool FlagsKilled = false;
++    SmallVector<MachineInstr *, 4> JmpIs;
++
++    // Gather the condition flags that have already been preserved in
++    // registers. We do this from scratch each time as we expect there to be
++    // very few of them and we expect to not revisit the same copy definition
++    // many times. If either of those change sufficiently we could build a map
++    // of these up front instead.
++    CondRegArray CondRegs = collectCondsInRegs(TestMBB, CopyDefI);
++
++    // Collect the basic blocks we need to scan. Typically this will just be
++    // a single basic block but we may have to scan multiple blocks if the
++    // EFLAGS copy lives into successors.
++    SmallVector<MachineBasicBlock *, 2> Blocks;
++    SmallPtrSet<MachineBasicBlock *, 2> VisitedBlocks;
++    Blocks.push_back(&MBB);
++    VisitedBlocks.insert(&MBB);
++
++    do {
++      MachineBasicBlock &UseMBB = *Blocks.pop_back_val();
++
++      // We currently don't do any PHI insertion and so we require that the
++      // test basic block dominates all of the use basic blocks.
++      //
++      // We could in theory do PHI insertion here if it becomes useful by just
++      // taking undef values in along every edge that we don't trace this
++      // EFLAGS copy along. This isn't as bad as fully general PHI insertion,
++      // but still seems like a great deal of complexity.
++      //
++      // Because it is theoretically possible that some earlier MI pass or
++      // other lowering transformation could induce this to happen, we do
++      // a hard check even in non-debug builds here.
++      if (&TestMBB != &UseMBB && !MDT->dominates(&TestMBB, &UseMBB)) {
++        DEBUG({
++          dbgs() << "ERROR: Encountered use that is not dominated by our test "
++                    "basic block! Rewriting this would require inserting PHI "
++                    "nodes to track the flag state across the CFG.\n\nTest "
++                    "block:\n";
++          TestMBB.dump();
++          dbgs() << "Use block:\n";
++          UseMBB.dump();
++        });
++        report_fatal_error("Cannot lower EFLAGS copy when original copy def "
++                           "does not dominate all uses.");
++      }
++
++      for (auto MII = &UseMBB == &MBB ? std::next(CopyI->getIterator())
++                                      : UseMBB.instr_begin(),
++                MIE = UseMBB.instr_end();
++           MII != MIE;) {
++        MachineInstr &MI = *MII++;
++        MachineOperand *FlagUse = MI.findRegisterUseOperand(X86::EFLAGS);
++        if (!FlagUse) {
++          if (MI.findRegisterDefOperand(X86::EFLAGS)) {
++            // If EFLAGS are defined, it's as-if they were killed. We can stop
++            // scanning here.
++            //
++            // NB!!! Many instructions only modify some flags. LLVM currently
++            // models this as clobbering all flags, but if that ever changes
++            // this will need to be carefully updated to handle that more
++            // complex logic.
++            FlagsKilled = true;
++            break;
++          }
++          continue;
++        }
++
++        DEBUG(dbgs() << "  Rewriting use: "; MI.dump());
++
++        // Check the kill flag before we rewrite as that may change it.
++        if (FlagUse->isKill())
++          FlagsKilled = true;
++
++        // Once we encounter a branch, the rest of the instructions must also be
++        // branches. We can't rewrite in place here, so we handle them below.
++        //
++        // Note that we don't have to handle tail calls here, even conditional
++        // tail calls, as those are not introduced into the X86 MI until post-RA
++        // branch folding or black placement. As a consequence, we get to deal
++        // with the simpler formulation of conditional branches followed by tail
++        // calls.
++        if (X86::getCondFromBranchOpc(MI.getOpcode()) != X86::COND_INVALID) {
++          auto JmpIt = MI.getIterator();
++          do {
++            JmpIs.push_back(&*JmpIt);
++            ++JmpIt;
++          } while (JmpIt != UseMBB.instr_end() &&
++                   X86::getCondFromBranchOpc(JmpIt->getOpcode()) !=
++                       X86::COND_INVALID);
++          break;
++        }
++
++        // Otherwise we can just rewrite in-place.
++        if (X86::getCondFromCMovOpc(MI.getOpcode()) != X86::COND_INVALID) {
++          rewriteCMov(TestMBB, TestPos, TestLoc, MI, *FlagUse, CondRegs);
++        } else if (X86::getCondFromSETOpc(MI.getOpcode()) !=
++                   X86::COND_INVALID) {
++          rewriteSetCC(TestMBB, TestPos, TestLoc, MI, *FlagUse, CondRegs);
++        } else if (MI.getOpcode() == TargetOpcode::COPY) {
++          rewriteCopy(MI, *FlagUse, CopyDefI);
++        } else {
++          // We assume that arithmetic instructions that use flags also def
++          // them.
++          assert(MI.findRegisterDefOperand(X86::EFLAGS) &&
++                 "Expected a def of EFLAGS for this instruction!");
++
++          // NB!!! Several arithmetic instructions only *partially* update
++          // flags. Theoretically, we could generate MI code sequences that
++          // would rely on this fact and observe different flags independently.
++          // But currently LLVM models all of these instructions as clobbering
++          // all the flags in an undef way. We rely on that to simplify the
++          // logic.
++          FlagsKilled = true;
++
++          rewriteArithmetic(TestMBB, TestPos, TestLoc, MI, *FlagUse, CondRegs);
++          break;
++        }
++
++        // If this was the last use of the flags, we're done.
++        if (FlagsKilled)
++          break;
++      }
++
++      // If the flags were killed, we're done with this block.
++      if (FlagsKilled)
++        break;
++
++      // Otherwise we need to scan successors for ones where the flags live-in
++      // and queue those up for processing.
++      for (MachineBasicBlock *SuccMBB : UseMBB.successors())
++        if (SuccMBB->isLiveIn(X86::EFLAGS) &&
++            VisitedBlocks.insert(SuccMBB).second)
++          Blocks.push_back(SuccMBB);
++    } while (!Blocks.empty());
++
++    // Now rewrite the jumps that use the flags. These we handle specially
++    // because if there are multiple jumps in a single basic block we'll have
++    // to do surgery on the CFG.
++    MachineBasicBlock *LastJmpMBB = nullptr;
++    for (MachineInstr *JmpI : JmpIs) {
++      // Past the first jump within a basic block we need to split the blocks
++      // apart.
++      if (JmpI->getParent() == LastJmpMBB)
++        splitBlock(*JmpI->getParent(), *JmpI, *TII);
++      else
++        LastJmpMBB = JmpI->getParent();
++
++      rewriteCondJmp(TestMBB, TestPos, TestLoc, *JmpI, CondRegs);
++    }
++
++    // FIXME: Mark the last use of EFLAGS before the copy's def as a kill if
++    // the copy's def operand is itself a kill.
++  }
++
++#ifndef NDEBUG
++  for (MachineBasicBlock &MBB : MF)
++    for (MachineInstr &MI : MBB)
++      if (MI.getOpcode() == TargetOpcode::COPY &&
++          (MI.getOperand(0).getReg() == X86::EFLAGS ||
++           MI.getOperand(1).getReg() == X86::EFLAGS)) {
++        DEBUG(dbgs() << "ERROR: Found a COPY involving EFLAGS: "; MI.dump());
++        llvm_unreachable("Unlowered EFLAGS copy!");
++      }
++#endif
++
++  return true;
++}
++
++/// Collect any conditions that have already been set in registers so that we
++/// can re-use them rather than adding duplicates.
++CondRegArray
++X86FlagsCopyLoweringPass::collectCondsInRegs(MachineBasicBlock &MBB,
++                                             MachineInstr &CopyDefI) {
++  CondRegArray CondRegs = {};
++
++  // Scan backwards across the range of instructions with live EFLAGS.
++  for (MachineInstr &MI : llvm::reverse(
++           llvm::make_range(MBB.instr_begin(), CopyDefI.getIterator()))) {
++    X86::CondCode Cond = X86::getCondFromSETOpc(MI.getOpcode());
++    if (Cond != X86::COND_INVALID && MI.getOperand(0).isReg() &&
++        TRI->isVirtualRegister(MI.getOperand(0).getReg()))
++      CondRegs[Cond] = MI.getOperand(0).getReg();
++
++    // Stop scanning when we see the first definition of the EFLAGS as prior to
++    // this we would potentially capture the wrong flag state.
++    if (MI.findRegisterDefOperand(X86::EFLAGS))
++      break;
++  }
++  return CondRegs;
++}
++
++unsigned X86FlagsCopyLoweringPass::promoteCondToReg(
++    MachineBasicBlock &TestMBB, MachineBasicBlock::iterator TestPos,
++    DebugLoc TestLoc, X86::CondCode Cond) {
++  unsigned Reg = MRI->createVirtualRegister(PromoteRC);
++  auto SetI = BuildMI(TestMBB, TestPos, TestLoc,
++                      TII->get(X86::getSETFromCond(Cond)), Reg);
++  (void)SetI;
++  DEBUG(dbgs() << "    save cond: "; SetI->dump());
++  ++NumSetCCsInserted;
++  return Reg;
++}
++
++std::pair<unsigned, bool> X86FlagsCopyLoweringPass::getCondOrInverseInReg(
++    MachineBasicBlock &TestMBB, MachineBasicBlock::iterator TestPos,
++    DebugLoc TestLoc, X86::CondCode Cond, CondRegArray &CondRegs) {
++  unsigned &CondReg = CondRegs[Cond];
++  unsigned &InvCondReg = CondRegs[X86::GetOppositeBranchCondition(Cond)];
++  if (!CondReg && !InvCondReg)
++    CondReg = promoteCondToReg(TestMBB, TestPos, TestLoc, Cond);
++
++  if (CondReg)
++    return {CondReg, false};
++  else
++    return {InvCondReg, true};
++}
++
++void X86FlagsCopyLoweringPass::insertTest(MachineBasicBlock &MBB,
++                                          MachineBasicBlock::iterator Pos,
++                                          DebugLoc Loc, unsigned Reg) {
++  // We emit test instructions as register/immediate test against -1. This
++  // allows register allocation to fold a memory operand if needed (that will
++  // happen often due to the places this code is emitted). But hopefully will
++  // also allow us to select a shorter encoding of `testb %reg, %reg` when that
++  // would be equivalent.
++  auto TestI =
++      BuildMI(MBB, Pos, Loc, TII->get(X86::TEST8ri)).addReg(Reg).addImm(-1);
++  (void)TestI;
++  DEBUG(dbgs() << "    test cond: "; TestI->dump());
++  ++NumTestsInserted;
++}
++
++void X86FlagsCopyLoweringPass::rewriteArithmetic(
++    MachineBasicBlock &TestMBB, MachineBasicBlock::iterator TestPos,
++    DebugLoc TestLoc, MachineInstr &MI, MachineOperand &FlagUse,
++    CondRegArray &CondRegs) {
++  // Arithmetic is either reading CF or OF. Figure out which condition we need
++  // to preserve in a register.
++  X86::CondCode Cond;
++
++  // The addend to use to reset CF or OF when added to the flag value.
++  int Addend;
++
++  switch (getMnemonicFromOpcode(MI.getOpcode())) {
++  case FlagArithMnemonic::ADC:
++  case FlagArithMnemonic::ADCX:
++  case FlagArithMnemonic::RCL:
++  case FlagArithMnemonic::RCR:
++  case FlagArithMnemonic::SBB:
++    Cond = X86::COND_B; // CF == 1
++    // Set up an addend that when one is added will need a carry due to not
++    // having a higher bit available.
++    Addend = 255;
++    break;
++
++  case FlagArithMnemonic::ADOX:
++    Cond = X86::COND_O; // OF == 1
++    // Set up an addend that when one is added will turn from positive to
++    // negative and thus overflow in the signed domain.
++    Addend = 127;
++    break;
++  }
++
++  // Now get a register that contains the value of the flag input to the
++  // arithmetic. We require exactly this flag to simplify the arithmetic
++  // required to materialize it back into the flag.
++  unsigned &CondReg = CondRegs[Cond];
++  if (!CondReg)
++    CondReg = promoteCondToReg(TestMBB, TestPos, TestLoc, Cond);
++
++  MachineBasicBlock &MBB = *MI.getParent();
++
++  // Insert an instruction that will set the flag back to the desired value.
++  unsigned TmpReg = MRI->createVirtualRegister(PromoteRC);
++  auto AddI =
++      BuildMI(MBB, MI.getIterator(), MI.getDebugLoc(), TII->get(X86::ADD8ri))
++          .addDef(TmpReg, RegState::Dead)
++          .addReg(CondReg)
++          .addImm(Addend);
++  (void)AddI;
++  DEBUG(dbgs() << "    add cond: "; AddI->dump());
++  ++NumAddsInserted;
++  FlagUse.setIsKill(true);
++}
++
++void X86FlagsCopyLoweringPass::rewriteCMov(MachineBasicBlock &TestMBB,
++                                           MachineBasicBlock::iterator TestPos,
++                                           DebugLoc TestLoc,
++                                           MachineInstr &CMovI,
++                                           MachineOperand &FlagUse,
++                                           CondRegArray &CondRegs) {
++  // First get the register containing this specific condition.
++  X86::CondCode Cond = X86::getCondFromCMovOpc(CMovI.getOpcode());
++  unsigned CondReg;
++  bool Inverted;
++  std::tie(CondReg, Inverted) =
++      getCondOrInverseInReg(TestMBB, TestPos, TestLoc, Cond, CondRegs);
++
++  MachineBasicBlock &MBB = *CMovI.getParent();
++
++  // Insert a direct test of the saved register.
++  insertTest(MBB, CMovI.getIterator(), CMovI.getDebugLoc(), CondReg);
++
++  // Rewrite the CMov to use the !ZF flag from the test (but match register
++  // size and memory operand), and then kill its use of the flags afterward.
++  auto &CMovRC = *MRI->getRegClass(CMovI.getOperand(0).getReg());
++  CMovI.setDesc(TII->get(X86::getCMovFromCond(
++      Inverted ? X86::COND_E : X86::COND_NE, TRI->getRegSizeInBits(CMovRC) / 8,
++      !CMovI.memoperands_empty())));
++  FlagUse.setIsKill(true);
++  DEBUG(dbgs() << "    fixed cmov: "; CMovI.dump());
++}
++
++void X86FlagsCopyLoweringPass::rewriteCondJmp(
++    MachineBasicBlock &TestMBB, MachineBasicBlock::iterator TestPos,
++    DebugLoc TestLoc, MachineInstr &JmpI, CondRegArray &CondRegs) {
++  // First get the register containing this specific condition.
++  X86::CondCode Cond = X86::getCondFromBranchOpc(JmpI.getOpcode());
++  unsigned CondReg;
++  bool Inverted;
++  std::tie(CondReg, Inverted) =
++      getCondOrInverseInReg(TestMBB, TestPos, TestLoc, Cond, CondRegs);
++
++  MachineBasicBlock &JmpMBB = *JmpI.getParent();
++
++  // Insert a direct test of the saved register.
++  insertTest(JmpMBB, JmpI.getIterator(), JmpI.getDebugLoc(), CondReg);
++
++  // Rewrite the jump to use the !ZF flag from the test, and kill its use of
++  // flags afterward.
++  JmpI.setDesc(TII->get(
++      X86::GetCondBranchFromCond(Inverted ? X86::COND_E : X86::COND_NE)));
++  const int ImplicitEFLAGSOpIdx = 1;
++  JmpI.getOperand(ImplicitEFLAGSOpIdx).setIsKill(true);
++  DEBUG(dbgs() << "    fixed jCC: "; JmpI.dump());
++}
++
++void X86FlagsCopyLoweringPass::rewriteCopy(MachineInstr &MI,
++                                           MachineOperand &FlagUse,
++                                           MachineInstr &CopyDefI) {
++  // Just replace this copy with the the original copy def.
++  MRI->replaceRegWith(MI.getOperand(0).getReg(),
++                      CopyDefI.getOperand(0).getReg());
++  MI.eraseFromParent();
++}
++
++void X86FlagsCopyLoweringPass::rewriteSetCC(MachineBasicBlock &TestMBB,
++                                            MachineBasicBlock::iterator TestPos,
++                                            DebugLoc TestLoc,
++                                            MachineInstr &SetCCI,
++                                            MachineOperand &FlagUse,
++                                            CondRegArray &CondRegs) {
++  X86::CondCode Cond = X86::getCondFromSETOpc(SetCCI.getOpcode());
++  // Note that we can't usefully rewrite this to the inverse without complex
++  // analysis of the users of the setCC. Largely we rely on duplicates which
++  // could have been avoided already being avoided here.
++  unsigned &CondReg = CondRegs[Cond];
++  if (!CondReg)
++    CondReg = promoteCondToReg(TestMBB, TestPos, TestLoc, Cond);
++
++  // Rewriting this is trivial: we just replace the register and remove the
++  // setcc.
++  MRI->replaceRegWith(SetCCI.getOperand(0).getReg(), CondReg);
++  SetCCI.eraseFromParent();
++}
+diff --git llvm/lib/Target/X86/X86ISelLowering.cpp b/contrib/llvm/lib/Target/X86/X86ISelLowering.cpp
+index 10e19f92b4a..c1ddb771e2f 100644
+--- lib/Target/X86/X86ISelLowering.cpp
++++ lib/Target/X86/X86ISelLowering.cpp
+@@ -27781,11 +27781,16 @@ X86TargetLowering::EmitInstrWithCustomInserter(MachineInstr &MI,
+         MI.getOpcode() == X86::RDFLAGS32 ? X86::PUSHF32 : X86::PUSHF64;
+     unsigned Pop = MI.getOpcode() == X86::RDFLAGS32 ? X86::POP32r : X86::POP64r;
+     MachineInstr *Push = BuildMI(*BB, MI, DL, TII->get(PushF));
+-    // Permit reads of the FLAGS register without it being defined.
++    // Permit reads of the EFLAGS and DF registers without them being defined.
+     // This intrinsic exists to read external processor state in flags, such as
+     // the trap flag, interrupt flag, and direction flag, none of which are
+     // modeled by the backend.
++    assert(Push->getOperand(2).getReg() == X86::EFLAGS &&
++           "Unexpected register in operand!");
+     Push->getOperand(2).setIsUndef();
++    assert(Push->getOperand(3).getReg() == X86::DF &&
++           "Unexpected register in operand!");
++    Push->getOperand(3).setIsUndef();
+     BuildMI(*BB, MI, DL, TII->get(Pop), MI.getOperand(0).getReg());
+ 
+     MI.eraseFromParent(); // The pseudo is gone now.
+@@ -37829,25 +37834,6 @@ bool X86TargetLowering::isTypeDesirableForOp(unsigned Opc, EVT VT) const {
+   }
+ }
+ 
+-/// This function checks if any of the users of EFLAGS copies the EFLAGS. We
+-/// know that the code that lowers COPY of EFLAGS has to use the stack, and if
+-/// we don't adjust the stack we clobber the first frame index.
+-/// See X86InstrInfo::copyPhysReg.
+-static bool hasCopyImplyingStackAdjustment(const MachineFunction &MF) {
+-  const MachineRegisterInfo &MRI = MF.getRegInfo();
+-  return any_of(MRI.reg_instructions(X86::EFLAGS),
+-                [](const MachineInstr &RI) { return RI.isCopy(); });
+-}
+-
+-void X86TargetLowering::finalizeLowering(MachineFunction &MF) const {
+-  if (hasCopyImplyingStackAdjustment(MF)) {
+-    MachineFrameInfo &MFI = MF.getFrameInfo();
+-    MFI.setHasCopyImplyingStackAdjustment(true);
+-  }
+-
+-  TargetLoweringBase::finalizeLowering(MF);
+-}
+-
+ /// This method query the target whether it is beneficial for dag combiner to
+ /// promote the specified node. If true, it should return the desired promotion
+ /// type by reference.
+diff --git llvm/lib/Target/X86/X86ISelLowering.h b/contrib/llvm/lib/Target/X86/X86ISelLowering.h
+index 3aa9d01bff2..7820c3e032e 100644
+--- lib/Target/X86/X86ISelLowering.h
++++ lib/Target/X86/X86ISelLowering.h
+@@ -1099,9 +1099,6 @@ namespace llvm {
+     bool lowerInterleavedStore(StoreInst *SI, ShuffleVectorInst *SVI,
+                                unsigned Factor) const override;
+ 
+-
+-    void finalizeLowering(MachineFunction &MF) const override;
+-
+   protected:
+     std::pair<const TargetRegisterClass *, uint8_t>
+     findRepresentativeClass(const TargetRegisterInfo *TRI,
+diff --git llvm/lib/Target/X86/X86InstrCompiler.td b/contrib/llvm/lib/Target/X86/X86InstrCompiler.td
+index d66d9258e96..b3371c96cc2 100644
+--- lib/Target/X86/X86InstrCompiler.td
++++ lib/Target/X86/X86InstrCompiler.td
+@@ -473,7 +473,7 @@ let Defs = [EAX, ECX, EDX, FP0, FP1, FP2, FP3, FP4, FP5, FP6, FP7,
+             ST0, ST1, ST2, ST3, ST4, ST5, ST6, ST7,
+             MM0, MM1, MM2, MM3, MM4, MM5, MM6, MM7,
+             XMM0, XMM1, XMM2, XMM3, XMM4, XMM5, XMM6, XMM7,
+-            XMM8, XMM9, XMM10, XMM11, XMM12, XMM13, XMM14, XMM15, EFLAGS],
++            XMM8, XMM9, XMM10, XMM11, XMM12, XMM13, XMM14, XMM15, EFLAGS, DF],
+     usesCustomInserter = 1, Uses = [ESP, SSP] in {
+ def TLS_addr32 : I<0, Pseudo, (outs), (ins i32mem:$sym),
+                   "# TLS_addr32",
+@@ -493,7 +493,7 @@ let Defs = [RAX, RCX, RDX, RSI, RDI, R8, R9, R10, R11,
+             ST0, ST1, ST2, ST3, ST4, ST5, ST6, ST7,
+             MM0, MM1, MM2, MM3, MM4, MM5, MM6, MM7,
+             XMM0, XMM1, XMM2, XMM3, XMM4, XMM5, XMM6, XMM7,
+-            XMM8, XMM9, XMM10, XMM11, XMM12, XMM13, XMM14, XMM15, EFLAGS],
++            XMM8, XMM9, XMM10, XMM11, XMM12, XMM13, XMM14, XMM15, EFLAGS, DF],
+     usesCustomInserter = 1, Uses = [RSP, SSP] in {
+ def TLS_addr64 : I<0, Pseudo, (outs), (ins i64mem:$sym),
+                    "# TLS_addr64",
+@@ -509,7 +509,7 @@ def TLS_base_addr64 : I<0, Pseudo, (outs), (ins i64mem:$sym),
+ // For i386, the address of the thunk is passed on the stack, on return the
+ // address of the variable is in %eax.  %ecx is trashed during the function
+ // call.  All other registers are preserved.
+-let Defs = [EAX, ECX, EFLAGS],
++let Defs = [EAX, ECX, EFLAGS, DF],
+     Uses = [ESP, SSP],
+     usesCustomInserter = 1 in
+ def TLSCall_32 : I<0, Pseudo, (outs), (ins i32mem:$sym),
+@@ -522,7 +522,7 @@ def TLSCall_32 : I<0, Pseudo, (outs), (ins i32mem:$sym),
+ // %rdi. The lowering will do the right thing with RDI.
+ // On return the address of the variable is in %rax.  All other
+ // registers are preserved.
+-let Defs = [RAX, EFLAGS],
++let Defs = [RAX, EFLAGS, DF],
+     Uses = [RSP, SSP],
+     usesCustomInserter = 1 in
+ def TLSCall_64 : I<0, Pseudo, (outs), (ins i64mem:$sym),
+diff --git llvm/lib/Target/X86/X86InstrInfo.cpp b/contrib/llvm/lib/Target/X86/X86InstrInfo.cpp
+index 7ca1c58184f..11ada51a870 100644
+--- lib/Target/X86/X86InstrInfo.cpp
++++ lib/Target/X86/X86InstrInfo.cpp
+@@ -5782,7 +5782,7 @@ bool X86InstrInfo::findCommutedOpIndices(MachineInstr &MI, unsigned &SrcOpIdx1,
+   return false;
+ }
+ 
+-static X86::CondCode getCondFromBranchOpc(unsigned BrOpc) {
++X86::CondCode X86::getCondFromBranchOpc(unsigned BrOpc) {
+   switch (BrOpc) {
+   default: return X86::COND_INVALID;
+   case X86::JE_1:  return X86::COND_E;
+@@ -5805,7 +5805,7 @@ static X86::CondCode getCondFromBranchOpc(unsigned BrOpc) {
+ }
+ 
+ /// Return condition code of a SET opcode.
+-static X86::CondCode getCondFromSETOpc(unsigned Opc) {
++X86::CondCode X86::getCondFromSETOpc(unsigned Opc) {
+   switch (Opc) {
+   default: return X86::COND_INVALID;
+   case X86::SETAr:  case X86::SETAm:  return X86::COND_A;
+@@ -6130,7 +6130,7 @@ void X86InstrInfo::replaceBranchWithTailCall(
+     if (!I->isBranch())
+       assert(0 && "Can't find the branch to replace!");
+ 
+-    X86::CondCode CC = getCondFromBranchOpc(I->getOpcode());
++    X86::CondCode CC = X86::getCondFromBranchOpc(I->getOpcode());
+     assert(BranchCond.size() == 1);
+     if (CC != BranchCond[0].getImm())
+       continue;
+@@ -6237,7 +6237,7 @@ bool X86InstrInfo::AnalyzeBranchImpl(
+     }
+ 
+     // Handle conditional branches.
+-    X86::CondCode BranchCode = getCondFromBranchOpc(I->getOpcode());
++    X86::CondCode BranchCode = X86::getCondFromBranchOpc(I->getOpcode());
+     if (BranchCode == X86::COND_INVALID)
+       return true;  // Can't handle indirect branch.
+ 
+@@ -6433,7 +6433,7 @@ unsigned X86InstrInfo::removeBranch(MachineBasicBlock &MBB,
+     if (I->isDebugValue())
+       continue;
+     if (I->getOpcode() != X86::JMP_1 &&
+-        getCondFromBranchOpc(I->getOpcode()) == X86::COND_INVALID)
++        X86::getCondFromBranchOpc(I->getOpcode()) == X86::COND_INVALID)
+       break;
+     // Remove the branch.
+     I->eraseFromParent();
+@@ -6710,102 +6710,12 @@ void X86InstrInfo::copyPhysReg(MachineBasicBlock &MBB,
+     return;
+   }
+ 
+-  bool FromEFLAGS = SrcReg == X86::EFLAGS;
+-  bool ToEFLAGS = DestReg == X86::EFLAGS;
+-  int Reg = FromEFLAGS ? DestReg : SrcReg;
+-  bool is32 = X86::GR32RegClass.contains(Reg);
+-  bool is64 = X86::GR64RegClass.contains(Reg);
+-
+-  if ((FromEFLAGS || ToEFLAGS) && (is32 || is64)) {
+-    int Mov = is64 ? X86::MOV64rr : X86::MOV32rr;
+-    int Push = is64 ? X86::PUSH64r : X86::PUSH32r;
+-    int PushF = is64 ? X86::PUSHF64 : X86::PUSHF32;
+-    int Pop = is64 ? X86::POP64r : X86::POP32r;
+-    int PopF = is64 ? X86::POPF64 : X86::POPF32;
+-    int AX = is64 ? X86::RAX : X86::EAX;
+-
+-    if (!Subtarget.hasLAHFSAHF()) {
+-      assert(Subtarget.is64Bit() &&
+-             "Not having LAHF/SAHF only happens on 64-bit.");
+-      // Moving EFLAGS to / from another register requires a push and a pop.
+-      // Notice that we have to adjust the stack if we don't want to clobber the
+-      // first frame index. See X86FrameLowering.cpp - usesTheStack.
+-      if (FromEFLAGS) {
+-        BuildMI(MBB, MI, DL, get(PushF));
+-        BuildMI(MBB, MI, DL, get(Pop), DestReg);
+-      }
+-      if (ToEFLAGS) {
+-        BuildMI(MBB, MI, DL, get(Push))
+-            .addReg(SrcReg, getKillRegState(KillSrc));
+-        BuildMI(MBB, MI, DL, get(PopF));
+-      }
+-      return;
+-    }
+-
+-    // The flags need to be saved, but saving EFLAGS with PUSHF/POPF is
+-    // inefficient. Instead:
+-    //   - Save the overflow flag OF into AL using SETO, and restore it using a
+-    //     signed 8-bit addition of AL and INT8_MAX.
+-    //   - Save/restore the bottom 8 EFLAGS bits (CF, PF, AF, ZF, SF) to/from AH
+-    //     using LAHF/SAHF.
+-    //   - When RAX/EAX is live and isn't the destination register, make sure it
+-    //     isn't clobbered by PUSH/POP'ing it before and after saving/restoring
+-    //     the flags.
+-    // This approach is ~2.25x faster than using PUSHF/POPF.
+-    //
+-    // This is still somewhat inefficient because we don't know which flags are
+-    // actually live inside EFLAGS. Were we able to do a single SETcc instead of
+-    // SETO+LAHF / ADDB+SAHF the code could be 1.02x faster.
+-    //
+-    // PUSHF/POPF is also potentially incorrect because it affects other flags
+-    // such as TF/IF/DF, which LLVM doesn't model.
+-    //
+-    // Notice that we have to adjust the stack if we don't want to clobber the
+-    // first frame index.
+-    // See X86ISelLowering.cpp - X86::hasCopyImplyingStackAdjustment.
+-
+-    const TargetRegisterInfo &TRI = getRegisterInfo();
+-    MachineBasicBlock::LivenessQueryResult LQR =
+-        MBB.computeRegisterLiveness(&TRI, AX, MI);
+-    // We do not want to save and restore AX if we do not have to.
+-    // Moreover, if we do so whereas AX is dead, we would need to set
+-    // an undef flag on the use of AX, otherwise the verifier will
+-    // complain that we read an undef value.
+-    // We do not want to change the behavior of the machine verifier
+-    // as this is usually wrong to read an undef value.
+-    if (MachineBasicBlock::LQR_Unknown == LQR) {
+-      LivePhysRegs LPR(TRI);
+-      LPR.addLiveOuts(MBB);
+-      MachineBasicBlock::iterator I = MBB.end();
+-      while (I != MI) {
+-        --I;
+-        LPR.stepBackward(*I);
+-      }
+-      // AX contains the top most register in the aliasing hierarchy.
+-      // It may not be live, but one of its aliases may be.
+-      for (MCRegAliasIterator AI(AX, &TRI, true);
+-           AI.isValid() && LQR != MachineBasicBlock::LQR_Live; ++AI)
+-        LQR = LPR.contains(*AI) ? MachineBasicBlock::LQR_Live
+-                                : MachineBasicBlock::LQR_Dead;
+-    }
+-    bool AXDead = (Reg == AX) || (MachineBasicBlock::LQR_Dead == LQR);
+-    if (!AXDead)
+-      BuildMI(MBB, MI, DL, get(Push)).addReg(AX, getKillRegState(true));
+-    if (FromEFLAGS) {
+-      BuildMI(MBB, MI, DL, get(X86::SETOr), X86::AL);
+-      BuildMI(MBB, MI, DL, get(X86::LAHF));
+-      BuildMI(MBB, MI, DL, get(Mov), Reg).addReg(AX);
+-    }
+-    if (ToEFLAGS) {
+-      BuildMI(MBB, MI, DL, get(Mov), AX).addReg(Reg, getKillRegState(KillSrc));
+-      BuildMI(MBB, MI, DL, get(X86::ADD8ri), X86::AL)
+-          .addReg(X86::AL)
+-          .addImm(INT8_MAX);
+-      BuildMI(MBB, MI, DL, get(X86::SAHF));
+-    }
+-    if (!AXDead)
+-      BuildMI(MBB, MI, DL, get(Pop), AX);
+-    return;
++  if (SrcReg == X86::EFLAGS || DestReg == X86::EFLAGS) {
++    // FIXME: We use a fatal error here because historically LLVM has tried
++    // lower some of these physreg copies and we want to ensure we get
++    // reasonable bug reports if someone encounters a case no other testing
++    // found. This path should be removed after the LLVM 7 release.
++    report_fatal_error("Unable to copy EFLAGS physical register!");
+   }
+ 
+   DEBUG(dbgs() << "Cannot copy " << RI.getName(SrcReg)
+@@ -7465,9 +7375,9 @@ bool X86InstrInfo::optimizeCompareInstr(MachineInstr &CmpInstr, unsigned SrcReg,
+     if (IsCmpZero || IsSwapped) {
+       // We decode the condition code from opcode.
+       if (Instr.isBranch())
+-        OldCC = getCondFromBranchOpc(Instr.getOpcode());
++        OldCC = X86::getCondFromBranchOpc(Instr.getOpcode());
+       else {
+-        OldCC = getCondFromSETOpc(Instr.getOpcode());
++        OldCC = X86::getCondFromSETOpc(Instr.getOpcode());
+         if (OldCC != X86::COND_INVALID)
+           OpcIsSET = true;
+         else
+@@ -9413,8 +9323,9 @@ bool X86InstrInfo::
+ isSafeToMoveRegClassDefs(const TargetRegisterClass *RC) const {
+   // FIXME: Return false for x87 stack register classes for now. We can't
+   // allow any loads of these registers before FpGet_ST0_80.
+-  return !(RC == &X86::CCRRegClass || RC == &X86::RFP32RegClass ||
+-           RC == &X86::RFP64RegClass || RC == &X86::RFP80RegClass);
++  return !(RC == &X86::CCRRegClass || RC == &X86::DFCCRRegClass ||
++           RC == &X86::RFP32RegClass || RC == &X86::RFP64RegClass ||
++           RC == &X86::RFP80RegClass);
+ }
+ 
+ /// Return a virtual register initialized with the
+diff --git llvm/lib/Target/X86/X86InstrInfo.h b/contrib/llvm/lib/Target/X86/X86InstrInfo.h
+index 02a09c340ce..2b5ad934f9b 100644
+--- lib/Target/X86/X86InstrInfo.h
++++ lib/Target/X86/X86InstrInfo.h
+@@ -77,6 +77,12 @@ unsigned getSETFromCond(CondCode CC, bool HasMemoryOperand = false);
+ unsigned getCMovFromCond(CondCode CC, unsigned RegBytes,
+                          bool HasMemoryOperand = false);
+ 
++// Turn jCC opcode into condition code.
++CondCode getCondFromBranchOpc(unsigned Opc);
++
++// Turn setCC opcode into condition code.
++CondCode getCondFromSETOpc(unsigned Opc);
++
+ // Turn CMov opcode into condition code.
+ CondCode getCondFromCMovOpc(unsigned Opc);
+ 
+diff --git llvm/lib/Target/X86/X86InstrInfo.td b/contrib/llvm/lib/Target/X86/X86InstrInfo.td
+index a657b19c08c..68f40c28d52 100644
+--- lib/Target/X86/X86InstrInfo.td
++++ lib/Target/X86/X86InstrInfo.td
+@@ -1235,18 +1235,18 @@ let mayLoad = 1, mayStore = 1, usesCustomInserter = 1,
+ 
+ let mayLoad = 1, mayStore = 1, usesCustomInserter = 1,
+     SchedRW = [WriteRMW] in {
+-  let Defs = [ESP, EFLAGS], Uses = [ESP] in
++  let Defs = [ESP, EFLAGS, DF], Uses = [ESP] in
+   def WRFLAGS32 : PseudoI<(outs), (ins GR32:$src),
+                    [(int_x86_flags_write_u32 GR32:$src)]>,
+                 Requires<[Not64BitMode]>;
+ 
+-  let Defs = [RSP, EFLAGS], Uses = [RSP] in
++  let Defs = [RSP, EFLAGS, DF], Uses = [RSP] in
+   def WRFLAGS64 : PseudoI<(outs), (ins GR64:$src),
+                    [(int_x86_flags_write_u64 GR64:$src)]>,
+                 Requires<[In64BitMode]>;
+ }
+ 
+-let Defs = [ESP, EFLAGS], Uses = [ESP], mayLoad = 1, hasSideEffects=0,
++let Defs = [ESP, EFLAGS, DF], Uses = [ESP], mayLoad = 1, hasSideEffects=0,
+     SchedRW = [WriteLoad] in {
+ def POPF16   : I<0x9D, RawFrm, (outs), (ins), "popf{w}", [], IIC_POP_F>,
+                 OpSize16;
+@@ -1254,7 +1254,7 @@ def POPF32   : I<0x9D, RawFrm, (outs), (ins), "popf{l|d}", [], IIC_POP_FD>,
+                 OpSize32, Requires<[Not64BitMode]>;
+ }
+ 
+-let Defs = [ESP], Uses = [ESP, EFLAGS], mayStore = 1, hasSideEffects=0,
++let Defs = [ESP], Uses = [ESP, EFLAGS, DF], mayStore = 1, hasSideEffects=0,
+     SchedRW = [WriteStore] in {
+ def PUSHF16  : I<0x9C, RawFrm, (outs), (ins), "pushf{w}", [], IIC_PUSH_F>,
+                  OpSize16;
+@@ -1294,10 +1294,10 @@ def PUSH64i32  : Ii32S<0x68, RawFrm, (outs), (ins i64i32imm:$imm),
+                     Requires<[In64BitMode]>;
+ }
+ 
+-let Defs = [RSP, EFLAGS], Uses = [RSP], mayLoad = 1, hasSideEffects=0 in
++let Defs = [RSP, EFLAGS, DF], Uses = [RSP], mayLoad = 1, hasSideEffects=0 in
+ def POPF64   : I<0x9D, RawFrm, (outs), (ins), "popfq", [], IIC_POP_FD>,
+                OpSize32, Requires<[In64BitMode]>, Sched<[WriteLoad]>;
+-let Defs = [RSP], Uses = [RSP, EFLAGS], mayStore = 1, hasSideEffects=0 in
++let Defs = [RSP], Uses = [RSP, EFLAGS, DF], mayStore = 1, hasSideEffects=0 in
+ def PUSHF64    : I<0x9C, RawFrm, (outs), (ins), "pushfq", [], IIC_PUSH_F>,
+                  OpSize32, Requires<[In64BitMode]>, Sched<[WriteStore]>;
+ 
+@@ -1382,8 +1382,7 @@ def BSR64rm  : RI<0xBD, MRMSrcMem, (outs GR64:$dst), (ins i64mem:$src),
+ } // Defs = [EFLAGS]
+ 
+ let SchedRW = [WriteMicrocoded] in {
+-// These uses the DF flag in the EFLAGS register to inc or dec EDI and ESI
+-let Defs = [EDI,ESI], Uses = [EDI,ESI,EFLAGS] in {
++let Defs = [EDI,ESI], Uses = [EDI,ESI,DF] in {
+ def MOVSB : I<0xA4, RawFrmDstSrc, (outs), (ins dstidx8:$dst, srcidx8:$src),
+               "movsb\t{$src, $dst|$dst, $src}", [], IIC_MOVS>;
+ def MOVSW : I<0xA5, RawFrmDstSrc, (outs), (ins dstidx16:$dst, srcidx16:$src),
+@@ -1394,36 +1393,33 @@ def MOVSQ : RI<0xA5, RawFrmDstSrc, (outs), (ins dstidx64:$dst, srcidx64:$src),
+                "movsq\t{$src, $dst|$dst, $src}", [], IIC_MOVS>;
+ }
+ 
+-// These uses the DF flag in the EFLAGS register to inc or dec EDI and ESI
+-let Defs = [EDI], Uses = [AL,EDI,EFLAGS] in
++let Defs = [EDI], Uses = [AL,EDI,DF] in
+ def STOSB : I<0xAA, RawFrmDst, (outs), (ins dstidx8:$dst),
+               "stosb\t{%al, $dst|$dst, al}", [], IIC_STOS>;
+-let Defs = [EDI], Uses = [AX,EDI,EFLAGS] in
++let Defs = [EDI], Uses = [AX,EDI,DF] in
+ def STOSW : I<0xAB, RawFrmDst, (outs), (ins dstidx16:$dst),
+               "stosw\t{%ax, $dst|$dst, ax}", [], IIC_STOS>, OpSize16;
+-let Defs = [EDI], Uses = [EAX,EDI,EFLAGS] in
++let Defs = [EDI], Uses = [EAX,EDI,DF] in
+ def STOSL : I<0xAB, RawFrmDst, (outs), (ins dstidx32:$dst),
+               "stos{l|d}\t{%eax, $dst|$dst, eax}", [], IIC_STOS>, OpSize32;
+-let Defs = [RDI], Uses = [RAX,RDI,EFLAGS] in
++let Defs = [RDI], Uses = [RAX,RDI,DF] in
+ def STOSQ : RI<0xAB, RawFrmDst, (outs), (ins dstidx64:$dst),
+                "stosq\t{%rax, $dst|$dst, rax}", [], IIC_STOS>;
+ 
+-// These uses the DF flag in the EFLAGS register to inc or dec EDI and ESI
+-let Defs = [EDI,EFLAGS], Uses = [AL,EDI,EFLAGS] in
++let Defs = [EDI,EFLAGS], Uses = [AL,EDI,DF] in
+ def SCASB : I<0xAE, RawFrmDst, (outs), (ins dstidx8:$dst),
+               "scasb\t{$dst, %al|al, $dst}", [], IIC_SCAS>;
+-let Defs = [EDI,EFLAGS], Uses = [AX,EDI,EFLAGS] in
++let Defs = [EDI,EFLAGS], Uses = [AX,EDI,DF] in
+ def SCASW : I<0xAF, RawFrmDst, (outs), (ins dstidx16:$dst),
+               "scasw\t{$dst, %ax|ax, $dst}", [], IIC_SCAS>, OpSize16;
+-let Defs = [EDI,EFLAGS], Uses = [EAX,EDI,EFLAGS] in
++let Defs = [EDI,EFLAGS], Uses = [EAX,EDI,DF] in
+ def SCASL : I<0xAF, RawFrmDst, (outs), (ins dstidx32:$dst),
+               "scas{l|d}\t{$dst, %eax|eax, $dst}", [], IIC_SCAS>, OpSize32;
+-let Defs = [EDI,EFLAGS], Uses = [RAX,EDI,EFLAGS] in
++let Defs = [EDI,EFLAGS], Uses = [RAX,EDI,DF] in
+ def SCASQ : RI<0xAF, RawFrmDst, (outs), (ins dstidx64:$dst),
+                "scasq\t{$dst, %rax|rax, $dst}", [], IIC_SCAS>;
+ 
+-// These uses the DF flag in the EFLAGS register to inc or dec EDI and ESI
+-let Defs = [EDI,ESI,EFLAGS], Uses = [EDI,ESI,EFLAGS] in {
++let Defs = [EDI,ESI,EFLAGS], Uses = [EDI,ESI,DF] in {
+ def CMPSB : I<0xA6, RawFrmDstSrc, (outs), (ins dstidx8:$dst, srcidx8:$src),
+               "cmpsb\t{$dst, $src|$src, $dst}", [], IIC_CMPS>;
+ def CMPSW : I<0xA7, RawFrmDstSrc, (outs), (ins dstidx16:$dst, srcidx16:$src),
+@@ -2070,8 +2066,7 @@ def DATA32_PREFIX : I<0x66, RawFrm, (outs),  (ins), "data32", [], IIC_NOP>,
+ } // SchedRW
+ 
+ // Repeat string operation instruction prefixes
+-// These use the DF flag in the EFLAGS register to inc or dec ECX
+-let Defs = [ECX], Uses = [ECX,EFLAGS], SchedRW = [WriteMicrocoded] in {
++let Defs = [ECX], Uses = [ECX,DF], SchedRW = [WriteMicrocoded] in {
+ // Repeat (used with INS, OUTS, MOVS, LODS and STOS)
+ def REP_PREFIX : I<0xF3, RawFrm, (outs),  (ins), "rep", []>;
+ // Repeat while not equal (used with CMPS and SCAS)
+@@ -2080,24 +2075,22 @@ def REPNE_PREFIX : I<0xF2, RawFrm, (outs),  (ins), "repne", []>;
+ 
+ // String manipulation instructions
+ let SchedRW = [WriteMicrocoded] in {
+-// These uses the DF flag in the EFLAGS register to inc or dec EDI and ESI
+-let Defs = [AL,ESI], Uses = [ESI,EFLAGS] in
++let Defs = [AL,ESI], Uses = [ESI,DF] in
+ def LODSB : I<0xAC, RawFrmSrc, (outs), (ins srcidx8:$src),
+               "lodsb\t{$src, %al|al, $src}", [], IIC_LODS>;
+-let Defs = [AX,ESI], Uses = [ESI,EFLAGS] in
++let Defs = [AX,ESI], Uses = [ESI,DF] in
+ def LODSW : I<0xAD, RawFrmSrc, (outs), (ins srcidx16:$src),
+               "lodsw\t{$src, %ax|ax, $src}", [], IIC_LODS>, OpSize16;
+-let Defs = [EAX,ESI], Uses = [ESI,EFLAGS] in
++let Defs = [EAX,ESI], Uses = [ESI,DF] in
+ def LODSL : I<0xAD, RawFrmSrc, (outs), (ins srcidx32:$src),
+               "lods{l|d}\t{$src, %eax|eax, $src}", [], IIC_LODS>, OpSize32;
+-let Defs = [RAX,ESI], Uses = [ESI,EFLAGS] in
++let Defs = [RAX,ESI], Uses = [ESI,DF] in
+ def LODSQ : RI<0xAD, RawFrmSrc, (outs), (ins srcidx64:$src),
+                "lodsq\t{$src, %rax|rax, $src}", [], IIC_LODS>;
+ }
+ 
+ let SchedRW = [WriteSystem] in {
+-// These uses the DF flag in the EFLAGS register to inc or dec EDI and ESI
+-let Defs = [ESI], Uses = [DX,ESI,EFLAGS] in {
++let Defs = [ESI], Uses = [DX,ESI,DF] in {
+ def OUTSB : I<0x6E, RawFrmSrc, (outs), (ins srcidx8:$src),
+              "outsb\t{$src, %dx|dx, $src}", [], IIC_OUTS>;
+ def OUTSW : I<0x6F, RawFrmSrc, (outs), (ins srcidx16:$src),
+@@ -2106,8 +2099,7 @@ def OUTSL : I<0x6F, RawFrmSrc, (outs), (ins srcidx32:$src),
+               "outs{l|d}\t{$src, %dx|dx, $src}", [], IIC_OUTS>, OpSize32;
+ }
+ 
+-// These uses the DF flag in the EFLAGS register to inc or dec EDI and ESI
+-let Defs = [EDI], Uses = [DX,EDI,EFLAGS] in {
++let Defs = [EDI], Uses = [DX,EDI,DF] in {
+ def INSB : I<0x6C, RawFrmDst, (outs), (ins dstidx8:$dst),
+              "insb\t{%dx, $dst|$dst, dx}", [], IIC_INS>;
+ def INSW : I<0x6D, RawFrmDst, (outs), (ins dstidx16:$dst),
+@@ -2117,19 +2109,22 @@ def INSL : I<0x6D, RawFrmDst, (outs), (ins dstidx32:$dst),
+ }
+ }
+ 
+-// Flag instructions
+-let SchedRW = [WriteALU] in {
+-def CLC : I<0xF8, RawFrm, (outs), (ins), "clc", [], IIC_CLC>;
+-def STC : I<0xF9, RawFrm, (outs), (ins), "stc", [], IIC_STC>;
+-def CLI : I<0xFA, RawFrm, (outs), (ins), "cli", [], IIC_CLI>;
+-def STI : I<0xFB, RawFrm, (outs), (ins), "sti", [], IIC_STI>;
++// EFLAGS management instructions.
++let SchedRW = [WriteALU], Defs = [EFLAGS], Uses = [EFLAGS] in {
++def CLC : I<0xF8, RawFrm, (outs), (ins), "clc", [], IIC_CLC_CMC_STC>;
++def STC : I<0xF9, RawFrm, (outs), (ins), "stc", [], IIC_CLC_CMC_STC>;
++def CMC : I<0xF5, RawFrm, (outs), (ins), "cmc", [], IIC_CLC_CMC_STC>;
++}
++
++// DF management instructions.
++// FIXME: These are a bit more expensive than CLC and STC. We should consider
++// adjusting their schedule bucket.
++let SchedRW = [WriteALU], Defs = [DF] in {
+ def CLD : I<0xFC, RawFrm, (outs), (ins), "cld", [], IIC_CLD>;
+ def STD : I<0xFD, RawFrm, (outs), (ins), "std", [], IIC_STD>;
+-def CMC : I<0xF5, RawFrm, (outs), (ins), "cmc", [], IIC_CMC>;
+-
+-def CLTS : I<0x06, RawFrm, (outs), (ins), "clts", [], IIC_CLTS>, TB;
+ }
+ 
++
+ // Table lookup instructions
+ let Uses = [AL,EBX], Defs = [AL], hasSideEffects = 0, mayLoad = 1 in
+ def XLAT : I<0xD7, RawFrm, (outs), (ins), "xlatb", [], IIC_XLAT>,
+diff --git llvm/lib/Target/X86/X86InstrSystem.td b/contrib/llvm/lib/Target/X86/X86InstrSystem.td
+index 40d2dca4f9e..576f87b13ab 100644
+--- lib/Target/X86/X86InstrSystem.td
++++ lib/Target/X86/X86InstrSystem.td
+@@ -692,6 +692,19 @@ let Uses = [RAX, RBX, RCX, RDX], Defs = [RAX, RBX, RCX] in {
+ } // Uses, Defs
+ } // SchedRW
+ 
++//===----------------------------------------------------------------------===//
++// TS flag control instruction.
++let SchedRW = [WriteSystem] in {
++def CLTS : I<0x06, RawFrm, (outs), (ins), "clts", [], IIC_CLTS>, TB;
++}
++
++//===----------------------------------------------------------------------===//
++// IF (inside EFLAGS) management instructions.
++let SchedRW = [WriteSystem], Uses = [EFLAGS], Defs = [EFLAGS] in {
++def CLI : I<0xFA, RawFrm, (outs), (ins), "cli", [], IIC_CLI>;
++def STI : I<0xFB, RawFrm, (outs), (ins), "sti", [], IIC_STI>;
++}
++
+ //===----------------------------------------------------------------------===//
+ // RDPID Instruction
+ let SchedRW = [WriteSystem] in {
+diff --git llvm/lib/Target/X86/X86RegisterInfo.td b/contrib/llvm/lib/Target/X86/X86RegisterInfo.td
+index 2341e1fb0fa..1a776dcd04e 100644
+--- lib/Target/X86/X86RegisterInfo.td
++++ lib/Target/X86/X86RegisterInfo.td
+@@ -251,9 +251,19 @@ def ST7 : X86Reg<"st(7)", 7>, DwarfRegNum<[40, 19, 18]>;
+ // Floating-point status word
+ def FPSW : X86Reg<"fpsw", 0>;
+ 
+-// Status flags register
++// Status flags register.
++//
++// Note that some flags that are commonly thought of as part of the status
++// flags register are modeled separately. Typically this is due to instructions
++// reading and updating those flags independently of all the others. We don't
++// want to create false dependencies between these instructions and so we use
++// a separate register to model them.
+ def EFLAGS : X86Reg<"flags", 0>;
+ 
++// The direction flag.
++def DF : X86Reg<"DF", 0>;
++
++
+ // Segment registers
+ def CS : X86Reg<"cs", 1>;
+ def DS : X86Reg<"ds", 3>;
+@@ -497,6 +507,10 @@ def FPCCR : RegisterClass<"X86", [i16], 16, (add FPSW)> {
+   let CopyCost = -1;  // Don't allow copying of status registers.
+   let isAllocatable = 0;
+ }
++def DFCCR : RegisterClass<"X86", [i32], 32, (add DF)> {
++  let CopyCost = -1;  // Don't allow copying of status registers.
++  let isAllocatable = 0;
++}
+ 
+ // AVX-512 vector/mask registers.
+ def VR512 : RegisterClass<"X86", [v16f32, v8f64, v64i8, v32i16, v16i32, v8i64],
+diff --git llvm/lib/Target/X86/X86Schedule.td b/contrib/llvm/lib/Target/X86/X86Schedule.td
+index 2e21a97541b..078d459634c 100644
+--- lib/Target/X86/X86Schedule.td
++++ lib/Target/X86/X86Schedule.td
+@@ -608,12 +608,10 @@ def IIC_CMPXCHG_8B : InstrItinClass;
+ def IIC_CMPXCHG_16B : InstrItinClass;
+ def IIC_LODS : InstrItinClass;
+ def IIC_OUTS : InstrItinClass;
+-def IIC_CLC : InstrItinClass;
++def IIC_CLC_CMC_STC : InstrItinClass;
+ def IIC_CLD : InstrItinClass;
+ def IIC_CLI : InstrItinClass;
+-def IIC_CMC : InstrItinClass;
+ def IIC_CLTS : InstrItinClass;
+-def IIC_STC : InstrItinClass;
+ def IIC_STI : InstrItinClass;
+ def IIC_STD : InstrItinClass;
+ def IIC_XLAT : InstrItinClass;
+diff --git llvm/lib/Target/X86/X86ScheduleAtom.td b/contrib/llvm/lib/Target/X86/X86ScheduleAtom.td
+index e052ad98104..460b9823a7e 100644
+--- lib/Target/X86/X86ScheduleAtom.td
++++ lib/Target/X86/X86ScheduleAtom.td
+@@ -514,12 +514,10 @@ def AtomItineraries : ProcessorItineraries<
+   InstrItinData<IIC_CMPXCHG_16B, [InstrStage<22, [Port0, Port1]>] >,
+   InstrItinData<IIC_LODS, [InstrStage<2, [Port0, Port1]>] >,
+   InstrItinData<IIC_OUTS, [InstrStage<74, [Port0, Port1]>] >,
+-  InstrItinData<IIC_CLC, [InstrStage<1, [Port0, Port1]>] >,
++  InstrItinData<IIC_CLC_CMC_STC, [InstrStage<1, [Port0, Port1]>] >,
+   InstrItinData<IIC_CLD, [InstrStage<3, [Port0, Port1]>] >,
+   InstrItinData<IIC_CLI, [InstrStage<14, [Port0, Port1]>] >,
+-  InstrItinData<IIC_CMC, [InstrStage<1, [Port0, Port1]>] >,
+   InstrItinData<IIC_CLTS, [InstrStage<33, [Port0, Port1]>] >,
+-  InstrItinData<IIC_STC, [InstrStage<1, [Port0, Port1]>] >,
+   InstrItinData<IIC_STI, [InstrStage<17, [Port0, Port1]>] >,
+   InstrItinData<IIC_STD, [InstrStage<21, [Port0, Port1]>] >,
+   InstrItinData<IIC_XLAT, [InstrStage<6, [Port0, Port1]>] >,
+diff --git llvm/lib/Target/X86/X86TargetMachine.cpp b/contrib/llvm/lib/Target/X86/X86TargetMachine.cpp
+index ac242e1c00e..e41e16d82d8 100644
+--- lib/Target/X86/X86TargetMachine.cpp
++++ lib/Target/X86/X86TargetMachine.cpp
+@@ -62,6 +62,7 @@ void initializeX86CallFrameOptimizationPass(PassRegistry &);
+ void initializeX86CmovConverterPassPass(PassRegistry &);
+ void initializeX86ExecutionDepsFixPass(PassRegistry &);
+ void initializeX86DomainReassignmentPass(PassRegistry &);
++void initializeX86FlagsCopyLoweringPassPass(PassRegistry &);
+ 
+ } // end namespace llvm
+ 
+@@ -80,6 +81,7 @@ extern "C" void LLVMInitializeX86Target() {
+   initializeX86CmovConverterPassPass(PR);
+   initializeX86ExecutionDepsFixPass(PR);
+   initializeX86DomainReassignmentPass(PR);
++  initializeX86FlagsCopyLoweringPassPass(PR);
+ }
+ 
+ static std::unique_ptr<TargetLoweringObjectFile> createTLOF(const Triple &TT) {
+@@ -415,6 +417,7 @@ void X86PassConfig::addPreRegAlloc() {
+     addPass(createX86CallFrameOptimization());
+   }
+ 
++  addPass(createX86FlagsCopyLoweringPass());
+   addPass(createX86WinAllocaExpander());
+ }
+ void X86PassConfig::addMachineSSAOptimization() {
+--- lib/Target/X86/CMakeLists.txt.orig	2018-04-20 22:53:22.336270000 +0100
++++ lib/Target/X86/CMakeLists.txt	2018-04-20 22:53:37.673291000 +0100
+@@ -31,6 +31,7 @@ set(sources
+   X86FixupBWInsts.cpp
+   X86FixupLEAs.cpp
+   X86FixupSetCC.cpp
++  X86FlagsCopyLowering.cpp
+   X86FloatingPoint.cpp
+   X86FrameLowering.cpp
+   X86InstructionSelector.cpp
