@@ -37,13 +37,6 @@ include/snort/dynamic_output/stream_api.h
 %%APPID%%include/snort/dynamic_preproc/dns_defs.h
 %%APPID%%include/snort/dynamic_preproc/thirdparty_appid_api.h
 %%APPID%%include/snort/dynamic_preproc/thirdparty_appid_types.h
-%%APPID%%include/snort/dynamic_preproc/md5.h
-%%APPID%%include/snort/dynamic_preproc/sfghash.h
-%%APPID%%include/snort/dynamic_preproc/sfhashfcn.h
-%%APPID%%include/snort/dynamic_preproc/sflsq.h
-%%APPID%%include/snort/dynamic_preproc/sfmemcap.h
-%%APPID%%include/snort/dynamic_preproc/sfprimetable.h
-%%APPID%%include/snort/dynamic_preproc/sfxhash.h
 include/snort/dynamic_preproc/appdata_adjuster.h
 include/snort/dynamic_preproc/bitop.h
 include/snort/dynamic_preproc/cpuclock.h
