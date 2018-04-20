@@ -2,28 +2,24 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-kwallet
-PORTREVISION=	5
 CATEGORIES=	security kde
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	KDE KWallet integration for Version control system
 
-.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
-PORTREVISION=	2
-MASTERDIR=	${.CURDIR}/../../devel/subversion18
+USE_KDE=	kdelibs runtime
+USES+=		kde:4
+
+PORTREVISION_110=	6
+PORTREVISION_19=	0
+
+.include "${.CURDIR}/../../devel/subversion/Makefile.addons"
+
+.if ${WITH_SUBVERSION_VER} == 19
+CONFIGURE_ARGS+=	--with-kwallet=${KDE_PREFIX}
 .else
-MASTERDIR=	${.CURDIR}/../../devel/subversion
-.endif
-PKGDIR=		${.CURDIR}
-
-SVN_BUILD_ADDONS=	yes
-
-USE_KDE=		kdelibs runtime
-USES+=			kde:4
-
-.include "${MASTERDIR}/Makefile.common"
-
 CONFIGURE_ARGS+=	--with-kwallet=${KDE_PREFIX}/include/kde4:${KDE_PREFIX}/lib
+.endif
 
 ALL_TARGET=	kwallet-lib
 INSTALL_TARGET=	install-kwallet-lib

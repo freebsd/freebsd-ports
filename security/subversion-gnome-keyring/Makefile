@@ -3,23 +3,20 @@
 
 PKGNAMESUFFIX=	-gnome-keyring
 CATEGORIES=	security gnome
-PORTREVISION=	3
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	Gnome KWyring integration for Version control system
+COMMENT=	Gnome Keyring integration for Version control system
 
-.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
-MASTERDIR=	${.CURDIR}/../../devel/subversion18
+PORTREVISION_110=	4
+PORTREVISION_19=	0
+
+.include "${.CURDIR}/../../devel/subversion/Makefile.addons"
+
+.if ${WITH_SUBVERSION_VER} == 19
+LIB_DEPENDS+=	libgnome-keyring.so:security/libgnome-keyring
 .else
-MASTERDIR=	${.CURDIR}/../../devel/subversion
+LIB_DEPENDS+=	libsecret-1.so:security/libsecret
 .endif
-PKGDIR=		${.CURDIR}
-
-SVN_BUILD_ADDONS=	yes
-
-.include "${MASTERDIR}/Makefile.common"
-
-LIB_DEPENDS+=		libsecret-1.so:security/libsecret
 
 CONFIGURE_ARGS+=	--with-gnome-keyring
 

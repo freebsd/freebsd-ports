@@ -7,20 +7,15 @@ PORTREVISION=	0
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Python bindings for version control system
 
-.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
-MASTERDIR=	${.CURDIR}/../../devel/subversion18
-.else
-MASTERDIR=	${.CURDIR}/../../devel/subversion
-.endif
-PKGDIR=		${.CURDIR}
-
 USES+=		python
 USE_PYTHON=	flavors py3kplist
 
-SVN_BUILD_BINDINGS=	yes
-SVN_BUILD_ADDONS=	yes
+PORTREVISION_110=	1
+PORTREVISION_19=	0
 
-.include "${MASTERDIR}/Makefile.common"
+SVN_BUILD_BINDINGS=	yes
+
+.include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
 CATEGORIES+=	python
 
