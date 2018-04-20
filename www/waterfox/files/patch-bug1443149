@@ -1,0 +1,32 @@
+commit b28daeec3432
+Author: Jamie Nicol <jnicol@mozilla.com>
+Date:   Wed Mar 14 16:42:37 2018 +0000
+
+    Bug 1443149 - Ensure WebGLFBAttachPoint::HasImage() before dereferencing Format(). r=jrmuizel a=jcristau
+    
+    Previously we were checking IsDefined() rather than HasImage(), but
+    were hitting crashes. This was because Format() can return null if the
+    attach point is defined but the attached texture level or renderbuffer
+    aren't themselves defined. HasImage() checks for this case.
+    
+    MozReview-Commit-ID: 8KY3zPXXAFv
+    
+    --HG--
+    extra : source : ebb9f83337a22ae8e77c3e7129f65178f1bedec5
+---
+ dom/canvas/WebGLContextFramebufferOperations.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git dom/canvas/WebGLContextFramebufferOperations.cpp dom/canvas/WebGLContextFramebufferOperations.cpp
+index 7133cdec2448..84a58e9da49f 100644
+--- dom/canvas/WebGLContextFramebufferOperations.cpp
++++ dom/canvas/WebGLContextFramebufferOperations.cpp
+@@ -33,7 +33,7 @@ WebGLContext::Clear(GLbitfield mask)
+     if (mask & LOCAL_GL_COLOR_BUFFER_BIT && mBoundDrawFramebuffer) {
+         if (mask & LOCAL_GL_COLOR_BUFFER_BIT) {
+             for (const auto& cur : mBoundDrawFramebuffer->ColorDrawBuffers()) {
+-                if (!cur->IsDefined())
++                if (!cur->HasImage())
+                     continue;
+ 
+                 switch (cur->Format()->format->componentType) {
