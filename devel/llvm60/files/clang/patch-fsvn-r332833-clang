@@ -1,0 +1,258 @@
+commit f13397cb22ae77e9b18e29273e2920bd63c17ef1
+Author: dim <dim@FreeBSD.org>
+Date:   Fri Apr 20 18:20:55 2018 +0000
+
+    Recommit r332501, with an additional upstream fix for "Cannot lower
+    EFLAGS copy that lives out of a basic block!" errors on i386.
+    
+    Pull in r325446 from upstream clang trunk (by me):
+    
+      [X86] Add 'sahf' CPU feature to frontend
+    
+      Summary:
+      Make clang accept `-msahf` (and `-mno-sahf`) flags to activate the
+      `+sahf` feature for the backend, for bug 36028 (Incorrect use of
+      pushf/popf enables/disables interrupts on amd64 kernels).  This was
+      originally submitted in bug 36037 by Jonathan Looney
+      <jonlooney@gmail.com>.
+    
+      As described there, GCC also uses `-msahf` for this feature, and the
+      backend already recognizes the `+sahf` feature. All that is needed is
+      to teach clang to pass this on to the backend.
+    
+      The mapping of feature support onto CPUs may not be complete; rather,
+      it was chosen to match LLVM's idea of which CPUs support this feature
+      (see lib/Target/X86/X86.td).
+    
+      I also updated the affected test case (CodeGen/attr-target-x86.c) to
+      match the emitted output.
+    
+      Reviewers: craig.topper, coby, efriedma, rsmith
+    
+      Reviewed By: craig.topper
+    
+      Subscribers: emaste, cfe-commits
+    
+      Differential Revision: https://reviews.llvm.org/D43394
+    
+    Pull in r328944 from upstream llvm trunk (by Chandler Carruth):
+    
+      [x86] Expose more of the condition conversion routines in the public
+      API for X86's instruction information. I've now got a second patch
+      under review that needs these same APIs. This bit is nicely
+      orthogonal and obvious, so landing it. NFC.
+    
+    Pull in r329414 from upstream llvm trunk (by Craig Topper):
+    
+      [X86] Merge itineraries for CLC, CMC, and STC.
+    
+      These are very simple flag setting instructions that appear to only
+      be a single uop. They're unlikely to need this separation.
+    
+    Pull in r329657 from upstream llvm trunk (by Chandler Carruth):
+    
+      [x86] Introduce a pass to begin more systematically fixing PR36028
+      and similar issues.
+    
+      The key idea is to lower COPY nodes populating EFLAGS by scanning the
+      uses of EFLAGS and introducing dedicated code to preserve the
+      necessary state in a GPR. In the vast majority of cases, these uses
+      are cmovCC and jCC instructions. For such cases, we can very easily
+      save and restore the necessary information by simply inserting a
+      setCC into a GPR where the original flags are live, and then testing
+      that GPR directly to feed the cmov or conditional branch.
+    
+      However, things are a bit more tricky if arithmetic is using the
+      flags.  This patch handles the vast majority of cases that seem to
+      come up in practice: adc, adcx, adox, rcl, and rcr; all without
+      taking advantage of partially preserved EFLAGS as LLVM doesn't
+      currently model that at all.
+    
+      There are a large number of operations that techinaclly observe
+      EFLAGS currently but shouldn't in this case -- they typically are
+      using DF.  Currently, they will not be handled by this approach.
+      However, I have never seen this issue come up in practice. It is
+      already pretty rare to have these patterns come up in practical code
+      with LLVM. I had to resort to writing MIR tests to cover most of the
+      logic in this pass already.  I suspect even with its current amount
+      of coverage of arithmetic users of EFLAGS it will be a significant
+      improvement over the current use of pushf/popf. It will also produce
+      substantially faster code in most of the common patterns.
+    
+      This patch also removes all of the old lowering for EFLAGS copies,
+      and the hack that forced us to use a frame pointer when EFLAGS copies
+      were found anywhere in a function so that the dynamic stack
+      adjustment wasn't a problem. None of this is needed as we now lower
+      all of these copies directly in MI and without require stack
+      adjustments.
+    
+      Lots of thanks to Reid who came up with several aspects of this
+      approach, and Craig who helped me work out a couple of things
+      tripping me up while working on this.
+    
+      Differential Revision: https://reviews.llvm.org/D45146
+    
+    Pull in r329673 from upstream llvm trunk (by Chandler Carruth):
+    
+      [x86] Model the direction flag (DF) separately from the rest of
+      EFLAGS.
+    
+      This cleans up a number of operations that only claimed te use EFLAGS
+      due to using DF. But no instructions which we think of us setting
+      EFLAGS actually modify DF (other than things like popf) and so this
+      needlessly creates uses of EFLAGS that aren't really there.
+    
+      In fact, DF is so restrictive it is pretty easy to model. Only STD,
+      CLD, and the whole-flags writes (WRFLAGS and POPF) need to model
+      this.
+    
+      I've also somewhat cleaned up some of the flag management instruction
+      definitions to be in the correct .td file.
+    
+      Adding this extra register also uncovered a failure to use the
+      correct datatype to hold X86 registers, and I've corrected that as
+      necessary here.
+    
+      Differential Revision: https://reviews.llvm.org/D45154
+    
+    Pull in r330264 from upstream llvm trunk (by Chandler Carruth):
+    
+      [x86] Fix PR37100 by teaching the EFLAGS copy lowering to rewrite
+      uses across basic blocks in the limited cases where it is very
+      straight forward to do so.
+    
+      This will also be useful for other places where we do some limited
+      EFLAGS propagation across CFG edges and need to handle copy rewrites
+      afterward. I think this is rapidly approaching the maximum we can and
+      should be doing here. Everything else begins to require either heroic
+      analysis to prove how to do PHI insertion manually, or somehow
+      managing arbitrary PHI-ing of EFLAGS with general PHI insertion.
+      Neither of these seem at all promising so if those cases come up,
+      we'll almost certainly need to rewrite the parts of LLVM that produce
+      those patterns.
+    
+      We do now require dominator trees in order to reliably diagnose
+      patterns that would require PHI nodes. This is a bit unfortunate but
+      it seems better than the completely mysterious crash we would get
+      otherwise.
+    
+      Differential Revision: https://reviews.llvm.org/D45673
+    
+    Together, these should ensure clang does not use pushf/popf sequences to
+    save and restore flags, avoiding problems with unrelated flags (such as
+    the interrupt flag) being restored unexpectedly.
+    
+    Requested by:   jtl
+    PR:             225330
+    MFC after:      1 week
+
+diff --git llvm/tools/clang/include/clang/Driver/Options.td llvm/tools/clang/include/clang/Driver/Options.td
+index ad72aef3fc9..cab450042e6 100644
+--- tools/clang/include/clang/Driver/Options.td
++++ tools/clang/include/clang/Driver/Options.td
+@@ -2559,6 +2559,8 @@ def mrtm : Flag<["-"], "mrtm">, Group<m_x86_Features_Group>;
+ def mno_rtm : Flag<["-"], "mno-rtm">, Group<m_x86_Features_Group>;
+ def mrdseed : Flag<["-"], "mrdseed">, Group<m_x86_Features_Group>;
+ def mno_rdseed : Flag<["-"], "mno-rdseed">, Group<m_x86_Features_Group>;
++def msahf : Flag<["-"], "msahf">, Group<m_x86_Features_Group>;
++def mno_sahf : Flag<["-"], "mno-sahf">, Group<m_x86_Features_Group>;
+ def msgx : Flag<["-"], "msgx">, Group<m_x86_Features_Group>;
+ def mno_sgx : Flag<["-"], "mno-sgx">, Group<m_x86_Features_Group>;
+ def msha : Flag<["-"], "msha">, Group<m_x86_Features_Group>;
+diff --git llvm/tools/clang/lib/Basic/Targets/X86.cpp llvm/tools/clang/lib/Basic/Targets/X86.cpp
+index cfa6c571d6e..8251e6abd64 100644
+--- tools/clang/lib/Basic/Targets/X86.cpp
++++ tools/clang/lib/Basic/Targets/X86.cpp
+@@ -198,6 +198,7 @@ bool X86TargetInfo::initFeatureMap(
+     LLVM_FALLTHROUGH;
+   case CK_Core2:
+     setFeatureEnabledImpl(Features, "ssse3", true);
++    setFeatureEnabledImpl(Features, "sahf", true);
+     LLVM_FALLTHROUGH;
+   case CK_Yonah:
+   case CK_Prescott:
+@@ -239,6 +240,7 @@ bool X86TargetInfo::initFeatureMap(
+     setFeatureEnabledImpl(Features, "ssse3", true);
+     setFeatureEnabledImpl(Features, "fxsr", true);
+     setFeatureEnabledImpl(Features, "cx16", true);
++    setFeatureEnabledImpl(Features, "sahf", true);
+     break;
+ 
+   case CK_KNM:
+@@ -269,6 +271,7 @@ bool X86TargetInfo::initFeatureMap(
+     setFeatureEnabledImpl(Features, "xsaveopt", true);
+     setFeatureEnabledImpl(Features, "xsave", true);
+     setFeatureEnabledImpl(Features, "movbe", true);
++    setFeatureEnabledImpl(Features, "sahf", true);
+     break;
+ 
+   case CK_K6_2:
+@@ -282,6 +285,7 @@ bool X86TargetInfo::initFeatureMap(
+     setFeatureEnabledImpl(Features, "sse4a", true);
+     setFeatureEnabledImpl(Features, "lzcnt", true);
+     setFeatureEnabledImpl(Features, "popcnt", true);
++    setFeatureEnabledImpl(Features, "sahf", true);
+     LLVM_FALLTHROUGH;
+   case CK_K8SSE3:
+     setFeatureEnabledImpl(Features, "sse3", true);
+@@ -315,6 +319,7 @@ bool X86TargetInfo::initFeatureMap(
+     setFeatureEnabledImpl(Features, "prfchw", true);
+     setFeatureEnabledImpl(Features, "cx16", true);
+     setFeatureEnabledImpl(Features, "fxsr", true);
++    setFeatureEnabledImpl(Features, "sahf", true);
+     break;
+ 
+   case CK_ZNVER1:
+@@ -338,6 +343,7 @@ bool X86TargetInfo::initFeatureMap(
+     setFeatureEnabledImpl(Features, "prfchw", true);
+     setFeatureEnabledImpl(Features, "rdrnd", true);
+     setFeatureEnabledImpl(Features, "rdseed", true);
++    setFeatureEnabledImpl(Features, "sahf", true);
+     setFeatureEnabledImpl(Features, "sha", true);
+     setFeatureEnabledImpl(Features, "sse4a", true);
+     setFeatureEnabledImpl(Features, "xsave", true);
+@@ -372,6 +378,7 @@ bool X86TargetInfo::initFeatureMap(
+     setFeatureEnabledImpl(Features, "cx16", true);
+     setFeatureEnabledImpl(Features, "fxsr", true);
+     setFeatureEnabledImpl(Features, "xsave", true);
++    setFeatureEnabledImpl(Features, "sahf", true);
+     break;
+   }
+   if (!TargetInfo::initFeatureMap(Features, Diags, CPU, FeaturesVec))
+@@ -768,6 +775,8 @@ bool X86TargetInfo::handleTargetFeatures(std::vector<std::string> &Features,
+       HasRetpoline = true;
+     } else if (Feature == "+retpoline-external-thunk") {
+       HasRetpolineExternalThunk = true;
++    } else if (Feature == "+sahf") {
++      HasLAHFSAHF = true;
+     }
+ 
+     X86SSEEnum Level = llvm::StringSwitch<X86SSEEnum>(Feature)
+@@ -1240,6 +1249,7 @@ bool X86TargetInfo::isValidFeatureName(StringRef Name) const {
+       .Case("rdrnd", true)
+       .Case("rdseed", true)
+       .Case("rtm", true)
++      .Case("sahf", true)
+       .Case("sgx", true)
+       .Case("sha", true)
+       .Case("shstk", true)
+@@ -1313,6 +1323,7 @@ bool X86TargetInfo::hasFeature(StringRef Feature) const {
+       .Case("retpoline", HasRetpoline)
+       .Case("retpoline-external-thunk", HasRetpolineExternalThunk)
+       .Case("rtm", HasRTM)
++      .Case("sahf", HasLAHFSAHF)
+       .Case("sgx", HasSGX)
+       .Case("sha", HasSHA)
+       .Case("shstk", HasSHSTK)
+diff --git llvm/tools/clang/lib/Basic/Targets/X86.h llvm/tools/clang/lib/Basic/Targets/X86.h
+index 590531c1785..fa2fbee387b 100644
+--- tools/clang/lib/Basic/Targets/X86.h
++++ tools/clang/lib/Basic/Targets/X86.h
+@@ -98,6 +98,7 @@ class LLVM_LIBRARY_VISIBILITY X86TargetInfo : public TargetInfo {
+   bool HasPREFETCHWT1 = false;
+   bool HasRetpoline = false;
+   bool HasRetpolineExternalThunk = false;
++  bool HasLAHFSAHF = false;
+ 
+   /// \brief Enumeration of all of the X86 CPUs supported by Clang.
+   ///
