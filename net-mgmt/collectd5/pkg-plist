@@ -104,6 +104,7 @@ lib/collectd/write_graphite.so
 lib/collectd/write_log.so
 %%KAFKA%%lib/collectd/write_kafka.so
 %%MONGODB%%lib/collectd/write_mongodb.so
+%%PROMETHEUS%%lib/collectd/write_prometheus.so
 %%REDIS%%lib/collectd/write_redis.so
 %%RIEMANN%%lib/collectd/write_riemann.so
 %%TSDB%%lib/collectd/write_tsdb.so
