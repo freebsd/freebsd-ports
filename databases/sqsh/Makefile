@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sqsh
-PORTVERSION=	2.1.8
-PORTREVISION=	1
+PORTVERSION=	2.5.16.1
 CATEGORIES=	databases
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
@@ -15,11 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libct.so:databases/freetds
 
-USES=		readline
+USES=		readline tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-readline
 ALL_TARGET=	build
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
 
 PLIST_FILES=	bin/sqsh etc/sqshrc.default man/man1/sqsh.1.gz
 

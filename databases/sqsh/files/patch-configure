@@ -1,14 +1,5 @@
---- configure.orig	2012-05-02 20:27:55.000000000 +0900
+--- configure	2012-05-02 20:27:55.000000000 +0900
 +++ configure	2012-05-04 14:34:22.000000000 +0900
-@@ -3463,7 +3463,7 @@
- 
- 		SYBASE_LIBS=
- 
--		for i in blk cs ct tcl comn intl unic
-+		for i in blk cs ct tcl comn unic
- 		do
- 			x=
- 			if test -f $SYBASE_LIBDIR/lib${i}.a; then
 @@ -3531,7 +3531,7 @@
  				SYBASE_OS="-lnsl -lm";;
  			ncr*)
