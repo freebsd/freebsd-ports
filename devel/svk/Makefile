@@ -15,6 +15,8 @@ COMMENT=	Distributed Version Control System
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN=		fails to configure
+
 BUILD_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-subversion>=0:devel/p5-subversion \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
