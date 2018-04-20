@@ -1,0 +1,17 @@
+bin/ErrorCount.sh
+bin/RefMapOpt.sh
+bin/ReferenceOpt.hyb.sh
+bin/ReferenceOpt.sh
+bin/Rename_SequenceFiles.sh
+bin/Rename_for_dDocent.sh
+bin/Rename_for_dDocent_with-INDEX.sh
+bin/dDocent
+bin/dDocent_filters
+bin/dDocent_ngs.sh
+bin/ddocent-assembly-test
+bin/ddocent-assembly-test-cleanup
+bin/filter_hwe_by_pop.pl
+bin/filter_missing_ind.sh
+bin/pop_missing_filter.sh
+bin/remake_reference.sh
+bin/remove.bad.hap.loci.sh

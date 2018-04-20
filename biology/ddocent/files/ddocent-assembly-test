@@ -1,0 +1,380 @@
+#!/usr/bin/env bash
+
+set -e
+
+##########################################################################
+#   Function description:
+#       Pause until user presses return
+##########################################################################
+
+pause()
+{
+    local junk
+    
+    printf "Press return to continue..."
+    read junk
+}
+
+
+##########################################################################
+#   Not necessary if invoking scripts with "bash script-name" as shown
+#   in the dDocent tutorial, but supplied for completeness.  Tutorial
+#   scripts have also been patched upstream to usr /usr/bin/env, but
+#   we won't assume they'll all stay that way.
+##########################################################################
+
+fix_bash_path()
+{
+    # Don't echo these commands
+    { set +x; } 2>/dev/null
+    if [ $# != 1 ]; then
+	printf "Usage: $0 script\n"
+	exit 1
+    fi
+    sed -i.bak -e "s|#!/bin/bash|#!/usr/bin/env bash|g" $1
+    set -x
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+##########################################################################
+#   Workarounds for running dDocent from FreeBSD ports and Pkgsrc.
+#   Include this section in any scripts running dDocent commands.
+##########################################################################
+
+# Hack to allow remake_reference.sh, etc. to find trimmomatic.
+# trimmomatic.jar and adapter files are not an executables and should not
+# be in PATH according to filesystem hierarchy standards, but the dDocent
+# scripts are coded to look for them there, because that's how dDocent
+# installs the bundled Trimmomatic.
+if [ -e /usr/local/share/java/classes/trimmomatic.jar ]; then
+    export PATH=${PATH}:/usr/local/share/java/classes:/usr/local/share/trimmomatic/adapters
+elif [ -e $PKGSRC/lib/java/trimmomatic.jar ]; then
+    export PATH=${PATH}:$PKGSRC/lib/java:$PKGSRC/share/trimmomatic/adapters
+else
+    printf "Error: Trimmomatic is not installed in a known location.\n" >> /dev/stderr
+fi
+
+if ! pwd | fgrep dDocent-test; then
+    mkdir -p dDocent-test
+    cd dDocent-test
+fi
+
+# remake_reference.sh and some other scripts use GNU extensions in awk
+# commands.  Trick systems into using gawk to get around this without
+# having to patch every script.
+mkdir -p ddocent-bin
+ln -sf `which gawk` ddocent-bin/awk
+ln -sf `which python2.7` ddocent-bin/python
+export PATH=`pwd`/ddocent-bin:$PATH
+
+##########################################################################
+#   Actual dDocent commands below
+##########################################################################
+
+##########################################################################
+#   Command sequence from the dDocent tutorial on Github.  See link below.
+##########################################################################
+
+cat << EOM
+
+This script runs the test commands described at
+
+http://ddocent.com/assembly
+
+You may want to follow along on this web page as the script runs.  It will
+pause after each step to allow checking the output.
+
+EOM
+pause
+
+mkdir -p Data
+cd Data
+
+printf "Downloading and unpacking data.zip...\n"
+if [ -e data.zip ]; then
+    mv data.zip /tmp/dDocent-data.zip
+    rm -rf *
+    mv /tmp/dDocent-data.zip data.zip
+else
+    rm -rf *
+    curl --insecure -L -o data.zip \
+	'https://www.dropbox.com/s/t09xjuudev4de72/data.zip?dl=0'
+fi
+
+# Hack: current data.zip contains data.zip.  ??!
+if [ ! -e simRRLs2.py ]; then
+    yes | unzip data.zip || true
+fi
+ls -l
+pause
+
+set -x
+head SimRAD.barcodes
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+cut -f2 SimRAD.barcodes > barcodes
+head barcodes
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+process_radtags -1 SimRAD_R1.fastq.gz -2 SimRAD_R2.fastq.gz -b barcodes \
+    -e ecoRI --renz_2 mspI -r -i gzfastq
+ls | fgrep sample_ | head
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+rm *rem*
+{ set +x; } 2>/dev/null
+pause
+
+rm -f Rename_for_dDocent.sh     # Always get the latest
+set -x
+curl --insecure -L -O https://github.com/jpuritz/dDocent/raw/master/Rename_for_dDocent.sh
+more Rename_for_dDocent.sh
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+bash Rename_for_dDocent.sh SimRAD.barcodes
+{ set +x; } 2>/dev/null
+
+set -x
+ls *.fq.gz
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+ls *.F.fq.gz > namelist
+sed -i'' -e 's/.F.fq.gz//g' namelist
+AWK1='BEGIN{P=1}{if(P==1||P==2){gsub(/^[@]/,">");print}; if(P==4)P=0; P++}'
+AWK2='!/>/'
+AWK3='!/NNN/'
+PERLT='while (<>) {chomp; $z{$_}++;} while(($k,$v) = each(%z)) {print "$v\t$k\n";}'
+
+cat namelist | parallel --no-notice -j 8 "zcat {}.F.fq.gz | mawk '$AWK1' | mawk '$AWK2' > {}.forward"
+cat namelist | parallel --no-notice -j 8 "zcat {}.R.fq.gz | mawk '$AWK1' | mawk '$AWK2' > {}.reverse"
+cat namelist | parallel --no-notice -j 8 "paste -d '-' {}.forward {}.reverse | mawk '$AWK3' | sed 's/-/NNNNNNNNNN/' | perl -e '$PERLT' > {}.uniq.seqs"
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+cat *.uniq.seqs > uniq.seqs
+for i in {2..20};
+do 
+echo $i >> pfile
+done
+cat pfile | parallel --no-notice \
+    "echo -n {}xxx && mawk -v x={} '\$1 >= x' uniq.seqs |  wc -l" \
+    | mawk  '{gsub("xxx","\t",$0); print;}'| sort -g > uniqseq.data
+rm pfile
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+more uniqseq.data
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+gnuplot << \EOF 
+set terminal dumb size 80, 30
+set autoscale
+set xrange [2:20] 
+unset label
+set title "Number of Unique Sequences with More than X Coverage (Counted within individuals)"
+set xlabel "Coverage"
+set ylabel "Number of Unique Sequences"
+plot 'uniqseq.data' with lines notitle
+pause -1
+EOF
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+parallel --no-notice -j 8 mawk -v x=4 \''$1 >= x'\' ::: *.uniq.seqs | cut -f2 | perl -e 'while (<>) {chomp; $z{$_}++;} while(($k,$v) = each(%z)) {print "$v\t$k\n";}' > uniqCperindv
+wc -l uniqCperindv
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+for ((i = 2; i <= 10; i++));
+do
+echo $i >> ufile
+done
+
+cat ufile | parallel --no-notice "echo -n {}xxx && mawk -v x={} '\$1 >= x' uniqCperindv | wc -l" | mawk  '{gsub("xxx","\t",$0); print;}'| sort -g > uniqseq.peri.data
+rm ufile
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+gnuplot << \EOF 
+set terminal dumb size 80, 30
+set autoscale 
+unset label
+set title "Number of Unique Sequences present in more than X Individuals"
+set xlabel "Number of Individuals"
+set ylabel "Number of Unique Sequences"
+plot 'uniqseq.peri.data' with lines notitle
+pause -1
+EOF
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+mawk -v x=4 '$1 >= x' uniqCperindv > uniq.k.4.c.4.seqs
+wc -l uniq.k.4.c.4.seqs
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+cut -f2 uniq.k.4.c.4.seqs > totaluniqseq
+mawk '{c= c + 1; print ">Contig_" c "\n" $1}' totaluniqseq > uniq.fasta
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+sed -e 's/NNNNNNNNNN/\t/g' uniq.fasta | cut -f1 > uniq.F.fasta
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+cd-hit-est -i uniq.F.fasta -o xxx -c 0.8 -T 0 -M 0 -g 1
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+mawk '{if ($1 ~ /Cl/) clus = clus + 1; else  print $3 "\t" clus}' xxx.clstr | sed 's/[>Contig_,...]//g' | sort -g -k1 > sort.contig.cluster.ids
+paste sort.contig.cluster.ids totaluniqseq > contig.cluster.totaluniqseq
+sort -k2,2 -g contig.cluster.totaluniqseq | sed -e 's/NNNNNNNNNN/\t/g' > rcluster
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+head rcluster
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+cut -f2 rcluster | uniq | wc -l
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+rainbow div -i rcluster -o rbdiv.out
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+rainbow div -i rcluster -o rbdiv.out -f 0.5 -K 10
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+rainbow merge -o rbasm.out -a -i rbdiv.out
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+rainbow merge -o rbasm.out -a -i rbdiv.out -r 2
+{ set +x; } 2>/dev/null
+pause
+
+# If missing fdesc mount for bash, <(echo "E") will not work
+# cat rbasm.out <(echo "E") |sed 's/[0-9]*:[0-9]*://g' | mawk ' {
+set -x
+echo "E" > endfile
+cat rbasm.out endfile |sed 's/[0-9]*:[0-9]*://g' | mawk ' {
+if (NR == 1) e=$2;
+else if ($1 ~/E/ && lenp > len1) {c=c+1; print ">dDocent_Contig_" e "\n" seq2 "NNNNNNNNNN" seq1; seq1=0; seq2=0;lenp=0;e=$2;fclus=0;len1=0;freqp=0;lenf=0}
+else if ($1 ~/E/ && lenp <= len1) {c=c+1; print ">dDocent_Contig_" e "\n" seq1; seq1=0; seq2=0;lenp=0;e=$2;fclus=0;len1=0;freqp=0;lenf=0}
+else if ($1 ~/C/) clus=$2;
+else if ($1 ~/L/) len=$2;
+else if ($1 ~/S/) seq=$2;
+else if ($1 ~/N/) freq=$2;
+else if ($1 ~/R/ && $0 ~/0/ && $0 !~/1/ && len > lenf) {seq1 = seq; fclus=clus;lenf=len}
+else if ($1 ~/R/ && $0 ~/0/ && $0 ~/1/) {seq1 = seq; fclus=clus; len1=len}
+else if ($1 ~/R/ && $0 ~!/0/ && freq > freqp && len >= lenp || $1 ~/R/ && $0 ~!/0/ && freq == freqp && len > lenp) {seq2 = seq; lenp = len; freqp=freq}
+}' > rainbow.fasta
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+cd-hit-est -i rainbow.fasta -o referenceRC.fasta -M 0 -T 0 -c 0.9
+{ set +x; } 2>/dev/null
+pause
+
+rm -f remake_reference.sh
+set -x
+curl --insecure -L -O https://github.com/jpuritz/dDocent/raw/master/scripts/remake_reference.sh
+more remake_reference.sh
+#fix_bash_path remake_reference.sh
+
+bash remake_reference.sh 4 4 0.90 PE 2
+{ set +x; } 2>/dev/null
+pause
+
+rm -f ReferenceOpt.sh
+set -x
+curl --insecure -L -O https://github.com/jpuritz/dDocent/raw/master/scripts/ReferenceOpt.sh
+more ReferenceOpt.sh
+
+bash ReferenceOpt.sh 4 8 4 8 PE 16
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+bash remake_reference.sh 4 4 0.90 PE 2
+head reference.fasta
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+wc -l reference.fasta
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+mawk '/>/' reference.fasta | wc -l
+{ set +x; } 2>/dev/null
+pause
+
+set -x
+mawk '/^NAATT.*N*.*CCGN$/' reference.fasta | wc -l
+grep '^NAATT.*N*.*CCGN$' reference.fasta | wc -l
+{ set +x; } 2>/dev/null
+pause
+
+printf "Bonus Section: Optimize reference assemblies? (takes a long time) y/[n] "
+read bonus
+if [ 0$bonus = 0y ]; then
+    set -x
+    curl -L -O https://raw.githubusercontent.com/jpuritz/dDocent/master/scripts/RefMapOpt.sh
+    { set +x; } 2>/dev/null
+    printf "Running dDocent to trim reads.\n"
+    pause
+    set -x
+    cat << EOM | dDocent || true
+yes
+8
+10g
+yes
+no
+no
+no
+bacon@uwm.edu
+EOM
+    bash RefMapOpt.sh 4 8 4 8 0.9 64 PE
+    { set +x; } 2>/dev/null
+    pause
+    more mapping.results
+    pause
+fi
