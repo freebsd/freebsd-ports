@@ -1,0 +1,38 @@
+--- SeqLib/htslib/Makefile.orig	2017-06-20 12:40:28 UTC
++++ SeqLib/htslib/Makefile
+@@ -22,20 +22,20 @@
+ # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ # DEALINGS IN THE SOFTWARE.
+ 
+-CC     = gcc
+-AR     = ar
+-RANLIB = ranlib
++CC     ?= gcc
++AR     ?= ar
++RANLIB ?= ranlib
+ 
+ # Default libraries to link if configure is not used
+ htslib_default_libs = -lz -lm -lbz2 -llzma
+ 
+-CPPFLAGS =
++CPPFLAGS ?=
+ # TODO: probably update cram code to make it compile cleanly with -Wc++-compat
+ # For testing strict C99 support add -std=c99 -D_XOPEN_SOURCE=600
+ #CFLAGS   = -g -Wall -O2 -pedantic -std=c99 -D_XOPEN_SOURCE=600 -D__FUNCTION__=__func__
+-CFLAGS   = -g -Wall -O2
++CFLAGS   ?= -g -Wall -O2
+ EXTRA_CFLAGS_PIC = -fpic
+-LDFLAGS  =
++LDFLAGS  ?=
+ LIBS     = $(htslib_default_libs)
+ 
+ prefix      = /usr/local
+@@ -86,7 +86,7 @@ BUILT_THRASH_PROGRAMS = \
+ 	test/thrash_threads5 \
+ 	test/thrash_threads6
+ 
+-all: lib-static lib-shared $(BUILT_PROGRAMS) plugins $(BUILT_TEST_PROGRAMS)
++all: lib-static $(BUILT_PROGRAMS) plugins $(BUILT_TEST_PROGRAMS)
+ 
+ HTSPREFIX =
+ include htslib_vars.mk
