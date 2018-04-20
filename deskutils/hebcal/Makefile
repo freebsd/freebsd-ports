@@ -14,13 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf gmake perl5
 GNU_CONFIGURE=	yes
+TEST_TARGET=	check
 
 USE_GITHUB=	yes
 
 PLIST_FILES=	bin/hebcal \
 		man/man1/hebcal.1.gz
-
-regression-test: build
-	(cd ${WRKSRC} && ${MAKE_CMD} check)
 
 .include <bsd.port.mk>
