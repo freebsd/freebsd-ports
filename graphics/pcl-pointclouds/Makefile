@@ -13,8 +13,6 @@ COMMENT=	Point Cloud Library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN=		https://github.com/PointCloudLibrary/pcl/issues/2284
-
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
 		libflann_cpp.so:math/flann \
@@ -29,6 +27,9 @@ GH_ACCOUNT=	PointCloudLibrary
 USE_GL=		gl glu
 USE_XORG=	x11 xext xt ice sm
 USE_LDCONFIG=	yes
+
+# https://github.com/PointCloudLibrary/pcl/issues/2284
+CXXFLAGS+=	-DBOOST_UUID_RANDOM_GENERATOR_COMPAT
 
 PLIST_SUB=	SHL3=${DISTVERSION} SHL2=${DISTVERSION:R}
 
