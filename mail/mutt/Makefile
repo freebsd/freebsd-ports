@@ -3,7 +3,7 @@
 
 PORTNAME=	mutt
 DISTVERSION=	1.9.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -203,8 +203,8 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
-VVV_PATCH_VERSION=	1.9.1
-GREETING_PATCH_VERSION=	1.9.4
+#VVV_PATCH_VERSION=	1.9.5
+#GREETING_PATCH_VERSION=	1.9.5
 
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
