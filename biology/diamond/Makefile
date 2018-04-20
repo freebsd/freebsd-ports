@@ -2,7 +2,7 @@
 
 PORTNAME=	diamond
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.19
+DISTVERSION=	0.9.21
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -19,7 +19,6 @@ GH_ACCOUNT=	bbuchfink
 
 CFLAGS+=	-DNDEBUG
 PLIST_FILES=	bin/diamond
-
 .if ! defined(PACKAGE_BUILDING)
 CXXFLAGS+=	-march=native
 .endif
