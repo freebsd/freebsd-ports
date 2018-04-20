@@ -1497,4 +1497,3 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/vi/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/git.mo
 @dir share/git-core/templates/branches
-%%GITWEB%%@dir %%ETCDIR%%
