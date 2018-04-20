@@ -83,6 +83,10 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/gui/button_disabled.xml
 %%DATADIR%%/data/graphics/gui/button_highlighted.xml
 %%DATADIR%%/data/graphics/gui/button_pressed.xml
+%%DATADIR%%/data/graphics/gui/buttonpin.xml
+%%DATADIR%%/data/graphics/gui/buttonpin_disabled.xml
+%%DATADIR%%/data/graphics/gui/buttonpin_highlighted.xml
+%%DATADIR%%/data/graphics/gui/buttonpin_pressed.xml
 %%DATADIR%%/data/graphics/gui/buttonplay.png
 %%DATADIR%%/data/graphics/gui/buy.xml
 %%DATADIR%%/data/graphics/gui/charcreate_playerbox.xml
@@ -126,6 +130,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/gui/ok.xml
 %%DATADIR%%/data/graphics/gui/onlinebrowserbox.xml
 %%DATADIR%%/data/graphics/gui/outfits.xml
+%%DATADIR%%/data/graphics/gui/pin.xml
 %%DATADIR%%/data/graphics/gui/playerbox.xml
 %%DATADIR%%/data/graphics/gui/playerboxselected.xml
 %%DATADIR%%/data/graphics/gui/popup.xml
@@ -290,6 +295,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/test/hairstyle02.xml
 %%DATADIR%%/data/test/hide.png
 %%DATADIR%%/data/test/items.xml
+%%DATADIR%%/data/test/itemxmlutils_test.xml
 %%DATADIR%%/data/test/palette.gpl
 %%DATADIR%%/data/test/paths.xml
 %%DATADIR%%/data/test/quests.xml
@@ -346,6 +352,10 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/golden-delicious/button_disabled.xml
 %%DATADIR%%/data/themes/golden-delicious/button_highlighted.xml
 %%DATADIR%%/data/themes/golden-delicious/button_pressed.xml
+%%DATADIR%%/data/themes/golden-delicious/buttonpin.xml
+%%DATADIR%%/data/themes/golden-delicious/buttonpin_disabled.xml
+%%DATADIR%%/data/themes/golden-delicious/buttonpin_highlighted.xml
+%%DATADIR%%/data/themes/golden-delicious/buttonpin_pressed.xml
 %%DATADIR%%/data/themes/golden-delicious/buy.xml
 %%DATADIR%%/data/themes/golden-delicious/charcreate.xml
 %%DATADIR%%/data/themes/golden-delicious/chat.xml
@@ -402,6 +412,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/golden-delicious/ok.xml
 %%DATADIR%%/data/themes/golden-delicious/onlinebrowserbox.xml
 %%DATADIR%%/data/themes/golden-delicious/outfits.xml
+%%DATADIR%%/data/themes/golden-delicious/pin.xml
 %%DATADIR%%/data/themes/golden-delicious/playerbox.xml
 %%DATADIR%%/data/themes/golden-delicious/playerboxselected.xml
 %%DATADIR%%/data/themes/golden-delicious/popup.xml
@@ -462,6 +473,10 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/jewelry-simple/button_disabled.xml
 %%DATADIR%%/data/themes/jewelry-simple/button_highlighted.xml
 %%DATADIR%%/data/themes/jewelry-simple/button_pressed.xml
+%%DATADIR%%/data/themes/jewelry-simple/buttonpin.xml
+%%DATADIR%%/data/themes/jewelry-simple/buttonpin_disabled.xml
+%%DATADIR%%/data/themes/jewelry-simple/buttonpin_highlighted.xml
+%%DATADIR%%/data/themes/jewelry-simple/buttonpin_pressed.xml
 %%DATADIR%%/data/themes/jewelry-simple/buy.xml
 %%DATADIR%%/data/themes/jewelry-simple/charcreate.xml
 %%DATADIR%%/data/themes/jewelry-simple/chat.xml
@@ -517,6 +532,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/jewelry-simple/ok.xml
 %%DATADIR%%/data/themes/jewelry-simple/onlinebrowserbox.xml
 %%DATADIR%%/data/themes/jewelry-simple/outfits.xml
+%%DATADIR%%/data/themes/jewelry-simple/pin.xml
 %%DATADIR%%/data/themes/jewelry-simple/playerbox.xml
 %%DATADIR%%/data/themes/jewelry-simple/playerboxselected.xml
 %%DATADIR%%/data/themes/jewelry-simple/popup.xml
@@ -577,6 +593,10 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/jewelry/button_disabled.xml
 %%DATADIR%%/data/themes/jewelry/button_highlighted.xml
 %%DATADIR%%/data/themes/jewelry/button_pressed.xml
+%%DATADIR%%/data/themes/jewelry/buttonpin.xml
+%%DATADIR%%/data/themes/jewelry/buttonpin_disabled.xml
+%%DATADIR%%/data/themes/jewelry/buttonpin_highlighted.xml
+%%DATADIR%%/data/themes/jewelry/buttonpin_pressed.xml
 %%DATADIR%%/data/themes/jewelry/buy.xml
 %%DATADIR%%/data/themes/jewelry/charcreate.xml
 %%DATADIR%%/data/themes/jewelry/chat.xml
@@ -632,6 +652,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/jewelry/ok.xml
 %%DATADIR%%/data/themes/jewelry/onlinebrowserbox.xml
 %%DATADIR%%/data/themes/jewelry/outfits.xml
+%%DATADIR%%/data/themes/jewelry/pin.xml
 %%DATADIR%%/data/themes/jewelry/playerbox.xml
 %%DATADIR%%/data/themes/jewelry/playerboxselected.xml
 %%DATADIR%%/data/themes/jewelry/popup.xml
