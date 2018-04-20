@@ -4,7 +4,7 @@ PORTNAME=	arcanist
 PORTVERSION=	20170630
 PORTREVISION=	1
 CATEGORIES=	devel
-PKGNAMEPREFIX=	php-
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Command line interface for Phabricator
@@ -12,12 +12,12 @@ COMMENT=	Command line interface for Phabricator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	php-libphutil>0:devel/libphutil
+RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}libphutil>0:devel/libphutil@${PHP_FLAVOR}
 
 CONFLICTS=	arc-*
 
 PHP_DESTDIR=	lib/php/arcanist
-USES=		php python:2.7,env shebangfix
+USES=		php:flavors python:2.7,env shebangfix
 SHEBANG_FILES=	scripts/breakout.py
 USE_PHP=	curl dom hash json simplexml
 USE_GITHUB=	yes
