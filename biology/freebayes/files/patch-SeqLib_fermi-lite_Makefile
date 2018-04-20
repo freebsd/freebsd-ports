@@ -1,0 +1,12 @@
+--- SeqLib/fermi-lite/Makefile.orig	2018-03-23 18:50:25 UTC
++++ SeqLib/fermi-lite/Makefile
+@@ -1,6 +1,6 @@
+-CC=			gcc
+-CFLAGS=		-g -Wall -O2 -Wno-unused-function #-fno-inline-functions -fno-inline-functions-called-once
+-CPPFLAGS=
++CC ?=			gcc
++CFLAGS ?=		-g -Wall -O2 -Wno-unused-function #-fno-inline-functions -fno-inline-functions-called-once
++CPPFLAGS ?=
+ INCLUDES=	
+ OBJS=		kthread.o misc.o \
+ 			bseq.o htab.o bfc.o \

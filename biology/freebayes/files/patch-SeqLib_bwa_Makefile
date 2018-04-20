@@ -1,0 +1,14 @@
+--- SeqLib/bwa/Makefile.orig	2018-03-23 18:47:04 UTC
++++ SeqLib/bwa/Makefile
+@@ -1,8 +1,8 @@
+-CC=			gcc
++CC ?=			gcc
+ #CC=			clang --analyze
+-CFLAGS=		-g -Wall -Wno-unused-function -O2
++CFLAGS ?=		-g -Wall -Wno-unused-function -O2
+ WRAP_MALLOC=-DUSE_MALLOC_WRAPPERS
+-AR=			ar
++AR ?=			ar
+ DFLAGS=		-DHAVE_PTHREAD $(WRAP_MALLOC)
+ ## moved is.o bwtiindex.o rope.o to LOBJS
+ LOBJS=		utils.o kthread.o ksw.o bwt.o bntseq.o bwa.o bwamem.o bwamem_pair.o \

@@ -1,0 +1,62 @@
+--- src/Makefile.orig	2018-03-23 14:01:01 UTC
++++ src/Makefile
+@@ -5,8 +5,9 @@
+ ################################################################################
+ 
+ # Compiler
+-CXX=g++ ${CXXFLAGS}
+-C=gcc
++CXX ?= g++
++# CXX += ${CXXFLAGS}
++CC ?= gcc
+ 
+ export CXXFLAGS
+ export C
+@@ -17,7 +18,7 @@ export LIBFLAGS
+ 
+ # Compiler flags
+ 
+-CFLAGS=-O3 -D_FILE_OFFSET_BITS=64 -g
++CFLAGS += -D_FILE_OFFSET_BITS=64
+ #CFLAGS=-O3 -static -D VERBOSE_DEBUG  # enables verbose debugging via --debug2
+ 
+ SEQLIB_ROOT=../SeqLib
+@@ -25,7 +26,7 @@ VCFLIB_ROOT=../vcflib
+ TABIX_ROOT=$(VCFLIB_ROOT)/tabixpp
+ HTSLIB_ROOT=$(SEQLIB_ROOT)/htslib
+ 
+-LIBS = -lz -llzma -lbz2 -lm -lpthread
++LIBS = -lz -llzma -lbz2 -lm -lpthread -lexecinfo
+ INCLUDE = -I../src -I../ttmath -I$(VCFLIB_ROOT)/src/ -I$(VCFLIB_ROOT)/smithwaterman/ -I$(VCFLIB_ROOT)/multichoose/ -I$(VCFLIB_ROOT)/filevercmp/ -I$(VCFLIB_ROOT)/fastahack/ -I$(HTSLIB_ROOT) -I$(SEQLIB_ROOT) 
+ #INCLUDE = -I../ttmath -I$(BAMTOOLS_ROOT)/src/ -I$(VCFLIB_ROOT)/src/ -I$(TABIX_ROOT)/ -I$(VCFLIB_ROOT)/smithwaterman/ -I$(VCFLIB_ROOT)/multichoose/ -I$(VCFLIB_ROOT)/filevercmp/ -I$(VCFLIB_ROOT)/fastahack/ -I$(HTSLIB_ROOT) -I$(SEQLIB_ROOT) -I$(SEQLIB_ROOT)/htslib
+ 
+@@ -46,10 +47,10 @@ gprof:
+ .PHONY: all static debug profiling gprof
+ 
+ $(HTSLIB_ROOT)/libhts.a:
+-	cd $(HTSLIB_ROOT) && make
++	cd $(HTSLIB_ROOT) && ${MAKE}
+ 
+ $(SEQLIB_ROOT)/src/libseqlib.a:
+-	cd $(SEQLIB_ROOT) && ./configure && make 
++	cd $(SEQLIB_ROOT) && ./configure && ${MAKE} 
+ 
+ OBJECTS=BedReader.o \
+ 		CNV.o \
+@@ -122,7 +123,7 @@ freebayes.o: freebayes.cpp TryCatch.h $(
+ 	$(CXX) $(CXXFLAGS) $(INCLUDE) -c freebayes.cpp
+ 
+ fastlz.o: fastlz.c fastlz.h
+-	$(C) $(CFLAGS) $(INCLUDE) -c fastlz.c	
++	$(CC) $(CFLAGS) $(INCLUDE) -c fastlz.c	
+ 
+ Parameters.o: Parameters.cpp Parameters.h Version.h
+ 	$(CXX) $(CXXFLAGS) $(INCLUDE) -c Parameters.cpp
+@@ -277,5 +278,5 @@ autoversion:
+ 
+ clean:
+ 	rm -rf *.o *.cgh *~ freebayes alleles ../bin/freebayes ../bin/alleles ../vcflib/*.o ../vcflib/tabixpp/*.{o,a} tabix.hpp
+-	if [ -d $(BAMTOOLS_ROOT)/build ]; then make -C $(BAMTOOLS_ROOT)/build clean; fi
+-	make -C $(VCFLIB_ROOT)/smithwaterman clean
++	if [ -d $(BAMTOOLS_ROOT)/build ]; then ${MAKE} -C $(BAMTOOLS_ROOT)/build clean; fi
++	${MAKE} -C $(VCFLIB_ROOT)/smithwaterman clean

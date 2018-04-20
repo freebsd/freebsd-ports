@@ -33,6 +33,7 @@
     SUBDIR += fasttree
     SUBDIR += fastx-toolkit
     SUBDIR += fluctuate
+    SUBDIR += freebayes
     SUBDIR += garlic
     SUBDIR += gff2ps
     SUBDIR += gmap
