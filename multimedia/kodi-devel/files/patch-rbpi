@@ -1,4 +1,4 @@
---- cmake/scripts/freebsd/ArchSetup.cmake.orig	2017-12-17 12:10:14 UTC
+--- cmake/scripts/freebsd/ArchSetup.cmake.orig	2018-04-18 09:37:24 UTC
 +++ cmake/scripts/freebsd/ArchSetup.cmake
 @@ -1,4 +1,7 @@
  set(ARCH_DEFINES -D_LINUX -DTARGET_POSIX -DTARGET_FREEBSD)
@@ -24,7 +24,7 @@
    else()
      message(WARNING "unknown CPU: ${CPU}")
    endif()
---- xbmc/windowing/rpi/WinSystemRpi.cpp.orig	2018-02-09 09:50:14 UTC
+--- xbmc/windowing/rpi/WinSystemRpi.cpp.orig	2018-04-18 09:37:24 UTC
 +++ xbmc/windowing/rpi/WinSystemRpi.cpp
 @@ -32,9 +32,16 @@
  #include "settings/DisplaySettings.h"
@@ -40,7 +40,7 @@
 +#ifdef HAS_SNDIO
 +#include "cores/AudioEngine/Sinks/AESinkSNDIO.h"
 +#endif
- #include "powermanagement/linux/LinuxPowerSyscall.h"
+ #include "platform/linux/powermanagement/LinuxPowerSyscall.h"
  
  #include <EGL/egl.h>
 @@ -55,7 +62,36 @@ CWinSystemRpi::CWinSystemRpi()
@@ -79,5 +79,5 @@
 +#endif
 +  }
    CLinuxPowerSyscall::Register();
+   m_lirc.reset(OPTIONALS::LircRegister());
  }
- 

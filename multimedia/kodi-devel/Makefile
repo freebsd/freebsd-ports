@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	18.0.g201803211302
-PORTREVISION=	3
+DISTVERSION=	18.0.g201804180937
 CATEGORIES=	multimedia
 PKGNAMESUFFIX?=	-devel
 
@@ -54,7 +53,7 @@ USES=		autoreconf:build cmake:outsource,noninja compiler:c++11-lib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	d571386e6f848db993ac7f855fc911abc23e308a
+GH_TAGNAME=	f4489bffe22487bc906e79130832c14360a42a8a
 USE_GNOME=	libxslt libxml2
 USE_JAVA=	yes
 JAVA_BUILD=	yes
@@ -78,18 +77,15 @@ PLIST_SUB=	ARCH=${KODIARCH_${ARCH}:U${ARCH}} OPSYS=${OPSYS:tl}
 
 OPTIONS_DEFINE=	AVAHI CEC DBUS LIBBLURAY MYSQL NFS SMB SSH UPNP VAAPI	\
 		VDPAU WEBSERVER
-OPTIONS_DEFAULT=	LIBBLURAY SNDIO SSH UPNP VAAPI VDPAU WEBSERVER X11
+OPTIONS_DEFAULT=	LIBBLURAY SSH UPNP VAAPI VDPAU WEBSERVER X11
 OPTIONS_SINGLE=	PLATFORM
 OPTIONS_SINGLE_PLATFORM=	GBM RPI WAYLAND X11
 OPTIONS_EXCLUDE_amd64=	RPI
 OPTIONS_EXCLUDE_i386=	RPI
 OPTIONS_SUB=	yes
 
-# Choosing one of SNDIO or PULSEAUDIO is mandatory right now if you
-# want audio output.  The OSS backend is currently not hooked into
-# Kodi's audio sink factory due to recent refactorings.
-OPTIONS_MULTI=		SOUND
-OPTIONS_MULTI_SOUND=	PULSEAUDIO SNDIO
+OPTIONS_GROUP=		SOUND
+OPTIONS_GROUP_SOUND=	PULSEAUDIO SNDIO
 
 CEC_DESC=	CEC adapter support
 GBM_DESC=	GBM support (requires a kernel with evdev support)
@@ -141,6 +137,7 @@ UPNP_CMAKE_BOOL=	ENABLE_UPNP
 # XXX: Upstream is https://github.com/plutinosoft/Neptune
 UPNP_CXXFLAGS=		-DNPT_CONFIG_HAVE_ARPA_INET_H \
 			-DNPT_CONFIG_HAVE_GETADDRINFO \
+			-DNPT_CONFIG_HAVE_GETIFADDRS \
 			-DNPT_CONFIG_HAVE_INET_NTOP \
 			-DNPT_CONFIG_HAVE_INET_PTON \
 			-DNPT_CONFIG_HAVE_NET_IF_DL_H \
@@ -157,6 +154,7 @@ WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_CMAKE_ON=	-DCORE_PLATFORM_NAME:STRING="wayland" \
 			-DWAYLAND_RENDER_SYSTEM:STRING="gl"
 WAYLAND_LIB_DEPENDS=	libwayland-client++.so:graphics/waylandpp \
+			libwayland-client.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
 
 WEBSERVER_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
@@ -180,6 +178,10 @@ post-patch:
 	@${CP} ${WRKSRC}/cmake/platform/linux/gbm.cmake \
 		${WRKSRC}/cmake/platform/linux/rbpi.cmake \
 		${WRKSRC}/cmake/platform/freebsd
+	@${CP} ${WRKSRC}/cmake/scripts/linux/ExtraTargets.cmake \
+		${WRKSRC}/cmake/scripts/freebsd/ExtraTargets.cmake
+	@${CP} ${WRKSRC}/system/settings/linux.xml \
+		${WRKSRC}/system/settings/freebsd.xml
 
 .if ${SLAVE_PORT} == no
 post-install:

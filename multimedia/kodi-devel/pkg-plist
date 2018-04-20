@@ -4,7 +4,6 @@ bin/kodi-standalone
 include/kodi/AEChannelData.h
 include/kodi/ActionIDs.h
 include/kodi/AddonBase.h
-include/kodi/AudioEngine.h
 include/kodi/DemuxCrypto.h
 include/kodi/DemuxPacket.h
 include/kodi/Filesystem.h
@@ -15,7 +14,6 @@ include/kodi/StreamCodec.h
 include/kodi/StreamCrypto.h
 include/kodi/TimingConstants.h
 include/kodi/XBMC_vkeys.h
-include/kodi/addon-instance/AudioDSP.h
 include/kodi/addon-instance/AudioDecoder.h
 include/kodi/addon-instance/AudioEncoder.h
 include/kodi/addon-instance/ImageDecoder.h
@@ -59,6 +57,7 @@ include/kodi/libKODI_game.h
 include/kodi/libKODI_guilib.h
 include/kodi/libXBMC_addon.h
 include/kodi/libXBMC_pvr.h
+include/kodi/platform/android/System.h
 include/kodi/tools/DllHelper.h
 include/kodi/versions.h
 include/kodi/xbmc_addon_dll.h
