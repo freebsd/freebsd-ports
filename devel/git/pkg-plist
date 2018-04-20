@@ -1228,6 +1228,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/user-manual.txt
 share/emacs/site-lisp/git/git-blame.el
 share/emacs/site-lisp/git/git.el
+%%GITWEB%%@sample %%ETCDIR%%/gitweb.conf.sample
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-favicon.png
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-logo.png
@@ -1496,3 +1497,4 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/vi/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/git.mo
 @dir share/git-core/templates/branches
+@dir %%ETCDIR%%

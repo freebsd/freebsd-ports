@@ -7,12 +7,11 @@ In the directory %%EXAMPLESDIR%%/gitweb you can find all files to
 make gitweb work as a public repository on the web.
 
 All you have to do to make gitweb work is:
-1) Copy the files %%EXAMPLESDIR%%/gitweb/* to a directory on
-   your web server (e.g. Apache2) in which you are able to execute
-   CGI-scripts.
-2) In gitweb.cgi, adjust the variable $projectroot to point to
-   your git repository (that is where you have your *.git project
-   directories).
+1) Please be sure you're able to execute CGI scripts in
+   %%EXAMPLESDIR%%/gitweb.
+2) Set the GITWEB_CONFIG variable in your webserver's config to
+   %%ETCDIR%%/gitweb.conf. This variable is passed to gitweb.cgi.
+3) Restart server.
 *************************** GITWEB *************************************
 
 *************************** CONTRIB ************************************
