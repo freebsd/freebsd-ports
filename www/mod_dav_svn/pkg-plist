@@ -1,4 +1,5 @@
 @sample %%APACHEETCDIR%%/modules.d/220_subversion.conf.sample
 %%APACHEMODDIR%%/mod_dav_svn.so
+%%APACHEMODDIR%%/mod_dontdothat.so
 %%APACHEMODDIR%%/mod_authz_svn.so
 

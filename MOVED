@@ -10177,3 +10177,4 @@ irc/xchat|irc/hexchat|2018-04-17|Has expired: Unmaintained upstream, use irc/hex
 irc/xchat-fish|irc/hexchat-fish|2018-04-17|Removed, master port irc/xchat expired
 irc/xchat-mircryption||2018-04-17|Removed, master port irc/xchat expired
 irc/xchat-ruby||2018-04-17|Removed, master port irc/xchat expired
+devel/subversion18|devel/subversion|2018-04-19|Has expired: EoL, use devel/subversion or devel/subversion19

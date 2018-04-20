@@ -1,0 +1,36 @@
+# Created by: lev@FreeBSD.org
+# $FreeBSD$
+
+# We can not use FLAVORS - pyhton uses them
+#FLAVORS=	svn110 svn19
+#FLAVOR?=	${FLAVORS:[1]}
+
+WITH_SUBVERSION_VER?=	110
+
+PKGDIR=			${.CURDIR}
+
+SVN_BUILD_ADDONS=	yes
+
+.if ${WITH_SUBVERSION_VER} == 110
+CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9].[0-9]* \
+			${PORTNAME}-1.[^1][0-9].[0-9]*
+PORTREVISION=		${PORTREVISION_110}
+PLIST_SUB+=		SVN19="@comment " SVN110=""
+LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion
+OPTIONS_NAME=		devel_subversion
+MASTERDIR=		${.CURDIR}/../../devel/subversion
+.include		"${MASTERDIR}/Makefile.common"
+.elif ${WITH_SUBVERSION_VER} == 19
+PKGNAMESUFFIX:=		${PKGNAMESUFFIX}19
+CONFLICTS_BUILD+=	${PORTNAME}-1.[^9].[0-9]* \
+			${PORTNAME}-1.[0-9][0-9].[0-9]*
+PORTREVISION=		${PORTREVISION_19}
+PLIST_SUB+=		SVN19="" SVN110="@comment "
+LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion19
+OPTIONS_NAME=		devel_subversion19
+MASTERDIR=		${.CURDIR}/../../devel/subversion19
+.include		"${MASTERDIR}/Makefile.common"
+.else
+BROKEN=			Wrong WITH_SUBVERSION_VER=${WITH_SUBVERSION_VER}, only 110 (default) and 19 are supported
+.endif
+

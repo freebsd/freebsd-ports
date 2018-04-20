@@ -2,27 +2,19 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=	p5-
-PORTREVISION=	0
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Perl bindings for Version control system
 
-.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
-MASTERDIR=	${.CURDIR}/../../devel/subversion18
-.else
-MASTERDIR=	${.CURDIR}/../../devel/subversion
-.endif
-PKGDIR=		${.CURDIR}
-
 USES=		perl5
 USE_PERL5=	build run
 
+PORTREVISION_110=	1
+PORTREVISION_19=	0
+
 SVN_BUILD_BINDINGS=	yes
-SVN_BUILD_ADDONS=	yes
 
-MAKE_JOBS_UNSAFE=	yes
-
-.include "${MASTERDIR}/Makefile.common"
+.include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
 CATEGORIES+=	perl5
 
