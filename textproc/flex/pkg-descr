@@ -10,4 +10,4 @@ analyzes its input for occurrences of text matching the regular
 expressions for each rule. Whenever it finds a match, it executes the
 corresponding C code.
 
-WWW: http://flex.sourceforge.net/
+WWW: https://github.com/westes/flex
