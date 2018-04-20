@@ -3,7 +3,7 @@
 PORTNAME=	libphutil
 PORTVERSION=	20170630
 CATEGORIES=	devel
-PKGNAMEPREFIX=	php-
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Collection of PHP utility classes
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PHP_DESTDIR=	lib/php/libphutil
-USES=		php
+USES=		php:flavors
 USE_PHP=	xml
 USE_GITHUB=	yes
 NO_BUILD=	yes
