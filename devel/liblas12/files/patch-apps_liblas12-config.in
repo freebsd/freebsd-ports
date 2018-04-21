@@ -1,0 +1,11 @@
+--- apps/liblas12-config.in.orig	2009-10-02 17:48:41 UTC
++++ apps/liblas12-config.in
+@@ -5,7 +5,7 @@
+ usage()
+ {
+ 	cat <<EOF
+-Usage: liblas-config [OPTIONS]
++Usage: liblas12-config [OPTIONS]
+ Options:
+ 	[--libs]
+ 	[--cflags]

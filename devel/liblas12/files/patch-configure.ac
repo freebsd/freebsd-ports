@@ -1,0 +1,11 @@
+--- configure.ac.orig	2009-10-02 17:48:41 UTC
++++ configure.ac
+@@ -246,7 +246,7 @@ AC_CONFIG_FILES([
+     include/Makefile
+     src/Makefile
+     apps/Makefile
+-    apps/liblas-config
++    apps/liblas12-config
+     test/Makefile
+     test/unit/Makefile
+ ])
