@@ -10,6 +10,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Inter Client Exchange library for X11
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	lib
 USE_XORG=	xproto:both xtrans
 INSTALL_TARGET=	install-strip
