@@ -18,4 +18,4 @@ lib/libbrotlienc.so.%%SHLIBVER%%
 libdata/pkgconfig/libbrotlicommon.pc
 libdata/pkgconfig/libbrotlidec.pc
 libdata/pkgconfig/libbrotlienc.pc
-%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README
