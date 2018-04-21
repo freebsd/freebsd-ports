@@ -10178,3 +10178,4 @@ irc/xchat-fish|irc/hexchat-fish|2018-04-17|Removed, master port irc/xchat expire
 irc/xchat-mircryption||2018-04-17|Removed, master port irc/xchat expired
 irc/xchat-ruby||2018-04-17|Removed, master port irc/xchat expired
 devel/subversion18|devel/subversion|2018-04-19|Has expired: EoL, use devel/subversion or devel/subversion19
+math/rkward-kde4|math/rkward-kde|2018-04-21|No more specific to KDE4
