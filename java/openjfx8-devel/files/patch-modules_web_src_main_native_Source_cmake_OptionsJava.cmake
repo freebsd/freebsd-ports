@@ -1,6 +1,6 @@
---- modules/web/src/main/native/Source/cmake/OptionsJava.cmake.orig	2018-01-16 01:40:56 UTC
+--- modules/web/src/main/native/Source/cmake/OptionsJava.cmake.orig	2018-03-23 23:53:57 UTC
 +++ modules/web/src/main/native/Source/cmake/OptionsJava.cmake
-@@ -52,9 +52,9 @@ elseif (APPLE)
+@@ -49,9 +49,9 @@ elseif (APPLE)
      set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
  elseif (UNIX)
      #### ICU ####
@@ -12,8 +12,8 @@
 +    set(ICU_JAVA_DATA_LIB ${CMAKE_INSTALL_PREFIX}/lib/libicudata.so)
      #### ICU-END ####
  
-     find_package(LibXml2 2.7.0 REQUIRED)
-@@ -191,8 +191,9 @@ if (CMAKE_MAJOR_VERSION LESS 3)
+     set(CMAKE_SKIP_RPATH TRUE)
+@@ -60,11 +60,12 @@ else ()
  endif ()
  
  set(ICU_INCLUDE_DIRS
@@ -21,6 +21,9 @@
      "${THIRDPARTY_DIR}/icu/source/common"
      "${THIRDPARTY_DIR}/icu/source/i18n"
  )
- 
+ set(ICU_LIBRARIES ${ICU_JAVA_COMMON_LIB} ${ICU_JAVA_DATA_LIB})
 -
 +set(ICU_LIBRARIES ${ICU_JAVA_COMMON_LIB} ${ICU_JAVA_DATA_LIB})
+ find_package(JNI REQUIRED)
+ find_package(Threads REQUIRED)
+ 
