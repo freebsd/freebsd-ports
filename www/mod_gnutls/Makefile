@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_gnutls
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	www security
 MASTER_SITES=	https://mod.gnutls.org/downloads/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
