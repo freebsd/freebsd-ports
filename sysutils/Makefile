@@ -1404,6 +1404,7 @@
     SUBDIR += xstow
     SUBDIR += xsysstats
     SUBDIR += xvidcap
+    SUBDIR += yadm
     SUBDIR += yum
     SUBDIR += zap
     SUBDIR += zbackup
