@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rkward
-PORTVERSION=	0.6.5
-PORTREVISION=	9
+DISTVERSION=	0.7.0b
 CATEGORIES=	math
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
-PKGNAMESUFFIX=	-kde4
+MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:C/b//}/src
+PKGNAMESUFFIX=	-kde
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
@@ -15,13 +14,15 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libR.so:math/R \
 		libsoprano.so:textproc/soprano
-RUN_DEPENDS=	${KDE_PREFIX}/lib/kde4/katepart.so:editors/kate-kde4
 
-USES=		cmake gettext fortran kde:4 php:cli shared-mime-info
-USE_QT4=	corelib dbus gui qmake_build moc_build network phonon rcc_build	\
-		script svg uic_build webkit xml
+USES=		cmake desktop-file-utils gettext fortran kde:5 php:cli shared-mime-info
+USE_QT5=	buildtools core dbus gui network printsupport qmake script webkit	\
+		widgets xml
 USE_XORG=	x11
-USE_KDE=	automoc4 kdelibs
+USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash	\
+		doctools ecm i18n itemviews jobwidgets kate_run kdewebkit kio		\
+		notifications parts service solid sonnet texteditor textwidgets		\
+		widgetsaddons windowsystem xmlgui
 
 CFLAGS+=	-I${LOCALBASE}/include
 

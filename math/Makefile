@@ -730,7 +730,7 @@
     SUBDIR += reduce-psl
     SUBDIR += reed-solomon
     SUBDIR += rexx-regmath
-    SUBDIR += rkward-kde4
+    SUBDIR += rkward-kde
     SUBDIR += rngstreams
     SUBDIR += rocs
     SUBDIR += rocs-kde4
