@@ -1,3 +1,7 @@
-Yet Another Dotfiles Manager
+Yadm is like having a version of Git, that only operates on your
+dotfiles.
+
+Yadm helps you maintain a single repository of dotfiles, while
+keeping them where they belong, in $HOME.
 
 WWW: https://thelocehiliosan.github.io/yadm/
