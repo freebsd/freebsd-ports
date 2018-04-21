@@ -1,7 +1,7 @@
 bin/keepassxc
 bin/keepassxc-cli
 bin/keepassxc-proxy
-lib/keepassxc/libkeepassx-autotype-xcb.so
+%%AUTOTYPE%%lib/keepassxc/libkeepassx-autotype-xcb.so
 man/man1/keepassxc-cli.1.gz
 share/applications/org.keepassxc.KeePassXC.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
