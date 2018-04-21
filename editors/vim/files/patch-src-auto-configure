@@ -1,6 +1,6 @@
---- src/auto/configure.orig	2016-01-31 19:24:32 UTC
+--- src/auto/configure.orig	2018-04-21 15:08:14 UTC
 +++ src/auto/configure
-@@ -895,7 +895,7 @@ pdfdir='${docdir}'
+@@ -903,7 +903,7 @@ pdfdir='${docdir}'
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,16 +9,16 @@
  
  ac_prev=
  ac_dashdash=
-@@ -4963,7 +4963,7 @@ $as_echo_n "checking Lua version of LuaJ
+@@ -5369,7 +5369,7 @@ $as_echo_n "checking Lua version of LuaJ
  if ${vi_cv_version_lua_luajit+:} false; then :
    $as_echo_n "(cached) " >&6
  else
 -   vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //'`
-+   vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //' | tr d '.'`
++   vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //' | tr -d '/'`
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_lua_luajit" >&5
  $as_echo "$vi_cv_version_lua_luajit" >&6; }
-@@ -5017,7 +5017,7 @@ $as_echo_n "checking Lua version... " >&
+@@ -5423,7 +5423,7 @@ $as_echo_n "checking Lua version... " >&
  if ${vi_cv_version_plain_lua+:} false; then :
    $as_echo_n "(cached) " >&6
  else
@@ -27,7 +27,7 @@
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_plain_lua" >&5
  $as_echo "$vi_cv_version_plain_lua" >&6; }
-@@ -5108,7 +5108,7 @@ rm -f core conftest.err conftest.$ac_obj
+@@ -5514,7 +5514,7 @@ rm -f core conftest.err conftest.$ac_obj
        LIBS=$libs_save
      fi
      if test "x$lua_ok" = "xyes"; then
@@ -36,39 +36,31 @@
        LUA_SRC="if_lua.c"
        LUA_OBJ="objects/if_lua.o"
        LUA_PRO="if_lua.pro"
-@@ -5165,7 +5165,8 @@ $as_echo "yes" >&6; }
+@@ -5571,7 +5571,8 @@ $as_echo "yes" >&6; }
        $as_echo "#define DYNAMIC_LUA 1" >>confdefs.h
  
        LUA_LIBS=""
 -      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"${vi_cv_dll_name_lua}\\\" $LUA_CFLAGS"
 +      vi_cv_version_lua=${LUA_VER}
-+      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"liblua-${vi_cv_version_lua}.so\\\" $LUA_CFLAGS"
++      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"liblua-${vi_cv_dll_name_lua}.so\\\" $LUA_CFLAGS"
      fi
      if test "X$LUA_CFLAGS$LUA_LIBS" != "X" && \
-        test "x$MACOSX" = "xyes" && test "x$vi_cv_with_luajit" != "xno" && \
-@@ -5806,7 +5807,7 @@ if test "$enable_pythoninterp" = "yes" -
-     as_fn_error $? "cannot use Python with tiny or small features" "$LINENO" 5
-   fi
+        test "x$MACOS_X" = "xyes" && test "x$vi_cv_with_luajit" != "xno" && \
+@@ -6230,7 +6231,7 @@ fi
  
+ 
+   if test "X$vi_cv_path_python" = "X"; then
 -    for ac_prog in python2 python
 +    for ac_prog in python2.7
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -6146,7 +6147,7 @@ if test "$enable_python3interp" = "yes" 
-     as_fn_error $? "cannot use Python with tiny or small features" "$LINENO" 5
-   fi
+@@ -6580,7 +6581,7 @@ fi
  
+ 
+   if test "X$vi_cv_path_python3" = "X"; then
 -    for ac_prog in python3 python
-+    for ac_prog in python3.6 python3.5 python3.4 python3.3
++    for ac_prog in python3.6 python3.5 python3.4
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -6970,6 +6971,7 @@ $as_echo "$try/tclConfig.sh" >&6; }
- 	      TCL_LIBS=`eval echo "$TCL_LIB_SPEC $TCL_LIBS"`
- 	    fi
- 	    	    	    TCL_DEFS=`echo $TCL_DEFS | sed -e 's/\\\\ /\\\\X/g' | tr ' ' '\012' | sed -e '/^[^-]/d' -e '/^-[^D]/d' -e '/-D[^_]/d' -e 's/-D_/ -D_/' | tr '\012' ' ' | sed -e 's/\\\\X/\\\\ /g'`
-+	    	    	    TCL_DEFS=`echo $TCL_DEFS | sed -e 's/\\ /\\\\X/g' | tr ' ' '\012' | sed -e '/^-[^D]/d' -e '/-D[^_]/d' -e 's/-D_/ -D_/' | tr '\012' ' ' | sed -e 's/\\\\X/\\\\ /g'`
- 	    break
- 	  fi
- 	done
