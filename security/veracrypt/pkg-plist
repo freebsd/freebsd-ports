@@ -6,6 +6,8 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Additional Security Requirements and Precautions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Authenticity and Integrity.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Authors.html
+%%PORTDOCS%%%%DOCSDIR%%/html/BCH_Logo_48x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/BC_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_001.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_002.jpg
@@ -49,7 +51,10 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Disclaimers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Bitcoin.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_BitcoinCash.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Bitcoin_small.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Litecoin.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Monero.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_CHF.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_Dollars.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_Euros.gif
@@ -69,7 +74,6 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Home_VeraCrypt_menu_Default_Mount_Parameters.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Home_facebook_veracrypt.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Home_reddit.png
-%%PORTDOCS%%%%DOCSDIR%%/html/Home_tibitDonateButton.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Home_utilities-file-archiver-3.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Hot Keys.html
 %%PORTDOCS%%%%DOCSDIR%%/html/How to Back Up Securely.html
@@ -81,6 +85,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Keyfiles in VeraCrypt_Image_040.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Keyfiles.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Kuznyechik.html
+%%PORTDOCS%%%%DOCSDIR%%/html/LTC_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Language Packs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Legal Information.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Main Program Window.html
@@ -88,6 +93,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Memory Dump Files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Miscellaneous.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Modes of Operation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Monero_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Mounting VeraCrypt Volumes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Multi-User Environment.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Notation.html
@@ -158,6 +164,8 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/bank_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/flattr-badge-large.png
 %%PORTDOCS%%%%DOCSDIR%%/html/gf2_mul.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/liberapay_donate.svg
+%%PORTDOCS%%%%DOCSDIR%%/html/paypal_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/html/twitter_veracrypt.PNG
 share/pixmaps/VeraCrypt-128x128.xpm
