@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2018-04-21 08:12:47 UTC
++++ CMakeLists.txt
+@@ -8,8 +8,8 @@
+ #
+ PROJECT( libLAS )
+ 
+-SET( LIBLAS_LIB_NAME liblas )
+-SET( LIBLAS_C_LIB_NAME liblas_c )
++SET( LIBLAS_LIB_NAME liblas12 )
++SET( LIBLAS_C_LIB_NAME liblas12_c )
+ 
+ #############################################################
+ # CMake settings

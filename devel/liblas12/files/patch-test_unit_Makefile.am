@@ -1,0 +1,11 @@
+--- test/unit/Makefile.am.orig	2009-10-02 17:48:41 UTC
++++ test/unit/Makefile.am
+@@ -16,7 +16,7 @@ TESTS = liblas_test
+ check_PROGRAMS = liblas_test
+ 
+ liblas_test_LDADD = \
+-	$(top_builddir)/src/liblas.la \
++	$(top_builddir)/src/liblas12.la \
+ 	$(NULL)
+ 
+ liblas_test_SOURCES = \

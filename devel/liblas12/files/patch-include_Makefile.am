@@ -1,0 +1,70 @@
+--- include/Makefile.am.orig	2009-10-02 17:48:41 UTC
++++ include/Makefile.am
+@@ -1,34 +1,34 @@
+ lasdir = $(includedir)
+ 
+-nobase_las_HEADERS =		liblas/cstdint.hpp \
+-                    liblas/exception.hpp \
+-					    liblas/guid.hpp \
+-					    liblas/iterator.hpp \
+-					    liblas/lascolor.hpp \
+-					    liblas/laserror.hpp \
+-					    liblas/lasfile.hpp \
+-					    liblas/lasheader.hpp \
+-					    liblas/laspoint.hpp \
+-					    liblas/lasreader.hpp \
+-					    liblas/lasvariablerecord.hpp \
+-					    liblas/lasspatialreference.hpp \
+-					    liblas/laswriter.hpp \
+-					    liblas/liblas.hpp \
+-					    liblas/capi/liblas.h \
+-					    liblas/capi/las_version.h \
+-					    liblas/capi/las_config.h \
+-					    liblas/detail/endian.hpp \
+-					    liblas/detail/file.hpp \
+-					    liblas/detail/fwd.hpp \
+-					    liblas/detail/reader.hpp \
+-					    liblas/detail/reader10.hpp \
+-					    liblas/detail/reader11.hpp \
+-						liblas/detail/reader12.hpp \
+-					    liblas/detail/sha1.hpp \
+-					    liblas/detail/sharedptr.hpp \
+-					    liblas/detail/timer.hpp \
+-					    liblas/detail/utility.hpp \
+-					    liblas/detail/writer.hpp \
+-					    liblas/detail/writer10.hpp \
+-					    liblas/detail/writer11.hpp \
+-						liblas/detail/writer12.hpp
+\ No newline at end of file
++nobase_las_HEADERS =		liblas12/cstdint.hpp \
++                    liblas12/exception.hpp \
++					    liblas12/guid.hpp \
++					    liblas12/iterator.hpp \
++					    liblas12/lascolor.hpp \
++					    liblas12/laserror.hpp \
++					    liblas12/lasfile.hpp \
++					    liblas12/lasheader.hpp \
++					    liblas12/laspoint.hpp \
++					    liblas12/lasreader.hpp \
++					    liblas12/lasvariablerecord.hpp \
++					    liblas12/lasspatialreference.hpp \
++					    liblas12/laswriter.hpp \
++					    liblas12/liblas.hpp \
++					    liblas12/capi/liblas.h \
++					    liblas12/capi/las_version.h \
++					    liblas12/capi/las_config.h \
++					    liblas12/detail/endian.hpp \
++					    liblas12/detail/file.hpp \
++					    liblas12/detail/fwd.hpp \
++					    liblas12/detail/reader.hpp \
++					    liblas12/detail/reader10.hpp \
++					    liblas12/detail/reader11.hpp \
++						liblas12/detail/reader12.hpp \
++					    liblas12/detail/sha1.hpp \
++					    liblas12/detail/sharedptr.hpp \
++					    liblas12/detail/timer.hpp \
++					    liblas12/detail/utility.hpp \
++					    liblas12/detail/writer.hpp \
++					    liblas12/detail/writer10.hpp \
++					    liblas12/detail/writer11.hpp \
++						liblas12/detail/writer12.hpp

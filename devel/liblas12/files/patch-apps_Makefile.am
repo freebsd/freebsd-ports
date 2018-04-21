@@ -1,0 +1,36 @@
+--- apps/Makefile.am.orig	2009-10-02 17:48:41 UTC
++++ apps/Makefile.am
+@@ -6,22 +6,22 @@ if GEOTIFF_IS_CONFIG
+ GEOTIFF_CPPFLAGS = @GEOTIFF_INC@ -DHAVE_LIBGEOTIFF=1
+ endif
+ 
+-AM_CPPFLAGS = $(GEOTIFF_CPPFLAGS) $(GDAL_CPPFLAGS) -I../include/liblas/capi -I../include
++AM_CPPFLAGS = $(GEOTIFF_CPPFLAGS) $(GDAL_CPPFLAGS) -I../include/liblas12/capi -I../include
+ 
+-lasinfo_SOURCES = lasinfo.c lascommon.c
+-las2las_SOURCES = las2las.c lascommon.c
+-lasmerge_SOURCES = lasmerge.c lascommon.c
+-las2txt_SOURCES = las2txt.c lascommon.c
+-txt2las_SOURCES = txt2las.c
++lasinfo12_SOURCES = lasinfo12.c lascommon.c
++las2las12_SOURCES = las2las12.c lascommon.c
++lasmerge12_SOURCES = lasmerge12.c lascommon.c
++las2txt12_SOURCES = las2txt12.c lascommon.c
++txt2las12_SOURCES = txt2las12.c
+ 
+ 
+-bin_PROGRAMS = lasinfo las2las lasmerge las2txt txt2las
++bin_PROGRAMS = lasinfo12 las2las12 lasmerge12 las2txt12 txt2las12
+ 
+-bin_SCRIPTS = liblas-config
++bin_SCRIPTS = liblas12-config
+ 
+ if GDAL_IS_CONFIG
+-las2ogr_SOURCES = las2ogr.cpp
+-bin_PROGRAMS += las2ogr
++las2ogr12_SOURCES = las2ogr12.cpp
++bin_PROGRAMS += las2ogr12
+ endif
+ 
+-LDADD = ../src/liblas.la
++LDADD = ../src/liblas12.la

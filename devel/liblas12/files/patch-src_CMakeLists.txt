@@ -1,0 +1,85 @@
+--- src/CMakeLists.txt.orig	2018-04-21 08:08:39 UTC
++++ src/CMakeLists.txt
+@@ -3,40 +3,40 @@
+ # Build the libLAS library subproject
+ #
+ 
+-SET( LIBLAS_INCLUDE_DIR ../include/liblas )
++SET( LIBLAS_INCLUDE_DIR ../include/liblas12 )
+ 
+ SET( LIBLAS_HPP
+-    ../include/liblas/cstdint.hpp
+-    ../include/liblas/guid.hpp
+-    ../include/liblas/iterator.hpp
+-    ../include/liblas/laserror.hpp
+-    ../include/liblas/lasfile.hpp
+-    ../include/liblas/lasheader.hpp
+-    ../include/liblas/laspoint.hpp
+-    ../include/liblas/lasvariablerecord.hpp
+-    ../include/liblas/lasreader.hpp
+-    ../include/liblas/lasvariablerecord.hpp
+-    ../include/liblas/laswriter.hpp
+-    ../include/liblas/liblas.hpp
+-	../include/liblas/lasspatialreference.hpp
++    ../include/liblas12/cstdint.hpp
++    ../include/liblas12/guid.hpp
++    ../include/liblas12/iterator.hpp
++    ../include/liblas12/laserror.hpp
++    ../include/liblas12/lasfile.hpp
++    ../include/liblas12/lasheader.hpp
++    ../include/liblas12/laspoint.hpp
++    ../include/liblas12/lasvariablerecord.hpp
++    ../include/liblas12/lasreader.hpp
++    ../include/liblas12/lasvariablerecord.hpp
++    ../include/liblas12/laswriter.hpp
++    ../include/liblas12/liblas.hpp
++	../include/liblas12/lasspatialreference.hpp
+ )
+ 
+ SET( LIBLAS_DETAIL_HPP
+-    ../include/liblas/detail/endian.hpp
+-    ../include/liblas/detail/file.hpp
+-    ../include/liblas/detail/fwd.hpp
+-    ../include/liblas/detail/reader.hpp
+-    ../include/liblas/detail/reader10.hpp
+-    ../include/liblas/detail/reader11.hpp
+-	../include/liblas/detail/reader12.hpp
+-    ../include/liblas/detail/sha1.hpp
+-    ../include/liblas/detail/sharedptr.hpp
+-    ../include/liblas/detail/timer.hpp
+-    ../include/liblas/detail/utility.hpp
+-    ../include/liblas/detail/writer.hpp
+-    ../include/liblas/detail/writer10.hpp
+-    ../include/liblas/detail/writer11.hpp
+-	../include/liblas/detail/writer12.hpp
++    ../include/liblas12/detail/endian.hpp
++    ../include/liblas12/detail/file.hpp
++    ../include/liblas12/detail/fwd.hpp
++    ../include/liblas12/detail/reader.hpp
++    ../include/liblas12/detail/reader10.hpp
++    ../include/liblas12/detail/reader11.hpp
++	../include/liblas12/detail/reader12.hpp
++    ../include/liblas12/detail/sha1.hpp
++    ../include/liblas12/detail/sharedptr.hpp
++    ../include/liblas12/detail/timer.hpp
++    ../include/liblas12/detail/utility.hpp
++    ../include/liblas12/detail/writer.hpp
++    ../include/liblas12/detail/writer10.hpp
++    ../include/liblas12/detail/writer11.hpp
++	../include/liblas12/detail/writer12.hpp
+ )
+ 
+ SET( LIBLAS_CPP
+@@ -70,9 +70,9 @@ SET( LIBLAS_SOURCES
+ )
+ 
+ SET( LIBLAS_C_SOURCES
+-    ../include/liblas/capi/las_config.h
+-    ../include/liblas/capi/las_version.h
+-    ../include/liblas/capi/liblas.h
++    ../include/liblas12/capi/las_config.h
++    ../include/liblas12/capi/las_version.h
++    ../include/liblas12/capi/liblas.h
+     las_c_api.cpp
+ )
+ 

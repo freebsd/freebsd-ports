@@ -1,0 +1,24 @@
+--- src/Makefile.am.orig	2009-10-02 17:48:41 UTC
++++ src/Makefile.am
+@@ -11,9 +11,9 @@ endif
+ 
+ AM_CPPFLAGS = $(GEOTIFF_CPPFLAGS) $(GDAL_CPPFLAGS) -I../include -I../include/detail
+ 
+-lib_LTLIBRARIES = liblas.la
++lib_LTLIBRARIES = liblas12.la
+ 
+-liblas_la_SOURCES = \
++liblas12_la_SOURCES = \
+ 	laserror.cpp \
+ 	laspoint.cpp \
+ 	lasheader.cpp \
+@@ -35,7 +35,7 @@ liblas_la_SOURCES = \
+     detail/file.cpp
+ 
+ if GDAL_IS_CONFIG
+-liblas_la_SOURCES += gt_wkt_srs.cpp gt_citation.cpp tifvsi.cpp
++liblas12_la_SOURCES += gt_wkt_srs.cpp gt_citation.cpp tifvsi.cpp
+ endif
+             
+-liblas_la_LDFLAGS = -version-info 1:0:0
++liblas12_la_LDFLAGS = -version-info 1:0:0
