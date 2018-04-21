@@ -2,7 +2,7 @@ RETRO is a clean, elegant, and pragmatic dialect of Forth. It provides
 a simple alternative for those willing to make a break from legacy
 systems.
 
-The language draws influences from many sources including traditional 
+The language draws influences from many sources including traditional
 Forth systems, cmForth, colorForth, Factor, and Parable. It was
 designed to be easy to grasp and adapt to specific uses.
 
