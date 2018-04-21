@@ -1,0 +1,11 @@
+This is a public fork of the SeqAn Library v2.0.0, stripped down to just the
+header files and with a few custom fixes.
+
+Some of PacBio's tools depend on SeqAn for efficient implementations of some
+common data-structures for sequence analysis (A huge thanks to SeqAn
+development team!). However PacBio only uses a small amount of the SeqAn
+code-base, and in addition requires a few minor fixes that didn't make it in to
+the initial release of SeqAn v2.0.0. Thus to minimize confusion and band-width,
+we will depend on this fork instead of SeqAn proper.
+
+WWW: https://github.com/PacificBiosciences/seqan
