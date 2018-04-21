@@ -16,7 +16,7 @@ PYTHON_SLAVEPORT=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-	"{s#__version__ = '[^']*'#__version__ = '${PORTVERSION}'#;}" \
-	${BUILD_WRKSRC}/*.py
+		"{s#__version__ = '[^']*'#__version__ = '${PORTVERSION}'#;}" \
+		${BUILD_WRKSRC}/*.py
 
 .include "${MASTERDIR}/Makefile"
