@@ -42,6 +42,7 @@ bin/xscreensaver-hacks/companioncube
 bin/xscreensaver-hacks/compass
 bin/xscreensaver-hacks/coral
 bin/xscreensaver-hacks/crackberg
+bin/xscreensaver-hacks/crumbler
 bin/xscreensaver-hacks/crystal
 bin/xscreensaver-hacks/cube21
 bin/xscreensaver-hacks/cubenetic
@@ -132,6 +133,7 @@ bin/xscreensaver-hacks/lockward
 bin/xscreensaver-hacks/loop
 bin/xscreensaver-hacks/m6502
 bin/xscreensaver-hacks/maze
+bin/xscreensaver-hacks/maze3d
 bin/xscreensaver-hacks/memscroller
 bin/xscreensaver-hacks/menger
 bin/xscreensaver-hacks/metaballs
@@ -149,6 +151,7 @@ bin/xscreensaver-hacks/noof
 bin/xscreensaver-hacks/noseguy
 bin/xscreensaver-hacks/pacman
 bin/xscreensaver-hacks/pedal
+bin/xscreensaver-hacks/peepers
 bin/xscreensaver-hacks/penetrate
 bin/xscreensaver-hacks/penrose
 bin/xscreensaver-hacks/petri
@@ -170,6 +173,7 @@ bin/xscreensaver-hacks/qix
 bin/xscreensaver-hacks/quasicrystal
 bin/xscreensaver-hacks/queens
 bin/xscreensaver-hacks/raverhoop
+bin/xscreensaver-hacks/razzledazzle
 bin/xscreensaver-hacks/rd-bomb
 bin/xscreensaver-hacks/ripples
 bin/xscreensaver-hacks/rocks
@@ -280,6 +284,7 @@ man/man6/companioncube.6.gz
 man/man6/compass.6.gz
 man/man6/coral.6.gz
 man/man6/crackberg.6.gz
+man/man6/crumbler.6.gz
 man/man6/crystal.6.gz
 man/man6/cube21.6.gz
 man/man6/cubenetic.6.gz
@@ -369,6 +374,7 @@ man/man6/ljlatest.6.gz
 man/man6/lockward.6.gz
 man/man6/loop.6.gz
 man/man6/maze.6.gz
+man/man6/maze3d.6.gz
 man/man6/memscroller.6.gz
 man/man6/menger.6.gz
 man/man6/metaballs.6.gz
@@ -386,6 +392,7 @@ man/man6/noof.6.gz
 man/man6/noseguy.6.gz
 man/man6/pacman.6.gz
 man/man6/pedal.6.gz
+man/man6/peepers.6.gz
 man/man6/penetrate.6.gz
 man/man6/penrose.6.gz
 man/man6/petri.6.gz
@@ -406,6 +413,7 @@ man/man6/qix.6.gz
 man/man6/quasicrystal.6.gz
 man/man6/queens.6.gz
 man/man6/raverhoop.6.gz
+man/man6/razzledazzle.6.gz
 man/man6/rd-bomb.6.gz
 man/man6/ripples.6.gz
 man/man6/rocks.6.gz
@@ -533,6 +541,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/compass.xml
 %%DATADIR%%/config/coral.xml
 %%DATADIR%%/config/crackberg.xml
+%%DATADIR%%/config/crumbler.xml
 %%DATADIR%%/config/crystal.xml
 %%DATADIR%%/config/cube21.xml
 %%DATADIR%%/config/cubenetic.xml
@@ -622,6 +631,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/loop.xml
 %%DATADIR%%/config/m6502.xml
 %%DATADIR%%/config/maze.xml
+%%DATADIR%%/config/maze3d.xml
 %%DATADIR%%/config/memscroller.xml
 %%DATADIR%%/config/menger.xml
 %%DATADIR%%/config/metaballs.xml
@@ -639,6 +649,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/noseguy.xml
 %%DATADIR%%/config/pacman.xml
 %%DATADIR%%/config/pedal.xml
+%%DATADIR%%/config/peepers.xml
 %%DATADIR%%/config/penetrate.xml
 %%DATADIR%%/config/penrose.xml
 %%DATADIR%%/config/petri.xml
@@ -660,6 +671,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/quasicrystal.xml
 %%DATADIR%%/config/queens.xml
 %%DATADIR%%/config/raverhoop.xml
+%%DATADIR%%/config/razzledazzle.xml
 %%DATADIR%%/config/rd-bomb.xml
 %%DATADIR%%/config/ripples.xml
 %%DATADIR%%/config/rocks.xml
