@@ -60,6 +60,9 @@ share/osinfo/install-script/opensuse.org/opensuse-autoyast-jeos.xml
 share/osinfo/install-script/redhat.com/rhel-kickstart-desktop.xml
 share/osinfo/install-script/redhat.com/rhel-kickstart-jeos.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
 share/osinfo/os/altlinux.org/altlinux-1.0.xml
 share/osinfo/os/altlinux.org/altlinux-2.0.xml
 share/osinfo/os/altlinux.org/altlinux-2.2.xml
@@ -78,6 +81,12 @@ share/osinfo/os/apple.com/macosx-10.4.xml
 share/osinfo/os/apple.com/macosx-10.5.xml
 share/osinfo/os/apple.com/macosx-10.6.xml
 share/osinfo/os/apple.com/macosx-10.7.xml
+share/osinfo/os/asianux.com/asianux-4.6.xml
+share/osinfo/os/asianux.com/asianux-4.7.xml
+share/osinfo/os/asianux.com/asianux-7.0.xml
+share/osinfo/os/asianux.com/asianux-7.1.xml
+share/osinfo/os/asianux.com/asianux-7.2.xml
+share/osinfo/os/asianux.com/asianux-unknown.xml
 share/osinfo/os/centos.org/centos-6.0.xml
 share/osinfo/os/centos.org/centos-6.1.xml
 share/osinfo/os/centos.org/centos-6.2.xml
@@ -295,6 +304,7 @@ share/osinfo/os/openbsd.org/openbsd-5.9.xml
 share/osinfo/os/openbsd.org/openbsd-6.0.xml                                                                                                                                                       
 share/osinfo/os/openbsd.org/openbsd-6.1.xml                                                                                                                                                       
 share/osinfo/os/openbsd.org/openbsd-6.2.xml                                                                                                                                                       
+share/osinfo/os/openbsd.org/openbsd-6.3.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
 share/osinfo/os/opensuse.org/opensuse-11.0.xml
