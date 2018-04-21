@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openjfx8
-DISTVERSION=	8u172-b03
-PORTREVISION=	1
+DISTVERSION=	8u172-b11
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://github.com/t6/openjfx/releases/download/release/ \
 		http://hg.openjdk.java.net/openjfx/8u/rt/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
