@@ -14,6 +14,9 @@ COMMENT=	Flexible, high-scale API to elasticsearch
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Not depended upon anymore
+EXPIRATION_DATE=	2018-05-21
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}elasticsearch>=1.3.0:textproc/py-elasticsearch@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.0:devel/py-simplejson@${FLAVOR} \
