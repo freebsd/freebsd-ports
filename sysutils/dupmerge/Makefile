@@ -2,6 +2,7 @@
 
 PORTNAME=	dupmerge
 PORTVERSION=	1.73
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -12,7 +13,6 @@ COMMENT=	Searches for files with equal content
 USES=		zip
 MAKE_FLAGS=	# empty
 MAKEFILE=	# empty
-LDFLAGS+=	-lroken -lcrypt
 ALL_TARGET=	dupmerge
 PLIST_FILES=	bin/dupmerge
 PORTDOCS=	readme.txt
