@@ -11,5 +11,14 @@
 %%SITE_PERL%%/HTML/FormFu/Element/RequestToken.pm
 %%SITE_PERL%%/HTML/FormFu/Plugin/RequestToken.pm
 %%PERL5_MAN3%%/Catalyst::Controller::HTML::FormFu.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::HTML::FormFu::Action::Form.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::HTML::FormFu::Action::FormConfig.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::HTML::FormFu::Action::FormMethod.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::HTML::FormFu::Action::MultiForm.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::HTML::FormFu::Action::MultiFormConfig.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::HTML::FormFu::Action::MultiFormMethod.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::HTML::FormFu::ActionBase::Form.3.gz
 %%PERL5_MAN3%%/Catalyst::Helper::HTML::FormFu.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Constraint::RequestToken.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Element::RequestToken.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Plugin::RequestToken.3.gz
