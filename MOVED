@@ -8031,7 +8031,6 @@ www/jawstats||2016-01-25|Has expired: PHP 5.4 EOL reached
 www/ojs2||2016-01-25|Has expired: PHP 5.4 EOL reached
 www/webcalendar||2016-01-25|Has expired: PHP 5.4 EOL reached
 devel/i386-linux-binutils||2016-01-26|Not any usage in the ports tree
-devel/py-msgpack|devel/py-msgpack-python|2016-01-28|Renamed to match upstream naming
 www/xpi-bookmarkdd||2016-01-30|Has expired, incompatible with Firefox 34+
 databases/php5-redis||2016-01-30|Has expired: PHP 5.4 EOL reached, use databases/php55-redis or databases/php56-redis instead
 audio/linux-c6-pulseaudio-libs-glib2||2016-01-31|Integrated into audio/linux-c6-pulseaudio-libs
@@ -10179,3 +10178,4 @@ irc/xchat-mircryption||2018-04-17|Removed, master port irc/xchat expired
 irc/xchat-ruby||2018-04-17|Removed, master port irc/xchat expired
 devel/subversion18|devel/subversion|2018-04-19|Has expired: EoL, use devel/subversion or devel/subversion19
 math/rkward-kde4|math/rkward-kde|2018-04-21|No more specific to KDE4
+devel/py-msgpack-python|devel/py-msgpack|2018-04-22|Upstream renamed package name on PyPI from msgpack-python to msgpack since 0.5
