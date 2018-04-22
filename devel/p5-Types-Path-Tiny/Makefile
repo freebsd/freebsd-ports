@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Types-Path-Tiny
-PORTVERSION=	0.005
-PORTREVISION=	1
+PORTVERSION=	0.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -13,12 +12,14 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Path::Tiny types and coercions for Moose and Moo
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Type-Tiny>=0.008:devel/p5-Type-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-pushd>=0:devel/p5-File-pushd
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
