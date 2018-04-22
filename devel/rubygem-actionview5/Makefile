@@ -19,6 +19,8 @@ RUN_DEPENDS=	rubygem-activesupport5>=${PORTVERSION}:devel/rubygem-activesupport5
 		rubygem-rails-dom-testing-rails5>=2.0:textproc/rubygem-rails-dom-testing-rails5 \
 		rubygem-rails-html-sanitizer>=1.0.3:textproc/rubygem-rails-html-sanitizer
 
+PORTSCOUT=	limit:^5\.1\.
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
