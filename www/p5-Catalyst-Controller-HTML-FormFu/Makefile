@@ -3,6 +3,7 @@
 
 PORTNAME=	Catalyst-Controller-HTML-FormFu
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	p5-Catalyst-Component-InstancePerContext>=0:www/p5-Catalyst-Compo
 		p5-Catalyst-Runtime>=5.71001:www/p5-Catalyst-Runtime \
 		p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-HTML-FormFu>=2.06:www/p5-HTML-FormFu \
+		p5-HTML-FormFu-MultiForm>=1.02:www/p5-HTML-FormFu-MultiForm \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-Attribute-Chained>=1.0.1:devel/p5-MooseX-Attribute-Chained \
 		p5-Regexp-Assemble>=0:devel/p5-Regexp-Assemble \
