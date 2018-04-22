@@ -3,19 +3,22 @@
 
 PORTNAME=	udns
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/udns/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	DNS resolver library with sync and async queries
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
+
+USES=		pkgconfig
+
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	IPV6 DOCS
-
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
 ALL_TARGET=	staticlib shared
 
@@ -25,8 +28,14 @@ SHLIB_MAJOR=	0
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
+PKGCONFIGDIR?=	${PREFIX}/libdata/pkgconfig
+
 post-build:
 	@cd ${WRKSRC} && ${STRIP_CMD} dnsget_s ex-rdns_s rblcheck_s
+
+post-patch:
+	@${SED} -e 's|%PREFIX%|${PREFIX}|g ; s|%VERSION%|${PORTVERSION}|g' \
+	  ${FILESDIR}/libudns.pc.in > ${WRKDIR}/libudns.pc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libudns.so.${SHLIB_MAJOR} \
@@ -43,6 +52,9 @@ do-install:
 .for FILE in udns.3
 	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${MANPREFIX}/man/man3/${FILE}
 .endfor
+
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/libudns.pc ${STAGEDIR}${PKGCONFIGDIR}/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
