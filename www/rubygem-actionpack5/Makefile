@@ -20,6 +20,8 @@ RUN_DEPENDS=	rubygem-actionview5>=${PORTVERSION}:devel/rubygem-actionview5 \
 		rubygem-rails-dom-testing-rails5>=2.0:textproc/rubygem-rails-dom-testing-rails5 \
 		rubygem-rails-html-sanitizer>=1.0.2:textproc/rubygem-rails-html-sanitizer
 
+PORTSCOUT=	limit:^5\.1\.
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
