@@ -1,4 +1,4 @@
---- man/3proxy.8.orig	2016-01-19 22:20:05 UTC
+--- man/3proxy.8.orig	2018-04-18 19:48:45 UTC
 +++ man/3proxy.8
 @@ -26,7 +26,7 @@ It can establish multiple
  gateways with HTTP and HTTPS proxy with FTP over HTTP support, SOCKS v4,
@@ -35,7 +35,7 @@
  kill(1), syslogd(8),
  .br
  http://3proxy.ru/
---- man/3proxy.cfg.3.orig	2016-01-19 22:20:05 UTC
+--- man/3proxy.cfg.3.orig	2018-04-18 19:48:45 UTC
 +++ man/3proxy.cfg.3
 @@ -153,7 +153,7 @@ listen on given local HOST:port for inco
  connect to given remote HOST:port instead of listening local connection on -p or default port. Can be used with another 3proxy service running -R option for connect back functionality. Most commonly used with proxy or socks. HOST can be given as IP or hostname, useful in case of dynamic DNS.
@@ -46,7 +46,7 @@
  .BR socks (8)
  .BR pop3p (8)
  .BR tcppm (8)
-@@ -927,7 +927,7 @@ corruption and/or Content-Length chaging
+@@ -954,7 +954,7 @@ corruption and/or Content-Length chaging
  Report all bugs to
  .BR 3proxy@3proxy.ru
  .SH SEE ALSO
@@ -55,9 +55,9 @@
  .br
  http://3proxy.ru/
  .SH TRIVIA
---- man/ftppr.8.orig	2016-01-19 22:20:05 UTC
+--- man/ftppr.8.orig	2018-04-18 19:48:45 UTC
 +++ man/ftppr.8
-@@ -75,7 +75,7 @@ Only cleartext authentication is current
+@@ -79,7 +79,7 @@ Only cleartext authentication is current
  Report all bugs to
  .BR 3proxy@3proxy.ru
  .SH SEE ALSO
@@ -66,9 +66,9 @@
  .br
  http://3proxy.ru/
  .SH AUTHORS
---- man/icqpr.8.orig	2016-01-19 22:20:05 UTC
+--- man/icqpr.8.orig	2018-04-18 19:48:45 UTC
 +++ man/icqpr.8
-@@ -68,7 +68,7 @@ as a destination in client application. 
+@@ -72,7 +72,7 @@ as a destination in client application. 
  Report all bugs to
  .BR 3proxy@3proxy.ru
  .SH SEE ALSO
@@ -77,9 +77,9 @@
  .br
  http://3proxy.ru/
  .SH AUTHORS
---- man/pop3p.8.orig	2016-01-19 22:20:05 UTC
+--- man/pop3p.8.orig	2018-04-18 19:48:45 UTC
 +++ man/pop3p.8
-@@ -71,7 +71,7 @@ we know which server to connect.
+@@ -75,7 +75,7 @@ we know which server to connect.
  Report all bugs to
  .BR 3proxy@3proxy.ru
  .SH SEE ALSO
@@ -88,7 +88,7 @@
  .br
  http://3proxy.ru/
  .SH AUTHORS
---- man/proxy.8.orig	2016-01-19 22:20:05 UTC
+--- man/proxy.8.orig	2018-04-18 19:48:45 UTC
 +++ man/proxy.8
 @@ -1,15 +1,15 @@
 -.TH proxy "8" "January 2016" "3proxy 0.8" "Universal proxy server"
@@ -110,9 +110,9 @@
  is HTTP gateway service with HTTPS and FTP over HTTPS support.
  .SH OPTIONS
  .TP
---- man/smtpp.8.orig	2016-01-19 22:20:05 UTC
+--- man/smtpp.8.orig	2018-04-18 19:48:45 UTC
 +++ man/smtpp.8
-@@ -72,7 +72,7 @@ we know which server to connect.
+@@ -76,7 +76,7 @@ we know which server to connect.
  Report all bugs to
  .BR 3proxy@3proxy.ru
  .SH SEE ALSO
@@ -121,9 +121,9 @@
  .br
  http://3proxy.ru/
  .SH AUTHORS
---- man/socks.8.orig	2016-01-19 22:20:05 UTC
+--- man/socks.8.orig	2018-04-18 19:48:45 UTC
 +++ man/socks.8
-@@ -67,7 +67,7 @@ instead.
+@@ -71,7 +71,7 @@ instead.
  Report all bugs to
  .BR 3proxy@3proxy.ru
  .SH SEE ALSO
@@ -132,9 +132,9 @@
  .br
  http://3proxy.ru/
  .SH AUTHORS
---- man/tcppm.8.orig	2016-01-19 22:20:05 UTC
+--- man/tcppm.8.orig	2018-04-18 19:48:45 UTC
 +++ man/tcppm.8
-@@ -61,7 +61,7 @@ as a destination in client application. 
+@@ -65,7 +65,7 @@ as a destination in client application. 
  Report all bugs to
  .BR 3proxy@3proxy.ru
  .SH SEE ALSO
@@ -143,9 +143,9 @@
  .br
  http://3proxy.ru/
  .SH AUTHORS
---- man/udppm.8.orig	2016-01-19 22:20:05 UTC
+--- man/udppm.8.orig	2018-04-18 19:48:45 UTC
 +++ man/udppm.8
-@@ -67,7 +67,7 @@ as a destination in client application. 
+@@ -71,7 +71,7 @@ as a destination in client application. 
  Report all bugs to
  .BR 3proxy@3proxy.ru
  .SH SEE ALSO

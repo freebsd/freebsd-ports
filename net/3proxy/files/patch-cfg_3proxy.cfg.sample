@@ -1,4 +1,4 @@
---- cfg/3proxy.cfg.sample.orig	2017-10-20 15:02:38 UTC
+--- cfg/3proxy.cfg.sample.orig	2018-04-18 19:48:45 UTC
 +++ cfg/3proxy.cfg.sample
 @@ -30,15 +30,15 @@ users 3APA3A:CL:3apa3a "test:CR:$1$qwer$
  # this example shows you how to include passwd file. For included files
@@ -15,8 +15,21 @@
  
 -#log /var/log/3proxy/log D
 -log c:\3proxy\logs\3proxy.log D
-+log /var/log/3proxy/log D
++log %%3PROXY_LOGDIR%%/log D
 +#log c:\3proxy\logs\3proxy.log D
  # log allows to specify log file location and rotation, D means logfile
  # is created daily
  
+@@ -72,10 +72,10 @@ log c:\3proxy\logs\3proxy.log D
+ logformat "- +_L%t.%.  %N.%p %E %U %C:%c %R:%r %O %I %h %T"
+ 
+ 
+-#archiver gz /bin/gzip %F
++archiver gz /usr/bin/gzip %F
+ #archiver zip zip -m -qq %A %F
+ #archiver zip pkzipc -add -silent -move %A %F
+-archiver rar rar a -df -inul %A %F
++#archiver rar rar a -df -inul %A %F
+ # if archiver specified log file will be compressed after closing.
+ # you should specify extension, path to archiver and command line, %A will be
+ # substituted with archive file name, %f - with original file name.
