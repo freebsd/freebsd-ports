@@ -1,0 +1,7 @@
+Sieve language support by a plugin for the Dovecot deliver LDA&LMTP
+
+    * Mail filtering
+    * Mail forwarding
+    * Vacation auto-reply
+
+WWW: http://wiki2.dovecot.org/Pigeonhole
