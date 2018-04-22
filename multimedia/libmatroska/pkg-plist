@@ -15,8 +15,8 @@ include/matroska/KaxDefines.h
 include/matroska/KaxInfo.h
 include/matroska/KaxInfoData.h
 include/matroska/KaxSeekHead.h
-include/matroska/KaxSemantic.h
 include/matroska/KaxSegment.h
+include/matroska/KaxSemantic.h
 include/matroska/KaxTag.h
 include/matroska/KaxTags.h
 include/matroska/KaxTrackAudio.h
@@ -27,7 +27,10 @@ include/matroska/KaxTypes.h
 include/matroska/KaxVersion.h
 include/matroska/c/libmatroska.h
 include/matroska/c/libmatroska_t.h
-lib/libmatroska.a
+lib/cmake/matroska/MatroskaConfig.cmake
+lib/cmake/matroska/MatroskaConfigVersion.cmake
+lib/cmake/matroska/MatroskaTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/matroska/MatroskaTargets.cmake
 lib/libmatroska.so
 lib/libmatroska.so.6
 lib/libmatroska.so.6.0.0
