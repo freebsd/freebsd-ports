@@ -1,2 +1,2 @@
-%%SITE_PERL%%/Crypt/PKCS10.pm
 %%PERL5_MAN3%%/Crypt::PKCS10.3.gz
+%%SITE_PERL%%/Crypt/PKCS10.pm
