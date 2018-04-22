@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Build-XSUtil
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Devel-CheckCompiler>=0:devel/p5-Devel-CheckCompiler
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Cwd-Guard>=0:devel/p5-Cwd-Guard \
-		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive
+		p5-File-Copy-Recursive-Reduced>=0.002:devel/p5-File-Copy-Recursive-Reduced
 
 NO_ARCH=	yes
 USE_PERL5=	modbuild
