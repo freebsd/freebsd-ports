@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.17.12018
-PORTREVISION=	3
+DISTVERSION=	0.17.13509
 CATEGORIES=	cad
 
 MAINTAINER=	ports@FreeBSD.org
@@ -53,7 +52,7 @@ CFLAGS+=	-I${LOCALBASE}/include/hdf5-18
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 
 USE_GITHUB=	yes
-GH_TAGNAME=	f27617e
+GH_TAGNAME=	0.17
 
 OPTIONS_DEFINE=	COLLADA
 
@@ -68,8 +67,6 @@ post-patch:
 		${WRKSRC}/src/Gui/CMakeLists.txt
 
 pre-configure:
-	@${CP} ${FILESDIR}/version.h \
-		${WRKSRC}/src/Build/Version.h
 	# To be removed when french/med will be built against science/hdf5
 	@${REINPLACE_CMD} -e 's|find_package(HDF5 REQUIRED)|#find_package(HDF5 REQUIRED)|' \
 		${WRKSRC}/CMakeLists.txt
