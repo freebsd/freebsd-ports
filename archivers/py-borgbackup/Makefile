@@ -3,6 +3,7 @@
 
 PORTNAME=	borgbackup
 DISTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.7:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.4.6:devel/py-msgpack-python@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.4.6:devel/py-msgpack@${PY_FLAVOR}
 
 OPTIONS_DEFINE=	FUSE
 FUSE_DESC=	Support to mount locally borg backup files

@@ -3,6 +3,7 @@
 
 PORTNAME=	tarantool-queue
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Python bindings for Tarantool queue
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0:devel/py-msgpack-python@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tarantool>=0:databases/py-tarantool@${FLAVOR}
 
 NO_ARCH=	yes

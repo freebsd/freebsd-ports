@@ -3,6 +3,7 @@
 
 PORTNAME=	tooz
 PORTVERSION=	1.48.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +22,7 @@ RUN_DEPENDS=	${PY_FUTURES} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.15.0:devel/py-oslo.utils@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=1.10.0:devel/py-oslo.serialization@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.4.0:devel/py-msgpack-python@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack>=0.4.0:devel/py-msgpack@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}futurist>=0:devel/py-futurist@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fasteners>=0.7:devel/py-fasteners@${FLAVOR}
 
