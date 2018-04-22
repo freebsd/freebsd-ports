@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Async-Interrupt
-PORTVERSION=	1.22
+PORTVERSION=	1.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,9 @@ COMMENT=	Allow C/XS libraries to interrupt perl asynchronously
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-common-sense>=0:devel/p5-common-sense
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Canary-Stability>=0:devel/p5-Canary-Stability \
+		p5-common-sense>=0:devel/p5-common-sense
+RUN_DEPENDS=	p5-common-sense>=0:devel/p5-common-sense
 
 USES=		perl5
 USE_PERL5=	configure
