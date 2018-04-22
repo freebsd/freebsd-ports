@@ -1,5 +1,7 @@
 %%SITE_PERL%%/Data/Random.pm
 %%SITE_PERL%%/Data/Random/WordList.pm
 %%SITE_PERL%%/Data/Random/dict
+%%SITE_PERL%%/auto/share/dist/Data-Random/README.linux.words
+%%SITE_PERL%%/auto/share/dist/Data-Random/README2.linux.words
 %%PERL5_MAN3%%/Data::Random.3.gz
 %%PERL5_MAN3%%/Data::Random::WordList.3.gz
