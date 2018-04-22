@@ -1,3 +1,3 @@
-TIMESTAMP = 1523543220
-SHA256 (oslo.service-1.31.0.tar.gz) = c0762be5a0c99b64a1aac60dbe2b06b087eae837250d62f87720a40f6302a515
-SIZE (oslo.service-1.31.0.tar.gz) = 69236
+TIMESTAMP = 1524259329
+SHA256 (oslo.service-1.31.1.tar.gz) = 2ac82c1d2a2adbb83e05f1075b6d97e46405682b4d143cd04760ad107441feb7
+SIZE (oslo.service-1.31.1.tar.gz) = 69471
