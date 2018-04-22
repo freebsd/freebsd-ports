@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.2:devel/rubygem-concurrent-ruby \
 		rubygem-minitest>=5.1:devel/rubygem-minitest \
 		rubygem-tzinfo>=1.1:devel/rubygem-tzinfo
 
+PORTSCOUT=	limit:^5\.1\.
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
