@@ -1,0 +1,11 @@
+Dovecot is an open source IMAP and POP3 email server for Linux/UNIX-like
+systems, written with security primarily in mind. Dovecot is an excellent
+choice for both small and large installations. It's fast, simple to set up,
+requires no special administration and it uses very little memory.
+
+Dovecot is high-performing, self-optimizing, self-healing, and easily
+extensible. It includes IMAP4rev1 and POP3 support. IPv6, SSL and TLS are
+supported. It supports multiple commonly used IMAP extensions, including SORT,
+THREAD and IDLE.
+
+WWW: http://www.dovecot.org/

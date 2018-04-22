@@ -1,0 +1,30 @@
+---------------------------------------------------------------------
+
+ You must create the configuration files yourself. Copy them over
+ to %%ETCDIR%% and edit them as desired:
+
+ 	cp -R %%ETCDIR%%/example-config/* \
+ 		%%ETCDIR%%
+
+ The default configuration includes IMAP and POP3 services, will
+ authenticate users agains the system's passwd file, and will use
+ the default /var/mail/$USER mbox files.
+
+ Next, enable dovecot in /etc/rc.conf:
+
+ 	dovecot_enable="YES"
+
+
+---------------------------------------------------------------------
+
+To avoid a risk of mailbox corruption, do not set the
+security.bsd.see_other_uids or .see_other_gids sysctls to 0
+if Dovecot is storing mail for multiple concurrent users (PR 218392).
+
+---------------------------------------------------------------------
+
+ If you want to be able to search within attachments using the
+ decode2text plugin, you'll need to install textproc/catdoc, and
+ one of graphics/xpdf or graphics/poppler-utils.
+
+---------------------------------------------------------------------
