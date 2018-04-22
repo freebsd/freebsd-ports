@@ -20,6 +20,7 @@ FILE_AIO_DESC=			Enable file aio
 FORMINPUT_DESC=			3rd party form_input module
 GOOGLE_PERFTOOLS_DESC=		Enable google perftools module
 GRIDFS_DESC=			3rd party gridfs module
+GSSAPI_DESC=			GSSAPI implementation (imply HTTP_AUTH_KRB5)
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTPGRP_DESC=			Modules that require HTTP module
 HTTPV2_DESC=			Enable HTTP/2 protocol support (SSL req.)
