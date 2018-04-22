@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	webp
-PORTVERSION=	0.6.1
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://downloads.webmproject.org/releases/webp/
+MASTER_SITES=	http://downloads.webmproject.org/releases/webp/ \
+		https://storage.googleapis.com/downloads.webmproject.org/releases/webp/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
