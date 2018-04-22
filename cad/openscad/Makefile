@@ -23,6 +23,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libharfbuzz.so:print/harfbuzz \
 		libopencsg.so:graphics/opencsg
 
+CONFLICTS=      openscad-devel
+
 USES=		bison compiler:c++11-lang desktop-file-utils eigen:3 gettext-tools \
 		pkgconfig python:run qmake shebangfix
 SHEBANG_FILES=	libraries/MCAD/get_submodules.py
@@ -38,5 +40,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
 		${WRKSRC}/openscad.pro
+
+#.include <bsd.port.options.mk>
+#
+#.if ${ARCH} == i386 && ${OSVERSION} >= 1100000
+#USE_GCC=        yes
+#.endif
 
 .include <bsd.port.mk>
