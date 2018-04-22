@@ -1,1 +1,1 @@
-gem "redcarpet", ">= 3.3.2"
+gem "redcarpet", ">= 3.4.0"
