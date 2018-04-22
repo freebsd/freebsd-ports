@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	3
+#PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -50,7 +50,6 @@ LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
-BROKEN=		fails to build with boost 1.67, see bug 227553
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
@@ -106,7 +105,7 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1822069
+SVNREVISION=	1829757
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -187,8 +186,7 @@ GNOMEVFS_CONFIGURE_ON=		--disable-gio
 GNOMEVFS_USE=			GNOME=gnomevfs2
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer
-MMEDIA_LIB_DEPENDS=		libgstreamer-0.10.so:multimedia/gstreamer
-MMEDIA_USE=			GSTREAMER=yes
+MMEDIA_USE=			GSTREAMER1=yes
 
 MYSQL_CONFIGURE_ENABLE=		mysql-connector
 MYSQL_CONFIGURE_WITH=		system-mysql
@@ -394,28 +392,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
 		${WRKSRC}/desktop/scripts/soffice.sh
 	${REINPLACE_CMD} -e '/^mkdir -p/,$$d' ${CREATE_TREE}
-.if ${COMPILER_TYPE} == gcc
-	# g++49 -Os sometimes leaves inline class methods undefined,
-	# affects fmgridif.cxx and ColumnControl.cxx
-	# See: <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=65009>
-	if [ ${CXX} = g++49  ]; then \
-		${REINPLACE_CMD} -e "s/ := -Os/ := -Os -fno-devirtualize -fno-devirtualize-speculatively/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
-		${REINPLACE_CMD} -e "s/=-Os /=-Os -fno-devirtualize -fno-devirtualize-speculatively /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
-	fi
-.elif ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
-	# autodoc and uno (bridgetest) core dump when built with with -Os
-	# on i386, affects file.cxx and bridgetest.cxx (at least).
-	# Using -O2 optimiztion works, and -Os is essentially -O2 with out
-	# loop unrolling.
-	# Changing optimization in just unxfbsdi.mk is sufficient to get
-	# a successful build, but change it in both places to avoid the
-	# possibility of obscure runtime problems, which is likely
-	# since this seems to be a generic bug in code generation for
-	# exception handling.
-	# See: <https://llvm.org/bugs/show_bug.cgi?id=24792>
-	${REINPLACE_CMD} -e "s/=-Os /=-O2 -fno-unroll-loops /" ${WRKSRC}/solenv/inc/unxfbsdi.mk
-	${REINPLACE_CMD} -e "s/ := -Os/ := -O2 -fno-unroll-loops/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
-.endif
 
 do-build:
 	${PRINTF} "[repositories]\nmain=active\nextras=active\n" > ${WRKSUBDIR}/source_config
