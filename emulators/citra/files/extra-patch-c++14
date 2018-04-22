@@ -27,6 +27,14 @@ src/core/file_sys/archive_backend.cpp:30:21: error: cannot initialize a paramete
 void    *memcpy(void * __restrict, const void * __restrict, size_t);
                                  ^
 
+/usr/bin/ld.lld: error: undefined symbol: StatusMessage::system_color
+>>> referenced by src/citra_qt/multiplayer/chat_room.cpp
+>>>               src/citra_qt/CMakeFiles/citra-qt.dir/multiplayer/chat_room.cpp.o:(StatusMessage::GetSystemChatMessage() const)
+
+/usr/bin/ld.lld: error: undefined symbol: ChatMessage::player_color
+>>> referenced by src/citra_qt/multiplayer/chat_room.cpp
+>>>               src/citra_qt/CMakeFiles/citra-qt.dir/multiplayer/chat_room.cpp.o:(ChatMessage::GetPlayerChatMessage(unsigned short) const)
+
 --- CMakeLists.txt.orig	2018-02-14 15:32:26 UTC
 +++ CMakeLists.txt
 @@ -89,7 +88,7 @@ message(STATUS "Target architecture: ${ARCHITECTURE}")
@@ -38,6 +46,26 @@ void    *memcpy(void * __restrict, const void * __restrict, size_t);
  set(CMAKE_CXX_STANDARD_REQUIRED ON)
  
  if (NOT MSVC)
+--- src/citra_qt/multiplayer/chat_room.cpp.orig	2018-04-19 18:03:37 UTC
++++ src/citra_qt/multiplayer/chat_room.cpp
+@@ -36,7 +36,7 @@ class ChatMessage { (public)
+     }
+ 
+ private:
+-    static constexpr std::array<const char*, 16> player_color = {
++    static inline constexpr std::array<const char*, 16> player_color = {
+         {"#0000FF", "#FF0000", "#8A2BE2", "#FF69B4", "#1E90FF", "#008000", "#00FF7F", "#B22222",
+          "#DAA520", "#FF4500", "#2E8B57", "#5F9EA0", "#D2691E", "#9ACD32", "#FF7F50", "FFFF00"}};
+ 
+@@ -60,7 +60,7 @@ class StatusMessage { (public)
+     }
+ 
+ private:
+-    static constexpr const char system_color[] = "#888888";
++    static inline constexpr const char system_color[] = "#888888";
+     QString timestamp;
+     QString message;
+ };
 --- src/core/file_sys/archive_backend.cpp.orig	2018-03-02 20:58:43 UTC
 +++ src/core/file_sys/archive_backend.cpp
 @@ -21,13 +21,13 @@ Path::Path(LowPathType type, const std::vector<u8>& da
