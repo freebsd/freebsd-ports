@@ -1,8 +1,8 @@
 # Created by: Andrey Zonov <andrey@zonov.org>
 # $FreeBSD$
 
-PORTNAME=	msgpack-python
-PORTVERSION=	0.4.7
+PORTNAME=	msgpack
+PORTVERSION=	0.5.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

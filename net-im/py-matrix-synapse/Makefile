@@ -4,7 +4,7 @@
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.27.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -34,7 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema@${FLAV
 		${PYTHON_PKGNAMEPREFIX}blist>=1.3.6:devel/py-blist@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.0.2:security/py-pysaml2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymacaroons-pynacl>=0.9.3:security/py-pymacaroons-pynacl@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3.0:devel/py-msgpack-python@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack>=0.3.0:devel/py-msgpack@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}phonenumbers>=8.2.0:devel/py-phonenumbers@${FLAVOR}
 
 # Conditional requirements that aren't so conditional

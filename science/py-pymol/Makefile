@@ -4,7 +4,7 @@
 PORTNAME=	pymol
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science biology python
 MASTER_SITES=	SF/pymol/pymol/2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
 		libmsgpackc.so:devel/msgpack
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${FLAVOR} \
 		${PYNUMPY}
 

@@ -4,6 +4,7 @@
 PORTNAME=		autobahn
 PORTVERSION=		0.17.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=		www python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
@@ -39,7 +40,7 @@ SERIALIZATION_DESC=	WAMPv2 Binary Serialization
 ACCELERATE_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wsaccel>=0.6.2:www/py-wsaccel@${FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}ujson>=1.33:devel/py-ujson@${FLAVOR}
 
-SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.4.0:devel/py-msgpack-python@${FLAVOR}
+SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.4.0:devel/py-msgpack@${FLAVOR}
 
 .include <bsd.port.pre.mk>
 
