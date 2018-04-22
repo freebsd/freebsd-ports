@@ -1,0 +1,10 @@
+prefix=%PREFIX%
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libudns
+Description: DNS resolver library
+Version: %VERSION%
+Libs: -L${libdir} -ludns
+Cflags: -I${includedir}
+
