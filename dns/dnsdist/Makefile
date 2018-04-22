@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libsodium.so:security/libsodium
 
 GNU_CONFIGURE=	yes
-USES=		bison compiler cpe gmake libedit libtool localbase \
+USES=		bison compiler:c++14-lang cpe gmake libedit libtool localbase \
 		pkgconfig tar:bz2
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--enable-dns-over-tls \
@@ -62,14 +62,7 @@ OPENSSL_CONFIGURE_ON=	LIBSSL_CFLAGS=-I${OPENSSLINC} LIBSSL_LIBS="-L${OPENSSLLIB}
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_WITH=	net-snmp
 
-.include <bsd.port.pre.mk>
-
-# Fix dnsdist binary when building on FreeBSD 10.x
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-BUILD_DEPENDS+=	clang50:devel/llvm50
-CC=		clang50
-CXX=		clang++50
-.endif
+.include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1004000
 BROKEN=		fails to link due to lack of thread_local
@@ -79,4 +72,4 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/dnsdist.conf.sample \
 		${STAGEDIR}${PREFIX}/etc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
