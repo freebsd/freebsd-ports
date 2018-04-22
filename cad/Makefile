@@ -64,6 +64,7 @@
     SUBDIR += ngspice_rework
     SUBDIR += opencascade
     SUBDIR += openscad
+    SUBDIR += openscad-devel
     SUBDIR += openvsp
     SUBDIR += p5-GDS2
     SUBDIR += p5-Verilog-Perl
