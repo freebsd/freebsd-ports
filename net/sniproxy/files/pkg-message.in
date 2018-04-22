@@ -1,0 +1,9 @@
+*******************************************************************
+ Enable sniproxy in /etc/rc.conf with the following line:
+
+    sniproxy_enable="YES"
+
+ A configuration template is available in
+ %%PREFIX%%/etc/sniproxy.conf
+
+*******************************************************************

@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+#$FreeBSD$
+#
+
+# PROVIDE: sniproxy
+# REQUIRE: SERVERS cleanvar
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable sniproxy:
+#
+# sniproxy_enable="YES"
+#
+#
+
+. /etc/rc.subr
+
+name=sniproxy
+rcvar=sniproxy_enable
+
+command=%%PREFIX%%/sbin/sniproxy
+
+pidfile=${sniproxy_pidfile:-"/var/run/sniproxy.pid
+
+sniproxy_enable=${sniproxy_enable:-"NO"}
+sniproxy_conf=${sniproxy_conf:-"%%PREFIX%%/etc/sniproxy.conf"}
+
+stop_postcmd="rm -f $pidfile"
+sig_reload="HUP"
+
+load_rc_config ${name}
+
+required_files=${sniproxy_conf}
+
+command_args="-c ${sniproxy_conf}"
+run_rc_command "$1"
+
