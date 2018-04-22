@@ -149,7 +149,7 @@ post-install:
 .endif
 
 .if defined(MAINTAINER_MODE)
-regression-test:	build
+do-test:
 . if !exists(${HOME}/.mpd.conf)
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${HOME}/.mpd.conf
 	${CHMOD} go-r ${HOME}/.mpd.conf
