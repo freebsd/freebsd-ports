@@ -1,0 +1,11 @@
+--- bosh-gen.gemspec.orig	2018-04-22 06:59:04 UTC
++++ bosh-gen.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<thor>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<progressbar>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<cyoi>.freeze, ["~> 0.10"])
+-      s.add_runtime_dependency(%q<fog>.freeze, ["~> 1.11"])
++      s.add_runtime_dependency(%q<fog>.freeze, [">= 1.11"])
+       s.add_runtime_dependency(%q<fog-aws>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<mime-types>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<readwritesettings>.freeze, ["~> 3.0"])
