@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-Application-Plugin-Authentication
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
