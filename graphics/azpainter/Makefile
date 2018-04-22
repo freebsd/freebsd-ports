@@ -2,22 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	azpainter
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://aarnet.dl.osdn.jp/azpainter/68339/ \
-		http://acc.dl.osdn.jp/azpainter/68339/ \
-		http://c3sl.dl.osdn.jp/azpainter/68339/ \
-		http://cznic.dl.osdn.jp/azpainter/68339/ \
-		http://gigenet.dl.osdn.jp/azpainter/68339/ \
-		http://iij.dl.osdn.jp/azpainter/68339/ \
-		http://jaist.dl.osdn.jp/azpainter/68339/ \
-		http://master.dl.osdn.jp/azpainter/68339/ \
-		http://nchc.dl.osdn.jp/azpainter/68339/ \
-		http://onet.dl.osdn.jp/azpainter/68339/ \
-		http://osdn.dl.osdn.jp/azpainter/68339/ \
-		http://pumath.dl.osdn.jp/azpainter/68339/ \
-		http://rwthaachen.dl.osdn.jp/azpainter/68339/ \
-		http://ymu.dl.osdn.jp/azpainter/68339/
+MASTER_SITES=	OSDN/${PORTNAME}/69408
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	16-bit RGB full color painting application
@@ -40,13 +27,18 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README README_ja manual
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
+post-patch-NLS-on:
+	@${REINPLACE_CMD} -e 's,tr/en\.mtr,tr/be.mtr &,' \
+		${WRKSRC}/data/Makefile.in
+
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's, install-dist_trdataDATA$$,,' \
 		${WRKSRC}/data/Makefile.in
 
 pre-build-NLS-on:
+	${CP} -p ${FILESDIR}/be ${WRKSRC}/translation
 	cd ${WRKSRC}/translation && ${CC} ${CFLAGS} -o mtrconv mtrconv.c
-.for lang in en ru uk
+.for lang in be en ru uk
 	cd ${WRKSRC}/translation && ./mtrconv ${lang} ../data/tr/${lang}.mtr
 .endfor
 
