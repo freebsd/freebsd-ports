@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-actionpack5>=${PORTVERSION}:www/rubygem-actionpack5 \
 		rubygem-nio4r>=2.0:devel/rubygem-nio4r \
 		rubygem-websocket-driver>=0.6.1:www/rubygem-websocket-driver
 
+PORTSCOUT=	limit:^5\.1\.
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
