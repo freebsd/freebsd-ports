@@ -1,0 +1,21 @@
+SNIproxy - Proxies incoming HTTP and TLS connections based on the
+hostname contained in the initial request of the TCP session. This
+enables HTTPS name-based virtual hosting to separate backend servers
+without installing the private key on the proxy machine.
+
+Features:
+
+Name-based proxying of HTTPS without decrypting traffic. No keys or
+certificates required.
+
+Supports both TLS and HTTP protocols.
+
+Supports IPv4, IPv6 and Unix domain sockets for both back end
+servers and listeners.
+
+Supports multiple listening sockets per instance.
+
+Supports HAProxy proxy protocol to propagate original source address
+to backend servers.
+ 
+WWW: https://github.com/dlundquist/sniproxy
