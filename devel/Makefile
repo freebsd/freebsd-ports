@@ -590,6 +590,7 @@
     SUBDIR += etcd
     SUBDIR += etcd31
     SUBDIR += etcd32
+    SUBDIR += etcd33
     SUBDIR += etl
     SUBDIR += euca2ools
     SUBDIR += evemu
