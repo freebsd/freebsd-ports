@@ -67,6 +67,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/build/style-minified.css
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/build/style-minified.css.gz
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/build/style.css.gz
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/compressed-img/ArangoDB-Foxx-logo-bg.png
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/compressed-img/ArangoDB-Logo-New-V3-1.png
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/compressed-img/ArangoDB-community-edition-Web-UI.svg
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/compressed-img/ArangoDB-enterprise-edition-Web-UI.svg
@@ -178,6 +179,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/html/redirect.html
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/html/scripts.html.part
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/html/start.html.part
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/img/ArangoDB-Foxx-logo-bg.png
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/img/ammap/arrowDown.gif
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/img/ammap/arrowUp.gif
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/img/ammap/export.png
@@ -236,6 +238,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/collections/clusterServers.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/collections/coordinatorCollection.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/collections/foxxCollection.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/collections/foxxRepository.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/collections/graphCollection.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/collections/notificationCollection.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/collections/queryManagementCollectionActive.js
@@ -250,7 +253,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/d3.min.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/d3.v3.min.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/dygraph-combined.min.js
-%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/highlight.7.3.pack.min.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/highlight.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/joi.browser.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/jqconsole.min.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/jquery-2.1.0.min.js
@@ -264,6 +267,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/jquery.textfill.min.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/jquery.uploadfile.min.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/jsoneditor-min.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/marked.min.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/md5.min.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/moment.min.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/lib/numeral.min.js
@@ -312,6 +316,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/models/coordinator.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/models/currentDatabase.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/models/foxx.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/models/foxxRepoModel.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/models/graph.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/models/newArangoLog.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/models/notification.js
@@ -341,6 +346,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/foxxActiveView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/foxxEditView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/foxxMountView.ejs
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/foxxRepoView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/graphManagementView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/graphSettingsView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/graphViewGroupByEntry.ejs
@@ -371,10 +377,17 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/queryManagementViewSlow.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/queryView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/scaleView.ejs
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/serviceDetailView.ejs
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/serviceInstallGitHubView.ejs
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/serviceInstallNewView.ejs
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/serviceInstallUploadView.ejs
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/serviceInstallUrlView.ejs
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/serviceInstallView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/shardsView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/shellView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/spotlightView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/statisticBarView.ejs
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/storeDetailView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/subNavigationView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/supportView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/tableView.ejs
@@ -383,6 +396,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/userPermissionView.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/warningList.ejs
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/templates/workMonitorView.ejs
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/.foxxInstallView.js.swo
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/_paginationView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/applicationDetailView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/applicationsView.js
@@ -399,12 +413,18 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/foxxActiveListView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/foxxActiveView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/foxxInstallView.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/foxxRepoView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/graphManagementView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/graphSettingsView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/graphViewer.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/helpUsView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/indicesView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/infoView.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/installGitHubServiceView.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/installNewServiceView.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/installServiceView.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/installUploadServiceView.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/installUrlServiceView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/loggerView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/loginView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/modalView.js
@@ -422,6 +442,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/showClusterView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/spotlightView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/statisticBarView.js
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/storeDetailView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/supportView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/tableView.js
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/js/views/userBarView.js
@@ -461,6 +482,7 @@ sbin/arangod
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/scss/_filterSelect.scss
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/scss/_fonts.scss
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/scss/_footer.scss
+%%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/scss/_foxxInstall.scss
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/scss/_general.scss
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/scss/_graphViewer.scss
 %%DATADIR%%/js/apps/system/_admin/aardvark/APP/frontend/scss/_graphViewer2.scss
@@ -748,6 +770,7 @@ sbin/arangod
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/config.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/core/assertions.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/interface/assert.js
+%%DATADIR%%/js/node/node_modules/chai/lib/chai/interface/expect.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/interface/should.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/utils/addChainableMethod.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/utils/addMethod.js
@@ -854,6 +877,10 @@ sbin/arangod
 %%DATADIR%%/js/node/node_modules/error-stack-parser/node_modules/stackframe/package.json
 %%DATADIR%%/js/node/node_modules/error-stack-parser/node_modules/stackframe/stackframe.js
 %%DATADIR%%/js/node/node_modules/error-stack-parser/package.json
+%%DATADIR%%/js/node/node_modules/expect.js/History.md
+%%DATADIR%%/js/node/node_modules/expect.js/README.md
+%%DATADIR%%/js/node/node_modules/expect.js/index.js
+%%DATADIR%%/js/node/node_modules/expect.js/package.json
 %%DATADIR%%/js/node/node_modules/extendible/.travis.yml
 %%DATADIR%%/js/node/node_modules/extendible/README.md
 %%DATADIR%%/js/node/node_modules/extendible/example/index.js
