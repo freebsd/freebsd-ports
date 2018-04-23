@@ -1,0 +1,10 @@
+grpcurl is a command-line tool that lets you interact with gRPC servers. It's
+basically curl for gRPC servers.
+
+The main purpose for this tool is to invoke RPC methods on a gRPC server from
+the command-line.  gRPC servers use a binary encoding on the wire (protobufs)
+and is effectively impossible to interact with using regular HTTP tools such as
+curl.  grpcurl accepts messages using JSON encoding, which is usable by both
+humans and scripts.
+
+WWW: https://github.com/fullstorydev/grpcurl
