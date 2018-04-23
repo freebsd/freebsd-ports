@@ -6,5 +6,5 @@ include/fdk-aac/aacdecoder_lib.h
 lib/libfdk-aac.a
 lib/libfdk-aac.so
 lib/libfdk-aac.so.1
-lib/libfdk-aac.so.1.0.0
+lib/libfdk-aac.so.1.0.1
 libdata/pkgconfig/fdk-aac.pc
