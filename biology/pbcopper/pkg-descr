@@ -1,0 +1,5 @@
+The pbcopper library provides a suite of data structures, algorithms, and
+utilities for C++ applications.  It is a core component of Pacific Biosciences
+genomics analysis tools.
+
+WWW: https://github.com/PacificBiosciences/pbcopper
