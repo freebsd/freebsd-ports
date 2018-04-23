@@ -1,0 +1,92 @@
+
+# HG changeset patch
+# User Todd C. Miller <Todd.Miller@sudo.ws>
+# Date 1524502491 21600
+# Node ID 30f7c5d64104cdbae5c0a63e57aeec1d188c0f5b
+# Parent  a786a841f30a60c5f18b4ec476f8a749135d48ec
+We can only use fexecve() on a script if /dev/fd/N exists.
+Some systems, such as FreeBSD, don't have /dev/fd mounted
+by default.  Bug #831
+
+diff -r a786a841f30a -r 30f7c5d64104 plugins/sudoers/match.c
+--- plugins/sudoers/match.c	Sun Apr 22 06:58:53 2018 -0600
++++ plugins/sudoers/match.c	Mon Apr 23 10:54:51 2018 -0600
+@@ -487,32 +487,22 @@
+     debug_return_bool(stat(path, sb) == 0);
+ }
+ 
++#ifdef HAVE_FEXECVE
+ /*
+- * On systems with fexecve(2), set the close-on-exec flag on the file
+- * descriptor only if the file is not a script.  Because scripts need
+- * to be executed by an interpreter the fd must remain open for the
+- * interpreter to use.
++ * Check whether the fd refers to a shell script with a "#!" shebang.
+  */
+-static void
+-set_cloexec(int fd)
++static bool
++is_script(int fd)
+ {
+-    bool is_script = false;
+-#ifdef HAVE_FEXECVE
++    bool ret = false;
+     char magic[2];
+ 
+-    /* Check for #! cookie and set is_script. */
+     if (read(fd, magic, 2) == 2) {
+ 	if (magic[0] == '#' && magic[1] == '!')
+-	    is_script = true;
++	    ret = true;
+     }
+     (void) lseek(fd, (off_t)0, SEEK_SET);
+-#endif /* HAVE_FEXECVE */
+-    /*
+-     * Shell scripts go through namei twice and so we can't set the close
+-     * on exec flag on the fd for fexecve(2).
+-     */
+-    if (!is_script)
+-	(void)fcntl(fd, F_SETFD, FD_CLOEXEC);
++    return ret;
+ }
+ 
+ /*
+@@ -541,10 +531,36 @@
+     if (fd == -1)
+ 	debug_return_bool(false);
+ 
+-    set_cloexec(fd);
++    if (is_script(fd)) {
++	char fdpath[PATH_MAX];
++	struct stat sb;
++
++	/* We can only use fexecve() on a script if /dev/fd/N exists. */
++	snprintf(fdpath, sizeof(fdpath), "/dev/fd/%d", fd);
++	if (stat(fdpath, &sb) != 0) {
++	    close(fd);
++	    debug_return_bool(false);
++	}
++
++	/*
++	 * Shell scripts go through namei twice so we can't set the
++	 * close on exec flag on the fd for fexecve(2).
++	 */
++    } else {
++	/* Not a script, close on exec is safe. */
++	(void)fcntl(fd, F_SETFD, FD_CLOEXEC);
++    }
++
+     *fdp = fd;
+     debug_return_bool(true);
+ }
++#else /* HAVE_FEXECVE */
++static bool
++open_cmnd(const char *path, const struct sudo_digest *digest, int *fdp)
++{
++    return true;
++}
++#endif /* HAVE_FEXECVE */
+ 
+ static bool
+ command_matches_fnmatch(const char *sudoers_cmnd, const char *sudoers_args,
+
