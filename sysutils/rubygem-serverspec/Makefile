@@ -18,8 +18,8 @@ RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json \
 		rubygem-specinfra>=2.72:sysutils/rubygem-specinfra
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 PLIST_FILES=	bin/serverspec-init
 
