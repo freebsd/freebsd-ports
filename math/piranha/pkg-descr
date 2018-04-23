@@ -1,0 +1,10 @@
+Piranha is a computer-algebra library for the symbolic manipulation of sparse
+multivariate polynomials and other closely-related symbolic objects (such as
+Poisson series).
+
+Piranha is written in modern C++, with emphasis on portability, correctness and
+performance. Piranha also includes a set of optional bindings for the Python
+programming language, called Pyranha, that allow to use the library in an
+interactive and script-oriented way.
+
+WWW: https://github.com/bluescarni/piranha
