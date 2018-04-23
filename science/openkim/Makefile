@@ -43,8 +43,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/KIM_API/libkim.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/KIM_API/*.h ${STAGEDIR}${PREFIX}/include/KIM_API
 
-regression-test:
+do-test:
 	(cd ${WRKSRC}/TESTs/ex_test_Ar_free_cluster_CLUSTER_F90 && \
-	${ECHO_CMD} "ex_model_Ar_P_MLJ_CLUSTER_C" | ./ex_test_Ar_free_cluster_CLUSTER_F90)
+		${ECHO_CMD} "ex_model_Ar_P_MLJ_CLUSTER_C" | ./ex_test_Ar_free_cluster_CLUSTER_F90)
 
 .include <bsd.port.mk>
