@@ -1,6 +1,6 @@
---- configure.orig	2016-10-17 07:49:05.000000000 +0900
-+++ configure	2017-01-05 18:09:44.486857000 +0900
-@@ -12141,7 +12141,7 @@
+--- configure.orig	2017-09-12 13:21:59 UTC
++++ configure
+@@ -12661,7 +12649,7 @@ CC=$lt_save_CC
  
  
  
@@ -9,16 +9,16 @@
      # Extract the first word of "rm", so it can be a program name with args.
  set dummy rm; ac_word=$2
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
-@@ -13143,7 +13143,7 @@
- fi
- 
+@@ -13648,7 +13636,7 @@ case "${host}" in
+         ;;
+ esac
  
 -if test "z$shrext" == "z" ; then
 +if test "z$shrext" = "z" ; then
      shrext=$shrext_cmds
  fi
  
-@@ -13858,6 +13858,7 @@
+@@ -14384,6 +14372,7 @@ elif test "z$with_openssl" != "z" ; then
  	*-*-osf5*) openssl_exlibs=;;
  	*-*-openbsd*) openssl_exlibs=;;
  	*-*-netbsd*) openssl_exlibs=;;
@@ -26,7 +26,7 @@
  	#FIXME: check if lib "dl" is required
  	*)          openssl_exlibs=-ldl;;
      esac
-@@ -14189,9 +14190,9 @@
+@@ -14641,9 +14630,9 @@ if test "z$OPENSSL_FOUND" = "zno" ; then
      for dir in $ac_openssl_lib_dir ; do
  	if test -f $dir/libcrypto.a ; then
  	    	    if test "z$dir" = "z/usr/lib" ; then
@@ -38,18 +38,60 @@
  	    fi
  	    OPENSSL_LIBS_FOUND="yes"
  	    ac_found_openssl_lib_dir=$dir
-@@ -14240,7 +14241,7 @@
+@@ -14668,7 +14669,7 @@ $as_echo_n "checking for openssl librari
+ /* end confdefs.h.  */
+
+             #include <openssl/opensslv.h>
+-        #if OPENSSL_VERSION_NUMBER == 0x20000000L && defined(LIBRESSL_VERSION_NUMBER)
++        #if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x20700000L
+         yes
+         #endif
+
+@@ -14676,7 +14665,7 @@ _ACEOF
+ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+   $EGREP "yes" >/dev/null 2>&1; then :
+ 
+-        OPENSSL_VERSION="1.0.0 (libressl)"
++        OPENSSL_VERSION="1.0.0 (LibreSSL < 2.7)"
+ 
+ else
+ 
+@@ -14692,7 +14681,31 @@ rm -f conftest*
  /* end confdefs.h.  */
  
-     	    #include <openssl/opensslv.h>
--	    #if OPENSSL_VERSION_NUMBER >= 0x10000000L
-+	    #if OPENSSL_VERSION_NUMBER >= 0x10000000L || defined(LIBRESSL_VERSION_NUMBER)
- 		yes
- 	    #endif
+             #include <openssl/opensslv.h>
+-        #if OPENSSL_VERSION_NUMBER >= 0x10100000L
++        #if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER >= 0x20700000L
++        yes
++        #endif
++
++_ACEOF
++if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
++  $EGREP "yes" >/dev/null 2>&1; then :
++
++        OPENSSL_VERSION="1.1.0 (LibreSSL >= 2.7)"
++
++else
++
++        OPENSSL_VERSION=""
++
++fi
++rm -f conftest*
++
++    fi
++
++    if test "z$OPENSSL_VERSION" = "z" ; then
++        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++            #include <openssl/opensslv.h>
++        #if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+         yes
+         #endif
  
-@@ -14330,12 +14331,12 @@
-     	OPENSSL_CFLAGS="$OPENSSL_CFLAGS -DXMLSEC_OPENSSL_110=1"
-     fi
+@@ -14749,12 +14762,12 @@ fi
+ if test "z$OPENSSL_FOUND" = "zyes" ; then
+     XMLSEC_NO_OPENSSL="0"
      OPENSSL_CFLAGS="$OPENSSL_CFLAGS -DXMLSEC_CRYPTO_OPENSSL=1"
 -    XMLSEC_CRYPTO_LIST="$XMLSEC_CRYPTO_LIST openssl"
 +    XMLSEC_CRYPTO_LIST="$XMLSEC_CRYPTO_LIST openssl"; CPPFLAGS="$CPPFLAGS $OPENSSL_CFLAGS"
@@ -62,7 +104,7 @@
    XMLSEC_NO_OPENSSL_TRUE=
    XMLSEC_NO_OPENSSL_FALSE='#'
  else
-@@ -14357,7 +14358,7 @@
+@@ -14776,7 +14789,7 @@ NSPR_MIN_VERSION="4.4.1"
  NSS_CFLAGS=""
  NSS_LIBS=""
  NSS_LIBS_LIST="-lnss3 -lsmime3"
@@ -71,7 +113,7 @@
  NSS_CRYPTO_LIB="$XMLSEC_PACKAGE-nss"
  NSS_FOUND="no"
  NSPR_PACKAGE=mozilla-nspr
-@@ -14792,15 +14793,15 @@
+@@ -15211,15 +15224,15 @@ $as_echo_n "checking for nss libraries >
      NSS_NSS_H=""
  
      if test "z$with_nss" != "z" ; then
