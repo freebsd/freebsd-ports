@@ -81,6 +81,7 @@
     SUBDIR += p5-TrimGalore
     SUBDIR += p5-transdecoder
     SUBDIR += paml
+    SUBDIR += pbbam
     SUBDIR += pbseqan
     SUBDIR += pear-merger
     SUBDIR += phrap
