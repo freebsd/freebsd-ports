@@ -772,6 +772,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/uconfig.h
 %%ARCH_LIB%%/CORE/unicode_constants.h
 %%ARCH_LIB%%/CORE/unixish.h
+%%ARCH_LIB%%/CORE/uni_keywords.h
 %%ARCH_LIB%%/CORE/utf8.h
 %%ARCH_LIB%%/CORE/utfebcdic.h
 %%ARCH_LIB%%/CORE/util.h
@@ -1003,6 +1004,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5270delta.1.gz
 %%MAN1%%/perl52710delta.1.gz
 %%MAN1%%/perl52711delta.1.gz
+%%MAN1%%/perl52712delta.1.gz
 %%MAN1%%/perl5271delta.1.gz
 %%MAN1%%/perl5272delta.1.gz
 %%MAN1%%/perl5273delta.1.gz
@@ -1815,6 +1817,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5270delta.pod
 %%PRIV_LIB%%/pod/perl52710delta.pod
 %%PRIV_LIB%%/pod/perl52711delta.pod
+%%PRIV_LIB%%/pod/perl52712delta.pod
 %%PRIV_LIB%%/pod/perl5271delta.pod
 %%PRIV_LIB%%/pod/perl5272delta.pod
 %%PRIV_LIB%%/pod/perl5273delta.pod
