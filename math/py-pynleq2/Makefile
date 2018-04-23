@@ -2,6 +2,7 @@
 
 PORTNAME=	pynleq2
 DISTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,11 +19,14 @@ BUILD_DEPENDS=	${PYNUMPY}
 USES=		fortran:flang python
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	nodefault
-GH_TUPLE=	PySCeS:pysces:0.9.5:fortran
+GH_TUPLE=	PySCeS:pysces:0.9.6:fortran
 
 BINARY_ALIAS=	gfortran6=flang # it keeps using gfortran6 regardless of the environment variables and arguments
 
 FORTRAN_FILES=	linalg_nleq2.f nleq2.f wnorm.f zibconst.f zibmon.f zibsec.f
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.py
 
 pre-build: # compile fortran files into a static library because distutils fails while doing this
 	@${MKDIR} ${WRKDIR}/.fbuild && \
