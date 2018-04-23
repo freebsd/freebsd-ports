@@ -1,4 +1,4 @@
---- bin/named/config.c.orig	2018-04-13 19:02:44 UTC
+--- bin/named/config.c.orig	2018-04-21 00:18:28 UTC
 +++ bin/named/config.c
 @@ -179,12 +179,14 @@ options {\n\
  	max-recursion-queries 75;\n\
@@ -15,7 +15,7 @@
  	provide-ixfr true;\n\
  	query-source address *;\n\
  	query-source-v6 address *;\n\
---- bin/named/server.c.orig	2018-04-13 19:02:44 UTC
+--- bin/named/server.c.orig	2018-04-21 00:18:28 UTC
 +++ bin/named/server.c
 @@ -4068,6 +4068,16 @@ configure_view(dns_view_t *view, dns_vie
  	}
@@ -34,9 +34,9 @@
  	result = named_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asuint32(obj);
---- lib/dns/include/dns/view.h.orig	2018-04-13 19:02:44 UTC
+--- lib/dns/include/dns/view.h.orig	2018-04-21 00:18:28 UTC
 +++ lib/dns/include/dns/view.h
-@@ -148,6 +148,8 @@ struct dns_view {
+@@ -149,6 +149,8 @@ struct dns_view {
  	isc_boolean_t			requestnsid;
  	isc_boolean_t			sendcookie;
  	dns_ttl_t			maxcachettl;
@@ -45,7 +45,7 @@
  	dns_ttl_t			maxncachettl;
  	isc_uint32_t			nta_lifetime;
  	isc_uint32_t			nta_recheck;
---- lib/dns/resolver.c.orig	2018-04-13 19:02:44 UTC
+--- lib/dns/resolver.c.orig	2018-04-21 00:18:28 UTC
 +++ lib/dns/resolver.c
 @@ -5746,6 +5746,18 @@ cache_name(fetchctx_t *fctx, dns_name_t 
  		}
@@ -66,7 +66,7 @@
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2018-04-13 19:02:44 UTC
+--- lib/isccfg/namedconf.c.orig	2018-04-21 00:18:28 UTC
 +++ lib/isccfg/namedconf.c
 @@ -1916,6 +1916,8 @@ view_clauses[] = {
  	{ "max-acache-size", &cfg_type_sizenodefault,
