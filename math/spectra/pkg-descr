@@ -1,0 +1,9 @@
+Spectra stands for Sparse Eigenvalue Computation Toolkit as a Redesigned
+ARPACK. It is a C++ library for large scale eigenvalue problems, built on
+top of Eigen, an open source linear algebra library.
+
+Spectra is implemented as a header-only C++ library, whose only dependency,
+Eigen, is also header-only. Hence Spectra can be easily embedded in C++
+projects that require calculating eigenvalues of large matrices.
+
+WWW: https://spectralib.org
