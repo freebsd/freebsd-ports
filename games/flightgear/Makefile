@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2017.3.1
-PORTREVISION=	4
+PORTVERSION=	2018.1.1
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -49,9 +48,18 @@ DBUS_CMAKE_ON=	-DUSE_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
 QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON
 QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
-QT5_USE=	QT5=core,buildtools,gui,qmake,qml,widgets
+QT5_USE=	QT5=core,buildtools,gui,qmake,qml,quick,widgets
 
 .include <bsd.port.pre.mk>
+
+# Needs Clang 4.0+ to build, see:
+# https://sourceforge.net/p/flightgear/codetickets/2015/
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 40
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang40:devel/llvm40
+CPP=	${LOCALBASE}/bin/clang-cpp40
+CC=	${LOCALBASE}/bin/clang40
+CXX=	${LOCALBASE}/bin/clang++40
+.endif
 
 # Chase devel/simgear compiler version
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46

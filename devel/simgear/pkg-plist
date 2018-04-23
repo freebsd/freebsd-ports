@@ -1,7 +1,3 @@
-include/simgear/3rdparty/utf8/utf8.h
-include/simgear/3rdparty/utf8/utf8/checked.h
-include/simgear/3rdparty/utf8/utf8/core.h
-include/simgear/3rdparty/utf8/utf8/unchecked.h
 include/simgear/bucket/newbucket.hxx
 include/simgear/bvh/BVHBoundingBoxVisitor.hxx
 include/simgear/bvh/BVHGroup.hxx
@@ -45,7 +41,6 @@ include/simgear/canvas/elements/CanvasImage.hxx
 include/simgear/canvas/elements/CanvasMap.hxx
 include/simgear/canvas/elements/CanvasPath.hxx
 include/simgear/canvas/elements/CanvasText.hxx
-include/simgear/canvas/elements/detail/add_segment_variadic.hxx
 include/simgear/canvas/events/CustomEvent.hxx
 include/simgear/canvas/events/DeviceEvent.hxx
 include/simgear/canvas/events/KeyboardEvent.hxx
@@ -63,6 +58,7 @@ include/simgear/debug/debug_types.h
 include/simgear/debug/logstream.hxx
 include/simgear/embedded_resources/EmbeddedResource.hxx
 include/simgear/embedded_resources/EmbeddedResourceManager.hxx
+include/simgear/embedded_resources/EmbeddedResourceProxy.hxx
 include/simgear/environment/metar.hxx
 include/simgear/environment/precipitation.hxx
 include/simgear/ephemeris/celestialBody.hxx
@@ -156,15 +152,15 @@ include/simgear/nasal/cppbind/Ghost.hxx
 include/simgear/nasal/cppbind/NasalCallContext.hxx
 include/simgear/nasal/cppbind/NasalContext.hxx
 include/simgear/nasal/cppbind/NasalHash.hxx
+include/simgear/nasal/cppbind/NasalMe.hxx
+include/simgear/nasal/cppbind/NasalMethodHolder.hxx
 include/simgear/nasal/cppbind/NasalObject.hxx
 include/simgear/nasal/cppbind/NasalObjectHolder.hxx
 include/simgear/nasal/cppbind/NasalString.hxx
-include/simgear/nasal/cppbind/detail/NasalObject_callMethod_templates.hxx
-include/simgear/nasal/cppbind/detail/from_nasal_function_templates.hxx
 include/simgear/nasal/cppbind/detail/from_nasal_helper.hxx
-include/simgear/nasal/cppbind/detail/functor_templates.hxx
 include/simgear/nasal/cppbind/detail/nasal_traits.hxx
 include/simgear/nasal/cppbind/detail/to_nasal_helper.hxx
+include/simgear/nasal/cppbind/cppbind_fwd.hxx
 include/simgear/nasal/cppbind/from_nasal.hxx
 include/simgear/nasal/cppbind/to_nasal.hxx
 include/simgear/nasal/iolib.h
@@ -294,11 +290,14 @@ include/simgear/screen/tr.h
 include/simgear/serial/serial.hxx
 include/simgear/sg_inlines.h
 include/simgear/simgear_config.h
+include/simgear/sound/filters.hxx
 include/simgear/sound/readwav.hxx
 include/simgear/sound/sample.hxx
 include/simgear/sound/sample_group.hxx
 include/simgear/sound/soundmgr.hxx
 include/simgear/sound/xmlsound.hxx
+include/simgear/std/integer_sequence.hxx
+include/simgear/std/type_traits.hxx
 include/simgear/structure/OSGUtils.hxx
 include/simgear/structure/OSGVersion.hxx
 include/simgear/structure/SGAtomic.hxx
@@ -316,7 +315,6 @@ include/simgear/structure/StateMachine.hxx
 include/simgear/structure/StringTable.hxx
 include/simgear/structure/callback.hxx
 include/simgear/structure/commands.hxx
-include/simgear/structure/detail/function_list_template.hxx
 include/simgear/structure/event_mgr.hxx
 include/simgear/structure/exception.hxx
 include/simgear/structure/function_list.hxx

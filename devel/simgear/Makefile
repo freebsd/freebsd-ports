@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simgear
-PORTVERSION=	2017.3.1
-PORTREVISION=	3
+PORTVERSION=	2018.1.1
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -21,6 +20,15 @@ USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu glut
 
 .include <bsd.port.pre.mk>
+
+# Needs Clang 4.0+ to build, see:
+# https://sourceforge.net/p/flightgear/codetickets/2015/
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 40
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang40:devel/llvm40
+CPP=	${LOCALBASE}/bin/clang-cpp40
+CC=	${LOCALBASE}/bin/clang40
+CXX=	${LOCALBASE}/bin/clang++40
+.endif
 
 # Work around "'to_string' is not a member of 'std'" when building with Gcc < 6
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 60
