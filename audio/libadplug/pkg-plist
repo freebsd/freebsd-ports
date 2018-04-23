@@ -70,8 +70,8 @@ include/adplug/wemuopl.h
 include/adplug/woodyopl.h
 include/adplug/xad.h
 include/adplug/xsm.h
-lib/libadplug-2.3.so.0
-lib/libadplug-2.3.so.0.0.0
+lib/libadplug-%%PORTVERSION%%.so.0
+lib/libadplug-%%PORTVERSION%%.so.0.0.0
 lib/libadplug.a
 lib/libadplug.so
 libdata/pkgconfig/adplug.pc
