@@ -3,6 +3,7 @@
 PORTNAME=	piranha
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +18,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.lgpl3
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/numeric/conversion/cast.hpp:devel/boost-libs \
 		${LOCALBASE}/include/gmp.h:math/gmp \
 		${LOCALBASE}/include/mpfr.h:math/mpfr
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cmake:outsource
 USE_GITHUB=	yes
