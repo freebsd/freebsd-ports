@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-01-05 13:56:52 UTC
+--- CMakeLists.txt.orig	2018-04-11 15:16:11 UTC
 +++ CMakeLists.txt
 @@ -38,9 +38,9 @@ if (NOT CMAKE_OSX_DEPLOYMENT_TARGET)
  endif ()
@@ -12,7 +12,7 @@
  endif ()
  
  # required for clang completion in editors
-@@ -370,7 +370,7 @@ if (CMAKE_COMPILER_IS_GNUCC OR APPLE)
+@@ -377,7 +377,7 @@ if (CMAKE_COMPILER_IS_GNUCC OR APPLE)
  endif ()
  
  if (CMAKE_COMPILER_IS_CLANG)
@@ -21,83 +21,23 @@
      set(BASE_CXX_FLAGS "${BASE_CXX_FLAGS} -stdlib=libc++")
      add_definitions("-Wno-deprecated-declarations")
    else ()
-@@ -505,7 +505,11 @@ if (USE_BACKTRACE)
-   if (MSVC)
-     set(BT_LIBS "Dbghelp" CACHE path "Debug Helper libraries")
-   else ()
--    set(BT_LIBS "" CACHE path "Debug Helper libraries")
-+    if (FREEBSD)
-+      set(BT_LIBS execinfo)
-+    else ()
-+      set(BT_LIBS "" CACHE path "Debug Helper libraries")
-+    endif ()
-   endif ()
+@@ -483,7 +483,7 @@ else ()
  
-   add_definitions("-DARANGODB_ENABLE_BACKTRACE=1")
-@@ -580,7 +584,9 @@ endif ()
+   include(VcMacros)
+ 
+-  option(USE_OPTIMIZE_FOR_ARCHITECTURE "try to determine CPU architecture" ON)
++  option(USE_OPTIMIZE_FOR_ARCHITECTURE "try to determine CPU architecture" OFF)
+ 
+   if (USE_OPTIMIZE_FOR_ARCHITECTURE)
+     # mop: core2 (merom) is our absolute minimum!
+@@ -594,9 +594,7 @@ endif ()
  ################################################################################
  
  if (NOT WINDOWS)
 -  set(SYS_LIBS ${SYS_LIBS} resolv)
-+  if (NOT FREEBSD)
-+    set(SYS_LIBS ${SYS_LIBS} resolv)
-+  endif ()
- 
-   if (NOT DARWIN)
+-
+-  if (NOT DARWIN)
++  if (NOT DARWIN OR FREEBSD)
      set(SYS_LIBS ${SYS_LIBS} rt)
-@@ -651,17 +657,17 @@ if (CMAKE_COMPILER_IS_GNUCC)
- 
-   set(BASE_FLAGS "-Wall -Wextra -Wno-unused-parameter ${BASE_FLAGS}")
- 
--  set(CMAKE_C_FLAGS                "-g"                             CACHE INTERNAL "default C compiler flags")
--  set(CMAKE_C_FLAGS_DEBUG          "-O0 -g -D_DEBUG=1"              CACHE INTERNAL "C debug flags")
--  set(CMAKE_C_FLAGS_MINSIZEREL     "-Os"                            CACHE INTERNAL "C minimal size flags")
--  set(CMAKE_C_FLAGS_RELEASE        "-O3 -fomit-frame-pointer"       CACHE INTERNAL "C release flags")
--  set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O3 -g -fno-omit-frame-pointer" CACHE INTERNAL "C release with debug info flags")
-+  #set(CMAKE_C_FLAGS                "-g"                            CACHE INTERNAL "default C compiler flags")
-+  set(CMAKE_C_FLAGS_DEBUG          ${CMAKE_C_FLAGS}                 CACHE INTERNAL "C debug flags")
-+  set(CMAKE_C_FLAGS_MINSIZEREL     ${CMAKE_C_FLAGS}                 CACHE INTERNAL "C minimal size flags")
-+  set(CMAKE_C_FLAGS_RELEASE        ${CMAKE_C_FLAGS}                 CACHE INTERNAL "C release flags")
-+  set(CMAKE_C_FLAGS_RELWITHDEBINFO ${CMAKE_C_FLAGS}                 CACHE INTERNAL "C release with debug info flags")
- 
--  set(CMAKE_CXX_FLAGS                "-g -Wnon-virtual-dtor"          CACHE INTERNAL "default C++ compiler flags")
--  set(CMAKE_CXX_FLAGS_DEBUG          "-O0 -g -D_DEBUG=1"              CACHE INTERNAL "C++ debug flags")
--  set(CMAKE_CXX_FLAGS_MINSIZEREL     "-Os"                            CACHE INTERNAL "C++ minimal size flags")
--  set(CMAKE_CXX_FLAGS_RELEASE        "-O3 -fomit-frame-pointer"       CACHE INTERNAL "C++ release flags")
--  set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -g -fno-omit-frame-pointer" CACHE INTERNAL "C++ release with debug info flags")
-+  #set(CMAKE_CXX_FLAGS                "-g -Wnon-virtual-dtor"       CACHE INTERNAL "default C++ compiler flags")
-+  set(CMAKE_CXX_FLAGS_DEBUG          "-O0 -g -D_DEBUG=1"            CACHE INTERNAL "C++ debug flags")
-+  set(CMAKE_CXX_FLAGS_MINSIZEREL     ${CMAKE_CXX_FLAGS}             CACHE INTERNAL "C++ minimal size flags")
-+  set(CMAKE_CXX_FLAGS_RELEASE        ${CMAKE_CXX_FLAGS}             CACHE INTERNAL "C++ release flags")
-+  set(CMAKE_CXX_FLAGS_RELWITHDEBINFO ${CMAKE_CXX_FLAGS}             CACHE INTERNAL "C++ release with debug info flags")
- 
- elseif (CMAKE_COMPILER_IS_CLANG)
-   if (VERBOSE)
-@@ -670,17 +676,17 @@ elseif (CMAKE_COMPILER_IS_CLANG)
- 
-   set(BASE_FLAGS "-Wall -Wextra -Wno-unused-parameter ${BASE_FLAGS}")
- 
--  set(CMAKE_C_FLAGS                "-g"                             CACHE INTERNAL "default C compiler flags")
--  set(CMAKE_C_FLAGS_DEBUG          "-O0 -g -D_DEBUG=1"              CACHE INTERNAL "C debug flags")
--  set(CMAKE_C_FLAGS_MINSIZEREL     "-Os"                            CACHE INTERNAL "C minimal size flags")
--  set(CMAKE_C_FLAGS_RELEASE        "-O3 -fomit-frame-pointer"       CACHE INTERNAL "C release flags")
--  set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O3 -g -fno-omit-frame-pointer" CACHE INTERNAL "C release with debug info flags")
-+  #set(CMAKE_C_FLAGS                "-g"                            CACHE INTERNAL "default C compiler flags")
-+  set(CMAKE_C_FLAGS_DEBUG          ${CMAKE_C_FLAGS}                 CACHE INTERNAL "C debug flags")
-+  set(CMAKE_C_FLAGS_MINSIZEREL     ${CMAKE_C_FLAGS}                 CACHE INTERNAL "C minimal size flags")
-+  set(CMAKE_C_FLAGS_RELEASE        ${CMAKE_C_FLAGS}                 CACHE INTERNAL "C release flags")
-+  set(CMAKE_C_FLAGS_RELWITHDEBINFO ${CMAKE_C_FLAGS}                 CACHE INTERNAL "C release with debug info flags")
- 
--  set(CMAKE_CXX_FLAGS                "-g -Wnon-virtual-dtor"          CACHE INTERNAL "default C++ compiler flags")
--  set(CMAKE_CXX_FLAGS_DEBUG          "-O0 -g -D_DEBUG=1"              CACHE INTERNAL "C++ debug flags")
--  set(CMAKE_CXX_FLAGS_MINSIZEREL     "-Os"                            CACHE INTERNAL "C++ minimal size flags")
--  set(CMAKE_CXX_FLAGS_RELEASE        "-O3 -fomit-frame-pointer"       CACHE INTERNAL "C++ release flags")
--  set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -g -fno-omit-frame-pointer" CACHE INTERNAL "C++ release with debug info flags")
-+  #set(CMAKE_CXX_FLAGS                "-g -Wnon-virtual-dtor"       CACHE INTERNAL "default C++ compiler flags")
-+  set(CMAKE_CXX_FLAGS_DEBUG          ${CMAKE_CXX_FLAGS}             CACHE INTERNAL "C++ debug flags")
-+  set(CMAKE_CXX_FLAGS_MINSIZEREL     ${CMAKE_CXX_FLAGS}             CACHE INTERNAL "C++ minimal size flags")
-+  set(CMAKE_CXX_FLAGS_RELEASE        ${CMAKE_CXX_FLAGS}             CACHE INTERNAL "C++ release flags")
-+  set(CMAKE_CXX_FLAGS_RELWITHDEBINFO ${CMAKE_CXX_FLAGS}             CACHE INTERNAL "C++ release with debug info flags")
- 
- elseif (MSVC)
-   if (VERBOSE)
+   endif ()
+ endif ()
