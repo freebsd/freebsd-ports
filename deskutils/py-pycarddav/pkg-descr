@@ -1,4 +1,0 @@
-pyCardDAV is a simple to use CardDAV CLI client. It has built in support for
-mutt's query_command but also works very well solo (and with other MUAs).
-
-WWW: http://lostpackets.de/pycarddav
