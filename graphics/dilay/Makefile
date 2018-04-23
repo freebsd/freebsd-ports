@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dilay
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
