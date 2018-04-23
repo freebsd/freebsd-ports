@@ -33,7 +33,7 @@ MASTER_SITES?=	http://pear.php.net/get/
 EXTRACT_SUFX?=	.tgz
 DIST_SUBDIR?=	PEAR
 
-.    if !defined(USE_PHPIZE)
+.    if empty(php_ARGS:Mphpize)
 NO_BUILD=	yes
 .    endif
 .  endif
@@ -87,7 +87,7 @@ INSTDIR=	${PHP_BASE}/${LINSTDIR}
 SUB_LIST+=	PKG_NAME=${PEARPKGREF}
 
 .  if empty(pear_ARGS:Menv)
-.    if !defined(USE_PHPIZE) && !exists(${.CURDIR}/pkg-plist)
+.    if empty(php_ARGS:Mphpize) && !exists(${.CURDIR}/pkg-plist)
 PLIST=		${WRKDIR}/PLIST
 .    endif
 PKGINSTALL?=	${PORTSDIR}/devel/pear/pear-install
@@ -131,7 +131,7 @@ DIRFILTER=	${SED} -En '\:^.*/[^/]*$$:s:^(.+)/[^/]*$$:\1:p' \
 	            done \
 	      ) | ${SORT} -ur
 
-.    if !defined(USE_PHPIZE)
+.    if empty(php_ARGS:Mphpize)
 _USES_install+=	260:do-autogenerate-plist
 do-autogenerate-plist:
 	@${ECHO_MSG} "===>   Generating packing list with pear"
