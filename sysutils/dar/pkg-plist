@@ -22,6 +22,7 @@ include/dar/criterium.hpp
 include/dar/crypto.hpp
 include/dar/crypto_asym.hpp
 include/dar/crypto_sym.hpp
+include/dar/cygwin_adapt.h
 include/dar/cygwin_adapt.hpp
 include/dar/data_tree.hpp
 include/dar/database.hpp
@@ -89,7 +90,7 @@ include/dar/wrapperlib.hpp
 lib/libdar.a
 lib/libdar.so
 lib/libdar.so.5000
-lib/libdar.so.5000.11.1
+lib/libdar.so.5000.12.1
 libdata/pkgconfig/libdar.pc
 man/man1/dar.1.gz
 man/man1/dar_cp.1.gz
