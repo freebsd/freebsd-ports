@@ -171,6 +171,7 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/thirdparty/moonscript/util.lua
 %%DATADIR%%/game/thirdparty/moonscript/version.lua
 %%DATADIR%%/game/thirdparty/remdebug/engine.lua
+%%DATADIR%%/game/thirdparty/sha1.lua
 %%DATADIR%%/game/thirdparty/slt2.lua
 %%DATADIR%%/game/thirdparty/socket.lua
 %%DATADIR%%/game/thirdparty/socket/ftp.lua
