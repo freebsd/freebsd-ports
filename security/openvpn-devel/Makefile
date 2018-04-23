@@ -3,7 +3,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		201811
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		security net
 MASTER_SITES=		https://secure-computing.net/files/openvpn/ \
 			ftp://ftp2.secure-computing.net/pub/FreeBSD/openvpn-devel/
