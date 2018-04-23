@@ -889,6 +889,7 @@
     SUBDIR += redigo
     SUBDIR += redis
     SUBDIR += redis-devel
+    SUBDIR += redisdesktopmanager
     SUBDIR += retcl
     SUBDIR += riak
     SUBDIR += riak2
