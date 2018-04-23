@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fdk-aac
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
@@ -19,8 +19,8 @@ NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 LIBS+=		-lm
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 USES=		libtool pathfix
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
