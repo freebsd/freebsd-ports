@@ -1,0 +1,15 @@
+TIMESTAMP = 1524458931
+SHA256 (uglide-RedisDesktopManager-0.9.2_GH0.tar.gz) = da33fe0a0c0bfac775cf581ef8c7b0a4c48e44696d7c16db07f40828169240d8
+SIZE (uglide-RedisDesktopManager-0.9.2_GH0.tar.gz) = 1982837
+SHA256 (benlau-asyncfuture-4579d53_GH0.tar.gz) = ce5a3a4bc61f22f182eb8f932a3736289fc541e7487244fd57c93a141a038fe4
+SIZE (benlau-asyncfuture-4579d53_GH0.tar.gz) = 31928
+SHA256 (RedisDesktop-CrashReporter-3455308_GH0.tar.gz) = fb1a8a6c29b4e4acda5d4f479242a0364bfbddf05a7bd3f4ab353e91cd9b7c4f
+SIZE (RedisDesktop-CrashReporter-3455308_GH0.tar.gz) = 14178
+SHA256 (easylogging-easyloggingpp-f926802_GH0.tar.gz) = 362294c79de7a5dfa76a56cbfcdcaf99e21bbd05b19ef5b76700fd576a2e1ff2
+SIZE (easylogging-easyloggingpp-f926802_GH0.tar.gz) = 463948
+SHA256 (uglide-qredisclient-34f1c5a_GH0.tar.gz) = 1cc99b148a6f8ee9a3cada1c340ceb1f095d7abd8e4b314651cf2655e22bf72d
+SIZE (uglide-qredisclient-34f1c5a_GH0.tar.gz) = 226928
+SHA256 (sijk-qt-unix-signals-d6a1d12_GH0.tar.gz) = 8bbc578430ab2fd6665ff2f2f6fcf402b3346b6d3cdfcc16e8c1d8f5a8f75ea2
+SIZE (sijk-qt-unix-signals-d6a1d12_GH0.tar.gz) = 3792
+SHA256 (redis-hiredis-53c3243_GH0.tar.gz) = 38e38efff19715d5e2f49c77b9db35f7cd005d66ae3d0944630424c64cf3950d
+SIZE (redis-hiredis-53c3243_GH0.tar.gz) = 58204
