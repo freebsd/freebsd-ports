@@ -698,8 +698,8 @@ bin/grafana-server
 %%DATADIR%%/public/app/stores/ViewStore/ViewStore.jest.ts
 %%DATADIR%%/public/app/stores/ViewStore/ViewStore.ts
 %%DATADIR%%/public/app/stores/store.ts
-%%DATADIR%%/public/build/0.62c2e3e7aa607c7f2d09.js
-%%DATADIR%%/public/build/0.62c2e3e7aa607c7f2d09.js.map
+%%DATADIR%%/public/build/0.2ba40e7163b7f9a6ed4b.js
+%%DATADIR%%/public/build/0.2ba40e7163b7f9a6ed4b.js.map
 %%DATADIR%%/public/build/app.a4b7f5a163ea89ff6420.js
 %%DATADIR%%/public/build/app.a4b7f5a163ea89ff6420.js.map
 %%DATADIR%%/public/build/dark.85ebc692c510bae90ebe.js
@@ -710,8 +710,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/grafana.light.css.map
 %%DATADIR%%/public/build/light.2f19b3689dce84d500d8.js
 %%DATADIR%%/public/build/light.2f19b3689dce84d500d8.js.map
-%%DATADIR%%/public/build/manifest.1ec9ab8f9c5b815e1b0d.js
-%%DATADIR%%/public/build/manifest.1ec9ab8f9c5b815e1b0d.js.map
+%%DATADIR%%/public/build/manifest.5ce21936757b311c0c7b.js
+%%DATADIR%%/public/build/manifest.5ce21936757b311c0c7b.js.map
 %%DATADIR%%/public/build/vendor.2c3c591224fb193f7fd3.js
 %%DATADIR%%/public/build/vendor.2c3c591224fb193f7fd3.js.map
 %%DATADIR%%/public/dashboards/default.json
