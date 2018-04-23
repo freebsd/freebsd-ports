@@ -1,6 +1,6 @@
---- setup.py.orig	2018-02-13 06:01:34.000000000 -0500
-+++ setup.py	2018-03-22 09:16:21.606146000 -0400
-@@ -39,10 +39,6 @@
+--- setup.py.orig	2018-04-04 07:58:36 UTC
++++ setup.py
+@@ -39,10 +39,6 @@ else:
          cf.add_section('install')
      except DuplicateSectionError:
          pass
@@ -11,11 +11,13 @@
  
  with open('setup.cfg', 'w') as f:
      cf.write(f)
-@@ -59,16 +55,16 @@
+@@ -58,17 +54,17 @@ else:
+ 
  storage_dirs = []
  
- for subdir in ('whisper', 'ceres', 'rrd', 'log', 'log/webapp'):
+-for subdir in ('whisper/dummy.txt', 'ceres/dummy.txt', 'rrd/dummy.txt', 'log/dummy.txt', 'log/webapp/dummy.txt'):
 -  storage_dirs.append( ('storage/%s' % subdir, []) )
++for subdir in ('whisper', 'ceres', 'rrd', 'log', 'log/webapp'):
 +  storage_dirs.append( ('graphite/storage/%s' % subdir, []) )
  
  webapp_content = defaultdict(list)
@@ -27,11 +29,11 @@
      webapp_content[root].append(filepath)
  
 -conf_files = [ ('conf', glob('conf/*.example')) ]
-+conf_files = [ ('/usr/local/etc/graphite', glob('conf/*.example')) ]
++conf_files = [ ('%%PREFIX%%/etc/graphite', glob('conf/*.example')) ]
  examples = [ ('examples', glob('examples/example-*')) ]
  
  try:
-@@ -108,7 +104,7 @@
+@@ -108,7 +104,7 @@ try:
        package_data={'graphite' :
          ['templates/*', 'local_settings.py.example']},
        scripts=glob('bin/*'),
