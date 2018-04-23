@@ -1,10 +1,5 @@
-bin/mymeta-cpanfile
 bin/cpanfile-dump
-%%PERL5_MAN1%%/cpanfile-dump.1.gz
-%%PERL5_MAN1%%/mymeta-cpanfile.1.gz
-%%PERL5_MAN3%%/Module::CPANfile.3.gz
-%%PERL5_MAN3%%/cpanfile-faq.3.gz
-%%PERL5_MAN3%%/cpanfile.3.gz
+bin/mymeta-cpanfile
 %%SITE_PERL%%/Module/CPANfile.pm
 %%SITE_PERL%%/Module/CPANfile/Environment.pm
 %%SITE_PERL%%/Module/CPANfile/Prereq.pm
@@ -12,3 +7,8 @@ bin/cpanfile-dump
 %%SITE_PERL%%/Module/CPANfile/Requirement.pm
 %%SITE_PERL%%/cpanfile-faq.pod
 %%SITE_PERL%%/cpanfile.pod
+%%PERL5_MAN1%%/cpanfile-dump.1.gz
+%%PERL5_MAN1%%/mymeta-cpanfile.1.gz
+%%PERL5_MAN3%%/Module::CPANfile.3.gz
+%%PERL5_MAN3%%/cpanfile-faq.3.gz
+%%PERL5_MAN3%%/cpanfile.3.gz
