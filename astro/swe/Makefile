@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swe
-PORTVERSION=	2.06
+PORTVERSION=	2.07.01
 CATEGORIES=	astro devel
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/
 DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}
@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/src
 USES=		gmake
 ALL_TARGET=	#
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 
