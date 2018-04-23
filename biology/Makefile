@@ -82,6 +82,7 @@
     SUBDIR += p5-transdecoder
     SUBDIR += paml
     SUBDIR += pbbam
+    SUBDIR += pbcopper
     SUBDIR += pbseqan
     SUBDIR += pear-merger
     SUBDIR += phrap
