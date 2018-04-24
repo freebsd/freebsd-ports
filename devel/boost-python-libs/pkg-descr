@@ -3,4 +3,4 @@ C++. It allows you to quickly and seamlessly expose C++ classes
 functions and objects to Python, and vice-versa, using no special
 tools -- just your C++ compiler.
 
-WWW: http://www.boost.org/
+WWW: https://www.boost.org/
