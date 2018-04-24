@@ -71,6 +71,15 @@ https://github.com/renpy/renpy/commit/4aac7ca
  
              if (flush_complete)
                  break;
+@@ -836,7 +837,7 @@ static int audio_decode_frame(VideoState *is, double *
+ 
+             if (!got_frame) {
+                 /* stop sending empty packets if the decoder is finished */
+-                if (!pkt_temp->data && dec->codec->capabilities & CODEC_CAP_DELAY)
++                if (!pkt_temp->data && dec->codec->capabilities & AV_CODEC_CAP_DELAY)
+                     flush_complete = 1;
+                 continue;
+             }
 @@ -1231,9 +1232,9 @@ static int stream_component_open(VideoSt
      /* prepare audio output */
      if (enc->codec_type == AVMEDIA_TYPE_AUDIO) {
@@ -83,6 +92,15 @@ https://github.com/renpy/renpy/commit/4aac7ca
          }
      }
  
+@@ -1242,7 +1243,7 @@ static int stream_component_open(VideoState *is, int s
+     enc->debug = debug;
+     enc->workaround_bugs = workaround_bugs;
+     enc->idct_algo= idct;
+-    if(fast) enc->flags2 |= CODEC_FLAG2_FAST;
++    if(fast) enc->flags2 |= AV_CODEC_FLAG2_FAST;
+     enc->skip_frame= skip_frame;
+     enc->skip_idct= skip_idct;
+     enc->skip_loop_filter= skip_loop_filter;
 @@ -1633,7 +1634,7 @@ void ffpy_stream_close(VideoState *is)
      for(i=0; i<VIDEO_PICTURE_QUEUE_SIZE; i++) {
          vp = &is->pictq[i];
