@@ -64,7 +64,4 @@ do-test-TEST-on:
 
 pre-install-TEST-on: do-test-TEST-on
 
-post-install:
-	@${RM} -r ${STAGEDIR}${PREFIX}/include/CL
-
 .include <bsd.port.mk>

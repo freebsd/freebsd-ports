@@ -1,3 +1,14 @@
+@comment include/CL/cl.h
+@comment include/CL/cl_d3d10.h
+@comment include/CL/cl_d3d11.h
+@comment include/CL/cl_dx9_media_sharing.h
+@comment include/CL/cl_egl.h
+@comment include/CL/cl_ext.h
+@comment include/CL/cl_gl.h
+@comment include/CL/cl_gl_ext.h
+include/CL/cl_intel.h
+@comment include/CL/cl_platform.h
+@comment include/CL/opencl.h
 etc/OpenCL/vendors/intel-beignet.icd
 lib/beignet/beignet.bc
 lib/beignet/beignet.pch
