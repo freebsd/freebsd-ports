@@ -2,6 +2,7 @@
 
 PORTNAME=	aqbanking
 PORTVERSION=	5.7.8
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=217&file=02&dummy=/
 
@@ -38,17 +39,13 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 DOXYGEN_CONFIGURE_ENABLE=	full-doc
 
 EBICS_DESC=		Enable EBICS backend
-EBICS_LIB_DEPENDS=	libxmlsec1-gnutls.so:security/xmlsec1
+EBICS_LIB_DEPENDS=	libxmlsec1.so:security/xmlsec1
 EBICS_USE=		GNOME=libxml2,libxslt
-EBICS_CONFIGURE_OFF=	--with-backends="aqhbci aqnone aqofxconnect"
+EBICS_CONFIGURE_OFF=	--with-backends="aqhbci aqnone aqofxconnect aqpaypal"
 
 KTOBLZCHECK_DESC=	Enable KtoBlzCheck support
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEBICS} && !exists(${LOCALBASE}/libdata/pkgconfig/xmlsec1-gnutls.pc)
-IGNORE=		(Re)Install security/xmlsec1 with the GNUTLS option ON
-.endif
 
 .if ${PORT_OPTIONS:MKTOBLZCHECK} || exists(${LOCALBASE}/lib/libktoblzcheck.so)
 LIB_DEPENDS+=	libktoblzcheck.so:finance/ktoblzcheck
@@ -57,6 +54,12 @@ LIB_DEPENDS+=	libktoblzcheck.so:finance/ktoblzcheck
 .if ${PORT_OPTIONS:MDOCS} && !${PORT_OPTIONS:MDOXYGEN}
 PORTDOCS=	*
 .endif
+
+pre-configure-EBICS-on:
+	@(if [ ! -e ${LOCALBASE}/libdata/pkgconfig/xmlsec1-gnutls.pc ] ; then \
+	${ECHO_MSG} "(Re)Install security/xmlsec1 with the GNUTLS option ON" ; \
+	exit 1; \
+	fi)
 
 post-build-DOXYGEN-on:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} srcdoc
