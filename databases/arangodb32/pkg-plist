@@ -747,6 +747,7 @@ sbin/arangod
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/config.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/core/assertions.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/interface/assert.js
+%%DATADIR%%/js/node/node_modules/chai/lib/chai/interface/expect.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/interface/should.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/utils/addChainableMethod.js
 %%DATADIR%%/js/node/node_modules/chai/lib/chai/utils/addMethod.js
@@ -853,6 +854,10 @@ sbin/arangod
 %%DATADIR%%/js/node/node_modules/error-stack-parser/node_modules/stackframe/package.json
 %%DATADIR%%/js/node/node_modules/error-stack-parser/node_modules/stackframe/stackframe.js
 %%DATADIR%%/js/node/node_modules/error-stack-parser/package.json
+%%DATADIR%%/js/node/node_modules/expect.js/History.md
+%%DATADIR%%/js/node/node_modules/expect.js/README.md
+%%DATADIR%%/js/node/node_modules/expect.js/index.js
+%%DATADIR%%/js/node/node_modules/expect.js/package.json
 %%DATADIR%%/js/node/node_modules/extendible/.travis.yml
 %%DATADIR%%/js/node/node_modules/extendible/README.md
 %%DATADIR%%/js/node/node_modules/extendible/example/index.js

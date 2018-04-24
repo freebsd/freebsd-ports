@@ -3,11 +3,11 @@
 
 PORTNAME=	arangodb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.10
+DISTVERSION=	3.2.13
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	32
 
-MAINTAINER=	galu@packetdam.com
+MAINTAINER=	dev@dudu.ro
 COMMENT=	ArangoDB is a distributed NoSQL database with multiple data models
 
 LICENSE=	APACHE20

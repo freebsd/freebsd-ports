@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-11-15 11:23:07 UTC
+--- CMakeLists.txt.orig	2018-04-11 15:16:11 UTC
 +++ CMakeLists.txt
 @@ -38,9 +38,9 @@ if (NOT CMAKE_OSX_DEPLOYMENT_TARGET)
  endif ()
@@ -12,7 +12,7 @@
  endif ()
  
  # required for clang completion in editors
-@@ -364,7 +364,7 @@ if (CMAKE_COMPILER_IS_GNUCC OR APPLE)
+@@ -377,7 +377,7 @@ if (CMAKE_COMPILER_IS_GNUCC OR APPLE)
  endif ()
  
  if (CMAKE_COMPILER_IS_CLANG)
@@ -21,27 +21,23 @@
      set(BASE_CXX_FLAGS "${BASE_CXX_FLAGS} -stdlib=libc++")
      add_definitions("-Wno-deprecated-declarations")
    else ()
-@@ -498,7 +498,11 @@ if (USE_BACKTRACE)
-   if (MSVC)
-     set(BT_LIBS "Dbghelp" CACHE path "Debug Helper libraries")
-   else ()
--    set(BT_LIBS "" CACHE path "Debug Helper libraries")
-+    if (FREEBSD)
-+      set(BT_LIBS execinfo)
-+    else ()
-+      set(BT_LIBS "" CACHE path "Debug Helper libraries")
-+    endif ()
-   endif ()
+@@ -483,7 +483,7 @@ else ()
  
-   add_definitions("-DARANGODB_ENABLE_BACKTRACE=1")
-@@ -573,7 +577,9 @@ endif ()
+   include(VcMacros)
+ 
+-  option(USE_OPTIMIZE_FOR_ARCHITECTURE "try to determine CPU architecture" ON)
++  option(USE_OPTIMIZE_FOR_ARCHITECTURE "try to determine CPU architecture" OFF)
+ 
+   if (USE_OPTIMIZE_FOR_ARCHITECTURE)
+     # mop: core2 (merom) is our absolute minimum!
+@@ -594,9 +594,7 @@ endif ()
  ################################################################################
  
  if (NOT WINDOWS)
 -  set(SYS_LIBS ${SYS_LIBS} resolv)
-+  if (NOT FREEBSD)
-+    set(SYS_LIBS ${SYS_LIBS} resolv)
-+  endif ()
- 
-   if (NOT DARWIN)
+-
+-  if (NOT DARWIN)
++  if (NOT DARWIN OR FREEBSD)
      set(SYS_LIBS ${SYS_LIBS} rt)
+   endif ()
+ endif ()
