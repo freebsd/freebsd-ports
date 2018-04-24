@@ -1,3 +1,5 @@
 TIMESTAMP = 1504104262
 SHA256 (pianobar-2017.08.30.tar.bz2) = ec14db6cf1a7dbc1d8190b5ca0d256021e970587bcdaeb23904d4bca71a04674
 SIZE (pianobar-2017.08.30.tar.bz2) = 46664
+SHA256 (38b16f9957a7.patch) = cc90b0f0cd7b02a1a5470af2cb60e5dc6f45bcbc2302faba6502f2f6c9e73bf0
+SIZE (38b16f9957a7.patch) = 1040
