@@ -2,6 +2,7 @@
 
 PORTNAME=	gitlab-pages
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
