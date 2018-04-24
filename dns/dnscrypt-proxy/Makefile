@@ -1,4 +1,4 @@
-# Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
+# Created by: Leo Vandewoestijne <freebsd@dns.company>
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	LOCAL/dbaio/${PORTNAME}/
 
-MAINTAINER=	freebsd@dns-lab.com
+MAINTAINER=	freebsd@dns.company
 COMMENT=	Boost privacy and security of DNS
 
 LICENSE=	MIT

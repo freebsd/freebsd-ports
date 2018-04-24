@@ -1,4 +1,4 @@
-# Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
+# Created by: Leo Vandewoestijne <freebsd@dns.company>
 # $FreeBSD$
 
 PORTNAME=		fstrm
@@ -6,7 +6,7 @@ PORTVERSION=		0.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 
-MAINTAINER=		freebsd@dns-lab.com
+MAINTAINER=		freebsd@dns.company
 COMMENT=		Implementation of the Frame Streams data transport protocol in C
 
 LICENSE=		APACHE20

@@ -1,4 +1,4 @@
-# Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
+# Created by: Leo Vandewoestijne <freebsd@dns.company>
 # $FreeBSD$
 
 PORTNAME=	knot
@@ -9,7 +9,7 @@ MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	freebsd@dns-lab.com
+MAINTAINER=	freebsd@dns.company
 COMMENT=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
