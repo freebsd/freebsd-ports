@@ -10,14 +10,19 @@ DISTNAME=	${DIST_VER}
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Simple and easy to use wiki, no database required
 
-LICENSE=	GPLv2
+LICENSE=			BSD3CLAUSE GPLv2 GPLv2+ GPLv3 MIT
+LICENSE_COMB=			multi
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/vendor/simplepie/simplepie/LICENSE.txt
+LICENSE_FILE_GPLv2=		${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2+ =		${WRKSRC}/vendor/geshi/geshi/LICENSE
+LICENSE_FILE_GPLv3=		${WRKSRC}/vendor/marcusschwarz/lesserphp/LICENSE
+LICENSE_FILE_MIT=		${WRKSRC}/vendor/composer/LICENSE
 
-DIST_VER=	${PORTNAME}-2017-02-19e
+DIST_VER=	${PORTNAME}-2018-04-22
+USES=		cpe tar:tgz php:web
 USE_PHP=	gd mbstring openssl pcre session xml zlib
 NO_ARCH=	YES
 NO_BUILD=	YES
-
-USES=		cpe tar:tgz php:web
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}
