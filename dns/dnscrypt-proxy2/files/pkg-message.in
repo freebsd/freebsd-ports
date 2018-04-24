@@ -3,8 +3,15 @@ Version 2 of dnscrypt-proxy is written in Go and therefore isn't capable
 of dropping privileges after binding to a low port on FreeBSD.
 
 By default, this port's daemon will listen on port 5353 (TCP/UDP) as the
-%%USER%% user. It's still possible to bind it and listen on port
-53 (TCP/UDP), but it's not recommended.
+%%USER%% user.
+
+It's possible to bind it and listen on port 53 (TCP/UDP) with mac_portacl(4)
+kernel module (network port access control policy). For this add
+dnscrypt_proxy_mac_portacl_enable=YES in your rc.conf. The dnscrypt-proxy
+startup script will load mac_portacl and add a rule where %%USER%% user will
+be able to bind on port 53 (TCP/UDP). This port can be changed by
+dnscrypt_proxy_mac_portacl_port variable in your rc.conf. You also need to
+change dnscrypt-proxy config file to use port 53.
 
 Below are a few examples on how to redirect local connections from port
 5353 to 53.
