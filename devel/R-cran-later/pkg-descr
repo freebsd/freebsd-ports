@@ -1,0 +1,4 @@
+Executes arbitrary R or C functions some time after the current
+time, after the R execution stack has emptied.
+
+WWW: https://cran.r-project.org/web/packages/later/
