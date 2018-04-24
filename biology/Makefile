@@ -128,6 +128,7 @@
     SUBDIR += trimadap
     SUBDIR += trimmomatic
     SUBDIR += ugene
+    SUBDIR += unanimity
     SUBDIR += vcftools
     SUBDIR += vcflib
     SUBDIR += velvet
