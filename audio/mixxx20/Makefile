@@ -1,4 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
 
 PORTNAME=	mixxx
@@ -7,14 +6,13 @@ DISTVERSIONSUFFIX=	-src
 PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
+PKGNAMESUFFIX=	20
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	DJ mixing application
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-IGNORE=		it will be updated to mixxx 2.1.0. FLAVOR needs portmgr approval
 
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libFLAC.so:audio/flac \

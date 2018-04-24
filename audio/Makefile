@@ -515,6 +515,7 @@
     SUBDIR += minitunes
     SUBDIR += mixer.app
     SUBDIR += mixmos
+    SUBDIR += mixxx20
     SUBDIR += mixxx
     SUBDIR += mma
     SUBDIR += moc

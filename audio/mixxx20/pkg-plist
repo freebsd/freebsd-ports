@@ -1,0 +1,8 @@
+bin/mixxx
+%%FAAD%%lib/mixxx/plugins/soundsource/libsoundsourcem4a.so
+%%WAVPACK%%lib/mixxx/plugins/soundsource/libsoundsourcewv.so
+lib/mixxx/plugins/vamp/libmixxxminimal.so
+share/appdata/mixxx.appdata.xml
+share/applications/mixxx.desktop
+share/pixmaps/mixxx-icon.png
+@dir lib/mixxx/plugins/soundsource
