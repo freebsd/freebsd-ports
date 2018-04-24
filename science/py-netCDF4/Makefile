@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	netCDF4
-PORTVERSION=	1.2.9
+PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	rel
-PORTREVISION=	2
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +13,8 @@ COMMENT=	Python Interface to the NetCDF Library (versions 3 and 4)
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		${LOCALBASE}/bin/cython:lang/cython
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libnetcdf.so:science/netcdf
 RUN_DEPENDS:=	${BUILD_DEPENDS}
