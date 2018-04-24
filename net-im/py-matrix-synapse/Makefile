@@ -4,7 +4,7 @@
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.27.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -82,7 +82,8 @@ LDAP_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-synapse-ldap3>=0.1:net/py-matri
 PGSQL_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${FLAVOR}
 SQLITE_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
 
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/synapse/python_dependencies.py
 
 do-test:
 	# -epy27 added to skip running python packaging and other dist tests
