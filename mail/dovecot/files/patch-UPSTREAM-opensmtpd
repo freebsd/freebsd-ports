@@ -1,0 +1,71 @@
+From fbed9168dc3b104b09bd748409aec902328cd8e5 Mon Sep 17 00:00:00 2001
+From: Stephan Bosch <stephan.bosch@dovecot.fi>
+Date: Tue, 10 Apr 2018 02:36:44 +0200
+Subject: [PATCH] lib-mail: message-address: Fix assert panic occurring in
+ message_address_parse_path() when no opening `<' is found.
+
+Panic was:
+
+Panic: file message-address.c: line 147 (parse_angle_addr): assertion failed: (*ctx->parser.data == '<')
+---
+ src/lib-mail/message-address.c      |  2 ++
+ src/lib-mail/test-message-address.c | 28 ++++++++++++++++++++++++++++
+ 2 files changed, 30 insertions(+)
+
+diff --git a/src/lib-mail/message-address.c b/src/lib-mail/message-address.c
+index 172a707d49..f7cc27f48e 100644
+--- src/lib-mail/message-address.c
++++ src/lib-mail/message-address.c
+@@ -424,6 +424,8 @@ message_address_parse_path_real(pool_t pool, const unsigned char *data,
+ 
+ 	if (rfc822_skip_lwsp(&ctx.parser) <= 0)
+ 		return -1;
++	if (*ctx.parser.data != '<')
++		return -1;
+ 	if ((ret=parse_angle_addr(&ctx)) < 0 ||
+ 		(ctx.addr.mailbox != NULL && ctx.addr.domain == NULL)) {
+ 		ctx.addr.invalid_syntax = TRUE;
+diff --git a/src/lib-mail/test-message-address.c b/src/lib-mail/test-message-address.c
+index c1b5566d91..21084deec9 100644
+--- src/lib-mail/test-message-address.c
++++ src/lib-mail/test-message-address.c
+@@ -395,11 +395,39 @@ static void test_message_address_path(void)
+ 	test_end();
+ }
+ 
++static void test_message_address_path_invalid(void)
++{
++	static const char *tests[] = {
++		">",
++		" > ",
++		"user@domain",
++		"  user@domain  ",
++		"user@domain>",
++		"  user@domain>  ",
++		"<user>",
++		"<@route@route2:user>",
++	};
++	const struct message_address *addr;
++	unsigned int i;
++
++	test_begin("message address path invalid");
++
++	for (i = 0; i < N_ELEMENTS(tests); i++) {
++		const char *test = tests[i];
++		int ret;
++
++		ret = test_parse_path(test, &addr);
++		test_assert_idx(ret < 0, i);
++	}
++	test_end();
++}
++
+ int main(void)
+ {
+ 	static void (*const test_functions[])(void) = {
+ 		test_message_address,
+ 		test_message_address_path,
++		test_message_address_path_invalid,
+ 		NULL
+ 	};
+ 	return test_run(test_functions);
