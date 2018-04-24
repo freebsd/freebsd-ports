@@ -18,6 +18,7 @@ include/opendht/log_enable.h
 include/opendht/network_engine.h
 include/opendht/node.h
 include/opendht/node_cache.h
+include/opendht/proxy.h
 include/opendht/rate_limiter.h
 include/opendht/rng.h
 include/opendht/routing_table.h
@@ -31,7 +32,7 @@ lib/cmake/opendht/opendhtConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/opendht/opendhtConfig.cmake
 lib/cmake/opendht/opendhtConfigVersion.cmake
 lib/libopendht.so
-lib/libopendht.so.1
-lib/libopendht.so.1.6.1
+lib/libopendht.so.%%SHL1%%
+lib/libopendht.so.%%SHL3%%
 libdata/pkgconfig/opendht.pc
 man/man1/dhtnode.1.gz
