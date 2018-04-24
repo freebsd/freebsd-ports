@@ -9,14 +9,16 @@ Remove useless braces around variable-names.
 
 	-mi
 
---- foomatic-getpjloptions.in	2015-02-14 07:21:56.000000000 -0500
-+++ foomatic-getpjloptions.in	2015-02-15 07:36:23.000000000 -0500
-@@ -1,3 +1,3 @@
+--- foomatic-getpjloptions.in.orig	2018-03-02 19:15:50 UTC
++++ foomatic-getpjloptions.in
+@@ -1,4 +1,4 @@
 -#!@SH@
 +#!/bin/sh
  #
  # Polls PJL options from local or network printers
-@@ -23,6 +23,5 @@
+ #
+@@ -22,8 +22,7 @@
+ 
  NC=@NC@
  CAT=@CAT@
 -PRINTF=@PRINTF@
@@ -24,12 +26,16 @@ Remove useless braces around variable-names.
 +PRINTF=printf	# sh builtin
  
  usage(){
-@@ -63,12 +62,13 @@
+     cat <<EOF ;
+@@ -60,15 +59,16 @@ esac
+ 	$PRINTF "@PJL INFO CONFIG\r\n"
+ 	$PRINTF "\033%%-12345X"
+     ) | if [ ${2:-X} != X ]; then
 -	# We have two arguments, do ethernet printer request
 +	# We have two arguments, do network printer request
  	# Poll the printer's answer and filter out the newpage characters
-+	# as well as the carriage-returns (\r or, in octal, 015)
 -	${NC} -w 3 ${1} ${2} 2>/dev/null | ${PERL} -p -e "s/\014//"
++	# as well as the carriage-returns (\r or, in octal, 015)
 +	$NC -w 3 $1 $2 2>/dev/null | tr -d "\015\014"
      else
  	# We have one argument, do local printer request

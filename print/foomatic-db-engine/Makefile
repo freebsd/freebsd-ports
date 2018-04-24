@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foomatic-db-engine
-PORTVERSION=	4.0.12
-PORTREVISION=	1
+PORTVERSION=	4.0.13
 PORTEPOCH=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
@@ -15,8 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USE_GNOME=	libxml2
 USES=		gmake perl5
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/ \
 		LIB_CUPS=${LOCALBASE}/libexec/cups \
