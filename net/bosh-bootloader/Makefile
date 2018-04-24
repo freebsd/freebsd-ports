@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh-bootloader
-PORTVERSION=	6.6.4
+PORTVERSION=	6.6.5
 CATEGORIES=	net sysutils
 
 MAINTAINER=	dumbbell@FreeBSD.org
