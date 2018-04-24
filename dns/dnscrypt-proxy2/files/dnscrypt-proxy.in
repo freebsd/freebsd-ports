@@ -19,6 +19,14 @@
 #
 # dnscrypt_proxy_uid (str)	User to run dnscrypt_proxy as
 #				Default: %%USER%%
+#
+# dnscrypt_proxy_mac_portacl_enable (bool)
+#				Load mac_portacl module (network port access control policy)
+#				Default: NO
+#
+# dnscrypt_proxy_mac_portacl_port (int)
+#				Port used in the mac_portacl rule
+#				Default: 53
 
 . /etc/rc.subr
 
@@ -33,10 +41,65 @@ load_rc_config $name
 : ${dnscrypt_proxy_conf:="%%ETCDIR%%/dnscrypt-proxy.toml"}
 : ${dnscrypt_proxy_suexec:="NO"}
 : ${dnscrypt_proxy_uid:="%%USER%%"}
+: ${dnscrypt_proxy_mac_portacl_enable:="NO"}
+: ${dnscrypt_proxy_mac_portacl_port:="53"}
 
 checkyesno dnscrypt_proxy_suexec && dnscrypt_proxy_uid="root"
 
 command="/usr/sbin/daemon"
 command_args="-p ${pidfile} -u ${dnscrypt_proxy_uid} -f ${procname} -config ${dnscrypt_proxy_conf}"
+start_precmd="dnscrypt_proxy_precmd"
+
+dnscrypt_proxy_precmd() {
+	local reservedlow reservedhigh rules_current rules_dnscrypt rport ruid
+
+	if checkyesno dnscrypt_proxy_mac_portacl_enable ; then
+
+		# Check and load mac_portacl module
+		if ! kldstat -m mac_portacl >/dev/null 2>&1 ; then
+			if ! kldload mac_portacl ; then
+				warn "Could not load mac_portacl module."
+				return 1
+			fi
+		fi
+
+		# Check and add mac_portacl rules
+		ruid=$(id -u $dnscrypt_proxy_uid)
+		rport=$dnscrypt_proxy_mac_portacl_port #smaller variable
+		rules_current=$(sysctl -n security.mac.portacl.rules)
+		rules_dnscrypt="uid:${ruid}:tcp:${rport},uid:${ruid}:udp:${rport}"
+		if [ ! $rules_current = "" ]; then
+			if ! echo $rules_current | grep "$rules_dnscrypt" >/dev/null 2>&1 ; then
+				rules_current="${rules_current},${rules_dnscrypt}"
+				if ! sysctl security.mac.portacl.rules="$rules_current" >/dev/null 2>&1 ; then
+					warn "Could not insert mac_portacl rules."
+					return 1
+				fi
+			fi
+		elif ! sysctl security.mac.portacl.rules=$rules_dnscrypt >/dev/null 2>&1 ; then
+			warn "Could not insert mac_portacl rules."
+			return 1
+		fi
+
+		# Check and disable net.inet.ip.portrange.* control
+		reservedlow=$(sysctl -n net.inet.ip.portrange.reservedlow)
+		reservedhigh=$(sysctl -n net.inet.ip.portrange.reservedhigh)
+		if [ ! $reservedlow -eq 0 ]; then
+			if ! sysctl net.inet.ip.portrange.reservedlow=0 >/dev/null 2>&1 ; then
+				warn "Could not change net.inet.ip.portrange.reservedlow."
+				return 1
+			fi
+		fi
+		if [ ! $reservedhigh -eq 0 ]; then
+			if ! sysctl net.inet.ip.portrange.reservedhigh=0 >/dev/null 2>&1 ; then
+				warn "Could not change net.inet.ip.portrange.reservedhigh."
+				return 1
+			fi
+		fi
+
+	fi # dnscrypt_proxy_mac_portacl_enable
+
+	return 0
+}
 
 run_rc_command "$1"
