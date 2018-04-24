@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/ \
 		LOCAL/osa
@@ -143,7 +143,7 @@ HTTP_CONFIGURE_OFF=		--without-http
 HTTP_ADDITION_CONFIGURE_ON=	--with-http_addition_module
 HTTP_AUTH_REQ_CONFIGURE_ON=	--with-http_auth_request_module
 HTTP_CACHE_CONFIGURE_OFF=	--without-http-cache
-HTTP_DAV_CONFIGURE_ARGS=	--with-http_dav_module
+HTTP_DAV_CONFIGURE_ON=		--with-http_dav_module
 HTTP_FLV_CONFIGURE_ON=		--with-http_flv_module
 HTTP_GEOIP_LIB_DEPENDS=		libGeoIP.so:net/GeoIP
 HTTP_GEOIP_VARS=		DSO_BASEMODS+=http_geoip_module
@@ -151,7 +151,7 @@ HTTP_GZIP_STATIC_CONFIGURE_ON=	--with-http_gzip_static_module
 HTTP_GUNZIP_FILTER_CONFIGURE_ON=--with-http_gunzip_module
 HTTP_IMAGE_FILTER_LIB_DEPENDS=	libgd.so:graphics/gd
 HTTP_IMAGE_FILTER_VARS=		DSO_BASEMODS+=http_image_filter_module
-HTTP_MP4_CONFIGURE_ARGS=	--with-http_mp4_module
+HTTP_MP4_CONFIGURE_ON=		--with-http_mp4_module
 HTTP_PERL_CATEGORIES=		perl5
 HTTP_PERL_USES=			perl5
 HTTP_PERL_VARS=			DSO_BASEMODS+=http_perl_module
@@ -298,6 +298,11 @@ post-patch-SFLOW-on:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKSRC_sflow}/ngx_http_sflow_config.h
+
+post-patch-VOD-on:
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
+		${WRKSRC_vod}/config
 
 pre-configure-MODSECURITY-on:
 	( cd ${WRKSRC_MODSECURITY} && \

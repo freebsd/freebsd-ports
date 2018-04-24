@@ -8,11 +8,11 @@ ARRAYVAR_IMPLIES=	DEVEL_KIT
 ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.05:arrayvar
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
 
-AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:1e62670:aws_auth
+AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:f1bcf3b:aws_auth
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
-BROTLI_GH_TUPLE=	eustas:ngx_brotli:6a11744:brotli
+BROTLI_GH_TUPLE=	eustas:ngx_brotli:37ab9b2:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
 CACHE_PURGE_MASTER_SITES=	http://labs.frickle.com/files/:cache_purge
@@ -22,13 +22,14 @@ CACHE_PURGE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_cache_purge-2.3
 CLOJURE_CATEGORIES+=	java
 CLOJURE_USE=		JAVA=yes JAVA_OS=native JAVA_VERSION=1.8 \
 			JAVA_VENDOR=openjdk JAVA_BUILD=yes JAVA_RUN=yes
-CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:v0.4.5:clojure
+CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:1129712:clojure
 CLOJURE_CONFIGURE_ENV=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk8/include/freebsd"
 CLOJURE_VARS=		DSO_EXTMODS+=clojure CLOJURE_SUBDIR=/src/c
 
 CT_IMPLIES=		HTTP_SSL
-CT_GH_TUPLE=		grahamedgecombe:nginx-ct:v1.3.2:ct
+CT_GH_TUPLE=		grahamedgecombe:nginx-ct:93e9884:ct
 CT_VARS=		DSO_EXTMODS+=ct
+CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:c65f5c6:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
@@ -36,7 +37,7 @@ ECHO_VARS=		DSO_EXTMODS+=echo
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
-DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:v0.1.10:drizzle
+DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:b4f94ec:drizzle
 DRIZZLE_CONFIGURE_ON=	--add-module=${WRKSRC_drizzle}
 DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 
@@ -47,7 +48,7 @@ DEVEL_KIT_GH_TUPLE=		simpl:ngx_devel_kit:v0.3.0:devel_kit
 DEVEL_KIT_VARS=			DSO_EXTMODS+=devel_kit
 
 ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
-ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:v0.07:encryptsession
+ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:v0.08:encryptsession
 ENCRYPTSESSION_VARS=		DSO_EXTMODS+=encryptsession
 
 FASTDFS_GH_TUPLE=	happyfish100:fastdfs-nginx-module:85347be:fastdfs
@@ -154,7 +155,7 @@ HTTP_UPLOAD_PROGRESS_GH_TUPLE=	masterzen:nginx-upload-progress-module:afb2d31:up
 HTTP_UPLOAD_PROGRESS_VARS=	DSO_EXTMODS+=uploadprogress
 
 HTTP_UPSTREAM_CHECK_GH_TUPLE=		yaoweibin:nginx_upstream_check_module:9aecf15:upstreamcheck
-HTTP_UPSTREAM_CHECK_CONFIGURE_ARGS=	--add-module=${WRKSRC_upstreamcheck}
+HTTP_UPSTREAM_CHECK_CONFIGURE_ON=	--add-module=${WRKSRC_upstreamcheck}
 HTTP_UPSTREAM_CHECK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_hash_module.c \
 					${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_ip_hash_module.c \
 					${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_least_conn_module.c \
@@ -176,7 +177,7 @@ HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 					libswscale.so:multimedia/ffmpeg
 DA!LIBRESSL_1_0_APIHTTP_VIDEO_THUMBEXTRACTOR_USES=		jpeg
 HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	wandenberg:nginx-video-thumbextractor-module:0.9.0:vte
-HTTP_VIDEO_THUMBEXTRACTOR_CONFIGURE_ARGS=--add-module=${WRKSRC_vte}
+HTTP_VIDEO_THUMBEXTRACTOR_CONFIGURE_ON=	--add-module=${WRKSRC_vte}
 
 HTTP_ZIP_GH_TUPLE=	anthonyryan1:mod_zip:74ef235:mod_zip
 HTTP_ZIP_CONFIGURE_ON=	--add-module=${WRKSRC_mod_zip}
@@ -188,16 +189,16 @@ ICONV_VARS=		DSO_EXTMODS+=iconv
 ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 
 LET_GH_TUPLE=		arut:nginx-let-module:v0.0.4:let
-LET_CONFIGURE_ARGS=	--add-module=${WRKSRC_let}
+LET_CONFIGURE_ON=	--add-module=${WRKSRC_let}
 
 LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.0 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.11:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.13:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
-MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.18:memc
+MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.19:memc
 MEMC_VARS=		DSO_EXTMODS+=memc
 
 MODSECURITY_LIB_DEPENDS=	libapr-1.so:devel/apr1 \
@@ -213,14 +214,14 @@ MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-2.9.2
 
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:www/mod_security3
-MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:c0ae166:modsec
+MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:4cde86b:modsec
 MODSECURITY3_CONFIGURE_ON=	--add-module=${WRKSRC_modsec}
 
 NAXSI_NGINX_VER=	0.55.3
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:7dcacb4:njs
+NJS_GH_TUPLE=		nginx:njs:f910561:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 PASSENGER_NGINX_VER=	5.2.3
@@ -278,7 +279,9 @@ SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:v0.31:srcache
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
 VOD_GH_TUPLE=		kaltura:nginx-vod-module:1.22:vod
+VOD_USE=		GNOME=libxml2
 VOD_VARS=		DSO_EXTMODS+=vod
+VOD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-vod-module-config
 
 VTS_GH_TUPLE=		vozlt:nginx-module-vts:v0.1.15:vts
 VTS_CONFIGURE_ON=	--add-module=${WRKSRC_vts}

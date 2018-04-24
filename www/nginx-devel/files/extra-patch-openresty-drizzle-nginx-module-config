@@ -1,5 +1,5 @@
---- ../drizzle-nginx-module-0.1.10/config.orig	2011-12-30 10:26:53.000000000 +0400
-+++ ../drizzle-nginx-module-0.1.10/config	2011-12-30 10:28:20.000000000 +0400
+--- ../drizzle-nginx-module-b4f94ec/config.orig	2011-12-30 10:26:53.000000000 +0400
++++ ../drizzle-nginx-module-b4f94ec/config	2011-12-30 10:28:20.000000000 +0400
 @@ -22,12 +22,12 @@
  
      if [ $ngx_found = no ]; then
