@@ -1,0 +1,11 @@
+CLIgen is a Command-Line Interface generator written by Olof Hagsand.
+
+Well, actually it is not really a generator, since it does not generate code
+for CLI's. Instead, it builds and interprets datastructures (a parse-tree)
+which a library (libcligen) interprets in runtime. It is fast and efficient
+and helps you develop CLI:s easier. You enter a CLI syntax either in a text
+file, you write callback functions where you call the right library routines.
+The callback functions add the semantics, that is, what the commands in the
+CLI are supposed to do.
+
+WWW: http://cligen.se/

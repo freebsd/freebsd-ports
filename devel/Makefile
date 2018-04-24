@@ -311,6 +311,7 @@
     SUBDIR += cld2
     SUBDIR += clewn
     SUBDIR += clig
+    SUBDIR += cligen
     SUBDIR += clinfo
     SUBDIR += clisp-hyperspec
     SUBDIR += clojure-cider

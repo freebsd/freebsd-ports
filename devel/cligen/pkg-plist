@@ -1,0 +1,15 @@
+include/cligen/cligen.h
+include/cligen/cligen_buf.h
+include/cligen/cligen_cvec.h
+include/cligen/cligen_expand.h
+include/cligen/cligen_gen.h
+include/cligen/cligen_handle.h
+include/cligen/cligen_io.h
+include/cligen/cligen_print.h
+include/cligen/cligen_read.h
+include/cligen/cligen_syntax.h
+include/cligen/cligen_util.h
+include/cligen/cligen_var.h
+lib/libcligen.so
+lib/libcligen.so.3
+lib/libcligen.so.3.7
