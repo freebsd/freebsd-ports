@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-03-30 18:21:52 UTC
++++ CMakeLists.txt
+@@ -196,7 +196,7 @@ IF(USE_TCMALLOC AND CMAKE_BUILD_TYPE STR
+ ENDIF()
+ 
+ # Try to determine the git revision.
+-find_package(Git)
++#find_package(Git)
+ if(Git_FOUND)
+ 	message(STATUS "Git executable: ${GIT_EXECUTABLE}")
+ 	execute_process(COMMAND ${GIT_EXECUTABLE} "log" "--no-color" "-n1" "--date=short" "--pretty=format:%H" WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR} OUTPUT_VARIABLE PIRANHA_GIT_REVISION OUTPUT_STRIP_TRAILING_WHITESPACE ERROR_QUIET)

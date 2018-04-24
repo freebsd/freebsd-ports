@@ -686,6 +686,7 @@
     SUBDIR += py-pandas
     SUBDIR += py-pandas-datareader
     SUBDIR += py-patsy
+    SUBDIR += py-piranha
     SUBDIR += py-plastex
     SUBDIR += py-probstat
     SUBDIR += py-pyasp
