@@ -1,5 +1,6 @@
 https://git.gnome.org/browse/gegl/commit/?id=97067622352e
 https://git.gnome.org/browse/gegl/commit/?id=6d50c42e2c9a
+https://git.gnome.org/browse/gegl/commit/?id=67f14cbbc5d1
 
 --- operations/external/ff-load.c.orig	2012-04-01 11:17:57 UTC
 +++ operations/external/ff-load.c
@@ -39,9 +40,14 @@ https://git.gnome.org/browse/gegl/commit/?id=6d50c42e2c9a
        if (err < 0)
          {
            g_warning ("ff-load: error finding stream info for %s", o->path);
-@@ -312,7 +312,7 @@ prepare (GeglOperation *operation)
-       if (p->codec->capabilities & CODEC_CAP_TRUNCATED)
-         p->enc->flags |= CODEC_FLAG_TRUNCATED;
+@@ -309,10 +309,10 @@ prepare (GeglOperation *operation)
+           g_warning ("codec not found");
+         }
+ 
+-      if (p->codec->capabilities & CODEC_CAP_TRUNCATED)
+-        p->enc->flags |= CODEC_FLAG_TRUNCATED;
++      if (p->codec->capabilities & AV_CODEC_CAP_TRUNCATED)
++        p->enc->flags |= AV_CODEC_FLAG_TRUNCATED;
  
 -      if (avcodec_open (p->enc, p->codec) < 0)
 +      if (avcodec_open2 (p->enc, p->codec, NULL) < 0)
