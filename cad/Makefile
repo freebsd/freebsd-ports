@@ -4,6 +4,7 @@
     COMMENT = CAD tools
 
     SUBDIR += NASTRAN-95
+    SUBDIR += abc
     SUBDIR += admesh
     SUBDIR += adms
     SUBDIR += alliance

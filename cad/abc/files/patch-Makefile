@@ -1,0 +1,18 @@
+--- Makefile.orig	2018-03-30 08:04:05 UTC
++++ Makefile
+@@ -1,6 +1,4 @@
+ 
+-CC   := gcc
+-CXX  := g++
+ LD   := $(CXX)
+ 
+ MSG_PREFIX ?=
+@@ -52,8 +50,6 @@ endif
+ 
+ ARCHFLAGS := $(ARCHFLAGS)
+ 
+-OPTFLAGS  ?= -g -O
+-
+ CFLAGS    += -Wall -Wno-unused-function -Wno-write-strings -Wno-sign-compare $(ARCHFLAGS)
+ ifneq ($(findstring arm,$(shell uname -m)),)
+ 	CFLAGS += -DABC_MEMALIGN=4
