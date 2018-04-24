@@ -1,0 +1,29 @@
+src/video/ffmpeg.c:99:27: error: use of undeclared identifier 'CODEC_FLAG_LOW_DELAY'
+    decoder_ctx->flags |= CODEC_FLAG_LOW_DELAY;
+                          ^
+src/video/sdl.c:43:48: error: use of undeclared identifier 'FF_INPUT_BUFFER_PADDING_SIZE'
+  ffmpeg_buffer = malloc(DECODER_BUFFER_SIZE + FF_INPUT_BUFFER_PADDING_SIZE);
+                                               ^
+
+--- src/video/ffmpeg.c.orig	2018-01-14 14:09:59 UTC
++++ src/video/ffmpeg.c
+@@ -96,7 +96,7 @@ int ffmpeg_init(int videoFormat, int width, int height
+ 
+   if (perf_lvl & LOW_LATENCY_DECODE)
+     // Use low delay single threaded encoding
+-    decoder_ctx->flags |= CODEC_FLAG_LOW_DELAY;
++    decoder_ctx->flags |= AV_CODEC_FLAG_LOW_DELAY;
+ 
+   if (perf_lvl & SLICE_THREADING)
+     decoder_ctx->thread_type = FF_THREAD_SLICE;
+--- src/video/sdl.c.orig	2018-01-14 14:09:59 UTC
++++ src/video/sdl.c
+@@ -40,7 +40,7 @@ static int sdl_setup(int videoFormat, int width, int h
+     return -1;
+   }
+   
+-  ffmpeg_buffer = malloc(DECODER_BUFFER_SIZE + FF_INPUT_BUFFER_PADDING_SIZE);
++  ffmpeg_buffer = malloc(DECODER_BUFFER_SIZE + AV_INPUT_BUFFER_PADDING_SIZE);
+   if (ffmpeg_buffer == NULL) {
+     fprintf(stderr, "Not enough memory\n");
+     ffmpeg_destroy();
