@@ -15,16 +15,18 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.gpl3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.lgpl3
 
 # build only checks that boost, gmp, mpfr headers are installed, and in the runtime they are included, shared libs are never used directly
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/numeric/conversion/cast.hpp:devel/boost-libs \
-		${LOCALBASE}/include/gmp.h:math/gmp \
-		${LOCALBASE}/include/mpfr.h:math/mpfr
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${HEADER_DEPENDS}
+RUN_DEPENDS=	${HEADER_DEPENDS}
 
 USES=		cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+HEADER_DEPENDS=	${LOCALBASE}/include/boost/numeric/conversion/cast.hpp:devel/boost-libs \
+		${LOCALBASE}/include/gmp.h:math/gmp \
+		${LOCALBASE}/include/mpfr.h:math/mpfr
 
 TEST_USES=	compiler:c++14-lang
 
