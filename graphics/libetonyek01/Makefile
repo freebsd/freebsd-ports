@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libetonyek
-PORTVERSION=	0.1.7
-PORTREVISION=	2
+PORTVERSION=	0.1.8
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LODEV/${PORTNAME}
@@ -30,10 +29,4 @@ USES=		autoreconf compiler:c++11-lib gmake libtool pathfix \
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-.if ${OSREL:R} < 11
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-libc++-memory
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
