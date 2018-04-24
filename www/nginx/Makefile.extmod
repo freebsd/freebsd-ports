@@ -29,6 +29,7 @@ CLOJURE_VARS=		DSO_EXTMODS+=clojure CLOJURE_SUBDIR=/src/c
 CT_IMPLIES=		HTTP_SSL
 CT_GH_TUPLE=		grahamedgecombe:nginx-ct:v1.3.2:ct
 CT_VARS=		DSO_EXTMODS+=ct
+CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:46334b3:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
@@ -159,7 +160,7 @@ HTTP_UPLOAD_PROGRESS_GH_TUPLE=	masterzen:nginx-upload-progress-module:afb2d31:up
 HTTP_UPLOAD_PROGRESS_VARS=	DSO_EXTMODS+=uploadprogress
 
 HTTP_UPSTREAM_CHECK_GH_TUPLE=		yaoweibin:nginx_upstream_check_module:9aecf15:upstreamcheck
-HTTP_UPSTREAM_CHECK_CONFIGURE_ARGS=	--add-module=${WRKSRC_upstreamcheck}
+HTTP_UPSTREAM_CHECK_CONFIGURE_ON=	--add-module=${WRKSRC_upstreamcheck}
 HTTP_UPSTREAM_CHECK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_hash_module.c \
 					${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_ip_hash_module.c \
 					${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_least_conn_module.c \
@@ -181,7 +182,7 @@ HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 					libswscale.so:multimedia/ffmpeg
 DA!LIBRESSL_1_0_APIHTTP_VIDEO_THUMBEXTRACTOR_USES=		jpeg
 HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	wandenberg:nginx-video-thumbextractor-module:0.9.0:vte
-HTTP_VIDEO_THUMBEXTRACTOR_CONFIGURE_ARGS=--add-module=${WRKSRC_vte}
+HTTP_VIDEO_THUMBEXTRACTOR_CONFIGURE_ON=--add-module=${WRKSRC_vte}
 
 HTTP_ZIP_GH_TUPLE=	anthonyryan1:mod_zip:74ef235:mod_zip
 HTTP_ZIP_CONFIGURE_ON=	--add-module=${WRKSRC_mod_zip}
@@ -193,7 +194,7 @@ ICONV_VARS=		DSO_EXTMODS+=iconv
 ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 
 LET_GH_TUPLE=		arut:nginx-let-module:v0.0.4:let
-LET_CONFIGURE_ARGS=	--add-module=${WRKSRC_let}
+LET_CONFIGURE_ON=	--add-module=${WRKSRC_let}
 
 LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
@@ -219,7 +220,7 @@ MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure \
 MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-2.9.1
 
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:www/mod_security3
-MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:c0ae166:modsec
+MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:4cde86b:modsec
 MODSECURITY3_CONFIGURE_ON=	--add-module=${WRKSRC_modsec}
 
 NAXSI_NGINX_VER=	0.55.3
@@ -229,7 +230,7 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NJS_GH_TUPLE=		nginx:njs:4ed8a0b:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
-PASSENGER_NGINX_VER=	5.2.1
+PASSENGER_NGINX_VER=	5.2.3
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USE=		ruby=yes
 PASSENGER_BUILD_DEPENDS=	${LOCALBASE}/bin/rake:devel/rubygem-rake
