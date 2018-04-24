@@ -249,8 +249,9 @@ include/CLHEP/Random/StaticRandomStates.h
 include/CLHEP/Random/TripleRand.h
 include/CLHEP/Random/defs.h
 include/CLHEP/Random/engineIDulong.h
-include/CLHEP/Random/mixmax.h
-include/CLHEP/Random/mixmax_skip_N256.icc
+include/CLHEP/Random/mixmax_skip_N17.icc
+include/CLHEP/Random/mixmax_skip_N240.icc
+include/CLHEP/Random/mixmax_skip_N8.icc
 include/CLHEP/RandomObjects/RandMultiGauss.h
 include/CLHEP/RandomObjects/RandomVector.h
 include/CLHEP/RandomObjects/RandomVector.icc
