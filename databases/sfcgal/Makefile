@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sfcgal
-PORTVERSION=	1.3.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+DISTVERSION=	1.3.5
 CATEGORIES=	databases math graphics
 
 MAINTAINER=	lbartoletti@tuxfamily.org
@@ -18,12 +17,13 @@ LIB_DEPENDS=	libCGAL.so:math/cgal \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
+USES=		cmake compiler libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	Oslandia
 GH_PROJECT=	SFCGAL
-
-USES=		cmake compiler libtool
 compiler_ARGS=	c++0x
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	SHL3=${PORTVERSION} SHL1=${PORTVERSION:R:R}
 
 .include <bsd.port.mk>

@@ -105,5 +105,5 @@ include/SFCGAL/triangulate/triangulate2DZ.h
 include/SFCGAL/triangulate/triangulatePolygon.h
 include/SFCGAL/version.h
 lib/libSFCGAL.so
-lib/libSFCGAL.so.1
-lib/libSFCGAL.so.1.3.2
+lib/libSFCGAL.so.%%SHL1%%
+lib/libSFCGAL.so.%%SHL3%%
