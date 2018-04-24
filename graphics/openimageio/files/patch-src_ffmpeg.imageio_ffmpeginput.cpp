@@ -1,4 +1,4 @@
-https://github.com/OpenImageIO/oiio/pull/1926
+https://github.com/OpenImageIO/oiio/commit/810a0235837d
 
 --- src/ffmpeg.imageio/ffmpeginput.cpp.orig	2017-08-31 04:36:04 UTC
 +++ src/ffmpeg.imageio/ffmpeginput.cpp
