@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.5.3
+DISTVERSION=	1.6.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -20,6 +20,9 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	influxdata:DEFAULT
 GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
+        tidwall:gjson:01f00f1:gjson/src/github.com/tidwall/gjson \
+        tidwall:match:1731857:match/src/github.com/tidwall/match \
+        go-redis:redis:877867d:redis/src/github.com/go-redis/redis \
 		aerospike:aerospike-client-go:95e1ad7:aerospike_client_go/src/github.com/aerospike/aerospike-client-go \
 		amir:raidman:c74861f:raidman/src/github.com/amir/raidman \
 		apache:thrift:4aaa92ec:thrift/src/github.com/apache/thrift \
@@ -82,7 +85,7 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		rcrowley:go-metrics:1f30fe9:go_metrics/src/github.com/rcrowley/go-metrics \
 		samuel:go-zookeeper:1d7be4e:go_zookeeper/src/github.com/samuel/go-zookeeper \
 		satori:go.uuid:5bf94b6:go_uuid/src/github.com/satori/go.uuid \
-		shirou:gopsutil:384a551:gopsutil/src/github.com/shirou/gopsutil \
+		shirou:gopsutil:a5c2888:gopsutil/src/github.com/shirou/gopsutil \
 		shirou:w32:3c9377f:w32/src/github.com/shirou/w32 \
 		Shopify:sarama:3b1b388:sarama/src/github.com/Shopify/sarama \
 		Sirupsen:logrus:61e43dc:logrus/src/github.com/Sirupsen/logrus \
@@ -119,7 +122,7 @@ PLIST_SUB=	TELEGRAF_PIDDIR=${TELEGRAF_PIDDIR}
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 	@cd ${WRKSRC} && ${MV} appveyor.yml CHANGELOG.md CONTRIBUTING.md Godeps \
-		LICENSE Makefile README.md accumulator.go agent aggregator.go circle.yml cmd docs etc filter \
+		LICENSE Makefile README.md accumulator.go agent aggregator.go cmd docs etc filter \
 		input.go internal logger metric metric.go output.go plugins processor.go scripts selfstat testutil \
 		${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 	${LN} -s nats ${WRKSRC}/src/github.com/nats-io/go-nats
