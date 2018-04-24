@@ -1,0 +1,7 @@
+Provides fundamental abstractions for doing asynchronous programming
+in R using promises. Asynchronous programming is useful for allowing
+a single R process to orchestrate multiple tasks in the background
+while also attending to something else. Semantics are similar to
+'JavaScript' promises, but with a syntax that is idiomatic R.
+
+WWW: https://cran.r-project.org/web/packages/promises/
