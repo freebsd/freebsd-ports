@@ -36,7 +36,8 @@
  
    // some formats want stream headers to be separate
    if (_context->oformat->flags & AVFMT_GLOBALHEADER)
-     _stream->codec->flags |= CODEC_FLAG_GLOBAL_HEADER;
+-    _stream->codec->flags |= CODEC_FLAG_GLOBAL_HEADER;
++    _stream->codec->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
  
 -  if (av_set_parameters(_context, NULL) < 0)
 -    {
