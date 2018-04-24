@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puzzles
-PORTVERSION=	20171210
+PORTVERSION=	20180424
 CATEGORIES=	games
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/puzzles/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,7 +15,7 @@ COMMENT=	Simon Tatham's Portable Puzzle Collection
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-COMMITHASH=	5247edd
+COMMITHASH=	f04923a
 
 USES=		autoreconf gmake pkgconfig
 GNU_CONFIGURE=	yes
