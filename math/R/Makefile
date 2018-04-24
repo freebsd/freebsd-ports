@@ -1,24 +1,23 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
 # $FreeBSD$
 
-PORTNAME=		R
-DISTVERSION=		3.4.4
-PORTREVISION=	1
-CATEGORIES=		math lang
-MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
+PORTNAME=	R
+DISTVERSION=	3.5.0
+CATEGORIES=	math lang
+MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
-MAINTAINER=		jrm@FreeBSD.org
-COMMENT=		Language for statistical computing and graphics
+MAINTAINER=	jrm@FreeBSD.org
+COMMENT=	Language for statistical computing and graphics
 
-LICENSE=		GPLv2
+LICENSE=	GPLv2
 
 BROKEN_FreeBSD_10_armv6=	Fails to build
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
-LIB_DEPENDS=		libcurl.so:ftp/curl \
-			libpcre.so:devel/pcre
-BUILD_DEPENDS=		texi2any:print/texinfo
-RUN_DEPENDS=		gmake:devel/gmake # R packages may require GNU make
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcre.so:devel/pcre
+BUILD_DEPENDS=	texi2any:print/texinfo
+RUN_DEPENDS=	gmake:devel/gmake # R packages may require GNU make
 
 # possible TODO
 # - Use --with-recommended-packages=no by default
@@ -26,19 +25,19 @@ RUN_DEPENDS=		gmake:devel/gmake # R packages may require GNU make
 # - Create ports for each of the recommended packages
 # - Create a meta-port for the recommended packages
 
-CONFIGURE_ARGS=		--disable-java \
-			--enable-R-shlib \
-			--with-readline \
-			rdocdir=${DOCSDIR}
-GNU_CONFIGURE=		yes
-INSTALL_TARGET=		install-strip
-USES=			gmake iconv libtool localbase \
-			pathfix perl5 readline:port
-USE_PERL5=		build
-USE_LDCONFIG=		${PREFIX}/lib/R/lib
+USES=		gmake iconv libtool localbase pathfix perl5 readline:port
+USE_LDCONFIG=	${PREFIX}/lib/R/lib
+USE_PERL5=	build
 
-OPTIONS_DEFINE=		FLANG ICU INFO LDOUBLE LETTER MEMPROF NLS OPENMP RPROF \
-			X11
+CONFIGURE_ARGS=	--disable-java \
+		--enable-R-shlib \
+		--with-readline \
+		rdocdir=${DOCSDIR}
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+PLIST_SUB=	LIBVER=${LIBVER}
+
+OPTIONS_DEFINE=		FLANG ICU INFO LDOUBLE LETTER MEMPROF NLS OPENMP RPROF X11
 OPTIONS_EXCLUDE_aarch64=	FLANG OPENMP
 OPTIONS_EXCLUDE_armv6=	FLANG OPENMP
 OPTIONS_EXCLUDE_armv7=	FLANG OPENMP
@@ -47,7 +46,8 @@ OPTIONS_GROUP=		NEEDX11
 OPTIONS_GROUP_NEEDX11=	GHOSTSCRIPT JPEG CAIROPANGO PNG TCLTK TEXDOCS TIFF
 OPTIONS_SINGLE=		BLAS
 OPTIONS_SINGLE_BLAS=	ATLAS OPENBLAS NETLIB RBLAS
-
+OPTIONS_DEFAULT=	CAIROPANGO GHOSTSCRIPT ICU INFO JPEG LDOUBLE OPENMP PNG \
+			RBLAS RPROF TCLTK TIFF X11
 OPTIONS_SUB=		YES
 
 ATLAS_DESC=		ATLAS BLAS implementation
@@ -67,9 +67,6 @@ RBLAS_DESC=		Use R-bundled BLAS implementation
 RPROF_DESC=		R profiling via Rprof()
 TEXDOCS_DESC=		Build/Install TeX-dependent documentation files
 X11_DESC=		X11 graphics device
-
-OPTIONS_DEFAULT=	CAIROPANGO GHOSTSCRIPT ICU INFO JPEG LDOUBLE OPENMP \
-			PNG RBLAS RPROF TCLTK TIFF X11
 
 ATLAS_USES=		blaslapack:atlas
 ATLAS_CONFIGURE_ON=	--disable-BLAS-shlib
@@ -128,13 +125,12 @@ X11_CONFIGURE_WITH=	x
 X11_USE=		xorg=ice,sm,x11,xext,xmu,xscrnsaver,xt
 
 LIBVER=		${PORTVERSION:R}
-PLIST_SUB=	LIBVER=${LIBVER}
 
 .include <bsd.port.options.mk>
 .include "compiler.mk"
 
 # LLVM, which gets pulled in with FLANG, provides libomp.  So, only depend on
-# devel/openmp, when GFORTRAN and OPENMP are on.
+# devel/openmp when GFORTRAN and OPENMP are on.
 .if ! ${PORT_OPTIONS:MFLANG} && ${PORT_OPTIONS:MOPENMP}
 LIB_DEPENDS+=	libomp.so:devel/openmp
 .endif

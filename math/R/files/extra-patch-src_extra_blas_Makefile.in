@@ -1,4 +1,4 @@
---- src/extra/blas/Makefile.in.orig	2017-07-16 08:46:49 UTC
+--- src/extra/blas/Makefile.in.orig	2018-04-24 11:01:59 UTC
 +++ src/extra/blas/Makefile.in
 @@ -19,7 +19,7 @@ SOURCES = blas00.c blas.f cmplxblas.f
  Rblas_la = libRblas$(R_DYLIB_EXT)
@@ -10,13 +10,13 @@
  Rblas_la_LIBADD0 = @RBLAS_LDFLAGS@
  
 @@ -43,6 +43,7 @@ Rblas_install: $(Rblas_la)
- 	@$(MKINSTALLDIRS) $(DESTDIR)$(Rexeclibdir)
+ 	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexeclibdir)"
  	@$(SHELL) $(top_srcdir)/tools/copy-if-change $(Rblas_la) \
- 	  $(DESTDIR)$(Rexeclibdir)/$(Rblas_la)
+ 	  "$(DESTDIR)$(Rexeclibdir)/$(Rblas_la)"
 +	@cd $(DESTDIR)$(Rexeclibdir) && ln -s $(Rblas_la) $(Rblas_la).%%LIBVER%%
  
  Rblas_install-strip: $(Rblas_la)
- 	@$(MKINSTALLDIRS) $(DESTDIR)$(Rexeclibdir)
+ 	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexeclibdir)"
 @@ -50,6 +51,7 @@ Rblas_install-strip: $(Rblas_la)
  	@if test -n "$(STRIP_LIBS)"; then \
  	  $(STRIP_LIBS) "$(DESTDIR)$(Rexeclibdir)/$(Rblas_la)" ;\
