@@ -1,0 +1,12 @@
+%%PYTHON_SITELIBDIR%%/pyranha/__init__.py
+%%PYTHON_SITELIBDIR%%/pyranha/_common.py
+%%PYTHON_SITELIBDIR%%/pyranha/_core.so
+%%PYTHON_SITELIBDIR%%/pyranha/_tutorial/__init__.py
+%%PYTHON_SITELIBDIR%%/pyranha/_tutorial/hello_piranha.py
+%%PYTHON_SITELIBDIR%%/pyranha/_tutorial/integer.py
+%%PYTHON_SITELIBDIR%%/pyranha/_tutorial/rational.py
+%%PYTHON_SITELIBDIR%%/pyranha/_version.py
+%%PYTHON_SITELIBDIR%%/pyranha/celmec.py
+%%PYTHON_SITELIBDIR%%/pyranha/math.py
+%%PYTHON_SITELIBDIR%%/pyranha/test.py
+%%PYTHON_SITELIBDIR%%/pyranha/types.py
