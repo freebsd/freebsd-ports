@@ -1,0 +1,11 @@
+--- apps/netconf/Makefile.in.orig	2018-04-15 09:53:12 UTC
++++ apps/netconf/Makefile.in
+@@ -44,7 +44,7 @@ bindir 		= @bindir@
+ libdir		= @libdir@
+ mandir		= @mandir@
+ libexecdir	= @libexecdir@
+-wwwdir  	= /www-data
++wwwdir  	= @prefix@/sbin
+ localstatedir	= @localstatedir@
+ sysconfdir	= @sysconfdir@
+ includedir	= @includedir@

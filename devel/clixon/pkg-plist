@@ -1,0 +1,30 @@
+bin/clixon_cli
+bin/clixon_netconf
+bin/datastore_client
+%%ETCDIR%%/clixonrc
+lib/libclixon.so
+lib/libclixon.so.3
+lib/libclixon.so.3.6
+lib/libclixon_backend.so
+lib/libclixon_backend.so.3
+lib/libclixon_backend.so.3.6
+lib/libclixon_cli.so
+lib/libclixon_cli.so.3
+lib/libclixon_cli.so.3.6
+lib/libclixon_netconf.so
+lib/libclixon_netconf.so.3
+lib/libclixon_netconf.so.3.6
+lib/libclixon_restconf.so
+lib/libclixon_restconf.so.3
+lib/libclixon_restconf.so.3.6
+lib/xmldb/text.so
+sbin/clixon_backend
+sbin/clixon_restconf
+%%DATADIR%%/clixon-config@2018-02-12.yang
+%%DATADIR%%/clixon.mk
+%%DATADIR%%/ietf-inet-types@2013-07-15.yang
+%%DATADIR%%/ietf-netconf-acm@2018-02-14.yang
+%%DATADIR%%/ietf-netconf@2011-06-01.yang
+%%DATADIR%%/ietf-yang-types@2013-07-15.yang
+@dir lib/clixon/plugins/backend
+@dir lib/clixon/plugins/cli
