@@ -4,5 +4,5 @@ dictionaries, etc) to define options, which makes configuration clear
 and concise. Additionally it contains possibility to handle subcommands
 (i.e. hg commit or svn update).
 
-WWW: https://pypi.python.org/pypi/opster
+WWW: https://pypi.org/project/opster/
 WWW: https://github.com/piranha/opster/

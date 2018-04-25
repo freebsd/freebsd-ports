@@ -7,4 +7,4 @@ Windows, too. It also provides some shortcuts to help generate ANSI sequences,
 and works fine in conjunction with any other ANSI sequence generation library,
 such as Termcolor.
 
-WWW: https://pypi.python.org/pypi/colorama
+WWW: https://pypi.org/project/colorama/

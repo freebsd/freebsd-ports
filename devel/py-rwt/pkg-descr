@@ -10,5 +10,5 @@ RWT (Run With This) provides on-demand dependency resolution.
 - Re-uses the pip tool chain for package installation and pkg_resources for
   working set management.
 
-WWW: https://pypi.python.org/pypi/rwt
+WWW: https://pypi.org/project/rwt/
 WWW: https://github.com/jaraco/rwt

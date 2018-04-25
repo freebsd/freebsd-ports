@@ -4,4 +4,4 @@ tracking, line number table generation, constant and variable name index
 tracking, etc. That way, you can focus your attention on the desired
 semantics of your bytecode instead of on these mechanical issues.
 
-WWW: https://pypi.python.org/pypi/BytecodeAssembler
+WWW: https://pypi.org/project/BytecodeAssembler/

@@ -2,4 +2,4 @@ This implementation of Gettext for Python includes a Msgfmt class
 which can be used to generate compiled mo files from Gettext po
 files and includes support for the newer msgctxt keyword.
 
-WWW: https://pypi.python.org/pypi/python-gettext
+WWW: https://pypi.org/project/python-gettext/

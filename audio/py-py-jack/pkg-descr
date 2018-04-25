@@ -3,4 +3,4 @@ For information about Jack see http://jackit.sourceforge.net. This
 enables a Python program to connect to and interact with pro-audio
 applications which use the Jack Audio Server.
 
-WWW: https://pypi.python.org/pypi/py-jack
+WWW: https://pypi.org/project/py-jack/

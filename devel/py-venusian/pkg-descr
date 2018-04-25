@@ -3,4 +3,4 @@ actions. Instead of taking actions when a function (or class) decorator
 is executed at import time, you can defer the action usually taken by
 the decorator until a separate "scan" phase.
 
-WWW: https://pypi.python.org/pypi/venusian
+WWW: https://pypi.org/project/venusian/

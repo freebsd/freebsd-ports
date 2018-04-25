@@ -4,4 +4,4 @@ using a single template or static system of templates and METAL
 macros, content provider objects are dynamically looked up based
 on the setup/configuration of the application.
 
-WWW: https://pypi.python.org/pypi/zope.contentprovider
+WWW: https://pypi.org/project/zope.contentprovider/

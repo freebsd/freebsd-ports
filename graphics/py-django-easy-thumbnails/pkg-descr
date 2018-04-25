@@ -5,5 +5,5 @@ is generated (and saved).  Thumbnail aliases can be defined, providing
 predefined thumbnail options.  This also allows for generation of thumbnails
 when the source image is uploaded.
 
-WWW: https://pypi.python.org/pypi/easy-thumbnails
+WWW: https://pypi.org/project/easy-thumbnails/
 WWW: https://github.com/SmileyChris/easy-thumbnails

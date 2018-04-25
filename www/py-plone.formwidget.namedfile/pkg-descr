@@ -1,4 +1,4 @@
 This package provides z3c.form widgets for file and image upload/download,
 with the option of keeping the existing file or replacing it with a new one.
 
-WWW: https://pypi.python.org/pypi/plone.formwidget.namedfile
+WWW: https://pypi.org/project/plone.formwidget.namedfile/

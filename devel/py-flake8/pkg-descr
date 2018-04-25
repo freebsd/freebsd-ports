@@ -7,5 +7,5 @@ Flake8 is a wrapper around these tools:
 Flake8 runs all tools by launching the single 'flake8' script. It
 displays the warnings in a per-file, merged output
 
-WWW: https://pypi.python.org/pypi/flake8
+WWW: https://pypi.org/project/flake8/
 WWW: https://gitlab.com/pycqa/flake8

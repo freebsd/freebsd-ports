@@ -2,4 +2,4 @@ This package is used to support the Prefix object that Zope 2
 uses for the undo log. It is a separate package only to aid
 configuration management.
 
-WWW: https://pypi.python.org/pypi/ZopeUndo
+WWW: https://pypi.org/project/ZopeUndo/

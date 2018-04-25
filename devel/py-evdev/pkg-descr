@@ -7,4 +7,4 @@ This package also comes with bindings to uinput, the userspace input
 subsystem. Uinput allows userspace programs to create and handle input
 devices that can inject events directly into the input subsystem.
 
-WWW: https://pypi.python.org/pypi/evdev
+WWW: https://pypi.org/project/evdev/

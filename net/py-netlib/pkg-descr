@@ -5,4 +5,4 @@ It differs from other projects in some fundamental
 respects, because both pathod and mitmproxy often
 need to violate standards.
 
-WWW: https://pypi.python.org/pypi/netlib
+WWW: https://pypi.org/project/netlib/

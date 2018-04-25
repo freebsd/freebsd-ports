@@ -10,4 +10,4 @@ critical features that are missing from the Python standard libraries:
 - Proxy support for HTTP and SOCKS.
 - 100% test coverage.
 
-WWW: https://pypi.python.org/pypi/urllib3
+WWW: https://pypi.org/project/urllib3/

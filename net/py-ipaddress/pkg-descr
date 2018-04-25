@@ -3,5 +3,5 @@ Python 3.3's ipaddress (IPv4/IPv6 manipulation library) for Python 2.6 and 2.7.
 Note that you must pass in unicode objects when constructing from a character
 representation!
 
-WWW: https://pypi.python.org/pypi/ipaddress
+WWW: https://pypi.org/project/ipaddress/
 WWW: https://github.com/phihag/ipaddress

@@ -1,4 +1,4 @@
 Python wrapper for tshark, allowing python packet parsing using
 wireshark dissectors.
 
-WWW: https://pypi.python.org/pypi/pyshark
+WWW: https://pypi.org/project/pyshark/

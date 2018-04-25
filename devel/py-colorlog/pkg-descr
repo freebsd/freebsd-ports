@@ -3,4 +3,4 @@ when paired with a StreamHandler that is outputting to a terminal.  This is
 accomplished by added a set of terminal color codes to the record before it
 is used to format the string.  Convenient for logging with colors support.
 
-WWW: https://pypi.python.org/pypi/colorlog
+WWW: https://pypi.org/project/colorlog/

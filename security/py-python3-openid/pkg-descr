@@ -4,5 +4,5 @@ sign-on for your web site? Use the openid.consumer package. Want to run your own
 OpenID server? Check out openid.server. Includes example code and support for a
 variety of storage back-ends.
 
-WWW: https://pypi.python.org/pypi/python3-openid
+WWW: https://pypi.org/project/python3-openid/
 WWW: https://github.com/necaris/python3-openid

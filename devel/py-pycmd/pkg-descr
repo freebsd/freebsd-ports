@@ -6,4 +6,4 @@ development:
   * py.countloc: give LOCs for lines and testlines
   * py.which: print location of an importable package or module
 
-WWW: https://pypi.python.org/pypi/pycmd
+WWW: https://pypi.org/project/pycmd/

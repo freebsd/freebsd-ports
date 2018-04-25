@@ -2,4 +2,4 @@ This package provides a "page template" resource class, a resource
 which content is processed with Zope Page Templates engine before
 returning to client.
 
-WWW: https://pypi.python.org/pypi/zope.ptresource
+WWW: https://pypi.org/project/zope.ptresource/

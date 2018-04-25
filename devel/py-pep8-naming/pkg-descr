@@ -4,4 +4,4 @@ This module provides a plugin for flake8, the Python code checker.
 
 (It replaces the plugin flint-naming for the flint checker.)
 
-WWW: https://pypi.python.org/pypi/pep8-naming
+WWW: https://pypi.org/project/pep8-naming/

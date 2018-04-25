@@ -1,4 +1,4 @@
 This library is not meant to stand-alone. Instead it defines common helpers
 (e.g. base Client classes) used by all of the google-cloud-* packages.
 
-WWW: https://pypi.python.org/pypi/google-cloud-core
+WWW: https://pypi.org/project/google-cloud-core/

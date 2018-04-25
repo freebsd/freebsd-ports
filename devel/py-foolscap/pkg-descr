@@ -15,4 +15,4 @@ security model, such that once you create a non-public object, it is only
 accessible to clients to whom you've given the (unguessable) FURL. You can of
 course publish world-visible objects that have well-known FURLs.
 
-WWW: https://pypi.python.org/pypi/foolscap
+WWW: https://pypi.org/project/foolscap/

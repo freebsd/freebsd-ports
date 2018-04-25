@@ -4,4 +4,4 @@ that provides a Bootstrap widgets for Angular framework.
 It uses the XStatic packaging standard, aimed to bring an ability to
 install javascript libraries via easy_install or pip utility.
 
-WWW: https://pypi.python.org/pypi/XStatic-Angular-Bootstrap
+WWW: https://pypi.org/project/XStatic-Angular-Bootstrap/

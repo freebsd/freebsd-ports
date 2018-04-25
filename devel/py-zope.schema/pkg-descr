@@ -5,4 +5,4 @@ But a Field provides space for at least a title and a description. It can also
 constrain its value and provide a validation method. Besides you can optionally
 specify characteristics such as its value being read-only or not required.
 
-WWW: https://pypi.python.org/pypi/zope.schema
+WWW: https://pypi.org/project/zope.schema/

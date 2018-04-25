@@ -13,5 +13,5 @@ transcendental functions (like trigonometrical, exponentials...) on top of
 Intel-compatible platforms. This support also allows to use multiple cores in
 your computations.
 
-WWW: https://pypi.python.org/pypi/numexpr
+WWW: https://pypi.org/project/numexpr/
 WWW: https://github.com/pydata/numexpr

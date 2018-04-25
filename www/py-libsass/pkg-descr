@@ -1,4 +1,4 @@
 A simple Python extension module sass which is binding Libsass
 (written in C/C++ by Hampton Catlin and Aaron Leung).
 
-WWW: https://pypi.python.org/pypi/libsass
+WWW: https://pypi.org/project/libsass/

@@ -1,5 +1,5 @@
 ConfigArgParse is a drop-in replacement for argparse that allows options to
 also be set via config files and/or environment variables.
 
-WWW: https://pypi.python.org/pypi/ConfigArgParse
+WWW: https://pypi.org/project/ConfigArgParse/
 WWW: https://github.com/bw2/ConfigArgParse

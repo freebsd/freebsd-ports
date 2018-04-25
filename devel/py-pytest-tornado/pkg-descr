@@ -1,4 +1,4 @@
 A py.test plugin providing fixtures and markers to simplify testing of
 asynchronous tornado applications.
 
-WWW: https://pypi.python.org/pypi/pytest-tornado
+WWW: https://pypi.org/project/pytest-tornado/

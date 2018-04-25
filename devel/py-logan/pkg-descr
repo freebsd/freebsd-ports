@@ -2,5 +2,5 @@ Logan is a toolkit for running standalone Django applications. It provides you
 with tools to create a CLI runner, manage settings, and the ability to bootstrap
 the process.
 
-WWW: https://pypi.python.org/pypi/logan
+WWW: https://pypi.org/project/logan/
 WWW: https://github.com/dcramer/logan

@@ -4,4 +4,4 @@ simple transform on each request thereafter. Alternatively, compile your theme
 during development, check it into Subversion, and not touch Diazo during
 deployment.
 
-WWW: https://pypi.python.org/pypi/diazo
+WWW: https://pypi.org/project/diazo/

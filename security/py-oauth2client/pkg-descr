@@ -2,5 +2,5 @@ oauth2client is a Python module for client-side oauth2 authentication. It works
 with Google's oauth2 service by default, and is compatible with any oauth2
 service.
 
-WWW: https://pypi.python.org/pypi/oauth2client
+WWW: https://pypi.org/project/oauth2client/
 WWW: http://google.github.io/oauth2client/

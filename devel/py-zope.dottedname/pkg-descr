@@ -2,4 +2,4 @@ The zope.dottedname module provides one function, resolve that
 resolves strings containing dotted names into the appropriate
 python object.
 
-WWW: https://pypi.python.org/pypi/zope.dottedname
+WWW: https://pypi.org/project/zope.dottedname/

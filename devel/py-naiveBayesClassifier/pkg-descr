@@ -18,4 +18,4 @@ considers each of these features to contribute independently to the probability
 that this fruit is an apple, regardless of any possible correlations between
 the color, roundness, and diameter features.
 
-WWW: https://pypi.python.org/pypi/naiveBayesClassifier
+WWW: https://pypi.org/project/naiveBayesClassifier/

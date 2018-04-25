@@ -3,4 +3,4 @@ was the first SPF implementation to fully conform to RFC 4408. This
 release has also added IPv6 support. pyspf is the library behind
 several of the open SPF project's SPF record testing tools.
 
-WWW: https://pypi.python.org/pypi/pyspf
+WWW: https://pypi.org/project/pyspf/

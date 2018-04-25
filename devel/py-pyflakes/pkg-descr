@@ -4,5 +4,5 @@ modules to check them. This is both safer and faster, although it does not
 perform as many checks. Unlike PyLint, Pyflakes checks only for logical errors
 in programs; it does not perform any checks on style.
 
-WWW: https://pypi.python.org/pypi/pyflakes
+WWW: https://pypi.org/project/pyflakes/
 WWW: https://github.com/PyCQA/pyflakes

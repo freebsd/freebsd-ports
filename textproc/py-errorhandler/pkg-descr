@@ -8,4 +8,4 @@ level.
 This can be useful when wanting to ensure that no errors have been
 logged before committing data back to a database.
 
-WWW: https://pypi.python.org/pypi/errorhandler
+WWW: https://pypi.org/project/errorhandler/

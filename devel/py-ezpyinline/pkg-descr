@@ -6,4 +6,4 @@ from Python.
 ezpyinline is forked from PyInline (http://pyinline.sourceforge.net/)
 but aim to be as easy as possible and do all the magics for you.
 
-WWW: https://pypi.python.org/pypi/ezpyinline
+WWW: https://pypi.org/project/ezpyinline/

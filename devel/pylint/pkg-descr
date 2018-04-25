@@ -8,5 +8,5 @@ it from within your code. Additionally, it is possible to write plugins to add
 your own checks.
 
 WWW: https://www.pylint.org/
-WWW: https://pypi.python.org/pypi/pylint
+WWW: https://pypi.org/project/pylint/
 WWW: https://github.com/PyCQA/pylint

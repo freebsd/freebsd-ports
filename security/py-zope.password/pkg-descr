@@ -1,4 +1,4 @@
 This package provides a password manager mechanism. Password manager is
 an utility object that can encode and check encoded passwords.
 
-WWW: https://pypi.python.org/pypi/zope.password
+WWW: https://pypi.org/project/zope.password/

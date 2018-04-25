@@ -3,5 +3,5 @@ Core Library for Google Client Libraries
 This library is not meant to stand-alone. Instead it defines common helpers used
 by all Google API clients.
 
-WWW: https://pypi.python.org/pypi/google-api-core
+WWW: https://pypi.org/project/google-api-core/
 WWW: https://github.com/GoogleCloudPlatform/google-cloud-python

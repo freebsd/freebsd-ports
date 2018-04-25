@@ -4,5 +4,5 @@ your own fixtures using the fixtures contract. Glue code is provided that makes
 using fixtures that meet the Fixtures contract in unittest compatible test cases
 easy and straight forward.
 
-WWW: https://pypi.python.org/pypi/fixtures
+WWW: https://pypi.org/project/fixtures/
 WWW: https://github.com/testing-cabal/fixtures

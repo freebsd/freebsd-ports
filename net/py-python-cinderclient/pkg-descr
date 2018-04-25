@@ -2,4 +2,4 @@ This is a client for the OpenStack Cinder API. There's a Python
 API (the cinderclient module), and a command-line script (cinder).
 Each implements 100% of the OpenStack Cinder API.
 
-WWW: https://pypi.python.org/pypi/python-cinderclient
+WWW: https://pypi.org/project/python-cinderclient/

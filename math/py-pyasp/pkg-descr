@@ -2,4 +2,4 @@ PyASP is a Python convenience wrapper allowing
 to solve boolean satisfiability problems through
 invocation of external commands 'clasp' and 'gringo'.
 
-WWW: https://pypi.python.org/pypi/pyasp
+WWW: https://pypi.org/project/pyasp/

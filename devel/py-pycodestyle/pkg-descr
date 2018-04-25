@@ -4,5 +4,5 @@ style conventions in PEP 8.
 This package used to be called pep8 but was renamed to pycodestyle
 to reduce confusion
 
-WWW: https://pypi.python.org/pypi/pycodestyle
+WWW: https://pypi.org/project/pycodestyle/
 WWW: https://pycodestyle.readthedocs.io/en/latest/

@@ -6,4 +6,4 @@ Consistent hashing is a scheme that provides a hash table functionality
 in a way that the adding or removing of one slot does not significantly
 change the mapping of keys to slots.
 
-WWW: https://pypi.python.org/pypi/hash_ring
+WWW: https://pypi.org/project/hash_ring/

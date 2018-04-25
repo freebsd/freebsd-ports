@@ -1,4 +1,4 @@
 zbase32 is a base32 encoder/decoder. It is an alternate
 base32 encoder but not RFC 3548 compliant.
 
-WWW: https://pypi.python.org/pypi/zbase32
+WWW: https://pypi.org/project/zbase32/

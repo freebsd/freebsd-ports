@@ -7,4 +7,4 @@ It does not depend on Babel, but its translation and pluralization
 services are meant to work best when provided with an instance of
 the babel.support.Translations class.
 
-WWW: https://pypi.python.org/pypi/translationstring
+WWW: https://pypi.org/project/translationstring/

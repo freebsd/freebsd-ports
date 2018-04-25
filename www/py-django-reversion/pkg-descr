@@ -14,4 +14,4 @@ provides comprehensive version control facilities:
 django-reversion can be easily added to your existing Django project
 with an absolute minimum of code changes.
 
-WWW: https://pypi.python.org/pypi/django-reversion
+WWW: https://pypi.org/project/django-reversion/

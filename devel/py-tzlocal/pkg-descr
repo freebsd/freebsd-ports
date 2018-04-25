@@ -7,4 +7,4 @@ to get the local timezone information, unless you know the zoneinfo
 name, and under several Linux distros that's hard or impossible to
 figure out.
 
-WWW: https://pypi.python.org/pypi/tzlocal
+WWW: https://pypi.org/project/tzlocal/

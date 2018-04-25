@@ -9,5 +9,5 @@ also provides integration with several HTTP libraries.
 - Support for Google App Engine standard credentials.
 - Support for various transports, including Requests, urllib3, and gRPC.
 
-WWW: https://pypi.python.org/pypi/google-auth
+WWW: https://pypi.org/project/google-auth/
 WWW: https://github.com/GoogleCloudPlatform/google-auth-library-python

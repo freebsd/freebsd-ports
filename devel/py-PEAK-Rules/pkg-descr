@@ -6,4 +6,4 @@ Python expressions, and CLOS-like method combining. (But the framework
 allows you to mix and match dispatch engines and custom method
 combinations, if you need or want to.)
 
-WWW: https://pypi.python.org/pypi/PEAK-Rules
+WWW: https://pypi.org/project/PEAK-Rules/

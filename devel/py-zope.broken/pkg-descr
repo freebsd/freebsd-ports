@@ -1,4 +1,4 @@
 This package is Zope Broken Object Interfaces and it is obsolete and
 its functionality has been merged into the ZODB3 distribution itself.
 
-WWW: https://pypi.python.org/pypi/zope.broken
+WWW: https://pypi.org/project/zope.broken/

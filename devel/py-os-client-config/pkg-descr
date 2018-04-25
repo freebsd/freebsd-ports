@@ -3,4 +3,4 @@ using an OpenStack cloud in a consistent and comprehensive manner.
 It will find cloud config for as few as 1 cloud and as many as you
 want to put in a config file. 
 
-WWW: https://pypi.python.org/pypi/os-client-config
+WWW: https://pypi.org/project/os-client-config/

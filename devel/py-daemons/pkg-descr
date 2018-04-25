@@ -2,4 +2,4 @@ Daemons is a resource library for Python developers that want to create daemon
 processes. The idea is to provide the basic daemon functionality while still
 giving the developer the ability to customize their daemon for any purpose.
 
-WWW: https://pypi.python.org/pypi/daemons
+WWW: https://pypi.org/project/daemons/

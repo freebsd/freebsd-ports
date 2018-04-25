@@ -1,4 +1,4 @@
 SecureMailHost is a reimplementation of the standard Zope2 MailHost
 with some security and usability enhancements.
 
-WWW: https://pypi.python.org/pypi/Products.SecureMailHost
+WWW: https://pypi.org/project/Products.SecureMailHost/

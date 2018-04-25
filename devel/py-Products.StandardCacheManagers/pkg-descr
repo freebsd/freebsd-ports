@@ -2,4 +2,4 @@ This package provides two cache managers for Zope 2. A RAMCacheManager
 and an Accelerated HTTP cache manager, which adds HTTP cache headers
 to responses.
 
-WWW: https://pypi.python.org/pypi/Products.StandardCacheManagers
+WWW: https://pypi.org/project/Products.StandardCacheManagers/

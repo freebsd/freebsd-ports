@@ -1,4 +1,4 @@
 CommonMark-py is a pure Python port of jgm's commonmark.js, a Markdown parser
 and renderer for the CommonMark specification, using only native modules.
 
-WWW: https://pypi.python.org/pypi/CommonMark
+WWW: https://pypi.org/project/CommonMark/

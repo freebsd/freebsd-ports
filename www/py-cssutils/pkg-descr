@@ -2,5 +2,5 @@ A Python package to parse and build CSS Cascading Style Sheets. Partly implement
 the DOM Level 2 CSS interfaces. Additional some cssutils only convenience and
 (hopefully) more pythonic methods are integrated.
 
-WWW: https://pypi.python.org/pypi/cssutils
+WWW: https://pypi.org/project/cssutils/
 WWW: http://cthedot.de/cssutils/

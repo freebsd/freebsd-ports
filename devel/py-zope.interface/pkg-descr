@@ -3,4 +3,4 @@ Interfaces are a mechanism for labeling objects as conforming to a given API or
 contract. So, this package can be considered as implementation of the Design By
 Contract methodology support in Python.
 
-WWW: https://pypi.python.org/pypi/zope.interface
+WWW: https://pypi.org/project/zope.interface/

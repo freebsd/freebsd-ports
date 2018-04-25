@@ -1,5 +1,5 @@
 backports.functools_lru_cache is a backport of functools.lru_cache from Python
 3.3 as published at ActiveState.
 
-WWW: https://pypi.python.org/pypi/backports.functools_lru_cache
+WWW: https://pypi.org/project/backports.functools_lru_cache/
 WWW: https://github.com/jaraco/backports.functools_lru_cache

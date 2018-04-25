@@ -5,4 +5,4 @@ readable. txrestapi provides an APIResource class allowing complex
 mapping of path to callback (a la Django) with a readable decorator.
 
 
-WWW: https://pypi.python.org/pypi/txrestapi
+WWW: https://pypi.org/project/txrestapi/

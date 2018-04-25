@@ -1,4 +1,4 @@
 The oslo db (database) handling library, provides database connectivity to
 different database backends and various other helper utils.
 
-WWW: https://pypi.python.org/pypi/oslo.db
+WWW: https://pypi.org/project/oslo.db/

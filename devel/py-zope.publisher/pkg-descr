@@ -5,4 +5,4 @@ represented by request and response objects which allow for easy
 client interaction from Python. The behaviour of the publisher
 is geared towards WSGI compatibility.
 
-WWW: https://pypi.python.org/pypi/zope.publisher
+WWW: https://pypi.org/project/zope.publisher/

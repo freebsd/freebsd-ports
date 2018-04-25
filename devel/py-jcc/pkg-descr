@@ -9,4 +9,4 @@ Python interpreter. JCC attempts to make these Python types pythonic by
 detecting iterators and property accessors. Iterators and mappings may
 also be declared to JCC.
 
-WWW: https://pypi.python.org/pypi/JCC
+WWW: https://pypi.org/project/JCC/

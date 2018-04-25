@@ -2,4 +2,4 @@ unittest2 is a backport of the new features added to the
 unittest testing framework in Python 2.7. It is tested to
 on Python 2.4 - 2.7.
 
-WWW: https://pypi.python.org/pypi/unittest2
+WWW: https://pypi.org/project/unittest2/

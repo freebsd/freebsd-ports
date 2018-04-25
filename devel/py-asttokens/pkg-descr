@@ -6,4 +6,4 @@ It makes it possible for tools that work with logical AST nodes to
 find the particular text that resulted in those nodes, for example
 for automated refactoring or highlighting.
 
-WWW: https://pypi.python.org/pypi/asttokens
+WWW: https://pypi.org/project/asttokens/

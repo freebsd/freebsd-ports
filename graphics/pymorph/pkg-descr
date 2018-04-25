@@ -4,4 +4,4 @@ morphology operations, working with numpy arrays representing images.
 Includes basic operations for morphological image processing such as erode,
 dilate, open, tophat opening, watershed and more.
 
-WWW: https://pypi.python.org/pypi/pymorph
+WWW: https://pypi.org/project/pymorph/

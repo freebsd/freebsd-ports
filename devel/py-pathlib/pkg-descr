@@ -1,4 +1,4 @@
 Backport of pathlib from Python 3.4. Offers a set of classes featuring all the
 common operations on paths in an easy, object-oriented way.
 
-WWW: https://pypi.python.org/pypi/pathlib
+WWW: https://pypi.org/project/pathlib/

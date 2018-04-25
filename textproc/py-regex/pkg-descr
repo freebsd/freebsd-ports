@@ -1,4 +1,4 @@
 This new regex implementation is intended eventually to replace Python's
 current re module implementation.
 
-WWW: https://pypi.python.org/pypi/regex
+WWW: https://pypi.org/project/regex/

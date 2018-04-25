@@ -21,4 +21,4 @@ optimizer this package may also be useful. In addition to the kinds of
 instruction categorization that dis offers, we have additional categories for
 things that would be useful in such a bytecode optimizer.
 
-WWW: https://pypi.python.org/pypi/xdis
+WWW: https://pypi.org/project/xdis/

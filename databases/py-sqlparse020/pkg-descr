@@ -3,5 +3,5 @@ It provides support for parsing, splitting and formatting SQL statements.
 
 This is version 0.2.0 which is needed by calendarserver.
 
-WWW: https://pypi.python.org/pypi/sqlparse
+WWW: https://pypi.org/project/sqlparse/
 WWW: https://github.com/andialbrecht/sqlparse

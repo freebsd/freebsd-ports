@@ -10,4 +10,4 @@ Only basics Ruby data types can be read and written:
   * `hash` (mapped to `dict`),
   * symbols and other classes are mapped to specific Python classes.
 
-WWW: https://pypi.python.org/pypi/rubymarshal
+WWW: https://pypi.org/project/rubymarshal/

@@ -3,4 +3,4 @@ It was once extracted from the zc.copy package to contain much
 less dependencies. In fact, we only depend on zope.interface to
 provide pluggability.
 
-WWW: https://pypi.python.org/pypi/zope.copy
+WWW: https://pypi.org/project/zope.copy/

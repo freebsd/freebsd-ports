@@ -13,5 +13,5 @@ Features:
 - Execute arbitrary python scripts to verify response from endpoint is valid
 - Tests your APIs using your own APIs
 
-WWW: https://pypi.python.org/pypi/Tapi
+WWW: https://pypi.org/project/Tapi/
 WWW: https://github.com/jimmyislive/tapi

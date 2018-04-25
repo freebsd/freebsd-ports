@@ -1,5 +1,5 @@
 tmuxp is a tmux session manager built on libtmux. It supports to load and save
 tmux sessions via json and YAML, tmuxinator and teamocil style.
 
-WWW: https://pypi.python.org/pypi/tmuxp
+WWW: https://pypi.org/project/tmuxp/
 WWW: https://github.com/tmux-python/tmuxp

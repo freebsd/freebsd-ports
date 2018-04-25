@@ -3,4 +3,4 @@ A python "port" of logcheck's logtail2.
 Pygtail reads log file lines that have not been read.  It will even handle
 log files that have been rotated.
 
-WWW: https://pypi.python.org/pypi/pygtail
+WWW: https://pypi.org/project/pygtail/

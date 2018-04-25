@@ -8,4 +8,4 @@ full syntax and error handling for CSS 2.1 as well as some CSS 3 modules:
 It is designed to be easy to extend for new CSS modules and syntax, and
 integrates well with cssselect for Selectors 3 support.
 
-WWW: https://pypi.python.org/pypi/tinycss
+WWW: https://pypi.org/project/tinycss/

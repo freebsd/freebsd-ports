@@ -7,5 +7,5 @@ can adapt your existing csv code to work with Google Spreadsheets with just two
 line changes. As an added bonus, if you alter the dict, those changes get saved
 back to the original spreadsheet.
 
-WWW: https://pypi.python.org/pypi/gspreadsheet
+WWW: https://pypi.org/project/gspreadsheet/
 WWW: https://github.com/texastribune/gspreadsheet

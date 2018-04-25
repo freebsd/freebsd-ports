@@ -1,4 +1,4 @@
 SockJS-tornado is a Python server side counterpart of SockJS-client browser
 library running on top of Tornado framework.
 
-WWW: https://pypi.python.org/pypi/sockjs-tornado
+WWW: https://pypi.org/project/sockjs-tornado/

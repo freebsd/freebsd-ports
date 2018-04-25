@@ -7,4 +7,4 @@ storage implementation uses file locks to mediate access to
 file-storage database files. The database files and lock file files
 are separate files.
 
-WWW: https://pypi.python.org/pypi/zc.lockfile
+WWW: https://pypi.org/project/zc.lockfile/

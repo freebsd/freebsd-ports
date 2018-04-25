@@ -3,4 +3,4 @@ Utilities for Google Media Downloads and Resumable Uploads.
 This package has some general purposes modules, e.g. common, but the majority
 of the public interface will be contained in subpackages.
 
-WWW: https://pypi.python.org/pypi/google-resumable-media
+WWW: https://pypi.org/project/google-resumable-media/

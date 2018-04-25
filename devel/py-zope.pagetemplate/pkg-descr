@@ -3,4 +3,4 @@ a clean separation of presentation and application logic while
 allowing for designers to work with templates in their visual editing
 tools (FrontPage, Dreamweaver, GoLive, etc.).
 
-WWW: https://pypi.python.org/pypi/zope.pagetemplate
+WWW: https://pypi.org/project/zope.pagetemplate/

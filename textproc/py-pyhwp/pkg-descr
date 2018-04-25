@@ -2,4 +2,4 @@ Analyze and extract internal streams out from a HWP Document Format v5 file
 Includes (experimental) Conversion to OpenDocument format (.odt) or plain
 text (.txt)
 
-WWW: https://pypi.python.org/pypi/pyhwp
+WWW: https://pypi.org/project/pyhwp/

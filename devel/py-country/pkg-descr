@@ -9,4 +9,4 @@ The package includes a copy from Debian's pkg-isocodes and makes
 the data accessible through a Python API.  Translation files for
 the various strings are included as well.
 
-WWW: https://pypi.python.org/pypi/pycountry
+WWW: https://pypi.org/project/pycountry/

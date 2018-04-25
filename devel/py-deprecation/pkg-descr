@@ -11,5 +11,5 @@ automation of several things:
   to entirely remove the code, which causes @fail_if_not_removed to raise an
   AssertionError, causing either your unittest or py.test tests to fail.
 
-WWW: https://pypi.python.org/pypi/deprecation
+WWW: https://pypi.org/project/deprecation/
 WWW: https://github.com/briancurtin/deprecation

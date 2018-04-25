@@ -2,4 +2,4 @@
 with the `trace' module of the standard python library into a set of human
 readable HTML documents showing sortable summary and annotated source files.
 
-WWW: https://pypi.python.org/pypi/trace2html
+WWW: https://pypi.org/project/trace2html/

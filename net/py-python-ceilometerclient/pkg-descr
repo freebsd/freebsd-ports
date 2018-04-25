@@ -2,4 +2,4 @@ This is a client library for Ceilometer built on the Ceilometer API. It
 provides a Python API (the ceilometerclient module) and a command-line tool
 (ceilometer).
 
-WWW: https://pypi.python.org/pypi/python-ceilometerclient
+WWW: https://pypi.org/project/python-ceilometerclient/

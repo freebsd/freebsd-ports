@@ -4,5 +4,5 @@ rational arithmetic, gmpy2 adds support for the MPFR (correctly rounded real
 floating-point arithmetic) and MPC (correctly rounded complex floating-point
 arithmetic) libraries.
 
-WWW: https://pypi.python.org/pypi/gmpy2
+WWW: https://pypi.org/project/gmpy2/
 WWW: https://github.com/aleaxit/gmpy/releases

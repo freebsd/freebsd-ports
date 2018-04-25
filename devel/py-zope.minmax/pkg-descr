@@ -5,4 +5,4 @@ and apply different conflict resolution policies.
 The subclasses defined here are resolving the conflicts using always
 either the maximum or the minimum of the conflicting values.
 
-WWW: https://pypi.python.org/pypi/zope.minmax
+WWW: https://pypi.org/project/zope.minmax/

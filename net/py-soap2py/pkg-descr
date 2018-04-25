@@ -18,5 +18,5 @@ Goals:
 - Extensible: supports several HTTP wrappers (httplib2, pycurl, urllib2) for
   special transport needs over SSL and proxy (ISA)
 
-WWW: https://pypi.python.org/pypi/soap2py
+WWW: https://pypi.org/project/soap2py/
 WWW: https://github.com/pysimplesoap/pysimplesoap

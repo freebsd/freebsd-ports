@@ -3,5 +3,5 @@ first true value from an iterable, or None if there is none. If you need more
 power, you can also supply a key function that is used to judge the truth value
 of the element or a default value if None doesn’t fit your use case.
 
-WWW: https://pypi.python.org/pypi/first
+WWW: https://pypi.org/project/first/
 WWW: https://github.com/hynek/first

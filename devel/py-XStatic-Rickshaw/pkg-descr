@@ -4,4 +4,4 @@ that provides a JavaScript toolkit for interactive time series graphs.
 It uses the XStatic packaging standard, aimed to bring an ability to
 install javascript libraries via easy_install or pip utility.
 
-WWW: https://pypi.python.org/pypi/XStatic-Rickshaw
+WWW: https://pypi.org/project/XStatic-Rickshaw/
