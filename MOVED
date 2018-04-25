@@ -10181,3 +10181,4 @@ math/rkward-kde4|math/rkward-kde|2018-04-21|No more specific to KDE4
 devel/py-msgpack-python|devel/py-msgpack|2018-04-22|Upstream renamed package name on PyPI from msgpack-python to msgpack since 0.5
 deskutils/py-pycarddav|www/pycarddav|2018-04-23|Remove dupplicate port
 x11-toolkits/qwt6-designerplugin||2018-04-25|Merged with x11-toolkits/qwt6
+math/octave-forge-ocs||2018-04-25|Removed, depends on expired math/octave-forge-odepkg
