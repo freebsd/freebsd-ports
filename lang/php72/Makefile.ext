@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .if ${PHP_MODNAME} == "dba"
 CONFIGURE_ARGS+=--enable-dba
 
-OPTIONS_DEFINE=	CDB DB4 GDBM QDBM TOKYO INIFILE FLATFILE
+OPTIONS_DEFINE=	CDB DB4 GDBM QDBM TOKYO INIFILE FLATFILE LMDB
 OPTIONS_DEFAULT=CDB INIFILE FLATFILE
 
 CDB_DESC=	cdb database support
@@ -51,6 +51,7 @@ QDBM_DESC=	QDBM database support
 TOKYO_DESC=	Tokyo Cabinet database support
 INIFILE_DESC=	INI file support
 FLATFILE_DESC=	flatfile support
+LMDB_DESC=	LMDB database support
 
 PHP_HEADER_DIRS=	libcdb libflatfile libinifile
 .endif
@@ -474,6 +475,11 @@ CONFIGURE_ARGS+=--disable-inifile
 .	if empty(PORT_OPTIONS:MFLATFILE)
 CONFIGURE_ARGS+=--disable-flatfile
 .	endif
+
+.	if ${PORT_OPTIONS:MLMDB}
+LIB_DEPENDS+=	liblmdb.so:databases/lmdb
+CONFIGURE_ARGS+=	--with-lmdb=${LOCALBASE}
+.endif
 .endif
 
 .if ${PHP_MODNAME} == "mysqli"
