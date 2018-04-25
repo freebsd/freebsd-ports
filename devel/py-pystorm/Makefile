@@ -3,7 +3,7 @@
 
 PORTNAME=	pystorm
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,10 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${FLAVOR}
 
 NO_ARCH=	yes
+REINPLACE_ARGS=	-i ''
 
 post-patch:
 	${RM} ${WRKSRC}/test/__init__.py
+	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/setup.py ${WRKSRC}/pystorm.egg-info/requires.txt
 
 .include <bsd.port.mk>
