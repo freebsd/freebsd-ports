@@ -1,5 +1,7 @@
-TIMESTAMP = 1522788732
+TIMESTAMP = 1524589531
 SHA256 (openssh-7.7p1.tar.gz) = d73be7e684e99efcd024be15a30bffcbe41b012b2f7b3c9084aed621775e6b8f
 SIZE (openssh-7.7p1.tar.gz) = 1536900
 SHA256 (openssh-7.7p1+x509-11.3.diff.gz) = 57be0d0028863f1f690b8b4ccae7583c0f8dd8ed2c688a912b25832bf7f9b185
 SIZE (openssh-7.7p1+x509-11.3.diff.gz) = 488467
+SHA256 (openssh-7.7p1-gsskex-all-20141021-debian-rh-20171004.patch.gz) = c58f10ed5d9550e6e4ac09898a1aa131321e69c4d65a742ab95d357b35576ef4
+SIZE (openssh-7.7p1-gsskex-all-20141021-debian-rh-20171004.patch.gz) = 27251

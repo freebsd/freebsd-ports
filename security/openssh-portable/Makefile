@@ -89,9 +89,9 @@ EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI}
-BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
+#BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
 # Patch from:
-# http://sources.debian.net/data/main/o/openssh/1:7.4p1-5/debian/patches/gssapi.patch
+# https://sources.debian.org/data/main/o/openssh/1:7.7p1-2/debian/patches/gssapi.patch
 # which was originally based on 5.7 patch from
 # http://www.sxw.org.uk/computing/patches/
 # It is mirrored simply to apply gzip -9.
@@ -99,7 +99,7 @@ BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
 # Needed glue for applying HPN patch without conflict
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue
 .  endif
-PATCHFILES+=	openssh-7.4p1-gsskex-all-20141021-debian-rh-20161228.patch.gz:-p1:gsskex
+PATCHFILES+=	openssh-7.7p1-gsskex-all-20141021-debian-rh-20171004.patch.gz:-p1:gsskex
 .endif
 
 # http://www.psc.edu/index.php/hpn-ssh https://github.com/rapier1/hpn-ssh https://github.com/rapier1/openssh-portable
