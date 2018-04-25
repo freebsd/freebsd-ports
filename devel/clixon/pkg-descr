@@ -1,0 +1,7 @@
+Clixon is a CLI/network interfaced configuration database tool
+
+Using Clixon you can create CLI, RESTCONF, and NETCONF interfaces to manage a
+configuration database. It also provides the mechanism to validate and configure
+system components.
+
+WWW: http://www.clicon.org/

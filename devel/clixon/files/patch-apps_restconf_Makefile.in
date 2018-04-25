@@ -1,0 +1,30 @@
+--- apps/restconf/Makefile.in.orig	2018-04-24 15:43:19 UTC
++++ apps/restconf/Makefile.in
+@@ -44,7 +44,7 @@ bindir 		= @bindir@
+ libdir		= @libdir@
+ mandir		= @mandir@
+ libexecdir	= @libexecdir@
+-wwwdir  	= /www-data
++wwwdir  	= @sbindir@
+ localstatedir	= @localstatedir@
+ sysconfdir	= @sysconfdir@
+ includedir	= @includedir@
+@@ -101,14 +101,14 @@ install:	install-lib $(APPL)
+ 	install -m 0755 -s $(APPL) $(DESTDIR)$(wwwdir)
+ 
+ install-lib: $(MYLIB)
+-	install -d $(DESTDIR)$(libdir) 
+-	install $(MYLIB) $(DESTDIR)$(libdir) 
++	install -d -m 0755 $(DESTDIR)$(libdir) 
++	install -m 0644 -s $(MYLIB) $(DESTDIR)$(libdir) 
+ 	ln -sf $(MYLIB) $(DESTDIR)$(libdir)/$(MYLIBSO)     # -l:libclixon_restconf.so.2
+ 	ln -sf $(MYLIBSO) $(DESTDIR)$(libdir)/$(MYLIBLINK) # -l:libclixon_restconf.so
+ 
+ install-include:	clixon_restconf.h
+-	install -d $(DESTDIR)$(includedir)/clixon
+-	install -m 644 $^ $(DESTDIR)$(includedir)/clixon
++	install -d -m 0755 $(DESTDIR)$(includedir)/clixon
++	install -m 0644 $^ $(DESTDIR)$(includedir)/clixon
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(wwwdir)/$(APPL)
