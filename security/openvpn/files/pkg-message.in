@@ -7,5 +7,7 @@
 ###  openvpn-client <spec>.ovpn
 ### ------------------------------------------------------------------------
 ###  For compatibility notes when interoperating with older OpenVPN
-###  versions, please, see <http://openvpn.net/relnotes.html>
+###  versions, please see <http://openvpn.net/relnotes.html>
+### ------------------------------------------------------------------------
+###  Note that OpenVPN does not officially support LibreSSL.
 ### ------------------------------------------------------------------------

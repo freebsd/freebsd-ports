@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		2.4.5
-PORTREVISION?=		1
+DISTVERSION=		2.4.6
+PORTREVISION?=		0
 CATEGORIES=		security net
-MASTER_SITES=		https://swupdate.openvpn.net/community/releases/ \
+MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/
 
 MAINTAINER=		mandree@FreeBSD.org
@@ -87,12 +87,6 @@ PORTEXAMPLES=		*
 TEST_ALL_TARGET=	check
 TEST_TEST_TARGET_OFF=	check
 
-# XXX Please remove this compatibility wrapper after 2017Q2 is branched.
-.ifdef(WITHOUT_CHECK)
-WARNING+=	"${.CURDIR}: WITHOUT_CHECK is deprecated, please use WITHOUT=TEST or OPTIONS_UNSET=TEST."
-WITHOUT+=	TEST
-.endif
-
 pre-configure:
 .ifdef (LOG_OPENVPN)
 	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
@@ -117,6 +111,15 @@ _tlslibs=libmbedtls libmbedx509 libmbedcrypto
 .else
 # OpenSSL
 _tlslibs=libssl libcrypto
+.endif
+
+.if ${SSL_DEFAULT:Mlibressl*} && empty(PORT_OPTIONS:MMBEDTLS)
+pre-everything::
+	@${ECHO_CMD} "WARNING: OpenVPN does not officially support LibreSSL."
+	@${ECHO_CMD} "If things break, rebuild with OpenSSL or mbedTLS."
+	@${ECHO_CMD} "You may wish to change your default SSL library"
+	@${ECHO_CMD} "and press Ctrl+C within the next 10 seconds to abort."
+	@sleep 10
 .endif
 
 # sanity check that we don't inherit incompatible SSL libs through,
