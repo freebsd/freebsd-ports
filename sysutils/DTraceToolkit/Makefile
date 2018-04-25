@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 PORTREVISION=	4
 CATEGORIES=	sysutils
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Collection of useful scripts for DTrace
 
 LICENSE=	CDDL
