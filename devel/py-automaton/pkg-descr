@@ -5,4 +5,4 @@ pattern and has a multitude of various usages. Some of the usages for this
 library include providing state & transition validation and
 running/scheduling/analyzing the execution of tasks.
 
-WWW: https://pypi.python.org/pypi/automaton
+WWW: https://pypi.org/project/automaton/

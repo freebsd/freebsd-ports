@@ -4,4 +4,4 @@ adapter registries for its adapter and utility registry. The module also
 provides some facilities to organize the local software and ensures the
 correct behavior inside the ZODB.
 
-WWW: https://pypi.python.org/pypi/zope.site
+WWW: https://pypi.org/project/zope.site/

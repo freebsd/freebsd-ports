@@ -1,4 +1,4 @@
 Support for applying monkey patches late in the startup cycle by using ZCML
 configuration actions.
 
-WWW: https://pypi.python.org/pypi/collective.monkeypatcher
+WWW: https://pypi.org/project/collective.monkeypatcher/

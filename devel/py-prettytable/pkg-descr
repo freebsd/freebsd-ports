@@ -5,4 +5,4 @@ PrettyTable allows for selection of which columns are to be printed,
 independent alignment of columns (left or right justified or centred)
 and printing of "sub-tables" by specifying a row range.
 
-WWW: https://pypi.python.org/pypi/PrettyTable
+WWW: https://pypi.org/project/PrettyTable/

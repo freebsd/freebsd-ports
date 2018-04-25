@@ -1,4 +1,4 @@
 This library simply implements Levenshtein distance with C++ and Cython.
 
-WWW: https://pypi.python.org/pypi/editdistance
+WWW: https://pypi.org/project/editdistance/
 WWW: https://github.com/aflc/editdistance

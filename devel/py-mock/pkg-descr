@@ -6,4 +6,4 @@ After performing an action, you can make assertions about which methods /
 attributes were used and arguments they were called with. You can also specify
 return values and set needed attributes in the normal way.
 
-WWW: https://pypi.python.org/pypi/mock
+WWW: https://pypi.org/project/mock/

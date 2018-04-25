@@ -1,4 +1,4 @@
 Module for reading and writing crontab files and accessing the system cron
 automatically and simply using a direct API.
 
-WWW: https://pypi.python.org/pypi/crontab
+WWW: https://pypi.org/project/crontab/

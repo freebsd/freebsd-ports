@@ -1,4 +1,4 @@
 This package provides a metaclass that allows classes implemented
 in extension modules to be subclassed in Python.
 
-WWW: https://pypi.python.org/pypi/ExtensionClass
+WWW: https://pypi.org/project/ExtensionClass/

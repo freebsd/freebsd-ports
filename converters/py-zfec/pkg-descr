@@ -7,4 +7,4 @@ that if some blocks are lost then the original data can be recovered
 from the remaining blocks. The zfec package includes command-line
 tools, C API, Python API, and Haskell API.
 
-WWW: https://pypi.python.org/pypi/zfec
+WWW: https://pypi.org/project/zfec/

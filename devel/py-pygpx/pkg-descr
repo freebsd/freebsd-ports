@@ -1,4 +1,4 @@
 py-gpx is a python  module for parsing GPS Exchange Format (GPX) files.
 This module allows you to parse and extract data from GPX files.
 
-WWW: https://pypi.python.org/pypi/pygpx
+WWW: https://pypi.org/project/pygpx/

@@ -3,4 +3,4 @@ pipelines to intercept request/response flows. The base class can be enhanced
 with functionality like add/delete/modification of http headers and support
 for limiting size/connection etc.
 
-WWW: https://pypi.python.org/pypi/oslo.middleware
+WWW: https://pypi.org/project/oslo.middleware/

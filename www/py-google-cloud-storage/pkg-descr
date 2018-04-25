@@ -2,4 +2,4 @@ Google Cloud Storage allows you to store data on Google infrastructure with
 very high reliability, performance and availability, and can be used to
 distribute large data objects to users via direct download.
 
-WWW: https://pypi.python.org/pypi/google-cloud-storage
+WWW: https://pypi.org/project/google-cloud-storage/

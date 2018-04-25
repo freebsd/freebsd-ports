@@ -11,4 +11,4 @@ Weblib provides tools to solve typical tasks in web scraping:
  * cross-platform file locking
  * operations with files and directories
 
-WWW: https://pypi.python.org/pypi/weblib
+WWW: https://pypi.org/project/weblib/

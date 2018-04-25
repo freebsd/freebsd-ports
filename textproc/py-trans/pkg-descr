@@ -2,4 +2,4 @@ This module translates national characters into similar sounding latin
 characters (transliteration). At the moment, Czech, Greek, Latvian, Polish,
 Turkish, Russian, Ukrainian alphabets are supported (it covers 99% of needs).
 
-WWW: https://pypi.python.org/pypi/trans
+WWW: https://pypi.org/project/trans/

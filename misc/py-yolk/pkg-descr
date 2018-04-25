@@ -2,4 +2,4 @@ Yolk is a Python library and command-line tool for obtaining information
 about packages installed by setuptools and packages on PyPI (Python Package
 Index a.k.a. The Cheese Shop).
 
-WWW: https://pypi.python.org/pypi/yolk
+WWW: https://pypi.org/project/yolk/

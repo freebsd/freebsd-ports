@@ -1,5 +1,5 @@
 pyRFC3339 parses and generates RFC 3339-compliant timestamps using Python
 datetime.datetime objects.
 
-WWW: https://pypi.python.org/pypi/pyRFC3339
+WWW: https://pypi.org/project/pyRFC3339/
 WWW: https://github.com/kurtraschke/pyRFC3339

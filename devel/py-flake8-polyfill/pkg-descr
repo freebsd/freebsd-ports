@@ -2,4 +2,4 @@ flake8-polyfill is a package that provides some compatibility helpers
 for Flake8 plugins that intend to support Flake8 2.x and 3.x
 simultaneously.
 
-WWW: https://pypi.python.org/pypi/flake8-polyfill
+WWW: https://pypi.org/project/flake8-polyfill/

@@ -3,4 +3,4 @@ python objects to the majority of the built-in python types. Serialization
 is the process of converting an object to a byte stream, and the inverse
 of which is converting a byte stream back to on python object hierarchy.
 
-WWW: https://pypi.python.org/pypi/dill
+WWW: https://pypi.org/project/dill/

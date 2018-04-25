@@ -2,4 +2,4 @@ This package provides a variant of the persistent base class that's
 an ExtensionClass. Unless you need ExtensionClass semantics, you
 probably want to use persistent.Persistent from ZODB3.
 
-WWW: https://pypi.python.org/pypi/Persistence
+WWW: https://pypi.org/project/Persistence/

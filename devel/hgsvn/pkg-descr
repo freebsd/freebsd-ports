@@ -15,4 +15,4 @@ Three scripts are provided:
    be run multiple times.
  * hgpushsvn pushes your local Mercurial commits back to the SVN repository.
 
-WWW: https://pypi.python.org/pypi/hgsvn
+WWW: https://pypi.org/project/hgsvn/

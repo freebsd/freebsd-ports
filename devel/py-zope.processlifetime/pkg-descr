@@ -1,4 +1,4 @@
 This package provides interfaces/implementations for events relative
 to the lifetime of a server process (startup, database opening, etc.)
 
-WWW: https://pypi.python.org/pypi/zope.processlifetime
+WWW: https://pypi.org/project/zope.processlifetime/

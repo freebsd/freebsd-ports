@@ -2,4 +2,4 @@ Backport of standard pathlib module which tracks the standard library module,
 so all the newest features of the standard pathlib can be used also on older
 Python versions.
 
-WWW: https://pypi.python.org/pypi/pathlib2
+WWW: https://pypi.org/project/pathlib2/

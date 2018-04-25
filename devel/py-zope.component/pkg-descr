@@ -10,4 +10,4 @@ Adapters are components that are computed from other components
 to adapt them to some interface. Because they are computed from
 other objects, they are provided as factories, usually classes.
 
-WWW: https://pypi.python.org/pypi/zope.component
+WWW: https://pypi.org/project/zope.component/

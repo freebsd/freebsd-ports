@@ -6,4 +6,4 @@ logic and loops.
 Inside Zope environments page templates and TAL have superseded
 DTML for most use cases.
 
-WWW: https://pypi.python.org/pypi/DocumentTemplate
+WWW: https://pypi.org/project/DocumentTemplate/

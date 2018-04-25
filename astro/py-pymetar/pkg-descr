@@ -2,5 +2,5 @@ Pymetar is a python module and command line tool designed to fetch Metar
 reports from the NOAA (http://www.noaa.gov) and allow access to the
 included weather information.
 
-WWW: https://pypi.python.org/pypi/pymetar
+WWW: https://pypi.org/project/pymetar/
 WWW: https://github.com/klausman/pymetar

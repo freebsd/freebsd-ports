@@ -12,4 +12,4 @@ error pages if appropriate. Once a form post has validated successfully, the
 method will be called with the coerced values.
 
 WWW: https://github.com/twisted/nevow
-WWW: https://pypi.python.org/pypi/Nevow
+WWW: https://pypi.org/project/Nevow/

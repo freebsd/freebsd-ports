@@ -2,5 +2,5 @@ This library provides a text mode progressbar. This is typically
 used to display the progress of a long running operation, providing
 a visual clue that processing is underway.
 
-WWW: https://pypi.python.org/pypi/progressbar2
+WWW: https://pypi.org/project/progressbar2/
 WWW: https://github.com/WoLpH/python-progressbar

@@ -14,4 +14,4 @@ of trait attributes within the class. Trait attributes defined by
 a classs are automatically inherited by any subclass derived from
 the class.
 
-WWW: https://pypi.python.org/pypi/traits
+WWW: https://pypi.org/project/traits/

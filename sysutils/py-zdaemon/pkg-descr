@@ -5,4 +5,4 @@ for Zope / ZEO, although it is not limited to running Python-based
 applications (for instance, it has been used to manage the
 'spread' daemon).
 
-WWW: https://pypi.python.org/pypi/zdaemon
+WWW: https://pypi.org/project/zdaemon/

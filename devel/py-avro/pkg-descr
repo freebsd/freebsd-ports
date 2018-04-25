@@ -10,5 +10,5 @@ Apache Avro is a data serialization system which provides:
   generation as an optional optimization, only worth implementing for statically
   typed languages.
 
-WWW: https://pypi.python.org/pypi/avro
+WWW: https://pypi.org/project/avro/
 WWW: https://avro.apache.org/

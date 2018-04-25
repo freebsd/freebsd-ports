@@ -2,4 +2,4 @@ You can use this Python module to convert amongst many different
 notations and to manage couples of address/netmask in the CIDR
 notation.
 
-WWW: https://pypi.python.org/pypi/iplib
+WWW: https://pypi.org/project/iplib/

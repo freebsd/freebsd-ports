@@ -7,4 +7,4 @@ programming known as single-dispatch generic functions.
 
 This library is a backport of this functionality to Python 2.6 - 3.3.
 
-WWW: https://pypi.python.org/pypi/singledispatch
+WWW: https://pypi.org/project/singledispatch/

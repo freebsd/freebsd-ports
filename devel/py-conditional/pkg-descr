@@ -1,4 +1,4 @@
 The conditional context manager comes handy when you always want to execute a
 with-block but only conditionally want to apply its context manager.
 
-WWW: https://pypi.python.org/pypi/conditional
+WWW: https://pypi.org/project/conditional/

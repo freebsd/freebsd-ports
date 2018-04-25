@@ -4,4 +4,4 @@ allows for providing a level of transparency in how asynchronous work gets
 executed. This library currently adds statistics gathering, an eventlet
 executor, a synchronous executor etc.
 
-WWW: https://pypi.python.org/pypi/futurist
+WWW: https://pypi.org/project/futurist/

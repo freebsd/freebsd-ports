@@ -16,4 +16,4 @@ implementation and better performance. Read why others use gevent and check out
 the list of the open source projects based on gevent.
 
 WWW: http://www.gevent.org/
-WWW: https://pypi.python.org/pypi/gevent
+WWW: https://pypi.org/project/gevent/

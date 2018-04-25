@@ -1,4 +1,4 @@
 Django-datetime-widget is a simple and clean widget for DateTimeField.
 It's based on bootstrap-datepicker by Stefan Petre.
 
-WWW: https://pypi.python.org/pypi/django-datetime-widget
+WWW: https://pypi.org/project/django-datetime-widget/

@@ -5,4 +5,4 @@ notation. Parsimonious was designed to undergird a MediaWiki parser
 that wouldn't take 5 seconds or a GB of RAM to do one page, but it's 
 applicable to all sorts of languages.
 
-WWW: https://pypi.python.org/pypi/parsimonious
+WWW: https://pypi.org/project/parsimonious/

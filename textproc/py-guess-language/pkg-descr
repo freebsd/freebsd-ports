@@ -4,4 +4,4 @@ which itself is based on Language::Guess by Maciej Ceglowski. Detects
 over 60 languages, all languages listed in the trigrams directory 
 plus Japanese, Chinese, Korean and Greek.
 
-WWW: https://pypi.python.org/pypi/guess-language
+WWW: https://pypi.org/project/guess-language/

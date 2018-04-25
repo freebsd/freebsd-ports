@@ -1,4 +1,4 @@
 This module is for generating random, valid web navigator's configs
 & User-Agent HTTP headers.
 
-WWW: https://pypi.python.org/pypi/user_agent
+WWW: https://pypi.org/project/user_agent/

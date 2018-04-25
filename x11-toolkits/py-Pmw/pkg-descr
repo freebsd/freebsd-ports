@@ -20,4 +20,4 @@ making it more readable and maintainable and more easily modifiable.
 The ability to extend Pmw megawidgets enables developers to create new
 megawidgets based on previous work.
 
-WWW: https://pypi.python.org/pypi/Pmw
+WWW: https://pypi.org/project/Pmw/

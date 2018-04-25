@@ -13,5 +13,5 @@ What’s included in CLI Helpers?
 - Prettyprinting of tabular data with custom pre-processing
 - [in progress] config file reading/writing
 
-WWW: https://pypi.python.org/pypi/cli-helpers
+WWW: https://pypi.org/project/cli-helpers/
 WWW: https://github.com/dbcli/cli_helpers

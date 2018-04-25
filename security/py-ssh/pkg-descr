@@ -3,4 +3,4 @@ on using SSH2 as an alternative to SSL for making secure connections between
 python scripts. All major ciphers and hash methods are supported. SFTP client
 and server mode are both supported too.
 
-WWW: https://pypi.python.org/pypi/ssh
+WWW: https://pypi.org/project/ssh/

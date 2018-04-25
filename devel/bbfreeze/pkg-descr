@@ -12,4 +12,4 @@ It has the following features:
   - Automatic pathname rewriting (pathnames in tracebacks are relative)
   - New distutils command: bdist_bbfreeze
 
-WWW: https://pypi.python.org/pypi/bbfreeze
+WWW: https://pypi.org/project/bbfreeze/

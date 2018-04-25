@@ -8,4 +8,4 @@ The data deduplication technique used makes Borg suitable for daily backups
 since only changes are stored. The authenticated encryption technique makes it
 suitable for backups to not fully trusted targets.
 
-WWW: https://pypi.python.org/pypi/borgbackup
+WWW: https://pypi.org/project/borgbackup/

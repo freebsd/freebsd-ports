@@ -11,4 +11,4 @@ out-of-the-box.  This means that, with PyInstaller, all the required tricks
 to make external packages work are already integrated within PyInstaller
 itself so that there is no user intervention required.
 
-WWW: https://pypi.python.org/pypi/PyInstaller
+WWW: https://pypi.org/project/PyInstaller/

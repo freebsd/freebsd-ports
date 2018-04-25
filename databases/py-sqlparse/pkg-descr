@@ -1,5 +1,5 @@
 sqlparse is a non-validating SQL parser module.
 It provides support for parsing, splitting and formatting SQL statements.
 
-WWW: https://pypi.python.org/pypi/sqlparse
+WWW: https://pypi.org/project/sqlparse/
 WWW: https://github.com/andialbrecht/sqlparse

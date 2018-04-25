@@ -8,5 +8,5 @@ data structures and their HDF5 equivalents vastly simplifies the process of
 reading and writing data from Python.
 
 WWW: https://www.h5py.org/
-WWW: https://pypi.python.org/pypi/h5py
+WWW: https://pypi.org/project/h5py/
 WWW: https://github.com/h5py/h5py

@@ -8,5 +8,5 @@ of the file to be mapped. Once the user reads beyond the mapped region, smmap
 will automatically map the next required region, unloading unused regions using
 a LRU algorithm.
 
-WWW: https://pypi.python.org/pypi/smmap2
+WWW: https://pypi.org/project/smmap2/
 WWW: https://github.com/gitpython-developers/smmap

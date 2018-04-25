@@ -5,4 +5,4 @@ graphviz output.
 altgraph includes some additional usage of Python 2.6+ features and
 enhancements related to modulegraph and macholib.
 
-WWW: https://pypi.python.org/pypi/altgraph
+WWW: https://pypi.org/project/altgraph/

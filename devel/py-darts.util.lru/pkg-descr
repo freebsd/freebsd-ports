@@ -5,4 +5,4 @@ modified at run-time via the capacity property:
 >>> cache.capacity
 1
 
-WWW: https://pypi.python.org/pypi/darts.util.lru
+WWW: https://pypi.org/project/darts.util.lru/

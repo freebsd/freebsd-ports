@@ -3,4 +3,4 @@ a fashion similar to perl's Net::IP and friends. The IP class allows a
 comfortable parsing and handling for most notations in use for IPv4 and IPv6
 Addresses and Networks.
 
-WWW: https://pypi.python.org/pypi/IPy
+WWW: https://pypi.org/project/IPy/

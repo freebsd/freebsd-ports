@@ -8,4 +8,4 @@ methods that make using the DOM a little easier.
 Implementations based on PyXML and lxml/libxml2 are
 available.
 
-WWW: https://pypi.python.org/pypi/mathdom
+WWW: https://pypi.org/project/mathdom/

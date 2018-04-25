@@ -4,4 +4,4 @@ provides much faster, C-based zipfile decryption. The code is actually
 modifications to allow it to compile in Cython, and the _ZipDecrypter
 class adapted to take advantage of native C datatypes.
 
-WWW: https://pypi.python.org/pypi/czipfile
+WWW: https://pypi.org/project/czipfile/

@@ -1,4 +1,4 @@
 LRU cache for python. Provides a dictionary-like object as well
  as a method decorator.
 
-WWW: https://pypi.python.org/pypi/py_lru_cache
+WWW: https://pypi.org/project/py_lru_cache/

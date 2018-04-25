@@ -12,5 +12,5 @@ easier to port from MATLAB to Python/NumPy. The core implementation of this
 library is in C++ for efficiency.
 
 WWW: http://danifold.net/fastcluster.html
-WWW: https://pypi.python.org/pypi/fastcluster
+WWW: https://pypi.org/project/fastcluster/
 WWW: https://github.com/dmuellner/fastcluster

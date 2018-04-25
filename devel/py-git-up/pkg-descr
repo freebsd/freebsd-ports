@@ -2,4 +2,4 @@ PyGitUp is a Python implementation of the great aanand/git-up/. It
 not only fully covers the abilities of git-up and should be a drop-in
 replacement, but also extends it slightly.
 
-WWW: https://pypi.python.org/pypi/git-up
+WWW: https://pypi.org/project/git-up/

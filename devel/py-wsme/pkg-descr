@@ -5,4 +5,4 @@ your favorite Python web (micro)framework, so you can use both your preferred
 way of routing your REST requests and most of the features of WSME that rely
 on the typing system.
 
-WWW: https://pypi.python.org/pypi/WSME
+WWW: https://pypi.org/project/WSME/

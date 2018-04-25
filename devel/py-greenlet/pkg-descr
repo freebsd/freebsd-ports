@@ -2,4 +2,4 @@ greenlet provides a primitive form of micro-threads in the form of a native
 extension module to Python. Higher-level primitives such as coroutine scheduling
 are not part of greenlet itself, but can be built upon it.
 
-WWW: https://pypi.python.org/pypi/greenlet
+WWW: https://pypi.org/project/greenlet/

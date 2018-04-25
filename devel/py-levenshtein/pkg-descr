@@ -3,4 +3,4 @@ medians and set medians of Strings and Unicodes.  Because it's implemented
 in C, it's much faster than corresponding Python library functions and
 methods.
 
-WWW: https://pypi.python.org/pypi/python-Levenshtein
+WWW: https://pypi.org/project/python-Levenshtein/

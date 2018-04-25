@@ -2,4 +2,4 @@ A client for the OpenStack Identity API, implemented by the Keystone team.
 It contains a Python API (the keystoneclient module) for
 OpenStack's Identity Service.
 
-WWW: https://pypi.python.org/pypi/python-keystoneclient
+WWW: https://pypi.org/project/python-keystoneclient/

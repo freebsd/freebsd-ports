@@ -2,4 +2,4 @@ selectors34 is a backport of the selectors module from Python 3.4. The selectors
 module written by Charles-François Natali. This port is based on Victor
 Stinner’s trollius/selectors.py port.
 
-WWW: https://pypi.python.org/pypi/selectors34
+WWW: https://pypi.org/project/selectors34/

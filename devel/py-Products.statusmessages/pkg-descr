@@ -2,4 +2,4 @@ statusmessages provides an easy way of handling internationalized status
 messages managed via an BrowserRequest adapter storing status messages in
 client-side cookies.
 
-WWW: https://pypi.python.org/pypi/Products.statusmessages
+WWW: https://pypi.org/project/Products.statusmessages/

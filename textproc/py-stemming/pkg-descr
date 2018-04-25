@@ -16,4 +16,4 @@ is useful in various natural language processing scenarios, such as search.
 In general ``porter2`` is the best overall stemming algorithm, but not
 necessarily the fastest or most aggressive.
 
-WWW: https://pypi.python.org/pypi/stemming
+WWW: https://pypi.org/project/stemming/

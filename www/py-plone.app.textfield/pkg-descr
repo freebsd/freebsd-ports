@@ -3,4 +3,4 @@ can be used to store a value with a related MIME type. The value can be
 transformed to an output MIME type, for example to transform from structured
 text to HTML.
 
-WWW: https://pypi.python.org/pypi/plone.app.textfield
+WWW: https://pypi.org/project/plone.app.textfield/

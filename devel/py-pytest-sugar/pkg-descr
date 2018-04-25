@@ -1,5 +1,5 @@
 pytest-sugar is a plugin for py.test that shows failures and errors instantly
 and shows a progress bar.
 
-WWW: https://pypi.python.org/pypi/pytest-sugar
+WWW: https://pypi.org/project/pytest-sugar/
 WWW: https://github.com/Frozenball/pytest-sugar

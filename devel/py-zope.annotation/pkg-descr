@@ -1,4 +1,4 @@
 This package provides a mechanism to store additional information
 about objects without need to modify object class.
 
-WWW: https://pypi.python.org/pypi/zope.annotation
+WWW: https://pypi.org/project/zope.annotation/

@@ -1,4 +1,4 @@
 AtomicLong was born out of the need for fast thread-safe counters in Python.
 Its value is a C long which can be incremented, decremented, and set atomically.
 
-WWW: https://pypi.python.org/pypi/atomiclong
+WWW: https://pypi.org/project/atomiclong/

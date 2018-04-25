@@ -7,5 +7,5 @@ constants. Due to its modular design, you can extend (or even rewrite!) the
 complete list without changing the source code. It supports a lot of numpy
 mathematical operations without monkey patching or wrapping numpy.
 
-WWW: https://pypi.python.org/pypi/Pint
+WWW: https://pypi.org/project/Pint/
 WWW: https://github.com/hgrecco/pint

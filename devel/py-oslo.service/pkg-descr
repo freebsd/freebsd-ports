@@ -3,4 +3,4 @@ the patterns established by other OpenStack applications. It also includes
 utilities long-running applications might need for working with SSL or WSGI,
 performing periodic operations, interacting with systemd, etc.
 
-WWW: https://pypi.python.org/pypi/oslo.service
+WWW: https://pypi.org/project/oslo.service/

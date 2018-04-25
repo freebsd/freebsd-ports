@@ -2,4 +2,4 @@ cymruwhois is a python library for interfacing with the
 whois.cymru.com service and performs lookups by ip address and 
 return ASN, Country Code, and Netblock Owner.
 
-WWW: https://pypi.python.org/pypi/cymruwhois
+WWW: https://pypi.org/project/cymruwhois/

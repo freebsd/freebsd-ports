@@ -5,4 +5,4 @@ requires pycrypto. This library requires two types of API keys. If you'd like
 to use the CAPTCHA, you'll need a key from http://recaptcha.net/api/getkey.
 For Mailhide, you'll need a key from http://mailhide.recaptcha.net/apikey.
 
-WWW: https://pypi.python.org/pypi/recaptcha-client
+WWW: https://pypi.org/project/recaptcha-client/

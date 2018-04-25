@@ -16,4 +16,4 @@ the Python date and datetime classes. Additionally fractional seconds are
 limited to microseconds. That means if the parser finds for instance nanoseconds
 it will round it to microseconds.
 
-WWW: https://pypi.python.org/pypi/isodate
+WWW: https://pypi.org/project/isodate/

@@ -8,4 +8,4 @@ introspectability, signatures, type checking abilities etc. The decorators that
 can be constructed using this module will work in far more scenarios than
 typical decorators and provide more predictable and consistent behaviour.
 
-WWW: https://pypi.python.org/pypi/wrapt
+WWW: https://pypi.org/project/wrapt/

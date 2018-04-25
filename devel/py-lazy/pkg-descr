@@ -2,4 +2,4 @@ The lazy module provides a decorator to create lazy attributes. A lazy
 attribute is a computed attribute that is evaluated only once, the first
 time it is used. Subsequent uses return the results of the first call.
 
-WWW: https://pypi.python.org/pypi/lazy
+WWW: https://pypi.org/project/lazy/

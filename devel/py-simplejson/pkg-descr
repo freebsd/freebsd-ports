@@ -12,4 +12,4 @@ pickle).
 The decoder can handle incoming JSON strings of any specified encoding (UTF-8 by
 default).
 
-WWW: https://pypi.python.org/pypi/simplejson
+WWW: https://pypi.org/project/simplejson/

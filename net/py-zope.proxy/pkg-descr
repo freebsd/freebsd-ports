@@ -3,4 +3,4 @@ around another object, intervening in the apparent behavior of the
 wrapped object only when necessary to apply the policy (e.g., access
 checking, location brokering, etc.) for which the proxy is responsible.
 
-WWW: https://pypi.python.org/pypi/zope.proxy
+WWW: https://pypi.org/project/zope.proxy/

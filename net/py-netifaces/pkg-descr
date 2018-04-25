@@ -4,4 +4,4 @@ It's been irritating me for ages that it isn't possible to
 straightforwardly get the network address(es) of the machine
 you're running on from a Python program.
 
-WWW: https://pypi.python.org/pypi/netifaces
+WWW: https://pypi.org/project/netifaces/

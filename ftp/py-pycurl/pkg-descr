@@ -12,5 +12,5 @@ PycURL exposes most of the functionality of libcurl, including:
 - Sockets used for network operations, permitting integration of PycURL into the
   applications' I/O loop (e.g., using Tornado).
 
-WWW: https://pypi.python.org/pypi/pycurl
+WWW: https://pypi.org/project/pycurl/
 WWW: http://pycurl.io/

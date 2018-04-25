@@ -1,4 +1,4 @@
 The zope.traversing package provides adapteres for resolving object
 paths by traversing an object hierarchy.
 
-WWW: https://pypi.python.org/pypi/zope.traversing
+WWW: https://pypi.org/project/zope.traversing/

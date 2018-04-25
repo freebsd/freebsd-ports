@@ -4,5 +4,5 @@ have a well-defined API using multiple protocols and transports.
 It integrates with popular Python web frameworks as well as libraries like
 SQLAlchemy to keep your code as DRY (Don't Repeat Yourself) as possible.
 
-WWW: https://pypi.python.org/pypi/spyne
+WWW: https://pypi.org/project/spyne/
 WWW: http://spyne.io/

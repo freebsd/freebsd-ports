@@ -14,4 +14,4 @@ The recommended message broker is RabbitMQ, but limited support for Redis,
 Beanstalk, MongoDB, CouchDB, and databases (using SQLAlchemy or the Django
 ORM) is also available.
 
-WWW: https://pypi.python.org/pypi/celery
+WWW: https://pypi.org/project/celery/

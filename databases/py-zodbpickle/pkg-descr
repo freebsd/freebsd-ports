@@ -8,4 +8,4 @@ Under Py3k, this package forks the pickle module (and the supporting
 C extension) from both Python 3.2 and Python 3.3. The fork add support
 for the noload operations used by ZODB.
 
-WWW: https://pypi.python.org/pypi/zodbpickle
+WWW: https://pypi.org/project/zodbpickle/

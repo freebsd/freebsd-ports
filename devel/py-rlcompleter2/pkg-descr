@@ -4,4 +4,4 @@ rlcompleter2 is an interactive readline completion handler, featuring:
     * convenient completions on module, instance and function objects
     * ultra simple user interface: <tab> (try hit it multiple times!)
 
-WWW: https://pypi.python.org/pypi/rlcompleter2
+WWW: https://pypi.org/project/rlcompleter2/

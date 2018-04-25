@@ -3,5 +3,5 @@ aims at allowing full access to loose objects as well as packs with performance
 and scalability in mind. It operates exclusively on streams, allowing to handle
 large objects with a small memory footprint.
 
-WWW: https://pypi.python.org/pypi/gitdb2
+WWW: https://pypi.org/project/gitdb2/
 WWW: https://github.com/gitpython-developers/gitdb

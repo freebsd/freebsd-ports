@@ -2,4 +2,4 @@ Read/rewrite/write Python ASTs
 
 astor is designed to allow easy manipulation of Python source via the AST.
 
-WWW: https://pypi.python.org/pypi/astor
+WWW: https://pypi.org/project/astor/

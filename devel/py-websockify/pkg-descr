@@ -5,4 +5,4 @@ to normal socket traffic. Websockify accepts the WebSockets handshake,
 parses it, and then begins forwarding traffic between the client and
 the target in both directions.
 
-WWW: https://pypi.python.org/pypi/websockify
+WWW: https://pypi.org/project/websockify/

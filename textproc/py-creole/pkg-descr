@@ -6,4 +6,4 @@ python-creole is an markup converter in pure Python:
     * html -> reStructuredText markup
     * html -> textile markup
 
-WWW: https://pypi.python.org/pypi/python-creole
+WWW: https://pypi.org/project/python-creole/

@@ -5,5 +5,5 @@ str in Python 2 and Python 3.
 The semantics of Python 3's version are more useful because they support unicode
 natively, while Python 2's csv does not.
 
-WWW: https://pypi.python.org/pypi/backports.csv
+WWW: https://pypi.org/project/backports.csv/
 WWW: https://github.com/ryanhiebert/backports.csv

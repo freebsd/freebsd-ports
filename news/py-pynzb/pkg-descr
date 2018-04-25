@@ -5,4 +5,4 @@ Since NZB is XML-based, it's relatively easy to build one-off parsers
 to parse NZB files. This project is an attempt to consolidate those
 many one-off NZB parsers into one simple interface.
 
-WWW: https://pypi.python.org/pypi/pynzb
+WWW: https://pypi.org/project/pynzb/

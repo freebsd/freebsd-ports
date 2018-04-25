@@ -2,5 +2,5 @@ isort is a Python utility/library to sort imports alphabetically, and
 automatically separated into sections. It provides a command line utility,
 Python library and plugins for various editors to quickly sort all your imports.
 
-WWW: https://pypi.python.org/pypi/isort
+WWW: https://pypi.org/project/isort/
 WWW: https://github.com/timothycrosley/isort

@@ -6,4 +6,4 @@ that calculates the similarity between two of those objects.
 For simple datatypes, like integers, this can be as simple as a 
 subtraction, but more complex calculations are possible. 
 
-WWW: https://pypi.python.org/pypi/cluster
+WWW: https://pypi.org/project/cluster/

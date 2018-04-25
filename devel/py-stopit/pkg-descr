@@ -1,4 +1,4 @@
 Raise asynchronous exceptions in other threads, control the timeout 
 of blocks or callables with two context managers and two decorators.
 
-WWW: https://pypi.python.org/pypi/stopit
+WWW: https://pypi.org/project/stopit/

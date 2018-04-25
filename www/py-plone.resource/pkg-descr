@@ -2,4 +2,4 @@ plone.resource publishes directories of static files via the ZPublisher. These
 directories may be located either in the ZODB (as OFS folders and files), or on
 the filesystem.
 
-WWW: https://pypi.python.org/pypi/plone.resource
+WWW: https://pypi.org/project/plone.resource/

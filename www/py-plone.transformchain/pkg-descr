@@ -2,4 +2,4 @@ Hook into repoze.zope2 that allows third party packages to register a sequence
 of hooks that will be allowed to modify the response before it is returned to
 the browser.
 
-WWW: https://pypi.python.org/pypi/plone.transformchain
+WWW: https://pypi.org/project/plone.transformchain/

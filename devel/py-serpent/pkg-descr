@@ -4,4 +4,4 @@ Because it only serializes literals and recreates the objects using
 ast.literal_eval(), the serialized data is safe to transport to other
 machines (over the network for instance) and de-serialize it there.
 
-WWW: https://pypi.python.org/pypi/serpent
+WWW: https://pypi.org/project/serpent/

@@ -14,4 +14,4 @@ made available via ctypes. This makes the wrapper very powerful and flexible
 as it has direct access to all the GNUTLS internals and is also very easy to
 extend without any need to write C code or recompile anything.
 
-WWW: https://pypi.python.org/pypi/python-gnutls
+WWW: https://pypi.org/project/python-gnutls/

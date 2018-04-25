@@ -6,4 +6,4 @@ zope.deprecation provides a simple function called
 'deprecated(names, reason)' to deprecate the previously mentioned
 Python objects.
 
-WWW: https://pypi.python.org/pypi/zope.deprecation
+WWW: https://pypi.org/project/zope.deprecation/

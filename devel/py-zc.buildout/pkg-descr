@@ -3,4 +3,4 @@ applications. It provides tools for assembling applications from multiple
 parts, Python or otherwise. An application may actually contain multiple
 programs, processes, and configuration settings.
 
-WWW: https://pypi.python.org/pypi/zc.buildout
+WWW: https://pypi.org/project/zc.buildout/

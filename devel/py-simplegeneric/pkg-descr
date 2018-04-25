@@ -4,4 +4,4 @@ on. However, instead of using specially-named methods, these generic functions
 use simple lookup tables, akin to those used by e.g. pickle.dump() and other
 generic functions found in the Python standard library.
 
-WWW: https://pypi.python.org/pypi/simplegeneric
+WWW: https://pypi.org/project/simplegeneric/

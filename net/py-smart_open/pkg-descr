@@ -2,5 +2,5 @@ smart_open is a Python 2 & Python 3 library for efficient streaming of very
 large files from/to S3, HDFS, WebHDFS, HTTP, or local (compressed) files. It is
 well tested (using moto), well documented and sports a simple, Pythonic API.
 
-WWW: https://pypi.python.org/pypi/smart_open
+WWW: https://pypi.org/project/smart_open/
 WWW: https://github.com/RaRe-Technologies/smart_open

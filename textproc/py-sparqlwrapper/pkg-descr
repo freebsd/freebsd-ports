@@ -1,5 +1,5 @@
 This is a wrapper around a SPARQL service. It helps in creating the query URI
 and, possibly, convert the result into a more manageable format.
 
-WWW: https://pypi.python.org/pypi/SPARQLWrapper
+WWW: https://pypi.org/project/SPARQLWrapper/
 WWW: http://rdflib.github.io/sparqlwrapper/

@@ -2,4 +2,4 @@ This package provides a wrapper for lxml trees which serializes
 to string on iteration, but otherwise makes the tree available
 in an attribute.
 
-WWW: https://pypi.python.org/pypi/repoze.xmliter
+WWW: https://pypi.org/project/repoze.xmliter/

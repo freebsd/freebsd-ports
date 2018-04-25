@@ -2,4 +2,4 @@ This project is an implementation of the JSON-RPC v2.0 specification
 (backwards-compatible) as a client library. This version is a fork of jsonrpclib
 by Josh Marshall, usable with Pelix remote services.
 
-WWW: https://pypi.python.org/pypi/jsonrpclib-pelix
+WWW: https://pypi.org/project/jsonrpclib-pelix/

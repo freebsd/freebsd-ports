@@ -3,4 +3,4 @@ with special focus on testing. It is used in Zope, but it's not
 Zope specific at all. For instance, it can be used to test or
 otherwise interact with any web site.
 
-WWW: https://pypi.python.org/pypi/zope.testbrowser
+WWW: https://pypi.org/project/zope.testbrowser/

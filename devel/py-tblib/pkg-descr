@@ -4,4 +4,4 @@ code over multiple processes (imagine multiprocessing, billiard,
 futures, celery etc).
 Parse traceback strings and raise with the parsed tracebacks.
 
-WWW: https://pypi.python.org/pypi/tblib
+WWW: https://pypi.org/project/tblib/

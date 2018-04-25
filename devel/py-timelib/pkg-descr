@@ -1,4 +1,4 @@
 timelib is a short wrapper around php's internal timelib module.
 It currently only provides a few functions.
 
-WWW: https://pypi.python.org/pypi/timelib
+WWW: https://pypi.org/project/timelib/
