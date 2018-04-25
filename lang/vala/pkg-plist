@@ -252,6 +252,7 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/libglade-2.0.deps
 %%DATADIR%%-%%VERSION%%/vapi/libglade-2.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/libgnome-2.0.vapi
+%%DATADIR%%-%%VERSION%%/vapi/libgnome-menu-3.0.deps
 %%DATADIR%%-%%VERSION%%/vapi/libgnome-menu-3.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/libgnome-menu.vapi
 %%DATADIR%%-%%VERSION%%/vapi/libgnomeui-2.0.deps
