@@ -9,7 +9,7 @@ MASTER_SITES=	SF/squirrelmail/imap_proxy/${PORTVERSION}
 PKGNAMEPREFIX=	up-
 DISTNAME=	squirrelmail-imap_proxy-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Caching IMAP proxy server
 
 LICENSE=	GPLv2+
