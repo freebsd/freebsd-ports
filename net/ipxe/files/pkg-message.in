@@ -1,6 +1,10 @@
 The following files have been installed in %%DATADIR%%:
 - ipxe.dsk for creating a bootable floppy disk
-- ipxe.usb for creating a bootable USB key
+- ipxe.efi-i386 for loading from EFI on i386 systems
+- ipxe.efi-x86_64 for loading from EFI on x86_64 systems
 - ipxe.iso for creating a bootable CD
-- ipxe.pxe for chainloading from a PXE ROM
 - ipxe.lkrn for any boot manager that can boot Linux kernels
+- ipxe.pxe for chainloading from a PXE ROM
+- ipxe.usb for creating a bootable USB key
+- undionly.kpxe for chainloading from a PXE ROM; contains only
+  the UNDI drivers

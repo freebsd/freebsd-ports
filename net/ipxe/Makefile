@@ -3,7 +3,7 @@
 
 PORTNAME=	ipxe
 PORTVERSION=	20180220
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GH_TAGNAME=	47849be3a900c546cf92066849be0806f4e611d9
 USE_PERL5=	build
 
-ALL_TARGET=	bin/ipxe.dsk bin/ipxe.lkrn bin/ipxe.pxe bin/ipxe.usb
+ALL_TARGET=	bin/ipxe.dsk bin/ipxe.lkrn bin/ipxe.pxe bin/ipxe.usb bin/undionly.kpxe
 MAKE_ARGS=	HOST_CC=${CC} \
 		PERL=${PERL} \
 		CC=${CC} \
@@ -64,10 +64,16 @@ _IPXE_BUILDCFG=	branding:PRODUCT_NAME="${PKGNAME} (${OPSYS} ${OSREL}/${ARCH})" \
 		general:PING_CMD \
 		general:POWEROFF_CMD
 
-OPTIONS_DEFAULT=	ISO
-OPTIONS_DEFINE=		ISO
+OPTIONS_DEFAULT=        ISO EFI
+OPTIONS_DEFINE=         ISO EFI
 
+EFI_DESC=	Create EFI image
 ISO_DESC=	Create bootable CD image
+
+EFI_ARCHS=	i386 ${ARCH:Mamd64:S/amd64/x86_64/}
+.for _arch in ${EFI_ARCHS}
+EFI_PLIST_FILES+=	${DATADIR}/ipxe.efi-${_arch}
+.endfor
 
 ISO_ALL_TARGET=	bin/ipxe.iso
 ISO_BUILD_DEPENDS=	bash:shells/bash \
@@ -94,9 +100,19 @@ pre-build-ISO-on:
 # ISO creation fails if isolinux.bin is read only
 	${INSTALL} -m 644 ${LOCALBASE}/share/syslinux/bios/core/isolinux.bin ${WRKSRC}/isolinux.bin
 
+do-build-EFI-on:
+.for _arch in ${EFI_ARCHS}
+	${DO_MAKE_BUILD} ARCH=${_arch} -C ${WRKSRC} bin-${_arch}-efi/ipxe.efi
+.endfor
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${ALL_TARGET} ${STAGEDIR}${DATADIR}
+
+do-install-EFI-on:
+.for _arch in ${EFI_ARCHS}
+	${INSTALL_DATA} ${WRKSRC}/bin-${_arch}-efi/ipxe.efi ${STAGEDIR}${DATADIR}/ipxe.efi-${_arch}
+.endfor
 
 .include <bsd.port.post.mk>
 
