@@ -4,6 +4,7 @@ bin/svclone
 %%RUNITDIR%%/1
 %%RUNITDIR%%/2
 %%RUNITDIR%%/3
+%%RUNITDIR%%/core-services/11-devmatch.sh
 %%RUNITDIR%%/core-services/11-kld.sh
 %%RUNITDIR%%/core-services/11-set-defaults.sh
 @sample %%RUNITDIR%%/core-services/12-console.sh.sample
