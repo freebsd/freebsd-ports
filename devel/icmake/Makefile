@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icmake
-PORTVERSION=	9.02.04
+PORTVERSION=	9.02.07
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,7 +20,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 REINPLACE_ARGS=	-I ""
 
-USES=		shebangfix
+USES=		compiler shebangfix
 SHEBANG_FILES=	build comp/build comp/icm_bootstrap comp/updategrammar \
 		comp/updateparser comp/updatescanner dep/build dep/icm_bootstrap \
 		exec/build exec/icm_bootstrap exec/list/test/build exec/string/test/build \
@@ -31,6 +31,12 @@ SHEBANG_FILES=	build comp/build comp/icm_bootstrap comp/updategrammar \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fbb-git
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} == 42
+CFLAGS+=	-std=gnu99
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|find|find .|g' \
@@ -84,4 +90,4 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install strip all ${STAGEDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
