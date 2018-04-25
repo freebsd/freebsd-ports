@@ -561,6 +561,7 @@
     SUBDIR += pecl-mongodb
     SUBDIR += pecl-pdo_user
     SUBDIR += pecl-redis
+    SUBDIR += pecl-redis3
     SUBDIR += pecl-rrd
     SUBDIR += pecl-rrd1
     SUBDIR += pecl-tokyo_tyrant

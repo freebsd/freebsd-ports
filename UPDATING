@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180425:
+  AFFECTS: users of databases/pecl-redis
+  AUTHOR: daniel@blodan.se
+
+  pecl-redis 4.0.0 breaks backwards compatibility, users 
+  not aware if you are using the changed functionality or not
+  should swap to databases/pecl-redis3
+
 20180417:
   AFFECTS: users of dns/dnscrypt-proxy2
   AUTHOR: egypcio@googlemail.com
