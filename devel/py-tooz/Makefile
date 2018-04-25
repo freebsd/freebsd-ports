@@ -3,7 +3,7 @@
 
 PORTNAME=	tooz
 PORTVERSION=	1.48.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +27,12 @@ RUN_DEPENDS=	${PY_FUTURES} \
 		${PYTHON_PKGNAMEPREFIX}fasteners>=0.7:devel/py-fasteners@${FLAVOR}
 
 NO_ARCH=	yes
+REINPLACE_ARGS=	-i ''
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/requirements.txt ${WRKSRC}/tooz.egg-info/requires.txt
 
 .include <bsd.port.mk>
