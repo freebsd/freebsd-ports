@@ -3,7 +3,7 @@
 
 PORTNAME=	openscad
 PORTVERSION=	2018.04.19
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=  -devel
 DIST_SUBDIR=            ${PORTNAME}
@@ -13,6 +13,8 @@ COMMENT=	Programmer's solid 3D CAD modeller
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_FreeBSD_10=      Missing __cxa_thread_atexit
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs
@@ -26,30 +28,25 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 CONFLICTS=	openscad
 
+USES=		bison compiler:c++11-lang desktop-file-utils eigen:3 gettext-tools \
+		pkgconfig python:run qmake shebangfix
 USE_GITHUB=     yes
 GH_ACCOUNT=     openscad
 GH_PROJECT=     openscad
 GH_TAGNAME=	179074dff8c23cbc0e651ce8463737df0006f4ca
 
-USES=		bison compiler:c++11-lang desktop-file-utils eigen:3 gettext-tools \
-		pkgconfig python:run qmake shebangfix
 #SHEBANG_FILES=	libraries/MCAD/get_submodules.py
 USE_GL=		glu glew
 USE_QT4=	corelib gui opengl moc_build uic_build rcc_build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 QMAKE_ENV=	EIGENDIR=${LOCALBASE}/include/eigen3
 QMAKE_ARGS+=	VERSION=${PORTVERSION} \
+		EXPERIMENTAL=yes \
 		QMAKE_LEX=${LOCALBASE}/bin/flex \
 		QMAKE_YAC=${LOCALBASE}/bin/bison
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
 		${WRKSRC}/openscad.pro
-
-#.include <bsd.port.options.mk>
-#
-#.if ${ARCH} == i386 && ${OSVERSION} >= 1100000
-#USE_GCC=        yes
-#.endif
 
 .include <bsd.port.mk>
