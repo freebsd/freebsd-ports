@@ -1,7 +1,7 @@
 # Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Qt InterBase/Firebird database plugin
 DB=		ibase
