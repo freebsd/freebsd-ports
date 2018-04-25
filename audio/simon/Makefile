@@ -3,7 +3,7 @@
 
 PORTNAME=	simon
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsamplerate.so:audio/libsamplerate \
 		libpocketsphinx.so:audio/pocketsphinx \
 		libsphinxad.so:audio/sphinxbase \
-		libqwt6.so:x11-toolkits/qwt6
+		libqwt6.so:x11-toolkits/qwt6@qt4
 
 USES=		cmake:outsource gettext kde:4 tar:bz2
 USE_KDE=	kdelibs automoc4 pimlibs

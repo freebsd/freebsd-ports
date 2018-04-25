@@ -1,4 +1,4 @@
---- designer/designer.pro.orig	2016-06-13 07:14:23 UTC
+--- designer/designer.pro.orig	2018-03-06 14:52:45 UTC
 +++ designer/designer.pro
 @@ -42,7 +42,7 @@ contains(QWT_CONFIG, QwtDesigner) {
  
