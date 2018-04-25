@@ -10182,3 +10182,6 @@ devel/py-msgpack-python|devel/py-msgpack|2018-04-22|Upstream renamed package nam
 deskutils/py-pycarddav|www/pycarddav|2018-04-23|Remove dupplicate port
 x11-toolkits/qwt6-designerplugin||2018-04-25|Merged with x11-toolkits/qwt6
 math/octave-forge-ocs||2018-04-25|Removed, depends on expired math/octave-forge-odepkg
+net/google-daemon|sysutils/py-google-compute-engine|2018-04-25|Has expired: Please use sysutils/py-google-compute-engine instead
+net/google-startup-scripts|sysutils/py-google-compute-engine|2018-04-25|Has expired: Please use sysutils/py-google-compute-engine instead
+math/octave-forge-odepkg||2018-04-25|Has expired, not a valid package for Octave version >= 4.2.1
