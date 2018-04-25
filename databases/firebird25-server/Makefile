@@ -1,16 +1,14 @@
-# Created by: Alonso Cárdenas Márquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	firebird
-PORTVERSION=	2.5.6
-PORTREVISION=	5
+PORTVERSION=	2.5.8
 CATEGORIES?=	databases
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
+MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/R2_5_8/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.27020-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.27089-0
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
 
 LICENSE=	IDPL IPL
