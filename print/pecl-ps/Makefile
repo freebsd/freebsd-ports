@@ -20,7 +20,7 @@ USES=		php:pecl
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl|-lintl|g' ${WRKSRC}/config.m4
 
-test check regression-test: build
+do-test:
 	${MAKE} -C ${WRKSRC} test < /dev/null
 
 .include <bsd.port.mk>
