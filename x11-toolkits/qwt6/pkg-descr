@@ -1,4 +1,4 @@
-This is Qt4 port of Qwt library version 6.  The Qwt library contains
+This is the port of Qwt library version 6. The Qwt library contains
 GUI Components and utility classes which are primarily useful for
 programs with a technical background.  Beside a 2D plot widget it
 provides scales, sliders, dials, compasses, thermometers, wheels
