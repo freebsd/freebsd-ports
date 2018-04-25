@@ -216,7 +216,9 @@ pre-configure: apply-slist
 	@${ECHO_MSG} "           registration of both takes place.                          "
 	@${ECHO_MSG} "======================================================================"
 	@${ECHO_MSG} ""
+.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
 	@sleep 3
+.  endif
 
 	@${MKDIR} ${SLAVES_PREFIX}
 	@${MKDIR} ${SLAVES_WRKDIRPREFIX}
