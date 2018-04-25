@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	ninja:devel/ninja
 
-USES=		python:3.4+
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils noflavors
 NO_ARCH=	yes
 
