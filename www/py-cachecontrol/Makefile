@@ -3,7 +3,7 @@
 
 PORTNAME=	CacheControl
 DISTVERSION=	0.12.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>=0.9:devel/py-lockfile@${FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+REINPLACE_ARGS=	-i ''
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/setup.py ${WRKSRC}/CacheControl.egg-info/requires.txt
 
 .include <bsd.port.mk>
