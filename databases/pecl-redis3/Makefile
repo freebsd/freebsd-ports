@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	4.0.0
+PORTVERSION=	3.1.6
 CATEGORIES=	databases
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Extension to access Redis
@@ -10,7 +11,7 @@ COMMENT=	Extension to access Redis
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	pecl-redis3
+CONFLICTS_INSTALL=	pecl-redis
 
 USES=		php:pecl
 USE_PHP=	session:build
