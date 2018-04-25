@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libRmath
-DISTVERSION=	3.4.4
+DISTVERSION=	3.5.0
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -18,6 +18,9 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre
 
+USES=		localbase
+USE_LDCONFIG=	yes
+
 BUILD_WRKSRC=	${WRKSRC}/src/nmath/standalone
 CONFIGURE_ARGS=	--disable-nls --with-ICU=no --with-cairo=no \
 		--with-jpeglib=no --with-libpng=no --with-libtiff=no \
@@ -25,11 +28,8 @@ CONFIGURE_ARGS=	--disable-nls --with-ICU=no --with-cairo=no \
 		--without-libintl-prefix
 CONFIGURE_ENV+=	ac_cv_header_iconv_h=no FPICFLAGS=-fPIC
 GNU_CONFIGURE=	yes
-RMATH_SOVERSION=${PORTVERSION:R}
-USES=		localbase
-USE_LDCONFIG=	yes
-
 PLIST_SUB=	RMATH_SOVERSION="${RMATH_SOVERSION}"
+RMATH_SOVERSION=${DISTVERSION:R}
 
 OPTIONS_DEFINE=		FLANG
 OPTIONS_EXCLUDE_aarch64=	FLANG
