@@ -3,7 +3,7 @@
 
 PORTNAME=	w3af
 PORTVERSION=	1.6.49
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security python www
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -66,6 +66,9 @@ GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>0:graphics/py-pygraphviz@${FL
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>=1.1.8:www/py-webkitgtk@${FLAVOR}
 
 GUI_USE=	GNOME=pygtk2
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/w3af/core/controllers/dependency_check/requirements.py
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
