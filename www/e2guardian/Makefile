@@ -88,7 +88,9 @@ post-extract:
 	@${ECHO_MSG} "before preceeding with e2guardian compilation"
 	@${ECHO_MSG} "######################################################"
 	@${ECHO_MSG} ""
+.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
 	@sleep 3
+.  endif
 .endif
 
 pre-configure:

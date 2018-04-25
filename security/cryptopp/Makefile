@@ -96,7 +96,9 @@ pre-configure-FULL_DEBUG-on:
 	@${ECHO_CMD} "now and run 'make config clean' and disable the FULL_DEBUG option."
 	@${ECHO_CMD} "---------------------------------------------------------------------"
 	@${ECHO_CMD}
+.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
 	@sleep 10
+.  endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcryptopp.a ${STAGEDIR}${PREFIX}/lib

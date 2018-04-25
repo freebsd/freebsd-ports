@@ -83,7 +83,9 @@ pre-extract:
 	@${ECHO_MSG} "IMPORTANT: To build IcedTea-Web ${PORTVERSION}, you have to turn on 'ICEDTEA' option"
 	@${ECHO_MSG} "for ${JAVA_PORT} (default).  Otherwise, it will neither build nor work."
 	@${ECHO_MSG}
+.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
 	@sleep 5
+.  endif
 .endif
 
 post-patch:

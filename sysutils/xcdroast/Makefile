@@ -67,7 +67,9 @@ pre-everything::
 	@${ECHO_MSG} "         wrapping utility which gets a SUID Bit after enabling"
 	@${ECHO_MSG} "         the non-root mode inside the application!"
 	@${ECHO_MSG}
+.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
 	sleep 5
+.  endif
 .endif
 
 .include <bsd.port.mk>

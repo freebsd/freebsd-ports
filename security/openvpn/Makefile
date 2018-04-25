@@ -119,7 +119,9 @@ pre-everything::
 	@${ECHO_CMD} "If things break, rebuild with OpenSSL or mbedTLS."
 	@${ECHO_CMD} "You may wish to change your default SSL library"
 	@${ECHO_CMD} "and press Ctrl+C within the next 10 seconds to abort."
+.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
 	@sleep 10
+.  endif
 .endif
 
 # sanity check that we don't inherit incompatible SSL libs through,
