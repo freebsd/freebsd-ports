@@ -1,7 +1,0 @@
-Google daemon runs in the background and provides the following services:
-
-- Creates new accounts based on the instance metadata.
-- Configures ssh to accept the accounts' public keys from the instance
-  metadata.
-
-WWW: https://github.com/GoogleCloudPlatform/compute-image-packages/tree/master/google-daemon
