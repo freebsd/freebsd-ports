@@ -1,6 +1,6 @@
---- gsoap/plugin/mecevp.c.orig	2017-04-07 18:39:01 UTC
+--- gsoap/plugin/mecevp.c.orig	2018-04-08 14:22:44 UTC
 +++ gsoap/plugin/mecevp.c
-@@ -284,7 +284,7 @@ soap_mec_init(struct soap *soap, struct 
+@@ -284,7 +284,7 @@ soap_mec_init(struct soap *soap, struct soap_mec_data 
    int ok = 1;
    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "soap_mec_init()\n"));
    soap_ssl_init();
@@ -9,7 +9,7 @@
    data->ctx = (EVP_CIPHER_CTX*)SOAP_MALLOC(soap, sizeof(EVP_CIPHER_CTX));
    if (data->ctx)
      EVP_CIPHER_CTX_init(data->ctx);
-@@ -448,7 +448,7 @@ soap_mec_cleanup(struct soap *soap, stru
+@@ -448,7 +448,7 @@ soap_mec_cleanup(struct soap *soap, struct soap_mec_da
    data->type = NULL;
    if (data->ctx)
    {
