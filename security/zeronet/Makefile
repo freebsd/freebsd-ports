@@ -38,6 +38,9 @@ DEBUG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR
 USER=		nobody
 GROUP=		nobody
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/requirements.txt
+
 do-build:
 	@(cd ${WRKSRC} && \
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
