@@ -2,41 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	paml
-PORTVERSION=	4.9c
-PORTREVISION=	1
+DISTVERSION=	4.9h
 CATEGORIES=	biology
 MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 
 LICENSE=	GPLv3
 
-USES=		gmake tar:tgz
+USES=		dos2unix gmake tar:tgz
+DOS2UNIX_GLOB=	*.HKYG5 *.aa *.c *.ctl *.dat *.nexus *.nuc *.phy *.result *.tre \
+		*.trees *.txt *.xml paupblock paupend
 
 BINARIES=	baseml basemlg chi2 codeml evolver evolverNSbranches \
 		evolverNSbranchsites evolverNSsites pamp yn00
 
-PORTDOCS=	MCMCtree.Tutorials.pdf MCMCtreeDOC.pdf pamlDOC.pdf pamlFAQs.pdf \
-		pamlHistory.txt README.txt
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-DATA=		3s.trees 4s.trees 5s.trees 6s.trees GeneticCode.txt MCaa.dat	\
-		MCbase.dat MCbaseRandomTree.dat MCcodon.dat aaml.ctl baseml.ctl	\
-		brown.nuc brown.rooted.trees brown.trees codeml.ctl codonml.ctl	\
-		mcmctree.ctl pamp.ctl paupblock paupend paupstart stewart.aa	\
-		stewart.trees yn00.ctl
-PORTDATA=	${DATA} dat examples Technical
-
-OPTIONS_DEFINE=	DOCS
-
-# Remove Windows executables
 post-extract:
 	@${FIND} ${WRKSRC}/Technical -name "*.exe" -delete
 
 do-build:
-	@cd ${WRKSRC}/src && \
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD}
+	@cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 .for f in NSbranches NSsites NSbranchsites
 	@cd ${WRKSRC}/src && \
 	${CC} ${CFLAGS} -DCodon${f} -o evolver${f} evolver.c tools.c -lm
@@ -46,16 +35,19 @@ do-install:
 .for f in ${BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for f in ${DATA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DATADIR}
-.endfor
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "dat examples Technical" \
-	${STAGEDIR}/${DATADIR})
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "dat Technical" \
+		${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+.for f in *.aa *.ctl *.dat *.nuc *.trees *.txt paup*
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
 
 .include <bsd.port.mk>
