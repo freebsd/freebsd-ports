@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paml
-DISTVERSION=	4.9h
+PORTVERSION=	4.9h
 CATEGORIES=	biology
 MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
 DISTNAME=	${PORTNAME}${DISTVERSION}
