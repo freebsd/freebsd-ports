@@ -175,7 +175,7 @@ HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 					libavcodec.so:multimedia/ffmpeg \
 					libavutil.so:multimedia/ffmpeg \
 					libswscale.so:multimedia/ffmpeg
-DA!LIBRESSL_1_0_APIHTTP_VIDEO_THUMBEXTRACTOR_USES=		jpeg
+HTTP_VIDEO_THUMBEXTRACTOR_USES=		jpeg
 HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	wandenberg:nginx-video-thumbextractor-module:0.9.0:vte
 HTTP_VIDEO_THUMBEXTRACTOR_CONFIGURE_ON=	--add-module=${WRKSRC_vte}
 
@@ -221,7 +221,7 @@ NAXSI_NGINX_VER=	0.55.3
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:f910561:njs
+NJS_GH_TUPLE=		nginx:njs:ce54200:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 PASSENGER_NGINX_VER=	5.2.3
@@ -241,13 +241,13 @@ POSTGRES_CONFIGURE_ON=	--add-module=${WRKSRC_postgres}
 POSTGRES_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_postgres-config \
 			${PATCHDIR}/extra-patch-ngx_postgres_module.c
 
-RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:v0.08:rdscsv
+RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:v0.09:rdscsv
 RDS_CSV_CONFIGURE_ON=	--add-module=${WRKSRC_rdscsv}
 
-RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:v0.14:rdsjson
+RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:v0.15:rdsjson
 RDS_JSON_CONFIGURE_ON=	--add-module=${WRKSRC_rdsjson}
 
-REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.14:redis2
+REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.15:redis2
 REDIS2_VARS=		DSO_EXTMODS+=redis2
 
 RTMP_GH_TUPLE=		arut:nginx-rtmp-module:v1.2.1:rtmp
@@ -275,7 +275,6 @@ SMALL_LIGHT_GH_TUPLE=		cubicdaiya:ngx_small_light:v0.9.2:small_light
 SMALL_LIGHT_VARS=		DSO_EXTMODS+=small_light
 
 SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:v0.31:srcache
-#SRCACHE_CONFIGURE_ON=	--add-module=${WRKSRC_srcache}
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
 VOD_GH_TUPLE=		kaltura:nginx-vod-module:1.22:vod
