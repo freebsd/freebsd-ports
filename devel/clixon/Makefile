@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LIB_DEPENDS=	libcligen.so:devel/cligen \
 		libfcgi.so:www/fcgi
 
-USES=		gmake
+USES=		bison gmake
 
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
