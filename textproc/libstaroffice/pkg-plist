@@ -7,5 +7,5 @@ include/libstaroffice-0.0/libstaroffice/STOFFDocument.hxx
 include/libstaroffice-0.0/libstaroffice/libstaroffice.hxx
 lib/libstaroffice-0.0.so
 lib/libstaroffice-0.0.so.0
-lib/libstaroffice-0.0.so.0.0.5
+lib/libstaroffice-0.0.so.0.0.6
 libdata/pkgconfig/libstaroffice-0.0.pc
