@@ -1,0 +1,51 @@
+commit 98fd83a90019
+Author: Alex Gaynor <agaynor@mozilla.com>
+Date:   Tue Apr 17 10:14:20 2018 -0400
+
+    Bug 1449358 - Consistently use PR memory functions. r=mayhemer a=lizzard
+    
+    --HG--
+    extra : source : b876ed208711bc346d7ca95b0599f6e4eb02ff2e
+---
+ extensions/auth/nsAuthSambaNTLM.cpp | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git extensions/auth/nsAuthSambaNTLM.cpp extensions/auth/nsAuthSambaNTLM.cpp
+index 6aa34e211be6..86c408ec5bf4 100644
+--- extensions/auth/nsAuthSambaNTLM.cpp
++++ extensions/auth/nsAuthSambaNTLM.cpp
+@@ -5,6 +5,7 @@
+ 
+ #include "nsAuth.h"
+ #include "nsAuthSambaNTLM.h"
++#include "nspr.h"
+ #include "prenv.h"
+ #include "plbase64.h"
+ #include "prerror.h"
+@@ -23,7 +24,7 @@ nsAuthSambaNTLM::~nsAuthSambaNTLM()
+     // ntlm_auth reads from stdin regularly so closing our file handles
+     // should cause it to exit.
+     Shutdown();
+-    free(mInitialMessage);
++    PR_Free(mInitialMessage);
+ }
+ 
+ void
+@@ -248,7 +249,7 @@ nsAuthSambaNTLM::GetNextToken(const void *inToken,
+     nsCString request;
+     request.AssignLiteral("TT ");
+     request.Append(encoded);
+-    free(encoded);
++    PR_Free(encoded);
+     request.Append('\n');
+ 
+     if (!WriteString(mToChildFD, request))
+@@ -265,7 +266,7 @@ nsAuthSambaNTLM::GetNextToken(const void *inToken,
+     if (!buf)
+         return NS_ERROR_FAILURE;
+     *outToken = nsMemory::Clone(buf, *outTokenLen);
+-    free(buf);
++    PR_Free(buf);
+     if (!*outToken) {
+         return NS_ERROR_OUT_OF_MEMORY;
+     }
