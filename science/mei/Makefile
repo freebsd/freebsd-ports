@@ -23,11 +23,9 @@ CONFIGURE_ARGS=	--with-bft=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 BINARY_ALIAS=	swig=swig3.0
 
-.if defined(MAINTAINER_MODE)
-regression-test:
+do-test:
 	(cd ${WRKSRC}/tests &&	\
-	${MAKE} check &&	\
+	${MAKE_CMD} check &&	\
 	./mei_test )
-.endif
 
 .include <bsd.port.mk>
