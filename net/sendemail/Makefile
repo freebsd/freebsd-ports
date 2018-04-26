@@ -5,11 +5,10 @@ PORTNAME=	sendEmail
 PORTVERSION=	1.56
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendEmail/ \
-		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendEmail/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Lightweight, completely command line based, SMTP email agent
 
 LICENSE=	GPLv2+
