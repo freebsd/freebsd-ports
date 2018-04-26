@@ -1,27 +1,26 @@
-# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	komodo-edit
-PORTVERSION=	10.2.2
+DISTVERSION=	11.0.2
 CATEGORIES=	editors
-MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/ \
-		http://downloads.activestate.com/Komodo/releases/archive/${PORTVERSION:R:R}.x/${PORTVERSION}/
-DISTNAME=	Komodo-Edit-${PORTVERSION}-17703-linux-x86
+MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${DISTVERSION}/ \
+		http://downloads.activestate.com/Komodo/releases/archive/${DISTVERSION:R:R}.x/${DISTVERSION}/
+DISTNAME=	Komodo-Edit-${DISTVERSION}-18122-linux-x86
 
 MAINTAINER=	allanjude@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
-CONFLICTS=	komodo-ide-6*
+# https://www.activestate.com/komodo-edit/license-agreement
+LICENSE=	KEL11 MPL11
+LICENSE_COMB=	multi
+LICENSE_NAME_KEL11=	Komodo Edit END-USER SOFTWARE LICENSE AGREEMENT
+LICENSE_FILE_KEL11=	${FILESDIR}/kel11_license.txt
+LICENSE_PERMS_KEL11=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RESTRICTED=	Distribution not permitted
+ONLY_FOR_ARCHS=	amd64 i386
 
-ONLY_FOR_ARCHS=	i386 amd64
-NO_BUILD=	yes
 USES=		linux
-USE_LINUX=	alsalib gtk2 jpeg dbusglib
-
-PLIST_FILES=	bin/komodo
-PORTDATA=	*
+USE_LINUX=	alsalib dbusglib gtk2 jpeg xorglibs
 
 DESKTOP_ENTRIES="Komodo Edit" \
 		"Free multi-platform editor that makes it easy to write quality code." \
@@ -29,6 +28,9 @@ DESKTOP_ENTRIES="Komodo Edit" \
 		"komodo" \
 		"Development;Utility;TextEditor;" \
 		false
+NO_BUILD=	yes
+PLIST_FILES=	bin/komodo
+PORTDATA=	*
 
 do-install:
 	cd ${WRKSRC}/INSTALLDIR && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
