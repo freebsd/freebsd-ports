@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nuster
-PORTVERSION=	1.7.9.8
+PORTVERSION=	1.7.10.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net www
 
@@ -54,7 +54,7 @@ MAKE_ARGS+=	USE_REGPARM=1
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
+BROKEN=	Does not build with openssl-devel
 .endif
 
 post-build:
