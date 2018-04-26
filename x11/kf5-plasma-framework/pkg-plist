@@ -273,6 +273,7 @@ man/sv/man1/plasmapkg2.1.gz
 man/uk/man1/plasmapkg2.1.gz
 share/kdevappwizard/templates/cpp-plasmoid.tar.bz2
 share/kdevappwizard/templates/plasma-wallpaper.tar.bz2
+share/kdevappwizard/templates/plasma-wallpaper-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
 share/kservices5/plasma-dataengine-testengine.desktop

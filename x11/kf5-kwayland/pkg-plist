@@ -30,6 +30,7 @@ include/KF5/KWayland/Client/pointergestures.h
 include/KF5/KWayland/Client/region.h
 include/KF5/KWayland/Client/registry.h
 include/KF5/KWayland/Client/relativepointer.h
+include/KF5/KWayland/Client/remote_access.h
 include/KF5/KWayland/Client/seat.h
 include/KF5/KWayland/Client/server_decoration.h
 include/KF5/KWayland/Client/server_decoration_palette.h
@@ -77,6 +78,7 @@ include/KF5/KWayland/Server/pointergestures_interface.h
 include/KF5/KWayland/Server/qtsurfaceextension_interface.h
 include/KF5/KWayland/Server/region_interface.h
 include/KF5/KWayland/Server/relativepointer_interface.h
+include/KF5/KWayland/Server/remote_access_interface.h
 include/KF5/KWayland/Server/resource.h
 include/KF5/KWayland/Server/seat_interface.h
 include/KF5/KWayland/Server/server_decoration_interface.h
