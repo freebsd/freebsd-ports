@@ -1,0 +1,29 @@
+commit 507fd5c4b515
+Author: Eric Rahm <erahm@mozilla.com>
+Date:   Tue Apr 17 11:22:04 2018 -0700
+
+    Bug 1451908 - Check for infinite value in txFormatNumberFunctionCall. r=peterv a=abillings
+    
+    --HG--
+    extra : source : e47d7dbc1cd289086eb63c24cce1600c2b5329c7
+---
+ dom/xslt/xslt/txFormatNumberFunctionCall.cpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git dom/xslt/xslt/txFormatNumberFunctionCall.cpp dom/xslt/xslt/txFormatNumberFunctionCall.cpp
+index ddeede2502a3..54de0b48daa8 100644
+--- dom/xslt/xslt/txFormatNumberFunctionCall.cpp
++++ dom/xslt/xslt/txFormatNumberFunctionCall.cpp
+@@ -265,6 +265,12 @@ txFormatNumberFunctionCall::evaluate(txIEvalContext* aContext,
+ 
+     value = fabs(value) * multiplier;
+ 
++    // Make sure the multiplier didn't push value to infinity.
++    if (value == mozilla::PositiveInfinity<double>()) {
++        return aContext->recycler()->getStringResult(format->mInfinity,
++                                                     aResult);
++    }
++
+     // Prefix
+     nsAutoString res(prefix);
+ 

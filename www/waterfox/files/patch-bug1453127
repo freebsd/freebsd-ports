@@ -1,0 +1,36 @@
+commit 7f8f5d958ed6
+Author: Bryce Van Dyk <bvandyk@mozilla.com>
+Date:   Wed Apr 18 15:30:57 2018 -0400
+
+    Bug 1453127 - Do not use iterators in MediaStreamTrack when removing listeners. r=pehrsons a=lizzard
+    
+    --HG--
+    extra : source : 6b3aaee40f7507e240da08d6e073cff3c53971f4
+---
+ dom/media/MediaStreamTrack.cpp | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+diff --git dom/media/MediaStreamTrack.cpp dom/media/MediaStreamTrack.cpp
+index 010373e9086d..af6c6014cf02 100644
+--- dom/media/MediaStreamTrack.cpp
++++ dom/media/MediaStreamTrack.cpp
+@@ -166,11 +166,15 @@ MediaStreamTrack::Destroy()
+     mPrincipalHandleListener->Forget();
+     mPrincipalHandleListener = nullptr;
+   }
+-  for (auto l : mTrackListeners) {
+-    RemoveListener(l);
++  // Remove all listeners -- avoid iterating over the list we're removing from
++  const nsTArray<RefPtr<MediaStreamTrackListener>> trackListeners(mTrackListeners);
++  for (auto listener : trackListeners) {
++    RemoveListener(listener);
+   }
+-  for (auto l : mDirectTrackListeners) {
+-    RemoveDirectListener(l);
++  // Do the same as above for direct listeners
++  const nsTArray<RefPtr<DirectMediaStreamTrackListener>> directTrackListeners(mDirectTrackListeners);
++  for (auto listener : directTrackListeners) {
++    RemoveDirectListener(listener);
+   }
+ }
+ 
