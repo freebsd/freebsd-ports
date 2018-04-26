@@ -1,13 +1,13 @@
---- kubeclient.gemspec.orig	2017-03-22 10:11:29 UTC
+--- kubeclient.gemspec.orig	2018-04-26 16:00:32 UTC
 +++ kubeclient.gemspec
 @@ -30,8 +30,8 @@ Gem::Specification.new do |s|
        s.add_development_dependency(%q<vcr>.freeze, [">= 0"])
        s.add_development_dependency(%q<rubocop>.freeze, ["= 0.30.0"])
        s.add_runtime_dependency(%q<rest-client>.freeze, [">= 0"])
--      s.add_runtime_dependency(%q<recursive-open-struct>.freeze, ["= 1.0.0"])
--      s.add_runtime_dependency(%q<http>.freeze, ["= 0.9.8"])
-+      s.add_runtime_dependency(%q<recursive-open-struct>.freeze, [">= 1.0.0"])
-+      s.add_runtime_dependency(%q<http>.freeze, [">= 0.9.8"])
+-      s.add_runtime_dependency(%q<recursive-open-struct>.freeze, ["~> 1.0.0"])
+-      s.add_runtime_dependency(%q<http>.freeze, ["< 3", ">= 0.98"])
++      s.add_runtime_dependency(%q<recursive-open-struct>.freeze, ["~> 1.0"])
++      s.add_runtime_dependency(%q<http>.freeze, [">= 0.98"])
      else
        s.add_dependency(%q<bundler>.freeze, ["~> 1.6"])
        s.add_dependency(%q<rake>.freeze, ["~> 10.0"])
