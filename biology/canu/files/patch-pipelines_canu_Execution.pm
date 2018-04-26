@@ -1,6 +1,8 @@
---- src/pipelines/canu/Execution.pm.orig	2017-08-14 19:39:19 UTC
-+++ src/pipelines/canu/Execution.pm
-@@ -302,10 +302,6 @@ sub skipStage ($$@) {
+$NetBSD$
+
+--- pipelines/canu/Execution.pm.orig	2017-04-17 19:32:38 UTC
++++ pipelines/canu/Execution.pm
+@@ -293,10 +293,6 @@ sub skipStage ($$@) {
  sub getInstallDirectory () {
      my $installDir = $FindBin::RealBin;
  
