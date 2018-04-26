@@ -7,6 +7,7 @@
 %%WWWDIR%%/ReleaseHistory.html
 %%WWWDIR%%/ReleaseNotes02x01.html
 %%WWWDIR%%/UpgradeGuide.html
+%%WWWDIR%%/bin-htaccess-fastcgi.txt
 %%WWWDIR%%/bin/.htaccess-advanced.txt
 %%WWWDIR%%/bin/.htaccess-basic.txt
 %%WWWDIR%%/bin/LocalLib.cfg
@@ -628,7 +629,6 @@
 %%WWWDIR%%/lib/Foswiki/AggregateIterator.pm
 %%WWWDIR%%/lib/Foswiki/Attach.pm
 %%WWWDIR%%/lib/Foswiki/Attrs.pm
-%%WWWDIR%%/lib/Foswiki/Aux/MuteOut.pm
 %%WWWDIR%%/lib/Foswiki/Compatibility.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Auth.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Bootstrap.pm
@@ -638,6 +638,7 @@
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/AuthRealm.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/AuthScripts.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Cache/DependencyFilter.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Cache/Enabled.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Cache/Implementation.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Certificate.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Certificate/ClientChecker.pm
@@ -674,6 +675,7 @@
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Htpasswd/LockFileName.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/HttpCompress.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/JQueryVersion.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/JQueryVersionForOldIEs.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Autocomplete/Enabled.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Bgiframe/Enabled.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Corner/Enabled.pm
@@ -1245,6 +1247,7 @@
 %%WWWDIR%%/lib/Foswiki/Users/HtPasswdUser.pm
 %%WWWDIR%%/lib/Foswiki/Users/Password.pm
 %%WWWDIR%%/lib/Foswiki/Users/TopicUserMapping.pm
+%%WWWDIR%%/lib/Foswiki/Util/MuteOut.pm
 %%WWWDIR%%/lib/Foswiki/Validation.pm
 %%WWWDIR%%/lib/Foswiki/ValidationException.pm
 %%WWWDIR%%/lib/Foswiki/WebFilter.pm
@@ -5084,6 +5087,9 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/methods_de.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/methods_nl.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/methods_pt.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/pkg.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/pkg.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/pkg.uncompressed.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/wikiword/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/wikiword/downgradeMap.small.uncompressed.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/wikiword/downgradeMap.uncompressed.js
@@ -5280,6 +5286,7 @@
 %%WWWDIR%%/pub/System/MainFeatures/icon_plus.png
 %%WWWDIR%%/pub/System/NatEditHelpText/wikitext.png
 %%WWWDIR%%/pub/System/NatEditPlugin/Makefile
+%%WWWDIR%%/pub/System/NatEditPlugin/i18n/de.js
 %%WWWDIR%%/pub/System/NatEditPlugin/jquery.natedit.js
 %%WWWDIR%%/pub/System/NatEditPlugin/jquery.natedit.js.gz
 %%WWWDIR%%/pub/System/NatEditPlugin/jquery.natedit.uncompressed.js
@@ -5812,6 +5819,9 @@
 %%WWWDIR%%/pub/System/RenderListPlugin/virtualpersons.gif
 %%WWWDIR%%/pub/System/RenderListPlugin/xls.gif
 %%WWWDIR%%/pub/System/RenderListPlugin/zip.gif
+%%WWWDIR%%/pub/System/SiteChanges/sitechanges.js
+%%WWWDIR%%/pub/System/SiteChanges/sitechanges.js.gz
+%%WWWDIR%%/pub/System/SiteChanges/sitechanges.uncompressed.js
 %%WWWDIR%%/pub/System/SkinTemplates/base.css
 %%WWWDIR%%/pub/System/SkinTemplates/base.css.gz
 %%WWWDIR%%/pub/System/SkinTemplates/base_src.css
@@ -6635,6 +6645,8 @@
 %%WWWDIR%%/templates/viewtopbar.pattern01x01.tmpl
 %%WWWDIR%%/templates/viewtopicactionbuttons.tmpl
 %%WWWDIR%%/templates/workflowedit.natedit.tmpl
+%%WWWDIR%%/tools/%%AP_NAME%%.freebsd.etc-defaults
+%%WWWDIR%%/tools/%%AP_NAME%%.freebsd.init-script
 %%WWWDIR%%/tools/bulk_copy.pl
 %%WWWDIR%%/tools/configure
 %%WWWDIR%%/tools/convertTopicSettings.pl
@@ -6651,7 +6663,7 @@
 %%WWWDIR%%/tools/mod_perl_startup.pl
 %%WWWDIR%%/tools/rewriteshebang.pl
 %%WWWDIR%%/tools/save-pending-checkins
-%%WWWDIR%%/tools/systemd/foswiki-fastcgi.service
+%%WWWDIR%%/tools/systemd/%%AP_NAME%%.service
 %%WWWDIR%%/tools/tick_foswiki.pl
 %%WWWDIR%%/tools/tml2html.pl
 %%WWWDIR%%/tools/upgrade_emails.pl

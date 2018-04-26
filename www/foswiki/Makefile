@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foswiki
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.6
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
@@ -39,7 +38,7 @@ OPTOTH_RUN_DEPENDS=	p5-Apache-Htpasswd>=0:security/p5-Apache-Htpasswd \
 		p5-Lingua-EN-Sentence>=0:textproc/p5-Lingua-EN-Sentence \
 		p5-libwww>=0:www/p5-libwww \
 		p5-HTML-Tree>=3.23:www/p5-HTML-Tree
-APACHE_USE=	APACHE_RUN=22+
+APACHE_USES=	apache:run
 APACHE_SUB_FILES=	pkg-message-apache
 APACHE_SUB_LIST=	FOSCONFDIR=${CONFDIR}
 APACHE_PLIST_SUB=	CONFDIR=${APACHEETCDIR}/Includes
