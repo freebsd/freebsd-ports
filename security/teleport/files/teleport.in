@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: teleport
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# teleport_enable (bool):	Set to NO by default.
+#				Set it to YES to enable teleport.
+# teleport_config (str):	Configuration file.
+#				Default is "${LOCALBASE}/etc/teleport.yaml"
+# teleport_dir (dir):           Set dir to run teleport in.
+#                               Default is "/var/lib/teleport".
+# teleport_roles (dir):         Set roles to run teleport in.
+#                               Default is "node".
+
+. /etc/rc.subr
+
+name=teleport
+rcvar=teleport_enable
+
+load_rc_config $name
+
+: ${teleport_enable:="NO"}
+: ${teleport_config:="%%PREFIX%%/etc/teleport.yaml"}
+: ${teleport_args:="--config=${teleport_config}"
+: ${teleport_dir:="/var/lib/teleport"}
+: ${teleport_roles:="node"}
+
+pidfile=/var/run/teleport.pid
+required_files="${teleport_config}"
+procname="%%PREFIX%%/bin/teleport"
+command="/usr/sbin/daemon"
+command_args="-S -T teleport -s info -m 3 -p ${pidfile} /usr/bin/env ${teleport_env} ${procname} start --roles=${teleport_roles} ${teleport_args}"
+
+run_rc_command "$1"

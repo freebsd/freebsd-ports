@@ -1,0 +1,22 @@
+====
+Quick getting started guide:
+
+1. Read through the Quick Start Guide (see below).
+2. Start teleport: su -c 'sysrc teleport_enable=YES'
+3. Start teleport: su -c 'service teleport start'
+3. Add yourself as a user: su -c "tctl users add $USER"
+4. Create a password and 2FA code using the URL emitted during
+   the previous step.
+
+To add a new node to the cluster, on the auth server:
+
+   $ tctl nodes add --ttl=5m --roles=node,proxy
+
+See the docs for additional details:
+
+Quick start:	https://gravitational.com/teleport/docs/quickstart/
+Admin Manual:	https://gravitational.com/teleport/docs/admin-guide/
+User Manual:	https://gravitational.com/teleport/docs/user-manual/
+Architecture:	https://gravitational.com/teleport/docs/architecture/
+FAQ:		https://gravitational.com/teleport/docs/faq/
+====
