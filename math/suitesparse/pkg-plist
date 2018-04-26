@@ -103,8 +103,8 @@ lib/libspqr.so
 lib/libspqr.so.2
 lib/libspqr.so.2.0.8
 lib/libsuitesparseconfig.so
-lib/libsuitesparseconfig.so.%%SHL1%%
-lib/libsuitesparseconfig.so.%%SHL3%%
+lib/libsuitesparseconfig.so.5
+lib/libsuitesparseconfig.so.5.2.0
 lib/libumfpack.so
 lib/libumfpack.so.5
 lib/libumfpack.so.5.7.6
