@@ -19,8 +19,6 @@ LIB_DEPENDS=	libmetis.so:math/metis \
 USES=		compiler:openmp fortran gmake
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	SHL3=${DISTVERSION} SHL1=${DISTVERSION:R:R}
-
 WRKSRC=		${WRKDIR}/SuiteSparse
 WRKSRC_SHARED=	${WRKSRC}_shared
 
