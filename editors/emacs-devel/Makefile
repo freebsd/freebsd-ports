@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 DISTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 PKGNAMESUFFIX=	-devel
@@ -42,6 +42,8 @@ CONFIGURE_ENV=	ac_cv_prog_liblockfile=no
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 
+CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no \
+		ac_cv_prog_liblockfile=no
 INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
 	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc \
 	ert eshell eudc eww flymake forms gnus htmlfontify idlwave ido info \
