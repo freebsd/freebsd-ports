@@ -61,7 +61,6 @@ man/man1/mysqld_safe.1.gz
 man/man1/mysqldumpslow.1.gz
 man/man1/mysqlhotcopy.1.gz
 man/man1/mysqlman.1.gz
-man/man1/mysqltest.1.gz
 man/man1/perror.1.gz
 man/man1/replace.1.gz
 man/man1/resolve_stack_dump.1.gz
