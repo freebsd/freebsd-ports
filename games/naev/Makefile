@@ -13,6 +13,8 @@ COMMENT=	2D action/RPG space game
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Depends on the library that isn't installed by SuiteSparse any more: https://github.com/naev/naev/issues/774
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libvorbisfile.so:audio/libvorbis \

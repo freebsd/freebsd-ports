@@ -2,19 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	suitesparse
-PORTVERSION=	4.0.2
-PORTREVISION=	8
+DISTVERSION=	5.2.0
 CATEGORIES=	math
-MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
+MASTER_SITES=	http://faculty.cse.tamu.edu/davis/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
 
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
 
 LICENSE=	GPLv2 LGPL21
-LICENSE_COMB=	multi
+LICENSE_COMB=	dual
 
-USES=		fortran gmake
+LIB_DEPENDS=	libmetis.so:math/metis \
+		liblapack.so:math/lapack
+
+USES=		compiler:openmp fortran gmake
+USE_LDCONFIG=	yes
+
+PLIST_SUB=	SHL3=${DISTVERSION} SHL1=${DISTVERSION:R:R}
+
+WRKSRC=		${WRKDIR}/SuiteSparse
+WRKSRC_SHARED=	${WRKSRC}_shared
 
 OPTIONS_RADIO=	BLAS
 OPTIONS_RADIO_BLAS=	OPENBLAS NETLIB ATLAS
@@ -24,16 +32,6 @@ OPENBLAS_USES=	blaslapack:openblas
 NETLIB_USES=	blaslapack:netlib
 ATLAS_USES=	blaslapack:atlas
 
-.if defined (WITH_METIS)
-LIB_DEPENDS=	libmetis.so:math/metis4
-
-RESTRICTED=	GPL and METIS licenses are contradictory
-.endif
-
-CONFLICTS=	umfpack-*
-
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
@@ -42,22 +40,18 @@ PICFLAG?=	-fPIC
 PICFLAG?=	-fpic
 .endif
 
-USE_LDCONFIG=	yes
-WRKSRC=${WRKDIR}/SuiteSparse
-WRKSRC_SHARED=${WRKSRC}_shared
-SVERSION=1
-
-.if defined (WITH_METIS)
-METIS=${LOCALBASE}/lib/libmetis.a
-METIS_PATH=${LOCALBASE}/include/metis
+METIS=		${LOCALBASE}/lib/libmetis.a
+METIS_PATH=	${LOCALBASE}/include/metis
 CHOLMOD_CONFIG=
-.else
-CHOLMOD_CONFIG=		-DNPARTITION
-.endif
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
+MAKE_ARGS+=	MY_METIS_LIB="-L${LOCALBASE}/lib -lmetis $(LDFLAGS)"
 
 post-patch:
+	@${RM} -r ${WRKSRC}/metis-5.1.0
 	@${FIND} -X ${WRKSRC} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
-	${REINPLACE_CMD} -e '\|^AR =|s|ar|${AR}|' \
+	${REINPLACE_CMD} -i '' \
+			-e '\|^AR =|s|ar|${AR}|' \
 			-e '\|^BLAS =|s|=.*|= ${LDFLAGS} ${BLASLIB}|' \
 			-e '\|^CC =|d' \
 			-e '\|^CFLAGS =|{s|-O[1-9]\{0,1\}||g;s|=|= ${CFLAGS} $${PICFLAG} |;}' \
@@ -78,30 +72,21 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$$(CFLAGS)|$$(CFLAGS) $$(PICFLAG)|g'
 
 do-build:
-	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} PICFLAG= \
-		${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
-	@cd ${WRKSRC_SHARED} ; ${SETENV} ${MAKE_ENV} PICFLAG=${PICFLAG} \
-		${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
-
-post-build:
-	@for i in `find ${WRKSRC_SHARED} -type f -name '*.a'` ; do \
-		j=$${i##*/} ; ${LD} -Bshareable -o $${i%.a}.so.${SVERSION} -x \
-		-soname $${j%.a}.so.${SVERSION} --whole-archive $${i} ; \
-	done
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PICFLAG= \
+		LD_LIBRARY_PATH=${WRKDIR}/SuiteSparse/lib ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
+	@cd ${WRKSRC_SHARED} && ${SETENV} ${MAKE_ENV} PICFLAG=${PICFLAG} \
+		LD_LIBRARY_PATH=${WRKDIR}/SuiteSparse/lib ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/suitesparse
-	@${LN} -sf ${PREFIX}/include/suitesparse ${STAGEDIR}${PREFIX}/include/ufsparse
-.for d in AMD BTF CAMD CCOLAMD CHOLMOD COLAMD CXSparse KLU SPQR UMFPACK
-	@${INSTALL_DATA} ${WRKSRC}/${d}/Include/*.h ${STAGEDIR}${PREFIX}/include/suitesparse
+	@cd ${STAGEDIR}${PREFIX}/include && ${LN} -s suitesparse ufsparse
+.for d in AMD BTF CAMD CCOLAMD CHOLMOD COLAMD CSparse CXSparse KLU SPQR UMFPACK # CSparse: shared lib bot built
+	${INSTALL_DATA} ${WRKSRC}/${d}/Include/*.h ${STAGEDIR}${PREFIX}/include/suitesparse
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/SuiteSparse_config/SuiteSparse_config.h ${STAGEDIR}${PREFIX}/include/suitesparse
-	@${INSTALL_DATA} ${WRKSRC}/UMFPACK/Source/umf_config.h ${STAGEDIR}${PREFIX}/include/suitesparse
-	@${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.hpp ${STAGEDIR}${PREFIX}/include/suitesparse
-	@for i in `find ${WRKSRC_SHARED} -type f -name '*.a'` ; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i##${WRKSRC_SHARED}/} \
-		$${i%.a}.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib ; \
-		j=$${i##*/} ;  ${LN} -sf $${j%.a}.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/$${j%.a}.so ; \
-	done
+	${INSTALL_DATA} ${WRKSRC}/SuiteSparse_config/SuiteSparse_config.h ${STAGEDIR}${PREFIX}/include/suitesparse
+	${INSTALL_DATA} ${WRKSRC}/UMFPACK/Source/umf_config.h ${STAGEDIR}${PREFIX}/include/suitesparse
+	${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.hpp ${STAGEDIR}${PREFIX}/include/suitesparse
+	${INSTALL_DATA} ${WRKSRC_SHARED}/lib/*.so* ${STAGEDIR}${PREFIX}/lib/
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so*
 
 .include <bsd.port.mk>
