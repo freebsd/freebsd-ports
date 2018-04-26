@@ -1,0 +1,51 @@
+# $FreeBSD$
+
+PORTNAME=	dlib
+DISTVERSION=	19.6
+CATEGORIES=	science devel math
+MASTER_SITES=	http://dlib.net/files/
+PKGNAMESUFFIX=	-cpp
+
+MAINTAINER=	6yearold@gmail.com
+COMMENT=	Machine learning framework written in C++
+
+LICENSE=	BSL
+LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt
+
+USES=			cmake:outsource pkgconfig tar:bzip2
+USE_LDCONFIG=		yes
+
+OPTIONS_DEFINE=		X11 JPEG PNG GIF SQLITE BLASLAPACK PYTHON AVX
+OPTIONS_DEFAULT=	X11 JPEG PNG GIF SQLITE
+
+BLASLAPACK_DESC=	Use Blas and Lapack libraries from ports
+AVX_DESC=		Use AVX instructions if supported by CPU
+
+X11_USE=		xorg=x11
+X11_CMAKE_OFF=		-DDLIB_NO_GUI_SUPPORT=1
+
+JPEG_USES=		jpeg
+JPEG_CMAKE_BOOL=	DLIB_JPEG_SUPPORT
+
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_CMAKE_BOOL=		DLIB_PNG_SUPPORT
+
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
+GIF_CMAKE_BOOL=		DLIB_GIF_SUPPORT
+
+SQLITE_USES=		sqlite
+SQLITE_CMAKE_BOOL=	DLIB_LINK_WITH_SQLITE
+
+# uses gcc until https://reviews.freebsd.org/D11482 lands
+BLASLAPACK_USE=		gcc=yes
+BLASLAPACK_USES=	blaslapack:openblas fortran
+BLASLAPACK_CMAKE_OFF=	-DDLIB_USE_BLAS=0 -DDLIB_USE_LAPACK=0 -DDLIB_USE_MKL_FFT=0
+
+# for PYTHON_PKGNAMEPREFIX
+PYTHON_USES=		python
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dlib>=0:science/py-dlib
+PYTHON_NO_DEPENDS=	yes
+
+AVX_CMAKE_BOOL=		USE_AVX_INSTRUCTIONS
+
+.include <bsd.port.mk>
