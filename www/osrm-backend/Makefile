@@ -2,8 +2,7 @@
 
 PORTNAME=		osrm-backend
 DISTVERSIONPREFIX=	v
-DISTVERSION=		5.16.4
-PORTREVISION=	1
+DISTVERSION=		5.17.2
 CATEGORIES=		www
 
 MAINTAINER=		a.andersson.thn@gmail.com
