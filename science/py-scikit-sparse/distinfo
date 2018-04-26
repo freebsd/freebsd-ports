@@ -1,2 +1,3 @@
-SHA256 (scikits.sparse-0.2.tar.gz) = 509d93d1020362607ebd677995df6480c160cbd9f021c296152f1fd59c8c1afc
-SIZE (scikits.sparse-0.2.tar.gz) = 204097
+TIMESTAMP = 1524194312
+SHA256 (scikit-sparse-0.4.3.tar.gz) = 4963d99b4b002378d86751d7e5020ba13a206b45f33368176485d8a194b32bdd
+SIZE (scikit-sparse-0.4.3.tar.gz) = 251879
