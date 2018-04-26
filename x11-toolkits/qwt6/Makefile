@@ -2,7 +2,7 @@
 
 PORTNAME=	qwt
 PORTVERSION=	6.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	6-${FLAVOR}
@@ -13,10 +13,11 @@ COMMENT=	Qt Widgets for Technical Applications
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		gmake qmake tar:bzip2 uniquefiles:dirs
+USES=		gmake qmake tar:bzip2
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
+DOCSDIR=	${PREFIX}/share/doc/qwt6-${FLAVOR}
 PORTDOCS=	*
 PLIST_SUB=	SHLIB_VER=${PORTVERSION} \
 		SHLIB_SHVER=${PORTVERSION:R}
