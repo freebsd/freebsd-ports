@@ -1,0 +1,62 @@
+commit de8877900af2a4af25465be5fde7e460ffee08a2
+Author: dim <dim@FreeBSD.org>
+Date:   Mon Apr 23 23:07:57 2018 +0000
+
+    Pull in r329771 from upstream llvm trunk (by Craig Topper):
+    
+      [X86] In X86FlagsCopyLowering, when rewriting a memory setcc we need
+      to emit an explicit MOV8mr instruction.
+    
+      Previously the code only knew how to handle setcc to a register.
+    
+      This should fix a crash in the chromium build.
+    
+    This fixes various assertion failures while building ports targeting
+    i386:
+    * www/firefox: isReg() && "This is not a register operand!"
+    * www/iridium, www/qt5-webengine: (I.atEnd() || std::next(I) ==
+      def_instr_end()) && "getVRegDef assumes a single definition or no
+      definition"
+    * devel/powerpc64-gcc: FromReg != ToReg && "Cannot replace a reg with
+      itself"
+    
+    Reported by:    jbeich
+    PR:             225330, 227686, 227698, 227699
+    MFC after:      1 week
+    X-MFC-With:     r332833
+
+diff --git lib/Target/X86/X86FlagsCopyLowering.cpp lib/Target/X86/X86FlagsCopyLowering.cpp
+index 1b6369b7bfd9..1fd1c704d79a 100644
+--- lib/Target/X86/X86FlagsCopyLowering.cpp
++++ lib/Target/X86/X86FlagsCopyLowering.cpp
+@@ -770,8 +770,27 @@ void X86FlagsCopyLoweringPass::rewriteSetCC(MachineBasicBlock &TestMBB,
+   if (!CondReg)
+     CondReg = promoteCondToReg(TestMBB, TestPos, TestLoc, Cond);
+ 
+-  // Rewriting this is trivial: we just replace the register and remove the
+-  // setcc.
+-  MRI->replaceRegWith(SetCCI.getOperand(0).getReg(), CondReg);
++  // Rewriting a register def is trivial: we just replace the register and
++  // remove the setcc.
++  if (!SetCCI.mayStore()) {
++    assert(SetCCI.getOperand(0).isReg() &&
++           "Cannot have a non-register defined operand to SETcc!");
++    MRI->replaceRegWith(SetCCI.getOperand(0).getReg(), CondReg);
++    SetCCI.eraseFromParent();
++    return;
++  }
++
++  // Otherwise, we need to emit a store.
++  auto MIB = BuildMI(*SetCCI.getParent(), SetCCI.getIterator(),
++                     SetCCI.getDebugLoc(), TII->get(X86::MOV8mr));
++  // Copy the address operands.
++  for (int i = 0; i < X86::AddrNumOperands; ++i)
++    MIB.add(SetCCI.getOperand(i));
++
++  MIB.addReg(CondReg);
++
++  MIB->setMemRefs(SetCCI.memoperands_begin(), SetCCI.memoperands_end());
++
+   SetCCI.eraseFromParent();
++  return;
+ }
