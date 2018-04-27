@@ -1,0 +1,311 @@
+https://git.videolan.org/?p=vlc.git;a=commitdiff;h=85b5b4e05f94
+https://git.videolan.org/?p=vlc.git;a=commitdiff;h=b337da993599
+https://git.videolan.org/?p=vlc.git;a=commitdiff;h=3546f6b0c024
+https://git.videolan.org/?p=vlc.git;a=commitdiff;h=84ce62d0a5a6
+
+--- modules/codec/avcodec/avcommon_compat.h.orig	2015-03-01 14:07:35 UTC
++++ modules/codec/avcodec/avcommon_compat.h
+@@ -479,6 +479,46 @@ enum {
+ # define err_recognition error_recognition
+ #endif
+ 
++#ifndef AV_CODEC_FLAG_OUTPUT_CORRUPT
++# define AV_CODEC_FLAG_OUTPUT_CORRUPT CODEC_FLAG_OUTPUT_CORRUPT
++#endif
++#ifndef AV_CODEC_FLAG_GRAY
++# define AV_CODEC_FLAG_GRAY CODEC_FLAG_GRAY
++#endif
++#ifndef AV_CODEC_FLAG_DR1
++# define AV_CODEC_FLAG_DR1 CODEC_FLAG_DR1
++#endif
++#ifndef AV_CODEC_FLAG_DELAY
++# define AV_CODEC_FLAG_DELAY CODEC_FLAG_DELAY
++#endif
++#ifndef AV_CODEC_FLAG2_FAST
++# define AV_CODEC_FLAG2_FAST CODEC_FLAG2_FAST
++#endif
++#ifndef FF_INPUT_BUFFER_PADDING_SIZE
++# define FF_INPUT_BUFFER_PADDING_SIZE AV_INPUT_BUFFER_PADDING_SIZE
++#endif
++#ifndef AV_CODEC_FLAG_INTERLACED_DCT
++# define AV_CODEC_FLAG_INTERLACED_DCT CODEC_FLAG_INTERLACED_DCT
++#endif
++#ifndef AV_CODEC_FLAG_INTERLACED_ME
++# define AV_CODEC_FLAG_INTERLACED_ME CODEC_FLAG_INTERLACED_ME
++#endif
++#ifndef AV_CODEC_FLAG_GLOBAL_HEADER
++# define AV_CODEC_FLAG_GLOBAL_HEADER CODEC_FLAG_GLOBAL_HEADER
++#endif
++#ifndef AV_CODEC_FLAG_LOW_DELAY
++# define AV_CODEC_FLAG_LOW_DELAY CODEC_FLAG_LOW_DELAY
++#endif
++#ifndef AV_CODEC_CAP_SMALL_LAST_FRAME
++# define AV_CODEC_CAP_SMALL_LAST_FRAME CODEC_CAP_SMALL_LAST_FRAME
++#endif
++#ifndef AV_INPUT_BUFFER_MIN_SIZE
++# define AV_INPUT_BUFFER_MIN_SIZE FF_MIN_BUFFER_SIZE
++#endif
++#ifndef  FF_MAX_B_FRAMES
++# define  FF_MAX_B_FRAMES 16 // FIXME: remove this
++#endif
++
+ #endif /* HAVE_LIBAVCODEC_AVCODEC_H */
+ 
+ #ifdef HAVE_LIBAVUTIL_AVUTIL_H
+--- modules/codec/avcodec/encoder.c.orig	2015-10-21 16:36:45 UTC
++++ modules/codec/avcodec/encoder.c
+@@ -285,6 +285,24 @@ static void probe_video_frame_rate( encoder_t *p_enc, 
+     msg_Dbg( p_enc, "Time base set to %d/%d", p_context->time_base.num, p_context->time_base.den );
+ }
+ 
++static void add_av_option_int( encoder_t *p_enc, AVDictionary** pp_dict, const char* psz_name, int i_value )
++{
++    char buff[32];
++    if ( snprintf( buff, sizeof(buff), "%d", i_value ) < 0 )
++        return;
++    if( av_dict_set( pp_dict, psz_name, buff, 0 ) < 0 )
++        msg_Warn( p_enc, "Failed to set encoder option %s", psz_name );
++}
++
++static void add_av_option_float( encoder_t *p_enc, AVDictionary** pp_dict, const char* psz_name, float f_value )
++{
++    char buff[128];
++    if ( snprintf( buff, sizeof(buff), "%f", f_value ) < 0 )
++        return;
++    if( av_dict_set( pp_dict, psz_name, buff, 0 ) < 0 )
++        msg_Warn( p_enc, "Failed to set encoder option %s", psz_name );
++}
++
+ int OpenEncoder( vlc_object_t *p_this )
+ {
+     encoder_t *p_enc = (encoder_t *)p_this;
+@@ -493,6 +511,7 @@ int OpenEncoder( vlc_object_t *p_this )
+         }
+     }
+     free( psz_val );
++    AVDictionary *options = NULL;
+ 
+     if( p_enc->fmt_in.i_cat == VIDEO_ES )
+     {
+@@ -522,7 +541,7 @@ int OpenEncoder( vlc_object_t *p_this )
+         p_context->lumi_masking = p_sys->f_lumi_masking;
+         p_context->dark_masking = p_sys->f_dark_masking;
+         p_context->p_masking = p_sys->f_p_masking;
+-        p_context->border_masking = p_sys->f_border_masking;
++        add_av_option_float( p_enc, &options, "border_mask", p_sys->f_border_masking );
+ #if (LIBAVCODEC_VERSION_MAJOR < 55)
+         p_context->luma_elim_threshold = p_sys->i_luma_elim;
+         p_context->chroma_elim_threshold = p_sys->i_chroma_elim;
+@@ -536,7 +555,7 @@ int OpenEncoder( vlc_object_t *p_this )
+         if( !p_context->max_b_frames  &&
+             (  p_enc->fmt_out.i_codec == VLC_CODEC_MPGV ||
+                p_enc->fmt_out.i_codec == VLC_CODEC_MP2V ) )
+-            p_context->flags |= CODEC_FLAG_LOW_DELAY;
++            p_context->flags |= AV_CODEC_FLAG_LOW_DELAY;
+ 
+         av_reduce( &p_context->sample_aspect_ratio.num,
+                    &p_context->sample_aspect_ratio.den,
+@@ -594,16 +613,16 @@ int OpenEncoder( vlc_object_t *p_this )
+             }
+             else
+             {
+-                p_context->flags |= CODEC_FLAG_INTERLACED_DCT;
++                p_context->flags |= AV_CODEC_FLAG_INTERLACED_DCT;
+                 if ( p_sys->b_interlace_me )
+-                    p_context->flags |= CODEC_FLAG_INTERLACED_ME;
++                    p_context->flags |= AV_CODEC_FLAG_INTERLACED_ME;
+             }
+         }
+ 
+         p_context->trellis = p_sys->b_trellis;
+ 
+         if ( p_sys->i_qmin > 0 && p_sys->i_qmin == p_sys->i_qmax )
+-            p_context->flags |= CODEC_FLAG_QSCALE;
++            p_context->flags |= AV_CODEC_FLAG_QSCALE;
+         /* These codecs cause libavcodec to exit if thread_count is > 1.
+            See libavcodec/mpegvideo_enc.c:MPV_encode_init and
+            libavcodec/svq3.c , WMV2 calls MPV_encode_init also.
+@@ -639,12 +658,14 @@ int OpenEncoder( vlc_object_t *p_this )
+         if( p_sys->i_qmin > 0 )
+         {
+             p_context->qmin = p_sys->i_qmin;
+-            p_context->mb_lmin = p_context->lmin = p_sys->i_qmin * FF_QP2LAMBDA;
++            p_context->mb_lmin = p_sys->i_qmin * FF_QP2LAMBDA;
++            add_av_option_int( p_enc, &options, "lmin", p_context->mb_lmin);
+         }
+         if( p_sys->i_qmax > 0 )
+         {
+             p_context->qmax = p_sys->i_qmax;
+-            p_context->mb_lmax = p_context->lmax = p_sys->i_qmax * FF_QP2LAMBDA;
++            p_context->mb_lmax = p_sys->i_qmax * FF_QP2LAMBDA;
++            add_av_option_int( p_enc, &options, "lmax", p_context->mb_lmax);
+         }
+         p_context->max_qdiff = 3;
+ 
+@@ -652,12 +673,12 @@ int OpenEncoder( vlc_object_t *p_this )
+ 
+         if( p_sys->i_quality && !p_enc->fmt_out.i_bitrate )
+         {
+-            p_context->flags |= CODEC_FLAG_QSCALE;
++            p_context->flags |= AV_CODEC_FLAG_QSCALE;
+             p_context->global_quality = p_sys->i_quality;
+         }
+         else
+         {
+-            p_context->rc_qsquish = 1.0;
++            av_dict_set(&options, "qsquish", "1.0", 0);
+             /* Default to 1/2 second buffer for given bitrate unless defined otherwise*/
+             if( !p_sys->i_rc_buffer_size )
+             {
+@@ -671,7 +692,7 @@ int OpenEncoder( vlc_object_t *p_this )
+             /* This is from ffmpeg's ffmpeg.c : */
+             p_context->rc_initial_buffer_occupancy
+                 = p_sys->i_rc_buffer_size * 3/4;
+-            p_context->rc_buffer_aggressivity = p_sys->f_rc_buffer_aggressivity;
++            add_av_option_float( p_enc, &options, "rc_buffer_aggressivity", p_sys->f_rc_buffer_aggressivity );
+         }
+     }
+     else if( p_enc->fmt_in.i_cat == AUDIO_ES )
+@@ -808,20 +829,23 @@ int OpenEncoder( vlc_object_t *p_this )
+             if( !var_GetInteger( p_enc, ENC_CFG_PREFIX "qmin" ) )
+             {
+                 p_context->qmin = 10;
+-                p_context->mb_lmin = p_context->lmin = 10 * FF_QP2LAMBDA;
++                p_context->mb_lmin = 10 * FF_QP2LAMBDA;
++                add_av_option_int( p_enc, &options, "lmin", p_context->mb_lmin );
+             }
+ 
+             if( !var_GetInteger( p_enc, ENC_CFG_PREFIX "qmax" ) )
+             {
+                 p_context->qmax = 42;
+-                p_context->mb_lmax = p_context->lmax = 42 * FF_QP2LAMBDA;
++                p_context->mb_lmax = 42 * FF_QP2LAMBDA;
++                add_av_option_int( p_enc, &options, "lmax", p_context->mb_lmax );
+             }
+ 
+             } else {
+             if( !var_GetInteger( p_enc, ENC_CFG_PREFIX "qmin" ) )
+             {
+                 p_context->qmin = 1;
+-                p_context->mb_lmin = p_context->lmin = FF_QP2LAMBDA;
++                p_context->mb_lmin = FF_QP2LAMBDA;
++                add_av_option_int( p_enc, &options, "lmin", p_context->mb_lmin );
+             }
+         }
+ 
+@@ -846,7 +870,7 @@ int OpenEncoder( vlc_object_t *p_this )
+     /* Make sure we get extradata filled by the encoder */
+     p_context->extradata_size = 0;
+     p_context->extradata = NULL;
+-    p_context->flags |= CODEC_FLAG_GLOBAL_HEADER;
++    p_context->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+ 
+     if( p_enc->i_threads >= 1)
+         p_context->thread_count = p_enc->i_threads;
+@@ -855,7 +879,6 @@ int OpenEncoder( vlc_object_t *p_this )
+ 
+     int ret;
+     char *psz_opts = var_InheritString(p_enc, ENC_CFG_PREFIX "options");
+-    AVDictionary *options = NULL;
+     if (psz_opts && *psz_opts)
+         options = vlc_av_get_options(psz_opts);
+     free(psz_opts);
+@@ -983,7 +1006,7 @@ errmsg:
+         }
+     }
+ 
+-    p_context->flags &= ~CODEC_FLAG_GLOBAL_HEADER;
++    p_context->flags &= ~AV_CODEC_FLAG_GLOBAL_HEADER;
+ 
+     if( p_enc->fmt_in.i_cat == AUDIO_ES )
+     {
+@@ -993,7 +1016,7 @@ errmsg:
+         p_sys->i_sample_bytes = (p_enc->fmt_in.audio.i_bitspersample / 8);
+         p_sys->i_frame_size = p_context->frame_size > 1 ?
+                                     p_context->frame_size :
+-                                    FF_MIN_BUFFER_SIZE;
++                                    AV_INPUT_BUFFER_MIN_SIZE;
+         p_sys->i_buffer_out = av_samples_get_buffer_size(NULL,
+                 p_sys->p_context->channels, p_sys->i_frame_size,
+                 p_sys->p_context->sample_fmt, DEFAULT_ALIGN);
+@@ -1359,7 +1382,7 @@ static block_t *handle_delay_buffer( encoder_t *p_enc,
+     }
+ 
+     if(unlikely( ( (leftover + buffer_delay) < p_sys->i_buffer_out ) &&
+-                 !(p_sys->p_codec->capabilities & CODEC_CAP_SMALL_LAST_FRAME )))
++                 !(p_sys->p_codec->capabilities & AV_CODEC_CAP_SMALL_LAST_FRAME )))
+     {
+         msg_Dbg( p_enc, "No small last frame support, padding");
+         size_t padding_size = p_sys->i_buffer_out - (leftover+buffer_delay);
+--- modules/codec/avcodec/video.c.orig	2017-07-13 09:16:59 UTC
++++ modules/codec/avcodec/video.c
+@@ -251,11 +251,11 @@ int InitVideoDec( decoder_t *p_dec, AVCodecContext *p_
+         var_InheritInteger( p_dec, "avcodec-error-resilience" );
+ 
+     if( var_CreateGetBool( p_dec, "grayscale" ) )
+-        p_sys->p_context->flags |= CODEC_FLAG_GRAY;
++        p_sys->p_context->flags |= AV_CODEC_FLAG_GRAY;
+ 
+     /* ***** Output always the frames ***** */
+ #if LIBAVCODEC_VERSION_CHECK(55, 23, 1, 40, 101)
+-    p_sys->p_context->flags |= CODEC_FLAG_OUTPUT_CORRUPT;
++    p_sys->p_context->flags |= AV_CODEC_FLAG_OUTPUT_CORRUPT;
+ #endif
+ 
+     i_val = var_CreateGetInteger( p_dec, "avcodec-vismv" );
+@@ -268,7 +268,7 @@ int InitVideoDec( decoder_t *p_dec, AVCodecContext *p_
+     else if( i_val == 1 ) p_sys->p_context->skip_loop_filter = AVDISCARD_NONREF;
+ 
+     if( var_CreateGetBool( p_dec, "avcodec-fast" ) )
+-        p_sys->p_context->flags2 |= CODEC_FLAG2_FAST;
++        p_sys->p_context->flags2 |= AV_CODEC_FLAG2_FAST;
+ 
+     /* ***** libavcodec frame skipping ***** */
+     p_sys->b_hurry_up = var_CreateGetBool( p_dec, "avcodec-hurry-up" );
+@@ -295,7 +295,7 @@ int InitVideoDec( decoder_t *p_dec, AVCodecContext *p_
+     p_sys->b_direct_rendering = false;
+     p_sys->i_direct_rendering_used = -1;
+     if( var_CreateGetBool( p_dec, "avcodec-dr" ) &&
+-       (p_sys->p_codec->capabilities & CODEC_CAP_DR1) &&
++       (p_sys->p_codec->capabilities & AV_CODEC_CAP_DR1) &&
+         /* No idea why ... but this fixes flickering on some TSCC streams */
+         p_sys->i_codec_id != AV_CODEC_ID_TSCC && p_sys->i_codec_id != AV_CODEC_ID_CSCD &&
+         p_sys->i_codec_id != AV_CODEC_ID_CINEPAK &&
+@@ -308,16 +308,9 @@ int InitVideoDec( decoder_t *p_dec, AVCodecContext *p_
+ 
+     /* libavcodec doesn't properly release old pictures when frames are skipped */
+     //if( p_sys->b_hurry_up ) p_sys->b_direct_rendering = false;
+-    if( p_sys->b_direct_rendering )
+-    {
+-        msg_Dbg( p_dec, "trying to use direct rendering" );
+-        p_sys->p_context->flags |= CODEC_FLAG_EMU_EDGE;
+-    }
+-    else
+-    {
+-        msg_Dbg( p_dec, "direct rendering is disabled" );
+-    }
+-
++#if !LIBAVCODEC_VERSION_CHECK(55, 32, 1, 48, 102)
++    p_sys->p_context->flags |= CODEC_FLAG_EMU_EDGE;
++#endif
+     p_sys->p_context->get_format = ffmpeg_GetFormat;
+     /* Always use our get_buffer wrapper so we can calculate the
+      * PTS correctly */
+@@ -484,7 +477,7 @@ picture_t *DecodeVideo( decoder_t *p_dec, block_t **pp
+     }
+ 
+     p_block = *pp_block;
+-    if(!p_block && !(p_sys->p_codec->capabilities & CODEC_CAP_DELAY) )
++    if(!p_block && !(p_sys->p_codec->capabilities & AV_CODEC_CAP_DELAY) )
+         return NULL;
+ 
+     if( p_sys->b_delayed_open )
+@@ -621,7 +614,7 @@ picture_t *DecodeVideo( decoder_t *p_dec, block_t **pp
+         }
+         else
+         {
+-            /* Return delayed frames if codec has CODEC_CAP_DELAY */
++            /* Return delayed frames if codec has AV_CODEC_CAP_DELAY */
+             pkt.data = NULL;
+             pkt.size = 0;
+         }
