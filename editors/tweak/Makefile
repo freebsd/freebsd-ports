@@ -6,7 +6,7 @@ PORTVERSION=	3.02
 CATEGORIES=	editors
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pzn.unixbsd@gmail.com
 COMMENT=	Efficient hex editor
 
 LICENSE=	MIT
