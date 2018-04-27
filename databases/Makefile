@@ -5,6 +5,7 @@
 
     SUBDIR += R-cran-DBI
     SUBDIR += R-cran-RMySQL
+    SUBDIR += R-cran-RPostgreSQL
     SUBDIR += R-cran-RSQLite
     SUBDIR += R-cran-RSQLite.extfuns
     SUBDIR += R-cran-sqldf
