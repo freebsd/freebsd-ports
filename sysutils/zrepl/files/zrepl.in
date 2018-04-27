@@ -9,18 +9,24 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# zrepl_enable:		Set to YES to enable the zrepl service.
+# zrepl_enable (bool):	Set to YES to enable the zrepl service.
 #			Default: NO
-# zrepl_config:		File containing zrepl configuration details.
+# zrepl_config (str):	File containing zrepl configuration details.
 #			Default: %%PREFIX%%/etc/zrepl/zrepl.yml
-# zrepl_user:		The user account used to run the zrepl daemon.
+# zrepl_user (str):	The user account used to run the zrepl daemon.
 #			Do not specifically set this to an empty string as this
 #			will cause the daemon to run as root.
 #			Default: root
-# zrepl_group:		The group account used to run the zrepl daemon.
+# zrepl_group (str):	The group account used to run the zrepl daemon.
 #			Do not specifically set this to an empty string as this
 #			will cause the daemon to run with group wheel.
 #			Default: wheel
+# zrepl_flags (str):	Extra flags passed to zrepl
+#			Default: ""
+# zrepl_facility (str):	Syslog facility to use
+#			Default: local0
+# zrepl_priority (str):	Syslog priority to use
+#			Default: alert
 
 . /etc/rc.subr
 name=zrepl
@@ -31,13 +37,19 @@ load_rc_config $name
 : ${zrepl_config:="%%PREFIX%%/etc/zrepl/zrepl.yml"}
 : ${zrepl_user:="root"}
 : ${zrepl_group:="wheel"}
+: ${zrepl_flags:=""}
+: ${zrepl_facility:="local0"}
+: ${zrepl_priority:="alert"}
+: ${zrepl_options:="${zrepl_flags} --config ${zrepl_config} daemon"}
 
 pidfile="/var/run/zrepl/daemon.pid"
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/zrepl"
-command_args="-p ${pidfile} -S -l local0 -s alert -T zrepl ${procname} --config ${zrepl_config} daemon"
+command_args="-p ${pidfile} %%DAEMON_LOGGING%% ${procname} ${zrepl_options}"
 
 start_precmd=zrepl_precmd
+stop_postcmd=zrepl_postcmd
+
 zrepl_precmd()
 {
 	if [ ! -d "/var/run/zrepl/stdinserver" ]; then
@@ -50,7 +62,6 @@ zrepl_precmd()
 	fi
 }
 
-stop_postcmd=zrepl_postcmd
 zrepl_postcmd()
 {
 	rm -f -- "${pidfile}"
