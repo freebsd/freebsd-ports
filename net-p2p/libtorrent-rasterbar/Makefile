@@ -3,7 +3,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:S/./_/g}/
 
@@ -15,11 +15,11 @@ COMMENT?=	C++ library implementing a BitTorrent client
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_powerpc64=	fails to build: client_test.cpp: undefined reference to std::__cxx11::basic_string
+
 LIB_DEPENDS+=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
-
-BROKEN_powerpc64=	fails to build: client_test.cpp: undefined reference to std::__cxx11::basic_string
 
 USES+=		compiler:c++11-lib iconv:wchar_t libtool pathfix pkgconfig ssl
 USE_CXXSTD=	c++11

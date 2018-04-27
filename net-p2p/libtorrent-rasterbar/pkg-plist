@@ -3,7 +3,6 @@
 %%TEST%%bin/client_test
 %%TEST%%bin/connection_tester
 %%TEST%%bin/dump_torrent
-%%TEST%%bin/fuzz_torrent
 %%TEST%%bin/make_torrent
 %%TEST%%bin/simple_client
 %%TEST%%bin/stats_counters
