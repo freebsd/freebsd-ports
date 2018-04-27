@@ -382,15 +382,12 @@ share/icons/hicolor/scalable/status/irc-channel-parted.svgz
 %%NLS%%%%DATADIR%%/translations/en_US.qm
 %%NLS%%%%DATADIR%%/translations/eo.qm
 %%NLS%%%%DATADIR%%/translations/es.qm
-%%NLS%%%%DATADIR%%/translations/es_AR.qm
 %%NLS%%%%DATADIR%%/translations/et.qm
-%%NLS%%%%DATADIR%%/translations/et_EE.qm
 %%NLS%%%%DATADIR%%/translations/fi.qm
 %%NLS%%%%DATADIR%%/translations/fr.qm
 %%NLS%%%%DATADIR%%/translations/gl.qm
 %%NLS%%%%DATADIR%%/translations/hi.qm
 %%NLS%%%%DATADIR%%/translations/hu.qm
-%%NLS%%%%DATADIR%%/translations/id_ID.qm
 %%NLS%%%%DATADIR%%/translations/it.qm
 %%NLS%%%%DATADIR%%/translations/ja.qm
 %%NLS%%%%DATADIR%%/translations/ko.qm
@@ -411,6 +408,5 @@ share/icons/hicolor/scalable/status/irc-channel-parted.svgz
 %%NLS%%%%DATADIR%%/translations/sv.qm
 %%NLS%%%%DATADIR%%/translations/tr.qm
 %%NLS%%%%DATADIR%%/translations/uk.qm
-%%NLS%%%%DATADIR%%/translations/uz@Latn.qm
 %%NLS%%%%DATADIR%%/translations/zh_CN.qm
 %%NLS%%%%DATADIR%%/translations/zh_TW.qm
