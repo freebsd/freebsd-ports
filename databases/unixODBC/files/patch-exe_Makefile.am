@@ -1,0 +1,27 @@
+From 92b4c96de9addb7c194b31070fa18cd9f3dbed36 Mon Sep 17 00:00:00 2001
+From: lurcher <nick@lurcher.org>
+Date: Mon, 26 Mar 2018 10:45:26 +0100
+Subject: [PATCH] Fix sed problem
+
+---
+ exe/Makefile.am | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/exe/Makefile.am b/exe/Makefile.am
+index 61b7493..31a142e 100644
+--- exe/Makefile.am.orig
++++ exe/Makefile.am
+@@ -60,8 +60,10 @@ dltest_DEPENDENCIES = $(LTDLDEPS)
+ dltest_LDADD = $(LIBLTDL)
+ 
+ all-am:
+-	@sed -i -e "s![@]ODBC_ULEN[@]!`$(CURDIR)/odbc_config$(EXEEXT) --ulen`!" \
+-		-e "s![@]ODBC_CFLAGS[@]!`$(CURDIR)/odbc_config$(EXEEXT) --cflags | sed 's/ -I.*//'`!" \
+-		$(top_builddir)/DriverManager/odbc.pc
+-
++	@sed "s![@]ODBC_ULEN[@]!`$(CURDIR)/odbc_config$(EXEEXT) --ulen`!" \
++	  $(top_builddir)/DriverManager/odbc.pc > $(CURDIR)/odbc.pc.tmp
++	@mv $(CURDIR)/odbc.pc.tmp $(top_builddir)/DriverManager/odbc.pc
++	@sed "s![@]ODBC_CFLAGS[@]!`$(CURDIR)/odbc_config$(EXEEXT) --cflags | sed 's/ -I.*//'`!" \
++	  $(top_builddir)/DriverManager/odbc.pc > $(CURDIR)/odbc.pc.tmp
++	@mv $(CURDIR)/odbc.pc.tmp $(top_builddir)/DriverManager/odbc.pc
