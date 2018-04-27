@@ -64,4 +64,11 @@ do-test-TEST-on:
 
 pre-install-TEST-on: do-test-TEST-on
 
+.include <bsd.port.options.mk>
+
+# gbe_bin_generater crashes in libc++ when built by clang++60
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003513
+LLVMVER=	50
+.endif
+
 .include <bsd.port.mk>
