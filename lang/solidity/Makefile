@@ -30,5 +30,6 @@ PLIST_FILES=	bin/solc
 pre-patch:
 		@${CP} ${FILESDIR}/jsoncpp.cmake ${WRKSRC}/cmake/
 		@${REINPLACE_CMD} '/EthCcache/d' ${WRKSRC}/CMakeLists.txt
+		@${REINPLACE_CMD} '/-Werror/d' ${WRKSRC}/cmake/EthCompilerSettings.cmake
 
 .include <bsd.port.mk>
