@@ -1,0 +1,111 @@
+https://github.com/wang-bin/QtAV/commit/7f6929b49c25
+https://github.com/wang-bin/QtAV/commit/1633f2962e19
+
+--- src/AVMuxer.cpp.orig	2017-06-21 01:47:15 UTC
++++ src/AVMuxer.cpp
+@@ -122,7 +122,7 @@ AVStream *AVMuxer::Private::addStream(AVFormatContext*
+     c->time_base = s->time_base;
+     /* Some formats want stream headers to be separate. */
+     if (ctx->oformat->flags & AVFMT_GLOBALHEADER)
+-        c->flags |= CODEC_FLAG_GLOBAL_HEADER;
++        c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+     // expose avctx to encoder and set properties in encoder?
+     // list codecs for a given format in ui
+     return s;
+--- src/QtAV/private/AVCompat.h.orig	2017-06-21 01:47:15 UTC
++++ src/QtAV/private/AVCompat.h
+@@ -59,6 +59,7 @@ extern "C"
+ #include <libavutil/parseutils.h>
+ #include <libavutil/pixdesc.h>
+ #include <libavutil/avstring.h>
++#include <libavfilter/version.h>
+ 
+ #if !FFMPEG_MODULE_CHECK(LIBAVUTIL, 51, 73, 101)
+ #include <libavutil/channel_layout.h>
+@@ -79,8 +80,11 @@ extern "C"
+ #endif //QTAV_HAVE(AVRESAMPLE)
+ 
+ #if QTAV_HAVE(AVFILTER)
++#if LIBAVFILTER_VERSION_INT < AV_VERSION_INT(3,8,0)
+ #include <libavfilter/avfiltergraph.h> /*code is here for old version*/
++#else
+ #include <libavfilter/avfilter.h>
++#endif
+ #include <libavfilter/buffersink.h>
+ #include <libavfilter/buffersrc.h>
+ #endif //QTAV_HAVE(AVFILTER)
+@@ -456,3 +460,15 @@ const char *get_codec_long_name(AVCodecID id);
+      } } while(0)
+ 
+ #endif //QTAV_COMPAT_H
++
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56,33,0)
++#define AV_CODEC_FLAG_GLOBAL_HEADER CODEC_FLAG_GLOBAL_HEADER
++#endif
++
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56,56,100)
++#define AV_INPUT_BUFFER_MIN_SIZE FF_MIN_BUFFER_SIZE
++#endif
++
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56,56,100)
++#define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
++#endif
+--- src/codec/audio/AudioEncoderFFmpeg.cpp.orig	2017-06-21 01:47:15 UTC
++++ src/codec/audio/AudioEncoderFFmpeg.cpp
+@@ -153,8 +153,8 @@ bool AudioEncoderFFmpegPrivate::open()
+     } else {
+         buffer_size = frame_size*format_used.bytesPerSample()*format_used.channels()*2+200;
+     }
+-    if (buffer_size < FF_MIN_BUFFER_SIZE)
+-        buffer_size = FF_MIN_BUFFER_SIZE;
++    if (buffer_size < AV_INPUT_BUFFER_MIN_SIZE)
++        buffer_size = AV_INPUT_BUFFER_MIN_SIZE;
+     buffer.resize(buffer_size);
+     return true;
+ }
+--- src/codec/video/VideoEncoderFFmpeg.cpp.orig	2017-06-21 01:47:15 UTC
++++ src/codec/video/VideoEncoderFFmpeg.cpp
+@@ -245,7 +245,7 @@ bool VideoEncoderFFmpegPrivate::open()
+     applyOptionsForContext();
+     AV_ENSURE_OK(avcodec_open2(avctx, codec, &dict), false);
+     // from mpv ao_lavc
+-    const int buffer_size = qMax<int>(qMax<int>(width*height*6+200, FF_MIN_BUFFER_SIZE), sizeof(AVPicture));//??
++    const int buffer_size = qMax<int>(qMax<int>(width*height*6+200, AV_INPUT_BUFFER_MIN_SIZE), sizeof(AVPicture));//??
+     buffer.resize(buffer_size);
+     return true;
+ }
+--- src/filter/LibAVFilter.cpp.orig	2017-06-21 01:47:15 UTC
++++ src/filter/LibAVFilter.cpp
+@@ -120,7 +120,10 @@ class LibAVFilter::Private (public)
+         // pixel_aspect==sar, pixel_aspect is more compatible
+         QString buffersrc_args = args;
+         qDebug("buffersrc_args=%s", buffersrc_args.toUtf8().constData());
+-        AVFilter *buffersrc  = avfilter_get_by_name(video ? "buffer" : "abuffer");
++#if LIBAVFILTER_VERSION_INT >= AV_VERSION_INT(7,0,0)
++        const
++#endif
++        AVFilter *buffersrc = avfilter_get_by_name(video ? "buffer" : "abuffer");
+         Q_ASSERT(buffersrc);
+         AV_ENSURE_OK(avfilter_graph_create_filter(&in_filter_ctx,
+                                                buffersrc,
+@@ -128,6 +131,9 @@ class LibAVFilter::Private (public)
+                                                filter_graph)
+                      , false);
+         /* buffer video sink: to terminate the filter chain. */
++#if LIBAVFILTER_VERSION_INT >= AV_VERSION_INT(7,0,0)
++        const
++#endif
+         AVFilter *buffersink = avfilter_get_by_name(video ? "buffersink" : "abuffersink");
+         Q_ASSERT(buffersink);
+         AV_ENSURE_OK(avfilter_graph_create_filter(&out_filter_ctx, buffersink, "out",
+--- src/subtitle/SubtitleProcessorFFmpeg.cpp.orig	2017-06-21 01:47:15 UTC
++++ src/subtitle/SubtitleProcessorFFmpeg.cpp
+@@ -249,7 +249,7 @@ bool SubtitleProcessorFFmpeg::processHeader(const QByt
+     codec_ctx->time_base.den = 1000;
+     if (!data.isEmpty()) {
+         av_free(codec_ctx->extradata);
+-        codec_ctx->extradata = (uint8_t*)av_mallocz(data.size() + FF_INPUT_BUFFER_PADDING_SIZE);
++        codec_ctx->extradata = (uint8_t*)av_mallocz(data.size() + AV_INPUT_BUFFER_PADDING_SIZE);
+         if (!codec_ctx->extradata)
+             return false;
+         codec_ctx->extradata_size = data.size();
