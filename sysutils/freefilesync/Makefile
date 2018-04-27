@@ -15,8 +15,6 @@ COMMENT=	Backup software to synchronize files and folders
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/License.txt
 
-IGNORE_FreeBSD_10=	FreeBSD 10.0 doesn't have _cxa_thread_atexit() implemeneted in libc, it has been implemented since 11
-
 BUILD_DEPENDS=	${LOCALBASE}/include/zenxml/xml.h:textproc/zenxml
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -40,5 +38,11 @@ post-patch:
 		${WRKDIR}/zen/file_access.cpp
 	@${REINPLACE_CMD} -e 's|WEXITSTATUS||' ${WRKDIR}/zen/shell_execute.h
 	@${REINPLACE_CMD} -e 's| noexcept;|;|' ${WRKDIR}/zen/scope_guard.h
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003506
+BROKEN=		no __cxa_thread_atexit() support in FreeBSD libc < 10.4
+.endif
 
 .include <bsd.port.mk>
