@@ -3,7 +3,7 @@
 
 PORTNAME=	naev
 PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
@@ -13,13 +13,10 @@ COMMENT=	2D action/RPG space game
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Depends on the library that isn't installed by SuiteSparse any more: https://github.com/naev/naev/issues/774
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libvorbisfile.so:audio/libvorbis \
-		libzip.so:archivers/libzip \
-		libcsparse.so:math/suitesparse
+		libzip.so:archivers/libzip
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/${DISTNAME}-ndata.zip:games/naev-data
 
 USES=		autoreconf:build compiler:features gmake pkgconfig tar:bzip2
