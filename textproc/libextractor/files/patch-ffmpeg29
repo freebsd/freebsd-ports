@@ -24,6 +24,15 @@ Applied-Upstream: commit: r35548:r35549 and r36975
  /**
   * Set to 1 to enable debug output.
   */ 
+@@ -82,7 +96,7 @@
+ /**
+  * Number of bytes to feed to libav in one go, with padding (padding is zeroed).
+  */
+-#define PADDED_BUFFER_SIZE (BUFFER_SIZE + FF_INPUT_BUFFER_PADDING_SIZE)
++#define PADDED_BUFFER_SIZE (BUFFER_SIZE + AV_INPUT_BUFFER_PADDING_SIZE)
+ 
+ /**
+  * Global handle to MAGIC data.
 @@ -153,7 +167,7 @@
  static size_t 
  create_thumbnail (int src_width, int src_height, 
