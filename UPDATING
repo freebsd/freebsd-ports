@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180427:
+  AFFECTS: users of sysutils/zrepl
+  AUTHOR: woodsb02@FreeBSD.org
+
+  The zrepl update to 0.0.3 includes the following breaking changes:
+  - Snapshots are automatically bookmarked and pruning of bookmarks must
+    be configured by adding the keep_bookmarks parameter to the prune
+    policy section of the zrepl configuration file (source side only).
+    Be sure to understand the meaning bookmarks have for maximum
+    allowable replication downtime.
+  - The ssh+stdinserver transport protocol has changed, requiring zrepl
+    to be updates on both the sending and receiving side, and the daemon
+    restarted on both sides.
+  - The first outlet in the global.logging section of the configuration
+    file is now used for logging meta-errors (e.g. problems encountered
+    when writing to other logging outlets).
+
 20180425:
   AFFECTS: users of databases/pecl-redis
   AUTHOR: daniel@blodan.se

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zrepl
-PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTVERSION=	0.0.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -19,17 +18,20 @@ SUB_FILES=	pkg-message
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/zrepl/zrepl
 GH_TUPLE=	davecgh:go-spew:v1.1.0:go_spew/src/github.com/davecgh/go-spew \
+		dustin:go-humanize:bb3d318:go_humanize/src/github.com/dustin/go-humanize \
 		ftrvxmtrx:fd:c6d8003:fd/src/github.com/ftrvxmtrx/fd \
 		go-logfmt:logfmt:v0.3.0:go_logfmt/src/github.com/go-logfmt/logfmt \
 		go-yaml:yaml:eb3733d:go_yaml/src/github.com/go-yaml/yaml \
-		inconshreveable:mousetrap:v1.0:mousetrap/src/github.com/inconshreveable/mousetrap \
 		jinzhu:copier:db4671f:copier/src/github.com/jinzhu/copier \
 		kr:logfmt:b84e30a:logfmt/src/github.com/kr/logfmt \
 		kr:pretty:cfb55aa:pretty/src/github.com/kr/pretty \
 		kr:text:7cafcd8:text/src/github.com/kr/text \
+		mattn:go-isatty:v0.0.3:go_isatty/src/github.com/mattn/go-isatty \
 		mitchellh:mapstructure:d0303fe:mapstructure/src/github.com/mitchellh/mapstructure \
 		pkg:errors:v0.8.0:errors/src/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:go_difflib/src/github.com/pmezard/go-difflib \
+		problame:go-netssh:53a2e44:go_netssh/src/github.com/problame/go-netssh \
+		problame:go-rwccmd:391d2c7:go_rwccmd/src/github.com/problame/go-rwccmd \
 		spf13:cobra:b787445:cobra/src/github.com/spf13/cobra \
 		spf13:pflag:v1.0.0:pflag/src/github.com/spf13/pflag \
 		stretchr:testify:v1.1.4:testify/src/github.com/stretchr/testify
