@@ -1,0 +1,53 @@
+From 9ec2ab9780282412e42a39d14dced7deade201eb Mon Sep 17 00:00:00 2001
+From: Dan Dennedy <dan@dennedy.org>
+Date: Mon, 23 Oct 2017 20:19:12 -0700
+Subject: [PATCH] Fix FFmpeg master removed AVFMT_RAWPICTURE.
+
+---
+ .gitignore                               | 3 +++
+ src/modules/avformat/consumer_avformat.c | 6 ++++++
+ 2 files changed, 9 insertions(+)
+
+diff --git .gitignore .gitignore
+index 01284bf3..3564a00f 100644
+--- .gitignore
++++ .gitignore
+@@ -31,3 +31,6 @@ mlt-config
+ packages.dat
+ make.inc
+ src/examples/play
++*.dot
++*.rej
++
+diff --git src/modules/avformat/consumer_avformat.c src/modules/avformat/consumer_avformat.c
+index b18b8752..49872225 100644
+--- src/modules/avformat/consumer_avformat.c
++++ src/modules/avformat/consumer_avformat.c
+@@ -1817,6 +1817,7 @@ static void *consumer_thread( void *arg )
+ 						}
+ 					}
+ 
++#ifdef AVFMT_RAWPICTURE
+ 					if (oc->oformat->flags & AVFMT_RAWPICTURE) 
+ 					{
+ 	 					// raw video case. The API will change slightly in the near future for that
+@@ -1836,6 +1837,7 @@ static void *consumer_thread( void *arg )
+ 						ret = av_write_frame(oc, &pkt);
+ 					} 
+ 					else 
++#endif
+ 					{
+ 						AVPacket pkt;
+ 						av_init_packet( &pkt );
+@@ -2029,7 +2031,11 @@ static void *consumer_thread( void *arg )
+ 		}
+ 
+ 		// Flush video
++#ifdef AVFMT_RAWPICTURE
+ 		if ( video_st && !( oc->oformat->flags & AVFMT_RAWPICTURE ) ) for (;;)
++#else
++		if ( video_st ) for (;;)
++#endif
+ 		{
+ 			AVCodecContext *c = video_st->codec;
+ 			AVPacket pkt;

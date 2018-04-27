@@ -1,0 +1,260 @@
+From 9a955928355788e12054a22f1731a31e1a4cce34 Mon Sep 17 00:00:00 2001
+From: Dan Dennedy <dan@dennedy.org>
+Date: Mon, 23 Oct 2017 20:17:40 -0700
+Subject: [PATCH] Remove filter_avresample - dropped by FFmpeg.
+
+---
+ src/modules/avformat/Makefile            |   1 -
+ src/modules/avformat/factory.c           |  10 +-
+ src/modules/avformat/filter_avresample.c | 175 -----------------------
+ src/modules/core/loader.ini              |   2 +-
+ 4 files changed, 2 insertions(+), 186 deletions(-)
+ delete mode 100644 src/modules/avformat/filter_avresample.c
+
+diff --git src/modules/avformat/Makefile src/modules/avformat/Makefile
+index 5d0e0e26..21bbe4cb 100644
+--- src/modules/avformat/Makefile
++++ src/modules/avformat/Makefile
+@@ -16,7 +16,6 @@ OBJS = factory.o
+ 
+ ifdef FILTERS
+ OBJS += filter_avcolour_space.o \
+-	    filter_avresample.o \
+ 	    filter_avdeinterlace.o \
+ 	    filter_swscale.o
+ CFLAGS += -DFILTERS
+diff --git src/modules/avformat/factory.c src/modules/avformat/factory.c
+index 7485a87a..785a6fe5 100644
+--- src/modules/avformat/factory.c
++++ src/modules/avformat/factory.c
+@@ -1,6 +1,6 @@
+ /*
+  * factory.c -- the factory method interfaces
+- * Copyright (C) 2003-2016 Meltytech, LLC
++ * Copyright (C) 2003-2017 Meltytech, LLC
+  *
+  * This library is free software; you can redistribute it and/or
+  * modify it under the terms of the GNU Lesser General Public
+@@ -27,7 +27,6 @@
+ extern mlt_consumer consumer_avformat_init( mlt_profile profile, char *file );
+ extern mlt_filter filter_avcolour_space_init( void *arg );
+ extern mlt_filter filter_avdeinterlace_init( void *arg );
+-extern mlt_filter filter_avresample_init( char *arg );
+ extern mlt_filter filter_swscale_init( mlt_profile profile, char *arg );
+ extern mlt_producer producer_avformat_init( mlt_profile profile, const char *service, char *file );
+ extern mlt_filter filter_avfilter_init( mlt_profile, mlt_service_type, const char*, char* );
+@@ -125,10 +124,6 @@ static void *create_service( mlt_profile profile, mlt_service_type type, const c
+ 		return filter_avcolour_space_init( arg );
+ 	if ( !strcmp( id, "avdeinterlace" ) )
+ 		return filter_avdeinterlace_init( arg );
+-#if defined(FFUDIV)
+-	if ( !strcmp( id, "avresample" ) )
+-		return filter_avresample_init( arg );
+-#endif
+ 	if ( !strcmp( id, "swscale" ) )
+ 		return filter_swscale_init( profile, arg );
+ #endif
+@@ -409,9 +404,6 @@ MLT_REPOSITORY
+ 	MLT_REGISTER( filter_type, "avcolour_space", create_service );
+ 	MLT_REGISTER( filter_type, "avcolor_space", create_service );
+ 	MLT_REGISTER( filter_type, "avdeinterlace", create_service );
+-#if defined(FFUDIV)
+-	MLT_REGISTER( filter_type, "avresample", create_service );
+-#endif
+ 	MLT_REGISTER( filter_type, "swscale", create_service );
+ 
+ #ifdef AVFILTER
+diff --git src/modules/avformat/filter_avresample.c src/modules/avformat/filter_avresample.c
+deleted file mode 100644
+index 80f45128..00000000
+--- src/modules/avformat/filter_avresample.c
++++ /dev/null
+@@ -1,175 +0,0 @@
+-/*
+- * filter_avresample.c -- adjust audio sample frequency
+- * Copyright (C) 2003-2014 Meltytech, LLC
+- *
+- * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
+- * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
+- *
+- * This library is distributed in the hope that it will be useful,
+- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
+- *
+- * You should have received a copy of the GNU Lesser General Public
+- * License along with this library; if not, write to the Free Software
+- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+- */
+-
+-#include <framework/mlt_filter.h>
+-#include <framework/mlt_frame.h>
+-#include <framework/mlt_log.h>
+-
+-#include <stdio.h>
+-#include <stdlib.h>
+-#include <string.h>
+-
+-// ffmpeg Header files
+-#include <libavformat/avformat.h>
+-#include <libavutil/samplefmt.h>
+-
+-#if defined(FFUDIV)
+-
+-#define MAX_AUDIO_FRAME_SIZE (192000) // 1 second of 48khz 32bit audio
+-
+-
+-/** Get the audio.
+-*/
+-
+-static int resample_get_audio( mlt_frame frame, void **buffer, mlt_audio_format *format, int *frequency, int *channels, int *samples )
+-{
+-	// Get the filter service
+-	mlt_filter filter = mlt_frame_pop_audio( frame );
+-
+-	// Get the filter properties
+-	mlt_properties filter_properties = MLT_FILTER_PROPERTIES( filter );
+-
+-	mlt_service_lock( MLT_FILTER_SERVICE( filter ) );
+-
+-	// Get the resample information
+-	int output_rate = mlt_properties_get_int( filter_properties, "frequency" );
+-	int16_t *sample_buffer = mlt_properties_get_data( filter_properties, "buffer", NULL );
+-
+-	// Obtain the resample context if it exists
+-	ReSampleContext *resample = mlt_properties_get_data( filter_properties, "audio_resample", NULL );
+-
+-	// If no resample frequency is specified, default to requested value
+-	if ( output_rate == 0 )
+-		output_rate = *frequency;
+-
+-	// Get the producer's audio
+-	int error = mlt_frame_get_audio( frame, buffer, format, frequency, channels, samples );
+-	if ( error ) return error;
+-
+-	// Return now if no work to do
+-	if ( output_rate != *frequency )
+-	{
+-		// Will store number of samples created
+-		int used = 0;
+-
+-		mlt_log_debug( MLT_FILTER_SERVICE(filter), "channels %d samples %d frequency %d -> %d\n",
+-			*channels, *samples, *frequency, output_rate );
+-
+-		// Do not convert to s16 unless we need to change the rate
+-		if ( *format != mlt_audio_s16 )
+-		{
+-			*format = mlt_audio_s16;
+-			mlt_frame_get_audio( frame, buffer, format, frequency, channels, samples );
+-		}
+-
+-		// Create a resampler if nececessary
+-		if ( resample == NULL || *frequency != mlt_properties_get_int( filter_properties, "last_frequency" ) )
+-		{
+-			// Create the resampler
+-			resample = av_audio_resample_init( *channels, *channels, output_rate, *frequency,
+-				AV_SAMPLE_FMT_S16, AV_SAMPLE_FMT_S16, 16, 10, 0, 0.8 );
+-
+-			// And store it on properties
+-			mlt_properties_set_data( filter_properties, "audio_resample", resample, 0, ( mlt_destructor )audio_resample_close, NULL );
+-
+-			// And remember what it was created for
+-			mlt_properties_set_int( filter_properties, "last_frequency", *frequency );
+-		}
+-
+-		mlt_service_unlock( MLT_FILTER_SERVICE( filter ) );
+-
+-		// Resample the audio
+-		used = audio_resample( resample, sample_buffer, *buffer, *samples );
+-		int size = used * *channels * sizeof( int16_t );
+-
+-		// Resize if necessary
+-		if ( used > *samples )
+-		{
+-			*buffer = mlt_pool_realloc( *buffer, size );
+-			mlt_frame_set_audio( frame, *buffer, *format, size, mlt_pool_release );
+-		}
+-
+-		// Copy samples
+-		memcpy( *buffer, sample_buffer, size );
+-
+-		// Update output variables
+-		*samples = used;
+-		*frequency = output_rate;
+-	}
+-	else
+-	{
+-		mlt_service_unlock( MLT_FILTER_SERVICE( filter ) );
+-	}
+-
+-	return error;
+-}
+-
+-/** Filter processing.
+-*/
+-
+-static mlt_frame filter_process( mlt_filter filter, mlt_frame frame )
+-{
+-	// Only call this if we have a means to get audio
+-	if ( mlt_frame_is_test_audio( frame ) == 0 )
+-	{
+-		// Push the filter on to the stack
+-		mlt_frame_push_audio( frame, filter );
+-
+-		// Assign our get_audio method
+-		mlt_frame_push_audio( frame, resample_get_audio );
+-	}
+-
+-	return frame;
+-}
+-
+-/** Constructor for the filter.
+-*/
+-
+-mlt_filter filter_avresample_init( char *arg )
+-{
+-	// Create a filter
+-	mlt_filter filter = mlt_filter_new( );
+-
+-	// Initialise if successful
+-	if ( filter != NULL )
+-	{
+-		// Calculate size of the buffer
+-		int size = MAX_AUDIO_FRAME_SIZE * sizeof( int16_t );
+-
+-		// Allocate the buffer
+-		int16_t *buffer = mlt_pool_alloc( size );
+-
+-		// Assign the process method
+-		filter->process = filter_process;
+-
+-		// Deal with argument
+-		if ( arg != NULL )
+-			mlt_properties_set( MLT_FILTER_PROPERTIES( filter ), "frequency", arg );
+-
+-		// Default to 2 channel output
+-		mlt_properties_set_int( MLT_FILTER_PROPERTIES( filter ), "channels", 2 );
+-
+-		// Store the buffer
+-		mlt_properties_set_data( MLT_FILTER_PROPERTIES( filter ), "buffer", buffer, size, mlt_pool_release, NULL );
+-	}
+-
+-	return filter;
+-}
+-
+-#endif // defined(FFUDIV)
+diff --git src/modules/core/loader.ini src/modules/core/loader.ini
+index c586a176..b3a5653d 100644
+--- src/modules/core/loader.ini
++++ src/modules/core/loader.ini
+@@ -15,7 +15,7 @@ resizer=movit.resize,resize
+ 
+ # audio filters
+ channels=audiochannels
+-resampler=resample,avresample
++resampler=resample
+ 
+ # metadata filters
+ data=data_feed:attr_check
