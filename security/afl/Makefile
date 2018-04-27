@@ -4,7 +4,7 @@
 PORTNAME=	afl
 PORTVERSION=	2.52
 DISTVERSIONSUFFIX=	b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
@@ -33,7 +33,7 @@ LLVM_DESC=	LLVM-based instrumentation
 # You have implicit approval to bump the LLVM version here as long as
 # it builds WITH=LLVM and `make test` passes on all supported
 # releases.
-LLVM_VERSION?= 50
+LLVM_VERSION?= 60
 
 LLVM_ALL_TARGET=	llvm_mode
 LLVM_BUILD_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
