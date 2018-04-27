@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libpsl
-PORTVERSION=	0.20.1
+PORTVERSION=	0.20.2
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,12 +18,13 @@ BUILD_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list \
 OPTIONS_DEFINE=	NLS
 OPTIONS_SINGLE=	IDNA
 OPTIONS_SINGLE_IDNA=	ICU IDN IDN2
-OPTIONS_DEFAULT=ICU
+OPTIONS_DEFAULT=IDN2
 ICU_DESC=	Use devel/icu (IDNA2008 UTS\#46 library)
 IDN_DESC=	Use dns/libidn (IDNA2003 library)
 IDN2_DESC=	Use dns/libidn2 (IDNA2008 library)
 
-CONFIGURE_ARGS=	--enable-man \
+CONFIGURE_ARGS=	--disable-gtk-doc \
+		--enable-man \
 		--with-psl-file=${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat \
 		--with-psl-testfile=${LOCALBASE}/share/public_suffix_list/test_psl.txt
 GNU_CONFIGURE=	yes
