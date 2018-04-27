@@ -1,0 +1,4 @@
+[General]
+Name=FreeBSD
+LogoPath=%%DATADIR%%/images/freebsd_logo.svg
+Website=https://www.freebsd.org

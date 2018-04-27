@@ -1,0 +1,8 @@
+bin/plasma-browser-integration-host
+etc/chromium/native-messaging-hosts/org.kde.plasma.browser_integration.json
+etc/opt/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json
+lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json
+%%QT_PLUGINDIR%%/krunner_browsertabs.so
+share/chromium-browser/extensions/cimiefiiaegbelhefglklhhakcgmhkai.json
+share/google-chrome/extensions/cimiefiiaegbelhefglklhhakcgmhkai.json
+share/kservices5/plasma-runner-browsertabs.desktop

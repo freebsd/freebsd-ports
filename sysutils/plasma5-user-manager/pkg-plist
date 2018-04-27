@@ -1,0 +1,73 @@
+%%QT_PLUGINDIR%%/user_manager.so
+share/kservices5/user_manager.desktop
+%%DATADIR%%/avatars/bluesstyle/Ada Lovelace.png
+%%DATADIR%%/avatars/bluesstyle/Alice in Wonderland.png
+%%DATADIR%%/avatars/bluesstyle/Grace Hopper.png
+%%DATADIR%%/avatars/bluesstyle/Leonardo da Vinci.png
+%%DATADIR%%/avatars/bluesstyle/Mahatma Gandhi.png
+%%DATADIR%%/avatars/bluesstyle/Mowgli jungle book.png
+%%DATADIR%%/avatars/bluesstyle/User.png
+%%DATADIR%%/avatars/circles/Cat.png
+%%DATADIR%%/avatars/circles/Female.png
+%%DATADIR%%/avatars/circles/Konqui.png
+%%DATADIR%%/avatars/circles/Male.png
+%%DATADIR%%/avatars/circles/Penguin.png
+%%DATADIR%%/avatars/circles/Zebra.png
+%%DATADIR%%/avatars/classic/Blackbox.png
+%%DATADIR%%/avatars/classic/Bomb.png
+%%DATADIR%%/avatars/classic/Dragon.png
+%%DATADIR%%/avatars/classic/Green.png
+%%DATADIR%%/avatars/classic/Happy.png
+%%DATADIR%%/avatars/classic/Listening.png
+%%DATADIR%%/avatars/classic/Notme.png
+%%DATADIR%%/avatars/classic/TV.png
+%%DATADIR%%/avatars/konqui/Kati.png
+%%DATADIR%%/avatars/konqui/Konqui.png
+%%DATADIR%%/avatars/konqui/Logger.png
+%%DATADIR%%/avatars/konqui/Parley.png
+%%DATADIR%%/avatars/konqui/Rekonqui.png
+share/locale/ar/LC_MESSAGES/user_manager.mo
+share/locale/ast/LC_MESSAGES/user_manager.mo
+share/locale/bs/LC_MESSAGES/user_manager.mo
+share/locale/ca/LC_MESSAGES/user_manager.mo
+share/locale/ca@valencia/LC_MESSAGES/user_manager.mo
+share/locale/cs/LC_MESSAGES/user_manager.mo
+share/locale/da/LC_MESSAGES/user_manager.mo
+share/locale/de/LC_MESSAGES/user_manager.mo
+share/locale/el/LC_MESSAGES/user_manager.mo
+share/locale/en_GB/LC_MESSAGES/user_manager.mo
+share/locale/es/LC_MESSAGES/user_manager.mo
+share/locale/et/LC_MESSAGES/user_manager.mo
+share/locale/eu/LC_MESSAGES/user_manager.mo
+share/locale/fi/LC_MESSAGES/user_manager.mo
+share/locale/fr/LC_MESSAGES/user_manager.mo
+share/locale/gl/LC_MESSAGES/user_manager.mo
+share/locale/he/LC_MESSAGES/user_manager.mo
+share/locale/hu/LC_MESSAGES/user_manager.mo
+share/locale/ia/LC_MESSAGES/user_manager.mo
+share/locale/it/LC_MESSAGES/user_manager.mo
+share/locale/ja/LC_MESSAGES/user_manager.mo
+share/locale/ko/LC_MESSAGES/user_manager.mo
+share/locale/lt/LC_MESSAGES/user_manager.mo
+share/locale/mr/LC_MESSAGES/user_manager.mo
+share/locale/nb/LC_MESSAGES/user_manager.mo
+share/locale/nl/LC_MESSAGES/user_manager.mo
+share/locale/nn/LC_MESSAGES/user_manager.mo
+share/locale/pa/LC_MESSAGES/user_manager.mo
+share/locale/pl/LC_MESSAGES/user_manager.mo
+share/locale/pt/LC_MESSAGES/user_manager.mo
+share/locale/pt_BR/LC_MESSAGES/user_manager.mo
+share/locale/ro/LC_MESSAGES/user_manager.mo
+share/locale/ru/LC_MESSAGES/user_manager.mo
+share/locale/sk/LC_MESSAGES/user_manager.mo
+share/locale/sl/LC_MESSAGES/user_manager.mo
+share/locale/sr/LC_MESSAGES/user_manager.mo
+share/locale/sr@ijekavian/LC_MESSAGES/user_manager.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/user_manager.mo
+share/locale/sr@latin/LC_MESSAGES/user_manager.mo
+share/locale/sv/LC_MESSAGES/user_manager.mo
+share/locale/tr/LC_MESSAGES/user_manager.mo
+share/locale/ug/LC_MESSAGES/user_manager.mo
+share/locale/uk/LC_MESSAGES/user_manager.mo
+share/locale/zh_CN/LC_MESSAGES/user_manager.mo
+share/locale/zh_TW/LC_MESSAGES/user_manager.mo

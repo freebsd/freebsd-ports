@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-09-13 23:02:54 UTC
++++ CMakeLists.txt
+@@ -48,8 +48,6 @@ add_feature_info(
+     "Support turning off signal-transmitting devices to save energy"
+ )
+ 
+-find_package(UDev REQUIRED)
+-
+ find_package(XCB REQUIRED COMPONENTS XCB RANDR DPMS)
+ 
+ if(WITH_DDCUTIL)

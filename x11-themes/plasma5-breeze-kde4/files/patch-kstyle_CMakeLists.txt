@@ -1,0 +1,11 @@
+--- kstyle/CMakeLists.txt.orig	2015-11-19 11:55:03 UTC
++++ kstyle/CMakeLists.txt
+@@ -28,6 +28,8 @@ if(BREEZE_USE_KDE4)
+     add_feature_info("x11-xcb" XCB_FOUND "Required to pass style properties to native Windows on X11 Platform")
+     set_feature_info("x11-xcb" "Required to pass style properties to native Windows on X11 Platform" "http://xcb.freedesktop.org")
+     set(BREEZE_HAVE_X11 ${XCB_FOUND})
++    include_directories(${XCB_INCLUDE_DIRS})
++    link_directories(${XCB_LIBRARY_DIRS})
+   else()
+     set(BREEZE_HAVE_X11 FALSE)
+   endif()

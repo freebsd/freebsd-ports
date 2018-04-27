@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2016-03-17 10:58:23 UTC
++++ CMakeLists.txt
+@@ -115,7 +115,11 @@ find_package(Evdev)
+ set_package_properties(Evdev PROPERTIES TYPE OPTIONAL)
+ add_feature_info("Evdev" EVDEV_FOUND "Evdev driver headers needed for input KCM")
+ 
++if (WANT_SYNAPTICS)
+ find_package(Synaptics)
++else()
++set(SYNAPTICS_FOUND FALSE)
++endif()
+ set_package_properties(Synaptics PROPERTIES TYPE OPTIONAL)
+ add_feature_info("Synaptics" SYNAPTICS_FOUND "Synaptics libraries needed for touchpad KCM")
+ include(ConfigureChecks.cmake)

@@ -883,6 +883,17 @@
     SUBDIR += pick
     SUBDIR += pidof
     SUBDIR += pipemeter
+    SUBDIR += plasma5-discover
+    SUBDIR += plasma5-drkonqi
+    SUBDIR += plasma5-kde-cli-tools
+    SUBDIR += plasma5-kinfocenter
+    SUBDIR += plasma5-kmenuedit
+    SUBDIR += plasma5-ksysguard
+    SUBDIR += plasma5-libksysguard
+    SUBDIR += plasma5-polkit-kde-agent-1
+    SUBDIR += plasma5-powerdevil
+    SUBDIR += plasma5-systemsettings
+    SUBDIR += plasma5-user-manager
     SUBDIR += plconfig
     SUBDIR += pmt
     SUBDIR += policykit
