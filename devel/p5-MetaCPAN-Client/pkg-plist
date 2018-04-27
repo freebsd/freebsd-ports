@@ -1,5 +1,6 @@
 %%SITE_PERL%%/MetaCPAN/Client.pm
 %%SITE_PERL%%/MetaCPAN/Client/Author.pm
+%%SITE_PERL%%/MetaCPAN/Client/Cover.pm
 %%SITE_PERL%%/MetaCPAN/Client/Distribution.pm
 %%SITE_PERL%%/MetaCPAN/Client/DownloadURL.pm
 %%SITE_PERL%%/MetaCPAN/Client/Favorite.pm
@@ -19,6 +20,7 @@
 %%SITE_PERL%%/MetaCPAN/Client/Types.pm
 %%PERL5_MAN3%%/MetaCPAN::Client.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Author.3.gz
+%%PERL5_MAN3%%/MetaCPAN::Client::Cover.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Distribution.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::DownloadURL.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Favorite.3.gz
