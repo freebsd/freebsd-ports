@@ -81,7 +81,6 @@ PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
 USES+=		mysql:80
-IGNORE_FreeBSD_10=	"FreeBSD 10.0 doesn't have _cxa_thread_atexit() implemeneted in libc, it has been implemented since 11
 
 CONFLICTS_INSTALL=	mysql8[1-9]-server-* \
 			mysql[0-79][0-9]-server-* \
@@ -137,6 +136,12 @@ PERFSCHM_SUB_LIST+=		PERFSCHEMRC=""
 PERFSCHM_SUB_LIST_OFF+=		PERFSCHEMRC="--skip-performance-schema"
 FEDERATED_SUB_LIST+=		FEDER="--federated"
 FEDERATED_SUB_LIST_OFF+=	FEDER=""
+.endif
+
+.include <bsd.port.options.mk>
+
+.if !defined(CLIENT_ONLY) && ${OPSYS} == FreeBSD && ${OSVERSION} < 1003506
+BROKEN=		no __cxa_thread_atexit() support in FreeBSD libc < 10.4
 .endif
 
 .include <bsd.port.pre.mk>
