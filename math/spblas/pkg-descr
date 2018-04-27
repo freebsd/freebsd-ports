@@ -6,4 +6,4 @@ for complex arithmetic and templates to facilitate to creation of various
 precision codes.) The library includes support for all four precision types
 (single, double precision, real, and complex) and Level 1, 2, and 3 operations.
 
-WWW: http://math.nist.gov/spblas/
+WWW: https://math.nist.gov/spblas/
