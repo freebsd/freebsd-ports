@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gradle
-PORTVERSION=	4.0
+PORTVERSION=	4.6
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
@@ -14,6 +14,7 @@ LICENSE=	APACHE20
 
 NO_ARCH=	yes
 USES=		zip
+JAVA_VERSION=	1.7+
 USE_JAVA=	yes
 NO_BUILD=	yes
 SUB_LIST=	PORTVERSION=${PORTVERSION} \
