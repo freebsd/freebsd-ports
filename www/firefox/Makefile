@@ -3,7 +3,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	59.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	https://hg.mozilla.org/releases/mozilla-release/archive/
