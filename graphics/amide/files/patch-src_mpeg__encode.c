@@ -31,7 +31,7 @@
    if (!encode->picture) {
      g_warning("couldn't allocate memory for encode->picture");
      encode_free(encode);
-@@ -293,7 +294,7 @@ gpointer mpeg_encode_setup(gchar * outpu
+@@ -293,11 +294,13 @@ gpointer mpeg_encode_setup(gchar * output_filename, mp
    encode->context->time_base= (AVRational){1,FRAMES_PER_SECOND};
    encode->context->gop_size = 10; /* emit one intra frame every ten frames */
    encode->context->max_b_frames=10;
@@ -40,6 +40,12 @@
  
    /* encoding parameters */
    encode->context->sample_aspect_ratio= (AVRational){1,1}; /* our pixels are square */
++#if LIBAVCODEC_VERSION_MAJOR < 58
+   encode->context->me_method=5; /* 5 is epzs */
++#endif
+   encode->context->trellis=2; /* turn trellis quantization on */
+ 
+   /* open it */
 @@ -355,6 +356,10 @@ gpointer mpeg_encode_setup(gchar * outpu
    encode->picture->linesize[1] = encode->context->width/2;
    encode->picture->linesize[2] = encode->context->width/2;
