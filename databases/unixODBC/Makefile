@@ -4,7 +4,8 @@
 PORTNAME=	unixODBC
 PORTVERSION=	2.3.6
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.unixodbc.org/pub/unixODBC/
+MASTER_SITES=	http://www.unixodbc.org/ \
+		ftp://ftp.unixodbc.org/pub/unixODBC/
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	ODBC library suite for Unix
