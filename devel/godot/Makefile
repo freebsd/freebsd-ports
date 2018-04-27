@@ -24,8 +24,8 @@ RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
 
-# on 10.4 using clang34 fails - so we want to use clang50
-# gl already needs clang50 so this shouldn't add any overhead
+# on 10.4 using clang34 fails - so we want to use clang60
+# gl already needs clang60 so this shouldn't add any overhead
 USES=		compiler:c++14-lang pkgconfig scons ssl
 USE_XORG=	x11 xcursor xi xinerama xrandr
 USE_GL=		gl glew glu
