@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-command
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
