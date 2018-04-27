@@ -12,4 +12,17 @@ zrepl must be configured before it is started the first time.
   # service zrepl start
 
 For documentation, refer to https://zrepl.github.io/.
+
+*** BREAKING CHANGES WITH THE 0.0.3 RELEASE: ***
+- Snapshots are automatically bookmarked and pruning of bookmarks must
+  be configured by adding the keep_bookmarks parameter to the prune
+  policy section of the zrepl configuration file (source side only).
+  Be sure to understand the meaning bookmarks have for maximum
+  allowable replication downtime.
+- The ssh+stdinserver transport protocol has changed, requiring zrepl
+  to be updates on both the sending and receiving side, and the daemon
+  restarted on both sides.
+- The first outlet in the global.logging section of the configuration
+  file is now used for logging meta-errors (e.g. problems encountered
+  when writing to other logging outlets).
 ------------------------------------------------------------------------
