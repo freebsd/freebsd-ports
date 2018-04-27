@@ -319,6 +319,7 @@
     SUBDIR += kcalutils
     SUBDIR += kcontacts
     SUBDIR += kdav
+    SUBDIR += kdenetwork
     SUBDIR += kdenetwork-filesharing
     SUBDIR += kdenetwork-kde4
     SUBDIR += kdenetwork-filesharing-kde4
