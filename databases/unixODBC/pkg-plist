@@ -32,6 +32,9 @@ lib/libodbcinst.la
 lib/libodbcinst.so
 lib/libodbcinst.so.2
 lib/libodbcinst.so.2.0.0
+libdata/pkgconfig/odbc.pc
+libdata/pkgconfig/odbccr.pc
+libdata/pkgconfig/odbcinst.pc
 man/man1/dltest.1.gz
 man/man1/isql.1.gz
 man/man1/iusql.1.gz
