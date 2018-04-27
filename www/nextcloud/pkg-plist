@@ -4186,6 +4186,8 @@
 %%WWWDIR%%/apps-pkg/activity/l10n/mk.json
 %%WWWDIR%%/apps-pkg/activity/l10n/mn.js
 %%WWWDIR%%/apps-pkg/activity/l10n/mn.json
+%%WWWDIR%%/apps-pkg/activity/l10n/ms_MY.js
+%%WWWDIR%%/apps-pkg/activity/l10n/ms_MY.json
 %%WWWDIR%%/apps-pkg/activity/l10n/nb.js
 %%WWWDIR%%/apps-pkg/activity/l10n/nb.json
 %%WWWDIR%%/apps-pkg/activity/l10n/ne.js
@@ -4641,6 +4643,8 @@
 %%WWWDIR%%/apps-pkg/dav/l10n/fr.json
 %%WWWDIR%%/apps-pkg/dav/l10n/gl.js
 %%WWWDIR%%/apps-pkg/dav/l10n/gl.json
+%%WWWDIR%%/apps-pkg/dav/l10n/he.js
+%%WWWDIR%%/apps-pkg/dav/l10n/he.json
 %%WWWDIR%%/apps-pkg/dav/l10n/hu.js
 %%WWWDIR%%/apps-pkg/dav/l10n/hu.json
 %%WWWDIR%%/apps-pkg/dav/l10n/hu_HU.js
@@ -5489,6 +5493,8 @@
 %%WWWDIR%%/apps-pkg/files/l10n/ach.json
 %%WWWDIR%%/apps-pkg/files/l10n/ady.js
 %%WWWDIR%%/apps-pkg/files/l10n/ady.json
+%%WWWDIR%%/apps-pkg/files/l10n/af.js
+%%WWWDIR%%/apps-pkg/files/l10n/af.json
 %%WWWDIR%%/apps-pkg/files/l10n/af_ZA.js
 %%WWWDIR%%/apps-pkg/files/l10n/af_ZA.json
 %%WWWDIR%%/apps-pkg/files/l10n/ak.js
@@ -5800,6 +5806,7 @@
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/FileInUseException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/ForbiddenException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/HostDownException.php
+%%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/InvalidArgumentException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/InvalidHostException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/InvalidParameterException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/InvalidPathException.php
@@ -6170,6 +6177,7 @@
 %%WWWDIR%%/apps-pkg/files_external/templates/settings.php
 %%WWWDIR%%/apps-pkg/files_pdfviewer/.github/contributing.md
 %%WWWDIR%%/apps-pkg/files_pdfviewer/.github/issue_template.md
+%%WWWDIR%%/apps-pkg/files_pdfviewer/Makefile
 %%WWWDIR%%/apps-pkg/files_pdfviewer/appinfo/app.php
 %%WWWDIR%%/apps-pkg/files_pdfviewer/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/files_pdfviewer/appinfo/routes.php
@@ -7292,8 +7300,6 @@
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/nb.json
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/nl.js
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/nl.json
-%%WWWDIR%%/apps-pkg/files_texteditor/l10n/nn_NO.js
-%%WWWDIR%%/apps-pkg/files_texteditor/l10n/nn_NO.json
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/oc.js
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/oc.json
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/pa.php
@@ -7855,8 +7861,6 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/az.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bg.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bg.json
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bn_BD.js
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bn_BD.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bn_IN.php
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ca.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ca.json
@@ -7924,8 +7928,6 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/fr.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/he.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/he.json
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/hr.js
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/hr.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/hu.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/hu.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ia.js
@@ -8446,6 +8448,8 @@
 %%WWWDIR%%/apps-pkg/logreader/l10n/fi.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/fr.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/fr.json
+%%WWWDIR%%/apps-pkg/logreader/l10n/he.js
+%%WWWDIR%%/apps-pkg/logreader/l10n/he.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/hu.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/hu.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/is.js
@@ -8741,6 +8745,8 @@
 %%WWWDIR%%/apps-pkg/notifications/l10n/fr.json
 %%WWWDIR%%/apps-pkg/notifications/l10n/gl.js
 %%WWWDIR%%/apps-pkg/notifications/l10n/gl.json
+%%WWWDIR%%/apps-pkg/notifications/l10n/he.js
+%%WWWDIR%%/apps-pkg/notifications/l10n/he.json
 %%WWWDIR%%/apps-pkg/notifications/l10n/hu.js
 %%WWWDIR%%/apps-pkg/notifications/l10n/hu.json
 %%WWWDIR%%/apps-pkg/notifications/l10n/ia.js
@@ -8886,6 +8892,8 @@
 %%WWWDIR%%/apps-pkg/oauth2/l10n/fr.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/gl.js
 %%WWWDIR%%/apps-pkg/oauth2/l10n/gl.json
+%%WWWDIR%%/apps-pkg/oauth2/l10n/he.js
+%%WWWDIR%%/apps-pkg/oauth2/l10n/he.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/hu.js
 %%WWWDIR%%/apps-pkg/oauth2/l10n/hu.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/id.js
@@ -9217,6 +9225,8 @@
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/fr.json
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/gl.js
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/gl.json
+%%WWWDIR%%/apps-pkg/serverinfo/l10n/he.js
+%%WWWDIR%%/apps-pkg/serverinfo/l10n/he.json
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/hu.js
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/hu.json
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/ia.js
@@ -11102,6 +11112,8 @@
 %%WWWDIR%%/core/doc/admin/_sources/installation/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_wizard.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/nginx.txt
+%%WWWDIR%%/core/doc/admin/_sources/installation/php_56_installation.txt
+%%WWWDIR%%/core/doc/admin/_sources/installation/php_70_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/selinux_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/source_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/system_requirements.txt
@@ -11278,6 +11290,8 @@
 %%WWWDIR%%/core/doc/admin/installation/index.html
 %%WWWDIR%%/core/doc/admin/installation/installation_wizard.html
 %%WWWDIR%%/core/doc/admin/installation/nginx.html
+%%WWWDIR%%/core/doc/admin/installation/php_56_installation.html
+%%WWWDIR%%/core/doc/admin/installation/php_70_installation.html
 %%WWWDIR%%/core/doc/admin/installation/selinux_configuration.html
 %%WWWDIR%%/core/doc/admin/installation/source_installation.html
 %%WWWDIR%%/core/doc/admin/installation/system_requirements.html
@@ -11300,11 +11314,21 @@
 %%WWWDIR%%/core/doc/user/_images/2fa_backupcode_1.png
 %%WWWDIR%%/core/doc/user/_images/2fa_backupcode_2.png
 %%WWWDIR%%/core/doc/user/_images/CalDAV_calendar.png
+%%WWWDIR%%/core/doc/user/_images/KAddressBook.png
+%%WWWDIR%%/core/doc/user/_images/KOrganizer.png
+%%WWWDIR%%/core/doc/user/_images/KOrganizer_add_calendar.png
+%%WWWDIR%%/core/doc/user/_images/KOrganizer_groupware_server.png
+%%WWWDIR%%/core/doc/user/_images/KOrganizer_pick_resources.png
+%%WWWDIR%%/core/doc/user/_images/KOrganizer_server_address.png
+%%WWWDIR%%/core/doc/user/_images/KOrganizer_test1.png
+%%WWWDIR%%/core/doc/user/_images/KOrganizer_test2.png
 %%WWWDIR%%/core/doc/user/_images/addressbook_name.png
 %%WWWDIR%%/core/doc/user/_images/anonym_click_sharing.png
 %%WWWDIR%%/core/doc/user/_images/anonym_hide_file_listing.png
 %%WWWDIR%%/core/doc/user/_images/anonym_upload.png
 %%WWWDIR%%/core/doc/user/_images/anonym_uploaded_files.png
+%%WWWDIR%%/core/doc/user/_images/app_password_created.png
+%%WWWDIR%%/core/doc/user/_images/app_password_naming.png
 %%WWWDIR%%/core/doc/user/_images/apps_menu.png
 %%WWWDIR%%/core/doc/user/_images/cardbook_icon.png
 %%WWWDIR%%/core/doc/user/_images/contact_bottombar.png
@@ -11340,6 +11364,8 @@
 %%WWWDIR%%/core/doc/user/_images/gallery-1.png
 %%WWWDIR%%/core/doc/user/_images/gallery-2.png
 %%WWWDIR%%/core/doc/user/_images/hidden_files.png
+%%WWWDIR%%/core/doc/user/_images/korganizer_credentials.png
+%%WWWDIR%%/core/doc/user/_images/korganizer_resource_choice.png
 %%WWWDIR%%/core/doc/user/_images/login_page.png
 %%WWWDIR%%/core/doc/user/_images/multi_sharing.png
 %%WWWDIR%%/core/doc/user/_images/new_addressbook.png
@@ -11379,6 +11405,7 @@
 %%WWWDIR%%/core/doc/user/_sources/pim/contacts.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/index.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_ios.txt
+%%WWWDIR%%/core/doc/user/_sources/pim/sync_kde.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_osx.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_thunderbird.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/troubleshooting.txt
@@ -11495,6 +11522,7 @@
 %%WWWDIR%%/core/doc/user/pim/contacts.html
 %%WWWDIR%%/core/doc/user/pim/index.html
 %%WWWDIR%%/core/doc/user/pim/sync_ios.html
+%%WWWDIR%%/core/doc/user/pim/sync_kde.html
 %%WWWDIR%%/core/doc/user/pim/sync_osx.html
 %%WWWDIR%%/core/doc/user/pim/sync_thunderbird.html
 %%WWWDIR%%/core/doc/user/pim/troubleshooting.html
@@ -11773,6 +11801,8 @@
 %%WWWDIR%%/core/js/tests/specs/systemtags/systemtagsinputfieldSpec.js
 %%WWWDIR%%/core/js/update.js
 %%WWWDIR%%/core/js/visitortimezone.js
+%%WWWDIR%%/core/l10n/af.js
+%%WWWDIR%%/core/l10n/af.json
 %%WWWDIR%%/core/l10n/ar.js
 %%WWWDIR%%/core/l10n/ar.json
 %%WWWDIR%%/core/l10n/ast.js
