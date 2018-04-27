@@ -1,0 +1,278 @@
+https://sourceforge.net/p/xine/xine-lib-1.2/ci/e35492bfce45/
+https://sourceforge.net/p/xine/xine-lib-1.2/ci/abd6e04c7a53/
+
+--- src/combined/ffmpeg/ff_audio_decoder.c.orig	2014-06-09 16:08:42 UTC
++++ src/combined/ffmpeg/ff_audio_decoder.c
+@@ -137,7 +137,7 @@ static void ff_audio_ensure_buffer_size(ff_audio_decod
+     xprintf(this->stream->xine, XINE_VERBOSITY_LOG,
+             _("ffmpeg_audio_dec: increasing buffer to %d to avoid overflow.\n"),
+             this->bufsize);
+-    this->buf = realloc16 (this->buf, this->bufsize + FF_INPUT_BUFFER_PADDING_SIZE);
++    this->buf = realloc16 (this->buf, this->bufsize + AV_INPUT_BUFFER_PADDING_SIZE);
+   }
+ }
+ 
+@@ -148,9 +148,9 @@ static void ff_audio_handle_special_buffer(ff_audio_de
+ 
+     free (this->context->extradata);
+     this->context->extradata_size = buf->decoder_info[2];
+-    this->context->extradata = malloc (buf->decoder_info[2] + FF_INPUT_BUFFER_PADDING_SIZE);
++    this->context->extradata = malloc (buf->decoder_info[2] + AV_INPUT_BUFFER_PADDING_SIZE);
+     memcpy (this->context->extradata, buf->decoder_info_ptr[2], buf->decoder_info[2]);
+-    memset (this->context->extradata + buf->decoder_info[2], 0, FF_INPUT_BUFFER_PADDING_SIZE);
++    memset (this->context->extradata + buf->decoder_info[2], 0, AV_INPUT_BUFFER_PADDING_SIZE);
+   }
+ }
+ 
+@@ -363,10 +363,10 @@ static void ff_handle_header_buffer(ff_audio_decoder_t
+             this->ff_channels, this->ff_bits, this->ff_sample_rate,
+             this->context->block_align);
+           if (!data_len) break;
+-          e = malloc (data_len + FF_INPUT_BUFFER_PADDING_SIZE);
++          e = malloc (data_len + AV_INPUT_BUFFER_PADDING_SIZE);
+           if (!e) break;
+           xine_fast_memcpy (e, p, data_len);
+-          memset (e + data_len, 0, FF_INPUT_BUFFER_PADDING_SIZE);
++          memset (e + data_len, 0, AV_INPUT_BUFFER_PADDING_SIZE);
+           this->context->extradata = e;
+           this->context->extradata_size = data_len;
+           break;
+@@ -886,7 +886,7 @@ static void ff_audio_decode_data (audio_decoder_t *thi
+       offset = 0;
+ 
+       /* pad input data */
+-      memset(&this->buf[this->size], 0, FF_INPUT_BUFFER_PADDING_SIZE);
++      memset(&this->buf[this->size], 0, AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+       while (this->size>=0) {
+         decode_buffer_size = AVCODEC_MAX_AUDIO_FRAME_SIZE;
+--- src/combined/ffmpeg/ff_mpeg_parser.c.orig	2013-09-18 10:04:54 UTC
++++ src/combined/ffmpeg/ff_mpeg_parser.c
+@@ -26,6 +26,7 @@
+ #define LOG
+ */
+ #include "ff_mpeg_parser.h"
++#include "ffmpeg_compat.h"
+ 
+ /* mpeg frame rate table from lavc */
+ static const int frame_rate_tab[][2] = {
+@@ -50,7 +51,7 @@ static const int frame_rate_tab[][2] = {
+ 
+ void mpeg_parser_init (mpeg_parser_t *parser)
+ {
+-  parser->chunk_buffer = malloc(BUFFER_SIZE + FF_INPUT_BUFFER_PADDING_SIZE);
++  parser->chunk_buffer = malloc(BUFFER_SIZE + AV_INPUT_BUFFER_PADDING_SIZE);
+   mpeg_parser_reset(parser);
+ }
+ 
+--- src/combined/ffmpeg/ff_video_decoder.c.orig	2014-06-24 16:21:06 UTC
++++ src/combined/ffmpeg/ff_video_decoder.c
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2001-2014 the xine project
++ * Copyright (C) 2001-2015 the xine project
+  *
+  * This file is part of xine, a free video player.
+  *
+@@ -722,23 +722,28 @@ static void init_video_codec (ff_video_decoder_t *this
+ 
+   this->context->width = this->bih.biWidth;
+   this->context->height = this->bih.biHeight;
+-  this->context->stream_codec_tag = this->context->codec_tag =
++#ifdef AVCODEC_HAS_STREAM_CODEC_TAG
++  this->context->stream_codec_tag =
++#endif
++  this->context->codec_tag =
+     _x_stream_info_get(this->stream, XINE_STREAM_INFO_VIDEO_FOURCC);
+ 
+ 
+   this->stream->video_out->open (this->stream->video_out, this->stream);
+ 
+   this->edge = 0;
+-  if(this->codec->capabilities & CODEC_CAP_DR1 && this->class->enable_dri) {
++  if(this->codec->capabilities & AV_CODEC_CAP_DR1 && this->class->enable_dri) {
+     if (this->stream->video_out->get_capabilities (this->stream->video_out) & VO_CAP_CROP) {
+       /* We can crop. Fine. Lets allow decoders to paint over the frame edges.
+          This will be slightly faster. And it is also a workaround for buggy
+          v54 who likes to ignore EMU_EDGE for wmv2 and xvid. */
++#ifdef CODEC_FLAG_EMU_EDGE
+       this->edge = avcodec_get_edge_width ();
+     } else {
+       /* Some codecs (eg rv10) copy flags in init so it's necessary to set
+        * this flag here in case we are going to use direct rendering */
+       this->context->flags |= CODEC_FLAG_EMU_EDGE;
++#endif
+     }
+   }
+ 
+@@ -747,7 +752,7 @@ static void init_video_codec (ff_video_decoder_t *this
+   this->context->codec_type = this->codec->type;
+ 
+   if (this->class->choose_speed_over_accuracy)
+-    this->context->flags2 |= CODEC_FLAG2_FAST;
++    this->context->flags2 |= AV_CODEC_FLAG2_FAST;
+ 
+ #ifdef DEPRECATED_AVCODEC_THREAD_INIT
+   if (this->class->thread_count > 1) {
+@@ -769,7 +774,7 @@ static void init_video_codec (ff_video_decoder_t *this
+   /* enable direct rendering by default */
+   this->output_format = XINE_IMGFMT_YV12;
+ #ifdef ENABLE_DIRECT_RENDERING
+-  if( this->codec->capabilities & CODEC_CAP_DR1 && this->class->enable_dri ) {
++  if( this->codec->capabilities & AV_CODEC_CAP_DR1 && this->class->enable_dri ) {
+ #ifdef AV_BUFFER
+     this->context->get_buffer2 = get_buffer;
+     this->context->thread_safe_callbacks = 1;
+@@ -1246,7 +1251,7 @@ static void ff_check_bufsize (ff_video_decoder_t *this
+     xprintf(this->stream->xine, XINE_VERBOSITY_LOG,
+ 	    _("ffmpeg_video_dec: increasing buffer to %d to avoid overflow.\n"),
+ 	    this->bufsize);
+-    this->buf = realloc(this->buf, this->bufsize + FF_INPUT_BUFFER_PADDING_SIZE );
++    this->buf = realloc(this->buf, this->bufsize + AV_INPUT_BUFFER_PADDING_SIZE );
+   }
+ }
+ 
+@@ -1386,7 +1391,7 @@ static void ff_handle_header_buffer (ff_video_decoder_
+       if (this->bih.biSize > sizeof(xine_bmiheader)) {
+       this->context->extradata_size = this->bih.biSize - sizeof(xine_bmiheader);
+         this->context->extradata = malloc(this->context->extradata_size +
+-                                          FF_INPUT_BUFFER_PADDING_SIZE);
++                                          AV_INPUT_BUFFER_PADDING_SIZE);
+         memcpy(this->context->extradata, this->buf + sizeof(xine_bmiheader),
+               this->context->extradata_size);
+       }
+@@ -1409,7 +1414,7 @@ static void ff_handle_header_buffer (ff_video_decoder_
+ 	if (this->context->extradata_size < 8) {
+ 	  this->context->extradata_size= 8;
+ 	  this->context->extradata = malloc(this->context->extradata_size +
+-		                            FF_INPUT_BUFFER_PADDING_SIZE);
++		                            AV_INPUT_BUFFER_PADDING_SIZE);
+           ((uint32_t *)this->context->extradata)[0] = 0;
+ 	  if (codec_type == BUF_VIDEO_RV10)
+ 	     ((uint32_t *)this->context->extradata)[1] = 0x10000000;
+@@ -1417,7 +1422,7 @@ static void ff_handle_header_buffer (ff_video_decoder_
+ 	     ((uint32_t *)this->context->extradata)[1] = 0x10003001;
+ 	} else {
+           this->context->extradata = malloc(this->context->extradata_size +
+-	                                    FF_INPUT_BUFFER_PADDING_SIZE);
++                                            AV_INPUT_BUFFER_PADDING_SIZE);
+ 	  memcpy(this->context->extradata, this->buf + 26,
+ 	         this->context->extradata_size);
+ 	}
+@@ -1451,7 +1456,7 @@ static void ff_handle_special_buffer (ff_video_decoder
+     lprintf("BUF_SPECIAL_STSD_ATOM\n");
+     this->context->extradata_size = buf->decoder_info[2];
+     this->context->extradata = malloc(buf->decoder_info[2] +
+-				      FF_INPUT_BUFFER_PADDING_SIZE);
++                                      AV_INPUT_BUFFER_PADDING_SIZE);
+     memcpy(this->context->extradata, buf->decoder_info_ptr[2],
+       buf->decoder_info[2]);
+ 
+@@ -1461,7 +1466,7 @@ static void ff_handle_special_buffer (ff_video_decoder
+     lprintf("BUF_SPECIAL_DECODER_CONFIG\n");
+     this->context->extradata_size = buf->decoder_info[2];
+     this->context->extradata = malloc(buf->decoder_info[2] +
+-				      FF_INPUT_BUFFER_PADDING_SIZE);
++                                      AV_INPUT_BUFFER_PADDING_SIZE);
+     memcpy(this->context->extradata, buf->decoder_info_ptr[2],
+       buf->decoder_info[2]);
+ 
+@@ -1826,7 +1831,7 @@ static void ff_handle_buffer (ff_video_decoder_t *this
+   /* data accumulation */
+   if (buf->size > 0) {
+     if ((this->size == 0) &&
+-	((buf->size + FF_INPUT_BUFFER_PADDING_SIZE) < buf->max_size) &&
++        ((buf->size + AV_INPUT_BUFFER_PADDING_SIZE) < buf->max_size) &&
+ 	(buf->decoder_flags & BUF_FLAG_FRAME_END)) {
+       /* buf contains a complete frame */
+       /* no memcpy needed */
+@@ -1859,7 +1864,7 @@ static void ff_handle_buffer (ff_video_decoder_t *this
+     /* note: bitstream, alt bitstream reader or something will cause
+      * severe mpeg4 artifacts if padding is less than 32 bits.
+      */
+-    memset(&chunk_buf[this->size], 0, FF_INPUT_BUFFER_PADDING_SIZE);
++    memset(&chunk_buf[this->size], 0, AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+     while (this->size > 0) {
+ 
+@@ -2532,7 +2537,7 @@ static video_decoder_t *ff_video_open_plugin (video_de
+ 
+   this->decoder_ok        = 0;
+   this->decoder_init_mode = 1;
+-  this->buf               = calloc(1, VIDEOBUFSIZE + FF_INPUT_BUFFER_PADDING_SIZE);
++  this->buf               = calloc(1, VIDEOBUFSIZE + AV_INPUT_BUFFER_PADDING_SIZE);
+   this->bufsize           = VIDEOBUFSIZE;
+ 
+   this->is_mpeg12         = 0;
+--- src/combined/ffmpeg/ffmpeg_compat.h.orig	2014-04-30 11:40:50 UTC
++++ src/combined/ffmpeg/ffmpeg_compat.h
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2000-2014 the xine project
++ * Copyright (C) 2000-2015 the xine project
+  *
+  * This file is part of xine, a unix video player.
+  *
+@@ -58,6 +58,11 @@
+ # define AVCODEC_HAS_SUB_ID
+ #endif
+ 
++/* not 100% sure about this (between 55.19 and 56.56) */
++#if LIBAVCODEC_VERSION_MAJOR < 56
++#  define AVCODEC_HAS_STREAM_CODEC_TAG
++#endif
++
+ /**/
+ #if LIBAVCODEC_VERSION_MAJOR > 53 || (LIBAVCODEC_VERSION_MAJOR == 53 && LIBAVCODEC_VERSION_MINOR >= 8)
+ #  define avcodec_init() do {} while(0)
+@@ -192,5 +197,16 @@
+ #if LIBAVCODEC_VERSION_INT >= ((55<<16)|100)
+ #  define AV_BUFFER 1
+ #endif
++
++#ifndef AV_INPUT_BUFFER_PADDING_SIZE
++#  define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
++#endif
++#ifndef AV_CODEC_CAP_DR1
++#  define AV_CODEC_CAP_DR1 CODEC_CAP_DR1
++#endif
++#ifndef AV_CODEC_FLAG2_FAST
++#  define AV_CODEC_FLAG2_FAST CODEC_FLAG2_FAST
++#endif
++
+ 
+ #endif /* XINE_AVCODEC_COMPAT_H */
+--- src/dxr3/ffmpeg_encoder.c.orig	2014-03-13 04:06:09 UTC
++++ src/dxr3/ffmpeg_encoder.c
+@@ -207,7 +207,9 @@ static int lavc_on_update_format(dxr3_driver_t *drv, d
+   this->context->height = frame->oheight;
+ 
+   this->context->gop_size = 0; /*intra frames only */
++#if defined(LIBAVCODEC_VERSION_MAJOR) && LIBAVCODEC_VERSION_MAJOR < 58
+   this->context->me_method = ME_ZERO; /*motion estimation type*/
++#endif
+ 
+   this->context->time_base.den = 90000;
+   if (frame->vo_frame.duration > 90000 / 24)
+--- src/video_out/video_out_vaapi.c.orig	2014-06-09 16:08:42 UTC
++++ src/video_out/video_out_vaapi.c
+@@ -3119,15 +3119,15 @@ static void vaapi_update_frame_format (vo_driver_t *th
+       frame->vo_frame.pitches[0] = 8*((width + 7) / 8);
+       frame->vo_frame.pitches[1] = 8*((width + 15) / 16);
+       frame->vo_frame.pitches[2] = 8*((width + 15) / 16);
+-      frame->vo_frame.base[0] = av_mallocz (frame->vo_frame.pitches[0] * height + FF_INPUT_BUFFER_PADDING_SIZE);
+-      frame->vo_frame.base[1] = av_mallocz (frame->vo_frame.pitches[1] * ((height+1)/2) + FF_INPUT_BUFFER_PADDING_SIZE);
+-      frame->vo_frame.base[2] = av_mallocz (frame->vo_frame.pitches[2] * ((height+1)/2) + FF_INPUT_BUFFER_PADDING_SIZE);
++      frame->vo_frame.base[0] = av_mallocz (frame->vo_frame.pitches[0] * height + AV_INPUT_BUFFER_PADDING_SIZE);
++      frame->vo_frame.base[1] = av_mallocz (frame->vo_frame.pitches[1] * ((height+1)/2) + AV_INPUT_BUFFER_PADDING_SIZE);
++      frame->vo_frame.base[2] = av_mallocz (frame->vo_frame.pitches[2] * ((height+1)/2) + AV_INPUT_BUFFER_PADDING_SIZE);
+       frame->vo_frame.proc_duplicate_frame_data = NULL;
+       frame->vo_frame.proc_provide_standard_frame_data = NULL;
+       lprintf("XINE_IMGFMT_YV12 width %d height %d\n", width, height);
+     } else if (format == XINE_IMGFMT_YUY2){
+       frame->vo_frame.pitches[0] = 8*((width + 3) / 4);
+-      frame->vo_frame.base[0] = av_mallocz (frame->vo_frame.pitches[0] * height + FF_INPUT_BUFFER_PADDING_SIZE);
++      frame->vo_frame.base[0] = av_mallocz (frame->vo_frame.pitches[0] * height + AV_INPUT_BUFFER_PADDING_SIZE);
+       frame->vo_frame.proc_duplicate_frame_data = NULL;
+       frame->vo_frame.proc_provide_standard_frame_data = NULL;
+       lprintf("XINE_IMGFMT_YUY2 width %d height %d\n", width, height);
