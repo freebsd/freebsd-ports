@@ -353,7 +353,7 @@ you update your ports collection, before attempting any port upgrades.
   of the packages. 
   It is recommended to first remove the package kf5-kirigami2.
 
-20180115
+20180115:
   AFFECTS: users of net-p2p/transmission-daemon
   AUTHOR: woodsb02@FreeBSD.org
 
@@ -377,7 +377,7 @@ you update your ports collection, before attempting any port upgrades.
       stopped). Note that this value is NOT a list of allowed CLIENTS,
       but instead a list of allowed SERVER hostnames.
 
-20180111
+20180111:
   AFFECTS: users of editors/vim-lite
   AUTHOR: adamw@FreeBSD.org
 
@@ -391,7 +391,7 @@ you update your ports collection, before attempting any port upgrades.
   If the switch doesn't happen automatically for you, just delete the
   vim-lite package and install vim-console.
 
-20180109
+20180109:
   AFFECTS: users of www/qt5-webengine
   AUTHOR: kde@FreeBSD.org
 
@@ -399,7 +399,7 @@ you update your ports collection, before attempting any port upgrades.
   of it is installed. It is recommended to either build the port in a
   builder like poudriere, or to deinstall and then doing an install.
 
-20180107
+20180107:
   AFFECTS: users of security/gnupg and mail/mutt and mail/neomutt
   AUTHOR: adamw@FreeBSD.org
 
@@ -691,7 +691,7 @@ you update your ports collection, before attempting any port upgrades.
   Portupgrade users:
       portupgrade -fr security/libressl
 
-20171105
+20171105:
   AFFECTS: users of www/mod_auth_cas
   AUTHOR: brnrd@FreeBSD.org
 
@@ -837,7 +837,7 @@ you update your ports collection, before attempting any port upgrades.
  
   All ports have been updated to depend only on CMake.
 
-20170904
+20170904:
   AFFECTS: users of net-mgmt/seafile-server
   AUTHOR: ultima@FreeBSD.org
 
@@ -845,7 +845,7 @@ you update your ports collection, before attempting any port upgrades.
   are utf8_unicode_ci. Upstream has set collation type to be implicit
   and will cause all libraries to disappear if set to incorrect collation.
 
-20170828
+20170828:
   AFFECTS: users of security/gnupg
   AUTHOR: adamw@FreeBSD.org
 
