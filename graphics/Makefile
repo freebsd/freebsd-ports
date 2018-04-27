@@ -412,6 +412,7 @@
     SUBDIR += kcolorchooser
     SUBDIR += kcolorchooser-kde4
     SUBDIR += kcoloredit
+    SUBDIR += kdegraphics
     SUBDIR += kdegraphics-kde4
     SUBDIR += kdegraphics-mobipocket
     SUBDIR += kdegraphics-mobipocket-kde4
