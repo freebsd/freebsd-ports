@@ -3,6 +3,7 @@
 
 PORTNAME=	zrepl
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -35,6 +36,14 @@ GH_TUPLE=	davecgh:go-spew:v1.1.0:go_spew/src/github.com/davecgh/go-spew \
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == "FreeBSD" && ((${OSVERSION} >= 1100513 && ${OSVERSION} < 1200000) || ${OSVERSION} >= 1200015)
+SUB_LIST+=	DAEMON_LOGGING="-S -l \$${zrepl_facility} -s \$${zrepl_priority} -T \$${name}"
+.else
+SUB_LIST+=	DAEMON_LOGGING=""
+.endif
+
 post-extract:
 	${LN} -sf ${WRKSRC}/src ${WRKDIR}
 
@@ -49,4 +58,4 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/syslog-zrepl.conf.sample ${STAGEDIR}${PREFIX}/etc/syslog.d/zrepl.conf.sample
 	${INSTALL_DATA} ${FILESDIR}/zrepl.yml.sample ${STAGEDIR}${PREFIX}/etc/zrepl/zrepl.yml.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
