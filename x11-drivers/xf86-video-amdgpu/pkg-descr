@@ -3,7 +3,8 @@ This package contains the X.Org xf86-video-amdgpu driver.
 The amdgpu driver supports AMD Radeon chipsets: OLAND, HAINAN, TAHITI, PITCAIRN,
 VERDE, BONAIRE, KABINI, MULLINS, KAVERI, HAWAII, TOPAZ, TONGA, CARRIZO, FIJI,
 STONEY, POLARIS11, POLARIS10 
-This driver relies on amdgpu KMS functionality currently only provided by the
-FreeBSDDesktop kernel fork. Once support is stable, it will be merged to HEAD.
+
+Requires amdgpu KMS driver from either graphics/drm-stable-kmod,
+graphics/drm-next-kmod or FreeBSDDesktop kernel fork.
 
 WWW: https://www.x.org/wiki/RadeonFeature/
