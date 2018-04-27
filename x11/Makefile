@@ -136,6 +136,7 @@
     SUBDIR += kf5-frameworkintegration
     SUBDIR += kf5-frameworks
     SUBDIR += kf5-kactivities
+    SUBDIR += kf5-kactivities-stats
     SUBDIR += kf5-kded
     SUBDIR += kf5-kdelibs4support
     SUBDIR += kf5-kglobalaccel
@@ -266,6 +267,15 @@
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python-kde4
     SUBDIR += plasma-scriptengine-ruby-kde4
+    SUBDIR += plasma5-kactivitymanagerd
+    SUBDIR += plasma5-kgamma5
+    SUBDIR += plasma5-kscreen
+    SUBDIR += plasma5-kwayland-integration
+    SUBDIR += plasma5-libkscreen
+    SUBDIR += plasma5-plasma
+    SUBDIR += plasma5-plasma-desktop
+    SUBDIR += plasma5-plasma-integration
+    SUBDIR += plasma5-plasma-workspace
     SUBDIR += polybar
     SUBDIR += presentproto
     SUBDIR += printproto

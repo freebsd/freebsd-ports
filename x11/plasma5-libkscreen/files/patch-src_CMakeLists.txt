@@ -1,0 +1,14 @@
+--- src/CMakeLists.txt.orig	2017-01-19 20:29:23 UTC
++++ src/CMakeLists.txt
+@@ -1,7 +1,11 @@
+ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${QT_INCLUDES})
+ 
+ add_subdirectory(backendlauncher)
++
++if(KF5Wayland_FOUND)
+ add_subdirectory(doctor)
++endif()
++
+ set(libkscreen_SRCS
+     abstractbackend.cpp
+     backendmanager.cpp

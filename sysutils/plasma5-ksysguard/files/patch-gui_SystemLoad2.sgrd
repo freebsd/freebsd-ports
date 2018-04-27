@@ -1,0 +1,15 @@
+The default behaviour of ksysguard is to display the memory used by applications
+in the memory graph. This is confusing as the user probably expects to see the
+total amount of used memory in this graph.
+
+--- gui/SystemLoad2.sgrd.orig	2015-11-28 14:43:19 UTC
++++ gui/SystemLoad2.sgrd
+@@ -6,7 +6,7 @@
+   <beam sensorType="float" hostName="localhost" regexpSensorName="cpu/cpu.*/TotalLoad" color="0xffff8000,0xffe20800" />
+  </display>
+  <display title="Memory and Swap History" svgBackground="widgets/plot-background" autoRange="0" class="FancyPlotter" column="0" row="1" version="1" >
+-  <beam summationName="Memory" sensorName="mem/physical/application" sensorType="integer" hostName="localhost" color="0xffc000c0" />
++  <beam summationName="Memory" sensorName="mem/physical/used" sensorType="integer" hostName="localhost" color="0xffc000c0" />
+   <beam summationName="Swap" sensorName="mem/swap/used" sensorType="integer" hostName="localhost" color="0xff00c000" />
+  </display>
+  <display title="Network History" svgBackground="widgets/plot-background" autoRange="1" class="FancyPlotter" column="0" row="2" version="1" min="0" max="20" manualRange="1">

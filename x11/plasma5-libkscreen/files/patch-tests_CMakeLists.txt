@@ -1,0 +1,9 @@
+--- tests/CMakeLists.txt.orig	2017-01-19 20:29:18 UTC
++++ tests/CMakeLists.txt
+@@ -1,4 +1,6 @@
+ add_executable(printconfig testplugandplay.cpp testpnp.cpp)
+ target_link_libraries(printconfig Qt5::Gui KF5::Screen)
+ 
++if (KF5Wayland_FOUND)
+ add_subdirectory(kwayland)
++endif()

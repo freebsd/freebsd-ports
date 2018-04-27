@@ -1,0 +1,16 @@
+Clang 3.4 (base compiler in 10-STABLE) does not know 
+-Winconsistent-missing-override, and having that flag
+in the CXX flags messes up visibility detection. So
+don't warn about unknown warnings.
+
+--- CMakeLists.txt.orig	2017-09-21 18:34:57.176858000 +0200
++++ CMakeLists.txt	2017-09-21 18:35:15.580988000 +0200
+@@ -53,7 +53,7 @@
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-inconsistent-missing-override")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unknown-warning-option -Wno-inconsistent-missing-override")
+ endif()
+ 
+ find_package(Qt5Multimedia QUIET)

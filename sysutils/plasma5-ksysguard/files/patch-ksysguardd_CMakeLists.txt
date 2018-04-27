@@ -1,0 +1,35 @@
+--- ksysguardd/CMakeLists.txt.orig	2015-05-21 16:59:06 UTC
++++ ksysguardd/CMakeLists.txt
+@@ -9,9 +9,12 @@ add_definitions(-DOSTYPE_${CMAKE_SYSTEM_
+
+ set(HAVE_LMSENSORS ${SENSORS_FOUND})
+
+-check_include_files(sys/inotify.h SYS_INOTIFY_H_FOUND)
+-set(HAVE_SYS_INOTIFY_H ${SYS_INOTIFY_H_FOUND})
++# Find libinotify
++find_package(Inotify)
++set_package_properties(Inotify PROPERTIES
++     PURPOSE "Filesystem alteration notifications using inotify")
+
++set(HAVE_SYS_INOTIFY_H ${Inotify_FOUND})
+
+ configure_file(config-ksysguardd.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksysguardd.h)
+
+@@ -43,10 +46,15 @@ endif()
+         conf.c
+         ksysguardd.c
+         PWUIDCache.c )
+-
++
++    if (Inotify_FOUND)
++        include_directories(${Inotify_INCLUDE_DIRS})
++        set(ksysguardd_OPTIONAL_LIBS ${ksysguardd_OPTIONAL_LIBS} ${Inotify_LIBRARIES})
++    endif()
++
+     add_executable(ksysguardd ${ksysguardd_SRCS})
+
+-    target_link_libraries(ksysguardd libksysguardd)
++    target_link_libraries(ksysguardd libksysguardd ${ksysguardd_OPTIONAL_LIBS})
+
+    if( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR NOT ${CMAKE_SYSTEM_NAME} MATCHES "kFreeBSD" )
+       target_link_libraries(ksysguardd ${KDE4_KDEFAKES_LIBS})

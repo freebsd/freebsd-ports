@@ -1470,6 +1470,7 @@
     SUBDIR += pivotx
     SUBDIR += piwigo
     SUBDIR += planet
+    SUBDIR += plasma5-plasma-browser-integration
     SUBDIR += plexwatchweb
     SUBDIR += plone
     SUBDIR += plugger

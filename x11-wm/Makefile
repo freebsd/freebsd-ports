@@ -96,6 +96,8 @@
     SUBDIR += phluid
     SUBDIR += piewm
     SUBDIR += plank
+    SUBDIR += plasma5-kdecoration
+    SUBDIR += plasma5-kwin
     SUBDIR += plwm
     SUBDIR += pwm
     SUBDIR += qlwm

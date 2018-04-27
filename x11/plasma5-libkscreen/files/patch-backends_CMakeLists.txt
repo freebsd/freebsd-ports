@@ -1,0 +1,13 @@
+--- backends/CMakeLists.txt.orig	2017-01-19 20:29:18 UTC
++++ backends/CMakeLists.txt
+@@ -1,6 +1,9 @@
+ add_subdirectory(fake)
+ add_subdirectory(qscreen)
+-add_subdirectory(kwayland)
++
++if (KF5Wayland_FOUND)
++    add_subdirectory(kwayland)
++endif()
+ 
+ if(${XCB_RANDR_FOUND})
+     message(STATUS "Will build xrandr backend.")

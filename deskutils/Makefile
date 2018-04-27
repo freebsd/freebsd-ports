@@ -221,6 +221,7 @@
     SUBDIR += plasma-applet-simpleweatherforecast
     SUBDIR += plasma-applet-teacooker
     SUBDIR += plasma-applet-yawp
+    SUBDIR += plasma5-milou
     SUBDIR += plopfolio
     SUBDIR += preferences
     SUBDIR += projectlibre
