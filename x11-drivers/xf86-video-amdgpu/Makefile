@@ -25,8 +25,8 @@ CONFIGURE_ARGS+=--disable-udev
 
 .include <bsd.port.options.mk>
 
-.if (${OSVERSION} < 1200019)
-IGNORE=		not supported on 11.x or older, no kernel support
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101510
+IGNORE=		not supported on 11.1 or older, no kernel support
 .endif
 
 PLIST_FILES=	lib/xorg/modules/drivers/amdgpu_drv.so \
