@@ -14,8 +14,6 @@ COMMENT=	Programmer's solid 3D CAD modeller
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_10=      Missing __cxa_thread_atexit
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs
 LIB_DEPENDS=	libgmp.so:math/gmp \
@@ -41,12 +39,18 @@ USE_QT4=	corelib gui opengl moc_build uic_build rcc_build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 QMAKE_ENV=	EIGENDIR=${LOCALBASE}/include/eigen3
 QMAKE_ARGS+=	VERSION=${PORTVERSION} \
-		EXPERIMENTAL=yes \
+		CONFIG+="experimental" \
 		QMAKE_LEX=${LOCALBASE}/bin/flex \
 		QMAKE_YAC=${LOCALBASE}/bin/bison
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
 		${WRKSRC}/openscad.pro
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003506
+BROKEN=		no __cxa_thread_atexit() support in FreeBSD libc < 10.4
+.endif
 
 .include <bsd.port.mk>
