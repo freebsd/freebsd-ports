@@ -17,6 +17,7 @@
     SUBDIR += bpatch
     SUBDIR += bvi
     SUBDIR += calligra
+    SUBDIR += calligraplan
     SUBDIR += chexedit
     SUBDIR += codelite
     SUBDIR += coedit
