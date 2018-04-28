@@ -64,6 +64,9 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteapp/template/gopkg/doc.go
 %%DATADIR%%/liteapp/template/gopkg/root.go
 %%DATADIR%%/liteapp/template/gopkg/setup.inf
+%%DATADIR%%/liteapp/template/gopkgex/doc.go
+%%DATADIR%%/liteapp/template/gopkgex/root.go
+%%DATADIR%%/liteapp/template/gopkgex/setup.inf
 %%DATADIR%%/liteapp/template/goslide/root.slide
 %%DATADIR%%/liteapp/template/goslide/setup.inf
 %%DATADIR%%/liteapp/template/gosrc/root.go
