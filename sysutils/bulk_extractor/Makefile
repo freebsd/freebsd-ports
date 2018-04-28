@@ -3,7 +3,7 @@
 
 PORTNAME=	bulk_extractor
 PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://digitalcorpora.org/downloads/bulk_extractor/
 

@@ -13,11 +13,11 @@ include/exiv2/error.hpp
 include/exiv2/exif.hpp
 include/exiv2/exiv2.hpp
 include/exiv2/exv_conf.h
-include/exiv2/exv_msvc.h
 include/exiv2/futils.hpp
 include/exiv2/gifimage.hpp
 include/exiv2/http.hpp
 include/exiv2/image.hpp
+include/exiv2/ini.hpp
 include/exiv2/iptc.hpp
 include/exiv2/jp2image.hpp
 include/exiv2/jpgimage.hpp
@@ -34,6 +34,7 @@ include/exiv2/quicktimevideo.hpp
 include/exiv2/rafimage.hpp
 include/exiv2/riffvideo.hpp
 include/exiv2/rw2image.hpp
+include/exiv2/rwlock.hpp
 include/exiv2/svn_version.h
 include/exiv2/tags.hpp
 include/exiv2/tgaimage.hpp
@@ -42,11 +43,12 @@ include/exiv2/types.hpp
 include/exiv2/utilsvideo.hpp
 include/exiv2/value.hpp
 include/exiv2/version.hpp
+include/exiv2/webpimage.hpp
 include/exiv2/xmp.hpp
 include/exiv2/xmpsidecar.hpp
 lib/libexiv2.so
-lib/libexiv2.so.14
-lib/libexiv2.so.14.0.0
+lib/libexiv2.so.26
+lib/libexiv2.so.26.0.0
 libdata/pkgconfig/exiv2.lsm
 libdata/pkgconfig/exiv2.pc
 man/man1/exiv2.1.gz
