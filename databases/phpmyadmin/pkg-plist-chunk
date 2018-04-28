@@ -1,1 +1,2 @@
 @sample(,%%PMA_GRP%%,640) %%WWWDIR%%/config.inc.php.sample
+@dir(,%%PMA_GRP%%,770) %%WWWDIR%%/tmp
