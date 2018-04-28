@@ -222,6 +222,7 @@
     SUBDIR += plasma-applet-teacooker
     SUBDIR += plasma-applet-yawp
     SUBDIR += plasma5-milou
+    SUBDIR += plasma5-sddm-kcm
     SUBDIR += plopfolio
     SUBDIR += preferences
     SUBDIR += projectlibre
