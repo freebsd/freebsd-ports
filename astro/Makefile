@@ -29,6 +29,7 @@
     SUBDIR += gpxloggerd
     SUBDIR += jday
     SUBDIR += josm
+    SUBDIR += kstars
     SUBDIR += kstars-kde4
     SUBDIR += libgal
     SUBDIR += libkgeomap
