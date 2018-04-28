@@ -68,6 +68,7 @@ include/KF5/AkonadiCore/EntityOrderProxyModel
 include/KF5/AkonadiCore/EntityRightsFilterModel
 include/KF5/AkonadiCore/EntityTreeModel
 include/KF5/AkonadiCore/ExceptionBase
+include/KF5/AkonadiCore/FavoriteCollectionAttribute
 include/KF5/AkonadiCore/FavoriteCollectionsModel
 include/KF5/AkonadiCore/GidExtractorInterface
 include/KF5/AkonadiCore/IndexPolicyAttribute
@@ -170,6 +171,7 @@ include/KF5/AkonadiCore/entityorderproxymodel.h
 include/KF5/AkonadiCore/entityrightsfiltermodel.h
 include/KF5/AkonadiCore/entitytreemodel.h
 include/KF5/AkonadiCore/exceptionbase.h
+include/KF5/AkonadiCore/favoritecollectionattribute.h
 include/KF5/AkonadiCore/favoritecollectionsmodel.h
 include/KF5/AkonadiCore/gidextractorinterface.h
 include/KF5/AkonadiCore/indexpolicyattribute.h
@@ -308,7 +310,6 @@ include/KF5/akonadi/private/protocol_p.h
 include/KF5/akonadi/private/scope_p.h
 include/KF5/akonadi/private/standarddirs_p.h
 include/KF5/akonadi/private/tristate_p.h
-include/KF5/akonadi/private/xdgbasedirs_p.h
 include/KF5/akonadi_version.h
 lib/cmake/KF5Akonadi/KF5AkonadiConfig.cmake
 lib/cmake/KF5Akonadi/KF5AkonadiConfigVersion.cmake

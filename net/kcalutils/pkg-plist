@@ -1,3 +1,5 @@
+etc/xdg/kcalutils.categories
+etc/xdg/kcalutils.renamecategories
 include/KF5/KCalUtils/KCalUtils/DndFactory
 include/KF5/KCalUtils/KCalUtils/HtmlExport
 include/KF5/KCalUtils/KCalUtils/ICalDrag

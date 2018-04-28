@@ -1,6 +1,6 @@
 bin/kalarm
 bin/kalarmautostart
-etc/dbus-1/system.d/org.kde.kalarmrtcwake.conf
+etc/dbus-1/system.d/org.kde.kalarm.rtcwake.conf
 etc/xdg/autostart/kalarm.autostart.desktop
 etc/xdg/kalarm.categories
 etc/xdg/kalarm.renamecategories
@@ -8,7 +8,7 @@ lib/libexec/kauth/kalarm_helper
 share/applications/org.kde.kalarm.desktop
 share/config.kcfg/kalarmconfig.kcfg
 share/dbus-1/interfaces/org.kde.kalarm.kalarm.xml
-share/dbus-1/system-services/org.kde.kalarmrtcwake.service
+share/dbus-1/system-services/org.kde.kalarm.rtcwake.service
 share/icons/hicolor/128x128/apps/kalarm.png
 share/icons/hicolor/16x16/apps/kalarm.png
 share/icons/hicolor/22x22/apps/kalarm.png
@@ -87,4 +87,4 @@ share/locale/wa/LC_MESSAGES/kalarm.mo
 share/locale/zh_CN/LC_MESSAGES/kalarm.mo
 share/locale/zh_TW/LC_MESSAGES/kalarm.mo
 share/metainfo/org.kde.kalarm.appdata.xml
-share/polkit-1/actions/org.kde.kalarmrtcwake.policy
+share/polkit-1/actions/org.kde.kalarm.rtcwake.policy

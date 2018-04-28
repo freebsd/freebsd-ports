@@ -1,3 +1,5 @@
+etc/xdg/kcalcore.categories
+etc/xdg/kcalcore.renamecategories
 include/KF5/KCalCore/KCalCore/Alarm
 include/KF5/KCalCore/KCalCore/Attachment
 include/KF5/KCalCore/KCalCore/Attendee

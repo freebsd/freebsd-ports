@@ -32,7 +32,7 @@ include/cantor/worksheetaccess.h
 lib/libcantor_config.so
 lib/libcantor_pythonbackend.so
 lib/libcantorlibs.so
-lib/libcantorlibs.so.17
+lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_advancedplotassistant.so
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_creatematrixassistant.so
@@ -74,6 +74,7 @@ share/applications/org.kde.cantor.desktop
 %%DATADIR%%/cantor_qalculateplotassistant.rc
 %%DATADIR%%/cantor_runscript_assistant.rc
 %%DATADIR%%/cantor_solve_assistant.rc
+%%DATADIR%%/maximabackend/cantor-initmaxima.lisp
 %%DATADIR%%/octavebackend/cantor_eigenvectors.m
 %%DATADIR%%/octavebackend/cantor_plot2d.m
 %%DATADIR%%/octavebackend/cantor_plot3d.m

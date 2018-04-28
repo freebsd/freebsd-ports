@@ -4,6 +4,7 @@ etc/xdg/libksieve.renamecategories
 include/KF5/KManageSieve/SieveJob
 include/KF5/KSieveUi/AbstractMoveImapFolderWidget
 include/KF5/KSieveUi/AbstractRegexpEditorLineEdit
+include/KF5/KSieveUi/AbstractSelectEmailLineEdit
 include/KF5/KSieveUi/CheckScriptJob
 include/KF5/KSieveUi/ManageSieveScriptsDialog
 include/KF5/KSieveUi/ManageSieveTreeView
@@ -26,6 +27,7 @@ include/KF5/kmanagesieve/kmanagesieve_export.h
 include/KF5/kmanagesieve/sievejob.h
 include/KF5/ksieveui/abstractmoveimapfolderwidget.h
 include/KF5/ksieveui/abstractregexpeditorlineedit.h
+include/KF5/ksieveui/abstractselectemaillineedit.h
 include/KF5/ksieveui/checkscriptjob.h
 include/KF5/ksieveui/ksieveui_export.h
 include/KF5/ksieveui/managesievescriptsdialog.h
@@ -43,8 +45,8 @@ include/KF5/ksieveui/sieveimapinstanceinterface.h
 include/KF5/ksieveui/sieveimapinstanceinterfacemanager.h
 include/KF5/ksieveui/sieveimappasswordprovider.h
 include/KF5/ksieveui/sievetreewidgetitem.h
-include/KF5/ksieveui/util_p.h
 include/KF5/ksieveui/util.h
+include/KF5/ksieveui/util_p.h
 include/KF5/ksieveui/vacationmanager.h
 include/KF5/libksieve_version.h
 lib/cmake/KF5LibKSieve/KF5LibKSieveConfig.cmake

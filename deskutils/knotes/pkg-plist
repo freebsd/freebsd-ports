@@ -50,6 +50,7 @@ share/kxmlgui5/knotes/knotesappui.rc
 share/kxmlgui5/knotes/knotesui.rc
 share/locale/ar/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/ar/LC_MESSAGES/knotes.mo
+share/locale/ar/LC_MESSAGES/libnoteshared.mo
 share/locale/ast/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/ast/LC_MESSAGES/knotes.mo
 share/locale/ast/LC_MESSAGES/libnoteshared.mo

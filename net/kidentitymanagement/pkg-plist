@@ -1,3 +1,5 @@
+etc/xdg/kidentitymanagement.categories
+etc/xdg/kidentitymanagement.renamecategories
 include/KF5/KIdentityManagement/KIdentityManagement/Identity
 include/KF5/KIdentityManagement/KIdentityManagement/IdentityCombo
 include/KF5/KIdentityManagement/KIdentityManagement/IdentityManager

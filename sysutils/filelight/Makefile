@@ -1,8 +1,7 @@
-# Created by: Rusty Nejdl <rnejdl@ringofsaturn.com>
 # $FreeBSD$
 
 PORTNAME=	filelight
-PORTVERSION=	${KDE_APPLICATIONS_VERSION}
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

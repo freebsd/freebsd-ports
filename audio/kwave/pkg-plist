@@ -1,7 +1,7 @@
 bin/kwave
-lib/libkwave.so.17
+lib/libkwave.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkwave.so.%%KDE_APPLICATIONS_VERSION%%
-lib/libkwavegui.so.17
+lib/libkwavegui.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkwavegui.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kwave/kwaveplugin_about.so
 %%QT_PLUGINDIR%%/kwave/kwaveplugin_amplifyfree.so

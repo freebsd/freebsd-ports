@@ -10,6 +10,7 @@ share/applications/org.kde.contactprintthemeeditor.desktop
 share/applications/org.kde.contactthemeeditor.desktop
 share/applications/org.kde.headerthemeeditor.desktop
 share/config.kcfg/grantleethemeeditor.kcfg
+share/locale/ar/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/ar/LC_MESSAGES/contactthemeeditor.mo
 share/locale/ar/LC_MESSAGES/headerthemeeditor.mo
 share/locale/ar/LC_MESSAGES/libgrantleethemeeditor.mo

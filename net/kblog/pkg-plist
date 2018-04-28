@@ -1,3 +1,5 @@
+etc/xdg/kblog.categories
+etc/xdg/kblog.renamecategories
 include/KF5/KBlog/KBlog/Blog
 include/KF5/KBlog/KBlog/BlogComment
 include/KF5/KBlog/KBlog/BlogMedia

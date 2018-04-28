@@ -22,12 +22,13 @@ USE_KDE=	codecs completion config coreaddons i18n itemmodels \
 USE_QT5=	core gui widgets \
 		buildtools_build qmake_build
 
+_CORETOOLS=	md5sum sha1sum sha256sum sha512sum
 post-extract:
 # use the binaries of coreutils
-	${REINPLACE_CMD} -e '/create-command/ s#sha1sum#gsha1sum#' \
-			 -e '/create-command/ s#md5sum#gmd5sum#' \
-			 -e '/verify-command/ s#sha1sum#gsha1sum#' \
-			 -e '/verify-command/ s#md5sum#gmd5sum#' \
-		${PATCH_WRKSRC}/src/libkleopatrarc.desktop
+.  for ct in ${_CORETOOLS}
+	${REINPLACE_CMD} -e '/create-command/ s#${ct}#g${ct}#' \
+			 -e '/verify-command/ s#${ct}#g${ct}#' \
+			 ${PATCH_WRKSRC}/src/libkleopatrarc.desktop
+.  endfor
 
 .include <bsd.port.mk>

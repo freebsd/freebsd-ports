@@ -8,6 +8,7 @@ include/KF5/MailCommon/CollectionGeneralPage
 include/KF5/MailCommon/CryptoUtils
 include/KF5/MailCommon/DBusOperators
 include/KF5/MailCommon/ExpireCollectionAttribute
+include/KF5/MailCommon/FavoriteCollectionOrderProxyModel
 include/KF5/MailCommon/FavoriteCollectionWidget
 include/KF5/MailCommon/FilterAction
 include/KF5/MailCommon/FilterActionDict
@@ -53,6 +54,7 @@ include/KF5/mailcommon/collectiongeneralpage.h
 include/KF5/mailcommon/cryptoutils.h
 include/KF5/mailcommon/dbusoperators.h
 include/KF5/mailcommon/expirecollectionattribute.h
+include/KF5/mailcommon/favoritecollectionorderproxymodel.h
 include/KF5/mailcommon/favoritecollectionwidget.h
 include/KF5/mailcommon/filteraction.h
 include/KF5/mailcommon/filteractiondict.h
@@ -103,6 +105,7 @@ lib/libKF5MailCommon.so.5
 lib/libKF5MailCommon.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_MailCommon.pri
 %%QT_PLUGINDIR%%/designer/mailcommonwidgets.so
+share/locale/ar/LC_MESSAGES/libmailcommon.mo
 share/locale/ast/LC_MESSAGES/libmailcommon.mo
 share/locale/bs/LC_MESSAGES/libmailcommon.mo
 share/locale/ca/LC_MESSAGES/libmailcommon.mo

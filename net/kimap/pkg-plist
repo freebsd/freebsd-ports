@@ -1,3 +1,5 @@
+etc/xdg/kimap.categories
+etc/xdg/kimap.renamecategories
 include/KF5/KIMAP/KIMAP/Acl
 include/KF5/KIMAP/KIMAP/AclJobBase
 include/KF5/KIMAP/KIMAP/AppendJob
@@ -119,7 +121,6 @@ include/KF5/KIMAP/kimap/storejob.h
 include/KF5/KIMAP/kimap/subscribejob.h
 include/KF5/KIMAP/kimap/unsubscribejob.h
 include/KF5/kimap_version.h
-lib/cmake/KF5IMAP/FindSasl2.cmake
 lib/cmake/KF5IMAP/KF5IMAPConfig.cmake
 lib/cmake/KF5IMAP/KF5IMAPConfigVersion.cmake
 lib/cmake/KF5IMAP/KF5IMAPTargets-%%CMAKE_BUILD_TYPE%%.cmake

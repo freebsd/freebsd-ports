@@ -33,8 +33,8 @@ lib/cmake/Okular5/Okular5ConfigVersion.cmake
 lib/cmake/Okular5/Okular5Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Okular5/Okular5Targets.cmake
 lib/libOkular5Core.so
-lib/libOkular5Core.so.8
-lib/libOkular5Core.so.8.0.0
+lib/libOkular5Core.so.9
+lib/libOkular5Core.so.9.0.0
 %%QT_PLUGINDIR%%/kio_msits.so
 %%QT_PLUGINDIR%%/okular/generators/okularGenerator_chmlib.so
 %%QT_PLUGINDIR%%/okular/generators/okularGenerator_comicbook.so
@@ -468,6 +468,7 @@ share/locale/gl/LC_MESSAGES/okular_fax.mo
 share/locale/gl/LC_MESSAGES/okular_fictionbook.mo
 share/locale/gl/LC_MESSAGES/okular_ghostview.mo
 share/locale/gl/LC_MESSAGES/okular_kimgio.mo
+share/locale/gl/LC_MESSAGES/okular_markdown.mo
 share/locale/gl/LC_MESSAGES/okular_mobi.mo
 share/locale/gl/LC_MESSAGES/okular_ooo.mo
 share/locale/gl/LC_MESSAGES/okular_plucker.mo
@@ -537,6 +538,7 @@ share/locale/ia/LC_MESSAGES/okular_poppler.mo
 share/locale/ia/LC_MESSAGES/okular_txt.mo
 share/locale/ia/LC_MESSAGES/okular_xps.mo
 share/locale/ia/LC_MESSAGES/org.kde.active.documentviewer.mo
+share/locale/id/LC_MESSAGES/okular.mo
 share/locale/is/LC_MESSAGES/okular.mo
 share/locale/is/LC_MESSAGES/okular_chm.mo
 share/locale/is/LC_MESSAGES/okular_comicbook.mo
@@ -820,7 +822,6 @@ share/locale/pt_BR/LC_MESSAGES/okular_fax.mo
 share/locale/pt_BR/LC_MESSAGES/okular_fictionbook.mo
 share/locale/pt_BR/LC_MESSAGES/okular_ghostview.mo
 share/locale/pt_BR/LC_MESSAGES/okular_kimgio.mo
-share/locale/pt_BR/LC_MESSAGES/okular_markdown.mo
 share/locale/pt_BR/LC_MESSAGES/okular_mobi.mo
 share/locale/pt_BR/LC_MESSAGES/okular_ooo.mo
 share/locale/pt_BR/LC_MESSAGES/okular_plucker.mo
@@ -891,6 +892,7 @@ share/locale/sl/LC_MESSAGES/okular_fax.mo
 share/locale/sl/LC_MESSAGES/okular_fictionbook.mo
 share/locale/sl/LC_MESSAGES/okular_ghostview.mo
 share/locale/sl/LC_MESSAGES/okular_kimgio.mo
+share/locale/sl/LC_MESSAGES/okular_markdown.mo
 share/locale/sl/LC_MESSAGES/okular_mobi.mo
 share/locale/sl/LC_MESSAGES/okular_ooo.mo
 share/locale/sl/LC_MESSAGES/okular_plucker.mo

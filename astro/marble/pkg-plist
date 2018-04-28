@@ -269,7 +269,7 @@ share/kservices5/marble_thumbnail_kmz.desktop
 share/kservices5/marble_thumbnail_osm.desktop
 share/kservices5/plasma-applet-org.kde.plasma.worldclock.desktop
 share/kservices5/plasma-runner-marble.desktop
-share/kservices5/plasma-wallpaper-org.kde.plasma.wallpaper.worldmap.desktop
+share/kservices5/plasma-wallpaper-org.kde.plasma.worldmap.desktop
 share/kxmlgui5/marble/marble_part.rc
 share/kxmlgui5/marble/marbleui.rc
 share/locale/ar/LC_MESSAGES/marble.mo
@@ -1744,7 +1744,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 %%DATADIR%%/data/weather/weather-storm.png
 %%DATADIR%%/data/weather/wind-arrows.svgz
 share/metainfo/org.kde.marble.appdata.xml
-share/metainfo/org.kde.plasma.wallpaper.worldmap.appdata.xml
+share/metainfo/org.kde.plasma.worldmap.appdata.xml
 share/metainfo/org.kde.plasma.worldclock.appdata.xml
 share/mime/packages/geo.xml
 share/plasma/plasmoids/org.kde.plasma.worldclock/contents/config/config.qml
@@ -1754,8 +1754,8 @@ share/plasma/plasmoids/org.kde.plasma.worldclock/contents/ui/configTimeZones.qml
 share/plasma/plasmoids/org.kde.plasma.worldclock/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.worldclock/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.worldclock/metadata.json
-share/plasma/wallpapers/org.kde.plasma.wallpaper.worldmap/contents/config/main.xml
-share/plasma/wallpapers/org.kde.plasma.wallpaper.worldmap/contents/ui/config.qml
-share/plasma/wallpapers/org.kde.plasma.wallpaper.worldmap/contents/ui/main.qml
-share/plasma/wallpapers/org.kde.plasma.wallpaper.worldmap/metadata.desktop
-share/plasma/wallpapers/org.kde.plasma.wallpaper.worldmap/metadata.json
+share/plasma/wallpapers/org.kde.plasma.worldmap/contents/config/main.xml
+share/plasma/wallpapers/org.kde.plasma.worldmap/contents/ui/config.qml
+share/plasma/wallpapers/org.kde.plasma.worldmap/contents/ui/main.qml
+share/plasma/wallpapers/org.kde.plasma.worldmap/metadata.desktop
+share/plasma/wallpapers/org.kde.plasma.worldmap/metadata.json

@@ -19,6 +19,7 @@ lib/libKPimSMTP.so
 lib/libKPimSMTP.so.5
 lib/libKPimSMTP.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KSMTP.pri
+share/locale/ar/LC_MESSAGES/libksmtp5.mo
 share/locale/ast/LC_MESSAGES/libksmtp5.mo
 share/locale/bs/LC_MESSAGES/libksmtp5.mo
 share/locale/ca/LC_MESSAGES/libksmtp5.mo

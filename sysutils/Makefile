@@ -1199,6 +1199,7 @@
     SUBDIR += swapd
     SUBDIR += swapexd
     SUBDIR += swapmon
+    SUBDIR += sweeper
     SUBDIR += sweeper-kde4
     SUBDIR += symlinks
     SUBDIR += symon

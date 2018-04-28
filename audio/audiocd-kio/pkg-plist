@@ -45,6 +45,7 @@ share/locale/cs/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/cs/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/cs/LC_MESSAGES/kcmaudiocd.mo
 share/locale/cs/LC_MESSAGES/kio_audiocd.mo
+share/locale/da/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/da/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/da/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/da/LC_MESSAGES/kcmaudiocd.mo

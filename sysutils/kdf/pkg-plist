@@ -1,6 +1,6 @@
 bin/kdf
 bin/kwikdisk
-lib/libkdfprivate.so.17
+lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/libkcm_kdf.so
 share/applications/org.kde.kdf.desktop

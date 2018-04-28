@@ -13,7 +13,6 @@ lib/libkmailprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kcm_kmail.so
 %%QT_PLUGINDIR%%/kcm_kmailsummary.so
 %%QT_PLUGINDIR%%/kcm_kontactsummary.so
-%%QT_PLUGINDIR%%/kcm_kpimidentities.so
 %%QT_PLUGINDIR%%/kmailpart.so
 %%QT_PLUGINDIR%%/kontact_kmailplugin.so
 %%QT_PLUGINDIR%%/kontact_summaryplugin.so
@@ -85,13 +84,11 @@ share/knotifications5/kmail2.notifyrc
 share/kontact/ksettingsdialog/kmail.setdlg
 share/kontact/ksettingsdialog/summary.setdlg
 share/kservices5/ServiceMenus/kmail_addattachmentservicemenu.desktop
-share/kservices5/kcm_kpimidentities.desktop
 share/kservices5/kcmkmailsummary.desktop
 share/kservices5/kcmkontactsummary.desktop
 share/kservices5/kmail_config_accounts.desktop
 share/kservices5/kmail_config_appearance.desktop
 share/kservices5/kmail_config_composer.desktop
-share/kservices5/kmail_config_identity.desktop
 share/kservices5/kmail_config_misc.desktop
 share/kservices5/kmail_config_plugins.desktop
 share/kservices5/kmail_config_security.desktop

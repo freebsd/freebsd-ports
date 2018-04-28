@@ -74,3 +74,4 @@ share/locale/ug/LC_MESSAGES/krdc.mo
 share/locale/uk/LC_MESSAGES/krdc.mo
 share/locale/zh_CN/LC_MESSAGES/krdc.mo
 share/locale/zh_TW/LC_MESSAGES/krdc.mo
+share/metainfo/org.kde.krdc.appdata.xml

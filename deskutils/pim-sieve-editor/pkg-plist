@@ -7,6 +7,7 @@ share/applications/org.kde.sieveeditor.desktop
 share/config.kcfg/sieveeditorglobalconfig.kcfg
 share/kconf_update/sieveeditor-15.08-kickoff.sh
 share/kconf_update/sieveeditor.upd
+share/locale/ar/LC_MESSAGES/sieveeditor.mo
 share/locale/ast/LC_MESSAGES/sieveeditor.mo
 share/locale/bs/LC_MESSAGES/sieveeditor.mo
 share/locale/ca/LC_MESSAGES/sieveeditor.mo

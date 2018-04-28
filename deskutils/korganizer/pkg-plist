@@ -89,6 +89,7 @@ share/kservices5/korganizer_configviews.desktop
 share/kservices5/korganizer_part.desktop
 share/kservices5/webcal.protocol
 share/kservicetypes5/dbuscalendar.desktop
+share/locale/ar/LC_MESSAGES/korgac.mo
 share/locale/ar/LC_MESSAGES/korganizer.mo
 share/locale/ast/LC_MESSAGES/korgac.mo
 share/locale/ast/LC_MESSAGES/korganizer.mo
