@@ -2,7 +2,7 @@
 
 PORTNAME=	qbs
 DISTVERSIONPREFIX=	src-
-DISTVERSION=	1.10.1
+DISTVERSION=	1.11.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/Qt/qbs
@@ -21,6 +21,8 @@ USE_QT5=	buildtools_build core concurrent gui network script testlib \
 
 SHEBANG_FILES=	src/3rdparty/python/bin/dmgbuild
 
+QMAKE_ARGS=		CONFIG+=qbs_disable_rpath \
+			COFNIG+=qbs_enable_project_file_updates  
 QMAKE_SOURCE_PATH=	${WRKSRC}/qbs.pro
 
 OPTIONS_DEFINE=		DOCS
