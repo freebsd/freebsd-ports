@@ -18,4 +18,4 @@ man/man8/monitorix.8.gz
 @comment rrd files are now kept in /var/db/monitorix, we'll move
 @comment previous files over for the user
 @dir(%%WWW_OWNER%%,%%WWW_GROUP%%,) %%DBDIR%%
-@exec [ -f %%DATADIR%%/fs.rrd ] && mv %%DATADIR%%/*.rrd %%DBDIR%% || true
+@postexec [ -f %%DATADIR%%/fs.rrd ] && mv %%DATADIR%%/*.rrd %%DBDIR%% || true
