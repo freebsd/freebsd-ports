@@ -118,7 +118,7 @@ include/mbedtls/x509_csr.h
 include/mbedtls/xtea.h
 lib/libmbedcrypto.a
 lib/libmbedcrypto.so
-lib/libmbedcrypto.so.2
+lib/libmbedcrypto.so.1
 lib/libmbedtls.a
 lib/libmbedtls.so
 lib/libmbedtls.so.10
