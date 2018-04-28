@@ -6,6 +6,7 @@ DISTVERSION=	59.0.3
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	https://hg.mozilla.org/releases/mozilla-release/archive/
+MASTER_SITES+=	LOCAL/${DIST_SUBDIR}/jbeich
 DISTNAME=	${MASTER_SITES:M*hg*:S,/archive/,,:T}-6b51784853e47e091d213d421a19cb623af718f0
 DISTFILES=	${DISTNAME:C/.*-//}${EXTRACT_SUFX}
 DIST_SUBDIR=	firefox
