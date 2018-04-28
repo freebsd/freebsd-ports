@@ -3,6 +3,7 @@
 PORTNAME=	edbrowse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.3
+PORTREVISION=	1
 CATEGORIES=	www editors
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
