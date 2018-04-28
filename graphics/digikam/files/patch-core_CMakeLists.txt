@@ -1,0 +1,14 @@
+--- core/CMakeLists.txt.orig	2016-11-06 10:43:00 UTC
++++ core/CMakeLists.txt
+@@ -314,6 +314,11 @@ endif()
+ 
+ find_package(Doxygen)
+ find_package(Lqr-1)
++if(LQR-1_FOUND)
++    include_directories(${LQR-1_INCLUDE_DIRS})
++    set(liblqr_LIBS ${LQR-1_LIBRARIES})
++    link_directories(${LQR-1_LIBDIR})
++endif()
+ 
+ # -- libgphoto2 rules --------------------------------------------------------------------------
+ 

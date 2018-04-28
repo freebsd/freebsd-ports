@@ -1,22 +1,20 @@
-# $FreeBSD$
+ #$FreeBSD$
 
 PORTNAME=	libmediawiki
-PORTVERSION=	4.12.0
-PORTREVISION=	2
+DISTVERSION=	5.37.0
 CATEGORIES=	net kde
+MASTER_SITES=	KDE/stable/${PORTNAME}
+DIST_SUBDIR=	KDE/digikam
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE4 library for accessing MediaWiki sites
+COMMENT=	KDE library for accessing MediaWiki sites
 
-PORTSCOUT=	limit:^4\.12\.
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		pathfix
-USE_LDCONFIG=	yes
-
-.include "${.CURDIR:H:H}/graphics/digikam-kde4/Makefile.common"
-
-# Replace some values set up by Makefile.common
-DIGIKAM_VER=	${PORTVERSION}
-DISTINFO_FILE=	${.CURDIR}/distinfo
+USES=		cmake:outsource kde:5 tar:xz
+USE_KDE=	coreaddons ecm
+USE_QT5=	core network testlib \
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

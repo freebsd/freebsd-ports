@@ -1,0 +1,20 @@
+Move models up before the other subdirs that depend on them.
+
+--- core/libs/CMakeLists.txt.orig	2017-07-29 18:36:36.642660000 +0200
++++ core/libs/CMakeLists.txt	2017-07-29 18:37:55.886981000 +0200
+@@ -57,6 +57,7 @@
+ 
+ add_subdirectory(dimg)
+ add_subdirectory(dmetadata)
++add_subdirectory(models)
+ add_subdirectory(database)
+ add_subdirectory(dngwriter)
+ add_subdirectory(dtrash)
+@@ -71,7 +72,6 @@
+ add_subdirectory(threads)
+ add_subdirectory(versionmanager)
+ add_subdirectory(notificationmanager)
+-add_subdirectory(models)
+ add_subdirectory(template)
+ add_subdirectory(dialogs)
+ add_subdirectory(kmemoryinfo)
