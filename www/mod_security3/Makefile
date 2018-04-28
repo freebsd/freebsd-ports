@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mod_security
-DISTVERSION=	3.0.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.0.2
 CATEGORIES=	www security
 PKGNAMESUFFIX=	3
 
@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	SpiderLabs
 GH_PROJECT=	ModSecurity
-GH_TAGNAME=	0508395
 
 GH_TUPLE+=	SpiderLabs:secrules-language-tests:add8f63:secrules_language_tests/test/test-cases/secrules-language-tests
 GH_TUPLE+=	client9:libinjection:da027ab:libinjection/others/libinjection
