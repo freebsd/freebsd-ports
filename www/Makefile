@@ -76,6 +76,7 @@
     SUBDIR += chems
     SUBDIR += cherokee
     SUBDIR += choqok
+    SUBDIR += choqok-kde4
     SUBDIR += chpasswd
     SUBDIR += chromium
     SUBDIR += ckeditor
