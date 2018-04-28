@@ -61,6 +61,11 @@ share/locale/fr/LC_MESSAGES/plasma_applet_audoban.applet.separator.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.latte.spacer.mo
+share/locale/gl/LC_MESSAGES/latte-dock.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_audoban.applet.separator.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.latte.spacer.mo
 share/locale/it/LC_MESSAGES/latte-dock.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
