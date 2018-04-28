@@ -1,6 +1,6 @@
-TIMESTAMP = 1518578749
-SHA256 (cquery-project-cquery-v20180213_GH0.tar.gz) = 368dda96bf9f2689f0eb6ed4747df62e1fc7deb51f06c23577132dbed70de754
-SIZE (cquery-project-cquery-v20180213_GH0.tar.gz) = 375511
+TIMESTAMP = 1524888709
+SHA256 (cquery-project-cquery-v20180302_GH0.tar.gz) = 273b317f6ad13f29db1e5e14ff7103e8946e6208ab246166ce1afc6f3381d65e
+SIZE (cquery-project-cquery-v20180302_GH0.tar.gz) = 379569
 SHA256 (miloyip-rapidjson-daabb88_GH0.tar.gz) = bb649179af18e19dbc849fcf7902694573d5885a6c8d18f4ee8d64ad77af89bc
 SIZE (miloyip-rapidjson-daabb88_GH0.tar.gz) = 1047783
 SHA256 (onqtam-doctest-b40b7e7_GH0.tar.gz) = 6d954ba4b7de0cc7874257787f7d0cf7bb74087f92b95f6c9204b82eea35bbb2
