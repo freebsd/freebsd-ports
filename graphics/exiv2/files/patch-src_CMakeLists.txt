@@ -5,18 +5,18 @@ which handles that properly on all systems.
 
 [1] https://cmake.org/cmake/help/v3.6/variable/CMAKE_DL_LIBS.html
 
---- src/CMakeLists.txt.orig	2016-07-23 14:00:07 UTC
+--- src/CMakeLists.txt.orig        2017-03-27 09:04:12 UTC
 +++ src/CMakeLists.txt
-@@ -247,9 +247,9 @@ if ( MSVC )
-     TARGET_LINK_LIBRARIES( exiv2lib ${SSH_LIBRARIES} )
+@@ -265,9 +265,9 @@ if ( MSVC )
+     TARGET_LINK_LIBRARIES( exiv2lib ${PRIVATE_VAR} ${SSH_LIBRARIES} )
  else()
-     if ( NOT MINGW )
--        TARGET_LINK_LIBRARIES( exiv2lib dl ${EXPAT_LIBRARIES} )
--        TARGET_LINK_LIBRARIES( exiv2lib dl ${CURL_LIBRARIES} )
--        TARGET_LINK_LIBRARIES( exiv2lib dl ${SSH_LIBRARIES} )
-+        TARGET_LINK_LIBRARIES( exiv2lib ${CMAKE_DL_LIBS} ${EXPAT_LIBRARIES} )
-+        TARGET_LINK_LIBRARIES( exiv2lib ${CMAKE_DL_LIBS} ${CURL_LIBRARIES} )
-+        TARGET_LINK_LIBRARIES( exiv2lib ${CMAKE_DL_LIBS} ${SSH_LIBRARIES} )
+     if ( UNIX AND NOT FREEBSD )
+-        TARGET_LINK_LIBRARIES( exiv2lib ${PRIVATE_VAR} dl ${EXPAT_LIBRARIES} )
+-        TARGET_LINK_LIBRARIES( exiv2lib ${PRIVATE_VAR} dl ${CURL_LIBRARIES} )
+-        TARGET_LINK_LIBRARIES( exiv2lib ${PRIVATE_VAR} dl ${SSH_LIBRARIES} )
++        TARGET_LINK_LIBRARIES( exiv2lib ${PRIVATE_VAR} ${CMAKE_DL_LIBS} ${EXPAT_LIBRARIES} )
++        TARGET_LINK_LIBRARIES( exiv2lib ${PRIVATE_VAR} ${CMAKE_DL_LIBS} ${CURL_LIBRARIES} )
++        TARGET_LINK_LIBRARIES( exiv2lib ${PRIVATE_VAR} ${CMAKE_DL_LIBS} ${SSH_LIBRARIES} )
      else()
-         TARGET_LINK_LIBRARIES( exiv2lib    ${EXPAT_LIBRARIES} )
-         TARGET_LINK_LIBRARIES( exiv2lib    ${CURL_LIBRARIES} )
+         TARGET_LINK_LIBRARIES( exiv2lib ${PRIVATE_VAR} ${EXPAT_LIBRARIES} )
+         TARGET_LINK_LIBRARIES( exiv2lib ${PRIVATE_VAR} ${CURL_LIBRARIES} )
