@@ -1268,10 +1268,10 @@
     SUBDIR += kdesdk-thumbnailers-kde4
     SUBDIR += kdesvn-kde4
     SUBDIR += kdevelop-kde4
-    SUBDIR += kdevelop-pg-qt
-    SUBDIR += kdevelop-php
-    SUBDIR += kdevelop-php-docs
-    SUBDIR += kdevplatform
+    SUBDIR += kdevelop-pg-qt-kde4
+    SUBDIR += kdevelop-php-kde4
+    SUBDIR += kdevelop-php-docs-kde4
+    SUBDIR += kdevplatform-kde4
     SUBDIR += kf5-extra-cmake-modules
     SUBDIR += kf5-kapidox
     SUBDIR += kf5-kauth
