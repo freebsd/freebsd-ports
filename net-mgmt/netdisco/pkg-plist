@@ -29,6 +29,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/DB/Result/DevicePort.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortLog.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortPower.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortProperties.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortSsid.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortVlan.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/DevicePortWireless.pm
@@ -72,6 +73,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/PortVLANMismatch.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/SlowDevices.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/SubnetUtilization.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/TastyJobs.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/UnDirEdgesAgg.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/UndiscoveredNeighbors.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/UserRole.pm
@@ -196,7 +198,9 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/CanonicalIP.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Entities.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Neighbors.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Neighbors/Routed.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/PortPower.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/PortProperties.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Properties.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/VLANs.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Wireless.pm
@@ -211,10 +215,11 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Macsuck/Nodes.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Macsuck/WirelessNodes.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Macwalk.pm
-%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Monitor.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/MakeRancidConf.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Nbtstat.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Nbtstat/Core.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Nbtwalk.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/NodeMonitor.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/PortControl.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/PortName.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Power.pm
@@ -305,6 +310,14 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/toastr.js
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/public/javascripts/underscore.min.js
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-1-2-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-2-3-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-3-4-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-4-5-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-5-6-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-6-7-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-7-8-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-8-9-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-9-10-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-10-11-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-11-12-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-12-13-PostgreSQL.sql
@@ -315,7 +328,6 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-17-18-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-18-19-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-19-20-PostgreSQL.sql
-%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-2-3-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-20-21-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-21-22-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-22-23-PostgreSQL.sql
@@ -326,7 +338,6 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-27-28-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-28-29-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-29-30-PostgreSQL.sql
-%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-3-4-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-30-31-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-31-32-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-32-33-PostgreSQL.sql
@@ -337,18 +348,18 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-37-38-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-38-39-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-39-40-PostgreSQL.sql
-%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-4-5-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-40-41-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-41-42-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-42-43-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-43-44-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-44-45-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-45-46-PostgreSQL.sql
-%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-5-6-PostgreSQL.sql
-%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-6-7-PostgreSQL.sql
-%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-7-8-PostgreSQL.sql
-%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-8-9-PostgreSQL.sql
-%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-9-10-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-46-47-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-47-48-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-48-49-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-49-50-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-50-51-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-51-52-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/admintask.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/duplicatedevices.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/jobqueue.tt
@@ -457,6 +468,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/nodevendor.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/portlog.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/portmultinodes.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/portutilization.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/portssid.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/subnets.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/search/device.tt
@@ -483,6 +495,7 @@ bin/netdisco-web-fg
 %%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePort.3.gz
 %%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortLog.3.gz
 %%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortPower.3.gz
+%%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortProperties.3.gz
 %%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortSsid.3.gz
 %%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortVlan.3.gz
 %%PERL5_MAN3%%/App::Netdisco::DB::Result::DevicePortWireless.3.gz
@@ -534,6 +547,7 @@ bin/netdisco-web-fg
 %%PERL5_MAN3%%/App::Netdisco::Worker::Plugin.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Worker::Plugin::Discover::Neighbors.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Worker::Plugin::Macsuck::Nodes.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Worker::Plugin::MakeRancidConf.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Worker::Status.3.gz
 @owner netdisco
 @mode 0750
