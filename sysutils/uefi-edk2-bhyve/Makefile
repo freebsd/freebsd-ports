@@ -1,7 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	uefi-edk2-bhyve
-PORTVERSION=	20180318
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
@@ -19,7 +21,6 @@ USE_GCC=	4.8
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	uefi-edk2
-GH_TAGNAME=	636b963d68f8c7f4c90b97bd5a66e91bcb65841d
 
 PLIST_FILES=	${PREFIX}/share/uefi-firmware/BHYVE_UEFI${PLIST_SUFFIX}.fd
 
