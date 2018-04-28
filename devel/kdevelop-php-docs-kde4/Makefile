@@ -2,15 +2,16 @@
 
 PORTNAME=	kdevelop-php-docs
 PORTVERSION=	${KDEVELOP_VERSION:S/4./1./}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/${KDEVELOP_BRANCH}/kdevelop/${KDEVELOP_VERSION}
 DIST_SUBDIR=	KDE/kdevelop/${KDEVELOP_VERSION}
+PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PHP documentation for KDevelop
 
-LIB_DEPENDS=	libkdevplatforminterfaces.so:devel/kdevplatform
+LIB_DEPENDS=	libkdevplatforminterfaces.so:devel/kdevplatform-kde4
 
 USES=		cmake:outsource compiler:c++11-lib kde:4 tar:xz
 USE_KDE=	kdelibs automoc4
