@@ -4734,7 +4734,6 @@ x11/kdelibs3||2013-07-26|Has expired: Depends on Qt 3.x
 x11/kdelibs3-nocups||2013-07-26|Has expired: Depends on Qt 3.x
 x11/oooqs2||2013-07-26|Has expired: Depends on Qt 3.x
 x11/xscreensaver-kde||2013-07-26|Has expired: Depends on Qt 3.x
-x11/yakuake||2013-07-26|Has expired: Depends on Qt 3.x
 x11-clocks/kdetoys3||2013-07-26|Has expired: Depends on Qt 3.x
 x11-fm/krusader||2013-07-26|Has expired: Depends on Qt 3.x
 x11-themes/baghira||2013-07-26|Has expired: Depends on Qt 3.x
