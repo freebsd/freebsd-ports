@@ -3,9 +3,10 @@
 
 PORTNAME=	digikam
 PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	13
+PORTREVISION=	14
 PORTEPOCH=	2
 CATEGORIES=	graphics kde
+PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 digital photo management application
