@@ -939,7 +939,7 @@ include/wine/windows/zmouse.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/csq.h
 include/wine/windows/ddk/d3dkmthk.h
-%%STAGING%%include/wine/windows/ddk/fltkernel.h
+include/wine/windows/ddk/fltkernel.h
 include/wine/windows/ddk/hidclass.h
 include/wine/windows/ddk/hidpi.h
 include/wine/windows/ddk/hidport.h
