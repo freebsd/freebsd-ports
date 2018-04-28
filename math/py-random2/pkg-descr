@@ -1,0 +1,8 @@
+Provides a Python 3 ported version of Python 2.7's 'random' module. It has also
+been back-ported to work in Python 2.6.
+
+In Python 3, the implementation of randrange() was changed, so that even with
+the same seed you get different sequences in Python 2 and 3. Note that several
+high-level functions such as randint() and choice() use randrange().
+
+WWW: https://pypi.org/project/random2/
