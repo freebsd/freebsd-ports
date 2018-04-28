@@ -1,0 +1,14 @@
+--- intern/cycles/CMakeLists.txt.orig	2018-03-08 03:18:11 UTC
++++ intern/cycles/CMakeLists.txt
+@@ -205,9 +205,9 @@ if(WITH_CYCLES_DEBUG)
+ 	add_definitions(-DWITH_CYCLES_DEBUG)
+ endif()
+ 
+-if(NOT OPENIMAGEIO_PUGIXML_FOUND)
++#if(NOT OPENIMAGEIO_PUGIXML_FOUND)
+ 	add_definitions(-DWITH_SYSTEM_PUGIXML)
+-endif()
++#endif()
+ 
+ include_directories(
+ 	SYSTEM
