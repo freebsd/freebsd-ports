@@ -13,6 +13,7 @@
     SUBDIR += eflite
     SUBDIR += jovie-kde4
     SUBDIR += kaccessible-kde4
+    SUBDIR += kdeaccessibility
     SUBDIR += kdeaccessibility-kde4
     SUBDIR += kmag
     SUBDIR += kmag-kde4
