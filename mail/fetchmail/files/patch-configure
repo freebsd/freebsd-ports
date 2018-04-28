@@ -1,0 +1,30 @@
+--- configure.orig	2013-04-23 14:36:55.000000000 -0700
++++ configure	2018-04-21 22:45:30.073773000 -0700
+@@ -9552,11 +9552,11 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char krb5_des_string_to_key ();
++char krb5int_des_string_to_key ();
+ int
+ main ()
+ {
+-return krb5_des_string_to_key ();
++return krb5int_des_string_to_key ();
+   ;
+   return 0;
+ }
+@@ -9591,11 +9591,11 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char krb5_des_string_to_key ();
++char krb5int_des_string_to_key ();
+ int
+ main ()
+ {
+-return krb5_des_string_to_key ();
++return krb5int_des_string_to_key ();
+   ;
+   return 0;
+ }
