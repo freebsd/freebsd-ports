@@ -1,3 +1,6 @@
+bin/akonadimailreader
+bin/coisceim
+bin/etm_usage
 bin/kmail_antivir.sh
 bin/kmail_clamav.sh
 bin/kmail_fprot.sh
@@ -9,12 +12,15 @@ etc/xdg/kmail.antivirusrc
 lib/contacteditor/editorpageplugins/cryptopageplugin.so
 lib/libadblocklibprivate.so.5
 lib/libadblocklibprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libcoisceim_widget.so.5
+lib/libcoisceim_widget.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libkaddressbookimportexportlibprivate.so.5
 lib/libkaddressbookimportexportlibprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libkaddressbookmergelibprivate.so.5
 lib/libkaddressbookmergelibprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libshorturlpluginprivate.so.5
 lib/libshorturlpluginprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+%%QT_PLUGINDIR%%/coisceimpart.so
 %%QT_PLUGINDIR%%/contacteditor/addresslocationeditorplugin.so
 %%QT_PLUGINDIR%%/importwizard/evolutionv1importerplugin.so
 %%QT_PLUGINDIR%%/importwizard/evolutionv2importerplugin.so
@@ -38,7 +44,10 @@ lib/libshorturlpluginprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kmail/kmail_changecaseeditorplugin.so
 %%QT_PLUGINDIR%%/kmail/kmail_checkbeforesendeditorplugin.so
 %%QT_PLUGINDIR%%/kmail/kmail_confirmaddresseditorplugin.so
+%%QT_PLUGINDIR%%/kmail/kmail_expertplugin.so
 %%QT_PLUGINDIR%%/kmail/kmail_externalcomposereditorplugin.so
+%%QT_PLUGINDIR%%/kmail/kmail_insertemaileditorplugin.so
+%%QT_PLUGINDIR%%/kmail/kmail_insertshorturleditorplugin.so
 %%QT_PLUGINDIR%%/kmail/kmail_insertspecialcharactereditorplugin.so
 %%QT_PLUGINDIR%%/kmail/kmail_logactivitiesplugin.so
 %%QT_PLUGINDIR%%/kmail/kmail_nonbreakingspaceeditorplugin.so
@@ -46,6 +55,7 @@ lib/libshorturlpluginprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/korg_datenums.so
 %%QT_PLUGINDIR%%/korg_picoftheday.so
 %%QT_PLUGINDIR%%/korg_thisdayinhistory.so
+%%QT_PLUGINDIR%%/libksieve/emaillineeditplugin.so
 %%QT_PLUGINDIR%%/libksieve/imapfoldercompletionplugin.so
 %%QT_PLUGINDIR%%/libksieve/regexpeditorlineeditplugin.so
 %%QT_PLUGINDIR%%/mailtransport/mailtransport_sendplugin.so
@@ -70,11 +80,9 @@ lib/libshorturlpluginprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/messageviewer/messageviewer_standardsheaderstyleplugin.so
 %%QT_PLUGINDIR%%/messageviewer/messageviewer_translatorplugin.so
 %%QT_PLUGINDIR%%/pimcommon/pimcommon_isgdshorturlengineplugin.so
-%%QT_PLUGINDIR%%/pimcommon/pimcommon_shorturlplugin.so
 %%QT_PLUGINDIR%%/pimcommon/pimcommon_tinyurlengineplugin.so
 %%QT_PLUGINDIR%%/pimcommon/pimcommon_translatorplugin.so
 %%QT_PLUGINDIR%%/pimcommon/pimcommon_triopabshorturlengineplugin.so
-%%QT_PLUGINDIR%%/pimcommon/pimcommon_ur1cashorturlengineplugin.so
 %%QT_PLUGINDIR%%/plasmacalendarplugins/pimevents.so
 %%QT_PLUGINDIR%%/plasmacalendarplugins/pimevents/PimEventsConfig.qml
 %%QT_PLUGINDIR%%/templateparser/templateparseraddressrequesterplugin.so
@@ -82,30 +90,46 @@ lib/libshorturlpluginprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/webengineviewer/webengineviewer_donottrackplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/PimCalendars/libpimcalendarsplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/PimCalendars/qmldir
+share/applications/org.kde.akonadimailreader.desktop
+share/config.kcfg/mailreader.kcfg
 share/contacteditor/grantleetheme/default/addresseslocation.css
 share/contacteditor/grantleetheme/default/addresseslocation.html
 share/kconf_update/webengineurlinterceptoradblock.upd
 share/kmail2/pics/kmwizard.png
 share/kmail2/pics/kmwizard.svg
+share/kservices5/coisceimpart.desktop
 share/kservices5/korganizer/datenums.desktop
 share/kservices5/korganizer/picoftheday.desktop
 share/kservices5/korganizer/thisdayinhistory.desktop
+share/kxmlgui5/akonadimailreader/akonadimailreaderui.rc
 share/locale/ar/LC_MESSAGES/cryptopageplugin.mo
 share/locale/ar/LC_MESSAGES/customtoolsplugin.mo
+share/locale/ar/LC_MESSAGES/importwizard_plugins.mo
+share/locale/ar/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/ar/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ar/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/ar/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/ar/LC_MESSAGES/kmail_editorinit_plugins.mo
+share/locale/ar/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ar/LC_MESSAGES/kmail_plugins.mo
+share/locale/ar/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ar/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ar/LC_MESSAGES/mailreader.mo
+share/locale/ar/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ar/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ar/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
+share/locale/ar/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/ar/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ar/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ar/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ar/LC_MESSAGES/messageviewerplugins.mo
+share/locale/ar/LC_MESSAGES/pimeventsplugin.mo
+share/locale/ar/LC_MESSAGES/sieveeditor_plugins.mo
+share/locale/ar/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/ast/LC_MESSAGES/cryptopageplugin.mo
 share/locale/ast/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ast/LC_MESSAGES/importwizard_plugins.mo
+share/locale/ast/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/ast/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ast/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/ast/LC_MESSAGES/kmail_editor_plugins.mo
@@ -117,6 +141,8 @@ share/locale/ast/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ast/LC_MESSAGES/mailreader.mo
 share/locale/ast/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ast/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ast/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
+share/locale/ast/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/ast/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ast/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ast/LC_MESSAGES/messageviewerheaderplugins.mo
@@ -144,6 +170,7 @@ share/locale/ca/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/ca/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ca/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/ca/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/ca/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/ca/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/ca/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ca/LC_MESSAGES/kmail_plugins.mo
@@ -152,6 +179,7 @@ share/locale/ca/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ca/LC_MESSAGES/mailreader.mo
 share/locale/ca/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ca/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ca/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/ca/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/ca/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ca/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -167,6 +195,7 @@ share/locale/ca@valencia/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/ca@valencia/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/ca@valencia/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kmail_plugins.mo
@@ -175,6 +204,7 @@ share/locale/ca@valencia/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/mailreader.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ca@valencia/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -190,6 +220,7 @@ share/locale/cs/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/cs/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/cs/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/cs/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/cs/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/cs/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/cs/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/cs/LC_MESSAGES/kmail_plugins.mo
@@ -198,6 +229,7 @@ share/locale/cs/LC_MESSAGES/korganizer_plugins.mo
 share/locale/cs/LC_MESSAGES/mailreader.mo
 share/locale/cs/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/cs/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/cs/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/cs/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/cs/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/cs/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -228,6 +260,7 @@ share/locale/de/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/de/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/de/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/de/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_plugins.mo
@@ -236,6 +269,7 @@ share/locale/de/LC_MESSAGES/korganizer_plugins.mo
 share/locale/de/LC_MESSAGES/mailreader.mo
 share/locale/de/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/de/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/de/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/de/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/de/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/de/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -258,6 +292,7 @@ share/locale/en_GB/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/en_GB/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/en_GB/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/en_GB/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/en_GB/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/en_GB/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/en_GB/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/en_GB/LC_MESSAGES/kmail_plugins.mo
@@ -266,6 +301,7 @@ share/locale/en_GB/LC_MESSAGES/korganizer_plugins.mo
 share/locale/en_GB/LC_MESSAGES/mailreader.mo
 share/locale/en_GB/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/en_GB/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/en_GB/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/en_GB/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/en_GB/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/en_GB/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -287,6 +323,7 @@ share/locale/es/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/es/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/es/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/es/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/es/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/es/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/es/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/es/LC_MESSAGES/kmail_plugins.mo
@@ -295,6 +332,7 @@ share/locale/es/LC_MESSAGES/korganizer_plugins.mo
 share/locale/es/LC_MESSAGES/mailreader.mo
 share/locale/es/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/es/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/es/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/es/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/es/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/es/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -342,6 +380,7 @@ share/locale/fi/LC_MESSAGES/korganizer_plugins.mo
 share/locale/fi/LC_MESSAGES/mailreader.mo
 share/locale/fi/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/fi/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/fi/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -357,6 +396,7 @@ share/locale/fr/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/fr/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/fr/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/fr/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/fr/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/fr/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/fr/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/fr/LC_MESSAGES/kmail_plugins.mo
@@ -365,6 +405,7 @@ share/locale/fr/LC_MESSAGES/korganizer_plugins.mo
 share/locale/fr/LC_MESSAGES/mailreader.mo
 share/locale/fr/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/fr/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/fr/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/fr/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/fr/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/fr/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -433,6 +474,7 @@ share/locale/it/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/it/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/it/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/it/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/it/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/it/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/it/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/it/LC_MESSAGES/kmail_plugins.mo
@@ -441,6 +483,7 @@ share/locale/it/LC_MESSAGES/korganizer_plugins.mo
 share/locale/it/LC_MESSAGES/mailreader.mo
 share/locale/it/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/it/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/it/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/it/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/it/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/it/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -464,6 +507,7 @@ share/locale/ja/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ja/LC_MESSAGES/mailreader.mo
 share/locale/ja/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ja/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ja/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/ja/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/ja/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ja/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -498,6 +542,7 @@ share/locale/ko/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ko/LC_MESSAGES/mailreader.mo
 share/locale/ko/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ko/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ko/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/ko/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/ko/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ko/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -547,6 +592,7 @@ share/locale/nl/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/nl/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/nl/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/nl/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/nl/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/nl/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/nl/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/nl/LC_MESSAGES/kmail_plugins.mo
@@ -555,6 +601,7 @@ share/locale/nl/LC_MESSAGES/korganizer_plugins.mo
 share/locale/nl/LC_MESSAGES/mailreader.mo
 share/locale/nl/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/nl/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/nl/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -591,6 +638,7 @@ share/locale/pl/LC_MESSAGES/korganizer_plugins.mo
 share/locale/pl/LC_MESSAGES/mailreader.mo
 share/locale/pl/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/pl/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/pl/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -606,6 +654,7 @@ share/locale/pt/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/pt/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/pt/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/pt/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/pt/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/pt/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/pt/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/pt/LC_MESSAGES/kmail_plugins.mo
@@ -614,6 +663,7 @@ share/locale/pt/LC_MESSAGES/korganizer_plugins.mo
 share/locale/pt/LC_MESSAGES/mailreader.mo
 share/locale/pt/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/pt/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/pt/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/pt/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/pt/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/pt/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -624,7 +674,6 @@ share/locale/pt/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/pt/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/pt_BR/LC_MESSAGES/cryptopageplugin.mo
 share/locale/pt_BR/LC_MESSAGES/customtoolsplugin.mo
-share/locale/pt_BR/LC_MESSAGES/importwizard_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/pt_BR/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/kmail_editor_plugins.mo
@@ -675,6 +724,7 @@ share/locale/sk/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/sk/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/sk/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/sk/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/sk/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/sk/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/sk/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/sk/LC_MESSAGES/kmail_plugins.mo
@@ -683,6 +733,7 @@ share/locale/sk/LC_MESSAGES/korganizer_plugins.mo
 share/locale/sk/LC_MESSAGES/mailreader.mo
 share/locale/sk/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/sk/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/sk/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/sk/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/sk/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/sk/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -705,6 +756,7 @@ share/locale/sl/LC_MESSAGES/korganizer_plugins.mo
 share/locale/sl/LC_MESSAGES/mailreader.mo
 share/locale/sl/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/sl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/sl/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/sl/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/sl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/sl/LC_MESSAGES/messageviewerheaderplugins.mo
@@ -726,6 +778,7 @@ share/locale/sr/LC_MESSAGES/korganizer_plugins.mo
 share/locale/sr/LC_MESSAGES/mailreader.mo
 share/locale/sr/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/sr/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/sr/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/sr/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/sr/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/sr/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -741,6 +794,7 @@ share/locale/sv/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/sv/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/sv/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/sv/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/sv/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/sv/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/sv/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/sv/LC_MESSAGES/kmail_plugins.mo
@@ -749,6 +803,7 @@ share/locale/sv/LC_MESSAGES/korganizer_plugins.mo
 share/locale/sv/LC_MESSAGES/mailreader.mo
 share/locale/sv/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/sv/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/sv/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/sv/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/sv/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/sv/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -791,6 +846,7 @@ share/locale/uk/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/uk/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/uk/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/uk/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/uk/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/uk/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/uk/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/uk/LC_MESSAGES/kmail_plugins.mo
@@ -799,6 +855,7 @@ share/locale/uk/LC_MESSAGES/korganizer_plugins.mo
 share/locale/uk/LC_MESSAGES/mailreader.mo
 share/locale/uk/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/uk/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/uk/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/uk/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/uk/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/uk/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -815,6 +872,7 @@ share/locale/zh_CN/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/zh_CN/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/zh_CN/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/zh_CN/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/kmail_plugins.mo
@@ -823,6 +881,7 @@ share/locale/zh_CN/LC_MESSAGES/korganizer_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/mailreader.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/zh_CN/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -848,4 +907,10 @@ share/locale/zh_TW/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewerplugins.mo
 share/locale/zh_TW/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/webengineurlinterceptor.mo
+share/messageviewer/themes/example/header.desktop
+share/messageviewer/themes/example/header.html
+share/messageviewer/themes/example/header_row.html
+share/messageviewer/themes/example_fancy/header.desktop
+share/messageviewer/themes/example_fancy/header.html
+share/messageviewerplugins/externalscriptexample.desktop
 share/mime/packages/application-vnd-apple-pkpass.xml

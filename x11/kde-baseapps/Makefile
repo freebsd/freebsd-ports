@@ -10,8 +10,7 @@ COMMENT=	KDE5 baseapps meta port
 LICENSE=	LGPL20
 
 USES=		kde:5 metaport
-RUN_DEPENDS=	ark>=${KDE_APPLICATIONS_VERSION}:archivers/ark \
-		dolphin>=${KDE_APPLICATIONS_VERSION}:x11-fm/dolphin  \
+RUN_DEPENDS=	dolphin>=${KDE_APPLICATIONS_VERSION}:x11-fm/dolphin  \
 		gwenview>=${KDE_APPLICATIONS_VERSION}:graphics/gwenview \
 		kate>=${KDE_APPLICATIONS_VERSION}:editors/kate \
 		kdialog>=${KDE_APPLICATIONS_VERSION}:sysutils/kdialog \

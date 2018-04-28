@@ -40,7 +40,6 @@ include/KF5/mailtransportakonadi/sentactionattribute.h
 include/KF5/mailtransportakonadi/sentbehaviourattribute.h
 include/KF5/mailtransportakonadi/transportattribute.h
 include/KF5/mailtransportakonadi_version.h
-lib/cmake/KF5MailTransport/FindSasl2.cmake
 lib/cmake/KF5MailTransport/KF5MailTransportConfig.cmake
 lib/cmake/KF5MailTransport/KF5MailTransportConfigVersion.cmake
 lib/cmake/KF5MailTransport/KF5MailTransportTargets-%%CMAKE_BUILD_TYPE%%.cmake

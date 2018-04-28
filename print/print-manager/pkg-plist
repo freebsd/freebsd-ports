@@ -6,9 +6,9 @@ lib/libkcupslib.so
 %%QT_PLUGINDIR%%/kded_printmanager.so
 %%QT_QMLDIR%%/org/kde/plasma/printmanager/libprintmanager.so
 %%QT_QMLDIR%%/org/kde/plasma/printmanager/qmldir
-share/applications/org.kde.AddPrinter.desktop
 share/applications/org.kde.ConfigurePrinter.desktop
 share/applications/org.kde.PrintQueue.desktop
+share/applications/org.kde.kde-add-printer.desktop
 share/knotifications5/printmanager.notifyrc
 share/kservices5/kcm_printer_manager.desktop
 share/kservices5/kded/printmanager.desktop
@@ -108,7 +108,6 @@ share/locale/zh_TW/LC_MESSAGES/print-manager.mo
 share/metainfo/org.kde.plasma.printmanager.appdata.xml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/config.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/CompactRepresentation.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PopupDialog.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PrinterItem.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/StatusView.qml

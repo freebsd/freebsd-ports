@@ -2,7 +2,6 @@
 
 PORTNAME=	okteta
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -20,5 +19,9 @@ USE_QT5=	core dbus designer gui network printsupport script scripttools \
 		widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
+
+# okteta is no longer released as part of KDE Appplications past 17.12.3
+# Until there is a new release, use the last one
+KDE_APPLICATIONS_VERSION=	17.12.3
 
 .include <bsd.port.mk>

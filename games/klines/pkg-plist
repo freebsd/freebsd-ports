@@ -74,3 +74,4 @@ share/locale/ug/LC_MESSAGES/klines.mo
 share/locale/uk/LC_MESSAGES/klines.mo
 share/locale/zh_CN/LC_MESSAGES/klines.mo
 share/locale/zh_TW/LC_MESSAGES/klines.mo
+share/metainfo/org.kde.klines.appdata.xml

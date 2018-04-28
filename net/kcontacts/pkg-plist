@@ -1,3 +1,5 @@
+etc/xdg/kcontacts.categories
+etc/xdg/kcontacts.renamecategories
 include/KF5/KContacts/KContacts/Address
 include/KF5/KContacts/KContacts/Addressee
 include/KF5/KContacts/KContacts/AddresseeList

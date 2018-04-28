@@ -58,3 +58,4 @@ share/locale/ug/LC_MESSAGES/ktimer.mo
 share/locale/uk/LC_MESSAGES/ktimer.mo
 share/locale/zh_CN/LC_MESSAGES/ktimer.mo
 share/locale/zh_TW/LC_MESSAGES/ktimer.mo
+share/metainfo/org.kde.ktimer.appdata.xml

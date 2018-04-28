@@ -94,3 +94,4 @@ share/locale/ug/LC_MESSAGES/kmouth.mo
 share/locale/uk/LC_MESSAGES/kmouth.mo
 share/locale/zh_CN/LC_MESSAGES/kmouth.mo
 share/locale/zh_TW/LC_MESSAGES/kmouth.mo
+share/metainfo/org.kde.kmouth.appdata.xml

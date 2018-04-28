@@ -1,7 +1,8 @@
 bin/konsole
 bin/konsoleprofile
+etc/xdg/konsole.knsrc
 lib/libkdeinit5_konsole.so
-lib/libkonsoleprivate.so.17
+lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/konsolepart.so
 share/applications/org.kde.konsole.desktop

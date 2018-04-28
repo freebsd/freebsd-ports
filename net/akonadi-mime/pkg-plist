@@ -1,3 +1,4 @@
+etc/xdg/akonadi-mime.categories
 include/KF5/Akonadi/KMime/AddressAttribute
 include/KF5/Akonadi/KMime/CommandBase
 include/KF5/Akonadi/KMime/MarkAsCommand
@@ -35,7 +36,9 @@ lib/cmake/KF5AkonadiMime/KF5AkonadiMimeTargets.cmake
 lib/libKF5AkonadiMime.so
 lib/libKF5AkonadiMime.so.5
 lib/libKF5AkonadiMime.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+%%QT_PLUGINDIR%%/akonadi_serializer_mail.so
 %%QT_MKSPECDIR%%/modules/qt_AkonadiMime.pri
+share/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 share/config.kcfg/specialmailcollections.kcfg
 share/locale/ar/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/ast/LC_MESSAGES/libakonadi-kmime5.mo

@@ -72,3 +72,4 @@ share/locale/ug/LC_MESSAGES/kmousetool.mo
 share/locale/uk/LC_MESSAGES/kmousetool.mo
 share/locale/zh_CN/LC_MESSAGES/kmousetool.mo
 share/locale/zh_TW/LC_MESSAGES/kmousetool.mo
+share/metainfo/org.kde.kmousetool.appdata.xml

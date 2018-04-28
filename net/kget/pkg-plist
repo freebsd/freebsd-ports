@@ -252,3 +252,4 @@ share/locale/zh_TW/LC_MESSAGES/kget.mo
 share/locale/zh_TW/LC_MESSAGES/kgetplugin.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_kget.mo
+share/metainfo/org.kde.kget.appdata.xml

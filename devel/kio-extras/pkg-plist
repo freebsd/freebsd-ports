@@ -6,7 +6,7 @@ lib/cmake/KioArchive/KioArchiveTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KioArchive/KioArchiveTargets.cmake
 lib/libkioarchive.so.5
 lib/libkioarchive.so.5.97.0
-lib/libmolletnetwork5.so.17
+lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%TAGLIB%%%%QT_PLUGINDIR%%/audiothumbnail.so
 %%QT_PLUGINDIR%%/comicbookthumbnail.so

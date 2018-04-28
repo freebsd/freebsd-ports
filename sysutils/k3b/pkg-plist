@@ -322,6 +322,7 @@ share/kservices5/videodvd.protocol
 share/kservicetypes5/k3bplugin.desktop
 share/kxmlgui5/k3b/k3bdeviceui.rc
 share/kxmlgui5/k3b/k3bui.rc
+share/locale/ar/LC_MESSAGES/k3b.mo
 share/locale/ast/LC_MESSAGES/k3b.mo
 share/locale/ast/LC_MESSAGES/kio_videodvd.mo
 share/locale/ast/LC_MESSAGES/libk3b.mo

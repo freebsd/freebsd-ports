@@ -19,6 +19,7 @@ share/icons/hicolor/48x48/actions/document-share.png
 share/icons/hicolor/48x48/apps/gwenview.png
 share/icons/hicolor/64x64/actions/document-share.png
 share/icons/hicolor/64x64/apps/gwenview.png
+share/kconf_update/gwenview.upd
 share/kservices5/ServiceMenus/slideshow.desktop
 share/kservices5/gvpart.desktop
 share/kxmlgui5/gvpart/gvpart.rc

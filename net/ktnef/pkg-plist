@@ -1,3 +1,5 @@
+etc/xdg/ktnef.categories
+etc/xdg/ktnef.renamecategories
 include/KF5/KTNEF/KTNEF/Formatter
 include/KF5/KTNEF/KTNEF/KTNEFAttach
 include/KF5/KTNEF/KTNEF/KTNEFDefs

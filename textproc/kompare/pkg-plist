@@ -12,6 +12,7 @@ share/icons/hicolor/22x22/apps/kompare.png
 share/icons/hicolor/32x32/apps/kompare.png
 share/icons/hicolor/48x48/apps/kompare.png
 share/icons/hicolor/scalable/apps/kompare.svgz
+share/kservices5/ServiceMenus/kompare.desktop
 share/kservices5/komparenavtreepart.desktop
 share/kservices5/komparepart.desktop
 share/kservicetypes5/komparenavigationpart.desktop
