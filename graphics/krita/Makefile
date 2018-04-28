@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	krita
-DISTVERSION=	3.3.3
-PORTREVISION=	2
+DISTVERSION=	4.0.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -20,9 +19,11 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libfftw3.so:math/fftw3 \
 		libexiv2.so:graphics/exiv2 \
 		libcurl.so:ftp/curl \
+		libgif.so:graphics/giflib \
 		libgsl.so:math/gsl \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
+		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
 		libraw.so:graphics/libraw \
 		libtiff.so:graphics/tiff \
@@ -30,11 +31,11 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libxcb-util.so:x11/xcb-util
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
-		eigen:3 gettext jpeg kde:5 shared-mime-info
+		eigen:3 gettext jpeg kde:5 pkgconfig shared-mime-info
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
 USE_QT5=	concurrent core dbus gui multimedia network printsupport \
-		quick svg testlib widgets x11extras xml \
+		qml quick svg testlib widgets x11extras xml \
 		buildtools_build qmake_build 
 USE_XORG=	ice sm xcb xext xi
 
