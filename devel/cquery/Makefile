@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cquery
-PORTVERSION=	20180213
+PORTVERSION=	20180302
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -10,10 +10,10 @@ COMMENT=	Highly-scalable, low-latency language server for C/C++/Objective-C
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	llvm-config50:devel/llvm50
-LIB_DEPENDS=	libclang.so:devel/llvm50
+BUILD_DEPENDS=	llvm-config60:devel/llvm60
+LIB_DEPENDS=	libclang.so:devel/llvm60
 
-USES=		waf
+USES=		compiler:c++14-lang waf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cquery-project
@@ -25,7 +25,7 @@ GH_TUPLE=	miloyip:rapidjson:daabb88:rapidjson/third_party/rapidjson \
 
 PLIST_FILES=	bin/cquery
 
-CONFIGURE_ARGS=	--variant=system --llvm-config=${LOCALBASE}/bin/llvm-config50
+CONFIGURE_ARGS=	--variant=system --llvm-config=${LOCALBASE}/bin/llvm-config60
 MAKE_ARGS=	--variant=system
 
 post-install:
