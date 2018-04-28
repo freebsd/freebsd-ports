@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-PORTVERSION=	2.038028
+DISTVERSION=	2.039024
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OLIVER
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Archive-Extract>=0:archivers/p5-Archive-Extract \
 		p5-CGI-Expand>=2.05:www/p5-CGI-Expand \
 		p5-Data-Printer>=0:devel/p5-Data-Printer \
-		p5-DBIx-Class-Helpers>=2.023007:databases/p5-DBIx-Class-Helpers \
+		p5-DBIx-Class-Helpers>=2.033004:databases/p5-DBIx-Class-Helpers \
 		p5-Daemon-Control>=0.001.005:devel/p5-Daemon-Control \
 		p5-Dancer>=1.3132:www/p5-Dancer \
 		p5-Dancer-Plugin-DBIC>=0.2001:databases/p5-Dancer-Plugin-DBIC \
@@ -62,7 +62,8 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Sereal>=0:converters/p5-Sereal \
 		p5-Socket6>=0.23:net/p5-Socket6 \
 		p5-Starman>=0.4008:www/p5-Starman \
-		p5-SNMP-Info>=3.34:net-mgmt/p5-SNMP-Info \
+		p5-Sys-SigAction>=0:devel/p5-Sys-SigAction \
+		p5-SNMP-Info>=3.54:net-mgmt/p5-SNMP-Info \
 		p5-SQL-Translator>=0.11018:databases/p5-SQL-Translator \
 		p5-Template-Toolkit>=2.24:www/p5-Template-Toolkit \
 		p5-Template-Plugin-CSV>=0.04:textproc/p5-Template-Plugin-CSV \
@@ -91,17 +92,16 @@ SUB_LIST=	SITE_PERL=${STAGEDIR}${PREFIX}/${SITE_PERL_REL} \
 		ETCDIR_REL=${ETCDIR_REL}
 PLIST_SUB+=	ETCDIR=${ETCDIR}
 
-NO_ARCH=	yes
 USES=		perl5 pgsql
 USE_PERL5=	modbuild
-
 USE_RC_SUBR=	netdisco
+NO_ARCH=	yes
 
 post-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}/perl5/bin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/perl5/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/localenv ${STAGEDIR}${ETCDIR}/perl5/bin
 	${INSTALL_DATA} ${WRKDIR}/netdiscologs.conf.sample ${STAGEDIR}${ETCDIR}
-	${MKDIR} ${STAGEDIR}${ETCDIR}/environments
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/environments
 	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/auto/share/dist/App-Netdisco/environments/deployment.yml \
 		${STAGEDIR}${ETCDIR}/environments/deployment.yml.sample
 
