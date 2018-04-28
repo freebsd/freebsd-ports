@@ -1,6 +1,8 @@
 # $FreeBSD$
 
 OPTIONS_DEFINE=		\
+	ALEMBIC		\
+	ALEMBIC_HDF5	\
 	AVI		\
 	BULLET 		\
 	CAMERATRACK 	\
@@ -43,6 +45,8 @@ OPTIONS_DEFINE=		\
 	XF86VMODE
 
 OPTIONS_DEFAULT=	\
+	ALEMBIC		\
+	ALEMBIC_HDF5	\
 	AVI		\
 	BULLET		\
 	CAMERATRACK	\
@@ -76,6 +80,8 @@ OPTIONS_DEFAULT=	\
 	XINPUT		\
 	XF86VMODE
 
+ALEMBIC_DESC=		Enable Alembic file support
+ALEMBIC_HDF5_DESC=	Enable Alembic hdf5 file support
 AVI_DESC=		Enable Blender's own AVI file support
 BULLET_DESC=		Bullet physics engine
 CINEON_DESC=		CINEON and DPX graphics format support
