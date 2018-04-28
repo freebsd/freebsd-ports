@@ -42,6 +42,7 @@
     SUBDIR += kaccounts-providers
     SUBDIR += kde-telepathy
     SUBDIR += kmess-kde4
+    SUBDIR += kopete
     SUBDIR += kopete-kde4
     SUBDIR += ktp-accounts-kcm
     SUBDIR += ktp-accounts-kcm-kde4
