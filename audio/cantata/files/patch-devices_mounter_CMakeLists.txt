@@ -1,0 +1,11 @@
+--- devices/mounter/CMakeLists.txt.orig	2018-04-29 14:02:49 UTC
++++ devices/mounter/CMakeLists.txt
+@@ -5,7 +5,7 @@ add_executable( cantata-mounter ${CANTATA_MOUNTER_SRCS
+ install(TARGETS cantata-mounter RUNTIME DESTINATION lib/cantata)
+ configure_file(mpd.cantata.mounter.service.cmake ${CMAKE_CURRENT_BINARY_DIR}/mpd.cantata.mounter.service)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/mpd.cantata.mounter.service DESTINATION ${SHARE_INSTALL_PREFIX}/dbus-1/system-services/ )
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/mpd.cantata.mounter.conf DESTINATION /etc/dbus-1/system.d/ )
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/mpd.cantata.mounter.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/etc/dbus-1/system.d/ )
+ 
+ target_link_libraries(cantata-mounter ${Qt5Core_LIBRARIES} ${Qt5DBus_LIBRARIES})
+ include_directories( ${QTINCLUDES} ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_BINARY_DIR})
