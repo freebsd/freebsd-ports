@@ -6,7 +6,7 @@ bin/emacsclient
 bin/etags
 %%DBUS%%lib/systemd/user/emacs.service
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/hexl
-libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
+%%NO_MAILUTILS%%libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/profile
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/rcs2log
 @(games,games,4555) libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/update-game-score
@@ -1613,8 +1613,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/nadvice.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pcase.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pcase.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pp.el.gz
@@ -1651,6 +1650,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/tcover-unsafep.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/testcover.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/testcover.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/text-property-search.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/text-property-search.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thunk.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thunk.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/timer-list.el.gz
@@ -2902,8 +2903,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/old-emacs-lock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/old-whitespace.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/old-whitespace.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/options.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/options.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/otodo-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/otodo-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/patcomp.el.gz
