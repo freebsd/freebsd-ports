@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	5.0.26
+PORTVERSION=	6.0.6
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
-		ftp://ftp.samurai.com/pub/otrs/ \
-		http://ftp.gwdg.de/pub/misc/otrs/ \
-		http://mirror.xaranet.de/otrs/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Open Ticket Request System
@@ -51,6 +47,11 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe shebangfix perl5 tar:bzip2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	OTRS
+GH_TAGNAME=	51cbe50
+
 SHEBANG_FILES=	bin/cgi-bin/*.pl bin/cgi-bin/app.psgi bin/fcgi-bin/*.pl bin/*.pl \
 		scripts/tools/*.pl scripts/*.pl
 
@@ -84,13 +85,13 @@ PM_DIRS_LIST=	Kernel Kernel/Config Kernel/Config/Files Kernel/Language \
 		System/Crypt System/CustomerAuth System/CustomerUser \
 		System/CustomerUser/ System/
 
-SCRIPTS_DIRS_LIST=	"" database/update test tools
+SCRIPTS_DIRS_LIST=	"" database test tools DBUpdateTo6
 CRON_SCRIPTS=	${STAGEDIR}${OTRSDIR}/var/cron/
 CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-4.0/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
-PLIST_SUB=	VER_CKEDITOR="4.5.6" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
+PLIST_SUB=	VER_CKEDITOR="4.7.0" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
 
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 PGSQL_USES=		pgsql
@@ -158,15 +159,14 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/.*.dist ${STAGEDIR}${OTRSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/RELEASE ${STAGEDIR}${OTRSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/ARCHIVE ${STAGEDIR}${OTRSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.md ${STAGEDIR}${OTRSDIR}/
 .for D in ${BIN_DIRS_LIST}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${D}/*.* ${STAGEDIR}${OTRSDIR}/bin/${D}/
 .endfor
 	(cd ${WRKSRC} && ${PAX} -r -w Kernel var ${STAGEDIR}${OTRSDIR})
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][lh] ${STAGEDIR}${OTRSDIR}/scripts/
 	${INSTALL_DATA} ${WRKSRC}/scripts/apache* \
-		${WRKSRC}/scripts/*.sql ${STAGEDIR}${OTRSDIR}/scripts/
-	${INSTALL_DATA} ${WRKSRC}/scripts/database/update/*.* ${STAGEDIR}${OTRSDIR}/scripts/database/update/
+		${WRKSRC}/scripts/*.[pl][pm] ${STAGEDIR}${OTRSDIR}/scripts/
 	${INSTALL_DATA} ${WRKSRC}/scripts/database/*.* ${STAGEDIR}${OTRSDIR}/scripts/database/
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/test/*.t ${STAGEDIR}${OTRSDIR}/scripts/test/
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/tools/*.pl ${STAGEDIR}${OTRSDIR}/scripts/tools/
