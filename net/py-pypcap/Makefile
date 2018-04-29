@@ -2,23 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	pypcap
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simplified object-oriented Python extension module for libpcap
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Simplified object-oriented Python wrapper for libpcap
 
 LICENSE=	BSD3CLAUSE
 
 USES=		python
-USE_PYTHON=	distutils cython autoplist
-
-pre-build:
-	@cd ${WRKSRC} && cython-${PYTHON_VER} pcap.pyx
+USE_PYTHON=	autoplist distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pcap.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pcap.so
 
 .include <bsd.port.mk>

@@ -1,3 +1,3 @@
-A simplified object-oriented Python extension module for libpcap
+Python PCAP module is a simplified object-oriented wrapper for libpcap.
 
 WWW: https://github.com/pynetwork/pypcap
