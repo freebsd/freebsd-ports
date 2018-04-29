@@ -3,6 +3,7 @@
 
 PORTNAME=	libressl
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -30,6 +31,7 @@ USES=		autoreconf cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
 CFLAGS+=	-fpic -DPIC -Wl,-rpath,${PREFIX}/lib -Wl,--as-needed
+LDFLAGS+=	-lthr
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
