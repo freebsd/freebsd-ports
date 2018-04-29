@@ -1,14 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	viewres
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Graphical class browser for Xt
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	app
-USE_XORG=	xt xaw
+USE_XORG=	x11 xaw xmu xt
 
 PLIST_FILES+=	bin/viewres \
 		man/man1/viewres.1.gz \
