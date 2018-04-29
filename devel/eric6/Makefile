@@ -1,4 +1,5 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
+PORTREVISION=	1
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-${FLAVOR:U:S/_/-/}

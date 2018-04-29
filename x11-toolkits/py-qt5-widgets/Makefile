@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	widgets
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits devel python
 
 MAINTAINER=	kde@FreeBSD.org

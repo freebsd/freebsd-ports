@@ -3,7 +3,7 @@
 
 PORTNAME=	xml
 PORTEPOCH=	1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc devel python
 
 MAINTAINER=	kde@FreeBSD.org
