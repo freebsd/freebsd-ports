@@ -1,0 +1,64 @@
+--- src/racoon/isakmp_var.h.orig	2010-11-12 16:36:37.000000000 +0600
++++ src/racoon/isakmp_var.h	2018-04-27 22:15:58.249644000 +0700
+@@ -128,7 +128,7 @@
+ #endif
+ 
+ extern int copy_ph1addresses __P(( struct ph1handle *,
+-	struct remoteconf *, struct sockaddr *, struct sockaddr *));
++	struct remoteconf *, struct sockaddr *, struct sockaddr *, int));
+ extern void log_ph1established __P((const struct ph1handle *));
+ 
+ extern void script_hook __P((struct ph1handle *, int));
+--- src/racoon/isakmp.c.orig	2018-04-27 22:13:23.465260000 +0700
++++ src/racoon/isakmp.c	2018-04-27 22:20:44.865139000 +0700
+@@ -1075,7 +1075,7 @@ isakmp_ph1begin_i(rmconf, remote, local)
+ 	iph1->approval = NULL;
+ 
+ 	/* XXX copy remote address */
+-	if (copy_ph1addresses(iph1, rmconf, remote, local) < 0) {
++	if (copy_ph1addresses(iph1, rmconf, remote, local, 1) < 0) {
+ 		delph1(iph1);
+ 		return NULL;
+ 	}
+@@ -1190,7 +1190,7 @@ isakmp_ph1begin_r(msg, remote, local, et
+ 
+ 	/* copy remote address; remote and local always contain
+ 	 * port numbers so rmconf is not needed */
+-	if (copy_ph1addresses(iph1, NULL, remote, local) < 0) {
++	if (copy_ph1addresses(iph1, NULL, remote, local, 0) < 0) {
+ 		delph1(iph1);
+ 		return -1;
+ 	}
+@@ -2906,10 +2906,11 @@ isakmp_printpacket(msg, from, my, decode
+ #endif /*HAVE_PRINT_ISAKMP_C*/
+ 
+ int
+-copy_ph1addresses(iph1, rmconf, remote, local)
++copy_ph1addresses(iph1, rmconf, remote, local, initiator)
+ 	struct ph1handle *iph1;
+ 	struct remoteconf *rmconf;
+ 	struct sockaddr *remote, *local;
++	int initiator;
+ {
+ 	u_int16_t port;
+ 
+@@ -2925,7 +2926,7 @@ copy_ph1addresses(iph1, rmconf, remote, 
+ 	 * if remote has port # (in case of responder - from recvfrom(2))
+ 	 * respect content of "remote".
+ 	 */
+-	if (extract_port(iph1->remote) == 0) {
++	if (initiator || extract_port(iph1->remote) == 0) {
+ 		port = 0;
+ 		if (rmconf != NULL)
+ 			port = extract_port(rmconf->remote);
+--- src/racoon/isakmp_inf.c.orig	2018-04-27 22:13:23.482870000 +0700
++++ src/racoon/isakmp_inf.c	2018-04-27 22:21:27.080881000 +0700
+@@ -725,7 +725,7 @@ isakmp_info_send_nx(isakmp, remote, loca
+ #endif
+ 
+ 	/* copy remote address */
+-	if (copy_ph1addresses(iph1, NULL, remote, local) < 0)
++	if (copy_ph1addresses(iph1, NULL, remote, local, 0) < 0)
+ 		goto end;
+ 
+ 	tlen = sizeof(*n) + spisiz;
