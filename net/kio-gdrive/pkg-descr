@@ -1,0 +1,5 @@
+KIO GDrive is a KIO slave that enables KIO-aware applications
+(such as Dolphin, Kate or Gwenview) to access and edit Google 
+Drive files on the cloud. 
+
+WWW: http://www.kde.org/

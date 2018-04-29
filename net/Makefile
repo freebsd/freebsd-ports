@@ -332,6 +332,7 @@
     SUBDIR += kget-kde4
     SUBDIR += kidentitymanagement
     SUBDIR += kimap
+    SUBDIR += kio-gdrive
     SUBDIR += kio-upnp-ms
     SUBDIR += kippo
     SUBDIR += kissd
