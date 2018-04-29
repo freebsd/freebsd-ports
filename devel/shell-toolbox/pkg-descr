@@ -1,0 +1,18 @@
+shell-toolbox is a collection of shell script development tools.
+
+Currently, the only included script is "shell", which is useful for testing
+things in an interactive environment other than your usual shell, or for
+testing things in a clean environment with automatic cleanup of any files left
+behind.
+
+It creates a "temporary interactive shell" with a temporary working directory
+(unless the "-d" flag is used to specify an existing directory) and clean
+environment.  The working directory is removed when the shell exits
+(unless the "-k" or "-d" flag was used).
+
+The temporary working directory may also be pre-populated with the
+contents of an existing directory (using the "-s" flag).
+
+See "man 1 shell" after installation.
+
+WWW: https://github.com/kusalananda/shell-toolbox
