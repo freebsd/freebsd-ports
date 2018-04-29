@@ -1,2 +1,3 @@
-SHA256 (libaccounts-glib-VERSION_1.21-00254a604a7c7bd38c41794a80ad8930e90f21aa.tar.gz) = 27cb75f3f2f0ce736b77f0fd0432f8d565297f0735846a2862577eadaec92488
-SIZE (libaccounts-glib-VERSION_1.21-00254a604a7c7bd38c41794a80ad8930e90f21aa.tar.gz) = 127061
+TIMESTAMP = 1525025366
+SHA256 (KDE/accounts-sso/accounts-sso-libaccounts-glib-00254a604a7c7bd38c41794a80ad8930e90f21aa_GL0.tar.gz) = 63df498a587ae5cce8dca6e6f2a3a453a1c535383d6c57c7d154be35ca619202
+SIZE (KDE/accounts-sso/accounts-sso-libaccounts-glib-00254a604a7c7bd38c41794a80ad8930e90f21aa_GL0.tar.gz) = 126994

@@ -5,9 +5,7 @@ PORTNAME=	libaccounts-glib
 PORTVERSION=	1.21
 PORTREVISION=	1
 CATEGORIES=	net-im
-MASTER_SITES=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/repository/archive${EXTRACT_SUFX}?ref=VERSION_${GL_TAGNAME}&num;/ \
-		LOCAL/rakuco
-DISTNAME=	${GL_PROJECT}-VERSION_${GL_TAGNAME}-${GL_COMMIT}
+DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accounts and SSO framework for Linux and POSIX based platforms
@@ -27,9 +25,8 @@ USE_GNOME=	pygobject3 introspection libxml2
 USE_PYTHON=	py3kplist
 
 # GitLab variables.
+USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
-GL_PROJECT=	${PORTNAME}
-GL_TAGNAME=	${PORTVERSION}
 GL_COMMIT=	00254a604a7c7bd38c41794a80ad8930e90f21aa
 
 pre-configure:

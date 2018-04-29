@@ -1,10 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=	${GL_PROJECT}
+PORTNAME=	telepathy-accounts-signon
 PORTVERSION=	1.0
 CATEGORIES=	net-im
-MASTER_SITES=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/repository/archive${EXTRACT_SUFX}?ref=${GL_TAGNAME}&num;/ \
-		LOCAL/tcberner/${GL_ACCOUNT}/
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,10 +21,9 @@ USE_QT5=	buildtools_build core qmake_build
 USE_LDCONFIG=	YES
 
 # gitlab variables
+USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
-GL_PROJECT=	telepathy-accounts-signon
-GL_TAGNAME=	f01a6d9eccad24a3cb4a5300fb0ae0fd426cc815
-WRKSRC=		${WRKDIR}/${GL_PROJECT}-${GL_TAGNAME}-${GL_TAGNAME}
+GL_COMMIT=	f01a6d9eccad24a3cb4a5300fb0ae0fd426cc815
 
 PLIST_FILES=	lib/mission-control-plugins.0/mcp-account-manager-accounts-sso.so
 

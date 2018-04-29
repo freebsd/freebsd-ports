@@ -4,6 +4,7 @@ PORTNAME=	signon-plugin-oauth2
 DISTVERSION=	0.24
 CATEGORIES=	sysutils kde
 DISTNAME=	archive
+DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Signon OAuth 1.0 and 2.0 plugin for accounts-sso
