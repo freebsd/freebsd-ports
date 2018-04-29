@@ -1,0 +1,7 @@
+bin/shell
+man/man1/shell.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/shell.md
+%%PORTDOCS%%%%DOCSDIR%%/shell.txt
