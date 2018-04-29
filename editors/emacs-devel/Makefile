@@ -3,7 +3,6 @@
 
 PORTNAME=	emacs
 DISTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 PKGNAMESUFFIX=	-devel
@@ -27,7 +26,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags makeinfo ncurses \
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	d599dce
+GH_TAGNAME=	bcee160
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gameuser=games:games
@@ -179,7 +178,7 @@ USES+=			desktop-file-utils
 .endif
 
 EMACS_VER=	27.0.50
-EMACS_REV=	20180220
+EMACS_REV=	20180428
 
 .include <bsd.port.options.mk>
 
