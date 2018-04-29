@@ -87,6 +87,7 @@
     SUBDIR += py-astLib
     SUBDIR += py-astropy
     SUBDIR += py-horoscopegenerator
+    SUBDIR += py-metar
     SUBDIR += py-metpy
     SUBDIR += py-pymetar
     SUBDIR += py-pywapi
