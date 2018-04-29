@@ -329,6 +329,7 @@
     SUBDIR += gbottler
     SUBDIR += gbrainy
     SUBDIR += gcompris
+    SUBDIR += gcompris-qt
     SUBDIR += gdado
     SUBDIR += gemdropx
     SUBDIR += gemrb
