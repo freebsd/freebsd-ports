@@ -1,0 +1,12 @@
+Metar is a python package for interpreting METAR and SPECI weather reports.
+
+This module extracts the data recorded in the main-body groups of reports that
+follow the WMO spec or the US conventions, except for the runway state and trend
+groups, which are parsed but ignored. The most useful remark groups defined in
+the US spec are parsed, as well, such as the cumulative precipitation, min/max
+temperature, peak wind and sea-level pressure groups. No other regional
+conventions are formally supported, but a large number of variant formats found
+in international reports are accepted.
+
+WWW: https://pypi.org/project/metar/
+WWW: https://github.com/tomp/python-metar
