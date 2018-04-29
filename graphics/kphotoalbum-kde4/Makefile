@@ -3,10 +3,11 @@
 
 PORTNAME=	kphotoalbum
 PORTVERSION=	4.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
+PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and organizer for KDE
@@ -30,5 +31,7 @@ MARBLE_CMAKE_OFF=	-DWITH_Marble:BOOL=Off
 
 NLS_USES=	gettext
 NLS_CMAKE_OFF=	-DBUILD_po:BOOL=Off
+
+CONFLICTS_INSTALL=	${PORTNAME}-5.*
 
 .include <bsd.port.mk>
