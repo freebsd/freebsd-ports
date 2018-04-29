@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.lemis.com/pub/
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	Utility to set title on an xterm
 
+LICENSE=	NONE
+
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/xtset man/man1/xtset.1.gz
