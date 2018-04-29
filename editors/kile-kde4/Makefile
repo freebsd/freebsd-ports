@@ -24,4 +24,6 @@ OPTIONS_DEFINE=	OKULAR
 OKULAR_DESC=	Use Okular for viewing
 OKULAR_USE=	KDE=okular_run
 
+PORTSCOUT=	limit:2\.1.*
+
 .include <bsd.port.mk>
