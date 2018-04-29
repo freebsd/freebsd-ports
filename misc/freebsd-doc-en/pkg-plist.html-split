@@ -18,7 +18,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/trademarks.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/ar01s13.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/archs.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/benefits.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/bugzilla.html
@@ -35,6 +34,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/non-committers.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/people.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/pgpkeys.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/phabricator.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/ports.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/pref-license.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/rules.html
@@ -457,7 +457,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kernelbuild.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-console.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-dcons.html
-%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-ddd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-deadlocks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-gdb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-online-ddb.html

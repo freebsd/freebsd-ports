@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-doc-all
-PORTVERSION=	51513
+PORTVERSION=	51585
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 
