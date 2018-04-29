@@ -1,17 +1,17 @@
---- CMakeLists.txt.orig	2016-09-16 19:00:17 UTC
+--- CMakeLists.txt.orig	2018-04-08 06:26:10 UTC
 +++ CMakeLists.txt
 @@ -759,11 +759,11 @@ set ( CGAL_INSTALL_CMAKE_DIR "${CGAL_INS
    CACHE STRING "The folder where CGAL CMake modules will be installed, relative to CMAKE_INSTALL_PREFIX" 
    )
  
--set ( CGAL_INSTALL_DOC_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/doc/${CGAL_VERSION_DIR}"
+-set ( CGAL_INSTALL_DOC_DIR "${CMAKE_INSTALL_DATAROOTDIR}/doc/${CGAL_VERSION_DIR}"
 -  CACHE STRING "The folder where CGAL documentation and license files will be installed, relative to CMAKE_INSTALL_PREFIX"
 -  )
-+# set ( CGAL_INSTALL_DOC_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/doc/${CGAL_VERSION_DIR}"
-+#  CACHE STRING "The folder where CGAL documentation and license files will be installed, relative to CMAKE_INSTALL_PREFIX"
-+#  )
++# set ( CGAL_INSTALL_DOC_DIR "${CMAKE_INSTALL_DATAROOTDIR}/doc/${CGAL_VERSION_DIR}"
++#   CACHE STRING "The folder where CGAL documentation and license files will be installed, relative to CMAKE_INSTALL_PREFIX"
++#   )
  
--set ( CGAL_INSTALL_MAN_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/man/man1"
+-set ( CGAL_INSTALL_MAN_DIR "${CMAKE_INSTALL_DATAROOTDIR}/man/man1"
 +set ( CGAL_INSTALL_MAN_DIR "man/man1"
    CACHE STRING "The folder where manual pages for CGAL scripts will be installed, relative to CMAKE_INSTALL_PREFIX"
    )
