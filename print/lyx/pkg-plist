@@ -249,7 +249,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/doc/sv/Shortcuts.lyx
 %%DATADIR%%/doc/sv/Tutorial.lyx
 %%DATADIR%%/doc/uk/Intro.lyx
-%%DATADIR%%/doc/uk/clipart/Footnote.png
+%%DATADIR%%/doc/uk/clipart/footnote.png
 %%DATADIR%%/doc/zh_CN/Intro.lyx
 %%DATADIR%%/doc/zh_CN/Tutorial.lyx
 %%DATADIR%%/encodings
@@ -2428,6 +2428,9 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/lyx2lyx/lyx_2_2.py
 %%DATADIR%%/lyx2lyx/lyx_2_2.pyc
 %%DATADIR%%/lyx2lyx/lyx_2_2.pyo
+%%DATADIR%%/lyx2lyx/lyx_2_3.py
+%%DATADIR%%/lyx2lyx/lyx_2_3.pyc
+%%DATADIR%%/lyx2lyx/lyx_2_3.pyo
 %%DATADIR%%/lyx2lyx/parser_tools.py
 %%DATADIR%%/lyx2lyx/parser_tools.pyc
 %%DATADIR%%/lyx2lyx/parser_tools.pyo
