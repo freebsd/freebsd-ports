@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	network
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net devel python
 

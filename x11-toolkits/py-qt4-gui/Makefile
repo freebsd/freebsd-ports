@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gui
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits devel python
 

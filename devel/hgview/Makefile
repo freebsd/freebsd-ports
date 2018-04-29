@@ -3,7 +3,7 @@
 
 PORTNAME=	hgview
 PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP \
 		http://download.logilab.org/pub/${PORTNAME}/
