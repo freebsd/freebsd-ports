@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keras
-DISTVERSION=	2.1.5
+DISTVERSION=	2.1.6
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python
 USE_GITHUB=	yes
-GH_ACCOUNT=	fchollet
+GH_ACCOUNT=	keras-team
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
