@@ -1,3 +1,3 @@
-TIMESTAMP = 1486501812
-SHA256 (KDE/accounts-sso/signon-8.58.tar.bz2) = 83d15ac2237b6d16296d02e94194bed4a72e43fc30d1c74dbe8c543e42e5ed86
-SIZE (KDE/accounts-sso/signon-8.58.tar.bz2) = 199717
+TIMESTAMP = 1521876255
+SHA256 (KDE/accounts-sso/accounts-sso-signond-aa1bcf3c9218addbdb376a40151b689409046125_GL0.tar.gz) = 764aa2b1481785f847d4b299a974a885615280d2daaf7fc39b93b81e17a900f3
+SIZE (KDE/accounts-sso/accounts-sso-signond-aa1bcf3c9218addbdb376a40151b689409046125_GL0.tar.gz) = 277074

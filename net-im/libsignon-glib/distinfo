@@ -1,3 +1,3 @@
-TIMESTAMP = 1470555249
-SHA256 (KDE/accounts-sso/libsignon-glib-1.14.tar.bz2) = ec49dd2680ff07211e51745eccfc2b5e14452480e1d340eb76b93d54a0c2cede
-SIZE (KDE/accounts-sso/libsignon-glib-1.14.tar.bz2) = 44488
+TIMESTAMP = 1521876594
+SHA256 (KDE/accounts-sso/accounts-sso-libsignon-glib-4e85baaf483268d04bbf835bebeac4ae30c7c327_GL0.tar.gz) = fea04d2cb4e59b9322226ba532e1600c23f817ee409d3c6ec0b7659aec1840a7
+SIZE (KDE/accounts-sso/accounts-sso-libsignon-glib-4e85baaf483268d04bbf835bebeac4ae30c7c327_GL0.tar.gz) = 54781

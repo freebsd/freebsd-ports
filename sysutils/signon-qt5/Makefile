@@ -3,8 +3,6 @@
 PORTNAME=	signon
 PORTVERSION=	8.58
 CATEGORIES=	sysutils kde
-MASTER_SITES=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/repository/archive${EXTRACT_SUFX}?ref=${GL_TAGNAME}&num;/ \
-		LOCAL/tcberner/${GL_ACCOUNT}/
 PKGNAMESUFFIX=	-qt5
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
@@ -19,10 +17,10 @@ USE_QT5=	core dbus gui network sql testlib xml \
 		buildtools_build qmake_build
 
 # gitlab variables
+USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
 GL_PROJECT=	signond
-GL_TAGNAME=	aa1bcf3c9218addbdb376a40151b689409046125
-WRKSRC=		${WRKDIR}/${GL_PROJECT}-${GL_TAGNAME}-${GL_TAGNAME}
+GL_COMMIT=	aa1bcf3c9218addbdb376a40151b689409046125
 
 pre-configure:
 	#make it find qdbusxml2ccp (as ${QT_BINDIR} is not in PATH)
