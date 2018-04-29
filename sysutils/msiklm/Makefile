@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	msiklm
-DISTVERSION=	g20180227
+DISTVERSION=	g20180428
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -20,17 +20,20 @@ DOS2UNIX_FILES=	README.md
 USE_GITHUB=	yes
 GH_ACCOUNT=	Gibtnix
 GH_PROJECT=	MSIKLM
-GH_TAGNAME=	46dd076
+GH_TAGNAME=	1abdaf5
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-PLIST_FILES=	bin/msiklm
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		DEVD DOCS
-OPTIONS_DEFAULT=	DEVD
+OPTIONS_DEFINE=		DEVD DOCS SUID
+OPTIONS_DEFAULT=	DEVD SUID
 
 DEVD_PLIST_FILES=	etc/devd/msiklm.conf.sample
 DEVD_SUB_FILES=		msiklm.conf.sample pkg-message
+
+SUID_DESC=		Install msiklm with the setuid bit set
+SUID_PLIST_FILES=	"@(,,4555) bin/msiklm"
+SUID_PLIST_FILES_OFF=	bin/msiklm
 
 post-install-DEVD-on:
 	${INSTALL_DATA} ${WRKDIR}/msiklm.conf.sample ${STAGEDIR}${PREFIX}/etc/devd
