@@ -1,6 +1,9 @@
---- data/pysolfc.glade.orig	1970-01-01 01:00:00.000000000 +0100
-+++ data/pysolfc.glade	2009-03-13 16:35:46.000000000 +0100
-@@ -0,0 +1,4427 @@
+--- data/pysolfc.glade.orig	2012-03-09 09:50:24 UTC
++++ data/pysolfc.glade
+@@ -4425,3 +4425,4430 @@
+ </widget>
+ 
+ </glade-interface>
 +<?xml version="1.0" standalone="no"?> <!--*- mode: xml -*-->
 +<!DOCTYPE glade-interface SYSTEM "http://glade.gnome.org/glade-2.0.dtd">
 +
