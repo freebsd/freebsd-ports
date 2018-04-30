@@ -137,6 +137,7 @@ bin/icingacli
 %%WWWDIR%%/application/views/scripts/dashboard/new-dashlet.phtml
 %%WWWDIR%%/application/views/scripts/dashboard/remove-dashlet.phtml
 %%WWWDIR%%/application/views/scripts/dashboard/remove-pane.phtml
+%%WWWDIR%%/application/views/scripts/dashboard/rename-pane.phtml
 %%WWWDIR%%/application/views/scripts/dashboard/settings.phtml
 %%WWWDIR%%/application/views/scripts/dashboard/update-dashlet.phtml
 %%WWWDIR%%/application/views/scripts/error/error.phtml
@@ -211,6 +212,7 @@ bin/icingacli
 %%WWWDIR%%/library/Icinga/Application/Config.php
 %%WWWDIR%%/library/Icinga/Application/EmbeddedWeb.php
 %%WWWDIR%%/library/Icinga/Application/Hook.php
+%%WWWDIR%%/library/Icinga/Application/Hook/AuthenticationHook.php
 %%WWWDIR%%/library/Icinga/Application/Hook/GrapherHook.php
 %%WWWDIR%%/library/Icinga/Application/Hook/Ticket/TicketPattern.php
 %%WWWDIR%%/library/Icinga/Application/Hook/TicketHook.php
@@ -2073,6 +2075,7 @@ bin/icingacli
 %%WWWDIR%%/modules/monitoring/public/css/tables.less
 %%WWWDIR%%/modules/monitoring/public/js/module.js
 %%WWWDIR%%/modules/monitoring/test/php/application/views/helpers/MonitoringFlagsTest.php
+%%WWWDIR%%/modules/monitoring/test/php/application/views/helpers/PluginOutputTest.php
 %%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Object/MacroTest.php
 %%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataSetTest.php
 %%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php
@@ -2302,6 +2305,7 @@ bin/icingacli
 %%WWWDIR%%/public/js/icinga/behavior/detach.js
 %%WWWDIR%%/public/js/icinga/behavior/dropdown.js
 %%WWWDIR%%/public/js/icinga/behavior/expandable.js
+%%WWWDIR%%/public/js/icinga/behavior/filtereditor.js
 %%WWWDIR%%/public/js/icinga/behavior/flyover.js
 %%WWWDIR%%/public/js/icinga/behavior/form.js
 %%WWWDIR%%/public/js/icinga/behavior/navigation.js
