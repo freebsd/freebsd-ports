@@ -23,6 +23,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/bargame_2players.rcc
 %%DATADIR%%/rcc/braille_alphabets.rcc
 %%DATADIR%%/rcc/braille_fun.rcc
+%%DATADIR%%/rcc/calendar.rcc
 %%DATADIR%%/rcc/canal_lock.rcc
 %%DATADIR%%/rcc/categorization.rcc
 %%DATADIR%%/rcc/checkers.rcc
@@ -42,6 +43,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/core.rcc
 %%DATADIR%%/rcc/crane.rcc
 %%DATADIR%%/rcc/details.rcc
+%%DATADIR%%/rcc/digital_electricity.rcc
 %%DATADIR%%/rcc/drawletters.rcc
 %%DATADIR%%/rcc/drawnumbers.rcc
 %%DATADIR%%/rcc/enumerate.rcc
@@ -52,7 +54,10 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/explore_monuments.rcc
 %%DATADIR%%/rcc/explore_world_animals.rcc
 %%DATADIR%%/rcc/explore_world_music.rcc
+%%DATADIR%%/rcc/family.rcc
+%%DATADIR%%/rcc/family_find_relative.rcc
 %%DATADIR%%/rcc/fifteen.rcc
+%%DATADIR%%/rcc/find_the_day.rcc
 %%DATADIR%%/rcc/followline.rcc
 %%DATADIR%%/rcc/football.rcc
 %%DATADIR%%/rcc/geo-country.rcc
@@ -85,6 +90,8 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/mazeinvisible.rcc
 %%DATADIR%%/rcc/mazerelative.rcc
 %%DATADIR%%/rcc/melody.rcc
+%%DATADIR%%/rcc/memory-case-association-tux.rcc
+%%DATADIR%%/rcc/memory-case-association.rcc
 %%DATADIR%%/rcc/memory-enumerate.rcc
 %%DATADIR%%/rcc/memory-math-add-minus-mult-div-tux.rcc
 %%DATADIR%%/rcc/memory-math-add-minus-mult-div.rcc
@@ -135,6 +142,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/simplepaint.rcc
 %%DATADIR%%/rcc/smallnumbers.rcc
 %%DATADIR%%/rcc/smallnumbers2.rcc
+%%DATADIR%%/rcc/submarine.rcc
 %%DATADIR%%/rcc/sudoku.rcc
 %%DATADIR%%/rcc/superbrain.rcc
 %%DATADIR%%/rcc/tangram.rcc
@@ -161,6 +169,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/translations/gcompris_et.qm
 %%DATADIR%%/translations/gcompris_fi.qm
 %%DATADIR%%/translations/gcompris_fr.qm
+%%DATADIR%%/translations/gcompris_ga.qm
 %%DATADIR%%/translations/gcompris_gd.qm
 %%DATADIR%%/translations/gcompris_gl.qm
 %%DATADIR%%/translations/gcompris_hi.qm
