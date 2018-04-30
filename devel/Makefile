@@ -1266,6 +1266,7 @@
     SUBDIR += kdesdk-strigi-analyzers-kde4
     SUBDIR += kdesdk-thumbnailers
     SUBDIR += kdesdk-thumbnailers-kde4
+    SUBDIR += kdesvn
     SUBDIR += kdesvn-kde4
     SUBDIR += kdev-php
     SUBDIR += kdev-python
