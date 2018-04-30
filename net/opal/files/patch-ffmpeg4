@@ -1,0 +1,262 @@
+h263-1998.cxx:237:22: error: use of undeclared identifier 'CODEC_FLAG_TRUNCATED'
+  m_context->flags = CODEC_FLAG_TRUNCATED  // Possible missing packets
+                     ^
+h263-1998.cxx:346:27: error: use of undeclared identifier 'CODEC_FLAG_AC_PRED'
+      m_context->flags |= CODEC_FLAG_AC_PRED;
+                          ^
+h263-1998.cxx:348:28: error: use of undeclared identifier 'CODEC_FLAG_AC_PRED'
+      m_context->flags &= ~CODEC_FLAG_AC_PRED;
+                           ^
+h263-1998.cxx:356:27: error: use of undeclared identifier 'CODEC_FLAG_LOOP_FILTER'
+      m_context->flags |= CODEC_FLAG_LOOP_FILTER;
+                          ^
+h263-1998.cxx:358:28: error: use of undeclared identifier 'CODEC_FLAG_LOOP_FILTER'
+      m_context->flags &= ~CODEC_FLAG_LOOP_FILTER;
+                           ^
+h263-1998.cxx:422:14: error: no member named 'lmin' in 'AVCodecContext'; did you mean 'qmin'?
+  m_context->lmin = m_context->qmin * FF_QP2LAMBDA;
+             ^~~~
+             qmin
+/usr/local/include/libavcodec/avcodec.h:2355:9: note: 'qmin' declared here
+    int qmin;
+        ^
+h263-1998.cxx:423:14: error: no member named 'lmax' in 'AVCodecContext'; did you mean 'qmax'?
+  m_context->lmax = m_context->qmax * FF_QP2LAMBDA;
+             ^~~~
+             qmax
+/usr/local/include/libavcodec/avcodec.h:2362:9: note: 'qmax' declared here
+    int qmax;
+        ^
+h263-1998.cxx:598:24: error: use of undeclared identifier 'CODEC_FLAG_4MV'
+  m_context->flags &= ~CODEC_FLAG_4MV;
+                       ^
+
+rfc2429.cxx:289:55: error: use of undeclared identifier 'FF_INPUT_BUFFER_PADDING_SIZE'
+  memset (m_encodedFrame.ptr + m_encodedFrame.pos,0 , FF_INPUT_BUFFER_PADDING_SIZE);
+                                                      ^
+rfc2429.cxx:343:79: error: use of undeclared identifier 'FF_INPUT_BUFFER_PADDING_SIZE'
+  if ((m_encodedFrame.pos + (headerP ? 2 : 0) + remBytes) > (m_maxFrameSize - FF_INPUT_BUFFER_PADDING_SIZE)) {
+                                                                              ^
+rfc2429.cxx:346:80: error: use of undeclared identifier 'FF_INPUT_BUFFER_PADDING_SIZE'
+         << " bytes while maximum frame size is  " << m_maxFrameSize << "-" << FF_INPUT_BUFFER_PADDING_SIZ...
+                                                                               ^
+h264-x264.cxx:1079:27: error: use of undeclared identifier 'CODEC_FLAG2_DROP_FRAME_TIMECODE'
+      m_context->flags2 = CODEC_FLAG2_DROP_FRAME_TIMECODE |
+                          ^
+h264-x264.cxx:1081:27: error: use of undeclared identifier 'CODEC_FLAG2_CHUNKS'
+                          CODEC_FLAG2_CHUNKS;
+                          ^
+mpeg4.cxx:551:18: error: no member named 'rc_eq' in 'AVCodecContext'
+    m_avcontext->rc_eq = (char*) "1";
+    ~~~~~~~~~~~  ^
+mpeg4.cxx:556:18: error: no member named 'rc_initial_cplx' in 'AVCodecContext'
+    m_avcontext->rc_initial_cplx = 0.0f;
+    ~~~~~~~~~~~  ^
+mpeg4.cxx:563:18: error: no member named 'rc_buffer_aggressivity' in 'AVCodecContext'
+    m_avcontext->rc_buffer_aggressivity = 1.0f;
+    ~~~~~~~~~~~  ^
+mpeg4.cxx:597:25: error: use of undeclared identifier 'CODEC_FLAG_AC_PRED'
+    m_avcontext->flags|=CODEC_FLAG_AC_PRED;
+                        ^
+mpeg4.cxx:600:25: error: use of undeclared identifier 'CODEC_FLAG_4MV'
+    m_avcontext->flags|=CODEC_FLAG_4MV;
+                        ^
+mpeg4.cxx:601:25: error: use of undeclared identifier 'CODEC_FLAG_LOOP_FILTER'
+    m_avcontext->flags|=CODEC_FLAG_LOOP_FILTER;
+                        ^
+mpeg4.cxx:639:18: error: no member named 'lmin' in 'AVCodecContext'; did you mean 'qmin'?
+    m_avcontext->lmin = m_avcontext->qmin * FF_QP2LAMBDA;
+                 ^~~~
+                 qmin
+/usr/local/include/libavcodec/avcodec.h:2355:9: note: 'qmin' declared here
+    int qmin;
+        ^
+mpeg4.cxx:640:18: error: no member named 'lmax' in 'AVCodecContext'; did you mean 'qmax'?
+    m_avcontext->lmax = m_avcontext->qmax * FF_QP2LAMBDA;
+                 ^~~~
+                 qmax
+/usr/local/include/libavcodec/avcodec.h:2362:9: note: 'qmax' declared here
+    int qmax;
+        ^
+mpeg4.cxx:668:49: error: use of undeclared identifier 'FF_INPUT_BUFFER_PADDING_SIZE'
+    m_rawFrameBuffer = new BYTE[m_rawFrameLen + FF_INPUT_BUFFER_PADDING_SIZE];
+                                                ^
+mpeg4.cxx:678:49: error: use of undeclared identifier 'FF_INPUT_BUFFER_PADDING_SIZE'
+    memset(m_rawFrameBuffer + m_rawFrameLen, 0, FF_INPUT_BUFFER_PADDING_SIZE);
+                                                ^
+mpeg4.cxx:1329:27: error: use of undeclared identifier 'CODEC_FLAG_4MV'
+    m_avcontext->flags |= CODEC_FLAG_4MV;
+                          ^
+
+--- plugins/video/H.263-1998/h263-1998.cxx.orig
++++ plugins/video/H.263-1998/h263-1998.cxx
+@@ -234,7 +234,7 @@ bool H263_Base_EncoderContext::Init(AVCodecID codecId)
+ 
+   m_context->opaque = this;
+ 
+-  m_context->flags = CODEC_FLAG_TRUNCATED  // Possible missing packets
++  m_context->flags = AV_CODEC_FLAG_TRUNCATED  // Possible missing packets
+                    ;
+ 
+   m_context->pix_fmt = AV_PIX_FMT_YUV420P;
+@@ -343,9 +343,9 @@ void H263_Base_EncoderContext::SetOption(const char * 
+     // Level 3+
+     // works with eyeBeam
+     if (atoi(value) == 1)
+-      m_context->flags |= CODEC_FLAG_AC_PRED; 
++      m_context->flags |= AV_CODEC_FLAG_AC_PRED; 
+     else
+-      m_context->flags &= ~CODEC_FLAG_AC_PRED; 
++      m_context->flags &= ~AV_CODEC_FLAG_AC_PRED; 
+     return;
+   }
+ 
+@@ -353,9 +353,9 @@ void H263_Base_EncoderContext::SetOption(const char * 
+     // Annex J: Deblocking Filter
+     // works with eyeBeam
+     if (atoi(value) == 1)
+-      m_context->flags |= CODEC_FLAG_LOOP_FILTER; 
++      m_context->flags |= AV_CODEC_FLAG_LOOP_FILTER; 
+     else
+-      m_context->flags &= ~CODEC_FLAG_LOOP_FILTER; 
++      m_context->flags &= ~AV_CODEC_FLAG_LOOP_FILTER; 
+     return;
+   }
+ 
+@@ -419,8 +419,8 @@ bool H263_Base_EncoderContext::OpenCodec()
+   m_context->qcompress = 0.5;               // qscale factor between easy & hard scenes (0.0-1.0)
+ 
+   // Lagrange multipliers - this is how the context defaults do it:
+-  m_context->lmin = m_context->qmin * FF_QP2LAMBDA;
+-  m_context->lmax = m_context->qmax * FF_QP2LAMBDA; 
++  av_opt_set_int(m_context, "lmin", m_context->qmin * FF_QP2LAMBDA, 0);
++  av_opt_set_int(m_context, "lmax", m_context->qmax * FF_QP2LAMBDA, 0);
+ 
+   // YUV420P input
+   m_inputFrame->linesize[0] = m_context->width;
+@@ -595,7 +595,7 @@ bool H263_RFC2190_EncoderContext::Init()
+   m_context->opaque = this; // used to separate out packets from different encode threads
+ 
+   av_opt_set_int(m_context->priv_data, "umv", 0, 0);
+-  m_context->flags &= ~CODEC_FLAG_4MV;
++  m_context->flags &= ~AV_CODEC_FLAG_4MV;
+ #if LIBAVCODEC_RTP_MODE
+   m_context->flags &= ~CODEC_FLAG_H263P_AIC;
+ #endif
+--- plugins/video/H.263-1998/rfc2429.cxx.orig
++++ plugins/video/H.263-1998/rfc2429.cxx
+@@ -286,7 +286,7 @@ bool RFC2429Frame::GetPacket(RTPFrame & frame, unsigne
+ 
+ unsigned char * RFC2429Frame::GetBuffer()
+ {
+-  memset (m_encodedFrame.ptr + m_encodedFrame.pos,0 , FF_INPUT_BUFFER_PADDING_SIZE);
++  memset (m_encodedFrame.ptr + m_encodedFrame.pos,0 , AV_INPUT_BUFFER_PADDING_SIZE);
+   return (m_encodedFrame.ptr);
+ }
+ 
+@@ -340,10 +340,10 @@ bool RFC2429Frame::AddPacket(const RTPFrame & packet)
+ 
+   unsigned remBytes = packet.GetPayloadSize() - headerPLEN - (headerV ? 3 : 2);
+ 
+-  if ((m_encodedFrame.pos + (headerP ? 2 : 0) + remBytes) > (m_maxFrameSize - FF_INPUT_BUFFER_PADDING_SIZE)) {
++  if ((m_encodedFrame.pos + (headerP ? 2 : 0) + remBytes) > (m_maxFrameSize - AV_INPUT_BUFFER_PADDING_SIZE)) {
+     PTRACE(2, "H.263-RFC2429", "Trying to add " << remBytes 
+          << " bytes to frame at position " << m_encodedFrame.pos + (headerP ? 2 : 0) 
+-         << " bytes while maximum frame size is  " << m_maxFrameSize << "-" << FF_INPUT_BUFFER_PADDING_SIZE << " bytes");
++         << " bytes while maximum frame size is  " << m_maxFrameSize << "-" << AV_INPUT_BUFFER_PADDING_SIZE << " bytes");
+     return false;
+   }
+ 
+--- plugins/video/H.264/h264-x264.cxx.orig
++++ plugins/video/H.264/h264-x264.cxx
+@@ -1076,9 +1076,9 @@ class MyDecoder : public PluginCodec<MY_CODEC>
+       m_context->workaround_bugs = FF_BUG_AUTODETECT;
+       m_context->idct_algo = FF_IDCT_H264;
+       m_context->error_concealment = FF_EC_GUESS_MVS | FF_EC_DEBLOCK;
+-      m_context->flags2 = CODEC_FLAG2_DROP_FRAME_TIMECODE |
++      m_context->flags2 = AV_CODEC_FLAG2_DROP_FRAME_TIMECODE |
+                           CODEC_FLAG2_SKIP_RD |
+-                          CODEC_FLAG2_CHUNKS;
++                          AV_CODEC_FLAG2_CHUNKS;
+ 
+       if ((m_picture = FFMPEGLibraryInstance.AvcodecAllocFrame()) == NULL)
+         return false;
+--- plugins/video/MPEG4-ffmpeg/mpeg4.cxx.orig
++++ plugins/video/MPEG4-ffmpeg/mpeg4.cxx
+@@ -548,19 +548,19 @@ void MPEG4EncoderContext::SetStaticEncodingParams(){
+     // Reduce the difference in quantization between frames.
+     m_avcontext->qblur = 0.3f;
+     // default is tex^qComp; 1 is constant bitrate
+-    m_avcontext->rc_eq = (char*) "1";
+-    //avcontext->rc_eq = "tex^qComp";
++    av_opt_set(m_avcontext, "rc_eq", (char*) "1", 0);
++    //av_opt_set(m_avcontext, "rc_eq", "tex^qComp", 0);
+     // These ones technically could be dynamic, I think
+     m_avcontext->rc_min_rate = 0;
+     // This is set to 0 in ffmpeg.c, the command-line utility.
+-    m_avcontext->rc_initial_cplx = 0.0f;
++    av_opt_set_double(m_avcontext, "rc_initial_cplx", 0.0f, 0);
+ 
+     // And this is set to 1.
+     // It seems to affect how aggressively the library will raise and lower
+     // quantization to keep bandwidth constant. Except it's in reference to
+     // the "vbv buffer", not bits per second, so nobody really knows how
+     // it works.
+-    m_avcontext->rc_buffer_aggressivity = 1.0f;
++    av_opt_set_double(m_avcontext, "rc_buffer_aggressivity", 1.0f, 0);
+ 
+     // Ratecontrol buffer size, in bits. Usually 0.5-1 second worth.
+     // 224 kbyte is what VLC uses, and it seems to fix the quantization pulse (at Level 5)
+@@ -594,11 +594,11 @@ void MPEG4EncoderContext::SetStaticEncodingParams(){
+     m_avcontext->flags |= CODEC_FLAG_4MV;    // 4 motion vectors
+ #else
+     m_avcontext->max_b_frames=0; /*don't use b frames*/
+-    m_avcontext->flags|=CODEC_FLAG_AC_PRED;
++    m_avcontext->flags|=AV_CODEC_FLAG_AC_PRED;
+     av_opt_set_int(m_avcontext->priv_data, "umv", 1, 0);
+     /*c->flags|=CODEC_FLAG_QPEL;*/ /*don't enable this one: this forces profile_level to advanced simple profile */
+-    m_avcontext->flags|=CODEC_FLAG_4MV;
+-    m_avcontext->flags|=CODEC_FLAG_LOOP_FILTER;
++    m_avcontext->flags|=AV_CODEC_FLAG_4MV;
++    m_avcontext->flags|=AV_CODEC_FLAG_LOOP_FILTER;
+     av_opt_set_int(m_avcontext->priv_data, "structured_slices", 1, 0);
+ #endif
+     m_avcontext->opaque = this;              // for use in RTP callback
+@@ -636,8 +636,8 @@ void MPEG4EncoderContext::SetDynamicEncodingParams(boo
+     m_avcontext->qmax = std::min( m_avcontext->qmax, 31);
+ 
+     // Lagrange multipliers - this is how the context defaults do it:
+-    m_avcontext->lmin = m_avcontext->qmin * FF_QP2LAMBDA;
+-    m_avcontext->lmax = m_avcontext->qmax * FF_QP2LAMBDA;
++    av_opt_set_int(m_avcontext, "lmin", m_avcontext->qmin * FF_QP2LAMBDA, 0);
++    av_opt_set_int(m_avcontext, "lmax", m_avcontext->qmax * FF_QP2LAMBDA, 0);
+ 
+     // If framesize has changed or is not yet initialized, fix it up
+     if((unsigned)m_avcontext->width != m_frameWidth || (unsigned)m_avcontext->height != m_frameHeight) {
+@@ -665,7 +665,7 @@ void MPEG4EncoderContext::ResizeEncodingFrame(bool res
+     {
+         delete[] m_rawFrameBuffer;
+     }
+-    m_rawFrameBuffer = new BYTE[m_rawFrameLen + FF_INPUT_BUFFER_PADDING_SIZE];
++    m_rawFrameBuffer = new BYTE[m_rawFrameLen + AV_INPUT_BUFFER_PADDING_SIZE];
+ 
+     if (m_encFrameBuffer)
+     {
+@@ -675,7 +675,7 @@ void MPEG4EncoderContext::ResizeEncodingFrame(bool res
+     m_encFrameBuffer = new BYTE[m_encFrameLen];
+ 
+     // Clear the back padding
+-    memset(m_rawFrameBuffer + m_rawFrameLen, 0, FF_INPUT_BUFFER_PADDING_SIZE);
++    memset(m_rawFrameBuffer + m_rawFrameLen, 0, AV_INPUT_BUFFER_PADDING_SIZE);
+     const unsigned fsz = m_frameWidth * m_frameHeight;
+     m_avpicture->data[0] = m_rawFrameBuffer;              // luminance
+     m_avpicture->data[1] = m_rawFrameBuffer + fsz;        // first chroma channel
+@@ -1326,7 +1326,7 @@ void MPEG4DecoderContext::SetFrameHeight(int height) {
+ //
+ 
+ void MPEG4DecoderContext::SetStaticDecodingParams() {
+-    m_avcontext->flags |= CODEC_FLAG_4MV; 
++    m_avcontext->flags |= AV_CODEC_FLAG_4MV; 
+     av_opt_set_int(m_avcontext->priv_data, "data_partitionin", 1, 0);
+     m_avcontext->workaround_bugs = 0; // no workaround for buggy implementations
+ }
