@@ -7,6 +7,9 @@ PORTREVISION?=	0
 CATEGORIES?=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	5690daf759b4.patch:-p1
+
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Library for audio labelling
 
