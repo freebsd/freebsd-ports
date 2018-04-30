@@ -1,0 +1,7 @@
+bin/dehydrated
+@sample %%ETCDIR%%/config.sample
+@sample %%ETCDIR%%/domains.txt.sample
+@sample %%ETCDIR%%/hook.sh.sample
+etc/periodic/weekly/000.dehydrated
+@dir %%ETCDIR%%/.acme-challenges
+@dir %%WWWDIR%%
