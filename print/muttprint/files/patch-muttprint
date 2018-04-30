@@ -37,6 +37,15 @@
  			: "off";
  }
  
+@@ -1633,7 +1633,7 @@ sub getNumberOfPages ($) {
+ 	open (AUX, "$auxfile") or fatalError "Could not open $auxfile:\n$!";
+ 	
+ 	while (<AUX>) {
+-		($numberOfPages) = /\\newlabel{LastPage}{{}{(\d+)}}/;
++		($numberOfPages) = /\\newlabel\{LastPage\}\{\{\}\{(\d+)\}\}/;
+ 	}
+ 	
+ 	close AUX or fatalError "Could not close $auxfile:\n$!";
 @@ -2027,7 +2027,7 @@
  Options:
  
