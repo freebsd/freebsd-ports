@@ -5,14 +5,14 @@
 # PROVIDE: cpupdate
 # REQUIRE: FILESYSTEMS kldxref
 # BEFORE:  netif
-# KEYWORD: nojail
+# KEYWORD: nojail resume
 
 # Add these lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
 # cpupdate_enable (bool):		Set to NO by default.
 #					Set it to YES to enable cpupdate.
-# cpupdate_irbs_enable (bool):		Enable Indirect Branch Restricted
+# cpupdate_ibrs_enable (bool):		Enable Indirect Branch Restricted
 #					Speculation after start of cpupdate.
 #					Default is YES.
 # cpupdate_flags (string):		Command line flags for cpupdate.
@@ -28,11 +28,11 @@ load_rc_config $name
 
 : ${cpupdate_enable:="NO"}
 : ${cpupdate_flags="-w -u"}
-: ${cpupdate_irbs_enable="YES"}
+: ${cpupdate_ibrs_enable="YES"}
 command=%%PREFIX%%/sbin/${name}
 
 cpupdate_poststart() {
-  checkyesno cpupdate_irbs_enable && sysctl -i hw.ibrs_disable=0
+  checkyesno cpupdate_ibrs_enable && sysctl -i hw.ibrs_disable=0
   return 0
 }
 
