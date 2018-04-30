@@ -10,3 +10,6 @@ In this case you can run "make install-microcodes" to install them to
 
 %%DATADIR%%
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Suspend/resume sequence clears microcode update, so make sure your system runs
+"service cpupdate start" again on resume.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

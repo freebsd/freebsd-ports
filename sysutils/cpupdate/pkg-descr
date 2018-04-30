@@ -1,6 +1,6 @@
 x86 CPU microcode utility for BSD.
 
-It is still work in progress but should do its job for Intel chips already.
+At the moment, it is for Intel processors only.
 
 Note: update FreeBSD to OSVERSION level 1101507 for 11.x or 1200055 for 12.0+
 before building/using this utility if your microcode update brings
