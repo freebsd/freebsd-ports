@@ -1,0 +1,64 @@
+From fcf613ddf3492ead5810276809f0db4ba597a045 Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@gmail.com>
+Date: Thu, 15 Dec 2016 20:03:01 +0100
+Subject: [PATCH] Rename method Path::isset() to Path::isSet()
+
+FreeBSD defines a marco `isset()` in `sys/param.h`:
+
+```
+kdesvn-2.0.0/src/svnqt/../svnqt/path.h:100:16:
+  error: too few arguments provided to function-like macro invocation
+    bool isset() const;
+               ^
+/usr/include/sys/param.h:284:9: note: macro 'isset' defined here
+        ^
+```
+
+to circumvent this issue, rename the method.
+---
+ src/svnfrontend/svnactions.cpp | 2 +-
+ src/svnqt/path.cpp             | 2 +-
+ src/svnqt/path.h               | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/svnfrontend/svnactions.cpp b/src/svnfrontend/svnactions.cpp
+index 0f27fed..72f0958 100644
+--- src/svnfrontend/svnactions.cpp
++++ src/svnfrontend/svnactions.cpp
+@@ -2200,7 +2200,7 @@ void SvnActions::slotMerge(const QString &src1, const QString &src2, const QStri
+     .dry_run(dry).record_only(recordOnly).reintegrate(reintegrate).allow_mixed_rev(allow_mixed_rev)
+     .localPath(svn::Path(target)).merge_options(svn::StringArray());
+ 
+-    if (!reintegrate && (!p2.isset() || src1 == src2)) {
++    if (!reintegrate && (!p2.isSet() || src1 == src2)) {
+         // pegged merge
+         pegged_merge = true;
+         if (peg == svn::Revision::UNDEFINED) {
+diff --git a/src/svnqt/path.cpp b/src/svnqt/path.cpp
+index 50b1787..1c2b12c 100644
+--- src/svnqt/path.cpp
++++ src/svnqt/path.cpp
+@@ -139,7 +139,7 @@ Path::operator=(const Path &path)
+ }
+ 
+ bool
+-Path::isset() const
++Path::isSet() const
+ {
+     return !m_path.isEmpty();
+ }
+diff --git a/src/svnqt/path.h b/src/svnqt/path.h
+index d3633dc..2e5b0b2 100644
+--- src/svnqt/path.h
++++ src/svnqt/path.h
+@@ -97,7 +97,7 @@ public:
+      *
+      * @return true if there is a path set
+      */
+-    bool isset() const;
++    bool isSet() const;
+ 
+     /**
+      * adds a new URL component to the path
+-- 
+2.10.1
