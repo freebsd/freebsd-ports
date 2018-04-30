@@ -31,7 +31,7 @@ USES=		autoreconf cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
 CFLAGS+=	-fpic -DPIC -Wl,-rpath,${PREFIX}/lib -Wl,--as-needed
-LDFLAGS+=	-lthr
+LDFLAGS+=	-pthread
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
