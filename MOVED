@@ -10175,3 +10175,5 @@ math/octave-forge-odepkg||2018-04-25|Has expired, not a valid package for Octave
 devel/kdevelop-php|devel/kdevelop-php-kde4|2018-04-28|Make room for KDevelop upgrade
 devel/kdevelop-php-docs|devel/kdevelop-php-docs-kde4|2018-04-28|Make room for KDevelop upgrade
 devel/kdevplatform|devel/kdevplatform-kde4|2018-04-28|Make room for KDevelop upgrade
+lang/py-clojure_py||2018-04-30|Has expired: Upstream disappeared and it does not build with latest setuptools (39.0.1)
+textproc/rubygem-escape_utils-rails4|textproc/rubygem-escape_utils|2018-04-30|Has expired: Use textproc/rubygem-escape_utils instead
