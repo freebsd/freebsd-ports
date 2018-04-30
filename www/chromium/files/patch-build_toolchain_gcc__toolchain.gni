@@ -24,12 +24,12 @@
 -    ar = "${prefix}/llvm-ar"
 -    nm = "${toolprefix}nm"
 +    if (is_bsd) {
-+      cc = "${toolprefix}clang50"
-+      cxx = "${toolprefix}clang++50"
++      cc = "${toolprefix}clang60"
++      cxx = "${toolprefix}clang++60"
 +      ld = cxx
 +      readelf = "readelf"
-+      ar = "${toolprefix}llvm-ar50"
-+      nm = "${toolprefix}llvm-nm50"
++      ar = "${toolprefix}llvm-ar60"
++      nm = "${toolprefix}llvm-nm60"
 +    } else {
 +      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
 +      cc = "$prefix/clang"
