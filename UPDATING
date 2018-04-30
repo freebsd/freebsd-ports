@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180430:
+  AFFECTS: users of news/nntp
+  AUTHOR: dinoex@FreeBSD.org
+
+  The option INETD was removed. If you used inetd, please change the path
+  in /etc/inetd.conf from /usr/local/sbin/nntpd to /usr/local/libexec/nntpd.
+
 20180428:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
