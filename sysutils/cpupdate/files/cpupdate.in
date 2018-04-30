@@ -30,10 +30,17 @@ load_rc_config $name
 : ${cpupdate_flags="-w -u"}
 : ${cpupdate_ibrs_enable="YES"}
 command=%%PREFIX%%/sbin/${name}
+resume_cmd="cpupdate_resume"
+extra_commands="resume"
 
 cpupdate_poststart() {
   checkyesno cpupdate_ibrs_enable && sysctl -i hw.ibrs_disable=0
   return 0
+}
+
+cpupdate_resume() {
+  run_rc_command start
+  _postcmd=''
 }
 
 run_rc_command "$1"
