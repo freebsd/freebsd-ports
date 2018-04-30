@@ -3,7 +3,7 @@
 
 PORTNAME=	iridium
 PORTVERSION=	58.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gperf:devel/gperf \
-		clang50:devel/llvm50 \
+		clang60:devel/llvm60 \
 		yasm:devel/yasm \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
 		bash:shells/bash \
@@ -71,8 +71,8 @@ ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
-CC=		clang50
-CXX=		clang++50
+CC=		clang60
+CXX=		clang++60
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
 # Run "./out/${BUILDTYPE}/gn args out/${BUILDTYPE} --list" for all variables.
