@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180501:
+  AFFECTS: users of www/node
+  AUTHOR: bhughes@FreeBSD.org
+
+  The www/node port has been udpated to Node.js v10.0.0, the latest
+  upstream release. This is a major release, including many significant
+  changes. Users are encouraged to read the release announcements before
+  upgrading:
+
+  https://nodejs.org/en/blog/release/v10.0.0/
+
+  In particular, Node.js now depends on OpenSSL 1.1.0h, so the
+  BUNDLED_SSL option is enabled by default. Users can disable this
+  option when using security/openssl-devel as their default SSL library.
+
 20180430:
   AFFECTS: users of news/nntp
   AUTHOR: dinoex@FreeBSD.org
