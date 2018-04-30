@@ -7,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://releases.passman.cc/
 PKGNAMEPREFIX=	nextcloud-
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	brnrd@freebsd.org
@@ -15,11 +16,11 @@ COMMENT=	Full featured password manager for Nextcloud
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	nextcloud>=9:www/nextcloud
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=9:www/nextcloud@${PHP_FLAVOR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		php
+USES=		php:flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 
