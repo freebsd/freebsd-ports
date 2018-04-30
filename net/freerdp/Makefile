@@ -6,6 +6,9 @@ DISTVERSION=	2.0.0-rc1
 PORTREVISION=	3
 CATEGORIES=	net comms ipv6
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	78df32c77f28.patch:-p1 ed571e74a594.patch:-p1
+
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
 
