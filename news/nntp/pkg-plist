@@ -1,6 +1,7 @@
 man/man1/nntpxmit.1.gz
 man/man8/nntpd.8c.gz
 man/man8/acttimes.8c.gz
+libexec/nntpd
 sbin/nntpd
 %%NEWSBIN%%/acttimes
 %%NEWSBIN%%/nntpxmit
@@ -17,5 +18,5 @@ sbin/nntpd
 %%PORTDOCS%%%%DOCSDIR%%/xfer-README
 %%PORTDOCS%%%%DOCSDIR%%/xmit-README
 %%VARBASE%%/%%NEWSCTL%%/overview.fmt
-@dir %%VARBASE%%/%%NEWSCTL%%
-@dir %%VARBASE%%/lib
+@dir(news,news,755) %%VARBASE%%/%%NEWSCTL%%
+@dir(news,news,755) %%VARBASE%%/lib

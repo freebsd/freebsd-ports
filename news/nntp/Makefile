@@ -3,8 +3,8 @@
 
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2
-PORTREVISION=	9
-CATEGORIES=	news
+PORTREVISION=	10
+CATEGORIES=	news ipv6
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/c-news/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
@@ -35,16 +35,11 @@ MAKE_ENV+=	DBLIBS="${LOCALBASE}/lib/libcnews.a -lcrypt -lutil"
 MAKE_ENV+=	ETCDIR="${STAGEDIR}${PREFIX}/sbin"
 MAKE_ENV+=	BINDIR="${STAGEDIR}${NEWSBIN}"
 MAKE_ENV+=	MANDIR="${STAGEDIR}${PREFIX}/man"
+MAKE_ENV+=	EXECDIR="${STAGEDIR}${PREFIX}/libexec"
 
-OPTIONS_DEFINE=	INETD DOCS
-NO_OPTIONS_SORT=yes
-INETD_DESC=	build to run from inetd only
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MINETD}
-ALONE=	-e 's|\#define.ALONE|\#undef	ALONE|'
-.endif
 
 post-extract:
 	${CP} ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
@@ -56,9 +51,15 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's=reaper()=reaper(int unused)=' \
 		${WRKSRC}/server/netaux.c
+	(cd ${WRKSRC} && ${CP} -pr server inetd)
+	${REINPLACE_CMD} \
+		-e 's|^CPPFLAGS|#CPPFLAGS|' \
+		-e 's|ETCDIR|EXECDIR|g' \
+		${WRKSRC}/inetd/Makefile
 
 pre-configure:
-	${REINPLACE_CMD} ${ALONE} \
+	${REINPLACE_CMD} \
+		-e 's|\#define.ALONE.*||' \
 		-e "s=/usr/local/news/lib/bin/config=${NEWSBIN}/config=" \
 		-e "s=/usr/local/news/cnewsbin=${NEWSBIN}=" \
 		-e "s=/usr/local/news/lib=${NEWSCTL}=" \

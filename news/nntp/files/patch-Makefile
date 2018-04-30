@@ -1,5 +1,5 @@
---- Makefile.orig	1996-01-09 08:30:24.000000000 +0100
-+++ Makefile	2013-09-03 20:32:47.000000000 +0200
+--- Makefile.orig	1996-01-09 07:30:24 UTC
++++ Makefile
 @@ -4,7 +4,7 @@
  # The program that knows how to deal with makefiles. [Uncomment if needed.]
  # MAKE=make
@@ -9,7 +9,7 @@
  #Uncomment the following for Solaris (and similiar SVR4 systems)
  #NETLIBS   = -lsocket -lnsl 
  #Uncomment the following if the previous one does not work
-@@ -20,11 +20,11 @@
+@@ -20,11 +20,11 @@ CFLAGS= -O 
  #Uncomment the following for Solaris (and similiar SVR4 systems)
  #KVMLIB = -lelf
  # Where nntpd is going to live
@@ -24,7 +24,7 @@
  #
  LIBS = $(DBLIBS) $(RESLIB) $(NETLIBS) $(KVMLIB)
  SUBMAKEFLAGS="LIBS=${LIBS}" "CFLAGS=${CFLAGS}" "ETCDIR=${ETCDIR}" "BINDIR=${BINDIR}" "MANDIR=${MANDIR}"
-@@ -42,11 +42,11 @@
+@@ -42,11 +42,12 @@ TYPE = server
  all: make_$(TYPE)
  
  make_server: /nowhere
@@ -34,6 +34,7 @@
 -	cd xmit; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS)
 -	cd xfer; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS)
 +	$(MAKE) -C server $(MFLAGS) $(SUBMAKEFLAGS)
++	$(MAKE) -C inetd $(MFLAGS) $(SUBMAKEFLAGS)
 +	$(MAKE) -C support $(MFLAGS) $(SUBMAKEFLAGS)
 +	$(MAKE) -C doc $(MFLAGS) $(SUBMAKEFLAGS)
 +	$(MAKE) -C xmit $(MFLAGS) $(SUBMAKEFLAGS)
@@ -41,7 +42,7 @@
  
  server: make_server
  
-@@ -59,25 +59,25 @@
+@@ -59,25 +60,26 @@ client: make_client
  install: install_$(TYPE)
  
  install_server:
@@ -51,6 +52,7 @@
 -	cd xmit; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS) install
 -	cd xfer; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS) install
 +	$(MAKE) -C server $(MFLAGS) $(SUBMAKEFLAGS) install
++	$(MAKE) -C inetd $(MFLAGS) $(SUBMAKEFLAGS) install
 +	$(MAKE) -C support $(MFLAGS) $(SUBMAKEFLAGS) install
 +	$(MAKE) -C doc $(MFLAGS) $(SUBMAKEFLAGS) install
 +	$(MAKE) -C xmit $(MFLAGS) $(SUBMAKEFLAGS) install
