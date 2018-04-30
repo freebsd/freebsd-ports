@@ -1,3 +1,5 @@
 TIMESTAMP = 1517043034
 SHA256 (aubio-0.4.6.tar.bz2) = bdc73be1f007218d3ea6d2a503b38a217815a0e2ccc4ed441f6e850ed5d47cfb
 SIZE (aubio-0.4.6.tar.bz2) = 363016
+SHA256 (5690daf759b4.patch) = 6fd463e812361a7ddb81440babfe00c5aacfb5e08a62897067d0f4019e048cc1
+SIZE (5690daf759b4.patch) = 741
