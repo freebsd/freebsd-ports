@@ -11,6 +11,8 @@ COMMENT=	Randomly permute input lines
 
 LICENSE=	ISCL
 
+BROKEN_FreeBSD_10=	Requires reallocarray
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/shuf man/man1/shuf.1.gz
