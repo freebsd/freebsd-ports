@@ -1,0 +1,7 @@
+The win32-file-stat library provides a custom File::Stat class
+specifically tailored for MS Windows. Examples include the ability
+to retrieve file attributes (hidden, archive, etc) as well as the
+redefinition of certain core methods that aren't implemented at all,
+such as File.blksize.
+
+WWW: https://github.com/chef/win32-file-stat/

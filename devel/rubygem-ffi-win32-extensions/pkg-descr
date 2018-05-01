@@ -1,0 +1,5 @@
+The ffi-win32-extensions library adds additional methods to the FFI
+and String classes to aid in the development of FFI based libraries
+on MS Windows.
+
+WWW: https://github.com/chef/ffi-win32-extensions/
