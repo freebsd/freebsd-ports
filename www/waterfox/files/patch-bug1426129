@@ -1,0 +1,168 @@
+commit 2ad185b12fe3
+Author: Paul Adenot <paul@paul.cx>
+Date:   Mon Mar 5 20:24:16 2018 +0200
+
+    Bug 1426129 - Take a reference to `this` when calling methods asynchronously in CameraChild.cpp. r=pehrsons a=lizzard
+    
+    --HG--
+    extra : amend_source : bb0df026ffa8198485415c8c44fdb7df372f07ee
+---
+ dom/media/systemservices/CamerasChild.cpp | 33 ++++++++++++++++++-------------
+ dom/media/systemservices/CamerasChild.h   |  9 +++++++++
+ 2 files changed, 28 insertions(+), 14 deletions(-)
+
+diff --git dom/media/systemservices/CamerasChild.cpp dom/media/systemservices/CamerasChild.cpp
+index 594b90f808e4..79224b73cefa 100644
+--- dom/media/systemservices/CamerasChild.cpp
++++ dom/media/systemservices/CamerasChild.cpp
+@@ -34,7 +34,9 @@ CamerasSingleton::CamerasSingleton()
+   : mCamerasMutex("CamerasSingleton::mCamerasMutex"),
+     mCameras(nullptr),
+     mCamerasChildThread(nullptr),
+-    mFakeDeviceChangeEventThread(nullptr) {
++    mFakeDeviceChangeEventThread(nullptr),
++    mInShutdown(false)
++{
+   LOG(("CamerasSingleton: %p", this));
+ }
+ 
+@@ -291,7 +293,7 @@ CamerasChild::NumberOfCapabilities(CaptureEngine aCapEngine,
+   LOG(("NumberOfCapabilities for %s", deviceUniqueIdUTF8));
+   nsCString unique_id(deviceUniqueIdUTF8);
+   nsCOMPtr<nsIRunnable> runnable =
+-    mozilla::NewNonOwningRunnableMethod<CaptureEngine, nsCString>(
++    mozilla::NewRunnableMethod<CaptureEngine, nsCString>(
+       "camera::PCamerasChild::SendNumberOfCapabilities",
+       this,
+       &CamerasChild::SendNumberOfCapabilities,
+@@ -307,7 +309,7 @@ CamerasChild::NumberOfCaptureDevices(CaptureEngine aCapEngine)
+ {
+   LOG((__PRETTY_FUNCTION__));
+   nsCOMPtr<nsIRunnable> runnable =
+-    mozilla::NewNonOwningRunnableMethod<CaptureEngine>(
++    mozilla::NewRunnableMethod<CaptureEngine>(
+       "camera::PCamerasChild::SendNumberOfCaptureDevices",
+       this,
+       &CamerasChild::SendNumberOfCaptureDevices,
+@@ -334,7 +336,7 @@ CamerasChild::EnsureInitialized(CaptureEngine aCapEngine)
+ {
+   LOG((__PRETTY_FUNCTION__));
+   nsCOMPtr<nsIRunnable> runnable =
+-    mozilla::NewNonOwningRunnableMethod<CaptureEngine>(
++    mozilla::NewRunnableMethod<CaptureEngine>(
+       "camera::PCamerasChild::SendEnsureInitialized",
+       this,
+       &CamerasChild::SendEnsureInitialized,
+@@ -353,7 +355,7 @@ CamerasChild::GetCaptureCapability(CaptureEngine aCapEngine,
+   LOG(("GetCaptureCapability: %s %d", unique_idUTF8, capability_number));
+   nsCString unique_id(unique_idUTF8);
+   nsCOMPtr<nsIRunnable> runnable =
+-    mozilla::NewNonOwningRunnableMethod<CaptureEngine, nsCString, unsigned int>(
++    mozilla::NewRunnableMethod<CaptureEngine, nsCString, unsigned int>(
+       "camera::PCamerasChild::SendGetCaptureCapability",
+       this,
+       &CamerasChild::SendGetCaptureCapability,
+@@ -395,7 +397,7 @@ CamerasChild::GetCaptureDevice(CaptureEngine aCapEngine,
+ {
+   LOG((__PRETTY_FUNCTION__));
+   nsCOMPtr<nsIRunnable> runnable =
+-    mozilla::NewNonOwningRunnableMethod<CaptureEngine, unsigned int>(
++    mozilla::NewRunnableMethod<CaptureEngine, unsigned int>(
+       "camera::PCamerasChild::SendGetCaptureDevice",
+       this,
+       &CamerasChild::SendGetCaptureDevice,
+@@ -439,9 +441,9 @@ CamerasChild::AllocateCaptureDevice(CaptureEngine aCapEngine,
+   LOG((__PRETTY_FUNCTION__));
+   nsCString unique_id(unique_idUTF8);
+   nsCOMPtr<nsIRunnable> runnable =
+-    mozilla::NewNonOwningRunnableMethod<CaptureEngine,
+-                                        nsCString,
+-                                        const mozilla::ipc::PrincipalInfo&>(
++    mozilla::NewRunnableMethod<CaptureEngine,
++                               nsCString,
++                               const mozilla::ipc::PrincipalInfo&>(
+       "camera::PCamerasChild::SendAllocateCaptureDevice",
+       this,
+       &CamerasChild::SendAllocateCaptureDevice,
+@@ -475,7 +477,7 @@ CamerasChild::ReleaseCaptureDevice(CaptureEngine aCapEngine,
+ {
+   LOG((__PRETTY_FUNCTION__));
+   nsCOMPtr<nsIRunnable> runnable =
+-    mozilla::NewNonOwningRunnableMethod<CaptureEngine, int>(
++    mozilla::NewRunnableMethod<CaptureEngine, int>(
+       "camera::PCamerasChild::SendReleaseCaptureDevice",
+       this,
+       &CamerasChild::SendReleaseCaptureDevice,
+@@ -526,7 +528,7 @@ CamerasChild::StartCapture(CaptureEngine aCapEngine,
+                            webrtcCaps.codecType,
+                            webrtcCaps.interlaced);
+   nsCOMPtr<nsIRunnable> runnable = mozilla::
+-    NewNonOwningRunnableMethod<CaptureEngine, int, VideoCaptureCapability>(
++    NewRunnableMethod<CaptureEngine, int, VideoCaptureCapability>(
+       "camera::PCamerasChild::SendStartCapture",
+       this,
+       &CamerasChild::SendStartCapture,
+@@ -542,7 +544,7 @@ CamerasChild::StopCapture(CaptureEngine aCapEngine, const int capture_id)
+ {
+   LOG((__PRETTY_FUNCTION__));
+   nsCOMPtr<nsIRunnable> runnable =
+-    mozilla::NewNonOwningRunnableMethod<CaptureEngine, int>(
++    mozilla::NewRunnableMethod<CaptureEngine, int>(
+       "camera::PCamerasChild::SendStopCapture",
+       this,
+       &CamerasChild::SendStopCapture,
+@@ -559,6 +561,9 @@ void
+ Shutdown(void)
+ {
+   OffTheBooksMutexAutoLock lock(CamerasSingleton::Mutex());
++
++  CamerasSingleton::StartShutdown();
++
+   CamerasChild* child = CamerasSingleton::Child();
+   if (!child) {
+     // We don't want to cause everything to get fired up if we're
+@@ -610,7 +615,7 @@ CamerasChild::ShutdownParent()
+     // Delete the parent actor.
+     // CamerasChild (this) will remain alive and is only deleted by the
+     // IPC layer when SendAllDone returns.
+-    nsCOMPtr<nsIRunnable> deleteRunnable = mozilla::NewNonOwningRunnableMethod(
++    nsCOMPtr<nsIRunnable> deleteRunnable = mozilla::NewRunnableMethod(
+       "camera::PCamerasChild::SendAllDone", this, &CamerasChild::SendAllDone);
+     CamerasSingleton::Thread()->Dispatch(deleteRunnable, NS_DISPATCH_NORMAL);
+   } else {
+@@ -733,7 +738,7 @@ CamerasChild::~CamerasChild()
+ {
+   LOG(("~CamerasChild: %p", this));
+ 
+-  {
++  if (!CamerasSingleton::InShutdown()) {
+     OffTheBooksMutexAutoLock lock(CamerasSingleton::Mutex());
+     // In normal circumstances we've already shut down and the
+     // following does nothing. But on fatal IPC errors we will
+diff --git dom/media/systemservices/CamerasChild.h dom/media/systemservices/CamerasChild.h
+index b2029dbd6b9d..620c409b656f 100644
+--- dom/media/systemservices/CamerasChild.h
++++ dom/media/systemservices/CamerasChild.h
+@@ -93,6 +93,14 @@ public:
+     return gTheInstance.get()->mFakeDeviceChangeEventThread;
+   }
+ 
++  static bool InShutdown() {
++    return gTheInstance.get()->mInShutdown;
++  }
++
++  static void StartShutdown() {
++    gTheInstance.get()->mInShutdown = true;
++  }
++
+ private:
+   static Singleton<CamerasSingleton> gTheInstance;
+ 
+@@ -110,6 +118,7 @@ private:
+   CamerasChild* mCameras;
+   nsCOMPtr<nsIThread> mCamerasChildThread;
+   nsCOMPtr<nsIThread> mFakeDeviceChangeEventThread;
++  Atomic<bool> mInShutdown;
+ };
+ 
+ // Get a pointer to a CamerasChild object we can use to do IPC with.

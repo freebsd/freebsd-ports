@@ -1,0 +1,89 @@
+commit 0ce659a05fd3
+Author: Lee Salzman <lsalzman@mozilla.com>
+Date:   Sun Apr 29 20:10:51 2018 -0400
+
+    Bug 1454692 - Backport some upstream Skia fixes to ESR52. r=rhunt, a=abillings
+    
+    --HG--
+    extra : histedit_source : 0fcd64cabe6f54a2286083d6518e4e6451183a19%2C37f5e7f9dbbfc01102631c33b23329d2af5aa71b
+---
+ gfx/skia/skia/src/core/SkMask.cpp                          | 7 ++++++-
+ gfx/skia/skia/src/gpu/GrBufferAllocPool.cpp                | 5 +++--
+ gfx/skia/skia/src/gpu/batches/GrAAHairLinePathRenderer.cpp | 9 ++++++++-
+ 3 files changed, 17 insertions(+), 4 deletions(-)
+
+diff --git gfx/skia/skia/src/core/SkMask.cpp gfx/skia/skia/src/core/SkMask.cpp
+index 167d30d166b1..2a74cf4b2463 100644
+--- gfx/skia/skia/src/core/SkMask.cpp
++++ gfx/skia/skia/src/core/SkMask.cpp
+@@ -45,7 +45,12 @@ uint8_t* SkMask::AllocImage(size_t size) {
+ #ifdef TRACK_SKMASK_LIFETIME
+     SkDebugf("SkMask::AllocImage %d\n", gCounter++);
+ #endif
+-    return (uint8_t*)sk_malloc_throw(SkAlign4(size));
++    size_t aligned_size = std::numeric_limits<size_t>::max();
++    size_t adjustment = 3;
++    if (size + adjustment > size) {
++        aligned_size = (size + adjustment) & ~adjustment;
++    }
++    return static_cast<uint8_t*>(sk_malloc_throw(aligned_size));
+ }
+ 
+ /** We explicitly use this allocator for SkBimap pixels, so that we can
+diff --git gfx/skia/skia/src/gpu/GrBufferAllocPool.cpp gfx/skia/skia/src/gpu/GrBufferAllocPool.cpp
+index 38bde0dc9a38..1556d2e27971 100644
+--- gfx/skia/skia/src/gpu/GrBufferAllocPool.cpp
++++ gfx/skia/skia/src/gpu/GrBufferAllocPool.cpp
+@@ -14,6 +14,7 @@
+ #include "GrResourceProvider.h"
+ #include "GrTypes.h"
+ 
++#include "SkSafeMath.h"
+ #include "SkTraceEvent.h"
+ 
+ #ifdef SK_DEBUG
+@@ -335,7 +336,7 @@ void* GrVertexBufferAllocPool::makeSpace(size_t vertexSize,
+     SkASSERT(startVertex);
+ 
+     size_t offset SK_INIT_TO_AVOID_WARNING;
+-    void* ptr = INHERITED::makeSpace(vertexSize * vertexCount,
++    void* ptr = INHERITED::makeSpace(SkSafeMath::Mul(vertexSize, vertexCount),
+                                      vertexSize,
+                                      buffer,
+                                      &offset);
+@@ -360,7 +361,7 @@ void* GrIndexBufferAllocPool::makeSpace(int indexCount,
+     SkASSERT(startIndex);
+ 
+     size_t offset SK_INIT_TO_AVOID_WARNING;
+-    void* ptr = INHERITED::makeSpace(indexCount * sizeof(uint16_t),
++    void* ptr = INHERITED::makeSpace(SkSafeMath::Mul(indexCount, sizeof(uint16_t)),
+                                      sizeof(uint16_t),
+                                      buffer,
+                                      &offset);
+diff --git gfx/skia/skia/src/gpu/ops/GrAAHairLinePathRenderer.cpp gfx/skia/skia/src/gpu/ops/GrAAHairLinePathRenderer.cpp
+index 274e30846571..3879fe3fcbba 100644
+--- gfx/skia/skia/src/gpu/ops/GrAAHairLinePathRenderer.cpp
++++ gfx/skia/skia/src/gpu/ops/GrAAHairLinePathRenderer.cpp
+@@ -823,6 +823,13 @@ void AAHairlineOp::onPrepareDraws(Target* target) const {
+ 
+     int lineCount = lines.count() / 2;
+     int conicCount = conics.count() / 3;
++    int quadAndConicCount = conicCount + quadCount;
++
++    static constexpr int kMaxLines = SK_MaxS32 / kLineSegNumVertices;
++    static constexpr int kMaxQuadsAndConics = SK_MaxS32 / kQuadNumVertices;
++    if (lineCount > kMaxLines || quadAndConicCount > kMaxQuadsAndConics) {
++        return;
++    }
+ 
+     // do lines first
+     if (lineCount) {
+@@ -893,7 +900,7 @@ void AAHairlineOp::onPrepareDraws(Target* target) const {
+             ref_quads_index_buffer(target->resourceProvider()));
+ 
+         size_t vertexStride = sizeof(BezierVertex);
+-        int vertexCount = kQuadNumVertices * quadCount + kQuadNumVertices * conicCount;
++        int vertexCount = kQuadNumVertices * quadAndConicCount;
+         void *vertices = target->makeVertexSpace(vertexStride, vertexCount,
+                                                  &vertexBuffer, &firstVertex);
+ 
