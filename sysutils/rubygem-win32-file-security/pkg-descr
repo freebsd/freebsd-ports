@@ -1,0 +1,5 @@
+The win32-file-security library adds security related methods to the
+core File class for MS Windows. This includes the ability to get or
+set permissions, as well as encrypt or decrypt files.
+
+WWW: https://github.com/chef/win32-file-security/

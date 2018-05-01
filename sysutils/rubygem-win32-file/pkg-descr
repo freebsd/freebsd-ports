@@ -1,0 +1,7 @@
+The win32-file library adds several methods to the core File class which
+are specific to MS Windows, such as the ability to set and retrieve file
+attributes. In addition, several core methods have been redefined in
+order to work properly on MS Windows, such as File.blksize. See the
+README file for more details.
+
+WWW: https://github.com/chef/win32-file

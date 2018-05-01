@@ -1111,6 +1111,9 @@
     SUBDIR += rubygem-vagrant-mutate
     SUBDIR += rubygem-vagrant-vbguest
     SUBDIR += rubygem-vmstat
+    SUBDIR += rubygem-win32-file
+    SUBDIR += rubygem-win32-file-security
+    SUBDIR += rubygem-win32-file-stat
     SUBDIR += rubygem-winrm
     SUBDIR += rubygem-winrm-elevated
     SUBDIR += rubygem-winrm-fs
