@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	remotebox
-DISTVERSION=	2.4
+DISTVERSION=	2.5
 CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
-DISTNAME=	RemoteBox-${PORTVERSION}
+DISTNAME=	RemoteBox-${DISTVERSION}
 
 MAINTAINER=	freebsd_ports@k-worx.org
 COMMENT=	Open Source VirtualBox Client with Remote Management
@@ -17,19 +17,30 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-SOAP-Lite>=0:net/p5-SOAP-Lite
 
 USES=		shebangfix tar:bzip2
+SHEBANG_FILES=	remotebox
 NO_BUILD=	yes
 NO_ARCH=	yes
-SHEBANG_FILES=	remotebox
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_RADIO=		RDP
-OPTIONS_RADIO_RDP=	FREERDP RDESKTOP
-OPTIONS_DEFAULT=	FREERDP
-FREERDP_DESC=		Install freerdp (free RDP implementation)
-RDESKTOP_DESC=		Install rdesktop (RDP client for Windows)
+OPTIONS_DEFAULT=	FREERDP TIGERVNC
+OPTIONS_MULTI=		VIEWER
+OPTIONS_MULTI_VIEWER=	FREERDP RDESKTOP TIGERVNC VINAGRE
+OPTIONS_RADIO=		KDE
+OPTIONS_RADIO_KDE=	KRDC KRDC4
+
+FREERDP_DESC=		RDP client (fork of rdesktop with more features)
+KRDC_DESC=		RDP/VNC client for KDE5
+KRDC4_DESC=		RDP/VNC client for KDE4
+RDESKTOP_DESC=		RDP client (less features than freerdp)
+TIGERVNC_DESC=		VNC client (desktop neutral)
+VINAGRE_DESC=		VNC client for GNOME
 
 FREERDP_RUN_DEPENDS=	xfreerdp:net/freerdp
+KRDC_RUN_DEPENDS=	krdc:net/krdc
+KRDC4_RUN_DEPENDS=	krdc:net/krdc-kde4
 RDESKTOP_RUN_DEPENDS=	rdesktop:net/rdesktop
+TIGERVNC_RUN_DEPENDS=	vncviewer:net/tigervnc
+VINAGRE_RUN_DEPENDS=	vinagre:net/vinagre
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$Bin/share/remotebox|${DATADIR}|; \
