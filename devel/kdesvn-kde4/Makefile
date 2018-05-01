@@ -37,6 +37,8 @@ OPTIONS_SUB=	yes
 NLS_CMAKE_OFF=	-DBUILD_po=OFF
 NLS_USES=	gettext
 
+PORTSCOUT=	limit:1\.7.*
+
 post-patch:
 	${RM} ${WRKSRC}/src/kiosvn/svn*.protocol
 
