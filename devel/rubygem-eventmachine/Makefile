@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eventmachine
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
