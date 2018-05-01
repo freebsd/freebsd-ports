@@ -1,0 +1,11 @@
+TIMESTAMP = 1525127018
+SHA256 (MrKepzie-openfx-io-2.3.4-4cc07f9_GH0.tar.gz) = 3d668cc65339f96e08379b92db505e3e465fff8836835c2c8cf70dfc8adf5517
+SIZE (MrKepzie-openfx-io-2.3.4-4cc07f9_GH0.tar.gz) = 456750
+SHA256 (devernay-openfx-supportext-d3c4874_GH0.tar.gz) = b837bb89dda7920a16adabb7be8135a51a8bc10d4869ae24d1707df4d169f959
+SIZE (devernay-openfx-supportext-d3c4874_GH0.tar.gz) = 285492
+SHA256 (MrKepzie-SequenceParsing-Natron-2.2.0_GH0.tar.gz) = 201a2b255db4296fc8993d7e6abb5a8af6bbdf0073c451fa991743e906b06d2f
+SIZE (MrKepzie-SequenceParsing-Natron-2.2.0_GH0.tar.gz) = 15789
+SHA256 (MrKepzie-tinydir-60f0905_GH0.tar.gz) = 9cdedea9e02a97d4539881c06019a2317fa789d8132d914ca9909cba56c3517d
+SIZE (MrKepzie-tinydir-60f0905_GH0.tar.gz) = 4479
+SHA256 (devernay-openfx-3056fd6_GH0.tar.gz) = e2be8d2b9d35b7b80b455e24f46846afa2055c912a6893d134c615fb87d763ed
+SIZE (devernay-openfx-3056fd6_GH0.tar.gz) = 10479477
