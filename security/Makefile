@@ -865,7 +865,6 @@
     SUBDIR += plasma5-ksshaskpass
     SUBDIR += plasma5-kwallet-pam
     SUBDIR += please
-    SUBDIR += polarssl13
     SUBDIR += poly1305aes
     SUBDIR += portsentry
     SUBDIR += ppars

@@ -10176,3 +10176,5 @@ devel/kdevelop-php-docs|devel/kdevelop-php-docs-kde4|2018-04-28|Make room for KD
 devel/kdevplatform|devel/kdevplatform-kde4|2018-04-28|Make room for KDevelop upgrade
 lang/py-clojure_py||2018-04-30|Has expired: Upstream disappeared and it does not build with latest setuptools (39.0.1)
 textproc/rubygem-escape_utils-rails4|textproc/rubygem-escape_utils|2018-04-30|Has expired: Use textproc/rubygem-escape_utils instead
+databases/rubygem-seed-fu236|databases/rubygem-seed-fu|2018-05-01|Has expired: Obsoleted by update of www/gitlab. Please use databases/rubygem-seed-fu
+security/polarssl13||2018-05-01|Has expired: has reached end of life
