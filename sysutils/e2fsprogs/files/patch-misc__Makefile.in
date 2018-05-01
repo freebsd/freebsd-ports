@@ -1,4 +1,4 @@
---- misc/Makefile.in.orig	2016-09-02 04:52:46 UTC
+--- misc/Makefile.in.orig	2018-03-25 02:42:47 UTC
 +++ misc/Makefile.in
 @@ -34,16 +34,16 @@ INSTALL = @INSTALL@
  
@@ -22,7 +22,7 @@
  UMANPAGES+=	@FUSE_CMT@ fuse2fs.1
  
  LPROGS=		@E2INITRD_PROG@
-@@ -144,14 +144,14 @@ profiled:
+@@ -145,14 +145,14 @@ profiled:
  
  mke2fs.conf: $(srcdir)/mke2fs.conf.in
  	if test -f $(srcdir)/mke2fs.conf.custom.in ; then \
@@ -40,7 +40,7 @@
  		>  default_profile.c
  findsuper: findsuper.o
  	$(E) "	LD $@"
-@@ -577,34 +577,9 @@ install: all $(SMANPAGES) $(UMANPAGES) i
+@@ -593,34 +593,9 @@ install: all $(SMANPAGES) $(UMANPAGES) i
  		(cd $(DESTDIR)$(man5dir); \
  			$(LN) $(LINK_INSTALL_FLAGS) ext4.5 $$i.5); \
  	done
