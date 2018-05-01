@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.4.6
+PORTVERSION=	2.6.0
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -49,7 +49,7 @@ CFLAGS+=	-funit-at-a-time
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype randpktdump udpdump sharkd
+    reordercap captype randpktdump udpdump sharkd dumpcap
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
