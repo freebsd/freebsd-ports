@@ -1,7 +1,6 @@
---- tests/r_inline_xattr/script.orig	2017-04-09 19:31:41 UTC
+--- tests/r_inline_xattr/script.orig	2018-03-25 02:42:47 UTC
 +++ tests/r_inline_xattr/script
-@@ -10,8 +10,8 @@ gunzip < $IMAGE > $TMPFILE
- echo "resize2fs test" > $OUT
+@@ -11,7 +11,7 @@ echo "resize2fs test" > $OUT
  
  # Look at existing inline extended attribute
  echo "debugfs -R ''stat file'' test.img 2>&1 | grep ''^Inode\|in inode body\|user.name (''" >> $OUT
@@ -10,8 +9,7 @@
  status=$?
  echo Exit status is $status >> $OUT
  
-@@ -23,8 +23,8 @@ echo Exit status is $status >> $OUT.new
- sed -f $cmd_dir/filter.sed -e "s;$TMPFILE;test.img;" $OUT.new >> $OUT
+@@ -24,7 +24,7 @@ sed -f $cmd_dir/filter.sed -e "s;$TMPFIL
  
  # Look at inline extended attribute in resized fs
  echo "debugfs -R ''stat file'' test.img 2>&1 | grep ''^Inode\|in inode body\|user.name (''" >> $OUT

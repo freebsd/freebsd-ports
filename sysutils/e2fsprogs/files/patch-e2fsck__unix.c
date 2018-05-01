@@ -1,4 +1,4 @@
---- e2fsck/unix.c.orig	2016-09-02 04:17:32 UTC
+--- e2fsck/unix.c.orig	2018-03-25 02:42:47 UTC
 +++ e2fsck/unix.c
 @@ -9,8 +9,6 @@
   * %End-Header%
@@ -18,7 +18,7 @@
  #endif
  #ifdef HAVE_SYS_TYPES_H
  #include <sys/types.h>
-@@ -593,6 +591,24 @@ static int e2fsck_update_progress(e2fsck
+@@ -595,6 +593,24 @@ static int e2fsck_update_progress(e2fsck
  	return 0;
  }
  
@@ -43,7 +43,7 @@
  #define PATH_SET "PATH=/sbin"
  
  /*
-@@ -625,6 +641,17 @@ static void signal_progress_on(int sig E
+@@ -627,6 +643,17 @@ static void signal_progress_on(int sig E
  	ctx->progress = e2fsck_update_progress;
  }
  
@@ -61,7 +61,7 @@
  static void signal_progress_off(int sig EXT2FS_ATTR((unused)))
  {
  	e2fsck_t ctx = e2fsck_global_ctx;
-@@ -1062,6 +1089,10 @@ static errcode_t PRS(int argc, char *arg
+@@ -1091,6 +1118,10 @@ static errcode_t PRS(int argc, char *arg
  	sigaction(SIGUSR1, &sa, 0);
  	sa.sa_handler = signal_progress_off;
  	sigaction(SIGUSR2, &sa, 0);
