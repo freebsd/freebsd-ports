@@ -11,7 +11,7 @@ diff --git gfx/webrender_bindings/src/bindings.rs gfx/webrender_bindings/src/bin
 index 8517d7dd33e5..cf885ee713f3 100644
 --- gfx/webrender_bindings/src/bindings.rs
 +++ gfx/webrender_bindings/src/bindings.rs
-@@ -290,8 +290,8 @@ struct WrExternalImage {
+@@ -312,8 +312,8 @@ struct WrExternalImage {
      size: usize,
  }
  
@@ -22,17 +22,17 @@ index 8517d7dd33e5..cf885ee713f3 100644
  
  #[repr(C)]
  pub struct WrExternalImageHandler {
-@@ -305,8 +305,8 @@ impl ExternalImageHandler for WrExternalImageHandler {
+@@ -327,7 +327,8 @@ impl ExternalImageHandler for WrExternalImageHandler {
              id: ExternalImageId,
              channel_index: u8)
              -> ExternalImage {
 -        let image = (self.lock_func)(self.external_image_obj, id.into(), channel_index);
- 
++
 +        let image = unsafe { (self.lock_func)(self.external_image_obj, id.into(), channel_index) };
-         match image.image_type {
-             WrExternalImageType::NativeTexture => {
-                 ExternalImage {
-@@ -341,7 +341,9 @@ impl ExternalImageHandler for WrExternalImageHandler {
+         ExternalImage {
+             uv: TexelRect::new(image.u0, image.v0, image.u1, image.v1),
+             source: match image.image_type {
+@@ -341,7 +342,9 @@ impl ExternalImageHandler for WrExternalImageHandler {
      fn unlock(&mut self,
                id: ExternalImageId,
                channel_index: u8) {

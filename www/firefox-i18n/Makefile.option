@@ -73,6 +73,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_NE \
 		LANG_NL \
 		LANG_NN \
+		LANG_OC \
 		LANG_OR \
 		LANG_PA \
 		LANG_PL \
@@ -122,6 +123,7 @@ LANG_LIJ_DESC?=	Ligurian (Genoa) language support
 LANG_MS_DESC?=	Malay language support
 LANG_MY_DESC?=	Burmese language support
 LANG_NE_DESC?=	Nepali language support
+LANG_OC_DESC?=	Occitan (lengadocian) language support
 LANG_SW_DESC?=	Swahili language support
 LANG_UR_DESC?=	Urdu (Pakistan) language support
 LANG_UZ_DESC?=	Uzbek language support
