@@ -222,8 +222,6 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/icons/vm_start_32px.png
 %%DATADIR%%/icons/vrdp_16px.png
 %%DATADIR%%/icons/vrdp_32px.png
-%%DATADIR%%/old_vboxService.pm
-%%DATADIR%%/old_vboxserializers.pl
 %%DATADIR%%/rbox_err.pl
 %%DATADIR%%/rbox_gui_edit.pl
 %%DATADIR%%/rbox_gui_edit_audio.pl
