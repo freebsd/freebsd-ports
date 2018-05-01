@@ -1,6 +1,6 @@
---- configure.orig	2016-02-05 17:22:09 UTC
+--- configure.orig	2018-03-23 03:48:36 UTC
 +++ configure
-@@ -5656,7 +5663,6 @@ if test "${with_dbusdir+set}" = set; the
+@@ -5827,7 +5827,6 @@ if test "${with_dbusdir+set}" = set; then :
  fi
  
  
@@ -8,7 +8,15 @@
  DBUS_NOTIFIER=""
  DBUS_NOTIFIERLIBS=""
  
-@@ -8684,13 +8690,7 @@ fi
+@@ -6688,7 +6687,6 @@ if test "$DSO" != ":"; then
+ 			if test $exec_prefix != /usr; then
+ 				DSOFLAGS="-Wl,-R$libdir $DSOFLAGS"
+ 				LDFLAGS="$LDFLAGS -Wl,-R$libdir"
+-				EXPORT_LDFLAGS="-Wl,-R$libdir"
+ 			fi
+ 			;;
+                 linux* | gnu*)
+@@ -8802,13 +8800,7 @@ fi
  			PAMLIBS="-lpam"
  		fi
  
