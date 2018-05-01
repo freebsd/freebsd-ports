@@ -1,0 +1,5 @@
+Miscellaneous OFX / OpenFX / Open Effects plugins.
+These plugins were primarily developped for Natron, but may be used with other
+OpenFX hosts.
+
+WWW: https://github.com/devernay/openfx-misc

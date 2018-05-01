@@ -659,6 +659,7 @@
     SUBDIR += opencv-java
     SUBDIR += opendx
     SUBDIR += openfx-io
+    SUBDIR += openfx-misc
     SUBDIR += opengl-man
     SUBDIR += openicc-config
     SUBDIR += openimageio

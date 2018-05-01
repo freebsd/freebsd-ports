@@ -1,0 +1,22 @@
+--- CImg/Makefile.orig	2018-04-05 10:43:14 UTC
++++ CImg/Makefile
+@@ -179,16 +179,16 @@ endif
+ CIMGVERSION=88fab6de7bfc141a1f577e3cf1b17b9fb1e4f438
+ 
+ CImg.h: Inpaint/inpaint.h
+-	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/CImg.h
++#	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/CImg.h
+ #	patch -p0 -d. < CImg-2.0.0-anisotropic.patch
+ #	patch -p0 -d. < CImg-1.7.1-omp.patch
+ 
+ Inpaint/inpaint.h:
+-	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/plugins/inpaint.h
++#	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/plugins/inpaint.h
+ 	patch -p0 -d. < Inpaint/inpaint.h.patch
+ 
+ nlmeans.h:
+-	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/plugins/nlmeans.h
++#	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/plugins/nlmeans.h
+ 
+ #git archive --remote=git://git.code.sf.net/p/gmic/source $(CIMGVERSION):src CImg.h | tar xf -
+ 
