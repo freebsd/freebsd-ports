@@ -1,0 +1,18 @@
+--- Bundle/Makefile.orig	2017-01-03 14:53:38 UTC
++++ Bundle/Makefile
+@@ -168,11 +168,11 @@ endif
+ 
+ PNGVERSION = a70c086077c0eaecbae3845e4da4424de5f43361
+ 
+-lodepng.cpp:
+-	curl -o $@ https://raw.githubusercontent.com/lvandeve/lodepng/$(PNGVERSION)/lodepng.cpp
++#lodepng.cpp:
++	#curl -o $@ https://raw.githubusercontent.com/lvandeve/lodepng/$(PNGVERSION)/lodepng.cpp
+ 
+-lodepng.h:
+-	curl -o $@ https://raw.githubusercontent.com/lvandeve/lodepng/$(PNGVERSION)/lodepng.h
++#lodepng.h:
++	#curl -o $@ https://raw.githubusercontent.com/lvandeve/lodepng/$(PNGVERSION)/lodepng.h
+ 
+ $(OBJECTPATH)/lodepng.o: lodepng.cpp lodepng.h
+ $(OBJECTPATH)/ReadKrita.o: ReadKrita.cpp lodepng.h

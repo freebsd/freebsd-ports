@@ -1,0 +1,10 @@
+--- Makefile.master.orig	2017-01-03 14:53:38 UTC
++++ Makefile.master
+@@ -3,6 +3,7 @@ PATHTOROOT = $(SRCDIR)/OpenFX/Support
+ include $(PATHTOROOT)/Plugins/Makefile.master
+ 
+ CXXFLAGS += -DOFX_EXTENSIONS_VEGAS -DOFX_EXTENSIONS_NUKE -DOFX_EXTENSIONS_TUTTLE -DOFX_EXTENSIONS_NATRON -DOFX_SUPPORTS_OPENGLRENDER -I$(SRCDIR)/SupportExt
++CXXFLAGS += -I$(SRCDIR)/OpenFX-IO/openfx/Support/include
+ VPATH += $(SRCDIR)/SupportExt
+ 
+ # ImageMagick
