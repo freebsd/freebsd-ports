@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	her
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
