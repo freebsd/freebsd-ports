@@ -658,6 +658,7 @@
     SUBDIR += opencv-core
     SUBDIR += opencv-java
     SUBDIR += opendx
+    SUBDIR += openfx-arena
     SUBDIR += openfx-io
     SUBDIR += openfx-misc
     SUBDIR += opengl-man

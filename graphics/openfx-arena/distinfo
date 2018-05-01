@@ -1,0 +1,13 @@
+TIMESTAMP = 1525130623
+SHA256 (olear-openfx-arena-2.2.1-95caed1_GH0.tar.gz) = 6b945a8fdb93e83af89ef2f2f8b6a69610265ec32257fa5aa5035a84630977c2
+SIZE (olear-openfx-arena-2.2.1-95caed1_GH0.tar.gz) = 564650
+SHA256 (devernay-openfx-supportext-90093f7_GH0.tar.gz) = 3dedf570b60d17e1d6f1c9e0bb2dcb20d3a76f4323f053b20cc35b15efa4956a
+SIZE (devernay-openfx-supportext-90093f7_GH0.tar.gz) = 260067
+SHA256 (devernay-openfx-42463b8_GH0.tar.gz) = e914c87aa8902c3f092b432e744e4c9070348efbe5e58c926a05a3664dc7a62b
+SIZE (devernay-openfx-42463b8_GH0.tar.gz) = 10319112
+SHA256 (MrKepzie-openfx-io-1148523_GH0.tar.gz) = 5acc203e9de1a24ef18727608abdc2971704906611ee000f8fe604adc2c28a7a
+SIZE (MrKepzie-openfx-io-1148523_GH0.tar.gz) = 425189
+SHA256 (MrKepzie-SequenceParsing-25112f0_GH0.tar.gz) = cfc3e6ffff89f978a66e1324e7ec2270618eb8d1133c5281ee8b4507cf1503ec
+SIZE (MrKepzie-SequenceParsing-25112f0_GH0.tar.gz) = 15770
+SHA256 (MrKepzie-tinydir-60f0905_GH0.tar.gz) = 9cdedea9e02a97d4539881c06019a2317fa789d8132d914ca9909cba56c3517d
+SIZE (MrKepzie-tinydir-60f0905_GH0.tar.gz) = 4479
