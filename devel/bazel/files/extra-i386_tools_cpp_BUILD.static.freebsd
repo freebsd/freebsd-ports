@@ -1,0 +1,16 @@
+--- tools/cpp/BUILD.static.freebsd.orig	2018-04-09 13:54:29.958442000 +0000
++++ tools/cpp/BUILD.static.freebsd	2018-04-09 13:54:48.383168000 +0000
+@@ -56,11 +56,11 @@
+ toolchain(
+     name = "cc-toolchain-freebsd",
+     exec_compatible_with = [
+-        "@bazel_tools//platforms:x86_64",
++        "@bazel_tools//platforms:x86_32",
+         "@bazel_tools//platforms:freebsd",
+     ],
+     target_compatible_with = [
+-        "@bazel_tools//platforms:x86_64",
++        "@bazel_tools//platforms:x86_32",
+         "@bazel_tools//platforms:freebsd",
+     ],
+     toolchain = ":cc-compiler-freebsd",
