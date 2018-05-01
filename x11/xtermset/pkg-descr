@@ -1,3 +1,5 @@
 This program allows you to change some of xterm's display settings
 dynamically.  Most of the option names are the same as those found in
 xterm; see the man page for details.
+
+WWW: https://sourceforge.net/projects/clts/
