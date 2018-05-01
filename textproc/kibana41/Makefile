@@ -13,7 +13,7 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-DEPRECATED=	End of Life was 2016-11-10
+DEPRECATED=	End of Life was 2016-11-10, depends on expired www/node4
 EXPIRATION_DATE=	2018-06-01
 
 RUN_DEPENDS=	node4>=4.3.2:www/node4
