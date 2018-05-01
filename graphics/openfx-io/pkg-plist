@@ -1,0 +1,42 @@
+OFX/Plugins/IO.ofx.bundle/Contents/Info.plist
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OCIOCDLTransform.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OCIOColorSpace.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OCIODisplay.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OCIOFileTransform.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OCIOLogConvert.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OCIOLookTransform.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OIIOResize.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OIIOResize.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OIIOText.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.OIIOText.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadEXR.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadEXR.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadFFmpeg.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadFFmpeg.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadOIIO.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadOIIO.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadPFM.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadPFM.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadPNG.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.ReadPNG.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.RunScript.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.RunScript.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.SeExpr.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.SeExpr.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WriteEXR.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WriteEXR.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WriteFFmpeg.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WriteFFmpeg.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WriteOIIO.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WriteOIIO.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WritePFM.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WritePFM.svg
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WritePNG.png
+OFX/Plugins/IO.ofx.bundle/Contents/Resources/fr.inria.openfx.WritePNG.svg
+OFX/Plugins/IO.ofx.bundle/Contents/FreeBSD-x86-64/IO.ofx
+@dir OFX/Plugins/IO.ofx.bundle/Contents/Resources
+@dir OFX/Plugins/IO.ofx.bundle/Contents/FreeBSD-x86-64
+@dir OFX/Plugins/IO.ofx.bundle/Contents
+@dir OFX/Plugins/IO.ofx.bundle
+@dir OFX/Plugins
+@dir OFX
