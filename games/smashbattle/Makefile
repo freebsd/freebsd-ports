@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	8-bit style platform battle game
 
+LICENSE=	NONE
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/battle/Battle
 
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
@@ -19,10 +21,10 @@ DOS2UNIX_FILES=	*.cpp *.h Makefile
 USE_SDL=	sdl image mixer
 ALL_TARGET=	battle
 
+SUB_FILES=	${PORTNAME}
+
 pre-extract:
 	@${MKDIR} ${WRKDIR}/${DISTNAME}
-
-SUB_FILES=	${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=|CC?=|; \
