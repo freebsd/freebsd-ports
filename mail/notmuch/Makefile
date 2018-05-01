@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.26.1
+PORTVERSION=	0.26.2
 CATEGORIES?=	mail
-MASTER_SITES=	http://notmuchmail.org/releases/
+MASTER_SITES=	https://notmuchmail.org/releases/
 
 MAINTAINER=	seschwar@gmail.com
 COMMENT?=	Thread-based email index, search and tagging application
