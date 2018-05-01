@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	alsa-sndio
-DISTVERSION=	0.1
+DISTVERSION=	0.2
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
