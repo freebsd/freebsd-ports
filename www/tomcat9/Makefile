@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat
-PORTVERSION=	9.0.6
+PORTVERSION=	9.0.7
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9])(.*)/\1/}/v${PORTVERSION}/bin
 PKGNAMESUFFIX=	9
@@ -32,14 +32,14 @@ TOMCAT_CONF_FILES=	\
 		server.xml tomcat-users.xml tomcat-users.xsd web.xml \
 		jaspic-providers.xml jaspic-providers.xsd
 
-OPTIONS_DEFINE= HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
-HOST_MANAGER_DESC= Install Host Manager application
-MANAGER_DESC= Install Manager web application
-DOCS_DESC= Install Documentation web application
-EXAMPLES_DESC= Install Examples web application
-ROOT_DESC= Install default ROOT web application
-OPTIONS_DEFAULT= HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
-OPTIONS_SUB= yes
+OPTIONS_DEFINE=	HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
+HOST_MANAGER_DESC=	Install Host Manager application
+MANAGER_DESC=	Install Manager web application
+DOCS_DESC=	Install Documentation web application
+EXAMPLES_DESC=	Install Examples web application
+ROOT_DESC=	Install default ROOT web application
+OPTIONS_DEFAULT=	HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
+OPTIONS_SUB=	yes
 
 PLIST_SUB=	T=${TOMCAT_SUBDIR} \
 		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
