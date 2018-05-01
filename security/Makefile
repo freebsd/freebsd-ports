@@ -186,6 +186,7 @@
     SUBDIR += gnutls
     SUBDIR += go-cve-dictionary
     SUBDIR += go.crypto
+    SUBDIR += gopass
     SUBDIR += goptlib
     SUBDIR += gorilla
     SUBDIR += govpn
