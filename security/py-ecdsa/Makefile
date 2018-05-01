@@ -12,11 +12,13 @@ MAINTAINER=	kyuupichan@gmail.com
 COMMENT=	ECDSA cryptographic signature library (pure python)
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
