@@ -1,0 +1,6 @@
+The slightly more awesome Standard Unix Password Manager for teams.
+
+gopass is a rewrite of the pass password manager in Go with the aim
+of making it cross-platform and adding additional features.
+
+WWW: https://www.justwatch.com/gopass
