@@ -129,8 +129,8 @@ mpeg4.cxx:1329:27: error: use of undeclared identifier 'CODEC_FLAG_4MV'
    // Lagrange multipliers - this is how the context defaults do it:
 -  m_context->lmin = m_context->qmin * FF_QP2LAMBDA;
 -  m_context->lmax = m_context->qmax * FF_QP2LAMBDA; 
-+  av_opt_set_int(m_context, "lmin", m_context->qmin * FF_QP2LAMBDA, 0);
-+  av_opt_set_int(m_context, "lmax", m_context->qmax * FF_QP2LAMBDA, 0);
++  av_opt_set_int(m_context->priv_data, "lmin", m_context->qmin * FF_QP2LAMBDA, 0);
++  av_opt_set_int(m_context->priv_data, "lmax", m_context->qmax * FF_QP2LAMBDA, 0);
  
    // YUV420P input
    m_inputFrame->linesize[0] = m_context->width;
@@ -189,13 +189,13 @@ mpeg4.cxx:1329:27: error: use of undeclared identifier 'CODEC_FLAG_4MV'
      // default is tex^qComp; 1 is constant bitrate
 -    m_avcontext->rc_eq = (char*) "1";
 -    //avcontext->rc_eq = "tex^qComp";
-+    av_opt_set(m_avcontext, "rc_eq", (char*) "1", 0);
-+    //av_opt_set(m_avcontext, "rc_eq", "tex^qComp", 0);
++    av_opt_set(m_avcontext->priv_data, "rc_eq", (char*) "1", 0);
++    //av_opt_set(m_avcontext->priv_data, "rc_eq", "tex^qComp", 0);
      // These ones technically could be dynamic, I think
      m_avcontext->rc_min_rate = 0;
      // This is set to 0 in ffmpeg.c, the command-line utility.
 -    m_avcontext->rc_initial_cplx = 0.0f;
-+    av_opt_set_double(m_avcontext, "rc_init_cplx", 0.0f, 0);
++    av_opt_set_double(m_avcontext->priv_data, "rc_init_cplx", 0.0f, 0);
  
      // And this is set to 1.
      // It seems to affect how aggressively the library will raise and lower
@@ -203,7 +203,7 @@ mpeg4.cxx:1329:27: error: use of undeclared identifier 'CODEC_FLAG_4MV'
      // the "vbv buffer", not bits per second, so nobody really knows how
      // it works.
 -    m_avcontext->rc_buffer_aggressivity = 1.0f;
-+    av_opt_set_double(m_avcontext, "rc_buf_aggressivity", 1.0f, 0);
++    av_opt_set_double(m_avcontext->priv_data, "rc_buf_aggressivity", 1.0f, 0);
  
      // Ratecontrol buffer size, in bits. Usually 0.5-1 second worth.
      // 224 kbyte is what VLC uses, and it seems to fix the quantization pulse (at Level 5)
@@ -228,8 +228,8 @@ mpeg4.cxx:1329:27: error: use of undeclared identifier 'CODEC_FLAG_4MV'
      // Lagrange multipliers - this is how the context defaults do it:
 -    m_avcontext->lmin = m_avcontext->qmin * FF_QP2LAMBDA;
 -    m_avcontext->lmax = m_avcontext->qmax * FF_QP2LAMBDA;
-+    av_opt_set_int(m_avcontext, "lmin", m_avcontext->qmin * FF_QP2LAMBDA, 0);
-+    av_opt_set_int(m_avcontext, "lmax", m_avcontext->qmax * FF_QP2LAMBDA, 0);
++    av_opt_set_int(m_avcontext->priv_data, "lmin", m_avcontext->qmin * FF_QP2LAMBDA, 0);
++    av_opt_set_int(m_avcontext->priv_data, "lmax", m_avcontext->qmax * FF_QP2LAMBDA, 0);
  
      // If framesize has changed or is not yet initialized, fix it up
      if((unsigned)m_avcontext->width != m_frameWidth || (unsigned)m_avcontext->height != m_frameHeight) {
