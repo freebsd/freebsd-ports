@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	her
-PORTVERSION=	0.10.2
+PORTVERSION=	1.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,7 @@ COMMENT=	ORM that maps REST resources to Ruby objects
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel4>=3.0.0:databases/rubygem-activemodel4 \
-		rubygem-activesupport4>=3.0.0:devel/rubygem-activesupport4 \
+RUN_DEPENDS=	rubygem-activemodel4>=4.2.1:databases/rubygem-activemodel4 \
 		rubygem-faraday>=0.8:www/rubygem-faraday \
 		rubygem-multi_json>=1.7:devel/rubygem-multi_json
 
