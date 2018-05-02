@@ -3,6 +3,7 @@
 
 PORTNAME=	netdumpd
 PORTVERSION=	20180424
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	LOCAL/markj
 
@@ -18,5 +19,7 @@ MAKE_ARGS+=	MANDIR=${PREFIX}/man/man
 MAKE_ARGS+=	SCRIPTSDIR=${PREFIX}/etc/rc.d
 
 PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz etc/rc.d/${PORTNAME}
+
+USES+=		uidfix
 
 .include <bsd.port.mk>
