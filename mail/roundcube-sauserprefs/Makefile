@@ -8,6 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.tehinterweb.co.uk/roundcube/plugins/ \
 		LOCAL/bdrewery/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	roundcube-
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	stb@lassitu.de
@@ -15,8 +16,9 @@ COMMENT=	Roundcube plugin to manage SpamAssassin prefs
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=0.8:mail/roundcube
+RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.8:mail/roundcube@${PHP_FLAVOR}
 
+USES=	php:flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 

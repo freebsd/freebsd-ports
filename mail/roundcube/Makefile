@@ -6,6 +6,7 @@ PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}mail-${DISTVERSION}-complete
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER?=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
@@ -20,7 +21,7 @@ RCUBECOMP=	SQL config .htaccess index.php installer logs \
 		plugins program skins temp vendor
 PORTDOCS=	CHANGELOG INSTALL README.md UPGRADING
 
-USES=		cpe php:web
+USES=		cpe php:web,flavors
 CPE_PRODUCT=	webmail
 CPE_VENDOR=	roundcube
 

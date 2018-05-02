@@ -7,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://www.std-soft.de/webmail/plugins/
 PKGNAMEPREFIX=	roundcube-
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}_rc0.5_v${DISTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
@@ -14,8 +15,9 @@ COMMENT=	Roundcube login info plugin
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	roundcube>=0.5:mail/roundcube
+RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.5:mail/roundcube@${PHP_FLAVOR}
 
+USES=	php:flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 
