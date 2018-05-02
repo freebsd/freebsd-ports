@@ -64,7 +64,6 @@ ENGLISH_DESC=	US English Language Sounds
 FRENCH_DESC=	French Canadian Language Sounds
 RUSSIAN_DESC=	Russian Language Sounds
 
-ALL_MODULES_BROKEN=		fails to build with ffmpeg 4.0
 ALL_MODULES_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 				${LOCALBASE}/bin/aclocal:devel/automake
 ALL_MODULES_CONFLICTS_BUILD=	apr
