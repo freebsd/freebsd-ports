@@ -1,4 +1,5 @@
-https://github.com/webcamoid/webcamoid/pull/119
+https://github.com/webcamoid/webcamoid/commit/52fbf8376085
+https://github.com/webcamoid/webcamoid/commit/0ee66c7dd24b
 
 --- libAvKys/Plugins/MultiSink/src/ffmpeg/src/abstractstream.cpp.orig	2017-10-09 06:45:30 UTC
 +++ libAvKys/Plugins/MultiSink/src/ffmpeg/src/abstractstream.cpp
@@ -140,10 +141,13 @@ https://github.com/webcamoid/webcamoid/pull/119
      this->m_codecContext->width = caps.property("width").toInt();
 --- libAvKys/Plugins/VideoCapture/src/ffmpeg/src/convertvideoffmpeg.h.orig	2017-10-09 06:45:30 UTC
 +++ libAvKys/Plugins/VideoCapture/src/ffmpeg/src/convertvideoffmpeg.h
-@@ -33,6 +33,9 @@ extern "C"
+@@ -33,6 +33,12 @@ extern "C"
      #include <libavutil/imgutils.h>
      #include <libavutil/pixdesc.h>
      #include <libavutil/mem.h>
++    #ifndef AV_CODEC_CAP_TRUNCATED
++    #define AV_CODEC_CAP_TRUNCATED CODEC_CAP_TRUNCATED
++    #endif
 +    #ifndef AV_CODEC_FLAG_TRUNCATED
 +    #define AV_CODEC_FLAG_TRUNCATED CODEC_FLAG_TRUNCATED
 +    #endif
