@@ -3,6 +3,7 @@
 
 PORTNAME=	radicale
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,8 @@ COMMENT=	Python based CalDAV/CardDAV server
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
 
 NO_ARCH=	yes
 
@@ -27,14 +29,6 @@ HTTP_DESC=	HTTP authentication support
 
 HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>=0:www/py-requests1@${FLAVOR}
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=0:net/py-ldap@${FLAVOR}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-USES+=		python:2.7
-.else
-USES+=		python
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|~/.config/radicale|${DATADIR}|; s|/etc|${PREFIX}/etc|' ${WRKSRC}/config
