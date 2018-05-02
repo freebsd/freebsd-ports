@@ -9,15 +9,17 @@
      static FILE *MPGfile;
      static buffer_t buff;
      static struct SwsContext *img_convert_ctx;
-@@ -2338,7 +2338,7 @@ namespace netgen
+@@ -2338,8 +2338,8 @@ namespace netgen
          context->time_base = s;
          context->gop_size = gopsize;
          context->max_b_frames = bframes;
 -        context->pix_fmt = PIX_FMT_YUV420P;
+-        context->flags |= CODEC_FLAG_PSNR;
 +        context->pix_fmt = AV_PIX_FMT_YUV420P;
-         context->flags |= CODEC_FLAG_PSNR;
++        context->flags |= AV_CODEC_FLAG_PSNR;
  
          // if( avcodec_open( context, codec ) < 0 ) {
+ 	if( avcodec_open2( context, codec, NULL) < 0 ) {
 @@ -2351,7 +2351,7 @@ namespace netgen
            return TCL_ERROR;
          }
