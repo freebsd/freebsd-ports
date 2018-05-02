@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncrack
-PORTVERSION=	0.5
+DISTVERSION=	0.6
 CATEGORIES=	security
 MASTER_SITES=	http://nmap.org/ncrack/dist/ \
 				http://redundancy.redundancy.org/mirror/
@@ -17,5 +17,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake ssl
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}.0
 
 .include <bsd.port.mk>
