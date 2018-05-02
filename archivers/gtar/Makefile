@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tar
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	g
@@ -38,9 +38,5 @@ STATIC_CONFIGURE_ENV=	SHLIBEXT=""
 
 STATIC_VARS=	STATIC_ARGS=build
 STATIC_VARS_OFF=	STATIC_ARGS=lib
-
-# do not rebuild tar.info
-post-patch:
-	${TOUCH} -r ${WRKSRC}/doc/stamp-vti ${WRKSRC}/configure
 
 .include <bsd.port.mk>
