@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Fork of python-ldap with Python 3 support
 
+DEPRECATED=	This code has merged back to python-ldap. Please use net/py-ldap instead
+EXPIRATION_DATE=	2018-06-02
+
 LICENSE=	PSFL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0:devel/py-pyasn1-modules@${FLAVOR}
