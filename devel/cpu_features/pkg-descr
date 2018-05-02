@@ -1,0 +1,6 @@
+A small, fast, and simple open source library to report CPU features at
+runtime. Written in C89 for maximum portability, it allocates no memory and is
+suitable for implementing fundamental functions and running in sandboxed
+environments.
+
+WWW: https://github.com/google/cpu_features

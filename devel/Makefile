@@ -361,6 +361,7 @@
     SUBDIR += cppunit
     SUBDIR += cpputest
     SUBDIR += cproto
+    SUBDIR += cpu_features
     SUBDIR += cpuflags
     SUBDIR += cquery
     SUBDIR += cram
