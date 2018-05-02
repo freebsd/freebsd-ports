@@ -22,6 +22,7 @@ share/icons/hicolor/scalable/apps/applets-screenshooter.svg
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfce4-screenshooter.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-screenshooter.mo
