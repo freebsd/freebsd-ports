@@ -195,7 +195,7 @@ mpeg4.cxx:1329:27: error: use of undeclared identifier 'CODEC_FLAG_4MV'
      m_avcontext->rc_min_rate = 0;
      // This is set to 0 in ffmpeg.c, the command-line utility.
 -    m_avcontext->rc_initial_cplx = 0.0f;
-+    av_opt_set_double(m_avcontext, "rc_initial_cplx", 0.0f, 0);
++    av_opt_set_double(m_avcontext, "rc_init_cplx", 0.0f, 0);
  
      // And this is set to 1.
      // It seems to affect how aggressively the library will raise and lower
@@ -203,7 +203,7 @@ mpeg4.cxx:1329:27: error: use of undeclared identifier 'CODEC_FLAG_4MV'
      // the "vbv buffer", not bits per second, so nobody really knows how
      // it works.
 -    m_avcontext->rc_buffer_aggressivity = 1.0f;
-+    av_opt_set_double(m_avcontext, "rc_buffer_aggressivity", 1.0f, 0);
++    av_opt_set_double(m_avcontext, "rc_buf_aggressivity", 1.0f, 0);
  
      // Ratecontrol buffer size, in bits. Usually 0.5-1 second worth.
      // 224 kbyte is what VLC uses, and it seems to fix the quantization pulse (at Level 5)
