@@ -230,7 +230,7 @@ man/man8/rotatelogs.8.gz
 man/man8/suexec.8.gz
 sbin/apachectl
 sbin/apxs
-%%FORENSIC%%sbin/check_forensic
+%%LOG_FORENSIC%%sbin/check_forensic
 sbin/checkgid
 sbin/dbmmanage
 sbin/envvars
