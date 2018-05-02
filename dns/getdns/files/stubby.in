@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: stubby
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add some of the following variables to /etc/rc.conf to configure stubby:
+# stubby_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable stubby.
+# stubby_config (str):		Default "%%PREFIX%%/etc/stubby.conf"
+#				Set it to the full path to the config file
+#				that stubby will use during the automated
+#				start-up.
+
+. /etc/rc.subr
+
+name="stubby"
+rcvar=stubby_enable
+
+load_rc_config $name
+
+: ${stubby_enable="NO"}
+: ${stubby_config="%%PREFIX%%/etc/stubby/stubby.yml"}
+
+command="%%PREFIX%%/bin/stubby"
+command_args="-g -C ${stubby_config}"
+
+required_files=${stubby_config}
+run_rc_command "$1"
