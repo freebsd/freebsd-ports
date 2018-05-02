@@ -1,4 +1,4 @@
-bin/freetype-config
+%%CONFIG%%bin/freetype-config
 include/freetype2/freetype/config/ftconfig.h
 include/freetype2/freetype/config/ftheader.h
 include/freetype2/freetype/config/ftmodule.h
@@ -51,7 +51,7 @@ include/freetype2/ft2build.h
 lib/libfreetype.a
 lib/libfreetype.so
 lib/libfreetype.so.6
-lib/libfreetype.so.6.16.0
+lib/libfreetype.so.6.16.1
 libdata/pkgconfig/freetype2.pc
-man/man1/freetype-config.1.gz
+%%CONFIG%%man/man1/freetype-config.1.gz
 share/aclocal/freetype2.m4
