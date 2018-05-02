@@ -1,0 +1,17 @@
+https://git.savannah.gnu.org/cgit/tar.git/commit/?id=847a36f064efed676ae007b1def3c0db364cdddb
+
+https://lists.gnu.org/archive/html/bug-tar/2018-04/msg00012.html
+
+--- tests/difflink.at.orig	2017-11-10 03:55:18 UTC
++++ tests/difflink.at
+@@ -20,8 +20,8 @@ AT_TAR_CHECK([
+ mkdir a
+ genfile -f a/x
+ ln -s x a/y
+-ln a/y a/z
+-tar cf a.tar a
++ln -P a/y a/z
++tar cf a.tar a/x a/y a/z
+ rm a/z
+ ln -s x a/z
+ tar df a.tar

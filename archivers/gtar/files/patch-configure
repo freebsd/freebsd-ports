@@ -1,9 +1,9 @@
 Hack to disable shared library detection, so configure won't try
 to link with "/usr/local/lib/libiconv.so -static".
 
---- configure.orig	2016-05-16 08:52:00 UTC
+--- configure.orig	2017-12-17 11:25:08 UTC
 +++ configure
-@@ -35630,7 +35630,7 @@ fi
+@@ -37451,7 +37451,7 @@ fi
  $as_echo "$acl_cv_rpath" >&6; }
    wl="$acl_cv_wl"
    acl_libext="$acl_cv_libext"
