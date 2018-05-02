@@ -1,3 +1,3 @@
-TIMESTAMP = 1516650844
-SHA256 (python-ldap-2.5.2.tar.gz) = b8c134dfedaef0e6ff4a4b94277708dcadb758b448905a83b8946df077356ed2
-SIZE (python-ldap-2.5.2.tar.gz) = 297976
+TIMESTAMP = 1521151033
+SHA256 (python-ldap-3.0.0.tar.gz) = 86746b912a2cd37a54b06c694f021b0c8556d4caeab75ef50435ada152e2fbe1
+SIZE (python-ldap-3.0.0.tar.gz) = 364733
