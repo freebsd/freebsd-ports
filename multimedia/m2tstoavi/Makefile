@@ -3,7 +3,7 @@
 
 PORTNAME=	m2tstoavi
 PORTVERSION=	2009121901
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.olmosconsulting.com/ http://meatwad.mouf.net/~steve/
 DISTNAME=	m2ts

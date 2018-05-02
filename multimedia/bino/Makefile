@@ -3,6 +3,7 @@
 
 PORTNAME=	bino
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.savannah.nongnu.org/releases/bino/
 
@@ -11,6 +12,8 @@ COMMENT=	3D video player with multi-display support
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with ffmpeg 4.0
 
 LIB_DEPENDS=	libass.so:multimedia/libass \
 		libavformat.so:multimedia/ffmpeg \

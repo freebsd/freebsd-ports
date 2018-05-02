@@ -3,7 +3,7 @@
 
 PORTNAME=	libgroove
 PORTVERSION=	4.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,6 +11,8 @@ COMMENT=	Audio dispatching library
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build with ffmpeg 4.0
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libchromaprint.so:audio/chromaprint \

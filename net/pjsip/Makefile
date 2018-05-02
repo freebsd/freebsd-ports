@@ -2,6 +2,7 @@
 
 PORTNAME=	pjsip
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}

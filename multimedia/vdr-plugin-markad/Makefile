@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-markad
 PORTVERSION=	0.1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1041/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -13,6 +13,8 @@ COMMENT=	Video Disk Recorder - MarkAd plugin
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with ffmpeg 4.0
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 

@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/:ffmpeg \
 		http://libav.org/releases/:libav
