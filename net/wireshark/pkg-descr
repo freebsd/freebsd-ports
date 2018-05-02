@@ -2,4 +2,4 @@ A network analyzer that lets you capture and interactively browse the
 contents of packets from a variety of network interface types. Packet data can
 be read from a file, or live from a local network interface.
 
-WWW: http://www.wireshark.org/
+WWW: https://www.wireshark.org/
