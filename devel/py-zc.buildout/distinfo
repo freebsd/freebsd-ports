@@ -1,3 +1,3 @@
-TIMESTAMP = 1521147689
-SHA256 (zope/zc.buildout-2.11.1.tar.gz) = 08017dcd8f4b60b48b7d830da835a9350c07e7f383fa56d45925ab5144400281
-SIZE (zope/zc.buildout-2.11.1.tar.gz) = 163322
+TIMESTAMP = 1525268352
+SHA256 (zope/zc.buildout-2.11.3.tar.gz) = f7fde2cde7b937f67e52a3e94b76f9294b73c1e9bb698430e96778f3f735544c
+SIZE (zope/zc.buildout-2.11.3.tar.gz) = 163542
