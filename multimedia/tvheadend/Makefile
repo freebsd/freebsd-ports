@@ -7,6 +7,9 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	3cb4f580565b.patch:-p1
+
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	TV streaming server supporting DVB, IPTV, SAT>IP and more
 
@@ -71,7 +74,6 @@ INOTIFY_CONFIGURE_ENABLE=	inotify
 INOTIFY_LDFLAGS=	-linotify
 
 TRANSCODING_DESC=	Transcoding for mobile and web clients
-TRANSCODING_BROKEN=		fails to build with ffmpeg 4.0
 TRANSCODING_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 TRANSCODING_CONFIGURE_ENABLE=	libav
 
