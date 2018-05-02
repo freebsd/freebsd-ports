@@ -2,6 +2,7 @@ https://github.com/visualboyadvance-m/visualboyadvance-m/commit/502de18
 https://github.com/visualboyadvance-m/visualboyadvance-m/commit/a3a07d2
 https://github.com/visualboyadvance-m/visualboyadvance-m/commit/029a5fc
 https://github.com/visualboyadvance-m/visualboyadvance-m/commit/3f3c385
+https://github.com/visualboyadvance-m/visualboyadvance-m/commit/f3f6ee7
 
 --- src/common/ffmpeg.cpp.orig	2015-09-19 15:58:26 UTC
 +++ src/common/ffmpeg.cpp
@@ -32,7 +33,32 @@ https://github.com/visualboyadvance-m/visualboyadvance-m/commit/3f3c385
  #define priv_AVFormatContext AVFormatContext
  #define priv_AVStream AVStream
  #define priv_AVOutputFormat AVOutputFormat
-@@ -103,10 +123,16 @@ MediaRet MediaRecorder::setup_sound_stream(const char *fname, AVOutputFormat *fm
+@@ -64,11 +84,22 @@ static void avformat_free_context(AVFormatContext *ctx)
+ // I have no idea what size to make these buffers
+ // I don't see any ffmpeg functions to guess the size, either
+ 
+-// use frame size, or FF_MIN_BUFFER_SIZE (that seems to be what it wants)
++#ifdef AV_INPUT_BUFFER_MIN_SIZE
++
++    // use frame size, or AV_INPUT_BUFFER_MIN_SIZE (that seems to be what it wants)
++#define AUDIO_BUF_LEN (frame_len > AV_INPUT_BUFFER_MIN_SIZE ? frame_len : AV_INPUT_BUFFER_MIN_SIZE)
++    // use maximum frame size * 32 bpp * 2 for good measure
++#define VIDEO_BUF_LEN (AV_INPUT_BUFFER_MIN_SIZE + 256 * 244 * 4 * 2)
++
++#else
++
++    // use frame size, or FF_MIN_BUFFER_SIZE (that seems to be what it wants)
+ #define AUDIO_BUF_LEN (frame_len > FF_MIN_BUFFER_SIZE ? frame_len : FF_MIN_BUFFER_SIZE)
+-// use maximum frame size * 32 bpp * 2 for good measure
++    // use maximum frame size * 32 bpp * 2 for good measure
+ #define VIDEO_BUF_LEN (FF_MIN_BUFFER_SIZE + 256 * 244 * 4 * 2)
+ 
++#endif
++
+ bool MediaRecorder::did_init = false;
+ 
+ MediaRecorder::MediaRecorder() : oc(0), vid_st(0), aud_st(0), video_buf(0),
+@@ -103,10 +134,16 @@ MediaRet MediaRecorder::setup_sound_stream(const char *fname, AVOutputFormat *fm
  	oc = NULL;
  	return MRET_ERR_NOMEM;
      }
@@ -50,7 +76,7 @@ https://github.com/visualboyadvance-m/visualboyadvance-m/commit/3f3c385
      ctx->bit_rate = 128000; // arbitrary; in case we're generating mp3
      ctx->sample_rate = soundGetSampleRate();
      ctx->channels = 2;
-@@ -115,7 +141,6 @@ MediaRet MediaRecorder::setup_sound_stream(const char *fname, AVOutputFormat *fm
+@@ -115,7 +152,6 @@ MediaRet MediaRecorder::setup_sound_stream(const char *fname, AVOutputFormat *fm
      if(fmt->flags & AVFMT_GLOBALHEADER)
  	ctx->flags |= CODEC_FLAG_GLOBAL_HEADER;
  
@@ -58,7 +84,7 @@ https://github.com/visualboyadvance-m/visualboyadvance-m/commit/3f3c385
  #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(53,6,0)
      if(!codec || avcodec_open(ctx, codec)) {
  #else
-@@ -369,6 +394,7 @@ MediaRecorder::~MediaRecorder()
+@@ -369,6 +405,7 @@ MediaRecorder::~MediaRecorder()
      Stop();
  }
  
@@ -66,7 +92,7 @@ https://github.com/visualboyadvance-m/visualboyadvance-m/commit/3f3c385
  MediaRet MediaRecorder::AddFrame(const u8 *vid)
  {
      if(!oc || !vid_st)
-@@ -376,6 +402,9 @@ MediaRet MediaRecorder::AddFrame(const u8 *vid)
+@@ -376,6 +413,9 @@ MediaRet MediaRecorder::AddFrame(const u8 *vid)
  
      AVCodecContext *ctx = vid_st->codec;
      AVPacket pkt;
@@ -76,10 +102,19 @@ https://github.com/visualboyadvance-m/visualboyadvance-m/commit/3f3c385
  
      // strip borders.  inconsistent between depths for some reason
      // but fortunately consistent between gb/gba.
-@@ -413,7 +442,20 @@ MediaRet MediaRecorder::AddFrame(const u8 *vid)
+@@ -406,6 +446,7 @@ MediaRet MediaRecorder::AddFrame(const u8 *vid)
+     }
+     av_init_packet(&pkt);
+     pkt.stream_index = vid_st->index;
++#ifdef AVFMT_RAWPICTURE
+     if(oc->oformat->flags & AVFMT_RAWPICTURE) {
+ 	// this won't work due to border
+ 	// not sure what formats set this, anyway
+@@ -413,7 +454,21 @@ MediaRet MediaRecorder::AddFrame(const u8 *vid)
  	pkt.data = f->data[0];
  	pkt.size = linesize * ctx->height;
      } else {
++#endif
 +#if LIBAVCODEC_VERSION_MAJOR > 56
 +        pkt.data = video_buf;
 +        pkt.size = VIDEO_BUF_LEN;
@@ -97,7 +132,17 @@ https://github.com/visualboyadvance-m/visualboyadvance-m/commit/3f3c385
  	if(!pkt.size)
  	    return MRET_OK;
  	if(ctx->coded_frame && ctx->coded_frame->pts != AV_NOPTS_VALUE)
-@@ -438,6 +480,53 @@ MediaRet MediaRecorder::AddFrame(const u8 *vid)
+@@ -426,7 +481,9 @@ MediaRet MediaRecorder::AddFrame(const u8 *vid)
+ 	if(ctx->coded_frame->key_frame)
+ 	    pkt.flags |= AV_PKT_FLAG_KEY;
+ 	pkt.data = video_buf;
++#ifdef AVFMT_RAWPICTURE
+     }
++#endif
+     if(av_interleaved_write_frame(oc, &pkt) < 0) {
+ 	avformat_free_context(oc);
+ 	oc = NULL;
+@@ -438,6 +495,53 @@ MediaRet MediaRecorder::AddFrame(const u8 *vid)
      return MRET_OK;
  }
  
@@ -151,7 +196,7 @@ https://github.com/visualboyadvance-m/visualboyadvance-m/commit/3f3c385
  MediaRet MediaRecorder::AddFrame(const u16 *aud)
  {
      if(!oc || !aud_st)
-@@ -465,13 +554,19 @@ MediaRet MediaRecorder::AddFrame(const u16 *aud)
+@@ -465,13 +569,19 @@ MediaRet MediaRecorder::AddFrame(const u16 *aud)
      }
      while(len + in_audio_buf2 >= frame_len) {
  	av_init_packet(&pkt);
