@@ -15,8 +15,9 @@ LICENSE=	GPLv3
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist cython
+TEST_TARGET=	check  # test fails
 
-regression-test: extract
-	(cd ${WRKSRC}; ${MAKE} check)
+post-patch:
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
