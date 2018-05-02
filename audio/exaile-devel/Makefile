@@ -17,8 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py-bsddb3@${PY_FLAVOR}
 
 USE_GITHUB=	yes
-GH_TAGNAME=	da614ce
-COMMITDATE=	20180212
+GH_TAGNAME=	4a54d25
+COMMITDATE=	20180502
 
 NO_ARCH=	yes
 USES=		desktop-file-utils gmake gnome python:2.7

@@ -62,6 +62,9 @@ lib/exaile/xl/metadata/_id3.pyo
 lib/exaile/xl/metadata/_matroska.py
 lib/exaile/xl/metadata/_matroska.pyc
 lib/exaile/xl/metadata/_matroska.pyo
+lib/exaile/xl/metadata/aiff.py
+lib/exaile/xl/metadata/aiff.pyc
+lib/exaile/xl/metadata/aiff.pyo
 lib/exaile/xl/metadata/ape.py
 lib/exaile/xl/metadata/ape.pyc
 lib/exaile/xl/metadata/ape.pyo
