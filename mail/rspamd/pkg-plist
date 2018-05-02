@@ -452,6 +452,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lua/history_redis.lua
 %%DATADIR%%/lua/ip_score.lua
 %%DATADIR%%/lua/maillist.lua
+%%DATADIR%%/lua/maps_stats.lua
 %%DATADIR%%/lua/metadata_exporter.lua
 %%DATADIR%%/lua/metric_exporter.lua
 %%DATADIR%%/lua/mid.lua
