@@ -1,3 +1,4 @@
+bin/cvtsudoers
 bin/sudo
 bin/sudoedit
 bin/sudoreplay
@@ -11,6 +12,7 @@ libexec/sudo/libsudo_util.so.0.0.0
 libexec/sudo/sudo_noexec.so
 libexec/sudo/sudoers.so
 libexec/sudo/system_group.so
+man/man1/cvtsudoers.1.gz
 man/man5/sudo.conf.5.gz
 man/man5/sudoers.5.gz
 man/man5/sudoers_timestamp.5.gz
@@ -97,6 +99,7 @@ sbin/visudo
 %%NLS%%share/locale/vi/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/sudo.mo
 @dir etc/sudoers.d
 @dir /var/db/sudo/lectured
 @dir /var/db/sudo
