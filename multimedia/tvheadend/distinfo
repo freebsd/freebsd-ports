@@ -1,3 +1,5 @@
 TIMESTAMP = 1522131748
 SHA256 (tvheadend-tvheadend-v4.2.6_GH0.tar.gz) = 09b4d4ff436a2006001ef3c3f38553dc4db3ea31bf9871b046a33180a0e8a8b9
 SIZE (tvheadend-tvheadend-v4.2.6_GH0.tar.gz) = 21528720
+SHA256 (3cb4f580565b.patch) = b27328ece106d5c66bba3f3a39ce69b66a3182ea686acd57d393d1ae7255b0bb
+SIZE (3cb4f580565b.patch) = 5541
