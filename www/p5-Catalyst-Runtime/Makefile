@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90117
+PORTVERSION=	5.90118
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Elegant MVC Web Application Framework (Runtime)
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Do not add the following ports to TEST_DEPENDS to avoid cyclic dependencies:
 # - devel/p5-Test-WWW-Mechanize-Catalyst
@@ -20,14 +21,12 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-CGI-Simple>=1.109:www/p5-CGI-Simple \
 		p5-CGI-Struct>=0:www/p5-CGI-Struct \
 		p5-Class-C3-Adopt-NEXT>=0.07:devel/p5-Class-C3-Adopt-NEXT \
-		p5-Class-Data-Inheritable>=0:devel/p5-Class-Data-Inheritable \
 		p5-Class-Load>=0.12:devel/p5-Class-Load \
 		p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-Data-OptList>=0:devel/p5-Data-OptList \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-HTTP-Body>=1.22:www/p5-HTTP-Body \
 		p5-HTTP-Message>=5.814:www/p5-HTTP-Message \
-		p5-HTTP-Request-AsCGI>=1.0:www/p5-HTTP-Request-AsCGI \
 		p5-Hash-MultiValue>=0:devel/p5-Hash-MultiValue \
 		p5-JSON-MaybeXS>=1:converters/p5-JSON-MaybeXS \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
@@ -55,11 +54,9 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:www/p5-CGI-Simple \
 		p5-URI>=1.65:net/p5-URI \
 		p5-URI-ws>=0.03:net/p5-URI-ws \
 		p5-libwww>=5.837:www/p5-libwww \
-		p5-namespace-autoclean>=0.28:devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0.23:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
-		p5-Term-Size-Any>=0:devel/p5-Term-Size-Any \
+TEST_DEPENDS=	p5-Term-Size-Any>=0:devel/p5-Term-Size-Any \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Without-Module>=0:devel/p5-Test-Without-Module \
 		p5-Type-Tiny>=0:devel/p5-Type-Tiny \
