@@ -1,0 +1,77 @@
+--- Makefile.orig	2018-04-19 02:55:50 UTC
++++ Makefile
+@@ -6,6 +6,8 @@ TOPDIR := $(shell pwd)
+ 
+ ifeq ($(ARCH),x86_64)
+   ARCH := x64
++else ifeq ($(ARCH),amd64)
++  ARCH := x64
+ else
+   $(error Not prepared to compile on $(ARCH))
+ endif
+@@ -15,7 +17,7 @@ ifeq ($(MONO),)
+   MONO := /usr/bin/mono
+ endif
+ 
+-MCS := $(shell which dmcs)
++MCS := $(shell which mcs)
+ ifeq ($(MCS),)
+   MCS := /usr/bin/dmcs
+ endif
+@@ -40,6 +42,15 @@ ifeq ($(PLATFORM),Linux)
+   DLEXT := so
+   java_DLEXT := so
+   TARGET_LIBC_VERSION ?= 2.11
++else ifeq ($(PLATFORM),FreeBSD)
++  PLATFORM := freebsd
++
++  CFLAGS += -DPREFIX=\"$(PREFIX)\" -DCONFDIR=\"$(PREFIX)/etc/foundationdb\"
++  CXXFLAGS += -std=c++11 -stdlib=libc++ -Wno-undefined-var-template -Wno-unknown-warning-option -msse4.2
++
++  BOOSTDIR ?= $(PREFIX)
++  DLEXT := so
++  java_DLEXT := so
+ else ifeq ($(PLATFORM),Darwin)
+   PLATFORM := osx
+ 
+@@ -92,7 +103,7 @@ STATIC_LIBS :=
+ VPATH += $(addprefix :,$(filter-out lib,$(patsubst -L%,%,$(filter -L%,$(LDFLAGS)))))
+ 
+ CS_PROJECTS := flow/actorcompiler flow/coveragetool fdbclient/vexillographer
+-CPP_PROJECTS := flow fdbrpc fdbclient fdbbackup fdbserver fdbcli bindings/c bindings/java fdbmonitor bindings/flow/tester bindings/flow FDBLibTLS
++CPP_PROJECTS := flow fdbrpc fdbclient fdbbackup fdbserver fdbcli bindings/c fdbmonitor bindings/flow/tester bindings/flow
+ OTHER_PROJECTS := bindings/python bindings/ruby bindings/go
+ 
+ CS_MK_GENERATED := $(CS_PROJECTS:=/generated.mk)
+@@ -101,7 +112,7 @@ CPP_MK_GENERATED := $(CPP_PROJECTS:=/gen
+ MK_GENERATED := $(CS_MK_GENERATED) $(CPP_MK_GENERATED)
+ 
+ # build/valgrind.mk needs to be included before any _MK_GENERATED (which in turn includes local.mk)
+-MK_INCLUDE := build/scver.mk build/valgrind.mk $(CS_MK_GENERATED) $(CPP_MK_GENERATED) $(OTHER_PROJECTS:=/include.mk) build/packages.mk
++MK_INCLUDE := $(CS_MK_GENERATED) $(CPP_MK_GENERATED)
+ 
+ ALL_MAKEFILES := Makefile $(MK_INCLUDE) $(patsubst %/generated.mk,%/local.mk,$(MK_GENERATED))
+ 
+@@ -111,7 +122,7 @@ TARGETS =
+ 
+ default: fdbserver fdbbackup fdbcli fdb_c fdb_python fdb_python_sdist
+ 
+-all: $(CS_PROJECTS) $(CPP_PROJECTS) $(OTHER_PROJECTS)
++all: $(CS_PROJECTS) $(CPP_PROJECTS)
+ 
+ # These are always defined and ready to use. Any target that uses them and needs them up to date
+ #  should depend on versions.target
+@@ -133,11 +144,11 @@ Makefiles: $(MK_GENERATED)
+ 
+ $(CS_MK_GENERATED): build/csprojtom4.py build/csproj.mk Makefile
+ 	@echo "Creating       $@"
+-	@python build/csprojtom4.py $(@D)/*.csproj | m4 -DGENDIR="$(@D)" -DGENNAME=`basename $(@D)/*.csproj .csproj` - build/csproj.mk > $(@D)/generated.mk
++	@$(PYTHON) build/csprojtom4.py $(@D)/*.csproj | m4 -DGENDIR="$(@D)" -DGENNAME=`basename $(@D)/*.csproj .csproj` - build/csproj.mk > $(@D)/generated.mk
+ 
+ $(CPP_MK_GENERATED): build/vcxprojtom4.py build/vcxproj.mk Makefile
+ 	@echo "Creating       $@"
+-	@python build/vcxprojtom4.py $(@D)/*.vcxproj | m4 -DGENDIR="$(@D)" -DGENNAME=`basename $(@D)/*.vcxproj .vcxproj` - build/vcxproj.mk > $(@D)/generated.mk
++	@$(PYTHON) build/vcxprojtom4.py $(@D)/*.vcxproj | m4 -DGENDIR="$(@D)" -DGENNAME=`basename $(@D)/*.vcxproj .vcxproj` - build/vcxproj.mk > $(@D)/generated.mk
+ 
+ DEPSDIR := .deps
+ OBJDIR := .objs
