@@ -103,7 +103,7 @@ DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libgcrypt.so:security/libgcrypt
 
 KRB_NONE_CONFIGURE_ON=	--without-krb5
-KRB_NONE_CONFIGURE_OFF=	--with-krb5
+KRB_NONE_CONFIGURE_OFF=	--with-krb5 --with-krb5-crypto-openssl
 KRB_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
 
 GTK2_CONFIGURE_ON=	--with-gtk=2 --with-qt=no
