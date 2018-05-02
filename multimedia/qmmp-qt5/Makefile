@@ -116,7 +116,6 @@ GME_DESC=		Support video game music files
 GME_LIB_DEPENDS=	libgme.so:audio/libgme
 GME_CMAKE_BOOL=	USE_GME
 
-FFMPEG_BROKEN=		fails to build with ffmpeg 4.0
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CMAKE_BOOL=	USE_FFMPEG
 
