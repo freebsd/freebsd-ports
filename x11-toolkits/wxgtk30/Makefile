@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	wx
-PORTVERSION=	3.0.2
-PORTREVISION?=	7
+PORTVERSION=	3.0.3.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SF/wxwindows/${PORTVERSION}
 PKGNAMESUFFIX=	30-gtk2
 DISTNAME=	wxWidgets-${PORTVERSION}
 
@@ -18,7 +17,11 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libexpat.so:textproc/expat2
 
-USES=		compiler:c++11-lib gmake iconv jpeg localbase pkgconfig tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	wxWidgets
+GH_PROJECT=	wxWidgets
+
+USES=		compiler:c++11-lib gmake iconv jpeg localbase pkgconfig
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GNOME=	gtk20
@@ -32,7 +35,13 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-expat=sys \
 		--with-opengl \
 		--with-gtk \
+		--without-gnomevfs \
+		--disable-epollloop \
+		--disable-joystick \
 		--enable-backtrace \
+		--enable-ipv6 \
+		--enable-optimise \
+		--enable-utf8 \
 		--enable-graphics_ctx \
 		--enable-compat26 \
 		--enable-compat28
@@ -47,7 +56,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
 GSTREAMER_CONFIGURE_ENABLE=	mediactrl
-GSTREAMER_USE=	GNOME=gconf2 GSTREAMER=yes
+GSTREAMER_USE=	GNOME=gconf2 GSTREAMER1=yes
 
 MSPACK_CONFIGURE_WITH=	libmspack
 MSPACK_LIB_DEPENDS=	libmspack.so:archivers/libmspack
@@ -61,5 +70,8 @@ WEBKIT_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 CONFIGURE_ARGS+=--disable-precomp-headers
 .endif
+
+post-build-NLS-on:
+	@${DO_MAKE_BUILD} allmo -C ${BUILD_WRKSRC}/locale
 
 .include <bsd.port.post.mk>
