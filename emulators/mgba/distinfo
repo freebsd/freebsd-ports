@@ -1,3 +1,5 @@
 TIMESTAMP = 1507126883
 SHA256 (mgba-emu-mgba-0.6.1_GH0.tar.gz) = 7c78feb0aa12930b993ca1b220d282ed178e306621559e48bb168623030eb876
 SIZE (mgba-emu-mgba-0.6.1_GH0.tar.gz) = 7437240
+SHA256 (a7a51a11373f.patch) = c6c7dbced0350392cbb0efba8b417fdab65a4db929f747ff6c4159f7f07c1216
+SIZE (a7a51a11373f.patch) = 1485
