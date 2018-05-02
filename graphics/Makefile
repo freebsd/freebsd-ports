@@ -636,6 +636,7 @@
     SUBDIR += mxp
     SUBDIR += mypaint
     SUBDIR += nathive
+    SUBDIR += natron
     SUBDIR += netpbm
     SUBDIR += nip2
     SUBDIR += nomacs

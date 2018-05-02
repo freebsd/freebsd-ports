@@ -1,0 +1,15 @@
+TIMESTAMP = 1525127673
+SHA256 (MrKepzie-Natron-2.3.4_GH0.tar.gz) = f0efe4a02064fb7cfc537a6a1f198e184c7e92ce5c7135f35c3de45b0bf4368a
+SIZE (MrKepzie-Natron-2.3.4_GH0.tar.gz) = 20202668
+SHA256 (MrKepzie-OpenColorIO-Configs-Natron-v2.3_GH0.tar.gz) = 4009ba214bad46d8607daf1118eb77dc94f6fee43182d4228270c35fb161d115
+SIZE (MrKepzie-OpenColorIO-Configs-Natron-v2.3_GH0.tar.gz) = 292528755
+SHA256 (MrKepzie-google-test-50d6fc3_GH0.tar.gz) = e4604551d0179cb6c38815680c119c2cebde9bccb84cb86ec47259857135e0d8
+SIZE (MrKepzie-google-test-50d6fc3_GH0.tar.gz) = 474226
+SHA256 (MrKepzie-google-mock-17945db_GH0.tar.gz) = acc265b223d50483e8113a18b29fe4930fbb21c776e0e063afd85b855bb5dd27
+SIZE (MrKepzie-google-mock-17945db_GH0.tar.gz) = 299273
+SHA256 (MrKepzie-SequenceParsing-4b5e605_GH0.tar.gz) = 73c50c8f69e809660f709f86128c7a4f6c43b6b843f480ef717e0fbc1bb4f88d
+SIZE (MrKepzie-SequenceParsing-4b5e605_GH0.tar.gz) = 15853
+SHA256 (MrKepzie-tinydir-60f0905_GH0.tar.gz) = 9cdedea9e02a97d4539881c06019a2317fa789d8132d914ca9909cba56c3517d
+SIZE (MrKepzie-tinydir-60f0905_GH0.tar.gz) = 4479
+SHA256 (devernay-openfx-3056fd6_GH0.tar.gz) = e2be8d2b9d35b7b80b455e24f46846afa2055c912a6893d134c615fb87d763ed
+SIZE (devernay-openfx-3056fd6_GH0.tar.gz) = 10479477
