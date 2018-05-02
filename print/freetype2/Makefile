@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetype2
-PORTVERSION=	2.9
-PORTREVISION=	1
+PORTVERSION=	2.9.1
 CATEGORIES=	print
 MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
@@ -37,7 +36,7 @@ PORTDOCS=	reference CHANGES formats.txt LICENSE.TXT raster.txt
 CPE_PRODUCT=	freetype
 CPE_VENDOR=	freetype
 
-OPTIONS_DEFINE=		DEBUG DOCS LONG_PCF_NAMES PNG \
+OPTIONS_DEFINE=		CONFIG DEBUG DOCS LONG_PCF_NAMES PNG \
 		TABLE_VALIDATION
 OPTIONS_GROUP=		SUBPIXEL_HINTING
 OPTIONS_GROUP_SUBPIXEL_HINTING=	V38 V40
@@ -45,13 +44,14 @@ OPTIONS_SINGLE=	RENDERING
 OPTIONS_SINGLE_RENDERING=	LCD_FILTERING LCD_RENDERING
 OPTIONS_RADIO=		SIZE_METRICS_CHOICE
 OPTIONS_RADIO_SIZE_METRICS_CHOICE=	FIX_SIZE_METRICS TT_SIZE_METRICS
-OPTIONS_DEFAULT=	LCD_RENDERING V40
+OPTIONS_DEFAULT=	CONFIG LCD_RENDERING V40
+OPTIONS_SUB=	yes
 
+CONFIG_DESC=	Install freetype-config
+CONFIG_CONFIGURE_ENABLE=freetype-config
 PNG_DESC=		Png compressed OpenType embedded bitmaps support
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
-
-EXTRA_PATCHES=	${FILESDIR}/correct-flex-features.patch:-p1
 
 TABLE_VALIDATION_DESC=	TrueType GX/AAT and OpenType table validation
 
@@ -61,13 +61,13 @@ FIX_SIZE_METRICS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-fix_size_metrics.diff
 TT_SIZE_METRICS_DESC=	TrueType-like size metrics for 'light' auto-hinting
 
 RENDERING_DESC=		Rendering technology
-LCD_FILTERING_DESC?=	Sub-pixel rendering (patented)
+LCD_FILTERING_DESC?=	Subpixel rendering (patented)
 LCD_FILTERING_CFLAGS=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
 LCD_RENDERING_DESC=	Harmony LCD rendering
 
 LONG_PCF_NAMES_DESC=	Enable long PCF family names
 
-SUBPIXEL_HINTING_DESC=	Sub-pixel hinting support
+SUBPIXEL_HINTING_DESC=	Subpixel hinting support
 V38_DESC=	v38 mode (Infinality code)
 V38_VARS=	SUBPIXEL_HINTING_MODE+=1
 V40_DESC=	v40 mode (minimal code, a.k.a. ClearType hinting, faster)
