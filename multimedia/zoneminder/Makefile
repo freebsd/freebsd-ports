@@ -10,7 +10,6 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to build with ffmpeg 4.0
 CONFLICTS_INSTALL=	zoneminder-h264
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
