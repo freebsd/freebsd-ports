@@ -6,12 +6,14 @@ PORTVERSION=	0.1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	roundcube-
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme for RoundCube Web Mail
 
-RUN_DEPENDS=	roundcube>=0.2:mail/roundcube
+RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.2:mail/roundcube@${PHP_FLAVOR}
 
+USES=	php:flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 

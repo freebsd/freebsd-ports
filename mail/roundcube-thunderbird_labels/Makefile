@@ -6,6 +6,7 @@ PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Thunderbird Labels plugin for RoundCube webmail
@@ -13,8 +14,9 @@ COMMENT=	Thunderbird Labels plugin for RoundCube webmail
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	roundcube>=0.5:mail/roundcube
+RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.5:mail/roundcube@${PHP_FLAVOR}
 
+USES=	php:flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 

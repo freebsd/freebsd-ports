@@ -6,15 +6,17 @@ DISTVERSION=	2.3
 PORTEPOCH=	1
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Roundcube webmail sieve plugin
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	roundcube>=1.0:mail/roundcube
-RUN_DEPENDS=	roundcube>=1.0:mail/roundcube
+BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
+RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 
+USES=		php:flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-sieverules
