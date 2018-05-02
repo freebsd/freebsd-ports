@@ -1,10 +1,10 @@
-%%PERL5_MAN3%%/Net::Frame::Dump.3.gz
-%%PERL5_MAN3%%/Net::Frame::Dump::Offline.3.gz
-%%PERL5_MAN3%%/Net::Frame::Dump::Online.3.gz
-%%PERL5_MAN3%%/Net::Frame::Dump::Online2.3.gz
-%%PERL5_MAN3%%/Net::Frame::Dump::Writer.3.gz
 %%SITE_PERL%%/Net/Frame/Dump.pm
 %%SITE_PERL%%/Net/Frame/Dump/Offline.pm
 %%SITE_PERL%%/Net/Frame/Dump/Online.pm
 %%SITE_PERL%%/Net/Frame/Dump/Online2.pm
 %%SITE_PERL%%/Net/Frame/Dump/Writer.pm
+%%PERL5_MAN3%%/Net::Frame::Dump.3.gz
+%%PERL5_MAN3%%/Net::Frame::Dump::Offline.3.gz
+%%PERL5_MAN3%%/Net::Frame::Dump::Online.3.gz
+%%PERL5_MAN3%%/Net::Frame::Dump::Online2.3.gz
+%%PERL5_MAN3%%/Net::Frame::Dump::Writer.3.gz
