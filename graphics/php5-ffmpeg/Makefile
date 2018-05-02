@@ -4,7 +4,7 @@
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6.0.20120114
 DISTVERSIONPREFIX=	php-
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -14,6 +14,8 @@ COMMENT=	FFmpeg shared extension for php
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build with ffmpeg 4.0
 
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libavutil.so:multimedia/ffmpeg

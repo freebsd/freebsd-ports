@@ -3,7 +3,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	2.0.0b2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 
 MAINTAINER=	root@cooltrainer.org

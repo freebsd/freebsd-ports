@@ -2,6 +2,7 @@
 
 PORTNAME=	openfx-io
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org

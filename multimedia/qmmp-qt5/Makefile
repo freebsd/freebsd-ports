@@ -2,7 +2,7 @@
 
 PORTNAME=	qmmp
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 	SF/qmmp-dev/${PORTNAME}/
@@ -116,6 +116,7 @@ GME_DESC=		Support video game music files
 GME_LIB_DEPENDS=	libgme.so:audio/libgme
 GME_CMAKE_BOOL=	USE_GME
 
+FFMPEG_BROKEN=		fails to build with ffmpeg 4.0
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CMAKE_BOOL=	USE_FFMPEG
 

@@ -4,6 +4,7 @@
 PORTNAME=	retroshare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	peter@netkey.at
@@ -11,6 +12,8 @@ COMMENT=	Private and secure decentralised communication platform
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN=		fails to build with ffmpeg 4.0
 
 LIB_DEPENDS=	libsqlcipher.so:databases/sqlcipher \
 		libspeex.so:audio/speex \

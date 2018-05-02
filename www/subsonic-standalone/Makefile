@@ -4,7 +4,7 @@
 
 PORTNAME=	subsonic-standalone
 PORTVERSION=	6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www java
 MASTER_SITES=	SF/subsonic/subsonic/${PORTVERSION}
 DISTNAME=	subsonic-${PORTVERSION}-standalone

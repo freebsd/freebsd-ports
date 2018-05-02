@@ -3,7 +3,7 @@
 
 PORTNAME=	dabstick-radio
 PORTVERSION=	0.96
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://www.sdr-j.tk/ \
 		LOCAL/nox/

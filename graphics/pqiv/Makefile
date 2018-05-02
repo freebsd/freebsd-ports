@@ -3,6 +3,7 @@
 
 PORTNAME=	pqiv
 PORTVERSION=	2.10.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	danilo@FreeBSD.org

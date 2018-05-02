@@ -3,6 +3,7 @@
 PORTNAME=	simplescreenrecorder
 DISTVERSION=	0.3.10-2
 DISTVERSIONSUFFIX=	-g7439813
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +11,8 @@ COMMENT=	Screen video recorder
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with ffmpeg 4.0
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libavformat.so:multimedia/ffmpeg

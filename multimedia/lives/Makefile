@@ -3,7 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	2.8.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://lives-video.com/releases/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -13,6 +13,8 @@ COMMENT=	Video editing system
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with ffmpeg 4.0
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat \
 		${LOCALBASE}/bin/analyseplugin:audio/ladspa

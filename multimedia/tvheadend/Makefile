@@ -4,7 +4,7 @@
 PORTNAME=	tvheadend
 PORTVERSION=	4.2.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
@@ -71,6 +71,7 @@ INOTIFY_CONFIGURE_ENABLE=	inotify
 INOTIFY_LDFLAGS=	-linotify
 
 TRANSCODING_DESC=	Transcoding for mobile and web clients
+TRANSCODING_BROKEN=		fails to build with ffmpeg 4.0
 TRANSCODING_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 TRANSCODING_CONFIGURE_ENABLE=	libav
 

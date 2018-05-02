@@ -3,12 +3,15 @@
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 
 LICENSE=	GPLv2
+
+BROKEN=		fails to build with ffmpeg 4.0
 
 BUILD_DEPENDS=	mplayer:multimedia/mplayer \
 		ffmpeg:multimedia/ffmpeg
