@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: founationdb
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `foundationdb':
+#
+#foundationdb_enable="YES"
+#
+# Define config file here to run with different config file:
+#
+#foundationdb_config="xxxxx"
+#
+
+. /etc/rc.subr
+
+name="foundationdb"
+rcvar="${name}_enable"
+trafficserver_enable=${trafficserver_enable:-"NO"}
+command=/usr/local/sbin/fdbmonitor
+pidfile="/var/run/fdbmonitor.pid"
+
+load_rc_config "$name"
+: ${foundationdb_enable="NO"}
+: ${foundationdb_config="%%PREFIX%%/etc/foundationdb/foundationdb.conf"}
+
+command_args="--conffile ${foundationdb_config} --lockfile ${pidfile} --daemonize"
+run_rc_command $1
