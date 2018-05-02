@@ -176,7 +176,7 @@ _hfm:*:227:227::0:0:hfm daemon:/nonexistent:/usr/sbin/nologin
 osrm:*:228:228::0:0:osrm:/nonexistent:/usr/sbin/nologin
 # free: 229
 carbon:*:230:230::0:0:osrm:/nonexistent:/usr/sbin/nologin
-# free: 231
+foundationdb:*:231:231::0:0:foundationdb:/nonexistent:/usr/sbin/nologin
 # free: 232
 # free: 233
 kafka:*:234:234::0:0:Apache Kafka user:/nonexistent:/usr/sbin/nologin
