@@ -5,6 +5,9 @@ DISTVERSION=	0.6.1
 PORTREVISION=	2
 CATEGORIES=	emulators
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	a7a51a11373f.patch:-p1
+
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Game Boy Advance (GBA) emulator/debugger
 
@@ -47,7 +50,6 @@ QT5_DESC=	Qt 5 frontend
 DEBUGGERS_CMAKE_BOOL=	USE_DEBUGGERS USE_EDITLINE USE_GDB_STUB
 DEBUGGERS_USES=		libedit
 
-FFMPEG_BROKEN=		fails to build with ffmpeg 4.0
 FFMPEG_CMAKE_BOOL=	USE_FFMPEG
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 			libavformat.so:multimedia/ffmpeg \
