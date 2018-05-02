@@ -30,7 +30,7 @@ Partially based on https://github.com/ZoneMinder/zoneminder/commit/e17bcb9178d0
    }
  
    video_outbuf = NULL;
-+#if !LIBAVCODEC_VERSION_CHECK(57, 0, 0, 0, 0)
++#if !LIBAVFORMAT_VERSION_CHECK(57, 0, 0, 0, 0)
    if ( !(of->flags & AVFMT_RAWPICTURE) )
 +#endif
    {
@@ -40,7 +40,7 @@ Partially based on https://github.com/ZoneMinder/zoneminder/commit/e17bcb9178d0
    AVPacket *pkt = packet_buffers[packet_index];
    av_init_packet( pkt );
    int got_packet = 0;
-+#if !LIBAVCODEC_VERSION_CHECK(57, 0, 0, 0, 0)
++#if !LIBAVFORMAT_VERSION_CHECK(57, 0, 0, 0, 0)
    if ( of->flags & AVFMT_RAWPICTURE )
    {
  #if LIBAVCODEC_VERSION_CHECK(52, 30, 2, 30, 2)
