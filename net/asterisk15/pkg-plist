@@ -168,6 +168,7 @@ include/asterisk/conversions.h
 include/asterisk/core_local.h
 include/asterisk/core_unreal.h
 include/asterisk/crypto.h
+include/asterisk/data_buffer.h
 include/asterisk/datastore.h
 include/asterisk/devicestate.h
 include/asterisk/dial.h
