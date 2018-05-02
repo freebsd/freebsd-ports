@@ -18,7 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libeio.so:devel/libeio
 
-USES=		gmake mono python:build shebangfix
+USES=		compiler:c++14-lang gmake mono python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
 USE_RC_SUBR=	foundationdb
