@@ -13,8 +13,6 @@ COMMENT=	Private and secure decentralised communication platform
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN=		fails to build with ffmpeg 4.0
-
 LIB_DEPENDS=	libsqlcipher.so:databases/sqlcipher \
 		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp \
