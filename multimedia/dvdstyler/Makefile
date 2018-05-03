@@ -15,8 +15,6 @@ COMMENT=	WxWidgets frontend to dvd recoding and authoring programs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with ffmpeg 4.0
-
 BUILD_DEPENDS=	zip:archivers/zip \
 		wxsvg>=1.2:graphics/wxsvg \
 		dvdauthor:multimedia/dvdauthor \
