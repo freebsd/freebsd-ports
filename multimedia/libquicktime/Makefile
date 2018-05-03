@@ -92,7 +92,6 @@ CONFIGURE_ARGS+=	--without-libpng
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-BROKEN=		fails to build with ffmpeg 4.0
 LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-ffmpeg
 .else
