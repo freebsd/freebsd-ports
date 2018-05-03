@@ -2,6 +2,7 @@
 
 PORTNAME=	bingrep
 PORTVERSION=	g20171111
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -32,7 +33,7 @@ CARGO_CRATES=	aho-corasick-0.6.3 \
 		hexplay-0.2.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.8 \
-		libc-0.2.29 \
+		libc-0.2.40 \
 		log-0.3.8 \
 		memchr-1.0.1 \
 		memrange-0.1.3 \
