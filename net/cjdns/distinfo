@@ -1,7 +1,3 @@
-TIMESTAMP = 1523265147
-SHA256 (cjdelisle-cjdns-cjdns-v20.1_GH0.tar.gz) = feea3e3884f66731b5efe3d289d5215ad4be27acb6a5879fabed14246f649cd7
-SIZE (cjdelisle-cjdns-cjdns-v20.1_GH0.tar.gz) = 4073975
-SHA256 (8b643d2db8a5f64720ff303c3344de6d68cdce5d.patch) = 334986071effbcc2e593ec471b3a253a5a34013f5fd64cc83799c9d32e914124
-SIZE (8b643d2db8a5f64720ff303c3344de6d68cdce5d.patch) = 1485
-SHA256 (d7a87ed23bbb567bd8ea2418c54266c7f26939c4.patch) = 5944da39ecf8a5ad43bd08a029c4492d8d3de5fc7e8c88c77d818c9fcc3a32ed
-SIZE (d7a87ed23bbb567bd8ea2418c54266c7f26939c4.patch) = 1270
+TIMESTAMP = 1525380905
+SHA256 (cjdelisle-cjdns-cjdns-v20.2_GH0.tar.gz) = b114f4e89c971d2c288e3d8265396248a37134895b0e0468bf55030de84b4d2a
+SIZE (cjdelisle-cjdns-cjdns-v20.2_GH0.tar.gz) = 4082584
