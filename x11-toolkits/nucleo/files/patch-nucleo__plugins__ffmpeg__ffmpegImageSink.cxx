@@ -1,6 +1,17 @@
 --- nucleo/plugins/ffmpeg/ffmpegImageSink.cxx.orig	2009-05-25 12:53:15 UTC
 +++ nucleo/plugins/ffmpeg/ffmpegImageSink.cxx
-@@ -118,17 +118,17 @@ namespace nucleo {
+@@ -20,6 +20,10 @@
+ 
+ #include <cstring>
+ 
++extern "C" {
++#include <libavutil/opt.h>
++}
++
+ #define NO_SOFTWARE_SCALER 0
+ 
+ #if !NO_SOFTWARE_SCALER
+@@ -118,25 +122,27 @@ namespace nucleo {
  
      output_format = 0 ;
      if (uri.scheme=="mpegts-udp") {
@@ -22,7 +33,17 @@
  	 output_format = 0 ;
  	 message = "Not a video format" ;
      } else if (output_format->flags & AVFMT_NOFILE) {
-@@ -156,12 +156,13 @@ namespace nucleo {
+ 	 output_format = 0 ;
+ 	 message = "AVFMT_NOFILE unsupported" ;
++#ifdef AVFMT_RAWPICTURE
+     } else if (output_format->flags & AVFMT_RAWPICTURE) {
+ 	 output_format = 0 ;
+ 	 message = "AVFMT_RAWPICTURE unsupported" ;
++#endif
+     }
+ 
+     if (!output_format) {
+@@ -156,12 +162,13 @@ namespace nucleo {
      snprintf(format_context->filename, sizeof(format_context->filename), 
  		   "%s", filename.c_str()) ;
   
@@ -37,7 +58,7 @@
  
      // ----------------
  
-@@ -190,8 +191,8 @@ namespace nucleo {
+@@ -190,11 +197,11 @@ namespace nucleo {
  
      AVCodecContext *codec_context = vstream->codec ;
      codec_context->codec_id = output_format->video_codec ;
@@ -47,22 +68,30 @@
 +    codec_context->pix_fmt = AV_PIX_FMT_YUV420P ;
      codec_context->width = img->getWidth() ;  // must be a multiple of two
      codec_context->height = img->getHeight() ; // must be a multiple of two
-     codec_context->me_method = ME_EPZS ; // ME_ZERO
-@@ -210,12 +211,7 @@ namespace nucleo {
+-    codec_context->me_method = ME_EPZS ; // ME_ZERO
++    av_opt_set(codec_context->priv_data, "motion_est", "epzs", 0); // "zero"
+     // ---
+     codec_context->bit_rate = bitrate*1000 ;
+     codec_context->bit_rate_tolerance = tolerance*1000 ;
+@@ -208,15 +215,10 @@ namespace nucleo {
+     if (!strcmp(format_context->oformat->name, "mp4")
+ 	   || !strcmp(format_context->oformat->name, "mov")
  	   || !strcmp(format_context->oformat->name, "3gp"))
- 	 codec_context->flags |= CODEC_FLAG_GLOBAL_HEADER ;
+-	 codec_context->flags |= CODEC_FLAG_GLOBAL_HEADER ;
++	 codec_context->flags |= AV_CODEC_FLAG_GLOBAL_HEADER ;
  
 -    if (av_set_parameters(format_context, NULL) < 0) {
 -	 std::cerr << "ffmpegImageSink: invalid output format parameters" << std::endl ;
 -	 return false ;
 -    }
--
--    dump_format(format_context, 0, filename.c_str(), 1) ; // FIXME: for debug only
 +    av_dump_format(format_context, 0, filename.c_str(), 1) ; // FIXME: for debug only
  
+-    dump_format(format_context, 0, filename.c_str(), 1) ; // FIXME: for debug only
+-
      // ------------------
  
-@@ -225,7 +221,7 @@ namespace nucleo {
+     AVCodec *codec = avcodec_find_encoder(codec_context->codec_id);
+@@ -225,7 +227,7 @@ namespace nucleo {
  	 return false ;
      }
  
@@ -71,7 +100,7 @@
  	 std::cerr << "ffmpegImageSink: could not open codec" << std::endl ;
  	 vstream->codec = 0 ;
  	 return false ;
-@@ -235,7 +231,7 @@ namespace nucleo {
+@@ -235,7 +237,7 @@ namespace nucleo {
  
      if (filename!="") {
  	 sender = 0 ;
@@ -80,7 +109,7 @@
  	   std::cerr << "ffmpegImageSink: could not open " << filename << std::endl ;
  	   return false ;
  	 }
-@@ -245,37 +241,37 @@ namespace nucleo {
+@@ -245,37 +247,37 @@ namespace nucleo {
  	 int port = uri.port ;
  	 if (!port) port = 1234 ;
  	 sender = new UdpSender(uri.host.c_str(), port) ;
@@ -130,7 +159,7 @@
  	 int size = avpicture_get_size(codec_context->pix_fmt, codec_context->width, codec_context->height) ;
  	 avpicture_fill((AVPicture *)&convPic,
  				 new uint8_t [size],
-@@ -304,7 +300,7 @@ namespace nucleo {
+@@ -304,7 +306,7 @@ namespace nucleo {
      // std::cerr << "base: " << vstream->time_base.num << " / " << vstream->time_base.den << std::endl ;
  
      AVCodecContext *cctx = vstream->codec ;
@@ -139,7 +168,7 @@
      resizeImage(img, cctx->width, cctx->height) ;
      avpicture_fill((AVPicture *)&srcPic, img->getData(), srcEncoding,
  			    cctx->width, cctx->height) ;
-@@ -330,23 +326,23 @@ namespace nucleo {
+@@ -330,23 +332,23 @@ namespace nucleo {
      picture->pts = pts ;
      // std::cerr << "pts: " << pts << std::endl ;
  
@@ -173,7 +202,7 @@
      }
      if (av_write_frame(format_context, &pkt) != 0) {
  	 // std::cerr << "ffmpegImageSink: error while writing video frame" << std::endl ;
-@@ -372,7 +368,7 @@ namespace nucleo {
+@@ -372,7 +374,7 @@ namespace nucleo {
  	 if (vstream->codec) {
  	   avcodec_close(vstream->codec) ;
  	   av_write_trailer(format_context) ;
