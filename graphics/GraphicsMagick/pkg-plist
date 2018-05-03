@@ -94,15 +94,15 @@ lib/GraphicsMagick/config/type.mgk
 lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.so
 lib/libGraphicsMagick++.so.12
-lib/libGraphicsMagick++.so.12.3.1
+lib/libGraphicsMagick++.so.12.3.2
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.so
 lib/libGraphicsMagick.so.3
-lib/libGraphicsMagick.so.3.17.2
+lib/libGraphicsMagick.so.3.18.0
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.so
 lib/libGraphicsMagickWand.so.2
-lib/libGraphicsMagickWand.so.2.8.2
+lib/libGraphicsMagickWand.so.2.9.0
 libdata/pkgconfig/GraphicsMagick++.pc
 libdata/pkgconfig/GraphicsMagick.pc
 libdata/pkgconfig/GraphicsMagickWand.pc
@@ -131,6 +131,8 @@ man/man5/quantize.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2013
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2014
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2015
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2016
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2017
 %%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2001.html
