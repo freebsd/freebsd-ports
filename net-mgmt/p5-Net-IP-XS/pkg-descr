@@ -1,0 +1,4 @@
+XS (C) implementation of Net::IP. See Net::IP's documentation (as
+at version 1.25) for the functions and methods that are available.
+
+WWW: http://search.cpan.org/dist/Net-IP-XS/
