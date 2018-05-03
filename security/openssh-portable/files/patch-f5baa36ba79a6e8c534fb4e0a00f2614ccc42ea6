@@ -1,0 +1,24 @@
+From f5baa36ba79a6e8c534fb4e0a00f2614ccc42ea6 Mon Sep 17 00:00:00 2001
+From: Darren Tucker <dtucker@dtucker.net>
+Date: Thu, 19 Apr 2018 09:53:14 +1000
+Subject: [PATCH] Omit 3des-cbc if OpenSSL built without DES.
+
+Patch from hongxu.jia at windriver.com, ok djm@
+---
+ cipher.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git cipher.c cipher.c
+index 578763616..a72682a82 100644
+--- cipher.c
++++ cipher.c
+@@ -82,7 +82,9 @@ struct sshcipher {
+ 
+ static const struct sshcipher ciphers[] = {
+ #ifdef WITH_OPENSSL
++#ifndef OPENSSL_NO_DES
+ 	{ "3des-cbc",		8, 24, 0, 0, CFLAG_CBC, EVP_des_ede3_cbc },
++#endif
+ 	{ "aes128-cbc",		16, 16, 0, 0, CFLAG_CBC, EVP_aes_128_cbc },
+ 	{ "aes192-cbc",		16, 24, 0, 0, CFLAG_CBC, EVP_aes_192_cbc },
+ 	{ "aes256-cbc",		16, 32, 0, 0, CFLAG_CBC, EVP_aes_256_cbc },
