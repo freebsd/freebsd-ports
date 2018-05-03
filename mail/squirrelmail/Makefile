@@ -6,6 +6,7 @@ PORTVERSION=	20180404
 CATEGORIES=	mail www
 MASTER_SITES=	http://snapshots.squirrelmail.org/ \
 	http://freebsd.uzsolt.hu/src/
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}_0202-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
@@ -15,7 +16,7 @@ COMMENT=	Webmail system which accesses mail over IMAP
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USES=		cpe gettext perl5 php:web tar:bzip2
+USES=		cpe gettext perl5 php:web,flavors tar:bzip2
 USE_PHP=	session hash gettext mbstring pcre openssl xml
 USE_PERL5=	run
 NO_ARCH=	yes
