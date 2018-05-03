@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/struct.tar.gz:math/octave-forge-struct
 
+BROKEN=		does not build with octave version 4.4.0
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${DISTNAME}

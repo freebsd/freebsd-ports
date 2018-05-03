@@ -3,7 +3,6 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	math java
 MASTER_SITES=	GNU
 
@@ -37,7 +36,8 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libdrm.so:graphics/libdrm \
-		libOSMesa.so:graphics/libosmesa
+		libOSMesa.so:graphics/libosmesa \
+		libsundials_arkode.so:math/sundials
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline \
 		tar:xz compiler:c++14-lang
@@ -59,8 +59,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf" \
 		JAVA_HOME=${JAVA_HOME} \
 		MAKEINFO=${LOCALBASE}/bin/makeinfo \
-		ac_cv_type_max_align_t=yes \
-		with_OSMesa="-lOSMesa -ldrm"
+		ac_cv_type_max_align_t=yes
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 		--with-lapack="${LAPACKLIB}" \
@@ -90,8 +89,6 @@ post-patch:
 	${REINPLACE_CMD} 's+-lcholmod+-lumfpack -lsuitesparseconfig -lamd -lcholmod -lcolamd ${LAPACKLIB}+' ${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/etc/icons/octave.desktop \
-		${STAGEDIR}${DESKTOPDIR}/www.octave.org-octave.desktop
 	(cd ${STAGEDIR}${DATADIR} && ${LN} -s ${PORTVERSION}/imagelib  .)
 
 post-install-DOCS-on:
@@ -100,6 +97,10 @@ post-install-DOCS-on:
 	refcard/refcard-a4.ps refcard/refcard-legal.ps \
 	refcard/refcard-letter.ps interpreter/octave.ps
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
+.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${INFO_PATH}
+.for file in interpreter/octave.info liboctave/liboctave.info
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${PREFIX}/${INFO_PATH}
 .endfor
 
 check regression-test: build
