@@ -2,57 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	web2ldap
-PORTVERSION=	1.2.94
-PORTREVISION=	1
-CATEGORIES=	www
-MASTER_SITES=	http://www.web2ldap.de/download/ \
-		http://www.sfr-fresh.com/unix/www/
+PORTVERSION=	1.3.16
+CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Python-based WWW gateway to LDAP servers
 
-LICENSE=	GPLv2
+LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.0:net/py-ldap@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}asn1crypto>=0.22.0:devel/py-asn1crypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dns>=0:dns/py-dns@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xlwt>0:textproc/py-xlwt@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ldap0>=0.0.60:net/py-ldap0@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/pyweblib/__init__.py:www/py-pyweblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipaddr>0:devel/py-ipaddr@${PY_FLAVOR} \
 		${LOCALBASE}/etc/mime.types:misc/mime-support
 
 OPTIONS_DEFINE=	DOCS
-USES=		cpe python:2.7 shebangfix
-python_OLD_CMD=	/usr/bin/python2.7
-SHEBANG_FILES=	sbin/*.py fcgi/*.py
-SUB_FILES=	pkg-message
+USES=		cpe python:2.7
+USE_PYTHON=	distutils autoplist
+
+SUB_FILES=	pkg-message ${PORTNAME}
+USE_RC_SUBR=	${PORTNAME}
 NO_ARCH=	yes
+PLIST_DIRS=	${DATADIR} ${DATADIR}/var ${DATADIR}/var/log ${DATADIR}/var/run /var/log/web2ldap
 
-PORTDOCS=	*
-PORTDATA=	*
-PLIST_DIRS=	%%DATADIR%%/var/log %%DATADIR%%/var/run
+post-build:
+		${TOUCH} ${WRKSRC}/etc/web2ldap/ssl/.placeholder
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/opt/fcgi/bin/cgi-fcgi|${LOCALBASE}/bin/cgi-fcgi|g' \
-		${WRKSRC}/cgi-bin/web2ldap.cgi
-	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}/etc|g' \
-			  -e 's|nobody|web2ldap|g' \
-		${WRKSRC}/etc/web2ldap/web2ldapcnf/standalone.py
-	@${FIND} ${WRKSRC} -name '*.orig' -delete -o -name '*.bak' -delete
-
-do-build:
-	${PYTHON_CMD} -m compileall ${WRKSRC}
-	${PYTHON_CMD} -O -m compileall ${WRKSRC}
-
-do-install:
-	@${ECHO_MSG} "==> Installing program files..."
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@(cd ${WRKSRC}; \
-		${FIND} * -type d | ${GREP} -vE "^htdocs" | ${CPIO} -p ${STAGEDIR}${DATADIR}; \
-		${FIND} * -type f | ${GREP} -vE "^htdocs" | ${CPIO} -pd ${STAGEDIR}${DATADIR})
-
-post-install-DOCS-on:
-	@${ECHO_MSG} "==> Installing document files..."
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}; \
-		${FIND} * -type d | ${GREP} "^htdocs" | ${CPIO} -p ${STAGEDIR}${DOCSDIR}; \
-		${FIND} * -type f | ${GREP} "^htdocs" | ${CPIO} -pd ${STAGEDIR}${DOCSDIR})
+post-stage:
+		${MKDIR} ${STAGEDIR}${DATADIR}/var/log
+		${MKDIR} ${STAGEDIR}${DATADIR}/var/run
+		${MKDIR} ${STAGEDIR}/var/log/web2ldap
 
 .include <bsd.port.mk>

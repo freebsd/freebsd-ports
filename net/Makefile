@@ -1051,6 +1051,7 @@
     SUBDIR += py-kafka-python
     SUBDIR += py-kombu
     SUBDIR += py-ldap
+    SUBDIR += py-ldap0
     SUBDIR += py-ldap3
     SUBDIR += py-ldaptor
     SUBDIR += py-libcloud
