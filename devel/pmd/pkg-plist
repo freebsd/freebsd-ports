@@ -5,7 +5,7 @@ bin/pmd
 %%DATADIR%%/antlr-runtime-3.5.2.jar
 %%DATADIR%%/antlr4-runtime-4.7.jar
 %%DATADIR%%/aopalliance-1.0.jar
-%%DATADIR%%/asm-6.0.jar
+%%DATADIR%%/asm-6.1.1.jar
 %%DATADIR%%/cglib-3.2.0.jar
 %%DATADIR%%/commons-beanutils-core-1.8.3.jar
 %%DATADIR%%/commons-io-2.4.jar
