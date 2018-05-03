@@ -36,7 +36,6 @@ AVAHI_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
 AVAHI_CPPFLAGS=		-I${LOCALBASE}/include/avahi-compat-libdns_sd
 
 FFMPEG_DESC=		Build FFmpeg plugin
-FFMPEG_BROKEN=		fails to build with ffmpeg 4.0
 FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_OFF=	--without-ffmpeg
 
