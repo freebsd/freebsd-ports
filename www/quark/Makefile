@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	quark
-DISTVERSION=	g20180305
+DISTVERSION=	g20180403
 CATEGORIES=	www
 MASTER_SITES=	https://git.suckless.org/quark/snapshot/
 PKGNAMESUFFIX=	-server
-DISTNAME=	quark-6770dc06e69f422124d1e9c0efdefa7cc4e98b61
+DISTNAME=	quark-ba38b0969f542e6e7d3f01ba500189a81ca32355
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Small and simple HTTP GET/HEAD-only web server for static content
@@ -14,6 +14,8 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	quark
+
+MAKE_ARGS=	CC=${CC} MANPREFIX=${PREFIX}/man
 
 PLIST_FILES=	bin/quark \
 		man/man1/quark.1.gz

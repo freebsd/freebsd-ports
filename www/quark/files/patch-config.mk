@@ -1,11 +1,7 @@
---- config.mk.orig	2018-03-05 09:24:46 UTC
+--- config.mk.orig	2018-04-02 23:23:00 UTC
 +++ config.mk
-@@ -5,12 +5,11 @@ VERSION = 0
- 
- # paths
- PREFIX = /usr/local
--MANPREFIX = $(PREFIX)/share/man
-+MANPREFIX = $(PREFIX)/man
+@@ -8,9 +8,8 @@ PREFIX = /usr/local
+ MANPREFIX = $(PREFIX)/share/man
  
  # flags
 -CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=700 -D_BSD_SOURCE
@@ -15,5 +11,4 @@
 +CFLAGS   += -std=c99 -pedantic -Wall -Wextra
  
  # compiler and linker
--CC = cc
-+CC ?= cc
+ CC = cc
