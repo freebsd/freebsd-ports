@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fuse-utils
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
