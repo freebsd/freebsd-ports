@@ -19,6 +19,7 @@ GH_ACCOUNT=	mfillpot
 GH_TAGNAME=	ceb0861
 
 MAKEFILE=	makefile
+TEST_TARGET=	check  # test fails
 
 PORTDOCS=	*
 PLIST_FILES=	bin/mathomatic man/man1/mathomatic.1.gz \
@@ -29,15 +30,14 @@ MAKE_ARGS=	READLINE=1
 
 OPTIONS_DEFINE=	DOCS
 
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mathomatic ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.png ${STAGEDIR}${PREFIX}/share/pixmaps
+
+do-install-DOCS-on:
 .for d in m4 tests
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
 	${INSTALL_DATA} ${WRKSRC}/${d}/* ${STAGEDIR}${DOCSDIR}/${d}
