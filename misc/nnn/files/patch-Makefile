@@ -1,6 +1,6 @@
---- Makefile.orig	2018-02-27 20:44:53 UTC
+--- Makefile.orig	2018-05-02 20:18:47 UTC
 +++ Makefile
-@@ -13,7 +13,7 @@ ifeq ($(shell $(PKG_CONFIG) ncursesw && 
+@@ -14,7 +14,7 @@ ifeq ($(shell $(PKG_CONFIG) ncursesw && 
  	CFLAGS += $(shell $(PKG_CONFIG) --cflags ncursesw)
  	LDLIBS += $(shell $(PKG_CONFIG) --libs   ncursesw)
  else
@@ -8,16 +8,4 @@
 +	LDLIBS += -lncursesw
  endif
  
- DISTFILES = nlay nnn.c nnn.h nnn.1 Makefile README.md LICENSE
-@@ -33,9 +33,9 @@ debug: $(SRC)
- 
- install: all
- 	install -m 0755 -d $(DESTDIR)$(PREFIX)/bin
--	install -m 0755 -t $(DESTDIR)$(PREFIX)/bin $(BIN) $(PLAYER)
-+	install -m 0755 $(BIN) $(PLAYER) $(DESTDIR)$(PREFIX)/bin 
- 	install -m 0755 -d $(DESTDIR)$(MANPREFIX)/man1
--	install -m 0644 -t $(DESTDIR)$(MANPREFIX)/man1 $(BIN).1
-+	install -m 0644 $(BIN).1 $(DESTDIR)$(MANPREFIX)/man1 
- 
- uninstall:
- 	$(RM) $(DESTDIR)$(PREFIX)/bin/$(BIN)
+ DISTFILES = nlay nlay.1 nnn.c nnn.h nnn.1 Makefile README.md LICENSE
