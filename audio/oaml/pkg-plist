@@ -1,0 +1,7 @@
+include/oaml.h
+lib/cmake/oaml/oaml.cmake
+lib/liboaml.a
+lib/liboaml.so
+lib/liboaml.so.1
+lib/liboaml.so.1.3.2
+libdata/pkgconfig/oaml.pc
