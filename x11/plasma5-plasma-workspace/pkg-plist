@@ -888,6 +888,7 @@ share/locale/cs/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/cs/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/cs/LC_MESSAGES/plasma_package_plasmashell.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_activities.mo
+share/locale/cs/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_baloosearch5.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_calculatorrunner.mo
@@ -1708,6 +1709,7 @@ share/locale/gl/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/gl/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_devicenotifications.mo
+share/locale/gl/LC_MESSAGES/plasma_engine_dict.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_network.mo
@@ -1721,6 +1723,7 @@ share/locale/gl/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/gl/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/gl/LC_MESSAGES/plasma_package_plasmashell.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_activities.mo
+share/locale/gl/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_baloosearch5.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_calculatorrunner.mo
@@ -2215,6 +2218,7 @@ share/locale/it/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/it/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/it/LC_MESSAGES/plasma_package_plasmashell.mo
 share/locale/it/LC_MESSAGES/plasma_runner_activities.mo
+share/locale/it/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/it/LC_MESSAGES/plasma_runner_baloosearch5.mo
 share/locale/it/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/it/LC_MESSAGES/plasma_runner_calculatorrunner.mo
@@ -3186,6 +3190,7 @@ share/locale/pl/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/pl/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/pl/LC_MESSAGES/plasma_package_plasmashell.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_activities.mo
+share/locale/pl/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_baloosearch5.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_calculatorrunner.mo

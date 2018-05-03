@@ -66,7 +66,7 @@ KDE4_APPLICATIONS_VERSION?=	15.04.3
 KDE4_BRANCH?=			stable
 
 # Current KDE desktop.
-KDE_PLASMA_VERSION?=		5.12.4
+KDE_PLASMA_VERSION?=		5.12.5
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.

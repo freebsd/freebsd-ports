@@ -715,6 +715,8 @@ share/doc/HTML/pt_BR/plasma-desktop/system-tray-up-arrow.png
 share/doc/HTML/pt_BR/plasma-desktop/taskbar-settings.png
 share/doc/HTML/ru/kcontrol/baloo/index.cache.bz2
 share/doc/HTML/ru/kcontrol/baloo/index.docbook
+share/doc/HTML/ru/kcontrol/colors/index.cache.bz2
+share/doc/HTML/ru/kcontrol/colors/index.docbook
 share/doc/HTML/ru/kcontrol/componentchooser/index.cache.bz2
 share/doc/HTML/ru/kcontrol/componentchooser/index.docbook
 share/doc/HTML/ru/kcontrol/desktopthemedetails/index.cache.bz2
@@ -723,10 +725,16 @@ share/doc/HTML/ru/kcontrol/emoticons/index.cache.bz2
 share/doc/HTML/ru/kcontrol/emoticons/index.docbook
 share/doc/HTML/ru/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/ru/kcontrol/joystick/index.docbook
+share/doc/HTML/ru/kcontrol/kcmaccess/index.cache.bz2
+share/doc/HTML/ru/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/ru/kcontrol/kded/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kded/index.docbook
+share/doc/HTML/ru/kcontrol/keyboard/index.cache.bz2
+share/doc/HTML/ru/kcontrol/keyboard/index.docbook
 share/doc/HTML/ru/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/ru/kcontrol/mouse/index.docbook
+share/doc/HTML/ru/kcontrol/paths/index.cache.bz2
+share/doc/HTML/ru/kcontrol/paths/index.docbook
 share/doc/HTML/ru/kcontrol/phonon/index.cache.bz2
 share/doc/HTML/ru/kcontrol/phonon/index.docbook
 share/doc/HTML/ru/kcontrol/solid-actions/index.cache.bz2
@@ -737,6 +745,8 @@ share/doc/HTML/ru/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/ru/kcontrol/splashscreen/index.docbook
 share/doc/HTML/ru/kcontrol/translations/index.cache.bz2
 share/doc/HTML/ru/kcontrol/translations/index.docbook
+share/doc/HTML/ru/kfontview/index.cache.bz2
+share/doc/HTML/ru/kfontview/index.docbook
 share/doc/HTML/ru/plasma-desktop/index.cache.bz2
 share/doc/HTML/ru/plasma-desktop/index.docbook
 share/doc/HTML/sr/kcontrol/autostart/index.cache.bz2
@@ -2190,6 +2200,7 @@ share/locale/gl/LC_MESSAGES/kcm_autostart.mo
 share/locale/gl/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/gl/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/gl/LC_MESSAGES/kcm_lookandfeel.mo
+share/locale/gl/LC_MESSAGES/kcm_nightcolor.mo
 share/locale/gl/LC_MESSAGES/kcm_search.mo
 share/locale/gl/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/gl/LC_MESSAGES/kcm_splashscreen.mo
@@ -2567,6 +2578,7 @@ share/locale/id/LC_MESSAGES/kcm_autostart.mo
 share/locale/id/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/id/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/id/LC_MESSAGES/kcm_solid_actions.mo
+share/locale/id/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/id/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/id/LC_MESSAGES/kcm_touchpad.mo
 share/locale/id/LC_MESSAGES/kcmaccess.mo
