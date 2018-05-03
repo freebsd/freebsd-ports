@@ -23,7 +23,6 @@ man/man8/sudoedit.8.gz
 man/man8/sudoreplay.8.gz
 man/man8/visudo.8.gz
 sbin/visudo
-%%LDAP%%bin/sudoers2ldif
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
