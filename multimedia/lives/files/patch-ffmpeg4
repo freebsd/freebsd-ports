@@ -1,0 +1,343 @@
+https://sourceforge.net/p/lives/code/2742/
+https://sourceforge.net/p/lives/code/2745/
+
+--- configure.orig	2017-06-29 01:44:43 UTC
++++ configure
+@@ -787,6 +787,8 @@ HAVE_AVFORMAT_NEW_STREAM_FALSE
+ HAVE_AVFORMAT_NEW_STREAM_TRUE
+ HAVE_AV_CODEC_SET_PKT_TIMEBASE_FALSE
+ HAVE_AV_CODEC_SET_PKT_TIMEBASE_TRUE
++HAVE_AVCODEC_GET_NAME_FALSE
++HAVE_AVCODEC_GET_NAME_TRUE
+ HAVE_AVCODEC_ALLOC_CONTEXT3_FALSE
+ HAVE_AVCODEC_ALLOC_CONTEXT3_TRUE
+ HAVE_AVCODEC_OPEN2_FALSE
+@@ -26007,6 +26009,7 @@ fi
+ 
+ HAVE_AVCODEC_OPEN2=false
+ HAVE_AVCODEC_ALLOC_CONTEXT3=false
++HAVE_AVCODEC_GET_NAME=false
+ HAVE_AV_CODEC_SET_PKT_TIMEBASE=false
+ HAVE_AVFORMAT_NEW_STREAM=false
+ HAVE_AVFORMAT_FIND_STREAM_INFO=false
+@@ -26103,6 +26106,48 @@ else
+   HAVE_AVCODEC_ALLOC_COBTEXT3=false
+ fi
+ 
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for avcodec_get_name in -lavcodec" >&5
++$as_echo_n "checking for avcodec_get_name in -lavcodec... " >&6; }
++if ${ac_cv_lib_avcodec_avcodec_get_name+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lavcodec  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char avcodec_get_name ();
++int
++main ()
++{
++return avcodec_get_name ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_avcodec_avcodec_get_name=yes
++else
++  ac_cv_lib_avcodec_avcodec_get_name=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_avcodec_avcodec_get_name" >&5
++$as_echo "$ac_cv_lib_avcodec_avcodec_get_name" >&6; }
++if test "x$ac_cv_lib_avcodec_avcodec_get_name" = xyes; then :
++  HAVE_AVCODEC_GET_NAME=true
++else
++  HAVE_AVCODEC_GET_NAME=false
++fi
++
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for av_codec_set_pkt_timebase in -lavcodec" >&5
+ $as_echo_n "checking for av_codec_set_pkt_timebase in -lavcodec... " >&6; }
+ if ${ac_cv_lib_avcodec_av_codec_set_pkt_timebase+:} false; then :
+@@ -26525,6 +26570,14 @@ else
+   HAVE_AVCODEC_ALLOC_CONTEXT3_FALSE=
+ fi
+ 
++ if $HAVE_AVCODEC_GET_NAME; then
++  HAVE_AVCODEC_GET_NAME_TRUE=
++  HAVE_AVCODEC_GET_NAME_FALSE='#'
++else
++  HAVE_AVCODEC_GET_NAME_TRUE='#'
++  HAVE_AVCODEC_GET_NAME_FALSE=
++fi
++
+  if $HAVE_AV_CODEC_SET_PKT_TIMEBASE; then
+   HAVE_AV_CODEC_SET_PKT_TIMEBASE_TRUE=
+   HAVE_AV_CODEC_SET_PKT_TIMEBASE_FALSE='#'
+@@ -29545,6 +29598,10 @@ Usually this means the macro was only invoked conditio
+ fi
+ if test -z "${HAVE_AVCODEC_ALLOC_CONTEXT3_TRUE}" && test -z "${HAVE_AVCODEC_ALLOC_CONTEXT3_FALSE}"; then
+   as_fn_error $? "conditional \"HAVE_AVCODEC_ALLOC_CONTEXT3\" was never defined.
++Usually this means the macro was only invoked conditionally." "$LINENO" 5
++fi
++if test -z "${HAVE_AVCODEC_GET_NAME_TRUE}" && test -z "${HAVE_AVCODEC_GET_NAME_FALSE}"; then
++  as_fn_error $? "conditional \"HAVE_AVCODEC_GET_NAME\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+ fi
+ if test -z "${HAVE_AV_CODEC_SET_PKT_TIMEBASE_TRUE}" && test -z "${HAVE_AV_CODEC_SET_PKT_TIMEBASE_FALSE}"; then
+--- lives-plugins/plugins/decoders/asf_decoder.c.orig	2017-05-24 02:07:10 UTC
++++ lives-plugins/plugins/decoders/asf_decoder.c
+@@ -439,7 +439,7 @@ static int get_next_video_packet(const lives_clip_data
+ 
+ 
+   if (tdts == -1) {
+-    priv->avpkt.size = priv->def_packet_size + FF_INPUT_BUFFER_PADDING_SIZE;
++    priv->avpkt.size = priv->def_packet_size + AV_INPUT_BUFFER_PADDING_SIZE;
+     priv->avpkt.data = malloc(priv->avpkt.size);
+     memset(priv->avpkt.data, 0, priv->avpkt.size);
+   }
+@@ -714,10 +714,10 @@ static int get_next_video_packet(const lives_clip_data
+             fprintf(stderr, "asf_decoder: buffer overflow reading vid packet (%d + %d > %d),\n increasing buffer size\n",
+                     asf->packet_frag_offset, asf->packet_frag_size, priv->avpkt.size);
+ 
+-            priv->avpkt.data = realloc(priv->avpkt.data, priv->def_packet_size * 2 + FF_INPUT_BUFFER_PADDING_SIZE);
++            priv->avpkt.data = realloc(priv->avpkt.data, priv->def_packet_size * 2 + AV_INPUT_BUFFER_PADDING_SIZE);
+             memset(priv->avpkt.data + priv->avpkt.size, 0, priv->def_packet_size);
+             priv->def_packet_size *= 2;
+-            priv->avpkt.size = priv->def_packet_size + FF_INPUT_BUFFER_PADDING_SIZE;
++            priv->avpkt.size = priv->def_packet_size + AV_INPUT_BUFFER_PADDING_SIZE;
+           }
+ 
+           if (read(priv->fd, priv->avpkt.data + asf->packet_frag_offset, asf->packet_frag_size)
+@@ -1436,8 +1436,8 @@ seek_skip:
+           if (!got_vidst) {
+             priv->st->codec->extradata_size = size - 40;
+ 
+-            priv->st->codec->extradata = malloc(priv->st->codec->extradata_size + FF_INPUT_BUFFER_PADDING_SIZE);
+-            memset(priv->st->codec->extradata, 0, priv->st->codec->extradata_size + FF_INPUT_BUFFER_PADDING_SIZE);
++            priv->st->codec->extradata = malloc(priv->st->codec->extradata_size + AV_INPUT_BUFFER_PADDING_SIZE);
++            memset(priv->st->codec->extradata, 0, priv->st->codec->extradata_size + AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+             if (read(priv->fd, priv->st->codec->extradata,
+                      priv->st->codec->extradata_size) < priv->st->codec->extradata_size) {
+--- lives-plugins/plugins/decoders/avformat_decoder.c.orig	2017-05-12 12:35:30 UTC
++++ lives-plugins/plugins/decoders/avformat_decoder.c
+@@ -368,8 +368,12 @@ skip_init:
+ 
+       get_samps_and_signed(cc->sample_fmt, &cdata->asamps, &cdata->asigned);
+ 
+-      sprintf(cdata->audio_name, "%s", cc->codec_name);
+-
++#ifdef HAVE_AVCODEC_GET_NAME
++      sprintf(cdata->audio_name, "%s", avcodec_get_name(cc->codec_id));
++#else
++      sprintf(cdata->audio_name, "%s", cc->codec->name);
++#endif
++      
+       priv->astream = i;
+       break;
+ 
+@@ -408,7 +412,11 @@ skip_init:
+         return FALSE;
+       }
+ 
+-      sprintf(cdata->video_name, "%s", cc->codec_name);
++#ifdef HAVE_AVCODEC_GET_NAME
++      sprintf(cdata->video_name, "%s", avcodec_get_name(cc->codec_id));
++#else
++      sprintf(cdata->video_name, "%s", cc->codec->name);
++#endif
+ 
+       cdata->par = cc->sample_aspect_ratio.num / cc->sample_aspect_ratio.den;
+       if (cdata->par == 0) cdata->par = 1;
+--- lives-plugins/plugins/decoders/flv_decoder.c.orig	2017-05-11 22:46:57 UTC
++++ lives-plugins/plugins/decoders/flv_decoder.c
+@@ -465,7 +465,7 @@ static int flv_get_extradata(lives_clip_data_t *cdata,
+   lives_flv_priv_t *priv = cdata->priv;
+ 
+   av_free(priv->ctx->extradata);
+-  priv->ctx->extradata = av_mallocz(size + FF_INPUT_BUFFER_PADDING_SIZE);
++  priv->ctx->extradata = av_mallocz(size + AV_INPUT_BUFFER_PADDING_SIZE);
+   if (priv->ctx->extradata == NULL) return AVERROR(ENOMEM);
+   priv->ctx->extradata_size = size;
+   dummy = read(priv->fd, priv->ctx->extradata, priv->ctx->extradata_size);
+@@ -1143,12 +1143,12 @@ static boolean attach_stream(lives_clip_data_t *cdata,
+ 
+   if (isclone) return TRUE;
+ 
+-  pack.data = malloc(pack.size - priv->pack_offset + FF_INPUT_BUFFER_PADDING_SIZE);
++  pack.data = malloc(pack.size - priv->pack_offset + AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+   av_init_packet(&priv->avpkt);
+ 
+   priv->avpkt.size = read(priv->fd, pack.data, pack.size - priv->pack_offset);
+-  memset(pack.data + priv->avpkt.size, 0, FF_INPUT_BUFFER_PADDING_SIZE);
++  memset(pack.data + priv->avpkt.size, 0, AV_INPUT_BUFFER_PADDING_SIZE);
+   priv->input_position += pack.size + 4;
+   priv->avpkt.data = pack.data;
+   priv->avpkt.dts = priv->avpkt.pts = pack.dts;
+@@ -1206,10 +1206,10 @@ static boolean attach_stream(lives_clip_data_t *cdata,
+             continue;
+           }
+ 
+-          pack.data = malloc(pack.size - priv->pack_offset + FF_INPUT_BUFFER_PADDING_SIZE);
++          pack.data = malloc(pack.size - priv->pack_offset + AV_INPUT_BUFFER_PADDING_SIZE);
+           if (priv->pack_offset != 5) lseek(priv->fd, priv->pack_offset - 5, SEEK_CUR);
+           priv->avpkt.size = read(priv->fd, pack.data, pack.size - priv->pack_offset);
+-          memset(pack.data + priv->avpkt.size, 0, FF_INPUT_BUFFER_PADDING_SIZE);
++          memset(pack.data + priv->avpkt.size, 0, AV_INPUT_BUFFER_PADDING_SIZE);
+           priv->avpkt.data = pack.data;
+           break;
+         }
+@@ -1709,12 +1709,12 @@ boolean get_frame(const lives_clip_data_t *cdata, int6
+         continue;
+       }
+ 
+-      pack.data = malloc(pack.size - priv->pack_offset + FF_INPUT_BUFFER_PADDING_SIZE);
++      pack.data = malloc(pack.size - priv->pack_offset + AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+       if (priv->pack_offset != 1) lseek(priv->fd, priv->pack_offset - 1, SEEK_CUR);
+ 
+       priv->avpkt.size = read(priv->fd, pack.data, pack.size - priv->pack_offset);
+-      memset(pack.data + priv->avpkt.size, 0, FF_INPUT_BUFFER_PADDING_SIZE);
++      memset(pack.data + priv->avpkt.size, 0, AV_INPUT_BUFFER_PADDING_SIZE);
+       priv->avpkt.data = pack.data;
+       priv->avpkt.dts = priv->avpkt.pts = pack.dts;
+ 
+--- lives-plugins/plugins/decoders/libav_helper.h.orig	2017-05-12 05:48:30 UTC
++++ lives-plugins/plugins/decoders/libav_helper.h
+@@ -117,6 +117,21 @@ static UNUSED void av_set_pts_info(AVStream *s, int pt
+ #define av_get_bits_per_sample(a) (av_get_bytes_per_sample(a) * 8)
+ #endif
+ 
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56, 56, 0)
++#ifndef FF_INPUT_BUFFER_PADDING_SIZE
++#define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_MIN_SIZE
++#else
++#define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
++#endif
++#else
++#ifndef AV_INPUT_BUFFER_PADDING_SIZE
++#define AV_INPUT_BUFFER_PADDING_SIZE AV_INPUT_BUFFER_MIN_SIZE
++#endif
++#endif
++
++#ifndef AV_CODEC_FLAG_GLOBAL_HEADER
++#define AV_CODEC_FLAG_GLOBAL_HEADER CODEC_FLAG_GLOBAL_HEADER
++#endif
+ 
+ 
+ #endif // HAVE_LIBAV_LIBS
+--- lives-plugins/plugins/decoders/mkv_decoder.c.orig	2017-05-12 08:39:45 UTC
++++ lives-plugins/plugins/decoders/mkv_decoder.c
+@@ -883,7 +883,7 @@ static void matroska_fix_ass_packet(MatroskaDemuxConte
+     es = ec /   100;
+     ec -=    100 * es;
+     *ptr++ = '\0';
+-    len = 50 + end - ptr + FF_INPUT_BUFFER_PADDING_SIZE;
++    len = 50 + end - ptr + AV_INPUT_BUFFER_PADDING_SIZE;
+     if (!(line = malloc(len)))
+       return;
+     snprintf(line, len, "Dialogue: %s,%d:%02d:%02d.%02d,%d:%02d:%02d.%02d,%s\r\n",
+@@ -1544,7 +1544,7 @@ static int lives_mkv_read_header(lives_clip_data_t *cd
+         st->codec->extradata_size = extradata_size;
+       } else if (track->codec_priv.data && track->codec_priv.size > 0) {
+         st->codec->extradata = calloc(track->codec_priv.size +
+-                                      FF_INPUT_BUFFER_PADDING_SIZE, 1);
++                                      AV_INPUT_BUFFER_PADDING_SIZE, 1);
+         if (st->codec->extradata == NULL) {
+           fprintf(stderr,
+                   "mkv_decoder: Out of memory\n");
+--- lives-plugins/plugins/decoders/mpegts_decoder.c.orig	2017-05-12 12:37:42 UTC
++++ lives-plugins/plugins/decoders/mpegts_decoder.c
+@@ -125,7 +125,7 @@ static inline void skip_bits(GetBitContext *s, int n) 
+ 
+ /**
+  * init GetBitContext.
+- * @param buffer bitstream buffer, must be FF_INPUT_BUFFER_PADDING_SIZE bytes larger than the actual read bits
++ * @param buffer bitstream buffer, must be AV_INPUT_BUFFER_PADDING_SIZE bytes larger than the actual read bits
+  * because some optimized bitstream readers read 32 or 64 bit at once and could read over the end
+  * @param bit_size the size of the buffer in bits
+  *
+@@ -337,6 +337,7 @@ struct MpegTSContext {
+   MpegTSFilter *pids[NB_PID_MAX];
+ };
+ 
++/*
+ static const AVOption options[] = {
+   {
+     "compute_pcr", "Compute exact PCR for each transport stream packet.", offsetof(MpegTSContext, mpeg2ts_compute_pcr), AV_OPT_TYPE_INT,
+@@ -344,6 +345,7 @@ static const AVOption options[] = {
+   },
+   { NULL },
+ };
++*/
+ 
+ /* TS stream handling */
+ 
+@@ -1035,7 +1037,7 @@ static void new_pes_packet(PESContext *pes, AVPacket *
+     fprintf(stderr, "mpegts_decoder: PES packet size mismatch\n");
+     //pes->flags |= AV_PKT_FLAG_CORRUPT;
+   }
+-  memset(pkt->data + pkt->size, 0, FF_INPUT_BUFFER_PADDING_SIZE);
++  memset(pkt->data + pkt->size, 0, AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+   // Separate out the AC3 substream from an HDMV combined TrueHD/AC3 PID
+   if (pes->sub_st && pes->stream_type == 0x83 && pes->extended_stream_id == 0x76)
+@@ -1192,7 +1194,7 @@ static int mpegts_push_data(lives_clip_data_t *cdata, 
+             pes->total_size = MAX_PES_PAYLOAD;
+ 
+           /* allocate pes buffer */
+-          pes->buffer = av_malloc(pes->total_size + FF_INPUT_BUFFER_PADDING_SIZE);
++          pes->buffer = av_malloc(pes->total_size + AV_INPUT_BUFFER_PADDING_SIZE);
+           if (!pes->buffer)
+             return AVERROR(ENOMEM);
+ 
+@@ -1289,7 +1291,7 @@ skip:
+         if (pes->data_index > 0 && pes->data_index + buf_size > pes->total_size) {
+           new_pes_packet(pes, ts->pkt);
+           pes->total_size = MAX_PES_PAYLOAD;
+-          pes->buffer = av_malloc(pes->total_size + FF_INPUT_BUFFER_PADDING_SIZE);
++          pes->buffer = av_malloc(pes->total_size + AV_INPUT_BUFFER_PADDING_SIZE);
+           if (!pes->buffer)
+             return AVERROR(ENOMEM);
+           ts->stop_parse = 1;
+@@ -1454,7 +1456,7 @@ int ff_mp4_read_dec_config_descr(lives_clip_data_t *cd
+     if (!len || (uint64_t)len > (1 << 30))
+       return -1;
+     av_free(st->codec->extradata);
+-    st->codec->extradata = av_mallocz(len + FF_INPUT_BUFFER_PADDING_SIZE);
++    st->codec->extradata = av_mallocz(len + AV_INPUT_BUFFER_PADDING_SIZE);
+     if (!st->codec->extradata)
+       return AVERROR(ENOMEM);
+     memcpy(st->codec->extradata, p, len);
+@@ -1802,7 +1804,7 @@ int ff_parse_mpeg2_descriptor(lives_clip_data_t *cdata
+       //if (st->codec->extradata_size == 4 && memcmp(st->codec->extradata, *pp, 4))
+       //av_log_ask_for_sample(fc, "DVB sub with multiple IDs\n");
+       //} else {
+-      st->codec->extradata = av_malloc(4 + FF_INPUT_BUFFER_PADDING_SIZE);
++      st->codec->extradata = av_malloc(4 + AV_INPUT_BUFFER_PADDING_SIZE);
+       if (st->codec->extradata) {
+         st->codec->extradata_size = 4;
+         memcpy(st->codec->extradata, *pp, 4);
+@@ -3141,8 +3143,8 @@ skip_det:
+ 
+   priv->codec = codec;
+ 
+-  if (codec->capabilities & CODEC_CAP_TRUNCATED)
+-    ctx->flags |= CODEC_FLAG_TRUNCATED;
++  if (codec->capabilities & AV_CODEC_CAP_TRUNCATED)
++    ctx->flags |= AV_CODEC_FLAG_TRUNCATED;
+ 
+   // re-scan with avcodec; priv->data_start holds video data start position
+ 
