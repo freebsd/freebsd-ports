@@ -3,12 +3,8 @@
 
 PORTNAME=	cjdns
 DISTVERSIONPREFIX=	cjdns-v
-DISTVERSION=	20.1
-PORTREVISION=	1
+DISTVERSION=	20.2
 CATEGORIES=	net security
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	8b643d2db8a5f64720ff303c3344de6d68cdce5d.patch:-p1 d7a87ed23bbb567bd8ea2418c54266c7f26939c4.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Routing engine designed for security, scalability, speed
