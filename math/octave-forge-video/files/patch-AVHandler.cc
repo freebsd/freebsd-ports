@@ -5,8 +5,8 @@ AVHandler.cc:247:30: error: use of undeclared identifier 'CODEC_FLAG_TRUNCATED'
     vstream->codec->flags |= CODEC_FLAG_TRUNCATED;
                              ^
 
---- src/AVHandler.cc.orig	2017-05-28 14:27:02 UTC
-+++ src/AVHandler.cc
+--- AVHandler.cc.orig	2017-05-28 14:27:02 UTC
++++ AVHandler.cc
 @@ -243,8 +243,8 @@ AVHandler::setup_read()
    codec_name = codec->name;
  
