@@ -515,8 +515,8 @@
     SUBDIR += minitunes
     SUBDIR += mixer.app
     SUBDIR += mixmos
-    SUBDIR += mixxx20
     SUBDIR += mixxx
+    SUBDIR += mixxx20
     SUBDIR += mma
     SUBDIR += moc
     SUBDIR += modplugplay
@@ -577,6 +577,7 @@
     SUBDIR += nosefart
     SUBDIR += nspmod
     SUBDIR += nuvolaplayer
+    SUBDIR += oaml
     SUBDIR += ocp
     SUBDIR += ogg2mp3
     SUBDIR += openal
