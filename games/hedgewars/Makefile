@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hedgewars
-PORTVERSION=	0.9.24
-PORTREVISION=	1
+PORTVERSION=	0.9.24.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.hedgewars.org/download/releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -25,8 +24,6 @@ USE_QT5=	core gui widgets network \
 		qmake_build buildtools_build \
 		linguisttools_build
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/${DISTNAME:C/\.[0-9]$//}
 
 PLIST_FILES=	bin/${PORTNAME} bin/hwengine \
 		share/appdata/hedgewars.appdata.xml \
