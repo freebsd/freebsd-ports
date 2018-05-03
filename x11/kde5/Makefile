@@ -5,7 +5,7 @@ DISTVERSION=	${KDE_PLASMA_VERSION}.${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	x11 kde # kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE5 meta port
+COMMENT=	KDE Plasma Desktop and Applications (current)
 
 LICENSE=	LGPL20
 
