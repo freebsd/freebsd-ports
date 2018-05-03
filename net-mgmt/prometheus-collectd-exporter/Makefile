@@ -3,7 +3,6 @@
 PORTNAME=	prometheus-collectd-exporter
 PORTVERSION=	0.3.1
 CATEGORIES=	net-mgmt
-DISTNAME=	0.3.1
 
 MAINTAINER=	dsp@php.net
 COMMENT=	Collectd exporter for prometheus

@@ -5,7 +5,6 @@ PORTVERSION=	3.0.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	30-gtk2
-DISTNAME=	wxWidgets-${PORTVERSION}
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	The wxWidgets GUI toolkit with GTK+ bindings
