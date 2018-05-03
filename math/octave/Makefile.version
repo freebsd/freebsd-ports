@@ -1,5 +1,5 @@
 # $FreeBSD$
 
 # Version to share with ports depending on octave
-OCTAVE_VERSION=	4.2.2
+OCTAVE_VERSION=	4.4.0
 

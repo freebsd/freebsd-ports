@@ -1,6 +1,6 @@
---- configure.orig	2017-02-22 18:18:36 UTC
+--- configure.orig	2018-04-30 17:03:56 UTC
 +++ configure
-@@ -17857,7 +17857,7 @@ $as_echo_n "checking whether the $compil
+@@ -17720,7 +17720,7 @@ $as_echo_n "checking whether the $compil
    hardcode_minus_L=no
    hardcode_shlibpath_var=unsupported
    inherit_rpath=no
@@ -9,7 +9,7 @@
    module_cmds=
    module_expsym_cmds=
    old_archive_from_new_cmds=
-@@ -18159,7 +18159,7 @@ _LT_EOF
+@@ -18022,7 +18022,7 @@ _LT_EOF
  	wlarc=
        else
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -18,7 +18,7 @@
        fi
        ;;
  
-@@ -18178,7 +18178,7 @@ _LT_EOF
+@@ -18041,7 +18041,7 @@ _LT_EOF
  _LT_EOF
        elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -27,7 +27,7 @@
        else
  	ld_shlibs=no
        fi
-@@ -18207,7 +18207,7 @@ _LT_EOF
+@@ -18070,7 +18070,7 @@ _LT_EOF
  	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	    hardcode_libdir_flag_spec='$wl-rpath $wl$libdir'
  	    archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -36,7 +36,7 @@
  	  else
  	    ld_shlibs=no
  	  fi
-@@ -18225,7 +18225,7 @@ _LT_EOF
+@@ -18088,7 +18088,7 @@ _LT_EOF
      *)
        if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -45,7 +45,7 @@
        else
  	ld_shlibs=no
        fi
-@@ -18874,7 +18874,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >
+@@ -18737,7 +18737,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >
  	hardcode_direct_absolute=yes
  	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
  	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
@@ -54,7 +54,7 @@
  	  hardcode_libdir_flag_spec='$wl-rpath,$libdir'
  	  export_dynamic_flag_spec='$wl-E'
  	else
-@@ -19723,7 +19723,7 @@ freebsd* | dragonfly*)
+@@ -19586,7 +19586,7 @@ freebsd* | dragonfly*)
    version_type=freebsd-$objformat
    case $version_type in
      freebsd-elf*)
@@ -63,7 +63,7 @@
        soname_spec='$libname$release$shared_ext$major'
        need_version=no
        need_lib_prefix=no
-@@ -20867,7 +20867,7 @@ striplib=
+@@ -20730,7 +20730,7 @@ striplib=
  old_striplib=
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
  $as_echo_n "checking whether stripping libraries is possible... " >&6; }
@@ -72,7 +72,7 @@
    test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
    test -z "$striplib" && striplib="$STRIP --strip-unneeded"
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-@@ -21119,7 +21119,7 @@ hardcode_automatic_CXX=no
+@@ -20982,7 +20982,7 @@ hardcode_automatic_CXX=no
  inherit_rpath_CXX=no
  module_cmds_CXX=
  module_expsym_cmds_CXX=
@@ -81,7 +81,7 @@
  old_archive_cmds_CXX=$old_archive_cmds
  reload_flag_CXX=$reload_flag
  reload_cmds_CXX=$reload_cmds
-@@ -21330,7 +21330,7 @@ with_gnu_ld=$lt_cv_prog_gnu_ld
+@@ -21193,7 +21193,7 @@ with_gnu_ld=$lt_cv_prog_gnu_ld
        # archiving commands below assume that GNU ld is being used.
        if test yes = "$with_gnu_ld"; then
          archive_cmds_CXX='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -90,7 +90,7 @@
  
          hardcode_libdir_flag_spec_CXX='$wl-rpath $wl$libdir'
          export_dynamic_flag_spec_CXX='$wl--export-dynamic'
-@@ -22022,7 +22022,7 @@ fi
+@@ -21885,7 +21885,7 @@ fi
  	    case `$CC -V 2>&1` in
  	      *"Version 7."*)
  	        archive_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -99,7 +99,7 @@
  		;;
  	      *)  # Version 8.0 or newer
  	        tmp_idyn=
-@@ -22030,7 +22030,7 @@ fi
+@@ -21893,7 +21893,7 @@ fi
  		  ia64*) tmp_idyn=' -i_dynamic';;
  		esac
  	        archive_cmds_CXX='$CC -shared'"$tmp_idyn"' $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -108,7 +108,7 @@
  		;;
  	    esac
  	    archive_cmds_need_lc_CXX=no
-@@ -22062,7 +22062,7 @@ fi
+@@ -21925,7 +21925,7 @@ fi
  	      ;;
  	    *) # Version 6 and above use weak symbols
  	      archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -117,7 +117,7 @@
  	      ;;
  	    esac
  
-@@ -22073,7 +22073,7 @@ fi
+@@ -21936,7 +21936,7 @@ fi
  	  cxx*)
  	    # Compaq C++
  	    archive_cmds_CXX='$CC -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -126,7 +126,7 @@
  
  	    runpath_var=LD_RUN_PATH
  	    hardcode_libdir_flag_spec_CXX='-rpath $libdir'
-@@ -22107,7 +22107,7 @@ fi
+@@ -21970,7 +21970,7 @@ fi
  	      # Sun C++ 5.9
  	      no_undefined_flag_CXX=' -zdefs'
  	      archive_cmds_CXX='$CC -G$allow_undefined_flag -h$soname -o $lib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags'
@@ -135,7 +135,7 @@
  	      hardcode_libdir_flag_spec_CXX='-R$libdir'
  	      whole_archive_flag_spec_CXX='$wl--whole-archive`new_convenience=; for conv in $convenience\"\"; do test -z \"$conv\" || new_convenience=\"$new_convenience,$conv\"; done; func_echo_all \"$new_convenience\"` $wl--no-whole-archive'
  	      compiler_needs_object_CXX=yes
-@@ -22175,7 +22175,7 @@ fi
+@@ -22038,7 +22038,7 @@ fi
  	  archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
  	  hardcode_libdir_flag_spec_CXX='$wl-rpath,$libdir'
  	  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
@@ -144,7 +144,7 @@
  	    export_dynamic_flag_spec_CXX='$wl-E'
  	    whole_archive_flag_spec_CXX=$wlarc'--whole-archive$convenience '$wlarc'--no-whole-archive'
  	  fi
-@@ -23700,7 +23700,7 @@ freebsd* | dragonfly*)
+@@ -23563,7 +23563,7 @@ freebsd* | dragonfly*)
    version_type=freebsd-$objformat
    case $version_type in
      freebsd-elf*)
@@ -153,7 +153,7 @@
        soname_spec='$libname$release$shared_ext$major'
        need_version=no
        need_lib_prefix=no
-@@ -24891,7 +24891,7 @@ hardcode_automatic_F77=no
+@@ -24751,7 +24751,7 @@ hardcode_automatic_F77=no
  inherit_rpath_F77=no
  module_cmds_F77=
  module_expsym_cmds_F77=
@@ -162,7 +162,7 @@
  old_archive_cmds_F77=$old_archive_cmds
  reload_flag_F77=$reload_flag
  reload_cmds_F77=$reload_cmds
-@@ -25618,7 +25618,7 @@ $as_echo_n "checking whether the $compil
+@@ -25478,7 +25478,7 @@ $as_echo_n "checking whether the $compil
    hardcode_minus_L_F77=no
    hardcode_shlibpath_var_F77=unsupported
    inherit_rpath_F77=no
@@ -171,7 +171,7 @@
    module_cmds_F77=
    module_expsym_cmds_F77=
    old_archive_from_new_cmds_F77=
-@@ -25920,7 +25920,7 @@ _LT_EOF
+@@ -25780,7 +25780,7 @@ _LT_EOF
  	wlarc=
        else
  	archive_cmds_F77='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -180,7 +180,7 @@
        fi
        ;;
  
-@@ -25939,7 +25939,7 @@ _LT_EOF
+@@ -25799,7 +25799,7 @@ _LT_EOF
  _LT_EOF
        elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds_F77='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -189,7 +189,7 @@
        else
  	ld_shlibs_F77=no
        fi
-@@ -25968,7 +25968,7 @@ _LT_EOF
+@@ -25828,7 +25828,7 @@ _LT_EOF
  	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	    hardcode_libdir_flag_spec_F77='$wl-rpath $wl$libdir'
  	    archive_cmds_F77='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -198,7 +198,7 @@
  	  else
  	    ld_shlibs_F77=no
  	  fi
-@@ -25986,7 +25986,7 @@ _LT_EOF
+@@ -25846,7 +25846,7 @@ _LT_EOF
      *)
        if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds_F77='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -207,7 +207,7 @@
        else
  	ld_shlibs_F77=no
        fi
-@@ -26585,7 +26585,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >
+@@ -26445,7 +26445,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >
  	hardcode_direct_absolute_F77=yes
  	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
  	  archive_cmds_F77='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
@@ -216,7 +216,7 @@
  	  hardcode_libdir_flag_spec_F77='$wl-rpath,$libdir'
  	  export_dynamic_flag_spec_F77='$wl-E'
  	else
-@@ -27262,7 +27262,7 @@ freebsd* | dragonfly*)
+@@ -27122,7 +27122,7 @@ freebsd* | dragonfly*)
    version_type=freebsd-$objformat
    case $version_type in
      freebsd-elf*)
@@ -225,25 +225,7 @@
        soname_spec='$libname$release$shared_ext$major'
        need_version=no
        need_lib_prefix=no
-@@ -34697,7 +34697,7 @@ $as_echo_n "checking Qt version $ver... 
-   case "$qt_version" in
-     4)
-       QT_MODULES="QtCore QtGui QtNetwork QtOpenGL"
--      octave_qscintilla_libnames=qscintilla2
-+      octave_qscintilla_libnames=qscintilla2_qt4
-     ;;
-     5)
-       QT_MODULES="Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport"
-@@ -35738,7 +35738,7 @@ esac
- fi
- 
-         if test -n "$QTCHOOSER"; then
--          LRELEASEFLAGS="-qt$qt_version"
-+          LRELEASEFLAGS=""
-         fi
-       fi
-     fi
-@@ -38632,7 +38632,7 @@ fi
+@@ -34165,7 +34165,7 @@ fi
  fi
  
  # Generic LAPACK library?
@@ -252,34 +234,56 @@
          if test $ax_lapack_ok = no; then
                  save_LIBS="$LIBS"; LIBS="$BLAS_LIBS $LIBS"
                  as_ac_Lib=`$as_echo "ac_cv_lib_$lapack''_$cheev" | $as_tr_sh`
-@@ -40410,7 +40410,7 @@ fi
+@@ -70670,9 +70670,6 @@ esac
  fi
  
- # Generic LAPACK library?
--for lapack in lapack lapack_rs6k; do
-+for lapack in openblasp; do
-         if test $ax_lapack_ok = no; then
-                 save_LIBS="$LIBS"; LIBS="$BLAS_LIBS $LIBS"
-                 as_ac_Lib=`$as_echo "ac_cv_lib_$lapack''_$cheev" | $as_tr_sh`
-@@ -42216,7 +42216,7 @@ fi
+     if test -n "$MOC"; then
+-      if test -n "$QTCHOOSER"; then
+-        MOCFLAGS="-qt$qt_version"
+-      fi
+       QT_TOOLS_AVAILABLE="$QT_TOOLS_AVAILABLE moc"
+     else
+       QT_TOOLS_MISSING="$QT_TOOLS_MISSING moc"
+@@ -70885,9 +70882,6 @@ esac
  fi
  
- # Generic LAPACK library?
--for lapack in lapack lapack_rs6k; do
-+for lapack in openblasp; do
-         if test $ax_lapack_ok = no; then
-                 save_LIBS="$LIBS"; LIBS="$BLAS_LIBS $LIBS"
-                 as_ac_Lib=`$as_echo "ac_cv_lib_$lapack''_$cheev" | $as_tr_sh`
-@@ -43161,7 +43161,7 @@ $as_echo "$as_me: WARNING: $warn_ccolamd
+     if test -n "$UIC"; then
+-      if test -n "$QTCHOOSER"; then
+-        UICFLAGS="-qt$qt_version"
+-      fi
+       QT_TOOLS_AVAILABLE="$QT_TOOLS_AVAILABLE uic"
+     else
+       QT_TOOLS_MISSING="$QT_TOOLS_MISSING uic"
+@@ -71100,9 +71094,6 @@ esac
+ fi
  
- ### Check for CHOLMOD library.
- ### If your cholmod library requires cblas, then you will need to
--### configure with --with-cholmod="-lcholmod -lcblas".
-+### configure with --with-cholmod="-lumfpack -lsuitesparseconfig -lamd -lcholmod -lcolamd -lopenblasp -lcblas".
+     if test -n "$RCC"; then
+-      if test -n "$QTCHOOSER"; then
+-        RCCFLAGS="-qt$qt_version"
+-      fi
+       QT_TOOLS_AVAILABLE="$QT_TOOLS_AVAILABLE rcc"
+     else
+       QT_TOOLS_MISSING="$QT_TOOLS_MISSING rcc"
+@@ -71315,9 +71306,6 @@ esac
+ fi
  
- save_LIBS="$LIBS"
- LIBS="$COLAMD_LDFLAGS $COLAMD_LIBS $AMD_LDFLAGS $AMD_LIBS $LAPACK_LIBS $BLAS_LIBS $FLIBS $LIBS"
-@@ -43201,7 +43201,7 @@ fi
+     if test -n "$LRELEASE"; then
+-      if test -n "$QTCHOOSER"; then
+-        LRELEASEFLAGS="-qt$qt_version"
+-      fi
+       QT_TOOLS_AVAILABLE="$QT_TOOLS_AVAILABLE lrelease"
+     else
+       QT_TOOLS_MISSING="$QT_TOOLS_MISSING lrelease"
+@@ -73640,7 +73628,7 @@ if test $use_osmesa = yes; then
+     warn_osmesa="OSMesa library not found.  Offscreen rendering with FLTK will be disabled."
+   fi
+ 
+-  OSMESA_LIBS="-lOSMesa"
++  OSMESA_LIBS="-lOSMesa -ldrm"
+   save_CPPFLAGS="$CPPFLAGS"
+   save_LDFLAGS="$LDFLAGS"
+   save_LIBS="$LIBS"
+@@ -75018,7 +75006,7 @@ fi
      ;;
      yes | "")
        ac_octave_cholmod_pkg_check=yes
@@ -288,7 +292,7 @@
      ;;
      -* | */* | *.a | *.so | *.so.* | *.o)
        CHOLMOD_LIBS="$with_cholmod"
-@@ -43602,7 +43602,7 @@ fi
+@@ -75598,7 +75586,7 @@ fi
      ;;
      yes | "")
        ac_octave_umfpack_pkg_check=yes
@@ -297,45 +301,9 @@
      ;;
      -* | */* | *.a | *.so | *.so.* | *.o)
        UMFPACK_LIBS="$with_umfpack"
-@@ -43767,7 +43767,7 @@ fi
-     ;;
-     yes | "")
-       ac_octave_umfpack_pkg_check=yes
--      UMFPACK_LIBS="-lumfpack"
-+      UMFPACK_LIBS="-lumfpack -lsuitesparseconfig -lamd -lumfpack -lsuitesparseconfig -lamd -lcholmod -lcolamd -lopenblasp -lcolamd -lopenblasp"
-     ;;
-     -* | */* | *.a | *.so | *.so.* | *.o)
-       UMFPACK_LIBS="$with_umfpack"
-@@ -54704,7 +54704,7 @@ else
-            *-gnu*)               gl_cv_func_snprintf_retval_c99="guessing yes";;
-                                  # Guess yes on FreeBSD >= 5.
-            freebsd[1-4].*)       gl_cv_func_snprintf_retval_c99="guessing no";;
--           freebsd* | kfreebsd*) gl_cv_func_snprintf_retval_c99="guessing yes";;
-+dragonfly* |            freebsd* | kfreebsd*) gl_cv_func_snprintf_retval_c99="guessing yes";;
-                                  # Guess yes on Mac OS X >= 10.3.
-            darwin[1-6].*)        gl_cv_func_snprintf_retval_c99="guessing no";;
-            darwin*)              gl_cv_func_snprintf_retval_c99="guessing yes";;
-@@ -59551,7 +59551,7 @@ $as_echo "#define FLEXIBLE_ARRAY_MEMBER 
-     aix* | beos* | openbsd* | mirbsd* | irix*)
-       FLOAT_H=float.h
-       ;;
--    freebsd*)
-+dragonfly* |     freebsd*)
-       case "$host_cpu" in
-         i[34567]86 )
-           FLOAT_H=float.h
-@@ -65648,7 +65648,7 @@ else
-           if test "$cross_compiling" = yes; then :
- 
-              case "$host_os" in
--               freebsd* | aix* | hpux* | solaris2.[0-9] | solaris2.[0-9].*)
-+dragonfly* |                freebsd* | aix* | hpux* | solaris2.[0-9] | solaris2.[0-9].*)
-                  gl_cv_func_open_slash="guessing no" ;;
-                *)
-                  gl_cv_func_open_slash="guessing yes" ;;
-@@ -74358,6 +74358,13 @@ $as_echo_n "checking for include file <j
+@@ -77450,6 +77438,13 @@ $as_echo_n "checking for include file <j
+         JAVA_CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/darwin"
        fi
-       JAVA_LIBS="-framework JavaVM"
      ;;
 +    freebsd*)
 +      if test -n "$JAVA_CPPFLAGS"; then

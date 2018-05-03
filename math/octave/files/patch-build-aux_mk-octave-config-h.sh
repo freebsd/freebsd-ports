@@ -1,4 +1,4 @@
---- build-aux/mk-octave-config-h.sh.orig	2017-02-22 18:01:55 UTC
+--- build-aux/mk-octave-config-h.sh.orig	2018-04-30 17:03:56 UTC
 +++ build-aux/mk-octave-config-h.sh
 @@ -22,7 +22,7 @@
  # autoconf-generated config.h file.  See the notes at the top of the

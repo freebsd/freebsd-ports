@@ -14,6 +14,8 @@ LICENSE_NAME=	Many different licenses
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		does not build with octave 4.4.0
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${DISTNAME}

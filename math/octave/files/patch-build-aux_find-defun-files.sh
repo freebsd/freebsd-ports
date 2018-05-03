@@ -1,6 +1,6 @@
---- build-aux/find-defun-files.sh.orig	2017-02-22 17:15:26 UTC
+--- build-aux/find-defun-files.sh.orig	2018-04-30 17:03:56 UTC
 +++ build-aux/find-defun-files.sh
-@@ -2,7 +2,7 @@
+@@ -20,7 +20,7 @@
  
  set -e
  
