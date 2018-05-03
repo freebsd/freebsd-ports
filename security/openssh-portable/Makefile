@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	7.7p1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -31,7 +31,7 @@ BROKEN_SSL_REASON_openssl-devel=	error: OpenSSL >= 1.1.0 is not yet supported
 
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
-			LDNS NONECIPHER
+			LDNS NONECIPHER XMSS
 OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
@@ -45,6 +45,7 @@ HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 MIT_DESC=		MIT Kerberos (security/krb5)
 NONECIPHER_DESC=	NONE Cipher support
+XMSS_DESC=		XMSS key support (experimental)
 
 OPTIONS_SUB=		yes
 
@@ -193,6 +194,9 @@ post-patch:
 	    ${WRKSRC}/sshd_config.5
 	@${ECHO_CMD} '#define SSH_VERSION_FREEBSD_PORT	"${VERSION_ADDENDUM_DEFAULT}"' >> \
 		${WRKSRC}/version.h
+
+post-configure-XMSS-on:
+	@${ECHO_CMD} "#define WITH_XMSS 1" >> ${WRKSRC}/config.h
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/ssh_config \

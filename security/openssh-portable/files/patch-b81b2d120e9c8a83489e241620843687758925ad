@@ -1,0 +1,32 @@
+From b81b2d120e9c8a83489e241620843687758925ad Mon Sep 17 00:00:00 2001
+From: Damien Miller <djm@mindrot.org>
+Date: Fri, 13 Apr 2018 13:38:06 +1000
+Subject: [PATCH] Fix tunnel forwarding broken in 7.7p1
+
+bz2855, ok dtucker@
+---
+ openbsd-compat/port-net.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git openbsd-compat/port-net.c openbsd-compat/port-net.c
+index 7050629c3..bb535626f 100644
+--- openbsd-compat/port-net.c
++++ openbsd-compat/port-net.c
+@@ -185,7 +185,7 @@ sys_tun_open(int tun, int mode, char **ifname)
+ 	else
+ 		debug("%s: %s mode %d fd %d", __func__, ifr.ifr_name, mode, fd);
+ 
+-	if (ifname != NULL && (*ifname = strdup(ifr.ifr_name)))
++	if (ifname != NULL && (*ifname = strdup(ifr.ifr_name)) == NULL)
+ 		goto failed;
+ 
+ 	return (fd);
+@@ -272,7 +272,7 @@ sys_tun_open(int tun, int mode, char **ifname)
+ 			goto failed;
+ 	}
+ 
+-	if (ifname != NULL && (*ifname = strdup(ifr.ifr_name)))
++	if (ifname != NULL && (*ifname = strdup(ifr.ifr_name)) == NULL)
+ 		goto failed;
+ 
+ 	close(sock);

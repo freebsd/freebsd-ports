@@ -1,0 +1,24 @@
+From 85fe48fd49f2e81fa30902841b362cfbb7f1933b Mon Sep 17 00:00:00 2001
+From: "djm@openbsd.org" <djm@openbsd.org>
+Date: Sat, 14 Apr 2018 21:50:41 +0000
+Subject: [PATCH] upstream: don't free the %C expansion, it's used later for
+
+LocalCommand
+
+OpenBSD-Commit-ID: 857b5cb37b2d856bfdfce61289a415257a487fb1
+---
+ ssh.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git ssh.c ssh.c
+index d3619fe29..9c011dd7e 100644
+--- ssh.c
++++ ssh.c
+@@ -1323,7 +1323,6 @@ main(int ac, char **av)
+ 		    (char *)NULL);
+ 		free(cp);
+ 	}
+-	free(conn_hash_hex);
+ 
+ 	if (config_test) {
+ 		dump_client_config(&options, host);

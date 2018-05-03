@@ -1,0 +1,36 @@
+From 868afa68469de50d8a43e5daf867d7c624a34d20 Mon Sep 17 00:00:00 2001
+From: "djm@openbsd.org" <djm@openbsd.org>
+Date: Mon, 16 Apr 2018 22:50:44 +0000
+Subject: [PATCH] upstream: Disable SSH2_MSG_DEBUG messages for Twisted Conch
+ clients
+
+without version numbers since they choke on them under some circumstances.
+https://twistedmatrix.com/trac/ticket/9422 via Colin Watson
+
+Newer Conch versions have a version number in their ident string and
+handle debug messages okay. https://twistedmatrix.com/trac/ticket/9424
+
+OpenBSD-Commit-ID: 6cf7be262af0419c58ddae11324d9c0dc1577539
+---
+ compat.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git compat.c compat.c
+index 861e9e21f..1c0e08732 100644
+--- compat.c
++++ compat.c
+@@ -1,4 +1,4 @@
+-/* $OpenBSD: compat.c,v 1.106 2018/02/16 04:43:11 dtucker Exp $ */
++/* $OpenBSD: compat.c,v 1.107 2018/04/16 22:50:44 djm Exp $ */
+ /*
+  * Copyright (c) 1999, 2000, 2001, 2002 Markus Friedl.  All rights reserved.
+  *
+@@ -128,6 +128,8 @@ compat_datafellows(const char *version)
+ 					SSH_OLD_DHGEX },
+ 		{ "ConfD-*",
+ 					SSH_BUG_UTF8TTYMODE },
++		{ "Twisted_*",		0 },
++		{ "Twisted*",		SSH_BUG_DEBUG },
+ 		{ NULL,			0 }
+ 	};
+ 
