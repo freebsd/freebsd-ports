@@ -14,8 +14,6 @@ COMMENT=	Video Disk Recorder - MarkAd plugin
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with ffmpeg 4.0
-
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 RESTRICTED=	Installs station logos
