@@ -2,7 +2,7 @@
 
 PORTNAME=	ansible
 PORTVERSION?=	2.5.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -21,7 +21,7 @@ RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 
 CONFLICTS?=	ansible1-* ansible23-* ansible24-*
 
-EXTRA_PATCHES?=	#
+EXTRA_PATCHES?=	${FILESDIR}/extra-patch-sesu
 
 NO_ARCH=	yes
 USES?=		cpe python

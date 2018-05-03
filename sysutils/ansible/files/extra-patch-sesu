@@ -1,0 +1,73 @@
+See:
+
+	https://github.com/ansible/ansible/pull/27376
+
+--- lib/ansible/constants.py
++++ lib/ansible/constants.py
+@@ -60,6 +60,19 @@
+ 
+ # CONSTANTS ### yes, actual ones
+-BECOME_METHODS = ['sudo', 'su', 'pbrun', 'pfexec', 'doas', 'dzdo', 'ksu', 'runas', 'pmrun', 'enable']
++BECOME_METHODS = [
++    'sesu',
++    'sudo',
++    'su',
++    'pbrun',
++    'pfexec',
++    'doas',
++    'dzdo',
++    'ksu',
++    'runas',
++    'pmrun',
++    'enable'
++]
+ BECOME_ERROR_STRINGS = {
++    'sesu': '',
+     'sudo': 'Sorry, try again.',
+     'su': 'Authentication failure',
+@@ -73,4 +85,5 @@
+ }  # FIXME: deal with i18n
+ BECOME_MISSING_STRINGS = {
++    'sesu': '',
+     'sudo': 'sorry, a password is required to run sudo',
+     'su': '',
+--- lib/ansible/modules/commands/command.py
++++ lib/ansible/modules/commands/command.py
+@@ -105,7 +105,7 @@
+                 'mount': 'mount', 'rpm': 'yum, dnf or zypper', 'yum': 'yum', 'apt-get': 'apt',
+                 'tar': 'unarchive', 'unzip': 'unarchive', 'sed': 'template or lineinfile',
+                 'dnf': 'dnf', 'zypper': 'zypper'}
+-    become = ['sudo', 'su', 'pbrun', 'pfexec', 'runas', 'pmrun']
++    become = ['sudo', 'su', 'pbrun', 'pfexec', 'runas', 'pmrun', 'sesu']
+     command = os.path.basename(commandline.split()[0])
+     if command in arguments:
+         module.warn("Consider using file module with %s rather than running %s" % (arguments[command], command))
+--- lib/ansible/modules/web_infrastructure/ansible_tower/tower_credential.py
++++ lib/ansible/modules/web_infrastructure/ansible_tower/tower_credential.py
+@@ -123,9 +123,9 @@
+       default: null
+     become_method:
+       description:
+-        - Become method to Use for privledge escalation.
++        - Become method to Use for privilege escalation.
+       required: False
+-      choices: ["None", "sudo", "su", "pbrun", "pfexec", "pmrun"]
++      choices: ["None", "sudo", "su", "pbrun", "pfexec", "pmrun", "sesu"]
+       default: "None"
+     become_username:
+       description:
+--- lib/ansible/playbook/play_context.py
++++ lib/ansible/playbook/play_context.py
+@@ -599,6 +599,13 @@ def detect_ksu_prompt(b_data):
+                 prompt = 'Enter UPM user password:'
+                 becomecmd = '%s %s %s' % (exe, flags, shlex_quote(command))
+ 
++            elif self.become_method == 'sesu':
++
++                exe = self.become_exe or 'sesu'
++
++                prompt = 'Please enter your password:'
++                becomecmd = '%s %s %s -c %s' % (exe, flags, self.become_user, shlex_quote(command))
++
+             else:
+                 raise AnsibleError("Privilege escalation method not found: %s" % self.become_method)
