@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cairo
-PORTVERSION=	1.15.12
+PORTVERSION=	1.15.13
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
