@@ -10,6 +10,7 @@ COMMENT=	Set of Readers/Writers plugins written using the OpenFX standard
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build with ffmpeg 4.0
 ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
