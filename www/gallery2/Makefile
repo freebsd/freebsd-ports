@@ -29,7 +29,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
 DCRAW_RUN_DEPENDS=	dcraw:graphics/dcraw
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 GD_RUN_DEPENDS=		pngtogd:graphics/gd
 GD_USE=			PHP=gd
 GRAPHMAGICK_RUN_DEPENDS=gm:graphics/GraphicsMagick
