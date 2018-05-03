@@ -4,6 +4,7 @@
 PORTNAME=	racerd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.1-56
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g29cd4c6
 CATEGORIES=	devel
 
@@ -47,7 +48,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		language-tags-0.2.2 \
 		lazy_static-0.1.16 \
 		lazy_static-0.2.8 \
-		libc-0.2.30 \
+		libc-0.2.40 \
 		log-0.3.8 \
 		logger-0.1.0 \
 		magenta-0.1.1 \

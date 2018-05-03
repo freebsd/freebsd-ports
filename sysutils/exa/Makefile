@@ -3,6 +3,7 @@
 PORTNAME=	exa
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -33,7 +34,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		iso8601-0.1.1 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.8 \
-		libc-0.2.30 \
+		libc-0.2.40 \
 		libgit2-sys-0.6.14 \
 		libz-sys-1.0.16 \
 		locale-0.2.2 \

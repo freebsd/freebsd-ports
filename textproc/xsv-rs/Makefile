@@ -2,6 +2,7 @@
 
 PORTNAME=	xsv
 DISTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	-rs
 
@@ -27,7 +28,7 @@ CARGO_CRATES=	aho-corasick-0.6.3 \
 		filetime-0.1.10 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.8 \
-		libc-0.2.23 \
+		libc-0.2.40 \
 		log-0.3.8 \
 		memchr-1.0.1 \
 		num-0.1.37 \
