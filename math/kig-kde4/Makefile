@@ -10,7 +10,7 @@ COMMENT=	KDE 4 interactive geometry application
 
 LIB_DEPENDS=	${PY_BOOST}
 
-USES=		cmake:outsource compiler:c++11-lib kde:4 python:run \
+USES=		cmake:outsource compiler:c++11-lib kde:4 python:2.7,run \
 		shebangfix tar:xz
 USE_KDE=	kdelibs soprano automoc4
 USE_QT4=	corelib dbus gui network svg xml \
