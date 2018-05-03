@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jemoji
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,7 @@ COMMENT=	GitHub-flavored emoji plugin for Jekyll
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport4>=4.2.9:devel/rubygem-activesupport4 \
-		rubygem-gemoji>=3.0:textproc/rubygem-gemoji \
+RUN_DEPENDS=	rubygem-gemoji>=3.0:textproc/rubygem-gemoji \
 		rubygem-html-pipeline>=2.2:textproc/rubygem-html-pipeline \
 		rubygem-jekyll>=3.0:www/rubygem-jekyll
 
