@@ -131,6 +131,7 @@ share/java/jedit/modes/asp.xml
 share/java/jedit/modes/aspect-j.xml
 share/java/jedit/modes/assembly-agc.xml
 share/java/jedit/modes/assembly-ags.xml
+share/java/jedit/modes/assembly-arm32.xml
 share/java/jedit/modes/assembly-m68k.xml
 share/java/jedit/modes/assembly-macro32.xml
 share/java/jedit/modes/assembly-mcs51.xml
@@ -181,6 +182,7 @@ share/java/jedit/modes/foxpro.xml
 share/java/jedit/modes/freemarker.xml
 share/java/jedit/modes/gcbasic.xml
 share/java/jedit/modes/gettext.xml
+share/java/jedit/modes/gherkin.xml
 share/java/jedit/modes/gnuplot.xml
 share/java/jedit/modes/go.xml
 share/java/jedit/modes/gradle.xml
