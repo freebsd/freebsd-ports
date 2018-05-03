@@ -2,43 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	maradns
-PORTVERSION=	2.0.14
-PORTREVISION=	1
+PORTVERSION=	2.0.15
 CATEGORIES=	dns
-MASTER_SITES=	http://maradns.samiam.org/download/2.0/${PORTVERSION}/\
-		SF/${PORTNAME}/MaraDNS/${PORTVERSION}/
+MASTER_SITES=	http://maradns.samiam.org/download/2.0/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	je3kmz@FreeBSD.org
 COMMENT=	DNS server with focus on security and simplicity
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEADWOOD_VER=	3.2.10
-
-REINPLACE_ARGS=	-i ""
-MAKE_ENV=	FLAGS="${CFLAGS}"
-
-HAS_CONFIGURE=	yes
+USES=		tar:bz2
 USE_RC_SUBR=	${PORTNAME} zoneserver Deadwood
-USES=		tar:bz2 python:2.7,run shebangfix
 USERS=		bind
 GROUPS=		bind
 INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}
 SHEBANG_FILES=	tools/bind2csv2.py
+HAS_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	IPV6 DOCS EXAMPLES CONV
 OPTIONS_SUB=	yes
 CONV_DESC=	Install bind2csv2 tool (needs python)
 
 IPV6_CONFIGURE_ON=	--ipv6
-CONV_USES=	python:2.7,run
+CONV_USES=	python:2.7,run shebangfix
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
+REINPLACE_ARGS=	-i ""
+DEADWOOD_VER=	3.2.11
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\<cc\>|${CC}|' ${WRKSRC}/build/Makefile.freebsd
+	@${REINPLACE_CMD} -e 's|make |\$$\{MAKE\} |' ${WRKSRC}/build/Makefile.freebsd
 	@${FIND} ${WRKSRC} -type f ! -name "*.orig" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/etc/maradns|${ETCDIR}|g; s|/etc/mararc|${ETCDIR}|g; \
 		 s|/etc/deadwood|${ETCDIR}|g; s| = 99| = 53|g'
@@ -52,7 +47,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/askmara ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/duende ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/misc/mqhash ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/bind2csv2.py ${STAGEDIR}${PREFIX}/bin/bind2csv2
 
 	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.8 ${STAGEDIR}${MANPREFIX}/man/man8
@@ -62,6 +56,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_full_mararc ${STAGEDIR}${ETCDIR}/mararc.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_csv2 ${STAGEDIR}${ETCDIR}/csv2.sample
 	${INSTALL_DATA} ${WRKSRC}/deadwood-${DEADWOOD_VER}/doc/dwood3rc ${STAGEDIR}${ETCDIR}/dwood3rc.sample
+
+do-install-CONV-on:
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/bind2csv2.py ${STAGEDIR}${PREFIX}/bin/bind2csv2
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

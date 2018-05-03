@@ -1,6 +1,6 @@
---- ./tools/Makefile.orig	2010-09-09 20:21:09.000000000 +0000
-+++ ./tools/Makefile	2014-02-20 15:23:49.000000000 +0000
-@@ -18,7 +18,7 @@
+--- tools/Makefile.orig	2010-09-09 20:21:09 UTC
++++ tools/Makefile
+@@ -18,7 +18,7 @@ clean:
  	rm -f core $(EXECS) *.exe
  
  askmara: askmara.c askmara_labels_en.h $(OBJECTS) $(Q) $(OUTOBJ)

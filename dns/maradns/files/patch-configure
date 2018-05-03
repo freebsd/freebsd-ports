@@ -1,6 +1,6 @@
---- ./configure.orig	2014-01-14 21:46:25.000000000 +0000
-+++ ./configure	2014-02-20 15:33:18.000000000 +0000
-@@ -93,6 +93,9 @@
+--- configure.orig	2015-08-19 04:44:49 UTC
++++ configure
+@@ -93,6 +93,9 @@ elif echo $UNAME | grep -i cygwin > /dev
  	echo It looks like you are using Cygwin\; this should compile fine
  	echo by typing in \'make\'.
  	EXITCODE=0
