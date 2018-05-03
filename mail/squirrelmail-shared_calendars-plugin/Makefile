@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.4.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	iCal-compliant calendaring for SquirrelMail
 
-RUN_DEPENDS=	squirrelmail-calendar_file_backend-plugin>0:mail/squirrelmail-calendar_file_backend-plugin
+RUN_DEPENDS=	squirrelmail-calendar_file_backend-plugin${PHP_PKGNAMESUFFIX}>0:mail/squirrelmail-calendar_file_backend-plugin@${PHP_FLAVOR}
 
 USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes
