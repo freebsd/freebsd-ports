@@ -19,6 +19,8 @@ USE_GNOME=	gnomeprefix gnomevfs2
 GNU_CONFIGURE=	yes
 LLD_UNSAFE=	yes
 
+CONFLICTS_INSTALL=	quark-server
+
 PORTDOCS=	AUTHORS COPYING INSTALL README
 GCONF_SCHEMAS=	quark.schemas strange-quark.schemas
 
