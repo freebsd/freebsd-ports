@@ -1,13 +1,13 @@
 bin/gnome-mpv
 man/man1/gnome-mpv.1.gz
-share/appdata/io.github.GnomeMpv.appdata.xml
 share/applications/io.github.GnomeMpv.desktop
 share/dbus-1/services/io.github.GnomeMpv.service
-share/icons/hicolor/scalable/apps/gnome-mpv.svg
-share/icons/hicolor/symbolic/apps/gnome-mpv-symbolic.svg
+share/icons/hicolor/scalable/apps/io.github.GnomeMpv.svg
+share/icons/hicolor/symbolic/apps/io.github.GnomeMpv-symbolic.svg
 share/locale/bg/LC_MESSAGES/gnome-mpv.mo
 share/locale/ca/LC_MESSAGES/gnome-mpv.mo
 share/locale/cs/LC_MESSAGES/gnome-mpv.mo
+share/locale/da/LC_MESSAGES/gnome-mpv.mo
 share/locale/de_DE/LC_MESSAGES/gnome-mpv.mo
 share/locale/es/LC_MESSAGES/gnome-mpv.mo
 share/locale/fr/LC_MESSAGES/gnome-mpv.mo
@@ -25,3 +25,4 @@ share/locale/sr@latin/LC_MESSAGES/gnome-mpv.mo
 share/locale/sv/LC_MESSAGES/gnome-mpv.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mpv.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mpv.mo
+share/metainfo/io.github.GnomeMpv.appdata.xml
