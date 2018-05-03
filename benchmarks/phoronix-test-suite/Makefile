@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	7.4.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	8.0.0m3
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Phoronix Benchmarking Suite
@@ -13,28 +13,23 @@ COMMENT=	Phoronix Benchmarking Suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		php:cli,build python
-USE_GCC=	any
-USE_PHP=	ctype curl dom filter gd hash json openssl pcntl posix \
-		session simplexml sockets sqlite3 zip zlib
+USES=		php:cli,build,flavors python
+USE_GITHUB=	yes
+USE_PHP=	curl dom gd json openssl pcntl posix simplexml zip zlib
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/phoronix-test-suite
-
-RUN_DEPENDS+=	fpdf>0:print/fpdf
-RUN_DEPENDS+=	cmake:devel/cmake
 
 PORTDATA=	*
 PORTDOCS=	*
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	BASH_COMPLETIONS X11 DOCS
+OPTIONS_DEFINE=	BASH_COMPLETIONS DOCS X11
 OPTIONS_DEFAULT=	X11
 OPTIONS_SUB=	yes
 
 BASH_COMPLETIONS_DESC=	Install bash completions
 BASH_COMPLETIONS_CONFIGURE_ON=	WITH_BASH_COMPLETIONS=yes
-X11_DESC=		Install X11 icons and mimetypes
+X11_DESC=	Install X11 icons and mimetypes
 X11_USES=	desktop-file-utils shared-mime-info
 X11_CONFIGURE_OFF=	WITHOUT_X11=yes
 
@@ -44,10 +39,9 @@ post-patch:
 		${WRKSRC}/pts-core/commands/ob_test_profile_analyze.php \
 		${WRKSRC}/pts-core/pts-core.php \
 		${WRKSRC}/pts-core/objects/pts_svg_dom_gd.php \
-		${WRKSRC}/pts-core/objects/phodevi/components/phodevi_system.php \
 		${WRKSRC}/pts-core/objects/client/pts_external_dependencies.php \
 		${WRKSRC}/pts-core/objects/client/pts_client.php \
-		${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml
+		${WRKSRC}/pts-core/objects/phodevi/components/phodevi_system.php
 	@${SED} -i '' -e "s|/usr/share/fonts|${LOCALBASE}/share/fonts| ; \
 		s|/usr/X11/lib|${LOCALBASE}/lib|" \
 		${WRKSRC}/pts-core/objects/pts_svg_dom_gd.php
