@@ -2,7 +2,7 @@
 
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7
+DISTVERSION=	1.8
 CATEGORIES=	misc shells
 
 MAINTAINER=	dg@syrec.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	bash:shells/bash \
 		xdg-open:devel/xdg-utils
 
-USES=		gmake localbase ncurses readline shebangfix
+USES=		gmake localbase ncurses pkgconfig readline shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarun
 SHEBANG_FILES=	nlay
@@ -33,6 +33,7 @@ MEDIAINFO_RUN_DEPENDS=	mediainfo:multimedia/mediainfo
 PLIST_FILES=	bin/nnn \
 		bin/nlay \
 		man/man1/nnn.1.gz \
+		man/man1/nlay.1.gz \
 		etc/bash_completion.d/nnn-completion.bash \
 		share/fish/completions/nnn.fish \
 		share/zsh/site-functions/_nnn
