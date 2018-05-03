@@ -12,8 +12,6 @@ COMMENT=	Shoutcast/Icecast DJ Console
 
 LICENSE=	LGPL20
 
-BROKEN=		fails to build with ffmpeg 4.0
-
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libjack.so:audio/jack \
