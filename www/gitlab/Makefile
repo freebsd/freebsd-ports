@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	10.5.7
+PORTVERSION=	10.6.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -24,11 +24,11 @@ BUILD_DEPENDS=	gem:devel/ruby-gems
 # which makes maintaining this long list much easier!
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
-RUN_DEPENDS=	git>=2.14.3:devel/git \
-	gitlab-shell>=6.0.3:devel/gitlab-shell \
-	gitlab-workhorse>=3.6.0:www/gitlab-workhorse \
-	gitaly>=0.82.0:devel/gitaly \
-	gitlab-pages>=0.6.0:www/gitlab-pages \
+RUN_DEPENDS=	git>=2.16.2:devel/git \
+	gitlab-shell>=6.0.4:devel/gitlab-shell \
+	gitlab-workhorse>=4.0.0:www/gitlab-workhorse \
+	gitaly>=0.91.0:devel/gitaly \
+	gitlab-pages>=0.7.1:www/gitlab-pages \
 	redis>=2.8.23:databases/redis \
 	npm>=4.3.0:www/npm \
 	yarn>=0.17.0:www/yarn \
@@ -73,7 +73,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-net-ldap>=0.16.0:net/rubygem-net-ldap \
 	rubygem-gollum-lib-gitlab>=4.2.0:www/rubygem-gollum-lib-gitlab \
 	rubygem-gollum-rugged_adapter>=0.4.4:www/rubygem-gollum-rugged_adapter \
-	rubygem-github-linguist47>=4.7.0:textproc/rubygem-github-linguist47 \
+	rubygem-github-linguist53>=5.3.3:textproc/rubygem-github-linguist53 \
 	rubygem-grape>=1.0:devel/rubygem-grape \
 	rubygem-grape-entity060>=0.6.0:devel/rubygem-grape-entity060 \
 	rubygem-rack-cors>=1.0.0:www/rubygem-rack-cors \
@@ -96,6 +96,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-deckar01-task_list>=2.0.0:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.6.2:textproc/rubygem-gitlab-markup \
 	rubygem-redcarpet>=3.4:textproc/rubygem-redcarpet \
+	rubygem-commonmarker>=0.17:textproc/rubygem-commonmarker \
 	rubygem-redcloth>=4.3.2:www/rubygem-redcloth \
 	rubygem-rdoc>=4.2:devel/rubygem-rdoc \
 	rubygem-org-ruby>=0.9.12:textproc/rubygem-org-ruby \
@@ -136,7 +137,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-d3_rails-rails4>=3.5.0:www/rubygem-d3_rails-rails4 \
 	rubygem-sanitize>=2.0:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2:textproc/rubygem-babosa \
-	rubygem-loofah20>=2.0.3:textproc/rubygem-loofah20 \
+	rubygem-loofah>=2.2:textproc/rubygem-loofah \
 	rubygem-licensee8>=8.7:devel/rubygem-licensee8 \
 	rubygem-rack-attack44>=4.4.1:www/rubygem-rack-attack44 \
 	rubygem-ace-rails-ap>=4.1.0:www/rubygem-ace-rails-ap \
@@ -161,7 +162,7 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-select2-rails3>=3.5.9:www/rubygem-select2-rails3 \
 	rubygem-virtus>=1.0.1:devel/rubygem-virtus \
 	rubygem-base32>=0.3.0:converters/rubygem-base32 \
-	rubygem-sentry-raven25>=2.5.3:devel/rubygem-sentry-raven25 \
+	rubygem-sentry-raven>=2.5.3:devel/rubygem-sentry-raven \
 	rubygem-premailer-rails19>=1.9.7:mail/rubygem-premailer-rails19 \
 	rubygem-ruby_parser>=3.8.4:devel/rubygem-ruby_parser \
 	rubygem-rails-i18n-4>=4.0.9:devel/rubygem-rails-i18n-4 \
@@ -187,13 +188,15 @@ RUN_DEPENDS=	git>=2.14.3:devel/git \
 	rubygem-vmstat>=2.3.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem>=1.1.6:sysutils/rubygem-sys-filesystem \
 	rubygem-net-ssh41>=4.1.0:security/rubygem-net-ssh41 \
+	rubygem-sshkey>=1.9.0:security/rubygem-sshkey \
 	rubygem-rbnacl4<=4.0.2:security/rubygem-rbnacl4 \
 	rubygem-rbnacl-libsodium>=0:security/rubygem-rbnacl-libsodium \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto084>=0.84.0:net/rubygem-gitaly-proto084 \
+	rubygem-gitaly-proto088>=0.88.0:net/rubygem-gitaly-proto088 \
+	rubygem-grpc>=1.10.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf351>=3.5.1:devel/rubygem-google-protobuf351 \
-	rubygem-toml-rb03>=0.3.15:www/rubygem-toml-rb03 \
+	rubygem-toml-rb10>=1.0.0:www/rubygem-toml-rb10 \
 	rubygem-flipper011>=0.11.0:devel/rubygem-flipper011 \
 	rubygem-flipper-active_record011>=0.11.0:databases/rubygem-flipper-active_record011 \
 	rubygem-flipper-active_support_cache_store011>=0.11.0:devel/rubygem-flipper-active_support_cache_store011 \
