@@ -61,6 +61,9 @@ bin/ns%%VERSION%%-bench-simulator%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-fading%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-frequency-reuse%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-intercell-interference%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-lena-ipv6-addr-conf%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-lena-ipv6-ue-rh%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-lena-ipv6-ue-ue%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-pathloss-traces%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-profiling%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-rem-sector-antenna%%DEBUG_SUFX%%
@@ -151,11 +154,13 @@ bin/ns%%VERSION%%-print-introspected-doxygen%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-star-animation%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-star%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-static-routing-slash32%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-tbf-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tcp-bulk-send%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tcp-large-transfer%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tcp-nsc-comparison%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tcp-nsc-lfn%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tcp-nsc-zoo%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-tcp-pacing%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tcp-pcap-nanosec-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tcp-star-server%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tcp-variants-comparison%%DEBUG_SUFX%%
@@ -169,8 +174,12 @@ bin/ns%%VERSION%%-print-introspected-doxygen%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-traffic-control%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tv-trans-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-tv-trans-regional-example%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-uan-6lowpan-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-uan-animation%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-uan-cw-example%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-uan-ipv4-example%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-uan-ipv6-example%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-uan-raw-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-uan-rc-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-udp-client-server%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-udp-echo%%DEBUG_SUFX%%
@@ -201,6 +210,7 @@ bin/ns%%VERSION%%-print-introspected-doxygen%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-spectrum-saturation-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-tcp%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-timing-attributes%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-wifi-trans-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-wired-bridging%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wimax-ipv4%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wimax-multicast%%DEBUG_SUFX%%
@@ -429,6 +439,7 @@ include/ns%%VERSION%%/ns3/ethernet-trailer.h
 include/ns%%VERSION%%/ns3/event-garbage-collector.h
 include/ns%%VERSION%%/ns3/event-id.h
 include/ns%%VERSION%%/ns3/event-impl.h
+include/ns%%VERSION%%/ns3/extended-capabilities.h
 include/ns%%VERSION%%/ns3/fatal-error.h
 include/ns%%VERSION%%/ns3/fatal-impl.h
 include/ns%%VERSION%%/ns3/fdbet-ff-mac-scheduler.h
@@ -438,6 +449,7 @@ include/ns%%VERSION%%/ns3/ff-mac-common.h
 include/ns%%VERSION%%/ns3/ff-mac-csched-sap.h
 include/ns%%VERSION%%/ns3/ff-mac-sched-sap.h
 include/ns%%VERSION%%/ns3/ff-mac-scheduler.h
+include/ns%%VERSION%%/ns3/fifo-queue-disc.h
 include/ns%%VERSION%%/ns3/file-aggregator.h
 include/ns%%VERSION%%/ns3/file-config.h
 include/ns%%VERSION%%/ns3/file-helper.h
@@ -474,6 +486,7 @@ include/ns%%VERSION%%/ns3/hash-function.h
 include/ns%%VERSION%%/ns3/hash-murmur3.h
 include/ns%%VERSION%%/ns3/hash.h
 include/ns%%VERSION%%/ns3/he-capabilities.h
+include/ns%%VERSION%%/ns3/he-operation.h
 include/ns%%VERSION%%/ns3/header.h
 include/ns%%VERSION%%/ns3/heap-scheduler.h
 include/ns%%VERSION%%/ns3/hierarchical-mobility-model.h
@@ -481,7 +494,6 @@ include/ns%%VERSION%%/ns3/higher-tx-tag.h
 include/ns%%VERSION%%/ns3/histogram.h
 include/ns%%VERSION%%/ns3/ht-capabilities.h
 include/ns%%VERSION%%/ns3/ht-operation.h
-include/ns%%VERSION%%/ns3/ht-wifi-mac-helper.h
 include/ns%%VERSION%%/ns3/hwmp-protocol.h
 include/ns%%VERSION%%/ns3/hwmp-rtable.h
 include/ns%%VERSION%%/ns3/hybrid-buildings-propagation-loss-model.h
@@ -680,6 +692,7 @@ include/ns%%VERSION%%/ns3/lte-ue-power-control.h
 include/ns%%VERSION%%/ns3/lte-ue-rrc.h
 include/ns%%VERSION%%/ns3/lte-vendor-specific-parameters.h
 include/ns%%VERSION%%/ns3/mac-low.h
+include/ns%%VERSION%%/ns3/mac-low-transmission-parameters.h
 include/ns%%VERSION%%/ns3/mac-messages.h
 include/ns%%VERSION%%/ns3/mac-rx-middle.h
 include/ns%%VERSION%%/ns3/mac-stats-calculator.h
@@ -687,6 +700,7 @@ include/ns%%VERSION%%/ns3/mac-tx-middle.h
 include/ns%%VERSION%%/ns3/mac16-address.h
 include/ns%%VERSION%%/ns3/mac48-address.h
 include/ns%%VERSION%%/ns3/mac64-address.h
+include/ns%%VERSION%%/ns3/mac8-address.h
 include/ns%%VERSION%%/ns3/make-event.h
 include/ns%%VERSION%%/ns3/map-scheduler.h
 include/ns%%VERSION%%/ns3/math.h
@@ -708,13 +722,11 @@ include/ns%%VERSION%%/ns3/mobility-helper.h
 include/ns%%VERSION%%/ns3/mobility-model.h
 include/ns%%VERSION%%/ns3/mobility-module.h
 include/ns%%VERSION%%/ns3/mpdu-aggregator.h
-include/ns%%VERSION%%/ns3/mpdu-standard-aggregator.h
 include/ns%%VERSION%%/ns3/mpi-interface.h
 include/ns%%VERSION%%/ns3/mpi-module.h
 include/ns%%VERSION%%/ns3/mpi-receiver.h
 include/ns%%VERSION%%/ns3/mq-queue-disc.h
 include/ns%%VERSION%%/ns3/msdu-aggregator.h
-include/ns%%VERSION%%/ns3/msdu-standard-aggregator.h
 include/ns%%VERSION%%/ns3/multi-model-spectrum-channel.h
 include/ns%%VERSION%%/ns3/names.h
 include/ns%%VERSION%%/ns3/ndisc-cache.h
@@ -733,7 +745,6 @@ include/ns%%VERSION%%/ns3/node-list.h
 include/ns%%VERSION%%/ns3/node.h
 include/ns%%VERSION%%/ns3/non-communicating-net-device.h
 include/ns%%VERSION%%/ns3/non-copyable.h
-include/ns%%VERSION%%/ns3/nqos-wifi-mac-helper.h
 include/ns%%VERSION%%/ns3/ns2-mobility-helper.h
 include/ns%%VERSION%%/ns3/nstime.h
 include/ns%%VERSION%%/ns3/object-base.h
@@ -816,11 +827,11 @@ include/ns%%VERSION%%/ns3/pss-ff-mac-scheduler.h
 include/ns%%VERSION%%/ns3/ptr.h
 include/ns%%VERSION%%/ns3/qos-blocked-destinations.h
 include/ns%%VERSION%%/ns3/qos-utils.h
-include/ns%%VERSION%%/ns3/qos-wifi-mac-helper.h
 include/ns%%VERSION%%/ns3/queue-disc-container.h
 include/ns%%VERSION%%/ns3/queue-disc.h
 include/ns%%VERSION%%/ns3/queue-item.h
 include/ns%%VERSION%%/ns3/queue-limits.h
+include/ns%%VERSION%%/ns3/queue-size.h
 include/ns%%VERSION%%/ns3/queue.h
 include/ns%%VERSION%%/ns3/radio-bearer-stats-calculator.h
 include/ns%%VERSION%%/ns3/radio-bearer-stats-connector.h
@@ -927,6 +938,7 @@ include/ns%%VERSION%%/ns3/system-thread.h
 include/ns%%VERSION%%/ns3/system-wall-clock-ms.h
 include/ns%%VERSION%%/ns3/tag-buffer.h
 include/ns%%VERSION%%/ns3/tag.h
+include/ns%%VERSION%%/ns3/tbf-queue-disc.h
 include/ns%%VERSION%%/ns3/tcp-bic.h
 include/ns%%VERSION%%/ns3/tcp-congestion-ops.h
 include/ns%%VERSION%%/ns3/tcp-header.h
@@ -936,6 +948,7 @@ include/ns%%VERSION%%/ns3/tcp-hybla.h
 include/ns%%VERSION%%/ns3/tcp-illinois.h
 include/ns%%VERSION%%/ns3/tcp-l4-protocol.h
 include/ns%%VERSION%%/ns3/tcp-ledbat.h
+include/ns%%VERSION%%/ns3/tcp-lp.h
 include/ns%%VERSION%%/ns3/tcp-option.h
 include/ns%%VERSION%%/ns3/tcp-option-rfc793.h
 include/ns%%VERSION%%/ns3/tcp-option-sack-permitted.h
@@ -979,7 +992,6 @@ include/ns%%VERSION%%/ns3/tv-spectrum-transmitter.h
 include/ns%%VERSION%%/ns3/type-id.h
 include/ns%%VERSION%%/ns3/type-name.h
 include/ns%%VERSION%%/ns3/type-traits.h
-include/ns%%VERSION%%/ns3/uan-address.h
 include/ns%%VERSION%%/ns3/uan-channel.h
 include/ns%%VERSION%%/ns3/uan-header-common.h
 include/ns%%VERSION%%/ns3/uan-header-rc.h
@@ -1028,7 +1040,6 @@ include/ns%%VERSION%%/ns3/vector.h
 include/ns%%VERSION%%/ns3/vendor-specific-action.h
 include/ns%%VERSION%%/ns3/vht-capabilities.h
 include/ns%%VERSION%%/ns3/vht-operation.h
-include/ns%%VERSION%%/ns3/vht-wifi-mac-helper.h
 include/ns%%VERSION%%/ns3/virtual-net-device-module.h
 include/ns%%VERSION%%/ns3/virtual-net-device.h
 include/ns%%VERSION%%/ns3/vsa-manager.h
@@ -1052,13 +1063,16 @@ include/ns%%VERSION%%/ns3/wifi-information-element.h
 include/ns%%VERSION%%/ns3/wifi-mac-header.h
 include/ns%%VERSION%%/ns3/wifi-mac-helper.h
 include/ns%%VERSION%%/ns3/wifi-mac-queue.h
+include/ns%%VERSION%%/ns3/wifi-mac-queue-item.h
 include/ns%%VERSION%%/ns3/wifi-mac-trailer.h
 include/ns%%VERSION%%/ns3/wifi-mac.h
 include/ns%%VERSION%%/ns3/wifi-mode.h
 include/ns%%VERSION%%/ns3/wifi-module.h
 include/ns%%VERSION%%/ns3/wifi-net-device.h
+include/ns%%VERSION%%/ns3/wifi-phy-listener.h
 include/ns%%VERSION%%/ns3/wifi-phy-standard.h
 include/ns%%VERSION%%/ns3/wifi-phy-state-helper.h
+include/ns%%VERSION%%/ns3/wifi-phy-state.h
 include/ns%%VERSION%%/ns3/wifi-phy-tag.h
 include/ns%%VERSION%%/ns3/wifi-phy.h
 include/ns%%VERSION%%/ns3/wifi-preamble.h
