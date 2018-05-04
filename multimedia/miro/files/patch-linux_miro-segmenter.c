@@ -23,3 +23,34 @@
                  output_codec_context->block_align = 0;
              }
              else {
+@@ -92,7 +100,11 @@ static AVStream *add_output_stream(AVFormatContext *ou
+             output_codec_context->has_b_frames = input_codec_context->has_b_frames;
+ 
+             if (output_format_context->oformat->flags & AVFMT_GLOBALHEADER) {
++#if LIBAVCODEC_VERSION_MAJOR > 57
++                output_codec_context->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
++#else
+                 output_codec_context->flags |= CODEC_FLAG_GLOBAL_HEADER;
++#endif
+             }
+             break;
+     default:
+@@ -259,10 +271,18 @@ int main(int argc, char **argv)
+ #else
+         if (packet.stream_index == video_index && (packet.flags & PKT_FLAG_KEY)) {
+ #endif
++#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55,40,100)
++            segment_time = (double)av_stream_get_end_pts(video_st) * video_st->time_base.num / video_st->time_base.den;
++#else
+             segment_time = (double)video_st->pts.val * video_st->time_base.num / video_st->time_base.den;
++#endif
+         }
+         else if (video_index < 0) {
++#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55,40,100)
++            segment_time = (double)av_stream_get_end_pts(audio_st) * audio_st->time_base.num / audio_st->time_base.den;
++#else
+             segment_time = (double)audio_st->pts.val * audio_st->time_base.num / audio_st->time_base.den;
++#endif
+         }
+         else {
+             segment_time = prev_segment_time;
