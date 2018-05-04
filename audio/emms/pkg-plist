@@ -22,6 +22,8 @@ man/man1/emms-print-metadata.1.gz
 %%EMACS_SITE_LISPDIR%%/emms/emms-info-mp3info.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-info-ogginfo.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-info-ogginfo.elc
+%%EMACS_SITE_LISPDIR%%/emms/emms-info-opusinfo.el
+%%EMACS_SITE_LISPDIR%%/emms/emms-info-opusinfo.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-info.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-info.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-last-played.el
@@ -47,6 +49,8 @@ man/man1/emms-print-metadata.1.gz
 %%EMACS_SITE_LISPDIR%%/emms/emms-player-mpg321-remote.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-player-mplayer.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-player-mplayer.elc
+%%EMACS_SITE_LISPDIR%%/emms/emms-player-mpv.el
+%%EMACS_SITE_LISPDIR%%/emms/emms-player-mpv.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-player-simple.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-player-simple.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-player-vlc.el
