@@ -67,25 +67,19 @@ post-extract:
 	    ${BUILD_WRKSRC}/.build/tarballs
 .endfor
 
-pre-configure:
+do-configure:
 	cd ${BUILD_WRKSRC} && ./bootstrap
 	${PRINTF} "#!/bin/sh\necho '${SUBDIR:tl}-${TAGNAME}'\n" > \
 	    ${BUILD_WRKSRC}/version.sh
 	${CHMOD} -w+x ${BUILD_WRKSRC}/version.sh
-
-do-configure:
 	cd ${BUILD_WRKSRC} && \
 	    ./configure --enable-local --with-grep=${LOCALBASE}/bin/grep
-
-pre-build:
 	cd ${BUILD_WRKSRC} && \
 	    ${SETENV} -uMAKELEVEL -uMAKEFLAGS -u.MAKE.LEVEL.ENV \
 	    ${MAKE_CMD} install && ${SETENV} ${BUILD_ENV} ./ct-ng ${PORTNAME}
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${BUILD_ENV} ./ct-ng build
-
-post-build:
 	cd ${BUILD_WRKSRC}/builds/${PORTNAME} && \
 	    ${RM} build.log.bz2 lib/charset.alias
 
