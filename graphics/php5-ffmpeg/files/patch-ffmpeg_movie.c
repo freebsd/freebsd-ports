@@ -1,6 +1,6 @@
 --- ffmpeg_movie.c.orig	2014-07-23 17:57:31 UTC
 +++ ffmpeg_movie.c
-@@ -315,7 +315,7 @@ FFMPEG_PHP_CONSTRUCTOR(ffmpeg_movie, __c
+@@ -315,7 +315,7 @@ FFMPEG_PHP_CONSTRUCTOR(ffmpeg_movie, __construct)
      } 
  
      if (persistent) {
@@ -9,7 +9,7 @@
          /* resolve the fully-qualified path name to use as the hash key */
          fullpath = expand_filepath(filename, NULL TSRMLS_CC);
  
-@@ -350,7 +350,7 @@ FFMPEG_PHP_CONSTRUCTOR(ffmpeg_movie, __c
+@@ -350,7 +350,7 @@ FFMPEG_PHP_CONSTRUCTOR(ffmpeg_movie, __construct)
              }
              
          } else { /* no existing persistant movie, create one */
@@ -18,7 +18,7 @@
              ffmovie_ctx = _php_alloc_ffmovie_ctx(1);
  
              if (_php_open_movie_file(ffmovie_ctx, filename)) {
-@@ -364,7 +364,7 @@ FFMPEG_PHP_CONSTRUCTOR(ffmpeg_movie, __c
+@@ -364,7 +364,7 @@ FFMPEG_PHP_CONSTRUCTOR(ffmpeg_movie, __construct)
              new_le.ptr = ffmovie_ctx;
  
              if (FAILURE == zend_hash_update(&EG(persistent_list), hashkey, 
@@ -27,7 +27,7 @@
                          NULL)) {
                  php_error_docref(NULL TSRMLS_CC, E_WARNING, 
                          "Failed to register persistent resource");
-@@ -508,7 +508,7 @@ static AVCodecContext* _php_get_decoder_
+@@ -508,7 +508,7 @@ static AVCodecContext* _php_get_decoder_context(ff_mov
                      codec_id));
  
          if (!decoder) {
@@ -36,7 +36,7 @@
                      _php_get_filename(ffmovie_ctx));
              return NULL;
          }
-@@ -964,13 +964,15 @@ static const char* _php_get_codec_name(f
+@@ -964,17 +964,19 @@ static const char* _php_get_codec_name(ff_movie_contex
      /* Copied from libavcodec/utils.c::avcodec_string */
      if (p) {
          codec_name = p->name;
@@ -52,8 +52,14 @@
 +    } else if (decoder_ctx->codec_id == AV_CODEC_ID_MPEG2TS) {
          /* fake mpeg2 transport stream codec (currently not registered) */
          codec_name = "mpeg2ts";
-     } else if (decoder_ctx->codec_name[0] != '\0') {
-@@ -1223,7 +1225,7 @@ static AVFrame* _php_read_av_frame(ff_mo
+-    } else if (decoder_ctx->codec_name[0] != '\0') {
+-        codec_name = decoder_ctx->codec_name;
++    } else if (avcodec_get_name(decoder_ctx->codec_id)[0] != '\0') {
++        codec_name = avcodec_get_name(decoder_ctx->codec_id);
+     } else {
+         /* output avi tags */
+         if (decoder_ctx->codec_type == AVMEDIA_TYPE_VIDEO) {
+@@ -1223,7 +1225,7 @@ static AVFrame* _php_read_av_frame(ff_movie_context *f
          return NULL;
      }
  
@@ -62,7 +68,7 @@
  
      /* read next frame */ 
      while (av_read_frame(ffmovie_ctx->fmt_ctx, &packet) >= 0) {
-@@ -1353,7 +1355,7 @@ static int _php_get_ff_frame(ff_movie_co
+@@ -1353,7 +1355,7 @@ static int _php_get_ff_frame(ff_movie_context *ffmovie
          ff_frame->keyframe = is_keyframe;
          ff_frame->pts = pts;
          

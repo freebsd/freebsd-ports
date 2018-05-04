@@ -15,8 +15,6 @@ COMMENT=	FFmpeg shared extension for php
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with ffmpeg 4.0
-
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libavutil.so:multimedia/ffmpeg
 
