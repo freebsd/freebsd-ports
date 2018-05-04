@@ -100,6 +100,7 @@ lib/krb5/plugins/tls/k5tls.so
 %%LDAP%%lib/krb5/plugins/kdb/kldap.so
 lib/krb5/plugins/preauth/otp.so
 lib/krb5/plugins/preauth/pkinit.so
+lib/krb5/plugins/preauth/spake.so
 lib/krb5/plugins/preauth/test.so
 %%LDAP%%lib/libkdb_ldap.so
 %%LDAP%%lib/libkdb_ldap.so.1
