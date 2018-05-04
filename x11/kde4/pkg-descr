@@ -6,4 +6,6 @@ This package does not contain anything by itself -- it is a
 to require dependencies so users can install this package only and
 have all the KDE stuff pulled in by the port/package dependency mechanism.
 
-WWW: http://www.kde.org/
+x11/kde4 contains the legacy KDE desktop and applications.
+
+WWW: https://www.kde.org/
