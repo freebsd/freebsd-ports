@@ -1515,6 +1515,7 @@
     SUBDIR += rubygem-gherkin
     SUBDIR += rubygem-github-linguist
     SUBDIR += rubygem-github-linguist47
+    SUBDIR += rubygem-github-linguist53
     SUBDIR += rubygem-github-markup
     SUBDIR += rubygem-gitlab-grit
     SUBDIR += rubygem-gitlab-linguist
