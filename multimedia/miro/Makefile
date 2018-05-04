@@ -13,8 +13,6 @@ COMMENT=	Video player to get internet TV broadcasts
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to build with ffmpeg 4.0
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>0:devel/pyrex@${FLAVOR} \
 		${PYTHON_SITELIBDIR}/webkit/__init__.py:www/py-webkitgtk@${FLAVOR} \
 		update-mime-database:misc/shared-mime-info \
