@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aircrack-ng
-DISTVERSION=	1.2-rc4
-PORTREVISION=	1
+DISTVERSION=	1.2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/
 
@@ -15,15 +14,17 @@ LICENSE_COMB=	dual
 
 BROKEN_powerpc64=	fails to compile: sse-intrinsics.c: error: emmintrin.h: No such file or directory
 
-USES=		cpe dos2unix gmake ssl
+USES=		autoreconf cpe dos2unix gmake libtool ssl
+USE_GCC=	7.0+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-experimental
 CPE_VERSION=	${DISTVERSION:C/-.*//}
 CPE_UPDATE=	${DISTVERSION:C/^[^-]*$//:C/.*-//}
 DOS2UNIX_FILES=	src/osdep/byteorder.h
-MAKE_ARGS=	experimental=true libnl=false prefix=${PREFIX}
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 # Don't call 'strip' target with WITH_DEBUG set
-INSTALL_TARGET=	${STRIP:S/-s/strip/} install
+#INSTALL_TARGET=	${STRIP:S/-s/strip/} install
 
 OPTIONS_DEFINE=	PCRE SQLITE
 OPTIONS_DEFAULT=PCRE SQLITE
@@ -39,9 +40,6 @@ SQLITE_USES=	sqlite
 SQLITE_MAKE_ARGS=	sqlite=true
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|share/\(man/man[1-9]\)|\1|' \
-			${WRKSRC}/common.mak
 	@${REINPLACE_CMD} \
 		-e 's|%%ETCDIR%%|${ETCDIR}|' ${WRKSRC}/scripts/airodump-ng-oui-update
 

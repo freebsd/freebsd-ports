@@ -1,5 +1,5 @@
---- scripts/airmon-ng.freebsd.orig	2015-12-12 03:13:15 UTC
-+++ scripts/airmon-ng.freebsd
+--- scripts/airmon-ng.freebsd.orig	2018-04-15 22:57:19.000000000 +0200
++++ scripts/airmon-ng.freebsd	2018-05-03 09:06:10.998358000 +0200
 @@ -1,25 +1,31 @@
  #!/bin/sh
  
@@ -45,7 +45,7 @@
  fi
  
  COMMAND=$1
-@@ -28,100 +34,143 @@ INTERFACE_TO_USE=$2
+@@ -28,103 +34,151 @@ INTERFACE_TO_USE=$2
  CHIPSET=""
  DRIVER=""
  PARENT=""
@@ -75,6 +75,7 @@
 +        [ "${PRODUCT_ID}" = "0x8193" ] && CHIPSET="RTL8192DU"
 +        [ "${PRODUCT_ID}" = "0x8199" ] && CHIPSET="RTL8187SU"
 +        [ "${PRODUCT_ID}" = "0x8812" ] && CHIPSET="RTL8812AU"
++        [ "${PRODUCT_ID}" = "0x8187" ] && CHIPSET="RTL8187L"
 +    elif [ "${VENDOR_ID}" = "0x06f8" ] && [ "${PRODUCT_ID}" = "0xe033" ]; then
 +        CHIPSET="RTL8188CUS"
 +    elif [ "${VENDOR_ID}" = "0x2001" ] && [ "${PRODUCT_ID}" = "0x3308" ]; then
@@ -93,8 +94,15 @@
 +        [ "${PRODUCT_ID}" = "0x9041" ] && CHIPSET="RTL8188CUS"
 +        [ "${PRODUCT_ID}" = "0x9042" ] && CHIPSET="RTL8188CUS"
 +        [ "${PRODUCT_ID}" = "0x9043" ] && CHIPSET="RTL8188CUS"
-+    fi
 +    [ -z "${CHIPSET}" ] && CHIPSET="Report dmesg and usbconfig (dump commands) to http://trac.aircrack-ng.org"
++    elif [ "${DRIVER}" = "run" ]; then
++    	CHIPSET="Ralink/Mediatek"
++    elif [ -n "${DRIVER}" ]; then
++    	CHIPSET="Report dmesg and usbconfig (dump commands) to http://trac.aircrack-ng.org"
++    else
++    	CHIPSET="Unknown"
++    	[ -z "${DRIVER}" ] && DRIVER="Unknown"
++    fi
 +}
  
  get_interface_info() {
@@ -110,8 +118,7 @@
 -			return
 -		fi
 -	fi	
-+    [ -z "$1" ] && return
- 
+-
 -	if [ "${DRIVER}" = "ath" ]; then
 -		CHIPSET=$(dmesg | grep -E "^$1: <" | tail -n 1 | awk -F\< '{print $2}' | awk -F\> '{print $1}' )
 -	elif [ "${DRIVER}" = "urtwn" ]; then
@@ -132,6 +139,7 @@
 -			[ "${PRODUCT_ID}" = "0x8193" ] && CHIPSET="RTL8192DU"
 -			[ "${PRODUCT_ID}" = "0x8199" ] && CHIPSET="RTL8187SU"
 -			[ "${PRODUCT_ID}" = "0x8812" ] && CHIPSET="RTL8812AU"
+-			[ "${PRODUCT_ID}" = "0x8187" ] && CHIPSET="RTL8187L"
 -		elif [ "${VENDOR_ID}" = "0x06f8" ] && [ "${PRODUCT_ID}" = "0xe033" ]; then
 -			CHIPSET="RTL8188CUS"
 -		elif [ "${VENDOR_ID}" = "0x2001" ] && [ "${PRODUCT_ID}" = "0x3308" ]; then
@@ -152,12 +160,16 @@
 -			[ "${PRODUCT_ID}" = "0x9043" ] && CHIPSET="RTL8188CUS"
 -		fi
 -		[ -z "${CHIPSET}" ] && CHIPSET="Report dmesg and usbconfig (dump commands) to http://trac.aircrack-ng.org" 
+-	elif [ "${DRIVER}" = "run" ]; then
+-		CHIPSET="Ralink/Mediatek"
 -	elif [ -n "${DRIVER}" ]; then
 -		CHIPSET="Report dmesg and usbconfig (dump commands) to http://trac.aircrack-ng.org"
 -	else
 -		CHIPSET="Unknown"
 -		[ -z "${DRIVER}" ] && DRIVER="Unknown"
 -	fi
++    [ -z "$1" ] && return
++
 +    ### Driver information
 +    # Parent interface check
 +    if [ -n "$(echo $1 | grep -E ${WIFI_IF_REGEX})" ]; then
@@ -192,9 +204,8 @@
 +    if [ -z "${DRIVER}" ]; then
 +        DRIVER="Unknown"
 +    fi
- }
- 
--printf "\nInterface\tDriver\t\tChipset\n\n"
++}
++
 +destroy_other_children() {
 +    for iface in ${VIRTUAL_DEVICES}; do
 +        local iface_idx=$(echo $1 | sed 's/[^0-9]*//g')
@@ -209,14 +220,7 @@
 +        fi
 +    done
 +}
- 
--for IFACE in $(ifconfig -a | grep -E '^(wlan|ath|otus|urtwn)[0-9]+' | awk -F: '{print $1}' )
--do
--	get_interface_info ${IFACE}
--	printf "${IFACE}\t\t${DRIVER}\t\t${CHIPSET}\n\n"
--	if [ -n "${PARENT}" ]; then
--		printf "\t(monitor mode interface. Parent: ${PARENT})\n"
--	fi
++
 +create_device() {
 +   local iface=$(ifconfig wlan create wlandev ${1} wlanmode ${2})
 +   if [ $? -eq 0 ]; then
@@ -225,8 +229,36 @@
 +       printf "Failed to create ${sta} mode interface from ${1}\n"
 +       exit 1
 +   fi
-+}
+ }
  
+-printf "\nInterface\tDriver\t\tChipset\n\n"
++if [ -n "${COMMAND}" ]; then
++    get_interface_info ${INTERFACE_TO_USE}
++    destroy_other_children ${INTERFACE_TO_USE}
++    case ${COMMAND} in
++        start) NEW_MODE=monitor ;;
++        stop) NEW_MODE=sta ;;
++    esac
++    create_device ${INTERFACE_TO_USE} ${NEW_MODE}
++fi
++
++printf "\nPhysical Interfaces:\n"
++printf "==================\n"
++printf "Interface\tDriver\t\tChipset\n"
++
++for IFACE in ${PHYSICAL_DEVICES}; do
++    get_interface_info ${IFACE}
++    printf "${IFACE}\t\t${DRIVER}\t\t${CHIPSET}\n"
++done
+ 
+-for IFACE in $(ifconfig -a | grep -E '^(wlan|ath|otus|urtwn)[0-9]+' | awk -F: '{print $1}' )
+-do
+-	get_interface_info ${IFACE}
+-	printf "${IFACE}\t\t${DRIVER}\t\t${CHIPSET}\n\n"
+-	if [ -n "${PARENT}" ]; then
+-		printf "\t(monitor mode interface. Parent: ${PARENT})\n"
+-	fi
+-
 -	if [ "${INTERFACE_TO_USE}" = "${IFACE}" ]; then
 -		if [ "${COMMAND}" = 'start' ]; then
 -			if [ -n "${PARENT}" ]; then
@@ -248,25 +280,6 @@
 -			fi
 -		fi
 -	fi 
-+if [ -n "${COMMAND}" ]; then
-+    get_interface_info ${INTERFACE_TO_USE}
-+    destroy_other_children ${INTERFACE_TO_USE}
-+    case ${COMMAND} in
-+        start) NEW_MODE=monitor ;;
-+        stop) NEW_MODE=sta ;;
-+    esac
-+    create_device ${INTERFACE_TO_USE} ${NEW_MODE}
-+fi
-+
-+printf "\nPhysical Interfaces:\n"
-+printf "==================\n"
-+printf "Interface\tDriver\t\tChipset\n"
-+
-+for IFACE in ${PHYSICAL_DEVICES}; do
-+    get_interface_info ${IFACE}
-+    printf "${IFACE}\t\t${DRIVER}\t\t${CHIPSET}\n"
-+done
-+
 +printf "\nVirtual Interfaces:\n"
 +printf "===================\n"
 +printf "Interface\tMode\t\tParent\n"
