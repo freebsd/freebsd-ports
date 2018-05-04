@@ -1,0 +1,59 @@
+https://github.com/MaartenBaert/ssr/issues/640
+
+--- src/AV/Output/AudioEncoder.cpp.orig	2018-03-18 17:25:55 UTC
++++ src/AV/Output/AudioEncoder.cpp
+@@ -58,7 +58,7 @@ AudioEncoder::~AudioEncoder() {
+ 
+ unsigned int AudioEncoder::GetFrameSize() {
+ #if SSR_USE_AVCODEC_ENCODE_AUDIO2
+-	return (GetCodecContext()->codec->capabilities & CODEC_CAP_VARIABLE_FRAME_SIZE)? DEFAULT_FRAME_SAMPLES : GetCodecContext()->frame_size;
++	return (GetCodecContext()->codec->capabilities & AV_CODEC_CAP_VARIABLE_FRAME_SIZE)? DEFAULT_FRAME_SAMPLES : GetCodecContext()->frame_size;
+ #else
+ 	return (GetCodecContext()->frame_size <= 1)? DEFAULT_FRAME_SAMPLES : GetCodecContext()->frame_size;
+ #endif
+@@ -122,7 +122,7 @@ void AudioEncoder::PrepareStream(AVStream* stream, AVC
+ 		if(key == "threads") {
+ 			codec_context->thread_count = ParseCodecOptionInt(key, value, 1, 100);
+ 		} else if(key == "qscale") {
+-			codec_context->flags |= CODEC_FLAG_QSCALE;
++			codec_context->flags |= AV_CODEC_FLAG_QSCALE;
+ 			codec_context->global_quality = lrint(ParseCodecOptionDouble(key, value, -1.0e6, 1.0e6, FF_QP2LAMBDA));
+ 		} else if(key == "sampleformat") {
+ 			sample_format_name = value;
+--- src/AV/Output/BaseEncoder.cpp.orig	2018-03-18 17:25:55 UTC
++++ src/AV/Output/BaseEncoder.cpp
+@@ -213,7 +213,7 @@ void BaseEncoder::EncoderThread() {
+ 		}
+ 
+ 		// flush the encoder
+-		if(!m_should_stop && (m_codec_context->codec->capabilities & CODEC_CAP_DELAY)) {
++		if(!m_should_stop && (m_codec_context->codec->capabilities & AV_CODEC_CAP_DELAY)) {
+ 			Logger::LogInfo("[BaseEncoder::EncoderThread] " + Logger::tr("Flushing encoder ..."));
+ 			while(!m_should_stop) {
+ 				if(!EncodeFrame(NULL)) {
+--- src/AV/Output/Muxer.cpp.orig	2018-03-18 17:25:55 UTC
++++ src/AV/Output/Muxer.cpp
+@@ -313,10 +313,10 @@ AVStream* Muxer::AddStream(AVCodec* codec, AVCodecCont
+ 
+ 	// not sure why this is needed, but it's in the example code and it doesn't work without this
+ 	if(m_format_context->oformat->flags & AVFMT_GLOBALHEADER)
+-		(*codec_context)->flags |= CODEC_FLAG_GLOBAL_HEADER;
++		(*codec_context)->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+ 
+ 	// if the codec is experimental, allow it
+-	if(codec->capabilities & CODEC_CAP_EXPERIMENTAL) {
++	if(codec->capabilities & AV_CODEC_CAP_EXPERIMENTAL) {
+ 		Logger::LogWarning("[Muxer::AddStream] " + Logger::tr("Warning: This codec is considered experimental by libav/ffmpeg."));
+ 		(*codec_context)->strict_std_compliance = FF_COMPLIANCE_EXPERIMENTAL;
+ 	}
+--- src/AV/Output/VideoEncoder.cpp.orig	2018-03-18 17:25:55 UTC
++++ src/AV/Output/VideoEncoder.cpp
+@@ -130,7 +130,7 @@ void VideoEncoder::PrepareStream(AVStream* stream, AVC
+ 		if(key == "threads") {
+ 			codec_context->thread_count = ParseCodecOptionInt(key, value, 1, 100);
+ 		} else if(key == "qscale") {
+-			codec_context->flags |= CODEC_FLAG_QSCALE;
++			codec_context->flags |= AV_CODEC_FLAG_QSCALE;
+ 			codec_context->global_quality = lrint(ParseCodecOptionDouble(key, value, -1.0e6, 1.0e6, FF_QP2LAMBDA));
+ 		} else if(key == "minrate") {
+ 			codec_context->rc_min_rate = ParseCodecOptionInt(key, value, 1, 1000000, 1000); // kbit/s
