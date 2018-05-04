@@ -1,3 +1,11 @@
-KDE5 Meta Port
+KDE is a powerful Free Software graphical desktop environment for Linux
+and Unix workstations.
+
+This package does not contain anything by itself -- it is a
+"meta-port" that depends on other KDE packages.  Its sole purpose is
+to require dependencies so users can install this package only and
+have all the KDE stuff pulled in by the port/package dependency mechanism.
+
+x11/kde5 contains current KDE Frameworks, Plasma Desktop and Applications.
 
 WWW: https://www.kde.org
