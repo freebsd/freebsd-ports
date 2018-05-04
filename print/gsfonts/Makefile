@@ -14,8 +14,12 @@ DIST_SUBDIR=	ghostscript
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Standard Fonts for Ghostscript
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/fonts/COPYING
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${STAGEDIR}${PREFIX}/||}"
 OPTIONS_DEFINE=	DOCS
 
@@ -28,10 +32,12 @@ CJKFONTS?=	std.ja_JP/Ryumin-Light \
 		std.zh_CN/STSong-Light \
 		std.zh_CN/MSung-Light
 
+PORTDOCS=	ChangeLog README README.tweaks TODO
+
 do-install:
 	${MKDIR} ${FONTSDIR}
 	cd ${WRKSRC}/fonts && \
-		${INSTALL_DATA} fonts.dir COPYING \
+		${INSTALL_DATA} fonts.dir \
 			*.afm *.gsf *.pfa *.pfb *.pfm ${FONTSDIR}/ \
 		&& ${INSTALL_DATA} fonts.scale ${FONTSDIR}/fonts.scale.urw
 	cd ${FILESDIR} && \
@@ -39,8 +45,6 @@ do-install:
 	for F in ${CJKFONTS}; do \
 		${LN} -s -f ${PREFIX}/share/fonts/$${F} ${FONTSDIR}/; \
 	done
-
-PORTDOCS=	ChangeLog README README.tweaks TODO
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
