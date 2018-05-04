@@ -13,8 +13,6 @@ COMMENT=	3D video player with multi-display support
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with ffmpeg 4.0
-
 LIB_DEPENDS=	libass.so:multimedia/libass \
 		libavformat.so:multimedia/ffmpeg \
 		libopenal.so:audio/openal-soft
