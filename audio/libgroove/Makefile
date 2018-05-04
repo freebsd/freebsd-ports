@@ -12,8 +12,6 @@ COMMENT=	Audio dispatching library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with ffmpeg 4.0
-
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libchromaprint.so:audio/chromaprint \
 		libebur128.so:audio/libebur128 \

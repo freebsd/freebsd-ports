@@ -1,0 +1,92 @@
+groove/encoder.c:619:59: error: use of undeclared identifier 'CODEC_CAP_VARIABLE_FRAME_SIZE'
+    e->sink->buffer_sample_count = (codec->capabilities & CODEC_CAP_VARIABLE_FRAME_SIZE) ?
+                                                          ^
+groove/file.c:284:66: error: use of undeclared identifier 'FF_INPUT_BUFFER_PADDING_SIZE'
+        uint64_t extra_size = (uint64_t)icodec->extradata_size + FF_INPUT_BUFFER_PADDING_SIZE;
+                                                                 ^
+groove/playlist.c:189:63: error: use of undeclared identifier 'CODEC_CAP_DELAY'
+            if (!pkt_temp->data && dec->codec->capabilities & CODEC_CAP_DELAY)
+                                                              ^
+groove/playlist.c:574:55: error: use of undeclared identifier 'CODEC_CAP_DELAY'
+        if (f->audio_st->codec->codec->capabilities & CODEC_CAP_DELAY) {
+                                                      ^
+groove/playlist.c:990:22: error: assigning to 'AVFilter *' (aka 'struct AVFilter *') from 'const AVFilter *' (aka 'const struct AVFilter *') discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+    p->volume_filter = avfilter_get_by_name("volume");
+                     ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+groove/playlist.c:997:23: error: assigning to 'AVFilter *' (aka 'struct AVFilter *') from 'const AVFilter *' (aka 'const struct AVFilter *') discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+    p->compand_filter = avfilter_get_by_name("compand");
+                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+groove/playlist.c:1004:23: error: assigning to 'AVFilter *' (aka 'struct AVFilter *') from 'const AVFilter *' (aka 'const struct AVFilter *') discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+    p->abuffer_filter = avfilter_get_by_name("abuffer");
+                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+groove/playlist.c:1011:22: error: assigning to 'AVFilter *' (aka 'struct AVFilter *') from 'const AVFilter *' (aka 'const struct AVFilter *') discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+    p->asplit_filter = avfilter_get_by_name("asplit");
+                     ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+groove/playlist.c:1018:23: error: assigning to 'AVFilter *' (aka 'struct AVFilter *') from 'const AVFilter *' (aka 'const struct AVFilter *') discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+    p->aformat_filter = avfilter_get_by_name("aformat");
+                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+groove/playlist.c:1025:27: error: assigning to 'AVFilter *' (aka 'struct AVFilter *') from 'const AVFilter *' (aka 'const struct AVFilter *') discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
+    p->abuffersink_filter = avfilter_get_by_name("abuffersink");
+                          ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- groove/encoder.c.orig	2015-05-26 01:32:01 UTC
++++ groove/encoder.c
+@@ -616,7 +616,7 @@ int groove_encoder_attach(struct GrooveEncoder *encode
+ 
+     e->sink->audio_format = encoder->actual_audio_format;
+     e->sink->buffer_size = encoder->sink_buffer_size;
+-    e->sink->buffer_sample_count = (codec->capabilities & CODEC_CAP_VARIABLE_FRAME_SIZE) ?
++    e->sink->buffer_sample_count = (codec->capabilities & AV_CODEC_CAP_VARIABLE_FRAME_SIZE) ?
+         0 : e->stream->codec->frame_size;
+     e->sink->gain = encoder->gain;
+ 
+--- groove/file.c.orig	2015-05-26 01:32:01 UTC
++++ groove/file.c
+@@ -281,7 +281,7 @@ int groove_file_save(struct GrooveFile *file) {
+         ocodec->rc_buffer_size = icodec->rc_buffer_size;
+         ocodec->field_order    = icodec->field_order;
+ 
+-        uint64_t extra_size = (uint64_t)icodec->extradata_size + FF_INPUT_BUFFER_PADDING_SIZE;
++        uint64_t extra_size = (uint64_t)icodec->extradata_size + AV_INPUT_BUFFER_PADDING_SIZE;
+         if (extra_size > INT_MAX) {
+             cleanup_save(file);
+             av_log(NULL, AV_LOG_ERROR, "codec extra size too big\n");
+--- groove/playlist.c.orig	2015-05-26 01:32:01 UTC
++++ groove/playlist.c
+@@ -54,12 +54,12 @@ struct GroovePlaylistPrivate {
+     AVFilterGraph *filter_graph;
+     AVFilterContext *abuffer_ctx;
+ 
+-    AVFilter *volume_filter;
+-    AVFilter *compand_filter;
+-    AVFilter *abuffer_filter;
+-    AVFilter *asplit_filter;
+-    AVFilter *aformat_filter;
+-    AVFilter *abuffersink_filter;
++    const AVFilter *volume_filter;
++    const AVFilter *compand_filter;
++    const AVFilter *abuffer_filter;
++    const AVFilter *asplit_filter;
++    const AVFilter *aformat_filter;
++    const AVFilter *abuffersink_filter;
+ 
+     pthread_mutex_t drain_cond_mutex;
+     int drain_cond_mutex_inited;
+@@ -186,7 +186,7 @@ static int audio_decode_frame(struct GroovePlaylist *p
+ 
+         if (!got_frame) {
+             // stop sending empty packets if the decoder is finished
+-            if (!pkt_temp->data && dec->codec->capabilities & CODEC_CAP_DELAY)
++            if (!pkt_temp->data && dec->codec->capabilities & AV_CODEC_CAP_DELAY)
+                 return 0;
+             continue;
+         }
+@@ -571,7 +571,7 @@ static int decode_one_frame(struct GroovePlaylist *pla
+     pthread_mutex_unlock(&f->seek_mutex);
+ 
+     if (f->eof) {
+-        if (f->audio_st->codec->codec->capabilities & CODEC_CAP_DELAY) {
++        if (f->audio_st->codec->codec->capabilities & AV_CODEC_CAP_DELAY) {
+             av_init_packet(pkt);
+             pkt->data = NULL;
+             pkt->size = 0;
