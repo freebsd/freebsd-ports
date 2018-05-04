@@ -12,6 +12,7 @@ COMMENT=	Python module package for implementing LDAP clients
 LICENSE=	PSFL
 
 MAKE_ENV+=	INCLUDES=${LOCALBASE}/include
+WANT_OPENLDAP_SASL=yes
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0.2.1:devel/py-pyasn1-modules@${PY_FLAVOR}
 
 USES=		python
