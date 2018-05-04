@@ -2,12 +2,17 @@ bin/aircrack-ng
 bin/airdecap-ng
 bin/airdecloak-ng
 %%SQLITE%%bin/airolib-ng
+bin/besside-ng-crawler
 bin/buddy-ng
 bin/ivstools
 bin/kstats
 bin/makeivs-ng
 bin/packetforge-ng
 bin/wpaclean
+libexec/aircrack-ng/aircrack-ng--avx
+libexec/aircrack-ng/aircrack-ng--avx2
+libexec/aircrack-ng/aircrack-ng--generic
+libexec/aircrack-ng/aircrack-ng--sse2
 man/man1/aircrack-ng.1.gz
 man/man1/airdecap-ng.1.gz
 man/man1/airdecloak-ng.1.gz
@@ -26,6 +31,7 @@ man/man8/airodump-ng-oui-update.8.gz
 man/man8/airodump-ng.8.gz
 man/man8/airserv-ng.8.gz
 man/man8/airtun-ng.8.gz
+man/man8/airventriloquist-ng.8.gz
 man/man8/besside-ng.8.gz
 man/man8/easside-ng.8.gz
 man/man8/tkiptun-ng.8.gz
@@ -37,6 +43,7 @@ sbin/airodump-ng
 sbin/airodump-ng-oui-update
 sbin/airserv-ng
 sbin/airtun-ng
+sbin/airventriloquist-ng
 sbin/besside-ng
 sbin/easside-ng
 sbin/tkiptun-ng
