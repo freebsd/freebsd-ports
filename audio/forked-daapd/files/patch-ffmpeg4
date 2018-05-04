@@ -1,0 +1,43 @@
+https://github.com/ejurgensen/forked-daapd/commit/5afed60a42fe
+https://github.com/ejurgensen/forked-daapd/commit/e7f888645fd6
+https://github.com/ejurgensen/forked-daapd/commit/eec98e3b7e88
+
+--- src/artwork.c.orig	2016-05-06 17:50:14 UTC
++++ src/artwork.c
+@@ -445,7 +445,7 @@ artwork_rescale(struct evbuffer *evbuf, AVFormatContex
+   avcodec_get_context_defaults3(dst, NULL);
+ 
+   if (dst_fmt->flags & AVFMT_GLOBALHEADER)
+-    dst->flags |= CODEC_FLAG_GLOBAL_HEADER;
++    dst->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+ 
+   dst->codec_id = dst_fmt->video_codec;
+   dst->codec_type = AVMEDIA_TYPE_VIDEO;
+--- src/transcode.c.orig	2016-05-06 17:50:14 UTC
++++ src/transcode.c
+@@ -26,7 +26,6 @@
+ 
+ #include <libavcodec/avcodec.h>
+ #include <libavformat/avformat.h>
+-#include <libavfilter/avfiltergraph.h>
+ #include <libavfilter/buffersink.h>
+ #include <libavfilter/buffersrc.h>
+ #include <libavutil/opt.h>
+@@ -560,7 +559,7 @@ flush_encoder(struct encode_ctx *ctx, unsigned int str
+ 
+   DPRINTF(E_DBG, L_XCODE, "Flushing output stream #%u encoder\n", stream_index);
+ 
+-  if (!(ctx->ofmt_ctx->streams[stream_index]->codec->codec->capabilities & CODEC_CAP_DELAY))
++  if (!(ctx->ofmt_ctx->streams[stream_index]->codec->codec->capabilities & AV_CODEC_CAP_DELAY))
+     return;
+ 
+   do
+@@ -804,7 +803,7 @@ open_output(struct encode_ctx *ctx, struct decode_ctx 
+ 	}
+ 
+       if (ctx->ofmt_ctx->oformat->flags & AVFMT_GLOBALHEADER)
+-	enc_ctx->flags |= CODEC_FLAG_GLOBAL_HEADER;
++	enc_ctx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+     }
+ 
+   // Notice, this will not write WAV header (so we do that manually)

@@ -12,8 +12,6 @@ COMMENT=	DAAP (iTunes), MPD (Music Player Daemon) and RSP (Roku) media server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with ffmpeg 4.0
-
 BUILD_DEPENDS=	antlr3:devel/antlr3
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libavahi-client.so:net/avahi-app \
