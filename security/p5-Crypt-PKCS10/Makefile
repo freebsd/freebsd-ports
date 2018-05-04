@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-PKCS10
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 PORTEPOCH=	1
 CATEGORIES=	security perl5
-MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
@@ -28,6 +27,8 @@ PORTSCOUT=	ignore:1.800201,1.8002
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
+USE_GITHUB=	yes
+GH_ACCOUNT=	openxpki
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

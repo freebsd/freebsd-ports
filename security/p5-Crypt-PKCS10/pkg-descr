@@ -7,4 +7,4 @@ x509decode example by Norbert Klasen. It is also based upon the
 works of Duncan Segrests Crypt-X509-CRL module. The module parses
 common fields and extensions. Some fields might be missing.
 
-WWW: http://search.cpan.org/dist/Crypt-PKCS10/
+WWW: https://github.com/openxpki/Crypt-PKCS10/
