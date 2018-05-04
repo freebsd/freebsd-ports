@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osquery
-PORTVERSION=	2.11.2
-PORTREVISION=	2
+PORTVERSION=	3.2.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -15,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	thrift>=0.11.0:devel/thrift \
 		bash>0:shells/bash \
 		linenoise-ng>0:devel/linenoise-ng \
-		asio>0:net/asio \
 		rapidjson>0:devel/rapidjson \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
 LIB_DEPENDS=	libaugeas.so:textproc/augeas \
@@ -23,11 +21,8 @@ LIB_DEPENDS=	libaugeas.so:textproc/augeas \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libicuuc.so:devel/icu \
-		liblz4.so:archivers/liblz4 \
-		libsnappy.so:archivers/snappy \
 		librocksdb-lite.so:databases/rocksdb-lite \
 		libthrift.so:devel/thrift-cpp \
-		libcppnetlib-uri.so:devel/cpp-netlib \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
@@ -38,7 +33,7 @@ CONFIGURE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \
 		SKIP_TESTS="yes" CC="${CC}" CXX="${CXX}"
 CMAKE_ARGS+=	-DFREEBSD=awesome -DCMAKE_SYSTEM_NAME="FreeBSD"
 BLDDIR=		${WRKDIR}/.build/${PORTNAME}
-TPVERSION=	2.11.0
+TPVERSION=	3.0.0
 USE_RC_SUBR=	${PORTNAME}d
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook ${PORTNAME}:tp
