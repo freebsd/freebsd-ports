@@ -12,24 +12,18 @@ MASTER_SITES=	http://www.and.org/vstr/${PORTVERSION}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose string library for C
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
+INSTALL_TARGET=	install-strip install-man
+TEST_TARGET=	check  # XXX: 4 of 231 tests fail
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	cd ${WRKSRC}/Documentation && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_fLAGS} ${MAKEFILE} ${MAKE_ARGS} install-man3
-
-regression-test:
-	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
 .include <bsd.port.mk>
