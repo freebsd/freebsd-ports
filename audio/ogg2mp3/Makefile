@@ -11,6 +11,8 @@ MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Perl script that converts Ogg Vorbis files to MP3 format
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 LICENSE=	GPLv2
 

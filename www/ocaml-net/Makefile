@@ -15,6 +15,8 @@ COMMENT=	OCaml modules for Internet applications
 LICENSE=	GPLv2
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre

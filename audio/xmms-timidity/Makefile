@@ -11,6 +11,8 @@ MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	XMMS input plugin to play midi files (via timidity)
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 LIB_DEPENDS=	libxmms.so:multimedia/xmms
 RUN_DEPENDS=	timidity:audio/timidity

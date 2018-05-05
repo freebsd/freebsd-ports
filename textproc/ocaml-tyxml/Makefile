@@ -15,6 +15,9 @@ LICENSE_NAME=	Lesser GPL 2.1 with a special OpenSSL exception clause
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Depends on BROKEN and expiring www/ocaml-net
+EXPIRATION_DATE=	2018-06-06
+
 BUILD_DEPENDS=	${SA_DIR}/netstring/netstring.a:www/ocaml-net
 RUN_DEPENDS=	${SA_DIR}/netstring/netstring.a:www/ocaml-net
 

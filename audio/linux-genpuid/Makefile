@@ -13,6 +13,8 @@ COMMENT=	Application for generating MusicIP puids
 
 USES=		linux tar:tgz
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 NO_BUILD=		yes
 IA32_BINARY_PORT=	yes

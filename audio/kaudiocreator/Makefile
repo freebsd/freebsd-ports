@@ -14,6 +14,8 @@ COMMENT=	Audio-cd ripper and encoder for KDE4
 LICENSE=	GPLv2
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 		libtag.so:audio/taglib

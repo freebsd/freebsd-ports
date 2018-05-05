@@ -13,6 +13,8 @@ COMMENT=	Pdf2djvu creates DjVu files from PDF files
 LICENSE=	GPLv2
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pstreams/pstream.h:devel/pstreams
 LIB_DEPENDS=	libpoppler.so:graphics/poppler \

@@ -17,6 +17,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Chinese font support for xpdf
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 RUN_DEPENDS=	xpdf:graphics/xpdf \
 		${ADOBECMAPDIR}/ai0/CMap/Identity-H:print/adobe-cmaps \

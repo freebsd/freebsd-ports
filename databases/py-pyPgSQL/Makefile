@@ -12,6 +12,8 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python DB-API 2 compliant library for using PostgreSQL databases
 
 BROKEN=		Invalid checksum
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 RUN_DEPENDS=	${DATETIME_DEP}:lang/py-mx-base
 

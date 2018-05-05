@@ -12,6 +12,8 @@ COMMENT=	Programs to compare protein sequences and profiles
 WRKSRC=		${WRKDIR}/SRC-${PORTVERSION}
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 PLIST_FILES+=	bin/ariadne bin/prospero
 USES=		gmake tar:Z

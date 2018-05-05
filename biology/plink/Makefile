@@ -11,6 +11,8 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Whole genome association analysis toolset
 
 BROKEN=		no public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 LICENSE=	GPLv2
 

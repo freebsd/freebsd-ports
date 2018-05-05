@@ -13,6 +13,8 @@ COMMENT=	General-purpose circuit analysis program
 LICENSE=	GPLv2
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 USES=		fortran
 
 MAKE_JOBS_UNSAFE=	yes

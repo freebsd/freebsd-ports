@@ -10,6 +10,8 @@ MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Self-scaling network benchmark
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 # The default port builds and installs only the TCP version of
 # netpipe(1).  The sources support many other variants.

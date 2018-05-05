@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun's Java Communications API
 
 BROKEN=		No upstream anymore
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

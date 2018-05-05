@@ -12,6 +12,9 @@ COMMENT=	Simple PostreSQL GUI front end
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on BROKEN and expiring databases/py-pyPgSQL
+EXPIRATION_DATE=	2018-06-06
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyPgSQL/libpq/__init__.py:databases/py-pyPgSQL@${FLAVOR}
 
 USES=		pgsql python:2.7 tar:bzip2

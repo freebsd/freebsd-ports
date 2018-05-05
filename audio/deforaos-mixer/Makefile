@@ -12,6 +12,8 @@ MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop audio mixer
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

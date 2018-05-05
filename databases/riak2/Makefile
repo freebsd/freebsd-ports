@@ -21,6 +21,8 @@ COMMENT=	Riak is an open source, distributed, noSQL database
 LICENSE=	APACHE20
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:lang/erlang-riak
 
