@@ -20,7 +20,6 @@ JARFILE=	frontbasejdbc.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
 SUB_FILES+=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${JARFILE}

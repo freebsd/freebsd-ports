@@ -64,8 +64,6 @@ USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb \
 		redis-cli redis-sentinel redis-server
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 USERS=	redis
 GROUPS=	redis
 

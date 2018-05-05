@@ -18,7 +18,6 @@ CMAKE_ARGS+=	-DWITH_ORACLE:BOOL=OFF
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE ODBC BOOST FIREBIRD
 BOOST_DESC=	Enable support for additional types using Boost
