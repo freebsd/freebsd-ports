@@ -25,8 +25,6 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 SUB_FILES=	pkg-message \
 		setup
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 TEMPLATE_FILES=	dhcp6c.conf.in.in \
 		dhcp6c_pd.sh.in \
 		linkdown.sh.in \

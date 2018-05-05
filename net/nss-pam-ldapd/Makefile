@@ -20,7 +20,6 @@ USE_OPENLDAP=		yes
 USE_RC_SUBR=		nslcd
 PAM_LDAP_SHMAJOR=	1
 NSS_LDAP_SHMAJOR=	1
-PKGMESSAGE=		${WRKDIR}/pkg-message
 SUB_FILES+=		pkg-message
 
 NSLCD_PIDFILE?=		/var/run/nslcd.pid
