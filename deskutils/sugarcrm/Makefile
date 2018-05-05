@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/SugarCE-Full-${PORTVERSION}
 PLIST=		${WRKDIR}/plist
 SUGARDIR=	www/sugarcrm
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES+=	pkg-message pkg-install
 
 pre-install:
