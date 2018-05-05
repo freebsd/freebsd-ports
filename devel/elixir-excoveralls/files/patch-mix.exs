@@ -1,9 +1,9 @@
---- mix.exs.orig	2017-01-06 11:20:27 UTC
+--- mix.exs.orig	2018-05-03 07:42:57 UTC
 +++ mix.exs
-@@ -5,7 +5,6 @@ defmodule ExCoveralls.Mixfile do
-     [ app: :excoveralls,
-       version: "0.6.0",
+@@ -6,7 +6,6 @@ defmodule ExCoveralls.Mixfile do
+       version: "0.8.2",
        elixir: "~> 1.2",
+       elixirc_paths: elixirc_paths(Mix.env()),
 -      deps: deps(),
        description: description(),
        package: package(),
