@@ -31,7 +31,7 @@ USES=		python
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-MSSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mssql>=0:databases/py-pymssql@${FLAVOR}
+MSSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymssql>=0:databases/py-pymssql@${FLAVOR}
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymysql>=0:databases/py-pymysql@${FLAVOR}
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.0:databases/py-psycopg2@${FLAVOR}
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR}
