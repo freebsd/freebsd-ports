@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cctz
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,16 +13,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_powerpc64=	fails to compile: time_tool.cc: 'stoll' is not a member of 'std'
 
+USES=		compiler:c++11-lib gmake
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
-USES=		compiler:c++11-lib gmake
 
 MAKE_ARGS+=	CXX=${CXX} \
 		EXTRA_CPPFLAGS="-D_POSIX_C_SOURCE=201112L -D_XOPEN_SOURCE=600"
 
-PLIST_FILES=	include/civil_time.h \
-		include/civil_time_detail.h \
-		include/time_zone.h lib/libcctz.a
+PLIST_FILES=	include/cctz/civil_time.h \
+		include/cctz/civil_time_detail.h \
+		include/cctz/time_zone.h \
+		include/cctz/zone_info_source.h \
+		lib/libcctz.a
+
 PORTDOCS=	README.md
 
 post-install:
