@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	2012-07-11 17:29:07 UTC
++++ src/Makefile.in
+@@ -471,7 +471,6 @@ libappindicator_la_LDFLAGS = \
+ libappindicator_la_CFLAGS = \
+ 	$(LIBRARY_CFLAGS) \
+ 	$(COVERAGE_CFLAGS) \
+-	-Wall -Werror \
+ 	-DG_LOG_DOMAIN=\"libappindicator\"
+ 
+ libappindicator_la_LIBADD = \
