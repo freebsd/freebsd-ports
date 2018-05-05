@@ -16,6 +16,8 @@ EXTRACT_ONLY=	Cyberbit.ZIP
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bitstream Cyberbit is a TrueType font that covers Unicode 2.0
 
+BROKEN=		unfetchable
+
 RESTRICTED=	Redistribution not permitted; single user license only.
 
 USES=		fonts zip
