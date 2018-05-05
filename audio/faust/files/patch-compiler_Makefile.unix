@@ -1,0 +1,17 @@
+--- compiler/Makefile.unix.orig	2018-05-05 19:02:08 UTC
++++ compiler/Makefile.unix
+@@ -150,12 +150,12 @@ else ifeq ($(LLVM_VERSION),$(filter $(LL
+     CLANGLIBS=$(CLANGLIBSLIST)
+     CXXFLAGS += -std=gnu++11
+ 
+-else ifeq ($(LLVM_VERSION),$(filter $(LLVM_VERSION), 5.0.0 5.0.1))
++else ifeq ($(patsubst 5.%,5,$(LLVM_VERSION)), 5)
+     LLVM_VERSION = LLVM_50
+     CLANGLIBS=$(CLANGLIBSLIST)
+     CXXFLAGS += -std=gnu++11
+ 
+-else ifeq ($(LLVM_VERSION),$(filter $(LLVM_VERSION), 6.0.0 6.0.0svn))
++else ifeq ($(patsubst 6.%,6,$(LLVM_VERSION)), 6)
+     LLVM_VERSION = LLVM_60
+     CLANGLIBS=$(CLANGLIBSLIST)
+     CXXFLAGS += -std=gnu++11
