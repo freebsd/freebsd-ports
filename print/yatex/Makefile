@@ -16,7 +16,6 @@ USES=		dos2unix emacs
 EMACS_NO_DEPENDS=	yes
 
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message yatex-startup.el
 SUB_LIST=	EMACS_SITE_LISPDIR="${EMACS_SITE_LISPDIR}"
 

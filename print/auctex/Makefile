@@ -25,7 +25,6 @@ PORTDOCS=	tex-ref.pdf
 INFO=		auctex preview-latex
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR}
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFINE=	DOCS
 DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR}
