@@ -13,7 +13,6 @@ COMMENT=	Software for blocking bruteforce attacks with ipfw
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	bruteblockd

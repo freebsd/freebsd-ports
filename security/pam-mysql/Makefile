@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
 		--with-pam=/usr
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	*
 PLIST_FILES=	lib/pam_mysql.so lib/pam_mysql.la
