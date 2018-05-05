@@ -1,14 +1,5 @@
---- imap/tls.c.orig	2018-01-03 02:10:17 UTC
+--- imap/tls.c.orig	2018-04-30 02:05:44 UTC
 +++ imap/tls.c
-@@ -227,7 +227,7 @@ static RSA *tmp_rsa_cb(SSL * s __attribu
- }
- #endif
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x20700000L)
- /* replacements for new 1.1 API accessors */
- /* XXX probably put these somewhere central */
- static int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g)
 @@ -734,7 +734,9 @@ EXPORTED int     tls_init_serverengine(c
      off |= SSL_OP_ALL;            /* Work around all known bugs */
      off |= SSL_OP_NO_SSLv2;       /* Disable insecure SSLv2 */
