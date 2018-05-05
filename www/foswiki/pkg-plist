@@ -6645,8 +6645,8 @@
 %%WWWDIR%%/templates/viewtopbar.pattern01x01.tmpl
 %%WWWDIR%%/templates/viewtopicactionbuttons.tmpl
 %%WWWDIR%%/templates/workflowedit.natedit.tmpl
-%%WWWDIR%%/tools/%%AP_NAME%%.freebsd.etc-defaults
-%%WWWDIR%%/tools/%%AP_NAME%%.freebsd.init-script
+%%APACHE%%%%WWWDIR%%/tools/%%AP_NAME%%.freebsd.etc-defaults
+%%APACHE%%%%WWWDIR%%/tools/%%AP_NAME%%.freebsd.init-script
 %%WWWDIR%%/tools/bulk_copy.pl
 %%WWWDIR%%/tools/configure
 %%WWWDIR%%/tools/convertTopicSettings.pl
@@ -6663,7 +6663,7 @@
 %%WWWDIR%%/tools/mod_perl_startup.pl
 %%WWWDIR%%/tools/rewriteshebang.pl
 %%WWWDIR%%/tools/save-pending-checkins
-%%WWWDIR%%/tools/systemd/%%AP_NAME%%.service
+%%APACHE%%%%WWWDIR%%/tools/systemd/%%AP_NAME%%.service
 %%WWWDIR%%/tools/tick_foswiki.pl
 %%WWWDIR%%/tools/tml2html.pl
 %%WWWDIR%%/tools/upgrade_emails.pl

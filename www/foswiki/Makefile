@@ -12,8 +12,6 @@ COMMENT=	Free and open source enterprise wiki
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to package
-
 RUN_DEPENDS=	p5-Error>=0.15:lang/p5-Error \
 		p5-Algorithm-Diff>=1.1901:devel/p5-Algorithm-Diff \
 		p5-Text-Diff>=0.35:textproc/p5-Text-Diff \
