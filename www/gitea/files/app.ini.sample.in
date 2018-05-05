@@ -50,6 +50,9 @@ ENABLE_FEDERATED_AVATAR = false
 
 [repository]
 ROOT = /var/db/gitea/gitea-repositories
+# Gitea's default is 'bash', so if you have bash installed, you can comment
+# this out.
+SCRIPT_TYPE = sh
 
 [repository.upload]
 TEMP_PATH = /var/db/gitea/data/tmp/uploads
