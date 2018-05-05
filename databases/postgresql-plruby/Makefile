@@ -10,6 +10,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	devrimgunduz
 
