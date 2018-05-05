@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-gtk
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.3.1
 CATEGORIES=	deskutils python
@@ -13,6 +14,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${FLAVOR} \
+		libappindicator>=0:devel/libappindicator \
 		syncthing>=0.13:net/syncthing
 
 USES=		python:2.7
