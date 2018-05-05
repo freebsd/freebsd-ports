@@ -12,7 +12,6 @@ COMMENT=	Banihstypos is a simple game to teach you typing, FAST
 
 USES=		ncurses
 MAKE_ARGS=	LDFLAGS="${LDFLAGS} -lncurses"
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 

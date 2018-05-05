@@ -18,7 +18,6 @@ GH_TAGNAME=	dc563b3
 
 GNU_CONFIGURE=	yes
 SUB_FILES+=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 USES=		autoreconf
 
 post-install:

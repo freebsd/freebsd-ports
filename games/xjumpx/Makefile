@@ -16,7 +16,6 @@ MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	xpm xaw
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xjumpx ${STAGEDIR}${PREFIX}/bin

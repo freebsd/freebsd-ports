@@ -24,7 +24,6 @@ RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		bash:shells/bash
 
 USES=		gmake perl5 shebangfix cpe
-PKGMESSAGE=	${WRKDIR}/pkg-message
 REINPLACE_ARGS=	-i ""
 SHEBANG_FILES=	node/bin/munindoc node/sbin/munin-node node/sbin/munin-sched \
 		node/sbin/munin-run node/sbin/munin-node-configure
