@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinymce
-PORTVERSION=	4.7.11
+PORTVERSION=	4.7.12
 CATEGORIES=	www
 MASTER_SITES=	http://download.ephox.com/${PORTNAME}/community/ \
 		LOCAL/sunpoet
