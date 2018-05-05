@@ -15,7 +15,6 @@ LICENSE=	CC0-1.0		# AKA Public Domain
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 PLIST_FILES=	share/games/fortune/psalms share/games/fortune/psalms.dat
 

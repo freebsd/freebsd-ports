@@ -28,8 +28,6 @@ BINDIR=		${PREFIX}/distributed.net
 USERS=		dnetc
 GROUPS=		dnetc
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 SUB_FILES=	pkg-message
 SUB_LIST=	BINDIR="${BINDIR}"
 
