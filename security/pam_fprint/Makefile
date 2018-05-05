@@ -21,6 +21,5 @@ PLIST_FILES+=	bin/pam_fprint_enroll \
 		lib/pam_fprint.so
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.mk>
