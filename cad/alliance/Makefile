@@ -23,7 +23,6 @@ CONFLICTS_INSTALL=	fspclient-*
 
 WRKSRC=		${WRKDIR}/alliance-5.0
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		bison gmake libtool motif
 

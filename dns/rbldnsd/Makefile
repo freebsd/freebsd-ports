@@ -16,7 +16,6 @@ HAS_CONFIGURE=	yes
 USE_RC_SUBR=	rbldnsd
 USERS=		rbldns
 GROUPS=		${USERS}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS

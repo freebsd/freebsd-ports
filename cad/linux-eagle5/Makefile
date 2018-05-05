@@ -37,7 +37,6 @@ EAGLEVERSION=	${EAGLEBASEVERSION}.${EAGLEBUGFIX}
 USES=		linux
 USE_LINUX=	xorglibs jpeg png
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-deinstall pkg-message
 
 DESKTOP_ENTRIES=	"Eagle5" "Tool for designing printed circuit boards" \

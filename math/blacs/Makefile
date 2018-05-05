@@ -14,7 +14,6 @@ EXTRACT_ONLY=	mpiblacs.tgz blacstester.tgz mpiblacs-patch03.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The BLACS (Basic Linear Algebra Communication Subprograms)
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 USES=		fortran gmake
 USE_LDCONFIG=	yes

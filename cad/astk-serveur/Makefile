@@ -45,7 +45,6 @@ EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION:S/-/./:R
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	inst_dir=${inst_dir} tools_dir=${tools_dir}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 LINSTDIR=	aster/ASTK
 inst_dir=	${PREFIX}/${LINSTDIR}
 aster_dir=	${LOCALBASE}/aster/${vaster}

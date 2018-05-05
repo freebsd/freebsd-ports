@@ -18,7 +18,6 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
 USES=		iconv
 USE_RC_SUBR=	mydns
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 INFO=		mydns
 DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
 
