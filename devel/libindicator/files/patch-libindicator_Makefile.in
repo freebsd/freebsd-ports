@@ -1,0 +1,12 @@
+--- libindicator/Makefile.in.orig	2012-09-19 15:40:09 UTC
++++ libindicator/Makefile.in
+@@ -379,8 +379,7 @@ libindicator_la_SOURCES = \
+ libindicator_la_CFLAGS = \
+ 	$(LIBINDICATOR_CFLAGS) \
+ 	$(COVERAGE_CFLAGS) \
+-	-DG_LOG_DOMAIN=\"libindicator\" \
+-	-Wall -Werror
++	-DG_LOG_DOMAIN=\"libindicator\"
+ 
+ libindicator_la_LIBADD = \
+ 	$(LIBINDICATOR_LIBS)
