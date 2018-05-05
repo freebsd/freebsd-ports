@@ -18,7 +18,6 @@ LIB_DEPENDS=	libsphinxclient.so:textproc/libsphinxclient
 USES=		php:pecl
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CFLAGS+=	-I${LOCALBASE}/include
 

@@ -74,7 +74,6 @@ GROUPS=		${USERS} www
 
 SUB_FILES=	pkg-message
 SUB_LIST=	OTRS_USER=${USERS} OTRS_GROUP=${USERS} WWWOWN=${WWWOWN}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_ARCH=	YES
 
 ROOT_DIRS_LIST=	Kernel bin scripts

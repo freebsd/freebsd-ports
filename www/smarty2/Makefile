@@ -21,7 +21,6 @@ NO_BUILD=	yes
 USES=		php:web,flavors
 USE_PHP=	pcre
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes

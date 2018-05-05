@@ -60,7 +60,6 @@ USE_PHP+=	gd
 SUB_FILES=	httpd-tt-rss.conf pkg-message
 SUB_LIST=	DB=${DB} WWWOWN=${WWWOWN} MYSQL=${MYSQL} PGSQL=${PGSQL}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PHP2FIX=	config.php-dist update.php update_daemon2.php
 

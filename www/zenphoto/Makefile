@@ -17,8 +17,6 @@ NO_BUILD=	yes
 USE_PHP=	gd gettext hash json mbstring mysqli pcre session
 USES=		cpe php:web
 
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-deinstall pkg-message
 
 USE_GITHUB=	yes

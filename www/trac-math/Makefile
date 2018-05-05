@@ -14,7 +14,6 @@ RUN_DEPENDS=	tracd:www/trac
 
 USE_TEX=	latex
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
