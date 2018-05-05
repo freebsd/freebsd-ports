@@ -21,7 +21,6 @@ COMMENT?=	Multithreaded SQL database (server)
 LICENSE=	GPLv2
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb55-client
 USES+=		cmake:noninja shebangfix ssl

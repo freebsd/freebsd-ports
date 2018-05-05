@@ -38,8 +38,6 @@ GROUPS=		puppetdb
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 SUB_FILES=	pkg-message
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 post-patch:
 .for file in Makefile ext/bin/puppetdb ext/cli/ssl-setup \
 	ext/config/conf.d/jetty.ini ext/config/conf.d/config.ini
