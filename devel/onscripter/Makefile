@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	onscripter
-PORTVERSION=	20170814
+PORTVERSION=	20180409
 CATEGORIES=	devel games
 MASTER_SITES=	http://onscripter.osdn.jp/
 
