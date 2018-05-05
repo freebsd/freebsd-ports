@@ -67,7 +67,7 @@ CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 STRIP_CMD=	${TRUE}
 .endif
 
-regression-test: build
+do-test:
 	@${ECHO_MSG} -n "===> Running jstests.py: "
 	@cd ${WRKSRC} && ${SETENV} TZ=PST8PDT ${PYTHON_CMD} tests/jstests.py \
 	--no-progress ./js17
