@@ -14,6 +14,8 @@ COMMENT=	Computation using data flow graphs for scalable machine learning
 LICENSE=	APACHE20
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0.29.0:devel/py-wheel@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${FLAVOR} \

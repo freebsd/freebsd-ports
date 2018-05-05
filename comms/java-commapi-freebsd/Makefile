@@ -11,6 +11,9 @@ DISTNAME=	freebsd-commapi-${PORTVERSION}
 MAINTAINER=	ari.suutari@syncrontech.com
 COMMENT=	Java Communication API for FreeBSD
 
+DEPRECATED=	Depends on BROKEN and expiring comms/java-commapi
+EXPIRATION_DATE=	2018-06-06
+
 BUILD_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:comms/java-commapi
 RUN_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:comms/java-commapi
 

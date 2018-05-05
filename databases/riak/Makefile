@@ -13,6 +13,8 @@ COMMENT=	Open source, distributed, noSQL database
 LICENSE=	APACHE20
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang15/bin/erlc:lang/erlang-runtime15
 

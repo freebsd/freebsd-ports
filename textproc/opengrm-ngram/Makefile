@@ -13,6 +13,8 @@ COMMENT=	Library for making n-gram language models encoded as weighted FSTs
 LICENSE=	APACHE20
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 LIB_DEPENDS=	libfst.so:math/openfst
 

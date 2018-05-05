@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved tool for transfer RNA detection
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 USES=		perl5 tar:Z
 MAKE_ARGS=	BINDIR="${PREFIX}/bin" \

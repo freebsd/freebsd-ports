@@ -17,6 +17,8 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 BROKEN=		Invalid checksum
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 BROKEN_RUBY23=	yes
 

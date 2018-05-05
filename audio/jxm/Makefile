@@ -12,6 +12,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMPCR (USB XM radio) control software
 
+DEPRECATED=	Depends on BROKEN and expiring comms/java-commapi
+EXPIRATION_DATE=	2018-06-06
+
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/CommDriver.jar:comms/java-commapi-freebsd
 
 USE_JAVA=	yes

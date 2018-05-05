@@ -9,6 +9,8 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio sound modem
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
