@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	4.6.0
+DISTVERSION=	4.6.1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	C++ and QML IDE for Qt development
 # depend on the split out qbs
 LIB_DEPENDS=	libqbscore.so:devel/qbs
 
-USES=		qmake compiler:c++11-lib tar:xz
+USES=		qmake compiler:c++14-lang tar:xz
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USE_GL=		gl
 USE_QT5=	buildtools concurrent core designer gui help \
