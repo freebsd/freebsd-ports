@@ -33,7 +33,6 @@ WDIR=		${WRKSRC}/public_html/yabbfiles
 WCGI=		${WRKSRC}/cgi-bin/yabb2
 SUB_FILES=	pkg-message
 SUB_LIST=	DIR=${DIR}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 ISOFILES=	Admin/NewSettings.pm \
 		Admin/Settings_Main.pm \
 		Convert.pl Languages/English/Admin.lng \

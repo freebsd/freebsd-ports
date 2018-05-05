@@ -21,7 +21,6 @@ GH_PROJECT=	Analysis-of-Competing-Hypotheses
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 SUB_FILES+=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
 # Get rid of temp files packaged in the upstream distfile

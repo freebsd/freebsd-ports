@@ -49,7 +49,6 @@ MODPERL2_DESC=	mod_perl2 support
 USES=		perl5
 USE_PERL5=	configure
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 DOC_FILES=	../Manual.pod \
 		About.pod \

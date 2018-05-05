@@ -34,7 +34,6 @@ PLIST_SUB=	MYSAR=${MYSARPREFIX} WWWOWN="${WWWOWN}"
 
 SUB_FILES=	pkg-message
 SUB_LIST=	MYSARDIR=${MYSARDIR}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-extract:
 	@${CHMOD} +x ${WRKSRC}/config/*
