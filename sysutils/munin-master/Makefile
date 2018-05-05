@@ -38,8 +38,6 @@ RUN_DEPENDS=	munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 
 USES=		gmake perl5 cpe
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 .include "${.CURDIR}/../munin-common/munin.mk"
 
 ALL_TARGET=	infiles build-master build-man
