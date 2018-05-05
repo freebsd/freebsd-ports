@@ -21,7 +21,6 @@ USES=		tar:bzip2 iconv
 USE_RC_SUBR=	mydns
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 INFO=		mydns
 

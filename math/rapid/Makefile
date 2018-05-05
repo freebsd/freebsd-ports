@@ -13,7 +13,6 @@ COMMENT=	Robust and Accurate Polygon Interference Detection
 RESTRICTED=	For any commercial purpose, you must request a license from http://www.cs.unc.edu/~geom/OBB/OBBT.html
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ALL_TARGET=
 MAKE_JOBS_UNSAFE=	yes

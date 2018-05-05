@@ -11,7 +11,6 @@ COMMENT=	Java library for handling console input
 
 LICENSE=	BSD4CLAUSE
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 USES=		zip
 USE_JAVA=	yes
 OPTIONS_DEFINE=	JLINEPATCH DOCS

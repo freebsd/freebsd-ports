@@ -27,7 +27,6 @@ GROUPS=		${HGGROUP}
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} \
 		HGUSER=${HGUSER}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		python
 USE_PYTHON=	distutils autoplist

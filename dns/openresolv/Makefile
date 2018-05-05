@@ -15,7 +15,5 @@ USES=		tar:bzip2
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-deinstall pkg-message
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.mk>

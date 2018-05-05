@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/g}
 NO_BUILD=	defined
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PLIST_FILES=	share/doc/boost.png
 PORTDATA=	*

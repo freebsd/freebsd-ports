@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/VTKData${PORTVERSION}
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/VTKData
