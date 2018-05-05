@@ -69,7 +69,7 @@ SUPERLUMT_PREVENTS=	LAPACK  # LAPACK requires SUNDIALS_INDEX_TYPE=int32, and SUP
 PORTEXAMPLES=	*
 
 post-patch:
-	@${FIND} ${WRKSRC}/examples -name "*.c" -o -name "*.cpp" | ${XARGS} ${REINPLACE_CMD} -e 's|"ESYM"|" ESYM "|g'
+	@${FIND} ${WRKSRC}/examples -name "*.c" -o -name "*.cpp" | ${XARGS} ${REINPLACE_CMD} -E 's/"(ESYM|FSYM)"/" \1 "/g'
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/LICENSE
