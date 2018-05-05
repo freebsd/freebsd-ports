@@ -14,7 +14,6 @@ COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export
 
 USE_RC_SUBR=	ipcad
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \

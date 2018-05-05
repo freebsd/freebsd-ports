@@ -15,7 +15,7 @@ USES=		mysql tar:txz php:web
 USE_PHP=	mysql pcre sockets xml
 NO_ARCH=	yes
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
+
 PLIST_FILES=	%%DATADIR%%/CREDITS \
 		%%DATADIR%%/ChangeLog \
 		%%DATADIR%%/klg_README.txt \
