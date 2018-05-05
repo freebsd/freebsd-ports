@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180505:
+  AFFECTS: users of www/gitea
+  AUTHOR: stb@lassitu.de
+
+  The www/gitea port no longer requires shell/bash.  If you want to
+  stop using bash and deinstall the package, make sure to set the
+  configuration in etc/gitea/conf/app.ini, section [repository],
+  SCRIPT_TYPE to "sh".  See app.ini.sample for an example.
+
 20180501:
   AFFECTS: users of www/node
   AUTHOR: bhughes@FreeBSD.org
