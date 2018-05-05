@@ -5,7 +5,7 @@ PORTNAME=	xmcd
 PORTVERSION=	3.3.2
 PORTREVISION=	19
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.2/src/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	deischen@FreeBSD.org
 COMMENT=	Motif CD player
@@ -18,7 +18,6 @@ USES=		imake motif ncurses
 USE_XORG=	x11 xext xaw xmu xp xpm xt sm ice
 PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH} OPSYS=${OPSYS}
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CFLAGS+=	-D_WANT_SEMUN
 
