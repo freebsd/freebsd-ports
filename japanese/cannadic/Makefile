@@ -16,7 +16,6 @@ BUILD_DEPENDS=	crxdic:japanese/canna-server
 ALL_TARGET=	maindic
 SUB_FILES=	README.FreeBSD pkg-message
 PORTDOCS=	README.ja README.FreeBSD
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DICS=		gcanna.cbd gcanna.cld gcannaf.ctd
 DICSFILE=	dics.dir.gpl_canna

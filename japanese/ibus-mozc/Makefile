@@ -7,7 +7,6 @@ COMMENT=	Mozc engine for IBus
 DATADIR=	${PREFIX}/share/ibus-${PORTNAME}
 
 MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
-PKGMESSAGE=	${WRKDIR}/pkg-message
 FILESDIR=	${.CURDIR}/files
 SUB_FILES=	pkg-message
 

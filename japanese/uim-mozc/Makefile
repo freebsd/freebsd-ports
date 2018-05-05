@@ -9,7 +9,6 @@ MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
 FILESDIR=	${.CURDIR}/files
 DATADIR=	${PREFIX}/share/uim
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 BUILD_MOZC_LIST=uim_mozc
 

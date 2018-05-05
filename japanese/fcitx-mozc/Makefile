@@ -9,7 +9,6 @@ DATADIR=	${PREFIX}/share/fcitx/${PORTNAME}
 MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
 FILESDIR=	${.CURDIR}/files
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 BUILD_MOZC_LIST=	fcitx_mozc
 
