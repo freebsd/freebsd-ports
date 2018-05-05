@@ -33,7 +33,6 @@ include/qbs/tools/processresult.h
 include/qbs/tools/profile.h
 include/qbs/tools/projectgeneratormanager.h
 include/qbs/tools/qbs_export.h
-include/qbs/tools/qbspluginmanager.h
 include/qbs/tools/settings.h
 include/qbs/tools/settingsmodel.h
 include/qbs/tools/setupprojectparameters.h
@@ -103,7 +102,6 @@ man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/installing-files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/installing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jsextension-binaryfile.html
-%%PORTDOCS%%%%DOCSDIR%%/html/jsextension-domxml.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jsextension-environment.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jsextension-file.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jsextension-fileinfo.html
@@ -112,6 +110,7 @@ man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/jsextension-temporarydir.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jsextension-textfile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jsextension-utilities.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jsextension-xml.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jsextensions-general.html
 %%PORTDOCS%%%%DOCSDIR%%/html/language-introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/list-of-builtin-services.html
