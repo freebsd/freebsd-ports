@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	excoveralls
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
@@ -11,7 +11,7 @@ COMMENT=	Coverage Reports for Elixir
 
 LICENSE=	APACHE20
 
-MIX_BUILD_DEPS=	devel/elixir-exjsx \
+MIX_RUN_DEPS=	devel/elixir-exjsx \
 		www/erlang-hackney
 
 USES=		elixir
