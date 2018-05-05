@@ -12,6 +12,8 @@ COMMENT=	Code_Aster finite element method solver
 
 LICENSE=	GPLv2
 
+BROKEN=		conflicting dependencies
+
 #-----------------------------------------------------------------------
 # You may define these options:
 #
