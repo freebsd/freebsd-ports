@@ -13,8 +13,6 @@ COMMENT=	Easy-to-use greylist milter for sendmail and postfix
 
 LICENSE=	BSD3CLAUSE
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		tar:tgz

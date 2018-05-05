@@ -22,7 +22,6 @@ EXTRACT_BEFORE_ARGS=	-C ${EXTRACT_DIR} -xf
 NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST=		${WRKDIR}/.pkg-plist
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 PORTDATA=	*

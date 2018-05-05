@@ -19,7 +19,6 @@ USES=		gmake tar:bzip2
 GROUPS=		ssmtp
 
 SUB_FILES+=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 MAKE_ENV+=	TARGET_ARCH=
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
