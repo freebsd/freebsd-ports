@@ -24,11 +24,9 @@ SRCDIR=		${SRC_BASE}/usr.bin/telnet
 IGNORE=		need to build this port with the source code of telnet
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
 BROKEN=		does not build: libtelnet/Makefile: Could not find src.opts.mk
-.endif
-
-BROKEN_DragonFly=	does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-06-06
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
