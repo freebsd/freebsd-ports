@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	17.1.20180209
+PORTVERSION=	17.1.20180413
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME:tl}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME:tl}-epl-${PORTVERSION}
@@ -55,11 +55,13 @@ EG_DATA=	www/egdata
 EG_DATADIR=	${PREFIX}/${EG_DATA}
 
 pre-install:
-	@${ECHO_CMD} '@owner ${WWWOWN}' > ${PLIST}
-	@${ECHO_CMD} '@group ${WWWGRP}' >> ${PLIST}
-	@${ECHO_CMD} '@mode 755' >> ${PLIST}
+	@${ECHO_CMD} '@mode 644' > ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${EG_DIR}#g" >> ${PLIST}
+	@${ECHO_CMD} '@mode' >> ${PLIST}
+	@${ECHO_CMD} '@mode 755' >> ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s#${WRKSRC}#@dir ${EG_DIR}#g" >> ${PLIST}
+	@${ECHO_CMD} '@owner ${WWWOWN}' >> ${PLIST}
+	@${ECHO_CMD} '@group ${WWWGRP}' >> ${PLIST}
 	@${ECHO} @dir ${EG_DATA}/files >> ${PLIST}
 	@${ECHO} @dir ${EG_DATA}/backup >> ${PLIST}
 	@${ECHO} @dir ${EG_DATA} >> ${PLIST}
