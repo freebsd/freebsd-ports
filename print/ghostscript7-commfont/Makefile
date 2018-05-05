@@ -20,7 +20,6 @@ SUB_FILES=	pkg-message \
 		Makefile template.cidfont template.ttcidfont template.font
 SUB_LIST=	PORTVERSION="${PORTVERSION}" GS_RESDIR="${GS_RESDIR}"
 PLIST_SUB=	GS_RESDIR="${GS_RESDIR}"
-PKGMESSAGE=	${WRKDIR}/pkg-message
 USES=		ghostscript:7,run
 NO_ARCH=	yes
 
