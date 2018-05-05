@@ -14,7 +14,6 @@ COMMENT=	Compilation of excuses from the "Bastard Operator From Hell"
 
 WRKSRC=		${WRKDIR}/bofh-fortune-mod2.0
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 .if exists(/usr/games/strfile)
