@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webpacker
-DISTVERSION=	3.5.1
+DISTVERSION=	3.5.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
