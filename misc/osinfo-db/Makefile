@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osinfo-db
-PORTVERSION=	20180416
+PORTVERSION=	20180502
 CATEGORIES=	misc
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
@@ -12,6 +12,7 @@ COMMENT=	Osinfo database files
 BUILD_DEPENDS=	osinfo-db-tools>=1.1.0:sysutils/osinfo-db-tools
 
 USES=		tar:xz
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-extract: # nada
