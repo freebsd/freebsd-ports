@@ -27,8 +27,6 @@ PORTDOCS=	README.FreeBSD
 SUB_FILES=	README.FreeBSD pkg-message
 SUB_LIST+=	DICDIR=${DICDIR} PORTNAME=${PORTNAME}
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 DICS=		${PORTNAME}.cbd ${PORTNAME}.cld
 DICSFILE=	dics.dir.${PORTNAME}
 DICDIR=		${PREFIX}/share/canna/dic/canna
