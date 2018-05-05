@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
-		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
+		https://repo.hex.pm/tarballs/:hex
 DISTFILES=	relx-cache-${CACHE_VERSION}${EXTRACT_SUFX}:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		relx-cache-${CACHE_VERSION}${EXTRACT_SUFX}
