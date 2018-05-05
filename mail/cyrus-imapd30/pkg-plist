@@ -31,7 +31,6 @@ cyrus/sbin/chk_cyrus
 cyrus/sbin/ctl_conversationsdb
 cyrus/sbin/ctl_cyrusdb
 cyrus/sbin/ctl_deliver
-%%HTTP%%cyrus/sbin/ctl_jmapauth
 cyrus/sbin/ctl_mboxlist
 %%HTTP%%cyrus/sbin/ctl_zoneinfo
 cyrus/sbin/cvt_cyrusdb
