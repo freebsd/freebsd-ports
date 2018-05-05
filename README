@@ -1,12 +1,12 @@
 This is the FreeBSD Ports Collection.  For an easy to use
 WEB-based interface to it, please see:
 
-	http://www.FreeBSD.org/ports
+	https://www.FreeBSD.org/ports
 
 For general information on the Ports Collection, please see the
 FreeBSD Handbook ports section which is available from:
 
-	http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/ports.html
+	https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/ports.html
 		for the latest official version
 	or:
 	The ports(7) manual page (man ports).
@@ -29,7 +29,7 @@ make search also supports wildcards, such as:
 For information about contributing to FreeBSD ports, please see the Porter's
 Handbook, available at:
 
-	http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/porters-handbook/
+	https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/porters-handbook/
 
 NOTE:  This tree will GROW significantly in size during normal usage!
 The distribution tar files can and do accumulate in /usr/ports/distfiles,
