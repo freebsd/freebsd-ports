@@ -64,6 +64,7 @@ CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 		--with-lapack="${LAPACKLIB}" \
 		--enable-shared \
+		--disable-docs \
 		--disable-jit \
 		--disable-openmp \
 		--with-qt=4 \
