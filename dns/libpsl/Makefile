@@ -4,6 +4,7 @@
 PORTNAME=	libpsl
 PORTVERSION=	0.20.2
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -49,6 +50,7 @@ IDN2_LIB_DEPENDS=	libidn2.so:dns/libidn2 \
 			libunistring.so:devel/libunistring
 IDN2_USES=		iconv
 NLS_CPPFLAGS=		-DENABLE_NLS=1
+NLS_CPPFLAGS_OFF=	-DENABLE_NLS=0
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 
