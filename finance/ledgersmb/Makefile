@@ -16,7 +16,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl utils/*/*.pl
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

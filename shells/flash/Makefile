@@ -14,7 +14,6 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-rdynamic
 CFLAGS+=	-rdynamic
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PROGRAM=	alarms background countdown
 SCRIPT=		mailshell system.menu system.menu.9798 system.menu.oldlast \

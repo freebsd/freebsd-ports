@@ -14,7 +14,6 @@ COMMENT=	Set of free fonts for X11 desktops
 
 NO_BUILD=	yes
 USES=		fonts tar:bzip2
-PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/fluxbox-${PORTNAME}
 
 FONTS=		anorexia aqui cure cursor drift edges gelly glisp-bold \

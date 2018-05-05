@@ -20,7 +20,6 @@ USE_LDCONFIG=	yes
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
 MAKE_JOBS_UNSAFE=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>

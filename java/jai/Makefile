@@ -20,7 +20,6 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	TARGET_DIR=${TARGET_DIR}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 RESTRICTED=	Redistribution is not permitted
 
