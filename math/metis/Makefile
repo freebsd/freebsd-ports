@@ -3,7 +3,7 @@
 
 PORTNAME=	metis
 PORTVERSION=	5.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
 
@@ -34,21 +34,6 @@ CMAKE_ARGS+=	-DOPENMP=1
 USE_GCC=	any
 .endif
 
-#.if ${PORT_OPTIONS:MPROFILE}
-#.if !exists(/usr/lib/libc_p.a)
-#IGNORE =	: you have enabled the PROFILE option, but have not installed \
-#		the base system profiling libraries
-#.endif
-#ALL_TARGET_PROFILE=		metis
-#CMAKE_ARGS_PROFILE=		-DGPROF=1
-#PLIST_SUB+=			PROFILE=""
-##PROFILE_FLAGS ?=		-pg
-#WRKSRC_PROFILE =		${WRKSRC}_PROFILE
-#INSTALL_WRKSRC_PROFILE =	${WRKSRC_PROFILE}/libmetis
-#.else
-#PLIST_SUB+=			PROFILE="@comment "
-#.endif
-
 .if ${PORT_OPTIONS:MSHARED}
 ALL_TARGET_SHARED=	all
 CMAKE_ARGS_SHARED=	-DSHARED=1
@@ -76,7 +61,7 @@ INSTALL_WRKSRC_STATIC=	${WRKSRC_STATIC}/libmetis
 PLIST_SUB+=		STATIC="@comment "
 .endif
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e "/^# Add compiler flags/,/^$$/d" \
 	-e "/^check_include_file(execinfo.h/d" \
 	${WRKSRC}/GKlib/GKlibSystem.cmake
