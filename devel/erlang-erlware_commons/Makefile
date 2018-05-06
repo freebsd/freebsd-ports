@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlware_commons
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
