@@ -2,25 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	2l3
-PORTREVISION=	2
+PORTVERSION=	0.20161228
+PORTEPOCH=	1
 CATEGORIES=	textproc net kde
 MASTER_SITES=	https://bitbucket.org/dikt/code/downloads/
+DISTNAME=	${PORTNAME}-2s1
 
 MAINTAINER=	goran.tal@gmail.com
-COMMENT=	Dictionary for KDE4
+COMMENT=	Dictionary for KDE
 
-USES=		cmake kde:4 tar:txz
-USE_KDE=	kdelibs automoc4
-USE_QT4=	corelib gui network svg xml \
-		qmake_build moc_build rcc_build uic_build
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake:outsource kde:5 tar:txz
+USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons dbusaddons guiaddons i18n \
+		iconthemes itemviews jobwidgets kio service solid widgetsaddons xmlgui
+USE_QT5=	concurrent core dbus gui network printsupport svg widgets xml \
+		buildtools_build qmake_build
 
 PLIST_FILES=	bin/dikt \
-		share/applications/kde4/dikt.desktop \
-		share/apps/dikt/diktui.rc \
-		share/apps/dikt/dikt.css \
-		share/apps/dikt/format.conf \
+		share/applications/dikt.desktop \
+		share/dikt/dikt.css \
+		share/dikt/format.conf \
 		share/icons/hicolor/128x128/apps/dikt.png \
-		share/kde4/services/dict.protocol
+		share/kservices5/dict.protocol \
+		share/kxmlgui5/dikt/diktui.rc
 
 .include <bsd.port.mk>
