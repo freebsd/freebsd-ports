@@ -1,3 +1,6 @@
+%%WWWDIR%%/data/EMPTY
+%%WWWDIR%%/data/VERSION
+%%WWWDIR%%/index.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/domains/default.ini.dist
 %%WWWDIR%%/rainloop/v/%%VER%%/app/domains/disabled
 %%WWWDIR%%/rainloop/v/%%VER%%/app/domains/gmail.com.ini
@@ -1031,6 +1034,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/az.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/be.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/bg.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/bm.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/bn.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/bo.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/br.js
@@ -1049,9 +1053,11 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/en-ca.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/en-gb.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/en-ie.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/en-il.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/en-nz.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/eo.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/es-do.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/es-us.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/es.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/et.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/eu.js
@@ -1065,6 +1071,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/gd.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/gl.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/gom-latn.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/gu.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/he.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/hi.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/hr.js
@@ -1089,9 +1096,11 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/mi.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/mk.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ml.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/mn.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/mr.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ms-my.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ms.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/mt.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/my.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/nb.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ne.js
@@ -1118,6 +1127,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ta.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/te.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/tet.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/tg.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/th.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/tl-ph.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/tlh.js
@@ -1125,6 +1135,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/tzl.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/tzm-latn.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/tzm.js
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ug-cn.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/uk.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/ur.js
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/moment/uz-latn.js
@@ -1151,6 +1162,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/fi_FI.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/fr_FR.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/hu_HU.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/id_ID.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/is_IS.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/it_IT.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/webmail/ja_JP.yml
@@ -1478,6 +1490,8 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/preloader.gif
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/social.css
 %%WWWDIR%%/rainloop/v/%%VER%%/static/css/social.min.css
+%%WWWDIR%%/rainloop/v/%%VER%%/static/favicon-light.ico
+%%WWWDIR%%/rainloop/v/%%VER%%/static/favicon-light.png
 %%WWWDIR%%/rainloop/v/%%VER%%/static/favicon.ico
 %%WWWDIR%%/rainloop/v/%%VER%%/static/favicon.png
 %%WWWDIR%%/rainloop/v/%%VER%%/static/js/admin.js
@@ -1540,9 +1554,6 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/themes/Xv/images/background.png
 %%WWWDIR%%/rainloop/v/%%VER%%/themes/Xv/images/preview.png
 %%WWWDIR%%/rainloop/v/%%VER%%/themes/Xv/styles.less
-%%WWWDIR%%/data/EMPTY
-%%WWWDIR%%/data/VERSION
-%%WWWDIR%%/index.php
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
 @dir %%WWWDIR%%/data
