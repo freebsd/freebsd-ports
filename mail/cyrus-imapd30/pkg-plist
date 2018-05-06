@@ -65,7 +65,7 @@ cyrus/sbin/reconstruct
 %%BACKUP%%cyrus/sbin/restore
 cyrus/sbin/sievec
 cyrus/sbin/sieved
-%%SQUAT%%cyrus/sbin/squatter
+%%SQUATTER%%cyrus/sbin/squatter
 %%REPLICATION%%cyrus/sbin/sync_client
 %%REPLICATION%%cyrus/sbin/sync_reset
 %%REPLICATION%%cyrus/libexec/sync_server
