@@ -1,4 +1,4 @@
---- src/modules/db_sqlite/Makefile.orig	2017-04-21 12:46:06 UTC
+--- src/modules/db_sqlite/Makefile.orig	2018-03-01 16:24:09 UTC
 +++ src/modules/db_sqlite/Makefile
 @@ -22,7 +22,7 @@ ifeq ($(INSTALL_FLAVOUR),kamailio)
  # extra install for kamailio
