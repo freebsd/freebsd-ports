@@ -808,6 +808,7 @@
     SUBDIR += pho
     SUBDIR += photivo
     SUBDIR += photopc
+    SUBDIR += photoqt
     SUBDIR += phototonic
     SUBDIR += php-facedetect
     SUBDIR += php-gdal
