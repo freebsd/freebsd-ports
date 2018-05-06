@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fast_xml
-PORTVERSION=	1.1.29
+PORTVERSION=	1.1.30
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	erlang-
 
