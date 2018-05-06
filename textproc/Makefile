@@ -70,6 +70,7 @@
     SUBDIR += bsdsort
     SUBDIR += btparse
     SUBDIR += c2html
+    SUBDIR += c2man
     SUBDIR += ca-aspell
     SUBDIR += catdoc
     SUBDIR += cdif

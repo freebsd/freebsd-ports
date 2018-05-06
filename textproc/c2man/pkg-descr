@@ -1,0 +1,5 @@
+c2man is an obsolete and unmaintained documentation tool that extracts comments
+from C source code. Do not use this tool in new projects. The only reason for it
+to exist in FreeBSD ports is to allow building GNU FriBidi from a git snapshot.
+
+WWW: http://www.ciselant.de/c2man/c2man.html
