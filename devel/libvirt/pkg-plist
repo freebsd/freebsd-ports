@@ -13,7 +13,7 @@ man/man7/virkeycode-atset2.7.gz
 man/man7/virkeycode-atset3.7.gz
 man/man7/virkeycode-linux.7.gz
 man/man7/virkeycode-osx.7.gz
-man/man7/virkeycode-qnum.7.gz                                                                                                                                                                     
+man/man7/virkeycode-qnum.7.gz
 man/man7/virkeycode-usb.7.gz
 man/man7/virkeycode-win32.7.gz
 man/man7/virkeycode-xtkbd.7.gz
@@ -114,7 +114,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/contact.html
 %%DOCSDIR%%%%PORTVERSION%%/html/contribute.html
 %%DOCSDIR%%%%PORTVERSION%%/html/csharp.html
-%%DOCSDIR%%%%PORTVERSION%%/html/dbus.html 
+%%DOCSDIR%%%%PORTVERSION%%/html/dbus.html
 %%DOCSDIR%%%%PORTVERSION%%/html/devguide.html
 %%DOCSDIR%%%%PORTVERSION%%/html/docs.html
 %%DOCSDIR%%%%PORTVERSION%%/html/downloads.html
@@ -239,6 +239,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/nss.html
 %%DOCSDIR%%%%PORTVERSION%%/html/pci-hotplug.html
 %%DOCSDIR%%%%PORTVERSION%%/html/php.html
+%%DOCSDIR%%%%PORTVERSION%%/html/platforms.html
 %%DOCSDIR%%%%PORTVERSION%%/html/python.html
 %%DOCSDIR%%%%PORTVERSION%%/html/remote.html
 %%DOCSDIR%%%%PORTVERSION%%/html/secureusage.html
@@ -314,7 +315,10 @@ share/gtk-doc/html/libvirt/up.png
 %%NLS%%share/locale/eu/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/fil/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/fur/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/gu/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/he/LC_MESSAGES/libvirt.mo
@@ -345,6 +349,7 @@ share/gtk-doc/html/libvirt/up.png
 %%NLS%%share/locale/mn/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/my/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/nds/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/ne/LC_MESSAGES/libvirt.mo
