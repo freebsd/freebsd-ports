@@ -13,6 +13,9 @@ COMMENT=	Numerical computing environment
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Complex, unmaintained software with obsolete dependencies
+EXPIRATION_DATE=	2018-07-01
+
 BUILD_DEPENDS=	${LOCALBASE}/share/llvm33/cmake/LLVMConfig.cmake:devel/llvm33 \
 		${LOCALBASE}/llvm33/lib/libclang.a:lang/clang33
 LIB_DEPENDS=	libarpack.so:math/arpack			\
