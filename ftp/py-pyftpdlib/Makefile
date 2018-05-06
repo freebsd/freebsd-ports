@@ -1,8 +1,7 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
 
 PORTNAME=	pyftpdlib
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	ftp python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
