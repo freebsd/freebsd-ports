@@ -3,10 +3,11 @@
 
 PORTNAME=	phppgadmin
 PORTVERSION=	5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/phpPgAdmin%20%5Bstable%5D/phpPgAdmin-5.1
 DISTNAME=	phpPgAdmin-${PORTVERSION}
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Postgres Administration
@@ -15,7 +16,7 @@ LICENSE=	GPLv2
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		cpe tar:bzip2 shebangfix
+USES=		cpe tar:bzip2 php:web,flavors shebangfix
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	pgsql pcre session
 .endif
