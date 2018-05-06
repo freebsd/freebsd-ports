@@ -1,0 +1,3 @@
+man/man1/pkg_replace.1.gz
+sbin/pkg_replace
+@sample %%ETCDIR%%/pkg_replace.conf.sample
