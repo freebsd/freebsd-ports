@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	3.0.6
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		https://www.cyrusimap.org/releases/
@@ -94,7 +94,7 @@ SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
-SQLITE_BROKEN_OFF=	SQLITE is requited
+SQLITE_BROKEN_OFF=	SQLITE is required
 SQUAT_DESC=		Enable Squat support
 SQUAT_CONFIGURE_OFF=	--disable-squat
 XAPIAN_DESC=		Enable Xapian support
@@ -175,8 +175,11 @@ CYRUS_MAN8+=	fetchnews nntpd
 .if ${PORT_OPTIONS:MREPLICATION}
 CYRUS_MAN8+=	sync_client sync_reset sync_server
 .endif
-.if ${PORT_OPTIONS:MSQUAT}
+.if ${PORT_OPTIONS:MSQUAT} || ${PORT_OPTIONS:MXAPIAN}
 CYRUS_MAN8+=	squatter
+PLIST_SUB+=	SQUATTER=""
+.else
+PLIST_SUB+=	SQUATTER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDRAC}
