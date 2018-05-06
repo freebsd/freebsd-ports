@@ -1,0 +1,6 @@
+Implements the deferred authentication handler defined by the OpenVPN standard
+interface. By using this plugin instead of auth-user-pass-verify, slow
+authentication methods like push-based multi factor nolonger cause other active
+VPN sessions to hang.
+
+WWW: https://github.com/pdemonaco/auth-script-openvpn
