@@ -475,6 +475,7 @@
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
     SUBDIR += openvpn-auth-radius
+    SUBDIR += openvpn-auth-script
     SUBDIR += openvpn-devel
     SUBDIR += openvpn-mbedtls
     SUBDIR += ophcrack
