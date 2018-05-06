@@ -267,6 +267,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/AST/MangleNumberingContext.h
 %%CLANG%%llvm-devel/include/clang/AST/NSAPI.h
 %%CLANG%%llvm-devel/include/clang/AST/NestedNameSpecifier.h
+%%CLANG%%llvm-devel/include/clang/AST/NonTrivialTypeVisitor.h
 %%CLANG%%llvm-devel/include/clang/AST/ODRHash.h
 %%CLANG%%llvm-devel/include/clang/AST/OpenMPClause.h
 %%CLANG%%llvm-devel/include/clang/AST/OperationKinds.def
@@ -1023,7 +1024,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Initialization/SystemInitializer.h
 %%LLDB%%llvm-devel/include/lldb/Initialization/SystemInitializerCommon.h
 %%LLDB%%llvm-devel/include/lldb/Initialization/SystemLifetimeManager.h
-%%LLDB%%llvm-devel/include/lldb/Interpreter/Args.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/CommandAlias.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/CommandCompletions.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/CommandHistory.h
@@ -1178,6 +1178,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Target/UnwindAssembly.h
 %%LLDB%%llvm-devel/include/lldb/Utility/AnsiTerminal.h
 %%LLDB%%llvm-devel/include/lldb/Utility/ArchSpec.h
+%%LLDB%%llvm-devel/include/lldb/Utility/Args.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Baton.h
 %%LLDB%%llvm-devel/include/lldb/Utility/CleanUp.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Connection.h
@@ -1260,6 +1261,7 @@ llvm-devel/include/llvm-c/Support.h
 llvm-devel/include/llvm-c/Target.h
 llvm-devel/include/llvm-c/TargetMachine.h
 llvm-devel/include/llvm-c/Transforms/IPO.h
+llvm-devel/include/llvm-c/Transforms/InstCombine.h
 llvm-devel/include/llvm-c/Transforms/PassManagerBuilder.h
 llvm-devel/include/llvm-c/Transforms/Scalar.h
 llvm-devel/include/llvm-c/Transforms/Utils.h
@@ -1835,7 +1837,6 @@ llvm-devel/include/llvm/ExecutionEngine/JITSymbol.h
 llvm-devel/include/llvm/ExecutionEngine/MCJIT.h
 llvm-devel/include/llvm/ExecutionEngine/OProfileWrapper.h
 llvm-devel/include/llvm/ExecutionEngine/ObjectCache.h
-llvm-devel/include/llvm/ExecutionEngine/ObjectMemoryBuffer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/CompileOnDemandLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/CompileUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Core.h
@@ -1873,8 +1874,8 @@ llvm-devel/include/llvm/FuzzMutate/Random.h
 llvm-devel/include/llvm/FuzzMutate/RandomIRBuilder.h
 llvm-devel/include/llvm/IR/Argument.h
 llvm-devel/include/llvm/IR/AssemblyAnnotationWriter.h
-llvm-devel/include/llvm/IR/Attributes.gen
 llvm-devel/include/llvm/IR/Attributes.h
+llvm-devel/include/llvm/IR/Attributes.inc
 llvm-devel/include/llvm/IR/Attributes.td
 llvm-devel/include/llvm/IR/AutoUpgrade.h
 llvm-devel/include/llvm/IR/BasicBlock.h
@@ -1917,8 +1918,8 @@ llvm-devel/include/llvm/IR/Instruction.def
 llvm-devel/include/llvm/IR/Instruction.h
 llvm-devel/include/llvm/IR/Instructions.h
 llvm-devel/include/llvm/IR/IntrinsicInst.h
-llvm-devel/include/llvm/IR/Intrinsics.gen
 llvm-devel/include/llvm/IR/Intrinsics.h
+llvm-devel/include/llvm/IR/Intrinsics.inc
 llvm-devel/include/llvm/IR/Intrinsics.td
 llvm-devel/include/llvm/IR/IntrinsicsAArch64.td
 llvm-devel/include/llvm/IR/IntrinsicsAMDGPU.td
@@ -2230,6 +2231,7 @@ llvm-devel/include/llvm/Support/SaveAndRestore.h
 llvm-devel/include/llvm/Support/ScaledNumber.h
 llvm-devel/include/llvm/Support/ScopedPrinter.h
 llvm-devel/include/llvm/Support/Signals.h
+llvm-devel/include/llvm/Support/SmallVectorMemoryBuffer.h
 llvm-devel/include/llvm/Support/Solaris/sys/regset.h
 llvm-devel/include/llvm/Support/SourceMgr.h
 llvm-devel/include/llvm/Support/SpecialCaseList.h
@@ -2430,6 +2432,7 @@ llvm-devel/include/llvm/Transforms/Utils/UnrollLoop.h
 llvm-devel/include/llvm/Transforms/Utils/VNCoercion.h
 llvm-devel/include/llvm/Transforms/Utils/ValueMapper.h
 llvm-devel/include/llvm/Transforms/Vectorize.h
+llvm-devel/include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h
 llvm-devel/include/llvm/Transforms/Vectorize/LoopVectorize.h
 llvm-devel/include/llvm/Transforms/Vectorize/SLPVectorizer.h
 llvm-devel/include/llvm/WindowsManifest/WindowsManifestMerger.h
@@ -2535,6 +2538,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/mm_malloc.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/mmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/module.modulemap
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/movdirintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/msa.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/mwaitxintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/nmmintrin.h
@@ -2566,6 +2570,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/varargs.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/vecintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/vpclmulqdqintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/waitpkgintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/wbnoinvdintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/wmmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/x86intrin.h
