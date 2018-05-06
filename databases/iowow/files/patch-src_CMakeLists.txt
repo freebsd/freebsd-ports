@@ -1,13 +1,18 @@
---- src/CMakeLists.txt.orig	2018-04-12 13:48:26 UTC
+--- src/CMakeLists.txt.orig	2018-05-02 10:28:14 UTC
 +++ src/CMakeLists.txt
-@@ -121,14 +121,12 @@ if (NOT WIN32) ## todo review
-     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+@@ -72,6 +72,11 @@ if (HAVE_CLOCK_MONOTONIC)  
+   add_definitions(-DIW_HAVE_CLOCK_MONOTONIC)  
  endif()
  
--set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D__FILENAME__='\"$(subst ${CMAKE_SOURCE_DIR}/,,$(abspath $<))\"'")
--
- if (ASAN)
-   set(CMAKE_C_ASAN "-fsanitize=address -fno-omit-frame-pointer")
++check_symbol_exists(basename_r libgen.h HAVE_BASENAME_R)
++if (HAVE_BASENAME_R)
++  set_source_files_properties(log/iwlog.c PROPERTIES COMPILE_FLAGS -DIW_HAVE_BASENAME_R)
++endif()
++
+ foreach(HF IN ITEMS stdlib stddef stdint stdbool stdatomic unistd dirent)
+     string(TOUPPER "${HF}" UHF)
+     check_include_file(${HF}.h "IW_HAVE_${UHF}")
+@@ -141,7 +146,7 @@ if (ASAN)
  endif()
  
  set(CMAKE_C_FLAGS_DEBUG "-O0 -g -ggdb -Werror -DDEBUG -D_DEBUG -UNDEBUG -Wno-unused-variable ${CMAKE_C_ASAN}")
@@ -16,7 +21,7 @@
  set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} -g")
  
  
-@@ -151,7 +149,7 @@ file(GLOB PROJECT_GENERATED_HDRS ${PROJECT_GENERATED_D
+@@ -164,7 +169,7 @@ file(GLOB PROJECT_GENERATED_HDRS ${PROJECT_GENERATED_D
  list(APPEND ALL_HDRS ${PROJECT_GENERATED_HDRS})
  
  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/tmpl/libiowow.pc.in ${PROJECT_GENERATED_DIR}/libiowow.pc @ONLY)
@@ -25,12 +30,11 @@
  
  foreach(MODULE IN LISTS MODULES)
      if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE}/CMakeLists.txt)
-@@ -216,8 +214,6 @@ endif()
+@@ -229,7 +234,6 @@ endif()
  
  
  install(FILES
 -        ${CMAKE_SOURCE_DIR}/LICENSE
--        ${CMAKE_SOURCE_DIR}/INSTALL
          ${CMAKE_SOURCE_DIR}/Changelog
          DESTINATION ${CMAKE_INSTALL_DOCDIR})
  install(FILES
