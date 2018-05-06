@@ -1,0 +1,17 @@
+--- programs/CMakeLists.txt.orig	2013-03-30 16:24:45 UTC
++++ programs/CMakeLists.txt
+@@ -13,9 +13,14 @@ foreach(prog gpmetis ndmetis mpmetis m2g
+ #  target_link_libraries(${prog} metis profiler)
+ endforeach(prog)
+ 
++# Borrowed from metis-edf
++file(GLOB metis_h *.h)
++
+ if(METIS_INSTALL)
+   install(TARGETS gpmetis ndmetis mpmetis m2gmetis graphchk cmpfillin
+     RUNTIME DESTINATION bin)
++# Borrowed from metis-edf
++  install(FILES ${metis_h} DESTINATION include/programs)
+ endif()
+ 
+ # Try to find subversion revision.

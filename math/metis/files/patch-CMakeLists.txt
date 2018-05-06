@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2013-03-30 16:24:45 UTC
++++ CMakeLists.txt
+@@ -25,3 +25,5 @@ include_directories(include)
+ add_subdirectory("include")
+ add_subdirectory("libmetis")
+ add_subdirectory("programs")
++# Borrowed from metis-edf
++add_subdirectory("GKlib")
