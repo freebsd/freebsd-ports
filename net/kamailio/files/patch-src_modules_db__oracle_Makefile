@@ -1,6 +1,6 @@
---- src/modules/db_oracle/Makefile.orig	2017-04-21 12:46:05 UTC
+--- src/modules/db_oracle/Makefile.orig	2018-03-01 16:24:09 UTC
 +++ src/modules/db_oracle/Makefile
-@@ -70,7 +70,7 @@ ifeq ($(INSTALL_FLAVOUR),kamailio)
+@@ -19,7 +19,7 @@ ifeq ($(INSTALL_FLAVOUR),kamailio)
  # extra install for kamailio
  
  install-oracle-scripts: $(bin_prefix)/$(bin_dir)
