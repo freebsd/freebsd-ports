@@ -1,4 +1,4 @@
---- utils/kamctl/Makefile.orig	2017-04-21 12:46:06 UTC
+--- utils/kamctl/Makefile.orig	2018-03-01 16:24:11 UTC
 +++ utils/kamctl/Makefile
 @@ -8,6 +8,8 @@ else
  kamctltmpdir = $(basedir)

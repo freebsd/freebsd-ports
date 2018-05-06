@@ -2,12 +2,10 @@ sbin/kamailio
 sbin/kamcmd
 sbin/kamctl
 sbin/kamdbctl
-@sample etc/kamailio/dictionary.kamailio.sample
-@sample etc/kamailio/kamailio-advanced.cfg.sample
-@sample etc/kamailio/kamailio-basic.cfg.sample
 @sample etc/kamailio/kamailio.cfg.sample
 @sample etc/kamailio/kamctlrc.sample
 %%TLS%%@sample etc/kamailio/tls.cfg.sample
+%%ETCDIR%%/dictionary.kamailio
 lib/kamailio/libprint.so
 lib/kamailio/libprint.so.1
 lib/kamailio/libsrdb1.so
@@ -32,9 +30,11 @@ lib/kamailio/kamctl/kamdbctl.base
 %%PGSQL%%lib/kamailio/kamctl/kamdbctl.pgsql
 %%MYSQL%%lib/kamailio/kamctl/dbtextdb/dbtextdb.py
 %%MYSQL%%lib/kamailio/modules/acc.so
+lib/kamailio/modules/acc_diameter.so
 %%MYSQL%%lib/kamailio/modules/alias_db.so
 lib/kamailio/modules/app_jsdt.so
 %%PERL%%lib/kamailio/modules/app_perl.so
+lib/kamailio/modules/app_sqlang.so
 lib/kamailio/modules/async.so
 lib/kamailio/modules/auth.so
 %%MYSQL%%lib/kamailio/modules/auth_db.so
@@ -46,6 +46,7 @@ lib/kamailio/modules/avp.so
 lib/kamailio/modules/benchmark.so
 lib/kamailio/modules/blst.so
 lib/kamailio/modules/call_control.so
+lib/kamailio/modules/call_obj.so
 %%MYSQL%%lib/kamailio/modules/cfg_db.so
 lib/kamailio/modules/cfg_rpc.so
 lib/kamailio/modules/cfgt.so
@@ -70,12 +71,14 @@ lib/kamailio/modules/dmq_usrloc.so
 lib/kamailio/modules/domainpolicy.so
 %%MYSQL%%lib/kamailio/modules/drouting.so
 lib/kamailio/modules/enum.so
+lib/kamailio/modules/evrexec.so
 lib/kamailio/modules/exec.so
 %%MYSQL%%lib/kamailio/modules/group.so
 %%MYSQL%%lib/kamailio/modules/htable.so
 %%MYSQL%%lib/kamailio/modules/imc.so
 lib/kamailio/modules/ipops.so
 lib/kamailio/modules/jsonrpcs.so
+lib/kamailio/modules/keepalive.so
 lib/kamailio/modules/kex.so
 lib/kamailio/modules/log_custom.so
 lib/kamailio/modules/malloc_test.so
@@ -116,6 +119,7 @@ lib/kamailio/modules/sca.so
 lib/kamailio/modules/sdpops.so
 lib/kamailio/modules/seas.so
 %%MYSQL%%lib/kamailio/modules/sipcapture.so
+lib/kamailio/modules/sipdump.so
 lib/kamailio/modules/sipt.so
 %%MYSQL%%lib/kamailio/modules/siptrace.so
 lib/kamailio/modules/siputils.so
@@ -335,11 +339,13 @@ lib/kamailio/modules/xprint.so
 %%PGSQL%%%%DATADIR%%/postgres/purple-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/registrar-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/rls-create.sql
+%%PGSQL%%%%DATADIR%%/postgres/rtpengine-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/rtpproxy-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/sca-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/siptrace-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/speeddial-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/standard-create.sql
+%%PGSQL%%%%DATADIR%%/postgres/topos-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/uac-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/uid_auth_db-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/uid_avp_db-create.sql

@@ -1,4 +1,4 @@
---- src/modules/ctl/ctl_defaults.h.orig	2017-04-21 12:46:05 UTC
+--- src/modules/ctl/ctl_defaults.h.orig	2018-03-01 16:24:09 UTC
 +++ src/modules/ctl/ctl_defaults.h
 @@ -13,7 +13,7 @@
  #define DEFAULT_CTL_SOCKET_NAME NAME "_ctl"
