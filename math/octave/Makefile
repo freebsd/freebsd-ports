@@ -3,6 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES=	GNU
 
@@ -47,7 +48,7 @@ USE_TEX=	dvipsk:build formats:build
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
-USE_QT4=	corelib gui network opengl moc_build qmake_build rcc_build uic_build linguist_build
+USE_QT4=	corelib gui network opengl moc_build qmake_build rcc_build uic_build linguist_build help help-tools
 USE_XORG=	x11 xext xfixes xft
 USE_GL=		gl glu
 
@@ -59,12 +60,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf" \
 		JAVA_HOME=${JAVA_HOME} \
 		MAKEINFO=${LOCALBASE}/bin/makeinfo \
+		MKINFO=${LOCALBASE}/bin/makeinfo \
+		MOC_QTVER=${LOCALBASE}/bin/moc \
+		UIC_QTVER=${LOCALBASE}/bin/uic \
+		RCC_QTVER=${LOCALBASE}/bin/rcc \
 		ac_cv_type_max_align_t=yes
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 		--with-lapack="${LAPACKLIB}" \
 		--enable-shared \
-		--disable-docs \
 		--disable-jit \
 		--disable-openmp \
 		--with-qt=4 \
@@ -88,6 +92,7 @@ post-patch:
 	${REINPLACE_CMD} 's+lapack lapack_rs6k+${LAPACKLIB:C/-l//}+' ${WRKSRC}/configure
 	${REINPLACE_CMD} 's+-lumfpack+-lumfpack -lsuitesparseconfig -lamd -lcholmod -lcolamd ${LAPACKLIB}+' ${WRKSRC}/configure
 	${REINPLACE_CMD} 's+-lcholmod+-lumfpack -lsuitesparseconfig -lamd -lcholmod -lcolamd ${LAPACKLIB}+' ${WRKSRC}/configure
+	${REINPLACE_CMD} 's/"-qt$$qt_version"/"-qt=qt$$qt_version"/' ${WRKSRC}/configure
 
 post-install:
 	(cd ${STAGEDIR}${DATADIR} && ${LN} -s ${PORTVERSION}/imagelib  .)

@@ -234,47 +234,7 @@
          if test $ax_lapack_ok = no; then
                  save_LIBS="$LIBS"; LIBS="$BLAS_LIBS $LIBS"
                  as_ac_Lib=`$as_echo "ac_cv_lib_$lapack''_$cheev" | $as_tr_sh`
-@@ -70670,9 +70670,6 @@ esac
- fi
- 
-     if test -n "$MOC"; then
--      if test -n "$QTCHOOSER"; then
--        MOCFLAGS="-qt$qt_version"
--      fi
-       QT_TOOLS_AVAILABLE="$QT_TOOLS_AVAILABLE moc"
-     else
-       QT_TOOLS_MISSING="$QT_TOOLS_MISSING moc"
-@@ -70885,9 +70882,6 @@ esac
- fi
- 
-     if test -n "$UIC"; then
--      if test -n "$QTCHOOSER"; then
--        UICFLAGS="-qt$qt_version"
--      fi
-       QT_TOOLS_AVAILABLE="$QT_TOOLS_AVAILABLE uic"
-     else
-       QT_TOOLS_MISSING="$QT_TOOLS_MISSING uic"
-@@ -71100,9 +71094,6 @@ esac
- fi
- 
-     if test -n "$RCC"; then
--      if test -n "$QTCHOOSER"; then
--        RCCFLAGS="-qt$qt_version"
--      fi
-       QT_TOOLS_AVAILABLE="$QT_TOOLS_AVAILABLE rcc"
-     else
-       QT_TOOLS_MISSING="$QT_TOOLS_MISSING rcc"
-@@ -71315,9 +71306,6 @@ esac
- fi
- 
-     if test -n "$LRELEASE"; then
--      if test -n "$QTCHOOSER"; then
--        LRELEASEFLAGS="-qt$qt_version"
--      fi
-       QT_TOOLS_AVAILABLE="$QT_TOOLS_AVAILABLE lrelease"
-     else
-       QT_TOOLS_MISSING="$QT_TOOLS_MISSING lrelease"
-@@ -73640,7 +73628,7 @@ if test $use_osmesa = yes; then
+@@ -73640,7 +73640,7 @@ if test $use_osmesa = yes; then
      warn_osmesa="OSMesa library not found.  Offscreen rendering with FLTK will be disabled."
    fi
  
@@ -283,7 +243,7 @@
    save_CPPFLAGS="$CPPFLAGS"
    save_LDFLAGS="$LDFLAGS"
    save_LIBS="$LIBS"
-@@ -75018,7 +75006,7 @@ fi
+@@ -75018,7 +75018,7 @@ fi
      ;;
      yes | "")
        ac_octave_cholmod_pkg_check=yes
@@ -292,7 +252,7 @@
      ;;
      -* | */* | *.a | *.so | *.so.* | *.o)
        CHOLMOD_LIBS="$with_cholmod"
-@@ -75598,7 +75586,7 @@ fi
+@@ -75598,7 +75598,7 @@ fi
      ;;
      yes | "")
        ac_octave_umfpack_pkg_check=yes
@@ -301,7 +261,7 @@
      ;;
      -* | */* | *.a | *.so | *.so.* | *.o)
        UMFPACK_LIBS="$with_umfpack"
-@@ -77450,6 +77438,13 @@ $as_echo_n "checking for include file <j
+@@ -77450,6 +77450,13 @@ $as_echo_n "checking for include file <j
          JAVA_CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/darwin"
        fi
      ;;
