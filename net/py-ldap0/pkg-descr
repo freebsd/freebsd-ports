@@ -1,6 +1,11 @@
-ldap3 is a pure Python LDAP 3 client library strictly conforming to RFC4511
-released under the LGPL v3 open source license. RFC4511 is the current LDAP
-specification (June 2006) from IETF and obsoletes the previous LDAP RFCs
-2251, 2830, 3771 (December 1997)
+ldap0 provides an object-oriented API to access LDAP directory servers from
+Python programs. Mainly it wraps the OpenLDAP 2.x libs for that purpose.
+Additionally the package contains Python modules:
+- parsing and producing LDIF
+- handle LDAPURLs
+- parse and handle LDAPv3 subschema
+- LDAPv3 extended operations and controls
+- automatic tests with OpenLDAP server This package is a non-compatible fork of
+  python-ldap and therefore uses the separate module name-space 'ldap0'.
 
-WWW: https://github.com/cannatag/ldap3
+WWW: https://pypi.org/project/ldap0/#description
