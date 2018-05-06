@@ -1,11 +1,15 @@
---- configure.ac.orig	2018-03-14 20:22:39 UTC
+--- configure.ac.orig	2018-05-06 16:07:56 UTC
 +++ configure.ac
-@@ -15,7 +15,7 @@ AC_CHECK_LIB([readline], [readline], [],
- AC_CHECK_LIB([lxi], [lxi_connect], [], [AC_MSG_ERROR(liblxi not found)])
+@@ -16,9 +16,9 @@ AC_CHECK_LIB([lxi], [lxi_connect], [], [
  
- # Check for Lua 5.2
--PKG_CHECK_MODULES([lua], [lua5.2])
-+PKG_CHECK_MODULES([lua], [lua-5.2])
- 
- # Handle bash completion
- AC_ARG_WITH([bash-completion-dir],
+ # Check for Lua 5.1 or newer
+ lua_found=0
+-PKG_CHECK_MODULES([lua], [lua5.3],[lua_found=1],[x=0])
+-PKG_CHECK_MODULES([lua], [lua5.2],[lua_found=1],[x=0])
+-PKG_CHECK_MODULES([lua], [lua5.1],[lua_found=1],[x=0])
++PKG_CHECK_MODULES([lua], [lua-5.3],[lua_found=1],[x=0])
++PKG_CHECK_MODULES([lua], [lua-5.2],[lua_found=1],[x=0])
++PKG_CHECK_MODULES([lua], [lua-5.1],[lua_found=1],[x=0])
+ PKG_CHECK_MODULES([lua], [lua >= 5.1],[lua_found=1],[x=0])
+ if test $lua_found == 0
+ then
