@@ -782,6 +782,10 @@ lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/qr.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/symbfact.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/symrcm.oct
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-gui
+man/man1/mkoctfile.1.gz
+man/man1/octave-cli.1.gz
+man/man1/octave-config.1.gz
+man/man1/octave.1.gz
 share/applications/org.octave.Octave.desktop
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
 %%PORTDOCS%%%%DOCSDIR%%/octave.ps
