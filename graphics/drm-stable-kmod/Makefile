@@ -3,7 +3,7 @@
 
 PORTNAME=	drm-stable-kmod
 PORTVERSION=	g20180505
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics kld
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64
 
-RUN_DEPENDS=	gpu-firmware-kmod>=g20170403:graphics/gpu-firmware-kmod
+RUN_DEPENDS=	gpu-firmware-kmod>=g20180319:graphics/gpu-firmware-kmod
 
 CONFLICTS_INSTALL=	drm-next-kmod
 
