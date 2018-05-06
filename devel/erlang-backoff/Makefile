@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	backoff
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
