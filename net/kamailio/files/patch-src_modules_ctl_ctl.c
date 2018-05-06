@@ -1,6 +1,6 @@
---- src/modules/ctl/ctl.c.orig	2017-04-21 13:48:39 UTC
+--- src/modules/ctl/ctl.c.orig	2018-03-01 16:24:09 UTC
 +++ src/modules/ctl/ctl.c
-@@ -238,8 +238,7 @@ static int mod_init(void)
+@@ -240,8 +240,7 @@ static int mod_init(void)
  				return -1;
  			}
  			strcpy(ctl_socket_path, DEFAULT_CTL_SOCKET_PROTO);
