@@ -1,6 +1,6 @@
---- widget/coollocal.h.orig	2007-11-02 00:37:50.000000000 +0100
-+++ widget/coollocal.h	2007-11-02 00:45:22.000000000 +0100
-@@ -49,7 +49,6 @@
+--- widget/coollocal.h.orig	2018-04-24 22:04:24 UTC
++++ widget/coollocal.h
+@@ -51,7 +51,6 @@ CWidget *allocate_widget (Window newwin,
  int eh_picture (struct cool_widget *w, XEvent * xevent, CEvent * cwevent);
  void drawstring_xy (Window win, int x, int y, const char *text);
  void drawstring_xy_hotkey (Window win, int x, int y, const char *text, int hotkey);

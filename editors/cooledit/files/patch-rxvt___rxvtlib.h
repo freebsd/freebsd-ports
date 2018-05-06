@@ -1,5 +1,5 @@
---- rxvt/_rxvtlib.h.orig	2010-05-26 21:25:41.000000000 -0400
-+++ rxvt/_rxvtlib.h	2010-05-26 21:39:11.000000000 -0400
+--- rxvt/_rxvtlib.h.orig	2017-07-14 16:03:54 UTC
++++ rxvt/_rxvtlib.h
 @@ -128,7 +128,7 @@
  #ifdef TTY_GID_SUPPORT
  # include <grp.h>

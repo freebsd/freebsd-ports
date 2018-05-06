@@ -1,6 +1,6 @@
---- widget/widechar.c.orig	Sat Nov 27 17:46:03 2004
-+++ widget/widechar.c	Wed Dec 15 01:17:59 2004
-@@ -227,6 +227,7 @@
+--- widget/widechar.c.orig	2017-08-04 19:12:31 UTC
++++ widget/widechar.c
+@@ -227,6 +227,7 @@ static inline struct mb_rule apply_mb_ru
  static inline struct mb_rule apply_mb_rules_going_right (WEdit * edit, long byte_index, struct mb_rule mb_rule)
  {
  #ifdef HAVE_WCHAR_H
@@ -8,11 +8,11 @@
      wchar_t wc;
      unsigned char p[16];
      int n;
-@@ -252,6 +253,7 @@
-     }
+@@ -253,6 +254,7 @@ static inline struct mb_rule apply_mb_ru
      mb_rule.end = 0;
      mb_rule.ch = -1;
-+#endif
  #endif
++#endif
      return mb_rule;
  }
+ 
