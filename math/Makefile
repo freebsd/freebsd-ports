@@ -332,6 +332,7 @@
     SUBDIR += mingw32-libgmp
     SUBDIR += minisat
     SUBDIR += miracl
+    SUBDIR += mlpack
     SUBDIR += moo
     SUBDIR += mosesdecoder
     SUBDIR += mpc
