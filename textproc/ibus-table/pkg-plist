@@ -36,6 +36,7 @@ share/applications/ibus-setup-table.desktop
 %%DATADIR%%/tables/template.txt
 share/ibus/component/table.xml
 %%NLS%%share/locale/ca/LC_MESSAGES/ibus-table.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ibus-table.mo
