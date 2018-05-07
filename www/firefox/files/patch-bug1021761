@@ -1,150 +1,28 @@
-diff --git build/moz.configure/old.configure build/moz.configure/old.configure
-index cd6c37cf4c7c..e98dc7973a6a 100644
---- build/moz.configure/old.configure
-+++ build/moz.configure/old.configure
-@@ -275,6 +275,7 @@ def old_configure_options(*options):
-     '--with-nspr-prefix',
-     '--with-nss-exec-prefix',
-     '--with-nss-prefix',
-+    '--with-oss',
-     '--with-pthreads',
-     '--with-qemu-exe',
-     '--with-sixgill',
-diff --git old-configure.in old-configure.in
-index dff46614635e..dbbfdb76ab78 100644
---- old-configure.in
-+++ old-configure.in
-@@ -3128,6 +3128,67 @@ AC_DEFINE(MOZ_WEBM_ENCODER)
- AC_SUBST(MOZ_WEBM_ENCODER)
+commit f9bcf9c81c4a
+Author: Evgeniy Vodolazskiy <waterlaz@gmail.com>
+Date:   Tue Sep 9 14:38:00 2014 -0700
+
+    Bug 1021761 - Make ALSA optional on Linux, allowing fallback to another backend. r=kinetik r=glandium
+---
+ media/libcubeb/gtest/moz.build  |   1 -
+ media/libcubeb/src/cubeb_alsa.c | 228 +++++++++++++++++++++++++++++-----------
+ toolkit/library/moz.build       |   3 -
+ 3 files changed, 168 insertions(+), 64 deletions(-)
+
+diff --git media/libcubeb/gtest/moz.build media/libcubeb/gtest/moz.build
+index 558130188c2e..0cf157d41903 100644
+--- media/libcubeb/gtest/moz.build
++++ media/libcubeb/gtest/moz.build
+@@ -72,7 +72,6 @@ elif CONFIG['OS_TARGET'] == 'OpenBSD':
+         'sndio',
+     ]
+ else:
+-    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
+     OS_LIBS += CONFIG['MOZ_PULSEAUDIO_LIBS']
  
- dnl ==================================
-+dnl = Check OSS availability
-+dnl ==================================
-+
-+dnl If using Linux, Solaris or BSDs, ensure that OSS is available
-+case "$OS_TARGET" in
-+Linux|SunOS|DragonFly|FreeBSD|NetBSD|GNU/kFreeBSD)
-+    MOZ_OSS=1
-+    ;;
-+esac
-+
-+MOZ_ARG_WITH_STRING(oss,
-+[  --with-oss[=PFX]        Enable OpenSoundSystem support [installed at prefix PFX]],
-+   OSSPREFIX=$withval)
-+
-+if test -n "$OSSPREFIX"; then
-+    if test "$OSSPREFIX" != "no"; then
-+        MOZ_OSS=1
-+    else
-+        MOZ_OSS=
-+    fi
-+fi
-+
-+_SAVE_CFLAGS=$CFLAGS
-+_SAVE_LIBS=$LIBS
-+if test -n "$MOZ_OSS"; then
-+    dnl Prefer 4Front implementation
-+    AC_MSG_CHECKING([MOZ_OSS_CFLAGS])
-+    if test "$OSSPREFIX" != "yes"; then
-+        oss_conf=${OSSPREFIX%/usr}/etc/oss.conf
-+        if test -f "$oss_conf"; then
-+            . "$oss_conf"
-+        else
-+            OSSLIBDIR=$OSSPREFIX/lib/oss
-+        fi
-+        if test -d "$OSSLIBDIR"; then
-+            MOZ_OSS_CFLAGS="$MOZ_OSS_CFLAGS -I$OSSLIBDIR/include"
-+        fi
-+    fi
-+    AC_MSG_RESULT([$MOZ_OSS_CFLAGS])
-+
-+    CFLAGS="$CFLAGS $MOZ_OSS_CFLAGS"
-+    MOZ_CHECK_HEADERS(sys/soundcard.h soundcard.h)
-+
-+    if test "$ac_cv_header_sys_soundcard_h" != "yes" -a \
-+            "$ac_cv_header_soundcard_h" != "yes"; then
-+        AC_MSG_ERROR([Need OSS for Ogg, Wave or WebM decoding on $OS_TARGET.  Disable with --without-oss.])
-+    fi
-+
-+    dnl Assume NetBSD implementation over SunAudio
-+    AC_CHECK_LIB(ossaudio, _oss_ioctl,
-+        [AC_DEFINE_UNQUOTED(CUBEB_OSS_DEFAULT_OUTPUT, "/dev/sound")
-+         MOZ_OSS_LIBS="$MOZ_OSS_LIBS -lossaudio"])
-+fi
-+CFLAGS=$_SAVE_CFLAGS
-+LIBS=$_SAVE_LIBS
-+
-+AC_SUBST(MOZ_OSS)
-+AC_SUBST_LIST(MOZ_OSS_CFLAGS)
-+AC_SUBST_LIST(MOZ_OSS_LIBS)
-+
-+dnl ==================================
- dnl = Check alsa availability on Linux
- dnl ==================================
- 
-diff --git dom/media/CubebUtils.cpp dom/media/CubebUtils.cpp
-index e10e07e06ade..1fd561bea113 100644
---- dom/media/CubebUtils.cpp
-+++ dom/media/CubebUtils.cpp
-@@ -71,7 +71,8 @@ const char* AUDIOSTREAM_BACKEND_ID_STR[] = {
-   "sndio",
-   "opensl",
-   "audiotrack",
--  "kai"
-+  "kai",
-+  "oss",
- };
- /* Index for failures to create an audio stream the first time. */
- const int CUBEB_BACKEND_INIT_FAILURE_FIRST =
-diff --git media/libcubeb/AUTHORS media/libcubeb/AUTHORS
-index 0fde65baad34..f8663c43b475 100644
---- media/libcubeb/AUTHORS
-+++ media/libcubeb/AUTHORS
-@@ -4,6 +4,7 @@ Michael Wu <mwu@mozilla.com>
- Paul Adenot <paul@paul.cx>
- David Richards <drichards@mozilla.com>
- Sebastien Alaiwan <sebastien.alaiwan@gmail.com>
-+Evgeniy Vodolazskiy <waterlaz@gmail.com>
- KO Myung-Hun <komh@chollian.net>
- Haakon Sporsheim <haakon.sporsheim@telenordigital.com>
- Alex Chronopoulos <achronop@gmail.com>
-diff --git media/libcubeb/src/cubeb.c media/libcubeb/src/cubeb.c
-index 57bcb4c13652..68be024f4a68 100644
---- media/libcubeb/src/cubeb.c
-+++ media/libcubeb/src/cubeb.c
-@@ -54,6 +54,9 @@ int audiotrack_init(cubeb ** context, char const * context_name);
- #if defined(USE_KAI)
- int kai_init(cubeb ** context, char const * context_name);
- #endif
-+#if defined(USE_OSS)
-+int oss_init(cubeb ** context, char const * context_name);
-+#endif
- 
- static int
- validate_stream_params(cubeb_stream_params * input_stream_params,
-@@ -155,6 +158,10 @@ cubeb_init(cubeb ** context, char const * context_name, char const * backend_nam
- #if defined(USE_KAI)
-       init_oneshot = kai_init;
- #endif
-+    } else if (!strcmp(backend_name, "oss")) {
-+#if defined(USE_OSS)
-+      init_oneshot = oss_init;
-+#endif
-     } else {
-       /* Already set */
-     }
-@@ -196,6 +203,9 @@ cubeb_init(cubeb ** context, char const * context_name, char const * backend_nam
- #if defined(USE_KAI)
-     kai_init,
- #endif
-+#if defined(USE_OSS)
-+    oss_init,
-+#endif
-   };
-   int i;
- 
+ if CONFIG['CC_TYPE'] in ('clang', 'gcc'):
 diff --git media/libcubeb/src/cubeb_alsa.c media/libcubeb/src/cubeb_alsa.c
-index 05ad27fef53b..3ea78e994f59 100644
+index bfd4d8f199d4..213c1eaa3d07 100644
 --- media/libcubeb/src/cubeb_alsa.c
 +++ media/libcubeb/src/cubeb_alsa.c
 @@ -12,6 +12,7 @@
@@ -217,7 +95,7 @@ index 05ad27fef53b..3ea78e994f59 100644
  };
  
  enum stream_state {
-@@ -243,8 +292,8 @@ set_timeout(struct timeval * timeout, unsigned int ms)
+@@ -245,8 +294,8 @@ set_timeout(struct timeval * timeout, unsigned int ms)
  static void
  stream_buffer_decrement(cubeb_stream * stm, long count)
  {
@@ -228,7 +106,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    stm->bufframes -= count;
  }
  
-@@ -276,9 +325,9 @@ alsa_process_stream(cubeb_stream * stm)
+@@ -278,9 +327,9 @@ alsa_process_stream(cubeb_stream * stm)
    /* Call _poll_descriptors_revents() even if we don't use it
       to let underlying plugins clear null events.  Otherwise poll()
       may wake up again and again, producing unnecessary CPU usage. */
@@ -240,7 +118,7 @@ index 05ad27fef53b..3ea78e994f59 100644
  
    /* Got null event? Bail and wait for another wakeup. */
    if (avail == 0) {
-@@ -301,7 +350,7 @@ alsa_process_stream(cubeb_stream * stm)
+@@ -303,7 +352,7 @@ alsa_process_stream(cubeb_stream * stm)
        // TODO: should it be marked as DRAINING?
      }
  
@@ -249,7 +127,7 @@ index 05ad27fef53b..3ea78e994f59 100644
  
      if (got < 0) {
        avail = got; // the error handler below will recover us
-@@ -345,7 +394,7 @@ alsa_process_stream(cubeb_stream * stm)
+@@ -347,7 +396,7 @@ alsa_process_stream(cubeb_stream * stm)
        (!stm->other_stream || stm->other_stream->bufframes > 0)) {
      long got = avail - stm->bufframes;
      void * other_buffer = stm->other_stream ? stm->other_stream->buffer : NULL;
@@ -258,7 +136,7 @@ index 05ad27fef53b..3ea78e994f59 100644
  
      /* Correct read size to the other stream available frames */
      if (stm->other_stream && got > (snd_pcm_sframes_t) stm->other_stream->bufframes) {
-@@ -372,8 +421,8 @@ alsa_process_stream(cubeb_stream * stm)
+@@ -374,8 +423,8 @@ alsa_process_stream(cubeb_stream * stm)
      long drain_frames = avail - stm->bufframes;
      double drain_time = (double) drain_frames / stm->params.rate;
  
@@ -269,7 +147,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      stm->bufframes = avail;
  
      /* Mark as draining, unless we're waiting for capture */
-@@ -400,7 +449,7 @@ alsa_process_stream(cubeb_stream * stm)
+@@ -402,7 +451,7 @@ alsa_process_stream(cubeb_stream * stm)
        }
      }
  
@@ -278,7 +156,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      if (wrote < 0) {
        avail = wrote; // the error handler below will recover us
      } else {
-@@ -413,13 +462,13 @@ alsa_process_stream(cubeb_stream * stm)
+@@ -415,13 +464,13 @@ alsa_process_stream(cubeb_stream * stm)
  
    /* Got some error? Let's try to recover the stream. */
    if (avail < 0) {
@@ -295,7 +173,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      }
    }
  
-@@ -535,26 +584,26 @@ get_slave_pcm_node(snd_config_t * lconf, snd_config_t * root_pcm)
+@@ -537,26 +586,26 @@ get_slave_pcm_node(snd_config_t * lconf, snd_config_t * root_pcm)
  
    slave_def = NULL;
  
@@ -327,7 +205,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      if (r < 0) {
        break;
      }
-@@ -563,7 +612,7 @@ get_slave_pcm_node(snd_config_t * lconf, snd_config_t * root_pcm)
+@@ -565,7 +614,7 @@ get_slave_pcm_node(snd_config_t * lconf, snd_config_t * root_pcm)
      if (r < 0 || r > (int) sizeof(node_name)) {
        break;
      }
@@ -336,7 +214,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      if (r < 0) {
        break;
      }
-@@ -572,7 +621,7 @@ get_slave_pcm_node(snd_config_t * lconf, snd_config_t * root_pcm)
+@@ -574,7 +623,7 @@ get_slave_pcm_node(snd_config_t * lconf, snd_config_t * root_pcm)
    } while (0);
  
    if (slave_def) {
@@ -345,7 +223,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    }
  
    return NULL;
-@@ -595,22 +644,22 @@ init_local_config_with_workaround(char const * pcm_name)
+@@ -597,22 +646,22 @@ init_local_config_with_workaround(char const * pcm_name)
  
    lconf = NULL;
  
@@ -372,7 +250,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      if (r < 0) {
        break;
      }
-@@ -619,7 +668,7 @@ init_local_config_with_workaround(char const * pcm_name)
+@@ -621,7 +670,7 @@ init_local_config_with_workaround(char const * pcm_name)
      if (r < 0 || r > (int) sizeof(node_name)) {
        break;
      }
@@ -381,7 +259,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      if (r < 0) {
        break;
      }
-@@ -630,12 +679,12 @@ init_local_config_with_workaround(char const * pcm_name)
+@@ -632,12 +681,12 @@ init_local_config_with_workaround(char const * pcm_name)
      }
  
      /* Fetch the PCM node's type, and bail out if it's not the PulseAudio plugin. */
@@ -396,7 +274,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      if (r < 0) {
        break;
      }
-@@ -646,18 +695,18 @@ init_local_config_with_workaround(char const * pcm_name)
+@@ -648,18 +697,18 @@ init_local_config_with_workaround(char const * pcm_name)
  
      /* Don't clobber an explicit existing handle_underrun value, set it only
         if it doesn't already exist. */
@@ -418,7 +296,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      if (r < 0) {
        break;
      }
-@@ -665,7 +714,7 @@ init_local_config_with_workaround(char const * pcm_name)
+@@ -667,7 +716,7 @@ init_local_config_with_workaround(char const * pcm_name)
      return lconf;
    } while (0);
  
@@ -427,7 +305,7 @@ index 05ad27fef53b..3ea78e994f59 100644
  
    return NULL;
  }
-@@ -677,9 +726,9 @@ alsa_locked_pcm_open(snd_pcm_t ** pcm, char const * pcm_name, snd_pcm_stream_t s
+@@ -679,9 +728,9 @@ alsa_locked_pcm_open(snd_pcm_t ** pcm, char const * pcm_name, snd_pcm_stream_t s
  
    pthread_mutex_lock(&cubeb_alsa_mutex);
    if (local_config) {
@@ -439,7 +317,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    }
    pthread_mutex_unlock(&cubeb_alsa_mutex);
  
-@@ -692,7 +741,7 @@ alsa_locked_pcm_close(snd_pcm_t * pcm)
+@@ -694,7 +743,7 @@ alsa_locked_pcm_close(snd_pcm_t * pcm)
    int r;
  
    pthread_mutex_lock(&cubeb_alsa_mutex);
@@ -448,7 +326,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    pthread_mutex_unlock(&cubeb_alsa_mutex);
  
    return r;
-@@ -755,12 +804,65 @@ alsa_init(cubeb ** context, char const * context_name)
+@@ -757,12 +806,65 @@ alsa_init(cubeb ** context, char const * context_name)
    pthread_attr_t attr;
    snd_pcm_t * dummy;
  
@@ -515,7 +393,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      cubeb_alsa_error_handler_set = 1;
    }
    pthread_mutex_unlock(&cubeb_alsa_mutex);
-@@ -768,6 +870,8 @@ alsa_init(cubeb ** context, char const * context_name)
+@@ -770,6 +872,8 @@ alsa_init(cubeb ** context, char const * context_name)
    ctx = calloc(1, sizeof(*ctx));
    assert(ctx);
  
@@ -524,7 +402,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    ctx->ops = &alsa_ops;
  
    r = pthread_mutex_init(&ctx->mutex, NULL);
-@@ -817,7 +921,7 @@ alsa_init(cubeb ** context, char const * context_name)
+@@ -819,7 +923,7 @@ alsa_init(cubeb ** context, char const * context_name)
         config fails with EINVAL, the PA PCM is too old for this workaround. */
      if (r == -EINVAL) {
        pthread_mutex_lock(&cubeb_alsa_mutex);
@@ -533,7 +411,7 @@ index 05ad27fef53b..3ea78e994f59 100644
        pthread_mutex_unlock(&cubeb_alsa_mutex);
        ctx->local_config = NULL;
      } else if (r >= 0) {
-@@ -857,9 +961,13 @@ alsa_destroy(cubeb * ctx)
+@@ -859,9 +963,13 @@ alsa_destroy(cubeb * ctx)
    pthread_mutex_destroy(&ctx->mutex);
    free(ctx->fds);
  
@@ -548,7 +426,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      pthread_mutex_unlock(&cubeb_alsa_mutex);
    }
  
-@@ -939,7 +1047,7 @@ alsa_stream_init_single(cubeb * ctx, cubeb_stream ** stream, char const * stream
+@@ -948,7 +1056,7 @@ alsa_stream_init_single(cubeb * ctx, cubeb_stream ** stream, char const * stream
      return CUBEB_ERROR;
    }
  
@@ -557,7 +435,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    assert(r == 0);
  
    latency_us = latency_frames * 1e6 / stm->params.rate;
-@@ -952,7 +1060,7 @@ alsa_stream_init_single(cubeb * ctx, cubeb_stream ** stream, char const * stream
+@@ -961,7 +1069,7 @@ alsa_stream_init_single(cubeb * ctx, cubeb_stream ** stream, char const * stream
      latency_us = latency_us < min_latency ? min_latency: latency_us;
    }
  
@@ -566,7 +444,7 @@ index 05ad27fef53b..3ea78e994f59 100644
                           stm->params.channels, stm->params.rate, 1,
                           latency_us);
    if (r < 0) {
-@@ -960,20 +1068,20 @@ alsa_stream_init_single(cubeb * ctx, cubeb_stream ** stream, char const * stream
+@@ -969,20 +1077,20 @@ alsa_stream_init_single(cubeb * ctx, cubeb_stream ** stream, char const * stream
      return CUBEB_ERROR_INVALID_FORMAT;
    }
  
@@ -591,7 +469,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    assert((nfds_t) r == stm->nfds);
  
    if (alsa_register_stream(ctx, stm) != 0) {
-@@ -1048,7 +1156,7 @@ alsa_stream_destroy(cubeb_stream * stm)
+@@ -1054,7 +1162,7 @@ alsa_stream_destroy(cubeb_stream * stm)
    pthread_mutex_lock(&stm->mutex);
    if (stm->pcm) {
      if (stm->state == DRAINING) {
@@ -600,7 +478,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      }
      alsa_locked_pcm_close(stm->pcm);
      stm->pcm = NULL;
-@@ -1094,12 +1202,12 @@ alsa_get_max_channel_count(cubeb * ctx, uint32_t * max_channels)
+@@ -1100,12 +1208,12 @@ alsa_get_max_channel_count(cubeb * ctx, uint32_t * max_channels)
  
    assert(stm);
  
@@ -615,7 +493,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    if (r < 0) {
      return CUBEB_ERROR;
    }
-@@ -1120,34 +1228,34 @@ alsa_get_preferred_sample_rate(cubeb * ctx, uint32_t * rate) {
+@@ -1126,34 +1234,34 @@ alsa_get_preferred_sample_rate(cubeb * ctx, uint32_t * rate) {
  
    /* get a pcm, disabling resampling, so we get a rate the
     * hardware/dmix/pulse/etc. supports. */
@@ -658,7 +536,7 @@ index 05ad27fef53b..3ea78e994f59 100644
  
    return CUBEB_OK;
  }
-@@ -1180,10 +1288,10 @@ alsa_stream_start(cubeb_stream * stm)
+@@ -1186,10 +1294,10 @@ alsa_stream_start(cubeb_stream * stm)
    pthread_mutex_lock(&stm->mutex);
    /* Capture pcm must be started after initial setup/recover */
    if (stm->stream_type == SND_PCM_STREAM_CAPTURE &&
@@ -672,7 +550,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    gettimeofday(&stm->last_activity, NULL);
    pthread_mutex_unlock(&stm->mutex);
  
-@@ -1223,7 +1331,7 @@ alsa_stream_stop(cubeb_stream * stm)
+@@ -1229,7 +1337,7 @@ alsa_stream_stop(cubeb_stream * stm)
    pthread_mutex_unlock(&ctx->mutex);
  
    pthread_mutex_lock(&stm->mutex);
@@ -681,7 +559,7 @@ index 05ad27fef53b..3ea78e994f59 100644
    pthread_mutex_unlock(&stm->mutex);
  
    return CUBEB_OK;
-@@ -1239,8 +1347,8 @@ alsa_stream_get_position(cubeb_stream * stm, uint64_t * position)
+@@ -1245,8 +1353,8 @@ alsa_stream_get_position(cubeb_stream * stm, uint64_t * position)
    pthread_mutex_lock(&stm->mutex);
  
    delay = -1;
@@ -692,7 +570,7 @@ index 05ad27fef53b..3ea78e994f59 100644
      *position = stm->last_position;
      pthread_mutex_unlock(&stm->mutex);
      return CUBEB_OK;
-@@ -1265,7 +1373,7 @@ alsa_stream_get_latency(cubeb_stream * stm, uint32_t * latency)
+@@ -1271,7 +1379,7 @@ alsa_stream_get_latency(cubeb_stream * stm, uint32_t * latency)
    snd_pcm_sframes_t delay;
    /* This function returns the delay in frames until a frame written using
       snd_pcm_writei is sent to the DAC. The DAC delay should be < 1ms anyways. */
@@ -701,12 +579,117 @@ index 05ad27fef53b..3ea78e994f59 100644
      return CUBEB_ERROR;
    }
  
+diff --git toolkit/library/moz.build toolkit/library/moz.build
+index b0df6b98b91f..e06592daa265 100644
+--- toolkit/library/moz.build
++++ toolkit/library/moz.build
+@@ -247,9 +247,6 @@ if CONFIG['MOZ_SYSTEM_LIBVPX']:
+ if not CONFIG['MOZ_TREE_PIXMAN']:
+     OS_LIBS += CONFIG['MOZ_PIXMAN_LIBS']
+ 
+-if CONFIG['MOZ_ALSA']:
+-    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
+-
+ if CONFIG['HAVE_CLOCK_MONOTONIC']:
+     OS_LIBS += CONFIG['REALTIME_LIBS']
+ 
+
+commit 161bcd671217
+Author: Evgeniy Vodolazskiy <waterlaz@gmail.com>
+Date:   Wed Sep 3 10:47:00 2014 -0700
+
+    Bug 1021761 - Add OSS backend to libcubeb, default but last on Linux. r=kinetik r=glandium
+---
+ build/moz.configure/old.configure |   1 +
+ dom/media/CubebUtils.cpp          |   3 +-
+ media/libcubeb/AUTHORS            |   1 +
+ media/libcubeb/src/cubeb.c        |  10 +
+ media/libcubeb/src/cubeb_oss.c    | 453 ++++++++++++++++++++++++++++++++++++++
+ media/libcubeb/src/moz.build      |   7 +
+ media/libcubeb/update.sh          |   1 +
+ old-configure.in                  |  62 ++++++
+ toolkit/library/moz.build         |   3 +
+ 9 files changed, 540 insertions(+), 1 deletion(-)
+
+diff --git build/moz.configure/old.configure build/moz.configure/old.configure
+index 17d0c5bf3420..3e6dbc16ca14 100644
+--- build/moz.configure/old.configure
++++ build/moz.configure/old.configure
+@@ -262,6 +262,7 @@ def old_configure_options(*options):
+     '--with-nspr-prefix',
+     '--with-nss-exec-prefix',
+     '--with-nss-prefix',
++    '--with-oss',
+     '--with-pthreads',
+     '--with-qemu-exe',
+     '--with-sixgill',
+diff --git dom/media/CubebUtils.cpp dom/media/CubebUtils.cpp
+index 88063ed3a4d6..8613f86dbd16 100644
+--- dom/media/CubebUtils.cpp
++++ dom/media/CubebUtils.cpp
+@@ -149,7 +149,8 @@ const char* AUDIOSTREAM_BACKEND_ID_STR[] = {
+   "sndio",
+   "opensl",
+   "audiotrack",
+-  "kai"
++  "kai",
++  "oss",
+ };
+ /* Index for failures to create an audio stream the first time. */
+ const int CUBEB_BACKEND_INIT_FAILURE_FIRST =
+diff --git media/libcubeb/AUTHORS media/libcubeb/AUTHORS
+index f0f9595227f2..e7e7048190ab 100644
+--- media/libcubeb/AUTHORS
++++ media/libcubeb/AUTHORS
+@@ -4,6 +4,7 @@ Michael Wu <mwu@mozilla.com>
+ Paul Adenot <paul@paul.cx>
+ David Richards <drichards@mozilla.com>
+ Sebastien Alaiwan <sebastien.alaiwan@gmail.com>
++Evgeniy Vodolazskiy <waterlaz@gmail.com>
+ KO Myung-Hun <komh@chollian.net>
+ Haakon Sporsheim <haakon.sporsheim@telenordigital.com>
+ Alex Chronopoulos <achronop@gmail.com>
+diff --git media/libcubeb/src/cubeb.c media/libcubeb/src/cubeb.c
+index bb35e0ce349f..e523d94108a3 100644
+--- media/libcubeb/src/cubeb.c
++++ media/libcubeb/src/cubeb.c
+@@ -60,6 +60,9 @@ int audiotrack_init(cubeb ** context, char const * context_name);
+ #if defined(USE_KAI)
+ int kai_init(cubeb ** context, char const * context_name);
+ #endif
++#if defined(USE_OSS)
++int oss_init(cubeb ** context, char const * context_name);
++#endif
+ 
+ static int
+ validate_stream_params(cubeb_stream_params * input_stream_params,
+@@ -159,6 +162,10 @@ cubeb_init(cubeb ** context, char const * context_name, char const * backend_nam
+     } else if (!strcmp(backend_name, "kai")) {
+ #if defined(USE_KAI)
+       init_oneshot = kai_init;
++#endif
++    } else if (!strcmp(backend_name, "oss")) {
++#if defined(USE_OSS)
++      init_oneshot = oss_init;
+ #endif
+     } else {
+       /* Already set */
+@@ -203,6 +210,9 @@ cubeb_init(cubeb ** context, char const * context_name, char const * backend_nam
+ #endif
+ #if defined(USE_KAI)
+     kai_init,
++#endif
++#if defined(USE_OSS)
++    oss_init,
+ #endif
+   };
+   int i;
 diff --git media/libcubeb/src/cubeb_oss.c media/libcubeb/src/cubeb_oss.c
 new file mode 100644
-index 000000000000..7b0b4f37dbe4
+index 000000000000..7d96168b9ea6
 --- /dev/null
 +++ media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,445 @@
+@@ -0,0 +1,454 @@
 +/*
 + * Copyright © 2014 Mozilla Foundation
 + *
@@ -743,11 +726,13 @@ index 000000000000..7b0b4f37dbe4
 +};
 +
 +struct cubeb_stream {
++  /* Note: Must match cubeb_stream layout in cubeb.c. */
 +  cubeb * context;
++  void * user_ptr;
++  /**/
 +
 +  cubeb_data_callback data_callback;
 +  cubeb_state_callback state_callback;
-+  void * user_ptr;
 +  float volume;
 +  float panning;
 +
@@ -976,6 +961,11 @@ index 000000000000..7b0b4f37dbe4
 +    return CUBEB_ERROR_DEVICE_UNAVAILABLE;
 +  }
 +
++  if ((input_stream_params && input_stream_params->prefs & CUBEB_STREAM_PREF_LOOPBACK) ||
++      (output_stream_params && output_stream_params->prefs & CUBEB_STREAM_PREF_LOOPBACK)) {
++    return CUBEB_ERROR_NOT_SUPPORTED;
++  }
++
 +  if ((stream->fd = open(CUBEB_OSS_DEFAULT_OUTPUT, O_WRONLY)) == -1) {
 +    free(stream);
 +    return CUBEB_ERROR;
@@ -1137,12 +1127,14 @@ index 000000000000..7b0b4f37dbe4
 +  .get_min_latency = oss_get_min_latency,
 +  .get_preferred_sample_rate = oss_get_preferred_sample_rate,
 +  .get_preferred_channel_layout = NULL,
-+  .destroy = oss_destroy,
 +  .enumerate_devices = NULL,
++  .device_collection_destroy = NULL,
++  .destroy = oss_destroy,
 +  .stream_init = oss_stream_init,
 +  .stream_destroy = oss_stream_destroy,
 +  .stream_start = oss_stream_start,
 +  .stream_stop = oss_stream_stop,
++  .stream_reset_default_device = NULL,
 +  .stream_get_position = oss_stream_get_position,
 +  .stream_get_latency = oss_stream_get_latency,
 +  .stream_set_volume = oss_stream_set_volume,
@@ -1153,10 +1145,10 @@ index 000000000000..7b0b4f37dbe4
 +  .register_device_collection_changed = NULL
 +};
 diff --git media/libcubeb/src/moz.build media/libcubeb/src/moz.build
-index fc9c79198e30..57d039d5a0f2 100644
+index e1fea30ca417..a5b1100f1014 100644
 --- media/libcubeb/src/moz.build
 +++ media/libcubeb/src/moz.build
-@@ -20,6 +20,12 @@ if CONFIG['MOZ_ALSA']:
+@@ -23,6 +23,12 @@ if CONFIG['MOZ_ALSA']:
      ]
      DEFINES['USE_ALSA'] = True
  
@@ -1169,28 +1161,16 @@ index fc9c79198e30..57d039d5a0f2 100644
  if CONFIG['MOZ_PULSEAUDIO'] or CONFIG['MOZ_JACK']:
      SOURCES += [
          'cubeb_resampler.cpp',
-@@ -92,6 +98,7 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'gonk':
-             '%' + '%s/system/media/wilhelm/include' % CONFIG['ANDROID_SOURCE'],
-         ]
+@@ -88,6 +94,7 @@ if CONFIG['OS_TARGET'] == 'Android':
+ FINAL_LIBRARY = 'gkmedias'
  
-+CFLAGS += CONFIG['MOZ_OSS_CFLAGS']
  CFLAGS += CONFIG['MOZ_ALSA_CFLAGS']
++CFLAGS += CONFIG['MOZ_OSS_CFLAGS']
  CFLAGS += CONFIG['MOZ_PULSEAUDIO_CFLAGS']
  
-diff --git media/libcubeb/gtest/moz.build media/libcubeb/gtest/moz.build
-index e99968648554..efbbbf779e11 100644
---- media/libcubeb/gtest/moz.build
-+++ media/libcubeb/gtest/moz.build
-@@ -71,7 +71,6 @@ elif CONFIG['OS_TARGET'] == 'OpenBSD':
-         'sndio',
-     ]
- else:
--    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
-     OS_LIBS += CONFIG['MOZ_PULSEAUDIO_LIBS']
- 
- if CONFIG['GNU_CXX']:
+ # We allow warnings for third-party code that can be updated from upstream.
 diff --git media/libcubeb/update.sh media/libcubeb/update.sh
-index b139b8f497fd..d1f8a223c6d8 100755
+index 0bb6345c9fa9..78a102dc47cb 100755
 --- media/libcubeb/update.sh
 +++ media/libcubeb/update.sh
 @@ -20,6 +20,7 @@ cp $1/src/cubeb_log.h src
@@ -1198,21 +1178,92 @@ index b139b8f497fd..d1f8a223c6d8 100755
  cp $1/src/cubeb_mixer.h src
  cp $1/src/cubeb_opensl.c src
 +cp $1/src/cubeb_oss.c src
- cp $1/src/cubeb_osx_run_loop.h src
- cp $1/src/cubeb_panner.cpp src
- cp $1/src/cubeb_panner.h src
+ cp $1/src/cubeb-jni.cpp src
+ cp $1/src/cubeb-jni.h src
+ cp $1/src/android/cubeb-output-latency.h src/android
+diff --git old-configure.in old-configure.in
+index 28e1a9e48d61..edacedcf6e5d 100644
+--- old-configure.in
++++ old-configure.in
+@@ -2598,6 +2598,67 @@ MOZ_WEBM_ENCODER=1
+ AC_DEFINE(MOZ_WEBM_ENCODER)
+ AC_SUBST(MOZ_WEBM_ENCODER)
+ 
++dnl ==================================
++dnl = Check OSS availability
++dnl ==================================
++
++dnl If using Linux, Solaris or BSDs, ensure that OSS is available
++case "$OS_TARGET" in
++Linux|SunOS|DragonFly|FreeBSD|NetBSD|GNU/kFreeBSD)
++    MOZ_OSS=1
++    ;;
++esac
++
++MOZ_ARG_WITH_STRING(oss,
++[  --with-oss[=PFX]        Enable OpenSoundSystem support [installed at prefix PFX]],
++   OSSPREFIX=$withval)
++
++if test -n "$OSSPREFIX"; then
++    if test "$OSSPREFIX" != "no"; then
++        MOZ_OSS=1
++    else
++        MOZ_OSS=
++    fi
++fi
++
++_SAVE_CFLAGS=$CFLAGS
++_SAVE_LIBS=$LIBS
++if test -n "$MOZ_OSS"; then
++    dnl Prefer 4Front implementation
++    AC_MSG_CHECKING([MOZ_OSS_CFLAGS])
++    if test "$OSSPREFIX" != "yes"; then
++        oss_conf=${OSSPREFIX%/usr}/etc/oss.conf
++        if test -f "$oss_conf"; then
++            . "$oss_conf"
++        else
++            OSSLIBDIR=$OSSPREFIX/lib/oss
++        fi
++        if test -d "$OSSLIBDIR"; then
++            MOZ_OSS_CFLAGS="$MOZ_OSS_CFLAGS -I$OSSLIBDIR/include"
++        fi
++    fi
++    AC_MSG_RESULT([$MOZ_OSS_CFLAGS])
++
++    CFLAGS="$CFLAGS $MOZ_OSS_CFLAGS"
++    MOZ_CHECK_HEADERS(sys/soundcard.h soundcard.h)
++
++    if test "$ac_cv_header_sys_soundcard_h" != "yes" -a \
++            "$ac_cv_header_soundcard_h" != "yes"; then
++        AC_MSG_ERROR([Need OSS for Ogg, Wave or WebM decoding on $OS_TARGET.  Disable with --without-oss.])
++    fi
++
++    dnl Assume NetBSD implementation over SunAudio
++    AC_CHECK_LIB(ossaudio, _oss_ioctl,
++        [AC_DEFINE_UNQUOTED(CUBEB_OSS_DEFAULT_OUTPUT, "/dev/sound")
++         MOZ_OSS_LIBS="$MOZ_OSS_LIBS -lossaudio"])
++fi
++CFLAGS=$_SAVE_CFLAGS
++LIBS=$_SAVE_LIBS
++
++AC_SUBST(MOZ_OSS)
++AC_SUBST_LIST(MOZ_OSS_CFLAGS)
++AC_SUBST_LIST(MOZ_OSS_LIBS)
++
+ dnl ==================================
+ dnl = Check alsa availability on Linux
+ dnl ==================================
 diff --git toolkit/library/moz.build toolkit/library/moz.build
-index a61c689c83c3..7764df6f8a6b 100644
+index e06592daa265..ce016b96c2bc 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -242,8 +242,8 @@ if CONFIG['MOZ_SYSTEM_LIBVPX']:
+@@ -247,6 +247,9 @@ if CONFIG['MOZ_SYSTEM_LIBVPX']:
  if not CONFIG['MOZ_TREE_PIXMAN']:
      OS_LIBS += CONFIG['MOZ_PIXMAN_LIBS']
  
--if CONFIG['MOZ_ALSA']:
--    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
 +if CONFIG['MOZ_OSS']:
 +    OS_LIBS += CONFIG['MOZ_OSS_LIBS']
- 
++
  if CONFIG['HAVE_CLOCK_MONOTONIC']:
      OS_LIBS += CONFIG['REALTIME_LIBS']
+ 
