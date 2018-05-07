@@ -1,0 +1,8 @@
+lib/elixir/lib/unsafe/ebin/Elixir.Unsafe.Compiler.beam
+lib/elixir/lib/unsafe/ebin/Elixir.Unsafe.Generator.beam
+lib/elixir/lib/unsafe/ebin/Elixir.Unsafe.beam
+lib/elixir/lib/unsafe/ebin/unsafe.app
+lib/elixir/lib/unsafe/lib/unsafe.ex
+lib/elixir/lib/unsafe/lib/unsafe/compiler.ex
+lib/elixir/lib/unsafe/lib/unsafe/generator.ex
+%%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -1,0 +1,4 @@
+This library is designed to generate unsafe bindings for Elixir
+function definitions at compile time.
+
+WWW: https://github.com/whitfin/unsafe
