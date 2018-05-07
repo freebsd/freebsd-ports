@@ -1,0 +1,5 @@
+Kronosnet, often referred to as knet, is a network abstraction layer designed
+for High Availability use cases, where redundancy, security, fault tolerance
+and fast fail-over are the core requirements.
+
+WWW: https://kronosnet.org/
