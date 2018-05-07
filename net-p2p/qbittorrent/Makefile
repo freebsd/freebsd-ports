@@ -49,11 +49,6 @@ CONFIGURE_ARGS+=	--disable-gui
 
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's/#ifdef Q_OS_MAC/#if defined(Q_OS_MAC) || (defined(__FreeBSD__) \&\& __FreeBSD_version < 1003506)/' \
-		${WRKSRC}/src/base/utils/string.cpp
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent${SUFFIX}
 	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent${SUFFIX}.1 \

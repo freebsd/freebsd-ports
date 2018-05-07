@@ -59,12 +59,6 @@ TSC_CMAKE_BOOL=		ENABLE_TSC_CLOCK
 # FLATBUFFERS_LIB_DEPENDS=	libflatbuffers.so:devel/flatbuffers
 HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1004000
-EXTRA_PATCHES=	${PATCHDIR}/freebsd103_patch-src_memory_memory__allocator.h
-.endif
-
 CONFLICTS=	snort-2*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

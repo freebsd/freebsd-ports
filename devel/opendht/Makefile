@@ -40,10 +40,4 @@ PROXY_SERVER_LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp \
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1003506
-BROKEN=		no __cxa_thread_atexit() support in FreeBSD libc < 10.4
-.endif
-
 .include <bsd.port.mk>
