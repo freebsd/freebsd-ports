@@ -70,6 +70,7 @@
     SUBDIR += hidapi
     SUBDIR += hylafax
     SUBDIR += ibp
+    SUBDIR += inspectrum
     SUBDIR += java-commapi
     SUBDIR += java-commapi-freebsd
     SUBDIR += java-simple-serial-connector
@@ -94,6 +95,7 @@
     SUBDIR += libusbmuxd
     SUBDIR += linpsk
     SUBDIR += linrad
+    SUBDIR += liquid-dsp
     SUBDIR += lirc
     SUBDIR += locator
     SUBDIR += lrzsz
