@@ -3,6 +3,7 @@
 PORTNAME=	llvmcpy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,7 +26,7 @@ USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
 # LLVM_CONFIG environment variable overrides this: ex. LLVM_CONFIG=llvm-config40 changes to llvm40
-LLVM_VERSION=	39  # README says: It has been tested with LLVM 3.4, 3.8 and 3.9
+LLVM_VERSION=	50  # README says: It has been tested with LLVM 3.4, 3.8 and 3.9
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"llvm-config"|"llvm-config${LLVM_VERSION}"|' ${WRKSRC}/llvmcpy/llvm.py
