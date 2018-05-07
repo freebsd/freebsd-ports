@@ -4,7 +4,7 @@
 PORTNAME=	opensmtpd
 PORTVERSION=	5.9.2p1
 PORTEPOCH=	1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
