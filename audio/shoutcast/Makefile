@@ -13,6 +13,8 @@ MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	SHOUTcast Distributed Network Audio Server
 
 RESTRICTED=	redistribution of software is not permitted
+DEPRECATED=	Upstream vendor no longer provides releases
+EXPIRATION_DATE=2018-12-31
 IA32_BINARY_PORT=	yes
 
 USES=		dos2unix shebangfix
