@@ -11,6 +11,9 @@ COMMENT=	Skylable Sx is a reliable, fully distributed cluster solution
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream gone, does not fetch
+EXPIRATION_DATE=2018-07-07
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfcgi.so:www/fcgi \
 		libyajl.so:devel/yajl \
