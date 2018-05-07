@@ -1,0 +1,10 @@
+Image::PNG::Libpng is a Perl library for accessing the contents of
+PNG (Portable Network Graphics) images. Image::PNG::Libpng enables
+Perl to use the "libpng" library for reading and writing files in
+the PNG format.
+
+Image::PNG::Libpng consists of Perl subroutines which mirror the C
+functions in libpng, plus helper subroutines to make it easier to
+read and write PNG data in Perl.
+
+WWW: http://search.cpan.org/dist/Image-PNG-Libpng/

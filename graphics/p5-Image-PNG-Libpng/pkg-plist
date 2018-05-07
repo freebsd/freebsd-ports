@@ -1,0 +1,9 @@
+%%SITE_ARCH%%/auto/Image/PNG/Libpng/Libpng.so
+%%SITE_ARCH%%/Image/PNG/Libpng.pm
+%%SITE_ARCH%%/Image/PNG/Const.pm
+%%SITE_ARCH%%/Image/PNG/Libpng.pod
+%%SITE_ARCH%%/Image/PNG/memory-test.pl
+%%PERL5_MAN1%%/pnginspect.1.gz
+%%PERL5_MAN3%%/Image::PNG::Const.3.gz
+%%PERL5_MAN3%%/Image::PNG::Libpng.3.gz
+bin/pnginspect
