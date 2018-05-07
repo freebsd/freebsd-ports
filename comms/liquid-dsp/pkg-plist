@@ -1,0 +1,3 @@
+include/liquid/liquid.h
+lib/libliquid.a
+lib/libliquid.so
