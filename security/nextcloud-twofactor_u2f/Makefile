@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twofactor_u2f
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	1.5.4
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
