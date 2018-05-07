@@ -7,7 +7,7 @@ DISTVERSION=	0.40
 PORTREVISION=	4
 CATEGORIES=	sysutils
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grub-emu loader for bhyve
 
 LICENSE=	GPLv3

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
 DISTNAME=	grub-2.02_8
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiboot boot loader
 
 LICENSE=	GPLv3
