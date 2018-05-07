@@ -1,6 +1,6 @@
---- configure.orig	2018-04-13 19:02:44 UTC
+--- configure.orig	2018-05-05 00:51:14 UTC
 +++ configure
-@@ -14763,27 +14763,9 @@ done
+@@ -14760,27 +14760,9 @@ done
  		# problems start to show up.
  		saved_libs="$LIBS"
  		for TRY_LIBS in \
@@ -30,7 +30,7 @@
  		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking linking as $TRY_LIBS" >&5
  $as_echo_n "checking linking as $TRY_LIBS... " >&6; }
  		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-@@ -14826,47 +14808,7 @@ $as_echo "no" >&6; } ;;
+@@ -14823,47 +14805,7 @@ $as_echo "no" >&6; } ;;
  		no) as_fn_error $? "could not determine proper GSSAPI linkage" "$LINENO" 5 ;;
  		esac
  
@@ -79,7 +79,7 @@
  		DNS_GSSAPI_LIBS="$LIBS"
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
-@@ -23456,7 +23398,7 @@ $as_echo "" >&6; }
+@@ -23416,7 +23358,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  
