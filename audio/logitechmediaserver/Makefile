@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	logitechmediaserver
-PORTVERSION=	7.9.1.g2017.07.11
+PORTVERSION=	7.9.1.g2018.04.23
 CATEGORIES=	audio
 
 MAINTAINER=	mark@tranquillussoftware.co.uk
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 ONLY_FOR_ARCHS=	amd64 i386
+BROKEN_FreeBSD_10_i386= libmediascan does not compile
 
 BUILD_DEPENDS=	nasm:devel/nasm \
 		bash:shells/bash \
@@ -21,8 +22,8 @@ LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		gettext-runtime gmake perl5 shebangfix
 USE_GITHUB=	yes
-GH_TUPLE=	Logitech:slimserver:762b5cb \
-		Logitech:slimserver-vendor:1463b00:vendor
+GH_TUPLE=	Logitech:slimserver:7b3c28c \
+		Logitech:slimserver-vendor:21f307f:vendor
 USE_RC_SUBR=	logitechmediaserver
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		Bin/dbish \
@@ -114,6 +115,7 @@ do-install:
 		${RM} -- ${CONFFILES} ${DOCFILES})
 	(cd ${STAGEDIR}${PREFIX}/${SLIMDIR}/CPAN/arch/${PERL_VER} && \
 		${RM} -r -- arm-linux-gnueabihf-thread-multi-64int && \
+		${RM} -r -- aarch64-linux-thread-multi && \
 		${RM} -r -- i386-linux-thread-multi-64int && \
 		${RM} -r -- x86_64-linux-thread-multi)
 .for _CONF in ${CONFFILES}

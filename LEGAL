@@ -146,6 +146,7 @@ linux-ut/*		games/linux-ut		Redistribution is limited, see license
 linuxq3ademo-*		games/linux-quake3	Restrictive license by Loki Software
 linuxq3ademo-*		games/linux-quake3-demo	Restrictive license by Loki Software
 linuxsampler-*		audio/linuxsampler	Commercial use is prohibited
+Logitech-slimserver-*	audio/logitechmediaserver Contains non-redistributable firmware, documentation, and images
 lpac-*			audio/lpac		No commercial use
 l_cc_p*_*.*.*.tar.gz	lang/icc		No redistribution allowed
 l_fc_p*_*.*.*.tar.gz	lang/ifc		Intel forbids any redistribution
