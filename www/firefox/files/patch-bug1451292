@@ -1,0 +1,33 @@
+commit b3a02fddbce8
+Author: Lars T Hansen <lhansen@mozilla.com>
+Date:   Wed Apr 4 15:48:48 2018 +0200
+
+    Bug 1451292 - Better payload for arm64 breakpoint instruction.  r=sstangl
+    
+    At least some non-zero payloads confuse GDB and make it iloop on the
+    breakpoint instruction rather than break to the command line as it
+    should.  There seems to be no reason not to use a zero payload.
+    
+    --HG--
+    extra : rebase_source : 6d6f9aa2911b86b02572f88948d48bc2238c6353
+    extra : amend_source : 9fed9235d481a9eadafc4a3e0075c9fef8b6050d
+---
+ js/src/jit/arm64/MacroAssembler-arm64.cpp | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git js/src/jit/arm64/MacroAssembler-arm64.cpp js/src/jit/arm64/MacroAssembler-arm64.cpp
+index 4ea64b1225d00..a212de0ec2f45 100644
+--- js/src/jit/arm64/MacroAssembler-arm64.cpp
++++ js/src/jit/arm64/MacroAssembler-arm64.cpp
+@@ -237,8 +237,9 @@ MacroAssemblerCompat::profilerEnterFrame(RegisterOrSP framePtr, Register scratch
+ void
+ MacroAssemblerCompat::breakpoint()
+ {
+-    static int code = 0xA77;
+-    Brk((code++) & 0xffff);
++    // Note, other payloads are possible, but GDB is known to misinterpret them
++    // sometimes and iloop on the breakpoint instead of stopping properly.
++    Brk(0);
+ }
+ 
+ // Either `any` is valid or `sixtyfour` is valid.  Return a 32-bit ARMRegister
