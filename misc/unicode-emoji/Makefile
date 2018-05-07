@@ -11,7 +11,10 @@ EXTRACT_ONLY=	# nothing to extract
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Unicode emoji data files
 
-LICENSE=	BSD
+LICENSE=	UNICODE
+LICENSE_NAME=	UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
+LICENSE_TEXT=	See https://www.unicode.org/copyright.html#License
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 NO_BUILD=	yes
 NO_ARCH=	yes
