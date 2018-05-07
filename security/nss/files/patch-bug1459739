@@ -1,0 +1,14 @@
+diff --git lib/freebl/Makefile lib/freebl/Makefile
+index e6a94d35c4..0aecd2fbe7 100644
+--- lib/freebl/Makefile
++++ lib/freebl/Makefile
+@@ -539,6 +539,9 @@ ifeq (,$(filter-out i386 x386 x86 x86_64 aarch64,$(CPU_ARCH)))
+ else
+     # All non intel architectures get the generic 32 bit implementation (slow!)
+     ECL_SRCS += curve25519_32.c
++ifndef NSS_DISABLE_CHACHAPOLY
++        VERIFIED_SRCS += FStar.c
++endif
+ endif
+ 
+ #######################################################################
