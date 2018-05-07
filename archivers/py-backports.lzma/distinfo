@@ -1,3 +1,3 @@
-TIMESTAMP = 1484272638
-SHA256 (backports.lzma-0.0.6.tar.gz) = c9c97b10fb1941abdd896b9447e3745da59b32750b27c015ddb8eaf3654daaea
-SIZE (backports.lzma-0.0.6.tar.gz) = 34475
+TIMESTAMP = 1525714549
+SHA256 (backports.lzma-0.0.10.tar.gz) = 783029053a3b5eb8490fabff29773840dbf378e23a21fde3b720a90eaebeb9b8
+SIZE (backports.lzma-0.0.10.tar.gz) = 37242
