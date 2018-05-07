@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cachex
-PORTVERSION=	2.1.0
+PORTVERSION=	3.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
@@ -15,7 +15,8 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	whitfin
 
-MIX_BUILD_DEPS=	devel/elixir-eternal
+MIX_BUILD_DEPS=	devel/elixir-eternal \
+		devel/elixir-unsafe
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 MIX_REWRITE=	yes
 
