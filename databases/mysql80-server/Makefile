@@ -140,10 +140,6 @@ FEDERATED_SUB_LIST_OFF+=	FEDER=""
 
 .include <bsd.port.options.mk>
 
-.if !defined(CLIENT_ONLY) && ${OPSYS} == FreeBSD && ${OSVERSION} < 1003506
-BROKEN=		no __cxa_thread_atexit() support in FreeBSD libc < 10.4
-.endif
-
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 .else
