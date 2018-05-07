@@ -748,7 +748,7 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/elixir/compatibility-and-deprecations.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-480ffdc169.css
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-9bd040e5e5.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-0582cb69ce.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-981721abf5.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/elixir/fonts/icomoon.svg
 %%PORTDOCS%%%%DOCSDIR%%/elixir/fonts/icomoon.ttf
@@ -893,7 +893,7 @@ man/man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-480ffdc169.css
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-9bd040e5e5.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-5357d33337.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-4651b5ba74.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/fonts/icomoon.eot
 %%PORTDOCS%%%%DOCSDIR%%/mix/fonts/icomoon.svg
 %%PORTDOCS%%%%DOCSDIR%%/mix/fonts/icomoon.ttf
