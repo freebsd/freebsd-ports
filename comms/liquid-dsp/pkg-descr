@@ -1,0 +1,10 @@
+liquid-dsp is a free and open-source digital signal processing (DSP)
+library designed specifically for software-defined radios on embedded
+platforms. The aim is to provide a lightweight DSP library that does not
+rely on a myriad of external dependencies or proprietary and otherwise
+cumbersome frameworks. All signal processing elements are designed to be
+flexible, scalable, and dynamic, including filters, filter design,
+oscillators, modems, synchronizers, complex mathematical operations, and
+much more.
+
+WWW: http://liquidsdr.org
