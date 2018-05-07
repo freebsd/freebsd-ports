@@ -159,7 +159,7 @@ pre-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/xglockrc/ s|PROGRAM|DATA|' ${WRKSRC}/xglock/Makefile.in
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1003500
+.if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|/usr/games/fortune|/usr/bin/fortune|' ${WRKSRC}/modes/Makefile.in
 .endif
 
