@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20180506:
+AUTHOR: brnrd@FreeBSD.org
+
+  All USE_ and WANT_ variables for PHP have been removed and marked
+  UNSUPPORTED. Use USES= php:<feature> as a replacement.
+
+  USE_PHPIZE, USE_PHPEXT, USE_ZENDEXT, USE_PHP_BUILD,
+  WANT_PHP_CLI, WANT_PHP_CGI, WANT_PHP_MOD, WANT_PHP_WEB, WANT_PHP_EMB
+
 20180311:
 AUTHOR: brnrd@FreeBSD.org
 
