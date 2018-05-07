@@ -62,6 +62,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/action/hook.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/action/runner.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/action/warden.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/alias.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/batch_action.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/box.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/box_collection.rb
