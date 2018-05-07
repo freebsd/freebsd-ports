@@ -13,6 +13,8 @@ COMMENT=	HTTP client/server for asyncio
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to run
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multidict>0:www/py-multidict@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yarl>0:www/py-yarl@${FLAVOR} \
