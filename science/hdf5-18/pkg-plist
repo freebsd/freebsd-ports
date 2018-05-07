@@ -64,7 +64,7 @@ include/hdf5-18/H5IMpublic.h
 include/hdf5-18/H5Include.h
 include/hdf5-18/H5IntType.h
 include/hdf5-18/H5Ipublic.h
-%%FORTRAN%%include/hdf5-18/H5LaccProp.h
+include/hdf5-18/H5LaccProp.h
 include/hdf5-18/H5Library.h
 include/hdf5-18/H5Location.h
 include/hdf5-18/H5Lpublic.h
