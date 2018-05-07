@@ -1310,6 +1310,7 @@
     SUBDIR += kimwitu
     SUBDIR += kio-extras
     SUBDIR += kore
+    SUBDIR += kronosnet
     SUBDIR += ksql
     SUBDIR += kyra
     SUBDIR += kyua
