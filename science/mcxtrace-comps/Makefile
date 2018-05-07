@@ -3,7 +3,6 @@
 PORTNAME=	mcxtrace-comps
 DISTVERSION=	1.2
 CATEGORIES=	science
-#MASTER_SITES=	http://downloads.mcxtrace.org/mcxtrace-${DISTVERSION}/unix/mcxtrace-${DISTVERSION}-src/
 MASTER_SITES=	http://downloads.mcxtrace.org/mcxtrace-${DISTVERSION}/unix/mcxtrace-${DISTVERSION}-src/
 DISTNAME=	mcxtrace-comps-${DISTVERSION}-src
 
