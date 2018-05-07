@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	20170705
+PORTVERSION=	20180404
 CATEGORIES=	mail www
 MASTER_SITES=	http://snapshots.squirrelmail.org/ \
 	http://freebsd.uzsolt.hu/src/
-DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
+DISTNAME=	${PORTNAME}-${PORTVERSION}_0202-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	uzsolt@uzsolt.hu
