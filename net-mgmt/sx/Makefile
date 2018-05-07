@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 USES=		fuse gmake libtool pkgconfig sqlite
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" --prefix="${STAGE}${PREFIX}" \
+		LDFLAGS="-L${LOCALBASE}/lib" --prefix="${PREFIX}" \
 		--sysconfdir="${ETCDIR}" --mandir="${MANPREFIX}/man" \
 		--with-system-libs
 
@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=SXSERVER
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSXSERVER}
-CONFIGURE_ARGS+=--localstatedir="${STAGE}${PREFIX}/sxserver"
+CONFIGURE_ARGS+=--localstatedir="${PREFIX}/sxserver"
 PLIST_SUB+=	SXSERVER=""
 USE_RC_SUBR=	sxserver
 SUB_FILES=	pkg-message
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--disable-sxhttpd --disable-server
 PLIST_SUB+=	SXSERVER="@comment "
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1002000
+.if ${OPSYS} == FreeBSD
 PLIST_FILES+=	lib/sxclient/libsxf_aes256-20.so \
 		lib/sxclient/libsxf_aes256.so \
 		lib/sxclient/libsxf_aes256_dummy-00.so \
