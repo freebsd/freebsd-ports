@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
@@ -28,6 +28,8 @@ RUN_DEPENDS=	rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-rb-kqueue>=0.2.0:devel/rubygem-rb-kqueue \
 		rubygem-rest-client>=1.6.0:www/rubygem-rest-client \
 		rubygem-wdm>=0.1.0:devel/rubygem-wdm \
+		rubygem-win32-file>=0.8.1:sysutils/rubygem-win32-file \
+		rubygem-win32-file-security>=1.0.10:sysutils/rubygem-win32-file-security \
 		rubygem-winrm>=2.1:sysutils/rubygem-winrm \
 		rubygem-winrm-elevated>=1.1:sysutils/rubygem-winrm-elevated \
 		rubygem-winrm-fs>=1.0:sysutils/rubygem-winrm-fs \
