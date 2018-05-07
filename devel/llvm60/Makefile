@@ -273,10 +273,6 @@ MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSREL} == 10.3
-CFLAGS+=	-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1
-.endif
-
 .if ${ARCH} == "amd64"
 _COMPILER_RT_LIBS= \
 	libclang_rt.asan-preinit-x86_64.a \

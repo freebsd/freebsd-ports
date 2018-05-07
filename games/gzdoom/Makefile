@@ -40,12 +40,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${DATADIR}/${PORTNAME}.pk3 \
 		share/pixmaps/${PORTNAME}.xpm
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1004000
-BROKEN=		Fails to link due to lack of thread_local
-.endif
-
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 do-install:
@@ -54,4 +48,4 @@ do-install:
 	${INSTALL_DATA} ${CONFIGURE_WRKSRC}/${PORTNAME}.pk3 ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

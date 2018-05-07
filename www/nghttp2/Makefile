@@ -59,8 +59,6 @@ HPACK_BUILD_DEPENDS=	jansson>=2.5:devel/jansson
 HPACK_CONFIGURE_ENABLE=	hpack-tools
 HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| lib||' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|$$[({]top_builddir[})]/lib/libnghttp2.la|-lnghttp2|' ${WRKSRC}/*/Makefile.am
@@ -71,11 +69,6 @@ post-configure:
 	@${MKDIR} ${WRKSRC}/lib/.libs/
 	@${CP} ${LOCALBASE}/lib/libnghttp2.so* ${WRKSRC}/lib/.libs/
 	@cd ${WRKSRC}/lib/.libs/ && ${AR} x ${LOCALBASE}/lib/libnghttp2.a
-# Disable thread_local support for hosts without __cxa_thread_atexit()
-# See PR/192320 for details
-.if ${OPSYS} == FreeBSD && ((${OSVERSION} < 1003506) || (${OSVERSION} == 1100500))
-	@${REINPLACE_CMD} -e '/HAVE_THREAD_LOCAL/d' ${WRKSRC}/config.h
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/nghttpx/

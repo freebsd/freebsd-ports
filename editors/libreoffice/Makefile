@@ -279,16 +279,6 @@ MAKE_ENV+=	verbose=1
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD
-.if (${OSVERSION} >= 1200000 && ${OSVERSION} < 1200003) || \
-    (${OSVERSION} >= 1100500 && ${OSVERSION} < 1100501) || \
-    (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100122) || \
-    ${OSVERSION} < 1003506
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-vcl_inc_unx_gtk_gtkinst.hxx \
-		${PATCHDIR}/extrapatch-vcl_unx_gtk_gtkinst.cxx
-.endif
-.endif # FreeBSD
-
 .if ${COMPILER_TYPE} == "clang"
 CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unused-parameter
 .if ${COMPILER_VERSION} >= 36
