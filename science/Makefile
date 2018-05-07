@@ -105,6 +105,7 @@
     SUBDIR += mcstas
     SUBDIR += mcstas-comps
     SUBDIR += mcxtrace
+    SUBDIR += mcxtrace-comps
     SUBDIR += medit
     SUBDIR += meep
     SUBDIR += mei
