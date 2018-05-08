@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pacman
-PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTVERSION=	5.0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.archlinux.org/other/pacman/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://sources.archlinux.org/other/${PORTNAME}/ \
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Package manager from ArchLinux
