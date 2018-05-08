@@ -73,8 +73,8 @@ include/sunmatrix/sunmatrix_band.h
 include/sunmatrix/sunmatrix_dense.h
 include/sunmatrix/sunmatrix_sparse.h
 lib/libsundials_arkode.so
-lib/libsundials_arkode.so.%%SHLY1%%
-lib/libsundials_arkode.so.%%SHLY3%%
+lib/libsundials_arkode.so.2
+lib/libsundials_arkode.so.2.1.1
 lib/libsundials_cvode.so
 lib/libsundials_cvode.so.%%SHL1%%
 lib/libsundials_cvode.so.%%SHL3%%
@@ -85,8 +85,8 @@ lib/libsundials_ida.so
 lib/libsundials_ida.so.%%SHL1%%
 lib/libsundials_ida.so.%%SHL3%%
 lib/libsundials_idas.so
-lib/libsundials_idas.so.%%SHLY1%%
-lib/libsundials_idas.so.%%SHLY3%%
+lib/libsundials_idas.so.2
+lib/libsundials_idas.so.2.1.0
 lib/libsundials_kinsol.so
 lib/libsundials_kinsol.so.%%SHL1%%
 lib/libsundials_kinsol.so.%%SHL3%%
