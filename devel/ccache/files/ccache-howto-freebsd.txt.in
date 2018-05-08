@@ -6,7 +6,12 @@ To use ccache for ports, just add WITH_CCACHE_BUILD=yes to
 /etc/make.conf. The rest of this guide is for building
 /usr/src and other checkouts.
 
-To use ccache for base add the following to /etc/make.conf.
+To use ccache for base (11.0+) just add WITH_CCACHE_BUILD=yes
+to /etc/src.conf.  Refer to src.conf(5) for more information.
+
+-------------------------------------------------------------------------------
+
+For older releases, before 11.0, add the following to /etc/make.conf.
 You can replace cc and c++ with the compilers of your choice.
 (remember that only GCC and Clang can build world and kernel)
 
@@ -28,7 +33,7 @@ For csh/tcsh Add the following to /etc/csh.cshrc:
 For icc users:
  Add %%ICCPREFIX%% to CCACHE_PATH
 
---
+-------------------------------------------------------------------------------
 
 To use distcc:
 
@@ -52,15 +57,6 @@ reset PATH=$CCACHE_PATH and try again.
 
 Make sure you run 'ccache-update-links' after you install/uninstall
 additional compilers in order to create/remove compiler links.
-
-Clang will return a lot of 'unused argument' warnings: they are harmless.
-Just add this to /etc/make.conf if you want to hide them:
-.if ${CC:T} == "clang"
-CFLAGS+=	-Qunused-arguments
-.endif
-
-Any time you change CC/CXX you need to reinstall devel/libtool or you
-will run in to problems.
 
 --
 
