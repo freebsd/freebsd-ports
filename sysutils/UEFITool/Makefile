@@ -22,10 +22,7 @@ WRKSRC_SUBDIR=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-pre-install:
-	@${STRIP_CMD} ${WRKDIR}/.build/${PORTNAME}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/.build/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
