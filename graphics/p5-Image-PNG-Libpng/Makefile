@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		perl5
-USE_PERL5=	5.8.1+ configure
+USE_PERL5=	configure
 
 post-patch:
 	${REINPLACE_CMD} -e 's|#  *INC  *=>  *$$inc|INC => "-I${LOCALBASE}/include"|' \
