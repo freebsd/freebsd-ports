@@ -10,7 +10,7 @@ info/libidn-components.png
 lib/libidn.a
 lib/libidn.so
 lib/libidn.so.11
-lib/libidn.so.11.6.16
+lib/libidn.so.11.6.18
 libdata/pkgconfig/libidn.pc
 man/man1/idn.1.gz
 man/man3/idn_free.3.gz
@@ -81,6 +81,7 @@ share/emacs/site-lisp/punycode.el
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libidn.mo
