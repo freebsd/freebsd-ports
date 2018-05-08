@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lz4
-PORTVERSION=	1.8.1.2
+PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	archivers
@@ -14,26 +14,11 @@ COMMENT=	LZ4 compression library, lossless and very fast
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-#PATHFIX_MAKEFILEIN=	Makefile
-
-ALL_TARGET=	default		# don't remove this
-SO_VER=		${PORTVERSION:R}
-PLIST_SUB+=	SO_VER=${SO_VER} SO_VER_MAJ=${SO_VER:R:R}
-LIBDIR=		${PREFIX}/lib
-
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
-		-e '/^MANDIR :=/s|share/||'
-	@${REINPLACE_CMD} -e '/^all:/s/$$/ liblz4.pc/' \
-		${WRKSRC}/lib/Makefile
-	@${REINPLACE_CMD} -e '/^all:/s|fullbench.*||' \
-		${WRKSRC}/programs/Makefile
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lz4*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblz4.so.${SO_VER}
+MAKE_ARGS=	PREFIX="${PREFIX}" LIBDIR="${PREFIX}/lib" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		MANDIR="${MAN1PREFIX}/man"
 
 .include <bsd.port.mk>
