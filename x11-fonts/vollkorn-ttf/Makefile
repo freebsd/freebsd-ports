@@ -11,6 +11,7 @@ COMMENT=	Free and healthy typeface for bread and butter use
 
 LICENSE=	OFL11
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USES=		fonts zip
