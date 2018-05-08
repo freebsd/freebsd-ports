@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	cava
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
-COMMENT=	Console-based Audio Visualizer for ALSA, MPD, PulseAudio, and sndio
+COMMENT=	Console-based Audio Visualizer for MPD, PulseAudio, and sndio
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,8 +22,12 @@ CONFIGURE_ENV=	ac_cv_lib_asound_snd_pcm_open=no
 
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	PULSEAUDIO SNDIO
-OPTIONS_DEFAULT=PULSEAUDIO
+PLIST_FILES=	bin/cava
+PORTDOCS=	README.md
+PORTEXAMPLES=	config
+
+OPTIONS_DEFINE=	DOCS EXAMPLES PULSEAUDIO SNDIO
+OPTIONS_DEFAULT=PULSEAUDIO SNDIO
 
 PULSEAUDIO_CONFIGURE_ENV_OFF=	ac_cv_lib_pulse_simple_pa_simple_new=no
 PULSEAUDIO_LIB_DEPENDS=		libpulse-simple.so:audio/pulseaudio \
@@ -34,12 +38,15 @@ SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
 
 post-patch:
 	@${REINPLACE_CMD} '/^cava_font/d' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} '/<alloca.h>/d' ${WRKSRC}/cava.c
 
 pre-configure:
 	@${ECHO_CMD} ${DISTVERSION} > ${WRKSRC}/version
 
-post-install:
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example_files/config ${STAGEDIR}${EXAMPLESDIR}
 
