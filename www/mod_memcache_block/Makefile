@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_memcache_block
 PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	www
 DIST_SUBDIR=	apache2
 
