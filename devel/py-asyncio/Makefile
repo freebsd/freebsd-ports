@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
