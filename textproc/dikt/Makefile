@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	0.20161228
+DISTVERSION=	2s1
 PORTEPOCH=	1
 CATEGORIES=	textproc net kde
 MASTER_SITES=	https://bitbucket.org/dikt/code/downloads/
-DISTNAME=	${PORTNAME}-2s1
 
 MAINTAINER=	goran.tal@gmail.com
 COMMENT=	Dictionary for KDE
