@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdfpc
-DISTVERSION=	4.1.1
+DISTVERSION=	4.1.2
 CATEGORIES=	graphics
 DISTVERSIONPREFIX=	v
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 
 USE_GITHUB=	yes
 
-USES=		cmake gnome pkgconfig pathfix
+USES=		cmake gnome pkgconfig
 USE_GNOME=	gtk30
 USE_GSTREAMER1=	yes
 
