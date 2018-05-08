@@ -1,5 +1,5 @@
 Loook is a simple Python tool that searches for text strings in
-LibreOffice and OpenOffice.org files.
+LibreOffice, OpenOffice.org and OOXML files (e.g. docx, xlsx und pptx).
 
 AND, OR and phrase searches are supported. It doesn't create an index,
 but searching should be fast enough unless you have really many files.
