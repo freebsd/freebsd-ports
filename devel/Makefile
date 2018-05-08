@@ -4357,6 +4357,7 @@
     SUBDIR += py-canonicaljson
     SUBDIR += py-capstone
     SUBDIR += py-castellan
+    SUBDIR += py-cbor
     SUBDIR += py-cclib
     SUBDIR += py-cdg
     SUBDIR += py-celery
