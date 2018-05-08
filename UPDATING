@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180507:
+  AFFECTS: users of math/suitesparse who build it locally
+  AUTHOR: yuri@FreeBSD.org
+
+  The suitesparse needs to be uninstalled before math/suitesparse can be
+  correctly built. This is true for the version 5.2.0 and prior versions.
+
 20180505:
   AFFECTS: users of www/gitea
   AUTHOR: stb@lassitu.de
