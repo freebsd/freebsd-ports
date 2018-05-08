@@ -30,10 +30,10 @@ ASM_DESC=	Optimized assembler routines (requires MMX on x86)
 .include <bsd.port.options.mk>
 
 # ASM needs clang 3.8+
-# depend on llvm39 since it's more likely to be installed already than 3.8
+# depend on llvm60 since it's more likely to be installed already than 3.8
 .if ${OSVERSION} < 1100101 && ${PORT_OPTIONS:MASM}
-BUILD_DEPENDS+=	clang39:devel/llvm39
-CC=		clang39
+BUILD_DEPENDS+=	clang60:devel/llvm60
+CC=		clang60
 .endif
 
 .include <bsd.port.mk>
