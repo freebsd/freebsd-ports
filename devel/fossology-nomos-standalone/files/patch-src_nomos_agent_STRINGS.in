@@ -1,0 +1,105 @@
+commit 9a138091eb231c1cf552e41f8d35d4f4e12eb985
+Author: Dmitry Marakasov <amdmi3@amdmi3.ru>
+Date:   Sat Apr 28 20:27:43 2018 +0300
+
+    fix(nomos): fix posix incomparible regular expressions
+
+diff --git src/nomos/agent/STRINGS.in src/nomos/agent/STRINGS.in
+index 706dcabca..c64f75b64 100644
+--- src/nomos/agent/STRINGS.in
++++ src/nomos/agent/STRINGS.in
+@@ -1299,7 +1299,7 @@
+ #####
+ %ENTRY%	_LT_COMMERCIAL_5
+ %KEY%	"license"
+-%STR%	"((may|can)|( be|)) used? (this file |)in accordance with the commercial license agreement"
++%STR%	"((may|can)|( be)?) used? (this file )?in accordance with the commercial license agreement"
+ #####
+ %ENTRY%	_LT_COMMERCIAL_6
+ %KEY%	"license"
+@@ -1652,7 +1652,7 @@
+ #
+ %ENTRY%	_LT_DUAL_LICENSE_28
+ %KEY%	"licen[cs]"
+-%STR%	"either under the terms of =SOME= license (version|) =SOME= or at your option under =SOME= license"
++%STR%	"either under the terms of =SOME= license (version)? =SOME= or at your option under =SOME= license"
+ #
+ %ENTRY%	_LT_DUAL_LICENSE_29
+ %KEY%	"licen[cs]"
+@@ -2321,7 +2321,7 @@
+ #
+ %ENTRY% _LT_FREE_94
+ %KEY% "permi[st]"
+-%STR% "permission is granted to r?e?-?distribute =FEW= in any (manner|way) provid(ed|ing) (that |)this (copyright |)notice (remains intact|(is (not modified|acknowledged|not removed)))"
++%STR% "permission is granted to r?e?-?distribute =FEW= in any (manner|way) provid(ed|ing) (that )?this (copyright )?notice (remains intact|(is (not modified|acknowledged|not removed)))"
+ #
+ %ENTRY% _LT_FREE_95
+ %KEY% "distribut"
+@@ -3891,7 +3891,7 @@
+ #
+ %ENTRY%	_LT_MIT_4
+ %KEY%	"permi[st]"
+-%STR%	"permission to use copy modify and/?o?r? distribute this (software|program) for any purpose (with or|and) without fee is hereby granted provided that (the above|this) copyright (notice|) and (this|) permission notice appear (in|on) all copies"
++%STR%	"permission to use copy modify and/?o?r? distribute this (software|program) for any purpose (with or|and) without fee is hereby granted provided that (the above|this) copyright (notice)? and (this)? permission notice appear (in|on) all copies"
+ #
+ %ENTRY%	_LT_MIT_5
+ %KEY%	"permi[st]"
+@@ -6229,7 +6229,7 @@ k
+ #
+ %ENTRY%	_LT_SEE_OTHER_11
+ %KEY%	"(Â©|\(c\)|copyright|\<c\>[^+:]|&copy)"
+-%STR%	"see =FEW= for (the |)copyright (information|notice)"
++%STR%	"see =FEW= for (the )?copyright (information|notice)"
+ #
+ %ENTRY%	_LT_SEE_OTHER_12
+ %KEY%	"copyright"
+@@ -6249,7 +6249,7 @@ k
+ #
+ %ENTRY% _LT_SEE_OTHER_16
+ %KEY% "copyright"
+-%STR% "for conditions? =FEW= and use see (the |)copyright notice"
++%STR% "for conditions? =FEW= and use see (the )?copyright notice"
+ #
+ %ENTRY% _LT_SEE_OTHER_17
+ %KEY% "copyright"
+@@ -8264,22 +8264,22 @@ k
+ %ENTRY%	_TITLE_MPL10
+ %KEY%	"\<([mn]pl|mozilla|netscape)\>"
+ #%STR%	"mozilla public licen[cs]e (1\.?0|(\<mpl\> |v|version )1\.?0)"
+-%STR%	"mozilla public licen[cs]e (1\.?0|(mpl |)((v\.? ?|version )1\.?0))"
++%STR%	"mozilla public licen[cs]e (1\.?0|(mpl )?((v\.? ?|version )1\.?0))"
+ #
+ %ENTRY%	_TITLE_MPL11
+ %KEY%	"\<([mn]pl|mozilla|netscape)\>"
+ #%STR%	"mozilla public licen[cs]e (1\.?1|(\<mpl\> |v|version )1\.?1)"
+-%STR%	"mozilla public licen[cs]e (1\.?1|(mpl |)((v\.? ?|version )1\.?1))"
++%STR%	"mozilla public licen[cs]e (1\.?1|(mpl )?((v\.? ?|version )1\.?1))"
+ #
+ %ENTRY%	_TITLE_MPL11_OR_LATER
+ %KEY%	"licen[cs]"
+ #%STR%	"mozilla public licen[cs]e (1\.?1|(\<mpl\> |v|version )1\.?1) =SOME= or =SOME= (newer|later|subsequent|more recent)"
+-%STR%	"mozilla public licen[cs]e (1\.?1|(mpl |)((v\.? ?|version )1\.?1)) =SOME= or =SOME= (newer|later|subsequent|more recent)"
++%STR%	"mozilla public licen[cs]e (1\.?1|(mpl )?((v\.? ?|version )1\.?1)) =SOME= or =SOME= (newer|later|subsequent|more recent)"
+ #
+ %ENTRY%	_TITLE_MPL20
+ %KEY%	"\<([mn]pl|mozilla|netscape)\>"
+ #%STR%	"mozilla public licen[cs]e (2\.?0|(\<mpl\> |v\.? ?|version )2\.?0)"
+-%STR%	"mozilla public licen[cs]e (2\.?0|(mpl |)((v\.? ?|version )2\.?0))"
++%STR%	"mozilla public licen[cs]e (2\.?0|(mpl )?((v\.? ?|version )2\.?0))"
+ #
+ %ENTRY%	_TITLE_MPL20_EXCEPTION
+ %KEY%	"licen[cs]"
+@@ -9083,11 +9083,11 @@ k
+ #
+ %ENTRY%	_PHR_COPYLEFT_NEXT_030
+ %KEY%	"licen[cs]"
+-%STR%	"(r?e?distributed|available|licensed) under copyleft-next( |-)0\.?3\.?0 (licen[cs]e|)"
++%STR%	"(r?e?distributed|available|licensed) under copyleft-next( |-)0\.?3\.?0 (licen[cs]e)?"
+ #
+ %ENTRY%	_PHR_COPYLEFT_NEXT_031
+ %KEY%	"licen[cs]"
+-%STR%	"(r?e?distributed|available|licensed) under copyleft-next( |-)0\.?3\.?1 (licen[cs]e|)"
++%STR%	"(r?e?distributed|available|licensed) under copyleft-next( |-)0\.?3\.?1 (licen[cs]e)?"
+ #
+ %ENTRY%	_PHR_EULA
+ %KEY%	"\<(end[ -]user|eula)\>"
