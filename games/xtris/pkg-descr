@@ -4,5 +4,3 @@ players, for the X Window system.
 xtris is a true client/server game (as opposed to a centralized game
 managing multiple displays), which makes it particularily responsive and
 bandwith-effective.
-
-WWW: http://www.iagora.com/~espel/xtris/xtris.html
