@@ -1,0 +1,5 @@
+This is a Python Universal Binary JSON encoder/decoder based on the draft-12
+specification.
+
+WWW: https://github.com/Iotic-Labs/py-ubjson
+WWW: https://pypi.org/project/py-ubjson/
