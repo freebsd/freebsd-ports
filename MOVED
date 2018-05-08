@@ -10178,4 +10178,5 @@ lang/py-clojure_py||2018-04-30|Has expired: Upstream disappeared and it does not
 textproc/rubygem-escape_utils-rails4|textproc/rubygem-escape_utils|2018-04-30|Has expired: Use textproc/rubygem-escape_utils instead
 databases/rubygem-seed-fu236|databases/rubygem-seed-fu|2018-05-01|Has expired: Obsoleted by update of www/gitlab. Please use databases/rubygem-seed-fu
 security/polarssl13||2018-05-01|Has expired: has reached end of life
-devel/tesla/||2018-05-06|Outdated and almost certainly unused
+devel/tesla||2018-05-06|Outdated and almost certainly unused
+devel/llvm39||2018-05-08|Obsolete, no remaining dependencies
