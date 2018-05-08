@@ -1,19 +1,27 @@
 *****************************************************************************
 
-If you are upgrading znc from a version prior to 1.0, please be aware that
-znc will modify your configuration file to incorporate support for new
-functionality.
+# Configuration
 
-Please visit the following URL for more information:
+ Configs written before ZNC 0.206 can't be read anymore!
+  
+ To generate a basic configuration file, run znc --makeconf after installation.
+ It is NOT a good idea to create a new config file manually.
 
-http://wiki.znc.in/ChangeLog/1.0
+ For generate your config file using znc user, execute:
 
-*****************************************************************************
+   su -m znc -c 'znc -d %%ETCDIR%% --makeconf'
+   or
+   sudo -u znc znc -d %%ETCDIR%% --makeconf
 
-For generate your config file using znc user, execute:
+ http://wiki.znc.in/Configuration
 
-su -m znc -c 'znc -d %%ETCDIR%% --makeconf'
-or
-sudo -u znc znc -d %%ETCDIR%% --makeconf
+# Modules
+
+ If you upgrade your ZNC version you must recompile all your external modules,
+ ZNC ABI is not stable.
+
+   znc-buildmod <modulename>.cpp
+
+ http://wiki.znc.in/Compiling_modules
 
 *****************************************************************************

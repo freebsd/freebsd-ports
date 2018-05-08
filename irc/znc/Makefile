@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	znc
-PORTVERSION=	1.6.6
-PORTREVISION=	2
+PORTVERSION=	1.7.0
 CATEGORIES=	irc ipv6
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/
@@ -46,7 +45,6 @@ CYRUS_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 DEBUG_CONFIGURE_ON=	--enable-debug
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 OPENSSL_CONFIGURE_OFF=	--disable-openssl
-OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 OPENSSL_USES=	ssl
 PERL_BUILD_DEPENDS=	swig30>=3.0.0:devel/swig30
 PERL_CONFIGURE_ENABLE=	perl
@@ -55,6 +53,7 @@ PERL_USE=	perl5=build,run
 PERL_USES=	perl5
 PYTHON_BUILD_DEPENDS=	swig30>=3.0.0:devel/swig30
 PYTHON_CONFIGURE_ON=	--enable-python=python-${PYTHON_VER} --enable-swig
+PYTHON_IMPLIES=	CHARSET
 PYTHON_USE=	perl5=build
 PYTHON_USES=	perl5 python:3.4+
 TCL_CONFIGURE_ENABLE=	tcl
