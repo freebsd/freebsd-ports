@@ -11,6 +11,9 @@ MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/ \
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Audio compression codec library
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libogg.so:audio/libogg
 
 USES=		libtool pathfix tar:xz
