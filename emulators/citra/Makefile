@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20180502
+PORTVERSION=	s20180506
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -17,6 +17,8 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/license.txt
 LICENSE_FILE_MIT=	${WRKSRC}/externals/enet/LICENSE
 LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 
+BROKEN_FreeBSD_10=	libc++ does not support C++17 features e.g., weak_from_this
+
 BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs
 
 # backend_x64/hostloc.h:93:8: fatal error: no type named 'Reg64' in namespace 'Xbyak'
@@ -25,7 +27,7 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	ca3b82ca
+GH_TAGNAME=	590a09d0
 GH_TUPLE=	citra-emu:ext-libressl-portable:cbb1dca:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:d1d4705:dynarmic/externals/dynarmic \
