@@ -117,6 +117,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin/v2/provisioner.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin/v2/push.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin/v2/synced_folder.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin/v2/trigger.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/registry.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/shared_helpers.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/ui.rb
@@ -547,10 +548,12 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/config/push.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/config/ssh.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/config/ssh_connect.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/config/trigger.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/config/vagrant.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/config/vm.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/config/vm_provisioner.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/config/vm_subvm.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/config/vm_trigger.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/kernel_v2/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/docker/action.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/build.rb
@@ -774,6 +777,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/docker/cap/linux/docker_installed.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/docker/cap/redhat/docker_install.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/docker/cap/redhat/docker_start_service.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/docker/cap/windows/docker_daemon_running.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/docker/client.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/docker/config.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/docker/installer.rb
