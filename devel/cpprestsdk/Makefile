@@ -20,5 +20,6 @@ GH_ACCOUNT=	Microsoft
 USES=		cmake compiler:c++11-lib ssl
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	Release
+CMAKE_OFF=	BUILD_SAMPLES BUILD_TESTS
 
 .include <bsd.port.mk>
