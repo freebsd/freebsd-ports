@@ -5,4 +5,4 @@ The format of the database is optimised for ease of rendering
 by mapnik. It may be less suitable for other general purpose
 processing.
 
-WWW: http://wiki.openstreetmap.org/wiki/Osm2pgsql
+WWW: https://wiki.openstreetmap.org/wiki/Osm2pgsql
