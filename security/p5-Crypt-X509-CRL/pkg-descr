@@ -1,0 +1,5 @@
+Crypt::X509::CRL is an object oriented X.509 certificate
+revocation list parser with numerous methods for directly
+extracting information from certificate revocation lists
+
+WWW: http://search.cpan.org/dist/Crypt-X509-CRL/
