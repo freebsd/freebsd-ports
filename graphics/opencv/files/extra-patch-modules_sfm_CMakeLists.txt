@@ -1,0 +1,40 @@
+--- modules/sfm/CMakeLists.txt.orig	2015-12-17 20:11:31.000000000 +0300
++++ modules/sfm/CMakeLists.txt	2016-10-10 18:28:05.556797000 +0300
+@@ -1,25 +1,30 @@
+ set(the_description "SFM algorithms")
++set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+ 
+ 
+ ### LIBMV LIGHT EXTERNAL DEPENDENCIES ###
+ 
+ find_package(Gflags QUIET)
+-find_package(Ceres QUIET)
+-if(NOT Ceres_FOUND)  # Looks like Ceres find glog on the own, so separate search isn't necessary
++#find_package(Ceres QUIET)
++#if(NOT Ceres_FOUND)  # Looks like Ceres find glog on the own, so separate search isn't necessary
+   find_package(Glog QUIET)
+-endif()
++#endif()
+ 
+ if((gflags_FOUND OR GFLAGS_FOUND) AND (glog_FOUND OR GLOG_FOUND))
+   set(_fname "${CMAKE_CURRENT_BINARY_DIR}/test_sfm_deps.cpp")
+   file(WRITE "${_fname}" "#include <glog/logging.h>\n#include <gflags/gflags.h>\nint main() { (void)(0); return 0; }\n")
+-  try_compile(SFM_DEPS_OK "${CMAKE_BINARY_DIR}" "${_fname}"
+-      CMAKE_FLAGS "-DINCLUDE_DIRECTORIES:STRING=${GLOG_INCLUDE_DIRS};${GFLAGS_INCLUDE_DIRS}"
+-      LINK_LIBRARIES ${GLOG_LIBRARIES} ${GFLAGS_LIBRARIES}
+-      OUTPUT_VARIABLE OUTPUT
++  try_compile(SFM_DEPS_OK "${CMAKE_CURRENT_BINARY_DIR}" "${_fname}"
++      CMAKE_FLAGS "-DINCLUDE_DIRECTORIES:STRING=${GLOG_INCLUDE_DIRS};${GFLAGS_INCLUDE_DIRS} -DLINK_LIBRARIES:STRING=${GLOG_LIBRARIES};${GFLAGS_LIBRARIES}"
+   )
+   file(REMOVE "${_fname}")
+   message(STATUS "Checking SFM deps... ${SFM_DEPS_OK}")
+ else()
++  if(NOT gflags_FOUND AND NOT GFLAGS_FOUND)
++    message(STATUS "gflags not found")
++  endif()
++  if(NOT glog_FOUND AND NOT GLOG_FOUND)
++    message(STATUS "glog not found")
++  endif()
+   set(SFM_DEPS_OK FALSE)
+ endif()
+ 

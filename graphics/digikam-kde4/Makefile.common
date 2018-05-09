@@ -6,7 +6,6 @@
 #	graphics/digikam-kde4-l10n
 #	graphics/kipi-plugin-*
 #	graphics/kipi-plugins-kde4
-#	graphics/libkface
 #	graphics/libkipiplugins
 # These ports now lead independent lives:
 #	astro/libkgeomap-kde4 (part of KDE Applications)

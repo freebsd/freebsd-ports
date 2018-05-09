@@ -33,7 +33,7 @@ PORTREVISION=	0
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=	-plugins-opencv
 LIB_DEPENDS+=	libopencv_core.so:graphics/opencv-core \
-		libopencv_legacy.so:graphics/opencv
+		libopencv_video.so:graphics/opencv
 FREI0R_PLUGINS=	facebl0r facedetect
 
 CMAKE_ARGS+=	-DWITHOUT_OPENCV:BOOL=OFF \

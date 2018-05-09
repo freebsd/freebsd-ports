@@ -14,7 +14,7 @@ COMMENT=	GREYC's Magic Image Converter
 
 LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick \
 		libIlmImf.so:graphics/OpenEXR \
-		libopencv_legacy.so:graphics/opencv \
+		libopencv_video.so:graphics/opencv \
 		libMagick++-6.so:graphics/ImageMagick \
 		libavcodec.so:multimedia/ffmpeg \
 		libfftw3.so:math/fftw3 \

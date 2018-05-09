@@ -12,7 +12,7 @@ COMMENT=	Simple library for detecting objects in pictures
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
+LIB_DEPENDS=	libopencv_video.so:graphics/opencv
 
 USE_RUBY=	yes
 USES=		gem pkgconfig

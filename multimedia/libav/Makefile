@@ -104,7 +104,7 @@ JACK_CONFIGURE_OFF=		--disable-indev=jack
 LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=		libmp3lame
 
-OPENCV_LIB_DEPENDS=		libopencv_gpu.so:graphics/opencv
+OPENCV_LIB_DEPENDS=		libopencv_video.so:graphics/opencv
 OPENCV_CONFIGURE_ENABLE=	libopencv
 
 OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
