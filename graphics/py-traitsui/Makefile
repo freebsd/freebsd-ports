@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	traitsui
-PORTVERSION=	5.1.0
+PORTVERSION=	6.0.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ LICENSE_FILE_EPL=	${WRKSRC}/image_LICENSE_Eclipse.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apptools>=4.3.0:devel/py-apptools@${FLAVOR}
 
-USES=		python:-2.7
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
