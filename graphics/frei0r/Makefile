@@ -29,7 +29,7 @@ USES+=	localbase
 .endif
 
 .if defined(BUILDING_FREI0R_OPENCV)
-PORTREVISION=	0
+PORTREVISION=	1
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=	-plugins-opencv
 LIB_DEPENDS+=	libopencv_core.so:graphics/opencv-core \
