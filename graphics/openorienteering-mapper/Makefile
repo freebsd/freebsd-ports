@@ -12,8 +12,6 @@ COMMENT=	Map drawing program from OpenOrienteering
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_10=	fails to compile src/core/map.cpp:1118: no matching member function for call to 'applyOnAllObjects'
-
 LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
 		libproj.so:graphics/proj
 
