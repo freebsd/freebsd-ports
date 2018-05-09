@@ -1,3 +1,3 @@
-TIMESTAMP = 1523543134
-SHA256 (oslo.log-3.38.0.tar.gz) = b7070c3e5f1453d02bd0e50c1cb3a041ce3898ba5dedde031f146c872630ffd8
-SIZE (oslo.log-3.38.0.tar.gz) = 84059
+TIMESTAMP = 1525895114
+SHA256 (oslo.log-3.38.1.tar.gz) = c374a64832a2e78b0b8eaa2b015a6cfc1c88777a508d5c27816d6e06660c9e81
+SIZE (oslo.log-3.38.1.tar.gz) = 83543
