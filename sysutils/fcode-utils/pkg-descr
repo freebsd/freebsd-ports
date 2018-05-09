@@ -1,0 +1,8 @@
+A set of utilities to process FCODE, OpenFirmware's byte code. This
+includes:
+
+- the tokenizer toke,
+- the detokenizer detok,
+- and a PCI rom header utility.
+
+WWW: https://www.openfirmware.info/FCODE_suite
