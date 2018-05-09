@@ -34,16 +34,15 @@ CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1" \
 		AS_FOR_TARGET=/usr/bin/as \
 		LD_FOR_TARGET=/usr/bin/ld \
 		NM_FOR_TARGET=/usr/bin/nm
-TARGET_ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
-GCC_TARGET=	${TARGET_ARCH}-unknown-${OPSYS:tl}${OSREL}
+GCC_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 USES=	gmake libtool tar:bzip2 makeinfo
-PLIST_SUB=	TARGETARCH=${TARGET_ARCH} \
+PLIST_SUB=	TARGETARCH=${ARCH} \
 		OPSYS=${OPSYS:tl} \
 		GCC_TARGET=${GCC_TARGET} \
 		GCC_VERSION=${PORTVERSION}
 
-TARGET_ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
 EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/freebsd-format-extensions
+EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/patch-gcc-freebsd-mips
 
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
@@ -52,11 +51,25 @@ CONFIGURE_ARGS+=	\
 		--enable-languages=c,c++ \
 		--disable-nls \
 		--without-headers \
+		--with-gxx-include-dir=/usr/include/c++/v1/ \
 		--with-build-sysroot=${CROSS_SYSROOT} \
 		-with-pkgversion="GNU Collection for FreeBSD"
 
 ALL_TARGET?=	all-gcc
 INSTALL_TARGET?=	install-gcc
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Mmips*}
+PLIST_SUB+=	MIPS=""
+.else
+PLIST_SUB+=	MIPS="@comment "
+.endif
+.if ${ARCH:Mpowerpc*}
+PLIST_SUB+=	POWERPC=""
+.else
+PLIST_SUB+=	POWERPC="@comment "
+.endif
 
 post-extract:
 	cd ${WRKSRC}; ${LN} -sf ../mpfr-3.1.6 mpfr ; \
@@ -66,6 +79,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBSTDCXX/ s/stdc\+\+/c\+\+/g ' \
 		${WRKSRC}//gcc/cp/g++spec.c
+	@${REINPLACE_CMD} -e '/LOCAL_INCLUDE_DIR/ d ' \
+		${WRKSRC}//gcc/Makefile.in
 
 post-install:
 	${MV} ${STAGEDIR}/usr/bin/gcov-tool ${STAGEDIR}/usr/bin/${GCC_TARGET}-gcov-tool ; \
@@ -81,5 +96,6 @@ post-install:
 	${LN} -sf ${GCC_TARGET}-gcc  ${STAGEDIR}/usr/bin/cc ; \
 	${LN} -sf ${GCC_TARGET}-gcc.1.gz ${STAGEDIR}/${MANDIR}1/cc.1.gz
 	${RM} -r ${STAGEDIR}/usr/share/info
+	${RM} -r ${STAGEDIR}/usr/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
 
 .include <bsd.port.mk>
