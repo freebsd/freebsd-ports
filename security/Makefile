@@ -638,6 +638,7 @@
     SUBDIR += p5-Crypt-UnixCrypt
     SUBDIR += p5-Crypt-UnixCrypt_XS
     SUBDIR += p5-Crypt-X509
+    SUBDIR += p5-Crypt-X509-CRL
     SUBDIR += p5-Crypt-XTEA
     SUBDIR += p5-Crypt-xDBM_File
     SUBDIR += p5-CryptX
