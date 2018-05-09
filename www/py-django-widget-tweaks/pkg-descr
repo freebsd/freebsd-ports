@@ -1,0 +1,4 @@
+Tweak the form field rendering in templates, not in python-level form
+definitions. CSS classes and HTML attributes can be altered. 
+
+WWW: https://github.com/jazzband/django-widget-tweaks

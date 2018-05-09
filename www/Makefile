@@ -1618,6 +1618,7 @@
     SUBDIR += py-django-tinymce
     SUBDIR += py-django-treebeard
     SUBDIR += py-django-voting
+    SUBDIR += py-django-widget-tweaks
     SUBDIR += py-django111
     SUBDIR += py-django18
     SUBDIR += py-django20
