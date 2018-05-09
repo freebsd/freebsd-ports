@@ -19,7 +19,7 @@ LICENSE_FILE_EPL=	${WRKSRC}/image_LICENSE_Eclipse.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apptools>=4.3.0:devel/py-apptools@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
