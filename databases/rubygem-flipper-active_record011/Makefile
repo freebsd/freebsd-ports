@@ -6,7 +6,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	011
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	ActiveRecord adapter for Flipper
 
 LICENSE=	MIT

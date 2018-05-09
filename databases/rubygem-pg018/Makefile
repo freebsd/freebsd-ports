@@ -6,7 +6,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	018
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby interface to PostgreSQL library
 
 LICENSE=	BSD2CLAUSE RUBY

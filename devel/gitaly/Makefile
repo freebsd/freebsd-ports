@@ -5,7 +5,7 @@ DISTVERSION=	0.91.0
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Smart reverse proxy for GitLab
 
 LICENSE=	MIT

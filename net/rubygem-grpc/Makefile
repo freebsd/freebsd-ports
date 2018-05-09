@@ -5,7 +5,7 @@ PORTVERSION=	1.10.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby implementation of gRPC
 
 LICENSE=	BSD3CLAUSE

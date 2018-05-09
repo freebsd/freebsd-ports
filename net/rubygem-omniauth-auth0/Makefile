@@ -6,7 +6,7 @@ PORTVERSION=	2.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Authentication broker supporting different identity providers
 
 LICENSE=	MIT

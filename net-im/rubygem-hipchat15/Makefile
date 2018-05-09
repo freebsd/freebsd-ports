@@ -6,7 +6,7 @@ CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	15
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby library to interact with HipChat
 
 LICENSE=	MIT

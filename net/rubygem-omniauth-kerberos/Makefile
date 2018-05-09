@@ -5,7 +5,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	OmniAuth strategy for Kerberos
 
 LICENSE=	MIT

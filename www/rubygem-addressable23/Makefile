@@ -6,7 +6,7 @@ CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	23
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Replacement for the URI implementation
 
 LICENSE=	APACHE20

@@ -6,7 +6,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	14
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Authentication broker supporting different identity providers
 
 LICENSE=	MIT

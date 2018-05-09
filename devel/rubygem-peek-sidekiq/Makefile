@@ -5,7 +5,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Provide a peek into the Sidekiq calls made
 
 LICENSE=	MIT

@@ -6,7 +6,7 @@ PORTVERSION=	10.6.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
 
 LICENSE=	MIT

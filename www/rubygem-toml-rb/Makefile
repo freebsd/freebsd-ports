@@ -5,7 +5,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	TOML parser using Citrus parsing library
 
 LICENSE=	MIT

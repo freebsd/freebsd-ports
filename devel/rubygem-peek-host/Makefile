@@ -5,7 +5,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Take a peek into the host which served your Rails request
 
 LICENSE=	MIT

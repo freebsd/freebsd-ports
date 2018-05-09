@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Implement memory-mapped file objects for Ruby 2.x
 
 LICENSE=	RUBY
