@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Azure OAuth2 Strategy for OmniAuth
 
 LICENSE=	MIT

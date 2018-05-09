@@ -6,7 +6,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	10
 
-MAINTAINER=	mfechner@freebsd.org
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Allows nested hashes to be treated in a recursive fashion
 
 LICENSE=	MIT

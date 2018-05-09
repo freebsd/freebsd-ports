@@ -7,7 +7,7 @@ CATEGORIES=	devel
 
 LICENSE=	MIT
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	GitLab Shell handles git commands for GitLab
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \

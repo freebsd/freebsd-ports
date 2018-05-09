@@ -5,7 +5,7 @@ PORTVERSION=	0.3.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Shows you lines of code that are slow
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ PORTVERSION=	1.3.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Provide Ruby core source files for C extensions that need them
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ PORTVERSION=	2.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Form builder using Twitter Bootstrap 3+
 
 LICENSE=	MIT

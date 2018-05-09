@@ -6,7 +6,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	096
 
-MAINTAINER=	mfechner@freebsd.org
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Protobuf specifications and client libraries for Gitaly
 
 LICENSE=	MIT

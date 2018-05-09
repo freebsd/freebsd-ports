@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/drush-ops/drush/releases/download/${DISTVERSION
 DISTNAME=	drush
 EXTRACT_SUFX=	.phar
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Drupal command line and scripting interface
 
 LICENSE=	GPLv2+

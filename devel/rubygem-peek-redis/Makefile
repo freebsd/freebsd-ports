@@ -5,7 +5,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Provide a peek into the Redis calls made
 
 LICENSE=	MIT

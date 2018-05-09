@@ -5,7 +5,7 @@ PORTNAME=	gitlab-workhorse
 PORTVERSION=	4.0.0
 CATEGORIES=	www
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Smart reverse proxy for GitLab
 
 LICENSE=	MIT

@@ -6,7 +6,7 @@ CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	19
 
-MAINTAINER=	idefix@fechner.net
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Improve the rendering of HTML emails
 
 LICENSE=	MIT
