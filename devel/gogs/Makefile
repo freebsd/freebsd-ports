@@ -3,6 +3,7 @@
 PORTNAME=	gogs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.43
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	dg@syrec.org
@@ -12,7 +13,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	go:lang/go
-RUN_DEPENDS=	git:devel/git
+RUN_DEPENDS=	git:devel/git \
+		bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gogits
