@@ -55,6 +55,7 @@ man/man3/FcConfigGetRescanInterval.3.gz
 man/man3/FcConfigGetSysRoot.3.gz
 man/man3/FcConfigHome.3.gz
 man/man3/FcConfigParseAndLoad.3.gz
+man/man3/FcConfigParseAndLoadFromMemory.3.gz
 man/man3/FcConfigReference.3.gz
 man/man3/FcConfigSetCurrent.3.gz
 man/man3/FcConfigSetRescanInterval.3.gz
@@ -152,6 +153,7 @@ man/man3/FcPatternFilter.3.gz
 man/man3/FcPatternFormat.3.gz
 man/man3/FcPatternGet-Type.3.gz
 man/man3/FcPatternGet.3.gz
+man/man3/FcPatternGetWithBinding.3.gz
 man/man3/FcPatternHash.3.gz
 man/man3/FcPatternPrint.3.gz
 man/man3/FcPatternReference.3.gz
