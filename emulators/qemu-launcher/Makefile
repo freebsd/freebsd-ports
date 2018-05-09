@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK front-end to Qemu
 
+DEPRECATED=	Upstream is gone
+EXPIRATION_DATE=	2018-05-31
+
 RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-Glade2>=0:x11-toolkits/p5-Glade2 \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext
