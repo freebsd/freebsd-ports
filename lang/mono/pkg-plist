@@ -2642,3 +2642,4 @@ share/locale/pt_BR/LC_MESSAGES/mcs.mo
 %%DATADIR%%-2.0/mono/cil/cil-opcodes.xml
 %%DATADIR%%-2.0/mono/profiler/mono-profiler-log.suppression
 @postexec %%PREFIX%%/bin/cert-sync --quiet %%LOCALBASE%%/share/certs/ca-root-nss.crt
+@postunexec rm -rf %%LOCALBASE%%/mono
