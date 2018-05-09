@@ -1,4 +1,0 @@
-Usage:
-$ spork -new                  # Generate a new slideshow in an empty directory
-$ spork -make                 # Turn the text into html slides
-$ spork -start                # Start the show in a browser

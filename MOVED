@@ -10180,3 +10180,4 @@ databases/rubygem-seed-fu236|databases/rubygem-seed-fu|2018-05-01|Has expired: O
 security/polarssl13||2018-05-01|Has expired: has reached end of life
 devel/tesla||2018-05-06|Outdated and almost certainly unused
 devel/llvm39||2018-05-08|Obsolete, no remaining dependencies
+textproc/p5-Spork||2018-05-09|Removed, depends on expired www/p5-Kwiki
