@@ -309,6 +309,7 @@
     SUBDIR += farbot
     SUBDIR += fastest_cvsup
     SUBDIR += fatback
+    SUBDIR += fcode-utils
     SUBDIR += fconfig
     SUBDIR += fcron
     SUBDIR += fd
