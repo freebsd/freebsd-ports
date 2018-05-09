@@ -13,7 +13,7 @@ COMMENT=	Lightweight GTK+ clipboard manager
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		localbase pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 pango
 USE_XORG=	x11
@@ -21,8 +21,6 @@ CONFIGURE_ARGS+=--disable-appindicator
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-lgio-2.0
 
 OPTIONS_DEFINE=	DOCS NLS
