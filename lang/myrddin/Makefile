@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	myrddin
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	lang
 MASTER_SITES=	http://myrlang.org/releases/
 
@@ -19,9 +19,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix "${PREFIX}"
 TEST_TARGET=	check
 WRKSRC=	${WRKDIR}/mc
-
-# ld: error: <internal>: section sh_addralign is not a power of 2
-LLD_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DEBUG VIM
 OPTIONS_DEFAULT=	VIM
