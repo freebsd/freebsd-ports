@@ -5,7 +5,6 @@ PROG=		msiklm
 SRCS=		src/main.c src/msiklm.c 
 CFLAGS+=	-Wall -W -D_REENTRANT
 LDADD=		-lhidapi
-# Change to MK_MAN=no after 10.3 support is dropped
-NO_MAN=		yes
+MK_MAN=		no
 
 .include <bsd.prog.mk>
