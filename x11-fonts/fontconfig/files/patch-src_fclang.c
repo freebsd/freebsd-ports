@@ -1,4 +1,4 @@
---- src/fclang.c.orig	2014-01-20 08:14:20 UTC
+--- src/fclang.c.orig	2017-09-21 04:44:27 UTC
 +++ src/fclang.c
 @@ -183,6 +183,7 @@ FcLangNormalize (const FcChar8 *lang)
  {
@@ -8,7 +8,7 @@
      size_t llen, tlen = 0, mlen = 0;
  
      if (!lang || !*lang)
-@@ -241,26 +242,32 @@ FcLangNormalize (const FcChar8 *lang)
+@@ -246,27 +247,33 @@ FcLangNormalize (const FcChar8 *lang)
  	    modifier = encoding;
  	}
      }
@@ -39,7 +39,8 @@
 +		 s, lang);
  	goto bail0;
      }
-     if (territory && (tlen < 2 || tlen > 3))
+     if (territory && (tlen < 2 || tlen > 3) &&
+ 	!(territory[0] == 'z' && tlen < 5))
      {
 -	fprintf (stderr, "Fontconfig warning: ignoring %s: not a valid region tag\n",
 -		 lang);
