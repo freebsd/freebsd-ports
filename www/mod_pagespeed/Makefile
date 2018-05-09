@@ -30,7 +30,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libaprutil-1.so:devel/apr1 \
 		libexpat.so:textproc/expat2 \
 		libicutu.so:devel/icu \
-		libopencv_legacy.so:graphics/opencv
+		libopencv_video.so:graphics/opencv
 
 USES=		apache:2.2+ compiler:c++14-lang gperf jpeg gmake localbase \
 		pkgconfig python:2.7 shebangfix ssl tar:xz

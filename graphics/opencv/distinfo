@@ -1,3 +1,13 @@
-TIMESTAMP = 1475482010
-SHA256 (opencv-opencv-2.4.13.1_GH0.tar.gz) = 0d5ce5e0973e3a745f927d1ee097aaf909aae59f787be6d27a03d639e2d96bd7
-SIZE (opencv-opencv-2.4.13.1_GH0.tar.gz) = 91773677
+TIMESTAMP = 1524780757
+SHA256 (opencv-opencv-3.4.1_GH0.tar.gz) = f1b87684d75496a1054405ae3ee0b6573acaf3dad39eaf4f1d66fdd7e03dc852
+SIZE (opencv-opencv-3.4.1_GH0.tar.gz) = 87051748
+SHA256 (tiny-dnn-tiny-dnn-2a2b50caa437a5964a61e45ffc83e70558e2bc68_GH0.tar.gz) = 03ff06b154a1a6a0f53d6f24a128727e533355d68164c509303e2da14062e97f
+SIZE (tiny-dnn-tiny-dnn-2a2b50caa437a5964a61e45ffc83e70558e2bc68_GH0.tar.gz) = 12885594
+SHA256 (opencv-opencv_contrib-3.4.1_GH0.tar.gz) = 298c69ee006d7675e1ff9d371ba8b0d9e7e88374bb7ba0f9d0789851d352ec6e
+SIZE (opencv-opencv_contrib-3.4.1_GH0.tar.gz) = 57126844
+SHA256 (opencv-opencv_3rdparty-8afa57abc8229d611c4937165d20e2a2d9fc5a12_GH0.tar.gz) = 0ae1f2d2a619ab177d96024e253e142d15dea27236510aaf1a65c7b529ee6677
+SIZE (opencv-opencv_3rdparty-8afa57abc8229d611c4937165d20e2a2d9fc5a12_GH0.tar.gz) = 63301261
+SHA256 (opencv-opencv_3rdparty-34e4206aef44d50e6bbcd0ab06354b52e7466d26_GH0.tar.gz) = d93c783cdf799da7e4a9209d169390424c4c198c1c9b5eeb78ffc890afe5f332
+SIZE (opencv-opencv_3rdparty-34e4206aef44d50e6bbcd0ab06354b52e7466d26_GH0.tar.gz) = 397901
+SHA256 (opencv-opencv_3rdparty-fccf7cd6a4b12079f73bbfb21745f9babcd4eb1d_GH0.tar.gz) = e9abccbabcace092e5424073168cc86d422585d15d25569f01fb6503b109e0e1
+SIZE (opencv-opencv_3rdparty-fccf7cd6a4b12079f73bbfb21745f9babcd4eb1d_GH0.tar.gz) = 1470898

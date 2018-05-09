@@ -10,6 +10,9 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 library for face recognition
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=	2018-06-07
+
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 

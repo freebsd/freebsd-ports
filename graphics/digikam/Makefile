@@ -23,7 +23,7 @@ LIB_DEPENDS=	libKF5KGeoMap.so:astro/libkgeomap \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
 		liblqr-1.so:graphics/liblqr-1 \
-		libopencv_contrib.so:graphics/opencv \
+		libopencv_video.so:graphics/opencv \
 		libopencv_core.so:graphics/opencv-core \
 		libpgf.so:graphics/libpgf \
 		libpng.so:graphics/png \
@@ -49,9 +49,8 @@ SHEBANG_FILES=	core/data/scripts/digitaglinktree/digitaglinktree
 
 # Disable kipiplugins, as they are built in their own port: graphics/kipiplugins.
 # Remember to keep that port in sync with this one.
-CMAKE_ON=	DIGIKAMSC_COMPILE_DIGIKAM
-CMAKE_OFF=	DIGIKAMSC_COMPILE_KIPIPLUGINS \
-		ENABLE_OPENCV3
+CMAKE_ON=	DIGIKAMSC_COMPILE_DIGIKAM ENABLE_OPENCV3
+CMAKE_OFF=	DIGIKAMSC_COMPILE_KIPIPLUGINS
 
 OPTIONS_DEFINE=		DOCS MULTIMEDIA MYSQL NLS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
