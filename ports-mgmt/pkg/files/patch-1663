@@ -1,0 +1,28 @@
+diff --git a/libpkg/pkg_jobs_conflicts.c b/libpkg/pkg_jobs_conflicts.c
+index 886e100c..141c69f9 100644
+--- libpkg/pkg_jobs_conflicts.c.orig
++++ libpkg/pkg_jobs_conflicts.c
+@@ -477,7 +477,8 @@ pkg_conflicts_check_chain_conflict(struct pkg_job_universe_item *it,
+ 			it->pkg->uid);
+ 
+ 		if (p != NULL) {
+-			pkg_jobs_universe_process_item(j->universe, p, &cun);
++			if (pkg_jobs_universe_process_item(j->universe, p, &cun))
++				continue;
+ 			assert(cun != NULL);
+ 			pkg_conflicts_register_chain(j, it, cun, fcur->path);
+ 		}
+diff --git a/libpkg/pkg_jobs_universe.c b/libpkg/pkg_jobs_universe.c
+index 1a5a2c72..725825ac 100644
+--- libpkg/pkg_jobs_universe.c.orig
++++ libpkg/pkg_jobs_universe.c
+@@ -570,6 +570,9 @@ pkg_jobs_universe_process_item(struct pkg_jobs_universe *universe, struct pkg *p
+ 	 * flag that means that we have already tried to check our universe
+ 	 */
+ 	rc = pkg_jobs_universe_add_pkg(universe, pkg, false, &found);
++	if (rc == EPKG_CONFLICT)
++		return (rc);
++
+ 	if (result)
+ 		*result = found;
+ 
