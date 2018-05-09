@@ -4,7 +4,7 @@
 PORTNAME=	litecoin
 PORTVERSION=	0.14.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p finance
 
 PATCH_SITES=	https://github.com/bitcoin/bitcoin/commit/

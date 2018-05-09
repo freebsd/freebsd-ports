@@ -1,6 +1,6 @@
---- Makefile.orig	2016-12-16 10:04:32.000000000 +0100
-+++ Makefile	2016-12-25 20:17:08.952901000 +0100
-@@ -141,7 +141,6 @@
+--- Makefile.orig	2018-04-06 10:53:30 UTC
++++ Makefile
+@@ -139,7 +139,6 @@ TESTMINIWGETOBJS := $(TESTMINIWGETOBJS) 
  TESTIGDDESCPARSE := $(TESTIGDDESCPARSE) minissdpc.o
  endif
  
@@ -8,7 +8,7 @@
  # install directories
  ifeq ($(strip $(PREFIX)),)
  INSTALLPREFIX ?= /usr
-@@ -149,9 +148,9 @@
+@@ -147,9 +146,9 @@ else
  INSTALLPREFIX ?= $(PREFIX)
  endif
  INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
@@ -17,6 +17,6 @@
  INSTALLDIRBIN = $(INSTALLPREFIX)/bin
 -INSTALLDIRMAN = $(INSTALLPREFIX)/share/man
 +INSTALLDIRMAN = $(INSTALLPREFIX)/man
+ PKGCONFIGDIR = $(INSTALLDIRLIB)/pkgconfig
  
  FILESTOINSTALL = $(LIBRARY) $(EXECUTABLES)
- ifneq ($(OS), AmigaOS)

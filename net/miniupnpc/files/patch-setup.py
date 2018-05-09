@@ -1,10 +1,10 @@
---- setup.py.orig	2018-01-06 09:33:40 UTC
+--- setup.py.orig	2017-11-02 17:38:01 UTC
 +++ setup.py
-@@ -23,6 +23,6 @@ setup(name="miniupnpc",
-       description='miniUPnP client',
+@@ -30,6 +30,6 @@ setup(name="miniupnpc",
+       cmdclass={'build_ext': make_then_build_ext},
        ext_modules=[
           Extension(name="miniupnpc", sources=["miniupnpcmodule.c"],
--                   extra_objects=["libminiupnpc.a"])
+-                   extra_objects=EXT)
 +                   libraries=["miniupnpc"])
        ])
  
