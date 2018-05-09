@@ -1,2 +1,4 @@
 %%SITE_PERL%%/Parse/Snort.pm
+%%SITE_PERL%%/Parse/Snort/Strict.pm
 %%PERL5_MAN3%%/Parse::Snort.3.gz
+%%PERL5_MAN3%%/Parse::Snort::Strict.3.gz
