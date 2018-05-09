@@ -34,6 +34,10 @@ include/ck_stdlib.h
 include/ck_string.h
 include/ck_swlock.h
 include/ck_tflock.h
+include/gcc/aarch64/ck_f_pr.h
+include/gcc/aarch64/ck_pr_llsc.h
+include/gcc/aarch64/ck_pr_lse.h
+include/gcc/aarch64/ck_pr.h
 include/gcc/arm/ck_f_pr.h
 include/gcc/arm/ck_pr.h
 include/gcc/ck_cc.h
