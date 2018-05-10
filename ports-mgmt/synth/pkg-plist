@@ -7,7 +7,8 @@ man/man1/synth.1.gz
 %%DATADIR%%/progress.html
 %%DATADIR%%/progress.js
 %%DATADIR%%/synth.png
+%%DATADIR%%/synth_ncurses.png
 share/zsh/site-functions/_synth
 @dir /var/log/synth
-@dir /var/synth
 @dir /var/synth/live_packages
+@dir /var/synth
