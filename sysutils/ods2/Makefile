@@ -3,11 +3,12 @@
 
 PORTNAME=	ods2
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lugs.ch/~dussuett/
 DISTNAME=	ods2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pzn.unixbsd@gmail.com
 COMMENT=	Utility for manipulating ODS-2 filesystems
 
 USES=		zip
@@ -29,6 +30,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
