@@ -1,3 +1,5 @@
+To be removed after FreeBSD 10.* EOL
+
 --- ipc/glue/MessageChannel.cpp.orig	2017-11-02 16:16:32 UTC
 +++ ipc/glue/MessageChannel.cpp
 @@ -685,6 +685,11 @@ MessageChannel::WillDestroyCurrentMessageLoop()
