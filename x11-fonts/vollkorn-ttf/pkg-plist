@@ -2,9 +2,13 @@
 %%FONTSDIR%%/Vollkorn-BlackItalic.ttf
 %%FONTSDIR%%/Vollkorn-Bold.ttf
 %%FONTSDIR%%/Vollkorn-BoldItalic.ttf
+%%FONTSDIR%%/Vollkorn-ExtraBold.ttf
+%%FONTSDIR%%/Vollkorn-ExtraBoldItalic.ttf
 %%FONTSDIR%%/Vollkorn-Italic.ttf
+%%FONTSDIR%%/Vollkorn-Medium.ttf
+%%FONTSDIR%%/Vollkorn-MediumItalic.ttf
 %%FONTSDIR%%/Vollkorn-Regular.ttf
-%%FONTSDIR%%/Vollkorn-Semibold.ttf
-%%FONTSDIR%%/Vollkorn-SemiboldItalic.ttf
+%%FONTSDIR%%/Vollkorn-SemiBold.ttf
+%%FONTSDIR%%/Vollkorn-SemiBoldItalic.ttf
 %%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/Fontlog.txt
