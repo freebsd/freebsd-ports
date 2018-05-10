@@ -12,6 +12,7 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Efficient arrays of booleans
 
 LICENSE=	PSFL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -19,18 +20,20 @@ USE_PYTHON=	distutils autoplist
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-PORTDOCS=	AUTHORS CHANGE_LOG LICENSE README.rst
+PORTDOCS=	AUTHORS CHANGE_LOG README.rst
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-regression-test: extract
-	@(cd ${WRKSRC}/${PORTNAME}; ${PYTHON_CMD} -c "import ${PORTNAME}; ${PORTNAME}.test()")
+do-test:
+	${SETENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} -c "import ${PORTNAME}; ${PORTNAME}.test()"
 
 .include <bsd.port.mk>
