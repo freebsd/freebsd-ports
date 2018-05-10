@@ -210,7 +210,7 @@ stripped() {
 	find ${STAGEDIR} -type f ! -name '*.a' ! -name '*.o' \
 	    -exec readelf -S {} + 2>/dev/null | awk '\
 	    /File:/ {sub(/File: /, "", $0); file=$0} \
-	    /SYMTAB/ {print file}' |
+	    /[[:space:]]\.debug_info[[:space:]]*PROGBITS/ {print file}' |
 	    while read f; do
 		warn "'${f#${STAGEDIR}${PREFIX}/}' is not stripped consider trying INSTALL_TARGET=install-strip or using \${STRIP_CMD}"
 	done
