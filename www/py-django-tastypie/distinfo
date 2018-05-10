@@ -1,3 +1,3 @@
-TIMESTAMP = 1471870919
-SHA256 (django-tastypie-0.13.3.tar.gz) = e404b9ac24ab400015047f5503fae1732d9e944a7152693fe902c0a905f250cc
-SIZE (django-tastypie-0.13.3.tar.gz) = 144649
+TIMESTAMP = 1525944000
+SHA256 (django-tastypie-0.14.1.tar.gz) = 1fbf61ec7467eec70bd1abcb14e3b1dc67e47cc3642ad16ed8a3709f4140678b
+SIZE (django-tastypie-0.14.1.tar.gz) = 147790
