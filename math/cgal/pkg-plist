@@ -3157,6 +3157,9 @@ lib/CGAL/process_dependencies.cmake
 lib/CGAL/run_cmd_redirection_cerr.cmake
 lib/CGAL/run_test_with_cin.cmake
 lib/CGAL/test_MPFI.cpp
+%%QT5%%lib/CGAL/CGAL_Qt5Exports-%%CMAKE_BUILD_TYPE%%.cmake
+%%QT5%%lib/CGAL/CGAL_Qt5Exports.cmake
+%%QT5%%lib/CGAL/CGAL_Qt5LibConfig.cmake
 lib/libCGAL.so
 lib/libCGAL.so.13
 lib/libCGAL.so.13.0.1
@@ -3168,5 +3171,5 @@ lib/libCGAL_ImageIO.so.13
 lib/libCGAL_ImageIO.so.13.0.1
 %%QT5%%lib/libCGAL_Qt5.so
 %%QT5%%lib/libCGAL_Qt5.so.13
-%%QT5%%lib/libCGAL_Qt5.so.13.0.0
+%%QT5%%lib/libCGAL_Qt5.so.13.0.1
 man/man1/cgal_create_cmake_script.1.gz
