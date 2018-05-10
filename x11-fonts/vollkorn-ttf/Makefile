@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vollkorn-ttf
-PORTVERSION=	4.015
+PORTVERSION=	4.105
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://vollkorn-typeface.com/download/
 DISTNAME=	vollkorn-${PORTVERSION:S|.|-|}
