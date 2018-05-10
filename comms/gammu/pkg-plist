@@ -105,6 +105,8 @@ share/locale/it/LC_MESSAGES/gammu.mo
 share/locale/it/LC_MESSAGES/libgammu.mo
 share/locale/ko/LC_MESSAGES/gammu.mo
 share/locale/ko/LC_MESSAGES/libgammu.mo
+share/locale/nb_NO/LC_MESSAGES/gammu.mo
+share/locale/nb_NO/LC_MESSAGES/libgammu.mo
 share/locale/nl/LC_MESSAGES/gammu.mo
 share/locale/nl/LC_MESSAGES/libgammu.mo
 share/locale/pl/LC_MESSAGES/gammu.mo
