@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION=	6.2.3
+PORTVERSION=	6.2.4
 DISTVERSIONSUFFIX=	-linux-x86_64
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
@@ -39,6 +39,7 @@ post-install:
 	${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${ECHO} "@dir(www,www) ${WWWDIR}/data" >> ${TMPPLIST}
+	${ECHO} "@dir ${WWWDIR}/node_modules/@elastic/numeral/src" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/plugins" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/ui/public/factories" >> ${TMPPLIST}
 
