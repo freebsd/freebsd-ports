@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgle.so:graphics/gle \
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
-USES=		autoreconf gettext gmake jpeg perl5 pkgconfig
+USES=		autoreconf gettext gmake jpeg localbase:ldflags perl5 pkgconfig
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libglade2 libxml2
 USE_PERL5=	run
@@ -38,8 +38,6 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-xf86gamma-ext --with-randr-ext --without-kerberos \
 		--without-setuid-hacks --enable-locking
 MAKE_ARGS+=	install_prefix=${STAGEDIR}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	PAM SETUID_HACKS FIREF NLS XAOS1 XDALI XEARTH \
 		XFT XMOUN XPLANET XSNOW
