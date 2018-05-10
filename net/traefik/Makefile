@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	traefik
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}:webui
@@ -40,6 +40,7 @@ TRAEFIK_LDARGS=	-ldflags "-s -w \
 # Note this is not done during a standard port build as
 # it downloads node modules from the internet during build.
 # Instead, we use the pre-generated from LOCAL.
+# (20180510: the upath module requires node < 10)
 # BUILD_DEPENDS+=	npm:www/npm \
 #		yarnpkg:www/yarn
 #USES+=		python:2.7,build
