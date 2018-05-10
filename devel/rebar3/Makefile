@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
@@ -36,7 +36,7 @@ CACHE_VERSION=	17
 REBAR_DEPS=	bbmustache-1.3.0 \
 		certifi-2.0.0 \
 		cf-0.2.2 \
-		cth_readable-1.3.4 \
+		cth_readable-1.4.0 \
 		erlware_commons-1.1.0 \
 		eunit_formatters-0.5.0 \
 		getopt-1.0.1 \
