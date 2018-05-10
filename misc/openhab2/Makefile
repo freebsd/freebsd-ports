@@ -17,16 +17,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 USE_JAVA=	yes
 JAVA_VERSION=	1.8
 JAVA_RUN=	yes
+USE_RC_SUBR=	openhab2
+SUB_FILES=	pkg-message
+NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 
 USERS=	openhab
 GROUPS=	openhab
-USE_RC_SUBR=	openhab2
-SUB_FILES=	pkg-message
-
-NO_WRKSUBDIR=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${WRKSRC}/runtime/bin/setenv
+	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${WRKSRC}/runtime/bin/setenv
 
 do-build:
 .for conf in services/runtime.cfg services/addons.cfg html/index.html transform/en.map transform/de.map

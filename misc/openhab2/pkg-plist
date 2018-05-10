@@ -11,6 +11,7 @@ libexec/openhab2/runtime/bin/shell
 libexec/openhab2/runtime/bin/start
 libexec/openhab2/runtime/bin/status
 libexec/openhab2/runtime/bin/stop
+libexec/openhab2/runtime/bin/update
 libexec/openhab2/runtime/etc/jetty.xml
 libexec/openhab2/runtime/etc/quartz.properties
 libexec/openhab2/runtime/lib/README
