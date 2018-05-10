@@ -2,6 +2,7 @@
 
 PORTNAME=	django-widget-tweaks
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Tweak form field rendering in templates, not in python-level form defin
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>1.2:www/py-django18@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>1.2:www/py-django111@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
