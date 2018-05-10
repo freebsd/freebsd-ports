@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backuppc
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
 		SF
