@@ -28,6 +28,8 @@ include/c_icap/md5.h
 include/c_icap/mem.h
 include/c_icap/module.h
 include/c_icap/net_io.h
+include/c_icap/net_io_ssl.h
+include/c_icap/port.h
 include/c_icap/proc_mutex.h
 include/c_icap/proc_threads_queues.h
 include/c_icap/registry.h

@@ -14,6 +14,9 @@ COMMENT=	ICAP server implementation
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
+		libpcre.so:devel/pcre
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir="${PREFIX}/etc/c-icap" \
 		--localstatedir=/var
