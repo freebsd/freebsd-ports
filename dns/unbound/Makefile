@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	dns
 MASTER_SITES=	https://unbound.net/downloads/ \
 		https://distfiles.crux.guru/
@@ -34,7 +34,8 @@ PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN_PLUGIN DOCS LIBEVENT \
-		FILTER_AAAA DNSTAP DNSCRYPT SUBNET EVAPI TFOCL TFOSE
+		FILTER_AAAA DNSTAP DNSCRYPT SUBNET EVAPI TFOCL TFOSE \
+		HIREDIS
 OPTIONS_DEFAULT=THREADS ECDSA LIBEVENT
 
 LIBEVENT_DESC=	Build against libevent
@@ -48,6 +49,7 @@ SUBNET_DESC=	Enable client subnet support
 EVAPI_DESC=	(Experimental) pluggable event based libunbound API support
 TFOCL_DESC=	Enable TCP Fast Open for client mode
 TFOSE_DESC=	Enable TCP Fast Open for server mode
+HIREDIS_DESC=	Enable hiredis support for the cachedb module
 
 STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 		unbound-control .libs/unbound-host .libs/unbound-anchor
@@ -75,9 +77,11 @@ PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
 PYTHON_CONFIGURE_ON=	--with-pyunbound=yes --with-pythonmodule=yes \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_SWIG=${LOCALBASE}/bin/swig3.0
-PYTHON_USES=		python:2.7
+PYTHON_USES=		python
 PYTHON_VARS=		STRIP_FILES+=.libs/_unbound.so
 THREADS_CONFIGURE_WITH=	pthreads
+HIREDIS_CONFIGURE_ON=	--enable-cachedb --with-libhiredis
+HIREDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
 
 post-patch:
 	@${RM} ${WRKSRC}/util/configlexer.c
