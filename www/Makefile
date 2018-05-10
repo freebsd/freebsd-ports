@@ -1624,6 +1624,7 @@
     SUBDIR += py-django_compressor
     SUBDIR += py-django_openstack_auth
     SUBDIR += py-django_polymorphic
+    SUBDIR += py-djangocms-admin-style
     SUBDIR += py-djangorestframework
     SUBDIR += py-djangorestframework36
     SUBDIR += py-djangorestframework-csv
