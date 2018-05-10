@@ -48,9 +48,9 @@ MAKE_ARGS+=	MY_METIS_LIB="-L${LOCALBASE}/lib -lmetis $(LDFLAGS)"
 post-patch:
 	@${RM} -r ${WRKSRC}/metis-5.1.0
 	@${FIND} -X ${WRKSRC} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
-	${REINPLACE_CMD} -i '' \
+		${REINPLACE_CMD} \
 			-e '\|^AR =|s|ar|${AR}|' \
-			-e '\|^BLAS =|s|=.*|= ${LDFLAGS} ${BLASLIB}|' \
+			-e '\|^ *BLAS =|s|=.*|= ${LDFLAGS} ${BLASLIB}|' \
 			-e '\|^CC =|d' \
 			-e '\|^CFLAGS =|{s|-O[1-9]\{0,1\}||g;s|=|= ${CFLAGS} $${PICFLAG} |;}' \
 			-e '\|^CHOLMOD_CONFIG =|s|=.*|= ${CHOLMOD_CONFIG}|' \
@@ -67,7 +67,7 @@ post-patch:
 			-e 's|/usr/local|${LOCALBASE}|g'
 	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
 	@${FIND} -X ${WRKSRC_SHARED} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
-	${REINPLACE_CMD} -e 's|$$(CFLAGS)|$$(CFLAGS) $$(PICFLAG)|g'
+		${REINPLACE_CMD} -e 's|$$(CFLAGS)|$$(CFLAGS) $$(PICFLAG)|g'
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PICFLAG= \
