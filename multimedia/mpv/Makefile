@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.27.2
+PORTVERSION=	0.28.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -14,7 +13,7 @@ COMMENT=	Free and open-source general-purpose video player
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	ffmpeg>=3.3,1:multimedia/ffmpeg
+BUILD_DEPENDS=	ffmpeg>=4.0,1:multimedia/ffmpeg
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USES=		compiler:c11 desktop-file-utils iconv jpeg localbase:ldflags \
