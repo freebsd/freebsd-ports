@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	oclock
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-clocks
 
 MAINTAINER=	x11@FreeBSD.org
