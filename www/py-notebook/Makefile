@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	notebook
-PORTVERSION=	5.4.1
+PORTVERSION=	5.5.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter_core>=4.4.0:devel/py-jupyter_core@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbconvert>=0:devel/py-nbconvert@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>=0:devel/py-nbformat@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=17:net/py-pyzmq@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}send2trash>=0:deskutils/py-send2trash@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}terminado>=0.8.1:net/py-terminado@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=4:www/py-tornado@${FLAVOR} \
