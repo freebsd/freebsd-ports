@@ -3,7 +3,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.5.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	TCLTK/tcl8_5 \
 		SF/tcl/Tcl/${PORTVERSION}
@@ -26,7 +26,7 @@ OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//:S/rc1//}/unix
 ALL_TARGET=	all
-INSTALL_TARGET=	install install-libraries install-tm
+INSTALL_TARGET=	install-strip install-libraries install-tm
 TEST_TARGET=	do-test
 
 USE_LDCONFIG=	yes
