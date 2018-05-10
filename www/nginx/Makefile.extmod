@@ -12,7 +12,7 @@ AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:1e62670:aws_auth
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
-BROTLI_GH_TUPLE=	eustas:ngx_brotli:8cd9dd5:brotli
+BROTLI_GH_TUPLE=	eustas:ngx_brotli:37ab9b2:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
 CACHE_PURGE_MASTER_SITES=	http://labs.frickle.com/files/:cache_purge
@@ -38,10 +38,8 @@ ECHO_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_echo_request_info.c
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
-DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:v0.1.9:drizzle
+DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:v0.1.11:drizzle
 DRIZZLE_CONFIGURE_ON=	--add-module=${WRKSRC_drizzle}
-DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config \
-			${PATCHDIR}/extra-patch-ngx_http_drizzle_upstream.c
 
 DYNAMIC_UPSTREAM_GH_TUPLE=	cubicdaiya:ngx_dynamic_upstream:v0.1.3:dynamic_upstream
 DYNAMIC_UPSTREAM_VARS=		DSO_EXTMODS+=dynamic_upstream
