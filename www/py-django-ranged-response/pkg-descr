@@ -1,0 +1,5 @@
+This is a modified FileResponse that returns 'Content-Range' headers with the
+HTTP response, so browsers (e.g. Safari 9+) that request the file, can stream
+the response properly. 
+
+WWW: https://github.com/i3thuan5/django-ranged-response
