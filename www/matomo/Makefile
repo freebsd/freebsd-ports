@@ -7,7 +7,7 @@ MASTER_SITES=	http://builds.matomo.org/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 DISTNAME=	piwik-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Open Source Web Analytics Software Program
 
 LICENSE=	GPLv3
