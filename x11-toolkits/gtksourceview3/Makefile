@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtksourceview
-PORTVERSION=	3.22.2
+PORTVERSION=	3.24.7
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -34,6 +34,8 @@ LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|tests testsuite||g' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|--warn-all||g' \
 		${WRKSRC}/gtksourceview/Makefile.in
 
