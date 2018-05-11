@@ -2,41 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	django-openid-auth
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.14
 CATEGORIES=	www security python
-MASTER_SITES=	http://launchpadlibrarian.net/80020365/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	xenophon+fbsdports@irtnog.org
 COMMENT=	OpenID integration for django.contrib.auth
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.3.1:www/py-django18@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-openid>=2.2.5:security/py-python-openid@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.6:www/py-django111@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		python:2.7
-USE_PYTHON=	distutils
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+NO_ARCH=	yes
 
-NO_WRKSUBDIR=	yes
+PORTDOCS=	README.txt TODO.txt
 
-PORTDOCS=	*.txt *.html
-PORTEXAMPLES=	example_consumer
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/TODO.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/openid.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/openid.txt ${STAGEDIR}${DOCSDIR}
 
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/example_consumer
-	${INSTALL_DATA} ${WRKSRC}/example_consumer/* \
-		${STAGEDIR}${EXAMPLESDIR}/example_consumer
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PYTHON_REL} < 3000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}python-openid>=2.2.0:security/py-python-openid@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}python3-openid>=0:security/py-python3-openid@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
