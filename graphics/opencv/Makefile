@@ -267,12 +267,21 @@ OPENGL_USE=		${PORT_OPTIONS:MQT4:S,$,=opengl,}
 
 # GUI
 
-GTK2_USE=		GNOME=gtk20
+GTK2_USE=		GNOME=cairo,gdkpixbuf2,gtk20
 GTK2_CMAKE_BOOL=	WITH_GTK
+GTK2_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+			libharfbuzz.so:print/harfbuzz \
+			libsz.so:science/szip \
+			libfontconfig.so:x11-fonts/fontconfig \
+			liblept.so:graphics/leptonica
 
-QT4_USE=		QT4=gui,moc_build,qmake_build,rcc_build,uic_build,qtestlib
+QT4_USE=		QT4=corelib,gui,moc_build,qmake_build,rcc_build,uic_build,qtestlib
 QT4_CMAKE_ON=		-DWITH_QT:STRING="4"
 QT4_CMAKE_OFF=		-DWITH_QT:BOOL=OFF
+QT4_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+			libharfbuzz.so:print/harfbuzz \
+			libsz.so:science/szip \
+			liblept.so:graphics/leptonica
 
 .if defined(OCV_CORE)
 . for module in ${OCV_MODS} ${OCV_JAVA_MODS} ${OCV_PYTHON_MODS}
