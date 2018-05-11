@@ -1,5 +1,5 @@
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.htm
 %%PORTDOCS%%%%DOCSDIR%%/changelog.htm
+%%PORTDOCS%%%%DOCSDIR%%/doc/__construct.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/acceptpagebreak.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/addfont.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/addlink.htm
@@ -9,7 +9,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/close.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/error.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/footer.htm
-%%PORTDOCS%%%%DOCSDIR%%/doc/fpdf.htm
+%%PORTDOCS%%%%DOCSDIR%%/doc/getpageheight.htm
+%%PORTDOCS%%%%DOCSDIR%%/doc/getpagewidth.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/getstringwidth.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/getx.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/gety.htm
@@ -47,9 +48,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/sety.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/text.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/write.htm
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.htm
 %%PORTDOCS%%%%DOCSDIR%%/fpdf.css
 %%PORTDOCS%%%%DOCSDIR%%/install.txt
-%%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/20k_c1.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/20k_c2.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/calligra.php
