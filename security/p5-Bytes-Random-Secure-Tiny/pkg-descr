@@ -1,0 +1,9 @@
+A tiny Perl extension to generate cryptographically-secure random bytes.
+
+It provides random bytes from a cryptographically secure random
+number generator (ISAAC), seeded from strong entropy sources on a
+wide variety of platforms. It does so without external dependencies
+(except on Windows), and has a minimal but useful user interface
+patterned after the module Bytes::Random::Secure.
+
+WWW: http://search.cpan.org/dist/Bytes-Random-Secure-Tiny/
