@@ -1,0 +1,13 @@
+--- Makefile.orig	2018-05-07 14:54:13 UTC
++++ Makefile
+@@ -16,8 +16,8 @@ config.h: config.def.h
+ 	cp -i config.def.h config.h
+ 
+ install: mtm
+-	cp mtm $(DESTDIR)/bin
+-	cp mtm.1 $(DESTDIR)/share/man/man1
++	${BSD_INSTALL_PROGRAM} mtm $(DESTDIR)$(PREFIX)/bin
++	${BSD_INSTALL_MAN} mtm.1 $(DESTDIR)$(PREFIX)/man/man1
+ 
+ install-terminfo: mtm.ti
+ 	tic -s -x mtm.ti
