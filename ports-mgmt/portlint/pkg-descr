@@ -1,2 +1,6 @@
-portlint makes a small set of sanity checks for port directory. Check out
-portlint(1) for more details.
+portlint tries to verify the content of a port directory with a small set of
+sanity checks. The purpose of portlint can be separated into two parts: (1) to
+let the submitters easily polish their own port directory, and (2) to decrease
+the labor of the committers.
+
+Check out portlint(1) for more details.
