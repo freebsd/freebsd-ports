@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.32
-PORTREVISION?=	2
+PORTVERSION=	10.1.33
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -22,7 +22,6 @@ LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_SSL=		openssl-devel
 BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type 'struct dh_st'
 
@@ -184,11 +183,10 @@ post-install-MROONGA-on:
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1101514 || \
-	${OSVERSION} >= 1200000 && ${OSVERSION} < 1200057
-SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
-.else
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
+.else
+SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
