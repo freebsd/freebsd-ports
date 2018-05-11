@@ -56,7 +56,9 @@ lib/postgresql/uuid-ossp.so
 %%PORTDOCS%%%%DOCSDIR%%/extension/moddatetime.example
 %%PORTDOCS%%%%DOCSDIR%%/extension/refint.example
 %%PORTDOCS%%%%DOCSDIR%%/extension/timetravel.example
+%%DATADIR%%/extension/adminpack--1.0--1.1.sql
 %%DATADIR%%/extension/adminpack--1.0.sql
+%%DATADIR%%/extension/adminpack--1.1.sql
 %%DATADIR%%/extension/adminpack.control
 %%DATADIR%%/extension/autoinc--1.0.sql
 %%DATADIR%%/extension/autoinc--unpackaged--1.0.sql
