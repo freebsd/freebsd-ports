@@ -101,11 +101,11 @@ bin/parkill
 @sample(,,600) etc/mpd.conf.dist etc/mpd.conf
 etc/mpe_callstack_ldflags.conf
 etc/mpe_f77env.conf
-etc/mpe_graphics.conf
+%%X11%%etc/mpe_graphics.conf
 etc/mpe_help.conf
 etc/mpe_log.conf
 etc/mpe_log_postlib.conf
-etc/mpe_mpianim.conf
+%%X11%%etc/mpe_mpianim.conf
 etc/mpe_mpicheck.conf
 etc/mpe_mpilog.conf
 etc/mpe_mpitrace.conf
@@ -121,7 +121,7 @@ include/clog_uuid.h
 include/mpe.h
 include/mpe_callstack.h
 include/mpe_graphics.h
-include/mpe_graphicsf.h
+%%X11%%include/mpe_graphicsf.h
 include/mpe_log.h
 include/mpe_log_thread.h
 include/mpe_logf.h
@@ -161,7 +161,7 @@ include/primitives/opa_unsafe.h
 %%JAVA%%lib/clogprint.jar
 %%JAVA%%lib/jumpshot.jar
 %%JAVA%%lib/jumpshot_launcher.jar
-lib/libampe.a
+%%X11%%lib/libampe.a
 lib/libfmpich.a
 lib/libfmpich.la
 lib/libfmpich.so
@@ -872,10 +872,10 @@ sbin/mpeuninstall
 %%DATADIR%%/examples/collchk/wrong_reals.f
 %%DATADIR%%/examples/collchk/wrong_root.c
 %%DATADIR%%/examples/collchk/wrong_scatterv.c
-%%DATADIR%%/examples/graphics/Makefile
-%%DATADIR%%/examples/graphics/cpi.c
-%%DATADIR%%/examples/graphics/cxgraphics.c
-%%DATADIR%%/examples/graphics/fxgraphics.f
+%%X11%%%%DATADIR%%/examples/graphics/Makefile
+%%X11%%%%DATADIR%%/examples/graphics/cpi.c
+%%X11%%%%DATADIR%%/examples/graphics/cxgraphics.c
+%%X11%%%%DATADIR%%/examples/graphics/fxgraphics.f
 %%JAVA%%%%DATADIR%%/examples/logfiles/barrier.rlog
 %%JAVA%%%%DATADIR%%/examples/logfiles/fpilog.clog
 %%JAVA%%%%DATADIR%%/examples/logfiles/fpilog.slog2
