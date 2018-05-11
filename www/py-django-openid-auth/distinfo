@@ -1,2 +1,3 @@
-SHA256 (django-openid-auth_0.4.tar.gz) = 923c2a9652f23bee367a6578f39d0881eaeb7aca2ec8f810f523b16e38679d05
-SIZE (django-openid-auth_0.4.tar.gz) = 77703
+TIMESTAMP = 1525985134
+SHA256 (django-openid-auth-0.14.tar.gz) = a1f706ede74117426c1e67b03ac69143ddaf3c0b18888814ad3abb7483a2ccf6
+SIZE (django-openid-auth-0.14.tar.gz) = 44878
