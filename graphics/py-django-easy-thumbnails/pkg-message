@@ -1,8 +1,0 @@
-**********************************************************************
-
-Don't forget to add 'easy_thumbnails' to your Django project's
-INSTALLED_APPS list.  Then, if you have South installed, run the
-command "python manage.py migrate easy_thumbnails".  Otherwise, run
-the command "python manage.py syncdb".
-
-**********************************************************************
