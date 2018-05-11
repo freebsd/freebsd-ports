@@ -5,7 +5,7 @@
  	if(myproto) {
  		if(!strcasecmp("ssl2",myproto)) {
 -#if HAVE_DECL_SSLV2_CLIENT_METHOD + 0 > 0
-+#ifndef OPENSSL_NO_SSL2
++#if (HAVE_DECL_SSLV2_CLIENT_METHOD + 0 > 0) && !defined(OPENSSL_NO_SSL2)
  			_ctx[sock] = SSL_CTX_new(SSLv2_client_method());
  #else
 -			report(stderr, GT_("Your operating system does not support SSLv2.\n"));
