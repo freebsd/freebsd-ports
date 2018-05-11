@@ -1,5 +1,5 @@
---- Sysctl.xs.orig	2014-01-21 23:02:47 UTC
-+++ Sysctl.xs
+--- Sysctl.xs.orig	2014-01-22 00:02:47.000000000 +0100
++++ Sysctl.xs	2018-05-11 10:26:40.364491000 +0200
 @@ -14,6 +14,7 @@
  
  #include <stdio.h>
@@ -48,12 +48,7 @@
 -    SV **clenp;
 -    int cmplen;
 -    int j;
-+_iterator_next(HV *self)
-+{
-+	SV *nextp, **len0p, *namep;
-+	int *next, name1[CTL_MAXNAME + 2], name2[CTL_MAXNAME + 2];
-+	size_t len0, next_len, len1, len2;
- 
+-
 -    qoid[0] = 0;
 -    qoid[1] = 2;
 -    if (valid) {
@@ -90,9 +85,7 @@
 -        SvREFCNT_inc(clen);
 -        hv_store(self, "_len", 4, clen, 0);
 -    }
-+	if (! hv_exists(self, "_len0", 5))
-+		_iterator_first(self);
- 
+-
 -    /*
 -    printf( "next: " );
 -    for (j = 0; j < qoidlen; ++j) {
@@ -100,6 +93,31 @@
 -    }
 -    printf("\n");
 -    */
+-
+-    /* load the mib */
+-    if (sysctl(qoid, qoidlen, mib, (size_t*)miblenp, 0, 0) == -1) {
+-        return 0;
+-    }
+-    *miblenp /= sizeof(int);
+-    if (*miblenp < cmplen) {
+-        return 0 ;
+-    }
+-
+-    for (j = 0; j < cmplen; ++j) {
+-        if (mib[j] != qoid[j+2]) {
+-            return 0;
+-        }
+-    }
+-    return 1;
++_iterator_next(HV *self)
++{
++	SV *nextp, **len0p, *namep;
++	int *next, name1[CTL_MAXNAME + 2], name2[CTL_MAXNAME + 2];
++	size_t len0, next_len, len1, len2;
++
++	if (! hv_exists(self, "_len0", 5))
++		_iterator_first(self);
++
 +	len0p = hv_fetch(self, "_len0", 5, 0);
 +	if (len0p == NULL || *len0p == NULL)
 +		croak("hv_fetch(_len0) failed in _iterator_next\n");
@@ -110,25 +128,11 @@
 +		return 0;
 +	next = (int *) SvPV(nextp, next_len);
 +	next_len /= sizeof(int);
- 
--    /* load the mib */
--    if (sysctl(qoid, qoidlen, mib, (size_t*)miblenp, 0, 0) == -1) {
--        return 0;
--    }
--    *miblenp /= sizeof(int);
--    if (*miblenp < cmplen) {
--        return 0 ;
--    }
++
 +	namep = hv_delete(self, "_name", 5, 0);
 +	if (namep == NULL)
 +		return 0;
- 
--    for (j = 0; j < cmplen; ++j) {
--        if (mib[j] != qoid[j+2]) {
--            return 0;
--        }
--    }
--    return 1;
++
 +	/*
 +	 * Get next (after _next): name1 = [ 0, 2, next ]
 +	 */
@@ -188,7 +192,7 @@
  MODULE = BSD::Sysctl   PACKAGE = BSD::Sysctl
  
  PROTOTYPES: ENABLE
-@@ -127,67 +164,18 @@ PROTOTYPES: ENABLE
+@@ -127,67 +164,18 @@
  SV *
  next (SV *refself)
      INIT:
@@ -212,7 +216,7 @@
 -            p = (int *)SvPVX(*ctxp);
 -            miblen = *p++;
 -            memcpy(mib, p, miblen * sizeof(int));
- 
+-
 -            if (!_init_iterator(self, mib, (int*)&miblen, 1)) {
 -                XSRETURN_UNDEF;
 -            }
@@ -253,7 +257,7 @@
 -        ctx = newSVpvn((const char *)qoid, (miblen+1) * sizeof(int));
 -        SvREFCNT_inc(ctx);
 -        hv_store(self, "_ctx", 4, ctx, 0);
--
+ 
 +	if (_iterator_next(self) == 0)
 +		XSRETURN_UNDEF;
 +	
@@ -263,7 +267,102 @@
      OUTPUT:
          RETVAL
  
-@@ -878,6 +866,10 @@ _mib_set(const char *arg, const char *value)
+@@ -583,25 +571,79 @@
+         }
+         case FMT_DEVSTAT: {
+             HV *c = (HV *)sv_2mortal((SV *)newHV());
+-            struct devstat *inf = (struct devstat *)buf;
++            struct devstat *inf = (struct devstat *)(buf + sizeof(buf));
+             RETVAL = newRV((SV *)c);
+-            hv_store(c, "devno",           5, newSViv(inf->device_number), 0);
+-            hv_store(c, "unitno",          6, newSViv(inf->unit_number), 0);
++            char *p = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
++            do {
++                char name[BUFSIZ];
++                strcpy(name, "#.devno"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSViv(inf->device_number), 0);
++                strcpy(name, "#.device_name"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn(inf->device_name, strlen(inf->device_name)), 0);
++                strcpy(name, "#.unitno"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSViv(inf->unit_number), 0);
+ #if __FreeBSD_version < 500000
+-            hv_store(c, "sequence",        8, newSVpvn("", 0), 0);
+-            hv_store(c, "allocated",       9, newSVpvn("", 0), 0);
+-            hv_store(c, "startcount",     10, newSVpvn("", 0), 0);
+-            hv_store(c, "endcount",        8, newSVpvn("", 0), 0);
+-            hv_store(c, "busyfromsec",    11, newSVpvn("", 0), 0);
+-            hv_store(c, "busyfromfrac",   12, newSVpvn("", 0), 0);
++                strcpy(name, "#.sequence"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.allocated"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.startcount"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.endcount"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.busyfromsec"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.busyfromfrac"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.bytes_no_data"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.bytes_read"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.bytes_write"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.bytes_free"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.operations_no_data"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.operations_read"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.operations_write"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
++                strcpy(name, "#.operations_free"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVpvn("", 0)), 0);
+ #else
+-            hv_store(c, "sequence",        8, newSVuv(inf->sequence0), 0);
+-            hv_store(c, "allocated",       9, newSViv(inf->allocated), 0);
+-            hv_store(c, "startcount",     10, newSViv(inf->start_count), 0);
+-            hv_store(c, "endcount",        8, newSViv(inf->end_count), 0);
+-            hv_store(c, "busyfromsec",    11, newSViv(inf->busy_from.sec), 0);
+-            hv_store(c, "busyfromfrac",   12, newSVuv(inf->busy_from.frac), 0);
++                strcpy(name, "#.sequence"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->sequence0), 0);
++                strcpy(name, "#.allocated"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSViv(inf->allocated), 0);
++                strcpy(name, "#.startcount"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSViv(inf->start_count), 0);
++                strcpy(name, "#.endcount"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSViv(inf->end_count), 0);
++                strcpy(name, "#.busyfromsec"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSViv(inf->busy_from.sec), 0);
++                strcpy(name, "#.busyfromfrac"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->busy_from.frac), 0);
++                strcpy(name, "#.bytes_no_data"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->bytes[DEVSTAT_NO_DATA]), 0);
++                strcpy(name, "#.bytes_read"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->bytes[DEVSTAT_READ]), 0);
++                strcpy(name, "#.bytes_write"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->bytes[DEVSTAT_WRITE]), 0);
++                strcpy(name, "#.bytes_free"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->bytes[DEVSTAT_FREE]), 0);
++                strcpy(name, "#.operations_no_data"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->operations[DEVSTAT_NO_DATA]), 0);
++                strcpy(name, "#.operations_read"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->operations[DEVSTAT_READ]), 0);
++                strcpy(name, "#.operations_write"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->operations[DEVSTAT_WRITE]), 0);
++                strcpy(name, "#.operations_free"); name[0] = *p;
++                hv_store(c, name, strlen(name), newSVuv(inf->operations[DEVSTAT_FREE]), 0);
+ #endif
++                ++p;
++                ++inf;
++            } while (inf < (struct devstat *)(buf + buflen));
+             break;
+         }
+ #if __FreeBSD_version >= 500000
+@@ -878,6 +920,10 @@
          SV **oidp;
          SV *oid;
          char *oid_data;
@@ -274,11 +373,10 @@
          int oid_fmt;
          int oid_len;
          int intval;
-@@ -954,6 +946,42 @@ _mib_set(const char *arg, const char *value)
-             }
+@@ -955,6 +1001,42 @@
              newval  = &ulongval;
              newsize = sizeof(ulongval);
-+            break;
+             break;
 +
 +        case FMT_64:
 +            llval = strtoll(value, &endconvptr, 0);
@@ -314,6 +412,7 @@
 +                uint64val = (uint64_t)ullval;
 +            newval  = &uint64val;
 +            newsize = sizeof(uint64val);
-             break;
++            break;
          }
          
+         if (sysctl((int *)oid_data, oid_len, 0, 0, newval, newsize) == -1) {
