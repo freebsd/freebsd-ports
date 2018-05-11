@@ -1027,6 +1027,7 @@
     SUBDIR += py-virustotal-api
     SUBDIR += py-volatility
     SUBDIR += py-vulndb
+    SUBDIR += py-winrm
     SUBDIR += py-yara
     SUBDIR += py-yubioath-desktop
     SUBDIR += py-yubikey-manager
