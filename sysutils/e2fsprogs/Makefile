@@ -30,7 +30,9 @@ USE_CSTD=	gnu99
 # this seems a bit redundant to the --rpath below, but
 # the latter should be more robust in case someone needs
 # to deal with the file systems from a system not yet fully booted.
-USE_LDCONFIG=	${LOCALBASE}/lib/e2fsprogs
+.if !defined(PKGNAMESUFFIX)
+USE_LDCONFIG=	${PREFIX}/lib/e2fsprogs
+.endif
 GNU_CONFIGURE=	yes
 LLD_UNSAFE=	yes
 CONFIGURE_ARGS?=--disable-fsck \
