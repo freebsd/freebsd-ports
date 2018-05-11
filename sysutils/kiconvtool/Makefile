@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kiconvtool
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	sysutils
 
 MAINTAINER=	amdmi3@FreeBSD.org
