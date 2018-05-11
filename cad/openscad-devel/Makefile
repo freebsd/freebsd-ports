@@ -5,8 +5,8 @@ PORTNAME=	openscad
 PORTVERSION=	2018.04.19
 PORTREVISION=	2
 CATEGORIES=	cad
-PKGNAMESUFFIX=  -devel
-DIST_SUBDIR=            ${PORTNAME}
+PKGNAMESUFFIX=	-devel
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller
@@ -28,9 +28,9 @@ CONFLICTS=	openscad
 
 USES=		bison compiler:c++11-lang desktop-file-utils eigen:3 gettext-tools \
 		pkgconfig python:run qmake shebangfix
-USE_GITHUB=     yes
-GH_ACCOUNT=     openscad
-GH_PROJECT=     openscad
+USE_GITHUB=	yes
+GH_ACCOUNT=	openscad
+GH_PROJECT=	openscad
 GH_TAGNAME=	179074dff8c23cbc0e651ce8463737df0006f4ca
 
 #SHEBANG_FILES=	libraries/MCAD/get_submodules.py
