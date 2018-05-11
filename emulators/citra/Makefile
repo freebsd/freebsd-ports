@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20180506
+PORTVERSION=	s20180511
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -27,7 +27,7 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	590a09d0
+GH_TAGNAME=	80bfd872
 GH_TUPLE=	citra-emu:ext-libressl-portable:cbb1dca:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:d1d4705:dynarmic/externals/dynarmic \
@@ -45,6 +45,7 @@ EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${OSREL:R}}
 EXTRA_PATCHES_FreeBSD_10=	${PATCHDIR}/extra-patch-c++14
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
+LDFLAGS+=	-Wl,--as-needed # Qt5Network
 
 OPTIONS_MULTI=	GUI
 OPTIONS_MULTI_GUI=	QT5 SDL
@@ -57,7 +58,7 @@ SDL_PLIST_FILES=bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz
 
 QT5_USES=	desktop-file-utils shared-mime-info
-QT5_USE=	QT5=qmake_build,buildtools_build,concurrent_build,core,gui,opengl,widgets
+QT5_USE=	QT5=qmake_build,buildtools_build,concurrent_build,core,gui,multimedia,opengl,widgets
 QT5_CMAKE_BOOL=	ENABLE_QT
 QT5_PLIST_FILES=bin/${PORTNAME}-qt \
 		"@comment bin/${PORTNAME}-room" \
