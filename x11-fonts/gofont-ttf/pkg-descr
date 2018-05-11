@@ -1,0 +1,8 @@
+The Go font family includes proportional- and fixed-width faces in
+normal, bold, and italic renderings.  The fonts have been tested
+for technical uses, particularly programming.  Go source code looks
+particularly good when displayed in Go fonts, as its name implies, with
+things like punctuation characters easily distinguishable and operators
+lined up and placed consistently.
+
+WWW: https://blog.golang.org/go-fonts

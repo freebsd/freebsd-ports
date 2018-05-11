@@ -108,6 +108,7 @@
     SUBDIR += gfe
     SUBDIR += gnu-unifont
     SUBDIR += gnu-unifont-ttf
+    SUBDIR += gofont-ttf
     SUBDIR += gohufont
     SUBDIR += google-fonts
     SUBDIR += hack-font
