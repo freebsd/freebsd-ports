@@ -1436,8 +1436,8 @@ lib/python2.7/ensurepip/__init__.pyo
 lib/python2.7/ensurepip/__main__.py
 lib/python2.7/ensurepip/__main__.pyc
 lib/python2.7/ensurepip/__main__.pyo
-lib/python2.7/ensurepip/_bundled/pip-9.0.1-py2.py3-none-any.whl
-lib/python2.7/ensurepip/_bundled/setuptools-28.8.0-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/pip-9.0.3-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/setuptools-39.0.1-py2.py3-none-any.whl
 lib/python2.7/ensurepip/_uninstall.py
 lib/python2.7/ensurepip/_uninstall.pyc
 lib/python2.7/ensurepip/_uninstall.pyo
@@ -3038,7 +3038,6 @@ lib/python2.7/test/seq_tests.py
 lib/python2.7/test/seq_tests.pyc
 lib/python2.7/test/seq_tests.pyo
 lib/python2.7/test/sgml_input.html
-lib/python2.7/test/sha256.pem
 lib/python2.7/test/sortperf.py
 lib/python2.7/test/sortperf.pyc
 lib/python2.7/test/sortperf.pyo
@@ -4322,6 +4321,7 @@ lib/python2.7/test/win_console_handler.py
 lib/python2.7/test/win_console_handler.pyc
 lib/python2.7/test/win_console_handler.pyo
 lib/python2.7/test/wrongcert.pem
+lib/python2.7/test/xmltestdata/expat224_utf8_bug.xml
 lib/python2.7/test/xmltestdata/simple-ns.xml
 lib/python2.7/test/xmltestdata/simple.xml
 lib/python2.7/test/xmltestdata/test.xml
