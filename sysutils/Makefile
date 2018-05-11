@@ -434,6 +434,7 @@
     SUBDIR += gnome-system-monitor
     SUBDIR += gnome_subr
     SUBDIR += goaccess
+    SUBDIR += gomplate
     SUBDIR += google-compute-engine-oslogin
     SUBDIR += goss
     SUBDIR += gpart

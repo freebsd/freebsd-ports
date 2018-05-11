@@ -1,0 +1,9 @@
+Gomplate is a template-based CLI tool. gomplate supports additional
+template datasources such as: JSON, YAML, AWS EC2 metadata, BoltDB,
+sockaddr, Hashicorp Consul, and Hashicorp Vault secrets.
+
+Gomplate lets you process templates which also include shell-like
+variables. Also there are some useful built-in functions that can be
+used to make templates even more expressive.
+
+WWW: https://gomplate.hairyhenderson.ca
