@@ -2044,6 +2044,7 @@
     SUBDIR += p5-Cache-Simple-TimedExpiry
     SUBDIR += p5-Cairo-GObject
     SUBDIR += p5-Calendar-Simple
+    SUBDIR += p5-Call-Context
     SUBDIR += p5-Callback-Frame
     SUBDIR += p5-Canary-Stability
     SUBDIR += p5-Capture-Tiny
