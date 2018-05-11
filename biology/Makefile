@@ -42,6 +42,7 @@
     SUBDIR += grappa
     SUBDIR += hmmer
     SUBDIR += htslib
+    SUBDIR += hyphy
     SUBDIR += iolib
     SUBDIR += iqtree
     SUBDIR += jalview
