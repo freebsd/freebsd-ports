@@ -14,8 +14,6 @@ COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-BROKEN_SSL=	openssl-devel
-
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USERS=		${PORTNAME}
