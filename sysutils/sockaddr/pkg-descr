@@ -1,0 +1,8 @@
+Sockaddr is a command-line utility that makes it easy to query network
+address information from the local server.  With sockaddr it is possible
+to create a list of the RFC 1918 addresses on a server, obtain the
+default gateway, or public IP addresses and use this information in other
+shell scripts.  See the website for additional templating and IP math
+functions.
+
+WWW: https://github.com/hashicorp/go-sockaddr/tree/master/cmd/sockaddr
