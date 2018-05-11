@@ -125,6 +125,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/ja/LC_MESSAGES/pg_upgrade-10.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pg_waldump-10.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/plpgsql-10.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/postgres-10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/initdb-10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_archivecleanup-10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_basebackup-10.mo
