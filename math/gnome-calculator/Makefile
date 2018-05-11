@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-calculator
-PORTVERSION=	3.24.0
-PORTREVISION=	2
+PORTVERSION=	3.26.0
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,7 +22,8 @@ LIB_DEPENDS=	libmpfr.so:math/mpfr \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gmake gnome libtool localbase pkgconfig tar:xz
+USES=		compiler:c11 gettext gmake gnome libtool \
+		localbase pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview3 intltool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
