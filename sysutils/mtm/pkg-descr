@@ -1,0 +1,18 @@
+mtm is the Micro Terminal Multiplexer, a terminal multiplexer.
+
+It has four major features/princples:
+ - Simplicity: there are three commands (change focus, split, close). There are
+   no modes, no dozens of commands, no crazy feature list.
+ - Compatibility: mtm emulates a classic ANSI text terminal. That means it
+   should work out of the box on essentially all terminfo/termcap-based systems
+   (even pretty old ones), without needing to install a new termcap entry.
+ - Size mtm is small. The entire project is around 1000 lines of code.
+ - Stability: mtm is "finished" as it is now. You don't need to worry about it
+   changing on you unexpectedly. The only changes that can happen at this point
+   are:
+    - Bug fixes.
+    - Translation improvements.
+    - Accessibility improvements.
+    - Fixes to keep it working on modern OSes.
+
+WWW: https://github.com/deadpixi/mtm
