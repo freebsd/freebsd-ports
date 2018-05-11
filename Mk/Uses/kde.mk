@@ -74,8 +74,8 @@ KDE_FRAMEWORKS_VERSION?=	5.45.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	18.04.0
-KDE_APPLICATIONS_SHLIB_VER?=	5.8.0
+KDE_APPLICATIONS_VERSION?=	18.04.1
+KDE_APPLICATIONS_SHLIB_VER?=	5.8.1
 KDE_APPLICATIONS_BRANCH?=	stable
 # Upstream moves old software to Attic/. Specify the newest applications release there.
 # Only the major version is used for the comparison.

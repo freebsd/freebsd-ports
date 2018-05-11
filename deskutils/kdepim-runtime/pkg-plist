@@ -749,6 +749,9 @@ share/locale/ga/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ga/LC_MESSAGES/kio_akonadi.mo
 share/locale/ga/LC_MESSAGES/kio_pop3.mo
+share/locale/gl/LC_MESSAGES/accountwizard_ews.mo
+share/locale/gl/LC_MESSAGES/akonadi_ews_resource.mo
+share/locale/gl/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/gl/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/gl/LC_MESSAGES/accountwizard_ical.mo
 share/locale/gl/LC_MESSAGES/accountwizard_imap.mo
