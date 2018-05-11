@@ -3,7 +3,7 @@
 
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.14
+DISTVERSION=	0.11.0
 CATEGORIES=	www
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
@@ -20,6 +20,11 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/caddy etc/rc.d/caddy
+
+OPTIONS_DEFINE=	TELEMETRY
+
+TELEMETRY_DESC=	Enable telemetry support
+TELEMETRY_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-disable-telemetry
 
 do-build:
 	@cd ${GO_WRKSRC}/${PORTNAME} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build
