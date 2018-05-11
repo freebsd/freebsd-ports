@@ -1,13 +1,3 @@
-%%PYTHON_SITELIBDIR%%/pyPgSQL/__init__.py
-%%PYTHON_SITELIBDIR%%/pyPgSQL/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pyPgSQL/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pyPgSQL/PgSQL.py
-%%PYTHON_SITELIBDIR%%/pyPgSQL/PgSQL.pyc
-%%PYTHON_SITELIBDIR%%/pyPgSQL/PgSQL.pyo
-%%PYTHON_SITELIBDIR%%/pyPgSQL/libpq/__init__.py
-%%PYTHON_SITELIBDIR%%/pyPgSQL/libpq/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pyPgSQL/libpq/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pyPgSQL/libpq/libpqmodule.so
 %%PORTDOCS%%%%DOCSDIR%%/Announce
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
