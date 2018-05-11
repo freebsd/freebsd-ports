@@ -12,4 +12,9 @@ SLAVEPORT=	lite
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/systemd/user/evince.service
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/systemd/user
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/systemd
+
 .include "${MASTERDIR}/Makefile"

@@ -123,7 +123,6 @@ lib/libevview3.so.%%GTK3_VERSION%%
 lib/libevview3.so.3
 lib/mozilla/plugins/libevbrowserplugin.a
 lib/mozilla/plugins/libevbrowserplugin.so
-lib/systemd/user/evince.service
 libdata/pkgconfig/evince-document-%%VERSION%%.pc
 libdata/pkgconfig/evince-view-%%VERSION%%.pc
 %%DBUS%%libexec/evinced
