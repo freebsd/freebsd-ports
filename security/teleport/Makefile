@@ -2,13 +2,15 @@
 
 PORTNAME=	teleport
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.6
+DISTVERSION=	2.5.7
 CATEGORIES=	security
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Gravitational Telport SSH
 
 LICENSE=	APACHE20
+
+ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go \
 		${LOCALBASE}/bin/zip:archivers/zip
@@ -18,6 +20,7 @@ USES=		compiler gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	gravitational
 GH_TAGNAME=	v${DISTVERSION}${DISTVERSIONSUFFIX}
+GH_TAG_COMMIT=	b3f4ecb
 
 USE_RC_SUBR=	teleport
 
@@ -38,11 +41,15 @@ post-extract:
 	@${CP} -rp ${WRKDIR}/${PRE_GOPATH_DIR}/vendor/* ${WRKDIR}/src/
 	@${CP} -rp ${WRKDIR}/${PRE_GOPATH_DIR}/* ${WRKDIR}/${GO_TELEPORT_SRC_DIR}/
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%GH_TAG_COMMIT%%|${GH_TAG_COMMIT}|g" \
+		${WRKDIR}/${GO_TELEPORT_SRC_DIR}/version.mk
+
 do-build:
 	@cd ${WRKDIR}/${GO_TELEPORT_SRC_DIR} && \
 		${SETENV} ${MAKE_ENV} ${BUILD_ENV} \
 		CGO_ENABLED=1 GOPATH=${WRKDIR} \
-		${GMAKE} full
+		${GMAKE} -s full
 
 do-install:
 	${WRKDIR}/${GO_TELEPORT_SRC_DIR}/build/teleport configure > ${STAGEDIR}${PREFIX}/etc/teleport.yaml.sample
