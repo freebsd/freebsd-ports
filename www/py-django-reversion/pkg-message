@@ -1,9 +1,0 @@
-**********************************************************************
-
-To add django-reversion to a django project:
-
-1. Add 'reversion' to your INSTALLED_APPS setting.
-
-2. Run the command "manage.py syncdb".
-
-**********************************************************************
