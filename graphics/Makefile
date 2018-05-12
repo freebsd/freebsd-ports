@@ -546,6 +546,7 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
+    SUBDIR += libmypaint
     SUBDIR += libnsbmp
     SUBDIR += libnsgif
     SUBDIR += libopenraw
