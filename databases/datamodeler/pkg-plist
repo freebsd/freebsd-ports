@@ -790,6 +790,8 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/external/oracle.adf-share-base.jar
 %%DATADIR%%/external/oracle.adf-share-ca.jar
 %%DATADIR%%/external/oracle.db-ca.jar
+%%DATADIR%%/external/oracle.dbtools.http.jar
+%%DATADIR%%/external/oracle.dbtools.net.jar
 %%DATADIR%%/external/oracle.dvt-jclient-reports.jar
 %%DATADIR%%/external/oracle.dvt-jclient.jar
 %%DATADIR%%/external/oracle.dvt-utils.jar
@@ -864,6 +866,7 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/external/oracle.jewt-olaf2.jar
 %%DATADIR%%/external/oracle.orahelp-helpshare.jar
 %%DATADIR%%/external/oracle.orahelp-ohj.jar
+%%DATADIR%%/external/oracle.sqldeveloper.utils-nodeps.jar
 %%DATADIR%%/external/oracle.xmlef.jar
 %%DATADIR%%/ide/bin/SplashFontBranding.png
 %%DATADIR%%/ide/bin/edt.properties
@@ -1688,6 +1691,9 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/sqldeveloper/lib/commons-collections4.jar
 %%DATADIR%%/sqldeveloper/lib/commons-logging.jar
 %%DATADIR%%/sqldeveloper/lib/curvesapi.jar
+%%DATADIR%%/sqldeveloper/lib/dbtools-common.jar
+%%DATADIR%%/sqldeveloper/lib/dbtools-http.jar
+%%DATADIR%%/sqldeveloper/lib/dbtools-net.jar
 %%DATADIR%%/sqldeveloper/lib/emapi.jar
 %%DATADIR%%/sqldeveloper/lib/hk2-api.jar
 %%DATADIR%%/sqldeveloper/lib/hk2-locator.jar
@@ -1714,8 +1720,6 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/sqldeveloper/lib/log4j-api.jar
 %%DATADIR%%/sqldeveloper/lib/log4j-core.jar
 %%DATADIR%%/sqldeveloper/lib/low-level-api.jar
-%%DATADIR%%/sqldeveloper/lib/oracle.dbtools-common.jar
-%%DATADIR%%/sqldeveloper/lib/oracle.dbtools.http.jar
 %%DATADIR%%/sqldeveloper/lib/oracle.sqldeveloper.jfx-nodeps.jar
 %%DATADIR%%/sqldeveloper/lib/oraclepki.jar
 %%DATADIR%%/sqldeveloper/lib/osdt_cert.jar
