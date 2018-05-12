@@ -3,27 +3,27 @@ not function in FreeBSD.
 
 Working modules:
 - bspwm
-- cpu
 - date
+- github
 - i3
-- memory
+- ipc (polybar-msg method does not seem to work)
+- menu
+- mpd
 - script
 - text
 - xkeyboard
 - xwindow
+- xworkspaces (not extensively tested)
 
 Broken modules:
+- cpu
 - filesystem
+- memory
 - network (requires wireless_tools)
 - temperature (requires /sys/class/thermal/* in sysfs)
 - volume (requires full alsa, not a wrapper)
-- menu (does not show up)
-- xbacklight
-- xworkspaces
 
-Not tested:
+Unknown:
 - backlight
 - battery
-- github
-- ipc
-- mpd
+- xbacklight
