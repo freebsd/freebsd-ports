@@ -6,11 +6,11 @@
  
 -#define MAX_DEFAULT_DIRS 6
 +#define MAX_DEFAULT_DIRS 7
- #define DEFAULT_DIRS_SIZE (MAX_DEFAULT_DIRS + 1)  /* Terminate with NULL */
+ #define DEFAULT_DIRS_SIZE (MAX_DEFAULT_DIRS + 1) /* Terminate with NULL */
  static const char **default_directories = NULL;
  
 @@ -914,6 +914,14 @@ static int search_default_file_with_ext(
-       return 1;                                 /* Ignore wrong files */
+       return 1; /* Ignore wrong files */
    }
  
 +  if (strstr(name, "/etc") == name)
@@ -21,13 +21,13 @@
 +      goto err;
 +  }
 +
-   while (mysql_file_getline(buff, sizeof(buff) - 1, fp, is_login_file))
-   {
+   while (mysql_file_getline(buff, sizeof(buff) - 1, fp, is_login_file)) {
      line++;
+     /* Ignore comment and empty lines */
 @@ -1252,7 +1260,8 @@ void my_print_default_files(const char *
-             end[(strlen(end)-1)] = ' ';
+             end[(strlen(end) - 1)] = ' ';
            else
-             strxmov(end, conf_file, *ext , " ",  NullS);
+             strxmov(end, conf_file, *ext, " ", NullS);
 -          fputs(name, stdout);
 +          if (strstr(name, "/etc") != name)
 +            fputs(name, stdout);
@@ -53,9 +53,8 @@
 @@ -1488,7 +1492,7 @@ int check_file_permissions(const char *f
    MY_STAT stat_info;
  
-   if (!my_stat(file_name,&stat_info,MYF(0)))
--    return 1;
-+    return 0;
+-  if (!my_stat(file_name, &stat_info, MYF(0))) return 1;
++  if (!my_stat(file_name, &stat_info, MYF(0))) return 0;
    /*
      Ignore .mylogin.cnf file if not exclusively readable/writable
      by current user.
