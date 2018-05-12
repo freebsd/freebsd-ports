@@ -3,7 +3,7 @@
 
 PORTNAME=	pacemaker
 PORTVERSION=	1.1.16
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	Pacemaker-
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		getopt>=0:misc/getopt
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libltdl.so:devel/libltdl \
-		libqb.so:devel/libqb \
+		libqb.so.0:devel/libqb \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libxml2.so:textproc/libxml2 \
 		libxslt.so:textproc/libxslt
@@ -37,6 +37,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ClusterLabs
 
 USES=		autoreconf gmake libtool pathfix pkgconfig python shebangfix
+USE_BINUTILS=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
@@ -46,6 +47,7 @@ CONFIGURE_ARGS=	--disable-fatal-warnings \
 		--disable-hardening \
 		--with-corosync \
 		--without-heartbeat
+LDFLAGS+=	-B${LOCALBASE}/bin
 INSTALL_TARGET=	install-strip
 
 PATHFIX_MAKEFILEIN=	Makefile.am
