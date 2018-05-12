@@ -2,7 +2,7 @@
 
 PORTNAME=	polybar
 DISTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	capt_redbeard@protonmail.com
@@ -14,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	xcb-proto>=1.9:x11/xcb-proto
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libxcb-xrm.so:x11/xcb-util-xrm \
+		libinotify.so:devel/libinotify \
 		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
-		libxcb-util.so:x11/xcb-util \
 		libxcb-image.so:x11/xcb-util-image \
-		libinotify.so:devel/libinotify
+		libxcb-util.so:x11/xcb-util \
+		libxcb-xrm.so:x11/xcb-util-xrm
 
 USES=		cmake:outsource localbase:ldflags pkgconfig python:2.7,build
 USE_GITHUB=	yes
@@ -30,15 +30,16 @@ GH_TUPLE=	jaagr:i3ipcpp:v0.7.1:i3ipcpp/lib/i3ipcpp \
 USE_GNOME=	cairo
 USE_XORG=	xcb
 
-OPTIONS_DEFINE=	ALSA CURL EXAMPLES I3 IPC MPD
-OPTIONS_DEFAULT=	ALSA CURL I3 IPC MPD
+OPTIONS_DEFINE=	ALSA CURL EXAMPLES I3 IPC MPD TESTS
+OPTIONS_DEFAULT=	CURL I3 IPC MPD
 OPTIONS_SUB=	yes
 
 ALSA_DESC=	Volume control
 CURL_DESC=	Github support
 I3_DESC=	i3wm support
+IPC_DESC=	Built-in IPC support
 MPD_DESC=	Support for controlling MPD
-IPC_DESC=	i3 IPC support
+TESTS_DESC=	Build testsuite
 
 ALSA_CMAKE_BOOL=	ENABLE_ALSA
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -55,7 +56,13 @@ IPC_CMAKE_BOOL=		BUILD_IPC_MSG
 MPD_CMAKE_BOOL=		ENABLE_MPD
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
+TESTS_CMAKE_BOOL=	BUILD_TESTS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|python2|${PYTHON_CMD}|g' ${WRKSRC_xpp}/CMakeLists.txt
+
+do-test-TESTS-on:
+	cd ${TEST_WRKSRC} && ${SETENV} BUILD_TESTS=ON \
+		${SH} ${WRKSRC}/common/travis/tests.sh
 
 .include <bsd.port.mk>
