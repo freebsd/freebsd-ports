@@ -13,8 +13,6 @@ bin/mysqlslap
 include/mysql/base64.h
 include/mysql/big_endian.h
 include/mysql/binary_log_types.h
-include/mysql/byte_order_generic.h
-include/mysql/byte_order_generic_x86.h
 include/mysql/c_string_less.h
 include/mysql/crypt_genhash_impl.h
 include/mysql/decimal.h
@@ -22,7 +20,6 @@ include/mysql/depth_first_search.h
 include/mysql/dur_prop.h
 include/mysql/errmsg.h
 include/mysql/ft_global.h
-include/mysql/hash.h
 include/mysql/heap.h
 include/mysql/keycache.h
 include/mysql/lex_string.h
@@ -31,7 +28,6 @@ include/mysql/little_endian.h
 include/mysql/m_ctype.h
 include/mysql/m_string.h
 include/mysql/map_helpers.h
-include/mysql/mem_root_fwd.h
 include/mysql/mf_wcomp.h
 include/mysql/mutex_lock.h
 include/mysql/my_aes.h
@@ -111,7 +107,6 @@ include/mysql/mysql/plugin_validate_password.h
 include/mysql/mysql/service_command.h
 include/mysql/mysql/service_locking.h
 include/mysql/mysql/service_my_plugin_log.h
-include/mysql/mysql/service_my_snprintf.h
 include/mysql/mysql/service_mysql_alloc.h
 include/mysql/mysql/service_mysql_keyring.h
 include/mysql/mysql/service_mysql_password_policy.h
@@ -171,7 +166,6 @@ include/mysql/sql_string.h
 include/mysql/sslopt-case.h
 include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
-include/mysql/str_uca_type.h
 include/mysql/template_utils.h
 include/mysql/thr_cond.h
 include/mysql/thr_lock.h
@@ -187,7 +181,6 @@ lib/mysql/libmysqlclient.so.21
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.21
-lib/mysql/libmysqlservices.a
 libdata/pkgconfig/mysqlclient.pc
 man/man1/comp_err.1.gz
 man/man1/mysql.1.gz

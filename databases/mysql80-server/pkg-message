@@ -12,7 +12,7 @@ There is no initial password for first time use of MySQL.
 Keep in mind to reset it to a secure password.
 
 MySQL80 has a default %%ETCDIR%%/my.cnf,
-remember to replace it wit your own
+remember to replace it with your own
 or set `mysql_optfile="$YOUR_CNF_FILE` in rc.conf.
 
 *****************************************************************************

@@ -6,6 +6,7 @@
  #include <mysql/service_mysql_string.h>
 +/* solve clash between libc++ bitset::test() and test macro from my_global.h */
 +#undef test
+ #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
- #include <sys/types.h>
+

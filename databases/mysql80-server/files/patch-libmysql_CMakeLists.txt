@@ -1,11 +1,11 @@
 --- libmysql/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
 +++ libmysql/CMakeLists.txt
 @@ -215,7 +215,7 @@ IF(WIN32)
- ENDIF()
+ ADD_SUBDIRECTORY(authentication_ldap)
  
  # Merge several convenience libraries into one big mysqlclient
--MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development)
-+MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
+-MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS} COMPONENT Development)
++MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS} COMPONENT Development SKIP_INSTALL)
  
  # Visual Studio users need debug  static library for debug projects
  IF(MSVC)
@@ -14,7 +14,7 @@
    MERGE_LIBRARIES(libmysql SHARED ${LIBS}
      EXPORTS ${CLIENT_API_FUNCTIONS} ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
 -    COMPONENT SharedLibraries)
-+    COMPONENT SharedLibraries NOINSTALL)
++    COMPONENT SharedLibraries SKIP_INSTALL)
 +IF(FALSE)
    IF(UNIX)
      # libtool compatability

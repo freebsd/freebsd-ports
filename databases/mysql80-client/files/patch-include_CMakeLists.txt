@@ -1,13 +1,11 @@
 --- include/CMakeLists.txt.orig	2017-09-21 15:51:58 UTC
 +++ include/CMakeLists.txt
-@@ -30,11 +30,179 @@ SET(HEADERS
+@@ -30,11 +30,173 @@ SET(HEADERS
    ${CMAKE_CURRENT_BINARY_DIR}/mysql_version.h
    ${CMAKE_CURRENT_BINARY_DIR}/mysqld_error.h
    ../libbinlogevents/export/binary_log_types.h
 +  base64.h
 +  big_endian.h
-+  byte_order_generic.h
-+  byte_order_generic_x86.h
 +  c_string_less.h
 +  crypt_genhash_impl.h
 +  decimal.h
@@ -15,7 +13,6 @@
 +  dur_prop.h
 +  errmsg.h
 +  ft_global.h
-+  hash.h
 +  heap.h
 +  keycache.h
 +  lex_string.h
@@ -24,7 +21,6 @@
 +  m_ctype.h
 +  m_string.h
 +  map_helpers.h
-+  mem_root_fwd.h
 +  mf_wcomp.h
 +  mutex_lock.h
 +  my_aes.h
@@ -115,7 +111,6 @@
 +  sslopt-case.h
 +  sslopt-longopts.h
 +  sslopt-vars.h
-+  str_uca_type.h
 +  template_utils.h
 +  thr_cond.h
 +  thr_lock.h
@@ -154,7 +149,6 @@
 +  mysql/service_command.h
 +  mysql/service_locking.h
 +  mysql/service_my_plugin_log.h
-+  mysql/service_my_snprintf.h
 +  mysql/service_mysql_alloc.h
 +  mysql/service_mysql_keyring.h
 +  mysql/service_mysql_password_policy.h
