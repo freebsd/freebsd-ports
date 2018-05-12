@@ -3,7 +3,7 @@
 
 PORTNAME=		libaravis
 DISTVERSIONPREFIX=	ARAVIS_
-DISTVERSION=		0_5_11
+DISTVERSION=		0_5_12
 CATEGORIES=		devel
 
 MAINTAINER=		rozhuk.im@gmail.com
@@ -17,11 +17,11 @@ BUILD_DEPENDS=		g-ir-compiler:devel/gobject-introspection
 CONFLICTS_INSTALL=	${PORTNAME}*
 
 USES=			pkgconfig autoreconf libtool gmake
-GNU_CONFIGURE=		yes
 USE_GITHUB=		yes
 GH_ACCOUNT=		AravisProject
 GH_PROJECT=		aravis
 USE_GNOME=		glib20 intltool libxml2
+GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 INSTALL_TARGET=		install-strip
 

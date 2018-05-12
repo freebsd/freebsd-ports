@@ -78,12 +78,12 @@ lib/libaravis-0.6.so.0
 lib/libaravis-0.6.so.0.0.0
 libdata/pkgconfig/aravis-0.6.pc
 share/aravis-0.6/arv-fake-camera.xml
-share/gir-1.0/Aravis-0.6.gir
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+share/gir-1.0/Aravis-0.6.gir
 %%NLS%%share/locale/bs/LC_MESSAGES/aravis-0.6.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/aravis-0.6.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/aravis-0.6.mo
