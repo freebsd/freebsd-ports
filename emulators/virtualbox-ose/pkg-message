@@ -52,6 +52,13 @@ NS_ERROR_FACTORY_NOT_REGISTERED. In this case delete /tmp/.vbox-*-ipc file.
 If you experience "Network: write Failed: Cannot allocate memory" errors
 try to increase net.graph.maxdata in /boot/loader.conf
 
+If you are using AIO, then increase these limits (PR#168298):
+vfs.aio.max_buf_aio=8192
+vfs.aio.max_aio_queue_per_proc=65536
+vfs.aio.max_aio_per_proc=8192
+vfs.aio.max_aio_queue=65536
+To check if AIO is used use: kldstat -v | grep aio
+
 Check wiki page for known issues and troubleshooting:
 http://wiki.freebsd.org/VirtualBox
 
