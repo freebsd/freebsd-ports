@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.459 2018/05/11 21:26:56 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.461 2018/05/12 18:55:45 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 18;
-my $micro = 0;
+my $micro = 1;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1152,13 +1152,13 @@ sub check_depends_syntax {
 					$makevar{USE_PYTHON} eq 'noflavors' ||
 					$makevar{USE_PYTHON} eq '') {
 					if ($m{'fla'} ne '${PY_FLAVOR}') {
-						&perror("FATAL", $file, -1, "directory for dependency ".
-							"$m{'dep'} must be $m{'dir'}:\@\${PY_FLAVOR}");
+						&perror("WARN", $file, -1, "you may want directory for ".
+							"dependency $m{'dep'} to be $m{'dir'}:\@\${PY_FLAVOR}");
 					}
 				} else {
 					if ($m{'fla'} ne '${FLAVOR}') {
-						&perror("FATAL", $file, -1, "directory for dependency ".
-							"$m{'dep'} must be $m{'dir'}:\@\${FLAVOR}");
+						&perror("WARN", $file, -1, "you may want directory for ".
+							"dependency $m{'dep'} to be $m{'dir'}:\@\${FLAVOR}");
 					}
 				}
 			}
