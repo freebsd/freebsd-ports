@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gevent
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libev.so:devel/libev
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.10:devel/py-greenlet@${FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.10:devel/py-greenlet@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.13:devel/py-greenlet@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.13:devel/py-greenlet@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR}
 
 DO_MAKE_TEST=	${SETENV} PYTHONPATH=../ ${PYTHON_CMD}
