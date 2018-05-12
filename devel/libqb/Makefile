@@ -1,31 +1,41 @@
-# Created by: dpejesh@yahoo.com
+# Created by: David Shane Holden <dpejesh@yahoo.com>
 # $FreeBSD$
 
-PORTNAME=	libqb
-PORTVERSION=	1.0.2
-CATEGORIES=	devel
-MASTER_SITES=	https://github.com/ClusterLabs/libqb/releases/download/v${PORTVERSION}/
+PORTNAME=		libqb
+PORTVERSION=		1.0.3
+CATEGORIES=		devel
 
-MAINTAINER=	dpejesh@yahoo.com
-COMMENT=	High performance logging, tracing, ipc, and polling library
+MAINTAINER=		dpejesh@yahoo.com
+COMMENT=		High performance logging, tracing, ipc, and polling library
 
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=		LGPL21
+LICENSE_FILE=		${WRKSRC}/COPYING
 
-GROUPS=		haclient
+TEST_DEPENDS=		checkmk:devel/check
 
-QB_SOCKET_DIR?=	/var/run/qb
-PLIST_SUB+=	QB_SOCKET_DIR=${QB_SOCKET_DIR}
+GROUPS=			haclient
 
-USE_LDCONFIG=	yes
-USES=		autoreconf gmake libtool pathfix pkgconfig tar:xz
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-socket-dir=${QB_SOCKET_DIR}
-INSTALL_TARGET=	install-strip
+QB_SOCKET_DIR?=		/var/run/qb
+PLIST_SUB+=		QB_SOCKET_DIR=${QB_SOCKET_DIR}
+
+USE_GITHUB=		yes
+GH_ACCOUNT=		ClusterLabs
+GH_TAGNAME=		v${PORTVERSION}
+
+USE_BINUTILS=		yes
+USE_LDCONFIG=		yes
+USES=			autoreconf gmake libtool pathfix pkgconfig tar:xz
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--with-socket-dir=${QB_SOCKET_DIR}
+LDFLAGS+=		-B${LOCALBASE}/bin
 PATHFIX_MAKEFILEIN=	Makefile.am
 
-OPTIONS_DEFINE=	DOXYGEN
-OPTIONS_SUB=	yes
+INSTALL_TARGET=		install-strip
+TEST_TARGET=		check
+
+OPTIONS_DEFINE=		DOXYGEN
+OPTIONS_SUB=		yes
+
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 post-install:
