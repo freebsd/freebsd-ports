@@ -48,7 +48,7 @@ man/man1/pdnsutil.1.gz
 man/man1/pdns_control.1.gz
 man/man1/pdns_server.1.gz
 man/man1/zone2json.1.gz
-man/man1/zone2ldap.1.gz
+%%OPENLDAP%%man/man1/zone2ldap.1.gz
 man/man1/zone2sql.1.gz
 %%PROTOBUF%%man/man1/dnspcap2protobuf.1.gz
 %%TOOLS%%man/man1/dnstcpbench.1.gz
@@ -66,6 +66,8 @@ man/man1/zone2sql.1.gz
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.pgsql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.sqlite3.sql
+%%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/dnsdomain2.schema
+%%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/pdns-domaininfo.schema
 %%MYDNS%%%%PORTDOCS%%%%DOCSDIR%%/schema.mydns.sql
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/schema.pgsql.sql
