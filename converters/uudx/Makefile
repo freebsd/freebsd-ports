@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extractor from uuencoded files
 
+LICENSE=	NONE
+
 BUILD_DEPENDS=	nkf:japanese/nkf
 
 USES=		dos2unix lha
