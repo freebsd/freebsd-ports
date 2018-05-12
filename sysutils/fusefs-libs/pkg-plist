@@ -12,7 +12,7 @@ include/ulockmgr.h
 lib/libfuse.a
 lib/libfuse.so
 lib/libfuse.so.2
-lib/libfuse.so.2.9.4
+lib/libfuse.so.%%VERSION%%
 lib/libulockmgr.a
 lib/libulockmgr.so
 lib/libulockmgr.so.1
