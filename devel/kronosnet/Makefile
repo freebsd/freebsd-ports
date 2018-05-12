@@ -3,6 +3,7 @@
 
 PORTNAME=	kronosnet
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://kronosnet.org/releases/
 
@@ -15,9 +16,9 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		liblz4.so:archivers/liblz4 \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
-		libqb.so:devel/libqb
+		libqb.so.0:devel/libqb
 
-USES=		autoreconf gmake libtool localbase pkgconfig ssl # tar:xz
+USES=		autoreconf gmake libtool localbase pkgconfig ssl
 USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_LDCONFIG=	yes
