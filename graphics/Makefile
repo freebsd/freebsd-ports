@@ -636,6 +636,7 @@
     SUBDIR += mupdf
     SUBDIR += mxp
     SUBDIR += mypaint
+    SUBDIR += mypaint-brushes
     SUBDIR += nathive
     SUBDIR += natron
     SUBDIR += netpbm
