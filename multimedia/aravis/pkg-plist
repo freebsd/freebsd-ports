@@ -1,0 +1,13 @@
+bin/arv-viewer
+man/man1/arv-tool-0.6.1.gz
+man/man1/arv-viewer.1.gz
+share/appdata/arv-viewer.appdata.xml
+share/applications/arv-viewer.desktop
+%%DATADIR%%-0.6/arv-viewer.ui
+share/icons/hicolor/22x22/apps/aravis.png
+share/icons/hicolor/256x256/apps/aravis.png
+share/icons/hicolor/32x32/apps/aravis.png
+share/icons/hicolor/48x48/apps/aravis.png
+share/icons/hicolor/scalable/devices/aravis-fake-symbolic.svg
+share/icons/hicolor/scalable/devices/aravis-gigevision-symbolic.svg
+share/icons/hicolor/scalable/devices/aravis-usb3vision-symbolic.svg
