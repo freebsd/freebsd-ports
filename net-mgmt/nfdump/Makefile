@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6.16
+PORTVERSION=	1.6.17
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -12,7 +12,7 @@ COMMENT=	Command-line tools to collect and process NetFlow data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
@@ -95,6 +95,7 @@ PLIST_FILES+=	bin/ft2nfdump man/man1/ft2nfdump.1.gz
 
 .if ${PORT_OPTIONS:MREADPCAP}
 CONFIGURE_ARGS+=	--enable-readpcap
+LIB_DEPENDS+=		libpcap.so:net/libpcap
 .else
 CONFIGURE_ARGS+=	--disable-readpcap
 .endif
