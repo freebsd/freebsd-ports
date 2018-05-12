@@ -3,8 +3,8 @@
 
 PORTNAME=	toxcore
 PORTVERSION=	0.2.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
 
@@ -19,9 +19,9 @@ LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
 		libsndfile.so:audio/libsndfile		\
 		libportaudio.so:audio/portaudio		\
 		libsodium.so:security/libsodium		\
-		libopencv_core.so:graphics/opencv-core	\
 		libopus.so:audio/opus			\
 		libconfig.so:devel/libconfig
+TEST_DEPENDS=	libopencv_core.so:graphics/opencv-core
 
 CONFLICTS=	toxcore-legacy-0.1.*
 
