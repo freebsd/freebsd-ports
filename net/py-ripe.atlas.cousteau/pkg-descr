@@ -1,3 +1,5 @@
-A python wrapper around RIPE ATLAS API.
+A python wrapper that is using RIPE ATLAS v2 API. It covers a majority of API
+calls but not all of them. For some of these calls one will need to have a
+specific API key that can be retrieved from RIPE NCC.
 
 WWW: https://github.com/RIPE-NCC/ripe-atlas-cousteau
