@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	libfuse
 GH_PROJECT=	libfuse
 
-USES=		iconv libtool autoreconf gettext-tools
+USES=		autoreconf gettext-tools iconv libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
