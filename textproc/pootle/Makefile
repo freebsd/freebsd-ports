@@ -14,6 +14,8 @@ COMMENT=	User-friendly web portal for simple translation process
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Conflicting Django 1.8 / 1.11 dependencies, ancient version
+
 RUN_DEPENDS=	translate-toolkit>=1.11.0:textproc/translate-toolkit \
 		${PYTHON_PKGNAMEPREFIX}south>=0.7.6:databases/py-south@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cssmin>=0.1.4:www/py-cssmin@${FLAVOR} \
