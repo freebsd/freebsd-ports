@@ -161,6 +161,7 @@
     SUBDIR += circuslinux
     SUBDIR += cleanq3
     SUBDIR += cockatrice
+    SUBDIR += coffeebreak
     SUBDIR += colorcode
     SUBDIR += columns
     SUBDIR += concentration
