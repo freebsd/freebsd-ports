@@ -1,4 +1,4 @@
-TIMESTAMP = 1526172928
+TIMESTAMP = 1526222484
 SHA256 (nginx-1.14.0.tar.gz) = 5d15becbf69aba1fe33f8d416d97edd95ea8919ea9ac519eff9bafebb6022cb5
 SIZE (nginx-1.14.0.tar.gz) = 1016272
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -15,8 +15,8 @@ SHA256 (08a395c66e42.tar.gz) = 53e440737ed1aff1f09fae150219a45f16add0c8d6e84546c
 SIZE (08a395c66e42.tar.gz) = 120603
 SHA256 (modsecurity-2.9.2.tar.gz) = 41a8f73476ec891f3a9e8736b98b64ea5c2105f1ce15ea57a1f05b4bf2ffaeb5
 SIZE (modsecurity-2.9.2.tar.gz) = 4298993
-SHA256 (passenger-5.2.3.tar.gz) = 0a06a2c75688a0e6c85717fb67b57940bebca5e56b7c76337c50b8c3d024345b
-SIZE (passenger-5.2.3.tar.gz) = 6956101
+SHA256 (passenger-5.3.0.tar.gz) = 096c637d8fa14b71160eab5c8a5caee4d6553683f04e78ce37f47f7113b5842d
+SIZE (passenger-5.3.0.tar.gz) = 7033231
 SHA256 (ngx_slowfs_cache-1.10.tar.gz) = 1e81453942e5b0877de1f1f06c56ae82918ea9818255cb935bcb673c95a758a1
 SIZE (ngx_slowfs_cache-1.10.tar.gz) = 11809
 SHA256 (yaoweibin-nginx_ajp_module-bf6cd93_GH0.tar.gz) = 9e3f78ea73e2d606a95ee64fd3affa4c249f9b342e66b6b11b63061791f28316
