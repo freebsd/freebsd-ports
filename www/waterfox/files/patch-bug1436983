@@ -1,0 +1,52 @@
+commit 7721a472b21b
+Author: Jon Coppeard <jcoppeard@mozilla.com>
+Date:   Mon Feb 12 10:34:21 2018 +0000
+
+    Bug 1436983 - Don't GC while linking JIT code r=nbp
+    
+    --HG--
+    extra : rebase_source : b096346182b263753414e1ef7aa4cb86d57d7386
+---
+ js/src/jit-test/tests/ion/getprop-primitive.js | 3 ++-
+ js/src/jit/CodeGenerator.cpp                   | 7 ++++++-
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git js/src/jit-test/tests/ion/getprop-primitive.js js/src/jit-test/tests/ion/getprop-primitive.js
+index 2cb912d7d4d42..bf59e35b5702b 100644
+--- js/src/jit-test/tests/ion/getprop-primitive.js
++++ js/src/jit-test/tests/ion/getprop-primitive.js
+@@ -35,7 +35,8 @@ var template = function (set) {
+         // If we bailout in the inner loop, then x will have a smaller value
+         // than the number of iterations.
+         cont = assertEqIf(lastX > 0, x, set.length);
+-        lastX = x;
++        if (inIon())
++            lastX = x;
+         x = 0;
+     }
+     return y;
+diff --git js/src/jit/CodeGenerator.cpp js/src/jit/CodeGenerator.cpp
+index 1b275a75cfd7e..6677d6cee443c 100644
+--- js/src/jit/CodeGenerator.cpp
++++ js/src/jit/CodeGenerator.cpp
+@@ -9838,6 +9838,11 @@ CodeGenerator::linkSharedStubs(JSContext* cx)
+ bool
+ CodeGenerator::link(JSContext* cx, CompilerConstraintList* constraints)
+ {
++    // We cancel off-thread Ion compilations in a few places during GC, but if
++    // this compilation was performed off-thread it will already have been
++    // removed from the relevant lists by this point. Don't allow GC here.
++    JS::AutoAssertNoGC nogc(cx);
++
+     RootedScript script(cx, gen->info().script());
+     OptimizationLevel optimizationLevel = gen->optimizationInfo().level();
+ 
+@@ -9918,7 +9923,7 @@ CodeGenerator::link(JSContext* cx, CompilerConstraintList* constraints)
+     // read barriers which were skipped while compiling the script off thread.
+     Linker linker(masm);
+     AutoFlushICache afc("IonLink");
+-    JitCode* code = linker.newCode<CanGC>(cx, ION_CODE, !patchableBackedges_.empty());
++    JitCode* code = linker.newCode<NoGC>(cx, ION_CODE, !patchableBackedges_.empty());
+     if (!code)
+         return false;
+ 
