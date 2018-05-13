@@ -1367,6 +1367,7 @@
     SUBDIR += py-rdflib
     SUBDIR += py-regex
     SUBDIR += py-reverend
+    SUBDIR += py-rnc2rng
     SUBDIR += py-rss2gen
     SUBDIR += py-rst2html5
     SUBDIR += py-rstyoutube
