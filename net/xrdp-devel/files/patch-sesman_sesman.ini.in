@@ -1,5 +1,5 @@
---- sesman/sesman.ini.orig	2017-12-27 14:40:24 UTC
-+++ sesman/sesman.ini
+--- sesman/sesman.ini.in.orig	2017-12-27 14:40:24 UTC
++++ sesman/sesman.ini.in
 @@ -75,8 +75,8 @@ param=xrdp/xorg.conf
  param=-noreset
  param=-nolisten

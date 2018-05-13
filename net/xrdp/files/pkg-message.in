@@ -1,6 +1,6 @@
 ==============================================================================
 
-XRDP has been installed.
+xrdp has been installed.
 
 There is an rc.d script, so the service can be enabled by adding this line
 in /etc/rc.conf:
