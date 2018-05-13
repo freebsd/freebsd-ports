@@ -16,6 +16,7 @@ LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
 DEPRECATED=	Unsupported by upstream. Use GCC 6 or newer instead.
+EXPIRATION_DATE=2018-07-13
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
