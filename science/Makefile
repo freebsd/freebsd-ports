@@ -173,6 +173,7 @@
     SUBDIR += py-hcluster
     SUBDIR += py-mdp
     SUBDIR += py-mlpy
+    SUBDIR += py-mmtf-python
     SUBDIR += py-netCDF4
     SUBDIR += py-obspy
     SUBDIR += py-openpiv
