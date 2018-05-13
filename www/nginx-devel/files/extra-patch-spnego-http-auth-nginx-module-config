@@ -8,7 +8,7 @@
 -    ngx_feature_libs="$ngx_feature_libs -lgssapi"
 -fi
 +ngx_feature_libs="%%GSSAPILIBS%%"
-+ngx_module_incs="%%GSSAPINCDIR%%"
++ngx_module_incs="%%GSSAPIINCDIR%%"
  
  if test -n "$ngx_module_link"; then
      ngx_module_type=HTTP

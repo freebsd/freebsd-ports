@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.14.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/ \
 		LOCAL/osa
@@ -260,7 +260,8 @@ post-patch-GRIDFS-on:
 	@${REINPLACE_CMD} 's!--std=c99!-DMONGO_HAVE_STDINT!' ${WRKSRC_gridfs}/config
 
 post-patch-HTTP_AUTH_KRB5-on:
-	@${REINPLACE_CMD} 's!%%GSSAPILIBS%%!${GSSAPILIBS}!' ${WRKSRC_auth_krb5}/config
+	@${REINPLACE_CMD} 's!%%GSSAPILIBS%%!${GSSAPILIBS}!g; \
+		s!%%GSSAPIINCDIR%%!${GSSAPIINCDIR}!g' ${WRKSRC_auth_krb5}/config
 
 post-patch-HTTP_TARANTOOL-on:
 	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_nginx_tarantool}/config
