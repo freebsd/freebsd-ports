@@ -72,8 +72,8 @@ include/mysql/private/my_md5.h
 include/mysql/private/my_nosys.h
 include/mysql/private/my_rdtsc.h
 include/mysql/private/my_rnd.h
+include/mysql/private/my_service_manager.h
 include/mysql/private/my_stacktrace.h
-include/mysql/private/my_systemd.h
 include/mysql/private/my_time.h
 include/mysql/private/my_tree.h
 include/mysql/private/my_uctype.h
