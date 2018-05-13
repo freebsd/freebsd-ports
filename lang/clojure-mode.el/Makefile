@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clojure-mode.el
-PORTVERSION=	5.6.1
-PORTREVISION=	2
+PORTVERSION=	5.7.0
 PORTEPOCH=	1
 CATEGORIES=	lang elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -11,7 +10,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 MAINTAINER=	harrigan-s@outlook.com
 COMMENT=	Emacs lisp module for the Clojure language
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
 USES=		emacs
 USE_GITHUB=	yes
