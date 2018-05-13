@@ -2,6 +2,7 @@
 
 PORTNAME=	cldr-emoji-annotation
 DISTVERSION=	33.0.0_1
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
