@@ -6,11 +6,8 @@ PORTVERSION=	6.0
 PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.analog.cx/ \
-		http://analog.gsp.com/ \
-		http://fossies.org/unix/www/ \
-		ftp://ftp.polytechnic.edu.na/pub/analog/ \
-		http://analog.tzone.it/
+MASTER_SITES=	http://analog.gsp.com/ \
+		http://fossies.org/unix/www/old/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast program for analysing WWW logfiles
