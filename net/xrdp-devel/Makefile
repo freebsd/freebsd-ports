@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xrdp
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
@@ -16,7 +15,9 @@ COMMENT=	Open source Remote Desktop Protocol (RDP) server
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-# pulseaudio's built source is required for audio redirection
+IGNORE=		no development version available right now, use net/xrdp instead
+
+# pulseaudio's configured source is required for audio redirection
 BUILD_DEPENDS=	${NONEXISTENT}:audio/pulseaudio:configure \
 		${LOCALBASE}/bin/nasm:devel/nasm
 RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp
@@ -69,9 +70,6 @@ post-extract:
 	@${CP} -r ${WRKSRC_libpainter}/ ${WRKSRC}/libpainter/
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e "s|^PULSE_SCRIPT=/etc/xrdp/pulse/default.pa|PULSE_SCRIPT=${PREFIX}/etc/xrdp/pulse/default.pa|" \
-		${WRKSRC}/sesman/sesman.ini
 	@${REINPLACE_CMD} \
 		-e "s|^PULSE_DIR = .*|PULSE_DIR = `${PULSE_WRKSRC}`|" \
 		-e "s|-Wall -O2|-Wall -O2 -I${LOCALBASE}/include|" \

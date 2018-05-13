@@ -50,6 +50,7 @@ etc/pam.d/xrdp-sesman
 etc/rc.d/xrdp
 %%ETCDIR%%/km-00000407.ini
 %%ETCDIR%%/km-00000409.ini
+%%ETCDIR%%/km-00010409.ini
 %%ETCDIR%%/km-0000040a.ini
 %%ETCDIR%%/km-0000040b.ini
 %%ETCDIR%%/km-0000040c.ini

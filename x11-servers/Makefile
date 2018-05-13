@@ -4,7 +4,6 @@
     COMMENT = X11 servers
 
     SUBDIR += Xfstt
-    SUBDIR += x11rdp
     SUBDIR += x2vnc
     SUBDIR += x2x
     SUBDIR += xephyr
