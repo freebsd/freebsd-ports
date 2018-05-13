@@ -37,6 +37,8 @@ USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:xz
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
+CFLAGS:=	${CFLAGS:N-mretpoline}
+CXXFLAGS:=	${CXXFLAGS:N-mretpoline}
 
 OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE
 OPTIONS_DEFINE_i386=	JAVA
