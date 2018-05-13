@@ -1,17 +1,15 @@
---- Makefile.in.orig	2012-03-02 11:25:22.000000000 +0900
-+++ Makefile.in	2013-07-19 11:50:57.000000000 +0900
-@@ -7,8 +7,8 @@
+--- Makefile.in.orig	2015-12-16 00:46:49 UTC
++++ Makefile.in
+@@ -7,8 +7,6 @@ mandir = @mandir@
  datarootdir = @datarootdir@
  
  INSTALL = @INSTALL@
 -INSTALL_PROGRAM = @INSTALL_PROGRAM@ 
 -INSTALL_DATA = @INSTALL_DATA@ 
-+#INSTALL_PROGRAM = @INSTALL_PROGRAM@ 
-+#INSTALL_DATA = @INSTALL_DATA@ 
  RANLIB = @RANLIB@
  
  CC = @PTHREAD_CC@
-@@ -41,9 +41,9 @@
+@@ -41,9 +39,9 @@ installdirs:
  install: all installdirs
  	${INSTALL_PROGRAM} dnsperf ${DESTDIR}${bindir}
  	${INSTALL_PROGRAM} resperf ${DESTDIR}${bindir}
