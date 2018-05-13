@@ -1,0 +1,5 @@
+The GridDataFormats package provides classes to unify reading and writing
+n-dimensional datasets. One can read grid data from files, make them available
+as a Grid object, and write out the data again.
+
+WWW: https://github.com/MDAnalysis/GridDataFormats
