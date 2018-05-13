@@ -1278,6 +1278,7 @@
     SUBDIR += py-bibtexparser
     SUBDIR += py-bugzillatools
     SUBDIR += py-chardet
+    SUBDIR += py-citeproc-py
     SUBDIR += py-cjkwrap
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-colorclass
