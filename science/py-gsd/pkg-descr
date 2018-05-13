@@ -1,0 +1,22 @@
+A library to read and write GSD (General Simulation Data) file format.
+
+The package also contains a python module that reads and writes hoomd
+schema gsd files with an easy to use syntax.
+
+Features:
+* Efficiently store many frames of data from simulation runs.
+* High performance file read and write.
+* Support arbitrary chunks of data in each frame (position, orientation,
+  type, etc...).
+* Append frames to an existing file with a monotonically increasing frame
+  number.
+* Resilient to job kills.
+* Variable number of named chunks in each frame.
+* Variable size of chunks in each frame.
+* Each chunk identifies data type.
+* Common use cases: NxM arrays in double, float, int, char types.
+* Generic use case: binary blob of N bytes.
+* Easy to integrate into other tools with python, or a C API (< 1k lines).
+* Fast random access to frames.
+
+WWW: https://bitbucket.org/glotzer/gsd

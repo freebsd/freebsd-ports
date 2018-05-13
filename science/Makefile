@@ -169,6 +169,7 @@
     SUBDIR += py-cdo
     SUBDIR += py-coards
     SUBDIR += py-dlib
+    SUBDIR += py-gsd
     SUBDIR += py-h5py
     SUBDIR += py-hcluster
     SUBDIR += py-mdp
