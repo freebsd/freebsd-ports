@@ -1,0 +1,17 @@
+XLiFE++ is an FEM-BEM C++ code developed by P.O.e.m.s. laboratory and I.R.M.A.R.
+laboratory, that can solve 1D/2D/3D, scalar/vector,
+transient/stationary/harmonic problems.
+
+It provides:
+* Advanced mesh tools, with refinement methods, including an advanced interface
+  to the mesh generator Gmsh
+* High order Lagrange Finite Elements (every order)
+* High order edge Finite Elements (every order)
+* Boundary Elements methods: Laplace, Helmholtz, Maxwell, Stokes (in progress)
+* Essential conditions (periodic, quasi-periodic)
+* Absorbing conditions: DtN, PML, ...
+* Export to visualization tools such as Gmsh, Paraview, Matlab
+* Many solvers (direct solvers, iterative solvers, eigenvalue solvers, wrappers
+  to Arpack, UmfPack and Eigen libraries)
+
+WWW: https://uma.ensta-paristech.fr/soft/XLiFE++/
