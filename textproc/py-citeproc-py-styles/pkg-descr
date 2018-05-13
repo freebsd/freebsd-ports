@@ -1,0 +1,5 @@
+This module is meant to be used as a static resources package, in order to
+make it easy to include the required Citation Style files (.csl) when using
+citeproc-py.
+
+WWW: https://github.com/inveniosoftware/citeproc-py-styles
