@@ -12,6 +12,11 @@ DISTNAME=	trf${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Data conversion, digests, compression, error-correction for Tcl
 
+LICENSE=	Tcl_Trf_License
+LICENSE_NAME=	Tcl Trf License
+LICENSE_FILE=	${WRKSRC}/doc/license.terms
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 BROKEN_SSL=	openssl-devel
 BROKEN_SSL_REASON_openssl-devel=	use of undeclared identifier 'SHA_Init'
 
@@ -60,6 +65,7 @@ do-install:
 	do	\
 		${INSTALL_MAN} $$m ${STAGEDIR}${MANNPREFIX}/man/mann/ ;\
 	done
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/Trf/libTrf${PORTVERSION}.so
 
 do-test:
 	@if ! ${PKG_BIN} info --quiet tcl-memchan; then	\
