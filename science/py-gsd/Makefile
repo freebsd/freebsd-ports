@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	gsd
+DISTVERSION=	1.5.2
+CATEGORIES=	science python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	GSD (General Simulation Data) file format for Python
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY}
+
+USES=		python
+USE_PYTHON=	distutils autoplist
+
+.include <bsd.port.mk>
