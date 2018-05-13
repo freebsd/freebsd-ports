@@ -13,7 +13,7 @@ if len(sys.argv) != 2:
 re_date = re.compile(r'^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$')
 
 # warn if description has more than X characters
-DESCRIPTION_LENGTH = 4500
+DESCRIPTION_LENGTH = 5000
 
 tree = ET.parse(sys.argv[1])
 root = tree.getroot()
