@@ -3,6 +3,7 @@
 PORTNAME=	node
 PORTVERSION=	10.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
@@ -76,7 +77,7 @@ IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != amd64
+.if ${ARCH} != amd64 && ${ARCH} != i386
 CONFIGURE_ARGS+=--openssl-no-asm
 .endif
 
