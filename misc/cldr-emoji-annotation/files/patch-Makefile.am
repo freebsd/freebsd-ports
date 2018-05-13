@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2018-05-13 08:07:38 UTC
++++ Makefile.am
+@@ -10,7 +10,7 @@ SUBDIRS = \
+     annotationsDerived \
+     $(NULL)
+ 
+-pkgconfigdir = $(datadir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = cldr-emoji-annotation.pc
+ 
+ EXTRA_DIST = \

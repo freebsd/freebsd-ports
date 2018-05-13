@@ -1,4 +1,4 @@
-share/pkgconfig/cldr-emoji-annotation.pc
+libdata/pkgconfig/cldr-emoji-annotation.pc
 share/unicode/cldr/common/annotations/af.xml
 share/unicode/cldr/common/annotations/am.xml
 share/unicode/cldr/common/annotations/ar.xml
