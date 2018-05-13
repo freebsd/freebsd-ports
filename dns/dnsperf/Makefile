@@ -2,18 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	dnsperf
-PORTVERSION=	2.0.0.0
-PORTREVISION=	3
+PORTVERSION=	2.1.0.0
 CATEGORIES=	dns benchmarks net
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Accurate performance metrics of Domain Name Services
+COMMENT=	Performance measurement of Domain Name System (DNS) servers
 
-BUILD_DEPENDS=	isc-config.sh:dns/bind910
+LICENSE=	ISCL
 
-USES=		iconv
+BUILD_DEPENDS=	isc-config.sh:dns/bind912
+LIB_DEPENDS=	liblmdb.so:databases/lmdb \
+		libjson-c.so:devel/json-c
+
+USES=		iconv ssl
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
@@ -27,15 +31,8 @@ PLIST_FILES=	bin/dnsperf \
 PORTDOCS=	caching-dns-performance.pdf \
 		dnsperf.pdf \
 		resperf.pdf
-CFLAGS+=	-I.
 
 OPTIONS_DEFINE=	DOCS
-
-# This is a workaround for broken isc/stat.h.
-pre-build:
-	${MKDIR} ${WRKSRC}/isc
-	${ECHO_CMD} "#include <sys/types.h>" > ${WRKSRC}/isc/stat.h
-	${ECHO_CMD} "#include <sys/stat.h>" >> ${WRKSRC}/isc/stat.h
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
