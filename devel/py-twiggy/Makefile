@@ -14,10 +14,13 @@ COMMENT=	Pythonic logger
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR}
+
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${SETENV} TWIGGY_UNDER_TEST=1 \
 		${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
