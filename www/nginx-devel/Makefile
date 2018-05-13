@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.14.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/ \
 		LOCAL/osa
@@ -55,6 +55,7 @@ CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
 		--error-log-path=${NGINX_ERRORLOG} \
 		--user=${WWWOWN} --group=${WWWGRP}
+ALL_TARGET=
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} NGINX_LOGDIR=${NGINX_LOGDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
@@ -313,9 +314,6 @@ pre-configure-MODSECURITY-on:
 
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
