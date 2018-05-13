@@ -813,6 +813,7 @@
     SUBDIR += xgraph
     SUBDIR += xlapack
     SUBDIR += xldlas
+    SUBDIR += xlife++
     SUBDIR += xplot
     SUBDIR += xppaut
     SUBDIR += xspread

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-05-13 03:55:31 UTC
++++ CMakeLists.txt
+@@ -235,7 +235,7 @@ endif()
+ set(XLIFEPP_LIBS "")
+ foreach (lib ${libs})
+   file(GLOB_RECURSE libsrcs src/${lib}/*.cpp)
+-  add_library(xlifepp_${lib} STATIC ${libsrcs})
++  add_library(xlifepp_${lib} SHARED ${libsrcs})
+   list(APPEND XLIFEPP_LIBS xlifepp_${lib})
+ endforeach()
+ 
