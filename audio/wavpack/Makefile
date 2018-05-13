@@ -3,6 +3,7 @@
 
 PORTNAME=	wavpack
 PORTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.wavpack.com/
 
