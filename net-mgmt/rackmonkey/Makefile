@@ -5,7 +5,7 @@ PORTNAME=	rackmonkey
 PORTVERSION=	1.2.5
 PORTREVISION=	1
 DISTVERSIONSUFFIX=	-1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF \
 		ftp://ftp.secure-computing.net/pub/FreeBSD/ports/${PORTNAME}/ \
