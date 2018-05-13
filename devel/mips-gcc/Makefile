@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	1
 PKGNAMEPREFIX=	mips-
 PLIST=	${.CURDIR}/pkg-plist
 

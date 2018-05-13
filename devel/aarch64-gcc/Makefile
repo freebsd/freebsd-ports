@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	1
 PKGNAMEPREFIX=	aarch64-
 PLIST=	${.CURDIR}/pkg-plist
 
