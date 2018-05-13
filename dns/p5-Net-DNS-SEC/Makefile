@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNS-SEC
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN \
 		http://www.ripe.net/ripencc/pub-services/np/DISI/SRC/
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0.05:security/p5-Crypt-OpenSSL-Bignum \
 		p5-Crypt-OpenSSL-ECDSA>=0.06:security/p5-Crypt-OpenSSL-ECDSA \
 		p5-Crypt-OpenSSL-RSA>=0.28:security/p5-Crypt-OpenSSL-RSA \
 		p5-Crypt-OpenSSL-Random>=0.10:security/p5-Crypt-OpenSSL-Random \
-		p5-Net-DNS>=1.01:dns/p5-Net-DNS
+		p5-Net-DNS>=1.08:dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 ssl
