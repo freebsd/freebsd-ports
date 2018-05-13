@@ -1279,6 +1279,7 @@
     SUBDIR += py-bugzillatools
     SUBDIR += py-chardet
     SUBDIR += py-citeproc-py
+    SUBDIR += py-citeproc-py-styles
     SUBDIR += py-cjkwrap
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-colorclass
