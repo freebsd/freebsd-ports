@@ -4512,22 +4512,13 @@ generate-plist: ${WRKDIR}
 	@${ECHO_CMD} "@postunexec ${LINUXBASE}/sbin/ldconfig" >> ${TMPPLIST}
 .endif
 .else
-.if defined(USE_LDCONFIG)
+.if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
 .if !defined(INSTALL_AS_USER)
-	@${ECHO_CMD} "@postexec ${LDCONFIG} -m ${USE_LDCONFIG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@postunexec ${LDCONFIG} -R" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec /usr/sbin/service ldconfig restart > /dev/null" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec /usr/sbin/service ldconfig restart > /dev/null" >> ${TMPPLIST}
 .else
-	@${ECHO_CMD} "@postexec ${LDCONFIG} -m ${USE_LDCONFIG} || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@postunexec ${LDCONFIG} -R || ${TRUE}" >> ${TMPPLIST}
-.endif
-.endif
-.if defined(USE_LDCONFIG32)
-.if !defined(INSTALL_AS_USER)
-	@${ECHO_CMD} "@postexec ${LDCONFIG} -32 -m ${USE_LDCONFIG32}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@postunexec ${LDCONFIG} -32 -R" >> ${TMPPLIST}
-.else
-	@${ECHO_CMD} "@postexec ${LDCONFIG} -32 -m ${USE_LDCONFIG32} || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@postunexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec /usr/sbin/service ldconfig restart > /dev/null || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec /usr/sbin/service ldconfig restart > /dev/null || ${TRUE}" >> ${TMPPLIST}
 .endif
 .endif
 .endif
