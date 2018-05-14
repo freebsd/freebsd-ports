@@ -1,0 +1,5 @@
+Flask-Moment is an extension for the Flask web application micro framework
+that enhances Jinja2 templates with formatting of dates and times using
+moment.js.
+
+WWW: https://github.com/miguelgrinberg/Flask-Moment
