@@ -10184,3 +10184,4 @@ textproc/p5-Spork||2018-05-09|Removed, depends on expired www/p5-Kwiki
 www/p5-Kwiki||2018-05-09|Has expired: All www files wrongly belongs to www user
 x11-servers/x11rdp|x11-drivers/xorgxrdp|2018-05-13|Obsoleted by update of net/xrdp
 net-p2p/btsync|net-p2p/rslsync|2018-05-13|Renamed by the vendor
+net-im/licq-msn||2018-05-14|MSN Messenger service terminated 2017-05-19
