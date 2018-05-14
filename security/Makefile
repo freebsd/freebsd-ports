@@ -934,6 +934,7 @@
     SUBDIR += py-fchksum
     SUBDIR += py-first-server
     SUBDIR += py-flask-httpauth
+    SUBDIR += py-flask-kerberos
     SUBDIR += py-gixy
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
