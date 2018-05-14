@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.11.11
+PORTVERSION=	0.12.1
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/ \
 		LOCAL/cpm
@@ -13,8 +13,7 @@ COMMENT=	Server implementing the AnyConnect SSL VPN protocol
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	autogen:devel/autogen \
-		bash:shells/bash \
+BUILD_DEPENDS=	bash:shells/bash \
 		gsed:textproc/gsed
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libiconv.so:converters/libiconv \
@@ -26,13 +25,12 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libnettle.so:security/nettle \
 		liboath.so:security/oath-toolkit
 
-USES=		autoreconf cpe gmake gperf libtool localbase ncurses \
+USES=		autoreconf cpe gperf libtool localbase ncurses \
 		pathfix pkgconfig readline tar:xz
 CPE_VENDOR=	infradead
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--disable-nls \
-		--enable-local-libopts \
+CONFIGURE_ARGS=	--without-geoip \
 		--without-http-parser \
 		--without-pcl-lib
 
@@ -56,12 +54,17 @@ RADIUS_LIB_DEPENDS=	libradcli.so:net/radcli
 RADIUS_CONFIGURE_OFF=	--without-radius
 
 post-patch:
-	@${RM} ${WRKSRC}/doc/*.8
+	@${REINPLACE_CMD} 's|/usr/bin/ocserv-fw|${LOCALBASE}/bin/ocserv-fw|g' \
+		${WRKSRC}/src/main-user.c \
+		${WRKSRC}/doc/sample.config
+	@${REINPLACE_CMD} 's|/usr/bin/ocserv\\-fw|${LOCALBASE}/bin/ocserv\\-fw|g' \
+		${WRKSRC}/doc/ocserv.8
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ocserv
 	@${MKDIR} ${STAGEDIR}/var/run/ocserv
 	${INSTALL_DATA} ${FILESDIR}/ocserv.conf ${STAGEDIR}${PREFIX}/etc/ocserv/conf.sample
+	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
