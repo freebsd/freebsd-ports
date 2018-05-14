@@ -20,7 +20,7 @@ USES=		dos2unix gmake tar:xz
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 MAKE_ENV=	DATADIR=${DATADIR}/
-DOS2UNIX_FILES=	main.cpp
+DOS2UNIX_FILES=	main.cpp menu.cpp
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
