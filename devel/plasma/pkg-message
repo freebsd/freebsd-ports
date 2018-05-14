@@ -1,0 +1,11 @@
+
+==============================================================================
+
+To use the visual mode (command 'v' in the interactive mode) the terminal must
+support 256 colors. 
+
+For xterm this can be enabled by
+
+export TERM=xterm-256color
+
+==============================================================================
