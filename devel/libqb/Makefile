@@ -3,7 +3,9 @@
 
 PORTNAME=		libqb
 PORTVERSION=		1.0.3
+PORTREVISION=		1
 CATEGORIES=		devel
+MASTER_SITES=		https://github.com/ClusterLabs/libqb/releases/download/v${PORTVERSION}/
 
 MAINTAINER=		dpejesh@yahoo.com
 COMMENT=		High performance logging, tracing, ipc, and polling library
@@ -17,10 +19,6 @@ GROUPS=			haclient
 
 QB_SOCKET_DIR?=		/var/run/qb
 PLIST_SUB+=		QB_SOCKET_DIR=${QB_SOCKET_DIR}
-
-USE_GITHUB=		yes
-GH_ACCOUNT=		ClusterLabs
-GH_TAGNAME=		v${PORTVERSION}
 
 USE_BINUTILS=		yes
 USE_LDCONFIG=		yes
