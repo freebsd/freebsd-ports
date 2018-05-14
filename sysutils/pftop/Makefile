@@ -33,7 +33,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cache.c \
 		${FILESDIR}/extra-patch-config.h \
 		${FILESDIR}/extra-patch-pftop.c \
 		${FILESDIR}/extra-patch-sf-gencode.c
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000017
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-DHAVE_FINE_GRAINED_LOCKING=1
 .endif
 
