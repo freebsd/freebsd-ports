@@ -5,14 +5,16 @@
 #
 # Feature:	emacs
 # Usage:	USES=emacs or USES=emacs:args
-# Valid ARGS:	build, run
+# Valid ARGS:	build, run, noflavors
 #
-# build		Indicates that Emacs is needed at build time.
-# run		Indicates that Emacs is needed at run time.
+# build		Indicates that Emacs is required at build time.
+# run		Indicates that Emacs is required at run time.
+# noflavors	Prevents flavors.  This is implied when there is no run
+#               dependency on Emacs.
 #
 # If build and run are omitted from the argument list, Emacs will be added to
 # BUILD_DEPENDS and RUN_DEPENDS.  EMACS_NO_DEPENDS can be set to prevent both
-# Emacs dependencies.
+# dependencies.
 #
 # Variables, which can be set in make.conf:
 # DEFAULT_VERSIONS+=          The default flavor for Emacs ports (ports with
@@ -20,14 +22,18 @@
 #                             can be added to DEFAULT_VERSIONS.  For example,
 #                             DEFAULT_VERSIONS+= emacs=nox
 #                             Valid flavors: full canna nox devel_full devel_nox
-#                             Flavors specified on the command line take precedence.
+#                             Flavors specified on the command line take
+#                             precedence.
 #
 # Variables, which can be set by ports:
 # EMACS_FLAVORS_EXCLUDE:      Do NOT build these Emacs flavors.
-#                             If EMACS_FLAVORS_EXCLUDE is not define then all
-#                             valid Emacs flavors are assumed.
+#                             If EMACS_FLAVORS_EXCLUDE is not defined and
+#                               - there is a run dependency on Emacs
+#                               - the noflavors argument is not specified
+#                             then all valid Emacs flavors are assumed.
 #
 # EMACS_NO_DEPENDS:           Do NOT add build or run dependencies on Emacs.
+#                             This will prevent flavors.
 #
 # Variables, which can be read by ports:
 # EMACS_CMD:                  Emacs command with full path (e.g. /usr/local/bin/emacs-25.3)
@@ -50,14 +56,19 @@ _INCLUDE_USES_EMACS_MK=	yes
 # pollutes the build/run dependency detection
 .undef _EMACS_BUILD_DEP
 .undef _EMACS_RUN_DEP
+.undef _EMACS_NOFLAVORS
 _EMACS_ARGS=		${emacs_ARGS:S/,/ /g}
 .if ${_EMACS_ARGS:Mbuild}
 _EMACS_BUILD_DEP=	yes
 _EMACS_ARGS:=		${_EMACS_ARGS:Nbuild}
 .endif
 .if ${_EMACS_ARGS:Mrun}
-_EMACS_RUN_DEP=	yes
+_EMACS_RUN_DEP=		yes
 _EMACS_ARGS:=		${_EMACS_ARGS:Nrun}
+.endif
+.if ${_EMACS_ARGS:Mnoflavors}
+_EMACS_NOFLAVORS=	yes
+_EMACS_ARGS:=		${_EMACS_ARGS:Nnoflavors}
 .endif
 
 # If the port does not specify a build or run dependency, and does not define
@@ -68,23 +79,28 @@ _EMACS_BUILD_DEP=	yes
 _EMACS_RUN_DEP=		yes
 .endif
 
-.if defined(_EMACS_RUN_DEP)
+# Only set FLAVORS when...
+.if defined(_EMACS_RUN_DEP) && !defined(_EMACS_NOFLAVORS)
 FLAVORS=	full canna nox devel_full devel_nox
 .for flavor in ${EMACS_FLAVORS_EXCLUDE}
 FLAVORS:=	${FLAVORS:N${flavor}}
 .endfor
-.elif !defined(EMACS_NO_DEPENDS)
-FLAVORS=	full
 .endif
 
-.if empty(FLAVOR)
+# Only set FLAVOR when...
+.if defined(_EMACS_RUN_DEP) && !defined(_EMACS_NOFLAVORS) && empty(FLAVOR)
 .if defined(EMACS_DEFAULT)
 FLAVOR=	${EMACS_DEFAULT}
 .else
 FLAVOR=	${FLAVORS:[1]}
-.endif
-.endif
+.endif # defined(EMACS_DEFAULT)
+.endif # !defined(_EMACS_NOFLAVORS) && defined(_EMACS_RUN_DEP) && empty(FLAVOR)
+
+.if !empty(FLAVOR)
 EMACS_FLAVOR=	${FLAVOR}
+.else
+EMACS_FLAVOR=	full
+.endif
 
 .if ${FLAVOR:Mdevel*}
 EMACS_VER=			27.0.50
