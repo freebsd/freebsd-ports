@@ -26,6 +26,8 @@ USE_GL=		gl glu
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}" \
 		-DLOCALE_INSTALL_DIR="${PREFIX}/share/locale"
 
+CXXFLAGS+=	-Wno-c++11-narrowing
+
 PORTDOCS=	*
 PORTDATA=	*
 
