@@ -462,6 +462,7 @@
     SUBDIR += joequake
     SUBDIR += jools
     SUBDIR += jtans
+    SUBDIR += julius
     SUBDIR += jumpnbump
     SUBDIR += jutils
     SUBDIR += jvgs
