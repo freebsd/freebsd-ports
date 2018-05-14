@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mg
-PORTVERSION=	20171014
+PORTVERSION=	20180408
 CATEGORIES=	editors
-MASTER_SITES=	http://homepage.boetes.org/software/mg/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Small, fast Emacs-like editor
@@ -12,6 +11,8 @@ COMMENT=	Small, fast Emacs-like editor
 LICENSE=	PD
 
 USES=		ncurses
+USE_GITHUB=	yes
+GH_ACCOUNT=	hboetes
 PLIST_FILES=	bin/mg man/man1/mg.1.gz
 PORTDOCS=	README tutorial
 
@@ -37,8 +38,6 @@ do-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
