@@ -3,14 +3,13 @@ include/babl-0.1/babl/babl-macros.h
 include/babl-0.1/babl/babl-types.h
 include/babl-0.1/babl/babl-version.h
 include/babl-0.1/babl/babl.h
-lib/babl-0.1/16bit.so
 lib/babl-0.1/CIE.so
 lib/babl-0.1/HCY.so
 lib/babl-0.1/HSL.so
 lib/babl-0.1/HSV.so
 lib/babl-0.1/cairo.so
+lib/babl-0.1/double.so
 lib/babl-0.1/fast-float.so
-lib/babl-0.1/float-half.so
 lib/babl-0.1/float.so
 lib/babl-0.1/gegl-fixups.so
 lib/babl-0.1/gggl-lies.so
@@ -19,6 +18,7 @@ lib/babl-0.1/gggl-table.so
 lib/babl-0.1/gggl.so
 lib/babl-0.1/gimp-8bit.so
 lib/babl-0.1/grey.so
+lib/babl-0.1/half.so
 lib/babl-0.1/naive-CMYK.so
 lib/babl-0.1/simple.so
 lib/babl-0.1/sse-half.so
@@ -27,8 +27,10 @@ lib/babl-0.1/sse2-int16.so
 lib/babl-0.1/sse2-int8.so
 lib/babl-0.1/sse4-int8.so
 lib/babl-0.1/two-table.so
+lib/babl-0.1/u16.so
+lib/babl-0.1/u32.so
 lib/babl-0.1/ycbcr.so
 lib/libbabl-0.1.so
 lib/libbabl-0.1.so.0
-lib/libbabl-0.1.so.0.143.1
+lib/libbabl-0.1.so.0.145.1
 libdata/pkgconfig/babl.pc
