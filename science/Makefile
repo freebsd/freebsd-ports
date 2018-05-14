@@ -165,6 +165,7 @@
     SUBDIR += psychopy
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
+    SUBDIR += py-MDAnalysis
     SUBDIR += py-OpenFermion
     SUBDIR += py-cdo
     SUBDIR += py-coards

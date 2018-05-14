@@ -1,0 +1,6 @@
+MDAnalysis is an object-oriented Python library to analyze trajectories from
+molecular dynamics (MD) simulations in many popular formats. It can write most
+of these formats, too, together with atom selections suitable for visualization
+or native analysis tools.
+
+WWW: https://www.mdanalysis.org
