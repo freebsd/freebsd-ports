@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2018-04-30 18:58:18 UTC
++++ CMakeLists.txt
+@@ -43,6 +43,7 @@ INCLUDE (MacroAppendForeach)
+ INCLUDE (MacroAddSourceFileCompileFlags)
+ INCLUDE (GncAddSwigCommand)
+ INCLUDE (CheckIncludeFiles)
++INCLUDE (CheckSymbolExists)
+ INCLUDE (GncAddSchemeTargets)
+ INCLUDE (GncAddGSchemaTargets)
+ INCLUDE (GncAddTest)
+@@ -550,8 +551,8 @@ SET(CMAKE_CXX_FLAGS "-std=gnu++11 ${CMAKE_CXX_FLAGS}")
+ 
+ 
+ IF (UNIX)
+-  SET( CMAKE_C_FLAGS "-Werror -Wdeclaration-after-statement -Wno-pointer-sign -Wall -Wmissing-prototypes -Wmissing-declarations -Wno-unused ${CMAKE_C_FLAGS}")
+-  SET( CMAKE_CXX_FLAGS "-Werror -Wall -Wmissing-declarations -Wno-unused ${CMAKE_CXX_FLAGS}")
++  SET( CMAKE_C_FLAGS "-Wdeclaration-after-statement -Wno-pointer-sign -Wall -Wmissing-prototypes -Wmissing-declarations -Wno-unused ${CMAKE_C_FLAGS}")
++  SET( CMAKE_CXX_FLAGS "-Wall -Wmissing-declarations -Wno-unused ${CMAKE_CXX_FLAGS}")
+   SET( CMAKE_C_FLAGS "-Wno-deprecated-declarations -std=gnu11 ${CMAKE_C_FLAGS}")
+   SET( CMAKE_C_FLAGS_RELEASE "-O3 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 ${CMAKE_C_FLAGS}")
+ ENDIF (UNIX)
