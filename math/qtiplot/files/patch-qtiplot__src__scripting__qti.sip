@@ -1,6 +1,15 @@
---- ./qtiplot/src/scripting/qti.sip.orig	2011-02-08 15:33:02.000000000 +0300
-+++ ./qtiplot/src/scripting/qti.sip	2011-03-19 00:06:07.578146696 +0300
-@@ -3390,57 +3390,6 @@
+--- qtiplot/src/scripting/qti.sip.orig	2018-05-11 22:48:48 UTC
++++ qtiplot/src/scripting/qti.sip
+@@ -370,7 +370,7 @@ public:
+ 		if (sipCpp->text(row, col) != "")
+ 			sipRes = sipCpp->cell(row, col);
+ 		else {
+-			sipRes = NULL;
++			sipRes = 0;
+ 			PyErr_SetString(PyExc_ValueError, "Empty table cell");
+ 		}
+ 	}
+@@ -3433,57 +3433,6 @@ public:
    double pValue();
  };
  
