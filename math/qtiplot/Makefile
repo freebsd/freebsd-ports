@@ -28,7 +28,7 @@ DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"${PREFIX}/share/pixmaps/qtiplot.png" \
 		"qtiplot" "" true
 
-OPTIONS_DEFINE=	DOCS PYTHON NLS DEBUG
+OPTIONS_DEFINE=	DOCS PYTHON NLS
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=	yes
 
@@ -56,15 +56,19 @@ post-patch:
 		${WRKSRC}/fitPlugins/*/*.pro
 	${REINPLACE_CMD} -e '/^system($$$$LUPDATE/d; /^system($$$$LRELEASE/d' \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
+# fix build with clang6
+	${REINPLACE_CMD} \
+		-e '/new[[:space:]]*QComboBox/s,false,,g' \
+		-e '/new[[:space:]]*PatternBox/s,false,,g' \
+		${WRKSRC}/qtiplot/src/matrix/MatrixValuesDialog.cpp \
+		${WRKSRC}/qtiplot/src/plot2D/dialogs/LayerDialog.cpp \
+		${WRKSRC}/qtiplot/src/plot2D/dialogs/PlotDialog.cpp \
+		${WRKSRC}/qtiplot/src/table/SetColValuesDialog.cpp \
+		${WRKSRC}/qtiplot/src/table/TableDialog.cpp
 
 post-patch-PYTHON-off:
 	${REINPLACE_CMD} -e \
 		"s/SCRIPTING_LANGS.*Python//" \
-		${WRKSRC}/build.conf
-
-post-patch-DEBUG-on:
-	${REINPLACE_CMD} -e \
-		"/^CONFIG.*release/s|release|debug|" \
 		${WRKSRC}/build.conf
 
 post-patch-NLS-off:
