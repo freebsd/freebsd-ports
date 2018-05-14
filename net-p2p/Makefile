@@ -12,7 +12,6 @@
     SUBDIR += bitmessage
     SUBDIR += bnbt
     SUBDIR += btpd
-    SUBDIR += btsync
     SUBDIR += couchpotato
     SUBDIR += cpuminer
     SUBDIR += createtorrent
@@ -82,6 +81,7 @@
     SUBDIR += qtum
     SUBDIR += radarr
     SUBDIR += retroshare
+    SUBDIR += rslsync
     SUBDIR += rtorrent
     SUBDIR += shx
     SUBDIR += sonarr

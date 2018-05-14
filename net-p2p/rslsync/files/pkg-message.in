@@ -1,13 +1,13 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-net-p2p/%%PORTNAME%% includes an RC script:
-%%PREFIX%%/etc/rc.d/%%PORTNAME%%
+net-p2p/rslsync includes an RC script:
+%%PREFIX%%/etc/rc.d/rslsync
 
 TO START ON BOOT:
-# echo '%%PORTNAME%%_enable="YES"' >> /etc/rc.conf
+# sysrc rslsync_enable=YES
 
 START MANUALLY:
-# service %%PORTNAME%% start
+# service rslsync start
 
 Once started, visit the following to configure:
 http://localhost:8888/
