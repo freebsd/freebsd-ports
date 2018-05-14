@@ -22,6 +22,8 @@ PORTDOCS=	*
 CPPFLAGS+=	-DAP_PATH="\"${DATADIR}/\""
 LLD_UNSAFE=	yes
 
+CXXFLAGS+=	-Wno-c++11-narrowing
+
 DESKTOP_ENTRIES="Apricots" \
 		"${COMMENT}" \
 		"" \
