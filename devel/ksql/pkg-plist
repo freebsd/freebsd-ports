@@ -10,6 +10,7 @@ man/man3/ksql_exec.3.gz
 man/man3/ksql_free.3.gz
 man/man3/ksql_lastid.3.gz
 man/man3/ksql_open.3.gz
+man/man3/ksql_result_double.3.gz
 man/man3/ksql_role.3.gz
 man/man3/ksql_stmt_alloc.3.gz
 man/man3/ksql_stmt_double.3.gz
