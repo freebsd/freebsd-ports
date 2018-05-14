@@ -83,6 +83,7 @@ include/rdkit/GraphMol/ChemTransforms/ChemTransforms.h
 include/rdkit/GraphMol/ChemTransforms/MolFragmenter.h
 include/rdkit/GraphMol/Chirality.h
 include/rdkit/GraphMol/Conformer.h
+include/rdkit/GraphMol/CoordGen.h
 include/rdkit/GraphMol/Depictor/DepictUtils.h
 include/rdkit/GraphMol/Depictor/EmbeddedFrag.h
 include/rdkit/GraphMol/Depictor/RDDepictor.h
@@ -167,6 +168,8 @@ include/rdkit/GraphMol/MolDrawing/DrawingToCairo.h
 include/rdkit/GraphMol/MolDrawing/DrawingToSVG.h
 include/rdkit/GraphMol/MolDrawing/MolDrawing.h
 include/rdkit/GraphMol/MolHash/MolHash.h
+include/rdkit/GraphMol/MolInterchange/MolInterchange.h
+include/rdkit/GraphMol/MolInterchange/details.h
 include/rdkit/GraphMol/MolOps.h
 include/rdkit/GraphMol/MolPickler.h
 include/rdkit/GraphMol/MolTransforms/MolTransforms.h
@@ -346,6 +349,9 @@ lib/libRDKitMolDraw2D.so.1.%%SHLIB_VER%%
 lib/libRDKitMolHash.so
 lib/libRDKitMolHash.so.1
 lib/libRDKitMolHash.so.1.%%SHLIB_VER%%
+lib/libRDKitMolInterchange.so
+lib/libRDKitMolInterchange.so.1
+lib/libRDKitMolInterchange.so.1.%%SHLIB_VER%%
 lib/libRDKitMolTransforms.so
 lib/libRDKitMolTransforms.so.1
 lib/libRDKitMolTransforms.so.1.%%SHLIB_VER%%
@@ -397,9 +403,15 @@ lib/libRDKitSubstructMatch.so.1.%%SHLIB_VER%%
 lib/libRDKitTrajectory.so
 lib/libRDKitTrajectory.so.1
 lib/libRDKitTrajectory.so.1.%%SHLIB_VER%%
+lib/libRDKitcoordgenlib.so
+lib/libRDKitcoordgenlib.so.1
+lib/libRDKitcoordgenlib.so.1.%%SHLIB_VER%%
 lib/libRDKithc.so
 lib/libRDKithc.so.1
 lib/libRDKithc.so.1.%%SHLIB_VER%%
+lib/libRDKitmaeparser.so
+lib/libRDKitmaeparser.so.1
+lib/libRDKitmaeparser.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Avalon/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/AllChem.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/AtomPairs/Pairs.py
@@ -438,6 +450,7 @@ lib/libRDKithc.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/EState/EState_VSA.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/EState/Fingerprinter.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/EState/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/EnumerateHeterocycles.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/EnumerateStereoisomers.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/FastSDMolSupplier.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/FeatFinderCLI.py
@@ -521,6 +534,7 @@ lib/libRDKithc.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/inchi.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdChemReactions.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdChemicalFeatures.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdCoordGen.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdDepictor.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdDistGeom.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdFMCS.so
@@ -531,6 +545,7 @@ lib/libRDKithc.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdMolChemicalFeatures.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdMolDescriptors.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdMolHash.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdMolInterchange.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdMolTransforms.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdPartialCharges.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdRGroupDecomposition.so
@@ -847,8 +862,20 @@ lib/rdkit-targets.cmake
 %%DATADIR%%/Contrib/ConformerParser/Wrap/test_list.py
 %%DATADIR%%/Contrib/ConformerParser/test.cpp
 %%DATADIR%%/Contrib/ConformerParser/test_list.py
+%%DATADIR%%/Contrib/Fastcluster/README.md
+%%DATADIR%%/Contrib/Fastcluster/cdk2.smi
+%%DATADIR%%/Contrib/Fastcluster/centroid.tsv
+%%DATADIR%%/Contrib/Fastcluster/clustered.tsv
+%%DATADIR%%/Contrib/Fastcluster/clustered_parse.tsv
+%%DATADIR%%/Contrib/Fastcluster/fastcluster.py
+%%DATADIR%%/Contrib/Fastcluster/fp.tsv
+%%DATADIR%%/Contrib/Fastcluster/testdata/cdk2.sdf
+%%DATADIR%%/Contrib/Fastcluster/testdata/converted.smi
+%%DATADIR%%/Contrib/Fastcluster/testdata/sdf2smi.py
 %%DATADIR%%/Contrib/Glare/README.txt
 %%DATADIR%%/Contrib/Glare/glare.py
+%%DATADIR%%/Contrib/IFG/README
+%%DATADIR%%/Contrib/IFG/ifg.py
 %%DATADIR%%/Contrib/LEF/AddLabels.py
 %%DATADIR%%/Contrib/LEF/ClusterFps.py
 %%DATADIR%%/Contrib/LEF/CreateFps.py
@@ -953,6 +980,7 @@ lib/rdkit-targets.cmake
 %%DATADIR%%/Data/struchk/checkfgs.chk
 %%DATADIR%%/Data/struchk/checkfgs.opt
 %%DATADIR%%/Data/struchk/checkfgs.trn
+%%DATADIR%%/Data/templates.mae
 %%PYTHON%%%%DATADIR%%/Projects/DbCLI/CreateDb.py
 %%PYTHON%%%%DATADIR%%/Projects/DbCLI/SearchDb.py
 %%PYTHON%%%%DATADIR%%/Projects/DbCLI/TestDbCLI.py
@@ -964,4 +992,7 @@ lib/rdkit-targets.cmake
 %%PYTHON%%%%DATADIR%%/Projects/DbCLI/testData/bzr_q1.mol
 %%PYTHON%%%%DATADIR%%/Projects/DbCLI/testData/pubchem.200.sdf
 %%DATADIR%%/README
+%%PYTHON%%%%DATADIR%%/Scripts/FeatFinderCLI.py
+%%PYTHON%%%%DATADIR%%/Scripts/PythonFormat.py
+%%PYTHON%%%%DATADIR%%/Scripts/README.md
 %%DATADIR%%/license.txt
