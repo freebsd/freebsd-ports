@@ -1,0 +1,8 @@
+kurly is an alternative to the widely popular curl program.
+
+kurly is designed to operate in a similar manner to curl, with select
+features. Notably, kurly is not aiming for feature parity, but common
+flags and mechanisms particularly within the HTTP(S) realm are to be
+expected.
+
+WWW: https://github.com/davidjpeacock/kurly
