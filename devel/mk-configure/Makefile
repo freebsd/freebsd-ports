@@ -34,7 +34,7 @@ do-install:
 		${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${INSTALL_TARGET}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-regression-test: build
+do-test:
 	${SETENV} NOSUBDIR="tests/pkg_config_2 tests/predopost_targets \
 		tests/lua_dirs examples/hello_lua examples/hello_lua2 \
 		examples/hello_lua3" CPPFLAGS='-I/usr/local/include' \
