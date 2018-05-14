@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	2.9.9
+PORTVERSION=	2.9.10
 CATEGORIES=	www
 MASTER_SITES=	http://download.phpmyfaq.de/files/
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Multilingual, completely database-driven FAQ-system
+
+LICENSE=	MPL20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
