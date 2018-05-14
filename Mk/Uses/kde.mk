@@ -299,7 +299,11 @@ _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
 			kdepim-runtime5 kontactinterface kpimdav \
 			ksmtp ldap libkdepim libkleo libksieve mailcommon \
 			mailimporter mailtransport mbox messagelib \
-			mime pimcommon pimtextedit syndication tnef
+			mime pimcommon pimtextedit syndication tnef \
+			kalarm kontact kmail account-wizard mbox-importer \
+			akonadiconsole akregator grantlee-editor kaddressbook \
+			kalarm kmail-account-wizard kmail knotes kontact \
+			korganizer mbox-importer pim-data-exporter
 
 _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
 			${_USE_PLASMA_ALL} \
@@ -847,6 +851,43 @@ syndication_LIB=	libKF5Syndication.so
 
 tnef_PORT=		net/ktnef
 tnef_LIB=		libKF5Tnef.so
+
+# PIM Applications
+akonadiconsole_PORT=	deskutils/akonadiconsole
+akonadiconsole_PATH=	${KDE_PREFIX}/bin/akonadiconsole
+
+akregator_PORT=		deskutils/akregator
+akregator_PATH=		${KDE_PREFIX}/bin/akregator
+
+grantlee-editor_PORT=	deskutils/grantlee-editor
+grantlee-editor_PATH=	${KDE_PREFIX}/bin/contactthemeeditor
+
+kaddressbook_PORT=	deskutils/kaddressbook
+kaddressbook_PATH=	${KDE_PREFIX}/bin/kaddressbook
+
+kalarm_PORT=		deskutils/kalarm
+kalarm_PATH=		${KDE_PREFIX}/bin/kalarm
+
+kmail_PORT=		deskutils/kmail
+kmail_PATH=		${KDE_PREFIX}/bin/kmail
+
+kmail-account-wizard_PORT=	deskutils/kmail-account-wizard
+kmail-account-wizard_PATH=	${KDE_PREFIX}/bin/accountwizard
+
+knotes_PORT=		deskutils/knotes
+knotex_PATH=		${KDE_PREFIX}/bin/knotes
+
+kontact_PORT=		deskutils/kontact
+kontact_PATH=		${KDE_PREFIX}/bin/kontact
+
+korganizer_PORT=	deskutils/korganizer
+korganizer_PATH=	${KDE_PREFIX}/bin/korganizer
+
+mbox-importer_PORT=	deskutils/mbox-importer
+mbox-importer_PATH=	${KDE_PREFIX}/bin/mboximporter
+
+pim-data-exporter_PORT=	deskutils/pim-data-exporter
+pim-data-exporter_PATH=	${KDE_PREFIX}/bin/pimsettingexporter
 # ====================== end of pim5 components ================================
 
 # ====================== multiversion component ================================
