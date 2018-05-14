@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cluster
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	exhuma
 GH_PROJECT=	python-cluster
 
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 PORTSCOUT=	skipv:regression
