@@ -40,3 +40,16 @@ Mismerges found by comparing changes with Firefox 56
 +#define SOFTOKEN_BETA PR_FALSE
  
  #endif /* _SOFTKVER_H_ */
+--- widget/WidgetMessageUtils.h.orig
++++ widget/WidgetMessageUtils.h
+@@ -35,10 +35,6 @@ struct ParamTraits<LookAndFeelInt>
+ };
+ 
+ template<>
+-struct ParamTraits<nsTransparencyMode> : public ContiguousEnumSerializerInclusive<nsTransparencyMode, eTransparencyOpaque, eTransparencyBorderlessGlass>
+-{ };
+-
+-template<>
+ struct ParamTraits<nsCursor>
+   : public ContiguousEnumSerializer<nsCursor, eCursor_standard, eCursorCount>
+ {
