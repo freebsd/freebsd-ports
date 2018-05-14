@@ -16,7 +16,7 @@ EXPIRATION_DATE=	2018-06-07
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
+LIB_DEPENDS=	libopencv_ml.so:graphics/opencv
 
 USES=		cmake:outsource kde:4 pathfix pkgconfig tar:xz
 USE_KDE=	kdelibs automoc4 marble
