@@ -65,7 +65,6 @@ include/git2/sys/openssl.h
 include/git2/sys/refdb_backend.h
 include/git2/sys/reflog.h
 include/git2/sys/refs.h
-include/git2/sys/remote.h
 include/git2/sys/repository.h
 include/git2/sys/stream.h
 include/git2/sys/time.h
