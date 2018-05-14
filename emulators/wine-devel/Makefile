@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	3.7
+DISTVERSION=	3.8
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://mirrors.ibiblio.org/wine/source/3.x/ \
