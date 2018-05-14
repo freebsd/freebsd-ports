@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-general
-PORTVERSION=	2.0.0
-PORTREVISION=	5
+PORTVERSION=	2.1.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-
-BROKEN=		does not build with octave 4.4.0
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
+GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
