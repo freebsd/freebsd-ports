@@ -1,0 +1,4 @@
+Flask-Mail is an extension to the Flask web application micro framework
+providing simple email sending capabilities via SMTP.
+
+WWW: https://github.com/mattupstate/flask-mail
