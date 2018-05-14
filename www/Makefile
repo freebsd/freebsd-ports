@@ -340,6 +340,7 @@
     SUBDIR += kohana
     SUBDIR += kpartsplugin
     SUBDIR += kplaylist
+    SUBDIR += kurly
     SUBDIR += kwebkitpart
     SUBDIR += larbin
     SUBDIR += libapreq2
