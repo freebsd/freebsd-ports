@@ -78,6 +78,7 @@ include/gegl-%%GEGL_VER%%/sc/sc-sample.h
 %%OPENEXR%%lib/gegl-%%GEGL_VER%%/exr-save.so
 %%FFMPEG%%lib/gegl-%%GEGL_VER%%/ff-load.so
 %%FFMPEG%%lib/gegl-%%GEGL_VER%%/ff-save.so
+lib/gegl-%%GEGL_VER%%/gegl-common-gpl3.so
 lib/gegl-%%GEGL_VER%%/gegl-common.so
 lib/gegl-%%GEGL_VER%%/gegl-core.so
 lib/gegl-%%GEGL_VER%%/gegl-generated.so
