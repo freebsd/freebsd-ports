@@ -25,6 +25,8 @@ PORTDATA=	*
 PLIST_FILES=	bin/billardgl \
 		share/pixmaps/billardgl.bmp
 
+CXXFLAGS+=	-Wno-c++11-narrowing
+
 DESKTOP_ENTRIES="${PORTNAME}" \
 		"" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.bmp" \
