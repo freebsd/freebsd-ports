@@ -25,6 +25,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		cpe desktop-file-utils fortran gettext gmake iconv \
 		libtool ncurses pathfix pkgconfig shared-mime-info
+USE_CXXSTD=	gnu++98
 USE_LOCALE=	en_US.UTF-8
 GNU_CONFIGURE=	yes
 
