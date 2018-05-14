@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stringr
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,9 +11,9 @@ COMMENT=	Make it easier to work with strings
 
 LICENSE=	GPLv2
 
-CRAN_DEPENDS=	R-cran-glue>0:devel/R-cran-glue \
+CRAN_DEPENDS=	R-cran-glue>=1.2.0:devel/R-cran-glue \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
-		R-cran-stringi>=1.1.6:textproc/R-cran-stringi
+		R-cran-stringi>=1.1.7:textproc/R-cran-stringi
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
