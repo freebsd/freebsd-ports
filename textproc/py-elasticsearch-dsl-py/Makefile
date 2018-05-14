@@ -12,6 +12,9 @@ COMMENT=	High level Python client for Elasticsearch
 
 LICENSE=	APACHE20
 
+DEPRECATED=	ElasticSearch 1.x End of Life
+EXPIRATION_DATE=	2018-06-14
+
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}elasticsearch>=1.3.0:textproc/py-elasticsearch@${FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${FLAVOR}
 
