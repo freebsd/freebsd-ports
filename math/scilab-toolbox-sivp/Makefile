@@ -15,6 +15,7 @@ LIB_DEPENDS=	libopencv_ml.so:graphics/opencv
 
 RUN_DEPENDS=	${SCILAB_CMD}:math/scilab
 
+BROKEN=		Does not build with newer opencv
 DEPRECATED=	Cannot build with newer opencv
 EXPIRATION_DATE=	2018-06-07
 
