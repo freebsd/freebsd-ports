@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	WikiWikiWeb clone using PHP
 
 LICENSE=	GPLv2
