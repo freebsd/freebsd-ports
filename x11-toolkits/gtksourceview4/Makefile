@@ -1,0 +1,28 @@
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	gtksourceview
+PORTVERSION=	4.0.1
+CATEGORIES=	x11-toolkits gnome
+MASTER_SITES=	GNOME
+PKGNAMESUFFIX=	4
+DIST_SUBDIR=	gnome
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Text widget that adds syntax highlighting to the GtkTextView widget
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+PORTSCOUT=	limitw:1,even
+
+BUILD_DEPENDS=	vala:lang/vala
+
+USES=		compiler:c11 gettext gmake gnome libtool pkgconfig tar:xz
+USE_CSTD=	c11
+USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+
+.include <bsd.port.mk>
