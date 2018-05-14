@@ -10,7 +10,7 @@ COMMENT=	Horde Groupware
 
 CONFLICTS=	horde-webmail-[456]*
 
-USES=	horde cpe
+USES=		horde cpe
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		content \
