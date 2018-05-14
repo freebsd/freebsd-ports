@@ -12,6 +12,9 @@ COMMENT=	High level Python client for Elasticsearch
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Needs Python ElasticSearch 2.x
+EXPIRATION_DATE=	2018-06-14
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}elasticsearch>=1.3.0:textproc/py-elasticsearch@${FLAVOR}
 
 USE_GITHUB=	yes
