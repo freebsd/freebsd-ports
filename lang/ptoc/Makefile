@@ -3,6 +3,7 @@
 
 PORTNAME=	ptoc
 PORTVERSION=	3.58
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.garret.ru/
 

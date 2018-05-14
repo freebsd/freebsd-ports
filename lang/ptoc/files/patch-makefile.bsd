@@ -1,5 +1,41 @@
---- makefile.bsd.orig	Sat Nov  7 10:10:50 1998
-+++ makefile.bsd	Sat Oct 21 05:54:55 2000
+--- makefile.bsd.orig	1998-11-06 21:10:50.000000000 -0500
++++ makefile.bsd	2018-05-14 12:46:15.288108000 -0400
+@@ -10,21 +10,21 @@
+ #
+ # C/C++ compiler
+ #
+-CC?= gcc
+-CXX?= g++
++CC?= cc
++CXX?= c++
+ 
+ #
+ # C/C++ flags
+ #
+-CFLAGS?= -O5 -g -Wall -c
+-CXXFLAGS?= -O5 -g -Wall -c
++CFLAGS?= -Wall -c
++CXXFLAGS= -Wall -c -std=c++98
+ #CFLAGS= -fno-exceptions -O5 -g -Wall -c
+ #CXXFLAGS= -fno-exceptions -O5 -g -Wall -c
+ 
+ #
+ # X Window System directory
+ #
+-X11BASE?= /usr/X11R6
++X11BASE?= /usr/local
+ 
+ #
+ # Local packages directory
+@@ -94,7 +94,7 @@
+ 		$(CXX) $(CXXFLAGS) $(DEFINES) $(INCLUDES) -o $@ -c $<
+ 
+ .c.o : 
+-		$(CC) $(CXXFLAGS) $(DEFINES) $(INCLUDES) -o $@ -c $<
++		$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -o $@ -c $<
+ 
+ #
+ # Custom targets.
 @@ -131,7 +131,7 @@
  	$(LD) $(LDFLAGS) -o $@ $(OBJS)
  
