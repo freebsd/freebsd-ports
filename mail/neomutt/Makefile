@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	neomutt
-PORTVERSION=	20180323
+PORTVERSION=	20180512
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	mail
 
@@ -42,7 +42,6 @@ TOKYOCABINET_DESC=	Tokyo Cabinet support
 SCREEN_DESC=	Screen options
 
 CONFIGURE_ARGS=	--with-ssl="${OPENSSLBASE}" \
-		--disable-fcntl \
 		--locales-fix \
 		--mandir=${PREFIX}/man \
 		${ICONV_CONFIGURE_ARGS}
@@ -68,7 +67,7 @@ NLS_USES_OFF=		gettext-runtime:build gettext-tools:build
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_ENABLE=	idn
 
-FLOCK_CONFIGURE_ENABLE=	flock
+FLOCK_CONFIGURE_ON=	--with-lock=flock
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--sasl
