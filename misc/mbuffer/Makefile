@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mbuffer
-PORTVERSION=	2018.03.18
-PORTREVISION=	1
+PORTVERSION=	20180505
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Tool for buffering data streams
@@ -14,14 +12,13 @@ COMMENT=	Tool for buffering data streams
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+TEST_DEPENDS=	gtar:archivers/gtar
+
 USES=		gmake localbase ssl tar:tgz
 GNU_CONFIGURE=	yes
-# Prevent sendfile() from being detected by configure and rejected
-# by mbuffer.c due to being "unable to send from buffers".
-CONFIGURE_ARGS=	ac_cv_search_sendfile=no \
-		ac_cv_header_gcrypt_h=no \
+CONFIGURE_ARGS=	ac_cv_header_gcrypt_h=no \
 		ac_cv_search_gcry_cipher_algo_name=no
-MAKE_ARGS=	SHELL=/bin/sh
+TEST_ARGS=	TAR=gtar # for --ignore-failed-read
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=	MHASH
