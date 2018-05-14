@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2018-05-14 21:28:27 UTC
++++ Makefile.in
+@@ -73,10 +73,10 @@ $(OCTFILES) : %.oct : %.cc
+ 	$(MKOCTFILE) $(CXXFLAGS) $< $(LIBS) -o $@
+ 
+ $(OCT_LINK_F): %.oct : %.cc $(OBJECTS_F) $(LIBS_F)
+-	$(MKOCTFILE) $(CXXFLAGS) $< $(OBJECTS_F) $(LIBS_F) -o $@
++	$(MKOCTFILE) -fPIC $(CXXFLAGS) $< $(OBJECTS_F) $(LIBS_F) -o $@
+ 
+ $(OCT_LINK_CC): %.oct : %.cc $(OBJECTS_CC)
+-	$(MKOCTFILE) $(CXXFLAGS) $< $(OBJECTS_CC) -o $@
++	$(MKOCTFILE) -fPIC $(CXXFLAGS) $< $(OBJECTS_CC) -o $@
+ 
+ PKG_ADD PKG_DEL: $(OCT_SOURCES)
+ 	$(SED) -n -e 's/.*$@: \(.*\)/\1/p' $^ > $@-t
