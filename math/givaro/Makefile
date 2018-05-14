@@ -13,6 +13,9 @@ LICENSE_NAME=	Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre] B license, version 1
 LICENSE_FILE=	${WRKSRC}/Licence_CeCILL-B_V1-en.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=			unfetchable
+EXPIRATION_DATE=	2018-08-14
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		libtool localbase:ldflags
