@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180514:
+  AFFECTS: users of www/gitlab
+  AUTHOR: mfechner@FreeBSD.org
+
+  Gitlab-pages support was removed as new version does not compile.
+  If you require gitlab-pages do not update to version 10.7.3 till it is
+  fixed upstream.
+  You can find the bug report here:
+  https://gitlab.com/gitlab-org/gitlab-pages/issues/143
+
 20180513:
   AFFECTS: users of net/xrdp
   AUTHOR: meta@FreeBSD.org
