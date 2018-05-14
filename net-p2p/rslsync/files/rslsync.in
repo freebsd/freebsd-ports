@@ -2,41 +2,41 @@
 #
 # $FreeBSD$
 #
-# PROVIDE: %%PORTNAME%%
+# PROVIDE: rslsync
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# %%PORTNAME%%_enable (bool):   Set to NO by default.
+# rslsync_enable (bool):        Set to NO by default.
 #                               Set it to YES to enable it.
-# %%PORTNAME%%_user:            The user account %%PORTNAME%% daemon runs as
+# rslsync_user:        	        The user account rslsync daemon runs as
 #                               what you want it to be. It uses '%%USER%%'
 #                               user by default. Do not sets it as empty or it
 #                               will run as root.
-# %%PORTNAME%%_group:           The group account %%PORTNAME%% daemon runs as
+# rslsync_group:                The group account rslsync daemon runs as
 #                               what you want it to be. It uses '%%GROUP%%'
 #                               group by default. Do not sets it as empty or it
 #                               will run as wheel.
 
 . /etc/rc.subr
-name="%%PORTNAME%%"
+name="rslsync"
 rcvar="${name}_enable"
-load_rc_config $name
+load_rc_config ${name}
 
-: ${%%PORTNAME%%_enable:="NO"}
-: ${%%PORTNAME%%_user:="%%USER%%"}
-: ${%%PORTNAME%%_group:="%%GROUP%%"}
+: ${rslsync_enable:="NO"}
+: ${rslsync_user:="%%USER%%"}
+: ${rslsync_group:="%%GROUP%%"}
 
-pidfile="/var/run/%%PORTNAME%%/%%PORTNAME%%.pid"
-command="%%PREFIX%%/bin/btsync"
-command_args="--config %%PREFIX%%/etc/%%PORTNAME%%.conf"
+pidfile="/var/run/rslsync/rslsync.pid"
+command="%%PREFIX%%/bin/rslsync"
+command_args="--config %%PREFIX%%/etc/rslsync.conf"
 
-start_precmd=%%PORTNAME%%_prestart
-%%PORTNAME%%_prestart() {
+start_precmd=rslsync_prestart
+rslsync_prestart() {
 	if [ ! -d ${pidfile%/*} ]; then
-		install -d -o $%%PORTNAME%%_user -g $%%PORTNAME%%_group ${pidfile%/*}
+		install -d -o ${rslsync_user} -g ${rslsync_group} ${pidfile%/*}
 	fi
 }
 

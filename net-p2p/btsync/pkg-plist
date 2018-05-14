@@ -1,3 +1,0 @@
-bin/btsync
-@sample etc/%%PORTNAME%%.conf.sample
-@dir(%%USER%%,%%GROUP%%,) /var/db/%%PORTNAME%%
