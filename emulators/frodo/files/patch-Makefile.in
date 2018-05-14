@@ -1,0 +1,23 @@
+--- Makefile.in.orig	2002-01-02 16:44:04 UTC
++++ Makefile.in
+@@ -9,6 +9,7 @@ REVISION  = 1
+ CXX    = @CXX@
+ LIBS   = @LIBS@
+ CFLAGS = @CFLAGS@ -I./ -DFRODO_HPUX_REV=@HPUX_REV@ -DKBD_LANG=@KBD_LANG@
++CXXFLAGS = @CXXFLAGS@ @CFLAGS@ -I./ -DFRODO_HPUX_REV=@HPUX_REV@ -DKBD_LANG=@KBD_LANG@
+ 
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+@@ -62,10 +63,10 @@ depend dep:
+ 	makedepend $(CPPFLAGS) -Y. $(SRCS) 2>/dev/null
+ 
+ .cpp.o:
+-	$(CC) $(INCLUDES) $(CFLAGS) -o $@ -c $*.cpp
++	$(CC) $(INCLUDES) $(CXXFLAGS) -o $@ -c $*.cpp
+        
+ .cpp.s:
+-	$(CC) $(INCLUDES) $(CFLAGS) $(EXTRAFLAGS) -o $@ -S $*.cpp -g0
++	$(CC) $(INCLUDES) $(CXXFLAGS) $(EXTRAFLAGS) -o $@ -S $*.cpp -g0
+ 
+ C64_PC.o: C64.cpp C64.h C64_x.i CmdPipe.h CPUC64.h CPU1541.h VIC.h SID.h CIA.h REU.h IEC.h 1541job.h Display.h Prefs.h
+ 	$(CC) $(INCLUDES) $(CFLAGS) $(PCFLAGS) -o $@ -c $*.cpp
