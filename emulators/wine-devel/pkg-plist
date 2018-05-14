@@ -878,6 +878,8 @@ include/wine/windows/winuser.h
 include/wine/windows/winuser.rh
 include/wine/windows/winver.h
 include/wine/windows/wlanapi.h
+include/wine/windows/wmcodecdsp.h
+include/wine/windows/wmcodecdsp.idl
 include/wine/windows/wmdrmsdk.h
 include/wine/windows/wmdrmsdk.idl
 include/wine/windows/wmistr.h
@@ -1190,6 +1192,7 @@ lib/wine/atl100.dll.so
 lib/wine/atl110.dll.so
 lib/wine/atl80.dll.so
 lib/wine/atl90.dll.so
+lib/wine/atmlib.dll.so
 lib/wine/attrib.exe.so
 lib/wine/authz.dll.so
 lib/wine/avicap32.dll.so
@@ -1615,6 +1618,7 @@ lib/wine/fakedlls/atl100.dll
 lib/wine/fakedlls/atl110.dll
 lib/wine/fakedlls/atl80.dll
 lib/wine/fakedlls/atl90.dll
+lib/wine/fakedlls/atmlib.dll
 lib/wine/fakedlls/attrib.exe
 lib/wine/fakedlls/authz.dll
 lib/wine/fakedlls/avicap32.dll
@@ -2222,6 +2226,7 @@ lib/wine/fakedlls/wing32.dll
 lib/wine/fakedlls/winhlp32.exe
 lib/wine/fakedlls/winhttp.dll
 lib/wine/fakedlls/wininet.dll
+lib/wine/fakedlls/winmgmt.exe
 lib/wine/fakedlls/winmm.dll
 %%WINE32%%lib/wine/fakedlls/winnls.dll16
 lib/wine/fakedlls/winnls32.dll
@@ -2403,6 +2408,7 @@ lib/wine/libdciman32.def
 lib/wine/libddraw.def
 lib/wine/libdinput.a
 lib/wine/libdinput8.def
+lib/wine/libdmoguids.a
 lib/wine/libdnsapi.def
 lib/wine/libdplayx.def
 lib/wine/libdpnet.def
@@ -2535,6 +2541,7 @@ lib/wine/libwintab32.def
 lib/wine/libwintrust.def
 lib/wine/libwlanapi.def
 lib/wine/libwldap32.def
+lib/wine/libwmcodecdspuuid.a
 lib/wine/libwmvcore.def
 lib/wine/libwnaspi32.def
 %%WINE32%%lib/wine/libwow32.def
@@ -2891,6 +2898,7 @@ lib/wine/wing32.dll.so
 lib/wine/winhlp32.exe.so
 lib/wine/winhttp.dll.so
 lib/wine/wininet.dll.so
+lib/wine/winmgmt.exe.so
 lib/wine/winmm.dll.so
 %%WINE32%%lib/wine/winnls.dll16.so
 lib/wine/winnls32.dll.so
