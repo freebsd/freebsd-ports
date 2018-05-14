@@ -5,7 +5,7 @@ PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel ruby
 
-MAINTAINER=	meta@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Manage multiple versions of ruby
 
 LICENSE=	MIT
