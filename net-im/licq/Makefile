@@ -16,9 +16,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 BROKEN_sparc64=		Does not build: fails to link
-BROKEN_FreeBSD_12=	Regression C++
 
 USES=		cmake:noninja iconv ssl
+USE_CXXSTD=	c++98
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
 
