@@ -1568,6 +1568,7 @@
     SUBDIR += py-django-js-asset
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-jsonfield
+    SUBDIR += py-django-jsonfield2
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-ldapdb
     SUBDIR += py-django-livesettings

@@ -1,0 +1,6 @@
+jsonfield2 is a reusable model field that allows you to store validated JSON,
+automatically handling serialization to and from the database. To use, add
+jsonfield.JSONField to one of your models.
+
+WWW: https://pypi.org/project/jsonfield2/
+WWW: https://github.com/rpkilby/jsonfield2
