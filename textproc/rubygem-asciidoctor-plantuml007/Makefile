@@ -11,6 +11,9 @@ COMMENT=	Asciidoctor PlantUML extension
 
 LICENSE=	MIT
 
+DEPRECATED=	Obsoleted by update of www/gitlab. Please use textproc/rubygem-asciidoctor-plantuml instead.
+EXPIRATION_DATE=	2018-06-30
+
 RUN_DEPENDS=	rubygem-asciidoctor>=1.5:textproc/rubygem-asciidoctor
 
 PORTSCOUT=	limit:^0\.0\.7
