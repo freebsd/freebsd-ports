@@ -2,7 +2,7 @@
 
 PORTNAME=	ceres-solver
 DISTVERSION=	1.14.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -76,7 +76,8 @@ LAPACK_CMAKE_ON=	-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW # USES=fortran
 # https://github.com/xianyi/OpenBLAS/wiki/faq#multi-threaded
 ATLAS_USES=		blaslapack:atlas
 ATLAS_CMAKE_ON=		-DBLA_VENDOR:STRING="ATLAS" \
-			-DLAPACK_LIBRARIES:STRING=alapack
+			-DBLAS_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libcblas.so" \
+			-DLAPACK_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libalapack.so"
 ATLAS_IMPLIES=		LAPACK
 GOTOBLAS_DESC=		Goto blas implementation
 GOTOBLAS_USES=		blaslapack:gotoblas
