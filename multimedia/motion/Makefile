@@ -4,7 +4,7 @@
 PORTNAME=	motion
 PORTVERSION=	4.0.1
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -41,8 +41,8 @@ PORTEXAMPLES=	camera1-dist.conf camera2-dist.conf \
 
 OPTIONS_DEFINE=		DOCS EXAMPLES FFMPEG MYSQL PGSQL SQLITE3
 OPTIONS_RADIO=		VIDEO
-OPTIONS_RADIO_VIDEO=	BKTR PWCBSD
-OPTIONS_DEFAULT=	BKTR FFMPEG
+OPTIONS_RADIO_VIDEO=	BKTR PWCBSD WEBCAMD
+OPTIONS_DEFAULT=	WEBCAMD FFMPEG
 VIDEO_DESC=		Video capture driver (Netcam support only if none selected)
 
 BKTR_DESC=		BKTR based TV capture cards
@@ -52,6 +52,11 @@ PWCBSD_DESC=		PWCBSD based Webcams
 PWCBSD_BUILD_DEPENDS=	v4l_compat>=1.0.20060801:multimedia/v4l_compat
 PWCBSD_RUN_DEPENDS=	${KMODDIR}/pwc.ko:multimedia/pwcbsd
 PWCBSD_CONFIGURE_WITH=	pwcbsd
+
+WEBCAMD_DESC=		Webcams using webcamd
+WEBCAMD_BUILD_DEPENDS=	v4l_compat>=1.0.20060801:multimedia/v4l_compat
+#  note: all configure --with-pwcbsd does is not shut off v4l support
+WEBCAMD_CONFIGURE_WITH=	pwcbsd
 
 FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ON=	--with-ffmpeg=${LOCALBASE}
