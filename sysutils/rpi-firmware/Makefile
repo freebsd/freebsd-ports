@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpi-firmware
-PORTVERSION=	1.20180326
+PORTVERSION=	1.20180328
 CATEGORIES=	sysutils
 
 MAINTAINER=	manu@freebsd.org
@@ -18,8 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	raspberrypi gonzoua:pscimon
 GH_PROJECT=	firmware rpi3-psci-monitor:pscimon
 PSCI_TAG=	2b8890a
-FW_TAG=		75de5d7
-GH_TAGNAME=	${FW_TAG} ${PSCI_TAG}:pscimon
+GH_TAGNAME=	${PSCI_TAG}:pscimon
 PSCI_MONITOR=	rpi3-psci-monitor-${PSCI_TAG}
 PSCI_DIR=	${WRKDIR}/${PSCI_MONITOR}
 
@@ -28,6 +27,7 @@ INSTALL_DIR=	${PREFIX}/share/${PORTNAME}
 
 do-patch:
 	${CP} ${FILESDIR}/config.txt ${WRKSRC}/boot/
+	${CP} ${FILESDIR}/config_rpi3.txt ${WRKSRC}/boot/
 
 post-patch:
 	${RM} ${WRKSRC}/boot/kernel.img

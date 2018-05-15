@@ -1,0 +1,7 @@
+arm_control=0x200
+dtparam=audio=on,i2c_arm=on,spi=on
+dtoverlay=mmc
+dtoverlay=pwm
+dtoverlay=pi3-disable-bt
+device_tree_address=0x4000
+kernel=u-boot.bin
