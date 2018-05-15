@@ -1047,7 +1047,6 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/setup/i18n.py
 %%DATADIR%%/setup/main.py
 %%DATADIR%%/setup/pkginstall.py
-%%DATADIR%%/setup/setup.glade
 %%DATADIR%%/setup/version.py
 share/ibus/component/typing-booster.xml
 share/locale/ca/LC_MESSAGES/ibus-typing-booster.mo
