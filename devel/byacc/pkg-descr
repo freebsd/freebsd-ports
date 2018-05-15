@@ -2,4 +2,4 @@ Berkeley Yacc (byacc) is a LALR(1) parser generator. Berkeley Yacc has been made
 as compatible as possible with AT&T Yacc. Berkeley Yacc can accept any input
 specification that conforms to the AT&T Yacc documentation.
 
-WWW: http://invisible-island.net/byacc/
+WWW: https://invisible-island.net/byacc/

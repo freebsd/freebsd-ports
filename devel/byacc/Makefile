@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	byacc
-PORTVERSION=	20170709
+PORTVERSION=	20180510
 CATEGORIES=	devel
-MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/ \
+MASTER_SITES=	https://invisible-mirror.net/archives/byacc/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
