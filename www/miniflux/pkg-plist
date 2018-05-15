@@ -1,2 +1,2 @@
 bin/miniflux
-@sample etc/miniflux.conf.sample
+@sample etc/miniflux.env.sample

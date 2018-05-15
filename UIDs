@@ -832,7 +832,7 @@ archiva:*:871:871::0:0:Apache Archiva Daemon:/nonexistent:/usr/sbin/nologin
 # free: 883
 # free: 884
 # free: 885
-# free: 886
+miniflux:*:886:886::0:0:Miniflux:/nonexistent:/usr/sbin/nologin
 pdagent:*:887:887::0:0:PagerDuty Agent:/nonexistent:/usr/sbin/nologin
 vuls:*:888:888::0:0:VULnerability Scanner:/var/db/vuls:/usr/sbin/nologin
 mattermost:*:889:889::0:0:Mattermost:/usr/local/www/mattermost:/usr/sbin/nologin

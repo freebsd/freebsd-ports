@@ -826,7 +826,7 @@ chronyd:*:849:
 # free: 883
 # free: 884
 # free: 885
-# free: 886
+miniflux:*:886:
 pdagent:*:887:
 vuls:*:888:
 mattermost:*:889:
