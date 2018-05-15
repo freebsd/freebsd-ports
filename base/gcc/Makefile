@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	6.3.0
+PORTVERSION=	6.4.0
 CATEGORIES=	base
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION} \
 		http://www.mpfr.org/mpfr-3.1.6/:mpfr \
@@ -28,14 +28,15 @@ LICENSE_COMB=	multi
 .error Please define CROSS_SYSROOT before building
 .endif
 
+GCC_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
+
 PREFIX=		/usr
 CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1" \
 		NM=/usr/bin/nm \
 		AS_FOR_TARGET=/usr/bin/as \
 		LD_FOR_TARGET=/usr/bin/ld \
 		NM_FOR_TARGET=/usr/bin/nm
-GCC_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
-USES=	gmake libtool tar:bzip2 makeinfo
+USES=	gmake libtool tar:xz makeinfo
 PLIST_SUB=	TARGETARCH=${ARCH} \
 		OPSYS=${OPSYS:tl} \
 		GCC_TARGET=${GCC_TARGET} \
@@ -49,6 +50,7 @@ CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS+=	\
 		--target=${GCC_TARGET} \
 		--enable-languages=c,c++ \
+		--enable-gnu-indirect-function \
 		--disable-nls \
 		--without-headers \
 		--with-gxx-include-dir=/usr/include/c++/v1/ \
