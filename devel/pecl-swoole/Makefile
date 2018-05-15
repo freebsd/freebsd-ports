@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swoole
-PORTVERSION=	1.10.4
+PORTVERSION=	1.10.5
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -13,9 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to build: swoole_config.h: error GCC 4.4 or later required
 
-USES=		php:pecl ssl
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		localbase:ldflags php:pecl ssl
 USE_PHP=	pcre
 
 OPTIONS_DEFINE=	HTTP2 REDIS SOCKETS
