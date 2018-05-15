@@ -2,6 +2,7 @@
 
 PORTNAME=	ceres-solver
 DISTVERSION=	1.14.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -69,19 +70,24 @@ TEST_IMPLIES=		GFLAGS
 LAPACK_DESC=		Linear Algebra PACKage
 LAPACK_USES=		fortran # LDFLAGS
 LAPACK_CMAKE_BOOL=	LAPACK
+LAPACK_CMAKE_ON=	-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW # USES=fortran
+# Avoid conflict with Ceres threading by using single-threaded BLAS library.
+# BLASLIB from USES=blaslapack cannot be used as it's multi-threaded.
+# https://github.com/xianyi/OpenBLAS/wiki/faq#multi-threaded
 ATLAS_USES=		blaslapack:atlas
-ATLAS_MAKE_ENV=		BLA_VENDOR=ATLAS
-ATLAS_CMAKE_ON=		-DLAPACK_LIBRARIES:STRING=alapack
+ATLAS_CMAKE_ON=		-DBLA_VENDOR:STRING="ATLAS" \
+			-DBLAS_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libcblas.so" \
+			-DLAPACK_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libalapack.so"
 ATLAS_IMPLIES=		LAPACK
 GOTOBLAS_DESC=		Goto blas implementation
 GOTOBLAS_USES=		blaslapack:gotoblas
-GOTOBLAS_MAKE_ENV=	BLA_VENDOR=Goto
+GOTOBLAS_CMAKE_ON=	-DBLA_VENDOR:STRING="Goto"
 GOTOBLAS_IMPLIES=	LAPACK
 NETLIB_USES=		blaslapack:netlib
-NETLIB_MAKE_ENV=	BLA_VENDOR=Generic
+NETLIB_CMAKE_ON=	-DBLA_VENDOR:STRING="Generic"
 NETLIB_IMPLIES=		LAPACK
 OPENBLAS_USES=		blaslapack:openblas
-OPENBLAS_MAKE_ENV=	BLA_VENDOR=OpenBLAS
+OPENBLAS_CMAKE_ON=	-DBLA_VENDOR:STRING="OpenBLAS"
 OPENBLAS_IMPLIES=	LAPACK
 
 SPARSE_DESC=		Sparse linear algebra library
