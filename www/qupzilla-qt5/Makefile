@@ -2,7 +2,7 @@
 
 PORTNAME=	qupzilla
 PORTVERSION=	1.8.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/QupZilla/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	-qt5
