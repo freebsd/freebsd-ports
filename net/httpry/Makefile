@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpry
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	net
 MASTER_SITES=	http://dumpsterventures.com/jason/httpry/
 
