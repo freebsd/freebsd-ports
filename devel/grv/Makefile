@@ -3,6 +3,7 @@
 PORTNAME=	grv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -32,7 +33,7 @@ GH_TUPLE=	bradfitz:slice:d9036e2:slice/src/github.com/bradfitz/slice \
 		stretchr:objx:8a3f715:objx/src/github.com/stretchr/objx \
 		stretchr:testify:a726187:testify/src/github.com/stretchr/testify \
 		tchap:go-patricia:5ad6cdb:patricia/src/github.com/tchap/go-patricia \
-		libgit2:git2go:eb0bf21:git2go/src/gopkg.in/libgit2/git2go.v26 # Keep git2go branch in sync with devel/libgit2 version
+		libgit2:git2go:b479bd1:git2go/src/gopkg.in/libgit2/git2go.v27 # Keep git2go branch in sync with devel/libgit2 version
 
 PLIST_FILES=	bin/grv
 
