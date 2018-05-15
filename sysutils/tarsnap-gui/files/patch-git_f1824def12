@@ -1,0 +1,32 @@
+From f1824def1277daedcd38df199fc4039be3c1c76c Mon Sep 17 00:00:00 2001
+From: Graham Percival <gperciva@tarsnap.com>
+Date: Tue, 12 Dec 2017 14:07:28 -0800
+Subject: [PATCH] build: require Qt 5.2 without (5.10 < 5.2) bug
+
+qmake's lessThan() sorts "5.10" as less than "5.2".  The newly-added
+versionLessThan() would also fix this, but that seems to be only 5.10 or later.
+---
+ Tarsnap.pro | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+--- Tarsnap.pro
++++ Tarsnap.pro
+@@ -1,5 +1,17 @@
+ # Check for at least Qt 5.2
+-lessThan(QT_VERSION, 5.2): error("Tarsnap-gui requires Qt 5.2 or higher.")
++NOTSUPPORTED=0
++lessThan(QT_MAJOR_VERSION, 6) {
++    lessThan(QT_MAJOR_VERSION, 5) {
++        # Qt 4 or below
++        NOTSUPPORTED=1
++    } else {
++        lessThan(QT_MINOR_VERSION, 2) {
++            # Qt 5.0 or 5.1
++             NOTSUPPORTED=1
++        }
++    }
++}
++greaterThan(NOTSUPPORTED, 0): error("Tarsnap-gui requires Qt 5.2 or higher.")
+ 
+ QT += core gui network sql widgets
+ CONFIG += c++11
