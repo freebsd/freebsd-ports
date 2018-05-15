@@ -251,7 +251,7 @@ RDS_CSV_CONFIGURE_ON=	--add-module=${WRKSRC_rdscsv}
 RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:v0.14:rdsjson
 RDS_JSON_CONFIGURE_ON=	--add-module=${WRKSRC_rdsjson}
 
-REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.14:redis2
+REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.15:redis2
 REDIS2_VARS=		DSO_EXTMODS+=redis2
 
 RTMP_GH_TUPLE=		arut:nginx-rtmp-module:v1.2.1:rtmp
@@ -281,6 +281,9 @@ SMALL_LIGHT_VARS=		DSO_EXTMODS+=small_light
 SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:v0.31:srcache
 #SRCACHE_CONFIGURE_ON=	--add-module=${WRKSRC_srcache}
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
+
+VTS_GH_TUPLE=		vozlt:nginx-module-vts:v0.1.15:vts
+VTS_CONFIGURE_ON=	--add-module=${WRKSRC_vts}
 
 XSS_GH_TUPLE=		openresty:xss-nginx-module:v0.05:xss
 XSS_CONFIGURE_ON=	--add-module=${WRKSRC_xss}
