@@ -64,7 +64,7 @@ new file mode 100644
 index 0000000..56a921e
 --- /dev/null
 +++ gcc/config/mips/freebsd.h
-@@ -0,0 +1,340 @@
+@@ -0,0 +1,347 @@
 +/* Definitions for MIPS varients running FreeBSD with ELF format
 +   Copyright (C) 2008 Free Software Foundation, Inc.
 +   Continued by David O'Brien <obrien@freebsd.org>
@@ -405,6 +405,13 @@ index 0000000..56a921e
 +
 +/************************[  Debugger stuff  ]*********************************/
 +#undef DBX_DEBUGGING_INFO
++
++#if MIPS_ABI_DEFAULT == ABI_64
++#undef STANDARD_STARTFILE_PREFIX_1
++#define STANDARD_STARTFILE_PREFIX_1 "/lib/"
++#undef STANDARD_STARTFILE_PREFIX_2
++#define STANDARD_STARTFILE_PREFIX_2 "/usr/lib/"
++#endif
 diff --git a/libgcc/config.host b/libgcc/config.host
 index f4a7428..5e5c33e 100644
 --- libgcc/config.host
