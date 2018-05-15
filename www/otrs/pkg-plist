@@ -1,4 +1,4 @@
-@owner %%OTRS_USER%%
+@owner otrs
 @group %%WWWOWN%%
 @sample otrs/.fetchmailrc.dist otrs/.fetchmailrc
 @sample otrs/.mailfilter.dist otrs/.mailfilter
@@ -1301,6 +1301,62 @@ otrs/bin/otrs.PostMaster.pl
 otrs/bin/otrs.SetPermissions.pl
 otrs/scripts/DBUpdate-to-6.pl
 otrs/scripts/DBUpdateTo6.pm
+otrs/scripts/DBUpdateTo6/AddAppointmentCalendarNotification.pm
+otrs/scripts/DBUpdateTo6/Base.pm
+otrs/scripts/DBUpdateTo6/CacheCleanup.pm
+otrs/scripts/DBUpdateTo6/CleanGroupUserPermissionValue.pm
+otrs/scripts/DBUpdateTo6/CreateAppointmentCalendarTables.pm
+otrs/scripts/DBUpdateTo6/CreateFormDraftTables.pm
+otrs/scripts/DBUpdateTo6/CreateTicketNumberCounterTables.pm
+otrs/scripts/DBUpdateTo6/DatabaseBackupCheck.pm
+otrs/scripts/DBUpdateTo6/DatabaseCharsetCheck.pm
+otrs/scripts/DBUpdateTo6/DatabaseVersionCheck.pm
+otrs/scripts/DBUpdateTo6/DropObjectLockState.pm
+otrs/scripts/DBUpdateTo6/FrameworkVersionCheck.pm
+otrs/scripts/DBUpdateTo6/InitializeDefaultCronjobs.pm
+otrs/scripts/DBUpdateTo6/MigrateChatData.pm
+otrs/scripts/DBUpdateTo6/MigrateArticleData.pm
+otrs/scripts/DBUpdateTo6/MigrateArticleSearchIndex.pm
+otrs/scripts/DBUpdateTo6/MigrateConfigEffectiveValues.pm
+otrs/scripts/DBUpdateTo6/MigrateGenericAgentJobs.pm
+otrs/scripts/DBUpdateTo6/MigratePackageRepositoryConfiguration.pm
+otrs/scripts/DBUpdateTo6/MigratePossibleNextActions.pm
+otrs/scripts/DBUpdateTo6/MigratePostMasterData.pm
+otrs/scripts/DBUpdateTo6/MigrateProcessManagementData.pm
+otrs/scripts/DBUpdateTo6/MigrateTicketAppointments.pm
+otrs/scripts/DBUpdateTo6/MigrateTicketFrontendCustomerInfoZoom.pm
+otrs/scripts/DBUpdateTo6/MigrateTicketMergedHistory.pm
+otrs/scripts/DBUpdateTo6/MigrateTicketNotifications.pm
+otrs/scripts/DBUpdateTo6/TaskConfig/MigrateArticleData.yml.dist
+otrs/scripts/DBUpdateTo6/MigrateTicketStats.pm
+otrs/scripts/DBUpdateTo6/MigrateTicketStorageModule.pm
+otrs/scripts/DBUpdateTo6/MigrateTimeZoneConfiguration.pm
+otrs/scripts/DBUpdateTo6/MigrateWebServiceConfiguration.pm
+otrs/scripts/DBUpdateTo6/MigrateZoomExpandConfig.pm
+otrs/scripts/DBUpdateTo6/PerlModulesCheck.pm
+otrs/scripts/DBUpdateTo6/PerlVersionCheck.pm
+otrs/scripts/DBUpdateTo6/PostArticleTableStructureChanges.pm
+otrs/scripts/DBUpdateTo6/RebuildConfig.pm
+otrs/scripts/DBUpdateTo6/SysConfigCheck.pm
+otrs/scripts/DBUpdateTo6/UninstallMergedFeatureAddOns.pm
+otrs/scripts/DBUpdateTo6/UpdateAppointmentCalendarFutureTasks.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/ArticleTableChangesPostRename.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/ArticleTableChangesPreRename.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/ArticleTableChangesRename.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/CommunicationLogs.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/DynamicFieldChanges.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/NewArticleSearchIndexTable.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/NewChatDataTable.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/NewCommunicationChannelTable.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/NewCustomerRelationTables.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/NewSysconfigTables.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/PasswordColumnChanges.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/RemoveMD5Columns.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/TicketDropCreateTimeUnix.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/TicketHistoryTableChanges.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/TicketIndexUpdate.pm
+otrs/scripts/DBUpdateTo6/UpgradeDatabaseStructure/UpdateNotificationTables.pm
 otrs/scripts/apache2-httpd-plack-proxy.conf
 otrs/scripts/apache2-httpd.include.conf
 otrs/scripts/apache2-perl-startup.pl

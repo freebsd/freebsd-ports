@@ -3,6 +3,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	6.0.6
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	m.tsatsenko@gmail.com
@@ -43,7 +44,9 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-CGI>=0:www/p5-CGI \
 		p5-Lingua-Translit>=0:devel/p5-Lingua-Translit \
 		p5-Pod-Strip>=0:textproc/p5-Pod-Strip \
-		p5-Template-Toolkit>=0:www/p5-Template-Toolkit
+		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+		p5-Sisimai>=0:mail/p5-Sisimai
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe shebangfix perl5 tar:bzip2
@@ -169,16 +172,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/scripts/database/*.* ${STAGEDIR}${OTRSDIR}/scripts/database/
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/test/*.t ${STAGEDIR}${OTRSDIR}/scripts/test/
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/tools/*.pl ${STAGEDIR}${OTRSDIR}/scripts/tools/
+	(cd ${WRKSRC}/scripts && ${PAX} -r -w DBUpdateTo6 ${STAGEDIR}${OTRSDIR}/scripts)
 	${FIND} ${CRON_SCRIPTS} -type f -name *.dist | ${SED} -e "p;s/\.dist//" | ${XARGS} -n2 ${MV}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/var/article
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/var/httpd/htdocs/js/js-cache/
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/var/tmp
-
-# otrs.SetPermissions.pl does not work in stage environment due to missing otrs user
-#post-install:
-#	cd ${STAGEDIR}/${OTRSDIR} && ${PERL} ./bin/otrs.SetPermissions.pl \
-#	--web-group=${WWWOWN} \
-#	--otrs-user=${PORTNAME} \
-#	--admin-group=wheel  ${STAGEDIR}${OTRSDIR}
+	# Attemt to set permissions for OTRS. It will fail if there is no pre-existing otrs user
+	cd ${STAGEDIR}/${OTRSDIR} && ${PERL} ./bin/otrs.SetPermissions.pl \
+	--web-group=${WWWOWN} \
+	--otrs-user=${PORTNAME} \
+	--admin-group=wheel  ${STAGEDIR}${OTRSDIR} || true
 
 .include <bsd.port.post.mk>

@@ -8,7 +8,8 @@ and/or documentation in %%DOCSDIR%% for further instructions, particularly
 regarding configuring your web server, database, cron scripts, and
 receiving emails.
 
-Do not forget to run otrs.SetPermissions.pl script.
+Do not forget to run otrs.SetPermissions.pl script when installing OTRS
+for the first time.
 For example:
 # %%PREFIX%%/otrs/bin/otrs.SetPermissions.pl \
 --web-group=%%WWWOWN%% --otrs-user=%%OTRS_USER%% \
