@@ -2,6 +2,7 @@
 
 PORTNAME=	libgit2
 PORTVERSION=	0.27.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -38,7 +39,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "/LIBGIT2_PC_REQUIRES.*zlib/ d" ${WRKSRC}/CMakeLists.txt
 .if ${SSL_DEFAULT} == base
 	@${REINPLACE_CMD} -e "/LIBGIT2_PC_REQUIRES.*openssl/ d" \
-		${WRKSRC}/CMakeLists.txt
+		${WRKSRC}/src/CMakeLists.txt
 .endif
 
 .include <bsd.port.post.mk>
