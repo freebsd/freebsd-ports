@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	statsmodels
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +13,9 @@ COMMENT=	Complement to SciPy for statistical computations
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=0.12:math/py-pandas@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}patsy>=0.2.1:math/py-patsy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.11:science/py-scipy@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pandas>=0.14:math/py-pandas@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}patsy>=0.4.0:math/py-patsy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.14:science/py-scipy@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
