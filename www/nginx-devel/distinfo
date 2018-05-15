@@ -1,4 +1,4 @@
-TIMESTAMP = 1526222484
+TIMESTAMP = 1526259197
 SHA256 (nginx-1.14.0.tar.gz) = 5d15becbf69aba1fe33f8d416d97edd95ea8919ea9ac519eff9bafebb6022cb5
 SIZE (nginx-1.14.0.tar.gz) = 1016272
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -7,8 +7,8 @@ SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (nginx_mod_h264_streaming-2.2.7.tar.gz) = 6d974ba630cef59de1f60996c66b401264a345d25988a76037c2856cec756c19
 SIZE (nginx_mod_h264_streaming-2.2.7.tar.gz) = 44012
-SHA256 (ngx_http_redis-0.3.8.tar.gz) = 95d0ed7be40da2efc88883d72e52e5e272d2c34463583b7078e8fd6d55004934
-SIZE (ngx_http_redis-0.3.8.tar.gz) = 12342
+SHA256 (ngx_http_redis-0.3.9.tar.gz) = 21f87540f0a44b23ffa5df16fb3d788bc90803b255ef14f9c26e3847a6f26f46
+SIZE (ngx_http_redis-0.3.9.tar.gz) = 13051
 SHA256 (ngx_http_response-0.3.tar.gz) = 0835584029f053051c624adbe33a826ab0205c9d85a02af6019e6b57607e9045
 SIZE (ngx_http_response-0.3.tar.gz) = 2244
 SHA256 (08a395c66e42.tar.gz) = 53e440737ed1aff1f09fae150219a45f16add0c8d6e84546cb7d80f73ebffd90
