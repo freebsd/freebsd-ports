@@ -145,6 +145,7 @@
 %%WWWDIR%%/plugins/about/dialogs/about.js
 %%WWWDIR%%/plugins/about/dialogs/hidpi/logo_ckeditor.png
 %%WWWDIR%%/plugins/about/dialogs/logo_ckeditor.png
+%%WWWDIR%%/plugins/clipboard/dialogs/paste.js
 %%WWWDIR%%/plugins/colordialog/dialogs/colordialog.css
 %%WWWDIR%%/plugins/colordialog/dialogs/colordialog.js
 %%WWWDIR%%/plugins/copyformatting/cursors/cursor-disabled.svg
@@ -328,6 +329,7 @@
 %%WWWDIR%%/samples/img/header-bg.png
 %%WWWDIR%%/samples/img/header-separator.png
 %%WWWDIR%%/samples/img/logo.png
+%%WWWDIR%%/samples/img/logo.svg
 %%WWWDIR%%/samples/img/navigation-tip.png
 %%WWWDIR%%/samples/index.html
 %%WWWDIR%%/samples/js/sample.js
