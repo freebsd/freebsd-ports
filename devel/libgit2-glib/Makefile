@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgit2-glib
-PORTVERSION=	0.27.0
+PORTVERSION=	0.26.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,8 +12,6 @@ COMMENT=	Glib wrapper library around the libgit2 git access library
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		upstream does not support libgit 0.27.0
 
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libgit2.so:devel/libgit2
