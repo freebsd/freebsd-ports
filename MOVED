@@ -10185,4 +10185,4 @@ www/p5-Kwiki||2018-05-09|Has expired: All www files wrongly belongs to www user
 x11-servers/x11rdp|x11-drivers/xorgxrdp|2018-05-13|Obsoleted by update of net/xrdp
 net-p2p/btsync|net-p2p/rslsync|2018-05-13|Renamed by the vendor
 net-im/licq-msn||2018-05-14|MSN Messenger service terminated 2017-05-19
-finance/gnucash@guile1||2018-05-14|Version 3.0 dropped guile1 support. Use unflavored finance/gnucash instead.
+finance/gnucash@guile1||2018-05-14|Version 3.0 dropped guile1 support. Use unflavored finance/gnucash instead
