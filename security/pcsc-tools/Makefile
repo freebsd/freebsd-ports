@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-tools
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	security
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
 
