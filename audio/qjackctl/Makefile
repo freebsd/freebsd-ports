@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	qjackctl_
 DISTVERSION=	0_5_0
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt interface for JACK Audio Connection Kit
 
 LICENSE=	GPLv2+
