@@ -167,7 +167,6 @@
     SUBDIR += qxmpp-qt5
     SUBDIR += ramblercontacts
     SUBDIR += ricochet
-    SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
     SUBDIR += rubygem-hipchat15
     SUBDIR += rubygem-lita
