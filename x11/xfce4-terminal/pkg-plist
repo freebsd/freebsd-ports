@@ -1,5 +1,6 @@
 bin/xfce4-terminal
 man/man1/xfce4-terminal.1.gz
+share/applications/xfce4-terminal-settings.desktop
 share/applications/xfce4-terminal.desktop
 share/locale/ar/LC_MESSAGES/xfce4-terminal.mo
 share/locale/ast/LC_MESSAGES/xfce4-terminal.mo
