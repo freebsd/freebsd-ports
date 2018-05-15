@@ -113,16 +113,14 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/libsuperlu_mt.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/SRC/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/DOC/*.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/simax97.ps.gz ${STAGEDIR}${DOCSDIR}
-.endif
 
-.ifdef MAINTAINER_MODE
-regression-test: do-build
+do-test:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} testing)
 	@(cd ${WRKSRC_SHARED} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} testing)
-.endif
 
 .include <bsd.port.post.mk>
