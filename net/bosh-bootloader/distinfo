@@ -1,3 +1,3 @@
-TIMESTAMP = 1526287479
-SHA256 (cloudfoundry-bosh-bootloader-6.6.9-v6.6.9_GH0.tar.gz) = 0e96cd6f63e68688f6294a943edf3f55fcb66b48b31ba77a719b13417bedc7e1
-SIZE (cloudfoundry-bosh-bootloader-6.6.9-v6.6.9_GH0.tar.gz) = 5122079
+TIMESTAMP = 1526380077
+SHA256 (cloudfoundry-bosh-bootloader-6.6.10-v6.6.10_GH0.tar.gz) = 9ef19dc7126002726af22ab42eb609498878881d6ecd739fc6dece51b8a130a2
+SIZE (cloudfoundry-bosh-bootloader-6.6.10-v6.6.10_GH0.tar.gz) = 5125103
