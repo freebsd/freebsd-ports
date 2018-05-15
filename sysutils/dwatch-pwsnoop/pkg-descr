@@ -1,0 +1,4 @@
+DTrace module for FreeBSD dwatch(1) to read password prompts by snooping on
+read/write syscalls.
+
+WWW: https://fraubsd.org/dwatch-pwsnoop/

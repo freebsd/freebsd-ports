@@ -286,6 +286,7 @@
     SUBDIR += dvtm
     SUBDIR += dwatch
     SUBDIR += dwatch-gource
+    SUBDIR += dwatch-pwsnoop
     SUBDIR += e2fsprogs
     SUBDIR += ec2-scripts
     SUBDIR += edid-decode
