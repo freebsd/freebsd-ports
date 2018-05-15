@@ -12,6 +12,9 @@ COMMENT=	Make gettext_i18n_rails .po files as JSON
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsoleted by update of www/gitlab. Please use devel/rubygem-gettext_i18n_rails_js instead.
+EXPIRATION_DATE=	2018-06-30
+
 RUN_DEPENDS=	rubygem-gettext>=3.0.2:devel/rubygem-gettext \
 		rubygem-gettext_i18n_rails>=0.7.1:devel/rubygem-gettext_i18n_rails \
 		rubygem-po_to_json>=1.0.0:converters/rubygem-po_to_json \

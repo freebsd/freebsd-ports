@@ -11,6 +11,9 @@ COMMENT=	OmniAuth strategy for Twitter
 
 LICENSE=	MIT
 
+DEPRECATED=	Obsoleted by update of www/gitlab. Please use net/rubygem-omniauth-twitter instead.
+EXPIRATION_DATE=	2018-06-30
+
 RUN_DEPENDS=	rubygem-json1>=1.3:devel/rubygem-json1 \
 		rubygem-omniauth-oauth>=1.1:net/rubygem-omniauth-oauth \
 		rubygem-rack>=0:www/rubygem-rack
