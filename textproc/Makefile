@@ -51,6 +51,7 @@
     SUBDIR += augeas
     SUBDIR += az-aspell
     SUBDIR += bar
+    SUBDIR += bat
     SUBDIR += bbe
     SUBDIR += be-aspell
     SUBDIR += bedic-data
