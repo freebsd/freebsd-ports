@@ -3,7 +3,7 @@
 
 PORTNAME=	ugene
 DISTVERSION=	1.22.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology science
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} QueryDesigner_UserManual.pdf \
