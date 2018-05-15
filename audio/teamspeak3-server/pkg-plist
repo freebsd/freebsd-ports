@@ -58,8 +58,10 @@ share/teamspeak/server/serverquerydocs/complainadd.txt
 share/teamspeak/server/serverquerydocs/complaindel.txt
 share/teamspeak/server/serverquerydocs/complaindelall.txt
 share/teamspeak/server/serverquerydocs/complainlist.txt
+share/teamspeak/server/serverquerydocs/customdelete.txt
 share/teamspeak/server/serverquerydocs/custominfo.txt
 share/teamspeak/server/serverquerydocs/customsearch.txt
+share/teamspeak/server/serverquerydocs/customset.txt
 share/teamspeak/server/serverquerydocs/ftcreatedir.txt
 share/teamspeak/server/serverquerydocs/ftdeletefile.txt
 share/teamspeak/server/serverquerydocs/ftgetfileinfo.txt
@@ -180,10 +182,11 @@ share/teamspeak/server/sql/create_mariadb/create_tables.sql
 share/teamspeak/server/sql/create_mariadb/drop_tables.sql
 share/teamspeak/server/sql/create_sqlite/create_tables.sql
 share/teamspeak/server/sql/create_sqlite/drop_tables.sql
-share/teamspeak/server/sql/custom_delete_by_clientid.sql
+share/teamspeak/server/sql/custom_delete.sql
 share/teamspeak/server/sql/custom_get_by_id.sql
 share/teamspeak/server/sql/custom_get_by_ident.sql
 share/teamspeak/server/sql/custom_insert.sql
+share/teamspeak/server/sql/custom_update.sql
 share/teamspeak/server/sql/defaults.sql
 share/teamspeak/server/sql/group_delete.sql
 share/teamspeak/server/sql/group_id_get_by_name.sql
@@ -272,11 +275,14 @@ share/teamspeak/server/sql/update_24.sql
 share/teamspeak/server/sql/update_25.sql
 share/teamspeak/server/sql/update_26.sql
 share/teamspeak/server/sql/update_27.sql
+share/teamspeak/server/sql/update_28.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_mariadb_26.sql
 share/teamspeak/server/sql/update_mariadb_27.sql
+share/teamspeak/server/sql/update_mariadb_28.sql
 share/teamspeak/server/sql/update_permissions_12.sql
 share/teamspeak/server/sql/update_sqlite_27.sql
+share/teamspeak/server/sql/update_sqlite_28.sql
 share/teamspeak/server/sql/updates_and_fixes/convert_mysql_to_mariadb.sql
 share/teamspeak/server/sql/updates_and_fixes/mariadb_fix_latin_utf8.sql
 @dir(teamspeak,teamspeak,) %%ETCDIR%%
