@@ -1,0 +1,39 @@
+From 309be58bbb2b47ca530eecdaf38f2965e35da4f1 Mon Sep 17 00:00:00 2001
+From: "Raphael A. Silva" <rkhaotix@gmail.com>
+Date: Mon, 26 Feb 2018 17:27:09 -0300
+Subject: [PATCH] Fixed a problem with sqlexecutionwidget.ui that is not
+ building properly in Qt 5.10
+
+---
+ libpgmodeler_ui/ui/sqlexecutionwidget.ui | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+--- libpgmodeler_ui/ui/sqlexecutionwidget.ui
++++ libpgmodeler_ui/ui/sqlexecutionwidget.ui
+@@ -199,7 +199,7 @@
+         </size>
+        </property>
+        <property name="shortcut">
+-        <string>Ctrl+S</string>
++        <string notr="true"/>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+@@ -316,7 +316,7 @@
+         </size>
+        </property>
+        <property name="shortcut">
+-        <string notr="true">Alt+X</string>
++        <string>Alt+T</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+@@ -360,7 +360,7 @@
+         </size>
+        </property>
+        <property name="shortcut">
+-        <string notr="true">Alt+X</string>
++        <string>Alt+X</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
