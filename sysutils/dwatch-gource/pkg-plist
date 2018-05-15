@@ -1,0 +1,9 @@
+sbin/gwatch
+libexec/dwatch/gource-open
+libexec/dwatch/gource-open-raw
+libexec/dwatch/gource-proc
+libexec/dwatch/gource-proc-raw
+libexec/dwatch/gource-syscall
+libexec/dwatch/gource-syscall-raw
+libexec/dwatch/gource-vfs
+libexec/dwatch/gource-vfs-raw

@@ -1,0 +1,9 @@
+DTrace modules for FreeBSD dwatch(1) to produce gource logs. Gource
+(graphics/gource) is a tool normally used for visualizing source control
+revisions, but it can also be used for visualizing process trees, filesystem
+activity, syscall access, and more.
+
+These modules allow you to generate log files for rendering realtime process,
+filesystem, and other activities in FreeBSD using gource.
+
+WWW: https://fraubsd.org/dwatch-gource/
