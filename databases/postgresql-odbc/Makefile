@@ -11,7 +11,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PostgreSQL ODBC driver
 
-LICENSE=	LGPL20
+LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
