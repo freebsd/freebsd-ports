@@ -1,19 +1,10 @@
 
-Krusader supports the following additional archivers:
+Krusader can use several external programs for additional functionality, from
+diff utilities to email programs.
 
-archivers/zip
-archivers/unzip
-archivers/bzip2
-archivers/rar
-archivers/unrar
-archivers/unace
-archivers/unarj
-archivers/rpm
+https://docs.kde.org/trunk5/en/extragear-utils/krusader/konfig-dependencies.html
+contains a list of programs Krusader optionally looks for.
 
-To use 'update DB' button in the locate dialog, open Settings->Konfigurator,
-Dependencies and write '/usr/libexec/locate.updatedb' into the field 'updatedb'.
-
-Krusader allows to diff file with kdiff3 (textproc/kdiff3) or kompare (devel/kdesdk).
-
-Krusader supports krename (sysutils/krename) for renaming operations.
-
+To use 'update DB' button in the locate dialog, open "Settings->Configure
+Krusader -> Dependencies" and write '/usr/libexec/locate.updatedb' into the
+field 'updatedb'.
