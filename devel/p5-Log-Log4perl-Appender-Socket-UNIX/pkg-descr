@@ -1,3 +1,9 @@
-This is a simple appender for writing log info to a unix domain socket.
+Log::Log4perl::Appender::Socket::UNIX is a simple appender for writing to a unix
+domain socket. It relies on Socket and only logs to an existing socket - ie.
+very useful to always log debug streams to the socket.
+
+The appender tries to stream to a socket. The socket in questions is beeing
+created by the client who wants to listen, once created the messages are coming
+thru.
 
 WWW: http://search.cpan.org/dist/Log-Log4perl-Appender-Socket-UNIX/
