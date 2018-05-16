@@ -1,6 +1,6 @@
---- xf86drm.h.orig	2017-04-07 08:49:13 UTC
+--- xf86drm.h.orig	2018-03-05 21:06:45 UTC
 +++ xf86drm.h
-@@ -78,17 +78,27 @@ extern "C" {
+@@ -78,16 +78,26 @@ extern "C" {
  
  #ifdef __OpenBSD__
  #define DRM_DIR_NAME  "/dev"
@@ -20,7 +20,7 @@
 +#define DRM_CONTROL_MINOR_NAME  "controlD"
 +#define DRM_RENDER_MINOR_NAME   "renderD"
  #endif
- 
++
 +#define DRM_DEV_NAME  "%s/" DRM_PRIMARY_MINOR_NAME "%d"
 +#define DRM_CONTROL_DEV_NAME  "%s/" DRM_CONTROL_MINOR_NAME "%d"
 +#define DRM_RENDER_DEV_NAME  "%s/" DRM_RENDER_MINOR_NAME "%d"
@@ -31,7 +31,6 @@
 +         sizeof(DRM_CONTROL_MINOR_NAME),    \
 +         sizeof(DRM_RENDER_MINOR_NAME))     \
 +    + 3) /* length of the node number */
-+
+ 
  #define DRM_ERR_NO_DEVICE  (-1001)
  #define DRM_ERR_NO_ACCESS  (-1002)
- #define DRM_ERR_NOT_ROOT   (-1003)
