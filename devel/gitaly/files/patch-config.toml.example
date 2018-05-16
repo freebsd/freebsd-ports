@@ -42,7 +42,7 @@
  [gitlab-shell]
  # The directory where gitlab-shell is installed
 -dir = "/home/git/gitlab-shell"
-+dir = "/usr/local/share/gitlab-shell/bin"
++dir = "/usr/local/share/gitlab-shell"
  
  # # You can adjust the concurrency of each RPC endpoint
  # [[concurrency]]
