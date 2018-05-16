@@ -21,6 +21,10 @@ USE_RC_SUBR=	syncthing-discosrv
 USERS=		syncthing
 GROUPS=		syncthing
 
+
+DEPRECATED=	Included in net/syncthing now
+EXPIRATION_DATE=	2018-06-17
+
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
 		${MV} .gitignore CONTRIBUTORS LICENSE README.md build.sh \
