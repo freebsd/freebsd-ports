@@ -1,6 +1,6 @@
-TIMESTAMP = 1522849010
-SHA256 (jpmens-hared-hare-1.0-41-ge17cdc6_GH0.tar.gz) = f16038eaf12d7060462f36af60017141be748f5f9be0ebcd064fb39004156179
-SIZE (jpmens-hared-hare-1.0-41-ge17cdc6_GH0.tar.gz) = 16023
+TIMESTAMP = 1523833144
+SHA256 (jpmens-hared-hare-1.0-45-g8341d8a_GH0.tar.gz) = 2db2b095668426752cd8129ddbd0586188dbad171f64638248c6f6f6e5477b20
+SIZE (jpmens-hared-hare-1.0-45-g8341d8a_GH0.tar.gz) = 16042
 SHA256 (go-gcfg-gcfg-f02745a_GH0.tar.gz) = cd1eb3b45b0cc06da82118bcd5cb15fa9f65b4ccb39d67050b666028f8bb9233
 SIZE (go-gcfg-gcfg-f02745a_GH0.tar.gz) = 28580
 SHA256 (go-warnings-warnings-27b9fab_GH0.tar.gz) = 1db6ca861b2f9f3a53e3dff65d6c2d1b675f2fc7c81dc4f5672e1aaf79b9fe7b
