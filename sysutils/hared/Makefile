@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	hared
-DISTVERSION=	1.0-41
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-ge17cdc6
+DISTVERSION=	1.0-45
+DISTVERSIONSUFFIX=	-g8341d8a
 CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -23,6 +22,8 @@ GH_TUPLE=	go-gcfg:gcfg:f02745a:gcfg/src/gopkg.in/gcfg.v1 \
 		golang:net:9dfe398:net/src/golang.org/x/net \
 		gorilla:websocket:7a8dacf:websocket/src/github.com/gorilla/websocket
 
+CONFLICTS_INSTALL=	sysutils/py-hared
+
 OPTIONS_DEFINE=	DOCS
 
 ETCDIR=		${PREFIX}/etc
@@ -34,8 +35,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKSRC}/${GO_PKGNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/daemon/hared.ini.example \
-		${STAGEDIR}${ETCDIR}/hared.ini.sample
+	${INSTALL_DATA} ${WRKSRC}/daemon/hared.ini.sample ${STAGEDIR}${ETCDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
