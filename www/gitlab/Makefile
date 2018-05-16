@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab
 PORTVERSION=	10.7.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -91,7 +92,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-google-api-client>=0.19.8:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7:databases/rubygem-seed-fu \
-	rubygem-html-pipeline>=2.7.1:textproc/rubygem-html-pipeline \
+	rubygem-html-pipeline27>=2.7.1:textproc/rubygem-html-pipeline27 \
 	rubygem-deckar01-task_list>=2.0.0:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.6.2:textproc/rubygem-gitlab-markup \
 	rubygem-redcarpet>=3.4:textproc/rubygem-redcarpet \
