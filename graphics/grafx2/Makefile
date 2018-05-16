@@ -2,31 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	grafx2
-PORTVERSION=	2.4.2035
-PORTREVISION=	4
+PORTVERSION=	2.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
-MASTER_SITES=	LOCAL/ehaupt
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-
-# Project site uses 'Content-Disposition: attachment; filename=' to provide the
-# filename. Unfortunately this is not supported by fetch. Therefore self host
-# distfile.
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pixelart-oriented bitmap painting program
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libX11.so:x11/libX11 \
 		libpng.so:graphics/png
 
-USES=		gmake pkgconfig tar:tgz
+USES=		gmake pkgconfig tar:tgz iconv:wchar_t
 USE_SDL=	sdl image
+USE_GITLAB=	yes
+GL_ACCOUNT=	GrafX2
+GL_PROJECT=	grafX2
+GL_COMMIT=	60b5e5fd50acb01cbdc59f50e2c8f4b8786635c0
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
+WRKSRC_SUBDIR=	src
 CFLAGS+=	-DHAVE_SYS_PARAM_H -DHAVE_SYS_UCRED_H -DHAVE_SYS_MOUNT_H
 
 OPTIONS_DEFINE=	TTF LUA
 TTF_DESC=	True Type font support
 OPTIONS_DEFAULT=TTF
+
+TTF_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+
+# disable recoil support until we have a librecoil port
+MAKE_ENV+=	NORECOIL=1
 
 .include <bsd.port.options.mk>
 
@@ -56,6 +61,6 @@ post-patch:
 		${WRKSRC}/setup.c
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/grafx2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/grafx2
 
 .include <bsd.port.mk>
