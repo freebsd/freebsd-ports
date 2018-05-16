@@ -1,0 +1,36 @@
+--- Makefile.orig	2018-05-06 15:36:46 UTC
++++ Makefile
+@@ -35,7 +35,11 @@
+ 
+ # Detect GIT revision
+   GIT_REVISION = $(shell git rev-list --count 1af8c74f53110e349d8f0d19b14599281913f71f..)
+-  GIT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
++  ifneq (,$(CI_COMMIT_REF_NAME))
++    GIT_BRANCH = $(CI_COMMIT_REF_NAME)
++  else
++    GIT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
++  endif
+   ifneq (master,$(GIT_BRANCH))
+     GIT_REVISION := "$(GIT_REVISION)-$(GIT_BRANCH)"
+   endif
+@@ -384,7 +388,9 @@ endif
+       COPT += $(LUACOPT)
+       LOPT += $(LUALOPT)
+       OBJDIR = ../obj/win32
++      WINDRES ?= $(shell which i686-w64-mingw32-windres || which mingw32-windres)
+       PLATFORM = win32
++      PLATFORMOBJ = winres.o
+       PLATFORMFILES = bin/SDL.dll bin/SDL_image.dll $(wildcard ../bin/libpng*.dll) $(wildcard ../bin/libjpeg*.dll) bin/zlib1.dll $(TTFLIBS)
+     else
+       ifdef GP2XCROSS
+@@ -789,6 +795,10 @@ install : $(BIN)
+ 	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/libs || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/libs
+ 	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/palette || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/palette
+ 	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture
++	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/thomson || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/thomson
++	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/thomson/lib || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/thomson/lib
++	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/others-8bit || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/others-8bit
++	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/others-8bit/lib || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/others-8bit/lib
+ 	test -d $(DESTDIR)$(datadir)/applications || $(MKDIR) $(DESTDIR)$(datadir)/applications
+ 	test -d $(DESTDIR)$(pixmapdir) || $(MKDIR) $(DESTDIR)$(pixmapdir)
+ 	
