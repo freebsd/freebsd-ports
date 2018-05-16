@@ -3,7 +3,7 @@
 PORTNAME=	renpy
 PORTVERSION?=	6.99.14.3
 DISTVERSIONSUFFIX=-sdk
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel games
 MASTER_SITES=	https://www.renpy.org/dl/${PORTVERSION}/
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=${PORTVERSION}:devel/py-game_sdl2@${FLAVOR}
 
-BROKEN=		fails to build with cython 0.28
 CONFLICTS_INSTALL?=	${PORTNAME}6-*
 
 # Upstream tends to reroll distfiles before moving under /release/
