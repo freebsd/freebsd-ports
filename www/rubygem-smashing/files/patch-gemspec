@@ -1,10 +1,12 @@
---- smashing.gemspec.orig	2017-12-27 15:59:19 UTC
+--- smashing.gemspec.orig	2018-05-15 18:18:17 UTC
 +++ smashing.gemspec
-@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
+@@ -27,8 +27,8 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<sinatra>.freeze, ["~> 2.0.0"])
        s.add_runtime_dependency(%q<sinatra-contrib>.freeze, ["~> 2.0.0"])
        s.add_runtime_dependency(%q<thin>.freeze, ["~> 1.7.0"])
-       s.add_runtime_dependency(%q<rufus-scheduler>.freeze, ["~> 3.4.2"])
+-      s.add_runtime_dependency(%q<rufus-scheduler>.freeze, ["~> 3.4.2"])
 -      s.add_runtime_dependency(%q<thor>.freeze, ["~> 0.19.4"])
++      s.add_runtime_dependency(%q<rufus-scheduler>.freeze, ["~> 3.4", ">= 3.4.2"])
 +      s.add_runtime_dependency(%q<thor>.freeze, ["~> 0.19", ">= 0.19.4"])
        s.add_runtime_dependency(%q<sprockets>.freeze, ["~> 3.7.1"])
        s.add_runtime_dependency(%q<rack>.freeze, ["~> 2.0.0"])
