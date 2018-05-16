@@ -16,6 +16,9 @@ GH_TAGNAME=	9594d39
 
 PLIST_FILES=	bin/syncthing-cli
 
+DEPRECATED=	Included in net/syncthing now
+EXPIRATION_DATE=	2018-06-17
+
 do-build:
 	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}/Godeps/_workspace:${WRKSRC} go build
 	@${MV} ${WRKSRC}/syncthing-cli-${GH_TAGNAME} ${WRKSRC}/syncthing-cli
