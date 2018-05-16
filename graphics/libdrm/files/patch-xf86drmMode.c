@@ -1,6 +1,6 @@
---- xf86drmMode.c.orig	2017-04-07 08:49:13 UTC
+--- xf86drmMode.c.orig	2018-05-13 10:01:15 UTC
 +++ xf86drmMode.c
-@@ -47,6 +47,7 @@
+@@ -43,6 +43,7 @@
  #include <stdlib.h>
  #include <sys/ioctl.h>
  #ifdef HAVE_SYS_SYSCTL_H
@@ -8,7 +8,7 @@
  #include <sys/sysctl.h>
  #endif
  #include <stdio.h>
-@@ -796,43 +797,60 @@ int drmCheckModesettingSupported(const c
+@@ -792,41 +793,59 @@ int drmCheckModesettingSupported(const char *busid)
  	closedir(sysdir);
  	if (found)
  		return 0;
@@ -95,9 +95,6 @@
  	}
 -#elif defined(__DragonFly__)
 -	return 0;
--#endif
--#ifdef __OpenBSD__
-+#elif defined(__OpenBSD__)
+ #elif defined(__OpenBSD__)
  	int	fd;
  	struct drm_mode_card_res res;
- 	drmModeResPtr r = 0;
