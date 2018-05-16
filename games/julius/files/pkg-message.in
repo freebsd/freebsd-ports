@@ -1,1 +1,2 @@
-To play this game, copy Caesar III game files to %%DATADIR%%/data.
+To play this game, you need to cd to the directory with the game files
+and run julius or just pass the directory as a 1st argument.

@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	julius
+PKGNAMESUFFIX=	-caesariii
 PORTVERSION=	g20180430
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -18,16 +20,12 @@ GH_TAGNAME=	cb7ecdf
 
 USE_SDL=	mixer2 sdl2
 
-SUB_FILES=	julius pkg-message
+SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/${PORTNAME} \
-		${DATADIR}/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} \
-		${STAGEDIR}${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
