@@ -13,6 +13,8 @@ COMMENT=	Python NUI library for rapid application development
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with cython 0.28
+
 BUILD_DEPENDS=	git:devel/git \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${FLAVOR}
 LIB_DEPENDS=	libmtdev.so:devel/libmtdev
