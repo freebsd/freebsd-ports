@@ -12,6 +12,8 @@ COMMENT=	Xpra gives you persistent remote applications for X
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build with cython 0.28
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>2:x11-toolkits/py-gtk2@${FLAVOR} \
 		${PYNUMPY}
 LIB_DEPENDS=	libturbojpeg.so:graphics/libjpeg-turbo \
