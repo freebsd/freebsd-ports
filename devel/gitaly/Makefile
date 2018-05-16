@@ -2,6 +2,7 @@
 
 PORTNAME=	gitaly
 DISTVERSION=	0.96.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
