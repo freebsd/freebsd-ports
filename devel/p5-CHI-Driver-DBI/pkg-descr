@@ -1,6 +1,5 @@
-This driver uses a database table to store the cache for CHI.
-The newest versions of MySQL and SQLite are known to work.
-Other RDBMSes should work.
+This driver uses a database table to store the cache. The newest versions of
+MySQL and SQLite work are known to work. Other RDBMSes should work.
 
 Why cache things in a database? Isn't the database what people are trying to
 avoid with caches? This is often true, but a simple primary key lookup is
