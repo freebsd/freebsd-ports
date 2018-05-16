@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uuid
-PORTVERSION=	2.3.8
+PORTVERSION=	2.3.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
