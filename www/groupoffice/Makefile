@@ -3,7 +3,7 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.2.93
+DISTVERSION=	6.3.6
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 
@@ -19,15 +19,13 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		mysql shebangfix php:web python
 USE_PHP=	mysqli session mbstring pcre xml
-SHEBANG_FILES=	go/vendor/tcpdf/tools/tcpdf_addfont.php \
-		groupoffice \
+SHEBANG_FILES=	groupoffice \
 		groupofficecli.php \
 		install/autoinstall.php \
 		modules/postfixadmin/scripts/vacation.pl \
 		modules/sync/z-push/install.sh \
 		modules/sync/z-push/z-push-admin.php \
 		modules/sync/z-push/z-push-top.php \
-		vendor/fkooman/php-oauth-client/bin/php-oauth-client-create-tables \
 		vendor/sabre/dav/bin/naturalselection \
 		vendor/sabre/dav/bin/googlecode_upload.py \
 		vendor/bin/../sabre/dav/bin/naturalselection \
@@ -54,7 +52,7 @@ post-patch:
 		${WRKSRC}/go/base/Config.php
 	@${REINPLACE_CMD} 's|/etc/groupoffice|${PREFIX}&|g' \
 		${WRKSRC}/go/base/Config.php \
-		${WRKSRC}/install/configFile.php \
+		${WRKSRC}/install/configfile.php \
 		${WRKSRC}/modules/serverclient/HttpClient.php \
 		${WRKSRC}/modules/serverclient/ServerclientModule.php \
 		${WRKSRC}/modules/site/index.php
