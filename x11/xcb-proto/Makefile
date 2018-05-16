@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcb-proto
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
