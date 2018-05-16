@@ -1,11 +1,12 @@
-Perl helper class for implementing the Google Chart Tools Datasource Protocol.
-
 The Google Visualization API is a nifty bit of kit for generating pretty
-pictures from your data. By design it has a fair amount of Google-cruft, such
-as non-standard JSON and stuffing configuration options in to a single CGI
-query parameter.
+pictures from your data. By design it has a fair amount of Google-cruft, such as
+non-standard JSON and stuffing configuration options in to a single CGI query
+parameter. It's also got somewhat confusing documentation, and some non-obvious
+rules for generating certain message classes.
 
-Data::Google::Visualization::DataTable takes care of preparing data for the
-API.
+Data::Google::Visualization::DataTable takes care of preparing data for the API,
+but this module implements the Google Chart Tools Datasource Protocol, or Google
+Visualization API wire protocol, or whatever it is they've decided to call it
+this week.
 
 WWW: http://search.cpan.org/dist/Data-Google-Visualization-DataSource/
