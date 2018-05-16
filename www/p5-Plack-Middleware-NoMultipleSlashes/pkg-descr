@@ -1,5 +1,17 @@
-Plack Middleware. By enabling this middleware, all multiple slashes in your
-requests will automatically be cut. //hello///world becomes /hello/world.
-Simple as that.
+Plack::Middleware::NoMultipleSlashes removes all multiple slashes from your
+PATH_INFO.
+
+Multiple slashes in requests are a common problem, which many share. Apparently,
+the RFC states that you should be able to expect different results from
+http://server/ and http://server// (notice the second slash), so if the
+frameworks wish to maintain RFC compatibility, they cannot remove those extra
+slashes for you.
+
+While you can handle this issue in a reverse proxy, in a rewrite module or in
+your code, I find it more comfortable to have Plack take care of it in the thin
+layer called Middlewares.
+
+By enabling this middleware, all multiple slashes in your requests will
+automatically be cut. //hello///world becomes /hello/world. Simple as that.
 
 WWW: http://search.cpan.org/dist/Plack-Middleware-NoMultipleSlashes/
