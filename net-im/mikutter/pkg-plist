@@ -14,14 +14,13 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/environment.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/entity.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/entity/basic_twitter_entity.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/entity/blank_entity.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/entity/extended_twitter_entity.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/entity/regexp_entity.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/entity/segment.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/entity/url_entity.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/mixin.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/mixin/message_mixin.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/mixin/photo_interface.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/mixin/photo_mixin.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/mixin/user_mixin.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/diva_hacks/model.rb
@@ -230,6 +229,8 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/zh_TW/console.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/core/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/core/core.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/current_world/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/current_world/current_world.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/direct_message.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/dmlistview.rb
@@ -482,7 +483,9 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/zh_TW/openimg.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/window.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo/model/inner_photo.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo/model/photo.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo/model/photo_variant.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo/photo.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo_support/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/photo_support/Gemfile
@@ -548,6 +551,12 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/zh_CN/saved_search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/zh_TW/saved_search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/saved_search.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/score/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/score/model/emoji_note.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/score/model/hyper_link_note.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/score/model/text_note.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/score/score.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/score/select.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/model/search.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/ar/search.po
@@ -762,6 +771,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/mikutwitter/utils.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/model.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/model/directmessage.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/model/hash_tag.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/model/message.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/model/user.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/model/userlist.rb
@@ -770,6 +780,8 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/test/test_user.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/test/test_userlist.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter/twitter.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter_api_keys/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/twitter_api_keys/twitter_api_keys.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/uitranslator/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/uitranslator/Gemfile
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/uitranslator/uitranslator.rb
