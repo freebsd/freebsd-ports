@@ -16,6 +16,7 @@
     SUBDIR += gprename
     SUBDIR += konqueror
     SUBDIR += krusader2
+    SUBDIR += krusader2-kde4
     SUBDIR += librfm
     SUBDIR += libtubo
     SUBDIR += mtoolsfm
