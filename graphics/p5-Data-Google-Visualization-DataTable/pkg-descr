@@ -1,8 +1,15 @@
-Easily create Google DataTable objects for the Google Visulization API.
+Google's excellent Visualization suite requires you to format your Javascript
+data very carefully. It's entirely possible to do this by hand, especially with
+the help of the most excellent JSON::XS but it's a bit fiddly, largely because
+Perl doesn't natively support data types and Google's API accepts a super-set of
+JSON - see "JSON vs Javascript" below.
 
-This module is attempts to hide the gory details of preparing your data
-before sending it to a JSON serializer - more specifically, hiding some
-of the hoops that have to be jump through for making sure your data
-serializes to the right data types.
+This module is attempts to hide the gory details of preparing your data before
+sending it to a JSON serializer - more specifically, hiding some of the hoops
+that have to be jump through for making sure your data serializes to the right
+data types.
+
+Every effort has been made to keep naming conventions as close as possible to
+those in the API itself.
 
 WWW: http://search.cpan.org/dist/Data-Google-Visualization-DataTable/
