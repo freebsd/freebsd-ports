@@ -13,6 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	invokes x86 assembler
 
 BUILD_DEPENDS=	bash:shells/bash \
 		yasm:devel/yasm \
