@@ -10,9 +10,9 @@
 #
 # clickhouse_enable (bool):  Set to "NO" by default
 #                          Set it to "YES" to enable clickhouse server
-# clickhouse_limits (bool):  Set to "NO" by default.
-#                        Set it to yes to run `limits -e -U clickhouse`
-#                        just before clickhouse starts.
+%%LEGACY_LIMITS%%# clickhouse_limits (bool):  Set to "NO" by default.
+%%LEGACY_LIMITS%%#                        Set it to yes to run `limits -e -U clickhouse`
+%%LEGACY_LIMITS%%#                        just before clickhouse starts.
 # clickhouse_config (str): Path to config file (required).
 #                          (default: %%PREFIX%%/etc/clickhouse-server/config.xml)
 # clickhouse_rundir (str):   Path to directory holding a pidfile.
@@ -34,7 +34,7 @@ rcvar=clickhouse_enable
 load_rc_config ${name}
 
 : ${clickhouse_enable="NO"}
-: ${clickhouse_limits="NO"}
+%%LEGACY_LIMITS%%: ${clickhouse_limits="NO"}
 : ${clickhouse_config="%%PREFIX%%/etc/clickhouse-server/config.xml"}
 : ${clickhouse_rundir="/var/run/clickhouse"}
 : ${clickhouse_user="clickhouse"}
@@ -51,11 +51,12 @@ required_files=${clickhouse_config}
 start_precmd=clickhouse_prestart
 
 clickhouse_prestart () {
-	if checkyesno clickhouse_limits; then
-		eval `/usr/bin/limits -e -U ${clickhouse_user}` 2>/dev/null
-	else
-		return 0
-	fi
+%%LEGACY_LIMITS%%	if checkyesno clickhouse_limits; then
+%%LEGACY_LIMITS%%		eval `/usr/bin/limits -e -U ${clickhouse_user}` 2>/dev/null
+%%LEGACY_LIMITS%%	else
+%%LEGACY_LIMITS%%		return 0
+%%LEGACY_LIMITS%%	fi
+%%MODERN_LIMITS%%	return 0
 }
 
 run_rc_command "$1"
