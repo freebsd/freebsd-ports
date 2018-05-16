@@ -12,6 +12,7 @@
 %%WWWDIR%%/README.txt
 %%WWWDIR%%/RoboFile.dist.ini
 %%WWWDIR%%/RoboFile.php
+%%WWWDIR%%/SECURITY.md
 %%WWWDIR%%/administrator/cache/index.html
 %%WWWDIR%%/administrator/components/com_admin/admin.php
 %%WWWDIR%%/administrator/components/com_admin/admin.xml
