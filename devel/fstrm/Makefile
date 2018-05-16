@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		fstrm
-PORTVERSION=		0.3.2
+PORTVERSION=		0.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 
@@ -14,12 +14,12 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 
 LIB_DEPENDS=		libevent.so:devel/libevent
 
+USES=			autoreconf gmake libtool pkgconfig
 USE_GITHUB=		yes
+USE_LDCONFIG=		yes
 GH_ACCOUNT=		farsightsec
 
 GNU_CONFIGURE=		yes
-USES=			autoreconf gmake libtool pkgconfig
-USE_LDCONFIG=		yes
 INSTALL_TARGET=		install-strip
 TEST_TARGET=		check
 
