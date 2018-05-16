@@ -10,6 +10,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Version of 'traceroute' that shows the AS network number of each hop
 
+BROKEN=		does not fetch
+DEPRECATED=	Upstream gone
+EXPIRATION_DATE=2018-08-16
+
 RELEASEDATE=	991603
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	"@(,,4555) sbin/traceroute" man/man8/traceroute.8.gz
