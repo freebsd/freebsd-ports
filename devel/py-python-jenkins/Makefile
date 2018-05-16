@@ -1,8 +1,7 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	python-jenkins
-PORTVERSION=	0.4.16
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
