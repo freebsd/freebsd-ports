@@ -1,4 +1,5 @@
-Perl convenience module which simplifies the construction of LDAP query filter
-statments as described in RFC-4515.
+Net::LDAP::FilterBuilder is a convenience module which greatly simplifies the
+construction of LDAP query filter statements, which are described in RFC 4515
+and also the Net::LDAP::Filter manual page.
 
 WWW: http://search.cpan.org/dist/Net-LDAP-FilterBuilder/
