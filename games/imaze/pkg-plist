@@ -1,14 +1,14 @@
-bin/imaze
-bin/ninja
 bin/genlab
+bin/imaze
+bin/imazeninja
 bin/imazesrv
 bin/imazestat
 bin/xlabed
 man/man6/genlab.6.gz
 man/man6/imaze.6.gz
+man/man6/imazeninja.6.gz
 man/man6/imazesrv.6.gz
 man/man6/imazestat.6.gz
-man/man6/ninja.6.gz
 man/man6/xlabed.6.gz
 %%DATADIR%%/labs/10x10.lab
 %%DATADIR%%/labs/12x12.lab
@@ -29,4 +29,4 @@ man/man6/xlabed.6.gz
 %%DATADIR%%/sounds/pause.au
 %%DATADIR%%/sounds/shoot.au
 %%DATADIR%%/sounds/title.au
-%%DATADIR%%/README
+%%DOCSDIR%%/README
