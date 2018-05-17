@@ -3,6 +3,7 @@
 
 PORTNAME=	mercurial
 PORTVERSION=	4.6
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.mercurial-scm.org/release/
 
@@ -68,7 +69,7 @@ post-install-DATA-on:
 	${INSTALL_DATA} ${WRKSRC}/contrib/${f} \
 		${STAGEDIR}${DATADIR}/contrib/${f}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.* ${STAGEDIR}${DATADIR}/www
+	${INSTALL_DATA} ${WRKSRC}/hgweb.cgi ${WRKSRC}/contrib/hgweb.* ${STAGEDIR}${DATADIR}/www
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
