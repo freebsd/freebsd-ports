@@ -2,38 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	json
-PORTVERSION=	2.1.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.1.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	nlohmann-
 
 MAINTAINER=	SlavaMikerov@gmail.com
 COMMENT=	JSON library for Modern C++
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.MIT
 
-NO_ARCH=	yes
-
+USES=		cmake:outsource compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	nlohmann
-GH_PROJECT=	json
+NO_BUILD=	yes
+NO_ARCH=	yes
 
-PLIST_FILES=	share/cmake/Modules/nlohmann_jsonConfig.cmake \
-		share/cmake/Modules/nlohmann_jsonConfigVersion.cmake \
-		share/cmake/Modules/nlohmann_jsonTargets.cmake \
+CMAKE_OFF=	JSON_BuildTests
+
+PLIST_FILES=	lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake \
+		lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake \
+		lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake \
 		include/nlohmann/json.hpp
 
-USES=		compiler:c++11-lib cmake:outsource
-OPTIONS_DEFINE=	TEST
-TEST_CMAKE_OFF=	-DBuildTests=OFF
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|set(JSON_CONFIG_DESTINATION "cmake")|set(JSON_CONFIG_DESTINATION "share/cmake/Modules")|g' \
-		${WRKSRC}/CMakeLists.txt
-
-do-test-TEST-on:
-	@cd ${WRKDIR}/.build && ${MAKE_CMD} test
+do-test:
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DJSON_BuildTests:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>
