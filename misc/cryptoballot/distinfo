@@ -1,6 +1,6 @@
-TIMESTAMP = 1519026221
-SHA256 (cryptoballot-cryptoballot-g20170928-ec9df0a_GH0.tar.gz) = 8e7b13661e50ad3dca3bfab4f1b1b6b179c23c379a37508c14e7a3eaa706a43b
-SIZE (cryptoballot-cryptoballot-g20170928-ec9df0a_GH0.tar.gz) = 70193
+TIMESTAMP = 1526572073
+SHA256 (cryptoballot-cryptoballot-g20180321-fb83f1c_GH0.tar.gz) = 78a60ec212bf4c0e8db2a179abf8b92055fb71844887c902f994e16a6a5737fb
+SIZE (cryptoballot-cryptoballot-g20180321-fb83f1c_GH0.tar.gz) = 70141
 SHA256 (cryptoballot-entropychecker-188ae6c_GH0.tar.gz) = b2749045541ffd9f42d291f21c7f31b5fb41795943affe8997161f81f465f6a9
 SIZE (cryptoballot-entropychecker-188ae6c_GH0.tar.gz) = 3354
 SHA256 (cryptoballot-fdh-5eb31ce_GH0.tar.gz) = 0892c8afafd188843e6d457101c5ee35bd5ed2c71f44d9248956891ad0edacf1
