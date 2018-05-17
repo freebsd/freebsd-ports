@@ -44,7 +44,7 @@ MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 PLIST_FILES+=		include/tevent.h \
 			lib/libtevent.so \
 			lib/libtevent.so.0 \
-			%%PKGCONFIGDIR%%/tevent.pc
+			${PKGCONFIGDIR}/tevent.pc
 
 .if defined(NO_PYTHON)
 USES+=			python:2.7,build
@@ -52,16 +52,16 @@ CONFIGURE_ARGS+=	--disable-python
 .else
 USES+=			python:2.7
 
-PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/_tevent.so \
-			%%PYTHON_SITELIBDIR%%/tevent.py  \
-			%%PYTHON_SITELIBDIR%%/tevent.pyc \
-			%%PYTHON_SITELIBDIR%%/tevent.pyo
+PLIST_FILES+=		${PYTHON_SITELIBDIR}/_tevent.so \
+			${PYTHON_SITELIBDIR}/tevent.py  \
+			${PYTHON_SITELIBDIR}/tevent.pyc \
+			${PYTHON_SITELIBDIR}/tevent.pyo
 # XXX: This is a gross hack to make port use both Python 2.7+ and 3.3+
 # This is not officially supported, use at your own risk
-.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:Mpython3\.[0-9]}
-SAMBA4_PYTHON3=		${WITH_SAMBA4_PYTHON3}
-SAMBA4_PYTHON3_VERSION:=${SAMBA4_PYTHON3:S/^python//}
-SAMBA4_PYTHON3_VER:=	${SAMBA4_PYTHON3_VERSION:C/\.//}
+.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:M3\.[0-9]}
+SAMBA4_PYTHON3_VERSION=	${WITH_SAMBA4_PYTHON3}
+SAMBA4_PYTHON3=		python${SAMBA4_PYTHON3_VERSION}
+SAMBA4_PYTHON3_VER=	${SAMBA4_PYTHON3_VERSION:C/\.//}
 .if !exists(${PORTSDIR}/lang/python${SAMBA4_PYTHON3_VER})
 .error			unsupported or unknown Python version ${SAMBA4_PYTHON3_VERSION}
 .endif
@@ -77,10 +77,10 @@ CONFIGURE_ARGS+=	--extra-python=${LOCALBASE}/bin/${SAMBA4_PYTHON3}
 PLIST_SUB+=		SAMBA4_PYTHON3_SO_ABI=${SAMBA4_PYTHON3_SO_ABI} \
 			SAMBA4_PYTHON3_SITELIBDIR=${SAMBA4_PYTHON3_SITELIBDIR}
 
-PLIST_FILES+=		%%SAMBA4_PYTHON3_SITELIBDIR%%/_tevent.%%SAMBA4_PYTHON3_SO_ABI%%.so \
-			%%SAMBA4_PYTHON3_SITELIBDIR%%/tevent.py  \
-			%%SAMBA4_PYTHON3_SITELIBDIR%%/tevent.pyc \
-			%%SAMBA4_PYTHON3_SITELIBDIR%%/tevent.pyo
+PLIST_FILES+=		${SAMBA4_PYTHON3_SITELIBDIR}/_tevent.${SAMBA4_PYTHON3_SO_ABI}.so \
+			${SAMBA4_PYTHON3_SITELIBDIR}/tevent.py  \
+			${SAMBA4_PYTHON3_SITELIBDIR}/tevent.pyc \
+			${SAMBA4_PYTHON3_SITELIBDIR}/tevent.pyo
 .endif
 .endif
 
