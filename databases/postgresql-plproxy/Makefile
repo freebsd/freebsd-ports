@@ -7,23 +7,19 @@ DISTVERSION=	2_8
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PL/Proxy - database partitioning system
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	PL/Proxy - Function-based sharding for PostgreSQL
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		bison gmake pgsql
-
 USE_GITHUB=	yes
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^#ifdef/s| SYS_| HAVE_SYS_|' ${WRKSRC}/src/execute.c
+	@${REINPLACE_CMD} -e '/^#ifdef/ s| SYS_| HAVE_SYS_|' ${WRKSRC}/src/execute.c
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/plproxy.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
