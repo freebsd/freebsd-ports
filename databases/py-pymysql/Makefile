@@ -1,8 +1,7 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pymysql
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
