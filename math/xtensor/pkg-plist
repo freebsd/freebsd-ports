@@ -22,6 +22,7 @@ include/xtensor/xinfo.hpp
 include/xtensor/xio.hpp
 include/xtensor/xiterable.hpp
 include/xtensor/xiterator.hpp
+include/xtensor/xjson.hpp
 include/xtensor/xlayout.hpp
 include/xtensor/xmath.hpp
 include/xtensor/xnoalias.hpp
@@ -55,13 +56,12 @@ include/xtl/xbase64.hpp
 include/xtl/xbasic_fixed_string.hpp
 include/xtl/xclosure.hpp
 include/xtl/xcomplex.hpp
-include/xtl/xcrtp.hpp
 include/xtl/xdynamic_bitset.hpp
 include/xtl/xfunctional.hpp
 include/xtl/xhash.hpp
 include/xtl/xhierarchy_generator.hpp
-include/xtl/xholder.hpp
 include/xtl/xiterator_base.hpp
+include/xtl/xjson.hpp
 include/xtl/xmeta_utils.hpp
 include/xtl/xoptional.hpp
 include/xtl/xoptional_sequence.hpp
