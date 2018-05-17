@@ -7,7 +7,7 @@ DISTVERSION=	2_8
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql-
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PL/Proxy - database partitioning system
 
 LICENSE=	ISCL

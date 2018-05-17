@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils python
 DISTVERSIONPREFIX=	version-
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display notebook battery status in tray
 
 LICENSE=	MIT

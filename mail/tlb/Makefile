@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/tlb/ \
 		ftp://totem.fix.no/pub/mirrors/misc/ \
 		http://ports.toco-domains.de/
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The List Batcher, a general purpose mail list delivery engine
 
 RUN_DEPENDS=	p5-Mail-Tools>=0:mail/p5-Mail-Tools \
