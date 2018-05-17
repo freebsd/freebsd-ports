@@ -1,0 +1,15 @@
+--- source3/modules/wscript_build.orig	2018-02-08 00:37:51 UTC
++++ source3/modules/wscript_build
+@@ -516,3 +516,12 @@ bld.SAMBA3_MODULE('vfs_error_inject',
+                  init_function='',
+                  internal_module=bld.SAMBA3_IS_STATIC_MODULE('vfs_error_inject'),
+                  enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_error_inject'))
++
++bld.SAMBA3_MODULE('vfs_freebsd',
++                 subsystem='vfs',
++                 source='vfs_freebsd.c',
++                 deps='samba-util',
++                 init_function='',
++                 internal_module=bld.SAMBA3_IS_STATIC_MODULE('vfs_freebsd'),
++                 enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_freebsd'))
++
