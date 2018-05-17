@@ -1,8 +1,11 @@
-PL/Proxy is a proxy language used for remote database procedure calls
-and data partitioning between databases based on hashing field values.
+PL/Proxy is a PostgreSQL procedural language (PL) handler that allows to do
+remote procedure calls between PostgreSQL databases, with optional sharding.
 
-Main idea is that proxy function will be created with same signature as
-remote function to be called, so only destination info needs to be
-specified inside proxy function body.
+PL/Proxy was developed in Skype as a scalability solution for PostgreSQL
+database. At first it was very thin PL component that connected to C++ server
+that handled all sharding decisions. This proved to be too complex setup and in
+version 2 it was re-written to current archtecture of PL that handles sharding
+and generic pooler process (PgBouncer) that is able to handle large amount of
+standard PostgreSQL connections that the PL makes.
 
 WWW: https://plproxy.github.io/
