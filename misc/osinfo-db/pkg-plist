@@ -134,6 +134,7 @@ share/osinfo/os/fedoraproject.org/fedora-24.xml
 share/osinfo/os/fedoraproject.org/fedora-25.xml
 share/osinfo/os/fedoraproject.org/fedora-26.xml
 share/osinfo/os/fedoraproject.org/fedora-27.xml
+share/osinfo/os/fedoraproject.org/fedora-28.xml
 share/osinfo/os/fedoraproject.org/fedora-3.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
@@ -282,6 +283,7 @@ share/osinfo/os/netbsd.org/netbsd-6.1.xml
 share/osinfo/os/netbsd.org/netbsd-7.0.xml
 share/osinfo/os/netbsd.org/netbsd-7.1.1.xml
 share/osinfo/os/netbsd.org/netbsd-7.1.xml
+share/osinfo/os/netbsd.org/netbsd-7.1.2.xml
 share/osinfo/os/novell.com/netware-4.xml
 share/osinfo/os/novell.com/netware-5.xml
 share/osinfo/os/novell.com/netware-6.xml
