@@ -1,14 +1,14 @@
---- CMakeLists.txt.orig	2018-03-13 17:28:19 UTC
+--- CMakeLists.txt.orig	2018-05-16 08:49:00 UTC
 +++ CMakeLists.txt
-@@ -28,8 +28,9 @@ message(STATUS "Building xtensor v${${PR
+@@ -28,9 +28,9 @@ message(STATUS "Building xtensor v${${PR
  # Dependencies
  # ============
  
 -find_package(xtl 0.4.1 REQUIRED)
--message(STATUS "Found xtl: ${xtl_INCLUDE_DIRS}/xtl")
 +#find_package(xtl 0.4.1 REQUIRED)
-+message(STATUS "Found xtl: xtl/include")
-+
  
- # Build
- # =====
+-message(STATUS "Found xtl: ${xtl_INCLUDE_DIRS}/xtl")
++message(STATUS "Found xtl: xtl/include")
+ 
+ find_package(nlohmann_json 3.1.1)
+ 
