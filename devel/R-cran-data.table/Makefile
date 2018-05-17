@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	data.table
-DISTVERSION=	1.10.4-3
-PORTREVISION=	1
+DISTVERSION=	1.11.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Extension of Data.frame
 
-LICENSE=	GPLv3
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libomp.so:devel/openmp
 
 USES=		cran:auto-plist,compiles
 
