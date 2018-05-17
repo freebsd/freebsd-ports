@@ -374,6 +374,7 @@ libdata/pkgconfig/grib_api_f90.pc
 %%DATADIR%%/definitions/grib2/dimensionType.table
 %%DATADIR%%/definitions/grib2/grib2LocalSectionNumber.82.table
 %%DATADIR%%/definitions/grib2/grib2LocalSectionNumber.98.table
+%%DATADIR%%/definitions/grib2/lcwfv_suiteName.table
 %%DATADIR%%/definitions/grib2/local.82.0.def
 %%DATADIR%%/definitions/grib2/local.82.82.def
 %%DATADIR%%/definitions/grib2/local.82.83.def
@@ -397,6 +398,7 @@ libdata/pkgconfig/grib_api_f90.pc
 %%DATADIR%%/definitions/grib2/local.98.36.def
 %%DATADIR%%/definitions/grib2/local.98.38.def
 %%DATADIR%%/definitions/grib2/local.98.39.def
+%%DATADIR%%/definitions/grib2/local.98.42.def
 %%DATADIR%%/definitions/grib2/local.98.500.def
 %%DATADIR%%/definitions/grib2/local.98.7.def
 %%DATADIR%%/definitions/grib2/local.98.9.def
