@@ -1190,5 +1190,6 @@ man/man5/hgrc.5.gz
 %%DATA%%%%DATADIR%%/contrib/vim/patchreview.txt
 %%DATA%%%%DATADIR%%/contrib/vim/patchreview.vim
 %%DATA%%%%DATADIR%%/contrib/zsh_completion
+%%DATA%%%%DATADIR%%/www/hgweb.cgi
 %%DATA%%%%DATADIR%%/www/hgweb.fcgi
 %%DATA%%%%DATADIR%%/www/hgweb.wsgi
