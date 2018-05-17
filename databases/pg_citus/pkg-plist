@@ -12,6 +12,7 @@ include/postgresql/server/distributed/distributed_deadlock_detection.h
 include/postgresql/server/distributed/distributed_planner.h
 include/postgresql/server/distributed/distribution_column.h
 include/postgresql/server/distributed/errormessage.h
+include/postgresql/server/distributed/extended_op_node_utils.h
 include/postgresql/server/distributed/hash_helpers.h
 include/postgresql/server/distributed/insert_select_executor.h
 include/postgresql/server/distributed/insert_select_planner.h
@@ -50,6 +51,7 @@ include/postgresql/server/distributed/pg_dist_shard.h
 include/postgresql/server/distributed/pg_dist_transaction.h
 include/postgresql/server/distributed/placement_connection.h
 include/postgresql/server/distributed/query_colocation_checker.h
+include/postgresql/server/distributed/query_pushdown_planning.h
 include/postgresql/server/distributed/recursive_planning.h
 include/postgresql/server/distributed/reference_table_utils.h
 include/postgresql/server/distributed/relation_restriction_equivalence.h
@@ -223,11 +225,17 @@ share/postgresql/extension/citus--7.2-1--7.2-2.sql
 share/postgresql/extension/citus--7.2-1.sql
 share/postgresql/extension/citus--7.2-2--7.2-3.sql
 share/postgresql/extension/citus--7.2-2.sql
-share/postgresql/extension/citus--7.2-3.sql
 share/postgresql/extension/citus--7.2-3--7.3-1.sql
+share/postgresql/extension/citus--7.2-3.sql
 share/postgresql/extension/citus--7.3-1--7.3-2.sql
 share/postgresql/extension/citus--7.3-1.sql
 share/postgresql/extension/citus--7.3-2--7.3-3.sql
 share/postgresql/extension/citus--7.3-2.sql
+share/postgresql/extension/citus--7.3-3--7.4-1.sql
 share/postgresql/extension/citus--7.3-3.sql
+share/postgresql/extension/citus--7.4-1--7.4-2.sql
+share/postgresql/extension/citus--7.4-1.sql
+share/postgresql/extension/citus--7.4-2--7.4-3.sql
+share/postgresql/extension/citus--7.4-2.sql
+share/postgresql/extension/citus--7.4-3.sql
 share/postgresql/extension/citus.control
