@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-arango
-DISTVERSION=	4.0.1
+DISTVERSION=	4.1.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR} \
 USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
-
-post-extract:
-	@${RM} -r ${WRKSRC}/tests  # otherwise they are installed under the root directory and cause conflicts
 
 .include <bsd.port.mk>
