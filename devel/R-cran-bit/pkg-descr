@@ -1,4 +1,4 @@
-bitmapped vectors of booleans (no NAs), coercion from and to logicals,
+True boolean datatype (no NAs), coercion from and to logicals,
 integers and integer subscripts; fast boolean operators and fast
 summary statistics. With 'bit' vectors you can store true binary
 booleans {FALSE,TRUE} at the expense of 1 bit only, on a 32 bit
