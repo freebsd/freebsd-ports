@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cryptoballot
-DISTVERSION=	g20170928
+DISTVERSION=	g20180321
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	AGPLv3
 BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
-GH_TAGNAME=	ec9df0a
+GH_TAGNAME=	fb83f1c
 GH_TUPLE=	${PORTNAME}:entropychecker:188ae6c:entropychecker/src/github.com/${PORTNAME}/entropychecker \
 		${PORTNAME}:fdh:5eb31ce:fdh/src/github.com/${PORTNAME}/fdh \
 		${PORTNAME}:rsablind:14f9913:rsablind/src/github.com/${PORTNAME}/rsablind \
