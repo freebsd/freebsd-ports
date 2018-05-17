@@ -6,7 +6,7 @@ PORTVERSION=	5.2.24
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Featured Email Transfer Class for PHP
 
 LICENSE=	LGPL21
