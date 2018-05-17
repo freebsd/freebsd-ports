@@ -19,7 +19,7 @@ IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with 
 #debug_PKGNAMESUFFIX=	-debug
 #nopython_CONFLICTS=	tdb tdb-debug
 #debug_CONFLICTS=	tdb tdb-nopython
-#default_CONFLICTS=	tdb-nopython rdb-debug
+#default_CONFLICTS=	tdb-nopython tdb-debug
 
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
@@ -47,7 +47,7 @@ PLIST_FILES+=		include/tdb.h \
 			${TDB_BINS} \
 			lib/libtdb.so \
 			lib/libtdb.so.1 \
-			%%PKGCONFIGDIR%%/tdb.pc
+			${PKGCONFIGDIR}/tdb.pc
 
 .if defined(SAMBA4_DEBUG)
 CFLAGS+=		-DTDB_TRACE=1
@@ -59,14 +59,14 @@ CONFIGURE_ARGS+=	--disable-python
 .else
 USES+=			python:2.7
 
-PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so \
-			%%PYTHON_SITELIBDIR%%/_tdb_text.py
+PLIST_FILES+=		${PYTHON_SITELIBDIR}/tdb.so \
+			${PYTHON_SITELIBDIR}/_tdb_text.py
 # XXX: This is a gross hack to make port use both Python 2.7+ and 3.3+
 # This is not officially supported, use at your own risk
-.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:Mpython3\.[0-9]}
-SAMBA4_PYTHON3=		${WITH_SAMBA4_PYTHON3}
-SAMBA4_PYTHON3_VERSION:=${SAMBA4_PYTHON3:S/^python//}
-SAMBA4_PYTHON3_VER:=	${SAMBA4_PYTHON3_VERSION:C/\.//}
+.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:M3\.[0-9]}
+SAMBA4_PYTHON3_VERSION=	${WITH_SAMBA4_PYTHON3}
+SAMBA4_PYTHON3=		python${SAMBA4_PYTHON3_VERSION}
+SAMBA4_PYTHON3_VER=	${SAMBA4_PYTHON3_VERSION:C/\.//}
 .if !exists(${PORTSDIR}/lang/python${SAMBA4_PYTHON3_VER})
 .error			unsupported or unknown Python version ${SAMBA4_PYTHON3_VERSION}
 .endif
@@ -82,8 +82,8 @@ CONFIGURE_ARGS+=	--extra-python=${LOCALBASE}/bin/${SAMBA4_PYTHON3}
 PLIST_SUB+=		SAMBA4_PYTHON3_SO_ABI=${SAMBA4_PYTHON3_SO_ABI} \
 			SAMBA4_PYTHON3_SITELIBDIR=${SAMBA4_PYTHON3_SITELIBDIR}
 
-PLIST_FILES+=		%%SAMBA4_PYTHON3_SITELIBDIR%%/tdb.%%SAMBA4_PYTHON3_SO_ABI%%.so \
-			%%SAMBA4_PYTHON3_SITELIBDIR%%/_tdb_text.py
+PLIST_FILES+=		${SAMBA4_PYTHON3_SITELIBDIR}/tdb.${SAMBA4_PYTHON3_SO_ABI}.so \
+			${SAMBA4_PYTHON3_SITELIBDIR}/_tdb_text.py
 .endif
 .endif
 

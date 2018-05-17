@@ -81,7 +81,7 @@ PLIST_FILES=		include/ldb_version.h \
 			include/ldb_module.h \
 			${LDB_BINS} \
 			${LDB_LIBS} \
-			%%PKGCONFIGDIR%%/ldb.pc
+			${PKGCONFIGDIR}/ldb.pc
 
 .if defined(NO_PYTHON)
 USES+=			python:2.7,build
@@ -92,15 +92,15 @@ USES+=			python:2.7
 PLIST_FILES+=		include/pyldb.h \
 			lib/libpyldb-util.so \
 			lib/libpyldb-util.so.1 \
-			%%PYTHON_SITELIBDIR%%/ldb.so \
-			%%PYTHON_SITELIBDIR%%/_ldb_text.py \
-			%%PKGCONFIGDIR%%/pyldb-util.pc
+			${PYTHON_SITELIBDIR}/ldb.so \
+			${PYTHON_SITELIBDIR}/_ldb_text.py \
+			${PKGCONFIGDIR}/pyldb-util.pc
 # XXX: This is a gross hack to make port use both Python 2.7+ and 3.3+
 # This is not officially supported, use at your own risk
-.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:Mpython3\.[0-9]}
-SAMBA4_PYTHON3=		${WITH_SAMBA4_PYTHON3}
-SAMBA4_PYTHON3_VERSION:=${SAMBA4_PYTHON3:S/^python//}
-SAMBA4_PYTHON3_VER:=	${SAMBA4_PYTHON3_VERSION:C/\.//}
+.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:M3\.[0-9]}
+SAMBA4_PYTHON3_VERSION=	${WITH_SAMBA4_PYTHON3}
+SAMBA4_PYTHON3=		python${SAMBA4_PYTHON3_VERSION}
+SAMBA4_PYTHON3_VER=	${SAMBA4_PYTHON3_VERSION:C/\.//}
 .if !exists(${PORTSDIR}/lang/python${SAMBA4_PYTHON3_VER})
 .error			unsupported or unknown Python version ${SAMBA4_PYTHON3_VERSION}
 .endif
@@ -116,11 +116,11 @@ CONFIGURE_ARGS+=	--extra-python=${LOCALBASE}/bin/${SAMBA4_PYTHON3}
 PLIST_SUB+=		SAMBA4_PYTHON3_SO_ABI=${SAMBA4_PYTHON3_SO_ABI} \
 			SAMBA4_PYTHON3_SITELIBDIR=${SAMBA4_PYTHON3_SITELIBDIR}
 
-PLIST_FILES+=		lib/libpyldb-util.%%SAMBA4_PYTHON3_SO_ABI%%.so \
-			lib/libpyldb-util.%%SAMBA4_PYTHON3_SO_ABI%%.so.1 \
-			%%SAMBA4_PYTHON3_SITELIBDIR%%/ldb.%%SAMBA4_PYTHON3_SO_ABI%%.so \
-			%%SAMBA4_PYTHON3_SITELIBDIR%%/_ldb_text.py  \
-			%%PKGCONFIGDIR%%/pyldb-util.%%SAMBA4_PYTHON3_SO_ABI%%.pc
+PLIST_FILES+=		lib/libpyldb-util.${SAMBA4_PYTHON3_SO_ABI}.so \
+			lib/libpyldb-util.${SAMBA4_PYTHON3_SO_ABI}.so.1 \
+			${SAMBA4_PYTHON3_SITELIBDIR}/ldb.${SAMBA4_PYTHON3_SO_ABI}.so \
+			${SAMBA4_PYTHON3_SITELIBDIR}/_ldb_text.py  \
+			${PKGCONFIGDIR}/pyldb-util.${SAMBA4_PYTHON3_SO_ABI}.pc
 .endif
 .endif
 

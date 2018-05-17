@@ -1,5 +1,5 @@
---- tests/ldb_mod_op_test.c.orig	2018-03-02 23:35:09.639709000 +0100
-+++ tests/ldb_mod_op_test.c	2018-03-02 23:44:00.194683000 +0100
+--- tests/ldb_mod_op_test.c.orig	2018-03-02 23:35:09 UTC
++++ tests/ldb_mod_op_test.c
 @@ -3529,7 +3529,7 @@ static void test_ldb_unique_index_duplic
  	assert_int_equal(ret, LDB_SUCCESS);
  
