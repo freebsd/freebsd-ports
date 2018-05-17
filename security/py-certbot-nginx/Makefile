@@ -2,7 +2,7 @@
 
 PORTNAME=	certbot-nginx
 PORTVERSION=	${ACME_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,9 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${FLAVOR}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/server_root=/ s|/etc/nginx|${LOCALBASE}&|' ${WRKSRC}/certbot_nginx/constants.py
 
 .include "${.CURDIR}/../py-acme/version.mk"
 .include <bsd.port.mk>
