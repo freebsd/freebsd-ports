@@ -2,6 +2,7 @@
 
 PORTNAME=	go-appengine-sdk
 DISTVERSION=	1.9.64
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
 DISTNAME=	${PORTNAME:S,-,_,g}_linux_amd64-${PORTVERSION}
@@ -27,7 +28,7 @@ SHEBANG_GLOB=	*.py *.bash *.sh *.pl *.cgi goapp
 WRKSRC=		${WRKDIR}/go_appengine
 
 GAEDATADIRS=	google lib tools
-GAEGOROOTS=	goroot-1.6 goroot-1.8
+GAEGOROOTS=	goroot-1.6 goroot-1.8 goroot-1.9
 GAESCRIPTS=	appcfg.py backends_conversion.py \
 		bulkload_client.py bulkloader.py dev_appserver.py \
 		download_appstats.py endpointscfg.py run_tests.py \
