@@ -8,3 +8,9 @@
  )
  
  list(APPEND WebDriver_SOURCES
+@@ -18,4 +19,5 @@ list(APPEND WebDriver_SOURCES
+ 
+ list(APPEND WebDriver_LIBRARIES
+     ${LIBSOUP_LIBRARIES}
++    ${ICU_LIBRARIES}
+ )
