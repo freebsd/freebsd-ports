@@ -18,7 +18,6 @@ BROKEN_powerpc64=	does not build: fatal error: xmmintrin.h: No such file or dire
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64
 NOT_FOR_ARCHS_REASON=	./kBuild/env.sh: unknown cpu/arch
 
-USE_GCC=	any
 USES=		autoreconf:build gmake makeinfo tar:xz
 
 CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
@@ -43,7 +42,10 @@ PORTDOCS=	QuickReference-kmk.html \
 ENV=
 .export ENV
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS GCC
+OPTIONS_DEFAULT=GCC
+GCC_DESC=	Build with GCC (should almost always be enabled)
+GCC_USE=	GCC=any
 
 post-patch:
 	for f in ${WRKSRC}/kBuild/tools/*.kmk; do \
