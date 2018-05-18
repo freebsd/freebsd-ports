@@ -22,12 +22,14 @@ bin/pot
 %%DATADIR%%/ps.sh
 %%DATADIR%%/rename.sh
 %%DATADIR%%/revert.sh
+%%DATADIR%%/set-cmd.sh
 %%DATADIR%%/set-rss.sh
 %%DATADIR%%/show.sh
 %%DATADIR%%/snapshot.sh
 %%DATADIR%%/start.sh
 %%DATADIR%%/stop.sh
 %%DATADIR%%/term.sh
+%%DATADIR%%/top.sh
 %%DATADIR%%/version.sh
 %%DATADIR%%/vnet-start.sh
 %%ZSH%%share/zsh/site-functions/_pot
