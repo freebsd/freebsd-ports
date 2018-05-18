@@ -15,7 +15,7 @@ DISTFILES=	core-dictionaries.zip:dictionaries \
 		gwt-${GWT_VERSION}.zip:buildtools \
 		mathjax-26.zip:buildtools
 
-PATCH_SITES=	https://github.com/${PORTNAME}/${GH_PROJECT}/commit/ # This commit is listed in the bug, but it didn't fix the problem.
+PATCH_SITES=	https://github.com/${PORTNAME}/${GH_PROJECT}/commit/
 PATCHFILES=	ab3d4355ab5c7f4bc7af1f7aeabe62c3d1bbccec.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
