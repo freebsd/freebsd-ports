@@ -1,0 +1,6 @@
+@sample %%ETCDIR%%/bat.conf.sample
+share/applications/bareos-bat.desktop
+share/pixmaps/bat.png
+share/pixmaps/bat.svg
+man/man1/bareos-bat.1.gz
+bin/bareos-bat
