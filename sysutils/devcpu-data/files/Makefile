@@ -1,14 +1,18 @@
 # $FreeBSD$
-INTEL_UCODE=	microcode.dat
+INTEL_UCODE=	intel-ucode
 OUTPUT_DIR=	mcodes
-all:	ucode
-ucode:	ucode-tool
-	mkdir -p $(OUTPUT_DIR)
-	./ucode-tool -o $(OUTPUT_DIR) -i $(INTEL_UCODE)
 
-# Use the host cc to compile ucode-tool in case of cross-compile
-ucode-tool: ucode-tool.c
-	cc ucode-tool.c -o $@
+all:	ucode
+ucode:	ucode-split
+	mkdir -p $(OUTPUT_DIR)
+	cd ${OUTPUT_DIR} && \
+	for file in ../${INTEL_UCODE}/*; do \
+		../ucode-split $$file; \
+	done
+
+# Use the host cc to compile ucode-split in case of cross-compile
+ucode-split: ucode-split.c
+	cc ucode-split.c -o $@
 
 clean:
-	rm -rf $(OUTPUT_DIR) ucode-tool
+	rm -rf $(OUTPUT_DIR) ucode-split
