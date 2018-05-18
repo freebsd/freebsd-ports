@@ -25,6 +25,8 @@ CONFLICTS_INSTALL=	lumina-1.2.*
 
 OPTIONS_DEFINE=	MULTIMEDIA TRUEOS I18N
 OPTIONS_DEFAULT=	MULTIMEDIA I18N
+OPTIONS_SUB=	yes
+
 MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
 TRUEOS_DESC=	Use the TrueOS system interface settings.
 I18N_DESC=	Install localization files

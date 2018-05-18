@@ -16,6 +16,8 @@ RUN_DEPENDS=	gstreamer1-qt5>=0:multimedia/gstreamer1-qt@qt5 \
 
 OPTIONS_DEFINE=	I18N
 OPTIONS_DEFAULT=	I18N
+OPTIONS_SUB=	yes
+
 I18N_DESC=	Install localization files
 
 .include <bsd.port.options.mk>
