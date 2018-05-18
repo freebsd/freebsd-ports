@@ -96,6 +96,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/RadioIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/RangeSlider.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/ScrollBar.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/ScrollView.qml	
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Slider.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/SpinBox.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Switch.qml
@@ -397,7 +398,6 @@ share/plasma/desktoptheme/air/widgets/bar_meter_vertical.svgz
 share/plasma/desktoptheme/air/widgets/branding.svgz
 share/plasma/desktoptheme/air/widgets/busywidget.svgz
 share/plasma/desktoptheme/air/widgets/button.svgz
-share/plasma/desktoptheme/air/widgets/calendar.svgz
 share/plasma/desktoptheme/air/widgets/checkmarks.svgz
 share/plasma/desktoptheme/air/widgets/clock.svgz
 share/plasma/desktoptheme/air/widgets/containment-controls.svgz
@@ -487,6 +487,7 @@ share/plasma/desktoptheme/default/icons/system.svgz
 share/plasma/desktoptheme/default/icons/touchpad.svgz
 share/plasma/desktoptheme/default/icons/user.svgz
 share/plasma/desktoptheme/default/icons/video.svgz
+share/plasma/desktoptheme/default/icons/video-card.svgz
 share/plasma/desktoptheme/default/icons/view.svgz
 share/plasma/desktoptheme/default/icons/vlc.svgz
 share/plasma/desktoptheme/default/icons/wallet.svgz
@@ -587,7 +588,6 @@ share/plasma/desktoptheme/oxygen/widgets/bar_meter_vertical.svgz
 share/plasma/desktoptheme/oxygen/widgets/branding.svgz
 share/plasma/desktoptheme/oxygen/widgets/busywidget.svgz
 share/plasma/desktoptheme/oxygen/widgets/button.svgz
-share/plasma/desktoptheme/oxygen/widgets/calendar.svgz
 share/plasma/desktoptheme/oxygen/widgets/clock.svgz
 share/plasma/desktoptheme/oxygen/widgets/containment-controls.svgz
 share/plasma/desktoptheme/oxygen/widgets/dragger.svgz

@@ -59,8 +59,6 @@ lib/cmake/KF5NewStuffCore/KF5NewStuffCoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5NewStuffCore/KF5NewStuffCoreTargets.cmake
 lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickConfig.cmake
 lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickConfigVersion.cmake
-lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickTargets.cmake
 lib/libKF5NewStuff.so
 lib/libKF5NewStuff.so.5
 lib/libKF5NewStuff.so.%%KDE_FRAMEWORKS_VERSION%%

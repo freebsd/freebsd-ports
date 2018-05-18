@@ -1,8 +1,10 @@
 include/KF5/Kirigami2/KirigamiPluginFactory
 include/KF5/Kirigami2/PlatformTheme
+include/KF5/Kirigami2/TabletModeWatcher
 include/KF5/Kirigami2/kirigami2_export.h
 include/KF5/Kirigami2/kirigamipluginfactory.h
 include/KF5/Kirigami2/platformtheme.h
+include/KF5/Kirigami2/tabletmodewatcher.h
 lib/cmake/KF5Kirigami2/KF5Kirigami2Config.cmake
 lib/cmake/KF5Kirigami2/KF5Kirigami2ConfigVersion.cmake
 lib/cmake/KF5Kirigami2/KF5Kirigami2Macros.cmake
@@ -88,6 +90,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/BackButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ContextIcon.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ForwardButton.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/GenericDrawerIcon.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/IconPropertiesGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/MenuIcon.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/PassiveNotification.qml

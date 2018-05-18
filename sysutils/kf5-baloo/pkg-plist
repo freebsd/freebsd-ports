@@ -30,6 +30,7 @@ lib/libKF5Baloo.so.5
 lib/libKF5Baloo.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5BalooEngine.so.5
 lib/libKF5BalooEngine.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_MKSPECDIR%%/modules/qt_Baloo.pri
 %%QT_PLUGINDIR%%/kf5/kded/baloosearchmodule.so
 %%QT_PLUGINDIR%%/kf5/kio/baloosearch.so
 %%QT_PLUGINDIR%%/kf5/kio/tags.so
@@ -39,6 +40,7 @@ lib/libKF5BalooEngine.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/baloo/libbalooplugin.so
 %%QT_QMLDIR%%/org/kde/baloo/qmldir
 libdata/pkgconfig/Baloo.pc
+share/dbus-1/interfaces/org.kde.BalooWatcherApplication.xml
 share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
 share/dbus-1/interfaces/org.kde.baloo.main.xml
@@ -119,6 +121,7 @@ share/locale/da/LC_MESSAGES/kio5_timeline.mo
 share/locale/de/LC_MESSAGES/baloo_file5.mo
 share/locale/de/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/de/LC_MESSAGES/balooctl5.mo
+share/locale/de/LC_MESSAGES/baloodb5.mo
 share/locale/de/LC_MESSAGES/balooengine5.mo
 share/locale/de/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/de/LC_MESSAGES/baloosearch5.mo
@@ -169,6 +172,8 @@ share/locale/et/LC_MESSAGES/kio5_timeline.mo
 share/locale/eu/LC_MESSAGES/baloo_file5.mo
 share/locale/eu/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/eu/LC_MESSAGES/balooctl5.mo
+share/locale/eu/LC_MESSAGES/baloodb5.mo
+share/locale/eu/LC_MESSAGES/balooengine5.mo
 share/locale/eu/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/eu/LC_MESSAGES/baloosearch5.mo
 share/locale/eu/LC_MESSAGES/balooshow5.mo
@@ -208,6 +213,8 @@ share/locale/gd/LC_MESSAGES/kio5_timeline.mo
 share/locale/gl/LC_MESSAGES/baloo_file5.mo
 share/locale/gl/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/gl/LC_MESSAGES/balooctl5.mo
+share/locale/gl/LC_MESSAGES/baloodb5.mo
+share/locale/gl/LC_MESSAGES/balooengine5.mo
 share/locale/gl/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/gl/LC_MESSAGES/baloosearch5.mo
 share/locale/gl/LC_MESSAGES/balooshow5.mo
@@ -248,6 +255,8 @@ share/locale/id/LC_MESSAGES/kio5_timeline.mo
 share/locale/it/LC_MESSAGES/baloo_file5.mo
 share/locale/it/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/it/LC_MESSAGES/balooctl5.mo
+share/locale/it/LC_MESSAGES/baloodb5.mo
+share/locale/it/LC_MESSAGES/balooengine5.mo
 share/locale/it/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/it/LC_MESSAGES/baloosearch5.mo
 share/locale/it/LC_MESSAGES/balooshow5.mo
@@ -324,6 +333,8 @@ share/locale/pa/LC_MESSAGES/kio5_timeline.mo
 share/locale/pl/LC_MESSAGES/baloo_file5.mo
 share/locale/pl/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/pl/LC_MESSAGES/balooctl5.mo
+share/locale/pl/LC_MESSAGES/baloodb5.mo
+share/locale/pl/LC_MESSAGES/balooengine5.mo
 share/locale/pl/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/pl/LC_MESSAGES/baloosearch5.mo
 share/locale/pl/LC_MESSAGES/balooshow5.mo
@@ -360,6 +371,8 @@ share/locale/ro/LC_MESSAGES/kio5_timeline.mo
 share/locale/ru/LC_MESSAGES/baloo_file5.mo
 share/locale/ru/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/ru/LC_MESSAGES/balooctl5.mo
+share/locale/ru/LC_MESSAGES/baloodb5.mo
+share/locale/ru/LC_MESSAGES/balooengine5.mo
 share/locale/ru/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/ru/LC_MESSAGES/baloosearch5.mo
 share/locale/ru/LC_MESSAGES/balooshow5.mo
