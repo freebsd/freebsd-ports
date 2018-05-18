@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://www.dovecot.org/releases/2.3/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Secure, fast and powerful IMAP and POP3 server
 
 LICENSE=	LGPL21 MIT

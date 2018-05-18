@@ -6,7 +6,7 @@ PORTVERSION=	0.3
 CATEGORIES=	security
 MASTER_SITES=	https://cache.agilebits.com/dist/1P/op/pkg/v${PORTVERSION}/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	1Password CLI client
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
