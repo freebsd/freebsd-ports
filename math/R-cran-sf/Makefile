@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sf
-DISTVERSION=	0.6-2
+DISTVERSION=	0.6-3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,7 +13,6 @@ LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual
 
 CRAN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
-		R-cran-RPostgreSQL>0:databases/R-cran-RPostgreSQL \
 		R-cran-DBI>=0.8:databases/R-cran-DBI \
 		R-cran-units>=0.5.1:math/R-cran-units \
 		R-cran-classInt>0:devel/R-cran-classInt \
