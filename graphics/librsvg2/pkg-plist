@@ -42,5 +42,6 @@ share/doc/rsvg-2.0/up-insensitive.png
 share/doc/rsvg-2.0/up.png
 share/gir-1.0/Rsvg-2.0.gir
 share/thumbnailers/librsvg.thumbnailer
+share/vala/vapi/librsvg-2.0.vapi
 @postexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
 @postunexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
