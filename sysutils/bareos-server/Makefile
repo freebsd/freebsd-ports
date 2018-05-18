@@ -3,7 +3,7 @@
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	16.2.7
+DISTVERSION=	17.2.5
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -193,7 +193,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' \
 		-e 's|src/lib||' -e 's|src/findlib||' -e 's|@FD_PLUGIN_DIR@||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|../lib/|$$(LOCALBASE)/lib/|g' -e 's|../findlib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/dird/Makefile.in \
-		${WRKSRC}/src/stored/Makefile.in ${WRKSRC}/src/tools/Makefile.in
+		${WRKSRC}/src/stored/Makefile.in ${WRKSRC}/src/tools/Makefile.in ${WRKSRC}/src/tests/Makefile.in
 	@${REINPLACE_CMD} -e 's|../../lib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/plugins/dird/Makefile.in ${WRKSRC}/src/plugins/stored/Makefile.in
 	@${REINPLACE_CMD} -e 's|fd_plugins.h|filed/fd_plugins.h|g' -e 's|dir_plugins.h|dird/dir_plugins.h|g' -e 's|stored.h|stored/stored.h|g' \
 		${WRKSRC}/src/tools/bpluginfo.c
@@ -219,6 +219,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/bareos-barcodes ${STAGEDIR}${ETCDIR}/bareos-barcodes.sample
 	${CHMOD} o+x ${STAGEDIR}${PREFIX}/bin/bsmtp
 	${MV} ${STAGEDIR}${ETCDIR}/mtx-changer.conf ${STAGEDIR}${ETCDIR}/mtx-changer.conf.sample
+	${MV} ${STAGEDIR}${ETCDIR}/bareos-regress.conf ${STAGEDIR}${ETCDIR}//bareos-regress.conf.sample
 .endif
 	@${MKDIR} ${STAGEDIR}/var/run/bareos
 .endif

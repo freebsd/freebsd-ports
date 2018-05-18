@@ -19,16 +19,6 @@ pre-install:
 .endif
 
 do-install:
-.if ${PKGNAMESUFFIX} == "-bat"
-# Install config files and preserve existing ones
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${STAGEDIR}${PREFIX}/etc/bareos/bat.conf.sample
-	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1          ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA}	${WRKSRC}/src/images/bat.png ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA}	${WRKSRC}/src/images/bat.svg ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/src/qt-console/bat.desktop ${STAGEDIR}${DESKTOPDIR}
-.endif
 .if ${PKGNAMEPREFIX} == "nagios-check_"
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/nagios/check_bareos/check_bareos \
