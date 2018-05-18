@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180518:
+  AFFECTS: users of sysutils/ansible*
+  AUTHOR: lifanov@FreeBSD.org
+
+  Ansible ports are now flavored. Package names for Ansible changed
+  to include python version. Poudriere and package users don't need
+  to do anything.
+
+  To rename an installed package to match the new naming scheme,
+  for example, for ansible24, run:
+
+   # pkg set -n ansible24:py27-ansible24
+  
 20180514:
   AFFECTS: users of www/gitlab
   AUTHOR: mfechner@FreeBSD.org
