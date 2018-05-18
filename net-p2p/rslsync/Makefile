@@ -46,4 +46,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/rslsync.conf.sample ${STAGEDIR}${PREFIX}/etc
 	${MKDIR} ${STAGEDIR}/var/db/rslsync
 
+maintainer-makesum:
+	for arch in ${ONLY_FOR_ARCHS}; do ${MAKE} DISTINFO_FILE=/dev/stdout ARCH=$$arch makesum; done | awk '$$1 != "TIMESTAMP" || NR == 1' > ${DISTINFO_FILE}
+
 .include <bsd.port.post.mk>
