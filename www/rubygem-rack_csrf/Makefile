@@ -6,7 +6,7 @@ PORTVERSION=	2.6.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Anti-CSRF Rack middleware
 
 LICENSE=	MIT
