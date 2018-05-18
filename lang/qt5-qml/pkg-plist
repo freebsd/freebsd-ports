@@ -192,6 +192,7 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4value_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4variantobject_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4vme_moth_p.h
+%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4writebarrier_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv8engine_p.h
 %%QT_INCDIR%%/QtQml/QJSEngine
 %%QT_INCDIR%%/QtQml/QJSValue

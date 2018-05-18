@@ -264,6 +264,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Desktop/TreeViewStyle.qmlc
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Desktop/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Flat/libqtquickextrasflatplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Controls/Styles/Flat/libqtquickextrasflatplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Flat/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls/Switch.qml
@@ -287,6 +288,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls/TreeView.qml
 %%QT_QMLDIR%%/QtQuick/Controls/TreeView.qmlc
 %%QT_QMLDIR%%/QtQuick/Controls/libqtquickcontrolsplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Controls/libqtquickcontrolsplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Controls/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Controls/qmldir
 %%QT_QMLDIR%%/QtQuick/Dialogs/DefaultColorDialog.qml
@@ -300,6 +302,7 @@
 %%QT_QMLDIR%%/QtQuick/Dialogs/DefaultMessageDialog.qml
 %%QT_QMLDIR%%/QtQuick/Dialogs/DefaultMessageDialog.qmlc
 %%QT_QMLDIR%%/QtQuick/Dialogs/Private/libdialogsprivateplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/Private/libdialogsprivateplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Dialogs/Private/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Dialogs/Private/qmldir
 %%QT_QMLDIR%%/QtQuick/Dialogs/WidgetColorDialog.qml
@@ -322,6 +325,7 @@
 %%QT_QMLDIR%%/QtQuick/Dialogs/images/warning.png
 %%QT_QMLDIR%%/QtQuick/Dialogs/images/window_border.png
 %%QT_QMLDIR%%/QtQuick/Dialogs/libdialogplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/libdialogplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Dialogs/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Dialogs/qml/ColorSlider.qml
 %%QT_QMLDIR%%/QtQuick/Dialogs/qml/ColorSlider.qmlc
@@ -401,8 +405,10 @@
 %%QT_QMLDIR%%/QtQuick/Extras/designer/images/tumbler-icon16.png
 %%QT_QMLDIR%%/QtQuick/Extras/designer/qtquickextras.metainfo
 %%QT_QMLDIR%%/QtQuick/Extras/libqtquickextrasplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Extras/libqtquickextrasplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Extras/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Extras/qmldir
 %%QT_QMLDIR%%/QtQuick/PrivateWidgets/libwidgetsplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/PrivateWidgets/libwidgetsplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/PrivateWidgets/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/PrivateWidgets/qmldir

@@ -60,6 +60,7 @@
 %%QT_MKSPECDIR%%/common/uikit/qmake.conf
 %%QT_MKSPECDIR%%/common/unix.conf
 %%QT_MKSPECDIR%%/common/watchos.conf
+%%QT_MKSPECDIR%%/common/windows-vulkan.conf
 %%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_150x150.png
 %%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_30x30.png
 %%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_310x150.png
@@ -150,6 +151,8 @@
 %%QT_MKSPECDIR%%/devices/linux-snowball-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-tegra2-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-tegra2-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/devices/linux-tinkerboard-g++/qmake.conf
+%%QT_MKSPECDIR%%/devices/linux-tinkerboard-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/dummy/qmake.conf
 %%QT_MKSPECDIR%%/features/android/android.prf
 %%QT_MKSPECDIR%%/features/android/android_deployment_settings.prf
@@ -199,6 +202,7 @@
 %%QT_MKSPECDIR%%/features/mac/asset_catalogs.prf
 %%QT_MKSPECDIR%%/features/mac/default_post.prf
 %%QT_MKSPECDIR%%/features/mac/default_pre.prf
+%%QT_MKSPECDIR%%/features/mac/mac.prf
 %%QT_MKSPECDIR%%/features/mac/objective_c.prf
 %%QT_MKSPECDIR%%/features/mac/rez.prf
 %%QT_MKSPECDIR%%/features/mac/sdk.prf
@@ -259,7 +263,7 @@
 %%QT_MKSPECDIR%%/features/uikit/default_post.prf
 %%QT_MKSPECDIR%%/features/uikit/default_pre.prf
 %%QT_MKSPECDIR%%/features/uikit/device_destinations.sh
-%%QT_MKSPECDIR%%/features/uikit/devices.pl
+%%QT_MKSPECDIR%%/features/uikit/devices.py
 %%QT_MKSPECDIR%%/features/uikit/exclusive_builds_post.prf
 %%QT_MKSPECDIR%%/features/uikit/qt.prf
 %%QT_MKSPECDIR%%/features/uikit/qt_parts.prf
@@ -267,6 +271,7 @@
 %%QT_MKSPECDIR%%/features/uikit/sdk.prf
 %%QT_MKSPECDIR%%/features/uikit/testcase.prf
 %%QT_MKSPECDIR%%/features/uikit/testcase_targets.prf
+%%QT_MKSPECDIR%%/features/uikit/watchos_coretext.prf
 %%QT_MKSPECDIR%%/features/uikit/xcodebuild.mk
 %%QT_MKSPECDIR%%/features/uikit/xcodebuild.prf
 %%QT_MKSPECDIR%%/features/unix/bsymbolic_functions.prf
@@ -340,6 +345,8 @@
 %%QT_MKSPECDIR%%/linux-icc-32/qplatformdefs.h
 %%QT_MKSPECDIR%%/linux-icc-64/qmake.conf
 %%QT_MKSPECDIR%%/linux-icc-64/qplatformdefs.h
+%%QT_MKSPECDIR%%/linux-icc-k1om/qmake.conf
+%%QT_MKSPECDIR%%/linux-icc-k1om/qplatformdefs.h
 %%QT_MKSPECDIR%%/linux-icc/qmake.conf
 %%QT_MKSPECDIR%%/linux-icc/qplatformdefs.h
 %%QT_MKSPECDIR%%/linux-llvm/qmake.conf
@@ -433,6 +440,8 @@
 %%QT_MKSPECDIR%%/win32-clang-msvc/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-g++/qmake.conf
 %%QT_MKSPECDIR%%/win32-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/win32-icc-k1om/qmake.conf
+%%QT_MKSPECDIR%%/win32-icc-k1om/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-icc/qmake.conf
 %%QT_MKSPECDIR%%/win32-icc/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-msvc/qmake.conf

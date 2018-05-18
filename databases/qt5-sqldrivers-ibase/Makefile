@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	1
 
 DB=		IBase
 DB_DESC=	InterBase/Firebird

@@ -1,6 +1,7 @@
 %%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qserialport_p.h
 %%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qserialportinfo_p.h
 %%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qtudev_p.h
+%%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qwinoverlappedionotifier_p.h
 %%QT_INCDIR%%/QtSerialPort/QSerialPort
 %%QT_INCDIR%%/QtSerialPort/QSerialPortInfo
 %%QT_INCDIR%%/QtSerialPort/QtSerialPort

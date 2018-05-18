@@ -103,6 +103,7 @@
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qcandlestickset_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qcategoryaxis_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qchart_p.h
+%%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qchartglobal_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qchartview_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qdatetimeaxis_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qhorizontalbarseries_p.h

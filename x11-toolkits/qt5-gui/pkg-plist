@@ -1,3 +1,4 @@
+%%QT_BINDIR%%/qvkgen
 %%QT_INCDIR%%/QtAccessibilitySupport/%%FULLVER%%/QtAccessibilitySupport/private/qaccessiblebridgeutils_p.h
 %%QT_INCDIR%%/QtAccessibilitySupport/QtAccessibilitySupport
 %%QT_INCDIR%%/QtAccessibilitySupport/QtAccessibilitySupportDepends
@@ -11,6 +12,12 @@
 %%QT_INCDIR%%/QtDeviceDiscoverySupport/QtDeviceDiscoverySupportDepends
 %%QT_INCDIR%%/QtDeviceDiscoverySupport/QtDeviceDiscoverySupportVersion
 %%QT_INCDIR%%/QtDeviceDiscoverySupport/qtdevicediscoverysupportversion.h
+%%QT_INCDIR%%/QtEdidSupport/%%FULLVER%%/QtEdidSupport/private/qedidparser_p.h
+%%QT_INCDIR%%/QtEdidSupport/%%FULLVER%%/QtEdidSupport/private/qedidvendortable_p.h
+%%QT_INCDIR%%/QtEdidSupport/QtEdidSupport
+%%QT_INCDIR%%/QtEdidSupport/QtEdidSupportDepends
+%%QT_INCDIR%%/QtEdidSupport/QtEdidSupportVersion
+%%QT_INCDIR%%/QtEdidSupport/qtedidsupportversion.h
 %%QT_INCDIR%%/QtEglSupport/%%FULLVER%%/QtEglSupport/private/qeglconvenience_p.h
 %%QT_INCDIR%%/QtEglSupport/%%FULLVER%%/QtEglSupport/private/qeglpbuffer_p.h
 %%QT_INCDIR%%/QtEglSupport/%%FULLVER%%/QtEglSupport/private/qeglplatformcontext_p.h
@@ -160,6 +167,14 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrgba64_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qscreen_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qsessionmanager_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshaderformat_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshadergenerator_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshadergraph_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshadergraphloader_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshaderlanguage_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshadernode_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshadernodeport_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshadernodesloader_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshapedpixmapdndwindow_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshortcutmap_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qsimpledrag_p.h
@@ -186,6 +201,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtriangulatingstroker_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtriangulator_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qvectorpath_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qvulkanwindow_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qwindow_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qxbmhandler_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qxpmhandler_p.h
@@ -223,6 +239,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformtheme_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformthemefactory_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformthemeplugin.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformvulkaninstance.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformwindow.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformwindow_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qwindowsysteminterface.h
@@ -464,6 +481,14 @@
 %%QT_INCDIR%%/QtGui/QVector2D
 %%QT_INCDIR%%/QtGui/QVector3D
 %%QT_INCDIR%%/QtGui/QVector4D
+%%QT_INCDIR%%/QtGui/QVulkanDeviceFunctions
+%%QT_INCDIR%%/QtGui/QVulkanExtension
+%%QT_INCDIR%%/QtGui/QVulkanFunctions
+%%QT_INCDIR%%/QtGui/QVulkanInfoVector
+%%QT_INCDIR%%/QtGui/QVulkanInstance
+%%QT_INCDIR%%/QtGui/QVulkanLayer
+%%QT_INCDIR%%/QtGui/QVulkanWindow
+%%QT_INCDIR%%/QtGui/QVulkanWindowRenderer
 %%QT_INCDIR%%/QtGui/QWhatsThisClickedEvent
 %%QT_INCDIR%%/QtGui/QWheelEvent
 %%QT_INCDIR%%/QtGui/QWidgetList
@@ -607,6 +632,9 @@
 %%QT_INCDIR%%/QtGui/qvector2d.h
 %%QT_INCDIR%%/QtGui/qvector3d.h
 %%QT_INCDIR%%/QtGui/qvector4d.h
+%%QT_INCDIR%%/QtGui/qvulkanfunctions.h
+%%QT_INCDIR%%/QtGui/qvulkaninstance.h
+%%QT_INCDIR%%/QtGui/qvulkanwindow.h
 %%QT_INCDIR%%/QtGui/qwindow.h
 %%QT_INCDIR%%/QtGui/qwindowdefs.h
 %%QT_INCDIR%%/QtGui/qwindowdefs_win.h
@@ -711,6 +739,8 @@
 %%QT_LIBDIR%%/libQt5AccessibilitySupport.prl
 %%QT_LIBDIR%%/libQt5DeviceDiscoverySupport.a
 %%QT_LIBDIR%%/libQt5DeviceDiscoverySupport.prl
+%%QT_LIBDIR%%/libQt5EdidSupport.a
+%%QT_LIBDIR%%/libQt5EdidSupport.prl
 %%QT_LIBDIR%%/libQt5EglSupport.a
 %%QT_LIBDIR%%/libQt5EglSupport.prl
 %%QT_LIBDIR%%/libQt5EventDispatcherSupport.a
@@ -747,6 +777,7 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5XcbQpa.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_accessibility_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_devicediscovery_support_private.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_edid_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_egl_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_eventdispatcher_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_fb_support_private.pri

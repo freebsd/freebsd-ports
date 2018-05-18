@@ -1,4 +1,5 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/cp949codetbl_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/minimum-linux_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstractanimation_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstracteventdispatcher_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstractfileengine_p.h
@@ -27,6 +28,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdir_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdoublescanprint_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qelfparser_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qendian_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeucjpcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeuckrcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_cf_p.h
@@ -107,7 +109,6 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qoperatingsystemversion_win_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qorderedmutexlocker_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qparallelanimationgroup_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpodlist_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpoll_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsattribute_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsattributeprivate_p.h
@@ -115,6 +116,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsobjectprivate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qprocess_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpropertyanimation_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qrandom_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qreadwritelock_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qresource_iterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qresource_p.h
@@ -161,7 +163,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowscodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipereader_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipewriter_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwinoverlappedionotifier_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwineventnotifier_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qxmlstream_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qxmlutils_p.h
 %%QT_INCDIR%%/QtCore/QAbstractAnimation
@@ -183,8 +185,10 @@
 %%QT_INCDIR%%/QtCore/QAtomicInt
 %%QT_INCDIR%%/QtCore/QAtomicInteger
 %%QT_INCDIR%%/QtCore/QAtomicPointer
+%%QT_INCDIR%%/QtCore/QBEInteger
 %%QT_INCDIR%%/QtCore/QBasicMutex
 %%QT_INCDIR%%/QtCore/QBasicTimer
+%%QT_INCDIR%%/QtCore/QBigEndianStorageType
 %%QT_INCDIR%%/QtCore/QBitArray
 %%QT_INCDIR%%/QtCore/QBitRef
 %%QT_INCDIR%%/QtCore/QBuffer
@@ -273,6 +277,8 @@
 %%QT_INCDIR%%/QtCore/QJsonValuePtr
 %%QT_INCDIR%%/QtCore/QJsonValueRef
 %%QT_INCDIR%%/QtCore/QJsonValueRefPtr
+%%QT_INCDIR%%/QtCore/QKeyValueIterator
+%%QT_INCDIR%%/QtCore/QLEInteger
 %%QT_INCDIR%%/QtCore/QLatin1Char
 %%QT_INCDIR%%/QtCore/QLatin1Literal
 %%QT_INCDIR%%/QtCore/QLatin1String
@@ -288,6 +294,7 @@
 %%QT_INCDIR%%/QtCore/QListData
 %%QT_INCDIR%%/QtCore/QListIterator
 %%QT_INCDIR%%/QtCore/QListSpecialMethods
+%%QT_INCDIR%%/QtCore/QLittleEndianStorageType
 %%QT_INCDIR%%/QtCore/QLocale
 %%QT_INCDIR%%/QtCore/QLockFile
 %%QT_INCDIR%%/QtCore/QLoggingCategory
@@ -346,6 +353,8 @@
 %%QT_INCDIR%%/QtCore/QProcessEnvironment
 %%QT_INCDIR%%/QtCore/QPropertyAnimation
 %%QT_INCDIR%%/QtCore/QQueue
+%%QT_INCDIR%%/QtCore/QRandomGenerator
+%%QT_INCDIR%%/QtCore/QRandomGenerator64
 %%QT_INCDIR%%/QtCore/QReadLocker
 %%QT_INCDIR%%/QtCore/QReadWriteLock
 %%QT_INCDIR%%/QtCore/QRect
@@ -367,6 +376,7 @@
 %%QT_INCDIR%%/QtCore/QScopedPointerPodDeleter
 %%QT_INCDIR%%/QtCore/QScopedValueRollback
 %%QT_INCDIR%%/QtCore/QSemaphore
+%%QT_INCDIR%%/QtCore/QSemaphoreReleaser
 %%QT_INCDIR%%/QtCore/QSequentialAnimationGroup
 %%QT_INCDIR%%/QtCore/QSequentialIterable
 %%QT_INCDIR%%/QtCore/QSet
@@ -383,6 +393,7 @@
 %%QT_INCDIR%%/QtCore/QSizeF
 %%QT_INCDIR%%/QtCore/QSocketNotifier
 %%QT_INCDIR%%/QtCore/QSortFilterProxyModel
+%%QT_INCDIR%%/QtCore/QSpecialInteger
 %%QT_INCDIR%%/QtCore/QStack
 %%QT_INCDIR%%/QtCore/QStandardPaths
 %%QT_INCDIR%%/QtCore/QState
@@ -395,14 +406,17 @@
 %%QT_INCDIR%%/QtCore/QStaticStringData
 %%QT_INCDIR%%/QtCore/QStorageInfo
 %%QT_INCDIR%%/QtCore/QString
+%%QT_INCDIR%%/QtCore/QStringAlgorithms
 %%QT_INCDIR%%/QtCore/QStringBuilder
 %%QT_INCDIR%%/QtCore/QStringData
 %%QT_INCDIR%%/QtCore/QStringDataPtr
 %%QT_INCDIR%%/QtCore/QStringList
 %%QT_INCDIR%%/QtCore/QStringListIterator
 %%QT_INCDIR%%/QtCore/QStringListModel
+%%QT_INCDIR%%/QtCore/QStringLiteral
 %%QT_INCDIR%%/QtCore/QStringMatcher
 %%QT_INCDIR%%/QtCore/QStringRef
+%%QT_INCDIR%%/QtCore/QStringView
 %%QT_INCDIR%%/QtCore/QSysInfo
 %%QT_INCDIR%%/QtCore/QSystemSemaphore
 %%QT_INCDIR%%/QtCore/QTemporaryDir
@@ -596,6 +610,7 @@
 %%QT_INCDIR%%/QtCore/qprocessordetection.h
 %%QT_INCDIR%%/QtCore/qpropertyanimation.h
 %%QT_INCDIR%%/QtCore/qqueue.h
+%%QT_INCDIR%%/QtCore/qrandom.h
 %%QT_INCDIR%%/QtCore/qreadwritelock.h
 %%QT_INCDIR%%/QtCore/qrect.h
 %%QT_INCDIR%%/QtCore/qrefcount.h
@@ -626,10 +641,13 @@
 %%QT_INCDIR%%/QtCore/qstatemachine.h
 %%QT_INCDIR%%/QtCore/qstorageinfo.h
 %%QT_INCDIR%%/QtCore/qstring.h
+%%QT_INCDIR%%/QtCore/qstringalgorithms.h
 %%QT_INCDIR%%/QtCore/qstringbuilder.h
 %%QT_INCDIR%%/QtCore/qstringlist.h
 %%QT_INCDIR%%/QtCore/qstringlistmodel.h
+%%QT_INCDIR%%/QtCore/qstringliteral.h
 %%QT_INCDIR%%/QtCore/qstringmatcher.h
+%%QT_INCDIR%%/QtCore/qstringview.h
 %%QT_INCDIR%%/QtCore/qsysinfo.h
 %%QT_INCDIR%%/QtCore/qsystemdetection.h
 %%QT_INCDIR%%/QtCore/qsystemsemaphore.h

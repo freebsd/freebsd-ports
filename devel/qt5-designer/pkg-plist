@@ -71,6 +71,7 @@
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/rcc_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/resourcebuilder_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/richtexteditor_p.h
+%%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/selectsignaldialog_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/shared_enums_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/shared_global_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/shared_settings_p.h

@@ -5,5 +5,7 @@
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/VirtualKeyboard/Styles/libqtvirtualkeyboardstylesplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/VirtualKeyboard/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/VirtualKeyboard/qmldir
+%%QT_QMLDIR%%/QtQuick/VirtualKeyboard/Settings/plugins.qmltypes
+%%QT_QMLDIR%%/QtQuick/VirtualKeyboard/Settings/qmldir
 %%QT_QMLDIR%%/QtQuick/VirtualKeyboard/Styles/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/VirtualKeyboard/Styles/qmldir
