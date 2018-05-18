@@ -10,7 +10,6 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qaccessiblewidgetfactory_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qaccessiblewidgets_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qaction_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qandroidstyle_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qapplication_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qbasickeyeventtransition_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qbasicmouseeventtransition_p.h
@@ -67,8 +66,6 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qlistview_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qlistwidget_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmacgesturerecognizer_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmacstyle_mac_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmacstyle_mac_p_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmainwindowlayout_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmdiarea_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmdisubwindow_p.h
@@ -122,10 +119,6 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowcontainer_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsstyle_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsstyle_p_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsvistastyle_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsvistastyle_p_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsxpstyle_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsxpstyle_p_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwizard_win_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/rangecontrols_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/simplewidgets_p.h

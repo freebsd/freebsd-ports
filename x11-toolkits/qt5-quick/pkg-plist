@@ -56,6 +56,7 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickdesignersupportstates_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickdesignerwindowmanager_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickdrag_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickdraghandler_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickdroparea_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickevents_p_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickflickable_p.h
@@ -68,6 +69,7 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickgenericshadereffect_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickgraphicsinfo_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickgridview_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickhandlersmodule_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickimage_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickimage_p_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickimagebase_p.h
@@ -87,6 +89,7 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickloader_p_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickmousearea_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickmousearea_p_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickmultipointhandler_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickmultipointtoucharea_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickopenglinfo_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickopenglshadereffect_p.h
@@ -99,7 +102,11 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpathview_p_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpincharea_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpincharea_p_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpinchhandler_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpixmapcache_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpointerdevicehandler_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpointerhandler_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpointhandler_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpositioners_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickpositioners_p_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickprofiler_p.h
@@ -115,6 +122,7 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickshadereffectmesh_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickshadereffectsource_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickshortcut_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicksinglepointhandler_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicksmoothedanimation_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicksmoothedanimation_p_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickspringanimation_p.h
@@ -130,6 +138,7 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickstyledtext_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicksvgparser_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicksystempalette_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicktaphandler_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicktext_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicktext_p_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicktextcontrol_p.h
@@ -181,12 +190,12 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgdepthstencilbuffer_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgdistancefieldglyphnode_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgdistancefieldglyphnode_p_p.h
-%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgdistancefieldutil_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgengine_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsggeometry_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgmaterialshader_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgnode_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgnodeupdater_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgpkmhandler_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgrenderer_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgrenderloop_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgrendernode_p.h
@@ -210,6 +219,7 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgsoftwarethreadedrenderloop_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgtexture_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgtexturematerial_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgtexturereader_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgthreadedrenderloop_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgwindowsrenderloop_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qtquick-config_p.h
@@ -431,6 +441,10 @@
 %%DEBUG%%%%QT_QMLDIR%%/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin.so.debug
 %%QT_QMLDIR%%/Qt/labs/folderlistmodel/plugins.qmltypes
 %%QT_QMLDIR%%/Qt/labs/folderlistmodel/qmldir
+%%QT_QMLDIR%%/Qt/labs/handlers/libhandlersplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/Qt/labs/handlers/libhandlersplugin.so.debug
+%%QT_QMLDIR%%/Qt/labs/handlers/plugins.qmltypes
+%%QT_QMLDIR%%/Qt/labs/handlers/qmldir
 %%QT_QMLDIR%%/Qt/labs/settings/libqmlsettingsplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/Qt/labs/settings/libqmlsettingsplugin.so.debug
 %%QT_QMLDIR%%/Qt/labs/settings/plugins.qmltypes
@@ -464,6 +478,10 @@
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Particles.2/libparticlesplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Particles.2/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Particles.2/qmldir
+%%QT_QMLDIR%%/QtQuick/Shapes/libqmlshapesplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Shapes/libqmlshapesplugin.so.debug
+%%QT_QMLDIR%%/QtQuick/Shapes/plugins.qmltypes
+%%QT_QMLDIR%%/QtQuick/Shapes/qmldir
 %%QT_QMLDIR%%/QtQuick/Window.2/libwindowplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Window.2/libwindowplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Window.2/plugins.qmltypes

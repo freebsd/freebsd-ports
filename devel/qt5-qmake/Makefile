@@ -2,7 +2,6 @@
 
 PORTNAME=	qmake
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -10,12 +9,13 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Makefile generator
 
 USE_QT5=	# empty
-USES=		compiler:c++11-lib pkgconfig shebangfix
+USES=		compiler:c++11-lib gmake pkgconfig \
+		python:build shebangfix
 SHEBANG_FILES=	util/harfbuzz/update-harfbuzz \
 		util/unicode/x11/makeencodings \
 		src/3rdparty/freetype/src/tools/afblue.pl \
 		mkspecs/features/data/mac/objc_namespace.sh \
-		mkspecs/features/uikit/devices.pl \
+		mkspecs/features/uikit/devices.py \
 		mkspecs/features/uikit/device_destinations.sh
 
 QT_DIST=	base

@@ -25,4 +25,5 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_texttospeech.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_texttospeech_private.pri
 %%QT_PLUGINDIR%%/texttospeech/libqtexttospeech_speechd.so
+%%DEBUG%%%%QT_PLUGINDIR%%/texttospeech/libqtexttospeech_speechd.so.debug
 libdata/pkgconfig/Qt5TextToSpeech.pc

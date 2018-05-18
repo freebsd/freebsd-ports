@@ -27,7 +27,7 @@ Qt_Pre_Include=	bsd.qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=	4 5
 QT4_VERSION?=	4.8.7
-QT5_VERSION?=	5.9.4
+QT5_VERSION?=	5.10.1
 
 _QT_RELNAME=	qt${_QT_VERSION:R:R}
 _QT_VERSION=	# empty
@@ -68,7 +68,12 @@ DISTNAME=		qt-everywhere-opensource-src-${_QT_VERSION}
 DIST_SUBDIR=		KDE
 . else
 MASTER_SITE_SUBDIR?=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodules/
+# www/qt5-webengine hackery: The tarballs of 5.9.5 had a different naming scheme.
+.  if ${QT5_VERSION} == "5.9.5"
 DISTNAME=		${QT_DIST:S,^,qt,:S,$,-opensource-src-${DISTVERSION},}
+.  else
+DISTNAME=		${QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
+.  endif
 DISTFILES=		${DISTNAME:S,$,${EXTRACT_SUFX},}
 DIST_SUBDIR=		KDE/Qt/${_QT_VERSION}
 
@@ -93,7 +98,7 @@ QT_DIST=		3d activeqt androidextras base canvas3d charts connectivity \
 				location macextras multimedia networkauth purchasing \
 				quickcontrols2 quickcontrols remoteobjects script scxml sensors \
 				serialbus serialport speech svg tools translations \
-				virtualkeyboard wayland webchannel webengine websockets webview \
+				virtualkeyboard wayland webchannel websockets webview \
 				winextras x11extras xmlpatterns
 .		endif
 .  endif

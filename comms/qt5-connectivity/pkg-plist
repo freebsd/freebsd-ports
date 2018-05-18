@@ -63,6 +63,7 @@
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergyserviceprivate_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qprivatelinearbuffer_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qtbluetooth-config_p.h
+%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qtbluetoothglobal_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/remotedevicemanager_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/serveracceptancethread_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/service_p.h
@@ -122,6 +123,7 @@
 %%QT_INCDIR%%/QtBluetooth/qlowenergyservice.h
 %%QT_INCDIR%%/QtBluetooth/qlowenergyservicedata.h
 %%QT_INCDIR%%/QtBluetooth/qtbluetooth-config.h
+%%QT_INCDIR%%/QtBluetooth/qtbluetoothglobal.h
 %%QT_INCDIR%%/QtBluetooth/qtbluetoothversion.h
 %%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/adapter_p.h
 %%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/agent_p.h
@@ -158,6 +160,7 @@
 %%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/qnearfieldtarget_neard_p.h
 %%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/qnearfieldtarget_p.h
 %%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/qtlv_p.h
+%%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/qtnfcglobal_p.h
 %%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/tag_p.h
 %%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/targetemulator_p.h
 %%QT_INCDIR%%/QtNfc/QNdefFilter
@@ -187,6 +190,7 @@
 %%QT_INCDIR%%/QtNfc/qnearfieldtarget.h
 %%QT_INCDIR%%/QtNfc/qnfcglobal.h
 %%QT_INCDIR%%/QtNfc/qqmlndefrecord.h
+%%QT_INCDIR%%/QtNfc/qtnfcglobal.h
 %%QT_INCDIR%%/QtNfc/qtnfcversion.h
 %%QT_CMAKEDIR%%/Qt5Bluetooth/Qt5BluetoothConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Bluetooth/Qt5BluetoothConfigVersion.cmake
