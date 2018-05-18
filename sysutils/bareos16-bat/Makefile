@@ -2,14 +2,14 @@
 
 PORTNAME=	bareos16
 PKGNAMESUFFIX=	-bat
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Backup archiving recovery open sourced (GUI)
 
 LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \
 		libbareos.so:sysutils/bareos16-client
 
-CONFLICTS=	bacula*-bat-* bareos-bat-*
+CONFLICTS=	bacula*-bat-*
 
 USES=		pkgconfig desktop-file-utils
 USE_QT4=	qmake_build uic_build moc_build rcc_build
@@ -25,8 +25,5 @@ CONFIGURE_ARGS+=	--enable-bat \
 			--disable-build-dird \
 			--disable-build-stored \
 			--enable-client-only
-
-OPTIONS_DEFINE=	OPENSSL
-OPTIONS_DEFAULT=OPENSSL
 
 .include "${MASTERDIR}/Makefile"

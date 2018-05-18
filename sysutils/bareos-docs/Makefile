@@ -1,4 +1,3 @@
-# Created by: Alonso CArdenas <acm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	bareos
