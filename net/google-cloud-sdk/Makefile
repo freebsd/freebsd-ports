@@ -3,6 +3,7 @@
 
 PORTNAME=	google-cloud-sdk
 PORTVERSION=	200.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -11,9 +12,9 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Google Cloud SDK for Google Cloud Platform
 
 USES=		python:2.7
-NO_ARCH=	yes
-NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/google-cloud-sdk
+
+PLIST_FILES=	bin/bq bin/gcloud bin/git-credential-gcloud.sh bin/gsutil
 
 RUN_DEPENDS=	python:lang/python \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
@@ -27,6 +28,10 @@ post-extract:
 		${WRKSRC}/deb \
 		${WRKSRC}/lib/third_party/grpc/_cython/cygrpc.so
 
+do-build:
+	@cd ${WRKSRC} ; \
+		${PYTHON_CMD} -m compileall -q -x python3 .
+
 do-install:
 	${RM} -r ${WRKSRC}/help ${WRKSRC}/.install/.download
 	( cd ${WRKSRC} ; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/google-cloud-sdk )
@@ -35,5 +40,9 @@ do-install:
 	${RLN} ${STAGEDIR}${PREFIX}/google-cloud-sdk/bin/${x} \
 		${STAGEDIR}${PREFIX}/bin/${x}
 .endfor
+
+post-install:
+	@(cd ${STAGEDIR}${PREFIX} && \
+                ${FIND} -s google-cloud-sdk -type f -o -type l >> ${TMPPLIST})
 
 .include <bsd.port.mk>
