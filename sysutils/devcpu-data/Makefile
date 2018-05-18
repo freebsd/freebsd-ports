@@ -3,6 +3,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloadmirror.intel.com/27591/eng/:intel \
 		LOCAL/sbruno:amd
@@ -10,7 +11,7 @@ PKGNAMEPREFIX=	devcpu-
 DISTFILES=	microcode-20180312.tgz:intel \
 		amd64-microcode_3.20171205.1.tar.xz:amd
 
-MAINTAINER=	clarkjc@runbox.com
+MAINTAINER=	sbruno@freebsd.org
 COMMENT=	Intel and AMD CPUs microcode updates
 
 LICENSE=	EULA
@@ -27,7 +28,7 @@ DATADIR=	${PREFIX}/share/cpucontrol
 USE_RC_SUBR=	microcode_update
 
 post-extract:
-	${CP} -p ${FILESDIR}/Makefile ${FILESDIR}/ucode-tool.c ${WRKSRC}
+	${CP} -p ${FILESDIR}/Makefile ${FILESDIR}/ucode-split.c ${WRKSRC}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
