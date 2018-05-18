@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	REminiscence
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		https://mirror.amdmi3.ru/distfiles/
