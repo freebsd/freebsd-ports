@@ -1,3 +1,15 @@
-A screen capture utility that utilizes Imlib2.
+A screen capture CLI utility that utilizes Imlib2.
 
-WWW: http://linuxbrit.co.uk/scrot/
+It has the following set of features:
+
+ - user-definable time delay
+ - image quality control
+ - interactive rectangular mouse selection of any screen part
+ - screen capture for individual windows
+ - scriptable screen shot processing
+
+Although scrot is no longer in active development, it is still widely used
+today. Similar programs, which were either based on or inspired by scrot, are
+graphics/maim and x11/slop.
+
+WWW: https://github.com/dreamer/scrot
