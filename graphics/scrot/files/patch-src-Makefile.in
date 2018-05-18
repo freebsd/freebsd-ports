@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Sat Dec 16 16:25:06 2000
-+++ src/Makefile.in	Sat Dec 16 23:32:08 2000
-@@ -70,7 +70,7 @@
+--- src/Makefile.in.orig	2010-05-15 23:25:41 UTC
++++ src/Makefile.in
+@@ -74,7 +74,7 @@ VERSION = @VERSION@
  MAINTAINERCLEANFILES = Makefile.in				
  
  LDFLAGS = -L/usr/X11R6/lib

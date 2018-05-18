@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Aug 29 13:57:11 2001
-+++ Makefile.in	Sun Jan 27 10:19:21 2002
-@@ -82,7 +82,7 @@
+--- Makefile.in.orig	2010-05-15 23:25:41 UTC
++++ Makefile.in
+@@ -82,7 +82,7 @@ INCLUDES = -I/usr/X11R6/include $(X_CFLAGS) -I$(prefix
  man_MANS = scrot.1
  
  docs_DATA = README AUTHORS ChangeLog TODO
