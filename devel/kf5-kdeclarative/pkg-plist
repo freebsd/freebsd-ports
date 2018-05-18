@@ -48,6 +48,8 @@ lib/libKF5QuickAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kcm/GridDelegate.qml
 %%QT_QMLDIR%%/org/kde/kcm/GridView.qml
 %%QT_QMLDIR%%/org/kde/kcm/GridViewKCM.qml
+%%QT_QMLDIR%%/org/kde/kcm/ScrollView.qml
+%%QT_QMLDIR%%/org/kde/kcm/ScrollViewKCM.qml
 %%QT_QMLDIR%%/org/kde/kcm/SimpleKCM.qml
 %%QT_QMLDIR%%/org/kde/kcm/libkcmcontrolsplugin.so
 %%QT_QMLDIR%%/org/kde/kcm/qmldir

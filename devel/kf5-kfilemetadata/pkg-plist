@@ -35,6 +35,7 @@ lib/cmake/KF5FileMetaData/KF5FileMetaDataTargets.cmake
 lib/libKF5FileMetaData.so
 lib/libKF5FileMetaData.so.3
 lib/libKF5FileMetaData.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_MKSPECDIR%%/modules/qt_KFileMetaData.pri
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_epubextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_exiv2extractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_ffmpegextractor.so
