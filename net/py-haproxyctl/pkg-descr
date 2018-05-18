@@ -1,0 +1,9 @@
+HAProxyctl is a tool to manage the various aspects of HAProxy that can be
+controlled by means of its socket.
+
+HAProxyctl can be used in 2 modes. CLI mode and Python API mode. CLI mode,
+as the name implies, gives you a command, haproxyctl, that can be used to
+control HAProxy. You can use the Python API mode to integrate HAProxyctl
+directly in your Python project.
+
+WWW: https://github.com/neurogeek/haproxyctl
