@@ -1,0 +1,15 @@
+genact is a nonsense terminal activity generator.
+
+It is described in the following way by its authors:
+
+> Pretend to be busy or waiting for your computer when you should actually be
+> doing real work! Impress people with your insane multitasking skills. Just
+> open a few instances of genact and watch the show. genact has multiple scenes
+> that pretend to be doing something exciting or useful when in reality nothing
+> is happening at all.
+
+genact can load modules, which produce different activity. Currently, it
+comes with the following set of modules: bootlog, cargo, cc, composer,
+cryptomining, simcity, download, memdump, kernel_compile, weblog.
+
+WWW: https://github.com/svenstaro/genact

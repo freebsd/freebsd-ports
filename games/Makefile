@@ -334,6 +334,7 @@
     SUBDIR += gdado
     SUBDIR += gemdropx
     SUBDIR += gemrb
+    SUBDIR += genact
     SUBDIR += ggz-client-libs
     SUBDIR += ggz-gtk-client
     SUBDIR += ggz-gtk-games
