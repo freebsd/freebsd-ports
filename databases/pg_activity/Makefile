@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_activity
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
 
@@ -16,10 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${FLAVOR} 
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	julmon
 
-USES=		python
 USE_PYTHON=	autoplist distutils noegginfo concurrent optsuffix
 PYDISTUTILS_INSTALLARGS=	--with-man
 
