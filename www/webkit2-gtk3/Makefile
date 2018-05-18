@@ -15,7 +15,7 @@ COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 LICENSE=	GPLv2 BSD2CLAUSE
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libenchant.so:textproc/enchant \
+LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libwebp.so:graphics/webp \
