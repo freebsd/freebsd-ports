@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	bareos-webui
+PORTNAME=	bareos16-webui
 PORTVERSION=	16.2.7
 DISTVERSIONPREFIX=	Release/
 CATEGORIES=	www sysutils
