@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION?=	2.5.2
-PORTREVISION?=	2
+PORTVERSION?=	2.5.3
+PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
