@@ -1,10 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	bareos16
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-client-static
 
 COMMENT=	Backup archiving recovery open sourced (static client)
+
+CONFLICTS=	bareos-client-static-*
 
 PLIST=		${.CURDIR}/pkg-plist
 MASTERDIR=	${.CURDIR}/../../sysutils/bareos16-server
@@ -13,7 +15,6 @@ PLIST_FILES=	sbin/bareos-fd-static \
 		sbin/bconsole-static
 
 OPTIONS_DEFINE=	NLS LMDB
-OPTIONS_DEFAULT=#
 LMDB_DESC=	Enable build of LMDB support
 
 CONFIGURE_ARGS+=	--enable-client-only \
