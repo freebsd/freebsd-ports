@@ -2,6 +2,7 @@
 
 PORTNAME=	note
 DISTVERSION=	1.3.22
+PORTREVISION=	1
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/note/
 
@@ -33,13 +34,16 @@ CRYPTO_RUN_DEPENDS=	p5-Crypt-CBC>0:security/p5-Crypt-CBC \
 			p5-Crypt-Rijndael>0:security/p5-Crypt-Rijndael
 
 BLOWFISH_DESC=		BlowFish block cipher support
-BLOWFISH_RUN_DEPENDS=	p5-Crypt-Blowfish>0:security/p5-Crypt-Blowfish
+BLOWFISH_RUN_DEPENDS=	p5-Crypt-Blowfish>0:security/p5-Crypt-Blowfish \
+			${CRYPTO_RUN_DEPENDS}
 
 DES_DESC=		DES block cipher support
-DES_RUN_DEPENDS=	p5-Crypt-DES>0:security/p5-Crypt-DES
+DES_RUN_DEPENDS=	p5-Crypt-DES>0:security/p5-Crypt-DES \
+			${CRYPTO_RUN_DEPENDS}
 
 IDEA_DESC=		IDEA block cipher support
-IDEA_RUN_DEPENDS=	p5-Crypt-IDEA>0:security/p5-Crypt-IDEA
+IDEA_RUN_DEPENDS=	p5-Crypt-IDEA>0:security/p5-Crypt-IDEA \
+			${CRYPTO_RUN_DEPENDS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{{(|{\\{(|g' \
