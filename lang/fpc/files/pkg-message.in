@@ -7,15 +7,15 @@
 
    This is necessary for correct linking of libraries.
 
-2) You can to install additional units from:
+2) You can install additional units from:
 
    * lang/fpc-units
 
-3) If you want see all documentation about FreePascal, you can to install
+3) If you want to see all documentation about FreePascal, you can install
 
    * lang/fpc-docs
 
-4) Optionally, you can to install textmode IDE with delphi support
+4) Optionally, you can install textmode IDE with Delphi support
 
    * editors/fpc-ide
 
