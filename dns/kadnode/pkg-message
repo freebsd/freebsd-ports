@@ -1,0 +1,6 @@
+In order to resolve domains using kadnode all over the system, add this
+line to your /etc/nsswitch.conf:
+
+hosts: kadnode dns
+
+If the hosts line already exists, just add kadnode before the dns entry.

@@ -1,0 +1,29 @@
+# Load peers at startup from this file and save peers to this file at shutdown
+--peerfile %%PREFIX%%/etc/kadnode/peers.txt
+
+# For authentication via TLS, x509 certificates need to be provided.
+# The server needs a tuple of the certificate file and private key file:
+# --tls-server-cert mydomain.crt,mydomain.key
+# The domain in the Common Name field of the certificate will be announced.
+#
+# For domain lookup, we need to provide appropiate CA certificates.
+# Try various locations:
+--tls-client-cert %%LOCALBASE%%/share/certs
+
+# As an alternative, create a secret/public key via 'kadnode --bob-create-key'
+# and load the secret keys as PEM file:
+# --bob-load-key <secret-key-pem-file>
+#
+# Other nodes can use <public-key-hex>.p2p in the browser to resolve the node.
+
+# Enable DNS proxy behavior. Reads /etc/resolv.conf by default.
+# --dns-proxy-enable
+#
+# Or specify a DNS server by IP address:
+# --dns-proxy-server <IP-address>
+
+# Disable UPnP/NAT-PMP support
+# --disable-forwarding
+
+# Disable multicast peer discovery
+# --lpd-disable

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# PROVIDE: kadnode
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=kadnode
+rcvar=kadnode_enable
+
+command="%%PREFIX%%/bin/kadnode"
+command_args="--config %%PREFIX%%/etc/kadnode/kadnode.conf --pidfile $pidfile --daemon"
+pidfile="/var/run/kadnode.pid"
+required_files="%%PREFIX%%/etc/kadnode/kadnode.conf"
+
+load_rc_config $name
+: ${kadnode_enable:=yes}
+run_rc_command "$1"
