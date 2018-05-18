@@ -1,0 +1,71 @@
+commit 7588031f0792
+Author: Jonathan Kew <jkew@mozilla.com>
+Date:   Thu May 17 09:49:58 2018 +0100
+
+    Bug 1459162 - Update dimensions early in ClearTarget. r=lsalzman a=abillings
+---
+ dom/canvas/CanvasRenderingContext2D.cpp | 14 +++++++++-----
+ dom/canvas/CanvasRenderingContext2D.h   |  5 ++++-
+ 2 files changed, 13 insertions(+), 6 deletions(-)
+
+diff --git dom/canvas/CanvasRenderingContext2D.cpp dom/canvas/CanvasRenderingContext2D.cpp
+index 1e057824a4675..4501ffaff2d97 100644
+--- dom/canvas/CanvasRenderingContext2D.cpp
++++ dom/canvas/CanvasRenderingContext2D.cpp
+@@ -1928,8 +1928,6 @@ CanvasRenderingContext2D::GetHeight() const
+ NS_IMETHODIMP
+ CanvasRenderingContext2D::SetDimensions(int32_t aWidth, int32_t aHeight)
+ {
+-  ClearTarget();
+-
+   // Zero sized surfaces can cause problems.
+   mZero = false;
+   if (aHeight == 0) {
+@@ -1940,14 +1938,14 @@ CanvasRenderingContext2D::SetDimensions(int32_t aWidth, int32_t aHeight)
+     aWidth = 1;
+     mZero = true;
+   }
+-  mWidth = aWidth;
+-  mHeight = aHeight;
++
++  ClearTarget(aWidth, aHeight);
+ 
+   return NS_OK;
+ }
+ 
+ void
+-CanvasRenderingContext2D::ClearTarget()
++CanvasRenderingContext2D::ClearTarget(int32_t aWidth, int32_t aHeight)
+ {
+   Reset();
+ 
+@@ -1955,6 +1953,12 @@ CanvasRenderingContext2D::ClearTarget()
+ 
+   SetInitialState();
+ 
++  // Update dimensions only if new (strictly positive) values were passed.
++  if (aWidth > 0 && aHeight > 0) {
++    mWidth = aWidth;
++    mHeight = aHeight;
++  }
++
+   // For vertical writing-mode, unless text-orientation is sideways,
+   // we'll modify the initial value of textBaseline to 'middle'.
+   RefPtr<nsStyleContext> canvasStyle;
+diff --git dom/canvas/CanvasRenderingContext2D.h dom/canvas/CanvasRenderingContext2D.h
+index 6f0f6279e0cf5..c2ed098b053d0 100644
+--- dom/canvas/CanvasRenderingContext2D.h
++++ dom/canvas/CanvasRenderingContext2D.h
+@@ -683,8 +683,11 @@ protected:
+ 
+   /**
+    * Disposes an old target and prepares to lazily create a new target.
++   *
++   * Parameters are the new dimensions to be used, or if either is negative,
++   * existing dimensions will be left unchanged.
+    */
+-  void ClearTarget();
++  void ClearTarget(int32_t aWidth = -1, int32_t aHeight = -1);
+ 
+   /*
+    * Returns the target to the buffer provider. i.e. this will queue a frame for
