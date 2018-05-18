@@ -31,6 +31,15 @@
  	fi
  
  	case "$DISPLAY_LIST" in
+@@ -260,7 +260,7 @@ safe_exit () {
+ 		parent_exit $1
+ 	else
+ 		# Save state for the parent process to read back in
+-		> $IPC_SAVE
++		: > $IPC_SAVE
+ 		if [ -z "$PM_FIRST_PASS" ]; then
+ 			echo "DISPLAY_LIST='$DISPLAY_LIST'" >> $IPC_SAVE
+ 			echo "INSTALLED_LIST='$INSTALLED_LIST'" >> $IPC_SAVE
 @@ -308,20 +308,19 @@ safe_exit () {
  	exit ${1:-0}
  } # safe_exit()
@@ -94,7 +103,19 @@
  [ -n "$PM_NO_MAKE_CONFIG" -a -n "$PM_FORCE_CONFIG" ] && unset PM_NO_MAKE_CONFIG
  
  if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
-@@ -1004,21 +1008,23 @@ get_answer_yn () {
+@@ -927,6 +931,11 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
+ 	fi
+ fi	# [ "$$" -eq "$PM_PARENT_PID" ]
+ 
++#=============== cache some build parameters in the environment ===============
++
++export SCRIPTSDIR="$pd/Mk/Scripts"
++eval "$(PORTSDIR="$pd" MAKE=make /bin/sh "$SCRIPTSDIR/ports_env.sh")"
++
+ #=============== Begin functions relevant to --features and main ===============
+ 
+ # find installed port for given origin (with optional @flavor) in the pkg DB
+@@ -1004,21 +1013,23 @@ get_answer_yn () {
  
  match_flavor () {
  	local origin=$(dir_part $1)
@@ -122,17 +143,17 @@
  }
  
  # Find the new origin for moved ports
-@@ -1056,7 +1062,8 @@ find_moved_port () {
+@@ -1056,7 +1067,8 @@ find_moved_port () {
  			fi ;;
  		${sf}\|*) moved_npd=${moved#*\|}	# New port directory
  			moved_npd=${moved_npd%%\|*}
 -			[ -n $(flavor_part $moved_npd) ] && match_flavor $moved_npd $iport
-+			[ -n $(flavor_part $moved_npd) ] && moved_npd=$(match_flavor $moved_npd $iport)
++			[ -n "$(flavor_part $moved_npd)" ] && moved_npd=$(match_flavor $moved_npd $iport)
 +				
  			echo ''
  			echo "	===>>> The $sf port moved to $moved_npd"
  			echo "	===>>> Reason: ${moved##*|}"
-@@ -1146,7 +1153,6 @@ read_distinfos_all () {
+@@ -1146,11 +1158,10 @@ read_distinfos_all () {
  	echo ''
  
  	for origin in ${pd}/*/*; do
@@ -140,7 +161,12 @@
  		case "${origin#$pd/}" in
  		Mk/*|T*|distfiles/*|packages/*|*/[Mm]akefile*|CVS/*|*/CVS|base/*) continue ;; esac
  
-@@ -1377,14 +1383,14 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
+-		pm_isdir "$origin" ] || continue
++		pm_isdir "$origin" || continue
+ 
+ 		if [ -s "${origin}/distinfo" ]; then
+ 			distinfo="${origin}/distinfo"
+@@ -1377,14 +1388,14 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
  		if ! pm_isdir_pd "$origin"; then
  			find_moved_port $origin $pkg nonfatal >/dev/null
  			[ -n "$moved_npd" ] || continue
@@ -157,7 +183,7 @@
  	done <<-EOF
  	$(all_pkgs_by_origin)
  	EOF
-@@ -1502,7 +1508,7 @@ check_for_updates () {
+@@ -1502,7 +1513,7 @@ check_for_updates () {
  	fi
  
  	if [ -z "$do_update" -a -z "$skip" -a -z "$PM_INDEX_ONLY" ] && pm_isdir "$pd/$origin"; then
@@ -166,7 +192,7 @@
  			if pm_islocked "$iport"; then
  				echo "	===>>> Warning: Unable to cd to $pd/$origin"
  				echo "	===>>> Continuing due to $pdb/$iport/+IGNOREME"
-@@ -2175,23 +2181,29 @@ update_pm_nu () {
+@@ -2175,23 +2186,29 @@ update_pm_nu () {
  }
  
  update_build_l () {
@@ -200,7 +226,7 @@
  	find_new_port "$originflavor" # sets global variable new_port
  
  	case `pkg version -t $iport $new_port 2>/dev/null` in
-@@ -2203,8 +2215,9 @@ update_build_l () {
+@@ -2203,8 +2220,9 @@ update_build_l () {
  }
  
  update_port () {
@@ -211,7 +237,7 @@
  	if [ -n "$2" ]; then
  		echo "===>>> Launching child to update $1 to $2"
  	else
-@@ -2300,7 +2313,7 @@ make_dep_list () {
+@@ -2300,7 +2318,7 @@ make_dep_list () {
  			fail "make_dep_list: Unsupported option '$dep_type'"
  		esac
  	done
@@ -220,7 +246,7 @@
  }
  
  gen_dep_list () {
-@@ -2368,15 +2381,17 @@ dependency_check () {
+@@ -2368,15 +2386,17 @@ dependency_check () {
  		rundeps=`gen_dep_list run-depends-list`
  
  		for dep in $d_port_list; do
@@ -241,7 +267,7 @@
  				rundep_list="$rundep_list $varname"
  				eval $varname=\"$portdir \$$varname\"
  				eval ${varname}_p=$dep
-@@ -2409,7 +2424,10 @@ dependency_check () {
+@@ -2409,7 +2429,10 @@ dependency_check () {
  
  	# Do not export, for THIS parent process only
  	[ -n "$PM_FIRST_PASS" ] && doing_dep_check=doing_dep_check
@@ -253,7 +279,7 @@
  		origin="${d_port#$pd/}"
  		if [ -n "$SHOW_WORK" ]; then
  			iport=`iport_from_origin $origin`
-@@ -2429,20 +2447,14 @@ dependency_check () {
+@@ -2429,20 +2452,14 @@ dependency_check () {
  		[ -z "$PM_URB_UP" ] &&
  			case "$CUR_DEPS" in *:${origin}:*) continue ;; esac
  
@@ -278,7 +304,7 @@
  			fi
  			for glob in $conflicts; do
  				confl_p=`pkg query -g "%n-%v" $glob 2>/dev/null`
-@@ -2498,7 +2510,11 @@ dependency_check () {
+@@ -2498,7 +2515,11 @@ dependency_check () {
  			check_for_updates $iport $origin || fail 'Update failed'
  		else
  			check_interactive $origin || continue
@@ -291,16 +317,27 @@
  		fi
  	done
  	[ -n "$PM_FIRST_PASS" ] && unset doing_dep_check
-@@ -2773,7 +2789,7 @@ multiport () {
+@@ -2773,8 +2794,8 @@ multiport () {
  
  		num=$(( $num + 1 ))
  		init_term_printf "$port ${num}/${numports}"
 -		("$program" $ARGS $port) || update_failed=update_failed
+-		. $IPC_SAVE && > $IPC_SAVE
 +		($program $ARGS $port) || update_failed=update_failed
- 		. $IPC_SAVE && > $IPC_SAVE
++		. $IPC_SAVE && : > $IPC_SAVE
  		[ -n "$update_failed" ] && fail "Update for $port failed"
  
-@@ -3029,8 +3045,12 @@ no_valid_port () {
+ 		case "$PM_NEEDS_UPDATE" in
+@@ -2823,7 +2844,7 @@ multiport () {
+ 		num=$(( $num + 1 ))
+ 		init_term_printf "$port ${num}/${numports}"
+ 		("$program" $ARGS $port) || update_failed=update_failed
+-		. $IPC_SAVE && > $IPC_SAVE
++		. $IPC_SAVE && : > $IPC_SAVE
+ 		[ -n "$update_failed" ] && fail "Update for $port failed"
+ 	done
+ 
+@@ -3029,8 +3050,12 @@ no_valid_port () {
  	echo "===>>> Try $progname --help" ; echo '' ; safe_exit 1
  }
  
@@ -313,7 +350,7 @@
  	export_flavor $(flavor_part $portdir)
  	[ -n "$portdir" ] && { argv=$portdir ; unset portdir; }
  	argv=${argv:-$1} ; argv=${argv%/} ; argv=`globstrip $argv`
-@@ -3061,6 +3081,8 @@ if [ -z "$REPLACE_ORIGIN" ]; then
+@@ -3061,9 +3086,11 @@ if [ -z "$REPLACE_ORIGIN" ]; then
  		unset glob_dirs
  	fi
  	unset argv
@@ -321,8 +358,21 @@
 +	[ "$make_target" != install ] && PM_MAKE_ARGS="-DDISABLE_CONFLICTS $PM_MAKE_ARGS"
  else
  	portdir="${1#$pd/}" ; portdir="${portdir%/}"
- 	export_flavor=$(flavor_part $portdir)
-@@ -3142,8 +3164,9 @@ iport_from_pkgname () {
+-	export_flavor=$(flavor_part $portdir)
++	export_flavor $(flavor_part $portdir)
+ 	if [ -z "$PM_INDEX_ONLY" ]; then
+ 		pm_isdir_pd "$portdir" ] || missing=missing
+ 	else
+@@ -3076,7 +3103,7 @@ else
+ 		echo '' ; no_valid_port
+ 	fi
+ 
+-	upg_port=`iport_from_origin $portdir` || upg_port=$opd
++	upg_port=`iport_from_origin $portdir` || upg_port=$opd	# <se> $opd is never set???
+ 	arg2=${2#$pd/} ; arg2=${arg2#$pdb/} ; arg2=${arg2%/}
+ 
+ 	case "$arg2" in
+@@ -3142,8 +3169,9 @@ iport_from_pkgname () {
  
  	dir=$(dir_part $1)
  	flavor=$(flavor_part $1)
@@ -334,7 +384,7 @@
  }
  
  if [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
-@@ -3229,11 +3252,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
+@@ -3229,11 +3257,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
  		fi
  	fi
  
@@ -350,7 +400,16 @@
  # Do these things first time through
  if [ -z "$PM_INDEX_ONLY" -a -z "$PM_BUILDING" -a -z "$SHOW_WORK" -a -z "$NO_ACTION" ]; then
  	# Do not start this in the background until we are sure we are going to proceed
-@@ -3636,15 +3662,21 @@ pkg_flavor () {
+@@ -3389,7 +3420,7 @@ fetch_package () {
+ 		export ppd
+ 	fi
+ 
+-	pm_isdir "$ppd" ] || { pm_sv Creating $ppd; pm_mkdir_s $ppd; }
++	pm_isdir "$ppd" || { pm_sv Creating $ppd; pm_mkdir_s $ppd; }
+ 
+ 	if [ -z "$FETCH_ARGS" ]; then
+ 		FETCH_ARGS=`pm_make -f/usr/share/mk/bsd.port.mk -V FETCH_ARGS 2>/dev/null`
+@@ -3636,15 +3667,21 @@ pkg_flavor () {
  	pm_make pretty-flavors-package-names | sed -ne 's!^\([A-Za-z0-9_]*\): *'$pkg'$!\1!p';
  }
  	export_flavor=$(pkg_flavor $new_port)
@@ -373,7 +432,7 @@
  else
  	[ -z "$local_package" ] && {
  		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.txz failed"; }
-@@ -3808,7 +3840,7 @@ if [ -z "$temp" ] && pm_isdir "$LOCALBASE_COMPAT"; the
+@@ -3808,7 +3845,7 @@ if [ -z "$temp" ] && pm_isdir "$LOCALBASE_COMPAT"; the
  
  	if [ -n "$files" ]; then
  		pm_sv Removing old shared libraries, and running ldconfig
@@ -382,7 +441,7 @@
  		$PM_SU_CMD /etc/rc.d/ldconfig start > /dev/null
  	fi
  	unset temp file files
-@@ -3876,9 +3908,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3876,9 +3913,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
