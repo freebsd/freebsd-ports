@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	uncrustify
-PORTVERSION=	0.66.1
+PORTVERSION=	0.67
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Highly configurable source code beautifier
@@ -16,7 +16,8 @@ BROKEN_mips=		fails to compile: cc1plus: error: unrecognized command line option
 BROKEN_mips64=		fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
 BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
 
-NO_WRKSUBDIR=	yes
+USE_GITHUB=	yes
+
 USES=		cmake:outsource
 CMAKE_ARGS=	-DNoGitVersionString:BOOL=TRUE
 TEST_TARGET=	test
