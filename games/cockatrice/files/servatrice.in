@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: servatrice
+# REQUIRE: LOGIN %%mysql%%
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable servatrice:
+# servatrice_enable (bool):	Set to "NO" by default.
+# servatrice_optfile (str):	Server-specific option file.
+#			Set it in the rc.conf or default behaviour of
+#			`servatriced_safe` itself, will be picking
+#			${servatrice_confdir}/my.cnf if it exists.
+# servatrice_pidfile (str):	Custum PID file path and name.
+#			Default to "${servatrice_dbdir}/${hostname}.pid".
+# servatrice_args (str):	Custom additional arguments to be passed
+#			to servatriced_safe (default empty).
+#
+
+. /etc/rc.subr
+
+name="servatrice"
+
+load_rc_config $name
+
+: ${servatrice_enable="NO"}
+: ${servatrice_flags="--config /usr/local/etc/servatrice.ini 2>1 & > /dev/null"}
+
+command="/usr/local/bin/servatrice"
+
+run_rc_command "$1"

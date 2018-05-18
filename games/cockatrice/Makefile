@@ -3,24 +3,46 @@
 
 PORTNAME=	Cockatrice
 PORTVERSION=	2.5.1.g2018.04.16
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	sbruno@FreeBSD.org
-COMMENT=	Cross-platform virtual tabletop for multiplayer card games
+COMMENT=	Virtual tabletop client and server for multiplayer card games
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
+USES=		cmake compiler:c++11-lib
+USE_QT5=	buildtools concurrent core network qmake widgets
 USE_GITHUB=	yes
 GH_TAGNAME=	2018-04-16-Release-2.5.1
 
-USES=		cmake compiler:c++11-lib
-USE_QT5=	buildtools concurrent core multimedia network printsupport \
-		qmake svg linguisttools widgets gui
-
 INSTALLS_ICONS=	yes
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
+
+OPTIONS_DEFINE=		COCKATRICE SERVATRICE MYSQL
+OPTIONS_DEFAULT=	COCKATRICE
+OPTIONS_SUB=		yes
+
+COCKATRICE_DESC=	Build Cockatrice Client
+SERVATRICE_DESC=	Build Cockatrice Server
+MYSQL_DESC=		(Server Only) Add runtime dependencies on mysql-server
+
+SERVATRICE_CMAKE_ON=	-DWITH_SERVER=ON
+SERVATRICE_CMAKE_OFF=	-DWITH_SERVER=OFF
+COCKATRICE_CMAKE_ON=	-DWITH_CLIENT=ON -DWITH_ORACLE=ON
+COCKATRICE_CMAKE_OFF=	-DWITH_CLIENT=OFF -DWITH_ORACLE=OFF
+
+COCKATRICE_USE=		qt5=multimedia,printsupport,svg,linguisttools,gui
+SERVATRICE_USE=		qt5=sql,sql-mysql,websockets
+SERVATRICE_USE+=	RC_SUBR=servatrice
+
+MYSQL_USES+=		mysql:server
+MYSQL_SUB_LIST_OFF=	mysql=""
+MYSQL_SUB_LIST=		mysql="mysql"
+
+SERVATRICE_LDFLAGS+=	-lexecinfo
 
 .include <bsd.port.mk>
