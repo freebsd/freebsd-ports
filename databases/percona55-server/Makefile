@@ -2,7 +2,7 @@
 
 PORTNAME?=	percona
 DISTVERSION=	5.5.60-38.12
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.5/Percona-Server-${DISTVERSION}/source/tarball/
 PKGNAMESUFFIX?=	55-server
@@ -86,6 +86,15 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/db/mysql
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
+SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
+.else
+SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
+.endif
+
 .endif
 
 post-patch:
