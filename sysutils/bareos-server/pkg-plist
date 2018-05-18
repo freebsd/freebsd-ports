@@ -1,5 +1,6 @@
 @sample(,bareos,640) %%ETCDIR%%/bareos-barcodes.sample
 %%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/catalog/MyCatalog.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/client/bareos-fd.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/console/bareos-mon.conf.sample
@@ -30,44 +31,36 @@
 bin/bregex
 bin/bsmtp
 bin/bwild
-lib/bareos/plugins/BareosSdPluginBaseclass.py
-lib/bareos/plugins/BareosSdWrapper.py
-lib/bareos/plugins/bareos-sd-class-plugin.py
-lib/bareos/plugins/bareos_sd_consts.py
-lib/bareos/plugins/bareos-sd.py.template
-%%PYTHON%%lib/bareos/plugins/python-sd.so
-lib/bareos/plugins/autoxflate-sd.so
+bin/timelimit
 lib/bareos/plugins/BareosDirPluginBaseclass.py
 lib/bareos/plugins/BareosDirWrapper.py
+lib/bareos/plugins/BareosSdPluginBaseclass.py
+lib/bareos/plugins/BareosSdWrapper.py
+lib/bareos/plugins/autoxflate-sd.so
 lib/bareos/plugins/bareos-dir-class-plugin.py
-lib/bareos/plugins/bareos_dir_consts.py
 lib/bareos/plugins/bareos-dir.py.template
+lib/bareos/plugins/bareos-sd-class-plugin.py
+lib/bareos/plugins/bareos-sd.py.template
+lib/bareos/plugins/bareos_dir_consts.py
+lib/bareos/plugins/bareos_sd_consts.py
 %%PYTHON%%lib/bareos/plugins/python-dir.so
+%%PYTHON%%lib/bareos/plugins/python-sd.so
 %%SCSICRYPTO%%lib/bareos/plugins/scsicrypto-sd.so
 %%SCSICRYPTO%%lib/bareos/plugins/scsitapealert-sd.so
-lib/bareos/scripts/bconsole
 lib/bareos/scripts/bareos
-lib/bareos/scripts/bareos_config
-lib/bareos/scripts/bareos-ctl-funcs
-lib/bareos/scripts/bareos-ctl-dir
-lib/bareos/scripts/bareos-ctl-fd
-lib/bareos/scripts/bareos-ctl-sd
-lib/bareos/scripts/mtx-changer
-lib/bareos/scripts/disk-changer
-lib/bareos/scripts/btraceback.gdb
-lib/bareos/scripts/btraceback.dbx
-lib/bareos/scripts/btraceback.mdb
 lib/bareos/scripts/bareos-config
 lib/bareos/scripts/bareos-config-lib.sh
+lib/bareos/scripts/bareos-ctl-dir
+lib/bareos/scripts/bareos-ctl-fd
+lib/bareos/scripts/bareos-ctl-funcs
+lib/bareos/scripts/bareos-ctl-sd
 lib/bareos/scripts/bareos-explorer
 lib/bareos/scripts/bareos-glusterfind-wrapper
+lib/bareos/scripts/bareos_config
+lib/bareos/scripts/btraceback.dbx
+lib/bareos/scripts/btraceback.gdb
+lib/bareos/scripts/btraceback.mdb
 lib/bareos/scripts/create_bareos_database
-lib/bareos/scripts/update_bareos_tables
-lib/bareos/scripts/make_bareos_tables
-lib/bareos/scripts/grant_bareos_privileges
-lib/bareos/scripts/drop_bareos_tables
-lib/bareos/scripts/drop_bareos_database
-lib/bareos/scripts/ddl/versions.map
 lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
 %%MYSQL%%lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
@@ -75,6 +68,7 @@ lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
 %%MYSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
+lib/bareos/scripts/ddl/grants/%%DBTYPE%%-change_owner.dbconfig-template.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.10_11.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.11_12.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.12_14.sql
@@ -82,18 +76,28 @@ lib/bareos/scripts/ddl/updates/%%DBTYPE%%.14_2001.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2001_2002.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2002_2003.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2003_2004.sql
-lib/bareos/scripts/make_catalog_backup.pl
-lib/bareos/scripts/make_catalog_backup
+lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2004_2171.sql
+lib/bareos/scripts/ddl/updates/%%DBTYPE%%.bee.1017_2004.sql
+lib/bareos/scripts/ddl/versions.map
 lib/bareos/scripts/delete_catalog_backup
+lib/bareos/scripts/disk-changer
+lib/bareos/scripts/drop_bareos_database
+lib/bareos/scripts/drop_bareos_tables
+lib/bareos/scripts/grant_bareos_privileges
+lib/bareos/scripts/make_bareos_tables
+lib/bareos/scripts/make_catalog_backup
+lib/bareos/scripts/make_catalog_backup.pl
+lib/bareos/scripts/mtx-changer
 lib/bareos/scripts/query.sql
+lib/bareos/scripts/update_bareos_tables
+lib/libbareoscats-%%LIB_VERSION%%.so
+lib/libbareoscats-%%DBTYPE%%-%%LIB_VERSION%%.so
+lib/libbareoscats-%%DBTYPE%%.so
+lib/libbareoscats.la
+lib/libbareoscats.so
 %%NDMP%%lib/libbareosndmp-%%LIB_VERSION%%.so
 %%NDMP%%lib/libbareosndmp.la
 %%NDMP%%lib/libbareosndmp.so
-lib/libbareoscats-%%DBTYPE%%-%%LIB_VERSION%%.so
-lib/libbareoscats-%%DBTYPE%%.so
-lib/libbareoscats-%%LIB_VERSION%%.so
-lib/libbareoscats.la
-lib/libbareoscats.so
 lib/libbareossd-%%LIB_VERSION%%.so
 lib/libbareossd.la
 lib/libbareossd.so
@@ -118,11 +122,13 @@ sbin/bareos
 sbin/bareos-dbcheck
 sbin/bareos-dir
 sbin/bareos-sd
+sbin/bbatch
 sbin/bcopy
 sbin/bextract
 sbin/bls
 sbin/bpluginfo
 sbin/bregex
+sbin/bregtest
 sbin/bscan
 sbin/bscrypto
 sbin/bsmtp
@@ -130,6 +136,9 @@ sbin/btape
 sbin/btraceback
 sbin/bwild
 sbin/chio-bareos
+sbin/grow
+sbin/testls
+sbin/timelimit
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/catalog
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/client
