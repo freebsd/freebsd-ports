@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-struct
-PORTVERSION=	1.0.14
-PORTREVISION=	6
+PORTVERSION=	1.0.15
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
