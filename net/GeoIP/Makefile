@@ -3,19 +3,15 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.6.12
-DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
+MASTER_SITES=	https://github.com/maxmind/geoip-api-c/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
 LICENSE=	GPLv2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	maxmind
-GH_PROJECT=	geoip-api-c
-
-USES=		autoreconf libtool pathfix
+USES=		libtool pathfix
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
