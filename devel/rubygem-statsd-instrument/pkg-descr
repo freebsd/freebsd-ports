@@ -6,4 +6,4 @@ but unreliable.  There is no guarantee that your data will ever arrive at its
 location.  In other words, fire and forget. This is perfect for this use case
 because it means your code does not get bogged down trying to log statistics.
 
-WWW: https://github.com/Shopify/statsd-instrument/
+WWW: https://github.com/Shopify/statsd-instrument
