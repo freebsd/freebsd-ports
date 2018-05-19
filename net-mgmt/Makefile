@@ -314,6 +314,7 @@
     SUBDIR += py-msrest
     SUBDIR += py-msrestazure
     SUBDIR += py-napalm
+    SUBDIR += py-napalm-logs
     SUBDIR += py-ncclient
     SUBDIR += py-pdagent
     SUBDIR += py-pyIOSXR

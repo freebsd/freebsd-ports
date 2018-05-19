@@ -1,0 +1,5 @@
+Parses syslog messages from network devices and produce JSON serializable
+Python objects, in a vendor agnostic shape. The output objects are structured
+following the OpenConfig or IETF YANG model specifications.
+
+WWW: https://github.com/napalm-automation/napalm-logs

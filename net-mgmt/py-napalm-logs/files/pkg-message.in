@@ -1,0 +1,57 @@
+===============================================================================
+
+=====================
+ Paths / CLI version
+=====================
+
+napalm-logs has been installed into:
+
+%%PREFIX%%/bin/napalm-logs-%%PYTHON_VER%%
+
+The default path for the configuration file is:
+
+%%PREFIX%%/etc/napalm/logs
+
+The default path for logfiles (will be created automatically on first run) is:
+
+/var/log/napalm/logs
+
+==================================
+ Message encryption / CLI version
+==================================
+
+If the messaging between server/client should be encrypted, one will require a
+certificate and a key otherwise the program will throw an exception and exits.
+
+Generate a certificate with the following command:
+
+$ openssl req -nodes -x509 -newkey rsa:4096 -keyout napalm-logs.key -out napalm-logs.crt -days 365
+
+If no encryption is required, please read further below how to start the server
+without a certificate.
+
+===================================
+ Starting the server / CLI version
+===================================
+
+a) with encrypted messaging:
+
+# napalm-logs-%%PYTHON_VER%% --certificate napalm-logs.cert --keyfile napalm-logs.key
+
+b) with unencrypted messaging:
+
+# napalm-logs-%%PYTHON_VER%% --disable-security
+
+In both cases the server will listen on
+
+	0.0.0.0:514 [UDP / incoming syslog messages]
+	0.0.0.0:49017 [TCP / incoming client requests]
+
+In case a) when security is enabled, the server will listen also on:
+
+	0.0.0.0:49018 [TCP / incoming authentication requests]  
+
+Please read https://napalm-logs.readthedocs.io/en/latest for further
+information.
+
+==============================================================================
