@@ -4,4 +4,4 @@ own native API, as well as a set of wrapper functions that correspond to the
 POSIX regular expression API. The PCRE library is free, even for building
 proprietary software.
 
-WWW: http://www.pcre.org/
+WWW: https://www.pcre.org/
