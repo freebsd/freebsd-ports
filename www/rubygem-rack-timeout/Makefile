@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-timeout
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
