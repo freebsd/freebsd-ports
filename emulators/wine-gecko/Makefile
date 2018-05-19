@@ -17,10 +17,12 @@ LICENSE_COMB=	multi
 
 PORTSCOUT=	ignore:1	# for newer versions see emulators/wine-gecko-devel
 
+CONFLICTS_INSTALL=	wine-gecko-devel-[0-9]*
+
 NO_BUILD=	yes
 PLIST_SUB+=	GECKO_VERSION="${DISTVERSION}"
 DATADIR=	${PREFIX}/share/wine
-PLIST_FILES=	%%DATADIR%%/gecko/wine_gecko-%%GECKO_VERSION%%-x86.msi
+PLIST_FILES=	${DATADIR}/gecko/wine_gecko-${DISTVERSION}-x86.msi
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/gecko
