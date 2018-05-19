@@ -245,9 +245,9 @@ _USE_KDE4_ALL+= 	${_USE_KDE_BOTH}
 # that our list of frameworks matches the structure offered upstream.
 _USE_FRAMEWORKS_TIER1=	apidox archive attica5 breeze-icons codecs config \
 			coreaddons dbusaddons dnssd holidays i18n idletime itemmodels \
-			itemviews kirigami2 oxygen-icons5 plotting prison solid \
-			sonnet syntaxhighlighting threadweaver wayland \
-			widgetsaddons windowsystem
+			itemviews kirigami2 oxygen-icons5 plotting prison \
+			qqc2-desktop-style solid sonnet syntaxhighlighting \
+			threadweaver wayland widgetsaddons windowsystem
 # NOT LISTED TIER1: modemmanagerqt networkmanagerqt (not applicable)
 
 _USE_FRAMEWORKS_TIER2=	auth completion crash doctools \
@@ -577,6 +577,9 @@ pty_LIB=		libKF5Pty.so
 
 purpose_PORT=		misc/kf5-purpose
 purpose_LIB=		libKF5Purpose.so
+
+qqc2-desktop-style_PORT=	x11-themes/kf5-qqc2-desktop-style
+qqc2-desktop-style_PATH=	${QT_PLUGINDIR}/kf5/kirigami/org.kde.desktop.so
 
 runner_PORT=		x11/kf5-krunner
 runner_LIB=		libKF5Runner.so

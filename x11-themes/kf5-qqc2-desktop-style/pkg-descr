@@ -1,0 +1,5 @@
+This is a style for QtQuickControls 2 that uses QWidget's QStyle 
+for painting, making possible to achieve an higher deree of 
+consistency between QWidget-based and QML-based apps.
+
+WWW: http://www.kde.org
