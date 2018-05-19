@@ -1,0 +1,30 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	xarray
+PORTVERSION=	0.10.4
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	N-D labeled arrays and datasets in Python
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=0.18.0:math/py-pandas@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.7.1:devel/py-pytest@${FLAVOR}
+
+NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3000
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

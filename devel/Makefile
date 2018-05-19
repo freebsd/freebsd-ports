@@ -5095,6 +5095,7 @@
     SUBDIR += py-wsgitools
     SUBDIR += py-wsgiutils
     SUBDIR += py-wsme
+    SUBDIR += py-xarray
     SUBDIR += py-xattr
     SUBDIR += py-xcaplib
     SUBDIR += py-xdg
