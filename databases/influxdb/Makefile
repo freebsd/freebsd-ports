@@ -2,7 +2,7 @@
 
 PORTNAME=	influxdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.2
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	cheffo@freebsd-bg.org
