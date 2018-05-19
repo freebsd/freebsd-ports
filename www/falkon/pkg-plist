@@ -3,6 +3,7 @@ lib/libFalkonPrivate.so.3
 lib/libFalkonPrivate.so.3.0.0
 %%QT_PLUGINDIR%%/falkon/AutoScroll.so
 %%QT_PLUGINDIR%%/falkon/FlashCookieManager.so
+%%GNOMEKEYRING%%%%QT_PLUGINDIR%%/falkon/GnomeKeyringPasswords.so
 %%QT_PLUGINDIR%%/falkon/GreaseMonkey.so
 %%QT_PLUGINDIR%%/falkon/ImageFinder.so
 %%QT_PLUGINDIR%%/falkon/KWalletPasswords.so

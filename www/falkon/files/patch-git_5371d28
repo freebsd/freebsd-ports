@@ -1,0 +1,39 @@
+From 5371d289f89c306a237c13300bd1af5fb2fb7365 Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Sat, 19 May 2018 13:59:24 +0200
+Subject: [PATCH] Use IMPORTED_TARGET for GnomeKeyring.
+
+Otherwise we would need to append also GNOME_KEYRING_LIBRARY_DIRS to
+link_directories.
+---
+ CMakeLists.txt                                   | 2 +-
+ src/plugins/GnomeKeyringPasswords/CMakeLists.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git CMakeLists.txt CMakeLists.txt
+index ca7c9b0e..cb35545d 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -98,7 +98,7 @@ find_package(PkgConfig)
+ if (PKG_CONFIG_FOUND)
+     option(BUILD_KEYRING "Gnome keyring password plugin" ON)
+     if (BUILD_KEYRING)
+-        pkg_check_modules(GNOME_KEYRING gnome-keyring-1)
++        pkg_check_modules(GNOME_KEYRING IMPORTED_TARGET gnome-keyring-1 )
+     endif()
+ endif()
+ 
+diff --git src/plugins/GnomeKeyringPasswords/CMakeLists.txt src/plugins/GnomeKeyringPasswords/CMakeLists.txt
+index 6dd837c2..bc27ee23 100644
+--- src/plugins/GnomeKeyringPasswords/CMakeLists.txt
++++ src/plugins/GnomeKeyringPasswords/CMakeLists.txt
+@@ -14,5 +14,5 @@ qt5_add_resources(RSCS ${GnomeKeyringPasswords_RSCS})
+ 
+ add_library(GnomeKeyringPasswords MODULE ${GnomeKeyringPasswords_SRCS} ${RSCS})
+ install(TARGETS GnomeKeyringPasswords DESTINATION ${FALKON_INSTALL_PLUGINDIR})
+-target_link_libraries(GnomeKeyringPasswords ${GNOME_KEYRING_LIBRARIES} FalkonPrivate)
++target_link_libraries(GnomeKeyringPasswords PkgConfig::GNOME_KEYRING FalkonPrivate)
+ 
+-- 
+2.17.0
+

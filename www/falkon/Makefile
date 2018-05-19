@@ -2,6 +2,7 @@
 
 PORTNAME=	falkon
 DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	KDE/stable/falkon/${DISTVERSION:R}/src/
 
@@ -19,5 +20,12 @@ USE_QT5=	core dbus gui location network printsupport qml quick \
 USE_XORG=	xcb
 
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	GNOMEKEYRING
+OPTIONS_SUB=	YES
+
+GNOMEKEYRING_CMAKE_BOOL=	BUILD_KEYRING
+GNOMEKEYRING_USE=		GNOME=glib20
+GNOMEKEYRING_LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
 
 .include <bsd.port.mk>
