@@ -14,6 +14,8 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple XML-editing for GNU Emacs
 
+LICENSE=	GPLv2+
+
 USES=		emacs
 
 NO_WRKSUBDIR=	yes
