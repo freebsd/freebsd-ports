@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-aircraft
-PORTVERSION=	20170929
+PORTVERSION=	20180516
 CATEGORIES=	games
 # See http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Aircraft/ \
-	http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft/
+	http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Aircraft/
 # Selection of production-ready/well-known planes
 # (planes already included in flightgear-data are excluded)
 # Please contact MAINTAINER if a plane is missing
