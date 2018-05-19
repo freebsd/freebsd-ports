@@ -1,9 +1,9 @@
 @sample etc/crm/crm.conf.sample
-%%PYTHON_SITELIBDIR%%/crmsh-3.0.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/crmsh-3.0.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/crmsh-3.0.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/crmsh-3.0.0-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/crmsh-3.0.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/crmsh-3.0.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/crmsh-3.0.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/crmsh-3.0.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/crmsh-3.0.1-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/crmsh-3.0.1-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/crmsh/__init__.py
 %%PYTHON_SITELIBDIR%%/crmsh/__init__.pyc
 %%PYTHON_SITELIBDIR%%/crmsh/bootstrap.py
