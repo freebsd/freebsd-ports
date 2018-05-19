@@ -3,8 +3,8 @@
 
 PORTNAME=	gitlab
 PORTVERSION=	10.7.3
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -82,7 +82,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-hamlit26>=2.6.1:www/rubygem-hamlit26 \
 	rubygem-carrierwave>=1.1:www/rubygem-carrierwave \
 	rubygem-dropzonejs-rails07>=0.7.1:www/rubygem-dropzonejs-rails07 \
-	rubygem-fog-aws>=2.0.1:net/rubygem-fog-aws \
+	rubygem-fog-aws2>=2.0.1:net/rubygem-fog-aws2 \
 	rubygem-fog-core1>=1.44:devel/rubygem-fog-core1 \
 	rubygem-fog-google>=1.3.3:net/rubygem-fog-google \
 	rubygem-fog-local>=0.3:net/rubygem-fog-local \
