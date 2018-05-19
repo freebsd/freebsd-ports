@@ -1,4 +1,4 @@
---- utility.c.orig	2012-10-26 20:05:38 UTC
+--- utility.c.orig	2012-09-23 00:14:36 UTC
 +++ utility.c
 @@ -40,6 +40,10 @@ die2(const char* p_text1, const char* p_
  void

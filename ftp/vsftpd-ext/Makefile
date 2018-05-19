@@ -3,7 +3,6 @@
 
 PORTNAME=	vsftpd-ext
 PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}
-PORTREVISION=	2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://vsftpd.devnet.ru/files/${UPSTREAMVERSION}/ext.${EXTVERSION}/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
@@ -14,7 +13,7 @@ COMMENT=	FTP daemon that aims to be "very secure". Extended build
 
 LICENSE=	GPLv2
 
-UPSTREAMVERSION=3.0.2
+UPSTREAMVERSION=3.0.3
 EXTVERSION=	1
 
 USES=		alias gmake tar:tgz
