@@ -8,6 +8,7 @@ lib/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_dispatcher.beam
 lib/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_error.beam
 lib/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_error_handler.beam
 lib/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_error_log_handler.beam
+lib/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_headers.beam
 lib/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_log.beam
 lib/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_logger_watcher.beam
 lib/erlang/lib/webmachine-%%VERSION%%/ebin/webmachine_logger_watcher_sup.beam
@@ -26,17 +27,6 @@ lib/erlang/lib/webmachine-%%VERSION%%/include/webmachine_logger.hrl
 lib/erlang/lib/webmachine-%%VERSION%%/include/wm_reqdata.hrl
 lib/erlang/lib/webmachine-%%VERSION%%/include/wm_reqstate.hrl
 lib/erlang/lib/webmachine-%%VERSION%%/include/wm_resource.hrl
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/Makefile
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/README
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/rebar.config
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel.app.src
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel.erl
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_app.erl
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_config.erl
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_resource.erl
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/src/wmskel_sup.erl
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/start.sh
-lib/erlang/lib/webmachine-%%VERSION%%/priv/templates/wmskel.template
 lib/erlang/lib/webmachine-%%VERSION%%/priv/trace/http-headers-status-v3.png
 lib/erlang/lib/webmachine-%%VERSION%%/priv/trace/wmtrace.css
 lib/erlang/lib/webmachine-%%VERSION%%/priv/trace/wmtrace.js
@@ -51,6 +41,7 @@ lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_dispatcher.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_error.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_error_handler.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_error_log_handler.erl
+lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_headers.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_log.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_logger_watcher.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_logger_watcher_sup.erl
@@ -64,18 +55,4 @@ lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_sup.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/webmachine_util.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/wmtrace_resource.erl
 lib/erlang/lib/webmachine-%%VERSION%%/src/wrq.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.org
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/priv/dispatch.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rebar.config
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo.app.src
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo.erl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_app.erl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_fs_resource.erl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_resource.erl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_sup.erl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/webmachine_demo_upload_resource.erl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/start.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/form.dtl
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/priv/www/uploads
+%%PORTDOCS%%%%DOCSDIR%%/README.md
