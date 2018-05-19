@@ -1,6 +1,24 @@
 --- CMakeLists.txt.orig	2017-05-16 21:46:21 UTC
 +++ CMakeLists.txt
-@@ -350,21 +350,21 @@ if(BUILD_TESTING)
+@@ -33,6 +33,17 @@ set(CMAKE_C_FLAGS "-Wshadow -Wimplicit-f
+ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 	set(CMAKE_MODULE_LINKER_FLAGS "-Wl,-z,defs ${CMAKE_MODULE_LINKER_FLAGS}")
+ 	set(CMAKE_MODULE_LINKER_FLAGS "-Wl,-z,nodelete ${CMAKE_MODULE_LINKER_FLAGS}")
++elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++	# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=221341
++	include(CheckFunctionExists)
++	check_function_exists(clog FreeBSD_CLOG_EXISTS)
++	check_function_exists(cpow FreeBSD_CPOW_EXISTS)
++	if (FreeBSD_CLOG_EXISTS)
++		set(CMAKE_C_FLAGS "-DFreeBSD_CLOG_EXISTS ${CMAKE_C_FLAGS}")
++	endif()
++	if (FreeBSD_CPOW_EXISTS)
++		set(CMAKE_C_FLAGS "-DFreeBSD_CPOW_EXISTS ${CMAKE_C_FLAGS}")
++	endif()
+ elseif(WIN32)
+ 	set(CMAKE_C_FLAGS "-mstackrealign ${CMAKE_C_FLAGS}")
+ endif()
+@@ -350,21 +361,21 @@ if(BUILD_TESTING)
  	endif()
  	set_target_properties(moony_test PROPERTIES INTERPROCEDURAL_OPTIMIZATION true) # -flto
  	target_link_libraries(moony_test ${LIBS})

@@ -8,12 +8,15 @@
  
  #include "lua.h"
  #include "lauxlib.h"
-@@ -78,6 +79,32 @@ static int Ltostring(lua_State *L)		/** 
+@@ -78,6 +79,36 @@ static int Ltostring(lua_State *L)		/** 
   return 1;
  }
  
++#if !defined(FreeBSD_CLOG_EXISTS)
 +// Missing C99 functions clog and cpow: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=221341
 +static Complex clog(Complex z) {return log(cabs(z)) + I * carg(z);}
++#endif
++#if !defined(FreeBSD_CPOW_EXISTS)
 +// from https://github.com/eblot/newlib/blob/master/newlib/libm/complex/cpow.c
 +static Complex
 +cpow(Complex a, Complex z)
@@ -37,6 +40,7 @@
 +	w = r * cos(theta) + (r * sin(theta)) * I;
 +	return w;
 +}
++#endif
 +
  #define A(f,e)	static int L##f(lua_State *L) { return pushcomplex(L,e); }
  #define B(f)	A(f,l_mathop(c##f)(Z(1),Z(2)))
