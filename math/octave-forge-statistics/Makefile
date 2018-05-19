@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-statistics
-PORTVERSION=	1.3.0
-PORTREVISION=	4
+PORTVERSION=	1.4.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
