@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmpi
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	3
@@ -25,7 +25,7 @@ HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
 USES=		fortran gmake libtool:keepla localbase perl5 \
-		pkgconfig tar:bzip2
+		pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
 
 MPIBASE?=	mpi
@@ -52,6 +52,9 @@ USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
 
 MANPREFIX=	${PREFIX}/${MPIDIR}
+
+SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
+		ompi/mca/common/monitoring/aggregate_profile.pl
 
 OPTIONS_DEFINE=	DEBUG IPV6 SLURM TORQUE
 TORQUE_DESC=	Enable Torque support
