@@ -191,6 +191,10 @@ include/mlpack/core/optimizers/aug_lagrangian/aug_lagrangian_function.hpp
 include/mlpack/core/optimizers/aug_lagrangian/aug_lagrangian_function_impl.hpp
 include/mlpack/core/optimizers/aug_lagrangian/aug_lagrangian_impl.hpp
 include/mlpack/core/optimizers/aug_lagrangian/aug_lagrangian_test_functions.hpp
+include/mlpack/core/optimizers/bigbatch_sgd/adaptive_stepsize.hpp
+include/mlpack/core/optimizers/bigbatch_sgd/backtracking_line_search.hpp
+include/mlpack/core/optimizers/bigbatch_sgd/bigbatch_sgd.hpp
+include/mlpack/core/optimizers/bigbatch_sgd/bigbatch_sgd_impl.hpp
 include/mlpack/core/optimizers/cmaes/cmaes.hpp
 include/mlpack/core/optimizers/cmaes/cmaes_impl.hpp
 include/mlpack/core/optimizers/cmaes/full_selection.hpp
@@ -488,8 +492,10 @@ include/mlpack/methods/ann/ffn_impl.hpp
 include/mlpack/methods/ann/init_rules/const_init.hpp
 include/mlpack/methods/ann/init_rules/gaussian_init.hpp
 include/mlpack/methods/ann/init_rules/glorot_init.hpp
+include/mlpack/methods/ann/init_rules/he_init.hpp
 include/mlpack/methods/ann/init_rules/init_rules_traits.hpp
 include/mlpack/methods/ann/init_rules/kathirvalavakumar_subavathi_init.hpp
+include/mlpack/methods/ann/init_rules/lecun_normal_init.hpp
 include/mlpack/methods/ann/init_rules/network_init.hpp
 include/mlpack/methods/ann/init_rules/nguyen_widrow_init.hpp
 include/mlpack/methods/ann/init_rules/oivs_init.hpp
@@ -499,6 +505,8 @@ include/mlpack/methods/ann/layer/add.hpp
 include/mlpack/methods/ann/layer/add_impl.hpp
 include/mlpack/methods/ann/layer/add_merge.hpp
 include/mlpack/methods/ann/layer/add_merge_impl.hpp
+include/mlpack/methods/ann/layer/alpha_dropout.hpp
+include/mlpack/methods/ann/layer/alpha_dropout_impl.hpp
 include/mlpack/methods/ann/layer/base_layer.hpp
 include/mlpack/methods/ann/layer/batch_norm.hpp
 include/mlpack/methods/ann/layer/batch_norm_impl.hpp
@@ -512,8 +520,6 @@ include/mlpack/methods/ann/layer/constant.hpp
 include/mlpack/methods/ann/layer/constant_impl.hpp
 include/mlpack/methods/ann/layer/convolution.hpp
 include/mlpack/methods/ann/layer/convolution_impl.hpp
-include/mlpack/methods/ann/layer/cross_entropy_error.hpp
-include/mlpack/methods/ann/layer/cross_entropy_error_impl.hpp
 include/mlpack/methods/ann/layer/dropconnect.hpp
 include/mlpack/methods/ann/layer/dropconnect_impl.hpp
 include/mlpack/methods/ann/layer/dropout.hpp
@@ -522,6 +528,8 @@ include/mlpack/methods/ann/layer/elu.hpp
 include/mlpack/methods/ann/layer/elu_impl.hpp
 include/mlpack/methods/ann/layer/fast_lstm.hpp
 include/mlpack/methods/ann/layer/fast_lstm_impl.hpp
+include/mlpack/methods/ann/layer/flexible_relu.hpp
+include/mlpack/methods/ann/layer/flexible_relu_impl.hpp
 include/mlpack/methods/ann/layer/glimpse.hpp
 include/mlpack/methods/ann/layer/glimpse_impl.hpp
 include/mlpack/methods/ann/layer/gru.hpp
@@ -549,8 +557,6 @@ include/mlpack/methods/ann/layer/max_pooling.hpp
 include/mlpack/methods/ann/layer/max_pooling_impl.hpp
 include/mlpack/methods/ann/layer/mean_pooling.hpp
 include/mlpack/methods/ann/layer/mean_pooling_impl.hpp
-include/mlpack/methods/ann/layer/mean_squared_error.hpp
-include/mlpack/methods/ann/layer/mean_squared_error_impl.hpp
 include/mlpack/methods/ann/layer/multiply_constant.hpp
 include/mlpack/methods/ann/layer/multiply_constant_impl.hpp
 include/mlpack/methods/ann/layer/negative_log_likelihood.hpp
@@ -567,10 +573,16 @@ include/mlpack/methods/ann/layer/select.hpp
 include/mlpack/methods/ann/layer/select_impl.hpp
 include/mlpack/methods/ann/layer/sequential.hpp
 include/mlpack/methods/ann/layer/sequential_impl.hpp
-include/mlpack/methods/ann/layer/sigmoid_cross_entropy_error.hpp
-include/mlpack/methods/ann/layer/sigmoid_cross_entropy_error_impl.hpp
 include/mlpack/methods/ann/layer/vr_class_reward.hpp
 include/mlpack/methods/ann/layer/vr_class_reward_impl.hpp
+include/mlpack/methods/ann/loss_functions/cross_entropy_error.hpp
+include/mlpack/methods/ann/loss_functions/cross_entropy_error_impl.hpp
+include/mlpack/methods/ann/loss_functions/kl_divergence.hpp
+include/mlpack/methods/ann/loss_functions/kl_divergence_impl.hpp
+include/mlpack/methods/ann/loss_functions/mean_squared_error.hpp
+include/mlpack/methods/ann/loss_functions/mean_squared_error_impl.hpp
+include/mlpack/methods/ann/loss_functions/sigmoid_cross_entropy_error.hpp
+include/mlpack/methods/ann/loss_functions/sigmoid_cross_entropy_error_impl.hpp
 include/mlpack/methods/ann/rnn.hpp
 include/mlpack/methods/ann/rnn_impl.hpp
 include/mlpack/methods/ann/visitor/add_visitor.hpp
@@ -804,7 +816,9 @@ include/mlpack/methods/regularized_svd/regularized_svd_function_impl.hpp
 include/mlpack/methods/regularized_svd/regularized_svd_impl.hpp
 include/mlpack/methods/reinforcement_learning/async_learning.hpp
 include/mlpack/methods/reinforcement_learning/async_learning_impl.hpp
+include/mlpack/methods/reinforcement_learning/environment/acrobat.hpp
 include/mlpack/methods/reinforcement_learning/environment/cart_pole.hpp
+include/mlpack/methods/reinforcement_learning/environment/continuous_mountain_car.hpp
 include/mlpack/methods/reinforcement_learning/environment/mountain_car.hpp
 include/mlpack/methods/reinforcement_learning/policy/aggregated_policy.hpp
 include/mlpack/methods/reinforcement_learning/policy/greedy_policy.hpp
