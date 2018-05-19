@@ -25,6 +25,6 @@ USE_PERL5=	modbuild
 USES=		perl5
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/GSL/ -name "*.so" | ${XARGS} ${STRIP_CMD}
+	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/GSL/ -name "*.so" -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
