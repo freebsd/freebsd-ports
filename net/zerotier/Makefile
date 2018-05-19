@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zerotier
-PORTVERSION=	1.2.4
-PORTREVISION=	2
+DISTVERSION=	1.2.8
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -23,6 +22,10 @@ USE_GITHUB=	yes
 GH_PROJECT=	ZeroTierOne
 
 CFLAGS+=	-flax-vector-conversions
+
+OPTIONS_DEFINE=	DBG
+DBG_DESC=	Enable foreground debugging for zerotier-one daemon
+DBG_ALL_TARGET=	debug
 
 PLIST_FILES=	bin/zerotier-cli bin/zerotier-idtool sbin/zerotier-one
 
