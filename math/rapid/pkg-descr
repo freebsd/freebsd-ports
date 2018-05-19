@@ -1,16 +1,12 @@
-RAPID is a  robust and accurate polygon interference detection library
-for large environments composed of unstructured models.
-
-WWW: http://www.cs.unc.edu/~geom/OBB/OBBT.html
+RAPID is a robust and accurate polygon interference detection library for
+large environments composed of unstructured models.
 
 **************************************************************************
 
 The RAPID code is offered "as is" and is free for non-commercial use.
 
-To use RAPID for any commercial purpose, you must request a license from
-
-	http://www.cs.unc.edu/~geom/OBB/OBBT.html
-
-Redistribution of RAPID code in any form is strictly prohibited.
+To use RAPID for any commercial purpose, you must request a license.
 
 **************************************************************************
+
+WWW: http://www.cs.unc.edu/~geom/OBB/OBBT.html

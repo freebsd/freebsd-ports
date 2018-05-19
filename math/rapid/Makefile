@@ -3,21 +3,24 @@
 PORTNAME=	rapid
 PORTVERSION=	2.01
 CATEGORIES=	math science graphics
-MASTER_SITES=	http://www.cs.sunysb.edu/~algorith/implement/RAPID/distrib/ \
-		http://www.neuro.mcw.edu/Ports/distfiles/
+MASTER_SITES=	http://www.cs.sunysb.edu/~algorith/implement/RAPID/distrib/
 DISTNAME=	RAPID_v2_01
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Robust and Accurate Polygon Interference Detection
 
-RESTRICTED=	For any commercial purpose, you must request a license from http://www.cs.unc.edu/~geom/OBB/OBBT.html
+LICENSE=	UNKNOWN
+LICENSE_NAME=	unknown
+LICENSE_TEXT=	For any commercial purpose, you must request a license from \
+		http://www.cs.unc.edu/~geom/OBB/OBBT.html
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell no-pkg-mirror \
+		auto-accept
 
 SUB_FILES=	pkg-message
 
 ALL_TARGET=
 MAKE_JOBS_UNSAFE=	yes
-
-MAKE_ENV+=	V=1
+MAKE_ENV+=		V=1
 
 .include <bsd.port.pre.mk>
 
