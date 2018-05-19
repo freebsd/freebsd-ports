@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metpy
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,8 @@ RUN_DEPENDS=	${ENUM34} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.10.0:math/py-numpy@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pint>=0.8:converters/py-pint@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.4:graphics/py-pyproj@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.14:science/py-scipy@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.14:science/py-scipy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xarray>=0.9.6:devel/py-xarray@${FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
