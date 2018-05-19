@@ -10,15 +10,15 @@ include/pcrecpp.h
 lib/libpcre.a
 lib/libpcre.so
 lib/libpcre.so.1
-lib/libpcre.so.1.2.8
+lib/libpcre.so.1.2.10
 lib/libpcre16.a
 lib/libpcre16.so
 lib/libpcre16.so.0
-lib/libpcre16.so.0.2.8
+lib/libpcre16.so.0.2.10
 lib/libpcre32.a
 lib/libpcre32.so
 lib/libpcre32.so.0
-lib/libpcre32.so.0.0.8
+lib/libpcre32.so.0.0.10
 lib/libpcrecpp.a
 lib/libpcrecpp.so
 lib/libpcrecpp.so.0
@@ -26,7 +26,7 @@ lib/libpcrecpp.so.0.0.1
 lib/libpcreposix.a
 lib/libpcreposix.so
 lib/libpcreposix.so.0
-lib/libpcreposix.so.0.0.4
+lib/libpcreposix.so.0.0.6
 libdata/pkgconfig/libpcre.pc
 libdata/pkgconfig/libpcre16.pc
 libdata/pkgconfig/libpcre32.pc
