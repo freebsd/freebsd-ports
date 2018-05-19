@@ -1,1 +1,3 @@
-A little script for removing leaf packages (requires pkgng).
+A little script for removing leaf packages (requires pkg).
+
+WWW: https://github.com/bsdelf/pkg-rmleaf
