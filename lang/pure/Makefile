@@ -21,12 +21,13 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 SUB_FILES=	pkg-message
 
-USES=		gmake iconv pathfix pkgconfig
+USES=		gmake iconv libedit pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release \
 		--with-pcre	\
 		--with-tool-prefix=${LOCALBASE}/llvm${LLVM_VERSION}/bin
 EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions --exclude texmacs
+TEST_TARGET=	check  # XXX: some tests fail
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
@@ -65,9 +66,6 @@ post-patch:
 	    -e 's,"+interp.libdir+"docs,${DOCSDIR},g' \
 		${WRKSRC}/lexer.cc
 
-test check regression-test: build
-	${GMAKE} -C ${WRKSRC} check
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -93,23 +91,22 @@ CONFIGURE_ARGS+=ac_cv_lib_iconv_libiconv=no ac_cv_lib_iconv_iconv=no
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pure	\
 		${STAGEDIR}${PREFIX}/lib/libpure.so.*.*
-.if ${PORT_OPTIONS:METC}
+
+post-install-ETC-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/etc/
 	@(cd ${WRKSRC} && ${RM} etc/*.in && ${COPYTREE_SHARE} etc/ ${STAGEDIR}${DATADIR})
-.endif
 
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${TAR} -C ${STAGEDIR}${DOCSDIR} --strip-components 1	\
 		--exclude Makefile --exclude '*.tm'	\
 		${EXTRACT_AFTER_ARGS}	\
 		-xpf ${_DISTDIR}${_DISTFILES:M*-docs*}
 	${FIND} ${STAGEDIR}${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.post.mk>
