@@ -15,9 +15,9 @@
 # which is mirrored at ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/.
 ###########################################################################
 
---- DEFAULTS/Defaults.freebsd.orig	2013-11-04 21:58:20.000000000 +0100
-+++ DEFAULTS/Defaults.freebsd	2014-02-03 01:16:19.000000000 +0100
-@@ -29,8 +29,8 @@
+--- DEFAULTS/Defaults.freebsd.orig	2013-11-04 20:58:20 UTC
++++ DEFAULTS/Defaults.freebsd
+@@ -29,8 +29,8 @@ DEFLINKMODE=	static
  CWARNOPTS=
  
  DEFINCDIRS=	$(SRCROOT)/include

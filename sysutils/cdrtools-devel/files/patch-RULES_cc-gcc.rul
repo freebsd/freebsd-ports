@@ -15,8 +15,8 @@
 # which is mirrored at ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/.
 ###########################################################################
 
---- RULES/cc-gcc.rul.orig	Thu Jul  6 12:59:44 2006
-+++ RULES/cc-gcc.rul	Sat Jul 22 03:55:52 2006
+--- RULES/cc-gcc.rul.orig	2017-05-28 21:47:50 UTC
++++ RULES/cc-gcc.rul
 @@ -24,11 +24,12 @@
  GCC_OPT=
  GCC_OPT32=	-m32
@@ -33,7 +33,7 @@
  
  CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%)
  COPTS=		$(GCC_OPTXX)
-@@ -36,12 +37,10 @@
+@@ -36,12 +37,10 @@ COPTS=		$(GCC_OPTXX)
  CWOPTS=		-Wall -Wtraditional
  CWOPTS=		-Wall -Wno-unknown-pragmas \
  		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
@@ -46,7 +46,7 @@
  C++OPTDYN=	-fpic
  C++OPTGPROF=	-pg
  
-@@ -61,28 +60,18 @@
+@@ -63,28 +62,18 @@ LNDYNLIB=	@$(RM) $(RM_FORCE) $(PTARGET_B
  
  FLOAT_OPTIONS=	
  
@@ -62,16 +62,15 @@
 -CC++_COM_DEF=	g++
 -CC=		$(CC_COM_DEF)
 -CCC=		$(CC++_COM_DEF)
--
++CC_COM=		$(CC)
++CC++_COM=	$(CXX)
+ 
 -CCCC=		@echo "	==> COMPILING \"$@\""; $(CC_COM) $(GCC_OPTXX)
 -CC++ =		@echo "	==> COMPILING \"$@\""; $(CC++_COM) $(GCC_OPTXX)
 -LDCC=		@echo "	==> LINKING \"$@\""; $(CC_COM) $(GCC_OPTXX)
 -LDCC++ =	@echo "	==> LINKING \"$@\""; $(CC++_COM) $(GCC_OPTXX)
 -DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; $(CC_COM) $(GCC_OPTXX)
 -DYNLDC++ =	@echo "	==> LINKING dynamic library \"$@\""; $(CC++_COM) $(GCC_OPTXX)
-+CC_COM=		$(CC)
-+CC++_COM=	$(CXX)
-+
 +CCCC =		$(CC_COM)
 +CC++ =		$(CC++_COM)
 +LDCC=		$(CC_COM)

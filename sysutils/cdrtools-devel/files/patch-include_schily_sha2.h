@@ -1,6 +1,6 @@
---- include/schily/sha2.h.orig	2010-08-27 12:41:30.000000000 +0200
-+++ include/schily/sha2.h	2012-10-20 14:39:42.000000000 +0200
-@@ -104,10 +104,12 @@
+--- include/schily/sha2.h.orig	2010-08-27 10:41:30 UTC
++++ include/schily/sha2.h
+@@ -104,10 +104,12 @@ extern char *SHA256Data		__PR((const UIn
  
  #ifdef	HAVE_LONGLONG
  extern void SHA384Init		__PR((SHA2_CTX *));
