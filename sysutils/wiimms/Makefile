@@ -12,7 +12,8 @@ DISTNAME=	wit-${DISTVERSION}
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Wiimms ISO Tools
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
