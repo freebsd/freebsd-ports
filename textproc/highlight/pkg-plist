@@ -43,6 +43,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/clipper.lang
 %%DATADIR%%/langDefs/clojure.lang
 %%DATADIR%%/langDefs/clp.lang
+%%DATADIR%%/langDefs/cmake.lang
 %%DATADIR%%/langDefs/cobol.lang
 %%DATADIR%%/langDefs/coffee.lang
 %%DATADIR%%/langDefs/coldfusion.lang
@@ -54,12 +55,17 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/d.lang
 %%DATADIR%%/langDefs/dart.lang
 %%DATADIR%%/langDefs/diff.lang
+%%DATADIR%%/langDefs/docker.lang
 %%DATADIR%%/langDefs/dts.lang
 %%DATADIR%%/langDefs/dylan.lang
 %%DATADIR%%/langDefs/ebnf.lang
+%%DATADIR%%/langDefs/ebnf2.lang
 %%DATADIR%%/langDefs/eiffel.lang
+%%DATADIR%%/langDefs/elixir.lang
+%%DATADIR%%/langDefs/email.lang
 %%DATADIR%%/langDefs/erlang.lang
 %%DATADIR%%/langDefs/euphoria.lang
+%%DATADIR%%/langDefs/excel.lang
 %%DATADIR%%/langDefs/express.lang
 %%DATADIR%%/langDefs/fame.lang
 %%DATADIR%%/langDefs/fasm.lang
@@ -68,6 +74,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/fortran90.lang
 %%DATADIR%%/langDefs/frink.lang
 %%DATADIR%%/langDefs/fsharp.lang
+%%DATADIR%%/langDefs/fstab.lang
 %%DATADIR%%/langDefs/fx.lang
 %%DATADIR%%/langDefs/gambas.lang
 %%DATADIR%%/langDefs/gdb.lang
@@ -152,6 +159,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/plpython.lang
 %%DATADIR%%/langDefs/pltcl.lang
 %%DATADIR%%/langDefs/po.lang
+%%DATADIR%%/langDefs/polygen.lang
 %%DATADIR%%/langDefs/pony.lang
 %%DATADIR%%/langDefs/pov.lang
 %%DATADIR%%/langDefs/pro.lang
@@ -216,6 +224,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/znn.lang
 %%DATADIR%%/plugins/asciidoc_html_add_links.lua
 %%DATADIR%%/plugins/bash_functions.lua
+%%DATADIR%%/plugins/bash_ref_man7_org.lua
 %%DATADIR%%/plugins/comment_links.lua
 %%DATADIR%%/plugins/cpp_qt.lua
 %%DATADIR%%/plugins/cpp_ref_cplusplus_com.lua
