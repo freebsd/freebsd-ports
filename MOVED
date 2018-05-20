@@ -10189,3 +10189,4 @@ finance/gnucash@guile1||2018-05-14|Version 3.0 dropped guile1 support. Use unfla
 net-im/rubygem-earthquake||2018-05-15|Broken and unmaintained upstream
 security/rubygem-jugyo-twitter_oauth||2018-05-15|The only consumer of this port (net-im/rubygem-earthquake) has been removed
 sysutils/bareos-bat||2018-05-18|Removed, use sysutils/bareos-webui or install bareos16 ports
+www/p5-CGI_Lite|www/p5-CGI-Lite|2018-05-20|Rename to match upstream naming
