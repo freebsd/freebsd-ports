@@ -77,9 +77,31 @@
  
  # Superuser versions for commands that need root privileges
  
-@@ -563,11 +562,15 @@ find_glob_dirs () {
+@@ -562,12 +561,37 @@ find_glob_dirs () {
+ 	return 1
  }
  
++match_flavor () {
++	local origin=$(dir_part $1)
++	local flavor	# =$(flavor_part $1)
++	local iport="$2"
++	local dir="$pd/$origin"
++
++	if [ -d "$dir" ]; then
++	local IFS=' '
++	local pkgname=${iport%-*}
++	local flavors=$(pm_make -C "$dir" -V FLAVORS)
++	for flavor in $flavors; do
++		local p=$(pm_make -C "$dir" FLAVOR=$flavor -V PKGNAME)
++		if [ -n "$p" -a "${p%-*}" = "$pkgname" ]; then
++			echo "$origin@$flavor"
++			return
++		fi
++	done
++	fi
++	echo "$1"	# should not be reached!
++}
++
  origin_from_pdb () {
 -	local flavor pkgname
 +	local flavor pkgname origin_flavor
@@ -95,7 +117,7 @@
  
  	case "$pkgname" in bsdpan-*) return 3 ;; esac
  
-@@ -789,6 +792,7 @@ if [ -n "$ALWAYS_SCRUB_DISTFILES" -a -n "$DONT_SCRUB_D
+@@ -789,6 +813,7 @@ if [ -n "$ALWAYS_SCRUB_DISTFILES" -a -n "$DONT_SCRUB_D
  		fail "The -d and -D options are mutually exclusive"
  fi
  
@@ -103,7 +125,7 @@
  [ -n "$PM_NO_MAKE_CONFIG" -a -n "$PM_FORCE_CONFIG" ] && unset PM_NO_MAKE_CONFIG
  
  if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
-@@ -927,6 +931,9 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
+@@ -927,6 +952,9 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
  	fi
  fi	# [ "$$" -eq "$PM_PARENT_PID" ]
  
@@ -113,34 +135,32 @@
  #=============== Begin functions relevant to --features and main ===============
  
  # find installed port for given origin (with optional @flavor) in the pkg DB
-@@ -1004,21 +1011,23 @@ get_answer_yn () {
- 
- match_flavor () {
- 	local origin=$(dir_part $1)
--	local flavor=$(flavor_part $1)
-+	local flavor	# =$(flavor_part $1)
- 	local iport="$2"
- 	local dir="$pd/$origin"
- 
--	[ -n "$flavor" -a -d "$dir" ] || return
-+	if [ -d "$dir" ]; then
- 	local IFS=' '
- 	local pkgname=${iport%-*}
- 	local flavors=$(pm_make -C "$dir" -V FLAVORS)
- 	for flavor in $flavors; do
- 		local p=$(pm_make -C "$dir" FLAVOR=$flavor -V PKGNAME)
- 		if [ -n "$p" -a "${p%-*}" = "$pkgname" ]; then
--			moved_npd="$origin@$flavor"
--			break
-+			echo "$origin@$flavor"
-+			return
- 		fi
- 	done
-+	fi
-+	echo "$1"	# should not be reached!
+@@ -1002,25 +1030,6 @@ get_answer_yn () {
+ 	fi
  }
  
+-match_flavor () {
+-	local origin=$(dir_part $1)
+-	local flavor=$(flavor_part $1)
+-	local iport="$2"
+-	local dir="$pd/$origin"
+-
+-	[ -n "$flavor" -a -d "$dir" ] || return
+-	local IFS=' '
+-	local pkgname=${iport%-*}
+-	local flavors=$(pm_make -C "$dir" -V FLAVORS)
+-	for flavor in $flavors; do
+-		local p=$(pm_make -C "$dir" FLAVOR=$flavor -V PKGNAME)
+-		if [ -n "$p" -a "${p%-*}" = "$pkgname" ]; then
+-			moved_npd="$origin@$flavor"
+-			break
+-		fi
+-	done
+-}
+-
  # Find the new origin for moved ports
+ # Set global variable moved_npd on success
+ # Return values:
 @@ -1056,7 +1065,8 @@ find_moved_port () {
  			fi ;;
  		${sf}\|*) moved_npd=${moved#*\|}	# New port directory
