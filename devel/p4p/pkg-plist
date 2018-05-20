@@ -1,2 +1,0 @@
-sbin/p4p
-@dir(p4admin,p4admin,0750) %%P4CACHE%%
