@@ -8,6 +8,7 @@ include/zopfli/hash.h
 include/zopfli/katajainen.h
 include/zopfli/lz77.h
 include/zopfli/squeeze.h
+include/zopfli/symbols.h
 include/zopfli/tree.h
 include/zopfli/util.h
 include/zopfli/zlib_container.h
@@ -17,7 +18,7 @@ include/zopflipng/lodepng/lodepng_util.h
 include/zopflipng/zopflipng_lib.h
 lib/libzopfli.so
 lib/libzopfli.so.1
-lib/libzopfli.so.1.0.1
+lib/libzopfli.so.1.0.2
 lib/libzopflipng.so
 lib/libzopflipng.so.1
-lib/libzopflipng.so.1.0.0
+lib/libzopflipng.so.1.0.2
