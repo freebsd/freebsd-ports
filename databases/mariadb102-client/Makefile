@@ -22,7 +22,7 @@ CLIENT_ONLY=	yes
 
 post-configure:
 	${REINPLACE_CMD} -Ee 's|(#define INCLUDE.*)"$$|\1 -I${PREFIX}/include"|' \
-		-e 's|(#define LIBS.*)"\\ $$|\1 -L${PREFIX}/lib "\\|' \
+		-e 's|(#define LIBS .*)"$$|\1 -L${PREFIX}/lib"|' \
 		${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c
 
 post-install:
@@ -33,7 +33,7 @@ post-install:
 		${STAGEDIR}${DATADIR}/policy \
 		${STAGEDIR}${PREFIX}/include/mysql/server
 	# Fix https://mariadb.atlassian.net/browse/MDEV-9388
-	@${REINPLACE_CMD} 's/-l-pthread/-lpthread/' ${STAGEDIR}${PREFIX}/bin/mysql_config
+	@${REINPLACE_CMD} 's/-l-pthread/-pthread/' ${STAGEDIR}${PREFIX}/bin/mysql_config
 
 post-install-GSSAPI_NONE:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/auth_gssapi_client.so
