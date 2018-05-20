@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	HOME=${WRKSRC}
-CPPFLAGS+=      -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # OCTSRC is the name of the directory of the package.
