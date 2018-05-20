@@ -3,6 +3,7 @@
 
 PORTNAME=	libwacom
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://sourceforge.net/projects/linuxwacom/files/libwacom/
 
@@ -20,5 +21,8 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-printf "%P\\n"/-print0 | xargs -0 basename/' ${WRKSRC}/data/Makefile.in
 
 .include <bsd.port.mk>
