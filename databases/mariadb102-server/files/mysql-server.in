@@ -9,9 +9,9 @@
 # Add the following line to /etc/rc.conf to enable mysql:
 # mysql_(instance_)?enable (bool):	Set to "NO" by default.
 #			Set it to "YES" to enable MySQL.
-# mysql_(instance_)?limits (bool):	Set to "NO" by default.
-#			Set it to yes to run `limits -e -U mysql`
-#			just before mysql starts.
+%%LEGACY_LIMITS%%# mysql_(instance_)?limits (bool):	Set to "NO" by default.
+%%LEGACY_LIMITS%%#			Set it to yes to run `limits -e -U mysql`
+%%LEGACY_LIMITS%%#			just before mysql starts.
 # mysql_(instance_)?dbdir (str):	Default to "/var/db/mysql"
 #			Base database directory.
 # mysql_(instance_)?args (str):	Custom additional arguments to be passed
@@ -22,7 +22,7 @@
 #			Default to "mysql" created by the port
 # mysql_(instance_)?optfile (str): Server-specific option file.
 #			Default to "${mysql_dbdir}/my.cnf".
-# mysql_instances (str): Set to "" by default. 
+# mysql_instances (str): Set to "" by default.
 #			If defined, list of instances to enable
 
 . /etc/rc.subr
@@ -33,9 +33,9 @@ rcvar=mysql_enable
 load_rc_config $name
 
 : ${mysql_enable="NO"}
-: ${mysql_limits="NO"}
+%%LEGACY_LIMITS%%: ${mysql_limits="NO"}
 : ${mysql_user="mysql"}
-: ${mysql_limits_args="-e -U $mysql_user"}
+%%LEGACY_LIMITS%%: ${mysql_limits_args="-e -U $mysql_user"}
 : ${mysql_dbdir="/var/db/mysql"}
 : ${mysql_optfile="${mysql_dbdir}/my.cnf"}
 
@@ -51,9 +51,9 @@ if [ -n "$2" ]; then
 	"$2 "*|*" $2 "*|*" $2"|"$2")
 		eval mysql_args="\${mysql_${instance}_args:-\"${mysql_args}\"}"
 		eval mysql_dbdir="\${mysql_${instance}_dbdir:-\"/var/db/mysql_${instance}\"}"
-		eval mysql_limits="\${mysql_${instance}_limits:-\"${mysql_limits}\"}"
+%%LEGACY_LIMITS%%		eval mysql_limits="\${mysql_${instance}_limits:-\"${mysql_limits}\"}"
 		eval mysql_user="\${mysql_${instance}_user:-\"${mysql_user}\"}"
-		eval mysql_limits_args="\${mysql_${instance}_limits_args:-\"-e -U $mysql_user\"}"
+%%LEGACY_LIMITS%%		eval mysql_limits_args="\${mysql_${instance}_limits_args:-\"-e -U $mysql_user\"}"
 		eval mysql_optfile="\${mysql_${instance}_optfile:-\"${mysql_dbdir}/my.cnf\"}"
 		eval mysql_pidfile="\${mysql_${instance}_pidfile:-\"${mysql_dbdir}/`/bin/hostname`.pid\"}"
 	;;
@@ -119,11 +119,12 @@ mysql_prestart()
 	if [ ! -d "${mysql_dbdir}/mysql/." ]; then
 		mysql_create_auth_tables || return 1
 	fi
-	if checkyesno mysql_limits; then
-		eval `/usr/bin/limits ${mysql_limits_args:-"-e -U $mysql_user"}` 2>/dev/null
-	else
-		return 0
-	fi
+%%LEGACY_LIMITS%%	if checkyesno mysql_limits; then
+%%LEGACY_LIMITS%%		eval `/usr/bin/limits ${mysql_limits_args:-"-e -U $mysql_user"}` 2>/dev/null
+%%LEGACY_LIMITS%%	else
+%%LEGACY_LIMITS%%		return 0
+%%LEGACY_LIMITS%%	fi
+%%MODERN_LIMITS%%	return 0
 }
 
 mysql_poststart()

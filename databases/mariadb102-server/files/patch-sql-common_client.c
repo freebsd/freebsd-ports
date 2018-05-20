@@ -11,13 +11,3 @@
  #include "client_settings.h"
  #include <ssl_compat.h>
  #include <sql_common.h>
-@@ -1822,7 +1826,8 @@
-   */
- 
- #ifdef HAVE_X509_check_host
--  ret_validation= X509_check_host(server_cert, server_hostname, 0, 0, 0) != 1;
-+  ret_validation= X509_check_host(server_cert, server_hostname,
-+                                  strlen(server_hostname), 0, 0) != 1;
- #else
-   subject= X509_get_subject_name(server_cert);
-   cn_loc= X509_NAME_get_index_by_NID(subject, NID_commonName, -1);
