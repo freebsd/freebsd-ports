@@ -1,0 +1,8 @@
+Xscope sits in-between an X11 client and an X11 server and prints
+the contents of each request, reply, error, or event that is
+communicated between them. Xscope can decode the core X11 protocol
+and several extensions, including BIG-REQUESTS, LBX, MIT-SHM,
+NCD-WinCenterPro, RANDR, and RENDER. This information can be useful
+in debugging and performance tuning of X11 servers and clients.
+
+WWW: https://www.x.org/releases/X11R7.6/doc/man/man1/xscope.1.xhtml
