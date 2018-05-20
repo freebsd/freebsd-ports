@@ -3,7 +3,7 @@
 
 PORTNAME=	mongodb32
 PORTVERSION=	3.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
@@ -50,6 +50,14 @@ USERS=	mongodb
 GROUPS=	mongodb
 
 USE_RC_SUBR=	mongod
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
+SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
+.else
+SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
+.endif
 
 ALL_TARGET=	core
 TEST_TARGET=	unittests
