@@ -1,5 +1,5 @@
---- cdrecord/cdrecord.dfl.orig	Mon Aug 18 19:45:45 2003
-+++ cdrecord/cdrecord.dfl	Mon Aug 18 19:46:32 2003
+--- cdrecord/cdrecord.dfl.orig	2014-01-03 21:59:27 UTC
++++ cdrecord/cdrecord.dfl
 @@ -3,7 +3,7 @@
  # This file is /etc/default/cdrecord
  # It contains defaults that are used if no command line option
