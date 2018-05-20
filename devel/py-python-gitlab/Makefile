@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-gitlab
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,8 +29,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist concurrent
 
 SUB_FILES=	pkg-message
-
-do-test:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}/etc|g' ${WRKSRC}/gitlab/config.py
