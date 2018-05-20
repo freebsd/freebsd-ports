@@ -1,0 +1,4 @@
+Flask-SAML is an extension for the Flask web application micro framework
+that implements Security Association Markup Language (SAML) authentication.
+
+WWW: https://bitbucket.org/asecurityteam/flask_saml
