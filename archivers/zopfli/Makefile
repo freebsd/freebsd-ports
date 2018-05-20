@@ -3,7 +3,7 @@
 
 PORTNAME=	zopfli
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	archivers
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,7 +31,7 @@ do-install:
 .for f in ${PORTNAME} ${PORTNAME}png
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.for f in lib${PORTNAME}.so.1.0.1 lib${PORTNAME}png.so.1.0.0
+.for f in lib${PORTNAME}.so.1.0.2 lib${PORTNAME}png.so.1.0.2
 	${INSTALL_LIB} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/lib
 	${LN} -fs ${f} ${STAGEDIR}${PREFIX}/lib/${f:R:R}
 	${LN} -fs ${f:R:R} ${STAGEDIR}${PREFIX}/lib/${f:R:R:R}
