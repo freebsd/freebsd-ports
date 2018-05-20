@@ -3,6 +3,7 @@
 
 PORTNAME=	torrentcheck
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} readme.txt
@@ -26,8 +27,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/malloc\.h/d' ${WRKSRC}/torrentcheck.c
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME} \
-		sha1.c torrentcheck.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -DUSE_FTELLO \
+		-o ${PORTNAME} sha1.c torrentcheck.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
