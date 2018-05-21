@@ -20,6 +20,7 @@
     SUBDIR += cdbfasta
     SUBDIR += chemeq
     SUBDIR += clustalw
+    SUBDIR += clustalx
     SUBDIR += consed
     SUBDIR += crux
     SUBDIR += ddocent
