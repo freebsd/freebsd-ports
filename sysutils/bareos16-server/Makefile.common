@@ -4,6 +4,7 @@
 post-patch:
 	@${REINPLACE_CMD} -e 's|_NONSHARED||g' ${WRKSRC}/src/filed/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lbareoscfg|@JANSSON_LIBS@ @LIBINTL@ -lbareoscfg|g' ${WRKSRC}/src/qt-tray-monitor/tray-monitor.pro.in
+	@${REINPLACE_CMD} -e 's|@bindir@/bat|@bindir@/${PORTNAME:S/16//}-bat|g' ${WRKSRC}/src/qt-console/bat.desktop.in
 
 post-build:
 .if ${PKGNAMEPREFIX} == "nagios-check_"
@@ -19,6 +20,7 @@ pre-install:
 .endif
 .if ${PKGNAMESUFFIX} == "-bat"
 	@${MV} ${WRKSRC}/manpages/bat.1 ${WRKSRC}/manpages/${PORTNAME:S/16//}-bat.1
+	@${MV} ${WRKSRC}/src/qt-console/bat.desktop ${WRKSRC}/src/qt-console/${PORTNAME:S/16//}-bat.desktop
 .endif
 
 do-install:
