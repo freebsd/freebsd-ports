@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	1.4.28
+PORTVERSION=	1.4.29
 CATEGORIES=	devel
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/112/
 
