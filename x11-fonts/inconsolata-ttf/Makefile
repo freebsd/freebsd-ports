@@ -2,25 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	inconsolata-ttf
-PORTVERSION=	20090215
-PORTREVISION=	2
+PORTVERSION=	2.001
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.levien.com/type/myfonts/
-DISTNAME=	Inconsolata
-EXTRACT_SUFX=	.otf
-EXTRACT_ONLY=
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Monospaced truetype font
 
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/OFL.txt
+
+NO_ARCH=	yes
 USES=		fonts
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+GH_PROJECT=	fonts
+GH_TAGNAME=	efcbdc5
 FONTNAME=	inconsolata
 USE_XORG=	x11
-PLIST_FILES=	${FONTSDIR}/${DISTNAME}${EXTRACT_SUFX}
+PLIST_FILES=	${FONTSDIR}/Inconsolata-Bold.ttf \
+		${FONTSDIR}/Inconsolata-Regular.ttf
 NO_BUILD=	yes
+
+WRKSRC_SUBDIR=	ofl/${FONTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Inconsolata-Bold.ttf \
+			${WRKSRC}/Inconsolata-Regular.ttf \
+			${STAGEDIR}/${FONTSDIR}
 
 .include <bsd.port.mk>
