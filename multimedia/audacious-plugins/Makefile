@@ -10,27 +10,28 @@ MASTER_SITES=	http://distfiles.audacious-media-player.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 
-LICENSE=	GPLv3
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	audacious:multimedia/audacious
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-	libdbus-1.so:devel/dbus \
-	libfontconfig.so:x11-fonts/fontconfig \
-	libfreetype.so:print/freetype2
+		libdbus-1.so:devel/dbus \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	audacious:multimedia/audacious
 
 CONFLICTS_INSTALL=	audacious-plugins-gtk3-3.*
 
 USES=		compiler:c++11-lib gettext-tools gmake iconv \
-	localbase pkgconfig tar:bzip2
+		localbase pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20 glib20 libxml2 cairo gdkpixbuf2
 USE_XORG=	x11
 
-CONFIGURE_ARGS+=--disable-console --disable-sndio --disable-soxr \
-	--enable-gnomeshortcuts \
-	--enable-gtk --enable-filewriter --enable-hotkey
+CONFIGURE_ARGS=	--disable-console --disable-sndio --disable-soxr \
+		--enable-gnomeshortcuts \
+		--enable-gtk --enable-filewriter --enable-hotkey
 
 OPTIONS_DEFINE=	AAC ALSA AMIDI AOSD BS2B CDDA CUE FFMPEG \
 		FLAC JACK LAME LIRC MP3 MMS MODPLUG MPRIS NEON NLS NOTIFY \
@@ -45,15 +46,15 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--disable-alsa
 AMIDI_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 AMIDI_CONFIGURE_OFF=	--disable-amidiplug
-AOSD_USE=	gnome=pango
-AOSD_USE=	xorg=xrender
+AOSD_USE=		gnome=pango
+AOSD_USE=		xorg=xrender
 AOSD_LIB_DEPENDS=	libXcomposite.so:x11/libXcomposite
 AOSD_CONFIGURE_ENABLE=	aosd
 BS2B_LIB_DEPENDS=	libbs2b.so:audio/libbs2b
 BS2B_CONFIGURE_OFF=	--disable-bs2b
 CDDA_LIB_DEPENDS=	libcdio_cdda.so:sysutils/libcdio-paranoia \
-	libcddb.so:audio/libcddb \
-	libcdio.so:sysutils/libcdio
+			libcddb.so:audio/libcddb \
+			libcdio.so:sysutils/libcdio
 CDDA_CONFIGURE_OFF=	--disable-cdaudio
 CUE_LIB_DEPENDS=	libcue.so:textproc/libcue
 CUE_CONFIGURE_OFF=	--disable-cue
@@ -63,7 +64,7 @@ FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CONFIGURE_ON=	--enable-flac --enable-filewriter
 FLAC_CONFIGURE_OFF=	--disable-flac --disable-filewriter
 JACK_LIB_DEPENDS=	libjack.so:audio/jack \
-	libsamplerate.so:audio/libsamplerate
+			libsamplerate.so:audio/libsamplerate
 JACK_CONFIGURE_OFF=	--disable-jack
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_OFF=	--disable-filewriter_mp3
@@ -78,12 +79,12 @@ MODPLUG_CONFIGURE_OFF=	--disable-modplug
 MPRIS_CONFIGURE_ENABLE=	mpris2
 NEON_LIB_DEPENDS=	libneon.so:www/neon
 NEON_CONFIGURE_OFF=	--disable-neon
-NLS_USES=	gettext-runtime
+NLS_USES=		gettext-runtime
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	notify
-OPENGL_USE=	xorg=x11 gl=gl
+OPENGL_USE=		xorg=x11 gl=gl
 OPENGL_CONFIGURE_ENABLE=	glspectrum
 OSS_CONFIGURE_ENABLE=	oss4
 PULSEAUDIO_LIB_DEPENDS=	libpulse-mainloop-glib.so:audio/pulseaudio
@@ -102,7 +103,7 @@ SNDFILE_CONFIGURE_OFF=	--disable-sndfile
 SPEEDPITCH_CONFIGURE_OFF=	--disable-speedpitch
 SPEEDPITCH_IMPLIES=	SAMPLERATE
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
-	libogg.so:audio/libogg
+			libogg.so:audio/libogg
 VORBIS_CONFIGURE_ENABLE=	vorbis
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CONFIGURE_OFF=	--disable-wavpack
@@ -118,9 +119,9 @@ SPEEDPITCH_DESC=Speed and Pitch plugin
 MPRIS_DESC=	NPRIS plugin
 
 post-patch:
-	${REINPLACE_CMD} -e 's| $${MFLAGS}||g' \
+	@${REINPLACE_CMD} -e 's| $${MFLAGS}||g' \
 		${WRKSRC}/buildsys.mk.in
-	${FIND} ${WRKSRC} -type f -name 'Makefile' \
+	@${FIND} ${WRKSRC} -type f -name 'Makefile' \
 		| ${XARGS} ${REINPLACE_CMD} -e 's| -Wno-bool-operation||'
 
 post-install:
