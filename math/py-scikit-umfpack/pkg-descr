@@ -1,0 +1,3 @@
+scikit-umfpack provides a wrapper of UMFPACK sparse direct solver to SciPy.
+
+WWW: https://scikit-umfpack.github.io/scikit-umfpack/
