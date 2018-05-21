@@ -1,0 +1,23 @@
+From 5ea40285741a885198a351bd9afe58ff746a1192 Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <andreas.sturmlechner@gmail.com>
+Date: Sun, 4 Dec 2016 23:26:07 +0100
+Subject: [PATCH] Fix startup: s/caption/qwindowtitle/
+
+REVIEW: 129614
+---
+ src/org.kde.kdesvn.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/org.kde.kdesvn.desktop b/src/org.kde.kdesvn.desktop
+index 0fbac0d3..5455338a 100644
+--- src/org.kde.kdesvn.desktop
++++ src/org.kde.kdesvn.desktop
+@@ -49,7 +49,7 @@ GenericName[sl]=Odjemalec za SVN
+ GenericName[sv]=SVN-klient
+ GenericName[uk]=Клієнт SVN
+ GenericName[x-test]=xxSVN Clientxx
+-Exec=kdesvn -caption "%c" %u
++Exec=kdesvn -qwindowtitle "%c" %u
+ Icon=kdesvn
+ Type=Application
+ X-DocPath=kdesvn/index.html
