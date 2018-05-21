@@ -2,6 +2,7 @@
 
 PORTNAME=	mDNSResponder
 PORTVERSION=	878.1.1
+PORTREVISION=	1
 CATEGORIES=	dns net
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 PKGNAMESUFFIX=	_nss

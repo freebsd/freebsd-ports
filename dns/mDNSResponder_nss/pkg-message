@@ -1,6 +1,6 @@
 ================================================================================
 To enable the mDNSResponder NSS module, update the hosts entry in
-/etc/nsswitch.conf by adding mdns, preferably between file and dns:
+/etc/nsswitch.conf by adding mdns, preferably between files and dns:
 
-hosts: file mdns dns
+hosts: files mdns dns
 ================================================================================
