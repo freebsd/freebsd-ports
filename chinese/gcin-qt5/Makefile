@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcin
-PORTVERSION=	2.8.5
+PORTVERSION=	2.8.6
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 PKGNAMESUFFIX=	-qt5
@@ -22,7 +22,7 @@ USE_CXXSTD=	c++11
 MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		MKDIR="${MKDIR}"
 
-PLIST_FILES=	%%QT_PLUGINDIR%%/platforminputcontexts/libgcinplatforminputcontextplugin.so
+PLIST_FILES=	${QT_PLUGINDIR}/platforminputcontexts/libgcinplatforminputcontextplugin.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g; \
