@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PETSc
-DISTVERSION=	3.8.4
+DISTVERSION=	3.9.1
 CATEGORIES=	science devel
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -23,8 +23,9 @@ CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		LDFLAGS="${LDFLAGS}" LIBS=""
 USE_XORG=	x11
 MAKEFILE=	makefile
-SHEBANG_FILES=	bin/*.py bin/popup bin/saws/SAWs.py bin/saws/*.bash bin/sendToJenkins
+SHEBANG_FILES=	lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py
 USE_LDCONFIG=	yes
+TEST_TARGET=	test
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
@@ -32,8 +33,10 @@ PLIST_SUB=	SHLIB=${DISTVERSION} SHL=${DISTVERSION:C/\.[0-9]$//}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpetsc.so.${DISTVERSION}
-	@${FIND} ${STAGEDIR}${PREFIX} \( -name "*.html" -o -name "*.mod" \) -delete
-	@cd ${STAGEDIR}${PREFIX} && ${RM} -r bin/win32fe bin/uncrustify.cfg lib/petsc
+	@${FIND} ${STAGEDIR}${PREFIX} -name "*.html" -delete
+	@cd ${STAGEDIR}${PREFIX} && ${RM} -r bin/win32fe lib/petsc/conf/uninstall.py
+	@${REINPLACE_CMD} -i '' -e 's|^PYTHON = .*|PYTHON = ${PYTHON_CMD}|' ${STAGEDIR}${PREFIX}/lib/petsc/conf/petscvariables
+	@${REINPLACE_CMD} -i '' -e 's|#!/.*|#!${PYTHON_CMD}|' ${STAGEDIR}${PREFIX}/lib/petsc/conf/reconfigure-arch-*-c-debug.py
 	@${RM} -r ${STAGEDIR}${DATADIR}/examples # examples are a mess as installed
 
 .include <bsd.port.mk>
