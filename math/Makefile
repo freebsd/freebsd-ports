@@ -707,6 +707,7 @@
     SUBDIR += py-random2
     SUBDIR += py-roman
     SUBDIR += py-scientific
+    SUBDIR += py-scikit-umfpack
     SUBDIR += py-seaborn
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
