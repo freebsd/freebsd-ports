@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcin
-PORTVERSION=	2.8.5
-PORTREVISION=	1
+PORTVERSION=	2.8.6
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
@@ -13,15 +12,17 @@ COMMENT=	Traditional Chinese input utility in X
 
 LICENSE=	LGPL21
 
+LIB_DEPENDS=	libcurl.so:ftp/curl
+
+USES=		gmake pkgconfig tar:xz
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--use_gtk3=N --use_qt3=N --use_qt4=N --use_qt5=N
 USE_GNOME=	gtk20
-USES=		gmake pkgconfig tar:xz
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	${PREFIX}/lib/gcin
 
-OPTIONS_DEFINE=	ANTHY DOCS
+OPTIONS_DEFINE=	ANTHY
 OPTIONS_SUB=	yes
 ANTHY_DESC=	Japanese anthy IM module
 
@@ -39,7 +40,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,; \
 		s,%%PREFIX%%,${PREFIX},;' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '94 s/gcin/gcin-setup/' ${WRKSRC}/gcin-common.cpp
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
 		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
 	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' \
@@ -60,9 +60,6 @@ post-patch:
 		${WRKSRC}/scripts/utf8-edit
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/X11R6/lib,${LOCALBASE}/lib,' ${WRKSRC}/im-client/Makefile
-
-post-patch-DOCS-off:
-	@${REINPLACE_CMD} '/install.*DOC_DIR/d' ${WRKSRC}/Makefile
 
 post-build:
 .if !defined(DEBUG_FLAGS)

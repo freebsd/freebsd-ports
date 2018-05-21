@@ -1,34 +1,34 @@
---- Makefile.orig	2015-10-17 02:08:40 UTC
+--- Makefile.orig	2018-05-12 11:25:26 UTC
 +++ Makefile
-@@ -1,18 +1,20 @@
+@@ -1,19 +1,22 @@
 -include ../config.mak
 +#include ../config.mak
-+prefix=/usr/local
++prefix=%%PREFIX%%
 +libdir=$(prefix)/lib
  QT=qt5
-+QT5_MOC=/usr/local/lib/qt5/bin/moc
++QT5_MOC=$(prefix)/lib/qt5/bin/moc
  QTIM=$(QT)/plugins/platforminputcontexts
 -IMMODULES=$(libdir)/$(DEB_BUILD_MULTIARCH)/$(QTIM)
 +IMMODULES=$(libdir)/$(QTIM)
  
--INCS=-I../im-client -I/usr/include/X11 `pkg-config Qt5Core Qt5Gui Qt5PlatformSupport QtDBus --cflags`
-+INCS=-I../im-client -I$(prefix)/include -I$(prefix)/include/qt5 `pkg-config Qt5Core Qt5Gui Qt5DBus --cflags`
+-INCS=-I../im-client -I/usr/include/X11 `pkg-config Qt5Core Qt5Gui --cflags`
++INCS=-I../im-client -I$(prefix)/include/X11 -I$(prefix)/include/qt5 `pkg-config Qt5Core Qt5Gui --cflags`
  MODVERSION=`pkg-config --modversion Qt5Gui`
- QTINC=`pkg-config --variable=includedir Qt5Gui`
--INCS+=-I$(QTINC)/QtGui/$(MODVERSION)/QtGui
--#INCS+=-I/usr/include/i386-linux-gnu/qt5/QtGui/$(MODVERSION)/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtGui/$(MODVERSION)/QtGui
-+INCS+=-I$(QTINC)/QtGui/$(MODVERSION) -I$(QTINC)/QtGui/$(MODVERSION)/QtGui -I$(QTINC)/QtCore/$(MODVERSION)
+ INCS+=-I`pkg-config --variable=includedir Qt5Core`/QtCore/$(MODVERSION)
+ INCS+=-I`pkg-config --variable=includedir Qt5Gui`/QtGui/$(MODVERSION)
+ INCS+=-I`pkg-config --variable=includedir Qt5Gui`/QtGui/$(MODVERSION)/QtGui
+ #INCS+=-I/usr/include/i386-linux-gnu/qt5/QtGui/$(MODVERSION)/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtGui/$(MODVERSION)/QtGui
  
 -CXXFLAGS=$(OPTFLAGS) $(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT5 -DQT_SHARED -DQT_IMMODULE -DPIC -DDEBUG="0$(GCIN_DEBUG)"
-+CXXFLAGS+=$(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT5 -DQT_SHARED -DQT_IMMODULE -DPIC -DDEBUG="0$(GCIN_DEBUG)"
++CXXFLAGS=$(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT5 -DQT_SHARED -DQT_IMMODULE -DPIC -DDEBUG="0$(GCIN_DEBUG)"
  OBJS= moc_gcin-qt5.o gcin-qt5.o gcin-imcontext-qt5.o moc_qgcinplatforminputcontext.o
  .SUFFIXES:	.c .cpp .a .so .E .h
--LDFLAGS=-L../im-client -lgcin-im-client `pkg-config Qt5Core Qt5Gui Qt5PlatformSupport --libs`
+-LDFLAGS=-L../im-client -lgcin-im-client `pkg-config Qt5Core Qt5Gui --libs`
 +LDFLAGS=-L$(prefix)/lib -L$(prefix)/lib/gcin -lgcin-im-client `pkg-config Qt5Core Qt5Gui --libs`
  
  GCIN_QT5 = libgcinplatforminputcontextplugin.so
  
-@@ -32,17 +34,13 @@ $(GCIN_QT5): $(OBJS)
+@@ -33,17 +36,11 @@ $(GCIN_QT5): $(OBJS)
  	$(CXX) $(gcc_ld_run_path) -fno-exceptions -shared -o $@ $(OBJS) $(LDFLAGS)
  	rm -f core.*
  install:
@@ -47,6 +47,5 @@
  
  .depend:
  	$(CXX) $(CXXFLAGS) -MM *.cpp > $@
- 
+-
 -include .depend
-+#include .depend

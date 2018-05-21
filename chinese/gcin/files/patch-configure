@@ -1,11 +1,20 @@
---- configure.orig	2017-03-07 17:41:15.493370000 +0800
-+++ configure	2017-03-07 17:48:14.458037000 +0800
+--- configure.orig	2018-05-12 11:15:17 UTC
++++ configure
 @@ -1,4 +1,4 @@
 -##!/bin/bash
 +##!/bin/sh
  
  
  if [ "$1" = "-h" -o "$1" = "--help" -o "$1" = "-help" ]; then
+@@ -16,7 +16,7 @@ if [ "$1" = "-h" -o "$1" = "--help" -o "$1" = "-help" 
+     echo "  --use_qt5=N    : disable Qt5 immodule"
+     echo "  --use_gtk3=N   : disable GTK+ 3.x immodule"
+     echo "  --gcinlibdir=dir   : runtime path of gcin's *.so"
+-    echo "  --doc_version_dir=N  : doc path use /usr/share/doc/gcin instead of  /doc/gcin-x.x.x"
++    echo "  --doc_version_dir=N  : doc path use $prefix/share/doc/gcin instead of  /doc/gcin-x.x.x"
+     exit
+ fi
+ 
 @@ -129,7 +129,7 @@ if [ -z $GTK ]; then
    echo "According to pkg-config, GTK 2.0 or 3.0 WAS NOT FOUND."
    echo "please install rpm/package libgtk+2.0_0-devel or libgtk+3.0_0-devel"
@@ -33,28 +42,43 @@
  libdir=$prefix/$LIB
  includedir=$prefix/include
  optdir=/opt
+@@ -306,9 +306,9 @@ if [ $QT_IM = 'N' ]; then
+   mv gcin.spec gcin.spec.tmp
+   grep -v qt3/plugins/inputmethods gcin.spec.tmp > gcin.spec
+ else
+-  for i in /usr/share/qt/bin/moc /usr/lib/qt/bin/moc /usr/lib64/qt/bin/moc /usr/lib/qt3/bin/moc /usr/share/qt3/bin/moc /usr/lib64/qt3/bin/moc
++  for i in $prefix/share/qt/bin/moc /usr/lib/qt/bin/moc /usr/lib64/qt/bin/moc /usr/lib/qt3/bin/moc /usr/share/qt3/bin/moc /usr/lib64/qt3/bin/moc
+   do
+-    [ ! -x $i ] && continue
++    [ ! -x $i ] & continue
+     QT_MOC=$i
+     echo "QT_MOC=$QT_MOC"
+     break;
 @@ -322,9 +322,9 @@ if [ $QT4_IM = 'N' ]; then
    mv gcin.spec gcin.spec.tmp
    grep -v qt4/plugins/inputmethods gcin.spec.tmp > gcin.spec
  else
 -  for i in /usr/share/qt4/bin/moc /usr/lib/qt4/bin/moc /usr/lib64/qt4/bin/moc /usr/bin/moc
-+  for i in %%MOC%% /usr/share/qt4/bin/moc /usr/lib/qt4/bin/moc /usr/lib64/qt4/bin/moc /usr/bin/moc
++  for i in %%MOC%% $prefix/share/qt4/bin/moc /usr/lib/qt4/bin/moc /usr/lib64/qt4/bin/moc /usr/bin/moc
    do
 -    [ ! -x $i ] && continue
-+    [ ! -x $i ] & continue
++    [ ! -x $i ]  continue
      QT4_MOC=$i
      echo "QT4_MOC=$QT4_MOC"
      break
-@@ -347,7 +347,7 @@ else
+@@ -351,9 +351,9 @@ else
+     cp gcin-qt5.h.in gcin-qt5.h
+   fi
    cd ..
-   for i in /usr/share/qt5/bin/moc /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/qt5/bin/moc /usr/lib/i386-linux-gnu/qt5/bin/moc /usr/lib64/qt5/bin/moc /usr/bin/moc
+-  for i in /usr/share/qt5/bin/moc /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/qt5/bin/moc /usr/lib/i386-linux-gnu/qt5/bin/moc /usr/lib64/qt5/bin/moc /usr/bin/moc
++  for i in $prefix/share/qt5/bin/moc /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/qt5/bin/moc /usr/lib/i386-linux-gnu/qt5/bin/moc /usr/lib64/qt5/bin/moc /usr/bin/moc
    do
 -    [ ! -x $i ] && continue
-+    [ ! -x $i ] & continue
++    [ ! -x $i ]  continue
      QT5_MOC=$i
      echo "QT5_MOC=$QT5_MOC"
      break
-@@ -356,7 +356,7 @@ fi
+@@ -362,7 +362,7 @@ fi
  
  
  BUILD_MODULE='Y'
@@ -63,7 +87,7 @@
    BUILD_MODULE='Y'
  fi
  
-@@ -382,7 +382,7 @@ echo "datadir_r=$datadir" >> config.mak
+@@ -388,7 +388,7 @@ echo "datadir_r=$datadir" >> config.mak
  echo "libdir=\$(DESTDIR)$libdir" >> config.mak
  echo "gcinlibdir=\$(DESTDIR)$gcinlibdir" >> config.mak
  echo "includedir=\$(DESTDIR)$includedir" >> config.mak
@@ -72,7 +96,18 @@
  echo "GCIN_VERSION=$GCIN_VERSION" >> config.mak
  echo "GCIN_TABLE_DIR=\$(datadir_r)/gcin/table" >> config.mak
  echo "GCIN_OGG_DIR=\$(datadir_r)/gcin/ogg" >> config.mak
-@@ -429,9 +429,15 @@ echo "USE_INDICATOR=$USE_INDICATOR" >> c
+@@ -406,8 +406,8 @@ if [ "$doc_version_dir" = 'N' ]; then
+   echo "DOC_DIR=\$(datadir_r)/doc/gcin" >> config.mak
+   echo "DOC_DIR_i=\$(datadir)/doc/gcin" >> config.mak
+ else
+-  echo "DOC_DIR=\$(datadir_r)/doc/gcin-$GCIN_VERSION" >> config.mak
+-  echo "DOC_DIR_i=\$(datadir)/doc/gcin-$GCIN_VERSION" >> config.mak
++  echo "DOC_DIR=\$(datadir_r)/doc/gcin" >> config.mak
++  echo "DOC_DIR_i=\$(datadir)/doc/gcin" >> config.mak
+ fi
+ 
+ echo "GCIN_ICON_DIR=\$(datadir_r)/icons/gcin" >> config.mak
+@@ -435,11 +435,16 @@ echo "USE_INDICATOR=$USE_INDICATOR" >> config.mak
  echo "USE_GCB=$use_gcb" >> config.mak
  echo "BUILD_MODULE=$BUILD_MODULE" >> config.mak
  echo "GTK_QUERY_IM_64=$GTK_QUERY_IM_64" >> config.mak
@@ -89,5 +124,7 @@
 + echo "QT_MOC=$QT_MOC" >> config.mak
 +fi
  
- echo "GCIN_DEBUG=0" >> config.mak
+-echo "GCIN_DEBUG=0" >> config.mak
  if [ $prefix = /usr/local ]; then
+   echo "gcin_ld_run_path=$PWD:$PWD/im-client:\$(gcinlibdir)" >> config.mak
+ else

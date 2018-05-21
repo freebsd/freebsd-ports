@@ -45,8 +45,6 @@ man/man1/ts-edit.1.gz
 man/man1/tsa2d32.1.gz
 man/man1/tslearn.1.gz
 share/applications/gcin-tools.desktop
-%%PORTDOCS%%%%DOCSDIR%%/Changelog.html
-%%PORTDOCS%%%%DOCSDIR%%/README.html
 %%DATADIR%%/script/gcin-user-setup
 %%DATADIR%%/script/gtab.append_prepare
 %%DATADIR%%/script/html-browser
