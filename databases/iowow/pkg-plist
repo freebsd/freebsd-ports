@@ -17,8 +17,10 @@ include/iowow/iwxstr.h
 lib/libiowow-1.a
 lib/libiowow.so
 lib/libiowow.so.1
-lib/libiowow.so.1.1.0
+lib/libiowow.so.1.2.8
 libdata/pkgconfig/libiowow.pc
 man/man3/iowow.3.gz
 %%DATADIR%%/iowow-exports-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/iowow-exports.cmake
+%%DATADIR%%/iowow-static-exports-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/iowow-static-exports.cmake
