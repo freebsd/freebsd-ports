@@ -35,6 +35,7 @@ man/man3/ares_init.3.gz
 man/man3/ares_init_options.3.gz
 man/man3/ares_library_cleanup.3.gz
 man/man3/ares_library_init.3.gz
+man/man3/ares_library_initialized.3.gz
 man/man3/ares_mkquery.3.gz
 man/man3/ares_parse_a_reply.3.gz
 man/man3/ares_parse_aaaa_reply.3.gz
