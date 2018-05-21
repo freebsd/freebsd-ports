@@ -1,6 +1,6 @@
 --- commands.c.orig	2017-09-08 22:18:16 UTC
 +++ commands.c
-@@ -185,7 +185,7 @@ int mutt_display_message (HEADER *cur)
+@@ -186,7 +186,7 @@ int mutt_display_message (HEADER *cur)
      {
        if (cur->security & GOODSIGN)
        {
@@ -11,7 +11,7 @@
  	  mutt_error ( _("S/MIME certificate owner does not match sender."));
 --- init.h.orig	2017-09-08 22:18:16 UTC
 +++ init.h
-@@ -3099,6 +3099,15 @@ struct option_t MuttVars[] = {
+@@ -3160,6 +3169,15 @@ struct option_t MuttVars[] = {
    ** to determine the key to use. It will ask you to supply a key, if it can't find one.
    ** (S/MIME only)
    */
@@ -24,12 +24,12 @@
 +  ** longer needs email-addresses as part of the certificates.
 +  ** It is not set by default.
 +  */
-   { "smime_sign_as",			DT_SYN,  R_NONE, UL "smime_default_key", 0 },
+   { "smime_self_encrypt_as",	DT_SYN,  R_NONE, UL "smime_default_key", 0 },
    { "smime_default_key",		DT_STR,	 R_NONE, UL &SmimeDefaultKey, 0 },
    /*
 --- mutt.h.orig	2017-09-08 22:18:16 UTC
 +++ mutt.h
-@@ -521,6 +521,7 @@ enum
+@@ -539,6 +540,7 @@ enum
    OPTSMIMEISDEFAULT,
    OPTSMIMESELFENCRYPT,
    OPTASKCERTLABEL,

@@ -1,6 +1,6 @@
---- doc/Muttrc.orig	2016-10-08 19:48:13 UTC
+--- doc/Muttrc.orig	2018-05-19 20:52:48 UTC
 +++ doc/Muttrc
-@@ -649,6 +649,7 @@ attachments   -I message/external-body
+@@ -709,6 +709,7 @@
  # will be saved for later references.  Also see $record,
  # $save_name, $force_name and ``fcc-hook''.
  # 
