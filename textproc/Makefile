@@ -335,6 +335,7 @@
     SUBDIR += ibus-qt
     SUBDIR += ibus-table
     SUBDIR += ibus-typing-booster
+    SUBDIR += ibus-uniemoji
     SUBDIR += icdiff
     SUBDIR += id-aspell
     SUBDIR += id-hyphen
