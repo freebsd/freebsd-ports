@@ -1,0 +1,13 @@
+This software framework implements a NURBS-based Galerkin finite element method
+(FEM), popularly known as isogeometric analysis (IGA). It is heavily based on
+PETSc, the Portable, Extensible Toolkit for Scientific Computation. PETSc is a
+collection of algorithms and data structures for the solution of scientific
+problems, particularly those modeled by partial differential equations (PDEs).
+PETSc is written to be applicable to a range of problem sizes, including
+large-scale simulations where high performance parallel is a must. PetIGA can
+be thought of as an extension of PETSc, which adds the NURBS discretization
+capability and the integration of forms. The PetIGA framework is intended for
+researchers in the numeric solution of PDEs who have applications which require
+extensive computational resources.
+
+WWW: https://bitbucket.org/dalcinl/petiga/

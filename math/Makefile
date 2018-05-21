@@ -620,6 +620,7 @@
     SUBDIR += pecl-stats
     SUBDIR += pecl-stats2
     SUBDIR += pecl-trader
+    SUBDIR += petiga
     SUBDIR += php56-bcmath
     SUBDIR += php56-gmp
     SUBDIR += php70-bcmath
