@@ -2,6 +2,7 @@
 
 PORTNAME=	petiga
 DISTVERSION=	g20180518
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
@@ -10,8 +11,6 @@ COMMENT=	Framework for High Performance Isogeometric Analysis
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
-
-BROKEN_FreeBSD_10=	SSE instruction set not enabled
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
@@ -24,7 +23,7 @@ BB_COMMIT=	e2a59b1ba054
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
-USES=		cmake:outsource fortran
+USES=		cmake:outsource compiler:c++14-lang fortran
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
