@@ -1,6 +1,6 @@
-TIMESTAMP = 1519670258
-SHA256 (tarantool-tarantool-1.9.0_GH0.tar.gz) = 7f9942d9e8d7a5132cf233263039e229d5046ca3a15e44fad233bc93caa2d725
-SIZE (tarantool-tarantool-1.9.0_GH0.tar.gz) = 2356661
+TIMESTAMP = 1526575388
+SHA256 (tarantool-tarantool-1.9.1_GH0.tar.gz) = b4db2bdd2858409707f27f75058e48b61b58268658effaf12ad3c2688e5dc93c
+SIZE (tarantool-tarantool-1.9.1_GH0.tar.gz) = 2365702
 SHA256 (rtsisyk-luafun-04c99f9_GH0.tar.gz) = 4f135f25a2d31116723162ec8ad54f7d4e0e1258557bb1665557532ac64dc625
 SIZE (rtsisyk-luafun-04c99f9_GH0.tar.gz) = 67326
 SHA256 (tarantool-luajit-b8587fa_GH0.tar.gz) = 620a023a5ee6a52fc5f9fb3ece568b5ff58246a807c9ba4e31a8157451e9cff2
