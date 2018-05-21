@@ -1,6 +1,6 @@
---- crypt.c.orig	2017-05-30 19:27:52 UTC
+--- crypt.c.orig	2018-05-19 20:33:53 UTC
 +++ crypt.c
-@@ -491,7 +491,7 @@ int mutt_is_application_smime (BODY *m)
+@@ -501,7 +501,7 @@
      {
        len++;
        if (!ascii_strcasecmp ((t+len), "p7m"))

@@ -1,6 +1,6 @@
---- doc/Muttrc.head.orig	2017-04-12 23:01:06 UTC
+--- doc/Muttrc.head.orig	2018-05-19 20:33:53 UTC
 +++ doc/Muttrc.head
-@@ -34,6 +34,8 @@ bind browser y exit
+@@ -35,6 +35,8 @@
  # close-hook  '\.gz$'  "gzip -c   '%t' >  '%f'"
  # append-hook '\.gz$'  "gzip -c   '%t' >> '%f'"
  
