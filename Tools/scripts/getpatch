@@ -134,6 +134,8 @@ class BzGetPatch(GetPatch):
 
     URL_BASE = 'https://bugs.freebsd.org/bugzilla/'
     URL_SHOW = '{}/show_bug.cgi?id='.format(URL_BASE)
+    REGEX_ATTACHMENTS_TABLE = r'<table id="attachment_table">(.*?)</table>'
+    REGEX_ATTACHMENT_TR = r'(<tr id="a\d+"[^<]+>.*?</tr>)'
     REGEX_URL = r'<a href="([^<]+)">Details</a>'
     REGEX = r'<div class="details">([^ ]+) \(text/plain(?:; charset=[-\w]+)?\)'
 
@@ -147,8 +149,7 @@ class BzGetPatch(GetPatch):
             return None
         return match.group(1)
 
-    def _get_patch_urls(self, data):
-        patch_urls = {}
+    def _get_patch_url(self, data):
         for url in re.findall(self.REGEX_URL, str(data)):
             url = '{}{}'.format(self.URL_BASE, url)
             file_name = self._get_patch_name(url)
@@ -158,7 +159,20 @@ class BzGetPatch(GetPatch):
                 self.out(msg.format(url))
                 continue
             download_url = url[:url.find('&')]
+            return download_url, file_name
+
+    def _get_patch_urls(self, data):
+        patch_urls = {}
+        match = re.search(self.REGEX_ATTACHMENTS_TABLE, str(data), re.DOTALL)
+        if match is None:
+            return patch_urls
+        table = match.group(1)
+        for tr in re.findall(self.REGEX_ATTACHMENT_TR, str(data), re.DOTALL):
+            if (tr.find('bz_tr_obsolete') >= 0):
+                continue
+            download_url, file_name = self._get_patch_url(tr)
             patch_urls[download_url] = file_name
+
         return patch_urls
 
     def fetch(self, *largs, **kwargs):
