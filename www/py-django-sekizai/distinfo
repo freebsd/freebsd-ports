@@ -1,2 +1,3 @@
-SHA256 (django-sekizai-0.7.tar.gz) = 24de5efd35705faea01298bed64c44c233ae723250c21bbd9102dba17b51bdbb
-SIZE (django-sekizai-0.7.tar.gz) = 108418
+TIMESTAMP = 1524057936
+SHA256 (django-sekizai-0.10.0.tar.gz) = 39c5d16ad694aa78278ca84fdc7b9f953ebcf94e2fc95b68c875d02014303260
+SIZE (django-sekizai-0.10.0.tar.gz) = 18731
