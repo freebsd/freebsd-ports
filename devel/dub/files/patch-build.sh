@@ -1,12 +1,22 @@
---- build.sh.orig	2017-12-13 09:54:28.459920000 -0500
-+++ build.sh	2017-12-13 09:55:25.463123000 -0500
+--- build.sh.orig	2018-01-21 22:30:48 UTC
++++ build.sh
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  set -e
  
  if [ "$DMD" = "" ]; then
-@@ -56,7 +56,7 @@
+@@ -41,9 +41,6 @@ if [[ $VERSION < 2.069.0 ]]; then
+ 	LIBS=`echo "$LIBS" | sed 's/^-L/-L-L/; s/ -L/ -L-L/g; s/^-l/-L-l/; s/ -l/ -L-l/g'`
+ fi
+ 
+-if [ "$GITVER" = "" ]; then
+-  GITVER=$(git describe) || echo "Could not determine a version with git."
+-fi
+ if [ "$GITVER" != "" ]; then
+ 	echo Generating version file...
+ 	echo "module dub.version_;" > source/dub/version_.d
+@@ -56,7 +53,7 @@ fi
  MACOSX_DEPLOYMENT_TARGET=10.7
  
  echo Running $DMD...
