@@ -843,6 +843,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.lucent
 %%DATADIR%%/dictionary.manzara
 %%DATADIR%%/dictionary.microsemi
+%%DATADIR%%/dictionary.mimosa
 %%DATADIR%%/dictionary.meinberg
 %%DATADIR%%/dictionary.meraki
 %%DATADIR%%/dictionary.merit
@@ -917,6 +918,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.siemens
 %%DATADIR%%/dictionary.slipstream
 %%DATADIR%%/dictionary.sofaware
+%%DATADIR%%/dictionary.softbank
 %%DATADIR%%/dictionary.sonicwall
 %%DATADIR%%/dictionary.springtide
 %%DATADIR%%/dictionary.starent
