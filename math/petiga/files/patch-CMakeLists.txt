@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2018-05-17 14:35:00 UTC
++++ CMakeLists.txt
+@@ -15,7 +15,7 @@ else ()
+   find_library (PETSC_LIBRARIES NAMES petsc HINTS "${PETSC_DIR}" PATH_SUFFIXES "${PETSC_ARCH}/lib" "lib" NO_DEFAULT_PATH)
+   find_path (PETSC_CONF_DIR petscrules HINTS "${PETSC_DIR}/${PETSC_ARCH}" PATH_SUFFIXES "lib/petsc/conf" "conf" NO_DEFAULT_PATH)
+   mark_as_advanced (PETSC_CONF_DIR)
+-  include (${PETSC_CONF_DIR}/PETScConfig.cmake)
++  include (${PETSC_CONF_DIR}/PETScBuildInternal.cmake)
+   mark_as_advanced (PETSC_CLANGUAGE_Cxx)
+ endif ()
+ 
+@@ -67,8 +67,8 @@ if (BUILD_STATIC_LIBS)
+ endif ()
+ 
+ install (DIRECTORY include/               DESTINATION include FILES_MATCHING PATTERN "*.h"    )
+-install (DIRECTORY ${PETSC_ARCH}/include/ DESTINATION include FILES_MATCHING PATTERN "*.h"    )
+-install (DIRECTORY ${PETSC_ARCH}/include/ DESTINATION include FILES_MATCHING PATTERN "*.mod"  )
++#install (DIRECTORY ${PETSC_ARCH}/include/ DESTINATION include FILES_MATCHING PATTERN "*.h"    )
++#install (DIRECTORY ${PETSC_ARCH}/include/ DESTINATION include FILES_MATCHING PATTERN "*.mod"  )
+ install (DIRECTORY lib/petiga/conf/       DESTINATION lib/petiga/conf)
+-install (CODE "execute_process(COMMAND sed -i.arch -e s/$\(PETSC_ARCH\).//g \"${CMAKE_INSTALL_PREFIX}/lib/petiga/conf/variables\")")
++#install (CODE "execute_process(COMMAND sed -i.arch -e s/$\(PETSC_ARCH\).//g \"${CMAKE_INSTALL_PREFIX}/lib/petiga/conf/variables\")")
+ install (CODE "file(REMOVE \"${CMAKE_INSTALL_PREFIX}/lib/petiga/conf/variables.arch\")")
