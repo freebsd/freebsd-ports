@@ -1,0 +1,8 @@
+etc/xdg/uniemoji/custom.json
+%%DATADIR%%/UnicodeData.txt
+%%DATADIR%%/config.py
+%%DATADIR%%/emojione.json
+%%DATADIR%%/ibus.py
+%%DATADIR%%/uniemoji.py
+%%DATADIR%%/uniemoji.svg
+share/ibus/component/uniemoji.xml
