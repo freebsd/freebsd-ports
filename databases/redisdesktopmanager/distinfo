@@ -1,6 +1,6 @@
-TIMESTAMP = 1524458931
-SHA256 (uglide-RedisDesktopManager-0.9.2_GH0.tar.gz) = da33fe0a0c0bfac775cf581ef8c7b0a4c48e44696d7c16db07f40828169240d8
-SIZE (uglide-RedisDesktopManager-0.9.2_GH0.tar.gz) = 1982837
+TIMESTAMP = 1526918682
+SHA256 (uglide-RedisDesktopManager-0.9.3_GH0.tar.gz) = c7584bee2cffbe05c221f3f43a810bc3718121d94618df909a8c9cf4fa28ad14
+SIZE (uglide-RedisDesktopManager-0.9.3_GH0.tar.gz) = 1982896
 SHA256 (benlau-asyncfuture-4579d53_GH0.tar.gz) = ce5a3a4bc61f22f182eb8f932a3736289fc541e7487244fd57c93a141a038fe4
 SIZE (benlau-asyncfuture-4579d53_GH0.tar.gz) = 31928
 SHA256 (RedisDesktop-CrashReporter-3455308_GH0.tar.gz) = fb1a8a6c29b4e4acda5d4f479242a0364bfbddf05a7bd3f4ab353e91cd9b7c4f
