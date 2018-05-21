@@ -1,5 +1,4 @@
 django-filer is a file management application for django.  It handles
 uploading and organizing files and images in contrib.admin.
 
-WWW: https://pypi.org/project/django-filer/
 WWW: https://github.com/stefanfoulis/django-filer

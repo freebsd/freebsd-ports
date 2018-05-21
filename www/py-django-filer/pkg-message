@@ -1,20 +1,25 @@
-**********************************************************************
+================================================================================
 
-Add "filer" to your project's INSTALLED_APPS setting and run syncdb
-(or migrate if you're using South).
+Add "filer" and related apps to your INSTALLED_APPS setting and run
+manage.py migrate:
 
-You might consider using django-filer with the django CMS plugin and
-its components instead of cms.plugins.file, cms.plugins.picture,
-cms.plugins.teaser and cms.plugins.video core plugins.  In this case
-you should not add them to INSTALLED_APPS but add those instead:
+INSTALLED_APPS = [
+    ...
+    'easy_thumbnails',
+    'filer',
+    'mptt',
+    ...
+]
 
-    'filer'
-    'cmsplugin_filer_file'
-    'cmsplugin_filer_folder'
-    'cmsplugin_filer_image'
-    'cmsplugin_filer_teaser'
-    'cmsplugin_filer_video'
+Note that easy_thumbnails also has database tables and needs a
+manage.py migrate.
 
-(Note that this also requires the installation of cmsplugin-filer.)
+For easy_thumbnails to support retina displays (recent MacBooks, iOS) add to
+settings.py:
 
-**********************************************************************
+THUMBNAIL_HIGH_RESOLUTION = True
+
+If you forget this, you may not see thumbnails for your uploaded files. Adding
+this line and refreshing the admin page will create the missing thumbnails.
+
+================================================================================
