@@ -1,0 +1,8 @@
+Clustal Omega is the latest addition to the Clustal family. It offers a
+significant increase in scalability over previous versions, allowing hundreds
+of thousands of sequences to be aligned in only a few hours. It will also make
+use of multiple processors, where present. In addition, the quality of
+alignments is superior to previous versions, as measured by a range of popular
+benchmarks.
+
+WWW: http://www.clustal.org/omega/
