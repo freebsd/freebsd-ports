@@ -1,23 +1,180 @@
-**********************************************************************
+===============================================================================
 
-To try out django CMS, open a shell and run the following commands:
+****************************************************************************
+ IMPORTANT / 
+****************************************************************************
 
-    django-admin.py startproject mycmsproject
-    cd mycmsproject/mycmsproject
-    rm settings.py
-    rm urls.py
-    fetch https://gist.github.com/williambr/5748696/raw/settings.py
-    fetch https://gist.github.com/raw/1125918/urls.py
-    mkdir templates
-    cd templates
-    fetch https://gist.github.com/raw/1125918/example.html
-    cd ../..
-    python manage.py syncdb --all
-    python manage.py migrate --fake
-    python manage.py runserver
+If you're upgrading from a older version of py-django-cms please read the
+upgrade instructions at: 
 
-The last command should start a local server on port 8000 serving
-your CMS installation, so open your browser and go to 127.0.0.1:8000
-and you should see the CMS welcome page.
+http://docs.django-cms.org/en/latest/upgrade/index.html
 
-**********************************************************************
+The described steps further down are a distilled version of "How to install
+django CMS by hand" which is available at:
+
+http://docs.django-cms.org/en/latest/how_to/install.html
+
+The manual gives enough information how to setup py-django-cms for
+development use. For production environments please consider to read the
+full documentation available at:
+
+http://docs.django-cms.org/en/latest/index.html
+
+****************************************************************************
+ 1. Create a new Django project
+****************************************************************************
+
+$ django-admin.py startproject myproject
+
+****************************************************************************
+ 2. Edit settings.py
+****************************************************************************
+
+--- Set a SITE_ID by adding the following line:
+
+SITE_ID = 1	# 1 will suffice in most cases
+
+--- Add the next lines to INSTALLED_APPS:
+
+'djangocms_admin_style' 	# must come BEFORE django.contrib.admin
+'django.contrib.sites'
+'cms'
+'menus'
+'sekizai'
+'treebeard'
+
+--- Configure the LANGUAGES and LANGUAGE_CODE, e.g.:
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('de', 'German'),
+]
+
+LANGUAGE_CODE = 'en'	# For simplicity's sake at this stage it is worth
+			# changing the default en-us in that you'll find in
+			# the LANGUAGE_CODE setting to en.
+
+--- Add the following lines to MIDDLEWARE_CLASSES:
+
+'cms.middleware.utils.ApphookReloadMiddleware'	# Optional, but useful
+'cms.middleware.user.CurrentUserMiddleware'
+'cms.middleware.page.CurrentPageMiddleware'
+'cms.middleware.toolbar.ToolbarMiddleware'
+'cms.middleware.language.LanguageCookieMiddleware'
+'django.middleware.locale.LocaleMiddleware'
+
+--- Add MEDIA_URL (where media files will be served) and MEDIA_ROOT (where they
+--- will be stored):
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+--- See the Django documentation for guidance on serving media files in
+--- production.
+
+--- Add a CMS_TEMPLATES section that will be the project's default template:
+
+CMS_TEMPLATES = [
+    ('home.html', 'Home page template'),
+]
+
+--- Add the next lines to TEMPLATES['OPTIONS']['context_processors']:
+
+'sekizai.context_processors.sekizai'
+'cms.context_processors.cms_settings'
+
+--- Django needs to be know where to look for its templates, so add following
+--- line (the appropriate directory will be created in the next step) to the
+----TEMPLATES['DIRS'] list:
+
+['templates']
+
+--- In the root of the project, create a templates directory, and in that,
+--- home.html, a minimal django CMS template:
+
+{% load cms_tags sekizai_tags %}
+<html>
+    <head>
+        <title>{% page_attribute "page_title" %}</title>
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        {% placeholder "content" %}
+        {% render_block "js" %}
+    </body>
+</html>
+
+--- Note: See Django's template language documentation for more on how template
+--- inheritance works.
+
+****************************************************************************
+ 3. Edit urls.py
+****************************************************************************
+
+--- Edit urls.py and add url(r'^', include('cms.urls')) to the urlpatterns
+--- list. It should come after other patterns, so that specific URLs for other
+--- applications can be detected first.
+
+--- You'll also need to have an import for django.conf.urls.include and
+--- configure a media file serving for development purposes:
+
+from django.conf import settings
+from django.conf.urls import url, include
+from django.conf.urls.static import static
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^', include('cms.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+****************************************************************************
+ 4. Setup the relational database backend
+****************************************************************************
+
+--- For testing purpose SQLite can be used and it is configured by default
+--- in a new Django project's DATABASES.
+
+--- Refer to Django's DATABASES setting documentation for the appropriate
+--- configuration when PostgreSQL or MySQL are used as database backends.
+
+****************************************************************************
+ 5. Run migrations to create database tables
+****************************************************************************
+
+--- When a database backend has been choosen and set up properly, run the
+--- following command:
+
+$ python manage.py migrate
+
+****************************************************************************
+ 6. Create an admin superuser
+****************************************************************************
+
+--- For maintenance purposes it is necessary to create a admin user:
+
+$ python manage.py createsuperuser
+
+****************************************************************************
+ 7. Check CMS installation
+****************************************************************************
+
+--- This will check your configuration, your applications, your database and
+--- report on any problems:
+
+$ python manage.py cms check
+
+--- When there are no errors continue with the last step.
+
+****************************************************************************
+ 8. Start the CMS
+****************************************************************************
+
+--- The django CMS project will now run by issuing:
+
+$ python manage.py runserver
+
+--- The CMS can now be reached http://localhost:8000/ and the admin interface
+--- at http://localhost:8000/admin/
+
+===============================================================================
