@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpd-pools
-PORTVERSION=	2.28
+PORTVERSION=	3.0
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME} \
 		ZI
@@ -23,10 +23,7 @@ CONFIGURE_ARGS=	--with-dhcpd-conf=${LOCALBASE}/etc/dhcpd.conf \
 		--with-uthash=${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/dhcpd-pools \
-		man/man1/dhcpd-pools.1.gz \
-		%%DATADIR%%/nagios.conf
-PORTDATA=	dhcpd-pools.cgi snmptest.pl
+PORTDATA=	snmptest.pl
 
 post-patch:
 	@${REINPLACE_CMD} -e '/features.h/d' ${WRKSRC}/src/getdata.c

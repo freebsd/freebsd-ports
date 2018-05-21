@@ -1,0 +1,7 @@
+bin/dhcpd-pools
+man/man1/dhcpd-pools.1.gz
+%%DATADIR%%/nagios.conf
+%%PORTDOCS%%%%DOCSDIR%%/dhcpd.conf
+%%PORTDOCS%%%%DOCSDIR%%/dhcpd.leases
+%%PORTDOCS%%%%DOCSDIR%%/mustach.template
+%%PORTDOCS%%%%DOCSDIR%%/prometheus.template
