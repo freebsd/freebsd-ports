@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redisdesktopmanager
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	databases
 
 MAINTAINER=	swills@FreeBSD.org
