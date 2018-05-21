@@ -1,0 +1,5 @@
+PySceneDetect is a command-line application and a Python library for detecting
+scene changes in videos, and automatically splitting the video into separate
+clips.
+
+WWW: https://pyscenedetect.readthedocs.io/en/latest/
