@@ -1,0 +1,33 @@
+--- Makefile.in.orig	2018-05-22 03:44:46 UTC
++++ Makefile.in
+@@ -23,16 +23,16 @@ objs     = arg_parser.o main.o
+          uninstall uninstall-bin uninstall-info uninstall-man \
+          doc info man check dist clean distclean
+ 
+-all : $(progname) lib$(libname).a
++all : $(progname) lib$(libname).so
+ 
+-lib$(libname).a: $(ocr_objs) $(lib_objs)
+-	$(AR) -rcs $@ $(ocr_objs) $(lib_objs)
++lib$(libname).so: $(ocr_objs) $(lib_objs)
++	$(CXX) -shared -fPIC -o $@ $(ocr_objs) $(lib_objs)
+ 
+ $(progname) : $(ocr_objs) $(objs)
+ 	$(CXX) $(LDFLAGS) $(CXXFLAGS) -o $@ $(ocr_objs) $(objs)
+ 
+-ocradcheck : ocradcheck.o lib$(libname).a
+-	$(CXX) $(LDFLAGS) $(CXXFLAGS) -o $@ ocradcheck.o lib$(libname).a
++ocradcheck : ocradcheck.o lib$(libname).so
++	$(CXX) $(LDFLAGS) $(CXXFLAGS) -o $@ ocradcheck.o lib$(libname).so
+ 
+ ocradcheck.o : ocradcheck.cc
+ 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -DPROGVERSION=\"$(pkgversion)\" -c -o $@ $<
+@@ -101,7 +101,7 @@ install-bin : all
+ 	if [ ! -d "$(DESTDIR)$(libdir)" ] ; then $(INSTALL_DIR) "$(DESTDIR)$(libdir)" ; fi
+ 	$(INSTALL_PROGRAM) ./$(progname) "$(DESTDIR)$(bindir)/$(progname)"
+ 	$(INSTALL_DATA) $(VPATH)/$(libname)lib.h "$(DESTDIR)$(includedir)/$(libname)lib.h"
+-	$(INSTALL_DATA) ./lib$(libname).a "$(DESTDIR)$(libdir)/lib$(libname).a"
++	$(INSTALL_DATA) ./lib$(libname).so "$(DESTDIR)$(libdir)/lib$(libname).so"
+ 
+ install-bin-strip : all
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' install-bin
