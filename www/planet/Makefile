@@ -10,7 +10,7 @@ MAINTAINER=	alan@wave2.co.uk
 COMMENT=	Planet is a flexible feed aggregator - and more!
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:devel/py-mx-experimental \
-		${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb
+		${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR}
 
 USES=		python:2.7 tar:bzip2
 NO_BUILD=	yes

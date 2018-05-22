@@ -16,7 +16,7 @@ WRKSRC=		${WRKDIR}/google-cloud-sdk
 PLIST_FILES=	bin/bq bin/gcloud bin/git-credential-gcloud.sh bin/gsutil
 
 RUN_DEPENDS=	python:lang/python \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 post-extract:
 	@${RM} -r \

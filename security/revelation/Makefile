@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR}
 LIB_DEPENDS=	libcrack.so:security/cracklib
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}cracklib>0:security/py-cracklib
+		${PYTHON_PKGNAMEPREFIX}cracklib>0:security/py-cracklib@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig python:2.7 \
 		shared-mime-info shebangfix tar:bzip2

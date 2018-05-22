@@ -12,10 +12,10 @@ COMMENT=	Handles mail account profile requests from mail clients
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr \
-		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>=0:security/py-m2crypto \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}m2crypto>=0:security/py-m2crypto@${PY_FLAVOR} \
 		wget:ftp/wget \
 		dig:dns/bind-tools
 
@@ -32,7 +32,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS MEMCACHE
 MEMCACHE_DESC=	Add memcache support
-MEMCACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=0:databases/py-python-memcached
+MEMCACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=0:databases/py-python-memcached@${PY_FLAVOR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

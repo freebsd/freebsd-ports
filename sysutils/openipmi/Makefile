@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--with-openssl=no
 .if ${PORT_OPTIONS:MTKINTER}
 USES+=			python
 WITH_PYTHON=		yes
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
 			${LOCALBASE}/lib/Tix8.4.3/Tix.tcl:x11-toolkits/tix
 CONFIGURE_ARGS+=	--with-tkinter
 PLIST_SUB+=		TKINTER=""

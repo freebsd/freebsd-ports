@@ -18,8 +18,8 @@ LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libsigsegv.so:devel/libsigsegv
 RUN_DEPENDS=	animate:graphics/ImageMagick \
 		gv:print/gv \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
 ALL_TARGET=	asy asy-keywords.el
 

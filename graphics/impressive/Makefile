@@ -14,8 +14,8 @@ COMMENT=	Stylish way of giving presentations
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		xpdf:graphics/xpdf \
 		pdftk:print/pdftk \
 		xdg-open:devel/xdg-utils \

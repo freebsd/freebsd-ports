@@ -11,7 +11,7 @@ COMMENT=	PagerDuty integrations for monitoring monitoring tools
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdagent>0:net-mgmt/py-pdagent
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdagent>0:net-mgmt/py-pdagent@${PY_FLAVOR}
 
 USES=	python:2.7 shebangfix
 

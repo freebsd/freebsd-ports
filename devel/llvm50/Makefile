@@ -346,7 +346,7 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
 .if ${PYTHON_REL} < 3400
 LLDB_BUILD_DEPENDS+= \
-	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
+	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34@${PY_FLAVOR}
 .endif
 
 post-extract-CLANG-on:

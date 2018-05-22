@@ -33,8 +33,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libboost_system.so:devel/boost-libs \
 		librocksdb.so:databases/rocksdb \
 		liblz4.so:archivers/liblz4
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}pymongo>=3.0:databases/pymongo
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymongo>=3.0:databases/pymongo@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang cpe python:build scons
 USE_RC_SUBR=	mongod \

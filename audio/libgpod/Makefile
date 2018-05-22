@@ -39,8 +39,8 @@ MONO_USE=		GNOME=gtksharp20
 MONO_CONFIGURE_WITH=	mono
 
 PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30 \
-			${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen
+			${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR}
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR}
 PYTHON_USE=		GNOME=pygobject
 PYTHON_USES=		python:2.7
 PYTHON_CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"

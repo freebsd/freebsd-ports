@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=Designed for x86
 
 BUILD_DEPENDS=	${LOCALBASE}/include/capstone/capstone.h:devel/capstone3
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>0:devel/py-capstone
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>0:devel/py-capstone@${PY_FLAVOR}
 
 USES=		gmake python localbase shebangfix
 

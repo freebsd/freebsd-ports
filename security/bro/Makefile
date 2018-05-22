@@ -69,10 +69,10 @@ BROCTL_IMPLIES=		BROCCOLI IPSUMDUMP
 
 BROCCOLI_LIB_DEPENDS=	libbroccoli.so:security/broccoli
 BROCTL_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
-			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 			swig3.0:devel/swig30
 BROCTL_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
-			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 BROCTL_CMAKE_BOOL=	INSTALL_BROCTL
 BROCTL_USE=		LDCONFIG=yes
 IPSUMDUMP_BUILD_DEPENDS=ipsumdump:net/ipsumdump
