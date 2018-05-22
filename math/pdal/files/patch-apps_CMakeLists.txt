@@ -1,6 +1,6 @@
---- apps/CMakeLists.txt.orig	2017-01-06 20:53:26 UTC
+--- apps/CMakeLists.txt.orig	2018-05-22 16:03:21 UTC
 +++ apps/CMakeLists.txt
-@@ -60,7 +60,7 @@ file(MAKE_DIRECTORY "${PDAL_OUTPUT_LIB_D
+@@ -67,7 +67,7 @@ file(MAKE_DIRECTORY "${PDAL_OUTPUT_LIB_D
  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/pdal.pc.in
                 ${CMAKE_CURRENT_BINARY_DIR}/pdal.pc @ONLY)
  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pdal.pc
