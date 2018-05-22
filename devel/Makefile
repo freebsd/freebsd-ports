@@ -3414,6 +3414,7 @@
     SUBDIR += p5-Sys-Trace
     SUBDIR += p5-Sys-Virt
     SUBDIR += p5-System-Command
+    SUBDIR += p5-System-Info
     SUBDIR += p5-System-Sub
     SUBDIR += p5-System2
     SUBDIR += p5-TAP-Formatter-JUnit
