@@ -1,0 +1,35 @@
+From 2ff6287610fa44eec9f30630d87166ad1fc0e452 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Tue, 22 May 2018 17:47:37 +0200
+Subject: [PATCH] Backport of commit 858dba
+
+This is required in order to build Xen with newer iasl found in HEAD.
+---
+ tools/firmware/hvmloader/acpi/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tools/firmware/hvmloader/acpi/Makefile b/tools/firmware/hvmloader/acpi/Makefile
+index d3e882ac69..29f93e6a8c 100644
+--- a/tools/firmware/hvmloader/acpi/Makefile
++++ b/tools/firmware/hvmloader/acpi/Makefile
+@@ -27,7 +27,7 @@ all: acpi.a
+ 
+ ssdt_s3.h ssdt_s4.h ssdt_pm.h ssdt_tpm.h: %.h: %.asl iasl
+ 	iasl -vs -p $* -tc $<
+-	sed -e 's/AmlCode/$*/g' $*.hex >$@
++	sed -e 's/AmlCode/$*/g' -e 's/_aml_code//g' $*.hex >$@
+ 	rm -f $*.hex $*.aml
+ 
+ mk_dsdt: mk_dsdt.c
+@@ -44,7 +44,7 @@ dsdt_%cpu.asl: dsdt.asl mk_dsdt
+ 
+ $(filter dsdt_%.c,$(C_SRC)): %.c: iasl %.asl
+ 	iasl -vs -p $* -tc $*.asl
+-	sed -e 's/AmlCode/$*/g' $*.hex >$@
++	sed -e 's/AmlCode/$*/g' -e 's/_aml_code//g' $*.hex >$@
+ 	echo "int $*_len=sizeof($*);" >>$@
+ 	rm -f $*.aml $*.hex
+ 
+-- 
+2.17.0
+
