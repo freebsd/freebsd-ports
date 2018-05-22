@@ -1345,7 +1345,6 @@
     SUBDIR += py-pss
     SUBDIR += py-pyPEG2
     SUBDIR += py-pyctpp2
-    SUBDIR += py-pyelasticsearch
     SUBDIR += py-pyes
     SUBDIR += py-pygments
     SUBDIR += py-pygtail
