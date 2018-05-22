@@ -3,7 +3,7 @@
 
 PORTNAME=	docutils
 PORTVERSION=	0.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,22 +17,19 @@ LICENSE_COMB=	multi
 PORTSCOUT=	limit:^[0-9\.]*$$
 
 NO_ARCH=	yes
-
-USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+USES=		python
 
 OPTIONS_DEFINE=	PYGMENTS
+PYGMENTS_DESC=	Syntax highlighting
+PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${FLAVOR}
 
-PYGMENTS_DESC=		Syntax highlighting
-PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${PY_FLAVOR}
+SCRIPTS=	rst2html rst2latex rst2man rst2odt rst2odt_prepstyles \
+		rst2pseudoxml rst2s5 rst2xetex rst2xml rstpep2html
 
-.include <bsd.port.pre.mk>
+post-install:
+.for script in ${SCRIPTS}
+	${LN} -s ${script}.py-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/${script}
+.endfor
 
-do-test:
-.if ${PYTHON_VER} < 3
-	@cd ${WRKSRC}/test && ${PYTHON_CMD} alltests.py
-.else
-	@cd ${WRKSRC}/test3 && ${PYTHON_CMD} alltests.py
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
