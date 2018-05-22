@@ -13,6 +13,9 @@
 
 . /etc/rc.subr
 
+# Required to execute gsutil
+export PATH=%%LOCALBASE%%/bin:$PATH
+
 name="google_startup"
 rcvar="google_startup_enable"
 
