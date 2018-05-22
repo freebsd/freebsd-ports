@@ -10192,3 +10192,4 @@ sysutils/bareos-bat||2018-05-18|Removed, use sysutils/bareos-webui or install ba
 www/p5-CGI_Lite|www/p5-CGI-Lite|2018-05-20|Rename to match upstream naming
 www/mod_proxy_uwsgi|www/apache24|2018-05-22|Module has been merged into Apache 2.4
 devel/p5-reaper|devel/p5-Reaper|2018-05-22|Rename to match upstream naming
+textproc/py-pyelasticsearch||2018-05-22|Has expired: Not depended upon anymore
