@@ -3252,6 +3252,7 @@
     SUBDIR += p5-Readonly
     SUBDIR += p5-Readonly-XS
     SUBDIR += p5-ReadonlyX
+    SUBDIR += p5-Reaper
     SUBDIR += p5-Ref-Util
     SUBDIR += p5-Ref-Util-XS
     SUBDIR += p5-Reflex
@@ -3789,7 +3790,6 @@
     SUBDIR += p5-perlqt-kde4
     SUBDIR += p5-pip
     SUBDIR += p5-prefork
-    SUBDIR += p5-reaper
     SUBDIR += p5-relative
     SUBDIR += p5-rpm-build-perl
     SUBDIR += p5-self
