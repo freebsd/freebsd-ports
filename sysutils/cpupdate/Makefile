@@ -3,6 +3,7 @@
 
 PORTNAME=	cpupdate
 DISTVERSION=	g20180513
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	eugen@FreeBSD.org
@@ -26,9 +27,10 @@ GH_TAGNAME=	48e42d5
 
 PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 
+# MCE DB r68
 CPM_ACCOUNT=	platomav
 CPM_PROJECT=	CPUMicrocodes
-CPM_TAGNAME=	f9a4add
+CPM_TAGNAME=	d06b1b0
 
 OPTIONS_DEFINE=		CPM INTEL
 CPM_DESC=		Download platomav/CPUMicrocodes collection
@@ -38,9 +40,9 @@ CPM_GH_TAGNAME=		${CPM_TAGNAME}:cpm
 CPM_DIR=		${WRKDIR}/${CPM_PROJECT}-${CPM_TAGNAME}
 CPM_DATADIR=		${DATADIR}/CPUMicrocodes/secondary/Intel
 
-INTEL_PACK=		microcode-20180312.tgz
+INTEL_PACK=		microcode-20180425.tgz
 INTEL_DESC=		Download Intel microcode pack ${INTEL_PACK}
-INTEL_MASTER_SITES=	https://downloadmirror.intel.com/27591/eng/:intel
+INTEL_MASTER_SITES=	https://downloadmirror.intel.com/27776/eng/:intel
 INTEL_DISTFILES=	${INTEL_PACK}:intel
 INTEL_DIR=		${WRKDIR}/intel-ucode
 INTEL_DATADIR=		${DATADIR}/CPUMicrocodes/primary/Intel
@@ -59,6 +61,7 @@ install-microcodes:
 	${RM} -rf ${INTEL_DATADIR}
 	${MKDIR} ${INTEL_DATADIR}
 	(cd ${INTEL_DIR} && ${COPYTREE_SHARE} . ${INTEL_DATADIR})
+	(cd ${INTEL_DIR}-with-caveats && ${COPYTREE_SHARE} . ${INTEL_DATADIR})
 .endif
 .if ${PORT_OPTIONS:MCPM}
 	${RM} -rf ${CPM_DATADIR}
