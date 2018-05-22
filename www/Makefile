@@ -464,7 +464,6 @@
     SUBDIR += mod_php71
     SUBDIR += mod_php72
     SUBDIR += mod_proctitle
-    SUBDIR += mod_proxy_uwsgi
     SUBDIR += mod_proxy_xml
     SUBDIR += mod_python35
     SUBDIR += mod_qos
