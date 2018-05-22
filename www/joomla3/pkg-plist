@@ -6888,6 +6888,20 @@
 %%WWWDIR%%/tests/unit/suites/plugins/content/emailcloak/PlgContentEmailcloakTest.php
 %%WWWDIR%%/tmp/index.html
 %%WWWDIR%%/web.config.txt
+%%WWWDIR%%/.github/CODEOWNERS
+%%WWWDIR%%/.github/ISSUE_TEMPLATE/Bug_report.md
+%%WWWDIR%%/.github/ISSUE_TEMPLATE/Custom.md
+%%WWWDIR%%/.github/ISSUE_TEMPLATE/Feature_request.md
+%%WWWDIR%%/administrator/components/com_admin/postinstall/updatedefaultsettings.php
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/3.8.8-2018-05-18.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/postgresql/3.8.8-2018-05-18.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/3.8.8-2018-05-18.sql
+%%WWWDIR%%/libraries/vendor/symfony/polyfill-php73/LICENSE
+%%WWWDIR%%/libraries/vendor/symfony/polyfill-php73/bootstrap.php
+%%WWWDIR%%/media/editors/codemirror/theme/gruvbox-dark.css
+%%WWWDIR%%/media/editors/codemirror/theme/idea.css
+%%WWWDIR%%/media/editors/codemirror/theme/lucario.css
+%%WWWDIR%%/media/editors/codemirror/theme/ssms.css
 @dir %%WWWDIR%%/tests/unit/tmp
 @group
 @owner
