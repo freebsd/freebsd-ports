@@ -3,6 +3,7 @@
 
 PORTNAME=	tclbsd
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -26,6 +27,7 @@ PLIST_FILES=	lib/${TCL_PKG}/bsd_procs.tcl \
 		man/mann/bsd.n.gz
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${TCL_PKG}/lib${TCL_PKG}.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/bsd.pdf ${STAGEDIR}${DOCSDIR}
 
