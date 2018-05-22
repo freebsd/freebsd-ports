@@ -1,0 +1,32 @@
+From cbc2f2d1df769123caa2e4562dbe1809cca1304d Mon Sep 17 00:00:00 2001
+From: Jussi Pakkanen <jpakkane@gmail.com>
+Date: Sun, 29 Apr 2018 21:43:24 +0300
+Subject: [PATCH] Keep separator spaces in pkg-config declarations. Closes
+ #3479.
+
+---
+ mesonbuild/modules/pkgconfig.py                 |  6 ++++--
+ run_unittests.py                                | 11 +++++++++++
+ test cases/unit/31 pkgconfig format/meson.build | 12 ++++++++++++
+ test cases/unit/31 pkgconfig format/somelib.c   |  5 +++++
+ 4 files changed, 32 insertions(+), 2 deletions(-)
+ create mode 100644 test cases/unit/31 pkgconfig format/meson.build
+ create mode 100644 test cases/unit/31 pkgconfig format/somelib.c
+
+diff --git a/mesonbuild/modules/pkgconfig.py b/mesonbuild/modules/pkgconfig.py
+index a3ba973f3..419a14c77 100644
+--- mesonbuild/modules/pkgconfig.py
++++ mesonbuild/modules/pkgconfig.py
+@@ -139,8 +139,10 @@ def add_version_reqs(self, name, version_reqs):
+         if version_reqs:
+             if name not in self.version_reqs:
+                 self.version_reqs[name] = set()
+-            # We could have '>=1.0' or '>= 1.0', remove spaces to normalize
+-            new_vreqs = [s.replace(' ', '') for s in mesonlib.stringlistify(version_reqs)]
++            # Note that pkg-config is picky about whitespace.
++            # 'foo > 1.2' is ok but 'foo>1.2' is not.
++            # foo, bar' is ok, but 'foo,bar' is not.
++            new_vreqs = [s for s in mesonlib.stringlistify(version_reqs)]
+             self.version_reqs[name].update(new_vreqs)
+ 
+     def split_version_req(self, s):
