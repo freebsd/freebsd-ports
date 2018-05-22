@@ -2,7 +2,7 @@
 
 PORTNAME=	google-compute-engine
 DISTVERSION=	2.7.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,6 +39,5 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/instance_configs.cfg.distro.sample
 	${INSTALL_DATA} ${FILESDIR}/90-google.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/syslog.d/90-google.conf.sample
-
 
 .include <bsd.port.mk>
