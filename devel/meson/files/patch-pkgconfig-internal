@@ -1,0 +1,67 @@
+From a3b2ae8ebcdcebd68b8a217d03102c6d03fcb766 Mon Sep 17 00:00:00 2001
+From: Nirbheek Chauhan <nirbheek@centricular.com>
+Date: Tue, 1 May 2018 17:54:54 +0530
+Subject: [PATCH] pkgconfig: Don't expose internal libraries in .pc files
+
+Libraries that have been linked with link_whole: are internal
+implementation details and should never be exposed to the outside
+world in either Libs: or Libs.private:
+
+Closes https://github.com/mesonbuild/meson/issues/3509
+---
+ mesonbuild/build.py                             | 12 +++++++++---
+ mesonbuild/modules/pkgconfig.py                 |  4 ++--
+ run_unittests.py                                | 11 ++++++-----
+ test cases/unit/31 pkgconfig format/meson.build |  5 +++--
+ test cases/unit/31 pkgconfig format/somelib.c   |  4 +++-
+ test cases/unit/31 pkgconfig format/someret.c   |  3 +++
+ 6 files changed, 26 insertions(+), 13 deletions(-)
+ create mode 100644 test cases/unit/31 pkgconfig format/someret.c
+
+diff --git a/mesonbuild/build.py b/mesonbuild/build.py
+index 3d531d181..a2d024aec 100644
+--- mesonbuild/build.py
++++ mesonbuild/build.py
+@@ -817,16 +817,22 @@ def get_outputs(self):
+     def get_extra_args(self, language):
+         return self.extra_args.get(language, [])
+ 
+-    def get_dependencies(self, exclude=None):
++    def get_dependencies(self, exclude=None, internal=True):
+         transitive_deps = []
+         if exclude is None:
+             exclude = []
+-        for t in itertools.chain(self.link_targets, self.link_whole_targets):
++        if internal:
++            link_targets = itertools.chain(self.link_targets, self.link_whole_targets)
++        else:
++            # We don't want the 'internal' libraries when generating the
++            # `Libs:` and `Libs.private:` lists in pkg-config files.
++            link_targets = self.link_targets
++        for t in link_targets:
+             if t in transitive_deps or t in exclude:
+                 continue
+             transitive_deps.append(t)
+             if isinstance(t, StaticLibrary):
+-                transitive_deps += t.get_dependencies(transitive_deps + exclude)
++                transitive_deps += t.get_dependencies(transitive_deps + exclude, internal)
+         return transitive_deps
+ 
+     def get_source_subdir(self):
+diff --git a/mesonbuild/modules/pkgconfig.py b/mesonbuild/modules/pkgconfig.py
+index 419a14c77..365d3cd37 100644
+--- mesonbuild/modules/pkgconfig.py
++++ mesonbuild/modules/pkgconfig.py
+@@ -123,10 +123,10 @@ def _process_libs(self, libs, public):
+                     if not hasattr(obj, 'generated_pc'):
+                         obj.generated_pc = self.name
+                 if isinstance(obj, build.StaticLibrary) and public:
+-                    self.add_pub_libs(obj.get_dependencies())
++                    self.add_pub_libs(obj.get_dependencies(internal=False))
+                     self.add_pub_libs(obj.get_external_deps())
+                 else:
+-                    self.add_priv_libs(obj.get_dependencies())
++                    self.add_priv_libs(obj.get_dependencies(internal=False))
+                     self.add_priv_libs(obj.get_external_deps())
+             elif isinstance(obj, str):
+                 processed_libs.append(obj)
