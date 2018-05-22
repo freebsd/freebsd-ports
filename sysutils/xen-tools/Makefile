@@ -49,7 +49,8 @@ EXTRA_PATCHES=	${FILESDIR}/var_paths.patch:-p1 \
 		${FILESDIR}/0001-libs-xenstore-set-correct-FreeBSD-device.patch:-p1 \
 		${FILESDIR}/kdd.patch:-p1 \
 		${FILESDIR}/0001-xenstored-apply-a-write-transaction-rate-limit.patch:-p1 \
-		${FILESDIR}/0002-xenstored-Log-when-the-write-transaction-rate-limit-.patch:-p1
+		${FILESDIR}/0002-xenstored-Log-when-the-write-transaction-rate-limit-.patch:-p1 \
+		${FILESDIR}/0001-Backport-of-commit-858dba.patch:-p1
 
 CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}" \
 			--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin
