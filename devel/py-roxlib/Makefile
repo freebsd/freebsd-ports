@@ -12,6 +12,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Python libraries for ROX
 
 USES=		python:2.7 shebangfix tar:bzip2
+USE_PYTHON=	flavors
 USE_GNOME=	pygtk2:run
 SHEBANG_FILES=	ROX-Lib2/AppRun ROX-Lib2/python/make_docs.py
 
