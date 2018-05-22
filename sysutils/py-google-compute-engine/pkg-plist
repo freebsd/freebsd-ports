@@ -1,2 +1,3 @@
 @sample etc/instance_configs.cfg.distro.sample
 @sample etc/syslog.d/90-google.conf.sample
+/etc/dhclient-exit-hooks
