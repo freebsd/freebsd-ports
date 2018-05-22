@@ -1,3 +1,3 @@
-TIMESTAMP = 1519683587
-SHA256 (restic-restic-v0.8.3_GH0.tar.gz) = 0cf697c88404b180d6d6ff2e7d2c27b2fcb9536da6dbdf15ad4d320af7e8f17c
-SIZE (restic-restic-v0.8.3_GH0.tar.gz) = 48746281
+TIMESTAMP = 1526982237
+SHA256 (restic-restic-v0.9.0_GH0.tar.gz) = 5b46612254dcaec09a6f7ddae70e116f77c0f87ac7988dc379b34d0fd4bbc4c4
+SIZE (restic-restic-v0.9.0_GH0.tar.gz) = 51049118
