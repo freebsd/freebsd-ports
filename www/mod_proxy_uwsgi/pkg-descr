@@ -1,3 +1,0 @@
-Apache2 module to proxy requests to uwsgi instance.
-
-WWW: http://uwsgi-docs.readthedocs.org/en/latest/Apache.html#mod-proxy-uwsgi
