@@ -1,4 +1,5 @@
 # $FreeBSD$
+
 INTEL_UCODE=	intel-ucode
 OUTPUT_DIR=	mcodes
 
@@ -6,7 +7,8 @@ all:	ucode
 ucode:	ucode-split
 	mkdir -p $(OUTPUT_DIR)
 	cd ${OUTPUT_DIR} && \
-	for file in ../${INTEL_UCODE}/*; do \
+	for file in \
+	  ../${INTEL_UCODE}/[0-9,a-f][0-9,a-f]-[0-9,a-f][0-9,a-f]-[0-9,a-f][0-9,a-f]; do \
 		../ucode-split $$file; \
 	done
 
