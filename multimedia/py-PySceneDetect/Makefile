@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYNUMPY} \
 		mkvmerge:multimedia/mkvtoolnix \
-		${PYTHON_PKGNAMEPREFIX}opencv>=0:graphics/py-opencv
+		${PYTHON_PKGNAMEPREFIX}opencv>=0:graphics/py-opencv@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_GITHUB=	yes

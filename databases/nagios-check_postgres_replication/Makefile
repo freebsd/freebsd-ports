@@ -15,8 +15,8 @@ COMMENT=	Nagios plugin to check the lag between a postgresql replica and master
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nagiosplugin>=0:sysutils/py-nagiosplugin \
-		${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nagiosplugin>=0:sysutils/py-nagiosplugin@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${PY_FLAVOR}
 
 USES=		python shebangfix
 SHEBANG_FILES=	check_postgres_replication.py

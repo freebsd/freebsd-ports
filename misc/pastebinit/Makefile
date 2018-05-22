@@ -12,7 +12,7 @@ COMMENT=	Command line utility for pastebing
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:devel/py-configobj
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:devel/py-configobj@${PY_FLAVOR}
 
 USES=		python:run shebangfix tar:bzip2
 SHEBANG_FILES=	pastebinit

@@ -10,7 +10,7 @@ MASTER_SITES=	GH \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	BGP engine and route injector
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddress>0:net/py-ipaddress
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddress>0:net/py-ipaddress@${PY_FLAVOR}
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

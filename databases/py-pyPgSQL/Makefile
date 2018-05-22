@@ -13,7 +13,7 @@ COMMENT=	Python DB-API 2.0 compliant interface to PostgreSQL
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mx-base>0:lang/py-mx-base
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mx-base>0:lang/py-mx-base@${PY_FLAVOR}
 
 USES=		pgsql python:2.7
 USE_PYTHON=	distutils autoplist

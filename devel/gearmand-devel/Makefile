@@ -12,7 +12,7 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
+		${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid
 
