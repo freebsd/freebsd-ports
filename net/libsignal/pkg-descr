@@ -1,0 +1,4 @@
+Signal Protocol is a ratcheting forward secrecy protocol that works in
+synchronous and asynchronous messaging environments.
+
+WWW: https://github.com/signalapp/libsignal-protocol-c
