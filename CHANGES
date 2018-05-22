@@ -152,8 +152,7 @@ AUTHOR: mat@FreeBSD.org
 
   In all the ports with Python dependencies, the *_DEPENDS entries MUST end
   with the flavor so that the framework knows which to build/use.  This is done
-  by appending '@${PY_FLAVOR}' after the origin (or @${FLAVOR} if in a Python
-  module with Python flavors, as the content will be the same).  For example:
+  by appending '@${PY_FLAVOR}' after the origin.  For example:
 
     RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
