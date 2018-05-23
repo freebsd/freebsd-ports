@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dplyr
-DISTVERSION=	0.7.4
-PORTREVISION=	1
+DISTVERSION=	0.7.5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -23,7 +22,8 @@ BUILD_DEPENDS=	R-cran-Rcpp>=0.12.0:devel/R-cran-Rcpp \
 		R-cran-magrittr>=0:devel/R-cran-magrittr \
 		R-cran-lazyeval>=0.1.10:math/R-cran-lazyeval \
 		R-cran-tibble>=1.3.1:devel/R-cran-tibble \
-		R-cran-assertthat>=0:math/R-cran-assertthat
+		R-cran-assertthat>=0:math/R-cran-assertthat \
+		R-cran-tidyselect>=0:devel/R-cran-tidyselect
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cran:auto-plist,compiles
