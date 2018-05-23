@@ -1,0 +1,10 @@
+--- tables/CMakeLists.txt.orig	2017-02-10 04:01:32 UTC
++++ tables/CMakeLists.txt
+@@ -60,5 +60,5 @@ endforeach()
+ 
+ add_custom_target(table_data ALL DEPENDS ${MB_FILE})
+ 
+-install(FILES ${CONF_FILE} DESTINATION "${FCITX4_PREFIX}/share/fcitx/table")
+-install(FILES ${MB_FILE} DESTINATION "${FCITX4_PREFIX}/share/fcitx/table")
++install(FILES ${CONF_FILE} DESTINATION "share/fcitx/table")
++install(FILES ${MB_FILE} DESTINATION "share/fcitx/table")
