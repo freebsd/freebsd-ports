@@ -4,6 +4,7 @@
 PORTNAME=	blis
 LIBVERSION=	0.3.2
 PORTVERSION=	${LIBVERSION}g20180501
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -27,8 +28,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flame
 GH_TAGNAME=	8adb2f9
 
-USES=		gmake
+USES=		gmake python shebangfix
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	build/flatten-headers.py
 
 HAS_CONFIGURE=	yes
 
