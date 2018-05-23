@@ -10,7 +10,6 @@
 %%SITE_PERL%%/Mail/LMLM/Types/Listserv.pm
 %%SITE_PERL%%/Mail/LMLM/Types/Mailman.pm
 %%SITE_PERL%%/Mail/LMLM/Types/Majordomo.pm
-%%SITE_PERL%%/Mail/get-version.pl
 %%PERL5_MAN3%%/Mail::LMLM.3.gz
 %%PERL5_MAN3%%/Mail::LMLM::Object.3.gz
 %%PERL5_MAN3%%/Mail::LMLM::Render.3.gz
