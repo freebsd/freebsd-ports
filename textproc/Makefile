@@ -191,6 +191,7 @@
     SUBDIR += fa-aspell
     SUBDIR += fcitx-m17n
     SUBDIR += fcitx-qt5
+    SUBDIR += fcitx-table-other
     SUBDIR += fex
     SUBDIR += ffe
     SUBDIR += fi-aspell
