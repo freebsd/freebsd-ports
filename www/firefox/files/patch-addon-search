@@ -36,7 +36,7 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
        if (Array.isArray(aEntry.current_version.files)) {
          for (let file of aEntry.current_version.files) {
 -          if (file.platform == "all" || file.platform == Services.appinfo.OS.toLowerCase()) {
-+          if (file.platform == "all" || file.platform == "linux") {
++          if (file.platform == "all" || file.platform == "linux" || file.platform == Services.appinfo.OS.toLowerCase()) {
              if (file.url) {
                addon.sourceURI = NetUtil.newURI(file.url);
              }
@@ -49,7 +49,7 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
      try {
        for (let platform of this.targetPlatforms) {
 -        if (platform.os == Services.appinfo.OS) {
-+        if (platform.os == "Linux") {
++        if (platform.os == "Linux" || platform.os == Services.appinfo.OS) {
            if (platform.abi) {
              needsABI = true;
              if (platform.abi === abi)
