@@ -14,6 +14,9 @@ PATCHFILES=	0ee4735ab8fb.patch:-p1
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	NOSQL distributed document-oriented database
 
+EXPIRATION_DATE=	2018-07-23
+DEPRECATED=	End of Life October 2016
+
 # mongodb is AGPLv3, C++ driver is APACHE20
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
