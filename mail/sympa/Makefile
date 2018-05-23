@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-DISTVERSION=	6.2.24
+DISTVERSION=	6.2.30
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -54,7 +54,7 @@ PORTDOCS=	NEWS.md
 USERS=		sympa
 GROUPS=		sympa
 # Shebang is corrected by configure script
-USES=		autoreconf cpe fakeroot perl5 shebangfix
+USES=		autoreconf cpe fakeroot perl5 shebangfix gettext
 
 SHEBANG_FILES=	po/sympa/xgettext.pl \
 		po/sympa/add-lang.pl \
@@ -77,6 +77,8 @@ CONFIGURE_ARGS+=--enable-fhs	\
 		--with-lockdir=/var/spool/lock		\
 		--with-modulesdir=${PREFIX}/libexec/${PORTNAME} \
 		--with-staticdir=${DATADIR}/static \
+		--with-cssdir=${DATADIR}/static/css \
+		--with-picturesdir=${DATADIR}/static/pictures \
 		--with-piddir=/var/run/${PORTNAME} \
 		--with-scriptdir=${PREFIX}/libexec/${PORTNAME} \
 		--with-spooldir=/var/spool/${PORTNAME} \
@@ -97,8 +99,8 @@ USE_RC_SUBR=	sympa
 
 CONFLICTS=	sympa-5*
 
-OPTIONS_DEFINE=	FASTCGI APACHE NLS
-OPTIONS_DEFAULT=APACHE NLS
+OPTIONS_DEFINE=	FASTCGI APACHE
+OPTIONS_DEFAULT=APACHE
 OPTIONS_RADIO=	DATABASE
 OPTIONS_RADIO_DATABASE=	PGSQL SYBASE MYSQL
 OPTIONS_SUB=	yes
@@ -115,11 +117,9 @@ OPTIONS_DEFAULT+=	${option}
 .  endfor
 .endif
 
-NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
 FASTCGI_RUN_DEPENDS=	p5-FCGI>=0:www/p5-FCGI
 APACHE_IMPLIES=	FASTCGI
-APACHE_USE=	APACHE_RUN=22+
+APACHE_USES+=	apache:run
 APACHE_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:www/mod_fastcgi
 
 PGSQL_SUB_LIST=	REQ_PGSQL=postgresql
