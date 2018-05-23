@@ -2,12 +2,14 @@
 
 PORTNAME=	user-manager
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 user manager
 
 LIB_DEPENDS=	libpwquality.so:security/libpwquality
+RUN_DEPENDS=	accountsservice>=0:sysutils/accountsservice
 
 USES=		cmake:outsource compiler:c++11-lib cpe gettext \
 		kde:5 pkgconfig tar:xz
