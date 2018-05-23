@@ -3,7 +3,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	52.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -48,15 +48,21 @@ PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 
-OPTIONS_DEFINE=	RUST
+OPTIONS_DEFINE=	LIGHTNING RUST
 OPTIONS_SINGLE=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
-OPTIONS_DEFAULT=BUNDLED_CAIRO CANBERRA GTK3
+OPTIONS_DEFAULT=BUNDLED_CAIRO CANBERRA GTK3 LIGHTNING
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
 MOZSRC:=	${WRKSRC}/mozilla
+
+.if ${PORT_OPTIONS:MLIGHTNING}
+MOZ_OPTIONS+=	--enable-calendar
+.else
+MOZ_OPTIONS+=	--disable-calendar
+.endif
 
 post-extract:
 	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|;s|@MOZILLA@|${MOZILLA}|' \
