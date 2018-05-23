@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	18.0.g201804180937
-PORTREVISION=	1
+DISTVERSION=	18.0.g201805221344
 CATEGORIES=	multimedia
 PKGNAMESUFFIX?=	-devel
 
@@ -43,6 +42,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libswscale.so:multimedia/ffmpeg \
 		libtag.so:audio/taglib \
 		libtinyxml.so:textproc/tinyxml \
+		libudev.so:devel/libudev-devd \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 # Building libcpluff.a requires autoreconf and gmake.  Using ninja
@@ -54,7 +54,7 @@ USES=		autoreconf:build cmake:outsource,noninja compiler:c++11-lib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	f4489bffe22487bc906e79130832c14360a42a8a
+GH_TAGNAME=	d2b10e2bb0650d8d47caf8a5d15fa4b6f2cb7254
 USE_GNOME=	libxslt libxml2
 USE_JAVA=	yes
 JAVA_BUILD=	yes
@@ -78,7 +78,7 @@ PLIST_SUB=	ARCH=${KODIARCH_${ARCH}:U${ARCH}} OPSYS=${OPSYS:tl}
 
 OPTIONS_DEFINE=	AVAHI CEC DBUS LIBBLURAY MYSQL NFS SMB SSH UPNP VAAPI	\
 		VDPAU WEBSERVER
-OPTIONS_DEFAULT=	LIBBLURAY SSH UPNP VAAPI VDPAU WEBSERVER X11
+OPTIONS_DEFAULT=	LIBBLURAY SSH UPNP WEBSERVER X11
 OPTIONS_SINGLE=	PLATFORM
 OPTIONS_SINGLE_PLATFORM=	GBM RPI WAYLAND X11
 OPTIONS_EXCLUDE_amd64=	RPI
@@ -102,7 +102,10 @@ CEC_CMAKE_BOOL=		ENABLE_CEC
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CMAKE_BOOL=	ENABLE_DBUS
 
+GBM_BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 GBM_CMAKE_ON=		-DCORE_PLATFORM_NAME:STRING="gbm"
+GBM_LIB_DEPENDS=	libinput.so:x11/libinput \
+			libxkbcommon.so:x11/libxkbcommon
 
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CMAKE_BOOL=	ENABLE_BLURAY
@@ -145,16 +148,20 @@ UPNP_CXXFLAGS=		-DNPT_CONFIG_HAVE_ARPA_INET_H \
 			-DNPT_CONFIG_HAVE_SOCKADDR_DL \
 			-DNPT_CONFIG_HAVE_SOCKADDR_IN_SIN_LEN
 
-VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
+VAAPI_BROKEN=		Crashes at startup with VAAPI enabled
 VAAPI_CMAKE_BOOL=	ENABLE_VAAPI
+VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 
-VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
+VDPAU_BROKEN=		Crashes at startup with VDPAU enabled
 VDPAU_CMAKE_BOOL=	ENABLE_VDPAU
+VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 
-WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
+WAYLAND_BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat \
+			wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_CMAKE_ON=	-DCORE_PLATFORM_NAME:STRING="wayland" \
 			-DWAYLAND_RENDER_SYSTEM:STRING="gl"
-WAYLAND_LIB_DEPENDS=	libwayland-client++.so:graphics/waylandpp \
+WAYLAND_LIB_DEPENDS=	libinput.so:x11/libinput \
+			libwayland-client++.so:graphics/waylandpp \
 			libwayland-client.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
 
@@ -176,13 +183,6 @@ post-patch:
 # (see CMAKE_ARGS).
 	@${REINPLACE_CMD} 's@KODI_DEPENDSBUILD@true@' \
 		${WRKSRC}/cmake/modules/FindLibDvd.cmake
-	@${CP} ${WRKSRC}/cmake/platform/linux/gbm.cmake \
-		${WRKSRC}/cmake/platform/linux/rbpi.cmake \
-		${WRKSRC}/cmake/platform/freebsd
-	@${CP} ${WRKSRC}/cmake/scripts/linux/ExtraTargets.cmake \
-		${WRKSRC}/cmake/scripts/freebsd/ExtraTargets.cmake
-	@${CP} ${WRKSRC}/system/settings/linux.xml \
-		${WRKSRC}/system/settings/freebsd.xml
 
 .if ${SLAVE_PORT} == no
 post-install:
@@ -191,7 +191,9 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/TexturePacker
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/kodi -name '*.so' | ${XARGS} ${STRIP_CMD}
 # Nothing useful here...
-	@${RM} -rf ${STAGEDIR}${DOCSDIR}
+	@${RM} -r ${STAGEDIR}${DOCSDIR}
+# No firewalld on FreeBSD...
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/firewalld
 .endif
 
 .include <bsd.port.mk>

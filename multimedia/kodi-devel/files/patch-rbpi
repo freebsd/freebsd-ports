@@ -1,37 +1,10 @@
---- cmake/scripts/freebsd/ArchSetup.cmake.orig	2018-04-18 09:37:24 UTC
-+++ cmake/scripts/freebsd/ArchSetup.cmake
-@@ -1,4 +1,7 @@
- set(ARCH_DEFINES -D_LINUX -DTARGET_POSIX -DTARGET_FREEBSD)
-+if(CORE_PLATFORM_NAME_LC STREQUAL rbpi)
-+  list(APPEND ARCH_DEFINES -D_ARMEL -DTARGET_RASPBERRY_PI)
-+endif()
- set(SYSTEM_DEFINES -D__STDC_CONSTANT_MACROS -D_LARGEFILE64_SOURCE
-                    -D_FILE_OFFSET_BITS=64)
- set(PLATFORM_DIR platform/linux)
-@@ -10,6 +13,15 @@ else()
-     set(ARCH x86_64-freebsd)
-   elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "i.86")
-     set(ARCH x86-freebsd)
-+  elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL armv6)
-+    set(ARCH armv6-freebsd)
-+    set(NEON True)
-+  elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL armv7)
-+    set(ARCH armv7-freebsd)
-+    set(NEON True)
-+  elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL aarch64)
-+    set(ARCH aarch64-freebsd)
-+    set(NEON True)
-   else()
-     message(WARNING "unknown CPU: ${CPU}")
-   endif()
---- xbmc/windowing/rpi/WinSystemRpi.cpp.orig	2018-04-18 09:37:24 UTC
+--- xbmc/windowing/rpi/WinSystemRpi.cpp.orig	2018-05-22 11:44:17 UTC
 +++ xbmc/windowing/rpi/WinSystemRpi.cpp
-@@ -32,9 +32,16 @@
+@@ -32,8 +32,15 @@
  #include "settings/DisplaySettings.h"
  #include "guilib/DispResource.h"
  #include "utils/log.h"
 +#include "utils/StringUtils.h"
- #include "../WinEventsLinux.h"
  #include "cores/AudioEngine/AESinkFactory.h"
  #include "cores/AudioEngine/Sinks/AESinkPi.h"
 +#ifdef HAS_PULSEAUDIO
@@ -43,9 +16,9 @@
  #include "platform/linux/powermanagement/LinuxPowerSyscall.h"
  
  #include <EGL/egl.h>
-@@ -55,7 +62,36 @@ CWinSystemRpi::CWinSystemRpi()
+@@ -54,7 +61,36 @@ CWinSystemRpi::CWinSystemRpi() :
+   m_rpi = new CRPIUtils();
  
-   m_winEvents.reset(new CWinEventsLinux());
    AE::CAESinkFactory::ClearSinks();
 -  CAESinkPi::Register();
 +
@@ -80,4 +53,4 @@
 +  }
    CLinuxPowerSyscall::Register();
    m_lirc.reset(OPTIONALS::LircRegister());
- }
+   m_libinput->Start();
