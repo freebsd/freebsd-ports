@@ -3,7 +3,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.49.3
-PORTREVISION=	4
+PORTREVISION=	5
 MOZILLA_VER=	52 # above + 3
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -42,10 +42,10 @@ MOZ_OPTIONS+=	--enable-application=suite
 USE_MOZILLA=	-soundtouch
 MOZ_PKGCONFIG_FILES=
 
-OPTIONS_DEFINE=	LDAP LIGHTNING RUST
+OPTIONS_DEFINE=	LDAP RUST
 OPTIONS_SINGLE=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
-OPTIONS_DEFAULT=CANBERRA GTK3 LDAP LIGHTNING
+OPTIONS_DEFAULT=CANBERRA GTK3 LDAP
 
 LDAP_DESC?=	LDAP support for Mailnews
 
@@ -59,12 +59,6 @@ MOZ_OPTIONS+=	--disable-ldap
 .else
 MOZ_OPTIONS+=	--enable-ldap
 .endif
-.if ${PORT_OPTIONS:MLIGHTNING}
-MOZ_OPTIONS+=	--enable-calendar
-.else
-MOZ_OPTIONS+=	--disable-calendar
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/suite/app/nsSuiteApp.cpp

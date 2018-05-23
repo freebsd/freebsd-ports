@@ -28,5 +28,4 @@ BUNDLED_CAIRO_DESC?=	Use bundled fork of cairo-1.9.5
 CANBERRA_DESC?=		Sound theme alerts
 INTEGER_SAMPLES_DESC?=	Integer audio sample format
 LIBPROXY_DESC?=		Proxy support via libproxy
-LIGHTNING_DESC?=	Calendar extension
 RUST_DESC?=		Build with components written in Rust language
