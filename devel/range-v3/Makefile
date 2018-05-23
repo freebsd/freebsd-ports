@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	range-v3
-DISTVERSION=	0.3.5
+DISTVERSION=	0.3.6
 CATEGORIES=	devel
 
 MAINTAINER=	henry.hu.sh@gmail.com
