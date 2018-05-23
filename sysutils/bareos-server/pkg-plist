@@ -68,7 +68,7 @@ lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
 %%MYSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
-lib/bareos/scripts/ddl/grants/%%DBTYPE%%-change_owner.dbconfig-template.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-change_owner.dbconfig-template.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.10_11.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.11_12.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.12_14.sql
@@ -77,7 +77,7 @@ lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2001_2002.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2002_2003.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2003_2004.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2004_2171.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.bee.1017_2004.sql
+%%PGSQL%%lib/bareos/scripts/ddl/updates/%%DBTYPE%%.bee.1017_2004.sql
 lib/bareos/scripts/ddl/versions.map
 lib/bareos/scripts/delete_catalog_backup
 lib/bareos/scripts/disk-changer
