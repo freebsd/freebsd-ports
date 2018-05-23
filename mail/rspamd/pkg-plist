@@ -9,6 +9,7 @@ bin/rspamd_stats
 etc/newsyslog.conf.d/rspamd.newsyslog.conf
 @sample %%ETCDIR%%/2tld.inc.sample
 @sample %%ETCDIR%%/actions.conf.sample
+@sample %%ETCDIR%%/cgp.inc.sample
 @sample %%ETCDIR%%/common.conf.sample
 @sample %%ETCDIR%%/composites.conf.sample
 @sample %%ETCDIR%%/dmarc_whitelist.inc.sample
