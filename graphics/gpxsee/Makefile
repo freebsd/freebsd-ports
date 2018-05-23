@@ -3,6 +3,7 @@
 
 PORTNAME=	gpxsee
 PORTVERSION=	5.11
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
@@ -12,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/licence.txt
 
 USES=		qmake:outsource desktop-file-utils shared-mime-info
-USE_QT5=	buildtools_build core gui network printsupport widgets
+USE_QT5=	buildtools_build core gui network opengl printsupport widgets
 USE_GL=		gl
 
 USE_GITHUB=	yes
