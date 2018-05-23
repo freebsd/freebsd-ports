@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180523:
+  AFFECTS: mail/thunderbird, www/seamonkey
+  AUTHOR: gecko@FreeBSD.org
+
+  LIGHTNING is no longer provided as part of the ports in order to
+  support independent updates and provide localization. Go to
+  Tools -> Add-ons Manager, remove existing Lightning extension
+  then type "lightning" in the search field to reinstall it.
+
 20180518:
   AFFECTS: users of sysutils/ansible*
   AUTHOR: lifanov@FreeBSD.org
