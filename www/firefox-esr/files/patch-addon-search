@@ -44,7 +44,7 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
            addon.isPlatformCompatible = Array.some(nodes, function(aNode) {
              let text = aNode.textContent.toLowerCase().trim();
 -            return text == "all" || text == Services.appinfo.OS.toLowerCase();
-+            return text == "all" || text == "linux";
++            return text == "all" || text == "linux" || text == Services.appinfo.OS.toLowerCase();
            });
            break;
          case "install":
@@ -53,7 +53,7 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
              let os = node.getAttribute("os").trim().toLowerCase();
              // If the os is not ALL and not the current OS then ignore this xpi
 -            if (os != "all" && os != Services.appinfo.OS.toLowerCase())
-+            if (os != "all" && os != "linux")
++            if (os != "all" && os != "linux" && os != Services.appinfo.OS.toLowerCase())
                break;
            }
  
@@ -66,7 +66,7 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
      try {
        for (let platform of this.targetPlatforms) {
 -        if (platform.os == Services.appinfo.OS) {
-+        if (platform.os == "Linux") {
++        if (platform.os == "Linux" || platform.os == Services.appinfo.OS) {
            if (platform.abi) {
              needsABI = true;
              if (platform.abi === abi)
