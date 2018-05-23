@@ -12,6 +12,10 @@ COMMENT=	GNU Social-compatible microblogging server
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build
+DEPRECATED=	Breaks too frequently
+EXPIRATION_DATE=	2018-07-01
+
 BUILD_DEPENDS=	yarn>:www/yarn\
 		${BR_DEPENDS}
 LIB_DEPENDS=	libidn2.so:dns/libidn2
