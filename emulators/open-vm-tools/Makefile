@@ -4,7 +4,7 @@
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
 DISTVERSIONPREFIX=	stable-
-PORTREVISION=		5
+PORTREVISION=		6
 PORTEPOCH=		2
 CATEGORIES=		emulators
 
@@ -64,6 +64,10 @@ USE_RC_SUBR=		vmware-guestd vmware-kmod
 INSTALL_TARGET=		install-strip
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200063
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-modules_freebsd_vmxnet_net__compat.h
+.endif
 
 .if ${PORT_OPTIONS:MX11}
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
