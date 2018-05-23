@@ -2,7 +2,7 @@
 
 PORTNAME=	vegeta
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.3.0
+DISTVERSION=	7.0.0
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	egypcio@googlemail.com
