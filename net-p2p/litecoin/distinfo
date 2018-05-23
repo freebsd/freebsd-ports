@@ -1,5 +1,3 @@
-TIMESTAMP = 1503300985
-SHA256 (litecoin-project-litecoin-v0.14.2_GH0.tar.gz) = 953fd6cee2da3ed63779b2dbce8a775e76d7a926be3de5b906d40f6641a2b4d5
-SIZE (litecoin-project-litecoin-v0.14.2_GH0.tar.gz) = 6205762
-SHA256 (1ec0c0a01c31.patch) = 01a2fe784d7c3d21d2cfd9dc460c059c7ae358e0f5e9e5e7782f10d259db3cd9
-SIZE (1ec0c0a01c31.patch) = 3535
+TIMESTAMP = 1527084876
+SHA256 (litecoin-project-litecoin-v0.15.1_GH0.tar.gz) = 570adae0d4a9567110967aba2ea5d90ce8c421313f453523c4fd23b9339c7d2b
+SIZE (litecoin-project-litecoin-v0.15.1_GH0.tar.gz) = 6672694
