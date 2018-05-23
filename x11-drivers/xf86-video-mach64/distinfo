@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-mach64-6.9.5.tar.bz2) = 3e98985b6e044189efd42342862208f472881c25debf22230a1d54a96d71b41f
-SIZE (xorg/driver/xf86-video-mach64-6.9.5.tar.bz2) = 520883
+TIMESTAMP = 1527092412
+SHA256 (xorg/driver/xf86-video-mach64-6.9.6.tar.bz2) = 7a0707c71bb522430f83bb5e9d9ee697e661e35534a3a2d10834f86b327a3c9c
+SIZE (xorg/driver/xf86-video-mach64-6.9.6.tar.bz2) = 537768
