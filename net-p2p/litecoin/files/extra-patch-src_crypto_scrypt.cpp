@@ -1,5 +1,5 @@
---- src/crypto/scrypt.cpp.orig	2015-08-04 13:27:49 UTC
-+++ src/crypto/scrypt.cpp
+--- src/crypto/scrypt.cpp.orig	2018-02-26 19:37:55.000000000 -0500
++++ src/crypto/scrypt.cpp	2018-05-23 11:25:45.718849000 -0400
 @@ -32,6 +32,7 @@
  #include <stdlib.h>
  #include <stdint.h>
@@ -8,10 +8,12 @@
  #include <openssl/sha.h>
  
  #if defined(USE_SSE2) && !defined(USE_SSE2_ALWAYS)
-@@ -44,22 +45,6 @@
+@@ -42,24 +43,6 @@
+ // GCC Linux or i686-w64-mingw32
+ #include <cpuid.h>
  #endif
- #endif
- 
+-#endif
+-#ifndef __FreeBSD__
 -static inline uint32_t be32dec(const void *pp)
 -{
 -	const uint8_t *p = (uint8_t const *)pp;
@@ -28,6 +30,6 @@
 -	p[0] = (x >> 24) & 0xff;
 -}
 -
+ #endif
  typedef struct HMAC_SHA256Context {
  	SHA256_CTX ictx;
- 	SHA256_CTX octx;
