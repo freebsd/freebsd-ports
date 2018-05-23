@@ -1,4 +1,5 @@
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Compat.beam
+lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.ESME.Sync.St.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.ESME.Sync.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.ESME.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.MC.beam
@@ -8,6 +9,7 @@ lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.MessageState.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.Multipart.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.Oserl.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.PP.beam
+lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.TONNPIDefaults.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.UDH.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.PduStorage.beam
@@ -42,6 +44,7 @@ lib/elixir/lib/smppex/lib/smppex/pdu/message_state.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/multipart.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/oserl.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/pp.ex
+lib/elixir/lib/smppex/lib/smppex/pdu/ton_npi_defaults.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/udh.ex
 lib/elixir/lib/smppex/lib/smppex/pdu_storage.ex
 lib/elixir/lib/smppex/lib/smppex/protocol.ex
