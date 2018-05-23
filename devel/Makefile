@@ -5899,6 +5899,7 @@
     SUBDIR += rubygem-stella
     SUBDIR += rubygem-stemmer
     SUBDIR += rubygem-stomp
+    SUBDIR += rubygem-stoplight
     SUBDIR += rubygem-storable
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-streetaddress
