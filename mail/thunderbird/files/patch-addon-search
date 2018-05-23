@@ -58,3 +58,16 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
                break;
            }
  
+diff --git toolkit/mozapps/extensions/internal/XPIProvider.jsm toolkit/mozapps/extensions/internal/XPIProvider.jsm 
+index f70fd8d7e3bd8..81e8cd7764fdf 100644
+--- mozilla/toolkit/mozapps/extensions/internal/XPIProvider.jsm
++++ mozilla/toolkit/mozapps/extensions/internal/XPIProvider.jsm
+@@ -7186,7 +7186,7 @@ AddonInternal.prototype = {
+     // Something is causing errors in here
+     try {
+       for (let platform of this.targetPlatforms) {
+-        if (platform.os == Services.appinfo.OS) {
++        if (platform.os == "Linux") {
+           if (platform.abi) {
+             needsABI = true;
+             if (platform.abi === abi)
