@@ -1,0 +1,8 @@
+--- test/Makefile.orig	2018-05-22 20:39:55 UTC
++++ test/Makefile
+@@ -1,4 +1,4 @@
+-CXXFLAGS = -std=c++11 -Wall -O2 -Wno-parentheses -Wno-misleading-indentation -Wno-int-in-bool-context
++CXXFLAGS += -std=c++11 -Wall -O2 -Wno-parentheses
+ CPPFLAGS = -I../include
+ LDFLAGS =
+ LIBS =
