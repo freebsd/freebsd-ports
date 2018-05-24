@@ -2,54 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	psi
-PORTVERSION=	0.15
-PORTREVISION=	5
+DISTVERSION=	1.3
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Qt 4 based Jabber client
+COMMENT=	Qt based Jabber client
 
-LIB_DEPENDS=	libqca.so:devel/qca@qt4 \
-		libminizip.so:archivers/minizip
+LICENSE=	GPLv2
 
-HAS_CONFIGURE=	yes
-QT_NONSTANDARD=	yes
-USES=		pkgconfig tar:bzip2
-USE_QT4=	gui network xml imageformats_run \
-		qmake_build moc_build rcc_build uic_build
-USE_XORG=	xscrnsaver
+LIB_DEPENDS=	libidn.so:dns/libidn \
+		libminizip.so:archivers/minizip \
+		libqca-qt5.so:devel/qca@qt5
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${LOCALBASE} \
-		--disable-growl --verbose
-CONFIGURE_ENV=	QMAKE_ARGS='${QMAKE_ARGS}'
-DESTDIRNAME=	INSTALL_ROOT
+USES=		cmake desktop-file-utils pkgconfig tar:xz
 
-OPTIONS_DEFINE=	ASPELL ENCHANT DBUS DEBUG
-OPTIONS_DEFAULT=	ENCHANT DBUS
-OPTIONS_SUB=	yes # DEBUG
+CMAKE_ARGS=	-DIDN_LIBRARY=${LOCALBASE}/lib/libidn.so \
+		-DIDN_INCLUDE_DIR=${LOCALBASE}/include \
+		-DUSE_WEBENGINE:BOOL=FALSE
 
-DEBUG_CONFIGURE_ON=	--debug
-DEBUG_CONFIGURE_OFF=	--release  --no-separate-debug-info
+USE_QT5=	concurrent core dbus gui multimedia network svg webkit widgets \
+		x11extras xml \
+		buildtools_build qmake_build imageformats_run
+USE_XORG=	ice sm x11 xcb xext xscrnsaver
 
-DBUS_USE=	QT4=dbus
-DBUS_CONFIGURE_OFF=	--disable-qdbus
+OPTIONS_RADIO=	SPELLCHECKER
+OPTIONS_RADIO_SPELLCHECKER=	HUNSPELL ENCHANT
+OPTIONS_DEFAULT=	ENCHANT
 
-ASPELL_DESC=	Use aspell for spell checking
-ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
-ASPELL_CONFIGURE_ON=	--with-aspell-inc=${LOCALBASE}/include \
-			--with-aspell-lib=${LOCALBASE}/lib
-ASPELL_CONFIGURE_OFF=	--disable-aspell
+HUNSPELL_DESC=	Use hunspell for spell checking
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
+HUNSPELL_CMAKE_BOOL=	USE_HUNSPELL
 
 ENCHANT_DESC=	Use Enchant for spell checking
 ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
-ENCHANT_CONFIGURE_OFF=	--disable-enchant
-
-post-configure:
-# Reorder paths to always include internal socks.h (PR: 192270)
-	${REINPLACE_CMD} -e '/^INCPATH/s,-I\.,-I\. -Icutestuff,' \
-		${WRKSRC}/iris/src/irisnet/noncore/Makefile
-	${REINPLACE_CMD} -e '/^INCPATH/s,-I\.,-I\. -I../irisnet/noncore/cutestuff,' \
-		${WRKSRC}/iris/src/xmpp/Makefile
+ENCHANT_CMAKE_BOOL=	USE_ENCHANT
 
 .include <bsd.port.mk>
