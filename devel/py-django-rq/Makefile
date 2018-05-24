@@ -4,6 +4,7 @@
 PORTNAME=	django-rq
 PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +17,7 @@ TEST_DEPENDS=	redis-server:databases/redis \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.8:www/py-django18@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>0:www/py-django111@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rq>=0.5.5:devel/py-rq@${FLAVOR}
 
 NO_ARCH=	yes
