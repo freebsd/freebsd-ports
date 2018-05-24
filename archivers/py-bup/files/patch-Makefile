@@ -1,0 +1,11 @@
+--- Makefile.orig	2017-03-26 22:24:25 UTC
++++ Makefile
+@@ -80,7 +80,7 @@ man_html := $(patsubst %.md,%.html,$(man
+ 
+ INSTALL=install
+ PREFIX=/usr/local
+-MANDIR=$(PREFIX)/share/man
++MANDIR=$(PREFIX)/man
+ DOCDIR=$(PREFIX)/share/doc/bup
+ BINDIR=$(PREFIX)/bin
+ LIBDIR=$(PREFIX)/lib/bup
