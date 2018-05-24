@@ -1,0 +1,144 @@
+commit 501094be302c
+Author: Steve Fink <sfink@mozilla.com>
+Date:   Tue May 22 16:08:40 2018 -0700
+
+    Bug 1456512 - Fixes for unwanted read barriers during minor GC: move JS::operator==(GCCellPtr,GCCellPtr) to the global scope to avoid shadowing, and add a dynamic check. r=jonco, a=RyanVM
+---
+ js/public/HeapAPI.h                                | 27 +++++++++++---------
+ js/src/gc/Cell.h                                   |  2 +-
+ .../regress/regress-1456512-greyreadbarrier.js     |  7 ++++++
+ js/src/tests/non262/regress/regress-1456512.js     | 19 ++++++++++++++
+ js/src/tests/non262/regress/regress-1463421.js     | 29 ++++++++++++++++++++++
+ 5 files changed, 71 insertions(+), 13 deletions(-)
+
+diff --git js/public/HeapAPI.h js/public/HeapAPI.h
+index 34a3e156e66da..a14e1a813adfd 100644
+--- js/public/HeapAPI.h
++++ js/public/HeapAPI.h
+@@ -269,18 +269,6 @@ class JS_FRIEND_API(GCCellPtr)
+     uintptr_t ptr;
+ };
+ 
+-inline bool
+-operator==(const GCCellPtr& ptr1, const GCCellPtr& ptr2)
+-{
+-    return ptr1.asCell() == ptr2.asCell();
+-}
+-
+-inline bool
+-operator!=(const GCCellPtr& ptr1, const GCCellPtr& ptr2)
+-{
+-    return !(ptr1 == ptr2);
+-}
+-
+ // Unwraps the given GCCellPtr and calls the given functor with a template
+ // argument of the actual type of the pointer.
+ template <typename F, typename... Args>
+@@ -301,6 +289,21 @@ DispatchTyped(F f, GCCellPtr thing, Args&&... args)
+ 
+ } /* namespace JS */
+ 
++// These are defined in the toplevel namespace instead of within JS so that
++// they won't shadow other operator== overloads (see bug 1456512.)
++
++inline bool
++operator==(const JS::GCCellPtr& ptr1, const JS::GCCellPtr& ptr2)
++{
++    return ptr1.asCell() == ptr2.asCell();
++}
++
++inline bool
++operator!=(const JS::GCCellPtr& ptr1, const JS::GCCellPtr& ptr2)
++{
++    return !(ptr1 == ptr2);
++}
++
+ namespace js {
+ namespace gc {
+ namespace detail {
+diff --git js/src/gc/Heap.h js/src/gc/Heap.h
+index c14f8bfc2005e..340287e8322e9 100644
+--- js/src/gc/Heap.h
++++ js/src/gc/Heap.h
+@@ -1381,7 +1381,7 @@ TenuredCell::readBarrier(TenuredCell* thing)
+     if (thing->isMarkedGray()) {
+         // There shouldn't be anything marked grey unless we're on the active thread.
+         MOZ_ASSERT(CurrentThreadCanAccessRuntime(thing->runtimeFromAnyThread()));
+-        if (!RuntimeFromActiveCooperatingThreadIsHeapMajorCollecting(shadowZone))
++        if (!JS::CurrentThreadIsHeapCollecting())
+             JS::UnmarkGrayGCThingRecursively(JS::GCCellPtr(thing, thing->getTraceKind()));
+     }
+ }
+diff --git js/src/tests/non262/regress/regress-1456512-greyreadbarrier.js js/src/tests/non262/regress/regress-1456512-greyreadbarrier.js
+new file mode 100644
+index 0000000000000..bb883eeffbeab
+--- /dev/null
++++ js/src/tests/non262/regress/regress-1456512-greyreadbarrier.js
+@@ -0,0 +1,7 @@
++var wm = new WeakMap();
++grayRoot().map = wm;
++wm = null;
++gczeal(13, 7);
++var lfOffThreadGlobal = newGlobal();
++
++reportCompare('do not crash', 'do not crash', 'did not crash!');
+diff --git js/src/tests/non262/regress/regress-1456512.js js/src/tests/non262/regress/regress-1456512.js
+new file mode 100644
+index 0000000000000..87faeca39ad15
+--- /dev/null
++++ js/src/tests/non262/regress/regress-1456512.js
+@@ -0,0 +1,19 @@
++/* -*- indent-tabs-mode: nil; js-indent-level: 2 -*- */
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this
++ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++var BUGNUMBER = 1456512;
++var summary = 'rogue read barrier';
++
++printBugNumber(BUGNUMBER);
++printStatus (summary);
++
++var wm = new WeakMap();
++grayRoot().map = wm;
++wm = null;
++gczeal(13, 7);
++var lfOffThreadGlobal = newGlobal();
++
++if (typeof reportCompare == 'function')
++    reportCompare(true, true, "ok");
+diff --git js/src/tests/non262/regress/regress-1463421.js js/src/tests/non262/regress/regress-1463421.js
+new file mode 100644
+index 0000000000000..e037ade3b9fd0
+--- /dev/null
++++ js/src/tests/non262/regress/regress-1463421.js
+@@ -0,0 +1,29 @@
++/* -*- indent-tabs-mode: nil; js-indent-level: 2 -*- */
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this
++ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++var BUGNUMBER = 1463421;
++var summary = 'rogue read barrier';
++
++printBugNumber(BUGNUMBER);
++printStatus (summary);
++
++var exc;
++try {
++var __v_1173 = new WeakMap();
++  grayRoot().map = __v_1173;
++  __v_1173 = null;
++  gczeal(13, 7);
++if (!isNaN()) {
++}
++  (function __f_252() {
++      ( {
++      })()
++  })();
++} catch (e) {
++  exc = e;
++}
++
++if (typeof reportCompare == 'function')
++    reportCompare("" + exc, "TypeError: ({}) is not a function", "ok");

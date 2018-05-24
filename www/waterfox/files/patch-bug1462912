@@ -1,0 +1,57 @@
+commit 8fbbe9d566d3 (origin/beta)
+Author: Alex Gaynor <agaynor@mozilla.com>
+Date:   Tue May 22 13:04:59 2018 -0400
+
+    Bug 1462912 - Fixed BufferList::Extract to handle the case where the call consumes the entirety of the BufferList. r=froydnj, a=RyanVM
+    
+    MozReview-Commit-ID: 1LWODn8JaNL
+    
+    --HG--
+    extra : source : 96a6ea5ea3468b4c9e20ff8d9795a7ef136213a9
+---
+ mfbt/BufferList.h             |  9 ++++++++-
+ mfbt/tests/TestBufferList.cpp | 12 ++++++++++++
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+
+diff --git mfbt/BufferList.h mfbt/BufferList.h
+index a2e7aac32a9f3..1b35874f3df0d 100644
+--- mfbt/BufferList.h
++++ mfbt/BufferList.h
+@@ -614,7 +614,14 @@ BufferList<AllocPolicy>::Extract(IterImpl& aIter, size_t aSize, bool* aSuccess)
+                 mSegments[aIter.mSegment].mCapacity));
+       aIter.Advance(*this, aIter.RemainingInSegment());
+     }
+-    MOZ_RELEASE_ASSERT(aIter.mSegment == copyStart + segmentsToCopy);
++    // Due to the way IterImpl works, there are two cases here: (1) if we've
++    // consumed the entirety of the BufferList, then the iterator is pointed at
++    // the end of the final segment, (2) otherwise it is pointed at the start
++    // of the next segment. We want to verify that we really consumed all
++    // |segmentsToCopy| segments.
++    MOZ_RELEASE_ASSERT(
++      (aIter.mSegment == copyStart + segmentsToCopy) ||
++      (aIter.Done() && aIter.mSegment == copyStart + segmentsToCopy - 1));
+     mSegments.erase(mSegments.begin() + copyStart,
+                     mSegments.begin() + copyStart + segmentsToCopy);
+ 
+diff --git mfbt/tests/TestBufferList.cpp mfbt/tests/TestBufferList.cpp
+index 207fa106f556f..325f8a3aa7ada 100644
+--- mfbt/tests/TestBufferList.cpp
++++ mfbt/tests/TestBufferList.cpp
+@@ -279,5 +279,17 @@ int main(void)
+   MOZ_RELEASE_ASSERT(bl9.Size() == 8);
+   MOZ_RELEASE_ASSERT(!iter.Done());
+ 
++  BufferList bl10(0, 0, 8);
++  bl10.WriteBytes("abcdefgh", 8);
++  bl10.WriteBytes("12345678", 8);
++  iter = bl10.Iter();
++  BufferList bl11 = bl10.Extract(iter, 16, &success);
++  MOZ_RELEASE_ASSERT(success);
++  MOZ_RELEASE_ASSERT(bl11.Size() == 16);
++  MOZ_RELEASE_ASSERT(iter.Done());
++  iter = bl11.Iter();
++  MOZ_RELEASE_ASSERT(bl11.ReadBytes(iter, data, 16));
++  MOZ_RELEASE_ASSERT(memcmp(data, "abcdefgh12345678", 16) == 0);
++
+   return 0;
+ }
