@@ -1,0 +1,15 @@
+--- Makefile.orig	2018-05-24 03:17:31 UTC
++++ Makefile
+@@ -6,10 +6,10 @@ FLAGSCOMW=-Wall -Wextra -Wshadow -Wcast-
+ #Common optimization flags for C and C++
+ FLAGSCOMO=-O2 -funroll-loops -fno-common -fshort-enums
+ #Flags for C
+-CFLAGS=-std=c99 -pedantic $(FLAGSCOMW) -Wconversion -Wmissing-prototypes
++CFLAGS+=-std=c99 -pedantic $(FLAGSCOMW) -Wconversion -Wmissing-prototypes
+ CFLAGS+=-Wstrict-prototypes -Wnested-externs $(FLAGSCOMO)
+ #Flags for C++
+-CXXFLAGS=$(FLAGSCOMW) $(FLAGSCOMO)
++CXXFLAGS+=$(FLAGSCOMW) $(FLAGSCOMO)
+ #Export flags for compilers and linker
+ export CFLAGS CXXFLAGS
+ 
