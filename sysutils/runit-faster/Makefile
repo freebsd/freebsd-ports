@@ -4,10 +4,11 @@
 PORTNAME=	runit
 DISTVERSION=	${RUNITVERSION}-${CONFVERSION}
 RUNITVERSION=	2.1.2
-CONFVERSION=	0.1.23
+CONFVERSION=	0.1.24
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/runit/ \
 		http://www.bayofrum.net/dist/runit/ \
+		https://github.com/t6/freebsd-runit/releases/download/v${CONFVERSION}/:config \
 		LOCAL/tobik:config \
 		https://pkg.tobik.me/distfiles/:config
 PKGNAMESUFFIX=	-faster
@@ -17,8 +18,10 @@ DISTFILES=	runit-${RUNITVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Runit based init replacement for ${OPSYS}
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/package/COPYING
+LICENSE=	BSD3CLAUSE CC0-1.0
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/package/COPYING
+LICENSE_FILE_CC0-1.0=	${WRKDIR}/freebsd-runit-${CONFVERSION}/README.md
 
 RUN_DEPENDS=	snooze:sysutils/snooze
 
