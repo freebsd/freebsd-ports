@@ -38,6 +38,7 @@ bin/llvm-size-devel
 bin/llvm-split-devel
 bin/llvm-stress-devel
 bin/llvm-strings-devel
+bin/llvm-strip-devel
 bin/llvm-symbolizer-devel
 bin/llvm-tblgen-devel
 bin/macho-dump-devel
@@ -53,6 +54,7 @@ bin/sancov-devel
 %%CLANG%%bin/clang-import-test-devel
 %%CLANG%%bin/clang-offload-bundler-devel
 %%CLANG%%bin/clangd-devel
+bin/diagtool-devel
 %%CLANG%%bin/scan-build-devel
 %%CLANG%%bin/scan-view-devel
 %%LLD%%bin/ld.lld-devel
@@ -119,6 +121,7 @@ llvm-devel/bin/bugpoint
 %%EXTRAS%%llvm-devel/bin/clang-reorder-fields
 %%EXTRAS%%llvm-devel/bin/clang-tidy
 %%CLANG%%llvm-devel/bin/clangd
+llvm-devel/bin/diagtool
 llvm-devel/bin/dsymutil
 %%EXTRAS%%llvm-devel/bin/find-all-symbols
 %%CLANG%%llvm-devel/bin/git-clang-format
@@ -174,6 +177,7 @@ llvm-devel/bin/llvm-size
 llvm-devel/bin/llvm-split
 llvm-devel/bin/llvm-stress
 llvm-devel/bin/llvm-strings
+llvm-devel/bin/llvm-strip
 llvm-devel/bin/llvm-symbolizer
 llvm-devel/bin/llvm-tblgen
 llvm-devel/bin/llvm-xray
@@ -236,6 +240,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/AST/CommentParser.h
 %%CLANG%%llvm-devel/include/clang/AST/CommentSema.h
 %%CLANG%%llvm-devel/include/clang/AST/CommentVisitor.h
+%%CLANG%%llvm-devel/include/clang/AST/ComparisonCategories.h
 %%CLANG%%llvm-devel/include/clang/AST/DataCollection.h
 %%CLANG%%llvm-devel/include/clang/AST/Decl.h
 %%CLANG%%llvm-devel/include/clang/AST/DeclAccessPair.h
@@ -683,6 +688,8 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Tooling/CompilationDatabase.h
 %%CLANG%%llvm-devel/include/clang/Tooling/CompilationDatabasePluginRegistry.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Core/Diagnostic.h
+%%CLANG%%llvm-devel/include/clang/Tooling/Core/HeaderIncludes.h
+%%CLANG%%llvm-devel/include/clang/Tooling/Core/IncludeStyle.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Core/Lookup.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Core/Replacement.h
 %%CLANG%%llvm-devel/include/clang/Tooling/DiagnosticsYaml.h
@@ -1846,6 +1853,7 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/IRCompileLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/IRTransformLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/IndirectionUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LambdaResolver.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/Layer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LazyEmittingLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Legacy.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/NullResolver.h
@@ -2463,6 +2471,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 llvm-devel/lib/BugpointPasses.so
 llvm-devel/lib/LLVMHello.so
 %%GOLD%%llvm-devel/lib/LLVMgold.so
+llvm-devel/lib/TestPlugin.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_complex_builtins.h
@@ -2545,13 +2554,16 @@ llvm-devel/lib/LLVMHello.so
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/omp.h
 %%CLANG%%%%OPENMP%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ompt.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/opencl-c.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/pconfigintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/pkuintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/pmmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/popcntintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/prfchwintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ptwriteintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/rdseedintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/rtmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/s390intrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sgxintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/shaintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/smmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/stdalign.h
@@ -2855,6 +2867,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%svn
 %%LLDB%%llvm-devel/lib/liblldbPluginCPlusPlusLanguage.a
 %%LLDB%%llvm-devel/lib/liblldbPluginCXXItaniumABI.a
 %%LLDB%%llvm-devel/lib/liblldbPluginDisassemblerLLVM.a
+%%LLDB%%llvm-devel/lib/liblldbPluginDynamicLoaderDarwinKernel.a
 %%LLDB%%llvm-devel/lib/liblldbPluginDynamicLoaderHexagonDYLD.a
 %%LLDB%%llvm-devel/lib/liblldbPluginDynamicLoaderMacOSXDYLD.a
 %%LLDB%%llvm-devel/lib/liblldbPluginDynamicLoaderPosixDYLD.a
@@ -2901,6 +2914,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%svn
 %%LLDB%%llvm-devel/lib/liblldbPluginProcessElfCore.a
 %%LLDB%%llvm-devel/lib/liblldbPluginProcessFreeBSD.a
 %%LLDB%%llvm-devel/lib/liblldbPluginProcessGDBRemote.a
+%%LLDB%%llvm-devel/lib/liblldbPluginProcessMachCore.a
 %%LLDB%%llvm-devel/lib/liblldbPluginProcessMinidump.a
 %%LLDB%%llvm-devel/lib/liblldbPluginProcessPOSIX.a
 %%LLDB%%llvm-devel/lib/liblldbPluginProcessUtility.a
