@@ -1,0 +1,6 @@
+EFILTER is a general-purpose destructuring and search language implemented in
+Python, and suitable for integration with any Python project that requires a
+search function for some of its data.
+This port has Rekall specific modifications.
+
+WWW: https://github.com/rekall-innovations/efilter

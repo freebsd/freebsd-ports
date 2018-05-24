@@ -4920,6 +4920,7 @@
     SUBDIR += py-rcsparse
     SUBDIR += py-rebulk
     SUBDIR += py-rednose
+    SUBDIR += py-rekall-efilter
     SUBDIR += py-repoze.lru
     SUBDIR += py-repoze.sphinx.autointerface
     SUBDIR += py-repoze.tm2
