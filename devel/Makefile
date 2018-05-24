@@ -4452,6 +4452,7 @@
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
     SUBDIR += py-doit
+    SUBDIR += py-dtfabric
     SUBDIR += py-durus
     SUBDIR += py-dynrules
     SUBDIR += py-easyprocess
