@@ -1,0 +1,20 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: corosync-notifyd
+# REQUIRE: LOGIN FILESYSTEMS
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="corosync_notifyd"
+rcvar="corosync_notifyd_enable"
+
+load_rc_config $name
+
+: ${corosync_notifyd_enable:=NO}
+
+command="%%PREFIX%%/sbin/corosync-notifyd"
+command_args="-l"
+
+run_rc_command "$1"

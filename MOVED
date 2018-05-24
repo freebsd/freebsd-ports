@@ -10193,3 +10193,5 @@ www/p5-CGI_Lite|www/p5-CGI-Lite|2018-05-20|Rename to match upstream naming
 www/mod_proxy_uwsgi|www/apache24|2018-05-22|Module has been merged into Apache 2.4
 devel/p5-reaper|devel/p5-Reaper|2018-05-22|Rename to match upstream naming
 textproc/py-pyelasticsearch||2018-05-22|Has expired: Not depended upon anymore
+net/corosync|net/corosync2|2018-05-24|There are now multiple versions of corosync
+net/pacemaker|net/pacemaker1|2018-05-24|There are now multiple versions of pacemaker
