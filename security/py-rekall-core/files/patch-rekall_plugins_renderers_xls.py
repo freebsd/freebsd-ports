@@ -1,6 +1,6 @@
---- rekall/plugins/renderers/xls.py.orig	2015-10-23 12:57:00 UTC
+--- rekall/plugins/renderers/xls.py.orig	2017-11-05 21:24:44 UTC
 +++ rekall/plugins/renderers/xls.py
-@@ -37,11 +37,11 @@ from rekall.ui import text
+@@ -44,11 +44,11 @@ if six.PY3:
  # pylint: disable=unexpected-keyword-arg,no-value-for-parameter
  # pylint: disable=redefined-outer-name
  
@@ -15,7 +15,7 @@
      alignment=styles.Alignment(vertical="top", wrap_text=False))
  
  
-@@ -291,7 +291,7 @@ class XLSNoneObjectRenderer(XLSObjectRen
+@@ -299,7 +299,7 @@ class XLSNoneObjectRenderer(XLSObjectRen
  class XLSDateTimeRenderer(XLSObjectRenderer):
      """Renders timestamps as python datetime objects."""
      renders_type = "UnixTimeStamp"

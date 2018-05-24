@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rekall-core
-PORTVERSION=	1.6.0
+DISTVERSION=	1.7.2rc1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,27 +13,29 @@ COMMENT=	CORE component of the Rekall framework
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	cabextract:archivers/cabextract \
-		${PYTHON_PKGNAMEPREFIX}artifacts>=20160114:security/py-artifacts@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyaff4>=0.24.p1:security/py-pyaff4@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}acora>=2.0:textproc/py-acora@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}arrow>=0.7.0:devel/py-arrow@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}efilter>=1.3,1:devel/py-efilter@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}intervaltree>=2.1.0:devel/py-intervaltree@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyelftools>=0.24:devel/py-pyelftools@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.1.5:devel/py-pyparsing@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytz>=2016.4,1:devel/py-pytz@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>=4.0:sysutils/py-psutil@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}capstone>=3.0.4:devel/py-capstone@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yara>=3.4.0:security/py-yara@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=1.4.4:devel/py-sortedcontainers@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytsk>=20160721:sysutils/py-pytsk@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipaddr>=2.1.11:devel/py-ipaddr@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.5.3:devel/py-dateutil@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}acora>=2.0:textproc/py-acora@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}arrow>=0.10.0:devel/py-arrow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}artifacts>=20170909:security/py-artifacts@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}intervaltree>=2.1.0:devel/py-intervaltree@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipaddr>=2.2.0:devel/py-ipaddr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}parsedatetime>=2.4:devel/py-parsedatetime@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=5.0:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyaff4>=0.25:security/py-pyaff4@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycryptodome>=3.4.7:security/py-pycryptodome@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyelftools>=0.24:devel/py-pyelftools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.1.5:devel/py-pyparsing@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.6.1:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytsk>=20170802:sysutils/py-pytsk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=2017.3,1:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}capstone>=3.0.4:devel/py-capstone@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rekall-efilter>=1.6:devel/py-rekall-efilter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rekall_lib>=0:security/py-rekall_lib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yara>=3.6:security/py-yara@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2.7 zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>

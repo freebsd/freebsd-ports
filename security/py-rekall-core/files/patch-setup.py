@@ -1,48 +1,46 @@
---- setup.py.orig	2016-11-03 22:17:38 UTC
+--- setup.py.orig	2017-12-05 23:44:52 UTC
 +++ setup.py
-@@ -51,27 +51,27 @@ def find_data_files(source):
+@@ -52,28 +52,28 @@ def find_data_files(source):
  # approach ensures that any Rekall version will always work as tested - even
  # when external packages are upgraded in an incompatible way.
  install_requires = [
--    "artifacts == 20160114",
--    "pyaff4 >= 0.24, < 0.30",
--    "PyYAML == 3.11",
--    "acora == 2.0",
--    "arrow == 0.7.0",
--    "efilter == 1!1.3",
--    "intervaltree == 2.1.0",
--    "pycrypto == 2.6.1",
--    "pyelftools == 0.24",
--    "pyparsing==2.1.5",
--    "pytz == 2016.4",
--    "psutil >= 4.0, < 5.0",
--    "rekall-capstone == 3.0.4.post2",
--    "rekall-yara == 3.4.0.1",
--    "sortedcontainers == 1.4.4",
--    "pytsk3 == 20160721",
--    "ipaddr==2.1.11",
-+    "artifacts >= 20160114",
-+    "pyaff4 >= 0.24",
-+    "PyYAML >= 3.11",
-+    "acora >= 2.0",
-+    "arrow >= 0.7.0",
-+    "efilter >= 1!1.3",
-+    "intervaltree >= 2.1.0",
-+    "pycrypto >= 2.6.1",
-+    "pyelftools >= 0.24",
-+    "pyparsing>=2.1.5",
-+    "pytz >= 2016.4",
-+    "psutil >= 4.0",
-+    "capstone >= 3.0.4",
-+    "yara-python >= 3.4.0",
-+    "sortedcontainers >= 1.4.4",
-+    "pytsk3 >= 20160721",
-+    "ipaddr>=2.1.11",
+-    'PyYAML==3.12',
+-    'acora==2.0',
+-    'arrow==0.10.0',
+-    'artifacts==20170909',
++    'PyYAML>=3.11',
++    'acora>=2.0',
++    'arrow>=0.10.0',
++    'artifacts>=20170909',
+     'future',
+-    'intervaltree==2.1.0',
+-    'ipaddr==2.2.0',
+-    'parsedatetime==2.4',
++    'intervaltree>=2.1.0',
++    'ipaddr>=2.2.0',
++    'parsedatetime>=2.4',
+     "psutil >= 5.0, < 6.0",
+     'pyaff4 >= 0.26, < 0.30',
+-    'pycryptodome==3.4.7',
+-    'pyelftools==0.24',
+-    'pyparsing==2.1.5',
+-    'python-dateutil==2.6.1',
+-    'pytsk3==20170802',
+-    'pytz==2017.3',
+-    'rekall-capstone==3.0.5.post2',
++    'pycryptodome>=3.4.7',
++    'pyelftools>=0.24',
++    'pyparsing>=2.1.5',
++    'python-dateutil>=2.6.1',
++    'pytsk3>=20170802',
++    'pytz>=2017.3',
++    'capstone>=3.0.4',
+     "rekall-efilter >= 1.6, < 1.7",
  
-     # Version 2.5.0 is broken with pyinstaller.
-     # https://github.com/pyinstaller/pyinstaller/issues/1848
--    "python-dateutil == 2.5.3",
-+    "python-dateutil >= 2.5.3",
+     # Should match exactly the version of this package.
+     'rekall-lib',
+-    'rekall-yara==3.6.3.1',
++    'yara-python>=3.6.3.1',
  ]
  
- if "VIRTUAL_ENV" not in os.environ:
+ 
