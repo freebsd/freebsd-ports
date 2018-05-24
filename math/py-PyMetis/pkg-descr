@@ -1,0 +1,10 @@
+PyMetis is a Python wrapper for the Metis graph partititioning software by
+George Karypis, Vipin Kumar and others. It includes version 5.0pre2 of Metis
+and wraps it using the Boost Python wrapper generator library. So far, it only
+wraps the most basic graph partitioning functionality (which is enough for my
+current use), but extending it in case you need more should be quite
+straightforward. Using PyMetis to partition your meshes is really easy -
+essentially all you need to pass into PyMetis is an adjacency list for the
+graph and the number of parts you would like.
+
+WWW: https://mathema.tician.de/software/pymetis/
