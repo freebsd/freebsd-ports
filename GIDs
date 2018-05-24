@@ -164,7 +164,7 @@ bs:*:220:
 opensips:*:221:
 rtpproxy:*:222:
 mqttwarn:*:223:
-# free: 224
+payara:*:224:
 postgrey:*:225:
 sqlgrey:*:226:
 _hfm:*:227:

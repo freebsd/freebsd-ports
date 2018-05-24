@@ -169,7 +169,7 @@ bs:*:220:220::0:0:Big Sister:/usr/local/bigsister:/bin/sh
 opensips:*:221:221::0:0:OpenSIPS user:/nonexistent:/usr/sbin/nologin
 rtpproxy:*:222:222::0:0:& user:/nonexistent:/sbin/nologin
 mqttwarn:*:223:223::0:0:mqttwarn:/nonexistent:/sbin/nologin
-# free: 224
+payara:*:224:224::0:0:Payara Application Server user:/nonexistent:/usr/sbin/nologin
 postgrey:*:225:225::0:0:Postgrey Owner:/nonexistent:/usr/sbin/nologin
 sqlgrey:*:226:226::0:0:SQLgrey Owner:/nonexistent:/usr/sbin/nologin
 _hfm:*:227:227::0:0:hfm daemon:/nonexistent:/usr/sbin/nologin

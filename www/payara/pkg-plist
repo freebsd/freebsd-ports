@@ -23,132 +23,170 @@
 %%DATADIR%%/glassfish/config/client-jnlp-config.properties
 %%DATADIR%%/glassfish/config/glassfish.container
 %%DATADIR%%/glassfish/config/osgi.properties
-%%DATADIR%%/glassfish/domains/domain1/config/admin-keyfile
-%%DATADIR%%/glassfish/domains/domain1/config/cacerts.jks
-%%DATADIR%%/glassfish/domains/domain1/config/default-logging.properties
-%%DATADIR%%/glassfish/domains/domain1/config/default-web.xml
-%%DATADIR%%/glassfish/domains/domain1/config/domain-passwords
-%%DATADIR%%/glassfish/domains/domain1/config/domain.xml
-%%DATADIR%%/glassfish/domains/domain1/config/glassfish-acc.xml
-%%DATADIR%%/glassfish/domains/domain1/config/javaee.server.policy
-%%DATADIR%%/glassfish/domains/domain1/config/keyfile
-%%DATADIR%%/glassfish/domains/domain1/config/keystore.jks
-%%DATADIR%%/glassfish/domains/domain1/config/logging.properties
-%%DATADIR%%/glassfish/domains/domain1/config/login.conf
-%%DATADIR%%/glassfish/domains/domain1/config/restrict.server.policy
-%%DATADIR%%/glassfish/domains/domain1/config/server.policy
-%%DATADIR%%/glassfish/domains/domain1/config/wss-server-config-1.0.xml
-%%DATADIR%%/glassfish/domains/domain1/config/wss-server-config-2.0.xml
-%%DATADIR%%/glassfish/domains/domain1/docroot/css/main.css
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-bold-webfont.eot
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-bold-webfont.svg
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-bold-webfont.ttf
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-bold-webfont.woff
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-bold-webfont.woff2
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-light-webfont.eot
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-light-webfont.svg
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-light-webfont.ttf
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-light-webfont.woff
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-light-webfont.woff2
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-regular-webfont.eot
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-regular-webfont.svg
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-regular-webfont.ttf
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-regular-webfont.woff
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/lato-regular-webfont.woff2
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-bold-webfont.eot
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-bold-webfont.svg
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-bold-webfont.ttf
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-bold-webfont.woff
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-bold-webfont.woff2
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-light-webfont.eot
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-light-webfont.svg
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-light-webfont.ttf
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-light-webfont.woff
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-light-webfont.woff2
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-regular-webfont.eot
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-regular-webfont.svg
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-regular-webfont.ttf
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-regular-webfont.woff
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-regular-webfont.woff2
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-semibold-webfont.eot
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-semibold-webfont.svg
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-semibold-webfont.ttf
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-semibold-webfont.woff
-%%DATADIR%%/glassfish/domains/domain1/docroot/fonts/proximanova-semibold-webfont.woff2
-%%DATADIR%%/glassfish/domains/domain1/docroot/img/favicon.ico
-%%DATADIR%%/glassfish/domains/domain1/docroot/img/footer-img.png
-%%DATADIR%%/glassfish/domains/domain1/docroot/img/logo.png
-%%DATADIR%%/glassfish/domains/domain1/docroot/index.html
-%%DATADIR%%/glassfish/domains/domain1/docroot/js/html5shiv.min.js
-%%DATADIR%%/glassfish/domains/domain1/init-info/domain-info.xml
-%%DATADIR%%/glassfish/domains/domain1/lib/applibs/.gitkeep
-%%DATADIR%%/glassfish/domains/domain1/lib/classes/.gitkeep
-%%DATADIR%%/glassfish/domains/domain1/lib/databases/.gitkeep
-%%DATADIR%%/glassfish/domains/domain1/lib/ext/.gitkeep
-%%DATADIR%%/glassfish/domains/domain1/logs/.gitkeep
-%%DATADIR%%/glassfish/domains/payaradomain/config/admin-keyfile
-%%DATADIR%%/glassfish/domains/payaradomain/config/cacerts.jks
-%%DATADIR%%/glassfish/domains/payaradomain/config/default-logging.properties
-%%DATADIR%%/glassfish/domains/payaradomain/config/default-web.xml
-%%DATADIR%%/glassfish/domains/payaradomain/config/domain-passwords
-%%DATADIR%%/glassfish/domains/payaradomain/config/domain.xml
-%%DATADIR%%/glassfish/domains/payaradomain/config/glassfish-acc.xml
-%%DATADIR%%/glassfish/domains/payaradomain/config/javaee.server.policy
-%%DATADIR%%/glassfish/domains/payaradomain/config/keyfile
-%%DATADIR%%/glassfish/domains/payaradomain/config/keystore.jks
-%%DATADIR%%/glassfish/domains/payaradomain/config/logging.properties
-%%DATADIR%%/glassfish/domains/payaradomain/config/login.conf
-%%DATADIR%%/glassfish/domains/payaradomain/config/restrict.server.policy
-%%DATADIR%%/glassfish/domains/payaradomain/config/server.policy
-%%DATADIR%%/glassfish/domains/payaradomain/config/wss-server-config-1.0.xml
-%%DATADIR%%/glassfish/domains/payaradomain/config/wss-server-config-2.0.xml
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/css/main.css
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-bold-webfont.eot
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-bold-webfont.svg
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-bold-webfont.ttf
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-bold-webfont.woff
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-bold-webfont.woff2
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-light-webfont.eot
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-light-webfont.svg
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-light-webfont.ttf
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-light-webfont.woff
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-light-webfont.woff2
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-regular-webfont.eot
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-regular-webfont.svg
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-regular-webfont.ttf
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-regular-webfont.woff
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/lato-regular-webfont.woff2
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.eot
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.svg
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.ttf
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.woff
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.woff2
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-light-webfont.eot
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-light-webfont.svg
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-light-webfont.ttf
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-light-webfont.woff
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-light-webfont.woff2
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.eot
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.svg
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.ttf
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.woff
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.woff2
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.eot
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.svg
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.ttf
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.woff
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.woff2
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/img/favicon.ico
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/img/footer-img.png
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/img/logo.png
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/index.html
-%%DATADIR%%/glassfish/domains/payaradomain/docroot/js/html5shiv.min.js
-%%DATADIR%%/glassfish/domains/payaradomain/init-info/domain-info.xml
-%%DATADIR%%/glassfish/domains/payaradomain/lib/applibs/.gitkeep
-%%DATADIR%%/glassfish/domains/payaradomain/lib/classes/.gitkeep
-%%DATADIR%%/glassfish/domains/payaradomain/lib/databases/.gitkeep
-%%DATADIR%%/glassfish/domains/payaradomain/lib/ext/.gitkeep
-%%DATADIR%%/glassfish/domains/payaradomain/logs/.gitkeep
+%%DATADIR%%/glassfish/domains
+@owner payara
+@group payara
+@dir %%VARMAIN%%
+@dir %%VARDIR%%
+@dir %%VARDIR%%/domains
+@dir %%VARDIR%%/domains/payaradomain
+@dir %%VARDIR%%/domains/payaradomain/config
+@dir %%VARDIR%%/domains/payaradomain/lib
+@dir %%VARDIR%%/domains/payaradomain/lib/ext
+@dir %%VARDIR%%/domains/payaradomain/lib/classes
+@dir %%VARDIR%%/domains/payaradomain/lib/databases
+@dir %%VARDIR%%/domains/payaradomain/lib/applibs
+@dir %%VARDIR%%/domains/payaradomain/init-info
+@dir %%VARDIR%%/domains/payaradomain/docroot
+@dir %%VARDIR%%/domains/payaradomain/docroot/js
+@dir %%VARDIR%%/domains/payaradomain/docroot/img
+@dir %%VARDIR%%/domains/payaradomain/docroot/fonts
+@dir %%VARDIR%%/domains/payaradomain/docroot/css
+@dir %%VARDIR%%/domains/payaradomain/logs
+@dir %%VARDIR%%/domains/domain1
+@dir %%VARDIR%%/domains/domain1/lib
+@dir %%VARDIR%%/domains/domain1/lib/classes
+@dir %%VARDIR%%/domains/domain1/lib/databases
+@dir %%VARDIR%%/domains/domain1/lib/ext
+@dir %%VARDIR%%/domains/domain1/lib/applibs
+@dir %%VARDIR%%/domains/domain1/docroot
+@dir %%VARDIR%%/domains/domain1/docroot/css
+@dir %%VARDIR%%/domains/domain1/docroot/img
+@dir %%VARDIR%%/domains/domain1/docroot/js
+@dir %%VARDIR%%/domains/domain1/docroot/fonts
+@dir %%VARDIR%%/domains/domain1/config
+@dir %%VARDIR%%/domains/domain1/logs
+@dir %%VARDIR%%/domains/domain1/init-info
+@dir %%VARDIR%%/prefs
+@dir %%VARDIR%%/registration
+%%VARDIR%%/domains/domain1/config/admin-keyfile
+%%VARDIR%%/domains/domain1/config/cacerts.jks
+%%VARDIR%%/domains/domain1/config/default-logging.properties
+%%VARDIR%%/domains/domain1/config/default-web.xml
+%%VARDIR%%/domains/domain1/config/domain-passwords
+%%VARDIR%%/domains/domain1/config/domain.xml
+%%VARDIR%%/domains/domain1/config/glassfish-acc.xml
+%%VARDIR%%/domains/domain1/config/javaee.server.policy
+%%VARDIR%%/domains/domain1/config/keyfile
+%%VARDIR%%/domains/domain1/config/keystore.jks
+%%VARDIR%%/domains/domain1/config/logging.properties
+%%VARDIR%%/domains/domain1/config/login.conf
+%%VARDIR%%/domains/domain1/config/restrict.server.policy
+%%VARDIR%%/domains/domain1/config/server.policy
+%%VARDIR%%/domains/domain1/config/wss-server-config-1.0.xml
+%%VARDIR%%/domains/domain1/config/wss-server-config-2.0.xml
+%%VARDIR%%/domains/domain1/docroot/css/main.css
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-bold-webfont.eot
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-bold-webfont.svg
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-bold-webfont.ttf
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-bold-webfont.woff
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-bold-webfont.woff2
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-light-webfont.eot
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-light-webfont.svg
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-light-webfont.ttf
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-light-webfont.woff
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-light-webfont.woff2
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-regular-webfont.eot
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-regular-webfont.svg
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-regular-webfont.ttf
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-regular-webfont.woff
+%%VARDIR%%/domains/domain1/docroot/fonts/lato-regular-webfont.woff2
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-bold-webfont.eot
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-bold-webfont.svg
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-bold-webfont.ttf
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-bold-webfont.woff
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-bold-webfont.woff2
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-light-webfont.eot
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-light-webfont.svg
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-light-webfont.ttf
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-light-webfont.woff
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-light-webfont.woff2
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-regular-webfont.eot
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-regular-webfont.svg
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-regular-webfont.ttf
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-regular-webfont.woff
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-regular-webfont.woff2
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-semibold-webfont.eot
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-semibold-webfont.svg
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-semibold-webfont.ttf
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-semibold-webfont.woff
+%%VARDIR%%/domains/domain1/docroot/fonts/proximanova-semibold-webfont.woff2
+%%VARDIR%%/domains/domain1/docroot/img/favicon.ico
+%%VARDIR%%/domains/domain1/docroot/img/footer-img.png
+%%VARDIR%%/domains/domain1/docroot/img/logo.png
+%%VARDIR%%/domains/domain1/docroot/index.html
+%%VARDIR%%/domains/domain1/docroot/js/html5shiv.min.js
+%%VARDIR%%/domains/domain1/init-info/domain-info.xml
+%%VARDIR%%/domains/domain1/lib/applibs/.gitkeep
+%%VARDIR%%/domains/domain1/lib/classes/.gitkeep
+%%VARDIR%%/domains/domain1/lib/databases/.gitkeep
+%%VARDIR%%/domains/domain1/lib/ext/.gitkeep
+%%VARDIR%%/domains/domain1/logs/.gitkeep
+%%VARDIR%%/domains/payaradomain/config/admin-keyfile
+%%VARDIR%%/domains/payaradomain/config/cacerts.jks
+%%VARDIR%%/domains/payaradomain/config/default-logging.properties
+%%VARDIR%%/domains/payaradomain/config/default-web.xml
+%%VARDIR%%/domains/payaradomain/config/domain-passwords
+%%VARDIR%%/domains/payaradomain/config/domain.xml
+%%VARDIR%%/domains/payaradomain/config/glassfish-acc.xml
+%%VARDIR%%/domains/payaradomain/config/javaee.server.policy
+%%VARDIR%%/domains/payaradomain/config/keyfile
+%%VARDIR%%/domains/payaradomain/config/keystore.jks
+%%VARDIR%%/domains/payaradomain/config/logging.properties
+%%VARDIR%%/domains/payaradomain/config/login.conf
+%%VARDIR%%/domains/payaradomain/config/restrict.server.policy
+%%VARDIR%%/domains/payaradomain/config/server.policy
+%%VARDIR%%/domains/payaradomain/config/wss-server-config-1.0.xml
+%%VARDIR%%/domains/payaradomain/config/wss-server-config-2.0.xml
+%%VARDIR%%/domains/payaradomain/docroot/css/main.css
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-bold-webfont.eot
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-bold-webfont.svg
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-bold-webfont.ttf
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-bold-webfont.woff
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-bold-webfont.woff2
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-light-webfont.eot
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-light-webfont.svg
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-light-webfont.ttf
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-light-webfont.woff
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-light-webfont.woff2
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-regular-webfont.eot
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-regular-webfont.svg
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-regular-webfont.ttf
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-regular-webfont.woff
+%%VARDIR%%/domains/payaradomain/docroot/fonts/lato-regular-webfont.woff2
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.eot
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.svg
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.ttf
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.woff
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-bold-webfont.woff2
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-light-webfont.eot
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-light-webfont.svg
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-light-webfont.ttf
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-light-webfont.woff
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-light-webfont.woff2
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.eot
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.svg
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.ttf
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.woff
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-regular-webfont.woff2
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.eot
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.svg
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.ttf
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.woff
+%%VARDIR%%/domains/payaradomain/docroot/fonts/proximanova-semibold-webfont.woff2
+%%VARDIR%%/domains/payaradomain/docroot/img/favicon.ico
+%%VARDIR%%/domains/payaradomain/docroot/img/footer-img.png
+%%VARDIR%%/domains/payaradomain/docroot/img/logo.png
+%%VARDIR%%/domains/payaradomain/docroot/index.html
+%%VARDIR%%/domains/payaradomain/docroot/js/html5shiv.min.js
+%%VARDIR%%/domains/payaradomain/init-info/domain-info.xml
+%%VARDIR%%/domains/payaradomain/lib/applibs/.gitkeep
+%%VARDIR%%/domains/payaradomain/lib/classes/.gitkeep
+%%VARDIR%%/domains/payaradomain/lib/databases/.gitkeep
+%%VARDIR%%/domains/payaradomain/lib/ext/.gitkeep
+%%VARDIR%%/domains/payaradomain/logs/.gitkeep
+@owner
+@group
 %%DATADIR%%/glassfish/legal/3RD-PARTY-LICENSE-WEB-PROFILE.txt
 %%DATADIR%%/glassfish/legal/3RD-PARTY-LICENSE.txt
 %%DATADIR%%/glassfish/legal/LICENSE.txt
@@ -251,15 +289,15 @@
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/resources/yui/reset-fonts-grids.css
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/resources/yui/resize-min.js
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/resources/yui/yahoo-dom-event.js
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-fileupload-1.3.1.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-fileupload-1.3.3.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-io-1.3.1.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/dojo-ajax-nodemo-0.4.4.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/json-1.0.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/prototype-1.5.0.jar
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-4.0.2.10.payara-p5.jar
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-suntheme-4.0.2.10.payara-p5.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-4.0.2.10.payara-p6.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-suntheme-4.0.2.10.payara-p6.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/faces-config.xml
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-4.1.1.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-4.1.2.173.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/sun-web.xml
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/web.xml
 %%DATADIR%%/glassfish/lib/install/applications/__cp_jdbc_ra/__cp_jdbc_ra.jar
@@ -268,6 +306,39 @@
 %%DATADIR%%/glassfish/lib/install/applications/__dm_jdbc_ra/META-INF/MANIFEST.MF
 %%DATADIR%%/glassfish/lib/install/applications/__ds_jdbc_ra/__ds_jdbc_ra.jar
 %%DATADIR%%/glassfish/lib/install/applications/__ds_jdbc_ra/META-INF/MANIFEST.MF
+%%DATADIR%%/glassfish/lib/install/applications/__fang/error.xhtml
+%%DATADIR%%/glassfish/lib/install/applications/__fang/login.xhtml
+%%DATADIR%%/glassfish/lib/install/applications/__fang/META-INF/MANIFEST.MF
+%%DATADIR%%/glassfish/lib/install/applications/__fang/META-INF/maven/fish.payara.appserver.payara-fang/payara-fang-war/pom.properties
+%%DATADIR%%/glassfish/lib/install/applications/__fang/META-INF/maven/fish.payara.appserver.payara-fang/payara-fang-war/pom.xml
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/FangConfig.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/FangResponseToken.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/FangState.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/handler/FangStateHandler.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/handler/MBeanAttributeReadHandler.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/handler/MBeanReadHandler.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/handler/ReadHandler.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/handler/ResourceHandler.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/handler/ResourceHandler$1.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/handler/VersionHandler.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/MBeanServerDelegate.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/processor/ArrayTypeProcessor.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/processor/CompositeTypeProcessor.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/processor/OtherTypeProcessor.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/processor/ProcessorFactory.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/processor/SimpleTypeProcessor.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/processor/TabularTypeProcessor.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/processor/TypeProcessor.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/resource/FangStateResource.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/resource/MBeanReadResource.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/classes/fish/payara/monitoring/fang/resource/PathProcessor.class
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/glassfish-web.xml
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/lib/jackson-annotations-2.8.8.jar
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/lib/jackson-core-2.8.8.jar
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/lib/jackson-databind-2.8.8.jar
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/lib/jettison-1.3.8.jar
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/lib/stax-api-1.0.1.jar
+%%DATADIR%%/glassfish/lib/install/applications/__fang/WEB-INF/web.xml
 %%DATADIR%%/glassfish/lib/install/applications/__xa_jdbc_ra/__xa_jdbc_ra.jar
 %%DATADIR%%/glassfish/lib/install/applications/__xa_jdbc_ra/META-INF/MANIFEST.MF
 %%DATADIR%%/glassfish/lib/install/applications/ejb-timer-service-app.war
@@ -353,7 +424,8 @@
 %%DATADIR%%/glassfish/lib/monitor/flashlight-agent.jar
 %%DATADIR%%/glassfish/lib/nadmin
 %%DATADIR%%/glassfish/lib/package-appclient.xml
-%%DATADIR%%/glassfish/lib/registration/servicetag-registry.xml
+%%DATADIR%%/glassfish/lib/registration
+@(payara,payara,644) %%VARDIR%%/registration/servicetag-registry.xml
 %%DATADIR%%/glassfish/lib/schemas/1.0/domain.xsd
 %%DATADIR%%/glassfish/lib/schemas/1.0/security.xsd
 %%DATADIR%%/glassfish/lib/schemas/10.0/persistence-configuration.xsd
@@ -635,12 +707,11 @@
 %%DATADIR%%/glassfish/modules/autostart/osgi-jta.jar
 %%DATADIR%%/glassfish/modules/autostart/osgi-web-container.jar
 %%DATADIR%%/glassfish/modules/backup.jar
-%%DATADIR%%/glassfish/modules/bean-validator-cdi.jar
-%%DATADIR%%/glassfish/modules/bean-validator.jar
-%%DATADIR%%/glassfish/modules/cache-api.jar
 %%DATADIR%%/glassfish/modules/cdi-api-fragment.jar
 %%DATADIR%%/glassfish/modules/cdi-api.jar
+%%DATADIR%%/glassfish/modules/cdieventbus-notifier-console-plugin.jar
 %%DATADIR%%/glassfish/modules/class-model.jar
+%%DATADIR%%/glassfish/modules/classmate.jar
 %%DATADIR%%/glassfish/modules/cluster-admin.jar
 %%DATADIR%%/glassfish/modules/cluster-common.jar
 %%DATADIR%%/glassfish/modules/cluster-ssh.jar
@@ -676,6 +747,7 @@
 %%DATADIR%%/glassfish/modules/console-plugin-service.jar
 %%DATADIR%%/glassfish/modules/console-web-plugin.jar
 %%DATADIR%%/glassfish/modules/container-common.jar
+%%DATADIR%%/glassfish/modules/datadog-notifier-console-plugin.jar
 %%DATADIR%%/glassfish/modules/dataprovider.jar
 %%DATADIR%%/glassfish/modules/dbschema-repackaged.jar
 %%DATADIR%%/glassfish/modules/deployment-admin.jar
@@ -690,10 +762,13 @@
 %%DATADIR%%/glassfish/modules/ejb-full-container.jar
 %%DATADIR%%/glassfish/modules/ejb-internal-api.jar
 %%DATADIR%%/glassfish/modules/ejb.security.jar
+%%DATADIR%%/glassfish/modules/email-notifier-console-plugin.jar
 %%DATADIR%%/glassfish/modules/endorsed/javax.annotation-api.jar
 %%DATADIR%%/glassfish/modules/endorsed/jaxb-api.jar
 %%DATADIR%%/glassfish/modules/endorsed/webservices-api-osgi.jar
 %%DATADIR%%/glassfish/modules/entitybean-container.jar
+%%DATADIR%%/glassfish/modules/environment-warning.jar
+%%DATADIR%%/glassfish/modules/eventbus-notifier-console-plugin.jar
 %%DATADIR%%/glassfish/modules/flashlight-extra-jdk-packages.jar
 %%DATADIR%%/glassfish/modules/flashlight-framework.jar
 %%DATADIR%%/glassfish/modules/gf-admingui-connector.jar
@@ -734,6 +809,12 @@
 %%DATADIR%%/glassfish/modules/hazelcast-bootstrap.jar
 %%DATADIR%%/glassfish/modules/hazelcast.jar
 %%DATADIR%%/glassfish/modules/healthcheck-core.jar
+%%DATADIR%%/glassfish/modules/healthcheck-cpool.jar
+%%DATADIR%%/glassfish/modules/healthcheck-service-console-plugin.jar
+%%DATADIR%%/glassfish/modules/healthcheck-stuck.jar
+%%DATADIR%%/glassfish/modules/hibernate-validator-cdi-payara-p1.jar
+%%DATADIR%%/glassfish/modules/hibernate-validator-payara-p1.jar
+%%DATADIR%%/glassfish/modules/hipchat-notifier-console-plugin.jar
 %%DATADIR%%/glassfish/modules/hk2-api.jar
 %%DATADIR%%/glassfish/modules/hk2-config.jar
 %%DATADIR%%/glassfish/modules/hk2-core.jar
@@ -749,6 +830,8 @@
 %%DATADIR%%/glassfish/modules/jackson-databind.jar
 %%DATADIR%%/glassfish/modules/jackson-jaxrs-base.jar
 %%DATADIR%%/glassfish/modules/jackson-jaxrs-json-provider.jar
+%%DATADIR%%/glassfish/modules/jackson-module-jaxb-annotations.jar
+%%DATADIR%%/glassfish/modules/jaspic-servlet-utils.jar
 %%DATADIR%%/glassfish/modules/jaspic.provider.framework.jar
 %%DATADIR%%/glassfish/modules/javaee-kernel.jar
 %%DATADIR%%/glassfish/modules/javamail-connector.jar
@@ -814,6 +897,9 @@
 %%DATADIR%%/glassfish/modules/jettison.jar
 %%DATADIR%%/glassfish/modules/jms-admin.jar
 %%DATADIR%%/glassfish/modules/jms-core.jar
+%%DATADIR%%/glassfish/modules/jms-handlers.jar
+%%DATADIR%%/glassfish/modules/jms-notifier-console-plugin.jar
+%%DATADIR%%/glassfish/modules/jmx-monitoring-plugin.jar
 %%DATADIR%%/glassfish/modules/jmx-monitoring.jar
 %%DATADIR%%/glassfish/modules/jmxremote_optional-repackaged.jar
 %%DATADIR%%/glassfish/modules/jpa-container.jar
@@ -826,6 +912,8 @@
 %%DATADIR%%/glassfish/modules/jstl-connector.jar
 %%DATADIR%%/glassfish/modules/jta.jar
 %%DATADIR%%/glassfish/modules/jts.jar
+%%DATADIR%%/glassfish/modules/jxmpp-core.jar
+%%DATADIR%%/glassfish/modules/jxmpp-util-cache.jar
 %%DATADIR%%/glassfish/modules/kernel.jar
 %%DATADIR%%/glassfish/modules/launcher.jar
 %%DATADIR%%/glassfish/modules/ldapbp-repackaged.jar
@@ -834,15 +922,30 @@
 %%DATADIR%%/glassfish/modules/logging.jar
 %%DATADIR%%/glassfish/modules/management-api.jar
 %%DATADIR%%/glassfish/modules/metro-glue.jar
+%%DATADIR%%/glassfish/modules/microprofile-config-api.jar
+%%DATADIR%%/glassfish/modules/microprofile-config-service.jar
+%%DATADIR%%/glassfish/modules/microprofile-config.jar
 %%DATADIR%%/glassfish/modules/mimepull.jar
 %%DATADIR%%/glassfish/modules/monitoring-core.jar
+%%DATADIR%%/glassfish/modules/newrelic-notifier-console-plugin.jar
+%%DATADIR%%/glassfish/modules/notification-cdi-eventbus-core.jar
 %%DATADIR%%/glassfish/modules/notification-core.jar
+%%DATADIR%%/glassfish/modules/notification-datadog-core.jar
+%%DATADIR%%/glassfish/modules/notification-email-core.jar
+%%DATADIR%%/glassfish/modules/notification-eventbus-core.jar
+%%DATADIR%%/glassfish/modules/notification-hipchat-core.jar
+%%DATADIR%%/glassfish/modules/notification-jms-core.jar
+%%DATADIR%%/glassfish/modules/notification-newrelic-core.jar
+%%DATADIR%%/glassfish/modules/notification-slack-core.jar
+%%DATADIR%%/glassfish/modules/notification-snmp-core.jar
+%%DATADIR%%/glassfish/modules/notification-xmpp-core.jar
 %%DATADIR%%/glassfish/modules/nucleus-grizzly-all.jar
 %%DATADIR%%/glassfish/modules/nucleus-resources.jar
 %%DATADIR%%/glassfish/modules/orb-connector.jar
 %%DATADIR%%/glassfish/modules/orb-enabler.jar
 %%DATADIR%%/glassfish/modules/orb-iiop.jar
 %%DATADIR%%/glassfish/modules/org.apache.felix.bundlerepository.jar
+%%DATADIR%%/glassfish/modules/org.apache.servicemix.bundles.xpp3.jar
 %%DATADIR%%/glassfish/modules/org.eclipse.persistence.antlr.jar
 %%DATADIR%%/glassfish/modules/org.eclipse.persistence.asm.jar
 %%DATADIR%%/glassfish/modules/org.eclipse.persistence.core.jar
@@ -857,9 +960,16 @@
 %%DATADIR%%/glassfish/modules/osgi-container.jar
 %%DATADIR%%/glassfish/modules/osgi-jpa-extension.jar
 %%DATADIR%%/glassfish/modules/osgi-resource-locator.jar
+%%DATADIR%%/glassfish/modules/payara-api.jar
 %%DATADIR%%/glassfish/modules/payara-console-extras.jar
+%%DATADIR%%/glassfish/modules/payara-fang-service.jar
 %%DATADIR%%/glassfish/modules/payara-jbatch.jar
 %%DATADIR%%/glassfish/modules/payara-jsr107.jar
+%%DATADIR%%/glassfish/modules/payara-micro-boot.jar
+%%DATADIR%%/glassfish/modules/payara-micro-cdi.jar
+%%DATADIR%%/glassfish/modules/payara-micro-service.jar
+%%DATADIR%%/glassfish/modules/payara-rest-endpoints.jar
+%%DATADIR%%/glassfish/modules/payara-support.jar
 %%DATADIR%%/glassfish/modules/persistence-common.jar
 %%DATADIR%%/glassfish/modules/pfl-asm.jar
 %%DATADIR%%/glassfish/modules/pfl-basic-tools.jar
@@ -886,6 +996,14 @@
 %%DATADIR%%/glassfish/modules/shoal-gms-api.jar
 %%DATADIR%%/glassfish/modules/shoal-gms-impl.jar
 %%DATADIR%%/glassfish/modules/simple-glassfish-api.jar
+%%DATADIR%%/glassfish/modules/slack-notifier-console-plugin.jar
+%%DATADIR%%/glassfish/modules/smack-core.jar
+%%DATADIR%%/glassfish/modules/smack-extensions.jar
+%%DATADIR%%/glassfish/modules/smack-im.jar
+%%DATADIR%%/glassfish/modules/smack-java7.jar
+%%DATADIR%%/glassfish/modules/smack-tcp.jar
+%%DATADIR%%/glassfish/modules/snmp-notifier-console-plugin.jar
+%%DATADIR%%/glassfish/modules/snmp4j.jar
 %%DATADIR%%/glassfish/modules/soap-tcp.jar
 %%DATADIR%%/glassfish/modules/ssl-impl.jar
 %%DATADIR%%/glassfish/modules/stats77.jar
@@ -900,6 +1018,7 @@
 %%DATADIR%%/glassfish/modules/tyrus-core.jar
 %%DATADIR%%/glassfish/modules/tyrus-server.jar
 %%DATADIR%%/glassfish/modules/tyrus-spi.jar
+%%DATADIR%%/glassfish/modules/validation-api.jar
 %%DATADIR%%/glassfish/modules/war-util.jar
 %%DATADIR%%/glassfish/modules/web-cli.jar
 %%DATADIR%%/glassfish/modules/web-core.jar
@@ -919,6 +1038,8 @@
 %%DATADIR%%/glassfish/modules/weld-osgi-bundle-glassfish4.jar
 %%DATADIR%%/glassfish/modules/woodstox-core-asl.jar
 %%DATADIR%%/glassfish/modules/work-management.jar
+%%DATADIR%%/glassfish/modules/xmpp-notifier-console-plugin.jar
+%%DATADIR%%/glassfish/modules/zendesk-support.jar
 %%DATADIR%%/glassfish/osgi/felix/bin/felix.jar
 %%DATADIR%%/javadb/3RDPARTY
 %%DATADIR%%/javadb/bin/dblook
