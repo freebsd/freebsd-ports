@@ -1,0 +1,59 @@
+#!/bin/sh
+
+#
+# $FreeBSD$
+#
+
+# PROVIDE: redis_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# redis_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable redis_exporter.
+# redis_exporter_user (string):          Set user that redis_exporter will run under
+#               Default is "nobody".
+# redis_exporter_group (string):         Set group that redis_exporter will run under
+#               Default is "nobody".
+# redis_exporter_args (string):          Set extra arguments to pass to redis_exporter
+#               Default is "".
+# redis_exporter_listen_address (string):Set ip:port that redis_exporter will listen on
+#               Default is ":9121".
+# redis_exporter_server (string):        Set server address to connect to
+#               Default is "localhost".
+
+. /etc/rc.subr
+
+name=redis_exporter
+rcvar=redis_exporter_enable
+
+load_rc_config $name
+
+: ${redis_exporter_enable:="NO"}
+: ${redis_exporter_user:="nobody"}
+: ${redis_exporter_group:="nobody"}
+: ${redis_exporter_args:=""}
+: ${redis_exporter_listen_address:=":9121"}
+: ${redis_exporter_server:="localhost"}
+
+pidfile=/var/run/redis_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/redis_exporter"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+    --redis.addr=${redis_exporter_server} \
+    --web.listen-address=${redis_exporter_listen_address} \
+    ${redis_exporter_args}"
+
+start_precmd=redis_exporter_startprecmd
+
+redis_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${redis_exporter_user} -g ${redis_exporter_group} /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
