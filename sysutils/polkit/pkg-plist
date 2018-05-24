@@ -52,10 +52,24 @@ libdata/pkgconfig/polkit-gobject-1.pc
 %%MANPAGES%%man/man8/polkit.8.gz
 %%MANPAGES%%man/man8/polkitd.8.gz
 share/dbus-1/system-services/org.freedesktop.PolicyKit1.service
+share/gettext/its/polkit.its
+share/gettext/its/polkit.loc
 share/gir-1.0/Polkit-1.0.gir
 share/gir-1.0/PolkitAgent-1.0.gir
 share/locale/cs/LC_MESSAGES/polkit-1.mo
 share/locale/da/LC_MESSAGES/polkit-1.mo
+share/locale/de/LC_MESSAGES/polkit-1.mo
+share/locale/hr/LC_MESSAGES/polkit-1.mo
+share/locale/hu/LC_MESSAGES/polkit-1.mo
+share/locale/id/LC_MESSAGES/polkit-1.mo
+share/locale/pl/LC_MESSAGES/polkit-1.mo
+share/locale/pt_BR/LC_MESSAGES/polkit-1.mo
+share/locale/sk/LC_MESSAGES/polkit-1.mo
+share/locale/sv/LC_MESSAGES/polkit-1.mo
+share/locale/tr/LC_MESSAGES/polkit-1.mo
+share/locale/uk/LC_MESSAGES/polkit-1.mo
+share/locale/zh_CN/LC_MESSAGES/polkit-1.mo
+share/locale/zh_TW/LC_MESSAGES/polkit-1.mo
 share/polkit-1/actions/org.freedesktop.policykit.policy
 @dir(polkitd,,700) etc/polkit-1/rules.d
 @dir(polkitd,,700) share/polkit-1/rules.d

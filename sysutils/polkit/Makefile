@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	polkit
-PORTVERSION=	0.113
-PORTREVISION=	5
+PORTVERSION=	0.114
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
@@ -14,14 +13,14 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libmozjs-17.0.so:lang/spidermonkey170
+		libmozjs-52.so:lang/spidermonkey52
 RUN_DEPENDS=	dbus-launch:devel/dbus
 
 USERS=		polkitd
 GROUPS=		polkitd
 
 USE_GNOME=	glib20 intlhack introspection:build
-USES=		gettext gmake libtool pathfix pkgconfig shebangfix
+USES=		gettext gmake libtool localbase pathfix pkgconfig shebangfix
 SHEBANG_FILES=	${WRKSRC}/src/polkitbackend/toarray.pl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -33,14 +32,12 @@ CONFIGURE_ARGS=	--disable-gtk-doc-html \
 		--with-polkitd-user=${USERS} \
 		--disable-static \
 		--disable-examples \
-		--with-mozjs=mozjs-17.0 \
 		--disable-libsystemd-login \
+		--disable-libelogind \
 		--disable-test \
 		--enable-introspection=yes \
 		--localstatedir=/var
 #MAKE_JOBS_UNSAFE=yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	MANPAGES
@@ -56,7 +53,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/|${PREFIX}/bin/|g' \
 		${WRKSRC}/docs/man/pkexec.xml \
 		${WRKSRC}/src/examples/org.freedesktop.policykit.examples.pkexec.policy.in
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
 		${WRKSRC}/docs/man/polkit.xml
 
 post-install:
