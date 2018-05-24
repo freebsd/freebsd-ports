@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plaso
-PORTVERSION=	20180127
+PORTVERSION=	20180524
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -23,27 +23,28 @@ RUN_DEPENDS=	libesedb>=e:devel/libesedb \
 		libolecf>=a:devel/libolecf \
 		libregf>=a:devel/libregf \
 		libscca>=a:devel/libscca \
-		${PYTHON_PKGNAMEPREFIX}artifacts>=0:security/py-artifacts@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bencode.py>=0:converters/py-bencode.py@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}binplist>=0:devel/py-binplist@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}construct>=0:devel/py-construct@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dfvfs>=0:security/py-dfvfs@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dfwinreg>=0:security/py-dfwinreg@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dpkt>=0:net/py-dpkt@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}efilter>=0:devel/py-efilter@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pefile>=0:devel/py-pefile@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytsk>=0:sysutils/py-pytsk@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:textproc/py-xlsxwriter@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara@${FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}artifacts>=0:security/py-artifacts@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bencode.py>=0:converters/py-bencode.py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}biplist>=0:devel/py-biplist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}construct>=0:devel/py-construct@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dfvfs>=0:security/py-dfvfs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dfwinreg>=0:security/py-dfwinreg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dpkt>=0:net/py-dpkt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}efilter>=0:devel/py-efilter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}elasticsearch5>=0:textproc/py-elasticsearch5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pefile>=0:devel/py-pefile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytsk>=0:sysutils/py-pytsk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7
@@ -53,14 +54,18 @@ USE_PYTHON=	distutils autoplist
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	hachoir-core>=0:devel/hachoir-core \
-		hachoir-metadata>=0:sysutils/hachoir-metadata \
-		hachoir-parser>=0:devel/hachoir-parser \
-		${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma@${FLAVOR}
+RUN_DEPENDS+=	hachoir-core>=0:devel/hachoir-core@${PY_FLAVOR} \
+		hachoir-metadata>=0:sysutils/hachoir-metadata@${PY_FLAVOR} \
+		hachoir-parser>=0:devel/hachoir-parser@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}backports.lzma>=0:archivers/py-backports.lzma@${PY_FLAVOR}
 TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
 .else
 TEST_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
 .endif
+
+post-patch:
+	${REINPLACE_CMD} "s,'5.5.1',None," ${WRKSRC}/plaso/dependencies.py
+	${REINPLACE_CMD} "/maximum_version: 5.5.1/d" ${WRKSRC}/dependencies.ini
 
 do-test:
 	@${TOUCH} ${TEST_WRKSRC}/utils/__init__.py
