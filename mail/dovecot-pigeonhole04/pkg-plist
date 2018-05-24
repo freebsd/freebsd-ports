@@ -66,8 +66,10 @@ lib/dovecot-2.2-pigeonhole/libdovecot-sieve.so.0
 lib/dovecot-2.2-pigeonhole/libdovecot-sieve.so.0.0.0
 lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.a
 lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.so
-lib/dovecot/lib95_imap_sieve_plugin.a
+lib/dovecot/lib95_imap_filter_sieve_plugin.a
+lib/dovecot/lib95_imap_filter_sieve_plugin.so
 lib/dovecot/lib95_imap_sieve_plugin.so
+lib/dovecot/lib95_imap_sieve_plugin.a
 lib/dovecot/sieve/lib90_sieve_imapsieve_plugin.a
 lib/dovecot/sieve/lib90_sieve_imapsieve_plugin.so
 lib/dovecot/lib90_sieve_plugin.a
