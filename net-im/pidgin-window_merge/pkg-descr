@@ -1,0 +1,6 @@
+Window Merge is a Pidgin plugin that merges a conversation window with the
+Buddy List window. It can be used to achieve a rudimentary "single window mode"
+for Pidgin. Both Window Merge and Pidgin itself should be kept updated for
+the most stable experience.
+
+WWW: https://github.com/dm0-/window_merge
