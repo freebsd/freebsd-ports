@@ -1,5 +1,5 @@
---- src/info.c.orig	2008-12-08 23:29:39.000000000 -0500
-+++ src/info.c	2009-02-27 16:33:49.000000000 -0500
+--- src/info.c.orig	2013-05-31 00:00:21 UTC
++++ src/info.c
 @@ -20,6 +20,10 @@
  #include <gtk/gtk.h>
  #include <glib/gi18n.h>
@@ -21,7 +21,7 @@
  
  #include <glibtop.h>
  #include <glibtop/netlist.h>
-@@ -61,6 +68,7 @@ static InfoInterfaceDescription info_ifa
+@@ -61,6 +68,7 @@ static InfoInterfaceDescription info_iface_desc [] = {
  	{ N_("Ethernet Interface"),      INFO_INTERFACE_ETH,     "16_ethernet.xpm", "eth",        NULL },
  	{ N_("Wireless Interface"),      INFO_INTERFACE_WLAN,    "wavelan-16.png",  "wlan",       NULL },
  	{ N_("Modem Interface"),         INFO_INTERFACE_PPP,     "16_ppp.xpm",      "ppp",        NULL },
@@ -29,7 +29,7 @@
  	{ N_("Parallel Line Interface"), INFO_INTERFACE_PLIP,    "16_plip.xpm",     "plip",       NULL },
  	{ N_("Infrared Interface"),      INFO_INTERFACE_IRLAN,   "irda-16.png",     "irlan",      NULL },
  	{ N_("Loopback Interface"),      INFO_INTERFACE_LO,      "16_loopback.xpm", "lo",         NULL },
-@@ -131,9 +139,42 @@ info_get_interface_from_dev_name (const 
+@@ -131,9 +139,35 @@ info_get_interface_from_dev_name (const gchar *dev_nam
  {
  	gint i;
  	gchar *path;
@@ -48,13 +48,6 @@
 +			switch (IFM_TYPE (ifmr.ifm_active)) {
 +				case IFM_ETHER:
 +					dev_type = "eth";
-+					break;
-+				case IFM_FDDI:
-+				case IFM_TOKEN:
-+#ifdef IFM_ATM
-+				case IFM_ATM:
-+#endif
-+					dev_type = "other_type";
 +					break;
 +				case IFM_IEEE80211:
 +					dev_type = "wlan";
