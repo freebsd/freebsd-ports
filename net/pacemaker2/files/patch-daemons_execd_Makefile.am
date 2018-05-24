@@ -1,0 +1,11 @@
+--- daemons/execd/Makefile.am.orig	2018-05-01 12:13:29 UTC
++++ daemons/execd/Makefile.am
+@@ -11,8 +11,6 @@ halibdir		= $(CRM_DAEMON_DIR)
+ 
+ halib_PROGRAMS		= pacemaker-execd cts-exec-helper
+ 
+-initdir			= $(INITDIR)
+-init_SCRIPTS		= pacemaker_remote
+ sbin_PROGRAMS		= pacemaker-remoted
+ 
+ if BUILD_SYSTEMD

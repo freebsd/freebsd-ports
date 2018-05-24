@@ -9,6 +9,14 @@
 
 name="corosync"
 rcvar="corosync_enable"
+start_precmd="corosync_precmd"
+
+corosync_precmd()
+{
+	if [ `${SYSCTL_N} kern.ipc.maxsockbuf` -lt 18874368 ]; then
+		err 3 "sysctl:kern.ipc.maxsockbuf must be at least 18874368"
+	fi
+}
 
 load_rc_config $name
 

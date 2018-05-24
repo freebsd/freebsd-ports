@@ -1,0 +1,11 @@
+--- daemons/pacemakerd/Makefile.am.orig	2018-05-01 12:13:51 UTC
++++ daemons/pacemakerd/Makefile.am
+@@ -9,8 +9,6 @@ include $(top_srcdir)/Makefile.common
+ 
+ if BUILD_CS_SUPPORT
+ 
+-initdir			= $(INITDIR)
+-init_SCRIPTS		= pacemaker
+ sbin_PROGRAMS		= pacemakerd
+ 
+ if BUILD_SYSTEMD

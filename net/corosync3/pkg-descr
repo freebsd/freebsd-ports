@@ -1,0 +1,16 @@
+The Corosync Cluster Engine is a Group Communication System with additional
+features for implementing high availability within applications. The project
+provides four C Application Programming Interface features:
+
+* A closed process group communication model with virtual synchrony guarantees
+  for creating replicated state machines.
+* A simple availability manager that restarts the application process when it
+  has failed.
+* A configuration and statistics in-memory database that provide the ability
+  to set, retrieve, and receive change notifications of information.
+* A quorum system that notifies applications when quorum is achieved or lost.
+
+Corosync is used as a High Availability framework by projects such as Apache
+Qpid and Pacemaker.
+
+WWW: https://corosync.github.io/corosync/

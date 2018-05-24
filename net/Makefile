@@ -88,7 +88,8 @@
     SUBDIR += coda6_server
     SUBDIR += concourse-fly
     SUBDIR += corkscrew
-    SUBDIR += corosync
+    SUBDIR += corosync2
+    SUBDIR += corosync3
     SUBDIR += courier-authlib-ldap
     SUBDIR += cppzmq
     SUBDIR += crtmpserver
@@ -904,7 +905,8 @@
     SUBDIR += p5-ldap2pw
     SUBDIR += p5-perl-ldap
     SUBDIR += p5-srv2pf
-    SUBDIR += pacemaker
+    SUBDIR += pacemaker1
+    SUBDIR += pacemaker2
     SUBDIR += packetdrill
     SUBDIR += packter-agent
     SUBDIR += panoptis
