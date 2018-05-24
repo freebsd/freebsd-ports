@@ -6,9 +6,9 @@
  	set(CMAKE_MODULE_LINKER_FLAGS "-Wl,-z,nodelete ${CMAKE_MODULE_LINKER_FLAGS}")
 +elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +	# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=221341
-+	include(CheckFunctionExists)
-+	check_function_exists(clog FreeBSD_CLOG_EXISTS)
-+	check_function_exists(cpow FreeBSD_CPOW_EXISTS)
++	include(CheckLibraryExists)
++	check_library_exists(m clog 'complex.h' FreeBSD_CLOG_EXISTS)
++	check_library_exists(m cpow 'complex.h' FreeBSD_CPOW_EXISTS)
 +	if (FreeBSD_CLOG_EXISTS)
 +		set(CMAKE_C_FLAGS "-DFreeBSD_CLOG_EXISTS ${CMAKE_C_FLAGS}")
 +	endif()
