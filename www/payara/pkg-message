@@ -1,4 +1,14 @@
-To run the payara java application server from startup,
-add payara_enable="YES" in your /etc/rc.conf.
+To run the Payara Java Application Server from startup, add
+payara_enable="YES" in your /etc/rc.conf.
+Extra options can be found in the startup script.
 
-Extra options can be found in startup script.
+By default Payara server is started by 'payara' user account.  On service
+start/stop caches and preferences are written to the payara user home
+directory. To make it possible and avoid related warnings set 'payara' user
+home directory to some writable place in the file system. To use the
+default location, issue the command: 
+/usr/sbin/pw usermod payara -d %%VARDIR%%/prefs
+
+Because default payara user is low-privileged, to allow Payara to listen
+ports under 1024 you will need to tweak Mandatory Access Control policies.
+

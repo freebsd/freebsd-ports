@@ -24,14 +24,15 @@
 
 . /etc/rc.subr
 
-name=payara
+name="payara"
 rcvar=payara_enable
 
-load_rc_config $name
+load_rc_config ${name}
 
-: ${payara_enable:=NO}
+: ${payara_enable="NO"}
 : ${payara_java_home=""}
 : ${payara_java_opts=""}
+: ${payara_user="payara"}
 : ${payara_domain_name="domain1"}
 : ${payara_home="%%DATADIR%%/glassfish"}
 
@@ -48,9 +49,10 @@ fi
 export PATH=${JAVA_HOME}/bin:${PATH}
 export JAVA_OPTS=${payara_java_opts}
 
+su_line="/usr/bin/su -m ${payara_user} -c"
 start_precmd="payara_prestart"
-start_cmd="${payara_home}/bin/asadmin start-domain ${payara_domain_name}"
-stop_cmd="${payara_home}/bin/asadmin stop-domain ${payara_domain_name}"
+start_cmd="${su_line} '${payara_home}/bin/asadmin start-domain ${payara_domain_name}'"
+stop_cmd="${su_line} '${payara_home}/bin/asadmin stop-domain ${payara_domain_name}'"
 status_cmd="payara_status"
 
 payara_prestart()
@@ -67,7 +69,7 @@ payara_status()
   # 
   # DOMAIN   ADMIN_HOST  ADMIN_PORT  RUNNING  RESTART_REQUIRED
   # domain1  localhost   4848        true     false
-  IS_DOMAIN_RUNNING=$(${payara_home}/bin/asadmin list-domains -l | grep "^${payara_domain_name}" | awk '{ print $4; }')
+  IS_DOMAIN_RUNNING=$(${su_line} '${payara_home}/bin/asadmin list-domains -l' | grep "^${payara_domain_name}" | awk '{ print $4; }')
   if checkyesno IS_DOMAIN_RUNNING ; then
     echo Payara is running.
     return 0
