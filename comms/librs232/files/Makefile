@@ -13,6 +13,5 @@ INCSDIR=${PREFIX}/include
 LIB=	rs232
 SHLIB_MAJOR=	1
 LIBDIR=	${PREFIX}/lib
-NO_PROFILE=	YES
 
 .include <bsd.lib.mk>

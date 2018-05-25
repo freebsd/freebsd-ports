@@ -1,4 +1,5 @@
 include/rs232.h
+lib/librs232_p.a
 lib/librs232.a
 lib/librs232.so
 lib/librs232.so.1
