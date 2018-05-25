@@ -10197,3 +10197,4 @@ editors/lazarus-lcl-nogui||2018-05-25|Removed, no longer needed
 editors/lazarus-lcl-qt|editors/lazarus-qt4|2018-05-25|Removed, no longer needed
 editors/lazarus-lcl-qt5|editors/lazarus-qt5|2018-05-25|Removed, no longer needed
 editors/lazarus-lcl-units||2018-05-25|Removed, no longer needed
+net/bird-devel|net/bird2|2018-05-25|There are now muliple versions of bird

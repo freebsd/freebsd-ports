@@ -6,7 +6,7 @@ DISTVERSION=	2.0.2
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Dynamic IP routing daemon (devel version)
