@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hashable
-PORTVERSION=	1.2.6.1
-PORTREVISION=	1
+PORTVERSION=	1.2.7.0
 PORTEPOCH=	1
 CATEGORIES=	devel haskell
 
@@ -10,8 +9,6 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Class for types that can be converted to a hash value
 
 LICENSE=	BSD3CLAUSE
-
-USE_CABAL=	text>=0.11.0.5 vector
 
 FLAGS_DEFINE=			INTEGER_GMP SSE2 SSE41
 FLAGS_DEFAULT=			INTEGER_GMP SSE2

@@ -1,3 +1,3 @@
-TIMESTAMP = 1499624838
-SHA256 (cabal/regex-tdfa-1.2.2.tar.gz) = cb12d675be7b31ed8086d8d022023d03eb553e55dbee6e1b7a4154933d471d39
-SIZE (cabal/regex-tdfa-1.2.2.tar.gz) = 65969
+TIMESTAMP = 1523955154
+SHA256 (cabal/regex-tdfa-1.2.3.tar.gz) = 89b17ebb812d4597c0007fbbc21c78dfef70a133aa41b208217a9c99bed600d9
+SIZE (cabal/regex-tdfa-1.2.3.tar.gz) = 66268

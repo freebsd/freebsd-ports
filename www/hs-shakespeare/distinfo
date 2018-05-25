@@ -1,3 +1,3 @@
-TIMESTAMP = 1499543938
-SHA256 (cabal/shakespeare-2.0.13.tar.gz) = a67e7f3186a7f33b90f97377b5e68ed20f76daedc564fcf578cf17a7f7ac580e
-SIZE (cabal/shakespeare-2.0.13.tar.gz) = 65054
+TIMESTAMP = 1524400477
+SHA256 (cabal/shakespeare-2.0.15.tar.gz) = 4354c6eebbfa89103c8090aae3bc7be5fceae6a0e327acf8adc4f3fd535864ee
+SIZE (cabal/shakespeare-2.0.15.tar.gz) = 65369

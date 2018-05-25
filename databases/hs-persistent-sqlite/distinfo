@@ -1,3 +1,3 @@
-TIMESTAMP = 1499620122
-SHA256 (cabal/persistent-sqlite-2.6.2.tar.gz) = 6136c471fc81869cf0fde2049defb9c82698e3c0048d1321c3eda01046b985bf
-SIZE (cabal/persistent-sqlite-2.6.2.tar.gz) = 3568400
+TIMESTAMP = 1525169028
+SHA256 (cabal/persistent-sqlite-2.8.1.2.tar.gz) = 2f7157f3830370f60c7c36490ea49b7c52caf0f2a7349f86cf47970189f9ad0c
+SIZE (cabal/persistent-sqlite-2.8.1.2.tar.gz) = 2044695

@@ -251,6 +251,7 @@
     SUBDIR += hs-cryptohash-sha1
     SUBDIR += hs-cryptohash-sha256
     SUBDIR += hs-cryptonite
+    SUBDIR += hs-cryptonite-conduit
     SUBDIR += hs-digest
     SUBDIR += hs-ed25519
     SUBDIR += hs-entropy

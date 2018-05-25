@@ -1,3 +1,3 @@
-TIMESTAMP = 1499625386
-SHA256 (cabal/yesod-form-1.4.12.tar.gz) = 731638c1541b112f78ffeef05e11a57f518b6a6a15aa306779f6840e989b8a51
-SIZE (cabal/yesod-form-1.4.12.tar.gz) = 31515
+TIMESTAMP = 1525181435
+SHA256 (cabal/yesod-form-1.6.1.tar.gz) = b8ff14eafff4bb6c2b01b235e8ebeafe9802f545979c1c1227076b06edd3f616
+SIZE (cabal/yesod-form-1.6.1.tar.gz) = 32873

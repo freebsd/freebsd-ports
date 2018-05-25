@@ -1,15 +1,10 @@
---- xmlhtml.cabal.orig	2017-05-19 10:38:07 UTC
+--- xmlhtml.cabal.orig  2018-04-22 13:51:05 UTC
 +++ xmlhtml.cabal
-@@ -820,9 +820,9 @@ Library
-                        Text.XmlHtml.HTML.Render
- 
-   Build-depends:       base                 >= 4     && < 5,
--                       blaze-builder        >= 0.2   && < 0.5,
--                       blaze-html           >= 0.5   && < 0.9,
--                       blaze-markup         >= 0.5   && < 0.8,
-+                       blaze-builder        >= 0.2   ,
-+                       blaze-html           >= 0.5   ,
-+                       blaze-markup         >= 0.5   ,
+@@ -826,7 +826,6 @@ Library
+                        blaze-html           >= 0.9   && < 0.10,
+                        blaze-markup         >= 0.8   && < 0.9,
                         bytestring           >= 0.9   && < 0.11,
+-                       bytestring-builder   >= 0.10.4.0.2 && < 0.11,
                         containers           >= 0.3   && < 0.6,
                         parsec               >= 3.1.2 && < 3.2,
+                        text                 >= 0.11  && < 1.3,

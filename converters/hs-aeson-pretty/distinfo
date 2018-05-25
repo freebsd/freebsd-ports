@@ -1,3 +1,3 @@
-TIMESTAMP = 1499545723
-SHA256 (cabal/aeson-pretty-0.8.5.tar.gz) = dd17e86c64b3fe2efb7a855b27b0e5490e42dc58194ae1809d8b662d4e42a9f9
-SIZE (cabal/aeson-pretty-0.8.5.tar.gz) = 5568
+TIMESTAMP = 1524342480
+SHA256 (cabal/aeson-pretty-0.8.7.tar.gz) = c1c1ecc5e3abd004a6c4c256ee6f61da2a43d7f1452ffa391dee250df43b27d5
+SIZE (cabal/aeson-pretty-0.8.7.tar.gz) = 5610

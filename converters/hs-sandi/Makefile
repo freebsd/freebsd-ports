@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sandi
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	converters haskell
 
 MAINTAINER=	haskell@FreeBSD.org

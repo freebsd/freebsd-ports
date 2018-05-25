@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627854
-SHA256 (cabal/project-template-0.2.0.tar.gz) = aeabd7d1785b31abaffc78f02d9dda67d57d01822755f09614bfc65e99506310
-SIZE (cabal/project-template-0.2.0.tar.gz) = 8251
+TIMESTAMP = 1524430893
+SHA256 (cabal/project-template-0.2.0.1.tar.gz) = eb52496fa7448f5fed445525c05327b31a45282fc1d0a772c7022a9809e7c9dc
+SIZE (cabal/project-template-0.2.0.1.tar.gz) = 8321

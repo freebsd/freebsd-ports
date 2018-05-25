@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	timezone-olson
-PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTVERSION=	0.1.9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

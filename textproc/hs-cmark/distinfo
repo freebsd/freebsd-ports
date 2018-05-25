@@ -1,3 +1,3 @@
-TIMESTAMP = 1499448212
-SHA256 (cabal/cmark-0.5.5.1.tar.gz) = 62b461f2ab0a611f0a88325c98f11c053a356d94e877b5efed564abb4f5b5a0d
-SIZE (cabal/cmark-0.5.5.1.tar.gz) = 169811
+TIMESTAMP = 1523465640
+SHA256 (cabal/cmark-0.5.6.tar.gz) = 855c4b7aca6d4e9eb076beb6cc6f74e7578fae7aa3625fd3fca5e3b4901a32b0
+SIZE (cabal/cmark-0.5.6.tar.gz) = 170850

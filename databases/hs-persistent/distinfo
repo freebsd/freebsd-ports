@@ -1,3 +1,3 @@
-TIMESTAMP = 1499620101
-SHA256 (cabal/persistent-2.7.0.tar.gz) = cebc4d51d362ce329cb29cb3873eacc01a1453c54d356c4115a7488543e3deea
-SIZE (cabal/persistent-2.7.0.tar.gz) = 69320
+TIMESTAMP = 1524929752
+SHA256 (cabal/persistent-2.8.2.tar.gz) = 696bb279259e307778dc7fbd49565c48a66429f14e793a41a13cfae0968c1ec0
+SIZE (cabal/persistent-2.8.2.tar.gz) = 58648

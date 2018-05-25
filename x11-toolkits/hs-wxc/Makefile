@@ -16,6 +16,8 @@ WX_COMPS=	wx
 
 IGNORE_DOCS=	yes
 
+IGNORE=		Doesn't build with recent GHC version
+
 post-patch::
 	@${REINPLACE_CMD} 's|"wx-config"|"wxgtk2u-3.0-config"| ; \
 	    s|/sbin/ldconfig -n|/sbin/ldconfig -m| ; \

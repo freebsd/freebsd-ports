@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627827
-SHA256 (cabal/conduit-extra-1.1.16.tar.gz) = bd72c1bacd5f59a74a73a0aa115b8314f0a1dc1b24d939e52a983113c960f8d5
-SIZE (cabal/conduit-extra-1.1.16.tar.gz) = 34402
+TIMESTAMP = 1523897535
+SHA256 (cabal/conduit-extra-1.3.0.tar.gz) = 2c41c925fc53d9ba2e640c7cdca72c492b28c0d45f1a82e94baef8dfa65922ae
+SIZE (cabal/conduit-extra-1.3.0.tar.gz) = 32716

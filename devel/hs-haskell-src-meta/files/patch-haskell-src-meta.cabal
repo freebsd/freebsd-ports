@@ -1,0 +1,16 @@
+--- haskell-src-meta.cabal.orig 2018-04-28 16:25:53 UTC
++++ haskell-src-meta.cabal
+@@ -17,11 +17,11 @@ description:        The translation from haskell-src-e
+ extra-source-files: ChangeLog README.md examples/*.hs
+ 
+ library
+-  build-depends:   base >= 4.6 && < 4.11,
++  build-depends:   base >= 4.6 && < 4.12,
+                    haskell-src-exts >= 1.18 && < 1.21,
+                    pretty >= 1.0 && < 1.2,
+                    syb >= 0.1 && < 0.8,
+-                   template-haskell >= 2.8 && < 2.13,
++                   template-haskell >= 2.8 && < 2.14,
+                    th-orphans >= 0.9.1 && < 0.14
+ 
+   if impl(ghc < 7.8)

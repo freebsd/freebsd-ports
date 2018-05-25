@@ -1,0 +1,7 @@
+Skylighting is a syntax highlighting library with support for over one hundred
+languages. It derives its tokenizers from XML syntax definitions used by KDE's
+KSyntaxHighlighting framework, so any syntax supported by that framework can be
+added. An optional command-line program is provided. Skylighting is intended to
+be the successor to highlighting-kate.
+
+WWW: http://hackage.haskell.org/package/skylighting

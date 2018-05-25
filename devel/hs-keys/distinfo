@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627846
-SHA256 (cabal/keys-3.11.tar.gz) = 0cf397b7e6eb8cda930a02118c0bf262f9ef80c5a2f91822238b7778042cc4b2
-SIZE (cabal/keys-3.11.tar.gz) = 8674
+TIMESTAMP = 1523890076
+SHA256 (cabal/keys-3.12.tar.gz) = d4bfa78ff9df50224f1722925ae148279377193d04277a7dad224a47b34d5e55
+SIZE (cabal/keys-3.12.tar.gz) = 13353

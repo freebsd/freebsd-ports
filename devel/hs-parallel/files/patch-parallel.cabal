@@ -1,0 +1,10 @@
+--- parallel.cabal.orig 2018-04-10 09:45:32 UTC
++++ parallel.cabal
+@@ -34,7 +34,7 @@ library
+ 
+     build-depends:
+         array      >= 0.3 && < 0.6,
+-        base       >= 4.3 && < 4.11,
++        base       >= 4.3 && < 4.12,
+         containers >= 0.4 && < 0.6,
+         deepseq    >= 1.1 && < 1.5

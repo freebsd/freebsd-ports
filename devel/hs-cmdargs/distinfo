@@ -1,3 +1,3 @@
-TIMESTAMP = 1499596679
-SHA256 (cabal/cmdargs-0.10.17.tar.gz) = 3437a4caf4ced650b61620e1c66f406db76ff70244928e5a4e7a20e5e88374da
-SIZE (cabal/cmdargs-0.10.17.tar.gz) = 64440
+TIMESTAMP = 1523129483
+SHA256 (cabal/cmdargs-0.10.20.tar.gz) = 0e269dc48c3d4c0447c96ffd772a6fe69dfa1260c323f4cd7bf171cbf2ab7331
+SIZE (cabal/cmdargs-0.10.20.tar.gz) = 64550

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandoc-citeproc
-PORTVERSION=	0.10.5.1
-PORTREVISION=	1
+PORTVERSION=	0.14.3.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,8 +10,8 @@ COMMENT=	Supports using pandoc with citeproc
 LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	aeson>=0.7 aeson-pretty attoparsec data-default \
-		mtl pandoc>=1.13 pandoc-types>=1.12.3 parsec rfc5051 \
-		setenv>=0.1 split syb tagsoup text vector xml-conduit>=1.2 \
+		mtl pandoc>=1.13 pandoc-types>=1.12.3 rfc5051 \
+		setenv>=0.1 split syb tagsoup vector xml-conduit>=1.2 \
 		yaml>=0.8.8.7
 
 EXECUTABLE=	pandoc-citeproc

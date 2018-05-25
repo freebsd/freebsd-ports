@@ -1,3 +1,3 @@
-TIMESTAMP = 1499538462
-SHA256 (cabal/happstack-server-7.4.6.4.tar.gz) = b4c6c9503deeff37751af9ab9700158347658f28f1712933f9f1c8763b4ea1b9
-SIZE (cabal/happstack-server-7.4.6.4.tar.gz) = 81123
+TIMESTAMP = 1524594391
+SHA256 (cabal/happstack-server-7.5.1.tar.gz) = 32877ec758149dd3ffbd2a03f3fecd3a69bcac8f6c499e3a08e43bee1c9f8ea1
+SIZE (cabal/happstack-server-7.5.1.tar.gz) = 81810

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cereal
-PORTVERSION=	0.5.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5.5.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

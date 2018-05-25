@@ -1,3 +1,3 @@
-TIMESTAMP = 1499624830
-SHA256 (cabal/hs-bibutils-5.5.tar.gz) = 95f9f34be9f3145da8acc8a0e9de379236cfe31c5a9bc0eb9489e77402a4c55d
-SIZE (cabal/hs-bibutils-5.5.tar.gz) = 499546
+TIMESTAMP = 1525094674
+SHA256 (cabal/hs-bibutils-6.2.0.1.tar.gz) = 4b668090049bf67f107b8bcd39a4664c00b78ff596de9ccb63720af49ed4a630
+SIZE (cabal/hs-bibutils-6.2.0.1.tar.gz) = 515725

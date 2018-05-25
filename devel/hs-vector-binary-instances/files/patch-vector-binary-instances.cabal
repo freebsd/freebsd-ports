@@ -1,0 +1,10 @@
+--- vector-binary-instances.cabal.orig  2018-04-11 12:56:40 UTC
++++ vector-binary-instances.cabal
+@@ -50,7 +50,7 @@ Library
+ 
+   -- Packages needed in order to build this package.
+   Build-depends:
+-    base > 3 && < 4.11,
++    base > 3 && < 4.12,
+     vector >= 0.6 && < 0.13,
+     binary >= 0.5 && < 0.10

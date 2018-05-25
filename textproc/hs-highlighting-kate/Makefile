@@ -2,7 +2,7 @@
 
 PORTNAME=	highlighting-kate
 PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,8 +10,8 @@ COMMENT=	Syntax highlighting
 
 LICENSE=	GPLv2
 
-USE_CABAL=	blaze-html>=0.4.2 mtl parsec \
-		regex-pcre-builtin>=0.94.4.8.8.35 utf8-string
+USE_CABAL=	blaze-html>=0.4.2 mtl regex-pcre-builtin>=0.94.4.8.8.35 \
+		utf8-string
 
 FLAGS_DEFINE=			EXECUTABLE
 

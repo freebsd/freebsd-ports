@@ -2,7 +2,7 @@
 
 PORTNAME=	mountpoints
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	haskell@FreeBSD.org

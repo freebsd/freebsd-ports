@@ -1,3 +1,3 @@
-TIMESTAMP = 1499624252
-SHA256 (cabal/ekg-0.4.0.13.tar.gz) = 44b1d5987e8d8061aaf05fd96f9072399ba16b07999caf5186e856c7e47bb48f
-SIZE (cabal/ekg-0.4.0.13.tar.gz) = 171231
+TIMESTAMP = 1525008611
+SHA256 (cabal/ekg-0.4.0.15.tar.gz) = 482ae3be495cfe4f03332ad1c79ce8b5ad4f9c8eec824980c664808ae32c6dcc
+SIZE (cabal/ekg-0.4.0.15.tar.gz) = 171305

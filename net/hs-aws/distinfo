@@ -1,3 +1,3 @@
-TIMESTAMP = 1499623590
-SHA256 (cabal/aws-0.16.tar.gz) = 84b5c60227f3c9eddc0abf0881aee22443fc4a211b8a95f18be628eaa492209c
-SIZE (cabal/aws-0.16.tar.gz) = 99193
+TIMESTAMP = 1525086517
+SHA256 (cabal/aws-0.19.tar.gz) = b43b1215405a2c34b9e7ddac8a9f3cf80fff0f031b365a5c0e4e423f45b5777a
+SIZE (cabal/aws-0.19.tar.gz) = 104207

@@ -1,3 +1,3 @@
-TIMESTAMP = 1499447395
-SHA256 (cabal/threads-0.5.1.4.tar.gz) = d3b805b743cc7c0bce2a9b142f45bb1ad07e7bd6c2bd97a5fc442c007276febd
-SIZE (cabal/threads-0.5.1.4.tar.gz) = 7395
+TIMESTAMP = 1523649637
+SHA256 (cabal/threads-0.5.1.6.tar.gz) = 139ac3c067fcbb392b5b9c2feaa98184b75ebe7f2e580726eea6ce812d94562e
+SIZE (cabal/threads-0.5.1.6.tar.gz) = 7406

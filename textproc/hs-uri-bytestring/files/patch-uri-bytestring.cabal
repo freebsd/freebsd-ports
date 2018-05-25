@@ -1,0 +1,10 @@
+--- uri-bytestring.cabal.orig   2018-04-20 19:43:36 UTC
++++ uri-bytestring.cabal
+@@ -41,7 +41,6 @@ library
+ 
+       attoparsec       >= 0.13.1.0 && < 0.14
+     , base             >= 4.6     && < 5
+-    , fail             >= 4.9     && < 5
+     , bytestring       >= 0.9.1   && < 0.11
+     , blaze-builder    >= 0.3.0.0 && < 0.5
+     , template-haskell >= 2.9     && < 2.14

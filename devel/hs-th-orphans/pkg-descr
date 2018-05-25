@@ -1,0 +1,5 @@
+Orphan instances for TH datatypes. In particular, instances for Ord and Lift,
+as well as a few missing Show / Eq. These instances used to live in
+haskell-src-meta, and that's where the version number started.
+
+WWW: https://github.com/mgsloan/th-orphans/

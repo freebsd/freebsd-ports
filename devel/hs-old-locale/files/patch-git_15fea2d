@@ -16,6 +16,6 @@ index 37057a8..52aa83a 100644
          System.Locale
  
 -    build-depends: base >= 4.2 && < 4.9
-+    build-depends: base >= 4.2 && < 4.11
++    build-depends: base >= 4.2 && < 4.12
      ghc-options: -Wall
 

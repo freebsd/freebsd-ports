@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandoc
-PORTVERSION=	1.19.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,14 +10,14 @@ COMMENT=	Conversion between markup formats
 
 LICENSE=	GPLv2
 
-USE_CABAL=	aeson base64-bytestring blaze-html \
-		blaze-markup cmark data-default \
+USE_CABAL=	Glob aeson aeson-pretty base64-bytestring blaze-html \
+		blaze-markup cmark cmark-gfm data-default \
 		deepseq-generics doctemplates extensible-exceptions  \
-		filemanip haddock-library highlighting-kate \
-		hslua HTTP JuicyPixels mtl  \
-		network network-uri pandoc-types parsec \
+		filemanip haddock-library \
+		hslua hslua-module-text HTTP JuicyPixels mtl  \
+		network network-uri pandoc-types \
 		random scientific SHA skylighting syb tagsoup\
-		temporary texmath text \
+		temporary texmath \
 		unordered-containers vector xml \
 		yaml zip-archive zlib
 
@@ -49,7 +48,7 @@ HTTPS_FLAG_CABAL=	http-client>=0.3.2 http-client-tls>=0.2 http-types>=0.8
 
 TRYPANDOC_DESC=			Build trypandoc cgi executable
 TRYPANDOC_FLAG_ENABLE=		trypandoc
-TRYPANDOC_FLAG_CABAL=		aeson highlighting-kate text wai-extra wai>=0.3 \
+TRYPANDOC_FLAG_CABAL=		aeson wai-extra wai>=0.3 \
 				http-types
 TRYPANDOC_FLAG_EXECUTABLE=	trypandoc
 

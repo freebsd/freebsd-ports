@@ -1,3 +1,3 @@
-TIMESTAMP = 1499539633
-SHA256 (cabal/gtk2hs-buildtools-0.13.2.2.tar.gz) = c5e4b59f8711ec4e4e25a91ce4213c5396dd0b56179751ed6da255ac35edfb4b
-SIZE (cabal/gtk2hs-buildtools-0.13.2.2.tar.gz) = 178124
+TIMESTAMP = 1523786090
+SHA256 (cabal/gtk2hs-buildtools-0.13.3.1.tar.gz) = 220f2f4aa1e01b8585fddf35bfc9f3a9dd300f2308d3c2b800c621cdd2ce7154
+SIZE (cabal/gtk2hs-buildtools-0.13.3.1.tar.gz) = 177911

@@ -1,3 +1,3 @@
-TIMESTAMP = 1499538056
-SHA256 (cabal/cairo-0.13.3.1.tar.gz) = a3ca197c6d63875686ed8129530771f945fbd954ab8283841ad238da233d675a
-SIZE (cabal/cairo-0.13.3.1.tar.gz) = 45033
+TIMESTAMP = 1524402125
+SHA256 (cabal/cairo-0.13.5.0.tar.gz) = 420acd81e0b5578ad188bcdd38463135293c233221abb741cc4004d4c8a6bef3
+SIZE (cabal/cairo-0.13.5.0.tar.gz) = 46877

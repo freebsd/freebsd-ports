@@ -1,3 +1,3 @@
-TIMESTAMP = 1499625449
-SHA256 (cabal/xmobar-0.24.5.tar.gz) = 393aab8d86d09f218f5255bb8811ba12a4ca2f4eb64411c38b9713c58574bf69
-SIZE (cabal/xmobar-0.24.5.tar.gz) = 100658
+TIMESTAMP = 1524245719
+SHA256 (cabal/xmobar-0.26.tar.gz) = ff7dd9af151e0336d35fa4741a76fe8a95762649c11877442449b321f106e4a5
+SIZE (cabal/xmobar-0.26.tar.gz) = 101557

@@ -246,6 +246,7 @@
     SUBDIR += howl
     SUBDIR += hping
     SUBDIR += hs-aws
+    SUBDIR += hs-bsb-http-chunked
     SUBDIR += hs-connection
     SUBDIR += hs-gsasl
     SUBDIR += hs-hoauth2
@@ -259,6 +260,7 @@
     SUBDIR += hs-network-uri
     SUBDIR += hs-pcap
     SUBDIR += hs-publicsuffixlist
+    SUBDIR += hs-resolv
     SUBDIR += hs-sendfile
     SUBDIR += hs-simple-sendfile
     SUBDIR += hs-socks

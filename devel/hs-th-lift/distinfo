@@ -1,3 +1,3 @@
-TIMESTAMP = 1499621822
-SHA256 (cabal/th-lift-0.7.7.tar.gz) = 16c6fa6fbe972fa0d850698c147cd9a30dc0e201554d9a4ee9ade62dc807cbb5
-SIZE (cabal/th-lift-0.7.7.tar.gz) = 12399
+TIMESTAMP = 1523429375
+SHA256 (cabal/th-lift-0.7.8.tar.gz) = 2cf83385e848d9136a1d6e49ca845fd1d09935f2ff658c6f4e268d8ece02c12b
+SIZE (cabal/th-lift-0.7.8.tar.gz) = 12399

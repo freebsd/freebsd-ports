@@ -1,3 +1,3 @@
-TIMESTAMP = 1499625384
-SHA256 (cabal/yesod-auth-1.4.17.2.tar.gz) = 63a4273faed4bb7ddf3b196e30ae54bcc4b228e388f11cca71d5005c9ea19983
-SIZE (cabal/yesod-auth-1.4.17.2.tar.gz) = 50569
+TIMESTAMP = 1525183168
+SHA256 (cabal/yesod-auth-1.6.3.tar.gz) = a0df427bfd95374957435f56561787d0bc66f978a7ea7cb017ec64f59c8698b8
+SIZE (cabal/yesod-auth-1.6.3.tar.gz) = 50951

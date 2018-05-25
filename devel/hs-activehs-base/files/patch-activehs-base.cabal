@@ -3,8 +3,9 @@
 @@ -22,6 +22,6 @@ Library 
      ActiveHs.Base
    Build-Depends:
-     base >= 4.0 && < 4.10,
+-    base >= 4.0 && < 4.10,
 -    QuickCheck >= 2.4 && < 2.9
++    base >= 4.0 && < 4.12,
 +    QuickCheck >= 2.4 && < 2.11
  
  

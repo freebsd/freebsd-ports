@@ -2,7 +2,7 @@
 
 PORTNAME=	disk-free-space
 PORTVERSION=	0.1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	haskell@FreeBSD.org

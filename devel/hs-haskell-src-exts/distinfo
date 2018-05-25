@@ -1,3 +1,3 @@
-TIMESTAMP = 1501416565
-SHA256 (cabal/haskell-src-exts-1.19.1.tar.gz) = f0f5b2867673d654c7cce8a5fcc69222ea09af460c29a819c23cccf6311ba971
-SIZE (cabal/haskell-src-exts-1.19.1.tar.gz) = 1296952
+TIMESTAMP = 1523958315
+SHA256 (cabal/haskell-src-exts-1.20.2.tar.gz) = 9f6686e8bc8b849991207304e524747b0d1dcedfea351ac073ce971b36f9a3ea
+SIZE (cabal/haskell-src-exts-1.20.2.tar.gz) = 1387571

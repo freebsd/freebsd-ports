@@ -1,3 +1,3 @@
-TIMESTAMP = 1499625381
-SHA256 (cabal/wai-extra-3.0.20.0.tar.gz) = ad63ca529e812f5edec84e197a58433095a1376a127f8e9416235028bf021971
-SIZE (cabal/wai-extra-3.0.20.0.tar.gz) = 60542
+TIMESTAMP = 1524842206
+SHA256 (cabal/wai-extra-3.0.22.1.tar.gz) = 7e7c9075455015b90e079d7c1d16110f2fb27e33ff66620d84248c3a9805722f
+SIZE (cabal/wai-extra-3.0.22.1.tar.gz) = 61594

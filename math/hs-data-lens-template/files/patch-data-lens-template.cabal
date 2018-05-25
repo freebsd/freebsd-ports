@@ -1,0 +1,11 @@
+--- data-lens-template.cabal.orig       2018-04-24 19:52:13 UTC
++++ data-lens-template.cabal
+@@ -22,7 +22,7 @@ library
+   build-depends:
+     data-lens        >= 2.0 && < 2.12,
+     base             >= 1.0 && < 5,
+-    template-haskell >= 2.11 && < 2.12
++    template-haskell >= 2.11 && < 2.14
+ 
+   exposed-modules:
+     Data.Lens.Template

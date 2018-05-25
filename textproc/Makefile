@@ -261,6 +261,7 @@
     SUBDIR += hs-case-insensitive
     SUBDIR += hs-cassava
     SUBDIR += hs-cmark
+    SUBDIR += hs-cmark-gfm
     SUBDIR += hs-csv
     SUBDIR += hs-doctemplates
     SUBDIR += hs-double-conversion
@@ -281,7 +282,6 @@
     SUBDIR += hs-pandoc
     SUBDIR += hs-pandoc-citeproc
     SUBDIR += hs-pandoc-types
-    SUBDIR += hs-parsec
     SUBDIR += hs-polyparse
     SUBDIR += hs-pretty-show
     SUBDIR += hs-regex-applicative
@@ -295,6 +295,7 @@
     SUBDIR += hs-rfc5051
     SUBDIR += hs-scanner
     SUBDIR += hs-skylighting
+    SUBDIR += hs-skylighting-core
     SUBDIR += hs-stringsearch
     SUBDIR += hs-tagsoup
     SUBDIR += hs-tagstream-conduit
@@ -302,6 +303,7 @@
     SUBDIR += hs-uri
     SUBDIR += hs-uri-bytestring
     SUBDIR += hs-uri-bytestring-aeson
+    SUBDIR += hs-uri-encode
     SUBDIR += hs-xml
     SUBDIR += hs-xml-conduit
     SUBDIR += hs-xml-hamlet

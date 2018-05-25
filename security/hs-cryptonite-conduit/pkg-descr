@@ -1,0 +1,5 @@
+Conduit bridge for cryptonite. For now only provide a conduit version for
+hash and hmac, but with contribution, this could provide cipher conduits too,
+and probably other things.
+
+WWW: https://github.com/haskell-crypto/cryptonite-conduit

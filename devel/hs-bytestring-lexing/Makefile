@@ -3,7 +3,7 @@
 
 PORTNAME=	bytestring-lexing
 PORTVERSION=	0.5.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

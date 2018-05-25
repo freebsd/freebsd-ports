@@ -1,3 +1,3 @@
-TIMESTAMP = 1499546442
-SHA256 (cabal/xml-conduit-1.5.1.tar.gz) = 7afe26fa3e3160552b7a15af4a063f10678400cac54785a06ce9b70a5a5a9734
-SIZE (cabal/xml-conduit-1.5.1.tar.gz) = 37603
+TIMESTAMP = 1523899098
+SHA256 (cabal/xml-conduit-1.8.0.tar.gz) = 0382bfd3627be4970b11228948274faef51ca9a2590a7723b5787a7205a52036
+SIZE (cabal/xml-conduit-1.8.0.tar.gz) = 39469

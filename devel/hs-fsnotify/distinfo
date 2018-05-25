@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627836
-SHA256 (cabal/fsnotify-0.2.1.tar.gz) = ebcf1b7bd825f269510850f20508a2ba0f640a41af08de0c171d8ba24618542b
-SIZE (cabal/fsnotify-0.2.1.tar.gz) = 14689
+TIMESTAMP = 1523958991
+SHA256 (cabal/fsnotify-0.2.1.1.tar.gz) = 175a75962ad07c30c031fa8931f8d3e32abc06a96676e73e65cb7207e9d2dc90
+SIZE (cabal/fsnotify-0.2.1.1.tar.gz) = 14695

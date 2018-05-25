@@ -2,7 +2,7 @@
 
 PORTNAME=	cryptohash-md5
 PORTVERSION=	0.11.100.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

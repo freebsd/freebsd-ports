@@ -12,5 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	happstack-server>=7.0
 
+IGNORE=		Doesn't build with recent GHC version
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
