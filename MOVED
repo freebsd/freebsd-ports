@@ -3227,8 +3227,6 @@ mail/dbmail23||2012-04-18|Has expired: No longer supported upstream. No ports de
 math/octave-forge-times||2012-04-18|Deprecated upstream
 www/fpc-httpd13||2012-04-19|Obsolete freepascal unit. Use www/fpc-httpd22 instead of it
 www/fpc-httpd20||2012-04-19|Obsolete freepascal unit. Use www/fpc-httpd22 instead of it
-editors/lazarus-gtk2||2012-04-20|Never fully added. Use editors/lazarus instead
-editors/lazarus-qt4||2012-04-20|Never fully added. Use editors/lazarus instead
 net/socks5||2012-04-21|Removed
 games/netpanzer-data||2012-04-25|No longer needed
 www/typo344||2012-04-30|Has expired: Support will end in the near future, see http://typo3.org/download/packages/ for details
@@ -10194,3 +10192,8 @@ devel/p5-reaper|devel/p5-Reaper|2018-05-22|Rename to match upstream naming
 textproc/py-pyelasticsearch||2018-05-22|Has expired: Not depended upon anymore
 net/corosync|net/corosync2|2018-05-24|There are now multiple versions of corosync
 net/pacemaker|net/pacemaker1|2018-05-24|There are now multiple versions of pacemaker
+editors/lazarus-lcl-gtk2|editors/lazarus|2018-05-25|Removed, no longer needed
+editors/lazarus-lcl-nogui||2018-05-25|Removed, no longer needed
+editors/lazarus-lcl-qt|editors/lazarus-qt4|2018-05-25|Removed, no longer needed
+editors/lazarus-lcl-qt5|editors/lazarus-qt5|2018-05-25|Removed, no longer needed
+editors/lazarus-lcl-units||2018-05-25|Removed, no longer needed
