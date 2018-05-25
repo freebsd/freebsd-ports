@@ -3,4 +3,4 @@ queries to two previously configured nameservers: one for authoritative
 queries and another for recursive queries. The received answers are sent
 back to the client unchanged. No local caching is done.
 
-WWW: http://www.wolfermann.org/dnsproxy.html
+WWW: https://www.wolfermann.org/dnsproxy.html
