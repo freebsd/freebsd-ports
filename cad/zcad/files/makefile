@@ -6,7 +6,7 @@ OUTSUFX=	lib/$(ARCH)-$(OPSYS:tl)
 # at $0814EBB3'' message (EAccessViolation: Access violation).  It might
 # be some concurrency issue, but it occurs even with MAKE_JOBS_UNSAFE, so
 # use the following simple workaround for the time being.
-ZEALOUS_BUILD=	sh -c 'i=0 ; until $(LAZBUILD_CMD) $$0 ; do \
+ZEALOUS_BUILD=	sh -c 'i=0 ; until $(LAZBUILD_CMD) $(LAZBUILD_ARGS) --ws=$(LCL_PLATFORM) --lazarusdir=$(LAZARUS_DIR) $$0 ; do \
 		test $$i -lt 4 || return ; i=$$((i+1)) ; done'
 
 all: ../$(OUTSUFX)/zcad.compiled
