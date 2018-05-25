@@ -1673,6 +1673,7 @@
     SUBDIR += py-flask-wtf
     SUBDIR += py-flexget
     SUBDIR += py-flup6
+    SUBDIR += py-folium
     SUBDIR += py-formalchemy
     SUBDIR += py-formencode
     SUBDIR += py-frappe-bench
