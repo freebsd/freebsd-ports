@@ -2,7 +2,7 @@
 
 PORTNAME=	gitphp
 PORTVERSION=	0.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel www
 MASTER_SITES=	https://github.com/xiphux/gitphp/releases/download/${PORTVERSION}/
 
@@ -13,12 +13,19 @@ LICENSE=	GPLv2
 
 USES=		gettext php:web tar:bzip2
 USE_PHP=	bz2 fileinfo mbstring memcache posix simplexml spl zlib
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if (${PHP_VER} < 70)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdiff.so:textproc/pecl-xdiff@${PHP_FLAVOR}
+.else
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdiff.so:textproc/pecl-xdiff2@${PHP_FLAVOR}
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
@@ -26,4 +33,4 @@ do-install:
 		 && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 	${FIND} ${STAGEDIR}${WWWDIR} -type f -exec ${CHMOD} 644 {} +
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
