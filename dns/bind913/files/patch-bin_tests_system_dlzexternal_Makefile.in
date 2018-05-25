@@ -1,0 +1,11 @@
+--- bin/tests/system/dlzexternal/Makefile.in.orig	2018-02-26 06:30:28 UTC
++++ bin/tests/system/dlzexternal/Makefile.in
+@@ -34,7 +34,7 @@ OBJS =
+ @BIND9_MAKE_RULES@
+ 
+ CFLAGS =	@CFLAGS@ @SO_CFLAGS@
+-SO_LDFLAGS =	@LDFLAGS@ @SO_LDFLAGS@
++SO_LDFLAGS =	@SO_LDFLAGS@
+ 
+ driver.@SO@: ${SO_OBJS}
+ 	${LIBTOOL_MODE_LINK} @SO_LD@ ${SO_LDFLAGS} -o $@ driver.@O@

@@ -3,22 +3,35 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	1
+.if defined(BIND_TOOLS_SLAVE)
+# dns/bind-tools here
+PORTREVISION=	0
+.else
+# dns/bind913 here
+PORTREVISION=	0
+.endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
-PKGNAMESUFFIX=	911
+.if defined(BIND_TOOLS_SLAVE)
+PKGNAMESUFFIX=	-tools
+.else
+PKGNAMESUFFIX=	913
+.endif
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
+.if defined(BIND_TOOLS_SLAVE)
+COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
+.else
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
+.endif
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.3
-
-USES=	cpe libedit
+ISCVERSION=	9.13.0
+USES=	cpe libedit ssl
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -35,34 +48,42 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-libxml2=${LOCALBASE} \
 		--with-readline="-L${LOCALBASE}/lib -ledit" \
 		--with-dlopen=yes \
+		--with-openssl=${OPENSSLBASE} \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS=	bind-tools bind99 bind910 bind912 bind913 bind9-devel
+CONFLICTS=	bind99 bind910 bind911 bind912 bind9-devel
 
-SUB_FILES=	pkg-message named.conf
+.if defined(BIND_TOOLS_SLAVE)
+CONFIGURE_ARGS+=	--disable-shared
+CONFLICTS+=		bind913
+.else
 USE_RC_SUBR=	named
+SUB_FILES=	pkg-message named.conf
+CONFLICTS+=		bind-tools
+.endif	# BIND_TOOLS_SLAVE
 
 MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
 
-OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE JSON PYTHON \
-			DLZ_FILESYSTEM LMDB RPZ_NSDNAME RPZ_NSIP TCP_FASTOPEN \
-			FILTER_AAAA
+OPTIONS_DEFAULT=	THREADS SIGCHASE IDN GSSAPI_NONE JSON PYTHON
 OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON JSON \
-			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA \
-			RPZ_NSIP RPZ_NSDNAME DOCS GEOIP \
-			MINCACHE PORTREVISION QUERYTRACE LMDB DNSTAP \
-			START_LATE TUNING_LARGE TCP_FASTOPEN
+			FIXED_RRSET SIGCHASE IPV6 THREADS
 
 OPTIONS_RADIO=	CRYPTO GOSTDEF
-OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
+OPTIONS_RADIO_CRYPTO=	NATIVE_PKCS11
 OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 
+.if !defined(BIND_TOOLS_SLAVE)
+OPTIONS_DEFAULT+=	DLZ_FILESYSTEM LMDB RPZ_NSDNAME RPZ_NSIP TCP_FASTOPEN
+OPTIONS_DEFINE+=	RPZ_NSIP RPZ_NSDNAME DOCS GEOIP \
+			MINCACHE PORTREVISION QUERYTRACE LMDB DNSTAP \
+			START_LATE TUNING_LARGE TCP_FASTOPEN
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
+.endif	# BIND_TOOLS_SLAVE
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
@@ -77,10 +98,9 @@ DLZ_MYSQL_DESC=		DLZ MySQL driver (no threading)
 DLZ_POSTGRESQL_DESC=	DLZ Postgres driver
 DLZ_STUB_DESC=		DLZ stub driver
 DNSTAP_DESC=		Provides fast passive logging of DNS messages
-FILTER_AAAA_DESC=	Enable filtering of AAAA records
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 GEOIP_DESC=		Allow geographically based ACL.
-GOSTDEF_DESC=		Enable GOST ciphers, needs SSL
+GOSTDEF_DESC=		Enable GOST ciphers
 GOST_ASN1_DESC=		GOST using ASN.1
 GOST_DESC=		GOST raw keys (new default)
 GSSAPI_BASE_DESC=	Using Heimdal in base
@@ -97,7 +117,6 @@ QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
-SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
 START_LATE_DESC=	Start BIND late in the boot process (see help)
 TCP_FASTOPEN_DESC=	RFC 7413 support
 TUNING_LARGE_DESC=	Tune named for large systems (**READ HELP**)
@@ -124,8 +143,6 @@ DNSTAP_IMPLIES=		THREADS
 DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
 			libprotobuf-c.so:devel/protobuf-c
 
-FILTER_AAAA_CONFIGURE_ENABLE=	filter-aaaa
-
 FIXED_RRSET_CONFIGURE_ENABLE=	fixed-rrset
 
 GEOIP_CONFIGURE_WITH=	geoip
@@ -149,9 +166,9 @@ GSSAPI_MIT_USES=	gssapi:mit
 
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 
-IDN_CONFIGURE_OFF=	--without-idn
-IDN_CONFIGURE_ON=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
-IDN_LIB_DEPENDS=	libidnkit.so:dns/idnkit
+IDN_CONFIGURE_OFF=	--without-libidn2
+IDN_CONFIGURE_ON=	--with-libidn2=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
+IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
 IDN_USES=		iconv
 
 IPV6_CONFIGURE_ENABLE=	ipv6
@@ -182,14 +199,13 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 SIGCHASE_CONFIGURE_ON=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 
-SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
-SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
-SSL_USES=		ssl
 
 START_LATE_SUB_LIST=	NAMED_REQUIRE="SERVERS cleanvar" \
 			NAMED_BEFORE="LOGIN"
 START_LATE_SUB_LIST_OFF=NAMED_REQUIRE="NETWORKING ldconfig syslogd" \
 			NAMED_BEFORE="SERVERS"
+
+TCP_FASTOPEN_CONFIGURE_ENABLE=	tcp-fastopen
 
 THREADS_CONFIGURE_ENABLE=	threads
 
@@ -210,29 +226,38 @@ BROKEN=	OpenSSL from the base system does not support GOST, add \
 .endif
 
 post-patch:
-.for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
+.if defined(BIND_TOOLS_SLAVE)
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
+		-e 's#isc-config.sh installdirs#installdirs#' \
+		-e 's#.*INSTALL.*isc-config.*##' \
+		-e 's#.*INSTALL.*bind.keys.*##' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = delv dig dnssec tools nsupdate \\#' \
+		-e 's#^	.*check confgen ##' \
+		${WRKSRC}/bin/Makefile.in
+.else
+.  for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${ETCDIR}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
-.endfor
+.  endfor
+.endif
 
-.if ${PORTREVISION:N0}
+.if !defined(BIND_TOOLS_SLAVE)
+.  if ${PORTREVISION:N0}
 post-patch-PORTREVISION-on:
 	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
 		${WRKSRC}/version
-.endif
-
-post-patch-TCP_FASTOPEN-off:
-	@${REINPLACE_CMD} -e 's/#define ISC_PLATFORM_HAVETFO 1/#undef ISC_PLATFORM_HAVETFO/' ${WRKSRC}/configure
+.  endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mtree
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-.for i in dynamic master slave working
+.  for i in dynamic master slave working
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/$i
-.endfor
+.  endfor
 	${INSTALL_DATA} ${WRKDIR}/named.conf ${STAGEDIR}${ETCDIR}/named.conf.sample
 	${INSTALL_DATA} ${FILESDIR}/named.root ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/empty.db ${STAGEDIR}${ETCDIR}/master
@@ -247,8 +272,9 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGES \
-		${WRKSRC}/HISTORY* ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES* ${WRKSRC}/HISTORY.md \
+		${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+.endif	# BIND_TOOLS_SLAVE
 
 # Can't use USE_PYTHON=autoplist
 post-install-PYTHON-on:
