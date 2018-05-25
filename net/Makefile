@@ -53,7 +53,7 @@
     SUBDIR += bindtest
     SUBDIR += binkd
     SUBDIR += bird
-    SUBDIR += bird-devel
+    SUBDIR += bird2
     SUBDIR += bittwist
     SUBDIR += bluemix-cli
     SUBDIR += bmon
