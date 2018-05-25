@@ -3,9 +3,8 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Read and manipulate raw images from various digital cameras
@@ -14,15 +13,17 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
-		liblcms2.so:graphics/lcms2
+		liblcms2.so:graphics/lcms2 \
+		libjasper.so:graphics/jasper \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-extras
-USES=		desktop-file-utils gettext gmake jpeg pkgconfig
+USES=		gettext gmake jpeg pkgconfig autoreconf
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-PC_FALSE=	cinepaint
 
 OPTIONS_DEFINE=	CONTRAST DST EXIV2 LENSFUN FITS GIMP GTK2 GNOME
 OPTIONS_DEFAULT=CONTRAST EXIV2 LENSFUN GTK2
@@ -32,6 +33,13 @@ CONTRAST_DESC=	Enable contrast setting option
 DST_DESC=	Use local time for timestamps
 FITS_DESC=	FITS output support
 GIMP_DESC=	Install GIMP plugin
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sergiomb2
+GH_PROJECT=    ufraw
+GH_TAGNAME=	6d3259a
+
+USE_GNOME+=glib20 gtk20 cairo gdkpixbuf2
 
 CONTRAST_CONFIGURE_ENABLE=	contrast
 DST_CONFIGURE_ENABLE=	dst-correction
@@ -51,17 +59,12 @@ GNOME_USE=		GNOME=gconf2
 GNOME_CONFIGURE_ENABLE=	mime
 GNOME_VARS=		CATEGORIES+=gnome GCONF_SCHEMAS=${PORTNAME}.schemas
 
-post-patch:
-	@${REINPLACE_CMD} -e '18s|^$$|#include <sys/types.h>|' \
-		${WRKSRC}/dcraw.h
-# Fix GConf2 schemas installation path; unconditionalize installation of
-# .desktop file; avoid conflict with `graphics/dcraw' (rename the binary)
-	@${REINPLACE_CMD} -e '/@schemasdir/s|datadir|sysconfdir| ; \
-		/@app/s|@INSTALL_MIME_TRUE@|| ; \
-		s|dcraw\$$(EXEEXT)|${PORTNAME}-&|' ${WRKSRC}/Makefile.in
-.for i in ${PC_FALSE}
-	@${REINPLACE_CMD} -e '/PKG_CONFIG.*${i}/s|$$PKG_CONFIG|${FALSE}|' \
-		${WRKSRC}/configure
-.endfor
-
+#post-patch:
+#	echo "START REPLACE" ; \
+#	${REINPLACE_CMD} -e '18s|^$$|#include <sys/types.h>|' \
+#		${WRKSRC}/dcraw.h
+## Fix GConf2 schemas installation path; unconditionalize installation of
+## .desktop file; avoid conflict with `graphics/dcraw' (rename the binary)
+#	${REINPLACE_CMD} -e '/schemasdir/s|datadir|sysconfdir|'   ${WRKSRC}/Makefile.am
+#
 .include <bsd.port.mk>
