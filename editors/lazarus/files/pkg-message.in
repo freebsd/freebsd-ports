@@ -24,12 +24,11 @@ The Lazarus RAD was installed
    and these can be built with an interface different than lazarus has compiled
    by default:
 
-   editors/lazarus-lcl-nogui
-   editors/lazarus-lcl-gtk2
-   editors/lazarus-lcl-qt
-   editors/lazarus-lcl-qt5
+   editors/lazarus
+   editors/lazarus-qt4
+   editors/lazarus-qt5
 
-   You can added those ports if you want support for nogui, gtk2, qt or qt5
+   You can added those ports if you want support for gtk2, qt4 or qt5
    interfaces. Please look at net-p2p/transmission-remote-gui like a example of
    how use it
 

@@ -1,8 +1,8 @@
-# Created by: Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
+PKGNAMESUFFIX?=  -gtk2
 PORTREVISION?=	0
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
@@ -10,16 +10,17 @@ MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	acm@FreeBSD.org
-COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler
+COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler (GTK2)
 
-BUILD_DEPENDS?=	#
-RUN_DEPENDS?=	#
+CONFLICTS?=	${PORTNAME}-qt4-* ${PORTNAME}-qt5-*
+
+BUILD_DEPENDS?=	fpcres:lang/fpc-utils
+RUN_DEPENDS?=	fpcres:lang/fpc-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		fpc gmake
-USE_GNOME=	#
-USE_FPC?=	cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
+USES=		fpc gettext gmake iconv
+USE_FPC?=	chm cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
 		fcl-registry fcl-res fcl-web fcl-xml gtk2 ibase iconvenc mysql \
 		numlib odbc openssl oracle pasjpeg postgres regexpr rtl-extra \
 		sqlite x11
@@ -31,36 +32,16 @@ PLIST=		${WRKDIR}/pkg-plist
 WRKSRC?=	${WRKDIR}/${PORTNAME}
 DATADIR?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
-.if !defined(PKGNAMESUFFIX)
 OPTIONS_DEFINE=		GDB
-OPTIONS_SINGLE=		LCL
-OPTIONS_SINGLE_LCL=	GTK2 QT4 QT5
-
 GDB_DESC=		Install a newest version  of gdb
-GTK2_DESC=		Use gtk20 interface
-QT4_DESC=		Use qt4 interface
-QT5_DESC=		Use qt5 interface
-
 OPTIONS_DEFAULT=	GTK2 GDB
-.endif
 
 .include <bsd.port.options.mk>
 
 LAZARUS_ARCH=	${ARCH:S,amd64,x86_64,}
 
 BUILDNAME=	${LAZARUS_ARCH}-${OPSYS:tl}
-LCL_UNITS_DIR=	${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/lcl/units/${BUILDNAME}
-
-.if !defined(PKGNAMESUFFIX)
-BUILD_DEPENDS+=	fpcres:lang/fpc-utils \
-		${LCL_UNITS_DIR}/alllclunits.ppu:editors/lazarus-lcl-units \
-		${LCL_UNITS_DIR}/nogui/interfaces.ppu:editors/lazarus-lcl-nogui
-RUN_DEPENDS+=	fpcres:lang/fpc-utils \
-		${LCL_UNITS_DIR}/alllclunits.ppu:editors/lazarus-lcl-units \
-		${LCL_UNITS_DIR}/nogui/interfaces.ppu:editors/lazarus-lcl-nogui
-
-USES+=		gettext iconv
-USE_FPC+=	chm
+LCL_PLATFORM?=	gtk2
 
 MAN1S=		lazarus-ide.1 lazbuild.1 startlazarus.1
 SUB_FILES=	pkg-message
@@ -70,25 +51,9 @@ SUB_LIST+=	PORTSDIR="${PORTSDIR}"
 RUN_DEPENDS+=	${LOCALBASE}/bin/gdb:devel/gdb
 .endif
 
-.if ${PORT_OPTIONS:MGTK2}
+.if ${PKGNAMESUFFIX} == "-gtk2"
+USES+=		gnome
 USE_GNOME=	cairo gtk20 gdkpixbuf2
-LCL_PLATFORM=	gtk2
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
-RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libQt4Pas.so:x11-toolkits/qt4pas
-LCL_PLATFORM=	qt
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
-RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
-.endif
-
-.if ${PORT_OPTIONS:MQT5}
-LIB_DEPENDS+=   libQt5Pas.so:x11-toolkits/qt5pas
-LCL_PLATFORM=   qt5
-BUILD_DEPENDS+= ${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt5
-RUN_DEPENDS+=   ${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt5
 .endif
 
 post-extract:
@@ -100,28 +65,18 @@ post-extract:
 	@${MV} ${WRKSRC}/docs ${WRKDIR}/docs
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
-			-e 's|tools: lcl|tools:|g' -e '3267d' -e '3269d' -e '3270d' -e '3271d' -e '3272d' -e '3273d' ${WRKSRC}/${MAKEFILE}
-
-pre-build:
-	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/lcl/units ${WRKSRC}/lcl/units
-	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/debuggerintf/lib ${WRKSRC}/components/debuggerintf/lib
-	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/ideintf/units ${WRKSRC}/components/ideintf/units
-	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/synedit/units ${WRKSRC}/components/synedit/units
-	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/lazcontrols/lib ${WRKSRC}/components/lazcontrols/lib
-	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/lazdebuggergdbmi/lib ${WRKSRC}/components/lazdebuggergdbmi/lib
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} registration lazutils codetools bigide starter lazbuild LCL_PLATFORM=${LCL_PLATFORM}
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} bigide LCL_PLATFORM=${LCL_PLATFORM}
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} tools LCL_PLATFORM=${LCL_PLATFORM}
 
 post-build:
 	@cd ${WRKSRC} && \
 		${RM} -R COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
-			ide/Makefile*.orig ide/Makefile*.bak lcl/units components/ideintf/units \
-				components/synedit/units components/lazcontrols/lib
+			ide/Makefile*.orig ide/Makefile*.bak
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/lazarus-wrapper
@@ -129,7 +84,6 @@ pre-install:
 	@${ECHO} "exec ./startlazarus" >> ${WRKDIR}/lazarus-wrapper
 
 	@${RM} ${PLIST}
-	@${RM} ${WRKSRC}/lcl/units
 	@${RM} -r ${WRKSRC}/components/chmhelp/lhelp/lhelp.app/Contents/MacOS \
 		${WRKSRC}/lazarus.app/Contents/MacOS \
 		${WRKSRC}/lazarus.app/Contents/Resources/startlazarus.app/Contents/MacOS
@@ -186,9 +140,5 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 	${LN} -s ${DATADIR}/lazbuild ${STAGEDIR}${PREFIX}/bin/lazbuild
-
-.else
-.include "${MASTERDIR}/Makefile.common"
-.endif
 
 .include <bsd.port.mk>
