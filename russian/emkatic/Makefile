@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	emkatic
-PORTVERSION=	0.28
-PORTREVISION=	3
+PORTVERSION=	0.36
 CATEGORIES=	russian emulators
+PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MASTER_SITES=	SF/${PORTNAME}/eMKatic%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
@@ -14,44 +14,30 @@ COMMENT=	Emulator of Elektronika RPN programmable calculator series
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	lazbuild:editors/lazarus \
-		fpcres:lang/fpc-utils
+USES=		fpc lazarus:flavors
+USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-registry fcl-xml \
+		pasjpeg regexpr rtl-extra x11
+USE_XORG=	x11
 
-USES=		fpc
-USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-xml pasjpeg rtl-extra x11
-
-PROJECT_FILE=	emkatic.lpi
-LAZARUS_VER=	1.8.0
-LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
-LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
-LCL_UNITS_DIR=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}
+LAZARUS_PROJECT_FILES=	emkatic.lpi
+LAZBUILD_ARGS=		-d --pcp=${WRKSRC}/tmppcp
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 PORTDOCS=	CHANGELOG.*.txt README.*.txt
 
+gtk2_CONFLICTS_INSTALL=	ru-${PORTNAME}-qt4 ru-${PORTNAME}-qt5
+qt4_CONFLICTS_INSTALL=	ru-${PORTNAME}-gtk2 ru-${PORTNAME}-qt5
+qt5_CONFLICTS_INSTALL=	ru-${PORTNAME}-gtk2 ru-${PORTNAME}-qt4
+
 OPTIONS_DEFINE=		DOCS PORTAUDIO
-OPTIONS_SINGLE=		GUI
-OPTIONS_SINGLE_GUI=	GTK2 QT4
-OPTIONS_DEFAULT=	GTK2 PORTAUDIO
-
-GTK2_DESC=	Build with GTK+ 2 interface
-QT4_DESC=	Build with Qt 4 interface
-
-GTK2_BUILD_DEPENDS=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
-GTK2_USE=		GNOME=gtk20 FPC=gtk2
-GTK2_VARS=		LCL_PLATFORM=gtk2
-
-QT4_BUILD_DEPENDS=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
-QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
-QT4_VARS=		LCL_PLATFORM=qt
+OPTIONS_DEFAULT=	PORTAUDIO
 
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${LAZBUILD_CMD} --ws="${LCL_PLATFORM}" \
-			--lazarusdir=${LAZARUS_DIR} ${PROJECT_FILE}
+.if ${FLAVOR:Ugtk2:Mgtk2}
+USE_GNOME+=	cairo
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

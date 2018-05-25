@@ -3,52 +3,51 @@
 
 PORTNAME=	zcad
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
+PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MASTER_SITES=	LOCAL/danfe
 DISTNAME=	${PORTNAME}-trunk-r2259
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple CAD program
 
-BUILD_DEPENDS=	lazbuild:editors/lazarus
-
-USES=		fpc tar:xz
+USES=		fpc lazarus:flavors tar:xz
 USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-stl fcl-xml opengl \
 		pasjpeg rtl-extra rtl-objpas x11
 
-LAZARUS_VER=	1.8.0
-LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp \
-		--lazarusdir=${LAZARUS_DIR}
-LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
-LCL_UNITS_DIR=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}
-
 EXTRACT_CMD=	LC_ALL=en_US.UTF-8 ${TAR}	# for non-ASCII filenames
 
-MAKE_ENV=	LAZBUILD_CMD="${LAZBUILD_CMD}"
+MAKE_ENV=	LAZBUILD_CMD="${LAZBUILD_CMD}" \
+		LAZBUILD_ARGS="${LAZBUILD_ARGS}" \
+		LCL_PLATFORM="${LCL_PLATFORM}" \
+		LAZARUS_DIR="${LAZARUS_DIR}" \
+		INSTANTFPCCACHE="${WRKSRC}/.cache"
 
+NO_LAZBUILD=	yes
 WRKSRC=		${WRKDIR}/trunk
 BUILD_WRKSRC=	${WRKSRC}/cad_source
 INSTALL_WRKSRC=	${WRKSRC}/cad
+
+LAZBUILD_ARGS=	-d --pcp=${WRKSRC}/tmppcp
+LAZARUS_NO_FLAVORS=qt5
+
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt4
+qt4_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
 
 MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	UserGuide.odt UserGuide.pdf
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_SINGLE=		GUI
-OPTIONS_SINGLE_GUI=	GTK2 QT4
-OPTIONS_DEFAULT=	GTK2
 
-GTK2_BUILD_DEPENDS=	${LCL_UNITS_DIR}/gtk2/interfaces.ppu:editors/lazarus-lcl-gtk2
-GTK2_USE=		GNOME=gtk20 FPC=gtk2
-GTK2_MAKE_ENV=		GUI=gtk2
-GTK2_VARS=		LAZBUILD_CMD+=--ws=gtk2
+.if ${FLAVOR:Ugtk2:Mgtk2}
+MAKE_ENV+=	GUI=gtk2
+.endif
 
-QT4_BUILD_DEPENDS=	${LCL_UNITS_DIR}/qt/interfaces.ppu:editors/lazarus-lcl-qt
-QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
-QT4_MAKE_ENV=		GUI=qt
-QT4_VARS=		LAZBUILD_CMD+=--ws=qt
+.if ${FLAVOR:Uqt4:Mqt4}
+MAKE_ENV+=	GUI=qt
+.endif
 
 post-patch:
 	@${EGREP} -lR 'IFN?DEF LINUX' ${BUILD_WRKSRC} | ${XARGS} \
@@ -74,8 +73,12 @@ pre-build:
 # copy them locally first for the same reason as above)
 	${CP} -a  ${LAZARUS_DIR}/components/fpvectorial \
 		${LAZARUS_DIR}/components/anchordocking ${WRKSRC}
-	${LAZBUILD_CMD} ${WRKSRC}/fpvectorial/fpvectorialpkg.lpk
-	${LAZBUILD_CMD} ${WRKSRC}/anchordocking/anchordocking.lpk
+	${SETENV} ${MAKE_ENV} ${LAZBUILD_CMD} ${LAZBUILD_ARGS} --ws=${LCL_PLATFORM} \
+		--lazarusdir=${LAZARUS_DIR} \
+			${WRKSRC}/fpvectorial/fpvectorialpkg.lpk
+	${SETENV} ${MAKE_ENV} ${LAZBUILD_CMD} ${LAZBUILD_ARGS} --ws=${LCL_PLATFORM} \
+		--lazarusdir=${LAZARUS_DIR} \
+			${WRKSRC}/anchordocking/anchordocking.lpk
 
 do-install:
 # Not ready for hier(7)-conforming installation yet

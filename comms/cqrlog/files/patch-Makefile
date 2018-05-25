@@ -2,7 +2,7 @@
 +++ Makefile	2018-01-05 12:34:28.752177000 -0500
 @@ -1,12 +1,13 @@
 -CC=lazbuild
-+CC=lazbuild -d
++LAZBUILD_CMD?=lazbuild -d
  ST=strip
 -datadir  = $(DESTDIR)/usr/share/cqrlog
 -bindir   = $(DESTDIR)/usr/bin
@@ -15,7 +15,7 @@
  
  cqrlog: src/cqrlog.lpi
 -	$(CC) --ws=gtk2 --pcp=$(tmpdir)/.lazarus src/cqrlog.lpi
-+	$(CC) --pcp=. --ws=${PLATFORM} src/cqrlog.lpi --lazarusdir=%%LAZARUSDIR%%
++	$(LAZBUILD_CMD) $(LAZBUILD_ARGS) --ws=$(LCL_PLATFORM) --lazarusdir=$(LAZARUS_DIR) src/cqrlog.lpi
  	$(ST) src/cqrlog
  	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
  
