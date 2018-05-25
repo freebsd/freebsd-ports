@@ -9,6 +9,8 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Runtime components for KDE Plasma Desktop
 
+CONFLICTS_INSTALL=	plasma5-kde-cli-tools
+
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libwebp.so:graphics/webp \
 		libslp.so:net/openslp \
