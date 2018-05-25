@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -20,10 +20,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	influxdata:DEFAULT
 GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
-        tidwall:gjson:01f00f1:gjson/src/github.com/tidwall/gjson \
-        tidwall:match:1731857:match/src/github.com/tidwall/match \
-        go-redis:redis:877867d:redis/src/github.com/go-redis/redis \
-		aerospike:aerospike-client-go:95e1ad7:aerospike_client_go/src/github.com/aerospike/aerospike-client-go \
+		aerospike:aerospike-client-go:9701404:aerospike_client_go/src/github.com/aerospike/aerospike-client-go \
 		amir:raidman:c74861f:raidman/src/github.com/amir/raidman \
 		apache:thrift:4aaa92ec:thrift/src/github.com/apache/thrift \
 		aws:aws-sdk-go:c861d27d:aws_sdk_go/src/github.com/aws/aws-sdk-go \
@@ -40,10 +37,12 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		eapache:go-resiliency:b86b1ec:go_resiliency/src/github.com/eapache/go-resiliency \
 		eapache:go-xerial-snappy:bb955e0:go_xerial_snappy/src/github.com/eapache/go-xerial-snappy \
 		eapache:queue:44cc805:queue/src/github.com/eapache/queue \
-		eclipse:paho.mqtt.golang:d4f545e:paho_mqtt_golang/src/github.com/eclipse/paho.mqtt.golang \
+		eclipse:paho.mqtt.golang:aff1577:paho_mqtt_golang/src/github.com/eclipse/paho.mqtt.golang \
+		fsnotify:fsnotify:c282820:fsnotify/src/github.com/fsnotify/fsnotify \
 		go-ini:ini:9144852:ini/src/github.com/go-ini/ini \
 		go-logfmt:logfmt:390ab79:logfmt/src/github.com/go-logfmt/logfmt \
 		go-ole:go-ole:be49f7c:go_ole/src/github.com/go-ole/go-ole \
+		go-redis:redis:73b7059:redis/src/github.com/go-redis/redis \
 		go-sql-driver:mysql:2e00b5c:mysql/src/github.com/go-sql-driver/mysql \
 		gobwas:glob:bea32b9:glob/src/github.com/gobwas/glob \
 		gogo:protobuf:7b6c6391:gogo_protobuf/src/github.com/gogo/protobuf \
@@ -53,7 +52,7 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		gorilla:mux:392c28f:mux/src/github.com/gorilla/mux \
 		hailocab:go-hostpool:e80d13c:go_hostpool/src/github.com/hailocab/go-hostpool \
 		hashicorp:consul:63d2fc68:consul/src/github.com/hashicorp/consul \
-		influxdata:tail:a395bf9:tail/src/github.com/influxdata/tail \
+		influxdata:tail:c434825:tail/src/github.com/influxdata/tail \
 		influxdata:toml:5d1d907:toml/src/github.com/influxdata/toml \
 		influxdata:wlog:7c63b0a:wlog/src/github.com/influxdata/wlog \
 		jackc:pgx:63f58fd:pgx/src/github.com/jackc/pgx \
@@ -67,6 +66,7 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		mitchellh:mapstructure:d0303fe:mapstructure/src/github.com/mitchellh/mapstructure \
 		multiplay:go-ts3:07477f4:go_ts3/src/github.com/multiplay/go-ts3 \
 		naoina:go-stringutil:6b638e9:go_stringutil/src/github.com/naoina/go-stringutil \
+		nats-io:gnatsd:393bbb7:gnatsd/src/github.com/nats-io/gnatsd \
 		nats-io:go-nats:ea95856:nats/src/github.com/nats-io/nats \
 		nats-io:nuid:289cccf:nuid/src/github.com/nats-io/nuid \
 		nsqio:go-nsq:eee57a3:go_nsq/src/github.com/nsqio/go-nsq \
@@ -85,28 +85,30 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		rcrowley:go-metrics:1f30fe9:go_metrics/src/github.com/rcrowley/go-metrics \
 		samuel:go-zookeeper:1d7be4e:go_zookeeper/src/github.com/samuel/go-zookeeper \
 		satori:go.uuid:5bf94b6:go_uuid/src/github.com/satori/go.uuid \
-		shirou:gopsutil:a5c2888:gopsutil/src/github.com/shirou/gopsutil \
+		shirou:gopsutil:c95755e:gopsutil/src/github.com/shirou/gopsutil \
 		shirou:w32:3c9377f:w32/src/github.com/shirou/w32 \
 		Shopify:sarama:3b1b388:sarama/src/github.com/Shopify/sarama \
 		Sirupsen:logrus:61e43dc:logrus/src/github.com/Sirupsen/logrus \
-		soniah:gosnmp:5ad50dc:gosnmp/src/github.com/soniah/gosnmp \
+		soniah:gosnmp:f15472a:gosnmp/src/github.com/soniah/gosnmp \
 		sparrc:gdm:81089da:gdm/src/github.com/sparrc/gdm \
 		StackExchange:wmi:f3e2bae:wmi/src/github.com/StackExchange/wmi \
 		streadway:amqp:63795da:amqp/src/github.com/streadway/amqp \
-		stretchr:objx:1a9d0bb:objx/src/github.com/stretchr/objx \
-		stretchr:testify:4d4bfba:testify/src/github.com/stretchr/testify \
+		stretchr:objx:facf9a8:objx/src/github.com/stretchr/objx \
+		stretchr:testify:12b6f73:testify/src/github.com/stretchr/testify \
+		tidwall:gjson:0623bd8:gjson/src/github.com/tidwall/gjson \
+		tidwall:match:173748d:match/src/github.com/tidwall/match \
 		vjeantet:grok:d73e972:grok/src/github.com/vjeantet/grok \
 		wvanbergen:kafka:bc265fe:kafka/src/github.com/wvanbergen/kafka \
 		wvanbergen:kazoo-go:9689573:kazoo_go/src/github.com/wvanbergen/kazoo-go \
 		yuin:gopher-lua:66c871e:gopher_lua/src/github.com/yuin/gopher-lua \
 		zensqlmonitor:go-mssqldb:ffe5510:go_mssqldb/src/github.com/zensqlmonitor/go-mssqldb \
 		golang:crypto:dc137be:crypto/src/golang.org/x/crypto \
+		golang:lint:470b6b0:lint/src/golang.org/x/lint \
 		golang:net:f249948:net/src/golang.org/x/net \
 		golang:sys:7397344:sys/src/golang.org/x/sys \
 		golang:text:506f9d5:text/src/golang.org/x/text \
-		golang:tools:b790d0ba:tools/src/golang.org/x/tools \
+		golang:tools:a5b4c53f:tools/src/golang.org/x/tools \
 		fatih:pool:6e328e6:pool_v2/src/gopkg.in/fatih/pool.v2 \
-		go-fsnotify:fsnotify:a8a77c9:fsnotify/src/gopkg.in/fsnotify.v1/fsnotify \
 		gorethink:gorethink:7ab832f:gorethink_v3/src/gopkg.in/gorethink/gorethink.v3 \
 		go-asn1-ber:asn1-ber:4e86f43:asn1_ber/src/gopkg.in/asn1-ber.v1 \
 		go-ldap:ldap:8168ee0:ldap/src/gopkg.in/ldap.v2 \
