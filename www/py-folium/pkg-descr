@@ -1,0 +1,6 @@
+folium builds on the data wrangling strengths of the Python ecosystem and the
+mapping strengths of the Leaflet.js library. Manipulate your data in Python,
+then visualize it in a Leaflet map via folium.
+
+WWW: https://pypi.org/project/folium/
+WWW: https://github.com/python-visualization/folium
