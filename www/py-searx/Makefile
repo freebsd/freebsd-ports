@@ -25,8 +25,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	distutils autoplist noflavors
+USES=		python:2.7
+USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 USE_RC_SUBR=	searx
 
