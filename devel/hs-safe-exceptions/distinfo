@@ -1,3 +1,3 @@
-TIMESTAMP = 1499717912
-SHA256 (cabal/safe-exceptions-0.1.6.0.tar.gz) = 71d47ce1049465b02d89231f2931e7a1d22b6960e85fca5281162e979cf08d1c
-SIZE (cabal/safe-exceptions-0.1.6.0.tar.gz) = 13447
+TIMESTAMP = 1523650633
+SHA256 (cabal/safe-exceptions-0.1.7.0.tar.gz) = 18cddc587b52b6faa0287fb6ad6c964d1562571ea2c8ff57a194dd54b5fba069
+SIZE (cabal/safe-exceptions-0.1.7.0.tar.gz) = 13533

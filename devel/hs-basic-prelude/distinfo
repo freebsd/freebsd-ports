@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627821
-SHA256 (cabal/basic-prelude-0.6.1.1.tar.gz) = f7b178ad8d1491933e1eb8def0b98c7270da3a5e06bed977f0c624c24ff92ec7
-SIZE (cabal/basic-prelude-0.6.1.1.tar.gz) = 6009
+TIMESTAMP = 1524414505
+SHA256 (cabal/basic-prelude-0.7.0.tar.gz) = 10755f892548faa956b81b40d1d03ec6e94609fd8ec8e92be09b4453b7ad9379
+SIZE (cabal/basic-prelude-0.7.0.tar.gz) = 6471

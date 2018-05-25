@@ -1,3 +1,3 @@
-TIMESTAMP = 1499537811
-SHA256 (cabal/glib-0.13.4.1.tar.gz) = f57202ed4094cc50caa8b390c8b78a1620b3c43b913edb1e5bda0f3c5be32630
-SIZE (cabal/glib-0.13.4.1.tar.gz) = 39441
+TIMESTAMP = 1524403919
+SHA256 (cabal/glib-0.13.6.0.tar.gz) = 4e71062c6a458440294d820e21449aa4666deed2ea233ef5915da7c1d4aee8eb
+SIZE (cabal/glib-0.13.6.0.tar.gz) = 39809

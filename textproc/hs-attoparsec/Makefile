@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	attoparsec
-PORTVERSION=	0.13.1.0
-PORTREVISION=	1
+PORTVERSION=	0.13.2.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,7 +9,7 @@ COMMENT=	Fast combinator parsing for bytestrings and text
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	scientific text
+USE_CABAL=	scientific
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

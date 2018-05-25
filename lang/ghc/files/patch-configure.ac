@@ -1,6 +1,6 @@
---- configure.ac.orig	2017-01-04 14:17:17 UTC
+--- configure.ac.orig	2018-03-06 16:48:53 UTC
 +++ configure.ac
-@@ -418,6 +418,9 @@ AC_SUBST([SplitObjsBroken])
+@@ -447,6 +447,9 @@ XCODE_VERSION()
  dnl ** Building a cross compiler?
  dnl --------------------------------------------------------------
  CrossCompiling=NO
@@ -10,15 +10,15 @@
  # If 'host' and 'target' differ, then this means we are building a cross-compiler.
  if test "$TargetPlatform" != "$HostPlatform" ; then
      CrossCompiling=YES
-@@ -1057,6 +1060,11 @@ if test "$ac_cv_sizeof_void_p" -eq 8 ; then
-             use_large_address_space=yes
- 	elif test "$ghc_host_os" = "openbsd" ; then
- 	    # as of OpenBSD 5.8 (2015), OpenBSD does not support mmap with MAP_NORESERVE.
-+	    # The flag MAP_NORESERVE is supported for source compatibility reasons,
-+	    # but is completely ignored by OS mmap
-+            use_large_address_space=no
-+ 	elif test "$ghc_host_os" = "freebsd" ; then
-+	    # FreeBSD does not support mmap with MAP_NORESERVE,r emoved in r273250.
+@@ -1163,6 +1158,11 @@ if test "$ac_cv_sizeof_void_p" -eq 8 ; t
  	    # The flag MAP_NORESERVE is supported for source compatibility reasons,
  	    # but is completely ignored by OS mmap
              use_large_address_space=no
++ 	elif test "$ghc_host_os" = "freebsd" ; then
++	    # FreeBSD does not support mmap with MAP_NORESERVE, removed in r273250.
++	    # The flag MAP_NORESERVE is supported for source compatibility reasons,
++	    # but is completely ignored by OS mmap
++            use_large_address_space=no
+         else
+             AC_CHECK_DECLS([MAP_NORESERVE, MADV_FREE, MADV_DONTNEED],[],[],
+                 [

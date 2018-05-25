@@ -1,3 +1,3 @@
-TIMESTAMP = 1499546087
-SHA256 (cabal/blaze-builder-0.4.0.2.tar.gz) = 9ad3e4661bf5556d650fb9aa56a3ad6e6eec7575e87d472e8ab6d15eaef163d4
-SIZE (cabal/blaze-builder-0.4.0.2.tar.gz) = 58681
+TIMESTAMP = 1523427415
+SHA256 (cabal/blaze-builder-0.4.1.0.tar.gz) = 91fc8b966f3e9dc9461e1675c7566b881740f99abc906495491a3501630bc814
+SIZE (cabal/blaze-builder-0.4.1.0.tar.gz) = 61365

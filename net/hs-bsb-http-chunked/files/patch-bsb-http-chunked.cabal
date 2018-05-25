@@ -1,0 +1,9 @@
+--- bsb-http-chunked.cabal.orig 2018-04-28 15:19:50 UTC
++++ bsb-http-chunked.cabal
+@@ -43,5 +43,4 @@ Library
+                      Blaze.ByteString.Builder.Internal.Write
+ 
+   build-depends:     base >= 4.3 && < 4.12,
+-                     bytestring >= 0.9 && < 0.11,
+-                     bytestring-builder < 0.11
++                     bytestring >= 0.9 && < 0.11

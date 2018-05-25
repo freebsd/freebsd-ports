@@ -1,3 +1,3 @@
-TIMESTAMP = 1499594984
-SHA256 (cabal/x509-store-1.6.2.tar.gz) = 49fd261c7e55a45fd357931a6d9f81e22f242e6047304d3e2662e43db94d807b
-SIZE (cabal/x509-store-1.6.2.tar.gz) = 4326
+TIMESTAMP = 1523784064
+SHA256 (cabal/x509-store-1.6.6.tar.gz) = 6a276f595cf91c9688129cad4c9c6be9c349ffc0de22300eeb3dfa6a2b6e7635
+SIZE (cabal/x509-store-1.6.6.tar.gz) = 10802

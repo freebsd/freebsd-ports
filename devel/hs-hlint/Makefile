@@ -15,5 +15,7 @@ USE_CABAL=	ansi-terminal>=0.6.2 cmdargs>=0.10 cpphs>=1.18.1 extra>=0.5 \
 
 EXECUTABLE=	hlint
 
+IGNORE=		Doesn't build with recent GHC version
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

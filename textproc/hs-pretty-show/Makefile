@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pretty-show
-PORTVERSION=	1.6.13
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

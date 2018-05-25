@@ -10,7 +10,9 @@ COMMENT=	Framework for extending Haskell's syntax via quick-and-dirty preprocess
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	mtl>=1 parsec>=3 syb>=0
+USE_CABAL=	mtl>=1 syb>=0
+
+IGNORE=		Doesn't build with recent GHC version
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

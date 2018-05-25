@@ -1,0 +1,6 @@
+th-reify-many provides functions for recursively reifying top level declarations.
+The main intended use case is for enumerating the names of datatypes reachable
+from an initial datatype, and passing these names to some function which
+generates instances.
+
+WWW: http://github.com/mgsloan/th-reify-many

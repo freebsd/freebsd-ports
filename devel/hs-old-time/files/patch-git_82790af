@@ -16,7 +16,7 @@ index d322965..3a0e85c 100644
  
      build-depends:
 -        base       >= 4.7 && < 4.9,
-+        base       >= 4.7 && < 4.11,
++        base       >= 4.7 && < 4.12,
          old-locale == 1.0.*
  
      ghc-options: -Wall

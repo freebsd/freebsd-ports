@@ -1,3 +1,3 @@
-TIMESTAMP = 1499625387
-SHA256 (cabal/yesod-test-1.5.7.tar.gz) = 426b2aaf777b4c18aee150ed5bbe7ab95c987e622609b0cff1242f9ec0850113
-SIZE (cabal/yesod-test-1.5.7.tar.gz) = 19365
+TIMESTAMP = 1525176699
+SHA256 (cabal/yesod-test-1.6.4.tar.gz) = cffa1639237646836be0ead1bc0b1787a3fccb384cbb7e77dcbcf54c1ed3b95b
+SIZE (cabal/yesod-test-1.6.4.tar.gz) = 21745

@@ -1,0 +1,6 @@
+With this package you can build a Storable instance of a record type from
+Storable instances of its elements in an elegant way. It does not do any magic,
+just a bit arithmetic to compute the right offsets, that would be otherwise
+done manually or by a preprocessor like C2HS.
+
+WWW: http://code.haskell.org/~thielema/storable-record/

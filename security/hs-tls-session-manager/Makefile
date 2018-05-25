@@ -2,7 +2,7 @@
 
 PORTNAME=	tls-session-manager
 PORTVERSION=	0.0.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -2,16 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	tagsoup
-PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTVERSION=	0.14.6
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Parsing and extracting information from HTML/XML documents
 
 LICENSE=	BSD3CLAUSE
-
-USE_CABAL=	text
 
 FLAGS_DEFINE=	DOWNLOAD
 

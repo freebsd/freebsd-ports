@@ -18,9 +18,9 @@ GHC_CMD?=	${LOCALBASE}/bin/ghc
 HADDOCK_CMD?=	${LOCALBASE}/bin/haddock
 HSCOLOUR_CMD?=	${LOCALBASE}/bin/HsColour
 
-GHC_VERSION?=	8.0.2
+GHC_VERSION?=	8.4.2
 
-HSCOLOUR_VERSION=	1.24.1
+HSCOLOUR_VERSION=	1.24.4
 
 HSCOLOUR_DESC?=	Colorize generated documentation by HsColour
 DYNAMIC_DESC?=	Add support for dynamic linking

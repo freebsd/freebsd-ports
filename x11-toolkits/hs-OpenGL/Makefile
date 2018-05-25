@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	OpenGL
-PORTVERSION=	3.0.2.0
-PORTREVISION=	1
+PORTVERSION=	3.0.2.1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
@@ -12,8 +11,7 @@ COMMENT=	Binding for the OpenGL graphics system
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	GLURaw>=1.3 ObjectName>=1.1 OpenGLRaw>=2.1 StateVar>=1.1 \
-		text>=0.1
+USE_CABAL=	GLURaw>=1.3 ObjectName>=1.1 OpenGLRaw>=2.1 StateVar>=1.1
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

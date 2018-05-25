@@ -1,3 +1,3 @@
-TIMESTAMP = 1499450950
-SHA256 (cabal/HsOpenSSL-0.11.4.9.tar.gz) = ea0fe9bb2a6aa9afe5229dfdc44cae493c3fccf9daffa091d2d1aaa09087b378
-SIZE (cabal/HsOpenSSL-0.11.4.9.tar.gz) = 79689
+TIMESTAMP = 1524153978
+SHA256 (cabal/HsOpenSSL-0.11.4.13.tar.gz) = 125cd16f3db36ed102fe8748e474eaca69dbc57ee8794e29863c69d0a47fff47
+SIZE (cabal/HsOpenSSL-0.11.4.13.tar.gz) = 79832

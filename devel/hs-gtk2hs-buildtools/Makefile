@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk2hs-buildtools
-PORTVERSION=	0.13.2.2
-PORTREVISION=	1
+PORTVERSION=	0.13.3.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

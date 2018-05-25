@@ -1,0 +1,11 @@
+--- echo.cabal.orig     2018-04-09 16:19:02 UTC
++++ echo.cabal
+@@ -39,7 +39,7 @@ library
+                        System.IO.Echo.Internal
+ 
+   build-depends:       base    >= 4.3     && < 5
+-                     , process >= 1.0.1.1 && < 1.5
++                     , process >= 1.0.1.1 && < 1.7
+   if os(windows)
+     cpp-options:       "-DWINDOWS"
+     build-depends:     mintty >= 0.1 && < 0.2

@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuidn
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,7 +10,6 @@ COMMENT=	Bindings for GNU IDN
 
 LICENSE=	GPLv3
 
-USE_CABAL=	text
 USE_C2HS=	yes
 
 USES=		pkgconfig

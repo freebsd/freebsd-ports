@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627863
-SHA256 (cabal/uulib-0.9.22.tar.gz) = cdd0a15d33834e367e2b9d9a6b78cb17e1947e31c7d2d26344a144bf3ab131ad
-SIZE (cabal/uulib-0.9.22.tar.gz) = 45487
+TIMESTAMP = 1523470473
+SHA256 (cabal/uulib-0.9.23.tar.gz) = c6fb906d2751c5a5c0839a4eaca62f2987ff8e0857146b8643cccff683e72fed
+SIZE (cabal/uulib-0.9.23.tar.gz) = 45287

@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627859
-SHA256 (cabal/test-framework-0.8.1.1.tar.gz) = 7883626a5aebb1df327bf26dbd382208946250a79f9cc3bf9a9eb0b0767bb273
-SIZE (cabal/test-framework-0.8.1.1.tar.gz) = 20900
+TIMESTAMP = 1523960922
+SHA256 (cabal/test-framework-0.8.2.0.tar.gz) = f5aec7a15dbcb39e951bcf6502606fd99d751197b5510f41706899aa7e660ac2
+SIZE (cabal/test-framework-0.8.2.0.tar.gz) = 21317

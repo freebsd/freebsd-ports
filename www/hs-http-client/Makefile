@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-client
-PORTVERSION=	0.5.7.0
-PORTREVISION=	1
+PORTVERSION=	0.5.12.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,8 +11,8 @@ LICENSE=	MIT
 
 USE_CABAL=	base64-bytestring>=1.0 blaze-builder>=0.3 case-insensitive>=1.0 \
 		cookie data-default-class exceptions>=0.4 http-types>=0.8 \
-		mime-types network>=2.6 network-uri>=2.6 random \
-		streaming-commons>=0.1.0.2 text>=0.11
+		memory mime-types network>=2.6 network-uri>=2.6 random \
+		streaming-commons>=0.1.0.2
 
 FLAGS_ENABLE=	network-uri
 

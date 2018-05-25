@@ -2,7 +2,7 @@
 
 PORTNAME=	gitit
 PORTVERSION=	0.12.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,11 +13,13 @@ LICENSE=	GPLv2
 USE_CABAL=	ConfigFile HStringTemplate HTTP SHA aeson base64-bytestring \
 		blaze-html feed filestore happstack-server highlighting-kate \
 		hoauth2 hslogger http-client-tls http-conduit json mtl \
-		old-locale old-time pandoc pandoc-types parsec random \
-		recaptcha safe split syb tagsoup text uri url utf8-string \
+		old-locale old-time pandoc pandoc-types random \
+		recaptcha safe split syb tagsoup uri url utf8-string \
 		uuid xml xss-sanitize zlib
 
 EXECUTABLE=	expireGititCache gitit
+
+IGNORE=		Doesn't build with newest packages
 
 FLAGS_DEFINE=	PLUGINS
 FLAGS_DEFAULT=	PLUGINS

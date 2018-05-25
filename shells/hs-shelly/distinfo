@@ -1,3 +1,3 @@
-TIMESTAMP = 1499624201
-SHA256 (cabal/shelly-1.6.8.3.tar.gz) = 78ae736c22455b40176b47003be4ea9ea2d02b440f921a1a022e8536833a8487
-SIZE (cabal/shelly-1.6.8.3.tar.gz) = 98086
+TIMESTAMP = 1524404401
+SHA256 (cabal/shelly-1.7.2.tar.gz) = 7662c746888a71f785fe00dde6940aeacdec6af700aec567493a99d8e31ef111
+SIZE (cabal/shelly-1.7.2.tar.gz) = 101946

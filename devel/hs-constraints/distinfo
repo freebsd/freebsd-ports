@@ -1,3 +1,3 @@
-TIMESTAMP = 1499444670
-SHA256 (cabal/constraints-0.9.1.tar.gz) = 276e012838861145fca65d065dd9839f7cbd71236032b557194389180a30a785
-SIZE (cabal/constraints-0.9.1.tar.gz) = 18503
+TIMESTAMP = 1523445706
+SHA256 (cabal/constraints-0.10.tar.gz) = c224b82e53c21791083c83fed2f2c938bd715a63c8efa90a5abcc3d8859126c6
+SIZE (cabal/constraints-0.10.tar.gz) = 19703

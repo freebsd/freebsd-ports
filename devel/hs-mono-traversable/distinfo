@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627851
-SHA256 (cabal/mono-traversable-1.0.2.tar.gz) = aa110a1f08b726f2e0d17858e09bd76e13d60ccf2bf5366c92c15999da0b3633
-SIZE (cabal/mono-traversable-1.0.2.tar.gz) = 38239
+TIMESTAMP = 1523892095
+SHA256 (cabal/mono-traversable-1.0.8.1.tar.gz) = 991290797bd77ce2f2e23dd5dea32fb159c6cb9310615f64a0703ea4c6373935
+SIZE (cabal/mono-traversable-1.0.8.1.tar.gz) = 39037

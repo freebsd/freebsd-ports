@@ -20,5 +20,7 @@ EXECUTABLE_FLAG_ENABLE=		executable
 EXECUTABLE_FLAG_CABAL=		cmdargs text>=0.11 cryptohash crypto-pubkey
 EXECUTABLE_FLAG_EXECUTABLE=	certificate
 
+IGNORE=		Doesn't build with recent GHC version
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

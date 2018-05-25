@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrent-output
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.5
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 
@@ -10,7 +10,7 @@ COMMENT=	Ungarble output from several threads or commands
 
 LICENSE=	BSD2CLAUSE
 
-USE_CABAL=	text async stm exceptions ansi-terminal terminal-size
+USE_CABAL=	async exceptions ansi-terminal terminal-size
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

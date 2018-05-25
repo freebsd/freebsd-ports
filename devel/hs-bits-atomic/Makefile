@@ -2,7 +2,7 @@
 
 PORTNAME=	bits-atomic
 PORTVERSION=	0.1.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

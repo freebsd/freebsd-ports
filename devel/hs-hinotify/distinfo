@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627841
-SHA256 (cabal/hinotify-0.3.9.tar.gz) = f2480e4c08a516831c2221eebc6a9d3242e892932d9315c34cbe92a101c5df99
-SIZE (cabal/hinotify-0.3.9.tar.gz) = 9021
+TIMESTAMP = 1523460966
+SHA256 (cabal/hinotify-0.3.10.tar.gz) = af2b7d5733ab52ca38f0d9aed1ec37304f1d6964caa0fb556b8215858c1d5d9d
+SIZE (cabal/hinotify-0.3.10.tar.gz) = 9193

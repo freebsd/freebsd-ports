@@ -1,3 +1,3 @@
-TIMESTAMP = 1499625376
-SHA256 (cabal/http-reverse-proxy-0.4.4.tar.gz) = 1caa943a7b9704a73ae9fa14606f96a6b9eec7312c424dd59574515a8c954978
-SIZE (cabal/http-reverse-proxy-0.4.4.tar.gz) = 10394
+TIMESTAMP = 1524852143
+SHA256 (cabal/http-reverse-proxy-0.6.0.tar.gz) = fb1c913111478384c4f23647810b8c3c01c79e9276a08a1ea46215e4a42dd1a8
+SIZE (cabal/http-reverse-proxy-0.6.0.tar.gz) = 10538

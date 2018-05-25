@@ -1,0 +1,13 @@
+--- safe-exceptions.cabal.orig  2018-04-13 20:24:13 UTC
++++ safe-exceptions.cabal
+@@ -16,9 +16,9 @@ cabal-version:       >=1.10
+ library
+   hs-source-dirs:      src
+   exposed-modules:     Control.Exception.Safe
+-  build-depends:       base >= 4.7 && < 4.11
++  build-depends:       base >= 4.7 && < 4.12
+                      , deepseq >= 1.2 && < 1.5
+-                     , exceptions >= 0.8 && < 0.9
++                     , exceptions >= 0.8 && < 0.11
+                      , transformers >= 0.2 && < 0.6
+   default-language:    Haskell2010

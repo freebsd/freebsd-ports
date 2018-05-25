@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scroll
-PORTVERSION=	1.20170122
-PORTREVISION=	1
+PORTVERSION=	1.20180421
 CATEGORIES=	games haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 PKGNAMEPREFIX=
 
 USE_CABAL=	IfElse case-insensitive data-default monad-loops mtl \
-		optparse-applicative ncurses random text vector
+		optparse-applicative ncurses random vector
 
 STANDALONE=	yes
 EXECUTABLE=	scroll

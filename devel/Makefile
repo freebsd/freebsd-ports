@@ -914,11 +914,9 @@
     SUBDIR += horde-whups
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
-    SUBDIR += hs-BNFC
     SUBDIR += hs-Boolean
     SUBDIR += hs-BoundedChan
     SUBDIR += hs-ConfigFile
-    SUBDIR += hs-DrIFT
     SUBDIR += hs-EdisonAPI
     SUBDIR += hs-EdisonCore
     SUBDIR += hs-Glob
@@ -955,10 +953,12 @@
     SUBDIR += hs-atomic-primops
     SUBDIR += hs-auto-update
     SUBDIR += hs-base-compat
+    SUBDIR += hs-base-compat-batteries
     SUBDIR += hs-base-orphans
     SUBDIR += hs-base-unicode-symbols
     SUBDIR += hs-base16-bytestring
     SUBDIR += hs-base64-bytestring
+    SUBDIR += hs-basement
     SUBDIR += hs-basic-prelude
     SUBDIR += hs-bifunctors
     SUBDIR += hs-bits-atomic
@@ -1013,6 +1013,7 @@
     SUBDIR += hs-dlist
     SUBDIR += hs-dlist-instances
     SUBDIR += hs-easy-file
+    SUBDIR += hs-echo
     SUBDIR += hs-edit-distance
     SUBDIR += hs-either
     SUBDIR += hs-enclosed-exceptions
@@ -1052,8 +1053,8 @@
     SUBDIR += hs-haskell-lexer
     SUBDIR += hs-haskell-src
     SUBDIR += hs-haskell-src-exts
+    SUBDIR += hs-haskell-src-meta
     SUBDIR += hs-hasktags
-    SUBDIR += hs-hastache
     SUBDIR += hs-hex
     SUBDIR += hs-hinotify
     SUBDIR += hs-hint
@@ -1064,6 +1065,7 @@
     SUBDIR += hs-hsb2hs
     SUBDIR += hs-hslogger
     SUBDIR += hs-hslua
+    SUBDIR += hs-hslua-module-text
     SUBDIR += hs-hspec
     SUBDIR += hs-hspec-core
     SUBDIR += hs-hspec-discover
@@ -1095,7 +1097,6 @@
     SUBDIR += hs-monad-par
     SUBDIR += hs-monad-par-extras
     SUBDIR += hs-monad-unlift
-    SUBDIR += hs-monadplus
     SUBDIR += hs-monads-tf
     SUBDIR += hs-mono-traversable
     SUBDIR += hs-mono-traversable-instances
@@ -1140,8 +1141,9 @@
     SUBDIR += hs-simple-reflect
     SUBDIR += hs-smallcheck
     SUBDIR += hs-split
-    SUBDIR += hs-stm
     SUBDIR += hs-stm-chans
+    SUBDIR += hs-storable-record
+    SUBDIR += hs-storable-tuple
     SUBDIR += hs-streaming-commons
     SUBDIR += hs-strict
     SUBDIR += hs-syb
@@ -1154,13 +1156,15 @@
     SUBDIR += hs-test-framework
     SUBDIR += hs-test-framework-hunit
     SUBDIR += hs-test-framework-quickcheck2
-    SUBDIR += hs-text
     SUBDIR += hs-text-icu
     SUBDIR += hs-text-short
     SUBDIR += hs-tf-random
     SUBDIR += hs-th-abstraction
+    SUBDIR += hs-th-expand-syns
     SUBDIR += hs-th-lift
     SUBDIR += hs-th-lift-instances
+    SUBDIR += hs-th-orphans
+    SUBDIR += hs-th-reify-many
     SUBDIR += hs-threads
     SUBDIR += hs-threadscope
     SUBDIR += hs-time-compat
@@ -1175,6 +1179,9 @@
     SUBDIR += hs-uniplate
     SUBDIR += hs-unix-compat
     SUBDIR += hs-unix-time
+    SUBDIR += hs-unliftio
+    SUBDIR += hs-unliftio-core
+    SUBDIR += hs-unicode-show
     SUBDIR += hs-unordered-containers
     SUBDIR += hs-utf8-light
     SUBDIR += hs-utf8-string

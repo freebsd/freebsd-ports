@@ -1,6 +1,6 @@
---- Setup.hs.orig	2012-09-08 22:29:52.000000000 +0100
-+++ Setup.hs	2013-12-08 15:55:17.403235103 +0000
-@@ -205,7 +205,7 @@
+--- Setup.hs.orig	2017-09-29 08:44:16 UTC
++++ Setup.hs
+@@ -210,7 +210,7 @@ lhs2texPostCopy a (CopyFlags { copyDest = cdf, copyVer
                         else docdir (absoluteInstallDirs pd lbi cd) `joinFileName` "doc"
          let manDir = if isWindows
                         then dataPref `joinFileName` "Documentation"
@@ -9,7 +9,7 @@
          createDirectoryIfMissing True docDir
          installOrdinaryFile v (lhs2texDocDir `joinFileName` "Guide2.pdf") (docDir `joinFileName` "Guide2.pdf")
          when (not isWindows) $
-@@ -213,7 +213,8 @@
+@@ -218,7 +218,8 @@ lhs2texPostCopy a (CopyFlags { copyDest = cdf, copyVer
               installOrdinaryFile v ("lhs2TeX.1") (manDir `joinFileName` "lhs2TeX.1")
          -- polytable
          case (installPolyTable ebi) of

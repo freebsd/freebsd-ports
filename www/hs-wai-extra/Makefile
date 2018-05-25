@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wai-extra
-PORTVERSION=	3.0.20.0
-PORTREVISION=	1
+PORTVERSION=	3.0.22.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +13,7 @@ USE_CABAL=	aeson ansi-terminal base64-bytestring blaze-builder \
 		case-insensitive cookie data-default-class \
 		fast-logger http-types iproute lifted-base \
 		network old-locale resourcet streaming-commons \
-		stringsearch text unix-compat vault void \
+		stringsearch unix-compat vault void \
 		wai wai-logger word8 zlib
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

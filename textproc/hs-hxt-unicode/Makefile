@@ -2,7 +2,7 @@
 
 PORTNAME=	hxt-unicode
 PORTVERSION=	9.0.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

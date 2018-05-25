@@ -1,0 +1,5 @@
+This package implements an API for accessing the Domain Name Service (DNS)
+resolver service via the standard libresolv system library (whose API is
+often available directly via the standard libc C library) on Unix systems.
+
+WWW: https://github.com/hvr/resolv

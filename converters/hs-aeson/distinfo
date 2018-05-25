@@ -1,3 +1,3 @@
-TIMESTAMP = 1499459814
-SHA256 (cabal/aeson-1.2.1.0.tar.gz) = 96170fdbed9bf52357bd6eada0173c4ae8086df01522ed2b8a070f2f51148a73
-SIZE (cabal/aeson-1.2.1.0.tar.gz) = 272206
+TIMESTAMP = 1523782803
+SHA256 (cabal/aeson-1.3.1.0.tar.gz) = 3977f17b1588bd530755e3517d272024229e72d8a110f15b5b78fc15df6c5652
+SIZE (cabal/aeson-1.3.1.0.tar.gz) = 261732

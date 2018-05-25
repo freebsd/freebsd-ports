@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627863
-SHA256 (cabal/uuagc-cabal-1.0.6.0.tar.gz) = dcc87f9e738cbd5228e91f433b69ac540ab1f109c522da290539c2f33791b80b
-SIZE (cabal/uuagc-cabal-1.0.6.0.tar.gz) = 14781
+TIMESTAMP = 1523959204
+SHA256 (cabal/uuagc-cabal-1.1.0.0.tar.gz) = f2d3daccab5082165c6621852cc555f530adac90220f57dd13c724bd5acfbb2d
+SIZE (cabal/uuagc-cabal-1.1.0.0.tar.gz) = 14924

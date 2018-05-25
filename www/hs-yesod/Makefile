@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yesod
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE=	MIT
 
 USE_CABAL=	aeson blaze-html>=0.5 blaze-markup>=0.5.1 conduit-extra \
 		data-default fast-logger monad-control>=0.3 monad-logger \
-		safe shakespeare>=2.0 streaming-commons text \
+		safe shakespeare>=2.0 streaming-commons \
 		unordered-containers wai>=1.3 wai-extra>=1.3 wai-logger \
 		warp>=1.3 yaml yesod-auth>=1.4 yesod-core>=1.4 \
 		yesod-form>=1.3 yesod-persistent>=1.4

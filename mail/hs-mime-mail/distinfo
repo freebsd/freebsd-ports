@@ -1,3 +1,3 @@
-TIMESTAMP = 1499623071
-SHA256 (cabal/mime-mail-0.4.13.1.tar.gz) = 9481671092739dab1d963c9db0dce56a0187390fb24c9badeeded6afb5895917
-SIZE (cabal/mime-mail-0.4.13.1.tar.gz) = 9538
+TIMESTAMP = 1523900845
+SHA256 (cabal/mime-mail-0.4.14.tar.gz) = 9632c3d54c9741fece0a3ea705d965485a1299ebe5798d2aa7cca2c8e4baaa3e
+SIZE (cabal/mime-mail-0.4.14.tar.gz) = 9594

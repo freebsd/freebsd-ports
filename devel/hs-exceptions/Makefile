@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	exceptions
-PORTVERSION=	0.8.3
+PORTVERSION=	0.10.0
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 
@@ -10,7 +10,7 @@ COMMENT=	Extensible optionally-pure exceptions
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	mtl stm transformers-compat
+USE_CABAL=	mtl transformers-compat
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

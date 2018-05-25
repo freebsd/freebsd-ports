@@ -1,3 +1,3 @@
-TIMESTAMP = 1499624172
-SHA256 (cabal/monadcryptorandom-0.7.1.tar.gz) = 85c37875743cd2357fba28d0bde3b06cd90f4f2d9770b8e0221e15258ac6b9e7
-SIZE (cabal/monadcryptorandom-0.7.1.tar.gz) = 4851
+TIMESTAMP = 1524150252
+SHA256 (cabal/monadcryptorandom-0.7.2.1.tar.gz) = 69453b6f8681033ff68a5afd410a336a37ff149de816439d5c49433d790a760d
+SIZE (cabal/monadcryptorandom-0.7.2.1.tar.gz) = 4851

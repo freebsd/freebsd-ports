@@ -1,0 +1,11 @@
+Provides functions available in later versions of base to a wider range of
+compilers, without requiring you to use CPP pragmas in your code. See the README
+for what is covered. Also see the changelog for recent changes.
+
+Note that base-compat does not add any orphan instances. There is a separate
+package, base-orphans, for that.
+
+In addition, base-compat does not backport any data types or type classes.
+See this section of the README for more info.
+
+WWW: https://github.com/haskell-compat/base-compat

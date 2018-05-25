@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	conduit-combinators
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE=	MIT
 USE_CABAL=	base16-bytestring base64-bytestring>=0.1.1.1 chunked-data \
 		conduit>=1.2.2 conduit-extra>=1.1.1 monad-control \
 		mono-traversable>=0.4 mwc-random primitive resourcet \
-		text transformers-base unix-compat vector void
+		transformers-base unix-compat vector void
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

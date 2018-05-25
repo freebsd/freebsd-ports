@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-conduit
-PORTVERSION=	2.2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

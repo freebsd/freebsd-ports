@@ -1,3 +1,3 @@
-TIMESTAMP = 1499543660
-SHA256 (cabal/comonad-5.0.1.tar.gz) = 561ffd697d9d38467d0d426947e0bade25a05e3c507235eca29ec800ad3f463d
-SIZE (cabal/comonad-5.0.1.tar.gz) = 18218
+TIMESTAMP = 1523787141
+SHA256 (cabal/comonad-5.0.3.tar.gz) = a7f4584d634051123c547f0d10f88eaf23d99229dbd01dfdcd98cddd41e54df6
+SIZE (cabal/comonad-5.0.3.tar.gz) = 17430

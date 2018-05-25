@@ -1,3 +1,3 @@
-TIMESTAMP = 1499625370
-SHA256 (cabal/authenticate-1.3.3.2.tar.gz) = a65ff7791e646ea847fc6b8369addeecf6d2c3055a0b7ebe1421881103656e30
-SIZE (cabal/authenticate-1.3.3.2.tar.gz) = 8785
+TIMESTAMP = 1525184608
+SHA256 (cabal/authenticate-1.3.4.tar.gz) = 3fd566dbfdf75d81ad1bebd19facb9f01509ead6e27d9aed802404ecde932fb8
+SIZE (cabal/authenticate-1.3.4.tar.gz) = 8814

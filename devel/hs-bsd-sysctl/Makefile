@@ -3,7 +3,7 @@
 
 PORTNAME=	bsd-sysctl
 PORTVERSION=	1.0.7
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

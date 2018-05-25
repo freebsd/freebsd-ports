@@ -1,3 +1,3 @@
-TIMESTAMP = 1499450732
-SHA256 (cabal/atomic-primops-0.8.0.4.tar.gz) = 47e1e393848c0538aa1733a90a63bd08a00915ec7499d90014aaecc792db9864
-SIZE (cabal/atomic-primops-0.8.0.4.tar.gz) = 34075
+TIMESTAMP = 1524158958
+SHA256 (cabal/atomic-primops-0.8.2.tar.gz) = 67f8872e0c1e634d819a967365eb4ad514e9b2cde967fbc710da7cdc4d17d933
+SIZE (cabal/atomic-primops-0.8.2.tar.gz) = 36157

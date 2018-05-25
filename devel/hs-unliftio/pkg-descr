@@ -1,0 +1,4 @@
+Provides the core MonadUnliftIO typeclass, instances for base
+and transformers, and basic utility functions.
+
+WWW: https://github.com/fpco/unliftio

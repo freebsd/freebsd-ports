@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	snap-server
-PORTVERSION=	1.0.2.2
-PORTREVISION=	1
+PORTVERSION=	1.1.0.0
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	attoparsec blaze-builder case-insensitive clock io-streams \
 		io-streams-haproxy lifted-base mtl network old-locale snap-core \
-		text unix-compat vector
+		unix-compat vector
 
 FLAGS_DEFINE=		OPENSSL
 

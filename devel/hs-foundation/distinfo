@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627835
-SHA256 (cabal/foundation-0.0.13.tar.gz) = 106a85cbbf936591df44b46ee04d39f29c15752f6eca438341f2b735e9c0755f
-SIZE (cabal/foundation-0.0.13.tar.gz) = 221540
+TIMESTAMP = 1523130712
+SHA256 (cabal/foundation-0.0.20.tar.gz) = ba6ae63a9ce0846bf942af2c3ace56600f051c61e83a0b55dd625de23a78e42d
+SIZE (cabal/foundation-0.0.20.tar.gz) = 122940
