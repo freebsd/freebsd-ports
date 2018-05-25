@@ -2,8 +2,8 @@
 
 PORTNAME=	android-file-transfer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2
-PORTREVISION?=	2
+DISTVERSION=	3.3
+PORTREVISION?=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,6 +17,7 @@ GH_PROJECT=	${PORTNAME}-linux
 
 USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig
 CMAKE_ON=	USB_BACKEND_LIBUSB
+PLIST_FILES=	"@comment lib/libmtp-ng-static.a"
 
 OPTIONS_DEFAULT=CLI FUSE
 OPTIONS_MULTI=	COMP
@@ -41,7 +42,8 @@ FUSE_PLIST_FILES=bin/aft-mtp-mount
 QT_CMAKE_BOOL=	BUILD_QT_UI
 QT_PLIST_FILES=	bin/android-file-transfer \
 		share/applications/android-file-transfer.desktop \
-		share/icons/hicolor/128x128/apps/android-file-transfer.png
+		share/icons/hicolor/512x512/apps/android-file-transfer.png \
+		share/metainfo/android-file-transfer.appdata.xml
 
 QT4_USE=	QT4=qmake_build,moc_build,rcc_build,uic_build,corelib,gui
 QT4_CMAKE_ON=	-DDESIRED_QT_VERSION:STRING=4
