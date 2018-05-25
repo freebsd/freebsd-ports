@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.5-382
-DISTVERSIONSUFFIX=	-gc10b39923
+DISTVERSION=	0.0.5-391
+DISTVERSIONSUFFIX=	-g964b3937a
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,6 +30,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
 		akrzemi1:Optional:f27e790:Optional/3rdparty/Optional \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
 		kobalicek:asmjit:673dcef:asmjit/asmjit \
+		KhronosGroup:glslang:3.0-1794-ge22e3473:glslang/Vulkan/glslang \
 		Microsoft:GSL:fc5fce4:GSL/3rdparty/GSL \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal \
 		zeux:pugixml:v1.8.1-148-g257fbb4:pugixml/3rdparty/pugixml
@@ -69,9 +70,8 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
 VULKAN_DESC=		Vulkan renderer
-VULKAN_BUILD_DEPENDS=	${LOCALBASE}/lib/libglslang.a:devel/glslang
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-sdk
-VULKAN_CMAKE_BOOL=	USE_VULKAN VULKAN_PREBUILT
+VULKAN_CMAKE_BOOL=	USE_VULKAN
 
 post-patch:
 	@${REINPLACE_CMD} -e '/GIT_BRANCH/s/unknown/master/' \
