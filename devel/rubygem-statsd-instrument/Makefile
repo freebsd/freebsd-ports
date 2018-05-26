@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	statsd-instrument
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
