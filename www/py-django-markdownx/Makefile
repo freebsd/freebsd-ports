@@ -3,24 +3,23 @@
 
 PORTNAME=	django-markdownx
 PORTVERSION=	2.0.23
-DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Django Markdown editor with image uploads and live preview
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.11:www/py-django111@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 
-USE_GITHUB=	yes
-
-GH_ACCOUNT=	neutronX
 USES=		python
 USE_PYTHON=	autoplist distutils
-
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
