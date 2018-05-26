@@ -3,4 +3,4 @@ service. Configuration can be as simple as a single distinguished name template,
 but there are many rich configuration options for working with users, groups,
 and permissions.
 
-WWW: http://pythonhosted.org/django-auth-ldap/
+WWW: https://github.com/django-auth-ldap/django-auth-ldap
