@@ -3,4 +3,4 @@ new object must be created for each INI file (an object keeps all the data read
 in from an INI which is used on the write method to write to the INI). It also
 keeps all your comments and original order intact.
 
-WWW: http://search.cpan.org/dist/Config-INI-Simple/
+WWW: https://metacpan.org/release/TORG/Config-INI-Simple-1.00
