@@ -1,8 +1,9 @@
-django-ldapdb is an LDAP database backend for Django.
-It allows you to manipulate LDAP entries using Django's models.
-Declaring models using the LDAP backend is very staightforward,
- you simply inherit from ldapdb.models.Model and declare the fields
- in the same way as for regular models.
-You can even edit the LDAP entries using Django's admin interface.
+django-ldapdb is an LDAP database backend for Django. It allows one to
+manipulate LDAP entries using Django's models.
 
-WWW: http://opensource.bolloretelecom.eu/projects/django-ldapdb/
+Declaring models using the LDAP backend is very staightforward, one simply
+inherit from ldapdb.models.Model and declare the fields in the same way as for
+regular models. One can even edit the LDAP entries using Django's admin
+interface.
+
+WWW: https://github.com/django-ldapdb/django-ldapdb
