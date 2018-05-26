@@ -112,6 +112,7 @@
 %%SITE_PERL%%/Sisimai/Rhost/FrancePTT.pm
 %%SITE_PERL%%/Sisimai/Rhost/GoDaddy.pm
 %%SITE_PERL%%/Sisimai/Rhost/GoogleApps.pm
+%%SITE_PERL%%/Sisimai/Rhost/KDDI.pm
 %%SITE_PERL%%/Sisimai/SMTP.pm
 %%SITE_PERL%%/Sisimai/SMTP/Error.pm
 %%SITE_PERL%%/Sisimai/SMTP/Reply.pm
@@ -232,6 +233,7 @@
 %%PERL5_MAN3%%/Sisimai::Rhost::FrancePTT.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::GoDaddy.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::GoogleApps.3.gz
+%%PERL5_MAN3%%/Sisimai::Rhost::KDDI.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP::Error.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP::Reply.3.gz
