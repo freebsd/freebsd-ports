@@ -50,6 +50,8 @@
 %%DATADIR%%/lib/ant-junit.pom
 %%DATADIR%%/lib/ant-junit4.jar
 %%DATADIR%%/lib/ant-junit4.pom
+%%DATADIR%%/lib/ant-junitlauncher.jar
+%%DATADIR%%/lib/ant-junitlauncher.pom
 %%DATADIR%%/lib/ant-launcher.jar
 %%DATADIR%%/lib/ant-launcher.pom
 %%DATADIR%%/lib/ant-netrexx.jar
