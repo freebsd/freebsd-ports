@@ -51,6 +51,7 @@
     SUBDIR += gmanedit
     SUBDIR += gnotepad+
     SUBDIR += gobby
+    SUBDIR += gomate
     SUBDIR += gwrite
     SUBDIR += heme
     SUBDIR += hexcurse

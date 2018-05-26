@@ -1,0 +1,5 @@
+To remotely edit a file on this host connect via SSH with remote
+port forwarding:
+
+ssh -R 52698:127.0.0.1:52698 user@example.org \
+	gomate /path/to/the/file.txt
