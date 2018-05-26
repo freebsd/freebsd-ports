@@ -1,0 +1,5 @@
+Gomate is an implementation of rmate in Go.  It allows editing of
+files via an ssh session in TextMate, VSCode, or any other editor
+that supports rmate.
+
+WWW: https://github.com/mattn/gomate
