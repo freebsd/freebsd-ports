@@ -12,6 +12,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Message Identifiers for internationalization
 
+LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
