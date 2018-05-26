@@ -20,6 +20,7 @@ LIB_DEPENDS=	libxine.so:multimedia/libxine \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libvdpau.so:multimedia/libvdpau
 
+BROKEN_FreeBSD_12=	does not build with newer clang
 PATCH_STRIP=	-p1
 USES=		pkgconfig tar:bzip2
 USE_XORG=	xrandr xrender

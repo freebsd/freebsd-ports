@@ -14,6 +14,7 @@ COMMENT=	Video Disk Recorder - extended EPG plugin
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_12=	does not build with newer clang
 GITHASH=	e7383ed
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GITHASH}

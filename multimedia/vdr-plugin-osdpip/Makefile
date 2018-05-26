@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 
+BROKEN_FreeBSD_12=	does not build with newer clang
 USES=		pkgconfig tar:tgz
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY

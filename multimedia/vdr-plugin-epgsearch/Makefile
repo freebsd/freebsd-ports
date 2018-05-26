@@ -18,6 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libtre.so:textproc/libtre
 
+BROKEN_FreeBSD_12=	does not build with newer clang
 USES=		pkgconfig tar:bzip2
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
