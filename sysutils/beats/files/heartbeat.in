@@ -10,7 +10,7 @@
 #
 # heartbeat_enable (bool):	Set to YES to enable heartbeat
 # 				Default: NO
-# heartbeat_flags (str):		Extra flags passed to heartbeat
+# heartbeat_flags (str):	Extra flags passed to heartbeat
 # heartbeat_conf (str):		heartbeat configuration file
 #				Default: ${PREFIX}/etc/heartbeat.yml
 
@@ -27,7 +27,7 @@ load_rc_config $name
 start_precmd=heartbeat_prestart
 command=/usr/sbin/daemon
 pidfile="/var/run/${name}"
-command_args="-rP ${pidfile} %%PREFIX%%/sbin/${name} ${heartbeat_config}"
+command_args="-rfP ${pidfile} %%PREFIX%%/sbin/${name} ${heartbeat_config}"
 
 heartbeat_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)

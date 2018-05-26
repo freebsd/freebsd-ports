@@ -27,7 +27,7 @@ load_rc_config $name
 start_precmd=packetbeat_prestart
 command=/usr/sbin/daemon
 pidfile="/var/run/${name}"
-command_args="-rP ${pidfile} %%PREFIX%%/sbin/${name} ${packetbeat_config}"
+command_args="-rfP ${pidfile} %%PREFIX%%/sbin/${name} ${packetbeat_config}"
 
 packetbeat_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)

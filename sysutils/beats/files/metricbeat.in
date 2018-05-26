@@ -27,7 +27,7 @@ load_rc_config $name
 start_precmd=metricbeat_prestart
 command=/usr/sbin/daemon
 pidfile="/var/run/${name}"
-command_args="-rP ${pidfile} -p ${pidfile}.child %%PREFIX%%/sbin/${name} ${metricbeat_config}"
+command_args="-rfP ${pidfile} -p ${pidfile}.child %%PREFIX%%/sbin/${name} ${metricbeat_config}"
 
 metricbeat_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)
