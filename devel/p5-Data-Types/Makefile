@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Types
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ COMMENT=	Validate and convert data types
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1+
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
