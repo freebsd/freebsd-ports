@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	barman
-DISTVERSION=	2.3
+DISTVERSION=	2.4
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	pg
@@ -15,10 +15,10 @@ COMMENT=	Backup and recovery manager for PostgreSQL
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	rsync:net/rsync						\
-		${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil@${FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}argh>=0.21.2:devel/py-argh@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}argcomplete>0:devel/py-argcomplete@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}argh>=0.21.2:devel/py-argh@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}argcomplete>0:devel/py-argcomplete@${PY_FLAVOR}
 
 NO_ARCH=	yes
 
