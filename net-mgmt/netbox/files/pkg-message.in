@@ -1,0 +1,112 @@
+================================================================================
+
+==================================
+ Create a new PostgreSQL database
+==================================
+
+# su pgsql
+$ psql postgres
+
+postgres=# CREATE DATABASE netbox;
+CREATE DATABASE
+postgres=# CREATE USER netbox WITH PASSWORD 'v3rYs3cR3t';
+CREATE ROLE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE netbox TO netbox;
+GRANT
+postgres=# \q
+
+==================
+ Configure Netbox
+==================
+
+1. Move into the netbox directory create a new configuration from the shipped
+   example configuration
+ 
+# cd %%DATADIR%%/netbox/
+# cp configuration.example.py configuration.py
+
+2. Edit configuration.py with an editor of your choice.
+
+3. Configure the variables ALLOWED_HOSTS, DATABASE and SECRET_KEY with the
+   respective values:
+
+3a. ALLOWED_HOST variable
+--- ---------------------
+
+ALLOWED_HOSTS = ['netbox.example.com', 'anotherhost.example.com' ]
+
+3b. DATABASE variable
+--- -----------------
+
+DATABASE = {
+    'NAME': 'netbox',               # Database name
+    'USER': 'netbox',               # PostgreSQL username
+    'PASSWORD': 'v3rYs3cR3t',       # PostgreSQL password
+    'HOST': 'localhost',            # Database server
+    'PORT': '',                     # Database port (leave blank for default)
+}
+
+3c. SECRET_KEY variable
+--- -------------------
+
+Generate a secret key and add the value to the SECRET_KEY variable. The
+supplied script generate_secret_key.py can be used for this task. Of course you
+can also generate your own key which must contain at least 50 alpha-numeric
+characters then.
+
+# python%%PYTHON_VER%% %%DATADIR%%/generate_secret_key.py 
+
+SECRET_KEY = 'dfIOdfa<dfOs0KxxjSb[ddljLfdghSSs9AsldxzZsajSoyssls'
+
+=========================
+ Run database migrations
+=========================
+
+# cd %%DATADIR%%
+# python%%PYTHON_VER%% manage.py migrate
+
+==================================
+ Create an administrative account
+==================================
+
+# python%%PYTHON_VER%% manage.py createsuperuser
+
+======================
+ Collect static files
+======================
+
+# python%%PYTHON_VER%% manage.py collectstatic --no-input
+
+==============================
+ Load Initial Data (optional)
+==============================
+
+# python%%PYTHON_VER%% manage.py loaddata initial_data
+
+======================
+ Test the Application
+======================
+
+# python%%PYTHON_VER%% manage.py runserver 0.0.0.0:8000 --insecure
+
+You should reach Netbox at port 8000 . If not, please check the previous steps
+for errors.
+
+===============
+ Miscellaneous
+===============
+
+- If you want to upload files the folder %%DATADIR%%/media
+  must be writeable.
+
+- Netbox can also be used together with net-mgmt/py-napalm for network
+  automation.
+
+- Please note that Netbox can be used with limitations at this point, e.g. for
+  development. For production use, you still need a combination of:
+
+	* Apache/Nginx (handles as a proxy)
+	* www/py-gunicorn (WSGI)
+	* sysutils/py-supervisor (for managing the Netbox service)
+
+================================================================================
