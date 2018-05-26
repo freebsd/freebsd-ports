@@ -20,7 +20,7 @@ LIB_DEPENDS=	${PY_BOOST} \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
 
-USES=		dos2unix gmake localbase:ldflags openal:al pkgconfig python \
+USES=		dos2unix gmake localbase:ldflags openal:al pkgconfig python:2.7 \
 		tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
