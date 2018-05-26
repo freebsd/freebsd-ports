@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iperf
-PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTVERSION=	2.0.11
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}2
 
@@ -26,7 +25,7 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 THREADS_CONFIGURE_ENABLE=	threads
 THREADS_LDFLAGS=	-lpthread
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} README doc/*.gif doc/*.html ${STAGEDIR}${DOCSDIR}/
 
