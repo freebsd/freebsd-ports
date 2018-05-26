@@ -57,7 +57,7 @@ CFLAGS+=	-DMENU_COLOR_REGEX_POSIX
 .endif
 .if defined(WITH_STATUSCOLORS)
 PATCHFILES+=	nh343-statuscolors.fixed.patch
-PATCH_SITES+=	http://jdc.koitsu.org/nethack/ \
+PATCH_SITES+=	https://jdc.koitsu.org/nethack/ \
 		LOCAL/wxs
 PATCH_DIST_STRIP=	-p1
 .endif
