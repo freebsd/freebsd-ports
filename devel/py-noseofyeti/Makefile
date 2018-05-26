@@ -37,7 +37,7 @@ do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} test.sh
 
 post-build-DOCS-on:
-	(cd ${WRKSRC}/docs ; PYTHONPATH=${WRKSRC} ${MAKE_CMD} html)
+	(cd ${WRKSRC}/docs ; PYTHONPATH=${WRKSRC} ${MAKE_CMD} html SPHINXBUILD=sphinx-build-${PYTHON_VER})
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
