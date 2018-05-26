@@ -1244,7 +1244,7 @@ lib/wine/d3d10.dll.so
 lib/wine/d3d10_1.dll.so
 lib/wine/d3d10core.dll.so
 lib/wine/d3d11.dll.so
-lib/wine/d3d12.dll.so
+%%VKD3D%%lib/wine/d3d12.dll.so
 lib/wine/d3d8.dll.so
 lib/wine/d3d9.dll.so
 lib/wine/d3dcompiler_33.dll.so
@@ -1389,7 +1389,7 @@ lib/wine/ext-ms-win-rtcore-ntuser-syscolors-l1-1-0.dll.so
 lib/wine/ext-ms-win-rtcore-ntuser-sysparams-l1-1-0.dll.so
 lib/wine/ext-ms-win-security-credui-l1-1-0.dll.so
 lib/wine/ext-ms-win-security-cryptui-l1-1-0.dll.so
-%%STAGING%%lib/wine/ext-ms-win-uxtheme-themes-l1-1-0.dll.so
+lib/wine/ext-ms-win-uxtheme-themes-l1-1-0.dll.so
 %%STAGING%%lib/wine/ext-ms-win-xaml-pal-l1-1-0.dll.so
 lib/wine/extrac32.exe.so
 lib/wine/fakedlls/acledit.dll
@@ -1670,7 +1670,7 @@ lib/wine/fakedlls/d3d10.dll
 lib/wine/fakedlls/d3d10_1.dll
 lib/wine/fakedlls/d3d10core.dll
 lib/wine/fakedlls/d3d11.dll
-lib/wine/fakedlls/d3d12.dll
+%%VKD3D%%lib/wine/fakedlls/d3d12.dll
 lib/wine/fakedlls/d3d8.dll
 lib/wine/fakedlls/d3d9.dll
 lib/wine/fakedlls/d3dcompiler_33.dll
@@ -1815,11 +1815,11 @@ lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-syscolors-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-sysparams-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-security-credui-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-security-cryptui-l1-1-0.dll
-%%STAGING%%lib/wine/fakedlls/ext-ms-win-uxtheme-themes-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-uxtheme-themes-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-xaml-pal-l1-1-0.dll
 lib/wine/fakedlls/extrac32.exe
 lib/wine/fakedlls/faultrep.dll
-%%STAGING%%lib/wine/fakedlls/feclient.dll
+lib/wine/fakedlls/feclient.dll
 lib/wine/fakedlls/findstr.exe
 lib/wine/fakedlls/fltlib.dll
 lib/wine/fakedlls/fltmgr.sys
@@ -2301,7 +2301,7 @@ lib/wine/fakedlls/xolehlp.dll
 lib/wine/fakedlls/xpsprint.dll
 lib/wine/fakedlls/xpssvcs.dll
 lib/wine/faultrep.dll.so
-%%STAGING%%lib/wine/feclient.dll.so
+lib/wine/feclient.dll.so
 lib/wine/findstr.exe.so
 lib/wine/fltlib.dll.so
 lib/wine/fltmgr.sys.so
@@ -2393,7 +2393,7 @@ lib/wine/libd3d10.def
 lib/wine/libd3d10_1.def
 lib/wine/libd3d10core.def
 lib/wine/libd3d11.def
-lib/wine/libd3d12.def
+%%VKD3D%%lib/wine/libd3d12.def
 lib/wine/libd3d8.def
 lib/wine/libd3d9.def
 lib/wine/libd3dcompiler.def
