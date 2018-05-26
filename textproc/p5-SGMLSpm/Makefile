@@ -33,7 +33,10 @@ PORTDOCS=	*
 
 DOCS_INSTALL_TARGET=	docs install_html HTMLDIR=${STAGEDIR}${DOCSDIR}
 
-pre-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+pre-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+pre-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
