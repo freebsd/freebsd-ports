@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Generate
-PORTVERSION=	1.15
+PORTVERSION=	1.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Text-Soundex>=0:textproc/p5-Text-Soundex
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
