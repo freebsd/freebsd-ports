@@ -1,2 +1,6 @@
-%%PERL5_MAN3%%/POE::Component::PubSub.3.gz
 %%SITE_PERL%%/POE/Component/PubSub.pm
+%%SITE_PERL%%/POE/Component/PubSub/Event.pm
+%%SITE_PERL%%/POE/Component/PubSub/Types.pm
+%%PERL5_MAN3%%/POE::Component::PubSub.3.gz
+%%PERL5_MAN3%%/POE::Component::PubSub::Event.3.gz
+%%PERL5_MAN3%%/POE::Component::PubSub::Types.3.gz
