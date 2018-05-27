@@ -21,6 +21,8 @@
 #
 # Such ports are listed below:
 #
+# This file can be linted with Tools/scripts/LEGALlint
+#
 # Dist			Port			Why
 # ------------------------------------------------------------------------------
 *-for-1.4.tgz	net/dgd-lpmud			May not be used for monetary gain
