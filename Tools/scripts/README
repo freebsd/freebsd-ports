@@ -6,6 +6,7 @@ NOTE: These scripts need work and are *NOT* safe to use unless you know
       script.
 
 MOVEDlint.awk - checks MOVED for common errors
+LEGALlint - checks LEGAL for common errors
 ardiff	- compare two archives easily
 addport	- replacement for easy-import
 bad-pkgdescrs.sh - locate identical pkg descriptions
