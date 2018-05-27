@@ -3,6 +3,7 @@
 
 PORTNAME=	plaso
 PORTVERSION=	20180524
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -66,6 +67,8 @@ TEST_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
 post-patch:
 	${REINPLACE_CMD} "s,'5.5.1',None," ${WRKSRC}/plaso/dependencies.py
 	${REINPLACE_CMD} "/maximum_version: 5.5.1/d" ${WRKSRC}/dependencies.ini
+	${REINPLACE_CMD} "s|'share', 'artifacts'|'share', '${PYTHON_PKGNAMEPREFIX}artifacts'|" \
+		${WRKSRC}/plaso/cli/helpers/artifact_definitions.py
 
 do-test:
 	@${TOUCH} ${TEST_WRKSRC}/utils/__init__.py
