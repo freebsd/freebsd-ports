@@ -9,7 +9,6 @@
 %%ETCDIR%%/ssl_extra_checks_script
 %%ETCDIR%%/summary_script
 %%ETCDIR%%/timer_script
-etc/rc.d/burp
 man/man8/bedup.8.gz
 man/man8/burp.8.gz
 man/man8/burp_ca.8.gz
