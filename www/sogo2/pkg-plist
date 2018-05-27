@@ -1975,8 +1975,6 @@ GNUstep/Local/Library/WOxElemBuilders-4.9/SOGoElements.wox/Resources/Info-gnuste
 GNUstep/Local/Library/WOxElemBuilders-4.9/SOGoElements.wox/SOGoElements
 GNUstep/Local/Library/WOxElemBuilders-4.9/SOGoElements.wox/bundle-info.plist
 GNUstep/Local/Library/WOxElemBuilders-4.9/SOGoElements.wox/stamp.make
-GNUstep/Local/Tools/Admin/cron-ealarms-notify.sample
-GNUstep/Local/Tools/Admin/cron-expire-autoreply.sample
 GNUstep/Local/Tools/Admin/sogo-ealarms-notify
 GNUstep/Local/Tools/Admin/sogo-slapd-sockd
 GNUstep/Local/Tools/Admin/sogo-tool
