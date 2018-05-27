@@ -4,7 +4,7 @@
  # Dependencies
  # ============
  
--find_package(xtl 0.4.1 REQUIRED)
+-find_package(xtl 0.4.9 REQUIRED)
 +#find_package(xtl 0.4.1 REQUIRED)
  
 -message(STATUS "Found xtl: ${xtl_INCLUDE_DIRS}/xtl")
