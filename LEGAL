@@ -27,16 +27,12 @@
 *_MegaCLI.zip		sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
 26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 aacplusenc-*		audio/aacplusenc	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
-acroread/AdbeRdr8.*	print/acroread8		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
-acroread/AdbeRdr9.*	print/acroread9		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
-adobesvg-*		graphics/linux-adobesvg	Redistribution prohibited
 adom-*			games/adom		Copy of CD must be sent to author
 aestats-*		games/aestats		Commercial use is prohibited
 agrep-*			textproc/agrep		No redistribution for profit
 alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
 alephone/Marathon*.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
 apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
-armyops*-linux.run	games/linux-americasarmy Redistribution is limited
 astah-community-*.zip	devel/astah-community	License restrictions -- See http://astah.net/faq/community/enduser-license-agreement
 atari800/*		emulators/atari800	xf25 contains copyright ROMs and cannot be distributed
 baudline_*		audio/baudline		No redistribution allowed
@@ -73,7 +69,6 @@ eawpats*		audio/eawpats		Some of the patches are not for commercial use
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
 edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not free
-marvel-*		textproc/elasticsearch-plugin-marvel	Free for development; license required for production use
 emc2*			math/emc2		No resale, contact author for commercial usage
 et-linux-*		games/linux-enemyterritory Redistribution limited
 etqw*			games/linux-etqw-demo-server Redistribution limited
@@ -149,12 +144,10 @@ linuxsampler-*		audio/linuxsampler	Commercial use is prohibited
 Logitech-slimserver-*	audio/logitechmediaserver Contains non-redistributable firmware, documentation, and images
 lpac-*			audio/lpac		No commercial use
 l_cc_p*_*.*.*.tar.gz	lang/icc		No redistribution allowed
-l_fc_p*_*.*.*.tar.gz	lang/ifc		Intel forbids any redistribution
 macopix-*.tar.gz	games/macopix		Contains commercial character data
 madfufw-*		audio/madfufw		No redistribution of firmware files
 malo-fw-*.tar.gz	net/malo-firmware-kmod	Marvell refuses to grant distribution rights
 mb339pan_*		games/flightgear-mb339-pan Redistribution prohibited
-mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
 mindfocus-*		games/mindfocus		Contains commercial character data
 mindterm-*		security/mindterm-binary Do not sell for profit
 molden*			biology/molden		Free for academic, non-profit usage; do not redistribute source and executable
@@ -172,10 +165,6 @@ oracle/instantclient-basic-linux*	databases/linux-oracle-instantclient-basic	Pac
 oracle/instantclient-sqlplus-linux*	databases/linux-oracle-instantclient-sqlplus	Packaging prohibited by Oracle license
 pcsv*fb.tar.gz		lang/petite-chez	User must accept license terms before installation
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
-perforce/*/p4d		devel/p4d		Restricted distribution
-perforce/*/p4ftpd	devel/p4ftpd		Restricted distribution
-perforce/*/p4p		devel/p4p		Restricted distribution
-perforce/*/p4web	devel/p4web		Restricted distribution
 ppsmall-*		archivers/ppunpack	No commercial redistribution
 qtools-*		mail/qtools		No license -- see http://cr.yp.to/softwarelaw.html
 quake4-linux-*		games/linux-quake4	Redistribution is limited; see the license
@@ -186,7 +175,6 @@ rapid-*			math/rapid		For any commercial purpose, you must request a license fro
 rarbsd-*		archivers/rar		only unmodified original package can be distributed
 ricty-*			japanese/font-ricty	Redistribution not allowed
 ringtonetools-*		misc/ringtonetools	Not free for commercial organizations
-savage/SFE*		games/linux-savage	Freeware, but license terms are unclear
 seatools_cli.tar	sysutils/seatools	Redistribution is not permitted
 serialmail-*		mail/serialmail		No license -- see http://cr.yp.to/softwarelaw.html
 serious.sam*		games/linux-ssamtfe	Redistribution limited
@@ -197,8 +185,6 @@ shoutcast		audio/shoutcast		Personal use only.  See tos.txt in this port for ful
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Redistribution prohibited
-squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
-stardict-longman-*	textproc/stardict-longman	Possible copyright infringement
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Only unmodified original package can be distributed
 susv2.tar.bz2		misc/susv2		Redistribution of the documents is not permitted
@@ -248,7 +234,6 @@ zh-moettf/*		chinese/moettf		Contact Taiwan's Ministry of Education for commerci
 UrbanTerror*.zip	games/urbanterror-data	The mod files may not be sold or distributed on physical media unless with permission from id Software.
 gmsh-*			cad/gmsh		Contact appropriate authors for commercial purposes if including Tetgen or Metis
 gmsh-occ-*		cad/gmsh-occ		Contact appropriate authors for commercial purposes if including Tetgen or Metis
-btsync_*		net-p2p/btsync		Redistribution forbidden by license
 sas2ircu-*		sysutils/sas2ircu	May not be redistributed. Must accept license to download.
 snes9x-*		emulators/snes9x-gtk	Commercial users must seek permission from copyright holders.
 rainloop-1.*.zip	mail/rainloop		Redistribution in any form is prohibited
