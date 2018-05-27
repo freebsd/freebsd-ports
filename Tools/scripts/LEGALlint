@@ -1,0 +1,22 @@
+#!/bin/sh
+# $FreeBSD$
+
+PORTSDIR="${PORTSDIR:-/usr/ports}"
+
+cd "$PORTSDIR" || exit 1
+
+export IFS="${IFS}:"
+grep -nv '#' "$PORTSDIR/LEGAL" | while read -r line _ port text
+do
+  if [ ! -d "$port" ]
+  then
+    printf "%d (%s): port has been removed\\n" "$line" "$port"
+    continue
+  fi
+
+  actual_text="$(make -C "$port" -VLEGAL)"
+  if [ "$text" != "$actual_text" ]
+  then
+    printf "%d (%s): reason mismatch\\n" "$line" "$port"
+  fi
+done
