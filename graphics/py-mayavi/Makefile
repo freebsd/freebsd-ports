@@ -23,15 +23,15 @@ LICENSE_FILE_APACHE11=	${WRKSRC}/LICENSE_COLORBREWER.txt
 # See ${WRKSRC}/image_LICENSE.txt for per file license information
 
 BUILD_DEPENDS=	vtk6>=6.1.0_8:math/vtk6 \
-		py27-sphinx>=1.3.1_2:textproc/py-sphinx
+		${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.1_2:textproc/py-sphinx@${PY_FLAVOR}
 RUN_DEPENDS=	vtk6>=6.1.0_8:math/vtk6 \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}envisage>=4.4.0:devel/py-envisage@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyface>=4.5.2:devel/py-pyface@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scimath>=4.1.2:science/py-scimath@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traitsui>=4.5.1:graphics/py-traitsui@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}envisage>=4.4.0:devel/py-envisage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyface>=4.5.2:devel/py-pyface@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scimath>=4.1.2:science/py-scimath@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitsui>=4.5.1:graphics/py-traitsui@${PY_FLAVOR}
 
-USES=		python:-2.7 shebangfix tar:bzip2
+USES=		python:2.7 shebangfix tar:bzip2
 USE_PYTHON=	autoplist distutils
 USE_WX=		2.8+
 WX_COMPS=	python:run
