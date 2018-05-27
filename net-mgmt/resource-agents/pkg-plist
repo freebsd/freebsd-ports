@@ -147,7 +147,7 @@ libexec/heartbeat/findif
 %%MANPAGES%%man/man7/ocf_heartbeat_Filesystem.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_ICP.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_IPaddr.7.gz
-%%MANPAGES%%man/man7/ocf_heartbeat_IPaddr%%PYTHON_VER%%.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_IPaddr2.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_IPsrcaddr.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_LVM-activate.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_LVM.7.gz
@@ -184,7 +184,7 @@ libexec/heartbeat/findif
 %%MANPAGES%%man/man7/ocf_heartbeat_azure-lb.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_clvm.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_conntrackd.7.gz
-%%MANPAGES%%man/man7/ocf_heartbeat_db%%PYTHON_VER%%.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_db2.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_dhcpd.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_dnsupdate.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_docker.7.gz
