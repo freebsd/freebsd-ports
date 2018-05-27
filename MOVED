@@ -22,6 +22,8 @@
 # line.  If a port is copied to a new location and the old location is kept
 # (e.g. upgraded to a later version), don't record it here.
 #
+# This file can be linted with Tools/scripts/MOVEDlint.awk
+#
 # Port|Moved to|Date|Why
 audio/polypaudio|audio/pulseaudio|2008-01-01|Project renamed
 audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of Pulseaudio
