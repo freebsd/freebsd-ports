@@ -10203,3 +10203,9 @@ net/bird-devel|net/bird2|2018-05-25|There are now muliple versions of bird
 devel/hs-BNFC||2018-05-25|Removed, no longer supported
 graphics/hs-HGL||2018-05-25|Removed, no longer supported
 devel/hs-DrIFT||2018-05-25|Removed, no longer supported
+devel/hs-hastache||2018-05-25|Removed, no longer supported
+devel/hs-monadplus||2018-05-25|Removed, no longer supported
+devel/hs-stm||2018-05-25|Removed, no longer supported
+devel/hs-text||2018-05-25|Removed, no longer supported
+science/hs-bio||2018-05-25|Removed, no longer supported
+textproc/hs-parsec||2018-05-25|Removed, no longer supported
