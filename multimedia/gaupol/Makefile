@@ -32,7 +32,7 @@ NLS_USES_OFF=	gettext-tools
 .include <bsd.port.pre.mk>
 
 # PYDISTUTILS_INSTALLNOSINGLE is deprecated so...
-#PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}
+PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}
 
 post-patch:
 	@${REINPLACE_CMD} \
