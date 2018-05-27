@@ -9,10 +9,13 @@ CATEGORIES=	x11-toolkits
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Toolkit library
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	lib
-USE_XORG=	x11 sm xproto:both kbproto
+USE_XORG=	x11 sm ice xproto:both kbproto
 CONFIGURE_ARGS=	--disable-specs
-USES+=	cpe
+USES=		cpe
 CPE_PRODUCT=	libxt
 CPE_VENDOR=	x
 
