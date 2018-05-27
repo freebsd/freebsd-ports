@@ -18,27 +18,3 @@
  IF (APPLEBUNDLE)
    SET(LIBDIR "lib/")
  ELSE (APPLEBUNDLE)
-@@ -758,7 +758,7 @@ ENDIF(NOT WIN32)
- #>>ASPELL for Speelling support
- 
- #<<HUNSPELL for Speelling support
--OPTION(WANT_HUNSPELL "Enable support for spell checking with hunspell" OFF)
-+OPTION(WANT_HUNSPELL "Enable support for spell checking with hunspell" ON)
- IF (WANT_HUNSPELL)
-   FIND_PACKAGE(HUNSPELL)
-   IF (HUNSPELL_FOUND)
-@@ -918,10 +918,10 @@ INSTALL(FILES
- 
- ## PL We may not need this anymore
- #Install the desktop file
--## INSTALL(FILES
-- # scribus.desktop
-- # #DESTINATION ${DESKTOPDIR}
--#)
-+INSTALL(FILES
-+  scribus.desktop
-+  DESTINATION ${DESKTOPDIR}
-+)
- 
- #If building an Apple bundle, install these specific files
- IF(APPLEBUNDLE)

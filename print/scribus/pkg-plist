@@ -639,6 +639,7 @@ lib/scribus/plugins/libwmfimplugin.so
 man/de/man1/scribus.1.gz
 man/man1/scribus.1.gz
 man/pl/man1/scribus.1.gz
+share/appdata/scribus.appdata.xml
 share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUILDING
@@ -826,6 +827,7 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/de/images/colorwheel.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/colrs-caricature.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/colrs-mgt1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/colrs-mgt1_1.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/colrs-mgt2.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/combine_polygons.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/combine_polygons1.png
@@ -1695,7 +1697,9 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-font.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-getobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-images.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-layer.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-lines.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-manobj.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-object.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-page.html
@@ -1758,6 +1762,7 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/it/color2.html
 %%PORTDOCS%%%%DOCSDIR%%/it/color3.html
 %%PORTDOCS%%%%DOCSDIR%%/it/color4.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color4a.html
 %%PORTDOCS%%%%DOCSDIR%%/it/color5.html
 %%PORTDOCS%%%%DOCSDIR%%/it/color6.html
 %%PORTDOCS%%%%DOCSDIR%%/it/color7.html
@@ -2274,7 +2279,6 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/it/tutorials.html
 %%PORTDOCS%%%%DOCSDIR%%/it/workspace1.html
 share/mime/packages/scribus.xml
-share/mimelnk/application/vnd.scribus.desktop
 share/pixmaps/scribus.png
 %%DATADIR%%/dicts/README_ca_ES.txt
 %%DATADIR%%/dicts/README_cs_CZ.txt
@@ -2836,6 +2840,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/loremipsum/la.xml
 %%DATADIR%%/loremipsum/lt.xml
 %%DATADIR%%/loremipsum/nl.xml
+%%DATADIR%%/loremipsum/pt_BR.xml
 %%DATADIR%%/loremipsum/ru.xml
 %%DATADIR%%/loremipsum/sk.xml
 %%DATADIR%%/loremipsum/sl.xml
@@ -2864,10 +2869,12 @@ share/pixmaps/scribus.png
 %%DATADIR%%/scripts/Align_image_in_frame.py
 %%DATADIR%%/scripts/Autoquote.py
 %%DATADIR%%/scripts/CalendarWizard.py
+%%DATADIR%%/scripts/Caption.py
 %%DATADIR%%/scripts/ChangeLog
 %%DATADIR%%/scripts/ColorChart.py
 %%DATADIR%%/scripts/DirectImageImport.py
 %%DATADIR%%/scripts/FontSample.py
+%%DATADIR%%/scripts/Gallery.py
 %%DATADIR%%/scripts/InfoBox.py
 %%DATADIR%%/scripts/NEWS
 %%DATADIR%%/scripts/ReadMe
@@ -2904,11 +2911,11 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/Bundesregierung_CMYK.xml
 %%DATADIR%%/swatches/Bundesregierung_CMYK_TZ.xml
 %%DATADIR%%/swatches/Bundesregierung_HKS.xml
-%%DATADIR%%/swatches/COPYING_RESENE.txt
 %%DATADIR%%/swatches/CIE-HLC_CMYK.xml
 %%DATADIR%%/swatches/CIE-HLC_RGB.xml
 %%DATADIR%%/swatches/CIE-LAB_CMYK.xml
 %%DATADIR%%/swatches/CIE-LAB_RGB.xml
+%%DATADIR%%/swatches/COPYING_RESENE.txt
 %%DATADIR%%/swatches/Classic_Kit.xml
 %%DATADIR%%/swatches/ColorBrewer.xml
 %%DATADIR%%/swatches/Colortrend Wood Stains_bs00_3.eps
@@ -3098,6 +3105,10 @@ share/pixmaps/scribus.png
 %%DATADIR%%/templates/Layout_Informer_A4/Layout_Informer.png
 %%DATADIR%%/templates/Layout_Informer_A4/Layout_Informer.sla.gz
 %%DATADIR%%/templates/Layout_Informer_A4/Layout_Informertn.png
+%%DATADIR%%/templates/Lulu_and_Createspace_6x9_paper_book/Lulu_and_Createspace_6x9_paper_book.png
+%%DATADIR%%/templates/Lulu_and_Createspace_6x9_paper_book/Lulu_and_Createspace_6x9_paper_book.sla.gz
+%%DATADIR%%/templates/Lulu_and_Createspace_6x9_paper_book/Lulu_and_Createspace_6x9_paper_booktn.png
+%%DATADIR%%/templates/Lulu_and_Createspace_6x9_paper_book/Tomato_Clipart.png
 %%DATADIR%%/templates/Newsletter_Layout/Newsletter_Wavestyle.png
 %%DATADIR%%/templates/Newsletter_Layout/Newsletter_Wavestyle.sla.gz
 %%DATADIR%%/templates/Newsletter_Layout/Newsletter_Wavestyletn.png
@@ -3300,8 +3311,8 @@ share/pixmaps/scribus.png
 %%DATADIR%%/translations/scribus.zh_CN.qm
 %%DATADIR%%/translations/scribus.zh_TW.qm
 %%DATADIR%%/unicodenameslist.txt
-@dir include/scribus/unicodemap
-@dir include/scribus/profiles
-@dir include/scribus/plugins/scriptplugin/scripts
-@dir include/scribus/plugins/scriptplugin/scripter2
 @dir include/scribus/plugins/scriptplugin/samples
+@dir include/scribus/plugins/scriptplugin/scripter2
+@dir include/scribus/plugins/scriptplugin/scripts
+@dir include/scribus/profiles
+@dir include/scribus/unicodemap
