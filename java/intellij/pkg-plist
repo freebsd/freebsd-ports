@@ -84,7 +84,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/automaton.jar
 %%IDEA_HOME%%/lib/baksmali-2.2.1.jar
 %%IDEA_HOME%%/lib/batik-all.jar
-%%IDEA_HOME%%/lib/bcprov-jdk15on-1.55.jar
+%%IDEA_HOME%%/lib/bcprov-jdk15on-1.59.jar
 %%IDEA_HOME%%/lib/bootstrap.jar
 %%IDEA_HOME%%/lib/cglib-nodep-3.2.4.jar
 %%IDEA_HOME%%/lib/cli-parser-1.1.jar
@@ -94,7 +94,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/commons-codec-1.9.jar
 %%IDEA_HOME%%/lib/commons-compress-1.10.jar
 %%IDEA_HOME%%/lib/commons-httpclient-3.1-patched.jar
-%%IDEA_HOME%%/lib/commons-imaging-1.0-RC.jar
+%%IDEA_HOME%%/lib/commons-imaging-1.0-RC-1.jar
 %%IDEA_HOME%%/lib/commons-io-2.2.jar
 %%IDEA_HOME%%/lib/commons-logging-1.2.jar
 %%IDEA_HOME%%/lib/commons-net-3.3.jar
@@ -133,7 +133,9 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/imgscalr-lib-4.2.jar
 %%IDEA_HOME%%/lib/ini4j-0.5.5-2.jar
 %%IDEA_HOME%%/lib/isorelax.jar
-%%IDEA_HOME%%/lib/jackson-core-2.8.8.jar
+%%IDEA_HOME%%/lib/jackson-annotations-2.9.0.jar
+%%IDEA_HOME%%/lib/jackson-core-2.9.5.jar
+%%IDEA_HOME%%/lib/jackson-databind-2.9.5.jar
 %%IDEA_HOME%%/lib/java-api.jar
 %%IDEA_HOME%%/lib/java-impl.jar
 %%IDEA_HOME%%/lib/java_resources_en.jar
@@ -145,7 +147,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/jcip-annotations-1.0.jar
 %%IDEA_HOME%%/lib/jdkAnnotations.jar
 %%IDEA_HOME%%/lib/jdom.jar
-%%IDEA_HOME%%/lib/jediterm-pty-2.7.jar
+%%IDEA_HOME%%/lib/jediterm-pty-%%PYTHON_VER%%.jar
 %%IDEA_HOME%%/lib/jgoodies-common-1.4.0.jar
 %%IDEA_HOME%%/lib/jgoodies-forms.jar
 %%IDEA_HOME%%/lib/jh.jar
@@ -10103,9 +10105,6 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/maven/lib/resources_en.jar
 %%IDEA_HOME%%/plugins/properties/lib/properties.jar
 %%IDEA_HOME%%/plugins/properties/lib/resources_en.jar
-%%IDEA_HOME%%/plugins/settings-repository/lib/jackson-annotations-2.8.1.jar
-%%IDEA_HOME%%/plugins/settings-repository/lib/jackson-core-2.8.1.jar
-%%IDEA_HOME%%/plugins/settings-repository/lib/jackson-databind-2.8.1.jar
 %%IDEA_HOME%%/plugins/settings-repository/lib/jgit.jar
 %%IDEA_HOME%%/plugins/settings-repository/lib/resources_en.jar
 %%IDEA_HOME%%/plugins/settings-repository/lib/settings-repository.jar
