@@ -1,9 +1,9 @@
---- setup.py.orig	2018-02-10 07:29:15 UTC
+--- setup.py.orig	2018-05-20 14:27:17 UTC
 +++ setup.py
-@@ -41,11 +41,11 @@ verification.""",
-     packages = ["dkim"],
-     scripts = ["arcsign.py", "arcverify.py", "dknewkey.py", "dkimsign.py",
-         "dkimverify.py"],
+@@ -55,11 +55,11 @@ verification.""",
+             'dknewkey = dkim.dknewkey:main'
+         ],
+     },
 -    data_files = [(os.path.join('share', 'man', 'man1'),
 -        ['man/arcsign.1']), (os.path.join('share', 'man', 'man1'),
 -        ['man/arcverify.1']),(os.path.join('share', 'man', 'man1'),
