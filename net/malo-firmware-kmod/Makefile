@@ -11,6 +11,9 @@ DISTNAME=	${FWNAME}
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Marvell Libertas 88W8335 IEEE 802.11b/g Firmware Kernel Module
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	hardware particular to PCI
+
 FWNAME=		malo-fw-${FWVERSION}
 FWVERSION=	3.0.0.39
 
