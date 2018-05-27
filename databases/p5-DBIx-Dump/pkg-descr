@@ -1,4 +1,4 @@
 DBIx::Dump allows you to easily dump database data, retrieved using DBI,
 into a variety of formats including Excel, CSV, etc...
 
-WWW: http://search.cpan.org/dist/DBIx-Dump/
+WWW: https://metacpan.org/release/DBIx-Dump

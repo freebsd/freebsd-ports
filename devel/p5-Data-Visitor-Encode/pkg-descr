@@ -3,4 +3,4 @@ new structure with each node's encoding (or similar action).  If you
 ever wished to do a bulk encode/decode of the contents of a structure,
 then this module may help you.
 
-WWW: http://search.cpan.org/dist/Data-Visitor-Encode/
+WWW: https://metacpan.org/release/Data-Visitor-Encode

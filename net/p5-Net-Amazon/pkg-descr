@@ -3,4 +3,4 @@ SOAP and XML/HTTP interfaces. This way it's possible to create applications
 using Amazon's vast amount of data via a functional interface, without
 having to worry about the underlying communication mechanism.
 
-WWW: http://search.cpan.org/dist/Net-Amazon/
+WWW: https://metacpan.org/release/Net-Amazon

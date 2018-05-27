@@ -2,4 +2,4 @@ This module lets you parallelise a perl program using the fork, exit,
 wait and waitpid calls as usual but without taking care of creating too
 many processes and overloading the machine.
 
-WWW: http://search.cpan.org/dist/Proc-Queue/
+WWW: https://metacpan.org/release/Proc-Queue

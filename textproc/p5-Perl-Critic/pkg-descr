@@ -13,4 +13,4 @@ documentation for perlcritic. If you want to integrate Perl::Critic with
 your build process, Test::Perl::Critic provides a nice interface that is
 suitable for test scripts.
 
-WWW: http://search.cpan.org/dist/Perl-Critic/
+WWW: https://metacpan.org/release/Perl-Critic

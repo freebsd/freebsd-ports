@@ -7,4 +7,4 @@ or an array reference to the constructor, in which case
 `IO::File::new' is called for you with the specified argument or
 arguments.
 
-WWW: http://search.cpan.org/dist/IO-Tee/
+WWW: https://metacpan.org/release/IO-Tee

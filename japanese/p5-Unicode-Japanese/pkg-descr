@@ -3,4 +3,4 @@ supports inter-convertion between sjis(CP932), euc-jp, jis, Unicode
 (UTF-8, etc.) and "EMOJI" of Japanese mobile phones including DoCoMo
 i-mode, ASTEL dot-i, Vodafone Vodafone-live!.
 
-WWW: http://search.cpan.org/dist/Unicode-Japanese/
+WWW: https://metacpan.org/release/Unicode-Japanese

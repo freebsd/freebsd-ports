@@ -6,4 +6,4 @@ also be used for things like dependency resolution as well since
 it tends to do such a nice job of preserving local precedence
 orderings.
 
-WWW: http://search.cpan.org/dist/Algorithm-C3/
+WWW: https://metacpan.org/release/Algorithm-C3

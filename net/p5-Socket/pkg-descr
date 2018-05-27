@@ -3,4 +3,4 @@ of modules. The following examples demonstrate some low-level uses but a
 practical program would likely use the higher-level API provided by IO::Socket
 or similar instead.
 
-WWW: http://search.cpan.org/dist/Socket/
+WWW: https://metacpan.org/release/Socket

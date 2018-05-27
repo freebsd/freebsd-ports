@@ -1,4 +1,4 @@
 A session engine for Dancer based on the Memcache API.
 Session are stored as memcache objects via a list of Memcached servers.
 
-WWW: http://search.cpan.org/dist/Dancer-Session-Memcached/
+WWW: https://metacpan.org/release/Dancer-Session-Memcached

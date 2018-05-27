@@ -9,4 +9,4 @@ zcgui-set 	Set the preferred backends for a module.
 zcgui-sux 	Set the useX value for a module.
 zcgui-which 	Prints a list of the available preferred modules for a module.
 
-WWW: http://search.cpan.org/dist/ZConf-GUI/
+WWW: https://metacpan.org/release/ZConf-GUI

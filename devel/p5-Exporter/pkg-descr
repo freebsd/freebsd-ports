@@ -4,4 +4,4 @@ use Exporter rather than implementing their own "import" method because
 Exporter provides a highly flexible interface, with an implementation
 optimised for the common case.
 
-WWW: http://search.cpan.org/dist/Exporter/
+WWW: https://metacpan.org/release/Exporter

@@ -11,4 +11,4 @@ The module exports various xxx_to_yyy functions by default, where
 xxx and yyy are one of big5, gb (i.e. GBK/CP936), simp (simplified
 Chinese unicode), or trad (traditional Chinese unicode).
 
-WWW: http://search.cpan.org/dist/Encode-HanConvert/
+WWW: https://metacpan.org/release/Encode-HanConvert

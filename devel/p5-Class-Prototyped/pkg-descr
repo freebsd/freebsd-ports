@@ -3,4 +3,4 @@ programming in Perl. You can provide different subroutines for each
 object, and also have objects inherit their behavior and state from
 another object.
 
-WWW: http://search.cpan.org/dist/Class-Prototyped/
+WWW: https://metacpan.org/release/Class-Prototyped

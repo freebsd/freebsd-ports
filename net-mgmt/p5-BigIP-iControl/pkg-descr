@@ -3,4 +3,4 @@ This package provides a Perl interface to the F5 BigIP iControl API.
 The F5 BigIP iControl API is an open SOAP/XML for communicating with supported
 F5 BigIP products.
 
-WWW: http://search.cpan.org/dist/BigIP-iControl/
+WWW: https://metacpan.org/release/BigIP-iControl

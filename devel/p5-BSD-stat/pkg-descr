@@ -2,4 +2,4 @@ This module's default exports override the core stat() and lstat()
 functions, replacing them with versions that contain BSD 4.4 extensions
 such as flags. This module also adds chflags function.
 
-WWW: http://search.cpan.org/dist/BSD-stat/
+WWW: https://metacpan.org/release/BSD-stat

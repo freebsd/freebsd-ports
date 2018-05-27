@@ -11,4 +11,4 @@ beginning and write back the files.
 
 No caching is done so you should do your own if you need to.
 
-WWW: http://search.cpan.org/dist/Unix-Passwd-File/
+WWW: https://metacpan.org/release/Unix-Passwd-File

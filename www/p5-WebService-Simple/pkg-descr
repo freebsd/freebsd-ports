@@ -3,4 +3,4 @@ WebService::Simple is a simple class to interact with web services.
 It's basically an LWP::UserAgent that remembers recurring api URLs and
 parameters, plus sugar to parse the results.
 
-WWW: http://search.cpan.org/dist/WebService-Simple/
+WWW: https://metacpan.org/release/WebService-Simple

@@ -3,4 +3,4 @@ analysis tools to work on it. Tools may be provided that conform to the
 Devel::MAT::Tool API, which can help analyse the data and interact with the
 explorer user interface by using the methods in the Devel::MAT::UI package.
 
-WWW: http://search.cpan.org/dist/Devel-MAT/
+WWW: https://metacpan.org/release/Devel-MAT

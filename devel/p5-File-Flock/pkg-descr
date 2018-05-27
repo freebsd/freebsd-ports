@@ -5,4 +5,4 @@ does not already exist.
 It will also try to remove the lock file.  This makes it a bit
 complicated.
 
-WWW: http://search.cpan.org/dist/File-Flock/
+WWW: https://metacpan.org/release/File-Flock

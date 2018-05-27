@@ -13,4 +13,4 @@ base role can do nothing ($base->can( $action ) always returns undef).
 All roles are automatically capable of authorizing actions named for the
 singular and plural of the role name.
 
-WWW: http://search.cpan.org/dist/Tree-Authz/
+WWW: https://metacpan.org/release/Tree-Authz

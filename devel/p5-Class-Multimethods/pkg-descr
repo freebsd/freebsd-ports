@@ -16,4 +16,4 @@ variant of the multimethod, according to the argument types specified in
 the variants' definitions (see "Finding the "nearest" multimethod" for a
 definition of "closest").
 
-WWW: http://search.cpan.org/dist/Class-Multimethods/
+WWW: https://metacpan.org/release/Class-Multimethods

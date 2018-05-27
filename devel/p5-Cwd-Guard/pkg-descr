@@ -1,4 +1,4 @@
 CORE::chdir Cwd::Guard can change the current directory (chdir) using a limited
 scope.
 
-WWW: http://search.cpan.org/dist/Cwd-Guard/
+WWW: https://metacpan.org/release/Cwd-Guard

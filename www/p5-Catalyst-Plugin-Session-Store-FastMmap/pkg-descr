@@ -2,4 +2,4 @@
 plugin for Catalyst that uses an mmap'ed file to act as a shared memory
 interprocess cache. It is based on Cache::FastMmap.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Session-Store-FastMmap/
+WWW: https://metacpan.org/release/Catalyst-Plugin-Session-Store-FastMmap

@@ -6,4 +6,4 @@ After instancing, for each call to Read the next row's data is returned as a
 hash reference. The individual elements are keyed by their corresonding column
 headings.
 
-WWW: http://search.cpan.org/dist/Text-Delimited/
+WWW: https://metacpan.org/release/Text-Delimited

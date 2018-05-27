@@ -5,4 +5,4 @@ Mentioned headers are structured and contain lists of addresses. Most
 of the time you want to parse such field from start to end keeping
 everything even if it's an invalid input.
 
-WWW: http://search.cpan.org/dist/Email-Address-List/
+WWW: https://metacpan.org/release/Email-Address-List

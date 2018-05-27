@@ -2,4 +2,4 @@ This module is an XS only implementation of PerlSAX2 parser using Expat.
 It implements Perl SAX 2.1 interface.
 
 WWW: http://perl-xml.sourceforge.net/perl-sax/
-WWW: http://search.cpan.org/dist/XML-SAX-ExpatXS/
+WWW: https://metacpan.org/release/XML-SAX-ExpatXS

@@ -2,4 +2,4 @@ Catalyst::Plugin::ErrorCatcher allows you to do More Stuff with the
 information that would normally only be seen on the Catalyst Error
 Screen courtesy of the Catalyst::Plugin::StackTrace plugin.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-ErrorCatcher/
+WWW: https://metacpan.org/release/Catalyst-Plugin-ErrorCatcher

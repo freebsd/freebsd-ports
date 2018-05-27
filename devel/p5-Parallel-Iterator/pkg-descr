@@ -2,4 +2,4 @@ This module provides a 'parallel map'. Multiple worker processes are
 forked so that many instances of the transformation function may be
 executed simultaneously.
 
-WWW: http://search.cpan.org/dist/Parallel-Iterator/
+WWW: https://metacpan.org/release/Parallel-Iterator

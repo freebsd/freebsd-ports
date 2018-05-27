@@ -3,4 +3,4 @@ approach than POCo::Server::HTTP. Several useful built-in
 handlers for URIs not found, basic authentication, and
 parameter parsing.
 
-WWW: http://search.cpan.org/dist/POE-Component-Server-HTTPServer/
+WWW: https://metacpan.org/release/POE-Component-Server-HTTPServer

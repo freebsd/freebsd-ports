@@ -2,4 +2,4 @@ The DTDParse collection is a set of Perl modules and scripts for
 manipulating SGML an XML Document Type Definitions (DTDs). DTDParse is
 designed primarily to aid in the understanding and documentation of DTDs.
 
-WWW: http://search.cpan.org/dist/SGML-DTDParse/
+WWW: https://metacpan.org/release/SGML-DTDParse

@@ -6,4 +6,4 @@ protocol. You can think of SRU as a RESTful version of SRW, since all the
 requests are simple URLs instead of XML documents being sent via some sort
 of transport layer.
 
-WWW: http://search.cpan.org/dist/SRU/
+WWW: https://metacpan.org/release/SRU

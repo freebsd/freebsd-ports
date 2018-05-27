@@ -8,4 +8,4 @@ such, one should be aware that it is still somewhat low-level, in
 the sense that handing an array which is not the correct size to a
 routine like fits_write_img() may cause SIGSEGVs.
 
-WWW: http://search.cpan.org/dist/Astro-FITS-CFITSIO/
+WWW: https://metacpan.org/release/Astro-FITS-CFITSIO

@@ -6,4 +6,4 @@ trickery to generate events for every object creation and destruction
 in code loaded after it was loaded. The second one will listen on
 these events, and track all currently living objects.
 
-WWW: http://search.cpan.org/dist/Devel-Events-Objects/
+WWW: https://metacpan.org/release/Devel-Events-Objects

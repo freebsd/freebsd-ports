@@ -2,4 +2,4 @@ A very little module for simulating laziness in perl.  It provides
 scalars that are "lazy", that is their value is computed only if
 necessary and at most once.
 
-WWW: http://search.cpan.org/dist/Data-Lazy/
+WWW: https://metacpan.org/release/Data-Lazy

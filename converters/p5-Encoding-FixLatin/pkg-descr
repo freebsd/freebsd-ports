@@ -3,4 +3,4 @@ output in another encoding.  This module takes input which may contain
 characters in more than one encoding and makes a best effort to convert
 them all to UTF-8 output.
 
-WWW: http://search.cpan.org/dist/Encoding-FixLatin/
+WWW: https://metacpan.org/release/Encoding-FixLatin

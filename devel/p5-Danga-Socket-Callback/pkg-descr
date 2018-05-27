@@ -1,4 +1,4 @@
 Danga::Socket::Callback is a thin wrapper arond Danga::Socket
 that allows you to set callbacks to be called at various events.
 
-WWW: http://search.cpan.org/dist/Danga-Socket-Callback/
+WWW: https://metacpan.org/release/Danga-Socket-Callback

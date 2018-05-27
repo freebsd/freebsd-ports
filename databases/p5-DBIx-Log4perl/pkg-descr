@@ -8,4 +8,4 @@ changing your code.
 Different log levels allowing you to separate warnings, errors and fatals
 to different files.
 
-WWW: http://search.cpan.org/dist/DBIx-Log4perl/
+WWW: https://metacpan.org/release/DBIx-Log4perl

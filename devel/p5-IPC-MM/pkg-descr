@@ -7,4 +7,4 @@ to access data structures within those shared memory segments, as well
 as miscellaneous methods.  Additionally, it provides a tied interface
 for scalars and hashes.
 
-WWW: http://search.cpan.org/dist/IPC-MM/
+WWW: https://metacpan.org/release/IPC-MM

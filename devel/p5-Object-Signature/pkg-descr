@@ -6,4 +6,4 @@ Digest::MD5. The object is fed to Storable::nfreeze to get a string,
 which is then passed to Digest::MD5::md5_hex to get a unique 32
 character hexadecimal signature.
 
-WWW: http://search.cpan.org/dist/Object-Signature/
+WWW: https://metacpan.org/release/Object-Signature

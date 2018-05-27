@@ -6,4 +6,4 @@ the AuthUserFile used by Apache. The file path is specified via the
 (zero-based) of the email field is specified via the --account_field
 option.
 
-WWW: http://search.cpan.org/dist/SVN-Notify-Filter-EmailFlatFileDB/
+WWW: https://metacpan.org/release/SVN-Notify-Filter-EmailFlatFileDB

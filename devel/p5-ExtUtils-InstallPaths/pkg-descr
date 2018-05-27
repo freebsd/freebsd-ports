@@ -10,4 +10,4 @@ something similar in a rather different (and more complicated) way. destdir lets
 you specify a temporary installation directory like /tmp/install in case you
 want to create bundled-up installable packages.
 
-WWW: http://search.cpan.org/dist/ExtUtils-InstallPaths/
+WWW: https://metacpan.org/release/ExtUtils-InstallPaths

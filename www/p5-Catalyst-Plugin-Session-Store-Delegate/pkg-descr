@@ -1,4 +1,4 @@
 This store plugins makes delegating session storage to a first class object
 model easy.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Session-Store-Delegate/
+WWW: https://metacpan.org/release/Catalyst-Plugin-Session-Store-Delegate

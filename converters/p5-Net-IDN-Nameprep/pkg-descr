@@ -6,4 +6,4 @@ is a profile of the stringprep protocol and is used as part of a suite
 of on-the-wire protocols for internationalizing the Domain Name System
 (DNS).
 
-WWW: http://search.cpan.org/dist/Net-IDN-Nameprep/
+WWW: https://metacpan.org/release/Net-IDN-Nameprep

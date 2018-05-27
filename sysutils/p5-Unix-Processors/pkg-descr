@@ -2,4 +2,4 @@ This package provides accessors to per-processor (CPU) information.  The
 object is obtained with the Unix::Processors::processors call.  the
 operating system in a OS independent manner.
 
-WWW: http://search.cpan.org/dist/Unix-Processors/
+WWW: https://metacpan.org/release/Unix-Processors

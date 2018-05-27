@@ -16,4 +16,4 @@ print spoolers are set up to understand the BSD protocol.  Most modern
 network-capable laser printers, such as those manufactured by HP and
 LexMark, also "speak" BSD.
 
-WWW: http://search.cpan.org/dist/Net-Printer/
+WWW: https://metacpan.org/release/Net-Printer

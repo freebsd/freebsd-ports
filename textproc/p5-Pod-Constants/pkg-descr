@@ -2,4 +2,4 @@ This module allows you to specify those constants that should be
 documented in your POD, and pull them out a run time in a fairly
 arbitrary fashion.
 
-WWW: http://search.cpan.org/dist/Pod-Constants/
+WWW: https://metacpan.org/release/Pod-Constants

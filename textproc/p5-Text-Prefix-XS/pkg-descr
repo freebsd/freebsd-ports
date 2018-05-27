@@ -1,4 +1,4 @@
 Text::Prefix::XS implements something of an trie algorithm for matching (and
 extracting) prefixes from text strings.
 
-WWW: http://search.cpan.org/dist/Text-Prefix-XS/
+WWW: https://metacpan.org/release/Text-Prefix-XS

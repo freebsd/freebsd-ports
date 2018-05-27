@@ -9,4 +9,4 @@ Elements of this hash are keyed on the entries in the designated primary key
 field and the value for each element is a hash reference of all the data in a
 particular database record (including the primary key field and its value).
 
-WWW: http://search.cpan.org/dist/Text-CSV-Hashify/
+WWW: https://metacpan.org/release/Text-CSV-Hashify

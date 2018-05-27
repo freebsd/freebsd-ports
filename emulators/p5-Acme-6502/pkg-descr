@@ -3,4 +3,4 @@ have to support. How bad could it be? COBOL? Fortran? Worse: it's an embedded
 6502 system run by a family of squirrels. Fortunately there's a pure Perl 6502
 emulator that works so well the squirrels will never know the difference.
 
-WWW: http://search.cpan.org/dist/Acme-6502/
+WWW: https://metacpan.org/release/Acme-6502

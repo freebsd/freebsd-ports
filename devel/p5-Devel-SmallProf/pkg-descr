@@ -3,4 +3,4 @@ run on a line-by-line basis.  It is intended to be as "small" in terms
 of impact on the speed and memory usage of the profiled program as
 possible and also in terms of being simple to use.
 
-WWW: http://search.cpan.org/dist/Devel-SmallProf/
+WWW: https://metacpan.org/release/Devel-SmallProf

@@ -9,4 +9,4 @@ When Perl pulls a file via require, it stores the filename in the global hash
 %INC and does not reload from disk.  This module's handler iterates over %INC
 and reloads the file if it has changed on disk.
 
-WWW: http://search.cpan.org/dist/Module-Reload/
+WWW: https://metacpan.org/release/Module-Reload

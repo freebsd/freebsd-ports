@@ -4,4 +4,4 @@ lets you easily test your DBIC schema. Since you have a fresh
 database for every test, you don't have to worry about cleaning up
 after your tests, ordering of tests affecting failure, etc.
 
-WWW: http://search.cpan.org/dist/DBICx-TestDatabase/
+WWW: https://metacpan.org/release/DBICx-TestDatabase

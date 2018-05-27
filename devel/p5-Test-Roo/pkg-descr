@@ -4,4 +4,4 @@ but uses Moo instead of Moose.
 This gives most of the benefits
 without the need for Moose as a test dependency.
 
-WWW: http://search.cpan.org/dist/Test-Roo/
+WWW: https://metacpan.org/release/Test-Roo

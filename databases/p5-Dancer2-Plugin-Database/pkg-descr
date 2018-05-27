@@ -8,4 +8,4 @@ everything you'd expect to do with DBI, but also adds a few convenience
 methods. See the documentation for Dancer2::Plugin::Database::Handle
 for full details of those.
 
-WWW: http://search.cpan.org/dist/Dancer2-Plugin-Database/
+WWW: https://metacpan.org/release/Dancer2-Plugin-Database

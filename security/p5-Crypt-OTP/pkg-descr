@@ -4,6 +4,6 @@ message is XOR'ed. Encryption and decryption are performed using
 excactly the same method, and the message will decrypt correctly
 only if the same pad is used in decryption as was use in encryption.
 
-WWW: http://search.cpan.org/dist/Crypt-OTP/
+WWW: https://metacpan.org/release/Crypt-OTP
 
 Seamus Venasse <svenasse@polaris.ca>

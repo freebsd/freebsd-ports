@@ -3,4 +3,4 @@ allows you to trace the path IP packets take to a destination.  It
 is currently implemented as a parser around the system traceroute
 command.
 
-WWW: http://search.cpan.org/dist/Net-Traceroute6/
+WWW: https://metacpan.org/release/Net-Traceroute6

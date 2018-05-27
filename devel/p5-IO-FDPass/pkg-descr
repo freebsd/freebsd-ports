@@ -5,4 +5,4 @@ ability to pass file descriptors on windows is currently the unique
 selling point of this module. Have I mentioned that it is really
 small, too?
 
-WWW: http://search.cpan.org/dist/IO-FDPass/
+WWW: https://metacpan.org/release/IO-FDPass

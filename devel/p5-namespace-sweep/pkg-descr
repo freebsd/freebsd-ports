@@ -6,4 +6,4 @@ ensuring that your interface is as you specified it. However, code
 inside your module will still be able to use the imported functions
 without any problems.
 
-WWW: http://search.cpan.org/dist/namespace-sweep/
+WWW: https://metacpan.org/release/namespace-sweep

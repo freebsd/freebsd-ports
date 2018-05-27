@@ -12,4 +12,4 @@ Common usage of the module is as follows:
   the "push" method.
 - Call the "run" method and let the parallel scheduler take care of everything!
 
-WWW: http://search.cpan.org/dist/Net-OpenSSH-Parallel/
+WWW: https://metacpan.org/release/Net-OpenSSH-Parallel

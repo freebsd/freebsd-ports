@@ -3,4 +3,4 @@ module of a list of known alternatives, each implementing some way to get the
 desired terminal information. This loaded module will actually do the job on
 behalf of Term::Size::Any.
 
-WWW: http://search.cpan.org/dist/Term-Size-Any/
+WWW: https://metacpan.org/release/Term-Size-Any

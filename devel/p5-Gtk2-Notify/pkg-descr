@@ -2,4 +2,4 @@ Gtk2::Notify provides a Perl XS API to the The Desktop Notifications
 framework, which provides a standard way of doing passive pop-up
 notifications on the desktop.
 
-WWW: http://search.cpan.org/dist/Gtk2-Notify/
+WWW: https://metacpan.org/release/Gtk2-Notify

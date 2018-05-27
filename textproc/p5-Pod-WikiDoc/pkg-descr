@@ -4,4 +4,4 @@ couple of simple points. An alternative approach is to write documentation in
 a wiki-text shorthand (referred to here as wikidoc) and use Pod::WikiDoc to
 extract it and convert it into its corresponding Pod as a separate .pod file.
 
-WWW: http://search.cpan.org/dist/Pod-WikiDoc/
+WWW: https://metacpan.org/release/Pod-WikiDoc

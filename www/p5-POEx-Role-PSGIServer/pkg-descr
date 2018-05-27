@@ -5,4 +5,4 @@ multiplexing via POE::Wheel::SocketFactory and POE::Wheel::ReadWrite,
 and POEx::Role::SessionInstantiation which transforms plain Moose
 objects into POE sessions.
 
-WWW: http://search.cpan.org/dist/POEx-Role-PSGIServer/
+WWW: https://metacpan.org/release/POEx-Role-PSGIServer

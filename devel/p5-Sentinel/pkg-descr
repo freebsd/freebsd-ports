@@ -3,4 +3,4 @@ invoke callbacks to get or set its value. Primarily this is useful to create
 lvalue object accessors or other functions, to invoke actual code when a new
 value is set, rather than simply updating a scalar variable.
 
-WWW: http://search.cpan.org/dist/Sentinel/
+WWW: https://metacpan.org/release/Sentinel

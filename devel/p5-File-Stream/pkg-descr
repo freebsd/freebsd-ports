@@ -6,4 +6,4 @@ regexes.
 Thus, readline() and the <> operator can now return records delimited by
 regular expression matches.
 
-WWW: http://search.cpan.org/dist/File-Stream/
+WWW: https://metacpan.org/release/File-Stream

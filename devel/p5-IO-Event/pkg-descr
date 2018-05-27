@@ -16,4 +16,4 @@ After initial setup, call IO::Event::loop().
 IO::Event was originally written to use Event. IO::Event still defaults to using
 Event but it can now use AnyEvent or its own event loop.
 
-WWW: http://search.cpan.org/dist/IO-Event/
+WWW: https://metacpan.org/release/IO-Event

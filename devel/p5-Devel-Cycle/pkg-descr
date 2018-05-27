@@ -3,4 +3,4 @@ objects and other types of references.  Because of Perl's
 reference-count based memory management, circular references will cause
 memory leaks.
 
-WWW: http://search.cpan.org/dist/Devel-Cycle/
+WWW: https://metacpan.org/release/Devel-Cycle

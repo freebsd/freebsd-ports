@@ -2,4 +2,4 @@ This module allows you to alias a lexical variable to another variable
 (package or lexical).  You will receive a fatal error if you try
 aliasing a scalar to something that is not a scalar etc.
 
-WWW: http://search.cpan.org/dist/Lexical-Alias/
+WWW: https://metacpan.org/release/Lexical-Alias

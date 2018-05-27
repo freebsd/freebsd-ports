@@ -5,4 +5,4 @@ represents config data as perl objects.  This allows for a much more
 flexible configuration language, since new classes can be easily written
 to add methods to the config syntax.
 
-WWW: http://search.cpan.org/dist/Config-Objective/
+WWW: https://metacpan.org/release/Config-Objective

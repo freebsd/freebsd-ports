@@ -4,4 +4,4 @@ lexical analyzers.
 This distribution includes Parse::YYLex (written by Vladimir Alexiev)
 a lexer generator that you can use with yacc parsers.
 
-WWW: http://search.cpan.org/dist/ParseLex/
+WWW: https://metacpan.org/release/ParseLex

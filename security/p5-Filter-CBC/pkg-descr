@@ -3,4 +3,4 @@ encrypt your code. The tricky part is that most CBC Algorithms have binary
 output. The textmode bypasses this obstacle, by converting the data to less
 scary data.
 
-WWW: http://search.cpan.org/dist/Filter-CBC/
+WWW: https://metacpan.org/release/Filter-CBC

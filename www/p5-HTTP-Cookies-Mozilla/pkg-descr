@@ -4,4 +4,4 @@ so it can work with Mozilla cookie files.
 This module should be able to work with all Mozilla derived browsers
 (FireBird, Camino, et alia).
 
-WWW: http://search.cpan.org/dist/HTTP-Cookies-Mozilla/
+WWW: https://metacpan.org/release/HTTP-Cookies-Mozilla

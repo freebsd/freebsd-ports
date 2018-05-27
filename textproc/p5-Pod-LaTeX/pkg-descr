@@ -3,4 +3,4 @@ The pod2latex command uses this module for translation.
 
 Pod::LaTeX is a derived class from Pod::Select.
 
-WWW: http://search.cpan.org/dist/Pod-LaTeX/
+WWW: https://metacpan.org/release/Pod-LaTeX

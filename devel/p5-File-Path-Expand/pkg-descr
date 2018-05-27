@@ -2,4 +2,4 @@ File::Path::Expand expands user directories in filenames.  For the
 simple case it's no more complex than s{^~/}{$HOME/}, but for other
 cases it consults C<getpwent> and does the right thing.
 
-WWW: http://search.cpan.org/dist/File-Path-Expand/
+WWW: https://metacpan.org/release/File-Path-Expand

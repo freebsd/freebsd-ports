@@ -3,4 +3,4 @@ the ISO8601 profile.  This profile defines that the
 following is the only possible representation for a
 dateTime, despite all other options ISO provides.
 
-WWW: http://search.cpan.org/dist/DateTime-Format-XSD/
+WWW: https://metacpan.org/release/DateTime-Format-XSD

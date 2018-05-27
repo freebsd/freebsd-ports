@@ -4,4 +4,4 @@ the configuration subsystem to store previous versions of the configuration
 parameters. When requesting the value for a specific attribute, the programmer
 specifies whether to fetch the most recent value or a previous value.
 
-WWW: http://search.cpan.org/dist/Config-Versioned/
+WWW: https://metacpan.org/release/Config-Versioned

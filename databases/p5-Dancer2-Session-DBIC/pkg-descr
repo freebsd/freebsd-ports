@@ -4,4 +4,4 @@ the session, and storing it in a database via DBIx::Class.
 JSON was chosen as the default serialization format,
 as it is fast, terse, and portable.
 
-WWW: http://search.cpan.org/dist/Dancer2-Session-DBIC/
+WWW: https://metacpan.org/release/Dancer2-Session-DBIC

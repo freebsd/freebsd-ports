@@ -8,4 +8,4 @@ objects, one for each level of the stack. The frames contain all the data
 available from caller() as of Perl 5.6.0 though this module still works
 with 5.00503.
 
-WWW: http://search.cpan.org/dist/Devel-StackTrace/
+WWW: https://metacpan.org/release/Devel-StackTrace

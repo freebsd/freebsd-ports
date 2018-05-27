@@ -5,6 +5,6 @@ multiplicative types is easy. Any unknown type is treated
 as a unique user type (with some effort to map English
 plurals to their singular forms).
 
-WWW: http://search.cpan.org/dist/Math-Calc-Units/
+WWW: https://metacpan.org/release/Math-Calc-Units
 
 Seamus Venasse <svenasse@polaris.ca>

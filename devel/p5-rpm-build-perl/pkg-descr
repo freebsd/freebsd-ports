@@ -2,4 +2,4 @@ rpm-build-perl is required to build Perl RPM packages;
 it contains scripts for automatic dependency tracking,
 RPM macros for Perl.
 
-WWW: http://search.cpan.org/dist/rpm-build-perl/
+WWW: https://metacpan.org/release/rpm-build-perl

@@ -13,4 +13,4 @@ $ENV{ALLUSERSPROFILE} . "\\Application Data\\p5-app", respectively.
 File::ConfigDir has no "do what I mean" mode - it's entirely up to the user to
 pick the right directory for each particular application.
 
-WWW: http://search.cpan.org/dist/File-ConfigDir/
+WWW: https://metacpan.org/release/File-ConfigDir

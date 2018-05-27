@@ -3,4 +3,4 @@ It can take a rendered document and its template together, and get the
 original data structure back, effectively reversing the Template::process
 function.
 
-WWW: http://search.cpan.org/dist/Template-Extract/
+WWW: https://metacpan.org/release/Template-Extract

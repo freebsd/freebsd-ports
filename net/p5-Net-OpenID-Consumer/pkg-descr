@@ -2,4 +2,4 @@ This is the Perl API for (the consumer half of) OpenID, a distributed
 identity system based on proving you own a URL, which is then your
 identity. More information is available at: http://www.danga.com/openid/
 
-WWW: http://search.cpan.org/dist/Net-OpenID-Consumer/
+WWW: https://metacpan.org/release/Net-OpenID-Consumer

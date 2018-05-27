@@ -6,4 +6,4 @@ The XS framework makes calls into the existing libsasl2.so shared
 library to perform SASL client connection functionality, including
 loading existing shared library mechanisms.
 
-WWW: http://search.cpan.org/dist/Authen-SASL-Cyrus/
+WWW: https://metacpan.org/release/Authen-SASL-Cyrus

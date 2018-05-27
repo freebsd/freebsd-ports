@@ -5,4 +5,4 @@ events.  All you do it create the Splashscreen mega widget, populate
 it as you see fit, then invoke Splash() to display it and Destroy() to
 tear it down.
 
-WWW: http://search.cpan.org/dist/Tk-Splashscreen/
+WWW: https://metacpan.org/release/Tk-Splashscreen

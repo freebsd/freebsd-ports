@@ -5,4 +5,4 @@ In a nutshell, a synchronous worker process is forked off by a server whenever
 a client asks for one. The client keeps as many of these workers around as it
 wants and delegates tasks to them asynchronously.
 
-WWW: http://search.cpan.org/dist/AnyEvent-Task/
+WWW: https://metacpan.org/release/AnyEvent-Task

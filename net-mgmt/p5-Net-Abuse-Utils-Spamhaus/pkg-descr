@@ -1,4 +1,4 @@
 Net::Abuse::Utils::Spamhaus is a Perl extension for checking data
 against the spamhaus blacklists.
 
-WWW: http://search.cpan.org/dist/Net-Abuse-Utils-Spamhaus/
+WWW: https://metacpan.org/release/Net-Abuse-Utils-Spamhaus

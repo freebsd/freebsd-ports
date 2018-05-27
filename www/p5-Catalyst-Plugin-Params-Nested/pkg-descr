@@ -20,4 +20,4 @@ items starting with "foo" as one entity using $c->req->param('foo');.
 Each subitem, denoted by either the dot or the square brackets, will be
 returned as a further deeper hashref.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Params-Nested/
+WWW: https://metacpan.org/release/Catalyst-Plugin-Params-Nested

@@ -2,4 +2,4 @@ This module copies and moves directories recursively (or single files, well...
 singley) to an optional depth and attempts to preserve each file or
 directory's mode.
 
-WWW: http://search.cpan.org/dist/File-Copy-Recursive/
+WWW: https://metacpan.org/release/File-Copy-Recursive

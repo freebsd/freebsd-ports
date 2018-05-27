@@ -17,4 +17,4 @@ point look at:
     Net::NNTP       RFC977          Network News Transfer Protocol
     Net::POP3       RFC1939         Post Office Protocol 3
 
-WWW: http://search.cpan.org/dist/libnet/
+WWW: https://metacpan.org/release/libnet

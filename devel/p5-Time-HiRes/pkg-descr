@@ -4,4 +4,4 @@ Implement usleep, ualarm, and gettimeofday for Perl, as well as wrappers
 to implement time, sleep, and alarm that know about non-integral
 seconds.
 
-WWW: http://search.cpan.org/dist/Time-HiRes/
+WWW: https://metacpan.org/release/Time-HiRes

@@ -8,4 +8,4 @@ larger than 52-bit in a 'use integer;' block. Failure to do so can result in the
 creation of the variable as an NV (rather than an IV) - with a resultant loss of
 precision.
 
-WWW: http://search.cpan.org/dist/Math-GMPq/
+WWW: https://metacpan.org/release/Math-GMPq

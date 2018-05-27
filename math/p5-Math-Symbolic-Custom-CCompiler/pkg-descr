@@ -17,4 +17,4 @@ Alternatively, you can use the module not for faster calculations from
 your Perl program, but to generate C code for you. I have used it to
 generate an implementation for (many!) Zernike Polynomials for work in C.
 
-WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-CCompiler/
+WWW: https://metacpan.org/release/Math-Symbolic-Custom-CCompiler

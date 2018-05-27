@@ -7,4 +7,4 @@ No need to run Flash Policy server as root on 843 port!
 Usage is exactly the same as Twiggy, whenever you run twiggy command,
 replace it with fliggy and you're ready to go.
 
-WWW: http://search.cpan.org/dist/Fliggy/
+WWW: https://metacpan.org/release/Fliggy

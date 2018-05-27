@@ -3,4 +3,4 @@ directed graphs in a variety of formats (PostScript, PNG, etc.) using
 the "dot" and "neato" programs from the GraphViz project
 (http://www.graphviz.org/).
 
-WWW: http://search.cpan.org/dist/GraphViz/
+WWW: https://metacpan.org/release/GraphViz

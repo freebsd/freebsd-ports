@@ -6,4 +6,4 @@ by introspecting your class's attributes. It will use the name of your
 attribute as the command line option, and if there is a type constraint
 defined, it will configure Getopt::Long to handle the option accordingly.
 
-WWW: http://search.cpan.org/dist/MooseX-Getopt/
+WWW: https://metacpan.org/release/MooseX-Getopt

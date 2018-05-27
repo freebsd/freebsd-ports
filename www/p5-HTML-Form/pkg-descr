@@ -2,4 +2,4 @@ Objects of the HTML::Form class represent a single HTML <form> ... </form>
 instance. A form consists of a sequence of inputs that usually have names,
 and which can take on various values.
 
-WWW: http://search.cpan.org/dist/HTML-Form/
+WWW: https://metacpan.org/release/HTML-Form

@@ -14,4 +14,4 @@ also allows the processing of Subversion revision property files
 (i.e. the files lying in the $REPOSITORY/db/revprops/ directory
 holding the author, date and log entry of every revision).
 
-WWW: http://search.cpan.org/dist/SVN-Dumpfile/
+WWW: https://metacpan.org/release/SVN-Dumpfile

@@ -4,4 +4,4 @@ Pipes are troublesome beasts because there are a few different, incompatible
 ways to create them. Not all platforms support all ways, and some platforms may
 have hidden difficulties like incomplete or buggy support.
 
-WWW: http://search.cpan.org/dist/IO-Pipely/
+WWW: https://metacpan.org/release/IO-Pipely

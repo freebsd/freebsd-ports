@@ -5,4 +5,4 @@ code words is so in exactly one way.
 The module provides functions that determine whether a given
 code is uniquely decodable or not.
 
-WWW: http://search.cpan.org/dist/UDCode/
+WWW: https://metacpan.org/release/UDCode

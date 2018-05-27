@@ -6,4 +6,4 @@ order to force a debug screen, while in debug mode.
 If you have more than 1 view, you can specify which one to use with the
 'view' config setting.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-DefaultEnd/
+WWW: https://metacpan.org/release/Catalyst-Plugin-DefaultEnd

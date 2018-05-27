@@ -4,4 +4,4 @@ the "!" tells us that the lines differ, and we can quickly scan the bytes that
 make up the line to see which differ. When comparing very long strings, we can
 stop after we've seen a few differences.
 
-WWW: http://search.cpan.org/dist/Test-BinaryData/
+WWW: https://metacpan.org/release/Test-BinaryData

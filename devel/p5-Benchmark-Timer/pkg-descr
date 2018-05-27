@@ -4,4 +4,4 @@ for when you need more precise information about the running time of portions
 of your code than the Benchmark module will give you, but don't want to go all
 out and profile your code.
 
-WWW: http://search.cpan.org/dist/Benchmark-Timer/
+WWW: https://metacpan.org/release/Benchmark-Timer

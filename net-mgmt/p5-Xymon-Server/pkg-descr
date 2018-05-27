@@ -1,4 +1,4 @@
 Provides a base interface for retriving configuration variables from the hobbit
 server (taken from hobbitserver.cfg).
 
-WWW: http://search.cpan.org/dist/Xymon-Server/
+WWW: https://metacpan.org/release/Xymon-Server

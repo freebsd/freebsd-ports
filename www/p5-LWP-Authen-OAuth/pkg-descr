@@ -2,4 +2,4 @@ This module provides a sub-class of LWP::UserAgent that generates
 OAuth 1.0 signed requests.  You should familiarise yourself with OAuth
 at http://oauth.net/.
 
-WWW: http://search.cpan.org/dist/LWP-Authen-OAuth/
+WWW: https://metacpan.org/release/LWP-Authen-OAuth

@@ -8,4 +8,4 @@ single object. In deriving a class from Class::Singleton, your
 module will inherit the Singleton instantiation method and can
 implement whatever specific functionality is required.
 
-WWW: http://search.cpan.org/dist/Class-Singleton/
+WWW: https://metacpan.org/release/Class-Singleton

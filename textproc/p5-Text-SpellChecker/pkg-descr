@@ -5,4 +5,4 @@ instance, we provide methods for iterating through the text,
 serializing the object (thus remembering where we left off), and
 highlighting the current misspelled word within the text.
 
-WWW: http://search.cpan.org/dist/Text-SpellChecker/
+WWW: https://metacpan.org/release/Text-SpellChecker

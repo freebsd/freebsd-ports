@@ -7,4 +7,4 @@ replace the standard messages by complete stack traces that precisely indicates
 how and where the error or warning occurred. Other than this, their use should
 stay unchanged, even when using die() inside eval().
 
-WWW: http://search.cpan.org/dist/Devel-SimpleTrace/
+WWW: https://metacpan.org/release/Devel-SimpleTrace

@@ -2,4 +2,4 @@ Ever showed 12345678 bytes to the user instead of just saying 11MB?
 This module returns you a printable string which is more readable
 by humans than a simple bytecount.
 
-WWW: http://search.cpan.org/dist/Format-Human-Bytes/
+WWW: https://metacpan.org/release/Format-Human-Bytes

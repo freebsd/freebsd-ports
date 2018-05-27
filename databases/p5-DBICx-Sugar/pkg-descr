@@ -2,4 +2,4 @@ Just some syntax sugar for your DBIx::Class applications. This was originally
 created to remove code duplication between Dancer::Plugin::DBIC and
 Dancer2::Plugin::DBIC.
 
-WWW: http://search.cpan.org/dist/DBICx-Sugar/
+WWW: https://metacpan.org/release/DBICx-Sugar

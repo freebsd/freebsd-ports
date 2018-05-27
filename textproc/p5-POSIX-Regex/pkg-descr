@@ -9,4 +9,4 @@ fail, but in a timeout way rather than an instant segfault way.
 1) You wish to have POSIX compliance on ... something ...  Perl's
 regexps are slightly different -- arguably better, but different.
 
-WWW: http://search.cpan.org/dist/POSIX-Regex/
+WWW: https://metacpan.org/release/POSIX-Regex

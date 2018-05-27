@@ -7,4 +7,4 @@ build of Tk. Both versions share common code in POE::Loop::TkCommon.
 POE::Loop::Tk dynamically selects the appropriate bridge code based on the
 runtime enviroment.
 
-WWW: http://search.cpan.org/dist/POE-Loop-Tk/
+WWW: https://metacpan.org/release/POE-Loop-Tk

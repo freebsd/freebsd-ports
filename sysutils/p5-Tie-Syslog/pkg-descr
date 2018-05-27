@@ -5,4 +5,4 @@ is syslogged for later perusal. You can also create an arbitrary
 filehandle, say LOG, and send stuff to syslog by printing to
 this filehandle.
 
-WWW: http://search.cpan.org/dist/Tie-Syslog/
+WWW: https://metacpan.org/release/Tie-Syslog

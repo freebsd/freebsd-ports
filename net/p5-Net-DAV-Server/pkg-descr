@@ -13,4 +13,4 @@ test suite (litmus, see http://www.webdav.org/neon/litmus/) and will
 provide more compliance in future. The important thing is that it
 supports cadaver and the Mac OS X Finder as clients.
 
-WWW: http://search.cpan.org/dist/Net-DAV-Server/
+WWW: https://metacpan.org/release/Net-DAV-Server

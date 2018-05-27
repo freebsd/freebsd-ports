@@ -1,4 +1,4 @@
 Net::GrowlClient provides a complete object oriented interface
 to send Mac OS X Growl notifications across the network.
 
-WWW: http://search.cpan.org/dist/Net-GrowlClient/
+WWW: https://metacpan.org/release/Net-GrowlClient

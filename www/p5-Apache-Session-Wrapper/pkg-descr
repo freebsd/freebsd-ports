@@ -9,4 +9,4 @@ If you're using Mason, you should probably take a look at
 MasonX::Request::WithApacheSession first, which integrates this module directly
 into Mason.
 
-WWW: http://search.cpan.org/dist/Apache-Session-Wrapper/
+WWW: https://metacpan.org/release/Apache-Session-Wrapper

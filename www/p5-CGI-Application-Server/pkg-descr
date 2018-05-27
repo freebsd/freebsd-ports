@@ -1,4 +1,4 @@
 CGI::Application::Server
    	 A simple HTTP server for developing with CGI::Application.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Server/
+WWW: https://metacpan.org/release/CGI-Application-Server

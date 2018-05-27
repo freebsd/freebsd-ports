@@ -3,4 +3,4 @@ a stack trace of your appliation up to the point where the error
 occurred. Each stack frame is displayed along with the package name,
 line number, file name, and code context surrounding the line number.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-StackTrace/
+WWW: https://metacpan.org/release/Catalyst-Plugin-StackTrace

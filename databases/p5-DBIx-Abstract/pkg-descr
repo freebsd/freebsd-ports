@@ -19,4 +19,4 @@ Notable features include:
   * Shortcuts (convenience functions) for some common cases. (Like
     select_all_to_hashref.)
 
-WWW: http://search.cpan.org/dist/DBIx-Abstract/
+WWW: https://metacpan.org/release/DBIx-Abstract

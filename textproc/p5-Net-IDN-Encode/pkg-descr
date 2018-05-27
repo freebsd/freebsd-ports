@@ -6,4 +6,4 @@ allows the non-ASCII characters to be represented using only the ASCII
 characters already allowed in so-called host names today (letter-digit-
 hypen, "/[A-Z0-9-]/i").
 
-WWW: http://search.cpan.org/dist/Net-IDN-Encode/
+WWW: https://metacpan.org/release/Net-IDN-Encode

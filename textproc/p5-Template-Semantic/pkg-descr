@@ -3,4 +3,4 @@ XML::LibXML that doesn't use any template syntax.  This module takes
 pure XHTML/XML as a template, and uses XPath or CSS selectors to
 assign values.
 
-WWW: http://search.cpan.org/dist/Template-Semantic/
+WWW: https://metacpan.org/release/Template-Semantic

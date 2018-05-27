@@ -1,4 +1,4 @@
 This a PerlSAX filter that detects which character data contains
 ignorable whitespace and optionally filters it.
 
-WWW: http://search.cpan.org/dist/XML-Filter-DetectWS/
+WWW: https://metacpan.org/release/XML-Filter-DetectWS

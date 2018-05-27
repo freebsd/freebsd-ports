@@ -6,4 +6,4 @@ implemented as a Perl wrapper around the popular OpenSSL library.  All
 certificate and CRL extensions supported by OpenSSL are available, and
 then some.
 
-WWW: http://search.cpan.org/dist/Crypt-OpenSSL-CA/
+WWW: https://metacpan.org/release/Crypt-OpenSSL-CA

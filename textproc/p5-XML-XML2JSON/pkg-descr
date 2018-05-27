@@ -17,4 +17,4 @@ XML:
 - XML version and encoding attributes are converted to version and encoding
   attributes of the root element, respectively.
 
-WWW: http://search.cpan.org/dist/XML-XML2JSON/
+WWW: https://metacpan.org/release/XML-XML2JSON

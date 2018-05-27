@@ -9,4 +9,4 @@ want more control, you can get the command with the "open_browser_cmd" or
 "open_browser_cmd_all" functions and then use whatever method you want to
 execute it.
 
-WWW: http://search.cpan.org/dist/Browser-Open/
+WWW: https://metacpan.org/release/Browser-Open

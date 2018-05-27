@@ -7,4 +7,4 @@ possible to generate automatic mappings between frames.
 Coordinate frame objects can be imported from FITS headers and from
 NDF files.
 
-WWW: http://search.cpan.org/dist/Starlink-AST/
+WWW: https://metacpan.org/release/Starlink-AST

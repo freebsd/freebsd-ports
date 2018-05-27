@@ -13,4 +13,4 @@ a reference to the root object is returned. In case an I/O error
 occurred while reading, undef is returned instead. Other serious errors
 are propagated via die.
 
-WWW: http://search.cpan.org/dist/Storable/
+WWW: https://metacpan.org/release/Storable

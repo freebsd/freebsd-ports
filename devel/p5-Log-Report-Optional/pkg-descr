@@ -4,4 +4,4 @@ Log::Report is only released when the main program uses that module. In that
 case, the module using the 'Optional' will also use the full Log::Report,
 otherwise the dressed-down Log::Report::Minimal version.
 
-WWW: http://search.cpan.org/dist/Log-Report-Optional/
+WWW: https://metacpan.org/release/Log-Report-Optional

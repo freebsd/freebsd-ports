@@ -9,4 +9,4 @@ a whole hash on the symbol table with implicit localization.  This allows
 you to access object attributes without having to deref the object every
 time, as in most other OO languages.
 
-WWW: http://search.cpan.org/dist/Alias/
+WWW: https://metacpan.org/release/Alias

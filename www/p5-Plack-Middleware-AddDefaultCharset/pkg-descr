@@ -1,4 +1,4 @@
 Plack::Middleware::AddDefaultCharset is a port of the
 AddDefaultCharset configuration directive of the Apache HTTP server.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-AddDefaultCharset/
+WWW: https://metacpan.org/release/Plack-Middleware-AddDefaultCharset

@@ -3,4 +3,4 @@ and pseudo-ttys.  Both event-loop and procedural techniques are
 supported and may be mixed.  Likewise, functional and OO API styles are
 both supported and may be mixed.
 
-WWW: http://search.cpan.org/dist/IPC-Run/
+WWW: https://metacpan.org/release/IPC-Run

@@ -3,4 +3,4 @@ suitable for transfer over 6-bit clean transport channels. The
 encoded ASCII resembles PGP's armoured messages, but are in no
 way compatible with PGP.
 
-WWW: http://search.cpan.org/dist/Convert-ASCII-Armour/
+WWW: https://metacpan.org/release/Convert-ASCII-Armour

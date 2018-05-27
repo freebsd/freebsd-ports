@@ -9,4 +9,4 @@ requests is abstracted. As soon as you add a request it is transmitted, if
 there are too many requests in progress at the moment they are queued. There
 is no concept of starting or stopping - it runs continuously.
 
-WWW: http://search.cpan.org/dist/HTTP-Async/
+WWW: https://metacpan.org/release/HTTP-Async

@@ -16,4 +16,4 @@ the original Getopt::Long module to:
    CGI script then it will automatically prompt the user for the same
    variables.
 
-WWW: http://search.cpan.org/dist/Getopt-GUI-Long/
+WWW: https://metacpan.org/release/Getopt-GUI-Long

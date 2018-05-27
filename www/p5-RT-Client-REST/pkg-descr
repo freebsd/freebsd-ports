@@ -4,4 +4,4 @@ which provide interface between Perl scripts and RT
 Most of the features have been implemented and
 tested with rt 3.6.0 and later.
 
-WWW: http://search.cpan.org/dist/RT-Client-REST/
+WWW: https://metacpan.org/release/RT-Client-REST

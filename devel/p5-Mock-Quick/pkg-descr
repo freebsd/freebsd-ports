@@ -11,4 +11,4 @@ restoration of the original class methods. Best of all this is a
 localized tool, when your control object falls out of scope the original
 class is restored.
 
-WWW: http://search.cpan.org/dist/Mock-Quick/
+WWW: https://metacpan.org/release/Mock-Quick

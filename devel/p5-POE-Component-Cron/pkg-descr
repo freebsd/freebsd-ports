@@ -1,4 +1,4 @@
 This component extends POE::Component::Schedule by adding an easy way t specify
 event schedules using a simple cron spec.
 
-WWW: http://search.cpan.org/dist/POE-Component-Cron/
+WWW: https://metacpan.org/release/POE-Component-Cron

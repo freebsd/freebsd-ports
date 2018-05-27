@@ -3,4 +3,4 @@ modeled after the C++ STL's binary heap functions. They all take an
 array as argument, just like perl's built-in functions "push", "pop"
 etc. The implementation itself is in C for maximum speed.
 
-WWW: http://search.cpan.org/dist/Array-Heap/
+WWW: https://metacpan.org/release/Array-Heap

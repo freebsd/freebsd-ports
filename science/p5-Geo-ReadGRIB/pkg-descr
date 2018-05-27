@@ -3,4 +3,4 @@ access to data distributed in GRIB files. Specifically,
 it is wrote to access NOAA Wavewatch III marine weather
 model forecasts which are packaged as GRIB.
 
-WWW: http://search.cpan.org/dist/Geo-ReadGRIB/
+WWW: https://metacpan.org/release/Geo-ReadGRIB

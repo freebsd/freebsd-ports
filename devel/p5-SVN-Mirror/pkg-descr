@@ -3,4 +3,4 @@ repository.  It supports remote Subversion repositories accessible
 via the SVN::Ra interface; other version control systems (such as
 Perforce and CVS) are also supported via the VCP module.
 
-WWW: http://search.cpan.org/dist/SVN-Mirror/
+WWW: https://metacpan.org/release/SVN-Mirror

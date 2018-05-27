@@ -10,4 +10,4 @@ SYNOPSIS
  sub foo { print called_with(0,1); }
  foo( my @foo ); # should print '@foo'
 
-WWW: http://search.cpan.org/dist/Devel-Caller/
+WWW: https://metacpan.org/release/Devel-Caller

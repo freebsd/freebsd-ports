@@ -3,6 +3,6 @@ There are two kinds of numbers in English -- cardinals (1,
 provides functions for giving the ordinal form of a number,
 given its cardinal value.
 
-WWW: http://search.cpan.org/dist/Lingua-EN-Numbers-Ordinate/
+WWW: https://metacpan.org/release/Lingua-EN-Numbers-Ordinate
 
 Seamus Venasse <svenasse@polaris.ca>

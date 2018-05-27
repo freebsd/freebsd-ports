@@ -4,4 +4,4 @@ provides "real" sequences on MySQL. The module works by creating a
 single sequence, and performing some "magic" MySQL specific SQL to
 ensure the sequences will work correctly.
 
-WWW: http://search.cpan.org/dist/DBIx-MySQLSequence/
+WWW: https://metacpan.org/release/DBIx-MySQLSequence

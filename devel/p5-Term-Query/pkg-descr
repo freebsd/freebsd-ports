@@ -9,4 +9,4 @@ Input of '?', unless configured otherwise, provides useful, helpful
 information, based on the expected input type, even in the absence of a
 programmer-supplied help string.
 
-WWW: http://search.cpan.org/dist/Term-Query/
+WWW: https://metacpan.org/release/Term-Query

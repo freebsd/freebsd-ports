@@ -4,4 +4,4 @@ The MPFR library is a C library for multiple-precision floating-point
 computations with exact rounding (also called correct rounding). It
 is based on the GMP multiple-precision C library.
 
-WWW: http://search.cpan.org/dist/Math-MPFR/
+WWW: https://metacpan.org/release/Math-MPFR

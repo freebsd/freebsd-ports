@@ -4,4 +4,4 @@ HTML page; this approach allows a clean separation of HTML development from
 Perl program development.
 
 WWW: http://www.jmarshall.com/tools/defaultify/
-WWW: http://search.cpan.org/dist/HTML-Defaultify/
+WWW: https://metacpan.org/release/HTML-Defaultify

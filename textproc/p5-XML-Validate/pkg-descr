@@ -4,4 +4,4 @@ Backends for the following validators are included with this distribution:
 ** LibXML (& you'll need XML::LibXML)
 ** Xerces (& you'll need XML::Xerces)
 
-WWW: http://search.cpan.org/dist/XML-Validate/
+WWW: https://metacpan.org/release/XML-Validate

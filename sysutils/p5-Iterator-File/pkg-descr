@@ -3,4 +3,4 @@ processing a flat file. Whenever doing so, I found myself adapting prior
 scripts so that processes could be resumed, emit status, etc. Hence an itch
 (and this module) was born.
 
-WWW: http://search.cpan.org/dist/Iterator-File/
+WWW: https://metacpan.org/release/Iterator-File

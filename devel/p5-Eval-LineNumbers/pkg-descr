@@ -5,4 +5,4 @@ Please note: when you embed \n in your code, it gets expanded in double-quote
 hereis documents so it will mess up your line numbering. Use \\n instead when
 you can.
 
-WWW: http://search.cpan.org/dist/Eval-LineNumbers/
+WWW: https://metacpan.org/release/Eval-LineNumbers

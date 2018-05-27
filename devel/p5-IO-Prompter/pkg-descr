@@ -3,4 +3,4 @@ only if the program's selected input and output streams are connected to a
 terminal), then reads some input, then chomps it, and finally returns an
 object representing that text.
 
-WWW: http://search.cpan.org/dist/IO-Prompter/
+WWW: https://metacpan.org/release/IO-Prompter

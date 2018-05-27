@@ -4,4 +4,4 @@ time at compile time and then relies on the user supplying a mock time
 via set_relative_time, set_absolute_time or set_fixed_time to alter
 future calls to gmtime, time or localtime.
 
-WWW: http://search.cpan.org/dist/Test-MockTime/
+WWW: https://metacpan.org/release/Test-MockTime

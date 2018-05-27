@@ -4,4 +4,4 @@ standard .INI files, they can include bare boolean options with no
 value assignment and additional features like !include and
 !includedir.
 
-WWW: http://search.cpan.org/dist/Config-MySQL/
+WWW: https://metacpan.org/release/Config-MySQL

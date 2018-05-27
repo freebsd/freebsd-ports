@@ -7,4 +7,4 @@ UIDs (see samples/uniquify.pl).
 The module makes very little effort in understanding what each iCalendar
 property means and concentrates on the format of the iCalendar file only.
 
-WWW: http://search.cpan.org/dist/Tie-iCal/
+WWW: https://metacpan.org/release/Tie-iCal

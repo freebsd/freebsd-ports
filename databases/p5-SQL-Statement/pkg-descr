@@ -4,4 +4,4 @@ offers methods for retrieving syntax, for WHERE clause and statement
 evaluation.  The implementation is designed to work with the DBI driver
 DBD::CSV, and should be easily extensible.
 
-WWW: http://search.cpan.org/dist/SQL-Statement/
+WWW: https://metacpan.org/release/SQL-Statement

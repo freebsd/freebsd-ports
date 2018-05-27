@@ -3,4 +3,4 @@ elements.  A heap is a partially sorted structure that is always able to
 easily extract the smallest of the elements in the structure (or the
 largest if a reversed compare routine is provided).
 
-WWW: http://search.cpan.org/dist/Heap/
+WWW: https://metacpan.org/release/Heap

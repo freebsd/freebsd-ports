@@ -6,4 +6,4 @@ For a more complicated interface, see DynaLoader.  Many (most) features
 of DynaLoader are not implemented in XSLoader, like for example the
 dl_load_flags, not honored by XSLoader.
 
-WWW: http://search.cpan.org/dist/XSLoader/
+WWW: https://metacpan.org/release/XSLoader

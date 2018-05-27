@@ -3,4 +3,4 @@ module. Please also note that there is another module that does similar
 things (HTTPD::UserManage) and that this is a more simplistic module, not
 doing all the things that one does.
 
-WWW: http://search.cpan.org/dist/Apache-Htgroup/
+WWW: https://metacpan.org/release/Apache-Htgroup

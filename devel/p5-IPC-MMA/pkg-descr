@@ -11,4 +11,4 @@ An IPC::MMA array can store data in any of six ways, including general-purpose
 scalars, signed or unsigned integers, floating-point numbers, fixed-length
 strings/records, and booleans at one bit per array element.
 
-WWW: http://search.cpan.org/dist/IPC-MMA/
+WWW: https://metacpan.org/release/IPC-MMA

@@ -2,4 +2,4 @@ A configuration system allowing for either file or LDAP backed storage. A
 utility is included as well, 'zcrunner'. It can be used to configure
 actions and run files using them.
 
-WWW: http://search.cpan.org/dist/ZConf-Runner/
+WWW: https://metacpan.org/release/ZConf-Runner

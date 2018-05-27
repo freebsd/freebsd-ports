@@ -2,4 +2,4 @@ MooseX::Method::Signatures provides a proper "method" keyword, like
 "sub" but specifically for making methods and validating their arguments
 against Moose type constraints.
 
-WWW: http://search.cpan.org/dist/MooseX-Method-Signatures/
+WWW: https://metacpan.org/release/MooseX-Method-Signatures

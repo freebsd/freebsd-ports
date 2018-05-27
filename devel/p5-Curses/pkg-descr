@@ -5,4 +5,4 @@ consult your system's documentation, as such information invariably varies
 document describes the interface itself, and assumes that you already know
 how your system's curses(3) library works.
 
-WWW: http://search.cpan.org/dist/Curses/
+WWW: https://metacpan.org/release/Curses

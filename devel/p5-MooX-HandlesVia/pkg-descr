@@ -4,4 +4,4 @@ an external class to the given atttribute. This is most commonly
 used as a way to emulate 'Native Trait' behavior that has become
 commonplace in Moose code, for which there was no Moo alternative.
 
-WWW: http://search.cpan.org/dist/MooX-HandlesVia/
+WWW: https://metacpan.org/release/MooX-HandlesVia

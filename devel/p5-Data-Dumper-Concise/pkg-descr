@@ -1,4 +1,4 @@
 Data::Dumper::Concise is a perl module for less indentation and
 newlines plus sub deparsing.
 
-WWW: http://search.cpan.org/dist/Data-Dumper-Concise/
+WWW: https://metacpan.org/release/Data-Dumper-Concise

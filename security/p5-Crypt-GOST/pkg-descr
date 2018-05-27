@@ -6,4 +6,4 @@ interface, with the functions described below. It also provides
 an interface that is backwards- compatible with Crypt::GOST 0.41,
 but its use in new code is discouraged.
 
-WWW: http://search.cpan.org/dist/Crypt-GOST/
+WWW: https://metacpan.org/release/Crypt-GOST

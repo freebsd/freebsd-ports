@@ -4,4 +4,4 @@ server. It provides two replication policies, 'MultipleNetworks' and
 get_paths queries to be returned in a prioritized order based on locality of
 storage.
 
-WWW: http://search.cpan.org/dist/MogileFS-Network/
+WWW: https://metacpan.org/release/MogileFS-Network

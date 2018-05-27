@@ -5,4 +5,4 @@ To support the distinction between development and production environments,
 this module will also attemp to load a local config (e.g. myapp_local.yaml)
 which will override any duplicate settings.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-ConfigLoader/
+WWW: https://metacpan.org/release/Catalyst-Plugin-ConfigLoader

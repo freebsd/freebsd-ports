@@ -3,4 +3,4 @@ Internet Name Domain) server version 8 configuration files ("named.conf").
 As each meaningful semantic 'chunk' is parsed, a callback method is invoked
 with the parsed information.
 
-WWW: http://search.cpan.org/dist/BIND-Conf_Parser/
+WWW: https://metacpan.org/release/BIND-Conf_Parser

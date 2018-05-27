@@ -7,4 +7,4 @@ zccron - Runs crontabs stored in ZConf.
 zccrontab - Manage crontabs stored in ZConf.
 gzccrontab - Invokes GUI editor for installed crontabs.
 
-WWW: http://search.cpan.org/dist/ZConf-Cron/
+WWW: https://metacpan.org/release/ZConf-Cron

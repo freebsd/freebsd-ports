@@ -9,4 +9,4 @@ identifying themselves. While it shouldn't add much additional runtime
 overhead (as it acts only Class::Accessor's generator functions), it
 has not been designed for production deployment.
 
-WWW: http://search.cpan.org/dist/Class-Accessor-Named/
+WWW: https://metacpan.org/release/Class-Accessor-Named

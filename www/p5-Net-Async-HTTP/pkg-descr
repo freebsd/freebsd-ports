@@ -10,4 +10,4 @@ Net::Async::HTTP optionally supports SSL connections, if IO::Async::SSL is
 installed. If so, SSL can be requested either by passing a URI with the https
 scheme, or by passing a true value as the SSL parameter.
 
-WWW: http://search.cpan.org/dist/Net-Async-HTTP/
+WWW: https://metacpan.org/release/Net-Async-HTTP

@@ -5,4 +5,4 @@ is module => version pairs.
 It also contains %Module::CoreList::released hash, which has ISO formatted
 versions of the release dates, as gleaned from the perlhist man page.
 
-WWW: http://search.cpan.org/dist/Module-CoreList/
+WWW: https://metacpan.org/release/Module-CoreList

@@ -3,4 +3,4 @@ HTML::Lint - check for HTML errors in a string or file.
 HTML::Lint also comes with a wrapper program called weblint that handles
 linting from the command line.
 
-WWW: http://search.cpan.org/dist/HTML-Lint/
+WWW: https://metacpan.org/release/HTML-Lint

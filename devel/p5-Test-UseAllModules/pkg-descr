@@ -2,4 +2,4 @@ This Perl module reads MANIFEST to find modules to be tested and does use_ok()
 for each of them. Now all you have to do is updating MANIFEST.
 You don't have to modify the test any more (hopefully).
 
-WWW: http://search.cpan.org/dist/Test-UseAllModules/
+WWW: https://metacpan.org/release/Test-UseAllModules

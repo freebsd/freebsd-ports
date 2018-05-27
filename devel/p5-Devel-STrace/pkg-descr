@@ -5,4 +5,4 @@ Devel::STrace cannot trace non-Perl calls (e.g., calls inside XS/C
 modules), so an additional external strace/truss monitor may be needed
 to fully diagnose a misbehaving Perl script.
 
-WWW: http://search.cpan.org/dist/Devel-STrace/
+WWW: https://metacpan.org/release/Devel-STrace

@@ -1,4 +1,4 @@
 This module provides a replacement function for Socket::inet_aton,
 with support for timeouts.
 
-WWW: http://search.cpan.org/dist/Net-DNS-Lite/
+WWW: https://metacpan.org/release/Net-DNS-Lite

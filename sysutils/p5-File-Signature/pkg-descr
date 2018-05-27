@@ -4,4 +4,4 @@ of information about the file: a digest (currently only MD5 is
 supported), its inode number, its mode, the uid of its owner, the gid of
 its group owner, and its last modification time.
 
-WWW: http://search.cpan.org/dist/File-Signature/
+WWW: https://metacpan.org/release/File-Signature

@@ -6,4 +6,4 @@ diff.
 SVN::Web also tracks the branching feature (node copy) of subversion,
 so you can easily see the relationship between branches.
 
-WWW: http://search.cpan.org/dist/SVN-Web/
+WWW: https://metacpan.org/release/SVN-Web

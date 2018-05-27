@@ -4,4 +4,4 @@ document/literal encoding is limited, this module works around those
 limitations and provides a more intuitive interface a developer can
 interact with.
 
-WWW: http://search.cpan.org/dist/WWW-Salesforce/
+WWW: https://metacpan.org/release/WWW-Salesforce

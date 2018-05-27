@@ -2,4 +2,4 @@ These routines will reflow the paragraphs in the given file, filehandle,
 string or array using Knuth's paragraphing algorithm (as used in TeX) to
 pick "good" places to break the lines.
 
-WWW: http://search.cpan.org/dist/Text-Reflow/
+WWW: https://metacpan.org/release/Text-Reflow

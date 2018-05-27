@@ -6,4 +6,4 @@ Programs that use Daemon::Generic subclass Daemon::Generic to override its
 behavior. Almost everything that Genric::Daemon does can be overridden as
 needed.
 
-WWW: http://search.cpan.org/dist/Daemon-Generic/
+WWW: https://metacpan.org/release/Daemon-Generic

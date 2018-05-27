@@ -11,4 +11,4 @@ This happens all the time, specially if stack traces need to be verified.
 This module allows Test2::Harness to swap out the main script for the new file
 without adding a stack frame.
 
-WWW: http://search.cpan.org/dist/goto-file/
+WWW: https://metacpan.org/release/goto-file

@@ -1,4 +1,4 @@
 CGI::Application::Dispatch::Server
 A simple HTTP server for developing apps that use CGI::Application::Dispatch
 
-WWW: http://search.cpan.org/dist/CGI-Application-Dispatch-Server/
+WWW: https://metacpan.org/release/CGI-Application-Dispatch-Server

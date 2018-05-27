@@ -4,4 +4,4 @@ responses so that additional requests can be recorded.
 Then, tell your web browser to use this proxy, and the script will be recorded
 in the specified file.
 
-WWW: http://search.cpan.org/dist/HTTP-Recorder/
+WWW: https://metacpan.org/release/HTTP-Recorder

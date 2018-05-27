@@ -7,4 +7,4 @@ with methods to add additional criteria.  Options that control
 directory traversal are given as arguments to the method that
 generates an iterator.
 
-WWW: http://search.cpan.org/dist/Path-Iterator-Rule/
+WWW: https://metacpan.org/release/Path-Iterator-Rule

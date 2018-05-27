@@ -9,6 +9,6 @@ The base 85 numbers (from 0 to 84) are as follows:
 At the moment, there's not much in this module. But it should be
 sufficient for the purposes of RFC 1924.
 
-WWW: http://search.cpan.org/dist/Math-Base85/
+WWW: https://metacpan.org/release/Math-Base85
 
 -Anton

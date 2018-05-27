@@ -5,4 +5,4 @@ can be applied to cells. Text, numbers, and formulas can be written to the
 cells. This module cannot, as yet, be used to write to an existing Excel XLSX
 file.
 
-WWW: http://search.cpan.org/dist/Excel-Writer-XLSX/
+WWW: https://metacpan.org/release/Excel-Writer-XLSX

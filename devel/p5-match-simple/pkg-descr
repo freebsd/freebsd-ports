@@ -3,4 +3,4 @@ of the (as of Perl 5.18) deprecated smart match operator. Unlike smart match,
 the behaviour of the match is determined entirely by the operand on the right
 hand side.
 
-WWW: http://search.cpan.org/dist/match-simple/
+WWW: https://metacpan.org/release/match-simple

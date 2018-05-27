@@ -6,4 +6,4 @@ This is fine for small sets but suffers compared to other possible set
 representations (bit vectors, hash keys) when the number of ranges grows
 large.  Set::IntSpan::Fast tries to fix that.
 
-WWW: http://search.cpan.org/dist/Set-IntSpan-Fast/
+WWW: https://metacpan.org/release/Set-IntSpan-Fast

@@ -6,4 +6,4 @@ from boxed blocks of test code.
 The values collected by the latest trap can then be queried or tested through a
 special trap object.
 
-WWW: http://search.cpan.org/dist/Test-Trap/
+WWW: https://metacpan.org/release/Test-Trap

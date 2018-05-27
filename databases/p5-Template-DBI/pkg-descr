@@ -4,4 +4,4 @@ template documents.  It also provides an interface via the Tie::DBI
 module (if installed on your system) so that you can access database
 records without having to embed any SQL in your templates.
 
-WWW: http://search.cpan.org/dist/Template-DBI/
+WWW: https://metacpan.org/release/Template-DBI

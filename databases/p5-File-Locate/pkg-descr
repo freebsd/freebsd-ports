@@ -3,4 +3,4 @@ database for a given substring or POSIX regular expression. The
 module can handle both plain old locate databases as well as the
 more hip slocate format.
 
-WWW: http://search.cpan.org/dist/File-Locate/
+WWW: https://metacpan.org/release/File-Locate

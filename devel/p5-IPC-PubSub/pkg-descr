@@ -8,4 +8,4 @@ Currently, it offers three backends: "DBM_Deep" for on-disk storage,
 "Memcached" for possibly multi-host storage, and "PlainHash" for
 single-process storage.
 
-WWW: http://search.cpan.org/dist/IPC-PubSub/
+WWW: https://metacpan.org/release/IPC-PubSub

@@ -4,4 +4,4 @@ the kind of PPI class they relate to, by replacing the "PPI" at the
 front of the module name with "PPIx::Utilities", e.g. functionality
 related to PPI::Nodes is in PPIx::Utilities::Node.
 
-WWW: http://search.cpan.org/dist/PPIx-Utilities/
+WWW: https://metacpan.org/release/PPIx-Utilities

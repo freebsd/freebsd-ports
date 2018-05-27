@@ -14,4 +14,4 @@ By default (if no File::Policy::Config is present), the File::Policy::Default
 policy gets applied which doesn't impose any restrictions and provides
 reasonable default locations for temporary and log files.
 
-WWW: http://search.cpan.org/dist/File-Policy/
+WWW: https://metacpan.org/release/File-Policy

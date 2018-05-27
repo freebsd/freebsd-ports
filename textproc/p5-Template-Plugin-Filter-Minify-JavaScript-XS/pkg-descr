@@ -2,4 +2,4 @@ Template::Plugin::Filter::Minify::JavaScript::XS is a Template Toolkit filter,
 which uses JavaScript::Minifier::XS to compress javascript code from filtered
 content during template processing.
 
-WWW: http://search.cpan.org/dist/Template-Plugin-Filter-Minify-JavaScript-XS/
+WWW: https://metacpan.org/release/Template-Plugin-Filter-Minify-JavaScript-XS

@@ -16,7 +16,7 @@ two-element array, it returns an English string.  This was a deliberate
 design choice---many people misinterpret chi-square results, and the
 string helps clarify the meaning.
 
-WWW: http://search.cpan.org/dist/Statistics-ChiSquare/
+WWW: https://metacpan.org/release/Statistics-ChiSquare
 
 -Anton
 <tobez@FreeBSD.org>

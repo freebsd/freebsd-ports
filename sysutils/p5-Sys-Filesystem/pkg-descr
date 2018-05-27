@@ -7,4 +7,4 @@ operation. This module hopes to provide a consistant API to list all,
 mounted, unmounted and special filesystems on a system, and query as
 many properties as possible with common aliases wherever possible.
 
-WWW: http://search.cpan.org/dist/Sys-Filesystem/
+WWW: https://metacpan.org/release/Sys-Filesystem

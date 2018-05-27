@@ -6,4 +6,4 @@ key. Given the user's 32-byte secret key and another user's 32-byte public key,
 Curve25519 computes a 32-byte secret shared by the two users. This secret can
 then be used to authenticate and encrypt messages between the two users.
 
-WWW: http://search.cpan.org/dist/Crypt-Curve25519/
+WWW: https://metacpan.org/release/Crypt-Curve25519

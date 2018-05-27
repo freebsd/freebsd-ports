@@ -6,4 +6,4 @@ Test::Database provides a simple way for test authors to request
 a test database, without worrying about environment variables or the
 test host configuration.
 
-WWW: http://search.cpan.org/dist/Test-Database/
+WWW: https://metacpan.org/release/Test-Database

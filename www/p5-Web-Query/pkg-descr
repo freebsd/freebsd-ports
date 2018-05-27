@@ -8,4 +8,4 @@ So, this module uses HTML::Selector::XPath, then this module only supports CSS3
 selector supported by HTML::Selector::XPath. Web::Query doesn't support jQuery's
 extended quries(yet?).
 
-WWW: http://search.cpan.org/dist/Web-Query/
+WWW: https://metacpan.org/release/Web-Query

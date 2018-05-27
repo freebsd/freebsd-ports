@@ -6,4 +6,4 @@ button) or undef (otherwise). The exact type of the return value is
 either a Tk::Font object (in Tk800) or a font name string (usually
 something like font1). Both can be used as values in Tk -font options.
 
-WWW: http://search.cpan.org/dist/Tk-FontDialog/
+WWW: https://metacpan.org/release/Tk-FontDialog

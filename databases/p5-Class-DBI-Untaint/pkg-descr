@@ -5,4 +5,4 @@ Any column can then be said to require untainting of a given type
 - i.e. that any value which you attempted to set that column to
 (include at create() time) must pass an untaint as_type() check.
 
-WWW: http://search.cpan.org/dist/Class-DBI-Untaint/
+WWW: https://metacpan.org/release/Class-DBI-Untaint

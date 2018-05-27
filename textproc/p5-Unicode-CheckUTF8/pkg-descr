@@ -8,4 +8,4 @@ on scalars.
 This module is for use when you're getting input from users and want
 to make sure it's valid UTF-8 before continuing.
 
-WWW: http://search.cpan.org/dist/Unicode-CheckUTF8/
+WWW: https://metacpan.org/release/Unicode-CheckUTF8

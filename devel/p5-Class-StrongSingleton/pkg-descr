@@ -4,4 +4,4 @@ it takes steps to prevent the possibility of accidental creation of
 multiple instances and/or the overwriting of existing Singleton
 instances.
 
-WWW: http://search.cpan.org/dist/Class-StrongSingleton/
+WWW: https://metacpan.org/release/Class-StrongSingleton

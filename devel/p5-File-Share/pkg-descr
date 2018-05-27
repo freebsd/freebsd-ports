@@ -2,4 +2,4 @@ File::Share is a dropin replacement for File::ShareDir. It supports the dist_dir
 and dist_file functions, except these functions have been enhanced to understand
 when the developer's local ./share/ directory should be used.
 
-WWW: http://search.cpan.org/dist/File-Share/
+WWW: https://metacpan.org/release/File-Share

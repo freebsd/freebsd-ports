@@ -3,4 +3,4 @@ output. This is equivalent to calling $self->$other_runmode, except
 that CGI::Application's internal value of the current run mode is
 updated.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-Forward/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-Forward

@@ -5,4 +5,4 @@ immediately and if there are no dead children, everything will be
 undefined. If you pass in a true argument, it will block until a child
 exits (or it gets a signal).
 
-WWW: http://search.cpan.org/dist/Proc-Wait3/
+WWW: https://metacpan.org/release/Proc-Wait3

@@ -1,4 +1,4 @@
 Mojolicious::Plugin::Authentication is a module that helps you deal
 with authenticating users in your Mojolicious application.
 
-WWW: http://search.cpan.org/dist/Mojolicious-Plugin-Authentication/
+WWW: https://metacpan.org/release/Mojolicious-Plugin-Authentication

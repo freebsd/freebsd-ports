@@ -6,4 +6,4 @@ DBIx::HA also works seamlessly with Apache::DBI when available, and
 ensures that cached database handles in the Apache::DBI module are
 properly updated when failing over.
 
-WWW: http://search.cpan.org/dist/DBIx-HA/
+WWW: https://metacpan.org/release/DBIx-HA

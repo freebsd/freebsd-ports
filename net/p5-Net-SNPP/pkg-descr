@@ -2,4 +2,4 @@ This module implements a client interface to the SNPP protocol,
 enabling a perl5 application to talk to SNPP servers. The SNPP
 protocol is described in RFC1861.
 
-WWW: http://search.cpan.org/dist/Net-SNPP/
+WWW: https://metacpan.org/release/Net-SNPP

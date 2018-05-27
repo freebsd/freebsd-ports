@@ -4,4 +4,4 @@ HP's API is XML-based and cumbersome to use; this module aims to
 simplify accessing the iLO from Perl while retaining as much
 functionality as possible.
 
-WWW: http://search.cpan.org/dist/Net-ILO/
+WWW: https://metacpan.org/release/Net-ILO

@@ -6,4 +6,4 @@ penalty.  So I HIGHLY RECOMMEND to enable this middleware only on
 development env or not processing every request on production using
 Plack::Middleware::Conditional.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-MemoryUsage/
+WWW: https://metacpan.org/release/Plack-Middleware-MemoryUsage

@@ -4,4 +4,4 @@ themselves as a "spam friend" (where there should be no spam filtering on mail
 to them) or, where spam-filtering is not the default, but an option, where
 certain receipients have been labeled as "spam haters".
 
-WWW: http://search.cpan.org/dist/Sendmail-AccessDB/
+WWW: https://metacpan.org/release/Sendmail-AccessDB

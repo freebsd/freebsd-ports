@@ -6,4 +6,4 @@ You can take your existing test script, and with (hopefully) very little
 effort, convert it to use Test::Debugger. Then re-run your modified test and
 view the log file it creates.
 
-WWW: http://search.cpan.org/dist/Test-Debugger/
+WWW: https://metacpan.org/release/Test-Debugger

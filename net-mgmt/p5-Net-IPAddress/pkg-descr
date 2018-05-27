@@ -9,4 +9,4 @@ addresses only to find out that they don't sort the way you expected?
 Here is the solution! If you convert the IP addresses to 32-bit integer
 addresses, they will sort in correct order.
 
-WWW: http://search.cpan.org/dist/Net-IPAddress/
+WWW: https://metacpan.org/release/Net-IPAddress

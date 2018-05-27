@@ -12,4 +12,4 @@ you do not need to use a real hostname: "http://localhost/" will do.
 However, this is optional. The following two lines of code do exactly
 the same thing:
 
-WWW: http://search.cpan.org/dist/Test-WWW-Mechanize-Catalyst/
+WWW: https://metacpan.org/release/Test-WWW-Mechanize-Catalyst

@@ -3,4 +3,4 @@ romaji at ease. This module makes use of utf8 semantics. Strings in
 this module must be utf8-flagged. If they are not, you can use Encode
 to do so.
 
-WWW: http://search.cpan.org/dist/Lingua-JA-Kana/
+WWW: https://metacpan.org/release/Lingua-JA-Kana

@@ -6,5 +6,5 @@ be configured or reconfigured on the fly without needing to restart the
 software. A basic configuration file containing a management port enables
 you to easily perform operations on a running instance of Perlbal.
 
-WWW: http://search.cpan.org/dist/Perlbal/
+WWW: https://metacpan.org/release/Perlbal
 WWW: http://www.danga.com/perlbal/

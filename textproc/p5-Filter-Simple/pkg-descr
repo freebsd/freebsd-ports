@@ -6,4 +6,4 @@ simplify the language (e.g. Language::Pythonesque), or to completely recast the
 language (e.g. Lingua::Romana::Perligata). Effec- tively, it allows one to use
 the full power of Perl as its own, recur- sively applied, macro language.
 
-WWW: http://search.cpan.org/dist/Filter-Simple/
+WWW: https://metacpan.org/release/Filter-Simple

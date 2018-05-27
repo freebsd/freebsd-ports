@@ -8,4 +8,4 @@ Then you can write your Mouse commands as Mouse classes, with MouseX::Getopt
 defining the options for you instead of opt_spec returning a
 Getopt::Long::Descriptive spec.
 
-WWW: http://search.cpan.org/dist/MouseX-App-Cmd/
+WWW: https://metacpan.org/release/MouseX-App-Cmd

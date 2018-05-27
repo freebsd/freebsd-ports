@@ -13,4 +13,4 @@ Commonly used in financial protocols as follows with ETX (ASCII 03)
 appended to LRC sum and packets after the STX (ASCII 02), payload,
 and ETX chars.
 
-WWW: http://search.cpan.org/dist/String-LRC/
+WWW: https://metacpan.org/release/String-LRC

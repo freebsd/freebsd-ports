@@ -3,4 +3,4 @@ Class::AutoClass::Args. See "DIFFERENCES FROM Class::AutoClass::Args" for a
 discussion of what's new. See Hash::AutoHash::Args::V0 for a subclass which is
 more compatible with the original.
 
-WWW: http://search.cpan.org/dist/Hash-AutoHash-Args/
+WWW: https://metacpan.org/release/Hash-AutoHash-Args

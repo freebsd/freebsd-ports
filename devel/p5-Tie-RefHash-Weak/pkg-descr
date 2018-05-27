@@ -10,4 +10,4 @@ This subclass of Tie::RefHash has weak keys, instead of strong ones. The
 values are left unaltered, and you'll have to make sure there are no strong
 references there yourself.
 
-WWW: http://search.cpan.org/dist/Tie-RefHash-Weak/
+WWW: https://metacpan.org/release/Tie-RefHash-Weak

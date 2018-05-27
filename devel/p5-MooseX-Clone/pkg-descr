@@ -7,4 +7,4 @@ introspection on top of that. Attributes with the Clone trait will handle
 cloning of data within the object, typically delegating to the attribute
 value's own clone method.
 
-WWW: http://search.cpan.org/dist/MooseX-Clone/
+WWW: https://metacpan.org/release/MooseX-Clone

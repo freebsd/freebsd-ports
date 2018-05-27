@@ -5,4 +5,4 @@ the policies to be written into your application components.  It attempts to
 separate the concerns of how to show and manipulate data from the concerns
 of who is allowed to view and manipulate data and why.
 
-WWW: http://search.cpan.org/dist/Apache2-SiteControl/
+WWW: https://metacpan.org/release/Apache2-SiteControl

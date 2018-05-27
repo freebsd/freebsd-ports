@@ -3,4 +3,4 @@ by other modules. Other modules which sport the same functions can
 also be used to support Math::BigInt, like Math::BigInt::GMP or
 Math::BigInt::Pari.
 
-WWW: http://search.cpan.org/dist/Math-BigInt-FastCalc/
+WWW: https://metacpan.org/release/Math-BigInt-FastCalc

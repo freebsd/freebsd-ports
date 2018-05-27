@@ -6,4 +6,4 @@ bled and listed in a single message.  An additional option allows diffs
 to be calculated for the changes and either appended to the message or
 added as an attachment.
 
-WWW: http://search.cpan.org/dist/SVN-Notify/
+WWW: https://metacpan.org/release/SVN-Notify

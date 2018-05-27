@@ -3,4 +3,4 @@ instead of using Perl modules and external commands, it uses the libarchive C
 libary. It supports many different archive formats and compression algorithms
 and is fast.
 
-WWW: http://search.cpan.org/dist/Archive-Extract-Libarchive/
+WWW: https://metacpan.org/release/Archive-Extract-Libarchive

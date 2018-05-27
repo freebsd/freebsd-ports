@@ -7,4 +7,4 @@ automatically removing any HTML tags from content you might pass in.
 This module isn't meant to have the full expressive power of RSS; instead, it
 provides functions that are most commonly needed by RSS-writing programs.
 
-WWW: http://search.cpan.org/dist/XML-RSS-SimpleGen/
+WWW: https://metacpan.org/release/XML-RSS-SimpleGen

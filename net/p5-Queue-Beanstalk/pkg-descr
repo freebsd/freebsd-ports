@@ -1,4 +1,4 @@
 Queue::Beanstalk is a Perl client for beanstalkd, a fast, distributed,
 in-memory workqueue daemon.
 
-WWW: http://search.cpan.org/dist/Queue-Beanstalk/
+WWW: https://metacpan.org/release/Queue-Beanstalk

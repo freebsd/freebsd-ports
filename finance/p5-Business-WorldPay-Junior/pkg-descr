@@ -6,4 +6,4 @@ then verify the callback data supplied by WorldPay after a payment has been
 made. The module is designed with the requirement to immediately verify that
 a payment has been made and is as expected in mind.
 
-WWW: http://search.cpan.org/dist/Business-WorldPay-Junior/
+WWW: https://metacpan.org/release/Business-WorldPay-Junior

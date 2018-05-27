@@ -10,4 +10,4 @@ it, because these functions works at a lower level. However if
 you're trying to implement a timeout for a socket, see IO::Socket::Timeout
 that implements exactly that.
 
-WWW: http://search.cpan.org/dist/PerlIO-via-Timeout
+WWW: https://metacpan.org/release/PerlIO-via-Timeout

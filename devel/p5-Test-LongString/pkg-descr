@@ -4,4 +4,4 @@ long strings. If you've ever had to search for text in a multi-line string
 like an HTML document, or find specific items in binary data,
 this is the module for you.
 
-WWW: http://search.cpan.org/dist/Test-LongString/
+WWW: https://metacpan.org/release/Test-LongString

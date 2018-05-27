@@ -10,4 +10,4 @@ The "language_guess()" function takes a document as a parameter and
 returns the abbreviation of the language that it is most likely written
 in.
 
-WWW: http://search.cpan.org/dist/Text-Language-Guess/
+WWW: https://metacpan.org/release/Text-Language-Guess

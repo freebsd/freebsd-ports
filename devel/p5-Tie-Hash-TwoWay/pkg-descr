@@ -6,4 +6,4 @@ array reference of class names, and build the reverse mapping of classes
 to machines.  All the mappings are stored as hashes.  You can access the
 secondary mappings as if they were hash keys in their own right.
 
-WWW: http://search.cpan.org/dist/Tie-Hash-TwoWay/
+WWW: https://metacpan.org/release/Tie-Hash-TwoWay

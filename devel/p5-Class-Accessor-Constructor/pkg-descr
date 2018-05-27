@@ -3,4 +3,4 @@ Class::Accessor does.  While the latter deals with accessors for
 scalar values, this module provides accessor makers for rather
 flexible constructors.
 
-WWW: http://search.cpan.org/dist/Class-Accessor-Constructor/
+WWW: https://metacpan.org/release/Class-Accessor-Constructor

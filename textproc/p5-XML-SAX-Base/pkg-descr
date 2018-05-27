@@ -9,4 +9,4 @@ method, or has defined an AUTOLOAD), and the guarantee that filters will pass
 along events that they aren't implementing to handlers downstream that might
 nevertheless be interested in them.
 
-WWW: http://search.cpan.org/dist/XML-SAX-Base/
+WWW: https://metacpan.org/release/XML-SAX-Base

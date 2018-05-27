@@ -2,4 +2,4 @@ Unix::Groups::FFI provides a FFI interface to several syscalls related to Unix
 groups, including getgroups(2), setgroups(2), getgrouplist(3), and
 initgroups(3). As such it will only work on Unix-like operating systems.
 
-WWW: http://search.cpan.org/dist/Unix-Groups-FFI/
+WWW: https://metacpan.org/release/Unix-Groups-FFI

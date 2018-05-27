@@ -9,4 +9,4 @@ By default we check for overloads, and mark those functions as methods.
 If 'autoclean => 1' is passed to import on use'ing this module, we will invoke
 namespace::autoclean to clear out non-methods.
 
-WWW: http://search.cpan.org/dist/MooseX-MarkAsMethods/
+WWW: https://metacpan.org/release/MooseX-MarkAsMethods

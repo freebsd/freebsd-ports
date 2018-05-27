@@ -1,4 +1,4 @@
 Module::Install::XSUtil provides a set of utilities to setup distributions which
 include or depend on XS module.
 
-WWW: http://search.cpan.org/dist/Module-Install-XSUtil/
+WWW: https://metacpan.org/release/Module-Install-XSUtil

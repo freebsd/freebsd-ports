@@ -10,4 +10,4 @@ how to assemble frames and find responses to probes.
 For example, it will take care of computing lengths and checksums,
 and matching a response frame to the requesting frame.
 
-WWW: http://search.cpan.org/dist/Net-Frame-Simple/
+WWW: https://metacpan.org/release/Net-Frame-Simple

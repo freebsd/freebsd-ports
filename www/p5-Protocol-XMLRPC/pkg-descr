@@ -7,4 +7,4 @@ It differs from other modules because it doesn't provide any mechanism for
 making actual HTTP requests. This way it can be used either in async or sync
 modes with your favorite http client or a web framework.
 
-WWW: http://search.cpan.org/dist/Protocol-XMLRPC/
+WWW: https://metacpan.org/release/Protocol-XMLRPC

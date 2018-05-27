@@ -3,6 +3,6 @@ barely readable. You should convert all text to lowercase for maximum
 compression, because optimizations have been designed mostly for
 uncapitalised letters.
 
-WWW: http://search.cpan.org/dist/Lingua-EN-Squeeze/
+WWW: https://metacpan.org/release/Lingua-EN-Squeeze
 
 Seamus Venasse <svenasse@polaris.ca>

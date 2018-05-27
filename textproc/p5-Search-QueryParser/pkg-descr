@@ -2,4 +2,4 @@ Search::QueryParser parses a query string into a data structure to be handled by
 external search engines. For examples of such engines, see File::Tabular and
 Search::Indexer.
 
-WWW: http://search.cpan.org/dist/Search-QueryParser/
+WWW: https://metacpan.org/release/Search-QueryParser

@@ -3,4 +3,4 @@ and wrap-around.  It is a clock only; it has absolutely no concept of dates.
 Vagaries of date/time such as leap seconds and daylight savings time are
 unsupported.
 
-WWW: http://search.cpan.org/dist/Time-Clock/
+WWW: https://metacpan.org/release/Time-Clock

@@ -2,4 +2,4 @@ This is a pure perl implementation of the new AES Rijndael. You want
 to use Crypt::Rijndael where available. This implementation is really
 slow, but I am working on it.
 
-WWW: http://search.cpan.org/dist/Crypt-Rijndael_PP/
+WWW: https://metacpan.org/release/Crypt-Rijndael_PP

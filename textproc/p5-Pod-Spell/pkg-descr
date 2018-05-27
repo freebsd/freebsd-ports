@@ -5,4 +5,4 @@ like Perl symbols or Perl jargon (so that your spellchecking program
 won't complain about mystery words like "$thing" or "Foo::Bar" or
 "hashref").
 
-WWW: http://search.cpan.org/dist/Pod-Spell/
+WWW: https://metacpan.org/release/Pod-Spell

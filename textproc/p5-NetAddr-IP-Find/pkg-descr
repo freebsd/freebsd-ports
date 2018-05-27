@@ -6,4 +6,4 @@ Email::Find's find_emails().
 
 $num_ipaddrs_found = find_ipaddrs($text, \&callback);
 
-WWW: http://search.cpan.org/dist/NetAddr-IP-Find/
+WWW: https://metacpan.org/release/NetAddr-IP-Find

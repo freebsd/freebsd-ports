@@ -4,4 +4,4 @@ for their existence. URI allows the entire query to be set or returned as
 a whole via the query_form or query methods, and the URI::QueryParam module
 provides a few more methods for query string manipulation.
 
-WWW: http://search.cpan.org/dist/Rose-URI/
+WWW: https://metacpan.org/release/Rose-URI

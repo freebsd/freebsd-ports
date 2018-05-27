@@ -21,4 +21,4 @@
   reasonable derivatives at the (x,y) pairs. The robust interpolator
   can also use derivative information supplied by the user.
 
-WWW: http://search.cpan.org/dist/Math-Interpolate/
+WWW: https://metacpan.org/release/Math-Interpolate

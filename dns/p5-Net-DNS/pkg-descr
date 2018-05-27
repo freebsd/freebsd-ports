@@ -5,4 +5,4 @@ beyond the capabilities of gethostbyname and gethostbyaddr.
 There are also methods for dealing with creating and parsing dynamic updates
 packets.
 
-WWW: http://search.cpan.org/dist/Net-DNS/
+WWW: https://metacpan.org/release/Net-DNS

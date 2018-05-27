@@ -1,4 +1,4 @@
 Types::URI is a type constraint library suitable for use with
 Moo/Moose attributes, Kavorka sub signatures, and so forth.
 
-WWW: http://search.cpan.org/dist/Types-URI/
+WWW: https://metacpan.org/release/Types-URI

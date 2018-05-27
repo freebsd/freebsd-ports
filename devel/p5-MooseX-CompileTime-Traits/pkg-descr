@@ -7,4 +7,4 @@ Roles and their arguments should be provided as an ArrayRef of tuples.
 
 Simply 'with' the role to gain the functionality.
 
-WWW: http://search.cpan.org/dist/MooseX-CompileTime-Traits/
+WWW: https://metacpan.org/release/MooseX-CompileTime-Traits

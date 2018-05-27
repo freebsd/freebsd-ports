@@ -11,4 +11,4 @@ done_testing calculates the test count, rather than after. It does this by
 hooking into done_testing as well as via an END block. You can declare a plan,
 or not, and things will still Just Work.
 
-WWW: http://search.cpan.org/dist/Test-Warnings/
+WWW: https://metacpan.org/release/Test-Warnings

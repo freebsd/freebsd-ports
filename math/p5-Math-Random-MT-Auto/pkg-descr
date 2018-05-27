@@ -10,4 +10,4 @@ the Object::InsideOut module) for generating multiple PRNG objects.
 The PRNGs are self-seeding, automatically acquiring a (19968-bit)
 random seed from user-selectable sources.
 
-WWW: http://search.cpan.org/dist/Math-Random-MT-Auto/
+WWW: https://metacpan.org/release/Math-Random-MT-Auto

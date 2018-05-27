@@ -6,4 +6,4 @@ losing the reference to it. Its impossible.
 Regexp::Copy allows you to change the Regexp by copying one object created
 through qr// to another.
 
-WWW: http://search.cpan.org/dist/Regexp-Copy/
+WWW: https://metacpan.org/release/Regexp-Copy

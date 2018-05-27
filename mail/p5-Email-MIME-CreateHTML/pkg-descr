@@ -3,4 +3,4 @@ text-only alternative and embedded media objects. For example,
 an HTML email with an alternative version in plain text and
 with all the required images contained in the mail.
 
-WWW: http://search.cpan.org/dist/Email-MIME-CreateHTML/
+WWW: https://metacpan.org/release/Email-MIME-CreateHTML

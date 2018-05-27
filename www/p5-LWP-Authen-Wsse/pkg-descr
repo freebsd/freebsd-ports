@@ -6,4 +6,4 @@ in your code. The LWP system will invoke the WSSE authentication when it
 encounters the authentication scheme while attempting to retrieve a URL
 from a server.
 
-WWW: http://search.cpan.org/dist/LWP-Authen-Wsse/
+WWW: https://metacpan.org/release/LWP-Authen-Wsse

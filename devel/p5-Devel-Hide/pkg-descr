@@ -2,4 +2,4 @@ Given a list of Perl modules/filenames, this module makes require and
 use statements fail (no matter the specified files/modules are installed
 or not).
 
-WWW: http://search.cpan.org/dist/Devel-Hide/
+WWW: https://metacpan.org/release/Devel-Hide

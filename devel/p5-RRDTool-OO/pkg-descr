@@ -8,4 +8,4 @@ away implementation details of the RRD engine, uses easy to memorize named
 parameters and sets meaningful defaults for parameters not needed in simple
 cases.
 
-WWW: http://search.cpan.org/dist/RRDTool-OO/
+WWW: https://metacpan.org/release/RRDTool-OO

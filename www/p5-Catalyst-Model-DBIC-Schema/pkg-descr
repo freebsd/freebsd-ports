@@ -4,4 +4,4 @@ Catalyst::Helper::Model::DBIC::SchemaLoader for information on
 generating these Models via Helper scripts. The latter of the two will
 also generated a DBIx::Class::Schema::Loader-based Schema class for you.
 
-WWW: http://search.cpan.org/dist/Catalyst-Model-DBIC-Schema/
+WWW: https://metacpan.org/release/Catalyst-Model-DBIC-Schema

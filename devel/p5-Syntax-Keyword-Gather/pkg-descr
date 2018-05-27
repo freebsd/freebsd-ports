@@ -4,4 +4,4 @@ block/closure controlled by a gather any call to take pushes that call's
 argument list to an implicitly created array. take returns the number of
 elements it took. Syntax::Keyword::Gather implements that control structure.
 
-WWW: http://search.cpan.org/dist/Syntax-Keyword-Gather/
+WWW: https://metacpan.org/release/Syntax-Keyword-Gather

@@ -7,4 +7,4 @@ use methodology for the validation, pre-preparation and post-cleanup associated
 with each template. It also provides easy logging mechanisms, graceful fatal
 error handling, including special templates and emails to admins.
 
-WWW: http://search.cpan.org/dist/CGI-Framework/
+WWW: https://metacpan.org/release/CGI-Framework

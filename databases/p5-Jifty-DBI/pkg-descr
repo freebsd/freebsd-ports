@@ -6,4 +6,4 @@ updating data in a DBI-accesible database.
 This module is the direct descendent of DBIx::SearchBuilder. If you're
 familiar with SearchBuilder, Jifty::DBI should be quite familiar to you.
 
-WWW: http://search.cpan.org/dist/Jifty-DBI/
+WWW: https://metacpan.org/release/Jifty-DBI

@@ -2,4 +2,4 @@ This module allows you to search for any of a list of substrings
 ("keys") in a larger string. It is particularly efficient when the set
 of keys is large.
 
-WWW: http://search.cpan.org/dist/Text-Match-FastAlternatives/
+WWW: https://metacpan.org/release/Text-Match-FastAlternatives

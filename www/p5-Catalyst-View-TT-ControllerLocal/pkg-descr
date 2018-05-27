@@ -19,4 +19,4 @@ directory, C::V::TT::ControllerLocal will default to looking for
 "edit.html" in ./root/ and ./root/base (or whatever you set MyApp->con-
 fig->{INCLUDE_PATH} to).
 
-WWW: http://search.cpan.org/dist/Catalyst-View-TT-ControllerLocal/
+WWW: https://metacpan.org/release/Catalyst-View-TT-ControllerLocal

@@ -1,4 +1,4 @@
 CGI::Application::Plugin::Redirect
     Easy external redirects in CGI::Application.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-Redirect/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-Redirect

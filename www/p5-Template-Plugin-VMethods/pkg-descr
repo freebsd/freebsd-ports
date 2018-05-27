@@ -1,4 +1,4 @@
 Simple base class to allow your module to install and remove virtual
 methods into the Template Toolkit.
 
-WWW: http://search.cpan.org/dist/Template-Plugin-VMethods/
+WWW: https://metacpan.org/release/Template-Plugin-VMethods

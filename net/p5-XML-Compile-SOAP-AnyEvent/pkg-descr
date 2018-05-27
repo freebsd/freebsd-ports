@@ -5,4 +5,4 @@ compose XML, but only worries about the HTTP aspects.
 In contrairy to XML::Compile::Transport::SOAPHTTP, this implementation
 can be used in various event-driven environments, via AnyEvent::HTTP.
 
-WWW: http://search.cpan.org/dist/XML-Compile-SOAP-AnyEvent/
+WWW: https://metacpan.org/release/XML-Compile-SOAP-AnyEvent

@@ -2,4 +2,4 @@ Type::Tiny::XS provides an XS boost for some of Type::Tiny's built-in type
 constraints. Type::Tiny::XS is not required for Type::Tiny, but provides a speed
 boost for some type checks if available.
 
-WWW: http://search.cpan.org/dist/Type-Tiny-XS/
+WWW: https://metacpan.org/release/Type-Tiny-XS

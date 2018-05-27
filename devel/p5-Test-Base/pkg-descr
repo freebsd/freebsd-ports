@@ -8,4 +8,4 @@ trivial.
 Test::Base gives you a way to write your own test framework base class
 that *is* trivial.
 
-WWW: http://search.cpan.org/dist/Test-Base/
+WWW: https://metacpan.org/release/Test-Base

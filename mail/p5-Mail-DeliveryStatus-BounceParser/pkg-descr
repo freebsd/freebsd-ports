@@ -5,4 +5,4 @@ returned message including the Message-ID. It works best with RFC1892
 delivery reports, but will gamely attempt to understand any bounce
 message no matter what MTA generated it.
 
-WWW: http://search.cpan.org/dist/Mail-DeliveryStatus-BounceParser/
+WWW: https://metacpan.org/release/Mail-DeliveryStatus-BounceParser

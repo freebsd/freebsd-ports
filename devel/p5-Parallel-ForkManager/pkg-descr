@@ -3,4 +3,4 @@ done in parallel where the number of processes to be
 forked off should be limited. Typical use is a downloader
 which will be retrieving hundreds/thousands of files.
 
-WWW: http://search.cpan.org/dist/Parallel-ForkManager/
+WWW: https://metacpan.org/release/Parallel-ForkManager

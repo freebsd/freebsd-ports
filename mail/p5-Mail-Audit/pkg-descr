@@ -7,4 +7,4 @@ easily create filter programs to stick in a .forward file or similar.
 Mail::Audit groks MIME; when appropriate, it subclasses MIME::Entity.
 Read the MIME::Tools man page for details.
 
-WWW: http://search.cpan.org/dist/Mail-Audit/
+WWW: https://metacpan.org/release/Mail-Audit

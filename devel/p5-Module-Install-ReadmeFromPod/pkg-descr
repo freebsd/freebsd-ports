@@ -3,4 +3,4 @@ generates a README file automatically from an indicated file
 containing POD, whenever the author runs Makefile.PL. Several output
 formats are supported: plain-text, HTML, PDF or manpage.
 
-WWW: http://search.cpan.org/dist/Module-Install-ReadmeFromPod/
+WWW: https://metacpan.org/release/Module-Install-ReadmeFromPod

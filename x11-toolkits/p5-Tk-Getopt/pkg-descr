@@ -1,4 +1,4 @@
 Tk::Getopt provides an interface to access command line options via
 Getopt::Long and editing with a graphical user interface via a Tk window.
 
-WWW: http://search.cpan.org/dist/Tk-Getopt/
+WWW: https://metacpan.org/release/Tk-Getopt

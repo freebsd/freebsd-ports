@@ -5,4 +5,4 @@ unpack, but it's the author's belief that this module helps in the
 maintainability of working with fixed length formats as the number of
 fields in a format grows.
 
-WWW: http://search.cpan.org/dist/Parse-FixedLength/
+WWW: https://metacpan.org/release/Parse-FixedLength

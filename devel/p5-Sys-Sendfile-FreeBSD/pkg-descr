@@ -1,4 +1,4 @@
 Uses the FreeBSD sendfile(2) function to send the contents of an open file
 handle directly to an open socket.
 
-WWW: http://search.cpan.org/dist/Sys-Sendfile-FreeBSD/
+WWW: https://metacpan.org/release/Sys-Sendfile-FreeBSD

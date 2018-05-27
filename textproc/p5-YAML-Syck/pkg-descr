@@ -6,4 +6,4 @@ JSON is YAML (http://redhanded.hobix.com/inspect/yamlIsJson.html),
 using libsyck gives you the fastest and most memory efficient parser
 and dumper for JSON data representation.
 
-WWW: http://search.cpan.org/dist/YAML-Syck/
+WWW: https://metacpan.org/release/YAML-Syck

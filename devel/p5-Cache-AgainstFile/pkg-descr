@@ -19,4 +19,4 @@ Data structures are automatically serialised/deserialised by the
 backend modules if they are being persisted somewhere other than
 in memory (e.g. on the filesystem).
 
-WWW: http://search.cpan.org/dist/Cache-AgainstFile/
+WWW: https://metacpan.org/release/Cache-AgainstFile

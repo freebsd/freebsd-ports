@@ -5,7 +5,7 @@ existing Perl control structures. The semantics are particularly
 rich, allowing any one (or more) of nearly 30 forms of matching to
 be used when comparing a switch value with its various cases.
 
-WWW: http://search.cpan.org/dist/Switch/
+WWW: https://metacpan.org/release/Switch
 
 -Anton
 <tobez@FreeBSD.org>

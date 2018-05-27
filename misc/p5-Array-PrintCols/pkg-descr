@@ -3,4 +3,4 @@ of elements in alphabetically, vertically sorted columns.  Optional arguments
 can be given to control either the width or number of the columns, the total
 width of the output, and the amount of indentation.
 
-WWW: http://search.cpan.org/dist/Array-PrintCols/
+WWW: https://metacpan.org/release/Array-PrintCols

@@ -21,4 +21,4 @@ Any of the test functions can be used as instance methods on a Test::Command
 object. This is done by dropping the initial $cmd argument and instead using
 arrow notation.
 
-WWW: http://search.cpan.org/dist/Test-Command/
+WWW: https://metacpan.org/release/Test-Command

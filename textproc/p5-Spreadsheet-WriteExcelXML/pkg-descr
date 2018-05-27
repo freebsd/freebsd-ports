@@ -13,4 +13,4 @@ Spreadsheet::WriteExcel.
 This module cannot, as yet, be used to write to an existing
 Excel XML file.
 
-WWW: http://search.cpan.org/dist/Spreadsheet-WriteExcelXML/
+WWW: https://metacpan.org/release/Spreadsheet-WriteExcelXML

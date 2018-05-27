@@ -8,4 +8,4 @@ regexp which isn't matched by the second - many regular expressions (i.e. those
 containing Perl code) are impossible to compare, and this module doesn't even
 implement all possible comparisons.
 
-WWW: http://search.cpan.org/dist/Regexp-Compare/
+WWW: https://metacpan.org/release/Regexp-Compare

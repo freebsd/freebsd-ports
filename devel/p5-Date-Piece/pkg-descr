@@ -5,4 +5,4 @@ component and do math directly on the date. If you need a time-of-day
 on the calculated date, the at() method returns a Time::Piece object,
 thus allowing you to be specific about the endpoints of a nominal interval.
 
-WWW: http://search.cpan.org/dist/Date-Piece/
+WWW: https://metacpan.org/release/Date-Piece

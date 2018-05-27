@@ -4,4 +4,4 @@ and mobile phones.  You can know the visual width of any text and
 truncate text by the visual width. Now this module support EUC-JP and
 UTF-8 and tested only with Japanese.
 
-WWW: http://search.cpan.org/dist/Text-VisualWidth/
+WWW: https://metacpan.org/release/Text-VisualWidth

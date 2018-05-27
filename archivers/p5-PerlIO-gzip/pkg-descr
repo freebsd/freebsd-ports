@@ -3,4 +3,4 @@ format used by the gzip program.  Compression and decompression are
 implemented, but not together.  If you attempt to open a file for
 reading and writing the open will fail.
 
-WWW: http://search.cpan.org/dist/PerlIO-gzip/
+WWW: https://metacpan.org/release/PerlIO-gzip

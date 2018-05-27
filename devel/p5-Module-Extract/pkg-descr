@@ -9,4 +9,4 @@ features to be added in the future without having to modify both of them,
 because the general problem of "locate, download, and expand a distribution"
 is one that is almost ideal for adding additional features down the line.
 
-WWW: http://search.cpan.org/dist/Module-Extract/
+WWW: https://metacpan.org/release/Module-Extract

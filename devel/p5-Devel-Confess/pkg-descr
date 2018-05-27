@@ -3,4 +3,4 @@ complain loudly with stack backtraces when warn()ing or die()ing. Unlike other
 similar modules (e.g. Carp::Always), stack traces will also be included when
 exception objects are thrown.
 
-WWW: http://search.cpan.org/dist/Devel-Confess/
+WWW: https://metacpan.org/release/Devel-Confess

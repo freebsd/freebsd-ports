@@ -5,4 +5,4 @@ It works with reals, integers, and objects.
 When it is used dates, this module provides schedule checks (intersections),
 unions, and infinite recurrences.
 
-WWW: http://search.cpan.org/dist/Set-Infinite/
+WWW: https://metacpan.org/release/Set-Infinite

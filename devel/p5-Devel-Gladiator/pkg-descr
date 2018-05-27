@@ -3,4 +3,4 @@ structures and can be used to enumerate all the currently live SVs.
 
 This can be used to hunt leaks and to profile memory usage.
 
-WWW: http://search.cpan.org/dist/Devel-Gladiator/
+WWW: https://metacpan.org/release/Devel-Gladiator

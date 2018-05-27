@@ -4,4 +4,4 @@ random identifiers, and anything else you can think of.
 
 Like this: my $token = Session::Token->new->get; # 128 bits
 
-WWW: http://search.cpan.org/dist/Session-Token/
+WWW: https://metacpan.org/release/Session-Token

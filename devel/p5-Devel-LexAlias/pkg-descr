@@ -17,4 +17,4 @@ lexalias( $where, $name, $variable )
 
     $variable is a reference to the variable to install at that location
 
-WWW: http://search.cpan.org/dist/Devel-LexAlias/
+WWW: https://metacpan.org/release/Devel-LexAlias

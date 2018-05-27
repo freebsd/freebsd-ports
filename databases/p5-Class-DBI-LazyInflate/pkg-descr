@@ -4,4 +4,4 @@ When a row is fetched, columns specified via has_lazy() is wrapped
 by Data::Lazy, such that it is inflated only when the column is
 actually used.
 
-WWW: http://search.cpan.org/dist/Class-DBI-LazyInflate/
+WWW: https://metacpan.org/release/Class-DBI-LazyInflate

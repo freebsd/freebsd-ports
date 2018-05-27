@@ -2,4 +2,4 @@ This is a parser for Makefiles. At this very early stage, the parser
 only supports a limited set of features, so it may not recognize some
 advanced features provided by certain make tools like GNU make.
 
-WWW: http://search.cpan.org/dist/Makefile-Parser/
+WWW: https://metacpan.org/release/Makefile-Parser

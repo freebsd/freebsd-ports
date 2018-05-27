@@ -1,4 +1,4 @@
 This module implements BSON serialization and deserialization as described at
 http://bsonspec.org. BSON is the primary data representation for MongoDB.
 
-WWW: http://search.cpan.org/dist/BSON/
+WWW: https://metacpan.org/release/BSON

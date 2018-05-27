@@ -4,4 +4,4 @@ document systems, especially the HTML DOM. Pod::Elemental's document
 object model is much less sophisticated than the HTML DOM, but still makes
 a lot of document transformations easy.
 
-WWW: http://search.cpan.org/dist/Pod-Elemental/
+WWW: https://metacpan.org/release/Pod-Elemental

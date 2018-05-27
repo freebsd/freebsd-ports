@@ -10,4 +10,4 @@ entities. SmartyPants can perform the following transformations:
 * Dashes (-- and ---) into en- and em-dash entities
 * Three consecutive dots (...) into an ellipsis entity
 
-WWW: http://search.cpan.org/dist/Text-Typography/
+WWW: https://metacpan.org/release/Text-Typography

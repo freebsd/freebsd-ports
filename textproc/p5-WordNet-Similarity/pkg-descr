@@ -20,4 +20,4 @@ A command line interface to these modules is also present in the package. The
 simple, user-friendly interface returns the relatedness measure of two given
 words.
 
-WWW: http://search.cpan.org/dist/WordNet-Similarity/
+WWW: https://metacpan.org/release/WordNet-Similarity

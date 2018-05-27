@@ -1,5 +1,5 @@
 This module implements a simple SAX filter that provides XInclude
 support.  It does NOT support XPointer.
 
-WWW: http://search.cpan.org/dist/XML-Filter-XInclude/
+WWW: https://metacpan.org/release/XML-Filter-XInclude
 WWW: http://www.w3.org/TR/XInclude

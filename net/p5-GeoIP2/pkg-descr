@@ -4,4 +4,4 @@ API also works with the free GeoLite2 databases.
 See GeoIP2::WebService::Client for details on the web service client API and
 GeoIP2::Database::Reader for the database API.
 
-WWW: http://search.cpan.org/dist/GeoIP2/
+WWW: https://metacpan.org/release/GeoIP2

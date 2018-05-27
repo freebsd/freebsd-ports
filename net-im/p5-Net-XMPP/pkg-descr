@@ -8,4 +8,4 @@ access to the XMPP protocol.  Using OOP modules we provide a clean
 interface to writing anything from a full client to a simple protocol
 tester.
 
-WWW: http://search.cpan.org/dist/Net-XMPP/
+WWW: https://metacpan.org/release/Net-XMPP

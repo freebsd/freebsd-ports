@@ -4,4 +4,4 @@ compatible with the C compiler that your perl was built with.
 It can generate the necessary options to the Module::Build constructor or to
 ExtUtils::MakeMaker's WriteMakefile function.
 
-WWW: http://search.cpan.org/dist/ExtUtils-CppGuess/
+WWW: https://metacpan.org/release/ExtUtils-CppGuess

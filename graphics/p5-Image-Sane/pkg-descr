@@ -3,4 +3,4 @@ allows you to access SANE-compatible scanners in a Perlish and
 object-oriented way, freeing you from the casting and memory management in
 C, yet remaining very close in spirit to original API.
 
-WWW: http://search.cpan.org/dist/Image-Sane/
+WWW: https://metacpan.org/release/Image-Sane

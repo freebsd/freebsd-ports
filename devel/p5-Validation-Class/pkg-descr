@@ -4,4 +4,4 @@ DRY (don't repeat yourself) code. The primary intent of this module is
 to provide a simplistic validation work-flow and promote code
 (validation) reuse.
 
-WWW: http://search.cpan.org/dist/Validation-Class/
+WWW: https://metacpan.org/release/Validation-Class

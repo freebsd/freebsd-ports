@@ -1,4 +1,4 @@
 This is a subclass of Log::Dispatch::Email that implements the
 send_email method using the Email::Send module.
 
-WWW: http://search.cpan.org/dist/Log-Dispatch-Email-EmailSend/
+WWW: https://metacpan.org/release/Log-Dispatch-Email-EmailSend

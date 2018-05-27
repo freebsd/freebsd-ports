@@ -1,4 +1,4 @@
 This module is used to create HTTP/1.1 servers that listen on a socket
 for incoming requests.
 
-WWW: http://search.cpan.org/dist/HTTP-Daemon/
+WWW: https://metacpan.org/release/HTTP-Daemon

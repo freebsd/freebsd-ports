@@ -2,4 +2,4 @@ POE::Stage is a proposed base class for POE components.  Its purpose is
 to standardize the most common design patterns that have arisen through
 years of POE::Component development.
 
-WWW: http://search.cpan.org/dist/POE-Stage/
+WWW: https://metacpan.org/release/POE-Stage

@@ -11,4 +11,4 @@ base class for auth providers makes handling `RFC2307'-style hashed
 passwords really simple, so you have no excuse for storing plain-text
 passwords).
 
-WWW: http://search.cpan.org/dist/Dancer2-Plugin-Auth-Extensible/
+WWW: https://metacpan.org/release/Dancer2-Plugin-Auth-Extensible

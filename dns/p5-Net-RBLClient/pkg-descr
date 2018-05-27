@@ -7,4 +7,4 @@ criteria for addition and removal of addresses. If you want to block email or
 other traffic to/from your network based on one or more RBL's, you should
 carefully study the behavior of those RBL's before and during such blocking.
 
-WWW: http://search.cpan.org/dist/Net-RBLClient/
+WWW: https://metacpan.org/release/Net-RBLClient

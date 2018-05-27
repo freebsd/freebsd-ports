@@ -10,4 +10,4 @@ interface for managing your web sites published through MovableType.
 Most of the method names correspond to those documented in MovableType's
 Programming Interface Manual.
 
-WWW: http://search.cpan.org/dist/Net-MovableType/
+WWW: https://metacpan.org/release/Net-MovableType

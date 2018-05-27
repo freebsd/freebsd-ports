@@ -12,4 +12,4 @@ linear extra memory is used.
 The algorithm used is discussed by Knuth [3]. It was first published
 by Fisher and Yates [2], and later by Durstenfeld [1].
 
-WWW: http://search.cpan.org/dist/Algorithm-Numerical-Shuffle/
+WWW: https://metacpan.org/release/Algorithm-Numerical-Shuffle

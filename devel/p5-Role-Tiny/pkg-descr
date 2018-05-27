@@ -10,4 +10,4 @@ is the other way around, where first wins. In a more complete system (see Moose)
 roles are checked to see if they clash. The goal of this is to be much simpler,
 hence disallowing composition of multiple roles at once.
 
-WWW: http://search.cpan.org/dist/Role-Tiny/
+WWW: https://metacpan.org/release/Role-Tiny

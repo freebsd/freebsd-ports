@@ -6,4 +6,4 @@ It works by creating one line of JavaScript code per datum. Therefore,
 structures cannot be created anonymously and needed to be assigned to
 variables. This enables dumping big structures.
 
-WWW: http://search.cpan.org/dist/Data-JavaScript/
+WWW: https://metacpan.org/release/Data-JavaScript

@@ -5,4 +5,4 @@ are turned into textareas, and fields with a has-a relationship to
 other Class::DBI tables are turned into select drop-downs populated
 with objects from the joined class.
 
-WWW: http://search.cpan.org/dist/Class-DBI-AsForm/
+WWW: https://metacpan.org/release/Class-DBI-AsForm

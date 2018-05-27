@@ -9,4 +9,4 @@ a 32-bit value. This makes it suitable for applications where a significant
 amount of random data needs to be produced quickly, such solving using the
 Monte Carlo method or for games.
 
-WWW: http://search.cpan.org/dist/Math-Random-ISAAC-XS/
+WWW: https://metacpan.org/release/Math-Random-ISAAC-XS

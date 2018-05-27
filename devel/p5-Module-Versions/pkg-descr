@@ -4,4 +4,4 @@ informations as possible about a module or module list with a simple
 call interface and an absolutely flexible result interface.
 Module::Versions handles *loaded* and *loadable* modules.
 
-WWW: http://search.cpan.org/dist/Module-Versions/
+WWW: https://metacpan.org/release/Module-Versions

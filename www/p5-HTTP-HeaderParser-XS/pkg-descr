@@ -4,4 +4,4 @@ to be fast, not necessarily to do everything you could ever want.
 Headers are not static, you can parse them, munge them, or even build
 them using this module.
 
-WWW: http://search.cpan.org/dist/HTTP-HeaderParser-XS/
+WWW: https://metacpan.org/release/HTTP-HeaderParser-XS

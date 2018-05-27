@@ -7,4 +7,4 @@ loggers from Test::Log::Log4perl with the get_logger method just like you would
 with Log::Log4perl. You're going to use these loggers to declare what you think
 the code you're going to test should be logging.
 
-WWW: http://search.cpan.org/dist/Test-Log-Log4perl/
+WWW: https://metacpan.org/release/Test-Log-Log4perl

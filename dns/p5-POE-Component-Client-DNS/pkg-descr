@@ -2,4 +2,4 @@ POE::Component::Client::DNS is a wrapper for non-blocking Net::DNS.
 It lets other tasks to run while something is waiting for a nameserver
 to respond, and it lets several DNS queries run in parallel.
 
-WWW: http://search.cpan.org/dist/POE-Component-Client-DNS/
+WWW: https://metacpan.org/release/POE-Component-Client-DNS

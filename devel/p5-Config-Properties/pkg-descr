@@ -2,4 +2,4 @@ Config::Properties is a near implementation of the java.util.Properties API.
 It is designed to allow easy reading, writing and manipulation of Java-style
 property files.
 
-WWW: http://search.cpan.org/dist/Config-Properties/
+WWW: https://metacpan.org/release/Config-Properties

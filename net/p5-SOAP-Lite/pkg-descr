@@ -2,4 +2,4 @@ SOAP::Lite is a collection of Perl modules which provides a
 simple and lightweight interface to the Simple Object Access Protocol
 (SOAP) both on client and server side.
 
-WWW: http://search.cpan.org/dist/SOAP-Lite/
+WWW: https://metacpan.org/release/SOAP-Lite

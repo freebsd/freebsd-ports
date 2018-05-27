@@ -1,5 +1,5 @@
 Parses almost all ISO 8601:2000(E) date and time formats. ISO 8601:2000(E)
 time-intervals will be supported in a later release.
 
-WWW: http://search.cpan.org/dist/DateTime-Format-ISO8601/
+WWW: https://metacpan.org/release/DateTime-Format-ISO8601
 WWW: http://datetime.perl.org/

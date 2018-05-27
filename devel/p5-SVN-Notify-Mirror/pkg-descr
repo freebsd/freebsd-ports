@@ -4,4 +4,4 @@ web server in sync with the changes made to the repository. This
 directory can either be on the same box as the repository itself,
 or it can be remote.
 
-WWW: http://search.cpan.org/dist/SVN-Notify-Mirror/
+WWW: https://metacpan.org/release/SVN-Notify-Mirror

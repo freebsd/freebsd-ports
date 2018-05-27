@@ -5,4 +5,4 @@ packets, all a POE developer need do is provide an event and arguments
 for most events so the responses to the requests can be properly
 handled by the coder.
 
-WWW: http://search.cpan.org/dist/POE-Component-Jabber/
+WWW: https://metacpan.org/release/POE-Component-Jabber

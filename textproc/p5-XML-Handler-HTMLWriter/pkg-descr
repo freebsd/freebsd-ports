@@ -2,4 +2,4 @@ XML::Handler::HTMLWriter is a SAX handler module for outputting
 HTML, based on the rules in the XSLT specification, including things
 like empty and non-closing tags, and boolean attributes.
 
-WWW: http://search.cpan.org/dist/XML-Handler-HTMLWriter/
+WWW: https://metacpan.org/release/XML-Handler-HTMLWriter

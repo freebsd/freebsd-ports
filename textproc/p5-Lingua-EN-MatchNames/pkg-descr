@@ -9,6 +9,6 @@ Just feed the first and last names to the name_eq() function, and
 it returns undef for no possible match, and a percentage of certainty
 (rank) otherwise.
 
-WWW: http://search.cpan.org/dist/Lingua-EN-MatchNames/
+WWW: https://metacpan.org/release/Lingua-EN-MatchNames
 
 Seamus Venasse <svenasse@polaris.ca>

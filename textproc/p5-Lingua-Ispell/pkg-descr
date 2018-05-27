@@ -5,4 +5,4 @@ unable to verify, as well as its starting offset in the input line.
 No such information is returned for words which are deemed to be
 correctly spelled.
 
-WWW: http://search.cpan.org/dist/Lingua-Ispell/
+WWW: https://metacpan.org/release/Lingua-Ispell

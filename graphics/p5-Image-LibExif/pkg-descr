@@ -1,4 +1,4 @@
 Very simple and very fast (about 30 times faster than Image::ExifTool) EXIF
 extractor, based on libexif.
 
-WWW: http://search.cpan.org/dist/Image-LibExif/
+WWW: https://metacpan.org/release/Image-LibExif

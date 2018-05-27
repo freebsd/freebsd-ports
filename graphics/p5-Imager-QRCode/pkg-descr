@@ -1,4 +1,4 @@
 This module allows you to generate QR Code with Imager. This module use
 libqrencode library.
 
-WWW: http://search.cpan.org/dist/Imager-QRCode/
+WWW: https://metacpan.org/release/Imager-QRCode

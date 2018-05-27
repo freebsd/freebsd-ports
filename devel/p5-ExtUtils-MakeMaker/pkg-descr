@@ -11,4 +11,4 @@ contains a Makefile.PL is treated as a separate object. This makes it possible
 to write an unlimited number of Makefiles with a single invocation of
 WriteMakefile().
 
-WWW: http://search.cpan.org/dist/ExtUtils-MakeMaker/
+WWW: https://metacpan.org/release/ExtUtils-MakeMaker

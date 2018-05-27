@@ -13,4 +13,4 @@ set a timeout.
 This module therefore allows you to define UNSAFE_SIGNALS blocks in which
 signals will be handled "unsafely".
 
-WWW: http://search.cpan.org/dist/Perl-Unsafe-Signals/
+WWW: https://metacpan.org/release/Perl-Unsafe-Signals

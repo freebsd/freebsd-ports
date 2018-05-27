@@ -2,4 +2,4 @@ Proc::Guard runs process, and destroys it when the perl script exits.
 
 This is useful for testing code working with server process.
 
-WWW: http://search.cpan.org/dist/Proc-Guard/
+WWW: https://metacpan.org/release/Proc-Guard

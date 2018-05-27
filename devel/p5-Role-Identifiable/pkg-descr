@@ -5,4 +5,4 @@ Role::Identifiable::HasTags adds the ability for your class and its
 composed parts (roles, superclasses) as well as instances of it to
 contribute to a pool of tags describing each instance.
 
-WWW: http://search.cpan.org/dist/Role-Identifiable/
+WWW: https://metacpan.org/release/Role-Identifiable

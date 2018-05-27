@@ -4,4 +4,4 @@ at http://bitworking.org/projects/URI-Templates/.
 This module supports draft-gregorio-uritemplate-03 except -opt and
 -neg operators.
 
-WWW: http://search.cpan.org/dist/URI-Template-Restrict/
+WWW: https://metacpan.org/release/URI-Template-Restrict

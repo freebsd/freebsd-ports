@@ -2,4 +2,4 @@ This module allows a program to respond to FastCGI requests using an
 asynchronous model. It is based on IO::Async and will fully interact
 with any program using this base.
 
-WWW: http://search.cpan.org/dist/FCGI-Async/
+WWW: https://metacpan.org/release/FCGI-Async

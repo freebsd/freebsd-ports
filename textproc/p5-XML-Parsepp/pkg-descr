@@ -2,4 +2,4 @@ XML::Parsepp provides a pure Perl implementation to parse XML documents. Its
 interface is very close to that of XML::Parser (in fact, the synopsis has, with
 some minor modifications, been copied from XML::Parser).
 
-WWW: http://search.cpan.org/dist/XML-Parsepp/
+WWW: https://metacpan.org/release/XML-Parsepp

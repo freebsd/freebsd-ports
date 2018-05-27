@@ -7,4 +7,4 @@ the request context available outside of Controllers makes your
 application cleaner. If that's the case, just use this module as a
 base class.
 
-WWW: http://search.cpan.org/dist/Catalyst-Component-ACCEPT_CONTEXT/
+WWW: https://metacpan.org/release/Catalyst-Component-ACCEPT_CONTEXT

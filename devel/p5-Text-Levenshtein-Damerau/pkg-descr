@@ -8,4 +8,4 @@ Text::Levenshtein::Damerau::XS for massive speed imrovements. Works correctly
 with utf8 if backend supports it; known to work with
 Text::Levenshtein::Damerau::PP and Text::Levenshtein::Damerau::XS.
 
-WWW: http://search.cpan.org/dist/Text-Levenshtein-Damerau/
+WWW: https://metacpan.org/release/Text-Levenshtein-Damerau

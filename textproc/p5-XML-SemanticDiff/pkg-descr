@@ -3,4 +3,4 @@ of two XML documents. By default, it returns a list of hashrefs
 where each hashref describes a single difference between the two
 docs.
 
-WWW: http://search.cpan.org/dist/XML-SemanticDiff/
+WWW: https://metacpan.org/release/XML-SemanticDiff

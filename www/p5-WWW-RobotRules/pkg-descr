@@ -3,4 +3,4 @@ robots from accessing parts of a web site. The parsed files are kept in
 a WWW::RobotRules object, and this object provides methods to check if
 access to a given URL is prohibited.
 
-WWW: http://search.cpan.org/dist/WWW-RobotRules/
+WWW: https://metacpan.org/release/WWW-RobotRules

@@ -2,4 +2,4 @@ The Shell::Source allows arbitrary shell scripts, or other programs for
 that matter, to be run and their environment to be inherited into a Perl
 program.
 
-WWW: http://search.cpan.org/dist/Shell-Source/
+WWW: https://metacpan.org/release/Shell-Source

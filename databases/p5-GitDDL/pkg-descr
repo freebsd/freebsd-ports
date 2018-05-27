@@ -5,4 +5,4 @@ By using this module, you can deploy .sql to database, check sql
 version between database and .sql file, make diff between them, and
 apply alter table to database.
 
-WWW: http://search.cpan.org/dist/GitDDL/
+WWW: https://metacpan.org/release/GitDDL

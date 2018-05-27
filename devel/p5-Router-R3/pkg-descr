@@ -4,4 +4,4 @@ implemented in C. It compiles your route paths into a prefix trie.
 By using the constructed prefix trie in the start-up time, you can
 dispatch routes with efficiency.
 
-WWW: http://search.cpan.org/dist/Router-R3/
+WWW: https://metacpan.org/release/Router-R3

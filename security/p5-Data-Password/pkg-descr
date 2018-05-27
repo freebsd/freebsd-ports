@@ -4,4 +4,4 @@ it does not contain the same characters repeatedly, that it does not contain
 ascending or descending characters, or characters close to each other on the
 keyboard. It also searches for the password in the ispell word file.
 
-WWW: http://search.cpan.org/dist/Data-Password/
+WWW: https://metacpan.org/release/Data-Password

@@ -3,4 +3,4 @@ POP3 server.  This means it is an event driven way to communicate with a
 server that implements Post Office Protocol Version 3 see rfc 1939 for
 details on the protocol.
 
-WWW: http://search.cpan.org/dist/POE-Component-Client-POP3/
+WWW: https://metacpan.org/release/POE-Component-Client-POP3

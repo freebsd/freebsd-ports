@@ -1,4 +1,4 @@
 Test::More and Test::Exception and Test::Deep wrapper module for
 declarative testing.
 
-WWW: http://search.cpan.org/dist/Test-Declare/
+WWW: https://metacpan.org/release/Test-Declare

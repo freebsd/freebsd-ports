@@ -7,4 +7,4 @@ Moose::Policy removes most of that hairiness and makes it possible to
 cleanly contain a set of meta-level customizations in one easy to use
 module.
 
-WWW: http://search.cpan.org/dist/Moose-Policy/
+WWW: https://metacpan.org/release/Moose-Policy

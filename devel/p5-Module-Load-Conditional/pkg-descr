@@ -2,4 +2,4 @@ Module::Load::Conditional provides simple ways to query and possibly
 load any of the modules you have installed on your system during
 runtime.
 
-WWW: http://search.cpan.org/dist/Module-Load-Conditional/
+WWW: https://metacpan.org/release/Module-Load-Conditional

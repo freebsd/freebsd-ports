@@ -6,4 +6,4 @@ You can choose to either subclass this module, and thus using its
 accessors on your own module, or to store an Object::Accessor object
 inside your own object, and access the accessors from there.
 
-WWW: http://search.cpan.org/dist/Object-Accessor/
+WWW: https://metacpan.org/release/Object-Accessor

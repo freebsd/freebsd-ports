@@ -6,4 +6,4 @@ databases via SQL queries and written language phrases. Examples are the
 mime.types file and the hosts file, both of which use a simple
 phrasebook design.
 
-WWW: http://search.cpan.org/dist/Data-Phrasebook/
+WWW: https://metacpan.org/release/Data-Phrasebook

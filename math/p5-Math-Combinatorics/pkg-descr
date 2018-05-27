@@ -8,4 +8,4 @@ http://mathworld.wolfram.com/Combinatorics.html
 This module provides a pure-perl implementation of nCk, nPk, and n!
 (combination, permutation, and factorial, respectively).
 
-WWW: http://search.cpan.org/dist/Math-Combinatorics/
+WWW: https://metacpan.org/release/Math-Combinatorics

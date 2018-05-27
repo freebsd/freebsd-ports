@@ -5,4 +5,4 @@ error. If messages are being sent to a terminal, it colors them with terminal
 escape codes, otherwise it colors them with HTML (ideas for more intelligent
 behavior here are welcome).
 
-WWW: http://search.cpan.org/dist/Carp-Always-Color/
+WWW: https://metacpan.org/release/Carp-Always-Color

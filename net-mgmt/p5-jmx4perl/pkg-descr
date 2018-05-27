@@ -4,4 +4,4 @@ transparent access to the Java Management Extensions (JMX) from the perl side.
 It uses a traditional request-response paradigma for performing JMX operations
 on a remote Java Virtual machine.
 
-WWW: http://search.cpan.org/dist/jmx4perl/
+WWW: https://metacpan.org/release/jmx4perl

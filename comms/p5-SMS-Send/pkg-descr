@@ -12,4 +12,4 @@ You should not have to care how it is actually sent, only that it has been sent
 (although some drivers may not be able to provide certainty).
 
 
-WWW: http://search.cpan.org/dist/SMS-Send/
+WWW: https://metacpan.org/release/SMS-Send

@@ -13,4 +13,4 @@ CGI::Expand. Data::Domain is a kind of tree parser on that structure, with some
 facilities for dealing with dependencies within the structure, and with several
 options to finely tune the error messages returned to the user.
 
-WWW: http://search.cpan.org/dist/Data-Domain/
+WWW: https://metacpan.org/release/Data-Domain

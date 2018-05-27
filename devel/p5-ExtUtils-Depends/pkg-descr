@@ -10,4 +10,4 @@ with a
 in the main .pm file) if you need to use functions defined in the
 module.
 
-WWW: http://search.cpan.org/dist/ExtUtils-Depends/
+WWW: https://metacpan.org/release/ExtUtils-Depends

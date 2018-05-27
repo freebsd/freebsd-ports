@@ -7,4 +7,4 @@ templating system, one web services layer, one AJAX toolkit, one set of
 handlers for standalone or FastCGI servers. We work hard to make all the
 bits play well together, so you don't have to.
 
-WWW: http://search.cpan.org/dist/Jifty/
+WWW: https://metacpan.org/release/Jifty

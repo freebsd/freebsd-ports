@@ -5,4 +5,4 @@ hooks that allow you to add options and arguments for import. Finally,
 Exporter::Declare's meta-driven system allows for top-notch
 introspection.
 
-WWW: http://search.cpan.org/dist/Exporter-Declare/
+WWW: https://metacpan.org/release/Exporter-Declare

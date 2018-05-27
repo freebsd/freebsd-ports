@@ -3,4 +3,4 @@ development. This package contains the Perl side of the
 implementation, including all user-serviceable parts (for the
 cross-referencing facility see Sepia::Xref).
 
-WWW: http://search.cpan.org/dist/Sepia/
+WWW: https://metacpan.org/release/Sepia

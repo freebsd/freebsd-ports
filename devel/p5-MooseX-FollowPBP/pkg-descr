@@ -5,4 +5,4 @@ separated into get and set methods. The get methods are prefixed with
 This is the naming style recommended by Damian Conway in Perl Best
 Practices.
 
-WWW: http://search.cpan.org/dist/MooseX-FollowPBP/
+WWW: https://metacpan.org/release/MooseX-FollowPBP

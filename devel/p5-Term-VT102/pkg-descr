@@ -9,4 +9,4 @@ programs by running them in a subprocess and passing their output to a
 VT102 class. You can then see what the application has written on the
 screen by querying the class appropriately.
 
-WWW: http://search.cpan.org/dist/Term-VT102/
+WWW: https://metacpan.org/release/Term-VT102

@@ -6,4 +6,4 @@ database handle to maintain a connection to the database in order to
 minimize that overhead.  DBIx::Connector lets you do that without
 having to worry about dropped or corrupted connections.
 
-WWW: http://search.cpan.org/dist/DBIx-Connector/
+WWW: https://metacpan.org/release/DBIx-Connector

@@ -2,4 +2,4 @@ Shell::EnvImporter allows various kinds of shell scripts (csh, tcsh, bash, zsh
 and even perl) to be "sourced" into a Perl program.  This module also allows
 restoration of the pre-sourced environment.
 
-WWW: http://search.cpan.org/dist/Shell-EnvImporter/
+WWW: https://metacpan.org/release/Shell-EnvImporter

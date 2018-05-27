@@ -2,4 +2,4 @@ CGI::Application::Plugin::Session seamlessly adds session support to
 your CGI::Application modules by providing a CGI::Session object that
 is accessible from anywhere in the application.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-Session/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-Session

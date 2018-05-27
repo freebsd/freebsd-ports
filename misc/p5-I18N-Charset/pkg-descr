@@ -7,4 +7,4 @@ It also maps character set names to Unicode::Map8 conversion scheme
 names (if Unicode::Map8 is installed).  For example, the Unicode::Map8
 scheme name for 'windows-1251' is 'cp1251'.
 
-WWW: http://search.cpan.org/dist/I18N-Charset/
+WWW: https://metacpan.org/release/I18N-Charset

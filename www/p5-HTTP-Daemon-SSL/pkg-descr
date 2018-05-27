@@ -2,4 +2,4 @@ HTTP::Daemon::SSL - a simple http server class with SSL support.
 Instances of the HTTP::Daemon::SSL class are HTTP/1.1 servers
 that listen on a socket for incoming requests.
 
-WWW: http://search.cpan.org/dist/HTTP-Daemon-SSL/
+WWW: https://metacpan.org/release/HTTP-Daemon-SSL

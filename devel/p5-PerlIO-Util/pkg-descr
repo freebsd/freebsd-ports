@@ -4,4 +4,4 @@ methods.
 Utility layers are a part of PerlIO::Util, but you don't need to say use
 PerlIO::Util for loading them. They will be automatically loaded.
 
-WWW: http://search.cpan.org/dist/PerlIO-Util/
+WWW: https://metacpan.org/release/PerlIO-Util

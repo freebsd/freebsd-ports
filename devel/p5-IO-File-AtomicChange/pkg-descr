@@ -4,4 +4,4 @@ This module truncate and write to temporary file. When you call
 $fh->close, replace target file with temporary file preserved
 permission and owner (if possible).
 
-WWW: http://search.cpan.org/dist/IO-File-AtomicChange/
+WWW: https://metacpan.org/release/IO-File-AtomicChange

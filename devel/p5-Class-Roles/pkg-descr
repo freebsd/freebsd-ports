@@ -4,4 +4,4 @@ Roles are named collections of reusable behavior.  They provide a
 mechanism to mark that a class performs certain behaviors and to reuse
 the code that performs those behaviors.
 
-WWW: http://search.cpan.org/dist/Class-Roles/
+WWW: https://metacpan.org/release/Class-Roles

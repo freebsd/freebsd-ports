@@ -6,4 +6,4 @@ It uses the subversion filesystem but provides additional features:
     - Lightweight checkout copy management (no .svn directories).
     - Advanced merge algorithms, like star-merge and cherry picking.
 
-WWW: http://search.cpan.org/dist/SVK/
+WWW: https://metacpan.org/release/SVK

@@ -8,4 +8,4 @@ You can define multiple lines of headers that will appear on each page of
 the printed invoices, and when you do println the module does all the
 necessary paging and stamping for you.
 
-WWW: http://search.cpan.org/dist/Business-TW-Invoice-U420/
+WWW: https://metacpan.org/release/Business-TW-Invoice-U420

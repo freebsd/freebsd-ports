@@ -1,4 +1,4 @@
 This module allows you to use File::Find::Rule file finding semantics to
 Filesys::Virtual derived filesystems.
 
-WWW: http://search.cpan.org/dist/File-Find-Rule-Filesys-Virtual/
+WWW: https://metacpan.org/release/File-Find-Rule-Filesys-Virtual

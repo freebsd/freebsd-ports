@@ -16,4 +16,4 @@ It also becomes very boring and very dangerous to write randomly selection
 for subdirectory searching with special check-routines.  The simple
 standard job of selecting a random line from a file is implemented, too.
 
-WWW: http://search.cpan.org/dist/File-Random/
+WWW: https://metacpan.org/release/File-Random

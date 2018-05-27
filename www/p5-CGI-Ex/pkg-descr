@@ -9,4 +9,4 @@ cases. It does so using as little magic as possible. See CGI::Ex::App.
 The main functionality is provided by several other modules that may be used
 separately, or together through the CGI::Ex interface.
 
-WWW: http://search.cpan.org/dist/CGI-Ex/
+WWW: https://metacpan.org/release/CGI-Ex

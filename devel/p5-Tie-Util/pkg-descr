@@ -2,4 +2,4 @@ This module provides a few subroutines for examining and modifying tied
 variables, including those that hold weak references to the objects to
 which they are tied (weak ties).
 
-WWW: http://search.cpan.org/dist/Tie-Util/
+WWW: https://metacpan.org/release/Tie-Util

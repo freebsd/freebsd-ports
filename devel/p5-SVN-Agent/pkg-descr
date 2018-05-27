@@ -4,4 +4,4 @@ currently performed by running svn binary directly. Thus it is
 probably unportable.  For a much more powerful way of working with
 svn repository see SVN::Client.
 
-WWW: http://search.cpan.org/dist/SVN-Agent/
+WWW: https://metacpan.org/release/SVN-Agent

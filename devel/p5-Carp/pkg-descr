@@ -5,4 +5,4 @@ every call in the call-stack. For a shorter message you can use carp or croak
 which report the error as being from where your module was called. There is no
 guarantee that that is where the error was, but it is a good educated guess.
 
-WWW: http://search.cpan.org/dist/Carp/
+WWW: https://metacpan.org/release/Carp

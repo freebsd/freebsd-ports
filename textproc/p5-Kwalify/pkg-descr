@@ -2,4 +2,4 @@ Kwalify is a parser, schema validator, and data binding tool for
 YAML and JSON.
 This package provides a Perl 5 implementation of Kwalify.
 
-WWW: http://search.cpan.org/dist/Kwalify/
+WWW: https://metacpan.org/release/Kwalify

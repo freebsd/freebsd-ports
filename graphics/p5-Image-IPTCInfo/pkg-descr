@@ -12,4 +12,4 @@ programs -- pull it back out. You can use the information directly in
 Perl programs, export it to XML, or even export SQL statements ready
 to be fed into a database.
 
-WWW: http://search.cpan.org/dist/Image-IPTCInfo/
+WWW: https://metacpan.org/release/Image-IPTCInfo

@@ -3,4 +3,4 @@ names with values. It was designed for mid to large scale web applications (CGI,
 mod_perl) where there are great benefits to separating the logic of an
 application from the specific implementation details.
 
-WWW: http://search.cpan.org/dist/CGI-FastTemplate/
+WWW: https://metacpan.org/release/CGI-FastTemplate

@@ -2,4 +2,4 @@ Text::Similarity serves as a superclass for other modules
 that implement measures of text document similarity.
 See also http://text-similarity.sourceforge.net
 
-WWW: http://search.cpan.org/dist/Text-Similarity/
+WWW: https://metacpan.org/release/Text-Similarity

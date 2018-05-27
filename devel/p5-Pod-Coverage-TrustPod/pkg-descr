@@ -2,4 +2,4 @@ Pod::Coverage::TrustPod is a Pod::Coverage subclass (actually, a subclass of
 Pod::Coverage::CountParents) that allows the POD itself to declare certain
 symbol names trusted.
 
-WWW: http://search.cpan.org/dist/Pod-Coverage-TrustPod/
+WWW: https://metacpan.org/release/Pod-Coverage-TrustPod

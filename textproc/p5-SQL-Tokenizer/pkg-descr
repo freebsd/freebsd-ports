@@ -2,4 +2,4 @@ SQL::Tokenizer is a simple tokenizer for SQL queries. It does not claim
 to be a parser or query verifier. It just creates sane tokens from a
 valid SQL query.
 
-WWW: http://search.cpan.org/dist/SQL-Tokenizer/
+WWW: https://metacpan.org/release/SQL-Tokenizer

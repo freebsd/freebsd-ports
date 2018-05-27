@@ -7,4 +7,4 @@ ignores others. Depending on which rmap_* wrapper is used, the BLOCK is called
 for only scalar values, arrays, hashes, references, all elements or a
 customizable combination.
 
-WWW: http://search.cpan.org/dist/Data-Rmap/
+WWW: https://metacpan.org/release/Data-Rmap

@@ -4,4 +4,4 @@ implemented mostly in C.
 Crypt::DH uses Math::BigInt, which is a very feature-full and fast
 interface to perform high-precision math.
 
-WWW: http://search.cpan.org/dist/Crypt-DH-GMP/
+WWW: https://metacpan.org/release/Crypt-DH-GMP

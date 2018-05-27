@@ -10,4 +10,4 @@ Encodings supported are as follows:
                qr/\b(x-)?iso-?2022-?jp-?ascii$/i
   --------------------------------------------------------------
 
-WWW: http://search.cpan.org/dist/Unicode-Japanese/
+WWW: https://metacpan.org/release/Unicode-Japanese

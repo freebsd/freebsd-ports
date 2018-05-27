@@ -6,4 +6,4 @@ intended to replace the Sys::Syslog or Unix::Syslog modules, but instead to
 provide a method of using syslog when a local syslogd is unavailable or when
 you don't want to write syslog messages to the local syslog.
 
-WWW: http://search.cpan.org/dist/Net-Syslog/
+WWW: https://metacpan.org/release/Net-Syslog

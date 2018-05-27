@@ -3,4 +3,4 @@ mail message. And now suppose you've done some kind of full-text search
 on that text for a bunch of keywords, and you want to display the
 context in which you found the keywords inside the body of the text.
 
-WWW: http://search.cpan.org/dist/Text-Context-EitherSide/
+WWW: https://metacpan.org/release/Text-Context-EitherSide

@@ -6,4 +6,4 @@ get 1 (the very same) Cycle object even if you use the new method several
 times. This is done by using Memoize on the new method. It returns the same
 object for every use of new that comes with the same List of parameters.
 
-WWW: http://search.cpan.org/dist/List-Rotation-Cycle/
+WWW: https://metacpan.org/release/List-Rotation-Cycle

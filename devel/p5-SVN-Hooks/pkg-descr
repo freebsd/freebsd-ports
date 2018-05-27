@@ -20,4 +20,4 @@ It also comes with post-commit hooks for:
 But as a framework, it can be extended to implement all types of
 hooks.
 
-WWW: http://search.cpan.org/dist/SVN-Hooks/
+WWW: https://metacpan.org/release/SVN-Hooks

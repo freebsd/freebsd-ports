@@ -3,4 +3,4 @@ frequency of given text/string.
 
 This module provides a Perl interface to YASA via REST.
 
-WWW: http://search.cpan.org/dist/Net-YASA/
+WWW: https://metacpan.org/release/Net-YASA

@@ -2,4 +2,4 @@ The File::Tail module is designed for reading files which are continuously
 appended to (the name comes from the tail -f directive). Usually such files
 are log files of some description.
 
-WWW: http://search.cpan.org/dist/File-Tail/
+WWW: https://metacpan.org/release/File-Tail

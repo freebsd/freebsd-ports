@@ -5,4 +5,4 @@ This module offers
 - access to the SSL api of SSLeay package,
   so you can write servers or clients for more complicated applications
 
-WWW: http://search.cpan.org/dist/Net-SSLeay/
+WWW: https://metacpan.org/release/Net-SSLeay

@@ -4,4 +4,4 @@ TNEF stands for Transport Neutral Encapsulation Format, and if
 you've ever been unfortunate enough to receive one of these files
 as an email attachment, you may want to use this module.
 
-WWW: http://search.cpan.org/dist/Convert-TNEF/
+WWW: https://metacpan.org/release/Convert-TNEF

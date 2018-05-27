@@ -2,4 +2,4 @@ App::Rad aims to be a simple yet powerful framework for developing your
 command-line applications. It can easily transform your Perl one-liners into
 reusable subroutines than can be called directly by the user of your program.
 
-WWW: http://search.cpan.org/dist/App-Rad/
+WWW: https://metacpan.org/release/App-Rad

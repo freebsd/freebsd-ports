@@ -9,4 +9,4 @@ conflicts with your type names, since the internal fully qualified names of the
 This module will also provide you with some helper functions to make it easier
 to use Moose types in your code.
 
-WWW: http://search.cpan.org/dist/MooseX-Types/
+WWW: https://metacpan.org/release/MooseX-Types

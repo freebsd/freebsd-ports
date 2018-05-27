@@ -3,4 +3,4 @@ apps. It is the basis for both authentication (checking the user is who
 they claim to be), and authorization (allowing the user to do what the
 system authorises them to do).
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Authentication/
+WWW: https://metacpan.org/release/Catalyst-Plugin-Authentication

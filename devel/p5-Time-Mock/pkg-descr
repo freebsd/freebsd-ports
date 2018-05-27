@@ -4,4 +4,4 @@ Test::MockTime is nice, but doesn't allow you to accelerate the timestep and
 doesn't deal with Time::HiRes or give you any way to change the time across
 forks.
 
-WWW: http://search.cpan.org/dist/Time-Mock/
+WWW: https://metacpan.org/release/Time-Mock

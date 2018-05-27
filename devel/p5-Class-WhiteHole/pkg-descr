@@ -7,4 +7,4 @@ Sometimes you want to avoid this accidental inheritance.  In that case,
 inherit from Class::WhiteHole.  All unhandled methods will produce
 normal Perl error messages.
 
-WWW: http://search.cpan.org/dist/Class-WhiteHole/
+WWW: https://metacpan.org/release/Class-WhiteHole

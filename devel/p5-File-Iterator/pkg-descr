@@ -4,4 +4,4 @@ cursor that points to one filename in the list. The user can work through the
 filenames sequentially by repeatedly doing stuff with the next filename that
 the cursor points to until their are no filenames left.
 
-WWW: http://search.cpan.org/dist/File-Iterator/
+WWW: https://metacpan.org/release/File-Iterator

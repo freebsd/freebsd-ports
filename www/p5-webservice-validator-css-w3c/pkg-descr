@@ -2,4 +2,4 @@ This module is an experimental interface to the W3C CSS Validation online
 service <http://jigsaw.w3.org/css-validator/>, based on its experimental
 SOAP 1.2 support. It helps to find errors in Cascading Style Sheets.
 
-WWW: http://search.cpan.org/dist/WebService-Validator-CSS-W3C/
+WWW: https://metacpan.org/release/WebService-Validator-CSS-W3C

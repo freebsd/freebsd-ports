@@ -5,4 +5,4 @@ DateTime or DateTime::Duration object and produce a string representing it in a
 format accepted by PostgreSQL.
 
 WWW: http://datetime.perl.org/
-WWW: http://search.cpan.org/dist/DateTime-Format-Pg/
+WWW: https://metacpan.org/release/DateTime-Format-Pg

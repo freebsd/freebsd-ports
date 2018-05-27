@@ -14,4 +14,4 @@ pass along a filehandle, we'll make sure to close it for you.
 It's recommended that you increment $| (or set it to 1), which will
 autoflush the buffer as your application is streaming out the file.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-Stream/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-Stream

@@ -15,4 +15,4 @@ component, including all subcomponents called by it.
 The beginning and end of the initial request is represented by the special time
 fields BEGINS and ENDS.
 
-WWW: http://search.cpan.org/dist/MasonX-Profiler/
+WWW: https://metacpan.org/release/MasonX-Profiler

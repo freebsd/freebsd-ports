@@ -1,4 +1,4 @@
 Rose::DB::Object is a base class for objects that encapsulate a single row in a
 database table.
 
-WWW: http://search.cpan.org/dist/Rose-DB-Object/
+WWW: https://metacpan.org/release/Rose-DB-Object

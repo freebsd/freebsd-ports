@@ -7,4 +7,4 @@ It also adds some methods for controlling exactly what errors are considered
 retry-worthy and how many times to wait and for how many seconds, but normally
 you needn't bother about these, as the default settings are relatively sane.
 
-WWW: http://search.cpan.org/dist/LWP-UserAgent-Determined/
+WWW: https://metacpan.org/release/LWP-UserAgent-Determined

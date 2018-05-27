@@ -6,4 +6,4 @@ based on Future objects, it can be operated synchronously in a
 blocking fashion by simply awaiting each individual operation by
 calling the get method.
 
-WWW: http://search.cpan.org/dist/Net-Async-CassandraCQL/
+WWW: https://metacpan.org/release/Net-Async-CassandraCQL

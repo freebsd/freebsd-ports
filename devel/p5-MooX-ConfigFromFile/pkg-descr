@@ -3,4 +3,4 @@ attributes on object construction from an appropriate config file. The building
 is done in MooX::ConfigFromFile::Rule - using MooX::ConfigFromFile ensures the
 role is applied.
 
-WWW: http://search.cpan.org/dist/MooX-ConfigFromFile/
+WWW: https://metacpan.org/release/MooX-ConfigFromFile

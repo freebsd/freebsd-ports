@@ -4,4 +4,4 @@ a subroutine named "getSurrounding" and provides to the object a routine called
 "findPath" which calculates the shortest (ie. least-expensive) path between two
 nodes.
 
-WWW: http://search.cpan.org/dist/AI-Pathfinding-AStar/
+WWW: https://metacpan.org/release/AI-Pathfinding-AStar

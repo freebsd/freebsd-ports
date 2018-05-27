@@ -4,4 +4,4 @@ Components. It is a generic port of POE::Component::IRCs plugin system.
 If your component dispatches events to registered POE sessions then
 POE::Component::Pluggable may be a good fit for you.
 
-WWW: http://search.cpan.org/dist/POE-Component-Pluggable/
+WWW: https://metacpan.org/release/POE-Component-Pluggable

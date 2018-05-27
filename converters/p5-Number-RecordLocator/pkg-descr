@@ -2,4 +2,4 @@ Number::RecordLocator encodes integers into a 32 character "alphabet"
 designed to be short and easy to read and pronounce.  With a 32 bit
 encoding, you can map 33.5 million unique ids into a 5 character code.
 
-WWW: http://search.cpan.org/dist/Number-RecordLocator/
+WWW: https://metacpan.org/release/Number-RecordLocator

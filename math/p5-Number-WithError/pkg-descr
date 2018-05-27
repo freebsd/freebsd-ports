@@ -14,4 +14,4 @@ the code. The remaining holes are mostly difficult-to-test corner cases
 and sanity tests. The comparison routines are the exception for which
 there will be more extensive tests in a future release.
 
-WWW: http://search.cpan.org/dist/Number-WithError/
+WWW: https://metacpan.org/release/Number-WithError

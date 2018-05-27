@@ -1,4 +1,4 @@
 This is Convert::PEM, a module implementing read/write access
 to ASN.1-encoded PEM files (with optional encryption).
 
-WWW: http://search.cpan.org/dist/Convert-PEM/
+WWW: https://metacpan.org/release/Convert-PEM

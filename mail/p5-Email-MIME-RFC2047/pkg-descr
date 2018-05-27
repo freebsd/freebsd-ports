@@ -7,4 +7,4 @@ implementation of RFC 2047
   for example, one that precedes an address in a From,
   To, or Cc header
 
-WWW: http://search.cpan.org/dist/Email-MIME-RFC2047/
+WWW: https://metacpan.org/release/Email-MIME-RFC2047

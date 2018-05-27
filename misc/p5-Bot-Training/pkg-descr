@@ -5,4 +5,4 @@ Bot::Training provides a pluggable way to install already existing training
 files via the CPAN. Bot::Training also comes with a command-line interface
 called bot-training.
 
-WWW: http://search.cpan.org/dist/Bot-Training/
+WWW: https://metacpan.org/release/Bot-Training

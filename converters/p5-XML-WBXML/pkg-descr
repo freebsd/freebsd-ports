@@ -6,4 +6,4 @@ module. The library can be found at http://libwbxml.aymerick.com/
 
 The module defines two functions: xml_to_wbxml and wbxml_to_xml.
 
-WWW: http://search.cpan.org/dist/XML-WBXML/
+WWW: https://metacpan.org/release/XML-WBXML

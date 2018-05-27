@@ -3,4 +3,4 @@ This is extension of HTML::TagCloud.
 This module allows you to register timestamp with tags.  And color of
 tags will be changed according to it's timestamp.
 
-WWW: http://search.cpan.org/dist/HTML-TagCloud-Extended/
+WWW: https://metacpan.org/release/HTML-TagCloud-Extended

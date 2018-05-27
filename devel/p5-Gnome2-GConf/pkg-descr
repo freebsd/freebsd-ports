@@ -5,4 +5,4 @@ handles a set of key and value pairs, and notifies any changes of the
 value to every program that monitors those keys. GConf is used by
 GNOME 2.x.
 
-WWW: http://search.cpan.org/dist/Gnome2-GConf/
+WWW: https://metacpan.org/release/Gnome2-GConf

@@ -2,4 +2,4 @@ This module can be used, along with a CSS::Parse::* module, to parse CSS
 data and represent it as a tree of objects. Using a CSS::Adaptor::* module,
 the CSS data tree can then be transformed into other formats.
 
-WWW: http://search.cpan.org/dist/CSS/
+WWW: https://metacpan.org/release/CSS

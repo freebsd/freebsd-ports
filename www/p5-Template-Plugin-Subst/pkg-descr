@@ -2,4 +2,4 @@ Template::Plugin::Subst acts as a filter and a virtual method to
 carry out regular expression substitutions with back references on
 text and variables in the Template Toolkit.
 
-WWW: http://search.cpan.org/dist/Template-Plugin-Subst/
+WWW: https://metacpan.org/release/Template-Plugin-Subst

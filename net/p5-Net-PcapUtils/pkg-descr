@@ -3,4 +3,4 @@ some of the pcap(3) initialisation by providing sensible defaults.  This
 enables a programmer to easily write small, specific scripts for a
 particular purpose without having to worry about too many details.
 
-WWW: http://search.cpan.org/dist/Net-PcapUtils/
+WWW: https://metacpan.org/release/Net-PcapUtils

@@ -3,4 +3,4 @@ simultaneous substitutions safely. Using the sole exported "subst"
 function has a rather different effect from doing each substitution
 sequentially.
 
-WWW: http://search.cpan.org/dist/Regexp-Subst-Parallel/
+WWW: https://metacpan.org/release/Regexp-Subst-Parallel

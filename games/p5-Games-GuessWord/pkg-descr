@@ -2,4 +2,4 @@ This module is a simple wrapper around a word guessing game. You have to
 guess the word by guessing letters in the word, and is otherwise known as
 Hangman.
 
-WWW: http://search.cpan.org/dist/Games-GuessWord/
+WWW: https://metacpan.org/release/Games-GuessWord

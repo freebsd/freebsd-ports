@@ -5,7 +5,7 @@ find the given key within the subnets specified in the hash.
 Care must be taken, as only strings that can be parsed as an IP address
 by NetAddr::IP can be used as keys for this hash.
 
-WWW: http://search.cpan.org/dist/Tie-NetAddr-IP/
+WWW: https://metacpan.org/release/Tie-NetAddr-IP
 
 -Anton
 <tobez@FreeBSD.org>

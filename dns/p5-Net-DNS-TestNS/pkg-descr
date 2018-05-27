@@ -7,4 +7,4 @@ data. If there is no QNAME, QTYPE match the server will return a SERVFAIL.
 
 A log will be written to STDERR it contains time, IP/PORT, QNAME, QTYPE, RCODE.
 
-WWW: http://search.cpan.org/dist/Net-DNS-TestNS/
+WWW: https://metacpan.org/release/Net-DNS-TestNS

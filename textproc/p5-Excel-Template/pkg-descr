@@ -4,4 +4,4 @@ but provide Excel files instead. The existing modules don't do the trick, as
 they require replication of logic that's already been done within
 HTML::Template.
 
-WWW: http://search.cpan.org/dist/Excel-Template/
+WWW: https://metacpan.org/release/Excel-Template

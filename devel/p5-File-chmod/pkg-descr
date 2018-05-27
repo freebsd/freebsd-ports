@@ -5,4 +5,4 @@ symbolic mode, or an "ls" mode. If you wish not to overload chmod(),
 you can export symchmod() and lschmod(), which take, respectively,
 a symbolic mode and an "ls" mode.
 
-WWW: http://search.cpan.org/dist/File-chmod/
+WWW: https://metacpan.org/release/File-chmod

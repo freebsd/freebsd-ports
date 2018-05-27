@@ -13,4 +13,4 @@ SYNOPSIS
 
     require Some::Class; # Reloads the class
 
-WWW: http://search.cpan.org/dist/Class-Unload/
+WWW: https://metacpan.org/release/Class-Unload

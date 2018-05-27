@@ -12,4 +12,4 @@ Devel::Symdump->new(@packages)
 does not go into recursion and only analyzes the packages that are
 given as arguments.
 
-WWW: http://search.cpan.org/dist/Devel-Symdump/
+WWW: https://metacpan.org/release/Devel-Symdump

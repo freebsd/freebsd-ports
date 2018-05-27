@@ -16,4 +16,4 @@ Math::Symbolic::Operator object.
 Calling unregister on your subclass restores whichever simplification
 routines where in place before.
 
-WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-Simplification/
+WWW: https://metacpan.org/release/Math-Symbolic-Custom-Simplification

@@ -1,4 +1,4 @@
 This module generates SAX events from SQL queries against a DBI
 connection.
 
-WWW: http://search.cpan.org/dist/XML-Generator-DBI/
+WWW: https://metacpan.org/release/XML-Generator-DBI

@@ -2,4 +2,4 @@ WWW::Mechanize is a fork of Kirrily Robert's excellent WWW::Automate
 module.  W::A works fine except for some memory-eating bugs that the
 author of this module has fixed.
 
-WWW: http://search.cpan.org/dist/WWW-Mechanize/
+WWW: https://metacpan.org/release/WWW-Mechanize

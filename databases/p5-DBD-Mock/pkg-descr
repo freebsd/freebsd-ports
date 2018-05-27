@@ -3,4 +3,4 @@ It's entirely self-contained so that you can extract the single library file
 (DBD/Mock.pm), put it in your own distribution and be able to run DBI-based
 tests even though you don't have information about a database.
 
-WWW: http://search.cpan.org/dist/DBD-Mock/
+WWW: https://metacpan.org/release/DBD-Mock

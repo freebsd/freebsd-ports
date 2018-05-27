@@ -5,4 +5,4 @@ children (who themselves may have children, and so on). Every
 Tree::Simple object also has siblings, as they are just the children of
 their immediate parent.
 
-WWW: http://search.cpan.org/dist/Tree-Simple/
+WWW: https://metacpan.org/release/Tree-Simple

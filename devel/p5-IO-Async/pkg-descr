@@ -6,4 +6,4 @@ responsible for checking read- or write-readiness, and informing the notifiers
 of these conditions. The notifiers then perform whatever work is required on
 these conditions, by using subclass methods or callback functions.
 
-WWW: http://search.cpan.org/dist/IO-Async/
+WWW: https://metacpan.org/release/IO-Async

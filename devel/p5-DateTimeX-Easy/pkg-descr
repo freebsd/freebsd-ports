@@ -3,4 +3,4 @@ of DateTime::Format packages to do the bulk of the parsing, with some custom
 tweaks to smooth out the rough edges (mainly concerning timezone detection and
 selection).
 
-WWW: http://search.cpan.org/dist/DateTimeX-Easy/
+WWW: https://metacpan.org/release/DateTimeX-Easy

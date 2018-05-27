@@ -1,4 +1,4 @@
 SMS::Send::TW::ShareSMS is a SMS::Send driver
 which allows you to send messages through http://www.sharesms.com/
 
-WWW: http://search.cpan.org/dist/SMS-Send-TW-ShareSMS/
+WWW: https://metacpan.org/release/SMS-Send-TW-ShareSMS

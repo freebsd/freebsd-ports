@@ -19,4 +19,4 @@ facilities to cache all calculated elements and access any element
 directly, though unless the element has been cached in a previous
 calculation, this is just a shortcut for repeated use of the iterator.
 
-WWW: http://search.cpan.org/dist/Math-Sequence/
+WWW: https://metacpan.org/release/Math-Sequence

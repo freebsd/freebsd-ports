@@ -2,4 +2,4 @@ This plugin for CGI::Application provides easy ways to setup run modes.
 You can just write the method that implement a run mode, you do not have
 to explicitly register it with CGI::App anymore.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-AutoRunmode/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-AutoRunmode

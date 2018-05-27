@@ -2,4 +2,4 @@ This modules requires Lingua::ZH::TaBE, a Chinese Tokenizer on
 steroids; it's a thin wrapper around Lingua::ZH::TaBE, as well as its
 interface with overload and utf8 semantics.
 
-WWW: http://search.cpan.org/dist/Lingua-ZH-Toke/
+WWW: https://metacpan.org/release/Lingua-ZH-Toke

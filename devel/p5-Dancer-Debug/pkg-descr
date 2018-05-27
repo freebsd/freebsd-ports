@@ -1,4 +1,4 @@
 Dancer::Debug extends Plack::Middleware::Debug with some specific
 panels for Dancer.
 
-WWW: http://search.cpan.org/dist/Dancer-Debug/
+WWW: https://metacpan.org/release/Dancer-Debug

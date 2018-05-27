@@ -2,4 +2,4 @@ Perl module which will parse a SMARTS (SMiles ARbitrary Target Specification)
 string, generating a Chemistry::Pattern object. It is a file I/O driver for
 the PerlMol toolkit.
 
-WWW: http://search.cpan.org/dist/Chemistry-File-SMARTS/
+WWW: https://metacpan.org/release/Chemistry-File-SMARTS

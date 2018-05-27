@@ -2,4 +2,4 @@ This Perl module produces snapshots of a Subversion repository path.
 Typically used as part of a postcommit script, it will automatically
 create a .tar.gz file for every commit to a specified path.
 
-WWW: http://search.cpan.org/dist/SVN-Notify-Snapshot/
+WWW: https://metacpan.org/release/SVN-Notify-Snapshot

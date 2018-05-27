@@ -4,4 +4,4 @@ connections, and a LWP::UserAgent to ask for the requested pages.
 The most interesting feature of this proxy object is its hability to filter the
 HTTP requests and responses through user-defined filters.
 
-WWW: http://search.cpan.org/dist/HTTP-Proxy/
+WWW: https://metacpan.org/release/HTTP-Proxy

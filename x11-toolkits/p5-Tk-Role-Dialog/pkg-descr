@@ -12,4 +12,4 @@ _build_attr() methods, or passed arguments to the constructor call. The only
 mandatory attribute is parent, but you'd better provide some other attributes if
 you want your dialog to be somehow usable! :-)
 
-WWW: http://search.cpan.org/dist/Tk-Role-Dialog/
+WWW: https://metacpan.org/release/Tk-Role-Dialog

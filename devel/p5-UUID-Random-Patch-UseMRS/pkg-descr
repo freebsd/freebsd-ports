@@ -5,4 +5,4 @@ note, this makes generate() around 20 times slower.
 
 After you use this module, use UUID::Random as usual.
 
-WWW: http://search.cpan.org/dist/UUID-Random-Patch-UseMRS/
+WWW: https://metacpan.org/release/UUID-Random-Patch-UseMRS

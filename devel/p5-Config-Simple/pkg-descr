@@ -7,4 +7,4 @@ supports several configuration file syntax and tries to identify the
 file syntax to parse them accordingly. Library supports parsing,
 updating and creating configuration files.
 
-WWW: http://search.cpan.org/dist/Config-Simple/
+WWW: https://metacpan.org/release/Config-Simple

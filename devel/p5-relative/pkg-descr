@@ -5,4 +5,4 @@ relatively to the current module or to a given module. Module names are by
 default searched below the current module, but can be searched upper in the
 hierarchy using the ..:: syntax.
 
-WWW: http://search.cpan.org/dist/relative/
+WWW: https://metacpan.org/release/relative

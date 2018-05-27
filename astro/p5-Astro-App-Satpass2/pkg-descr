@@ -4,4 +4,4 @@ replacement of the satpass script in distribution Astro-satpass, aimed
 at making it easier to test, and removing some of the odder cruft that
 has accumulated in the satpass script.
 
-WWW: http://search.cpan.org/dist/Astro-App-Satpass2/
+WWW: https://metacpan.org/release/Astro-App-Satpass2

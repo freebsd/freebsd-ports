@@ -3,4 +3,4 @@ shared between BitTorrent peers. The module optinally exports a single
 subroutine for building packets and another for parsing packets, as
 well as, a constant for each packet type defined by BitTorrent.
 
-WWW: http://search.cpan.org/dist/Net-BitTorrent-PeerPacket/
+WWW: https://metacpan.org/release/Net-BitTorrent-PeerPacket

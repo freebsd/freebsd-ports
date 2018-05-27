@@ -5,4 +5,4 @@ also help protect against CSRF attacks in some browsers.
 This module attempts to fully conform to the CORS spec, while allowing
 additional flexibility in the values specified for the of the headers.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-CrossOrigin/
+WWW: https://metacpan.org/release/Plack-Middleware-CrossOrigin

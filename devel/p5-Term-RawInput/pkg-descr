@@ -2,4 +2,4 @@ Term::RawInput is a simple drop-in replacement for <STDIN> in scripts
 with the additional ability to capture and return the non-standard keys
 like 'End', 'Escape', 'Insert', etc.
 
-WWW: http://search.cpan.org/dist/Term-RawInput/
+WWW: https://metacpan.org/release/Term-RawInput

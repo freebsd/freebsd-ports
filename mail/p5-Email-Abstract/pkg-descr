@@ -7,4 +7,4 @@ build a new object from scratch, Email::Abstract can be used to
 perform certain simple operations on an object regardless of its
 underlying representation.
 
-WWW: http://search.cpan.org/dist/Email-Abstract/
+WWW: https://metacpan.org/release/Email-Abstract

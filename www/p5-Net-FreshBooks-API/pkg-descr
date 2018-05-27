@@ -3,4 +3,4 @@ manage invoices. This module is an OO abstraction of their API that
 lets you work with Clients, Invoices etc as if they were standard Perl
 objects.
 
-WWW: http://search.cpan.org/dist/Net-FreshBooks-API/
+WWW: https://metacpan.org/release/Net-FreshBooks-API

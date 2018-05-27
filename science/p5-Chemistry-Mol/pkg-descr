@@ -5,4 +5,4 @@ Chemistry::Atom, Chemistry::Bond, and Chemistry::File.
 They are the core modules of the PerlMol toolkit, see:
 http://www.perlmol.org/.
 
-WWW: http://search.cpan.org/dist/Chemistry-Mol/
+WWW: https://metacpan.org/release/Chemistry-Mol

@@ -5,4 +5,4 @@ fast implementation of HTML::Template if you don't need querying, the
 extended facility of HTML::Template.  Designed for heavy upload,
 resource limitations, abcence of mod_perl.
 
-WWW: http://search.cpan.org/dist/HTML-Template-Pro/
+WWW: https://metacpan.org/release/HTML-Template-Pro

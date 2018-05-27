@@ -5,4 +5,4 @@ used, as long as it supports the blocksize and keysize methods. Any hash
 function in the Digest:: class can be used, as long as it supports
 the add method.
 
-WWW: http://search.cpan.org/dist/Crypt-Ctr/
+WWW: https://metacpan.org/release/Crypt-Ctr

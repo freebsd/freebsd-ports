@@ -2,4 +2,4 @@ The Digest::Adler32 module implements the Adler-32 checksum as specified
 in RFC 1950. The interface provided by this module is specified in Digest,
 but no functional interface is provided.
 
-WWW: http://search.cpan.org/dist/Digest-Adler32/
+WWW: https://metacpan.org/release/Digest-Adler32

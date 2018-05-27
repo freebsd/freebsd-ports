@@ -4,4 +4,4 @@ can act in a more or less fine-grained way - you can specify permitted
 tags, permitted attributes of each tag, and permitted values for each
 attribute in as much detail as you like.
 
-WWW: http://search.cpan.org/dist/HTML-TagFilter/
+WWW: https://metacpan.org/release/HTML-TagFilter

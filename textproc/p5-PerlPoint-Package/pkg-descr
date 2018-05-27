@@ -9,4 +9,4 @@ Because of this two step architecture PerlPoint authors deal both with the text
 format and several converters. The text source describes structure and contents
 of your document, while a converter adds layout. Let's start.
 
-WWW: http://search.cpan.org/dist/PerlPoint-Package/
+WWW: https://metacpan.org/release/PerlPoint-Package

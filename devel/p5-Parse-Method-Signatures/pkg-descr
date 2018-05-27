@@ -2,4 +2,4 @@ Parse::Method::Signatures is a Perl6 like method signature parser inspired by
 Perl6::Signature but streamlined to just support the subset deemed useful for
 TryCatch and MooseX::Method::Signatures.
 
-WWW: http://search.cpan.org/dist/Parse-Method-Signatures/
+WWW: https://metacpan.org/release/Parse-Method-Signatures

@@ -3,4 +3,4 @@ server. You can subclass it and implement the methods you need
 (see below). Then you just instantiate your subclass and call
 its handle method to establish a connection with the client.
 
-WWW: http://search.cpan.org/dist/Net-LDAP-Server/
+WWW: https://metacpan.org/release/Net-LDAP-Server

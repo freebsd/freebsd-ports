@@ -3,4 +3,4 @@ data for a specified period of time.  Often these modules are used
 in web applications to store data locally to save repeated and
 redundant expensive calls to remote machines or databases.
 
-WWW: http://search.cpan.org/dist/Cache/
+WWW: https://metacpan.org/release/Cache

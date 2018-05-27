@@ -6,4 +6,4 @@ provided by those tools. It allows, however, to check whether your applications
 and services are running correctly. Its simple command-line interface can be
 used in cron jobs and reports can be viewed as a single HTML or text page.
 
-WWW: http://search.cpan.org/dist/Monitor-Simple/
+WWW: https://metacpan.org/release/Monitor-Simple

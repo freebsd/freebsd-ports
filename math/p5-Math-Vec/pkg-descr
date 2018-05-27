@@ -8,4 +8,4 @@ The "object" for the object oriented calling style is a blessed array
 reference which contains a vector of the form [x,y,z]. Methods will
 typically return a list.
 
-WWW: http://search.cpan.org/dist/Math-Vec/
+WWW: https://metacpan.org/release/Math-Vec

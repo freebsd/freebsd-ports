@@ -12,4 +12,4 @@ specification string may also include other usage formatting information
 (such as group headings or separators) as well as standard Perl comments
 (which are ignored).
 
-WWW: http://search.cpan.org/dist/Getopt-Declare/
+WWW: https://metacpan.org/release/Getopt-Declare

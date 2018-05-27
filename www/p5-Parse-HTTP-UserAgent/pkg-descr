@@ -14,4 +14,4 @@ the user agent seems to support it (and send a normal one if this is not the
 case). However, browser sniffing for client-side coding is considered a bad
 habit.
 
-WWW: http://search.cpan.org/dist/Parse-HTTP-UserAgent/
+WWW: https://metacpan.org/release/Parse-HTTP-UserAgent

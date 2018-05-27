@@ -12,4 +12,4 @@ This type library enables structured type constraints.  It is built on
 top of the MooseX::Types library system, so you should review the
 documentation for that if you are not familiar with it.
 
-WWW: http://search.cpan.org/dist/MooseX-Types-Structured/
+WWW: https://metacpan.org/release/MooseX-Types-Structured

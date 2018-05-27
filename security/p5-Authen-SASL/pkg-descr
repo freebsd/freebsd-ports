@@ -3,4 +3,4 @@ several network protocols. Authen::SASL provides an
 implementation framework that all protocols should be able
 to share.
 
-WWW: http://search.cpan.org/dist/Authen-SASL/
+WWW: https://metacpan.org/release/Authen-SASL

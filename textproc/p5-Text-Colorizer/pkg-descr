@@ -2,4 +2,4 @@ This module defined methods to produce colored html from ANSI color description.
 The generated code use pre tags. The generated HTML can be embeded in your pod
 documentation.
 
-WWW: http://search.cpan.org/dist/Text-Colorizer/
+WWW: https://metacpan.org/release/Text-Colorizer

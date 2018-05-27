@@ -4,4 +4,4 @@ readers that can read a patch, remove files from a patch, add CVS context, fix
 up the patch root according to CVS, and output the patch as raw unified or
 through a template processor (used in some places to output a patch as HTML).
 
-WWW: http://search.cpan.org/dist/PatchReader/
+WWW: https://metacpan.org/release/PatchReader

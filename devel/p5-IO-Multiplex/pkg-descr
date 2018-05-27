@@ -4,4 +4,4 @@ system call.  In addition to maintaining the select loop, it buffers all
 input and output to/from the file handles.  It can also accept incoming
 connections on one or more listen sockets.
 
-WWW: http://search.cpan.org/dist/IO-Multiplex/
+WWW: https://metacpan.org/release/IO-Multiplex

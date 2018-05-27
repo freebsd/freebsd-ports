@@ -2,4 +2,4 @@ This module implements a series of allowed and denied access control lists
 for permissive controls.  The Set::NestedGroups module is used to define
 users and nested permissive groups.
 
-WWW: http://search.cpan.org/dist/Data-ACL/
+WWW: https://metacpan.org/release/Data-ACL

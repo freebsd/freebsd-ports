@@ -1,4 +1,4 @@
 This module implements a client interface to the ManageSieve protocol.
 ( http://tools.ietf.org/html/draft-martin-managesieve-09 )
 
-WWW: http://search.cpan.org/dist/Net-ManageSieve/
+WWW: https://metacpan.org/release/Net-ManageSieve

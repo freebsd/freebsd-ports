@@ -8,4 +8,4 @@ we write shouldn't need to have documentation/comments.  If you need
 something with more power, move up to Config::Simple, Config::General or
 one of the many other Config:: modules.
 
-WWW: http://search.cpan.org/dist/Config-Tiny/
+WWW: https://metacpan.org/release/Config-Tiny

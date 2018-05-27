@@ -2,4 +2,4 @@ This is Business::OnlinePayment::OCV, an Business::OnlinePayment
 backend module for OCV.  It is only useful if you have a merchant
 account with OCV: http://www.iauthorizer.net
 
-WWW: http://search.cpan.org/dist/Business-OnlinePayment-OCV/
+WWW: https://metacpan.org/release/Business-OnlinePayment-OCV

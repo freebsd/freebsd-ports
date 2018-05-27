@@ -16,4 +16,4 @@ over networks (you should never trust). So, on purpose you must explicitly load
 the files you need from local disk! (of course, it is simple to find one-liners
 as work-arounds, but I will to tell you how!)
 
-WWW: http://search.cpan.org/dist/XML-Compile-WSDL11/
+WWW: https://metacpan.org/release/XML-Compile-WSDL11

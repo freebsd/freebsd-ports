@@ -9,4 +9,4 @@ The core of every CGI application seems to be roughly the same:
 CGI::Prototype creates a Class::Prototyped engine for doing all this,
 with the right amount of callback hooks to customize the process.
 
-WWW: http://search.cpan.org/dist/CGI-Prototype/
+WWW: https://metacpan.org/release/CGI-Prototype

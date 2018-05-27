@@ -3,4 +3,4 @@ a callback, invoked for all files that are 'different' between the
 two directories, and for any files that exist only in one or other
 directory ('unique' files).
 
-WWW: http://search.cpan.org/dist/File-DirCompare/
+WWW: https://metacpan.org/release/File-DirCompare

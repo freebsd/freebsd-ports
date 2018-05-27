@@ -1,4 +1,4 @@
 Using this module instead of, or in addition to Time::Piece adds a few
 MySQL-specific date/time methods to Time::Piece objects.
 
-WWW: http://search.cpan.org/dist/Time-Piece-MySQL/
+WWW: https://metacpan.org/release/Time-Piece-MySQL

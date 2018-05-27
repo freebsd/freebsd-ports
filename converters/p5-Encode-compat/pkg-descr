@@ -8,4 +8,4 @@ the three utility function above (encode(), decode() and from_to()),
 with a very kludgy FB_HTMLCREF fallback against latin-1 in from_to().
 
 
-WWW: http://search.cpan.org/dist/Encode-compat/
+WWW: https://metacpan.org/release/Encode-compat

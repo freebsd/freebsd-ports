@@ -12,4 +12,4 @@ Please note - this module does not perform authentication - it is
 a required component to decrypt the token first before authentication
 can be performed.
 
-WWW: http://search.cpan.org/dist/Auth-Yubikey_Decrypter/
+WWW: https://metacpan.org/release/Auth-Yubikey_Decrypter

@@ -1,4 +1,4 @@
 This module converts Perl data structures to the Concise Binary
 Object Representation (CBOR, RFC7049) and vice versa.
 
-WWW: http://search.cpan.org/dist/CBOR-XS/
+WWW: https://metacpan.org/release/CBOR-XS

@@ -3,4 +3,4 @@ library, an unified interface and library dealing with Chinese words,
 phrases, sentences, and phonetic symbols; it is intended to be used as
 the foundation of Chinese text processing.
 
-WWW: http://search.cpan.org/dist/Lingua-ZH-TaBE/
+WWW: https://metacpan.org/release/Lingua-ZH-TaBE

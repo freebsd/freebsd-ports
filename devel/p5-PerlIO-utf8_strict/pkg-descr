@@ -1,4 +1,4 @@
 PerlIO::utf8_strict provides a fast and correct UTF-8 PerlIO layer. Unlike
 perl's default :utf8 layer it checks the input for correctness.
 
-WWW: http://search.cpan.org/dist/PerlIO-utf8_strict/
+WWW: https://metacpan.org/release/PerlIO-utf8_strict

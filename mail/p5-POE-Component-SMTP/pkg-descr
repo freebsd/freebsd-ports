@@ -3,4 +3,4 @@ To support any command other than HELO and QUIT, you'll have to
 implement it yourself, and define it in your InlineStates,
 PackageStates, or ObjectStates.
 
-WWW: http://search.cpan.org/dist/POE-Component-SMTP/
+WWW: https://metacpan.org/release/POE-Component-SMTP

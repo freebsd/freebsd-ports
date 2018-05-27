@@ -10,4 +10,4 @@ string in a desired way.
 This module is implemented in XS, with a pure Perl backup version for systems
 that can't handle XS.
 
-WWW: http://search.cpan.org/dist/Scalar-String/
+WWW: https://metacpan.org/release/Scalar-String

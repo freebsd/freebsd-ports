@@ -4,4 +4,4 @@ having to worry about doing it in a consistent manner. If any of the validation
 rules change, you often have to alter them in many different places. And, if
 you want to operate taint-safe, then you're just adding even more headaches.
 
-WWW: http://search.cpan.org/dist/CGI-Untaint/
+WWW: https://metacpan.org/release/CGI-Untaint

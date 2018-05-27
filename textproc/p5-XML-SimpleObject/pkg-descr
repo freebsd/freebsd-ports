@@ -4,4 +4,4 @@ document. It is very lightweight, but provides the simplest access to an XML
 document possible. It does not subclass XML::Parser; rather, it is meant to
 serve purely as an object struct for an outgoing tree.
 
-WWW: http://search.cpan.org/dist/XML-SimpleObject/
+WWW: https://metacpan.org/release/XML-SimpleObject

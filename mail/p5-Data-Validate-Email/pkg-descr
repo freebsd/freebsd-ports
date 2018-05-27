@@ -1,4 +1,4 @@
 This module collects common email validation routines to
 make input validation, and untainting easier and more readable.
 
-WWW: http://search.cpan.org/dist/Data-Validate-Email/
+WWW: https://metacpan.org/release/Data-Validate-Email

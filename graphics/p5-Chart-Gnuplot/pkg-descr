@@ -3,4 +3,4 @@ In order to use this module, gnuplot need to be installed.
 If image format other than PS and EPS is required to generate,
 it is recommended to install the convert program of ImageMagick as well.
 
-WWW: http://search.cpan.org/dist/Chart-Gnuplot/
+WWW: https://metacpan.org/release/Chart-Gnuplot

@@ -3,4 +3,4 @@ functions needed such as form decoding (including file upload forms),
 URL encoding and decoding, HTTP usable date generation (RFC1123 compliant
 dates) and basic escaping and unescaping of HTMLized text.
 
-WWW: http://search.cpan.org/dist/CGI-Minimal/
+WWW: https://metacpan.org/release/CGI-Minimal

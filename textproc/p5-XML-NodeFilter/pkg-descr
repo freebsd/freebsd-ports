@@ -3,4 +3,4 @@ specified in the DOM Level 2 Traversal and Range specification. It
 extends that specification so this class is more easy to use for perl
 programmers.
 
-WWW: http://search.cpan.org/dist/XML-NodeFilter/
+WWW: https://metacpan.org/release/XML-NodeFilter

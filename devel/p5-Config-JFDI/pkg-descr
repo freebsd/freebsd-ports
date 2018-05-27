@@ -6,4 +6,4 @@ certain name. If such a file is found which also matches an extension
 that Config::Any can read, then the configuration from that file will
 be loaded.
 
-WWW: http://search.cpan.org/dist/Config-JFDI/
+WWW: https://metacpan.org/release/Config-JFDI

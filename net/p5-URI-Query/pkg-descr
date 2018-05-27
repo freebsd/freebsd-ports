@@ -6,4 +6,4 @@ others. Given a query string this is doable with regexes, of course, but making
 sure you get the anchoring and escaping right is tedious and error-prone - this
 module is simpler.
 
-WWW: http://search.cpan.org/dist/URI-Query/
+WWW: https://metacpan.org/release/URI-Query

@@ -1,4 +1,4 @@
 Pod::Strip, a subclass of Pod::Simple.  It parses perl files,
 strips all POD from Perl Code.
 
-WWW: http://search.cpan.org/dist/Pod-Strip/
+WWW: https://metacpan.org/release/Pod-Strip

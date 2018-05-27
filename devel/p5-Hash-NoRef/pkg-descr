@@ -3,4 +3,4 @@ the reference count (weak references). This can be used to store objects but
 without interfere in the DESTROY mechanism, since the reference in this HASH
 won't count.
 
-WWW: http://search.cpan.org/dist/Hash-NoRef/
+WWW: https://metacpan.org/release/Hash-NoRef

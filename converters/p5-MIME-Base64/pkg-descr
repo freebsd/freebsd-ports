@@ -19,4 +19,4 @@ package).  The main improvement is that the base64 encoder/decoder is
 implemented by XS functions.  This makes it about 20 times faster than
 the old implementation in perl.
 
-WWW: http://search.cpan.org/dist/MIME-Base64/
+WWW: https://metacpan.org/release/MIME-Base64

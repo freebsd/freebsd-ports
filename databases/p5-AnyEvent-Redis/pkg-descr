@@ -1,3 +1,3 @@
 AnyEvent::Redis is a non-blocking (event-driven) Redis client.
 
-WWW: http://search.cpan.org/dist/AnyEvent-Redis/
+WWW: https://metacpan.org/release/AnyEvent-Redis

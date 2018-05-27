@@ -1,4 +1,4 @@
 "Don't put emails directly on the page, they will be scraped"
 HTML::Email::Obfuscate - Obfuscated HTML email addresses that look normal.
 
-WWW: http://search.cpan.org/dist/HTML-Email-Obfuscate/
+WWW: https://metacpan.org/release/HTML-Email-Obfuscate

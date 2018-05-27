@@ -10,4 +10,4 @@ writes this to the README file, as well as to the POD of the file specified
 with the VERSION_FROM parameter. Both these defaults can be overridden with
 the "text" and "pod" parameters in the use Devel::Required specification.
 
-WWW: http://search.cpan.org/dist/Devel-Required/
+WWW: https://metacpan.org/release/Devel-Required

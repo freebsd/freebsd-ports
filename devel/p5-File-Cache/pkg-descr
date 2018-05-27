@@ -4,4 +4,4 @@ Where IPC::Cache is faster for small numbers of simple objects,
 File::Cache tends towards being more performant when caching large
 numbers of complex objects.
 
-WWW: http://search.cpan.org/dist/File-Cache/
+WWW: https://metacpan.org/release/File-Cache

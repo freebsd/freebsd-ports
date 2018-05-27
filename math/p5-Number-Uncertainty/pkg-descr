@@ -1,4 +1,4 @@
 Number::Uncertainty provides an object-orientated uncertainty object. It stores
 information about a value and its error bounds.
 
-WWW: http://search.cpan.org/dist/Number-Uncertainty/
+WWW: https://metacpan.org/release/Number-Uncertainty

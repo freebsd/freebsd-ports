@@ -4,4 +4,4 @@ X-Content-Type-Options response header with the value nosniff will
 prevent Internet Explorer from MIME-sniffing a response away from the
 declared content-type.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-IEnosniff/
+WWW: https://metacpan.org/release/Plack-Middleware-IEnosniff

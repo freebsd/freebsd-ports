@@ -1,4 +1,4 @@
 Apache::Singleton works the same as Class::Singleton, but with
 various object lifetime adapted for use under Apache.
 
-WWW: http://search.cpan.org/dist/Apache-Singleton/
+WWW: https://metacpan.org/release/Apache-Singleton

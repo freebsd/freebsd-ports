@@ -3,4 +3,4 @@ way to configure Log::Dispatch object with configuration file
 (default, in AppConfig format).  This is almost a log4j equivalent for
 Perl, not with all API compatibility though.
 
-WWW: http://search.cpan.org/dist/Log-Dispatch-Config/
+WWW: https://metacpan.org/release/Log-Dispatch-Config

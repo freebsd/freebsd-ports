@@ -5,4 +5,4 @@ a DHCP server. It stores the last connection status information.
 This module can help to write some simple code to implement a
 reliable DHCP service over complex or simple networks.
 
-WWW: http://search.cpan.org/dist/Net-DHCP-Watch/
+WWW: https://metacpan.org/release/Net-DHCP-Watch

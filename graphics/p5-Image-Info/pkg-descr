@@ -2,4 +2,4 @@ This Perl extension allows you to extract meta information from
 various types of image files. It currently supports JPEG, GIF, PNG
 and more image types.
 
-WWW: http://search.cpan.org/dist/Image-Info/
+WWW: https://metacpan.org/release/Image-Info

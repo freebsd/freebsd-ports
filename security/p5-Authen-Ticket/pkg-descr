@@ -5,4 +5,4 @@ at all phases in the process.  This includes not only the login screens, but
 the cookie creation and optional digital signature algorithm as well.  Consult
 the README for more details on this module.
 
-WWW: http://search.cpan.org/dist/Authen-Ticket/
+WWW: https://metacpan.org/release/Authen-Ticket

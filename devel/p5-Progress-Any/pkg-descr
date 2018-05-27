@@ -7,4 +7,4 @@ Progress::Any records position/target and calculates elapsed time, estimated
 remaining time, and percentage of completion. One or more output modules
 (Progress::Any::Output::*) display this information.
 
-WWW: http://search.cpan.org/dist/Progress-Any/
+WWW: https://metacpan.org/release/Progress-Any

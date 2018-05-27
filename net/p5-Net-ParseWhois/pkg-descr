@@ -3,4 +3,4 @@ replacement for the (broken) Net::Whois module. It is otherwise different to
 Net::Whois in that it a) is easily extendable b) has a work-around approach
 rather than wanting/expecting/wishing registrars to standardize their output.
 
-WWW: http://search.cpan.org/dist/Net-ParseWhois/
+WWW: https://metacpan.org/release/Net-ParseWhois

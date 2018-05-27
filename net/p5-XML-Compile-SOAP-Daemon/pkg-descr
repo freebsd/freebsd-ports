@@ -2,4 +2,4 @@ This base class implements the common needs between various types
 of SOAP daemons. As daemon type, you can use any kind of Net::Server
 implementation.
 
-WWW: http://search.cpan.org/dist/XML-Compile-SOAP-Daemon/
+WWW: https://metacpan.org/release/XML-Compile-SOAP-Daemon

@@ -21,4 +21,4 @@ DESCRIPTION
        whose first element is the uudecoded string, the second is
        the filename and the third is the mode.
 
-WWW: http://search.cpan.org/dist/Convert-UU/
+WWW: https://metacpan.org/release/Convert-UU

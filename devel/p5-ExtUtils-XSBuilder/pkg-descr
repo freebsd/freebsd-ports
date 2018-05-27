@@ -6,4 +6,4 @@ must still be familiar with C and XS programming, but it removes a lot of
 stupid work and copy&paste from you. Also when the C API changes, most
 of the time you only have to rerun XSBuilder to get your new Perl API.
 
-WWW: http://search.cpan.org/dist/ExtUtils-XSBuilder/
+WWW: https://metacpan.org/release/ExtUtils-XSBuilder

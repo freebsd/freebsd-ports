@@ -9,4 +9,4 @@ example) or by giving dimensions. The units used can be specified ("mm"
 or "in", etc) and are the same as those used in TeX. The default unit is
 a bp, or a PostScript point, unlike TeX.
 
-WWW: http://search.cpan.org/dist/PostScript-Simple/
+WWW: https://metacpan.org/release/PostScript-Simple

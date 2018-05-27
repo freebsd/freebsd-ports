@@ -18,4 +18,4 @@ used, so if two Astro::WaveBand objects return the same value from those
 methods, they are considered to be equal. When checking other comparisons such
 as greater than, the wavelength is used.
 
-WWW: http://search.cpan.org/dist/Astro-WaveBand/
+WWW: https://metacpan.org/release/Astro-WaveBand

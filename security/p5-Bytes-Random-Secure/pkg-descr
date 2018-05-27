@@ -17,4 +17,4 @@ cryptographic purposes. The harder problem to solve is how to seed the
 generator. This module uses Crypt::Random::Seed to generate the initial seeds
 for Math::Random::ISAAC.
 
-WWW: http://search.cpan.org/dist/Bytes-Random-Secure/
+WWW: https://metacpan.org/release/Bytes-Random-Secure

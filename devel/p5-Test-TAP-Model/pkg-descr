@@ -9,4 +9,4 @@ generating reports, or something like that.
 The niche it fills is creating a way to access test run data, both from
 a serialized and a real source, and to ease the querying of this data.
 
-WWW: http://search.cpan.org/dist/Test-TAP-Model/
+WWW: https://metacpan.org/release/Test-TAP-Model

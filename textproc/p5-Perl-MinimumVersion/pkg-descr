@@ -2,4 +2,4 @@ Perl::MinimumVersion takes Perl source code and calculates the minimum
 version of perl required to be able to run it. Because it is based on
 PPI, it can do this without having to actually load the code.
 
-WWW: http://search.cpan.org/dist/Perl-MinimumVersion/
+WWW: https://metacpan.org/release/Perl-MinimumVersion

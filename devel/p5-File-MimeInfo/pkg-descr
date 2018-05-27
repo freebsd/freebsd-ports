@@ -10,4 +10,4 @@ used. The File::MimeInfo::Magic package is provided for magic typing.
 If you want to determine the mimetype of data in a memory buffer
 you should use File::MimeInfo::Magic in combination with IO::Scalar.
 
-WWW: http://search.cpan.org/dist/File-MimeInfo/
+WWW: https://metacpan.org/release/File-MimeInfo

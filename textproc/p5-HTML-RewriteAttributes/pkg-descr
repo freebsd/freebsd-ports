@@ -3,4 +3,4 @@ attribute rewriting.  You simply specify a callback to run for each
 attribute and we do the rest for you.  This module is designed to
 be subclassable to make handling special cases eaiser.
 
-WWW: http://search.cpan.org/dist/HTML-RewriteAttributes/
+WWW: https://metacpan.org/release/HTML-RewriteAttributes

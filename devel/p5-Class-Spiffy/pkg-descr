@@ -4,4 +4,4 @@ Exporter.pm, base.pm, mixin.pm and SUPER.pm into one magic foundation
 class. It attempts to fix all the nits and warts of traditional Perl OO,
 in a clean, straightforward and (perhaps someday) standard way.
 
-WWW: http://search.cpan.org/dist/Class-Spiffy/
+WWW: https://metacpan.org/release/Class-Spiffy

@@ -14,4 +14,4 @@ This package contains:
   SWF::Builder::Character::Shape        - SWF shape object
   SWF::Builder::Character::Text         - SWF static text object
 
-WWW: http://search.cpan.org/dist/SWF-Builder/
+WWW: https://metacpan.org/release/SWF-Builder

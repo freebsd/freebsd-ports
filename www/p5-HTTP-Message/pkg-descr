@@ -2,4 +2,4 @@ This module contains classes useful for representing the messages passed
 in HTTP style communication. These are classes representing requests,
 responses and the headers contained within them.
 
-WWW: http://search.cpan.org/dist/HTTP-Message/
+WWW: https://metacpan.org/release/HTTP-Message

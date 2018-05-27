@@ -2,4 +2,4 @@ This is another framework for writing test scripts. It is loosely
 inspired by Test::More, and has most of its functionality, but it
 is not a drop-in replacement.
 
-WWW: http://search.cpan.org/dist/Test-Inter/
+WWW: https://metacpan.org/release/Test-Inter

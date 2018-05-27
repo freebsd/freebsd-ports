@@ -2,4 +2,4 @@ Math::GMPf is a bigfloat module utilising the GNU MP (GMP) library. Basically
 this module simply wraps all of the mpf floating point functions provided by
 that library. See the Math::GMPf test suite for some examples of usage.
 
-WWW: http://search.cpan.org/dist/Math-GMPf/
+WWW: https://metacpan.org/release/Math-GMPf

@@ -1,4 +1,4 @@
 DBIx::VersionedDDL is a perl module to upgrade and downgrade database
 schemas to a specified version.
 
-WWW: http://search.cpan.org/dist/DBIx-VersionedDDL/
+WWW: https://metacpan.org/release/DBIx-VersionedDDL

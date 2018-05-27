@@ -3,4 +3,4 @@ used by Perl. Some details of dynamic loading are very platform-dependent, so
 correct use of these functions requires the programmer to be mindful of the
 space of platform variations.
 
-WWW: http://search.cpan.org/dist/DynaLoader-Functions/
+WWW: https://metacpan.org/release/DynaLoader-Functions

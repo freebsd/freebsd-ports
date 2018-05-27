@@ -7,4 +7,4 @@ information (data source, user, credential...) by labeled name and
 treat same cluster consists many nodes as one labeled name, choose
 fetching strategy.
 
-WWW: http://search.cpan.org/dist/DBIx-DBHResolver/
+WWW: https://metacpan.org/release/DBIx-DBHResolver

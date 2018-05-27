@@ -1,4 +1,4 @@
 XML::SAX::Expat::Incremental supplies a non-blocking, incremental
 parsing interface to XML::SAX::Expat.
 
-WWW: http://search.cpan.org/dist/XML-SAX-Expat-Incremental/
+WWW: https://metacpan.org/release/XML-SAX-Expat-Incremental

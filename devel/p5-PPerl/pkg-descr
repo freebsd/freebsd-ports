@@ -2,4 +2,4 @@ This program turns ordinary perl scripts into long running daemons, making
 subsequent executions extremely fast. It forks several processes for each
 script, allowing many processes to call the script at once.
 
-WWW: http://search.cpan.org/dist/PPerl/
+WWW: https://metacpan.org/release/PPerl

@@ -12,4 +12,4 @@ version of Time::Local which comes with perl. It fixes two problems
     - It determines the zone offset based on now rather than epoch
     - It fixes a problem with looping forever when a year > 1900 is passed in
 
-WWW: http://search.cpan.org/dist/TimeDate/
+WWW: https://metacpan.org/release/TimeDate

@@ -18,4 +18,4 @@ command:
 
 To write a new Bash::Completion plugin, see Bash::Completion::Plugin.
 
-WWW: http://search.cpan.org/dist/Bash-Completion/
+WWW: https://metacpan.org/release/Bash-Completion

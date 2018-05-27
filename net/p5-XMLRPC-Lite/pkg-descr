@@ -3,4 +3,4 @@ to the XML-RPC Protocol (XML-RPC) both on client and server side.  Based on
 SOAP::Lite module, it gives you access to all features and transports
 available in that module.
 
-WWW: http://search.cpan.org/dist/XMLRPC-Lite
+WWW: https://metacpan.org/release/XMLRPC-Lite

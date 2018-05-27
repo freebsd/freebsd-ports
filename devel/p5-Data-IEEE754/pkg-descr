@@ -3,4 +3,4 @@ unpacking IEEE 754 floats and doubles.
 
 Currently this module only implements big-endian order.
 
-WWW: http://search.cpan.org/dist/Data-IEEE754/
+WWW: https://metacpan.org/release/Data-IEEE754

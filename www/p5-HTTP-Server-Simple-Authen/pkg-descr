@@ -7,4 +7,4 @@ The method returns $username taken from the request if the authentication is
 successful, and undef otherwise. The code in "SYNOPSIS" requires authentication
 for all the requests and behaves just the same as Apache's Require valid-user.
 
-WWW: http://search.cpan.org/dist/HTTP-Server-Simple-Authen/
+WWW: https://metacpan.org/release/HTTP-Server-Simple-Authen

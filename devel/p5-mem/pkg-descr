@@ -7,4 +7,4 @@ With parameter assignments or other actions, it forces those assignments to be
 done, immediately, at compile time instead of later at run time. It can be use,
 for example, with Exporter, to export typed-sub's among other usages.
 
-WWW: http://search.cpan.org/dist/mem/
+WWW: https://metacpan.org/release/mem

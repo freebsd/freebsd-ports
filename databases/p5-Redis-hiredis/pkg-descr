@@ -2,4 +2,4 @@ Redis::hiredis is a simple wrapper around Salvatore Sanfilippo's hiredis C
 client that allows connecting and sending any command just like you would
 from a command line Redis client.
 
-WWW: http://search.cpan.org/dist/Redis-hiredis/
+WWW: https://metacpan.org/release/Redis-hiredis

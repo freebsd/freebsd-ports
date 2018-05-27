@@ -9,4 +9,4 @@ short scripts. For example, passing use_config => 1 to new will look at
 the config file for the username and password (or SID) of the user.
 If neither is available, it will prompt the user for them.
 
-WWW: http://search.cpan.org/dist/Net-Jifty/
+WWW: https://metacpan.org/release/Net-Jifty

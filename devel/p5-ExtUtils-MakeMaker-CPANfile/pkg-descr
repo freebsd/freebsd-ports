@@ -6,4 +6,4 @@ As of version 0.03, ExtUtils::MakeMaker::CPANfile also removes WriteMakefile
 parameters that the installed version of ExtUtils::MakeMaker doesn't know, to
 avoid warnings.
 
-WWW: http://search.cpan.org/dist/ExtUtils-MakeMaker-CPANfile/
+WWW: https://metacpan.org/release/ExtUtils-MakeMaker-CPANfile

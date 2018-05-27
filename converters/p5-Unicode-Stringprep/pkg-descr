@@ -9,4 +9,4 @@ The stringprep framework does not specify how protocols should
 prepare text strings. Protocols must create profiles of
 stringprep in order to fully specify the processing options.
 
-WWW: http://search.cpan.org/dist/Unicode-Stringprep/
+WWW: https://metacpan.org/release/Unicode-Stringprep

@@ -2,4 +2,4 @@ MouseX::Types::Path::Class creates common Mouse types,
 coercions and option specifications useful for dealing with Path::Class
 objects as Mouse attributes.
 
-WWW: http://search.cpan.org/dist/MouseX-Types-Path-Class/
+WWW: https://metacpan.org/release/MouseX-Types-Path-Class

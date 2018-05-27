@@ -8,4 +8,4 @@ scripts and tests; Module::Install::Catalyst, a Module::Install extension
 for Catalyst; and requirements for a variety of development-related modules.
 The documentation remains with Catalyst::Runtime.
 
-WWW: http://search.cpan.org/dist/Catalyst-Devel/
+WWW: https://metacpan.org/release/Catalyst-Devel

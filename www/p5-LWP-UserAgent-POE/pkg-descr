@@ -3,4 +3,4 @@ in a POE environment. It is a drop-in replacement for LWP::UserAgent
 in systems that are already using LWP::UserAgent synchronously and
 want to play nicely with POE.
 
-WWW: http://search.cpan.org/dist/LWP-UserAgent-POE/
+WWW: https://metacpan.org/release/LWP-UserAgent-POE

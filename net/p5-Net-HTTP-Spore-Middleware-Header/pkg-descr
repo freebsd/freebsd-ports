@@ -1,4 +1,4 @@
 Net::HTTP::Spore::Middleware::Header is a middleware that add header on each
 request. You can specify for exemple a Content-Type to pass.
 
-WWW: http://search.cpan.org/dist/Net-HTTP-Spore-Middleware-Header/
+WWW: https://metacpan.org/release/Net-HTTP-Spore-Middleware-Header

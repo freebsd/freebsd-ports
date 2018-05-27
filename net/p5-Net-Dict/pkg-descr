@@ -2,4 +2,4 @@ Net::Dict is a perl class for looking up words and their definitions on network
 dictionary servers. Net::Dict provides a simple DICT client API for the network
 protocol described in RFC2229.
 
-WWW: http://search.cpan.org/dist/Net-Dict/
+WWW: https://metacpan.org/release/Net-Dict

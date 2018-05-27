@@ -3,4 +3,4 @@ variety of output dithering modes and output drivers (currently
 supported is a plain old ANSI termical output driver and a curses
 driver).
 
-WWW: http://search.cpan.org/dist/Image-Caa/
+WWW: https://metacpan.org/release/Image-Caa

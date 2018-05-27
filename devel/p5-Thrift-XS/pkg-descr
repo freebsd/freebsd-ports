@@ -7,4 +7,4 @@ Thrift::XS::BinaryProtocol with Thrift::XS::CompactProtocol.
 To use, simply replace your Thrift initialization code with the appropriate
 Thrift::XS version.
 
-WWW: http://search.cpan.org/dist/Thrift-XS/
+WWW: https://metacpan.org/release/Thrift-XS

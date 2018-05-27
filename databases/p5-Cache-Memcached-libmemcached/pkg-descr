@@ -1,4 +1,4 @@
 This is the Cache::Memcached compatible interface to libmemcached, a C library
 to interface with memcached.
 
-WWW: http://search.cpan.org/dist/Cache-Memcached-libmemcached/
+WWW: https://metacpan.org/release/Cache-Memcached-libmemcached

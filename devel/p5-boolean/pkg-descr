@@ -11,4 +11,4 @@ Every other scalar value is true.
 This module provides basic Boolean support, by defining two special
 objects: "true" and "false".
 
-WWW: http://search.cpan.org/dist/boolean/
+WWW: https://metacpan.org/release/boolean

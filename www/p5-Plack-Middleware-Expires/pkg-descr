@@ -4,4 +4,4 @@ Cache-Control HTTP header in server responses. Note: Expires works only for
 successful response and If exists Expires HTTP header already, this middleware
 does not override.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-Expires/
+WWW: https://metacpan.org/release/Plack-Middleware-Expires

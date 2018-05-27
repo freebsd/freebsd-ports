@@ -3,4 +3,4 @@ portion of the client structure. It is brought in when an endpoint is specified
 via the proxy method that starts with the characters, ftp://. This module
 provides only a client class.
 
-WWW: http://search.cpan.org/dist/SOAP-Transport-FTP/
+WWW: https://metacpan.org/release/SOAP-Transport-FTP

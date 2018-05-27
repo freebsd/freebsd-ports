@@ -3,4 +3,4 @@ manager in perl, we can more finely tune FastCGI performance, and we can take
 CPU and memory advantages of fast forks and copy-on-write UNIX process
 management characteristics.
 
-WWW: http://search.cpan.org/dist/FCGI-ProcManager/
+WWW: https://metacpan.org/release/FCGI-ProcManager

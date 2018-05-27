@@ -5,4 +5,4 @@ records may be supplied, or arbitrary code may be specified
 as a means for retrieving DNS records, or even generating
 them on the fly.
 
-WWW: http://search.cpan.org/dist/Net-DNS-Resolver-Programmable/
+WWW: https://metacpan.org/release/Net-DNS-Resolver-Programmable

@@ -1,4 +1,4 @@
 This module allows you to generate QR Code using ' ' and '*'. This module
 use libqrencode '2.0.0' and above.
 
-WWW: http://search.cpan.org/dist/Text-QRCode/
+WWW: https://metacpan.org/release/Text-QRCode

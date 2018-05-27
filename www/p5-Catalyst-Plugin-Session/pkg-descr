@@ -11,4 +11,4 @@ every request made by the same client.
 
 This plugin links the two pieces together.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Session/
+WWW: https://metacpan.org/release/Catalyst-Plugin-Session

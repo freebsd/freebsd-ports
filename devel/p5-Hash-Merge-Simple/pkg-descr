@@ -8,4 +8,4 @@ replacing whatever was in the left hash if a conflict occurs.
 This code was pretty much taken straight from Catalyst::Utils, and
 modified to handle more than 2 hashes at the same time.
 
-WWW: http://search.cpan.org/dist/Hash-Merge-Simple/
+WWW: https://metacpan.org/release/Hash-Merge-Simple

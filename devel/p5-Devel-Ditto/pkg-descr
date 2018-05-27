@@ -3,4 +3,4 @@ from. This module ties STDOUT and STDERR such that each call to print or
 warn will have its output prefixed with the package, file and line of
 the print or warn statement.
 
-WWW: http://search.cpan.org/dist/Devel-Ditto/
+WWW: https://metacpan.org/release/Devel-Ditto

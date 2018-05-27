@@ -2,4 +2,4 @@ Math::Round supplies functions that will round numbers in different ways. The
 functions round and nearest are exported by default; others are available as
 described below. "use ... qw(:all)" exports all functions.
 
-WWW: http://search.cpan.org/dist/Math-Round/
+WWW: https://metacpan.org/release/Math-Round

@@ -8,7 +8,7 @@ Data::Dumper. The datastructure should be selfevident.
 Note: The module should be able to parse just about anything, but it intentional
 y looses some information.
 
-WWW: http://search.cpan.org/dist/XML-DTDParser/
+WWW: https://metacpan.org/release/XML-DTDParser
 
 Jenda@Krynicky.cz
 http://Jenda.Krynicky.cz

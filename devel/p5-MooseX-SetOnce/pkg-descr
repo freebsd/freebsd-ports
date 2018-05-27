@@ -3,4 +3,4 @@ not set, but that cannot be altered once set. If you try to alter the value
 of an attribute with the SetOnce trait, either by accessor or writer, and the
 attribute has a value, it will throw an exception.
 
-WWW: http://search.cpan.org/dist/MooseX-SetOnce/
+WWW: https://metacpan.org/release/MooseX-SetOnce

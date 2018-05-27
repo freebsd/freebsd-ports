@@ -6,4 +6,4 @@ Query errors are exceptions by default, though the object can be configured
 to signal an error by an undef response, with the error retrievable from
 the 'error' attribute.
 
-WWW: http://search.cpan.org/dist/Geo-WebService-Elevation-USGS/
+WWW: https://metacpan.org/release/Geo-WebService-Elevation-USGS

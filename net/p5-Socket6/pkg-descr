@@ -3,4 +3,4 @@ enable protocol independent programing.
 If your environment supports IPv6, IPv6 related defines such as
 AF_INET6 are included.
 
-WWW: http://search.cpan.org/dist/Socket6/
+WWW: https://metacpan.org/release/Socket6

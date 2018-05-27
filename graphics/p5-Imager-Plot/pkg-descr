@@ -12,4 +12,4 @@ Most of the actual work is delegated to Imager::Plot::Axis. See the
 Imager::Plot::Axis manpage for more information on how to control grid
 generation, ranges for data (zoom).
 
-WWW: http://search.cpan.org/dist/Imager-Plot/
+WWW: https://metacpan.org/release/Imager-Plot

@@ -5,4 +5,4 @@ The basic concept is that you put a special call at the beginning and
 end of each subroutine/method, and when tracing is enabled, you can
 see the flow of your program.
 
-WWW: http://search.cpan.org/dist/App-Trace/
+WWW: https://metacpan.org/release/App-Trace

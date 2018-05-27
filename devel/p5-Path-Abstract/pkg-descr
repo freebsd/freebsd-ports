@@ -2,4 +2,4 @@ A tool for parsing, interrogating, and modifying a UNIX-style path. The parsing
 behavior is similar to File::Spec::Unix, except that trailing slashes are
 preserved (converted into a single slash).
 
-WWW: http://search.cpan.org/dist/Path-Abstract/
+WWW: https://metacpan.org/release/Path-Abstract

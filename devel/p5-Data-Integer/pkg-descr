@@ -5,4 +5,4 @@ This module supplies constants describing the native integer type.
 There are actually two native integer representations: signed and unsigned. Both
 are handled by this module.
 
-WWW: http://search.cpan.org/dist/Data-Integer/
+WWW: https://metacpan.org/release/Data-Integer

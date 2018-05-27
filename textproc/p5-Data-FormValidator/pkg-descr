@@ -18,6 +18,6 @@ user data and you get the valid fields, the name of the fields which
 are missing. An array is returned listing which fields are valid,
 missing, invalid and unknown in this profile.
 
-WWW: http://search.cpan.org/dist/Data-FormValidator/
+WWW: https://metacpan.org/release/Data-FormValidator
 
 Seamus Venasse <svenasse@polaris.ca>

@@ -8,4 +8,4 @@ existing RRD file.
 This module is ideal for quick and simple storage of data within an RRD file if
 you do not need to, nor want to, bother defining custom RRA definitions.
 
-WWW: http://search.cpan.org/dist/RRD-Simple/
+WWW: https://metacpan.org/release/RRD-Simple

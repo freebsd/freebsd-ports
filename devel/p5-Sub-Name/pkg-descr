@@ -6,4 +6,4 @@ Note that for anonymous closures (subs that reference lexicals declared
 outside the sub itself) one can name each instance of the closure
 differently, which can be very useful for debugging.
 
-WWW: http://search.cpan.org/dist/Sub-Name/
+WWW: https://metacpan.org/release/Sub-Name

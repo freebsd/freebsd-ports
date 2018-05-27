@@ -7,4 +7,4 @@ Net::Packet::Frame object. Then, you can send the frame to the network, and
 receive it easily, since the response is automatically searched for and
 matched against the request.
 
-WWW: http://search.cpan.org/dist/Net-Packet/
+WWW: https://metacpan.org/release/Net-Packet

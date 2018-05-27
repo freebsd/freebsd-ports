@@ -7,4 +7,4 @@ Note that you cannot use regular expressions or split in callbacks. This
 is due to a limitation of perl's regular expression implementation
 (which is not re-entrant).
 
-WWW: http://search.cpan.org/dist/XML-Parser-Lite/
+WWW: https://metacpan.org/release/XML-Parser-Lite

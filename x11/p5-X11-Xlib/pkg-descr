@@ -1,4 +1,4 @@
 This module provides low-level access to X11 library functions,
 including access to some X11 extensions like the X11 test library (Xtst).
 
-WWW: http://search.cpan.org/dist/X11-Xlib/
+WWW: https://metacpan.org/release/X11-Xlib

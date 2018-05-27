@@ -3,4 +3,4 @@ The initial version just implements functions to convert markdown
 input to html including strict markdown, discount markdown and
 specific extensions only available in libsoldout.
 
-WWW: http://search.cpan.org/dist/libsoldout/
+WWW: https://metacpan.org/release/libsoldout

@@ -1,4 +1,4 @@
 MIME::AltWords is similar to MIME::Words in MIME::Tools, but it provides an
 alternate implementation that follows the MIME specification more carefully.
 
-WWW: http://search.cpan.org/dist/MIME-AltWords/
+WWW: https://metacpan.org/release/MIME-AltWords

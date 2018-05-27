@@ -1,4 +1,4 @@
 MooseX::Singleton lets you easily upgrade (or downgrade, as it were)
 your Moose class to a singleton.
 
-WWW: http://search.cpan.org/dist/MooseX-Singleton/
+WWW: https://metacpan.org/release/MooseX-Singleton

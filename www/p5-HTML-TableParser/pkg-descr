@@ -4,4 +4,4 @@ Specific tables may be selected either by a matching a unique table id or by
 matching against the column names. Multiple (even nested) tables may be
 parsed in a document in one pass.
 
-WWW: http://search.cpan.org/dist/HTML-TableParser/
+WWW: https://metacpan.org/release/HTML-TableParser

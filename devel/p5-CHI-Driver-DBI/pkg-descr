@@ -8,4 +8,4 @@ used when less reliable storage like memcached is not appropriate. Also, the
 speed of simple lookups on MySQL when accessed over a local socket is very hard
 to beat. DBI is fast.
 
-WWW: http://search.cpan.org/dist/CHI-Driver-DBI/
+WWW: https://metacpan.org/release/CHI-Driver-DBI

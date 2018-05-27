@@ -2,4 +2,4 @@ Crypt::Rijndael is a Crypt::CBC compliant Rijndael encryption module that
 implements the Rijndael cipher, which has just been selected as the new
 Advanced Encryption Standard (AES).
 
-WWW: http://search.cpan.org/dist/Crypt-Rijndael/
+WWW: https://metacpan.org/release/Crypt-Rijndael

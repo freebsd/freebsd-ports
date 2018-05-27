@@ -7,4 +7,4 @@ This module plugs in to Log::Dispatch::Config and allows the use of other file
 formats, in fact any format supported by the Config::Any module. As a bonus you
 can also pass in a configuration data structure instead of a file name.
 
-WWW: http://search.cpan.org/dist/Log-Dispatch-Configurator-Any/
+WWW: https://metacpan.org/release/Log-Dispatch-Configurator-Any

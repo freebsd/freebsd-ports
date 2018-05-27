@@ -6,4 +6,4 @@ zbgset-admin - Manages the settings.
 zbgset-pt - Automatically populate a path based on fill type
     and average gray.
 
-WWW: http://search.cpan.org/dist/ZConf-BGSet/
+WWW: https://metacpan.org/release/ZConf-BGSet

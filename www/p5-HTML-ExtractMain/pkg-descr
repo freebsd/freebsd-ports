@@ -2,4 +2,4 @@ HTML::ExtractMain is a module which takes HTML content, and uses the
 Readability algorithm to detect the main body of the page, usually
 skipping headers, footers, navigation, etc.
 
-WWW: http://search.cpan.org/dist/HTML-ExtractMain/
+WWW: https://metacpan.org/release/HTML-ExtractMain

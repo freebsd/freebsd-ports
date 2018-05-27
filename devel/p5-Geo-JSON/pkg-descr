@@ -5,4 +5,4 @@ Currently supports 2 or 3 dimensions (longitude, latitude, altitude). Further
 dimensions in positions are ignored for calculations and comparisons, but will
 be read-from and written-to.
 
-WWW: http://search.cpan.org/dist/Geo-JSON/
+WWW: https://metacpan.org/release/Geo-JSON

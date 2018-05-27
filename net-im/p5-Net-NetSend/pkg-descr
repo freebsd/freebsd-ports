@@ -3,4 +3,4 @@ enabling a perl5 application to talk to Windows machines.
 This is a pure Perl implementation that approximates the "net send"
 command on Windows.
 
-WWW: http://search.cpan.org/dist/Net-NetSend/
+WWW: https://metacpan.org/release/Net-NetSend

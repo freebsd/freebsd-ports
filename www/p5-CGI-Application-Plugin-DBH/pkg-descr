@@ -3,4 +3,4 @@ CGI::Application modules. Lazy loading is used to prevent a database connection
 from being made if the dbh method is not called during the request. In other
 words, the database connection is not created until it is actually needed.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-DBH/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-DBH

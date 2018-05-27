@@ -3,4 +3,4 @@ accessing APIs that accept/provide JSON data.
 
 It supports all the options LWP supports, including authentication.
 
-WWW: http://search.cpan.org/dist/JSON-API/
+WWW: https://metacpan.org/release/JSON-API

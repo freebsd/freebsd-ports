@@ -4,4 +4,4 @@ Briefly, CPS is a style of writing code where the normal call/return
 mechanism is replaced by explicit "continuations", values passed in
 to functions which they should invoke, to implement return behaviour.
 
-WWW: http://search.cpan.org/dist/CPS/
+WWW: https://metacpan.org/release/CPS

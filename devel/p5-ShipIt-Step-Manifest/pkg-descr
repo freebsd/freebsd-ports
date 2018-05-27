@@ -6,4 +6,4 @@ directories, and have set the relevant svk ignore properties.
 
 To use it, just list in your .shipit file.
 
-WWW: http://search.cpan.org/dist/ShipIt-Step-Manifest/
+WWW: https://metacpan.org/release/ShipIt-Step-Manifest

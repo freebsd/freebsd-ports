@@ -1,4 +1,4 @@
 This module packages several TypeConstraints with coercions for
 working with ISO8601 date strings and the DateTime suite of objects.
 
-WWW: http://search.cpan.org/dist/MooseX-Types-ISO8601/
+WWW: https://metacpan.org/release/MooseX-Types-ISO8601

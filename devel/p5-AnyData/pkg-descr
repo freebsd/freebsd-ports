@@ -16,4 +16,4 @@ making it easy for any author to create additional format parsers which can
 be plugged in to AnyData itself and thereby be accessible by either the
 tiedhash or DBI/SQL interface.
 
-WWW: http://search.cpan.org/dist/AnyData/
+WWW: https://metacpan.org/release/AnyData

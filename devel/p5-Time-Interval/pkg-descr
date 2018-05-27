@@ -2,4 +2,4 @@ This is a perl module for dealing with time intervals.  Among other
 things, this module can tell you the number of hours, minutes, and
 seconds elapsed between two dates.
 
-WWW: http://search.cpan.org/dist/Time-Interval/
+WWW: https://metacpan.org/release/Time-Interval

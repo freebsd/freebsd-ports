@@ -9,4 +9,4 @@ and can handle many concurrent connections efficiently in both CPU and RAM.
 It skips doing a lot of sanity checking with the assumption that a "front-end"
 HTTP/HTTPS server is placed between it and the Internet.
 
-WWW: http://search.cpan.org/dist/Feersum/
+WWW: https://metacpan.org/release/Feersum

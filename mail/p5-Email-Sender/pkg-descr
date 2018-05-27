@@ -13,4 +13,4 @@ This module provides a very simple, very clean, very specific interface
 to multiple Email mailers.  The goal of this software is to be small
 and simple, easy to use, and easy to extend.
 
-WWW: http://search.cpan.org/dist/Email-Sender/
+WWW: https://metacpan.org/release/Email-Sender

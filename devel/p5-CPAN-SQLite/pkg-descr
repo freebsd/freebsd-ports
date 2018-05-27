@@ -3,4 +3,4 @@ consisting of the information stored in the three main CPAN indices:
 $CPAN/modules/03modlist.data.gz, $CPAN/modules/02packages.details.txt.gz, and
 $CPAN/authors/01mailrc.txt.gz.
 
-WWW: http://search.cpan.org/dist/CPAN-SQLite
+WWW: https://metacpan.org/release/CPAN-SQLite

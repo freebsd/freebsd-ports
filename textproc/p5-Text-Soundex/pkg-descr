@@ -13,4 +13,4 @@ National Archives and Records Administration (NARA).
 The soundex algorithm may be recognized from Donald Knuth's The Art of Computer
 Programming. The algorithm described by Knuth is the NARA algorithm.
 
-WWW: http://search.cpan.org/dist/Text-Soundex/
+WWW: https://metacpan.org/release/Text-Soundex

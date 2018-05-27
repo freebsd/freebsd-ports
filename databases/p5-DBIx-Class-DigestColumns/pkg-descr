@@ -2,4 +2,4 @@ This DBIx::Class component can be used to automatically insert a message
 digest of selected columns. By default DigestColumns will use Digest::MD5
 to insert a 128-bit hexadecimal message digest of the column value.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-DigestColumns/
+WWW: https://metacpan.org/release/DBIx-Class-DigestColumns

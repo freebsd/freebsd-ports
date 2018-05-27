@@ -4,4 +4,4 @@ modules may be accessed. The standard object oriented programming concepts
 of public, private and protected have been implemented for both class and
 instance (or object) attributes and methods.
 
-WWW: http://search.cpan.org/dist/Class-Declare/
+WWW: https://metacpan.org/release/Class-Declare

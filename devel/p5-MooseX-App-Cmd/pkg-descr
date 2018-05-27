@@ -7,4 +7,4 @@ Then you can write your moose commands as moose classes, with
 MooseX::Getopt defining the options for you instead of opt_spec
 returning a Getopt::Long::Descriptive spec.
 
-WWW: http://search.cpan.org/dist/MooseX-App-Cmd/
+WWW: https://metacpan.org/release/MooseX-App-Cmd

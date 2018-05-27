@@ -3,4 +3,4 @@ constructs, translating them back to Perl 5 regexes via a source filter.
 (And hence suffers from all the usual limitations of a source filter,
 including the ability to translate complex code spectacularly wrongly).
 
-WWW: http://search.cpan.org/dist/Perl6-Rules/
+WWW: https://metacpan.org/release/Perl6-Rules

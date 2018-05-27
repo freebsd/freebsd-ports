@@ -1,4 +1,4 @@
 Net::SSL::ExpireDate get certificate from network (SSL) or local file and obtain
 its expiration date.
 
-WWW: http://search.cpan.org/dist/Net-SSL-ExpireDate/
+WWW: https://metacpan.org/release/Net-SSL-ExpireDate

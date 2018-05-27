@@ -1,4 +1,4 @@
 This class lets you build groups of accessors that will call different
 getters and setters.
 
-WWW: http://search.cpan.org/dist/Class-Accessor-Grouped/
+WWW: https://metacpan.org/release/Class-Accessor-Grouped

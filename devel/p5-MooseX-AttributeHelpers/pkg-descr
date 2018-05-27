@@ -2,4 +2,4 @@ While Moose attributes provide you with a way to name your accessors,
 readers, writers, clearers and predicates, this library provides commonly
 used attribute helper methods for more specific types of data.
 
-WWW: http://search.cpan.org/dist/MooseX-AttributeHelpers/
+WWW: https://metacpan.org/release/MooseX-AttributeHelpers

@@ -5,4 +5,4 @@ module. An obfuscated program is already parsed and interpreted correctly by
 the B::Deparse program. Unfortunately, if the obfuscation involved variable
 renaming then the resulting program also has obfuscated symbols.
 
-WWW: http://search.cpan.org/dist/B-Deobfuscate/
+WWW: https://metacpan.org/release/B-Deobfuscate

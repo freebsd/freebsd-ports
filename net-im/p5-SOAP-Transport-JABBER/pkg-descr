@@ -7,4 +7,4 @@ objects internally, the package also uses a separate class as a proxy between
 communication layers, SOAP::Transport::JABBER::Query. The Jabber support
 provides both client and server classes.
 
-WWW: http://search.cpan.org/dist/SOAP-Transport-JABBER/
+WWW: https://metacpan.org/release/SOAP-Transport-JABBER

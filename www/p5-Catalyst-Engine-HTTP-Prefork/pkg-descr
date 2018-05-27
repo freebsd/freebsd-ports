@@ -4,4 +4,4 @@ high-performance, HTTP/1.1 compliance, and robustness.  It is also
 suitable for use as a faster development server with support for
 automatic restarting.
 
-WWW: http://search.cpan.org/dist/Catalyst-Engine-HTTP-Prefork/
+WWW: https://metacpan.org/release/Catalyst-Engine-HTTP-Prefork

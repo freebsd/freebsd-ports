@@ -2,4 +2,4 @@ This module is an RDF/N3 parser; it can parse N3 files or strings and provide
 results in whatever format (as far as there are subclasses supporting your
 desired format available).
 
-WWW: http://search.cpan.org/dist/RDF-Notation3/
+WWW: https://metacpan.org/release/RDF-Notation3

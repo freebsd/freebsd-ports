@@ -2,4 +2,4 @@ This class provides methods for making parallel, asynchronous requests to the
 OpenStack API. This distribution comes with a command line tool stackattack
 which heavily uses this class.
 
-WWW: http://search.cpan.org/dist/Net-OpenStack-Attack/
+WWW: https://metacpan.org/release/Net-OpenStack-Attack

@@ -2,4 +2,4 @@ Set::Tiny is a thin wrapper around regular Perl hashes to perform
 often needed set operations, such as testing two sets of strings for
 equality, or checking whether one is contained within the other.
 
-WWW: http://search.cpan.org/dist/Set-Tiny/
+WWW: https://metacpan.org/release/Set-Tiny

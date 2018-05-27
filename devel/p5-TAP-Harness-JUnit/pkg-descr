@@ -5,4 +5,4 @@ adds optional 'xmlfile' argument, that causes the output to be
 formatted into XML in format similar to one that is produced by JUnit
 testing framework.
 
-WWW: http://search.cpan.org/dist/TAP-Harness-JUnit/
+WWW: https://metacpan.org/release/TAP-Harness-JUnit

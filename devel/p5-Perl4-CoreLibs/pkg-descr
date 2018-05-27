@@ -2,4 +2,4 @@ This is a collection of .pl files that have historically been bundled with the
 Perl core but are planned not to be so distributed with core version 5.15 or
 later.
 
-WWW: http://search.cpan.org/dist/Perl4-CoreLibs
+WWW: https://metacpan.org/release/Perl4-CoreLibs

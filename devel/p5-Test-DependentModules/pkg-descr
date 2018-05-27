@@ -6,4 +6,4 @@ a dependency of many other modules.
 WARNING: The tests this module does should *NEVER* be included as part of a
 normal CPAN install!
 
-WWW: http://search.cpan.org/dist/Test-DependentModules/
+WWW: https://metacpan.org/release/Test-DependentModules

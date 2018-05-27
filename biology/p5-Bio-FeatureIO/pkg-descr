@@ -16,4 +16,4 @@ stream objects have a notion of an internal file that is read from or written
 to. A particular FeatureIO object instance is configured for either input or
 output. A specific example of a stream object is the Bio::FeatureIO::gff object.
 
-WWW: http://search.cpan.org/dist/Bio-FeatureIO/
+WWW: https://metacpan.org/release/Bio-FeatureIO

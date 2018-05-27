@@ -16,4 +16,4 @@ labels either explicitly via a hashref or via a callback subroutine,
 and to control the formatting of elements via sprintf patterns or a
 callback subroutine.
 
-WWW: http://search.cpan.org/dist/HTML-Breadcrumbs/
+WWW: https://metacpan.org/release/HTML-Breadcrumbs

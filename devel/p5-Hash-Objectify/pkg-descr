@@ -8,4 +8,4 @@ of your choice.
 Using Hash::Objectify is slower than accessing the keys of the hash directly,
 but does provide "typo protection" since a misspelled method is an error.
 
-WWW: http://search.cpan.org/dist/Hash-Objectify/
+WWW: https://metacpan.org/release/Hash-Objectify

@@ -7,4 +7,4 @@ It doesn't do any validation, coloring, menus, timeouts, or any of the wild,
 crazy, cool stuff that other prompting modules do. It just prompts with a
 default. That's it!
 
-WWW: http://search.cpan.org/dist/IO-Prompt-Tiny/
+WWW: https://metacpan.org/release/IO-Prompt-Tiny

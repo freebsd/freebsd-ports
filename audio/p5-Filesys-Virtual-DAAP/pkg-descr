@@ -2,4 +2,4 @@ The module can be used to republish a DAAP share.  You'll probably
 want to use Net::DAV::Server or POE::Component::Server::FTP to
 re-export it in a browseable form.
 
-WWW: http://search.cpan.org/dist/Filesys-Virtual-DAAP/
+WWW: https://metacpan.org/release/Filesys-Virtual-DAAP

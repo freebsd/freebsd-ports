@@ -7,4 +7,4 @@ This module uses the same API as IO::Socket::Multicast, but with added support
 for IPv6 (IPv4 is still supported). Unlike IO::Socket::Multicast, this is a
 pure-perl module.
 
-WWW: http://search.cpan.org/dist/IO-Socket-Multicast6/
+WWW: https://metacpan.org/release/IO-Socket-Multicast6

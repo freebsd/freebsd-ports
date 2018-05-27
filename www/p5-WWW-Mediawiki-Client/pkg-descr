@@ -4,4 +4,4 @@ http://www.wikipedia.org|Wikipedia. The interface mimics the two most basic
 cvs commands: update and commit with similarly named methods. Each of these
 has a shorter alias, as in cvs.
 
-WWW: http://search.cpan.org/dist/WWW-Mediawiki-Client/
+WWW: https://metacpan.org/release/WWW-Mediawiki-Client

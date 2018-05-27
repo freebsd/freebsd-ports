@@ -1,4 +1,4 @@
 Plack::Middleware::InteractiveDebugger is a PSGI middleware component
 that provides an awesome JavaScript in-browser interacive debugger.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-InteractiveDebugger/
+WWW: https://metacpan.org/release/Plack-Middleware-InteractiveDebugger

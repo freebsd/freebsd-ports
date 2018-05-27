@@ -3,4 +3,4 @@ Scalar::Util's looks_like_number(), except it returns the raw value
 from the C function.  Scalar::Util used to do this also, but it
 returns a booleanized value since 1.39.
 
-WWW: http://search.cpan.org/dist/Scalar-Util-LooksLikeNumber/
+WWW: https://metacpan.org/release/Scalar-Util-LooksLikeNumber

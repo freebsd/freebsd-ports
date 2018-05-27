@@ -2,4 +2,4 @@ List::Uniq extracts the unique elements of a list.
 This is a commonly re-written (or at least re-looked-up)
 idiom in Perl programs.
 
-WWW: http://search.cpan.org/dist/List-Uniq/
+WWW: https://metacpan.org/release/List-Uniq

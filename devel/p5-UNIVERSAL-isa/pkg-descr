@@ -9,4 +9,4 @@ called on those objects as a method.
 
 In all other cases the real UNIVERSAL::isa is just called directly.
 
-WWW: http://search.cpan.org/dist/UNIVERSAL-isa/
+WWW: https://metacpan.org/release/UNIVERSAL-isa

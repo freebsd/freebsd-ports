@@ -15,4 +15,4 @@ tool-chain. Applications that need https support can just declare their
 dependency on LWP::Protocol::https and will no longer need to know what
 underlying modules to install.
 
-WWW: http://search.cpan.org/dist/LWP-Protocol-https/
+WWW: https://metacpan.org/release/LWP-Protocol-https

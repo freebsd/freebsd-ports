@@ -3,4 +3,4 @@ data.  It provides an interface to pages of data similar to many well-known
 sites like Altavista or Google.  It uses the module HTML::Template to do all the
 HTML generation.
 
-WWW: http://search.cpan.org/dist/HTML-Pager/
+WWW: https://metacpan.org/release/HTML-Pager

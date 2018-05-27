@@ -8,4 +8,4 @@ for IPv6 sockets Socket6, IO::Socket::INET6 are available.
 
 This module tries to mitigate this by hotpatching.
 
-WWW: http://search.cpan.org/dist/Net-INET6Glue/
+WWW: https://metacpan.org/release/Net-INET6Glue

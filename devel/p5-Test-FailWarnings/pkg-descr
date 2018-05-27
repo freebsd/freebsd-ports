@@ -2,4 +2,4 @@ This module hooks $SIG{__WARN__} and converts warnings to Test::More's
 fail() calls.  It is designed to be used with done_testing, when you
 don't need to know the test count in advance.
 
-WWW: http://search.cpan.org/dist/Test-FailWarnings/
+WWW: https://metacpan.org/release/Test-FailWarnings

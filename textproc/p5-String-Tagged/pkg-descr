@@ -14,4 +14,4 @@ Tags may be arbitrarily overlapped. Any given offset within the string has in
 effect, a set of uniquely named tags. Tags of different names are independent.
 For tags of the same name, only the latest, shortest tag takes effect.
 
-WWW: http://search.cpan.org/dist/String-Tagged/
+WWW: https://metacpan.org/release/String-Tagged

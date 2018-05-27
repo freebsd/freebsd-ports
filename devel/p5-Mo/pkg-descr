@@ -8,4 +8,4 @@ new, extends and has, and also add new export subs, or remove existing ones.
 Features can also be combined for a single accessor. See Mo::Features for a list
 of all the features and for an explanation of the Feature API.
 
-WWW: http://search.cpan.org/dist/Mo/
+WWW: https://metacpan.org/release/Mo

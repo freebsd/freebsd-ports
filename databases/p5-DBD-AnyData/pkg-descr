@@ -16,4 +16,4 @@ database system without any file access or rdbms backend.
 The module also supports converting files between any of the supported formats
 (e.g. save selected data from MySQL or Oracle to an XML file).
 
-WWW: http://search.cpan.org/dist/DBD-AnyData/
+WWW: https://metacpan.org/release/DBD-AnyData

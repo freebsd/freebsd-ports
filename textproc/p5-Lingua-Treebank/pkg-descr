@@ -7,4 +7,4 @@ parenthesis-delimited pair, just like it does non-terminal nodes.
 The CNF format attaches pre-terminal tags to the word with an
 underscore.
 
-WWW: http://search.cpan.org/dist/Lingua-Treebank/
+WWW: https://metacpan.org/release/Lingua-Treebank

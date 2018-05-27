@@ -8,4 +8,4 @@ The process of interrogating the Java classes for public methods occurs the
 first time you run your Java code. The namespace is cached, and subsequent
 calls use the cached version.
 
-WWW: http://search.cpan.org/dist/Inline-Java/
+WWW: https://metacpan.org/release/Inline-Java

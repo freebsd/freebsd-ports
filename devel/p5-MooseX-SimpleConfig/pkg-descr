@@ -4,4 +4,4 @@ to load your configfile. Config::Any will in turn support any of a
 variety of different config formats, detected by the file extension.
 See Config::Any for more details about supported formats.
 
-WWW: http://search.cpan.org/dist/MooseX-SimpleConfig/
+WWW: https://metacpan.org/release/MooseX-SimpleConfig

@@ -2,4 +2,4 @@ Monoceros is PSGI/Plack server supports HTTP/1.1.  Monoceros has a
 event-driven connection manager and preforking workers.  Monoceros can
 keep large amount of connection at minimal processes.
 
-WWW: http://search.cpan.org/dist/Monoceros/
+WWW: https://metacpan.org/release/Monoceros

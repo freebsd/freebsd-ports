@@ -5,4 +5,4 @@ Johan Danielsson.  This module exposes the API used to administer a
 Kerberos realm: add, remove, and list principals, create keytabs, change
 keys, and similar operations.
 
-WWW: http://search.cpan.org/dist/Heimdal-Kadm5/
+WWW: https://metacpan.org/release/Heimdal-Kadm5

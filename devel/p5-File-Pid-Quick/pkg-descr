@@ -9,4 +9,4 @@ interface that makes adding PID-file-based concurrency prevention
 to your script as quick and simple as possible; hence File::Pid::Quick.
 For a more nuanced implementation of PID files, please see File::Pid.
 
-WWW: http://search.cpan.org/dist/File-Pid-Quick/
+WWW: https://metacpan.org/release/File-Pid-Quick

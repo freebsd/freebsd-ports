@@ -4,4 +4,4 @@ It fires off child processes (configurable, defaults to 3) and feeds
 database queries to it via two-way pipe (or however Wheel::Run is able
 to manage it).
 
-WWW: http://search.cpan.org/dist/POE-Component-DBIAgent/
+WWW: https://metacpan.org/release/POE-Component-DBIAgent

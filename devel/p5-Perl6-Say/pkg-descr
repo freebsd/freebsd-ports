@@ -1,4 +1,4 @@
 Implements a close simulation of the say function in Perl 6, which acts like
 print but automatically appends a newline.
 
-WWW: http://search.cpan.org/dist/Perl6-Say/
+WWW: https://metacpan.org/release/Perl6-Say

@@ -4,4 +4,4 @@ properties that specify the expected behavior of your software.
 LectroTest then checks your software to see whether those properties
 hold for semi-random input values in the specified range.
 
-WWW: http://search.cpan.org/dist/Test-LectroTest/
+WWW: https://metacpan.org/release/Test-LectroTest

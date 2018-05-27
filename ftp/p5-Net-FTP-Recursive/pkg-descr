@@ -8,4 +8,4 @@ The methods are:
      rls  - Receive an entire directory tree listing, filenames only.
      rdelete - Remove an entire directory tree.
 
-WWW: http://search.cpan.org/dist/Net-FTP-Recursive/
+WWW: https://metacpan.org/release/Net-FTP-Recursive

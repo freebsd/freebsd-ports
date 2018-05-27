@@ -5,4 +5,4 @@ select interface that operates on lines, rather than characters.
 Given a set of filehandles, it will block until a full line is
 available on one or more of them.
 
-WWW: http://search.cpan.org/dist/IO-BufferedSelect/
+WWW: https://metacpan.org/release/IO-BufferedSelect

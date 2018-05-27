@@ -1,4 +1,4 @@
 Retrieves module information from a file or script. Enhances
 Module::Info->new_from_file to include dir and name attributes.
 
-WWW: http://search.cpan.org/dist/Module-Info-File/
+WWW: https://metacpan.org/release/Module-Info-File

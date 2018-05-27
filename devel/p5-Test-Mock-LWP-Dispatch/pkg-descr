@@ -14,4 +14,4 @@ LWP::UserAgent (local mappings).
 See also on Test::Mock::LWP, it provides mocked LWP objects for you, so probably
 you can solve your problems with this module too.
 
-WWW: http://search.cpan.org/dist/Test-Mock-LWP-Dispatch/
+WWW: https://metacpan.org/release/Test-Mock-LWP-Dispatch

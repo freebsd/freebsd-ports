@@ -6,4 +6,4 @@ Math::BigInt::GMP now no longer uses Math::GMP, but provides its own XS layer
 to access the GMP c-library. This cuts out another (perl sub routine) layer and
 also reduces the memory footprint by not loading Math::GMP and Carp at all.
 
-WWW: http://search.cpan.org/dist/Math-BigInt-GMP/
+WWW: https://metacpan.org/release/Math-BigInt-GMP

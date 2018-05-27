@@ -2,4 +2,4 @@ Dealing with all the little details of a forking daemon can be annoying and
 hard.  POE::Component::Daemon encapsulates all the details into one place
 and (hopefully) gets them right.
 
-WWW: http://search.cpan.org/dist/POE-Component-Daemon/
+WWW: https://metacpan.org/release/POE-Component-Daemon

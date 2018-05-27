@@ -7,4 +7,4 @@ system of addressing.
 This module supports both EUI-48 and EUI-64 addresses and implements an OO
 and a functional interface.
 
-WWW: http://search.cpan.org/dist/NetAddr-MAC/
+WWW: https://metacpan.org/release/NetAddr-MAC

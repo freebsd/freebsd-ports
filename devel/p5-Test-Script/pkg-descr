@@ -3,4 +3,4 @@ Test::Script - Cross-platform basic tests for scripts
 The intent of this module is to provide a series of basic tests for
 scripts in the bin directory of your Perl distribution.
 
-WWW: http://search.cpan.org/dist/Test-Script/
+WWW: https://metacpan.org/release/Test-Script

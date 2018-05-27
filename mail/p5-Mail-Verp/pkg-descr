@@ -4,4 +4,4 @@ recipient is forwarding their mail to another address and the remote Mail
 Transport Agents send back unhelpful bounce messages. The module must also be
 used to decode bounce recipient addresses.
 
-WWW: http://search.cpan.org/dist/Mail-Verp/
+WWW: https://metacpan.org/release/Mail-Verp

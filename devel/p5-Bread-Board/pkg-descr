@@ -3,4 +3,4 @@ injection and lifecycle management. It's goal is to help you write more
 decoupled objects and components by removing the need for you to manually wire
 those objects/components together.
 
-WWW: http://search.cpan.org/dist/Bread-Board/
+WWW: https://metacpan.org/release/Bread-Board

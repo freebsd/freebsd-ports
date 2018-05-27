@@ -13,4 +13,4 @@ zcchooser-get	Gets the chooser for a config.
 zcchooser-run	Return the set that will be used for a config.
 zcchooser-set	Set the chooser using data in the specified file.
 
-WWW: http://search.cpan.org/dist/ZConf/
+WWW: https://metacpan.org/release/ZConf

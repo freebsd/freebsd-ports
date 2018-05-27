@@ -6,4 +6,4 @@ SWF::File	- making SWF file
 SWF::Parser	- parsing and splitting SWF files into header and tags
 SWF::BinStream	- binary stream class for SWF
 
-WWW: http://search.cpan.org/dist/SWF-File/
+WWW: https://metacpan.org/release/SWF-File

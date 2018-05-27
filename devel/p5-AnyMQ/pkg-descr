@@ -1,4 +1,4 @@
 AnyMQ is message queue system based on AnyEvent. It can store all messages in
 memory or use external message queue servers.
 
-WWW: http://search.cpan.org/dist/AnyMQ/
+WWW: https://metacpan.org/release/AnyMQ

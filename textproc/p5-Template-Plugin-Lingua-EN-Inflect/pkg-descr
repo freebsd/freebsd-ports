@@ -3,4 +3,4 @@ Conway's Linua::EN::Inflect Perl module, which provides plural
 inflections, "a"/"an" selection for English words, and manipulation of
 numbers as words.
 
-WWW: http://search.cpan.org/dist/Template-Plugin-Lingua-EN-Inflect/
+WWW: https://metacpan.org/release/Template-Plugin-Lingua-EN-Inflect

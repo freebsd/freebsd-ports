@@ -4,4 +4,4 @@ would only need to know about the name used in the configuration file.
 This aims to make it simpler for operations teams to manage database
 credentials.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-Schema-Config/
+WWW: https://metacpan.org/release/DBIx-Class-Schema-Config

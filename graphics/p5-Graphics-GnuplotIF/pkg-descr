@@ -2,4 +2,4 @@ Graphics::GnuplotIF is a simple and easy to use dynamic Perl interface
 to gnuplot. gnuplot is a freely available, command-driven graphical
 display tool for Unix.
 
-WWW: http://search.cpan.org/dist/Graphics-GnuplotIF/
+WWW: https://metacpan.org/release/Graphics-GnuplotIF

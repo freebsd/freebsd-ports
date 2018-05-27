@@ -3,4 +3,4 @@ providing a convenient way to store torrent file info in memory. Most
 users of the module will most likely just call the new method with the
 name of a existing torrent file and use the data from that.
 
-WWW: http://search.cpan.org/dist/Net-BitTorrent-File/
+WWW: https://metacpan.org/release/Net-BitTorrent-File

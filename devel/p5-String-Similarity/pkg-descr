@@ -4,4 +4,4 @@ different. A value of '1' means that the strings are identical.
 Everything else lies between 0 and 1 and describes the amount of
 similarity between the strings.
 
-WWW: http://search.cpan.org/dist/String-Similarity/
+WWW: https://metacpan.org/release/String-Similarity

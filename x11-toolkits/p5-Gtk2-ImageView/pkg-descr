@@ -2,4 +2,4 @@ The Gtk2::ImageView module allows a Perl developer to use the GtkImageView
 image viewer widget. Find out more about GtkImageView at
 http://trac.bjourne.webfactional.com/.
 
-WWW: http://search.cpan.org/dist/Gtk2-ImageView/
+WWW: https://metacpan.org/release/Gtk2-ImageView

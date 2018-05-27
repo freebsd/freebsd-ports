@@ -6,4 +6,4 @@ allow to use the C types instead of a string representation of the data
 structure for conversion of binary data from and to Perl's complex data
 structures.
 
-WWW: http://search.cpan.org/dist/Convert-Binary-C/
+WWW: https://metacpan.org/release/Convert-Binary-C

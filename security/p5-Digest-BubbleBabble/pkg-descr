@@ -13,4 +13,4 @@ The key (a DSA or RSA key) is converted into a textual form,
 digested using Digest::SHA1, and run through bubblebabble
 to create the key fingerprint.
 
-WWW: http://search.cpan.org/dist/Digest-BubbleBabble/
+WWW: https://metacpan.org/release/Digest-BubbleBabble

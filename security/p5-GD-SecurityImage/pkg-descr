@@ -5,4 +5,4 @@ as "Security Images".
 The final output is the actual graphic data, the mime type of the graphic and
 the created random string.
 
-WWW: http://search.cpan.org/dist/GD-SecurityImage/
+WWW: https://metacpan.org/release/GD-SecurityImage

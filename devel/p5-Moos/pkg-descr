@@ -5,4 +5,4 @@ does). Moos has no non-core dependencies, but certain features (roles, debugging
 functions, legacy Perl support) do require additional modules. If you steer away
 from those features, you don't need those additional modules.
 
-WWW: http://search.cpan.org/dist/Moos/
+WWW: https://metacpan.org/release/Moos

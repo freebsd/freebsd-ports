@@ -15,4 +15,4 @@ The maintainers of both randomness sources claim that their data
 is *truly* random. A some simple tests show that they are certainly
 more random than the rand() function on this 'ere machine.
 
-WWW: http://search.cpan.org/dist/Net-Random/
+WWW: https://metacpan.org/release/Net-Random

@@ -4,6 +4,6 @@ exchange rates for all Euro currencies (as of November
 automatically fetch their exchange rates from the internet
 and (optionally) store them in a file for later reference.
 
-WWW: http://search.cpan.org/dist/Finance-Currency-Convert/
+WWW: https://metacpan.org/release/Finance-Currency-Convert
 
 Seamus Venasse <svenasse@polaris.ca>

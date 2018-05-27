@@ -13,4 +13,4 @@ For example, "PAR-Dist-0.01-i386-freebsd-5.8.0.par" corresponds to the
 0.01 release of "PAR-Dist" on CPAN, built for perl 5.8.0 running on
 "i386-freebsd".
 
-WWW: http://search.cpan.org/dist/PAR-Dist/
+WWW: https://metacpan.org/release/PAR-Dist

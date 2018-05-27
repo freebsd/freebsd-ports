@@ -18,4 +18,4 @@ Serialization is done via Storable, and optionally ASCII-fied via MIME or
 pack(). ID numbers are generated via MD5. The reader is encouraged to
 extend these capabilities to meet his own requirements.
 
-WWW: http://search.cpan.org/dist/Apache-SessionX/
+WWW: https://metacpan.org/release/Apache-SessionX

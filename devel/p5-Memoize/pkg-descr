@@ -4,4 +4,4 @@ you call the function again with the same arguments, memoize jumps in
 and gives you the value out of the table, instead of letting the
 function compute the value all over again.
 
-WWW: http://search.cpan.org/dist/Memoize/
+WWW: https://metacpan.org/release/Memoize

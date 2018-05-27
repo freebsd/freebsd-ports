@@ -8,4 +8,4 @@ but does not appear to work with CGI::Session::PureSQL-type sessions.
 The recommended way to use this module is via method expire_sessions(),
 which requires CGI::Session V 4 or later.
 
-WWW: http://search.cpan.org/dist/CGI-Session-ExpireSessions/
+WWW: https://metacpan.org/release/CGI-Session-ExpireSessions

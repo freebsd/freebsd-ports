@@ -5,4 +5,4 @@ and error handler are grouped together in a "fork block". The clauses
 may appear in any order, but they must be consecutive (without any other
 statements in between).
 
-WWW: http://search.cpan.org/dist/Proc-Fork/
+WWW: https://metacpan.org/release/Proc-Fork

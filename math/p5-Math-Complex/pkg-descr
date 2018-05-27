@@ -3,4 +3,4 @@ limits itself to real numbers, but an extra use statement brings full complex
 support, along with a full set of mathematical functions typically associated
 with and/or extended to complex numbers.
 
-WWW: http://search.cpan.org/dist/Math-Complex/
+WWW: https://metacpan.org/release/Math-Complex

@@ -1,4 +1,4 @@
 This model is a thin wrapper around Class::DBI::Sweet to let you use it as
 a Catalyst Model easily. It's similar to Catalyst::Model::CDBI::Plain.
 
-WWW: http://search.cpan.org/dist/Catalyst-Model-CDBI-Sweet/
+WWW: https://metacpan.org/release/Catalyst-Model-CDBI-Sweet

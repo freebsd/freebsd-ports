@@ -20,4 +20,4 @@ A companion module, Time::Format_XS, is also available; if it is
 installed, Time::Format will detect and use it, which will result in a
 significant speed improvement.
 
-WWW: http://search.cpan.org/dist/Time-Format/
+WWW: https://metacpan.org/release/Time-Format

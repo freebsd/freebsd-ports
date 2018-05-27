@@ -5,4 +5,4 @@ the CPAN Testers database.
 The module provides the standalone application 'cpanm-reporter' to perform
 this parsing.
 
-WWW: http://search.cpan.org/dist/App-cpanminus-reporter/
+WWW: https://metacpan.org/release/App-cpanminus-reporter

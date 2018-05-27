@@ -11,4 +11,4 @@ same interface as any other interface, making it interchangeable with
 iterators of any other source (for example, files), and usable with the
 iterator manipulation functions in the Iterator::Util module.
 
-WWW: http://search.cpan.org/dist/Iterator-DBI/
+WWW: https://metacpan.org/release/Iterator-DBI

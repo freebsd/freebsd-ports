@@ -2,4 +2,4 @@ GD::SVG seamlessly enables the scalable vector graphics (SVG) output
 from scripts written using GD.  It accomplishes this by translating GD
 functions into SVG functions.
 
-WWW: http://search.cpan.org/dist/GD-SVG/
+WWW: https://metacpan.org/release/GD-SVG

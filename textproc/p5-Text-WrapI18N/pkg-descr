@@ -9,4 +9,4 @@ doesn't use whitespaces between words (like Chinese and Japanese) is supported.
 Like Text::Wrap, hyphenation and "kinsoku" processing are not supported, to keep
 simplicity.
 
-WWW: http://search.cpan.org/dist/Text-WrapI18N/
+WWW: https://metacpan.org/release/Text-WrapI18N

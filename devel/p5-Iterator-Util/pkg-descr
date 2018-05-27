@@ -6,4 +6,4 @@ An "iterator" is an object, represented as a code block that generates the
 further information, including a tutorial on using iterator objects, see
 the Iterator documentation.
 
-WWW: http://search.cpan.org/dist/Iterator-DBI/
+WWW: https://metacpan.org/release/Iterator-DBI

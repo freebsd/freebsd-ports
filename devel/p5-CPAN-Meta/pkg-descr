@@ -8,4 +8,4 @@ CPAN::Meta provides a simple class to represent this distribution
 metadata (or distmeta), along with some helpful methods for
 interrogating that data.
 
-WWW: http://search.cpan.org/dist/CPAN-Meta/
+WWW: https://metacpan.org/release/CPAN-Meta

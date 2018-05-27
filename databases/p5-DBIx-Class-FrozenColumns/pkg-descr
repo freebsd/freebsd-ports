@@ -2,4 +2,4 @@ This module allows you to store multiple columns in one and
 transparently use this columns as if they were normal columns
 in your table.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-FrozenColumns/
+WWW: https://metacpan.org/release/DBIx-Class-FrozenColumns

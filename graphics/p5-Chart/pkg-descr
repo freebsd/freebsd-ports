@@ -7,4 +7,4 @@ from scratch, and I've designed it from the bottom up to be easy to
 modify. Like GIFgraph, Chart::* uses Lincoln Stein's GD module for all
 of its graphics primitives calls.
 
-WWW: http://search.cpan.org/dist/Chart/
+WWW: https://metacpan.org/release/Chart

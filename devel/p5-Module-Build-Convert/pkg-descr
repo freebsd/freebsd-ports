@@ -8,4 +8,4 @@ The transition takes place slowly, as the converting process manually
 achieved is yet an uncommon practice. The Module::Build::Convert
 Makefile.PL parser is intended to ease the transition process.
 
-WWW: http://search.cpan.org/dist/Module-Build-Convert/
+WWW: https://metacpan.org/release/Module-Build-Convert

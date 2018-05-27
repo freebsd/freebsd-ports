@@ -7,4 +7,4 @@ It can be used by registrars to access registries.
 It can be used by clients to access registrars and/or resellers.
 It can be used by anonyone to do whois, DAS or IRIS DCHK queries.
 
-WWW: http://search.cpan.org/dist/Net-DRI/
+WWW: https://metacpan.org/release/Net-DRI

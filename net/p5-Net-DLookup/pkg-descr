@@ -2,4 +2,4 @@ Net::DLookup performs domain lookups for 2-letter and 3-letter top level
 domains.  It also verifies the validity of domain names by checking
 punctuation, length, metacharacters, etc..
 
-WWW: http://search.cpan.org/dist/Net-DLookup/
+WWW: https://metacpan.org/release/Net-DLookup

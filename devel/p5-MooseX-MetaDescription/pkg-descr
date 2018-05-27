@@ -3,4 +3,4 @@ Moose classes and attributes. This will allow you to track out of band data
 along with attributes, which is very useful for say serializing Moose classes in
 HTML or XML.
 
-WWW: http://search.cpan.org/dist/MooseX-MetaDescription/
+WWW: https://metacpan.org/release/MooseX-MetaDescription

@@ -3,4 +3,4 @@ make checking first name equivalence nearly impossible. This module
 will tell you that 'Maggie', 'Peg', and 'Margaret' are all probably
 the same name.
 
-WWW: http://search.cpan.org/dist/Lingua-EN-Nickname/
+WWW: https://metacpan.org/release/Lingua-EN-Nickname

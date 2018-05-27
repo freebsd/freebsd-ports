@@ -4,4 +4,4 @@ and/or stderr to files and perl data structures.  It aims to satisfy
 extremely Perlish API and none of the bloat and rarely used features of
 IPC::Run.
 
-WWW: http://search.cpan.org/dist/IPC-Run3/
+WWW: https://metacpan.org/release/IPC-Run3

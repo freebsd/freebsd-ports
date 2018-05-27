@@ -6,4 +6,4 @@ generated on the fly and where size matters - eg for J2ME use. There are
 other options - probably better ones - for handling static PNGs.
 and more image types.
 
-WWW: http://search.cpan.org/dist/Image-Pngslimmer/
+WWW: https://metacpan.org/release/Image-Pngslimmer

@@ -3,4 +3,4 @@ code calling your routine to expect:
     a boolean value (did it fail)
 or  a list (what are the return values)
 
-WWW: http://search.cpan.org/dist/Class-ReturnValue/
+WWW: https://metacpan.org/release/Class-ReturnValue

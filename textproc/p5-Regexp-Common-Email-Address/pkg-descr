@@ -1,4 +1,4 @@
 Regexp::Common::Email::Address provides a regex to match email addresses
 as defined by RFC 2822.
 
-WWW: http://search.cpan.org/dist/Regexp-Common-Email-Address/
+WWW: https://metacpan.org/release/Regexp-Common-Email-Address

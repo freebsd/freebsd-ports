@@ -9,4 +9,4 @@ If you intend to release your code to work under normal envionrment as
 well as under fastcgi, simply use this module *after* the "IPC" modules
 are loaded in your code.
 
-WWW: http://search.cpan.org/dist/IPC-Run-SafeHandles/
+WWW: https://metacpan.org/release/IPC-Run-SafeHandles

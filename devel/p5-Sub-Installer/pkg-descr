@@ -1,4 +1,4 @@
 This module provides two universal methods that any package/class can
 use to install subroutines in its own namespace.
 
-WWW: http://search.cpan.org/dist/Sub-Installer/
+WWW: https://metacpan.org/release/Sub-Installer

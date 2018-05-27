@@ -11,4 +11,4 @@ will contain the Net::SMTP code required.
 If you need more sophisticated behaviour from MIME, please install the
 MIME::tools package instead.
 
-WWW: http://search.cpan.org/dist/MIME-Lite/
+WWW: https://metacpan.org/release/MIME-Lite

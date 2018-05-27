@@ -3,4 +3,4 @@ tempdir() from File::Temp. This allow to destroy the temporary directory
 as soon you don't need it anymore using the magic DESTROY() function
 automatically call be perl when the object is no longer reference.
 
-WWW: http://search.cpan.org/dist/File-Tempdir/
+WWW: https://metacpan.org/release/File-Tempdir

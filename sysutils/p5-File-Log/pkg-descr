@@ -2,4 +2,4 @@ File::Log is a class providing methods to log data to a file. There are
 a number of parameters that can be passed to allow configuration of the
 logger.
 
-WWW: http://search.cpan.org/dist/File-Log/
+WWW: https://metacpan.org/release/File-Log

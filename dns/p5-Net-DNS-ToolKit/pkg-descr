@@ -3,4 +3,4 @@ be used for diagnostic purposes or as building blocks for DNS
 applications such as DNS servers and clients or to allow user
 applications to interact directly with remote DNS servers.
 
-WWW: http://search.cpan.org/dist/Net-DNS-ToolKit/
+WWW: https://metacpan.org/release/Net-DNS-ToolKit

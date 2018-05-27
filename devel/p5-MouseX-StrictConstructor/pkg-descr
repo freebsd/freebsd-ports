@@ -1,4 +1,4 @@
 MouseX::StrictConstructor is a Perl module to make your object constructors
 blow up on unknown attributes.
 
-WWW: http://search.cpan.org/dist/MouseX-StrictConstructor/
+WWW: https://metacpan.org/release/MouseX-StrictConstructor

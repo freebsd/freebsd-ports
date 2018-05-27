@@ -3,4 +3,4 @@ javascripts files into one.  It provides a content-hashed key as the
 url for including all the javascript files you specified.  You can
 also provide a filter program to minimize the concatenated file.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-JSConcat/
+WWW: https://metacpan.org/release/Plack-Middleware-JSConcat

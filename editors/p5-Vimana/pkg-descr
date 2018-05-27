@@ -5,4 +5,4 @@ Vimana provides a command-line interface much like the aptitude program on
 Debian Linux, for you to search, download, install, and upgrade scripts
 from http://www.vim.org/ (vimonline site).
 
-WWW: http://search.cpan.org/dist/Vimana/
+WWW: https://metacpan.org/release/Vimana

@@ -2,4 +2,4 @@ Bio::GFF3 are low-level, fast functions for parsing GFF version 3 files.
 All they do is convert back and forth between low-level Perl data
 structures and GFF3 text.
 
-WWW: http://search.cpan.org/dist/Bio-GFF3/
+WWW: https://metacpan.org/release/Bio-GFF3

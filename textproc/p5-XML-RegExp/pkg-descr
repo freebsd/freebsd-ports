@@ -9,4 +9,4 @@ Also contains the regular expressions for the following tokens from the
 XML Namespaces spec at http://www.w3.org/TR/REC-xml-names:
 NCNameChar, NCName, QName, Prefix and LocalPart.
 
-WWW: http://search.cpan.org/dist/XML-RegExp/
+WWW: https://metacpan.org/release/XML-RegExp

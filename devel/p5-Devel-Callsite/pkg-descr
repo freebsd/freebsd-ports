@@ -3,4 +3,4 @@ from where it was called.  See the tests for an example.  It's useful
 for functions that need to uniquely know where they were called, such
 as Every::every() (see devel/p5-Every).
 
-WWW: http://search.cpan.org/dist/Devel-Callsite/
+WWW: https://metacpan.org/release/Devel-Callsite

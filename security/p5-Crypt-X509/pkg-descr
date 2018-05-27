@@ -3,4 +3,4 @@ certificate elements. It is based on the generic ASN.1 module by Graham Barr,
 on the x509decode example by Norbert Klasen and contributions on the
 perl-ldap-dev-Mailinglist by Chriss Ridd.
 
-WWW: http://search.cpan.org/dist/Crypt-X509/
+WWW: https://metacpan.org/release/Crypt-X509

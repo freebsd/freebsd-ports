@@ -8,4 +8,4 @@ It can be used conveniently from a templating system, has both OO and
 functional interface, and can optionally generate necessary HTML
 itself.
 
-WWW: http://search.cpan.org/dist/CGI-Pager/
+WWW: https://metacpan.org/release/CGI-Pager

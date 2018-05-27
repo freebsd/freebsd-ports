@@ -2,4 +2,4 @@ Perl module which provides functions for "canonicalizing" a molecular
 structure; that is, to number the atoms in a unique way regardless of the
 input order.
 
-WWW: http://search.cpan.org/dist/Chemistry-Canonicalize/
+WWW: https://metacpan.org/release/Chemistry-Canonicalize

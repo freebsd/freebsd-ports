@@ -8,4 +8,4 @@ stored. Any arbitrary data (like JSON or frozen perl object) can be
 saved by the worker processes as their status and read from the
 manager process.
 
-WWW: http://search.cpan.org/dist/Parallel-Scoreboard/
+WWW: https://metacpan.org/release/Parallel-Scoreboard

@@ -11,4 +11,4 @@ application should be possible, without interfering with classes that
 only inherit from Moose modules, or even classes that don't inherit from
 anything at all.
 
-WWW: http://search.cpan.org/dist/MooseX-NonMoose/
+WWW: https://metacpan.org/release/MooseX-NonMoose

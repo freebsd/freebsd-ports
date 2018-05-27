@@ -2,4 +2,4 @@ Authen::SASL::SASLprep implements the SASLprep specification, which describes
 how to prepare Unicode strings representing user names and passwords for
 comparison. SASLprep is a profile of the stringprep algorithm.
 
-WWW: http://search.cpan.org/dist/Authen-SASL-SASLprep/
+WWW: https://metacpan.org/release/Authen-SASL-SASLprep

@@ -2,4 +2,4 @@ Sys::HostIP does what it can to determine the IP address
 of your machine. This module was tested on Irix, OpenBSD,
 FreeBSD, NetBSD, Solaris, Linux, OSX, Win32, and Cygwin.
 
-WWW: http://search.cpan.org/dist/Sys-HostIP/
+WWW: https://metacpan.org/release/Sys-HostIP

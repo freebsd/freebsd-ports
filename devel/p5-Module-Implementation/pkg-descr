@@ -7,4 +7,4 @@ Module::Implementation is only useful when you know all the implementations
 ahead of time. If you want to load arbitrary implementations then you probably
 want something like a plugin system, not this module.
 
-WWW: http://search.cpan.org/dist/Module-Implementation/
+WWW: https://metacpan.org/release/Module-Implementation

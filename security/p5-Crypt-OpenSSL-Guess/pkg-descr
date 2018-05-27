@@ -10,4 +10,4 @@ Makefile.PL.
 This module resolves the include path by Net::SSLeay's workaround. Original code
 is taken from inc/Module/Install/PRIVATE/Net/SSLeay.pm by Net::SSLeay.
 
-WWW: http://search.cpan.org/dist/Crypt-OpenSSL-Guess/
+WWW: https://metacpan.org/release/Crypt-OpenSSL-Guess

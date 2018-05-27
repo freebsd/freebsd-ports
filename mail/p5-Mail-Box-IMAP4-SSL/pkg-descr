@@ -6,4 +6,4 @@ with IO::Socket::SSL, Mail::IMAPClient and Mail::Transport::IMAP4.
 In all other respects, it resembles Mail::Box::IMAP4.
 See that module for documentation.
 
-WWW: http://search.cpan.org/dist/Mail-Box-IMAP4-SSL/
+WWW: https://metacpan.org/release/Mail-Box-IMAP4-SSL

@@ -4,4 +4,4 @@ to edit a command line.
 This module have UTF-8 support, let erase or repaint the prompt and
 to hook a process to further line control.
 
-WWW: http://search.cpan.org/dist/Term-ReadLine-TTYtter/
+WWW: https://metacpan.org/release/Term-ReadLine-TTYtter

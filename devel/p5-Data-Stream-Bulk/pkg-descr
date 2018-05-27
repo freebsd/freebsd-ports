@@ -12,4 +12,4 @@ bounded.
 The API is destructive in order to minimize the chance that resultsets are
 leaked due to improper usage.
 
-WWW: http://search.cpan.org/dist/Data-Stream-Bulk/
+WWW: https://metacpan.org/release/Data-Stream-Bulk

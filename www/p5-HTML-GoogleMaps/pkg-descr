@@ -3,4 +3,4 @@ allows you to easily create maps with markers, polylines and information
 windows. Thanks to Geo::Coder::Google you can now look up locations around
 the world without having to install a local database.
 
-WWW: http://search.cpan.org/dist/HTML-GoogleMaps/
+WWW: https://metacpan.org/release/HTML-GoogleMaps

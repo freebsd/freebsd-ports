@@ -10,4 +10,4 @@ interface to them all, hiding the details.
 The CPAN package Authen::Passphrase contains implementations of
 several specific passphrase schemes in addition to the base class.
 
-WWW: http://search.cpan.org/dist/Authen-Passphrase/
+WWW: https://metacpan.org/release/Authen-Passphrase

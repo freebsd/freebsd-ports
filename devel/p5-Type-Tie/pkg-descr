@@ -3,4 +3,4 @@ constraint, ensuring that whatever values stored in the variable will conform to
 the type constraint. If the type constraint has coercions, these will be used if
 necessary to ensure values assigned to the variable conform.
 
-WWW: http://search.cpan.org/dist/Type-Tie/
+WWW: https://metacpan.org/release/Type-Tie

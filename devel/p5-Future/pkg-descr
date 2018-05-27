@@ -3,4 +3,4 @@ or has recently completed. Library functions that perform asynchronous
 operations would use Future objects to allow calling programs to control
 or wait for those operations to complete.
 
-WWW: http://search.cpan.org/dist/Future/
+WWW: https://metacpan.org/release/Future

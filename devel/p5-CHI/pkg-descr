@@ -10,4 +10,4 @@ CHI is intended as an evolution of DeWitt Clinton's Cache::Cache
 package, adhering to the basic Cache API but adding new features and
 addressing limitations in the Cache::Cache implementation.
 
-WWW: http://search.cpan.org/dist/CHI/
+WWW: https://metacpan.org/release/CHI

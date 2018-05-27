@@ -14,4 +14,4 @@ In other words, showtable is a data formatting program.  Using the '-html'
 option, showtable can accept ASCII tabular data and format it appropriately
 for display through a Web-browser.
 
-WWW: http://search.cpan.org/dist/Data-ShowTable/
+WWW: https://metacpan.org/release/Data-ShowTable

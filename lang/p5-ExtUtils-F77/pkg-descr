@@ -3,4 +3,4 @@ Fortran subroutines on your system. Basically one must add a list
 of Fortran runtime libraries. The problem is their location
 and name varies with each OS/compiler combination!
 
-WWW: http://search.cpan.org/dist/ExtUtils-F77/
+WWW: https://metacpan.org/release/ExtUtils-F77

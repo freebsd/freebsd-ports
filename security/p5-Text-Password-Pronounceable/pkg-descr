@@ -3,4 +3,4 @@ Text::Password::Pronounceable - Generate pronounceable passwords
 This module generates pronuceable passwords, based the
 English digraphs by D Edwards.
 
-WWW: http://search.cpan.org/dist/Text-Password-Pronounceable/
+WWW: https://metacpan.org/release/Text-Password-Pronounceable

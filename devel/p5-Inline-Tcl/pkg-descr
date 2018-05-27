@@ -8,4 +8,4 @@ The process of interrogating the Tcl interpreter for globals only occurs
 the first time you run your Tcl code. The namespace is cached, and
 subsequent calls use the cached version.
 
-WWW: http://search.cpan.org/dist/Inline-Tcl/
+WWW: https://metacpan.org/release/Inline-Tcl

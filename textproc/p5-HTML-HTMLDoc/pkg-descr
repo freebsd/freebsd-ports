@@ -2,4 +2,4 @@ This Module provides an OO-interface to the htmldoc program.
 You can use it to produce PDF or PS files from a HTML-document.
 Currently many but not all parameters of HTMLDoc are supported.
 
-WWW: http://search.cpan.org/dist/HTML-HTMLDoc/
+WWW: https://metacpan.org/release/HTML-HTMLDoc

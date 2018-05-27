@@ -3,4 +3,4 @@ transparently handles disconnects and forks, supports transactions,
 pipelining, and subscription mode.  Module includes XS and pure Perl
 versions of the parser.
 
-WWW: http://search.cpan.org/dist/RedisDB/
+WWW: https://metacpan.org/release/RedisDB

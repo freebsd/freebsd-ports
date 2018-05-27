@@ -7,4 +7,4 @@ from the DOM trees.  In addition, each node of the DOM trees is modifiable and
 so is the whole tree, just like the PPI module used for Perl source parsing and
 the HTML::TreeBuilder module used for parsing HTML source.
 
-WWW: http://search.cpan.org/dist/Makefile-DOM/
+WWW: https://metacpan.org/release/Makefile-DOM

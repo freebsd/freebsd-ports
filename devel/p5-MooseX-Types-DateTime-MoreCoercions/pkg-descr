@@ -2,4 +2,4 @@ MooseX::Types::DateTime::MoreCoercions builds on MooseX::Types::DateTime to add
 additional custom types and coercions. Since it builds on an existing type, all
 coercions and constraints are inherited.
 
-WWW: http://search.cpan.org/dist/MooseX-Types-DateTime-MoreCoercions/
+WWW: https://metacpan.org/release/MooseX-Types-DateTime-MoreCoercions

@@ -6,4 +6,4 @@ use Image::Size::FillFullSelect;
 my $iffs = Image::Size::FillFullSelect->new();
 my $FFselection = $iffs->select("someImage.gif");
 
-WWW: http://search.cpan.org/dist/Image-Size-FillFullSelect/
+WWW: https://metacpan.org/release/Image-Size-FillFullSelect

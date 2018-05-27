@@ -5,4 +5,4 @@ chdir to revert to the original working directory.  By storing the
 object in a lexical variable with a limited scope, this happens
 automatically at the end of the scope.
 
-WWW: http://search.cpan.org/dist/File-pushd/
+WWW: https://metacpan.org/release/File-pushd

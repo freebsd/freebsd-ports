@@ -2,4 +2,4 @@ This package provides a class object which can be used for creating,
 manipulating and sending a raw IP packets with optional feature for
 manipulating ethernet headers.
 
-WWW: http://search.cpan.org/dist/Net-RawIP/
+WWW: https://metacpan.org/release/Net-RawIP

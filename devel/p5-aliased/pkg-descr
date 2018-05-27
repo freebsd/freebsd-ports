@@ -4,4 +4,4 @@ class name. You can explicitly alias the class to another name or, if you
 prefer, you can do so implicitly. In the latter case, the name of the
 subroutine is the last part of the class name.
 
-WWW: http://search.cpan.org/dist/aliased/
+WWW: https://metacpan.org/release/aliased

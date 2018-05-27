@@ -2,4 +2,4 @@ This module exports a number of wrappers around perl's builtin grok_number
 function, which returns the numeric type of its argument, or 0 if it isn't
 numeric.
 
-WWW: http://search.cpan.org/dist/Scalar-Util-Numeric/
+WWW: https://metacpan.org/release/Scalar-Util-Numeric

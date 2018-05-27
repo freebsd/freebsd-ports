@@ -4,4 +4,4 @@ mocked HTTP or a locally spawned server.
 
 See Plack::Test on how to write tests that can use this module.
 
-WWW: http://search.cpan.org/dist/Plack-Test-ExternalServer/
+WWW: https://metacpan.org/release/Plack-Test-ExternalServer

@@ -21,4 +21,4 @@ censor attempts to censor text which might be innaproriate
 n20e performs numerical abbreviations
     (ex. "numerical_abbreviation" becomes "n20e")
 
-WWW: http://search.cpan.org/dist/Text-Bastardize/
+WWW: https://metacpan.org/release/Text-Bastardize

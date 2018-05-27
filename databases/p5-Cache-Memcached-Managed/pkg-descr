@@ -4,4 +4,4 @@ of Cache::Memcached, the Cached::Memcached::Managed API allows for
 management of groups of values, for simplified key generation and expiration,
 as well as version and namespace management and a few other goodies.
 
-WWW: http://search.cpan.org/dist/Cache-Memcached-Managed/
+WWW: https://metacpan.org/release/Cache-Memcached-Managed

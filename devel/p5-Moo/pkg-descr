@@ -10,4 +10,4 @@ Unlike Mouse this module does not aim at full compatibility with
 Moose's surface syntax, preferring instead to provide full
 interoperability via metaclass inflation capabilities.
 
-WWW: http://search.cpan.org/dist/Moo/
+WWW: https://metacpan.org/release/Moo

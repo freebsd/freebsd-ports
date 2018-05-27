@@ -5,4 +5,4 @@ slice by using the $ sigil instead of @.
 This module lexically makes using multidimensional array emulation a fatal error
 at compile time.
 
-WWW: http://search.cpan.org/dist/multidimensional/
+WWW: https://metacpan.org/release/multidimensional

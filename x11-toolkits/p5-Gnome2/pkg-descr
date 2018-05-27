@@ -4,4 +4,4 @@ more about Gnome+ at http://www.gnome.org/.
 The perl bindings follow the C API very closely, and the C reference
 documentation should be considered the canonical source.
 
-WWW: http://search.cpan.org/dist/Gnome2/
+WWW: https://metacpan.org/release/Gnome2

@@ -10,4 +10,4 @@ see simple result.
 You may specify a filed_groups parameter (arrayref of arrayref), and
 Algorithm::Accounting will account these fields in groups.
 
-WWW: http://search.cpan.org/dist/Algorithm-Accounting/
+WWW: https://metacpan.org/release/Algorithm-Accounting

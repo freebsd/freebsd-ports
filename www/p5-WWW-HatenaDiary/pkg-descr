@@ -2,4 +2,4 @@ WWW::HatenaDiary provides a CRUD interface to Hatena::Diary,
 aiming to help you efficiently communicate with the service
 with programmatic ways.
 
-WWW: http://search.cpan.org/dist/WWW-HatenaDiary/
+WWW: https://metacpan.org/release/WWW-HatenaDiary

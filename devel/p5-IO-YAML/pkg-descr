@@ -1,4 +1,4 @@
 IO::YAML may be used to read and write YAML streams one document
 (i.e., one value) at a time.
 
-WWW: http://search.cpan.org/dist/IO-YAML/
+WWW: https://metacpan.org/release/IO-YAML

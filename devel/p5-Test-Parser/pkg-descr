@@ -6,4 +6,4 @@ The parsers also write the test data into the 'Test Result Publication
 Interface' (TRPI) XML schema, developed by SpikeSource. See
 http://www.spikesource.com/testresults/index.jsp?show=trpi-schema
 
-WWW: http://search.cpan.org/dist/Test-Parser/
+WWW: https://metacpan.org/release/Test-Parser

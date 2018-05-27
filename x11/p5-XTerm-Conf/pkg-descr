@@ -1,4 +1,4 @@
 XTerm::Conf provides functions to change some aspects of a running
 xterm and compatible terminal emulators (e.g. rxvt or urxvt).
 
-WWW: http://search.cpan.org/dist/XTerm-Conf/
+WWW: https://metacpan.org/release/XTerm-Conf

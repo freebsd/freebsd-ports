@@ -2,4 +2,4 @@ Devel::Dumpvar is a pure object-orientated reimplementation of the dumpvar.pl
 script. This makes it much more versatile version to use for dumping information
 to debug log files or other uses where is no need to reassemble the data.
 
-WWW: http://search.cpan.org/dist/Devel-Dumpvar/
+WWW: https://metacpan.org/release/Devel-Dumpvar

@@ -1,4 +1,4 @@
 This module implements a PerlIO layer which will let you handle bzip2
 compressed files transparently.
 
-WWW: http://search.cpan.org/dist/PerlIO-via-Bzip2/
+WWW: https://metacpan.org/release/PerlIO-via-Bzip2

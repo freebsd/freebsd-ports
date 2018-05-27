@@ -4,4 +4,4 @@ The main advantage over other caching modules is performance. I've attempted to
 stick with a Cache::Cache-like interface as much as possible, though it may
 differ here and there.
 
-WWW: http://search.cpan.org/dist/Cache-BDB/
+WWW: https://metacpan.org/release/Cache-BDB

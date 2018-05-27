@@ -1,4 +1,4 @@
 Config::YAML is a somewhat object-oriented wrapper around the YAML module
 which makes reading and writing configuration files simple.
 
-WWW: http://search.cpan.org/dist/Config-YAML/
+WWW: https://metacpan.org/release/Config-YAML

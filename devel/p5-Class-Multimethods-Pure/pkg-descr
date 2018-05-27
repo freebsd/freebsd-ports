@@ -14,4 +14,4 @@ It is usually wise to put such declarations within a BEGIN block, so
 they behave more like Perl treats subs (you can call them without
 parentheses and you can use them before you define them).
 
-WWW: http://search.cpan.org/dist/Class-Multimethods-Pure/
+WWW: https://metacpan.org/release/Class-Multimethods-Pure

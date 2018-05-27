@@ -12,4 +12,4 @@ DO NOT BE CONFUSED WITH Lingua::JA::Number by Mike Schilli. This module is
 far more comprehensive. As of 0.03, it even does its to_string() upon
 request.
 
-WWW: http://search.cpan.org/dist/Lingua-JA-Numbers/
+WWW: https://metacpan.org/release/Lingua-JA-Numbers

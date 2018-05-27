@@ -5,4 +5,4 @@ RFC 2410 by Rob Glenn and Stephen Kent.
 
 This module implements NULL encryption. It supports the Crypt::CBC.
 
-WWW: http://search.cpan.org/dist/Crypt-NULL/
+WWW: https://metacpan.org/release/Crypt-NULL

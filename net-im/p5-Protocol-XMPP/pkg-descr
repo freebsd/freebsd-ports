@@ -3,4 +3,4 @@ This is commonly used for integration with Jabber servers and Google Talk,
 although XMPP itself supports a number of extended features for a distributed
 multi-server, multi-client message exchange system.
 
-WWW: http://search.cpan.org/dist/Protocol-XMPP/
+WWW: https://metacpan.org/release/Protocol-XMPP

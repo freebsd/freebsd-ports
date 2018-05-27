@@ -8,4 +8,4 @@ interrogating the Amazon EC2, launching instances, and managing instance
 lifecycle. These methods return major object classes which act as specialized
 interfaces to AWS.
 
-WWW: http://search.cpan.org/dist/VM-EC2/
+WWW: https://metacpan.org/release/VM-EC2

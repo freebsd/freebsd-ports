@@ -2,4 +2,4 @@ This module implements a DateTime::Format module
 that can read Japanese date notations and create a
 DateTime object, and vice versa.
 
-WWW: http://search.cpan.org/dist/DateTime-Format-Japanese/
+WWW: https://metacpan.org/release/DateTime-Format-Japanese

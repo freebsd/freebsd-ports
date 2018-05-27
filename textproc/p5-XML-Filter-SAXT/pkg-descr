@@ -3,4 +3,4 @@ stream to several output streams.  In this case, the input stream is a
 PerlSAX event producer (like XML::Parser::PerlSAX) and the output
 streams are PerlSAX handlers or filters.
 
-WWW: http://search.cpan.org/dist/XML-Filter-SAXT/
+WWW: https://metacpan.org/release/XML-Filter-SAXT

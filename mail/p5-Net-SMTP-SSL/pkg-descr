@@ -4,4 +4,4 @@ not overridden to make use of a default port for the SMTPS service. Perhaps
 future versions will be smart like that. Port 465 is usually what you want, and
 it's not a pain to specify that.
 
-WWW: http://search.cpan.org/dist/Net-SMTP-SSL/
+WWW: https://metacpan.org/release/Net-SMTP-SSL

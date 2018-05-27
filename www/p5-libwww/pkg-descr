@@ -10,4 +10,4 @@ represented by objects.  This makes a simple and powerful interface to
 these services.  The interface should be easy to extend and customize
 for your needs.
 
-WWW: http://search.cpan.org/dist/libwww-perl/
+WWW: https://metacpan.org/release/libwww-perl

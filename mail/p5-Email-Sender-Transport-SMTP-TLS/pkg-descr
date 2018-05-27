@@ -1,4 +1,4 @@
 Email::Sender replaces the old and sometimes problematic Email::Send library,
 while this module replaces the Email::Send::SMTP::TLS.
 
-WWW: http://search.cpan.org/dist/Email-Sender-Transport-SMTP-TLS/
+WWW: https://metacpan.org/release/Email-Sender-Transport-SMTP-TLS

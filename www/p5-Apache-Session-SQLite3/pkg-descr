@@ -6,4 +6,4 @@ Also, an extra LastUpdated field is populated with the current time().
 There is no need to create the data source file beforehand;
 this module creates the session table automatically.
 
-WWW: http://search.cpan.org/dist/Apache-Session-SQLite3/
+WWW: https://metacpan.org/release/Apache-Session-SQLite3

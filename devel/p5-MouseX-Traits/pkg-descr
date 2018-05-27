@@ -4,4 +4,4 @@ of requiring the user to create a named class with the desired roles applied,
 or apply roles to the instance one-by-one, he can just create a new class from
 yours with with_traits, and then instantiate that.
 
-WWW: http://search.cpan.org/dist/MouseX-Traits/
+WWW: https://metacpan.org/release/MouseX-Traits

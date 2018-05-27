@@ -10,4 +10,4 @@ for both compact storage and efficient computation.  In particular,
 set operations can be performed directly on the encoded
 representation.
 
-WWW: http://search.cpan.org/dist/Set-IntSpan/
+WWW: https://metacpan.org/release/Set-IntSpan

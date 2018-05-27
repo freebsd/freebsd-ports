@@ -2,4 +2,4 @@ Lingua::EN::FindNumber provides a regular expression for finding numbers in
 English text. It also provides functions for extracting and manipulating such
 numbers.
 
-WWW: http://search.cpan.org/dist/Lingua-EN-FindNumber/
+WWW: https://metacpan.org/release/Lingua-EN-FindNumber

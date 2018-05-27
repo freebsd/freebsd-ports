@@ -6,4 +6,4 @@ Text::Reform was segfaulting during destroy time.
 
 Hence this module, which aims to provide only those 3 methods.
 
-WWW: http://search.cpan.org/dist/Text-Padding/
+WWW: https://metacpan.org/release/Text-Padding

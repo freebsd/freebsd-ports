@@ -18,4 +18,4 @@ eliminates the need to place DNSBL's in a particular order in your MTA's config
 file or periodically monitor the DNSBL statistics and/or update the MTA config
 file.
 
-WWW: http://search.cpan.org/dist/Net-DNSBL-MultiDaemon/
+WWW: https://metacpan.org/release/Net-DNSBL-MultiDaemon

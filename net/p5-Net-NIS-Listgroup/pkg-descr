@@ -10,4 +10,4 @@ returned list. Each member in a group is a triplet of
 returned by listgroup_host() and listgroup(), the user portion of the
 members is returned by listgroup_user().
 
-WWW: http://search.cpan.org/dist/Net-NIS-Listgroup/
+WWW: https://metacpan.org/release/Net-NIS-Listgroup

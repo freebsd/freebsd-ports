@@ -1,4 +1,4 @@
 Using output of /dev/urandom.  Simply convert bytes into 8-bit
 characters.
 
-WWW: http://search.cpan.org/dist/String-Urandom/
+WWW: https://metacpan.org/release/String-Urandom

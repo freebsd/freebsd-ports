@@ -11,4 +11,4 @@ what the user sees so it is efficient.
 It completes the progress bar when the progress object is destroyed (explicitly
 or by going out of scope) - no more '99%' done.
 
-WWW: http://search.cpan.org/dist/Term-ProgressBar-Simple/
+WWW: https://metacpan.org/release/Term-ProgressBar-Simple

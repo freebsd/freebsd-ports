@@ -6,4 +6,4 @@ This module aims to make using taint as painless as possible (This can be an
 argument against it - often implementation of security implies pain - so taking
 away pain might lessen security - sort of).
 
-WWW: http://search.cpan.org/dist/Taint-Runtime/
+WWW: https://metacpan.org/release/Taint-Runtime

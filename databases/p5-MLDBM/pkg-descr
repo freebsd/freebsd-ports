@@ -8,4 +8,4 @@ It works by converting the values in the hash that are references, to their
 string representation in perl syntax.  When using a DBM database, it is this
 string that gets stored.
 
-WWW: http://search.cpan.org/dist/MLDBM/
+WWW: https://metacpan.org/release/MLDBM

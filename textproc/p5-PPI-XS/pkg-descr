@@ -2,4 +2,4 @@ PPI::XS provides XS-based acceleration of the core PPI packages. It
 selectively replaces a (small but growing) number of methods throughout
 PPI with identical but much faster C versions.
 
-WWW: http://search.cpan.org/dist/PPI-XS/
+WWW: https://metacpan.org/release/PPI-XS

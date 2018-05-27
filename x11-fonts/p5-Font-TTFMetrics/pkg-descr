@@ -9,4 +9,4 @@ module: first, I required a fast module to access TTF file. Second, all
 the access required was read-only. Last, I wanted a user friendly, higher
 level API to access TTF file.
 
-WWW: http://search.cpan.org/dist/Font-TTFMetrics/
+WWW: https://metacpan.org/release/Font-TTFMetrics

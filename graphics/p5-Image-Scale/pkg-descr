@@ -9,4 +9,4 @@ overhead, speed and minimal features. Algorithms available are:
 Supported image formats include JPEG, GIF, PNG, and BMP for input, and
 JPEG and PNG for output.
 
-WWW: http://search.cpan.org/dist/Image-Scale/
+WWW: https://metacpan.org/release/Image-Scale

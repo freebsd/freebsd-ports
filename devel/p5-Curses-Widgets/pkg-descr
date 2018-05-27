@@ -3,4 +3,4 @@ widgets for use in creating Curses-based interfaces.
 Should work reliably with both Curses and nCurses
 libraries.
 
-WWW: http://search.cpan.org/dist/CursesWidgets/
+WWW: https://metacpan.org/release/CursesWidgets

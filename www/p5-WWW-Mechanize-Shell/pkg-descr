@@ -3,4 +3,4 @@ has the capability to output crude Perl code that recreates the recorded
 session. Its main use is as an interactive starting point for automating
 a session through WWW::Mechanize.
 
-WWW: http://search.cpan.org/dist/WWW-Mechanize-Shell/
+WWW: https://metacpan.org/release/WWW-Mechanize-Shell

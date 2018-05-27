@@ -1,4 +1,4 @@
 The CDDB_get module implements a Perl class for communicating with an
 audio compact disc database through the CDDBP protocol.
 
-WWW: http://search.cpan.org/dist/CDDB_get/
+WWW: https://metacpan.org/release/CDDB_get

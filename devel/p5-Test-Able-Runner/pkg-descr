@@ -2,4 +2,4 @@ Provides basic test runner via use_test_packages by base package or a list
 of test packages. Allows you to choose your test paths.
 Use Test::Able without a bunch of boilerplate.
 
-WWW: http://search.cpan.org/dist/Test-Able-Runner/
+WWW: https://metacpan.org/release/Test-Able-Runner

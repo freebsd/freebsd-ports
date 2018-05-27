@@ -8,4 +8,4 @@ MIME::Types module to map file extensions to IANA-registered MIME
 types, and will serve your static files with the correct MIME type
 directly to the browser, without being processed through Catalyst.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Static-Simple/
+WWW: https://metacpan.org/release/Catalyst-Plugin-Static-Simple

@@ -1,4 +1,4 @@
 An OO interface to POE::Component::IRC with facilities to dispatch the
 same method to multiple objects.
 
-WWW: http://search.cpan.org/dist/POE-Component-IRC-Object/
+WWW: https://metacpan.org/release/POE-Component-IRC-Object

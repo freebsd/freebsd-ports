@@ -5,4 +5,4 @@ package. The main advantage is that you can use an IO::Zlib object
 in much the same way as an IO::File object so you can have common
 code that doesn't know which sort of file it is using.
 
-WWW: http://search.cpan.org/dist/IO-Zlib/
+WWW: https://metacpan.org/release/IO-Zlib

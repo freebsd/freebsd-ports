@@ -3,4 +3,4 @@ compact and fast for serialization) and as extendable as XML; its nearest
 analogues are Thrift and ASN.1. There are official mappings for C++, Java and
 Python languages; this library is a mapping for Perl.
 
-WWW: http://search.cpan.org/dist/Google-ProtocolBuffers/
+WWW: https://metacpan.org/release/Google-ProtocolBuffers

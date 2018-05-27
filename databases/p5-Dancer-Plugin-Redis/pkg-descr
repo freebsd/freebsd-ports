@@ -1,4 +1,4 @@
 Dancer::Plugin::Redis provides an easy way to obtain a connected Redis database
 handle by simply calling the 'redis' keyword within a Dancer application.
 
-WWW: http://search.cpan.org/dist/Dancer-Plugin-Redis/
+WWW: https://metacpan.org/release/Dancer-Plugin-Redis

@@ -5,4 +5,4 @@ around is run in place of the original method, with a hook to easily
 call that original method. See the MODIFIERS section for more details
 on how the particular modifiers work.
 
-WWW: http://search.cpan.org/dist/Class-Method-Modifiers-Fast/
+WWW: https://metacpan.org/release/Class-Method-Modifiers-Fast

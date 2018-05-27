@@ -7,4 +7,4 @@ FUNCTIONALITY IS CURRENTLY LIMITED, READ ON WHAT'S AVAILABLE SO FAR.
 WWW::Mechanize::Plugin::phpBB is implemented as a plugin to
 WWW::Mechanize, using Joe McMahon's WWW::Mechanize::Pluggable framework.
 
-WWW: http://search.cpan.org/dist/WWW-Mechanize-Plugin-phpBB/
+WWW: https://metacpan.org/release/WWW-Mechanize-Plugin-phpBB

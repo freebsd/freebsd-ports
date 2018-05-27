@@ -6,4 +6,4 @@ Further, it will preserve both the formatting specified by the <TD> tag's
 "align" attribute, and will also preserve multiline text inside of a <TD>
 element provided it is broken using <BR/> tags.
 
-WWW: http://search.cpan.org/dist/HTML-FormatText-WithLinks-AndTables/
+WWW: https://metacpan.org/release/HTML-FormatText-WithLinks-AndTables

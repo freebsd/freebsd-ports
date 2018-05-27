@@ -6,4 +6,4 @@ Data::Phrasebook for an explanation of how to use these. Groups of phrases are
 kept in a dictionary. In this implementation a single file is one complete
 dictionary.
 
-WWW: http://search.cpan.org/dist/Data-Phrasebook-Loader-YAML/
+WWW: https://metacpan.org/release/Data-Phrasebook-Loader-YAML

@@ -9,4 +9,4 @@ conversions, effects processing, mixing, as a LADSPA plugin host and
 JACK node. Version >= 2.2.X must be installed to use this
 package. "SEE ALSO" for more info.
 
-WWW: http://search.cpan.org/dist/Audio-Ecasound/
+WWW: https://metacpan.org/release/Audio-Ecasound

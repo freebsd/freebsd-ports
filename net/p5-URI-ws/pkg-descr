@@ -1,4 +1,4 @@
 After URI::ws is installed, the URI package provides the same set of methods for
 WebSocket URIs as it does for HTTP ones. For secure WebSockets, see URI::wss.
 
-WWW: http://search.cpan.org/dist/URI-ws/
+WWW: https://metacpan.org/release/URI-ws

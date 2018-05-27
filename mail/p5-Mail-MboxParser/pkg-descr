@@ -4,4 +4,4 @@ Its purpose is to _easily_ extract messages from a mailbox with _simple_
 access to header fields, body and MIME-parts.  It is particularly easy to
 deal with any kind of attached files.
 
-WWW: http://search.cpan.org/dist/Mail-MboxParser/
+WWW: https://metacpan.org/release/Mail-MboxParser

@@ -1,4 +1,4 @@
 Allows for any blessed HASH object to be populated from a database, by
 describing table relationships to each method.
 
-WWW: http://search.cpan.org/dist/Class-Inflate/
+WWW: https://metacpan.org/release/Class-Inflate

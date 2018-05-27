@@ -3,4 +3,4 @@ files from objects. Text::CSV_XS is used for parsing and creating CSV file
 lines, so any limitations in Text::CSV_XS will of course be inherant in
 this module.
 
-WWW: http://search.cpan.org/dist/Class-CSV/
+WWW: https://metacpan.org/release/Class-CSV

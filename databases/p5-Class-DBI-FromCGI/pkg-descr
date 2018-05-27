@@ -15,4 +15,4 @@ to do is to 'use Class::DBI::FromCGI' in your class (or in your local
 Class::DBI subclass that all your other classes inherit from. You do do that,
 don't you?).
 
-WWW: http://search.cpan.org/dist/Class-DBI-FromCGI/
+WWW: https://metacpan.org/release/Class-DBI-FromCGI

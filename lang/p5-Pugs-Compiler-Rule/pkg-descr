@@ -7,4 +7,4 @@ It is a front-end to several other modules:
    * Pugs::Runtime::Rule provides the runtime engine for Rules.
    * Pugs::Runtime::Match represents a Match object.
 
-WWW: http://search.cpan.org/dist/Pugs-Compiler-Rule/
+WWW: https://metacpan.org/release/Pugs-Compiler-Rule

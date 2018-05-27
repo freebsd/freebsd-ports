@@ -13,4 +13,4 @@ The generate_last_digit() subroutine computes and returns the last digit
 of the card given the preceding digits.  With a 16-digit card, you
 provide the first 15 digits; the subroutine returns the sixteenth.
 
-WWW: http://search.cpan.org/dist/Business-CreditCard/
+WWW: https://metacpan.org/release/Business-CreditCard

@@ -3,4 +3,4 @@ Graphics::Primitive is library agnostic system for drawing things.
 The idea is to allow you to create and manipulate graphical components and
 then pass them off to a Driver for actual drawing.
 
-WWW: http://search.cpan.org/dist/Graphics-Primitive/
+WWW: https://metacpan.org/release/Graphics-Primitive

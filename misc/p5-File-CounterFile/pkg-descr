@@ -3,4 +3,4 @@ represented by a separate file in the file system. File locking is applied,
 so multiple processes might try to access the same counters at the same
 time without risk fo counter destruction.
 
-WWW: http://search.cpan.org/dist/File-CounterFile/
+WWW: https://metacpan.org/release/File-CounterFile

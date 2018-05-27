@@ -2,4 +2,4 @@ All this module does is send a packet to an NTP server and
 then decode the packet received into it's respective parts
 - as outlined in RFC5905 (superseding RFC1305 and RFC2030).
 
-WWW: http://search.cpan.org/dist/Net-NTP/
+WWW: https://metacpan.org/release/Net-NTP

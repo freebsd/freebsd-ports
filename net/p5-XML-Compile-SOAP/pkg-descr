@@ -13,4 +13,4 @@ the messages, but all messages must be schema defined types.
 3. RPC style SOAP encoded. The sent data is nowhere described formally. The data
 is transported in some ad-hoc way.
 
-WWW: http://search.cpan.org/dist/XML-Compile-SOAP/
+WWW: https://metacpan.org/release/XML-Compile-SOAP

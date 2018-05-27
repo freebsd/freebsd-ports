@@ -3,4 +3,4 @@ Exception::Handler
 Exception::Handler helps to report exceptions with formatted text
 call-stack.
 
-WWW: http://search.cpan.org/dist/Exception-Handler/
+WWW: https://metacpan.org/release/Exception-Handler

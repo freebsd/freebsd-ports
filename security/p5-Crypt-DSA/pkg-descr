@@ -5,4 +5,4 @@ Math::Pari library.
 
 This package provides DSA signing, signature verification, and key generation.
 
-WWW: http://search.cpan.org/dist/Crypt-DSA/
+WWW: https://metacpan.org/release/Crypt-DSA
