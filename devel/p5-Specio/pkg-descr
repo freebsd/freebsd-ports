@@ -12,4 +12,4 @@ values to that type.
 The author's long-term goal is to replace Moose's built-in types and
 MooseX::Types with this module.
 
-WWW: http://search.cpan.org/dist/Specio/
+WWW: https://metacpan.org/release/Specio

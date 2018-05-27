@@ -2,4 +2,4 @@ DBIx::Skinny::Pager is resultset pager interface for
 DBIx::Skinny. This module is not support for search_by_sql or
 search_named.
 
-WWW: http://search.cpan.org/dist/DBIx-Skinny-Pager/
+WWW: https://metacpan.org/release/DBIx-Skinny-Pager

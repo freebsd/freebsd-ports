@@ -2,4 +2,4 @@ Devel::BeginLift 'lifts' arbitrary sub calls to running at compile
 time - sort of a souped up version of "use constant". It does this via
 some slightly insane perlguts magic.
 
-WWW: http://search.cpan.org/dist/Devel-BeginLift/
+WWW: https://metacpan.org/release/Devel-BeginLift

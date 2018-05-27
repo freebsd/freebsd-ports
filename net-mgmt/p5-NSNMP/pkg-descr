@@ -12,4 +12,4 @@ The package also includes NSNMP::Simple, which lets you get or set a
 single OID via SNMP with a single line of code.  It's easier to use, and
 roughly an order of magnitude faster, than Net::SNMP.
 
-WWW: http://search.cpan.org/dist/NSNMP/
+WWW: https://metacpan.org/release/NSNMP

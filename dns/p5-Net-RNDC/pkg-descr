@@ -1,4 +1,4 @@
 Net-RNDC implements the BIND Remote Name Daemon Control V1 protocol
 and the rndc client.
 
-WWW: http://search.cpan.org/dist/Net-RNDC/
+WWW: https://metacpan.org/release/Net-RNDC

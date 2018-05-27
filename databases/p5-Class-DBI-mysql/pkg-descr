@@ -2,4 +2,4 @@ This is an extension to Class::DBI, containing several functions and
 optimisations for the MySQL database. Instead of setting Class::DBI as
 your base class, use this instead.
 
-WWW: http://search.cpan.org/dist/Class-DBI-mysql/
+WWW: https://metacpan.org/release/Class-DBI-mysql

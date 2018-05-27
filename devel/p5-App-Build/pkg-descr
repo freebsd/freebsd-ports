@@ -2,4 +2,4 @@ App::Build is a module which extends Module::Build.
 It is used to install whole applications rather than
 merely perl modules.
 
-WWW: http://search.cpan.org/dist/App-Build/
+WWW: https://metacpan.org/release/App-Build

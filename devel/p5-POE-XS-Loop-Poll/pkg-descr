@@ -1,4 +1,4 @@
 Implementation of the abstract POE::Loop interface written in C
 using the poll(2) system call.
 
-WWW: http://search.cpan.org/dist/POE-XS-Loop-Poll/
+WWW: https://metacpan.org/release/POE-XS-Loop-Poll

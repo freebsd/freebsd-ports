@@ -12,4 +12,4 @@ that compatibility is not guaranteed for DBIx::Class 0.09000+. We
 will try to mantain all compatibility, but internal changes might
 make it impossible.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-IntrospectableM2M/
+WWW: https://metacpan.org/release/DBIx-Class-IntrospectableM2M

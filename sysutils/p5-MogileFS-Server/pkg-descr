@@ -13,4 +13,4 @@ could be lost without data becoming unavailable. It is designed for high
 volume applications, such as high traffic websites, to spread storage
 across cheaper machines without relying on technologies such as NFS.
 
-WWW: http://search.cpan.org/dist/MogileFS-Server/
+WWW: https://metacpan.org/release/MogileFS-Server

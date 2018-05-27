@@ -21,4 +21,4 @@ mbswidth(string) returns the width of the whole string.
 
 Parameters are to be given in locale encodings, not always in UTF-8.
 
-WWW: http://search.cpan.org/dist/Text-CharWidth/
+WWW: https://metacpan.org/release/Text-CharWidth

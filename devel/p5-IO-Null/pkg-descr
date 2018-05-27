@@ -7,4 +7,4 @@ operation, and returns true. Reading from any object of this class is
 always nooperation, and returns empty-string or empty-list, as
 appropriate.
 
-WWW: http://search.cpan.org/dist/IO-Null/
+WWW: https://metacpan.org/release/IO-Null

@@ -14,4 +14,4 @@ include it like so:
 What's more the javascript emits HTML that can be fully styled with
 CSS. See the CSS examples included with the distribution in the css directory.
 
-WWW: http://search.cpan.org/dist/XML-RSS-JavaScript/
+WWW: https://metacpan.org/release/XML-RSS-JavaScript

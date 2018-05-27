@@ -6,4 +6,4 @@ Term::Visual uses the POE networking and multitasking framework to support
 concurrent input from network sockets and the console, multiple timers, and
 more.
 
-WWW: http://search.cpan.org/dist/Term-Visual/
+WWW: https://metacpan.org/release/Term-Visual

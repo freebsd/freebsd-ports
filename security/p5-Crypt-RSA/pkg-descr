@@ -21,4 +21,4 @@ from disk, decoding & encoding of keys in certain formats, and secure
 representation of keys in memory. Finally, the Crypt::RSA module provides a
 convenient, DWIM wrapper around the rest of the modules in the bundle.
 
-WWW: http://search.cpan.org/dist/Crypt-RSA/
+WWW: https://metacpan.org/release/Crypt-RSA

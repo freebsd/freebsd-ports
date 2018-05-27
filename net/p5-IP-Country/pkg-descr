@@ -11,4 +11,4 @@ client herself, this is probably good enough for most log analysis
 applications, and under test has proved to be as accurate as
 reverse-DNS and WHOIS lookup.
 
-WWW: http://search.cpan.org/dist/IP-Country/
+WWW: https://metacpan.org/release/IP-Country

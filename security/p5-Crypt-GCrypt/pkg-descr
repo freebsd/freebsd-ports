@@ -2,4 +2,4 @@ Crypt::GCrypt provides an object interface to the C libgcrypt library. It
 currently supports symmetric encryption/decryption and message digests, while
 asymmetric cryptography is being worked on.
 
-WWW: http://search.cpan.org/dist/Crypt-GCrypt/
+WWW: https://metacpan.org/release/Crypt-GCrypt

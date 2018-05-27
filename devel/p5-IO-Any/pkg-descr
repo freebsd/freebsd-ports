@@ -1,4 +1,4 @@
 IO::Any aims to provide read/write anything. It tries to guess what the
 "anything" is based on some rules.
 
-WWW: http://search.cpan.org/dist/IO-Any/
+WWW: https://metacpan.org/release/IO-Any

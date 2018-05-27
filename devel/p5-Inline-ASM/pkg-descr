@@ -4,4 +4,4 @@ code, so this module does not provide any new functionality. It does,
 however, provide a feature most C compilers don't: you can mix different
 assembler syntaxes in the same file!
 
-WWW: http://search.cpan.org/dist/Inline-ASM/
+WWW: https://metacpan.org/release/Inline-ASM

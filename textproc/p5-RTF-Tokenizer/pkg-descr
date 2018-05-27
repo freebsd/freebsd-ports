@@ -8,4 +8,4 @@ implements the RTF standard better than any previous release.
 strictly to Object Orientated  guidelines  - it can  be sub-classed
 and the interface is cleaner.
 
-WWW: http://search.cpan.org/dist/RTF-Tokenizer/
+WWW: https://metacpan.org/release/RTF-Tokenizer

@@ -7,4 +7,4 @@ yet another JSON module? While it seems there are many JSON modules, none of
 them correctly handle all corner cases, and in most cases their maintainers are
 unresponsive, gone missing, or not listening to bug reports for other reasons.
 
-WWW: http://search.cpan.org/dist/Cpanel-JSON-XS/
+WWW: https://metacpan.org/release/Cpanel-JSON-XS

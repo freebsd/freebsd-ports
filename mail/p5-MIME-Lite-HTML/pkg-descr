@@ -16,4 +16,4 @@ you can do script that to this in 3 lines.  It can be used too in a HTML
 newsletter. You make a classic HTML page, and give just url to
 MIME::Lite::HTML.
 
-WWW: http://search.cpan.org/dist/MIME-Lite-HTML/
+WWW: https://metacpan.org/release/MIME-Lite-HTML

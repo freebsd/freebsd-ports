@@ -2,4 +2,4 @@ Devel::CheckLib provides a way of checking whether a particular library and
 its headers are available, by attempting to compile a simple program and
 link against it.
 
-WWW: http://search.cpan.org/dist/Devel-CheckLib/
+WWW: https://metacpan.org/release/Devel-CheckLib

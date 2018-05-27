@@ -4,4 +4,4 @@ this to import symbols from any exporter that follows Exporters specification.
 The exporter modules themselves do not need to use or inherit from the Exporter
 module, they just need to set @EXPORT and/or other variables.
 
-WWW: http://search.cpan.org/dist/Importer/
+WWW: https://metacpan.org/release/Importer

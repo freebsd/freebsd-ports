@@ -9,6 +9,6 @@ lets you use IP addresses in any of three forms (dotted decimal,
 network string, and integer) for the indices into the array. See
 the POD for that module for more information.
 
-WWW: http://search.cpan.org/dist/Array-IntSpan/
+WWW: https://metacpan.org/release/Array-IntSpan
 
 Seamus Venasse <svenasse@polaris.ca>

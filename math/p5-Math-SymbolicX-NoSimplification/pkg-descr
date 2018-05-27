@@ -13,4 +13,4 @@ of nodes. (And may, in fact, still do if you keep the simplification
 heuristics turned on because most expressions cannot be simplified
 significantly.)
 
-WWW: http://search.cpan.org/dist/Math-SymbolicX-NoSimplification/
+WWW: https://metacpan.org/release/Math-SymbolicX-NoSimplification

@@ -2,4 +2,4 @@ This module generalises the mechanism of the wantarray function,
 allowing a function to determine in some detail how its return value is
 going to be immediately used.
 
-WWW: http://search.cpan.org/dist/Want/
+WWW: https://metacpan.org/release/Want

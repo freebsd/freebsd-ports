@@ -2,4 +2,4 @@ This provides a Log::Dispatch log output system that appends logged
 events to an array reference. This is probably only useful for testing
 the logging of your code.
 
-WWW: http://search.cpan.org/dist/Log-Dispatch-Array/
+WWW: https://metacpan.org/release/Log-Dispatch-Array

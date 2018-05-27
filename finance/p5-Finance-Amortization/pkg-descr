@@ -4,4 +4,4 @@ made, and the interest rate per payment. It will calculate the rest on demand,
 and provides a few methods to ask for the state of the table after a given
 number of periods.
 
-WWW: http://search.cpan.org/dist/Finance-Amortization/
+WWW: https://metacpan.org/release/Finance-Amortization

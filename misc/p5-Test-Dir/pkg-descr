@@ -8,4 +8,4 @@ dir_not_exists_ok
 
 Ok if the directory does not exist, and not ok otherwise.
 
-WWW: http://search.cpan.org/dist/Test-Dir/
+WWW: https://metacpan.org/release/Test-Dir

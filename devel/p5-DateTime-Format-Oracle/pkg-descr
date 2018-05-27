@@ -14,4 +14,4 @@ This module keeps track of these Oracle session variable values by examining
 environment variables of the same name. Each time one of Oracle's formatting
 session variables is updated, the %ENV hash must also be updated.
 
-WWW: http://search.cpan.org/dist/DateTime-Format-Oracle/
+WWW: https://metacpan.org/release/DateTime-Format-Oracle

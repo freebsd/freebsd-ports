@@ -7,4 +7,4 @@ by default, but rather must be imported explicitly, as in
 There are a number of export tags defined which allow
 importing groups of functions.
 
-WWW: http://search.cpan.org/dist/Math-Cephes/
+WWW: https://metacpan.org/release/Math-Cephes

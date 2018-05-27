@@ -7,4 +7,4 @@ As such, it wraps the Unicode::String, Unicode::Map8,
 Unicode::Map and Jcode modules in a standardized and simple
 API.
 
-WWW: http://search.cpan.org/dist/Unicode-MapUTF8/
+WWW: https://metacpan.org/release/Unicode-MapUTF8

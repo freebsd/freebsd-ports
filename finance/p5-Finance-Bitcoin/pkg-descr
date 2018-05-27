@@ -4,4 +4,4 @@ Finance::Bitcoin provides a perl interface to the high
 and low level APIs for managing a running bitcoin
 instance over JSON-RPC.
 
-WWW: http://search.cpan.org/dist/Finance-Bitcoin/
+WWW: https://metacpan.org/release/Finance-Bitcoin

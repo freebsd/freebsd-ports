@@ -16,4 +16,4 @@ client/server systems can also be developed.  PVM simply provides a
 convenient way for managing parallel tasks and communications without
 need for rexec or socket level programming.
 
-WWW: http://search.cpan.org/dist/Parallel-Pvm/
+WWW: https://metacpan.org/release/Parallel-Pvm

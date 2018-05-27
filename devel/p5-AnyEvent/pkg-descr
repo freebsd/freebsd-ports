@@ -14,4 +14,4 @@ the order given. The first one that could be successfully loaded will
 be used. If still none could be found, AnyEvent will fall back to a
 pure-perl event loop, which is also not very efficient.
 
-WWW: http://search.cpan.org/dist/AnyEvent/
+WWW: https://metacpan.org/release/AnyEvent

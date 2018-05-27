@@ -13,4 +13,4 @@ This module contains highly experimental code. If you want to load
 modules from .par files using PAR and then access their shared directory
 using File::ShareDir, you probably have no choice but to use it.
 
-WWW: http://search.cpan.org/dist/File-ShareDir-PAR/
+WWW: https://metacpan.org/release/File-ShareDir-PAR

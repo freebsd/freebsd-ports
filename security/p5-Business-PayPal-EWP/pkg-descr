@@ -4,4 +4,4 @@ which takes the plaintext form code, private key file, public key file, and
 PayPal's public certificate, and will return the signed and encrypted code
 needed by paypal.
 
-WWW: http://search.cpan.org/dist/Business-PayPal-EWP/
+WWW: https://metacpan.org/release/Business-PayPal-EWP

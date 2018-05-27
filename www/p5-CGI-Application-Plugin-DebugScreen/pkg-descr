@@ -1,4 +1,4 @@
 This plug-in add Debug support to CGI::Application. This plug-in like
 Catalyst debug mode.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-DebugScreen/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-DebugScreen

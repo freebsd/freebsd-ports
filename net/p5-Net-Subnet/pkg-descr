@@ -10,4 +10,4 @@ The Socket and Socket6 modules are used to normalise addresses, which means that
 any of the address formats supported by inet_aton and inet_pton can be used with
 Net::Subnet.
 
-WWW: http://search.cpan.org/dist/Net-Subnet/
+WWW: https://metacpan.org/release/Net-Subnet

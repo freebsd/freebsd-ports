@@ -1,4 +1,4 @@
 This module provides a C api for XS modules to hook into the execution
 of perl opcodes.
 
-WWW: http://search.cpan.org/dist/B-Hooks-OP-PPAddr/
+WWW: https://metacpan.org/release/B-Hooks-OP-PPAddr

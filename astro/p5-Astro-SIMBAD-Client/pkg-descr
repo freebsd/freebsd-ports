@@ -3,4 +3,4 @@ SIMBAD4. The new SOAP queries are supported, with the object carrying
 default output type and output format, as well as server name on the
 assumption that mirrors will be forthcoming.
 
-WWW: http://search.cpan.org/dist/Astro-SIMBAD-Client/
+WWW: https://metacpan.org/release/Astro-SIMBAD-Client

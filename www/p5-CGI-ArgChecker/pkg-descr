@@ -3,4 +3,4 @@ commonly used checks on parameters to be called more concisely and consistently)
 based on String::Checker. This is really nothing more than a simple wrapper
 around String::Checker.
 
-WWW: http://search.cpan.org/dist/CGI-ArgChecker/
+WWW: https://metacpan.org/release/CGI-ArgChecker

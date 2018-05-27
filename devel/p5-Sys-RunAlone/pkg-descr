@@ -1,4 +1,4 @@
 Provide a simple way to make sure the script from which this module is
 loaded, is only running once on the server.
 
-WWW: http://search.cpan.org/dist/Sys-RunAlone/
+WWW: https://metacpan.org/release/Sys-RunAlone

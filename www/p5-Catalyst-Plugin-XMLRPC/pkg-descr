@@ -1,4 +1,4 @@
 This plugin allows your controller class to dispatch XMLRPC methods from
 its own class.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-XMLRPC/
+WWW: https://metacpan.org/release/Catalyst-Plugin-XMLRPC

@@ -20,4 +20,4 @@ Relic support
   magic for hashes described in "GUTS" in Hash::Util::Fieldhash, it supports
   Perl 5.8 using the traditional tie-hash layer.
 
-WWW: http://search.cpan.org/dist/Hash-FieldHash/
+WWW: https://metacpan.org/release/Hash-FieldHash

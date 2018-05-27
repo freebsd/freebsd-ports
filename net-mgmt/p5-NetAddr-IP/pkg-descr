@@ -3,4 +3,4 @@ manipulation involved when handling IP address calculations. It also
 helps by performing range comparisons between subnets as well as other
 frequently used functions.
 
-WWW: http://search.cpan.org/dist/NetAddr-IP/
+WWW: https://metacpan.org/release/NetAddr-IP

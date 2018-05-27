@@ -3,4 +3,4 @@ that allow you to either validate or clean up the output of your
 cgiapp application. They should be called at the end of your postrun
 method.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-HtmlTidy/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-HtmlTidy

@@ -1,4 +1,4 @@
 Plack::Middleware::Reproxy implements a simple reproxy mechanism via
 X-Reproxy-URL, like https://github.com/kazuho/mod_reproxy.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-Reproxy/
+WWW: https://metacpan.org/release/Plack-Middleware-Reproxy

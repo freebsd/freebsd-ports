@@ -4,4 +4,4 @@ derived from that. Currently there is support for finding the closest locations
 within a specified distance, to find the closest number of points to a specified
 point, and to do basic point-to-point distance calculations.
 
-WWW: http://search.cpan.org/dist/Geo-Distance/
+WWW: https://metacpan.org/release/Geo-Distance

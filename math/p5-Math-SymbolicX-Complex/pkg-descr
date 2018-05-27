@@ -4,4 +4,4 @@ in $Math::Symbolic::Parser) with certain special functions that create
 complex constants. (Math::Symbolic::Variable objects have been able to
 contain complex number objects since the very beginning.)
 
-WWW: http://search.cpan.org/dist/Math-SymbolicX-Complex/
+WWW: https://metacpan.org/release/Math-SymbolicX-Complex

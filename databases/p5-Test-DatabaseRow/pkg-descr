@@ -4,4 +4,4 @@ details in a table or not. For more advanced testing (joins, etc) it's
 probably easier for you to roll your own tests by hand than use this
 module.
 
-WWW: http://search.cpan.org/dist/Test-DatabaseRow/
+WWW: https://metacpan.org/release/Test-DatabaseRow

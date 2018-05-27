@@ -3,4 +3,4 @@ using its declaration. You have to declare encoding of the template in the head
 (1st line) of template using (fake) encoding TT plugin. Otherwise the template
 is handled as utf-8.
 
-WWW: http://search.cpan.org/dist/Template-Provider-Encoding/
+WWW: https://metacpan.org/release/Template-Provider-Encoding

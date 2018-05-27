@@ -10,4 +10,4 @@ Specifically, it takes an arbitrary tarball and adds it to the CPAN
 sources directory for a particular author, and then add the new
 file to the CHECKSUMS file.
 
-WWW: http://search.cpan.org/dist/CPAN-Inject/
+WWW: https://metacpan.org/release/CPAN-Inject

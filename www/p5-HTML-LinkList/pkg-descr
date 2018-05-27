@@ -5,4 +5,4 @@ the list equal it, that item in the list will be formatted as a special
 label, not as a link; this is a Good Thing, since the user would be
 confused by clicking on a link back to the current page.
 
-WWW: http://search.cpan.org/dist/HTML-LinkList/
+WWW: https://metacpan.org/release/HTML-LinkList

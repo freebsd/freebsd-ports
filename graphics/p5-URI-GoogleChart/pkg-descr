@@ -3,4 +3,4 @@ will serve back PNG images of charts controlled by the provided
 parameters when these URI are dereferenced.  Normally these URIs will be
 embedded as <img src='$chart'> tags in HTML documents.
 
-WWW: http://search.cpan.org/dist/URI-GoogleChart/
+WWW: https://metacpan.org/release/URI-GoogleChart

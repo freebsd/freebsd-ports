@@ -14,4 +14,4 @@ layer called Middlewares.
 By enabling this middleware, all multiple slashes in your requests will
 automatically be cut. //hello///world becomes /hello/world. Simple as that.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-NoMultipleSlashes/
+WWW: https://metacpan.org/release/Plack-Middleware-NoMultipleSlashes

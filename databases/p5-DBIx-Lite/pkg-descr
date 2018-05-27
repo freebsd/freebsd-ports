@@ -12,4 +12,4 @@ optional custom classes for results and resultsets with custom methods
 SQL::Abstract syntax
 paging features (with Data::Page)
 
-WWW: http://search.cpan.org/dist/DBIx-Lite/
+WWW: https://metacpan.org/release/DBIx-Lite

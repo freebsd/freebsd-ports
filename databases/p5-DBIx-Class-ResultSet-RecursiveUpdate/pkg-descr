@@ -8,4 +8,4 @@ comprising the primary key are specified - then a new row will be cre-
 ated, with the expectation that the missing columns will be filled by
 it (as in the case of auto_increment primary keys).
 
-WWW: http://search.cpan.org/dist/DBIx-Class-ResultSet-RecursiveUpdate/
+WWW: https://metacpan.org/release/DBIx-Class-ResultSet-RecursiveUpdate

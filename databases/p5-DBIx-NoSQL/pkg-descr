@@ -10,4 +10,4 @@ an SQLite backend.
 Retrieving data from the store is done by key lookup or by searching an
 SQL-based index. Once found, the data is deserialized via JSON and returned.
 
-WWW: http://search.cpan.org/dist/DBIx-NoSQL/
+WWW: https://metacpan.org/release/DBIx-NoSQL

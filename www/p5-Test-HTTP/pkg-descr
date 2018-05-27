@@ -5,4 +5,4 @@ Each Test::HTTP object can contain state about a current request and its
 response.  This allows convenient shorthands for sending requests,
 checking status codes, headers, and message bodies.
 
-WWW: http://search.cpan.org/dist/Test-HTTP/
+WWW: https://metacpan.org/release/Test-HTTP

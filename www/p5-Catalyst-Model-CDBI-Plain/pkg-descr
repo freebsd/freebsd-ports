@@ -6,4 +6,4 @@ this is left to the user. This module can be used with existing
 Class::DBI classes, so that they can be used with Catalyst, or as a
 way of writing CDBI-based Model classes within Catalyst.
 
-WWW: http://search.cpan.org/dist/Catalyst-Model-CDBI-Plain/
+WWW: https://metacpan.org/release/Catalyst-Model-CDBI-Plain

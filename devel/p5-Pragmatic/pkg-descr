@@ -8,4 +8,4 @@ module. Modules and use are documented in perlfunc and perlmod.
 like. They are standalone pragmata, and are not associated with any other
 module.)
 
-WWW: http://search.cpan.org/dist/Pragmatic/
+WWW: https://metacpan.org/release/Pragmatic

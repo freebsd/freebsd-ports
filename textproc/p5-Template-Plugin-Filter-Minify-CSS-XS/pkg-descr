@@ -2,4 +2,4 @@ Template::Plugin::Filter::Minify::CSS::XS is a Template Toolkit filter, which
 uses CSS::Minifier::XS to minify css code from filtered content during template
 processing.
 
-WWW: http://search.cpan.org/dist/Template-Plugin-Filter-Minify-CSS-XS/
+WWW: https://metacpan.org/release/Template-Plugin-Filter-Minify-CSS-XS

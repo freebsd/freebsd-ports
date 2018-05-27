@@ -5,4 +5,4 @@ It primarily provides a wrapper around SOAP::Serializer and
 SOAP::Data (or SOAP::Header) enabling you to generate complex XML
 within your SOAP request or response.
 
-WWW: http://search.cpan.org/dist/SOAP-Data-Builder/
+WWW: https://metacpan.org/release/SOAP-Data-Builder

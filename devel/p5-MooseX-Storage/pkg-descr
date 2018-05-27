@@ -2,4 +2,4 @@ MooseX::Storage is a serialization framework for Moose, it provides a very
 flexible and highly pluggable way to serialize Moose classes to a number of
 different formats and styles.
 
-WWW: http://search.cpan.org/dist/MooseX-Storage/
+WWW: https://metacpan.org/release/MooseX-Storage

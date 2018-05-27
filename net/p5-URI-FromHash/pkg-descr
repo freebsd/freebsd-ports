@@ -10,4 +10,4 @@ interface is rather tedious, requiring a number of method calls, which is
 particularly ugly when done inside a templating system such as Mason or
 TT2.
 
-WWW: http://search.cpan.org/dist/URI-FromHash/
+WWW: https://metacpan.org/release/URI-FromHash

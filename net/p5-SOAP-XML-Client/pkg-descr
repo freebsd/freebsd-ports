@@ -2,4 +2,4 @@ This package is the base class for talking with web services, there are
 specific modules to use depending on the type of service you are calling,
 e.g. SOAP::XML::Client::DotNet or SOAP::XML::Client::Generic
 
-WWW: http://search.cpan.org/dist/SOAP-XML-Client/
+WWW: https://metacpan.org/release/SOAP-XML-Client

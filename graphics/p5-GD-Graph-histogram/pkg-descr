@@ -1,4 +1,4 @@
 GD::Graph::histogram extends the GD::Graph module to create histograms. The
 module allow creation of count or percentage histograms.
 
-WWW: http://search.cpan.org/dist/GDGraph-histogram/
+WWW: https://metacpan.org/release/GDGraph-histogram

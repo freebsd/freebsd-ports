@@ -4,4 +4,4 @@ CPU, and if slurping the entire file into memory is not an option,
 this module may well be for you, at the cost of far less functionality
 than other solutions out there.
 
-WWW: http://search.cpan.org/dist/PDF-Tiny/
+WWW: https://metacpan.org/release/PDF-Tiny

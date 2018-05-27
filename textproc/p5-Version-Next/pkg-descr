@@ -4,4 +4,4 @@ intended, it simply increments in the smallest possible fashion.  Decimals are
 incremented like an odometer.  Dotted decimals are incremented piecewise and
 presented in a standardized way.
 
-WWW: http://search.cpan.org/dist/Version-Next/
+WWW: https://metacpan.org/release/Version-Next

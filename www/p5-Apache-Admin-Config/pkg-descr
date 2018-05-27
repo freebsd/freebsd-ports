@@ -2,4 +2,4 @@ Apache::Admin::Config provides an object interface to handling Apache
 like configuration files without modifying comments, identation, or
 truncated lines.
 
-WWW: http://search.cpan.org/dist/Apache-Admin-Config/
+WWW: https://metacpan.org/release/Apache-Admin-Config

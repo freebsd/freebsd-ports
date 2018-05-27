@@ -6,4 +6,4 @@ DBI::db connection handle object, so it does everything you'd expect to do with
 DBI, but also adds a few convenience methods. See the documentation for
 Dancer::Plugin::Database::Handle for full details of those.
 
-WWW: http://search.cpan.org/dist/Dancer-Plugin-Database/
+WWW: https://metacpan.org/release/Dancer-Plugin-Database

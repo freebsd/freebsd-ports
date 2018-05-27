@@ -2,4 +2,4 @@ This module provides perl bindings for the portable
 NaCL implementation libsodium, a library for network
 communication, encryption, decryption and signatures.
 
-WWW: http://search.cpan.org/dist/Crypt-Sodium/
+WWW: https://metacpan.org/release/Crypt-Sodium

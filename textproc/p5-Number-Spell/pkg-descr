@@ -4,4 +4,4 @@ only integers are supported.
 By default Number::Spell does American formatting, but can be configured to
 do European formatting by calling it with the "Format => 'eu'" option.
 
-WWW: http://search.cpan.org/dist/Number-Spell/
+WWW: https://metacpan.org/release/Number-Spell

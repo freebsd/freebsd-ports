@@ -13,4 +13,4 @@ data submitted from a form, to affect the contents of the Mason request
 arguments (and thus the %ARGS hash in components), and even to redirect or
 abort the request before Mason handles it.
 
-WWW: http://search.cpan.org/dist/MasonX-Interp-WithCallbacks/
+WWW: https://metacpan.org/release/MasonX-Interp-WithCallbacks

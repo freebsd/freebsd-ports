@@ -8,4 +8,4 @@ from those modules at the same time. Mostly similar in effect to
         push @ISA, qw(Foo Bar);
     }
 
-WWW: http://search.cpan.org/dist/parent/
+WWW: https://metacpan.org/release/parent

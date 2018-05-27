@@ -5,4 +5,4 @@ asynchronous I/O, receipts and transactions.
 
 For details on the protocol see http://stomp.codehaus.org/Protocol.
 
-WWW: http://search.cpan.org/dist/Net-STOMP-Client/
+WWW: https://metacpan.org/release/Net-STOMP-Client

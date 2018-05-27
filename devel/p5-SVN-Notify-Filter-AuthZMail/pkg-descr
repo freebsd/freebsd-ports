@@ -4,4 +4,4 @@ This module removes the need to maintain a separate list of people
 to send email notification messages to (via svnnotify --to arguments),
 from the AuthZSVNAccessFile.
 
-WWW: http://search.cpan.org/dist/SVN-Notify-Filter-AuthZMail/
+WWW: https://metacpan.org/release/SVN-Notify-Filter-AuthZMail

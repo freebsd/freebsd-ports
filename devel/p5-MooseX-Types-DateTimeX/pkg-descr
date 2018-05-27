@@ -6,4 +6,4 @@ The package name is left as is for legacy reasons: this module is
 really a Type with coercions for DateTimeX::Easy. DateTimeX is just
 a namespace for non-core or less-official DateTime modules.
 
-WWW: http://search.cpan.org/dist/MooseX-Types-DateTimeX/
+WWW: https://metacpan.org/release/MooseX-Types-DateTimeX

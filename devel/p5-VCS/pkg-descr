@@ -3,4 +3,4 @@ from Perl code. This is achieved in a similar fashion to the `DBI'
 suite of modules. It comes with example CVS and RCS wrappers.
 
 WWW: http://www.astray.com/VCS/
-WWW: http://search.cpan.org/dist/VCS/
+WWW: https://metacpan.org/release/VCS

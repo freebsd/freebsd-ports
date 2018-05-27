@@ -3,4 +3,4 @@ where you want to want to do a number of tests, and then verify that
 some underlying subroutine deep within the code was called a specific
 number of times.
 
-WWW: http://search.cpan.org/dist/Test-SubCalls/
+WWW: https://metacpan.org/release/Test-SubCalls

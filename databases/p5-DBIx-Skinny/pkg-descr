@@ -1,4 +1,4 @@
 DBIx::Skinny is simple DBI wrapper and simple O/R Mapper.  It aims to
 be lightweight, with minimal dependencies so it's easier to install.
 
-WWW: http://search.cpan.org/dist/DBIx-Skinny/
+WWW: https://metacpan.org/release/DBIx-Skinny

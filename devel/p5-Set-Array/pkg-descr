@@ -4,4 +4,4 @@ in the FAQ's, the Perl Cookbook or posts from comp.lang.perl.misc. In
 addition, there are Set methods with corresponding (overloaded)
 operators for the purpose of Set comparison, i.e. +, ==, etc.
 
-WWW: http://search.cpan.org/dist/Set-Array/
+WWW: https://metacpan.org/release/Set-Array

@@ -4,4 +4,4 @@ blends, fade and multiimage effects. It also has a plugin interface to write
 plugins in C. It also has drawing primitives and supports antialiased truetype
 and postscript fonts.
 
-WWW: http://search.cpan.org/dist/Imager/
+WWW: https://metacpan.org/release/Imager

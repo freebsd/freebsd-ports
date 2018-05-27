@@ -4,4 +4,4 @@ such as DES or IDEA, you can encrypt and decrypt messages of
 arbitrarily long length. The encrypted messages are compatible with
 the encryption format used by the OpenSSL package.
 
-WWW: http://search.cpan.org/dist/Crypt-CBC/
+WWW: https://metacpan.org/release/Crypt-CBC

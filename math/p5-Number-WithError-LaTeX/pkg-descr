@@ -9,4 +9,4 @@ just a convenience thing since it is delegated to TeX::Encode.
 Unlike Number::WithError, this module requires perl version 5.8 or later.
 (That is the rationale for creating a separate distribution, too.)
 
-WWW: http://search.cpan.org/dist/Number-WithError-LaTeX/
+WWW: https://metacpan.org/release/Number-WithError-LaTeX

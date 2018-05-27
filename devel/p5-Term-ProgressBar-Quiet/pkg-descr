@@ -3,4 +3,4 @@ terminal. This module acts very much like that module when it is run
 interactively. However, when it is not run interactively (for example,
 as a cron job) then it does not show the progress bar.
 
-WWW: http://search.cpan.org/dist/Term-ProgressBar-Quiet/
+WWW: https://metacpan.org/release/Term-ProgressBar-Quiet

@@ -3,4 +3,4 @@ the RECENT uploads to CPAN as determined from the files produced
 by File::Rsync::Mirror::Recentfile that exist in the authors/
 directory on CPAN.
 
-WWW: http://search.cpan.org/dist/CPAN-Recent-Uploads/
+WWW: https://metacpan.org/release/CPAN-Recent-Uploads

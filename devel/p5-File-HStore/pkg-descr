@@ -13,4 +13,4 @@ algorithm. The FAT (Free Archive Toolkit) format is also supported and
 it is composed of the date of submission plus the SHA-2 real digest
 part.
 
-WWW: http://search.cpan.org/dist/File-HStore/
+WWW: https://metacpan.org/release/File-HStore

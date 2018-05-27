@@ -12,4 +12,4 @@ CGI module.
 The sqlreport script uses SQLite::Work to generate reports from the
 command-line.
 
-WWW: http://search.cpan.org/dist/SQLite-Work/
+WWW: https://metacpan.org/release/SQLite-Work

@@ -13,4 +13,4 @@ of web deployment. If you minify on-the-fly then it might be a good idea to
 cache the minified file. Minifying static files on-the-fly repeatedly is
 wasteful.
 
-WWW: http://search.cpan.org/dist/CSS-Minifier/
+WWW: https://metacpan.org/release/CSS-Minifier

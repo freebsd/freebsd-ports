@@ -4,4 +4,4 @@ vulgar fractions have Unicode characters (eg 1/5 is &#8533;). This
 module takes a string and encodes fractions as entities: this means that
 it will look pretty in the browser.
 
-WWW: http://search.cpan.org/dist/HTML-Fraction/
+WWW: https://metacpan.org/release/HTML-Fraction

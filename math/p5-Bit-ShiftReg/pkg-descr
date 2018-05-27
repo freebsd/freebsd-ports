@@ -5,4 +5,4 @@ integer types unsigned char, unsigned short, unsigned int, and unsigned long
 have on your machine. The module automatically determines the number of bits of
 each integer type and adjusts its internal constants accordingly.
 
-WWW: http://search.cpan.org/dist/Bit-ShiftReg/
+WWW: https://metacpan.org/release/Bit-ShiftReg

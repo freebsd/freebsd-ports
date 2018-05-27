@@ -6,4 +6,4 @@ original list.  After creating the object, subsequent calls to next()
 will return the next such list in lexicographic order (where the alphabet
 is the original list).
 
-WWW: http://search.cpan.org/dist/Algorithm-ChooseSubsets/
+WWW: https://metacpan.org/release/Algorithm-ChooseSubsets

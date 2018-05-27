@@ -3,4 +3,4 @@ interface.  It also provides an interface that is call- compatible
 with Crypt::Twofish 1.0, but its use in new code is strongly
 discouraged.
 
-WWW: http://search.cpan.org/dist/Crypt-Twofish/
+WWW: https://metacpan.org/release/Crypt-Twofish

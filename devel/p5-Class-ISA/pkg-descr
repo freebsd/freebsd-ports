@@ -2,4 +2,4 @@ This library, Class::ISA, provides functions that return the list (in
 order) of names of classes Perl would search to find a method, with no
 duplicates.
 
-WWW: http://search.cpan.org/dist/Class-ISA/
+WWW: https://metacpan.org/release/Class-ISA

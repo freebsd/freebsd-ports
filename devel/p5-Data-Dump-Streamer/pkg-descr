@@ -9,4 +9,4 @@ In fact the data structure is scanned twice, first in breadth first mode to
 perform structural analysis, and then in depth first mode to actually produce
 the output, but obeying the depth relationships of the first pass.
 
-WWW: http://search.cpan.org/dist/Data-Dump-Streamer/
+WWW: https://metacpan.org/release/Data-Dump-Streamer

@@ -2,4 +2,4 @@ This module defines an abstract interface for random number generation.
 Subclasses of this model will implement specific types of random number
 generators or will wrap existing random number generators.
 
-WWW: http://search.cpan.org/dist/Math-Random-OO/
+WWW: https://metacpan.org/release/Math-Random-OO

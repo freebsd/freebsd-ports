@@ -1,4 +1,4 @@
 This module is a quick and dirty way to determine if a cron time format
 is valid for the current date and time.
 
-WWW: http://search.cpan.org/dist/DateTime-Cron-Simple/
+WWW: https://metacpan.org/release/DateTime-Cron-Simple

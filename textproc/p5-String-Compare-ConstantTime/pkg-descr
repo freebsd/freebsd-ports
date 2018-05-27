@@ -5,4 +5,4 @@ return true if they are string-wise identical and false otherwise,
 just like eq.  However, comparing any two differing strings will take
 a fixed amount of time, unlike eq.
 
-WWW: http://search.cpan.org/dist/String-Compare-ConstantTime/
+WWW: https://metacpan.org/release/String-Compare-ConstantTime

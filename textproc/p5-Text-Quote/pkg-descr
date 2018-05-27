@@ -3,4 +3,4 @@ able to produce valid perl quoted strings. It posses routines to determine
 the ideal quote character to correctly quote hash keys, to correctly quote
 and encode binary strings.
 
-WWW: http://search.cpan.org/dist/Text-Quote/
+WWW: https://metacpan.org/release/Text-Quote

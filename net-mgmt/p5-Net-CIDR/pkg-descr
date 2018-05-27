@@ -2,4 +2,4 @@ The Net::CIDR package contains functions that manipulate lists of
 IP netblocks expressed in CIDR notation. The Net::CIDR functions
 handle both IPv4 and IPv6 addresses.
 
-WWW: http://search.cpan.org/dist/Net-CIDR/
+WWW: https://metacpan.org/release/Net-CIDR

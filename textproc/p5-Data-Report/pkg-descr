@@ -20,4 +20,4 @@ The actual Data::Report module is a factory that creates a reporter for
 a given report type by selecting the appropriate plugin and returning an
 instance thereof.
 
-WWW: http://search.cpan.org/dist/Data-Report/
+WWW: https://metacpan.org/release/Data-Report

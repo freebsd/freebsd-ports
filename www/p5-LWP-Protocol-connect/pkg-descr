@@ -1,4 +1,4 @@
 The LWP::Protocol::connect module provides support for using https
 over a proxy via the HTTP/Connect method.
 
-WWW: http://search.cpan.org/dist/LWP-Protocol-connect/
+WWW: https://metacpan.org/release/LWP-Protocol-connect

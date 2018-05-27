@@ -5,4 +5,4 @@ methods for defining event handlers ("subscribe_to_event" or
 Note that handlers should return 0 for a one-off handler, and 1 if it should be
 called again on the next event.
 
-WWW: http://search.cpan.org/dist/Mixin-Event-Dispatch/
+WWW: https://metacpan.org/release/Mixin-Event-Dispatch

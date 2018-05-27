@@ -17,4 +17,4 @@ environment hash.
 The list of methods you can specify are: GET, POST, HEAD, PUT, DELETE, OPTIONS,
 TRACE and CONNECT.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-MethodOverride/
+WWW: https://metacpan.org/release/Plack-Middleware-MethodOverride

@@ -2,4 +2,4 @@ Jabber::Lite is, as the name implies, a small 'lite' library for dealing with
 Jabber servers, implemented entirely in perl. Whilst it is small, it does try to
 be fairly complete for common tasks.
 
-WWW: http://search.cpan.org/dist/Jabber-Lite/
+WWW: https://metacpan.org/release/Jabber-Lite

@@ -7,4 +7,4 @@ It complements the support for HTML::Template that is built into
 CGI::Application through the load_tmpl method.  It also provides a few
 extra features than just the ability to load a template.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-TT/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-TT

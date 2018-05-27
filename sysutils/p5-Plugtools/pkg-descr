@@ -9,4 +9,4 @@ plumod - Modify a user in LDAP.
 plupass - Update the password for a user in LDAP.
 plurm - Remove a user from LDAP.
 
-WWW: http://search.cpan.org/dist/Plugtools/
+WWW: https://metacpan.org/release/Plugtools

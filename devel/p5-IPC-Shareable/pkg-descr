@@ -4,4 +4,4 @@ Scalars, arrays, and hashes can be tied. The variable being tied may
 contain arbitrarily complex data structures - including references to
 arrays, hashes of hashes, etc.
 
-WWW: http://search.cpan.org/dist/IPC-Shareable/
+WWW: https://metacpan.org/release/IPC-Shareable

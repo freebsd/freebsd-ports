@@ -3,4 +3,4 @@ information on the execution time of a Perl script and of the subs in that
 script. This information can be used to determine which subroutines are using
 the most time and which subroutines are being called most often.
 
-WWW: http://search.cpan.org/dist/Devel-Profile/
+WWW: https://metacpan.org/release/Devel-Profile

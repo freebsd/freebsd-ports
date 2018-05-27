@@ -8,4 +8,4 @@ for HTML::TreeBuilder::XPath.
 Currently, this module implements good enough methods
 for work with Web::Scraper.
 
-WWW: http://search.cpan.org/dist/HTML-TreeBuilder-LibXML/
+WWW: https://metacpan.org/release/HTML-TreeBuilder-LibXML

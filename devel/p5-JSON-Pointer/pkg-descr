@@ -6,4 +6,4 @@ JSON Pointer is available to identify a specified value in JSON
 document, and it is simillar to XPath.  Please read the both of
 specifications for details.
 
-WWW: http://search.cpan.org/dist/JSON-Pointer/
+WWW: https://metacpan.org/release/JSON-Pointer

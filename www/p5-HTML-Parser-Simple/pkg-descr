@@ -1,4 +1,4 @@
 HTML::Parser::Simple is a pure Perl module. It parses HTML4 files, and
 generates a tree of nodes per HTML tag.
 
-WWW: http://search.cpan.org/dist/HTML-Parser-Simple/
+WWW: https://metacpan.org/release/HTML-Parser-Simple

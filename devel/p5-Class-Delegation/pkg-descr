@@ -10,4 +10,4 @@ These three delegation mechanisms can be specified for:
 	* any as-yet-undelegated methods
 	* all methods, delegated or not.
 
-WWW: http://search.cpan.org/dist/Class-Delegation/
+WWW: https://metacpan.org/release/Class-Delegation

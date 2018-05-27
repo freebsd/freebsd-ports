@@ -6,4 +6,4 @@ the session gradually accumulates on the screen and is available for review, or
 for cut/paste. This user interface can therefore be intermixed with standard
 applications which write to STDOUT or STDERR, such as make, pgp, rcs etc.
 
-WWW: http://search.cpan.org/dist/Term-Clui/
+WWW: https://metacpan.org/release/Term-Clui

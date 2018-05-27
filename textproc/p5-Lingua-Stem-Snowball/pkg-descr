@@ -3,4 +3,4 @@ This module provides unified perl interface to Snowball stemmers
 languages. It's written using C for high performance and provides
 OO and plain interfaces.
 
-WWW: http://search.cpan.org/dist/Lingua-Stem-Snowball/
+WWW: https://metacpan.org/release/Lingua-Stem-Snowball

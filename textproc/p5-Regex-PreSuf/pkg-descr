@@ -4,4 +4,4 @@ same words as the word list.  These regular expressions normally run
 few dozen percentages faster than a simple-minded '|'-concatenation of
 the words.
 
-WWW: http://search.cpan.org/dist/Regex-PreSuf/
+WWW: https://metacpan.org/release/Regex-PreSuf

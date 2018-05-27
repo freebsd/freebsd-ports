@@ -1,4 +1,4 @@
 Date::Leapyear is a Perl module which exports one function: isleap(),
 which returns a 1 or 0 if the year is a leap year or not, respectively.
 
-WWW: http://search.cpan.org/dist/Date-Leapyear/
+WWW: https://metacpan.org/release/Date-Leapyear

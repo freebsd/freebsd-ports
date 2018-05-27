@@ -8,4 +8,4 @@ The reason for this module is to abstract your logging interface so
 that logging is as painless as possible, while still allowing you to
 switch from one logger to another.
 
-WWW: http://search.cpan.org/dist/Log-Contextual/
+WWW: https://metacpan.org/release/Log-Contextual

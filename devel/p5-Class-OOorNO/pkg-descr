@@ -5,4 +5,4 @@ whether called in object-oriented style (as object methods or class
 methods with the arrow syntax ->), or in functional programming style
 (as subroutines imported to the caller's namespace via Exporter).
 
-WWW: http://search.cpan.org/dist/Class-OOorNO/
+WWW: https://metacpan.org/release/Class-OOorNO

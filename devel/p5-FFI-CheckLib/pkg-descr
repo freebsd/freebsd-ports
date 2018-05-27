@@ -9,4 +9,4 @@ module does not actually use any FFI to do its detection and probing. This
 module does not have any non-core runtime dependencies. The test suite does
 depend on Test2::Suite.
 
-WWW: http://search.cpan.org/dist/FFI-CheckLib/
+WWW: https://metacpan.org/release/FFI-CheckLib

@@ -4,4 +4,4 @@ the updates.  Care should be taken to ensure that no other applications
 try to modify the original file concurrently, since any changes made while
 appending the data may be lost.
 
-WWW: http://search.cpan.org/dist/File-Append-TempFile/
+WWW: https://metacpan.org/release/File-Append-TempFile

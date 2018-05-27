@@ -5,4 +5,4 @@ functions to allow one to be written.
 
 For a complete client, see instead Net::Async::CassandraCQL.
 
-WWW: http://search.cpan.org/dist/Protocol-CassandraCQL/
+WWW: https://metacpan.org/release/Protocol-CassandraCQL

@@ -20,4 +20,4 @@ If the RELEASE_TESTING environment variable is set, the tests will fail rather
 than skip. Subtests will be aborted, but the test script will continue running
 after that point.
 
-WWW: http://search.cpan.org/dist/Test-Needs/
+WWW: https://metacpan.org/release/Test-Needs

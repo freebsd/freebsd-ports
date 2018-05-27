@@ -6,4 +6,4 @@ analysis of one or many Perl files and obtain a few metrics.
 Perl::Metrics::Lite is far simpler than Perl::Metrics and more
 extensible than Perl::Metrics::Simple.
 
-WWW: http://search.cpan.org/dist/Perl-Metrics-Lite/
+WWW: https://metacpan.org/release/Perl-Metrics-Lite

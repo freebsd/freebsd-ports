@@ -5,4 +5,4 @@ This is not intended for use over the web; user authentication over
 the web is another matter entirely.  Also, this module should generally
 be used in conjunction with Perl's crypt() function, sold separately.
 
-WWW: http://search.cpan.org/dist/Term-ReadPassword/
+WWW: https://metacpan.org/release/Term-ReadPassword

@@ -6,4 +6,4 @@ POE::Loop::AnyEvent changes POE's internal implementation without altering its
 APIs. By design, nearly all software that are already uses POE should continue
 to work normally without any changes.
 
-WWW: http://search.cpan.org/dist/POE-Loop-AnyEvent/
+WWW: https://metacpan.org/release/POE-Loop-AnyEvent

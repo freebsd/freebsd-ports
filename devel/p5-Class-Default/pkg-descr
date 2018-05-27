@@ -9,4 +9,4 @@ environment.  In a CGI like environment, you want the simplicity of a
 static interface.  You can call Class-method> directly, without having
 to pass an instantiation around constantly.
 
-WWW: http://search.cpan.org/dist/Class-Default/
+WWW: https://metacpan.org/release/Class-Default

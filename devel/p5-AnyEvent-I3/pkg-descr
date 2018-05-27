@@ -2,4 +2,4 @@ AnyEvent::I3 - This module connects to the i3 window manager using the UNIX
 socket based IPC interface it provides (if enabled in the configuration file).
 You can then subscribe to events or send messages and receive their replies.
 
-WWW: http://search.cpan.org/dist/AnyEvent-I3/
+WWW: https://metacpan.org/release/AnyEvent-I3

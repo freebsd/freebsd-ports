@@ -16,4 +16,4 @@ Environment", Stevens et al., Addison-Wesley Publisher for a detailed
 reference on the POSIX implementation. IPC::Mmap provides OS-agnostic
 wrappers for both the POSIX and Win32 memory mapped file capabilities.
 
-WWW: http://search.cpan.org/dist/IPC-Mmap/
+WWW: https://metacpan.org/release/IPC-Mmap

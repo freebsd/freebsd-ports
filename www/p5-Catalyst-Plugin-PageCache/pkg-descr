@@ -7,4 +7,4 @@ caching is very useful for withstanding a Slashdotting, for example.
 This plugin requires that you also load a Cache plugin. Please see the
 Known Issues when choosing a cache backend.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-PageCache/
+WWW: https://metacpan.org/release/Catalyst-Plugin-PageCache

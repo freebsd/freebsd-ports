@@ -6,4 +6,4 @@ dates.
 You can use ``+'', ``-'', ``<'' and ``>'' operators as with native
 perl data types.
 
-WWW: http://search.cpan.org/dist/Class-Date/
+WWW: https://metacpan.org/release/Class-Date

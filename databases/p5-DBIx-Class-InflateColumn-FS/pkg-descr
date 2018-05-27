@@ -13,4 +13,4 @@ _fs_column_dirs in a derived class to change this behavior.
 fs_new_on_update will create a new file name if the file has been
 updated.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-InflateColumn-FS/
+WWW: https://metacpan.org/release/DBIx-Class-InflateColumn-FS

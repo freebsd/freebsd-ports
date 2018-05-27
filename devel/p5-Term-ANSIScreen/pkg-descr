@@ -1,4 +1,4 @@
 Term::ANSIScreen is an Term::ANSIColor clone with support for screen mode,
 cursor control and keyboard mapping sequences.
 
-WWW: http://search.cpan.org/dist/Term-ANSIScreen/
+WWW: https://metacpan.org/release/Term-ANSIScreen

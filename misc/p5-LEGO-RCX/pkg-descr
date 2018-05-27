@@ -3,4 +3,4 @@ RCX computer through the IR dongle. It is an object-oriented module with
 methods for everything from controlling the motors, reading sensors, modifying
 program variables, and getting data from the DataLog.
 
-WWW: http://search.cpan.org/dist/LEGO-RCX/
+WWW: https://metacpan.org/release/LEGO-RCX

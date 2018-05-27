@@ -2,4 +2,4 @@ Catalyst::Plugin::ConfigLoader::Environment reads environment
 variables and sets up the configuration in your application
 accordingly.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-ConfigLoader-Environment/
+WWW: https://metacpan.org/release/Catalyst-Plugin-ConfigLoader-Environment

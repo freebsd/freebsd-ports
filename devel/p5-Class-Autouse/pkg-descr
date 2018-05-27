@@ -3,4 +3,4 @@ method of that class is called.  For large classes that might not be
 used during the running of a program, such as Date::Manip, this can save
 you large amounts of memory, and decrease the script load time.
 
-WWW: http://search.cpan.org/dist/Class-Autouse/
+WWW: https://metacpan.org/release/Class-Autouse

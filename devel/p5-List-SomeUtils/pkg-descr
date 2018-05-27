@@ -7,4 +7,4 @@ performance as everything is implemented in C. The pure-Perl implementation of
 these functions only serves as a fallback in case the C portions of this module
 couldn't be compiled on this machine.
 
-WWW: http://search.cpan.org/dist/List-SomeUtils/
+WWW: https://metacpan.org/release/List-SomeUtils

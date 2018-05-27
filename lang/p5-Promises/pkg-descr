@@ -3,4 +3,4 @@ asynchronous programming. Promises are meant to be a way to
 better deal with the resulting callback spaghetti that can often
 result in asynchronous programs.
 
-WWW: http://search.cpan.org/dist/Promises/
+WWW: https://metacpan.org/release/Promises

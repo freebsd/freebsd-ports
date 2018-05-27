@@ -17,4 +17,4 @@ require such a workaround, this module globally changes the behaviour of
 require, including use and the implicit require performed in Unicode regular
 expression matching, so that it no longer exhibits these bugs.
 
-WWW: http://search.cpan.org/dist/Lexical-SealRequireHints/
+WWW: https://metacpan.org/release/Lexical-SealRequireHints

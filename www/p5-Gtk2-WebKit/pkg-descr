@@ -5,4 +5,4 @@ applications, such as mail readers, or web browsers.
 It is able to display content such as HTML, SVG, XML, and others. It also
 supports DOM, XMLHttpRequest, XSLT, CSS, Javascript/ECMAscript and more.
 
-WWW: http://search.cpan.org/dist/Gtk2-WebKit/
+WWW: https://metacpan.org/release/Gtk2-WebKit

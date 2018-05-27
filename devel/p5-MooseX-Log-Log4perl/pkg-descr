@@ -1,4 +1,4 @@
 A logging role building a very lightweight wrapper to Log::Log4perl
 for use with your Moose classes.
 
-WWW: http://search.cpan.org/dist/MooseX-Log-Log4perl/
+WWW: https://metacpan.org/release/MooseX-Log-Log4perl

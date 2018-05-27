@@ -9,4 +9,4 @@ data are weak, the piece of data is freed and all the weak references
 are set to undef. This is particularly useful for implementing
 circular data structures without memory leaks or caches of objects.
 
-WWW: http://search.cpan.org/dist/WeakRef/
+WWW: https://metacpan.org/release/WeakRef

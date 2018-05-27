@@ -15,4 +15,4 @@ module is written to increase the thumbnail population on CPAN.
 The module can raise an exception if something goes wrong. So, you may have
 to use an eval block to catch them.
 
-WWW: http://search.cpan.org/dist/GD-Thumbnail/
+WWW: https://metacpan.org/release/GD-Thumbnail

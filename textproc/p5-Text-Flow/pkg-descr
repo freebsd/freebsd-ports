@@ -6,4 +6,4 @@ features without being tied down to ASCII based output and fixed-width
 fonts. My needs were for a more sophisticated text control in PDF and GIF
 output formats in particular.
 
-WWW: http://search.cpan.org/dist/Text-Flow/
+WWW: https://metacpan.org/release/Text-Flow

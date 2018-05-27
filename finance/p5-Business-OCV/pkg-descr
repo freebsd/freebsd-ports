@@ -3,4 +3,4 @@ Server (OCV) (see http://www.ingenico.com.au). The OCV server provides an
 interface into the bank network and allows credit card transactions to be
 processed in real-time.
 
-WWW: http://search.cpan.org/dist/Business-OCV/
+WWW: https://metacpan.org/release/Business-OCV

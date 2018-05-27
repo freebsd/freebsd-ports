@@ -2,4 +2,4 @@ Giovanni is a Perl replacement for the idea behind Capistrano.
 It is a deployment system that can be used comfortably from the
 commandline to check out code, restart systems and notify.
 
-WWW: http://search.cpan.org/dist/Giovanni/
+WWW: https://metacpan.org/release/Giovanni

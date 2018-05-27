@@ -14,4 +14,4 @@ Opaque
 - This prevents accidental corruption which could lead to segfaults using
   T_PTROBJ (e.g. $$ptr_obj = 0).
 
-WWW: http://search.cpan.org/dist/XS-Object-Magic/
+WWW: https://metacpan.org/release/XS-Object-Magic

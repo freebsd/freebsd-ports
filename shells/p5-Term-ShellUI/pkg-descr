@@ -6,4 +6,4 @@ trivial to implement.
 You simply declare your command set and let ShellUI take
 care of the heavy lifting.
 
-WWW: http://search.cpan.org/dist/Term-ShellUI/
+WWW: https://metacpan.org/release/Term-ShellUI

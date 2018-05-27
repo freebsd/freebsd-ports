@@ -3,4 +3,4 @@ S4 provides a wrapper to subversion that extends several of the commands
 commands; you may simply use "s4" wherever you would normally type
 "svn".
 
-WWW: http://search.cpan.org/dist/SVN-S4/
+WWW: https://metacpan.org/release/SVN-S4

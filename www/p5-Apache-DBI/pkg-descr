@@ -15,4 +15,4 @@ o DBI.pm provides persistent database connections:
 rollback to ensure data integrity - configurable verification of the
 connections to avoid time-outs.
 
-WWW: http://search.cpan.org/dist/Apache-DBI/
+WWW: https://metacpan.org/release/Apache-DBI

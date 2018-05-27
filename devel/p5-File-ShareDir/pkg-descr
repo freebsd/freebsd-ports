@@ -15,4 +15,4 @@ Perl provides a little-known method for doing this, but almost nobody is
 aware that it exists. As a result, module authors often go through some
 very strange ways to make the data available to their code.
 
-WWW: http://search.cpan.org/dist/File-ShareDir/
+WWW: https://metacpan.org/release/File-ShareDir

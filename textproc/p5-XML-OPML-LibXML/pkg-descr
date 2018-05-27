@@ -1,4 +1,4 @@
 XML::OPML::LibXML is an OPML parser written using XML::LibXML.  This
 module is part of spin-off CPANization of Plagger plugins.
 
-WWW: http://search.cpan.org/dist/XML-OPML-LibXML/
+WWW: https://metacpan.org/release/XML-OPML-LibXML

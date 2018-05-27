@@ -4,4 +4,4 @@ parser to build a lightweight tree structure representing the XML document.
 This structure is, at least in this author's opinion, easier to work with than
 the one created by the built-in style.
 
-WWW: http://search.cpan.org/dist/XML-Parser-EasyTree/
+WWW: https://metacpan.org/release/XML-Parser-EasyTree

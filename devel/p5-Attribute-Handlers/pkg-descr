@@ -6,4 +6,4 @@ given attributes with the same names as the attribute handler
 subroutines, which will then be called in one of the
 compilation phases (i.e. in a BEGIN, CHECK, INIT, or END block).
 
-WWW: http://search.cpan.org/dist/Attribute-Handlers/
+WWW: https://metacpan.org/release/Attribute-Handlers

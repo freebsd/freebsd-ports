@@ -4,4 +4,4 @@ a read-only public interface, but a private writer.  And wouldn't it be easier
 to just say "builder => 1" and have the attribute construct the canonical
 "_build_$name" builder name for you?
 
-WWW: http://search.cpan.org/dist/MooseX-AttributeShortcuts/
+WWW: https://metacpan.org/release/MooseX-AttributeShortcuts

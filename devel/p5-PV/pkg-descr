@@ -18,4 +18,4 @@ ftp://ftp.ncsu.edu/pub/math/wsetzer/cursperl<whatever>.
 
 PerlVision will only work with Perl 5+ of-course (upgrade || die()!).
 
-WWW: http://search.cpan.org/dist/PerlVision/
+WWW: https://metacpan.org/release/PerlVision

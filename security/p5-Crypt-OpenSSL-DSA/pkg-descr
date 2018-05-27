@@ -1,4 +1,4 @@
 Crypt::OpenSSL::DSA implements the DSA (Digital Signature Algorithm)
 signature verification system.
 
-WWW: http://search.cpan.org/dist/Crypt-OpenSSL-DSA/
+WWW: https://metacpan.org/release/Crypt-OpenSSL-DSA

@@ -6,4 +6,4 @@ is actually opened, or another hard to test interaction actually occurs.
 
 Currently supported tracing mechanisms are ktrace, strace and truss.
 
-WWW: http://search.cpan.org/dist/Sys-Trace/
+WWW: https://metacpan.org/release/Sys-Trace

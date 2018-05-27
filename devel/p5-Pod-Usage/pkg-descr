@@ -5,4 +5,4 @@ the file "Usage.pm") for more details. The pod2usage() function is probably the
 most generally useful function in this entire distribution since it is useful to
 just about any Perl5 script that is invoked from the command-line.
 
-WWW: http://search.cpan.org/dist/Pod-Usage/
+WWW: https://metacpan.org/release/Pod-Usage

@@ -3,4 +3,4 @@ interface to SSL sockets. The class is a descendent of
 IO::Socket::INET and provides a subset of the base class's
 interface methods.
 
-WWW: http://search.cpan.org/dist/IO-Socket-SSL/
+WWW: https://metacpan.org/release/IO-Socket-SSL

@@ -3,4 +3,4 @@ secure sockets (SSL/TLS). it uses the great Net::SMTPS.
 
 This module is recommended than Email::Sender::Transport::TLS.
 
-WWW: http://search.cpan.org/dist/Email-Sender-Transport-SMTPS/
+WWW: https://metacpan.org/release/Email-Sender-Transport-SMTPS

@@ -11,4 +11,4 @@ complicated interface see PkgConfig::LibPkgConf::Client. In addition,
 PkgConfig::LibPkgConf::Util provides some useful utility functions that are also
 provided by "pkgconf".
 
-WWW: http://search.cpan.org/dist/PkgConfig-LibPkgConf/
+WWW: https://metacpan.org/release/PkgConfig-LibPkgConf

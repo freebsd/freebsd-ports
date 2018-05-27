@@ -19,4 +19,4 @@ widget is composed of an Entry widget with a Button to the right of it. As
 in the editable mode, the Button activates a popup Listbox from which a
 single item can be selected.
 
-WWW: http://search.cpan.org/dist/Tk-JComboBox/
+WWW: https://metacpan.org/release/Tk-JComboBox

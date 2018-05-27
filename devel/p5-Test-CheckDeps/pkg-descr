@@ -1,4 +1,4 @@
 Test::CheckDeps adds a test that assures all dependencies have been
 installed properly. If requested, it can bail out all testing on error.
 
-WWW: http://search.cpan.org/dist/Test-CheckDeps/
+WWW: https://metacpan.org/release/Test-CheckDeps

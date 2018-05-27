@@ -17,4 +17,4 @@
        want access to the OpenSSL API via perl, check out Sampo's
        Net::SSLeay.
 
-WWW: http://search.cpan.org/dist/Crypt-SSLeay/
+WWW: https://metacpan.org/release/Crypt-SSLeay

@@ -8,4 +8,4 @@ Most DBIx::Class methods like "set_column", "set_columns", "get_column",
 "get_columns", "column_info", ... will work with regular as well as
 virtual columns.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-VirtualColumns/
+WWW: https://metacpan.org/release/DBIx-Class-VirtualColumns

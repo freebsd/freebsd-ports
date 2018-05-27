@@ -4,4 +4,4 @@ attempt to query interesting stats about your computer. It covers
 information on the operating system, CPU, memory usage, network
 interfaces, hard-disks etc.
 
-WWW: http://search.cpan.org/dist/Unix-Statgrab/
+WWW: https://metacpan.org/release/Unix-Statgrab

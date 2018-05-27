@@ -13,4 +13,4 @@ it has a lot of overhead. The main advantage (at least from my perspective) is
 that it provides a relatively cheap method for finding a list of words in a
 large, dense data set which begin with a certain string.
 
-WWW: http://search.cpan.org/dist/Tree-Trie/
+WWW: https://metacpan.org/release/Tree-Trie

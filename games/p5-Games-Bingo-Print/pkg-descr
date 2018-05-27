@@ -3,4 +3,4 @@ Games::Bingo::Print - PDF Generation Class
 This is that actual printing class. It generates a PDF file with pages
 containing bingo cards.
 
-WWW: http://search.cpan.org/dist/Games-Bingo-Print/
+WWW: https://metacpan.org/release/Games-Bingo-Print

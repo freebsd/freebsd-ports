@@ -16,4 +16,4 @@ Callbacks for example allow you to print status updates as the responses come
 in, or even immediately post follow-up requests based on the responses, all
 within the same single "wait" cycle.
 
-WWW: http://search.cpan.org/dist/ParallelUserAgent/
+WWW: https://metacpan.org/release/ParallelUserAgent

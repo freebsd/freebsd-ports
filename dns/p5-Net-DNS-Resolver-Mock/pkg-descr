@@ -1,4 +1,4 @@
 Net::DNS::Resolver::Mock is a subclass of Net::DNS::Resolver which parses a
 zonefile for it's data source. Primarily for use in testing.
 
-WWW: http://search.cpan.org/dist/Net-DNS-Resolver-Mock/
+WWW: https://metacpan.org/release/Net-DNS-Resolver-Mock

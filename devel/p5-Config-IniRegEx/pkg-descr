@@ -5,4 +5,4 @@ of the Ini configuration file. It does the Perl regex matching,
 nothing external. So whoever knows the Perl basic regex can
 use this feature.
 
-WWW: http://search.cpan.org/dist/Config-IniRegEx/
+WWW: https://metacpan.org/release/Config-IniRegEx

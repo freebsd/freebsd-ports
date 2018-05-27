@@ -6,4 +6,4 @@ Also you can use this module to create cross-database prefetches.
 
 This module provides other logic for prefetching data to resultsets.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-CustomPrefetch/
+WWW: https://metacpan.org/release/DBIx-Class-CustomPrefetch

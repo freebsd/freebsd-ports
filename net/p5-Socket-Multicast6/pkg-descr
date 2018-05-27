@@ -4,4 +4,4 @@ when manipulating multicast socket attributes.
 For simple, object-oriented way of doing the same thing, take a look at
 IO::Socket::Multicast6 or IO::Socket::Multicast
 
-WWW: http://search.cpan.org/dist/Socket-Multicast6/
+WWW: https://metacpan.org/release/Socket-Multicast6

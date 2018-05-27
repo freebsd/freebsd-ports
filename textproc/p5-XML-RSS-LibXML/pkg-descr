@@ -2,4 +2,4 @@ XML::RSS::LibXML uses XML::LibXML (libxml2) for parsing RSS instead of
 XML::RSS' XML::Parser (expat), while trying to keep interface
 compatibility with XML::RSS.
 
-WWW: http://search.cpan.org/dist/XML-RSS-LibXML/
+WWW: https://metacpan.org/release/XML-RSS-LibXML

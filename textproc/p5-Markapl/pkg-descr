@@ -3,4 +3,4 @@ language. It learns pretty much everything from Template::Declare,
 and has similar interface. With only one difference: how element
 attributes are defined.
 
-WWW: http://search.cpan.org/dist/Markapl/
+WWW: https://metacpan.org/release/Markapl

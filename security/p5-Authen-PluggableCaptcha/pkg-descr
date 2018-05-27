@@ -8,4 +8,4 @@ module, and then manipulated to require various submodules as plug-ins.
 Authen::PluggableCaptcha borrows from the functionality in
 Apache::Session::Flex
 
-WWW: http://search.cpan.org/dist/Authen-PluggableCaptcha/
+WWW: https://metacpan.org/release/Authen-PluggableCaptcha

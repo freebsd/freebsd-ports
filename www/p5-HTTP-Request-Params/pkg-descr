@@ -5,4 +5,4 @@ Incoming query parameters come from two places. The first place is the query
 portion of the URL. Second is the content portion of an HTTP request as is the
 case when parsing a POST request, for example.
 
-WWW: http://search.cpan.org/dist/HTTP-Request-Params/
+WWW: https://metacpan.org/release/HTTP-Request-Params

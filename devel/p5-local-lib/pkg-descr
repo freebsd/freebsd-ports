@@ -7,4 +7,4 @@ variables using the syntax appropriate for the user's current shell
 (as specified by the SHELL environment variable), suitable for
 directly adding to one's shell configuration file.
 
-WWW: http://search.cpan.org/dist/local-lib/
+WWW: https://metacpan.org/release/local-lib

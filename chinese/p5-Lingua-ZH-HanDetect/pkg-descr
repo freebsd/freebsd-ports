@@ -7,4 +7,4 @@ values will be set to the empty string.
 This module is needed because the various encodings for Chinese text tend to
 occupy the similar byte ranges, rendering Encode::Guess ineffective.
 
-WWW: http://search.cpan.org/dist/Lingua-ZH-HanDetect/
+WWW: https://metacpan.org/release/Lingua-ZH-HanDetect

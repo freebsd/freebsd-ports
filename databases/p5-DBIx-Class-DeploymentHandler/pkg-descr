@@ -3,4 +3,4 @@ deploying and upgrading databases with DBIx::Class.  It is designed to
 be much more flexible than DBIx::Class::Schema::Versioned, hence the
 use of Moose and lots of roles.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-DeploymentHandler/
+WWW: https://metacpan.org/release/DBIx-Class-DeploymentHandler

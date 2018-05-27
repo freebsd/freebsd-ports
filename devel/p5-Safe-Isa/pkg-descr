@@ -11,4 +11,4 @@ class names that you might not want to treat as one (like say "Matt") - the
 is_module_name function from Module::Runtime is a good way to check for
 something you might be able to call methods on if you want to do that.
 
-WWW: http://search.cpan.org/dist/Safe-Isa/
+WWW: https://metacpan.org/release/Safe-Isa

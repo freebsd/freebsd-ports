@@ -2,4 +2,4 @@ Astro::Flux provides a class for handling astronomical flux quantities. This
 class does not currently support conversions from one flux type to another (say,
 from magnitudes to Janskies) but may in the future.
 
-WWW: http://search.cpan.org/dist/Astro-Flux/
+WWW: https://metacpan.org/release/Astro-Flux

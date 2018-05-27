@@ -1,4 +1,4 @@
 Plack::Middleware::SocketIO is a server implmentation of SocketIO in
 Perl.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-SocketIO/
+WWW: https://metacpan.org/release/Plack-Middleware-SocketIO

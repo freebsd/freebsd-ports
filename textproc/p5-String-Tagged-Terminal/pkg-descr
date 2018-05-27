@@ -2,4 +2,4 @@ The subclass of String::Tagged provides a method, build_terminal, for outputting
 the formatting tags embedded in the string as terminal escape sequences, to
 render the the output in the appropriate style.
 
-WWW: http://search.cpan.org/dist/String-Tagged-Terminal/
+WWW: https://metacpan.org/release/String-Tagged-Terminal

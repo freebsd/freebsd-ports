@@ -2,4 +2,4 @@ This module provides a simple, straight-forward interface to the
 Google Analytics Data Export API, using LWP::UserAgent and XML::LibXML
 for the heavy lifting.
 
-WWW: http://search.cpan.org/dist/Net-Google-Analytics/
+WWW: https://metacpan.org/release/Net-Google-Analytics

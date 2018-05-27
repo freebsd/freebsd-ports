@@ -3,4 +3,4 @@ routines. It supports named or positional formatting, custom
 conversions, fixed string interpolation, and simple width-matching out
 of the box.
 
-WWW: http://search.cpan.org/dist/String-Formatter/
+WWW: https://metacpan.org/release/String-Formatter

@@ -13,4 +13,4 @@ This module was originally part of the IO::Async distribution, but was
 removed under the inspiration of Pedro Melo's Async::Hooks distribution,
 because it does not itself contain anything I/O-specific.
 
-WWW: http://search.cpan.org/dist/Async-MergePoint/
+WWW: https://metacpan.org/release/Async-MergePoint

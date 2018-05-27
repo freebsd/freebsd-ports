@@ -2,5 +2,5 @@ XML::STX is a pure Perl implementation of STX processor.  Streaming
 Transformations for XML (STX) is a one-pass transformation language for
 XML documents that builds on the Simple API for XML (SAX).
 
-WWW: http://search.cpan.org/dist/XML-STX/
+WWW: https://metacpan.org/release/XML-STX
 WWW: http://stx.sourceforge.net/

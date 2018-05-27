@@ -2,4 +2,4 @@ This module will download the latest VenusEnvy comic strip
 from the Keenspace website and return a binary blob of the image, or write
 it to disk.
 
-WWW: http://search.cpan.org/dist/WWW-VenusEnvy/
+WWW: https://metacpan.org/release/WWW-VenusEnvy

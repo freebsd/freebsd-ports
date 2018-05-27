@@ -8,4 +8,4 @@ Extended features are:
 - specify SQL (sometimes SQL::Translator's output is wrong)
 - check differences from versioned SQL and real database
 
-WWW: http://search.cpan.org/dist/GitDDL-Migrator/
+WWW: https://metacpan.org/release/GitDDL-Migrator

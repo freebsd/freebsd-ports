@@ -5,4 +5,4 @@ things to bind to Perl. The process of interrogating the Python
 interpreter for globals only occurs the first time you run your Python
 code. The namespace is cached, and subsequent calls use the cached version.
 
-WWW: http://search.cpan.org/dist/Inline-Python/
+WWW: https://metacpan.org/release/Inline-Python

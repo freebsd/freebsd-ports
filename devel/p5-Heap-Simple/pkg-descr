@@ -17,4 +17,4 @@ Heap::Simple itself is just a loader for the code that will actually implement
 the functionality mentioned above. You will need to install something like
 Heap::Simple::XS or Heap::Simple::Perl to be able to actually do anything.
 
-WWW: http://search.cpan.org/dist/Heap-Simple/
+WWW: https://metacpan.org/release/Heap-Simple

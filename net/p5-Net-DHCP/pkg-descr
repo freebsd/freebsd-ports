@@ -2,4 +2,4 @@ This module is a DHCP set of classes designed to handle basic DHCP
 handling. It can be used to develop either client, server or relays.
 It is composed of 100% pure Perl.
 
-WWW: http://search.cpan.org/dist/Net-DHCP/
+WWW: https://metacpan.org/release/Net-DHCP

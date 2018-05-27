@@ -8,4 +8,4 @@ headers and fields to support diagnostic interfaces, e.g., watched
 expressions, command/response interfaces to the monitored applications,
 etc.
 
-WWW: http://search.cpan.org/dist/Devel-RingBuffer/
+WWW: https://metacpan.org/release/Devel-RingBuffer

@@ -7,4 +7,4 @@ This is a convention that the community has been using for a while. This role
 tells the computer that your class uses this convention, and let's the computer
 abstract away some of the tedium this entails.
 
-WWW: http://search.cpan.org/dist/MooseX-Runnable/
+WWW: https://metacpan.org/release/MooseX-Runnable

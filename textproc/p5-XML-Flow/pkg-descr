@@ -1,4 +1,4 @@
 Easy store and restore perl data structures. It use XML::Parser for
 read and XML::Writer for write xml.
 
-WWW: http://search.cpan.org/dist/XML-Flow/
+WWW: https://metacpan.org/release/XML-Flow

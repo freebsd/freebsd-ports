@@ -4,4 +4,4 @@ against a database, using Dancer2::Plugin::DBIC to access a database.
 See Dancer2::Plugin::Auth::Extensible for details on how to use
 the authentication framework.
 
-WWW: http://search.cpan.org/dist/Dancer2-Plugin-Auth-Extensible-Provider-DBIC/
+WWW: https://metacpan.org/release/Dancer2-Plugin-Auth-Extensible-Provider-DBIC

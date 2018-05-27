@@ -10,4 +10,4 @@ But, how does one go the other way?  Simple, with Tie::Restore
 
 Works for any kind of tie. (scalar, array, hash, filehandle)
 
-WWW: http://search.cpan.org/dist/Tie-Restore/
+WWW: https://metacpan.org/release/Tie-Restore

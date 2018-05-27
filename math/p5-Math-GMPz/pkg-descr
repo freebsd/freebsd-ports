@@ -2,4 +2,4 @@ Math::GMPz is a bignum module utilising the GNU MP (GMP) library. Basically this
 module simply wraps all of the mpz integer functions provided by that library.
 See the Math::GMPz test suite for some examples of usage.
 
-WWW: http://search.cpan.org/dist/Math-GMPz/
+WWW: https://metacpan.org/release/Math-GMPz

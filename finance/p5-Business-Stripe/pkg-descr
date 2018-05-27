@@ -1,4 +1,4 @@
 Provides common bindings for Stripe payment system. Any API calls that do not
 have bindings can be access through the generic api method.
 
-WWW: http://search.cpan.org/dist/Business-Stripe/
+WWW: https://metacpan.org/release/Business-Stripe

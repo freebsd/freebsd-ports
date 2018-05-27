@@ -3,4 +3,4 @@ which locates the search terms in the message, extracts a reasonable-length
 string containing all the search terms, and optionally dumps the string out
 as HTML text with the search terms highlighted in bold.
 
-WWW: http://search.cpan.org/dist/Text-Context/
+WWW: https://metacpan.org/release/Text-Context

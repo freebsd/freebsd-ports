@@ -6,4 +6,4 @@ This module can be used to automatically select the geographically closest
 mirror, or to analyze your web server logs to determine the countries of
 your visiters.
 
-WWW: http://search.cpan.org/dist/Geo-IP/
+WWW: https://metacpan.org/release/Geo-IP

@@ -2,4 +2,4 @@ File::Format::RIFF provides an implementation of the Resource
 Interchange File Format. You can read, manipulate, and write
 RIFF files.
 
-WWW: http://search.cpan.org/dist/File-Format-RIFF/
+WWW: https://metacpan.org/release/File-Format-RIFF

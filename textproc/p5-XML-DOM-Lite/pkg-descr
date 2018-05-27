@@ -13,4 +13,4 @@ for the fun stuff. Alternatively, to avoid polluting your namespace,
 you can simply : use XML::DOM::Lite::Parser; use
 XML::DOM::Lite::Constants qw(:all); # ... etc
 
-WWW: http://search.cpan.org/dist/XML-DOM-Lite/
+WWW: https://metacpan.org/release/XML-DOM-Lite

@@ -10,4 +10,4 @@ For time dependent calculations a telescope location and reference time must be
 provided. See Astro::Telescope and DateTime for details on specifying location
 and reference epoch.
 
-WWW: http://search.cpan.org/dist/Astro-Coords/
+WWW: https://metacpan.org/release/Astro-Coords

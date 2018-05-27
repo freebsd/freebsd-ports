@@ -5,4 +5,4 @@ It then exports the encode_json and decode_json functions from the loaded
 module, along with a JSON constant that returns the class name for calling new
 on.
 
-WWW: http://search.cpan.org/dist/JSON-MaybeXS/
+WWW: https://metacpan.org/release/JSON-MaybeXS

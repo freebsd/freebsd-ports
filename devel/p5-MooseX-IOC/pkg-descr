@@ -1,4 +1,4 @@
 This module provides a bridge between IOC registries and Moose objects
 through a custom attribute metaclass.
 
-WWW: http://search.cpan.org/dist/MooseX-IOC/
+WWW: https://metacpan.org/release/MooseX-IOC

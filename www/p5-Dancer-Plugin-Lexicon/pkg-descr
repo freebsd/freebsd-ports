@@ -11,4 +11,4 @@ settings, and the current language is automatically stored in the user's
 session. Including "lang=$lang_tag" in the query string change the
 user's language.
 
-WWW: http://search.cpan.org/dist/Dancer-Plugin-Lexicon/
+WWW: https://metacpan.org/release/Dancer-Plugin-Lexicon

@@ -1,4 +1,4 @@
 WebService::Google::Reader provides an interface to the Google Reader
 service through the unofficial (as-yet unpublished) API.
 
-WWW: http://search.cpan.org/dist/WebService-Google-Reader/
+WWW: https://metacpan.org/release/WebService-Google-Reader

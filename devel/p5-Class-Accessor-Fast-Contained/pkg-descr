@@ -7,4 +7,4 @@ Class::Accessor::Fast:
 - new() allows mixin into an existing object, rather than creating and
   returning a new blessed hashref.
 
-WWW: http://search.cpan.org/dist/Class-Accessor-Fast-Contained/
+WWW: https://metacpan.org/release/Class-Accessor-Fast-Contained

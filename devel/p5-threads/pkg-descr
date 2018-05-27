@@ -18,4 +18,4 @@ In particular, if you are intending to share variables with
 threads::shared, you must use threads before you use threads::shared.
 (threads will emit a warning if you do it the other way around.)
 
-WWW: http://search.cpan.org/dist/threads/
+WWW: https://metacpan.org/release/threads

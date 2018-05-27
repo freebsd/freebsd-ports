@@ -1,4 +1,4 @@
 Event::ExecFlow provides a high level API for defining complex flow controls
 with asynchronous execution of external programs.
 
-WWW: http://search.cpan.org/dist/Event-ExecFlow/
+WWW: https://metacpan.org/release/Event-ExecFlow

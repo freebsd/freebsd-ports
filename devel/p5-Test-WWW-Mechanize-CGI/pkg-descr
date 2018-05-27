@@ -1,4 +1,4 @@
 Provides a convenient way of testing CGI applications without a
 external daemon.
 
-WWW: http://search.cpan.org/dist/Test-WWW-Mechanize-CGI/
+WWW: https://metacpan.org/release/Test-WWW-Mechanize-CGI

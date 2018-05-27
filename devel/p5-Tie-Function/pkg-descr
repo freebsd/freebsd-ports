@@ -1,4 +1,4 @@
 Tie::Function simplifies wrapping functions in tied hash syntax so they can be
 interpolated in double-quoted literals without messy intermediate variables.
 
-WWW: http://search.cpan.org/dist/Tie-Function/
+WWW: https://metacpan.org/release/Tie-Function

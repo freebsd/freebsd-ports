@@ -4,4 +4,4 @@ same tree structures back into a string. It accepts various types of input,
 such as strings, filenames, and array references. The tree structure used
 is a hierarchy of Tree::Simple objects.
 
-WWW: http://search.cpan.org/dist/Tree-Parser/
+WWW: https://metacpan.org/release/Tree-Parser

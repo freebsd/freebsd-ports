@@ -4,4 +4,4 @@ programs to work with test results, we provide Test::Harness::Straps. Instead
 of printing the results, straps provide them as raw data. You can also
 configure how the tests are to be run.
 
-WWW: http://search.cpan.org/dist/Test-Harness-Straps/
+WWW: https://metacpan.org/release/Test-Harness-Straps

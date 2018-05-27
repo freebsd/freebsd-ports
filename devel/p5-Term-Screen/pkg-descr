@@ -6,4 +6,4 @@ means to get raw and unblocked input. This is not a replacement for
 Curses -- it has no memory.  This was written so that it could be easily
 changed to fit nasty systems, and to be available first thing.
 
-WWW: http://search.cpan.org/dist/Term-Screen/
+WWW: https://metacpan.org/release/Term-Screen

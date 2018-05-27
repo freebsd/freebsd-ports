@@ -1,4 +1,4 @@
 Net::DNS::Codes provides forward and reverse lookup for most common C
 library DNS codes as well as all the codes for the DNS HEADER field.
 
-WWW: http://search.cpan.org/dist/Net-DNS-Codes/
+WWW: https://metacpan.org/release/Net-DNS-Codes

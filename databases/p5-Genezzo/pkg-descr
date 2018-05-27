@@ -4,4 +4,4 @@ configured and extended with custom functions, persistent storage
 representations, and novel data access methods.  In its current
 incarnation it supports a subset of SQL and a partial DBI interface.
 
-WWW: http://search.cpan.org/dist/Genezzo/
+WWW: https://metacpan.org/release/Genezzo

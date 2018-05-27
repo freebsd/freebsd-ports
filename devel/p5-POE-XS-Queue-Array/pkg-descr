@@ -1,4 +1,4 @@
 This class is an implementation of the abstract POE::Queue interface.
 It implements a priority queue using C, with an XS interface supplied.
 
-WWW: http://search.cpan.org/dist/POE-XS-Queue-Array/
+WWW: https://metacpan.org/release/POE-XS-Queue-Array

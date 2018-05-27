@@ -6,4 +6,4 @@ at the given x ordinates. Derivative2 may optionally be given values to
 use for the first dervivative at the start and end points of the data -
 otherwiswe 'natural' values are used.
 
-WWW: http://search.cpan.org/dist/Math-Derivative/
+WWW: https://metacpan.org/release/Math-Derivative

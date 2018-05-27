@@ -2,4 +2,4 @@ REST::Google -
 This module provides OO interface to Google REST (aka AJAX) API.
 Currently support for Search, Feeds and Translate services.
 
-WWW: http://search.cpan.org/dist/REST-Google/
+WWW: https://metacpan.org/release/REST-Google

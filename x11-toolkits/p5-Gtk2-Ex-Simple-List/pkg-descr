@@ -16,4 +16,4 @@ mechanisms and then displayed in the list. This same mechanism can be
 expanded by defining arbitrary new column types before calling the new
 function.
 
-WWW: http://search.cpan.org/dist/Gtk2-Ex-Simple-List/
+WWW: https://metacpan.org/release/Gtk2-Ex-Simple-List

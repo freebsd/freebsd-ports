@@ -11,4 +11,4 @@ The tree data structure is a hash of hashes. The keys of each hash are names of
 directories or files. Directories have hash references as their value, files
 have a scalar which holds the contents of the file.
 
-WWW: http://search.cpan.org/dist/File-Slurp-Tree/
+WWW: https://metacpan.org/release/File-Slurp-Tree

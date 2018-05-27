@@ -1,4 +1,4 @@
 The functions exported by this module deal with runtime handling of Perl
 modules, which are normally handled at compile time.
 
-WWW: http://search.cpan.org/dist/Module-Runtime/
+WWW: https://metacpan.org/release/Module-Runtime

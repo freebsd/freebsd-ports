@@ -4,4 +4,4 @@ is a cardinal or ordinal number.
 This is useful if you e.g. want to distinguish these types of numbers
 found with Lingua::EN::FindNumber and take different actions.
 
-WWW: http://search.cpan.org/dist/Lingua-EN-Number-IsOrdinal/
+WWW: https://metacpan.org/release/Lingua-EN-Number-IsOrdinal

@@ -2,4 +2,4 @@ The Authen::CyrusSASL module provides a simple class that allows you
 to send request to the cyrus-sasl's authen daemon.
 This module is based on the Authen::Radius module with the similar interface.
 
-WWW: http://search.cpan.org/dist/Authen-CyrusSASL/
+WWW: https://metacpan.org/release/Authen-CyrusSASL

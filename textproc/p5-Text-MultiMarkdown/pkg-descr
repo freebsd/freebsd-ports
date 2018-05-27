@@ -11,4 +11,4 @@ HTML tags (like <div> and <table> as well).
 Text::MultiMarkdown implements the MultiMarkdown markdown syntax
 extensions from: http://fletcherpenney.net/multimarkdown/
 
-WWW: http://search.cpan.org/dist/Text-MultiMarkdown/
+WWW: https://metacpan.org/release/Text-MultiMarkdown

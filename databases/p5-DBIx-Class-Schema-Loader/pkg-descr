@@ -19,4 +19,4 @@ This module is designed more to get you up and running quickly against
 an existing database, or to be effective for simple situations, rather
 than to be what you use in the long term for a complex database/project.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-Schema-Loader/
+WWW: https://metacpan.org/release/DBIx-Class-Schema-Loader

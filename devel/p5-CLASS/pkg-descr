@@ -6,4 +6,4 @@ CLASS is a constant, not a subroutine call. $CLASS is a plain variable, it is
 not tied. There is no performance loss for using CLASS over __PACKAGE__ except
 the loading of the module.
 
-WWW: http://search.cpan.org/dist/CLASS/
+WWW: https://metacpan.org/release/CLASS

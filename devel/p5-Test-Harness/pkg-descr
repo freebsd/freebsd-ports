@@ -3,4 +3,4 @@ module expects by using "Test" modules.  However, by using this
 module, you can know the specifics, and you can prints some
 performance statistics that are computed by the Benchmark module.
 
-WWW: http://search.cpan.org/dist/Test-Harness/
+WWW: https://metacpan.org/release/Test-Harness

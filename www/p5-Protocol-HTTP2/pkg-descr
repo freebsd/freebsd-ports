@@ -3,4 +3,4 @@ decoders/encoders of HTTP/2 frames. You may use this module to implement your
 own HTTP/2 client/server/intermediate on top of your favorite event loop over
 plain or tls socket.
 
-WWW: http://search.cpan.org/dist/Protocol-HTTP2/
+WWW: https://metacpan.org/release/Protocol-HTTP2

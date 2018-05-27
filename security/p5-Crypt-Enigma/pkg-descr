@@ -6,4 +6,4 @@ The implementation allows for all of the Rotors and Reflectors available to the
 real world Enigma to be used. A Steckerboard has also been implemented,
 allowing letter substitutions to be made.
 
-WWW: http://search.cpan.org/dist/Crypt-Enigma/
+WWW: https://metacpan.org/release/Crypt-Enigma

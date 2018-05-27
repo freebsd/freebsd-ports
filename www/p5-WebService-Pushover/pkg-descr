@@ -3,4 +3,4 @@ RESTful API. You'll need to register with Pushover to obtain an API token for
 yourself and for your application before you'll be able to do anything with this
 module.
 
-WWW: http://search.cpan.org/dist/WebService-Pushover/
+WWW: https://metacpan.org/release/WebService-Pushover

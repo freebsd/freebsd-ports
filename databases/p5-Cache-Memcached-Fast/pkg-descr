@@ -3,4 +3,4 @@ daemon.  Module core is implemented in C and tries hard to minimize
 number of system calls and to avoid any key/value copying for speed.
 As a result, it has very low CPU consumption.
 
-WWW: http://search.cpan.org/dist/Cache-Memcached-Fast/
+WWW: https://metacpan.org/release/Cache-Memcached-Fast

@@ -3,4 +3,4 @@ backend module for Vital VirtualNet.  It is only useful if you have a merchant
 account with Vital VirtualNet:
 http://www.vitalps.com/sections/merch/mer_ps_VNET_info.html
 
-WWW: http://search.cpan.org/dist/Business-OnlinePayment-VirtualNet/
+WWW: https://metacpan.org/release/Business-OnlinePayment-VirtualNet

@@ -3,4 +3,4 @@ to a section of code, causing aliases to be made wherever Perl would
 normally make copies instead. You can use this to improve efficiency
 and readability, when compared to using references.
 
-WWW: http://search.cpan.org/dist/Data-Alias/
+WWW: https://metacpan.org/release/Data-Alias

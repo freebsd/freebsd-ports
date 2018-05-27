@@ -4,4 +4,4 @@ parameter. All of those callbacks are run after Params::Validate's normal
 validate() function. If any of them return false, then validate() will die as
 normal.
 
-WWW: http://search.cpan.org/dist/Params-Validate-Dependencies/
+WWW: https://metacpan.org/release/Params-Validate-Dependencies

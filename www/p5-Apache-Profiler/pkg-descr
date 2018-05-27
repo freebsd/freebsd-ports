@@ -3,4 +3,4 @@ time taken to process one request.  Profiled data is reported to the
 Apache Log file.  It'd be useful to profile some heavy application
 taking a long time to proceed.
 
-WWW: http://search.cpan.org/dist/Apache-Profiler/
+WWW: https://metacpan.org/release/Apache-Profiler

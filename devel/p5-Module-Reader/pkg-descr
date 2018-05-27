@@ -2,4 +2,4 @@ Reads the content of perl modules the same way perl does.  This
 includes reading modules available only by @INC hooks, or filtered
 through them.
 
-WWW: http://search.cpan.org/dist/Module-Reader/
+WWW: https://metacpan.org/release/Module-Reader

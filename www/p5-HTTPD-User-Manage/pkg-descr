@@ -8,4 +8,4 @@ remotely add, edit and delete users and their groups.  You can also use
 it from the command line as a nice all-in-one interface to access
 control databases based on text files, DBM files, and SQL databases.
 
-WWW: http://search.cpan.org/dist/HTTPD-User-Manage/
+WWW: https://metacpan.org/release/HTTPD-User-Manage

@@ -1,4 +1,4 @@
 Compare two perl data structures recursively. Returns 0 if the
 structures differ, else returns 1.
 
-WWW: http://search.cpan.org/dist/Data-Compare/
+WWW: https://metacpan.org/release/Data-Compare

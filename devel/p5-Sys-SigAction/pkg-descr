@@ -3,4 +3,4 @@ With the use of this module, the signal handling behavior
 can be coded in a way that does not change from one perl version
 to the next, and thus using POSIX::sigaction() becomes a little easier.
 
-WWW: http://search.cpan.org/dist/Sys-SigAction/
+WWW: https://metacpan.org/release/Sys-SigAction

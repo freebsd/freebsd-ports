@@ -4,4 +4,4 @@ A CSV object will be instantiated via the following directive:
 
 [% USE CSV %]
 
-WWW: http://search.cpan.org/dist/Template-Plugin-CSV/
+WWW: https://metacpan.org/release/Template-Plugin-CSV

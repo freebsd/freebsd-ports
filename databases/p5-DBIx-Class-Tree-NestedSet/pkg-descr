@@ -4,4 +4,4 @@ a database.  This takes a different approach to the Adjacency List
 implementation.  (see DBIx::Class::Tree::AdjacencyList which uses
 parent relationships in a recursive manner).
 
-WWW: http://search.cpan.org/dist/DBIx-Class-Tree-NestedSet/
+WWW: https://metacpan.org/release/DBIx-Class-Tree-NestedSet

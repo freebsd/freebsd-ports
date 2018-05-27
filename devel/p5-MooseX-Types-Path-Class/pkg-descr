@@ -10,4 +10,4 @@ This is just meant to be a central place for these constructs, so you don't
 have to worry about whether they've been created or not, and you're not tempted
 to copy them into yet another class (like I was).
 
-WWW: http://search.cpan.org/dist/MooseX-Types-Path-Class/
+WWW: https://metacpan.org/release/MooseX-Types-Path-Class

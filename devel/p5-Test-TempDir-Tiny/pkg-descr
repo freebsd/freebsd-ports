@@ -5,4 +5,4 @@ It is loosely based on Test::TempDir, but with less complexity, greater
 portability and zero non-core dependencies. (Capture::Tiny is recommended for
 testing.)
 
-WWW: http://search.cpan.org/dist/Test-TempDir-Tiny/
+WWW: https://metacpan.org/release/Test-TempDir-Tiny

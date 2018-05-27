@@ -4,6 +4,6 @@ trace statements, and provides other useful things like HTML-ified
 trace messages for CGI scripts and an easy way to trace out data
 structures using Data::Dumper.
 
-WWW: http://search.cpan.org/dist/Log-TraceMessages/
+WWW: https://metacpan.org/release/Log-TraceMessages
 
 Seamus Venasse <svenasse@polaris.ca>

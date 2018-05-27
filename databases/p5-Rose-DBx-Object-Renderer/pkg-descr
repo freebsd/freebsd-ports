@@ -9,4 +9,4 @@ API to render charts. Template::Toolkit is used for template processing,
 however, Renderer can dynamically generate a full set of UIs without
 any templates.
 
-WWW: http://search.cpan.org/dist/Rose-DBx-Object-Renderer/
+WWW: https://metacpan.org/release/Rose-DBx-Object-Renderer

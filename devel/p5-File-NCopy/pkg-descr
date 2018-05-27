@@ -13,4 +13,4 @@ gets pooched.  To avoid this use file names instead, if at all possible,
 especially for the to file.  If passed a file handle, it is not closed
 when copy returns, files opened by copy are closed.
 
-WWW: http://search.cpan.org/dist/File-NCopy/
+WWW: https://metacpan.org/release/File-NCopy

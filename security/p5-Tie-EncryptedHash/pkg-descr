@@ -11,4 +11,4 @@ are identical in this mode. When password is deleted, encrypting fields are
 accessible only as ciphertext. This is Tie::EncryptedHash's opaque mode of
 access, optimized for serialization.
 
-WWW: http://search.cpan.org/dist/Tie-EncryptedHash/
+WWW: https://metacpan.org/release/Tie-EncryptedHash

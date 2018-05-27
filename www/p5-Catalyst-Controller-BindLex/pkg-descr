@@ -5,4 +5,4 @@ attribute they will be aliased to each other, so you can use this for reading
 as well as writing values across controller subs. This is almost like sharing
 your lexical scope.
 
-WWW: http://search.cpan.org/dist/Catalyst-Controller-BindLex/
+WWW: https://metacpan.org/release/Catalyst-Controller-BindLex

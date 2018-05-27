@@ -6,4 +6,4 @@ these data at http://www.isbn-international.org/identifiers.html.
 The distribution should include the kludegy script used to extract the
 data and format the data structure.
 
-WWW: http://search.cpan.org/dist/Business-ISBN-Data/
+WWW: https://metacpan.org/release/Business-ISBN-Data

@@ -3,4 +3,4 @@ in anonymous arrays, appending any new value to the already-existing ones.
 This means that you can store as many items as you like under a single key,
 and access them all at once by accessing the value stored under the key.
 
-WWW: http://search.cpan.org/dist/Tie-Hash-MultiValue/
+WWW: https://metacpan.org/release/Tie-Hash-MultiValue

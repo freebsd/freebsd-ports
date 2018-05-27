@@ -12,4 +12,4 @@ sensitive.
 
 As a side effect the module does not allow undef as a value in the array.
 
-WWW: http://search.cpan.org/dist/Array-Unique/
+WWW: https://metacpan.org/release/Array-Unique

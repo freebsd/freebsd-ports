@@ -9,4 +9,4 @@ improved tokenizer, and tidier output.
 With Hailo, you can create, modify, and query Hailo brains. To use Hailo in
 event-driven POE applications, you can use the POE::Component::Hailo wrapper.
 
-WWW: http://search.cpan.org/dist/Hailo/
+WWW: https://metacpan.org/release/Hailo

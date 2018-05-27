@@ -1,4 +1,4 @@
 This module is a Perl XS binding to libyaml which offers
 Perl the best YAML support to date.
 
-WWW: http://search.cpan.org/dist/YAML-LibYAML/
+WWW: https://metacpan.org/release/YAML-LibYAML

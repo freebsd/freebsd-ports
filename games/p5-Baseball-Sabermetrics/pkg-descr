@@ -2,4 +2,4 @@ Baseball::Sabermetrics provides an easy interface for calculating baseball
 statistics, given a data importer. In this package, I've writen CPBL.pm for
 (Chinese Professional Baseball League, http://www.cpbl.com.tw).
 
-WWW: http://search.cpan.org/dist/Baseball-Sabermetrics/
+WWW: https://metacpan.org/release/Baseball-Sabermetrics

@@ -3,4 +3,4 @@ MIME messages, and outputting its decoded components to a given directory
 ie, this module is designed to allows users to extract the attached files
 out of a MIME encoded email messages or mailboxes.
 
-WWW: http://search.cpan.org/dist/MIME-Explode/
+WWW: https://metacpan.org/release/MIME-Explode

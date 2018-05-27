@@ -5,4 +5,4 @@ event-driven) programs. Reflex uses Moose internally, but it doesn't enforce
 programs to use Moose's syntax. However, Moose syntax brings several useful
 features we hope will become indispensible.
 
-WWW: http://search.cpan.org/dist/Reflex/
+WWW: https://metacpan.org/release/Reflex

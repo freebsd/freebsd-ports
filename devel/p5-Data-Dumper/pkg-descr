@@ -6,4 +6,4 @@ correctly.
 The return value can be evaled to get back an identical copy of the original
 reference structure.
 
-WWW: http://search.cpan.org/dist/Data-Dumper/
+WWW: https://metacpan.org/release/Data-Dumper

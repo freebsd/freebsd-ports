@@ -3,4 +3,4 @@ Installers are documented in Sub::Exporter's documentation; all you need to know
 is that by using Sub::Exporter::Lexical's installer, you can import routines
 into a lexical scope that will be cleaned up when that scope ends.
 
-WWW: http://search.cpan.org/dist/Sub-Exporter-Lexical/
+WWW: https://metacpan.org/release/Sub-Exporter-Lexical

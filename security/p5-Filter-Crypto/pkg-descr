@@ -16,4 +16,4 @@ the PAR::Filter::Crypto module.  The latter can be utilised by the
 standard PAR tools to produce PAR archives in which your Perl files are
 encrypted.
 
-WWW: http://search.cpan.org/dist/Filter-Crypto/
+WWW: https://metacpan.org/release/Filter-Crypto

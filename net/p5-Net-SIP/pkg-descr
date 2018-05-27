@@ -2,4 +2,4 @@ Net::SIP consists of packages for handling the SIP packets, for transport of
 the packets, for processing the packets and on top of all that a simplified
 layer for common tasks.
 
-WWW: http://search.cpan.org/dist/Net-SIP/
+WWW: https://metacpan.org/release/Net-SIP

@@ -8,4 +8,4 @@ Since duplication is bad, this module implements a Moose role implementing those
 methods once and forever. This implies that your class is using Moose in order
 to consume the role.
 
-WWW: http://search.cpan.org/dist/Tk-Role-HasWidgets/
+WWW: https://metacpan.org/release/Tk-Role-HasWidgets

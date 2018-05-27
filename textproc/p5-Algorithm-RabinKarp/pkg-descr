@@ -14,4 +14,4 @@ your data to remove all unnecessary information. For example, in a large
 english document, you should probably remove all white space, as well as
 removing all capitalization.
 
-WWW: http://search.cpan.org/dist/Algorithm-RabinKarp/
+WWW: https://metacpan.org/release/Algorithm-RabinKarp

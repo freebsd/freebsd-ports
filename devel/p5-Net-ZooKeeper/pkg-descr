@@ -4,4 +4,4 @@ of Apache ZooKeeper.
 ZooKeeper is coordination service for distributed applications and
 is a sub-project of the Apache Hadoop project.
 
-WWW: http://search.cpan.org/dist/Net-ZooKeeper/
+WWW: https://metacpan.org/release/Net-ZooKeeper

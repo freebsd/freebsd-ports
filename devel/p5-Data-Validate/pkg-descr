@@ -3,4 +3,4 @@ and untainting easier and more readable. Most of the functions are not
 much shorter than their direct perl equivalent, but their names make it
 clear what you're trying to test for.
 
-WWW: http://search.cpan.org/dist/Data-Validate/
+WWW: https://metacpan.org/release/Data-Validate

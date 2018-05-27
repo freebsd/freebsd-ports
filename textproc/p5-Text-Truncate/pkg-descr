@@ -1,4 +1,4 @@
 This is a simple, no-brainer subroutine to truncate a string and
 add an optional cutoff marker (defaults to ``...'').
 
-WWW: http://search.cpan.org/dist/Text-Truncate/
+WWW: https://metacpan.org/release/Text-Truncate

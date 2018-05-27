@@ -2,4 +2,4 @@ ORLite is an object-relation system specifically tailored for SQLite that
 follows many of the same principles as the ::Tiny series of modules and has
 a design and feature set that aligns directly to the capabilities of SQLite.
 
-WWW: http://search.cpan.org/dist/ORLite/
+WWW: https://metacpan.org/release/ORLite

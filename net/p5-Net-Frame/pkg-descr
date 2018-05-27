@@ -11,4 +11,4 @@ Finally, anyone can create a layer, and put it on his CPAN space, because
 of the modularity Net::Frame offers. For an example,
 see Net::Frame::Layer::ICMPv4 on my CPAN space.
 
-WWW: http://search.cpan.org/dist/Net-Frame/
+WWW: https://metacpan.org/release/Net-Frame

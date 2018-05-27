@@ -6,4 +6,4 @@ stdout except for code within the above tags.
 Despite what's in the CPAN README, this module does not require
 Filter::Simple, only CGI.pm.
 
-WWW: http://search.cpan.org/dist/Markup-Perl/
+WWW: https://metacpan.org/release/Markup-Perl

@@ -5,4 +5,4 @@ Exception::Class::DBI itself offers a single class method, handler(),
 that returns a code reference appropriate for passing to the DBI
 HandleError attribute.
 
-WWW: http://search.cpan.org/dist/Exception-Class-DBI/
+WWW: https://metacpan.org/release/Exception-Class-DBI

@@ -3,4 +3,4 @@ rotate itself. File will be opened in append mode. Locking will be done to avoid
 conflict when there are multiple writers. Rotation can be done by size (after a
 certain size is reached), by time (daily/monthly/yearly), or both.
 
-WWW: http://search.cpan.org/dist/File-Write-Rotate/
+WWW: https://metacpan.org/release/File-Write-Rotate

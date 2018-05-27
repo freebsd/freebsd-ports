@@ -3,4 +3,4 @@ data.  That is, if you want to store something about your class as a
 whole (instead of about a single object).  This data is then inherited
 by your subclasses and can be overridden.
 
-WWW: http://search.cpan.org/dist/Class-Data-Inheritable/
+WWW: https://metacpan.org/release/Class-Data-Inheritable

@@ -1,4 +1,4 @@
 This module scans potential modules used by perl programs, using line-by-line
 analysis and elaborate heuristics.
 
-WWW: http://search.cpan.org/dist/Module-ScanDeps/
+WWW: https://metacpan.org/release/Module-ScanDeps

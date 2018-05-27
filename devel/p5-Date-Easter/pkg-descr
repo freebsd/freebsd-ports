@@ -3,4 +3,4 @@ code in it to do this. But Date::Manip is very big, and rather slow.
 I needed something faster and smaller, and did not need all that
 other stuff.
 
-WWW: http://search.cpan.org/dist/Date-Easter/
+WWW: https://metacpan.org/release/Date-Easter

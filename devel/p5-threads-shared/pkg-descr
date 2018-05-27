@@ -4,4 +4,4 @@ gets a private copy of each existing variable.
 This module allows you to share variables across different threads (and
 pseudoforks on Win32). It is used together with the threads module.
 
-WWW: http://search.cpan.org/dist/threads-shared/
+WWW: https://metacpan.org/release/threads-shared

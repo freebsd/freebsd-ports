@@ -2,4 +2,4 @@ Template::Plugin::Number::Format makes the number-munging grooviness
 of Number::Format available to your templates. It is used like a
 plugin, but installs filters into the current context.
 
-WWW: http://search.cpan.org/dist/Template-Plugin-Number-Format/
+WWW: https://metacpan.org/release/Template-Plugin-Number-Format

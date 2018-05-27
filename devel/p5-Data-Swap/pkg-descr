@@ -7,4 +7,4 @@ example for dynamic loading of data structures:
 
       swap $self, bless $replacement, $newclass;
 
-WWW: http://search.cpan.org/dist/Data-Swap/
+WWW: https://metacpan.org/release/Data-Swap

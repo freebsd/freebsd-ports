@@ -5,4 +5,4 @@ And you have to set output directory's path with outroot option.  And
 this module searches your pm and pod files from your libroot, and
 generates html files, and an index page lists up all your modules there.
 
-WWW: http://search.cpan.org/dist/Pod-ProjectDocs/
+WWW: https://metacpan.org/release/Pod-ProjectDocs

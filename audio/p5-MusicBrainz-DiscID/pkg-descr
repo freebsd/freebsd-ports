@@ -3,4 +3,4 @@ audio CD in the drive.  The coding style is slightly different to the C
 interface to libdiscid, because it makes use of Perl's Object Oriented
 functionality.
 
-WWW: http://search.cpan.org/dist/MusicBrainz-DiscID
+WWW: https://metacpan.org/release/MusicBrainz-DiscID

@@ -4,4 +4,4 @@ library provides methods similar enough to that distribution's fcopy(),
 dircopy() and rcopy() functions to be usable in those CPAN distributions often
 described as being part of the Perl toolchain.
 
-WWW: http://search.cpan.org/dist/File-Copy-Recursive-Reduced/
+WWW: https://metacpan.org/release/File-Copy-Recursive-Reduced

@@ -7,4 +7,4 @@ zcrss-browse    Calls the view dialog for ZConf::RSS::GUI
 zcrss-get       Fetches a feed and applies the template for it.
 zcrss-managetemplates   Calls the manage di
 
-WWW: http://search.cpan.org/dist/ZConf-RSS/
+WWW: https://metacpan.org/release/ZConf-RSS

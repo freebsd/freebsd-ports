@@ -3,4 +3,4 @@ to physical quantities.  This module allows you to manipulate these units,
 generate new derived units from other units, and convert from one unit
 to another.
 
-WWW: http://search.cpan.org/dist/Physics-Unit/
+WWW: https://metacpan.org/release/Physics-Unit

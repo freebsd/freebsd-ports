@@ -5,4 +5,4 @@ The difference is that this module shows failure diagnostics in a different way,
 and has a slightly different calling style. Depending on the nature of the data
 you're working with, this module may be easier to work with.
 
-WWW: http://search.cpan.org/dist/Test-Bits/
+WWW: https://metacpan.org/release/Test-Bits

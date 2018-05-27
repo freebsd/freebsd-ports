@@ -15,4 +15,4 @@ IO::Wrap	- wrap raw filehandles in IO::Handle interface
 
 IO::WrapTie	- wrap tieable objects in IO::Handle interface
 
-WWW: http://search.cpan.org/dist/IO-stringy/
+WWW: https://metacpan.org/release/IO-stringy

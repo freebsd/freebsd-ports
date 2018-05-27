@@ -2,4 +2,4 @@ SGML::Parser::OpenSP is an interface to the OpenSP parser.  It allows for
 Perl scripts to parse an SGML document (including HTML) using the OpenSP
 parser.
 
-WWW: http://search.cpan.org/dist/SGML-Parser-OpenSP/
+WWW: https://metacpan.org/release/SGML-Parser-OpenSP

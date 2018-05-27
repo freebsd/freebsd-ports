@@ -4,4 +4,4 @@ cleint. It also currently includes two small utilities, listed below.
 zcgetmail - A getmail replacement using ZConf::Mail.
 zcmailaccount - Manages the accounts.
 
-WWW: http://search.cpan.org/dist/ZConf-Mail/
+WWW: https://metacpan.org/release/ZConf-Mail

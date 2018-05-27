@@ -8,4 +8,4 @@ than O(lg(n)) time.
 A Tree::RedBlack object supports the following methods: new(), root(), cmp(&),
 insert($, $), delete($), find($), node($), min() and max().
 
-WWW: http://search.cpan.org/dist/Tree-RedBlack/
+WWW: https://metacpan.org/release/Tree-RedBlack

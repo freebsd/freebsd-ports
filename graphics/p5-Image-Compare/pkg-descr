@@ -3,4 +3,4 @@ compared, using a variety of comparison methods. In general, those
 methods operate on the images on a pixel-by-pixel basis and reporting
 statistics or data based on color value comparisons.
 
-WWW: http://search.cpan.org/dist/Image-Compare/
+WWW: https://metacpan.org/release/Image-Compare

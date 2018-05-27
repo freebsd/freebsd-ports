@@ -1,4 +1,4 @@
 Time::Out provides an easy interface to alarm(2) based timeouts.  Nested
 timeouts are supported.
 
-WWW: http://search.cpan.org/dist/Time-Out/
+WWW: https://metacpan.org/release/Time-Out

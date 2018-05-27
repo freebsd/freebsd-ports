@@ -9,4 +9,4 @@ Instead of
 
  $token->[0] eq 'S' and $token->[1] eq 'form'
 
-WWW: http://search.cpan.org/dist/HTML-TokeParser-Simple/
+WWW: https://metacpan.org/release/HTML-TokeParser-Simple

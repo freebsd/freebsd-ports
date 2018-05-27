@@ -1,4 +1,4 @@
 CSS::Minifier::XS is a CSS "minifier"; its designed to remove unnecessary
 whitespace and comments from CSS files, while also not breaking the CSS.
 
-WWW: http://search.cpan.org/dist/CSS-Minifier-XS/
+WWW: https://metacpan.org/release/CSS-Minifier-XS

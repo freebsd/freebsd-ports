@@ -8,4 +8,4 @@ This module was designed for the specific needs of DBIx::DataModel, but is
 published as a standalone distribution, because it may possibly be useful for
 other needs.
 
-WWW: http://search.cpan.org/dist/SQL-Abstract-More/
+WWW: https://metacpan.org/release/SQL-Abstract-More

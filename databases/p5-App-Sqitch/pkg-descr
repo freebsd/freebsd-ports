@@ -35,4 +35,4 @@ in just because they've been committed to your VCS. This allows you
 to take an iterative approach to developing your database schema.
 Or, better, you can do test-driven database development.
 
-WWW: http://search.cpan.org/dist/App-Sqitch/
+WWW: https://metacpan.org/release/App-Sqitch

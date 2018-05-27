@@ -4,4 +4,4 @@ about what metrics you will care about. Meta::Builder also mkaes it
 simple for others to extend your meta-object based tools by providing
 hooks for other packages to add metrics to your meta object.
 
-WWW: http://search.cpan.org/dist/Meta-Builder/
+WWW: https://metacpan.org/release/Meta-Builder

@@ -18,4 +18,4 @@ This is a reference to a hash, keyed by fields. The values of this hash
 are hash references themselves, which describe how to acquire the field
 which is the corresponding key of the initial hash.
 
-WWW: http://search.cpan.org/dist/Data-Flow/
+WWW: https://metacpan.org/release/Data-Flow

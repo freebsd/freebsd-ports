@@ -11,4 +11,4 @@ all imported functions, no matter if you imported them before or after
 you used the pragma.  It will also not touch anything that looks like a
 method, according to Class::MOP::Class::get_method_list.
 
-WWW: http://search.cpan.org/dist/namespace-autoclean/
+WWW: https://metacpan.org/release/namespace-autoclean

@@ -1,4 +1,4 @@
 This module is an attempt to enhance Perl's built-in
 alarm/$SIG{ALRM} functionality.
 
-WWW: http://search.cpan.org/dist/libalarm/
+WWW: https://metacpan.org/release/libalarm

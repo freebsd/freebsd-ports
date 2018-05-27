@@ -6,4 +6,4 @@ most from Log::Log4perl for quick things, namely:
 - Line formatting customisation
 - Quick sending of messages to a log file
 
-WWW: http://search.cpan.org/dist/Log-Log4perl-Tiny/
+WWW: https://metacpan.org/release/Log-Log4perl-Tiny

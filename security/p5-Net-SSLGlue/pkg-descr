@@ -15,4 +15,4 @@ There is also a Net::SSLGlue::Socket package which combines SSL and non-SSL and
 IPv6 capabilities to make it easier to enhance modules based on
 IO::Socket::INET.
 
-WWW: http://search.cpan.org/dist/Net-SSLGlue/
+WWW: https://metacpan.org/release/Net-SSLGlue

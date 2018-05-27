@@ -2,4 +2,4 @@ It's easy to create memory leaks in Catalyst applications and often they're
 hard to find. This module tries to help you finding them by automatically
 checking for common causes of leaks.
 
-WWW: http://search.cpan.org/dist/CatalystX-LeakChecker/
+WWW: https://metacpan.org/release/CatalystX-LeakChecker

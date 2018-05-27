@@ -6,4 +6,4 @@ it can be used to check output is as expected within a benchmarking
 script.  When it is used for unit tests, it generates output in the
 standard form for CPAN unit testing (under Test::Harness).
 
-WWW: http://search.cpan.org/dist/Test-Assertions/
+WWW: https://metacpan.org/release/Test-Assertions

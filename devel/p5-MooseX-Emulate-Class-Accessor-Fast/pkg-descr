@@ -5,4 +5,4 @@ supported, but the private methods are not.  If you are only using the
 public methods (as you should) migration should be a matter of switching
 your "use base" line to a "with" line.
 
-WWW: http://search.cpan.org/dist/MooseX-Emulate-Class-Accessor-Fast/
+WWW: https://metacpan.org/release/MooseX-Emulate-Class-Accessor-Fast

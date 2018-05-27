@@ -8,4 +8,4 @@ entries per page, and the current page number. You can then call methods to
 find out how many pages of information there are, and what number the first and
 last entries on the current page really are.
 
-WWW: http://search.cpan.org/dist/Data-Page/
+WWW: https://metacpan.org/release/Data-Page

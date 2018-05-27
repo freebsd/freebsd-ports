@@ -1,4 +1,4 @@
 Cache::Memcached::XS is a memcached client using libmemcache.  It uses a
 lot less CPU than the original pure-perl client.
 
-WWW: http://search.cpan.org/dist/Cache-Memcached-XS/
+WWW: https://metacpan.org/release/Cache-Memcached-XS

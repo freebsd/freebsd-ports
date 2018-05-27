@@ -7,4 +7,4 @@ flexible interfaces for perl modules.  Modules can let the programmer
 decide what modules will be used by it instead of hard-coding their
 names.
 
-WWW: http://search.cpan.org/dist/Class-Loader/
+WWW: https://metacpan.org/release/Class-Loader

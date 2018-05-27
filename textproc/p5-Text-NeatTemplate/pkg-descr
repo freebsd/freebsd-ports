@@ -2,4 +2,4 @@ This module provides a simple, middleweight but fast template
 engine, for when you need speed rather than complex features,
 yet need more features than simple variable substitution.
 
-WWW: http://search.cpan.org/dist/Text-NeatTemplate/
+WWW: https://metacpan.org/release/Text-NeatTemplate

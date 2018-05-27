@@ -1,4 +1,4 @@
 Handy way to check that HTML is valid, according to HTML::Tidy. It is
 built with Test::Builder and plays happily with Test::More and friends.
 
-WWW: http://search.cpan.org/dist/Test-HTML-Tidy/
+WWW: https://metacpan.org/release/Test-HTML-Tidy

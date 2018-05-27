@@ -4,4 +4,4 @@ inherits all the methods defined by IO::Socket. As a consequence, this module
 is protocol independent, it can run both IPv6 & IPv4, when DNS names are
 passed.
 
-WWW: http://search.cpan.org/dist/IO-Socket-INET6/
+WWW: https://metacpan.org/release/IO-Socket-INET6

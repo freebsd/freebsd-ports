@@ -10,4 +10,4 @@ has no such requirement, and will run wherever Perl ( >= 5.6 ) does.
 The main supported options are the common --libs, --cflags, --static, --exists
 and --modversion.
 
-WWW: http://search.cpan.org/dist/PkgConfig/
+WWW: https://metacpan.org/release/PkgConfig

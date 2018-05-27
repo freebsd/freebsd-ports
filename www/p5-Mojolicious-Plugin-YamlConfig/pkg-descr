@@ -1,4 +1,4 @@
 Mojolicious::Plugin::YamlConfig is a YAML configuration plugin that preprocesses
 it's input with Mojo::Template.
 
-WWW: http://search.cpan.org/dist/Mojolicious-Plugin-YamlConfig/
+WWW: https://metacpan.org/release/Mojolicious-Plugin-YamlConfig

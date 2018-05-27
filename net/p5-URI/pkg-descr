@@ -14,4 +14,4 @@ with libwww-perl.  This package contains an emulation of the old
 URI::URL interface.  The emulated URI::URL implements both the old and
 the new interface.
 
-WWW: http://search.cpan.org/dist/URI/
+WWW: https://metacpan.org/release/URI

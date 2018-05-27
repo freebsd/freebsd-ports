@@ -6,4 +6,4 @@ SQL::Abstract::Plugin::InsertMulti.
 
 Plugin system is depends on 'into' options of Sub::Exporter.
 
-WWW: http://search.cpan.org/dist/SQL-Abstract-Plugin-InsertMulti/
+WWW: https://metacpan.org/release/SQL-Abstract-Plugin-InsertMulti

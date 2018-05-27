@@ -2,4 +2,4 @@ File::Find is great, but constructing the wanted routine can sometimes
 be a pain. This module provides a wanted-writer, using syntax that
 is directly mappable to the find command's syntax.
 
-WWW: http://search.cpan.org/dist/File-Finder/
+WWW: https://metacpan.org/release/File-Finder

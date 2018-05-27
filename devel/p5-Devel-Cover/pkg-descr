@@ -17,4 +17,4 @@ expect. Subroutine coverage should be as accurate as statement coverage. Pod
 coverage comes from Pod::Coverage. Coverage data for path coverage are not yet
 collected.
 
-WWW: http://search.cpan.org/dist/Devel-Cover/
+WWW: https://metacpan.org/release/Devel-Cover

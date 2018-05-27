@@ -3,4 +3,4 @@ simple wrapper for Net::LDAP. This class simplifies LDAP access by letting
 you configure a common set of bind arguments. It also lets you configure a
 base DN for searching.
 
-WWW: http://search.cpan.org/dist/Catalyst-Model-LDAP/
+WWW: https://metacpan.org/release/Catalyst-Model-LDAP

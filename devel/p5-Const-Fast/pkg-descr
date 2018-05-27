@@ -6,4 +6,4 @@ making access to the variables just as fast as any normal variable without
 the weird side-effects of ties. Readonly can do the same for scalars when
 Readonly::XS is installed, but chooses not to do so in the most common case.
 
-WWW: http://search.cpan.org/dist/Const-Fast/
+WWW: https://metacpan.org/release/Const-Fast

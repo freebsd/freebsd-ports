@@ -3,4 +3,4 @@ set of parsed or stored XML, HTML, or SGML instances. XML::Grove
 objects are Perl hashes and arrays where you access the properties
 of the objects using normal Perl syntax.
 
-WWW: http://search.cpan.org/dist/XML-Grove/
+WWW: https://metacpan.org/release/XML-Grove

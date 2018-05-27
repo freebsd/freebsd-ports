@@ -3,4 +3,4 @@ configuration variables and command-line switches.  It is implemented
 as a subclass of AppConfig; AppConfig provides a general mechanism for
 handling global configuration variables.
 
-WWW: http://search.cpan.org/dist/AppConfig-Std/
+WWW: https://metacpan.org/release/AppConfig-Std

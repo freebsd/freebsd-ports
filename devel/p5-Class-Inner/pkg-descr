@@ -2,4 +2,4 @@ Yet another implementation of an anonymous class with per object
 overridable methods, but with the added attraction of sort of working
 dispatch to the parent class's method.
 
-WWW: http://search.cpan.org/dist/Class-Inner/
+WWW: https://metacpan.org/release/Class-Inner

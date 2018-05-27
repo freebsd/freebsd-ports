@@ -11,4 +11,4 @@ URIs.
 You can use pip to ensure that specific versions of CPAN modules
 are installed instead of the most current version.
 
-WWW: http://search.cpan.org/dist/pip/
+WWW: https://metacpan.org/release/pip

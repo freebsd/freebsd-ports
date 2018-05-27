@@ -13,4 +13,4 @@ You can use AnyEvent::RabbitMQ to -
 AnyEvnet::RabbitMQ is known to work with RabbitMQ versions 2.5.1 and
 version 0-8 of the AMQP specification.
 
-WWW: http://search.cpan.org/dist/AnyEvent-RabbitMQ/
+WWW: https://metacpan.org/release/AnyEvent-RabbitMQ

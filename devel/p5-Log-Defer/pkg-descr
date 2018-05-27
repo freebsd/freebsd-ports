@@ -19,4 +19,4 @@ This module lets you defer log processing in two ways:
 This module doesn't actually write out logs! To use this module for normal
 logging purposes you also need a logging library.
 
-WWW: http://search.cpan.org/dist/Log-Defer/
+WWW: https://metacpan.org/release/Log-Defer

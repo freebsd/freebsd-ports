@@ -1,4 +1,4 @@
 TLS/SSL proxy in front of the application creates a transparent
 encryption tunnel.
 
-WWW: http://search.cpan.org/dist/App-TLSMe/
+WWW: https://metacpan.org/release/App-TLSMe

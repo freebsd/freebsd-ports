@@ -6,4 +6,4 @@ found in the PATH will be tested).
 
 If the checks fail, then all tests will be skipped.
 
-WWW: http://search.cpan.org/dist/Test-Requires-Git/
+WWW: https://metacpan.org/release/Test-Requires-Git

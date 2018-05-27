@@ -6,4 +6,4 @@ NOTE: Converts PHP arrays into Perl Arrays when the PHP array used
 exclusively numeric indexes, and into Perl Hashes then the PHP array
 did not.
 
-WWW: http://search.cpan.org/dist/PHP-Serialization/
+WWW: https://metacpan.org/release/PHP-Serialization

@@ -2,4 +2,4 @@ The Sys::Virt module provides a Perl XS binding to the libvirt virtual machine
 management APIs. This allows machines running within arbitrary virtualization
 containers to be managed with a consistent API.
 
-WWW: http://search.cpan.org/dist/Sys-Virt/
+WWW: https://metacpan.org/release/Sys-Virt

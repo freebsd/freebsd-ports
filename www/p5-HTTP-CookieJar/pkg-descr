@@ -5,4 +5,4 @@ Unlike the commonly used HTTP::Cookies module, this module does not require use
 of HTTP::Request and HTTP::Response objects. An LWP-compatible adapter is
 available as HTTP::CookieJar::LWP.
 
-WWW: http://search.cpan.org/dist/HTTP-CookieJar/
+WWW: https://metacpan.org/release/HTTP-CookieJar

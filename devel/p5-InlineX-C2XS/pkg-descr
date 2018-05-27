@@ -17,4 +17,4 @@ appropriate 'Makefile.PL', and 'INLINE.h' (if it's needed),
 can be used to build the module in the usual way - without
 any dependence upon the Inline::C module.
 
-WWW: http://search.cpan.org/dist/InlineX-C2XS/
+WWW: https://metacpan.org/release/InlineX-C2XS

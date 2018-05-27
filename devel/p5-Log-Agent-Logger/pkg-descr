@@ -4,4 +4,4 @@ Log::Agent, which is meant to be used by re-usable modules that do not
 wish to commit on a particular logging method, so that they remain true
 building blocks.
 
-WWW: http://search.cpan.org/dist/Log-Agent-Logger/
+WWW: https://metacpan.org/release/Log-Agent-Logger

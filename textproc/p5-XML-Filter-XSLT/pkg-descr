@@ -1,4 +1,4 @@
 A simple XSLT SAX2 filter.  It uses any available XSLT processor on your
 system that we can use in some SAXy way.
 
-WWW: http://search.cpan.org/dist/XML-Filter-XSLT/
+WWW: https://metacpan.org/release/XML-Filter-XSLT

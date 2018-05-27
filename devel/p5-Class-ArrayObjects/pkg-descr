@@ -7,4 +7,4 @@ your own package.  Constant subs are very useful when dealing with array
 based objects because they allow one to access array slots by name
 instead of by index.
 
-WWW: http://search.cpan.org/dist/Class-ArrayObjects/
+WWW: https://metacpan.org/release/Class-ArrayObjects

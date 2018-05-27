@@ -4,4 +4,4 @@ inspect a module unrolled on disk, in a repository checkout, or just look
 directly inside a tarball. It also rovides a companion to the Class::Inspector
 API for accessing information on class after installation.
 
-WWW: http://search.cpan.org/dist/Module-Inspector/
+WWW: https://metacpan.org/release/Module-Inspector

@@ -1,4 +1,4 @@
 This software manages a pid file for you. It will create a pid file, query the
 process within to discover if it's still running, and remove the pid file.
 
-WWW: http://search.cpan.org/dist/File-Pid/
+WWW: https://metacpan.org/release/File-Pid

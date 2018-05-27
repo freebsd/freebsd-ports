@@ -2,4 +2,4 @@ LWP::UserAgent::WithCache is a LWP::UserAgent extention. It handle
 'If-Modified-Since' request header with local cache file. local cache files are
 implemented by Cache::FileCache.
 
-WWW: http://search.cpan.org/dist/LWP-UserAgent-WithCache/
+WWW: https://metacpan.org/release/LWP-UserAgent-WithCache

@@ -4,4 +4,4 @@ user/pass identity information
 For GitHub API access, an identity is a "login"/"token" pair.
 For PAUSE access, an identity is a "user"/"password" pair.
 
-WWW: http://search.cpan.org/dist/Config-Identity/
+WWW: https://metacpan.org/release/Config-Identity

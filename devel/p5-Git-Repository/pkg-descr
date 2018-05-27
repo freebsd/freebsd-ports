@@ -8,4 +8,4 @@ being run. Is it possible to call the command()and run() methods against
 the class itself, and the context (typically current working directory)
 will be obtained from the options and environment.
 
-WWW: http://search.cpan.org/dist/Git-Repository/
+WWW: https://metacpan.org/release/Git-Repository

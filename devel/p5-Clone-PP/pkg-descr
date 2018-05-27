@@ -3,4 +3,4 @@ copies of Perl data structures. It calls itself recursively to copy
 nested hash, array, scalar and reference types, including tied
 variables and objects.
 
-WWW: http://search.cpan.org/dist/Clone-PP/
+WWW: https://metacpan.org/release/Clone-PP

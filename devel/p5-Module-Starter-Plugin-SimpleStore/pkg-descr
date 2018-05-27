@@ -3,4 +3,4 @@ Module::Starter::Plugin::SimpleStore
 This is a set of simple plugins for Module::Starter to provide methods of
 retrieving templates.
 
-WWW: http://search.cpan.org/dist/Module-Starter-Plugin-SimpleStore/
+WWW: https://metacpan.org/release/Module-Starter-Plugin-SimpleStore

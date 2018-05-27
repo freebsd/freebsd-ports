@@ -6,4 +6,4 @@ set of points.  There are some methods of eliminating points that cannot
 be part of the convex hull. These may or may not be implemented in a
 future version.
 
-WWW: http://search.cpan.org/dist/Math-ConvexHull/
+WWW: https://metacpan.org/release/Math-ConvexHull

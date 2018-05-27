@@ -5,4 +5,4 @@ Some of the tests provided here might be easily achieved with other
 testing modules. The reason why they're here is that this way users become
 aware of how to test their non-deterministic functions.
 
-WWW: http://search.cpan.org/dist/Test-RandomResults/
+WWW: https://metacpan.org/release/Test-RandomResults

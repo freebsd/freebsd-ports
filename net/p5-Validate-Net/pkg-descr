@@ -6,4 +6,4 @@ related string is valid before handing it off to a Net::* class.
 Whenever a test is false, you can access the reason through the reason
 method.
 
-WWW: http://search.cpan.org/dist/Validate-Net/
+WWW: https://metacpan.org/release/Validate-Net

@@ -3,6 +3,6 @@ parse HTML document and add QUERY_STRING to href attributes.
 
 You can assign Session ID or any form data without using cookie.
 
-WWW: http://search.cpan.org/dist/HTML-StickyQuery/
+WWW: https://metacpan.org/release/HTML-StickyQuery
 
 Seamus Venasse <svenasse@polaris.ca>

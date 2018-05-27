@@ -5,4 +5,4 @@ Standard & Poor's security identifiers such as CUSIP and CSIN.
 You can find plenty of information about the algorithm by searching the web
 for "modulus 10 double add double".
 
-WWW: http://search.cpan.org/dist/Algorithm-LUHN/
+WWW: https://metacpan.org/release/Algorithm-LUHN

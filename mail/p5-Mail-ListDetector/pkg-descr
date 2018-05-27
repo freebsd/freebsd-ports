@@ -7,4 +7,4 @@ Mailman and Ezmlm messages. It is deliberately checked last to allow
 the more specific Mailman and Ezmlm parsing to happen first, and
 more accurately identify the type of mailing list involved.
 
-WWW: http://search.cpan.org/dist/Mail-ListDetector/
+WWW: https://metacpan.org/release/Mail-ListDetector

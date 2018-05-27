@@ -3,4 +3,4 @@ also referred to as type 7 passwords. Further you can
 encrypt any given string into a encrypted hash that will
 be accepted by any Cisco device as an encrypted type 7 password.
 
-WWW: http://search.cpan.org/dist/Cisco-Hash/
+WWW: https://metacpan.org/release/Cisco-Hash

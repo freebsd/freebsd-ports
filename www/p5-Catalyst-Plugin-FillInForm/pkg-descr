@@ -1,4 +1,4 @@
 Catalyst-Plugin-FillInForm is a Catalyst plugin that automatically fills in
 forms if the last form has missing or invalid fields.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-FillInForm/
+WWW: https://metacpan.org/release/Catalyst-Plugin-FillInForm

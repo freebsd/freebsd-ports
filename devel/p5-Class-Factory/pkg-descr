@@ -6,4 +6,4 @@ Factory classes are used when you have different implementations for the
 same set of tasks but may not know in advance what implementations you
 will be using.
 
-WWW: http://search.cpan.org/dist/Class-Factory/
+WWW: https://metacpan.org/release/Class-Factory

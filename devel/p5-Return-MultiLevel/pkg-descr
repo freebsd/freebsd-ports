@@ -4,4 +4,4 @@ exceptions don't stop automatically at a target frame (and they
 can be caught by intermediate stack frames). In other words,
 this is more like setjmp(3)/longjmp(3) than die.
 
-WWW: http://search.cpan.org/dist/Return-MultiLevel/
+WWW: https://metacpan.org/release/Return-MultiLevel

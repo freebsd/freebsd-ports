@@ -2,4 +2,4 @@ Gtk2-GladeXML allows Perl programmers to use libglade, a
 C library that generates GUIs directly from the XML output
 of the Glade UI designer.
 
-WWW: http://search.cpan.org/dist/Gtk2-GladeXML/
+WWW: https://metacpan.org/release/Gtk2-GladeXML

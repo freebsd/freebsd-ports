@@ -5,4 +5,4 @@ interface to CLI interactions, supporting:
 - Unix and Windows support
 - Reuseable device command phrasebooks
 
-WWW: http://search.cpan.org/dist/Net-CLI-Interact/
+WWW: https://metacpan.org/release/Net-CLI-Interact

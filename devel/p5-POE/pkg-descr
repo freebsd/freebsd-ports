@@ -5,4 +5,4 @@ clients and servers; includes a high level class library that takes care
 of event driven I/O; provides a framework for portable program components.
 
 WWW: http://poe.perl.org/
-WWW: http://search.cpan.org/dist/POE/
+WWW: https://metacpan.org/release/POE

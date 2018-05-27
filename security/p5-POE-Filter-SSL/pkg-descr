@@ -1,4 +1,4 @@
 This module allows to secure connections of POE::Wheel::ReadWrite with OpenSSL
 by a POE::Filter object, and behaves (beside of SSLing) as POE::Filter::Stream.
 
-WWW: http://search.cpan.org/dist/POE-Filter-SSL/
+WWW: https://metacpan.org/release/POE-Filter-SSL

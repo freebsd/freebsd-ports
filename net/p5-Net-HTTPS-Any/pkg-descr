@@ -2,4 +2,4 @@ This is a simple wrapper around either of the two available SSL
 modules.  It offers a unified API for sending GET and POST requests over HTTPS
 and receiving responses.
 
-WWW: http://search.cpan.org/dist/Net-HTTPS-Any/
+WWW: https://metacpan.org/release/Net-HTTPS-Any

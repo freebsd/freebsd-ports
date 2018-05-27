@@ -14,4 +14,4 @@ little different: it's short for "best" and indicates "roll a number of dice,
 but add together only the best few". For example, 5d6b3 rolls five six- sided
 dice and adds together the three best rolls.
 
-WWW: http://search.cpan.org/dist/Games-Dice/
+WWW: https://metacpan.org/release/Games-Dice

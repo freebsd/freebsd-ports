@@ -4,4 +4,4 @@ protocol, like the Swank protocol of the SLIME.
 The primary objective is for users to make some Emacs extensions with
 the Perl and CPAN.
 
-WWW: http://search.cpan.org/dist/RPC-EPC-Service/
+WWW: https://metacpan.org/release/RPC-EPC-Service

@@ -3,4 +3,4 @@ File::HomeDir -- get home directory for self or other users
 This module provides a function, home, and also ties the in-all-packages
 variable %~.
 
-WWW: http://search.cpan.org/dist/File-HomeDir/
+WWW: https://metacpan.org/release/File-HomeDir

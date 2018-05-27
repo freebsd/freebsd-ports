@@ -1,4 +1,4 @@
 AnyEvent::Gearman is a module set of client/worker modules for Gearman for
 AnyEvent applications.
 
-WWW: http://search.cpan.org/dist/AnyEvent-Gearman/
+WWW: https://metacpan.org/release/AnyEvent-Gearman

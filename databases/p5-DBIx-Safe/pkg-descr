@@ -21,4 +21,4 @@ Finally, you can indicate which database attributes are allowed to be read and
 changed (e.g. 'PrintError'). For all of the above, there are matching methods to
 remove them as well.
 
-WWW: http://search.cpan.org/dist/DBIx-Safe/
+WWW: https://metacpan.org/release/DBIx-Safe

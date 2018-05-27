@@ -6,4 +6,4 @@ This way code requiring field hashes can benefit from fast, robust field
 hashes on Perl 5.10 and newer, but still run on older perls that don't ship
 with that module.
 
-WWW: http://search.cpan.org/dist/Hash-Util-FieldHash-Compat/
+WWW: https://metacpan.org/release/Hash-Util-FieldHash-Compat

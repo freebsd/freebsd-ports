@@ -9,4 +9,4 @@ often.  The match can optionally report a value (e.g. a network name)
 instead of just a boolean, which makes module useful for mapping IP
 ranges to names or codes or anything else.
 
-WWW: http://search.cpan.org/dist/Net-IP-Match-Regexp/
+WWW: https://metacpan.org/release/Net-IP-Match-Regexp

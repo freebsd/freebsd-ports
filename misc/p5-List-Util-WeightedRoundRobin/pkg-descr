@@ -1,4 +1,4 @@
 List::Util::WeightedRoundRobin is a utility for creating a weighted list
 based on the input and associated weights.
 
-WWW: http://search.cpan.org/dist/List-Util-WeightedRoundRobin/
+WWW: https://metacpan.org/release/List-Util-WeightedRoundRobin

@@ -2,4 +2,4 @@ This module is a very simple module for creating SAX2 events from SAX1
 events.  It is useful in the case where you have a SAX1 parser but want
 to use a SAX2 handler or filter of some sort.
 
-WWW: http://search.cpan.org/dist/XML-Filter-SAX1toSAX2/
+WWW: https://metacpan.org/release/XML-Filter-SAX1toSAX2

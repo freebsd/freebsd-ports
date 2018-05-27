@@ -6,4 +6,4 @@ This implement a large majority of OpenSSL's useful X509 API.
   certificates where there is a X509v3 Extension of the form
   "X509v3 Subject Alternative Name: email=user@domain".
 
-WWW: http://search.cpan.org/dist/Crypt-OpenSSL-X509/
+WWW: https://metacpan.org/release/Crypt-OpenSSL-X509

@@ -2,4 +2,4 @@ Parses "folksonomies", which are simple space-separated-but-optionally- quoted
 tag lists. See Text::Tags::Parser for the actual module; Text::Tags may be used
 in a future version of the distribution.
 
-WWW: http://search.cpan.org/dist/Text-Tags/
+WWW: https://metacpan.org/release/Text-Tags

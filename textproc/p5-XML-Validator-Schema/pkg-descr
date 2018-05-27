@@ -3,4 +3,4 @@ Schema. This module does not implement the full W3C XML Schema
 recommendation, but a useful subset. See the SCHEMA SUPPORT section
 in the module documention.
 
-WWW: http://search.cpan.org/dist/XML-Validator-Schema/
+WWW: https://metacpan.org/release/XML-Validator-Schema

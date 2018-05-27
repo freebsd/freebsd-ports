@@ -9,4 +9,4 @@ calculation time is in initialising the context with the key data.
 The _PP name comes from the fact that this implementation is Pure
 Perl, and will not have any compatibility problems.
 
-WWW: http://search.cpan.org/dist/Crypt-Blowfish_PP/
+WWW: https://metacpan.org/release/Crypt-Blowfish_PP

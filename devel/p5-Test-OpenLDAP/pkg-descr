@@ -1,3 +1,3 @@
 Creates a temporary instance of OpenLDAP's slapd daemon to run tests against.
 
-WWW: http://search.cpan.org/dist/Test-OpenLDAP/
+WWW: https://metacpan.org/release/Test-OpenLDAP

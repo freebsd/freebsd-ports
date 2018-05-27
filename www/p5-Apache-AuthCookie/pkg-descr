@@ -4,4 +4,4 @@ presented with a custom form where they can enter authentication
 credentials. The credentials are posted to the server where AuthCookie
 verifies them and returns a session key.
 
-WWW: http://search.cpan.org/dist/Apache-AuthCookie/
+WWW: https://metacpan.org/release/Apache-AuthCookie

@@ -1,4 +1,4 @@
 List::UtilsBy::XS is XS implementation of List::UtilsBy. Functions are more
 fast than original ones.
 
-WWW: http://search.cpan.org/dist/List-UtilsBy-XS/
+WWW: https://metacpan.org/release/List-UtilsBy-XS

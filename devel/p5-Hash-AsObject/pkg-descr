@@ -5,4 +5,4 @@ It's designed to act as much like a plain hash as possible; this means,
 for example, that you can use methods like DESTROY and if the Hash::AsObject
 has an element with that name, it'll get or set it.
 
-WWW: http://search.cpan.org/dist/Hash-AsObject/
+WWW: https://metacpan.org/release/Hash-AsObject

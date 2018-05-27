@@ -12,4 +12,4 @@ Unicode mapping support needs somehow to get into perl's core. If you
 like to work on this field please don't hesitate contacting Gisle Aas
 and check out the mailing list perl-unicode!
 
-WWW: http://search.cpan.org/dist/Unicode-Map/
+WWW: https://metacpan.org/release/Unicode-Map

@@ -17,4 +17,4 @@ of rand.
 Alternatively, this module can be used to generate objects, with each object
 maintaining its own distinct seed array.
 
-WWW: http://search.cpan.org/dist/Test-MockRandom/
+WWW: https://metacpan.org/release/Test-MockRandom

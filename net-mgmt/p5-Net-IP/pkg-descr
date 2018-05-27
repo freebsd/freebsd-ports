@@ -5,4 +5,4 @@ addresses.  There is also a procedural way of accessing most of the
 functions.  Most subroutines can take either IPv4 or IPv6 addresses
 transparently.
 
-WWW: http://search.cpan.org/dist/Net-IP/
+WWW: https://metacpan.org/release/Net-IP

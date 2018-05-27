@@ -1,4 +1,4 @@
 A simple, fast implementation of an in-memory LRU cache in pure perl with
 the maximum number of entries to be stored within the cache object.
 
-WWW: http://search.cpan.org/dist/Cache-LRU/
+WWW: https://metacpan.org/release/Cache-LRU

@@ -7,4 +7,4 @@ the criterion used to measure the "distance" between two data points, the
 stopping condition for accepting final clusters, the criterion used for
 measuring the quality of the clustering achieved, etc.
 
-WWW: http://search.cpan.org/dist/Algorithm-KMeans/
+WWW: https://metacpan.org/release/Algorithm-KMeans

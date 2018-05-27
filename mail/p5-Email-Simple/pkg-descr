@@ -4,4 +4,4 @@ modules. In contrast, Email::* modules are meant to be simple to use
 and to maintain, pared to the bone, fast, minimal in their external
 dependencies, and correct.
 
-WWW: http://search.cpan.org/dist/Email-Simple/
+WWW: https://metacpan.org/release/Email-Simple

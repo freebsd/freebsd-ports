@@ -1,4 +1,4 @@
 Socket::GetAddrInfo - RFC 2553's getaddrinfo and getnameinfo
 functions.
 
-WWW: http://search.cpan.org/dist/Socket-GetAddrInfo/
+WWW: https://metacpan.org/release/Socket-GetAddrInfo

@@ -3,4 +3,4 @@ Devel::Declare. It is used by Devel::Declare::Exporter to simplify
 exporting of Devel::Declare magic. Writing custom parsers usualy only
 requires subclassing this module and overriding a couple methods.
 
-WWW: http://search.cpan.org/dist/Devel-Declare-Parser/
+WWW: https://metacpan.org/release/Devel-Declare-Parser

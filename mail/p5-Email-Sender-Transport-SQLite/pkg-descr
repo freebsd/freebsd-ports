@@ -3,4 +3,4 @@ The SQLite transport is intended for testing programs that fork or that
 otherwise can't use the Test transport. It is not meant for robust, long-term
 storage of mail.
 
-WWW: http://search.cpan.org/dist/Email-Sender-Transport-SQLite/
+WWW: https://metacpan.org/release/Email-Sender-Transport-SQLite

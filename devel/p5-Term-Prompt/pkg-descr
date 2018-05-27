@@ -3,4 +3,4 @@ of possible responses and deal with the user interface, (and the
 user!), by displaying the prompt, showing the default, and checking
 to be sure that the response is one of the legal choices.
 
-WWW: http://search.cpan.org/dist/Term-Prompt/
+WWW: https://metacpan.org/release/Term-Prompt

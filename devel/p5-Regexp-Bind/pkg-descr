@@ -3,4 +3,4 @@ anonymous hashes or named variables to matched buffers. Both normal regexp
 syntax and embedded regexp syntax are supported. You can view it as a tiny
 and petite data extraction system.
 
-WWW: http://search.cpan.org/dist/Regexp-Bind/
+WWW: https://metacpan.org/release/Regexp-Bind

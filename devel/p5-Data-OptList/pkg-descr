@@ -19,4 +19,4 @@ With Data::OptList, you can do this instead:
 This works by assuming that any defined scalar is a name and any reference
 following a name is its value.
 
-WWW: http://search.cpan.org/dist/Data-OptList/
+WWW: https://metacpan.org/release/Data-OptList

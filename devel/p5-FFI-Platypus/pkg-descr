@@ -4,4 +4,4 @@ compiled into machine code. This implementation uses libffi to accomplish this
 task. libffi is battle tested by a number of other scripting and virtual machine
 languages, such as Python and Ruby to serve a similar role.
 
-WWW: http://search.cpan.org/dist/FFI-Platypus/
+WWW: https://metacpan.org/release/FFI-Platypus

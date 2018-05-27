@@ -18,4 +18,4 @@ Devel::NYTProf is a powerful feature-rich perl source code profiler.
  * Includes an extensive test suite
  * Tested on very large codebases
 
-WWW: http://search.cpan.org/dist/Devel-NYTProf/
+WWW: https://metacpan.org/release/Devel-NYTProf

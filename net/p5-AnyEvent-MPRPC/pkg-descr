@@ -5,4 +5,4 @@ AnyEvent::MPRPC provide you a couple of export functions that are
 shortcut of AnyEvent::MPRPC::Client and AnyEvent::MPRPC::Server.  One
 is mprpc_client for Client, another is mprpc_server for Server.
 
-WWW: http://search.cpan.org/dist/AnyEvent-MPRPC/
+WWW: https://metacpan.org/release/AnyEvent-MPRPC

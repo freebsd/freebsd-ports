@@ -1,4 +1,4 @@
 This is a Perlbal plugin to allow any PSGI application run natively
 inside Perlbal process.
 
-WWW: http://search.cpan.org/dist/Perlbal-Plugin-PSGI/
+WWW: https://metacpan.org/release/Perlbal-Plugin-PSGI

@@ -3,4 +3,4 @@ pair in the hash corresponds to a record in the file.
 
 Changes to the hash are reflected in the file immediately.
 
-WWW: http://search.cpan.org/dist/Tie-File-AsHash/
+WWW: https://metacpan.org/release/Tie-File-AsHash

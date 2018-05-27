@@ -2,4 +2,4 @@ The AutoLoader module works with the AutoSplit module and the "__END__" token to
 defer the loading of some subroutines until they are used rather than loading
 them all at once.
 
-WWW: http://search.cpan.org/dist/AutoLoader/
+WWW: https://metacpan.org/release/AutoLoader

@@ -3,4 +3,4 @@ compactly and yet quite powerfully describing an option syntax. Options can
 be parsed, returned as a hashref of values, and/or displayed as a usage string
 or within the script POD.
 
-WWW: http://search.cpan.org/dist/Getopt-Compact/
+WWW: https://metacpan.org/release/Getopt-Compact

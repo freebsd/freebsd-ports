@@ -2,4 +2,4 @@ System::Command is a class that launches external system commands
 and return an object representing them, allowing to interact with
 them through their STDIN, STDOUT and STDERR handles.
 
-WWW: http://search.cpan.org/dist/System-Command/
+WWW: https://metacpan.org/release/System-Command

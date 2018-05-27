@@ -2,4 +2,4 @@ Implementation of http get that keeps a local cache of fetched pages to
 avoid fetching the same data from the server if it hasn't been updated.
 The cache is stored on disk and is thus persistent between invocations.
 
-WWW: http://search.cpan.org/dist/HTTP-Cache-Transparent/
+WWW: https://metacpan.org/release/HTTP-Cache-Transparent

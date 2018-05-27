@@ -11,4 +11,4 @@ system file (e.g. /etc/mime.types) or custom data.
 By default, there is a functional interface, although you can also use an
 object-oriented inteface. (Different objects will not share the same data.)
 
-WWW: http://search.cpan.org/dist/Media-Type-Simple/
+WWW: https://metacpan.org/release/Media-Type-Simple

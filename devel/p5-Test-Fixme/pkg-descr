@@ -8,4 +8,4 @@ coder adds comments like:
 Test::Fixme allows you to add a test file that ensures that none of these get
 forgotten in the module.
 
-WWW: http://search.cpan.org/dist/Test-Fixme/
+WWW: https://metacpan.org/release/Test-Fixme

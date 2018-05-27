@@ -4,4 +4,4 @@ the attribute foo is defined in the object. It only works with objects that
 are implemented as ordinary hashes. Class::XSAccessor::Array implements the
 same interface for objects that use arrays for their internal representation.
 
-WWW: http://search.cpan.org/dist/Class-XSAccessor/
+WWW: https://metacpan.org/release/Class-XSAccessor

@@ -7,4 +7,4 @@ only understands signals that are in your system's signal.h header file.
 PerlSignal only understands signals that are in Perl's %Config hash. Signal
 is either/or, with preference to UnixSignal over PerlSignal when coercing.
 
-WWW: http://search.cpan.org/dist/MooseX-Types-Signal/
+WWW: https://metacpan.org/release/MooseX-Types-Signal

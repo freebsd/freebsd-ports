@@ -13,4 +13,4 @@ Matt Sergeant. I only removed the XML processing part to remove the
 dependency on XML::Parser, applied a couple of patches, renamed a
 whole lot of methods to make Pod::Coverage happy, and changed the docs.
 
-WWW: http://search.cpan.org/dist/XML-XPathEngine/
+WWW: https://metacpan.org/release/XML-XPathEngine

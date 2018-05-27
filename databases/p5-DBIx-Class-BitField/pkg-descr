@@ -9,4 +9,4 @@ The main benefit from this module is that you can add additional attributes
 to your result class whithout the need to deploy or change the schema on the
 data base.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-BitField/
+WWW: https://metacpan.org/release/DBIx-Class-BitField

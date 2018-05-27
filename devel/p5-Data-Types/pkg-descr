@@ -3,4 +3,4 @@ validating and converting data types. It is intended for use in
 applications where data types are more important than they
 typically are in Perl -- e.g., database applications.
 
-WWW: http://search.cpan.org/dist/Data-Types/
+WWW: https://metacpan.org/release/Data-Types

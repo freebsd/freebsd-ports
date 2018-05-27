@@ -1,4 +1,4 @@
 This module currently only break chinese text into single character
 (Chinese word), it will not break up any alphabet.
 
-WWW: http://search.cpan.org/dist/Lingua-ZH-Segment/
+WWW: https://metacpan.org/release/Lingua-ZH-Segment

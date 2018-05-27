@@ -1,4 +1,4 @@
 Provides recursive versions of mkdir() and rmdir()
 with as little code and overhead as possible.
 
-WWW: http://search.cpan.org/dist/File-Path-Tiny/
+WWW: https://metacpan.org/release/File-Path-Tiny

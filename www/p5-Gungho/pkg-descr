@@ -10,4 +10,4 @@ throttling can be removed/added on the fly, just by specifying
 the components that you want to load. You can easily create
 additional functionality by writing your own component.
 
-WWW: http://search.cpan.org/dist/Gungho/
+WWW: https://metacpan.org/release/Gungho

@@ -2,4 +2,4 @@ This module provides a large number of physical constants which are
 useful to astronomers. The module itself is essentially a wrapper around
 the ASTROCONST package of Jeremy Balin.
 
-WWW: http://search.cpan.org/dist/Astro-Constants/
+WWW: https://metacpan.org/release/Astro-Constants

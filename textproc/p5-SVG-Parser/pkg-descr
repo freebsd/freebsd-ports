@@ -11,4 +11,4 @@ to provide cross-compatibility. Applications requiring more advanced parser
 features should use the relevant parser module directly; see SVG::Parser::Expat
 and SVG::Parser::SAX.
 
-WWW: http://search.cpan.org/dist/SVG-Parser/
+WWW: https://metacpan.org/release/SVG-Parser

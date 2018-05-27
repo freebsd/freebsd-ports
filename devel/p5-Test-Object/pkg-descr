@@ -2,4 +2,4 @@ A testing package designed to allow you to easily test what you
 believe is a valid object against the expected behaviour of all of
 the classes in its inheritance tree in one single call.
 
-WWW: http://search.cpan.org/dist/Test-Object/
+WWW: https://metacpan.org/release/Test-Object

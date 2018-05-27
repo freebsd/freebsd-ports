@@ -3,4 +3,4 @@ to transform itself from Timezone to Timezone and format itself.
 It uses operator overloading and Delta date objects to calculates
 time differences.
 
-WWW: http://search.cpan.org/dist/Date-Handler/
+WWW: https://metacpan.org/release/Date-Handler

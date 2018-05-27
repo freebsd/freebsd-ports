@@ -5,4 +5,4 @@ perl versions do not support Unicode::MapUTF8 or Encode.
 Unicode::UTF8simple is written in plain perl (no C code) and will
 work with any Perl 5 version. It is just slightly slower than Encode.
 
-WWW: http://search.cpan.org/dist/Unicode-UTF8simple/
+WWW: https://metacpan.org/release/Unicode-UTF8simple

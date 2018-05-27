@@ -15,4 +15,4 @@ transaction.
 Net::EPP::Proxy is based on the Net::Server framework and
 Net::EPP::Client, which it uses to communicate with the server.
 
-WWW: http://search.cpan.org/dist/Net-EPP-Proxy/
+WWW: https://metacpan.org/release/Net-EPP-Proxy

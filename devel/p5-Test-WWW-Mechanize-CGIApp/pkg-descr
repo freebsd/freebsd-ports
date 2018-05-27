@@ -10,4 +10,4 @@ start a server or issue HTTP requests. Instead, it passes the HTTP
 request object directly to Catalyst. Thus you do not need to use a real
 hostname: "http://localhost/" will do.
 
-WWW: http://search.cpan.org/dist/Test-WWW-Mechanize-CGIApp/
+WWW: https://metacpan.org/release/Test-WWW-Mechanize-CGIApp

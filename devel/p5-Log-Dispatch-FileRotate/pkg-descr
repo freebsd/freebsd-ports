@@ -3,4 +3,4 @@ Log::Dispatch::* system, and automatically rotating them according to
 different constraints. This is basically a Log::Dispatch::File wrapper
 with additions.
 
-WWW: http://search.cpan.org/dist/Log-Dispatch-FileRotate/
+WWW: https://metacpan.org/release/Log-Dispatch-FileRotate

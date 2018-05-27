@@ -2,4 +2,4 @@ This package is for a single vCard (person/record/set of address information).
 It provides an API to editing and creating vCards, or supplied a specific piece
 of the Text::vFile::asData results it generates a vCard with that content.
 
-WWW: http://search.cpan.org/dist/Text-vCard/
+WWW: https://metacpan.org/release/Text-vCard

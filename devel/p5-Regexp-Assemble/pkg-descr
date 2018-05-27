@@ -3,4 +3,4 @@ assemble them into a single regular expression (or RE) that will match
 everything that any of the individual REs match, only what they match
 and nothing else.
 
-WWW: http://search.cpan.org/dist/Regexp-Assemble/
+WWW: https://metacpan.org/release/Regexp-Assemble

@@ -6,4 +6,4 @@ such information.
     my $file = '/path/to/file';
     print "$file was created: ". creation_time($file). "\n";
 
-WWW: http://search.cpan.org/dist/File-CreationTime/
+WWW: https://metacpan.org/release/File-CreationTime

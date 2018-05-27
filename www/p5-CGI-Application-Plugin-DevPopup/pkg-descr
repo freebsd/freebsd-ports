@@ -2,4 +2,4 @@ This module provides a plugin framework for displaying runtime
 information about your CGI::Application app in a popup window. A
 sample Timing plugin is provided to show how it works:
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-DevPopup/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-DevPopup

@@ -2,4 +2,4 @@ Often during unit testing, you may find the need to use mocked libraries
 to test edge cases, or prevent unit tests from using slow or external
 code.
 
-WWW: http://search.cpan.org/dist/mocked/
+WWW: https://metacpan.org/release/mocked

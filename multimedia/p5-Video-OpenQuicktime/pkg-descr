@@ -10,4 +10,4 @@ and audio streams.  The Video::OpenQuicktime library currently
 only supports extracting diagnostic information from Quicktime files,
 such as video dimensions, codecs used, and play length.
 
-WWW: http://search.cpan.org/dist/Video-OpenQuicktime/
+WWW: https://metacpan.org/release/Video-OpenQuicktime

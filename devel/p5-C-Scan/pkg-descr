@@ -3,4 +3,4 @@ constructs such as included header files, macros and their arguments,
 declarations of functions, extern declarations, and typedefs.  It uses the
 Data::Flow interface.
 
-WWW: http://search.cpan.org/dist/C-Scan/
+WWW: https://metacpan.org/release/C-Scan

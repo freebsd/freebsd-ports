@@ -13,4 +13,4 @@ Every constant you need (file types, open() flags, error values, etc)
 can be imported either from POSIX or from Fcntl, often both. See their
 respective documentations, for more information.
 
-WWW: http://search.cpan.org/dist/Fuse/
+WWW: https://metacpan.org/release/Fuse

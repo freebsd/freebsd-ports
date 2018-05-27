@@ -2,4 +2,4 @@ This perl module will eval another perl script and return a hash ref
 of the final values of the global variables in the eval.  This allows
 you to write generic config files in Perl.
 
-WWW: http://search.cpan.org/dist/Parse-PerlConfig/
+WWW: https://metacpan.org/release/Parse-PerlConfig

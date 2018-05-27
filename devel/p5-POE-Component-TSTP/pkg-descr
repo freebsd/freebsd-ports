@@ -3,4 +3,4 @@ POE::Component::TSTP
 
 A POE component to correctly handle Ctrl-Z in your program.
 
-WWW: http://search.cpan.org/dist/POE-Component-TSTP/
+WWW: https://metacpan.org/release/POE-Component-TSTP

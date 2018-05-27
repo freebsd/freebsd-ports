@@ -8,4 +8,4 @@ least rarely need. They're provided more for exposing of the module's innards
 to any subclasses, or for when you need to do something slightly beyond what I
 expected.
 
-WWW: http://search.cpan.org/dist/DateTime-Format-Builder/
+WWW: https://metacpan.org/release/DateTime-Format-Builder

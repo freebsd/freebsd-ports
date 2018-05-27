@@ -2,4 +2,4 @@ The HTTP::Cookies class is for objects that represent a "cookie jar" --
 that is, a database of all the HTTP cookies that a given LWP::UserAgent
 object knows about.
 
-WWW: http://search.cpan.org/dist/HTTP-Cookies/
+WWW: https://metacpan.org/release/HTTP-Cookies

@@ -7,4 +7,4 @@ is that Bridge::TT2 uses Template::Toolkit underneath, while this
 module is independent of Template::Toolkit and therefore does not
 require TT to be installed.
 
-WWW: http://search.cpan.org/dist/Text-Xslate-Bridge-TT2Like/
+WWW: https://metacpan.org/release/Text-Xslate-Bridge-TT2Like

@@ -1,4 +1,4 @@
 CGI::Application::Plugin::Authorization adds the ability to
 authorize users for specific tasks.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-Authorization/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-Authorization

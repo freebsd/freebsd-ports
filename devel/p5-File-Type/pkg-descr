@@ -4,4 +4,4 @@ the MIME type of that file.
 File::Type can use either a filename, or file contents, to determine the type
 of a file.
 
-WWW: http://search.cpan.org/dist/File-Type/
+WWW: https://metacpan.org/release/File-Type

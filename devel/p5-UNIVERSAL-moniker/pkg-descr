@@ -10,4 +10,4 @@ and so to every class or module.
 So, if $ob->isa("Big::Scary::Animal"), moniker will return "animal";
 $ob->isa("Cephalopod::Octopus"), plural_moniker will return "octopuses".
 
-WWW: http://search.cpan.org/dist/UNIVERSAL-moniker/
+WWW: https://metacpan.org/release/UNIVERSAL-moniker

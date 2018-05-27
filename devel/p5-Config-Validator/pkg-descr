@@ -9,4 +9,4 @@ provided by modules like Config::General) and, to a lesser extent,
 "options" (for instance as provided by modules like Getopt::Long),
 this module can in fact validate any data structure.
 
-WWW: http://search.cpan.org/dist/Config-Validator/
+WWW: https://metacpan.org/release/Config-Validator

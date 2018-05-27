@@ -19,4 +19,4 @@ be a global timeout over the entire process), and all combinations of
 redirects and DNS tricks to otherwise tarpit and/or connect to internal
 resources.
 
-WWW: http://search.cpan.org/dist/LWPx-ParanoidAgent/
+WWW: https://metacpan.org/release/LWPx-ParanoidAgent

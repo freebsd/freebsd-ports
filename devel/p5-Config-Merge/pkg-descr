@@ -2,4 +2,4 @@ Config::Merge - load a configuration directory tree
 containing YAML, JSON, XML, Perl, INI
 or Config::General files
 
-WWW: http://search.cpan.org/dist/Config-Merge/
+WWW: https://metacpan.org/release/Config-Merge

@@ -2,4 +2,4 @@ The distribution File-Copy-Link includes the modules
 File::Spec::Link and File::Copy::Link and the script
 copylink. They include routines to read and copy links.
 
-WWW: http://search.cpan.org/dist/File-Copy-Link/
+WWW: https://metacpan.org/release/File-Copy-Link

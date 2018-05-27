@@ -3,5 +3,5 @@ The API takes advantage of the server's opaque flag support and sets its
 scalar. In that case, the Storable module is used to freeze and thaw the
 value automatically going in and out of the memcached.
 
-WWW: http://search.cpan.org/dist/Cache-Memcached/
+WWW: https://metacpan.org/release/Cache-Memcached
 WWW: http://www.danga.com/memcached/

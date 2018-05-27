@@ -16,4 +16,4 @@ Your program can check whether Readonly.pm is using XS or not by examining the
 $Readonly::XSokay variable. It will be true if the XS module was found and is
 being used. Please do not change this variable.
 
-WWW: http://search.cpan.org/dist/Readonly-XS/
+WWW: https://metacpan.org/release/Readonly-XS

@@ -19,4 +19,4 @@ those methods to flesh out the specifics.
 In short, Class::Method::Modifiers solves the problem of making sure you call
 $self->SUPER::foo(@_), and provides a cleaner interface for it.
 
-WWW: http://search.cpan.org/dist/Class-Method-Modifiers/
+WWW: https://metacpan.org/release/Class-Method-Modifiers

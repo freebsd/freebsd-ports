@@ -1,4 +1,4 @@
 Log::Dispatch::DBI is a subclass of Log::Dispatch::Output, which
 inserts logging output into relational database using DBI interface.
 
-WWW: http://search.cpan.org/dist/Log-Dispatch-DBI/
+WWW: https://metacpan.org/release/Log-Dispatch-DBI

@@ -2,4 +2,4 @@ bareword::filehandles lexically disables the use of bareword filehandles with
 builtin functions, except for the special builitin filehandles STDIN, STDOUT,
 STDERR, ARGV, ARGVOUT and DATA.
 
-WWW: http://search.cpan.org/dist/bareword-filehandles/
+WWW: https://metacpan.org/release/bareword-filehandles

@@ -1,4 +1,4 @@
 String::HexConvert It is a wrapper around pack and unpack of perl to convert
 a string of hex digits to ascii and other way around.
 
-WWW: http://search.cpan.org/dist/String-HexConvert/
+WWW: https://metacpan.org/release/String-HexConvert

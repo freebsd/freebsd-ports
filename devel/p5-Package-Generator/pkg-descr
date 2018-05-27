@@ -1,4 +1,4 @@
 This module lets you quickly and easily construct new packages. It gives them
 unused names and sets up their package data, if provided.
 
-WWW: http://search.cpan.org/dist/Package-Generator/
+WWW: https://metacpan.org/release/Package-Generator

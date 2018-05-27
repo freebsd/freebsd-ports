@@ -3,4 +3,4 @@ through which input can pass.  The input can be a string or a
 reference to an array of strings.  Pipes can be stacked together using
 Text::Pipe::Stackable.
 
-WWW: http://search.cpan.org/dist/Text-Pipe/
+WWW: https://metacpan.org/release/Text-Pipe

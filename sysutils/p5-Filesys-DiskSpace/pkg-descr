@@ -5,4 +5,4 @@ of inodes.
 It tries C<syscall(SYS_statfs)> and C<syscall(SYS_statvfs)> in several
 ways. If all fails, it C<croak>s.
 
-WWW: http://search.cpan.org/dist/Filesys-DiskSpace/
+WWW: https://metacpan.org/release/Filesys-DiskSpace

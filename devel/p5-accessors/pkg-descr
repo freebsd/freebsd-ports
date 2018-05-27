@@ -12,4 +12,4 @@ and wait until the dust settles.
 See accessors::classic for accessors that always return the current value if
 you don't like method chaining.
 
-WWW: http://search.cpan.org/dist/accessors/
+WWW: https://metacpan.org/release/accessors

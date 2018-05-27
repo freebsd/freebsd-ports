@@ -3,4 +3,4 @@ for creating objects using parameters passed in from a configuration file.
 The actual implementation of reading the configuration file is
 left to concrete subroles.
 
-WWW: http://search.cpan.org/dist/MouseX-ConfigFromFile/
+WWW: https://metacpan.org/release/MouseX-ConfigFromFile

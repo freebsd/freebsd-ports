@@ -7,4 +7,4 @@ Acme::ButFirst recognises both butfirst and but first as keywords.
 Usage of Acme::ButFirst is lexically scoped. ButFirstification can be
 explicitly disabled by using no Acme::ButFirst.
 
-WWW: http://search.cpan.org/dist/Acme-ButFirst/
+WWW: https://metacpan.org/release/Acme-ButFirst

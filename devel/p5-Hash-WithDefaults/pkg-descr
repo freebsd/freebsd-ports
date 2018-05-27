@@ -2,4 +2,4 @@ This module implements hashes that support "defaults". That is you may specify
 several more hashes in which the data will be looked up in case it is not found
 in the current hash.
 
-WWW: http://search.cpan.org/dist/Hash-WithDefaults/
+WWW: https://metacpan.org/release/Hash-WithDefaults

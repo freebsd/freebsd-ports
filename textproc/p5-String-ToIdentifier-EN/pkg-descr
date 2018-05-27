@@ -15,4 +15,4 @@ char of your choice such as _.
 Binary char groups will be separated by _ even in camelCase identifiers to make
 them easier to read, e.g.: foo_2_0xFF_Bar.
 
-WWW: http://search.cpan.org/dist/String-ToIdentifier-EN/
+WWW: https://metacpan.org/release/String-ToIdentifier-EN

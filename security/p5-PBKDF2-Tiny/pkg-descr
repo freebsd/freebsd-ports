@@ -1,4 +1,4 @@
 PBKDF2::Tiny provides an RFC 2898 compliant PBKDF2 implementation using
 HMAC-SHA1 or HMAC-SHA2 in under 100 lines of code.
 
-WWW: http://search.cpan.org/dist/PBKDF2-Tiny/
+WWW: https://metacpan.org/release/PBKDF2-Tiny

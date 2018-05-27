@@ -2,4 +2,4 @@ This Perl library is a set of utilities for configuring and monitoring
 SNMP based devices.  This library requires the Net-SNMP implementation of SNMP
 and the SNMP.pm module written by Joe Marzot.
 
-WWW: http://search.cpan.org/dist/SNMP-Util/
+WWW: https://metacpan.org/release/SNMP-Util

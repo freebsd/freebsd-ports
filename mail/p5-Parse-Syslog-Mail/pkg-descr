@@ -3,4 +3,4 @@ gather mail information from a syslog file.  It uses Parse::Syslog for
 reading the syslog, and offer the same simple interface. Currently
 supported log formats are: Sendmail, Postfix, Qmail.
 
-WWW: http://search.cpan.org/dist/Parse-Syslog-Mail/
+WWW: https://metacpan.org/release/Parse-Syslog-Mail

@@ -3,4 +3,4 @@ processes that come from the same ancestor. It tries to do so in a very simple
 and straightforward manner. Just create an IPC::Mmap::Share object, and use set
 to store your data and get to get it back.
 
-WWW: http://search.cpan.org/dist/IPC-Mmap-Share/
+WWW: https://metacpan.org/release/IPC-Mmap-Share

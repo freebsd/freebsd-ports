@@ -9,4 +9,4 @@ For many applications we really like straightforward callback style. The goal
 of Callback::Frame is to simplify the management of dynamic environments while
 leaving callback style alone.
 
-WWW: http://search.cpan.org/dist/Callback-Frame/
+WWW: https://metacpan.org/release/Callback-Frame

@@ -1,4 +1,4 @@
 CGI::Application::Plugin::Authentication adds the ability to authenticate
 users in your CGI::Application modules.
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-Authentication/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-Authentication

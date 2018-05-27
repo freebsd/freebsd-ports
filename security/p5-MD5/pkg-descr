@@ -2,4 +2,4 @@ The current MD5 module is just a wrapper around the Digest::MD5
 module. It is provided so that legacy code that rely on the old
 interface still work and get the speed benefit of the new module.
 
-WWW: http://search.cpan.org/dist/MD5/
+WWW: https://metacpan.org/release/MD5

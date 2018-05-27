@@ -4,4 +4,4 @@ common Perl alternatives for logging, such as "warn" and "cluck".
 It also adds the possibility for a logging action to halt the current
 environment, such as with "die" and "croak".
 
-WWW: http://search.cpan.org/dist/Log-Dispatch-Perl/
+WWW: https://metacpan.org/release/Log-Dispatch-Perl

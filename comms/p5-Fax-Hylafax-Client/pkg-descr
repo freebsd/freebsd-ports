@@ -3,4 +3,4 @@ Fax::Hylafax::Client is a simple Perl client for the HylaFAX fax server
 protocol and thus does not require any HylaFAX software component to be
 installed on the client machine.
 
-WWW: http://search.cpan.org/dist/Fax-Hylafax-Client/
+WWW: https://metacpan.org/release/Fax-Hylafax-Client

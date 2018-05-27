@@ -2,4 +2,4 @@ Convenient way to use dynamic subclassing. This plugin implements
 methodics described in "Dynamic Sub-classing DBIx::Class proxy classes"
 in DBIx::Class::Manual::Cookbook.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-DynamicSubclass/
+WWW: https://metacpan.org/release/DBIx-Class-DynamicSubclass

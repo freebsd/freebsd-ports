@@ -3,4 +3,4 @@ provides classes for sample client and server implementations, a
 server designed as an Apache location-handler, and a suite of
 data-manipulation classes that are used by them.
 
-WWW: http://search.cpan.org/dist/RPC-XML/
+WWW: https://metacpan.org/release/RPC-XML

@@ -17,4 +17,4 @@ difficult to detect the correlation between parts of the
 pseudo-entropy stream. If more true entropy is required then it is
 necessary to configure a different entropy source.
 
-WWW: http://search.cpan.org/dist/Data-Entropy/
+WWW: https://metacpan.org/release/Data-Entropy

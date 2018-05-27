@@ -1,4 +1,4 @@
 MooseX::Types::Common is a set of commonly-used type constraints
 that do not ship with Moose by default.
 
-WWW: http://search.cpan.org/dist/MooseX-Types-Common/
+WWW: https://metacpan.org/release/MooseX-Types-Common

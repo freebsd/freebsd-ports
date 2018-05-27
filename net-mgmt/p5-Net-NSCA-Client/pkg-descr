@@ -1,4 +1,4 @@
 This module allows applications to send passive checks to Nagios both locally
 and remotely.
 
-WWW: http://search.cpan.org/dist/Net-NSCA-Client/
+WWW: https://metacpan.org/release/Net-NSCA-Client

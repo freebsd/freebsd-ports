@@ -13,4 +13,4 @@ environment, will be much faster (but note that the description is part of the
 string to be evaled, so it must also be the same (or non-existent) if caching
 is to work properly).
 
-WWW: http://search.cpan.org/dist/Eval-Closure/
+WWW: https://metacpan.org/release/Eval-Closure

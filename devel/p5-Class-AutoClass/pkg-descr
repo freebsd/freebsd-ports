@@ -4,4 +4,4 @@ parameter lists or defaults, and arranges for object creation and initialization
 to occur in top-down, textbook order even in the presence of multiple
 inheritance.
 
-WWW: http://search.cpan.org/dist/Class-AutoClass/
+WWW: https://metacpan.org/release/Class-AutoClass

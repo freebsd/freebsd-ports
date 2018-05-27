@@ -6,4 +6,4 @@ you don't need to care about escaping paths that annoys you from time
 to time when you want to apply regexen to a path, especially in file
 tests that use 'like' or 'compare'.
 
-WWW: http://search.cpan.org/dist/Path-Extended/
+WWW: https://metacpan.org/release/Path-Extended

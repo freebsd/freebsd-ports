@@ -5,4 +5,4 @@ It integrates Net::SNMP into AnyEvent: You can make non-blocking Net::SNMP
 calls and as long as other parts of your program also use AnyEvent (or some
 event loop supported by AnyEvent) and they will run in parallel.
 
-WWW: http://search.cpan.org/dist/AnyEvent-SNMP/
+WWW: https://metacpan.org/release/AnyEvent-SNMP

@@ -3,4 +3,4 @@ local serial ports. It can control your GSM *standard* functions and status. It
 can send SMS messages in a simple and convenient way. It can read messages
 stored on your sim card.
 
-WWW: http://search.cpan.org/dist/Device-Gsm/
+WWW: https://metacpan.org/release/Device-Gsm

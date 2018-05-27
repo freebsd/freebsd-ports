@@ -4,4 +4,4 @@ results as header.
 
 It's useful for debugging where abouts in a connection slow downs are occuring.
 
-WWW: http://search.cpan.org/dist/LWPx-TimedHTTP/
+WWW: https://metacpan.org/release/LWPx-TimedHTTP

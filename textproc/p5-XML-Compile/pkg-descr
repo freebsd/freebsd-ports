@@ -21,4 +21,4 @@ complex data-types like list, union, and substitutionGroup
 (unions on complex type level) are supported, which is rarely the
 case in other modules.
 
-WWW: http://search.cpan.org/dist/XML-Compile/
+WWW: https://metacpan.org/release/XML-Compile

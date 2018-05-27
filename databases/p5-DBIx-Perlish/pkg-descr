@@ -2,4 +2,4 @@ The DBIx::Perlish module provides the ability to work with databases
 supported by the DBI module using Perl's own syntax for four most common
 operations: SELECT, UPDATE, DELETE, and INSERT.
 
-WWW: http://search.cpan.org/dist/DBIx-Perlish/
+WWW: https://metacpan.org/release/DBIx-Perlish

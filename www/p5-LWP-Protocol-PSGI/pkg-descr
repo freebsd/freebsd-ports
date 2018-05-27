@@ -2,4 +2,4 @@ LWP::Protocol::PSGI is a module to hijack any code that uses
 LWP::UserAgent underneath such that any HTTP or HTTPS requests can be
 routed to your own PSGI application.
 
-WWW: http://search.cpan.org/dist/LWP-Protocol-PSGI/
+WWW: https://metacpan.org/release/LWP-Protocol-PSGI

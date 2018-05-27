@@ -8,4 +8,4 @@ empty list is returned.
 If read_entity_body() did not see new entity data in its read the value -1 is
 returned.
 
-WWW: http://search.cpan.org/dist/Net-HTTPS-NB/
+WWW: https://metacpan.org/release/Net-HTTPS-NB

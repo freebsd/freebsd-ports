@@ -10,4 +10,4 @@ that it offers no back-tracking. But in truth, you can use it to build a
 state machine that adheres to either model--hence the more generic FSA
 moniker.
 
-WWW: http://search.cpan.org/dist/FSA-Rules/
+WWW: https://metacpan.org/release/FSA-Rules

@@ -3,4 +3,4 @@ functions to delegate to (or restore) the previous functions, whether assigned
 by perl or by another module. Typically this should be used in conjunction with
 B::Hooks::OP::Check.
 
-WWW: http://search.cpan.org/dist/B-Hooks-OP-Annotation/
+WWW: https://metacpan.org/release/B-Hooks-OP-Annotation

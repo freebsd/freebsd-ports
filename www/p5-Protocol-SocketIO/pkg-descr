@@ -1,4 +1,4 @@
 Protocol::SocketIO is a set of modules that implement Socket.IO protocol without
 depending on event loops, HTTP parsers and HTTP servers.
 
-WWW: http://search.cpan.org/dist/Protocol-SocketIO/
+WWW: https://metacpan.org/release/Protocol-SocketIO

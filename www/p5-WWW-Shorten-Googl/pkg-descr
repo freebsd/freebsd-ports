@@ -1,4 +1,4 @@
 A Perl interface to the goo.gl URL shortening service. Googl simply
 maintains a database of long URLs, each of which has a unique identifier.
 
-WWW: http://search.cpan.org/dist/WWW-Shorten-Googl/
+WWW: https://metacpan.org/release/WWW-Shorten-Googl

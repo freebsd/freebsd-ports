@@ -3,4 +3,4 @@ non-strings (like references, objects, and undef) are converted to JSON,
 and we can defer evaluation of bits of the message so that it won't be
 evaluated unless needed.
 
-WWW: http://search.cpan.org/dist/String-Flogger/
+WWW: https://metacpan.org/release/String-Flogger

@@ -3,4 +3,4 @@ the containing window is resized, the tabs will either stack or unstack
 as needed to fit the enclosing widget's width(height). Likewise, when
 tabs are added or removed, the tabs will stack/unstack as needed.
 
-WWW: http://search.cpan.org/dist/Tk-DynaTabFrame/
+WWW: https://metacpan.org/release/Tk-DynaTabFrame

@@ -3,4 +3,4 @@ unnecessary from within Perl. It provides methods to get at set all
 the attributes of an interface, and even create new logical or
 physical interfaces (if your O/S supports it).
 
-WWW: http://search.cpan.org/dist/Net-Interface/
+WWW: https://metacpan.org/release/Net-Interface

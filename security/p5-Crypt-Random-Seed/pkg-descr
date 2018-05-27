@@ -5,4 +5,4 @@ seed for an upstream module such as Bytes::Random::Secure. Flags for requiring
 non-blocking sources are allowed, as well as a very simple method for plugging
 in a source.
 
-WWW: http://search.cpan.org/dist/Crypt-Random-Seed/
+WWW: https://metacpan.org/release/Crypt-Random-Seed

@@ -9,4 +9,4 @@ type restrictions. Type enforcement may, of course, be built using
 these classification functions, but the reader's attention is drawn
 to Params::Validate.
 
-WWW: http://search.cpan.org/dist/Params-Classify/
+WWW: https://metacpan.org/release/Params-Classify

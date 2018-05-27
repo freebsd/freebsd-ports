@@ -20,4 +20,4 @@ GD::Arrow::LeftHalf draws a half arrow between two verticies.
            +----------------------+ \
   (X2, Y2) *-------------------------* (X1, Y1)
 
-WWW: http://search.cpan.org/dist/GD-Arrow/
+WWW: https://metacpan.org/release/GD-Arrow

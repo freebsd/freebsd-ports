@@ -3,4 +3,4 @@ use this module, all references to time and sleep will be
 internalized.  You can set custom time by passing time => number after
 the use statement.
 
-WWW: http://search.cpan.org/dist/Test-Time/
+WWW: https://metacpan.org/release/Test-Time

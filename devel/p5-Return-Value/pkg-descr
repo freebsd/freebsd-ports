@@ -6,4 +6,4 @@ objects or data structures for every single return value, but we do want
 to check error conditions in our code because that's what good
 programmers do.
 
-WWW: http://search.cpan.org/dist/Return-Value/
+WWW: https://metacpan.org/release/Return-Value

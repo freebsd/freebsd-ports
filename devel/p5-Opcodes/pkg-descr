@@ -8,4 +8,4 @@ Each operator has both a terse name (its opname) and a more verbose or
 recognisable descriptive name. The opdesc function can be used to
 return a description for an OP.
 
-WWW: http://search.cpan.org/dist/Opcodes/
+WWW: https://metacpan.org/release/Opcodes

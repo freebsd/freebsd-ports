@@ -12,4 +12,4 @@ is_of_form() methods on any Math::Symbolic tree. (Exported by the
 Math::Symbolic::Custom::Pattern::Export module. Refer to that module for
 details on is_of_form().)
 
-WWW: http://search.cpan.org/dist/Math-Symbolic-Custom-Pattern/
+WWW: https://metacpan.org/release/Math-Symbolic-Custom-Pattern

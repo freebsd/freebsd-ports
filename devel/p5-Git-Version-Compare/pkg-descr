@@ -7,4 +7,4 @@ of git version or git describe.
 These routines collect the knowledge about Git versions that was accumulated
 while developing Git::Repository.
 
-WWW: http://search.cpan.org/dist/Git-Version-Compare/
+WWW: https://metacpan.org/release/Git-Version-Compare

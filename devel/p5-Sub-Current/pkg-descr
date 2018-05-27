@@ -7,4 +7,4 @@ this function will return undef.
 Outside of a special block (that is, at the top level of a program)
 ROUTINE() will return undef as well.
 
-WWW: http://search.cpan.org/dist/Sub-Current/
+WWW: https://metacpan.org/release/Sub-Current

@@ -2,4 +2,4 @@ This module implements the HTML Document Object Model by extending the
 HTML::Tree modules. The HTML::DOM class serves both as an HTML parser and as the
 document class.
 
-WWW: http://search.cpan.org/dist/HTML-DOM/
+WWW: https://metacpan.org/release/HTML-DOM

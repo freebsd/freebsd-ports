@@ -7,4 +7,4 @@ From http://developer.spikesource.com/projects/testgen4web :
 This is a 2 part tool. Firefox extension, which records user input to a xml
 file. Translator script: to generate automated test scripts."
 
-WWW: http://search.cpan.org/dist/TestGen4Web-Runner/
+WWW: https://metacpan.org/release/TestGen4Web-Runner

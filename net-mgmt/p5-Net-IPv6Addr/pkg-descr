@@ -4,4 +4,4 @@ described in RFC1924 are also valid.  It will generate "IP6.INT."
 strings (as described in RFC1886) if you are inclined to play with
 DNS records.
 
-WWW: http://search.cpan.org/dist/Net-IPv6Addr/
+WWW: https://metacpan.org/release/Net-IPv6Addr

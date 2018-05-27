@@ -3,4 +3,4 @@ oriented way. There is also Net::GitHub which does the same for all the
 versions (v1, v2, v3) of the Github API. Pithub supports all API calls so
 far, but only for v3.
 
-WWW: http://search.cpan.org/dist/Pithub/
+WWW: https://metacpan.org/release/Pithub

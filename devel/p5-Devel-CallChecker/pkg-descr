@@ -14,4 +14,4 @@ functions. In normal use, "callchecker0_h" and "callchecker_linkable" should be
 called at build time (not authoring time) for the module that wishes to use the
 C functions.
 
-WWW: http://search.cpan.org/dist/Devel-CallChecker/
+WWW: https://metacpan.org/release/Devel-CallChecker

@@ -3,4 +3,4 @@ the various JSON modules currently on CPAN. This module will
 allow you to code to any JSON API and have it work regardless
 of which JSON module is actually installed.
 
-WWW: http://search.cpan.org/dist/JSON-Any/
+WWW: https://metacpan.org/release/JSON-Any

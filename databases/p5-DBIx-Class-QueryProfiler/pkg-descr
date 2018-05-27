@@ -1,4 +1,4 @@
 DBIx::Class::QueryProfiler is a profiler for DBIx::Class. Also
 it provides more usable output or queries.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-QueryProfiler/
+WWW: https://metacpan.org/release/DBIx-Class-QueryProfiler

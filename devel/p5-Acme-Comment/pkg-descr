@@ -2,4 +2,4 @@ Acme::Comment allows multi-line comments which are filtered out.
 Unlike the pseudo multi-line comment if (0) {}, the code being
 commented out need not be syntactically valid.
 
-WWW: http://search.cpan.org/dist/Acme-Comment/
+WWW: https://metacpan.org/release/Acme-Comment

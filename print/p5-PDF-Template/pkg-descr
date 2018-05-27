@@ -6,4 +6,4 @@ Currently, the only renderer support is pdflib_pl, which is from PDFLib
 handle Unicode. If you need CJK fonts, you will need to purchase the full
 version of PDFLib from them.
 
-WWW: http://search.cpan.org/dist/PDF-Template/
+WWW: https://metacpan.org/release/PDF-Template

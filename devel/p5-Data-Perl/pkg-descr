@@ -4,4 +4,4 @@ today are an attempt to mirror functionality provided by Moose's
 Native Traits. One important thing to note is all classes currently
 do no validation on constructor input.
 
-WWW: http://search.cpan.org/dist/Data-Perl/
+WWW: https://metacpan.org/release/Data-Perl

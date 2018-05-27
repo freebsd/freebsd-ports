@@ -17,4 +17,4 @@ required by Statistics::Descriptive::Full. It also required only 4MB of
 RAM instead of the 400MB used by Statistics::Descriptive::Full for the
 same data set.
 
-WWW: http://search.cpan.org/dist/Statistics-Descriptive-Discrete/
+WWW: https://metacpan.org/release/Statistics-Descriptive-Discrete

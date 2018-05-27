@@ -2,4 +2,4 @@ This module signs an HTTP::Request to Amazon Web Services by appending
 an Authorization header.  Amazon Web Services signature version 4,
 AWS4-HMAC-SHA256, is used.
 
-WWW: http://search.cpan.org/dist/Net-Amazon-Signature-V4/
+WWW: https://metacpan.org/release/Net-Amazon-Signature-V4

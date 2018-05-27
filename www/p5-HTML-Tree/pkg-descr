@@ -17,4 +17,4 @@ The modules present in this collection are:
   HTML::AsSubs - Easy way to build an HTML syntax tree by nesting
         functions.
 
-WWW: http://search.cpan.org/dist/HTML-Tree/
+WWW: https://metacpan.org/release/HTML-Tree

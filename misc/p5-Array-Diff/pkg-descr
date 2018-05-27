@@ -1,4 +1,4 @@
 This module do diff two arrays, and return added and deleted arrays.
 It's simple usage of Algorithm::Diff.
 
-WWW: http://search.cpan.org/dist/Array-Diff/
+WWW: https://metacpan.org/release/Array-Diff

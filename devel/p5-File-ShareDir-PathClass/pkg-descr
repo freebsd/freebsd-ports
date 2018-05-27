@@ -2,4 +2,4 @@ File::ShareDir::PathClass is just a wrapper around File::ShareDir
 functions, transforming their return value to Path::Class objects.
 This allows for easier usage of the value.
 
-WWW: http://search.cpan.org/dist/File-ShareDir-PathClass/
+WWW: https://metacpan.org/release/File-ShareDir-PathClass

@@ -3,4 +3,4 @@ simplistic use, the IO::LockedFile class gives us the same interface as
 the IO::File class with the unique difference that the files we deal
 with are locked using the Flock mechanism (using the flock function).
 
-WWW: http://search.cpan.org/dist/IO-LockedFile/
+WWW: https://metacpan.org/release/IO-LockedFile

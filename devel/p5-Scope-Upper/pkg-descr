@@ -10,4 +10,4 @@ higher contexts with respectively "localize", "localize_elem" and
 * return values immediately to an upper level with "unwind", and know
 which context was in use then with "want_at".
 
-WWW: http://search.cpan.org/dist/Scope-Upper/
+WWW: https://metacpan.org/release/Scope-Upper

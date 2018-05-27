@@ -3,4 +3,4 @@ asserts that the given string matches what was expected. When the
 strings match (i.e.  compare equal using the eq operator), the behaviour
 is identical to the usual is() function provided by Test::More.
 
-WWW: http://search.cpan.org/dist/Test-HexString/
+WWW: https://metacpan.org/release/Test-HexString

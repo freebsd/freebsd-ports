@@ -3,4 +3,4 @@ the same way as you declare object attributes, except using class_has()
 instead of has().  It is also possible to make these attributes
 immutable (and faster) just as you can with normal Moose attributes.
 
-WWW: http://search.cpan.org/dist/MooseX-ClassAttribute/
+WWW: https://metacpan.org/release/MooseX-ClassAttribute

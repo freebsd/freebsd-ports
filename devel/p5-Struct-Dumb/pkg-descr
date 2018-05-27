@@ -16,4 +16,4 @@ abuse a hash, complete with the risk of typoing key names. The constructor will
 croak if passed the wrong number of arguments, as will attempts to refer to
 fields that don't exist.
 
-WWW: http://search.cpan.org/dist/Struct-Dumb/
+WWW: https://metacpan.org/release/Struct-Dumb

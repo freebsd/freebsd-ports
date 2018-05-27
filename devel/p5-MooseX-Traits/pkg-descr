@@ -8,4 +8,4 @@ resulting class (for efficiency), and return a new instance.  Arguments
 meant to initialize the applied roles' attributes can also be passed to
 the constructor.
 
-WWW: http://search.cpan.org/dist/MooseX-Traits/
+WWW: https://metacpan.org/release/MooseX-Traits

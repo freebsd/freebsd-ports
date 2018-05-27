@@ -5,4 +5,4 @@ and using Bitcard in other applications, see http://www.bitcard.org/api.
 The module and the protocol are heavily based on Authen::Typekey. (In fact,
 the Bitcard authentication server also supports the TypeKey API!)
 
-WWW: http://search.cpan.org/dist/Authen-Bitcard/
+WWW: https://metacpan.org/release/Authen-Bitcard

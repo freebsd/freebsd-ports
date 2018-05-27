@@ -14,4 +14,4 @@ capable of running Perl/Tk applications. Just change the shebang line of your
 scripts to:
 	#! /usr/bin/perl -w -d:ptkdb
 
-WWW: http://search.cpan.org/dist/Devel-ptkdb/
+WWW: https://metacpan.org/release/Devel-ptkdb

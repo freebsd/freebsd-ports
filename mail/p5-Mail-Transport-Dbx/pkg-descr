@@ -3,4 +3,4 @@ Express' dbx files.  Extract subfolders, messages etc. from those or use
 it to convert dbx archives into a more portable format (such as standard
 mbox format).
 
-WWW: http://search.cpan.org/dist/Mail-Transport-Dbx/
+WWW: https://metacpan.org/release/Mail-Transport-Dbx

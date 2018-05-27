@@ -8,4 +8,4 @@ The module supports srt, sub, smi subtitle formats.
 
 Time values are floats, in seconds with millisecond precision.
 
-WWW: http://search.cpan.org/dist/Subtitles/
+WWW: https://metacpan.org/release/Subtitles

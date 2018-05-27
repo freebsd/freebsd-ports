@@ -2,4 +2,4 @@ BFD allows for impromptu dumping of output to STDERR.  Useful when you
 want to take a peek at a nest Perl data structure by emitting (relatively)
 nicely formatted output with filename and line number prefixed to each line.
 
-WWW: http://search.cpan.org/dist/BFD/
+WWW: https://metacpan.org/release/BFD

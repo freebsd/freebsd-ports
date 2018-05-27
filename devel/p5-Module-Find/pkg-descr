@@ -2,4 +2,4 @@ Module::Find lets you find and use modules in categories. This can be very
 useful for auto-detecting driver or plugin modules. You can differentiate
 between looking in the category itself or in all subcategories.
 
-WWW: http://search.cpan.org/dist/Module-Find/
+WWW: https://metacpan.org/release/Module-Find

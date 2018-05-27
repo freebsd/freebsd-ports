@@ -2,4 +2,4 @@ Catalyst::Plugin::Session::Store::File is an easy to use storage plugin
 for Catalyst that uses an simple file to act as a shared memory interprocess
 cache. It is based on Cache::FileCache.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Session-Store-File/
+WWW: https://metacpan.org/release/Catalyst-Plugin-Session-Store-File

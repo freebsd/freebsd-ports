@@ -1,4 +1,4 @@
 Amazon requires authentication when interfacing with its web services.
 This package implements V3 of Amazon's authentication schemes.
 
-WWW: http://search.cpan.org/dist/Net-Amazon-Signature-V3/
+WWW: https://metacpan.org/release/Net-Amazon-Signature-V3

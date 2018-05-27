@@ -4,4 +4,4 @@ independent interface for Perl). This one is based on the SQL
 and implements access to so-called CSV files (Comma separated
 values).
 
-WWW: http://search.cpan.org/dist/DBD-CSV/
+WWW: https://metacpan.org/release/DBD-CSV

@@ -1,4 +1,4 @@
 This module implements an Object-Oriented interface to a POP3 server. It is
 based on RFC1939.
 
-WWW: http://search.cpan.org/dist/Mail-POP3Client/
+WWW: https://metacpan.org/release/Mail-POP3Client

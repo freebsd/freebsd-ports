@@ -9,4 +9,4 @@ implementation is quite a pain if all you want to do is to test your
 application, but with this module, you can easily create a dummy STF
 dispatcher.
 
-WWW: http://search.cpan.org/dist/STF-Dispatcher-PSGI/
+WWW: https://metacpan.org/release/STF-Dispatcher-PSGI

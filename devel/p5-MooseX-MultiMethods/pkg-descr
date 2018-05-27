@@ -7,4 +7,4 @@ in all the declared multi variants based on the passed parameters and the
 declared type constraints. If a variant has been found, it will be invoked.
 If no variant could be found, an exception will be thrown.
 
-WWW: http://search.cpan.org/dist/MooseX-MultiMethods/
+WWW: https://metacpan.org/release/MooseX-MultiMethods

@@ -8,4 +8,4 @@ the subroutine as if it was defined the ordinary way then.
 This is particularly useful in the cases when you need to have several
 identical subroutines with different names.
 
-WWW: http://search.cpan.org/dist/Sub-Alias/
+WWW: https://metacpan.org/release/Sub-Alias

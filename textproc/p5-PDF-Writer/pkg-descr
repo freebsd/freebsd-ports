@@ -1,4 +1,4 @@
 This is a generalized API that allows a module that generates PDFs to
 transparently target multiple backends without changing its code.
 
-WWW: http://search.cpan.org/dist/PDF-Writer/
+WWW: https://metacpan.org/release/PDF-Writer

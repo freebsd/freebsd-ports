@@ -1,4 +1,4 @@
 This module provides an API for parts of the perl parser. It can be
 used to modify code while it's being parsed.
 
-WWW: http://search.cpan.org/dist/B-Hooks-Parser/
+WWW: https://metacpan.org/release/B-Hooks-Parser

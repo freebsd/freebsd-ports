@@ -6,4 +6,4 @@ Although forenames and surnames are normally stored separately if
 they do appear in a single string, whitespace separated, NameCase
 and nc deal correctly with them.
 
-WWW: http://search.cpan.org/dist/Lingua-EN-NameCase/
+WWW: https://metacpan.org/release/Lingua-EN-NameCase

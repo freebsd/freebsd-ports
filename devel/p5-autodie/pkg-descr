@@ -10,4 +10,4 @@ If system is specified as an argument to autodie, then it uses
 IPC::System::Simple to do the heavy lifting. See the description
 of that module for more information.
 
-WWW: http://search.cpan.org/dist/autodie/
+WWW: https://metacpan.org/release/autodie

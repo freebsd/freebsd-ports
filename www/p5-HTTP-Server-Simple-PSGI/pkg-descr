@@ -3,4 +3,4 @@ that can run PSGI applications. This module only depends on
 HTTP::Server::Simple, which itself doesn't depend on any non-core
 modules so it's best to be used as an embedded web server.
 
-WWW: http://search.cpan.org/dist/HTTP-Server-Simple-PSGI/
+WWW: https://metacpan.org/release/HTTP-Server-Simple-PSGI

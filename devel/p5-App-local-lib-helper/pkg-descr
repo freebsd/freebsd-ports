@@ -9,4 +9,4 @@ For example, assume you build a local::lib like so:
 
   cpanm --local-lib ~/mylib App::local::lib::helper
 
-WWW: http://search.cpan.org/dist/App-local-lib-helper/
+WWW: https://metacpan.org/release/App-local-lib-helper

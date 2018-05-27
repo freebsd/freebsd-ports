@@ -5,4 +5,4 @@ this. Log::Report combines gettext features with Log::Dispatch-like features.
 However, you can also use this module to do only translations or only message
 dispatching.
 
-WWW: http://search.cpan.org/dist/Log-Report/
+WWW: https://metacpan.org/release/Log-Report

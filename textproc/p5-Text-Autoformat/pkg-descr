@@ -9,4 +9,4 @@ schemes.
 The module also supplies a re-entrant, highly configurable replacement
 for the built-in Perl format() mechanism.
 
-WWW: http://search.cpan.org/dist/Text-Autoformat/
+WWW: https://metacpan.org/release/Text-Autoformat

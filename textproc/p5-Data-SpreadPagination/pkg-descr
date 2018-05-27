@@ -4,4 +4,4 @@ navigator. It inherits from Data::Page, and in addition provides methods to
 create a pagination spread, keeping pagenumbers displayed within a sensible
 limit.
 
-WWW: http://search.cpan.org/dist/Data-SpreadPagination/
+WWW: https://metacpan.org/release/Data-SpreadPagination

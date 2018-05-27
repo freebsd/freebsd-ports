@@ -10,4 +10,4 @@ date_downloaded, description, email, filename, htmlurl, keywords, text,
 title, type, version, and xmlurl. Additionally, the following alternate
 spellings are also supported: dateAdded, dateDownloaded, htmlUrl, and xmlUrl.
 
-WWW: http://search.cpan.org/dist/XML-OPML/
+WWW: https://metacpan.org/release/XML-OPML

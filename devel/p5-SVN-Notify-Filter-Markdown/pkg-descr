@@ -1,4 +1,4 @@
 This Perl module converts SVN::Notify log messages from Markdown
 format to HTML.
 
-WWW: http://search.cpan.org/dist/SVN-Notify-Filter-Markdown/
+WWW: https://metacpan.org/release/SVN-Notify-Filter-Markdown

@@ -4,4 +4,4 @@ CGI::Application framework and the Data::FormValidator module.
 See a nice example of all that modules working together at:
 http://mark.stosberg.com/Tech/perl/form-validation/
 
-WWW: http://search.cpan.org/dist/CGI-Application-Plugin-ValidateRM/
+WWW: https://metacpan.org/release/CGI-Application-Plugin-ValidateRM

@@ -4,4 +4,4 @@ function, parse(), which returns a reference to an array of traditional
 Net::DNS::RR objects, so that no new API has to be learned in order to
 manipulate zone records.
 
-WWW: http://search.cpan.org/dist/Net-DNS-ZoneFile-Fast/
+WWW: https://metacpan.org/release/Net-DNS-ZoneFile-Fast

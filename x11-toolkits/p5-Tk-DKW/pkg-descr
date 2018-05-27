@@ -18,4 +18,4 @@ Tk::Signals     - A publish and subscribe object signalling method like
 		  in the same hierarchy need to alert each other to various
 		  application level events.
 
-WWW: http://search.cpan.org/dist/Tk-DKW/
+WWW: https://metacpan.org/release/Tk-DKW

@@ -17,4 +17,4 @@ structured tree, and providing consistent traversal, searching,
 manpulation and re-serialisation. Pod related utilities are easy
 to write using Pod::Abstract.
 
-WWW: http://search.cpan.org/dist/Pod-Abstract/
+WWW: https://metacpan.org/release/Pod-Abstract

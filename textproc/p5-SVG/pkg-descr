@@ -1,4 +1,4 @@
 SVG.pm is a perl extention to generate stand-alone or inline SVG
 (scaleable vector graphics) images using the W3C SVG xml recommendation.
 
-WWW: http://search.cpan.org/dist/SVG/
+WWW: https://metacpan.org/release/SVG

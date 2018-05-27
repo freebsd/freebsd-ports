@@ -15,4 +15,4 @@ access to the Jabber protocol.  Using OOP modules we provide a clean
 interface to writing anything from a full client to a simple protocol
 tester.
 
-WWW: http://search.cpan.org/dist/Net-Jabber/
+WWW: https://metacpan.org/release/Net-Jabber

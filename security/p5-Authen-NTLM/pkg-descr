@@ -8,4 +8,4 @@ authenticate HTTP packets to MS Web Proxy or MS Web Server.
 Currently, it is the authentication scheme Internet Explorer chooses to
 authenticate itself to proxies/web servers that supports NTLM.
 
-WWW: http://search.cpan.org/dist/NTLM/
+WWW: https://metacpan.org/release/NTLM

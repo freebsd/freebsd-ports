@@ -4,4 +4,4 @@ similar to the C++/STL framework, plus a number of helper classes which
 provide the glue to transparently generate common functions, and will
 enable you to put your Perl application together very quickly.
 
-WWW: http://search.cpan.org/dist/Class-STL-Containers/
+WWW: https://metacpan.org/release/Class-STL-Containers

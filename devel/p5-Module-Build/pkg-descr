@@ -5,4 +5,4 @@ way than with MakeMaker. It also does not require a make on your system - most
 of the Module::Build code is pure-perl and written in a very cross-platform
 way.
 
-WWW: http://search.cpan.org/dist/Module-Build/
+WWW: https://metacpan.org/release/Module-Build

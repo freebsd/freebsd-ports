@@ -4,4 +4,4 @@ Starlet.  This middleware changes status only before and after
 executing the application.  so cannot monitor keepalive session and
 network i/o wait.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-ServerStatus-Lite/
+WWW: https://metacpan.org/release/Plack-Middleware-ServerStatus-Lite

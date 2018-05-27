@@ -2,4 +2,4 @@ POE::Filter::LZF provides a POE filter for performing compression/
 decompression using Compress::LZF. It is suitable for use with
 POE::Filter::Stackable.
 
-WWW: http://search.cpan.org/dist/POE-Filter-LZF/
+WWW: https://metacpan.org/release/POE-Filter-LZF

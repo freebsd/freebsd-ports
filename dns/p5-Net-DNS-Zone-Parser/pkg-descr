@@ -15,4 +15,4 @@ Note that this module does not have a notion of what constitutes a valid zone,
 it only parses. For example, the parser will happilly parse RRs with ownernames
 that are below in another zone because a NS RR elsewhere in the zone.
 
-WWW: http://search.cpan.org/dist/Net-DNS-Zone-Parser/
+WWW: https://metacpan.org/release/Net-DNS-Zone-Parser

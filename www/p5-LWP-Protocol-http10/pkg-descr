@@ -6,4 +6,4 @@ This module used to be bundled with the libwww-perl, but it was unbundled in
 v6.02 as part of the general cleanup for the 6-series. LWP::Protocol::http10 is
 deprecated.
 
-WWW: http://search.cpan.org/dist/LWP-Protocol-http10/
+WWW: https://metacpan.org/release/LWP-Protocol-http10

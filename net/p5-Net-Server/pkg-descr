@@ -8,5 +8,5 @@ Net::Server::Single), a forking server (Net::Server::Fork), or as a preforking
 server (Net::Server::PreFork). In all but the inetd type, the server provides
 the ability to connect to one or to multiple server ports.
 
-WWW: http://search.cpan.org/dist/Net-Server/
+WWW: https://metacpan.org/release/Net-Server
 WWW: http://seamons.com/projects/

@@ -1,4 +1,4 @@
 This module is a tiny shim to unbreak XML files that have had their
 entities doubly-encoded.
 
-WWW: http://search.cpan.org/dist/XML-DoubleEncodedEntities/
+WWW: https://metacpan.org/release/XML-DoubleEncodedEntities

@@ -12,4 +12,4 @@ processes. It uses your database for its state storage with ANSI SQL92
 compliant SQL. All SQL queries inside DBIx::Sequence are pre cached and
 very efficient especially under mod_perl.
 
-WWW: http://search.cpan.org/dist/DBIx-Sequence/
+WWW: https://metacpan.org/release/DBIx-Sequence

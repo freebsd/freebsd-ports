@@ -3,4 +3,4 @@ backend module for Bank of America eStores.  It is only useful if you
 have a merchant account with Bank of America eStores:
 http://www.bofa.com/merchantservices/index.cfm?template=merch_ic_estores_ov.cfm
 
-WWW: http://search.cpan.org/dist/Business-OnlinePayment-BankOfAmerica/
+WWW: https://metacpan.org/release/Business-OnlinePayment-BankOfAmerica

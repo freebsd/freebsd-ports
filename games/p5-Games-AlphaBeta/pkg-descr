@@ -11,4 +11,4 @@ copy(), apply(), endpos(), evaluate() and findmoves(). This is explained
 more carefully in Games::AlphaBeta::Position which is a base class you can
 use to implement your position object.
 
-WWW: http://search.cpan.org/dist/Games-AlphaBeta/
+WWW: https://metacpan.org/release/Games-AlphaBeta

@@ -2,4 +2,4 @@ Perlfaq5 answers the question on how to count the number of lines in a
 file. This module is a convenient wrapper around that method, with
 additional options.
 
-WWW: http://search.cpan.org/dist/File-CountLines/
+WWW: https://metacpan.org/release/File-CountLines

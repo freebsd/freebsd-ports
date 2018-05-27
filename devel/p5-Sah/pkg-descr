@@ -2,4 +2,4 @@ Sah is a schema language for validating data structures. In the 0.9.0 series,
 there will probably still be incompatible syntax changes between revision before
 the spec stabilizes into 1.0 series.
 
-WWW: http://search.cpan.org/dist/Sah/
+WWW: https://metacpan.org/release/Sah

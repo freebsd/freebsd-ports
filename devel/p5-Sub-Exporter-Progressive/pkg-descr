@@ -10,4 +10,4 @@ Exporter to work. Additionally, if your package uses advanced Sub::Exporter
 features like currying, this module will only ever use Sub::Exporter, so you
 might as well use it directly.
 
-WWW: http://search.cpan.org/dist/Sub-Exporter-Progressive/
+WWW: https://metacpan.org/release/Sub-Exporter-Progressive

@@ -2,4 +2,4 @@ Several of the builtins in Perl 6 have different (i.e. more useful, less
 confusing) behaviours than their Perl 5 counterparts. This module provides
 Perl 5 versions of those builtins.
 
-WWW: http://search.cpan.org/dist/Perl6-Builtins/
+WWW: https://metacpan.org/release/Perl6-Builtins

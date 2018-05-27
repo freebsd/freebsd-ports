@@ -3,4 +3,4 @@ memcached server, which in specific configurations could give a
 performance boost - particulary on GET requests that incur significant
 database calls.
 
-WWW: http://search.cpan.org/dist/Dancer-Plugin-Memcached/
+WWW: https://metacpan.org/release/Dancer-Plugin-Memcached

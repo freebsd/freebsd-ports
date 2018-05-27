@@ -2,4 +2,4 @@ Dancer::Plugin::SiteMap automagically adds sitemap routes to the webapp.
 Currently adds /sitemap and /sitemap.xml where the former is a basic
 HTML list and the latter is an XML document of URLS.
 
-WWW: http://search.cpan.org/dist/Dancer-Plugin-SiteMap/
+WWW: https://metacpan.org/release/Dancer-Plugin-SiteMap

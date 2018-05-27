@@ -21,4 +21,4 @@ most code, this module will ensure that it works, for convenience. If the
 limited lexical importing is desired on earlier Perls, use Lexical::Var
 directly.
 
-WWW: http://search.cpan.org/dist/Lexical-Import/
+WWW: https://metacpan.org/release/Lexical-Import

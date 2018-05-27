@@ -4,4 +4,4 @@ tied at this time. The hashes can be of any complexity allowed by the Storable
 module, however, there are some caveats covered in the REFERENCES section of
 man page.
 
-WWW: http://search.cpan.org/dist/Tie-ShareLite/
+WWW: https://metacpan.org/release/Tie-ShareLite

@@ -19,4 +19,4 @@ explicitly. It can be used directly, but it is intended to be invoked from the
 import method of a Modern::Perl-style module that enables modern Perl features
 and conveniences and cleans up legacy Perl warts.
 
-WWW: http://search.cpan.org/dist/true/
+WWW: https://metacpan.org/release/true

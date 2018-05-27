@@ -4,4 +4,4 @@ the refactoring, the dispatch priority of Regex vs Regexp vs LocalRegex vs
 LocalRegexp may have changed. Priority is now influenced by when the dispatch
 type is first seen in your application.
 
-WWW: http://search.cpan.org/dist/Catalyst-DispatchType-Regex/
+WWW: https://metacpan.org/release/Catalyst-DispatchType-Regex

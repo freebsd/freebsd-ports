@@ -9,4 +9,4 @@ DNS::ZoneParse scans the DNS zonefile - removes comments and separates the file
 into it's constituent records. It then parses each record and stores the
 records internally. See below for information on the accessor methods.
 
-WWW: http://search.cpan.org/dist/DNS-ZoneParse/
+WWW: https://metacpan.org/release/DNS-ZoneParse

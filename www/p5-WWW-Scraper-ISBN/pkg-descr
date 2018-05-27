@@ -6,4 +6,4 @@ sources had different information available on different books, we designed
 a basic interface that could be implemented in whatever ways necessary to
 retrieve the desired information.
 
-WWW: http://search.cpan.org/dist/WWW-Scraper-ISBN/
+WWW: https://metacpan.org/release/WWW-Scraper-ISBN

@@ -3,4 +3,4 @@ test run?  Tired of squinting at your test source to find out where
 on earth the faulty test predicate is called, and what it is supposed
 to check for?  Then this module is for you!
 
-WWW: http://search.cpan.org/dist/Test-Group/
+WWW: https://metacpan.org/release/Test-Group

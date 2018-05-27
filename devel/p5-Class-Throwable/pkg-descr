@@ -4,4 +4,4 @@ print information and cannot handle exception objects, and more complex
 solutions like Exception::Class which can be used to define complex inline
 exceptions and has a number of module dependencies.
 
-WWW: http://search.cpan.org/dist/Class-Throwable/
+WWW: https://metacpan.org/release/Class-Throwable

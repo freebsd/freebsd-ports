@@ -3,4 +3,4 @@ handling long size data.  The short size data are kept on
 memory.  When the data size becomes over $Threshold size,
 they are saved into a temporary file internally.
 
-WWW: http://search.cpan.org/dist/Data-TemporaryBag/
+WWW: https://metacpan.org/release/Data-TemporaryBag

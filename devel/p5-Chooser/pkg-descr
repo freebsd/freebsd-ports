@@ -1,4 +1,4 @@
 A system for choosing a value for something. Takes a string composed of various
 tests, arguements, and etc and returns a value based on it.
 
-WWW: http://search.cpan.org/dist/Chooser/
+WWW: https://metacpan.org/release/Chooser

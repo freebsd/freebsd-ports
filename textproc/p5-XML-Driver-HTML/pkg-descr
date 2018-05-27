@@ -5,4 +5,4 @@ generating its SAX events by walking a HTML::TreeBuilder object.  The simplest
 kind of use, is a filter from HTML to XHTML using XML::Handler::YAWriter as a
 SAX Handler.
 
-WWW: http://search.cpan.org/dist/XML-Driver-HTML/
+WWW: https://metacpan.org/release/XML-Driver-HTML

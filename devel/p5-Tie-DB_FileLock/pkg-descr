@@ -6,4 +6,4 @@ allow concurrent access for readers and writers.  Tie::DB_FileLock
 is therefore suitable for large dbms with relatively short locking
 periods.
 
-WWW: http://search.cpan.org/dist/Tie-DB_FileLock/
+WWW: https://metacpan.org/release/Tie-DB_FileLock

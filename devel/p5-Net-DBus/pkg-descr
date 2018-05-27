@@ -3,4 +3,4 @@ messaging system. The Perl API covers the core base level
 of the dbus APIs, not concerning itself yet with the GLib
 or QT wrappers
 
-WWW: http://search.cpan.org/dist/Net-DBus/
+WWW: https://metacpan.org/release/Net-DBus

@@ -4,4 +4,4 @@ mp3rename - Rename MP3 files based off of it's tags.
 mp3show - Show tags for one or more MP3 file.
 mp3tag - Manipulate the tags for one or more MP3 files.
 
-WWW: http://search.cpan.org/dist/MP3-Tag-Utils/
+WWW: https://metacpan.org/release/MP3-Tag-Utils

@@ -2,4 +2,4 @@ This module provides Access Control List style path protection, with
 arbitrary rules for Catalyst applications. It operates only on the
 Catalyst private namespace, at least at the moment.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Authorization-ACL/
+WWW: https://metacpan.org/release/Catalyst-Plugin-Authorization-ACL

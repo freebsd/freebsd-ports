@@ -4,4 +4,4 @@ RFC1413 (which supersedes RFC931). Note that this requires the remote
 site to run a daemon (often called identd) to provide the requested
 information, so it is not always available for all TCP/IP connections.
 
-WWW: http://search.cpan.org/dist/Net-Ident/
+WWW: https://metacpan.org/release/Net-Ident

@@ -2,4 +2,4 @@ This perl module provides a clone() method which makes recursive copies
 of nested hash, array, scalar and reference types, including tied
 variables and objects.
 
-WWW: http://search.cpan.org/dist/Clone/
+WWW: https://metacpan.org/release/Clone

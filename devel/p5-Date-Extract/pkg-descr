@@ -5,4 +5,4 @@ it will not catch nearly everything that looks like a date string. So
 if you have the string "do homework for class 2019" it won't return a
 DateTime object with the year set to 2019.
 
-WWW: http://search.cpan.org/dist/Date-Extract/
+WWW: https://metacpan.org/release/Date-Extract

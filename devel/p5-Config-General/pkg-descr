@@ -3,4 +3,4 @@ Apache's httpd.conf file format.  It features some enhancements such
 as here-documents, C-style commends and multi-line options.  Both
 reading and writing of configuration files is supported.
 
-WWW: http://search.cpan.org/dist/Config-General/
+WWW: https://metacpan.org/release/Config-General

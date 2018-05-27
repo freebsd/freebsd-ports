@@ -7,4 +7,4 @@ event loop implementation available for Perl. AnyEvent was invented after
 Event::RPC was created and thus Event::RPC started using it's own abstraction
 model.
 
-WWW: http://search.cpan.org/dist/Event-RPC/
+WWW: https://metacpan.org/release/Event-RPC

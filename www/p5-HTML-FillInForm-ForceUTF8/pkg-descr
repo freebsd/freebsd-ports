@@ -2,4 +2,4 @@ HTML::FillInForm::ForceUTF8 is a subclass of HTML::FillInForm that forces
 utf8 flag on html and parameters. This allows you to prevent filling
 garbled result.
 
-WWW: http://search.cpan.org/dist/HTML-FillInForm-ForceUTF8/
+WWW: https://metacpan.org/release/HTML-FillInForm-ForceUTF8

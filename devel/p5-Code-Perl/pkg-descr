@@ -5,4 +5,4 @@ Perl from it. Rather than generating the Perl at parse time and having to
 worry about quoting, escaping, parentheses etc, you can just build a tree
 using Code::Perl and then dump out the correct Perl at the end.
 
-WWW: http://search.cpan.org/dist/Code-Perl/
+WWW: https://metacpan.org/release/Code-Perl

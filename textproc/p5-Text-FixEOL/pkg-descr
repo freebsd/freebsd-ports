@@ -1,4 +1,4 @@
 Converts the EOL and EOF conventions in the passed string to a
 canonicalization form that handles 'mixed' EOL conventions.
 
-WWW: http://search.cpan.org/dist/Text-FixEOL/
+WWW: https://metacpan.org/release/Text-FixEOL

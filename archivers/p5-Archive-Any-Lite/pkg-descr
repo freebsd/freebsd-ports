@@ -4,4 +4,4 @@ On the other hand, this isn't pluggable (this only supports file formats used in
 the CPAN toolchains), and this doesn't check mime types (at least as of this
 writing).
 
-WWW: http://search.cpan.org/dist/Archive-Any-Lite/
+WWW: https://metacpan.org/release/Archive-Any-Lite

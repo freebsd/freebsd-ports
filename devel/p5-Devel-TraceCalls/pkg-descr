@@ -2,4 +2,4 @@ Devel::TraceCalls allows subroutine calls to be tracked on a
 per-subroutine, per-package, per-class, or per object instance
 basis.
 
-WWW: http://search.cpan.org/dist/Devel-TraceCalls/
+WWW: https://metacpan.org/release/Devel-TraceCalls

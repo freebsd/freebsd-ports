@@ -2,4 +2,4 @@ Path::Resource is a module for combining local file and directory manipulation
 with URI manipulation. It allows you to effortlessly map local file locations
 to their URI equivalent.
 
-WWW: http://search.cpan.org/dist/Path-Resource/
+WWW: https://metacpan.org/release/Path-Resource

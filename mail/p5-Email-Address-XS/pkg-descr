@@ -20,4 +20,4 @@ according to RFC 2822 grammar.
 Additionally it has support also for named groups and so can be use instead of
 the Email::Address::List module.
 
-WWW: http://search.cpan.org/dist/Email-Address-XS/
+WWW: https://metacpan.org/release/Email-Address-XS

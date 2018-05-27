@@ -10,4 +10,4 @@ If you don't like importing a function that overrides Perl's not-so-useful
 builtin, then you can also import the same function as pp(), mnemonic for
 "pretty-print".
 
-WWW: http://search.cpan.org/dist/Data-Dump/
+WWW: https://metacpan.org/release/Data-Dump

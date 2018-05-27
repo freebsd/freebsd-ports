@@ -4,4 +4,4 @@ be 3, 4, or 5, while the hash length can be 128, 160, 192, 224, or 256 bits.
 Thus, there are a total of 15 different outputs. For better security, however,
 this module implements the 5-round, 256-bit output.
 
-WWW: http://search.cpan.org/dist/Digest-Haval256/
+WWW: https://metacpan.org/release/Digest-Haval256

@@ -2,4 +2,4 @@ URI::Fetch is a smart client for fetching HTTP pages, notably
 syndication feeds (RSS, Atom, and others), in an intelligent,
 bandwidth- and time-saving way.
 
-WWW: http://search.cpan.org/dist/URI-Fetch/
+WWW: https://metacpan.org/release/URI-Fetch

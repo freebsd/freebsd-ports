@@ -7,4 +7,4 @@ internal numeric format, and this information, along with the details of how
 to format the results, are cached. Hence, the first call to sysctl requires
 three system calls, however, subsequent calls require only one call.
 
-WWW: http://search.cpan.org/dist/BSD-Sysctl/
+WWW: https://metacpan.org/release/BSD-Sysctl

@@ -1,4 +1,4 @@
 This module allows you to generate QR Code on Terminal. This module
 use libqrencode '2.0.0' and above.
 
-WWW: http://search.cpan.org/dist/Term-QRCode/
+WWW: https://metacpan.org/release/Term-QRCode

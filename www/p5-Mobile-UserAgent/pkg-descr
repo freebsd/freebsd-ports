@@ -3,4 +3,4 @@ important being vendor and model. One reason for doing this would be to use
 this information to lookup vendor-model specific device characteristics in a
 database.
 
-WWW: http://search.cpan.org/dist/Mobile-UserAgent/
+WWW: https://metacpan.org/release/Mobile-UserAgent

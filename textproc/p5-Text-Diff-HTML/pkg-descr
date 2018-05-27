@@ -9,4 +9,4 @@ Within each hunk, all content is properly HTML encoded using
 HTML::Entities, and the various sections of the diff are marked up with
 the appropriate XHTML elements.
 
-WWW: http://search.cpan.org/dist/Text-Diff-HTML/
+WWW: https://metacpan.org/release/Text-Diff-HTML

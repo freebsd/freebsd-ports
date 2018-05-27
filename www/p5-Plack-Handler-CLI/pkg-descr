@@ -1,4 +1,4 @@
 Plack::Handler::CLI is a PSGI handler which provides a command line
 interface for PSGI applications.
 
-WWW: http://search.cpan.org/dist/Plack-Handler-CLI/
+WWW: https://metacpan.org/release/Plack-Handler-CLI

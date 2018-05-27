@@ -2,4 +2,4 @@ String type constraints that match valid and relaxed JSON. For the
 meaning of 'relaxed,' see JSON::XS. All the heavy lifting in the
 background is also done by JSON::XS.
 
-WWW: http://search.cpan.org/dist/MooseX-Types-JSON/
+WWW: https://metacpan.org/release/MooseX-Types-JSON

@@ -7,4 +7,4 @@ have been overloaded to allow vector cross and dot product
 operations. Vector math formula thus looks like vector math formula
 in perl programs using this package.
 
-WWW: http://search.cpan.org/dist/Math-VectorReal/
+WWW: https://metacpan.org/release/Math-VectorReal

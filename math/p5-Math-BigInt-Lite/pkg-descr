@@ -12,4 +12,4 @@ certain limitations build-in. In praxis, however, you will not feel them,
 because everytime something gets to big to pass as Lite (literally), it will
 upgrade the objects and operation in question to Math::BigInt.
 
-WWW: http://search.cpan.org/dist/Math-BigInt-Lite/
+WWW: https://metacpan.org/release/Math-BigInt-Lite

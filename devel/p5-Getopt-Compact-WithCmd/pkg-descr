@@ -1,4 +1,4 @@
 Getopt::Compact::WithCmd is yet another Getopt::* module. It allows you to
 define git-like options. In addition, usage can be set at the same time.
 
-WWW: http://search.cpan.org/dist/Getopt-Compact-WithCmd/
+WWW: https://metacpan.org/release/Getopt-Compact-WithCmd

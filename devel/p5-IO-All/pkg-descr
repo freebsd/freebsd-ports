@@ -5,4 +5,4 @@ oriented interface to greatly simplify your everyday Perl IO idioms.
 It exports a single function called io, which returns a new IO::All object.
 And that object can do it all!
 
-WWW: http://search.cpan.org/dist/IO-All/
+WWW: https://metacpan.org/release/IO-All

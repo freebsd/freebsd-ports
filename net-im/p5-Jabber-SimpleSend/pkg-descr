@@ -3,4 +3,4 @@ thing simply - send Jabber messages. It is useful for daemon
 processes, cron jobs or in any program that you want to be able to get
 your attention via Jabber.
 
-WWW: http://search.cpan.org/dist/Jabber-SimpleSend/
+WWW: https://metacpan.org/release/Jabber-SimpleSend

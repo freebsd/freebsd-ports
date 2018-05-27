@@ -10,4 +10,4 @@ and then run the tests.
 Concentrate on your data and what you're testing, not plan tests = scalar keys
 %test_cases> and a big foreach loop.
 
-WWW: http://search.cpan.org/dist/Test-TableDriven/
+WWW: https://metacpan.org/release/Test-TableDriven

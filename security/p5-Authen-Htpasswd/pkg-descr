@@ -4,4 +4,4 @@ SHA1, and crypt, as well as plain (cleartext) passwords.  Additional
 fields after username and password, if present, are accessible via the
 extra_info array.
 
-WWW: http://search.cpan.org/dist/Authen-Htpasswd/
+WWW: https://metacpan.org/release/Authen-Htpasswd

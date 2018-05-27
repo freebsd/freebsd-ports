@@ -3,4 +3,4 @@ internationalized text, and is the backend for right-to-left text.
 Pango is an integral part of the GTK+ and GNOME projects, but its
 code is platform- and toolkit-independent.
 
-WWW: http://search.cpan.org/dist/Pango/
+WWW: https://metacpan.org/release/Pango

@@ -12,4 +12,4 @@ its meta element.
 The parsed document's encoding is converted as this class's fixed
 internal encoding "UTF-8".
 
-WWW: http://search.cpan.org/dist/HTML-TagParser/
+WWW: https://metacpan.org/release/HTML-TagParser

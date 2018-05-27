@@ -15,4 +15,4 @@ way LWP::UserAgent::POE does.
 
 This is provided by the quickie_* functions which are exported by default.
 
-WWW: http://search.cpan.org/dist/POE-Quickie/
+WWW: https://metacpan.org/release/POE-Quickie

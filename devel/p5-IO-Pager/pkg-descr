@@ -6,4 +6,4 @@ IO::Pager subclasses are designed to programmatically decide whether or not to
 pipe a filehandle's output to a program specified in $ENV{PAGER}. Subclasses are
 only required to support filehandle output methods and close, namely
 
-WWW: http://search.cpan.org/dist/IO-Pager/
+WWW: https://metacpan.org/release/IO-Pager

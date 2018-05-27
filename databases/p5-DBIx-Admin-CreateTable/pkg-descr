@@ -16,4 +16,4 @@ Assumptions:
   which use sequences to populate primary key columns. The sequences are named
   after both the table and the column.
 
-WWW: http://search.cpan.org/dist/DBIx-Admin-CreateTable/
+WWW: https://metacpan.org/release/DBIx-Admin-CreateTable

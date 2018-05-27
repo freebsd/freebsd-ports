@@ -9,4 +9,4 @@ a number) subclasses. That means that HTTP::Exception->new(404)
 returns a HTTP::Exception::404 object, which in turn is a
 HTTP::Exception::Base - Object.
 
-WWW: http://search.cpan.org/dist/HTTP-Exception/
+WWW: https://metacpan.org/release/HTTP-Exception

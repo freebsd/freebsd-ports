@@ -6,4 +6,4 @@ well-formatted error string takes a lot of work.
 IPC::System::Simple takes the hard work out of calling external
 commands.
 
-WWW: http://search.cpan.org/dist/IPC-System-Simple/
+WWW: https://metacpan.org/release/IPC-System-Simple

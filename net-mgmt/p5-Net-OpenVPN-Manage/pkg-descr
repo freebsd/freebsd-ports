@@ -1,4 +1,4 @@
 This module connects to the OpenVPN management interface, executes commands
 on the interface, and returns the results or errors that result.
 
-WWW: http://search.cpan.org/dist/Net-OpenVPN-Manage/
+WWW: https://metacpan.org/release/Net-OpenVPN-Manage

@@ -5,4 +5,4 @@ that expects to read data from a filehandle, but you want the data to
 come from some other source and you don't want to read it all into
 memory and use IO::String.
 
-WWW: http://search.cpan.org/dist/IO-Callback/
+WWW: https://metacpan.org/release/IO-Callback

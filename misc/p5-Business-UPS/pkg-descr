@@ -3,6 +3,6 @@ destination zip code, and weight of the package. It then connects to
 the UPS calculation server and outputs the total shipping charges and
 the UPS zone.
 
-WWW: http://search.cpan.org/dist/Business-UPS/
+WWW: https://metacpan.org/release/Business-UPS
 
 Seamus Venasse <svenasse@polaris.ca>

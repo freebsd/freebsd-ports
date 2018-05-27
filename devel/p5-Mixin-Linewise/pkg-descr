@@ -2,4 +2,4 @@ With Mixin::Linewise::Readers and Mixin::Linewise::Writers, you can just write
 a method to handle handles, and methods for handling strings and filenames are
 added for you.
 
-WWW: http://search.cpan.org/dist/Mixin-Linewise/
+WWW: https://metacpan.org/release/Mixin-Linewise

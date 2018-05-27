@@ -12,4 +12,4 @@ the handle_event method. This method should be implemented by Pod::Eventual
 subclasses. If it isn't, Pod::Eventual's own handle_event will be called, and
 will raise an exception.
 
-WWW: http://search.cpan.org/dist/Pod-Eventual/
+WWW: https://metacpan.org/release/Pod-Eventual

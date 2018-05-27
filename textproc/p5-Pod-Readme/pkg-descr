@@ -1,4 +1,4 @@
 This module is a subclass of Pod::PlainText which provides additional
 POD markup for generating README files.
 
-WWW: http://search.cpan.org/dist/Pod-Readme/
+WWW: https://metacpan.org/release/Pod-Readme

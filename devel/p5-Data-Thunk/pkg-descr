@@ -2,4 +2,4 @@ This is an implementation of thunks a la Scalar::Defer, but uses
 Data::Swap and assignment to $_[0] in order to leave a minimal trace of
 the thunk.
 
-WWW: http://search.cpan.org/dist/Data-Thunk/
+WWW: https://metacpan.org/release/Data-Thunk

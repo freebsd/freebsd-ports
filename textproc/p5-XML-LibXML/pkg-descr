@@ -3,4 +3,4 @@ parser support yet), and the DOM tree.  It also provides an
 XML::XPath-like findnodes() interface, providing access to the XPath API
 in libxml2.
 
-WWW: http://search.cpan.org/dist/XML-LibXML/
+WWW: https://metacpan.org/release/XML-LibXML

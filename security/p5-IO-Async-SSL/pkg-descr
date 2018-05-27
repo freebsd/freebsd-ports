@@ -6,4 +6,4 @@ Primarily, it provides SSL_connect and SSL_listen, which yield
 IO::Socket::SSL-upgraded socket handles or IO::Async::SSLStream instances, and
 two forms of SSL_upgrade to upgrade an existing TCP connection to use SSL.
 
-WWW: http://search.cpan.org/dist/IO-Async-SSL/
+WWW: https://metacpan.org/release/IO-Async-SSL

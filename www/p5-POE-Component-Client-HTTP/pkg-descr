@@ -5,4 +5,4 @@ simultaneous HTTP transactions.  It lets other sessions run while HTTP
 transactions are being processed, and it lets several HTTP transactions
 be processed in parallel.
 
-WWW: http://search.cpan.org/dist/POE-Component-Client-HTTP/
+WWW: https://metacpan.org/release/POE-Component-Client-HTTP

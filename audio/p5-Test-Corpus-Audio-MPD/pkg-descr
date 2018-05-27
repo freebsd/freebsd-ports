@@ -9,4 +9,4 @@ and stop it if the MPD_TEST_OVERRIDE environment variable is true
 (die otherwise). Last it will run the test mpd with its newly
 created configuration file.
 
-WWW: http://search.cpan.org/dist/Test-Corpus-Audio-MPD/
+WWW: https://metacpan.org/release/Test-Corpus-Audio-MPD

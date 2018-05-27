@@ -5,4 +5,4 @@ usage of the value.
 Refer to File::HomeDir#METHODS for a list of which functions are supported.
 File::HomeDir::PathClass supports both original File::HomeDir interfaces.
 
-WWW: http://search.cpan.org/dist/File-HomeDir-PathClass/
+WWW: https://metacpan.org/release/File-HomeDir-PathClass

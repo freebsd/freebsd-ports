@@ -2,4 +2,4 @@ This module is meant to be an introduction to the internal operations of Neural
 Networks. It lets the user create a single node in a neural net based on the
 Perceptron model.
 
-WWW: http://search.cpan.org/dist/AI-Perceptron/
+WWW: https://metacpan.org/release/AI-Perceptron

@@ -4,4 +4,4 @@ and return either the list of filenames (the default), a printf-style
 formatted string for each file using its ID3 tags, or the actual Perl
 data structure representing the results.
 
-WWW: http://search.cpan.org/dist/MP3-Find/
+WWW: https://metacpan.org/release/MP3-Find

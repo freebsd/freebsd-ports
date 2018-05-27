@@ -2,4 +2,4 @@ The main idea of EzDate is that the object represents a specific date
 and time.  A variety of properties tells you information about that date
 and time such as hour, minute, day of month, weekday, etc.
 
-WWW: http://search.cpan.org/dist/Date-EzDate/
+WWW: https://metacpan.org/release/Date-EzDate

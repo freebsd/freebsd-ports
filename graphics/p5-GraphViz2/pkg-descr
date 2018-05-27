@@ -21,4 +21,4 @@ extending support to all the latest features of Graphviz.
 To ensure GraphViz2 is a light-weight module, Hash::FieldHash has been used to
 provide getters and setters, rather than Moose.
 
-WWW: http://search.cpan.org/dist/GraphViz2/
+WWW: https://metacpan.org/release/GraphViz2

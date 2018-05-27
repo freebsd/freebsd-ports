@@ -1,4 +1,4 @@
 Layout::Manager provides a simple interface for creating layout managers, or
 classes that size and position components withing a container.
 
-WWW: http://search.cpan.org/dist/Layout-Manager/
+WWW: https://metacpan.org/release/Layout-Manager

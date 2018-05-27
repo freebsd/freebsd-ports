@@ -2,4 +2,4 @@ Data::Diver provides the Dive() and DiveVal() functions for ad-hoc access to
 elements of deeply nested data structures, and the DiveRef(), DiveError(),
 DiveClear(), and DiveDie() support functions.
 
-WWW: http://search.cpan.org/dist/Data-Diver/
+WWW: https://metacpan.org/release/Data-Diver

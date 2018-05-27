@@ -1,4 +1,4 @@
 A view base class for Catalyst using XSLT.
 Your subclass should inherit from this class.
 
-WWW: http://search.cpan.org/dist/Catalyst-View-XSLT/
+WWW: https://metacpan.org/release/Catalyst-View-XSLT

@@ -8,4 +8,4 @@ system, in order to use it you also need to have at least one backend
 processing module installed, the processors supported are listed below along
 with the types of transactions supported.
 
-WWW: http://search.cpan.org/dist/Business-OnlinePayment/
+WWW: https://metacpan.org/release/Business-OnlinePayment

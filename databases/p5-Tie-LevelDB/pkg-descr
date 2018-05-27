@@ -4,4 +4,4 @@ http://code.google.com/p/leveldb/ for more details.
 Interface is implemented both as a reflection of an original LevelDB C++ API and
 a Perl-ish TIEHASH mechanism.
 
-WWW: http://search.cpan.org/dist/Tie-LevelDB/
+WWW: https://metacpan.org/release/Tie-LevelDB

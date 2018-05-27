@@ -4,4 +4,4 @@ should be able to concentrate on the functionality their module
 provides, instead of having to deal with the symbol table hackery
 involved when writing a plugin module.
 
-WWW: http://search.cpan.org/dist/Class-DBI-Plugin/
+WWW: https://metacpan.org/release/Class-DBI-Plugin

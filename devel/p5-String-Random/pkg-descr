@@ -2,4 +2,4 @@ String::Random is used to generate random strings.  It was written to
 make generating random passwords and such a little easier.  See the
 documentation in pod format in the module for more information.
 
-WWW: http://search.cpan.org/dist/String-Random/
+WWW: https://metacpan.org/release/String-Random

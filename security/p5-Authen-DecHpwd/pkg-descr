@@ -2,4 +2,4 @@ This perl module implements the LGI$HPWD password hashing function
 from VMS, and some associated VMS username and password handling
 functions.
 
-WWW: http://search.cpan.org/dist/Authen-DecHpwd/
+WWW: https://metacpan.org/release/Authen-DecHpwd

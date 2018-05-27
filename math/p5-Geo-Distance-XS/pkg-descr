@@ -2,4 +2,4 @@ The Geo::Distance::XS module provides faster C implementations of the
 distance calculations found in Geo::Distance.  See the documentation for
 that module for usage.
 
-WWW: http://search.cpan.org/dist/Geo-Distance-XS/
+WWW: https://metacpan.org/release/Geo-Distance-XS

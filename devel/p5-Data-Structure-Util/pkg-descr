@@ -11,4 +11,4 @@ the objects or detect if there is a circular reference.
 
 It is written in C for decent speed.
 
-WWW: http://search.cpan.org/dist/Data-Structure-Util/
+WWW: https://metacpan.org/release/Data-Structure-Util

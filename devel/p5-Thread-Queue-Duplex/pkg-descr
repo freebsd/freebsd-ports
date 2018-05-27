@@ -16,4 +16,4 @@ marshalling/unmarshalling to be performed. Thread::Queue::Duplex
 (aka TQD) is itself a Thread::Queue::Queueable object, thus
 permitting TQD objects to be passed between threads.
 
-WWW: http://search.cpan.org/dist/Thread-Queue-Duplex/
+WWW: https://metacpan.org/release/Thread-Queue-Duplex

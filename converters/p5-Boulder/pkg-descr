@@ -9,4 +9,4 @@ The end of a record is indicated by an empty delimiter alone on a
 line.  The delimiter is "=" by default, but can be adjusted by the
 user.
 
-WWW: http://search.cpan.org/dist/Boulder/
+WWW: https://metacpan.org/release/Boulder

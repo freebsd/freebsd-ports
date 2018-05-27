@@ -18,4 +18,4 @@ Major features of Net::FTPServer include:
    * Syslog logging.
    * Set TCP parameters.
 
-WWW: http://search.cpan.org/dist/Net-FTPServer/
+WWW: https://metacpan.org/release/Net-FTPServer

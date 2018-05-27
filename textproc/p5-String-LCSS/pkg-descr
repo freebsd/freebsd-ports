@@ -5,4 +5,4 @@ the susbstring length is one char or less.
 When used in an array context, lcss will returns the indexi of the match root
 in the two args.
 
-WWW: http://search.cpan.org/dist/String-LCSS/
+WWW: https://metacpan.org/release/String-LCSS

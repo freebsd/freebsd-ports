@@ -12,4 +12,4 @@ names to sub names, resolution of sub names to coderefs, and installation of
 coderefs into the target package) as method calls, which means they can be
 overridden to provide interesting behaviour.
 
-WWW: http://search.cpan.org/dist/Exporter-Tiny/
+WWW: https://metacpan.org/release/Exporter-Tiny

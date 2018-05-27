@@ -4,4 +4,4 @@ from. It also provides some subroutines to let you define and optionally share
 variables and subroutines between your code and the code you wish to evaluate.
 Finally there is some support for running your code in a safe compartment.
 
-WWW: http://search.cpan.org/dist/Eval-Context/
+WWW: https://metacpan.org/release/Eval-Context

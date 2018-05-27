@@ -4,4 +4,4 @@ Postgres.
 select Postgres system catalog and find out all columns, primary key and SERIAL
 type column.
 
-WWW: http://search.cpan.org/dist/Class-DBI-Pg/
+WWW: https://metacpan.org/release/Class-DBI-Pg

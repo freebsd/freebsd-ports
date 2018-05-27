@@ -7,4 +7,4 @@ Unique makes it easy to write this kind of applications, by providing a base
 class, taking care of all the IPC machinery needed to send messages to a running
 instance, and also handling the startup notification side.
 
-WWW: http://search.cpan.org/dist/Gtk2-Unique/
+WWW: https://metacpan.org/release/Gtk2-Unique

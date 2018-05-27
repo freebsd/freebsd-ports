@@ -1,4 +1,4 @@
 Sub::WrapPackages - add pre- and post-execution wrappers around all
 the subroutines in packages or around individual subs.
 
-WWW: http://search.cpan.org/dist/Sub-WrapPackages/
+WWW: https://metacpan.org/release/Sub-WrapPackages

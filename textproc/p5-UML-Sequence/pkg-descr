@@ -18,4 +18,4 @@ Then do this:
 
     genericseq.pl UML::Sequence::SimpleSeq inputfile | seq2svg.pl > output.svg
 
-WWW: http://search.cpan.org/dist/UML-Sequence/
+WWW: https://metacpan.org/release/UML-Sequence

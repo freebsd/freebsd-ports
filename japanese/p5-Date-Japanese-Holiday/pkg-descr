@@ -3,4 +3,4 @@ Holiday. this module supports from 1948-04-20 to now.
 
 is_holiday method return true value when the day is Holiday.
 
-WWW: http://search.cpan.org/dist/Date-Japanese-Holiday/
+WWW: https://metacpan.org/release/Date-Japanese-Holiday

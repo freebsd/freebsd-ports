@@ -1,4 +1,4 @@
 Test::mysqld automatically setups a mysqld instance in a temporary
 directory, and destroys it when the perl script exits.
 
-WWW: http://search.cpan.org/dist/Test-mysqld/
+WWW: https://metacpan.org/release/Test-mysqld

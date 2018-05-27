@@ -4,4 +4,4 @@ The Perl 5 module Net::MAC allows you to
     - convert a MAC address into a specified format
     - easily compare two MAC addresses for string or numeric equality
 
-WWW: http://search.cpan.org/dist/Net-MAC/
+WWW: https://metacpan.org/release/Net-MAC

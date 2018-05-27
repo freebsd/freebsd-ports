@@ -3,4 +3,4 @@ provides a convenient mechanism for generating HTML pages by combining
 "dynamic" data derived from a database or other computation with HTML templates
 that represent fixed or "static" content of a page.
 
-WWW: http://search.cpan.org/dist/HTML-Macro/
+WWW: https://metacpan.org/release/HTML-Macro

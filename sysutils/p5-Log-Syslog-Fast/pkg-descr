@@ -5,4 +5,4 @@ logging. Use of this specialized module is only recommended if 1) you
 must use network syslog as a messaging transport but 2) need to
 minimize the time spent in the logger.
 
-WWW: http://search.cpan.org/dist/Log-Syslog-Fast/
+WWW: https://metacpan.org/release/Log-Syslog-Fast

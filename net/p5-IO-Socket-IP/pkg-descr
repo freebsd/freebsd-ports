@@ -8,4 +8,4 @@ port numbers into sets of possible addresses to connect to or listen on. This
 allows it to work for IPv6 where the system supports it, while still falling
 back to IPv4-only on systems which don't.
 
-WWW: http://search.cpan.org/dist/IO-Socket-IP/
+WWW: https://metacpan.org/release/IO-Socket-IP

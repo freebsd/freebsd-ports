@@ -6,4 +6,4 @@ does not match, close will fail with EINVAL.
 
 Currently only writing is supported.
 
-WWW: http://search.cpan.org/dist/PerlIO-via-symlink/
+WWW: https://metacpan.org/release/PerlIO-via-symlink

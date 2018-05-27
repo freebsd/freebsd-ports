@@ -3,4 +3,4 @@ any valid IPv6 address as described in "RFC 2373 - 2.2 Text
 Representation of Addresses" but ::. Any string not compliant with
 such RFC will be rejected.
 
-WWW: http://search.cpan.org/dist/Regexp-IPv6/
+WWW: https://metacpan.org/release/Regexp-IPv6

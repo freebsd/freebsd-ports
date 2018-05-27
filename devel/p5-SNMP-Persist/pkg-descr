@@ -10,4 +10,4 @@ responder is a separate thread, which is not influenced by updates of
 MIB subtree data. The answer to a snmp request is fast and doesn't rely
 on potentially slow source of data.
 
-WWW: http://search.cpan.org/dist/SNMP-Persist/
+WWW: https://metacpan.org/release/SNMP-Persist

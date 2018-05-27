@@ -5,4 +5,4 @@ record or index value, but leaves their interpretation and
 implementation to the user supplied function &$read(). The only
 restriction is that positions must be integer scalars.
 
-WWW: http://search.cpan.org/dist/Search-Binary/
+WWW: https://metacpan.org/release/Search-Binary

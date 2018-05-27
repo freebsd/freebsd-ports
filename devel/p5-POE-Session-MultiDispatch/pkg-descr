@@ -12,4 +12,4 @@ they were defined.  When an event is triggered, all the callbacks are
 then executed in that same order (unless you muck around with said
 order).
 
-WWW: http://search.cpan.org/dist/POE-Session-MultiDispatch/
+WWW: https://metacpan.org/release/POE-Session-MultiDispatch

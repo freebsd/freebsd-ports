@@ -5,4 +5,4 @@ from both HTTP::Server::Simple::Recorder and an actual
 HTTP::Server::Simple subclass, and HTTP::Server::Simple::Recorder should
 be listed first.
 
-WWW: http://search.cpan.org/dist/HTTP-Server-Simple-Recorder/
+WWW: https://metacpan.org/release/HTTP-Server-Simple-Recorder

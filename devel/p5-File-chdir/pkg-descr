@@ -6,4 +6,4 @@ whole program.
 File::chdir gives you an alternative, $CWD and @CWD.  These two
 variables combine all the power of chdir(), File::Spec and Cwd.
 
-WWW: http://search.cpan.org/dist/File-chdir/
+WWW: https://metacpan.org/release/File-chdir

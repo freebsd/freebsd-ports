@@ -8,4 +8,4 @@ readable. A 33-character subset ([A-Z2-7=]) of US-ASCII
 is used, enabling 5 bits to be represented per printable
 character.
 
-WWW: http://search.cpan.org/dist/MIME-Base32/
+WWW: https://metacpan.org/release/MIME-Base32

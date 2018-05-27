@@ -3,4 +3,4 @@ character sets and 16 bit character sets like Unicode. The tables are efficient
 both in terms of space allocated and translation speed. The 16-bit strings is
 assumed to use network byte order.
 
-WWW: http://search.cpan.org/dist/Unicode-Map8/
+WWW: https://metacpan.org/release/Unicode-Map8

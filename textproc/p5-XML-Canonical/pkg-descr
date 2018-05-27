@@ -3,4 +3,4 @@ This module provides an implementation of Canonical XML Recommendation (Version
 
 It provides a XS wrapper around libxml2's Canonical XML code.
 
-WWW: http://search.cpan.org/dist/XML-Canonical/
+WWW: https://metacpan.org/release/XML-Canonical

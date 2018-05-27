@@ -3,4 +3,4 @@ suitable for test programs written using the Test::More framework. This
 makes it easy to integrate coding-standards enforcement into the build
 process.
 
-WWW: http://search.cpan.org/dist/Test-Perl-Critic/
+WWW: https://metacpan.org/release/Test-Perl-Critic

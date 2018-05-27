@@ -8,4 +8,4 @@ It also allows for authenticating cookie information against an
 external database through the use of the RT-Authen-CookieAuth
 extension.
 
-WWW: http://search.cpan.org/dist/RT-Authen-ExternalAuth/
+WWW: https://metacpan.org/release/RT-Authen-ExternalAuth

@@ -4,4 +4,4 @@ also be syntax checked, displayed with line numbers, executed, and eval'd.
 Code can be inserted anywhere in the generated program using a system of
 bookmarks and jumps.
 
-WWW: http://search.cpan.org/dist/Class-CodeStyler/
+WWW: https://metacpan.org/release/Class-CodeStyler

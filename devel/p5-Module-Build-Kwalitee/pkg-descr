@@ -2,4 +2,4 @@ Module::Build::Kwalitee subclasses Module::Build to provide boilerplate
 tests for your project. It does this by overriding new() and copying
 tests to your t directory when you run 'perl Build.PL'.
 
-WWW: http://search.cpan.org/dist/Module-Build-Kwalitee/
+WWW: https://metacpan.org/release/Module-Build-Kwalitee

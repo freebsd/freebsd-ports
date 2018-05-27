@@ -2,4 +2,4 @@ This module changes the behavior of the builtin function ref(). If ref()
 is called on an object that has requested an overloaded ref, the
 object's ->ref method will be called and its return value used instead.
 
-WWW: http://search.cpan.org/dist/UNIVERSAL-ref/
+WWW: https://metacpan.org/release/UNIVERSAL-ref

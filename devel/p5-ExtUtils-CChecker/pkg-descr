@@ -11,4 +11,4 @@ It may also be necessary to search for the correct library to link against, or
 for the right include directories to find header files in. This class also
 provides assistance here.
 
-WWW: http://search.cpan.org/dist/ExtUtils-CChecker/
+WWW: https://metacpan.org/release/ExtUtils-CChecker

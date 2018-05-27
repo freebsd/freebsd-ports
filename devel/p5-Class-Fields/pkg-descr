@@ -2,4 +2,4 @@ A collection of utility functions/methods for examining the data members of
 a class. It provides a nice, high-level interface that should stand the test
 of time and Perl upgrades nicely.
 
-WWW: http://search.cpan.org/dist/Class-Fields/
+WWW: https://metacpan.org/release/Class-Fields

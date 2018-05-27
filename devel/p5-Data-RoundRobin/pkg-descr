@@ -3,4 +3,4 @@ to an iterator, only the internal counter is reset to the beginning
 whenever it reaches the end. It might also be considered as a circular
 iterator.
 
-WWW: http://search.cpan.org/dist/Data-RoundRobin/
+WWW: https://metacpan.org/release/Data-RoundRobin

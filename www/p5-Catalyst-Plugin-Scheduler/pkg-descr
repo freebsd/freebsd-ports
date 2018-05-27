@@ -4,4 +4,4 @@ exceeds the specified time.  Depending on the level of traffic to the
 application, events may or may not run at exactly the correct time,
 but it should be enough to satisfy many basic scheduling needs.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Scheduler/
+WWW: https://metacpan.org/release/Catalyst-Plugin-Scheduler

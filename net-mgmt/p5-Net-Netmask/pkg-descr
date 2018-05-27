@@ -2,4 +2,4 @@ Net::Netmask parses and understand IPv4 CIDR blocks. It's built with an
 object-oriented interface. Nearly all functions are methods that operate
 on a Net::Netmask object.
 
-WWW: http://search.cpan.org/dist/Net-Netmask/
+WWW: https://metacpan.org/release/Net-Netmask

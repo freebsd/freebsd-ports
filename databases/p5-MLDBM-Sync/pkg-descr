@@ -4,4 +4,4 @@ lock/unlock.
 The new [Read]Lock()/UnLock() API can be used to serialize requests
 logically and improve performance for bundled reads & writes.
 
-WWW: http://search.cpan.org/dist/MLDBM-Sync/
+WWW: https://metacpan.org/release/MLDBM-Sync

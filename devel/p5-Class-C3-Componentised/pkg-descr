@@ -5,4 +5,4 @@ Please note: these are not plugins that can take precedence over methods
 declared in MyModule. If you want something like that, consider
 MooseX::Object::Pluggable.
 
-WWW: http://search.cpan.org/dist/Class-C3-Componentised/
+WWW: https://metacpan.org/release/Class-C3-Componentised

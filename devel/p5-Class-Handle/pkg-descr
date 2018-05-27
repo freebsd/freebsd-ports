@@ -8,4 +8,4 @@ UNIVERSAL, Class::ISA and Class::Inspector for obtaining information
 about a Class, and some additional task methods, such as load to common
 tasks relating to classes.
 
-WWW: http://search.cpan.org/dist/Class-Handle/
+WWW: https://metacpan.org/release/Class-Handle

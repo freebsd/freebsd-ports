@@ -12,4 +12,4 @@ Unlike Template Toolkit, Template::Tiny will process templates without a
 compile phase (but despite this is still quicker, owing to heavy use of
 the Perl regular expression engine.
 
-WWW: http://search.cpan.org/dist/Template-Tiny/
+WWW: https://metacpan.org/release/Template-Tiny

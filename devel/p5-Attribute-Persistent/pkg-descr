@@ -9,4 +9,4 @@ It uses MLDBM, so you can use complex data structures in your arrays and
 hashes. It uses AnyDBM_File, so if you really care about which DBM you get, you
 can modify AnyDBM_File::ISA in a BEGIN block after loading this module.
 
-WWW: http://search.cpan.org/dist/Attribute-Persistent/
+WWW: https://metacpan.org/release/Attribute-Persistent

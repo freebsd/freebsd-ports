@@ -5,4 +5,4 @@ larger cookies than that it's considered a no-no.
 This module provides a pretty simple interface to generate small cookies that
 are under a certain limit, without wasting too much effort.
 
-WWW: http://search.cpan.org/dist/CGI-Cookie-Splitter/
+WWW: https://metacpan.org/release/CGI-Cookie-Splitter

@@ -3,4 +3,4 @@ TOML exports two subroutines, from_toml and to_toml.
 
 [1] https://github.com/mojombo/toml
 
-WWW: http://search.cpan.org/dist/TOML/
+WWW: https://metacpan.org/release/TOML

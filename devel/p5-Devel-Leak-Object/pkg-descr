@@ -6,4 +6,4 @@ Object tracking can be enabled on a per object basis or globally.  Any
 objects thus tracked are remembered until DESTROYed; details of any
 objects left are printed out to stderr at END-time.
 
-WWW: http://search.cpan.org/dist/Devel-Leak-Object/
+WWW: https://metacpan.org/release/Devel-Leak-Object

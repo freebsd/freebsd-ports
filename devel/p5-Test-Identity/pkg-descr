@@ -6,4 +6,4 @@ overload stringification or numification.
 
 It also provides better diagnostics if the test fails.
 
-WWW: http://search.cpan.org/dist/Test-Identity/
+WWW: https://metacpan.org/release/Test-Identity

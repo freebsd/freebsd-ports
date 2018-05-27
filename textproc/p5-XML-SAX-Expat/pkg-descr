@@ -5,4 +5,4 @@ programmer intervention.  Those of you familiar with the DBI will be right at
 home.  Some of the designs come from the Java JAXP specification (SAX part),
 only without the javaness.
 
-WWW: http://search.cpan.org/dist/XML-SAX-Expat/
+WWW: https://metacpan.org/release/XML-SAX-Expat

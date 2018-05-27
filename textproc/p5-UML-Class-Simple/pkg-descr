@@ -2,4 +2,4 @@ UML::Class::Simple is a Perl CPAN module that generates UML class
 diagrams (PNG format, GIF format, or dot source) automatically from
 Perl 5 source or Perl 5 runtime.
 
-WWW: http://search.cpan.org/dist/UML-Class-Simple/
+WWW: https://metacpan.org/release/UML-Class-Simple

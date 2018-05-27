@@ -12,4 +12,4 @@ Lexical::Sub is implemented through the mechanism of Lexical::Var. Its distinct
 name and declaration syntax exist to make lexical subroutine declarations
 clearer.
 
-WWW: http://search.cpan.org/dist/Lexical-Var/
+WWW: https://metacpan.org/release/Lexical-Var

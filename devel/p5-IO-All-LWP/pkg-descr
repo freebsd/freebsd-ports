@@ -4,4 +4,4 @@ this module is not used directly: you just use IO::All, which knows when to
 autoload IO::All::HTTP, IO::All::HTTPS, IO::All::FTP, or IO::All::Gopher, which
 implement the specific protocols based on IO::All::LWP.
 
-WWW: http://search.cpan.org/dist/IO-All-LWP/
+WWW: https://metacpan.org/release/IO-All-LWP

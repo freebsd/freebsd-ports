@@ -5,4 +5,4 @@ Log messages are written using the flock file locking mechanism on a
 per write basis which means that this module is suitable for sharing a
 log file in a multitasking environment.
 
-WWW: http://search.cpan.org/dist/Log-Dispatch-FileShared/
+WWW: https://metacpan.org/release/Log-Dispatch-FileShared

@@ -2,4 +2,4 @@ Test::POE::Client::TCP is a POE component that provides a TCP client
 framework for inclusion in client component test cases, instead of
 having to roll your own.
 
-WWW: http://search.cpan.org/dist/Test-POE-Client-TCP/
+WWW: https://metacpan.org/release/Test-POE-Client-TCP

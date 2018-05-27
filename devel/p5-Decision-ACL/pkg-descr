@@ -4,4 +4,4 @@ and boring. This set of modules has all the convenient logic behind access
 control lists and provide an easy interface to it. It allows you to build
 custom ACL's, and provide the mechanisms to run the ACL against data.
 
-WWW: http://search.cpan.org/dist/Decision-ACL/
+WWW: https://metacpan.org/release/Decision-ACL

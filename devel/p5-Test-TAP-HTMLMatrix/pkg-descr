@@ -2,4 +2,4 @@ This module is a wrapper for a template and some visualization classes,
 that knows to take a Test::TAP::Model object, which encapsulates test
 results, and produce a pretty html file.
 
-WWW: http://search.cpan.org/dist/Test-TAP-HTMLMatrix/
+WWW: https://metacpan.org/release/Test-TAP-HTMLMatrix

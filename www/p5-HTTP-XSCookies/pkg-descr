@@ -1,4 +1,4 @@
 HTTP::XSCookies implements cookie creation (baking) and parsing (crushing) using
 XS, therefore improving the speed of a pure Perl implementation.
 
-WWW: http://search.cpan.org/dist/HTTP-XSCookies/
+WWW: https://metacpan.org/release/HTTP-XSCookies

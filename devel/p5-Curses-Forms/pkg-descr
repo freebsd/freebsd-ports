@@ -5,4 +5,4 @@ a flexible OO framework to manage a collection of widgets on forms and dialogs.
 While intended to be used in the Curses::Application framework, it can also be
 used alone with Curses::Widgets for quick and dirty interfaces.
 
-WWW: http://search.cpan.org/dist/CursesForms/
+WWW: https://metacpan.org/release/CursesForms

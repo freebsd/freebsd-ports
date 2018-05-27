@@ -4,4 +4,4 @@ external modules. Rather than munging the %INC by hand to mark these external
 modules as loaded, so they are not attempted to be loaded by perl, this module
 offers you a very simple way to mark modules as loaded and/or unloaded.
 
-WWW: http://search.cpan.org/dist/Module-Loaded/
+WWW: https://metacpan.org/release/Module-Loaded

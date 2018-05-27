@@ -11,4 +11,4 @@ HTML::Truncate attempts to account for those two problems by padding
 truncation for spacing and entities and closing any tags that remain
 open at the point of truncation.
 
-WWW: http://search.cpan.org/dist/HTML-Truncate/
+WWW: https://metacpan.org/release/HTML-Truncate

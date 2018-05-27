@@ -10,4 +10,4 @@ lexically scoped;
     User-defined line-breaking subroutines are passed their data
 source as a reference to a scalar;
 
-WWW: http://search.cpan.org/dist/Perl6-Form/
+WWW: https://metacpan.org/release/Perl6-Form

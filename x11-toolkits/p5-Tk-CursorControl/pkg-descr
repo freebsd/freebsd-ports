@@ -2,4 +2,4 @@ Tk::CursorControl is-NOT-a Tk::Widget. Rather, it uses Tk and encompasses a
 collection of methods used to manipulate the cursor (aka pointer)
 programmatically from a Tk program.
 
-WWW: http://search.cpan.org/dist/Tk-CursorControl/
+WWW: https://metacpan.org/release/Tk-CursorControl

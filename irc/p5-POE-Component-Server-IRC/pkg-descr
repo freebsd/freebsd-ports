@@ -3,4 +3,4 @@ It's based on hybrid-7.2.2 and has been tested against
 hybrid-7.2.2 and hybrid-7.0. It supports the TS5 server-to-server
 protocol so should support networks based on this protocol.
 
-WWW: http://search.cpan.org/dist/POE-Component-Server-IRC/
+WWW: https://metacpan.org/release/POE-Component-Server-IRC

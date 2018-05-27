@@ -3,4 +3,4 @@ filter HTML and strip scripting snipets which can cause XSS.
 Additionally, due to some nice features from HTML::StripScripts,
 this module can work really flexibly on treating HTML.
 
-WWW: http://search.cpan.org/dist/Template-Plugin-StripScripts/
+WWW: https://metacpan.org/release/Template-Plugin-StripScripts

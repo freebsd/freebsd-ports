@@ -1,4 +1,4 @@
 Test::Mock::LWP provides easy mocking of LWP packages:
 HTTP::Request, HTTP::Response, LWP and LWP::UserAgent.
 
-WWW: http://search.cpan.org/dist/Test-Mock-LWP/
+WWW: https://metacpan.org/release/Test-Mock-LWP

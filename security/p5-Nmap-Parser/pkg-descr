@@ -4,4 +4,4 @@ nmap. This will enable anyone who utilizes nmap to quickly create fast and
 robust security scripts that utilize the powerful port scanning abilities of
 nmap.
 
-WWW: http://search.cpan.org/dist/Nmap-Parser/
+WWW: https://metacpan.org/release/Nmap-Parser

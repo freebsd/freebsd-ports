@@ -7,4 +7,4 @@ returns them, sorted into order by their string value.  The sort_by
 function sorts them according to the string value returned by the
 extra function, when given each value.
 
-WWW: http://search.cpan.org/dist/List-UtilsBy/
+WWW: https://metacpan.org/release/List-UtilsBy

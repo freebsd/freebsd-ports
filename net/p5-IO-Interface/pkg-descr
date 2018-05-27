@@ -5,4 +5,4 @@ for identifying runtime characteristics of cards, such as broadcast
 addresses, and finding interfaces that satisfy certain criteria,
 such as the ability to multicast.
 
-WWW: http://search.cpan.org/dist/IO-Interface/
+WWW: https://metacpan.org/release/IO-Interface

@@ -2,4 +2,4 @@ Plack::Middleware::ForceEnv modifies the environment passed to the application
 by adding your specified key value pairs. This is primarily useful when testing
 apps under plackup (or similar) in a development environment.
 
-WWW: http://search.cpan.org/dist/Plack-Middleware-ForceEnv/
+WWW: https://metacpan.org/release/Plack-Middleware-ForceEnv

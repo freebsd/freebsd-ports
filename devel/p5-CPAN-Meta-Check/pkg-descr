@@ -1,4 +1,4 @@
 CPAN::Meta::Check verifies if requirements described in a CPAN::Meta
 object are present.
 
-WWW: http://search.cpan.org/dist/CPAN-Meta-Check/
+WWW: https://metacpan.org/release/CPAN-Meta-Check

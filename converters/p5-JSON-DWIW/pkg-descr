@@ -8,4 +8,4 @@ JSON instead of throwing an exception. It also means that output will be
 strict JSON, while accepted input will be flexible, without having to set
 any options.
 
-WWW: http://search.cpan.org/dist/JSON-DWIW/
+WWW: https://metacpan.org/release/JSON-DWIW

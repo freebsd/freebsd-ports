@@ -1,4 +1,4 @@
 AnyEvent::CacheDNS provides a very simple DNS resolver that caches its results
 and can improve the connection times to remote hosts.
 
-WWW: http://search.cpan.org/dist/AnyEvent-CacheDNS/
+WWW: https://metacpan.org/release/AnyEvent-CacheDNS

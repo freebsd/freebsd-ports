@@ -2,4 +2,4 @@ By default, this module exports a single function 'prompt'.  It
 prompts the user to enter some input, and returns an object that
 represents the user input.
 
-WWW: http://search.cpan.org/dist/IO-Prompt/
+WWW: https://metacpan.org/release/IO-Prompt

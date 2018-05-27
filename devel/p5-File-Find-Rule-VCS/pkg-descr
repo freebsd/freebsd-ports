@@ -5,4 +5,4 @@ File::Find::Rule::VCS provides quick and convenient methods to exclude the
 version control directories of several major Version Control Systems (currently
 CVS, subversion, and Bazaar).
 
-WWW: http://search.cpan.org/dist/File-Find-Rule-VCS/
+WWW: https://metacpan.org/release/File-Find-Rule-VCS

@@ -6,4 +6,4 @@ cached version on subsequent loads. Documents are reloaded whenever the document
 file changes. Changes to other files referenced during parsing also cause a
 reload. This includes external DTDs, external entities or XIncludes.
 
-WWW: http://search.cpan.org/dist/XML-LibXML-Cache/
+WWW: https://metacpan.org/release/XML-LibXML-Cache

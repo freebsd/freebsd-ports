@@ -4,4 +4,4 @@ Adds a pager method to your class that can query using SQL::Abstract
 where clauses, and limit the number of rows returned to a specific
 subset.
 
-WWW: http://search.cpan.org/dist/Class-DBI-Plugin-Pager/
+WWW: https://metacpan.org/release/Class-DBI-Plugin-Pager

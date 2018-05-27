@@ -8,6 +8,6 @@ detail table has a reference (FOREIGN KEY) to a generic table (i.e.
 Customers and Bills) with some index (tipically an integer).
 
 
-WWW: http://search.cpan.org/dist/DBIx-Browse/
+WWW: https://metacpan.org/release/DBIx-Browse
 
 Philip M. Gollucci <philip@p6m7g8.com>

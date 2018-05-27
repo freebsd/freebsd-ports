@@ -3,4 +3,4 @@ repositories. The main difference between Pushmi and other replication
 tools is that Pushmi makes the "slave" repositories writable by normal
 Subversion clients.
 
-WWW: http://search.cpan.org/dist/Pushmi/
+WWW: https://metacpan.org/release/Pushmi

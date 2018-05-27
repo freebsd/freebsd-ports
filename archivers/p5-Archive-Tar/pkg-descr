@@ -8,4 +8,4 @@ An object of class Archive::Tar represents a .tar(.gz) archive full of files
 and things.
 
 Roman Shterenzon <roman@xpert.com>
-WWW: http://search.cpan.org/dist/Archive-Tar/
+WWW: https://metacpan.org/release/Archive-Tar

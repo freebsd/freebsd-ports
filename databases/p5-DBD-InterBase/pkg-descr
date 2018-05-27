@@ -1,4 +1,4 @@
 DBD::InterBase is a Perl module which works with the DBI module to
 provide access to InterBase/Firebird/Yaffil databases.
 
-WWW: http://search.cpan.org/dist/DBD-InterBase/
+WWW: https://metacpan.org/release/DBD-InterBase

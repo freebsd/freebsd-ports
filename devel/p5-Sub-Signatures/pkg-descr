@@ -5,4 +5,4 @@ module aims to rectify that.
 With this module, we can specify subroutine signatures and automatically
 dispatch on the number of arguments.
 
-WWW: http://search.cpan.org/dist/Sub-Signatures/
+WWW: https://metacpan.org/release/Sub-Signatures

@@ -3,4 +3,4 @@ Data::Dumper, but grew out to be a set of low-level data
 introspection utilities that no other module provided yet, using
 the lowest level of the perl internals API as possible.
 
-WWW: http://search.cpan.org/dist/Data-Peek/
+WWW: https://metacpan.org/release/Data-Peek

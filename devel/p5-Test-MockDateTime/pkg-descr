@@ -16,4 +16,4 @@ of the test file.
 The date to get mocked must be in a format that is recognized
 by DateTime::Format::DateParse.
 
-WWW: http://search.cpan.org/dist/Test-MockDateTime/
+WWW: https://metacpan.org/release/Test-MockDateTime

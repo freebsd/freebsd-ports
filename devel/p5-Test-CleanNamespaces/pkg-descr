@@ -3,4 +3,4 @@ functions you might have forgotten to remove with namespace::autoclean or
 namespace::clean and are therefore available to be called as methods, which
 usually isn't want you want.
 
-WWW: http://search.cpan.org/dist/Test-CleanNamespaces/
+WWW: https://metacpan.org/release/Test-CleanNamespaces

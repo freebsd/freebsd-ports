@@ -9,4 +9,4 @@ When you add some extra parameters, you will receive complete XML
 text, including XML head and root element (if none were defined in
 text, then some will be added).
 
-WWW: http://search.cpan.org/dist/XML-Clean/
+WWW: https://metacpan.org/release/XML-Clean

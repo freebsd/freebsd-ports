@@ -10,4 +10,4 @@ its accessor makers at the end of the chain.
 The accessor generators also generate documentation ready to be used with
 Sub::Documentation.
 
-WWW: http://search.cpan.org/dist/Class-Accessor-Complex/
+WWW: https://metacpan.org/release/Class-Accessor-Complex

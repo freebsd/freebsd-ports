@@ -12,4 +12,4 @@ Pretty-printing XML is not as CPU-efficient as dumping it out sloppily, so
 unless you're pretty sure that a human is going to need to make sense of your
 XML, you should probably not use this module.
 
-WWW: http://search.cpan.org/dist/XML-LibXML-PrettyPrint/
+WWW: https://metacpan.org/release/XML-LibXML-PrettyPrint

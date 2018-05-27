@@ -8,4 +8,4 @@ user who actually wants to read what the text says.
 What Text::Unidecode provides is a function, unidecode(...) that takes
 Unicode data and tries to represent it in US-ASCII characters.
 
-WWW: http://search.cpan.org/dist/Text-Unidecode/
+WWW: https://metacpan.org/release/Text-Unidecode

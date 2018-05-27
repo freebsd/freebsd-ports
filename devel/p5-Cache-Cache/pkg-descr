@@ -5,7 +5,7 @@ Cache::SizeAwareFileCache, Cache::SizeAwareMemoryCache, and
 Cache::SizeAwareSharedMemoryCache classes.  This work replaces
 File::Cache and IPC::Cache.
 
-WWW: http://search.cpan.org/dist/Cache-Cache/
+WWW: https://metacpan.org/release/Cache-Cache
 
 -Anton
 <tobez@FreeBSD.org>

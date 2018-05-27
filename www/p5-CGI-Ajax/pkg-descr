@@ -7,4 +7,4 @@ with a document-defined event (such as onClick, onKeyUp, etc). Only
 in the more advanced implementations of a exported perl method would
 a user need to write any javascript.
 
-WWW: http://search.cpan.org/dist/CGI-Ajax/
+WWW: https://metacpan.org/release/CGI-Ajax

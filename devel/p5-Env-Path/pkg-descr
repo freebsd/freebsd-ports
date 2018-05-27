@@ -3,4 +3,4 @@ defined as that subclass of environment variables which name an
 ordered list of filesystem elements separated by a platform-standard
 separator (typically ':' on UNIX and ';' on Windows).
 
-WWW: http://search.cpan.org/dist/Env-Path/
+WWW: https://metacpan.org/release/Env-Path

@@ -4,4 +4,4 @@ The MPC library is a C library for multiple-precision complex number
 computations with exact rounding. It is based on the MPFR C library
 which, in turn, is based on the GMP C library.
 
-WWW: http://search.cpan.org/dist/Math-MPC/
+WWW: https://metacpan.org/release/Math-MPC

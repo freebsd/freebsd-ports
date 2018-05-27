@@ -11,4 +11,4 @@ framework, Poet, designed to take maximum advantage of its routing and content
 generation features. It can also be used as the templating layer for web
 frameworks such as Catalyst and Dancer.
 
-WWW: http://search.cpan.org/dist/Mason/
+WWW: https://metacpan.org/release/Mason

@@ -9,4 +9,4 @@ It makes several checks:
       mailbox is valid. It uses a combination of MAIL and RCPT commands which
       simulates sending an email. It can detect bad mailboxes in many cases.
 
-WWW: http://search.cpan.org/dist/Mail-CheckUser/
+WWW: https://metacpan.org/release/Mail-CheckUser

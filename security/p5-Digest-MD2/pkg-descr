@@ -6,4 +6,4 @@ output a 128-bit "fingerprint" or "message digest" of the input.
 The Digest::MD2 programming interface is identical to the interface
 of Digest::MD5.  MD2 is described in RFC 1115.
 
-WWW: http://search.cpan.org/dist/Digest-MD2/
+WWW: https://metacpan.org/release/Digest-MD2

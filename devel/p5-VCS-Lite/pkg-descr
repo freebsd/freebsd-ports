@@ -6,4 +6,4 @@ management.
 It makes use of the module Algorithm::Diff. It provides the facility for basic
 diffing, patching and merging.
 
-WWW: http://search.cpan.org/dist/VCS-Lite/
+WWW: https://metacpan.org/release/VCS-Lite

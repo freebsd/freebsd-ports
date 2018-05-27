@@ -4,4 +4,4 @@ additional input at any time without exiting. This is significantly
 different from the traditional CGI model of web applications in which a
 program is restarted for each new request.
 
-WWW: http://search.cpan.org/dist/Continuity/
+WWW: https://metacpan.org/release/Continuity

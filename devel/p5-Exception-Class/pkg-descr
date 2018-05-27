@@ -7,4 +7,4 @@ Regardless, the ability to declare all your exceptions at compile time
 is a fairly useful trick and helps push people towards more structured
 use of exceptions.
 
-WWW: http://search.cpan.org/dist/Exception-Class/
+WWW: https://metacpan.org/release/Exception-Class

@@ -4,4 +4,4 @@ modules.  At present, there is generic XML comparison support, as
 well as modules for dealing with XML::SAX, XML::Twig and XML::XPath
 handlers.
 
-WWW: http://search.cpan.org/dist/Test-XML/
+WWW: https://metacpan.org/release/Test-XML

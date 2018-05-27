@@ -12,4 +12,4 @@ You can also specify the other configuration via the 'syslog' config key, e.g.
       facility: 'local0'
       ident: 'my_app'
 
-WWW: http://search.cpan.org/dist/Dancer-Logger-Syslog/
+WWW: https://metacpan.org/release/Dancer-Logger-Syslog

@@ -4,4 +4,4 @@ getter and setter routines. Lvalue assumes its object uses the
 relatively standard getter / setter idiom where any arguments is a
 setter, and no arguments is a getter.
 
-WWW: http://search.cpan.org/dist/Lvalue/
+WWW: https://metacpan.org/release/Lvalue

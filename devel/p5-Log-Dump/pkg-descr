@@ -7,4 +7,4 @@ file if you prefer. Also, you can use these logging methods as class
 methods or object methods (though usually you don't want to mix them,
 especially when you're doing something special).
 
-WWW: http://search.cpan.org/dist/Log-Dump/
+WWW: https://metacpan.org/release/Log-Dump

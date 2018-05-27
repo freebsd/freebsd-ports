@@ -13,4 +13,4 @@ host could contain a random challenge-string, which each end would then turn
 into a signature, and use that signature as the encryption-key for the session
 (or the reply).
 
-WWW: http://search.cpan.org/dist/Crypt-Tea_JS/
+WWW: https://metacpan.org/release/Crypt-Tea_JS

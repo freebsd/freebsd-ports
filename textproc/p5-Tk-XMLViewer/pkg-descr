@@ -2,4 +2,4 @@ Tk::XMLViewer is an widget inherited from Tk::Text which displays XML
 in a hierarchical tree. You can use the plus and minus buttons to
 hide/show parts of the tree.
 
-WWW: http://search.cpan.org/dist/Tk-XMLViewer/
+WWW: https://metacpan.org/release/Tk-XMLViewer

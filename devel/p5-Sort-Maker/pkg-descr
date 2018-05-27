@@ -5,4 +5,4 @@ sort subroutines in one of four styles, plain, orcish manouver,
 Schwartzian Transform and the Guttman-Rosler Transform. You can also get
 the source for a sort sub you create via the sorter_source call.
 
-WWW: http://search.cpan.org/dist/Sort-Maker/
+WWW: https://metacpan.org/release/Sort-Maker

@@ -2,4 +2,4 @@ PL_check is an array indexed by opcode number (op_type) that contains
 function pointers invoked as the last stage of optree compilation,
 per op.
 
-WWW: http://search.cpan.org/dist/B-OPCheck/
+WWW: https://metacpan.org/release/B-OPCheck

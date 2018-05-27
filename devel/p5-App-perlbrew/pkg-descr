@@ -11,4 +11,4 @@ For the documentation of perlbrew usage see perlbrew command on CPAN, or by
 running perlbrew help. The following documentation features the API of
 App::perlbrew module, and may not be remotely close to what your want to read.
 
-WWW: http://search.cpan.org/dist/App-perlbrew/
+WWW: https://metacpan.org/release/App-perlbrew

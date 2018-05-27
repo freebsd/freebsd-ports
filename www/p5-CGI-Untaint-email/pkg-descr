@@ -3,4 +3,4 @@ valid RFC2822 mailbox format.
 
 The resulting value will be a Mail::Address instance.
 
-WWW: http://search.cpan.org/dist/CGI-Untaint-email/
+WWW: https://metacpan.org/release/CGI-Untaint-email

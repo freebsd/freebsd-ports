@@ -3,6 +3,6 @@ in order of preference, and then to pick the best language of those
 available.  Different 'dialects' given by the 'territory' part of the
 language specifier (such as en, en_GB, and en_US) are also supported.
 
-WWW: http://search.cpan.org/dist/Lingua-Preferred/
+WWW: https://metacpan.org/release/Lingua-Preferred
 
 Seamus Venasse <svenasse@polaris.ca>

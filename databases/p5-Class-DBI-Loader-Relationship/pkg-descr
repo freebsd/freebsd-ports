@@ -6,4 +6,4 @@ reverse relationships defined for has-many relationships, and for
 has-a relationships to be defined for the linkages surrounding a
 many-to-many table.
 
-WWW: http://search.cpan.org/dist/Class-DBI-Loader-Relationship/
+WWW: https://metacpan.org/release/Class-DBI-Loader-Relationship

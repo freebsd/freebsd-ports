@@ -1,4 +1,4 @@
 HTML::Entities::Interpolate is a pure Perl module to call
 HTML::Entities::encode_entities, via a hash, within a string.
 
-WWW: http://search.cpan.org/dist/HTML-Entities-Interpolate/
+WWW: https://metacpan.org/release/HTML-Entities-Interpolate

@@ -6,4 +6,4 @@ get an error:
 But for classes that inherit from Class::BlackHole, unhandled methods
 become just no-operations.
 
-WWW: http://search.cpan.org/dist/Class-BlackHole/
+WWW: https://metacpan.org/release/Class-BlackHole

@@ -4,4 +4,4 @@ information with your class (instead of as separate objects).  This
 allows you to pass around just one object without worrying about a trail
 of DBI handles behind it.
 
-WWW: http://search.cpan.org/dist/Ima-DBI/
+WWW: https://metacpan.org/release/Ima-DBI

@@ -8,4 +8,4 @@ several important differences, especially when it comes to WHERE
 clauses. I have modified the concepts used to make the SQL easier to
 generate from Perl data structures and, IMO, more intuitive.
 
-WWW: http://search.cpan.org/dist/SQL-Abstract/
+WWW: https://metacpan.org/release/SQL-Abstract

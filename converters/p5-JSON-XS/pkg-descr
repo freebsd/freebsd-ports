@@ -8,4 +8,4 @@ modules, none of them correctly handle all corner cases, and in most
 cases their maintainers are unresponsive, gone missing, or not listening
 to bug reports for other reasons.
 
-WWW: http://search.cpan.org/dist/JSON-XS/
+WWW: https://metacpan.org/release/JSON-XS

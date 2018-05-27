@@ -6,4 +6,4 @@ response with template rendering, IO-bound delayed response (like
 fetching third party API or XML feeds), server push streaming and
 long-poll Comet in a clean unified API.
 
-WWW: http://search.cpan.org/dist/Tatsumaki/
+WWW: https://metacpan.org/release/Tatsumaki

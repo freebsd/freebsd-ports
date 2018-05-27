@@ -3,4 +3,4 @@ primarily intended for storing session data in browser cookies, but
 could be used with other backend storage where security of stored
 session data is important.
 
-WWW: http://search.cpan.org/dist/Session-Storage-Secure/
+WWW: https://metacpan.org/release/Session-Storage-Secure

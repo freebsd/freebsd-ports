@@ -7,4 +7,4 @@ their signature.
 Dispatching will happen based on the runtime signature of the subroutine or
 method call.
 
-WWW: http://search.cpan.org/dist/Sub-Multi/
+WWW: https://metacpan.org/release/Sub-Multi

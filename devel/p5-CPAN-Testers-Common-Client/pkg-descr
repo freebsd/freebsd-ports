@@ -4,4 +4,4 @@ Testers in a way that is properly parsed by the extraction and report tools.
 It is meant to be used by all the CPAN clients (and standalone tools) that
 want/need to support the CPAN Testers infrastructure.
 
-WWW: http://search.cpan.org/dist/CPAN-Testers-Common-Client/
+WWW: https://metacpan.org/release/CPAN-Testers-Common-Client

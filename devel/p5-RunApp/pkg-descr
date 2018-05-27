@@ -5,4 +5,4 @@ development or deployment.
 It builds the config files required by the services from the $config
 hash, such as apache's httpd.conf.
 
-WWW: http://search.cpan.org/dist/RunApp/
+WWW: https://metacpan.org/release/RunApp

@@ -4,5 +4,5 @@ schema from an existing database.  You can save the schema to disk and restore
 it in a different process.  Most importantly, DBIx::DBSchema can write SQL
 CREATE statements for different databases from a single source.
 
-WWW: http://search.cpan.org/dist/DBIx-DBSchema/
+WWW: https://metacpan.org/release/DBIx-DBSchema
 WWW: http://www.420.am/dbix-dbschema/

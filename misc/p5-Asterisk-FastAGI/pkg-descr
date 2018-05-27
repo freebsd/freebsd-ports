@@ -7,4 +7,4 @@ from Asterisk.
 Read the Net::Server for more information about the logging facilities,
 configuration, etc.
 
-WWW: http://search.cpan.org/dist/Asterisk-FastAGI/
+WWW: https://metacpan.org/release/Asterisk-FastAGI

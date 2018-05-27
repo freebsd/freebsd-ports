@@ -6,4 +6,4 @@ wide variety of platforms. It does so without external dependencies
 (except on Windows), and has a minimal but useful user interface
 patterned after the module Bytes::Random::Secure.
 
-WWW: http://search.cpan.org/dist/Bytes-Random-Secure-Tiny/
+WWW: https://metacpan.org/release/Bytes-Random-Secure-Tiny

@@ -1,4 +1,4 @@
 Test::Compile lets you check the validity of a Perl module file or Perl script
 file, and report its results in standard Test::Simple fashion.
 
-WWW: http://search.cpan.org/dist/Test-Compile/
+WWW: https://metacpan.org/release/Test-Compile

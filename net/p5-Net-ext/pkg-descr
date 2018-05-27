@@ -9,4 +9,4 @@ Net::UDP	   - UDP sockets interface module
 Net::UNIX	   - UNIX-domain sockets interface module
 Net::UNIX::Server  - UNIX-domain sockets interface module for listeners
 
-WWW: http://search.cpan.org/dist/Net-ext/
+WWW: https://metacpan.org/release/Net-ext

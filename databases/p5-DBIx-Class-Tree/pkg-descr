@@ -8,4 +8,4 @@ and is usually the parent of all other rows.  Although, there is no
 limitation in this module that would stop you from having multiple
 root nodes.
 
-WWW: http://search.cpan.org/dist/DBIx-Class-Tree/
+WWW: https://metacpan.org/release/DBIx-Class-Tree

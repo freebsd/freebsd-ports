@@ -5,4 +5,4 @@ required disc information required for a FreeDB
 query call.  These cdrom-based methods are provided
 as both static and method calls.
 
-WWW: http://search.cpan.org/dist/Net-FreeDB/
+WWW: https://metacpan.org/release/Net-FreeDB

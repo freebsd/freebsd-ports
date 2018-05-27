@@ -5,4 +5,4 @@ were any warnings, the test will give a "not ok" and diagnostics of
 where, when and what the warning was, including a stack trace of what
 was going on when the it occurred.
 
-WWW: http://search.cpan.org/dist/Test-NoWarnings/
+WWW: https://metacpan.org/release/Test-NoWarnings
