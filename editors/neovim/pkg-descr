@@ -1,3 +1,10 @@
-Neovim is a project that seeks to aggresively refactor Vim
+Neovim is an aggressive refactor of editors/vim. It represents a
+complete overhaul of the codebase with many sanity improvements,
+including sensible defaults, a built-in terminal emulator, 
+asynchronous plugin architecture, and powerful APIs designed for
+speed and extensibility. It retains full compatibility
+with almost all Vim plugins and scripts.
 
-WWW: http://neovim.org/
+For most users, Neovim is a drop-in Vim replacement.
+
+WWW: https://neovim.org/
