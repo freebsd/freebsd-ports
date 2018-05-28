@@ -62,7 +62,7 @@
     SUBDIR += blop-lv2
     SUBDIR += boodler
     SUBDIR += bristol
-    SUBDIR += calf
+    SUBDIR += calf-lv2
     SUBDIR += cam
     SUBDIR += cantata
     SUBDIR += caps-lv2
