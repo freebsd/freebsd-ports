@@ -25,7 +25,7 @@
  # Colon-separated blacklist threshold and full path to blacklist file.
  # (optional, no default)
 -#BLACKLIST_FILE=90:/var/lib/sshguard/enemies
-+#BLACKLIST_FILE=30:/var/db/sshguard/blacklist.db
++#BLACKLIST_FILE=120:/var/db/sshguard/blacklist.db
  
  # IP addresses listed in the WHITELIST_FILE are considered to be
  # friendlies and will never be blocked.
