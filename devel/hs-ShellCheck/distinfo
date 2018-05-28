@@ -1,3 +1,3 @@
-TIMESTAMP = 1513875105
-SHA256 (cabal/ShellCheck-0.4.7.tar.gz) = 184955264d42c5dca0300fb9688b9a6c9a1c70c345dbcd8e30bb48a049a70d7c
-SIZE (cabal/ShellCheck-0.4.7.tar.gz) = 126593
+TIMESTAMP = 1527501363
+SHA256 (cabal/koalaman-shellcheck-v0.4.7-129-gb5e5d24_GH0.tar.gz) = 605f2181252827e46fe405eb60b25fcc59b5076a999958d5373a69cc1417917b
+SIZE (cabal/koalaman-shellcheck-v0.4.7-129-gb5e5d24_GH0.tar.gz) = 173745
