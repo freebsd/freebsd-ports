@@ -10209,3 +10209,4 @@ devel/hs-stm||2018-05-25|Removed, no longer supported
 devel/hs-text||2018-05-25|Removed, no longer supported
 science/hs-bio||2018-05-25|Removed, no longer supported
 textproc/hs-parsec||2018-05-25|Removed, no longer supported
+audio/calf|audio/calf-lv2|2018-05-27|Added -lv2 suffix: the port mostly provides LV2 plugins
