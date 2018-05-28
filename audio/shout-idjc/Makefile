@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libshout-idjc
-PORTVERSION=	2.4.1
-PORTREVISION=	3
+PORTVERSION=	2.4.2
 CATEGORIES=	audio python
-MASTER_SITES=	SF/idjc/libshout-idjc/
+MASTER_SITES=	SF/libshoutidjc.idjc.p
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Shoutcast/Icecast Library for audio/idjc
@@ -29,5 +28,11 @@ MAKE_JOBS_UNSAFE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/_XOPEN_SOURCE/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} '/^doc_DATA =/ s|COPYING||' ${WRKSRC}/Makefile.am
+	@${MV} ${WRKSRC}/m4/shout.m4 ${WRKSRC}/m4/shout-idjc.m4
+	@${REINPLACE_CMD} '/^EXTRA_DIST =/ s|shout.m4|shout-idjc.m4|' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} '/^m4data_DATA =/ s|shout.m4|shout-idjc.m4|' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} '/^ckportdir = .*/d' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} '/^ckport_DATA = .*/d' ${WRKSRC}/Makefile.am
+
 
 .include <bsd.port.mk>
