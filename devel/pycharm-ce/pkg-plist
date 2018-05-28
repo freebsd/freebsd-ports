@@ -2186,7 +2186,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/jayatana-1.2.4.jar
 %%DATADIR%%/lib/jbcrypt-1.0.0.jar
 %%DATADIR%%/lib/jdom.jar
-%%DATADIR%%/lib/jediterm-pty-%%PYTHON_VER%%.jar
+%%DATADIR%%/lib/jediterm-pty-2.7.jar
 %%DATADIR%%/lib/jgoodies-forms.jar
 %%DATADIR%%/lib/jh.jar
 %%DATADIR%%/lib/jing.jar
