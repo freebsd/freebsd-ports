@@ -1,0 +1,7 @@
+HTML5::DOM is a fast HTML5 parser and DOM manipulatin library with CSS4
+selectors, fully conformant with the HTML5 specification.
+
+It based on https://github.com/lexborisov/Modest as selector engine and
+https://github.com/lexborisov/myhtml as HTML5 parser.
+
+WWW: https://metacpan.org/release/HTML5-DOM
