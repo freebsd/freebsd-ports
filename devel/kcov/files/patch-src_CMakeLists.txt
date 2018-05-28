@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2018-05-17 15:34:12 UTC
++++ src/CMakeLists.txt
+@@ -72,7 +72,7 @@ add_custom_command(
+     OUTPUT version.c
+     COMMAND "${CMAKE_COMMAND}"
+            -E echo
+-           "const char *kcov_version = \\\"${POD_VERSION}\\\"\;"
++	   "const char *kcov_version = \\\"${PORTVERSION}\\\"\;"
+         > version.c
+ )
+ 

@@ -1,0 +1,8 @@
+Kcov is a FreeBSD/Linux/OSX code coverage tester for compiled languages, Python
+and Bash. Kcov was originally a fork of Bcov, but has since evolved to support
+a large feature set in addition to that of Bcov.
+
+Kcov, like Bcov, uses DWARF debugging information for compiled programs to make
+it possible to collect coverage information without special compiler switches.
+
+WWW: https://simonkagstrom.github.io/kcov/index.html

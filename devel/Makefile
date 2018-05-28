@@ -1263,6 +1263,7 @@
     SUBDIR += kaptain
     SUBDIR += kcachegrind
     SUBDIR += kcachegrind-kde4
+    SUBDIR += kcov
     SUBDIR += kdbg
     SUBDIR += kde-dev-scripts
     SUBDIR += kde-dev-scripts-kde4
