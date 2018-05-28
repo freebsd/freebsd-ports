@@ -3,7 +3,7 @@
 
 PORTNAME=	qjackctl
 DISTVERSIONPREFIX=	qjackctl_
-DISTVERSION=	0_5_0
+DISTVERSION=	0_5_2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,48 +14,36 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		autoreconf gmake localbase pkgconfig
-USE_XORG=	x11
+USES=		autoreconf compiler:c++11-lib gmake localbase pkgconfig
+GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
+USE_QT5=	core gui widgets x11extras xml buildtools_build linguisttools_build qmake_build
+USE_GL=		gl
+USE_CXXSTD=	c++11
 
-QT_NONSTANDARD=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_qmake=${QMAKE} \
-		ac_cv_path_ac_moc=${MOC} \
-		ac_cv_path_ac_uic=${UIC} \
-		ac_cv_path_ac_lrelease=${LRELEASE} \
-		ac_cv_path_ac_lupdate=${LUPDATE}
+OPTIONS_DEFINE=		DBUS SYSTRAY XUNIQUE
+OPTIONS_DEFAULT=	DBUS SYSTRAY XUNIQUE
+OPTIONS_GROUP=		AIFACE
+OPTIONS_GROUP_AIFACE=	ALSA PORTAUDIO
 
-OPTIONS_DEFINE=		ALSA PORTAUDIO SYSTRAY
-OPTIONS_DEFAULT=	QT5 SYSTRAY
-OPTIONS_SINGLE=		TOOLKIT
-OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
-
+AIFACE_DESC=		Other audio interfaces
 SYSTRAY_DESC=		System tray icon support
 TOOLKIT_DESC=		Qt toolkit
+XUNIQUE_DESC=		X11 unique/single instance
 
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa_seq
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+DBUS_CONFIGURE_ENABLE=	dbus
+DBUS_USE=		QT5=dbus
+
 PORTAUDIO_CONFIGURE_ENABLE=	portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 SYSTRAY_CONFIGURE_ENABLE=	system-tray
 
-QT4_USE=		QT4=corelib,dbus,gui,xml \
-			QT4=linguisttools_build \
-			QT4=moc_build,qmake_build,rcc_build,uic_build
-QT4_CONFIGURE_ENABLE=	qt4
-
-QT5_USES=		compiler:c++11-lib
-QT5_USE=		QT5=core,dbus,gui,widgets,x11extras,xml \
-			QT5=buildtools_build,linguisttools_build,qmake_build \
-			GL=gl \
-			CXXSTD=c++11
-
-post-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
-		${QMAKE_ARGS}
+XUNIQUE_CONFIGURE_ENABLE=	xunique
+XUNIQUE_USE=			XORG=x11
 
 .include <bsd.port.mk>
