@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aptly
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	smira
-GO_PKGNAME=	github.com/smira/aptly
+GH_ACCOUNT=	aptly-dev
+GO_PKGNAME=	github.com/aptly-dev/aptly
 
 PLIST_FILES=	bin/aptly
 
