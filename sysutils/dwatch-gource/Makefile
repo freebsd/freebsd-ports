@@ -19,20 +19,6 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-SUPPORTED=	no
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} >= 1101516 && ${OSVERSION} < 1200000
-SUPPORTED=	yes
-.elif ${OSVERSION} >= 1200064
-SUPPORTED=	yes
-.endif
-.endif
-.if ${SUPPORTED} == no
-IGNORE=         Requires dwatch available in recent FreeBSD 11 or 12
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gwatch ${STAGEDIR}${PREFIX}/sbin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/dwatch
