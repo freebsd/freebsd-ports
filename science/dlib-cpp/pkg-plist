@@ -67,7 +67,10 @@ include/dlib/clustering/modularity_clustering_abstract.h
 include/dlib/clustering/spectral_cluster.h
 include/dlib/clustering/spectral_cluster_abstract.h
 include/dlib/cmake_utils/add_global_compiler_switch.cmake
+include/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/check_if_neon_available.cmake
+include/dlib/cmake_utils/find_blas.cmake
+include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 include/dlib/cmake_utils/use_cpp_11.cmake
 include/dlib/cmd_line_parser.h
@@ -116,6 +119,20 @@ include/dlib/cpp_tokenizer/cpp_tokenizer_kernel_c.h
 include/dlib/crc32.h
 include/dlib/crc32/crc32_kernel_1.h
 include/dlib/crc32/crc32_kernel_abstract.h
+include/dlib/cuda/cpu_dlib.h
+include/dlib/cuda/cublas_dlibapi.h
+include/dlib/cuda/cuda_data_ptr.h
+include/dlib/cuda/cuda_dlib.h
+include/dlib/cuda/cuda_errors.h
+include/dlib/cuda/cuda_utils.h
+include/dlib/cuda/cudnn_dlibapi.h
+include/dlib/cuda/curand_dlibapi.h
+include/dlib/cuda/cusolver_dlibapi.h
+include/dlib/cuda/gpu_data.h
+include/dlib/cuda/gpu_data_abstract.h
+include/dlib/cuda/tensor.h
+include/dlib/cuda/tensor_abstract.h
+include/dlib/cuda/tensor_tools.h
 include/dlib/data_io.h
 include/dlib/data_io/image_dataset_metadata.h
 include/dlib/data_io/libsvm_io.h
@@ -138,20 +155,11 @@ include/dlib/directed_graph/directed_graph_kernel_abstract.h
 include/dlib/disjoint_subsets.h
 include/dlib/disjoint_subsets/disjoint_subsets.h
 include/dlib/disjoint_subsets/disjoint_subsets_abstract.h
+include/dlib/disjoint_subsets/disjoint_subsets_sized.h
+include/dlib/disjoint_subsets/disjoint_subsets_sized_abstract.h
 include/dlib/dnn.h
 include/dlib/dnn/core.h
 include/dlib/dnn/core_abstract.h
-include/dlib/dnn/cpu_dlib.h
-include/dlib/dnn/cublas_dlibapi.h
-include/dlib/dnn/cuda_data_ptr.h
-include/dlib/dnn/cuda_dlib.h
-include/dlib/dnn/cuda_errors.h
-include/dlib/dnn/cuda_utils.h
-include/dlib/dnn/cudnn_dlibapi.h
-include/dlib/dnn/curand_dlibapi.h
-include/dlib/dnn/cusolver_dlibapi.h
-include/dlib/dnn/gpu_data.h
-include/dlib/dnn/gpu_data_abstract.h
 include/dlib/dnn/input.h
 include/dlib/dnn/input_abstract.h
 include/dlib/dnn/layers.h
@@ -160,9 +168,6 @@ include/dlib/dnn/loss.h
 include/dlib/dnn/loss_abstract.h
 include/dlib/dnn/solvers.h
 include/dlib/dnn/solvers_abstract.h
-include/dlib/dnn/tensor.h
-include/dlib/dnn/tensor_abstract.h
-include/dlib/dnn/tensor_tools.h
 include/dlib/dnn/trainer.h
 include/dlib/dnn/trainer_abstract.h
 include/dlib/dnn/utilities.h
@@ -217,6 +222,34 @@ include/dlib/external/libpng/pnginfo.h
 include/dlib/external/libpng/pnglibconf.h
 include/dlib/external/libpng/pngpriv.h
 include/dlib/external/libpng/pngstruct.h
+include/dlib/external/pybind11/include/pybind11/attr.h
+include/dlib/external/pybind11/include/pybind11/buffer_info.h
+include/dlib/external/pybind11/include/pybind11/cast.h
+include/dlib/external/pybind11/include/pybind11/chrono.h
+include/dlib/external/pybind11/include/pybind11/common.h
+include/dlib/external/pybind11/include/pybind11/complex.h
+include/dlib/external/pybind11/include/pybind11/detail/class.h
+include/dlib/external/pybind11/include/pybind11/detail/common.h
+include/dlib/external/pybind11/include/pybind11/detail/descr.h
+include/dlib/external/pybind11/include/pybind11/detail/init.h
+include/dlib/external/pybind11/include/pybind11/detail/internals.h
+include/dlib/external/pybind11/include/pybind11/detail/typeid.h
+include/dlib/external/pybind11/include/pybind11/eigen.h
+include/dlib/external/pybind11/include/pybind11/embed.h
+include/dlib/external/pybind11/include/pybind11/eval.h
+include/dlib/external/pybind11/include/pybind11/functional.h
+include/dlib/external/pybind11/include/pybind11/iostream.h
+include/dlib/external/pybind11/include/pybind11/numpy.h
+include/dlib/external/pybind11/include/pybind11/operators.h
+include/dlib/external/pybind11/include/pybind11/options.h
+include/dlib/external/pybind11/include/pybind11/pybind11.h
+include/dlib/external/pybind11/include/pybind11/pytypes.h
+include/dlib/external/pybind11/include/pybind11/stl.h
+include/dlib/external/pybind11/include/pybind11/stl_bind.h
+include/dlib/external/pybind11/tools/FindCatch.cmake
+include/dlib/external/pybind11/tools/FindEigen3.cmake
+include/dlib/external/pybind11/tools/FindPythonLibsNew.cmake
+include/dlib/external/pybind11/tools/pybind11Tools.cmake
 include/dlib/external/zlib/crc32.h
 include/dlib/external/zlib/deflate.h
 include/dlib/external/zlib/gzguts.h
@@ -248,12 +281,21 @@ include/dlib/geometry/border_enumerator.h
 include/dlib/geometry/border_enumerator_abstract.h
 include/dlib/geometry/drectangle.h
 include/dlib/geometry/drectangle_abstract.h
+include/dlib/geometry/line.h
+include/dlib/geometry/line_abstract.h
 include/dlib/geometry/point_transforms.h
 include/dlib/geometry/point_transforms_abstract.h
 include/dlib/geometry/rectangle.h
 include/dlib/geometry/rectangle_abstract.h
 include/dlib/geometry/vector.h
 include/dlib/geometry/vector_abstract.h
+include/dlib/global_optimization.h
+include/dlib/global_optimization/find_max_global.h
+include/dlib/global_optimization/find_max_global_abstract.h
+include/dlib/global_optimization/global_function_search.h
+include/dlib/global_optimization/global_function_search_abstract.h
+include/dlib/global_optimization/upper_bound_function.h
+include/dlib/global_optimization/upper_bound_function_abstract.h
 include/dlib/graph.h
 include/dlib/graph/graph_kernel_1.h
 include/dlib/graph/graph_kernel_abstract.h
@@ -479,6 +521,7 @@ include/dlib/matrix/lapack/gesdd.h
 include/dlib/matrix/lapack/gesvd.h
 include/dlib/matrix/lapack/getrf.h
 include/dlib/matrix/lapack/ormqr.h
+include/dlib/matrix/lapack/pbtrf.h
 include/dlib/matrix/lapack/potrf.h
 include/dlib/matrix/lapack/syev.h
 include/dlib/matrix/lapack/syevr.h
@@ -539,6 +582,7 @@ include/dlib/memory_manager_stateless.h
 include/dlib/memory_manager_stateless/memory_manager_stateless_kernel_1.h
 include/dlib/memory_manager_stateless/memory_manager_stateless_kernel_2.h
 include/dlib/memory_manager_stateless/memory_manager_stateless_kernel_abstract.h
+include/dlib/metaprogramming.h
 include/dlib/misc_api.h
 include/dlib/misc_api/misc_api_kernel_1.h
 include/dlib/misc_api/misc_api_kernel_2.h
@@ -571,6 +615,8 @@ include/dlib/optimization/find_max_parse_cky.h
 include/dlib/optimization/find_max_parse_cky_abstract.h
 include/dlib/optimization/find_optimal_parameters.h
 include/dlib/optimization/find_optimal_parameters_abstract.h
+include/dlib/optimization/isotonic_regression.h
+include/dlib/optimization/isotonic_regression_abstract.h
 include/dlib/optimization/max_cost_assignment.h
 include/dlib/optimization/max_cost_assignment_abstract.h
 include/dlib/optimization/max_sum_submatrix.h
@@ -603,10 +649,9 @@ include/dlib/pipe/pipe_kernel_abstract.h
 include/dlib/pixel.h
 include/dlib/platform.h
 include/dlib/python.h
-include/dlib/python/boost_python_utils.h
-include/dlib/python/numpy.h
 include/dlib/python/numpy_image.h
 include/dlib/python/pyassert.h
+include/dlib/python/pybind_utils.h
 include/dlib/python/serialize_pickle.h
 include/dlib/quantum_computing.h
 include/dlib/quantum_computing/quantum_computing.h
@@ -622,6 +667,9 @@ include/dlib/rand.h
 include/dlib/rand/mersenne_twister.h
 include/dlib/rand/rand_kernel_1.h
 include/dlib/rand/rand_kernel_abstract.h
+include/dlib/random_forest.h
+include/dlib/random_forest/random_forest_regression.h
+include/dlib/random_forest/random_forest_regression_abstract.h
 include/dlib/ref.h
 include/dlib/reference_counter.h
 include/dlib/reference_counter/reference_counter_kernel_1.h
@@ -884,6 +932,7 @@ include/dlib/test/conditioning_class.h
 include/dlib/test/create_iris_datafile.h
 include/dlib/test/optimization_test_functions.h
 include/dlib/test/tester.h
+include/dlib/test_for_odr_violations.h
 include/dlib/threads.h
 include/dlib/threads/async.h
 include/dlib/threads/async_abstract.h
@@ -957,10 +1006,10 @@ lib/cmake/dlib/dlib.cmake
 lib/cmake/dlib/dlibConfig.cmake
 lib/cmake/dlib/dlibConfigVersion.cmake
 lib/libdlib.a
-lib/libdlib.so
-lib/libdlib.so.19.6.0
 libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/all
+@dir include/dlib/appveyor
+@dir include/dlib/cmake_utils/test_for_avx
 @dir include/dlib/cmake_utils/test_for_cpp11
 @dir include/dlib/cmake_utils/test_for_cuda
 @dir include/dlib/cmake_utils/test_for_cudnn
