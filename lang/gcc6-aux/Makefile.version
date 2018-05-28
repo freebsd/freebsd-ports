@@ -1,15 +1,20 @@
 # $FreeBSD$
 
+# The attempt to upgrade to version 6.4.1 was done incorrectly.
+# When 6.5.1 is released, set the SNAPSHOT to the release date,
+# but also set BUILD_RELEASE to "yes".  Otherwise snapshots will
+# continue to be used and eventually be removed from mirrors.
+
 GCC_BRANCH=		6
-GCC_POINT=		4.1
+GCC_POINT=		5.0
 GCC_VERSION=		${GCC_BRANCH}.${GCC_POINT}
-SNAPSHOT=		20170802
+SNAPSHOT=		20180516
 BUILD_RELEASE=		no
-MAIN_PR=		1
-UTIL_PR=		1
-ARMV7_PR=		2
-ARM64_PR=		3
-X86_PR=			2
+MAIN_PR=		0
+UTIL_PR=		0
+ARMV7_PR=		0
+ARM64_PR=		0
+X86_PR=			0
 
 .if ${BUILD_RELEASE:Mno}
 # Snapshot naming pattern
