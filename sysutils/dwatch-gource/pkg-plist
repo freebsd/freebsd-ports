@@ -1,4 +1,6 @@
 sbin/gwatch
+libexec/dwatch/gource-net
+libexec/dwatch/gource-net-raw
 libexec/dwatch/gource-open
 libexec/dwatch/gource-open-raw
 libexec/dwatch/gource-proc
