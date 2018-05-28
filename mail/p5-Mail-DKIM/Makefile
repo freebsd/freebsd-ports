@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN \
 		http://jason.long.name/dkimproxy/
