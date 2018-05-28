@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mtbl
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
