@@ -4,7 +4,6 @@
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
 DISTVERSIONPREFIX=	stable-
-PORTREVISION=		6
 PORTEPOCH=		2
 CATEGORIES=		emulators
 
@@ -18,8 +17,8 @@ ONLY_FOR_ARCHS=		amd64 i386
 
 LIB_DEPENDS=		libmspack.so:archivers/libmspack
 
-RELEASE_VER=		10.2.0
-BUILD_VER=		7253323
+RELEASE_VER=		10.2.5
+BUILD_VER=		8068406
 
 OPTIONS_DEFINE=		DNET LIBNOTIFY OPENSSL X11
 OPTIONS_DEFAULT=	DNET LIBNOTIFY OPENSSL X11
@@ -64,10 +63,6 @@ USE_RC_SUBR=		vmware-guestd vmware-kmod
 INSTALL_TARGET=		install-strip
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200063
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-modules_freebsd_vmxnet_net__compat.h
-.endif
 
 .if ${PORT_OPTIONS:MX11}
 CONFLICTS=		open-vm-tools-nox11-[0-9]*

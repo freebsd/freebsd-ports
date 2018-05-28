@@ -1,6 +1,6 @@
---- configure.ac.orig	2017-02-24 22:15:37 UTC
+--- configure.ac.orig	2018-03-30 18:44:35 UTC
 +++ configure.ac
-@@ -1082,7 +1082,7 @@ AC_CHECK_HEADERS([sys/user.h],
+@@ -1095,7 +1095,7 @@ AC_CHECK_HEADERS([sys/user.h],
     ])
  AC_CHECK_HEADERS([sys/vfs.h])
  AC_CHECK_HEADERS([syslimits.h])
@@ -9,7 +9,7 @@
  
  AC_CHECK_HEADER(
     [wchar.h],
-@@ -1137,7 +1137,7 @@ AC_C_VOLATILE
+@@ -1142,7 +1142,7 @@ AC_C_VOLATILE
  
  ### General flags / actions
  CFLAGS="$CFLAGS -Wall"
