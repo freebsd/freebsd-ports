@@ -1,6 +1,6 @@
---- lib/misc/util_misc.c.orig	2017-02-24 22:15:37 UTC
+--- lib/misc/util_misc.c.orig	2018-03-30 18:44:35 UTC
 +++ lib/misc/util_misc.c
-@@ -307,7 +307,7 @@ Util_CanonicalPathsIdentical(const char 
+@@ -303,7 +303,7 @@ Util_CanonicalPathsIdentical(const char *path1,  // IN
     return (strcmp(path1, path2) == 0);
  #elif defined(_WIN32)
     return (_stricmp(path1, path2) == 0);
