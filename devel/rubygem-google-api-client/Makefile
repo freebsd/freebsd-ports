@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-api-client
-PORTVERSION=	0.21.2
+PORTVERSION=	0.22.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
