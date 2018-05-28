@@ -1,0 +1,5 @@
+PyFormance is a toolset for performance measurement 
+and statistics, with a signaling mechanism that 
+allows to issue events in cases of unexpected behavior.
+
+WWW: https://pypi.org/project/pyformance/
