@@ -12,7 +12,7 @@ COMMENT=	File manager extensions for the Cinnamon desktop
 
 BUILD_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gtkdocize:textproc/gtk-doc \
-		rst2html:textproc/py-docutils \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR} \
 		gnome-autogen.sh:devel/gnome-common \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libexif.so:graphics/libexif \
@@ -36,10 +36,11 @@ GH_TAGNAME=	6c8ec3a
 USE_GNOME=	gconf2 gnomeprefix gnomedocutils gtksourceview3 intlhack \
 		introspection:build libxml2 pygtk2
 USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig \
-		python shebangfix
+		python:2.7 shebangfix
 SHEBANG_FILES=	nemo-dropbox/dropbox.in
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ENV=	RST2MAN=${LOCALBASE}/bin/rst2man.py-${PYTHON_VER}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
