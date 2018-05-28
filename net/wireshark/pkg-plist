@@ -650,6 +650,7 @@ lib/libwsutil.so.9.0.0
 %%ANDROIDDUMP_LIB%%lib/wireshark/extcap/androiddump
 %%RANDPKTDUMP_LIB%%lib/wireshark/extcap/randpktdump
 %%UDPDUMP_LIB%%lib/wireshark/extcap/udpdump
+lib/wireshark/plugins/2.6/codecs/l16mono.so
 lib/wireshark/plugins/2.6/epan/ethercat.so
 lib/wireshark/plugins/2.6/epan/gryphon.so
 lib/wireshark/plugins/2.6/epan/irda.so
@@ -662,7 +663,6 @@ lib/wireshark/plugins/2.6/epan/unistim.so
 lib/wireshark/plugins/2.6/epan/wimax.so
 lib/wireshark/plugins/2.6/epan/wimaxasncp.so
 lib/wireshark/plugins/2.6/epan/wimaxmacphy.so
-lib/wireshark/plugins/2.6/wiretap/l16mono.so
 lib/wireshark/plugins/2.6/wiretap/usbdump.so
 libdata/pkgconfig/wireshark.pc
 %%ANDROIDDUMP_MAN%%man/man1/androiddump.1.gz
