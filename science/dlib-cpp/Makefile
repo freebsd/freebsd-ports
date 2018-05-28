@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dlib
-DISTVERSION=	19.6
+DISTVERSION=	19.13
 CATEGORIES=	science devel math
 MASTER_SITES=	http://dlib.net/files/
 PKGNAMESUFFIX=	-cpp
@@ -34,7 +34,7 @@ GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CMAKE_BOOL=		DLIB_GIF_SUPPORT
 
 SQLITE_USES=		sqlite
-SQLITE_CMAKE_BOOL=	DLIB_LINK_WITH_SQLITE
+SQLITE_CMAKE_BOOL=	DLIB_LINK_WITH_SQLITE3
 
 # uses gcc until https://reviews.freebsd.org/D11482 lands
 BLASLAPACK_USE=		gcc=yes
