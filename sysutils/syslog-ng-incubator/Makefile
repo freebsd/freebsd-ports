@@ -22,7 +22,7 @@ MAKE_JOBS_UNSAFE=	yes
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libsyslog-ng-3.6.so.0:sysutils/syslog-ng36
 
-USES=		bison gmake libtool lua pathfix pkgconfig shebangfix tar:xz
+USES=		bison gmake libtool lua pathfix perl5 pkgconfig python:2.7 shebangfix tar:xz
 SHEBANG_FILES=	scl/elasticsearch/es-bridge
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
