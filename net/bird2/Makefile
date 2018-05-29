@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	olivier@FreeBSD.org
-COMMENT=	Dynamic IP routing daemon (devel version)
+COMMENT=	Dynamic IP routing daemon
 
 LICENSE=	GPLv2
 
