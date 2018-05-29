@@ -21,7 +21,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/pgpkeys/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/article.txt
