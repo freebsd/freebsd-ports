@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	MathMod
-PORTVERSION=	7.0
+PORTVERSION=	8.0
 CATEGORIES=	math graphics
-MASTER_SITES=	SF/${PORTNAME:tl}/${PKGNAME}/
-DISTNAME=	${PORTNAME:tl}-branches-${BR_NUM}-trunk
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mathematical modeling software
 
 LICENSE=	GPLv2
 
-USES=		dos2unix qmake zip
+USE_GITHUB=	yes
+GH_ACCOUNT=	parisolab
+GH_PROJECT=	${PORTNAME:tl}
+
+USES=		dos2unix qmake
 USE_GL=		gl
 USE_QT5=	buildtools_build core gui opengl qmake_build widgets
 
-BR_NUM=		482
-
-PLIST_FILES=	bin/MathMod
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
