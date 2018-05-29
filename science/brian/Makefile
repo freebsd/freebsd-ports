@@ -4,7 +4,6 @@
 PORTNAME=	brian
 PORTVERSION=	1.4.4
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Clock-driven simulator for spiking neural networks
