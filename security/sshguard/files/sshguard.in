@@ -67,7 +67,7 @@ rcvar=sshguard_enable
 load_rc_config sshguard
 
 : ${sshguard_enable:=NO}
-: ${sshguard_blacklist=30:/var/db/sshguard/blacklist.db}
+: ${sshguard_blacklist=120:/var/db/sshguard/blacklist.db}
 : ${sshguard_danger_thresh=}
 : ${sshguard_release_interval=}
 : ${sshguard_reset_interval=}
