@@ -1406,6 +1406,7 @@
     SUBDIR += py-textfsm
     SUBDIR += py-texttable
     SUBDIR += py-tinycss
+    SUBDIR += py-toml
     SUBDIR += py-toronado
     SUBDIR += py-trans
     SUBDIR += py-transifex-client
