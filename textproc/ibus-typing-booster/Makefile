@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	1.5.38
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -32,6 +32,7 @@ USES=		autoreconf gettext gmake gnome iconv pathfix pkgconfig python:3.3+
 USE_GNOME=	pygobject3
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
+INSTALLS_ICONS=	yes
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=	HUNSPELL
@@ -64,7 +65,7 @@ pre-configure:
 		${WRKSRC}/${f}
 .endfor
 	${REINPLACE_CMD} -e 's|/usr/libexec|${PREFIX}/libexec|'	\
-		${WRKSRC}/hunspell-tables/*.conf ${WRKSRC}/hunspell-tables/template.txt
+		${WRKSRC}/engine/main.py
 .for f in ${SHR2FIX}
 	${REINPLACE_CMD} -e 's|/usr/share/ibus-typing-booster|${DATADIR}|'	\
 		-e 's|/usr/share|${LOCALBASE}/share|' ${WRKSRC}/${f}

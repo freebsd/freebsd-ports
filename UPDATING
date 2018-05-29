@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180529:
+  AFFECTS: users of textproc/ibus-typing-booster
+  AUTHOR: thierry@FreeBSD.org
+
+  Attention, this release merges all engines into one. Therefore, the
+  engine names had to change. The old engine names like "German - DE
+  (Typing Booster)", "Hindi - HI (Typing Booster)" don't exist anymore!
+  If one has entries for them in the Gnome Control Center or in
+  ibus-setup, one needs to remove these old entries and add the new
+  engine name "Other (Typing Booster)".
+
 20180518:
   AFFECTS: users of sysutils/ansible*
   AUTHOR: lifanov@FreeBSD.org
@@ -17,7 +28,7 @@ you update your ports collection, before attempting any port upgrades.
   for example, for ansible24, run:
 
    # pkg set -n ansible24:py27-ansible24
-  
+
 20180514:
   AFFECTS: users of www/gitlab
   AUTHOR: mfechner@FreeBSD.org
