@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwatch-gource
-DISTVERSION=	0.7
+DISTVERSION=	0.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	dteske@FreeBSD.org
