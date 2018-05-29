@@ -7,4 +7,4 @@ array (libref_array), and a library to process configuration files in
 initialization format (INI) into a library collection data structure
 (libini_config).
 
-WWW: https://fedorahosted.org/sssd/
+WWW: https://pagure.io/SSSD/ding-libs/
