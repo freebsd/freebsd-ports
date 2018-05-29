@@ -1,12 +1,14 @@
-TIMESTAMP = 1503523153
-SHA256 (gcc-6-20170802.tar.xz) = 6da53170cb1fd50fc49cae567e741a0e6334babcc1d23e7302221b18adcce34c
-SIZE (gcc-6-20170802.tar.xz) = 72581920
+TIMESTAMP = 1527538310
+SHA256 (gcc-6-20180516.tar.xz) = fd5ca24c672554ab0d8dafd2b9319099d170509e432121992290232c079f8244
+SIZE (gcc-6-20180516.tar.xz) = 72660356
 SHA256 (ada-bootstrap.i386.freebsd.100B.tar.bz2) = 7231209f2600275f554f788ad1d036cf633c4339ebd25bd479a5bb1ddcddedf3
 SIZE (ada-bootstrap.i386.freebsd.100B.tar.bz2) = 41229192
 SHA256 (ada-bootstrap.x86_64.dragonfly.41.tar.bz2) = eb7785d8b842aee2bb04b43adfb1346b178ee4e83d8775b4e6705fd23f1586f0
 SIZE (ada-bootstrap.x86_64.dragonfly.41.tar.bz2) = 44956630
 SHA256 (ada-bootstrap.x86_64.freebsd.100B.tar.bz2) = 1066d7c5e71d78b4416de3b73348227678ca07db52488409e270db7b00467f55
 SIZE (ada-bootstrap.x86_64.freebsd.100B.tar.bz2) = 42163803
+SHA256 (ada-bootstrap.i386.freebsd.120.tar.bz2) = 8140cbc0e88181156394092fc094071a9c25c7b0ef56489144fce074472a18f6
+SIZE (ada-bootstrap.i386.freebsd.120.tar.bz2) = 51426177
 SHA256 (ada-bootstrap.x86_64.freebsd.120.tar.bz2) = 4b490145520ffa9f8402a65cad8152a865f3fdae5bab2e06fc395bd7919083e0
 SIZE (ada-bootstrap.x86_64.freebsd.120.tar.bz2) = 52651957
 SHA256 (ada-bootstrap.aarch64.freebsd.120.tar.bz2) = 84d96268e864564bc4adddf54bac492ff74a0d7112c13283512542cde71663e7
