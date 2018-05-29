@@ -101,9 +101,9 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/gson-2.1.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/gson-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpclient-4.5.2.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpclient-4.5.3.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/httpclient-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-4.4.4.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-4.4.6.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/httpcore-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jalopy-1.5rc3.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jalopy-LICENSE.txt
@@ -150,7 +150,7 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xalan-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xml-resolver-1.2.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xml-resolver-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlbeans-2.5.0.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlbeans-2.6.0.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlbeans-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlschema-core-2.2.1.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlschema-core-LICENSE.txt
