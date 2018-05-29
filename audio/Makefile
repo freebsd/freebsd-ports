@@ -144,6 +144,7 @@
     SUBDIR += ezstream
     SUBDIR += faac
     SUBDIR += faad
+    SUBDIR += fabla2-lv2
     SUBDIR += fapg
     SUBDIR += faust
     SUBDIR += fcplay
