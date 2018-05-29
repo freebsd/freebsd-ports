@@ -1,0 +1,5 @@
+zam-plugins is a collection of LV2/LADSPA/VST/JACK audio plugins for sound
+processing developed in-house at ZamAudio. The default settings and almost
+every slider is calibrated to standard ranges.
+
+WWW: http://www.zamaudio.com/?p=976

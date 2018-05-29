@@ -1,0 +1,10 @@
+--- plugins/ZamHeadX2/Makefile.orig	2018-05-29 07:56:10 UTC
++++ plugins/ZamHeadX2/Makefile
+@@ -13,7 +13,6 @@ NAME = ZamHeadX2
+ # Files to build
+ 
+ OBJS_DSP = \
+-	../../lib/zita-convolver-3.1.0/zita-convolver.cpp.o \
+ 	convolution.cpp.o \
+ 	ZamHeadX2Plugin.cpp.o
+ 

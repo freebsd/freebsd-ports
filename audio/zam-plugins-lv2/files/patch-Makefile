@@ -1,0 +1,38 @@
+--- Makefile.orig	2018-02-18 01:26:44 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ PREFIX ?= /usr/local
+-LIBDIR ?= lib
++LIBDIR := lib
+ BINDIR ?= bin
+ 
+ NAME    = zam-plugins
+@@ -33,22 +33,21 @@ $(PLUGINS): libs
+ # --------------------------------------------------------------
+ 
+ install: all
+-	install -d $(DESTDIR)$(PREFIX)/$(LIBDIR)/ladspa \
++	mkdir -p $(DESTDIR)$(PREFIX)/$(LIBDIR)/ladspa \
+ 		$(DESTDIR)$(PREFIX)/$(LIBDIR)/lv2 \
+ 		$(DESTDIR)$(PREFIX)/$(LIBDIR)/vst \
+ 		$(DESTDIR)$(PREFIX)/$(BINDIR) ; \
+ 	for plugin in $(PLUGINS); do \
+-		install -d $(DESTDIR)$(PREFIX)/$(LIBDIR)/lv2/"$$plugin".lv2 ; \
+-		install -t $(DESTDIR)$(PREFIX)/$(LIBDIR)/lv2/"$$plugin".lv2 \
+-			bin/"$$plugin".lv2/* ; \
++		mkdir -p $(DESTDIR)$(PREFIX)/$(LIBDIR)/lv2/"$$plugin".lv2 ; \
++		install bin/"$$plugin".lv2/* $(DESTDIR)$(PREFIX)/$(LIBDIR)/lv2/"$$plugin".lv2 ; \
+ 	done;
+ ifeq ($(HAVE_JACK),true)
+ 	for plugin in $(PLUGINS); do \
+-		install -t $(DESTDIR)$(PREFIX)/$(BINDIR) bin/"$$plugin" ; \
++		install bin/"$$plugin" $(DESTDIR)$(PREFIX)/$(BINDIR) ; \
+ 	done;
+ endif
+-	install -t $(DESTDIR)$(PREFIX)/$(LIBDIR)/ladspa bin/*-ladspa.so
+-	install -t $(DESTDIR)$(PREFIX)/$(LIBDIR)/vst bin/*-vst.so
++	install bin/*-ladspa.so $(DESTDIR)$(PREFIX)/$(LIBDIR)/ladspa
++	install bin/*-vst.so $(DESTDIR)$(PREFIX)/$(LIBDIR)/vst
+ 
+ uninstall:
+ 	for plugin in $(PLUGINS); do \

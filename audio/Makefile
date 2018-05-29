@@ -915,6 +915,7 @@
     SUBDIR += xwave
     SUBDIR += yell
     SUBDIR += yoshimi
+    SUBDIR += zam-plugins-lv2
     SUBDIR += zinf
     SUBDIR += zita-convolver
     SUBDIR += zita-resampler
