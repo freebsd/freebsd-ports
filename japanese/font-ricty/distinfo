@@ -1,5 +1,3 @@
-TIMESTAMP = 1467789963
-SHA256 (ricty/ricty_generator-3.2.4.sh) = ede28e1d10bce84c545ca24b7d609d16e178c9a62daad3e0164f520285509141
-SIZE (ricty/ricty_generator-3.2.4.sh) = 20237
-SHA256 (ricty/ricty_discord_converter.pe) = 1958e6920aab27715dbe7bb9708db28bc0909d4eefbfe5c8919ce2b843e3c59e
-SIZE (ricty/ricty_discord_converter.pe) = 12196
+TIMESTAMP = 1526626698
+SHA256 (ricty/ricty_generator-4.1.1.sh) = 86bf0fed84ef806690b213798419405d7ca2a1a4bed4f6a28b87c2e2d07ad60d
+SIZE (ricty/ricty_generator-4.1.1.sh) = 36173

@@ -1,26 +1,25 @@
-# Created by: masaki
 # $FreeBSD$
 
 PORTNAME=	ricty
-PORTVERSION=	3.2.4
-PORTREVISION=	5
+PORTVERSION=	4.1.1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.rs.tus.ac.jp/yyusa/ricty/
 PKGNAMEPREFIX=	ja-font-
-DISTFILES=	ricty_generator-${PORTVERSION}.sh ricty_discord_converter.pe
+DISTNAME=	ricty_generator-${PORTVERSION}.sh
+EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	# nothing
 
 MAINTAINER?=	meta@FreeBSD.org
 COMMENT?=	Ricty - fonts for programming
 
 LICENSE=	OFL11
 
-BUILD_DEPENDS=	${LOCALBASE}/share/fonts/inconsolata/Inconsolata.otf:x11-fonts/inconsolata-ttf \
+BUILD_DEPENDS=	inconsolata-ttf>=2.000:x11-fonts/inconsolata-ttf \
 		${LOCALBASE}/share/fonts/TTF/migu-1m-regular.ttf:japanese/font-migu \
 		${LOCALBASE}/share/fonts/TTF/migu-1m-bold.ttf:japanese/font-migu \
 		fontforge:print/fontforge
 
+NO_ARCH=	yes
 USES=		fonts:fc
 
 NO_PACKAGE=	redistribution is not allowed
@@ -53,12 +52,12 @@ RUN_DEPENDS+=	${LOCALBASE}/${DATADIR_REL}/RictyDiscord-Regular.ttf:japanese/font
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/ricty_generator-${PORTVERSION}.sh ${WRKSRC}/ricty_generator.sh
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/ricty_discord_converter.pe ${WRKSRC}/ricty_discord_patch.pe
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${SH} ${WRKSRC}/ricty_generator.sh \
-			${PREFIX}/share/fonts/inconsolata/Inconsolata.otf \
+			${PREFIX}/share/fonts/inconsolata/Inconsolata-Regular.ttf \
+			${PREFIX}/share/fonts/inconsolata/Inconsolata-Bold.ttf \
 			${PREFIX}/share/fonts/TTF/migu-1m-regular.ttf \
 			${PREFIX}/share/fonts/TTF/migu-1m-bold.ttf
 
@@ -66,7 +65,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
-	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
+		 ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
 .if !defined(PKGNAMESUFFIX)
 	${INSTALL_DATA} ${WRKSRC}/Ricty-*.ttf ${STAGEDIR}${DATADIR}
 	cd ${STAGEDIR}${FONTSDIR} && ${LN} -s -f \
