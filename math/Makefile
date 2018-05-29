@@ -712,6 +712,7 @@
     SUBDIR += py-scientific
     SUBDIR += py-scikit-umfpack
     SUBDIR += py-seaborn
+    SUBDIR += py-secp256k1
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-sym
