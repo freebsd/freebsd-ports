@@ -33,6 +33,7 @@
     SUBDIR += ardour5
     SUBDIR += ario
     SUBDIR += arss
+    SUBDIR += artyfx-lv2
     SUBDIR += ascd
     SUBDIR += asmix
     SUBDIR += asmixer
