@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwatch-pwsnoop
-DISTVERSION=	0.1
+DISTVERSION=	0.1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dteske@FreeBSD.org
