@@ -27,16 +27,17 @@ MC=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	minio
 GH_PROJECT=	mc
-GH_TAGNAME=	RELEASE.2018-04-28T00-08-20Z
+GH_TAGNAME=	RELEASE.2018-05-25T20-20-15Z
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
 MAKE_ENV=	GOPATH=${WRKSRC} GOROOT=${LOCALBASE}/go
+COMMIT_ID=	961c4b5daebe0f5f8ac2930f087a14a597e95f5b
 
 PLIST_FILES=	bin/${MC}
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}; \
-	${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
-		-ldflags "-X main.GitDescribe=v${PORTVERSION}" -o bin/${MC}
+	${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} CGO_ENABLED=0 go build -v -x \
+		--ldflags '-X github.com/minio/mc/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} -X github.com/minio/mc/cmd.ReleaseTag=${GH_TAGNAME} -X github.com/minio/mc/cmd.CommitID=${COMMIT_ID} -X github.com/minio/mc/cmd.GOPATH=${WRKSRC} -s -w' -o ${WRKSRC}/bin/${MC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/bin/${MC} \
