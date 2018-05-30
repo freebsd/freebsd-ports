@@ -1,3 +1,3 @@
-TIMESTAMP = 1484717140
-SHA256 (xorg/driver/xf86-input-evdev-2.10.5.tar.bz2) = 9edaa6205baf6d2922cc4db3d8e54a7e7773b5f733b0ae90f6be7725f983b70d
-SIZE (xorg/driver/xf86-input-evdev-2.10.5.tar.bz2) = 405956
+TIMESTAMP = 1527700218
+SHA256 (xorg/driver/xf86-input-evdev-2.10.6.tar.bz2) = 8726073e81861bc7b2321e76272cbdbd33c7e1a121535a9827977265b9033ec0
+SIZE (xorg/driver/xf86-input-evdev-2.10.6.tar.bz2) = 408138
