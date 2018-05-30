@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	private_address_check
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
