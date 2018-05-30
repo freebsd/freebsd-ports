@@ -23,6 +23,7 @@ USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	memleax
+LLD_UNSAFE=	yes # cf. devel/libunwind
 
 PLIST_FILES=	bin/memleax \
 		man/man1/memleax.1.gz
