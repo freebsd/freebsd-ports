@@ -3,6 +3,7 @@ sbin/desktop-installer
 %%DATADIR%%/90-vboxguest.fdi
 %%DATADIR%%/GNOME2/xinitrc
 %%DATADIR%%/KDE4/xinitrc
+%%DATADIR%%/KDE5/xinitrc
 %%DATADIR%%/LUMINA/gtkrc
 %%DATADIR%%/LUMINA/xinitrc
 %%DATADIR%%/LXDE/GiveConsole
@@ -21,4 +22,5 @@ sbin/desktop-installer
 %%DATADIR%%/XDM/bsd_background.jpg
 %%DATADIR%%/XDM/xdmshutdown
 %%DATADIR%%/XFCE4/xinitrc
+%%DATADIR%%/Xdefaults-xterm
 %%DATADIR%%/splash.bmp
