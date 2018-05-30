@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-input-evdev
-PORTVERSION=	2.10.5
+PORTVERSION=	2.10.6
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
