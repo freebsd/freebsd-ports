@@ -1,14 +1,101 @@
+commit f54baf1791c6
+Author: Mike Hommey <mh@glandium.org>
+Date:   Sun May 27 16:20:00 2018 +0200
+
+    Bug 1432455 - Build FStar.c when not building with int128 support. r=fkiefer
+---
+ lib/freebl/Makefile         |  6 +++++-
+ lib/freebl/freebl.gyp       | 29 +++++++++++++++++------------
+ lib/freebl/freebl_base.gypi |  4 +++-
+ 3 files changed, 25 insertions(+), 14 deletions(-)
+
 diff --git lib/freebl/Makefile lib/freebl/Makefile
-index e6a94d35c4..0aecd2fbe7 100644
+index e6a94d35c4..bff11c7c8e 100644
 --- lib/freebl/Makefile
 +++ lib/freebl/Makefile
-@@ -539,6 +539,9 @@ ifeq (,$(filter-out i386 x386 x86 x86_64 aarch64,$(CPU_ARCH)))
+@@ -535,12 +535,16 @@ ifeq (,$(filter-out i386 x386 x86 x86_64 aarch64,$(CPU_ARCH)))
+     # All intel architectures get the 64 bit version
+     # With custom uint128 if necessary (faster than generic 32 bit version).
+     ECL_SRCS += curve25519_64.c
+-    VERIFIED_SRCS += Hacl_Curve25519.c FStar.c
++    VERIFIED_SRCS += Hacl_Curve25519.c
  else
      # All non intel architectures get the generic 32 bit implementation (slow!)
      ECL_SRCS += curve25519_32.c
-+ifndef NSS_DISABLE_CHACHAPOLY
-+        VERIFIED_SRCS += FStar.c
-+endif
  endif
  
++ifndef HAVE_INT128_SUPPORT
++    VERIFIED_SRCS += FStar.c
++endif
++
  #######################################################################
+ # (5) Execute "global" rules. (OPTIONAL)                              #
+ #######################################################################
+diff --git lib/freebl/freebl.gyp lib/freebl/freebl.gyp
+index 3760102ad8..004807483e 100644
+--- lib/freebl/freebl.gyp
++++ lib/freebl/freebl.gyp
+@@ -277,18 +277,10 @@
+           'MP_IS_LITTLE_ENDIAN',
+          ],
+       }],
+-      [ 'OS!="win"', {
+-        'conditions': [
+-          [ 'target_arch=="x64" or target_arch=="arm64" or target_arch=="aarch64"', {
+-            'defines': [
+-              # The Makefile does version-tests on GCC, but we're not doing that here.
+-              'HAVE_INT128_SUPPORT',
+-            ],
+-          }, {
+-            'defines': [
+-              'KRML_NOUINT128',
+-            ],
+-          }],
++      [ 'have_int128_support==1', {
++        'defines': [
++          # The Makefile does version-tests on GCC, but we're not doing that here.
++          'HAVE_INT128_SUPPORT',
+         ],
+       }, {
+         'defines': [
+@@ -350,5 +342,18 @@
+   },
+   'variables': {
+     'module': 'nss',
++    'conditions': [
++      [ 'OS!="win"', {
++        'conditions': [
++          [ 'target_arch=="x64" or target_arch=="arm64" or target_arch=="aarch64"', {
++            'have_int128_support%': 1,
++          }, {
++            'have_int128_support%': 0,
++          }],
++        ],
++      }, {
++        'have_int128_support%': 0,
++      }],
++    ],
+   }
+ }
+diff --git lib/freebl/freebl_base.gypi lib/freebl/freebl_base.gypi
+index 850c327c26..1372994f4c 100644
+--- lib/freebl/freebl_base.gypi
++++ lib/freebl/freebl_base.gypi
+@@ -60,7 +60,6 @@
+     'shvfy.c',
+     'sysrand.c',
+     'tlsprfalg.c',
+-    'verified/FStar.c',
+   ],
+   'conditions': [
+     [ 'OS=="linux" or OS=="android"', {
+@@ -220,6 +219,9 @@
+         }],
+       ],
+     }],
++    [ 'have_int128_support==0', {
++        'sources': [ 'verified/FStar.c' ],
++    }],
+   ],
+  'ldflags': [
+    '-Wl,-Bsymbolic'
