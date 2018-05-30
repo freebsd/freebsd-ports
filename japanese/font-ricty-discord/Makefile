@@ -1,4 +1,3 @@
-# Created by: Koichiro IWAO <meta@FreeBSD.org>
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-discord
