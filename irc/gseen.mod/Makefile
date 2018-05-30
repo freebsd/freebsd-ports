@@ -22,6 +22,7 @@ GNU_CONGFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
 		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
 WRKSRC=		${WRKDIR}/eggdrop
+LLD_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
