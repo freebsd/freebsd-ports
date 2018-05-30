@@ -14,6 +14,8 @@ COMMENT=	Total Commander like file manager for the X Window System
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to stage
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 PORTDOCS=	*
