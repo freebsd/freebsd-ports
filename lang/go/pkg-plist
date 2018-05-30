@@ -431,6 +431,8 @@ go/misc/cgo/testplugin/src/issue22175/plugin1.go
 go/misc/cgo/testplugin/src/issue22175/plugin2.go
 go/misc/cgo/testplugin/src/issue22295.pkg/main.go
 go/misc/cgo/testplugin/src/issue22295.pkg/plugin.go
+go/misc/cgo/testplugin/src/issue24351/main.go
+go/misc/cgo/testplugin/src/issue24351/plugin.go
 go/misc/cgo/testplugin/src/plugin1/plugin1.go
 go/misc/cgo/testplugin/src/plugin2/plugin2.go
 go/misc/cgo/testplugin/src/sub/plugin1/plugin1.go
@@ -1181,6 +1183,7 @@ go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/autotype.go
 go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/doc.go
 go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/flag.go
 go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/funcdata.go
+go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/funcid.go
 go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/head.go
 go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/line.go
 go/pkg/bootstrap/src/bootstrap/cmd/internal/objabi/path.go
@@ -2340,6 +2343,7 @@ go/src/cmd/internal/objabi/autotype.go
 go/src/cmd/internal/objabi/doc.go
 go/src/cmd/internal/objabi/flag.go
 go/src/cmd/internal/objabi/funcdata.go
+go/src/cmd/internal/objabi/funcid.go
 go/src/cmd/internal/objabi/head.go
 go/src/cmd/internal/objabi/line.go
 go/src/cmd/internal/objabi/path.go
@@ -2376,6 +2380,8 @@ go/src/cmd/internal/test2json/testdata/benchshort.json
 go/src/cmd/internal/test2json/testdata/benchshort.test
 go/src/cmd/internal/test2json/testdata/issue23036.json
 go/src/cmd/internal/test2json/testdata/issue23036.test
+go/src/cmd/internal/test2json/testdata/issue23920.json
+go/src/cmd/internal/test2json/testdata/issue23920.test
 go/src/cmd/internal/test2json/testdata/smiley.json
 go/src/cmd/internal/test2json/testdata/smiley.test
 go/src/cmd/internal/test2json/testdata/unicode.json
@@ -3566,6 +3572,8 @@ go/src/go/internal/gcimporter/testdata/versions/test_go1.8_5.a
 go/src/go/internal/srcimporter/srcimporter.go
 go/src/go/internal/srcimporter/srcimporter_test.go
 go/src/go/internal/srcimporter/testdata/issue20855/issue20855.go
+go/src/go/internal/srcimporter/testdata/issue23092/issue23092.go
+go/src/go/internal/srcimporter/testdata/issue24392/issue24392.go
 go/src/go/parser/error_test.go
 go/src/go/parser/example_test.go
 go/src/go/parser/interface.go
@@ -4449,6 +4457,7 @@ go/src/net/http/main_test.go
 go/src/net/http/method.go
 go/src/net/http/npn_test.go
 go/src/net/http/pprof/pprof.go
+go/src/net/http/pprof/pprof_test.go
 go/src/net/http/proxy_test.go
 go/src/net/http/race.go
 go/src/net/http/range_test.go
@@ -7348,6 +7357,8 @@ go/test/fixedbugs/issue23522.go
 go/test/fixedbugs/issue23545.go
 go/test/fixedbugs/issue23719.go
 go/test/fixedbugs/issue23812.go
+go/test/fixedbugs/issue24449.go
+go/test/fixedbugs/issue24817.go
 go/test/fixedbugs/issue2615.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
