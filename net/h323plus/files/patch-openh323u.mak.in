@@ -1,6 +1,6 @@
---- openh323u.mak.in.orig	2013-12-13 00:52:13.000000000 +0200
-+++ openh323u.mak.in	2014-08-22 12:13:27.000000000 +0300
-@@ -96,7 +96,7 @@ endif # NOTRACE
+--- openh323u.mak.in.orig	2013-12-12 22:52:13 UTC
++++ openh323u.mak.in
+@@ -96,16 +96,16 @@ endif # NOTRACE
  include $(PTLIBDIR)/make/ptlib.mak
  endif # LIBRARY_MAKEFILE
  
@@ -9,6 +9,19 @@
  
  #OH323_SUPPRESS_H235	= 1
  
+ OH323_SRCDIR = $(OPENH323DIR)/src
+-ifdef PREFIX
+-OH323_INCDIR = $(PREFIX)/include/openh323
+-else
++#ifdef PREFIX
++#OH323_INCDIR = $(PREFIX)/include/openh323
++#else
+ OH323_INCDIR = $(OPENH323DIR)/include
+-endif # PREFIX
++#endif # PREFIX
+ 
+ ifndef OH323_LIBDIR
+ OH323_LIBDIR = $(OPENH323DIR)/lib
 @@ -132,7 +132,7 @@ OH323_SUFFIX = $(OBJ_SUFFIX)
  endif # OH323_SUFFIX
  endif # HAS_PTLIB_LIB_MAK

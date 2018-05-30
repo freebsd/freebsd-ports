@@ -40,6 +40,7 @@ include/openh323/h460/h46026.h
 include/openh323/h460/h46026mgr.h
 include/openh323/h460/h4604.h
 include/openh323/h460/h4609.h
+include/openh323/h460/h460_oid1.h
 include/openh323/h460/h460_oid3.h
 include/openh323/h460/h460_oid6.h
 include/openh323/h460/h460_oid9.h
@@ -111,7 +112,7 @@ include/openh323/t38proto.h
 include/openh323/transports.h
 include/openh323/x224.h
 include/openh323/x880.h
-lib/libh323.so.1.26.5
+lib/libh323.so.1.26.8
 lib/libh323.so.1.26
 lib/libh323.so.1
 lib/libh323.so
