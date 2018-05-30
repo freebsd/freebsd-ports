@@ -52,3 +52,4 @@ share/locale/ug/LC_MESSAGES/kdevphp.mo
 share/locale/uk/LC_MESSAGES/kdevphp.mo
 share/locale/zh_CN/LC_MESSAGES/kdevphp.mo
 share/locale/zh_TW/LC_MESSAGES/kdevphp.mo
+share/metainfo/org.kde.kdev-php.metainfo.xml
