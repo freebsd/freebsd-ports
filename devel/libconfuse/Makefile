@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	libconfuse
-PORTVERSION=	2.7
-PORTREVISION=	2
+DISTVERSION=	3.2.1
 CATEGORIES=	devel
-MASTER_SITES=	SAVANNAH/confuse
-DISTNAME=	confuse-${PORTVERSION}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	martinh
+GH_PROJECT=	libconfuse
+GH_TAGNAME=	v3.2.1
 
 MAINTAINER=	otis@freebsd.sk
 COMMENT=	Configuration file parsing library
@@ -16,7 +18,7 @@ LICENSE=	ISCL
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-shared
 INSTALL_TARGET=	install-strip
-USES=		iconv pathfix pkgconfig libtool
+USES=		autoreconf gettext-tools iconv pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

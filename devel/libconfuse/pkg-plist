@@ -1,6 +1,6 @@
 include/confuse.h
 lib/libconfuse.a
 lib/libconfuse.so
-lib/libconfuse.so.0
-lib/libconfuse.so.0.0.0
+lib/libconfuse.so.2
+lib/libconfuse.so.2.0.0
 libdata/pkgconfig/libconfuse.pc
