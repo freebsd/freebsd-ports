@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	purrr
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -14,8 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CRAN_DEPENDS=	R-cran-magrittr>=1.5:devel/R-cran-magrittr \
-		R-cran-tibble>0:devel/R-cran-tibble \
-		R-cran-rlang>=0.1:devel/R-cran-rlang
+		R-cran-rlang>=0.1:devel/R-cran-rlang \
+		R-cran-tibble>0:devel/R-cran-tibble
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
