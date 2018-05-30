@@ -7,4 +7,4 @@ via Poppassd, LDAP, Unix expect scripts, the Unix smbpasswd command for
 SMB/CIFS passwords, Kolab, ADSI, Pine, Serv-U FTP, VMailMgr, vpopmail,
 and SQL passwords.
 
-WWW: http://www.horde.org/apps/passwd/
+WWW: https://www.horde.org/apps/passwd/
