@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdevelop
-DISTVERSION=	5.2.1
+DISTVERSION=	5.2.3
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libkasten3controllers.so:devel/okteta \
 		libapr-1.so:devel/apr1 \
 		libsvn_client-1.so:devel/subversion \
 		libboost_thread.so:devel/boost-libs \
-		libkomparediff2.so:textproc/libkomparediff2
+		libkomparediff2.so:textproc/libkomparediff2 \
+		libclang.so.6:devel/llvm60
 RUN_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
@@ -26,11 +27,11 @@ USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash guiaddons emoticons i18n iconthemes init \
 		itemmodels itemviews jobwidgets kcmutils kdeclarative \
 		kdelibs4support kio libksysguard newstuff notifications \
-		notifyconfig package parts plasma-desktop plasma-framework \
+		notifyconfig package parts plasma-framework \
 		runner service solid sonnet texteditor textwidgets threadweaver \
 		widgetsaddons windowsystem xmlgui
 USE_QT5=	concurrent core dbus gui help network qml quick \
-		script widgets xml buildtools_build qmake_build
+		script sql widgets xml buildtools_build qmake_build
 CONFLICTS=	kdevelop-kde4-4* kdevelop-4* kdevplatform-kde4-4* kdevplatform-4*
 SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
 		kdevplatform/util/.zshrc

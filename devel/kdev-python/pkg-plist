@@ -184,3 +184,4 @@ share/locale/ug/LC_MESSAGES/kdevpython.mo
 share/locale/uk/LC_MESSAGES/kdevpython.mo
 share/locale/zh_CN/LC_MESSAGES/kdevpython.mo
 share/locale/zh_TW/LC_MESSAGES/kdevpython.mo
+share/metainfo/org.kde.kdev-python.metainfo.xml
