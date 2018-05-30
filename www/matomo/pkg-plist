@@ -537,6 +537,7 @@
 %%WWWDIR%%/core/Updates/3.5.0-b2.php
 %%WWWDIR%%/core/Updates/3.5.0-b4.php
 %%WWWDIR%%/core/Updates/3.5.0-rc2.php
+%%WWWDIR%%/core/Updates/3.5.1-b1.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/UrlHelper.php
 %%WWWDIR%%/core/Validators/BaseValidator.php
@@ -3252,6 +3253,7 @@
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/PieGraph.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/VerticalBar.php
 %%WWWDIR%%/plugins/ImageGraph/fonts/tahoma.ttf
+%%WWWDIR%%/plugins/ImageGraph/lang/ar.json
 %%WWWDIR%%/plugins/ImageGraph/lang/bg.json
 %%WWWDIR%%/plugins/ImageGraph/lang/ca.json
 %%WWWDIR%%/plugins/ImageGraph/lang/cs.json
@@ -4028,6 +4030,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/HP.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/HTC.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Haier.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/HannSpree.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Huawei.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Humax.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Hyrican.png
@@ -4076,6 +4079,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Nvidia.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/O2.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/OPPO.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Obi.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Odys.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Onda.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/OnePlus.png
@@ -6964,24 +6968,17 @@
 %%WWWDIR%%/vendor/matomo/searchengine-and-social-list/Socials.yml
 %%WWWDIR%%/vendor/matomo/searchengine-and-social-list/composer.json
 %%WWWDIR%%/vendor/matomo/searchengine-and-social-list/package.json
-%%WWWDIR%%/vendor/maxmind-db/reader/CHANGELOG.md
 %%WWWDIR%%/vendor/maxmind-db/reader/LICENSE
 %%WWWDIR%%/vendor/maxmind-db/reader/README.md
-%%WWWDIR%%/vendor/maxmind-db/reader/autoload.php
 %%WWWDIR%%/vendor/maxmind-db/reader/composer.json
-%%WWWDIR%%/vendor/maxmind-db/reader/ext/config.m4
-%%WWWDIR%%/vendor/maxmind-db/reader/ext/maxminddb.c
-%%WWWDIR%%/vendor/maxmind-db/reader/ext/php_maxminddb.h
 %%WWWDIR%%/vendor/maxmind-db/reader/src/MaxMind/Db/Reader.php
 %%WWWDIR%%/vendor/maxmind-db/reader/src/MaxMind/Db/Reader/Decoder.php
 %%WWWDIR%%/vendor/maxmind-db/reader/src/MaxMind/Db/Reader/InvalidDatabaseException.php
 %%WWWDIR%%/vendor/maxmind-db/reader/src/MaxMind/Db/Reader/Metadata.php
 %%WWWDIR%%/vendor/maxmind-db/reader/src/MaxMind/Db/Reader/Util.php
-%%WWWDIR%%/vendor/maxmind/web-service-common/CHANGELOG.md
 %%WWWDIR%%/vendor/maxmind/web-service-common/LICENSE
 %%WWWDIR%%/vendor/maxmind/web-service-common/README.md
 %%WWWDIR%%/vendor/maxmind/web-service-common/composer.json
-%%WWWDIR%%/vendor/maxmind/web-service-common/dev-bin/release.sh
 %%WWWDIR%%/vendor/maxmind/web-service-common/src/Exception/AuthenticationException.php
 %%WWWDIR%%/vendor/maxmind/web-service-common/src/Exception/HttpException.php
 %%WWWDIR%%/vendor/maxmind/web-service-common/src/Exception/InsufficientFundsException.php
@@ -7150,7 +7147,6 @@
 %%WWWDIR%%/vendor/php-di/php-di/CONTRIBUTING.md
 %%WWWDIR%%/vendor/php-di/php-di/LICENSE
 %%WWWDIR%%/vendor/php-di/php-di/README.md
-%%WWWDIR%%/vendor/php-di/php-di/benchmarks/DI/ContainerBench.php
 %%WWWDIR%%/vendor/php-di/php-di/change-log.md
 %%WWWDIR%%/vendor/php-di/php-di/composer.json
 %%WWWDIR%%/vendor/php-di/php-di/couscous.yml
@@ -7480,7 +7476,6 @@
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Resources/palettes/shade.color
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Resources/palettes/spring.color
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Resources/palettes/summer.color
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/CHANGELOG.TXT
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/LICENSE.TXT
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/README.TXT
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/composer.json
@@ -7914,6 +7909,7 @@
 @dir %%WWWDIR%%/plugins/ExamplePlugin/screenshots
 @dir %%WWWDIR%%/plugins/ExampleTheme/images
 @dir %%WWWDIR%%/plugins/ExampleTheme/screenshots
+@dir %%WWWDIR%%/vendor/geoip2/geoip2/maxmind-db
 @dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Resources
 @dir %%WWWDIR%%/vendor/szymach/c-pchart/app/cache
 @dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache/tracker
