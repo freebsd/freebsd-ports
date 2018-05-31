@@ -2,20 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-PORTVERSION=	${EMACS_VER}
-PORTREVISION=	4
+DISTVERSION=	${EMACS_VER}
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU
 
+.if ${FLAVOR:U} == canna
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES=	http://www.gentei.org/~yuuji/software/emacs26canna/
+PATCHFILES=	emacs26.1-canna-20180529.diff.gz
+.endif
+
 MAINTAINER=	emacs@FreeBSD.org
 COMMENT=	GNU editing macros
+.if ${FLAVOR:U} == nox
+COMMENT+=	(No X flavor)
+.elif ${FLAVOR:U} == canna
+COMMENT+=	(Canna Japanese input flavor)
+.endif
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_aarch64=	Fails to link: missing sbrk
-CONFLICTS_INSTALL=	emacs-devel emacs-devel_nox
 
 FLAVORS=		full canna nox
 full_CONFLICTS_INSTALL=	emacs-canna emacs-nox
@@ -27,13 +34,34 @@ nox_CONFLICTS_INSTALL=	emacs emacs-canna
 nox_PKGNAMESUFFIX=	-nox
 
 USES=		cpe gmake localbase:ldflags makeinfo ncurses pkgconfig tar:xz
+.if ${FLAVOR:U} != nox
+USES+=		desktop-file-utils
+USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xt
+.endif
 CPE_VENDOR=	gnu
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var \
+CONFIGURE_ARGS=	--disable-build-details \
+		--localstatedir=/var \
 		--with-gameuser=games:games
-CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no \
-		ac_cv_prog_liblockfile=no
+.if ${FLAVOR:U} == canna
+CONFIGURE_ARGS+=	--with-canna
+.endif
+.if ${FLAVOR:U} == nox
+CONFIGURE_ARGS+=	--with-sound=no --without-cairo --without-dbus \
+			--without-gconf --without-gif --without-gsettings \
+			--with-x-toolkit=no --without-jpeg --without-lcms2 \
+			--without-m17n-flt --without-imagemagick \
+			--without-libotf --without-png \
+			--without-toolkit-scroll-bars --without-rsvg \
+			--without-tiff --without-x --without-xim --without-xpm \
+			--without-xwidgets
+.else
+CONFIGURE_ARGS+=	--with-x
+.endif
+# See r468320 to determine if/when the next line can be removed
+CONFIGURE_ENV=		ac_cv_header_sys_sysinfo_h=no
+CONFLICTS_INSTALL=	emacs-devel emacs-devel_nox
+GNU_CONFIGURE=		yes
 INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		ebrowse ede ediff edt efaq eieio eintr elisp emacs emacs-gnutls \
 		emacs-mime epa erc ert eshell eudc eww flymake forms gnus \
@@ -42,23 +70,39 @@ INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		sasl sc semantic ses sieve smtpmail speedbar srecode todo-mode \
 		tramp url vhdl-mode vip viper widget wisent woman
 INFO_PATH=	${DATADIR_REL}/info
+.if ${FLAVOR:U} != nox
+INSTALLS_ICONS=	yes
+.endif
+.if ${FLAVOR:U} == canna
+PLIST_FILES+=	${DATADIR}/${EMACS_VER}/lisp/canna.el.gz \
+		${DATADIR}/${EMACS_VER}/lisp/canna.elc \
+		${DATADIR}/${EMACS_VER}/lisp/isearch-ext.el.gz	\
+		${DATADIR}/${EMACS_VER}/lisp/isearch-ext.elc
+.endif
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 SUB_FILES=	sources.el
 SUB_LIST=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET} \
 		EMACS_VER=${EMACS_VER} # sources.el
 
-OPTIONS_DEFINE=	ACL DBUS GCONF GNUTLS GSETTINGS LLDB M17N MAILUTILS MODULES OTF \
+OPTIONS_DEFINE=	ACL DBUS GCONF GNUTLS GSETTINGS LCMS2 M17N MAILUTILS MODULES OTF\
 		SCROLLBARS SOURCES XFT XIM XML XWIDGETS
 OPTIONS_DEFAULT=	ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK3 JPEG KQUEUE \
-		M17N MAGICK MODULES OSS OTF PNG SCROLLBARS SOURCES SVG \
-		TIFF XFT XIM XML XPM
-OPTIONS_SUB=	YES
+		LCMS2 M17N MAGICK MAILUTILS MODULES OSS OTF PNG SCROLLBARS \
+		SOURCES SVG TIFF XFT XIM XML XPM
+
 OPTIONS_GROUP=	GRAPHICS
 OPTIONS_GROUP_GRAPHICS=	CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
 OPTIONS_RADIO=	FILENOTIFY SOUND X11TOOLKIT
 OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
 OPTIONS_RADIO_SOUND=	ALSA OSS
 OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
+
+.if ${FLAVOR:U} == nox
+OPTIONS_EXCLUDE=	ALSA CAIRO DBUS GCONF GFILE GIF GSETTINGS GTK2 GTK3 \
+			JPEG LCMS2 M17N MAGICK MOTIF OSS OTF PNG SCROLLBARS SVG \
+			TIFF XAW XAW3D XFT XIM XPM XWIDGETS
+.endif
+OPTIONS_SUB=	YES
 
 ACL_DESC=	Access control list support
 CAIRO_DESC=	Experimental Cairo library support     (implies PNG, XFT)
@@ -67,7 +111,6 @@ GFILE_DESC=	File notification via gfile
 GRAPHICS_DESC=	Graphics support
 GSETTINGS_DESC=	GSettings API for application settings
 KQUEUE_DESC=	File notification via kqueue
-LLDB_DESC=	LLDB support for GUD
 #LTO_DESC=	Enable link-time optimization
 MAGICK_DESC=	ImageMagick image processing support
 MAILUTILS_DESC=	Mail framework via GNU Mailutils
@@ -94,6 +137,7 @@ DBUS_CONFIGURE_WITH=	dbus
 GCONF_USE=		GNOME=gconf2
 GCONF_CONFIGURE_WITH=	gconf
 GFILE_CONFIGURE_ON=	--with-file-notification=gfile
+GFILE_USE=		GNOME=glib20
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CONFIGURE_WITH=	gif
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
@@ -112,7 +156,8 @@ GTK3_CONFIGURE_ON=	--with-x-toolkit=gtk3
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 KQUEUE_CONFIGURE_ON=	--with-file-notification=kqueue
-LLDB_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-lldb-gud.el
+LCMS2_CONFIGURE_WITH=	lcms2
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 #LTO_CONFIGURE_ON=	--enable-link-time-optimization
 M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=	m17n-flt
@@ -121,6 +166,7 @@ MAGICK_CONFIGURE_WITH=	imagemagick
 MAILUTILS_CONFIGURE_WITH=	mailutils
 MAILUTILS_LIB_DEPENDS=	libmailutils.so:mail/mailutils
 MODULES_CONFIGURE_WITH=	modules
+MAILUTILS_PLIST_FILES_OFF=	libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}/movemail
 MOTIF_USES=		motif
 MOTIF_CONFIGURE_ON=	--with-x-toolkit=motif
 MOTIF_LIB_DEPENDS=	libXp.so:x11/libXp
@@ -130,6 +176,9 @@ OTF_CONFIGURE_WITH=	libotf
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
 SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
+.if ${FLAVOR:U} == canna
+SOURCES_PLIST_FILES=	${DATADIR}/${EMACS_VER}/src/canna.c
+.endif
 SVG_USE=		GNOME=cairo,librsvg2
 SVG_CONFIGURE_WITH=	rsvg
 SVG_IMPLIES=		PNG
@@ -154,38 +203,7 @@ XWIDGETS_CONFIGURE_WITH=	xwidgets
 XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 XWIDGETS_IMPLIES=	GTK3
 
-.if ${FLAVOR:U} == canna
-CONFIGURE_ARGS+=	--with-canna
-PATCH_DIST_STRIP=	-p1
-PATCH_SITES=		http://www.gentei.org/~yuuji/software/emacs25canna/ \
-			http://distfiles.pirateparty.in/ashish/ \
-			LOCAL/ashish
-PATCHFILES=		emacs25.2canna-20170507.diff.gz
-PLIST_FILES+=		${DATADIR}/${EMACS_VER}/lisp/canna.el.gz \
-			${DATADIR}/${EMACS_VER}/lisp/canna.elc \
-			${DATADIR}/${EMACS_VER}/lisp/isearch-ext.el.gz \
-			${DATADIR}/${EMACS_VER}/lisp/isearch-ext.elc
-SOURCES_PLIST_FILES=	${DATADIR}/${EMACS_VER}/src/canna.c
-.endif
-.if ${FLAVOR:U} == nox
-CONFIGURE_ARGS+=	--with-sound=no --without-cairo --without-dbus \
-			--without-gconf --without-gif --without-gsettings \
-			--with-x-toolkit=no --without-jpeg --without-m17n-flt \
-			--without-imagemagick --without-libotf --without-png \
-			--without-toolkit-scroll-bars --without-rsvg \
-			--without-tiff --without-x --without-xim --without-xpm \
-			--without-xwidgets
-OPTIONS_EXCLUDE=	ALSA CAIRO DBUS GCONF GIF GSETTINGS GTK2 GTK3 JPEG \
-			M17N MAGICK MOTIF OSS OTF PNG SCROLLBARS SVG TIFF XAW \
-			XAW3D XFT XIM XPM XWIDGETS
-.else
-CONFIGURE_ARGS+=	--with-x
-INSTALLS_ICONS=		yes
-USE_XORG=		ice sm x11 xcb xext xfixes xinerama xmu xrandr xt
-USES+=			desktop-file-utils
-.endif
-
-EMACS_VER=	25.3
+EMACS_VER=		26.1
 
 .include <bsd.port.options.mk>
 
@@ -194,10 +212,10 @@ EMACS_VER=	25.3
 USES+=	compiler:openmp
 .endif
 
-# With a desktop entry stage-qa will give a warning about requiring
-# desktop-file-utils and portlint -C will give a warning about INSTALL_ICONS,
-# but don't pull in those dependencies with the nox flavor.
 .if ${FLAVOR} == nox
+# With a desktop entry stage-qa will give a warning about requiring
+# desktop-file-utils and portlint -C will give a warning about INSTALLS_ICONS,
+# but don't pull in those dependencies with the nox flavor.
 post-patch:
 	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/' ${WRKSRC}/etc/emacs.desktop
 .endif
@@ -206,5 +224,8 @@ post-install-SOURCES-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
 	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
 	${INSTALL_DATA} ${WRKDIR}/sources.el ${STAGEDIR}${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
+
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 
 .include <bsd.port.mk>
