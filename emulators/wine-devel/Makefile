@@ -26,8 +26,6 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2
 CONFLICTS_INSTALL=	wine-[0-9]* wine-staging-[0-9]* i386-wine-[0-9]* \
 			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose \
 		--disable-kerberos \
@@ -45,7 +43,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-udev
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
-USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:xz
+USES=		bison compiler:c11 desktop-file-utils gmake localbase shebangfix tar:xz
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
@@ -57,7 +55,7 @@ SUB_FILES=	pkg-message
 PORTDATA=	l_intl.nls wine.inf
 
 OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL STAGING V4L VKD3D WINEMAKER X11 GECKO MONO
-OPTIONS_DEFAULT=GNUTLS X11
+OPTIONS_DEFAULT=GNUTLS X11 STAGING
 OPTIONS_SUB=	yes
 
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
