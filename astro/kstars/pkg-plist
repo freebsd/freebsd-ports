@@ -300,6 +300,7 @@ share/doc/HTML/en/kstars/geocoords.docbook
 share/doc/HTML/en/kstars/geolocator.png
 share/doc/HTML/en/kstars/greatcircle.docbook
 share/doc/HTML/en/kstars/guides_tab.png
+share/doc/HTML/en/kstars/hips.docbook
 share/doc/HTML/en/kstars/horizon.docbook
 share/doc/HTML/en/kstars/hourangle.docbook
 share/doc/HTML/en/kstars/import_catalog.png
@@ -315,6 +316,7 @@ share/doc/HTML/en/kstars/jmoons.png
 share/doc/HTML/en/kstars/julianday.docbook
 share/doc/HTML/en/kstars/kepler2nd.png
 share/doc/HTML/en/kstars/kepler3d.png
+share/doc/HTML/en/kstars/kstars_hips.png
 share/doc/HTML/en/kstars/kstars_horizon.png
 share/doc/HTML/en/kstars/lambda_ex.png
 share/doc/HTML/en/kstars/lambda_max.png
@@ -908,6 +910,7 @@ share/doc/HTML/uk/kstars/flux2.png
 share/doc/HTML/uk/kstars/geocoords.docbook
 share/doc/HTML/uk/kstars/geolocator.png
 share/doc/HTML/uk/kstars/greatcircle.docbook
+share/doc/HTML/uk/kstars/hips.docbook
 share/doc/HTML/uk/kstars/horizon.docbook
 share/doc/HTML/uk/kstars/hourangle.docbook
 share/doc/HTML/uk/kstars/index.cache.bz2
