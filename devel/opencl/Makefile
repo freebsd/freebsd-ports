@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	opencl
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	devel
 
 MAINTAINER=	ohartman@zedat.fu-berlin.de
-COMMENT=	Open Computing Language (OpenCL) specifications V2.1 (header files)
+COMMENT=	Open Computing Language (OpenCL) specifications V2.2 (header files)
 
 LICENSE=	unknown
 LICENSE_NAME=	BSD-esque license agreement
@@ -21,11 +21,13 @@ GH_PROJECT=	OpenCL-Headers OpenCL-CLHPP:clhpp
 GH_TAGNAME=	${HEADER_TAG} ${CLHPP_TAG}:clhpp
 
 # the header releases don't have tags yet, so use git commit for now
-HEADER_TAG=	2d06e09
-CLHPP_TAG=	v2.0.10
+HEADER_TAG=	f039db6
+CLHPP_TAG=	8b6a312
 
 USES=		python:build
 NO_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}/opencl${PORTVERSION:S/.//}/CL
 
 do-build:
 	@cd ${WRKSRC_clhpp} && ${PYTHON_CMD} gen_cl_hpp.py
