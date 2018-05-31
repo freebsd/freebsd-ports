@@ -1,5 +1,5 @@
---- ../passenger-5.2.3/build/nginx.rb.orig	2018-04-22 21:21:23.833026000 +0100
-+++ ../passenger-5.2.3/build/nginx.rb	2018-04-22 21:25:02.268013000 +0100
+--- ../passenger-5.3.1/build/nginx.rb.orig	2018-05-20 08:43:19.389262000 +0200
++++ ../passenger-5.3.1/build/nginx.rb	2018-05-20 09:11:27.500253000 +0200
 @@ -39,13 +39,12 @@ auto_generated_sources = %w(
  desc "Build Nginx support files"
  task :nginx => [
