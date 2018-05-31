@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wireguard-go
-PORTVERSION=	0.0.20180524
+PORTVERSION=	0.0.20180531
 CATEGORIES=	net
 MASTER_SITES=	https://git.zx2c4.com/wireguard-go/snapshot/ \
 		LOCAL/decke
