@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
 GH_TAGNAME=	72f9142b
 GH_TUPLE=	citra-emu:ext-libressl-portable:cbb1dca:libressl/externals/libressl \
-		citra-emu:ext-soundtouch:a6e9119:soundtouch/externals/soundtouch \
+		citra-emu:ext-soundtouch:1d0e6cf:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:d1d4705:dynarmic/externals/dynarmic \
 		benhoyt:inih:r40:inih/externals/inih/inih \
 		catchorg:Catch2:v2.1.1:catch/externals/catch \
