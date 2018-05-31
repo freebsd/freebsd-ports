@@ -1,4 +1,4 @@
---- src/cpp/session/CMakeLists.txt.orig	2017-11-16 21:40:37 UTC
+--- src/cpp/session/CMakeLists.txt.orig	2018-05-16 18:21:36 UTC
 +++ src/cpp/session/CMakeLists.txt
 @@ -25,9 +25,9 @@ endif()
  if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DIR}/common/mathjax-26")
@@ -13,8 +13,8 @@
  
  # we often install embedded versions of these packages but don't do so currently
  
-@@ -39,19 +39,19 @@ endif()
- # endif()
+@@ -42,19 +42,19 @@ if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DI
+ endif()
  
  # verify libclang is installed
 -if(WIN32)
@@ -46,26 +46,26 @@
  
  
  # include files
-@@ -360,6 +360,9 @@ endif()
+@@ -362,6 +362,9 @@ endif()
  # define executable
  add_executable(rsession ${SESSION_SOURCE_FILES} ${SESSION_HEADER_FILES})
  
 +# additional libraries
-+target_link_libraries(rsession -L${FREEBSD_LIBDIR} -linotify)
++target_link_libraries(rsession -L${FREEBSD_LIBDIR} -linotify -lprocstat)
 +
  # skip libR RPATH at development time
  if(RSTUDIO_DEVELOPMENT OR RSTUDIO_RUN_IN_PLACE)
     set_target_properties(rsession PROPERTIES SKIP_BUILD_RPATH TRUE)
-@@ -466,11 +469,11 @@ if (NOT RSTUDIO_SESSION_WIN64)
+@@ -474,11 +477,11 @@ if (NOT RSTUDIO_SESSION_WIN64)
             DESTINATION ${RSTUDIO_INSTALL_SUPPORTING}/resources)
  
     # install pandoc
--   set(PANDOC_BIN "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/1.19.2.1")
+-   set(PANDOC_BIN "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/2.2.1")
 -   file(GLOB PANDOC_FILES "${PANDOC_BIN}/pandoc*")
 -   install(FILES ${PANDOC_FILES}
 -           PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
 -           DESTINATION  ${RSTUDIO_INSTALL_BIN}/pandoc)
-+   #set(PANDOC_BIN "${}/common/pandoc/1.19.2.1")
++   #set(PANDOC_BIN "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/2.2.1")
 +   #file(GLOB PANDOC_FILES "${PANDOC_BIN}/pandoc*")
 +   #install(FILES ${PANDOC_FILES}
 +   #        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
@@ -73,7 +73,7 @@
  
     # install rmarkdown package
     # file(GLOB RMARKDOWN_PACKAGE "${RSTUDIO_DEPENDENCIES_DIR}/common/rmarkdown*.tar.gz")
-@@ -511,14 +514,14 @@ if (NOT RSTUDIO_SESSION_WIN64)
+@@ -524,14 +527,14 @@ if (NOT RSTUDIO_SESSION_WIN64)
        install(PROGRAMS ${LIBCLANG_64_FILES}
                DESTINATION  ${RSTUDIO_INSTALL_BIN}/rsclang/x86_64)
     else()
