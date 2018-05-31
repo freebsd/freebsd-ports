@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2018-05-16 12:26:13 UTC
++++ CMakeLists.txt
+@@ -108,7 +108,7 @@ set(COMPILE_FLAGS "-Dgmic_build -Dcimg_u
+ if(APPLE)
+    set(COMPILE_FLAGS "${COMPILE_FLAGS} -mmacosx-version-min=10.8 -stdlib=libc++ -Wno-error=c++11-narrowing -Wc++11-extensions -fpermissive")
+ else()
+-  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fno-ipa-sra -fpermissive")
++  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fpermissive")
+ endif()
+ 
+ if(NOT "${PRERELEASE_TAG}" STREQUAL "")
+@@ -235,8 +235,8 @@ endif()
+ 
+ # CImg.h header
+ if(NOT EXISTS ${CMAKE_SOURCE_DIR}/src/CImg.h)
+-  file(DOWNLOAD https://github.com/dtschump/CImg/raw/master/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
+-  execute_process(COMMAND touch ${CMAKE_SOURCE_DIR}/src/CImg.h)
++  #file(DOWNLOAD https://github.com/dtschump/CImg/raw/master/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
++  execute_process(COMMAND ln -s ${CMAKE_INSTALL_PREFIX}/include/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
+ endif()
+ 
+ # gmic_stdlib.h header
