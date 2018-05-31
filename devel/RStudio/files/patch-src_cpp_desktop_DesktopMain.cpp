@@ -1,14 +1,14 @@
---- src/cpp/desktop/DesktopMain.cpp.orig	2017-11-16 21:40:37 UTC
+--- src/cpp/desktop/DesktopMain.cpp.orig	2018-05-16 18:21:36 UTC
 +++ src/cpp/desktop/DesktopMain.cpp
-@@ -42,6 +42,7 @@
- #include "DesktopSessionLauncher.hpp"
+@@ -40,6 +40,7 @@
  #include "DesktopProgressActivator.hpp"
  #include "DesktopNetworkProxyFactory.hpp"
+ #include "DesktopActivationOverlay.hpp"
 +#include "global-setenv.h"
  
  QProcess* pRSessionProcess;
  QString sharedSecret;
-@@ -198,6 +199,7 @@ bool isNonProjectFilename(QString filena
+@@ -262,6 +263,7 @@ bool useChromiumDevtools()
  
  int main(int argc, char* argv[])
  {

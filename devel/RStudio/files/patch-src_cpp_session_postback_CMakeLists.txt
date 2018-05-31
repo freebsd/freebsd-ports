@@ -1,0 +1,10 @@
+--- src/cpp/session/postback/CMakeLists.txt.orig	2018-05-30 18:06:27 UTC
++++ src/cpp/session/postback/CMakeLists.txt
+@@ -43,6 +43,7 @@ endif()
+ # set link dependencies
+ target_link_libraries(rpostback
+    rstudio-core
++   procstat
+ )
+ 
+ # configure postback scripts for development mode
