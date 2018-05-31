@@ -15,6 +15,11 @@ COMMENT=	X-Face encoder/decoder/viewer for Emacsen
 
 LICENSE=	GPLv2+
 
+.if ${FLAVOR:U} != devel && ${FLAVOR:U} != devel_nox
+# http://pkg.awarnach.mathstat.dal.ca/data/11i386-default/2018-05-30_07h36m11s/logs/errors/xface.el-emacs26-1.3.6.24_18.log
+BROKEN=		fails to build
+.endif
+
 RUN_DEPENDS=	compface:mail/faces
 
 USES=		emacs

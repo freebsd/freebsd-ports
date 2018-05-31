@@ -3,7 +3,7 @@
 
 PORTNAME=	ess
 DISTVERSION=	17.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
 		http://stat.ethz.ch/ESS/downloads/ess/
