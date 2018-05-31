@@ -1,0 +1,7 @@
+include/fsmtrie/fsmtrie.h
+include/fsmtrie/version.h
+lib/libfsmtrie.a
+lib/libfsmtrie.so
+lib/libfsmtrie.so.1
+lib/libfsmtrie.so.1.1.0
+libdata/pkgconfig/libfsmtrie.pc

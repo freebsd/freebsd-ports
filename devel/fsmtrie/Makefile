@@ -1,0 +1,33 @@
+# $FreeBSD$
+
+PORTNAME=	fsmtrie
+PORTVERSION=	1.1.0
+CATEGORIES=	devel
+MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
+
+MAINTAINER=	truckman@FreeBSD.org
+COMMENT=	Fast String Matcher Trie project
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+TEST_DEPENDS=	checkmk:devel/check
+
+GNU_CONFIGURE=	yes
+USES=		gmake libtool pkgconfig
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFAULT=DOXYGEN
+
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_ALL_TARGET=	html-local
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.mk>

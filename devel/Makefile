@@ -665,6 +665,7 @@
     SUBDIR += fpp
     SUBDIR += frama-c
     SUBDIR += frink
+    SUBDIR += fsmtrie
     SUBDIR += fstrm
     SUBDIR += ftjam
     SUBDIR += ftnchek
