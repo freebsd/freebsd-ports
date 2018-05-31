@@ -282,6 +282,7 @@
     SUBDIR += glosm
     SUBDIR += glpng
     SUBDIR += gltt
+    SUBDIR += gmic
     SUBDIR += gmic-qt
     SUBDIR += gmt
     SUBDIR += gnash
