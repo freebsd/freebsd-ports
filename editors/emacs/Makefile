@@ -212,8 +212,8 @@ EMACS_VER=		26.1
 USES+=	compiler:openmp
 .endif
 
-.if ${FLAVOR:U} != nox && !${PORT_OPTIONS:MMAGICK} && !${PORT_OPTIONS:MMAGICK} \
-	&& !${PORT_OPTIONS:MMAGICK} && !${PORT_OPTIONS:MMAGICK}
+.if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3} && !${PORT_OPTIONS:MMOTIF} \
+	&& !${PORT_OPTIONS:MXAW} && !${PORT_OPTIONS:MXAW3D}
 CONFIGURE_ARGS+=	--with-x-toolkit=no
 .endif
 
