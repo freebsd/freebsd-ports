@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.14.0
-PORTREVISION?=	3
+PORTREVISION?=	4
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/ \
@@ -17,7 +17,7 @@ LICENSE=	BSD2CLAUSE
 
 CONFLICTS_INSTALL=	nginx-devel
 
-PORTSCOUT=	limit:^1\.12\.[0-9]*
+PORTSCOUT=	limit:^1\.14\.[0-9]*
 
 USES=		cpe
 

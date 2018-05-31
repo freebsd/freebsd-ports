@@ -134,8 +134,8 @@ HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.5.4:pushstream
 HTTP_PUSH_STREAM_CONFIGURE_ON=	--add-module=${WRKSRC_pushstream}
 
 HTTP_REDIS_MASTER_SITES=	LOCAL/osa:redis
-HTTP_REDIS_DISTFILES=		ngx_http_redis-0.3.8.tar.gz:redis
-HTTP_REDIS_VARS=		DSO_EXTDIRS+=ngx_http_redis-0.3.8
+HTTP_REDIS_DISTFILES=		ngx_http_redis-0.3.9.tar.gz:redis
+HTTP_REDIS_VARS=		DSO_EXTDIRS+=ngx_http_redis-0.3.9
 
 HTTP_RESPONSE_MASTER_SITES=	http://catap.ru/downloads/nginx/:response
 HTTP_RESPONSE_DISTFILES=	ngx_http_response-0.3.tar.gz:response
@@ -225,10 +225,10 @@ NAXSI_NGINX_VER=	0.55.3
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:4ed8a0b:njs
+NJS_GH_TUPLE=		nginx:njs:bb7efcc:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
-PASSENGER_NGINX_VER=	5.2.3
+PASSENGER_NGINX_VER=	5.3.1
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USE=		ruby=yes
 PASSENGER_BUILD_DEPENDS=	${LOCALBASE}/bin/rake:devel/rubygem-rake
