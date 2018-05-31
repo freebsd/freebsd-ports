@@ -496,6 +496,7 @@
     SUBDIR += php72-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
+    SUBDIR += phpmailer6
     SUBDIR += pine-pgp-filters
     SUBDIR += pm-lib
     SUBDIR += policyd2
