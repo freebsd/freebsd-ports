@@ -1,4 +1,4 @@
---- fdbserver/worker.actor.cpp.orig	2018-04-26 12:45:22 UTC
+--- fdbserver/worker.actor.cpp.orig	2018-05-11 01:30:59 UTC
 +++ fdbserver/worker.actor.cpp
 @@ -39,7 +39,7 @@
  #include "fdbclient/ClientWorkerInterface.h"
@@ -9,7 +9,7 @@
  #ifdef USE_GPERFTOOLS
  #include "gperftools/profiler.h"
  #endif
-@@ -267,7 +267,7 @@ ACTOR Future<Void> registrationClient( R
+@@ -267,7 +267,7 @@ ACTOR Future<Void> registrationClient( Reference<Async
  	}
  }
  

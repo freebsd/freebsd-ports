@@ -1,4 +1,4 @@
---- fdbmonitor/fdbmonitor.cpp.orig	2018-04-19 02:55:50 UTC
+--- fdbmonitor/fdbmonitor.cpp.orig	2018-05-11 01:30:59 UTC
 +++ fdbmonitor/fdbmonitor.cpp
 @@ -35,6 +35,10 @@
  #include <linux/limits.h>
@@ -20,7 +20,7 @@
  typedef int fdb_fd_set;
  #endif
  
-@@ -83,7 +87,7 @@ void monitor_fd( fdb_fd_set list, int fd
+@@ -83,7 +87,7 @@ void monitor_fd( fdb_fd_set list, int fd, int* maxfd, 
  	FD_SET( fd, list );
  	if ( fd > *maxfd )
  		*maxfd = fd;
@@ -29,7 +29,7 @@
  	/* ignore maxfd */
  	struct kevent ev;
  	EV_SET( &ev, fd, EVFILT_READ, EV_ADD, 0, 0, cmd );
-@@ -94,7 +98,7 @@ void monitor_fd( fdb_fd_set list, int fd
+@@ -94,7 +98,7 @@ void monitor_fd( fdb_fd_set list, int fd, int* maxfd, 
  void unmonitor_fd( fdb_fd_set list, int fd ) {
  #ifdef __linux__
  	FD_CLR( fd, list );
@@ -38,7 +38,7 @@
  	struct kevent ev;
  	EV_SET( &ev, fd, EVFILT_READ, EV_DELETE, 0, 0, NULL );
  	kevent( list, &ev, 1, NULL, 0, NULL ); // FIXME: check?
-@@ -188,7 +192,7 @@ const char* get_value_multi(const CSimpl
+@@ -188,7 +192,7 @@ const char* get_value_multi(const CSimpleIni& ini, con
  }
  
  double timer() {
@@ -47,7 +47,7 @@
  	struct timespec ts;
  	clock_gettime(CLOCK_MONOTONIC, &ts);
  	return double(ts.tv_sec) + (ts.tv_nsec * 1e-9);
-@@ -822,7 +826,7 @@ void read_child_output( Command* cmd, in
+@@ -822,7 +826,7 @@ void read_child_output( Command* cmd, int pipe_idx, fd
  	}
  }
  
@@ -56,7 +56,7 @@
  void watch_conf_dir( int kq, int* confd_fd, std::string confdir ) {
  	struct kevent ev;
  	std::string original = confdir;
-@@ -839,7 +843,7 @@ void watch_conf_dir( int kq, int* confd_
+@@ -839,7 +843,7 @@ void watch_conf_dir( int kq, int* confd_fd, std::strin
  		std::string child = confdir;
  
  		/* Find the nearest existing ancestor */
@@ -65,7 +65,7 @@
  			child = confdir;
  			confdir = parentDirectory(confdir);
  		}
-@@ -876,7 +880,7 @@ void watch_conf_file( int kq, int* conff
+@@ -876,7 +880,7 @@ void watch_conf_file( int kq, int* conff_fd, const cha
  	}
  
  	/* Open and watch */
@@ -74,7 +74,7 @@
  	if ( *conff_fd >= 0 ) {
  		EV_SET( &ev, *conff_fd, EVFILT_VNODE, EV_ADD | EV_CLEAR, NOTE_WRITE | NOTE_ATTRIB, 0, NULL );
  		kevent( kq, &ev, 1, NULL, 0, NULL );
-@@ -983,7 +987,7 @@ std::unordered_map<int, std::unordered_s
+@@ -983,7 +987,7 @@ std::unordered_map<int, std::unordered_set<std::string
  
  int main(int argc, char** argv) {
  	std::string lockfile = "/var/run/fdbmonitor.pid";
