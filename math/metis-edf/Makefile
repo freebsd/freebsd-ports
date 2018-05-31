@@ -49,7 +49,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/graphs/* ${STAGEDIR}${EXAMPLESDIR}
 
-regression-test:
+do-test:
 	(cd ${WRKSRC}/graphs && ../programs/gpmetis test.mgraph 2 || ${TRUE})
 
 .include <bsd.port.post.mk>
