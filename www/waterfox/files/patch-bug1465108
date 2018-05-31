@@ -1,0 +1,520 @@
+commit ef14efabf364
+Author: Jon Coppeard <jcoppeard@mozilla.com>
+Date:   Thu May 10 10:09:23 2018 +0100
+
+    Bug 1465108 - Fix count of compacting update tasks started r=sfink a=abillings a=RyanVM
+---
+ js/src/gc/GC.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git js/src/jsgc.cpp js/src/jsgc.cpp
+index 194e6e82e2a80..2f552a14b5582 100644
+--- js/src/jsgc.cpp
++++ js/src/jsgc.cpp
+@@ -2818,7 +2818,7 @@ GCRuntime::updateCellPointers(Zone* zone, AllocKinds kinds, size_t bgTaskCount)
+         for (size_t i = 0; i < bgTaskCount && !bgArenas.done(); i++) {
+             bgTasks[i].emplace(rt, &bgArenas, lock);
+             startTask(*bgTasks[i], gcstats::PhaseKind::COMPACT_UPDATE_CELLS, lock);
+-            tasksStarted = i;
++            tasksStarted++;
+         }
+     }
+ 
+@@ -2829,6 +2829,8 @@ GCRuntime::updateCellPointers(Zone* zone, AllocKinds kinds, size_t bgTaskCount)
+ 
+         for (size_t i = 0; i < tasksStarted; i++)
+             joinTask(*bgTasks[i], gcstats::PhaseKind::COMPACT_UPDATE_CELLS, lock);
++        for (size_t i = tasksStarted; i < MaxCellUpdateBackgroundTasks; i++)
++            MOZ_ASSERT(bgTasks[i].isNothing());
+     }
+ }
+ 
+commit 72fb9a19590e
+Author: Jon Coppeard <jcoppeard@mozilla.com>
+Date:   Thu May 10 10:09:31 2018 +0100
+
+    Bug 1465108 - Use function pointers rather than virtual run method for GC parallel tasks r=sfink a=abillings a=RyanVM
+---
+ js/src/gc/Allocator.cpp     |  2 +-
+ js/src/gc/GC.cpp            | 75 +++++++++++++++++++++++----------------------
+ js/src/gc/GCParallelTask.h  | 44 ++++++++++++++++++++++----
+ js/src/gc/GCRuntime.h       | 18 +++++------
+ js/src/gc/Nursery.cpp       | 12 +++++---
+ js/src/gc/Statistics.h      |  3 --
+ js/src/vm/HelperThreads.cpp |  4 +--
+ 7 files changed, 95 insertions(+), 63 deletions(-)
+
+diff --git js/src/gc/Allocator.cpp js/src/gc/Allocator.cpp
+index ba0acc392ae8d..62da83637238e 100644
+--- js/src/gc/Allocator.cpp
++++ js/src/gc/Allocator.cpp
+@@ -643,7 +643,7 @@ GCRuntime::pickChunk(AutoLockGCBgAlloc& lock)
+ }
+ 
+ BackgroundAllocTask::BackgroundAllocTask(JSRuntime* rt, ChunkPool& pool)
+-  : GCParallelTask(rt),
++  : GCParallelTaskHelper(rt),
+     chunkPool_(pool),
+     enabled_(CanUseExtraThreads() && GetCPUCount() >= 2)
+ {
+diff --git js/src/gc/GCRuntime.h js/src/gc/GCRuntime.h
+index 63d202a0eda1b..32c77d9167de2 100644
+--- js/src/gc/GCRuntime.h
++++ js/src/gc/GCRuntime.h
+@@ -106,7 +106,7 @@ class ChunkPool
+ 
+ // Performs extra allocation off thread so that when memory is required on the
+ // active thread it will already be available and waiting.
+-class BackgroundAllocTask : public GCParallelTask
++class BackgroundAllocTask : public GCParallelTaskHelper<BackgroundAllocTask>
+ {
+     // Guarded by the GC lock.
+     GCLockData<ChunkPool&> chunkPool_;
+@@ -117,21 +117,19 @@ class BackgroundAllocTask : public GCParallelTask
+     BackgroundAllocTask(JSRuntime* rt, ChunkPool& pool);
+     bool enabled() const { return enabled_; }
+ 
+-  protected:
+-    void run() override;
++    void run();
+ };
+ 
+ // Search the provided Chunks for free arenas and decommit them.
+-class BackgroundDecommitTask : public GCParallelTask
++class BackgroundDecommitTask : public GCParallelTaskHelper<BackgroundDecommitTask>
+ {
+   public:
+     using ChunkVector = mozilla::Vector<Chunk*>;
+ 
+-    explicit BackgroundDecommitTask(JSRuntime *rt) : GCParallelTask(rt) {}
++    explicit BackgroundDecommitTask(JSRuntime *rt) : GCParallelTaskHelper(rt) {}
+     void setChunksToScan(ChunkVector &chunks);
+ 
+-  protected:
+-    void run() override;
++    void run();
+ 
+   private:
+     MainThreadOrGCTaskData<ChunkVector> toDecommit;
+@@ -492,8 +490,10 @@ class GCRuntime
+     /*
+      * Concurrent sweep infrastructure.
+      */
+-    void startTask(GCParallelTask& task, gcstats::PhaseKind phase, AutoLockHelperThreadState& locked);
+-    void joinTask(GCParallelTask& task, gcstats::PhaseKind phase, AutoLockHelperThreadState& locked);
++    void startTask(GCParallelTask& task, gcstats::PhaseKind phase,
++                   AutoLockHelperThreadState& locked);
++    void joinTask(GCParallelTask& task, gcstats::PhaseKind phase,
++                  AutoLockHelperThreadState& locked);
+ 
+     void mergeCompartments(JSCompartment* source, JSCompartment* target);
+ 
+diff --git js/src/jsgc.cpp js/src/jsgc.cpp
+index 2f552a14b5582..482c6bdbaecb3 100644
+--- js/src/jsgc.cpp
++++ js/src/jsgc.cpp
+@@ -2307,7 +2307,7 @@ ArenasToUpdate::getArenasToUpdate(AutoLockHelperThreadState& lock, unsigned maxL
+     return { begin, last->next };
+ }
+ 
+-struct UpdatePointersTask : public GCParallelTask
++struct UpdatePointersTask : public GCParallelTaskHelper<UpdatePointersTask>
+ {
+     // Maximum number of arenas to update in one block.
+ #ifdef DEBUG
+@@ -2317,19 +2317,18 @@ struct UpdatePointersTask : public GCParallelTask
+ #endif
+ 
+     UpdatePointersTask(JSRuntime* rt, ArenasToUpdate* source, AutoLockHelperThreadState& lock)
+-      : GCParallelTask(rt), source_(source)
++      : GCParallelTaskHelper(rt), source_(source)
+     {
+         arenas_.begin = nullptr;
+         arenas_.end = nullptr;
+     }
+ 
+-    ~UpdatePointersTask() override { join(); }
++    void run();
+ 
+   private:
+     ArenasToUpdate* source_;
+     ArenaListSegment arenas_;
+ 
+-    virtual void run() override;
+     bool getArenasToUpdate();
+     void updateArenas();
+ };
+@@ -3618,17 +3617,13 @@ ArenaLists::checkEmptyArenaList(AllocKind kind)
+ 
+ class MOZ_RAII js::gc::AutoRunParallelTask : public GCParallelTask
+ {
+-    using Func = void (*)(JSRuntime*);
+-
+-    Func func_;
+     gcstats::PhaseKind phase_;
+     AutoLockHelperThreadState& lock_;
+ 
+   public:
+-    AutoRunParallelTask(JSRuntime* rt, Func func, gcstats::PhaseKind phase,
++    AutoRunParallelTask(JSRuntime* rt, TaskFunc func, gcstats::PhaseKind phase,
+                         AutoLockHelperThreadState& lock)
+-      : GCParallelTask(rt),
+-        func_(func),
++      : GCParallelTask(rt, func),
+         phase_(phase),
+         lock_(lock)
+     {
+@@ -3638,10 +3633,6 @@ class MOZ_RAII js::gc::AutoRunParallelTask : public GCParallelTask
+     ~AutoRunParallelTask() {
+         runtime()->gc.joinTask(*this, phase_, lock_);
+     }
+-
+-    void run() override {
+-        func_(runtime());
+-    }
+ };
+ 
+ void
+@@ -3946,8 +3937,9 @@ PurgeShapeTablesForShrinkingGC(JSRuntime* rt)
+ }
+ 
+ static void
+-UnmarkCollectedZones(JSRuntime* rt)
++UnmarkCollectedZones(GCParallelTask* task)
+ {
++    JSRuntime* rt = task->runtime();
+     for (GCZonesIter zone(rt); !zone.done(); zone.next()) {
+         /* Unmark everything in the zones being collected. */
+         zone->arenas.unmarkAll();
+@@ -3960,9 +3952,9 @@ UnmarkCollectedZones(JSRuntime* rt)
+ }
+ 
+ static void
+-BufferGrayRoots(JSRuntime* rt)
++BufferGrayRoots(GCParallelTask* task)
+ {
+-    rt->gc.bufferGrayRoots();
++    task->runtime()->gc.bufferGrayRoots();
+ }
+ 
+ bool
+@@ -4976,7 +4968,7 @@ GCRuntime::endMarkingSweepGroup()
+ }
+ 
+ // Causes the given WeakCache to be swept when run.
+-class ImmediateSweepWeakCacheTask : public GCParallelTask
++class ImmediateSweepWeakCacheTask : public GCParallelTaskHelper<ImmediateSweepWeakCacheTask>
+ {
+     JS::detail::WeakCacheBase& cache;
+ 
+@@ -4984,21 +4976,23 @@ class ImmediateSweepWeakCacheTask : public GCParallelTask
+ 
+   public:
+     ImmediateSweepWeakCacheTask(JSRuntime* rt, JS::detail::WeakCacheBase& wc)
+-      : GCParallelTask(rt), cache(wc)
++      : GCParallelTaskHelper(rt), cache(wc)
+     {}
+ 
+     ImmediateSweepWeakCacheTask(ImmediateSweepWeakCacheTask&& other)
+-      : GCParallelTask(Move(other)), cache(other.cache)
++      : GCParallelTaskHelper(Move(other)), cache(other.cache)
+     {}
+ 
+-    void run() override {
++    void run() {
+         cache.sweep();
+     }
+ };
+ 
+ static void
+-UpdateAtomsBitmap(JSRuntime* runtime)
++UpdateAtomsBitmap(GCParallelTask* task)
+ {
++    JSRuntime* runtime = task->runtime();
++
+     DenseBitmap marked;
+     if (runtime->gc.atomMarking.computeBitmapFromChunkMarkBits(runtime, marked)) {
+         for (GCZonesIter zone(runtime); !zone.done(); zone.next())
+@@ -5019,15 +5013,17 @@ UpdateAtomsBitmap(JSRuntime* runtime)
+ }
+ 
+ static void
+-SweepCCWrappers(JSRuntime* runtime)
++SweepCCWrappers(GCParallelTask* task)
+ {
++    JSRuntime* runtime = task->runtime();
+     for (GCCompartmentGroupIter c(runtime); !c.done(); c.next())
+         c->sweepCrossCompartmentWrappers();
+ }
+ 
+ static void
+-SweepObjectGroups(JSRuntime* runtime)
++SweepObjectGroups(GCParallelTask* task)
+ {
++    JSRuntime* runtime = task->runtime();
+     for (GCCompartmentGroupIter c(runtime); !c.done(); c.next())
+         c->objectGroups.sweep(runtime->defaultFreeOp());
+ }
+@@ -5040,8 +5036,9 @@ SweepRegExps(JSRuntime* runtime)
+ }
+ 
+ static void
+-SweepMisc(JSRuntime* runtime)
++SweepMisc(GCParallelTask* task)
+ {
++    JSRuntime* runtime = task->runtime();
+     for (GCCompartmentGroupIter c(runtime); !c.done(); c.next()) {
+         c->sweepGlobalObject();
+         c->sweepTemplateObjects();
+@@ -5054,17 +5051,19 @@ SweepMisc(JSRuntime* runtime)
+ }
+ 
+ static void
+-SweepCompressionTasks(JSRuntime* runtime)
++SweepCompressionTasks(GCParallelTask* task)
+ {
++    JSRuntime* runtime = task->runtime();
++
+     AutoLockHelperThreadState lock;
+ 
+     // Attach finished compression tasks.
+     auto& finished = HelperThreadState().compressionFinishedList(lock);
+     for (size_t i = 0; i < finished.length(); i++) {
+         if (finished[i]->runtimeMatches(runtime)) {
+-            UniquePtr<SourceCompressionTask> task(Move(finished[i]));
++            UniquePtr<SourceCompressionTask> compressionTask(Move(finished[i]));
+             HelperThreadState().remove(finished, &i);
+-            task->complete();
++            compressionTask->complete();
+         }
+     }
+ 
+@@ -5077,8 +5076,9 @@ SweepCompressionTasks(JSRuntime* runtime)
+ }
+ 
+ static void
+-SweepWeakMaps(JSRuntime* runtime)
++SweepWeakMaps(GCParallelTask* task)
+ {
++    JSRuntime* runtime = task->runtime();
+     for (GCSweepGroupIter zone(runtime); !zone.done(); zone.next()) {
+         /* Clear all weakrefs that point to unmarked things. */
+         for (auto edge : zone->gcWeakRefs()) {
+@@ -5098,15 +5098,16 @@ SweepWeakMaps(JSRuntime* runtime)
+ }
+ 
+ static void
+-SweepUniqueIds(JSRuntime* runtime)
++SweepUniqueIds(GCParallelTask* task)
+ {
+     FreeOp fop(nullptr);
+-    for (GCSweepGroupIter zone(runtime); !zone.done(); zone.next())
++    for (GCSweepGroupIter zone(task->runtime()); !zone.done(); zone.next())
+         zone->sweepUniqueIds(&fop);
+ }
+ 
+ void
+-GCRuntime::startTask(GCParallelTask& task, gcstats::PhaseKind phase, AutoLockHelperThreadState& locked)
++GCRuntime::startTask(GCParallelTask& task, gcstats::PhaseKind phase,
++                     AutoLockHelperThreadState& locked)
+ {
+     if (!task.startWithLockHeld(locked)) {
+         AutoUnlockHelperThreadState unlock(locked);
+@@ -5116,7 +5117,8 @@ GCRuntime::startTask(GCParallelTask& task, gcstats::PhaseKind phase, AutoLockHel
+ }
+ 
+ void
+-GCRuntime::joinTask(GCParallelTask& task, gcstats::PhaseKind phase, AutoLockHelperThreadState& locked)
++GCRuntime::joinTask(GCParallelTask& task, gcstats::PhaseKind phase,
++                    AutoLockHelperThreadState& locked)
+ {
+     {
+         gcstats::AutoPhase ap(stats(), gcstats::PhaseKind::JOIN_PARALLEL_TASKS);
+@@ -5681,7 +5683,7 @@ class js::gc::WeakCacheSweepIterator
+     }
+ };
+ 
+-class IncrementalSweepWeakCacheTask : public GCParallelTask
++class IncrementalSweepWeakCacheTask : public GCParallelTaskHelper<IncrementalSweepWeakCacheTask>
+ {
+     WeakCacheSweepIterator& work_;
+     SliceBudget& budget_;
+@@ -5691,7 +5693,7 @@ class IncrementalSweepWeakCacheTask : public GCParallelTask
+   public:
+     IncrementalSweepWeakCacheTask(JSRuntime* rt, WeakCacheSweepIterator& work, SliceBudget& budget,
+                                   AutoLockHelperThreadState& lock)
+-      : GCParallelTask(rt), work_(work), budget_(budget), lock_(lock),
++      : GCParallelTaskHelper(rt), work_(work), budget_(budget), lock_(lock),
+         cache_(work.next(lock))
+     {
+         MOZ_ASSERT(cache_);
+@@ -5702,8 +5704,7 @@ class IncrementalSweepWeakCacheTask : public GCParallelTask
+         runtime()->gc.joinTask(*this, gcstats::PhaseKind::SWEEP_WEAK_CACHES, lock_);
+     }
+ 
+-  private:
+-    void run() override {
++    void run() {
+         do {
+             MOZ_ASSERT(cache_->needsIncrementalBarrier());
+             size_t steps = cache_->sweep();
+diff --git js/src/jsgc.h js/src/jsgc.h
+index 68c9205aeb1a6..738b324f592f3 100644
+--- js/src/jsgc.h
++++ js/src/jsgc.h
+@@ -12,6 +12,7 @@
+ #include "mozilla/Atomics.h"
+ #include "mozilla/EnumeratedArray.h"
+ #include "mozilla/MemoryReporting.h"
++#include "mozilla/Move.h"
+ #include "mozilla/TimeStamp.h"
+ #include "mozilla/TypeTraits.h"
+ 
+@@ -937,11 +938,19 @@ class GCHelperState
+ };
+ 
+ // A generic task used to dispatch work to the helper thread system.
+-// Users should derive from GCParallelTask add what data they need and
+-// override |run|.
++// Users supply a function pointer to call.
++//
++// Note that we don't use virtual functions here because destructors can write
++// the vtable pointer on entry, which can causes races if synchronization
++// happens there.
+ class GCParallelTask
+ {
++  public:
++    using TaskFunc = void (*)(GCParallelTask*);
++
++  private:
+     JSRuntime* const runtime_;
++    TaskFunc func_;
+ 
+     // The state of the parallel computation.
+     enum TaskState {
+@@ -960,12 +969,11 @@ class GCParallelTask
+     // A flag to signal a request for early completion of the off-thread task.
+     mozilla::Atomic<bool> cancel_;
+ 
+-    virtual void run() = 0;
+-
+   public:
+-    explicit GCParallelTask(JSRuntime* runtime) : runtime_(runtime), state(NotStarted), duration_(nullptr) {}
++    explicit GCParallelTask(JSRuntime* runtime, TaskFunc func) : runtime_(runtime), func_(func), state(NotStarted), duration_(nullptr) {}
+     GCParallelTask(GCParallelTask&& other)
+       : runtime_(other.runtime_),
++        func_(other.func_),
+         state(other.state),
+         duration_(nullptr),
+         cancel_(false)
+@@ -973,7 +981,7 @@ class GCParallelTask
+ 
+     // Derived classes must override this to ensure that join() gets called
+     // before members get destructed.
+-    virtual ~GCParallelTask();
++    ~GCParallelTask();
+ 
+     JSRuntime* runtime() { return runtime_; }
+ 
+@@ -1004,12 +1012,34 @@ class GCParallelTask
+     bool isRunningWithLockHeld(const AutoLockHelperThreadState& locked) const;
+     bool isRunning() const;
+ 
++    void runTask() {
++        func_(this);
++    }
++
+     // This should be friended to HelperThread, but cannot be because it
+     // would introduce several circular dependencies.
+   public:
+     void runFromHelperThread(AutoLockHelperThreadState& locked);
+ };
+ 
++// CRTP template to handle cast to derived type when calling run().
++template <typename Derived>
++class GCParallelTaskHelper : public GCParallelTask
++{
++  public:
++    explicit GCParallelTaskHelper(JSRuntime* runtime)
++      : GCParallelTask(runtime, &runTaskTyped)
++    {}
++    GCParallelTaskHelper(GCParallelTaskHelper&& other)
++      : GCParallelTask(mozilla::Move(other))
++    {}
++
++  private:
++    static void runTaskTyped(GCParallelTask* task) {
++        static_cast<Derived*>(task)->run();
++    }
++};
++
+ typedef void (*IterateChunkCallback)(JSRuntime* rt, void* data, gc::Chunk* chunk);
+ typedef void (*IterateZoneCallback)(JSRuntime* rt, void* data, JS::Zone* zone);
+ typedef void (*IterateArenaCallback)(JSRuntime* rt, void* data, gc::Arena* arena,
+diff --git js/src/gc/Nursery.cpp js/src/gc/Nursery.cpp
+index f7aa9ffd0ae2e..218124069c2f6 100644
+--- js/src/gc/Nursery.cpp
++++ js/src/gc/Nursery.cpp
+@@ -43,19 +43,21 @@ using mozilla::TimeStamp;
+ 
+ constexpr uintptr_t CanaryMagicValue = 0xDEADB15D;
+ 
+-struct js::Nursery::FreeMallocedBuffersTask : public GCParallelTask
++struct js::Nursery::FreeMallocedBuffersTask : public GCParallelTaskHelper<FreeMallocedBuffersTask>
+ {
+-    explicit FreeMallocedBuffersTask(FreeOp* fop) : GCParallelTask(fop->runtime()), fop_(fop) {}
++    explicit FreeMallocedBuffersTask(FreeOp* fop)
++      : GCParallelTaskHelper(fop->runtime()),
++        fop_(fop) {}
+     bool init() { return buffers_.init(); }
+     void transferBuffersToFree(MallocedBuffersSet& buffersToFree,
+                                const AutoLockHelperThreadState& lock);
+-    ~FreeMallocedBuffersTask() override { join(); }
++    ~FreeMallocedBuffersTask() { join(); }
++
++    void run();
+ 
+   private:
+     FreeOp* fop_;
+     MallocedBuffersSet buffers_;
+-
+-    virtual void run() override;
+ };
+ 
+ #ifdef JS_GC_ZEAL
+diff --git js/src/gc/Statistics.h js/src/gc/Statistics.h
+index 7775e3e71e394..9db8427ff790a 100644
+--- js/src/gc/Statistics.h
++++ js/src/gc/Statistics.h
+@@ -25,9 +25,6 @@
+ #include "vm/JSONPrinter.h"
+ 
+ namespace js {
+-
+-class GCParallelTask;
+-
+ namespace gcstats {
+ 
+ // Phase data is generated by a script. If you need to add phases, edit
+diff --git js/src/vm/HelperThreads.cpp js/src/vm/HelperThreads.cpp
+index 2263b53808935..b9cd88d63a988 100644
+--- js/src/vm/HelperThreads.cpp
++++ js/src/vm/HelperThreads.cpp
+@@ -1521,7 +1521,7 @@ js::GCParallelTask::runFromMainThread(JSRuntime* rt)
+     assertNotStarted();
+     MOZ_ASSERT(js::CurrentThreadCanAccessRuntime(rt));
+     TimeStamp timeStart = TimeStamp::Now();
+-    run();
++    runTask();
+     duration_ = TimeSince(timeStart);
+ }
+ 
+@@ -1537,7 +1537,7 @@ js::GCParallelTask::runFromHelperThread(AutoLockHelperThreadState& lock)
+         AutoUnlockHelperThreadState parallelSection(lock);
+         TimeStamp timeStart = TimeStamp::Now();
+         TlsContext.get()->heapState = JS::HeapState::MajorCollecting;
+-        run();
++        runTask();
+         TlsContext.get()->heapState = JS::HeapState::Idle;
+         duration_ = TimeSince(timeStart);
+     }
