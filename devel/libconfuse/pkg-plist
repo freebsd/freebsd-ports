@@ -4,3 +4,7 @@ lib/libconfuse.so
 lib/libconfuse.so.2
 lib/libconfuse.so.2.0.0
 libdata/pkgconfig/libconfuse.pc
+share/doc/confuse/AUTHORS
+share/doc/confuse/ChangeLog.md
+share/doc/confuse/LICENSE
+share/doc/confuse/README.md
