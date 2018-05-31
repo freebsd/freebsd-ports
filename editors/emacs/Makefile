@@ -212,6 +212,11 @@ EMACS_VER=		26.1
 USES+=	compiler:openmp
 .endif
 
+.if ${FLAVOR:U} != nox && !${PORT_OPTIONS:MMAGICK} && !${PORT_OPTIONS:MMAGICK} \
+	&& !${PORT_OPTIONS:MMAGICK} && !${PORT_OPTIONS:MMAGICK}
+CONFIGURE_ARGS+=	--with-x-toolkit=no
+.endif
+
 .if ${FLAVOR} == nox
 # With a desktop entry stage-qa will give a warning about requiring
 # desktop-file-utils and portlint -C will give a warning about INSTALLS_ICONS,
