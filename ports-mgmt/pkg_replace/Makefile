@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_replace
-PORTVERSION=	20180424
+PORTVERSION=	20180530
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://member.tokoha-u.ac.jp/~kdeguchi/download/
 
