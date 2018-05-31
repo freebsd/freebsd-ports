@@ -1,0 +1,10 @@
+Farsight fsmtrie
+
+This is the Fast String Matcher Trie project. This C-based library
+provides a simple API for the storage and fast matching of ASCII,
+Extended ASCII, and 32-bit wide "token" strings.
+
+It was originally inspired from code found here:
+  http://www.geeksforgeeks.org/trie-insert-and-search/
+
+WWW: https://github.com/farsightsec/fsmtrie
