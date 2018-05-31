@@ -13,6 +13,9 @@ COMMENT?=	Mozc Japanese Input Method, Server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# http://pkg.awarnach.mathstat.dal.ca/data/11i386-default/2018-05-30_07h36m11s/logs/errors/ja-mozc-server-2.20.2677.102.02_8.log
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	ninja:devel/ninja \
 		gyp:devel/py-gyp
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}

@@ -12,6 +12,11 @@ COMMENT=	Big Brother Database
 
 LICENSE=	GPLv3+
 
+.if ${FLAVOR:U} != devel && ${FLAVOR:U} != devel_nox
+# http://pkg.awarnach.mathstat.dal.ca/data/11i386-default/2018-05-30_07h36m11s/logs/errors/bbdb-emacs26-3.1.2_1.log
+BROKEN=		fails to build
+.endif
+
 # do not depend on base texinfo on 10
 BUILD_DEPENDS=	texi2dvi:print/texinfo
 

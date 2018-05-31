@@ -3,7 +3,7 @@
 
 PORTNAME=	proofgeneral
 PORTVERSION=	4.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}

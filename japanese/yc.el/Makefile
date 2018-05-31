@@ -14,6 +14,11 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	t@nakao.org
 COMMENT=	Yet another Canna client for Emacs
 
+.if ${FLAVOR:U} != devel && ${FLAVOR:U} != devel_nox
+# http://pkg.awarnach.mathstat.dal.ca/data/11i386-default/2018-05-30_07h36m11s/logs/errors/ja-yc.el-emacs26-5.2.1_14,1.log
+BROKEN=		fails to build
+.endif
+
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> yc.el
