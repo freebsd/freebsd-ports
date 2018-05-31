@@ -1,0 +1,34 @@
+FreeBSD isn't Linux, in spite of being a non-Apple UNIX.
+There's unreached code in the patch showing how we *could*
+do it if (when) libepoll-shim supports the whole API needed.
+
+--- CMakeLists.txt.orig	2018-05-29 15:08:25 UTC
++++ CMakeLists.txt
+@@ -161,10 +161,26 @@ install(EXPORT CutelystTargets
+ add_subdirectory(Cutelyst)
+ 
+ if(UNIX AND NOT APPLE)
+-    set(LINUX TRUE)
++    # set(LINUX TRUE)
++    set(LINUX FALSE)  # FreeBSD isn't Linux
+ endif()
+ 
+ if (LINUX)
++    # Try to find the EPOLL implementation from libepoll-shim; while
++    # epoll.h is found, and timerfd.h is found, the implementation
++    # in timerfd is insufficient (missing timerfd_gettime), and besides
++    # that there is also no eventfd.h.
++    #
++    # So switch off EPoll anyway.
++    find_file(EPOLL_H sys/epoll.h
++        HINTS libepoll-shim /usr/local/include/libepoll-shim
++    )
++    if (EPOLL_H)
++        get_filename_component(EPOLL_SYS_DIR ${EPOLL_H} DIRECTORY)
++        get_filename_component(EPOLL_DIR ${EPOLL_SYS_DIR} DIRECTORY)
++        include_directories(${EPOLL_DIR})
++    endif()
++
+     add_subdirectory(EventLoopEPoll)
+ endif()
+ 
