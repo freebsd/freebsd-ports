@@ -14,8 +14,6 @@ COMMENT=	Total Commander like file manager for the X Window System
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to stage
-
 ONLY_FOR_ARCHS=	amd64 i386
 
 PORTDOCS=	*
@@ -119,9 +117,7 @@ WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
-LAZBUILD_ARGS+=	-bm="Debug"
-.else
-LAZBUILD_ARGS+=	-bm="NoDebug Full Optimizations"
+LAZBUILD_ARGS+=	--bm="Debug"
 .endif
 
 .if ${PORT_OPTIONS:MWFX_FTP}
@@ -201,6 +197,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/plugins/wlx/WlxMplayer/src/wlxMplayer.lpr
 	@${REINPLACE_CMD} -e '3632d' ${WRKSRC}/src/fmain.pas
+	@${REINPLACE_CMD} -e 's| Default="True"||g' \
+		-e 's|Name="NoDebug Full Optimizations"|Name="NoDebug Full Optimizations" Default="True"|g' \
+			${WRKSRC}/src/${PORTNAME}.lpi
 
 post-build:
 	@${RM} -r ${DOCSRC}/*/dev-help
