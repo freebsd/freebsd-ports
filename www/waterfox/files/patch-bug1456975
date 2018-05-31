@@ -1,0 +1,31 @@
+commit 0735c3877cb0
+Author: Valentin Gosu <valentin.gosu@gmail.com>
+Date:   Wed May 2 14:53:13 2018 +0200
+
+    Bug 1456975 - Check fields in nsMozIconURI deserialization. r=agaynor
+---
+ image/decoders/icon/nsIconURI.cpp | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git image/decoders/icon/nsIconURI.cpp image/decoders/icon/nsIconURI.cpp
+index 3c9e07f67f09a..7b4cbd31ecad7 100644
+--- image/decoders/icon/nsIconURI.cpp
++++ image/decoders/icon/nsIconURI.cpp
+@@ -715,7 +715,17 @@ nsMozIconURI::Deserialize(const URIParams& aParams)
+   mContentType = params.contentType();
+   mFileName = params.fileName();
+   mStockIcon = params.stockIcon();
++
++  if (params.iconSize() < -1 ||
++      params.iconSize() >= (int32_t) ArrayLength(kSizeStrings)) {
++    return false;
++  }
+   mIconSize = params.iconSize();
++
++  if (params.iconState() < -1 ||
++      params.iconState() >= (int32_t) ArrayLength(kStateStrings)) {
++    return false;
++  }
+   mIconState = params.iconState();
+ 
+   return true;

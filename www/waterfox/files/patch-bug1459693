@@ -1,0 +1,26 @@
+commit b639bb848489
+Author: Olli Pettay <Olli.Pettay@helsinki.fi>
+Date:   Wed May 30 17:04:18 2018 +0300
+
+    Bug 1459693 - Ensure the right anonymous element is focused when calling input.focus(). r=mccr8, a=RyanVM
+    
+    --HG--
+    extra : source : 8398d902299c9df8c0cb522d2d34c1419ee2682b
+---
+ dom/html/HTMLInputElement.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git dom/html/HTMLInputElement.cpp dom/html/HTMLInputElement.cpp
+index 4ba4ef9f9371b..9b4862626c6e0 100644
+--- dom/html/HTMLInputElement.cpp
++++ dom/html/HTMLInputElement.cpp
+@@ -3177,7 +3177,8 @@ HTMLInputElement::Focus(ErrorResult& aError)
+     nsNumberControlFrame* numberControlFrame =
+       do_QueryFrame(GetPrimaryFrame());
+     if (numberControlFrame) {
+-      HTMLInputElement* textControl = numberControlFrame->GetAnonTextControl();
++      RefPtr<HTMLInputElement> textControl =
++        numberControlFrame->GetAnonTextControl();
+       if (textControl) {
+         textControl->Focus(aError);
+         return;
