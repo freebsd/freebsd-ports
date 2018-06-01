@@ -920,7 +920,7 @@ checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
 checks="$checks proxydeps sonames perlcore no_arch gemdeps gemfiledeps flavors"
 
 ret=0
-cd ${STAGEDIR}
+cd ${STAGEDIR} || exit 1
 for check in ${checks}; do
 	${check} || ret=1
 done
