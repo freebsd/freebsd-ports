@@ -167,7 +167,7 @@ bin/freeplane
 %%DATADIR%%/plugins/org.freeplane.plugin.formula/META-INF/MANIFEST.MF
 %%DATADIR%%/plugins/org.freeplane.plugin.formula/lib/plugin-1.5.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/META-INF/MANIFEST.MF
-%%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/lib/jsyntaxpane-0.9.6~r156-5.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/lib/jsyntaxpane-0.9.6~r156-7.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.jsyntaxpane/lib/plugin-1.5.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.latex/META-INF/MANIFEST.MF
 %%DATADIR%%/plugins/org.freeplane.plugin.latex/lib/jlatexmath-1.0.6.jar
@@ -188,6 +188,7 @@ bin/freeplane
 %%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/batik-anim-1.9.1.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/batik-awt-util-1.9.1.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/batik-bridge-1.9.1.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/batik-codec-1.9.1.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/batik-constants-1.9.1.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/batik-css-1.9.1.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/batik-dom-1.9.1.jar
@@ -250,7 +251,6 @@ bin/freeplane
 %%DATADIR%%/resources/xslt/tohtml.xsl
 %%DATADIR%%/resources/xslt/xbel2mm.xsl
 %%DATADIR%%/scripts/apiGenerator.groovy
-%%DATADIR%%/scripts/freeplane.dsld
 %%DATADIR%%/scripts/installScriptAddOn.groovy
 @dir %%DATADIR%%/fwdir/condperm
 @dir %%DATADIR%%/fwdir/perms
