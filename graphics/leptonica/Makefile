@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	leptonica
-PORTVERSION=	1.74.1
-PORTREVISION=	1
+PORTVERSION=	1.76.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.leptonica.com/source/
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
@@ -16,9 +14,16 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-CONFLICTS=	leptonlib-[0-9]*
+LICENSE_FILE=	leptonica-license.txt
 
-USES=		jpeg libtool pathfix
+CONFLICTS=	leptonlib-[0-9]*
+CONFLICTS_BUILD=	openjpeg15
+
+USES=		autoreconf jpeg libtool pathfix pkgconfig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	DanBloomberg
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

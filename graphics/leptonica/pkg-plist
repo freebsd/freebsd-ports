@@ -6,10 +6,6 @@ bin/convertsegfilestops
 bin/converttopdf
 bin/converttops
 bin/fileinfo
-bin/printimage
-bin/printsplitimage
-bin/printtiff
-bin/splitimage2pdf
 bin/xtractprotos
 include/leptonica/allheaders.h
 include/leptonica/alltypes.h
@@ -45,5 +41,5 @@ include/leptonica/watershed.h
 lib/liblept.a
 lib/liblept.so
 lib/liblept.so.5
-lib/liblept.so.5.0.1
+lib/liblept.so.5.0.3
 libdata/pkgconfig/lept.pc
