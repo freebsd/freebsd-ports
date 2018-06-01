@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-DISTVERSION=	3.2.6
-PORTREVISION=	1
+DISTVERSION=	3.2.7
+PORTREVISION=	0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
