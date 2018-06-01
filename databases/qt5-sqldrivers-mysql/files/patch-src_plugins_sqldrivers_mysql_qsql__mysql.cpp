@@ -18,7 +18,7 @@ now requires a C++ or C99 compiler to compile.
 
 +// MYSQL 8.0.1 no longer uses the my_bool type:
 +// https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-1.html
-+#if MYSQL_VERSION_ID >= 80001
++#if (MYSQL_VERSION_ID >= 80001) && !defined(MARIADB_BASE_VERSION)
 +typedef bool mysql_bool;
 +#else
 +typedef my_bool mysql_bool;
