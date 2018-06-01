@@ -28,6 +28,7 @@
     SUBDIR += bmpanel2
     SUBDIR += bricons
     SUBDIR += brightside
+    SUBDIR += brisk-menu
     SUBDIR += cinnamon
     SUBDIR += cinnamon-desktop
     SUBDIR += cinnamon-menus
