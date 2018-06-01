@@ -17,7 +17,7 @@ resolv_symlink() {
 		return
 	fi
 
-	tgt=`readlink ${file}`
+	tgt=$(readlink ${file})
 	case $tgt in
 	/*)
 		echo $tgt

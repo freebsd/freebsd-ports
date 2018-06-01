@@ -22,12 +22,12 @@ if [ $# -ne 1 ]; then
 fi
 
 lib=$1
-dirs="${LIB_DIRS} `cat ${LOCALBASE}/libdata/ldconfig/* 2>/dev/null || :`"
+dirs="${LIB_DIRS} $(cat ${LOCALBASE}/libdata/ldconfig/* 2>/dev/null || :)"
 
 for libdir in ${dirs} ; do
 	test -f ${libdir}/${lib} || continue
 	libfile=${libdir}/${lib}
-	[ `file -b -L --mime-type ${libfile}` = "application/x-sharedlib" ] || continue
+	[ $(file -b -L --mime-type ${libfile}) = "application/x-sharedlib" ] || continue
 	echo $libfile
 	break
 done
