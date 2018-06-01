@@ -87,7 +87,7 @@ if [ -f "${dp_DISTINFO_FILE}" ]; then
 	if [ "$OK" != "true" ]; then
 		exit 1
 	fi
-elif [ -n "${@}" ]; then
+elif [ -n "${*}" ]; then
 	${dp_ECHO_MSG} "=> No checksum file (${dp_DISTINFO_FILE})."
 	exit 1
 fi
