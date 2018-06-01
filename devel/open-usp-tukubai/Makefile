@@ -6,7 +6,7 @@ PORTVERSION=	2014061402
 CATEGORIES=	devel
 MASTER_SITES=	https://uec.usp-lab.com/TUKUBAI/DOWNLOAD/
 
-MAINTAINER=	daichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open usp Tukubai is OSS version of Tukubai commands set
 
 USES=		gmake python tar:bzip2

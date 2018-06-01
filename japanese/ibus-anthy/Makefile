@@ -8,7 +8,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/ibus/ibus-anthy/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	ja-
 
-MAINTAINER=	daichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anthy engine for IBus
 
 BUILD_DEPENDS=	swig3.0:devel/swig30
