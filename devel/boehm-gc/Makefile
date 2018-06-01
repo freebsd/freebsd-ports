@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gc
-PORTVERSION=	7.6.4
+PORTVERSION=	7.6.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
 		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
@@ -45,7 +45,7 @@ PLIST_FILES=	${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.0,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.2,} \
+		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.3,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.1,} \
