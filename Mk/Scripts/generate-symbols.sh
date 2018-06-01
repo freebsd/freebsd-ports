@@ -3,7 +3,7 @@
 # Maintainer: portmgr@FreeBSD.org
 
 msg() {
-        echo "====> $@"
+        echo "====> $*"
 }
 
 msg "Finding symbols"

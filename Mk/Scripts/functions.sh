@@ -74,9 +74,9 @@ parse_plist() {
 		@info\ *|@shell\ *|@xmlcatmgr\ *)
 			set -- $line
 			shift
-			case "$@" in
-			/*) echo "${comment}$@" ;;
-			*) echo "${comment}${cwd}/$@" ;;
+			case "$*" in
+			/*) echo "${comment}$*" ;;
+			*) echo "${comment}${cwd}/$*" ;;
 			esac
 		;;
 		@sample\ *)
@@ -103,12 +103,12 @@ parse_plist() {
 		@fc\ *|@fcfontsdir\ *|@fontsdir\ *)
 			set -- $line
 			shift
-			case "$@" in
+			case "$*" in
 			/*)
-			echo >&3 "${comment}$@"
+			echo >&3 "${comment}$*"
 			;;
 			*)
-			echo >&3 "${comment}${cwd}/$@"
+			echo >&3 "${comment}${cwd}/$*"
 			;;
 			esac
 		;;

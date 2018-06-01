@@ -13,15 +13,15 @@ LF=$(printf '\nX')
 LF=${LF%X}
 
 notice() {
-	echo "Notice: $@" >&2
+	echo "Notice: $*" >&2
 }
 
 warn() {
-	echo "Warning: $@" >&2
+	echo "Warning: $*" >&2
 }
 
 err() {
-	echo "Error: $@" >&2
+	echo "Error: $*" >&2
 }
 
 list_stagedir_elfs() {
@@ -31,7 +31,7 @@ list_stagedir_elfs() {
 shebangonefile() {
 	local f interp interparg badinterp rc
 
-	f="$@"
+	f="$*"
 	rc=0
 
 	# whitelist some files
