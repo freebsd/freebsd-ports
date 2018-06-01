@@ -10210,3 +10210,9 @@ devel/hs-text||2018-05-25|Removed, no longer supported
 science/hs-bio||2018-05-25|Removed, no longer supported
 textproc/hs-parsec||2018-05-25|Removed, no longer supported
 audio/calf|audio/calf-lv2|2018-05-27|Added -lv2 suffix: the port mostly provides LV2 plugins
+net/rubygem-gitaly-proto083|net/rubygem-gitaly-proto|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-gitaly-proto instead.
+net/rubygem-gitaly-proto084|net/rubygem-gitaly-proto|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-gitaly-proto instead
+textproc/rubygem-github-linguist47|textproc/rubygem-github-linguist|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use textproc/rubygem-github-linguist instead
+textproc/rubygem-loofah20|textproc/rubygem-loofah|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use textproc/rubygem-loofah instead.
+www/npm-node4|www/npm|2018-06-01|Has expired: Use www/npm instead
+emulators/qemu-launcher||2018-06-01|Has expired: Upstream is gone
