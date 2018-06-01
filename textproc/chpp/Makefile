@@ -3,7 +3,7 @@
 
 PORTNAME=	chpp
 PORTVERSION=	0.3.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/chpp/files/ \
 		http://freebsd.nsu.ru/distfiles/
