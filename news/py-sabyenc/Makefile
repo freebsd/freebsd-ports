@@ -7,7 +7,7 @@ CATEGORIES=	news python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tremere@cainites.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python yEnc package optimized for use within SABnzbd
 
 LICENSE=	LGPL3
