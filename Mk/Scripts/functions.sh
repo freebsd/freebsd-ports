@@ -160,7 +160,7 @@ validate_env() {
 }
 
 export_ports_env() {
-	local export_vars make_cmd make_env var results value uses
+	local export_vars make_cmd make_env var value uses
 
 	if [ -n "${HAVE_PORTS_ENV:-}" ]; then
 		return 0
