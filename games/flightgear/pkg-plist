@@ -10,7 +10,6 @@ bin/fgpanel
 bin/fgtraffic
 bin/fgviewer
 bin/js_demo
-bin/js_server
 bin/metar
 bin/yasim
 bin/yasim-proptest
