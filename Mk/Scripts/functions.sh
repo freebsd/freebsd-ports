@@ -197,6 +197,8 @@ export_ports_env() {
 		value="$(eval echo \$${var})"
 
 		if [ -n "${value}" ]; then
+			# shellcheck disable=SC2163
+			# We want to export the variable which name is in var.
 			export ${var}
 			echo "export ${var}=\"${value}\""
 		fi
