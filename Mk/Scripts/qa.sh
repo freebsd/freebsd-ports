@@ -248,9 +248,9 @@ sharedmimeinfo() {
 suidfiles() {
 	local filelist
 
-	filelist=`find ${STAGEDIR} -type f \
+	filelist=$(find ${STAGEDIR} -type f \
 		\( -perm -u+x -or -perm -g+x -or -perm -o+x \) \
-		\( -perm -u+s -or -perm -g+s \)`
+		\( -perm -u+s -or -perm -g+s \))
 	if [ -n "${filelist}" ]; then
 		warn "setuid files in the stage directory (are these necessary?):"
 		ls -liTd ${filelist}
@@ -278,12 +278,12 @@ libperl() {
 			# No results presents a blank line from heredoc.
 			[ -z "${f}" ] && continue
 			files=$((files+1))
-			found=`readelf -d ${f} | awk "BEGIN {libperl=1; rpath=10; runpath=100}
+			found=$(readelf -d ${f} | awk "BEGIN {libperl=1; rpath=10; runpath=100}
 				/NEEDED.*${LIBPERL}/  { libperl = 0 }
 				/RPATH.*perl.*CORE/   { rpath   = 0 }
 				/RUNPATH.*perl.*CORE/ { runpath = 0 }
 				END {print libperl+rpath+runpath}
-				"`
+				")
 			case "${found}" in
 				*1)
 					warn "${f} is not linked with ${LIBPERL}, not respecting lddlflags?"
