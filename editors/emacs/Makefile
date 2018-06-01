@@ -200,7 +200,7 @@ XPM_USE=		XORG=xpm
 XPM_CONFIGURE_WITH=	xpm
 XWIDGETS_USE=		XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=	xwidgets
-XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
+XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 XWIDGETS_IMPLIES=	GTK3
 
 EMACS_VER=		26.1
