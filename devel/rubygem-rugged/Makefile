@@ -12,8 +12,7 @@ COMMENT=	Rugged is a Ruby binding to the libgit2 linkable library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake \
-		libgit2>=${PORTVERSION:R}:devel/libgit2
+BUILD_DEPENDS=	libgit2>=${PORTVERSION:R}:devel/libgit2
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libgmp.so:math/gmp \
 		libunwind.so:devel/libunwind
