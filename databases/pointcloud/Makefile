@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pointcloud
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases geography
 
@@ -15,13 +15,12 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 BUILD_DEPENDS=	${LOCALBASE}/include/laz-perf/las.hpp:archivers/lazperf
 LIB_DEPENDS=	libght.so:devel/libght
 
-USES=		cmake pgsql
+USES=		autoreconf gmake pgsql
 WANT_PGSQL=	server
-CMAKE_ARGS+=	-DWITH_TESTS:BOOL=FALSE
-CFLAGS+=	-I${LOCALBASE}/include
 USE_GNOME=	libxml2
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-lazperf=${LOCALBASE}
 USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgpointcloud
 
