@@ -10216,3 +10216,9 @@ textproc/rubygem-github-linguist47|textproc/rubygem-github-linguist|2018-06-01|H
 textproc/rubygem-loofah20|textproc/rubygem-loofah|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use textproc/rubygem-loofah instead.
 www/npm-node4|www/npm|2018-06-01|Has expired: Use www/npm instead
 emulators/qemu-launcher||2018-06-01|Has expired: Upstream is gone
+textproc/kibana3||2018-06-01|Has expired: End of Life was 2015-11-15, depends on expired www/node4
+textproc/kibana41||2018-06-01|Has expired: End of Life was 2016-11-10, depends on expired www/node4
+textproc/kibana43||2018-06-01|Has expired: End of Life was 2017-05-24, depends on expired www/node4
+textproc/kibana44||2018-06-01|Has expired: End of Life was 2017-08-02, depends on expired www/node4
+textproc/kibana45||2018-06-01|Has expired: End of Life was 2017-09-30, depends on expired www/node4
+www/node4|www/node|2018-06-01|Has expired: Node.js v4.x reaches end-of-life on 2018-04-30, see https://github.com/nodejs/Release
