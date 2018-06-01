@@ -63,6 +63,7 @@ lib/prosody/modules/mod_roster.lua
 lib/prosody/modules/mod_s2s_auth_certs.lua
 lib/prosody/modules/mod_saslauth.lua
 lib/prosody/modules/mod_server_contact_info.lua
+lib/prosody/modules/mod_stanza_debug.lua
 lib/prosody/modules/mod_time.lua
 lib/prosody/modules/mod_tls.lua
 lib/prosody/modules/mod_unknown.lua
