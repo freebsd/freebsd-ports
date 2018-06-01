@@ -4,4 +4,4 @@ Logcheck helps spot problems, anomalies and security violations
 in your logfiles automatically and will send the summaries to you
 via e-mail. Logcheck is run as a cron job.
 
-WWW: http://logcheck.alioth.debian.org/
+WWW: https://salsa.debian.org/debian/logcheck
