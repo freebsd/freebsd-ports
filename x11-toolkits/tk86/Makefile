@@ -31,6 +31,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	test
 
 USES+=		tcl:${SHORT_TK_VER},tea
 USE_LDCONFIG=	yes
@@ -68,8 +69,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/^Requires/s|tcl|tcl${SHORT_TK_VER}|' \
 	    ${WRKSRC}/tk.pc.in
 
-regression-test:	build
-	cd ${WRKSRC}; ${MAKE} test
+post-test:
 	${ECHO_CMD} "package require Tk" | tclsh${TK_VER}
 	${ECHO_CMD} "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
 
