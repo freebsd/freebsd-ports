@@ -818,6 +818,9 @@ gemdeps()
 {
 	rc=0
 	if [ "${PKGBASE%%-*}" = "rubygem" ]; then
+		# shellcheck disable=SC2153
+		# In the heredoc, ${PORTNAME} comes from the environment, not
+		# to be confused with ${portname}
 		while read -r l; do
 			if [ -n "${l}" ]; then
 				name=${l%% *}
