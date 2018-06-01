@@ -11,7 +11,7 @@ MASTER_SITES=	http://people.freebsd.org/~deischen/distfiles/ \
 DISTFILES=	nedit-5.6a-src.tar.gz nedit.app-defaults
 EXTRACT_ONLY=	nedit-5.6a-src.tar.gz
 
-MAINTAINER=	deischen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11/Motif GUI text editor for programs and plain text files
 
 LICENSE=	GPLv1

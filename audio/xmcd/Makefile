@@ -7,7 +7,7 @@ PORTREVISION=	19
 CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
-MAINTAINER=	deischen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif CD player
 
 LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \
