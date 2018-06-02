@@ -1,18 +1,28 @@
---- Makefile.am.orig	2016-07-09 22:40:44 UTC
+--- Makefile.am.orig	2018-05-19 21:35:23 UTC
 +++ Makefile.am
-@@ -1,7 +1,4 @@
+@@ -1,8 +1,6 @@
 -CYGWINFLAGS =
 -if CYGWIN
--  CYGWINFLAGS += -lintl
--endif
+-CYGWINFLAGS += -lintl
 +CYGWINFLAGS = -lintl
++
+ usrbin_exec_PROGRAMS =
+-endif
  
  AM_CPPFLAGS = \
  	-include $(top_builddir)/config.h \
-@@ -24,19 +21,9 @@ LDADD = ./proc/libprocps.la $(CYGWINFLAG
- transform = s/pscommand/ps/; $(program_transform_name)
+@@ -30,24 +28,7 @@ transform =
  
- bin_PROGRAMS = \
+ if !CYGWIN
+ transform += s/pscommand/ps/; $(program_transform_name)
+-sbin_PROGRAMS = \
+-	sysctl
+-else
+-transform += s/pscommand/procps/; $(program_transform_name)
+-endif
+-
+-if !CYGWIN
+-bin_PROGRAMS = \
 -	ps/pscommand \
 -	free \
 -	pgrep \
@@ -23,20 +33,20 @@
 -	uptime \
 -	vmstat \
 -	w
-+	ps/pscommand
- 
--sbin_PROGRAMS = \
--	sysctl
 +sbin_PROGRAMS = #
- 
- lib_LTLIBRARIES = \
- 	proc/libprocps.la
-@@ -73,29 +60,10 @@ dist_procpsng_DATA = \
- 	Documentation/bugs.md \
- 	Documentation/FAQ
+ else
+ usrbin_exec_PROGRAMS += \
+ 	ps/pscommand \
+@@ -104,38 +85,10 @@ EXTRA_DIST += \
+ 	sysctl.conf
+ endif
  
 -if BUILD_PIDOF
+-if !CYGWIN
 -bin_PROGRAMS += pidof
+-else
+-usrbin_exec_PROGRAMS += pidof
+-endif
 -dist_man_MANS += pidof.1
 -pidof_SOURCES = pidof.c lib/fileutils.c
 -else
@@ -44,7 +54,13 @@
 -endif
 -
 -if BUILD_KILL
+-if CYGWIN
+-transform += ;s/^kill/prockill/; $(program_transform_name)
+-usrbin_exec_PROGRAMS += kill
+-else
 -bin_PROGRAMS += kill
+-endif
+-
 -dist_man_MANS += kill.1
 -kill_SOURCES = skill.c lib/strutils.c lib/fileutils.c lib/nsutils.c
 -else
@@ -52,24 +68,40 @@
 -endif
 -
  if WITH_NCURSES
- bin_PROGRAMS += \
+ if !CYGWIN
+-bin_PROGRAMS += \
 -	slabtop \
 -	watch \
 -	top/top
++bin_PROGRAMS = \
 +	watch
+ else
+ usrbin_exec_PROGRAMS += \
+ 	watch \
+@@ -143,8 +96,7 @@ usrbin_exec_PROGRAMS += \
+ endif
+ 
  dist_man_MANS += \
--	slabtop.1 \
- 	watch.1 \
- 	top/top.1
- slabtop_SOURCES = slabtop.c lib/strutils.c lib/fileutils.c
-@@ -115,21 +83,6 @@ endif
+-	watch.1 \
+-	top/top.1
++	watch.1
+ watch_SOURCES = watch.c lib/strutils.c lib/fileutils.c
+ watch_LDADD = @WATCH_NCURSES_LIBS@ $(CYGWINFLAGS)
+ watch_CFLAGS = @WATCH_NCURSES_CFLAGS@
+@@ -167,27 +119,6 @@ endif
  top_top_LDADD = $(LDADD) @NCURSES_LIBS@ $(DL_LIB)
  endif
  
 -if BUILD_SKILL
+-if !CYGWIN
 -bin_PROGRAMS += \
 -	skill \
 -	snice
+-else
+-usrbin_exec_PROGRAMS += \
+-	skill \
+-	snice
+-endif
 -skill_SOURCES = skill.c lib/strutils.c lib/fileutils.c lib/nsutils.c
 -snice_SOURCES = skill.c lib/strutils.c lib/fileutils.c lib/nsutils.c
 -dist_man_MANS += \
@@ -84,10 +116,11 @@
  free_SOURCES = free.c lib/strutils.c lib/fileutils.c
  pgrep_SOURCES = pgrep.c lib/fileutils.c lib/nsutils.c
  pkill_SOURCES = pgrep.c lib/fileutils.c lib/nsutils.c
-@@ -182,9 +135,7 @@ proc_libprocps_la_SOURCES = \
+@@ -250,10 +181,7 @@ proc_libprocps_la_SOURCES = \
+ 	proc/sysinfo.h \
  	proc/version.c \
  	proc/version.h \
- 	proc/wchan.c \
+-	proc/wchan.c \
 -	proc/wchan.h \
 -	proc/whattime.c \
 -	proc/whattime.h

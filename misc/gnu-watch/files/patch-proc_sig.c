@@ -1,8 +1,8 @@
---- proc/sig.c.orig	2016-07-09 21:49:25 UTC
+--- proc/sig.c.orig	2018-05-18 21:32:21 UTC
 +++ proc/sig.c
-@@ -82,7 +82,11 @@ static const mapstruct sigtable[] = {
-   {"INT",    SIGINT},
-   {"KILL",   SIGKILL},
+@@ -87,7 +87,11 @@ static const mapstruct sigtable[] = {
+   {"LOST",   SIGLOST},  /* Hurd-specific */
+ #endif
    {"PIPE",   SIGPIPE},
 +#ifdef __FreeBSD__
 +  {"POLL",   SIGIO},
@@ -10,9 +10,9 @@
    {"POLL",   SIGPOLL},  /* IO */
 +#endif
    {"PROF",   SIGPROF},
+ #ifdef SIGPWR
    {"PWR",    SIGPWR},
-   {"QUIT",   SIGQUIT},
-@@ -121,7 +125,11 @@ int signal_name_to_number(const char *re
+@@ -145,7 +149,11 @@ int signal_name_to_number(const char *re
    if(!strncasecmp(name,"SIG",3)) name += 3;
  
    if(!strcasecmp(name,"CLD")) return SIGCHLD;
