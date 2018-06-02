@@ -14,6 +14,9 @@ COMMENT=	Setup social authentication/authorization mechanism for Django
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-social-auth>=0:security/py-python-social-auth@${FLAVOR}
 
+DEPRECATED=	no support for new django	
+EXPIRATION_DATE=	2018-08-01
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
