@@ -4783,6 +4783,7 @@
     SUBDIR += py-plan
     SUBDIR += py-plex
     SUBDIR += py-pluggy
+    SUBDIR += py-pluginbase
     SUBDIR += py-ply
     SUBDIR += py-podcastparser
     SUBDIR += py-polib
