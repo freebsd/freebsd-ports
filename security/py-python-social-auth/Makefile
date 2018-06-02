@@ -19,6 +19,9 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}python-openid>=2.2:security/py-python-openi
 		${PYTHON_PKGNAMEPREFIX}six>=1.2.0:devel/py-six@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=1.0.0:www/py-pyjwt@${FLAVOR}
 
+DEPRECATED=	Upstream Deprecated
+EXPIRATION_DATE=	2018-08-01
+
 NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
