@@ -10199,7 +10199,7 @@ editors/lazarus-lcl-nogui||2018-05-25|Removed, no longer needed
 editors/lazarus-lcl-qt|editors/lazarus-qt4|2018-05-25|Removed, no longer needed
 editors/lazarus-lcl-qt5|editors/lazarus-qt5|2018-05-25|Removed, no longer needed
 editors/lazarus-lcl-units||2018-05-25|Removed, no longer needed
-net/bird-devel|net/bird2|2018-05-25|There are now muliple versions of bird
+net/bird-devel|net/bird2|2018-05-25|There are now multiple versions of bird
 devel/hs-BNFC||2018-05-25|Removed, no longer supported
 graphics/hs-HGL||2018-05-25|Removed, no longer supported
 devel/hs-DrIFT||2018-05-25|Removed, no longer supported
@@ -10222,3 +10222,4 @@ textproc/kibana43||2018-06-01|Has expired: End of Life was 2017-05-24, depends o
 textproc/kibana44||2018-06-01|Has expired: End of Life was 2017-08-02, depends on expired www/node4
 textproc/kibana45||2018-06-01|Has expired: End of Life was 2017-09-30, depends on expired www/node4
 www/node4|www/node|2018-06-01|Has expired: Node.js v4.x reaches end-of-life on 2018-04-30, see https://github.com/nodejs/Release
+net/frr|net/frr4|2018-06-02|Will introduce multiple versions of frr

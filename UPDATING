@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180602:
+  AFFECTS: users of net/frr
+  AUTHOR: olivier@FreeBSD.org
+
+  Due to regression detected in FRR version 4.0, port was renamed to frr4
+  to prepare re-introduction of frr3 port version.
+
+  To rename the installed package to match the new naming scheme, run:
+  # pkg set -n frr:frr4
+
 20180529:
   AFFECTS: users of textproc/ibus-typing-booster
   AUTHOR: thierry@FreeBSD.org
