@@ -17,8 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libicudata.so:devel/icu
 
-USES=		python
-USE_CXXSTD=	c++11
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils autoplist
 
 MAKE_ENV+=	PYICU_INCLUDES="${LOCALBASE}/include" \

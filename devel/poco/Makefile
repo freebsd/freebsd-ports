@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 
 CONFLICTS=	poco-ssl-[0-9]*
 
-USES=		cmake localbase pkgconfig
+USES=		cmake compiler:c++11-lang localbase pkgconfig
 CMAKE_ARGS=	-DPOCO_UNBUNDLED:BOOL=ON
 USE_LDCONFIG=	yes
 

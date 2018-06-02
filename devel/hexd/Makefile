@@ -11,7 +11,7 @@ COMMENT=	Colourful, human-friendly hexdump tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	FireyFly
 

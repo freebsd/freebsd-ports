@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/szip
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	pachterlab
 

@@ -9,6 +9,6 @@ DISTNAME=	timew-${PORTVERSION}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Track time from the command line
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 
 .include <bsd.port.mk>

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c++11-lang pkgconfig
 
 USE_RC_SUBR=	${PORTNAME}
 
