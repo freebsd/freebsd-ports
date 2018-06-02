@@ -65,6 +65,9 @@ OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 OPTIONS_MULTI_AUDIO:=	${OPTIONS_MULTI_AUDIO:NJACK}
 
+# Inconsistent fallback order (libcubeb vs. audio_device)
+SNDIO_PREVENTS=		${OPTIONS_MULTI_AUDIO:NSNDIO}
+
 .if ${USE_MOZILLA:M-nss}
 MOZ_PKGCONFIG_FILES+=	mozilla-nss
 .endif
