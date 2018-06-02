@@ -1,0 +1,20 @@
+Reno is a release notes manager designed with high throughput in mind,
+supporting fast distributed development teams without introducing additional
+development processes. The goal is to encourage detailed and accurate release
+notes for every release.
+
+Reno uses git to store its data, along side the code being described. This means
+release notes can be written when the code changes are fresh, so no details are
+forgotten. It also means that release notes can go through the same review
+process used for managing code and other documentation changes.
+
+Reno stores each release note in a separate file to enable a large number of
+developers to work on multiple patches simultaneously, all targeting the same
+branch, without worrying about merge conflicts. This cuts down on the need to
+rebase or otherwise manually resolve conflicts, and keeps a development team
+moving quickly.
+
+Reno also supports multiple branches, allowing release notes to be back-ported
+from master to maintenance branches together with the code for bug fixes.
+
+WWW: https://docs.openstack.org/reno/
