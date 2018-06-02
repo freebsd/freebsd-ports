@@ -8,6 +8,6 @@ MASTER_SITES=	http://taskwarrior.org/download/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Shell command that wraps Taskwarrior commands
 
-USES=		cmake readline
+USES=		cmake compiler:c++11-lang readline
 
 .include <bsd.port.mk>

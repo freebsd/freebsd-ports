@@ -12,7 +12,7 @@ COMMENT=	Text-based utility for work with dictionaries in StarDict's format #'
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource pkgconfig readline
+USES=		cmake:outsource compiler:c++11-lang pkgconfig readline
 USE_GNOME=	glib20
 
 SUB_FILES=	pkg-message

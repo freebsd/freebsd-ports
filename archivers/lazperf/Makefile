@@ -11,7 +11,7 @@ COMMENT=	Alternative LAZ implementation for C++ and JavaScript
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	hobu
 GH_PROJECT=	laz-perf

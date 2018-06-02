@@ -12,7 +12,7 @@ COMMENT=	Parallel SAT solver based on Minisat, with glue clauses
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		gmake tar:tgz
+USES=		compiler:c++11-lang gmake tar:tgz
 
 PLIST_FILES=	bin/glucose bin/glucose-syrup
 
