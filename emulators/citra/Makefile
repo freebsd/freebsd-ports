@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20180529
+PORTVERSION=	s20180601
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -23,14 +23,16 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	72f9142b
+GH_TAGNAME=	08b119153
 GH_TUPLE=	citra-emu:ext-libressl-portable:cbb1dca:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:1d0e6cf:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:d1d4705:dynarmic/externals/dynarmic \
+		arsenm:sanitizers-cmake:f09151b:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		benhoyt:inih:r40:inih/externals/inih/inih \
 		catchorg:Catch2:v2.1.1:catch/externals/catch \
 		fmtlib:fmt:4.0.0-510-g5859e58:fmt/externals/fmt \
 		herumi:xbyak:v5.64:xbyak/externals/xbyak \
+		kinetiknz:cubeb:cubeb-0.2-1039-g44341a1:cubeb/externals/cubeb \
 		lsalzman:enet:39a72ab:enet/externals/enet \
 		neobrain:nihstro:fd69de1:nihstro/externals/nihstro \
 		weidai11:cryptopp:CRYPTOPP_6_1_0:cryptopp/externals/cryptopp/cryptopp
@@ -43,10 +45,27 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 
+OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK SNDIO
+OPTIONS_DEFAULT=ALSA PULSEAUDIO JACK
 OPTIONS_MULTI=	GUI
 OPTIONS_MULTI_GUI=	QT5 SDL
 OPTIONS_SLAVE?=	SDL
 OPTIONS_EXCLUDE:=	${OPTIONS_MULTI_GUI}
+
+CUBEB_DESC=	Cubeb audio backend
+
+ALSA_CMAKE_BOOL=	USE_ALSA
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
+
+JACK_BUILD_DEPENDS=	jackit>0:audio/jack
+JACK_CMAKE_BOOL=	USE_JACK
+
+PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0.:audio/pulseaudio
+PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
+
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CMAKE_BOOL=	USE_
 
 SDL_CMAKE_BOOL=	ENABLE_SDL2
 SDL_PLIST_FILES=bin/${PORTNAME} \
