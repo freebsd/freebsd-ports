@@ -14,15 +14,15 @@
 # 
 # If your port needs a specific (minimum) version of GCC, you can easily
 # specify that with a USE_GCC= statement.  Unless absolutely necessary
-# do so by specifying USE_GCC=X.Y+ which requests at least GCC version
-# X.Y.  To request a specific version omit the trailing + sign.
+# do so by specifying USE_GCC=X+ which requests at least GCC version X.
+# To request a specific version omit the trailing + sign.
 #
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# as defined in bsd.default-versions.mk.
 #   USE_GCC=	any			# port requires GCC 4.2 or later.
-#   USE_GCC=	6+			# port requires GCC 6 or later.
-#   USE_GCC=	4.9			# port requires GCC 4.9.
+#   USE_GCC=	7+			# port requires GCC 7 or later.
+#   USE_GCC=	5			# port requires GCC 5.
 #
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
