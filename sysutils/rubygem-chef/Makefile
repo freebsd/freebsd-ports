@@ -3,6 +3,7 @@
 
 PORTNAME=	chef
 PORTVERSION=	13.8.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -28,7 +29,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-mixlib-log>=1.3:devel/rubygem-mixlib-log \
 		rubygem-mixlib-shellout>=2.0:devel/rubygem-mixlib-shellout \
 		rubygem-net-sftp>=2.1.2:security/rubygem-net-sftp \
-		rubygem-net-ssh>=2.9:security/rubygem-net-ssh \
+		rubygem-net-ssh4>=2.9:security/rubygem-net-ssh4 \
 		rubygem-net-ssh-multi>=1.2.1:security/rubygem-net-ssh-multi \
 		rubygem-ohai>=13.0:sysutils/rubygem-ohai \
 		rubygem-plist>=3.2:devel/rubygem-plist \
