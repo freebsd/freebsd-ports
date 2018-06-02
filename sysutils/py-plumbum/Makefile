@@ -3,12 +3,13 @@
 
 PORTNAME=	plumbum
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT=	Shell combinators and more for python
+COMMENT=	Shell combinators and more for Python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
