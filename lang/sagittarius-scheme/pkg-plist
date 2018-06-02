@@ -739,6 +739,12 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/toml.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/toml/parser.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/tree.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/events.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/factory.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/nodes.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/parser.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/writer.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/time.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/tlv.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/trace.scm
