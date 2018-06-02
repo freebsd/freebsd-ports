@@ -9,12 +9,17 @@ PKGNAMESUFFIX=	-kde4
 DIST_SUBDIR=	KDE/extragear
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Simple image scanning application for KDE
+COMMENT=	Simple image scanning application for KDE4
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/src/COPYING
 
 LIB_DEPENDS=	libksane.so:graphics/libksane-kde4
 
 USES=		cmake:outsource gettext kde:4 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
+
+CONFLICTS_INSTALL=	skanlite
 
 .include <bsd.port.mk>
