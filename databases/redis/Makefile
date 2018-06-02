@@ -104,7 +104,7 @@ do-install:
 		${STAGEDIR}${REDIS_DBDIR} \
 		${STAGEDIR}${REDIS_RUNDIR}
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${TCLSH} tests/test_helper.tcl
 
 .include <bsd.port.mk>
