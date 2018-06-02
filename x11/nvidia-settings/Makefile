@@ -32,6 +32,7 @@ PLIST_FILES=	bin/nvidia-settings \
 		share/pixmaps/nvidia-settings.png
 
 LDFLAGS+=	-pthread
+LLD_UNSAFE=	yes
 MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
 		NV_VERBOSE= \
 		GTK3_AVAILABLE=0 \
