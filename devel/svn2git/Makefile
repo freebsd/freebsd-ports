@@ -2,28 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	svn2git
-PORTVERSION=	1.0.11.a.20151201
+PORTVERSION=	1.0.12
 CATEGORIES=	devel kde
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Imports svn repositories into git
 
-LICENSE=	GPLv3+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
+LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		libsvn_client-1.so:devel/subversion
 RUN_DEPENDS=	git:devel/git \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 		p5-subversion>=0:devel/p5-subversion
 
 USES=		qmake
 USE_GITHUB=	yes
-USE_QT4=	corelib
+USE_QT5=	core
 GH_ACCOUNT=	svn-all-fast-export
-GH_TAGNAME=	d4ff0b2
 
 OPTIONS_DEFINE=	FREEBSD_REPO
 FREEBSD_REPO_DESC=	FreeBSD-repo only mode
 
+QMAKE_ARGS=	SVN_INCLUDE=${LOCALBASE}/include/subversion-1 \
+		APR_INCLUDE=${LOCALBASE}/include/apr-1
 PLIST_FILES=	bin/svn2git
 
 FREEBSD_REPO_EXTRA_PATCHES=	${PATCHDIR}/freebsd-export-patch

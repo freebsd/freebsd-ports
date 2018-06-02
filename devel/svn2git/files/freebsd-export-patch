@@ -1,18 +1,15 @@
-diff --git a/src/svn.cpp b/src/svn.cpp
-index 1aadce9..3d359bb 100644
---- src/svn.cpp
+--- src/svn.cpp.orig	2018-05-27 18:34:59 UTC
 +++ src/svn.cpp
-@@ -800,8 +800,13 @@ int SvnRevision::exportInternal(const char *key, const svn_fs_path_change_t *cha
-     // merge points.  This heuristic is fairly useful for tracking
+@@ -873,7 +873,13 @@ int SvnRevision::exportInternal(const ch
      // changes across directory re-organizations and wholesale branch
      // imports.
--    //
--    if (path_from != NULL && prevrepository == repository && prevbranch != branch) {
+     //
+-    if (path_from != NULL && preveffectiverepository == effectiveRepository && prevbranch != branch) {
 +    // NOTE(uqs): HACK ALERT! Only merge between head, projects, and user
 +    // branches for the FreeBSD repositories. Never merge into stable or
 +    // releng, as we only ever cherry-pick changes to those branches.
 +    // FIXME: Needs to move into the ruleset ...
-+    if (path_from != NULL && prevrepository == repository && prevbranch != branch &&
++    if (path_from != NULL && preveffectiverepository == effectiveRepository && prevbranch != branch &&
 +            (branch.startsWith("master") || branch.startsWith("head") ||
 +             branch.startsWith("projects") || branch.startsWith("user"))) {
          if(ruledebug)
