@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bash
-PATCHLEVEL=		19
+PATCHLEVEL=		23
 PORTVERSION=		4.4.${PATCHLEVEL:S/^0//g}
 PORTREVISION?=		0
 CATEGORIES=		shells
@@ -69,7 +69,7 @@ LLD_UNSAFE=		yes
 CONFIGURE_ARGS+=	--disable-static-link
 # Bash symbols must be exported in order to link runtime plugins, i.e.,
 # "enable -f". (Plugins are not supported for bash-static.)
-CFLAGS+=		-Wl,-export-dynamic
+LDFLAGS+=		-Wl,-export-dynamic
 .endif
 STANDARD_PATH=		/sbin:/bin:/usr/sbin:/usr/bin
 CPPFLAGS+=		-DDEFAULT_PATH_VALUE='\"${STANDARD_PATH}:${LOCALBASE}/sbin:${LOCALBASE}/bin\"' \
