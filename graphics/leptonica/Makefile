@@ -17,7 +17,6 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 LICENSE_FILE=	leptonica-license.txt
 
 CONFLICTS=	leptonlib-[0-9]*
-CONFLICTS_BUILD=	openjpeg15
 
 USES=		autoreconf jpeg libtool pathfix pkgconfig
 
