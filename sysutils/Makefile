@@ -203,6 +203,7 @@
     SUBDIR += container-diff
     SUBDIR += contractor
     SUBDIR += copytape
+    SUBDIR += coreos-ct
     SUBDIR += coreutils
     SUBDIR += cotty
     SUBDIR += cpdup
