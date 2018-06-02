@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 BROKEN_powerpc64=	fails to compile: sse-intrinsics.c: error: emmintrin.h: No such file or directory
 
 USES=		autoreconf cpe dos2unix gmake libtool ssl
-USE_GCC=	7.0+
+USE_GCC=	7+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-experimental
 CPE_VERSION=	${DISTVERSION:C/-.*//}
