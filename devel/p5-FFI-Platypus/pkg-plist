@@ -14,7 +14,7 @@
 %%SITE_ARCH%%/FFI/Platypus/Type/StringPointer.pm
 %%SITE_ARCH%%/auto/FFI/Platypus/Platypus.so
 %%SITE_ARCH%%/auto/share/dist/FFI-Platypus/README.txt
-%%SITE_ARCH%%/auto/share/dist/FFI-Platypus/config.json
+%%SITE_ARCH%%/auto/share/dist/FFI-Platypus/config.pl
 %%PERL5_MAN3%%/FFI::Platypus.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::API.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Buffer.3.gz
