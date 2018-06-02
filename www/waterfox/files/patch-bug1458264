@@ -1,0 +1,56 @@
+commit 6b3071113783
+Author: jgilbert@mozilla.com <jdashg@gmail.com>
+Date:   Thu May 24 15:45:25 2018 -0700
+
+    Bug 1458264 - Reset UNPACK_SKIP vars when uploading zeros. r=kvark, a=RyanVM
+    
+    MozReview-Commit-ID: ILB6MqgnrXX
+    
+    --HG--
+    extra : rebase_source : 645475fd6b978b00b0b61eef42df2a771563968c
+    extra : source : c2f90b73e27aa5402636aee5f03891298502c416
+---
+ dom/canvas/WebGLContextDraw.cpp | 21 +++++++++++++++------
+ 1 file changed, 15 insertions(+), 6 deletions(-)
+
+diff --git dom/canvas/WebGLContextDraw.cpp dom/canvas/WebGLContextDraw.cpp
+index a28d93325692b..3f179477b3bcd 100644
+--- dom/canvas/WebGLContextDraw.cpp
++++ dom/canvas/WebGLContextDraw.cpp
+@@ -205,7 +205,21 @@ WebGLContext::BindFakeBlack(uint32_t texUnit, TexTarget target, FakeBlackType fa
+     UniquePtr<FakeBlackTexture>& fakeBlackTex = *slot;
+ 
+     if (!fakeBlackTex) {
++        gl->fPixelStorei(LOCAL_GL_UNPACK_ALIGNMENT, 1);
++        if (IsWebGL2()) {
++            gl->fPixelStorei(LOCAL_GL_UNPACK_SKIP_PIXELS, 0);
++            gl->fPixelStorei(LOCAL_GL_UNPACK_SKIP_ROWS, 0);
++            gl->fPixelStorei(LOCAL_GL_UNPACK_SKIP_IMAGES, 0);
++        }
++
+         fakeBlackTex = FakeBlackTexture::Create(gl, target, fakeBlack);
++
++        gl->fPixelStorei(LOCAL_GL_UNPACK_ALIGNMENT, mPixelStore_UnpackAlignment);
++        if (IsWebGL2()) {
++            gl->fPixelStorei(LOCAL_GL_UNPACK_SKIP_PIXELS, mPixelStore_UnpackSkipPixels);
++            gl->fPixelStorei(LOCAL_GL_UNPACK_SKIP_ROWS, mPixelStore_UnpackSkipRows);
++            gl->fPixelStorei(LOCAL_GL_UNPACK_SKIP_IMAGES, mPixelStore_UnpackSkipImages);
++        }
+         if (!fakeBlackTex) {
+             return false;
+         }
+@@ -995,13 +1009,8 @@ WebGLContext::FakeBlackTexture::Create(gl::GLContext* gl, TexTarget target,
+     gl->fTexParameteri(target.get(), LOCAL_GL_TEXTURE_MIN_FILTER, LOCAL_GL_NEAREST);
+     gl->fTexParameteri(target.get(), LOCAL_GL_TEXTURE_MAG_FILTER, LOCAL_GL_NEAREST);
+ 
+-    // We allocate our zeros on the heap, and we overallocate (16 bytes instead of 4) to
+-    // minimize the risk of running into a driver bug in texImage2D, as it is a bit
+-    // unusual maybe to create 1x1 textures, and the stack may not have the alignment that
+-    // TexImage2D expects.
+-
+     const webgl::DriverUnpackInfo dui = {texFormat, texFormat, LOCAL_GL_UNSIGNED_BYTE};
+-    UniqueBuffer zeros = moz_xcalloc(1, 16); // Infallible allocation.
++    UniqueBuffer zeros = moz_xcalloc(1, 4); // Infallible allocation.
+ 
+     MOZ_ASSERT(gl->IsCurrent());
+ 
