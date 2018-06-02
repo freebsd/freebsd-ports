@@ -1,0 +1,28 @@
+--- meson.build.orig	2018-05-29 20:27:08 UTC
++++ meson.build
+@@ -254,12 +254,12 @@ elif osdet == 'darwin'
+ 
+   os_deps = os_deps + [ncurses_dep]
+ 
+-elif osdet == 'bsd'
++elif osdet == 'freebsd'
+   conf_data.set('U3_OS_bsd', true)
+ 
+   pthread_dep = meson.get_compiler('c').find_library('pthread')
+   kvm_dep = meson.get_compiler('c').find_library('kvm')
+-  ncurses_dep = dependency('ncurses')
++  ncurses_dep = meson.get_compiler('c').find_library('ncurses')
+   os_deps = os_deps + [kvm_dep, pthread_dep, ncurses_dep]
+ else
+   error('Unsupported OS detected:' + osdet)
+@@ -284,6 +284,10 @@ if osdet == 'darwin'
+   libcrypto = meson.get_compiler('c').find_library('crypto', dirs: [ '/usr/local/opt/openssl/lib/' ])
+   libssl = meson.get_compiler('c').find_library('ssl', dirs: [ '/usr/local/opt/openssl/lib/' ])
+   openssl_dep = declare_dependency(dependencies: [libcrypto, libssl], include_directories: include_directories('/usr/local/opt/openssl/include'))
++elif osdet == 'freebsd'
++  libcrypto = meson.get_compiler('c').find_library('crypto', dirs: [ '/usr/lib/' ])
++  libssl = meson.get_compiler('c').find_library('ssl', dirs: [ '/usr/lib/' ])
++  openssl_dep = declare_dependency(dependencies: [libcrypto, libssl], include_directories: include_directories('/usr/include'))
+ else
+   openssl_dep = dependency('openssl', version: '>=1.0.0')
+ endif
