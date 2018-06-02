@@ -1,2 +1,0 @@
-Note: If you need npm (Node Package Manager), please install the npm2
-package, or build any of the www/npm* ports with the NODE4 option enabled.
