@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-g5164bd0d
 CATEGORIES=	misc emulators lang
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Operating function
+COMMENT=	Peer-to-peer network of personal servers (a.k.a. "operating function")
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
