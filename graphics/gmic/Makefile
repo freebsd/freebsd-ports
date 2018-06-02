@@ -3,11 +3,12 @@
 PORTNAME=	gmic
 DISTVERSIONPREFIX=	v.
 DISTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://gmic.eu/:gmic_stdlib
 DISTFILES=	gmic_stdlib.h:gmic_stdlib
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSIONFULL}
-EXTRACT_ONLY=	dtschump-gmic-${DISTVERSIONFULL}_GH0.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for image processing
@@ -33,17 +34,23 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 USES=		cmake:outsource compiler:c++11-lang jpeg pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
-USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_LIB_STATIC
 CMAKE_ON=	ENABLE_DYNAMIC_LINKING
 
-PLIST_FILES=	bin/gmic \
-		include/gmic.h \
-		lib/libgmic.so \
-		lib/libgmic.so.1 \
-		man/man1/gmic.1.gz
+OPTIONS_DEFINE=		PLUGINS X11
+OPTIONS_DEFAULT=	X11
+OPTIONS_SUB=		yes
+
+PLUGINS_CMAKE_BOOL=	BUILD_PLUGIN
+PLUGINS_USE=		GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
+PLUGINS_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2 \
+			libgimp-2.0.so:graphics/gimp-app
+
+X11_CMAKE_BOOL=		ENABLE_X
+X11_USE=		XORG=ice,sm,x11,xext
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/gmic_stdlib.h ${WRKSRC}/src/
