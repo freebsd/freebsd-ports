@@ -1,0 +1,13 @@
+TIMESTAMP = 1527968212
+SHA256 (urbit-urbit-newmodel-0.5.1-232-g5164bd0d_GH0.tar.gz) = d718293bfc9884cd6137096ac12864ac87994b062382ddfc53e6cf62e30713eb
+SIZE (urbit-urbit-newmodel-0.5.1-232-g5164bd0d_GH0.tar.gz) = 283760
+SHA256 (urbit-commonmark-legacy-8555ef1_GH0.tar.gz) = 1f77582dcabfe376f4f54bcd46d96e7d794d18c599d260732d5e5a20b2c3a0a0
+SIZE (urbit-commonmark-legacy-8555ef1_GH0.tar.gz) = 210151
+SHA256 (urbit-ed25519-ba4777a_GH0.tar.gz) = ca486bb870b97f9c9d1cc0848599c2765dba442a4030f0bcc4258f4d47de4279
+SIZE (urbit-ed25519-ba4777a_GH0.tar.gz) = 226668
+SHA256 (urbit-libscrypt-4ebe362_GH0.tar.gz) = 36aa12cf8459a10efaa11a4ce296676c4955c59421acdbe1356269e1752b6f26
+SIZE (urbit-libscrypt-4ebe362_GH0.tar.gz) = 19884
+SHA256 (urbit-murmur3-001378c_GH0.tar.gz) = 06ba758fe6485c2bd53e5074ab8011da7472e387a7b643e6f2bc0b647a6f13b1
+SIZE (urbit-murmur3-001378c_GH0.tar.gz) = 40771
+SHA256 (urbit-berkeley-softfloat-3-9d43420_GH0.tar.gz) = ec82cb4b78eabb34aa25cd28f4ae59fbd4969e01ba4e810bf907c9245ca3de84
+SIZE (urbit-berkeley-softfloat-3-9d43420_GH0.tar.gz) = 150252
