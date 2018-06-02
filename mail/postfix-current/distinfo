@@ -1,3 +1,3 @@
-TIMESTAMP = 1522600680
-SHA256 (postfix/postfix-3.4-20180401.tar.gz) = 1bebdff068dcc40ca0190e2a5bffac9a1379c21220e613d1e5af3cf95ed3d18f
-SIZE (postfix/postfix-3.4-20180401.tar.gz) = 4423216
+TIMESTAMP = 1526848680
+SHA256 (postfix/postfix-3.4-20180520.tar.gz) = 00c2ac1fe04ce152daef5584110544396ccf3f0d32bb3a6b9ed7ce145574f595
+SIZE (postfix/postfix-3.4-20180520.tar.gz) = 4427759
