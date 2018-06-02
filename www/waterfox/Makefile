@@ -53,6 +53,9 @@ OPTIONS_DEFAULT=	BUNDLED_CAIRO
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
+# Inconsistent fallback order (libcubeb vs. audio_device)
+SNDIO_PREVENTS=		${OPTIONS_MULTI_AUDIO:NSNDIO}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/%u/%U/' -e '/X-MultipleArgs/d' \
 		-e 's/firefox/${MOZILLA}/' \

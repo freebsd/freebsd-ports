@@ -50,6 +50,10 @@ OPTIONS_DEFAULT=CANBERRA GTK3 LDAP LIGHTNING
 LDAP_DESC?=	LDAP support for Mailnews
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+
+# Inconsistent fallback order (libcubeb vs. audio_device)
+SNDIO_PREVENTS=		${OPTIONS_MULTI_AUDIO:NSNDIO}
+
 .include <bsd.port.options.mk>
 
 MOZSRC:=	${WRKSRC}/mozilla

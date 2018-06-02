@@ -46,6 +46,9 @@ OPTIONS_EXCLUDE=	DTRACE INTEGER_SAMPLES JACK TEST
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
+# Inconsistent fallback order (libcubeb vs. audio_device)
+SNDIO_PREVENTS=		${OPTIONS_MULTI_AUDIO:NSNDIO}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
