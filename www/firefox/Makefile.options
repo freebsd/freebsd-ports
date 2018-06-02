@@ -13,8 +13,6 @@ OPTIONS_MULTI_AUDIO=	ALSA JACK PULSEAUDIO SNDIO
 
 # WebRTC legacy audio library only supports ALSA and PulseAudio
 JACK_IMPLIES=		ALSA
-# No lazy-bindings and inconsistent fallback order (libcubeb vs. audio_device)
-SNDIO_PREVENTS=		${OPTIONS_MULTI_AUDIO:NSNDIO}
 
 # dragonfly, sparc64, riscv
 .if !exists(/usr/sbin/dtrace)
