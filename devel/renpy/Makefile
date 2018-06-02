@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION?=	6.99.14.3
+PORTVERSION?=	7.0.0
 DISTVERSIONSUFFIX=-sdk
 PORTREVISION?=	0
 CATEGORIES=	devel games
@@ -39,10 +39,8 @@ TARGET_ORDER_OVERRIDE=610:fix-shebang
 BUILD_WRKSRC=	${WRKSRC}/module
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKE_ENV+=	RENPY_DEPS_INSTALL="${LOCALBASE}"
-PORTDATA=	launcher renpy renpy.py templates
-.ifndef PKGNAMESUFFIX
-PORTDATA+=	gui
-.endif
+PORTDATA?=	gui
+PORTDATA+=	launcher renpy renpy.py
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -95,7 +93,8 @@ add-empty-dirs:
 		! \( -name "saves" -or -name "pysdlsound" \) | \
 		${SED} 's,^${WRKSRC},@dir ${DATADIR},' >>${TMPPLIST}
 
-post-install:
+post-install:	common-post-install
+common-post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name \*.so \
 		-exec ${STRIP_CMD} {} +
 	${LN} -fs ../${DATADIR_REL}/renpy.py \
@@ -105,7 +104,6 @@ post-install:
 		"! -name *.orig ! -name *.bak \
 		 ! -name saves ! -name log.txt")
 	${CHMOD} +x ${STAGEDIR}${DATADIR}/renpy.py
-	${CHMOD} -R u+w ${STAGEDIR}${DATADIR}/templates
 
 post-install-DOCS-on:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
