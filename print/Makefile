@@ -197,6 +197,7 @@
     SUBDIR += py-pdf2
     SUBDIR += py-pollyreports
     SUBDIR += py-preppy
+    SUBDIR += py-psautohint
     SUBDIR += py-pycups
     SUBDIR += py-pyscript
     SUBDIR += py-python-ly
