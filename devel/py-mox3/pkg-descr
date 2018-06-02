@@ -1,0 +1,4 @@
+mox3 is an unofficial port of the Google mox framework to Python 3. It was meant
+to be as compatible with mox as possible, but small enhancements have been made.
+
+WWW: https://docs.openstack.org/mox3/
