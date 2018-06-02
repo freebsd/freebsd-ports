@@ -1,0 +1,19 @@
+Subunit is a streaming protocol for test results.
+
+There are two major revisions of the protocol. Version 1 was trivially human
+readable but had significant defects as far as highly parallel testing was
+concerned - it had no room for doing discovery and execution in parallel,
+required substantial buffering when multiplexing and was fragile - a corrupt
+byte could cause an entire stream to be misparsed. Version 1.1 added
+encapsulation of binary streams which mitigated some of the issues but the core
+remained.
+
+Version 2 shares many of the good characteristics of Version 1 - it can be
+embedded into a regular text stream (e.g. from a build system) and it still
+models xUnit style test execution. It also fixes many of the issues with
+Version 1 - Version 2 can be multiplexed without excessive buffering (in time
+or space), it has a well defined recovery mechanism for dealing with corrupted
+streams (e.g. where two processes write to the same stream concurrently, or
+where the stream generator suffers a bug).
+
+WWW: http://launchpad.net/subunit
