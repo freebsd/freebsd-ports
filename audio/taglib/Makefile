@@ -3,6 +3,7 @@
 
 PORTNAME=	taglib
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://taglib.github.io/releases/
 
@@ -15,11 +16,12 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
 
 USES=		cmake cpe pathfix
-CMAKE_ARGS=	-DWITH_ASF:BOOL=ON \
-		-DWITH_MP4:BOOL=ON \
-		-DBUILD_SHARED_LIBS:BOOL=ON
-
 USE_LDCONFIG=	yes
+
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Boost \
+		WITH_ASF \
+		WITH_MP4 \
+		BUILD_SHARED_LIBS
 
 CPE_VENDOR=	scott_wheeler
 
@@ -34,9 +36,8 @@ OPTIONS_SUB=	yes
 #
 RCC_DESC=		Build with RusXMMS librcc patches (experimental)
 RCC_LIB_DEPENDS=	librcc.so:devel/librcc
+RCC_USES=		localbase:ldflags
 RCC_EXTRA_PATCHES=	${FILESDIR}/extrapatch-rcc
-RCC_CFLAGS=		-I${LOCALBASE}/include
-RCC_LDFLAGS=		-L${LOCALBASE}/lib
 
 post-patch-RCC-on:
 	@${REINPLACE_CMD} -e 's|-ltag|-ltag -lrcc|g' \
