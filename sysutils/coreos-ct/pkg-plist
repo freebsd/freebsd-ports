@@ -1,0 +1,9 @@
+bin/ct
+%%PORTDOCS%%%%DOCSDIR%%/configuration.md
+%%PORTDOCS%%%%DOCSDIR%%/dynamic-data.md
+%%PORTDOCS%%%%DOCSDIR%%/examples.md
+%%PORTDOCS%%%%DOCSDIR%%/getting-started.md
+%%PORTDOCS%%%%DOCSDIR%%/operators-notes.md
+%%PORTDOCS%%%%DOCSDIR%%/overview.md
+%%PORTDOCS%%%%DOCSDIR%%/production-users.md
+%%PORTDOCS%%%%DOCSDIR%%/release_checklist.md
