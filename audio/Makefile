@@ -318,6 +318,7 @@
     SUBDIR += gtmixer
     SUBDIR += guidolib
     SUBDIR += guspat
+    SUBDIR += guitarix-lv2
     SUBDIR += gvolwheel
     SUBDIR += gxmms2
     SUBDIR += gxplugins-lv2
