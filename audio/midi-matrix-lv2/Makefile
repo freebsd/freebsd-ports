@@ -13,6 +13,8 @@ COMMENT=	LV2 'Midi Matrix' plugin bundle: 'Channel Filter'
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to build: cc1: unrecognized command line option -std=gnu11
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
 USES=		cmake pkgconfig

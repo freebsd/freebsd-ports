@@ -12,6 +12,8 @@ COMMENT=	LV2 plugins for various sound effects
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to compile: cc1: invalid option argument '-Og'
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/lib/libfftw3.so:math/fftw3
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \

@@ -13,6 +13,8 @@ COMMENT=	Polyphonic synthesizer LV2 plugin
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to build: cc1plus: unrecognized command line option -std=c++0x
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

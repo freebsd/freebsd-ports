@@ -12,6 +12,10 @@ COMMENT=	Dedicated AVLDrumkits LV2 Plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		fails to build: unknown FP unit 'sse'
+BROKEN_armv7=		fails to build: unknown FP unit 'sse'
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-msse2"
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
 USES=		gmake pkgconfig
