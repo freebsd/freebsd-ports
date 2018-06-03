@@ -39,6 +39,7 @@ include/d/dlangui/graphics/fonts.d
 include/d/dlangui/graphics/ftfonts.d
 include/d/dlangui/graphics/gldrawbuf.d
 include/d/dlangui/graphics/glsupport.d
+include/d/dlangui/graphics/iconprovider.d
 include/d/dlangui/graphics/images.d
 include/d/dlangui/graphics/resources.d
 include/d/dlangui/graphics/scene/camera.d
@@ -58,11 +59,11 @@ include/d/dlangui/graphics/xpm/reader.d
 include/d/dlangui/graphics/xpm/xpmcolors.d
 include/d/dlangui/package.d
 include/d/dlangui/platforms/android/androidapp.d
+include/d/dlangui/platforms/ansi_console/consoleapp.d
+include/d/dlangui/platforms/ansi_console/consolefont.d
+include/d/dlangui/platforms/ansi_console/dconsole.d
 include/d/dlangui/platforms/common/platform.d
 include/d/dlangui/platforms/common/startup.d
-include/d/dlangui/platforms/console/consoleapp.d
-include/d/dlangui/platforms/console/consolefont.d
-include/d/dlangui/platforms/console/dconsole.d
 include/d/dlangui/platforms/dsfml/dsfmlapp.d
 include/d/dlangui/platforms/external/externalapp.d
 include/d/dlangui/platforms/sdl/sdlapp.d
@@ -74,6 +75,7 @@ include/d/dlangui/widgets/appframe.d
 include/d/dlangui/widgets/charts.d
 include/d/dlangui/widgets/combobox.d
 include/d/dlangui/widgets/controls.d
+include/d/dlangui/widgets/dmlwidgets.d
 include/d/dlangui/widgets/docks.d
 include/d/dlangui/widgets/editors.d
 include/d/dlangui/widgets/grid.d
