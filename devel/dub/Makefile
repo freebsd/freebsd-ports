@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dub
-PORTVERSION=	1.7.1
+PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -9,7 +9,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Package and build manager for D applications and libraries
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	ldmd2:lang/ldc
 LIB_DEPENDS=	libcurl.so:ftp/curl
