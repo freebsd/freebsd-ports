@@ -13,6 +13,8 @@ COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
 
+BROKEN_powerpc64=	fails to build: Error 2
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		liblmdb.so:databases/lmdb \
 		liblzo2.so:archivers/lzo2 \
