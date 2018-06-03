@@ -729,6 +729,7 @@
     SUBDIR += rioutil
     SUBDIR += ripit
     SUBDIR += ripperx
+    SUBDIR += rkr-lv2
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
