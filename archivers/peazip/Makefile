@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	peazip
-PORTVERSION=	6.5.1
+PORTVERSION=	6.6.0
 CATEGORIES=	archivers
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
