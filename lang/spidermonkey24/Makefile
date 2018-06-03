@@ -65,7 +65,7 @@ UTF8_CFLAGS=		-DJS_C_STRINGS_ARE_UTF8
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
-regression-test: build
+do-test:
 	@${ECHO_MSG} -n "===> Running jstests.py: "
 	@cd ${WRKSRC} && ${SETENV} TZ=PST8PDT ${PYTHON_CMD} tests/jstests.py \
 	--no-progress ./js24
