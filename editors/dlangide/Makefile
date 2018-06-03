@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dlangide
-PORTVERSION=	0.7.30
+PORTVERSION=	0.8.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		${LOCALBASE}/lib/d/libDerelictGL3.a:graphics/derelict-gl3 \
 		${LOCALBASE}/lib/d/libDerelictSDL2.a:devel/derelict-sdl2 \
 		${LOCALBASE}/lib/d/libDerelictFT.a:print/derelict-ft \
+		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator \
 		dcd-server:devel/dcd-server
 
 USE_GITHUB=	yes
@@ -31,8 +32,15 @@ GH_ACCOUNT=	buggins
 PLIST_FILES=	bin/${PORTNAME}
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/dub.json
+	${REINPLACE_CMD} -e 's|server.|dcd.server.|g' \
+		-e 's|common.messages|dcd.common.messages|g' \
+			 ${WRKSRC}/src/dlangide/tools/d/dcdinterface.d
+
 do-build:
-	@cd ${WRKSRC} && ${DUB_CMD}
+	@cd ${WRKSRC} && ${DUB_CMD} --config=default
+	@cd ${WRKSRC} && ${DUB_CMD} --config=console
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
