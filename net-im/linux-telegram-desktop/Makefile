@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegram-desktop
-PORTVERSION=	1.1.23
+PORTVERSION=	1.3.0
 CATEGORIES=	net-im linux
 MASTER_SITES=	https://updates.tdesktop.com/tlinux32/
 PKGNAMEPREFIX=	linux-
