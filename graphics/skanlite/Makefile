@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	skanlite
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.0.1
 CATEGORIES=	graphics kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R:R}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simple image scanning application
