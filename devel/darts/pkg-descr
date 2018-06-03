@@ -8,6 +8,9 @@ This is a C++ template library that implements Double-Array [Aoe
   Engineering. Vol. 15, 9 (Sep 1989). pp. 1066-1077.
 
 * [Datrie] Theppitak Karoonboonyanan An Implementation of Double-Array
-  Triehttp://www.links.nectec.or.th/~thep/datrie/
+  Trie.
+
+* [Word and Dictionary] Yuji Matsumoto et al. Word and Dictionary Iwanami
+  Course Language Science Vol. 3 pp. 79-81.
 
 WWW: http://www.chasen.org/~taku/software/darts/
