@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdparse
-DISTVERSION=	0.8.0-alpha1
+PORTVERSION=	0.8.3
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
@@ -15,8 +15,7 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
-GH_TAGNAME=	v${DISTVERSION:S/alpha/alpha./}
-#GH_TAGNAME=	v${PORTVERSION}
+GH_TAGNAME=	v${PORTVERSION}
 
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
