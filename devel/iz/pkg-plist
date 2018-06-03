@@ -5,6 +5,7 @@ include/d/iz/logicver.d
 include/d/iz/math.d
 include/d/iz/memory.d
 include/d/iz/observer.d
+include/d/iz/options.d
 include/d/iz/package.d
 include/d/iz/properties.d
 include/d/iz/referencable.d
