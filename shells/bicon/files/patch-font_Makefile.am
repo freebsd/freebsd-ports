@@ -1,0 +1,44 @@
+--- font/Makefile.am.orig	2018-06-02 15:24:33 UTC
++++ font/Makefile.am
+@@ -1,27 +1,20 @@
+ include fonts.mk
+ 
+-ALL_CONSOLE_FONTS_PSFU_GZ = $(ALL_CONSOLE_FONTS_PSFU:=.gz)
+-
+ fontdir = $(pkgdatadir)/font
+-dist_font_DATA = $(ALL_CONSOLE_FONTS_PSFU_GZ) $(BDF)
+ noinst_DATA = $(ALL_CONSOLE_FONTS_SFM)
+ 
+ EXTRA_DIST = $(ALL_SUBSFMS) bicon-bdf2psf.pl
+ 
+ BDF2PSF = $(srcdir)/bicon-bdf2psf.pl
+ 
+-CLEANFILES = *.sfm *.psf *.psfu *.psfu.gz *.tmp
++CLEANFILES = *.sfm *.tmp
+ 
+-SUFFIXES = .bdf .bdf-maintain .sfm -ltr.sfm .psf -ltr.psf .psfu .psfu.gz
++SUFFIXES = .bdf .bdf-maintain .sfm -ltr.sfm
+ 
+ # Note:  I replaced the non-portable rules below with old suffix way to make
+ # them portable.  But unfortunately this way the dependancies like %.psf: $(BDF)
+ # do not work anymore :(.  Perhaps a check for GNU make should happen...
+ 
+-# %.psfu.gz: %.psfu
+-.psfu.psfu.gz:
+-	gzip --best -c $< > $@
+-
+ # %-set-names: %.bdf
+ .bdf.bdf-maintain:
+ 	$(srcdir)/bdf_set_names $< > $<.tmp && mv -f $<.tmp $<
+@@ -37,11 +30,6 @@ SUFFIXES = .bdf .bdf-maintain .sfm -ltr.sfm .psf -ltr.
+ # %-ltr.sfm: %.sfm
+ .sfm-ltr.sfm:
+ 	$(LN_S) $< $@
+-
+-# %.psfu: %.psf %.sfm
+-.psf.psfu:
+-	$(MAKE) $(AM_MAKEFLAGS) $*.sfm
+-	psfaddtable $*.psf $*.sfm $*.psfu
+ 
+ bicon-8x16-512.sfm: bicon-ascii.sub-sfm bicon-arabic.sub-sfm bicon-nomarks.sub-sfm
+ 	cat $^ > $@

@@ -8,6 +8,7 @@
     SUBDIR += bash-completion
     SUBDIR += bash-static
     SUBDIR += bashc
+    SUBDIR += bicon
     SUBDIR += ch
     SUBDIR += dash
     SUBDIR += envy

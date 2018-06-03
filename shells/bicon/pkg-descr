@@ -1,0 +1,5 @@
+BiCon, short for Bidirectional-Console, is a tool which allows the usage
+of Arabic on Linux/Unix consoles or terminal emulators with basic Unicode
+rendering support, like gnome-terminal, xterm, or PuTTY.
+
+WWW: https://www.arabeyes.org/Bicon
