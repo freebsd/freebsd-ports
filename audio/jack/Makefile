@@ -12,6 +12,8 @@ COMMENT=	Low latency audio server
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN_powerpc64=	fails to build: Unrecognized opcode: 'sldi'
+
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libsamplerate.so:audio/libsamplerate \
 		libcelt0.so:audio/celt
