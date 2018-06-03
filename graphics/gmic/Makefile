@@ -28,7 +28,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libomp.so:devel/openmp \
 		libopencv_core.so:graphics/opencv-core \
 		libopencv_video.so:graphics/opencv \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		cmake:outsource compiler:c++11-lang jpeg pkgconfig

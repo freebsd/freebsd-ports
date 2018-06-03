@@ -24,7 +24,7 @@ LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 		libpcre.so:devel/pcre \
 		libffi.so:devel/libffi \
 		libdrm.so:graphics/libdrm \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libharfbuzz.so:print/harfbuzz \
 		libgraphite2.so:graphics/graphite2 \
 		libicui18n.so:devel/icu \
