@@ -13,7 +13,7 @@ COMMENT=	Yet another download tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	CA_BUNDLE DOCS NLS SQLITE SSH2
+OPTIONS_DEFINE=	CA_BUNDLE CARES DOCS NLS SQLITE SSH2
 OPTIONS_DEFAULT=SQLITE
 OPTIONS_SUB=	yes
 CA_BUNDLE_DESC=	Use CA bundle from Mozilla Project
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--disable-epoll --enable-bittorrent --enable-libaria2 \
 		--enable-threads=posix --enable-websocket \
 		--with-disk-cache=${ARIA2_DISK_CACHE} \
 		--with-libxml2 --with-libz --with-openssl \
-		--without-appletls --without-gnutls --without-libcares \
+		--without-appletls --without-gnutls \
 		--without-libexpat --without-libgcrypt --without-libgmp \
 		--without-libnettle --without-libuv
 CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} \
@@ -43,6 +43,8 @@ PORTDOCS=	*
 CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+CARES_CONFIGURE_WITH=	libares
+CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 NLS_CONFIGURE_OFF=	--disable-nls --without-libintl-prefix
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 NLS_LDFLAGS=		-lintl
