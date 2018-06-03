@@ -14,10 +14,10 @@ LICENSE=	GPLv3+
 
 OPTIONS_DEFINE=	GRAPHVIZ DOCS EXAMPLES
 
+USES=		tar:bzip2 cmake desktop-file-utils
 USE_XORG=	xi
 USE_QT4=	corelib gui qt3support svg xml \
 		moc_build qmake_build rcc_build uic_build
-USES=		tar:bzip2 cmake desktop-file-utils
 INSTALLS_ICONS=	yes
 
 GRAPHVIZ_BUILD_DEPENDS=	graphviz>=2.22:graphics/graphviz
