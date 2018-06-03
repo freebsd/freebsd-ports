@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/src/COPYING
 
 LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		cmake:outsource gettext kde:5 tar:xz
 USE_KDE=	ecm auth config configwidgets codecs completion \

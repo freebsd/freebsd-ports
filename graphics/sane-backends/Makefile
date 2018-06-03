@@ -14,7 +14,7 @@ COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng16.so:graphics/png \
+LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		gmake jpeg libtool localbase pathfix pkgconfig

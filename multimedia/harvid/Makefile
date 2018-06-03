@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		gmake jpeg localbase pkgconfig
 USE_GITHUB=	yes

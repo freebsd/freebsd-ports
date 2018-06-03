@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libhdf5.so:science/hdf5 \
 		libhpdf.so:print/libharu \
 		libltdl.so:devel/libltdl \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libsz.so:science/szip
 
 USES=		cmake:outsource jpeg gettext-runtime python:2.7

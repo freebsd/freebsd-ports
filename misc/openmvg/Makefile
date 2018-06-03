@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	need to figure out which TARGET_ARCHITECTURE values correspond to other architectures, plus "generic" is broken
 
 LIB_DEPENDS=	libflann_cpp.so:math/flann \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		cmake:outsource eigen:3 jpeg
