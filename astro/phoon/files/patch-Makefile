@@ -1,6 +1,6 @@
---- Makefile.orig	2003-01-21 03:04:36 UTC
+--- Makefile.orig	2014-08-11 19:14:07 UTC
 +++ Makefile
-@@ -1,15 +1,15 @@
+@@ -1,17 +1,14 @@
  # Makefile for phoon
  
 -BINDIR =	/usr/local/bin
@@ -11,17 +11,18 @@
  DEFINES =	-DOS_BSD
  #DEFINES =	-DOS_SYSV
  
--CC =		gcc
--CFLAGS =	-O $(DEFINES)
-+CC ?=		gcc
-+CFLAGS +=	$(DEFINES)
+-CC =		cc
+-CFLAGS =	-O $(DEFINES) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
++CC ?=		cc
++CFLAGS +=	$(DEFINES) -ansi -pedantic -Wall -Wno-long-long -Wmissing-prototypes -Wstrict-prototypes
  
 -LDFLAGS =	-s
-+#LDFLAGS =	-s
- 
- 
+-
+-
  all:		phoon
-@@ -24,7 +24,7 @@ date_parse.o:	date_parse.h
+ 
+ phoon:		phoon.o date_parse.o astro.o
+@@ -24,7 +21,7 @@ date_parse.o:	date_parse.h
  astro.o:	astro.h
  
  install:	all
