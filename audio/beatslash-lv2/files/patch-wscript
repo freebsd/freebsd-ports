@@ -1,15 +1,15 @@
---- wscript.orig	2018-06-03 01:48:08 UTC
+--- wscript.orig	2016-11-06 20:24:40 UTC
 +++ wscript
-@@ -29,9 +29,9 @@ def configure(conf):
+@@ -31,9 +31,9 @@ def configure(conf):
      autowaf.check_pkg(conf, 'gtk+-2.0', uselib_store='GTK2', atleast_version='2.24.0')
      autowaf.check_pkg(conf, 'cairo', uselib_store='CAIRO', atleast_version='1.0.0')
      autowaf.check_pkg(conf, 'lv2', uselib_store='LV2', atleast_version='1.2.0')
--    autowaf.check_pkg(conf, 'lvtk-plugin-1', uselib_store='LVTK_PLUGIN', atleast_version='1.1.1')
--    autowaf.check_pkg(conf, 'lvtk-ui-1', uselib_store='LVTK_UI', atleast_version='1.1.1')
--    autowaf.check_pkg(conf, 'lvtk-gtkui-1', uselib_store='LVTK_GTKGUI', atleast_version='1.1.1')
-+    autowaf.check_pkg(conf, 'lvtk-plugin-2', uselib_store='LVTK_PLUGIN', atleast_version='1.1.1')
-+    autowaf.check_pkg(conf, 'lvtk-ui-2', uselib_store='LVTK_UI', atleast_version='1.1.1')
-+    autowaf.check_pkg(conf, 'lvtk-gtkui-2', uselib_store='LVTK_GTKGUI', atleast_version='1.1.1')
+-    autowaf.check_pkg(conf, 'lvtk-plugin-1', uselib_store='LVTK_PLUGIN', atleast_version='1.2.0')
+-    autowaf.check_pkg(conf, 'lvtk-ui-1', uselib_store='LVTK_UI', atleast_version='1.2.0')
+-    autowaf.check_pkg(conf, 'lvtk-gtkui-1', uselib_store='LVTK_GTKGUI', atleast_version='1.2.0')
++    autowaf.check_pkg(conf, 'lvtk-plugin-2', uselib_store='LVTK_PLUGIN', atleast_version='1.2.0')
++    autowaf.check_pkg(conf, 'lvtk-ui-2', uselib_store='LVTK_UI', atleast_version='1.2.0')
++    autowaf.check_pkg(conf, 'lvtk-gtkui-2', uselib_store='LVTK_GTKGUI', atleast_version='1.2.0')
  
      check = 'Extended Initializer Lists'
      conf.check_cxx(msg         = check,
