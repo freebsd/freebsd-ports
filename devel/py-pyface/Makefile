@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyface
-PORTVERSION=	5.1.0
+PORTVERSION=	6.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/image_LICENSE_OOo.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=4.5.0:devel/py-traits@${FLAVOR}
 
-USES=		python:-2.7
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
