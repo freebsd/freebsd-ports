@@ -1,0 +1,8 @@
+--- configure.ac.orig	2018-05-22 07:39:19 UTC
++++ configure.ac
+@@ -1,4 +1,5 @@
+ AC_INIT([mailsync], [5.2.1], [tpo_deb@sourcepole.ch])
++AC_CONFIG_MACRO_DIR([acinclude])
+ AM_INIT_AUTOMAKE
+ AM_CONFIG_HEADER(config.h)
+ AC_CONFIG_SRCDIR([src/mailsync_main.cc])
