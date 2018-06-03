@@ -3,12 +3,12 @@
 
 PORTNAME=		sogo3
 PORTVERSION=		3.2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
 
-MAINTAINER=		euan@potensol.com
+MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Groupware server with a focus on scalability and open standards
 
 LICENSE=		GPLv2
@@ -32,7 +32,7 @@ USES=			gnustep ssl objc
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}/sogo
 
-CONFLICTS?=		sogo[2-3]-activesync-[0-9]* sogo2-[0-9]*
+CONFLICTS?=		sogo[2-4]-activesync-[0-9]* sogo2-[0-9]* sogo4-[0-9]*
 
 USE_RC_SUBR=		sogod
 

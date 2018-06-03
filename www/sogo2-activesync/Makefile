@@ -1,10 +1,11 @@
 # $FreeBSD$
 
+PORTREVISION=		1
 PKGNAMESUFFIX=		-activesync
 
-MAINTAINER=		euan@potensol.com
+MAINTAINER=		acm@FreeBSD.org
 
-CONFLICTS=		sogo2-[0-9]* sogo3-[0-9]*
+CONFLICTS=		sogo[2-4]-[0-9]* sogo[3-4]-activesync-[0-9]*
 
 OPTIONS_SLAVE=		ACTIVESYNC
 
