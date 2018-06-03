@@ -4390,6 +4390,7 @@
     SUBDIR += py-click-plugins
     SUBDIR += py-click-threading
     SUBDIR += py-cliff
+    SUBDIR += py-cligj
     SUBDIR += py-clint
     SUBDIR += py-clonedigger
     SUBDIR += py-cloudpickle
