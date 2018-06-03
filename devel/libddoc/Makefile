@@ -3,6 +3,7 @@
 
 PORTNAME=	libddoc
 DISTVERSION=	0.3.0-beta1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
