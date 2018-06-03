@@ -1,5 +1,5 @@
-TIMESTAMP = 1517340071
-SHA256 (ldc-1.7.0-src.tar.gz) = 7cd46140ca3e4ca0d52c352e5b694d4d5336898ed4f02c3e18e0eafd69dd18bd
-SIZE (ldc-1.7.0-src.tar.gz) = 6529435
+TIMESTAMP = 1525807496
+SHA256 (ldc-1.9.0-src.tar.gz) = e3f32a4dfcaae12f434e0e23638684faa83765827e7f2deb2df059dccc3169b9
+SIZE (ldc-1.9.0-src.tar.gz) = 6560330
 SHA256 (ldc-0.17.5-src.tar.gz) = 7aa540a135f9fa1ee9722cad73100a8f3600a07f9a11d199d8be68887cc90008
 SIZE (ldc-0.17.5-src.tar.gz) = 5006161
