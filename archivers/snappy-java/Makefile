@@ -23,18 +23,19 @@ COMMENT=	Fast compressor/decompressor library
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3
-
 BROKEN_armv6=		fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
 BROKEN_armv7=		fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
+BROKEN_powerpc64=	fails to build: failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.14.1:test
+
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial
 GH_PROJECT=	snappy-java
 
+USES=		gmake
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
-USES=		gmake
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	Default_CXX=${CXX}
 
