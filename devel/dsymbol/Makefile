@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsymbol
-DISTVERSION=	0.3.0-beta1
+PORTVERSION=	0.3.5
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
@@ -13,18 +13,19 @@ LICENSE=	BSL
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
 		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse \
-		${LOCALBASE}/lib/d/libemsi_containers.a:devel/containers
+		${LOCALBASE}/lib/d/libemsi_containers.a:devel/containers \
+		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
-GH_TAGNAME=	v${DISTVERSION:S/beta/beta./}
+GH_TAGNAME=	v${PORTVERSION}
 
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
 
 post-patch:
-	${REINPLACE_CMD} -e '7,10d' ${WRKSRC}/dub.json
+	${REINPLACE_CMD} -e '7,11d' ${WRKSRC}/dub.json
 
 do-build:
 	@cd ${WRKSRC} && ${DUB_CMD}
