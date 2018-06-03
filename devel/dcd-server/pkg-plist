@@ -1,10 +1,17 @@
 bin/dcd-server
-include/d/common/constants.d
-include/d/common/dcd_version.d
-include/d/common/messages.d
-include/d/common/socket.d
-include/d/server/autocomplete.d
-include/d/server/main.d
-include/d/server/server.d
+include/d/dcd/common/constants.d
+include/d/dcd/common/constants2.d
+include/d/dcd/common/dcd_version.d
+include/d/dcd/common/messages.d
+include/d/dcd/common/socket.d
+include/d/dcd/server/autocomplete/complete.d
+include/d/dcd/server/autocomplete/doc.d
+include/d/dcd/server/autocomplete/localuse.d
+include/d/dcd/server/autocomplete/package.d
+include/d/dcd/server/autocomplete/symbols.d
+include/d/dcd/server/autocomplete/util.d
+include/d/dcd/server/main.d
+include/d/dcd/server/server.d
 lib/d/libdcd.a
 man/man1/dcd-server.1.gz
+@dir include/d/common

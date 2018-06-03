@@ -1,17 +1,17 @@
---- dub.json.orig	2017-07-03 08:14:25 UTC
-+++ dub.json
-@@ -6,12 +6,9 @@
+--- dub.json.orig	2018-05-07 07:47:46.000000000 -0500
++++ dub.json	2018-05-10 00:47:19.488680000 -0500
+@@ -6,12 +6,8 @@
      "Brian Schott"
    ],
    "license": "GPL-3.0",
 -  "dependencies": {
--    "dsymbol": "~>0.2.8",
--    "libdparse": "~>0.7.1-beta.7",
--    "msgpack-d": "~>1.0.0-beta.3"
+-    "dsymbol": "~>0.3.5",
+-    "libdparse": "~>0.8.1",
+-    "msgpack-d": "~>1.0.0-beta.3",
+-    "stdx-allocator": "~>2.77.0"
 -  },
++  "libs": ["dsymbol","dparse","emsi_containers","msgpack-d","stdx-allocator"],
++  "lflags": ["-L%%LOCALBASE%%/lib/d"],
    "versions": ["built_with_dub"],
-+  "libs": ["dsymbol","dparse","emsi_containers","msgpack-d"],
-+  "lflags": ["-L/usr/local/lib/d"],
    "configurations": [
      {
-       "name": "library",
