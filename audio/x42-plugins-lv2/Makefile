@@ -13,6 +13,9 @@ COMMENT=	Collection of LV2 plugins (submodules)
 
 LICENSE=	GPLv2
 
+BROKEN_armv6=		fails to build: unknown FP unit 'sse'
+BROKEN_armv7=		fails to build: unknown FP unit 'sse'
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
 		bash:shells/bash

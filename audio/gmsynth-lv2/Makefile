@@ -13,6 +13,9 @@ COMMENT=	General MIDI LV2 Synth
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		fails to compile: unknown FP unit 'sse'
+BROKEN_armv7=		fails to compile: unknown FP unit 'sse'
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 

@@ -11,6 +11,8 @@ COMMENT=	OSC injection/ejection from/to UDP/TCP/Serial for LV2
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to build: varchunk/varchunk.h:84: expected specifier-qualifier-list before _Atomic
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libsratom-0.so:audio/sratom \
 		libserd-0.so:devel/serd \
