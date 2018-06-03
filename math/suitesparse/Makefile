@@ -43,6 +43,7 @@ METIS_PATH=	${LOCALBASE}/include/metis
 CHOLMOD_CONFIG=
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstalled older versions
 MAKE_ARGS+=	MY_METIS_LIB="-L${LOCALBASE}/lib -lmetis $(LDFLAGS)"
 
 post-patch:
