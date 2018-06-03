@@ -1,3 +1,4 @@
 ===
-If you wish, install math/py-statsmodels to enable parts of pandas.stats.
+Install math/py-statsmodels to enable parts of pandas.stats.
+Install devel/py-xarray to enable the to_xarray() function.
 ===
