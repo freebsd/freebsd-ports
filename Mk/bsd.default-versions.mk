@@ -47,7 +47,7 @@ GCC_DEFAULT?=		6
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
 # Possible values: 1.8.2
-LAZARUS_DEFAULT?=	1.8.2
+LAZARUS_DEFAULT?=	1.8.4
 .if ${ARCH} == amd64
 # Possible values: c6, c6_64, c7
 LINUX_DEFAULT?=		c6_64
