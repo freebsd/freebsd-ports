@@ -2,6 +2,7 @@
 
 PORTNAME=	guitarix
 DISTVERSION=	0.37.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 PKGNAMESUFFIX=	-lv2
@@ -15,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
+		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		ladspa>0:audio/ladspa # https://sourceforge.net/p/guitarix/bugs/61/
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libboost_system.so:devel/boost-libs \
@@ -30,6 +32,7 @@ LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libsratom-0.so:audio/sratom \
 		libzita-convolver.so:audio/zita-convolver \
 		libzita-resampler.so:audio/zita-resampler
+RUN_DEPENDS=	roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf
 
 USES=		eigen:3 libarchive localbase:ldflags pkgconfig \
 		python:build readline waf tar:xz
