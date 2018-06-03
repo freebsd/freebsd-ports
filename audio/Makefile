@@ -64,6 +64,7 @@
     SUBDIR += blop-lv2
     SUBDIR += boodler
     SUBDIR += bristol
+    SUBDIR += bs2b-lv2
     SUBDIR += calf-lv2
     SUBDIR += cam
     SUBDIR += cantata
