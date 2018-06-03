@@ -2,4 +2,4 @@ Ingo is an email-filter management application. It is fully internationalized,
 integrated with Horde and the IMP Webmail client, and supports both server-side
 (Sieve, procmail) and client-side (IMAP) message filtering.
 
-WWW: http://www.horde.org/apps/ingo/
+WWW: https://www.horde.org/apps/ingo/
