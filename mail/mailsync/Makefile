@@ -3,7 +3,7 @@
 
 PORTNAME=	mailsync
 PORTVERSION=	5.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libc-client4.so:mail/cclient
 
-USES=		gmake ssl
+USES=		autoreconf gmake ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-c-client=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE}
@@ -23,10 +23,6 @@ CONFIGURE_ARGS=	--with-c-client=${LOCALBASE} \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-patch:
-	${REINPLACE_CMD} -e 's|\($withval\),$${OPENSSLLOCATIONS}|\1|g'	\
-		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mailsync ${STAGEDIR}${PREFIX}/bin
