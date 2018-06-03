@@ -6089,6 +6089,7 @@
     SUBDIR += statcvs
     SUBDIR += statik
     SUBDIR += statsvn
+    SUBDIR += stdx-allocator
     SUBDIR += stfl
     SUBDIR += stlfilt
     SUBDIR += stlink
