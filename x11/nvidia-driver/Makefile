@@ -118,12 +118,13 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E '/#include "machine\/\.\.\/linux(32)?\/linux.h"/ \
 		{ x ; s/.*/#include "machine\/..\/..\/compat\/linux\/linux_ioctl.h"/ ; H ; x ; }' \
 			${WRKSRC}/src/${NVSRC}/nvidia_linux.c
-# Adjust `vm_object' locking after FreeBSD src r248084
+# Adjust `vm_object' locking after FreeBSD src r248084 and bogus memset() call
 	${REINPLACE_CMD} -e '/#include <vm\/vm_object.h>/ \
 		{ x ; s/.*/#include <sys\/rwlock.h>/ ; G ; }' \
 			${WRKSRC}/src/${NVSRC}/nv-freebsd.h
-	${REINPLACE_CMD} -E 's/(VM_OBJECT_)(UN)?(LOCK)/\1W\2\3/' \
-		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
+	${REINPLACE_CMD} -E 's/(VM_OBJECT_)(UN)?(LOCK)/\1W\2\3/ ; \
+		/memset/s/sizeof\(ci/sizeof(*ci/' \
+			${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 # Adjust kmem(9) calls after FreeBSD src r254025
 .if ${NVVERSION} < 331.067
 	${REINPLACE_CMD} -e '/kmem_/s/kernel_map/kernel_arena/' \
