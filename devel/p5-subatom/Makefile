@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Produce an atom feed from subversion commits
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/README
 
 BUILD_DEPENDS=	p5-XML-Atom-SimpleFeed>=0.80:textproc/p5-XML-Atom-SimpleFeed
 RUN_DEPENDS:=	${BUILD_DEPENDS}
