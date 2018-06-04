@@ -9,4 +9,4 @@ correctly by OCR is placed on an image and used as a CAPTCHA. This is
 possible because most OCR programs alert you when a word cannot be read
 correctly.
 
-WWW: http://search.cpan.org/dist/Captcha-reCAPTCHA/
+WWW: https://metacpan.org/release/Captcha-reCaptcha
