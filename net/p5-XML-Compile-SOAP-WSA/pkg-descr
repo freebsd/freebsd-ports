@@ -7,4 +7,4 @@ However, when the server is hidden behind firewalls and proxies, these
 fields are rewritten or replaced.  This means that the definitions by
 the WSDL for the client can differ from the configuration of the
 
-WWW: http://search.cpan.org/dist/XML-Compile-SOAP-WSA/
+WWW: https://metacpan.org/release/MARKOV/XML-Compile-SOAP-WSA-0.13
