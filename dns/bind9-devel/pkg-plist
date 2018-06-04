@@ -188,6 +188,7 @@ include/isc/net.h
 include/isc/netaddr.h
 include/isc/netdb.h
 include/isc/netscope.h
+include/isc/nonce.h
 include/isc/offset.h
 include/isc/once.h
 include/isc/os.h
