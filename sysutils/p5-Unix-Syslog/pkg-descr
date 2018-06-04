@@ -3,4 +3,4 @@ XSUBs. The implementation attempts to resemble the native libc-functions of
 your system, so that anyone being familiar with syslog.h should be able to
 use this module right away.
 
-WWW: http://search.cpan.org/dist/Syslog/
+WWW: https://metacpan.org/release/Unix-Syslog
