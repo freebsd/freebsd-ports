@@ -10,4 +10,4 @@ methods is actually encouraged and can simplify code for the consumer.
 The only method that must be provided by the consuming class is
 handle_inbound_data.
 
-WWW: http://search.cpan.org/dist/POEx-Role-TCPServer/
+WWW: https://metacpan.org/release/NPEREZ/POEx-Role-TCPServer-1.102740
