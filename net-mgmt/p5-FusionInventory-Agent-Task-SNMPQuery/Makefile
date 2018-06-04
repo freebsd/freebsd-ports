@@ -12,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SNMP support for FusionInventory Agent
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-FusionInventory-Agent>=0:net-mgmt/p5-FusionInventory-Agent \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
