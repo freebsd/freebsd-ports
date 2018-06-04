@@ -6,4 +6,4 @@ counterpart.  For event dispatch related callbacks, see _dispatch_event
 in POE::Kernel.  For session related callbacks, see create in
 POE::Session.
 
-WWW: http://search.cpan.org/dist/POE-API-Hooks/
+WWW: https://metacpan.org/release/SUNGO/POE-API-Hooks-1.08
