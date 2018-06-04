@@ -11,6 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to provide MooseX::Types types for modern POE
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	\
 	p5-MooseX-Types>0:devel/p5-MooseX-Types \
 	p5-MooseX-Types-Structured>0:devel/p5-MooseX-Types-Structured \
