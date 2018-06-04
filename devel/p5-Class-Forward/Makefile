@@ -10,7 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for class dispatcher that handles namespaces like paths
 
-USES=	perl5
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
