@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ndpi
-PORTVERSION=	2.2.2018.01.31
+PORTVERSION=	2.2.2.d20180406
+PORTEPOCH=	1
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -25,11 +26,18 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
 GH_PROJECT=	nDPI
-GH_TAGNAME=	cf06823
+GH_TAGNAME=	0e11abc
 
-PLIST_SUB=	MAJOR_VER=${PORTVERSION:C/([[:digit:]])+\.([[:digit:]])+.*/\1.\2/}.0
+PLIST_SUB=	MAJOR_VER=${PORTVERSION:R}
 
 post-patch:
+	@${REINPLACE_CMD} '/ndpi_config\.h/d' \
+		${WRKSRC}/src/include/ndpi_main.h
 	cd ${WRKSRC} && ${SH} autogen.sh
+
+post-configure:
+	@${REINPLACE_CMD} -e 's/#define PACKAGE/#define NDPI_PACKAGE/g' \
+		-e 's/#define VERSION/#define NDPI_VERSION/g' \
+			${WRKSRC}/configure
 
 .include <bsd.port.mk>

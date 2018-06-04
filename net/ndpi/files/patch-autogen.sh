@@ -1,16 +1,16 @@
---- autogen.sh.orig	2017-12-03 18:07:29 UTC
+--- autogen.sh.orig	2018-04-06 15:23:12 UTC
 +++ autogen.sh
-@@ -5,34 +5,4 @@ NDPI_MINOR="2"
- NDPI_PATCH="0"
+@@ -5,44 +5,9 @@ NDPI_MINOR="2"
+ NDPI_PATCH="2"
  NDPI_VERSION_SHORT="$NDPI_MAJOR.$NDPI_MINOR.$NDPI_PATCH"
  
--/bin/rm -f configure config.h config.h.in src/lib/Makefile.in
+-rm -f configure config.h config.h.in src/lib/Makefile.in
 -
--AUTOCONF=$(which autoconf)
--AUTOMAKE=$(which automake)
--LIBTOOL=$(which libtool)
--LIBTOOLIZE=$(which libtoolize)
--AUTORECONF=$(which autoreconf)
+-AUTOCONF=$(command -v autoconf)
+-AUTOMAKE=$(command -v automake)
+-LIBTOOL=$(command -v libtool)
+-LIBTOOLIZE=$(command -v libtoolize)
+-AUTORECONF=$(command -v autoreconf)
 -
 -if test -z $AUTOCONF; then
 -    echo "autoconf is missing: please install it and try again"
@@ -32,6 +32,16 @@
 -    exit
 -fi
 -
- cat configure.seed | sed "s/@NDPI_MAJOR@/$NDPI_MAJOR/g" | sed "s/@NDPI_MINOR@/$NDPI_MINOR/g" | sed "s/@NDPI_PATCH@/$NDPI_PATCH/g" | sed "s/@NDPI_VERSION_SHORT@/$NDPI_VERSION_SHORT/g" > configure.ac
+ cat configure.seed | sed \
+     -e "s/@NDPI_MAJOR@/$NDPI_MAJOR/g" \
+     -e "s/@NDPI_MINOR@/$NDPI_MINOR/g" \
+     -e "s/@NDPI_PATCH@/$NDPI_PATCH/g" \
+     -e "s/@NDPI_VERSION_SHORT@/$NDPI_VERSION_SHORT/g" \
+     > configure.ac
+-
 -autoreconf -ivf
+-cat configure | sed "s/#define PACKAGE/#define NDPI_PACKAGE/g" | sed "s/#define VERSION/#define NDPI_VERSION/g"  > configure.tmp
+-cat configure.tmp > configure
+-
+-chmod +x configure
 -./configure $*
