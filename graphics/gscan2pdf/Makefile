@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	1.8.11
+PORTVERSION=	2.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -13,7 +13,6 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	p5-Config-General>=2.40:devel/p5-Config-General \
 		p5-Glib2>=1.210:devel/p5-Glib2 \
-		p5-Goo-Canvas>0:devel/p5-Goo-Canvas \
 		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Log-Log4perl>0:devel/p5-Log-Log4perl \
 		p5-Readonly>0:devel/p5-Readonly \
@@ -24,26 +23,38 @@ BUILD_DEPENDS=	p5-Config-General>=2.40:devel/p5-Config-General \
 		p5-Try-Tiny>0:lang/p5-Try-Tiny \
 		bash:shells/bash \
 		p5-PDF-API2>0.57:textproc/p5-PDF-API2 \
-		p5-Gtk2>=1.090:x11-toolkits/p5-Gtk2 \
-		p5-Gtk2-Ex-Simple-List>0:x11-toolkits/p5-Gtk2-Ex-Simple-List \
-		p5-Gtk2-ImageView>0:x11-toolkits/p5-Gtk2-ImageView
+		p5-Gtk3>=0.028:x11-toolkits/p5-Gtk3 \
+		p5-Gtk3-SimpleList>=0.17:x11-toolkits/p5-Gtk3-SimpleList \
+		p5-Goo-Canvas2>=0.06:devel/p5-Goo-Canvas2
 RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		xdg-open:devel/xdg-utils \
 		cjb2:graphics/djvulibre \
 		scanimage:graphics/sane-backends \
 		scanadf:graphics/sane-frontends \
 		unpaper:graphics/unpaper \
+		ImageMagick>0:graphics/ImageMagick \
 		p5-HTML-Parser>0:www/p5-HTML-Parser \
-		p5-Gtk2-Ex-PodViewer>0.17:x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-Filesys-Df>0.92:sysutils/p5-Filesys-Df \
 		p5-Data-UUID>=1.220:devel/p5-Data-UUID \
 		p5-Date-Calc>=6.4:devel/p5-Date-Calc \
-		${BUILD_DEPENDS}
+		p5-Config-General>=2.40:devel/p5-Config-General \
+		p5-Glib2>=1.210:devel/p5-Glib2 \
+		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
+		p5-Log-Log4perl>0:devel/p5-Log-Log4perl \
+		p5-Readonly>0:devel/p5-Readonly \
+		p5-Image-Sane>=0.14:graphics/p5-Image-Sane \
+		p5-Set-IntSpan>=1.10:math/p5-Set-IntSpan \
+		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
+		p5-Try-Tiny>0:lang/p5-Try-Tiny \
+		p5-PDF-API2>0.57:textproc/p5-PDF-API2 \
+		p5-Gtk3>=0.028:x11-toolkits/p5-Gtk3 \
+		p5-Gtk3-SimpleList>=0.17:x11-toolkits/p5-Gtk3-SimpleList \
+		p5-Goo-Canvas2>=0.06:devel/p5-Goo-Canvas2
 
 NO_ARCH=	yes
 
 USES=		gettext gmake perl5 tar:xz
-USE_GNOME=	gtk20 librsvg2
+USE_GNOME=	gtk30 librsvg2
 USE_PERL5=	configure
 
 OPTIONS_MULTI=		OCR
