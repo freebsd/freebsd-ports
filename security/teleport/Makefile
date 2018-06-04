@@ -19,7 +19,6 @@ USES=		compiler gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gravitational
-GH_TAGNAME=	v${DISTVERSION}${DISTVERSIONSUFFIX}
 GH_TAG_COMMIT=	b3f4ecb
 
 USE_RC_SUBR=	teleport

@@ -3,6 +3,7 @@
 
 PORTNAME=	libdouble-conversion
 PORTVERSION=	3.0.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	waitman@waitman.net
@@ -20,6 +21,5 @@ CMAKE_ARGS=	-DCMAKE_POSITION_INDEPENDENT_CODE=1
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	double-conversion
-GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>

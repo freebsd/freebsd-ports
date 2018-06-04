@@ -3,6 +3,7 @@
 
 PORTNAME=	libnfs
 PORTVERSION=	2.0.0
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net
 
 MAINTAINER=	snoe925@gmail.com
@@ -17,7 +18,6 @@ USES=		autoreconf gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	sahlberg
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 CONFIGURE_ARGS=	--disable-werror
 

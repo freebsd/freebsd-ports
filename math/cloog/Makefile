@@ -3,6 +3,7 @@
 
 PORTNAME=	cloog
 PORTVERSION=	0.19.0
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	math
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -16,7 +17,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 USES=		autoreconf gmake libtool
 
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 GH_ACCOUNT=	periscop
 
 USE_LDCONFIG=	yes

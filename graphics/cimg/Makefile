@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
+DISTVERSIONPREFIX=	v.
 DISTVERSION=	2.2.3
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
@@ -29,7 +30,6 @@ BROKEN_powerpc64=	invokes x86 assembler
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
 GH_PROJECT=	CImg
-GH_TAGNAME=	v.${DISTVERSION}
 
 .if !defined(WITHOUT_LAPACK)
 . if defined(WITH_ATLAS)

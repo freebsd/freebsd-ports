@@ -3,6 +3,7 @@
 
 PORTNAME=	iz
 PORTVERSION=	0.6.16
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
@@ -15,7 +16,6 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BBasile
-GH_TAGNAME=	v${PORTVERSION}
 
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
