@@ -10,4 +10,4 @@ protocol:
 The plugin depends on FusionInventory for GLPI. OCS Inventory can't use this
 plugin.
 
-WWW: http://search.cpan.org/dist/FusionInventory-Agent-Task-NetDiscovery/
+WWW: https://metacpan.org/release/FUSINV/FusionInventory-Agent-Task-NetDiscovery-2.1
