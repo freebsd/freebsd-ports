@@ -160,6 +160,7 @@
     SUBDIR += p5-Gtk2-TrayIcon
     SUBDIR += p5-Gtk2-Unique
     SUBDIR += p5-Gtk3
+    SUBDIR += p5-Gtk3-SimpleList
     SUBDIR += p5-Pango
     SUBDIR += p5-Prima
     SUBDIR += p5-Tk
