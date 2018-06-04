@@ -1,4 +1,4 @@
 Test::postgresql automatically setups a postgresql instance in a
 temporary directory, and destroys it when the perl script exits.
 
-WWW: http://search.cpan.org/dist/Test-postgresql/
+WWW: https://metacpan.org/release/SYSPETE/Test-postgresql-0.091
