@@ -11,6 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse the gigantic dmoz.org content file into smaller parts
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
