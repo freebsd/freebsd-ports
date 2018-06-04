@@ -4,17 +4,15 @@
 PORTNAME=	stlfilt
 PORTVERSION=	20080203
 CATEGORIES=	devel
-MASTER_SITES=	http://www.bdsoft.com/dist/
+MASTER_SITES=	https://www.bdsoft.com/dist/
 DISTNAME=	g${PORTNAME}
-EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STL Error Message Decryptor for C++
 
-USES=		perl5
-EXTRACT_CMD=	${TAR}
-EXTRACT_BEFORE_ARGS=	-xf
-EXTRACT_AFTER_ARGS=	# empty
+LICENSE=	MIT
+
+USES=		perl5 tar
 USE_PERL5=	run
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -25,8 +23,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,[$$]HOME,${PREFIX}/bin," ${WRKSRC}/gfilt
 
 do-install:
-.for file in gSTLFilt.pl gfilt
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/gSTLFilt.pl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/gfilt ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
