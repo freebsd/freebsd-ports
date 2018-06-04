@@ -11,8 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dikshie@lapi.itb.ac.id
 COMMENT=	Handle ISO-3166 country codes
 
+LICENSE=	MIT
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-CONFIGURE_ARGS+=	INSTALLDIRS='site'
+CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 .include <bsd.port.mk>
