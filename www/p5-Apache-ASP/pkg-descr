@@ -1,21 +1,19 @@
-    This perl module provides an Active Server Pages port to the Apache HTTP
-    Server with perl as the host scripting language. Active Server Pages is
-    a web application platform that originated with the Microsoft IIS
-    server. Under Apache for both Win32 and Unix, it allows a developer to
-    create dynamic web applications with session management and perl code
-    embedded in static html files.
+This perl module provides an Active Server Pages port to the Apache HTTP Server
+with perl as the host scripting language. Active Server Pages is a web
+application platform that originated with the Microsoft IIS server. Under Apache
+for both Win32 and Unix, it allows a developer to create dynamic web
+applications with session management and perl code embedded in static html
+files.
 
-    This is a portable solution, similar to ActiveState PerlScript and MKS
-    PScript implementation of perl for IIS ASP. Work has been done and will
-    continue to make ports to and from these other implementations as smooth
-    as possible.
+This is a portable solution, similar to ActiveState PerlScript and MKS PScript
+implementation of perl for IIS ASP. Work has been done and will continue to make
+ports to and from these other implementations as smooth as possible.
 
-    This module works under the Apache HTTP Server with the mod_perl module
-    enabled. See http://www.apache.org and http://perl.apache.org for
-    further information.
+This module works under the Apache HTTP Server with the mod_perl module enabled.
+See https://www.apache.org/ and https://perl.apache.org/ for further
+information.
 
-    For database access, ActiveX, and scripting language issues, please read
-    the FAQ section.
+For database access, ActiveX, and scripting language issues, please read the FAQ
+section.
 
-WWW: http://www.nodeworks.com/asp/
-     http://search.cpan.org/dist/Apache-ASP/
+WWW: https://metacpan.org/release/Apache-ASP
