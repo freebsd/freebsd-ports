@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	CPAN:BDFOY
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML validator and sanity checker
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-ConfigReader-Simple>=1.15:devel/p5-ConfigReader-Simple \
 		p5-File-Find-Rule>0:devel/p5-File-Find-Rule \
 		p5-HTML-Lint>0:www/p5-HTML-Lint \
@@ -27,6 +30,7 @@ TEST_DEPENDS=	p5-Test-Manifest>0.91:devel/p5-Test-Manifest \
 		p5-Test-Pod>=0.90:devel/p5-Test-Pod \
 		p5-Test-File>0:devel/p5-Test-File
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

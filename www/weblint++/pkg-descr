@@ -2,4 +2,4 @@ Weblint is a syntax and minimal style checker for HTML: a perl script which
 picks fluff off html pages, much in the same way traditional lint picks fluff
 off C programs.
 
-WWW: http://search.cpan.org/dist/weblint/
+WWW: https://metacpan.org/release/BDFOY/weblint++-1.15
