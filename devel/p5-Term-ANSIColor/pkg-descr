@@ -12,4 +12,4 @@ of two interfaces, one of which uses "constants" for each different
 attribute and the other of which uses two subs which take strings of
 attributes as arguments.
 
-WWW: http://search.cpan.org/dist/ANSIColor/
+WWW: https://metacpan.org/release/Term-ANSIColor
