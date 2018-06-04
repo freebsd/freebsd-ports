@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=		fails to link: /nxb-bin/usr/bin/ld: cannot find -ljava
 BROKEN_armv7=		fails to link: /nxb-bin/usr/bin/ld: cannot find -ljava
+BROKEN_powerpc64=	fails to link: /usr/bin/ld: cannot find -ljava
+NOT_FOR_ARCHS=		mips mips64
+NOT_FOR_ARCHS_REASON=	Java not available for this architecture
 
 USES=		python
 USE_PYTHON=	distutils autoplist
