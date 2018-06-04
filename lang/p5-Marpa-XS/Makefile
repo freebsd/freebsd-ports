@@ -12,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XS version of Marpa
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig \
 		p5-Glib2>=1.223:devel/p5-Glib2 \
