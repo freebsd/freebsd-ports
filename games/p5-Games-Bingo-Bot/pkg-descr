@@ -3,4 +3,4 @@ IRC bot (see the script in the bin directory).  The Games::Bingo::Bot
 class and the script mentioned above is a complete IRC setup for playing
 Bingo, using the Games::Bingo module.
 
-WWW: http://search.cpan.org/dist/Games-Bingo-Bot/
+WWW: https://metacpan.org/release/JONASBN/Games-Bingo-Bot-0.01
