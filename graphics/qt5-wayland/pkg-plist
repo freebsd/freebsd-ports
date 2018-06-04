@@ -303,8 +303,8 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libxcomposite-glx.so.debug
 %%QT_PLUGINDIR%%/wayland-shell-integration/libivi-shell.so
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-shell-integration/libivi-shell.so.debug
-%%QT_QMLDIR%%/QtWayland/Compositor/WaylandCursorItem.qml
-%%QT_QMLDIR%%/QtWayland/Compositor/WaylandOutputWindow.qml
+%%DEBUG%%%%QT_QMLDIR%%/QtWayland/Compositor/WaylandCursorItem.qml
+%%DEBUG%%%%QT_QMLDIR%%/QtWayland/Compositor/WaylandOutputWindow.qml
 %%QT_QMLDIR%%/QtWayland/Compositor/libqwaylandcompositorplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtWayland/Compositor/libqwaylandcompositorplugin.so.debug
 %%QT_QMLDIR%%/QtWayland/Compositor/plugins.qmltypes
