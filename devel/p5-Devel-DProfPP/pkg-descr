@@ -2,4 +2,4 @@ This module takes the output file from Devel::DProf (typically tmon.out)
 and parses it.  By hooking subroutines onto the enter and leave events,
 you can produce useful reports from the profiling data.
 
-WWW: http://search.cpan.org/dist/Devel-DProfPP/
+WWW: https://metacpan.org/release/SMPETERS/Devel-DProfPP-1.3
