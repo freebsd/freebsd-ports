@@ -87,6 +87,7 @@ share/applications/worker.desktop
 %%DATADIR%%/scripts/cd2ogg.sh
 %%DATADIR%%/scripts/cd2wav.sh
 %%DATADIR%%/scripts/displaywrapper_worker
+%%DATADIR%%/scripts/find_file_by_chksum.py
 %%DATADIR%%/scripts/xeditor
 %%DATADIR%%/scripts/xliwrapper_worker
 %%DATADIR%%/config-updates/update-2.19.0-utf8.conf
@@ -111,4 +112,6 @@ share/applications/worker.desktop
 %%DATADIR%%/config-updates/update-3.13.0.conf
 %%DATADIR%%/config-updates/update-3.14.0-utf8.conf
 %%DATADIR%%/config-updates/update-3.14.0.conf
+%%DATADIR%%/config-updates/update-3.15.0-utf8.conf
+%%DATADIR%%/config-updates/update-3.15.0.conf
 %%DATADIR%%/scripts/git_modified_files.sh
