@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libddoc
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0-beta1
 PORTREVISION=	1
 CATEGORIES=	devel
@@ -17,7 +18,9 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	economicmodeling
-GH_TAGNAME=	v${DISTVERSION:S/beta/beta./}
+# Note that beta.1 is a perfectly acceptable version, this is not required at
+# all.
+GH_TAGNAME=	${DISTVERSIONFULL:S/beta/beta./}
 
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d

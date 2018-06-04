@@ -23,7 +23,6 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
 GH_PROJECT=	D-Scanner
-GH_TAGNAME=	v${PORTVERSION}
 
 PLIST_FILES=	bin/dscanner
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release

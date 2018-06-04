@@ -18,7 +18,6 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
-GH_TAGNAME=	v${PORTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
