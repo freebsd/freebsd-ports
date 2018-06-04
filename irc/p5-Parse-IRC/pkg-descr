@@ -1,4 +1,4 @@
 Parse::IRC provides a convenient way of parsing lines of text conforming
 to the IRC protocol ( see RFC1459 or RFC2812 ).
 
-WWW: http://search.cpan.org/dist/Net-Parse-IRC/
+WWW: https://metacpan.org/release/Parse-IRC
