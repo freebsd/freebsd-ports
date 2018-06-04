@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	avk@vl.ru
 COMMENT=	Hold Data Set To Calculate Average
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-UNIVERSAL-isa>=0:devel/p5-UNIVERSAL-isa
 RUN_DEPENDS=	p5-UNIVERSAL-isa>=0:devel/p5-UNIVERSAL-isa
 
