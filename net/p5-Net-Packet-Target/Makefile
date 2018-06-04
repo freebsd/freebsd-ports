@@ -12,6 +12,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Target object for all Net-Packet related stuff
 
 LICENSE=	ART10
+LICENSE_FILE=	${WRKSRC}/LICENSE.Artistic
 
 BUILD_DEPENDS=	p5-Class-Gomor>=1.00:devel/p5-Class-Gomor \
 		p5-Net-Packet>=3.00:net/p5-Net-Packet
