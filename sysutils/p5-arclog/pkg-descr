@@ -9,4 +9,4 @@ can log) in a format compatible with the Apache access log, like CUPS,
 ProFTPD, Pure-FTPd... etc., and arclog can archive their Apache-like log
 files, too.
 
-WWW: http://search.cpan.org/dist/arclog/
+WWW: https://metacpan.org/release/IMACAT/arclog-3.04

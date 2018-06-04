@@ -11,11 +11,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Archive the log files monthly
 
-RUN_DEPENDS=	p5-TimeDate>=0:devel/p5-TimeDate \
-		p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2 \
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2 \
 		p5-File-MMagic>=0:devel/p5-File-MMagic \
-		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		p5-TimeDate>=0:devel/p5-TimeDate
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
