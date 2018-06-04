@@ -17,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=		fails to link: librxtxParallel.so: No such file or directory
 BROKEN_armv7=		fails to link: librxtxParallel.so: No such file or directory
+BROKEN_powerpc64=	fails to link: librxtxParallel.so: No such file or directory
+NOT_FOR_ARCHS=		mips mips64
+NOT_FOR_ARCHS_REASON=	Java not available for this architecture
 
 USES=		gmake libtool zip
 
