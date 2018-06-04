@@ -11,12 +11,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	freebsd.ports@tipstrade.net
 COMMENT=	Access to Clickatell SMS messaging service
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 TEST_DEPENDS=	p5-libwww>=5.816:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	${FIND} ${WRKSRC} -name "*.orig" -delete
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 .include <bsd.port.mk>
