@@ -3,4 +3,4 @@ via a simple Perl interface. Will ensure that all references will be separated
 from the parent data structure, yet kept relative to the new structure (if need
 be).
 
-WWW: http://search.cpan.org/dist/Clone-More/
+WWW: https://metacpan.org/release/WAZZUTEKE/Clone-More-0.90.2
