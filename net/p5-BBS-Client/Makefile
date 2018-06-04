@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client Module For BBS Systems
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
