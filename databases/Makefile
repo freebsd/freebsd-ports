@@ -32,6 +32,7 @@
     SUBDIR += c3p0
     SUBDIR += cassandra-cpp-driver
     SUBDIR += casstcl
+    SUBDIR += cayley
     SUBDIR += cdb
     SUBDIR += cego
     SUBDIR += cegobridge
