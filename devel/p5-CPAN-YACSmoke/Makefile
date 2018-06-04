@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet Another CPAN Smoke Tester
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
 		p5-File-HomeDir>=0.06:devel/p5-File-HomeDir \
 		p5-Regexp-Assemble>=0.06:devel/p5-Regexp-Assemble \
