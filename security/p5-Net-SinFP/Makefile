@@ -25,7 +25,7 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Full operating system stack fingerprinting suite
 
 LICENSE=	ART10
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.Artistic
 
 NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	does not support big-endian architectures
