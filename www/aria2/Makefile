@@ -43,7 +43,7 @@ PORTDOCS=	*
 CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-CARES_CONFIGURE_WITH=	libares
+CARES_CONFIGURE_WITH=	libcares
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 NLS_CONFIGURE_OFF=	--disable-nls --without-libintl-prefix
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
