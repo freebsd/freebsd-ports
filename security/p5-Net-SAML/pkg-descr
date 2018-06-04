@@ -1,6 +1,6 @@
 A Perl module wrapping libzxid. Also zxid.pl, that implements SP in
 mod_perl environment, is supplied.
 
-This module is also available on CPAN at http://search.cpan.org/dist/zxid/.
+This module is also available on MetaCPAN at https://metacpan.org/release/zxid.
 
 WWW: http://zxid.org/
