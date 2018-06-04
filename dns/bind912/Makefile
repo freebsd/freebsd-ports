@@ -29,6 +29,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN_powerpc64=	fails to link: /usr/bin/ld: cannot find -latomic
+
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
 ISCVERSION=	9.12.1-P2
 
