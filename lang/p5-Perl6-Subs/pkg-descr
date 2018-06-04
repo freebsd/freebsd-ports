@@ -4,4 +4,4 @@ Perl6::Subs is a source filter that adds a very useful subset of Perl
 declare the formal parameters, assign them their values, and validate
 their contents according to both built-in and user-given rules.
 
-WWW: http://search.cpan.org/dist/Perl6-Subs/
+WWW: https://metacpan.org/release/CHIPS/Perl6-Subs-0.05
