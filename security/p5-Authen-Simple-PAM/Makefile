@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple PAM authentication
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Authen-Simple>=0:security/p5-Authen-Simple \
 		p5-Authen-PAM>=0:security/p5-Authen-PAM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
