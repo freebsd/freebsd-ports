@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for Plack Server implementation for POE
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	\
 	p5-Plack>0:www/p5-Plack \
 	p5-libwww>0:www/p5-libwww \
