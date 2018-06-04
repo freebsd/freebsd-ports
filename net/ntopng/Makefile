@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ntopng
-PORTVERSION=	3.2.2018.03.13
+PORTVERSION=	3.4.d20180604
+PORTEPOCH=	1
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -24,14 +25,13 @@ USES=		autoreconf cpe gmake libtool localbase mysql pathfix pkgconfig \
 SUB_FILES=	ntopng-geoipupdate.sh pkg-deinstall
 SHEBANG_FILES=	httpdocs/misc/ntopng-add-user.sh
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 USERS=		ntopng
 GROUPS=		ntopng
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	a7d7655
+GH_TAGNAME=	468d1eb
 
 CPE_VENDOR=	ntop
 
