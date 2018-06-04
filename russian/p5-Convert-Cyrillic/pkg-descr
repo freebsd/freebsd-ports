@@ -3,6 +3,4 @@ one cyrillic charset to another. It is intended to be used from cgi's which
 need built-in support for translations. For example, you may wish to use it in
 form processor to translate from user encoding to one used by your site.
 
-Copyright (c) 1997-98, John Neystadt <http://www.neystadt.org/john/>
-
-WWW: http://search.cpan.org/dist/cyrillic/Convert/Cyrillic.pm
+WWW: https://metacpan.org/release/cyrillic
