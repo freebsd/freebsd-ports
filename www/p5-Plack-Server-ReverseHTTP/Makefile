@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of reversehttp gateway for PSGI application
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	\
 	p5-AnyEvent>0:devel/p5-AnyEvent \
 	p5-AnyEvent-ReverseHTTP>0:www/p5-AnyEvent-ReverseHTTP \
