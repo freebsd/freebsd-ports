@@ -1,0 +1,7 @@
+A simple interface to Gtk3's complex MVC list widget.
+
+SimpleList is a simple interface to the powerful but
+complex Gtk3::TreeView and Gtk3::ListStore combination,
+implementing using tied arrays to make thing simple and easy.
+
+WWW: https://metacpan.org/release/Gtk3-SimpleList
