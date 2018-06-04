@@ -12,6 +12,7 @@ COMMENT=	Utilities to replace common UNIX commands
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	p5-ExtUtils-MakeMaker-[7-9].[1-9]*
 

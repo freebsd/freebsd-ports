@@ -5,4 +5,4 @@ dos2unix.  Also included is the companion module Shell::Command, which
 is a thin wrapper for ExtUtils::Command to provide cross-platform
 functions emulating common shell commands.
 
-WWW: http://search.cpan.org/dist/ExtUtils-Command/
+WWW: https://metacpan.org/release/BINGOS/ExtUtils-Command-1.20
