@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Perl module for accounting SVK repository
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	svk>=0:devel/svk \
 		p5-Spiffy>=0:devel/p5-Spiffy \
 		p5-Graph-SocialMap>=0:graphics/p5-Graph-SocialMap \
