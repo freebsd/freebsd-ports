@@ -3,4 +3,4 @@ using different criterias like execution time, query type, user or regexp
 matching of the SQL query etc. Actions can then be peformed on the result
 like killing, sorting or generating statistics.
 
-WWW: http://search.cpan.org/dist/mysql-genocide/
+WWW: https://metacpan.org/release/RSOLIV/mysql-genocide-0.03
