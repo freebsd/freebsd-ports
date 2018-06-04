@@ -7,7 +7,7 @@ CATEGORIES=	x11-fm tk
 MASTER_SITES=	SF/${PORTNAME}/release-${PORTVERSION}
 DISTNAME=	fr-${PORTVERSION}
 
-MAINTAINER=	tcltk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based filemanager with FTP capabilities
 
 LICENSE=	GPLv2
