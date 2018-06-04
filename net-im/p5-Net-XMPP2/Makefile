@@ -6,10 +6,14 @@ PORTVERSION=	0.14
 PORTREVISION=	2
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ELMEX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implementation of the XMPP Protocol
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Authen-SASL>=0:security/p5-Authen-SASL \
