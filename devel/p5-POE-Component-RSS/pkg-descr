@@ -2,4 +2,4 @@ POE::Component::RSS is an event based RSS parsing module. It wraps
 XML::RSS and provides a POE based framework for accessing the information
 provided.
 
-WWW: http://search.cpan.org/dist/POE-Component-RSS/
+WWW: https://metacpan.org/release/SUNGO/POE-Component-RSS-0.09
