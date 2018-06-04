@@ -10,8 +10,9 @@ DISTNAME=	${PORTNAME:S|.pl||}-${PORTVERSION}
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Perl library for Japanese character code conversion
 
-LICENSE=	GPLv1 ART10
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
 USES=		perl5
 USE_PERL5=	run
