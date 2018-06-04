@@ -3,6 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot
@@ -92,9 +93,10 @@ BOOT_GHC_VERSION=	8.4.2
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
 .endif # MBOOT
 
+# Turn off for a while, see PR 228727
+CONFIGURE_ARGS+=	--enable-dtrace=0
 .if ${OSVERSION} < 1200000
 USE_GCC=	yes
-CONFIGURE_ARGS+=	--enable-dtrace=0
 .else
 LD=		ld.bfd
 .endif
