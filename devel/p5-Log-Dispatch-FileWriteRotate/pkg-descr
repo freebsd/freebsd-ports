@@ -3,4 +3,4 @@ but uses File::Write::Rotate as backend, thus interoperates more easily with
 other modules which use File::Write::Rotate as backend, e.g.
 Tie::Handle::FileWriteRotate or Process::Govern.
 
-WWW: http://search.cpan.org/dist/Log-Dispatch-FileWriteRotate/
+WWW: https://metacpan.org/release/PERLANCAR/Log-Dispatch-FileWriteRotate-0.05
