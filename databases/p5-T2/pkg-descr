@@ -19,4 +19,4 @@ structures returned by $dbh->fetchrow_hashref, except that references and
 collections to other objects in the store are loaded `on demand' (aka
 Lazy-loading).
 
-WWW: http://search.cpan.org/dist/T2/
+WWW: https://metacpan.org/release/SAMV/T2-0.10
