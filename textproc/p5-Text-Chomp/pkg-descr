@@ -4,4 +4,4 @@ line separators.
 The regular chomp() works only on the value in $/, which can be difficult if
 working in multi-platform environments.
 
-WWW: http://search.cpan.org/dist/Text-Chomp/
+WWW: https://metacpan.org/release/SMPETERS/Text-Chomp-0.02
