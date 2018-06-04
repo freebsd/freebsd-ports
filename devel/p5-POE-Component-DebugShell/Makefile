@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interactive peeking into a running POE application
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
 		p5-POE-API-Peek>=0:devel/p5-POE-API-Peek
 RUN_DEPENDS:=	${BUILD_DEPENDS}
