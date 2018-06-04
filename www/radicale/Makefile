@@ -3,7 +3,7 @@
 
 PORTNAME=	radicale
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,15 +14,18 @@ COMMENT=	Python based CalDAV/CardDAV server
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	autoplist concurrent distutils
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}passlib>=1.6.5:security/py-passlib@${FLAVOR}
+
 USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
 USERS=		radicale
 GROUPS=		radicale
 USE_RC_SUBR=	radicale
-SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}"
+SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}" \
+		PYTHON_VER="${PYTHON_VER}"
 
 OPTIONS_DEFINE=	HTTP LDAP
 HTTP_DESC=	HTTP authentication support
