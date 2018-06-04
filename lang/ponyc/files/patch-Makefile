@@ -1,97 +1,13 @@
---- Makefile.orig	2017-12-17 14:07:55 UTC
+--- Makefile.orig	2018-05-27 18:29:53 UTC
 +++ Makefile
-@@ -87,7 +87,8 @@ else
- endif
- 
- prefix ?= /usr/local
--destdir ?= $(prefix)/lib/pony/$(tag)
-+destdir ?=
-+libdir ?= lib/pony/$(tag)
- 
- LIB_EXT ?= a
- BUILD_FLAGS = -march=$(arch) -mtune=$(tune) -Werror -Wconversion \
-@@ -244,10 +245,10 @@ ifndef LLVM_CONFIG
-     LLVM_CONFIG = llvm-config
-     LLVM_LINK = llvm-link
-     LLVM_OPT = opt
--  else ifneq (,$(shell which llvm-config-5.0 2> /dev/null))
--    LLVM_CONFIG = llvm-config-5.0
--    LLVM_LINK = llvm-link-5.0
--    LLVM_OPT = opt-5.0
+@@ -221,6 +221,10 @@ ifndef LLVM_CONFIG
+     LLVM_CONFIG = llvm-config-3.9
+   else ifneq (,$(shell which /usr/local/opt/llvm@3.9/bin/llvm-config 2> /dev/null))
+     LLVM_CONFIG = /usr/local/opt/llvm@3.9/bin/llvm-config
 +  else ifneq (,$(shell which llvm-config50 2> /dev/null))
 +    LLVM_CONFIG = llvm-config50
-+    LLVM_LINK = llvm-link50
-+    LLVM_OPT = opt50
-   else ifneq (,$(shell which llvm-config-4.0 2> /dev/null))
-     LLVM_CONFIG = llvm-config-4.0
-     LLVM_LINK = llvm-link-4.0
-@@ -775,44 +776,44 @@ install: libponyc libponyrt libponyrt-pi
- else
- install: libponyc libponyrt ponyc
- endif
--	@mkdir -p $(destdir)/bin
--	@mkdir -p $(destdir)/docs-support
--	@mkdir -p $(destdir)/lib
--	@mkdir -p $(destdir)/include/pony/detail
--	$(SILENT)cp $(PONY_BUILD_DIR)/libponyrt.a $(destdir)/lib
-+	@mkdir -p $(destdir)/$(prefix)/$(libdir)/bin
-+	@mkdir -p $(destdir)/$(prefix)/$(libdir)/docs-support
-+	@mkdir -p $(destdir)/$(prefix)/$(libdir)/lib
-+	@mkdir -p $(destdir)/$(prefix)/$(libdir)/include/pony/detail
-+	$(SILENT)cp $(PONY_BUILD_DIR)/libponyrt.a $(destdir)/$(prefix)/$(libdir)/lib
- ifeq ($(OSTYPE),linux)
--	$(SILENT)cp $(PONY_BUILD_DIR)/libponyrt-pic.a $(destdir)/lib
-+	$(SILENT)cp $(PONY_BUILD_DIR)/libponyrt-pic.a $(destdir)/$(prefix)/$(libdir)/lib
- endif
- ifneq ($(wildcard $(PONY_BUILD_DIR)/libponyrt.bc),)
--	$(SILENT)cp $(PONY_BUILD_DIR)/libponyrt.bc $(destdir)/lib
-+	$(SILENT)cp $(PONY_BUILD_DIR)/libponyrt.bc $(destdir)/$(prefix)/$(libdir)/lib
- endif
- ifneq ($(wildcard $(PONY_BUILD_DIR)/libdtrace_probes.a),)
--	$(SILENT)cp $(PONY_BUILD_DIR)/libdtrace_probes.a $(destdir)/lib
-+	$(SILENT)cp $(PONY_BUILD_DIR)/libdtrace_probes.a $(destdir)/$(prefix)/$(libdir)/lib
- endif
--	$(SILENT)cp $(PONY_BUILD_DIR)/libponyc.a $(destdir)/lib
--	$(SILENT)cp $(PONY_BUILD_DIR)/ponyc $(destdir)/bin
--	$(SILENT)cp src/libponyrt/pony.h $(destdir)/include
--	$(SILENT)cp src/common/pony/detail/atomics.h $(destdir)/include/pony/detail
--	$(SILENT)cp -r packages $(destdir)/
--	$(SILENT)cp -r .docs/* $(destdir)/docs-support/
-+	$(SILENT)cp $(PONY_BUILD_DIR)/libponyc.a $(destdir)/$(prefix)/$(libdir)/lib
-+	$(SILENT)cp $(PONY_BUILD_DIR)/ponyc $(destdir)/$(prefix)/$(libdir)/bin
-+	$(SILENT)cp src/libponyrt/pony.h $(destdir)/$(prefix)/$(libdir)/include
-+	$(SILENT)cp src/common/pony/detail/atomics.h $(destdir)/$(prefix)/$(libdir)/include/pony/detail
-+	$(SILENT)cp -r packages $(destdir)/$(prefix)/$(libdir)/
-+	$(SILENT)cp -r .docs/* $(destdir)/$(prefix)/$(libdir)/docs-support/
- ifeq ($$(symlink),yes)
--	@mkdir -p $(prefix)/bin
--	@mkdir -p $(prefix)/lib
--	@mkdir -p $(prefix)/include/pony/detail
--	$(SILENT)ln $(symlink.flags) $(destdir)/bin/ponyc $(prefix)/bin/ponyc
--	$(SILENT)ln $(symlink.flags) $(destdir)/lib/libponyrt.a $(prefix)/lib/libponyrt.a
-+	@mkdir -p $(destdir)/$(prefix)/bin
-+	@mkdir -p $(destdir)/$(prefix)/lib
-+	@mkdir -p $(destdir)/$(prefix)/include/pony/detail
-+	$(SILENT)ln $(symlink.flags) ../$(libdir)/bin/ponyc $(destdir)/$(prefix)/bin/ponyc
-+	$(SILENT)ln $(symlink.flags) ../$(libdir)/lib/libponyrt.a $(destdir)/$(prefix)/lib/libponyrt.a
- ifeq ($(OSTYPE),linux)
--	$(SILENT)ln $(symlink.flags) $(destdir)/lib/libponyrt-pic.a $(prefix)/lib/libponyrt-pic.a
-+	$(SILENT)ln $(symlink.flags) ../$(libdir)/lib/libponyrt-pic.a $(destdir)/$(prefix)/lib/libponyrt-pic.a
- endif
- ifneq ($(wildcard $(destdir)/lib/libponyrt.bc),)
--	$(SILENT)ln $(symlink.flags) $(destdir)/lib/libponyrt.bc $(prefix)/lib/libponyrt.bc
-+	$(SILENT)ln $(symlink.flags) ../$(libdir)/lib/libponyrt.bc $(destdir)/$(prefix)/lib/libponyrt.bc
- endif
- ifneq ($(wildcard $(PONY_BUILD_DIR)/libdtrace_probes.a),)
--	$(SILENT)ln $(symlink.flags) $(destdir)/lib/libdtrace_probes.a $(prefix)/lib/libdtrace_probes.a
-+	$(SILENT)ln $(symlink.flags) ../$(libdir)/lib/libdtrace_probes.a $(destdir)/$(prefix)/lib/libdtrace_probes.a
- endif
--	$(SILENT)ln $(symlink.flags) $(destdir)/lib/libponyc.a $(prefix)/lib/libponyc.a
--	$(SILENT)ln $(symlink.flags) $(destdir)/include/pony.h $(prefix)/include/pony.h
--	$(SILENT)ln $(symlink.flags) $(destdir)/include/pony/detail/atomics.h $(prefix)/include/pony/detail/atomics.h
-+	$(SILENT)ln $(symlink.flags) ../$(libdir)/lib/libponyc.a $(destdir)/$(prefix)/lib/libponyc.a
-+	$(SILENT)ln $(symlink.flags) ../$(libdir)/include/pony.h $(destdir)/$(prefix)/include/pony.h
-+	$(SILENT)ln $(symlink.flags) ../$(libdir)/include/pony/detail/atomics.h $(destdir)/$(prefix)/include/pony/detail/atomics.h
- endif
- endef
- 
++  else ifneq (,$(shell which llvm-config40 2> /dev/null))
++    LLVM_CONFIG = llvm-config40
+   else ifneq (,$(shell which llvm-config39 2> /dev/null))
+     LLVM_CONFIG = llvm-config39
+   else ifneq (,$(shell which /usr/local/opt/llvm/bin/llvm-config 2> /dev/null))
