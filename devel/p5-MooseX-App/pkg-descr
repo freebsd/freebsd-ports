@@ -9,9 +9,7 @@ MooseX-App will then take care of
 - Creating automated doucumentation
 - Reading and validating the command line options entered by the user
 
-Read the Tutorial[1] for getting started with a simple MooseX::App command line
+Read the Tutorial for getting started with a simple MooseX::App command line
 application.
-
-[1] http://search.cpan.org/dist/MooseX-App/lib/MooseX/App/Tutorial.pod
 
 WWW: https://metacpan.org/release/MooseX-App
