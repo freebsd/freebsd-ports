@@ -6,4 +6,4 @@ characters.  The only limitation is that a variable or function
 name may not start on a digit, and not all chars are accepted in
 operation names.
 
-WWW: http://search.cpan.org/dist/Math-Expr/
+WWW: https://metacpan.org/release/HAKANARDO/Math-Expr-0.4
