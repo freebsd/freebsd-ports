@@ -10,4 +10,4 @@ itself by closing the wheel, the handles, and sending all of them out
 of scope. If an exception happens, it will clean up after itself, and
 let the DIE signal propagate.
 
-WWW: http://search.cpan.org/dist/POEx-Role-Streaming/
+WWW: https://metacpan.org/release/NPEREZ/POEx-Role-Streaming-1.102610
