@@ -3,4 +3,4 @@ random passwords. The function is meant to be a simple way for
 developers and system administrators to easily generate a relatively
 secure password.
 
-WWW: http://search.cpan.org/dist/String-MkPasswd
+WWW: https://metacpan.org/release/String-MkPasswd
