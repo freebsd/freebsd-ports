@@ -12,6 +12,8 @@ COMMENT=	Traffic simulation suite for road vehicles, public transportation, etc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to configure: xerces-lib not found in /usr/local/lib
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libFOX-1.6.so:x11-toolkits/fox16 \
 		libfreetype.so:print/freetype2 \
