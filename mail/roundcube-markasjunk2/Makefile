@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	markasjunk2
-PORTVERSION=	1.11.1
+PORTVERSION=	1.11.2
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -12,13 +12,13 @@ COMMENT=	Roundcube mark-as-junk / mark-as-not-junk plugin
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
-RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
+BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.3.6:mail/roundcube@${PHP_FLAVOR}
+RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.3.6:mail/roundcube@${PHP_FLAVOR}
 
 USES=	php:flavors
 USE_GITHUB=	yes
-GH_ACCOUNT=	JohnDoh
-GH_PROJECT=	Roundcube-Plugin-Mark-as-Junk-2
+GH_ACCOUNT=	johndoh
+GH_PROJECT=	roundcube-markasjunk2
 
 NO_BUILD=	yes
 NO_ARCH=	yes
