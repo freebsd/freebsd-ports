@@ -70,10 +70,8 @@ post-patch:
 			s|github.com/olivere/elastic|gopkg.in/olivere/elastic.v5|; \
 			s|gopkg.in/mgo.v2-unstable|gopkg.in/mgo.v2|'
 
-pre-build:
-	@cd ${WRKSRC} && [ -e ${PORTNAME} ] || ${LN} -s . ${PORTNAME}
-
 do-build:
+	@cd ${WRKSRC} && [ -e ${PORTNAME} ] || ${LN} -s . ${PORTNAME}
 	@cd ${WRKSRC}/${GH_SUBDIR} && \
 		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build \
 			-ldflags="-X github.com/${GH_ACCOUNT}graph/${GH_PROJECT}/version.GitHash=${PORTVERSION}" \
