@@ -8,4 +8,4 @@ if your object receives an event that it does not have.
 
 This role exposes your class' methods as POE events.
 
-WWW: http://search.cpan.org/dist/POEx-Role-SessionInstantiation/
+WWW: https://metacpan.org/release/NPEREZ/POEx-Role-SessionInstantiation-1.102610
