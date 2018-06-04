@@ -1,0 +1,68 @@
+commit b175f5f2113b
+Author: Boris Zbarsky <bzbarsky@mit.edu>
+Date:   Thu May 31 12:43:01 2018 -0400
+
+    Bug 1464784 - Hold a strong ref to the document in callers of ConvertNodesOrStringsIntoNode. r=smaug, a=abillings
+---
+ dom/base/nsINode.cpp | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+diff --git dom/base/nsINode.cpp dom/base/nsINode.cpp
+index 3a649a61d0274..fbbf1efcb2dde 100644
+--- dom/base/nsINode.cpp
++++ dom/base/nsINode.cpp
+@@ -1777,8 +1777,8 @@ nsINode::Before(const Sequence<OwningNodeOrString>& aNodes,
+   nsCOMPtr<nsINode> viablePreviousSibling =
+     FindViablePreviousSibling(*this, aNodes);
+ 
+-  nsCOMPtr<nsINode> node =
+-    ConvertNodesOrStringsIntoNode(aNodes, OwnerDoc(), aRv);
++  nsCOMPtr<nsIDocument> doc = OwnerDoc();
++  nsCOMPtr<nsINode> node = ConvertNodesOrStringsIntoNode(aNodes, doc, aRv);
+   if (aRv.Failed()) {
+     return;
+   }
+@@ -1800,8 +1800,8 @@ nsINode::After(const Sequence<OwningNodeOrString>& aNodes,
+ 
+   nsCOMPtr<nsINode> viableNextSibling = FindViableNextSibling(*this, aNodes);
+ 
+-  nsCOMPtr<nsINode> node =
+-    ConvertNodesOrStringsIntoNode(aNodes, OwnerDoc(), aRv);
++  nsCOMPtr<nsIDocument> doc = OwnerDoc();
++  nsCOMPtr<nsINode> node = ConvertNodesOrStringsIntoNode(aNodes, doc, aRv);
+   if (aRv.Failed()) {
+     return;
+   }
+@@ -1820,8 +1820,8 @@ nsINode::ReplaceWith(const Sequence<OwningNodeOrString>& aNodes,
+ 
+   nsCOMPtr<nsINode> viableNextSibling = FindViableNextSibling(*this, aNodes);
+ 
+-  nsCOMPtr<nsINode> node =
+-    ConvertNodesOrStringsIntoNode(aNodes, OwnerDoc(), aRv);
++  nsCOMPtr<nsIDocument> doc = OwnerDoc();
++  nsCOMPtr<nsINode> node = ConvertNodesOrStringsIntoNode(aNodes, doc, aRv);
+   if (aRv.Failed()) {
+     return;
+   }
+@@ -1880,8 +1880,8 @@ void
+ nsINode::Prepend(const Sequence<OwningNodeOrString>& aNodes,
+                  ErrorResult& aRv)
+ {
+-  nsCOMPtr<nsINode> node =
+-    ConvertNodesOrStringsIntoNode(aNodes, OwnerDoc(), aRv);
++  nsCOMPtr<nsIDocument> doc = OwnerDoc();
++  nsCOMPtr<nsINode> node = ConvertNodesOrStringsIntoNode(aNodes, doc, aRv);
+   if (aRv.Failed()) {
+     return;
+   }
+@@ -1894,8 +1894,8 @@ void
+ nsINode::Append(const Sequence<OwningNodeOrString>& aNodes,
+                  ErrorResult& aRv)
+ {
+-  nsCOMPtr<nsINode> node =
+-    ConvertNodesOrStringsIntoNode(aNodes, OwnerDoc(), aRv);
++  nsCOMPtr<nsIDocument> doc = OwnerDoc();
++  nsCOMPtr<nsINode> node = ConvertNodesOrStringsIntoNode(aNodes, doc, aRv);
+   if (aRv.Failed()) {
+     return;
+   }
