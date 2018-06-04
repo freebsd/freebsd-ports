@@ -4,4 +4,4 @@ Marpa parses any language whose grammar can be written in BNF. That includes
 recursive grammars, ambiguous grammars, infinitely ambiguous grammars and
 grammars with useless or empty productions.
 
-WWW: http://search.cpan.org/dist/Marpa-PP/
+WWW: https://metacpan.org/release/JKEGL/Marpa-PP-0.014000

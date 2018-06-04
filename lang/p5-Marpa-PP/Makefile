@@ -13,7 +13,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Perl version of Marpa
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	p5-PPI>=1.206:textproc/p5-PPI \
 		p5-Task-Weaken>=0:devel/p5-Task-Weaken
