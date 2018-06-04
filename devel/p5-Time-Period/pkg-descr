@@ -8,4 +8,4 @@ period passed to it were malformed.  The time is specified in non-leap
 year seconds past January 1, 1970, as per the time() function.  The period
 is a string which is of the form described in Period's man page.
 
-WWW: http://search.cpan.org/dist/Period/
+WWW: https://metacpan.org/release/PRYAN/Period-1.20
