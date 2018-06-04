@@ -8,4 +8,4 @@ individual limits are exceeded only when the total limit is exceeded.
 The algorithm for load balancing takes into account the limit imposed by the
 source per 24 hour period.
 
-WWW: http://search.cpan.org/dist/Geo-Coder-Multiple/
+WWW: https://metacpan.org/release/FRIFFIN/Geo-Coder-Multiple-0.61
