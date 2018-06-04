@@ -4,7 +4,6 @@ include/pony/detail/atomics.h
 lib/libponyc.a
 lib/libponyrt.a
 lib/pony/%%VERSION%%/bin/ponyc
-lib/pony/%%VERSION%%/docs-support/extra.js
 lib/pony/%%VERSION%%/include/pony.h
 lib/pony/%%VERSION%%/include/pony/detail/atomics.h
 lib/pony/%%VERSION%%/lib/libponyc.a
@@ -144,10 +143,14 @@ lib/pony/%%VERSION%%/packages/net/http/url.pony
 lib/pony/%%VERSION%%/packages/net/http/url_encode.pony
 lib/pony/%%VERSION%%/packages/net/net.pony
 lib/pony/%%VERSION%%/packages/net/net_address.pony
+lib/pony/%%VERSION%%/packages/net/ossocket.pony
+lib/pony/%%VERSION%%/packages/net/ossockopt.pony
 lib/pony/%%VERSION%%/packages/net/ssl/_ssl_init.pony
+lib/pony/%%VERSION%%/packages/net/ssl/_ssl_versions.pony
 lib/pony/%%VERSION%%/packages/net/ssl/ssl.pony
 lib/pony/%%VERSION%%/packages/net/ssl/ssl_connection.pony
 lib/pony/%%VERSION%%/packages/net/ssl/ssl_context.pony
+lib/pony/%%VERSION%%/packages/net/ssl/ssl_versions.pony
 lib/pony/%%VERSION%%/packages/net/ssl/x509.pony
 lib/pony/%%VERSION%%/packages/net/tcp_connection.pony
 lib/pony/%%VERSION%%/packages/net/tcp_connection_notify.pony
@@ -158,10 +161,11 @@ lib/pony/%%VERSION%%/packages/net/udp_socket.pony
 lib/pony/%%VERSION%%/packages/options/_test.pony
 lib/pony/%%VERSION%%/packages/options/env_vars.pony
 lib/pony/%%VERSION%%/packages/options/options.pony
-lib/pony/%%VERSION%%/packages/ponybench/_auto_bench.pony
-lib/pony/%%VERSION%%/packages/ponybench/_bench.pony
-lib/pony/%%VERSION%%/packages/ponybench/_bench_async.pony
-lib/pony/%%VERSION%%/packages/ponybench/_test.pony
+lib/pony/%%VERSION%%/packages/ponybench/_aggregator.pony
+lib/pony/%%VERSION%%/packages/ponybench/_output_manager.pony
+lib/pony/%%VERSION%%/packages/ponybench/_results.pony
+lib/pony/%%VERSION%%/packages/ponybench/_runner.pony
+lib/pony/%%VERSION%%/packages/ponybench/benchmark.pony
 lib/pony/%%VERSION%%/packages/ponybench/pony_bench.pony
 lib/pony/%%VERSION%%/packages/ponytest/_color.pony
 lib/pony/%%VERSION%%/packages/ponytest/_group.pony
@@ -211,6 +215,7 @@ lib/pony/%%VERSION%%/packages/time/time.pony
 lib/pony/%%VERSION%%/packages/time/timer.pony
 lib/pony/%%VERSION%%/packages/time/timer_notify.pony
 lib/pony/%%VERSION%%/packages/time/timers.pony
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/circle/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/commandline/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/counter/main.pony
@@ -252,6 +257,7 @@ lib/pony/%%VERSION%%/packages/time/timers.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/net/pong.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/net/server.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/overload/main.pony
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ponybench/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/printargs/printargs.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/producer-consumer/buffer.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/producer-consumer/consumer.pony

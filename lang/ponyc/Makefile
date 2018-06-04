@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ponyc
-PORTVERSION=	0.21.0
+DISTVERSION=	0.22.2
 CATEGORIES=	lang
 
 MAINTAINER=	greg@unrelenting.technology
@@ -25,17 +25,17 @@ MAKE_ARGS=	config=release
 
 LLVM_VERSION=	50
 
-PLIST_SUB=	VERSION="${PORTVERSION}"
+PLIST_SUB=	VERSION="${DISTVERSION}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ponylang
 
 PORTDOCS=	*.md
 
-MAKE_ENV=	destdir=${STAGEDIR} prefix=${PREFIX} verbose=true
+MAKE_ENV=	prefix=${PREFIX} verbose=true
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pony/${PORTVERSION}/bin/ponyc
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pony/${DISTVERSION}/bin/ponyc
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
