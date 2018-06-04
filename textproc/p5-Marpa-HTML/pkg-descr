@@ -4,4 +4,4 @@ structure of an HTML document. Marpa::HTML is an extremely liberal HTML parser.
 Marpa::HTML does not reject any documents, no mater how poorly they fit the HTML
 standards.
 
-WWW: http://search.cpan.org/dist/Marpa-HTML/
+WWW: https://metacpan.org/release/JKEGL/Marpa-HTML-0.112000
