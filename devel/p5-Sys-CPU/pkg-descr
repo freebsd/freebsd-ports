@@ -5,4 +5,4 @@ added for type of CPU and clock speed. While much of the code
 is from UNIX::Processors, Win32 support has been added
 (but not tested).
 
-WWW: http://search.cpan.org/dist/Sys-CPU/
+WWW: https://metacpan.org/release/MZSANFORD/Sys-CPU-0.61
