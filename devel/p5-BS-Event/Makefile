@@ -20,12 +20,11 @@ OPTIONS_DEFINE=	EXAMPLES
 NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5 shebangfix
+
 SHEBANG_FILES=	samples/simple_example
 perl_OLD_CMD=	/opt/perl/bin/perl
 
-PORTEXAMPLES=	simple_example
-
-post-install:
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/samples/simple_example ${STAGEDIR}${EXAMPLESDIR}/
 
