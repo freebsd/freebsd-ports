@@ -7,4 +7,4 @@ flexible user-supplied ranking rules. Articles below a specified score
 will be removed from the output. fmscore is ideal for use as a
 procmail filter.)
 
-WWW: http://search.cpan.org/dist/Mail-Freshmeat/
+WWW: https://metacpan.org/release/ASPIERS/Mail-Freshmeat-0.94
