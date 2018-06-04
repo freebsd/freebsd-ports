@@ -17,4 +17,4 @@ after you die() to give a better handle on the current scope of your
 situation, and provide information about where you were, which might
 influence where you want to go next, either returning back to where
 
-WWW: http://search.cpan.org/dist/Religion/
+WWW: https://metacpan.org/release/KJALB/Religion-1.04
