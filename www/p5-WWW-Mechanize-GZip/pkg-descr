@@ -12,4 +12,4 @@ gzip-compression, no decompression will be made.
 This modules is a direct subclass of WWW::Mechanize and will
 therefore support any methods provided by WWW::Mechanize.
 
-WWW: http://search.cpan.org/dist/WWW-Mechanize-Gzip/
+WWW: https://metacpan.org/release/WWW-Mechanize-GZip
