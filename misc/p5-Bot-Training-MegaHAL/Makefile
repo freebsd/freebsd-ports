@@ -14,11 +14,13 @@ COMMENT=	Provide megahal.trn via Bot::Training
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-File-ShareDir-Install>=0:devel/p5-File-ShareDir-Install
 RUN_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
-	p5-Bot-Training>=0:misc/p5-Bot-Training
+		p5-Bot-Training>=0:misc/p5-Bot-Training
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
