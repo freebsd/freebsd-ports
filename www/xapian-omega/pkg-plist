@@ -21,6 +21,14 @@ man/man1/scriptindex.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/scriptindex.html
 %%PORTDOCS%%%%DOCSDIR%%/termprefixes.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/omega.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/godmode
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/inc/anyalldropbox
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/inc/anyallradio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/inc/toptermsjs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/opensearch
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/query
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/topterms
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/xml
 %%DATADIR%%/omega/htdig2omega.script
 %%DATADIR%%/omega/mbox2omega.script
 %%WWWDIR%%/cgi-bin/mhtml2html

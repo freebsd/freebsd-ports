@@ -3,6 +3,7 @@
 
 PORTNAME=	xapian-omega
 PORTVERSION=	1.4.5
+PORTERVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -50,5 +51,6 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/omega.conf ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} templates ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
