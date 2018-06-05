@@ -70,6 +70,7 @@ include/MFront/BehaviourInterfaceFactory.hxx
 include/MFront/BehaviourInterfaceProxy.hxx
 include/MFront/BehaviourInterfaceProxy.ixx
 include/MFront/BehaviourProfiler.hxx
+include/MFront/BehaviourQuery.hxx
 include/MFront/BehaviourSymmetryType.hxx
 include/MFront/CMakeGenerator.hxx
 include/MFront/CalculiX/CalculiX.hxx
@@ -126,6 +127,7 @@ include/MFront/MaterialPropertyInterfaceFactory.hxx
 include/MFront/MaterialPropertyInterfaceProxy.hxx
 include/MFront/MaterialPropertyInterfaceProxy.ixx
 include/MFront/MaterialPropertyParametersHandler.hxx
+include/MFront/MaterialPropertyQuery.hxx
 include/MFront/ModelDSL.hxx
 include/MFront/ModelDSLBase.hxx
 include/MFront/ModelDSLBase.ixx
@@ -134,6 +136,7 @@ include/MFront/ModelDescription.hxx
 include/MFront/ModelInterfaceFactory.hxx
 include/MFront/ModelInterfaceProxy.hxx
 include/MFront/ModelInterfaceProxy.ixx
+include/MFront/ModelQuery.hxx
 include/MFront/PedanticMode.hxx
 include/MFront/SearchPathsHandler.hxx
 include/MFront/StaticVarHandler.hxx
