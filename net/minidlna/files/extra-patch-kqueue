@@ -543,6 +543,14 @@ diff --git upnpevents.c upnpevents.c
 index 06ec43a..9827e6e 100644
 --- upnpevents.c
 +++ upnpevents.c
+@@ -47,6 +47,7 @@
+  */
+ #include "config.h"
+ 
++#define FD_SETSIZE 8192
+ #include <stdio.h>
+ #include <string.h>
+ #include <errno.h>
 @@ -417,6 +417,10 @@ void upnpevents_selectfds(fd_set *readset, fd_set *writeset, int * max_fd)
  {
  	struct upnp_event_notify * obj;
