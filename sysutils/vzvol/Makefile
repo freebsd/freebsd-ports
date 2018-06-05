@@ -2,7 +2,7 @@
 
 PORTNAME=		vzvol
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.6.1
+DISTVERSION=		0.6.4
 CATEGORIES=		sysutils
 
 MAINTAINER=		rainbow@sanitylinux.org
