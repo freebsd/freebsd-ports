@@ -10,7 +10,7 @@ COMMENT=	Horde Groupware Webmail Edition
 
 CONFLICTS=	horde-groupware-[456]*
 
-USES=	horde cpe
+USES=		horde cpe
 CPE_PRODUCT=	groupware
 CPE_EDITION=	webmail
 USE_HORDE_BUILD=	Horde_Role
