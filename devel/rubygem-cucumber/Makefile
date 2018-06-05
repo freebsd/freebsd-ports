@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cucumber
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-cucumber-core>=3.1.0:devel/rubygem-cucumber-core \
-		rubygem-cucumber-expressions>=5.0.4:devel/rubygem-cucumber-expressions \
+		rubygem-cucumber-expressions>=6.0.0:devel/rubygem-cucumber-expressions \
 		rubygem-cucumber-wire>=0.0.1:devel/rubygem-cucumber-wire \
 		rubygem-diff-lcs>=1.3:textproc/rubygem-diff-lcs \
-		rubygem-gherkin>=5.0:textproc/rubygem-gherkin \
+		rubygem-gherkin>=5.1.0:textproc/rubygem-gherkin \
 		rubygem-multi_json>=1.7.5:devel/rubygem-multi_json \
 		rubygem-multi_test>=0.1.2:devel/rubygem-multi_test
 
