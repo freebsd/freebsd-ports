@@ -1,6 +1,6 @@
---- src/openssl_stream.c.orig	2017-06-14 11:31:20 UTC
-+++ src/openssl_stream.c
-@@ -103,7 +103,7 @@ int git_openssl_stream_global_init(void)
+--- src/streams/openssl.c.orig	2018-04-23 07:00:42 UTC
++++ src/streams/openssl.c
+@@ -104,7 +104,7 @@ int git_openssl_stream_global_init(void)
  	ssl_opts |= SSL_OP_NO_COMPRESSION;
  #endif
  

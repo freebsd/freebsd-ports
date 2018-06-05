@@ -1,6 +1,6 @@
---- src/openssl_stream.h.orig	2017-06-14 11:31:20 UTC
-+++ src/openssl_stream.h
-@@ -27,7 +27,7 @@ extern int git_openssl_stream_new(git_st
+--- src/streams/openssl.h.orig	2018-04-23 07:00:52 UTC
++++ src/streams/openssl.h
+@@ -31,7 +31,7 @@ extern int git_openssl__set_cert_locatio
  
  
  
