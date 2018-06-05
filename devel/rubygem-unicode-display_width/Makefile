@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unicode-display_width
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
