@@ -1,5 +1,4 @@
 %%DATADIR%%/ruby/Gemfile
-%%DATADIR%%/ruby/Gemfile.lock
 %%DATADIR%%/ruby/README.md
 @(,,555) %%DATADIR%%/ruby/bin/gitaly-ruby
 @(,,555) %%DATADIR%%/ruby/bin/ruby-cd
