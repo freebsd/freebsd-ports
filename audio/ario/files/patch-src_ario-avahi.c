@@ -1,4 +1,4 @@
---- src/ario-avahi.c.orig	2011-02-27 15:07:31 UTC
+--- src/ario-avahi.c.orig	2018-04-04 12:36:02 UTC
 +++ src/ario-avahi.c
 @@ -34,6 +34,11 @@
  #include <avahi-common/simple-watch.h>
