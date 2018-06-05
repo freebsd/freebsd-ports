@@ -1,4 +1,3 @@
-%%DATADIR%%/tables/Cz-Cz-g1.utb
 %%DATADIR%%/tables/Es-Es-G0.utb
 %%DATADIR%%/tables/Es-Es-g1.utb
 %%DATADIR%%/tables/IPA-unicode-range.uti
@@ -41,7 +40,9 @@
 %%DATADIR%%/tables/corrections.cti
 %%DATADIR%%/tables/countries.cti
 %%DATADIR%%/tables/cs-chardefs.cti
+%%DATADIR%%/tables/cs-comp8.utb
 %%DATADIR%%/tables/cs-g1.ctb
+%%DATADIR%%/tables/cs-letterDef8Dots.uti
 %%DATADIR%%/tables/cs.tbl
 %%DATADIR%%/tables/cs-translation.cti
 %%DATADIR%%/tables/cy-cy-g1.utb
@@ -389,8 +390,8 @@ include/liblouis/liblouis.h
 libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
-lib/liblouis.so.14
-lib/liblouis.so.14.1.2
+lib/liblouis.so.16
+lib/liblouis.so.16.0.0
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
