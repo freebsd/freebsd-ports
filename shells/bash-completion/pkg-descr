@@ -1,4 +1,8 @@
-This is a programmable completion convenience library for the bash(1) shell. It
+This is a programmable completion convenience library for the Bash shell. It
 features the ability to tab-complete arguments for many common programs.
+
+Completion functions for FreeBSD-specific software are developed independently
+as an extension to the official bash-completion library. The development takes
+place on GitHub: https://github.com/0mp/bash-completion-freebsd
 
 WWW: https://github.com/scop/bash-completion
