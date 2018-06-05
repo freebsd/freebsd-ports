@@ -103,7 +103,7 @@ lib/kde4/kmm_csvimport.so
 lib/kde4/kmm_printcheck.so
 lib/kde4/kmm_reconciliationreport.so
 %%WEBOOB%%lib/kde4/kmm_weboob.so
-lib/kde4/libkonlinetasks_sepa.so
+lib/kde4/konlinetasks_sepa.so
 lib/kde4/payeeidentifier_iban_bic_delegates.so
 lib/kde4/payeeidentifier_ibanbic_storageplugin.so
 lib/kde4/payeeidentifier_nationalAccount_ui.so
@@ -120,6 +120,7 @@ lib/libkmm_payeeidentifier.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libkmm_plugin.so
 lib/libkmm_plugin.so.4
 lib/libkmm_plugin.so.%%KDE4_GENERIC_LIB_VERSION%%
+lib/libkmm_settings.so
 lib/libkmm_widgets.so
 lib/libkmm_widgets.so.4
 lib/libkmm_widgets.so.%%KDE4_GENERIC_LIB_VERSION%%
@@ -132,8 +133,8 @@ lib/libpayeeidentifier_iban_bic_widgets.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libpayeeidentifier_nationalAccount.so
 lib/libpayeeidentifier_nationalAccount.so.4
 lib/libpayeeidentifier_nationalAccount.so.%%KDE4_GENERIC_LIB_VERSION%%
+share/appdata/org.kde.kmymoney.appdata.xml
 share/applications/kde4/org.kde.kmymoney.desktop
-share/apps/appdata/org.kde.kmymoney.appdata.xml
 share/apps/kconf_update/kmymoney.upd
 share/apps/kmm_csvexport/kmm_csvexport.rc
 share/apps/kmm_csvimport/kmm_csvimport.rc
