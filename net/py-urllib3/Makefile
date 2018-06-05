@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	urllib3
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=1.3.4:security/py-cryptography@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=2.0:dns/py-idna@${FLAVOR} \
 		${PY_IPADDRESS} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=16.0:security/py-openssl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0.14:security/py-openssl@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=1.5.7:net/py-pysocks@${FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${FLAVOR}
 #TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=0:www/py-tornado@${FLAVOR}
 
