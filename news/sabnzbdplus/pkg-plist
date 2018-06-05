@@ -56,7 +56,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/systrayiconthread.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/version.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/wizard.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/zconfig.py
 %%DATADIR%%/cherrypy/VERSION.txt
 %%DATADIR%%/cherrypy/__init__.py
