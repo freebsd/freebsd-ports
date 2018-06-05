@@ -237,6 +237,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/icon-robots.txt
 %%DATADIR%%/helpers/packaging_tool.py
 %%DATADIR%%/helpers/pip-9.0.3.tar.gz
+%%DATADIR%%/helpers/pip-10.0.1.tar.gz
 %%DATADIR%%/helpers/pockets/__init__.py
 %%DATADIR%%/helpers/pockets/_version.py
 %%DATADIR%%/helpers/pockets/collections.py
@@ -1166,7 +1167,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/rest_runners/rst2smth.py
 %%DATADIR%%/helpers/rest_runners/sphinx_runner.py
 %%DATADIR%%/helpers/setuptools-36.8.0.tar.gz
-%%DATADIR%%/helpers/setuptools-39.0.1.tar.gz
+%%DATADIR%%/helpers/setuptools-39.1.0.tar.gz
 %%DATADIR%%/helpers/six.py
 %%DATADIR%%/helpers/sphinxcontrib/__init__.py
 %%DATADIR%%/helpers/sphinxcontrib/napoleon/__init__.py
@@ -2118,7 +2119,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/typeshed/third_party/3/werkzeug/wrappers.pyi
 %%DATADIR%%/helpers/typeshed/third_party/3/werkzeug/wsgi.pyi
 %%DATADIR%%/helpers/virtualenv-1.11.6.tar.gz
-%%DATADIR%%/helpers/virtualenv-15.1.0.tar.gz
+%%DATADIR%%/helpers/virtualenv-15.2.0.tar.gz
+%%DATADIR%%/helpers/virtualenv-16.0.0.tar.gz
 %%DATADIR%%/index/Python/id-index.input
 %%DATADIR%%/index/Python/id-index.input.keystream
 %%DATADIR%%/index/Python/id-index.input.keystream.len
