@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20180601
+PORTVERSION=	s20180603
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -23,13 +23,13 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	08b119153
+GH_TAGNAME=	8e02c70e8
 GH_TUPLE=	citra-emu:ext-libressl-portable:cbb1dca:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:1d0e6cf:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:d1d4705:dynarmic/externals/dynarmic \
 		arsenm:sanitizers-cmake:f09151b:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		benhoyt:inih:r40:inih/externals/inih/inih \
-		catchorg:Catch2:v2.1.1:catch/externals/catch \
+		catchorg:Catch2:v2.2.2:catch/externals/catch \
 		fmtlib:fmt:4.0.0-510-g5859e58:fmt/externals/fmt \
 		herumi:xbyak:v5.64:xbyak/externals/xbyak \
 		kinetiknz:cubeb:cubeb-0.2-1039-g44341a1:cubeb/externals/cubeb \
