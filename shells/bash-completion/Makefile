@@ -3,6 +3,7 @@
 
 PORTNAME=	bash-completion
 PORTVERSION=	2.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	shells
 
@@ -10,21 +11,21 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=	fails to build: gmake: install-recursive: Error 1
 BROKEN_armv7=	fails to build: gmake: install-recursive: Error 1
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-OPTIONS_DEFINE=	CMAKE_MODULES DOCS
+OPTIONS_DEFINE=	CMAKE_MODULES DOCS FREEBSD
 OPTIONS_SINGLE=	BASH
 OPTIONS_SINGLE_BASH=	BASH_SHARED BASH_STATIC
-OPTIONS_DEFAULT=BASH_SHARED CMAKE_MODULES
+OPTIONS_DEFAULT=BASH_SHARED CMAKE_MODULES FREEBSD
 OPTIONS_SUB=	yes
 BASH_SHARED_DESC=	Use shells/bash as backend
 BASH_STATIC_DESC=	Use shells/bash-static as backend
 CMAKE_MODULES_DESC=	Install bash-completion modules for cmake
+FREEBSD_DESC=		Install completion functions for FreeBSD programs
 
 NO_ARCH=	yes
 GNU_CONFIGURE=	yes
@@ -38,6 +39,12 @@ USE_GITHUB=	yes
 
 BASH_SHARED_RUN_DEPENDS=bash:shells/bash
 BASH_STATIC_RUN_DEPENDS=bash:shells/bash-static
+FREEBSD_GH_TUPLE=	0mp:bash-completion-freebsd:1.0.2:freebsd/freebsd
+FREEBSD_VARS=		LICENSE="BSD2CLAUSE GPLv2+" \
+			LICENSE_COMB=multi \
+			LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/freebsd/LICENSE \
+			LICENSE_FILE_GPLv2+=${WRKSRC}/COPYING
+FREEBSD_VARS_OFF=	LICENSE_FILE=${WRKSRC}/COPYING
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -59,5 +66,8 @@ post-configure:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README.md doc/bash_completion.txt doc/bashrc doc/inputrc ${STAGEDIR}${DOCSDIR}/
+
+post-install-FREEBSD-on:
+	cd ${WRKSRC}/freebsd/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
 
 .include <bsd.port.mk>
