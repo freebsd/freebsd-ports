@@ -1,6 +1,12 @@
---- ruby/Gemfile.orig	2018-02-25 18:31:26 UTC
+--- ruby/Gemfile.orig	2018-04-12 00:44:37 UTC
 +++ ruby/Gemfile
-@@ -12,7 +12,3 @@ gem 'grpc', '~> 1.8.0'
+@@ -13,12 +13,8 @@ gem 'sentry-raven', '~> 2.7.2', require:
+ 
+ # Detects the open source license the repository includes
+ # This version needs to be in sync with GitLab CE/EE
+-gem 'licensee', '~> 8.7.0'
++gem 'licensee', '~> 8.9'
+ 
  # Locked until https://github.com/google/protobuf/issues/4210 is closed
  gem 'google-protobuf', '= 3.5.1'
  
