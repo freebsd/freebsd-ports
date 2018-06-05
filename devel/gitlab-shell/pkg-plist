@@ -1,7 +1,6 @@
 %%DATADIR%%/.codeclimate.yml
 %%DATADIR%%/.gitignore
 %%DATADIR%%/.gitlab-ci.yml
-%%DATADIR%%/.rspec
 %%DATADIR%%/.rubocop.yml
 %%DATADIR%%/CHANGELOG
 %%DATADIR%%/CONTRIBUTING.md
@@ -15,12 +14,14 @@
 @(,,555) %%DATADIR%%/bin/check
 @(,,555) %%DATADIR%%/bin/compile
 @(,,555) %%DATADIR%%/bin/create-hooks
+@(,,555) %%DATADIR%%/bin/gitaly-upload-archive
 @(,,555) %%DATADIR%%/bin/gitaly-upload-pack
 @(,,555) %%DATADIR%%/bin/gitaly-receive-pack
 @(,,555) %%DATADIR%%/bin/gitlab-keys
 @(,,555) %%DATADIR%%/bin/gitlab-shell
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-keys-check
 @(,,555) %%DATADIR%%/bin/install
+@(,,555) %%DATADIR%%/bin/test-logger
 @sample %%DATADIR%%/config.yml.sample
 @(,,555) %%DATADIR%%/hooks/post-receive
 @(,,555) %%DATADIR%%/hooks/pre-receive
