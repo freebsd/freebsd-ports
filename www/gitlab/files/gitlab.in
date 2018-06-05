@@ -88,6 +88,20 @@ test -f /etc/default/gitlab && . /etc/default/gitlab
 
 # Switch to the app_user if it is not he/she who is running the script.
 if [ "$USER" != "$app_user" ]; then
+  # Regenerate the Gemfile.lock for all related products
+  echo "Regenerate Gitlab Gemfile.lock"
+  rm -f "${app_root}"/Gemfile.lock
+  if ! su -l ${app_user} -c "cd ${app_root} && /usr/local/bin/bundle install --local --quiet"; then
+    echo "Could not create Gemfile.lock for gitlab, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
+    exit 1
+  fi
+  echo "Regenerate Gitaly Gemfile.lock"
+  rm -f "${gitaly_dir}"/ruby/Gemfile.lock
+  if ! su -l root -c "cd ${gitaly_dir}/ruby && /usr/local/bin/bundle install --local --quiet"; then
+    echo "Could not create Gemfile.lock for gitaly, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
+    exit 1
+  fi
+
   eval su - "$app_user" -c $(echo \")/usr/local/etc/rc.d/gitlab "$@"$(echo \"); exit;
 fi
 

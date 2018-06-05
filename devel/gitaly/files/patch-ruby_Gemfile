@@ -1,6 +1,12 @@
 --- ruby/Gemfile.orig	2018-04-12 00:44:37 UTC
 +++ ruby/Gemfile
-@@ -13,12 +13,8 @@ gem 'sentry-raven', '~> 2.7.2', require:
+@@ -8,17 +8,13 @@ gem 'activesupport', '~> 5.0.2'
+ gem 'rdoc', '~> 4.2'
+ gem 'gollum-lib', '~> 4.2', require: false
+ gem 'gollum-rugged_adapter', '~> 0.4.4', require: false
+-gem 'grpc', '~> 1.10.0'
++gem 'grpc', '~> 1.11.0'
+ gem 'sentry-raven', '~> 2.7.2', require: false
  
  # Detects the open source license the repository includes
  # This version needs to be in sync with GitLab CE/EE
