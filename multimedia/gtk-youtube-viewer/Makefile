@@ -60,7 +60,7 @@ post-install-GTK2-on:
 	(cd ${STAGEDIR}${PREFIX}/share/pixmaps && ${LN} -sf \
 	../../${SITE_PERL_REL}/auto/share/dist/WWW-YoutubeViewer/icons/gtk-youtube-viewer.png)
 
-regression-test: build
+do-test:
 	cd ${WRKSRC} && ${PERL} ./Build test
 
 .include <bsd.port.mk>
