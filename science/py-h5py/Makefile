@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	h5py
-PORTVERSION=	2.7.1
-PORTREVISION=	1
+PORTVERSION=	2.8.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,8 +24,11 @@ USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 PORTDOCS=	*
-PORTEXAMPLES=	multiprocessing_example.py swmr_multiprocess.py \
-		swmr_inotify_example.py  threading_example.py
+PORTEXAMPLES=	collective_io.py \
+		multiprocessing_example.py \
+		swmr_inotify_example.py \
+		swmr_multiprocess.py \
+		threading_example.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -40,7 +42,7 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${STAGEDIR}${EXAMPLESDIR}
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
