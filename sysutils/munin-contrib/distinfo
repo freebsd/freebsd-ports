@@ -1,3 +1,5 @@
-TIMESTAMP = 1522752784
-SHA256 (munin-monitoring-contrib-git.2018-03-30-2b66ed3_GH0.tar.gz) = 482841979700a3dc6732f9ad96f385e6ae6ad2d2bd85fcb69ea8d76ec7ddc67f
-SIZE (munin-monitoring-contrib-git.2018-03-30-2b66ed3_GH0.tar.gz) = 4570649
+TIMESTAMP = 1528202504
+SHA256 (munin-monitoring-contrib-git.2018-03-30-8e37e480_GH0.tar.gz) = 7d200a72ef41586fac5cf9440d5438053fd861c4292937f3ed610dfb8a38b685
+SIZE (munin-monitoring-contrib-git.2018-03-30-8e37e480_GH0.tar.gz) = 5035331
+SHA256 (shuque-bind9stats-a920ded_GH0.tar.gz) = 633c8580d1c09f7f259bdd9c97675d231464be1194f5ce983161d39129eaad07
+SIZE (shuque-bind9stats-a920ded_GH0.tar.gz) = 437443
