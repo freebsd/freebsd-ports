@@ -11,6 +11,8 @@ COMMENT=	Aggregating log data streamed in real time
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	fb303>0:devel/fb303 \
 		thrift:devel/thrift
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
