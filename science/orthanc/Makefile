@@ -20,6 +20,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to build with boost 1.66, see bug 224177
 BROKEN_powerpc64=	fails to configure: CMake: Looking for C++ include pugixml.hpp - not found
+DEPRECATED=	Broken for more than 3 months
+EXPIRATION_DATE=	2018-06-06
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
