@@ -2,7 +2,7 @@
 
 PORTNAME=	qtpass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	brouwer@annejan.com
@@ -21,8 +21,7 @@ USE_QT5=	core gui network testlib widgets buildtools_build linguisttools_build
 USE_GL=		gl
 
 PLIST_FILES=	bin/qtpass \
-		share/pixmaps/qtpass.png \
-		${QT_TESTDIR}/qtpass/util/tst_util
+		share/pixmaps/qtpass.png
 
 # Create a desktop entry for the port.
 DESKTOP_ENTRIES=	"QtPass" "" \
