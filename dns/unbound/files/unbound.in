@@ -23,7 +23,6 @@ rcvar=unbound_enable
 command="%%PREFIX%%/sbin/unbound"
 extra_commands="reload"
 start_precmd="start_precmd"
-reload_precmd="%%PREFIX%%/sbin/unbound-checkconf ${unbound_conf} >/dev/null"
 
 load_rc_config $name
 
@@ -32,6 +31,8 @@ unbound_enable=${unbound_enable:-"NO"}
 unbound_anchorflags=${unbound_anchorflags:-""}
 unbound_conf=${unbound_conf:-"%%ETCDIR%%/unbound.conf"}
 unbound_flags=${unbound_flags:-" -c ${unbound_conf}"}
+
+reload_precmd="%%PREFIX%%/sbin/unbound-checkconf ${unbound_conf} >/dev/null"
 
 start_precmd()
 {
