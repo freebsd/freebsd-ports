@@ -1,0 +1,14 @@
+Infernal, standing for "INFERence of RNA ALignment", is a tool for searching
+DNA sequence database for RNA structure and sequence similarities.
+
+It is based on Covariance Model (CM), which scores a combination of sequence
+consensus and RNA secondary structure consensus, and thus is more capable of
+identifying RNA homologs than using primary sequence profile.
+
+The Rfam database of RNA families is based on Infernal. 
+
+Citation:
+Nawrocki & Eddy (2013) Infernal 1.1: 100-fold faster RNA homology searches,
+Bioinformatics 29: 2933-2935.
+
+WWW: http://eddylab.org/infernal/
