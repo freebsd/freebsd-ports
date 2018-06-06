@@ -10224,3 +10224,4 @@ www/node4|www/node|2018-06-01|Has expired: Node.js v4.x reaches end-of-life on 2
 net/frr|net/frr4|2018-06-02|Will introduce multiple versions of frr
 lang/perl5.22|lang/perl5.26|2018-06-02|Has expired: Support ends three years after .0 release, please upgrade to a more recent version of Perl
 lang/sdcc-devel|lang/sdcc|2018-06-06|No longer useful.
+net/py-pyldap|net/py-ldap|2018-06-06|Has expired: This code has merged back to python-ldap. Please use net/py-ldap instead
