@@ -1,6 +1,6 @@
---- src/aimage.cpp.orig	2018-02-26 16:24:29.829120000 -0800
-+++ src/aimage.cpp	2018-02-26 16:25:21.187218000 -0800
-@@ -344,7 +344,7 @@
+--- src/aimage.cpp.orig	2010-12-17 13:49:50 UTC
++++ src/aimage.cpp
+@@ -344,7 +344,7 @@ void segwrite_callback(struct affcallback_info *acbi)
  	/* log if necessary */
  	if(logfile){
  	    fprintf(logfile,
@@ -9,7 +9,7 @@
  		    acbi->pagenum,
  		    acbi->bytes_to_write,
  		    acbi->bytes_written,
-@@ -621,7 +621,7 @@
+@@ -621,7 +621,7 @@ int64 scaled_atoi(const char *arg)
      int64 ret=0;
      int multiplier=1;
      char ch,junk;
