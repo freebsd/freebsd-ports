@@ -324,7 +324,6 @@
     SUBDIR += scheme48
     SUBDIR += scm
     SUBDIR += sdcc
-    SUBDIR += sdcc-devel
     SUBDIR += see
     SUBDIR += seed7
     SUBDIR += siod
