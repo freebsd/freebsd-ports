@@ -118,6 +118,7 @@ share/OpenColorIO-Configs/natron/config.ocio
 share/OpenColorIO-Configs/natron/luts/AdobeRGB_to_linear.spi1d
 share/OpenColorIO-Configs/natron/luts/CineonLog_to_linear.spi1d
 share/OpenColorIO-Configs/natron/luts/JPLog_to_linear.spi1d
+share/OpenColorIO-Configs/natron/luts/V-Log_to_linear.spi1d
 share/OpenColorIO-Configs/natron/luts/film_response/agfa_advantix_100.spi1d
 share/OpenColorIO-Configs/natron/luts/film_response/agfa_advantix_200.spi1d
 share/OpenColorIO-Configs/natron/luts/film_response/agfa_advantix_400.spi1d
@@ -206,7 +207,8 @@ share/OpenColorIO-Configs/nuke-default/luts/srgb.spi1d
 share/OpenColorIO-Configs/nuke-default/luts/srgbf.spi1d
 share/OpenColorIO-Configs/nuke-default/luts/viperlog.spi1d
 share/OpenColorIO-Configs/nuke-default/make.py
-share/applications/Natron.desktop
+share/applications/fr.natron.Natron.desktop
+share/metainfo/fr.natron.Natron.appdata.xml
 share/mime/packages/x-natron.xml
 share/pixmaps/natronIcon256_linux.png
 share/pixmaps/natronProjectIcon_linux.png
