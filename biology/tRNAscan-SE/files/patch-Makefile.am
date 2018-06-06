@@ -1,0 +1,62 @@
+--- Makefile.am.orig	2017-12-03 07:00:58 UTC
++++ Makefile.am
+@@ -8,8 +8,8 @@
+ AUTOMAKE_OPTIONS = foreign subdir-objects
+ 
+ # set flags
+-AM_CFLAGS = -O
+-LDADD = -lm
++#AM_CFLAGS = -O
++#LDADD = -lm
+ 
+ # macros for program dependencies
+ EUFIND = src/eufind_const.h src/eufind_main.c src/pavesi.c
+@@ -23,20 +23,21 @@ COVESRC = src/align.c src/dbviterbi.c sr
+ bin_PROGRAMS = bin/eufindtRNA bin/trnascan-1.4 bin/covels-SE bin/coves-SE
+ bin_eufindtRNA_SOURCES = $(SQUIDHDRS) $(SQUIDSRC) $(EUFIND)
+ bin_trnascan_1_4_SOURCES = src/trnascan.c
+-bin_trnascan_1_4_CFLAGS = -DTSCANDIR=\"$(libdir)\/tRNAscan-SE\/models\"  $(AM_CFLAGS)
++bin_trnascan_1_4_CFLAGS = -DTSCANDIR=\"$(datadir)\/tRNAscan-SE\/models\"  $(AM_CFLAGS)
+ bin_covels_SE_SOURCES = $(COVESRC) src/scan_main.c
+ bin_coves_SE_SOURCES = $(COVESRC) src/score_main.c
+ 
+ # process scripts
+ # treat tRNAscan-SE.conf as a script since it's just easier
+-dist_bin_SCRIPTS = bin/sstofa bin/fasta2gsi bin/EukHighConfidenceFilter tRNAscan-SE tRNAscan-SE.conf
++dist_bin_SCRIPTS = bin/sstofa bin/fasta2gsi bin/EukHighConfidenceFilter tRNAscan-SE
++sysconf_DATA = tRNAscan-SE.conf
+ # for a few files, need to substitute perl path, bin directory, and lib directory
+ # first, define a function for it
+-do_subst = sed -e 's,\@bindir\@,$(bindir),g' -e 's,\@libdir\@,$(libdir),g' -e 's,[@]PERL[@],$(PERL),g' -e 's,\@INFERNAL\@,$(INFERNAL),g' 
++do_subst = sed -e 's,\@bindir\@,$(bindir),g' -e 's,\@libdir\@,$(datadir),g' -e 's,\@sysconfdir\@,$(sysconfdir),g' -e 's,[@]PERL[@],$(PERL),g' -e 's,\@INFERNAL\@,$(INFERNAL),g' 
+ 
+ # extra steps for cleaning/distribution
+ CLEANFILES = $(dist_bin_SCRIPTS) $(srcdir)/lib/*
+-include_HEADERS = $(srcdir)/src/*.h 
++#include_HEADERS = $(srcdir)/src/*.h 
+ EXTRA_DIST = lib src/sstofa.in src/fasta2gsi.in EukHighConfidenceFilter tRNAscan-SE.src tRNAscan-SE.conf.src 
+ 
+ # then create build rules
+@@ -61,16 +62,9 @@ bin/EukHighConfidenceFilter: EukHighConf
+ 	$(do_subst) < $(srcdir)/EukHighConfidenceFilter.in > bin/EukHighConfidenceFilter
+ 	chmod +x bin/EukHighConfidenceFilter
+ 
+-# copy libraries. We don't have "libraries" in the libgmp.so.4 kind, but we do have data libraries, so we don't have to deal with lib_LTLIBRARIES.
+-install-data-hook:
+-	chmod u+w $(exec_prefix)
+-	test -d $(libdir) || mkdir $(libdir)
+-	chmod u+w $(libdir)
+-	test -d $(libdir)/tRNAscan-SE || mkdir $(libdir)/tRNAscan-SE
+-	cp -rf $(srcdir)/lib/* $(libdir)/tRNAscan-SE 
+-
+-# remove lib/ files during uninstallation. A bit of a hack, since lib files are write-protected by default. Files 
+-uninstall-hook:
+-	chmod -R u+w $(libdir)/tRNAscan-SE
+-	rm -rf $(libdir)/tRNAscan-SE
+-
++gcodedir = $(pkgdatadir)/gcode
++modelsdir = $(pkgdatadir)/models
++modulesdir = $(pkgdatadir)/tRNAscanSE
++dist_gcode_DATA = lib/gcode/*
++dist_models_DATA = lib/models/*
++dist_modules_DATA = lib/tRNAscanSE/*
