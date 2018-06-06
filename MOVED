@@ -10223,3 +10223,4 @@ textproc/kibana45||2018-06-01|Has expired: End of Life was 2017-09-30, depends o
 www/node4|www/node|2018-06-01|Has expired: Node.js v4.x reaches end-of-life on 2018-04-30, see https://github.com/nodejs/Release
 net/frr|net/frr4|2018-06-02|Will introduce multiple versions of frr
 lang/perl5.22|lang/perl5.26|2018-06-02|Has expired: Support ends three years after .0 release, please upgrade to a more recent version of Perl
+lang/sdcc-devel|lang/sdcc|2018-06-06|No longer useful.
