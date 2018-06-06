@@ -45,6 +45,7 @@
     SUBDIR += hmmer
     SUBDIR += htslib
     SUBDIR += hyphy
+    SUBDIR += infernal
     SUBDIR += iolib
     SUBDIR += iqtree
     SUBDIR += jalview
