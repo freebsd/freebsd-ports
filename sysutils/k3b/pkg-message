@@ -1,7 +1,6 @@
-Notes for FreeBSD 7.x and onwards users:
 1. The FreeBSD k3b port supports SCSI drives only. If you have IDE CD or DVD
-   drives, use them through the cam system. See Chapter 18.6.9 of the handbook
-   (http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/creating-cds.html#ATAPICAM)
+   drives, use them through the cam system. See Chapter 17.5.1 of the handbook
+   (http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/creating-cds.html)
 2. k3b has to be started from a root console, which is not recommended.
    Alternatively, do ALL of the following:
    a. Set the suid flag on cdrecord and cdrdao. The 'Notes' chapter of
@@ -32,8 +31,6 @@ Notes for FreeBSD 7.x and onwards users:
           devfs_system_ruleset="system"
       - to apply these changes without reboot, run as root:
           /etc/rc.d/devfs restart
-3. Check, that DMA is activated for atapi devices: 'sysctl hw.ata.atapi_dma'
-   If not, set it to 1 and put 'hw.ata.atapi_dma=1' into /boot/loader.conf.
-4. Create a directory on a partition, which has enough disk space to hold a CDs
+3. Create a directory on a partition, which has enough disk space to hold a CDs
    or DVDs content (usually below /usr). Enter this directory in Settings->
    Configure K3b...->Misc.
