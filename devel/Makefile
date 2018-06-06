@@ -1327,6 +1327,7 @@
     SUBDIR += kyra
     SUBDIR += kyua
     SUBDIR += lasi
+    SUBDIR += lattice-ice40-examples-hx1k
     SUBDIR += lcov
     SUBDIR += leaktracer
     SUBDIR += leatherman
