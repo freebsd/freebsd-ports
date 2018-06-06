@@ -1,0 +1,24 @@
+--- src/Makefile.in.orig	2016-10-02 07:41:35 UTC
++++ src/Makefile.in
+@@ -248,7 +248,7 @@ test-extra$(EXEEXT) : $(LIBGAUCHE).$(SOEXT) $(test_ext
+ # need to relink gosh-noconsole.exe (windows no-console version).
+ relink :
+ 	$(RELINK) $(libgauche_LDFLAGS) $(LIBGAUCHE).$(SOEXT) $(libgauche_OBJECTS) $(libgc_pic_LIBRARY) $(GC_ATOMIC_OPS_LIBS) $(LIBS)
+-	$(RELINK) $(gosh_LDFLAGS) -o gosh$(EXEEXT)  $(gosh_OBJECTS) $(gosh_LDADD) $(LIBS)
++	$(RELINK) $(gosh_LDFLAGS) -o gosh-relinked$(EXEEXT) $(gosh_OBJECTS) $(gosh_LDADD) $(LIBS)
+ 	$(RELINK) -o gauche-config$(EXEEXT) gauche-config.$(OBJEXT) $(LIBS)
+ 
+ $(OBJECTS) : $(HEADERS)
+@@ -510,8 +510,10 @@ install-relink : install-aux
+ install-core : install-relink
+ 	$(INSTALL)        $(INSTALL_LIBS) $(DESTDIR)$(LIB_INSTALL_DIR)
+ 	$(INSTALL)        $(INSTALL_LIBS) $(DESTDIR)$(ARCH_INSTALL_DIR)
+-	$(INSTALL) -m 555 $(INSTALL_BINS) $(DESTDIR)$(BIN_INSTALL_DIR)
+-	$(INSTALL) -m 555 $(INSTALL_BINS) $(DESTDIR)$(ARCH_INSTALL_DIR)
++	$(INSTALL) -m 555 $(INSTALL_BINS:Ngosh$(EXEEXT)) $(DESTDIR)$(BIN_INSTALL_DIR)
++	$(INSTALL) -m 555 gosh-relinked$(EXEEXT) $(DESTDIR)$(BIN_INSTALL_DIR)/gosh$(EXEEXT)
++	$(INSTALL) -m 555 $(INSTALL_BINS:Ngosh$(EXEEXT))  $(DESTDIR)$(ARCH_INSTALL_DIR)
++	$(INSTALL) -m 555 gosh-relinked$(EXEEXT) $(DESTDIR)$(ARCH_INSTALL_DIR)/gosh$(EXEEXT)
+ 	@case `$(GAUCHE_CONFIG) --arch` in *-cygwin*|*-mingw*) \
+ 	  $(INSTALL) $(INSTALL_LIBS) $(DESTDIR)$(BIN_INSTALL_DIR);;\
+ 	esac
