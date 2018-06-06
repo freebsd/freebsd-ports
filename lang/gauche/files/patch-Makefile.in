@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2013-11-03 03:37:47 UTC
++++ Makefile.in
+@@ -72,8 +72,7 @@ pre-package:
+ pre-package-ext: pre-package
+ 	cd ext; $(MAKE) GOSH=$(GOSH) GAUCHE_CONFIG=$(GAUCHE_CONFIG) pre-package-ext
+ 
+-install: install-pkg install-doc
+-	cd lib; $(MAKE) slibcat
++install: slibcat-in-place install-pkg install-doc
+ 
+ install-doc:
+ 	cd doc; $(MAKE) install
