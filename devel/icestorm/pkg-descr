@@ -1,0 +1,5 @@
+Project IceStorm aims at documenting the bitstream format of Lattice
+iCE40 FPGAs and providing simple tools for analyzing and creating
+bitstream files.
+
+WWW: http://www.clifford.at/icestorm
