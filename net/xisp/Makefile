@@ -12,10 +12,13 @@ PATCH_SITES=	http://www.ml-search.com/xisp/distfiles/
 MAINTAINER=	tm@onepost.net
 COMMENT=	User-friendly X interface to pppd/chat
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
 USES=		alias ssl
-USE_XORG=	xpm
+USE_XORG=	x11 xpm
 
 CFLAGS+=	-DUSE_OPENSSL -I${OPENSSLINC}
 MAKE_ENV+=	CCFLAGS="${CFLAGS}"
