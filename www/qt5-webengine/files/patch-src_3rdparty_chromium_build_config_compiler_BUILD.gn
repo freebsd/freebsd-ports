@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2017-01-26 00:49:07 UTC
+--- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2018-01-15 11:39:43 UTC
 +++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
-@@ -150,7 +150,7 @@ config("compiler") {
+@@ -156,7 +156,7 @@ config("compiler") {
      configs += [ "//build/config/win:compiler" ]
    } else if (is_android) {
      configs += [ "//build/config/android:compiler" ]
@@ -9,7 +9,7 @@
      configs += [ "//build/config/linux:compiler" ]
    } else if (is_nacl) {
      configs += [ "//build/config/nacl:compiler" ]
-@@ -277,7 +277,7 @@ config("compiler") {
+@@ -290,7 +290,7 @@ config("compiler") {
  
    # Linux/Android common flags setup.
    # ---------------------------------
@@ -18,7 +18,7 @@
      cflags += [
        "-fPIC",
        "-pipe",  # Use pipes for communicating between sub-processes. Faster.
-@@ -401,14 +401,14 @@ config("compiler") {
+@@ -414,14 +414,14 @@ config("compiler") {
    # clang-cl (used if is_win) doesn't expose this flag.
    # Currently disabled for nacl since its toolchain lacks this flag (too old).
    # TODO(zforman): Once nacl's toolchain is updated, remove check.
@@ -35,7 +35,7 @@
      # gnu++11 instead of c++11 is needed because some code uses typeof() (a
      # GNU extension).
      # TODO(thakis): Eventually switch this to c++11 instead,
-@@ -458,7 +458,7 @@ config("compiler") {
+@@ -475,7 +475,7 @@ config("compiler") {
        ]
  
        # Apply a lower LTO optimization level as the default is too slow.
@@ -44,7 +44,7 @@
          if (use_lld) {
            ldflags += [ "-Wl,--lto-O1" ]
          } else {
-@@ -478,7 +478,7 @@ config("compiler") {
+@@ -495,7 +495,7 @@ config("compiler") {
      # targeting ARM, without this flag, LTO produces a .text section that is
      # larger than the maximum call displacement, preventing the linker from
      # relocating calls (http://llvm.org/PR22999).
@@ -53,7 +53,30 @@
        ldflags += [ "-Wl,-plugin-opt,-function-sections" ]
      }
    }
-@@ -742,7 +742,7 @@ config("compiler_codegen") {
+@@ -541,11 +541,11 @@ config("compiler_cpu_abi") {
+         ]
+       }
+     } else if (current_cpu == "arm") {
+-      if (is_clang && !is_android && !is_nacl) {
++      if (is_clang && !is_android && !is_nacl && !is_bsd) {
+         cflags += [ "--target=arm-linux-gnueabihf" ]
+         ldflags += [ "--target=arm-linux-gnueabihf" ]
+       }
+-      if (!is_nacl) {
++      if (!is_nacl && !is_bsd) {
+         cflags += [
+           "-march=$arm_arch",
+           "-mfloat-abi=$arm_float_abi",
+@@ -555,7 +555,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl) {
++      if (is_clang && !is_android && !is_nacl && !is_bsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+       }
+@@ -758,7 +758,7 @@ config("compiler_codegen") {
  #   configs -= [ "//build/config/compiler:clang_stackrealign" ]
  # See https://crbug.com/556393 for details of where it must be avoided.
  config("clang_stackrealign") {
@@ -62,7 +85,7 @@
      cflags = [
        # Align the stack on 16-byte boundaries, http://crbug.com/418554.
        "-mstack-alignment=16",
-@@ -788,7 +788,7 @@ config("runtime_library") {
+@@ -804,7 +804,7 @@ config("runtime_library") {
    # smaller.
    if (is_win) {
      configs += [ "//build/config/win:runtime_library" ]
@@ -71,7 +94,7 @@
      configs += [ "//build/config/linux:runtime_library" ]
    } else if (is_ios) {
      configs += [ "//build/config/ios:runtime_library" ]
-@@ -1038,7 +1038,7 @@ config("default_warnings") {
+@@ -1054,7 +1054,7 @@ config("default_warnings") {
          "-Wno-nonportable-include-path",
  
          # TODO(hans): https://crbug.com/637306
@@ -80,7 +103,7 @@
        ]
      }
    }
-@@ -1070,7 +1070,7 @@ config("chromium_code") {
+@@ -1086,7 +1086,7 @@ config("chromium_code") {
      ]
  
      if (!is_debug && !using_sanitizer &&
@@ -89,7 +112,7 @@
        # _FORTIFY_SOURCE isn't really supported by Clang now, see
        # http://llvm.org/bugs/show_bug.cgi?id=16821.
        # It seems to work fine with Ubuntu 12 headers though, so use it in
-@@ -1128,7 +1128,7 @@ config("no_chromium_code") {
+@@ -1144,7 +1144,7 @@ config("no_chromium_code") {
      ]
    }
  
