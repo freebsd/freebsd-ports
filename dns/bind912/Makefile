@@ -31,18 +31,17 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BROKEN_powerpc64=	fails to link: /usr/bin/ld: cannot find -latomic
 
-# ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.12.1-P2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=	cpe libedit
+# ISC releases things like 9.8.0-P1, which our versioning doesn't like
+ISCVERSION=	9.12.1-P2
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
 .if ${ISCVERSION:M*-*}
 CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 .endif
-
-LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
@@ -155,15 +154,15 @@ GOST_ASN1_CONFIGURE_ON=	--with-gost=asn1
 
 GOST_CONFIGURE_ON=	--with-gost
 
-GSSAPI_BASE_CONFIGURE_ON= \
+GSSAPI_BASE_CONFIGURE_ON=\
 	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
 GSSAPI_BASE_USES=	gssapi
 
-GSSAPI_HEIMDAL_CONFIGURE_ON= \
+GSSAPI_HEIMDAL_CONFIGURE_ON=\
 	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
 GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 
-GSSAPI_MIT_CONFIGURE_ON= \
+GSSAPI_MIT_CONFIGURE_ON=\
 	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
 GSSAPI_MIT_USES=	gssapi:mit
 
