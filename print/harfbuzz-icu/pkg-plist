@@ -14,6 +14,7 @@
 @comment include/harfbuzz/hb-gobject-structs.h
 @comment include/harfbuzz/hb-gobject.h
 @comment include/harfbuzz/hb-graphite2.h
+@comment include/harfbuzz/hb-map.h
 include/harfbuzz/hb-icu.h
 @comment include/harfbuzz/hb-ot-font.h
 @comment include/harfbuzz/hb-ot-layout.h
