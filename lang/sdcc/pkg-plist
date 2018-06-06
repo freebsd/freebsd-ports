@@ -27,4 +27,5 @@ bin/sdobjcopy
 bin/sdranlib
 %%UCSIM%%%%HC08%%bin/shc08
 %%UCSIM%%%%STM8%%bin/sstm8
+%%UCSIM%%%%Z80%%bin/stlcs
 %%UCSIM%%%%Z80%%bin/sz80
