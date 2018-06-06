@@ -7,16 +7,9 @@ Subject: [PATCH] lib-mail: message-address: Fix assert panic occurring in
 Panic was:
 
 Panic: file message-address.c: line 147 (parse_angle_addr): assertion failed: (*ctx->parser.data == '<')
----
- src/lib-mail/message-address.c      |  2 ++
- src/lib-mail/test-message-address.c | 28 ++++++++++++++++++++++++++++
- 2 files changed, 30 insertions(+)
-
-diff --git a/src/lib-mail/message-address.c b/src/lib-mail/message-address.c
-index 172a707d49..f7cc27f48e 100644
---- src/lib-mail/message-address.c
+--- src/lib-mail/message-address.c.orig	2018-03-20 10:15:40 UTC
 +++ src/lib-mail/message-address.c
-@@ -424,6 +424,8 @@ message_address_parse_path_real(pool_t pool, const unsigned char *data,
+@@ -424,6 +424,8 @@ message_address_parse_path_real(pool_t pool, const uns
  
  	if (rfc822_skip_lwsp(&ctx.parser) <= 0)
  		return -1;
@@ -25,9 +18,11 @@ index 172a707d49..f7cc27f48e 100644
  	if ((ret=parse_angle_addr(&ctx)) < 0 ||
  		(ctx.addr.mailbox != NULL && ctx.addr.domain == NULL)) {
  		ctx.addr.invalid_syntax = TRUE;
-diff --git a/src/lib-mail/test-message-address.c b/src/lib-mail/test-message-address.c
-index c1b5566d91..21084deec9 100644
---- src/lib-mail/test-message-address.c
+ src/lib-mail/message-address.c      |  2 ++
+ src/lib-mail/test-message-address.c | 28 ++++++++++++++++++++++++++++
+ 2 files changed, 30 insertions(+)
+
+--- src/lib-mail/test-message-address.c.orig	2018-03-20 10:15:40 UTC
 +++ src/lib-mail/test-message-address.c
 @@ -395,11 +395,39 @@ static void test_message_address_path(void)
  	test_end();
