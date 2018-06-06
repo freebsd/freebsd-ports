@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfx-io
-PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTVERSION=	2.3.12
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -10,7 +9,6 @@ COMMENT=	Set of Readers/Writers plugins written using the OpenFX standard
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to build with ffmpeg 4.0
 ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -29,13 +27,13 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 USES=		gmake pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	MrKepzie
+GH_ACCOUNT=	NatronGitHub
 GH_PROJECT=	openfx-io
-GH_TAGNAME=	4cc07f9
-GH_TUPLE=	devernay:openfx-supportext:d3c4874:openfx_supportext/SupportExt \
-		MrKepzie:SequenceParsing:Natron-2.2.0:SequenceParsing/IOSupport/SequenceParsing \
-		MrKepzie:tinydir:60f0905:tinydir/IOSupport/SequenceParsing/tinydir \
-		devernay:openfx:3056fd6:openfx/openfx
+GH_TAGNAME=	Natron-2.3.12
+GH_TUPLE=	NatronGitHub:openfx:a85dc34:openfx/openfx \
+		NatronGitHub:SequenceParsing:9e8b77a:SequenceParsing/IOSupport/SequenceParsing \
+		NatronGitHub:tinydir:3aae922:tinydir/IOSupport/SequenceParsing/tinydir \
+		NatronGitHub:openfx-supportext:1db2bfa:openfx_supportext/SupportExt
 
 MAKE_ENV+=	CONFIG=release
 USE_GL=	gl
