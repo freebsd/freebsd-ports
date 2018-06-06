@@ -8,12 +8,14 @@
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Ceuta.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/El_Aaiun.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Johannesburg.pm
+%%SITE_PERL%%/DateTime/TimeZone/Africa/Juba.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Khartoum.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Lagos.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Maputo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Monrovia.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Nairobi.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Ndjamena.pm
+%%SITE_PERL%%/DateTime/TimeZone/Africa/Sao_Tome.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Tripoli.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Tunis.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Windhoek.pm
