@@ -1,0 +1,10 @@
+bin/multimc
+lib/libMultiMC_gui.so
+lib/libMultiMC_iconfix.so
+lib/libMultiMC_logic.so
+lib/libMultiMC_nbt++.so
+lib/libMultiMC_quazip.so
+lib/libMultiMC_rainbow.so
+lib/libMultiMC_unpack200.so
+%%DATADIR%%/jars/JavaCheck.jar
+%%DATADIR%%/jars/NewLaunch.jar
