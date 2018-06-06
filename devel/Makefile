@@ -1207,6 +1207,7 @@
     SUBDIR += hwloc
     SUBDIR += hyperscan
     SUBDIR += ice
+    SUBDIR += icestorm
     SUBDIR += icmake
     SUBDIR += icu
     SUBDIR += icu-le-hb
