@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfx-misc
-PORTVERSION=	2.3.10
+PORTVERSION=	2.3.12
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -13,11 +13,11 @@ ONLY_FOR_ARCHS=	amd64
 
 USES=		gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	devernay
+GH_ACCOUNT=	NatronGitHub
 GH_PROJECT=	openfx-misc
 GH_TAGNAME=	3ab0531
-GH_TUPLE=	devernay:openfx-supportext:2c43fc8:openfx_supportext/SupportExt \
-		devernay:openfx:e98216f:openfx/openfx
+GH_TUPLE=	NatronGitHub:openfx-supportext:1db2bfa:openfx_supportext/SupportExt \
+			NatronGitHub:openfx:a85dc34:openfx/openfx
 
 MAKE_ENV+=	CONFIG=release
 USE_GL=	gl
