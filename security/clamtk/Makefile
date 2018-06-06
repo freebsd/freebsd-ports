@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	clamtk
-PORTVERSION=	4.45
-PORTREVISION=	4
+PORTVERSION=	5.25
+DISTVERSIONPREFIX=v
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	GTK front-end for Clam Antivirus
@@ -18,14 +17,22 @@ RUN_DEPENDS=	p5-Config-Tiny>=2.12:devel/p5-Config-Tiny \
 		p5-File-Find-Rule>=0.30:devel/p5-File-Find-Rule \
 		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Net-DNS>=0.65:dns/p5-Net-DNS \
+		p5-Text-CSV>=0:textproc/p5-Text-CSV \
+		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
+		p5-JSON>=0:converters/p5-JSON \
 		clamscan:security/clamav \
 		p5-libwww>=5.822:www/p5-libwww \
 		zenity:x11/zenity \
-		p5-Gtk2>=1.144:x11-toolkits/p5-Gtk2
+		p5-Gtk2>=1.144:x11-toolkits/p5-Gtk2 \
+		gnome-icon-theme>=0:misc/gnome-icon-theme \
+		icons-tango>0:x11-themes/icons-tango
 
 NO_BUILD=	yes
 USES=		gettext-runtime:run perl5 shebangfix
 USE_PERL5=	run
+USE_GITHUB=	yes
+GH_ACCOUNT=	dave-theunsub
+GH_TAGNAME=	4c1839a
 SHEBANG_FILES=	clamtk
 
 LINGUAS=	`${LS} ${WRKSRC}/po/*.mo | ${XARGS} ${BASENAME} -s .mo`
@@ -49,16 +56,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}-loader.gif ${STAGEDIR}${PREFIX}/share/pixmaps
-	for l in ${LINGUAS}; do \
-		${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/$${l}/LC_MESSAGES; \
-		${INSTALL_DATA} ${WRKSRC}/po/$${l}.mo \
-		${STAGEDIR}${PREFIX}/share/locale/$${l}/LC_MESSAGES/${PORTNAME}.mo; \
-	done
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in CHANGES DISCLAIMER README
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for file in CHANGES DISCLAIMER README.md
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
