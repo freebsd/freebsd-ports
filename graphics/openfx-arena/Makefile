@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfx-arena
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.12
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -35,14 +35,14 @@ LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 
 USES=		gmake iconv
 USE_GITHUB=	yes
-GH_ACCOUNT=	olear
+GH_ACCOUNT=	NatronGitHub
 GH_PROJECT=	openfx-arena
-GH_TAGNAME=	95caed1
-GH_TUPLE=	devernay:openfx-supportext:90093f7:openfx_supportext/SupportExt \
-		devernay:openfx:42463b8:openfx/OpenFX \
-		MrKepzie:openfx-io:1148523:OpenFX_IO/OpenFX-IO \
-		MrKepzie:SequenceParsing:25112f0:SequenceParsing/OpenFX-IO/IOSupport/SequenceParsing \
-		MrKepzie:tinydir:60f0905:tinydir/OpenFX-IO/IOSupport/SequenceParsing/tinydir
+GH_TAGNAME=	Natron-2.3.12
+GH_TUPLE=	NatronGitHub:openfx-supportext:1db2bfa:openfx_supportext/SupportExt \
+		NatronGitHub:openfx:a85dc34:openfx/OpenFX \
+		NatronGitHub:openfx-io:Natron-2.3.12:OpenFX_IO/OpenFX-IO \
+		NatronGitHub:SequenceParsing:9e8b77a:SequenceParsing/OpenFX-IO/IOSupport/SequenceParsing \
+		NatronGitHub:tinydir:3aae922:tinydir/OpenFX-IO/IOSupport/SequenceParsing/tinydir
 
 MAKE_ENV+=	CONFIG=release
 USE_GL=	gl
