@@ -19,7 +19,7 @@ COMMENT=	Lossless compression library for scientific data
 LICENSE=	SZIP
 LICENSE_NAME=	SZIP License
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell no-auto-accept
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 CONFLICTS_INSTALL=	libaec
 
