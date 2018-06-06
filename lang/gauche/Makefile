@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gauche
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	lang scheme
 MASTER_SITES=	SF/${PORTNAME}/Gauche
 DISTNAME=	Gauche-${PORTVERSION}
@@ -26,6 +25,7 @@ CONFIGURE_ARGS=	--enable-tls=none \
 		${ICONV_CONFIGURE_BASE:S/lib//}
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
+TEST_TARGET=	check
 
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}"
@@ -46,7 +46,7 @@ EUCJP_CONFIGURE_ON=	--enable-multibyte=euc-jp
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--with-local=${LOCALBASE}
 SLIB_DESC=		Create catalogue for SLIB port
-SLIB_BUILD_DEPENDS=	slib>0:lang/slib
+SLIB_BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:lang/slib
 SLIB_CONFIGURE_ON=	--with-slib=${LOCALBASE}/share/slib
 SLIB_CONFIGURE_OFF=	--with-slib=${WRKDIR}
 SJIS_DESC=		Shift_JIS encoding support
@@ -89,8 +89,5 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gauche-0.9/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
 	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/gauche-0.9/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
 .endfor
-
-regression-test: build
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
