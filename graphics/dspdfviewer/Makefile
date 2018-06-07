@@ -43,4 +43,8 @@ CFLAGS+=	-Wno-error=undefined-func-template
 CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056
+CFLAGS+=	-Wno-error=redundant-parens
+.endif
+
 .include <bsd.port.post.mk>
