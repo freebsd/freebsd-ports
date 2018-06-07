@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qtum
-PORTVERSION=	0.14.16
+PORTVERSION=	0.15.1
 DISTVERSIONPREFIX=	mainnet-ignition-v
-PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	vd@FreeBSD.org
@@ -41,7 +40,7 @@ USES=		autoreconf bdb:5+ compiler:c++11-lib gmake libtool pkgconfig ssl
 USE_QT5=	buildtools core dbus gui linguisttools network testlib widgets
 USE_GITHUB=	yes
 GH_TUPLE=	qtumproject:qtum:${DISTVERSIONPREFIX}${PORTVERSION} \
-		qtumproject:cpp-eth-qtum:6e3173715867f5de56d6aa:cppeth/src/cpp-ethereum
+		qtumproject:cpp-eth-qtum:8db7fc170f7c0a475bc40c:cppeth/src/cpp-ethereum
 
 .include <bsd.port.pre.mk>
 
