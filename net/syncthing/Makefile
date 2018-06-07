@@ -1,8 +1,7 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	0.14.47
+PORTVERSION=	0.14.48
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
