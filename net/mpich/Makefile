@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	mpich
-PORTVERSION=	3.2
-PORTREVISION=	6
+PORTVERSION=	3.2.1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mpich.org/static/downloads/${DISTVERSION}/
 
-MAINTAINER=	tijl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable implementation of MPI-1, MPI-2 and MPI-3
 
 LICENSE=	MPICH
