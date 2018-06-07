@@ -78,6 +78,7 @@
     SUBDIR += gen6dns
     SUBDIR += getdns
     SUBDIR += ghtool
+    SUBDIR += go-geodns
     SUBDIR += hesiod
     SUBDIR += hostdb
     SUBDIR += hs-dns
