@@ -1,0 +1,3 @@
+@dir(%%USER%%,%%GROUP%%) %%ETCDIR%%
+@sample etc/geodns.conf.sample
+sbin/geodns
