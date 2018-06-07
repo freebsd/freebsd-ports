@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ssh-vault
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
 CATEGORIES=	security
 
 MAINTAINER=	nbari@tequila.io
