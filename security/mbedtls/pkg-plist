@@ -45,6 +45,7 @@ bin/mbedtls_ssl_server
 bin/mbedtls_ssl_server2
 bin/mbedtls_strerror
 bin/mbedtls_udp_proxy
+bin/mbedtls_udp_proxy_wrapper.sh
 include/mbedtls/aes.h
 include/mbedtls/aesni.h
 include/mbedtls/arc4.h
@@ -118,7 +119,7 @@ include/mbedtls/x509_csr.h
 include/mbedtls/xtea.h
 lib/libmbedcrypto.a
 lib/libmbedcrypto.so
-lib/libmbedcrypto.so.1
+lib/libmbedcrypto.so.2
 lib/libmbedtls.a
 lib/libmbedtls.so
 lib/libmbedtls.so.10
