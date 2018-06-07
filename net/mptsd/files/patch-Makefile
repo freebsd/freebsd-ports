@@ -1,0 +1,21 @@
+--- Makefile.orig	2012-01-26 12:00:02 UTC
++++ Makefile
+@@ -1,17 +1,8 @@
+-CC = $(CROSS)$(TARGET)gcc
+ STRIP = $(CROSS)$(TARGET)strip
+-BUILD_ID = $(shell date +%F_%R)
+ VERSION="v1.1"
+-GIT_VER = $(shell git describe --tags --dirty --always 2>/dev/null)
+-CFLAGS = -ggdb -Wall -Wextra -Wshadow -Wformat-security -Wno-strict-aliasing -O2 -D_GNU_SOURCE -DBUILD_ID=\"$(BUILD_ID)\"
+-ifneq "$(GIT_VER)" ""
+-CFLAGS += -DGIT_VER=\"$(GIT_VER)\"
+-else
+-CFLAGS += -DGIT_VER=\"$(VERSION)\"
+-endif
++CFLAGS += -Wall -Wextra -Wshadow -Wformat-security -Wno-strict-aliasing -D_GNU_SOURCE -DBUILD_ID=\"FreeBSD_port\" -DGIT_VER=\"$(VERSION)\"
+ 
+ RM = /bin/rm -f
+-Q = @
+ 
+ LIBS = -lpthread -lm -lrt
+ 

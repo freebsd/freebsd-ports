@@ -1,0 +1,16 @@
+--- libfuncs/Makefile.orig	2012-01-05 12:40:53 UTC
++++ libfuncs/Makefile
+@@ -1,12 +1,9 @@
+-CC = $(CROSS)$(TARGET)gcc
+ LINK = $(CROSS)$(TARGET)ld -o
+ MKDEP = $(CC) -M -o $*.d $<
+ 
+ LIBRARY_LINK_OPTS =  -L. -r
+-CFLAGS = -O2 -ggdb -std=c99 -D_GNU_SOURCE
+-CFLAGS += -Wall -Wextra -Wshadow -Wformat-security -Wstrict-prototypes
++CFLAGS += -std=c99 -D_GNU_SOURCE -Wall -Wextra -Wshadow -Wformat-security -Wstrict-prototypes
+ RM = /bin/rm -f
+-Q=@
+ 
+ OBJS = queue.o list.o cbuf.o io.o log.o http_response.o asyncdns.o \
+        server.o misc.o

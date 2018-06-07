@@ -1,0 +1,16 @@
+--- libtsfuncs/Makefile.orig	2012-01-05 12:41:01 UTC
++++ libtsfuncs/Makefile
+@@ -1,12 +1,9 @@
+-CC = $(CROSS)$(TARGET)gcc
+ LINK = $(CROSS)$(TARGET)ld -o
+ MKDEP = $(CC) -M -o $*.d $<
+ 
+ LIBRARY_LINK_OPTS =  -L. -r
+-CFLAGS = -O2 -ggdb -std=c99 -D_GNU_SOURCE
+-CFLAGS += -Wall -Wextra -Wshadow -Wformat-security -Wstrict-prototypes
++CFLAGS += -std=c99 -D_GNU_SOURCE -Wall -Wextra -Wshadow -Wformat-security -Wstrict-prototypes
+ RM = /bin/rm -f
+-Q=@
+ 
+ OBJS = log.o tsfuncs.o crc.o misc.o time.o \
+ 	sections.o secdata.o \

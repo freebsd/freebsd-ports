@@ -1,0 +1,5 @@
+mptsd receives mpegts streams from multicast (udp/rtp) or http and
+combines them into one multiple program stream that is suitable for
+outputing to DVB-C modulator.
+
+WWW: https://github.com/gfto/mptsd

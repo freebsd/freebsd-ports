@@ -486,6 +486,7 @@
     SUBDIR += mpich
     SUBDIR += mpich2
     SUBDIR += mping
+    SUBDIR += mptsd
     SUBDIR += mrouted
     SUBDIR += msend
     SUBDIR += mtr
