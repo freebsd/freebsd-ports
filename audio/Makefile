@@ -9,7 +9,6 @@
     SUBDIR += aacgain
     SUBDIR += aacplusenc
     SUBDIR += abcde
-    SUBDIR += abcmidi
     SUBDIR += abcselect
     SUBDIR += abgate-lv2
     SUBDIR += abraca
@@ -112,7 +111,6 @@
     SUBDIR += deadbeef-vu-meter-plugin
     SUBDIR += deadbeef-waveform-seekbar-plugin
     SUBDIR += decibel-audio-player
-    SUBDIR += deforaos-mixer
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += dir2ogg
@@ -207,7 +205,6 @@
     SUBDIR += ghostess
     SUBDIR += gimmix
     SUBDIR += gkrellmms2
-    SUBDIR += gkrellmss2
     SUBDIR += gkrellmvolume2
     SUBDIR += glame
     SUBDIR += glurp
@@ -365,8 +362,6 @@
     SUBDIR += juk-kde4
     SUBDIR += juke
     SUBDIR += julius
-    SUBDIR += jxm
-    SUBDIR += kaudiocreator
     SUBDIR += kexis
     SUBDIR += kid3-kde4
     SUBDIR += kid3-qt4
@@ -482,7 +477,6 @@
     SUBDIR += linux-c7-pulseaudio-libs
     SUBDIR += linux-c7-pulseaudio-utils
     SUBDIR += linux-c7-sdl_mixer
-    SUBDIR += linux-genpuid
     SUBDIR += linux-laudio
     SUBDIR += linux-skype_oss_wrapper
     SUBDIR += linuxsampler
@@ -584,7 +578,6 @@
     SUBDIR += nuvolaplayer
     SUBDIR += oaml
     SUBDIR += ocp
-    SUBDIR += ogg2mp3
     SUBDIR += openal
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
@@ -903,7 +896,6 @@
     SUBDIR += xmms-scrobbler
     SUBDIR += xmms-sexypsf
     SUBDIR += xmms-shn
-    SUBDIR += xmms-timidity
     SUBDIR += xmms-volnorm
     SUBDIR += xmms-wavpack
     SUBDIR += xmms-xf86audio

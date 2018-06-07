@@ -100,12 +100,10 @@
     SUBDIR += qt4-codecs-tw
     SUBDIR += qterm
     SUBDIR += reciteword
-    SUBDIR += scim-array
     SUBDIR += scim-fcitx
     SUBDIR += scim-pinyin
     SUBDIR += scim-tables
     SUBDIR += sunpinyin
-    SUBDIR += telnet
     SUBDIR += tin
     SUBDIR += tintin++
     SUBDIR += ttf2pt1
@@ -115,6 +113,5 @@
     SUBDIR += wenju
     SUBDIR += wordpress-zh_CN
     SUBDIR += wordpress-zh_TW
-    SUBDIR += xpdf
 
 .include <bsd.port.subdir.mk>

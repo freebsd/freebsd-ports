@@ -16,8 +16,6 @@
     SUBDIR += adodb5
     SUBDIR += akonadi
     SUBDIR += akonadi-kde4
-    SUBDIR += animenfo-client
-    SUBDIR += animenfo-client-gtk
     SUBDIR += apq
     SUBDIR += apq-mysql
     SUBDIR += apq-odbc
@@ -887,8 +885,6 @@
     SUBDIR += qt5-sqldrivers-sqlite3
     SUBDIR += qt5-sqldrivers-tds
     SUBDIR += radix.v2
-    SUBDIR += rdb
-    SUBDIR += rdfdb
     SUBDIR += recutils
     SUBDIR += redigo
     SUBDIR += redis
@@ -896,8 +892,6 @@
     SUBDIR += redis_exporter
     SUBDIR += redisdesktopmanager
     SUBDIR += retcl
-    SUBDIR += riak
-    SUBDIR += riak2
     SUBDIR += rocksdb
     SUBDIR += rocksdb-lite
     SUBDIR += rrdman
@@ -906,7 +900,6 @@
     SUBDIR += rrdtool12
     SUBDIR += ruby-bdb
     SUBDIR += ruby-gdbm
-    SUBDIR += ruby-mysql
     SUBDIR += ruby-odbc
     SUBDIR += ruby-qdbm
     SUBDIR += ruby-tokyocabinet

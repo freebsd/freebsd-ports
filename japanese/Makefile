@@ -293,7 +293,6 @@
     SUBDIR += wordpress
     SUBDIR += wwasw-fpw
     SUBDIR += xdtp
-    SUBDIR += xgate
     SUBDIR += xpdf
     SUBDIR += xshodou
     SUBDIR += xtr

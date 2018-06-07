@@ -116,7 +116,6 @@ ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Themes may contain artwo
 jaf-*.zip		java/jaf		See the license
 jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
-javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
 jdk-8*-apidocs.zip	java/jdk8-doc		This documentation is under license and export control
 jdk-8*-i586.tar.gz	java/linux-oracle-jdk18	Redistribution of repackaged binaries not permitted
 jdk-9*-x64_bin.tar.gz	java/linux-oracle-jdk9	Redistribution of repackaged binaries not permitted
@@ -222,7 +221,6 @@ xanim-*			multimedia/xanim	Must be redistributed without fee
 xchada01.lzh		games/xchadance		Contains commercial character data
 xephem-*		astro/xephem		Personal use only
 XFrisk-*.tar.gz		games/xfrisk		Possible trademark infringement
-xGate/*			japanese/xgate		Requested by Orangesoft Inc.
 xhime*.tgz		games/xhime		Contains commercial character data
 xinvaders-*		games/xinvaders		Do not sell for profit
 xmdiary-*		deskutils/xmdiary	Do not sell for profit

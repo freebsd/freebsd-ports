@@ -10225,3 +10225,39 @@ net/frr|net/frr4|2018-06-02|Will introduce multiple versions of frr
 lang/perl5.22|lang/perl5.26|2018-06-02|Has expired: Support ends three years after .0 release, please upgrade to a more recent version of Perl
 lang/sdcc-devel|lang/sdcc|2018-06-06|No longer useful.
 net/py-pyldap|net/py-ldap|2018-06-06|Has expired: This code has merged back to python-ldap. Please use net/py-ldap instead
+biology/ssaha||2018-06-07|Has expired: Broken for more than 6 months
+biology/crux||2018-06-07|Has expired: Broken for more than 6 months
+biology/ariadne||2018-06-07|Has expired: Broken for more than 6 months
+cad/sceptre||2018-06-07|Has expired: Broken for more than 6 months
+cad/cider||2018-06-07|Has expired: Broken for more than 6 months
+chinese/scim-array||2018-06-07|Has expired: Broken for more than 6 months
+chinese/xpdf||2018-06-07|Has expired: Broken for more than 6 months
+chinese/telnet||2018-06-07|Has expired: Broken for more than 6 months
+comms/java-commapi-freebsd||2018-06-07|Has expired: Depends on BROKEN and expiring comms/java-commapi
+comms/soundmodem||2018-06-07|Has expired: Broken for more than 6 months
+comms/jsdr||2018-06-07|Has expired: Broken for more than 6 months
+comms/java-commapi||2018-06-07|Has expired: Broken for more than 6 months
+converters/pdf2djvu||2018-06-07|Has expired: Broken for more than 6 months
+databases/rdb||2018-06-07|Has expired: Broken for more than 6 months
+databases/animenfo-client||2018-06-07|Has expired: Broken for more than 6 months
+databases/ruby-mysql||2018-06-07|Has expired: Broken for more than 6 months
+databases/riak||2018-06-07|Has expired: Broken for more than 6 months
+databases/animenfo-client-gtk||2018-06-07|Has expired: Broken for more than 6 months
+databases/rdfdb||2018-06-07|Has expired: Broken for more than 6 months
+databases/riak2||2018-06-07|Has expired: Broken for more than 6 months
+devel/subversion-static||2018-06-07|Has expired: Broken for more than 6 months
+japanese/xgate||2018-06-07|Has expired: Broken for more than 6 months
+textproc/opengrm-ngram||2018-06-07|Has expired: Broken for more than 6 months
+textproc/ocaml-tyxml||2018-06-07|Has expired: Depends on BROKEN and expiring www/ocaml-net
+www/ocaml-net||2018-06-07|Has expired: Broken for more than 6 months
+audio/linux-genpuid||2018-06-07|Has expired: Broken for more than 6 months
+x11/enventor||2018-06-07|Has expired: Broken for more than 6 months
+audio/xmms-timidity||2018-06-07|Has expired: Broken for more than 6 months
+audio/kaudiocreator||2018-06-07|Has expired: Broken for more than 6 months
+audio/jxm||2018-06-07|Has expired: Depends on BROKEN and expiring comms/java-commapi
+audio/deforaos-mixer||2018-06-07|Has expired: Broken for more than 6 months
+audio/gkrellmss2||2018-06-07|Has expired: Broken for more than 6 months
+audio/ogg2mp3||2018-06-07|Has expired: Broken for more than 6 months
+audio/abcmidi||2018-06-07|Has expired: Broken for more than 6 months
+benchmarks/netpipe||2018-06-07|Has expired: Broken for more than 6 months
+biology/plink||2018-06-07|Has expired: Broken for more than 6 months

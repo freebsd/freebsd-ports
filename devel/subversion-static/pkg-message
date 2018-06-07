@@ -1,6 +1,0 @@
-Bear in mind that you will not be notified of any weaknesses or vulnerabilities
-discovered in ports used to build this, though they may affect the static
-Subversion binary.
-
-This package will be rebuilt as the build dependencies are updated, but it must
-be kept up to date if security is a concern.

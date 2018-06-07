@@ -531,10 +531,8 @@
     SUBDIR += ocaml-csv
     SUBDIR += ocaml-expat
     SUBDIR += ocaml-text
-    SUBDIR += ocaml-tyxml
     SUBDIR += odt2txt
     SUBDIR += openfts
-    SUBDIR += opengrm-ngram
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += opensp

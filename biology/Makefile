@@ -3,7 +3,6 @@
 
     COMMENT = Biology
 
-    SUBDIR += ariadne
     SUBDIR += artemis
     SUBDIR += avida
     SUBDIR += babel
@@ -23,7 +22,6 @@
     SUBDIR += clustalw
     SUBDIR += clustalx
     SUBDIR += consed
-    SUBDIR += crux
     SUBDIR += ddocent
     SUBDIR += diamond
     SUBDIR += emboss
@@ -93,7 +91,6 @@
     SUBDIR += phred
     SUBDIR += phylip
     SUBDIR += phyml
-    SUBDIR += plink
     SUBDIR += plinkseq
     SUBDIR += primer3
     SUBDIR += protomol
@@ -122,7 +119,6 @@
     SUBDIR += sim4
     SUBDIR += slclust
     SUBDIR += smithwaterman
-    SUBDIR += ssaha
     SUBDIR += stacks
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
