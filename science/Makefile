@@ -122,10 +122,6 @@
     SUBDIR += nifticlib
     SUBDIR += openbabel
     SUBDIR += openkim
-    SUBDIR += orthanc
-    SUBDIR += orthanc-dicomweb
-    SUBDIR += orthanc-postgresql
-    SUBDIR += orthanc-webviewer
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-3DBuilder
     SUBDIR += p5-Chemistry-Bond-Find
