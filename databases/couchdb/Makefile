@@ -9,7 +9,7 @@ CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Document database server, accessible via a RESTful JSON API
 
 LICENSE=	APACHE20 BSD3CLAUSE ISCL WTFPL OFL11
