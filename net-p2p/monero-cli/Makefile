@@ -2,9 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	monero-cli
-PORTVERSION=	0.12.0.0
+# To build from an arbitrary git commit comment the following two lines
+PORTVERSION=	0.12.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+# and uncomment the following two lines
+#PORTVERSION=	0
+#PKGNAMESUFFIX=	-git-HEAD
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	vd@FreeBSD.org
@@ -27,19 +30,45 @@ LIB_DEPENDS=	\
 		libunbound.so:dns/unbound \
 		libunwind.so:devel/libunwind \
 		libzmq.so:net/libzmq4
-BUILD_DEPENDS=	${LOCALBASE}/include/zmq.hpp:net/cppzmq
+BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson \
+		${LOCALBASE}/include/zmq.hpp:net/cppzmq
 
 USES=		cmake compiler:c++11-lib pkgconfig readline ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	monero-project
 GH_PROJECT=	monero
+.if defined(PKGNAMESUFFIX)
+GH_TAGNAME=	${PKGNAMESUFFIX:C/-git-//}
+.endif
 CFLAGS+=	-D_WANT_SEMUN
-LLD_UNSAFE=	yes
 
 OPTIONS_DEFINE=		DOXYGEN
 DOXYGEN_BUILD_DEPENDS=	dot:graphics/graphviz \
 			doxygen:devel/doxygen
 DOXYGEN_CMAKE_BOOL=	BUILD_DOCUMENTATION
+
+.include <bsd.port.pre.mk>
+
+# On FreeBSD 12.x the default ld(1) is LLVM's ld which needs an explicit -m option
+# when linking without any input .o on the command line, like:
+# /usr/bin/ld -melf_amd64 -r -b binary -o blocksdat.o blocks.dat
+.if ${OSVERSION} >= 1200000
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64
+
+.if ${ARCH} == aarch64
+LD_EMULATION=	aarch64elf
+.elif ${ARCH} == amd64
+LD_EMULATION=	elf_amd64
+.elif ${ARCH} == i386
+LD_EMULATION=	elf_i386
+.elif ${ARCH} == powerpc
+LD_EMULATION=	elf32ppc
+.elif ${ARCH} == powerpc64
+LD_EMULATION=	elf64ppc
+.endif
+
+CMAKE_ARGS+=	-DLD_RAW_FLAGS:STRING=-m${LD_EMULATION}
+.endif
 
 USE_RC_SUBR=	monerod
 
@@ -56,4 +85,4 @@ PLIST_FILES=	\
 		bin/monero-wallet-rpc \
 		bin/monerod
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
