@@ -24,7 +24,7 @@ PATCHFILES=	patch-otp-18.3.1 patch-otp-18.3.2 patch-otp-18.3.3 \
 		patch-otp-18.3.4.6 patch-otp-18.3.4.7 patch-otp-18.3.4.8 \
 		patch-otp-18.3.4.9
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
 
 LICENSE=	APACHE20
