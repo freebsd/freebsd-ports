@@ -41,6 +41,7 @@ share/metainfo/peg-e.appdata.xml
 %%DATADIR%%/translations/pege_ms.qm
 %%DATADIR%%/translations/pege_nl.qm
 %%DATADIR%%/translations/pege_pl.qm
+%%DATADIR%%/translations/pege_pt.qm
 %%DATADIR%%/translations/pege_ro.qm
 %%DATADIR%%/translations/pege_ru.qm
 %%DATADIR%%/translations/pege_tr.qm
