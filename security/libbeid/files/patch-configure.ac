@@ -1,4 +1,4 @@
---- configure.ac.orig	2017-10-27 12:42:43 UTC
+--- configure.ac.orig	2018-05-31 12:57:18 UTC
 +++ configure.ac
 @@ -70,8 +70,6 @@ fi
  AM_CONDITIONAL(GTK, [test "$have_gtk" != "no"])
@@ -28,7 +28,7 @@
  MAINVERSION=$(echo $PACKAGE_VERSION|sed -e 's/-.*$//')
  AC_DEFINE_UNQUOTED([MAINVERSION], $MAINVERSION, [do not change this])
  AC_SUBST(MAINVERSION)
-@@ -174,16 +160,6 @@ AC_CONFIG_FILES([Makefile
+@@ -174,17 +160,6 @@ AC_CONFIG_FILES([Makefile
  		 cardcomm/pkcs11/src/libbeidpkcs11.pc
  		 cardcomm/pkcs11/src/beidpkcs11.json
  		 cardcomm/pkcs11/src/dialogs/dialogsgtk/po/Makefile.in
@@ -37,6 +37,7 @@
 -		 plugins_tools/util/Makefile
 -		 plugins_tools/aboutmw/gtk/Makefile
 -		 plugins_tools/aboutmw/gtk/po/Makefile.in
+-		 plugins_tools/chrome_pkcs11/Makefile
 -		 plugins_tools/eid-viewer/Makefile
 -		 plugins_tools/eid-viewer/test/Makefile
 -		 plugins_tools/eid-viewer/gtk/po/Makefile.in
