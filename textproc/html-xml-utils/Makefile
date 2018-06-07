@@ -1,8 +1,7 @@
-# Created by: Takefu <takefu@airport.fm>
 # $FreeBSD$
 
 PORTNAME=	html-xml-utils
-PORTVERSION=	7.5
+PORTVERSION=	7.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/Tools/HTML-XML-utils/
 
