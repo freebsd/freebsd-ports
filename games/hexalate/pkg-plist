@@ -15,10 +15,12 @@ share/metainfo/hexalate.appdata.xml
 %%DATADIR%%/translations/hexalate_ms.qm
 %%DATADIR%%/translations/hexalate_nl.qm
 %%DATADIR%%/translations/hexalate_pl.qm
+%%DATADIR%%/translations/hexalate_pt.qm
 %%DATADIR%%/translations/hexalate_pt_BR.qm
 %%DATADIR%%/translations/hexalate_ro.qm
 %%DATADIR%%/translations/hexalate_ru.qm
 %%DATADIR%%/translations/hexalate_tr.qm
+%%DATADIR%%/translations/hexalate_zh.qm
 share/icons/hicolor/1024x1024/apps/hexalate.png
 share/icons/hicolor/128x128/apps/hexalate.png
 share/icons/hicolor/16x16/apps/hexalate.png
