@@ -31,6 +31,8 @@ share/dink/dink/Sound/wscream.wav
 share/dink/dink/Sound/bird1.wav
 share/dink/dink/Sound/grunt2.wav
 share/dink/dink/Sound/grunt1.wav
+share/dink/dink/Sound/sel1.wav
+share/dink/dink/Sound/stairs.wav
 share/dink/dink/Sound/sword2.wav
 share/dink/dink/Sound/bhit.wav
 share/dink/dink/Sound/lovin.ogg
@@ -743,9 +745,11 @@ share/dink/dink/l10n/da/LC_MESSAGES/dink.mo
 share/dink/dink/l10n/de/LC_MESSAGES/dink.mo
 share/dink/dink/l10n/fi/LC_MESSAGES/dink.mo
 share/dink/dink/l10n/fr/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/hr/LC_MESSAGES/dink.mo
 share/dink/dink/l10n/mk/LC_MESSAGES/dink.mo
 share/dink/dink/l10n/es/LC_MESSAGES/dink.mo
 share/dink/dink/l10n/nl/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/sv/LC_MESSAGES/dink.mo
 share/dink/dink/l10n/eo/LC_MESSAGES/dink.mo
 share/dink/dink/l10n/es.po
 share/dink/dink/l10n/da.po
@@ -762,4 +766,5 @@ share/dink/dink/l10n/ca.po
 share/dink/dink/l10n/ca/LC_MESSAGES/dink.mo
 share/dink/dink/l10n/hu.po
 share/dink/dink/l10n/hu/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/sv.po
 share/dink/dink/preview.bmp

@@ -12,7 +12,7 @@ COMMENT=	Game data for games/freedink (Dink Smallwood)
 USES=		gettext gmake
 NO_BUILD=	yes
 
-PORTVER=	20140901
+PORTVER=	20170409
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
