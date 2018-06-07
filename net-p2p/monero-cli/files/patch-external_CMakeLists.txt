@@ -1,0 +1,42 @@
+--- external/CMakeLists.txt.orig	2018-05-23 21:21:59.000000000 UTC
++++ external/CMakeLists.txt	2018-06-01 17:48:47.449100000 UTC
+@@ -31,24 +31,27 @@
+ 
+ # This is broken up into two parts: first we check for miniupnp, compile it if we can't
+ # find it, and thereafter we check for libunbound, and compile it if we can't find it.
+-# We always compile if we are building statically to reduce static dependency issues...
+-# ...except for FreeBSD, because FreeBSD is a special case that doesn't play well with
+-# others.
+ 
+ find_package(Miniupnpc REQUIRED)
+ 
+-message(STATUS "Using in-tree miniupnpc")
++if(NOT MINIUPNPC_FOUND OR STATIC)
++  message(STATUS "Using in-tree miniupnpc")
+ 
+-add_subdirectory(miniupnp/miniupnpc)
++  add_subdirectory(miniupnp/miniupnpc)
+ 
+-set_property(TARGET libminiupnpc-static PROPERTY FOLDER "external")
+-if(MSVC)
+-  set_property(TARGET libminiupnpc-static APPEND_STRING PROPERTY COMPILE_FLAGS " -wd4244 -wd4267")
+-elseif(NOT MSVC)
+-  set_property(TARGET libminiupnpc-static APPEND_STRING PROPERTY COMPILE_FLAGS " -Wno-undef -Wno-unused-result -Wno-unused-value")
+-endif()
++  set_property(TARGET libminiupnpc-static PROPERTY FOLDER "external")
++  if(MSVC)
++    set_property(TARGET libminiupnpc-static APPEND_STRING PROPERTY COMPILE_FLAGS " -wd4244 -wd4267")
++  elseif(NOT MSVC)
++    set_property(TARGET libminiupnpc-static APPEND_STRING PROPERTY COMPILE_FLAGS " -Wno-undef -Wno-unused-result -Wno-unused-value")
++  endif()
+ 
+-set(UPNP_LIBRARIES "libminiupnpc-static" PARENT_SCOPE)
++  set(UPNP_LIBRARIES "libminiupnpc-static" PARENT_SCOPE)
++else()
++  message(STATUS "Found miniupnpc shared library (${MINIUPNP_LIBRARY})")
++  set(UPNP_LIBRARIES ${MINIUPNP_LIBRARY} PARENT_SCOPE)
++  set(UPNP_INCLUDE_DIR ${MINIUPNP_INCLUDE_DIR} PARENT_SCOPE)
++endif()
+ 
+ find_package(Unbound)
+ 

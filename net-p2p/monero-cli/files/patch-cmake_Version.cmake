@@ -1,11 +1,6 @@
---- cmake/Version.cmake.orig	2018-03-26 15:12:24 UTC
-+++ cmake/Version.cmake
-@@ -28,11 +28,11 @@
- 
- function (write_static_version_header hash)
-   set(VERSIONTAG "${hash}")
--  configure_file("src/version.cpp.in" "version.cpp")
-+  configure_file("${CMAKE_BINARY_DIR}/src/version.cpp.in" "${CMAKE_BINARY_DIR}/version.cpp")
+--- cmake/Version.cmake.orig	2018-06-01 14:10:23.694883000 UTC
++++ cmake/Version.cmake	2018-06-01 14:10:35.450366000 UTC
+@@ -32,7 +32,7 @@
  endfunction ()
  
  find_package(Git QUIET)
