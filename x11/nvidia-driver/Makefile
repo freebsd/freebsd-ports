@@ -137,19 +137,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's:sys/capability\.h:sys/capsicum.h:' \
 		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
 .endif
-# Fix CTLFLAG_* values for SYSCTL_ADD_PROC() after FreeBSD src r273377
-	${REINPLACE_CMD} -e '/SYSCTL_ADD_PROC/,/;/ \
-		s/^[[:blank:]]*CTLFLAG_RD/CTLTYPE_STRING |&/' \
-			${WRKSRC}/src/${NVSRC}/nvidia_sysctl.c
-# Replace `d_thread_t' (FreeBSD 4 support compat shim) with `struct thread'
-	${REINPLACE_CMD} -e 's/d_thread_t/struct thread/' \
-		${WRKSRC}/src/${NVSRC}/nvidia_ctl.c \
-		${WRKSRC}/src/${NVSRC}/nvidia_dev.c \
-		${WRKSRC}/src/${NVSRC}/nvidia_linux.c
-.if ${NVVERSION} >= 358.009
-	${REINPLACE_CMD} -e 's/d_thread_t/struct thread/' \
-		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
-.endif
 # Respect WITHOUT_LINUX setting
 	${REINPLACE_CMD} -e 's/exists(\/.*/& \&\& !defined(WITHOUT_LINUX)/' \
 		${WRKSRC}/lib/Makefile
