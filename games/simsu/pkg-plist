@@ -25,6 +25,7 @@ share/pixmaps/simsu.xpm
 %%NLS%%%%DATADIR%%/translations/simsu_fr.qm
 %%NLS%%%%DATADIR%%/translations/simsu_he.qm
 %%NLS%%%%DATADIR%%/translations/simsu_hu.qm
+%%NLS%%%%DATADIR%%/translations/simsu_it.qm
 %%NLS%%%%DATADIR%%/translations/simsu_lt.qm
 %%NLS%%%%DATADIR%%/translations/simsu_ms.qm
 %%NLS%%%%DATADIR%%/translations/simsu_nl.qm
@@ -34,4 +35,5 @@ share/pixmaps/simsu.xpm
 %%NLS%%%%DATADIR%%/translations/simsu_ru.qm
 %%NLS%%%%DATADIR%%/translations/simsu_tr.qm
 %%NLS%%%%DATADIR%%/translations/simsu_uk.qm
+%%NLS%%%%DATADIR%%/translations/simsu_zh.qm
 %%NLS%%%%DATADIR%%/translations/simsu_zh_TW.qm

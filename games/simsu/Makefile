@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	simsu
-PORTVERSION=	1.3.5
-DISTVERSIONSUFFIX=	-src
+PORTVERSION=	1.3.6
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/ \
 		https://mirror.amdmi3.ru/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Basic Sudoku game
@@ -14,12 +14,11 @@ COMMENT=	Basic Sudoku game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		compiler:c++11-lib qmake tar:bzip2
+USE_QT5=	core gui widgets buildtools_build linguisttools_build
 USE_GL=		gl
-USE_QT5=	core gui widgets \
-		buildtools_build linguisttools_build
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	*
 
