@@ -16,6 +16,8 @@
 #               Default is "prometheus".
 # grok_exporter_group (string):           Set group that grok_exporter will run under
 #               Default is "prometheus".
+# grok_exporter_log_file (string):        Set file that grok_exporter will log to
+#               Default is "/var/log/grok_exporter.log".
 
 . /etc/rc.subr
 
@@ -29,16 +31,20 @@ load_rc_config $name
 : ${grok_exporter_config:=%%ETCDIR%%/config.yml}
 : ${grok_exporter_user:=prometheus}
 : ${grok_exporter_group:=prometheus}
+: ${grok_exporter_log_file:=/var/log/grok_exporter.log}
 
 pidfile=/var/run/grok_exporter.pid
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/bin/grok_exporter
-command_args="-p ${pidfile} /usr/bin/env ${procname} -config ${grok_exporter_config}"
+command_args="-p ${pidfile} /usr/bin/env ${procname} -config ${grok_exporter_config} >>${grok_exporter_log_file} 2>&1"
 
 start_precmd=grok_exporter_startprecmd
 
 grok_exporter_startprecmd()
 {
+    if [ ! -f "${grok_exporter_log_file}" ]; then
+        install -o ${grok_exporter_user} -g ${grok_exporter_group} -m 0640 /dev/null ${grok_exporter_log_file};
+    fi
     if [ -e ${pidfile} ]; then
         chown ${grok_exporter_user}:${grok_exporter_group} ${pidfile};
     else
