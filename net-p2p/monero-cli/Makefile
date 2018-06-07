@@ -52,6 +52,8 @@ DOXYGEN_CMAKE_BOOL=	BUILD_DOCUMENTATION
 # On FreeBSD 12.x the default ld(1) is LLVM's ld which needs an explicit -m option
 # when linking without any input .o on the command line, like:
 # /usr/bin/ld -melf_amd64 -r -b binary -o blocksdat.o blocks.dat
+# See Bug 226996 - net-p2p/monero-cli: fails to link with lld as the system linker
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=226996
 .if ${OSVERSION} >= 1200000
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64
 
