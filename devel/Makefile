@@ -6108,7 +6108,6 @@
     SUBDIR += subcommander2
     SUBDIR += subversion
     SUBDIR += subversion-book
-    SUBDIR += subversion-static
     SUBDIR += subversion19
     SUBDIR += subversive
     SUBDIR += svk

@@ -44,7 +44,6 @@
     SUBDIR += netio
     SUBDIR += netperf
     SUBDIR += netperfmeter
-    SUBDIR += netpipe
     SUBDIR += nosqlbench
     SUBDIR += nqueens
     SUBDIR += nttcp

@@ -71,11 +71,8 @@
     SUBDIR += hylafax
     SUBDIR += ibp
     SUBDIR += inspectrum
-    SUBDIR += java-commapi
-    SUBDIR += java-commapi-freebsd
     SUBDIR += java-simple-serial-connector
     SUBDIR += jerm
-    SUBDIR += jsdr
     SUBDIR += kb
     SUBDIR += kermit
     SUBDIR += klog
@@ -168,7 +165,6 @@
     SUBDIR += seyon
     SUBDIR += sms_client
     SUBDIR += smstools3
-    SUBDIR += soundmodem
     SUBDIR += spandsp
     SUBDIR += splat
     SUBDIR += sredird

@@ -1,5 +1,0 @@
-TyXML is an OCaml library that allows you to build XML trees whose validity is
-insured by the typechecker. It supports XHTML 1.0 and 1.1, HTML5 and SVG
-(partial).
-
-WWW: http://ocsigen.org/tyxml/
