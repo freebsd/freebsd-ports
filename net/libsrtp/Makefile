@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_SSL=	openssl-devel
 
+PORTSCOUT=	limit:^1\.
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 
