@@ -1,4 +1,0 @@
-The plugin replaces the default SQLite engine of Orthanc with a
-PostgreSQL back-end.
-
-WWW: http://www.orthanc-server.com/
