@@ -62,7 +62,7 @@ parse_mtree() {
 	} >${WRKDIR}/.mtree
 }
 
-# Sort a directory list by the order of the dfs-sorted file (from find -ds)
+# Sort a directory list by the order of the dfs-sorted file (from find -d -s)
 sort_dfs() {
 	while read dir; do
 		grep "^[0-9]* ${dir}$" ${WRKDIR}/.staged-dirs-dfs-sorted
@@ -122,14 +122,14 @@ generate_plist() {
 	    | sort -u >${WRKDIR}/.traced-dirs
 	find ${STAGEDIR} -type d | sed -e "s,^${STAGEDIR},,;/^$/d" | sort \
 	    >${WRKDIR}/.staged-dirrms-sorted
-	find -sd ${STAGEDIR}${PREFIX} -type d -empty | sed -e "s,^${STAGEDIR},,;\,^${PREFIX}$,d;/^$/d" \
+	find -s -d ${STAGEDIR}${PREFIX} -type d -empty | sed -e "s,^${STAGEDIR},,;\,^${PREFIX}$,d;/^$/d" \
 	    >${WRKDIR}/.staged-dirs-dfs
-	find -sd ${STAGEDIR} -type d ! -path "${STAGEDIR}${PREFIX}/*" | sed -e "s,^${STAGEDIR},,;\,^${PREFIX}$,d;/^$/d" \
+	find -s -d ${STAGEDIR} -type d ! -path "${STAGEDIR}${PREFIX}/*" | sed -e "s,^${STAGEDIR},,;\,^${PREFIX}$,d;/^$/d" \
 	    >>${WRKDIR}/.staged-dirs-dfs
 	sort ${WRKDIR}/.staged-dirs-dfs >${WRKDIR}/.staged-dirs-sorted
 	awk '{print FNR, $0}' ${WRKDIR}/.staged-dirs-dfs \
 	    >${WRKDIR}/.staged-dirs-dfs-sorted
-	# Find all staged dirs and then sort them by depth-first (find -ds)
+	# Find all staged dirs and then sort them by depth-first (find -d -s)
 	comm -13 ${WRKDIR}/.traced-dirs ${WRKDIR}/.staged-dirs-sorted \
 	    | sort_dfs | sed "${sed_dirs_gen}" \
 	    >>${WRKDIR}/.staged-plist || :
@@ -199,7 +199,7 @@ check_missing_plist_items() {
 	sed -e "s,^,${WRKDIR}/.missing-dirs," \
 	    -e 's,^\(.*\)$,"\1",' \
 	    ${WRKDIR}/.missing-plist-dirs | xargs mkdir -p
-	find -ds ${WRKDIR}/.missing-dirs | \
+	find -d -s ${WRKDIR}/.missing-dirs | \
 	    sed -e "s,^${WRKDIR}/.missing-dirs,," | \
 	    while read dir; do \
 	    grep -x "${dir}" ${WRKDIR}/.missing-plist-dirs || :; done | \
