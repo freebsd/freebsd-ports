@@ -26,16 +26,15 @@ diff --git a/python/samba/provision/__init__.py b/python/samba/provision/__init_
 index 5de986463a5..cd3b91f41b9 100644
 --- a/python/samba/provision/__init__.py
 +++ b/python/samba/provision/__init__.py
-@@ -1556,19 +1556,25 @@ def setsysvolacl(samdb, netlogon, sysvol, uid, gid, domainsid, dnsdomain,
+@@ -1556,19 +1556,24 @@ def setsysvolacl(samdb, netlogon, sysvol, uid, gid, domainsid, dnsdomain,
          s3conf = s3param.get_context()
          s3conf.load(lp.configfile)
  
 -        file = tempfile.NamedTemporaryFile(dir=os.path.abspath(sysvol))
 +        sysvol_dir = os.path.abspath(sysvol)
 +
-+        if smbd.has_posix_acls(sysvol_dir):
-+            set_simple_acl = smbd.set_simple_acl
-+        elif smbd.has_nfsv4_acls(sysvol_dir):
++        set_simple_acl = smbd.set_simple_acl
++        if smbd.has_nfsv4_acls(sysvol_dir):
 +            set_simple_acl = smbd.set_simple_nfsv4_acl
 +
 +        file = tempfile.NamedTemporaryFile(dir=sysvol_dir)

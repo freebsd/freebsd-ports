@@ -1,6 +1,6 @@
 --- source3/wscript_build.orig	2017-07-25 13:09:58 UTC
 +++ source3/wscript_build
-@@ -240,11 +240,9 @@ bld.SAMBA3_SUBSYSTEM('SMBREGISTRY',
+@@ -221,11 +221,9 @@ bld.SAMBA3_SUBSYSTEM('SMBREGISTRY',
                          talloc
                          replace
                          util_reg
@@ -13,7 +13,7 @@
                          ''')
  
  # Do not link against this use 'smbconf'
-@@ -509,7 +507,7 @@ bld.SAMBA3_LIBRARY('secrets3',
+@@ -488,7 +486,7 @@ bld.SAMBA3_LIBRARY('secrets3',
  
  bld.SAMBA3_LIBRARY('smbldap',
                      source='lib/smbldap.c',
@@ -22,7 +22,7 @@
                      enabled=bld.CONFIG_SET("HAVE_LDAP"),
                      private_library=False,
                      abi_directory='lib/ABI',
-@@ -733,6 +731,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
+@@ -713,6 +711,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
                          smbd_conn
                          param_service
                          AVAHI
@@ -30,7 +30,7 @@
                          PRINTBASE
                          PROFILE
                          LOCKING
-@@ -1121,6 +1120,7 @@ bld.SAMBA3_BINARY('client/smbclient',
+@@ -1089,6 +1088,7 @@ bld.SAMBA3_BINARY('client/smbclient',
                        msrpc3
                        RPC_NDR_SRVSVC
                        cli_smb_common
@@ -38,3 +38,13 @@
                        archive
                        ''')
  
+@@ -1254,8 +1254,7 @@ bld.SAMBA3_BINARY('vfstest',
+                       popt_samba3
+                       smbconf
+                       SMBREADLINE
+-                      ''',
+-                 install=False)
++                      ''')
+ 
+ bld.SAMBA3_BINARY('versiontest',
+                  source='lib/version_test.c',

@@ -34,14 +34,3 @@
  	const char *fmt, ...)
  {
  	bool ok;
---- source3/modules/vfs_virusfilter.c.orig	2018-02-21 05:40:25 UTC
-+++ source3/modules/vfs_virusfilter.c
-@@ -275,7 +275,7 @@ static int virusfilter_vfs_connect(
- 	temp_quarantine_dir_mode = lp_parm_const_string(
- 		snum, "virusfilter", "quarantine directory mode", "0755");
- 	if (temp_quarantine_dir_mode != NULL) {
--		sscanf(temp_quarantine_dir_mode, "%o",
-+		sscanf(temp_quarantine_dir_mode, "%ho",
- 		       &config->quarantine_dir_mode);
- 	}
- 
