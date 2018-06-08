@@ -9,7 +9,7 @@ MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVER
 DISTFILES=	Docs.zip:doc
 DIST_SUBDIR=	elixir/${PORTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
 
 LICENSE=	APACHE20
