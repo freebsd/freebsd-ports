@@ -156,7 +156,7 @@ gini:*:206:206::0:0:& streaming server:/var/log/gini:/usr/sbin/nologin
 _mixminion:*:207:207::0:0:Mixminion server:/nonexistent:/usr/sbin/nologin
 _dnsdist:*:208:208::0:0:dnsdist user:/nonexistent:/usr/sbin/nologin
 shoutcast:*:210:210::0:0:Shoutcast sandbox:/nonexistent:/bin/sh
-git:*:211:211::0:0:gitosis user:/usr/local/git:/bin/sh
+git:*:211:211::0:0:git user:/usr/local/git:/bin/sh
 hg:*:212:212::0:0:mercurial-server user:/usr/local/hg:/bin/sh
 drizzle:*:213:213::0:0:Drizzle daemon:/var/db/drizzle:/usr/sbin/nologin
 kyototycoon:*:214:214::0:0:kyototycoon user:/var/empty:/usr/sbin/nologin
