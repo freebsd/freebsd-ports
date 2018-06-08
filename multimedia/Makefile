@@ -42,6 +42,7 @@
     SUBDIR += cx88
     SUBDIR += deforaos-player
     SUBDIR += devede
+    SUBDIR += din
     SUBDIR += dirac
     SUBDIR += dragon
     SUBDIR += dragon-kde4
