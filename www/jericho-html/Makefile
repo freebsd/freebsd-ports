@@ -9,6 +9,8 @@ MASTER_SITES=	SF/jerichohtml/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	saper@saper.info
 COMMENT=	Java library to analyse and manipulate HTML
 
+BROKEN_powerpc64=	fails to compile: src/java/net/htmlparser/jericho/Renderer.java:372: unmappable character for encoding ASCII
+
 USES=		zip
 USE_JAVA=	yes
 
