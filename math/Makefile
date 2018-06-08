@@ -172,6 +172,7 @@
     SUBDIR += drgeo
     SUBDIR += dynare
     SUBDIR += e
+    SUBDIR += ecos
     SUBDIR += edenmath
     SUBDIR += eigen2
     SUBDIR += eigen3
