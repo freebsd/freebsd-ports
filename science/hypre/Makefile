@@ -13,6 +13,8 @@ COMMENT=	Scalable Linear Solvers and Multigrid Methods
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/COPYING.LESSER
 
+BROKEN_powerpc64=	fails to compile: ./DistributedMatrixPilutSolver.h:97:20: expected ')' before '->' token
+
 USES=		blaslapack fortran localbase
 
 USE_LDCONFIG=	yes
