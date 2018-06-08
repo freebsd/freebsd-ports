@@ -51,9 +51,9 @@ strip_path() {
 		echo ${raw_name}
 	else
 		echo ${raw_name} | awk -v sc=${STRIP_COMPONENTS} -F "/" \
-		'{ for (x = sc + 1; x <= NF; x++) { \
-			slash = (x>sc+1) ? "/" : ""; \
-			printf ("%s%s", slash, $x); \
+		'{ for (x = sc + 1; x <= NF; x++) {
+			slash = (x>sc+1) ? "/" : "";
+			printf ("%s%s", slash, $x);
 		   }}'
 	fi
 }
@@ -135,33 +135,33 @@ extract_comment_from_patch() {
 		rawname=$(grep "^+++ " ${existing_patch} | \
 			awk -v num=${num} '{x++; if (x==num) print $2}')
 		fname=$(std_patch_filename $rawname)
-		awk -v num=${num} '\
-		BEGIN { done=0; x=0; hunk=0; looking=(num==1) } \
-		{ \
-		    if (!done) { \
-		        if ($1 == "@@") { \
-		            split ($2,a,","); \
-		            split ($3,b,","); \
+		awk -v num=${num} '
+		BEGIN { done=0; x=0; hunk=0; looking=(num==1) }
+		{
+		    if (!done) {
+		        if ($1 == "@@") {
+		            split ($2,a,",");
+		            split ($3,b,",");
 		            hca = a[2];
 		            hcb = a[3];
 		            hunk = 1;
-		        } else if (hunk) { \
-		            first=substr($1,1,1); \
-		            if (first == "-") { hca-- } \
-		            else if (first == "+") { hcb-- } \
-		            else {hca--; hcb--} \
-		            if (hca == 0 && hcb == 0) {hunk = 0} \
-		        } \
-			if ($1 == "---") { \
-			   x++; \
-			   if (x == num) { done = 1 } \
-			   if (x + 1 == num) { looking = 1 } \
-			} else if (!hunk && looking) { \
-		            if ($1!="diff" && $1!="index" && $1!="+++") {\
-		                print $0 \
-		            } \
-		        } \
-		    } \
+		        } else if (hunk) {
+		            first=substr($1,1,1);
+		            if (first == "-") { hca-- }
+		            else if (first == "+") { hcb-- }
+		            else {hca--; hcb--}
+		            if (hca == 0 && hcb == 0) {hunk = 0}
+		        }
+			if ($1 == "---") {
+			   x++;
+			   if (x == num) { done = 1 }
+			   if (x + 1 == num) { looking = 1 }
+			} else if (!hunk && looking) {
+		            if ($1!="diff" && $1!="index" && $1!="+++") {
+		                print $0
+		            }
+		        }
+		    }
 		}' ${existing_patch} > ${COMMENTS}/${fname}
 	done
 }
@@ -200,13 +200,13 @@ regenerate_patches() {
 }
 
 get_patch_name() {
-	awk -v name=$1 '\
-	{ if ($2 == name) \
-	  { \
-	      if (!done) { print $1 }; \
-	      done = 1; \
-	  } \
-	} \
+	awk -v name=$1 '
+	{ if ($2 == name)
+	  {
+	      if (!done) { print $1 };
+	      done = 1;
+	  }
+	}
 	END { if (!done) print name }' ${PATCHMAP}
 }
 

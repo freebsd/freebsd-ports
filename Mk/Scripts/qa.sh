@@ -208,8 +208,8 @@ stripped() {
 	# files with spaces are kept intact.
 	# Using readelf -h ... /ELF Header:/ will match on all ELF files.
 	find ${STAGEDIR} -type f ! -name '*.a' ! -name '*.o' \
-	    -exec readelf -S {} + 2>/dev/null | awk '\
-	    /File:/ {sub(/File: /, "", $0); file=$0} \
+	    -exec readelf -S {} + 2>/dev/null | awk '
+	    /File:/ {sub(/File: /, "", $0); file=$0}
 	    /[[:space:]]\.debug_info[[:space:]]*PROGBITS/ {print file}' |
 	    while read -r f; do
 		warn "'${f#${STAGEDIR}${PREFIX}/}' is not stripped consider trying INSTALL_TARGET=install-strip or using \${STRIP_CMD}"
@@ -688,9 +688,9 @@ proxydeps() {
 			already="${already} ${dep_file}"
 		done <<-EOT
 		$(env LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${file}" | \
-			awk '\
-			BEGIN {section=0}\
-			/^\// {section++}\
+			awk '
+			BEGIN {section=0}
+			/^\// {section++}
 			!/^\// && section<=1 && ($3 ~ "^'${PREFIX}'" || $3 ~ "^'${LOCALBASE}'") {print $3}')
 		EOT
 	done <<-EOT
