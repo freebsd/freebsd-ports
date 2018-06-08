@@ -89,6 +89,8 @@ post-patch:
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
 
+.ifndef QEMU_EMULATING
 pre-install:	do-test
+.endif
 
 .include <bsd.port.mk>
