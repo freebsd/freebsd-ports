@@ -95,7 +95,7 @@ shebang() {
 
 	rc=0
 
-	while read f; do
+	while read -r f; do
 		# No results presents a blank line from heredoc.
 		[ -z "${f}" ] && continue
 		shebangonefile "${f}" || rc=1
@@ -113,7 +113,7 @@ baselibs() {
 	local found_openssl
 	local file
 	[ "${PKGBASE}" = "pkg" -o "${PKGBASE}" = "pkg-devel" ] && return
-	while read f; do
+	while read -r f; do
 		case ${f} in
 		File:\ .*)
 			file=${f#File: .}
@@ -148,10 +148,10 @@ symlinks() {
 
 	# Split stat(1) result into 2 lines and read each line separately to
 	# retain spaces in filenames.
-	while read l; do
+	while read -r l; do
 		# No results presents a blank line from heredoc.
 		[ -z "${l}" ] && continue
-		read link
+		read -r link
 		case "${link}" in
 			${STAGEDIR}*)
 				err "Bad symlink '${l#${STAGEDIR}${PREFIX}/}' pointing inside the stage directory"
@@ -181,7 +181,7 @@ paths() {
 
 	rc=0
 
-	while read f; do
+	while read -r f; do
 		# No results presents a blank line from heredoc.
 		[ -z "${f}" ] && continue
 		# Ignore false-positive/harmless files
@@ -211,7 +211,7 @@ stripped() {
 	    -exec readelf -S {} + 2>/dev/null | awk '\
 	    /File:/ {sub(/File: /, "", $0); file=$0} \
 	    /[[:space:]]\.debug_info[[:space:]]*PROGBITS/ {print file}' |
-	    while read f; do
+	    while read -r f; do
 		warn "'${f#${STAGEDIR}${PREFIX}/}' is not stripped consider trying INSTALL_TARGET=install-strip or using \${STRIP_CMD}"
 	done
 }
@@ -260,7 +260,7 @@ suidfiles() {
 
 libtool() {
 	if [ -z "${USESLIBTOOL}" ]; then
-		find ${STAGEDIR} -name '*.la' | while read f; do
+		find ${STAGEDIR} -name '*.la' | while read -r f; do
 			if grep -q 'libtool library' "${f}"; then
 				err ".la libraries found, port needs USES=libtool"
 				return 1
@@ -275,7 +275,7 @@ libperl() {
 	if [ -n "${SITE_ARCH_REL}" -a -d "${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}" ]; then
 		has_some_libperl_so=0
 		files=0
-		while read f; do
+		while read -r f; do
 			# No results presents a blank line from heredoc.
 			[ -z "${f}" ] && continue
 			files=$((files+1))
@@ -648,10 +648,10 @@ proxydeps() {
 
 	# Check all dynamicaly linked ELF files
 	# Some .so are not executable, but we want to check them too.
-	while read file; do
+	while read -r file; do
 		# No results presents a blank line from heredoc.
 		[ -z "${file}" ] && continue
-		while read dep_file; do
+		while read -r dep_file; do
 			# No results presents a blank line from heredoc.
 			[ -z "${dep_file}" ] && continue
 			# Skip files we already checked.
@@ -708,7 +708,7 @@ proxydeps() {
 
 sonames() {
 	[ ! -d ${STAGEDIR}${PREFIX}/lib -o -n "${BUNDLE_LIBS}" ] && return 0
-	while read f; do
+	while read -r f; do
 		# No results presents a blank line from heredoc.
 		[ -z "${f}" ] && continue
 		# Ignore symlinks
@@ -756,7 +756,7 @@ perlcore() {
 			module=$(perlcore_port_module_mapping "${portname}")
 			version=$(expr "${dep}" : ".*>=*\([^:<]*\)")
 
-			while read l; do
+			while read -r l; do
 				case "${l}" in
 					*was\ not\ in\ CORE*)
 						# This never was with Perl
@@ -793,7 +793,7 @@ perlcore() {
 no_arch() {
 	[ -z "$NO_ARCH" ] && return
 	rc=0
-	while read f; do
+	while read -r f; do
 		[ -z "$f" ] && continue
 		if [ -n "$NO_ARCH_IGNORE" ]; then
 			skip=
