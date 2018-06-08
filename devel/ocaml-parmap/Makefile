@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parmap
-DISTVERSION=	1.0-rc6
+DISTVERSION=	1.0-rc9
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
