@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bro
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	security
 MASTER_SITES=	https://www.bro.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -16,7 +16,7 @@ BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
 
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
-USES=		bison cmake:outsource compiler:c++11-lang ninja perl5 python shebangfix ssl
+USES=		bison cmake:outsource compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
 
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 CXXFLAGS+=	-std=c++11 -Wall
