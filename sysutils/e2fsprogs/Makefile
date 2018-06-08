@@ -22,6 +22,9 @@ PORTSCOUT=	ignore	# cannot handle the version in the directory
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_armv6=		fails to build: Tests failed: f_pre_1970_date_encoding
 BROKEN_armv7=		fails to build: Tests failed: f_pre_1970_date_encoding
+BROKEN_mips=		fails to build: Tests failed: f_pre_1970_date_encoding
+BROKEN_mips64=		fails to build: Tests failed: f_pre_1970_date_encoding
+BROKEN_powerpc64=	fails to build: Entry '..' in Signal (11) SIGSEGV si_code=SEGV_MAPERR fault addr=0x2434
 .endif
 
 USES=		cpe gmake makeinfo pkgconfig tar:xz
