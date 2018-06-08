@@ -11,6 +11,11 @@ MASTER_SITES=	SF/${PORTNAME}/Current_Packages/${PORTVERSION}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
+BROKEN_powerpc64=	fails to configure: libz library not found
+
+LIB_DEPENDS=	libxslt.so:textproc/libxslt \
+		libnetsnmp.so:net-mgmt/net-snmp
+
 #OPTIONS_DEFINE=	DOCS
 
 BUILD=		3599
@@ -22,9 +27,8 @@ CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-[234].* \
 CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-* \
 		libfwbuilder-[234].* libfwbuilder-devel-*
 .endif
-LIB_DEPENDS=	libxslt.so:textproc/libxslt \
-		libnetsnmp.so:net-mgmt/net-snmp
 
+USES=		autoreconf:build gmake libtool ssl
 PLIST_SUB=	BUILD_VERSION=${PORTVERSION}.${BUILD}
 USE_QT4=	corelib \
 		gui \
@@ -40,7 +44,6 @@ USE_QT4=	corelib \
 
 QTDIR?=		${PREFIX}
 
-USES=		autoreconf:build gmake libtool ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		INSTALL_ROOT=${STAGEDIR}
