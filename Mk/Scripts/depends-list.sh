@@ -101,10 +101,14 @@ check_dep() {
 		# Grab any needed vars from the port.
 
 		if [ ${requires_wrkdir} -eq 1 ]; then
+			# shellcheck disable=SC2046
+			# We want word splitting here.
 			set -- $(${dp_MAKE} -C ${d} -VWRKDIR -V_UNIFIED_DEPENDS)
 			wrkdir="$1"
 			shift
 		elif [ ${recursive} -eq 1 ]; then
+			# shellcheck disable=SC2046
+			# We want word splitting here.
 			set -- $(${dp_MAKE} -C ${d} -V_UNIFIED_DEPENDS)
 		fi
 

@@ -63,7 +63,7 @@ std_patch_filename() {
 	local raw_name
 	sans_cwd=$(echo $1 | sed 's|^\.\/||')
 	raw_name=$(strip_path ${sans_cwd})
-	echo patch-$(echo ${raw_name} | sed -e 's|_|&&|g; s|/|_|g')
+	echo "patch-$(echo ${raw_name} | sed -e 's|_|&&|g; s|/|_|g')"
 }
 
 patchdir_files_list() {
