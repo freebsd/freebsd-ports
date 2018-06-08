@@ -1,0 +1,21 @@
+--- src/Makefile.am.orig	2016-03-14 19:55:57 UTC
++++ src/Makefile.am
+@@ -9,16 +9,13 @@ bin_PROGRAMS = tilp
+ tilp_CPPFLAGS = -I$(top_srcdir)/intl \
+ 	@TICABLES_CFLAGS@ @TIFILES_CFLAGS@ @TICALCS_CFLAGS@ @TICONV_CFLAGS@ \
+ 	@GLIB_CFLAGS@ @GTK_CFLAGS@ \
+-	@KDE_INCLUDES@ @QT_INCLUDES@ \
+ 	-DSHARE_DIR=\"$(pkgdatadir)\" \
+ 	-DLOCALEDIR=\"$(datadir)/locale\" \
+-	-DSYSCONFDIR=\"$(sysconfdir)\" \
+-	-DGTK_DISABLE_DEPRECATED
++	-DSYSCONFDIR=\"$(sysconfdir)\"
+ tilp_LDFLAGS = -export-dynamic
+ tilp_LDADD = @TICABLES_LIBS@ @TIFILES_LIBS@ @TICALCS_LIBS@ @TICONV_LIBS@ \
+ 	@GLIB_LIBS@ @GTK_LIBS@ \
+-	@LIB_KDECORE@ @LIB_KDEUI@ @LIB_KIO@ @LIB_QT@ @KDE_LDFLAGS@ \
+-	@QT_LDFLAGS@ @X_LDFLAGS@ @LIBZ@
++	@LIBZ@
+ tilp_SOURCES = *.h \
+ 	tilp_calcs.c tilp_cmdline.c tilp_config.c tilp_error.c \
+ 	tilp_files.c tilp_gif.c tilp_main.c \

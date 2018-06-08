@@ -1,4 +1,5 @@
-include/tilp2/cmd73.h
+include/tilp2/cmd68k.h
+include/tilp2/cmdz80.h
 include/tilp2/dbus_pkt.h
 include/tilp2/dusb_cmd.h
 include/tilp2/dusb_rpkt.h
@@ -15,7 +16,8 @@ include/tilp2/nsp_vpkt.h
 include/tilp2/stdints3.h
 include/tilp2/ticalcs.h
 lib/libticalcs2.so
-lib/libticalcs2.so.11
-lib/libticalcs2.so.11.0.3
+lib/libticalcs2.so.12
+lib/libticalcs2.so.12.0.3
 libdata/pkgconfig/ticalcs2.pc
+%%NLS%%share/locale/de/LC_MESSAGES/libticalcs2.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libticalcs2.mo

@@ -3,6 +3,6 @@ include/tilp2/export4.h
 include/tilp2/stdints4.h
 include/tilp2/ticonv.h
 lib/libticonv.so
-lib/libticonv.so.7
-lib/libticonv.so.7.0.4
+lib/libticonv.so.8
+lib/libticonv.so.8.0.4
 libdata/pkgconfig/ticonv.pc
