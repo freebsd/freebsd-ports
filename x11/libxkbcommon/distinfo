@@ -1,3 +1,3 @@
-TIMESTAMP = 1485631078
-SHA256 (xorg/lib/libxkbcommon-0.7.1.tar.xz) = ba59305d2e19e47c27ea065c2e0df96ebac6a3c6e97e28ae5620073b6084e68b
-SIZE (xorg/lib/libxkbcommon-0.7.1.tar.xz) = 622384
+TIMESTAMP = 1513526140
+SHA256 (xorg/lib/libxkbcommon-0.8.0.tar.xz) = e829265db04e0aebfb0591b6dc3377b64599558167846c3f5ee5c5e53641fe6d
+SIZE (xorg/lib/libxkbcommon-0.8.0.tar.xz) = 643456
