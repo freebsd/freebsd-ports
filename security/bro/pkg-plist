@@ -188,6 +188,7 @@ man/man8/bro.8.gz
 %%DATADIR%%/base/bif/plugins/Bro_MIME.events.bif.bro
 %%DATADIR%%/base/bif/plugins/Bro_Modbus.events.bif.bro
 %%DATADIR%%/base/bif/plugins/Bro_MySQL.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_NCP.consts.bif.bro
 %%DATADIR%%/base/bif/plugins/Bro_NCP.events.bif.bro
 %%DATADIR%%/base/bif/plugins/Bro_NTLM.events.bif.bro
 %%DATADIR%%/base/bif/plugins/Bro_NTLM.types.bif.bro
