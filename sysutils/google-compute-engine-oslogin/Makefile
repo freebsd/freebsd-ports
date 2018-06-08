@@ -10,6 +10,10 @@ COMMENT=	OS Login Guest Environment for Google Compute Engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_mips=		fails to compile: utils/oslogin_utils.cc:16:23: curl/curl.h: No such file or directory
+BROKEN_mips64=		fails to compile: utils/oslogin_utils.cc:16:23: curl/curl.h: No such file or directory
+BROKEN_powerpc64=	fails to compile: utils/oslogin_utils.cc:16:23: curl/curl.h: No such file or directory
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjson-c.so:devel/json-c
 RUN_DEPENDS=	gsed:textproc/gsed \
