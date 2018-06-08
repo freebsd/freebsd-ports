@@ -188,8 +188,8 @@ export_ports_env() {
 	done
 
 	# Bring in all the vars, but not empty ones.
-	eval $(${MAKE} -f ${PORTSDIR}/Mk/bsd.port.mk ${make_cmd} \
-	    USES="${uses}" | grep -v '=$' | sed -e 's,\\ $,,')
+	eval "$(${MAKE} -f ${PORTSDIR}/Mk/bsd.port.mk ${make_cmd} \
+		USES="${uses}" | grep -v '=$' | sed -e 's,\\ $,,')"
 	for var in ${export_vars}; do
 		# Export and display non-empty ones.  This is not redundant
 		# with above since we're looping on all vars here; do not
