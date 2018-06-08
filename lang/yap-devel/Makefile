@@ -14,6 +14,10 @@ COMMENT=	High-performance Prolog compiler
 LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual
 
+BROKEN_armv6=		fails to install: tar: Pathname can't be converted from UTF-8 to current locale
+BROKEN_armv7=		fails to install: tar: Pathname can't be converted from UTF-8 to current locale
+BROKEN_powerpc64=	fails to build: YAP Fatal Error: startup.yss in saved state formatting mismatch in saved space exiting....
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFLICTS=	yap-6.2.*
@@ -35,10 +39,10 @@ MAKE_ENV=	PKGLDFLAGS="${LDFLAGS}"
 
 STRIP=	#none
 
+USES=		gmake libarchive readline shebangfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-max-performance --disable-clpbn-bp
-USES=		gmake libarchive readline shebangfix
 SHEBANG_FILES=	packages/http/examples/demo_inetd
 SHEBANG_LANG=	swipl
 swipl_OLD_CMD=	/usr/bin/swipl
