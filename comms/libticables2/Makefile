@@ -1,33 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	libticables2
-PORTVERSION=	1.3.4
-PORTREVISION=	3
+PORTVERSION=	1.3.5
 CATEGORIES=	comms
-MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.17
+MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.18
 
-MAINTAINER=	tijl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TI calculator link cables library
 
 LICENSE=	GPLv2
 
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		autoreconf gettext-tools gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
+NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 post-patch:
-	@${REINPLACE_CMD} -e '/PKG_CONFIG.*libusb/s/ >= 0\.1\.[0-9]*/-0.1/' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's/Requires/&.private/' ${WRKSRC}/ticables2.pc.in
+	@${REINPLACE_CMD} 's/libusb >= 0\.1\.[0-9]*/libusb-0.1/' \
+		${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>

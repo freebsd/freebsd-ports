@@ -1,6 +1,8 @@
 bin/tilp
 man/man1/tilp.1.gz
+share/appdata/tilp.appdata.xml
 share/applications/tilp.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/tilp2.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tilp2.mo
 share/mime/packages/tilp.xml
 %%DATADIR%%/COPYING
@@ -79,6 +81,7 @@ share/mime/packages/tilp.xml
 %%DATADIR%%/icons/Group.ico
 %%DATADIR%%/icons/Group_Backup.ico
 %%DATADIR%%/icons/Group_Var.ico
+%%DATADIR%%/icons/Image.ico
 %%DATADIR%%/icons/List.ico
 %%DATADIR%%/icons/Macro.ico
 %%DATADIR%%/icons/Matrix.ico
@@ -90,13 +93,13 @@ share/mime/packages/tilp.xml
 %%DATADIR%%/icons/Range.ico
 %%DATADIR%%/icons/Real.ico
 %%DATADIR%%/icons/String.ico
+%%DATADIR%%/icons/TIGroup.ico
 %%DATADIR%%/icons/TIicon1.ico
 %%DATADIR%%/icons/TIicon2.ico
 %%DATADIR%%/icons/TIicon3.ico
 %%DATADIR%%/icons/TIicon4.ico
 %%DATADIR%%/icons/Table_Setup.ico
 %%DATADIR%%/icons/Text.ico
-%%DATADIR%%/icons/TiGroup.ico
 %%DATADIR%%/icons/Unknown.ico
 %%DATADIR%%/icons/Vector.ico
 %%DATADIR%%/icons/Window_Setup.ico
@@ -122,4 +125,5 @@ share/mime/packages/tilp.xml
 %%DATADIR%%/pixmaps/tb_restore.png
 %%DATADIR%%/pixmaps/tb_send.png
 %%DATADIR%%/pixmaps/tb_trash.png
+%%DATADIR%%/pixmaps/tilp.png
 %%DATADIR%%/pixmaps/tilp.xpm

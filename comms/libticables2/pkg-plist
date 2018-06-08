@@ -3,7 +3,7 @@ include/tilp2/stdints1.h
 include/tilp2/ticables.h
 include/tilp2/timeout.h
 lib/libticables2.so
-lib/libticables2.so.6
-lib/libticables2.so.6.0.0
+lib/libticables2.so.7
+lib/libticables2.so.7.0.0
 libdata/pkgconfig/ticables2.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libticables2.mo
