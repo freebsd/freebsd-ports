@@ -7,7 +7,6 @@ share/icons/hicolor/24x24/apps/siril.png
 share/icons/hicolor/256x256/apps/siril.png
 share/icons/hicolor/32x32/apps/siril.png
 share/icons/hicolor/48x48/apps/siril.png
-share/locale/ar_DZ/LC_MESSAGES/siril.mo
 share/locale/el/LC_MESSAGES/siril.mo
 share/locale/es_ES/LC_MESSAGES/siril.mo
 share/locale/fr/LC_MESSAGES/siril.mo
@@ -19,6 +18,7 @@ share/mime/packages/siril.xml
 %%DATADIR%%/gtk_old.css
 %%DATADIR%%/pixmaps/chain.png
 %%DATADIR%%/pixmaps/cm.png
+%%DATADIR%%/pixmaps/curve.png
 %%DATADIR%%/pixmaps/export.png
 %%DATADIR%%/pixmaps/grid.png
 %%DATADIR%%/pixmaps/histo.png
@@ -35,6 +35,7 @@ share/mime/packages/siril.xml
 %%DATADIR%%/pixmaps/rotate-acw_dark.png
 %%DATADIR%%/pixmaps/rotate-cw.png
 %%DATADIR%%/pixmaps/rotate-cw_dark.png
+%%DATADIR%%/pixmaps/scale-slider-horz.png
 %%DATADIR%%/pixmaps/siril_1.svg
 %%DATADIR%%/pixmaps/siril_logo.svg
 %%DATADIR%%/pixmaps/starfinder.png
