@@ -11,6 +11,8 @@ COMMENT=	H.265/HEVC encoder implemented in C
 
 LICENSE=	LGPL21+
 
+BROKEN_powerpc64=	fails to compile: strategyselector.c:377:26: linux/auxvec.h: No such file or directory
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ultravideo
 GH_TUPLE=	silentbicycle:greatest:v1.0.0:greatest/greatest
