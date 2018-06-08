@@ -8,16 +8,16 @@ index 90d4f71..5a05e22 100644
          ;;
 +mips*-*-freebsd*)	# FreeBSD/mips[64], either endian.
 +	tm_file="${tm_file} elfos.h ${fbsd_tm_file} mips/elf.h mips/freebsd.h"
-+	target_cpu_default=MASK_SOFT_FLOAT_ABI
++	target_cpu_default="MASK_ABICALLS|MASK_SOFT_FLOAT_ABI"
 +	case ${target} in
 +		mips64*-*-freebsd*)
 +			tm_defines="${tm_defines} MIPS_ABI_DEFAULT=ABI_64"
 +			;;
-+		mips32*-*-freebsd*)
-+			tm_defines="${tm_defines} MIPS_ABI_DEFAULT=ABI_32 MIPS_ISA_DEFAULT=33"
-+			;;
 +		mipsn32*-*-freebsd*)
-+			tm_defines="${tm_defines} MIPS_ABI_DEFAULT=ABI_N32 MIPS_ISA_DEFAULT=33"
++			tm_defines="${tm_defines} MIPS_ABI_DEFAULT=ABI_N32"
++			;;
++		mips*-*-freebsd*)
++			tm_defines="${tm_defines} MIPS_ABI_DEFAULT=ABI_32 MIPS_ISA_DEFAULT=3"
 +			;;
 +	esac
 +	case ${target} in
@@ -64,7 +64,7 @@ new file mode 100644
 index 0000000..56a921e
 --- /dev/null
 +++ gcc/config/mips/freebsd.h
-@@ -0,0 +1,347 @@
+@@ -0,0 +1,320 @@
 +/* Definitions for MIPS varients running FreeBSD with ELF format
 +   Copyright (C) 2008 Free Software Foundation, Inc.
 +   Continued by David O'Brien <obrien@freebsd.org>
@@ -310,39 +310,12 @@ index 0000000..56a921e
 +    }								\
 +  while (0)
 +
-+/* Default ABI and ISA */
-+/*
-+ * XXX/juli
-+ * Shouldn't this also be dependent on !mips*?
-+ */
-+#ifdef MIPS_CPU_STRING_DEFAULT
-+#define DRIVER_SELF_ISA_SPEC	"%{!march=*: -march=" MIPS_CPU_STRING_DEFAULT "}"
-+#else
-+#define	DRIVER_SELF_ISA_SPEC	"%{!march=*: -march=from-abi}"
-+#endif
-+
++/* Always pass ISA to drivers */
 +#undef DRIVER_SELF_SPECS
-+#if MIPS_ABI_DEFAULT == ABI_N32
-+#define DRIVER_SELF_SPECS \
-+	"%{!EB:%{!EL:%(endian_spec)}}", \
-+	"%{!mabi=*: -mabi=n32}", \
-+	DRIVER_SELF_ISA_SPEC
-+#elif MIPS_ABI_DEFAULT == ABI_64
-+#define DRIVER_SELF_SPECS \
-+	"%{!EB:%{!EL:%(endian_spec)}}", \
-+	"%{!mabi=*: -mabi=64}", \
-+	DRIVER_SELF_ISA_SPEC
-+#elif MIPS_ABI_DEFAULT == ABI_O64
-+#define DRIVER_SELF_SPECS \
-+	"%{!EB:%{!EL:%(endian_spec)}}", \
-+	"%{!mabi=*: -mabi=o64}", \
-+	DRIVER_SELF_ISA_SPEC
-+#else /* default to o32 */
-+#define DRIVER_SELF_SPECS \
-+	"%{!EB:%{!EL:%(endian_spec)}}", \
-+	"%{!mabi=*: -mabi=32}", \
-+	DRIVER_SELF_ISA_SPEC
-+#endif
++#define DRIVER_SELF_SPECS					\
++  MIPS_DEFAULT_ISA_LEVEL_SPEC,					\
++  MIPS_ISA_LEVEL_SPEC,						\
++  BASE_DRIVER_SELF_SPECS
 +
 +#if 0
 +/* Don't default to pcc-struct-return, we want to retain compatibility with
