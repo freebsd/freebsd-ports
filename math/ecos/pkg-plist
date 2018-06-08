@@ -1,0 +1,14 @@
+include/ecos/cone.h
+include/ecos/ctrlc.h
+include/ecos/data.h
+include/ecos/ecos.h
+include/ecos/ecos_bb.h
+include/ecos/equil.h
+include/ecos/expcone.h
+include/ecos/glblopts.h
+include/ecos/kkt.h
+include/ecos/spla.h
+include/ecos/splamm.h
+include/ecos/timer.h
+include/ecos/wright_omega.h
+lib/libecos.so

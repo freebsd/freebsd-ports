@@ -1,0 +1,10 @@
+ECOS is a numerical software for solving convex second-order cone programs
+(SOCPs) of type:
+
+min  c'*x
+s.t. A*x = b
+     G*x <=_K h 
+
+where the last inequality is generalized, i.e. h - G*x belongs to the cone K.
+
+WWW: https://github.com/embotech/ecos
