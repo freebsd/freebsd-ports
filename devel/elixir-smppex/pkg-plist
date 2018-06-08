@@ -7,6 +7,7 @@ lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.Errors.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.Factory.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.MessageState.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.Multipart.beam
+lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.NetworkErrorCode.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.Oserl.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.PP.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Pdu.TONNPIDefaults.beam
@@ -42,6 +43,7 @@ lib/elixir/lib/smppex/lib/smppex/pdu/errors.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/factory.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/message_state.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/multipart.ex
+lib/elixir/lib/smppex/lib/smppex/pdu/network_error_code.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/oserl.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/pp.ex
 lib/elixir/lib/smppex/lib/smppex/pdu/ton_npi_defaults.ex
