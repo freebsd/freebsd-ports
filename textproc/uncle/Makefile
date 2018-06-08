@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uncle
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	textproc
 
 MAINTAINER=	gblach@FreeBSD.org
