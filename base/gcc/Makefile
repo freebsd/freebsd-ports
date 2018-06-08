@@ -31,8 +31,7 @@ LICENSE_COMB=	multi
 GCC_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 
 PREFIX=		/usr
-CONFIGURE_ENV=	gcc_gxx_include_dir="/usr/include/c++/v1" \
-		NM=/usr/bin/nm \
+CONFIGURE_ENV=	NM=/usr/bin/nm \
 		AS_FOR_TARGET=/usr/bin/as \
 		LD_FOR_TARGET=/usr/bin/ld \
 		NM_FOR_TARGET=/usr/bin/nm
