@@ -5,7 +5,7 @@ PORTVERSION=	1.1.30
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang XML parsing and manipulation library
 
 LICENSE=	APACHE20

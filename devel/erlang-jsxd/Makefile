@@ -5,7 +5,7 @@ PORTVERSION=	0.2.4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	JSX style data structure manipulation
 
 LICENSE=	CDDL

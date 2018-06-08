@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Tool to generate documentation for Elixir projects
 
 LICENSE=	APACHE20 MIT

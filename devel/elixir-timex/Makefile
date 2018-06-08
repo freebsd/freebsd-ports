@@ -5,7 +5,7 @@ PORTVERSION=	3.3.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Complete date/time library for Elixir
 
 LICENSE=	MIT

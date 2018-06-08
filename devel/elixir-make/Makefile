@@ -6,7 +6,7 @@ DISTVERSION=	0.4.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Make compiler for Mix
 
 LICENSE=	APACHE20

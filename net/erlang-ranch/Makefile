@@ -5,7 +5,7 @@ PORTVERSION=	1.3.2
 CATEGORIES=	net
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang socket acceptor pool for TCP protocols
 
 LICENSE=	ISCL

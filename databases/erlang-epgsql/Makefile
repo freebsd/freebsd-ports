@@ -5,7 +5,7 @@ PORTVERSION=	3.4.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang PostgreSQL Database Client
 
 LICENSE=	BSD3CLAUSE

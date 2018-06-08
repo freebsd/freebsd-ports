@@ -5,7 +5,7 @@ PORTVERSION=	0.8.9
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang library for building mock modules
 
 LICENSE=	APACHE20

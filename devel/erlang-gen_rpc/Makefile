@@ -5,7 +5,7 @@ PORTVERSION=	2.1.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Scalable RPC library for Erlang
 
 LICENSE=	APACHE20

@@ -5,7 +5,7 @@ PORTVERSION=	1.0.5
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang port driver for interacting with syslog
 
 USES=		erlang:rebar

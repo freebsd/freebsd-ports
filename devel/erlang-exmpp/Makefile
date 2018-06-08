@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	devel net-im
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Fast and scalable library for XMPP written in Erlang/OTP
 
 LICENSE=	EPL

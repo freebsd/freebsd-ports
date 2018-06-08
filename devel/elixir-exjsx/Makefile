@@ -5,7 +5,7 @@ PORTVERSION=	4.0.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	JSON library for Elixir
 
 LICENSE=	MIT

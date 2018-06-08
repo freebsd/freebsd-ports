@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	lang
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Elixir Tooling Integration Into Emacs
 
 LICENSE=	GPLv3

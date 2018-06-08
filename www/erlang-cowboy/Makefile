@@ -5,7 +5,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Small, fast and modular HTTP server written in Erlang
 
 LICENSE=	ISCL

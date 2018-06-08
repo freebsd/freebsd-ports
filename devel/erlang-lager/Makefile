@@ -5,7 +5,7 @@ PORTVERSION=	3.2.4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Logging framework for Erlang
 
 LICENSE=	APACHE20

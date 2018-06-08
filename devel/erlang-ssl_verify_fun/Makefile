@@ -5,7 +5,7 @@ PORTVERSION=	1.1.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang library for certificate hostname validation
 
 LICENSE=	MIT

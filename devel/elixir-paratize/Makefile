@@ -5,7 +5,7 @@ PORTVERSION=	2.1.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Parallel processing facilities for Elixir
 
 LICENSE=	MIT

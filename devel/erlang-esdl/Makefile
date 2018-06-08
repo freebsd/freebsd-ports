@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	erlang-
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 DIST_SUBDIR=	erlang
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Library for accessing SDL and OpenGL through Erlang
 
 LICENSE=	MIT

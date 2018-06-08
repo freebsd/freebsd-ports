@@ -5,7 +5,7 @@ DISTVERSION=	2.5.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Easy release configuration for Elixir apps
 
 LICENSE=	APACHE20 MIT

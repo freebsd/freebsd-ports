@@ -5,7 +5,7 @@ PORTVERSION=	1.5.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	OTP process pool application
 
 LICENSE=	APACHE20

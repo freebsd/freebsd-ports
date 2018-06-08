@@ -5,7 +5,7 @@ DISTVERSION=	1.3.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Fast consistent hash ring implementation in Elixir
 
 LICENSE=	MIT

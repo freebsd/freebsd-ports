@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.erlang.org/contrib/
 PKGNAMEPREFIX=	erlang-
 DIST_SUBDIR=	erlang
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Library for XMLRPC support in Erlang
 
 USES=		gmake erlang tar:tgz

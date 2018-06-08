@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Wrapper around xmerl application for Elixir
 
 LICENSE=	MIT

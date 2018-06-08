@@ -5,7 +5,7 @@ PORTVERSION=	3.3.4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Library of commonly used Erlang functions
 
 BUILD_DEPENDS=	erlc:lang/erlang \
