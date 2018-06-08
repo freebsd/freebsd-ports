@@ -9,6 +9,9 @@ MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Audio compression format designed for speech
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix
