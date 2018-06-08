@@ -64,7 +64,7 @@ parse_mtree() {
 
 # Sort a directory list by the order of the dfs-sorted file (from find -d -s)
 sort_dfs() {
-	while read dir; do
+	while read -r dir; do
 		grep "^[0-9]* ${dir}$" ${WRKDIR}/.staged-dirs-dfs-sorted
 	done | sort -n | cut -d ' ' -f2-
 }
@@ -141,7 +141,7 @@ check_orphans_from_plist() {
 
 	echo "===> Checking for items in STAGEDIR missing from pkg-plist"
 	# Handle whitelisting
-	while read path; do
+	while read -r path; do
 		case "${path}" in
 		*.bak) ;;
 		*.orig) ;;
@@ -201,14 +201,14 @@ check_missing_plist_items() {
 	    ${WRKDIR}/.missing-plist-dirs | xargs mkdir -p
 	find -d -s ${WRKDIR}/.missing-dirs | \
 	    sed -e "s,^${WRKDIR}/.missing-dirs,," | \
-	    while read dir; do \
+	    while read -r dir; do \
 	    grep -x "${dir}" ${WRKDIR}/.missing-plist-dirs || :; done | \
 	    sed "${sed_dirs}" \
 	    >>${WRKDIR}/.invalid-plist-missing || :
 	rm -rf ${WRKDIR}/.missing-dirs
 	if [ -s "${WRKDIR}/.invalid-plist-missing" ]; then
 		ret=1
-		while read line; do
+		while read -r line; do
 			echo "Error: Missing: ${line}" >&2
 		done < ${WRKDIR}/.invalid-plist-missing
 	fi

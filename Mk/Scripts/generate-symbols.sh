@@ -13,8 +13,8 @@ ELF_FILES=$(mktemp -t elf_files)
 LF=$(printf '\nX')
 LF=${LF%X}
 find ${STAGEDIR} -type f \
-    -exec /usr/bin/file -nNF "${LF}" {} + | while read f; do
-	read output
+    -exec /usr/bin/file -nNF "${LF}" {} + | while read -r f; do
+	read -r output
 	case "${output}" in
 	ELF\ *\ executable,\ *FreeBSD*,\ not\ stripped*|\
 	ELF\ *\ shared\ object,\ *FreeBSD*,\ not\ stripped*)
@@ -28,7 +28,7 @@ lib_dir="${STAGEDIR}.debug${PREFIX}/lib/debug"
 sed -e "s,^${STAGEDIR}${PREFIX}/,${lib_dir}/," -e 's,/[^/]*$,,' \
     ${ELF_FILES} | sort -u | xargs mkdir -p
 
-while read staged_elf_file; do
+while read -r staged_elf_file; do
 	elf_file_name="${staged_elf_file##*/}"
 	lib_dir_dest="${lib_dir}/${staged_elf_file#${STAGEDIR}${PREFIX}/}"
 	# Strip off filename

@@ -49,7 +49,7 @@ homedirs=$(awk -F: -v users="$(make -C ${portdir} -V USERS|sed -e 's, ,|,g;/^$/d
 plistsub_sed=$(make -C ${portdir} -VPLIST_SUB_SED | /bin/sh ${PORTSDIR}/Mk/Scripts/plist_sub_sed_sort.sh)
 tmpplist=$(make -C ${portdir} -VTMPPLIST)
 
-while read modtype path extra; do
+while read -r modtype path extra; do
 	# Ignore everything from these files/directories
 	case "${path}" in
 		${CCACHE_DIR}/*|\
