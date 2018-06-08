@@ -5,7 +5,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	databases
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Apache CouchDB client in Erlang
 
 LICENSE=	MIT

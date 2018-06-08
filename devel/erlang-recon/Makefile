@@ -5,7 +5,7 @@ PORTVERSION=	2.3.5
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Collection of functions and scripts to debug Erlang in production
 
 LICENSE=	BSD3CLAUSE

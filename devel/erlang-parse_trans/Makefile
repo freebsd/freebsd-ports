@@ -5,7 +5,7 @@ PORTVERSION=	3.2.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Parse transform utilities for Erlang
 
 USES=		erlang:rebar

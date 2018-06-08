@@ -5,7 +5,7 @@ PORTVERSION=	0.12.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Extensible SMTP server and client for Erlang
 
 LICENSE=	BSD2CLAUSE

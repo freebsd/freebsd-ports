@@ -5,7 +5,7 @@ PORTVERSION=	0.8.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang based metrics system inspired by Coda Hale's metrics
 
 LICENSE=	APACHE20

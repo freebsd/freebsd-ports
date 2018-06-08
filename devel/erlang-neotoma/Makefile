@@ -5,7 +5,7 @@ PORTVERSION=	1.7.4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang library and packrat parser-generator
 
 LICENSE=	MIT

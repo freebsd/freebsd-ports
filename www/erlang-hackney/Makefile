@@ -5,7 +5,7 @@ PORTVERSION=	1.8.6
 CATEGORIES=	www
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Simple HTTP client in Erlang
 
 LICENSE=	APACHE20

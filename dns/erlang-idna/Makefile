@@ -5,7 +5,7 @@ PORTVERSION=	5.0.2
 CATEGORIES=	dns
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	IDNA implementation in pure Erlang
 
 LICENSE=	MIT

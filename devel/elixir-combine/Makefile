@@ -5,7 +5,7 @@ PORTVERSION=	0.10.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Parser combinator library for Elixir
 
 LICENSE=	MIT

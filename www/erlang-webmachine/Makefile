@@ -5,7 +5,7 @@ PORTVERSION=	1.10.9
 CATEGORIES=	www devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	HTTP semantic awareness on top mochiweb
 
 LICENSE=	APACHE20

@@ -6,7 +6,7 @@ DISTVERSION=	1.0.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Sojourn-time based active queue management library
 
 LICENSE=	APACHE20

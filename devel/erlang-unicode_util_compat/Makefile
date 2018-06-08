@@ -5,7 +5,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Compatibility library for unicode_util from Erlang R20
 
 LICENSE=	BSD3CLAUSE

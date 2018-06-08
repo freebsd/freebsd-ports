@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang support library for manipulating Web protocols
 
 LICENSE=	ISCL

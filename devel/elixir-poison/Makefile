@@ -5,7 +5,7 @@ PORTVERSION=	3.1.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Pure Elixir JSON library
 
 LICENSE=	ISCL

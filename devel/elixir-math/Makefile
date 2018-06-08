@@ -6,7 +6,7 @@ DISTVERSION=	0.3.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Math module for Elixir
 
 LICENSE=	MIT

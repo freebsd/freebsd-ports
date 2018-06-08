@@ -5,7 +5,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	misc
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang MIME types library
 
 LICENSE=	BSD3CLAUSE

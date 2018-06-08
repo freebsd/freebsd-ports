@@ -5,7 +5,7 @@ PORTVERSION=	3.3.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Adapter for using Timex DateTimes with Ecto
 
 LICENSE=	MIT

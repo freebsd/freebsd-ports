@@ -4,7 +4,7 @@ PORTNAME=	elixir-nats
 DISTVERSION=	0.1.4-alpha
 CATEGORIES=	devel
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	NATS client for Elixir
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Protocol Buffers interface for Erlang
 
 LICENSE=	APACHE20

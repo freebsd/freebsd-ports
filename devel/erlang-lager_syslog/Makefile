@@ -5,7 +5,7 @@ PORTVERSION=	3.0.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Syslog backend for Lager
 
 LICENSE=	APACHE20

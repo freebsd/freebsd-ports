@@ -5,7 +5,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Process dictionary for Erlang
 
 LICENSE=	EPLICENCE

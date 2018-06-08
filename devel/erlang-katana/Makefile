@@ -4,7 +4,7 @@ PORTNAME=	erlang-katana
 PORTVERSION=	0.4.0
 CATEGORIES=	devel
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang grab bag of useful functions
 
 LICENSE=	MIT
