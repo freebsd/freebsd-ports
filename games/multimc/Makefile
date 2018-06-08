@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	multimc
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.2
 CATEGORIES=	games java
 
 MAINTAINER=	me@tsundoku.ne.jp
@@ -16,8 +16,8 @@ USES=		cmake:outsource compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	MultiMC
 GH_PROJECT=	MultiMC5
-GH_TUPLE=	MultiMC:libnbtplusplus:4b305bb:libnbtplusplus/libraries/libnbtplusplus \
-		MultiMC:quazip:164acc3:quazip/libraries/quazip
+GH_TUPLE=	MultiMC:libnbtplusplus:508eda8:libnbtplusplus/libraries/libnbtplusplus \
+		MultiMC:quazip:3691d57:quazip/libraries/quazip
 USE_LDCONFIG=	yes
 USE_JAVA=	1.8+
 USE_QT5=	buildtools core concurrent gui network qmake testlib_build widgets xml
@@ -27,10 +27,6 @@ CMAKE_OFF=	MultiMC_UPDATER
 CXXFLAGS+=	-Wno-inconsistent-missing-override \
 		-Wno-delete-non-virtual-dtor \
 		-DLWJGL_DIR='\"${LOCALBASE}/lib/lwjgl2.9.3\"'
-
-post-patch:
-	@${REINPLACE_CMD} 's,usr/local,${PREFIX:S@^/@@},g' \
-		${WRKSRC}/application/CMakeLists.txt
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libMultiMC_*.so
