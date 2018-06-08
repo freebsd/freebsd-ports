@@ -39,7 +39,8 @@ post-install:
 .if defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-DMYSQLCPPCONN_TEST_NOT_IMPLEMENTED:BOOL=1 \
 		-DMYSQLCPPCONN_BUILD_EXAMPLES:BOOL=1
-regression-test: build
+
+do-test:
 #	These tests assume that a database is running on localhost,
 #	with user:root and pass:root
 	(cd ${WRKDIR}/.build ; \
