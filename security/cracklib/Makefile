@@ -28,7 +28,7 @@ USES=		gettext libtool
 USE_LDCONFIG=	yes
 
 .if defined(PYTHON_SLAVEPORT)
-USES+=		python:2.7
+USES+=		python:2.7 #localbase
 USE_PYTHON=	flavors
 CONFIGURE_ARGS+=--with-python
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_cracklib.a \
@@ -101,10 +101,10 @@ PLIST_FILES=	include/crack.h \
 pre-build:
 	cd ${WRKSRC}/lib && ${MAKE_CMD} libcrack.la
 
-regression-test: extract
-	@(cd ${BUILD_WKRSRC}; \
-	${PYTHON_CMD} -c \
-	"from test_${PORTNAME} import run; run(use_dictpath=\"${DICTFILE}\")")
+do-test:
+	@(cd ${BUILD_WKRSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		${PYTHON_CMD} -c \
+		"from test_${PORTNAME} import run; run(use_dictpath=\"${DICTFILE:S|^${PREFIX}/|${LOCALBASE}/|}\")")
 .else
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
