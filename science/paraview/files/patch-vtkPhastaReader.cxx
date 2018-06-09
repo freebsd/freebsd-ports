@@ -1,5 +1,5 @@
---- ParaViewCore/VTKExtensions/Default/vtkPhastaReader.cxx.orig	2018-05-27 20:05:20.868911000 +0700
-+++ ParaViewCore/VTKExtensions/Default/vtkPhastaReader.cxx	2018-05-27 20:05:16.469487000 +0700
+--- ParaViewCore/VTKExtensions/Default/vtkPhastaReader.cxx.orig	2018-05-31 00:13:08.178409000 +0700
++++ ParaViewCore/VTKExtensions/Default/vtkPhastaReader.cxx	2018-05-31 18:19:21.545706000 +0700
 @@ -200,7 +200,7 @@
      {
        text_header = new char[real_length + 1];
