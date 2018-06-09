@@ -1384,6 +1384,7 @@
     SUBDIR += whatpix
     SUBDIR += whowatch
     SUBDIR += wiimms
+    SUBDIR += wimlib
     SUBDIR += wmapmload
     SUBDIR += wmbluecpu
     SUBDIR += wmbsdbatt
