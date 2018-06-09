@@ -1,16 +1,5 @@
---- Makefile.orig	2013-09-10 06:27:31 UTC
+--- Makefile.orig	2018-01-03 15:11:45 UTC
 +++ Makefile
-@@ -4,8 +4,8 @@
- # Issue 'make convert4chan' to compile the 4-channel converter utility
- # (for local use, not installed by make install)
- 
--PREFIX = /usr
--INSTDIR = $(PREFIX)/lib/lv2/ir.lv2
-+PREFIX ?= /usr
-+INSTDIR = $(DESTDIR)/$(PREFIX)/lib/lv2/ir.lv2
- 
- INST_FILES = ir.so ir_gui.so ir.ttl manifest.ttl
- 
 @@ -27,31 +27,31 @@ C4LIBS = -lsndfile `pkg-config --libs gt
  all: ir.so ir_gui.so
  
@@ -47,8 +36,8 @@
 +	$(CXX) $(LDFLAGS) ir_gui.o ir_utils.o ir_meter.o ir_modeind.o ir_wavedisplay.o $(LIBS) -shared -o ir_gui.so
  
  convert4chan: convert4chan.c
--	gcc $(C4CFLAGS) convert4chan.c $(C4LIBS) -o convert4chan
-+	$(CC) $(C4CFLAGS) convert4chan.c $(C4LIBS) -o convert4chan
+-	gcc $(C4CFLAGS) $(CPPFLAGS) $(LDFLAGS) convert4chan.c $(C4LIBS) -o convert4chan
++	$(CC) $(C4CFLAGS) $(CPPFLAGS) $(LDFLAGS) convert4chan.c $(C4LIBS) -o convert4chan
  
  install: all
  	mkdir -p $(INSTDIR)
