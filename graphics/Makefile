@@ -536,7 +536,6 @@
     SUBDIR += libkdcraw-kde4
     SUBDIR += libkexiv2
     SUBDIR += libkexiv2-kde4
-    SUBDIR += libkface
     SUBDIR += libkipi
     SUBDIR += libkipi-kde4
     SUBDIR += libkipiplugins

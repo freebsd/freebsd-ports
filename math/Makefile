@@ -763,7 +763,6 @@
     SUBDIR += sc-im
     SUBDIR += scalapack
     SUBDIR += scilab
-    SUBDIR += scilab-toolbox-sivp
     SUBDIR += scilab-toolbox-swt
     SUBDIR += sdpa
     SUBDIR += sdpara
