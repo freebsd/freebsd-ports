@@ -24,6 +24,7 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/Default.sublime-package
 %%DATADIR%%/Packages/Diff.sublime-package
 %%DATADIR%%/Packages/Erlang.sublime-package
+%%DATADIR%%/Packages/Git Formats.sublime-package
 %%DATADIR%%/Packages/Go.sublime-package
 %%DATADIR%%/Packages/Graphviz.sublime-package
 %%DATADIR%%/Packages/Groovy.sublime-package
