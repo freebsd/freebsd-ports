@@ -30,7 +30,7 @@ load_rc_config $name
 : ${mongod_enable="NO"}
 %%LEGACY_LIMITS%%: ${mongod_limits="NO"}
 : ${mongod_dbpath="/var/db/mongodb"}
-: ${mongod_flags="--logpath ${mongod_dbpath}/mongod.log --logappend"}
+: ${mongod_flags="--logpath ${mongod_dbpath}/mongod.log --logappend --setParameter=disabledSecureAllocatorDomains=\*"}
 : ${mongod_user="mongodb"}
 : ${mongod_group="mongodb"}
 : ${mongod_config="%%PREFIX%%/etc/mongodb.conf"}
