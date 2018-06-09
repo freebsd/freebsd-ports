@@ -1,0 +1,20 @@
+Allows to read and write Windows Imaging (WIM) files and deployment
+of Windows operating systems.
+
+General capabilities:
+
+- Apply (extract) a WIM image (wimapply)
+- Capture (create) a WIM image (wimcapture)
+- Append, delete, and export WIM images (wimappend, wimdelete, wimexport)
+- Modify a WIM image (wimupdate)
+- Extract files or directories from a WIM image (wimextract)
+- Optimize a WIM archive, removing wasted space 
+  and optionally recompressing (wimoptimize)
+- Split or join a WIM archive (wimsplit, wimjoin)
+- Mount a WIM image (wimmount, wimmountrw)
+
+Sample of usage:
+
+http://www.ultimatedeployment.org/win7pxelinux3.html
+
+WWW: https://wimlib.net/
