@@ -15,6 +15,9 @@ PKGNAMESUFFIX=	213
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (legacy 2.13)
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	gm4:devel/m4
 RUN_DEPENDS=	gm4:devel/m4 \
 		autoconf-wrapper:devel/autoconf-wrapper
