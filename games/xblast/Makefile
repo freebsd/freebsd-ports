@@ -20,15 +20,12 @@ DIST_SUBDIR=	xblast
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player real-time strategy game for X11
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gmake localbase:ldflags
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-otherdatadir=${DATADIR}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 FONTSDIR=	${LOCALBASE}/share/fonts/bitstream-vera
 
@@ -45,6 +42,7 @@ OPTIONS_SUB=	yes
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 SDL_USE=		SDL=gfx,image,mixer,net,ttf,sdl
+SDL_USE_OFF=		XORG=ice,x11,xt
 SDL_CONFIGURE_ENABLE=	sdl
 SDL_RUN_DEPENDS=	${FONTSDIR}/Vera.ttf:x11-fonts/bitstream-vera
 SMPF_DESC=		Support for 16 players
@@ -52,12 +50,6 @@ SMPF_CONFIGURE_ENABLE=	SMPF
 SOUND_CONFIGURE_ENABLE=	sound
 SOUND_DISTFILES=	musics-${MUSICS_DATE}${EXTRACT_SUFX}:musics \
 			sounds${EXTRACT_SUFX}:sounds
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MSDL}
-USE_XORG=	ice x11
-.endif
 
 post-extract:
 	-@${MV} ${WRKDIR}/levels-${LEVELS_DATE}/reconstruct?on2.xal ${WRKDIR}/levels-${LEVELS_DATE}/reconstruction2.xal
@@ -74,21 +66,21 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/xblast.man ${STAGEDIR}${MAN6PREFIX}/man/man6/xblast.6
-	${MKDIR} ${STAGEDIR}${DATADIR}/image
-	cd ${WRKDIR}/images-${IMAGES_DATE} && \
+	@${MKDIR} ${STAGEDIR}${DATADIR}/image
+	@cd ${WRKDIR}/images-${IMAGES_DATE} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/image "-not -name Imakefile"
-	${MKDIR} ${STAGEDIR}${DATADIR}/level
-	cd ${WRKDIR}/levels-${LEVELS_DATE} && \
+	@${MKDIR} ${STAGEDIR}${DATADIR}/level
+	@cd ${WRKDIR}/levels-${LEVELS_DATE} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/level "-not -name Imakefile"
-	${MKDIR} ${STAGEDIR}${DATADIR}/image/sprite
-	cd ${WRKDIR}/models-${MODELS_DATE} && \
+	@${MKDIR} ${STAGEDIR}${DATADIR}/image/sprite
+	@cd ${WRKDIR}/models-${MODELS_DATE} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/image/sprite "-not -name Imakefile"
-.if ${PORT_OPTIONS:MSOUND}
-	${MKDIR} ${STAGEDIR}${DATADIR}/sounds
-	cd ${WRKDIR}/musics-${MUSICS_DATE} && \
+
+post-install-SOUND-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/sounds
+	@cd ${WRKDIR}/musics-${MUSICS_DATE} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/sounds "-not -name Imakefile"
-	cd ${WRKDIR}/sounds && \
+	@cd ${WRKDIR}/sounds && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/sounds "-not -name Imakefile"
-.endif
 
 .include <bsd.port.mk>
