@@ -5,7 +5,7 @@ PORTVERSION=	1.1.9
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.18
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	TI calculator library
 
 LICENSE=	GPLv2

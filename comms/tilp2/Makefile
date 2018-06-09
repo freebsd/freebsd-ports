@@ -5,7 +5,7 @@ PORTVERSION=	1.18
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/${DISTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	TI Linking Program
 
 LICENSE=	GPLv2
