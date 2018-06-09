@@ -1,0 +1,12 @@
+--- dub.json.orig	2018-05-10 00:37:22.200051000 -0500
++++ dub.json	2018-05-10 00:38:16.894998000 -0500
+@@ -7,7 +7,6 @@
+         "EMSI",
+         "DLang Community"
+     ],
+-    "dependencies": {
+-        "stdx-allocator": "~>2.77.0"
+-    }
++    "libs": ["stdx-allocator"],
++    "lflags": ["-L%%LOCALBASE%%/lib/d"],
+ }
