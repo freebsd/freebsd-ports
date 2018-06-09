@@ -123,7 +123,7 @@ Revert https://github.com/RPCS3/rpcs3/commit/cf1c45dfe86e for Qt 5.7 compatibili
 @@ -24,6 +24,7 @@ void msg_dialog_frame::Create(const std::string& msg)
  
  	m_dialog = new custom_dialog(type.disable_cancel);
- 	m_dialog->setWindowTitle(type.se_normal ? "Normal dialog" : "Error dialog");
+ 	m_dialog->setWindowTitle(title.empty() ? (type.se_normal ? "Normal dialog" : "Error dialog") : qstr(title));
 +	m_dialog->setWindowFlags(m_dialog->windowFlags() & ~Qt::WindowContextHelpButtonHint);
  	m_dialog->setWindowOpacity(type.bg_invisible ? 1. : 0.75);
  
