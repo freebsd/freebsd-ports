@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20180603
+PORTVERSION=	s20180607
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -23,10 +23,10 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	8e02c70e8
+GH_TAGNAME=	98438258c
 GH_TUPLE=	citra-emu:ext-libressl-portable:cbb1dca:libressl/externals/libressl \
-		citra-emu:ext-soundtouch:1d0e6cf:soundtouch/externals/soundtouch \
-		MerryMage:dynarmic:d1d4705:dynarmic/externals/dynarmic \
+		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
+		MerryMage:dynarmic:r1-2-g4b350a3:dynarmic/externals/dynarmic \
 		arsenm:sanitizers-cmake:f09151b:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		benhoyt:inih:r40:inih/externals/inih/inih \
 		catchorg:Catch2:v2.2.2:catch/externals/catch \
@@ -35,7 +35,7 @@ GH_TUPLE=	citra-emu:ext-libressl-portable:cbb1dca:libressl/externals/libressl \
 		kinetiknz:cubeb:cubeb-0.2-1039-g44341a1:cubeb/externals/cubeb \
 		lsalzman:enet:39a72ab:enet/externals/enet \
 		neobrain:nihstro:fd69de1:nihstro/externals/nihstro \
-		weidai11:cryptopp:CRYPTOPP_6_1_0:cryptopp/externals/cryptopp/cryptopp
+		weidai11:cryptopp:CRYPTOPP_7_0_0-23-gf320e7d9:cryptopp/externals/cryptopp/cryptopp
 
 USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
 USE_SDL=	sdl2

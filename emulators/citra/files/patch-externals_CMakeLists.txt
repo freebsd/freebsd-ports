@@ -1,14 +1,4 @@
-[0/1] cd /usr/ports/emulators/citra/work/.build && /usr/local/bin/cmake -P cmake_install.cmake
--- Install configuration: "Release"
--- Up-to-date: /usr/ports/emulators/citra/work/stage/usr/local/man/man6/citra.6
-CMake Error at externals/cubeb/cmake_install.cmake:44 (file):
-  file INSTALL cannot find
-  "/usr/ports/emulators/citra/work/citra-08b119153/include".
-Call Stack (most recent call first):
-  externals/cmake_install.cmake:46 (include)
-  cmake_install.cmake:49 (include)
-
-FAILED: CMakeFiles/install.util
+https://github.com/citra-emu/citra/pull/3805
 
 --- externals/CMakeLists.txt.orig	2018-06-01 11:24:28 UTC
 +++ externals/CMakeLists.txt
