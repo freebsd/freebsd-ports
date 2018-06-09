@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Turn based board football game
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		gmake tar:bzip2
 USE_SDL=	sdl image gfx ttf
 
