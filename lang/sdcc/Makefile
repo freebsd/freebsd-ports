@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-l
 
 CONFLICTS_INSTALL=	sdcc-[0-9]* sdcc-devel-[0-9]*
 GNU_CONFIGURE=	yes
-USES=		gmake readline:port python:2.7,run shebangfix tar:bzip2
+USES=		bison gmake readline:port python:2.7,run shebangfix tar:bzip2
 SHEBANG_FILES=	support/scripts/as2gbmap.py
 
 OPTIONS_DEFINE=		DEVLIB DOCS UCSIM
