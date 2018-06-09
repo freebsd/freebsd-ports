@@ -41,6 +41,8 @@ OPTIONS_DEFINE_i386=	SSE
 OPTIONS_DEFAULT_amd64=	SSE
 OPTIONS_DEFAULT_i386=	SSE
 
+SSE_MAKE_ARGS=	PORT_SIMD_FLAGS="-msse -msse2 -mfpmath=sse"
+
 post-patch:
 	@${REINPLACE_CMD} 's| -O3||' \
 		${WRKSRC}/*.lv2/Makefile
@@ -50,12 +52,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|$$(mandir)/man1|$$(MANDIR)|' \
 		${WRKSRC}/sisco.lv2/Makefile
 	@cd ${WRKSRC} && ${RM} -r convoLV2 && ${MV} convoLV2zita4 convoLV2
-
-post-patch-SSE-off:
-	@${REINPLACE_CMD} 's| -msse -msse2 -mfpmath=sse||' \
+	@${REINPLACE_CMD} 's| -msse -msse2 -mfpmath=sse| $$(PORT_SIMD_FLAGS)|' \
 		${WRKSRC}/*.lv2/Makefile ${WRKSRC}/convoLV2/Makefile
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/convo.lv2/convoLV2.so
 
 .include <bsd.port.mk>
