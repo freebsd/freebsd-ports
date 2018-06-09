@@ -1,6 +1,6 @@
---- CMakeGlobals.txt.orig	2017-11-16 21:40:37 UTC
+--- CMakeGlobals.txt.orig	2018-06-07 06:50:17 UTC
 +++ CMakeGlobals.txt
-@@ -65,15 +65,7 @@ endif()
+@@ -84,14 +84,16 @@ endif()
  
  # record git revision hash (cache it since we don't use this in development
  # mode and we don't want it to force rebuilds there)
@@ -12,8 +12,16 @@
 -      SET(RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}" CACHE STRING "Git Revision Hash")
 -   endif()
 -endif()
--
++#if(NOT RSTUDIO_SESSION_WIN64 AND NOT RSTUDIO_GIT_REVISION_HASH)
++#   find_program(GIT_EXECUTABLE git)
++#   if(GIT_EXECUTABLE)
++#      exec_program(git ARGS rev-parse HEAD
++#                   OUTPUT_VARIABLE RSTUDIO_GIT_REVISION_HASH)
++#      SET(RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}" CACHE STRING "Git Revision Hash")
++#   endif()
++#endif()
++
 +SET(RSTUDIO_VERSION "${FREEBSD_RSTUDIO_VERSION}" CACHE STRING "FreeBSD RStudio version")
  
- # required R version
- set(RSTUDIO_R_MAJOR_VERSION_REQUIRED 2)
+ # record these from Jenkins if available
+ if("$ENV{GIT_COMMIT}" STREQUAL "")

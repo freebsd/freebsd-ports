@@ -5,7 +5,7 @@
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.637
+DISTVERSION=	1.2.679
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -13,11 +13,6 @@ DISTFILES=	core-dictionaries.zip:dictionaries \
 		gin-${GIN_VERSION}.zip:buildtools \
 		gwt-${GWT_VERSION}.zip:buildtools \
 		mathjax-26.zip:buildtools
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${GH_PROJECT}/commit/
-PATCHFILES=	ab3d4355ab5c7f4bc7af1f7aeabe62c3d1bbccec.patch:-p1 \
-		85896f38b7d25661dd29f76b2bbf1b64d5e34fa4.patch:-p1 \
-		8967d0e4979b81b4792093e869ae9a6bf6d96397.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Integrated development environment (IDE) for R
@@ -42,7 +37,8 @@ USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tl}
 GH_TUPLE=	rstudio:r2d3:v0.2.0:r2d3/dependencies/common/r2d3 \
 		rstudio:rmarkdown:aed26ac:rmarkdown/dependencies/common/rmarkdown \
-		rstudio:rsconnect:03c379b:rsconnect/dependencies/common/rsconnect
+		rstudio:rsconnect:03c379b:rsconnect/dependencies/common/rsconnect \
+		trestletech:plumber:v0.4.6:plumber/dependencies/common/plumber
 
 CMAKE_ARGS=	-DRSTUDIO_TARGET=Desktop \
 		-DFREEBSD_RSTUDIO_VERSION:STRING=${PORTVERSION} \
