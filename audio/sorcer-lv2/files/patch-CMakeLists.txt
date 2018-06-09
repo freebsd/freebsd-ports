@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2016-03-06 16:11:56 UTC
 +++ CMakeLists.txt
-@@ -15,13 +15,17 @@ find_package(PkgConfig)
+@@ -15,18 +15,22 @@ find_package(PkgConfig)
  
  #SET(CMAKE_INSTALL_PREFIX "/usr" )
  
@@ -21,6 +21,13 @@
  SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC -shared -Wl,-z,nodelete -Wl,--no-undefined")
  
  IF(RELEASE_BUILD)
+-  SET(CMAKE_CXX_FLAGS "-g -Wall -Wno-unused-variable -msse2 -mfpmath=sse -ffast-math")
+-  SET(CMAKE_C_FLAGS "-g -Wall -W -Wno-unused-variable -msse2 -mfpmath=sse -ffast-math")
++  SET(CMAKE_CXX_FLAGS "-Wall -Wno-unused-variable ${PORT_SIMD_FLAGS} -ffast-math")
++  SET(CMAKE_C_FLAGS "-Wall -W -Wno-unused-variable ${PORT_SIMD_FLAGS} -ffast-math")
+ ENDIF()
+ 
+ ## The following commands will re-generate the .cpp files from the FAUST .dsp,
 @@ -81,6 +85,8 @@ ADD_LIBRARY(sorcer SHARED ${sources})
  target_link_libraries( sorcer ${NTK_LIBRARIES}     )
  #target_link_libraries( sorcer ${SNDFILE_LIBRARIES} )
