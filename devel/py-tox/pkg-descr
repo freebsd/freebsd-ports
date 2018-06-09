@@ -10,4 +10,4 @@ use for:
 * acting as a frontend to Continuous Integration servers, greatly
   reducing boilerplate and merging CI and shell-based testing.
 
-WWW: http://tox.testrun.org/
+WWW: https://tox.readthedocs.org/
