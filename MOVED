@@ -10265,3 +10265,5 @@ science/orthanc||2018-06-07|Has expired: Broken for more than 3 months
 science/orthanc-dicomweb||2018-06-07|Removed, depends on expired science/orthanc
 science/orthanc-postgresql||2018-06-07|Removed, depends on expired science/orthanc
 science/orthanc-webviewer||2018-06-07|Removed, depends on expired science/orthanc
+graphics/libkface||2018-06-09|Has expired: No longer maintained upstream
+math/scilab-toolbox-sivp||2018-06-09|Has expired: Cannot build with newer opencv
