@@ -38,12 +38,6 @@ OPTIONS_DEFINE_i386=	SSE
 OPTIONS_DEFAULT_amd64=	SSE
 OPTIONS_DEFAULT_i386=	SSE
 
-post-patch:
-	@${REINPLACE_CMD} 's| -O3||' \
-		${WRKSRC}/Makefile
-
-post-patch-SSE-off:
-	@${REINPLACE_CMD} 's|-msse -msse2 -mfpmath=sse||' \
-		${WRKSRC}/Makefile
+SSE_MAKE_ARGS=		PORT_SIMD_FLAGS="-msse -msse2 -mfpmath=sse"
 
 .include <bsd.port.mk>
