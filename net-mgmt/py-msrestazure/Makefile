@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xmj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Azure-specific AutoRest swagger generator Python client runtime
 
 LICENSE=	MIT
