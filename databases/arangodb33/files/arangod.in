@@ -9,13 +9,13 @@
 #
 # arangod_enable (bool): Set to "NO" by default.
 #                        Set it to "YES" to enable arangod.
-# arangod_limits (bool): Set to "NO" by default.
-#                        Set it to yes to run `limits -e -U arangodb`
-#                        just before arangod starts.
+%%LEGACY_LIMITS%%# arangod_limits (bool): Set to "NO" by default.
+%%LEGACY_LIMITS%%#                        Set it to yes to run `limits -e -U arangodb`
+%%LEGACY_LIMITS%%#                        just before arangod starts.
 # arangod_dbpath (str):  Default to "/var/db/arangodb"
 #                        Base database directory.
 # arangod_logpath (str): Default to "/var/log/arangodb"
-#                        Base logging directory 
+#                        Base logging directory
 # arangod_apppath (str): Default to "/var/db/arangodb-apps"
 #                        Base apps directory
 # arangod_flags (str):   Custom additional arguments to be passed to arangod.
@@ -32,7 +32,7 @@ rcvar=arangod_enable
 load_rc_config $name
 
 : ${arangod_enable="NO"}
-: ${arangod_limits="NO"}
+%%LEGACY_LIMITS%%: ${arangod_limits="NO"}
 : ${arangod_dbpath="/var/db/arangodb"}
 : ${arangod_logpath="/var/log/arangodb"}
 : ${arangod_apppath="/var/db/arangodb-apps"}
@@ -75,11 +75,12 @@ arangod_prestart()
         if [ ! -d ${arangod_apppath} ]; then
                 arangod_create_apppath || return 1
         fi
-        if checkyesno arangod_limits; then
-                eval `/usr/bin/limits -e -U ${arangod_user}` 2>/dev/null
-        else
-                return 0
-        fi
+%%LEGACY_LIMITS%%        if checkyesno arangod_limits; then
+%%LEGACY_LIMITS%%                eval `/usr/bin/limits -e -U ${arangod_user}` 2>/dev/null
+%%LEGACY_LIMITS%%        else
+%%LEGACY_LIMITS%%                return 0
+%%LEGACY_LIMITS%%        fi
+%%MODERN_LIMITS%%        return 0
 }
 
 run_rc_command "$1"
