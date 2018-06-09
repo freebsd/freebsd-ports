@@ -5,4 +5,4 @@ viruses, scans compressed files and supported by AMaViS.
 Optionally you can use the clamav-milter interface to connect
 clamav with sendmail.
 
-WWW: http://www.clamav.net/
+WWW: https://www.clamav.net/
