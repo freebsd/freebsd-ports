@@ -3,18 +3,16 @@
 
 PORTNAME=	x42-plugins
 DISTVERSION=	20180320 # the version is published here: http://gareus.org/misc/x42-plugins.php
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://gareus.org/misc/x42-plugins/
 PKGNAMESUFFIX=	-lv2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only to allow USE_GITHUB=nodefault for zita4 compatilility patch
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of LV2 plugins (submodules)
 
 LICENSE=	GPLv2
-
-BROKEN_armv6=		fails to build: unknown FP unit 'sse'
-BROKEN_armv7=		fails to build: unknown FP unit 'sse'
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
@@ -28,6 +26,8 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libzita-convolver.so:audio/zita-convolver
 
 USES=		gmake localbase pkgconfig tar:xz shebangfix
+USE_GITHUB=	nodefault
+GH_TUPLE=	x42:convoLV2:f814f1e:x/convoLV2zita4
 USE_GNOME=	glib20 pango cairo
 USE_XORG=	x11
 USE_GL=		glu gl
@@ -49,10 +49,11 @@ post-patch:
 		${WRKSRC}/meters.lv2/src/spectr.c
 	@${REINPLACE_CMD} 's|$$(mandir)/man1|$$(MANDIR)|' \
 		${WRKSRC}/sisco.lv2/Makefile
+	@cd ${WRKSRC} && ${RM} -r convoLV2 && ${MV} convoLV2zita4 convoLV2
 
 post-patch-SSE-off:
 	@${REINPLACE_CMD} 's| -msse -msse2 -mfpmath=sse||' \
-		${WRKSRC}/*.lv2/Makefile
+		${WRKSRC}/*.lv2/Makefile ${WRKSRC}/convoLV2/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/convo.lv2/convoLV2.so
