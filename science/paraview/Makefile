@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paraview
-DISTVERSION=	5.2.0
-PORTREVISION=	4
+DISTVERSION=	5.5.0
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -31,20 +30,14 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 RUN_DEPENDS=	bash:shells/bash	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 
-CONFLICTS_BUILD=	protobuf*
+CONFLICTS_INSTALL=	protobuf # https://gitlab.kitware.com/paraview/paraview/issues/18225
 
-USES=		alias desktop-file-utils cmake:outsource jpeg python:2.7 shebangfix
-USE_QT4=	qmake_build moc_build rcc_build uic_build \
-		linguisttools_build assistant_run qt3support \
-		corelib dbus designer gui help-tools network script \
-		sql svg xml webkit assistantclient clucene \
-		xmlpatterns xmlpatterns-tool help
+USES=		alias cmake:outsource jpeg localbase python:2.7 shebangfix
+USE_QT5=	core gui help network sql widgets x11extras buildtools_build qmake_build
 USE_GL=		gl glu
 USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm dri3proto
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
-
-INSTALLS_ICONS=	yes
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \
@@ -63,17 +56,7 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \
 MAKE_ENV=	XDG_CONFIG_HOME=${WRKDIR}
 
 SHEBANG_FILES=	Catalyst/catalyze.py VTK/Examples/SearchScript.sh \
-		VTK/Utilities/Maintenance/*.sh	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/bench/basicbench.cxxlist	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/bench/*.sh	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/bench/bench_unrolling	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/bench/benchmark_suite	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/blas/testing/*	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/scripts/*	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/test/eigen2/*	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/test/*.sh	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/test/testsuite.cmake	\
-		Plugins/SciberQuestToolKit/eigen-3.0.3/eigen-eigen-3.0.3/bench/btl/data/*
+		VTK/Utilities/Maintenance/*.sh
 
 OPTIONS_DEFINE=	OSMESA GL2PS DOCS
 OSMESA_DESC=	Use Mesa for off-screen rendering
@@ -85,10 +68,10 @@ VERMAJORMINOR=	${PORTVERSION:R}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOSMESA}
-LIB_DEPENDS+=	libOSMesa32.so:graphics/libosmesa
+LIB_DEPENDS+=	libOSMesa.so:graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
-		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa32.so
+		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
 .endif
 
 .if ${PORT_OPTIONS:MGL2PS}
