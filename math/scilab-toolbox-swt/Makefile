@@ -24,13 +24,11 @@ TOOLBOXDIR=	${PREFIX}/${TOOLBOXDIR_REL}
 PLIST_SUB=	TOOLBOXDIR=${TOOLBOXDIR_REL}
 TOOLBOX_SUBDIRS=	demos etc macros
 
-OPTIONS_DEFINE=	HELP SIVP
+OPTIONS_DEFINE=	HELP
 OPTIONS_DEFAULT=	HELP
 OPTIONS_SUB=	yes
 
 HELP_DESC=	Build help files (requires scilab with gui support)
-SIVP_DESC=	Enable Image and Video support
-SIVP_RUN_DEPENDS=	${LOCALBASE}/${CONTRIBDIR}/sivp/loader.sce:math/scilab-toolbox-sivp
 
 WRKSRC=		${WRKDIR}/swt
 

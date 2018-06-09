@@ -4,7 +4,7 @@ Wavelet is a powerful signal processing tool developed and developing
 in the last two decades. Scilab Wavelet Toolbox is a free software package
 to enable you using wavelet analysis tools freely in Scilab on most OSes
 including GNU/Linux, BSD and Windows. Scilab Wavelet Toolbox is designed
-to work with any Scilab Image Processing Toolbox like SIP or SIVP
+to work with any Scilab Image Processing Toolbox like SIP
 for displaying 2-D results.
 
 What Scilab Wavelet Toolbox supposed to do:
