@@ -3,7 +3,7 @@
 PORTNAME=	gmsynth
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -12,9 +12,6 @@ COMMENT=	General MIDI LV2 Synth
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_armv6=		fails to compile: unknown FP unit 'sse'
-BROKEN_armv7=		fails to compile: unknown FP unit 'sse'
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
@@ -29,5 +26,13 @@ PLIST_FILES=	lib/lv2/${PORTNAME}.lv2/GeneralUser_LV2.sf2 \
 		lib/lv2/${PORTNAME}.lv2/${PORTNAME}.so \
 		lib/lv2/${PORTNAME}.lv2/${PORTNAME}.ttl \
 		lib/lv2/${PORTNAME}.lv2/manifest.ttl
+
+OPTIONS_DEFINE_amd64=	SSE
+OPTIONS_DEFINE_i386=	SSE
+OPTIONS_DEFAULT_amd64=	SSE
+OPTIONS_DEFAULT_i386=	SSE
+
+SSE_MAKE_ENV=		OPTIMIZATIONS="-msse -msse2 -mfpmath=sse -DNDEBUG"
+SSE_MAKE_ENV_OFF=	OPTIMIZATIONS="-DNDEBUG"
 
 .include <bsd.port.mk>
