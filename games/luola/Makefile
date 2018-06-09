@@ -14,6 +14,9 @@ DIST_SUBDIR=	luola
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D multiplayer cave-flying game
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_SDL=	sdl image ttf
@@ -47,7 +50,9 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/*.lev ${WRKDIR}/*.png ${STAGEDIR}${DATADIR}/levels/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/FAQ ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
