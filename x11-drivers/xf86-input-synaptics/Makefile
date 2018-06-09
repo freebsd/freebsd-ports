@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-input-synaptics
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
