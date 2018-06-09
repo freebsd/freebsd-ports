@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keychain
-PORTVERSION=	2.8.4
+PORTVERSION=	2.8.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.funtoo.org/archive/keychain/ \
 		GENTOO
