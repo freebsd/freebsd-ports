@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AI script based strategy game
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	winicontoppm:graphics/netpbm
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
@@ -44,32 +45,26 @@ FLEETS_DISTFILES=		gh_fleets_020906.zip:fleets
 FLEETS_EXTRACT_DEPENDS=		${UNZIP_CMD}:archivers/unzip
 OPTIMIZED_CFLAGS_MAKE_ENV=	OPTIMIZED_CFLAGS=YES
 
-.include <bsd.port.options.mk>
-
-post-extract:
-.if ${PORT_OPTIONS:MFLEETS}
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${UNZIP_CMD} -o ${DISTDIR}/${FLEETS_DISTFILES:S/:fleets//} \
-		-x "*/CVS/*" "*/.svn/*" -d ${STAGEDIR}${DATADIR}
-.endif
-
 post-build:
 	@(winicontoppm ${WRKSRC}/../GalaxyHack.ico | pnmtopng \
 		> ${WRKDIR}/galaxyhack.png)
 
 do-install:
-	(cd ${WRKDIR} && ${INSTALL_SCRIPT} ${PORTNAME}-sh \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME})
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
-		${STAGEDIR}${PREFIX}/libexec)
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec/
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/.. && ${INSTALL_DATA} settings.dat \
-		${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/../settings.dat ${STAGEDIR}${DATADIR}
 .for d in fleets gamedata graphics music standardpictures
 	@(cd ${WRKSRC}/.. && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
-	(cd ${WRKDIR} && ${INSTALL_DATA} galaxyhack.png \
-		${STAGEDIR}/${PREFIX}/share/pixmaps)
+	${INSTALL_DATA} ${WRKDIR}/galaxyhack.png ${STAGEDIR}/${PREFIX}/share/pixmaps
+
+do-install-FLEETS-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${UNZIP_CMD} -o ${DISTDIR}/${FLEETS_DISTFILES:S/:fleets//} \
+		-x "*/CVS/*" "*/.svn/*" -d ${STAGEDIR}${DATADIR}
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} -d ${DATADIR_REL} -type d -empty -exec \
+		${ECHO_CMD} @dir {} \; >> ${TMPPLIST}
 
 .include <bsd.port.mk>
