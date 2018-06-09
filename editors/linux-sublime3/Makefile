@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sublime
-PORTVERSION=	3.1.43
+PORTVERSION=	3.1.76
 CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
 PKGNAMEPREFIX=	linux-
