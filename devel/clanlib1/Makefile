@@ -13,17 +13,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmikmod.so:audio/libmikmod \
-		libvorbis.so:audio/libvorbis
+		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg
 
 USES=		alias gmake jpeg libtool localbase:ldflags pathfix \
 		pkgconfig tar:tgz
-USE_XORG=	x11 xi
+USE_XORG=	x11 xi xxf86vm
 USE_LDCONFIG=	yes
 USE_SDL=	gfx
-USE_GL=		yes
+USE_GL=		gl glu
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs \
