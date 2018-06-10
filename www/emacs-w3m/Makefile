@@ -3,6 +3,7 @@
 
 PORTNAME=	emacs-w3m
 PORTVERSION=	1.4.620.b.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	www elisp
 MASTER_SITES=	LOCAL/nobutaka
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -14,16 +15,10 @@ COMMENT=	Simple front-end to w3m for emacs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-.if ${FLAVOR:U} != devel && ${FLAVOR:U} != devel_nox
-# http://pkg.awarnach.mathstat.dal.ca/data/11i386-default/2018-05-30_07h36m11s/logs/errors/emacs-w3m-emacs26-1.4.620.b.20180331_1.log
-BROKEN=		fails to configure
-.endif
-
 BUILD_DEPENDS=	w3m:www/w3m
 RUN_DEPENDS=	w3m:www/w3m
 
 USES=		autoreconf emacs tar:bzip2
-EMACS_FLAVORS_EXCLUDE=	devel_full devel_nox # fail during configure
 
 ALL_TARGET=	default
 INSTALL_TARGET=	install install-icons
@@ -34,7 +29,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
-		--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}/w3m \
+		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/w3m \
 		--with-icondir=${PREFIX}/${EMACS_LIBDIR}/etc/w3m/icons \
 		--without-compress-install
 
