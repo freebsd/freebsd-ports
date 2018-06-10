@@ -12,8 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	re2>=0:devel/re2
-LIB_DEPENDS=	libunwind.so:devel/libunwind \
-		libgmp.so:math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 RUN_DEPENDS=	re2>=0:devel/re2
 
 USE_RUBY=	yes
