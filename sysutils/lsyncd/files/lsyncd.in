@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: lsyncd
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `lsyncd':
+#
+# lsyncd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="lsyncd"
+rcvar=lsyncd_enable
+
+command="%%PREFIX%%/sbin/lsyncd"
+pidfile="/var/run/$name.pid"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${lsyncd_enable="NO"}
+: ${lsyncd_configfile:=%%PREFIX%%/etc/$name.conf}
+
+required_files="${lsyncd_configfile}"
+
+command_args="-pidfile $pidfile ${lsyncd_configfile}"
+
+run_rc_command "$1"

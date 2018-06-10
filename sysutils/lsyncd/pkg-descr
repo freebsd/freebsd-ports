@@ -1,0 +1,5 @@
+Lsyncd is designed to synchronize a local directory tree with low
+profile of expected changes to a remote mirror.  Lsyncd is especially
+useful to sync data from a secure area to a not-so-secure area.
+
+WWW: https://axkibe.github.io/lsyncd/

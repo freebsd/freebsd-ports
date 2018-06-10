@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2018-03-09 12:39:11 UTC
++++ CMakeLists.txt
+@@ -104,8 +104,8 @@ add_custom_target( tests
+ 
+ # compiling and linking it all together
+ add_executable( lsyncd ${LSYNCD_SRC} )
+-target_link_libraries( lsyncd ${LUA_LIBRARIES} )
++target_link_libraries( lsyncd ${LUA_LIBRARIES} /usr/local/lib/libinotify.so )
+ 
+-install( TARGETS lsyncd RUNTIME DESTINATION bin )
+-install( FILES doc/manpage/lsyncd.1 DESTINATION man )
++install( TARGETS lsyncd RUNTIME DESTINATION sbin )
++install( FILES doc/manpage/lsyncd.1 DESTINATION man/man1 )
+ 

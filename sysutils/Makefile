@@ -626,6 +626,7 @@
     SUBDIR += lscpu
     SUBDIR += lsof
     SUBDIR += lsop
+    SUBDIR += lsyncd
     SUBDIR += ltrace
     SUBDIR += lttng-tools
     SUBDIR += lttng-ust
