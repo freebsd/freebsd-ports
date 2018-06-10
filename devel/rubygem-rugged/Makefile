@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	libgit2>=${PORTVERSION:R}:devel/libgit2
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
-		libgmp.so:math/gmp \
-		libunwind.so:devel/libunwind
+		libgmp.so:math/gmp
 
 CONFIGURE_ARGS=	--use-system-libraries
 USE_RUBY=	yes

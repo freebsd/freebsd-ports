@@ -14,8 +14,7 @@ COMMENT=	Gems for character encoding detection
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libicui18n.so:devel/icu \
-		libunwind.so:devel/libunwind
+LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USES=		gem
 USE_RUBY=	yes
