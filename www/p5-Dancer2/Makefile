@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.205002
+PORTVERSION=	0.206000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny \
 		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \
 		p5-Config-Any>=0:devel/p5-Config-Any \
+		p5-File-Share>=0:devel/p5-File-Share \
 		p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		p5-Hash-Merge-Simple>=0:devel/p5-Hash-Merge-Simple \
 		p5-HTTP-Body>=0:www/p5-HTTP-Body \
@@ -29,7 +30,7 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Moo>=2.000000:devel/p5-Moo \
-		p5-Plack>=1.0035:www/p5-Plack \
+		p5-Plack>=1.0040:www/p5-Plack \
 		p5-Plack-Middleware-FixMissingBodyInRedirect>=0:www/p5-Plack-Middleware-FixMissingBodyInRedirect \
 		p5-Plack-Middleware-RemoveRedundantBody>=0:www/p5-Plack-Middleware-RemoveRedundantBody \
 		p5-Ref-Util>=0:devel/p5-Ref-Util \
@@ -49,6 +50,7 @@ TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-LWP-Protocol-PSGI>=0.06:www/p5-LWP-Protocol-PSGI \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
+		p5-Test-CPAN-Meta>=0:devel/p5-Test-CPAN-Meta \
 		p5-Test-EOL>=0:devel/p5-Test-EOL \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
