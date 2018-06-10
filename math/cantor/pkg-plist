@@ -1,5 +1,6 @@
 bin/cantor
 bin/cantor_python3server
+bin/cantor_scripteditor
 %%R%%bin/cantor_rserver
 etc/xdg/cantor.knsrc
 etc/xdg/cantor_kalgebra.knsrc

@@ -108,6 +108,7 @@ lib/liboscar.so
 lib/liboscar.so.1
 lib/liboscar.so.1.0.0
 lib/libqgroupwise.so
+%%QT_PLUGINDIR%%/accessible/chatwindowaccessiblewidgetfactory.so
 %%QT_PLUGINDIR%%/chattexteditpart.so
 %%QT_PLUGINDIR%%/kcm_kopete_accountconfig.so
 %%QT_PLUGINDIR%%/kcm_kopete_addbookmarks.so
@@ -147,7 +148,6 @@ lib/libqgroupwise.so
 %%QT_PLUGINDIR%%/kopete_webpresence.so
 %%QT_PLUGINDIR%%/kopete_wp.so
 %%QT_PLUGINDIR%%/kopete_yahoo.so
-%%QT_PLUGINDIR%%/plugins/accessible/chatwindowaccessiblewidgetfactory.so
 share/applications/org.kde.kopete.desktop
 share/config.kcfg/historyconfig.kcfg
 share/config.kcfg/kopete_otr.kcfg
@@ -250,6 +250,7 @@ share/kconf_update/kopete-update_icq_ssl.pl
 share/kconf_update/kopete-update_icq_ssl.upd
 share/kconf_update/kopete-update_yahoo_server.pl
 share/kconf_update/kopete-update_yahoo_server.upd
+share/knotifications5/kopete.notifyrc
 %%DATADIR%%/CompactContactListLayouts.xml
 %%DATADIR%%/DefaultContactListLayouts.xml
 %%DATADIR%%/icons/hicolor/128x128/apps/bonjour_protocol.png
@@ -391,7 +392,6 @@ share/kconf_update/kopete-update_yahoo_server.upd
 %%DATADIR%%/icons/oxygen/32x32/app/yahoo_protocol.png
 %%DATADIR%%/icons/oxygen/48x48/app/yahoo_protocol.png
 %%DATADIR%%/icons/oxygen/64x64/app/yahoo_protocol.png
-%%DATADIR%%/kopete.notifyrc
 %%DATADIR%%/styles/Clean/Contents/Resources/Footer.html
 %%DATADIR%%/styles/Clean/Contents/Resources/Header.html
 %%DATADIR%%/styles/Clean/Contents/Resources/Incoming/Content.html

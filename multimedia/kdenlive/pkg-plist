@@ -333,6 +333,7 @@ share/locale/gl/LC_MESSAGES/kdenlive.mo
 share/locale/he/LC_MESSAGES/kdenlive.mo
 share/locale/hr/LC_MESSAGES/kdenlive.mo
 share/locale/hu/LC_MESSAGES/kdenlive.mo
+share/locale/id/LC_MESSAGES/kdenlive.mo
 share/locale/it/LC_MESSAGES/kdenlive.mo
 share/locale/ja/LC_MESSAGES/kdenlive.mo
 share/locale/lt/LC_MESSAGES/kdenlive.mo
@@ -354,5 +355,5 @@ share/locale/uk/LC_MESSAGES/kdenlive.mo
 share/locale/zh_CN/LC_MESSAGES/kdenlive.mo
 share/locale/zh_TW/LC_MESSAGES/kdenlive.mo
 share/metainfo/org.kde.kdenlive.appdata.xml
-share/mime/packages/kdenlive.xml
+share/mime/packages/org.kde.kdenlive.xml
 share/mime/packages/westley.xml
