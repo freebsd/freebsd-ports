@@ -3,7 +3,7 @@
 
 PORTNAME=	jackit
 PORTVERSION=	0.125.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -11,6 +11,8 @@ COMMENT=	Low latency audio server
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+
+BROKEN_powerpc64=	fails to build: Unrecognized opcode: 'sldi'
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libsamplerate.so:audio/libsamplerate \
