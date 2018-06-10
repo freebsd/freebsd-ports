@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack
-PORTVERSION=	1.0039
-PORTREVISION=	1
+PORTVERSION=	1.0047
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -15,13 +14,14 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Apache-LogFormat-Compiler>=0.12:www/p5-Apache-LogFormat-Compiler \
-	p5-Cookie-Baker>=0.05:www/p5-Cookie-Baker \
+	p5-Apache-LogFormat-Compiler>=0.33:www/p5-Apache-LogFormat-Compiler \
+	p5-Cookie-Baker>=0.07:www/p5-Cookie-Baker \
 	p5-Devel-StackTrace>=1.23:devel/p5-Devel-StackTrace \
 	p5-Devel-StackTrace-AsHTML>=0.11:devel/p5-Devel-StackTrace-AsHTML \
 	p5-File-ShareDir>=1.00:devel/p5-File-ShareDir \
 	p5-Filesys-Notify-Simple>0:devel/p5-Filesys-Notify-Simple \
 	p5-HTTP-Body>=1.06:www/p5-HTTP-Body \
+	p5-HTTP-Entity-Parser>=0.17:www/p5-HTTP-Entity-Parser \
 	p5-HTTP-Headers-Fast>=0.18:www/p5-HTTP-Headers-Fast \
 	p5-Hash-MultiValue>=0.05:devel/p5-Hash-MultiValue \
 	p5-Path-Class>0:devel/p5-Path-Class \
@@ -46,7 +46,7 @@ TEST_DEPENDS=	\
 	p5-Module-Refresh>0:devel/p5-Module-Refresh \
 	p5-Stream-Buffered>=0.02:devel/p5-Stream-Buffered \
 	p5-Test-Requires>0:devel/p5-Test-Requires \
-	p5-Test-TCP>=2.00:devel/p5-Test-TCP
+	p5-Test-TCP>=2.15:devel/p5-Test-TCP
 
 USES=	perl5
 USE_PERL5=	configure
