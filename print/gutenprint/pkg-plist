@@ -36,7 +36,7 @@ lib/gutenprint/5.2/modules/print-ps.so
 lib/gutenprint/5.2/modules/print-raw.so
 lib/libgutenprint.so
 lib/libgutenprint.so.2
-lib/libgutenprint.so.2.6.0
+lib/libgutenprint.so.2.7.0
 libdata/pkgconfig/gutenprint.pc
 libexec/cups/backend/gutenprint52+usb
 libexec/cups/driver/gutenprint.5.2
@@ -47,7 +47,6 @@ man/man1/escputil.1.gz
 man/man8/cups-calibrate.8.gz
 man/man8/cups-genppd.8.gz
 man/man8/cups-genppdupdate.8.gz
-sbin/cups-genppd
 sbin/cups-genppd.5.2
 sbin/cups-genppdupdate
 share/cups/calibrate.ppm
@@ -202,6 +201,8 @@ share/cups/usb/net.sf.gimp-print.usb-quirks
 %%DATADIR%%/5.2/xml/escp2/model/model_127.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_128.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_129.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_130.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_131.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_13.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_14.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_15.xml
