@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	idna
-PORTVERSION=	5.0.2
+PORTVERSION=	5.1.2
 CATEGORIES=	dns
 PKGNAMEPREFIX=	erlang-
 
@@ -10,12 +10,12 @@ COMMENT=	IDNA implementation in pure Erlang
 
 LICENSE=	MIT
 
-USES=		erlang:rebar
+USES=		erlang:rebar3
 USE_GITHUB=	yes
 GH_ACCOUNT=	benoitc
 GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
 
-ERL_BUILD_DEPS= devel/erlang-unicode_util_compat
-ERL_RUN_DEPS:=  ${ERL_BUILD_DEPS}
+ERL_BUILD_DEPS=	devel/erlang-unicode_util_compat
+ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
 .include <bsd.port.mk>
