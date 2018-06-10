@@ -1,0 +1,35 @@
+--- Makefile.in.orig	2018-05-15 19:33:24 UTC
++++ Makefile.in
+@@ -82,12 +82,11 @@ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libsrtp2.pc
+ 
+ SHAREDLIBVERSION = 1
+-ifneq (,$(or $(findstring linux,@host@), $(findstring gnu,@host@)))
+ SHAREDLIB_DIR = $(libdir)
+ SHAREDLIB_LDFLAGS = -shared -Wl,-soname,$@
+ SHAREDLIBSUFFIXNOVER = so
+ SHAREDLIBSUFFIX = $(SHAREDLIBSUFFIXNOVER).$(SHAREDLIBVERSION)
+-else ifneq (,$(or $(findstring cygwin,@host@), $(findstring mingw,@host@)))
++ifneq (,$(or $(findstring cygwin,@host@), $(findstring mingw,@host@)))
+ SHAREDLIB_DIR = $(bindir)
+ SHAREDLIB_LDFLAGS = -shared -Wl,--out-implib,libsrtp2.dll.a
+ SHAREDLIBVERSION =
+@@ -106,6 +105,9 @@ endif
+ %.o: %.c
+ 	$(COMPILE) -c $< -o $@
+ 
++%.So: %.c
++	$(COMPILE) -DPIC -fPIC -c $< -o $@
++
+ %$(EXE): %.c
+ 	$(COMPILE) $(LDFLAGS) $< -o $@ $(SRTPLIB) $(LIBS)
+ 
+@@ -137,7 +139,7 @@ libsrtp2.a: $(srtpobj) $(cryptobj) $(gdoi)
+ 	$(AR) cr libsrtp2.a $^
+ 	$(RANLIB) libsrtp2.a
+ 
+-libsrtp2.$(SHAREDLIBSUFFIX): $(srtpobj) $(cryptobj) $(gdoi)
++libsrtp2.$(SHAREDLIBSUFFIX): $(srtpobj:.o=.So) $(cryptobj:.o=.So) $(gdoi:.o=.So)
+ 	$(CC) -shared -o $@ $(SHAREDLIB_LDFLAGS) \
+ 				$^ $(LDFLAGS) $(LIBS)
+ 	if [ -n "$(SHAREDLIBVERSION)" ]; then \
