@@ -31,6 +31,8 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
+PORTSCOUT=	limit:[0-9]\..* # not v.220 and similar
+
 USES=		cmake:outsource compiler:c++11-lang jpeg pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
