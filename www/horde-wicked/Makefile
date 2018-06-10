@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS+=	${PEARDIR}/Text/Wiki.php:www/pear-Text_Wiki@${PHP_FLAVOR}
 
-USES=	horde cpe php
+USES=		horde cpe php
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
