@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Cookie-Baker
-PORTVERSION=	0.05
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,12 +12,12 @@ COMMENT=	Perl extension for cookie string generator/parser
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	\
-	p5-URI>0:net/p5-URI
+RUN_DEPENDS=	p5-URI>0:net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Time>=0:devel/p5-Test-Time
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 NO_ARCH=	YES
 
 .include <bsd.port.mk>
