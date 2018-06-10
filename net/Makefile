@@ -423,6 +423,7 @@
     SUBDIR += libsignal
     SUBDIR += libsocket++
     SUBDIR += libsrtp
+    SUBDIR += libsrtp2
     SUBDIR += libstorj
     SUBDIR += libtnl
     SUBDIR += libtrace
