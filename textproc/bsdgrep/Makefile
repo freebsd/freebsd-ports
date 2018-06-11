@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/kevans
 PKGNAMEPREFIX=	bsd-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	BSD-licensed version of grep
 
 LICENSE=	BSD2CLAUSE
