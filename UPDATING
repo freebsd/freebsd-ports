@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180611:
+  AFFECTS: users of PHP based applications
+  AUTHOR: mat@FreeBSD.org
+
+  Flavors are being added to PHP applications.  When a port is flavorized, pkg
+  needs to be told about the name change, for example, if PHP 5.6 is the one
+  you need:
+
+  # pkg set -n php-composer:php56-composer
+  # pkg set -n squirrelmail:squirrelmail-php56
+
+  Most port will have packages for all PHP versions present in the ports tree,
+  but some may not be compatible with a specific version.
+
+  To get the available flavors, pkg rquery can be used:
+
+  # pkg rquery %n mail/squirrelmail
+  squirrelmail-php56
+  squirrelmail-php70
+  squirrelmail-php71
+  squirrelmail-php72
+
 20180602:
   AFFECTS: users of net/frr
   AUTHOR: olivier@FreeBSD.org
