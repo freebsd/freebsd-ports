@@ -1,7 +1,0 @@
-The Clipper library primarily performs boolean clipping (intersection,
-union, difference and xor) on polygons in 2D space. There are no
-restrictions on either the number nor the type of polygon that can be
-clipped. They can have holes, be self-intersecting and even have coincident
-edges. The library also performs polygon offsetting
-
-WWW: http://www.angusj.com/delphi/clipper.php
