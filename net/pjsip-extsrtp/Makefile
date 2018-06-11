@@ -2,7 +2,7 @@
 
 PKGNAMESUFFIX=	-extsrtp
 
-CONFLICTS=	pjsip-[0-9]*
+CONFLICTS=	pjsip
 
 OPTIONS_SLAVE=	EXTSRTP
 MASTERDIR=	${.CURDIR}/../pjsip

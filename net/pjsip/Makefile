@@ -2,7 +2,7 @@
 
 PORTNAME=	pjsip
 PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-CONFLICTS?=	pjsip-extsrtp-[0-9]*
+CONFLICTS?=	pjsip-extsrtp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
@@ -53,8 +53,8 @@ AMR_LIB_DEPENDS=		libopencore-amrwb.so:audio/opencore-amr \
 DEBUG_CFLAGS=			-DNDEBUG=0
 DEBUG_CFLAGS_OFF=		-DNDEBUG=1
 EXTSRTP_CONFIGURE_WITH=		external-srtp
-EXTSRTP_CONFLICTS_OFF=		libsrtp-[0-9]*
-EXTSRTP_LIB_DEPENDS=		libsrtp.so:net/libsrtp
+EXTSRTP_CONFLICTS_OFF=		libsrtp libsrtp2
+EXTSRTP_LIB_DEPENDS=		libsrtp2.so:net/libsrtp2
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg
 FFMPEG_LIB_DEPENDS=		libswresample.so:multimedia/ffmpeg
 G711_CONFIGURE_ENABLE=		g711-codec
