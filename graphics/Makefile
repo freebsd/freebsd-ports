@@ -934,6 +934,7 @@
     SUBDIR += py-pygooglechart
     SUBDIR += py-pygraphviz
     SUBDIR += py-pyproj
+    SUBDIR += py-pyqtgraph
     SUBDIR += py-qt4-svg
     SUBDIR += py-qt5-svg
     SUBDIR += py-sane
