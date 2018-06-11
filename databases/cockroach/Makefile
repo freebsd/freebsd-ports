@@ -2,7 +2,7 @@
 
 PORTNAME=	cockroach
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.5
+DISTVERSION=	2.0.2
 CATEGORIES=	databases
 MASTER_SITES=	https://binaries.cockroachdb.com/
 EXTRACT_SUFX=	.src.tgz
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	autoconf:devel/autoconf \
 		cmake:devel/cmake \
 		go:lang/go
 
-USES=		gmake
+USES=		gmake libedit
 
 USE_RC_SUBR=	cockroach
 
@@ -33,12 +33,13 @@ USERS=		cockroach
 GROUPS=		cockroach
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-DCMAKE_CXX_FLAGS=-DNDEBUG)|-DCMAKE_CXX_FLAGS=-DNDEBUG) -DFAIL_ON_WARNINGS=OFF|g' \
-		${WRKSRC}/src/github.com/cockroachdb/cockroach/build/common.mk
+	@${REINPLACE_CMD} -e 's|LDFLAGS: -ledit|LDFLAGS: -L${LOCALBASE}/lib -ledit|g' \
+			  -e 's|CPPFLAGS: -Ishim|CPPFLAGS: -I${LOCALBASE}/include -Ishim|g' \
+		${WRKSRC}/src/github.com/cockroachdb/cockroach/vendor/github.com/knz/go-libedit/unix/editline_unix.go
 
 do-build:
 	@${SETENV} -i PATH="${PATH}" \
-		${MAKE_CMD} -C ${WRKSRC} buildoss GOVERS=.*
+		${MAKE_CMD} -C ${WRKSRC} buildoss
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/cockroachdb/cockroach/cockroach ${STAGEDIR}${PREFIX}/bin/
