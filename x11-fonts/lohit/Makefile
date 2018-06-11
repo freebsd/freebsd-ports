@@ -7,7 +7,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	https://releases.pagure.org/lohit/
 DISTNAME=	lohit-ttf-${PORTVERSION}
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lohit fonts
 
 LICENSE=	OFL11

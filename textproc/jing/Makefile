@@ -5,7 +5,7 @@ PORTNAME=	jing
 PORTVERSION=	2015.11.27
 CATEGORIES=	textproc java
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RELAX NG validator in Java
 
 LICENSE=	BSD3CLAUSE

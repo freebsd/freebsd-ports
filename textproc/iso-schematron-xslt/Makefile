@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.schematron.com/tmp/
 DISTFILES=	iso-schematron-xslt1.zip \
 		iso-schematron-xslt2.zip
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Leading Implementation of ISO Schematron
 
 USES=		zip:infozip

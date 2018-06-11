@@ -5,7 +5,7 @@ PORTNAME=	trang
 PORTVERSION=	2015.11.27
 CATEGORIES=	textproc java
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-format schema converter based on RELAX NG
 
 LICENSE=	BSD3CLAUSE

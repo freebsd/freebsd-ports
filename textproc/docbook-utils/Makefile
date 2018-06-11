@@ -7,7 +7,7 @@ PORTREVISION=	13
 CATEGORIES=	textproc
 MASTER_SITES=	SOURCEWARE/docbook-tools/new-trials/SOURCES
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
 
 BUILD_DEPENDS+=	docbook-sgml>0:textproc/docbook-sgml \
