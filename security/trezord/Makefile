@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	trezord
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	2.0.14
 CATEGORIES=	security
-MASTER_SITES=	LOCAL/ale
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	TREZOR Communication Daemon aka TREZOR Bridge
@@ -13,30 +11,16 @@ COMMENT=	TREZOR Communication Daemon aka TREZOR Bridge
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	protoc:devel/protobuf \
-		boost-libs>=0:devel/boost-libs
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libjsoncpp.so:devel/jsoncpp \
-		libmicrohttpd.so:www/libmicrohttpd
-
-USES=		cmake compiler:c++11-lang pkgconfig
-
+USES=		go
 USE_RC_SUBR=	${PORTNAME}
+USE_GITHUB=	yes
+GH_ACCOUNT=	trezor
+GH_PROJECT=	${PORTNAME}-go
+GH_TAGNAME=	v${PORTVERSION}
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
-CMAKE_ARGS+=	-DJSONCPP_INCLUDE_DIR:STRING="${LOCALBASE}/include/jsoncpp" \
-		-DJSONCPP_LIBRARY:STRING="-L${LOCALBASE}/lib -ljsoncpp"
+PATCH_STRIP=	-p1
 
-PLIST_FILES=	sbin/${PORTNAME}
-
-post-extract:
-	${CP} ${FILESDIR}/usb.hpp ${WRKSRC}/src/
-	${CP} ${FILESDIR}/config.proto ${WRKSRC}/src/config/
-
-pre-build:
-	cd ${WRKSRC}/src/config && ${LOCALBASE}/bin/protoc \
-		-I${LOCALBASE}/include -I. --cpp_out=. config.proto
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/sbin/
+PLIST_FILES=	bin/${GH_PROJECT}
 
 .include <bsd.port.mk>

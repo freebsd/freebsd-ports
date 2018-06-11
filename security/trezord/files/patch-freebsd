@@ -1,0 +1,242 @@
+diff --git a/trezord.go b/trezord.go
+index e1b7261..75b14bb 100644
+--- a/trezord.go
++++ b/trezord.go
+@@ -6,6 +6,7 @@ import (
+ 	"io"
+ 	"log"
+ 	"os"
++	"runtime"
+ 	"strconv"
+ 
+ 	"github.com/trezor/trezord-go/memorywriter"
+@@ -82,7 +83,11 @@ func main() {
+ 		if err != nil {
+ 			stderrLogger.Fatalf("hidapi: %s", err)
+ 		}
+-		bus = append(bus, w, h)
++		if runtime.GOOS != "freebsd" {
++			bus = append(bus, w, h)
++		} else {
++			bus = append(bus, w)
++		}
+ 	}
+ 
+ 	longMemoryWriter.Println(fmt.Sprintf("UDP port count - %d", len(ports)))
+diff --git a/usb/webusb.go b/usb/webusb.go
+index ee9c8d3..017fbf2 100644
+--- a/usb/webusb.go
++++ b/usb/webusb.go
+@@ -3,6 +3,7 @@ package usb
+ import (
+ 	"encoding/hex"
+ 	"fmt"
++	"runtime"
+ 	"strings"
+ 	"sync"
+ 	"sync/atomic"
+@@ -188,7 +189,7 @@ func (b *WebUSB) match(dev usbhid.Device) bool {
+ 	}
+ 	return (c.BNumInterfaces > webIfaceNum &&
+ 		c.Interface[webIfaceNum].Num_altsetting > webAltSetting &&
+-		c.Interface[webIfaceNum].Altsetting[webAltSetting].BInterfaceClass == usbhid.CLASS_VENDOR_SPEC)
++		(c.Interface[webIfaceNum].Altsetting[webAltSetting].BInterfaceClass == usbhid.CLASS_VENDOR_SPEC || runtime.GOOS == "freebsd"))
+ }
+ 
+ func (b *WebUSB) matchVidPid(vid uint16, pid uint16) bool {
+@@ -198,13 +199,19 @@ func (b *WebUSB) matchVidPid(vid uint16, pid uint16) bool {
+ }
+ 
+ func (b *WebUSB) identify(dev usbhid.Device) string {
+-	var ports [8]byte
+-	p, err := usbhid.Get_Port_Numbers(dev, ports[:])
+-	if err != nil {
+-		b.mw.Println(fmt.Sprintf("webusb - identify - error getting port numbers %s", err.Error()))
+-		return ""
++	if runtime.GOOS != "freebsd" {
++		var ports [8]byte
++		p, err := usbhid.Get_Port_Numbers(dev, ports[:])
++		if err != nil {
++			b.mw.Println(fmt.Sprintf("webusb - identify - error getting port numbers %s", err.Error()))
++			return ""
++		}
++		return webusbPrefix + hex.EncodeToString(p)
++	} else {
++		bn := usbhid.Get_Bus_Number(dev)
++		da := usbhid.Get_Device_Address(dev)
++		return fmt.Sprintf("%s%02x%02x", webusbPrefix, bn, da)
+ 	}
+-	return webusbPrefix + hex.EncodeToString(p)
+ }
+ 
+ type WUD struct {
+@@ -251,6 +258,12 @@ func (d *WUD) finishReadQueue() {
+ }
+ 
+ func (d *WUD) readWrite(buf []byte, endpoint uint8) (int, error) {
++	var timeout uint
++	if runtime.GOOS != "freebsd" {
++		timeout = usbTimeout
++	} else {
++		timeout = 0
++	}
+ 	d.mw.Println("webusb - rw - start")
+ 	for {
+ 		d.mw.Println("webusb - rw - checking closed")
+@@ -263,7 +276,7 @@ func (d *WUD) readWrite(buf []byte, endpoint uint8) (int, error) {
+ 		d.mw.Println("webusb - rw - lock transfer mutex")
+ 		d.transferMutex.Lock()
+ 		d.mw.Println("webusb - rw - actual interrupt transport")
+-		p, err := usbhid.Interrupt_Transfer(d.dev, endpoint, buf, usbTimeout)
++		p, err := usbhid.Interrupt_Transfer(d.dev, endpoint, buf, timeout)
+ 		d.transferMutex.Unlock()
+ 		d.mw.Println("webusb - rw - single transfer done")
+ 
+diff --git a/vendor/github.com/trezor/usbhid/hid.go b/vendor/github.com/trezor/usbhid/hid.go
+index 114c1fe..4052529 100644
+--- a/vendor/github.com/trezor/usbhid/hid.go
++++ b/vendor/github.com/trezor/usbhid/hid.go
+@@ -6,7 +6,7 @@
+ 
+ // Package hid provides an interface for USB HID devices.
+ 
+-// +build linux,cgo darwin,!ios,cgo windows,cgo
++// +build linux,cgo freebsd,cgo darwin,!ios,cgo windows,cgo
+ 
+ package usbhid
+ 
+@@ -15,6 +15,8 @@ package usbhid
+ 
+ #cgo linux CFLAGS: -DDEFAULT_VISIBILITY="" -DOS_LINUX -D_GNU_SOURCE -DPOLL_NFDS_TYPE=int
+ #cgo linux,!android LDFLAGS: -lrt
++#cgo freebsd CFLAGS: -DOS_FREEBSD
++#cgo freebsd LDFLAGS: -lusb
+ #cgo darwin CFLAGS: -DOS_DARWIN -DDEFAULT_VISIBILITY="" -DPOLL_NFDS_TYPE="unsigned int"
+ #cgo darwin LDFLAGS: -framework CoreFoundation -framework IOKit -lobjc
+ #cgo windows CFLAGS: -DOS_WINDOWS -DDEFAULT_VISIBILITY="" -DPOLL_NFDS_TYPE="unsigned int"
+@@ -25,6 +27,8 @@ package usbhid
+ 	#include <sys/poll.h>
+ 
+ 	#include "os/threads_posix.c"
++#elif OS_FREEBSD
++	#include <stdlib.h>
+ #elif OS_DARWIN
+ 	#include <pthread.h>
+ 	#include <sys/poll.h>
+@@ -38,17 +42,21 @@ package usbhid
+ 	#include <oledlg.h>
+ #endif
+ 
+-#include "libusbi.h"
+-#include "libusb.h"
+-#include "version.h"
+-#include "version_nano.h"
+-#include "core.c"
+-#include "descriptor.c"
+-#include "hotplug.h"
+-#include "hotplug.c"
+-#include "io.c"
+-#include "strerror.c"
+-#include "sync.c"
++#ifndef OS_FREEBSD
++	#include "libusbi.h"
++	#include "libusb.h"
++	#include "version.h"
++	#include "version_nano.h"
++	#include "core.c"
++	#include "descriptor.c"
++	#include "hotplug.h"
++	#include "hotplug.c"
++	#include "io.c"
++	#include "strerror.c"
++	#include "sync.c"
++#else
++	#include <libusb.h>
++#endif
+ 
+ #ifdef OS_LINUX
+ 	#include "os/poll_posix.h"
+@@ -74,6 +82,8 @@ package usbhid
+ 
+ #ifdef OS_LINUX
+ 	#include "linux/hid.c"
++#elif OS_FREEBSD
++	#include "linux/hid.c"
+ #elif OS_DARWIN
+ 	#include "mac/hid.c"
+ #elif OS_WINDOWS
+diff --git a/vendor/github.com/trezor/usbhid/libusb.go b/vendor/github.com/trezor/usbhid/libusb.go
+index 13a2a66..b443102 100644
+--- a/vendor/github.com/trezor/usbhid/libusb.go
++++ b/vendor/github.com/trezor/usbhid/libusb.go
+@@ -12,9 +12,15 @@ Copyright (c) 2017 Jason T. Harris
+ package usbhid
+ 
+ /*
+-// +build linux,cgo darwin,!ios,cgo windows,cgo
++// +build linux,cgo freebsd,cgo darwin,!ios,cgo windows,cgo
+ 
++#cgo freebsd LDFLAGS: -lusb
++
++#ifndef __FreeBSD__
+ #include "./c/libusb/libusb.h"
++#else
++#include <libusb.h>
++#endif
+ 
+ // When a C struct ends with a zero-sized field, but the struct itself is not zero-sized,
+ // Go code can no longer refer to the zero-sized field. Any such references will have to be rewritten.
+@@ -921,9 +927,11 @@ func Get_Port_Numbers(dev Device, ports []byte) ([]byte, error) {
+ 	return ports[:rc], nil
+ }
+ 
++/*
+ func Get_Parent(dev Device) Device {
+ 	return C.libusb_get_parent(dev)
+ }
++*/
+ 
+ func Get_Device_Address(dev Device) uint8 {
+ 	return uint8(C.libusb_get_device_address(dev))
+@@ -1066,10 +1074,12 @@ func Set_Auto_Detach_Kernel_Driver(hdl Device_Handle, enable bool) error {
+ //-----------------------------------------------------------------------------
+ // Miscellaneous
+ 
++/*
+ func Has_Capability(capability uint32) bool {
+ 	rc := int(C.libusb_has_capability((C.uint32_t)(capability)))
+ 	return rc != 0
+ }
++*/
+ 
+ func Error_Name(code int) string {
+ 	return C.GoString(C.libusb_error_name(C.int(code)))
+@@ -1084,6 +1094,7 @@ func CPU_To_LE16(x uint16) uint16 {
+ 	return uint16(C.libusb_cpu_to_le16((C.uint16_t)(x)))
+ }
+ 
++/*
+ func Setlocale(locale string) error {
+ 	cstr := C.CString(locale)
+ 	rc := int(C.libusb_setlocale(cstr))
+@@ -1092,6 +1103,7 @@ func Setlocale(locale string) error {
+ 	}
+ 	return nil
+ }
++*/
+ 
+ func Strerror(errcode int) string {
+ 	return C.GoString(C.libusb_strerror(int32(errcode)))
+diff --git a/vendor/github.com/trezor/usbhid/wchar.go b/vendor/github.com/trezor/usbhid/wchar.go
+index 16941d1..e955fdd 100644
+--- a/vendor/github.com/trezor/usbhid/wchar.go
++++ b/vendor/github.com/trezor/usbhid/wchar.go
+@@ -7,7 +7,7 @@
+ // https://github.com/orofarne/gowchar/blob/master/LICENSE
+ 
+ // +build !ios
+-// +build linux darwin windows
++// +build linux freebsd darwin windows
+ 
+ package usbhid
+ 

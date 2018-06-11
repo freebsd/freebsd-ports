@@ -1,4 +1,4 @@
 trezord (short for TREZOR Daemon), or TREZOR Bridge, is a small piece of
 software, used for websites, to talk with TREZOR devices.
 
-WWW: https://github.com/trezor/trezord
+WWW: https://github.com/trezor/trezord-go
