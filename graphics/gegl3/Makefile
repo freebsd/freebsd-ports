@@ -19,8 +19,8 @@ LIB_DEPENDS=	libbabl-0.1.so:x11/babl \
 		libjson-glib-1.0.so:devel/json-glib \
 		libpng.so:graphics/png
 
-USES=		cpe gettext gmake jpeg libtool localbase pathfix pkgconfig \
-		shebangfix uniquefiles tar:bzip2
+USES=		cpe gettext gmake jpeg libtool localbase \
+		pathfix pkgconfig shebangfix uniquefiles tar:bzip2
 USE_GNOME=	glib20 intltool introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

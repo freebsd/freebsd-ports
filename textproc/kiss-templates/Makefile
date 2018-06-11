@@ -12,8 +12,7 @@ COMMENT=		Type safe "Keep it simple, stupid" text templates for C++
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to compile: No known features for CXX compiler GNU
-
+USES=			cmake compiler:c++11-lang
 USE_GITHUB=		yes
 GH_ACCOUNT=		rbock
 
@@ -25,8 +24,6 @@ PLIST_FILES=		bin/kiste2cpp \
 			include/kiste/raw_type.h \
 			include/kiste/serializer_builder.h \
 			include/kiste/terminal.h
-
-USES=			cmake
 
 OPTIONS_DEFINE=		TEST
 TEST_DESC=		Build with unit tests

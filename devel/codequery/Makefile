@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE.md
 LICENSE_FILE_MIT=	${WRKSRC}/querylib/README.txt
 
-USES=		cmake ninja sqlite
+USES=		cmake compiler:c++11-lang ninja sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ruben2020

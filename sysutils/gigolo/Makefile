@@ -12,6 +12,9 @@ COMMENT=	Frontend to easily manage filesystem connections
 
 LICENSE=	GPLv2
 
+ONLY_FOR_ARCHS=		amd64 i386 powerpc64
+ONLY_FOR_ARCHS_REASON=	Does not compile
+
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		gmake fuse pkgconfig gettext-tools xfce tar:bzip2
@@ -26,9 +29,6 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext-runtime
-
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	Does not compile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^DOCFILES.*|DOCFILES =|' \
