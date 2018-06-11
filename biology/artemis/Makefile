@@ -2,34 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	artemis
-PORTVERSION=	9
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	17.0.1-11
+DISTVERSIONSUFFIX=	-g3e43d27e
 CATEGORIES=	biology java
-MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v${PORTVERSION}/
-DISTNAME=	artemis_compiled_v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DNA sequence viewer and annotation tool
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		shebangfix
-SHEBANG_FILES=	etc/go_associations.pl
-perl_OLD_CMD=	/usr/local/bin/perl5.6.1
+RUN_DEPENDS=	bash:shells/bash
+
+USES=		gmake shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	sanger-pathogens
+SHEBANG_FILES=	act art bamview dnaplotter test/*.sh etc/go_associations.pl
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
+ALL_TARGET=	jar
 NO_ARCH=	yes
 
-NO_BUILD=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 post-extract:
-	@${FIND} ${WRKSRC} -type d -name CVS -exec ${RM} -r {} +
+	@cd ${WRKDIR} && ${MV} Artemis-${DISTVERSION}${DISTVERSIONSUFFIX} ${PORTNAME}-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION}
-	@${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION} -xpf-
-	@${LN} -s ../${PORTNAME}-${PORTVERSION}/art ${STAGEDIR}${PREFIX}/bin/art
-	@${LN} -s ../${PORTNAME}-${PORTVERSION}/act ${STAGEDIR}${PREFIX}/bin/act
+.for f in jar_build lib etc images artemis_sqlmap
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION}
+.endfor
+	@cd ${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION} && ${MV} jar_build jars
+.for f in art act bamview dnaplotter
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION}/${f}
+	@${REINPLACE_CMD} -i '' -e 's|APPLICATION_HOME=.*|&/jars|' ${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION}/${f}
+	@(${ECHO} "#!/bin/sh"; ${ECHO} ""; ${ECHO} "cd ${PREFIX}/${PORTNAME}-${PORTVERSION} && ./${f}") > ${STAGEDIR}${PREFIX}/bin/${f}
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
 
 .include <bsd.port.mk>
