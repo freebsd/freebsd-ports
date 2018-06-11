@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libsixel
-PORTVERSION=	1.7.2
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.8.1
 PORTEPOCH=	1
 CATEGORIES=	graphics
+MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Encoder/decoder library for DEC SIXEL graphics
@@ -13,11 +12,8 @@ COMMENT=	Encoder/decoder library for DEC SIXEL graphics
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	saitoha
-
-USE_LDCONFIG=	yes
 USES=		libtool pkgconfig
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
@@ -26,8 +22,7 @@ INSTALL_TARGET=	install-strip
 
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	CURL GD JPEG PIXBUF PNG PYTHON
-OPTIONS_DEFAULT=
+OPTIONS_DEFINE=	CURL DOCS GD JPEG PIXBUF PNG PYTHON
 OPTIONS_SUB=	yes
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
@@ -53,7 +48,7 @@ PYTHON_USES=		python
 PYTHON_USE=		python=py3kplist
 PYTHON_CONFIGURE_ENABLE=	python
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
