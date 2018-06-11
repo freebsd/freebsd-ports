@@ -14,8 +14,8 @@ DISTFILES=	SDL2-CS.dll:SDL2_CS \
 		OpenAL-CS.dll:OpenAL_CS \
 		OpenAL-CS.dll.config:OpenAL_CS \
 		Eluant.dll:Eluant \
-		GeoLite2-Country.mmdb.gz:GeoLite2
-EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.config:N*.dll:N*.mmdb*:N*.nupkg}
+		GeoLite2-Country_20180605${EXTRACT_SUFX}:GeoLite2
+EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.config:N*.dll:N*.nupkg}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios
@@ -59,7 +59,9 @@ TEST_ALL_TARGET=test
 
 post-extract:
 	${CP} ${DISTFILES:C/:.*//:N*.nupkg:N*.tar*:S,^,${_DISTDIR}/,} \
+		${WRKDIR}/GeoLite2-Country*/GeoLite2-Country.mmdb \
 		${NUGET_PACKAGEDIR}
+	${GZIP_CMD} ${NUGET_PACKAGEDIR}/GeoLite2-Country.mmdb
 
 post-patch:
 	${REINPLACE_CMD} \
