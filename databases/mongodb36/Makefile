@@ -3,6 +3,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	3.6.5
+PORTREVSION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/ \
@@ -43,8 +44,6 @@ MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--runtime-hardening=on \
 		--disable-warnings-as-errors \
 		VERBOSE=on
-
-WITH_DEBUG=	yes
 
 USERS=		mongodb
 GROUPS=		mongodb

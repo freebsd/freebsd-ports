@@ -3,7 +3,7 @@
 PORTNAME=	mongodb
 PORTVERSION=	3.4.6
 DISTVERSIONPREFIX=	r
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/ \
@@ -51,7 +51,6 @@ CONFLICTS_INSTALL=	mongodb \
 			mongodb32 \
 			mongodb34
 
-WITH_DEBUG=yes
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--use-system-pcre --use-system-snappy \
 		--use-system-boost --use-system-zlib \
