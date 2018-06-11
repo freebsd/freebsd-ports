@@ -1,6 +1,6 @@
---- scripts/bootstrap/buildenv.sh.orig	2017-11-11 22:06:52.302048000 +0000
+--- scripts/bootstrap/buildenv.sh.orig	1979-12-31 23:00:00 UTC
 +++ scripts/bootstrap/buildenv.sh
-@@ -215,7 +215,7 @@
+@@ -215,7 +215,7 @@ function clear_log() {
    rm -f ${phasefile}
  }
  
