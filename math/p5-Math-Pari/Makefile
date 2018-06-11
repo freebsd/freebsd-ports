@@ -14,6 +14,9 @@ DISTFILES=	${DISTNAME}.zip \
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		perl5
