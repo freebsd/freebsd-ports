@@ -11,15 +11,15 @@ COMMENT=	FIO - flexible IO tester
 
 LICENSE=	GPLv2
 
+BROKEN_armv6=		Fails to compile: unsupported ARM architecture
+BROKEN_armv7=		Fails to compile: unsupported ARM architecture
+
 USES=		gmake tar:bzip2
 
 OPTIONS_DEFINE=	GNUPLOT EXAMPLES
 GNUPLOT_DESC=	Support for plotting graphs
 
 GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot
-
-BROKEN_aarch64=		Fails to compile: undefined symbol: getauxval
-BROKEN_armv6=		Fails to compile: unsupported ARM architecture
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fio ${STAGEDIR}${PREFIX}/bin
