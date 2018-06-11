@@ -3,12 +3,11 @@
 
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.1
-PORTREVISION=	0
+DISTVERSION=	0.31.1
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@skyforge.at
 COMMENT=	Matrix protocol reference homeserver
 
 LICENSE=	APACHE20
@@ -35,7 +34,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema@${FLAV
 		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.0.2:security/py-pysaml2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymacaroons-pynacl>=0.9.3:security/py-pymacaroons-pynacl@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.3.0:devel/py-msgpack@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}phonenumbers>=8.2.0:devel/py-phonenumbers@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}phonenumbers>=8.2.0:devel/py-phonenumbers@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.2.0:net-mgmt/py-prometheus-client@${FLAVOR}
 
 # Conditional requirements that aren't so conditional
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>=0.6.6:devel/py-matrix-angular-sdk@${FLAVOR} \
