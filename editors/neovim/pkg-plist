@@ -37,6 +37,7 @@ share/nvim/runtime/autoload/context.vim
 share/nvim/runtime/autoload/contextcomplete.vim
 share/nvim/runtime/autoload/csscomplete.vim
 share/nvim/runtime/autoload/decada.vim
+share/nvim/runtime/autoload/dist/ft.vim
 share/nvim/runtime/autoload/gnat.vim
 share/nvim/runtime/autoload/gzip.vim
 share/nvim/runtime/autoload/health.vim
@@ -178,6 +179,7 @@ share/nvim/runtime/doc/api.txt
 share/nvim/runtime/doc/arabic.txt
 share/nvim/runtime/doc/autocmd.txt
 share/nvim/runtime/doc/change.txt
+share/nvim/runtime/doc/channel.txt
 share/nvim/runtime/doc/cmdline.txt
 share/nvim/runtime/doc/debug.txt
 share/nvim/runtime/doc/deprecated.txt
@@ -699,6 +701,7 @@ share/nvim/runtime/keymap/ukrainian-jcuken.vim
 share/nvim/runtime/keymap/vietnamese-telex_utf-8.vim
 share/nvim/runtime/keymap/vietnamese-viqr_utf-8.vim
 share/nvim/runtime/keymap/vietnamese-vni_utf-8.vim
+share/nvim/runtime/lua/man.lua
 share/nvim/runtime/macmap.vim
 share/nvim/runtime/macros/editexisting.vim
 share/nvim/runtime/macros/justify.vim
@@ -720,7 +723,6 @@ share/nvim/runtime/pack/dist/opt/vimball/autoload/vimball.vim
 share/nvim/runtime/pack/dist/opt/vimball/doc/tags
 share/nvim/runtime/pack/dist/opt/vimball/doc/vimball.txt
 share/nvim/runtime/pack/dist/opt/vimball/plugin/vimballPlugin.vim
-share/nvim/runtime/plugin/gui_shim.vim
 share/nvim/runtime/plugin/gzip.vim
 share/nvim/runtime/plugin/health.vim
 share/nvim/runtime/plugin/man.vim
@@ -768,6 +770,7 @@ share/nvim/runtime/print/mac-roman.ps
 share/nvim/runtime/print/prolog.ps
 share/nvim/runtime/rgb.txt
 share/nvim/runtime/scripts.vim
+share/nvim/runtime/spell/en.utf-8.spl
 share/nvim/runtime/synmenu.vim
 share/nvim/runtime/syntax/2html.vim
 share/nvim/runtime/syntax/a2ps.vim
@@ -1368,5 +1371,7 @@ share/nvim/runtime/syntax/z8a.vim
 share/nvim/runtime/syntax/zimbu.vim
 share/nvim/runtime/syntax/zsh.vim
 share/nvim/runtime/tutor/en/vim-01-beginner.tutor
+share/nvim/runtime/tutor/en/vim-01-beginner.tutor.json
 share/nvim/runtime/tutor/tutor.tutor
+share/nvim/runtime/tutor/tutor.tutor.json
 share/pixmaps/nvim.png
