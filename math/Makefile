@@ -152,7 +152,6 @@
     SUBDIR += clblas
     SUBDIR += clblast
     SUBDIR += clfft
-    SUBDIR += clipper
     SUBDIR += cln
     SUBDIR += cloog
     SUBDIR += clp
