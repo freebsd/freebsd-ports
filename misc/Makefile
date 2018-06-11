@@ -305,6 +305,7 @@
     SUBDIR += openhab2-addons
     SUBDIR += openmvg
     SUBDIR += openr2
+    SUBDIR += orange3
     SUBDIR += orville-write
     SUBDIR += osinfo-db
     SUBDIR += ossp-uuid
