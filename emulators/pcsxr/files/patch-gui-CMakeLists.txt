@@ -1,0 +1,23 @@
+--- gui/CMakeLists.txt.orig	2018-06-07 22:06:27.348220000 +0200
++++ gui/CMakeLists.txt	2018-06-07 22:08:23.025836000 +0200
+@@ -17,6 +17,11 @@
+ include_directories(${GTK3_INCLUDE_DIRS})
+ set(GTK_LIBRARIES ${GTK3_LIBRARY} ${GDK3_LIBRARY} ${GDKPixbuf_LIBRARY} ${Pango_LIBRARY} ${Cairo_LIBRARY} ${GObject_LIBRARY} ${GLib_LIBRARY} ${GIO_LIBRARY})
+ 
++find_package (Intl REQUIRED)
++if(NOT Intl_FOUND)
++    message(FATAL_ERROR "Intl library not found")
++endif(NOT Intl_FOUND)
++
+ find_package(Threads REQUIRED)
+ find_package(ZLIB REQUIRED)
+ include_directories(${ZLIB_INCLUDE_DIRS})
+@@ -89,7 +94,7 @@
+ add_custom_target(resource DEPENDS ${RESOURCE_FILE})
+ add_executable(pcsxr ${SRCS} ${RESOURCE_FILE} )
+ add_dependencies(pcsxr resource)
+-target_link_libraries(pcsxr pcsxcore ${GTK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARIES} ${RT_LIB} ${DL_LIB} ${X11_XTest_LIB})
++target_link_libraries(pcsxr pcsxcore ${GTK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARIES} ${RT_LIB} ${DL_LIB} ${X11_XTest_LIB} ${Intl_LIBRARIES})
+ 
+ install(TARGETS pcsxr RUNTIME DESTINATION bin)
+ install(FILES data/pcsxr.desktop DESTINATION share/applications)

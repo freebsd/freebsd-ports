@@ -1,0 +1,16 @@
+--- gui/po/CMakeLists.txt.orig	2018-06-08 22:12:44.486045000 +0200
++++ gui/po/CMakeLists.txt	2018-06-08 22:14:13.363502000 +0200
+@@ -1,6 +1,9 @@
+-message("Configuring langs")
+-include(Gettext)
++option(DISABLE_NLS_TRANSLATIONS "Disable building additional NLS translations" OFF)
++if(NOT DISABLE_NLS_TRANSLATIONS)
++	message("Configuring langs")
++	include(Gettext)
+ 
+-#find_package(LibArchive REQUIRED)
++	#find_package(LibArchive REQUIRED)
+ 
+-GETTEXT_CREATE_TRANSLATIONS(pcsxr.pot ALL es fr hu it ko_KR pt_BR ru zh_CN zh_TW)
++	GETTEXT_CREATE_TRANSLATIONS(pcsxr.pot ALL es fr hu it ko_KR pt_BR ru zh_CN zh_TW)
++endif()

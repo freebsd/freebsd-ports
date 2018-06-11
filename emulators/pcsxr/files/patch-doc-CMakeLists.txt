@@ -1,0 +1,19 @@
+Disable doc installation (handled by the port's Makefile)
+
+--- doc/CMakeLists.txt.orig	2017-02-18 22:40:07.000000000 +0100
++++ doc/CMakeLists.txt	2018-06-08 22:33:26.240772000 +0200
+@@ -1,8 +1,8 @@
+-install(FILES pcsxr.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
+-install(FILES keys.txt DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
+-install(FILES tweaks.txt DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
++install(FILES pcsxr.1 DESTINATION ${MANPREFIX}/man/man1)
++#install(FILES keys.txt DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
++#install(FILES tweaks.txt DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
+ 
+-install(FILES ../AUTHORS DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
+-install(FILES ../COPYING DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
+-install(FILES ../README DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
++#install(FILES ../AUTHORS DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
++#install(FILES ../COPYING DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
++#install(FILES ../README DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)
+ 

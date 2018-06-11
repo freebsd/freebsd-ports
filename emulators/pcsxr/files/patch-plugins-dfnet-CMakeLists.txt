@@ -1,0 +1,23 @@
+--- plugins/dfnet/CMakeLists.txt.orig	2017-02-18 22:40:07.000000000 +0100
++++ plugins/dfnet/CMakeLists.txt	2018-06-07 22:34:06.729573000 +0200
+@@ -17,6 +17,11 @@
+ include_directories(${GTK3_INCLUDE_DIRS})
+ set(GTK_LIBRARIES ${GTK3_LIBRARY} ${GDK3_LIBRARY} ${GDKPixbuf_LIBRARY} ${Pango_LIBRARY} ${Cairo_LIBRARY} ${GObject_LIBRARY} ${GLib_LIBRARY} ${GIO_LIBRARY})
+ 
++find_package (Intl REQUIRED)
++if(NOT Intl_FOUND)
++    message(FATAL_ERROR "Intl library not found")
++endif(NOT Intl_FOUND)
++include_directories(${Intl_INCLUDE_DIRS})
+ 
+ #defs
+ add_definitions(-DLOCALE_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/locale/" -DPSEMU_DATA_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/psemu" -DDEF_PLUGIN_DIR="${CMAKE_INSTALL_FULL_LIBDIR}/games/psemu")
+@@ -54,7 +59,7 @@
+ 
+ add_executable(cfgDFNet ${GUI_SRCS} ${RESOURCE_FILE})
+ add_dependencies(cfgDFNet dfnet_resource)
+-target_link_libraries(cfgDFNet ${GTK_LIBRARIES})
++target_link_libraries(cfgDFNet ${GTK_LIBRARIES} ${Intl_LIBRARIES})
+ 
+ install(TARGETS DFNet LIBRARY DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/games/psemu)
+ install(TARGETS cfgDFNet RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/games/psemu)

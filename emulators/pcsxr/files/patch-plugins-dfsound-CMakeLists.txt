@@ -1,0 +1,23 @@
+--- plugins/dfsound/CMakeLists.txt.orig	2017-02-18 22:40:07.000000000 +0100
++++ plugins/dfsound/CMakeLists.txt	2018-06-07 22:32:10.505879000 +0200
+@@ -20,6 +20,11 @@
+ include_directories(${GTK3_INCLUDE_DIRS})
+ set(GTK_LIBRARIES ${GTK3_LIBRARY} ${GDK3_LIBRARY} ${GDKPixbuf_LIBRARY} ${Pango_LIBRARY} ${Cairo_LIBRARY} ${GObject_LIBRARY} ${GLib_LIBRARY} ${GIO_LIBRARY})
+ 
++find_package (Intl REQUIRED)
++if(NOT Intl_FOUND)
++    message(FATAL_ERROR "Intl library not found")
++endif(NOT Intl_FOUND)
++include_directories(${Intl_INCLUDE_DIRS})
+ 
+ if (${SND_BACKEND} STREQUAL "oss")
+   find_package(OSS REQUIRED)
+@@ -129,7 +134,7 @@
+ 
+ add_executable(cfgDFSound ${GUI_SRCS} ${RESOURCE_FILE})
+ add_dependencies(cfgDFSound dfsound_resource)
+-target_link_libraries(cfgDFSound ${GTK_LIBRARIES})
++target_link_libraries(cfgDFSound ${GTK_LIBRARIES} ${Intl_LIBRARIES})
+ 
+ install(TARGETS DFSound LIBRARY DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/games/psemu)
+ install(TARGETS cfgDFSound RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/games/psemu)
