@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/gabor
 PKGNAMEPREFIX=	bsd-
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD-licensed version of diff from OpenBSD
 
 USES=		uidfix

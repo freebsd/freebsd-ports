@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 CATEGORIES=	archivers
 MASTER_SITES=	SUNSITE/utils/compress
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from the old '.arc' archive format
 
 PLIST_FILES=	bin/nomarch man/man1/nomarch.1.gz

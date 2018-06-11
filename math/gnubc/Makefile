@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU bc/dc calculator
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ DISTVERSION=	1.0b1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xmlschema/${DISTVERSION}/
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook W3C XML Schema
 
 USES=		zip

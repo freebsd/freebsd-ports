@@ -6,7 +6,7 @@ PORTVERSION=	0.23
 CATEGORIES=	archivers
 MASTER_SITES=	http://lacos.web.elte.hu/pub/lbzip2/
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded bzip2/bunzip2 filter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
