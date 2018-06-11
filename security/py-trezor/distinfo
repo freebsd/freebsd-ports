@@ -1,3 +1,5 @@
-TIMESTAMP = 1520325351
-SHA256 (trezor-python-trezor-v0.9.1_GH0.tar.gz) = 032510e74dbff956a5160e5a20067e61b20ade824cce5fccd300bdbdf04b8de6
-SIZE (trezor-python-trezor-v0.9.1_GH0.tar.gz) = 211046
+TIMESTAMP = 1528705638
+SHA256 (trezor-python-trezor-v0.10.0_GH0.tar.gz) = 0b1c59c39a2806ef7f04d7239d5ff222b33464218142bc6ae304da9a0cbc6dce
+SIZE (trezor-python-trezor-v0.10.0_GH0.tar.gz) = 253756
+SHA256 (trezor-trezor-common-7be980a_GH0.tar.gz) = 531108165901acae820db4282e0b0a28c087a7cbeac5c833d8f00087dc64a6cc
+SIZE (trezor-trezor-common-7be980a_GH0.tar.gz) = 294090
