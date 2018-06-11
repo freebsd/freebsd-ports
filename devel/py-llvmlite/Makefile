@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvmlite
-DISTVERSION=	0.22.0
-PORTREVISION=	2
+DISTVERSION=	0.23.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,15 +17,14 @@ BROKEN_powerpc64=	fails to compile: clang++: not found
 
 BUILD_DEPENDS=	${PY_ENUM34}
 RUN_DEPENDS=	${PY_ENUM34}
-LIB_DEPENDS=	libLLVM-5.0.so:devel/llvm50
+LIB_DEPENDS=	libLLVM-6.0.so:devel/llvm60
 
 # Python 2.7,3.4+
 USES=		python fortran
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	concurrent distutils autoplist
 
-# llvmlite requires devel/llvm50
-LLVM_VER=	50
-
+# devel/llvm60 required as of version 0.23.0
+LLVM_VER=	60
 MAKE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER}
 
 post-patch:
