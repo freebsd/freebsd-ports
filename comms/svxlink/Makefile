@@ -22,11 +22,11 @@ LIB_DEPENDS?=	libgsm.so:audio/gsm \
 BUILD_DEPENDS=	pkg-config:devel/pkgconf \
 		${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat
 
+USES=		cmake compiler:c++11-lang tcl groff
 USE_GITHUB=	yes
 GH_ACCOUNT=	sm0svx
 GH_PROJECT=	svxlink
 
-USES=		cmake tcl groff
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DMAN_INSTALL_DIR:FILEPATH=${MANDIRS} \
 		-DLOCAL_STATE_DIR=/var

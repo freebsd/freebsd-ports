@@ -6,7 +6,7 @@ PORTREVISION=	0
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-3.0.pc:x11-toolkits/gtkmm30 \
 		glibmm-reference>=0:devel/glibmm-reference
 
-USES=		gmake pkgconfig
+USES=		compiler:c++11-lang gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/gtkmm-3.0

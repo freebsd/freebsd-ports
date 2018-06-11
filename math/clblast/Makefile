@@ -19,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	CNugteren
 GH_PROJECT=	CLBlast
 
-USE_LDCONFIG=	yes
 USES=		cmake
+USE_GCC=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libLLVM-${LLVM_VERSION:C/([1-9])([0-9])/\1.\2/}.so:devel/llvm${LLVM_VERSION}
 
-USES=		gmake ncurses python pkgconfig shebangfix
+USES=		compiler:c++11-lang gmake ncurses python pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	grame-cncm:faustlibraries:f889fe1:libs/libraries \

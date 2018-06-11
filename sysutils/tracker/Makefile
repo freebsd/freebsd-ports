@@ -25,8 +25,9 @@ RUN_DEPENDS=	xdg-desktop-icon:devel/xdg-utils \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome libarchive libtool \
-		pathfix pkgconfig python:run shebangfix sqlite tar:xz
+USES=		compiler:c++11-lib desktop-file-utils gettext gmake gnome \
+		libarchive libtool pathfix pkgconfig python:run shebangfix \
+		sqlite tar:xz
 USE_GNOME=	gtk30 intltool introspection:build libxslt:build
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes

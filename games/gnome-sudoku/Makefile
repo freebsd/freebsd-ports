@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome localbase pathfix \
+USES=		compiler:c++11-lang gettext gmake gnome localbase pathfix \
 		pkgconfig python:3.3+ shebangfix tar:xz
 USE_GNOME=	cairo gtk30 intlhack libxml2:build pygobject3
 INSTALLS_ICONS=	yes

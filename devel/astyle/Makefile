@@ -13,7 +13,7 @@ COMMENT=	Source code indenter and formatter for C, C++, C\#, and Java
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/astyle/LICENSE.md
 
-USES=		compiler dos2unix gmake
+USES=		compiler:c++11-lang dos2unix gmake
 
 ALL_TARGET=	astyle
 DOS2UNIX_GLOB=	*.ini

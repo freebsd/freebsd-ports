@@ -15,11 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools gmake libtool \
+		localbase pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	cairo gtk20 intltool
-USES=		desktop-file-utils gettext-tools gmake libtool \
-		localbase pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

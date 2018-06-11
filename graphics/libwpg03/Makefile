@@ -17,7 +17,7 @@ LICENSE_FILE_MPL20=	${WRKSRC}/COPYING.MPL
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge \
 		libwpd-0.10.so:textproc/libwpd010
 
-USES=		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
+USES=		compiler:c++11-lang libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/src/conv/svg/wpg2svgbatch.pl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

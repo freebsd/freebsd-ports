@@ -16,7 +16,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-runtime gmake localbase pkgconfig
+USES=		compiler:c++11-lang gettext-runtime gmake localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_PROJECT=	GxPlugins.lv2

@@ -15,9 +15,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libbabl-0.1.so:x11/babl
-
 BROKEN_aarch64=		fails to build: gmake index.html: Segmentation fault in docs/gallery/
+
+LIB_DEPENDS=	libbabl-0.1.so:x11/babl
 
 # ignore new versions until we can replace this version with gegl 3.x
 PORTSCOUT=	ignore:1
@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	--without-vala --disable-docs
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl -lm
 
 GEGL_MINOR=	199
 GEGL_VER=	0.2

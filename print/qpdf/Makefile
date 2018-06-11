@@ -3,6 +3,7 @@
 
 PORTNAME=	qpdf
 DISTVERSION=	8.0.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -14,7 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART20=	${WRKSRC}/Artistic-2.0
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.txt
 
-USES=		gmake jpeg libtool localbase
+USES=		compiler:c++11-lang gmake jpeg libtool localbase
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 USE_LDCONFIG=	yes
