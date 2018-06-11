@@ -199,6 +199,7 @@
     SUBDIR += plib
     SUBDIR += pure-gtk
     SUBDIR += pure-tk
+    SUBDIR += py-AnyQt
     SUBDIR += py-Pmw
     SUBDIR += py-SquareMap
     SUBDIR += py-fltk
