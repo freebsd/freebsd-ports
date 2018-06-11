@@ -59,9 +59,9 @@ TEST_ALL_TARGET=test
 
 post-extract:
 	${CP} ${DISTFILES:C/:.*//:N*.nupkg:N*.tar*:S,^,${_DISTDIR}/,} \
-		${WRKDIR}/GeoLite2-Country*/GeoLite2-Country.mmdb \
+		${WRKDIR}/GeoLite2-*/*.mmdb \
 		${NUGET_PACKAGEDIR}
-	${GZIP_CMD} ${NUGET_PACKAGEDIR}/GeoLite2-Country.mmdb
+	${GZIP_CMD} ${NUGET_PACKAGEDIR}/*.mmdb
 
 post-patch:
 	${REINPLACE_CMD} \
