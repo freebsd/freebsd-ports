@@ -44,7 +44,6 @@ you update your ports collection, before attempting any port upgrades.
   needs to be told about the name change, for example, if PHP 5.6 is the one
   you need:
 
-  # pkg set -n php-composer:php56-composer
   # pkg set -n squirrelmail:squirrelmail-php56
 
   Most port will have packages for all PHP versions present in the ports tree,
