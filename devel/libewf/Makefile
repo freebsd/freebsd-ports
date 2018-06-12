@@ -3,6 +3,7 @@
 
 PORTNAME=	libewf
 PORTVERSION=	20140803
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libewf-legacy/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -13,18 +14,16 @@ COMMENT=	Library for support of the Expert Witness Compression Format (EWF)
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	field has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
-
 LIB_DEPENDS=	libsmdev.so:devel/libsmdev \
 		libsmraw.so:devel/libsmraw \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		fuse libtool pathfix pkgconfig python:2.7 ssl
+USES=		fuse libtool pathfix pkgconfig python:2.7
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libsmdev=${LOCALBASE} --with-libsmraw=${LOCALBASE} --with-libuuid=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-python --with-libsmdev=${LOCALBASE} --with-libsmraw=${LOCALBASE} \
+		--with-libuuid=${LOCALBASE} --with-openssl=no
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NLS
