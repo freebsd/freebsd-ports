@@ -2,26 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	scummvm-tools
-DISTVERSION=	1.8.0
-PORTREVISION=	8
+PORTVERSION=	2.0.0
 CATEGORIES=	games emulators
-MASTER_SITES=	SF/scummvm/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	http://www.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Tools for use with the SCUMMVM game emulator
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS=	lame:audio/lame \
 		flac:audio/flac \
 		oggenc:audio/vorbis-tools
-
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng.so:graphics/png \
-		libvorbis.so:audio/libvorbis
+		libmad.so:audio/libmad \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libfreetype.so:print/freetype2
 
-USES=		gmake tar:bzip2
+USES=		gmake iconv tar:bzip2
 GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=
@@ -30,7 +32,16 @@ STRIP_FILES=	construct_mohawk create_sjisfnt decine decompile degob \
 		dekyra deriven descumm desword2 extract_mohawk gob_loadcalc \
 		scummvm-tools-cli
 
-OPTIONS_DEFINE=	WXGTK DOCS
+DESKTOP_ENTRIES="ScummVM Tools" \
+		"" \
+		"${DATADIR}/scummvmtools_128.png" \
+		"${PORTNAME}" \
+		"Games;" \
+		false
+
+PORTDOCS=	COPYRIGHT NEWS README TODO
+
+OPTIONS_DEFINE=		WXGTK DOCS
 OPTIONS_DEFAULT=	WXGTK
 
 .include <bsd.port.pre.mk>
@@ -54,8 +65,8 @@ pre-patch:
 pre-install:
 	${STRIP_CMD} ${STRIP_FILES:S|^|${WRKSRC}/|}
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

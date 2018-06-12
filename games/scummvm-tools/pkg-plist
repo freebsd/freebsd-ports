@@ -11,7 +11,6 @@ bin/extract_mohawk
 bin/gob_loadcalc
 %%WX%%bin/scummvm-tools
 bin/scummvm-tools-cli
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/detaillogo.jpg
 %%DATADIR%%/logo.jpg
 %%DATADIR%%/scummvmtools.icns
