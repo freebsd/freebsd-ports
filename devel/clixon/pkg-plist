@@ -20,7 +20,7 @@ lib/libclixon_restconf.so.3.6
 lib/xmldb/text.so
 sbin/clixon_backend
 sbin/clixon_restconf
-%%DATADIR%%/clixon-config@2018-02-12.yang
+%%DATADIR%%/clixon-config@2018-04-30.yang
 %%DATADIR%%/clixon.mk
 %%DATADIR%%/ietf-inet-types@2013-07-15.yang
 %%DATADIR%%/ietf-netconf-acm@2018-02-14.yang
