@@ -105,7 +105,7 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1829757
+SVNREVISION=	1833124
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -237,9 +237,6 @@ CONFIGURE_ARGS+=	--without-commons-logging
 
 .if ${COMPILER_TYPE} == clang
 CPPFLAGS+=		-I${LOCALBASE}/include
-. if ${COMPILER_VERSION} >= 40 && ${ARCH} == amd64
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-align16
-. endif
 .endif
 
 .if ${ARCH} == amd64
@@ -462,7 +459,6 @@ do-install:
 			${LN} -f ${EXECBASE} ${EXECBASE}-$${i} ; \
 	done
 	@${ECHO_CMD} "adding desktop support"
-	@${LN} -sf ${XDGREL} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
 	@cd ${WRKSRC} ;						\
 	    . ${FREEBSD_ENV_SET} ;				\
 	    cd sysui/$${INPATH}/misc/openoffice ;		\
@@ -476,6 +472,10 @@ do-install:
 		${SH} ${CREATE_TREE} ;				\
 	    ${INSTALL_DATA} apacheopenoffice.xml		\
 		${STAGEDIR}/${PREFIX}/share/mime/packages
+	@cd ${STAGEDIR}${DESKTOPDIR}; for i in base calc draw impress \
+		javafilter math printeradmin qstart startcenter writer ; do \
+			${LN} -sf ${XDGREL}/$${i}.desktop ${EXECBASE}-$${i}.desktop ; \
+	done
 
 do-install-SDK-on:
 	${TAR} -s '|./[^/]*/||' -xz -C ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
