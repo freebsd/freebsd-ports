@@ -3,8 +3,9 @@
 PORTNAME=	wx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-PKGNAMESUFFIX=	31-gtk2
+PKGNAMESUFFIX=	31-gtk3
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GUI toolkit (wxWidgets) with GTK+ bindings
@@ -29,7 +30,7 @@ GH_PROJECT=	wxWidgets
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 sm xxf86vm xtst
 USE_GL=		gl glu
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
 CONFIGURE_ARGS=	--with-libpng=sys \
@@ -38,7 +39,7 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-zlib=sys \
 		--with-expat=sys \
 		--with-opengl \
-		--with-gtk \
+		--with-gtk=3 \
 		--without-gnomevfs \
 		--disable-epollloop \
 		--disable-joystick \
@@ -66,7 +67,7 @@ MSPACK_CONFIGURE_WITH=		libmspack
 MSPACK_LIB_DEPENDS=		libmspack.so:archivers/libmspack
 
 WEBKIT_CONFIGURE_ENABLE=	webview
-WEBKIT_LIB_DEPENDS=		libwebkitgtk-1.0.so:www/webkit-gtk2
+WEBKIT_LIB_DEPENDS=		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 .include <bsd.port.pre.mk>
 
@@ -77,5 +78,8 @@ CONFIGURE_ARGS+=--disable-precomp-headers
 
 post-build-NLS-on:
 	@${DO_MAKE_BUILD} allmo -C ${BUILD_WRKSRC}/locale
+
+post-install-NLS-on: # stray file: https://trac.wxwidgets.org/ticket/18147
+	@${RM} ${STAGEDIR}${PREFIX}/share/locale/it/LC_MESSAGES/wxmsw.mo
 
 .include <bsd.port.post.mk>
