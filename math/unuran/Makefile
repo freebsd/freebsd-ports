@@ -16,12 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	librngstreams.so:math/rngstreams
 
-USES=		gmake libtool
+USES=		gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-urng-rngstream --with-urng-default=rngstream \
 		--enable-info
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	MAKE="${MAKE_CMD}"
 
 USE_LDCONFIG=	yes
@@ -43,7 +41,7 @@ post-install-DOCS-on:
 .ifdef(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--enable-check-struct --enable-logging
 
-check regression-test test: build
+do-test:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check)
 
 fullcheck: build
