@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codeblocks
-PORTVERSION=	17.07
-PORTREVISION=	2
+PORTVERSION=	18.04
 CATEGORIES=	devel
 MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 		${MASTER_SITE_LOCAL}
@@ -29,14 +28,14 @@ USE_GNOME=	gtk20 cairo
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all \
-		--disable-pch
+		--disable-pch --with-boost-system=boost_system
 PKG_CONFIG_LIBDIR=	${LOCALBASE}/libdata/pkgconfig
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 FETCH_DEPENDS+=	svn:devel/subversion
-SVN_REV=	11112
+SVN_REV=	11386
 SVNROOT_URI=	svn://svn.code.sf.net/p/codeblocks/code/trunk
 
 .include <bsd.port.pre.mk>
