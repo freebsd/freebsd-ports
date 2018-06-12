@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180612:
+  AFFECTS: users of packages that depend on Emacs
+  AUTHOR: jrm@FreeBSD.org
+
+  With the release of Emacs version 26.1, the major version of editors/emacs
+  changed from 25 to 26, so the names of packages that depend on Emacs have also
+  changed.  For example, pdf-tools-emacs25-0.80.79_1 is now called
+  pdf-tools-emacs26-0.80.79_1.  The name change means simply running `pkg
+  upgrade` will not upgrade foo-emacs25-x to foo-emacs26-x.
+
+  To list the packages to upgrade, use
+
+  # pkg info \*emacs25\*
+
+  then install the new version for each with
+
+  # pkg install foo-emacs26
+
+  pkg should remove the old and install the new packages.
+
 20180611:
   AFFECTS: users of PHP based applications
   AUTHOR: mat@FreeBSD.org
