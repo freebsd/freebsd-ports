@@ -5,7 +5,7 @@
  #include <openssl/pem.h>
  
 -#if OPENSSL_VERSION_NUMBER >= 0x10100000L
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(OPENSSL_VERSION_NUMBER)
++#if defined(OPENSSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER >= 0x10100000L 
  #include <openssl/asn1t.h>
  #else
  #include <openssl/asn1_mac.h>
