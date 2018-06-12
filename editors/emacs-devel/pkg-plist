@@ -4,9 +4,8 @@ bin/emacs
 bin/emacs-%%EMACS_VER%%
 bin/emacsclient
 bin/etags
-%%DBUS%%lib/systemd/user/emacs.service
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/hexl
-%%NO_MAILUTILS%%libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
+libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/profile
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/rcs2log
 @(games,games,4555) libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/update-game-score
@@ -3352,6 +3351,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/executable.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/f90.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/f90.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake-cc.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake-cc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake-proc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake-proc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake.el.gz
@@ -3893,9 +3894,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.elc
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
-%%DATADIR%%/%%EMACS_VER%%/src/json.c
-%%DATADIR%%/%%EMACS_VER%%/src/ptr-bounds.h
-%%DATADIR%%/%%EMACS_VER%%/src/w32cygwinx.c
+%%DATADIR%%/site-lisp/subdirs.el
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/alloc.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/atimer.c
@@ -3984,6 +3983,7 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/insdel.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/intervals.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/intervals.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/json.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keyboard.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keyboard.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keymap.c
@@ -4011,6 +4011,7 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/profiler.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ptr-bounds.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/puresize.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ralloc.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/regex.c
@@ -4061,6 +4062,7 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32common.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32console.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32cygwinx.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32fns.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32font.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32font.h
@@ -4102,7 +4104,6 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xterm.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xwidget.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xwidget.h
-%%DATADIR%%/site-lisp/subdirs.el
 share/icons/hicolor/128x128/apps/emacs.png
 share/icons/hicolor/16x16/apps/emacs.png
 share/icons/hicolor/24x24/apps/emacs.png
