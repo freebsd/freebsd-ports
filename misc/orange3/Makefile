@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	orange3
-DISTVERSION=	3.12.0
+DISTVERSION=	3.13.0-120
+DISTVERSIONSUFFIX=	-g459044ba
 CATEGORIES=	misc python
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	192388c3c04bff3a79a418e106f37c97330c5c37.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Component-based data mining software
@@ -21,6 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}joblib>=0.9.4:devel/py-joblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyrings.alt>0:security/py-keyrings.alt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyqtgraph>=0.10.0:graphics/py-pyqtgraph@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.18.1:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.16.1:science/py-scipy@${PY_FLAVOR} \
@@ -37,5 +36,6 @@ CFLAGS+=	-DQSORT_R_STYLE_BSD=yes
 
 post-install: # https://github.com/biolab/orange3/issues/3060
 	@${REINPLACE_CMD} -e 's|^"${PREFIX}/|| ; s|"$$||' ${_PYTHONPKGLIST}
+	@${REINPLACE_CMD} -e 's|import sys|& ; from OpenGL import GL|' ${STAGEDIR}${PREFIX}/bin/orange-canvas # https://github.com/biolab/orange3/issues/3062
 
 .include <bsd.port.mk>
