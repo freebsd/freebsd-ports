@@ -18,6 +18,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build linguist_build
 
 CONFIGURE_ARGS+=	--disable-alsa --enable-oss \
@@ -25,12 +26,12 @@ CONFIGURE_ARGS+=	--disable-alsa --enable-oss \
 			--enable-jack-default-midi \
 			--disable-version-check
 
-BROKEN_aarch64=		Does not build: error: unknown FP unit 'sse'
-BROKEN_armv6=		Does not build: error: unknown FP unit 'sse'
-BROKEN_armv7=		Does not build: error: unknown FP unit 'sse'
-BROKEN_mips64=		Does not build: error: unknown FP unit 'sse'
-BROKEN_powerpc64=	Does not build: error: unknown FP unit 'sse'
-
 PORTDATA=	*
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-march=core2 -msse -msse2 -mfpmath=sse||; s|-O3||' \
+		${WRKSRC}/libbristol/Makefile.in
+	@${REINPLACE_CMD} -e 's|-msse -mfpmath=sse||; s|-O2||' \
+		${WRKSRC}/bristol/Makefile.in
 
 .include <bsd.port.mk>
