@@ -7,6 +7,7 @@ bin/obenergy
 bin/obfit
 bin/obgen
 bin/obgrep
+%%GUI%%bin/obgui
 bin/obminimize
 bin/obprobe
 bin/obprop
