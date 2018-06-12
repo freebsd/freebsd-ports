@@ -1,5 +1,3 @@
-TIMESTAMP = 1525624959
-SHA256 (hairyhenderson-gomplate-v2.5.0_GH0.tar.gz) = c0d885281327c209fe5460a35555bdb60f4eb132e733e5d8537693d016b0cf43
-SIZE (hairyhenderson-gomplate-v2.5.0_GH0.tar.gz) = 3884996
-SHA256 (spf13-cobra-c439c4fa_GH0.tar.gz) = 6ac84ca2528ac4a1e5e0947fe7c84b0cfba5bef1a0ec62d3c4e7ba80f344ddc5
-SIZE (spf13-cobra-c439c4fa_GH0.tar.gz) = 100782
+TIMESTAMP = 1528575929
+SHA256 (hairyhenderson-gomplate-v2.6.0_GH0.tar.gz) = 6376e1eb1cf0eb9d452181361e69c99a6e28604cd986a1b3580cc7e58aa7c578
+SIZE (hairyhenderson-gomplate-v2.6.0_GH0.tar.gz) = 4208683
