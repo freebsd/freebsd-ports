@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20180612:
+  AFFECTS: users of the nox flavor of editors/emacs-devel
+  AUTHOR: jrm@FreeBSD.org
+
+  The package name for the nox flavor of editors/emacs-devel changed from
+  emacs-devel_nox to emacs-devel-nox.  To install the new package, run
+
+  # pkg install emacs-devel-nox
+
+  pkg should remove the old and install the new package.
+
+20180612:
   AFFECTS: users of packages that depend on Emacs
   AUTHOR: jrm@FreeBSD.org
 
