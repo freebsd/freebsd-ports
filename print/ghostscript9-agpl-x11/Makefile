@@ -1,59 +1,56 @@
 # $FreeBSD$
 
 PORTNAME=	ghostscript
-PORTVERSION=	9.16
-PORTREVISION=	2
+PORTVERSION=	9.23
 CATEGORIES=	print
-MASTER_SITES=	http://downloads.ghostscript.com/public/ \
-		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}/
+MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//}/
 PKGNAMESUFFIX=	9-agpl-x11
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	doceng@FreeBSD.org
-COMMENT=	Ghostscript 9.x PostScript interpreter, X11 support
+COMMENT=	PostScript and PDF interpreter, X11 support
 
 LICENSE=	AGPLv3
 
 CONFLICTS_INSTALL= \
-		gambc-[0-9]* \
 		ghostscript[789]-[0-9]* \
 		ghostscript[789]-nox11-[0-9]* \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USES=		autoreconf ghostscript:agpl gmake tar:bzip2
+PATCHDIR=	${.CURDIR:H}/ghostscript9-agpl-base/files
+USES=		ghostscript:agpl gmake iconv localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xt
-EXTRACT_AFTER_ARGS=	${EXCLUDE_DIRS:S/^/--exclude /}
 GNU_CONFIGURE=	yes
-MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
-		XLDFLAGS="${XLDFLAGS}"
-CONFIGURE_ENV=	${MAKE_ENV}
 CONFIGURE_ARGS=	--disable-compile-inits \
-		--disable-contrib \
+		--disable-cups \
+		--disable-dbus \
+		--disable-gtk \
+		--enable-contrib \
 		--enable-dynamic \
-		--disable-freetype \
-		--disable-fontconfig \
-		--without-libiconv \
-		--without-system-libtiff \
-		--without-ijs \
-		--without-libidn \
-		--without-libpaper \
+		--enable-fontconfig \
+		--enable-freetype \
+		--enable-openjpeg \
+		--enable-threadsafe \
+		--with-drivers=ALL \
+		--with-fontpath=${LOCALBASE}/share/fonts \
+		--with-jbig2dec \
+		--with-libiconv=maybe \
+		--with-libidn \
+		--with-libpaper \
+		--with-system-libtiff \
 		--with-x \
-		--x-includes=${LOCALBASE}/include \
-		--x-libraries=${LOCALBASE}/lib \
-		--with-drivers=""
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-XLDFLAGS=	-lpthread
+		--without-ijs
 ALL_TARGET=	./obj/X11.so
 INSTALL_TARGET=	install-shared
-PLIST_FILES=	${GS_LIBDIR}/X11.so
+PLIST_FILES=	lib/${PORTNAME}/${PORTVERSION}/X11.so
 
-GS_LIBDIR=	lib/${PORTNAME}/${PORTVERSION}
-EXCLUDE_DIRS=	freetype jbig2dec jpeg expat lcms2 libpng tiff zlib
+post-patch:
+	@${RM} -r ${WRKSRC}/freetype ${WRKSRC}/ijs ${WRKSRC}/jbig2dec \
+		${WRKSRC}/jpeg ${WRKSRC}/libpng ${WRKSRC}/openjpeg \
+		${WRKSRC}/zlib
 
-pre-build:
-	${MKDIR} ${WRKSRC}/obj
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/X11.so
 
 .include <bsd.port.mk>
