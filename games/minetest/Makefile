@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minetest
-PORTVERSION=	0.4.17
+PORTVERSION=	0.4.17.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
