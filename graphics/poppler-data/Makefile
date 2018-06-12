@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poppler-data
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -10,8 +10,12 @@ COMMENT=	Poppler encoding data
 
 USES=		pathfix
 PATHFIX_MAKEFILEIN=Makefile
+MAKE_ARGS=	prefix=${PREFIX}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
+post-install:
+# Share CMap files with Ghostscript.
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/cmap
+	${LN} ${STAGEDIR}${PREFIX}/share/poppler/cMap/*/* \
+		${STAGEDIR}${PREFIX}/share/cmap
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-SHA256 (ghostscript/ghostscript-9.16.tar.bz2) = 3e2d44f925aabb4764b985a966880eafca2fd63a6998491308604d16a75cb86d
-SIZE (ghostscript/ghostscript-9.16.tar.bz2) = 29163348
-SHA256 (ghostscript/epag-3.09.tar.gz) = ad10eca44c781a5851d5a8993dcd95b2e2b99392cbf2c8372a5a658f3b991b3b
-SIZE (ghostscript/epag-3.09.tar.gz) = 12858
+TIMESTAMP = 1523106984
+SHA256 (ghostscript-9.23.tar.xz) = 1fcedc27d4d6081105cdf35606cb3f809523423a6cf9e3c23cead3525d6ae8d9
+SIZE (ghostscript-9.23.tar.xz) = 33426160
