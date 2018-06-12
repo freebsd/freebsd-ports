@@ -473,7 +473,7 @@ you update your ports collection, before attempting any port upgrades.
      # pkg install emacs-canna
      # pkg install emacs-nox
      # pkg install emacs-devel
-     # pkg install emacs-devel_nox
+     # pkg install emacs-devel-nox
 
   For those building their own packages, a flavor other than the default must be
   specified.  For example, to build the nox flavor of editors/emacs, or to build

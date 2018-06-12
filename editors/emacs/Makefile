@@ -3,6 +3,7 @@
 
 PORTNAME=	emacs
 DISTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU
@@ -60,7 +61,7 @@ CONFIGURE_ARGS+=	--with-x
 .endif
 # See r468320 to determine if/when the next line can be removed
 CONFIGURE_ENV=		ac_cv_header_sys_sysinfo_h=no
-CONFLICTS_INSTALL=	emacs-devel emacs-devel_nox
+CONFLICTS_INSTALL=	emacs-devel emacs-devel-nox
 GNU_CONFIGURE=		yes
 INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		ebrowse ede ediff edt efaq eieio eintr elisp emacs emacs-gnutls \
@@ -81,15 +82,13 @@ PLIST_FILES+=	${DATADIR}/${EMACS_VER}/lisp/canna.el.gz \
 .endif
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 SUB_FILES=	sources.el
-SUB_LIST=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET} \
-		EMACS_VER=${EMACS_VER} # sources.el
+SUB_LIST=	EMACS_VER=${EMACS_VER} # sources.el
 
-OPTIONS_DEFINE=	ACL DBUS GCONF GNUTLS GSETTINGS LCMS2 M17N MAILUTILS MODULES OTF\
-		SCROLLBARS SOURCES XFT XIM XML XWIDGETS
-OPTIONS_DEFAULT=	ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK3 JPEG KQUEUE \
-		LCMS2 M17N MAGICK MAILUTILS MODULES OSS OTF PNG SCROLLBARS \
-		SOURCES SVG TIFF XFT XIM XML XPM
-
+OPTIONS_DEFINE=	ACL DBUS GCONF GNUTLS GSETTINGS JSON LCMS2 M17N MAILUTILS \
+		MODULES OTF SCROLLBARS SOURCES THREADS XFT XIM XML XWIDGETS
+OPTIONS_DEFAULT=	ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK3 JPEG JSON \
+		KQUEUE LCMS2 M17N MAGICK MAILUTILS MODULES OSS OTF PNG \
+		SCROLLBARS SOURCES SVG THREADS TIFF XFT XIM XML XPM
 OPTIONS_GROUP=	GRAPHICS
 OPTIONS_GROUP_GRAPHICS=	CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
 OPTIONS_RADIO=	FILENOTIFY SOUND X11TOOLKIT
@@ -112,9 +111,9 @@ GRAPHICS_DESC=	Graphics support
 GSETTINGS_DESC=	GSettings API for application settings
 KQUEUE_DESC=	File notification via kqueue
 #LTO_DESC=	Enable link-time optimization
+M17N_DESC=	M17N support for text-shaping (implies XFT)
 MAGICK_DESC=	ImageMagick image processing support
 MAILUTILS_DESC=	Mail framework via GNU Mailutils
-M17N_DESC=	M17N for text-shaping                  (implies XFT)
 MODULES_DESC=	Dynamic modules support
 OTF_DESC=	Opentype fonts                         (implies XFT)
 SCROLLBARS_DESC=	Toolkit scroll-bars
@@ -124,7 +123,7 @@ X11TOOLKIT_DESC=	X11 toolkit
 XAW3D_DESC=	Athena3D widgets
 XAW_DESC=	Athena widgets
 XIM_DESC=	X Input Method
-XWIDGETS_DESC=	GTK widgets in Emacs buffers           (requires GTK3)
+XWIDGETS_DESC=	Experimental GTK widgets               (requires GTK3)
 
 ACL_CONFIGURE_ENABLE=	acl
 ALSA_CONFIGURE_ON=	--with-sound=alsa
@@ -146,33 +145,35 @@ GSETTINGS_USE=		GNOME=glib20
 GSETTINGS_CONFIGURE_WITH=	gsettings
 GSETTINGS_IMPLIES=	DBUS
 GTK2_USE=		GNOME=cairo,gtk20
-GTK2_USES=		gettext-runtime
 GTK2_CONFIGURE_ON=	--with-x-toolkit=gtk2
 GTK2_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libfontconfig.so:x11-fonts/fontconfig
 GTK3_USE=		GNOME=cairo,gtk30
-GTK3_USES=		gettext-runtime
 GTK3_CONFIGURE_ON=	--with-x-toolkit=gtk3
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
+JSON_CONFIGURE_WITH=	json
+JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
 KQUEUE_CONFIGURE_ON=	--with-file-notification=kqueue
 LCMS2_CONFIGURE_WITH=	lcms2
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 #LTO_CONFIGURE_ON=	--enable-link-time-optimization
 M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=	m17n-flt
+M17N_IMPLIES=		XFT
 MAGICK_LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick
 MAGICK_CONFIGURE_WITH=	imagemagick
 MAILUTILS_CONFIGURE_WITH=	mailutils
+MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_prog_liblockfile=no ac_cv_lib_lockfile_maillock=no
 MAILUTILS_LIB_DEPENDS=	libmailutils.so:mail/mailutils
 MODULES_CONFIGURE_WITH=	modules
-MAILUTILS_PLIST_FILES_OFF=	libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}/movemail
 MOTIF_USES=		motif
 MOTIF_CONFIGURE_ON=	--with-x-toolkit=motif
 MOTIF_LIB_DEPENDS=	libXp.so:x11/libXp
 OSS_CONFIGURE_ON=	--with-sound=oss
 OTF_LIB_DEPENDS=	libotf.so:print/libotf
 OTF_CONFIGURE_WITH=	libotf
+OTF_IMPLIES=		XFT
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
 SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
@@ -182,7 +183,7 @@ SOURCES_PLIST_FILES=	${DATADIR}/${EMACS_VER}/src/canna.c
 SVG_USE=		GNOME=cairo,librsvg2
 SVG_CONFIGURE_WITH=	rsvg
 SVG_IMPLIES=		PNG
-SVG_USES=		gettext-runtime
+THREADS_CONFIGURE_WITH=	threads
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=	tiff
 XAW_USE=		XORG=xaw
@@ -200,7 +201,8 @@ XPM_USE=		XORG=xpm
 XPM_CONFIGURE_WITH=	xpm
 XWIDGETS_USE=		XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=	xwidgets
-XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+			libsoup-2.4.so:devel/libsoup
 XWIDGETS_IMPLIES=	GTK3
 
 EMACS_VER=		26.1
@@ -224,6 +226,10 @@ CONFIGURE_ARGS+=	--with-x-toolkit=no
 post-patch:
 	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/' ${WRKSRC}/etc/emacs.desktop
 .endif
+
+post-install-MAILUTILS-on:
+	${LN} -sf ${PREFIX}/bin/movemail \
+		${STAGEDIR}${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
 
 post-install-SOURCES-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
