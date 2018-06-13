@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.cgsecurity.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to check and undelete partitions
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		jpeg localbase:ldflags ncurses tar:bzip2
