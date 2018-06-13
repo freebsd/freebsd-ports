@@ -1,4 +1,4 @@
---- scsilib/include/mconfig.h.orig	2009-10-05 11:58:21 UTC
+--- scsilib/include/mconfig.h.orig	2018-05-16 10:46:58 UTC
 +++ scsilib/include/mconfig.h
 @@ -72,12 +72,12 @@ extern "C" {
   * Types/Keywords

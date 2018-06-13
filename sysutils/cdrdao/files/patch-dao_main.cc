@@ -1,6 +1,6 @@
---- dao/main.cc.orig	Sat Dec 28 03:01:20 2002
-+++ dao/main.cc	Sat Dec 28 03:04:38 2002
-@@ -2314,11 +2314,7 @@
+--- dao/main.cc.orig	2018-05-16 10:46:39 UTC
++++ dao/main.cc
+@@ -2330,15 +2330,7 @@ int main(int argc, char **argv)
  
      Settings* settings = new Settings;
  
@@ -9,6 +9,10 @@
 -	log_message(3, "Read settings from \"%s\".", settingsPath);
 -
 -    settingsPath = "/etc/defaults/cdrdao";
+-    if (settings->read(settingsPath) == 0)
+-	log_message(3, "Read settings from \"%s\".", settingsPath);
+-
+-    settingsPath = "/etc/default/cdrdao";
 +    settingsPath = "%%PREFIX%%/etc/cdrdao.conf";
      if (settings->read(settingsPath) == 0)
  	log_message(3, "Read settings from \"%s\".", settingsPath);

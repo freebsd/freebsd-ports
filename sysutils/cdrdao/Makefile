@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME?=	cdrdao
-PORTVERSION=	1.2.3
-PORTREVISION?=	5
+PORTVERSION=	1.2.4
+PORTREVISION?=	0
 CATEGORIES=	sysutils audio
-MASTER_SITES=	SF/cdrdao/cdrdao/${PORTVERSION}
+MASTER_SITES=	SF/cdrdao
 DISTNAME=	cdrdao-${PORTVERSION}
 
 MAINTAINER=	marius@FreeBSD.org
@@ -40,10 +40,11 @@ RUN_DEPENDS+=		${LOCALBASE}/bin/cdrdao:sysutils/cdrdao \
 			${LOCALBASE}/share/mime/packages/freedesktop.org.xml:misc/shared-mime-info
 CONFIGURE_ARGS+=	--with-lame=no
 .else
-CONFIGURE_ARGS+=	--with-xdao=no
+CONFIGURE_ARGS+=	--with-gcdmaster=no
 .if ${PORT_OPTIONS:MTOC2MP3}
 LIB_DEPENDS+=		libmp3lame.so:audio/lame
-CONFIGURE_ARGS+=	--with-lame-include=${LOCALBASE}/include \
+CONFIGURE_ARGS+=	--disable-lame-test \
+			--with-lame-include=${LOCALBASE}/include \
 			--with-lame-lib=${LOCALBASE}/lib
 PLIST_SUB+=		TOC2MP3=""
 .else
@@ -72,7 +73,7 @@ MAKE_ENV=		CCOM=cc
 SCSILIBXARCH!=		${UNAME} -m
 
 post-extract:
-	@(cd ${WRKSRC}/scsilib/RULES && ${CP} os-freebsd.id os-dragonfly.id)
+	@(cd ${WRKSRC}/scsilib/RULES && ${CP} -p os-freebsd.id os-dragonfly.id)
 .if ${SCSILIBXARCH} != "i386"
 	@${LN} -sf ${WRKSRC}/scsilib/RULES/i386-freebsd-cc.rul \
 		${WRKSRC}/scsilib/RULES/${SCSILIBXARCH}-${OPSYS:tl}-cc.rul
@@ -84,30 +85,18 @@ post-patch:
 	55readcd 55scgcheck 55scgskeleton 55rscsi 85man
 	@${RM} ${WRKSRC}/scsilib/TARGETS/${i}
 .endfor
-	@${REINPLACE_CMD} -e 's|"$$ac_declaration"|"$$ac_declarationXXX"|g' \
-		${WRKSRC}/configure
-.for i in include/schily.h libscg/scsitransp.c libschily/fexec.c \
-	libschily/stdio/fgetline.c
-	@${REINPLACE_CMD} -E -e 's|fexecve|js_fexecve|g; \
-		s|^getline|js_getline|g;s|([^f_])getline|\1js_getline|g' \
-		${WRKSRC}/scsilib/${i}
-.endfor
 .if ${PORTNAME} == "gcdmaster"
-	@${REINPLACE_CMD} -E -e 's|(sigc\+\+/)object.h|\1trackable.h|g' \
-		${WRKSRC}/xdao/CdDevice.h
 	@${REINPLACE_CMD} -E -e 's|(^SUBDIRS.+) utils|\1|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(^gladedir.+=).+|\1 ${DATADIR}|' \
-		${WRKSRC}/xdao/Makefile.in
-	@${REINPLACE_CMD} -E -e 's|[&]?(pixmap_) == 0|!\1|g' \
-		${WRKSRC}/xdao/SampleDisplay.cc
+		${WRKSRC}/gcdmaster/Makefile.in
 	@${REINPLACE_CMD} -E -e \
 		's|(SET_CDRDAO_PATH.+path=)(cdrdao)|\1${LOCALBASE}\/bin\/\2|g' \
-		${WRKSRC}/xdao/Settings.cc
+		${WRKSRC}/gcdmaster/Settings.cc
 	@${REINPLACE_CMD} -E -e \
 		's|(icon-filename=).+(gcdmaster-doc.png)|\1${LOCALBASE}\/share\/pixmaps\/document-icons\/\2|g' \
-		${WRKSRC}/xdao/gcdmaster.keys
+		${WRKSRC}/gcdmaster/gcdmaster.keys
 	@${REINPLACE_CMD} -e 's|connect(SigC::slot|connect(sigc::ptr_fun|g' \
-		${WRKSRC}/xdao/xcdrdao.cc
+		${WRKSRC}/gcdmaster/xcdrdao.cc
 .else
 .for i in cdrdao.man main.cc
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/dao/${i}
@@ -121,34 +110,35 @@ post-patch:
 
 .if ${PORTNAME} == "gcdmaster"
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xdao/gcdmaster ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xdao/gcdmaster.man \
+	${INSTALL_PROGRAM} ${WRKSRC}/gcdmaster/gcdmaster \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/gcdmaster/gcdmaster.man \
 		${STAGEDIR}${PREFIX}/man/man1/gcdmaster.1
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/pixmaps/document-icons
-	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster-doc.png \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/gcdmaster-doc.png \
 		${STAGEDIR}${LOCALBASE}/share/pixmaps/document-icons
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/application-registry
-	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.applications \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/gcdmaster.applications \
 		${STAGEDIR}${LOCALBASE}/share/application-registry
-	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.desktop \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/gcdmaster.desktop \
 		${STAGEDIR}${LOCALBASE}/share/applications
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime-info
-	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.keys \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/gcdmaster.keys \
 		${STAGEDIR}${LOCALBASE}/share/mime-info
-	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.mime \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/gcdmaster.mime \
 		${STAGEDIR}${LOCALBASE}/share/mime-info
-	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.png \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/gcdmaster.png \
 		${STAGEDIR}${LOCALBASE}/share/pixmaps
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
-	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.schemas \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/gcdmaster.schemas \
 		${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime/packages
-	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.xml \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/gcdmaster.xml \
 		${STAGEDIR}${LOCALBASE}/share/mime/packages
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/xdao/glade/Preferences.glade \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/glade/Preferences.glade \
 		${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/xdao/glade/ProjectChooser.glade \
+	${INSTALL_DATA} ${WRKSRC}/gcdmaster/glade/ProjectChooser.glade \
 		${STAGEDIR}${DATADIR}
 .else
 do-install:

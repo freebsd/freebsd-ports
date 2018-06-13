@@ -1,22 +1,22 @@
---- dao/cdrdao.man.orig	Sat Dec 28 03:05:59 2002
-+++ dao/cdrdao.man	Sat Dec 28 03:08:17 2002
-@@ -783,13 +783,9 @@
+--- dao/cdrdao.man.orig	2018-05-16 10:46:39 UTC
++++ dao/cdrdao.man
+@@ -798,13 +798,9 @@ following locations. The files will be r
  .I cdrdao
  in that order:
  
 -1. /etc/cdrdao.conf
-+1. %%PREFIX%%/etc/cdrdao.conf
- 
+-
 -2. /etc/defaults/cdrdao
 -
 -3. /etc/default/cdrdao
--
++1. %%PREFIX%%/etc/cdrdao.conf
+ 
 -4. $HOME/.cdrdao
 +2. $HOME/.cdrdao
  
  
  Command line options will overwrite the loaded settings.
-@@ -869,4 +865,4 @@
+@@ -886,4 +882,4 @@ resources may not be released. Use ipcs(
  .ft R
  .fi
  .SH SEE ALSO

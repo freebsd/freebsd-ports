@@ -1,6 +1,6 @@
---- scsilib/RULES/i386-freebsd-cc.rul.orig	Tue Oct 15 22:43:39 2002
-+++ scsilib/RULES/i386-freebsd-cc.rul	Sun Oct 27 19:59:00 2002
-@@ -24,7 +24,8 @@
+--- scsilib/RULES/i386-freebsd-cc.rul.orig	2002-10-15 20:43:39 UTC
++++ scsilib/RULES/i386-freebsd-cc.rul
+@@ -24,7 +24,8 @@ include $(SRCROOT)/$(RULESDIR)/rules.prg
  ###########################################################################
  
  CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
@@ -10,7 +10,7 @@
  
  CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
  COPTS=
-@@ -57,14 +58,14 @@
+@@ -57,14 +58,14 @@ LNDYNLIB=	@$(SYMLINK) $(TARGET) $(PTARGE
  
  FLOAT_OPTIONS=	
  
