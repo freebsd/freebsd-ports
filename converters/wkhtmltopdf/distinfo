@@ -1,5 +1,5 @@
-TIMESTAMP = 1489939659
-SHA256 (wkhtmltopdf-wkhtmltopdf-0.12.4_GH0.tar.gz) = dd466f5c2504670459f3b8265de5697b9054f077e2f3e392e5172b5133080edf
-SIZE (wkhtmltopdf-wkhtmltopdf-0.12.4_GH0.tar.gz) = 128695
-SHA256 (wkhtmltopdf-qt-c0cfa03_GH0.tar.gz) = f313fdf8e0b7630f47a6bfba749bea128234379b311a8c609b1da450027eb4ee
-SIZE (wkhtmltopdf-qt-c0cfa03_GH0.tar.gz) = 172992697
+TIMESTAMP = 1528798989
+SHA256 (wkhtmltopdf-wkhtmltopdf-0.12.5_GH0.tar.gz) = 861d6e61e2f5beb2d8daaade2cd5a85b84065ee9fac0d6d85000d8a7712a4621
+SIZE (wkhtmltopdf-wkhtmltopdf-0.12.5_GH0.tar.gz) = 511181
+SHA256 (wkhtmltopdf-qt-5db36ec_GH0.tar.gz) = 2b60944b46a4b0b9cdb9ce0339c3bf8f54c5ff9411cbc3c6a6ad01f88cc578e1
+SIZE (wkhtmltopdf-qt-5db36ec_GH0.tar.gz) = 172992377

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	wkhtmltopdf
-PORTVERSION=	0.12.4
+PORTVERSION=	0.12.5
 CATEGORIES=	converters
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Convert HTML (or live webpages) to PDF or image
 
 LICENSE=	LGPL3
@@ -28,8 +28,9 @@ USE_XORG=	x11 xext xrender
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-WKQT_TAGNAME=	c0cfa03
+WKQT_TAGNAME=	5db36ec
 GH_TUPLE=	${PORTNAME}:qt:${WKQT_TAGNAME}:qt
+USE_CXXSTD=	gnu++98
 HAS_CONFIGURE=	yes
 
 PATCH_WRKSRC=		${WRKSRC}/qt
@@ -58,24 +59,26 @@ CONFIGURE_ARGS=	-prefix ${WRKSRC}/build/qt \
 MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
 
 pre-patch:
-	@${RMDIR} ${WRKSRC}/qt
-	@${LN} -s ../qt-${WKQT_TAGNAME} ${WRKSRC}/qt
+	${RMDIR} ${WRKSRC}/qt
+	${LN} -s ../qt-${WKQT_TAGNAME} ${WRKSRC}/qt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|/usr/X11R6/include|${LOCALBASE}/include/X11|g' \
 		-e 's|/usr/X11R6/lib|${LOCALBASE}/lib|g' \
 		${PATCH_WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-	@${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
+	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
 		${PATCH_WRKSRC}/mkspecs/common/g++-base.conf
-	@${REINPLACE_CMD} -e "s|share/man|man|g" \
+	${REINPLACE_CMD} -e "s|share/man|man|g" \
 		${WRKSRC}/src/image/image.pro \
 		${WRKSRC}/src/pdf/pdf.pro
-	@${MKDIR} ${WRKSRC}/build/app ${WRKSRC}/build/qt \
+	${ECHO} 'LIBS+= -lcrypto' >>${WRKSRC}/src/image/image.pro
+	${ECHO} 'LIBS+= -lcrypto' >>${WRKSRC}/src/pdf/pdf.pro
+	${MKDIR} ${WRKSRC}/build/app ${WRKSRC}/build/qt \
 		${WRKSRC}/build/wkhtmltox
 
 post-build:
-	@cd ${WRKSRC}/build/app && ${SETENV} ${MAKE_ENV} \
+	cd ${WRKSRC}/build/app && ${SETENV} ${MAKE_ENV} \
 		../qt/bin/qmake ../../wkhtmltopdf.pro && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} \
@@ -84,14 +87,6 @@ post-build:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wkhtmltoimage \
 		${STAGEDIR}${PREFIX}/bin/wkhtmltopdf \
-		${STAGEDIR}${PREFIX}/lib/libwkhtmltox.so.0.12.4
+		${STAGEDIR}${PREFIX}/lib/libwkhtmltox.so.${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD
-.if ${COMPILER_TYPE:Mclang} && ${COMPILER_VERSION} >= 60
-BROKEN=		Does not build
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
