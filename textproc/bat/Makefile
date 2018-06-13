@@ -2,7 +2,7 @@
 
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.1
 CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -10,7 +10,10 @@ COMMENT=	Clone of cat with syntax highlighting
 
 LICENSE=	APACHE20
 
-USES=	cargo cmake:noninja gmake
+LIB_DEPENDS=	libonig.so:devel/oniguruma
+CARGO_ENV+=	RUSTONIG_SYSTEM_LIBONIG=1
+
+USES=	cargo cmake:noninja
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
@@ -20,8 +23,6 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		ansi_term-0.10.2 \
 		ansi_term-0.11.0 \
 		atty-0.2.10 \
-		backtrace-0.3.7 \
-		backtrace-sys-0.1.16 \
 		base64-0.8.0 \
 		bincode-1.0.0 \
 		bitflags-1.0.3 \
@@ -79,7 +80,6 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		regex-0.2.11 \
 		regex-syntax-0.4.2 \
 		regex-syntax-0.5.6 \
-		rustc-demangle-0.1.8 \
 		safemem-0.2.0 \
 		same-file-1.0.2 \
 		serde-1.0.51 \
@@ -90,7 +90,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		stable_deref_trait-1.0.0 \
 		strsim-0.7.0 \
 		syn-0.13.7 \
-		syntect-2.0.1 \
+		syntect-2.1.0 \
 		term_size-0.3.1 \
 		termion-1.5.1 \
 		termios-0.2.2 \
@@ -116,4 +116,6 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		xml-rs-0.7.0 \
 		yaml-rust-0.4.0
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bat
 .include <bsd.port.mk>
