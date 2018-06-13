@@ -1,12 +1,9 @@
---- default-config/Makefile.in.orig	2016-11-07 05:51:14.000000000 -0800
-+++ default-config/Makefile.in	2016-12-16 12:57:51.976313000 -0800
-@@ -597,9 +597,10 @@
- 
- install-data-hook:
- 	cp -r $(srcdir)/images $(inst_location)
--	ln -sf $(inst_location)/FvwmScript-DateTime $(inst_location)/..
--	ln -sf $(inst_location)/FvwmScript-ConfirmQuit $(inst_location)/..
--	ln -sf $(inst_location)/FvwmScript-ConfirmCopyConfig $(inst_location)/..
+--- default-config/Makefile.in.orig	2018-05-30 16:41:08.000000000 -0700
++++ default-config/Makefile.in	2018-06-13 05:23:26.137557000 -0700
+@@ -603,6 +603,10 @@
+ 	ln -sf default-config/FvwmScript-DateTime $(inst_location)/..
+ 	ln -sf default-config/FvwmScript-ConfirmQuit $(inst_location)/..
+ 	ln -sf default-config/FvwmScript-ConfirmCopyConfig $(inst_location)/..
 +	cd $(inst_location)
 +	ln -sf FvwmScript-DateTime ..
 +	ln -sf FvwmScript-ConfirmQuit ..

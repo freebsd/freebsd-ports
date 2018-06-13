@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fvwm
-PORTVERSION=	2.6.7
-PORTREVISION=	3
+PORTVERSION=	2.6.8
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/2.6.7/ \
+MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${PORTVERSION}/ \
 		http://www.fvwm.org/generated/icon_download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
