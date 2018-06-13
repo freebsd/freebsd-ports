@@ -12,14 +12,15 @@ COMMENT=	Web frontend for Seafile
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=0:www/py-django111@${PY_FLAVOR}
 
 RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:net-mgmt/seafile-server \
-		${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django111>=0:www/py-django111@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-simple-captcha>=0:www/py-django-simple-captcha@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-statici18n>=0:www/py-django-statici18n@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}djangorestframework36>=0:www/py-djangorestframework36@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}djangorestframework>=0:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django_compressor>=0:www/py-django_compressor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-formtools>=0:www/py-django-formtools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-post_office>=0:www/py-django-post_office@${PY_FLAVOR} \

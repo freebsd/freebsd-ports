@@ -31,6 +31,9 @@
 %%SITEPACKAGEDIR%%/seafobj/commits.py
 %%SITEPACKAGEDIR%%/seafobj/commits.pyc
 %%SITEPACKAGEDIR%%/seafobj/commits.%%PYTHON_PYOEXTENSION%%
+%%SITEPACKAGEDIR%%/seafobj/db.py
+%%SITEPACKAGEDIR%%/seafobj/db.pyc
+%%SITEPACKAGEDIR%%/seafobj/db.%%PYTHON_PYOEXTENSION%%
 %%SITEPACKAGEDIR%%/seafobj/exceptions.py
 %%SITEPACKAGEDIR%%/seafobj/exceptions.pyc
 %%SITEPACKAGEDIR%%/seafobj/exceptions.%%PYTHON_PYOEXTENSION%%
