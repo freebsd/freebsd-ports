@@ -1,4 +1,4 @@
---- controller/seafile-controller.c.orig	2016-11-12 03:30:44 UTC
+--- controller/seafile-controller.c.orig	2018-04-27 06:38:45 UTC
 +++ controller/seafile-controller.c
 @@ -17,6 +17,19 @@
  #include "log.h"
@@ -20,7 +20,7 @@
  #define CHECK_PROCESS_INTERVAL 10        /* every 10 seconds */
  
  SeafileController *ctl;
-@@ -244,7 +257,20 @@ static void
+@@ -259,7 +272,20 @@ static void
  init_seafile_path ()
  {
      GError *error = NULL;
@@ -41,7 +41,7 @@
      char *tmp = NULL;
      if (error != NULL) {
          seaf_warning ("failed to readlink: %s\n", error->message);
-@@ -258,7 +284,9 @@ init_seafile_path ()
+@@ -273,7 +299,9 @@ init_seafile_path ()
  
      topdir = g_path_get_dirname (installpath);
  
@@ -51,7 +51,7 @@
      g_free (tmp);
  }
  
-@@ -400,11 +428,40 @@ need_restart (int which)
+@@ -415,12 +443,41 @@ need_restart (int which)
          return FALSE;
      } else {
          char buf[256];
@@ -68,6 +68,7 @@
          if (g_file_test (buf, G_FILE_TEST_IS_DIR)) {
              return FALSE;
          } else {
+             seaf_warning ("path /proc/%d doesn't exist, restart progress [%d]\n", pid, which);
              return TRUE;
 +	}
 +
@@ -80,9 +81,9 @@
 +#endif
 +            size_t len = sizeof(struct kinfo_proc);
 +            struct kinfo_proc kp;
-+            if (sysctl(mib, sizeof(mib)/sizeof(mib[0]), &kp, &len, NULL, 0) != -1 && 
-+	        len == sizeof(struct kinfo_proc)) {
-+                return FALSE;        
++	    if (sysctl(mib, sizeof(mib)/sizeof(mib[0]), &kp, &len, NULL, 0) != -1 &&
++	      len == sizeof(struct kinfo_proc)) {
++		return FALSE;
 +            } else {
 +                return TRUE;
 +            }
@@ -92,7 +93,7 @@
          }
      }
  }
-@@ -890,6 +947,9 @@ int main (int argc, char **argv)
+@@ -913,6 +970,9 @@ int main (int argc, char **argv)
          exit (1);
      }
  
@@ -102,7 +103,7 @@
      char *config_dir = DEFAULT_CONFIG_DIR;
      char *central_config_dir = NULL;
      char *seafile_dir = NULL;
-@@ -926,7 +986,7 @@ int main (int argc, char **argv)
+@@ -949,7 +1009,7 @@ int main (int argc, char **argv)
          case 'f':
              daemon_mode = 0;
              break;
