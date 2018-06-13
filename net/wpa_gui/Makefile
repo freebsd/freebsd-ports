@@ -3,6 +3,7 @@
 
 PORTNAME=	wpa_gui
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/ \
 		http://partmedia.users.sourceforge.net/dist/:icons \
@@ -15,47 +16,59 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based frontend for wpa_supplicant
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/../../COPYING
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
+USES=		gmake
+USE_QT5=	qmake_build buildtools_build linguisttools_build core gui \
+		widgets svg_run
+
+ALL_TARGET=	wpa_gui-qt4
+INSTALL_WRKSRC=	${WRKSRC}/wpa_gui-qt4
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-WRKSRC_SUBDIR=	wpa_supplicant/wpa_gui-qt4
-
-PLIST_FILES=	"@(,,4555) sbin/wpa_gui" \
+PLIST_FILES=	sbin/wpa_gui \
 		share/applications/wpa_gui.desktop \
 		share/icons/hicolor/16x16/apps/wpa_gui.png \
 		share/icons/hicolor/scalable/apps/wpa_gui.svgz \
 		man/man8/wpa_gui.8.gz
-
+WRKSRC_SUBDIR=	wpa_supplicant
 SUB_FILES=	pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE}
 
-USE_QT4=	corelib gui moc_build rcc_build uic_build \
-		imageformats_run
-USES=		qmake
-INSTALLS_ICONS=	yes
+OPTIONS_DEFINE=	DEBUG NLS
 
-OPTIONS_DEFINE=	DEBUG
+NLS_PLIST_FILES=	${DATADIR_REL}/translations/wpa_gui_de.qm
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^Exec/s|=.*|=${PREFIX}/sbin/wpa_gui|' \
-		${WRKSRC}/wpa_gui.desktop
+		${INSTALL_WRKSRC}/wpa_gui.desktop
+	@${REINPLACE_CMD} -e '/resourceDir = / \
+		s|QLibraryInfo::location(QLibraryInfo::TranslationsPath)| \
+		"${DATADIR}/translations"|' \
+			${INSTALL_WRKSRC}/main.cpp
 
 post-patch-DEBUG-on:
 	@${REINPLACE_CMD} -e \
 		's| release| debug|' \
-		${WRKSRC}/wpa_gui.pro
+		${INSTALL_WRKSRC}/wpa_gui.pro
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/wpa_gui.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/wpa_gui.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps
 	${INSTALL_DATA} ${WRKDIR}/icons/hicolor/16x16/apps/wpa_gui.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${GZIP_CMD} < ${WRKSRC}/icons/wpa_gui.svg \
+	${GZIP_CMD} < ${INSTALL_WRKSRC}/icons/wpa_gui.svg \
 		> ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/wpa_gui.svgz
-	${GZIP_CMD} < ${WRKSRC}/../doc/docbook/wpa_gui.8 \
+	${GZIP_CMD} < ${WRKSRC}/doc/docbook/wpa_gui.8 \
 		> ${STAGEDIR}${PREFIX}/man/man8/wpa_gui.8.gz
+
+do-install-NLS-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/lang/wpa_gui_de.qm \
+		${STAGEDIR}${DATADIR}/translations
 
 .include <bsd.port.mk>
