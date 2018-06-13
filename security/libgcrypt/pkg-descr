@@ -1,3 +1,8 @@
-Libgcrypt is a general purpose crypto library based on the code used in GnuPG.
+Libgcrypt is a general purpose cryptographic library based on the code from
+GnuPG.
 
-WWW: https://www.gnupg.org/
+It provides functions for all cryptographic building blocks: symmetric ciphers,
+hash algorithms, MACs, public key algorithms, large integer functions,
+random numbers and a lot of supporting functions.
+
+WWW: https://www.gnupg.org/software/libgcrypt/index.html
