@@ -2,40 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	busybox
-PORTVERSION=	1.24.2
+PORTVERSION=	1.26.2
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	https://busybox.net/downloads/
 
-PATCH_SITES=	https://busybox.net/downloads/fixes-${PORTVERSION}/
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-CVE-2016-2147.patch \
-		${PORTNAME}-${PORTVERSION}-CVE-2016-2148.patch \
-		${PORTNAME}-${PORTVERSION}-ash-recursive-heredocs.patch
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Set of common utilities built as single binary
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 
-CONFLICTS_INSTALL=	busybox-unstable-*
-
-PORTSCOUT=	skipv:1.25.0
-
-CFLAGS+=	-fno-builtin-mempcpy	# avoid -Wshadow warnings
-MAKE_ARGS=	CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}" \
-		SKIP_STRIP=y V=1
 USES=		cpe gmake perl5 tar:bzip2
 USE_PERL5=	build
 
+CFLAGS+=	-fno-builtin-mempcpy	# avoid -Wshadow warnings
+CONFLICTS_INSTALL=	busybox-unstable-*
+MAKE_ARGS=	CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}" \
+		SKIP_STRIP=y V=1
 PLIST_FILES=	bin/busybox man/man1/busybox.1.gz
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS STATIC
 
 STATIC_LDFLAGS=	-static
-
-PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e \
