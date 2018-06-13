@@ -5,6 +5,7 @@
 
 # PROVIDE: dovecot
 # REQUIRE: %%REQUIRE%%
+# BEFORE:  mail
 # KEYWORD: shutdown
 
 # dovecot_enable (bool):	Set it to YES to enable dovecot
