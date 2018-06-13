@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	add
-PORTVERSION=	20150704
+PORTVERSION=	20180401
 CATEGORIES=	math
 MASTER_SITES=	ftp://dickey.his.com/add/
 
