@@ -1,5 +1,4 @@
 Known issues:
-- Videos are garbled since multimedia/ffmpeg update to 3.2, see #9026
 - %%DATADIR%%/assets/gamecontrollerdb.txt cannot be used
   as is because SDL_JoystickGetGUID is a stub on FreeBSD. Create the
   file using controllermap (or antimicro) then check with testgamecontroller
