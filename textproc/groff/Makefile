@@ -11,7 +11,8 @@ COMMENT=	Software typesetting package
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	psselect:print/psutils
+BUILD_DEPENDS=	gsfonts>=0:print/gsfonts \
+		psselect:print/psutils
 RUN_DEPENDS:=	psselect:print/psutils
 
 MAKE_JOBS_UNSAFE=	yes
