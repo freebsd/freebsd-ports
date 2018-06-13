@@ -5,6 +5,7 @@ PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.6.39
 DISTVERSIONPREFIX?=	wsrep_
 DISTVERSIONSUFFIX?=	-25.22
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 PKGNAMESUFFIX=	56-server
 
@@ -134,6 +135,14 @@ MMAN1=		my_print_defaults.1 \
 		replace.1 \
 		resolve_stack_dump.1 \
 		resolveip.1
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
+SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
+.else
+SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
