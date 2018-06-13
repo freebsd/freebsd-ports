@@ -1,5 +1,5 @@
---- trackdb/FormatMp3.cc.orig	2010-06-06 16:45:00.000000000 +0200
-+++ trackdb/FormatMp3.cc	2010-06-06 16:45:36.000000000 +0200
+--- trackdb/FormatMp3.cc.orig	2018-05-15 13:30:52 UTC
++++ trackdb/FormatMp3.cc
 @@ -111,6 +111,7 @@ FormatSupport::Status FormatMp3::madInit
  
    // Initialize libao for WAV output;

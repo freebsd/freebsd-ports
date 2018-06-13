@@ -1,8 +1,7 @@
-# Created by: marius@alchemy.franken.de
+# Created by: marius
 # $FreeBSD$
 
 PORTNAME=	gcdmaster
-PORTREVISION=	8
 
 COMMENT=	GNOME frontend for cdrdao
 

@@ -1,5 +1,5 @@
---- trackdb/FormatOgg.cc.orig	2010-06-06 16:45:05.000000000 +0200
-+++ trackdb/FormatOgg.cc	2010-06-06 16:48:23.000000000 +0200
+--- trackdb/FormatOgg.cc.orig	2018-05-15 13:30:52 UTC
++++ trackdb/FormatOgg.cc
 @@ -84,6 +84,7 @@ FormatSupport::Status FormatOgg::oggInit
        return FS_WRONG_FORMAT;
    }
