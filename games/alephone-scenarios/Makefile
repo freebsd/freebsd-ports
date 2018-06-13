@@ -42,7 +42,7 @@ SUB_FILES=	wrapper
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD
 . if ${PORT_OPTIONS:METERNAL} || ${PORT_OPTIONS:MRUBICON}
 USES=		zip:infozip
 . endif
@@ -51,7 +51,7 @@ USES=		zip:infozip
 DATADIR!=	cd ${PORTSDIR}/games/alephone && ${MAKE} -V DATADIR
 
 .if ${PORT_OPTIONS:MEMR}
-. if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+. if ${OPSYS} == FreeBSD
 EXTRACT_DEPENDS=gtar:archivers/gtar
 TAR=		${LOCALBASE}/bin/gtar
 . endif
