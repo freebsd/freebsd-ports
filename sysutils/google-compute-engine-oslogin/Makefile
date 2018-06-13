@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-compute-engine-oslogin
-DISTVERSION=	1.1.5
+DISTVERSION=	1.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	helen.koike@collabora.com
@@ -25,7 +25,7 @@ USE_GCC=	any
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_PROJECT=	compute-image-packages
-GH_TAGNAME=	20180227
+GH_TAGNAME=	20180611
 MAKE_ARGS=	JSON_INCLUDE_PATH=${LOCALBASE}/include/json-c \
 		BIN_INSTALL_PATH=/bin \
 		PAM_INSTALL_PATH=/lib \
@@ -42,6 +42,7 @@ post-patch:
 
 post-install:
 	${LN} -sf libnss_${PORTNAME}-${DISTVERSION}.so ${STAGEDIR}${PREFIX}/lib/nss_oslogin.so.1
+	${LN} -sf libnss_cache_${PORTNAME}-${DISTVERSION}.so ${STAGEDIR}${PREFIX}/lib/nss_cache_oslogin.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/google_authorized_keys \
 		${STAGEDIR}${PREFIX}/lib/libnss_google-compute-engine-oslogin-${DISTVERSION}.so \
 		${STAGEDIR}${PREFIX}/lib/pam_oslogin_admin.so \
