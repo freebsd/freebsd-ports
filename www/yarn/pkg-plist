@@ -1,11 +1,11 @@
 %%NO_HADOOPCOMPAT%%bin/yarn
 bin/yarn.js
 bin/yarnpkg
-lib/node_modules/yarn/README.md
 lib/node_modules/yarn/LICENSE
+lib/node_modules/yarn/README.md
 @(,,755) lib/node_modules/yarn/bin/yarn
 @(,,755) lib/node_modules/yarn/bin/yarn.js
 @(,,755) lib/node_modules/yarn/bin/yarnpkg
-lib/node_modules/yarn/lib/v8-compile-cache.js
 @(,,755) lib/node_modules/yarn/lib/cli.js
+lib/node_modules/yarn/lib/v8-compile-cache.js
 lib/node_modules/yarn/package.json
