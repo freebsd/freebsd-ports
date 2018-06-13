@@ -2,29 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	lbzip2
-PORTVERSION=	0.23
+PORTVERSION=	2.5
 CATEGORIES=	archivers
-MASTER_SITES=	http://lacos.web.elte.hu/pub/lbzip2/
+MASTER_SITES=	http://archive.lbzip2.org/
+
+LICENSE=	GPLv3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded bzip2/bunzip2 filter
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_FILES=	bin/lbzip2 \
+USES=		tar:bzip2
+GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/lbunzip2 bin/lbzcat bin/lbzip2 \
+		man/man1/lbunzip2.1.gz \
+		man/man1/lbzcat.1.gz \
 		man/man1/lbzip2.1.gz
 
-PORTDOCS=	ChangeLog README
+PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS
 
 OPTIONS_DEFINE=	DOCS
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lbzip2 ${STAGEDIR}${PREFIX}/bin/lbzip2
-	${INSTALL_MAN} ${WRKSRC}/lbzip2.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
