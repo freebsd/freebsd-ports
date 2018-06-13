@@ -15,3 +15,5 @@ SHA256 (Kingcom-tinyformat-Release-2.0.1-7-gb7f5a22_GH0.tar.gz) = d86b5b45920472
 SIZE (Kingcom-tinyformat-Release-2.0.1-7-gb7f5a22_GH0.tar.gz) = 22286
 SHA256 (c783e7761c2a.patch) = 588701f2e5ef299dad9ec820716791bfa2261f17516bae1d884138d58b64c872
 SIZE (c783e7761c2a.patch) = 1272
+SHA256 (7a7c655615a4.patch) = 48d1ab7f59a2f2fdf7b53b55844d146639f8e638b9a92e92e6d75df56ffea66f
+SIZE (7a7c655615a4.patch) = 1035

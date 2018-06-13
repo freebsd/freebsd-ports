@@ -3,7 +3,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.5.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	c783e7761c2a.patch:-p1
+PATCHFILES+=	7a7c655615a4.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
