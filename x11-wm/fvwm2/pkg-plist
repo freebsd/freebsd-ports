@@ -407,7 +407,10 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/FvwmScript-Buttons
 %%DATADIR%%/FvwmScript-Colorset
 %%DATADIR%%/FvwmScript-ComExample
+%%DATADIR%%/FvwmScript-ConfirmCopyConfig
+%%DATADIR%%/FvwmScript-ConfirmQuit
 %%DATADIR%%/FvwmScript-Date
+%%DATADIR%%/FvwmScript-DateTime
 %%DATADIR%%/FvwmScript-FileBrowser
 %%DATADIR%%/FvwmScript-Find
 %%DATADIR%%/FvwmScript-KeyboardSetup
@@ -458,6 +461,8 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/perllib/General/Parse.pm
 %%NLS%%share/locale/ar/LC_MESSAGES/FvwmScript.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/fvwm.mo
+%%NLS%%share/locale/da/LC_MESSAGES/FvwmScript.mo
+%%NLS%%share/locale/da/LC_MESSAGES/fvwm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/FvwmScript.mo
 %%NLS%%share/locale/de/LC_MESSAGES/fvwm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/FvwmScript.mo
