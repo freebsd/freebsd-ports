@@ -108,7 +108,6 @@
     SUBDIR += tintin++
     SUBDIR += ttf2pt1
     SUBDIR += ttfm
-    SUBDIR += unrar
     SUBDIR += ve
     SUBDIR += wenju
     SUBDIR += wordpress-zh_CN
