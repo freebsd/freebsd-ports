@@ -1,7 +1,8 @@
-%%SITE_ARCH%%/Class/Date.pm
-%%SITE_ARCH%%/Class/Date.pod
-%%SITE_ARCH%%/Class/Date/Const.pm
-%%SITE_ARCH%%/Class/Date/Invalid.pm
-%%SITE_ARCH%%/Class/Date/Rel.pm
-%%SITE_ARCH%%/auto/Class/Date/Date.so
+%%SITE_PERL%%/Class/Date.pm
+%%SITE_PERL%%/Class/Date/Const.pm
+%%SITE_PERL%%/Class/Date/Invalid.pm
+%%SITE_PERL%%/Class/Date/Rel.pm
 %%PERL5_MAN3%%/Class::Date.3.gz
+%%PERL5_MAN3%%/Class::Date::Const.3.gz
+%%PERL5_MAN3%%/Class::Date::Invalid.3.gz
+%%PERL5_MAN3%%/Class::Date::Rel.3.gz
