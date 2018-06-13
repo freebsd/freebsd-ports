@@ -55,6 +55,7 @@
     SUBDIR += ibus-chewing
     SUBDIR += ibus-libpinyin
     SUBDIR += ibus-pinyin
+    SUBDIR += ibus-table-chinese
     SUBDIR += jis2gb
     SUBDIR += kcfonts
     SUBDIR += kde4-l10n-zh_CN
