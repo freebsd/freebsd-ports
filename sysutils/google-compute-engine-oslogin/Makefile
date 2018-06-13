@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-compute-engine-oslogin
-DISTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	helen.koike@collabora.com
@@ -10,6 +9,10 @@ COMMENT=	OS Login Guest Environment for Google Compute Engine
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+BROKEN_mips=		fails to compile: utils/oslogin_utils.cc:16:23: curl/curl.h: No such file or directory
+BROKEN_mips64=		fails to compile: utils/oslogin_utils.cc:16:23: curl/curl.h: No such file or directory
+BROKEN_powerpc64=	fails to compile: utils/oslogin_utils.cc:16:23: curl/curl.h: No such file or directory
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjson-c.so:devel/json-c
@@ -22,7 +25,7 @@ USE_GCC=	any
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_PROJECT=	compute-image-packages
-GH_TAGNAME=	20171213
+GH_TAGNAME=	20180611
 MAKE_ARGS=	JSON_INCLUDE_PATH=${LOCALBASE}/include/json-c \
 		BIN_INSTALL_PATH=/bin \
 		PAM_INSTALL_PATH=/lib \
@@ -39,6 +42,7 @@ post-patch:
 
 post-install:
 	${LN} -sf libnss_${PORTNAME}-${DISTVERSION}.so ${STAGEDIR}${PREFIX}/lib/nss_oslogin.so.1
+	${LN} -sf libnss_cache_${PORTNAME}-${DISTVERSION}.so ${STAGEDIR}${PREFIX}/lib/nss_cache_oslogin.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/google_authorized_keys \
 		${STAGEDIR}${PREFIX}/lib/libnss_google-compute-engine-oslogin-${DISTVERSION}.so \
 		${STAGEDIR}${PREFIX}/lib/pam_oslogin_admin.so \
