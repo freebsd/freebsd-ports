@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-ACME2
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,6 @@ BUILD_DEPENDS=	p5-Call-Context>=0.02:devel/p5-Call-Context \
 		p5-Test-Deep>=1.128:devel/p5-Test-Deep \
 		p5-Test-Exception>=0.43:devel/p5-Test-Exception \
 		p5-Test-NoWarnings>=1.04:devel/p5-Test-NoWarnings \
-		p5-Types-Serialiser>=1.0:devel/p5-Types-Serialiser \
 		p5-X-Tiny>=0.13:devel/p5-X-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
