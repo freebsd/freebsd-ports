@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	julia
-PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTVERSION=	0.6.3
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/julia/releases/download/v${PORTVERSION}/
@@ -29,7 +28,7 @@ BUILD_DEPENDS=	patchelf:sysutils/patchelf \
 USES=		gmake compiler:c++11-lib fortran
 USE_LDCONFIG=	yes
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	default
 INSTALL_TARGET=	install
