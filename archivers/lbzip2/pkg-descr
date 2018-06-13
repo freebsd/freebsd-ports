@@ -1,4 +1,15 @@
-A multi-threaded bzip2/bunzip2 filter that doesn't depend on the lseek()
-system call and so isn't restricted to regular files.
+bzip2 is a free, multi-threaded compression utility with support for bzip2
+compressed file format.
 
-WWW: http://phptest11.atw.hu/
+lbzip2 can process standard bz2 files in parallel. It uses POSIX threading
+model (pthreads), which allows it to take full advantage of the symmetric
+multiprocessing (SMP) systems.  It has been proven to scale linearly, even
+to over one hundred processor cores.
+
+lbzip2 is fully compatible with bzip2 -- both at file format and command
+line level.  Files created by lbzip2 can be decompressed by all versions
+of bzip2 and other software supporting bz2 format.  lbzip2 can decompress
+any bz2 files in parallel.  All bzip2 command-line options are also
+accepted by lbzip2.  This makes lbzip2 a drop-in replacement for bzip2.
+
+WWW: http://lbzip2.org/
