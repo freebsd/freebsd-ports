@@ -38,14 +38,14 @@ XMLRPC_LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c
 .include <bsd.port.options.mk>
 
 # Workaround to build on >= 10.x
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD
 USE_CXXSTD=	c++11
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/configure
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD
 	@${FIND} ${WRKSRC} \( -name '*.h' -o -name '*.cc' \) -type f \
 		-exec ${REINPLACE_CMD} -e 's/tr1::/std::/g' {} \; \
 		-exec ${REINPLACE_CMD} -e 's/std::std::/std::/g' {} \; \
