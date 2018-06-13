@@ -3,6 +3,7 @@
 
 PORTNAME=	wkhtmltopdf
 PORTVERSION=	0.12.5
+PORTREVISION=	1
 CATEGORIES=	converters
 
 MAINTAINER=	pi@FreeBSD.org
@@ -19,6 +20,7 @@ BROKEN_powerpc64=	fails to build: RenderObject.o: sibling call optimization to d
 BROKEN_SSL=		openssl-devel
 BROKEN_SSL_REASON_openssl-devel=	member access into incomplete type 'SSL_CIPHER' (aka 'ssl_cipher_st')
 
+RUN_DEPENDS=	webfonts>=0:x11-fonts/webfonts
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
