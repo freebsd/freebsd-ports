@@ -11,9 +11,6 @@ COMMENT=	FIO - flexible IO tester
 
 LICENSE=	GPLv2
 
-BROKEN_armv6=		Fails to compile: unsupported ARM architecture
-BROKEN_armv7=		Fails to compile: unsupported ARM architecture
-
 USES=		gmake tar:bzip2
 
 OPTIONS_DEFINE=	GNUPLOT EXAMPLES
