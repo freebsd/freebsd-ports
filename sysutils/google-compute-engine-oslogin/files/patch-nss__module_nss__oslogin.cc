@@ -1,4 +1,4 @@
---- nss_module/nss_oslogin.cc.orig	2017-12-13 23:47:59 UTC
+--- nss_module/nss_oslogin.cc.orig	2018-06-11 17:16:50 UTC
 +++ nss_module/nss_oslogin.cc
 @@ -16,6 +16,7 @@
  #include <errno.h>
@@ -8,10 +8,13 @@
  #include <pthread.h>
  #include <pwd.h>
  #include <sys/types.h>
-@@ -150,4 +151,27 @@ int _nss_oslogin_getpwent_r(struct passw
-   }
-   return NSS_STATUS_SUCCESS;
- }
+@@ -103,4 +104,30 @@ int _nss_oslogin_getpwnam_r(const char *
+ // nss_getpwent_r() is intentionally left unimplemented. This functionality is
+ // now covered by the nss_cache binary and nss_cache module.
+ 
++void _nss_oslogin_getpwent_r() {}
++void _nss_oslogin_endpwent() {}
++void _nss_oslogin_setpwent() {}
 +
 +NSS_METHOD_PROTOTYPE(__nss_compat_getpwnam_r);
 +NSS_METHOD_PROTOTYPE(__nss_compat_getpwuid_r);
