@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} != FreeBSD || (${OSVERSION} >= 1002506 && ${OSVERSION} < 1100072)
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1100072
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-def.h
 
 post-patch:
