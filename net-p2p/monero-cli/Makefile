@@ -62,7 +62,7 @@ LD_EMULATION=	aarch64elf
 .elif ${ARCH} == amd64
 LD_EMULATION=	elf_amd64
 .elif ${ARCH} == i386
-LD_EMULATION=	elf_i386
+LD_EMULATION=	elf_i386_fbsd
 .elif ${ARCH} == powerpc
 LD_EMULATION=	elf32ppc
 .elif ${ARCH} == powerpc64
