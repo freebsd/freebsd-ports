@@ -1,6 +1,14 @@
---- configure.in.orig
+--- configure.in.orig	2010-06-05 19:56:37 UTC
 +++ configure.in
-@@ -599,18 +599,16 @@
+@@ -33,6 +33,7 @@ dnl POSSIBILITY OF SUCH DAMAGE.
+ 
+ dnl Checks that we are given a good source directory.
+ AC_INIT(ic/m68k/m68k-impl.h)
++AC_CONFIG_MACRO_DIR([m4])
+ AC_CANONICAL_SYSTEM
+ AM_INIT_AUTOMAKE(tme, 0.8)
+ 
+@@ -599,18 +600,14 @@ i[3456789]86-* | x86_64-*) misc_hosts="x86" ;;
  esac
  changequote([, ])dnl
  AC_MSG_RESULT([${misc_hosts}])
@@ -11,19 +19,19 @@
  
  dnl Configure for libtool.
 -AC_LIBLTDL_INSTALLABLE
-+LT_CONFIG_LTDL_DIR([libltdl])
-+LT_INIT([dlopen])
-+LTDL_INIT([installable])
- AC_SUBST(INCLTDL)
- AC_SUBST(LIBLTDL)
+-AC_SUBST(INCLTDL)
+-AC_SUBST(LIBLTDL)
 -AC_LIBTOOL_DLOPEN
 -AM_PROG_LIBTOOL
 -AC_SUBST(LTLIBOBJS)
 -AC_CONFIG_SUBDIRS(libltdl)
++LT_CONFIG_LTDL_DIR([libltdl])
++LT_INIT([dlopen])
++LTDL_INIT
  TME_PREOPEN=
  if test $enable_shared = no; then
    TME_PREOPEN='`sort -u $(top_builddir)/tme-preopen.txt`'
-@@ -683,11 +681,8 @@
+@@ -683,11 +680,8 @@ if test "x$gen_tmeconfig_h" = xyes; then
  #define _TMECONFIG_H
  
  TMEEOF

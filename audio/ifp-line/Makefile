@@ -13,20 +13,15 @@ COMMENT=	Command line interface to iRiver music players
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf iconv
+USES=		iconv
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	LIBUSB_LIBS=-lusb
 MAKE_JOBS_UNSAFE=	yes
-
-LDFLAGS+=	-lusb
 
 PLIST_FILES=	bin/ifp man/man1/ifp.1.gz
 PORTDOCS=	NEWS README TIPS nonroot.sh
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/LIBUSB/s|ERROR|WARN|' ${WRKSRC}/configure.ac
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ifp ${STAGEDIR}${PREFIX}/bin

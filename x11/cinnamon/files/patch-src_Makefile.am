@@ -1,6 +1,14 @@
---- src/Makefile.am.orig	2014-04-12 14:28:57.000000000 +0000
-+++ src/Makefile.am	2014-04-24 15:24:43.261840738 +0000
-@@ -267,7 +267,7 @@
+--- src/Makefile.am.orig	2015-01-19 15:45:53 UTC
++++ src/Makefile.am
+@@ -165,7 +165,6 @@ cinnamon_real_SOURCES =		\
+ 	main.c
+ cinnamon_real_CPPFLAGS = $(cinnamon_cflags)
+ cinnamon_real_LDADD = libcinnamon.la libcinnamon-js.la $(libcinnamon_la_LIBADD)
+-cinnamon_real_DEPENDENCIES = libcinnamon.la
+ 
+ ########################################
+ 
+@@ -286,7 +285,7 @@ libcinnamon_la_LIBADD =		\
  libcinnamon_la_CPPFLAGS = $(cinnamon_cflags)
  
  Cinnamon-0.1.gir: libcinnamon.la St-1.0.gir

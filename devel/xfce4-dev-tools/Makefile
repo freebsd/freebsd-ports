@@ -14,8 +14,8 @@ COMMENT=	Xfce development tools
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	autoconf-2.69:devel/autoconf \
-		automake-1.15:devel/automake \
+RUN_DEPENDS=	autoconf>=2.69:devel/autoconf \
+		automake>=1.15:devel/automake \
 		libtoolize:devel/libtool \
 		bash:shells/bash
 

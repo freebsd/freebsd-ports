@@ -1,0 +1,23 @@
+--- src/Makefile.am.orig	2014-05-16 04:19:46 UTC
++++ src/Makefile.am
+@@ -25,7 +25,7 @@ bin_PROGRAMS = @ANUBIS_BIN_ADM@
+ EXTRA_PROGRAMS = $(adm_bin_programs) $(adm_sbin_programs)
+ 
+ noinst_LIBRARIES = libanubisdb.a
+-anubis_LDADD = ./libanubisdb.a $(top_builddir)/lib/libanubis.a\
++anubis_LDADD = libanubisdb.a $(top_builddir)/lib/libanubis.a\
+  @LIBINTL@ $(GUILE_LIBS) @LIBGNUTLS_LIBS@ @GSASL_LIBS@ 
+ 
+ anubis_SOURCES = \
+@@ -65,9 +65,9 @@ anubis_SOURCES = \
+  xdatabase.c 
+ 
+ anubisadm_SOURCES = anubisadm.c anubisadm.h adm.c
+-anubisadm_LDADD = ./libanubisdb.a $(top_builddir)/lib/libanubis.a @LIBINTL@
++anubisadm_LDADD = libanubisdb.a $(top_builddir)/lib/libanubis.a @LIBINTL@
+ anubisusr_SOURCES = anubisusr.c anubisusr.h usr.c
+-anubisusr_LDADD = ./libanubisdb.a $(top_builddir)/lib/libanubis.a @LIBINTL@ @LIBGNUTLS_LIBS@ @GSASL_LIBS@ 
++anubisusr_LDADD = libanubisdb.a $(top_builddir)/lib/libanubis.a @LIBINTL@ @LIBGNUTLS_LIBS@ @GSASL_LIBS@ 
+ 
+ if TLS_COND
+  TLS_C=tls.c

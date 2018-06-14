@@ -1,3 +1,0 @@
-This port installs a wrapper script for automake, with symlinks to the
-unversioned name of each tool included with automake.  This allows the
-correct version to be selected depending on the user's requirements.
