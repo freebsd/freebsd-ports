@@ -20,6 +20,7 @@ USE_GNOME=	gdkpixbuf2 gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --disable-warnings
+CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 MAKE_JOBS_UNSAFE=yes
 INSTALL_TARGET=	install-strip
 

@@ -13,6 +13,8 @@ COMMENT=	Open Text Summarizer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		autoreconf gettext libtool pathfix pkgconfig

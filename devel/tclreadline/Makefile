@@ -25,4 +25,7 @@ USE_LDCONFIG=	yes
 TCL_PKG=	${PORTNAME}${PORTVERSION}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} TCL_PKG=${TCL_PKG}
 
+post-patch:
+	@${RM} ${WRKSRC}/INSTALL
+
 .include <bsd.port.mk>

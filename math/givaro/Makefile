@@ -15,7 +15,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		autoreconf compiler:c++11-lang libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp="${LOCALBASE}"
 USE_LDCONFIG=	yes

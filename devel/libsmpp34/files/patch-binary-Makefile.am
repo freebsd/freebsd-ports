@@ -1,0 +1,11 @@
+--- binary/Makefile.am.orig	2012-11-07 07:32:31 UTC
++++ binary/Makefile.am
+@@ -5,7 +5,7 @@ include $(top_srcdir)/test_pdu/Makefile.am
+ include $(top_srcdir)/test_apps/Makefile.am
+ include $(top_srcdir)/src/Makefile.am
+ 
+-LDADD = $(top_srcdir)/binary/libsmpp34.la
++LDADD = libsmpp34.la
+ AM_CPPFLAGS = -D_REENTRANT -DBSD_COMP -D_POSIX_PTHREAD_SEMANTICS
+ AM_CFLAGS = @CFLAGS@ -Wall -fPIC # -static
+ INCLUDES = -I../src -I..

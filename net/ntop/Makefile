@@ -13,6 +13,8 @@ COMMENT=	Network monitoring tool with command line and web interfaces
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Makefiles use hacks that don't work with recent automake.  Try net/ntopng
+
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libevent.so:devel/libevent
 BUILD_DEPENDS=	rrdtool12>=1.2:databases/rrdtool12 \

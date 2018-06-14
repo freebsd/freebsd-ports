@@ -28,8 +28,6 @@ TEST_TARGET=	check
 USE_GITHUB=	yes
 GH_ACCOUNT=	algernon
 
-MAKE_JOBS_UNSAFE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/Makefile.am
 

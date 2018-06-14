@@ -31,5 +31,9 @@ INSTALL_TARGET=	install-strip
 post-patch:
 	cd ${WRKSRC}/hadoop && ${MV} strings.cpp strings.cc && ${MV} strings.h s.h
 	${REINPLACE_CMD} -e s#strings.h#s.h# ${WRKSRC}/hadoop/r_compute_ngram_counts.cpp ${WRKSRC}/hadoop/m_compute_ngram_counts_batch.cpp
+	@${REINPLACE_CMD} -e 's,-L./,,' -e 's,-lLDHT,libLDHT.la,' \
+		-e 's,-lticpp,libticpp.la,' -e 's,-lRandLM,libRandLM.la,' \
+		${WRKSRC}/src/LDHT/Makefile.am \
+		${WRKSRC}/src/RandLM/Makefile.am
 
 .include <bsd.port.mk>

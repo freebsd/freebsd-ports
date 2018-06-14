@@ -1,0 +1,25 @@
+--- configure.ac.orig	2017-06-02 13:20:16 UTC
++++ configure.ac
+@@ -30,9 +30,6 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE"
+ case "$host_os" in
+ freebsd*)
+ # Using clang:
+-  CC=clang40
+-  CPP=clang-cpp40
+-  CXX=clang++40
+ # or gcc5:
+ #  CC=gcc5
+ #  CPP=cpp5
+@@ -52,9 +49,12 @@ AC_TYPE_SSIZE_T
+ dnl check for installed clipperlib newer than 5.1.0 (has PolyNode)
+ AC_DEFINE([HAVE_CLIPPERLIB],[0],[Have external clipper])
+ CLIPPER_LIBS="libclipper.la"
++saved_LIBS=$LIBS
++LIBS="-lpolyclipping $LIBS"
+ AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <polyclipping/clipper.hpp>], [ClipperLib::PolyNode cnode])],
+     [AC_DEFINE([HAVE_CLIPPERLIB],[1]) CLIPPER_LIBS="-lpolyclipping"],
+     [AC_MSG_WARN([libclipper is not installed. Using internal copy.])])
++LIBS=$saved_LIBS
+ AC_SUBST(CLIPPER_LIBS)
+ 
+ 

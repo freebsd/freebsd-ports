@@ -16,7 +16,6 @@ USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 
 post-patch:
