@@ -14,9 +14,7 @@ LICENSE=	GPLv2
 
 BROKEN_aarch64=		fails to compile: aesv8-armx-linux64.S:53:2: instruction requires: crypto aese v6.16b,v0.16b
 
-LIB_DEPENDS+=	libsodium.so:security/libsodium
-
-USES=		cargo gmake ssl
+USES=		cargo
 CARGO_CRATES=	adler32-1.0.2 \
 		advapi32-sys-0.2.0 \
 		aho-corasick-0.6.4 \

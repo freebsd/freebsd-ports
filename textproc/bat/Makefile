@@ -10,10 +10,7 @@ COMMENT=	Clone of cat with syntax highlighting
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libonig.so:devel/oniguruma
-CARGO_ENV+=	RUSTONIG_SYSTEM_LIBONIG=1
-
-USES=	cargo cmake:noninja
+USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 

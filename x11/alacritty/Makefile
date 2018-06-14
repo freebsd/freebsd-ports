@@ -11,9 +11,7 @@ COMMENT=	GPU-accelerated terminal emulator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE
 
-BUILD_DEPENDS=	cmake:devel/cmake
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 USES=		cargo
 USE_GITHUB=	yes
