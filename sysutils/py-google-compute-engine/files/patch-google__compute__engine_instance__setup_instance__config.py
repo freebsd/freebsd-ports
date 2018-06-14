@@ -1,6 +1,6 @@
---- google_compute_engine/instance_setup/instance_config.py.orig	2018-02-22 19:44:17 UTC
+--- google_compute_engine/instance_setup/instance_config.py.orig	2018-06-11 23:51:09 UTC
 +++ google_compute_engine/instance_setup/instance_config.py
-@@ -73,11 +73,11 @@ class InstanceConfig(config_manager.Conf
+@@ -74,11 +74,11 @@ class InstanceConfig(config_manager.Conf
        },
        'InstanceSetup': {
            'host_key_types': 'ecdsa,ed25519,rsa',

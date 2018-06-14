@@ -4,7 +4,7 @@
 #
 # PROVIDE: google_startup
 # BEFORE: LOGIN
-# REQUIRE: NETWORKING syslogd google_instance_setup google_network_setup
+# REQUIRE: NETWORKING syslogd google_instance_setup google_network_daemon
 # KEYWORD: shutdown
 #
 # google_startup_enable (bool): 		Set to NO by default.
