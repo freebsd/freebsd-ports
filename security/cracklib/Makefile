@@ -28,7 +28,7 @@ USES=		gettext libtool
 USE_LDCONFIG=	yes
 
 .if defined(PYTHON_SLAVEPORT)
-USES+=		python:2.7 #localbase
+USES+=		python:2.7 localbase
 USE_PYTHON=	flavors
 CONFIGURE_ARGS+=--with-python
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_cracklib.a \
