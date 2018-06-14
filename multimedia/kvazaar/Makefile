@@ -6,12 +6,13 @@ DISTVERSION?=	1.2.0
 PORTREVISION?=	0
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	4b5d95155526.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	H.265/HEVC encoder implemented in C
 
 LICENSE=	LGPL21+
-
-BROKEN_powerpc64=	fails to compile: strategyselector.c:377:26: linux/auxvec.h: No such file or directory
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ultravideo
