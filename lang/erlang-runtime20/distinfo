@@ -1,8 +1,8 @@
-TIMESTAMP = 1528207615
+TIMESTAMP = 1528975866
 SHA256 (erlang/otp_src_20.3.tar.gz) = 4e19e6c403d5255531c0b870f19511c8b8e3b080618e4f9efcb44d905935b2a1
 SIZE (erlang/otp_src_20.3.tar.gz) = 88170904
-SHA256 (erlang/preloaded-20.3.7.tar.gz) = ba3fc7c3fe73e42882f2b55b248152ca7f3598d67cb7462ee4ba987f506d046d
-SIZE (erlang/preloaded-20.3.7.tar.gz) = 334978
+SHA256 (erlang/preloaded-20.3.8.tar.gz) = 0ecdeca0dde7d204d66ad47000f7b981080c22979878ffe15524aafe2dbfde3f
+SIZE (erlang/preloaded-20.3.8.tar.gz) = 334978
 SHA256 (erlang/patch-otp-20.3.1) = 3d43c6ecb867c64318466eb7adeb8953669cb092bb4b43bbe1b51cfb8d640ee8
 SIZE (erlang/patch-otp-20.3.1) = 5316
 SHA256 (erlang/patch-otp-20.3.2) = b4fa80bab29f1382510ad5b3fc66fd5d1aba35bb48ce390763eb05c88a3e44b1
@@ -17,3 +17,5 @@ SHA256 (erlang/patch-otp-20.3.6) = edcfba7dd5efee0f0739c919aea542bad33b788b7b2fe
 SIZE (erlang/patch-otp-20.3.6) = 10837
 SHA256 (erlang/patch-otp-20.3.7) = 3b55f718ef9d863b7616f22f9a90c01766f9d42a69cbfb5fe949d37aec6ac341
 SIZE (erlang/patch-otp-20.3.7) = 19324
+SHA256 (erlang/patch-otp-20.3.8) = ea17d780d1e14ac7419ab57b7393d493124cd2b32da248bbc273e71e87496a92
+SIZE (erlang/patch-otp-20.3.8) = 13102
