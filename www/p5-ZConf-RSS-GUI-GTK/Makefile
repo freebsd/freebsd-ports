@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a GTK backend for ZConf::RSS::GUI
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 RUN_DEPENDS=	p5-ZConf-RSS>=0:www/p5-ZConf-RSS \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 

@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Run a file using a chosen method, desktop entry, or mimetype
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-ZConf>=6.1.0:net/p5-ZConf \
 		p5-File-MimeInfo>=0.16:devel/p5-File-MimeInfo \
 		p5-Curses-UI>=0.9609:devel/p5-Curses-UI \

@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	ZConf backed RSS fetching and viewing
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-ZConf>=0:net/p5-ZConf \
 		p5-ZConf-GUI>=0:devel/p5-ZConf-GUI \
 		p5-XML-FeedPP>=0:textproc/p5-XML-FeedPP \

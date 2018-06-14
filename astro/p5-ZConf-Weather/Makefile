@@ -15,6 +15,9 @@ COMMENT=	ZConf module to assist with fetching/printing weather information
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-ZConf>=6.1.0:net/p5-ZConf \
 		p5-Text-NeatTemplate>=0.10.01:textproc/p5-Text-NeatTemplate \
 		p5-Weather-Underground>=3.03:astro/p5-Weather-Underground
