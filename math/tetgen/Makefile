@@ -14,22 +14,24 @@ COMMENT=	Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	EXAMPLES
-
 MAKEFILE=	makefile
 ALL_TARGET=	tetgen tetlib
 
 PORTEXAMPLES=	example.poly
 PLIST_FILES=	bin/tetgen include/tetgen.h lib/libtet.a
 
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tetgen ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/tetgen.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libtet.a ${STAGEDIR}${PREFIX}/lib
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example.poly ${STAGEDIR}${EXAMPLESDIR}
 
-regression-test:
+do-test:
 	(cd ${INSTALL_WRKSRC} && ./tetgen -p example.poly )
 
 .include <bsd.port.mk>
