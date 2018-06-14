@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.7.2
 CATEGORIES=	dns
-MASTER_SITES=	https://unbound.net/downloads/ \
+MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/ \
 		https://distfiles.crux.guru/
 
 MAINTAINER=	jaap@NLnetLabs.nl
