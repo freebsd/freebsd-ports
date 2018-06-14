@@ -11,6 +11,7 @@ include/spice-1/spice/qxl_dev.h
 include/spice-1/spice/qxl_windows.h
 include/spice-1/spice/start-packed.h
 include/spice-1/spice/stats.h
+include/spice-1/spice/stream-device.h
 include/spice-1/spice/types.h
 include/spice-1/spice/vd_agent.h
 include/spice-1/spice/vdi_dev.h
