@@ -408,6 +408,7 @@
     SUBDIR += py-emoji
     SUBDIR += py-fuzzy
     SUBDIR += py-glance
+    SUBDIR += py-orange3-educational
     SUBDIR += py-osd
     SUBDIR += py-palettable
     SUBDIR += py-pexpect
