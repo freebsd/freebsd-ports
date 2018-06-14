@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-compute-engine
-DISTVERSION=	2.7.6
-PORTREVISION=	4
+DISTVERSION=	2.8.3
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,10 +23,9 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 USE_RC_SUBR=	google_instance_setup \
-		google_network_setup \
 		google_accounts_daemon \
 		google_clock_skew_daemon \
-		google_ip_forwarding_daemon \
+		google_network_daemon \
 		google_startup
 
 SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}"
