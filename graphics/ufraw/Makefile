@@ -3,7 +3,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.22
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -59,12 +59,7 @@ GNOME_USE=		GNOME=gconf2
 GNOME_CONFIGURE_ENABLE=	mime
 GNOME_VARS=		CATEGORIES+=gnome GCONF_SCHEMAS=${PORTNAME}.schemas
 
-#post-patch:
-#	echo "START REPLACE" ; \
-#	${REINPLACE_CMD} -e '18s|^$$|#include <sys/types.h>|' \
-#		${WRKSRC}/dcraw.h
-## Fix GConf2 schemas installation path; unconditionalize installation of
-## .desktop file; avoid conflict with `graphics/dcraw' (rename the binary)
-#	${REINPLACE_CMD} -e '/schemasdir/s|datadir|sysconfdir|'   ${WRKSRC}/Makefile.am
-#
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/ufraw.desktop ${STAGEDIR}${DESKTOPDIR}
+
 .include <bsd.port.mk>
