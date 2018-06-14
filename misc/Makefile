@@ -424,6 +424,7 @@
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-qt5-demo
+    SUBDIR += py-scikit-fusion
     SUBDIR += py-serverfiles
     SUBDIR += py-socli
     SUBDIR += py-spdx
