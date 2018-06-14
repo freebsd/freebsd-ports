@@ -1,5 +1,5 @@
-TIMESTAMP = 1527801995
-SHA256 (wireguard-go-0.0.20180531.tar.xz) = 1cb6add9139fc3bce39ed45b327bc0f13472b685e060691c58a30142ed4e26d2
-SIZE (wireguard-go-0.0.20180531.tar.xz) = 53460
-SHA256 (wireguard-go-0.0.20180531-vendor.tar.xz) = 0492e3e0911774418ed03876e12148727b946c737962be6086d1031e3579308b
-SIZE (wireguard-go-0.0.20180531-vendor.tar.xz) = 265332
+TIMESTAMP = 1528919004
+SHA256 (wireguard-go-0.0.20180613.tar.xz) = 3e22e6f2a715f05f9bbc5b1a9c737ab2edc8f26b2af61f9cc31f83391cd663ff
+SIZE (wireguard-go-0.0.20180613.tar.xz) = 53628
+SHA256 (wireguard-go-0.0.20180613-vendor.tar.xz) = db5bc33f6fdbf9661135a1ff729b8b275c029c639db54edd8b822acc0fd7de80
+SIZE (wireguard-go-0.0.20180613-vendor.tar.xz) = 264700
