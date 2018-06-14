@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gromacs
-DISTVERSION=	2018.1
+DISTVERSION=	2018.2
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -10,6 +10,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Compute molecular dynamics
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 LIB_DEPENDS=	libhwloc.so:devel/hwloc
@@ -18,8 +19,8 @@ USES=		cmake fortran perl5 pkgconfig shebangfix
 SHEBANG_FILES=	admin/*.sh scripts/*.pl scripts/*.sh src/gromacs/selection/*.sh
 bash_CMD=	${SH}
 USE_GNOME=	libxml2
-CMAKE_ARGS=	-DGMX_USE_RDTSCP:BOOL=OFF \
-		-DUSE_PYTHON_SCRIPTS:BOOL=OFF
+CMAKE_OFF=	GMX_USE_RDTSCP \
+		USE_PYTHON_SCRIPTS
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		ATLAS FLOAT OPENCL OPENMP SIMD X11
@@ -55,13 +56,12 @@ OPENMP_CMAKE_OFF=	-DGMX_OPENMP:BOOL=OFF
 SIMD_CMAKE_OFF=		-DGMX_SIMD:STRING="None"
 
 X11_USE=		XORG=ice,sm,xext,x11
-X11_CMAKE_ON=		-DGMX_X11:BOOL=ON
-X11_CMAKE_OFF=		-DGMX_X11:BOOL=OFF
+X11_CMAKE_BOOL=		GMX_X11
 
 MP_DESC=		Multiprocessing
 
 NOMP_DESC=		No multiprocessing support
-NOMP_PLIST_SUB=	SUFFIX_MPI=""
+NOMP_PLIST_SUB=		SUFFIX_MPI=""
 
 MPICH2_LIB_DEPENDS=	libmpich.so:net/mpich2
 MPICH2_CMAKE_ON=	-DGMX_MPI:BOOL=ON \
