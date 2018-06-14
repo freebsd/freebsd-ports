@@ -102,6 +102,7 @@
     SUBDIR += py-bx-python
     SUBDIR += py-cutadapt
     SUBDIR += py-macs2
+    SUBDIR += py-orange3-bioinformatics
     SUBDIR += py-pysam
     SUBDIR += pycogent
     SUBDIR += pyfasta
