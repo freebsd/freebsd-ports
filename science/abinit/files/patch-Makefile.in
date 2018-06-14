@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2018-06-14 05:16:42 UTC
++++ Makefile.in
+@@ -876,7 +876,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = \
+   @abi_ac_distcheck@ \
+   PYFLAGS="@PYFLAGS@ -B"
+ 
+-SUBDIRS = fallbacks src abichecks tests
++SUBDIRS = fallbacks src abichecks
+ 
+ # Additional files to clean
+ CLEANFILES = config.optim config.fc_info.tmp

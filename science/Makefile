@@ -22,6 +22,7 @@
     SUBDIR += R-cran-snow
     SUBDIR += R-cran-som
     SUBDIR += R-cran-udunits2
+    SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += aircraft-datcom
     SUBDIR += antioch
