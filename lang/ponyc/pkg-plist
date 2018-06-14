@@ -209,13 +209,12 @@ lib/pony/%%VERSION%%/packages/term/readline.pony
 lib/pony/%%VERSION%%/packages/term/readline_notify.pony
 lib/pony/%%VERSION%%/packages/time/_test.pony
 lib/pony/%%VERSION%%/packages/time/_timing_wheel.pony
-lib/pony/%%VERSION%%/packages/time/date.pony
 lib/pony/%%VERSION%%/packages/time/nanos.pony
+lib/pony/%%VERSION%%/packages/time/posix_date.pony
 lib/pony/%%VERSION%%/packages/time/time.pony
 lib/pony/%%VERSION%%/packages/time/timer.pony
 lib/pony/%%VERSION%%/packages/time/timer_notify.pony
 lib/pony/%%VERSION%%/packages/time/timers.pony
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/circle/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/commandline/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/counter/main.pony
@@ -243,7 +242,6 @@ lib/pony/%%VERSION%%/packages/time/timers.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ifdef/ifdef.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lambda/lambda.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailbox/main.pony
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mandelbrot/mandelbrot.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/message-ubench/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mixed/main.pony
