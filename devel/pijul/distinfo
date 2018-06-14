@@ -1,4 +1,4 @@
-TIMESTAMP = 1525384515
+TIMESTAMP = 1528463073
 SHA256 (pijul-0.10.0.tar.gz) = da3fcba4ab39a4371cda7273691364c2355c9b216bb7867d92dae5812ebb71d2
 SIZE (pijul-0.10.0.tar.gz) = 183007
 SHA256 (rust/crates/adler32-1.0.2.tar.gz) = 6cbd0b9af8587c72beadc9f72d35b9fbb070982c9e6203e46e93f10df25f8f45
@@ -137,8 +137,8 @@ SHA256 (rust/crates/libflate-0.1.14.tar.gz) = 1a429b86418868c7ea91ee50e9170683f4
 SIZE (rust/crates/libflate-0.1.14.tar.gz) = 32377
 SHA256 (rust/crates/libpijul-0.10.1.tar.gz) = ea2364fb645319433ce508d5c2791b15f168ed7e42d622f0203884f03669d860
 SIZE (rust/crates/libpijul-0.10.1.tar.gz) = 80514
-SHA256 (rust/crates/line-0.1.1.tar.gz) = ecdd22a3856203276b7854e16213139428e82922530438f36356e5b361ea4a42
-SIZE (rust/crates/line-0.1.1.tar.gz) = 3204
+SHA256 (rust/crates/line-0.1.7.tar.gz) = 28db36c6282c021990fd7523aa6c5505c35f613220ef1e6c85f80ba25d8b8961
+SIZE (rust/crates/line-0.1.7.tar.gz) = 3748
 SHA256 (rust/crates/log-0.3.9.tar.gz) = e19e8d5c34a3e0e2223db8e060f9e8264aeeb5c5fc64a4ee9965c062211c024b
 SIZE (rust/crates/log-0.3.9.tar.gz) = 16686
 SHA256 (rust/crates/log-0.4.1.tar.gz) = 89f010e843f2b1a31dbd316b3b8d443758bc634bed37aabade59c686d644e0a2
