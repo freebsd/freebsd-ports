@@ -1,0 +1,8 @@
+atompaw is a tool to generate projector and basis functions needed for
+performing electronic structure calculations based on the projector
+augmented wave (PAW) method.
+
+PAW method is based on the publication
+http://www.sciencedirect.com/science/article/pii/S0370157300000077
+
+WWW: http://users.wfu.edu/natalie/papers/pwpaw/
