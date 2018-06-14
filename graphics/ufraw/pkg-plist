@@ -3,6 +3,7 @@ bin/nikon-curve
 bin/ufraw
 bin/ufraw-batch
 man/man1/ufraw.1.gz
+share/applications/ufraw.desktop
 share/locale/ca/LC_MESSAGES/ufraw.mo
 share/locale/cs/LC_MESSAGES/ufraw.mo
 share/locale/da/LC_MESSAGES/ufraw.mo
