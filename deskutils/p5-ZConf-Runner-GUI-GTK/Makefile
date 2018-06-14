@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	The GTK GUI backend for ZConf::Runner
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-ZConf>=0:net/p5-ZConf \
 		p5-Gtk2>=1.060:x11-toolkits/p5-Gtk2 \
 		p5-ZConf-Runner>=0:deskutils/p5-ZConf-Runner \

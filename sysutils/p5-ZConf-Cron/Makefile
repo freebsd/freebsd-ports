@@ -15,6 +15,9 @@ COMMENT=	Handles storing cron tabs in ZConf
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-DateTime-Event-Cron>=0:devel/p5-DateTime-Event-Cron \
 		p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
 		p5-DateTime>=0:devel/p5-DateTime \

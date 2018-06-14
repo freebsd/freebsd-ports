@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Perl based file manager
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-Gtk2>=1.060:x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Chmod>=0.0.0:x11-toolkits/p5-Gtk2-Chmod \
 		p5-Gtk2-PathButtonBar>=0.1.2:x11-toolkits/p5-Gtk2-PathButtonBar \

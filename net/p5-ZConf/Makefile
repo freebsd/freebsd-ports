@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Configuration system allowing for either file or LDAP backed storage
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-Chooser>=0:devel/p5-Chooser \
 		p5-Error-Helper>=0:devel/p5-Error-Helper \
 		p5-File-BaseDir>=0:devel/p5-File-BaseDir \

@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Background management utility and Perl module that uses ZConf
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-Image-Size-FillFullSelect>=0.1.0:graphics/p5-Image-Size-FillFullSelect \
 		p5-ZConf>=:net/p5-ZConf \
 		hsetroot:x11/hsetroot \

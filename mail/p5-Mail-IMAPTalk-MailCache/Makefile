@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Caches mail information for Mail::IMAPTalk using Mail::Cache
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-Mail-Cache>=0:mail/p5-Mail-Cache \
 		p5-Mail-IMAPTalk>=0:mail/p5-Mail-IMAPTalk
 

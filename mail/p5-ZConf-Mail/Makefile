@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Misc mail client functions backed by ZConf
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-Config-Tiny>=0:devel/p5-Config-Tiny \
 		p5-Email-Date>=0:mail/p5-Email-Date \
 		p5-Email-Simple>=0:mail/p5-Email-Simple \

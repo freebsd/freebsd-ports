@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Finds the average gray for a Imager object or image
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 RUN_DEPENDS=	p5-Imager>=0:graphics/p5-Imager
 
 USES=		perl5

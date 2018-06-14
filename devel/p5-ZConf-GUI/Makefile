@@ -15,6 +15,9 @@ COMMENT=	GUI backend chooser
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 BUILD_DEPENDS=	p5-ZConf>=6.1.0:net/p5-ZConf \
 		p5-Error-Helper>=1.0.0:devel/p5-Error-Helper \
 		p5-Module-List>=0.003:devel/p5-Module-List \

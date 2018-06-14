@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	System for bookmarking URIs using ZConf
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2018-07-15
+
 RUN_DEPENDS=	p5-ZConf>=0:net/p5-ZConf
 
 USES=		perl5
