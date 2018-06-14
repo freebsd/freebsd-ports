@@ -10269,3 +10269,4 @@ math/scilab-toolbox-sivp||2018-06-09|Has expired: Cannot build with newer opencv
 math/clipper|graphics/polyclipping|2018-06-11|Duplicate port
 chinese/unrar|archivers/unrar|2018-06-13|Has expired: Use archivers/unrar instead
 devel/automake-wrapper|devel/automake|2018-06-14|No longer needed
+net/samba45|net/samba46|2018-06-14|Has expired: yes
