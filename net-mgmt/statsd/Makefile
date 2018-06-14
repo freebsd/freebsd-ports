@@ -2,6 +2,7 @@
 
 PORTNAME=	statsd
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -11,7 +12,7 @@ COMMENT=	Simple daemon for easy stats aggregation
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	node:www/node
+RUN_DEPENDS=	node6>=0:www/node6
 
 NO_BUILD=	yes
 NO_ARCH=	yes
