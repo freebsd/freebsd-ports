@@ -934,6 +934,7 @@
     SUBDIR += py-ed25519ll
     SUBDIR += py-fail2ban
     SUBDIR += py-fchksum
+    SUBDIR += py-fido2
     SUBDIR += py-first-server
     SUBDIR += py-flask-httpauth
     SUBDIR += py-flask-kerberos
