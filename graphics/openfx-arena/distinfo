@@ -1,6 +1,6 @@
-TIMESTAMP = 1528270072
-SHA256 (NatronGitHub-openfx-arena-2.3.12-Natron-2.3.12_GH0.tar.gz) = d56d51b9a5928fb6f4127cd0a51edbdc33231c04ae4674762d996d155329e537
-SIZE (NatronGitHub-openfx-arena-2.3.12-Natron-2.3.12_GH0.tar.gz) = 565997
+TIMESTAMP = 1529067085
+SHA256 (NatronGitHub-openfx-arena-Natron-2.3.12_GH0.tar.gz) = d56d51b9a5928fb6f4127cd0a51edbdc33231c04ae4674762d996d155329e537
+SIZE (NatronGitHub-openfx-arena-Natron-2.3.12_GH0.tar.gz) = 565997
 SHA256 (NatronGitHub-openfx-supportext-1db2bfa_GH0.tar.gz) = 94ad2c42e3633348929f76e767edbe855bc8a6433ec49819f0b153c39860e034
 SIZE (NatronGitHub-openfx-supportext-1db2bfa_GH0.tar.gz) = 287010
 SHA256 (NatronGitHub-openfx-a85dc34_GH0.tar.gz) = c59082fcd9327e87ff544e93179ddc5b81d39442854283064480526ab153bfde

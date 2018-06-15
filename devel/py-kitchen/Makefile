@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kitchen
+DISTVERSIONPREFIX=	v
 PORTVERSION=	1.2.5
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	fedora-infra
-GH_TAGNAME=	v1.2.5
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
