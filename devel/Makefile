@@ -1209,6 +1209,7 @@
     SUBDIR += ice
     SUBDIR += icestorm
     SUBDIR += icmake
+    SUBDIR += icontheme
     SUBDIR += icu
     SUBDIR += icu-le-hb
     SUBDIR += icu-lx

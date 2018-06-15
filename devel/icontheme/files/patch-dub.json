@@ -1,0 +1,13 @@
+--- dub.json.orig	2017-12-13 11:29:42.399563000 -0500
++++ dub.json	2017-12-13 11:29:52.805384000 -0500
+@@ -4,10 +4,6 @@
+     "license" : "BSL-1.0",
+     "copyright": "Copyright © 2015-2016, Roman Chistokhodov",
+     "authors": ["Roman Chistokhodov"],
+-    "dependencies": {
+-        "inilike": "~>1.1.0",
+-        "xdgpaths": "~>0.2.4"
+-    },
+     "targetName" : "icontheme",
+     "targetPath" : "lib",
+     "targetType" : "library",
