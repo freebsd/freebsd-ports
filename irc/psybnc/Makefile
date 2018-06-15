@@ -35,21 +35,19 @@ IS_INTERACTIVE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#=help/#=${PSYBASE}/help/#' ${WRKSRC}/lang/*
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
-	@${REINPLACE_CMD} -e 's,gcc,clang -Wno-return-type,g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's,gcc,clang -Wno-return-type,g' ${WRKSRC}/tools/autoconf.c
-.endif
+	@${REINPLACE_CMD} -e 's,gcc,${CC} -Wno-return-type,g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,gcc,${CC} -Wno-return-type,g' ${WRKSRC}/tools/autoconf.c
 
 do-configure:
 .if ${PORT_OPTIONS:MMENUCONFIG}
-	cd ${WRKSRC} && make menuconfig
+	cd ${WRKSRC} && ${MAKE_CMD} menuconfig
 .else
 # Fool makefile.out into believing certs are unnecessary
 	${TOUCH} ${WRKSRC}/key/psybnc.cert.pem
 .endif
 
 do-install:
-	${INSTALL} -d ${STAGEDIR}${PSYBASE}/lang/ ${STAGEDIR}${PSYBASE}/key/ ${STAGEDIR}${PSYBASE}/help/
+	${MKDIR} ${STAGEDIR}${PSYBASE}/lang/ ${STAGEDIR}${PSYBASE}/key/ ${STAGEDIR}${PSYBASE}/help/
 	${INSTALL_DATA} ${WRKSRC}/lang/INFO ${STAGEDIR}${PSYBASE}/lang/
 	${INSTALL_DATA} ${WRKSRC}/lang/*.lng ${STAGEDIR}${PSYBASE}/lang/
 	${INSTALL_DATA} ${WRKSRC}/src/ssl.cnf ${STAGEDIR}${PSYBASE}/key/
