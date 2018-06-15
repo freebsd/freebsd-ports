@@ -3,4 +3,4 @@ Python library for finding and handling crystal symmetries.
 Spglib for python wraps the same C code that exists
 in the port science/spglib.
 
-WWW: http://atztogo.github.io/spglib/
+WWW: https://atztogo.github.io/spglib/

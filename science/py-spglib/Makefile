@@ -7,14 +7,14 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Library for finding and handling crystal symmetries
+COMMENT=	Library for finding and handling crystal symmetries (pythin binding)
 
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python shebangfix
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
