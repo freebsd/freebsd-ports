@@ -3,6 +3,8 @@ include/node/common.gypi
 include/node/config.gypi
 include/node/libplatform/libplatform.h
 include/node/node.h
+include/node/node_api.h
+include/node/node_api_types.h
 include/node/node_buffer.h
 include/node/node_object_wrap.h
 include/node/node_version.h
