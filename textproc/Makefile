@@ -1288,6 +1288,7 @@
     SUBDIR += py-dbfread
     SUBDIR += py-diff-match-patch
     SUBDIR += py-docutils
+    SUBDIR += py-docx2txt
     SUBDIR += py-dsv
     SUBDIR += py-duecredit
     SUBDIR += py-elasticsearch

@@ -1,0 +1,4 @@
+The code is adapted from python-docx. It can however also extract text from
+header, footer and hyperlinks. It can now also extract images.
+
+WWW: https://github.com/ankushshah89/python-docx2txt
