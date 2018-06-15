@@ -1341,6 +1341,7 @@
     SUBDIR += py-parsimonious
     SUBDIR += py-parso
     SUBDIR += py-pdfminer
+    SUBDIR += py-pdfminer3k
     SUBDIR += py-pss
     SUBDIR += py-pyPEG2
     SUBDIR += py-pyctpp2
