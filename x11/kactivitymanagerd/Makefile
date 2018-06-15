@@ -27,7 +27,7 @@ CMAKE_ARGS+=	-DCMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS=-rdynamic
 
 # Workaround to keep kactivitymanagerd from crashing:
 # http://lists.freebsd.org/pipermail/freebsd-current/2012-May/033972.html
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+.if ${OPSYS} == FreeBSD
 CXXFLAGS+=	-fno-use-cxa-atexit
 .endif
 
