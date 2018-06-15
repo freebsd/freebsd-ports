@@ -5,7 +5,7 @@
      "targetPath": "bin",
      "targetType": "executable",
 -
-+    "libs": ["dlangui","dsymbol","dparse","dlib","dcd","emsi_containers","msgpack-d", "DerelictFT","DerelictUtil","DerelictGL3","DerelictSDL2","stdx-allocator"],
++    "libs": ["dlangui","dsymbol","dparse","dlib","dcd","emsi_containers","msgpack-d", "DerelictFT","DerelictUtil","DerelictGL3","DerelictSDL2","stdx-allocator","isfreedesktop","icontheme"],
 +    "lflags":["-L%%LOCALBASE%%/lib/d","-L%%LOCALBASE%%/lib"],
      "stringImportPaths": ["views"],
  
