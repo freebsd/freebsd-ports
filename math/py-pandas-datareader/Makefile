@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	pandas-datareader
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.0-30 # dev version because of this fix: https://github.com/pydata/pandas-datareader/pull/520
+DISTVERSIONSUFFIX=	-g3c17058
 CATEGORIES=	math finance python
-MASTER_SITES=	CHEESESHOP
+#MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -22,6 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
+USE_GITHUB=	yes # github only for the dev version
+GH_ACCOUNT=	pydata
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
