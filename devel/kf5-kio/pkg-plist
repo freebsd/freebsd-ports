@@ -754,6 +754,7 @@ share/doc/HTML/uk/kioslave5/telnet/index.docbook
 share/doc/HTML/uk/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/uk/kioslave5/webdav/index.docbook
 share/kf5/kcookiejar/domain_info
+share/kconf_update/filepicker.upd
 share/knotifications5/proxyscout.notifyrc
 share/kservices5/cache.desktop
 share/kservices5/cookies.desktop

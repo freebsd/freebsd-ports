@@ -1876,6 +1876,7 @@ share/icons/breeze-dark/actions/22/dontknow.svg
 share/icons/breeze-dark/actions/22/download-amarok.svg
 share/icons/breeze-dark/actions/22/download-later.svg
 share/icons/breeze-dark/actions/22/download.svg
+share/icons/breeze-dark/actions/22/drag-surface.svg
 share/icons/breeze-dark/actions/22/draw-arrow-back.svg
 share/icons/breeze-dark/actions/22/draw-arrow-down.svg
 share/icons/breeze-dark/actions/22/draw-arrow-forward.svg
@@ -2237,7 +2238,9 @@ share/icons/breeze-dark/actions/22/gtk-yes.svg
 share/icons/breeze-dark/actions/22/guides.svg
 share/icons/breeze-dark/actions/22/hand.svg
 share/icons/breeze-dark/actions/22/handle-left.svg
+share/icons/breeze-dark/actions/22/handle-move.svg
 share/icons/breeze-dark/actions/22/handle-right.svg
+share/icons/breeze-dark/actions/22/handle-sort.svg
 share/icons/breeze-dark/actions/22/headphones.svg
 share/icons/breeze-dark/actions/22/help-about.svg
 share/icons/breeze-dark/actions/22/help-contents.svg
@@ -2707,6 +2710,8 @@ share/icons/breeze-dark/actions/22/online.svg
 share/icons/breeze-dark/actions/22/open-for-editing.svg
 share/icons/breeze-dark/actions/22/output_win.svg
 share/icons/breeze-dark/actions/22/overexposure.svg
+share/icons/breeze-dark/actions/22/overflow-menu-left.svg
+share/icons/breeze-dark/actions/22/overflow-menu-right.svg
 share/icons/breeze-dark/actions/22/overflow-menu.svg
 share/icons/breeze-dark/actions/22/package.svg
 share/icons/breeze-dark/actions/22/page-2sides.svg
@@ -9740,6 +9745,7 @@ share/icons/breeze/actions/22/dontknow.svg
 share/icons/breeze/actions/22/download-amarok.svg
 share/icons/breeze/actions/22/download-later.svg
 share/icons/breeze/actions/22/download.svg
+share/icons/breeze/actions/22/drag-surface.svg
 share/icons/breeze/actions/22/draw-arrow-back.svg
 share/icons/breeze/actions/22/draw-arrow-down.svg
 share/icons/breeze/actions/22/draw-arrow-forward.svg
@@ -10101,7 +10107,9 @@ share/icons/breeze/actions/22/gtk-yes.svg
 share/icons/breeze/actions/22/guides.svg
 share/icons/breeze/actions/22/hand.svg
 share/icons/breeze/actions/22/handle-left.svg
+share/icons/breeze/actions/22/handle-move.svg
 share/icons/breeze/actions/22/handle-right.svg
+share/icons/breeze/actions/22/handle-sort.svg
 share/icons/breeze/actions/22/headphones.svg
 share/icons/breeze/actions/22/help-about.svg
 share/icons/breeze/actions/22/help-contents.svg
@@ -10571,6 +10579,8 @@ share/icons/breeze/actions/22/online.svg
 share/icons/breeze/actions/22/open-for-editing.svg
 share/icons/breeze/actions/22/output_win.svg
 share/icons/breeze/actions/22/overexposure.svg
+share/icons/breeze/actions/22/overflow-menu-left.svg
+share/icons/breeze/actions/22/overflow-menu-right.svg
 share/icons/breeze/actions/22/overflow-menu.svg
 share/icons/breeze/actions/22/package.svg
 share/icons/breeze/actions/22/page-2sides.svg
