@@ -12,10 +12,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Switch - A switch statement for Perl
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Filter>0:devel/p5-Filter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
