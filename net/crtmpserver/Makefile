@@ -10,16 +10,17 @@ MASTER_SITES=	http://rtmpd.com/assets/sources/
 MAINTAINER=	support@rtmpd.com
 COMMENT=	C++ RTSP/RTMP/MPEG-TS Server
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MAKE_JOBS_UNSAFE=	yes
-USE_LDCONFIG=	yes
 USES=		cmake:outsource lua ssl
 CMAKE_SOURCE_PATH=	${WRKSRC}/builders/cmake
 CMAKE_ARGS=	-DCRTMPSERVER_INSTALL_PREFIX:STRING=${PREFIX} -DTEMP_FRAMEWORK_VER=${PORTVERSION}
+MAKE_JOBS_UNSAFE=	yes
+USE_LDCONFIG=	yes
 
-USERS=	crtmpserver
-GROUPS=	crtmpserver
+USERS=		crtmpserver
+GROUPS=		crtmpserver
 
 USE_RC_SUBR=	crtmpserver
 
@@ -29,7 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local/include/lua51,${LUA_INCDIR},g" \
 		-e "s,lua$$,lua-${LUA_VER},g" \
 		${WRKSRC}/builders/cmake/cmake_find_modules/Find_lua.cmake
-.if (${OSVERSION} >= 1100028) || (${OSVERSION} >= 1001505 && ${OSVERSION} < 1100000)
+.if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} '/NOTE_USECONDS/d' ${WRKSRC}/sources/common/include/platform/freebsd/freebsdplatform.h
 	@${REINPLACE_CMD} 's, -Werror,,' ${WRKSRC}/builders/cmake/CMakeLists.txt
 .endif
