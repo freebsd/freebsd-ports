@@ -3,6 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.13.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R}.x/
 PKGNAMESUFFIX=	4
@@ -32,7 +33,8 @@ CONFIGURE_ARGS=	--with-external-db \
 		--with-popt-prefix="${LOCALBASE}" \
 		--sysconfdir=${PREFIX}/etc \
 		--localstatedir=/var \
-		--without-javaglue
+		--without-javaglue \
+		am_cv_python_version=${PYTHON_VER}${PYTHON_ABIVER}
 CONFIGURE_ENV=	LUA_CFLAGS=-I${LUA_INCDIR} \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 INSTALL_TARGET=	install-strip
@@ -53,7 +55,7 @@ OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
 PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USES=		python:2.7
+PYTHON_USES=		python
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
