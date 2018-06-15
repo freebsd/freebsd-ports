@@ -1225,6 +1225,7 @@
     SUBDIR += ipython
     SUBDIR += ireport
     SUBDIR += isa-l
+    SUBDIR += isfreedesktop
     SUBDIR += isl
     SUBDIR += ispc
     SUBDIR += itext
