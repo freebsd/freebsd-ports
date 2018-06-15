@@ -2,6 +2,7 @@
 
 PORTNAME=	openfx-io
 PORTVERSION=	2.3.12
+DISTVERSIONPREFIX=	Natron-
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -29,7 +30,6 @@ USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	NatronGitHub
 GH_PROJECT=	openfx-io
-GH_TAGNAME=	Natron-2.3.12
 GH_TUPLE=	NatronGitHub:openfx:a85dc34:openfx/openfx \
 		NatronGitHub:SequenceParsing:9e8b77a:SequenceParsing/IOSupport/SequenceParsing \
 		NatronGitHub:tinydir:3aae922:tinydir/IOSupport/SequenceParsing/tinydir \

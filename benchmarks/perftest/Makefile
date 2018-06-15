@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perftest
+DISTVERSIONPREFIX=	V
 DISTVERSION=	4.2-0.8
 CATEGORIES=	benchmarks
 
@@ -19,7 +20,6 @@ USES=		autoreconf libtool
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linux-rdma
-GH_TAGNAME=	V4.2-0.8
 
 GNU_CONFIGURE=yes
 
