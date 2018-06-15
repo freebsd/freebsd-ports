@@ -611,7 +611,6 @@
 %%WWWDIR%%/bin/bundle
 %%WWWDIR%%/bin/rails
 %%WWWDIR%%/bin/rake
-%%LDAP%%%%WWWDIR%%/bundler.d/ldap.rb
 %%MARKDOWN%%%%WWWDIR%%/bundler.d/markdown.rb
 %%MYSQL%%%%WWWDIR%%/bundler.d/mysql.rb
 %%POSTGRESQL%%%%WWWDIR%%/bundler.d/pg.rb
