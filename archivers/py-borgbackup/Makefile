@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	borgbackup
-DISTVERSION=	1.1.5
-PORTREVISION=	2
+DISTVERSION=	1.1.6
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.5.6:devel/py-msgpack@${PY_FLAVOR}
 
 OPTIONS_DEFINE=	FUSE
 FUSE_DESC=	Support to mount locally borg backup files
-OPTIONS_DEFAULT=
+OPTIONS_DEFAULT=FUSE
 
 FUSE_RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/llfuse.so:devel/py-llfuse@${PY_FLAVOR}
 
@@ -29,7 +28,7 @@ USES=		python:3.4+ ssl
 USE_PYTHON=	autoplist distutils
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|msgpack-python>=0.4.6,<0.5.0|msgpack>=0.5.6|' ${WRKSRC}/setup.py ${WRKSRC}/src/borgbackup.egg-info/requires.txt
+	@${REINPLACE_CMD} -i '' -e 's|msgpack-python|msgpack|' ${WRKSRC}/setup.py ${WRKSRC}/src/borgbackup.egg-info/requires.txt
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/borg/ -name "*.so" \
