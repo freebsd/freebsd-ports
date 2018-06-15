@@ -1,0 +1,6 @@
+include/d/icontheme/cache.d
+include/d/icontheme/file.d
+include/d/icontheme/lookup.d
+include/d/icontheme/package.d
+include/d/icontheme/paths.d
+lib/d/libicontheme.a
