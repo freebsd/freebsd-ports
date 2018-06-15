@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-10-19 22:13:49 UTC
+--- CMakeLists.txt.orig	2018-06-14 13:07:32 UTC
 +++ CMakeLists.txt
 @@ -1,5 +1,4 @@
  cmake_minimum_required (VERSION 2.8.10 FATAL_ERROR)
@@ -19,12 +19,11 @@
  
  #
  # Options & features
-@@ -838,7 +843,20 @@ endif ()
+@@ -850,7 +855,19 @@ endif ()
  #
  # OpenMP
  #
 -find_package (OpenMP)
-+message (status "ZZZ About to find_package (OpenMP)")
 +#    OpenMP_C_FLAGS - flags to add to the C compiler for OpenMP support
 +#    OpenMP_CXX_FLAGS - flags to add to the CXX compiler for OpenMP support
 +#    OpenMP_Fortran_FLAGS - flags to add to the Fortran compiler for OpenMP support
@@ -41,7 +40,7 @@
  
  #
  # fftw3 single precision library
-@@ -1282,6 +1300,13 @@ else (${OPENMP_FOUND} OR APPLE)
+@@ -1297,6 +1314,13 @@ else (${OPENMP_FOUND} OR APPLE)
    target_link_libraries (jt9 wsjt_fort wsjt_cxx Qt5::Core)
  endif (${OPENMP_FOUND} OR APPLE)
  

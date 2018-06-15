@@ -1,6 +1,6 @@
---- Configuration.cpp.orig	2017-10-19 22:13:43 UTC
+--- Configuration.cpp.orig	2018-06-14 13:07:01 UTC
 +++ Configuration.cpp
-@@ -2681,14 +2681,14 @@ void Configuration::impl::fill_port_comb
+@@ -2798,14 +2798,14 @@ void Configuration::impl::fill_port_comb
  auto Configuration::impl::apply_calibration (Frequency f) const -> Frequency
  {
    if (frequency_calibration_disabled_) return f;
