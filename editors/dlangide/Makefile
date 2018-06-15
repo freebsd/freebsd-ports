@@ -24,6 +24,10 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		${LOCALBASE}/lib/d/libDerelictSDL2.a:devel/derelict-sdl2 \
 		${LOCALBASE}/lib/d/libDerelictFT.a:print/derelict-ft \
 		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator \
+                ${LOCALBASE}/lib/d/libisfreedesktop.a:devel/isfreedesktop \
+		${LOCALBASE}/lib/d/libinilike.a:devel/inilike \
+		${LOCALBASE}/lib/d/libxdgpaths.a:devel/xdgpaths \
+		${LOCALBASE}/lib/d/libicontheme.a:devel/icontheme \
 		dcd-server:devel/dcd-server
 
 USE_GITHUB=	yes
