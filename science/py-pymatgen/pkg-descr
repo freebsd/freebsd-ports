@@ -1,0 +1,14 @@
+Pymatgen (Python Materials Genomics) is a robust, open-source Python library
+for materials analysis. These are some of the main features:
+* Highly flexible classes for the representation of Element, Site, Molecule,
+  Structure objects.
+* Extensive input/output support, including support for VASP
+  (http://cms.mpi.univie.ac.at/vasp/), ABINIT (http://www.abinit.org/), CIF,
+  Gaussian, XYZ, and many other file formats.
+* Powerful analysis tools, including generation of phase diagrams, Pourbaix
+  diagrams, diffusion analyses, reactions, etc.
+* Electronic structure analyses, such as density of states and band structure.
+* Integration with the Materials Project REST API, Crystallography Open
+  Database.
+
+WWW: http://pymatgen.org/

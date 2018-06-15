@@ -181,6 +181,7 @@
     SUBDIR += py-pupynere
     SUBDIR += py-pyaixi
     SUBDIR += py-pydicom
+    SUBDIR += py-pymatgen
     SUBDIR += py-pymol
     SUBDIR += py-pyosf
     SUBDIR += py-pysal
