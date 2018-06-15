@@ -10271,3 +10271,8 @@ devel/automake-wrapper|devel/automake|2018-06-14|No longer needed
 net/samba45|net/samba46|2018-06-14|Has expired: yes
 textproc/py-elasticsearch-dsl-py||2018-06-15|Has expired: ElasticSearch 1.x End of Life
 textproc/py-elasticsearch2-dsl-py||2018-06-15|Has expired: Needs Python ElasticSearch 2.x
+textproc/elasticsearch2-plugin-marvel||2018-06-15|Removed, depends on expired textproc/elasticsearch2
+textproc/elasticsearch2-plugin-sql||2018-06-15|Removed, depends on expired textproc/elasticsearch2
+textproc/elasticsearch2-plugin-hq||2018-06-15|Removed, depends on expired textproc/elasticsearch2
+textproc/elasticsearch2-plugin-migration||2018-06-15|Removed, depends on expired textproc/elasticsearch2
+textproc/elasticsearch2||2018-06-15|Has expired: Elastic 2.4 EoL is 2018-02-28
