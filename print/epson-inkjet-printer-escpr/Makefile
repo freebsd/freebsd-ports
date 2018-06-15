@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	epson-inkjet-printer-escpr
-PORTVERSION=	1.6.19
+PORTVERSION=	1.6.21
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/07/07/57/91f8069e80d17a5dade2f18eda1ade2d49297840/
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/07/53/64/c366153bbae7cd4f77ea24d03e575b09df03a709/
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
