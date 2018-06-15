@@ -284,6 +284,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/topics.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/topics.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/topics.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.pyo
@@ -526,6 +529,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/hg-shelve.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-status.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-strip.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-tag.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/hg-topics.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-transplant.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-unbundle.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-undo.svg
