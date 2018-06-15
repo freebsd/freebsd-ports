@@ -1,0 +1,7 @@
+include/d/inilike/common.d
+include/d/inilike/exception.d
+include/d/inilike/file.d
+include/d/inilike/package.d
+include/d/inilike/range.d
+include/d/inilike/read.d
+lib/d/libinilike.a

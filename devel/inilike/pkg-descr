@@ -1,0 +1,5 @@
+Inilike is D library for parsing .ini-like files used in Freedesktop systems 
+in various places (.desktop files, icon themes, mimeapps.list, mimeinfo.cache, 
+trashcan files on freedesktop, etc.)
+
+WWW: https://github.com/FreeSlave/inilike
