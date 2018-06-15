@@ -194,6 +194,7 @@
     SUBDIR += py-scimath
     SUBDIR += py-scipy
     SUBDIR += py-scoria
+    SUBDIR += py-spglib
     SUBDIR += py-tensorflow
     SUBDIR += py-veusz
     SUBDIR += py-ws2300
