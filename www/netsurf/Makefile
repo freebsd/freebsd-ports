@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Lightweight web browser
 
 LICENSE=	GPLv2 MIT
