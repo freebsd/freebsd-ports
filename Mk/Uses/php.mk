@@ -359,7 +359,7 @@ _USE_PHP_VER71=	${_USE_PHP_ALL}
 _USE_PHP_VER72=	${_USE_PHP_ALL} sodium
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
-.    if ${PHP_VER} == 70 || ${PHP_VER} == 71 || ${PHP_VER} == 72
+.    if ${PHP_VER} >= 70
 bitset_DEPENDS=	math/pecl-bitset@${PHP_FLAVOR}
 .    else
 bitset_DEPENDS=	math/pecl-bitset2@${PHP_FLAVOR}
@@ -384,7 +384,7 @@ iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary@${PHP_FLAVOR}
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
-.    if ${PHP_VER} == 70 || ${PHP_VER} == 71 || ${PHP_VER} == 72
+.    if ${PHP_VER} >= 70
 intl_DEPENDS=	devel/php${PHP_VER}-intl
 .    else
 intl_DEPENDS=	devel/pecl-intl@${PHP_FLAVOR}
@@ -410,9 +410,7 @@ memcached_DEPENDS=	databases/pecl-memcached2@${PHP_FLAVOR}
 mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysql_DEPENDS=	databases/php${PHP_VER}-mysql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
-ncurses_DEPENDS=devel/php${PHP_VER}-ncurses
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
-oci8_DEPENDS=	databases/php${PHP_VER}-oci8
 opcache_DEPENDS=	www/php${PHP_VER}-opcache
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
@@ -439,8 +437,6 @@ snmp_DEPENDS=	net-mgmt/php${PHP_VER}-snmp
 soap_DEPENDS=	net/php${PHP_VER}-soap
 sockets_DEPENDS=net/php${PHP_VER}-sockets
 sodium_DEPENDS=	security/php${PHP_VER}-sodium
-spl_DEPENDS=	devel/php${PHP_VER}-spl
-sqlite_DEPENDS=	databases/php${PHP_VER}-sqlite
 sqlite3_DEPENDS=databases/php${PHP_VER}-sqlite3
 sybase_ct_DEPENDS=	databases/php${PHP_VER}-sybase_ct
 sysvmsg_DEPENDS=devel/php${PHP_VER}-sysvmsg
