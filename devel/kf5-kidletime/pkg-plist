@@ -1,3 +1,4 @@
+etc/xdg/kidletime.categories
 include/KF5/KIdleTime/KIdleTime
 include/KF5/KIdleTime/kidletime.h
 include/KF5/KIdleTime/kidletime_export.h
