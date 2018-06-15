@@ -218,6 +218,7 @@
     SUBDIR += silo
     SUBDIR += simlib
     SUBDIR += simsmith
+    SUBDIR += spglib
     SUBDIR += step
     SUBDIR += step-kde4
     SUBDIR += svmlight
