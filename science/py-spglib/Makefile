@@ -1,0 +1,20 @@
+# $FreeBSD$
+
+PORTNAME=	spglib
+DISTVERSION=	1.10.3.65
+CATEGORIES=	science python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Library for finding and handling crystal symmetries
+
+LICENSE=	BSD3CLAUSE
+
+BUILD_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY}
+
+USES=		python shebangfix
+USE_PYTHON=	distutils autoplist
+
+.include <bsd.port.mk>
