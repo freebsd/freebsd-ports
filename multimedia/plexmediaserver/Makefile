@@ -14,7 +14,7 @@ COMMENT=	Plex Media Server component
 
 USES=		cpe tar:bzip2
 NO_BUILD=	yes
-WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${DISTVERSIONSUFFIX}
+WRKSRC=		${WRKDIR}/PlexMediaServer-${PORTVERSION}-${DISTVERSIONSUFFIX}
 
 CPE_VENDOR=	plex
 CPE_PRODUCT=	plex_media_server
@@ -25,8 +25,8 @@ USE_RC_SUBR?=	${PORTNAME}
 SUB_FILES=	pkg-message
 SUB_LIST?=	PORTNAME=${PORTNAME} DATADIR=${DATADIR} USERS=${USERS} GROUPS=${GROUPS}
 
-USERS=	plex
-GROUPS=	${USERS}
+USERS=		plex
+GROUPS=		${USERS}
 BUNDLE_LIBS=	yes
 
 ONLY_FOR_ARCHS=	amd64
@@ -37,11 +37,9 @@ OPTIONS_DEFAULT=	RELAY
 OPTIONS_SUB=	yes
 RELAY_DESC=	Install Plex Relay daemon
 
-.include <bsd.port.options.mk>
-
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054
+.if ${OPSYS} == FreeBSD
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 .endif
 
@@ -54,9 +52,9 @@ post-patch:
 	# Older verisons of Plex we have to create a symlink
 	# Newer versions of Plex ship a duplicate file; we'll just symlink
 	${RM} ${WRKSRC}/libpython2.7.so
-.if ! ${PORT_OPTIONS:MRELAY}
+
+post-patch-RELAY-off:
 	${RM} ${WRKSRC}/Plex\ Relay
-.endif
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR})
