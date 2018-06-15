@@ -155,11 +155,6 @@
     SUBDIR += el-aspell
     SUBDIR += el-hyphen
     SUBDIR += elasticsearch-plugin-head
-    SUBDIR += elasticsearch2
-    SUBDIR += elasticsearch2-plugin-hq
-    SUBDIR += elasticsearch2-plugin-marvel
-    SUBDIR += elasticsearch2-plugin-migration
-    SUBDIR += elasticsearch2-plugin-sql
     SUBDIR += elasticsearch5
     SUBDIR += elasticsearch5-search-guard
     SUBDIR += elasticsearch6
