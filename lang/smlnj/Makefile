@@ -164,15 +164,9 @@ RECOMPILEDIR=	base/system
 RECOMPILEDIR=
 .endif
 
-.if (${ARCH} == "amd64") && (${OSVERSION} < 1000029)
-MLRUNTIMEPATCHES_CMD=	cd ${FILESDIR} && \
-			( ${LS} do-patch-base_runtime_* extra-patch-base_runtime_* 2>&- || \
-			  ${TRUE} )
-.else
 MLRUNTIMEPATCHES_CMD=	cd ${FILESDIR} && \
 			( ${LS} do-patch-base_runtime_* 2>&- || \
 			  ${TRUE} )
-.endif
 MLSTANDARDPATCHES_CMD=	cd ${FILESDIR} && \
 			( for srcdir in ${MLSTDSRCDIRS} ; \
 			  do ${LS} do-patch-$${srcdir}_* 2>&- ; \
