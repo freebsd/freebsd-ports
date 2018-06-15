@@ -13,21 +13,13 @@ COMMENT=	Userspace tools for MMC/SD devices
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
+IGNORE_DragonFly=	only supported on FreeBSD
+
 USES=		gmake tar:bzip2
 
 PLIST_FILES=	man/man1/mmc.1.gz sbin/mmc
 
 MMC_GITURL=	git://git.kernel.org/pub/scm/linux/kernel/git/cjb/mmc-utils.git
-
-.include <bsd.port.pre.mk>
-
-.if (${OPSYS} == FreeBSD && \
-	(${OSVERSION} < 1003514 || \
-	(${OSVERSION} > 1100000 && ${OSVERSION} < 1100513) || \
-	(${OSVERSION} > 1200000 && ${OSVERSION} < 1200025))) || \
-	${OPSYS} == DragonFly
-IGNORE=		only supported on recent OS versions
-.endif
 
 post-patch:
 .for i in Makefile mmc_cmds.c mmc.c man/mmc.1
@@ -49,4 +41,4 @@ maintainer-fetch:
 	@${MAKE} makesum
 	@${MAKE} clean
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
