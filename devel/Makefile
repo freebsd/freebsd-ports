@@ -4694,6 +4694,7 @@
     SUBDIR += py-mongoengine
     SUBDIR += py-mongokit
     SUBDIR += py-monotonic
+    SUBDIR += py-monty
     SUBDIR += py-more-itertools
     SUBDIR += py-mox
     SUBDIR += py-mox3
