@@ -1296,8 +1296,6 @@
     SUBDIR += py-elasticsearch5
     SUBDIR += py-elasticsearch-curator
     SUBDIR += py-elasticsearch-dsl
-    SUBDIR += py-elasticsearch-dsl-py
-    SUBDIR += py-elasticsearch2-dsl-py
     SUBDIR += py-elib.intl
     SUBDIR += py-empy
     SUBDIR += py-enchant
