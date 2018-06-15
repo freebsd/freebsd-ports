@@ -160,6 +160,7 @@ man/man1/xasy.1x.gz
 %%DATADIR%%/plain_strings.asy
 %%DATADIR%%/plain_xasy.asy
 %%DATADIR%%/pstoedit.asy
+%%DATADIR%%/rational.asy
 %%DATADIR%%/reload.js
 %%DATADIR%%/roundedpath.asy
 %%DATADIR%%/simplex.asy
@@ -360,6 +361,7 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/limit.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lineargraph.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lineargraph0.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/linearregression.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lines.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/linetype.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lmfit1.asy
