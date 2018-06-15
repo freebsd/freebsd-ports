@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-06-14 09:21:04.286608000 -0400
++++ CMakeLists.txt	2018-06-14 09:20:17.307460000 -0400
+@@ -313,6 +313,8 @@
+   main.cpp
+   wsprnet.cpp
+   WSPRBandHopping.cpp
++# No, this isn't the right place for clogf
++  clogf.c
+   )
+ 
+ set (wsjt_CXXSRCS

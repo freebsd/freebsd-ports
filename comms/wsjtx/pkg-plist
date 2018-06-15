@@ -1,6 +1,7 @@
 bin/fcal
 bin/fmeasure
 bin/fmtave
+bin/ft8code
 bin/jt4code
 bin/jt65code
 bin/jt9
@@ -34,6 +35,6 @@ share/doc/WSJT-X/README
 share/doc/WSJT-X/THANKS
 share/doc/WSJT-X/changelog.Debian.gz
 share/doc/WSJT-X/copyright
-share/doc/WSJT-X/wsjtx-main-1.8.0.html
+share/doc/WSJT-X/wsjtx-main-%%PORTVERSION%%.html
 share/pixmaps/wsjtx_icon.png
 %%DATADIR%%/JPLEPH
