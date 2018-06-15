@@ -1,0 +1,5 @@
+wmsystemtray is a system tray dockapp using freedesktop.org system
+tray protocol.  It is designed to work with WindowMaker or another
+WM, that supports dock applications (FVWM, AfterStep).
+
+WWW: https://wmsystemtray.sourceforge.io

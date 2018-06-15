@@ -366,6 +366,7 @@
     SUBDIR += wmctrl
     SUBDIR += wmdrawer
     SUBDIR += wmmatrix
+    SUBDIR += wmsystemtray
     SUBDIR += wmutils-core
     SUBDIR += wmutils-opt
     SUBDIR += wmxss
