@@ -12,6 +12,7 @@ MAINTAINER=	konstantin.lepa@gmail.com
 COMMENT=	C++ logging library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/doc/COPYING.txt
 
 USES=		cmake
 USE_LDCONFIG=	yes
