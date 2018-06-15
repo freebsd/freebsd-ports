@@ -1,0 +1,11 @@
+Spglib is a library for finding and handling crystal symmetries written in C.
+
+Features:
+* Find symmetry operations
+* Identify space-group type
+* Wyckoff position assignment
+* Refine crystal structure
+* Find a primitive cell
+* Search irreducible k-points
+
+WWW: https://atztogo.github.io/spglib/
