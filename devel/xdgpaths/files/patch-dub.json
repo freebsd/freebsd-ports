@@ -1,0 +1,12 @@
+--- dub.json.orig	2017-12-13 11:01:34.079914000 -0500
++++ dub.json	2017-12-13 11:01:47.615013000 -0500
+@@ -6,9 +6,6 @@
+     "authors": ["Roman Chistokhodov"],
+     "targetPath" : "lib", 
+     "targetType" : "library",
+-    "dependencies": {
+-        "isfreedesktop" : "~>0.1.0"
+-    },
+     "buildTypes" : {
+         "docs" : {
+             "buildOptions" : ["syntaxOnly"],
