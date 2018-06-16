@@ -49,6 +49,7 @@ share/osinfo/install-script/debian.org/debian-preseed-desktop.xml
 share/osinfo/install-script/debian.org/debian-preseed-jeos.xml
 share/osinfo/install-script/fedoraproject.org/fedora-kickstart-desktop.xml
 share/osinfo/install-script/fedoraproject.org/fedora-kickstart-jeos.xml
+share/osinfo/install-script/fedoraproject.org/silverblue-kickstart-desktop.xml
 share/osinfo/install-script/microsoft.com/windows-cmd-desktop.xml
 share/osinfo/install-script/microsoft.com/windows-reg-desktop.xml
 share/osinfo/install-script/microsoft.com/windows-sif-desktop.xml
@@ -143,6 +144,7 @@ share/osinfo/os/fedoraproject.org/fedora-7.xml
 share/osinfo/os/fedoraproject.org/fedora-8.xml
 share/osinfo/os/fedoraproject.org/fedora-9.xml
 share/osinfo/os/fedoraproject.org/fedora-unknown.xml
+share/osinfo/os/fedoraproject.org/silverblue-28.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.1.xml
