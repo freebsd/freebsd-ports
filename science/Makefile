@@ -227,6 +227,7 @@
     SUBDIR += svmlight
     SUBDIR += szip
     SUBDIR += tfel
+    SUBDIR += triqs
     SUBDIR += udunits
     SUBDIR += v_sim
     SUBDIR += vmd
