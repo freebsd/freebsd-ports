@@ -9,7 +9,7 @@ MASTER_SITES=	http://mpir.org/
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Multiprecision integer library
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	yasm:devel/yasm
@@ -18,6 +18,7 @@ USES=		libtool tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cxx --with-system-yasm
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 MPIR_VERSION=	23.0.3
@@ -35,8 +36,5 @@ PLIST_FILES=	include/mpir.h \
 		lib/libmpirxx.so \
 		lib/libmpirxx.so.${MPIRXX_VERSION} \
 		lib/libmpirxx.so.${MPIRXX_VERSION:R:R}
-
-regression-test:
-	${MAKE_CMD} -C ${WRKSRC} check
 
 .include <bsd.port.mk>
