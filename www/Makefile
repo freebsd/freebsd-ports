@@ -103,6 +103,7 @@
     SUBDIR += cutelyst
     SUBDIR += cutycapt
     SUBDIR += davical
+    SUBDIR += davix
     SUBDIR += dddbl
     SUBDIR += ddgr
     SUBDIR += decss
