@@ -1,0 +1,3 @@
+High speed Base32 encoding using GMP with BigInt and MD5 support
+
+WWW: https://www.crockford.com/wrmg/base32.html
