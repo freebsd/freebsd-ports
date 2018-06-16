@@ -353,6 +353,7 @@
     SUBDIR += cpan-upload-http
     SUBDIR += cpp-hocon
     SUBDIR += cpp-netlib
+    SUBDIR += cpp2py
     SUBDIR += cppcheck
     SUBDIR += cppcheck-gui
     SUBDIR += cppi
@@ -1177,12 +1178,12 @@
     SUBDIR += hs-typed-process
     SUBDIR += hs-unamb
     SUBDIR += hs-unexceptionalio
+    SUBDIR += hs-unicode-show
     SUBDIR += hs-uniplate
     SUBDIR += hs-unix-compat
     SUBDIR += hs-unix-time
     SUBDIR += hs-unliftio
     SUBDIR += hs-unliftio-core
-    SUBDIR += hs-unicode-show
     SUBDIR += hs-unordered-containers
     SUBDIR += hs-utf8-light
     SUBDIR += hs-utf8-string
@@ -1289,8 +1290,8 @@
     SUBDIR += kdevelop-kde4
     SUBDIR += kdevelop-pg-qt
     SUBDIR += kdevelop-pg-qt-kde4
-    SUBDIR += kdevelop-php-kde4
     SUBDIR += kdevelop-php-docs-kde4
+    SUBDIR += kdevelop-php-kde4
     SUBDIR += kdevplatform-kde4
     SUBDIR += kf5-extra-cmake-modules
     SUBDIR += kf5-kapidox

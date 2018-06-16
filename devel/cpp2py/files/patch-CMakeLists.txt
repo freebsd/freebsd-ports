@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2018-06-04 12:58:14 UTC
++++ CMakeLists.txt
+@@ -24,14 +24,14 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SO
+ # log info
+ message( STATUS "-------- cpp2py version and git hash detection -------------")
+ 
+-find_package(Git) 
++#find_package(Git) 
+ 
+ # Get the version number from the latest annotated git tag
+-execute_process(COMMAND bash "-c" "${GIT_EXECUTABLE} describe | sed \"s/-\\([0-9]*\\)-.*/.\\1/g\""
+- WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+- OUTPUT_VARIABLE   CPP2PY_VERSION
+- OUTPUT_STRIP_TRAILING_WHITESPACE
+-)
++#execute_process(COMMAND bash "-c" "${GIT_EXECUTABLE} describe | sed \"s/-\\([0-9]*\\)-.*/.\\1/g\""
++# WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
++# OUTPUT_VARIABLE   CPP2PY_VERSION
++# OUTPUT_STRIP_TRAILING_WHITESPACE
++#)
+ if(NOT CPP2PY_VERSION)
+   set(CPP2PY_VERSION 1.5)
+ endif()
