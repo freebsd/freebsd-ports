@@ -85,6 +85,7 @@
     SUBDIR += p5-Cstools
     SUBDIR += p5-Data-AMF
     SUBDIR += p5-Encode
+    SUBDIR += p5-Encode-Base32-Crockford
     SUBDIR += p5-Encode-Detect
     SUBDIR += p5-Encode-Detect-CJK
     SUBDIR += p5-Encode-DoubleEncodedUTF8
