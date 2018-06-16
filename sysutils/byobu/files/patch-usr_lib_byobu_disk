@@ -1,0 +1,25 @@
+--- usr/lib/byobu/disk.orig	2016-04-07 22:05:52 UTC
++++ usr/lib/byobu/disk
+@@ -20,7 +20,7 @@
+ #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ __disk_detail() {
+-	df -h -P
++	df -h
+ }
+ 
+ __disk() {
+@@ -28,11 +28,11 @@ __disk() {
+ 	# Default to /, but let users override
+ 	[ -z "$MONITORED_DISK" ] && MP="/" || MP="$MONITORED_DISK"
+ 	case $MP in
+-		/dev/*) MP=$(awk '$1 == m { print $2; exit(0); }' "m=$MP" /proc/mounts);;
++		/dev/*) MP=$(awk '$1 == m { print $2; exit(0); }' "m=$MP" /compat/linux/proc/mounts);;
+ 	esac
+ 	# this could be done faster with 'stat --file-system --format'
+ 	# but then we'd have to do blocks -> human units ourselves
+-	out=$({ df -h -P "$MP" 2>/dev/null || df -h "$MP"; } | awk 'END { printf("%s %s", $2, $5); }')
++	out=$({ df -h "$MP" 2>/dev/null || df -h "$MP"; } | awk 'END { printf("%s %s", $2, $5); }')
+ 	set -- ${out}
+ 	size=${1}; pct=${2};
+ 	unit=${size#${size%?}} # get the unit (last char)
