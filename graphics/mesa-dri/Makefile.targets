@@ -5,9 +5,6 @@
 post-patch:
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|x86_64|amd64|' ${WRKSRC}/configure
-. if ${COMPONENT} == osmesa
-	@${REINPLACE_CMD} -e 's|x86_64|amd64|' ${WRKSRC}/configure.ac
-. endif
 .endif
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/src/util/xmlconfig.c

@@ -9,12 +9,6 @@ COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
 USE_XORG=	glproto
 
-# As of version 17.0.5 / 17.1.2, the Gallium variant fails to build due to
-# incorrectly ordered linker flags. Fortunately, autoreconf fixes the problem.
-# Unfortunately, we must reconf before we know if we're doing a Gallium build.
-USES=		autoreconf
-EXTRA_PATCHES=	${PATCHDIR}/configure.ac
-
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
