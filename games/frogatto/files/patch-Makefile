@@ -14,7 +14,7 @@
  
  # Initial compiler options, used before CXXFLAGS and CPPFLAGS.
 -BASE_CXXFLAGS += -g -fno-inline-functions -fthreadsafe-statics -Wnon-virtual-dtor -Werror -Wignored-qualifiers -Wformat -Wswitch
-+BASE_CXXFLAGS += -fno-inline-functions -fthreadsafe-statics -Wnon-virtual-dtor -Werror -Wformat -Wswitch
++BASE_CXXFLAGS += -fno-inline-functions -fthreadsafe-statics -Wnon-virtual-dtor -Werror -Wformat -Wswitch -Wno-narrowing
  
  # Compiler include options, used after CXXFLAGS and CPPFLAGS.
  INC := $(shell pkg-config --cflags x11 sdl glu glew SDL_image libpng zlib)
