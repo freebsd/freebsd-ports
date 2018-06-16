@@ -1,0 +1,3 @@
+High speed Base58 encoding using GMP with BigInt and MD5 support
+
+WWW: https://github.com/grokify/base58-gmp-perl
