@@ -10276,3 +10276,4 @@ textproc/elasticsearch2-plugin-sql||2018-06-15|Removed, depends on expired textp
 textproc/elasticsearch2-plugin-hq||2018-06-15|Removed, depends on expired textproc/elasticsearch2
 textproc/elasticsearch2-plugin-migration||2018-06-15|Removed, depends on expired textproc/elasticsearch2
 textproc/elasticsearch2||2018-06-15|Has expired: Elastic 2.4 EoL is 2018-02-28
+net-im/imspector||2018-06-16|Has expired: No active upstream, master site disappeared long ago
