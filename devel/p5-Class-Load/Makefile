@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Load
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Data-OptList>0:devel/p5-Data-OptList \
+BUILD_DEPENDS=	p5-Data-OptList>=0.110:devel/p5-Data-OptList \
 		p5-Module-Implementation>=0.04:devel/p5-Module-Implementation \
 		p5-Module-Runtime>=0.012:devel/p5-Module-Runtime \
 		p5-Package-Stash>=0.14:devel/p5-Package-Stash \
