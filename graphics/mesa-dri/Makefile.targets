@@ -16,15 +16,6 @@ post-patch:
 . if ${COMPONENT} == osmesa
 	@${REINPLACE_CMD} -e 's|x86_64|amd64|' ${WRKSRC}/configure.ac
 . endif
-# Disable use of GCC_ATOMICs on i386 to avoid build failures
-# Clang in 10.3 fails with cannot compile this atomic library call yet 'p_atomic_add'
-# Clang in 11.0 fails with undefined reference to `__atomic_fetch_add_8`
-. if ${ARCH} == "i386"
-	@${REINPLACE_CMD} -e 's|GCC_ATOMIC_BUILTINS_SUPPORTED||' ${WRKSRC}/configure
-.  if ${COMPONENT} == osmesa
-	@${REINPLACE_CMD} -e 's|GCC_ATOMIC_BUILTINS_SUPPORTED||' ${WRKSRC}/configure.ac
-.  endif
-. endif
 .endif
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/src/util/xmlconfig.c
