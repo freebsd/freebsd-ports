@@ -10207,10 +10207,10 @@ devel/hs-text||2018-05-25|Removed, no longer supported
 science/hs-bio||2018-05-25|Removed, no longer supported
 textproc/hs-parsec||2018-05-25|Removed, no longer supported
 audio/calf|audio/calf-lv2|2018-05-27|Added -lv2 suffix: the port mostly provides LV2 plugins
-net/rubygem-gitaly-proto083|net/rubygem-gitaly-proto|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-gitaly-proto instead.
+net/rubygem-gitaly-proto083|net/rubygem-gitaly-proto|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-gitaly-proto instead
 net/rubygem-gitaly-proto084|net/rubygem-gitaly-proto|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-gitaly-proto instead
 textproc/rubygem-github-linguist47|textproc/rubygem-github-linguist|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use textproc/rubygem-github-linguist instead
-textproc/rubygem-loofah20|textproc/rubygem-loofah|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use textproc/rubygem-loofah instead.
+textproc/rubygem-loofah20|textproc/rubygem-loofah|2018-06-01|Has expired: Obsoleted by update of www/gitlab. Please use textproc/rubygem-loofah instead
 www/npm-node4|www/npm|2018-06-01|Has expired: Use www/npm instead
 emulators/qemu-launcher||2018-06-01|Has expired: Upstream is gone
 textproc/kibana3||2018-06-01|Has expired: End of Life was 2015-11-15, depends on expired www/node4
@@ -10221,7 +10221,7 @@ textproc/kibana45||2018-06-01|Has expired: End of Life was 2017-09-30, depends o
 www/node4|www/node|2018-06-01|Has expired: Node.js v4.x reaches end-of-life on 2018-04-30, see https://github.com/nodejs/Release
 net/frr|net/frr4|2018-06-02|Will introduce multiple versions of frr
 lang/perl5.22|lang/perl5.26|2018-06-02|Has expired: Support ends three years after .0 release, please upgrade to a more recent version of Perl
-lang/sdcc-devel|lang/sdcc|2018-06-06|No longer useful.
+lang/sdcc-devel|lang/sdcc|2018-06-06|No longer useful
 net/py-pyldap|net/py-ldap|2018-06-06|Has expired: This code has merged back to python-ldap. Please use net/py-ldap instead
 biology/ssaha||2018-06-07|Has expired: Broken for more than 6 months
 biology/crux||2018-06-07|Has expired: Broken for more than 6 months
