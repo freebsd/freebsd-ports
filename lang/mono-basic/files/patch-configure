@@ -1,6 +1,6 @@
---- configure.orig
+--- configure.orig	2018-04-05 17:50:19 UTC
 +++ configure
-@@ -19,7 +19,7 @@
+@@ -52,7 +52,7 @@ fi
  echo "prefix=$prefix" > build/config.make
  echo "exec_prefix=\${prefix}" >> build/config.make
  echo "mono_libdir=\${exec_prefix}/lib" >> build/config.make

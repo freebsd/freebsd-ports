@@ -1,6 +1,6 @@
---- eglib/src/gfile-posix.c.orig	2017-07-20 18:10:59 UTC
-+++ eglib/src/gfile-posix.c
-@@ -170,7 +170,7 @@ g_get_current_dir (void)
+--- mono/eglib/gfile-posix.c.orig        2018-01-10 08:03:25 UTC
++++ mono/eglib/gfile-posix.c
+@@ -161,7 +161,7 @@ g_get_current_dir (void)
  	do {
  		buffer = g_realloc (buffer, s);
  		r = getcwd (buffer, s);
