@@ -24,6 +24,15 @@
  endif
  
  # If the user has specified to do so, tell the compile to use rand() (instead of mt19937).
+@@ -33,7 +33,7 @@ endif 
+ export LIBS		= -lz
+ export BT_ROOT  = src/utils/BamTools/
+ 
+-prefix ?= /usr/local
++PREFIX ?= /usr/local
+ 
+ SUBDIRS = $(SRC_DIR)/annotateBed \
+ 		  $(SRC_DIR)/bamToBed \
 @@ -143,8 +143,8 @@ INCLUDES =	-I$(SRC_DIR)/utils/bedFile \
  
  all: print_banner $(OBJ_DIR) $(BIN_DIR) autoversion $(UTIL_SUBDIRS) $(SUBDIRS)
@@ -35,6 +44,18 @@
  	@echo "done."
  
  	@echo "- Creating executables for old CLI."
+@@ -156,9 +156,9 @@ all: print_banner $(OBJ_DIR) $(BIN_DIR) 
+ .PHONY: all
+ 
+ install: all
+-	mkdir -p $(DESTDIR)$(prefix)/bin
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
+ 	for file in bin/* ; do \
+-		cp -f $$file $(DESTDIR)$(prefix)/bin; \
++		cp -f $$file $(DESTDIR)$(PREFIX)/bin; \
+ 	done
+ 
+ print_banner:
 @@ -193,7 +193,7 @@ clean:
  .PHONY: clean
  
