@@ -213,6 +213,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_stomp_examples-%
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/ranch-1.5.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/ranch_proxy_protocol-1.5.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/recon-2.3.2.ez
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/syslog-3.4.2.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/priv/schema/rabbit.schema
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/cuttlefish
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-defaults
