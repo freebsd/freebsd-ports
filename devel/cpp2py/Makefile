@@ -3,6 +3,7 @@
 PORTNAME=	cpp2py
 DISTVERSION=	1.5-19
 DISTVERSIONSUFFIX=	-g5fd079c
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +31,7 @@ USE_LDCONFIG=	yes
 
 LLVM_VER=	60
 
-post-install: # there's some kind of confusion between cmake's MODULE and CONFIG modes
-	@cd ${STAGEDIR}${PREFIX}/share/cmake/Modules && ${CP} Cpp2PyConfig.cmake FindCpp2Py.cmake # can't be found without this
+post-install: # remove unnecessary files
+	@cd ${STAGEDIR}${PREFIX} && ${RM} share/cpp2py.modulefile share/cpp2pyvars.sh
 
 .include <bsd.port.mk>
