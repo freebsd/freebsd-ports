@@ -18,7 +18,8 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		${LOCALBASE}/lib/d/libinifiled.a:devel/inifiled \
 		${LOCALBASE}/lib/d/libddoc.a:devel/libddoc \
 		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse \
-		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator
+		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator \
+		rdmd:lang/dlang-tools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
