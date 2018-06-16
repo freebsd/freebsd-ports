@@ -21,6 +21,10 @@ include/cpp2py/py_converter.hpp
 include/cpp2py/py_stream.hpp
 include/cpp2py/pyref.hpp
 include/cpp2py/signal_handler.hpp
+lib/cmake/cpp2py/Cpp2PyConfig.cmake
+lib/cmake/cpp2py/Cpp2PyConfigVersion.cmake
+lib/cmake/cpp2py/cpp2py-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/cpp2py/cpp2py-targets.cmake
 lib/libcpp2py.so
 %%PYTHON_SITELIBDIR%%/cpp2cxx/__init__.py
 %%PYTHON_SITELIBDIR%%/cpp2cxx/cpp2cxx.py
@@ -45,10 +49,3 @@ lib/libcpp2py.so
 %%PYTHON_SITELIBDIR%%/cpp2rst/example.py
 %%PYTHON_SITELIBDIR%%/cpp2rst/render_fnt.py
 %%PYTHON_SITELIBDIR%%/cpp2rst/synopsis.py
-share/cmake/Modules/Cpp2PyConfig.cmake
-share/cmake/Modules/Cpp2PyConfigVersion.cmake
-share/cmake/Modules/FindCpp2Py.cmake
-share/cmake/cpp2py-targets-%%CMAKE_BUILD_TYPE%%.cmake
-share/cmake/cpp2py-targets.cmake
-%%DATADIR%%.modulefile
-%%DATADIR%%vars.sh
