@@ -16,15 +16,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 RUN_DEPENDS=	vim:editors/vim \
 		${LOCALBASE}/lib/libboost_thread.so:devel/boost-libs \
 		${LOCALBASE}/lib/${PY_BOOST} \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bottle>0:www/py-bottle@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}frozendict>0:devel/py-frozendict@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jedi>0:devel/py-jedi@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}parso>0:textproc/py-parso@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-futures>0:www/py-requests-futures@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}waitress>0:www/py-waitress@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bottle>0:www/py-bottle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}frozendict>0:devel/py-frozendict@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jedi>0:devel/py-jedi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}parso>0:textproc/py-parso@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests-futures>0:www/py-requests-futures@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}waitress>0:www/py-waitress@${PY_FLAVOR}
 
 USES=		cmake python
 USE_PYTHON=	flavors
@@ -64,10 +64,8 @@ RUST_RUN_DEPENDS=	racerd:devel/racerd
 
 VIMFILESDIR=		${PREFIX}/share/vim/vimfiles
 
-.include <bsd.port.pre.mk>
-.if ${PYTHON_MAJOR_VER} == 3
-CMAKE_ARGS+=		-DUSE_PYTHON2:BOOL=OFF
-.endif
+CMAKE_ARGS_PY3=		-DUSE_PYTHON2:BOOL=OFF
+CMAKE_ARGS=		${CMAKE_ARGS_PY${PYTHON_MAJOR_VER}}
 
 do-install:
 		${MKDIR} ${STAGEDIR}${VIMFILESDIR}/third_party/ycmd/third_party
@@ -90,4 +88,4 @@ do-install-MONO-on:
 		${RLN} ${PREFIX}/share/omnisharp-server/bin/Release \
 			${STAGEDIR}${MONOFILESDIR}/OmniSharp/bin/Release
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
