@@ -1,8 +1,10 @@
---- ../common/multibyte.c.orig	2017-01-07 18:04:20.087312000 +0900
-+++ ../common/multibyte.c	2017-01-07 18:05:53.585988000 +0900
-@@ -1455,7 +1455,7 @@
+--- ../common/multibyte.c.orig	2017-11-17 21:47:04.305764000 +0900
++++ ../common/multibyte.c	2017-11-17 21:58:19.218532000 +0900
+@@ -1454,8 +1454,9 @@
+ 		if (maybe == 0)
  			return ename;
  
++		if ( (maxfunc!=1) && (try==maybe) ) continue ;
  		for (i = 0; i < maxfunc; i++) {
 -			if (maybe == (1 << i))
 +			if (maybe & (1 << i))
