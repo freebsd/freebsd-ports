@@ -319,7 +319,6 @@ share/icons/hicolor/512x512/mimetypes/application-x-krita.png
 share/icons/hicolor/64x64/apps/calligrakrita.png
 share/icons/hicolor/64x64/mimetypes/application-x-krita.png
 share/icons/hicolor/scalable/apps/calligrakrita.svgz
-%%DATADIR%%/actions/ArtisticTextTool.action
 %%DATADIR%%/actions/ConnectionTool.action
 %%DATADIR%%/actions/InteractionTool.action
 %%DATADIR%%/actions/KisAssistantTool.action
@@ -339,7 +338,6 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/actions/MoveTool.action
 %%DATADIR%%/actions/PathTool.action
 %%DATADIR%%/actions/SvgTextTool.action
-%%DATADIR%%/actions/TextTool.action
 %%DATADIR%%/actions/krita.action
 %%DATADIR%%/actions/kritamenu.action
 %%DATADIR%%/brushes/triangle.svg
