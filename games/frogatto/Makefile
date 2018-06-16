@@ -3,7 +3,7 @@
 
 PORTNAME=	frogatto
 PORTVERSION=	1.3.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
@@ -26,6 +26,7 @@ USES=		gmake pkgconfig
 ALL_TARGET=	game server
 USE_GL=		glew glu
 USE_SDL=	sdl image mixer ttf
+USE_CXXSTD=	c++11
 
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-server
 
