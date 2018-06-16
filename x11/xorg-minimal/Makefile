@@ -2,7 +2,7 @@
 
 PORTNAME=	xorg
 PORTVERSION=	7.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 x11-servers
 PKGNAMESUFFIX=	-minimal
 
@@ -21,10 +21,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:x11-servers/xorg-server \
 		${LOCALBASE}/bin/xauth:x11/xauth
 .if ${VIDEO_DRIVER} == "nvidia"
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/nvidia_drv.so:x11/nvidia-driver
-.elif ${VIDEO_DRIVER} == "intel29"
-RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/intel_drv.so:x11-drivers/xf86-video-intel
 .elif ${VIDEO_DRIVER} == "intel"
 RUN_DEPENDS+=	${LOCALBASE}/lib/va/i965_drv_video.so:multimedia/libva-intel-driver
+RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:x11-drivers/xf86-video-${VIDEO_DRIVER}
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:x11-drivers/xf86-video-${VIDEO_DRIVER}
 .endif
