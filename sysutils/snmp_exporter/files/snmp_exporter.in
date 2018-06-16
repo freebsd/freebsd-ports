@@ -40,7 +40,8 @@ load_rc_config $name
 pidfile=/var/run/snmp_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/snmp_exporter"
-command_args="-p ${pidfile} /usr/bin/env ${procname} \
+command_args="-p ${pidfile} -T ${name} \
+    /usr/bin/env ${procname} \
     --web.listen-address=${snmp_exporter_listen_address} \
     --config.file=${snmp_exporter_config_file} \
     ${snmp_exporter_args}"
@@ -51,9 +52,6 @@ snmp_exporter_startprecmd()
 {
     if [ ! -e ${pidfile} ]; then
         install -o ${snmp_exporter_user} -g ${snmp_exporter_group} /dev/null ${pidfile};
-    fi
-    if [ ! -d ${snmp_exporter_textfile_dir} ]; then
-        install -d -o ${snmp_exporter_user} -g ${snmp_exporter_group} -m 1755 ${snmp_exporter_textfile_dir}
     fi
 }
 
