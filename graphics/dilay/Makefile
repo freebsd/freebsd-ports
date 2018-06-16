@@ -2,8 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dilay
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	d4489e40bab1193a78d354bb6335da4224ff5253.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	3D sculpting application
