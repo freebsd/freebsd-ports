@@ -8,4 +8,4 @@ A protocol in wayland-protocols consists of a directory containing a set
 of XML files containing the protocol specification, and a README file
 containing detailed state and a list of maintainers.
 
-WWW: http://wayland.freedesktop.org/
+WWW: https://wayland.freedesktop.org/
