@@ -165,6 +165,7 @@
     SUBDIR += py-MDAnalysis
     SUBDIR += py-MDAnalysisTests
     SUBDIR += py-OpenFermion
+    SUBDIR += py-abipy
     SUBDIR += py-cdo
     SUBDIR += py-coards
     SUBDIR += py-dlib

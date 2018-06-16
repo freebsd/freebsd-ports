@@ -1,0 +1,9 @@
+AbiPy is a Python library to analyze the results produced by ABINIT, an
+open-source program for the ab-initio calculations of the physical properties
+of materials within Density Functional Theory and Many-Body perturbation theory.
+AbiPy also provides tools to generate input files and workflows to automate
+ab-initio calculations and typical convergence studies. AbiPy is interfaced with
+Pymatgen allowing users to benefit from the different tools and python objects
+available in the pymatgen ecosystem.
+
+WWW: https://pythonhosted.org/abipy/
