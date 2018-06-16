@@ -24,8 +24,6 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2
 CONFLICTS_INSTALL=	wine-staging-[0-9]* wine-devel-[0-9]* i386-wine-[0-9]* \
 			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --without-dbus \
@@ -41,7 +39,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-udev
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
-USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:xz
+USES=		bison compiler:c11 desktop-file-utils gmake localbase shebangfix tar:xz
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
