@@ -3,7 +3,7 @@
 # Start or stop cyrus-imapd
 # $FreeBSD$
 
-# PROVIDE: cyrus_imapd
+# PROVIDE: cyrus_imapd imap
 # REQUIRE: DAEMON
 # BEFORE: mail
 # KEYWORD: shutdown
