@@ -48,6 +48,7 @@
     SUBDIR += crf++
     SUBDIR += dcl
     SUBDIR += devisor
+    SUBDIR += dft_tools
     SUBDIR += dkh
     SUBDIR += dlib-cpp
     SUBDIR += dlpoly-classic
