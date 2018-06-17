@@ -1,0 +1,19 @@
+--- configure.orig	2017-12-21 10:57:30 UTC
++++ configure
+@@ -16235,13 +16235,13 @@ if test "x$ac_cv_lib_fftw3_fftw_execute" = xyes; then 
+   FFTWFOUND=1
+ fi
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for LAS_GetVersion in -llas" >&5
+-$as_echo_n "checking for LAS_GetVersion in -llas... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for LAS_GetVersion in -llas12" >&5
++$as_echo_n "checking for LAS_GetVersion in -llas12... " >&6; }
+ if ${ac_cv_lib_las_LAS_GetVersion+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-llas  $LIBS"
++LIBS="-llas12  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

@@ -184,7 +184,10 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga_tip.txt
 %%DATADIR%%/toolchains/climate.xml
 %%DATADIR%%/toolchains/cluster_terrain.xml
-%%DATADIR%%/toolchains/gc_simple_filter.xml
+%%DATADIR%%/toolchains/gc_filter_gaussian.xml
+%%DATADIR%%/toolchains/gc_filter_laplacian.xml
+%%DATADIR%%/toolchains/gc_filter_rank.xml
+%%DATADIR%%/toolchains/gc_filter_simple.xml
 %%DATADIR%%/toolchains/gc_tools.xml
 %%DATADIR%%/toolchains/grid_filter.xml
 %%DATADIR%%/toolchains/grid_list_simple_filter.xml

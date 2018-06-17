@@ -1,6 +1,6 @@
---- src/saga_core/saga_gui/dlg_about.cpp.orig	2016-06-29 05:55:46 UTC
+--- src/saga_core/saga_gui/dlg_about.cpp.orig	2018-05-01 09:07:11 UTC
 +++ src/saga_core/saga_gui/dlg_about.cpp
-@@ -189,6 +189,7 @@ wxString CDLG_About::_Get_Version(void)
+@@ -188,6 +188,7 @@ wxString CDLG_About::_Get_Version(void)
  	s	+= "http://www.saga-gis.org\n";
  	s	+= "\n";
  	s	+= "Version: " + wxString(SAGA_VERSION) + "\n";
@@ -8,7 +8,7 @@
  
  #ifdef _SAGA_MSW
  	#ifdef _WIN64
-@@ -264,7 +265,25 @@ wxString CDLG_About::_Get_Version(void)
+@@ -263,7 +264,25 @@ wxString CDLG_About::_Get_Version(void)
  		#elif	defined(__GNUWIN32__)
  			"Gnu-Win32 compiler"
  		#elif	defined(__GNUG__)
