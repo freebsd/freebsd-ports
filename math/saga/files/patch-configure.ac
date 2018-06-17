@@ -1,6 +1,13 @@
---- configure.ac.orig	2016-08-23 13:23:41 UTC
+--- configure.ac.orig	2018-04-23 07:44:48 UTC
 +++ configure.ac
-@@ -26,7 +26,7 @@ AC_CHECK_LIB([odbc], [SQLFetch], ODBCFOU
+@@ -20,13 +20,13 @@ AC_PROG_LIBTOOL
+ AC_CHECK_LIB([opencv_core], [cvGetRows], CVFOUND=1,,)
+ AC_CHECK_LIB([geotrans], [Set_Mercator_Coordinates])
+ AC_CHECK_LIB([fftw3],[fftw_execute],FFTWFOUND=1,)
+-AC_CHECK_LIB([las], [LAS_GetVersion], LASFOUND=1,,)
++AC_CHECK_LIB([las12], [LAS_GetVersion], LASFOUND=1,,)
+ AC_CHECK_LIB(hpdf, HPDF_Pages_New, HARUFOUND=1,,)
+ AC_CHECK_LIB([odbc], [SQLFetch], ODBCFOUND=1,[ODBC \(libodbc\) library not found])
  AC_CHECK_LIB([proj], [pj_is_latlong], PROJFOUND=1,,)
  AC_CHECK_LIB([vigraimpex], [VIGRA_RGBE_ReadPixels_Raw],VIGRAFOUND=1,)
  AC_CHECK_LIB([gomp], [omp_get_num_threads], GOMPFOUND=1,,)
@@ -9,4 +16,3 @@
  PKG_CHECK_MODULES([DXFLIB], [dxflib], [LIBDXFFOUND=1],[LIBDXFFOUND=0])
  PKG_CHECK_MODULES([HDF5],[hdf5],LIBHDF5FOUND=1,LIBHDF5FOUND=0)
  
-

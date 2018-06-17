@@ -1,6 +1,6 @@
---- src/tools/imagery/imagery_opencv/opencv.h.orig	2016-06-29 05:55:46 UTC
+--- src/tools/imagery/imagery_opencv/opencv.h.orig	2018-05-01 09:07:11 UTC
 +++ src/tools/imagery/imagery_opencv/opencv.h
-@@ -74,7 +74,8 @@
+@@ -73,7 +73,8 @@
  
  //---------------------------------------------------------
  #include <opencv/cv.h>
