@@ -1,28 +1,28 @@
 # $FreeBSD$
 
 PORTNAME=	cryptominisat
-PORTVERSION=	5.0.1
-PORTREVISION=	9
+DISTVERSION=	5.6.1
 CATEGORIES=	math
 
-MAINTAINER=	6yearold@gmail.com
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	General-purpose award-winning SAT solver
 
 LICENSE=	MIT LGPL21
 LICENSE_COMB=	multi
-LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE-SCALMC
-
-BUILD_DEPENDS=	xxd:editors/vim-console # for xxd tool
-LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
 BROKEN_powerpc64=	fails to compile: main.cpp: undefined reference to boost::program_options::abstract_variables_map::operator[]
+
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
+
+USES=		cmake:outsource compiler:c++11-lib
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	msoos
 
-USES=		cmake compiler:c++11-lib
-USE_LDCONFIG=	yes
-
-CMAKE_ARGS=	-DNOM4RI=1 -DENABLE_PYTHON_INTERFACE=OFF
+CMAKE_ON=	NOM4RI
+CMAKE_OFF=	ENABLE_PYTHON_INTERFACE
 
 .include <bsd.port.mk>

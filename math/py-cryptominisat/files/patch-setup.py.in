@@ -1,38 +1,27 @@
---- setup.py.in.orig	2016-07-06 12:22:54 UTC
+--- setup.py.in.orig    2018-06-05 06:06:54 UTC
 +++ setup.py.in
-@@ -26,9 +26,9 @@ import sys
- from distutils.core import setup, Extension
- from distutils import sysconfig
+@@ -119,12 +119,12 @@ if platform.system() == 'Darwin':
  
--cconf = """${PY_C_CONFIG}""".split(" ")
--ldconf = """${PY_LD_CONFIG}""".split(" ")
--is_apple = """${APPLE}"""
-+cconf = """""".split(" ")
-+ldconf = """""".split(" ")
-+is_apple = """"""
- 
- def cleanup(dat):
-     ret = []
-@@ -81,12 +81,12 @@ __version__ = '@PROJECT_VERSION@'
- 
- ext_kwds = dict(
+ modules = dict(
      name = "pycryptosat",
--    sources = ["${CMAKE_CURRENT_SOURCE_DIR}/pycryptosat.cpp"],
-+    sources = ["pycryptosat.cpp"],
-     define_macros = [],
+-    sources = ["${CMAKE_CURRENT_SOURCE_DIR}/src/pycryptosat.cpp"],
++    sources = ["src/pycryptosat.cpp"],
+     define_macros = [('LIBRARY_VERSION', '"' + __LIBRARY_VERSION__ + '"')],
 -    extra_compile_args = cconf + ['-I${PROJECT_SOURCE_DIR}', '-I${PROJECT_BINARY_DIR}/cmsat5-src'],
 +    extra_compile_args = cconf + ['-I/usr/local/include', '-I../cmsat5-src'],
-     extra_link_args = ldconf,
+     extra_link_args = extra_link_args,
      language = "c++",
 -    library_dirs=['.', '${PROJECT_BINARY_DIR}/lib'],
 +    library_dirs=['.', '/usr/local/lib'],
+     runtime_library_dirs=['${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}'],
      libraries = ['cryptominisat5']
  )
- 
-@@ -111,5 +111,5 @@ setup(
-     ext_modules = [Extension(**ext_kwds)],
-     py_modules = ['pycryptosat'],
-     description = "bindings to CryptoMiniSat (a SAT solver)",
+@@ -150,7 +150,7 @@ setup(
+     description = "Bindings to CryptoMiniSat {} (a SAT solver)".\
+         format(__LIBRARY_VERSION__),
+ #    py_modules = ['pycryptosat'],
 -    long_description = open('${CMAKE_CURRENT_SOURCE_DIR}/README.rst').read(),
 +    long_description = open('README.rst').read(),
- )
+     cmdclass={
+         'test': TestCommand
+     }
