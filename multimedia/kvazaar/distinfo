@@ -3,3 +3,5 @@ SHA256 (ultravideo-kvazaar-v1.2.0_GH0.tar.gz) = 480ecfd9b4d2b7d21b355e4a35fcf47b
 SIZE (ultravideo-kvazaar-v1.2.0_GH0.tar.gz) = 486455
 SHA256 (silentbicycle-greatest-v1.0.0_GH0.tar.gz) = 18ee57a34869c6f6ce511cd71a5cc8661801cf69d64c4c66ff76773835df659b
 SIZE (silentbicycle-greatest-v1.0.0_GH0.tar.gz) = 11959
+SHA256 (4b5d95155526.patch) = d8c6c3c49798fe316b6d74ba6c6229acb6cab8aa9ea874ab593fdde2f7b53cc1
+SIZE (4b5d95155526.patch) = 1392
