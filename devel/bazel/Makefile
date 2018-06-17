@@ -15,6 +15,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 
 BROKEN_armv6=		fails to package: cp: bazel: No such file or directory
 BROKEN_armv7=		fails to package: cp: bazel: No such file or directory
+BROKEN_powerpc64=	fails to compile: Action failed to execute: java.io.IOException: Cannot run program /usr/bin/clang
 
 BUILD_DEPENDS=		bash:shells/bash \
 			zip:archivers/zip
