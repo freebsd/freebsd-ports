@@ -19,6 +19,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		liblo.so:audio/liblo \
 		libjack.so:audio/jack
 
+PORTSCOUT=	limit:^qmidiarp
+
 USES=		autoreconf compiler:c++11-lib desktop-file-utils \
 		gmake localbase libtool pkgconfig
 USE_GITHUB=	yes
