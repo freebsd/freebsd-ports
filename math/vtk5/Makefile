@@ -14,6 +14,8 @@ COMMENT=	The Visualization Toolkit
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
+BROKEN_powerpc64=	fails to build: sibling call optimization to `_ZN14vtkProbeFilter26SetValidPointMaskArrayNameEPKc' does not allow automatic multiple TOCs
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
