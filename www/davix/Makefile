@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
+PORTSCOUT=	skipv:^.*-el
+
 USES=		cmake localbase ssl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
