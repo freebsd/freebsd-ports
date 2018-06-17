@@ -5,10 +5,12 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/artful
 %%DATADIR%%/scripts/bartholomea
 %%DATADIR%%/scripts/bionic
+%%DATADIR%%/scripts/bookworm
 %%DATADIR%%/scripts/breezy
 %%DATADIR%%/scripts/bullseye
 %%DATADIR%%/scripts/buster
 %%DATADIR%%/scripts/chromodoris
+%%DATADIR%%/scripts/cosmic
 %%DATADIR%%/scripts/dapper
 %%DATADIR%%/scripts/dasyatis
 %%DATADIR%%/scripts/debian-common

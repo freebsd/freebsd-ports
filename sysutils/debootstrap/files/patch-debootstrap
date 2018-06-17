@@ -1,4 +1,4 @@
---- debootstrap.orig	2016-09-09 12:32:15 UTC
+--- debootstrap.orig	2018-06-13 13:00:11 UTC
 +++ debootstrap
 @@ -14,7 +14,7 @@ if [ -z "$DEBOOTSTRAP_DIR" ]; then
  	if [ -x /debootstrap/debootstrap ]; then
@@ -9,22 +9,22 @@
  	fi
  fi
  
-@@ -409,13 +409,7 @@ fi
+@@ -474,13 +474,7 @@ fi
  
  ###########################################################################
  
 -if in_path dpkg && \
 -     dpkg --print-architecture >/dev/null 2>&1; then
--	HOST_ARCH=`/usr/bin/dpkg --print-architecture`
+-	HOST_ARCH=$(/usr/bin/dpkg --print-architecture)
 -elif in_path udpkg && \
 -     udpkg --print-architecture >/dev/null 2>&1; then
--	HOST_ARCH=`/usr/bin/udpkg --print-architecture`
--elif [ -e $DEBOOTSTRAP_DIR/arch ]; then
-+if [ -e $DEBOOTSTRAP_DIR/arch ]; then
- 	HOST_ARCH=`cat $DEBOOTSTRAP_DIR/arch`
+-	HOST_ARCH=$(/usr/bin/udpkg --print-architecture)
+-elif [ -e "$DEBOOTSTRAP_DIR/arch" ]; then
++if [ -e "$DEBOOTSTRAP_DIR/arch" ]; then
+ 	HOST_ARCH=$(cat "$DEBOOTSTRAP_DIR/arch")
  fi
  HOST_OS="$HOST_ARCH"
-@@ -437,6 +431,11 @@ if [ -z "$HOST_OS" ]; then
+@@ -502,6 +496,11 @@ if [ -z "$HOST_OS" ]; then
  	esac
  fi
  
@@ -34,5 +34,5 @@
 +fi
 +
  if [ -z "$ARCH" ]; then
- 	ARCH=$HOST_ARCH
+ 	ARCH="$HOST_ARCH"
  fi
