@@ -3,6 +3,7 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	5.39
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -39,7 +40,7 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--without-setuid-hacks --enable-locking
 MAKE_ARGS+=	install_prefix=${STAGEDIR}
 
-OPTIONS_DEFINE=	PAM SETUID_HACKS FIREF NLS XAOS1 XDALI XEARTH \
+OPTIONS_DEFINE=	PAM SETUID_HACKS FIREF NLS NSFW XAOS1 XDALI XEARTH \
 		XFT XMOUN XPLANET XSNOW
 OPTIONS_DEFAULT=XFT
 OPTIONS_SUB=	yes
@@ -53,6 +54,8 @@ FIREF_RUN_DEPENDS=		${LOCALBASE}/bin/xscreensaver-hacks/fireflies:x11/fireflies
 
 NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ENABLE=		nls
+
+NSFW_DESC=			Include material that is Not Safe For Work
 
 XAOS1_DESC=			Add extra port graphics/xaos
 XAOS1_RUN_DEPENDS=		xaos:graphics/xaos
@@ -79,6 +82,10 @@ SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
 		xscreensaver-start.desktop xscreensaver-stop.desktop
 
 post-patch:
+.if empty(PORT_OPTIONS:NSFW)
+	${REINPLACE_CMD} -e 's|Dick Pix|Stuff|' ${WRKSRC}/hacks/bsod.c
+	${REINPLACE_CMD} -e 's|dick pics|data, etc.|' ${WRKSRC}/hacks/bsod.c
+.endif
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 			-e 's|pkg_config --list-all|pkg_config --help|' \
 			${WRKSRC}/configure.in
