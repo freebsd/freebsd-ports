@@ -5,6 +5,7 @@ man/man1/pass.1.gz
 %%CONTRIB%%%%DATADIR%%/dmenu/README.md
 %%CONTRIB%%%%DATADIR%%/dmenu/passmenu
 %%CONTRIB%%%%DATADIR%%/emacs/Cask
+%%CONTRIB%%%%DATADIR%%/emacs/CHANGELOG.md
 %%CONTRIB%%%%DATADIR%%/emacs/README.md
 %%CONTRIB%%%%DATADIR%%/emacs/password-store.el
 %%CONTRIB%%%%DATADIR%%/importers/1password2pass.rb
@@ -25,7 +26,8 @@ man/man1/pass.1.gz
 %%CONTRIB%%%%DATADIR%%/pass.bash-completion
 %%CONTRIB%%%%DATADIR%%/pass.fish-completion
 %%CONTRIB%%%%DATADIR%%/pass.zsh-completion
-%%CONTRIB%%%%DATADIR%%/vim/noplaintext.vim
+%%CONTRIB%%%%DATADIR%%/vim/redact_pass.txt
+%%CONTRIB%%%%DATADIR%%/vim/redact_pass.vim
 %%CONTRIB%%etc/bash_completion.d/password-store
 %%CONTRIB%%share/fish/completions/password-store.fish
 %%CONTRIB%%share/zsh/site-functions/_pass
