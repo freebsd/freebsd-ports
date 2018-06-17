@@ -18,6 +18,8 @@ LIB_DEPENDS=	libibus-1.0.so:textproc/ibus \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	ibus-daemon:textproc/ibus
 
+PORTSCOUT=	limit:^[0-9]+\.[0-9].*$$
+
 USES=		autoreconf gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
