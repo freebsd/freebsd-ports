@@ -22,11 +22,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.0.0:www/py-requests@${FLAVOR}
 USES=		python
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 # Description: tests.py is missing from the pypi package
 # Issue ID: https://github.com/patrys/httmock/issues/55
 # TODO: Remove extra MASTER_SITES, DISTFILES/SUBDIR, EXTRACT_ONLY, post-extract
 post-extract:
-	@${MV} ${DISTDIR}/${DIST_SUBDIR}/tests.py ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/tests.py ${WRKSRC}
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
