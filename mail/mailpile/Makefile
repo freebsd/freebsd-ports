@@ -18,11 +18,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dns>=0:dns/py-dns@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spambayes>=0:mail/py-spambayes@${FLAVOR}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	mailpile
-GH_PROJECT=	Mailpile
+PORTSCOUT=	limit:^[1-9]
 
 USES=		gettext python:2.7 shebangfix
+USE_GITHUB=	yes
+GH_PROJECT=	Mailpile
 python_OLD_CMD=	/usr/bin/python2
 SHEBANG_FILES=	mailpile/contrib/gui/gui-o-matic.py \
 		mailpile/contrib/gui/gui-test.sh \
