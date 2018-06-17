@@ -2,7 +2,7 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	x11 kde kde-applications
 PKGNAMESUFFIX=	-kde4
 
@@ -133,7 +133,7 @@ pre-configure:
 		${PATCH_WRKSRC}/doc/CMakeLists.txt
 
 post-install:
-	${LN} -sf ${PREFIX}/bin/startkde ${STAGEDIR}${PREFIX}/bin/startkde4
+	${RLN} ${STAGEDIR}${PREFIX}/bin/startkde ${STAGEDIR}${PREFIX}/bin/startkde4
 # Install kde4.desktop to launch kde4 via sddm.
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
 	${INSTALL_DATA} ${FILESDIR}/kde4.desktop ${STAGEDIR}${PREFIX}/share/xsessions
