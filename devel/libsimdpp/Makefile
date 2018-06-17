@@ -11,6 +11,8 @@ COMMENT=	Header-only zero-overhead C++ wrapper of SIMD instructions
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
+PORTSCOUT=	limit:^cxx98.*
+
 USES=		cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	p12tic
