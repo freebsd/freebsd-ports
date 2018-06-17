@@ -3,7 +3,7 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	5.39
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -82,10 +82,6 @@ SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
 		xscreensaver-start.desktop xscreensaver-stop.desktop
 
 post-patch:
-.if empty(PORT_OPTIONS:NSFW)
-	${REINPLACE_CMD} -e 's|Dick Pix|Stuff|' ${WRKSRC}/hacks/bsod.c
-	${REINPLACE_CMD} -e 's|dick pics|data, etc.|' ${WRKSRC}/hacks/bsod.c
-.endif
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 			-e 's|pkg_config --list-all|pkg_config --help|' \
 			${WRKSRC}/configure.in
@@ -94,6 +90,10 @@ post-patch:
 		${WRKSRC}/driver/xscreensaver.man
 	${CP} ${FILESDIR}/xscreensaver.pam \
 		${WRKSRC}/driver/xscreensaver.pam.in
+
+post-patch-NSFW-off:
+	${REINPLACE_CMD} -e 's|Dick Pix|Stuff|' ${WRKSRC}/hacks/bsod.c
+	${REINPLACE_CMD} -e 's|dick pics|data, etc.|' ${WRKSRC}/hacks/bsod.c
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/x*.xml ${STAGEDIR}${DATADIR}/config/
