@@ -2,8 +2,11 @@
 
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2018_03_1
+DISTVERSION=	2018_03_2
 CATEGORIES=	science
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	fe443fcb429e69ef13219a7b5c6dd53544042cbf.patch:-p1 # fix the SONAMEs regression
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of cheminformatics and machine-learning software
@@ -17,7 +20,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		bison:build cmake:outsource eigen:3 python
 USE_GITHUB=	yes
-GH_TUPLE=	schrodinger:maeparser:8336829:maeparser/External/CoordGen/maeparser \
+GH_TUPLE=	schrodinger:maeparser:1.0.0:maeparser/External/CoordGen/maeparser \
 		schrodinger:coordgenlibs:ede3191:coordgenlibs/External/CoordGen/coordgenlibs
 USE_LDCONFIG=	yes
 
