@@ -1,0 +1,7 @@
+permutation provides a Permutation class for representing permutations of
+finitely many positive integers in Python. Supported operations & properties
+include inverses, (group theoretic) order, parity, composition/multiplication,
+cycle decomposition, cycle notation, word representation, Lehmer codes, and,
+of course, use as a callable on integers.
+
+WWW: https://github.com/jwodder/permutation
