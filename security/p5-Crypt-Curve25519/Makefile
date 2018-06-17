@@ -17,12 +17,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=	fails to install: error adding symbols: File in wrong format
 BROKEN_mips=	fails to build: -m32 flag is not supported by this configuration
 BROKEN_mips64=	fails to build: -m32 flag is not supported by this configuration
-BROKEN_powerpc64=	fails to build: architecture of input file is incompatible with powerpc:common64 output
 BROKEN_sparc64=	fails to build: -m32 flag is not supported by this configuration
 
+USES=		perl5 ssl
 MAKE_JOBS_UNSAFE=	yes
 USE_PERL5=	configure
-USES=		perl5 ssl
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/Curve25519/Curve25519.so
