@@ -13,6 +13,7 @@
 # when users could be removed is if they no longer have an account and
 # never committed.
 
+0mp = Mateusz Piotrowski <0mp@FreeBSD.org>
 aaron = Aaron Dalton <aaron@FreeBSD.org>
 abial = Andrzej Bialecki <abial@FreeBSD.org>
 ache = Andrey A. Chernov <ache@FreeBSD.org>
