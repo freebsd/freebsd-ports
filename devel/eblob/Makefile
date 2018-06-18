@@ -13,11 +13,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	zloidemon
 GH_TAGNAME=	0a75b89
-
-USES=		cmake
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ASSERT PYTHON SNAPPY EXAMPLES TESTS

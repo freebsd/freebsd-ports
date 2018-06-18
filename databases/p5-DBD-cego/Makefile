@@ -15,9 +15,10 @@ BUILD_DEPENDS=	p5-DBI>=1.631:databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=1.631:databases/p5-DBI
 LIB_DEPENDS=	libcego.so:databases/cego
 
-USES=		gmake perl5
+USES=		compiler gmake perl5
 USE_PERL5=	configure
 CC:=		${CXX}
+COMPILER_TYPE=	clang
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 post-install:

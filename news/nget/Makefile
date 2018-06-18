@@ -14,7 +14,7 @@ COMMENT=	Auto-resuming command line nntp file grabber
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 GNU_CONFIGURE=	yes
 
 # Skip check if the C++ compiler supports exceptions.  We know both

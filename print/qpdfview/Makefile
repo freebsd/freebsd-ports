@@ -13,7 +13,7 @@ COMMENT=	Tabbed DjVu/PDF/PS document viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		desktop-file-utils pkgconfig qmake
+USES=		compiler:c++11-lang desktop-file-utils pkgconfig qmake
 USE_LDCONFIG=	yes
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 

@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 CONFLICTS=	postgresql-libpqxx-[1-5].* postgresql-libpqxx3-3.* \
 		postgresql-libpqxx4-4.*
 
-USES=		gmake libtool pathfix pgsql python:2.7,build shebangfix
+USES=		compiler:c++11-lang gmake libtool pathfix pgsql python:2.7,build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jtv
 GNU_CONFIGURE=	yes

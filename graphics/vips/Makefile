@@ -34,7 +34,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libhdf5.so:science/hdf5 \
 		libexpat.so:textproc/expat2
 
-USES=		cpe gettext gmake jpeg libtool pathfix pkgconfig python:2.7 shebangfix
+USES=		compiler:c++11-lang cpe gettext gmake jpeg libtool pathfix pkgconfig python:2.7 shebangfix
 SHEBANG_FILES=	tools/vips-${PORTVERSION:R} tools/vipsprofile
 USE_GNOME=	cairo gdkpixbuf2 glib20 libgsf librsvg2 libxml2 pango
 GNU_CONFIGURE=	yes

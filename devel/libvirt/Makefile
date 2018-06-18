@@ -97,7 +97,7 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix cpe gettext-runtime gmake libtool pathfix \
+USES=		charsetfix compiler:c++0x cpe gettext-runtime gmake libtool pathfix \
 		perl5 python:build pkgconfig shebangfix tar:xz
 USE_RC_SUBR=	libvirtd virtlogd
 CPE_VENDOR=	redhat
