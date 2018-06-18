@@ -10,6 +10,8 @@ COMMENT=	Lightweight volume control for the systray
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	fails to build: oss3_backend.c:80: 'for' loop initial declaration used outside C99 mode
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oss=v3 \
 		--with-oss-include-path=/usr/include/sys

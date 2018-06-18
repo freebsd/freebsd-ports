@@ -18,6 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		fails to link: collect2: error: ld returned 1 exit status
+BROKEN_powerpc64=	fails to build: cc1plus: error: unrecognized command line option "-std=gnu++03"
 
 CONFLICTS_INSTALL=	fspclient-*
 
