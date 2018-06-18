@@ -1,0 +1,4 @@
+Simple pythonic wrapper for SoapySDR library allowing to connect
+to SDR (Software-Defined Radio) devices.
+
+WWW: https://github.com/xmikos/simplesoapy
