@@ -9,7 +9,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/
 DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	admin@lissyara.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto keyboard switcher
 
 LICENSE=	GPLv2

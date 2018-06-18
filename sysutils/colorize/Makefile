@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	admin@lissyara.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robust log colorizer
 
 LICENSE=	GPLv2
