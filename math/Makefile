@@ -696,6 +696,7 @@
     SUBDIR += py-piranha
     SUBDIR += py-plastex
     SUBDIR += py-probstat
+    SUBDIR += py-pyFFTW
     SUBDIR += py-pyasp
     SUBDIR += py-pybloom
     SUBDIR += py-pycosat
