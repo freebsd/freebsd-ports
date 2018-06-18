@@ -18,9 +18,9 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	cppunit-config:devel/cppunit
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 
+USES=		compiler:c++11-lang desktop-file-utils iconv gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		desktop-file-utils iconv gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20 intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

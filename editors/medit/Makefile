@@ -13,7 +13,7 @@ COMMENT=	Programming and around-programming text editor
 
 LICENSE=	LGPL21
 
-USES=		gmake localbase pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gmake localbase pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes

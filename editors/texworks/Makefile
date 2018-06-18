@@ -18,7 +18,7 @@ BROKEN_armv7=		fails to install: PDFDocument.cpp:1836:39: cannot initialize a pa
 BUILD_DEPENDS=	hunspell:textproc/hunspell
 LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
 
-USES=		pkgconfig qmake
+USES=		compiler:c++11-lang pkgconfig qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	TeXworks
 USE_QT4=	gui corelib rcc_build moc_build uic_build \

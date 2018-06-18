@@ -11,7 +11,7 @@ COMMENT=	Software pipeline for building loci from short-read sequences
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake python shebangfix
+USES=		compiler:c++11-lang gmake python shebangfix
 SHEBANG_FILES=	scripts/*.pl scripts/*.py
 GNU_CONFIGURE=	yes
 

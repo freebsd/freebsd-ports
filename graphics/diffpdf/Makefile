@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
 
-USES=		qmake
+USES=		compiler:c++11-lang qmake
 USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build
 
 PLIST_FILES=	bin/diffpdf
