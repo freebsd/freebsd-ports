@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-MAINTAINER=	imp@FreeBSD.org
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		pandaboard
