@@ -1,0 +1,21 @@
+The Universal Radio Hacker (URH) is a software for investigating unknown
+wireless protocols.
+
+Features include:
+* hardware interfaces for common Software Defined Radios
+* easy demodulation of signals
+* assigning participants to keep overview of your data
+* customizable decodings to crack even sophisticated encodings like CC1101
+  data whitening
+* assign labels to reveal the logic of the protocol
+* fuzzing component to find security leaks
+* modulation support to inject the data back into the system
+* simulation environment to perform stateful attacks
+
+In order to use this software, you need SDR hardware, for example
+* HackRF One (can send and receive on frequencies 1 MHz to 6 GHz)
+* SDRplay RSP2pro (can receive on frequencies 1 kHz to 2 GHz)
+
+See the user guide: https://github.com/jopohl/urh/raw/master/data/userguide.pdf
+
+WWW: https://github.com/jopohl/urh
