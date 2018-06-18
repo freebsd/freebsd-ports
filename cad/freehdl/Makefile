@@ -10,6 +10,8 @@ MASTER_SITES=	http://freehdl.seul.org/~enaroska/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free VHDL simulator
 
+BROKEN_powerpc64=	fails to build: cc1plus: error: unrecognized command line option "-std=gnu++03"
+
 USES=		gmake pathfix libtool makeinfo perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_GCC=	any

@@ -12,6 +12,8 @@ COMMENT=	Intelligent Pinyin engine based on libpinyin for IBus
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to compile: PYLibPinyin.cc:222:54: 'getline' was not declared in this scope
+
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libibus-1.0.so:textproc/ibus \
 		libpinyin.so:chinese/libpinyin

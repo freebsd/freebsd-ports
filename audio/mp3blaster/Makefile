@@ -13,6 +13,8 @@ COMMENT=	MP3 console ncurses-based player
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to configure: checking for main in -lm... no
+
 USES=		gmake localbase:ldflags ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -Wno-narrowing"
