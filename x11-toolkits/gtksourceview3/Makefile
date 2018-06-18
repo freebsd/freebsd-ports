@@ -11,6 +11,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Text widget that adds syntax highlighting to the GtkTextView widget
 
+BROKEN_powerpc64=	fails to compile: gtksourcetag.h:43: redefinition of typedef 'GtkSourceTag'
+
 USES=		tar:xz
 
 PORTSCOUT=	limitw:1,even

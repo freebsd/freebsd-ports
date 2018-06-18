@@ -17,7 +17,7 @@ COMMENT=	High-throughput computing on distributively owned resources
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
-BROKEN_powerpc64=	fails to build
+BROKEN_powerpc64=	fails to link: test_unit.hpp:249: undefined reference to boost::unit_test::ut_detail::normalize_test_case_name
 
 LIB_DEPENDS=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \

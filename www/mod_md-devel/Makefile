@@ -14,6 +14,8 @@ COMMENT=	Early experience LetsEncrypt module for Apache httpd
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to compile: md_json.c:29: expected [error|warning|ignored] after '#pragma GCC diagnostic'
+
 LIB_DEPENDS=	libaprutil-1.so:devel/apr1 \
 		libcurl.so:ftp/curl \
 		libjansson.so:devel/jansson

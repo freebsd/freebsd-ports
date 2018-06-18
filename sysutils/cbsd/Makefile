@@ -10,6 +10,8 @@ COMMENT=	Yet another FreeBSD Jail and Bhyve Management Utility
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to link: cannot find -lc++
+
 RUN_DEPENDS=	rsync:net/rsync \
 		sudo:security/sudo \
 		sqlite3:databases/sqlite3 \

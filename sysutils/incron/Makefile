@@ -15,6 +15,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-GPL
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE-LGPL
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-X11
 
+BROKEN_powerpc64=	fails to compile: usertable.cpp:440: #pragma GCC diagnostic not allowed inside functions
+
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USE_GITHUB=	indeed

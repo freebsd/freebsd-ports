@@ -12,6 +12,8 @@ COMMENT=	Import library for some old mac text documents
 LICENSE=	LGPL21+ MPL20
 LICENSE_COMB=	dual
 
+BROKEN_powerpc64=	fails to compile: MWAWCell.cxx:644: #pragma GCC diagnostic not allowed inside functions
+
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge
 
 CONFIGURE_ARGS=	--disable-werror --without-docs

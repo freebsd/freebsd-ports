@@ -13,7 +13,8 @@ COMMENT=	C/C++ and Java sources to HTML converter
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=	Does not compile with GCC 4.2
+BROKEN_powerpc64=	fails to configure: checking for exit in -lboost_regex... (cached) no
+BROKEN_sparc64=		fails to compile with GCC 4.2
 
 BUILD_DEPENDS=	exctags:devel/ctags
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs

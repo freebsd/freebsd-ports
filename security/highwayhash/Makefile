@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: /usr/lib/clang/5.0.0/include/mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'
+BROKEN_powerpc64=	fails to link: main.cpp.o: undefined reference to `boost::program_options::options_description::options_description
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc powerpc64
 ONLY_FOR_ARCHS_REASON=	Assembly is implemented only for specific architectures in highwayhash/tsc_timer.h
 
