@@ -1309,6 +1309,7 @@
     SUBDIR += u-boot-pandaboard
     SUBDIR += u-boot-pcduino3
     SUBDIR += u-boot-pine64
+    SUBDIR += u-boot-riotboard
     SUBDIR += u-boot-rpi
     SUBDIR += u-boot-rpi2
     SUBDIR += u-boot-rpi3
