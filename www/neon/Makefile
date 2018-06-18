@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	neon
-PORTVERSION=	0.30.1
+PORTVERSION=	0.30.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.webdav.org/neon/
+MASTER_SITES=	LOCAL/lev
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	HTTP and WebDAV client library for Unix systems
