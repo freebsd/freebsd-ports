@@ -3,10 +3,10 @@
 
 PORTNAME=	mono
 PORTVERSION=	5.10.1.47
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	https://download.mono-project.com/sources/mono/:mono
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:mono
+MASTER_SITES=	https://download.mono-project.com/sources/mono/
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Open source implementation of .NET Development Framework
@@ -36,7 +36,7 @@ MONOLITE_VERSION=	1051000004
 X11_USES=	display:test
 
 USES=	autoreconf bison compiler:c11 cpe gettext gmake iconv libtool \
-	pathfix perl5 python shebangfix tar:bzip2
+	pathfix perl5 python:2.7 shebangfix tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
