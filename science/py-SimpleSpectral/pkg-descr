@@ -1,0 +1,13 @@
+You can use scipy.signal tutorial and reference guide in most cases, but
+there are some important differences:
+* input data is assumed to be complex and two-sided spectrum is always returned
+  (return_onesided argument is not implemented)
+* length of FFT is always same as length of segment (nfft argument is not
+  implemented)
+* functions work always over last axis of array (axis argument is not
+  implemented)
+* if you want to have best FFT performance with pyFFTW, you should create arrays
+  with empty, zeros or ones functions from SimpleSpectral instead of generic
+  versions from NumPy (arrays will be byte aligned for your CPU)
+
+WWW: https://github.com/xmikos/simplespectral
