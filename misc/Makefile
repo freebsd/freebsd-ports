@@ -429,6 +429,7 @@
     SUBDIR += py-qt5-demo
     SUBDIR += py-scikit-fusion
     SUBDIR += py-serverfiles
+    SUBDIR += py-soapy_power
     SUBDIR += py-socli
     SUBDIR += py-spdx
     SUBDIR += py-spdx-lookup
