@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxins
-DISTVERSION=	g20180214
+DISTVERSION=	g20180217
 CATEGORIES=	net-im
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,10 +16,11 @@ LIB_DEPENDS=	libsodium.so:security/libsodium \
 USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
-GH_TAGNAME=	e7bb43c
+GH_TAGNAME=	f76a7bd
 ALL_TARGET=	build
+GH_TUPLE=	hqwrong:minitox:45b9e3f:minitox/minitox/import
 
-PROGS=		irc_syncbot tox_shell tox_sync echobot
+PROGS=		irc_syncbot tox_shell tox_sync echobot minitox
 
 PLIST_FILES=	${PROGS:S/^/bin\//}
 

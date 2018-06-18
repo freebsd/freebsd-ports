@@ -1,3 +1,5 @@
-TIMESTAMP = 1520496023
-SHA256 (TokTok-toxins-g20180214-e7bb43c_GH0.tar.gz) = 481efdfe6eb33feb16c161cd169305c53f671de367b418006936688b4cd160a6
-SIZE (TokTok-toxins-g20180214-e7bb43c_GH0.tar.gz) = 23606
+TIMESTAMP = 1529284105
+SHA256 (TokTok-toxins-g20180217-f76a7bd_GH0.tar.gz) = 8be321cbeabb2ee315eaa067fd2640556f70ba418b22dfb6612e069747b7389c
+SIZE (TokTok-toxins-g20180217-f76a7bd_GH0.tar.gz) = 23896
+SHA256 (hqwrong-minitox-45b9e3f_GH0.tar.gz) = 358266b987e4a5b723418325641a9a27c3b3bf314e11f5be64e0b3958ce6fc9b
+SIZE (hqwrong-minitox-45b9e3f_GH0.tar.gz) = 124512
