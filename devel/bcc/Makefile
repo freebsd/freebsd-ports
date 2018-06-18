@@ -13,10 +13,11 @@ COMMENT=	Bruce's C compiler (with as and ld); can do 16-bit code
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		fails to link: error adding symbols: File in wrong format
+BROKEN_powerpc64=	fails to link: skipping incompatible /usr/lib/libgcc.a when searching for -lgcc
+
 USES=		uidfix
 
 CONFLICTS=	bin86-[0-9]* dev86-[0-9]*
-
-BROKEN_aarch64=		Fails to link: error adding symbols: File in wrong format
 
 .include <bsd.port.mk>

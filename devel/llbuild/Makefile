@@ -13,6 +13,8 @@ LICENSE=	APACHE20 BSD3CLAUSE NCSA
 LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wdocumentation"
+
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USES=		cmake:outsource

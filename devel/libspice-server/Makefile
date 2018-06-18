@@ -13,6 +13,8 @@ COMMENT=	Implements the server side of the SPICE protocol
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to compile: red-channel-client.h:44: redefinition of typedef 'RedChannelClient'
+
 LIB_DEPENDS=	libopus.so:audio/opus
 BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
 

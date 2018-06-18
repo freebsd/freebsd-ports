@@ -14,6 +14,8 @@ COMMENT=	Open source, cross-platform, free C/C++ IDE
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN_powerpc64=	fails to configure: checking for exit in -lboost_system-boost_system... no
+
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfontconfig.so:x11-fonts/fontconfig \

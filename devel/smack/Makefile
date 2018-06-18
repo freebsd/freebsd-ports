@@ -11,6 +11,8 @@ COMMENT=	Low-level I/O storage library which packs data
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to build: libboost_filesystem.so: undefined reference to std::__cxx11::basic_string
+
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libsnappy.so:archivers/snappy
 

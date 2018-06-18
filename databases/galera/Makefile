@@ -3,8 +3,8 @@
 
 PORTNAME=	galera
 PORTVERSION?=	25.3.23
-PORTREVISION=	1
 DISTVERSIONPREFIX?=	release_
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	devel@galeracluster.com
@@ -12,15 +12,12 @@ COMMENT=	Synchronous multi-master replication engine
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	checkmk:devel/check \
-		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
-LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
-
 BROKEN_SSL=		openssl-devel
 BROKEN_SSL_REASON_openssl-devel=	check that SSL devel headers are installed and usable
 BROKEN_aarch64=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 BROKEN_armv6=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 BROKEN_armv7=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
+BROKEN_powerpc64=	fails to configure: Checking for C library pthread... no
 NOT_FOR_ARCHS=		i386
 # On i386 older versions of clang produce:
 #   cannot compile this atomic library call yet ... __atomic_add_fetch
@@ -31,6 +28,10 @@ NOT_FOR_ARCHS=		i386
 # https://bugs.llvm.org//show_bug.cgi?id=24908
 # https://tracker.crystax.net/issues/1263
 NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386
+
+BUILD_DEPENDS=	checkmk:devel/check \
+		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 USES=		python:build scons ssl
 
