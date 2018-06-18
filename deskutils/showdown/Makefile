@@ -10,6 +10,8 @@ COMMENT=	Simple markdown viewer, written in Vala and GTK 3
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-incompatible-pointer-types"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmarkdown.a:textproc/discount \
 		valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \

@@ -10,6 +10,8 @@ COMMENT=	Highly-scalable, low-latency language server for C/C++/Objective-C
 
 LICENSE=	MIT
 
+BROKEN_powerpc64=	fails to build: Checking for 'clang++' (C++ compiler): not found
+
 BUILD_DEPENDS=	llvm-config60:devel/llvm60
 LIB_DEPENDS=	libclang.so:devel/llvm60
 

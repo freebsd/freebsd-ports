@@ -14,11 +14,10 @@ LICENSE_FILE=	${WRKSRC}/../license.txt
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Microsoft
-
 USES=		cmake compiler:c++11-lib ssl
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	Microsoft
 WRKSRC_SUBDIR=	Release
 CMAKE_OFF=	BUILD_SAMPLES BUILD_TESTS
 

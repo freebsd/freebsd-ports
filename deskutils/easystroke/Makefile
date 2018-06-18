@@ -13,15 +13,17 @@ COMMENT=	Easystroke is a gesture-recognition application for X11
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to build: handler.cc:560:27: call of overloaded 'abs(float&)' is ambiguous
+
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${LOCALBASE}/include/xorg/xserver-properties.h:x11-servers/xorg-server
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libboost_serialization.so:devel/boost-libs
 
+USES=		compiler:c++11-lang gettext gmake pkgconfig
 USE_GNOME=	gtkmm30
 USE_XORG=	x11 xext xfixes xi xtst
-USES=		compiler:c++11-lang gettext gmake pkgconfig
 USE_CXXSTD=	c++11
 INSTALLS_ICONS=	yes
 

@@ -12,14 +12,16 @@ COMMENT=	Lightweight Embedded Database Engine
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	fails to configure: checking for the Boost system library... no
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
+USES=		alias gmake libtool
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-boost=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-USES=		alias gmake libtool
-USE_LDCONFIG=	yes
 
 HAM_DOCS=	README INSTALL ChangeLog TODO AUTHORS CREDITS
 

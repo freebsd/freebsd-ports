@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for Qt
 
+BROKEN_powerpc64=	fails to compile: ruby.h:1381: wrong number of arguments specified for '__deprecated__' attribute
+
 LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5 \
 		libqscintilla2_qt4.so:devel/qscintilla2
 

@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/APACHE-2.0.txt
 
 BROKEN_SSL=	openssl-devel
 BROKEN_SSL_REASON_openssl-devel=	use of undeclared identifier 'BIO_s_file_internal'
+BROKEN_powerpc64=			fails to configure: Checking for C++ library boost_regex... no
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 

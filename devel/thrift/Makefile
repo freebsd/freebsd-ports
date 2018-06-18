@@ -12,6 +12,8 @@ COMMENT=	Framework for scalable cross-language services development
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-c++11-long-long"
+
 USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

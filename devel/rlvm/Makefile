@@ -13,6 +13,8 @@ COMMENT=	RealLive virtual machine clone
 LICENSE=	GPLv2 GPLv3 MIT
 LICENSE_COMB=	multi
 
+BROKEN_powerpc64=	fails to link: gcn_platform.cc: undefined reference to gcn::Exception::Exception
+
 BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libboost_serialization.so:devel/boost-libs \
