@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gopass
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -12,12 +12,13 @@ COMMENT=	Gopass is a rewrite of the pass password manager in Go
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	gpg2:security/gnupg
+RUN_DEPENDS=	git:devel/git \
+		gpg2:security/gnupg
 
 USES=		go
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	justwatchcom
+GH_ACCOUNT=	gopasspw
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
