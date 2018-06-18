@@ -628,14 +628,15 @@ lib/dynare/matlab/missing/nanmean/nanmean.m
 lib/dynare/matlab/missing/ordeig/ordeig.m
 lib/dynare/matlab/missing/rows_columns/columns.m
 lib/dynare/matlab/missing/rows_columns/rows.m
+lib/dynare/matlab/missing/stats-matlab/common_size.m
+lib/dynare/matlab/missing/stats-matlab/corr.m
+lib/dynare/matlab/missing/stats-matlab/quantile.m
 lib/dynare/matlab/missing/stats/betacdf.m
 lib/dynare/matlab/missing/stats/betainv.m
 lib/dynare/matlab/missing/stats/betapdf.m
 lib/dynare/matlab/missing/stats/betarnd.m
 lib/dynare/matlab/missing/stats/chi2cdf.m
 lib/dynare/matlab/missing/stats/chi2inv.m
-lib/dynare/matlab/missing/stats/common_size.m
-lib/dynare/matlab/missing/stats/corr.m
 lib/dynare/matlab/missing/stats/exprnd.m
 lib/dynare/matlab/missing/stats/gamcdf.m
 lib/dynare/matlab/missing/stats/gaminv.m
@@ -644,7 +645,6 @@ lib/dynare/matlab/missing/stats/gamrnd.m
 lib/dynare/matlab/missing/stats/normcdf.m
 lib/dynare/matlab/missing/stats/norminv.m
 lib/dynare/matlab/missing/stats/normpdf.m
-lib/dynare/matlab/missing/stats/quantile.m
 lib/dynare/matlab/missing/stats/stdnormal_cdf.m
 lib/dynare/matlab/missing/stats/stdnormal_inv.m
 lib/dynare/matlab/missing/stats/stdnormal_pdf.m
@@ -1171,7 +1171,6 @@ lib/dynare/matlab/stoch_simul.m
 lib/dynare/matlab/stochastic_solvers.m
 lib/dynare/matlab/store_smoother_results.m
 lib/dynare/matlab/subset.m
-%%OCTAVE%%lib/dynare/matlab/supported_octave_version.m
 lib/dynare/matlab/symmetric_matrix_index.m
 lib/dynare/matlab/test_for_deep_parameters_calibration.m
 lib/dynare/matlab/th_autocovariances.m

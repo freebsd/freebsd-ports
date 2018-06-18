@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dynare
-DISTVERSION=	4.5.4
-PORTREVISION=	4
+DISTVERSION=	4.5.5
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 
