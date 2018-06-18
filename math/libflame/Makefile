@@ -317,7 +317,7 @@ do-install:
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 CONFIGURE_ARGS+=	--enable-verbose-make-output
 
-check regression-test test: build
+do-test:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} \
 	${MAKE_ARGS} MK_INCL_DIR_INST_W_ARCH_VERS="${WRKDIR}/include" \
 	install-headers
