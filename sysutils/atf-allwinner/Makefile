@@ -8,7 +8,9 @@ MASTER_SITES=	GH
 MAINTAINER=	manu@freebsd.org
 COMMENT=	Arm Trusted Framework for Allwinner SoCs
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2+
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/license.md
 
 BUILD_DEPENDS=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
 
