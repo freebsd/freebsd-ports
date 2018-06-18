@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-goodies
 PORTVERSION=	4.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -16,7 +16,7 @@ OPTIONS_DEFAULT=	DASHBOARD DICTIONARY GIGOLO PAROLE \
 			TERMINAL XFBURN \
 			BATTERY CALCULATOR CLIPMAN CPUGRAPH \
 			DATETIME DISKPERF EMBED FSGUARD GENMON \
-			MAILWATCH MOUNT NETLOAD NOTES \
+			MAILWATCH MENULIBRE MOUNT NETLOAD NOTES \
 			SMARTBOOKMARK SYSTEMLOAD TIMER TIMEOUT VERVE WAVELAN \
 			WEATHER WHISKERMENU XKB \
 			ARCHIVE MEDIATAGS VCS \
@@ -127,10 +127,11 @@ ARCHIVE_RUN_DEPENDS=		thunar-archive-plugin>=0:archivers/thunar-archive-plugin
 MEDIATAGS_RUN_DEPENDS=		thunar-media-tags-plugin>=0:audio/thunar-media-tags-plugin
 VCS_RUN_DEPENDS=		thunar-vcs-plugin>=0:devel/thunar-vcs-plugin
 
-OPTIONS_GROUP_UNOFFICIAL=	BSDCPUFREQ EQUAKE MIXER PRINT THEMES \
+OPTIONS_GROUP_UNOFFICIAL=	BSDCPUFREQ EQUAKE MENULIBRE MIXER PRINT THEMES \
 				VALA VFS VOLUMED
 BSDCPUFREQ_DESC=		Display the CPU clock frequency in Xfce panel
 EQUAKE_DESC=			Earthquake monitor plugin for the Xfce panel
+MENULIBRE_DESC=			Advanced compliant menu editor
 MIXER_DESC=			Volume control for the Xfce desktop
 PRINT_DESC=			Print system support for the Xfce Desktop
 THEMES_DESC=			Additional themes for xfwm4
@@ -141,6 +142,7 @@ VOLUMEDPULSE_DESC=		Volume management daemon for Xfce using PulseAudio
 
 BSDCPUFREQ_RUN_DEPENDS=		xfce4-bsdcpufreq-plugin>=0:sysutils/xfce4-bsdcpufreq-plugin
 EQUAKE_RUN_DEPENDS=		xfce4-equake-plugin>=0:science/xfce4-equake-plugin
+MENULIBRE_RUN_DEPENDS=		py36-menulibre>=0:x11/menulibre
 MIXER_RUN_DEPENDS=		xfce4-mixer>=0:audio/xfce4-mixer
 PRINT_RUN_DEPENDS=		xfce4-print>=0:print/xfce4-print
 THEMES_RUN_DEPENDS=		xfce4-wm-themes>=0:misc/xfce4-wm-themes
