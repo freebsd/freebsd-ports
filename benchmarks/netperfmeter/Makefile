@@ -12,6 +12,8 @@ COMMENT=	Network Performance Meter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-array-bounds"
+
 USES=		cmake shebangfix
 CMAKE_ON=	BUILD_PLOT_PROGRAMS
 CMAKE_OFF=	BUILD_TEST_PROGRAMS WITH_NEAT
