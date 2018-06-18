@@ -10279,3 +10279,4 @@ textproc/elasticsearch2||2018-06-15|Has expired: Elastic 2.4 EoL is 2018-02-28
 net-im/imspector||2018-06-16|Has expired: No active upstream, master site disappeared long ago
 net/syncthing-discosrv|net/syncthing|2018-06-18|Has expired: Included in net/syncthing now
 net/syncthing-inotify|net/syncthing|2018-06-18|Has expired: Included in net/syncthing now
+net/syncthing-cli|net/syncthing|2018-06-18|Has expired: Included in net/syncthing now
