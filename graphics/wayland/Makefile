@@ -12,6 +12,8 @@ COMMENT=	Wayland composite "server"
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to compile: tests/test-runner.c:349: undefined reference to prctl
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi \
 		libepoll-shim.so:devel/libepoll-shim

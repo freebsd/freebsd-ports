@@ -10,6 +10,8 @@ DISTNAME=	${PLUGIN_NAME}
 
 MAINTAINER=	me@skylord.ru
 
+BROKEN_powerpc64=	fails to compile: thasharray.h:338:29: cast from 'std::nullptr_t' to 'short int' loses precision
+
 PLUGIN_NAME=	floodprot
 PLUGIN_DESC=	Floodprotect
 

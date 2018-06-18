@@ -12,6 +12,8 @@ COMMENT=	High performance Monero (XMR) CPU miner
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to configure: Target "xmrig" requires the language dialect "CXX11", but CMake does not know the compile flags to use to enable it.
+
 OPTIONS_DEFINE=	STATIC MICROHTTPD
 MICROHTTPD_DESC=Build with libmicrohttpd support
 OPTIONS_DEFAULT=MICROHTTPD

@@ -11,6 +11,8 @@ COMMENT=	Open source Bible study tool
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to compile: btosismorphsegmentation.cpp.o: undefined reference to sword::SWOptionFilter::SWOptionFilter
+
 LIB_DEPENDS=	libclucene-core.so:textproc/clucene \
 		libsword.so:misc/sword
 

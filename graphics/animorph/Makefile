@@ -12,6 +12,8 @@ COMMENT=	Morphing engine for MakeHuman
 
 LICENSE=	LGPL21
 
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-std=gnu++03"
+
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gmake libtool
 USE_LDCONFIG=	yes

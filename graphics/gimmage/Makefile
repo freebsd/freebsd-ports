@@ -13,6 +13,8 @@ COMMENT=	Simple image viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to configure: C++ compiler cannot create executables
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

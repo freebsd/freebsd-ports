@@ -17,6 +17,8 @@ COMMENT=	OpenEMM a email marketing enterprise app
 LICENSE=	CPAL-1.0
 LICENSE_FILE=	${WRKSRC}/other/LICENSE.txt
 
+BROKEN_powerpc64=	fails to build: gmake[1]: clang: Command not found
+
 LIB_DEPENDS=	libslang.so:devel/libslang2 \
 		libsa.so:net/ossp-sa
 BUILD_DEPENDS=	${TOMCATHOME}/bin/bootstrap.jar:www/tomcat8 \
@@ -24,11 +26,11 @@ BUILD_DEPENDS=	${TOMCATHOME}/bin/bootstrap.jar:www/tomcat8 \
 RUN_DEPENDS=	${TOMCATHOME}/bin/bootstrap.jar:www/tomcat8 \
 		py27-MySQLdb>=1.2.3:databases/py-MySQLdb
 
+USES=	dos2unix gmake python:2.7,run
 USE_RC_SUBR=	openemm2013
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 
-USES=	dos2unix gmake python:2.7,run
 DOS2UNIX_GLOB=	*.c *.cpp *.h *.java *.xml *.properties
 CC=	clang
 CXX=	clang++

@@ -17,6 +17,8 @@ COMMENT=	Free RADIUS server implementation
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-date-time"
+
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libtalloc.so:devel/talloc
 
@@ -26,9 +28,9 @@ KRB5_CONFIG?=	/usr/bin/krb5-config --libs
 CONFLICTS_INSTALL=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
 		freeradius-mysql-[0-9].* freeradius-[^3].*
 
+USES=		gmake readline shebangfix ssl tar:bzip2
 USE_RC_SUBR=	radiusd
 
-USES=		gmake readline shebangfix ssl tar:bzip2
 SHEBANG_FILES=	src/modules/rlm_counter/rad_counter scripts/sql/radsqlrelay
 GNU_CONFIGURE=	yes
 # Prevent /root/.rnd leftover

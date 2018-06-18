@@ -13,6 +13,8 @@ COMMENT=	GTK interactive geometry software
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to compile: ./geo/libgeo.a: multiple definition of drgeoDialogData
+
 LIB_DEPENDS=	libguile.so:lang/guile
 
 GNU_CONFIGURE=	yes

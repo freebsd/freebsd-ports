@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
+BROKEN_powerpc64=	fails to build: gmake[1]: *** [Makefile:116: mkmake.exe] Error 1
+
 USES=		gmake
 SUB_FILES=	pkg-message
 

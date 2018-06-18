@@ -13,6 +13,8 @@ COMMENT=	Python bindings for libgphoto2
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-unused-but-set-variable"
+
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
 USES=		pkgconfig python shebangfix

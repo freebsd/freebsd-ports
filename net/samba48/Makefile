@@ -13,6 +13,8 @@ COMMENT=			Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=			GPLv3
 
+BROKEN_powerpc64=		fails to compile: auth.idl:107: Unable to determine origin of type struct cli_credentials
+
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-79]-4.* p5-Parse-Pidl-4.*
