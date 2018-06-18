@@ -1,6 +1,0 @@
-extra-scrollback-patch-config.def.h svn-properties=fbsd:nokeywords=yes
-extra-scrollback-patch-st.c svn-properties=fbsd:nokeywords=yes
-extra-scrollback-patch-st.h svn-properties=fbsd:nokeywords=yes
-extra-solarized-patch-config.def.h svn-properties=fbsd:nokeywords=yes
-extra-solarized-patch-st.h svn-properties=fbsd:nokeywords=yes
-extra-solarized-patch-x.c svn-properties=fbsd:nokeywords=yes
