@@ -13,6 +13,8 @@ COMMENT=	Official bioinformatic applications based on the SeqAn library
 LICENSE=	BSD3CLAUSE LGPL3 GPLv3
 LICENSE_COMB=	multi
 
+BROKEN_powerpc64=	fails to build: requires 'c++14-lang' in USES (cf.)
+
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USES=		cmake:outsource compiler:openmp # once #199603 is resolved, add c++14-lang
