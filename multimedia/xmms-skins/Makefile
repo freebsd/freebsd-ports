@@ -90,7 +90,7 @@ DISTFILES=	AbsoluteE_Xmms.zip \
 		xmms-256.zip
 EXTRACT_ONLY=
 
-MAINTAINER=	admin@lissyara.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skins for X Multimedia System (XMMS)
 
 CONFLICTS_INSTALL=	xmms-skins-huge-*

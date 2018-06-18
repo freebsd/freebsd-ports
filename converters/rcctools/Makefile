@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	converters
 MASTER_SITES=	SF/rusxmms/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	admin@lissyara.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Charset conversion utility with language and encoding autodetection
 
 LIB_DEPENDS=	librcc.so:devel/librcc
