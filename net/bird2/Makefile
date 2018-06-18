@@ -13,6 +13,8 @@ COMMENT=	Dynamic IP routing daemon
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to compile: ./lib/ip.h:337: 'for' loop initial declaration used outside C99 mode
+
 LIB_DEPENDS=	libssh.so:security/libssh
 
 CONFLICTS=	bird-[0-9]*

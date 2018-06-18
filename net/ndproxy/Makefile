@@ -11,6 +11,8 @@ COMMENT=	Implementation of IPv6 Neighbor Discovery proxy
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to build: ndproxy.c:51: function declaration isn't a prototype
+
 SUB_FILES=	pkg-message
 
 USES=		kmod

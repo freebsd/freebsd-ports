@@ -14,6 +14,8 @@ COMMENT=	Mathematics library and advanced calculator package
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to link: intnum.o: relocation truncated to fit: R_PPC64_GOT_TLSGD16 against symbol 'avma' defined in .tbss section in init.o
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		perl5 readline

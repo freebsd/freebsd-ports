@@ -14,6 +14,8 @@ COMMENT=	Two mathematics libraries for Rexx
 
 LICENSE=	MPL10
 
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-incompatible-pointer-types"
+
 BUILD_DEPENDS=	${LOCALBASE}/include/rexxsaa.h:lang/rexx-regina
 
 USES=		zip

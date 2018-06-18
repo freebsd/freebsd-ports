@@ -15,6 +15,8 @@ COMMENT=	Generative software that evolves images/textures/patterns
 
 LICENSE=	GPLv3+ # LICENSE file is GPLv2 though
 
+BROKEN_powerpc64=	fails to link: evolvotron.o: undefined reference to boost::program_options::options_description::options_description
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -12,6 +12,8 @@ COMMENT=	Qt-based GUI tool for creating and editing .torrent files
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	fails to compile: -Werror=cpp: No option -Wcpp
+
 USES=		cmake desktop-file-utils
 
 _QT4_DEPS=	linguisttools_build moc_build qmake_build rcc_build \

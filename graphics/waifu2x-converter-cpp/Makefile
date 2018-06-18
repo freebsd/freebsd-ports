@@ -14,6 +14,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to link: libw2xc.so: undefined reference to cv::imread
+
 BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
 LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv \
 		libopencv_imgproc.so:graphics/opencv-core

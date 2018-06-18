@@ -12,6 +12,8 @@ COMMENT=	Free and Open Source 3D Voxel Editor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to build: sh: clang++: not found
+
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libglfw.so:graphics/glfw \
 		libpng.so:graphics/png
