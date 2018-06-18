@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uptimed
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -12,10 +12,9 @@ COMMENT=	Uptime daemon
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf gmake libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	rpodgorny
-
-USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
