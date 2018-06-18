@@ -9,7 +9,7 @@ CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-${MODEL}
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
 
-MAINTAINER=	uboot@FreeBSD.org
+MAINTAINER?=	uboot@FreeBSD.org
 COMMENT=	Cross-build das u-boot for model ${MODEL}
 
 LICENSE=	GPLv2
