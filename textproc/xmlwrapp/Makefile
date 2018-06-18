@@ -13,6 +13,8 @@ COMMENT=	Modern style C++ library for working with XML data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to configure: invalid value: boost_major_version=
+
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 OPTIONS_DEFINE=	XSLT DOCS
@@ -22,7 +24,7 @@ OPTIONS_SUB=	yes
 XSLT_USE=	gnome=libxslt
 XSLT_CONFIGURE_ENABLE=	xslt
 
-USES=		pathfix pkgconfig libtool
+USES=		compiler:c++11-lang libtool pathfix pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

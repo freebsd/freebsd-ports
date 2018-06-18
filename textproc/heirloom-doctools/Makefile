@@ -10,6 +10,8 @@ COMMENT=	Portable and enhanced troff, nroff, and related utilities
 
 LICENSE=	CDDL
 
+BROKEN_powerpc64=	fails to package: Unable to access file pub/utf-8: No such file or directory
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	n-t-roff

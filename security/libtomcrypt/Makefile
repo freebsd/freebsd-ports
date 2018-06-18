@@ -14,6 +14,8 @@ COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-type-limits"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CFLAGS+=	-I${LOCALBASE}/include

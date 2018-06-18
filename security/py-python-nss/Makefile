@@ -15,6 +15,8 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE.lgpl
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE.gpl
 LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE.mpl
 
+BROKEN_powerpc64=	fails to compile: py_nss.c:20285: #pragma GCC diagnostic not allowed inside functions
+
 LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libnss3.so:security/nss
 

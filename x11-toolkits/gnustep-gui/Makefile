@@ -23,6 +23,7 @@ LIB_DEPENDS+=	libflite.so:audio/flite
 
 BROKEN_armv6=		fails to package: chmod: GSSpeechServer.desktop: No such file or directory
 BROKEN_armv7=		fails to package: chmod: GSSpeechServer.desktop: No such file or directory
+BROKEN_powerpc64=	fails to build: Illegal instruction (core dumped)
 
 OPTIONS_DEFINE=	DOCS CUPS ASPELL
 OPTIONS_DEFAULT=	CUPS

@@ -11,6 +11,8 @@ COMMENT=	Home Automation System
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+BROKEN_powerpc64=	fails to compile: libboost_thread.so: undefined reference to std::__cxx11::basic_string
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2
 

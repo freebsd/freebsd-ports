@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PKCS\#11 Java wrapper
 
+BROKEN_powerpc64=	fails to link: cannot find -lgcc
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		dos2unix gmake zip

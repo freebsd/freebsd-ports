@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 BROKEN_armv6=		fails to compile: ./config.hxx:52:17: expected namespace name
 BROKEN_armv7=		fails to compile: ./config.hxx:52:17: expected namespace name
+BROKEN_powerpc64=	fails to compile: g++6: unrecognized command line option '-mavx2'
 
 LIB_DEPENDS=	libccgnu2.so:devel/commoncpp \
 		libPocoNet.so:devel/poco-ssl \

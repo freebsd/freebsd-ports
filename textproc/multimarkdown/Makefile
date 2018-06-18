@@ -13,6 +13,8 @@ LICENSE=	BSD3CLAUSE MIT GPLv2+ ZLIB
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	fails to compile: Sources/libMultiMarkdown/file.h:116: redefinition of typedef 'DString'
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cmake
