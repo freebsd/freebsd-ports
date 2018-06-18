@@ -1,16 +1,13 @@
 U-Boot loader for A13 Olinuxino.
 
 To install this bootloader on an sdcard just do :
-dd if=/usr/local/share/u-boot/u-boot-a13-olinuxino/u-boot-sunxi-with-spl.bin of=/path/to/sdcarddevice bs=1k seek=8 conv=notrunc,sync
+dd if=$LOCALBASE/share/u-boot/u-boot-a13-olinuxino/u-boot-sunxi-with-spl.bin of=/path/to/sdcarddevice bs=1k seek=8 conv=sync
 
 This version is patched so that:
- * ELF and API features are enabled.
- * The distroboot command knows how to load FreeBSD loader(8)
- * By default, it loads ubldr.bin (PIE) from file ubldr.bin on the FAT
-   partition to address 0x42000000, and launches it. If ubldr.bin is
-   not found, it falls back on ubldr
+ * API features are enabled.
+ * A boot.scr (U-Boot script) that loads ubldr.bin and execute it is included 
 
 For information about running FreeBSD on Allwinner boards, see
- https://wiki.freebsd.org/FreeBSD/arm/Allwinner
+https://wiki.freebsd.org/FreeBSD/arm/Allwinner
 
-For general information about U-Boot see WWW: http://www.denx.de/wiki/U-Boot
+WWW: http://www.denx.de/wiki/U-Boot
