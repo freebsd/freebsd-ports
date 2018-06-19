@@ -28,12 +28,14 @@ include/rudiments/hostentry.h
 include/rudiments/inetsocketclient.h
 include/rudiments/inetsocketserver.h
 include/rudiments/inetsocketutil.h
+include/rudiments/input.h
 include/rudiments/linkedlist.h
 include/rudiments/listener.h
 include/rudiments/logger.h
 include/rudiments/md5.h
 include/rudiments/memorymap.h
 include/rudiments/memorypool.h
+include/rudiments/output.h
 include/rudiments/parameterstring.h
 include/rudiments/permissions.h
 include/rudiments/private/avltree.h
@@ -100,6 +102,7 @@ include/rudiments/private/inetsocketserver.h
 include/rudiments/private/inetsocketserverincludes.h
 include/rudiments/private/inetsocketutil.h
 include/rudiments/private/inetsocketutilincludes.h
+include/rudiments/private/inputincludes.h
 include/rudiments/private/inttypes.h
 include/rudiments/private/linkedlist.h
 include/rudiments/private/linkedlistincludes.h
@@ -118,6 +121,7 @@ include/rudiments/private/memorypool.h
 include/rudiments/private/memorypoolincludes.h
 include/rudiments/private/new.h
 include/rudiments/private/nodeinlines.h
+include/rudiments/private/outputincludes.h
 include/rudiments/private/parameterstring.h
 include/rudiments/private/parameterstringincludes.h
 include/rudiments/private/permissions.h
@@ -165,6 +169,8 @@ include/rudiments/private/stringbuffer.h
 include/rudiments/private/stringbufferincludes.h
 include/rudiments/private/sysincludes.h
 include/rudiments/private/syslogdestination.h
+include/rudiments/private/templateengine.h
+include/rudiments/private/templateengineincludes.h
 include/rudiments/private/thread.h
 include/rudiments/private/threadincludes.h
 include/rudiments/private/threadmutex.h
@@ -213,6 +219,7 @@ include/rudiments/staticarray.h
 include/rudiments/stdio.h
 include/rudiments/stringbuffer.h
 include/rudiments/sys.h
+include/rudiments/templateengine.h
 include/rudiments/thread.h
 include/rudiments/threadmutex.h
 include/rudiments/tls.h
@@ -227,7 +234,7 @@ include/rudiments/xmldomnode.h
 include/rudiments/xmlsax.h
 lib/librudiments.a
 lib/librudiments.so
-lib/librudiments.so.4
-lib/librudiments.so.4.0.5
+lib/librudiments.so.3
+lib/librudiments.so.3.1.5
 libdata/pkgconfig/rudiments.pc
 man/man1/rudiments-config.1.gz
