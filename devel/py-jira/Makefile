@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jira
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.15
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pbr>=1.9:devel/py-pbr@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pbr>=1.9:devel/py-pbr@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx>=1.6.5:textproc/py-sphinx@${FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.2.3:www/py-requests@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.3.3:www/py-requests-oauthlib@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tlslite>=0.4.4:security/py-tlslite@${FLAVOR} \
