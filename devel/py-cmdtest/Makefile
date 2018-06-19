@@ -2,6 +2,7 @@
 
 PORTNAME=	cmdtest
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://git.liw.fi/cgi-bin/cgit/cgit.cgi/cmdtest/snapshot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,10 +21,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ttystatus>0:devel/py-ttystatus@${FLAVOR}
 
 USES=		python:2.7
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e "s,python,${PYTHON_CMD},g" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s,python,${PYTHON_CMD},g ; s,share/man/,man/," ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
