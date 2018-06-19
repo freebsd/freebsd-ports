@@ -1,5 +1,7 @@
 bin/dnsrecon
 %%PYTHON_SITELIBDIR%%/dnsrecon/__init__.py
+%%PYTHON_SITELIBDIR%%/dnsrecon/bingenum.py
+%%PYTHON_SITELIBDIR%%/dnsrecon/crtenum.py
 %%PYTHON_SITELIBDIR%%/dnsrecon/dnshelper.py
 %%PYTHON_SITELIBDIR%%/dnsrecon/gooenum.py
 %%PYTHON_SITELIBDIR%%/dnsrecon/mdnsenum.py
