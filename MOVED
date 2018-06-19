@@ -10280,3 +10280,6 @@ net-im/imspector||2018-06-16|Has expired: No active upstream, master site disapp
 net/syncthing-discosrv|net/syncthing|2018-06-18|Has expired: Included in net/syncthing now
 net/syncthing-inotify|net/syncthing|2018-06-18|Has expired: Included in net/syncthing now
 net/syncthing-cli|net/syncthing|2018-06-18|Has expired: Included in net/syncthing now
+x11-themes/adwaita-common||2018-06-19|Move to flavored version
+x11-themes/adwaita-qt4|x11-themes/adwaita-qt@qt4|2018-06-19|Move to flavored version
+x11-themes/adwaita-qt5|x11-themes/adwaita-qt@qt5|2018-06-19|Move to flavored version

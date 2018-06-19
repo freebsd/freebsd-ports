@@ -1,0 +1,35 @@
+# Created by: Olivier Duchateau
+# $FreeBSD$
+
+PORTNAME=	adwaita-qt
+DISTVERSION=	1.0
+CATEGORIES=	x11-themes
+
+MAINTAINER=	tcberner@FreeBSD.org
+COMMENT=	Adwaita theme for Qt applications
+
+LICENSE=	GPLv2 LGPL20
+LICENSE_COMB=	multi
+
+FLAVORS=	qt5 qt4
+FLAVOR?=	${FLAVORS:[1]}
+qt4_PKGNAMESUFFIX=	4
+qt5_PKGNAMESUFFIX=	5
+
+USES=		cmake:outsource compiler:c++11-lib localbase pkgconfig
+.  if ${FLAVOR} == qt4
+USE_QT4=	corelib dbus gui \
+		moc_build rcc_build uic_build qmake_build
+CMAKE_ON=	USE_QT4
+.  else
+USE_QT5=	core dbus gui widgets \
+		buildtools_build qmake_build
+CMAKE_OFF=	USE_QT4
+.  endif
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	FedoraQt
+
+PLIST_FILES=	${QT_PLUGINDIR}/styles/adwaita.so
+
+.include <bsd.port.mk>
