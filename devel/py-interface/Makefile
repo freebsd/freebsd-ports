@@ -3,6 +3,7 @@
 
 PORTNAME=	interface
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lysator.liu.se/~tab/erlang/py_interface/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +21,7 @@ DOCSDIR=	${PREFIX}/share/doc/py_${PORTNAME}
 # EXAMPLESDIR=	${PREFIX}/share/examples/py_${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
+DOCS_USE=	PYTHON=concurrent
 
 PORTDOCS=	README
 
