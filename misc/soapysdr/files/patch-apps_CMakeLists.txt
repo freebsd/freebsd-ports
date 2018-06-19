@@ -1,0 +1,8 @@
+--- apps/CMakeLists.txt.orig	2018-06-19 05:02:30 UTC
++++ apps/CMakeLists.txt
+@@ -17,4 +17,4 @@ target_link_libraries(SoapySDRUtil ${Soa
+ install(TARGETS SoapySDRUtil DESTINATION bin)
+ 
+ #install man pages for the application executable
+-install(FILES SoapySDRUtil.1 DESTINATION share/man/man1)
++install(FILES SoapySDRUtil.1 DESTINATION man/man1)
