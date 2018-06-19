@@ -1,19 +1,18 @@
-# Created by: Julian Stacey <jhs@FreeBSD.org>
+ # Created by: Julian H. Stacey <jhs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pbasic
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.berklix.org/pub/FreeBSD/ports/distfiles/ \
 		http://www.berklix.com/~jhs/ftp/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-950813
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2017-04-08
 
 MAINTAINER=	jhs@berklix.com
 COMMENT=	Phil Cockroft's Basic Interpreter (previously Rabbit Basic)
-# Ask maintainer if you want newer sources or author's latest e-mail
-#  (which is currently "phil@cockcroft.de")
+#		Author of generic sources: "phil@cockcroft.de"
 
-BROKEN_aarch64=	Fails to link: missing sbrk
+LICENSE=	PD
 
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile
@@ -34,3 +33,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/basic.1 ${STAGEDIR}${PREFIX}/man/man1/pbasic.1
 
 .include <bsd.port.mk>
+
