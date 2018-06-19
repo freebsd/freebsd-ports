@@ -3,7 +3,7 @@
 
 PORTNAME=	aipy
 PORTVERSION=	2.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,6 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python:2.7
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 
 .include <bsd.port.mk>
