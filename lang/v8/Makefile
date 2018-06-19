@@ -39,6 +39,10 @@ CXXFLAGS+=	-Wno-unused-const-variable
 CXXFLAGS+=	-Wno-tautological-undefined-compare
 .if ${COMPILER_VERSION} >= 36
 CXXFLAGS+=	-Wno-unused-local-typedef
+.if ${COMPILER_VERSION} >= 60
+CXXFLAGS+=	-Wno-null-pointer-arithmetic -Wno-vexing-parse
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-stub-cache.cc
+.endif
 .endif
 .endif
 .endif
