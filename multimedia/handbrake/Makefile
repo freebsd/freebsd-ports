@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	handbrake
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	multimedia
 DIST_SUBDIR=	${PORTNAME}
 
@@ -41,7 +41,7 @@ CONTRIB_FILES=	fdk-aac-0.1.5.tar.gz \
 		libbluray-1.0.2.tar.bz2 \
 		libdvdnav-5.0.3.tar.bz2 \
 		libdvdread-5.0.3.tar.bz2 \
-		libvpx-1.6.1.tar.bz2 \
+		libvpx-1.7.0.tar.gz \
 		x265_2.6.tar.gz
 MASTER_SITES+=	https://download.handbrake.fr/contrib/:contrib
 DISTFILES+=	${CONTRIB_FILES:S/$/:contrib/}
