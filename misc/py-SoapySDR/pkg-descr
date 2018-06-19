@@ -1,0 +1,4 @@
+Python binding of SoapySDR, an open-source generalized C/C++ API and runtime
+library for interfacing with SDR devices.
+
+WWW: https://github.com/pothosware/SoapySDR
