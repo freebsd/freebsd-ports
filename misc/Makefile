@@ -484,6 +484,7 @@
     SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend
+    SUBDIR += soapysdr
     SUBDIR += solarized
     SUBDIR += spamcalc
     SUBDIR += sshbuddy
