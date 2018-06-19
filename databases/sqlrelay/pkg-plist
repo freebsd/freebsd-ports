@@ -1,3 +1,33 @@
+%%DATADIR%%/examples/sample-mssqlserver-mysql-errors.map
+%%DATADIR%%/examples/sample-oracle-mysql-errors.map
+%%DATADIR%%/examples/sqlrelay.conf
+%%FIREBIRD%%libexec/sqlrelay/sqlrconnection_firebird.so
+%%FREETDS%%libexec/sqlrelay/sqlrconnection_freetds.so
+%%MYSQL%%lib/libmysql3sqlrelay.so.5
+%%MYSQL%%lib/libmysql3sqlrelay.so.5.0.0
+%%MYSQL%%lib/libmysql40sqlrelay.so.5
+%%MYSQL%%lib/libmysql40sqlrelay.so.5.0.0
+%%MYSQL%%lib/libmysql41sqlrelay.so.5
+%%MYSQL%%lib/libmysql41sqlrelay.so.5.0.0
+%%MYSQL%%lib/libmysql50sqlrelay.so.5
+%%MYSQL%%lib/libmysql50sqlrelay.so.5.0.0
+%%MYSQL%%lib/libmysql51sqlrelay.so.5
+%%MYSQL%%lib/libmysql51sqlrelay.so.5.0.0
+%%MYSQL%%libexec/sqlrelay/sqlrconnection_mysql.so
+%%ODBC%%lib/libsqlrodbc.so
+%%ODBC%%lib/libsqlrodbc.so.5
+%%ODBC%%lib/libsqlrodbc.so.5.0.0
+%%ODBC%%libexec/sqlrelay/sqlrconnection_odbc.so
+%%PGSQL%%lib/libpqsqlrelay.so.5
+%%PGSQL%%lib/libpqsqlrelay.so.5.0.0
+%%PGSQL%%libexec/sqlrelay/sqlrconnection_postgresql.so
+%%SQLITE3%%libexec/sqlrelay/sqlrconnection_sqlite.so
+@dir %%ETCDIR%%
+@dir /var/cache/sqlrelay
+@dir /var/log/sqlrelay
+@dir /var/log/sqlrelay/debug
+@dir /var/run/sqlrelay
+@sample etc/sqlrelay/conf.sample
 bin/sqlr-cachemanager
 bin/sqlr-connection
 bin/sqlr-export
@@ -14,7 +44,6 @@ bin/sqlrserver-config
 bin/sqlrsh
 etc/rc.d/sqlrcachemanager
 etc/rc.d/sqlrelay
-@sample etc/sqlrelay/conf.sample
 etc/sqlrelay/sqlrelay.xsd
 include/sqlrelay/private/sqlrauth.h
 include/sqlrelay/private/sqlrauths.h
@@ -23,6 +52,8 @@ include/sqlrelay/private/sqlrclientwrapper.h
 include/sqlrelay/private/sqlrclientwrapperincludes.h
 include/sqlrelay/private/sqlrconnection.h
 include/sqlrelay/private/sqlrcursor.h
+include/sqlrelay/private/sqlrdirective.h
+include/sqlrelay/private/sqlrdirectives.h
 include/sqlrelay/private/sqlrfilter.h
 include/sqlrelay/private/sqlrfilters.h
 include/sqlrelay/private/sqlrgsscredentials.h
@@ -39,6 +70,8 @@ include/sqlrelay/private/sqlrpwdencs.h
 include/sqlrelay/private/sqlrqueries.h
 include/sqlrelay/private/sqlrquery.h
 include/sqlrelay/private/sqlrquerycursor.h
+include/sqlrelay/private/sqlrresultsetheadertranslation.h
+include/sqlrelay/private/sqlrresultsetheadertranslations.h
 include/sqlrelay/private/sqlrresultsetrowtranslation.h
 include/sqlrelay/private/sqlrresultsetrowtranslations.h
 include/sqlrelay/private/sqlrresultsettranslation.h
@@ -64,37 +97,22 @@ include/sqlrelay/sqlrclient.h
 include/sqlrelay/sqlrclientwrapper.h
 include/sqlrelay/sqlrserver.h
 include/sqlrelay/sqlrutil.h
-%%MYSQL%%lib/libmysql3sqlrelay.so.4
-%%MYSQL%%lib/libmysql3sqlrelay.so.4.0.0
-%%MYSQL%%lib/libmysql40sqlrelay.so.4
-%%MYSQL%%lib/libmysql40sqlrelay.so.4.0.0
-%%MYSQL%%lib/libmysql41sqlrelay.so.4
-%%MYSQL%%lib/libmysql41sqlrelay.so.4.0.0
-%%MYSQL%%lib/libmysql50sqlrelay.so.4
-%%MYSQL%%lib/libmysql50sqlrelay.so.4.0.0
-%%MYSQL%%lib/libmysql51sqlrelay.so.4
-%%MYSQL%%lib/libmysql51sqlrelay.so.4.0.0
-lib/libpqsqlrelay.so.4
-lib/libpqsqlrelay.so.4.0.0
 lib/libsqlrclient.a
 lib/libsqlrclient.so
-lib/libsqlrclient.so.4
-lib/libsqlrclient.so.4.0.0
+lib/libsqlrclient.so.5
+lib/libsqlrclient.so.5.0.0
 lib/libsqlrclientwrapper.a
 lib/libsqlrclientwrapper.so
-lib/libsqlrclientwrapper.so.4
-lib/libsqlrclientwrapper.so.4.0.0
-%%ODBC%%lib/libsqlrodbc.so
-%%ODBC%%lib/libsqlrodbc.so.4
-%%ODBC%%lib/libsqlrodbc.so.4.0.0
+lib/libsqlrclientwrapper.so.5
+lib/libsqlrclientwrapper.so.5.0.0
 lib/libsqlrserver.a
 lib/libsqlrserver.so
-lib/libsqlrserver.so.6
-lib/libsqlrserver.so.6.0.0
+lib/libsqlrserver.so.7
+lib/libsqlrserver.so.7.0.0
 lib/libsqlrutil.a
 lib/libsqlrutil.so
-lib/libsqlrutil.so.6
-lib/libsqlrutil.so.6.0.0
+lib/libsqlrutil.so.7
+lib/libsqlrutil.so.7.0.0
 libdata/pkgconfig/sqlrelay-c++.pc
 libdata/pkgconfig/sqlrelay-c.pc
 libexec/sqlrelay/sqlrauth_database.so
@@ -103,6 +121,7 @@ libexec/sqlrelay/sqlrauth_sqlrelay.so
 libexec/sqlrelay/sqlrauth_userlist.so
 libexec/sqlrelay/sqlrconfig_xmldom.so
 libexec/sqlrelay/sqlrconnection_router.so
+libexec/sqlrelay/sqlrdirective_custom_wf.so
 libexec/sqlrelay/sqlrfilter_patterns.so
 libexec/sqlrelay/sqlrfilter_regex.so
 libexec/sqlrelay/sqlrfilter_string.so
@@ -118,7 +137,6 @@ libexec/sqlrelay/sqlrpwdenc_md5.so
 libexec/sqlrelay/sqlrpwdenc_rot.so
 libexec/sqlrelay/sqlrquery_sqlrcmdcstat.so
 libexec/sqlrelay/sqlrquery_sqlrcmdgstat.so
-libexec/sqlrelay/sqlrresultsettranslation_test.so
 libexec/sqlrelay/sqlrresultsettranslation_reformatdatetime.so
 libexec/sqlrelay/sqlrrouter_clientinfolist.so
 libexec/sqlrelay/sqlrrouter_clientiplist.so
@@ -127,12 +145,7 @@ libexec/sqlrelay/sqlrrouter_usedatabase.so
 libexec/sqlrelay/sqlrrouter_userlist.so
 libexec/sqlrelay/sqlrschedule_cron_userlist.so
 libexec/sqlrelay/sqlrtranslation_normalize.so
-%%FIREBIRD%%libexec/sqlrelay/sqlrconnection_firebird.so
-%%FREETDS%%libexec/sqlrelay/sqlrconnection_freetds.so
-%%MYSQL%%libexec/sqlrelay/sqlrconnection_mysql.so
-%%ODBC%%libexec/sqlrelay/sqlrconnection_odbc.so
-%%PGSQL%%libexec/sqlrelay/sqlrconnection_postgresql.so
-%%SQLITE3%%libexec/sqlrelay/sqlrconnection_sqlite.so
+libexec/sqlrelay/sqlrtranslation_patterns.so
 man/man1/sqlr-export.1.gz
 man/man1/sqlr-import.1.gz
 man/man1/sqlrsh.1.gz
@@ -144,11 +157,3 @@ man/man8/sqlr-scaler.8.gz
 man/man8/sqlr-start.8.gz
 man/man8/sqlr-status.8.gz
 man/man8/sqlr-stop.8.gz
-%%DATADIR%%/examples/sqlrelay.conf
-%%DATADIR%%/examples/sample-mssqlserver-mysql-errors.map
-%%DATADIR%%/examples/sample-oracle-mysql-errors.map
-@dir %%ETCDIR%%
-@dir /var/cache/sqlrelay
-@dir /var/log/sqlrelay/debug
-@dir /var/log/sqlrelay
-@dir /var/run/sqlrelay
