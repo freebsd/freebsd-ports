@@ -17,3 +17,4 @@ bin/HandBrakeCLI
 %%X11%%share/locale/ru/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/th/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/zh_CN/LC_MESSAGES/ghb.mo
+%%X11%%share/metainfo/fr.handbrake.ghb.appdata.xml
