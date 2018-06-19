@@ -1,7 +1,7 @@
---- gui/CMakeLists.txt.orig	2017-10-07 21:11:39 UTC
+--- gui/CMakeLists.txt.orig	2018-06-10 20:41:03 UTC
 +++ gui/CMakeLists.txt
 @@ -27,7 +27,7 @@ if (BUILD_GUI)
-     qt5_use_modules(cppcheck-gui ${GUI_QT_COMPONENTS})
+     target_link_libraries(cppcheck-gui Qt5::Core Qt5::Gui Qt5::Widgets Qt5::PrintSupport)
  
      install(TARGETS cppcheck-gui RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_BINDIR} COMPONENT applications)
 -    install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_FULL_BINDIR} COMPONENT applications)
