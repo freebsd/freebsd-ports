@@ -1,0 +1,74 @@
+--- include/krb5/krb5.hin.orig	2018-05-12 22:15:24.000000000 -0700
++++ include/krb5/krb5.hin	2018-06-18 23:46:02.119491000 -0700
+@@ -3566,7 +3566,7 @@
+  */
+ krb5_error_code KRB5_CALLCONV
+ krb5_unparse_name(krb5_context context, krb5_const_principal principal,
+-                  register char **name);
++                  char **name);
+ 
+ /**
+  * Convert krb5_principal structure to string and length.
+@@ -4389,7 +4389,7 @@
+  */
+ krb5_error_code KRB5_CALLCONV_WRONG
+ krb5_principal2salt(krb5_context context,
+-                    register krb5_const_principal pr, krb5_data *ret);
++                    krb5_const_principal pr, krb5_data *ret);
+ /* librc.spec--see rcache.h */
+ 
+ /* libcc.spec */
+@@ -4730,7 +4730,7 @@
+  * This function frees the contents of @a val and the structure itself.
+  */
+ void KRB5_CALLCONV
+-krb5_free_error(krb5_context context, register krb5_error *val);
++krb5_free_error(krb5_context context, krb5_error *val);
+ 
+ /**
+  * Free a krb5_creds structure.
+@@ -4763,7 +4763,7 @@
+  * This function frees the contents of @a val and the structure itself.
+  */
+ void KRB5_CALLCONV
+-krb5_free_checksum(krb5_context context, register krb5_checksum *val);
++krb5_free_checksum(krb5_context context, krb5_checksum *val);
+ 
+ /**
+  * Free the contents of a krb5_checksum structure.
+@@ -4774,7 +4774,7 @@
+  * This function frees the contents of @a val, but not the structure itself.
+  */
+ void KRB5_CALLCONV
+-krb5_free_checksum_contents(krb5_context context, register krb5_checksum *val);
++krb5_free_checksum_contents(krb5_context context, krb5_checksum *val);
+ 
+ /**
+  * Free a krb5_keyblock structure.
+@@ -4785,7 +4785,7 @@
+  * This function frees the contents of @a val and the structure itself.
+  */
+ void KRB5_CALLCONV
+-krb5_free_keyblock(krb5_context context, register krb5_keyblock *val);
++krb5_free_keyblock(krb5_context context, krb5_keyblock *val);
+ 
+ /**
+  * Free the contents of a krb5_keyblock structure.
+@@ -4796,7 +4796,7 @@
+  * This function frees the contents of @a key, but not the structure itself.
+  */
+ void KRB5_CALLCONV
+-krb5_free_keyblock_contents(krb5_context context, register krb5_keyblock *key);
++krb5_free_keyblock_contents(krb5_context context, krb5_keyblock *key);
+ 
+ /**
+  * Free a krb5_ap_rep_enc_part structure.
+@@ -4912,7 +4912,7 @@
+  * Kerberos error codes
+  */
+ krb5_error_code KRB5_CALLCONV
+-krb5_timeofday(krb5_context context, register krb5_timestamp *timeret);
++krb5_timeofday(krb5_context context, krb5_timestamp *timeret);
+ 
+ /**
+  * Check if a timestamp is within the allowed clock skew of the current time.
