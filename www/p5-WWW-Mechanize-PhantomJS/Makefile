@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-PhantomJS
-PORTVERSION=	0.15
+PORTVERSION=	0.18
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,7 @@ COMMENT=	Automate interaction with javascript websites
 
 LICENSE=	ARTPERL10
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/phantomjs:lang/phantomjs \
+BUILD_DEPENDS=	phantomjs:lang/phantomjs \
 		p5-WWW-Mechanize>=1.73:www/p5-WWW-Mechanize \
 		p5-Object-Import>=1.004:devel/p5-Object-Import \
 		p5-Selenium-Remote-Driver>=0.2202:www/p5-Selenium-Remote-Driver \
