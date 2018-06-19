@@ -10,7 +10,7 @@ COMMENT=	Objective wrapper for OpenSSL Crypto Library
 
 LICENSE=	PHP301
 
-BROKEN_FreeBSD_12_aarch64=	fails to configure: C compiler cannot create executables
+BROKEN_aarch64=			fails to configure: C compiler cannot create executables
 BROKEN_armv6=			fails to configure: C compiler cannot create executables
 BROKEN_armv7=			fails to configure: C compiler cannot create executables
 BROKEN_mips=			fails to configure: C compiler cannot create executables
