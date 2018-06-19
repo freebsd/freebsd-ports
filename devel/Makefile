@@ -5054,6 +5054,7 @@
     SUBDIR += py-testinfra
     SUBDIR += py-testoob
     SUBDIR += py-testpath
+    SUBDIR += py-testrepository
     SUBDIR += py-testresources
     SUBDIR += py-testscenarios
     SUBDIR += py-testtools
