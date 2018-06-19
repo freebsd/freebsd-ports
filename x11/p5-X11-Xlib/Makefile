@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	X11-Xlib
-PORTVERSION=	0.15
+PORTVERSION=	0.18
 CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
-		p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends
+		p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
+
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
