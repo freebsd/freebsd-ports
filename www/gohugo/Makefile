@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.41
+DISTVERSION=	0.42.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -20,11 +20,11 @@ GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 		PuerkitoBio:purell:0bcb03f:purell/src/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2a:urlesc/src/github.com/PuerkitoBio/urlesc \
-		alecthomas:chroma:6b1131c:chroma/src/github.com/alecthomas/chroma \
+		alecthomas:chroma:1b755a9:chroma/src/github.com/alecthomas/chroma \
 		bep:debounce:844797f:debounce/src/github.com/bep/debounce \
 		bep:gitmap:012701e:gitmap/src/github.com/bep/gitmap \
 		chaseadamsio:goorgeous:dcf1ef8:goorgeous/src/github.com/chaseadamsio/goorgeous \
-		cpuguy83:go-md2man:20f5889:go_md2man/src/github.com/cpuguy83/go-md2man \
+		cpuguy83:go-md2man:a65d4d2:go_md2man/src/github.com/cpuguy83/go-md2man \
 		danwakefield:fnmatch:cbb64ac:fnmatch/src/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:346938d:go_spew/src/github.com/davecgh/go-spew \
 		disintegration:imaging:dd50a3e:imaging/src/github.com/disintegration/imaging \
@@ -51,10 +51,10 @@ GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 		olekukonko:tablewriter:b8a9be0:tablewriter/src/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:acdc450:go_toml/src/github.com/pelletier/go-toml \
 		pmezard:go-difflib:792786c:go_difflib/src/github.com/pmezard/go-difflib \
-		russross:blackfriday:55d61fa:blackfriday/src/github.com/russross/blackfriday \
+		russross:blackfriday:11635eb:blackfriday/src/github.com/russross/blackfriday \
 		sanity-io:litter:ae543b7:litter/src/github.com/sanity-io/litter \
 		shurcooL:sanitized_anchor_name:86672fc:sanitized_anchor_name/src/github.com/shurcooL/sanitized_anchor_name \
-		spf13:afero:6364489:afero/src/github.com/spf13/afero \
+		spf13:afero:787d034:afero/src/github.com/spf13/afero \
 		spf13:cast:8965335:cast/src/github.com/spf13/cast \
 		spf13:cobra:a1f051b:cobra/src/github.com/spf13/cobra \
 		spf13:fsync:12a01e6:fsync/src/github.com/spf13/fsync \
