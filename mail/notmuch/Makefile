@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.26.2
+PORTVERSION=	0.27
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
 
@@ -11,8 +11,6 @@ COMMENT?=	Thread-based email index, search and tagging application
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/${WRKSRC_SUBDIR:C/[^\/]+/../g}/COPYING-GPL-3
-
-BROKEN_powerpc64=	Does not build due to databases/xapian-core
 
 .ifndef MASTERDIR
 LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
@@ -34,7 +32,8 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} \
+		--mandir=${MANPREFIX}/man \
 		--prefix=${PREFIX} \
 		--with-bash-completion \
 		--with-retry-lock \
@@ -48,6 +47,7 @@ TEST_ENV+=	NOTMUCH_SKIP_TESTS="basic.12 count.14 insert.2[89] insert.3[0-9] mess
 TEST_TARGET=	test
 .endif
 
+PATCH_WRKSRC=	${WRKSRC}/${WRKSRC_SUBDIR:C/[^\/]+/../g}
 PKGDIR=		${.CURDIR}
 
 .ifndef MASTERDIR
@@ -62,11 +62,15 @@ MANPAGES_CONFIGURE_WITH=	docs
 
 # install completions even in absence of shells/bash-completions
 post-configure:
-	@${REINPLACE_CMD} -e '/^WITH_BASH[[:blank:]]*=/s/=.*/= 1/' ${WRKSRC}/Makefile.config
+	${REINPLACE_CMD} \
+		-e '/^HAVE_INSTALL_INFO[[:blank:]]*=/s/=.*/=0/' \
+		-e '/^HAVE_MAKEINFO[[:blank:]]*=/s/=.*/=0/' \
+		-e '/^WITH_BASH[[:blank:]]*=/s/=.*/= 1/' \
+		${WRKSRC}/Makefile.config
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.5.1.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.?*.?*.?*
 
 # keep poudriere testport happy
 post-install-MANPAGES-on:
