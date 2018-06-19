@@ -1,8 +1,8 @@
---- CMakeLists.txt.orig	2017-10-07 21:11:39 UTC
+--- CMakeLists.txt.orig	2018-06-10 20:41:03 UTC
 +++ CMakeLists.txt
 @@ -1,4 +1,4 @@
 -project(CppCheck)
 +project(cppcheck)
- cmake_minimum_required(VERSION 2.8.4)
+ cmake_minimum_required(VERSION 2.8.11)
  
  include(GNUInstallDirs)
