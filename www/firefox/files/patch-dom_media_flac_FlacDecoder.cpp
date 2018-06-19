@@ -7,7 +7,7 @@ index 53fc3c9937f7..b23771ab80fa 100644
 @@ -7,6 +7,7 @@
  #include "FlacDecoder.h"
  #include "MediaContainerType.h"
- #include "MediaPrefs.h"
+ #include "mozilla/StaticPrefs.h"
 +#include "PDMFactory.h"
  
  namespace mozilla {
@@ -15,10 +15,10 @@ index 53fc3c9937f7..b23771ab80fa 100644
 @@ -15,6 +16,10 @@ FlacDecoder::IsEnabled()
  {
  #ifdef MOZ_FFVPX
-   return MediaPrefs::FlacEnabled();
+   return StaticPrefs::MediaFlacEnabled();
 +#elif defined(MOZ_FFMPEG)
 +  RefPtr<PDMFactory> platform = new PDMFactory();
-+  return MediaPrefs::FlacEnabled() && platform->SupportsMimeType(NS_LITERAL_CSTRING("audio/flac"),
++  return StaticPrefs::MediaFlacEnabled() && platform->SupportsMimeType(NS_LITERAL_CSTRING("audio/flac"),
 +                                    /* DecoderDoctorDiagnostics* */ nullptr);
  #else
    // Until bug 1295886 is fixed.
