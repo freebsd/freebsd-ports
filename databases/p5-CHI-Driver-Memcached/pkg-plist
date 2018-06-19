@@ -1,0 +1,7 @@
+%%SITE_PERL%%/CHI/Driver/Memcached.pm
+%%SITE_PERL%%/CHI/Driver/Memcached/Base.pm
+%%SITE_PERL%%/CHI/Driver/Memcached/Fast.pm
+%%SITE_PERL%%/CHI/Driver/Memcached/libmemcached.pm
+%%PERL5_MAN3%%/CHI::Driver::Memcached.3.gz
+%%PERL5_MAN3%%/CHI::Driver::Memcached::Fast.3.gz
+%%PERL5_MAN3%%/CHI::Driver::Memcached::libmemcached.3.gz
