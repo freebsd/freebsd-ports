@@ -1,0 +1,135 @@
+commit ce24f85311af
+Author: Nils Ohlmeier [:drno] <drno@ohlmeier.org>
+Date:   Wed Jun 13 14:29:20 2018 -0700
+
+    Bug 1464063 - Remove sdp_getchoosetok. r=bwc, a=RyanVM
+    
+    --HG--
+    extra : source : 87163f9d6bc7670d074512cf96062ea01193ffb2
+---
+ media/webrtc/signaling/src/sdp/sipcc/sdp_private.h |  2 -
+ media/webrtc/signaling/src/sdp/sipcc/sdp_token.c   | 16 ++----
+ media/webrtc/signaling/src/sdp/sipcc/sdp_utils.c   | 63 ----------------------
+ 3 files changed, 5 insertions(+), 76 deletions(-)
+
+diff --git media/webrtc/signaling/src/sdp/sipcc/sdp_private.h media/webrtc/signaling/src/sdp/sipcc/sdp_private.h
+index a98f4b119f693..3459b0c0eb48e 100644
+--- media/webrtc/signaling/src/sdp/sipcc/sdp_private.h
++++ media/webrtc/signaling/src/sdp/sipcc/sdp_private.h
+@@ -347,8 +347,6 @@ extern uint32_t sdp_getnextnumtok(const char *str, const char **str_end,
+ extern uint32_t sdp_getnextnumtok_or_null(const char *str, const char **str_end,
+                                      const char *delim, tinybool *null_ind,
+                                      sdp_result_e *result);
+-extern tinybool sdp_getchoosetok(const char *str, const char **str_end,
+-                                 const char *delim, sdp_result_e *result);
+ 
+ extern
+ tinybool verify_sdescriptions_mki(char *buf, char *mkiVal, uint16_t *mkiLen);
+diff --git media/webrtc/signaling/src/sdp/sipcc/sdp_token.c media/webrtc/signaling/src/sdp/sipcc/sdp_token.c
+index b4ad1beee3f70..54c38f08cdac0 100644
+--- media/webrtc/signaling/src/sdp/sipcc/sdp_token.c
++++ media/webrtc/signaling/src/sdp/sipcc/sdp_token.c
+@@ -1162,15 +1162,11 @@ sdp_result_e sdp_parse_media (sdp_t *sdp_p, uint16_t level, const char *ptr)
+     }
+     port_ptr = port;
+     for (i=0; i < SDP_MAX_PORT_PARAMS; i++) {
+-        if (sdp_getchoosetok(port_ptr, &port_ptr, "/ \t", &result) == TRUE) {
+-            num[i] = SDP_CHOOSE_PARAM;
+-        } else {
+-            num[i] = sdp_getnextnumtok(port_ptr, (const char **)&port_ptr,
+-                                       "/ \t", &result);
+-            if (result != SDP_SUCCESS) {
+-                break;
+-            }
+-        }
++          num[i] = sdp_getnextnumtok(port_ptr, (const char **)&port_ptr,
++                                     "/ \t", &result);
++          if (result != SDP_SUCCESS) {
++              break;
++          }
+         num_port_params++;
+     }
+ 
+@@ -1401,8 +1397,6 @@ sdp_result_e sdp_parse_media (sdp_t *sdp_p, uint16_t level, const char *ptr)
+                 return (SDP_INVALID_PARAMETER);
+             }
+             mca_p->sctp_fmt = SDP_SCTP_MEDIA_FMT_WEBRTC_DATACHANNEL;
+-        } else if (sdp_getchoosetok(port_ptr, &port_ptr, "/ \t", &result)) {
+-            sctp_port = SDP_CHOOSE_PARAM;
+         } else {
+             sctp_port = sdp_getnextnumtok(port_ptr, (const char **)&port_ptr,
+                                            "/ \t", &result);
+diff --git media/webrtc/signaling/src/sdp/sipcc/sdp_utils.c media/webrtc/signaling/src/sdp/sipcc/sdp_utils.c
+index e4f1b2eaf0c75..4d46115574dc9 100644
+--- media/webrtc/signaling/src/sdp/sipcc/sdp_utils.c
++++ media/webrtc/signaling/src/sdp/sipcc/sdp_utils.c
+@@ -432,69 +432,6 @@ uint32_t sdp_getnextnumtok (const char *str, const char **str_end,
+ }
+ 
+ 
+-/* See if the next token in a string is the choose character.  The delim
+- * characters are passed in as a param.  The check also will not go past
+- * a new line char or the end of the string.  Skip any delimiters before
+- * the token.
+- */
+-tinybool sdp_getchoosetok (const char *str, const char **str_end,
+-                           const char *delim, sdp_result_e *result)
+-{
+-    const char *b;
+-    int   flag2moveon;
+-
+-    if ((str == NULL)  || (str_end == NULL)) {
+-        *result = SDP_FAILURE;
+-        return(FALSE);
+-    }
+-
+-    /* Locate front of token, skipping any delimiters */
+-    for ( ; ((*str != '\0') && (*str != '\n') && (*str != '\r')); str++) {
+-        flag2moveon = 1;  /* Default to move on unless we find a delimiter */
+-        for (b=delim; *b; b++) {
+-            if (*str == *b) {
+-                flag2moveon = 0;
+-                break;
+-            }
+-        }
+-        if( flag2moveon ) {
+-            break;  /* We're at the beginning of the token */
+-        }
+-    }
+-
+-    /* Make sure there's really a token present. */
+-    if ((*str == '\0') || (*str == '\n') || (*str == '\r')) {
+-        *result = SDP_FAILURE;
+-        *str_end = (char *)str;
+-        return(FALSE);
+-    }
+-
+-    /* See if the token is '$' followed by a delimiter char or end of str. */
+-    if (*str == '$') {
+-        str++;
+-        if ((*str == '\0') || (*str == '\n') || (*str == '\r')) {
+-            *result = SDP_SUCCESS;
+-            /* skip the choose char in the string. */
+-            *str_end = (char *)(str+1);
+-            return(TRUE);
+-        }
+-        for (b=delim; *b; b++) {
+-            if (*str == *b) {
+-                *result = SDP_SUCCESS;
+-                /* skip the choose char in the string. */
+-                *str_end = (char *)(str+1);
+-                return(TRUE);
+-            }
+-        }
+-    }
+-
+-    /* If the token was not '$' followed by a delim, token is not choose */
+-    *result = SDP_SUCCESS;
+-    *str_end = (char *)str;
+-    return(FALSE);
+-
+-}
+-
+ /*
+  * SDP Crypto Utility Functions.
+  *

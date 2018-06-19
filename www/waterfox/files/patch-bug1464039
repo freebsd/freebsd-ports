@@ -1,0 +1,27 @@
+commit 0a234825c39a
+Author: Nicolas Silva <nsilva@mozilla.com>
+Date:   Fri Jun 15 14:01:07 2018 -0700
+
+    Bug 1464039 - Reject some invalid transforms in qcms. r=mwoodrow, a=RyanVM
+    
+    --HG--
+    extra : source : dfcc5301e87235818394a46f80dc1c164c2ca4b3
+---
+ gfx/qcms/chain.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git gfx/qcms/chain.c gfx/qcms/chain.c
+index e382fbe001422..2b0e707c443c4 100644
+--- gfx/qcms/chain.c
++++ gfx/qcms/chain.c
+@@ -972,6 +972,10 @@ static float* qcms_modular_transform_data(struct qcms_modular_transform *transfo
+ 			assert(0 && "Unsupported transform module");
+ 			return NULL;
+ 		}
++		if (transform->grid_size <= 0) {
++			assert(0 && "Invalid transform");
++			return NULL;
++		}
+                 transform->transform_module_fn(transform,src,dest,len);
+                 dest = src;
+                 src = new_src;
