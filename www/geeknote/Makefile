@@ -25,7 +25,7 @@ USE_PYTHON=     autoplist distutils
 GH_ACCOUNT=	VitaliyRodnenko
 GH_TAGNAME=	7ea2255
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
