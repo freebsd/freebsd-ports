@@ -3,7 +3,7 @@
 
 PORTNAME=	openlibm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.5
+DISTVERSION=	0.6.0
 CATEGORIES=	math
 MASTER_SITES=	GH
 
@@ -23,7 +23,7 @@ BROKEN_powerpc64=	fails to build: gmake: clang: Command not found
 
 USES=	gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	JuliaLang
+GH_ACCOUNT=	JuliaMath
 GH_PROJECT=	openlibm
 
 USE_LDCONFIG=	yes
