@@ -1,3 +1,3 @@
-TIMESTAMP = 1508305920
-SHA256 (JuliaLang-openlibm-v0.5.5_GH0.tar.gz) = 07dcc5f59e695fb45167c81406b8e201c5ad91ebf24e3e55ae13298670910cfd
-SIZE (JuliaLang-openlibm-v0.5.5_GH0.tar.gz) = 353637
+TIMESTAMP = 1529386396
+SHA256 (JuliaMath-openlibm-v0.6.0_GH0.tar.gz) = d45439093d1fd15e2ac3acf69955e462401c7a160d3330256cb4a86c51bdae28
+SIZE (JuliaMath-openlibm-v0.6.0_GH0.tar.gz) = 356601

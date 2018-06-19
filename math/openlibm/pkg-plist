@@ -8,12 +8,14 @@ include/openlibm/k_log.h
 include/openlibm/k_logf.h
 include/openlibm/math_private.h
 include/openlibm/math_private_openbsd.h
+include/openlibm/mips_fpmath.h
 include/openlibm/openlibm.h
 include/openlibm/openlibm_complex.h
 include/openlibm/openlibm_fenv.h
 include/openlibm/openlibm_fenv_amd64.h
 include/openlibm/openlibm_fenv_arm.h
 include/openlibm/openlibm_fenv_i387.h
+include/openlibm/openlibm_fenv_mips.h
 include/openlibm/openlibm_fenv_powerpc.h
 include/openlibm/openlibm_math.h
 include/openlibm/powerpc_fpmath.h
@@ -21,5 +23,5 @@ include/openlibm/types-compat.h
 lib/libopenlibm.a
 lib/libopenlibm.so
 lib/libopenlibm.so.2
-lib/libopenlibm.so.2.4
+lib/libopenlibm.so.2.5
 libdata/pkgconfig/openlibm.pc
