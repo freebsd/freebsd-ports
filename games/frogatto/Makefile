@@ -22,11 +22,12 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 USE_GITHUB=	yes
 GH_ACCOUNT=	frogatto
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig dos2unix
 ALL_TARGET=	game server
 USE_GL=		glew glu
 USE_SDL=	sdl image mixer ttf
 USE_CXXSTD=	c++11
+DOS2UNIX_FILES=	src/surface_cache.cpp
 
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-server
 
