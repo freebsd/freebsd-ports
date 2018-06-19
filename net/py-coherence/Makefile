@@ -3,6 +3,7 @@
 
 PORTNAME=	Coherence
 PORTVERSION=	0.6.6.2
+PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +23,7 @@ GH_ACCOUNT=	coherence-project
 GH_TAGNAME=	4d5ee5f
 
 USES=		python:2.7
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
