@@ -3,6 +3,7 @@
 
 PORTNAME=	netCDF4
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	rel
 CATEGORIES=	science python
@@ -22,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		python
-USE_PYTHON=	autoplist distutils cython
+USE_PYTHON=	autoplist concurrent distutils cython
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
