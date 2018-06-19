@@ -1,0 +1,11 @@
+--- core/app/utils/digikam_version.h.cmake.in.orig	2018-06-16 08:50:14 UTC
++++ core/app/utils/digikam_version.h.cmake.in
+@@ -34,7 +34,7 @@
+ 
+ // Local includes.
+ 
+-#include "gitversion.h"
++#define GITVERSION ""
+ 
+ namespace Digikam
+ {
