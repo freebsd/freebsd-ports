@@ -3,7 +3,7 @@
 
 PORTNAME=	HTMLgen
 PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	LOCAL/dryice \
 		http://dryice.name/computer/FreeBSD/distfiles/ \
@@ -21,6 +21,7 @@ NO_ARCH=	yes
 SHEBANG_FILES=	HTMLutil.py barchart.py
 
 OPTIONS_DEFINE=	DOCS
+DOCS_USE=	PYTHON=concurrent
 
 PORTDOCS=	*
 
