@@ -38,6 +38,7 @@
 %%WWWDIR%%/dashboards/graphite/template-graphite.json
 %%WWWDIR%%/dashboards/influxdb/auto-repeat-disk.json
 %%WWWDIR%%/dashboards/influxdb/base-metrics.json
+%%WWWDIR%%/dashboards/influxdb/icinga2-default-test.json
 %%WWWDIR%%/dashboards/influxdb/icinga2-default.json
 %%WWWDIR%%/dashboards/influxdb/itl/disk.json
 %%WWWDIR%%/dashboards/influxdb/itl/hostalive.json
