@@ -132,10 +132,10 @@ diff --git dom/media/AudioStream.h dom/media/AudioStream.h
 index 7dc1f60f95cc..67d402a4117f 100644
 --- dom/media/AudioStream.h
 +++ dom/media/AudioStream.h
-@@ -15,7 +15,11 @@
- #include "mozilla/TimeStamp.h"
- #include "mozilla/UniquePtr.h"
- #include "CubebUtils.h"
+@@ -16,7 +16,11 @@
+ #include "nsAutoPtr.h"
+ #include "nsCOMPtr.h"
+ #include "nsThreadUtils.h"
 +#ifdef MOZ_SYSTEM_SOUNDTOUCH
 +#include "soundtouch/SoundTouch.h"
 +#else
