@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Library for finding and handling crystal symmetries (pythin binding)
+COMMENT=	Library for finding and handling crystal symmetries (python binding)
 
 LICENSE=	BSD3CLAUSE
 
