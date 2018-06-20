@@ -27,6 +27,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	frappe
 GH_PROJECT=	bench
 
+NO_ARCH=	yes
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils concurrent
 
