@@ -4,6 +4,7 @@
 PORTNAME=	cmake
 # Remember to update devel/cmake-doc and devel/cmake-gui as well.
 DISTVERSION=	3.11.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuv.so:devel/libuv \
 		librhash.so:security/rhash
 
-USES=		compiler:c++11-lang libarchive ncurses
+USES=		compiler:c++11-lang ncurses
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=make
@@ -28,15 +29,20 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--docdir="/${DOCSDIR_REL}" \
 		--system-libs \
 		--parallel=${MAKE_JOBS_NUMBER} \
-		--init="${PATCHDIR}/InitialCache.cmake"
+		--init="${WRKSRC}/InitialCache.cmake"
 
-OPTIONS_DEFINE=	DOCS MANPAGES
+OPTIONS_DEFINE=	DOCS MANPAGES CPACK
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
 MANPAGES_USES=		python:env
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 MANPAGES_CONFIGURE_ON=	--sphinx-man
+
+CPACK_DESC=		Enable FreeBSD generator in CPack (experimental)
+CPACK_LIB_DEPENDS=	libpkg.so:ports-mgmt/pkg
+CPACK_USES_OFF=		libarchive
+# When CPACK is on, uses base libarchive and won't pass stage-qa
 
 CONFLICTS_INSTALL=	cmake-modules-*
 
@@ -45,6 +51,25 @@ CONFLICTS_INSTALL=	cmake-modules-*
 .if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG)
 INSTALL_TARGET=	install/strip
 .endif
+
+# Before running configure, substitute in the values of options
+# for the build. CMake's configure doesn't accept --with-foo
+# or similar options: it expects them to be set in CMake-style
+# syntax in the initial cache.
+pre-configure:
+	@${CP} "${FILESDIR}/InitialCache.cmake" "${WRKSRC}/InitialCache.cmake"
+
+pre-configure-CPACK-on:
+	@${REINPLACE_CMD} \
+		-e 's/@@CPACK_OPTION_VALUE@@/ON/' \
+		-e 's/@@CPACK_OPTION_COMMENT@@//' \
+		"${WRKSRC}/InitialCache.cmake"
+
+pre-configure-CPACK-off:
+	@${REINPLACE_CMD} \
+		-e 's/@@CPACK_OPTION_VALUE@@/OFF/' \
+		-e 's/@@CPACK_OPTION_COMMENT@@/# /' \
+		"${WRKSRC}/InitialCache.cmake"
 
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \

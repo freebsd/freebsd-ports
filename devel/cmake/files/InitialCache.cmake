@@ -15,5 +15,15 @@ set(LIBLZMA_INCLUDE_DIR "/usr/include" CACHE PATH
 set(LIBLZMA_LIBRARY "/usr/lib/liblzma.so" CACHE PATH
     "LibLZMA library to link against.")
 
-# Don't even try
-set(CPACK_ENABLE_FREEBSD_PKG OFF CACHE BOOL "Enable pkg(8) generator in CPack")
+# Set (or not) by the CPACK option by replacing @@CPACK_OPTION_VALUE@@
+# with the value of the option itself.
+#
+set(CPACK_ENABLE_FREEBSD_PKG @@CPACK_OPTION_VALUE@@ CACHE BOOL "Enable pkg(8) generator in CPack")
+# Use base libarchive instead of ports, because libpkg uses base
+@@CPACK_OPTION_COMMENT@@set(LibArchive_INCLUDE_DIR "/usr/include" CACHE PATH
+@@CPACK_OPTION_COMMENT@@    "Directory where LibArchive headers are located.")
+# Hack to (a) prevent using either ports libarchive or the bundled version 
+#     and (b) libpkg links to base libarchive.
+@@CPACK_OPTION_COMMENT@@set(LibArchive_LIBRARY "/usr/lib/libthr.so;/usr/lib/libarchive.so" CACHE PATH
+@@CPACK_OPTION_COMMENT@@    "LibArchive library to link against.")
+
