@@ -1,0 +1,4 @@
+Perl binding for Redis database.
+Redis::Fast is 4x faster than Redis.pm in pipeline mode.
+
+WWW: https://metacpan.org/release/Redis-Fast
