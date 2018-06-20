@@ -1,0 +1,22 @@
+commit f6fc0b418aa3
+Author: Andrea Marchesini <amarchesini@mozilla.com>
+Date:   Tue May 1 08:47:13 2018 +0200
+
+    Bug 1456556 - FetchConsumer scope-exit RAII must grab 'self' by value, r=erahm
+---
+ dom/fetch/FetchConsumer.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git dom/fetch/FetchConsumer.cpp dom/fetch/FetchConsumer.cpp
+index 134bf7f2e703a..3c3687fea1d5a 100644
+--- dom/fetch/FetchConsumer.cpp
++++ dom/fetch/FetchConsumer.cpp
+@@ -582,7 +582,7 @@ FetchBodyConsumer<Derived>::ContinueConsumeBody(nsresult aStatus,
+   RefPtr<Promise> localPromise = mConsumePromise.forget();
+ 
+   RefPtr<FetchBodyConsumer<Derived>> self = this;
+-  auto autoReleaseObject = mozilla::MakeScopeExit([&] {
++  auto autoReleaseObject = mozilla::MakeScopeExit([self] {
+     self->ReleaseObject();
+   });
+ 
