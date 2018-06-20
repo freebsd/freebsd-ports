@@ -494,7 +494,7 @@
     SUBDIR += p5-SQL-Statement
     SUBDIR += p5-SQL-Translator
     SUBDIR += p5-SQLite-Work
-    SUBDIR += p5-Search-InvertedIndex
+    SUBDIR += p5-Scope-Container-DBI
     SUBDIR += p5-Search-Namazu
     SUBDIR += p5-Search-Xapian10
     SUBDIR += p5-Search-Xapian12
