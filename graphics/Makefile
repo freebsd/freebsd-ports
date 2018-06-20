@@ -161,6 +161,7 @@
     SUBDIR += electrix
     SUBDIR += embree
     SUBDIR += enblend
+    SUBDIR += engauge-digitizer
     SUBDIR += entangle
     SUBDIR += eog
     SUBDIR += eog-plugins

@@ -1,0 +1,5 @@
+bin/engauge
+share/icons/hicolor/scalable/apps/engauge-digitizer.svgz
+share/applications/engauge-digitizer.desktop
+%%PORTDOCS%%%%DOCSDIR%%/engauge.qch
+%%PORTDOCS%%%%DOCSDIR%%/engauge.qhc
