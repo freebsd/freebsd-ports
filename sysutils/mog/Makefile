@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${FLAVOR} \
-		mdv:devel/py-mdv@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mdv>0:devel/py-mdv@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python
