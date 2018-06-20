@@ -1,6 +1,6 @@
---- docs/doxygen/Doxyfile.in.orig	2016-09-02 04:16:12 UTC
+--- docs/doxygen/Doxyfile.in.orig	2018-06-13 21:42:48 UTC
 +++ docs/doxygen/Doxyfile.in
-@@ -1891,7 +1891,7 @@ DOT_FONTSIZE           = 10
+@@ -1880,7 +1880,7 @@ DOT_FONTSIZE           = 10
  # If you specify a different font using DOT_FONTNAME you can use DOT_FONTPATH to
  # set the path where dot can find it.
  

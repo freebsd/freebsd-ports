@@ -1,4 +1,4 @@
---- gr-fcd/lib/CMakeLists.txt.orig	2016-09-02 04:16:14 UTC
+--- gr-fcd/lib/CMakeLists.txt.orig	2018-06-17 18:02:35 UTC
 +++ gr-fcd/lib/CMakeLists.txt
 @@ -32,6 +32,7 @@ include_directories(
      ${GNURADIO_RUNTIME_INCLUDE_DIRS}
@@ -8,14 +8,14 @@
  )
  
  link_directories(
-@@ -90,6 +91,10 @@ add_library(gnuradio-fcd SHARED ${gr_fcd
+@@ -91,6 +92,10 @@ endif()
+ add_library(gnuradio-fcd SHARED ${gr_fcd_sources})
  if (LINUX)
    list(APPEND fcd_libs rt)
- endif()
++endif()
 +if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +  message( "--- Adding iconv library for FreeBSD")
 +  list(APPEND fcd_libs ${ICONV_LIBRARY})
-+endif()
+ endif()
  target_link_libraries(gnuradio-fcd ${fcd_libs} ${LOG4CPP_LIBRARIES})
- 
  

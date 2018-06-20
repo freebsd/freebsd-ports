@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuradio
-PORTVERSION=	3.7.11
-PORTREVISION=	2
+PORTVERSION=	3.7.13.3
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		LOCAL/db
@@ -19,9 +18,10 @@ BROKEN_armv7=		fails to compile: /usr/lib/clang/5.0.0/include/mmintrin.h:47:5: u
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:astro/pyephem@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/mako/__init__.py:textproc/py-mako@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR} \
 		aconnect:audio/alsa-utils \
 		cheetah:devel/py-cheetah@${PY_FLAVOR} \
-		git:devel/git \
 		guile:lang/guile \
 		minixmlto:textproc/minixmlto \
 		sdl-config:devel/sdl12 \
@@ -74,7 +74,7 @@ LIBSTRIP_FILES=	analog atsc audio blocks channels digital dtv fcd fec fft\
 		filter noaa pager pmt qtgui runtime trellis video-sdl\
 		vocoder wavelet wxgui
 
-OPTIONS_DEFINE=		UHD TESTING DOXYGEN
+OPTIONS_DEFINE=		DOCS UHD TESTING DOXYGEN
 # Unfortunately building docs on i386 fails
 ##OPTIONS_EXCLUDE_${i386}=	DOXYGEN
 # Yay. building docs is broken on 10 and HEAD too so turn them all off

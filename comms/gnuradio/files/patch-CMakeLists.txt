@@ -1,19 +1,6 @@
---- CMakeLists.txt.orig	2016-09-02 04:16:14 UTC
+--- CMakeLists.txt.orig	2018-06-13 21:42:48 UTC
 +++ CMakeLists.txt
-@@ -29,6 +29,12 @@ cmake_minimum_required(VERSION 2.6)
- project(gnuradio CXX C)
- enable_testing()
- 
-+cmake_policy(SET CMP0026 OLD)
-+cmake_policy(SET CMP0043 OLD)
-+cmake_policy(SET CMP0045 OLD)
-+cmake_policy(SET CMP0046 OLD)
-+cmake_policy(SET CMP0056 OLD)
-+
- #make sure our local CMake Modules path comes first
- list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
- 
-@@ -70,6 +76,10 @@ ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "M
+@@ -144,6 +144,10 @@ ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
  ELSE()
      message(warning "C++ standard could not be set because compiler is not GNU, Clang or MSVC.")
  ENDIF()
@@ -24,7 +11,7 @@
  
  IF(CMAKE_C_COMPILER_ID STREQUAL "GNU")
      SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99")
-@@ -191,6 +201,14 @@ string(REPLACE "\n" " \\n" COMPILER_INFO
+@@ -264,6 +268,14 @@ string(REPLACE "\n" " \\n" COMPILER_INFO ${COMPILER_IN
  ########################################################################
  include(GrPlatform) #define LIB_SUFFIX
  set(GR_RUNTIME_DIR     bin CACHE PATH "Path to install all binaries")
@@ -39,7 +26,7 @@
  set(GR_LIBRARY_DIR     lib${LIB_SUFFIX} CACHE PATH "Path to install libraries")
  set(GR_INCLUDE_DIR     include CACHE PATH "Path to install header files")
  set(GR_DATA_DIR        share CACHE PATH "Base location for data")
-@@ -276,6 +294,42 @@ add_custom_target(uninstall
+@@ -349,6 +361,42 @@ add_custom_target(uninstall
  include(GrBoost)
  
  ########################################################################
@@ -81,14 +68,14 @@
 +########################################################################
  # Enable python component
  ########################################################################
- find_package(PythonLibs 2)
-@@ -407,11 +461,13 @@ GR_LOGGING()
+ find_package(PythonLibs ${GR_PYTHON_MIN_VERSION})
+@@ -500,11 +548,13 @@ GR_LOGGING()
  ########################################################################
  # Distribute the README file
  ########################################################################
 +if(ENABLE_DOCS)
  install(
-     FILES README README.hacking
+     FILES README.md README.hacking CHANGELOG.md
      DESTINATION ${GR_PKG_DOC_DIR}
      COMPONENT "docs"
  )
