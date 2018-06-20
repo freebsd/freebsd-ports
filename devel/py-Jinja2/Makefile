@@ -40,7 +40,7 @@ PY2TO3_ARGS=	--fix=all --no-diffs --nobackups --verbose --write
 .include <bsd.port.pre.mk>
 
 .if ${PKGNAMESUFFIX} == "-doc"
-BUILD_DEPENDS+=	${PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx@${FLAVOR}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx@${FLAVOR}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	*
 PORT_OPTIONS:=	${PORT_OPTIONS:NEXAMPLES}
