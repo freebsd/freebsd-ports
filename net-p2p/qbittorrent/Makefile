@@ -18,6 +18,7 @@ LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		libboost_system.so:devel/boost-libs
 
 FLAVORS=	default nox
+FLAVOR=		${FLAVORS:[1]}
 default_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${NONEXISTENT}
@@ -29,13 +30,13 @@ CONFIGURE_ARGS=		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 QT_NONSTANDARD=		yes
 DESTDIRNAME=		INSTALL_ROOT
 
-.if ${FLAVOR:Udefault} == default
+.if ${FLAVOR} == default
 USES+=			desktop-file-utils
 USE_QT5+=		concurrent gui widgets
 USE_GL=			gl
 .endif
 
-.if ${FLAVOR:U} == nox
+.if ${FLAVOR} == nox
 SUFFIX=			-nox
 COMMENT+=		(web UI version)
 CONFIGURE_ARGS+=	--disable-gui
