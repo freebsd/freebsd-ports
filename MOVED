@@ -10283,3 +10283,4 @@ net/syncthing-cli|net/syncthing|2018-06-18|Has expired: Included in net/syncthin
 x11-themes/adwaita-common||2018-06-19|Move to flavored version
 x11-themes/adwaita-qt4|x11-themes/adwaita-qt@qt4|2018-06-19|Move to flavored version
 x11-themes/adwaita-qt5|x11-themes/adwaita-qt@qt5|2018-06-19|Move to flavored version
+net-p2p/qbittorrent-nox11|net-p2p/qbittorrent@nox|2018-06-20|Moved to a flavored version
