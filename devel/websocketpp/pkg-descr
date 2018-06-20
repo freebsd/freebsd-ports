@@ -5,4 +5,4 @@ It allows integrating WebSocket client and server functionality into
 C++ programs. It uses interchangable network transport modules including
 one based on C++ iostreams and one based on Boost Asio.
 
-WWW: http://www.zaphoyd.com/websocketpp/
+WWW: https://www.zaphoyd.com/websocketpp/
