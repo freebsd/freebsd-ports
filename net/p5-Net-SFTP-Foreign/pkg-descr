@@ -1,3 +1,4 @@
-Net::SFTP::Foreign - Secure File Transfer Protocol client
+Net::SFTP::Foreign implements an SFTP client in Perl using the native SSH client
+application to establish the connection to the remote host.
 
 WWW: https://metacpan.org/release/Net-SFTP-Foreign
