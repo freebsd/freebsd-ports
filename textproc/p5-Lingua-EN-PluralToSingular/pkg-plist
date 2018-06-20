@@ -1,4 +1,5 @@
 bin/singular
 %%SITE_PERL%%/Lingua/EN/PluralToSingular.pm
 %%SITE_PERL%%/Lingua/EN/PluralToSingular.pod
+%%PERL5_MAN1%%/singular.1.gz
 %%PERL5_MAN3%%/Lingua::EN::PluralToSingular.3.gz
