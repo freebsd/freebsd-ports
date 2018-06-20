@@ -24,6 +24,7 @@
 %%DATADIR%%/common/annotations/en_001.xml
 %%DATADIR%%/common/annotations/en_AU.xml
 %%DATADIR%%/common/annotations/en_CA.xml
+%%DATADIR%%/common/annotations/en_GB.xml
 %%DATADIR%%/common/annotations/es.xml
 %%DATADIR%%/common/annotations/es_419.xml
 %%DATADIR%%/common/annotations/es_MX.xml
@@ -84,6 +85,8 @@
 %%DATADIR%%/common/annotations/sl.xml
 %%DATADIR%%/common/annotations/sq.xml
 %%DATADIR%%/common/annotations/sr.xml
+%%DATADIR%%/common/annotations/sr_Cyrl.xml
+%%DATADIR%%/common/annotations/sr_Cyrl_BA.xml
 %%DATADIR%%/common/annotations/sr_Latn.xml
 %%DATADIR%%/common/annotations/sv.xml
 %%DATADIR%%/common/annotations/sw.xml
@@ -188,6 +191,8 @@
 %%DATADIR%%/common/annotationsDerived/sl.xml
 %%DATADIR%%/common/annotationsDerived/sq.xml
 %%DATADIR%%/common/annotationsDerived/sr.xml
+%%DATADIR%%/common/annotationsDerived/sr_Cyrl.xml
+%%DATADIR%%/common/annotationsDerived/sr_Cyrl_BA.xml
 %%DATADIR%%/common/annotationsDerived/sr_Latn.xml
 %%DATADIR%%/common/annotationsDerived/sv.xml
 %%DATADIR%%/common/annotationsDerived/sw.xml
