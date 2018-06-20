@@ -6,7 +6,7 @@ PORTVERSION=	1.6
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cabextract.org.uk/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Program to extract Microsoft cabinet (.CAB) files
 
 LICENSE=	GPLv3
