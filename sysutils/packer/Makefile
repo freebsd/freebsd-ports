@@ -13,11 +13,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PLIST_FILES=	bin/${PORTNAME}
 
+USES=	go
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 
-USES=	go
-
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-i386
+.endif
+
+.include <bsd.port.post.mk>
