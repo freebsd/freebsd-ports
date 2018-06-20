@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openjazz
-PORTVERSION=	20180329
+PORTVERSION=	20180522
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -14,7 +14,6 @@ USES=	dos2unix gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlisterT
-GH_TAGNAME=	2c4d351
 
 DOS2UNIX_REGEX=	.*\.(h|cpp)
 ALL_TARGET=	OpenJazz
