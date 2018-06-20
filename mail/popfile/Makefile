@@ -31,7 +31,7 @@ SHEBANG_FILES=	bayes.pl insert.pl \
 PLIST_SUB=	VERSION="${PORTVERSION}"
 SUB_FILES=	popfile.sh
 
-OPTIONS_DEFINE=	SSL XMLRPC UPGRADE_FROM_0_20 KAKASI MECABU
+OPTIONS_DEFINE=	SSL XMLRPC UPGRADE_FROM_0_20 KAKASI MECABU SOCKS
 
 # POPFile works with IO::Socket::SSL version 1.07 (and not 0.97/0.99).
 SSL_RUN_DEPENDS=p5-IO-Socket-SSL>=1.07:security/p5-IO-Socket-SSL
@@ -48,10 +48,7 @@ KAKASI_RUN_DEPENDS=	p5-Text-Kakasi>=0:japanese/p5-Text-Kakasi
 MECABU_DESC=		Handle Japanese text via MeCab library
 MECABU_RUN_DEPENDS=	p5-MeCab>=0:japanese/p5-MeCab
 
-#.if ${PORT_OPTIONS:MSOCKS}
-# XXX: IO::Socket::Socks should be listed here but no ports yet. For those
-# interested, check http://search.cpan.org/~reatmon/IO-Socket-Socks-0.1/.
-#.endif
+SOCKS_RUN_DEPENDS=	p5-IO-Socket-Socks>=0:net/p5-IO-Socket-Socks
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/popfile.sh ${STAGEDIR}${PREFIX}/sbin
