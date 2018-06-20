@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	neofetch
-DISTVERSION=	4.0.2
+DISTVERSION=	5.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@anongoth.pl
