@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	unfonts
-PORTVERSION?=	1.0.2.080608
-PORTREVISION?=	2
+PORTVERSION=	1.0.2.080608
+PORTREVISION?=	3
 CATEGORIES=	korean x11-fonts
-MASTER_SITES?=	http://kldp.net/frs/download.php/4695/
+MASTER_SITES=	https://kldp.net/unfonts/release/
 PKGNAMESUFFIX=	-${FONTCAT}
-DISTNAME=	un-fonts${PKGNAMESUFFIX}-${PORTVERSION}
+DISTNAME=	${FILEID}-un-fonts${PKGNAMESUFFIX}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	GPL'd Korean TrueType Fonts by UN Koaunghi (${FONTCAT})
@@ -19,6 +19,7 @@ USES=		fonts
 NO_BUILD=	yes
 
 DISTINFO_FILE=	${PKGDIR}/distinfo.${FONTCAT}-ttf
+FILEID?=	2607
 
 WRKSRC=		${WRKDIR}/un-fonts
 FONTNAME=	${PORTNAME}-${FONTCAT}
