@@ -3,7 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	65.0.3325.181
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 
 .if !defined(GN_ONLY)
 BUILD_DEPENDS+=	gperf:devel/gperf \
-		clang60:devel/llvm60 \
 		yasm:devel/yasm \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
 		flock:sysutils/flock \
@@ -91,8 +90,6 @@ SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
 
-CC=		clang60
-CXX=		clang++60
 .endif
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
@@ -205,6 +202,16 @@ TEST_ALL_TARGET=	${TEST_TARGETS}
 TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101513
+BUILD_DEPENDS+=	clang60:devel/llvm60
+CC=             clang60
+CXX=            clang++60
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-llvm-port
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ar:devel/binutils
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-llvm-base
+.endif
 
 # TODO: -isystem, would be just as ugly as this approach, but more reliably
 # build would fail without C_INCLUDE_PATH/CPLUS_INCLUDE_PATH env var set.

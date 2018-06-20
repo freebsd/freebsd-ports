@@ -1,0 +1,45 @@
+--- build/toolchain/gcc_toolchain.gni.orig	2018-03-20 23:05:14.000000000 +0100
++++ build/toolchain/gcc_toolchain.gni	2018-06-18 20:55:17.080248000 +0200
+@@ -25,6 +25,11 @@
+     rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
+                 root_build_dir) + " --mode=clang"
+ 
++declare_args() {
++  extra_cxxflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -596,13 +601,23 @@
+   }
+ 
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "$prefix/clang"
+-    cxx = "$prefix/clang++"
+-    ld = cxx
+-    readelf = "${toolprefix}readelf"
+-    ar = "${prefix}/llvm-ar"
+-    nm = "${toolprefix}nm"
++    if (is_bsd) {
++      prefix = "/usr/local/bin"
++      cc = "cc"
++      cxx = "c++"
++      ld = cxx
++      readelf = "readelf"
++      ar = "${prefix}/ar"
++      nm = "${toolprefix}nm"
++    } else {
++      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
++      cc = "$prefix/clang"
++      cxx = "$prefix/clang++"
++      ld = cxx
++      readelf = "${toolprefix}readelf"
++      ar = "${prefix}/llvm-ar"
++      nm = "${toolprefix}nm"
++    }
+ 
+     forward_variables_from(invoker,
+                            [
