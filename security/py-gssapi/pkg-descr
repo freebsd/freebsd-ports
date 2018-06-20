@@ -1,0 +1,5 @@
+Python-GSSAPI provides both low-level and high level wrappers around
+the GSSAPI C libraries. While it focuses on the Kerberos mechanism, it
+should also be usable with other GSSAPI mechanisms.
+
+WWW: https://github.com/pythongssapi/python-gssapi
