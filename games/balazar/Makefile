@@ -15,7 +15,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
 		libfreetype.so:print/freetype2
-RUN_DEPENDS=	soya_editor:graphics/py-soya3d@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}soya3d>0:graphics/py-soya3d@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openal>0:audio/py-openal@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tofu>0:net/py-tofu@${FLAVOR} \

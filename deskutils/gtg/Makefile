@@ -25,7 +25,7 @@ USE_PYTHON=	distutils autoplist
 OPTIONS_DEFINE=		CHEETAH
 CHEETAH_DESC=		Needed for export plugin to work
 OPTIONS_EXCLUDE=	NLS DOCS
-CHEETAH_RUN_DEPENDS=	${LOCALBASE}/bin/cheetah:devel/py-cheetah@${FLAVOR}
+CHEETAH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah@${FLAVOR}
 
 .include <bsd.port.options.mk>
 

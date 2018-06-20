@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Feed aggregator written in Python using the Django framework
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:textproc/py-feedparser@${FLAVOR} \
-		django-admin.py:www/py-django18@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18@${FLAVOR}
 
 DIST_SUBDIR=	python
 USES=		python:2.7
