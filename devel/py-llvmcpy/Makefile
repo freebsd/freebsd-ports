@@ -14,10 +14,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
-		${PYTHON_PKGNAMEPREFIX}appdirs>=0:devel/py-appdirs@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycparser>=0:devel/py-pycparser@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}shutilwhich>=0:sysutils/py-shutilwhich@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}appdirs>=0:devel/py-appdirs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycparser>=0:devel/py-pycparser@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}shutilwhich>=0:sysutils/py-shutilwhich@${PY_FLAVOR}
 
 USES=		python:-3.3 # sysutils/py-shutilwhich has this
 USE_GITHUB=	yes

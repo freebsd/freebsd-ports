@@ -13,9 +13,9 @@ COMMENT=	Plugin for ploy to provision FreeBSD jails using ezjail
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ploy>=1.2.0:sysutils/py-ploy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lazy>0:devel/py-lazy@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ploy>=1.2.0:sysutils/py-ploy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lazy>0:devel/py-lazy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

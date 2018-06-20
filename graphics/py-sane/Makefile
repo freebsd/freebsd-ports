@@ -14,7 +14,7 @@ MAINTAINER=	buganini@gmail.com
 COMMENT=	Python bindings for Sane
 
 LIB_DEPENDS=	libsane.so:graphics/sane-backends
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 
 DIST_SUBDIR=	python
 USES=		python:2.7

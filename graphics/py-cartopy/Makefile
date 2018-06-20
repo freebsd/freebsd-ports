@@ -20,9 +20,9 @@ BUILD_DEPENDS=	geos>-3.3.3:graphics/geos \
 LIB_DEPENDS=	libgeos.so:graphics/geos \
 		libproj.so:graphics/proj
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pyshp>=1.1.4:devel/py-pyshp@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Shapely>=1.5.6:devel/py-shapely@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.3.0:devel/py-six@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyshp>=1.1.4:devel/py-pyshp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Shapely>=1.5.6:devel/py-shapely@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.3.0:devel/py-six@${PY_FLAVOR}
 
 USE_PYTHON=	autoplist concurrent cython distutils
 USES=		python

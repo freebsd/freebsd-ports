@@ -12,7 +12,7 @@ COMMENT=	Python scripts to get wmi data classes in a dict
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

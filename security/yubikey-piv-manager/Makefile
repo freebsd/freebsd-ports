@@ -12,7 +12,7 @@ COMMENT=	YubiKey PIV Manager
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:devel/pyside@${FLAVOR} \
+RUN_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:devel/pyside@${PY_FLAVOR} \
 		yubico-piv-tool:security/yubico-piv-tool
 
 NO_ARCH=	yes

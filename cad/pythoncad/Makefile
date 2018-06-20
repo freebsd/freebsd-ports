@@ -14,7 +14,7 @@ COMMENT=	Open-source CAD package built designed around Python
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils

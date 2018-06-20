@@ -12,34 +12,34 @@ COMMENT=	Flexible CMF content
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.alterego>0:www/py-plone.alterego@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.autoform>0:www/py-plone.autoform@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.behavior>0:www/py-plone.behavior@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.folder>0:www/py-plone.folder@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.memoize>0:www/py-plone.memoize@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.rfc822>0:www/py-plone.rfc822@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.supermodel>0:www/py-plone.supermodel@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.synchronize>0:www/py-plone.synchronize@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.uuid>0:www/py-plone.uuid@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.z3cform>0:www/py-plone.z3cform@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>0:devel/py-Products.CMFCore@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Products.CMFDefault>0:devel/py-Products.CMFDefault@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Products.CMFDynamicViewFTI>0:devel/py-Products.CMFDynamicViewFTI@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Products.statusmessages>0:devel/py-Products.statusmessages@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.annotation>0:devel/py-zope.annotation@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.browser>0:devel/py-zope.browser@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.container>0:devel/py-zope.container@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.dottedname>0:devel/py-zope.dottedname@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.lifecycleevent>0:devel/py-zope.lifecycleevent@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.location>0:devel/py-zope.location@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.publisher>0:devel/py-zope.publisher@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.schema>0:devel/py-zope.schema@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.security>0:security/py-zope.security@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.filerepresentation>0:devel/py-zope.filerepresentation@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.size>0:devel/py-zope.size@${FLAVOR} \
-		zodb${PYTHON_PKGNAMESUFFIX}>0:databases/zodb3@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.alterego>0:www/py-plone.alterego@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.autoform>0:www/py-plone.autoform@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.behavior>0:www/py-plone.behavior@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.folder>0:www/py-plone.folder@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.memoize>0:www/py-plone.memoize@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.rfc822>0:www/py-plone.rfc822@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.supermodel>0:www/py-plone.supermodel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.synchronize>0:www/py-plone.synchronize@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.uuid>0:www/py-plone.uuid@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.z3cform>0:www/py-plone.z3cform@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>0:devel/py-Products.CMFCore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Products.CMFDefault>0:devel/py-Products.CMFDefault@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Products.CMFDynamicViewFTI>0:devel/py-Products.CMFDynamicViewFTI@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Products.statusmessages>0:devel/py-Products.statusmessages@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.annotation>0:devel/py-zope.annotation@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.browser>0:devel/py-zope.browser@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.container>0:devel/py-zope.container@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.dottedname>0:devel/py-zope.dottedname@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.lifecycleevent>0:devel/py-zope.lifecycleevent@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.location>0:devel/py-zope.location@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.publisher>0:devel/py-zope.publisher@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.schema>0:devel/py-zope.schema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.security>0:security/py-zope.security@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.filerepresentation>0:devel/py-zope.filerepresentation@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.size>0:devel/py-zope.size@${PY_FLAVOR} \
+		zodb${PYTHON_PKGNAMESUFFIX}>0:databases/zodb3@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7 zope

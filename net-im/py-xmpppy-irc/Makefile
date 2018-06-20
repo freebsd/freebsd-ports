@@ -14,8 +14,8 @@ COMMENT=	Xmpp to irc transport
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:net-im/py-xmpppy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}irc>0:irc/py-irc@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:net-im/py-xmpppy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}irc>0:irc/py-irc@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	flavors

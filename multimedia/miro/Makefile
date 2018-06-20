@@ -13,22 +13,22 @@ COMMENT=	Video player to get internet TV broadcasts
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>0:devel/pyrex@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/webkit/__init__.py:www/py-webkitgtk@${FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>0:devel/pyrex@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/webkit/__init__.py:www/py-webkitgtk@${PY_FLAVOR} \
 		update-mime-database:misc/shared-mime-info \
 		${LOCALBASE}/include/boost/numeric/ublas/matrix.hpp:devel/boost-libs \
 		${LOCALBASE}/include/taglib/taglib.h:audio/taglib
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libsqlite3.so:databases/sqlite3
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/dbus/glib.py:devel/py-dbus@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:devel/py-notify@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/dbus/glib.py:devel/py-dbus@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:devel/py-notify@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/libtorrent.so:net-p2p/libtorrent-rasterbar-python \
-		${PYTHON_SITELIBDIR}/webkit/webkit.so:www/py-webkitgtk@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gconf.so:x11-toolkits/py-gnome2@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/pycurl.so:ftp/py-pycurl@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/mutagen/__init__.py:audio/py-mutagen@${FLAVOR}
+		${PYTHON_SITELIBDIR}/webkit/webkit.so:www/py-webkitgtk@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gconf.so:x11-toolkits/py-gnome2@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/pycurl.so:ftp/py-pycurl@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/mutagen/__init__.py:audio/py-mutagen@${PY_FLAVOR}
 
 BUILD_WRKSRC=	${WRKSRC}/linux
 INSTALL_WRKSRC=	${WRKSRC}/linux

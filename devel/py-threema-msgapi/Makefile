@@ -19,11 +19,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lgrahl
 GH_PROJECT=	threema-msgapi-sdk-python
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pylru-cache>0:devel/py-pylru-cache@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}logbook>0:devel/py-logbook@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wrapt>0:devel/py-wrapt@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libnacl>0:security/py-libnacl@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pylru-cache>0:devel/py-pylru-cache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}logbook>0:devel/py-logbook@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wrapt>0:devel/py-wrapt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libnacl>0:security/py-libnacl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR}
 
 .include <bsd.port.mk>

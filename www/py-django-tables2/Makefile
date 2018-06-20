@@ -13,8 +13,8 @@ COMMENT=	Table/data-grid framework for Django
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=0:www/py-django111@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tablib>=0:textproc/py-tablib@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=0:www/py-django111@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tablib>=0:textproc/py-tablib@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

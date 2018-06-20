@@ -10,7 +10,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	IPython HTML widgets for Jupyter
 
 BUILD_DEPENDS=	npm>=0:www/npm
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notebook>=0:www/py-notebook@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notebook>=0:www/py-notebook@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

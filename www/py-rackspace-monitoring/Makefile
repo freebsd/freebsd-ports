@@ -13,7 +13,7 @@ COMMENT=	Python client library for Rackspace Cloud Monitoring
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcloud>=0.14:net/py-libcloud@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcloud>=0.14:net/py-libcloud@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

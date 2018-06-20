@@ -13,14 +13,14 @@ COMMENT=	Frappe / ERPNext apps setup tool
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}honcho>0:sysutils/py-honcho@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}semantic_version>0:devel/py-semantic_version@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}GitPython>=1.0.1:devel/py-gitpython@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}honcho>0:sysutils/py-honcho@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}semantic_version>0:devel/py-semantic_version@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}GitPython>=1.0.1:devel/py-gitpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		git:devel/git
 
 USE_GITHUB=	yes

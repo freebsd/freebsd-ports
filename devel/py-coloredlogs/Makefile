@@ -12,7 +12,7 @@ COMMENT=	Colored terminal output for Python logging module
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}humanfriendly>=4.7:textproc/py-humanfriendly@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}humanfriendly>=4.7:textproc/py-humanfriendly@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

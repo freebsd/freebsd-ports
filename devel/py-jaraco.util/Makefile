@@ -12,10 +12,10 @@ COMMENT=	General utility modules that supply commonly-used functionality
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jaraco.timing>0:devel/py-jaraco.timing@${FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hgtools>0:devel/py-hgtools@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jaraco.timing>0:devel/py-jaraco.timing@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hgtools>0:devel/py-hgtools@${PY_FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	autoplist distutils

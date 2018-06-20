@@ -15,7 +15,7 @@ SFTP_DESC=	Paramiko for SFTP support
 CA_BUNDLE_DESC=	Include CA bundle for SSL cert validation
 OPTIONS_DEFAULT=	SFTP CA_BUNDLE
 
-SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${FLAVOR}
+SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR}
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USE_PYTHON=	distutils cython

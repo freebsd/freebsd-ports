@@ -14,10 +14,10 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/texvc:print/texvc \
 		${LOCALBASE}/bin/fribidi:converters/fribidi \
-		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mwlib>=0.12.14:devel/py-mwlib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mwlib.ext>=0.12.3:devel/py-mwlib.ext@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=1.0:textproc/py-pygments@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mwlib>=0.12.14:devel/py-mwlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mwlib.ext>=0.12.3:devel/py-mwlib.ext@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=1.0:textproc/py-pygments@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python:2.7 zip

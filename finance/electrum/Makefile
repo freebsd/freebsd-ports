@@ -14,16 +14,16 @@ COMMENT=	Easy to use Bitcoin client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonrpclib-pelix>0:devel/py-jsonrpclib-pelix@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pbkdf2>=1.3:security/py-pbkdf2@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=2.6.0:devel/py-protobuf@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyaes>0:security/py-pyaes@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qrcode>=5.1:textproc/py-qrcode@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonrpclib-pelix>0:devel/py-jsonrpclib-pelix@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pbkdf2>=1.3:security/py-pbkdf2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=2.6.0:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyaes>0:security/py-pyaes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qrcode>=5.1:textproc/py-qrcode@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${PY_FLAVOR}
 
 CONFLICTS_INSTALL=	electrum2-*
 
@@ -40,8 +40,8 @@ OPTIONS_DEFAULT=LEDGER TREZOR
 LEDGER_DESC=	Enable LEDGER Bitcoin hardware wallet support
 TREZOR_DESC=	Enable TREZOR Bitcoin hardware wallet support
 
-LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>0:security/py-btchip-python@${FLAVOR}
-TREZOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trezor>0:security/py-trezor@${FLAVOR}
+LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>0:security/py-btchip-python@${PY_FLAVOR}
+TREZOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trezor>0:security/py-trezor@${PY_FLAVOR}
 
 LEDGER_PLIST_FILES=	"@sample etc/devd/ledger_wallet.conf.sample"
 TREZOR_PLIST_FILES=	"@sample etc/devd/trezor_wallet.conf.sample"

@@ -16,9 +16,9 @@ LICENSE_TEXT=	This program is NOT in public domain.\
 		and THERE IS NO WARRANTY FOR THIS PROGRAM.
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scp>0:security/py-scp@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scp>0:security/py-scp@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -12,8 +12,8 @@ COMMENT=	GTK search utility
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	\
-	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:devel/py-python-distutils-extra@${FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:devel/py-python-distutils-extra@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 	gksu:sysutils/gksu
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

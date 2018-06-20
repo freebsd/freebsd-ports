@@ -14,9 +14,9 @@ COMMENT=	Graphical Cisco network simulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:graphics/py-qt4-svg@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:net/py-qt4-network@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:graphics/py-qt4-svg@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:net/py-qt4-network@${PY_FLAVOR} \
 		dynamips:emulators/dynamips-community \
 		dynagen:emulators/dynagen \
 		xdotool:x11/xdotool

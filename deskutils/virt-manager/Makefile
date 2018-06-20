@@ -12,13 +12,13 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:textproc/py-libxml2@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:textproc/py-libxml2@${PY_FLAVOR} \
 		vte3>=0:x11-toolkits/vte3 \
-		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>=0:www/py-urlgrabber@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libvirt>=0:devel/py-libvirt@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>=0:www/py-urlgrabber@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libvirt>=0:devel/py-libvirt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		gtk-vnc>=0.4.4:net/gtk-vnc \
 		libvirt-glib>=0.1.9:devel/libvirt-glib \
 		libosinfo>=0:devel/libosinfo \

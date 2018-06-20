@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Python object model built on JSON schema and JSON patch
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=0.7:devel/py-jsonschema@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonpatch>=0.10:devel/py-jsonpatch@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=0.7:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonpatch>=0.10:devel/py-jsonpatch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

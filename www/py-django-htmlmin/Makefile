@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	HTML minifier for Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/element.py:www/py-beautifulsoup@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/html5lib/html5parser.py:www/py-html5lib@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/element.py:www/py-beautifulsoup@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/html5lib/html5parser.py:www/py-html5lib@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -12,8 +12,8 @@ COMMENT=	FFI bindings to libsecp256k1
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.8.0:devel/py-cffi@${FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.11.1:devel/py-pytest-runner@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.8.0:devel/py-cffi@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.11.1:devel/py-pytest-runner@${PY_FLAVOR}
 LIB_DEPENDS=	libsecp256k1.so:math/secp256k1
 
 USES=		localbase python pkgconfig

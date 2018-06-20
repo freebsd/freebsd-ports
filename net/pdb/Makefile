@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Packet Debugger
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pcs/__init__.py:net/py-pcs@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pcs/__init__.py:net/py-pcs@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	distutils pythonprefix

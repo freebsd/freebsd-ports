@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 DEPRECATED=	Project development abandoned
 EXPIRATION_DATE=2018-08-01
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

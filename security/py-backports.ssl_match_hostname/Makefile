@@ -12,7 +12,7 @@ COMMENT=	Backport of the ssl_match_hostname function from Python 3.5
 
 LICENSE=	PSFL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${PY_FLAVOR}
 
 USES=		python:-3.4
 USE_PYTHON=	autoplist distutils

@@ -95,7 +95,7 @@ USES+=		python:3.3+ shebangfix
 SHEBANG_FILES=	src/api/python/speechd_config/spd-conf
 USE_PYTHON=	flavors
 LIB_DEPENDS+=	libspeechd.so:accessibility/speech-dispatcher
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR}
 
 .endif
 

@@ -17,19 +17,19 @@ BROKEN=		fails to build
 DEPRECATED=	Broken for more than 6 months
 EXPIRATION_DATE=	2018-06-06
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0.29.0:devel/py-wheel@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0.29.0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${PY_FLAVOR} \
 		bash:shells/bash
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}markdown>=2.6.8:textproc/py-markdown@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bleach>=1.4.2:www/py-bleach@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}html5lib>=0.9999999:www/py-html5lib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=3.2.0:devel/py-protobuf@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0.29.0:devel/py-wheel@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}backports.weakref>=0:devel/py-backports.weakref@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}werkzeug>=0.11.10:www/py-werkzeug@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>=2.6.8:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bleach>=1.4.2:www/py-bleach@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}html5lib>=0.9999999:www/py-html5lib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=3.2.0:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.29.0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}backports.weakref>=0:devel/py-backports.weakref@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}werkzeug>=0.11.10:www/py-werkzeug@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix
 

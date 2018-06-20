@@ -13,8 +13,8 @@ COMMENT=	Data serialization system for python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/src/avro/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-snappy>=0:archivers/py-python-snappy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:devel/py-simplejson@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-snappy>=0:archivers/py-python-snappy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:devel/py-simplejson@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

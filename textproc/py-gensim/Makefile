@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.18.1:science/py-scipy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.5.0:devel/py-six@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}smart_open>=1.2.1:net/py-smart_open@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.18.1:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.5.0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}smart_open>=1.2.1:net/py-smart_open@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -13,10 +13,10 @@ COMMENT=	Simple testing framework for command line applications
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}check-manifest>=0:devel/py-check-manifest@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pep8>=0:devel/pep8@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyflakes>=0:devel/py-pyflakes@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}check-manifest>=0:devel/py-check-manifest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pep8>=0:devel/pep8@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyflakes>=0:devel/py-pyflakes@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

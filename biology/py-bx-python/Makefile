@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}python-lzo>0:archivers/py-python-lzo@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}python-lzo>0:archivers/py-python-lzo@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		compiler python

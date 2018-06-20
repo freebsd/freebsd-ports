@@ -13,7 +13,7 @@ COMMENT=	Mount mediawikis
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fusefs>=0.2:devel/py-fusefs@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fusefs>=0.2:devel/py-fusefs@${PY_FLAVOR}
 
 USES=		fuse python:2.7
 USE_PYTHON=	autoplist distutils

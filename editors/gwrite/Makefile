@@ -14,13 +14,13 @@ COMMENT=	Simple HTML format editor
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>=2.15:devel/py-python-distutils-extra@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jswebkit>=0:www/py-jswebkit@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:www/py-webkitgtk@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>=2.15:devel/py-python-distutils-extra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jswebkit>=0:www/py-jswebkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:www/py-webkitgtk@${PY_FLAVOR}
 RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
 		wvHtml:textproc/wv \
-		${PYTHON_PKGNAMEPREFIX}jswebkit>=0:www/py-jswebkit@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:www/py-webkitgtk@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}jswebkit>=0:www/py-jswebkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:www/py-webkitgtk@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		desktop-file-utils gettext-tools python:2.7

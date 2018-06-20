@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bzr:devel/bzr
 RUN_DEPENDS=	bzr:devel/bzr \
-		${PYTHON_SITELIBDIR}/fastimport/__init__.py:devel/py-fastimport@${FLAVOR}
+		${PYTHON_SITELIBDIR}/fastimport/__init__.py:devel/py-fastimport@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist

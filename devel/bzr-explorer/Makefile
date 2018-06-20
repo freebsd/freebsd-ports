@@ -13,7 +13,7 @@ COMMENT=	Desktop application for using bzr
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bzr:devel/bzr
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bzrlib/plugins/qbzr/__init__.py:devel/qbzr@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bzrlib/plugins/qbzr/__init__.py:devel/qbzr@${PY_FLAVOR} \
 		bzr:devel/bzr
 
 USES=		gettext python:2.7

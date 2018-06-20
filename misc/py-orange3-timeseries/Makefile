@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pandas-datareader>0:math/py-pandas-datareader@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.17:science/py-scipy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.6.1>0:math/py-statsmodels@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas-datareader>0:math/py-pandas-datareader@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.17:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.6.1>0:math/py-statsmodels@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_GITHUB=	yes

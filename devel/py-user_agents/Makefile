@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/_/-/}-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python library to identify devices using User-Agent string
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ua_parser/__init__.py:devel/py-ua_parser@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ua_parser/__init__.py:devel/py-ua_parser@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

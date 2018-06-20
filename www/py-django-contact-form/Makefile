@@ -13,8 +13,8 @@ COMMENT=	Generic contact-form application for Django
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.11:www/py-django@${FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}akismet>=0:devel/py-akismet@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.11:www/py-django@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}akismet>=0:devel/py-akismet@${PY_FLAVOR}
 
 NO_ARCH=	yes
 

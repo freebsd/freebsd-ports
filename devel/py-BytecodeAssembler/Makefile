@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate Python code objects by "assembling" bytecode
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:devel/py-decoratortools@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}SymbolType>0:devel/py-SymbolType@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:devel/py-decoratortools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}SymbolType>0:devel/py-SymbolType@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python:2.7 zip

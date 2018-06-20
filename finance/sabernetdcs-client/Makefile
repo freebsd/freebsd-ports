@@ -15,7 +15,7 @@ COMMENT=	SaberNet DCS - A labor data collection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyro>=0:devel/py-pyro@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyro>=0:devel/py-pyro@${PY_FLAVOR}
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils

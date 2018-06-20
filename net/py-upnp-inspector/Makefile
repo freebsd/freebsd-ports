@@ -14,7 +14,7 @@ COMMENT=	UPnP Device and Service analyzer
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Coherence>=0.6.4:net/py-coherence@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Coherence>=0.6.4:net/py-coherence@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	distutils concurrent autoplist

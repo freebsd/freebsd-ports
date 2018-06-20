@@ -14,7 +14,7 @@ COMMENT=	Distributed Object Middleware for Python(IPC/RPC)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serpent>=1.24:devel/py-serpent@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serpent>=1.24:devel/py-serpent@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		dos2unix python
@@ -26,7 +26,7 @@ PORTEXAMPLES=	*
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}selectors34>0:devel/py-selectors34@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}selectors34>0:devel/py-selectors34@${PY_FLAVOR}
 .endif
 
 post-install:

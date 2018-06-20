@@ -16,15 +16,15 @@ LICENSE=	APACHE20
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.5:devel/py-six@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>0:devel/py-ruamel.yaml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fabric3>0:devel/py-fabric3@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pystorm>=3.1.0:devel/py-pystorm@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}thriftpy>=0.3.2:devel/py-thriftpy@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.5:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>0:devel/py-ruamel.yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fabric3>0:devel/py-fabric3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pystorm>=3.1.0:devel/py-pystorm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}thriftpy>=0.3.2:devel/py-thriftpy@${PY_FLAVOR}
 
 NO_ARCH=	YES
 

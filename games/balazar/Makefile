@@ -15,12 +15,12 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
 		libfreetype.so:print/freetype2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}soya3d>0:graphics/py-soya3d@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openal>0:audio/py-openal@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tofu>0:net/py-tofu@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cerealizer>0:security/py-cerealizer@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}soya3d>0:graphics/py-soya3d@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openal>0:audio/py-openal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tofu>0:net/py-tofu@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cerealizer>0:security/py-cerealizer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 NO_ARCH=	yes
 

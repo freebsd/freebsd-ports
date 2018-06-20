@@ -12,7 +12,7 @@ COMMENT=	Command line tool for performing DuckDuckGo web searches
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${PY_FLAVOR}
 
 USES=		python:3.3+ shebangfix
 USE_GITHUB=	yes

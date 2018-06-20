@@ -14,8 +14,8 @@ COMMENT=	Pure Python Postfix policy daemon for SPF checking
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyspf>0:mail/py-pyspf@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}authres>0:mail/py-authres@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyspf>0:mail/py-pyspf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}authres>0:mail/py-authres@${PY_FLAVOR}
 
 USES=		python:3.3+
 USE_PYTHON=	autoplist distutils

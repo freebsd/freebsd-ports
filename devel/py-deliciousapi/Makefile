@@ -12,8 +12,8 @@ DISTNAME=	DeliciousAPI-${PORTVERSION}
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Unofficial Python API for retrieving data from Delicious.com
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=1.7:devel/py-simplejson@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=1.7:devel/py-simplejson@${PY_FLAVOR}
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

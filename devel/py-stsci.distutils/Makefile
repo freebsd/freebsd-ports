@@ -12,7 +12,7 @@ COMMENT=	Packaging utilities used by some of STScI's packages
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}d2to1>0:devel/py-d2to1@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}d2to1>0:devel/py-d2to1@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

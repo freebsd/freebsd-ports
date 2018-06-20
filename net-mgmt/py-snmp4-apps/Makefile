@@ -14,7 +14,7 @@ COMMENT=	Command line utilities for pysnmp4
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4>=4.3.2:net-mgmt/py-snmp4@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4>=4.3.2:net-mgmt/py-snmp4@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

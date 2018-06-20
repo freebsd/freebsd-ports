@@ -16,15 +16,15 @@ RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		mencoder:multimedia/mencoder \
 		aumix:audio/aumix \
 		tv_cat:textproc/p5-xmltv \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0_1:devel/py-zope.interface@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/kaa/__init__.py:multimedia/py-kaa-base@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/kaa/imlib2/__init__.py:multimedia/py-kaa-imlib2@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/kaa/metadata/__init__.py:multimedia/py-kaa-metadata@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:math/py-numeric@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0_1:devel/py-zope.interface@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/kaa/__init__.py:multimedia/py-kaa-base@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/kaa/imlib2/__init__.py:multimedia/py-kaa-imlib2@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/kaa/metadata/__init__.py:multimedia/py-kaa-metadata@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:math/py-numeric@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 FREEVO_USER=	freevo
 FREEVO_GROUP=	${FREEVO_USER}

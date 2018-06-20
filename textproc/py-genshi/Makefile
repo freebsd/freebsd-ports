@@ -20,6 +20,6 @@ BABEL_DESC=	I18n support through the Babel plugin
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9.6:devel/py-babel@${FLAVOR}
+BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9.6:devel/py-babel@${PY_FLAVOR}
 
 .include <bsd.port.mk>

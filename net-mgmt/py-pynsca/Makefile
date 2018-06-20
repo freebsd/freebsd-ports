@@ -14,10 +14,10 @@ LICENSE=	MPL11
 OPTIONS_DEFINE=	AES 3DES
 
 AES_DESC=	Provide AES encryption
-AES_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}mcrypt>=0:security/py-mcrypt@${FLAVOR}
+AES_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}mcrypt>=0:security/py-mcrypt@${PY_FLAVOR}
 
 3DES_DESC=	Provide 3DES encryption
-3DES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${FLAVOR}
+3DES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${PY_FLAVOR}
 
 OPTIONS_DEFAULT=AES 3DES
 

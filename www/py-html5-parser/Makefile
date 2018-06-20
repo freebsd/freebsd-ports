@@ -11,7 +11,7 @@ COMMENT=	Fast implementation of the HTML 5 parsing spec for Python
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.8.0:devel/py-lxml@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.8.0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		pkgconfig python
 USE_PYTHON=	autoplist distutils

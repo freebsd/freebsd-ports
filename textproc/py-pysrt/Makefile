@@ -12,7 +12,7 @@ COMMENT=	SubRip (.srt) subtitle parser and writer
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

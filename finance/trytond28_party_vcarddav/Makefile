@@ -15,8 +15,8 @@ COMMENT=	Tryton Application Platform (Party VCardDAV Module)
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28_party>=2.8.0:finance/trytond28_party \
-		${PYTHON_PKGNAMEPREFIX}vobject>=0.8.1:deskutils/py-vobject@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PyWebDAV>=0:www/py-pywebdav@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}vobject>=0.8.1:deskutils/py-vobject@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyWebDAV>=0:www/py-pywebdav@${PY_FLAVOR}
 
 CONFLICTS=	trytond_party_vcarddav-2.[46].*
 

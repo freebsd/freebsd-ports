@@ -11,12 +11,12 @@ COMMENT=	File system that stores all its data in the cloud
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>=3.7:databases/py-apsw@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}defusedxml>=0:devel/py-defusedxml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}llfuse>=0:devel/py-llfuse@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dugong>=0:net/py-dugong@${FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>=3.7:databases/py-apsw@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}defusedxml>=0:devel/py-defusedxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}llfuse>=0:devel/py-llfuse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dugong>=0:net/py-dugong@${PY_FLAVOR} \
 		psmisc>=0:sysutils/psmisc \
 		ca_root_nss>=0:security/ca_root_nss
 RUN_DEPENDS:=	${BUILD_DEPENDS}

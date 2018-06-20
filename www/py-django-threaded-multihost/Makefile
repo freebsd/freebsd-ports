@@ -16,8 +16,8 @@ LICENSE=	BSD3CLAUSE
 DEPRECATED=	Project development unmaintained
 EXPIRATION_DATE=2018-08-01
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_hg>=0.4:devel/py-setuptools_hg@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_hg>=0.4:devel/py-setuptools_hg@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${PY_FLAVOR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		python:2.7

@@ -11,7 +11,7 @@ COMMENT=	MkDocs theme, a clone of the "greenish" Sphinx theme of the same name
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs>0:textproc/py-mkdocs@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs>0:textproc/py-mkdocs@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

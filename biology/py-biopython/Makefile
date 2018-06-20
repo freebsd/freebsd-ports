@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	REPORTLAB
 OPTIONS_DEFAULT=	REPORTLAB
 
 REPORTLAB_DESC=	PDF support in Bio.Graphics module
-REPORTLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${FLAVOR}
+REPORTLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR}
 
 pre-configure: # unbreak for python3: README.rst can't be decoded with the ascii codec: https://github.com/biopython/biopython/issues/1649
 	@truncate -s 0 ${WRKSRC}/README.rst

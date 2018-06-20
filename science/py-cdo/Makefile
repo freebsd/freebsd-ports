@@ -13,7 +13,7 @@ COMMENT=	Python binding to CDO (Climate Data Operators)
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	cdo:science/cdo \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

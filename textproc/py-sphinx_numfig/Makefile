@@ -12,7 +12,7 @@ COMMENT=	Autonumbering figures in Sphinx
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python:2.7 tar:tgz
 USE_PYTHON=	flavors

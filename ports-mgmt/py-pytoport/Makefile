@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	pytoport
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spdx-lookup>=0.3.0:misc/py-spdx-lookup@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spdx-lookup>=0.3.0:misc/py-spdx-lookup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		python:3.3+
 USE_GITHUB=	yes

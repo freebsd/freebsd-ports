@@ -13,9 +13,9 @@ COMMENT=	Python port of Browserscope's user agent parser
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/share/ua_parser/regexes.yaml:devel/ua_parser-core \
-		${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${FLAVOR}
+		${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

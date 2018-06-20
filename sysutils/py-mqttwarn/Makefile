@@ -13,8 +13,8 @@ COMMENT=	Subscribe to MQTT topics and notify pluggable services
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paho-mqtt>=0:net/py-paho-mqtt@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>=0:sysutils/py-supervisor@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paho-mqtt>=0:net/py-paho-mqtt@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>=0:sysutils/py-supervisor@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix
 USE_PYTHON=	flavors

@@ -17,16 +17,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN=		Conflicting Django 1.8 / 1.11 dependencies, ancient version
 
 RUN_DEPENDS=	translate-toolkit>=1.11.0:textproc/translate-toolkit \
-		${PYTHON_PKGNAMEPREFIX}south>=0.7.6:databases/py-south@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cssmin>=0.1.4:www/py-cssmin@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>=2.1.4:devel/py-lxml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-taggit>0.10:www/py-django-taggit@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-assets>=0.8:www/py-django-assets@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}south>=0.7.6:databases/py-south@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-voting>=0.1:www/py-django-voting@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}argparse>=0:devel/py-argparse@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}diff-match-patch>=0:textproc/py-diff-match-patch@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}south>=0.7.6:databases/py-south@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cssmin>=0.1.4:www/py-cssmin@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.1.4:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-taggit>0.10:www/py-django-taggit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-assets>=0.8:www/py-django-assets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}south>=0.7.6:databases/py-south@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-voting>=0.1:www/py-django-voting@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}argparse>=0:devel/py-argparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}diff-match-patch>=0:textproc/py-diff-match-patch@${PY_FLAVOR}
 # actually diff-match-patch is a dependency of translate-toolkit,
 # but only this port uses it.
 
@@ -51,14 +51,14 @@ OPTIONS_DEFAULT=MEMCACHED MYSQL
 
 MEMCACHED_DESC=	Use memcached to improve performance
 
-LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>0:devel/py-ldap2@${FLAVOR}
+LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>0:devel/py-ldap2@${PY_FLAVOR}
 
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
-MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=1.45:databases/py-python-memcached@${FLAVOR}
+MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=1.45:databases/py-python-memcached@${PY_FLAVOR}
 
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb@${FLAVOR}
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb@${PY_FLAVOR}
 
-PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${FLAVOR}
+PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR}
 
 SUBVERSION_RUN_DEPENDS=	svn:devel/subversion
 

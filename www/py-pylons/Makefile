@@ -14,24 +14,24 @@ COMMENT=	Python based web framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.15:textproc/py-MarkupSafe@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Paste>=1.7.5.1:www/py-paste@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.5.0:www/py-pastedeploy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.7.4.2:www/py-pastescript@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Tempita>=0.5.1:textproc/py-Tempita@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}WebError>=0.10.3:www/py-WebError@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}WebTest>=1.3.1:www/py-WebTest@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}beaker>=1.5.4:www/py-beaker@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}decorator>=3.3.2:devel/py-decorator@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.4:www/py-formencode@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mako>=0.5.0:textproc/py-mako@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nose>=1.1.2:devel/py-nose@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}routes>=1.12.3:www/py-routes@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.2.1:devel/py-simplejson@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.6.4:www/py-webhelpers@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}webob>=1.1.1:www/py-webob@${FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.2.1:devel/py-Jinja2@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.15:textproc/py-MarkupSafe@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Paste>=1.7.5.1:www/py-paste@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.5.0:www/py-pastedeploy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.7.4.2:www/py-pastescript@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Tempita>=0.5.1:textproc/py-Tempita@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}WebError>=0.10.3:www/py-WebError@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}WebTest>=1.3.1:www/py-WebTest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beaker>=1.5.4:www/py-beaker@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}decorator>=3.3.2:devel/py-decorator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.4:www/py-formencode@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mako>=0.5.0:textproc/py-mako@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nose>=1.1.2:devel/py-nose@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}routes>=1.12.3:www/py-routes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.2.1:devel/py-simplejson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.6.4:www/py-webhelpers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=1.1.1:www/py-webob@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.2.1:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7

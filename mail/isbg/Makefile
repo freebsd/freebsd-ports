@@ -12,7 +12,7 @@ COMMENT=	Scan an IMAP inbox for spam using SpamAssassin
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	spamassassin:mail/spamassassin \
-		${PYTHON_PKGNAMEPREFIX}docopt>=0.6.1:devel/py-docopt@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}docopt>=0.6.1:devel/py-docopt@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 

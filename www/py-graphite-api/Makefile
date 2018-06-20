@@ -13,15 +13,15 @@ COMMENT=	Graphite-web, without the interface - just the rendering HTTP API
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Flask-Cache>=0.13.1:www/py-flask-cache@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.1.1:devel/py-tzlocal@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}structlog>=16.0.0:devel/py-structlog@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.0:devel/py-pyparsing@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>3.1:devel/py-yaml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cairocffi>=0.7.2:graphics/py-cairocffi@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gunicorn>=19.4.1:www/py-gunicorn@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flask-Cache>=0.13.1:www/py-flask-cache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.1.1:devel/py-tzlocal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}structlog>=16.0.0:devel/py-structlog@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.0:devel/py-pyparsing@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>3.1:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cairocffi>=0.7.2:graphics/py-cairocffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gunicorn>=19.4.1:www/py-gunicorn@${PY_FLAVOR} \
 		xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype
 
 NO_ARCH=	yes
