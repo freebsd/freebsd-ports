@@ -22,9 +22,9 @@ include/libkres/nsrep.h
 include/libkres/pack.h
 include/libkres/resolve.h
 include/libkres/rplan.h
-include/libkres/set.h
 include/libkres/signature.h
 include/libkres/ta.h
+include/libkres/trie.h
 include/libkres/utils.h
 include/libkres/zonecut.h
 lib/kdns_modules/ahocorasick.so
@@ -61,6 +61,7 @@ lib/kdns_modules/kres.lua
 lib/kdns_modules/kres-gen.lua
 lib/kdns_modules/policy.lua
 lib/kdns_modules/predict.lua
+lib/kdns_modules/prefill.lua
 lib/kdns_modules/priming.lua
 lib/kdns_modules/prometheus.lua
 lib/kdns_modules/renumber.lua
@@ -74,7 +75,7 @@ lib/kdns_modules/view.lua
 lib/kdns_modules/workarounds.lua
 lib/kdns_modules/zonefile.lua
 lib/libkres.so
-lib/libkres.so.6
+lib/libkres.so.7
 libdata/pkgconfig/libkres.pc
 man/man8/kresd.8.gz
 sbin/kresc
