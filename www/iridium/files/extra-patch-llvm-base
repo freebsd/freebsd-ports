@@ -1,0 +1,53 @@
+--- build/toolchain/gcc_toolchain.gni.orig	2017-04-19 21:06:28.000000000 +0200
++++ build/toolchain/gcc_toolchain.gni	2018-06-19 17:35:48.967441000 +0200
+@@ -12,6 +12,11 @@
+ import("//build/toolchain/goma.gni")
+ import("//build/toolchain/toolchain.gni")
+ 
++declare_args() {
++  extra_cxxflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -483,10 +488,23 @@
+   }
+ 
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "$prefix/clang"
+-    cxx = "$prefix/clang++"
+-    ld = cxx
++    if (is_bsd) {
++      prefix = "/usr/local/bin"
++      cc = "cc"
++      cxx = "c++"
++      ld = cxx
++      readelf = "readelf"
++      ar = "${prefix}/ar"
++      nm = "${toolprefix}nm"
++    } else {
++      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
++      cc = "$prefix/clang"
++      cxx = "$prefix/clang++"
++      ld = cxx
++      readelf = "${toolprefix}readelf"
++      ar = "${toolprefix}ar"
++      nm = "${toolprefix}nm"
++    }
+ 
+     if (use_clang_static_analyzer) {
+       # Static analysis isn't supported under GOMA. See crbug.com/687245
+@@ -506,10 +524,6 @@
+             rebase_path("//third_party/scan-build/src/libexec/c++-analyzer",
+                         root_build_dir)
+     }
+-
+-    readelf = "${toolprefix}readelf"
+-    ar = "${toolprefix}ar"
+-    nm = "${toolprefix}nm"
+ 
+     forward_variables_from(invoker, [ "strip" ])
+ 
