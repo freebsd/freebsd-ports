@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	firefox-i18n
+PORTNAME=	firefox
 PORTVERSION=	60.1.0
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}esr/linux-i686/xpi \
