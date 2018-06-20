@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	p5-Math-GMPz>=0:math/p5-Math-GMPz
 TEST_DEPENDS=	p5-Test-Base>=0:devel/p5-Test-Base
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
