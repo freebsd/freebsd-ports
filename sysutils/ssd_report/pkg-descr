@@ -1,0 +1,5 @@
+Report SSD health by looking at SMART data. Supports `smartctl' from
+sysutils/smartmontools but prefers `smart' from sysutils/smart. Also
+supports JSON output upon request.
+
+WWW: https://fraubsd.org/ssd_report/

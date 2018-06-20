@@ -1202,6 +1202,7 @@
     SUBDIR += spinner
     SUBDIR += spiped
     SUBDIR += squashfs-tools
+    SUBDIR += ssd_report
     SUBDIR += sshsudo
     SUBDIR += ssid
     SUBDIR += ssync
