@@ -1,6 +1,6 @@
---- cmake/Modules/FindUSB.cmake.orig	2016-09-02 04:16:12 UTC
+--- cmake/Modules/FindUSB.cmake.orig	2018-06-13 21:42:48 UTC
 +++ cmake/Modules/FindUSB.cmake
-@@ -22,6 +22,19 @@ else(LIBUSB_INCLUDE_DIR AND LIBUSB_LIBRA
+@@ -22,6 +22,19 @@ else(LIBUSB_INCLUDE_DIR AND LIBUSB_LIBRARIES)
    set(LIBUSB_FOUND FALSE CACHE INTERNAL "libusb-1.0 found")
    message(STATUS "libusb-1.0 not found.")
  endif(LIBUSB_INCLUDE_DIR AND LIBUSB_LIBRARIES)
