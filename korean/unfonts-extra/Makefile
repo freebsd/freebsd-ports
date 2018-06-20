@@ -1,19 +1,22 @@
 # Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
 
-PORTVERSION=	1.0.1
-PORTREVISION=	3
-MASTER_SITES=	http://kldp.net/frs/download.php/1435/
+PORTREVISION=	0
+
+FILEID=		2608
 
 FONTCAT=	extra
-FONTLIST=	UnJamoBatang \
+FONTLIST=	UnBom \
+		UnJamoBatang \
 		UnJamoDotum \
 		UnJamoNovel \
 		UnJamoSora \
 		UnPen \
 		UnPenheulim \
+		UnPilgia \
 		UnShinmun \
 		UnTaza \
+		UnVada \
 		UnYetgul
 
 MASTERDIR=	${.CURDIR}/../unfonts-core
