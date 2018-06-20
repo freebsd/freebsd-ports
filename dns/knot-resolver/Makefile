@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot-resolver
-DISTVERSION=	2.1.1
+DISTVERSION=	2.3.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -86,7 +86,7 @@ PORTDOCS=	AUTHORS COPYING CodingStyle README.md
 
 STRIP_TARGETS=	sbin/kresd			\
 		sbin/kresc			\
-		lib/libkres.so.6		\
+		lib/libkres.so.7		\
 		lib/kdns_modules/ahocorasick.so	\
 		lib/kdns_modules/cookies.so	\
 		lib/kdns_modules/dnstap.so	\
