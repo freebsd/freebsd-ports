@@ -1,6 +1,8 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
 
+# Also update devel/libgit2, devel/rubygem-rugged, devel/py-pygit2
+
 PORTNAME=	libgit2-glib
 PORTVERSION=	0.26.0
 CATEGORIES=	devel gnome

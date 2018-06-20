@@ -1,7 +1,9 @@
 # $FreeBSD$
 
+# Also update devel/libgit2-glib, devel/rubygem-rugged, devel/py-pygit2
+
 PORTNAME=	libgit2
-PORTVERSION=	0.27.1
+PORTVERSION=	0.27.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
