@@ -12,7 +12,7 @@ COMMENT=	Search user interface for Plone CMS
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.contentlisting>=0:www/py-plone.app.contentlisting@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.contentlisting>=0:www/py-plone.app.contentlisting@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7 zip

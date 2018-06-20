@@ -13,12 +13,12 @@ COMMENT=	Utils for streaming large files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=2.32:devel/py-boto@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}boto3>=0:www/py-boto3@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bz2file>=0:archivers/py-bz2file@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}responses>=0:devel/py-responses@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=2.32:devel/py-boto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}boto3>=0:www/py-boto3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bz2file>=0:archivers/py-bz2file@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}responses>=0:devel/py-responses@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

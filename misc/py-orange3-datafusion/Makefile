@@ -13,7 +13,7 @@ COMMENT=	Data fusion add-on for Orange3
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	orange3>0:misc/orange3 \
-		${PYTHON_PKGNAMEPREFIX}scikit-fusion>0:misc/py-scikit-fusion@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scikit-fusion>0:misc/py-scikit-fusion@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_GITHUB=	yes

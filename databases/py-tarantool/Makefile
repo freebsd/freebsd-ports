@@ -12,7 +12,7 @@ COMMENT=	Client library for Tarantool Database
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.4:devel/py-msgpack@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.4:devel/py-msgpack@${PY_FLAVOR}
 
 NO_ARCH=	yes
 REINPLACE_ARGS=	-i ''

@@ -29,12 +29,12 @@ LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 		libopenblas.so:math/openblas \
 		libhdf5.so:science/hdf5
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=2.5.0:devel/py-protobuf@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scikit-image>=0.12:graphics/py-scikit-image@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=1.8:math/py-networkx@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1:math/py-matplotlib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PyWavelets>=0.4:math/py-PyWavelets@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}protobuf>=2.5.0:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-image>=0.12:graphics/py-scikit-image@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=1.8:math/py-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyWavelets>=0.4:math/py-PyWavelets@${PY_FLAVOR}
 
 USE_LDCONFIG=	yes
 USES=		gmake python:2.7 fortran compiler:c++11-lib pkgconfig

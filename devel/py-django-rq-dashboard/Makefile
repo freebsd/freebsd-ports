@@ -12,7 +12,7 @@ COMMENT=	Monitor your RQ queues, jobs and workers from the Django admin
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-rq>0:devel/py-django-rq@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-rq>0:devel/py-django-rq@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

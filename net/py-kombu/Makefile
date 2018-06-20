@@ -12,8 +12,8 @@ COMMENT=	AMQP messaging framework for Python
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqp>=2.2.2:net/py-amqp@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}anyjson>=0.3.3:devel/py-anyjson@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqp>=2.2.2:net/py-amqp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}anyjson>=0.3.3:devel/py-anyjson@${PY_FLAVOR}
 
 OPTIONS_DEFINE=	BEANSTALK BOTO MONGODB REDIS SQLALCHEMY ZMQ
 
@@ -24,12 +24,12 @@ REDIS_DESC=	Include Redis transport support
 SQLALCHEMY_DESC=Include SQLAlchemy transport support
 ZMQ_DESC=	Include ZMQ transport support
 
-BEANSTALK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beanstalkc>0:net/py-beanstalkc@${FLAVOR}
-BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=2.6.0:devel/py-boto@${FLAVOR}
+BEANSTALK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beanstalkc>0:net/py-beanstalkc@${PY_FLAVOR}
+BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=2.6.0:devel/py-boto@${PY_FLAVOR}
 MONGODB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>0:databases/pymongo@${PY_FLAVOR}
-REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${FLAVOR}
-SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${FLAVOR}
-ZMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=13.1.0:net/py-pyzmq@${FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR}
+SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${PY_FLAVOR}
+ZMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=13.1.0:net/py-pyzmq@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

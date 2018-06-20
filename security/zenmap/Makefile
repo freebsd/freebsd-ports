@@ -7,7 +7,7 @@ MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	GUI frontend for the Nmap scanning utility
 
 RUN_DEPENDS=	nmap:security/nmap \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 MASTERDIR=	${.CURDIR}/../nmap
 PATCHDIR=	${.CURDIR}/files

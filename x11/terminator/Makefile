@@ -12,9 +12,9 @@ COMMENT=	Multiple GNOME terminals in one window
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:devel/py-notify@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:devel/py-notify@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/keybinder/_keybinder.so:x11/keybinder \
-		${PYTHON_PKGNAMEPREFIX}vte>=0:x11-toolkits/py-vte@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}vte>=0:x11-toolkits/py-vte@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_GNOME=	pygtk2 intltool

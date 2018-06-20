@@ -11,7 +11,7 @@ COMMENT=	Python interface to libarchive
 
 LICENSE=	LGPL20+
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes

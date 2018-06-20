@@ -12,7 +12,7 @@ COMMENT=	Python wrapper for GnuPG
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.5.1:sysutils/py-psutil@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.5.1:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

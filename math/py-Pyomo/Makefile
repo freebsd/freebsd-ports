@@ -12,9 +12,9 @@ COMMENT=	Python Optimization Modeling Objects
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyUtilib>=5.6.3:devel/py-PyUtilib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils concurrent autoplist

@@ -13,9 +13,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pyFFTW>0:math/py-pyFFTW@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}SimpleSoapy>=1.5.0:misc/py-SimpleSoapy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}SimpleSpectral>0:science/py-SimpleSpectral@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyFFTW>0:math/py-pyFFTW@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}SimpleSoapy>=1.5.0:misc/py-SimpleSoapy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}SimpleSpectral>0:science/py-SimpleSpectral@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_PYTHON=	distutils concurrent autoplist

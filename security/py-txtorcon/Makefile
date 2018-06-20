@@ -13,11 +13,11 @@ COMMENT=	Twisted-based Tor controller client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=15.5.0:devel/py-twisted@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=15.5.0:devel/py-twisted@${PY_FLAVOR} \
 		${PY_IPADDRESS} \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.1:devel/py-zope.interface@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}incremental>0:devel/py-incremental@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Automat>0:devel/py-Automat@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.1:devel/py-zope.interface@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}incremental>0:devel/py-incremental@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Automat>0:devel/py-Automat@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_PYTHON=	distutils autoplist concurrent

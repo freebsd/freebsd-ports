@@ -12,7 +12,7 @@ COMMENT=	Library to interact with the cjdns admin interface
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -15,12 +15,12 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${ENUM34} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4:math/py-matplotlib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.10.0:math/py-numpy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pint>=0.8:converters/py-pint@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.4:graphics/py-pyproj@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.14:science/py-scipy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xarray>=0.9.6:devel/py-xarray@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.10.0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pint>=0.8:converters/py-pint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.4:graphics/py-pyproj@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.14:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xarray>=0.9.6:devel/py-xarray@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

@@ -11,7 +11,7 @@ COMMENT=	Launcher for Tor
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stem>=0.18:security/py-stem@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stem>=0.18:security/py-stem@${PY_FLAVOR} \
 		tor:security/tor
 
 USE_GITHUB=	yes

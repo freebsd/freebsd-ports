@@ -12,8 +12,8 @@ COMMENT=	CDMI on OpenStack Swift implementation
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}swift>0:databases/py-swift@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}webob>0:www/py-webob@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}swift>0:databases/py-swift@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>0:www/py-webob@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	osaddon

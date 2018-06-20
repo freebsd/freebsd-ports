@@ -12,9 +12,9 @@ COMMENT=	Azure-specific AutoRest swagger generator Python client runtime
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msrest>0:net-mgmt/py-msrest@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}adal>0:net-mgmt/py-adal@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msrest>0:net-mgmt/py-msrest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}adal>0:net-mgmt/py-adal@${PY_FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	autoplist distutils

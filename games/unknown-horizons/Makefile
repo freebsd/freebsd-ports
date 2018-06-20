@@ -13,10 +13,10 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:textproc/libxslt
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/fife/__init__.py:games/py-fife@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/fife/__init__.py:games/py-fife@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${PY_FLAVOR}
 
 ONLY_FOR_ARCHS=	i386 amd64
 

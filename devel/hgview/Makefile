@@ -14,8 +14,8 @@ COMMENT=	Fast Mercurial log navigator written in pyqt4
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	hg:devel/mercurial \
-		${PYTHON_PKGNAMEPREFIX}mx-base>0:lang/py-mx-base@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mx-base>0:lang/py-mx-base@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 BUILD_DEPENDS=	hg:devel/mercurial \
 		xmlto:textproc/xmlto \
 		asciidoc:textproc/asciidoc

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Kaa Media Repository - imlib2 wrapper for python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/kaa/__init__.py:multimedia/py-kaa-base@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/kaa/__init__.py:multimedia/py-kaa-base@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 

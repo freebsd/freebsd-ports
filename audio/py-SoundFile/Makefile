@@ -14,7 +14,7 @@ COMMENT=	Audio library based on libsndfile, CFFI and NumPy
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0.6:devel/py-cffi@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0.6:devel/py-cffi@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PREFIX}/lib/libsndfile.so:audio/libsndfile
 

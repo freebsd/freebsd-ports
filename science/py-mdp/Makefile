@@ -27,7 +27,7 @@ SCIPY_DESC=	Instal SciPy versions of eigensolver, FFT and convolution
 
 LIBSVM_RUN_DEPENDS=	libsvm>2.91:science/libsvm \
 			libsvm-python>2.91:science/libsvm-python
-PP_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pp>0:devel/py-pp@${FLAVOR}
-SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.5.2:science/py-scipy@${FLAVOR}
+PP_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pp>0:devel/py-pp@${PY_FLAVOR}
+SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.5.2:science/py-scipy@${PY_FLAVOR}
 
 .include <bsd.port.mk>

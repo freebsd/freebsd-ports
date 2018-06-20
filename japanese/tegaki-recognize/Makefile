@@ -15,7 +15,7 @@ COMMENT=	Open-Source Chinese and Japanese Handwriting Recognition
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libzinnia.so:japanese/zinnia
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tegakigtk/recognizer.py:japanese/py-tegaki-gtk@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tegakigtk/recognizer.py:japanese/py-tegaki-gtk@${PY_FLAVOR}
 
 OPTIONS_DEFINE=	DOCS
 

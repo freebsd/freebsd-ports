@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 DEPRECATED=	Not depended upon anymore, no longer maintained upstream
 EXPIRATION_DATE=	2018-06-25
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

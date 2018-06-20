@@ -14,13 +14,13 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync \
-		${PYTHON_SITELIBDIR}/pokereval.py:games/py-poker-eval@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/libxslt.py:textproc/py-libxslt@${FLAVOR}
+		${PYTHON_SITELIBDIR}/pokereval.py:games/py-poker-eval@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/libxslt.py:textproc/py-libxslt@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync \
-		${PYTHON_SITELIBDIR}/pokereval.py:games/py-poker-eval@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/libxslt.py:textproc/py-libxslt@${FLAVOR}
+		${PYTHON_SITELIBDIR}/pokereval.py:games/py-poker-eval@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/libxslt.py:textproc/py-libxslt@${PY_FLAVOR}
 
 USES=		gettext gmake pathfix pkgconfig python:2.7
 USE_PYTHON=	flavors

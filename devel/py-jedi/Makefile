@@ -13,7 +13,7 @@ COMMENT=	Autocompletion tool for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parso>=0.2.0:textproc/py-parso@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parso>=0.2.0:textproc/py-parso@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

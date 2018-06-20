@@ -12,7 +12,7 @@ COMMENT=	Testing infrastructure for Zope and Plone projects
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.testing>=0:devel/py-zope.testing@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.testing>=0:devel/py-zope.testing@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7

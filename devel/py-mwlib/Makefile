@@ -12,24 +12,24 @@ COMMENT=	Python's MediaWiki Parser and Utility Library
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apipkg>=1.2:devel/py-apipkg@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bottle>=0.10:www/py-bottle@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lockfile>=0.8:devel/py-lockfile@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}odfpy>=0.9:devel/py-odfpy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:www/py-webob@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lockfile>=0.8:devel/py-lockfile@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}timelib>=0.2:devel/py-timelib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pdf>=1.12:print/py-pdf@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py>=1.4.0:devel/py-py@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qserve>=0:devel/py-qserve@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}roman>=0:math/py-roman@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simplejson>2.0.8:devel/py-simplejson@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3dbm>=0:databases/py-sqlite3dbm@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}timelib>=0.2:devel/py-timelib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:www/py-webob@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apipkg>=1.2:devel/py-apipkg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bottle>=0.10:www/py-bottle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lockfile>=0.8:devel/py-lockfile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}odfpy>=0.9:devel/py-odfpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:www/py-webob@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lockfile>=0.8:devel/py-lockfile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}timelib>=0.2:devel/py-timelib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pdf>=1.12:print/py-pdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py>=1.4.0:devel/py-py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qserve>=0:devel/py-qserve@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}roman>=0:math/py-roman@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>2.0.8:devel/py-simplejson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3dbm>=0:databases/py-sqlite3dbm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}timelib>=0.2:devel/py-timelib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:www/py-webob@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix zip
 SHEBANG_FILES=	mwlib/EasyTimeline.pl mwlib/writer/*.py \

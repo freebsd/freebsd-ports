@@ -11,9 +11,9 @@ COMMENT=	Command Line Interface to work with an openSUSE Build Service
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>0:security/py-m2crypto@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber@${FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>0:security/py-m2crypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>0:www/py-urlgrabber@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openSUSE

@@ -11,7 +11,7 @@ COMMENT=	Python network configuration library for FreeBSD
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsd>0:devel/py-bsd@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsd>0:devel/py-bsd@${PY_FLAVOR} \
 		${PY_ENUM34}
 
 USE_GITHUB=     yes

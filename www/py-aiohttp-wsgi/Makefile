@@ -11,7 +11,7 @@ COMMENT=	WSGI adapter for aiohttp
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist distutils

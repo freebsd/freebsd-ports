@@ -13,7 +13,7 @@ COMMENT=	IPython-enabled pdb
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0.10.2:devel/ipython@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0.10.2:devel/ipython@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

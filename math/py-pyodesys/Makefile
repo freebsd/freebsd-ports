@@ -13,10 +13,10 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.0.2:math/py-matplotlib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sym>=0.3.0:math/py-sym@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sympy>=1.1.1:math/py-sympy@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.0.2:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sym>=0.3.0:math/py-sym@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sympy>=1.1.1:math/py-sympy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

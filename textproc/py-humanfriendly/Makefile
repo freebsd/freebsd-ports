@@ -19,7 +19,7 @@ USE_PYTHON=	autoplist concurrent distutils
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}monotonic>0:devel/py-monotonic@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}monotonic>0:devel/py-monotonic@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

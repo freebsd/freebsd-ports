@@ -13,7 +13,7 @@ COMMENT=	Python bindings for the compizconfig library
 BUILD_DEPENDS=	\
 	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz \
 	${LOCALBASE}/libdata/pkgconfig/libcompizconfig.pc:x11-wm/libcompizconfig \
-	${PYTHON_PKGNAMEPREFIX}pyrex>0:devel/pyrex@${FLAVOR}
+	${PYTHON_PKGNAMEPREFIX}pyrex>0:devel/pyrex@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

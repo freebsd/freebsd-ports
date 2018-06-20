@@ -14,40 +14,40 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Keep the RUN_DEPENDS layout similar to the master/synapse/python_dependencies.py file
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}frozendict>=0.5:devel/py-frozendict@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}unpaddedbase64>=1.1.0:devel/py-unpaddedbase64@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}canonicaljson>=1.1.3:devel/py-canonicaljson@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}signedjson>=1.0.0:security/py-signedjson@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pynacl>=1.2.1:security/py-pynacl@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0:security/py-service_identity@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}twisted>=16.6.0:devel/py-twisted@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=16.0.0:security/py-openssl@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.9:devel/py-pyasn1@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}daemonize>=2.4.2:devel/py-daemonize@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bcrypt>=0.4:security/py-bcrypt@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=3.1.1:graphics/py-pillow@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydenticon>=0.2:devel/py-pydenticon@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ujson>=1.35:devel/py-ujson@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}blist>=1.3.6:devel/py-blist@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.0.2:security/py-pysaml2@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pymacaroons-pynacl>=0.9.3:security/py-pymacaroons-pynacl@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=0.3.0:devel/py-msgpack@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}phonenumbers>=8.2.0:devel/py-phonenumbers@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.2.0:net-mgmt/py-prometheus-client@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}frozendict>=0.5:devel/py-frozendict@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}unpaddedbase64>=1.1.0:devel/py-unpaddedbase64@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}canonicaljson>=1.1.3:devel/py-canonicaljson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}signedjson>=1.0.0:security/py-signedjson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pynacl>=1.2.1:security/py-pynacl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0:security/py-service_identity@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=16.6.0:devel/py-twisted@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openssl>=16.0.0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.9:devel/py-pyasn1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}daemonize>=2.4.2:devel/py-daemonize@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bcrypt>=0.4:security/py-bcrypt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=3.1.1:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydenticon>=0.2:devel/py-pydenticon@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ujson>=1.35:devel/py-ujson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}blist>=1.3.6:devel/py-blist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.0.2:security/py-pysaml2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymacaroons-pynacl>=0.9.3:security/py-pymacaroons-pynacl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack>=0.3.0:devel/py-msgpack@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}phonenumbers>=8.2.0:devel/py-phonenumbers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.2.0:net-mgmt/py-prometheus-client@${PY_FLAVOR}
 
 # Conditional requirements that aren't so conditional
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>=0.6.6:devel/py-matrix-angular-sdk@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>=0.6.6:devel/py-matrix-angular-sdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 
 # Dependencies that aren't declared in python_dependencies.py which I have discovered
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.10.0:devel/py-simplejson@${FLAVOR} \
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.10.0:devel/py-simplejson@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tox>=2.3.1:devel/py-tox@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tox>=2.3.1:devel/py-tox@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
@@ -76,11 +76,11 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	EMAIL LDAP PGSQL SQLITE
 OPTIONS_DEFAULT=	SQLITE
 EMAIL_DESC=	Email notifications for missed messages
-EMAIL_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.8:devel/py-Jinja2@${FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}bleach>=1.4.2:www/py-bleach@${FLAVOR}
-LDAP_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-synapse-ldap3>=0.1:net/py-matrix-synapse-ldap3@${FLAVOR}
-PGSQL_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${FLAVOR}
-SQLITE_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
+EMAIL_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.8:devel/py-Jinja2@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}bleach>=1.4.2:www/py-bleach@${PY_FLAVOR}
+LDAP_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-synapse-ldap3>=0.1:net/py-matrix-synapse-ldap3@${PY_FLAVOR}
+PGSQL_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR}
+SQLITE_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/synapse/python_dependencies.py

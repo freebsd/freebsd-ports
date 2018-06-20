@@ -12,10 +12,10 @@ COMMENT=	HTTP/2-based RPC framework
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1:devel/py-six@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1:devel/py-six@${PY_FLAVOR} \
 		${PY_ENUM34} \
 		${PY_FUTURES} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=3:devel/py-protobuf@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}protobuf>=3:devel/py-protobuf@${PY_FLAVOR}
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
 BROKEN_powerpc64=	fails to compile: cpu-ppc64le.c: 'AT_HWCAP2' undeclared

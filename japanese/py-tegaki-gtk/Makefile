@@ -15,7 +15,7 @@ COMMENT=	Tegaki PyGTK interface
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libzinnia.so:japanese/zinnia
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tegaki/engine.py:japanese/py-tegaki@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tegaki/engine.py:japanese/py-tegaki@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	distutils

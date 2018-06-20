@@ -14,8 +14,8 @@ COMMENT=	Python helper functions for writing templates in web applications
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}routes>=1.1:www/py-routes@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:textproc/py-MarkupSafe@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}routes>=1.1:www/py-routes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:textproc/py-MarkupSafe@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist

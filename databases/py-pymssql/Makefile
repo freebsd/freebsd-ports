@@ -12,7 +12,7 @@ COMMENT=	Python database interface for MS-SQL. Version 2
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-git>0:devel/py-setuptools-git@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-git>0:devel/py-setuptools-git@${PY_FLAVOR}
 LIB_DEPENDS=	libsybdb.so:databases/freetds
 
 USES=		python

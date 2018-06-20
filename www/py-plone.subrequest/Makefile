@@ -12,8 +12,8 @@ COMMENT=	Subrequests for Zope2
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.globalrequest>=0:devel/py-five.globalrequest@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.globalrequest>=0:devel/py-zope.globalrequest@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.globalrequest>=0:devel/py-five.globalrequest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.globalrequest>=0:devel/py-zope.globalrequest@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7

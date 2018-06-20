@@ -14,8 +14,8 @@ COMMENT=	Qt interface for bzr
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bzr:devel/bzr \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}enchant>=0:textproc/py-enchant@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}enchant>=0:textproc/py-enchant@${PY_FLAVOR}
 RUN_DEPENDS=	bzr:devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

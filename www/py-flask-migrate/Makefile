@@ -12,9 +12,9 @@ COMMENT=	Database schema migrations for Flask applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.9:www/py-flask@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}alembic>=0.8.4:databases/py-alembic@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-editor>=0:devel/py-python-editor@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.9:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}alembic>=0.8.4:databases/py-alembic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-editor>=0:devel/py-python-editor@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

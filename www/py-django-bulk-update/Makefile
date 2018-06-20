@@ -12,7 +12,7 @@ COMMENT=	Bulk update using a single query over Django ORM
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.11:www/py-django@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.11:www/py-django@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:-3.4

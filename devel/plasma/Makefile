@@ -14,13 +14,13 @@ BUILD_DEPENDS=	bash:shells/bash \
 		binutils>=2:devel/binutils \
 		capstone>=3:devel/capstone3
 RUN_DEPENDS=	binutils>=2:devel/binutils \
-		${PYTHON_PKGNAMEPREFIX}capstone>=3:devel/py-capstone@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}keystone-engine>=:devel/py-keystone-engine@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pefile>=0:devel/py-pefile@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyelftools>=0:devel/py-pyelftools@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}capstone>=3:devel/py-capstone@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}keystone-engine>=:devel/py-keystone-engine@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pefile>=0:devel/py-pefile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyelftools>=0:devel/py-pyelftools@${PY_FLAVOR}
 
 USES=		python:3.4+ shebangfix
 

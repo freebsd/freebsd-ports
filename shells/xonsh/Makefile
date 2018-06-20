@@ -11,7 +11,7 @@ COMMENT=	Python-ish BASH-wards shell
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amalgamate>=0:devel/py-amalgamate@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amalgamate>=0:devel/py-amalgamate@${PY_FLAVOR}
 
 NO_ARCH=	yes
 

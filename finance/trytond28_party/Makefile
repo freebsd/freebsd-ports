@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28>=2.8.2:finance/trytond28 \
 		trytond28_country>=2.8.0:finance/trytond28_country \
-		${PYTHON_PKGNAMEPREFIX}vatnumber>=1.0.0:finance/py-vatnumber@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}vatnumber>=1.0.0:finance/py-vatnumber@${PY_FLAVOR}
 
 CONFLICTS=	trytond_party-2.[46].*
 

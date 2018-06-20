@@ -12,7 +12,7 @@ COMMENT=	Python client for Arista eAPI
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

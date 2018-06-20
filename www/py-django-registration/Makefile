@@ -13,8 +13,8 @@ COMMENT=	User-registration application for Django
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}confusable_homoglyphs>=0:devel/py-confusable_homoglyphs@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django>=1.8:www/py-django@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}confusable_homoglyphs>=0:devel/py-confusable_homoglyphs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django>=1.8:www/py-django@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

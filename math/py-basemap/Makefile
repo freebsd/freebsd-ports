@@ -15,7 +15,7 @@ LICENSE=	GPLv2 LGPL21 MIT
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 LIB_DEPENDS=	libgeos.so:graphics/geos
 
 USES=		python:2.7

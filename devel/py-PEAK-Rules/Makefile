@@ -12,9 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.dev-r2686
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generic functions and business rules support systems
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1.1:devel/py-extremes@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}AddOns>=0.6:devel/py-AddOns@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}BytecodeAssembler>0:devel/py-BytecodeAssembler@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1.1:devel/py-extremes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}AddOns>=0.6:devel/py-AddOns@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}BytecodeAssembler>0:devel/py-BytecodeAssembler@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python:2.7

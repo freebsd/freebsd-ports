@@ -12,9 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Presentation generation tool
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/HTMLgen.py:www/py-HTMLgen@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR} \
-		${PYTHON_SITELIBDIR}/em.py:textproc/py-empy@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/HTMLgen.py:www/py-HTMLgen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/em.py:textproc/py-empy@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python:2.7 tar:bzip2

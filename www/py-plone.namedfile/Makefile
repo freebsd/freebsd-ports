@@ -12,13 +12,13 @@ COMMENT=	File types and fields for images, files and blob files with filenames
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browserpage>0:devel/py-zope.browserpage@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.copy>0:devel/py-zope.copy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.security>0:security/py-zope.security@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.traversing>0:devel/py-zope.traversing@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}plone.rfc822>0:www/py-plone.rfc822@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.app.file>0:devel/py-zope.app.file@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browserpage>0:devel/py-zope.browserpage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.copy>0:devel/py-zope.copy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.security>0:security/py-zope.security@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.traversing>0:devel/py-zope.traversing@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.rfc822>0:www/py-plone.rfc822@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.app.file>0:devel/py-zope.app.file@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7

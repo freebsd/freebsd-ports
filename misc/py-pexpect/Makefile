@@ -12,7 +12,7 @@ COMMENT=	Pure Python Expect-like module
 
 LICENSE=	ISCL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ptyprocess>=0:sysutils/py-ptyprocess@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ptyprocess>=0:sysutils/py-ptyprocess@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

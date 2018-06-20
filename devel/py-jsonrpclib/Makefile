@@ -22,7 +22,7 @@ CJSON_DESC=	Use cjson instead of json or simplejson
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCJSON}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cjson>0:devel/py-cjson@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cjson>0:devel/py-cjson@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.mk>

@@ -11,15 +11,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fork of pymsn to support the telepathy MSN connection manager
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
 		${PY_ENUM34} \
-		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:security/py-pycrypto@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gstreamer>0:multimedia/py-gstreamer@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:security/py-pycrypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gstreamer>0:multimedia/py-gstreamer@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/farsight.so:net-im/farsight2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
 		${PY_ENUM34} \
-		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:security/py-pycrypto@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gstreamer>0:multimedia/py-gstreamer@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:security/py-pycrypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gstreamer>0:multimedia/py-gstreamer@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/farsight.so:net-im/farsight2
 
 USE_GNOME=	pygobject

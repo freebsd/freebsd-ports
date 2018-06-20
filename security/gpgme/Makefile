@@ -84,8 +84,8 @@ TEST_USE=		QT5=testlib_build
 
 .  if ${SLAVEPORT} == "python"
 BUILD_DEPENDS+=	swig3.0:devel/swig30 \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 USES+=		python
 USE_PYTHON=	py3kplist flavors
 CONFIGURE_ENV+=	SWIG=${LOCALBASE}/bin/swig3.0

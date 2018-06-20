@@ -12,9 +12,9 @@ COMMENT=	Bayesian anti-spam filter written in Python
 
 LICENSE=	PSFL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dns>=2.0:dns/py-dns@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lockfile>=0.2:devel/py-lockfile@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dns>=2.0:dns/py-dns@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lockfile>=0.2:devel/py-lockfile@${PY_FLAVOR}
 
 USES=		python:-2.7
 USE_PYTHON=	distutils autoplist

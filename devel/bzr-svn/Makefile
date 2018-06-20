@@ -14,7 +14,7 @@ COMMENT=	Plugin for bzr to work with svn
 LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	bzr:devel/bzr
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/subvertpy/__init__.py:devel/py-subvertpy@${FLAVOR} \
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/subvertpy/__init__.py:devel/py-subvertpy@${PY_FLAVOR} \
 		bzr:devel/bzr
 
 USES=		python:2.7

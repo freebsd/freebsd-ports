@@ -12,8 +12,8 @@ COMMENT=	Semantic versions management integrated to git
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GitPython>=2.1.7:devel/py-gitpython@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}semantic_version>=2.6.0:devel/py-semantic_version@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GitPython>=2.1.7:devel/py-gitpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}semantic_version>=2.6.0:devel/py-semantic_version@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

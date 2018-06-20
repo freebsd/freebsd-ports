@@ -13,11 +13,11 @@ COMMENT=	Python MSRP client library
 
 LICENSE=	LGPL20+
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}application>=1.2.8:devel/py-application@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}eventlib>=0:devel/py-eventlib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gnutls>=3.0.0:security/py-gnutls@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}application>=1.2.8:devel/py-application@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}eventlib>=0:devel/py-eventlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gnutls>=3.0.0:security/py-gnutls@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

@@ -17,6 +17,6 @@ USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	JSON
 
-JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.0:devel/py-simplejson@${FLAVOR}
+JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.0:devel/py-simplejson@${PY_FLAVOR}
 
 .include <bsd.port.mk>

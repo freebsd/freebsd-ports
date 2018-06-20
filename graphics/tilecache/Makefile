@@ -13,8 +13,8 @@ COMMENT=	Python-based WMS-C/TMS server
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup6>0:www/py-flup6@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Paste>0:www/py-paste@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup6>0:www/py-flup6@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Paste>0:www/py-paste@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils autoplist

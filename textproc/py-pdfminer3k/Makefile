@@ -10,7 +10,7 @@ COMMENT=	PDF parser and analyzer
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4:devel/py-ply@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4:devel/py-ply@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_GITHUB=	yes

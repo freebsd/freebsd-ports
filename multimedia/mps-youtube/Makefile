@@ -13,7 +13,7 @@ COMMENT=	Terminal based YouTube jukebox with playlist management
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	ca_root_nss>=3.17.3:security/ca_root_nss \
-		${PYTHON_PKGNAMEPREFIX}pafy>=0.5.0:www/py-pafy@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pafy>=0.5.0:www/py-pafy@${PY_FLAVOR}
 
 CONVERTER_DESC=	Converter to MP3 and other formats
 

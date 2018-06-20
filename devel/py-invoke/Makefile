@@ -16,10 +16,10 @@ LICENSE=	BSD2CLAUSE
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}semantic_version>0:devel/py-semantic_version@${FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twine>0:devel/py-twine@${FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}semantic_version>0:devel/py-semantic_version@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twine>0:devel/py-twine@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR}
 
 NO_ARCH=	YES
 

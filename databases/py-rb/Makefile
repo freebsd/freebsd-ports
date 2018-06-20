@@ -11,7 +11,7 @@ COMMENT=	Rb - the redis blaster
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=2.6:databases/py-redis@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=2.6:databases/py-redis@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
