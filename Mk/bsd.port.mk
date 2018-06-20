@@ -2774,9 +2774,9 @@ __ARCH_OK?=		1
 
 .if !defined(__ARCH_OK)
 .if defined(ONLY_FOR_ARCHS)
-IGNORE=		is only for ${ONLY_FOR_ARCHS},
+IGNORE=		is only for ${ONLY_FOR_ARCHS:O},
 .else # defined(NOT_FOR_ARCHS)
-IGNORE=		does not run on ${NOT_FOR_ARCHS},
+IGNORE=		does not run on ${NOT_FOR_ARCHS:O},
 .endif
 IGNORE+=	while you are running ${ARCH}
 
