@@ -22,7 +22,7 @@ BUILD_DEPENDS=	hg:devel/mercurial \
 
 NO_ARCH=	yes
 USES=		gmake pyqt:4 python:2.7
-USE_PYQT=	gui_run qscintilla2_run xml_run
+USE_PYQT=	gui_run qscintilla2_run xml_build
 USE_PYTHON=	distutils
 PORTDOCS=	*
 
