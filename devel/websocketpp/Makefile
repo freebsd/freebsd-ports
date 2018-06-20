@@ -7,7 +7,8 @@ CATEGORIES=	devel
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Header only implementation of the WebSocket protocol
 
-LICENSE=	MIT
+LICENSE=	MIT BSD3CLAUSE ZLIB
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
