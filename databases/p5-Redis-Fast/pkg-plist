@@ -1,0 +1,9 @@
+%%SITE_ARCH%%/Redis/Fast.pm
+%%SITE_ARCH%%/Redis/Fast/Hash.pm
+%%SITE_ARCH%%/Redis/Fast/List.pm
+%%SITE_ARCH%%/Redis/Fast/Sentinel.pm
+%%SITE_ARCH%%/auto/Redis/Fast/Fast.so
+%%PERL5_MAN3%%/Redis::Fast.3.gz
+%%PERL5_MAN3%%/Redis::Fast::Hash.3.gz
+%%PERL5_MAN3%%/Redis::Fast::List.3.gz
+%%PERL5_MAN3%%/Redis::Fast::Sentinel.3.gz

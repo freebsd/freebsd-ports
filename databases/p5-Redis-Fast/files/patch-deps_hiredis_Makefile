@@ -1,0 +1,11 @@
+--- deps/hiredis/Makefile.orig	2016-01-26 13:11:38 UTC
++++ deps/hiredis/Makefile
+@@ -41,7 +41,7 @@ CXX:=$(shell sh -c 'type $(CXX) >/dev/nu
+ OPTIMIZATION?=-O3
+ WARNINGS=-Wall -W -Wstrict-prototypes -Wwrite-strings
+ DEBUG?= -g -ggdb
+-REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG) $(ARCH)
++REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG)
+ REAL_LDFLAGS=$(LDFLAGS) $(ARCH)
+ 
+ DYLIBSUFFIX=so
