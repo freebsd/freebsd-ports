@@ -15,6 +15,7 @@ FLAVOR?=	${FLAVORS:[1]}
 
 smart_RUN_DEPENDS=		smart:sysutils/smart
 smartmontools_RUN_DEPENDS=	smartctl:sysutils/smartmontools
+smartmontools_PKGNAMESUFFIX=	-smartmontools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FrauBSD
