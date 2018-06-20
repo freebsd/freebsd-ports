@@ -12,15 +12,15 @@ COMMENT=	Manage Jenkins jobs with YAML
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}pbr>0:devel/py-pbr@${FLAVOR}
-RUN_DEPENDS=	${PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR} \
-		${PKGNAMEPREFIX}pbr>0:devel/py-pbr@${FLAVOR} \
-		${PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
-		${PKGNAMEPREFIX}stevedore>0:devel/py-stevedore@${FLAVOR} \
-		${PKGNAMEPREFIX}python-jenkins>0:devel/py-python-jenkins@${FLAVOR} \
-		${PKGNAMEPREFIX}fasteners>0:devel/py-fasteners@${FLAVOR} \
-		${PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR} \
-		${PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}stevedore>0:devel/py-stevedore@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-jenkins>0:devel/py-python-jenkins@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fasteners>0:devel/py-fasteners@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

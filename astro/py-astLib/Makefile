@@ -13,11 +13,11 @@ COMMENT=	Astronomy modules for Python
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}astropy>=1.1:astro/py-astropy@${FLAVOR} \
-		${PKGNAMEPREFIX}matplotlib>=0.98:math/py-matplotlib@${FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>=1.1:astro/py-astropy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.98:math/py-matplotlib@${FLAVOR} \
 		${PYNUMPY} \
-		${PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${FLAVOR} \
-		${PKGNAMEPREFIX}scipy>=0.7.0:science/py-scipy@${FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.7.0:science/py-scipy@${FLAVOR}
 
 PORTSCOUT=	skipv:0.15,0.17,0.17.1 # incorrect versioning upstream
 

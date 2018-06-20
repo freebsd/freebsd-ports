@@ -12,7 +12,7 @@ COMMENT=	Wikipedia bot for Python
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
 
 USES=		dos2unix python
 USE_PYTHON=	autoplist distutils
