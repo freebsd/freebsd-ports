@@ -10284,3 +10284,4 @@ x11-themes/adwaita-common||2018-06-19|Move to flavored version
 x11-themes/adwaita-qt4|x11-themes/adwaita-qt@qt4|2018-06-19|Move to flavored version
 x11-themes/adwaita-qt5|x11-themes/adwaita-qt@qt5|2018-06-19|Move to flavored version
 net-p2p/qbittorrent-nox11|net-p2p/qbittorrent@nox|2018-06-20|Moved to a flavored version
+graphics/engauge-digitizer||2018-06-20|Delete to be re-added from math/digitizer
