@@ -3,6 +3,7 @@
 
 PORTNAME=	Dancer2
 PORTVERSION=	0.206000
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,14 +17,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny \
+		p5-Clone>=0:devel/p5-Clone \
 		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \
 		p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-File-Share>=0:devel/p5-File-Share \
-		p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		p5-Hash-Merge-Simple>=0:devel/p5-Hash-Merge-Simple \
-		p5-HTTP-Body>=0:www/p5-HTTP-Body \
 		p5-HTTP-Date>=0:www/p5-HTTP-Date \
-		p5-HTTP-Headers-Fast>=0:www/p5-HTTP-Headers-Fast \
+		p5-HTTP-Headers-Fast>=0.21:www/p5-HTTP-Headers-Fast \
 		p5-HTTP-XSCookies>=0.000007:www/p5-HTTP-XSCookies \
 		p5-Import-Into>=0:devel/p5-Import-Into \
 		p5-JSON>=0:converters/p5-JSON \
@@ -56,6 +56,7 @@ TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-MockTime>=0:devel/p5-Test-MockTime \
 		p5-YAML>=0.86:textproc/p5-YAML
+BUILD_DEPENDS+=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install
 
 OPTIONS_DEFINE=		XS
 OPTIONS_DEFAULT=	XS
