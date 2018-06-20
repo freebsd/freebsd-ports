@@ -1,0 +1,9 @@
+The Engauge Digitizer tool accepts image files (like PNG, JPEG and TIFF)
+containing graphs, and recovers the data points from those graphs. The resulting
+data points are usually used as input to other software applications.
+Conceptually, Engauge Digitizer is the opposite of a graphing tool that converts
+data points to graphs. The process is shown below - an image file is imported,
+digitized within Engauge, and exported as a table of numeric data to a text
+file. Work can be saved into an Engauge DIG file.
+
+WWW: http://markummitchell.github.io/engauge-digitizer/
