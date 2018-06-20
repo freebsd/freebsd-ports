@@ -5,7 +5,7 @@ PORTVERSION=	6.37.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	CLI for Cloud Foundry written in Go
 
 LICENSE=	APACHE20
