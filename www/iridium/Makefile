@@ -3,7 +3,7 @@
 
 PORTNAME=	iridium
 PORTVERSION=	58.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -16,7 +16,6 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gperf:devel/gperf \
-		clang60:devel/llvm60 \
 		yasm:devel/yasm \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
 		bash:shells/bash \
@@ -71,8 +70,6 @@ ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
-CC=		clang60
-CXX=		clang++60
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
 # Run "./out/${BUILDTYPE}/gn args out/${BUILDTYPE} --list" for all variables.
@@ -158,15 +155,20 @@ SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101513
+BUILD_DEPENDS+=	clang60:devel/llvm60
+CC=		clang60
+CXX=		clang++60
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-llvm-port
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ar:devel/binutils
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-llvm-base
+.endif
+
 # TODO: -isystem, would be just as ugly as this approach, but more reliably
 # build would fail without C_INCLUDE_PATH/CPLUS_INCLUDE_PATH env var set.
 MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 		CPLUS_INCLUDE_PATH=${LOCALBASE}/include
-
-# Work around base r261801
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100508
-GN_ARGS+=	extra_cxxflags="-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1"
-.endif
 
 pre-everything::
 	@${ECHO_MSG}
