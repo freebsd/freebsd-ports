@@ -18,7 +18,7 @@ LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		libboost_system.so:devel/boost-libs
 
 FLAVORS=	default nox
-FLAVOR=		${FLAVORS:[1]}
+FLAVOR?=	${FLAVORS:[1]}
 default_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${NONEXISTENT}
