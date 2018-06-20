@@ -945,6 +945,7 @@
     SUBDIR += py-google-auth
     SUBDIR += py-gpgme
     SUBDIR += py-gpsoauth
+    SUBDIR += py-gssapi
     SUBDIR += py-halberd
     SUBDIR += py-hkdf
     SUBDIR += py-htpasswd
