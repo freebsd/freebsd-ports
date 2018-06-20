@@ -2,16 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	highr
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Syntax Highlighting for R Source Code
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 USES=	cran:auto-plist
 
