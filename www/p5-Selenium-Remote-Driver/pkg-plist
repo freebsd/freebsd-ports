@@ -17,6 +17,7 @@
 %%PERL5_MAN3%%/Selenium::Remote::Mock::Commands.3.gz
 %%PERL5_MAN3%%/Selenium::Remote::Mock::RemoteConnection.3.gz
 %%PERL5_MAN3%%/Selenium::Remote::RemoteConnection.3.gz
+%%PERL5_MAN3%%/Selenium::Remote::Spec.3.gz
 %%PERL5_MAN3%%/Selenium::Remote::WDKeys.3.gz
 %%PERL5_MAN3%%/Selenium::Remote::WebElement.3.gz
 %%PERL5_MAN3%%/Selenium::Waiter.3.gz
@@ -52,6 +53,7 @@
 %%SITE_PERL%%/Selenium/Remote/Mock/Commands.pm
 %%SITE_PERL%%/Selenium/Remote/Mock/RemoteConnection.pm
 %%SITE_PERL%%/Selenium/Remote/RemoteConnection.pm
+%%SITE_PERL%%/Selenium/Remote/Spec.pm
 %%SITE_PERL%%/Selenium/Remote/WDKeys.pm
 %%SITE_PERL%%/Selenium/Remote/WebElement.pm
 %%SITE_PERL%%/Selenium/Remote/driver-example.pl
