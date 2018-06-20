@@ -1,6 +1,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/c-sig/c-sig.el
 %%EMACS_VERSION_SITE_LISPDIR%%/c-sig/c-sig.elc
-%%PORTDOCS%%%%DOCSDIR%%/c-sig-eng.faq
-%%PORTDOCS%%%%DOCSDIR%%/c-sig-eng.man
-%%PORTDOCS%%%%DOCSDIR%%/c-sig-jp.faq
-%%PORTDOCS%%%%DOCSDIR%%/c-sig-jp.man
+%%DOCSDIR%%/c-sig-eng.faq
+%%DOCSDIR%%/c-sig-eng.man
+%%DOCSDIR%%/c-sig-jp.faq
+%%DOCSDIR%%/c-sig-jp.man

@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	c-sig
-PORTVERSION=	3.8
-PORTREVISION=	20
+PORTVERSION=	3.8.0.1
 CATEGORIES=	mail elisp
-MASTER_SITES=	LOCAL/tota/${PORTNAME}
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Signature insertion tool for Emacs
@@ -15,19 +12,14 @@ COMMENT=	Signature insertion tool for Emacs
 LICENSE=	GPLv2+
 
 USES=		emacs
+USE_GITHUB=	yes
+GH_ACCOUNT=	yasuhirokimura
+NO_ARCH=	yes
 
-NO_WRKSUBDIR=	yes
-
-OPTIONS_DEFINE=	DOCS
-
+MAKE_ENV+=	EMACS=${EMACS_CMD} LISPDIR=${LISPDIR}
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
-do-build:
-	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile c-sig.el
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/c-sig.el* ${STAGEDIR}${LISPDIR}
+post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in c-sig-eng.faq c-sig-eng.man c-sig-jp.faq c-sig-jp.man
 	${INSTALL_MAN} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

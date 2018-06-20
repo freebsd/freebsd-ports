@@ -6,3 +6,5 @@ features:
 - Powerful retrieval and learning function.
 - c-sig can convert text automatically when insertion.
 - signatures can be modified by emacs lisp.
+
+WWW: https://github.com/yasuhirokimura/c-sig
