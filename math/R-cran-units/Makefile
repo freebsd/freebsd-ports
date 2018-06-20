@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	units
-DISTVERSION=	0.5-1
+DISTVERSION=	0.6-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,10 +11,11 @@ COMMENT=	Measurement Units for R Vectors
 
 LICENSE=	GPLv2
 
-CRAN_DEPENDS=	R-cran-udunits2>=0.13:science/R-cran-udunits2
+CRAN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp
+LIB_DEPENDS=	libudunits2.so:science/udunits
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=		cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
