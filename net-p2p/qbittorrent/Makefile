@@ -3,6 +3,7 @@
 
 PORTNAME=	qbittorrent
 DISTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -25,14 +26,14 @@ nox_PLIST=		${NONEXISTENT}
 
 USES=			compiler:c++11-lib pkgconfig tar:xz
 GNU_CONFIGURE=		yes
-USE_QT5=		core network svg xml buildtools_build linguisttools_build qmake_build
+USE_QT5=		core network xml buildtools_build linguisttools_build qmake_build
 CONFIGURE_ARGS=		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 QT_NONSTANDARD=		yes
 DESTDIRNAME=		INSTALL_ROOT
 
 .if ${FLAVOR} == default
 USES+=			desktop-file-utils
-USE_QT5+=		concurrent gui widgets
+USE_QT5+=		concurrent gui svg widgets
 USE_GL=			gl
 .endif
 
