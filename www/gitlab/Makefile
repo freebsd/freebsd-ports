@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	10.7.5
+PORTVERSION=	10.8.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -28,7 +27,7 @@ BUILD_DEPENDS=	gem:devel/ruby-gems
 RUN_DEPENDS=	git>=2.16.2:devel/git \
 	gitlab-shell>=7.1.2:devel/gitlab-shell \
 	gitlab-workhorse>=4.1.0:www/gitlab-workhorse \
-	gitaly>=0.96.1:devel/gitaly \
+	gitaly>=0.100.0:devel/gitaly \
 	gitlab-pages>=0.9.1:www/gitlab-pages \
 	redis>=2.8.23:databases/redis \
 	npm>=4.3.0:www/npm \
@@ -41,7 +40,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-rugged>=0.27.0:devel/rubygem-rugged \
 	rubygem-grape-route-helpers>=2.1.0:devel/rubygem-grape-route-helpers \
 	rubygem-faraday>=0.12.0:www/rubygem-faraday \
-	rubygem-devise>=4.2:devel/rubygem-devise \
+	rubygem-devise>=4.4:devel/rubygem-devise \
 	rubygem-doorkeeper>=4.3:security/rubygem-doorkeeper \
 	rubygem-doorkeeper-openid_connect>=1.3:security/rubygem-doorkeeper-openid_connect \
 	rubygem-omniauth>=1.8:security/rubygem-omniauth \
@@ -49,7 +48,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-omniauth-azure-oauth2>=0.0.9:net/rubygem-omniauth-azure-oauth2 \
 	rubygem-omniauth-cas3>=1.1.4:security/rubygem-omniauth-cas3 \
 	rubygem-omniauth-facebook4>=4.0.0:net/rubygem-omniauth-facebook4 \
-	rubygem-omniauth-github11>=1.1.1:net/rubygem-omniauth-github11 \
+	rubygem-omniauth-github>=1.3.0:net/rubygem-omniauth-github \
 	rubygem-omniauth-gitlab>=1.0.2:security/rubygem-omniauth-gitlab \
 	rubygem-omniauth-google-oauth2>=0.5.3:net/rubygem-omniauth-google-oauth2 \
 	rubygem-omniauth-kerberos>=0.3.0:net/rubygem-omniauth-kerberos \
@@ -72,11 +71,11 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-gpgme>=2.0.13:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap>=2.0.4:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-net-ldap>=0.16.0:net/rubygem-net-ldap \
-	rubygem-gollum-lib-gitlab>=4.2.0:www/rubygem-gollum-lib-gitlab \
-	rubygem-gollum-rugged_adapter>=0.4.4:www/rubygem-gollum-rugged_adapter \
+	rubygem-gitlab-gollum-lib>=4.2.0:www/rubygem-gitlab-gollum-lib \
+	rubygem-gitlab-gollum-rugged_adapter>=0.4.4:www/rubygem-gitlab-gollum-rugged_adapter \
 	rubygem-github-linguist53>=5.3.3:textproc/rubygem-github-linguist53 \
 	rubygem-grape>=1.0:devel/rubygem-grape \
-	rubygem-grape-entity060>=0.6.0:devel/rubygem-grape-entity060 \
+	rubygem-grape-entity>=0.7.1:devel/rubygem-grape-entity \
 	rubygem-rack-cors>=1.0.0:www/rubygem-rack-cors \
 	rubygem-hashie-forbidden_attributes>=0:devel/rubygem-hashie-forbidden_attributes \
 	rubygem-kaminari-rails4>=1.0:www/rubygem-kaminari-rails4 \
@@ -105,7 +104,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-wikicloth081>=0.8.1:textproc/rubygem-wikicloth081 \
 	rubygem-asciidoctor>=1.5.6:textproc/rubygem-asciidoctor \
 	rubygem-asciidoctor-plantuml>=0.0.8:textproc/rubygem-asciidoctor-plantuml \
-	rubygem-rouge2>=2.0:textproc/rubygem-rouge2 \
+	rubygem-rouge>=3.1:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.9:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=2.7.0:devel/rubygem-bootstrap_form \
 	rubygem-nokogiri>=1.8.2:textproc/rubygem-nokogiri \
@@ -124,6 +123,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
 	rubygem-re2>=1.1.1:devel/rubygem-re2 \
 	rubygem-version_sorter21>=2.1.0:textproc/rubygem-version_sorter21 \
+	rubygem-device_detector>=0:devel/rubygem-device_detector \
 	rubygem-redis-rails>=5.0.1:www/rubygem-redis-rails \
 	rubygem-redis3>=3.2:databases/rubygem-redis3 \
 	rubygem-connection_pool>=2.0:net/rubygem-connection_pool \
@@ -172,11 +172,10 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-batch-loader>=1.2.1:devel/rubygem-batch-loader \
 	rubygem-peek>=1.0.1:devel/rubygem-peek \
 	rubygem-peek-gc>=0.0.2:devel/rubygem-peek-gc \
-	rubygem-peek-performance_bar>=1.3.0:devel/rubygem-peek-performance_bar \
 	rubygem-peek-rblineprof>=0.2.0:devel/rubygem-peek-rblineprof \
 	rubygem-peek-redis>=1.2.0:devel/rubygem-peek-redis \
 	rubygem-peek-sidekiq>=1.0.3:devel/rubygem-peek-sidekiq \
-	rubygem-prometheus-client-mmap>=0.9.1:devel/rubygem-prometheus-client-mmap \
+	rubygem-prometheus-client-mmap>=0.9.3:devel/rubygem-prometheus-client-mmap \
 	rubygem-octokit>=4.8:net/rubygem-octokit \
 	rubygem-mail_room>=0.9.1:mail/rubygem-mail_room \
 	rubygem-email_reply_trimmer>=0.1:mail/rubygem-email_reply_trimmer \
@@ -191,7 +190,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-rbnacl4<=4.0.2:security/rubygem-rbnacl4 \
 	rubygem-rbnacl-libsodium>=0:security/rubygem-rbnacl-libsodium \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto096>=0.96.0:net/rubygem-gitaly-proto096 \
+	rubygem-gitaly-proto099>=0.99.0:net/rubygem-gitaly-proto099 \
 	rubygem-grpc>=1.11.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf351>=3.5.1:devel/rubygem-google-protobuf351 \
