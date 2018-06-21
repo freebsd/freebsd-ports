@@ -14,6 +14,10 @@ LICENSE_COMB=		multi
 LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.md
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
+BROKEN_aarch64=		fails to build: KeyError: 'android_arch'
+BROKEN_armv6=		fails to build: KeyError: 'android_arch'
+BROKEN_armv7=		fails to build: KeyError: 'android_arch'
+
 BUILD_DEPENDS=	yasm:devel/yasm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png

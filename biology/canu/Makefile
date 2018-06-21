@@ -11,6 +11,10 @@ COMMENT=	Single molecule sequence assembler
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
+BROKEN_aarch64=		fails to link: undefined reference to omp_set_num_threads
+BROKEN_armv6=		fails to install: mv: rename site_perl to /wrkdirs/usr/ports/biology/canu/work/canu-1.7/src/usr/local/FreeBSD-armv6/lib/perl5/site_perl: No such file or directory
+BROKEN_armv7=		fails to install: mv: rename site_perl to /wrkdirs/usr/ports/biology/canu/work/canu-1.7/src/usr/local/FreeBSD-armv7/lib/perl5/site_perl: No such file or directory
+
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 

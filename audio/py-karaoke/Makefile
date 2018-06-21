@@ -14,6 +14,8 @@ COMMENT=	Python karaoke application (Plays CD+G, MP3+G, OGG+G files)
 
 LICENSE=	LGPL21+
 
+BROKEN_aarch64=		fails to build: Signal 11
+
 BUILD_DEPENDS=	${PYGAME} \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libaa.so:graphics/aalib

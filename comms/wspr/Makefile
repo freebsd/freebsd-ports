@@ -12,6 +12,8 @@ COMMENT=	Weak signal for HF ham radio communication package
 
 LICENSE=	GPLv3
 
+BROKEN_aarch64=		fails to compile: gfortran6: unrecognized command line option '-m64'
+
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \

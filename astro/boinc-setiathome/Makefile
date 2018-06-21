@@ -14,7 +14,11 @@ COMMENT=	Setiathome Enhanced for BOINC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	does not compile: analyzeFuncs_altivec.cpp: CoreServices/CoreServices.h: No such file or directory
+BROKEN_aarch64=		fails to link: vector/analyzeFuncs_vector.cpp:(.data+0x38): undefined symbol 'vfp_GetPowerSpectrum(float (*) [2], float*, int)'
+BROKEN_armv6=		fails to compile: vector/analyzeFuncs_neon.S:178:17: invalid instruction, did you mean: neg?
+BROKEN_armv7=		fails to compile: vector/analyzeFuncs_neon.S:178:17: invalid instruction, did you mean: neg?
+BROKEN_powerpc64=	fails to compile: analyzeFuncs_altivec.cpp: CoreServices/CoreServices.h: No such file or directory
+
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 RUN_DEPENDS=	boinc_client:net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
