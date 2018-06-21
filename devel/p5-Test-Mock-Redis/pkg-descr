@@ -1,0 +1,6 @@
+Test::Mock::Redis can be used in place of Redis for running tests
+without needing a running redis instance. This module is designed
+to function as a drop in replacement for Redis.pm for testing
+purposes.
+
+WWW: https://metacpan.org/release/Test-Mock-Redis
