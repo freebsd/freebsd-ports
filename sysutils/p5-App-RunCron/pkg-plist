@@ -1,0 +1,17 @@
+bin/runcron
+%%SITE_PERL%%/App/RunCron.pm
+%%SITE_PERL%%/App/RunCron/Announcer/Code.pm
+%%SITE_PERL%%/App/RunCron/Announcer/Command.pm
+%%SITE_PERL%%/App/RunCron/CLI.pm
+%%SITE_PERL%%/App/RunCron/Reporter.pm
+%%SITE_PERL%%/App/RunCron/Reporter/Code.pm
+%%SITE_PERL%%/App/RunCron/Reporter/Command.pm
+%%SITE_PERL%%/App/RunCron/Reporter/File.pm
+%%SITE_PERL%%/App/RunCron/Reporter/Fluentd.pm
+%%SITE_PERL%%/App/RunCron/Reporter/None.pm
+%%SITE_PERL%%/App/RunCron/Reporter/Stdout.pm
+%%SITE_PERL%%/Test/App/RunCron.pm
+%%PERL5_MAN1%%/runcron.1.gz
+%%PERL5_MAN3%%/App::RunCron.3.gz
+%%PERL5_MAN3%%/App::RunCron::Reporter.3.gz
+%%PERL5_MAN3%%/Test::App::RunCron.3.gz
