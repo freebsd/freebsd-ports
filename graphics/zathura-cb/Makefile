@@ -22,6 +22,6 @@ USES=		compiler:c11 desktop-file-utils gmake pkgconfig libarchive ssl
 USE_GNOME=	glib20 gtk30
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/cb.so
+	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/cb.so
 
 .include <bsd.port.mk>
