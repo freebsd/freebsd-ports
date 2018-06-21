@@ -30,11 +30,11 @@ load_rc_config $name
 
 : ${hitch_enable="NO"}
 : ${hitch_config="%%PREFIX%%/etc/hitch.conf"}
-: ${hitch_user:=nobody}
-: ${hitch_group:=nobody}
+: ${hitch_huser:=nobody}
+: ${hitch_hgroup:=nobody}
 
 command="%%PREFIX%%/sbin/hitch"
-command_args="--daemon -u ${hitch_user} -g ${hitch_group} -s --config=${hitch_config}"
+command_args="--daemon -u ${hitch_huser} -g ${hitch_hgroup} -s --config=${hitch_config}"
 extra_commands=reload
 
 required_files=${hitch_config}
