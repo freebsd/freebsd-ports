@@ -1,22 +1,29 @@
---- CMakeLists.txt.orig	2017-07-30 05:09:21 UTC
+--- CMakeLists.txt.orig	2017-09-24 13:41:50 UTC
 +++ CMakeLists.txt
-@@ -646,10 +646,6 @@ int main()
- 
-     CHECK_SYMBOL_EXISTS(pthread_mutex_timedlock pthread.h HAVE_PTHREAD_MUTEX_TIMEDLOCK)
- 
--    CHECK_LIBRARY_EXISTS(rt clock_gettime "" HAVE_LIBRT)
--    IF(HAVE_LIBRT)
--        SET(EXTRA_LIBS rt ${EXTRA_LIBS})
--    ENDIF()
- ENDIF()
- 
- # Check for a 64-bit type
-@@ -1322,7 +1318,7 @@ IF(ALSOFT_INSTALL)
-             DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/AL
+@@ -1381,7 +1381,7 @@ endif()
+ # Install alsoft.conf configuration file
+ IF(ALSOFT_CONFIG)
+     INSTALL(FILES alsoftrc.sample
+-            DESTINATION ${CMAKE_INSTALL_DATADIR}/openal
++            DESTINATION ${CMAKE_INSTALL_DATADIR}/openal-soft
      )
-     INSTALL(FILES "${OpenAL_BINARY_DIR}/openal.pc"
--            DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
-+            DESTINATION "libdata/pkgconfig")
-     IF(TARGET soft_oal)
-         INSTALL(TARGETS soft_oal
-                 RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     MESSAGE(STATUS "Installing sample configuration")
+     MESSAGE(STATUS "")
+@@ -1391,7 +1391,7 @@ ENDIF()
+ IF(ALSOFT_HRTF_DEFS)
+     INSTALL(FILES hrtf/default-44100.mhr
+                   hrtf/default-48000.mhr
+-            DESTINATION ${CMAKE_INSTALL_DATADIR}/openal/hrtf
++            DESTINATION ${CMAKE_INSTALL_DATADIR}/openal-soft/hrtf
+     )
+     MESSAGE(STATUS "Installing HRTF definitions")
+     MESSAGE(STATUS "")
+@@ -1405,7 +1405,7 @@ IF(ALSOFT_AMBDEC_PRESETS)
+                   presets/rectangle.ambdec
+                   presets/square.ambdec
+                   presets/presets.txt
+-            DESTINATION ${CMAKE_INSTALL_DATADIR}/openal/presets
++            DESTINATION ${CMAKE_INSTALL_DATADIR}/openal-soft/presets
+     )
+     MESSAGE(STATUS "Installing AmbDec presets")
+     MESSAGE(STATUS "")
