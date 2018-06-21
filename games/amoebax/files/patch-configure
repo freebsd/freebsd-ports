@@ -1,0 +1,16 @@
+--- configure.orig	2008-08-02 10:10:49 UTC
++++ configure
+@@ -2329,12 +2329,7 @@ else
+   fi
+ fi
+ for ac_declaration in \
+-   '' \
+-   'extern "C" void std::exit (int) throw (); using std::exit;' \
+-   'extern "C" void std::exit (int); using std::exit;' \
+-   'extern "C" void exit (int) throw ();' \
+-   'extern "C" void exit (int);' \
+-   'void exit (int);'
++   ''
+ do
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
