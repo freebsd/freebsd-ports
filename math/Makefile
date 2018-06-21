@@ -166,6 +166,7 @@
     SUBDIR += crlibm
     SUBDIR += cryptominisat
     SUBDIR += cvc3
+    SUBDIR += cvc4
     SUBDIR += diehard
     SUBDIR += dieharder
     SUBDIR += djbfft
