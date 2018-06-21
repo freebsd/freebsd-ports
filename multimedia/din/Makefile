@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	din
-PORTVERSION=	30
+PORTVERSION=	35
 CATEGORIES=	multimedia
 MASTER_SITES=	https://archive.org/download/dinisnoise_source_code/
 
@@ -22,6 +22,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		autoreconf tcl:86+
 
 GNU_CONFIGURE=	yes
+
+INSTALLS_ICONS=	yes
 
 OPTIONS_SINGLE=		BACKEND
 OPTIONS_SINGLE_BACKEND=	JACK ALSA

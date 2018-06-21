@@ -1,4 +1,5 @@
 bin/din
+share/applications/din.desktop
 %%DATADIR%%/factory/2600
 %%DATADIR%%/factory/2600.help.tcl
 %%DATADIR%%/factory/2600.patch.tcl
@@ -9,7 +10,9 @@ bin/din
 %%DATADIR%%/factory/attack.ed
 %%DATADIR%%/factory/attack.lib
 %%DATADIR%%/factory/audio_prefs
+%%DATADIR%%/factory/binaural-drone.help.tcl
 %%DATADIR%%/factory/binaural-drones.hlp
+%%DATADIR%%/factory/binaural-drones.tcl
 %%DATADIR%%/factory/binaural_drones
 %%DATADIR%%/factory/blues
 %%DATADIR%%/factory/blues.drone
@@ -432,7 +435,6 @@ bin/din
 %%DATADIR%%/factory/sine_levels
 %%DATADIR%%/factory/sine_mixer_sin.crv
 %%DATADIR%%/factory/sine_mixer_sin.ed
-%%DATADIR%%/factory/sounder.tcl
 %%DATADIR%%/factory/sounding-board.osc
 %%DATADIR%%/factory/spiraler.scr
 %%DATADIR%%/factory/spiraler_cos.crv
@@ -464,3 +466,5 @@ bin/din
 %%DATADIR%%/factory/window
 %%DATADIR%%/factory/word.crv
 %%DATADIR%%/factory/word_space.crv
+share/icons/hicolor/scalable/apps/din.svg
+share/pixmaps/din.png
