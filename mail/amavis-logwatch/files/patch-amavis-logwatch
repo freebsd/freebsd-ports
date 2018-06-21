@@ -1,0 +1,22 @@
+--- amavis-logwatch.orig	2018-05-01 11:57:52 UTC
++++ amavis-logwatch
+@@ -1333,6 +1333,10 @@ sub print_summary_report (\@) {
+                   sprintf "$fmt  %-42s %6.2f%%\n", $total, $desc,
+                      $$divisor == $Totals{$keyname} ? 100.00 : $Totals{$keyname} * 100 / $$divisor;
+             }
++            elsif ($extra eq '') {
++               push @{$lines[$cur_level]}, 
++                  sprintf "$fmt  %-23s\n", $total, $desc;
++            }
+             else {
+                push @{$lines[$cur_level]}, 
+                   sprintf "$fmt  %-23s $extra\n", $total, $desc, commify ($Totals{$keyname});
+@@ -2283,7 +2287,7 @@ while (<>) {
+       #XXX elsif (($action, $key, $ip, $from, $to) = ( $p1 =~ /^(?:Virus found - quarantined|(?:(Passed|Blocked) )?INFECTED) \(([^\)]+)\),[A-Z .]*(?: \[($re_IP)\])?(?: \[$re_IP\])* [<(]([^>)]*)[>)] -> [(<]([^(<]+)[(>]/o ))
+ 
+       # the first IP is the envelope sender.
+-      if ($p1 !~ /^(CLEAN|SPAM(?:MY)?|INFECTED \(.*?\)|BANNED \(.*?\)|BAD-HEADER(?:-\d)?|UNCHECKED|MTA-BLOCKED|OVERSIZED|OTHER|TEMPFAIL)(?: {[^}]+})?, ([^[]+ )?(?:([^<]+) )?[<(](.*?)[>)] -> ([(<].*?[)>]), (?:.*Hits: ([-+.\d]+))(?:.* size: (\d+))?(?:.* autolearn=(\w+))?/) {
++      if ($p1 !~ /^(CLEAN|SPAM(?:MY)?|INFECTED \(.*?\)|BANNED \(.*?\)|BAD-HEADER(?:-\d)?|UNCHECKED|MTA-BLOCKED|OVERSIZED|OTHER|TEMPFAIL)(?: \{[^}]+})?, ([^[]+ )?(?:([^<]+) )?[<(](.*?)[>)] -> ([(<].*?[)>]), (?:.*Hits: ([-+.\d]+))(?:.* size: (\d+))?(?:.* autolearn=(\w+))?/) {
+          inc_unmatched('passblock');
+          next;
+       }
