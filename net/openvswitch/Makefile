@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvswitch
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.2
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
