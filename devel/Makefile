@@ -1572,6 +1572,7 @@
     SUBDIR += libsimdpp
     SUBDIR += libslang2
     SUBDIR += libsmdev
+    SUBDIR += libsml
     SUBDIR += libsmpp34
     SUBDIR += libsmraw
     SUBDIR += libsoup
