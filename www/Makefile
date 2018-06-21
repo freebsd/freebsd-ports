@@ -2013,11 +2013,13 @@
     SUBDIR += rubygem-geminabox
     SUBDIR += rubygem-gitlab-flowdock-git-hook
     SUBDIR += rubygem-gitlab-gollum-lib
+    SUBDIR += rubygem-gitlab-gollum-rugged_adapter
     SUBDIR += rubygem-gitlab-grack
     SUBDIR += rubygem-gitlab-turbolinks-classic
     SUBDIR += rubygem-goldfinger
     SUBDIR += rubygem-gollum
     SUBDIR += rubygem-gollum-grit_adapter
+    SUBDIR += rubygem-gollum-grit_adapter10
     SUBDIR += rubygem-gollum-lib
     SUBDIR += rubygem-gollum-lib-gitlab
     SUBDIR += rubygem-gollum-rugged_adapter
