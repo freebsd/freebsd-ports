@@ -10,6 +10,9 @@ CATEGORIES=	x11-toolkits
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Miscellaneous Utilities libraries
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	lib
 USE_XORG=	xproto:both x11 xt xext
 
