@@ -719,6 +719,7 @@
     SUBDIR += py-seaborn
     SUBDIR += py-secp256k1
     SUBDIR += py-simhash
+    SUBDIR += py-spectral
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-sym
