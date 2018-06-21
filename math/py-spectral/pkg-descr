@@ -1,0 +1,12 @@
+Spectral Python (SPy) is a pure Python module for processing hyperspectral
+image data. It has functions for reading, displaying, manipulating, and
+classifying hyperspectral imagery. It can be used interactively from the Python
+command prompt or via Python scripts. SPy is free, open source software
+distributed under the GNU General Public License. To see some examples of how
+SPy can be used, you may want to jump straight to the documentation sections
+on Displaying Data or Spectral Algorithms. A categorized listing of the main
+classes and functions are in the Class/Function Glossary. You can download SPy
+from GitHub or the Python Package Index (PyPI). See the Installing SPy section
+section of the documentation for details.
+
+WWW: http://www.spectralpython.net/
