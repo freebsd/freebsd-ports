@@ -1,6 +1,6 @@
---- readme.html.orig	2015-09-25 12:54:00 UTC
-+++ readme.html
-@@ -284,7 +284,7 @@ update request, i.e., both ip address ty
+--- readme.html.orig	2016-10-11 02:42:06.000000000 -0700
++++ readme.html	2018-01-08 07:34:41.772830000 -0800
+@@ -306,7 +306,7 @@
  </p>
  <p style="margin-left: 20px;">'-x [-n &#60;service name&#62;]': remove service<br>
  </p>
@@ -9,7 +9,7 @@
  used if inadyn-mt is called without any command line options. This allows inadyn-mt to be called without any arguments. The format is as expected for a **NIX config&nbsp; file. See below for details.<br>
  </p>
  <p style="margin-left: 20px;">'--ip_server_name &#60;name&#62;[:port] &#60;url&#62;': The client
-@@ -368,7 +368,7 @@ DEFAULT value is intended for default se
+@@ -400,7 +400,7 @@
  '--retry_pending': retry ip update even after network comm retries exhausted,  default on.<br><br>
  '--retry_pending_interval &#60;#&#62;': network comm seconds update retry interval, after retries exhausted,  5 to 3600,<br> &nbsp;&nbsp;&nbsp;&nbsp;default 300.<br><br>
  '--lang_file &#60;path/file&#62;':  [language file path, and file name]. defaults to either ../inadyn-mt/lang/en.lng,<br>
@@ -18,10 +18,10 @@
  '--online_check_url &#60;srv_name[:port] url&#62;': server name, optional port, and url to reach to confirm online status.<br><br>
  '--status_interval &#60;#&#62;': seconds [30..864000] interval at which to check online status, default 600.<br><br>
  '--alert_retries &#60;#&#62;':  network retries before audible network status alerts. [0..100], default 0.<br><br>
-@@ -388,8 +388,8 @@ DEFAULT value is intended for default se
- &nbsp;&nbsp;&nbsp;&nbsp;representing custom DDNS server non-fatal update failure return values, e.g., "dnserr,911,unknown error".<br><br>
- '--svr_ip_param &#60;custom DDNS server ip name parameter&#62;':  Optional for custom DDNS updates.  DDNS url parameter for ip address,<br> &nbsp;&nbsp;&nbsp;&nbsp;e.g., myip.<br><br>
+@@ -422,8 +422,8 @@
  '--svr_ip_in_rsp': Optional for custom DDNS updates.  Flag that custom DDNS server returns your ip address on update success.<br> &nbsp;&nbsp;&nbsp;&nbsp;Defaults to false.<br><br>
+ '--svr_auto_dual': Flag that server defaults to dual list (coupled) alias ip type.  Defaults to false.<br><br>
+ '--svr_auto_detect': Flag server auto detects ip.  Defaults to false.<br><br>
 -'--svr_add_cfg &#60;full path, file name&#62;': Additional servers file.  Default search for servers_additional.cfg in ./extra, /etc, /etc/inadyn-mt,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 -/etc/inadyn-mt/extra.  Contains additional preconfigured DDNS servers to be used as --dyndns_system option parameter in same<br>&nbsp;&nbsp;&nbsp;&nbsp;
 +'--svr_add_cfg &#60;full path, file name&#62;': Additional servers file.  Default search for servers_additional.cfg in ./extra, %%PREFIX%%/etc, %%PREFIX%%/etc/inadyn-mt,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -29,7 +29,7 @@
  fashion as servers inadyn-mt supports natively.  Should appear before any dyndns_system option in inadyn-mt.conf or command<br>&nbsp;&nbsp;&nbsp;&nbsp;
  line if not using inadyn-mt.conf.<br><br>
  '--if &#60;network interface name&#62;':  Name of network interface to use for ip server, and DDNS server comm.  Defaults to<br> &nbsp;&nbsp;&nbsp;&nbsp;system configured default.<br><br>
-@@ -412,7 +412,7 @@ There are two cache files: inadyn_time.c
+@@ -449,7 +449,7 @@
    
    3. Update freedns.afraid.org, every minute, in daemon mode, with configuration read from file.<br><br>
    
@@ -38,7 +38,7 @@
  
    Content of config file:<br><br>
    
-@@ -421,7 +421,7 @@ There are two cache files: inadyn_time.c
+@@ -458,7 +458,7 @@
    --log_file /var/log/inadyn.log<br>
    --change_persona 10012 #to change to another user id after init.<br><br>
  
@@ -47,7 +47,7 @@
  
    4. Freedns update in console<br><br>
  
-@@ -434,7 +434,7 @@ inadyn-mt can read the very same options
+@@ -471,7 +471,7 @@
  command line from a configuration file. This feature allows the user to
  write the options only once, and avoids frequent retyping.<br><br>
  
@@ -56,7 +56,7 @@
  The location of the config file can be given to inadyn-mt via --input_file option<br><br>
  
  <i>The format</i> :<br><br>
-@@ -871,7 +871,7 @@ Ver.&nbsp; inadyn-mt 2.18.28 - June 2010
+@@ -971,7 +971,7 @@
  Ver.&nbsp; inadyn-mt 2.18.26 - June 2010<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Changes:<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - inadyn man files updated to inadyn-mt<br>
@@ -65,7 +65,7 @@
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - added debian dpkg-buildpackage directory, et al<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - moved *nix meta files to /usr/share<br><br>
  
-@@ -881,7 +881,7 @@ Ver.&nbsp; inadyn-mt 2.18.24 - May 2010<
+@@ -981,7 +981,7 @@
  
  Ver.&nbsp; inadyn-mt 2.18.22 - May 2010<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Changes:<br>
@@ -74,7 +74,7 @@
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - too many params compiler warning fixed<br><br>
  
  Ver.&nbsp; inadyn-mt 2.18.20 - May 2010<br>
-@@ -1178,8 +1178,8 @@ Ver.&nbsp; inadyn-mt 2.12.02 - May 2008<
+@@ -1278,8 +1278,8 @@
  inadyn-mt<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - updated inadyn-mt man files' original inadyn homepage
  to http://www.inatech.eu/inadyn/<br>
