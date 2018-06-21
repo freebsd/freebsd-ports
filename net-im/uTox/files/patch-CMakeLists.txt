@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2018-06-21 08:33:29 UTC
++++ CMakeLists.txt
+@@ -184,8 +184,7 @@ add_cflag("-fPIC")
+ # Fix GNU stack
+ if(CMAKE_C_COMPILER_ID MATCHES "GNU")
+     # Have ld strip the symbols from Release and MinSizeRel build types.
+-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os")
+-    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Os -s")
++    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -s")
+ 
+     if(LINUX)
+         # enable Link Time Optimization on gcc (linux only currently)
+@@ -220,8 +219,7 @@ elseif(CMAKE_C_COMPILER_ID MATCHES "Clang")
+     endif()
+ 
+     # Have ld strip the symbols from Release and MinSizeRel build types. (-Oz is clang specific)
+-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os")
+-    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Oz -s")
++    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -s")
+ 
+     if(NOT ENABLE_ASAN)
+         if(NOT APPLE)
