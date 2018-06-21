@@ -25,3 +25,63 @@ index e382fbe001422..2b0e707c443c4 100644
                  transform->transform_module_fn(transform,src,dest,len);
                  dest = src;
                  src = new_src;
+commit 223a7e0a67fd
+Author: Nicolas Silva <nsilva@mozilla.com>
+Date:   Tue Jun 19 15:32:29 2018 +0200
+
+    Bug 1464039 - Only reject qcms transform with invalid grid size if the transform function uses the grid size. r=Bas, a=jcristau
+    
+    --HG--
+    extra : source : 8dde5c1d895e4c063d5bda39029c9a01a178ebba
+    extra : intermediate-source : a64fb8de655dc28efd0b7de94b6f0008b08ae0ae
+---
+ gfx/qcms/chain.c           | 4 +++-
+ gfx/thebes/gfxPlatform.cpp | 6 +++++-
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git gfx/qcms/chain.c gfx/qcms/chain.c
+index 2b0e707c443c4..dbae183789e79 100644
+--- gfx/qcms/chain.c
++++ gfx/qcms/chain.c
+@@ -972,7 +972,9 @@ static float* qcms_modular_transform_data(struct qcms_modular_transform *transfo
+ 			assert(0 && "Unsupported transform module");
+ 			return NULL;
+ 		}
+-		if (transform->grid_size <= 0) {
++		if (transform->grid_size <= 0 &&
++			(transform_fn == qcms_transform_module_clut ||
++			 transform_fn == qcms_transform_module_clut_only)) {
+ 			assert(0 && "Invalid transform");
+ 			return NULL;
+ 		}
+diff --git gfx/thebes/gfxPlatform.cpp gfx/thebes/gfxPlatform.cpp
+index d7c966ea1bcc2..278a609817d9e 100644
+--- gfx/thebes/gfxPlatform.cpp
++++ gfx/thebes/gfxPlatform.cpp
+@@ -160,6 +160,7 @@ static Mutex* gGfxPlatformPrefsLock = nullptr;
+ static qcms_profile *gCMSOutputProfile = nullptr;
+ static qcms_profile *gCMSsRGBProfile = nullptr;
+ 
++static bool gCMSRGBTransformFailed = false;
+ static qcms_transform *gCMSRGBTransform = nullptr;
+ static qcms_transform *gCMSInverseRGBTransform = nullptr;
+ static qcms_transform *gCMSRGBATransform = nullptr;
+@@ -2068,7 +2069,7 @@ gfxPlatform::GetCMSsRGBProfile()
+ qcms_transform *
+ gfxPlatform::GetCMSRGBTransform()
+ {
+-    if (!gCMSRGBTransform) {
++    if (!gCMSRGBTransform && !gCMSRGBTransformFailed) {
+         qcms_profile *inProfile, *outProfile;
+         outProfile = GetCMSOutputProfile();
+         inProfile = GetCMSsRGBProfile();
+@@ -2079,6 +2080,9 @@ gfxPlatform::GetCMSRGBTransform()
+         gCMSRGBTransform = qcms_transform_create(inProfile, QCMS_DATA_RGB_8,
+                                               outProfile, QCMS_DATA_RGB_8,
+                                              QCMS_INTENT_PERCEPTUAL);
++        if (!gCMSRGBTransform) {
++            gCMSRGBTransformFailed = true;
++        }
+     }
+ 
+     return gCMSRGBTransform;
