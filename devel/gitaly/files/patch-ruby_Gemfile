@@ -1,18 +1,15 @@
---- ruby/Gemfile.orig	2018-04-12 00:44:37 UTC
+--- ruby/Gemfile.orig	2018-06-20 08:20:28 UTC
 +++ ruby/Gemfile
-@@ -8,17 +8,13 @@ gem 'activesupport', '~> 5.0.2'
+@@ -8,7 +8,7 @@ gem 'activesupport', '~> 5.0.2'
  gem 'rdoc', '~> 4.2'
- gem 'gollum-lib', '~> 4.2', require: false
- gem 'gollum-rugged_adapter', '~> 0.4.4', require: false
+ gem 'gitlab-gollum-lib', '~> 4.2', require: false
+ gem 'gitlab-gollum-rugged_adapter', '~> 0.4.4', require: false
 -gem 'grpc', '~> 1.10.0'
 +gem 'grpc', '~> 1.11.0'
  gem 'sentry-raven', '~> 2.7.2', require: false
  
  # Detects the open source license the repository includes
- # This version needs to be in sync with GitLab CE/EE
--gem 'licensee', '~> 8.7.0'
-+gem 'licensee', '~> 8.9'
- 
+@@ -18,7 +18,3 @@ gem 'licensee', '~> 8.9.0'
  # Locked until https://github.com/google/protobuf/issues/4210 is closed
  gem 'google-protobuf', '= 3.5.1'
  

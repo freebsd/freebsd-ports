@@ -9,6 +9,7 @@
 %%DATADIR%%/ruby/lib/gitaly_server/conflicts_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/diff_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/exception_sanitizer_interceptor.rb
+%%DATADIR%%/ruby/lib/gitaly_server/health_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/operations_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/ref_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/remote_service.rb
@@ -20,6 +21,8 @@
 %%DATADIR%%/ruby/lib/gitlab/config.rb
 %%DATADIR%%/ruby/lib/gitlab/git.rb
 %%DATADIR%%/ruby/lib/gitlab/git/gitaly_remote_repository.rb
+%%DATADIR%%/ruby/lib/gitlab/git/gitlab_projects.rb
+%%DATADIR%%/ruby/lib/gitlab/git/repository.rb
 %%DATADIR%%/ruby/lib/gitlab/git_logger.rb
 %%DATADIR%%/ruby/lib/gitlab/gitaly_client.rb
 %%DATADIR%%/ruby/lib/gitlab/gollum.rb
@@ -47,6 +50,7 @@
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/branch.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/commit.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/commit_stats.rb
+%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/committer_with_hooks.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/compare.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/conflict/file.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/conflict/parser.rb
@@ -54,18 +58,18 @@
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/conflict/resolver.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/diff.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/diff_collection.rb
-%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/env.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/gitlab_projects.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/gitmodules_parser.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/hook.rb
+%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/hook_env.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/hooks_service.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/index.rb
-%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/info_attributes.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/lfs_changes.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/lfs_pointer_file.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/operation_service.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/path_helper.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/popen.rb
+%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/raw_diff_change.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/ref.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/remote_mirror.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/remote_repository.rb
@@ -80,6 +84,7 @@
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/storage/forked_storage_check.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/storage/health.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/storage/null_circuit_breaker.rb
+%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/support/format-git-cat-file-input
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/tag.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/tree.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/user.rb
