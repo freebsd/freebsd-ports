@@ -1,0 +1,11 @@
+News Feed extension for Sphinx.
+
+Features:
+
+    Makes feed entries from Sphinx documents.
+    Generates a list of entries with teasers.
+    Saves the feed to a file in RSS format.
+    Supports comments via Disqus.
+
+
+WWW: https://pypi.org/project/sphinxcontrib-newsfeed/
