@@ -1,0 +1,22 @@
+--- postfix-logwatch.orig	2018-05-01 12:00:39 UTC
++++ postfix-logwatch
+@@ -1377,6 +1377,10 @@ sub print_summary_report (\@) {
+                   sprintf "$fmt  %-42s %6.2f%%\n", $total, $desc,
+                      $$divisor == $Totals{$keyname} ? 100.00 : $Totals{$keyname} * 100 / $$divisor;
+             }
++            elsif ($extra eq '') {
++               push @{$lines[$cur_level]}, 
++                  sprintf "$fmt  %-23s\n", $total, $desc;
++            }
+             else {
+                push @{$lines[$cur_level]}, 
+                   sprintf "$fmt  %-23s $extra\n", $total, $desc, commify ($Totals{$keyname});
+@@ -1847,7 +1851,7 @@ sub postfix_policy_spf($) {
+         # KeyboardInterrupt 
+         $line =~ /^Read line: "/ or
+         $line =~ /^Found the end of entry$/ or
+-        $line =~ /^Config: {/ or
++        $line =~ /^Config: \{/ or
+         $line =~ /^spfcheck: pyspf result/ or
+         $line =~ /^Starting$/ or
+         $line =~ /^Normal exit$/ or

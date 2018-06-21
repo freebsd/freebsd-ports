@@ -3,6 +3,7 @@
 
 PORTNAME=	postfix-logwatch
 PORTVERSION=	1.40.03
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 
