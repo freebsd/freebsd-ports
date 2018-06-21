@@ -13,6 +13,10 @@ COMMENT=	Software for describing astronomical images
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
+BROKEN_armv6=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
+BROKEN_armv7=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
+
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libcfitsio.so:astro/cfitsio \
@@ -27,7 +31,7 @@ ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}/${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	pkg-message
-LDFLAGS=	-lz
+LDFLAGS+=	-lz
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,python (setup|-c),${PYTHON_CMD} \1,' \

@@ -11,6 +11,10 @@ COMMENT=	Realtime software synthesizer
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		fails to compile: argument unused during compilation: '-msse'
+BROKEN_armv6=		fails to compile: unknown argument: '-mvectorize-with-neon-quad'
+BROKEN_armv7=		fails to compile: unknown argument: '-mvectorize-with-neon-quad'
+
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libmxml.so:textproc/mxml \
 		liblo.so:audio/liblo

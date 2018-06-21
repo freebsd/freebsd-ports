@@ -10,6 +10,10 @@ COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
 
 LICENSE=	MIT
 
+BROKEN_aarch64=		fails to compile: invalid conversion between vector type and integer type
+BROKEN_armv6=		fails to compile: invalid conversion between vector type and integer type
+BROKEN_armv7=		fails to compile: invalid conversion between vector type and integer type
+
 # Submodules use older versions than the ports, so we cannot safely unbundle
 # No shared libs are built by the submodules so there will be no conflicts
 USES=		gmake tar:xz

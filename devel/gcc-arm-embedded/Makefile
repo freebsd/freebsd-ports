@@ -13,7 +13,17 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN_aarch64=		fails to build
 BROKEN_powerpc64=	does not build: __adjust.c: internal compiler error: Segmentation fault
+NOT_FOR_ARCHS=		arm armeb armv6 armv7 \
+			mips mips64 mips64el mipsel mipsn32
+NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
+
+LIB_DEPENDS=		libexpat.so:textproc/expat2 \
+			libgmp.so:math/gmp \
+			libmpfr.so:math/mpfr \
+			libmpc.so:math/mpc \
+			libisl.so:devel/isl
 
 OPTIONS_DEFINE=	PYGDB EXAMPLES HTML PDF DOCS SYMLINK
 OPTIONS_DEFAULT=PYGDB SYMLINK
@@ -27,16 +37,6 @@ PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
 PYGDB_USES=		python:2.7
 
 OPTIONS_SUB=		yes
-
-NOT_FOR_ARCHS=		arm armeb armv6 armv7 \
-			mips mips64 mips64el mipsel mipsn32
-NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
-
-LIB_DEPENDS=		libexpat.so:textproc/expat2 \
-			libgmp.so:math/gmp \
-			libmpfr.so:math/mpfr \
-			libmpc.so:math/mpc \
-			libisl.so:devel/isl
 
 USES=			bison compiler cpe gmake gettext-runtime iconv makeinfo tar:bzip2
 

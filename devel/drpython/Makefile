@@ -14,11 +14,13 @@ COMMENT=	Highly customizable cross-platform ide to aid programming in Python
 
 LICENSE=	GPLv2
 
-# fails to build in presence if installed self
-CONFLICTS_BUILD=	${PORTNAME}${PYTHON_PKGNAMESUFFIX}-[0-9]*
+BROKEN_aarch64=		fails to build: Signal 11
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
+
+# fails to build in presence if installed self
+CONFLICTS_BUILD=	${PORTNAME}${PYTHON_PKGNAMESUFFIX}-[0-9]*
 
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
