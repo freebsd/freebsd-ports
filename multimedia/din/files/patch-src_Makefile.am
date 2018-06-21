@@ -1,10 +1,10 @@
---- src/Makefile.am.orig	2017-12-12 10:40:43 UTC
+--- src/Makefile.am.orig	2018-05-14 07:19:48 UTC
 +++ src/Makefile.am
 @@ -1,5 +1,5 @@
--AM_CXXFLAGS = -I ../include -I /usr/include/tcl -Wall -D_GNU_SOURCE=1 -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -fpermissive
+-AM_CXXFLAGS = -I ../include -I /usr/include/tcl -Wall -DGPL2=1 -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -DPREFIX=\"@prefix@\"
 -LIBS +=  -ltcl -lSDL -lGL -lpthread -lasound -ljack
-+AM_CXXFLAGS = -I ../include -Wall -D_GNU_SOURCE=1 -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -fpermissive
++AM_CXXFLAGS = -I ../include -Wall -DGPL2=1 -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -DPREFIX=\"@prefix@\"
 +LIBS +=  -lSDL -lGL -lpthread -lasound -ljack
  
  AM_CFLAGS = -I ../include
- 
+ bin_PROGRAMS = din
