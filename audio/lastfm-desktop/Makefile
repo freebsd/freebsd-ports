@@ -3,7 +3,7 @@
 
 PORTNAME=	lastfm-desktop
 PORTVERSION=	2.1.36
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -39,7 +39,7 @@ OPTIONS_DEFAULT=	VLC
 GSTREAMER_DESC=		Multimedia via Phonon-GStreamer
 GSTREAMER_USE=		QT4=phonon-gst_run
 VLC_DESC=		Multimedia via Phonon-VLC
-VLC_RUN_DEPENDS=	phonon-vlc>=0.6.1:multimedia/phonon-vlc
+VLC_RUN_DEPENDS=	phonon-vlc-qt4>=0.6.1:multimedia/phonon-vlc@qt4
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

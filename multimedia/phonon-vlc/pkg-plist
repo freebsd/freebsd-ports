@@ -1,3 +1,0 @@
-lib/kde4/plugins/phonon_backend/phonon_vlc.so
-share/kde4/services/phononbackends/vlc.desktop
-%%QT_PLUGINDIR%%/phonon_backend/libphonon_vlc.so
