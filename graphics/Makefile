@@ -1004,6 +1004,7 @@
     SUBDIR += rubygem-gd2
     SUBDIR += rubygem-gdk_pixbuf2
     SUBDIR += rubygem-gemojione
+    SUBDIR += rubygem-gemojione32
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-gitlab_emoji
     SUBDIR += rubygem-goocanvas
