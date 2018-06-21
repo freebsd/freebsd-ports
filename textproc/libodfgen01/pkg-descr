@@ -8,4 +8,4 @@ libodfgen is a library for generating documents in Open Document Format
 As these APIs are used by multiple libraries, libodfgen can be used to
 generate ODF from many sources.
 
-WWW: http://libwpd.sourceforge.net/
+WWW: https://sourceforge.net/p/libwpd/wiki/libodfgen
