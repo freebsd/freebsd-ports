@@ -3,7 +3,7 @@
 
 PORTNAME=	minitunes
 PORTVERSION=	0.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://flavio.tordini.org/files/${PORTNAME}/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	qtscriptgenerator
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	syncer@gmail.com

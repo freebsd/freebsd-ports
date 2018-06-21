@@ -1,7 +1,0 @@
-======================================================================
-
-Please, consider installing backends for Phonon:
-- multimedia/qt5-phonon4-gstreamer	GStreamer backend
-- multimedia/qt5-phonon4-vlc		VLC backend
-
-======================================================================

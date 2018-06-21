@@ -360,10 +360,6 @@
     SUBDIR += qt4-mobility
     SUBDIR += qt4-multimedia
     SUBDIR += qt5-multimedia
-    SUBDIR += qt5-phonon4
-    SUBDIR += qt5-phonon4-designerplugin
-    SUBDIR += qt5-phonon4-gstreamer
-    SUBDIR += qt5-phonon4-vlc
     SUBDIR += quark
     SUBDIR += quodlibet
     SUBDIR += quvi

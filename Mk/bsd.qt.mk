@@ -478,7 +478,7 @@ pixeltool_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/pixeltool
 phonon_PORT=		multimedia/phonon
 phonon_LIB=		libphonon.so
 
-phonon4_PORT=		multimedia/${_QT_RELNAME}-phonon4
+phonon4_PORT=		multimedia/phonon@${_QT_RELNAME}
 phonon4_LIB=		libphonon4${_QT_RELNAME}.so
 
 phonon-gst_PORT=	multimedia/phonon-gstreamer
