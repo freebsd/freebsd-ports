@@ -1,3 +1,5 @@
-TIMESTAMP = 1528565114
-SHA256 (tomszilagyi-ir.lv2-1.3.3-2-gb94bc67_GH0.tar.gz) = c6a5c907e74ad649af5a845ecf88bc9af285975ed8a712ec85dbd8187c6cbdd7
-SIZE (tomszilagyi-ir.lv2-1.3.3-2-gb94bc67_GH0.tar.gz) = 126424
+TIMESTAMP = 1529568477
+SHA256 (tomszilagyi-ir.lv2-1.3.3-8-g0a36907_GH0.tar.gz) = 707ab1577c8da41ccf0a92880552adec80e0d8b64daeff98eb49755e658921b5
+SIZE (tomszilagyi-ir.lv2-1.3.3-8-g0a36907_GH0.tar.gz) = 126563
+SHA256 (3c892744fce01661293a5e466d341d4f0e852f22.patch) = 5653babe7cca78f381d5969a268c0b3272b7a7e73cef5e66d47bb014c304fe6a
+SIZE (3c892744fce01661293a5e466d341d4f0e852f22.patch) = 2468
