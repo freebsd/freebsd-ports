@@ -1,25 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-gollum-lib
-PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTVERSION=	4.2.7.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Simple, Git-powered wiki with a sweet API and local frontend
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-github-markup>=0.7.5:textproc/rubygem-github-markup \
-		rubygem-gitlab-grit>=2.6.1:textproc/rubygem-gitlab-grit \
-		rubygem-nokogiri>=1.5.9:textproc/rubygem-nokogiri \
-		rubygem-sanitize>=2.0.3:textproc/rubygem-sanitize \
-		rubygem-stringex>=1.5.1:devel/rubygem-stringex
+RUN_DEPENDS=	rubygem-gemojione32>=3.2:graphics/rubygem-gemojione32 \
+		rubygem-gitlab-markup>=1.6:textproc/rubygem-gitlab-markup \
+		rubygem-gollum-grit_adapter10>=1.0:www/rubygem-gollum-grit_adapter10 \
+		rubygem-nokogiri>=1.6.1:textproc/rubygem-nokogiri \
+		rubygem-rouge>=3.1:textproc/rubygem-rouge \
+		rubygem-sanitize>=4.6.4:textproc/rubygem-sanitize \
+		rubygem-stringex>=2.6:devel/rubygem-stringex
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
