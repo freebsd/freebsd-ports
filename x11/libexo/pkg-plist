@@ -160,6 +160,7 @@ share/xfce4/helpers/nautilus.desktop
 share/xfce4/helpers/netscape-navigator.desktop
 share/xfce4/helpers/nxterm.desktop
 share/xfce4/helpers/opera-browser.desktop
+share/xfce4/helpers/pcmanfm-qt.desktop
 share/xfce4/helpers/pcmanfm.desktop
 share/xfce4/helpers/qterminal.desktop
 share/xfce4/helpers/qtfm.desktop
