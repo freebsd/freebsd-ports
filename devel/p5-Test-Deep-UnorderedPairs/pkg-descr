@@ -1,0 +1,7 @@
+Plugin for Test::Deep to compare unordered lists of tuples.
+
+This module provides the sub unordered_pairs (and tuples, samehash,
+as synonyms) to indicate the data being tested is a list of pairs
+that should be tested where the order of the pairs is insignificant.
+
+WWW: https://metacpan.org/release/Test-Deep-UnorderedPairs
