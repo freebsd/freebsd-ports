@@ -1,4 +1,4 @@
-# Created by: Jov <amutu@amutu.com>
+# Created by: Jov <ports@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	orafce
@@ -6,7 +6,7 @@ PORTVERSION=	3.4.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oracle's compatibility functions and packages for PostgreSQL
 
 LICENSE=	PostgreSQL

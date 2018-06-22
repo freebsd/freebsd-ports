@@ -1,4 +1,4 @@
-# Created by: Jov <amutu@amutu.com>
+# Created by: Jov <ports@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mac_nonet
@@ -6,7 +6,7 @@ DISTVERSION=	g20150821
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-kmod
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MAC policy to disable access to networking for certain group
 
 LICENSE=	BSD2CLAUSE

@@ -6,7 +6,7 @@ PORTVERSION=	20170712
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LR(1) parser generator for OCaml
 
 LICENSE=	GPLv2

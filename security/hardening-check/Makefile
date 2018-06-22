@@ -1,4 +1,4 @@
-# Created by: Jov <amutu@amutu.com>
+# Created by: Jov <ports@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hardening-check
@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	DEBIAN/pool/main/h/hardening-wrapper
 DISTNAME=	hardening-wrapper_${PORTVERSION}
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check binaries for security hardening features
 
 LICENSE=	GPLv2+

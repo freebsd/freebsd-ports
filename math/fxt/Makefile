@@ -6,7 +6,7 @@ DISTVERSION=	2017.07.25
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FFT code and related stuff
 
 LICENSE=	GPLv3+

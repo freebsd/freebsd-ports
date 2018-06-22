@@ -6,7 +6,7 @@ PORTVERSION=	1.26.2
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	https://busybox.net/downloads/
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of common utilities built as single binary
 
 LICENSE=	GPLv2

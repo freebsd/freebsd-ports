@@ -6,7 +6,7 @@ PORTVERSION=	20150625
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Docker containment system
 
 LICENSE=	APACHE20

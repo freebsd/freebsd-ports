@@ -1,10 +1,10 @@
-# Created by: Jov <amutu@amutu.com>
+# Created by: Jov <ports@FreeBSD.org>
 # $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../bazel
 PKGNAMESUFFIX=	-clang38
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 
 OPTIONS_SLAVE=	CLANG38
 

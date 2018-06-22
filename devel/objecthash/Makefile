@@ -6,7 +6,7 @@ PORTVERSION=	20160802
 PORTREVISION=	4
 CATEGORIES=	devel
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-language way to cryptographically hash JSON objects
 
 LICENSE=	APACHE20
