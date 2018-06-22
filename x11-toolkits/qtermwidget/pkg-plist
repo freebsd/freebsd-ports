@@ -2,14 +2,14 @@ include/qtermwidget5/Emulation.h
 include/qtermwidget5/Filter.h
 include/qtermwidget5/qtermwidget.h
 include/qtermwidget5/qtermwidget_export.h
+lib/cmake/qtermwidget5/qtermwidget5-config-version.cmake
+lib/cmake/qtermwidget5/qtermwidget5-config.cmake
+lib/cmake/qtermwidget5/qtermwidget5-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/qtermwidget5/qtermwidget5-targets.cmake
 lib/libqtermwidget5.so
 lib/libqtermwidget5.so.0
 lib/libqtermwidget5.so.%%VERSION%%
 libdata/pkgconfig/qtermwidget5.pc
-share/cmake/qtermwidget5/qtermwidget5-config-version.cmake
-share/cmake/qtermwidget5/qtermwidget5-config.cmake
-share/cmake/qtermwidget5/qtermwidget5-targets-%%CMAKE_BUILD_TYPE%%.cmake
-share/cmake/qtermwidget5/qtermwidget5-targets.cmake
 %%DATADIR%%5/color-schemes/BlackOnLightYellow.schema
 %%DATADIR%%5/color-schemes/BlackOnRandomLight.colorscheme
 %%DATADIR%%5/color-schemes/BlackOnWhite.schema
@@ -19,6 +19,8 @@ share/cmake/qtermwidget5/qtermwidget5-targets.cmake
 %%DATADIR%%5/color-schemes/Linux.colorscheme
 %%DATADIR%%5/color-schemes/Solarized.colorscheme
 %%DATADIR%%5/color-schemes/SolarizedLight.colorscheme
+%%DATADIR%%5/color-schemes/Tango.colorscheme
+%%DATADIR%%5/color-schemes/Ubuntu.colorscheme
 %%DATADIR%%5/color-schemes/WhiteOnBlack.schema
 %%DATADIR%%5/color-schemes/historic/BlackOnLightColor.schema
 %%DATADIR%%5/color-schemes/historic/DarkPicture.schema
