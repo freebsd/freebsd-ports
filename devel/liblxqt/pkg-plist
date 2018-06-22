@@ -1,6 +1,10 @@
+bin/lxqt-backlight_backend
 %%LXQT_INCLUDEDIR%%/LXQt/Application
 %%LXQT_INCLUDEDIR%%/LXQt/AutostartEntry
+%%LXQT_INCLUDEDIR%%/LXQt/Backlight
 %%LXQT_INCLUDEDIR%%/LXQt/ConfigDialog
+%%LXQT_INCLUDEDIR%%/LXQt/ConfigDialogCmdLineOptions
+%%LXQT_INCLUDEDIR%%/LXQt/Globals
 %%LXQT_INCLUDEDIR%%/LXQt/GridLayout
 %%LXQT_INCLUDEDIR%%/LXQt/HtmlDelegate
 %%LXQT_INCLUDEDIR%%/LXQt/Notification
@@ -16,7 +20,9 @@
 %%LXQT_INCLUDEDIR%%/LXQt/Translator
 %%LXQT_INCLUDEDIR%%/LXQt/lxqtapplication.h
 %%LXQT_INCLUDEDIR%%/LXQt/lxqtautostartentry.h
+%%LXQT_INCLUDEDIR%%/LXQt/lxqtbacklight.h
 %%LXQT_INCLUDEDIR%%/LXQt/lxqtconfigdialog.h
+%%LXQT_INCLUDEDIR%%/LXQt/lxqtconfigdialogcmdlineoptions.h
 %%LXQT_INCLUDEDIR%%/LXQt/lxqtglobals.h
 %%LXQT_INCLUDEDIR%%/LXQt/lxqtgridlayout.h
 %%LXQT_INCLUDEDIR%%/LXQt/lxqthtmldelegate.h
@@ -39,3 +45,5 @@ share/cmake/lxqt/lxqt-config-version.cmake
 share/cmake/lxqt/lxqt-config.cmake
 share/cmake/lxqt/lxqt-targets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/lxqt/lxqt-targets.cmake
+%%LXQT_SHAREDIR%%/power.conf
+share/polkit-1/actions/org.lxqt.backlight.pkexec.policy
