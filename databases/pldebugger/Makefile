@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pldebugger
-PORTVERSION=	9.6.0
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	https://git.postgresql.org/gitweb/?p=pldebugger.git;a=snapshot;h=REL-${PORTVERSION:C/\./_/g};sf=tgz;dummy=/
+MASTER_SITES=	https://git.postgresql.org/gitweb/?p=pldebugger.git;a=snapshot;h=v${PORTVERSION};sf=tgz;dummy=/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	PostgreSQL pl/pgsql Debugger API
@@ -16,7 +17,7 @@ WANT_PGSQL=	server
 
 DOCSDIR=	${PREFIX}/share/doc/postgresql/extension
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-REL-${PORTVERSION:C/\./_/g}-d02e829
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}-264450d
 
 MAKE_ENV=	USE_PGXS=1
 
