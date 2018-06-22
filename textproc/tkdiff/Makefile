@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tkdiff
-PORTVERSION=	4.2
-PORTREVISION=	2
+DISTVERSION=	4-3
 CATEGORIES=	textproc tk
-MASTER_SITES=	SF
+MASTER_SITES=	SF  https://bsdforge.com/projects/source/textproc/tkdiff/:ikon
+DISTFILES=	${DISTNAME}.zip tkicons.txz:ikon
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tk frontend for diff(1)
@@ -13,11 +13,7 @@ COMMENT=	Tk frontend for diff(1)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	base64>0:converters/base64
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-unix
-
-USES=		tk:wrapper
+USES=		tar:txz tk:wrapper
 NO_BUILD=	yes
 
 DESKTOP_ENTRIES=	"Tkdiff" "Tk frontend for the diff command" \
@@ -25,20 +21,11 @@ DESKTOP_ENTRIES=	"Tkdiff" "Tk frontend for the diff command" \
 			"tkdiff" "GNOME;GTK;Development;System;" \
 			false
 
-UNPACK=	base64 -d
-
-PLIST_FILES=	bin/tkdiff share/pixmaps/tkdiff.png share/pixmaps/tkdiff-256.png \
-		share/pixmaps/tkdiff-128.png share/pixmaps/tkdiff-64.png
-
-post-patch:
-	${FIND} ${WRKSRC} -type f | ${XARGS} \
-		${REINPLACE_CMD} -e '/^exec wish/s|wish|${WISH}|g' -e '/^exec tclsh/s|tclsh|${TCLSH}|g'
+IKONS=	tkdiff-256.png tkdiff-128.png \
+	tkdiff-64.png tkdiff.png
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkdiff ${STAGEDIR}${PREFIX}/bin
-	${UNPACK} ${FILESDIR}/icon256.base64 > ${STAGEDIR}${PREFIX}/share/pixmaps/tkdiff-256.png
-	${UNPACK} ${FILESDIR}/icon128.base64 > ${STAGEDIR}${PREFIX}/share/pixmaps/tkdiff-128.png
-	${UNPACK} ${FILESDIR}/icon64.base64 > ${STAGEDIR}${PREFIX}/share/pixmaps/tkdiff-64.png
-	${UNPACK} ${FILESDIR}/icon32.base64 > ${STAGEDIR}${PREFIX}/share/pixmaps/tkdiff.png
+	${INSTALL_DATA} ${IKONS:S/tkdiff/${WRKSRC}\/tkdiff/g} ${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
