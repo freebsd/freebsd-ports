@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblxqt
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	devel
 MASTER_SITES=	LXQT
 
@@ -10,6 +10,7 @@ MAINTAINER=	jesper@schmitz.computer
 COMMENT=	Shared library for LXQt applications
 
 LICENSE=	LGPL21+
+LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt@qt5
 
 BROKEN_aarch64=		fails to compile: lxqtplugininfo.cpp:107:14: expected expression
 
