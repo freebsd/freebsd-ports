@@ -12,4 +12,4 @@ two images to compare. The tool can help users better understand what is
 changing inside their images, and give them a better look at what their images
 contain.
 
-WWW: https://github.com/GoogleCloudPlatform/container-diff
+WWW: https://github.com/GoogleContainerTools/container-diff
