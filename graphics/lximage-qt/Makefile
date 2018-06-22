@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	lximage-qt
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	LXQT
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jesper@schmitz.computer
 COMMENT=	Image viewer and screenshot tool
 
 LICENSE=	GPLv2
