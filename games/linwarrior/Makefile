@@ -16,6 +16,8 @@ USES=		gmake openal:al,alut
 USE_GL=		gl glu
 USE_SDL=	sdl
 
+CFLAGS+=	-Wno-c++11-narrowing
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -29,8 +31,8 @@ DESKTOP_ENTRIES="LinWarrior 3D" \
 		false
 
 post-extract:
-	@${FIND} ${WRKSRC} -type d -exec chmod a+rx {} \;
-	@${FIND} ${WRKSRC} -type f -exec chmod a+r {} \;
+	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} a+rx {} \;
+	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} a+r {} \;
 
 post-patch:
 	@${REINPLACE_CMD} -e '/hash_set/ d' ${WRKSRC}/source/cAlert.h
