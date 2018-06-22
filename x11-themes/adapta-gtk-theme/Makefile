@@ -3,6 +3,7 @@
 
 PORTNAME=	adapta-gtk-theme
 PORTVERSION=	3.91.2.152
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	nivit@FreeBSD.org

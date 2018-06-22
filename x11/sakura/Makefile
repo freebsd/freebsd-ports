@@ -3,6 +3,7 @@
 
 PORTNAME=	sakura
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://launchpadlibrarian.net/336915548/
 

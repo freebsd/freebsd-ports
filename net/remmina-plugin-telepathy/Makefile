@@ -1,6 +1,7 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-telepathy
 
 COMMENT=	Remmina plugin for Telepathy support

@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-shell-extension-audio-output-switcher
 PORTVERSION=	0.0.0.20140520
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
