@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://www.mbdyn.org/userfiles/downloads/
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MultiBody Dynamics analysis system
 
 LICENSE=	GPLv2

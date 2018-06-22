@@ -1,4 +1,4 @@
-# Created by: Jov <amutu@amutu.com>
+# Created by: Jov <ports@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	plpgsql_check
@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL extension to check PL/pgSQL code
 
 LICENSE=	UNKNOWN

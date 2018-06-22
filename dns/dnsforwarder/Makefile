@@ -1,11 +1,11 @@
-# Created by: Jov <amutu@amutu.com`>
+# Created by: Jov <ports@FreeBSD.org`>
 # $FreeBSD$
 
 PORTNAME=	dnsforwarder
 PORTVERSION=	20170319
 CATEGORIES=	dns
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dnsforwarder is A simple DNS forwarder
 
 LICENSE=	GPLv3

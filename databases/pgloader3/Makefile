@@ -1,4 +1,4 @@
-# Created by: Jov <amutu@amutu.com>
+# Created by: Jov <ports@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pgloader
@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data loading tool for PostgreSQL,using the COPY command
 
 LICENSE=	PostgreSQL

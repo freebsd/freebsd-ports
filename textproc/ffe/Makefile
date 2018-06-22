@@ -6,7 +6,7 @@ DISTVERSION=	0.3.7-1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/ff-extractor/ff-extractor/${DISTVERSION}
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flat file extractor
 
 LICENSE=	GPLv2+

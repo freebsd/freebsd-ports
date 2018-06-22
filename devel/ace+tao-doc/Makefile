@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
 DISTNAME=	ACE-html-${PORTVERSION:C/\.0$//}
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ACE+TAO HTML documentation
 
 USES=		tar:bzip2

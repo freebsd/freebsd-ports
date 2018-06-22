@@ -7,7 +7,7 @@ CATEGORIES=	archivers sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	dpkg_${PORTVERSION}
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debian package maintenance system
 
 LICENSE=	GPLv2+

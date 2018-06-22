@@ -5,7 +5,7 @@ PORTNAME=	mod_realdoc
 PORTVERSION=	20170405
 CATEGORIES=	www
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to support atomic deploys
 
 LICENSE=	MIT

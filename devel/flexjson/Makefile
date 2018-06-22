@@ -6,7 +6,7 @@ DISTVERSION=	2.1
 CATEGORIES=	devel java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/flexjson%20${PORTVERSION}
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Java library to write JSON
 
 LICENSE=	APACHE20

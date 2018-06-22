@@ -6,7 +6,7 @@ PORTVERSION=	20170630
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to assist with Google style guide compliance
 
 # cpplint.py and cpplint_unittest.py under BSD3CLAUSE

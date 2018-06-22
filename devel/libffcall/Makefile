@@ -6,7 +6,7 @@ PORTVERSION=	1.13
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foreign function call libraries
 
 LICENSE=	GPLv2+

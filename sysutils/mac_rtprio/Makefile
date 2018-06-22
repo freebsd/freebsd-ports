@@ -1,4 +1,4 @@
-# Created by: Jov <amutu@amutu.com>
+# Created by: Jov <ports@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mac_rtprio
@@ -6,7 +6,7 @@ DISTVERSION=	g20170417
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-kmod
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MAC policy to manage access for setting realtime priorities by GID
 
 LICENSE=	BSD2CLAUSE

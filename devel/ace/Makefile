@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
-MAINTAINER=	amutu@amutu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive Communication Environment for C++
 
 LICENSE=	ACE
