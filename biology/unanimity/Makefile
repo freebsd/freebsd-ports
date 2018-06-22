@@ -10,6 +10,8 @@ COMMENT=	Pacific Biosciences consensus library and applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
+
 # Sensitive to dependency versions, use latest commit for everything
 BUILD_DEPENDS=	pbseqan==g20171002:biology/pbseqan \
 		pbbam==g20180416:biology/pbbam \
