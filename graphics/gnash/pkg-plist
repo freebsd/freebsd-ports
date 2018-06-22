@@ -11,7 +11,6 @@ bin/rtmpget
 %%CYGNAL%%bin/cygnal
 %%CYGNAL%%bin/flvdumper
 %%CYGNAL%%bin/soldumper
-%%NPAPI%%%%WEBPLUGIN_DIR%%/libgnashplugin.so
 %%CYGNAL%%@sample etc/cygnalrc.dist etc/cygnalrc
 @sample etc/gnashpluginrc.dist etc/gnashpluginrc
 @sample etc/gnashrc.dist etc/gnashrc
@@ -181,10 +180,6 @@ include/gnash/vm/SafeStack.h
 include/gnash/vm/VM.h
 include/gnash/vm/fn_call.h
 include/gnash/zlib_adapter.h
-%%KPARTS4%%/share/apps/klash/pluginsinfo
-%%KPARTS4%%/share/apps/klash/klashpartui.rc
-%%KPARTS4%%/share/kde4/services/klash_part.desktop
-%%KPARTS4%%/lib/kde4/libklashpart.so
 %%CYGNAL%%lib/cygnal/plugins/echo.so
 %%CYGNAL%%lib/cygnal/plugins/oflaDemo.so
 %%CYGNAL%%lib/gnash/libgnashamf-%%GNASHVER%%.so
