@@ -10,10 +10,10 @@ MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 MAINTAINER=	cem@FreeBSD.org
 COMMENT=	Library for manipulating ELF files and partial implementation of binutils
 
-LICENSE=	LGPL3 GPLv2 GPLv3
+LICENSE=	LGPL3 GPLv2+ GPLv3+
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING-GPLV2
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING-GPLV2
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 
 BROKEN_aarch64=		fails to build: fatal error: linux/uio.h: No such file or directory
@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
+NLS_USES_OFF=	gettext  # used anyway
 NLS_CONFIGURE_ENABLE=	nls
 
 USES=		autoreconf gmake libtool tar:bzip2
