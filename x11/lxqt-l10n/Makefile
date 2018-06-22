@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxqt-l10n
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	x11
 
 MAINTAINER=	jesper@schmitz.computer
@@ -10,11 +10,11 @@ COMMENT=	Translations of LXQt components
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	liblxqt-l10n>=0.12:devel/liblxqt-l10n \
-	lximageqt-l10n>=0.12:graphics/lximageqt-l10n \
-	libfmqt-l10n>=0.12:x11/libfmqt-l10n \
-	pcmanfmqt-l10n>=0.12:x11-fm/pcmanfmqt-l10n
+RUN_DEPENDS=	liblxqt-l10n>=0.13:devel/liblxqt-l10n \
+		lximageqt-l10n>=0.13:graphics/lximageqt-l10n \
+		libfmqt-l10n>=0.13:x11/libfmqt-l10n \
+		pcmanfmqt-l10n>=0.13:x11-fm/pcmanfmqt-l10n
 
-USES=	metaport
+USES=		metaport
 
 .include <bsd.port.mk>
