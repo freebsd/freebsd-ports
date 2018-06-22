@@ -6,8 +6,7 @@
 #
 # Feature:	gecko
 # Usage:	USES=gecko or USES=gecko:ARGS
-# Valid ARGS:	libxul, firefox, seamonkey, thunderbird
-#		in case the first argument is not libxul
+# Valid ARGS:	firefox, seamonkey, thunderbird
 #		The following arguments are available
 #		- build: also add the dependency as a build
 #		         dependency
@@ -18,23 +17,9 @@
 .if !defined(_INCLUDE_USES_GECKO_MK)
 _INCLUDE_USES_GECKO_MK=	yes
 
-.if empty(gecko_ARGS)
-gecko_ARGS=	libxul
-.endif
-
 _GECKO_VERSION=	${gecko_ARGS:M[0-9][0-9]*}
 
-.if ${gecko_ARGS:Mlibxul}
-# Compat with older versions
-GECKO=	libxul
-GECKO_CONFING?=	${LOCALBASE}/bin/${GECKO}-config
-XPIDL?=		${LOCALBASE}/lib/${GECKO}/xpidl
-XPIDL_INCL?=	`${GECKO_CONFIG} --idlflags`
-
-BUILD_DEPENDS+=	libxul>=45:www/libxul
-RUN_DEPENDS+=	libxul>=45:www/libxul
-
-.elif ${gecko_ARGS:Mfirefox}
+.if ${gecko_ARGS:Mfirefox}
 
 _GECKO_DEFAULT_VERSION=	60
 _GECKO_VERSIONS=		60 61
@@ -78,7 +63,7 @@ _GECKO_INSTALLED_VER:=	${_GECKO_INSTALLED_VER:C/\..*//}
 52_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:mail/thunderbird
 
 .else
-IGNORE=	Unknown type of gecko dependency you may specify either libxul, firefox, seamonkey or thunderbird
+IGNORE=	Unknown type of gecko dependency you may specify either firefox, seamonkey or thunderbird
 .endif
 
 .if defined(_GECKO_TYPE)
