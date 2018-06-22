@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Signal/Mask.pm
+%%SITE_PERL%%/Signal/Pending.pm
+%%PERL5_MAN3%%/Signal::Mask.3.gz
+%%PERL5_MAN3%%/Signal::Pending.3.gz
