@@ -18,9 +18,11 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 USES=		tar:bzip2 gmake openal:al,alut
 USE_SDL=	sdl
-USE_GL=		yes
+USE_GL=		gl glu
 
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
+
+CXXFLAGS+=	-Wno-c++11-narrowing
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -40,8 +42,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/blackshades ${STAGEDIR}${PREFIX}/bin/
-	cd ${WRKSRC} && ${COPYTREE_SHARE} Data ${STAGEDIR}${DATADIR}/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} Data ${STAGEDIR}${DATADIR}/
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
