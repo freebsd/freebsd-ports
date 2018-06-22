@@ -16,9 +16,9 @@ In file included from /usr/include/c++/v1/ios:216:
 /usr/include/c++/v1/__locale:569:19: error: use of undeclared identifier 'isascii'
             if (!(isascii(*__low) && (__tab_[static_cast<int>(*__low)] & __m)))
                   ^
---- libproxy/CMakeLists.txt.orig	2016-01-12 16:41:07 UTC
+--- libproxy/CMakeLists.txt.orig	2017-05-11 09:33:33 UTC
 +++ libproxy/CMakeLists.txt
-@@ -6,7 +6,6 @@ set_project_version(0 4 12)
+@@ -6,18 +6,19 @@ set_project_version(0 4 15)
  if (WIN32)
    add_definitions(-D_CRT_SECURE_NO_WARNINGS=1)
  else(WIN32)
@@ -26,3 +26,20 @@ In file included from /usr/include/c++/v1/ios:216:
    set(CMAKE_CXX_FLAGS "-fvisibility=hidden ${CMAKE_CXX_FLAGS}")
  endif(WIN32)
  
+ ### Modules
+ include(cmake/modules.cmk)
+ 
+-### Dev files
+-include(cmake/devfiles.cmk)
++if(WITH_LIBRARY)
++    ### Dev files
++    include(cmake/devfiles.cmk)
+ 
+-### Main library
+-include(cmake/libproxy.cmk)
++    ### Main library
++    include(cmake/libproxy.cmk)
++endif()
+ 
+ ### Tests
+ add_testdirectory(test)

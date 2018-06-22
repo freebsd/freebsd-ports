@@ -1,0 +1,5 @@
+--- bindings/perl/t/CMakeLists.txt.orig	2017-05-11 09:33:33 UTC
++++ bindings/perl/t/CMakeLists.txt
+@@ -1 +1 @@
+-add_custom_target(test prove -b ${CMAKE_CURRENT_SOURCE_DIR})
++add_custom_target(test_perl prove -b ${CMAKE_CURRENT_SOURCE_DIR})

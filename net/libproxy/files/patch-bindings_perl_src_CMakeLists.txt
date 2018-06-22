@@ -1,21 +1,24 @@
-* Explicitly against libperl.so.x.y.
-  This is being discussed in https://github.com/libproxy/libproxy/pull/7.
-  We need this for `make stage-qa' to pass, as the Libproxy.so binding uses
-  libperl symbols and thus should link against it.
+As the library is only built in the master port, and therfore missing in the
+build directory for the slave ports, find it via pkg-config and link against it,
+when building a slave.
 
-* Set RPATH in Libproxy.so.
-  We do not install libperl.so into ${LOCALBASE}/lib, so the Libproxy.so ELF
-  binary must be told the non-default location where it should look for
-  libperl.so.x.y.
---- bindings/perl/src/CMakeLists.txt.orig	2016-01-12 16:41:07 UTC
+--- bindings/perl/src/CMakeLists.txt.orig	2018-06-03 17:39:41 UTC
 +++ bindings/perl/src/CMakeLists.txt
-@@ -12,7 +12,8 @@ set(Libproxy_LIB_SRCS Libproxy.c)
+@@ -4,7 +4,7 @@ include_directories( ${PERL_INCLUDE_PATH} ${CMAKE_SOUR
+ add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Libproxy.c
+                    COMMAND ${PERL_EXECUTABLE} ARGS ${CMAKE_CURRENT_SOURCE_DIR}/doxsubpp.pl
+                            ${PERL_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Libproxy.xs ${CMAKE_CURRENT_BINARY_DIR}/Libproxy.c
+-                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/Libproxy.xs libproxy
++                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/Libproxy.xs
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+ 
+ set(Libproxy_LIB_SRCS Libproxy.c)
+@@ -12,7 +12,7 @@ set(Libproxy_LIB_SRCS Libproxy.c)
  set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/perl/blib/arch/auto/Net)
  add_library(PLlibproxy SHARED ${Libproxy_LIB_SRCS})
  
--target_link_libraries(PLlibproxy libproxy pthread)
-+target_link_libraries(PLlibproxy ${PERL_LIBRARY} libproxy pthread)
-+set_target_properties(PLlibproxy PROPERTIES INSTALL_RPATH "${PERL_INCLUDE_DIR}")
- set_target_properties(PLlibproxy PROPERTIES OUTPUT_NAME "Libproxy")
- set_target_properties(PLlibproxy PROPERTIES PREFIX "")
- 
+-set(PLlibproxy_LIB_DEPENDENCIES libproxy pthread)
++set(PLlibproxy_LIB_DEPENDENCIES PkgConfig::LIBPROXY pthread)
+ if(PERL_LINK_LIBPERL)
+   set(PLlibproxy_LIB_DEPENDENCIES ${PERL_LIBRARY} ${PLlibproxy_LIB_DEPENDENCIES})
+ endif()

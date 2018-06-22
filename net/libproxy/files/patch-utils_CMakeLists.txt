@@ -1,0 +1,17 @@
+As the library is only built in the master port, and therfore missing in the
+build directory for the slave ports, find it via pkg-config and link against it,
+when building a slave.
+
+--- utils/CMakeLists.txt.orig	2017-05-11 09:33:33 UTC
++++ utils/CMakeLists.txt
+@@ -1,5 +1,9 @@
+ include_directories("../libproxy")
+ 
+ add_executable(proxy proxy.c)
+-target_link_libraries(proxy libproxy)
++if (WITH_LIBRARY)
++    target_link_libraries(proxy libproxy)
++else ()
++    target_link_libraries(proxy PkgConfig::LIBPROXY)
++endif ()
+ install(TARGETS proxy RUNTIME DESTINATION ${BIN_INSTALL_DIR})

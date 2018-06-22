@@ -5,12 +5,14 @@ PORTREVISION=	0
 CATEGORIES=	net www
 PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
-
 COMMENT=	WebKit JavaScript plug-in for libproxy
 
-LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
+LIB_DEPENDS=	libjavascriptcoregtk-4.0.so:www/webkit2-gtk3
 
-LIBPROXY_SLAVE=	webkit
+USES=		gettext-runtime
+USE_GNOME=	glib20
+
+LIBPROXY_SLAVE=	webkit3
 MASTERDIR=	${.CURDIR}/../libproxy
 
 .include "${MASTERDIR}/Makefile"

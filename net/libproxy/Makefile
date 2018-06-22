@@ -1,9 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/net/libproxy/Makefile,v 1.1 2011/01/12 13:10:52 kwm Exp $
 
 PORTNAME=	libproxy
-PORTVERSION=	0.4.12
+PORTVERSION=	0.4.15
 PORTREVISION?=	0
 CATEGORIES?=	net devel
 
@@ -13,71 +12,54 @@ COMMENT?=	Library that provides automatic proxy configuration management
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CPE_VENDOR=		libproxy_project
+USES+=		cmake:outsource cpe pathfix pkgconfig
+CPE_VENDOR=	libproxy_project
 PATHFIX_CMAKELISTSTXT=	devfiles.cmk
-USE_GITHUB=		yes
-USES+=			cmake:outsource cpe pathfix
+USE_GITHUB=	yes
+
+CMAKE_ON+=	WITH_VALA
+CMAKE_OFF+=	BIPR WITH_DOTNET WITH_NATUS WITH_NM WITH_NMold
+
+# Slave ports.
+LIBPROXY_SLAVES=	library gnome2 gnome3 kde mozjs python perl webkit webkit3
+
+# If nothing is set, we're building the library, i.e. this port.
+LIBPROXY_SLAVE?=	library
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-CMAKE_ARGS=	-DBIPR:BOOL=OFF -DWITH_DOTNET:BOOL=OFF \
-		-DWITH_NATUS:BOOL=OFF -DWITH_NM:BOOL=OFF \
-		-DWITH_VALA:BOOL=ON
+# Activate the wanted module, and deactivate the others
+CMAKE_ON+=	WITH_${LIBPROXY_SLAVE:tu}
+CMAKE_OFF+=	${LIBPROXY_SLAVES:N${LIBPROXY_SLAVE}:tu:S/^/WITH_/}
 
-.if !defined(LIBPROXY_SLAVE)
-USE_LDCONFIG=	yes
-CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=OFF -DWITH_PERL:BOOL=OFF \
-		-DWITH_GNOME2:BOOL=OFF -DWITH_GNOME3:BOOL=OFF \
-		-DWITH_KDE:BOOL=OFF -DWITH_MOZJS:BOOL=OFF \
-		-DWITH_WEBKIT:BOOL=OFF -DWITH_WEBKIT3:BOOL=OFF
-.else
-PORTSCOUT=	ignore:1
-
-# Libproxy is build for the slave ports, since I haven't been able to find
-# out how to only build optional code with cmake.
-# Patches for this problem are welcome.
-
-. if ${LIBPROXY_SLAVE}=="python"
-CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=ON
-. else
-CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=OFF
-. endif
-
-. if ${LIBPROXY_SLAVE}=="perl"
-CMAKE_ARGS+=	-DWITH_PERL:BOOL=ON
-. else
-CMAKE_ARGS+=	-DWITH_PERL:BOOL=OFF
-. endif
-
-. if ${LIBPROXY_SLAVE}=="gnome"
-CMAKE_ARGS+=	-DWITH_GNOME2:BOOL=ON
-. else
-CMAKE_ARGS+=	-DWITH_GNOME2:BOOL=OFF
-. endif
-
-. if ${LIBPROXY_SLAVE}=="gnome3"
-CMAKE_ARGS+=	-DWITH_GNOME3:BOOL=ON
-. else
-CMAKE_ARGS+=	-DWITH_GNOME3:BOOL=OFF
-. endif
-
-. if ${LIBPROXY_SLAVE}=="kde"
-CMAKE_ARGS+=	-DWITH_KDE:BOOL=ON
-. else
-CMAKE_ARGS+=	-DWITH_KDE:BOOL=OFF
-. endif
-
-. if ${LIBPROXY_SLAVE}=="webkit"
-CMAKE_ARGS+=	-DWITH_WEBKIT3:BOOL=ON
-. else
-CMAKE_ARGS+=	-DWITH_WEBKIT3:BOOL=OFF -DWITH_WEBKIT:BOOL=OFF
-. endif
-
-. if ${LIBPROXY_SLAVE}=="mozjs"
-CMAKE_ARGS+=	-DWITH_MOZJS:BOOL=ON
-. else
-CMAKE_ARGS+=	-DWITH_MOZJS:BOOL=OFF
-. endif
+# Setup slave ports.
+.if ${LIBPROXY_SLAVE:Nlibrary}
+USES+=		localbase
+LIB_DEPENDS+=	libproxy.so:net/libproxy
+DESCR=		${.CURDIR:H}/${PORTNAME}-${LIBPROXY_SLAVE}/pkg-descr
+PLIST=		${.CURDIR:H}/${PORTNAME}-${LIBPROXY_SLAVE}/pkg-plist
 .endif
 
-.include <bsd.port.mk>
+.if ${LIBPROXY_SLAVE:Mwebkit3}
+# Additionally to WITH_WEBKIT3 also WITH_WEBKIT is required.
+CMAKE_ON+=	WITH_WEBKIT
+CMAKE_OFF:=	${CMAKE_OFF:C/WITH_WEBKIT//}
+.endif
+
+.include <bsd.port.pre.mk>
+
+# Hackery for the to python backends.
+.if ${LIBPROXY_SLAVE:Mpython}
+.  if ${PYTHON_MAJOR_VER} == 2
+CMAKE_ON+=		WITH_PYTHON2
+CMAKE_OFF+=		WITH_PYTHON3
+CMAKE_ARGS+=		-DPYTHON2_EXECUTABLE:FILEPATH=${PYTHON_CMD}
+.  else
+CMAKE_ON+=		WITH_PYTHON3
+CMAKE_OFF+=		WITH_PYTHON2
+.  endif
+.else
+CMAKE_OFF+=		WITH_PYTHON2 WITH_PYTHON3
+.endif
+
+.include <bsd.port.post.mk>
