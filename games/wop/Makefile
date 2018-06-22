@@ -21,6 +21,10 @@ BUILD_DEPENDS=	makedepend:devel/makedepend
 USES=		tar:bzip2 gmake
 USE_SDL=	sdl net mixer ttf image
 
+MAKE_JOBS_UNSAFE=	yes
+
+CXXFLAGS+=	-Wno-c++11-narrowing
+
 DATAVERSION=	2005-12-21
 DESKTOP_ENTRIES="Worms of Prey" \
 		"Real-time Worms game" \
@@ -46,12 +50,12 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/wop ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/woprc ${STAGEDIR}${PREFIX}/etc/woprc.sample
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKDIR}/${PORTNAME}data-${DATAVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in AUTHORS COPYING ChangeLog README README-COMMAND-LINE-OPTIONS.txt
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in AUTHORS ChangeLog README README-COMMAND-LINE-OPTIONS.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
