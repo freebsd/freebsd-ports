@@ -1,6 +1,6 @@
---- src-common/soundenginealsa.cxx.orig	2008-03-22 21:45:22.000000000 +0300
-+++ src-common/soundenginealsa.cxx	2008-03-30 17:58:09.000000000 +0400
-@@ -38,219 +38,46 @@
+--- src-common/soundenginealsa.cxx.orig	2008-06-18 01:36:34 UTC
++++ src-common/soundenginealsa.cxx
+@@ -38,219 +38,46 @@ SoundEngineAlsa::SoundEngineAlsa(int lag
    complexfeed(0),
    enginefeed(0),
    activefeed(0),

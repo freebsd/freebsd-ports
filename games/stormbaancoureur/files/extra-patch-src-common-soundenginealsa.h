@@ -1,15 +1,15 @@
---- src-common/soundenginealsa.h.orig	2008-01-03 07:29:23.000000000 +0300
-+++ src-common/soundenginealsa.h	2008-02-09 00:52:09.000000000 +0300
-@@ -2,8 +2,6 @@
- #ifndef SOUNDENGINE_ALSA_H
- #define SOUNDENGINE_ALSA_H
+--- src-common/soundenginealsa.h.orig	2008-04-20 16:00:03 UTC
++++ src-common/soundenginealsa.h
+@@ -4,8 +4,6 @@
+ 
+ #include <string>
  
 -#include <alsa/asoundlib.h>
 -
  class SoundClip;
  class SoundFeed;
  class SoundFeedSimple;
-@@ -29,9 +27,6 @@
+@@ -31,9 +29,6 @@ class SoundEngineAlsa
      SoundFeedModulated *modulatedfeed;
      SoundFeedEngine    *enginefeed;
      SoundFeed          *activefeed;
