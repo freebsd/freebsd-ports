@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Nov  3 04:38:15 2005
-+++ Makefile.in	Thu Nov  3 04:38:57 2005
-@@ -338,16 +338,6 @@
+--- Makefile.in.orig	2004-12-10 21:34:29 UTC
++++ Makefile.in
+@@ -338,16 +338,6 @@ maintainer-clean-generic clean mostlycle
  
  
  install-data-local:

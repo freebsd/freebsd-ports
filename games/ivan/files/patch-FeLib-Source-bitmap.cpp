@@ -1,6 +1,6 @@
---- FeLib/Source/bitmap.cpp.orig	2004-10-26 23:35:47.000000000 +0400
-+++ FeLib/Source/bitmap.cpp	2013-05-30 22:23:14.349113259 +0400
-@@ -873,12 +873,12 @@
+--- FeLib/Source/bitmap.cpp.orig	2004-10-26 19:35:47 UTC
++++ FeLib/Source/bitmap.cpp
+@@ -873,12 +873,12 @@ void bitmap::DrawLine(int OrigFromX, int
    static const int PointY[] = { 0, -1, 0, 0, 1 };
    const int Times = Wide ? 5 : 1;
  
