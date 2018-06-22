@@ -1,4 +1,4 @@
-# Created by: Jov <ports@FreeBSD.org>
+# Created by: Jov <amutu@amutu.com>
 # $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../bazel
