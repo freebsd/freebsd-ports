@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	container-diff
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -17,7 +17,7 @@ USES=		go
 
 PLIST_FILES=	bin/container-diff
 
-GH_ACCOUNT=	GoogleCloudPlatform
+GH_ACCOUNT=	GoogleContainerTools
 USE_GITHUB=	yes
 
 do-install:
