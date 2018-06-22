@@ -12,6 +12,10 @@ COMMENT=	Machine learning framework written in C++ (python bindings)
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt
 
+BROKEN_aarch64=		fails to build: CMake Error at test_for_avx/CMakeLists.txt:17 (if): if given arguments: "EQUAL" "0" "AND" "compile_result": Unknown arguments specified
+BROKEN_armv6=		fails to build: CMake Error at test_for_avx/CMakeLists.txt:17 (if): if given arguments: "EQUAL" "0" "AND" "compile_result": Unknown arguments specified
+BROKEN_armv7=		fails to build: CMake Error at test_for_avx/CMakeLists.txt:17 (if): if given arguments: "EQUAL" "0" "AND" "compile_result": Unknown arguments specified
+
 BUILD_DEPENDS=		cmake:devel/cmake
 LIB_DEPENDS=		${PY_BOOST}
 

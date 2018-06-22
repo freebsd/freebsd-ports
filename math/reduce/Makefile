@@ -12,6 +12,8 @@ COMMENT=	REDUCE Codemist Standard Lisp general-purpose computer system
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_aarch64=		fails to install: Reduce-svn4372-src/cslbuild/aarch64-unknown-freebsd11.1/csl/reduce.img: No such file or directory
+BROKEN_armv6=		fails to compile: redfront.h:118:12: conflicting types for '__wcwidth'
 BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
 
 RUN_DEPENDS=	gnuplot:math/gnuplot

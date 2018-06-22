@@ -11,6 +11,10 @@ COMMENT=	Terminal widget for QTerminal
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=		fails to compile: Emulation.cpp:135:14: 'ScreenWindow' does not refer to a value
+BROKEN_armv6=		fails to compile: Emulation.cpp:135:14: 'ScreenWindow' does not refer to a value
+BROKEN_armv7=		fails to compile: Emulation.cpp:135:14: 'ScreenWindow' does not refer to a value
+
 USES=	cmake:outsource compiler:c++11-lang gettext-runtime lxqt \
 	pkgconfig tar:xz
 USE_LDCONFIG=	yes
