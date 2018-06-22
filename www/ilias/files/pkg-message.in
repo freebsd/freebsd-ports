@@ -14,18 +14,6 @@ some virus scanner by yourself.
 3 Add the following to your Apache configuration file
    httpd.conf, and restart the server:
 
-   For Apache versions earlier than 2.4:
-
-   Alias /ilias %%WWWDIR%%/
-   AcceptPathInfo On
-   <Directory %%WWWDIR%%>
-      AllowOverride None
-      Order Allow,Deny
-      Allow from all
-   </Directory>
-
-   For Apache version 2.4.x or above:
-
    Alias /ilias %%WWWDIR%%/
    AcceptPathInfo On
    <Directory %%WWWDIR%%/>
