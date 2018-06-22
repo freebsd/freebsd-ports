@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.19.0.0
+PORTVERSION=	3.20.1.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 #PORTREVISION=	1
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
@@ -23,9 +22,9 @@ MAKE_JOBS_UNSAFE=yes
 USES=		gmake qmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_QT4=	qmake_build codecs-cn codecs-jp codecs-kr codecs-tw corelib \
-		designer gui help imageformats moc_build network opengl rcc_build script \
-		scripttools sql svg uic_build xml xmlpatterns webkit
+USE_QT5=	buildtools qmake_build \
+		designer gui help imageformats network opengl script \
+		scripttools sql svg xml xmlpatterns webkit widgets uitools
 USE_GL=		glu
 
 DESKTOP_ENTRIES="QCad"	\
