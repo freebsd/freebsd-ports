@@ -92,7 +92,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 		eval uwsgi_logfile=\${uwsgi_${profile}_logfile:-"/var/log/${name}-${profile}.log"}
 		eval uwsgi_pidfile=\${uwsgi_${profile}_pidfile:-"/var/run/${name}-${profile}.pid"}
 		eval uwsgi_uid=\${uwsgi_${profile}_uid:-"${uwsgi_uid}"}
-		eval uwsgi_gid=\${uwsgi_${profile}_gid:-"${uwsgi_uid}"}
+		eval uwsgi_gid=\${uwsgi_${profile}_gid:-"${uwsgi_gid}"}
 		eval uwsgi_flags=\${uwsgi_${profile}_flags:-"${uwsgi_flags}"}
 		eval uwsgi_procname=\${uwsgi_${profile}_procname:-"${uwsgi_procname}"}
 		eval uwsgi_emperor=\${uwsgi_${profile}_emperor:-"${uwsgi_emperor}"}
