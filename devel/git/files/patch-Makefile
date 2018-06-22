@@ -1,9 +1,9 @@
---- Makefile.orig	2018-04-02 17:44:04 UTC
+--- Makefile.orig	2018-06-21 17:18:50 UTC
 +++ Makefile
-@@ -476,16 +476,16 @@ ARFLAGS = rcs
+@@ -518,16 +518,16 @@ ARFLAGS = rcs
+ 
  prefix = $(HOME)
- bindir_relative = bin
- bindir = $(prefix)/$(bindir_relative)
+ bindir = $(prefix)/bin
 -mandir = $(prefix)/share/man
 -infodir = $(prefix)/share/info
 +mandir = $(prefix)/man
@@ -22,7 +22,7 @@
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -1267,9 +1267,9 @@ EXTLIBS += -lz
+@@ -1326,9 +1326,9 @@ EXTLIBS += -lz
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
@@ -35,7 +35,7 @@
  	else
  		OPENSSL_LINK =
  	endif
-@@ -2012,7 +2012,7 @@ git-instaweb: git-instaweb.sh GIT-SCRIPT-DEFINES
+@@ -2151,7 +2151,7 @@ git-instaweb: git-instaweb.sh GIT-SCRIPT-DEFINES
  	chmod +x $@+ && \
  	mv $@+ $@
  else # NO_PERL
