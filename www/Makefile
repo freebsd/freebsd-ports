@@ -360,7 +360,6 @@
     SUBDIR += libresonic-standalone
     SUBDIR += libsocialweb
     SUBDIR += libwww
-    SUBDIR += libxul
     SUBDIR += lightsquid
     SUBDIR += lighttpd
     SUBDIR += lighttpd-mod_h264_streaming
