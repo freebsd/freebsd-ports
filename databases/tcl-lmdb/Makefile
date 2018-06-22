@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcl-lmdb
-PORTVERSION=	0.3.6
+PORTVERSION=	0.4.0
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -12,10 +12,11 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
+USES=		gmake tcl:tea
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ray2501
 
-USES=		gmake tcl:tea
 CONFIGURE_ARGS=	--with-system-lmdb
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
