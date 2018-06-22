@@ -1,6 +1,6 @@
---- src-stormbaancoureur/Makefile.orig	2008-06-11 18:12:01.000000000 +0400
-+++ src-stormbaancoureur/Makefile	2013-09-30 06:14:07.576519380 +0400
-@@ -5,23 +5,20 @@
+--- src-stormbaancoureur/Makefile.orig	2009-12-01 03:23:51 UTC
++++ src-stormbaancoureur/Makefile
+@@ -5,23 +5,20 @@ VERSION=2.1.6-generic
  GLPREFIX=/usr
  PLIBPREFIX=/usr
  ODEPREFIX=/usr
@@ -29,7 +29,7 @@
  
  
  OBJS=\
-@@ -39,15 +36,15 @@
+@@ -39,15 +36,15 @@ OBJS=\
  
  
  LIBS=\
@@ -48,7 +48,7 @@
  	$(CXX) -o stormbaancoureur $(OBJS) $(LFLAGS) $(LIBS)
  
  staticworldobject.o: ../src-common/staticworldobject.cxx ../src-common/staticworldobject.h ../src-common/worldobject.h
-@@ -92,16 +89,15 @@
+@@ -92,16 +89,15 @@ run: stormbaancoureur
  clean:
  	rm -f *.o stormbaancoureur
  

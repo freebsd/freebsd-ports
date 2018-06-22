@@ -1,6 +1,6 @@
---- src-stormbaancoureur/main.cxx.orig	2007-12-28 23:09:41.000000000 +0300
-+++ src-stormbaancoureur/main.cxx	2007-12-31 16:48:41.000000000 +0300
-@@ -1176,12 +1176,7 @@
+--- src-stormbaancoureur/main.cxx.orig	2008-04-20 15:58:29 UTC
++++ src-stormbaancoureur/main.cxx
+@@ -837,12 +837,7 @@ int main(int argc, char *argv[]) 
    fprintf(stderr,"OpenDE is (c) by Russel L. Smith\n");
  
    char *bindirname  = dirname(argv[0]);
