@@ -1,7 +1,6 @@
 bin/itweb-javaws
 bin/itweb-policyeditor
 bin/itweb-settings
-%%PLUGIN%%%%WEBPLUGIN_DIR%%/IcedTeaPlugin.so
 man/cs/man1/icedtea-web-plugin.1.gz
 man/cs/man1/icedtea-web.1.gz
 man/cs/man1/itweb-javaws.1.gz
@@ -27,5 +26,4 @@ share/applications/itweb-policyeditor.desktop
 share/applications/itweb-settings.desktop
 %%DATADIR%%/javaws_splash.png
 %%DATADIR%%/netx.jar
-%%PLUGIN%%%%DATADIR%%/plugin.jar
 share/pixmaps/itweb-javaws.png

@@ -2,7 +2,7 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
@@ -42,11 +42,9 @@ CONFIGURE_SHELL=	${bash_CMD}
 
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	DOCS PLUGIN RHINO TAGSOUP
-OPTIONS_DEFAULT=PLUGIN
+OPTIONS_DEFINE=	DOCS RHINO TAGSOUP
 OPTIONS_SUB=	yes
 
-PLUGIN_DESC=	Enable the browser plug-in
 RHINO_DESC=	Add support for Proxy Auto Config files
 TAGSOUP_DESC=	Enable cleaning up of malformed JNLP files
 
@@ -62,15 +60,6 @@ TAGSOUP_BUILD_DEPENDS=	${JAVALIBDIR}/tagsoup.jar:textproc/tagsoup
 TAGSOUP_RUN_DEPENDS=	${TAGSOUP_BUILD_DEPENDS}
 TAGSOUP_VARS=		TAGSOUP_JAR="${JAVALIBDIR}/tagsoup.jar"
 TAGSOUP_VARS_OFF=	TAGSOUP_JAR=no
-
-PLUGIN_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libxul.pc:www/libxul
-PLUGIN_CONFIGURE_ENABLE=plugin
-PLUGIN_PORTDOCS=	plugin
-PLUGIN_TEST_TARGET=	plugin-tests
-PLUGIN_USE=		GNOME=glib20
-PLUGIN_USES=		webplugin:native
-PLUGIN_VARS=		WEBPLUGIN_DIR=${PREFIX}/lib
-PLUGIN_VARS+=		WEBPLUGIN_FILES=IcedTeaPlugin.so
 
 HAMCREST_JAR=	${JAVALIBDIR}/hamcrest.jar
 JUNIT_JAR=	${JAVALIBDIR}/junit.jar
