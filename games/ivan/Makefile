@@ -16,9 +16,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_armv6=		fails to compile: use of overloaded operator '<<' is ambiguous
 BROKEN_armv7=		fails to compile: use of overloaded operator '<<' is ambiguous
 
-USE_SDL=	sdl
 USES=		gmake
+USE_SDL=	sdl
 GNU_CONFIGURE=	yes
+
+CXXFLAGS+=	-Wno-c++11-narrowing
 
 CONFIGURE_ARGS=	--localstatedir=/var/games
 
