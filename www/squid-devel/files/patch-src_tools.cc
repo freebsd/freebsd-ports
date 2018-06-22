@@ -1,8 +1,8 @@
---- src/tools.cc.orig	2016-12-16 10:06:20 UTC
+--- src/tools.cc.orig	2018-06-11 16:30:57 UTC
 +++ src/tools.cc
-@@ -603,7 +603,7 @@ no_suid(void)
+@@ -605,7 +605,7 @@ no_suid(void)
      uid = geteuid();
-     debugs(21, 3, "no_suid: PID " << getpid() << " giving up root priveleges forever");
+     debugs(21, 3, "no_suid: PID " << getpid() << " giving up root privileges forever");
  
 -    if (setuid(0) < 0) {
 +    if (setuid(0) < 0 && TheProcessKind != pkHelper) {
