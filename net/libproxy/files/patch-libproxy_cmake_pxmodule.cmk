@@ -1,0 +1,20 @@
+As the library is only built in the master port, and therfore missing in the
+build directory for the slave ports, find it via pkg-config and link against it,
+when building a slave.
+
+--- libproxy/cmake/pxmodule.cmk.orig	2017-05-11 09:33:33 UTC
++++ libproxy/cmake/pxmodule.cmk
+@@ -18,7 +18,12 @@ function(px_module name build builtin)
+       set(built "m")
+       set_property(SOURCE modules/${name}.cpp PROPERTY COMPILE_DEFINITIONS LIBEXECDIR="${LIBEXECDIR}")
+       add_library(${name} MODULE modules/${name}.cpp)
+-      target_link_libraries(${name} libproxy)
++      link_directories(${CMAKE_INSTALL_PREFIX}/lib)
++      if (WITH_LIBRARY)
++          target_link_libraries(${name} proxy)
++      else ()
++          target_link_libraries(${name} PkgConfig::LIBPROXY)
++      endif ()
+       set_target_properties(${name} PROPERTIES PREFIX "")
+       install(TARGETS ${name} LIBRARY DESTINATION ${MODULE_INSTALL_DIR})
+       if(${ARGC} GREATER 3)

@@ -1,26 +1,18 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/net/libproxy-python/Makefile,v 1.1 2011/01/12 13:10:54 kwm Exp $
 
 PORTREVISION=	0
 CATEGORIES=	net lang
-PKGNAMESUFFIX=	-python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
-MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	python binding for libproxy
+COMMENT=	Python binding for libproxy
 
-RUN_DEPENDS=	libproxy>=${PORTVERSION}:net/libproxy
-
-MASTERDIR=	${.CURDIR}/../libproxy
-DESCR=		${.CURDIR}/pkg-descr
-PLIST=		${.CURDIR}/pkg-plist
-
-INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}/bindings/python
-NO_ARCH=	yes
-NO_BUILD=	yes
-USES=		python:2.7
+USES=		python
+USE_PYTHON=	flavors py3kplist
 
 LIBPROXY_SLAVE=	python
+MASTERDIR=	${.CURDIR}/../libproxy
 
 post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \

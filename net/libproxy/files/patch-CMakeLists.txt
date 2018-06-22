@@ -1,0 +1,31 @@
+As the library is only built in the master port, and therfore missing in the
+build directory for the slave ports, find it via pkg-config and link against it,
+when building a slave.
+
+--- CMakeLists.txt.orig	2017-05-11 09:33:33 UTC
++++ CMakeLists.txt
+@@ -23,6 +23,15 @@ else()
+   set(CMAKE_INSTALL_CONFIG_NAME ${CMAKE_BUILD_TYPE})
+ endif()
+ 
++# Make building the library optional.
++option(WITH_LIBRARY "Build libproxy.so" ON)
++
++if (NOT WITH_LIBRARY)
++    # For the other ports provide an easy way to link against libproxy.so via PkgConfig::LIBPROXY.
++    find_package(PkgConfig)
++    pkg_check_modules(LIBPROXY libproxy-1.0 REQUIRED IMPORTED_TARGET)
++endif ()
++
+ include(cmake/cpack.cmk)
+ include(cmake/ctest.cmk)
+ include(cmake/paths.cmk)
+@@ -56,5 +65,7 @@ endif()
+ 
+ # Always build these
+ add_subdirectory(libproxy)
+-add_subdirectory(utils)
++if (WITH_LIBRARY)
++    add_subdirectory(utils)
++endif()
+ 

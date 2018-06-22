@@ -4,6 +4,7 @@
 PORTNAME=	hexchat
 PORTVERSION=	2.14.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	irc gnome ipv6
 
 MAINTAINER=	pkubaj@anongoth.pl
