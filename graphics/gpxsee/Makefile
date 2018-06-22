@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpxsee
-PORTVERSION=	5.11
+PORTVERSION=	5.13
 PORTREVISION=	1
 CATEGORIES=	graphics geography
 
