@@ -11,6 +11,11 @@ COMMENT=	Software platform for handling a wide class of economic models
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=	amd64 i386
+ARCH_amd64=	64
+ARCH_i386=	32
+PLIST_SUB=	ARCH=${ARCH_${ARCH}}
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/unordered_set.hpp:devel/boost-libs \
 		ctangle:devel/cweb
 LIB_DEPENDS=	libumfpack.so:math/suitesparse \
@@ -37,11 +42,6 @@ OCTAVE_CONFIGURE_ENABLE=	octave
 OCTAVE_LIB_DEPENDS=		liboctave.so:math/octave
 OCTAVE_USES=			compiler:c++14-lang
 OCTAVE_VARS=			CXXFLAGS=--std=c++14 # https://github.com/DynareTeam/dynare/issues/1599
-
-ONLY_FOR_ARCH=	i386 amd64
-ARCH_amd64=	64
-ARCH_i386=	32
-PLIST_SUB=	ARCH=${ARCH_${ARCH}}
 
 post-configure:
 	@${ECHO_MSG} ""
