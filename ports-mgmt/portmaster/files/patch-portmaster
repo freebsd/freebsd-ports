@@ -53,7 +53,7 @@
 +target_part	() { [ -z "${1##*:*}" ] && echo "${1#*:}" || echo install; }
 +flavor_part	() { local tmp="${1%%:*}"; [ -z "${tmp##*@*}" ] && echo "${tmp#*@}"; }
 +dir_part	() { local tmp="${1%%:*}"; echo "${tmp%%@*}"; }
-+export_flavor	() { [ "$FLAVOR" != "$1" ] && export FLAVOR="$1"; }
++export_flavor	() { if [ -n "$1" ]; then export FLAVOR="$1"; else unset FLAVOR; fi; }
 +
  pm_cd     () { builtin cd $1 2>/dev/null || return 1; }
  pm_cd_pd  () { [ -n "$PM_INDEX_ONLY" ] && return 2;
@@ -459,18 +459,19 @@
  		$PM_SU_CMD /etc/rc.d/ldconfig start > /dev/null
  	fi
  	unset temp file files
-@@ -3876,9 +3911,12 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3876,9 +3911,13 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
 -#	export_flavor $(flavor_part $portdir)
++	flavor=$(flavor_part $portdir)
 +	for dir in $post_clean_l; do
 +		pm_v "===>>> Running 'make clean' for special build dependency $dir"
-+		(FLAVOR=$(flavor_part $portdir) pm_make_s -C "$pd/$dir" clean NOCLEANDEPENDS=ncd2 >/dev/null)&
++		(pm_make_s -C "$pd/$dir" "${flavor:+FLAVOR=$flavor}" clean NOCLEANDEPENDS=ncd2 >/dev/null)&
 +	done
  	pm_v "===>>> Running 'make clean' in the background"
 -	(pm_make_s clean NOCLEANDEPENDS=ncd2 >/dev/null)&
-+	(FLAVOR=$(flavor_part $portdir) pm_make_s clean NOCLEANDEPENDS=ncd2 >/dev/null)&
++	(pm_make_s "${flavor:+FLAVOR=$flavor}" clean NOCLEANDEPENDS=ncd2 >/dev/null)&
  	pm_v
  fi
  if [ -n "$ro_opd" ]; then
