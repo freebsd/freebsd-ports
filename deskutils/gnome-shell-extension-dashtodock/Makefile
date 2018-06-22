@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-shell-extension-dashtodock
 PORTVERSION=	0.0.0.20151112
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
