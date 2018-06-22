@@ -105,7 +105,7 @@ UPOWER_DESC=		Power management via UPower
 UPOWER_RUN_DEPENDS=	${LOCALBASE}/libexec/upowerd:sysutils/upower
 
 VLC_DESC=		Multimedia via Phonon-VLC
-VLC_RUN_DEPENDS=	${KDE_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_vlc.so:multimedia/phonon-vlc
+VLC_RUN_DEPENDS=	${KDE_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_vlc.so:multimedia/phonon-vlc@qt4
 
 WALLPAPERS_DESC=	Install official KDE wallpapers
 WALLPAPERS_RUN_DEPENDS=	${KDE_PREFIX}/share/wallpapers/Horos/metadata.desktop:x11-themes/kde-wallpapers-kde4 \
