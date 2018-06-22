@@ -18,6 +18,8 @@ USE_SDL=	sdl gfx mixer image ttf
 
 ALL_TARGET=	default
 
+CXXFLAGS+=	-Wno-c++11-narrowing
+
 DATA_DIRS=	sounds fonts music images levels
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -39,7 +41,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kartofel ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_DIRS}" ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_DIRS}" ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
