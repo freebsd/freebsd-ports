@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Archive-Tar-Wrapper
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API wrapper around the 'tar' utility
 
-LICENSE=	ART10 GPLv1+
-LICENSE_COMB=	dual
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-IPC-Run>=0:devel/p5-IPC-Run \
