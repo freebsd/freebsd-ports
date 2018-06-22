@@ -26,7 +26,7 @@ IGNORE=	Incorrect 'USES+=lxqt:${lxqt_ARGS} takes no arguments
 _LXQT_PROJECT=	${DISTNAME:S/-${DISTVERSION}//:tl}
 
 MASTER_SITE_LXQT+= \
-	https://github.com/lxde/%SUBDIR%/releases/download/${PORTVERSION}/ \
+	https://github.com/lxqt/%SUBDIR%/releases/download/${PORTVERSION}/ \
 	https://downloads.lxqt.org/downloads/%SUBDIR%/${PORTVERSION}/
 MASTER_SITE_LXQT_SUBDIR=	${_LXQT_PROJECT}
 
