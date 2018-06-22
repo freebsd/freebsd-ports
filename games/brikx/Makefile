@@ -18,6 +18,8 @@ USE_SDL=	sdl mixer image ttf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+CXXFLAGS+=	-Wno-reserved-user-defined-literal
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
