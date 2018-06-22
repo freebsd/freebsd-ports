@@ -23,6 +23,7 @@ USE_FPC=	opengl libpng rtl-objpas
 USE_QT5=	core gui widgets network \
 		qmake_build buildtools_build \
 		linguisttools_build
+LLD_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/${PORTNAME} bin/hwengine \
