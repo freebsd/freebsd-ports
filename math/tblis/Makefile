@@ -12,6 +12,8 @@ COMMENT=	Framework for performing tensor operations
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=		fails to compile: include_configs.hpp:2:10: fatal error: 'configs/armv7a/config.hpp' file not found
+BROKEN_armv6=		fails to compile: include_configs.hpp:2:10: fatal error: 'configs/armv7a/config.hpp' file not found
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	i386 requires SSE
 
@@ -19,11 +21,11 @@ OPTIONS_DEFINE=	PARA
 PARA_DESC=	use pthread parallelization
 OPTIONS_DEFAULT=	PARA
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	devinamatthews
-
 USES=		gmake libtool
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	devinamatthews
 
 HAS_CONFIGURE=	yes
 

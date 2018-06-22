@@ -13,6 +13,8 @@ COMMENT=	GNUstep Foundation library
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN_aarch64=		fails to compile: <inline asm>:1:27: unexpected token in argument list
+
 LIB_DEPENDS+=	libffi.so:devel/libffi
 LIB_DEPENDS+=	libxml2.so:textproc/libxml2
 LIB_DEPENDS+=	libxslt.so:textproc/libxslt
@@ -21,12 +23,12 @@ LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt
 
 RUN_DEPENDS+=	${LOCALBASE}/GNUstep/System/Library/Makefiles/GNUstep.sh:devel/gnustep-make
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-procfs --disable-mixedabi --with-installation-domain=SYSTEM
-CONFIGURE_ENV=	OBJCFLAGS='-fobjc-runtime=gnustep-1.7 -fblocks'
 USES=		pkgconfig iconv gnustep
 USE_GNUSTEP=	build
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-procfs --disable-mixedabi --with-installation-domain=SYSTEM
+CONFIGURE_ENV=	OBJCFLAGS='-fobjc-runtime=gnustep-1.7 -fblocks'
 
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 

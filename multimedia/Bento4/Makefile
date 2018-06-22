@@ -11,6 +11,8 @@ COMMENT=	Full-featured MP4 format and MPEG DASH library and tools
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		fails to compile: Ap4AesBlockCipher.cpp:93:4: AP4_PLATFORM_BYTE_ORDER is not set
+
 USES=		cmake:outsource,noninja
 
 USE_GITHUB=	yes

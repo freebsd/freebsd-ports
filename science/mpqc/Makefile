@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Massively Parallel Quantum Chemistry Program
 
+BROKEN_aarch64=		fails to compile: lapack.h:2:10: 'chemistry/qc/mbptr12/f77sym.h' file not found
+
 LIB_DEPENDS=	libint.so:science/libint
 
 GNU_CONFIGURE=	yes

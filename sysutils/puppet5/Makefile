@@ -12,6 +12,8 @@ COMMENT=	Configuration management framework written in Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=		fails to install: Could not load facter; cannot install
+
 BUILD_DEPENDS=	rubygem-hiera>=2.0:sysutils/rubygem-hiera \
 		rubygem-json_pure>=0:devel/rubygem-json_pure
 RUN_DEPENDS=	rubygem-gettext-setup>=0:devel/rubygem-gettext-setup \

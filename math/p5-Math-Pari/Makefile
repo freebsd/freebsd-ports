@@ -17,6 +17,8 @@ COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN_aarch64=		fails to link: mp.c:(function pari_kernel_init): can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol 'gpmalloc' defined in init.o
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		perl5
