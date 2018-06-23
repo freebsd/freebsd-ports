@@ -5,7 +5,7 @@ PORTNAME=	pdflib
 PORTVERSION=	7.0.5
 PORTREVISION=	5
 CATEGORIES=	print perl5 java
-MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g}/
+MASTER_SITES=	LOCAL/ale
 DISTNAME=	PDFlib-Lite-${PORTVERSION}p3
 
 MAINTAINER=	ale@FreeBSD.org
