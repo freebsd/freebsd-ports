@@ -1,3 +1,3 @@
-TIMESTAMP = 1508897264
-SHA256 (octave-forge/gsl-2.1.0.tar.gz) = 940142b7d655d9196e1ec5197b4176388c69671e03ba8da717782d9f040fcedb
-SIZE (octave-forge/gsl-2.1.0.tar.gz) = 117838
+TIMESTAMP = 1529768576
+SHA256 (octave-forge/gsl-2.1.1.tar.gz) = d028c52579e251c3f21ebfdf065dffab3ad7893434efda33b501225ef1ea6ed3
+SIZE (octave-forge/gsl-2.1.1.tar.gz) = 122003
