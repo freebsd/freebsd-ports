@@ -98,6 +98,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Groups.pm
 %%SITE_PERL%%/RT/Handle.pm
 %%SITE_PERL%%/RT/I18N.pm
+%%SITE_PERL%%/RT/I18N/Extract.pm
 %%SITE_PERL%%/RT/I18N/cs.pm
 %%SITE_PERL%%/RT/I18N/de.pm
 %%SITE_PERL%%/RT/I18N/fr.pm
