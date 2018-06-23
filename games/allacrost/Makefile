@@ -22,12 +22,14 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 GNU_CONFIGURE=	yes
 USES=		gettext gmake iconv jpeg lua:51 openal:al
 USE_SDL=	sdl ttf net
-USE_GL=		yes
+USE_GL=		gl glu
+USE_XORG=	x11
 QT_NONSTANDARD=	yes # used when EDITOR enabled
 
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
+CXXFLAGS+=	-Wno-c++11-narrowing
 LLD_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
