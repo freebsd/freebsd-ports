@@ -1,9 +1,9 @@
-include/uv-bsd.h
-include/uv-errno.h
-include/uv-threadpool.h
-include/uv-unix.h
-include/uv-version.h
 include/uv.h
+include/uv/bsd.h
+include/uv/errno.h
+include/uv/threadpool.h
+include/uv/unix.h
+include/uv/version.h
 lib/libuv.a
 lib/libuv.so
 lib/libuv.so.1
