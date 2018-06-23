@@ -12,6 +12,7 @@ COMMENT=	Quickly generate sanity tests for the API of a C/C++ shared library
 
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:devel/abi-compliance-checker
 
@@ -58,13 +59,13 @@ post-patch:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
-.if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
-check regression-test test: build
-	cd ${WRKSRC}; ${PERL} ./${PORTNAME}.pl -test
-.endif
 
-post-install-DOCS-on:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
+
+# XXX: tests fail: ERROR: can't find GCC>=3.0 in PATH
+do-test:
+	cd ${WRKSRC} && ${PERL} ./${PORTNAME}.pl -test
 
 .include <bsd.port.mk>
