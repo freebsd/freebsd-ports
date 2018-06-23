@@ -12,6 +12,7 @@ COMMENT=	Free Java plug-in and Java Web Start for OpenJDK
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not configure: "Package 'mozilla-plugin', required by 'virtual:world', not found" 
 BUILD_DEPENDS=	zip:archivers/zip \
 		bash:shells/bash \
 		gsed:textproc/gsed
