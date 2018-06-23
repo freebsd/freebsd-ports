@@ -1,6 +1,6 @@
---- tests/Makefile.am.orig	2017-08-02 12:06:25 UTC
+--- tests/Makefile.am.orig	2018-06-01 07:42:27.000000000 -0700
 +++ tests/Makefile.am
-@@ -396,7 +396,7 @@ libasm = -lasm
+@@ -432,7 +432,7 @@
  libebl = -lebl
  else !STANDALONE
  if BUILD_STATIC
@@ -9,7 +9,7 @@
  libelf = ../libelf/libelf.a -lz
  libasm = ../libasm/libasm.a
  else
-@@ -411,16 +411,16 @@ endif !STANDALONE
+@@ -447,16 +447,16 @@
  arextract_LDADD = $(libelf)
  arsymtest_LDADD = $(libelf)
  newfile_LDADD = $(libelf)
@@ -30,7 +30,7 @@
  update1_LDADD = $(libelf)
  update2_LDADD = $(libelf)
  update3_LDADD = $(libdw) $(libelf)
-@@ -432,34 +432,34 @@ get_lines_LDADD = $(libdw) $(libelf)
+@@ -468,34 +468,34 @@
  get_files_LDADD = $(libdw) $(libelf)
  get_aranges_LDADD = $(libdw) $(libelf)
  allfcts_LDADD = $(libdw) $(libelf)
@@ -88,7 +88,7 @@
  test_flag_nobits_LDADD = $(libelf)
  rerequest_tag_LDADD = $(libdw)
  alldts_LDADD = $(libdw) $(libelf)
-@@ -469,9 +469,9 @@ typeiter2_LDADD = $(libdw) $(libelf)
+@@ -504,9 +504,9 @@
  low_high_pc_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  test_elf_cntl_gelf_getshdr_LDADD = $(libelf)
  dwflsyms_LDADD = $(libdw) $(libelf) $(argp_LDADD)
@@ -100,8 +100,8 @@
 +varlocs_LDADD = $(libeu) $(libdw) $(libelf) $(argp_LDADD)
  backtrace_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  # backtrace-child-biarch also uses those *_CFLAGS and *_LDLAGS variables:
- backtrace_child_CFLAGS = -fPIE
-@@ -480,23 +480,23 @@ backtrace_child_biarch_SOURCES = backtra
+ backtrace_child_CFLAGS = $(fpie_CFLAGS)
+@@ -515,23 +515,23 @@
  backtrace_data_LDADD = $(libdw) $(libelf)
  backtrace_dwarf_CFLAGS = -Wno-unused-parameter
  backtrace_dwarf_LDADD = $(libdw) $(libelf)
@@ -112,8 +112,8 @@
 +debugaltlink_LDADD = $(libeu) $(libdw) $(libelf)
 +buildid_LDADD = $(libeu) $(libdw) $(libelf)
  deleted_LDADD = ./deleted-lib.so
- deleted_lib_so_LDFLAGS = -shared -rdynamic
- deleted_lib_so_CFLAGS = -fPIC -fasynchronous-unwind-tables
+ deleted_lib_so_LDFLAGS = -shared
+ deleted_lib_so_CFLAGS = $(fpic_CFLAGS) -fasynchronous-unwind-tables
  aggregate_size_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  peel_type_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  vdsosyms_LDADD = $(libdw) $(libelf)
