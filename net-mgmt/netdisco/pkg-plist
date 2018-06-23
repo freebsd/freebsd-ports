@@ -90,6 +90,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/DB/ResultSet/NodeNbt.pm
 %%SITE_PERL%%/App/Netdisco/DB/ResultSet/NodeWireless.pm
 %%SITE_PERL%%/App/Netdisco/DB/ResultSet/Subnet.pm
+%%SITE_PERL%%/App/Netdisco/DB/SchemaVersioned.pm
 %%SITE_PERL%%/App/Netdisco/DB/SetOperations.pm
 %%SITE_PERL%%/App/Netdisco/Environment.pm
 %%SITE_PERL%%/App/Netdisco/GenericDB.pm
@@ -360,6 +361,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-49-50-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-50-51-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-51-52-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-52-53-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/admintask.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/duplicatedevices.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/jobqueue.tt
