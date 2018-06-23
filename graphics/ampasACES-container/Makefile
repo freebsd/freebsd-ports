@@ -3,6 +3,7 @@
 
 PORTNAME=	ampasACES-container
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USE_GITHUB=	yes
 GH_ACCOUNT=	ampas
 GH_PROJECT=	aces_container
-GH_TAGNAME=	4c7375b
+GH_TAGNAME=	7a4e21e
 
 USES=		cmake pathfix pkgconfig
 USE_LDCONFIG=	yes
