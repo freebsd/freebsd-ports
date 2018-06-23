@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	migemo.el
-PORTVERSION=	1.9.1
-PORTREVISION=	3
+PORTVERSION=	1.9.1.20160924
 CATEGORIES=	japanese elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -18,6 +17,7 @@ USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-jp
 GH_PROJECT=	migemo
+GH_TAGNAME=	e4744ef
 
 CONFLICTS=	ja-migemo-emacs
 NO_ARCH=	yes
