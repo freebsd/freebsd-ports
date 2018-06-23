@@ -1,11 +1,11 @@
---- src/httpd/configure.orig	2017-02-01 03:41:52 UTC
+--- src/httpd/configure.orig	2018-04-20 00:31:00 UTC
 +++ src/httpd/configure
-@@ -97,7 +97,7 @@ if [ "${GROONGA_HTTPD_WITH_MRUBY}" = "ye
-   ./configure --with-ngx-src-root=${nginx_directory} \
+@@ -115,7 +115,7 @@ if [ "${GROONGA_HTTPD_WITH_MRUBY}" = "yes" -a \
+     --with-ngx-src-root=${nginx_directory} \
      --with-mruby-incdir="${mruby_directory}/src ${mruby_directory}/include" \
      --with-mruby-libdir=${libmruby_directory}
 -  make generate_gems_config
 +  gmake generate_gems_config
-   configure_args="${configure_args} --add-module=${nginx_mruby_directory}/dependence/ngx_devel_kit --add-module=${nginx_mruby_directory}"
+   configure_args="${configure_args} --add-module=${nginx_mruby_directory}/dependence/ngx_devel_kit"
+   configure_args="${configure_args} --add-module=${nginx_mruby_directory_in_build_directory}"
  fi
- 
