@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2018-05-16 08:49:00 UTC
+--- CMakeLists.txt.orig	2018-06-23 15:40:12 UTC
 +++ CMakeLists.txt
 @@ -28,9 +28,9 @@ message(STATUS "Building xtensor v${${PR
  # Dependencies
  # ============
  
 -find_package(xtl 0.4.9 REQUIRED)
-+#find_package(xtl 0.4.1 REQUIRED)
++#find_package(xtl 0.4.9 REQUIRED)
  
 -message(STATUS "Found xtl: ${xtl_INCLUDE_DIRS}/xtl")
 +message(STATUS "Found xtl: xtl/include")

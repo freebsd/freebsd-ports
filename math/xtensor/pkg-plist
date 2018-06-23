@@ -33,6 +33,7 @@ include/xtensor/xoperation.hpp
 include/xtensor/xoptional.hpp
 include/xtensor/xoptional_assembly.hpp
 include/xtensor/xoptional_assembly_base.hpp
+include/xtensor/xoptional_assembly_storage.hpp
 include/xtensor/xrandom.hpp
 include/xtensor/xreducer.hpp
 include/xtensor/xscalar.hpp
@@ -42,6 +43,7 @@ include/xtensor/xslice.hpp
 include/xtensor/xsort.hpp
 include/xtensor/xstorage.hpp
 include/xtensor/xstrided_view.hpp
+include/xtensor/xstrided_view_base.hpp
 include/xtensor/xstrides.hpp
 include/xtensor/xtensor.hpp
 include/xtensor/xtensor_config.hpp
