@@ -1,3 +1,3 @@
-TIMESTAMP = 1526118061
-SHA256 (fakeredis-0.10.3.tar.gz) = 488e6654ec57ef96f7f24227196602bac227d838b4a28407f113525ec0449310
-SIZE (fakeredis-0.10.3.tar.gz) = 28461
+TIMESTAMP = 1529752611
+SHA256 (fakeredis-0.11.0.tar.gz) = f9f486f724bcf9db64eacf6ec805abaeb48d96a6e7baf7c87721ddb71622b76f
+SIZE (fakeredis-0.11.0.tar.gz) = 26455
