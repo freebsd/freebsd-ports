@@ -1,0 +1,9 @@
+--- thirdparty/zstd/SCsub.orig	2018-06-13 11:53:45 UTC
++++ thirdparty/zstd/SCsub
+@@ -25,5 +25,5 @@ thirdparty_zstd_sources = [
+ ]
+ thirdparty_zstd_sources = [thirdparty_zstd_dir + file for file in thirdparty_zstd_sources]
+ env.add_source_files(env.core_sources, thirdparty_zstd_sources)
+-env.Append(CPPPATH=["#thirdparty/zstd", "#thirdparty/zstd/common"])
++env.Prepend(CPPPATH=["#thirdparty/zstd", "#thirdparty/zstd/common"])
+ env.Append(CCFLAGS="-DZSTD_STATIC_LINKING_ONLY")
