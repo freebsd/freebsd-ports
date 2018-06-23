@@ -16,6 +16,14 @@ share/gir-1.0/Skk-1.0.gir
 %%DATADIR%%/rules/act/keymap/wide-latin.json
 %%DATADIR%%/rules/act/metadata.json
 %%DATADIR%%/rules/act/rom-kana/default.json
+%%DATADIR%%/rules/act09/keymap/default.json
+%%DATADIR%%/rules/act09/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/act09/keymap/hiragana.json
+%%DATADIR%%/rules/act09/keymap/katakana.json
+%%DATADIR%%/rules/act09/keymap/latin.json
+%%DATADIR%%/rules/act09/keymap/wide-latin.json
+%%DATADIR%%/rules/act09/metadata.json
+%%DATADIR%%/rules/act09/rom-kana/default.json
 %%DATADIR%%/rules/azik/keymap/common.json
 %%DATADIR%%/rules/azik/keymap/default.json
 %%DATADIR%%/rules/azik/keymap/hankaku-katakana.json
@@ -33,6 +41,7 @@ share/gir-1.0/Skk-1.0.gir
 %%DATADIR%%/rules/default/keymap/wide-latin.json
 %%DATADIR%%/rules/default/metadata.json
 %%DATADIR%%/rules/default/rom-kana/default.json
+%%DATADIR%%/rules/kzik/keymap/common.json
 %%DATADIR%%/rules/kzik/keymap/default.json
 %%DATADIR%%/rules/kzik/keymap/hankaku-katakana.json
 %%DATADIR%%/rules/kzik/keymap/hiragana.json
