@@ -46,6 +46,7 @@ include/gsl/gsl_fft_halfcomplex.h
 include/gsl/gsl_fft_halfcomplex_float.h
 include/gsl/gsl_fft_real.h
 include/gsl/gsl_fft_real_float.h
+include/gsl/gsl_filter.h
 include/gsl/gsl_fit.h
 include/gsl/gsl_heapsort.h
 include/gsl/gsl_histogram.h
@@ -81,6 +82,7 @@ include/gsl/gsl_monte.h
 include/gsl/gsl_monte_miser.h
 include/gsl/gsl_monte_plain.h
 include/gsl/gsl_monte_vegas.h
+include/gsl/gsl_movstat.h
 include/gsl/gsl_multifit.h
 include/gsl/gsl_multifit_nlin.h
 include/gsl/gsl_multifit_nlinear.h
@@ -175,6 +177,7 @@ include/gsl/gsl_sf_mathieu.h
 include/gsl/gsl_sf_pow_int.h
 include/gsl/gsl_sf_psi.h
 include/gsl/gsl_sf_result.h
+include/gsl/gsl_sf_sincos_pi.h
 include/gsl/gsl_sf_synchrotron.h
 include/gsl/gsl_sf_transport.h
 include/gsl/gsl_sf_trig.h
@@ -248,7 +251,7 @@ include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
 lib/libgsl.so
 lib/libgsl.so.23
-lib/libgsl.so.23.0.0
+lib/libgsl.so.23.1.0
 lib/libgslcblas.a
 lib/libgslcblas.so
 lib/libgslcblas.so.0
