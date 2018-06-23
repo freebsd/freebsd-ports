@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 DISTVERSIONSUFFIX= -stable
 CATEGORIES=	devel games
 
@@ -25,14 +25,14 @@ RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 		xdg-open:devel/xdg-utils \
 		xmessage:x11/xmessage
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	godotengine
-
 # on 10.4 using clang34 fails - so we want to use clang60
 # gl already needs clang60 so this shouldn't add any overhead
 USES=		compiler:c++14-lang pkgconfig scons ssl
 USE_XORG=	x11 xcursor xi xinerama xrandr
 USE_GL=		gl glew glu
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	godotengine
 
 MAKE_ARGS+=		platform=x11 builtin_libpng=False builtin_openssl=False verbose=True
 MAKE_ARGS+=		${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
