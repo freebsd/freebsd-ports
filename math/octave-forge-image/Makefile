@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-image
-PORTVERSION=	2.6.2
-PORTREVISION=	2
+PORTVERSION=	2.8.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,16 +13,15 @@ LICENSE_NAME=	Many different licenses
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		does not build with octave 4.4.0
-
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-USES=		compiler:c++0x
+USES=		compiler:c++14-lang
 GNU_CONFIGURE=	yes
+CXXFLAGS+=	-fPIC
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
