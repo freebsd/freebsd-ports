@@ -3,4 +3,5 @@ libexec/ibus-setup-skk
 %%NLS%%share/locale/ja/LC_MESSAGES/ibus-skk.mo
 %%DATADIR%%/setup/ibus-skk-preferences.ui
 %%DATADIR%%/icons/ibus-skk.svg
+share/applications/ibus-setup-skk.desktop
 share/ibus/component/skk.xml
