@@ -23,7 +23,7 @@ BROKEN_armv7=		fails to build: fails to compile i386_disasm.c
 BROKEN_sparc64=		sparc patch does not apply cleanly to 0.172
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
-PATCH_DEPENDS=	gnulib>=0:devel/gnulib:extract
+PATCH_DEPENDS=	${NONEXISTENT}:devel/gnulib:extract
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
@@ -47,10 +47,11 @@ CFLAGS_i386+=	-Wno-error
 CONFIGURE_ARGS+=	--program-prefix=eu-
 
 post-patch:
+	@${LN} -s `${MAKE} -C ${PORTSDIR}/devel/gnulib -V WRKSRC` ${WRKDIR}/gnulib
 	@${CP} -a \
-	    ${LOCALBASE}/share/gnulib/lib/obstack.c \
-	    ${LOCALBASE}/share/gnulib/lib/obstack.h \
-	    ${LOCALBASE}/share/gnulib/lib/obstack_printf.c \
+	    ${WRKDIR}/gnulib/lib/obstack.c \
+	    ${WRKDIR}/gnulib/lib/obstack.h \
+	    ${WRKDIR}/gnulib/lib/obstack_printf.c \
 	    ${WRKSRC}/lib
 
 .include <bsd.port.mk>
