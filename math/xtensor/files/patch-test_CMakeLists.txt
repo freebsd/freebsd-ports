@@ -1,4 +1,4 @@
---- test/CMakeLists.txt.orig	2018-03-13 17:07:19 UTC
+--- test/CMakeLists.txt.orig	2018-06-22 15:12:37 UTC
 +++ test/CMakeLists.txt
 @@ -8,12 +8,13 @@
  
@@ -19,7 +19,7 @@
  
  message(STATUS "Forcing tests build type to Release")
  set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
-@@ -158,7 +158,7 @@ endforeach()
+@@ -174,7 +175,7 @@ add_custom_target(
  foreach(filename IN LISTS XTENSOR_TESTS)
      string(REPLACE ".cpp" "" targetname ${filename})
      add_executable(${targetname} ${COMMON_BASE} ${filename} ${XTENSOR_HEADERS})
@@ -28,7 +28,7 @@
      if(DOWNLOAD_GTEST OR GTEST_SRC_DIR)
          add_dependencies(${targetname} gtest_main)
      endif()
-@@ -169,7 +169,7 @@ add_executable(${XTENSOR_TARGET} ${COMMO
+@@ -188,6 +189,6 @@ add_executable(${XTENSOR_TARGET} ${COMMO
  if(DOWNLOAD_GTEST OR GTEST_SRC_DIR)
      add_dependencies(${XTENSOR_TARGET} gtest_main)
  endif()
@@ -36,4 +36,3 @@
 +target_link_libraries(${XTENSOR_TARGET} ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
  
  add_custom_target(xtest COMMAND ${XTENSOR_TARGET} DEPENDS ${XTENSOR_TARGET})
- 
