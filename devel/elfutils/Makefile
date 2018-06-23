@@ -15,7 +15,7 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING-GPLV2
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 
-IGNORE_FreeBSD_11=	stable/10 and 11.0 base libelf.h lack needed ELF types
+IGNORE_FreeBSD_10=	stable/10 base libelf.h lacks needed ELF types
 
 BROKEN_aarch64=		fails to build: fatal error: linux/uio.h: No such file or directory
 BROKEN_armv6=		fails to build: fails to compile i386_disasm.c
