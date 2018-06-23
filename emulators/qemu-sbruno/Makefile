@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.11.50.g20180501
+PORTVERSION=	2.11.50.g20180622
 CATEGORIES=	emulators
 MASTER_SITES=	GH
 PKGNAMESUFFIX?=	-sbruno
@@ -13,7 +13,7 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 
 LICENSE=	GPLv2
 USE_GITHUB=	yes
-GH_TUPLE=	seanbruno:qemu-bsd-user:ea8d0ac \
+GH_TUPLE=	seanbruno:qemu-bsd-user:495fb3a \
 		qemu:keycodemapdb:10739aa:keycodemapdb/ui/keycodemapdb
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2.7,build
