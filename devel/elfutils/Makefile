@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elfutils
-PORTVERSION=	0.170
-PORTREVISION=	1
+PORTVERSION=	0.172
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 
@@ -16,12 +15,15 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING-GPLV2
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 
+IGNORE_FreeBSD_11=	stable/10 and 11.0 base libelf.h lack needed ELF types
+
 BROKEN_aarch64=		fails to build: fatal error: linux/uio.h: No such file or directory
 BROKEN_armv6=		fails to build: fails to compile i386_disasm.c
 BROKEN_armv7=		fails to build: fails to compile i386_disasm.c
+BROKEN_sparc64=		sparc patch does not apply cleanly to 0.172
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
-PATCH_DEPENDS=	${NONEXISTENT}:devel/gnulib:extract
+PATCH_DEPENDS=	gnulib>=0:devel/gnulib:extract
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
@@ -37,7 +39,7 @@ USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-Wno-null-dereference
+CFLAGS+=	-Wno-null-dereference -Wno-unused-value
 # Give i386 a prayer of building, and we can fix the warnings later:
 CFLAGS_i386+=	-Wno-error
 
@@ -45,11 +47,10 @@ CFLAGS_i386+=	-Wno-error
 CONFIGURE_ARGS+=	--program-prefix=eu-
 
 post-patch:
-	@${LN} -s `${MAKE} -C ${PORTSDIR}/devel/gnulib -V WRKSRC` ${WRKDIR}/gnulib
 	@${CP} -a \
-	    ${WRKDIR}/gnulib/lib/obstack.c \
-	    ${WRKDIR}/gnulib/lib/obstack.h \
-	    ${WRKDIR}/gnulib/lib/obstack_printf.c \
+	    ${LOCALBASE}/share/gnulib/lib/obstack.c \
+	    ${LOCALBASE}/share/gnulib/lib/obstack.h \
+	    ${LOCALBASE}/share/gnulib/lib/obstack_printf.c \
 	    ${WRKSRC}/lib
 
 .include <bsd.port.mk>
