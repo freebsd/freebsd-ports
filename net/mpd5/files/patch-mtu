@@ -1,0 +1,64 @@
+Index: src/ccp.c
+===================================================================
+--- src/ccp.c	(revision 2245)
++++ src/ccp.c	(working copy)
+@@ -938,6 +938,7 @@ CcpDecodeConfig(Fsm fp, FsmOption list, 
+ 	CCP_PEER_REJ(ccp, index);
+ 	break;
+ 
++      case MODE_ACK:
+       case MODE_NAK:
+       case MODE_NOP:
+ 	(*ct->DecodeConfig)(fp, opt, mode);
+Index: src/ecp.c
+===================================================================
+--- src/ecp.c	(revision 2245)
++++ src/ecp.c	(working copy)
+@@ -793,6 +793,7 @@ EcpDecodeConfig(Fsm fp, FsmOption list, 
+ 	ECP_PEER_REJ(ecp, index);
+ 	break;
+ 
++      case MODE_ACK:
+       case MODE_NOP:
+ 	(*et->DecodeConfig)(fp, opt, mode);
+ 	break;
+Index: src/fsm.c
+===================================================================
+--- src/fsm.c	(revision 2245)
++++ src/fsm.c	(working copy)
+@@ -664,7 +664,7 @@ FsmRecvConfigAck(Fsm fp, FsmHeader lhp, 
+   /* XXX We should verify the contents are equal to our last sent config-req */
+ 
+   /* Decode packet */
+-  FsmDecodeBuffer(fp, MBDATA(bp), MBLEN(bp), MODE_NOP);
++  FsmDecodeBuffer(fp, MBDATA(bp), MBLEN(bp), MODE_ACK);
+ 
+   /* Do whatever */
+   switch (fp->state) {
+Index: src/fsm.h
+===================================================================
+--- src/fsm.h	(revision 2245)
++++ src/fsm.h	(working copy)
+@@ -43,6 +43,7 @@
+   #define MODE_NAK	1
+   #define MODE_REJ	2
+   #define MODE_NOP	3
++  #define MODE_ACK	4		/* pseudo mode for LCP negotiations */
+ 
+   /* Codes */
+   #define CODE_VENDOR		0
+Index: src/lcp.c
+===================================================================
+--- src/lcp.c	(revision 2245)
++++ src/lcp.c	(working copy)
+@@ -843,6 +843,10 @@ LcpDecodeConfig(Fsm fp, FsmOption list, 
+ 	  mru = ntohs(mru);
+ 	  Log(LG_LCP, ("[%s]   %s %d", l->name, oi->name, mru));
+ 	  switch (mode) {
++	    case MODE_ACK:
++	      if (mru == lcp->want_mru)
++		lcp->peer_mru = mru;
++	      break;
+ 	    case MODE_REQ:
+ 	      if (mru < LCP_MIN_MRU) {
+ 		mru = htons(LCP_MIN_MRU);
