@@ -85,13 +85,13 @@
     SUBDIR += py-RO
     SUBDIR += py-aipy
     SUBDIR += py-astLib
-    SUBDIR += py-astro
     SUBDIR += py-astropy
     SUBDIR += py-horoscopegenerator
     SUBDIR += py-metar
     SUBDIR += py-metpy
     SUBDIR += py-pymetar
     SUBDIR += py-pywapi
+    SUBDIR += py-spacetrack
     SUBDIR += pyephem
     SUBDIR += pyweather
     SUBDIR += qlandkartegt
