@@ -1,6 +1,6 @@
---- utils.cpp.orig	Tue Feb  1 08:23:17 2005
-+++ utils.cpp	Tue Feb  1 08:23:27 2005
-@@ -9,6 +9,7 @@
+--- utils.cpp.orig	2005-08-23 21:26:23 UTC
++++ utils.cpp
+@@ -11,6 +11,7 @@
  //#endif
  
  #include <fstream>

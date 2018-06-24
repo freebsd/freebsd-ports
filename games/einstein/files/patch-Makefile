@@ -1,34 +1,45 @@
---- Makefile.orig	Mon Sep 26 07:20:30 2005
-+++ Makefile	Thu Oct 13 08:35:14 2005
-@@ -5,7 +5,7 @@
+--- Makefile.orig	2005-09-25 21:20:30 UTC
++++ Makefile
+@@ -5,7 +5,6 @@
  ########################################
  
  # installation prefix
 -PREFIX=/usr/local
-+PREFIX=@@PREFIX@@
  
  ########################################
  #
-@@ -16,8 +16,8 @@
- OPTIMIZE=#-O6 -march=pentium4 -mfpmath=sse -fomit-frame-pointer -funroll-loops
- PROFILER=#-pg
- DEBUG=#-ggdb
+@@ -13,11 +12,8 @@ PREFIX=/usr/local
+ #
+ ########################################
+ 
+-OPTIMIZE=#-O6 -march=pentium4 -mfpmath=sse -fomit-frame-pointer -funroll-loops
+-PROFILER=#-pg
+-DEBUG=#-ggdb
 -CXXFLAGS=-pipe -Wall $(OPTIMIZE) $(DEBUG) `sdl-config --cflags` -DPREFIX=L\"$(PREFIX)\" $(PROFILER)
 -LNFLAGS=-pipe -lSDL_ttf -lfreetype `sdl-config --libs` -lz -lSDL_mixer $(PROFILER)
-+CXXFLAGS=-pipe -Wall $(OPTIMIZE) $(DEBUG) `${SDL_CONFIG} --cflags` -DPREFIX=L\"$(PREFIX)\" $(PROFILER)
-+LNFLAGS=-pipe -lSDL_ttf -lfreetype `${SDL_CONFIG} --libs` -lz -lSDL_mixer $(PROFILER)
++CXXFLAGS+=-Wall `${SDL_CONFIG} --cflags` -DPREFIX=L\"$(PREFIX)\"
++LDFLAGS+=-lSDL_ttf -lfreetype `${SDL_CONFIG} --libs` -lz -lSDL_mixer
  INSTALL=install
  
  TARGET=einstein
-@@ -61,8 +61,9 @@
+@@ -49,7 +45,7 @@ all: $(TARGET)
+ 
+ 
+ $(TARGET): $(OBJECTS)
+-	$(CXX) $(LNFLAGS) $(OBJECTS) -o $(TARGET)
++	$(CXX) $(LDFLAGS) $(OBJECTS) -o $(TARGET)
+ 
+ clean:
+ 	rm -f $(OBJECTS) core* *core $(TARGET) *~
+@@ -61,8 +57,9 @@ run: $(TARGET)
  	./$(TARGET)
  
  install: $(TARGET)
 -	$(INSTALL) -s -D $(TARGET) $(PREFIX)/bin/$(TARGET)
 -	$(INSTALL) -D einstein.res $(PREFIX)/share/einstein/res/einstein.res
-+	$(INSTALL) $(TARGET) $(DESTDIR)$(PREFIX)/bin/$(TARGET)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(PREFIX)/bin/$(TARGET)
 +	mkdir -p  $(DESTDIR)$(PREFIX)/share/einstein/res/
-+	$(INSTALL) einstein.res $(DESTDIR)$(PREFIX)/share/einstein/res/einstein.res
++	$(BSD_INSTALL_DATA) einstein.res $(DESTDIR)$(PREFIX)/share/einstein/res/einstein.res
  	
  # DO NOT DELETE THIS LINE -- make depend depends on it.
  

@@ -14,14 +14,12 @@ COMMENT=	Remake of old DOS game Sherlock, which was inspired by Albert Einstein'
 
 LICENSE=	GPLv2+ # (now dead) website mentions GPL
 
+LIB_DEPENDS=	libfreetype.so:print/freetype2
+
 USE_SDL=	sdl ttf mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e "s,@@STAGEDIR@@,${STAGEDIR}," \
-		-e "s,@@PREFIX@@,${PREFIX}," \
-		${WRKSRC}/Makefile
+CXXFLAGS+=	-Wno-c++11-narrowing
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/einstein

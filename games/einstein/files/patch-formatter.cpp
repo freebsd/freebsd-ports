@@ -1,7 +1,6 @@
-diff -urN einstein-2.0.orig/formatter.cpp einstein-2.0/formatter.cpp
---- formatter.cpp	2005-08-13 22:40:58.000000000 -0400
-+++ formatter.cpp	2006-08-15 11:18:28.000000000 -0400
-@@ -58,7 +58,7 @@
+--- formatter.cpp.orig	2005-08-14 02:40:58 UTC
++++ formatter.cpp
+@@ -58,7 +58,7 @@ Formatter::Formatter(unsigned char *data
              if ((c.type == INT_ARG) || (c.type == STRING_ARG) ||
                      (c.type == FLOAT_ARG) || (c.type == DOUBLE_ARG))
              {
@@ -10,7 +9,7 @@ diff -urN einstein-2.0.orig/formatter.cpp einstein-2.0/formatter.cpp
                  args[no - 1] = c.type;
              }
          }
-@@ -123,7 +123,7 @@
+@@ -123,7 +123,7 @@ class StrArgValue: public ArgValue
  std::wstring Formatter::format(std::vector<ArgValue*> &argValues) const
  {
      std::wstring s;
@@ -19,7 +18,7 @@ diff -urN einstein-2.0.orig/formatter.cpp einstein-2.0/formatter.cpp
  
      for (int i = 0; i < commandsCnt; i++) {
          Command *cmd = &commands[i];
-@@ -135,8 +135,8 @@
+@@ -135,8 +135,8 @@ std::wstring Formatter::format(std::vect
                  
              case STRING_ARG:
              case INT_ARG:
@@ -29,3 +28,4 @@ diff -urN einstein-2.0.orig/formatter.cpp einstein-2.0/formatter.cpp
 +                if (no < (long int)argValues.size())
                      s += argValues[no]->format(cmd);
                  break;
+ 
