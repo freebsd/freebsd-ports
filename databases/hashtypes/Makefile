@@ -12,6 +12,7 @@ MAINTAINER=	oss-contrib@dreamindustries.co
 COMMENT=	Hash data types for PostgreSQL
 
 USES=		gmake pgsql zip
+LLD_UNSAFE=	yes
 
 MAKE_ARGS=	USE_PGXS=1 MODULEDIR=extension
 MODULEDIR=	${PREFIX}/share/postgresql/extension

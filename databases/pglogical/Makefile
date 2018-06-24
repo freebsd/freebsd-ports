@@ -11,6 +11,7 @@ COMMENT=	Logical replication system as a PostgreSQL extension
 LICENSE=	PostgreSQL
 
 USES=		gmake pgsql:9.4+
+LLD_UNSAFE=	yes
 WANT_PGSQL=	client server
 
 USE_GITHUB=	yes

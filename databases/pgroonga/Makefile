@@ -14,6 +14,7 @@ LICENSE=	PostgreSQL
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
 USES=		gmake pgsql pkgconfig
+LLD_UNSAFE=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	MECAB

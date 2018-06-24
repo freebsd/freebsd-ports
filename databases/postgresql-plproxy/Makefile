@@ -14,6 +14,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		bison gmake pgsql
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 
 post-patch:

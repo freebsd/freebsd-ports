@@ -13,6 +13,7 @@ COMMENT=	Reorganize tables in PostgreSQL databases with minimal locks
 LICENSE=	BSD3CLAUSE
 
 USES=		gmake pgsql:9.2+
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	reorg
 

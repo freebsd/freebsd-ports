@@ -10,9 +10,10 @@ COMMENT=	Functions for getting lower-level data about full text search
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+USES=		gmake pgsql
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	zulip
-USES=		gmake pgsql
 
 PLIST_FILES=	lib/postgresql/tsearch_extras.so \
 		share/postgresql/extension/tsearch_extras--1.0.sql \

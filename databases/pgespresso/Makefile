@@ -14,6 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	2ndquadrant-it
 
 USES=		gmake pgsql:9.2+
+LLD_UNSAFE=	yes
 WANT_PGSQL=	server
 
 PLIST_FILES=	lib/postgresql/pgespresso.so				\
