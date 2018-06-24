@@ -95,6 +95,8 @@ V4L_CONFIGURE_WITH=	v4l
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 
+VKD3D_IGNORE=		The VKD3D option is not supported (yet)
+
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML
 
 X11_CONFIGURE_WITH=	x cms fontconfig freetype glu jpeg opengl png xinerama xinput2 xrandr xrender
