@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,12 +18,15 @@ LIB_DEPENDS=	libibus-1.0.so:textproc/ibus	\
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/Menu.py:devel/py-xdg@${PY_FLAVOR}		\
 		${PYTHON_SITELIBDIR}/dbus/bus.py:devel/py-dbus@${PY_FLAVOR}		\
 		${PYTHON_SITELIBDIR}/hunspell.so:textproc/py-hunspell@${PY_FLAVOR}	\
-		${LOCALBASE}/share/unicode/ucd/Index.txt:textproc/UCD	\
-		${LOCALBASE}/share/unicode/cldr/readme.html:textproc/CLDR\
+		${LOCALBASE}/share/unicode/ucd/Index.txt:textproc/UCD			\
+		${LOCALBASE}/share/unicode/cldr/readme.html:textproc/CLDR		\
 		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
-TEST_DEPENDS=	${LOCALBASE}/share/hunspell/de_DE.dic:german/hunspell	\
-		${LOCALBASE}/share/hunspell/ko_KR.aff:korean/hunspell	\
-		${LOCALBASE}/share/hunspell/en_US.aff:textproc/en-hunspell
+TEST_DEPENDS=	${LOCALBASE}/share/hunspell/de_DE.dic:german/hunspell		\
+		${LOCALBASE}/share/hunspell/ko_KR.aff:korean/hunspell		\
+		${LOCALBASE}/libexec/ibus-engine-m17n:textproc/ibus-m17n	\
+		${LOCALBASE}/share/hunspell/en_US.aff:textproc/en-hunspell	\
+		${LOCALBASE}/share/m17n/hi-inscript2.mim:devel/m17n-inscript2	\
+		gmake:devel/gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mike-fabian
@@ -34,6 +37,7 @@ GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 INSTALLS_ICONS=	yes
 TEST_TARGET=	check
+TEST_ENV=	MAKE_CMD=${LOCALBASE}/bin/gmake LC_ALL=en_US.UTF-8
 
 OPTIONS_DEFINE=	HUNSPELL
 OPTIONS_DEFAULT=HUNSPELL
@@ -44,7 +48,7 @@ SPELL2FIX=	engine/hunspell_suggest.py setup/user_transliteration.py	\
 		setup/user_transliteration.py
 DATA2FIX=	setup/main.py engine/tabsqlitedb.py engine/main.py
 PY2FIX=		setup/user_transliteration.py
-M17N2FIX=	setup/main.py
+M17N2FIX=	setup/main.py engine/itb_util.py engine/hunspell_table.py
 SHR2FIX=	engine/tabsqlitedb.py engine/itb_util.py engine/itb_emoji.py	\
 		engine/hunspell_table.py engine/main.py setup/user_transliteration.py
 COMP2DEL=	engine/Makefile setup/Makefile
