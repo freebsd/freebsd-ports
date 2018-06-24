@@ -12,6 +12,8 @@ DISTNAME=	Cheetah-${DISTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	HTML template engine for Python
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=2.0.3:textproc/py-markdown@${PY_FLAVOR}
 
 USES=		python:2.7
