@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	msmtp
-PORTVERSION=	1.6.6
-PORTREVISION=	1
+PORTVERSION=	1.6.7
 CATEGORIES=	mail ipv6
-MASTER_SITES=	SF
+MASTER_SITES=	https://marlam.de/msmtp/releases/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	SMTP plugin for MUAs
