@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	fonttools
-PORTVERSION=	3.26.0
-PORTREVISION=	1
+PORTVERSION=	3.28.0
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source library for manipulating fonts, written in Python
 
 LICENSE=	MIT
