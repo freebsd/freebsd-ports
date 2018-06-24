@@ -4,6 +4,7 @@
     COMMENT = Communication utilities
 
     SUBDIR += acfax
+    SUBDIR += airspy
     SUBDIR += aldo
     SUBDIR += amtterm
     SUBDIR += anyremote
