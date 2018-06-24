@@ -52,7 +52,7 @@ post-patch:
 		-e 's| \*-\*-linux\*)| *-*-*)|' \
 		-e '/ARCHFLAGS=/d' ${WRKSRC}/configure
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS BUGS CHANGES ChangeLog HINTS NEWS PLANS README README.DV \
 	README.avilib README.glav README.AltiVec README.lavpipe \
