@@ -1,2 +1,3 @@
-SHA256 (ptpd-2.3.1.tar.gz) = 0dbf54dd2c178bd9fe62481d2c37513ee36636d8bf137cfdad96891490cdbf93
-SIZE (ptpd-2.3.1.tar.gz) = 1196180
+TIMESTAMP = 1529807828
+SHA256 (ptpd-ptpd-2.3.1-861c44f_GH0.tar.gz) = 673ea84b11c77a808ac6ef1d42d9c6b7f3c7245b5957b13e754951bf26001286
+SIZE (ptpd-ptpd-2.3.1-861c44f_GH0.tar.gz) = 884204
