@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.463 2018/05/12 22:12:18 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.467 2018/06/24 16:07:04 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 18;
-my $micro = 2;
+my $micro = 3;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1149,18 +1149,9 @@ sub check_depends_syntax {
 			# check Python flavor
 			my $bdir = basename($m{'dir'});
 			if ($bdir =~ /^py-/) {
-				if (!defined($makevar{USE_PYTHON}) ||
-					$makevar{USE_PYTHON} eq 'noflavors' ||
-					$makevar{USE_PYTHON} eq '') {
-					if ($m{'fla'} ne '${PY_FLAVOR}') {
-						&perror("WARN", $file, -1, "you may want directory for ".
-							"dependency $m{'dep'} to be $m{'dir'}:\@\${PY_FLAVOR}");
-					}
-				} else {
-					if ($m{'fla'} ne '${FLAVOR}') {
-						&perror("WARN", $file, -1, "you may want directory for ".
-							"dependency $m{'dep'} to be $m{'dir'}:\@\${FLAVOR}");
-					}
+				if ($m{'fla'} ne '${PY_FLAVOR}') {
+					&perror("WARN", $file, -1, "you may want directory for ".
+						"dependency $m{'dep'} to be $m{'dir'}\@\${PY_FLAVOR}");
 				}
 			}
 
@@ -2767,9 +2758,14 @@ DIST_SUBDIR EXTRACT_ONLY
 				foreach my $mss (split(/\s+/, $makevar{MASTER_SITES_SUBDIRS})) {
 					my ($ms, $sd) = split(/:/, $mss);
 					if ($i =~ /^$ms/ && $i ne $ms) {
-						&perror("WARN", $file, -1, "typically when you specify magic site $ms ".
-							"you do not need anything else as $sd is assumed");
-						$good_ms = 0;
+						my $ip = $i;
+						$ip =~ s/^$ms\///;
+						my $exp_sd = get_makevar($ip);
+						if ($exp_sd eq $sd) {
+							&perror("WARN", $file, -1, "typically when you specify magic site $ms ".
+								"you do not need anything else as $sd is assumed");
+							$good_ms = 0;
+						}
 					}
 				}
 				if ($good_ms) {
@@ -3627,7 +3623,7 @@ EOF
 sub get_makevar {
 	my($cmd, $result);
 
-	$cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @_);
+	$cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", map { "'$_'" } @_);
 	$result = `$cmd`;
 	chomp $result;
 
@@ -3642,7 +3638,7 @@ sub get_makevar {
 sub get_makevar_raw {
 	my($cmd, $result);
 
-	$cmd = join(' -XV ', "make $makeenv MASTER_SITE_BACKUP=''", @_);
+	$cmd = join(' -XV ', "make $makeenv MASTER_SITE_BACKUP=''", map { "'$_'" } @_);
 	$result = `$cmd`;
 	chomp $result;
 
