@@ -3,6 +3,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.30.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	130
@@ -22,7 +23,7 @@ SHEBANG_FILES=	maintenance/dev/*.sh \
 SHEBANG_LANG=	hhvm
 hhvm_OLD_CMD=	/usr/bin/hhvm
 hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet
-USE_PHP=	ctype dom fileinfo hash iconv intl json mbstring pcre \
+USE_PHP=	ctype dom fileinfo hash iconv intl json mbstring openssl pcre \
 		readline session xml xmlreader zlib
 MEDIAWIKIDIR?=	www/mediawiki
 
