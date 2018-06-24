@@ -1,3 +1,3 @@
 bin/stemmer-no.pl
-%%PERL5_MAN3%%/Lingua::Stem::Snowball::No.3.gz
 %%SITE_PERL%%/Lingua/Stem/Snowball/No.pm
+%%PERL5_MAN3%%/Lingua::Stem::Snowball::No.3.gz
