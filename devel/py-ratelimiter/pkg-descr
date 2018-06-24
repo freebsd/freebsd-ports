@@ -1,0 +1,6 @@
+This package provides the ratelimiter module, which ensures that an operation
+will not be executed more than a given number of times on a given period. This
+can prove useful when working with third parties APIs which require for example
+a maximum of 10 requests per second.
+
+WWW: https://github.com/RazerM/ratelimiter
