@@ -1,4 +1,6 @@
 CuteCom is a QT-based graphical serial terminal ideally suited to embedded
-programming and robotics.
+programming and robotics. It features line-oriented interface instead of
+character-oriented, xmodem, ymodem, zmodem support (requires the lrzsz package)
+and hexadecimal input and output among other things.
 
-WWW: http://cutecom.sourceforge.net/
+WWW: https://github.com/neundorf/CuteCom
