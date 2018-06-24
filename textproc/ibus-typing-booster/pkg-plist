@@ -823,8 +823,10 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/sk.xml
 %%DATADIR%%/data/annotationsDerived/sl.xml
 %%DATADIR%%/data/annotationsDerived/sq.xml
-%%DATADIR%%/data/annotationsDerived/sr.xml
+%%DATADIR%%/data/annotationsDerived/sr_Cyrl_BA.xml
+%%DATADIR%%/data/annotationsDerived/sr_Cyrl.xml
 %%DATADIR%%/data/annotationsDerived/sr_Latn.xml
+%%DATADIR%%/data/annotationsDerived/sr.xml
 %%DATADIR%%/data/annotationsDerived/sv.xml
 %%DATADIR%%/data/annotationsDerived/sw.xml
 %%DATADIR%%/data/annotationsDerived/ta.xml
