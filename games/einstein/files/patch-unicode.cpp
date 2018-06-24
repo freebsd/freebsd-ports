@@ -1,5 +1,5 @@
---- unicode.cpp.orig	2005-08-14 06:40:58.000000000 +0400
-+++ unicode.cpp	2015-03-27 02:57:47.513365000 +0300
+--- unicode.cpp.orig	2005-08-14 02:40:58 UTC
++++ unicode.cpp
 @@ -1,5 +1,6 @@
  #include <wchar.h>
  #include <stdlib.h>
