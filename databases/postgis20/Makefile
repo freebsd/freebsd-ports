@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--with-geosconfig=${LOCALBASE}/bin/geos-config \
 		${ICONV_CONFIGURE_ARG} ${ICONV_CONFIGURE_BASE}
 GNU_CONFIGURE=	yes
 USES=		gmake gnome iconv:wchar_t libtool perl5 pgsql pkgconfig shebangfix
+LLD_UNSAFE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PERL5=	build

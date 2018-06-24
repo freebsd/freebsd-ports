@@ -18,6 +18,7 @@ LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c
 SUB_FILES=	pkg-message
 
 USES=		gmake pgsql:9.3+
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	citusdata
 

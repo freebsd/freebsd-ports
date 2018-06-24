@@ -19,6 +19,7 @@ EXPIRATION_DATE=	2018-07-31
 RUN_DEPENDS=	rsync:net/rsync
 
 USES=		gmake libtool perl5 pgsql
+LLD_UNSAFE=	yes
 WANT_PGSQL=	client
 USE_PERL5=	run
 GNU_CONFIGURE=	yes

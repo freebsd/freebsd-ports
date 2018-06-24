@@ -12,6 +12,7 @@ COMMENT=	PostgreSQL foreign data wrapper for MySQL
 LICENSE=	PostgreSQL
 
 USES=		gmake pgsql:9.3+ mysql
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	EnterpriseDB
 GH_TAGNAME=	c14ee1d

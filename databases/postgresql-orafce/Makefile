@@ -12,6 +12,7 @@ COMMENT=	Oracle's compatibility functions and packages for PostgreSQL
 LICENSE=	PostgreSQL
 
 USES=		gmake bison pgsql:9.2+
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_TAGNAME=	ffea9cc
 

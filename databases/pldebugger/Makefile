@@ -13,6 +13,7 @@ COMMENT=	PostgreSQL pl/pgsql Debugger API
 LICENSE=	ART20
 
 USES=		gmake pgsql
+LLD_UNSAFE=	yes
 WANT_PGSQL=	server
 
 DOCSDIR=	${PREFIX}/share/doc/postgresql/extension

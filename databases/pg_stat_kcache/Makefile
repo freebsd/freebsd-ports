@@ -11,11 +11,12 @@ COMMENT=	Gather statistics about PostgreSQL I/O and CPU usage
 
 LICENSE=	PostgreSQL
 
+USES=		gmake pgsql:9.4+
+LLD_UNSAFE=	yes
+WANT_PGSQL=	server contrib
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dalibo
-
-USES=		gmake pgsql:9.4+
-WANT_PGSQL=	server contrib
 
 pre-patch:
 	@${MV} ${BUILD_WRKSRC}/README.rst ${BUILD_WRKSRC}/${PORTNAME}-README.rst

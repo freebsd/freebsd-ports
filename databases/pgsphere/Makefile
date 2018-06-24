@@ -13,12 +13,13 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT.pg_sphere
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		gmake pgsql
+LLD_UNSAFE=	yes
+USE_LDCONFIG=	yes
 MAKE_ARGS=	PG_CONFIG=${LOCALBASE}/bin/pg_config USE_PGXS=1 \
 		docdir=${DOCSDIR} \
 		install_bin=/usr/bin/install
 TEST_TARGET=	installcheck
-USE_LDCONFIG=	yes
-USES=		gmake pgsql
 
 DATADIR=	${PREFIX}/share/postgresql
 DOCSDIR?=	${PREFIX}/share/doc/postgresql

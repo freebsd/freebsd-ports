@@ -23,6 +23,7 @@ LICENSE_TEXT=	If you like it - send a postcard to address: \
 LICENSE_PERMS=	dist-mirror pkg-mirror dist-sell pkg-sell auto-accept
 
 USES=		gmake pgsql:9.2+
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	okbob
 

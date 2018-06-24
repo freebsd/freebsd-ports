@@ -15,6 +15,7 @@ LICENSE=	PostgreSQL
 LIB_DEPENDS=	libscws.so:textproc/scws
 
 USES=		gmake pgsql:9.2+
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	amutu
 

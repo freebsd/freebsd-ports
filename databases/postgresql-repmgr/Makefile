@@ -16,6 +16,7 @@ RUN_DEPENDS=	rsync:net/rsync
 
 GNU_CONFIGURE=	yes
 USES+=		gettext gmake pgsql:9.3+
+LLD_UNSAFE=	yes
 USE_RC_SUBR=	repmgrd
 WANT_PGSQL=	server
 MAKE_ENV=	USE_PGXS=1

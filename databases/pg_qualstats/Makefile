@@ -14,6 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dalibo
 
 USES=		gmake pgsql:9.4+
+LLD_UNSAFE=	yes
 WANT_PGSQL=	server
 
 pre-patch:
