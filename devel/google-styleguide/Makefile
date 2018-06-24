@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	styleguide
-PORTVERSION=	20170630
+PORTVERSION=	20180620
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to assist with Google style guide compliance
 
-# cpplint.py and cpplint_unittest.py under BSD3CLAUSE
-# style guides under CC-BY-3.0
-# google-c-style.el under GPLv1+
+# cpplint.py and cpplint_unittest.py are released under BSD3CLAUSE
+# style guides is released under CC-BY-3.0
+# google-c-style.el is released under GPLv1+
 LICENSE=	BSD3CLAUSE CC-BY-3.0 GPLv1+
 LICENSE_COMB=	multi
 
@@ -19,7 +19,7 @@ USES=		python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	d75bd35
+GH_TAGNAME=	ab48617
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -28,21 +28,14 @@ SHEBANG_FILES=	cpplint/cpplint.py cpplint/cpplint_unittest.py
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cpplint/cpplint.py ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/cpplint/cpplint_unittest.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cpplint/cpplint.py ${WRKSRC}/cpplint/cpplint_unittest.py ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.xml ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/google_python_style.vim  ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/google-c-style.el  ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.xml ${WRKSRC}/google-c-style.el ${WRKSRC}/google_python_style.vim ${STAGEDIR}${DATADIR}
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.css ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/cpplint
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/cpplint ${STAGEDIR}${DOCSDIR}/docguide
+	${INSTALL_DATA} ${WRKSRC}/*.css ${WRKSRC}/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/cpplint/README ${STAGEDIR}${DOCSDIR}/cpplint
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/docguide
 	(cd ${WRKSRC}/docguide && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/docguide)
 
 .include <bsd.port.mk>

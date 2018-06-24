@@ -16,7 +16,9 @@ bin/cpplint_unittest.py
 %%PORTDOCS%%%%DOCSDIR%%/javaguide.html
 %%PORTDOCS%%%%DOCSDIR%%/jsguide.html
 %%PORTDOCS%%%%DOCSDIR%%/jsoncstyleguide.html
+%%PORTDOCS%%%%DOCSDIR%%/objcguide.md
 %%PORTDOCS%%%%DOCSDIR%%/pyguide.html
+%%PORTDOCS%%%%DOCSDIR%%/pyguide.md
 %%PORTDOCS%%%%DOCSDIR%%/styleguide.css
 %%PORTDOCS%%%%DOCSDIR%%/xmlstyle.html
 %%DATADIR%%/Rguide.xml
