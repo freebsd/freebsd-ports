@@ -1,23 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	comfortaa-ttf
-PORTVERSION=	2.004
-PORTREVISION=	3
+PORTVERSION=	3.001
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://fontlibrary.org/assets/downloads/comfortaa/38318a69b56162733bf82bc0170b7521/
-DISTNAME=	comfortaa
+MASTER_SITES=	https://orig00.deviantart.net/40a3/f/2017/093/d/4/
+DISTNAME=	comfortaa___font_by_aajohan-d1qr019
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Stylish, modern and free sans-serif true type font
 
 LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/OFL.txt
 
 USES=		fonts zip
 
 FONTNAME=	Comfortaa
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/Comfortaa
+WRKSRC=		${WRKDIR}/${PORTVERSION}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}/
