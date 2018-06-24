@@ -1,7 +1,6 @@
 # Created by: SADA Kenji <sada@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	japanese
 
 MAINTAINER=	nobutaka@FreeBSD.org
