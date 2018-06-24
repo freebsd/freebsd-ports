@@ -1,4 +1,4 @@
- # Created by: nemysis <nemysis@gmx.ch2
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	alure
