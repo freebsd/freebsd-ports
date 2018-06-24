@@ -4,13 +4,16 @@
 PORTNAME=	ptpd
 DISTVERSION=	2.3.1
 CATEGORIES=	net
-MASTER_SITES=	SF
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Implementation of the precision time protocol IEEE 1588-2008
 
 LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ptpd
+GH_TAGNAME=	861c44f
 
 CONFLICTS=	ptpd2-devel.*
 
@@ -35,6 +38,6 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKDIR}/ptpd-${DISTVERSION}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
