@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	2011-02-14 00:45:49.000000000 +0900
-+++ lib/Makefile.in	2011-02-14 00:50:19.000000000 +0900
-@@ -1629,18 +1629,6 @@
+--- lib/Makefile.in.orig	2012-11-06 03:52:20 UTC
++++ lib/Makefile.in
+@@ -1629,18 +1629,6 @@ inttypes.h: inttypes.in.h
  
  all-local: charset.alias ref-add.sed ref-del.sed
  install-exec-local: all-local

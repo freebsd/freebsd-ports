@@ -1,15 +1,15 @@
---- src/dc3dd.c.orig	2011-02-14 00:17:13.000000000 +0900
-+++ src/dc3dd.c	2011-02-14 00:22:11.000000000 +0900
+--- src/dc3dd.c.orig	2012-12-02 23:29:48 UTC
++++ src/dc3dd.c
 @@ -45,7 +45,7 @@
-       #include <linux/types.h>
-       #include "hdparm/hpa_dco.h"
+    #include <linux/types.h>
+    #include "hdparm/hpa_dco.h"
     #endif
 -#elif defined (__APPLE__)
 +#elif defined (__APPLE__) || defined (__FreeBSD__)
     #include <sys/disk.h>
     #include <sys/ioctl.h>
  #elif defined (__CYGWIN__)
-@@ -2325,6 +2325,56 @@
+@@ -2501,6 +2501,56 @@ get_file_stats(file_t* file)
     }
  }
  
