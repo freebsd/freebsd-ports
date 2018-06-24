@@ -1,5 +1,5 @@
---- python/CMakeLists.txt.orig	2018-06-19 07:11:01 UTC
-+++ python/CMakeLists.txt
+--- ../python/CMakeLists.txt.orig	2018-06-19 07:11:01 UTC
++++ ../python/CMakeLists.txt
 @@ -121,7 +121,7 @@ set(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS}
  ########################################################################
  include(FeatureSummary)
