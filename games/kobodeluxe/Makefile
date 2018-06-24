@@ -17,6 +17,8 @@ USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir=${SCOREDIR} --enable-oss
 
+CXXFLAGS+=	-Wno-reserved-user-defined-literal
+
 SCOREDIR=	/var/games/${PORTNAME}
 
 SUB_FILES=	pkg-deinstall pkg-install
@@ -50,7 +52,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/icons/Ubuntu/kobo-icon.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
