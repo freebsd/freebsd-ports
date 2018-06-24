@@ -1,0 +1,50 @@
+--- libairspy/src/CMakeLists.txt.orig	2018-06-24 20:11:21 UTC
++++ libairspy/src/CMakeLists.txt
+@@ -58,15 +58,14 @@ set_target_properties(airspy PROPERTIES
+ endif( ${WIN32} )
+ 
+ # Static library
+-add_library(airspy-static STATIC ${c_sources})
+ if(MSVC)
+ 	set_target_properties(airspy-static PROPERTIES OUTPUT_NAME "airspy_static")
+ else()
+-	set_target_properties(airspy-static PROPERTIES OUTPUT_NAME "airspy")
++	set_target_properties(airspy PROPERTIES OUTPUT_NAME "airspy")
+ endif()
+ 
+ set_target_properties(airspy PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+-set_target_properties(airspy-static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
++set_target_properties(airspy PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+ 
+ # Dependencies
+ target_link_libraries(airspy ${LIBUSB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+@@ -82,10 +81,10 @@ if( ${UNIX} )
+            LIBRARY DESTINATION lib${LIB_SUFFIX}
+            COMPONENT sharedlibs
+            )
+-   install(TARGETS airspy-static
+-           ARCHIVE DESTINATION lib${LIB_SUFFIX}
+-           COMPONENT staticlibs
+-           )
++   #install(TARGETS airspy-static
++   #        ARCHIVE DESTINATION lib${LIB_SUFFIX}
++   #        COMPONENT staticlibs
++   #        )
+    install(FILES ${c_headers}
+            DESTINATION include/${PROJECT_NAME}
+            COMPONENT headers
+@@ -97,10 +96,10 @@ if( ${WIN32} )
+            DESTINATION bin
+            COMPONENT sharedlibs
+            )
+-   install(TARGETS airspy-static
+-           DESTINATION bin
+-           COMPONENT staticlibs
+-           )
++   #install(TARGETS airspy-static
++   #        DESTINATION bin
++   #        COMPONENT staticlibs
++   #        )
+    install(FILES ${c_headers}
+            DESTINATION include/${PROJECT_NAME}
+            COMPONENT headers

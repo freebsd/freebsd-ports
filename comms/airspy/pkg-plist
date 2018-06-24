@@ -1,0 +1,17 @@
+bin/airspy_gpio
+bin/airspy_gpiodir
+bin/airspy_info
+bin/airspy_lib_version
+bin/airspy_r820t
+bin/airspy_rx
+bin/airspy_si5351c
+bin/airspy_spiflash
+include/libairspy/airspy.h
+include/libairspy/airspy_commands.h
+include/libairspy/filters.h
+include/libairspy/iqconverter_float.h
+include/libairspy/iqconverter_int16.h
+lib/libairspy.so
+lib/libairspy.so.0
+lib/libairspy.so.1.0.9
+libdata/pkgconfig/libairspy.pc
