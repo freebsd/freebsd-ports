@@ -1,0 +1,7 @@
+PyYAML-based python module to produce pretty and readable YAML-serialized data.
+
+This module is for serialization only, see ruamel.yaml module for literate YAML
+parsing (keeping track of comments, spacing, line/column numbers of values,
+etc).
+
+WWW: https://github.com/mk-fg/pretty-yaml
