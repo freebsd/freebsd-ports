@@ -1,5 +1,5 @@
---- python3/CMakeLists.txt.orig	2018-05-13 06:02:48 UTC
-+++ python3/CMakeLists.txt
+--- ../python3/CMakeLists.txt.orig	2018-05-13 06:02:48 UTC
++++ ../python3/CMakeLists.txt
 @@ -55,7 +55,7 @@ endif()
  ########################################################################
  include(FeatureSummary)

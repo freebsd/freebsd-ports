@@ -1,5 +1,5 @@
---- python3/FindPython3Interp.cmake.orig	2018-06-19 06:38:27 UTC
-+++ python3/FindPython3Interp.cmake
+--- ../python3/FindPython3Interp.cmake.orig	2018-06-19 06:38:27 UTC
++++ ../python3/FindPython3Interp.cmake
 @@ -39,7 +39,7 @@
  # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
