@@ -1,4 +1,4 @@
-Lingua::Stem::Snowball::No is a perl port of the norwegian
-stemmer at http://snowball.sourceforge.net.
+Lingua::Stem::Snowball::No is a perl port of the norwegian stemmer at
+https://sourceforge.net/projects/snowball/.
 
 WWW: https://metacpan.org/release/Snowball-Norwegian
