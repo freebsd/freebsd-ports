@@ -4,6 +4,7 @@
 PORTNAME=	gqrx
 PORTVERSION=	2.11.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -22,13 +23,12 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-pmt.so:comms/gnuradio \
 		libgnuradio-osmosdr.so:comms/gr-osmosdr \
 		libboost_system.so:devel/boost-libs \
-		libboost_program_options.so:devel/boost-libs
+		libboost_program_options.so:devel/boost-libs \
+		liblog4cpp.so:devel/log4cpp
 
 USES=		pkgconfig qmake
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	csete
-
 USE_GL=		gl
 USE_QT5=	buildtools_build core gui svg network widgets
 
