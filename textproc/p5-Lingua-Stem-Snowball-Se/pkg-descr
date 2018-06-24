@@ -1,4 +1,4 @@
-Lingua::Stem::Snowball::Se is a perl port of the swedish
-stemmer at http://snowball.sourceforge.net.
+Lingua::Stem::Snowball::Se is a perl port of the swedish stemmer at
+https://sourceforge.net/projects/snowball/.
 
 WWW: https://metacpan.org/release/Snowball-Swedish
