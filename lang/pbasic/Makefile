@@ -1,4 +1,4 @@
- # Created by: Julian H. Stacey <jhs@FreeBSD.org>
+# Created by: Julian H. Stacey <jhs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pbasic
@@ -33,4 +33,3 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/basic.1 ${STAGEDIR}${PREFIX}/man/man1/pbasic.1
 
 .include <bsd.port.mk>
-

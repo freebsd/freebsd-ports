@@ -1,4 +1,4 @@
- # Created by: Oyvind Moll <oyvindmo@initio.no2
+# Created by: Oyvind Moll <oyvindmo@initio.no>
 # $FreeBSD$
 
 PORTNAME=	juke
