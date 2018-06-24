@@ -1,17 +1,14 @@
-This project contains coding style guides used at Google.  There are style
-guides for AngularJS, C++, Common Lisp, HTML/CSS, Java, JavaScript, Objective-C,
-Python, R, Shell, and Vimscript.  Also included is:
+This project holds the C++ Style Guide, Objective-C Style Guide, Java Style
+Guide, Python Style Guide, R Style Guide, Shell Style Guide, HTML/CSS Style
+Guide, JavaScript Style Guide, AngularJS Style Guide, Common Lisp Style Guide,
+and Vimscript Style Guide. This project also contains:
+- cpplint, a tool to assist with style guide compliance
+- google-c-style.el, an Emacs settings file for Google style
+- google_python_style.vim, a Vim settings to indent Python in the Google way
 
-- cpplint, an automated checker to make sure a C++ file follows Google's C++
-  style guide
-- google-c-style.el, an Emacs minor mode to provide Google's C/C++ coding style
-  within Emacs
-- google_python_style.vim, which indents Python code in the Google way when
-  using Vim.
-
-If your project requires that you create a new XML document format, the included
-"XML Document Format Style Guide" may be helpful.  In addition to actual style
-rules, it also contains advice on designing your own versus adapting an existing
-format, on XML instance document formatting, and on elements versus attributes.
+If your project requires that you create a new XML document format, the XML
+Document Format Style Guide may be helpful. In addition to actual style rules,
+it also contains advice on designing your own vs. adapting an existing format,
+on XML instance document formatting, and on elements vs. attributes.
 
 WWW: https://github.com/google/styleguide
