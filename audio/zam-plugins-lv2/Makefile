@@ -11,6 +11,11 @@ COMMENT=	Collection of LADSPA/LV2/VST/JACK audio plugins
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=		fails to compile: unknown FP unit 'sse'
+BROKEN_armv6=		fails to compile: unknown FP unit 'sse'
+BROKEN_armv7=		fails to compile: unknown FP unit 'sse'
+BROKEN_powerpc64=	fails to compile: unknown FP unit 'sse'
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
