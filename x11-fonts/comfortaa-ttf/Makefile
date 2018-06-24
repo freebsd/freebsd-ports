@@ -15,6 +15,7 @@ LICENSE=	OFL11
 USES=		fonts zip
 
 FONTNAME=	Comfortaa
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Comfortaa
 
