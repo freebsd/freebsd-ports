@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysolfc
-DISTVERSION=	2.2.0
+DISTVERSION=	2.4.0
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
 		SF/${PORTNAME}/PySolFC-Cardsets/${CARDSETDIR}:cardsets
@@ -62,11 +62,10 @@ SHEBANG_FILES=	data/themes/clearlooks/convert_imgs.sh
 NO_ARCH=	yes
 
 PLIST_FILES=	share/pixmaps/pysolfc.png
-PORTDOCS=	README.md
 DATADIR=	${PREFIX}/share/PySolFC
 WRKSRC=		${WRKDIR}/${PYSOLFCDIR}
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
@@ -92,13 +91,9 @@ post-patch-NLS-off:
 post-install:
 	${LN} -s ${PREFIX}/share/icons/pysol01.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-	@cd ${WRKDIR}/${CARDSETDIR} && \
-		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
-	@cd ${WRKDIR}/${CARDSETDIR} && \
-		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST}
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+	(cd ${WRKDIR}/${CARDSETDIR} && \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	(cd ${WRKDIR}/${CARDSETDIR} && \
+		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST})
 
 .include <bsd.port.mk>
