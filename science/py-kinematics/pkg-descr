@@ -1,0 +1,4 @@
+kinematics is Python package to perform attitude kinematics. It is written
+completely in Python and only requires numpy as a runtime dependency.
+
+WWW: https://github.com/skulumani/kinematics

@@ -175,6 +175,7 @@
     SUBDIR += py-gsd
     SUBDIR += py-h5py
     SUBDIR += py-hcluster
+    SUBDIR += py-kinematics
     SUBDIR += py-mdp
     SUBDIR += py-mlpy
     SUBDIR += py-mmtf-python
