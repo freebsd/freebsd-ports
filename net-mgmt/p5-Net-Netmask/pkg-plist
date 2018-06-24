@@ -1,3 +1,3 @@
-%%SITE_PERL%%/Net/Netmask.pod
 %%SITE_PERL%%/Net/Netmask.pm
+%%SITE_PERL%%/Net/Netmask.pod
 %%PERL5_MAN3%%/Net::Netmask.3.gz
