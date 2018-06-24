@@ -1,4 +1,7 @@
-py-RO is a collection of utilities including general algorithms,
-astronomical transformations and Tkinter widgets.
+RO is a package of python utilities with an emphasis on cross-platform support
+(MacOS X, Windows and unix), Astronomy, Tkinter GUI extensions and
+Tkinter-compatible networking. It was developed to support a telescope user
+interface (TUI).
 
-WWW: http://www.astro.washington.edu/rowen/
+WWW: https://staff.washington.edu/rowen/ROPackage/Overview.html
+WWW: https://github.com/ApachePointObservatory/RO
