@@ -522,8 +522,6 @@
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
     SUBDIR += postfix-sasl
-    SUBDIR += postfix211
-    SUBDIR += postfix211-sasl
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postsrsd
