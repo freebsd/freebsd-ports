@@ -10291,3 +10291,5 @@ multimedia/qt5-phonon4-vlc|multimedia/phonon-vlc@qt5|2018-06-21|Moved to a flavo
 net/libproxy-gnome|net/libproxy-gnome2|2018-07-22|Renamed to make slave names consistent
 www/npapi-vlc||2018-06-22|Removed, depends on expired www/libxul
 www/libxul||2018-06-22|Has expired: NPAPI are no longer supported
+mail/postfix211||2018-06-24|Has expired: Not supported anymore by vendor. Please choose a new one version
+mail/postfix211-sasl||2018-06-24|Has expired: Not supported anymore by vendor. Please choose a new one version
