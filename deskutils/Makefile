@@ -263,6 +263,7 @@
     SUBDIR += sugarcrm
     SUBDIR += superkaramba-kde4
     SUBDIR += surrealtodo
+    SUBDIR += synapse
     SUBDIR += syncthing-gtk
     SUBDIR += systempreferences
     SUBDIR += tagutils
