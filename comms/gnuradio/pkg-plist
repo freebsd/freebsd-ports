@@ -62,6 +62,7 @@ bin/volk_profile
 %%ETCDIR%%/conf.d/gr-audio.conf
 %%ETCDIR%%/conf.d/gr-qtgui.conf
 %%ETCDIR%%/conf.d/gr-wxgui.conf
+%%ETCDIR%%/conf.d/gr_log_default.conf
 %%ETCDIR%%/conf.d/grc.conf
 %%ETCDIR%%/conf.d/modtool.conf
 include/gnuradio/analog/agc.h

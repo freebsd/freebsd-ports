@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.7.13.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		LOCAL/db
@@ -34,6 +34,7 @@ LIB_DEPENDS=	libcppunit.so:devel/cppunit \
 		libfftw3f.so:math/fftw3-float \
 		libqwt.so:x11-toolkits/qwt5 \
 		${PY_BOOST} \
+		liblog4cpp.so:devel/log4cpp \
 		libportaudio.so:audio/portaudio \
 		libjack.so:audio/jack \
 		libasound.so:audio/alsa-lib \
