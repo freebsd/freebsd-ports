@@ -5,8 +5,9 @@ For a given port determine its dependencies using any combination of the
  - LIB_DEPENDS
  - BUILD_DEPENDS
  - RUN_DEPENDS
+ - TEST_DEPENDS
 
-and show them as a pseudo graphical tree.
+and show them as a pseudo graphical tree with indication of the depends type.
 Use back references for cross-connections.
 
 WWW: https://sourceforge.net/projects/porttree/
