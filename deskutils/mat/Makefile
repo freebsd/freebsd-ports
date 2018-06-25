@@ -11,7 +11,7 @@ COMMENT=	Metadata Anonymization Toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:devel/py-python-distutils-extra@${FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:devel/py-python-distutils-extra@${PY_FLAVOR} \
 		intltool-update:textproc/intltool
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdfrw>=0:textproc/py-pdfrw@${PY_FLAVOR} \
