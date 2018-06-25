@@ -10,10 +10,14 @@ DISTNAME=	pouetChess_0.11_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 3D chess game
 
-USE_SDL=	sdl image
-USE_GL=		gl
+LICENSE=	GPLv2  # from sourceforge page
+
 USES=		dos2unix gmake
+USE_SDL=	sdl image
+USE_GL=		gl glu
 DOS2UNIX_GLOB=	*.cpp *.h Makefile config.ini
+
+CXXFLAGS+=	-Wno-reserved-user-defined-literal
 
 WRKSRC=		${WRKDIR}/pouetChess_0.11
 
@@ -40,6 +44,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pouetChess ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/config.ini ${STAGEDIR}${PREFIX}/etc/pouetChess.conf.sample
-	cd ${WRKSRC}/bin/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+	@cd ${WRKSRC}/bin/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
