@@ -1,0 +1,5 @@
+dnstable_convert is a conversion utility for passive DNS data in
+dnstable format. It was split out of dnstable to reduce the
+dependencies of dnstable.
+
+WWW: https://github.com/farsightsec/dnstable-convert
