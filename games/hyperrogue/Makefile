@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperrogue
-PORTVERSION=	9.4g
+PORTVERSION=	10.4f
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -12,9 +12,9 @@ COMMENT=	Roguelike in a non-euclidean world
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png
-
 BROKEN_powerpc64=	fails to link: langen-langen.o: relocation truncated to fit: R_PPC64_TOC16_DS
+
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zenorogue
@@ -22,7 +22,7 @@ GH_ACCOUNT=	zenorogue
 USES=		autoreconf localbase
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer gfx ttf
-USE_GL=		gl
+USE_GL=		gl glew
 
 # remove -O2, otherwise clang takes gigabytes of memory
 CFLAGS:=	${CFLAGS:C/-O[0-9]//} -DFHS
