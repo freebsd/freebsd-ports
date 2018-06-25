@@ -7,6 +7,7 @@ PORTREVISION=	34
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/177/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION:S/a/-alpha/}${DISTVERSIONSUFFIX}
+DIST_SUBDIR=	vdr
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - UPnP/DLNA plugin (alpha!)
@@ -14,13 +15,14 @@ COMMENT=	Video Disk Recorder - UPnP/DLNA plugin (alpha!)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_12=	fails to compile: inc/util.h:21:10: 'libavformat/avformat.h' file not found
+
 LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0 \
 		libboost_system.so:devel/boost-libs \
 		libupnp.so:devel/upnp \
 		libsqlite3.so:databases/sqlite3
 
 USES=		tar:tgz
-DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION:S/a2//}
 
