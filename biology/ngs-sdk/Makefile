@@ -11,6 +11,8 @@ COMMENT=	Tools and libraries for using data in the INSDC Sequence Read Archives
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=		fails to configure: unsupported architecture 'FreeBSD'
+
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
