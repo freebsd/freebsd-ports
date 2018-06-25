@@ -1,0 +1,9 @@
+#!/bin/sh
+LANG=C
+# phymem=$(free -m | awk '/^Mem:/{print $2}')
+#igvmem=$(($phymem / 3))
+# ARGS=-Xmx${igvmem}m
+java $ARGS \
+  -Dapple.laf.useScreenMenuBar=true \
+  -Djava.net.preferIPv4Stack=true \
+  -jar %%JAVAJARDIR%%/igv.jar
