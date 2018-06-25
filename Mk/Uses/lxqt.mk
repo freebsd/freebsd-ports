@@ -10,6 +10,7 @@
 # Available LXQt components are:
 #
 # buildtools	- Helpers CMake modules
+# globalkeys	- Keyboard shortcuts daemon
 # libfmqt	- Libfm Qt bindings
 # lxqt		- LXQt core library
 # qtxdg		- Qt implementation of freedesktop.org xdg specs
@@ -44,11 +45,15 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANDIRS} \
 	-DPULL_TRANSLATIONS:BOOL=OFF
 
 # Available LXQt components are:
-_USE_LXQT_ALL=	buildtools libfmqt lxqt qtxdg
+_USE_LXQT_ALL=	buildtools globalkeys libfmqt lxqt qtxdg
 
 _DATAROOTDIR=	${LOCALBASE}/share
 
 buildtools_BUILD_DEPENDS=	${_DATAROOTDIR}/cmake/lxqt-build-tools/lxqt-build-tools-config.cmake:devel/lxqt-build-tools
+
+globalkeys_LIB_DEPENDS=	liblxqt-globalkeys.so:x11/lxqt-globalkeys
+
+globalkeys_USE_LXQT_REQ=	lxqt
 
 libfmqt_LIB_DEPENDS=	libfm-qt.so:x11/libfm-qt
 
