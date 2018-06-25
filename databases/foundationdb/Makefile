@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	foundationdb
-PORTVERSION=	5.2.3
-DISTVERSIONPREFIX=	release-
+PORTVERSION=	5.2.5
+#DISTVERSIONPREFIX=	release-
 CATEGORIES=	databases
 
 MAINTAINER=	vanilla@FreeBSD.org
