@@ -1,0 +1,11 @@
+--- makefile.orig	2018-05-02 15:18:14 UTC
++++ makefile
+@@ -254,7 +254,7 @@ chk_slepc_dir:
+ # Install relevant files in the prefix directory
+ #
+ install:
+-	-@${PYTHON} ./config/install.py ${SLEPC_DIR} ${PETSC_DIR} ${SLEPC_DESTDIR} ${PETSC_ARCH} ${AR_LIB_SUFFIX} ${RANLIB};
++	-@${PYTHON} ./config/install.py ${SLEPC_DIR} ${PETSC_DIR} ${FREEBSD_STAGEDIR}${SLEPC_DESTDIR} ${PETSC_ARCH} ${AR_LIB_SUFFIX} ${RANLIB};
+ 
+ # ------------------------------------------------------------------
+ #

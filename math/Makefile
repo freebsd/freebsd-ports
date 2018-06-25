@@ -777,6 +777,7 @@
     SUBDIR += sfst
     SUBDIR += simd-viterbi
     SUBDIR += slatec
+    SUBDIR += slepc
     SUBDIR += slgrace
     SUBDIR += snns
     SUBDIR += solitaire
