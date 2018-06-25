@@ -2,9 +2,7 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	3.1
-DISTVERSIONSUFFIX=	-1
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -96,9 +94,9 @@ CONFIGURE_ENV+=	GMOCK_ROOT="${GMOCK_WRKSRC}"
 post-patch-TEST-off:
 	@(cd ${WRKSRC} ; \
 		${FIND} . -type f -name CMakeLists.txt \
-		-exec ${REINPLACE_CMD} -e '/ADD_SUBDIRECTORY *(test.*)/d' \
-		-e '/ENABLE_TESTING()/d' -e '/INCLUDE (GncAddTest)/d' \
-		-e '/GNC_GTEST_CONFIGURE()/d' {} +)
+		-exec ${REINPLACE_CMD} -e '/add_subdirectory *(test.*)/d' \
+		-e '/enable_testing()/d' -e '/include (GncAddTest)/d' \
+		-e '/gnc_gtest_configure()/d' {} +)
 
 post-install:
 	@(cd ${STAGEDIR}${DATADIR}/icons/hicolor && \
