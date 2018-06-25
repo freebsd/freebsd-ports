@@ -7,6 +7,8 @@ PKGNAMESUFFIX=	103-client
 
 COMMENT=	Multithreaded SQL database (client)
 
+BROKEN_aarch64=		fails to link: missing sbrk
+
 MASTERDIR=	${.CURDIR}/../mariadb103-server
 
 FILESDIR=	${.CURDIR}/files
