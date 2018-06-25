@@ -12,6 +12,8 @@ COMMENT=	Mathematics library with many different functions
 
 LICENSE=	LGPL20
 
+BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol: bias in readonly segment; recompile object files with -fPIC
+
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
