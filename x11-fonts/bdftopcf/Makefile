@@ -8,6 +8,9 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Convert X font from BDF to PCF
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		localbase
 
 XORG_CAT=	app
