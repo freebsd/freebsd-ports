@@ -4,7 +4,7 @@ diff --git Cargo.lock Cargo.lock
 index 4bfba0eb2f52..cd4d80035d81 100644
 --- Cargo.lock
 +++ Cargo.lock
-@@ -486,6 +486,15 @@ dependencies = [
+@@ -552,6 +552,15 @@ dependencies = [
   "unreachable 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  ]
  
@@ -13,14 +13,14 @@ index 4bfba0eb2f52..cd4d80035d81 100644
 +version = "0.2.1"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
 +dependencies = [
-+ "libc 0.2.33 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
 + "nom 3.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
 +]
 +
  [[package]]
- name = "dtoa"
- version = "0.4.2"
-@@ -1170,6 +1179,14 @@ name = "nom"
+ name = "diff"
+ version = "0.1.11"
+@@ -1351,6 +1360,14 @@ name = "nom"
  version = "1.2.4"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  
@@ -35,23 +35,23 @@ index 4bfba0eb2f52..cd4d80035d81 100644
  [[package]]
  name = "nserror"
  version = "0.1.0"
-@@ -1863,6 +1880,7 @@ dependencies = [
+@@ -2126,6 +2143,7 @@ dependencies = [
   "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
   "boxfnonce 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
   "core-foundation-sys 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
 + "devd-rs 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
-  "libc 0.2.33 (registry+https://github.com/rust-lang/crates.io-index)",
+  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
   "libudev 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
-  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
-@@ -2220,6 +2238,7 @@ dependencies = [
+  "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -2511,6 +2529,7 @@ dependencies = [
  "checksum darling_core 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "167dd3e235c2f1da16a635c282630452cdf49191eb05711de1bcd1d3d5068c00"
  "checksum darling_macro 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c53edaba455f6073a10c27c72440860eb3f60444f8c8660a391032eeae744d82"
  "checksum debug_unreachable 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "9a032eac705ca39214d169f83e3d3da290af06d8d1d344d1baad2fd002dca4b3"
 +"checksum devd-rs 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "e7c9ac481c38baf400d3b732e4a06850dfaa491d1b6379a249d9d40d14c2434c"
+ "checksum diff 0.1.11 (registry+https://github.com/rust-lang/crates.io-index)" = "3c2b69f912779fbb121ceb775d74d51e915af17aaebc38d28a592843a2dd0a3a"
+ "checksum docopt 0.8.3 (registry+https://github.com/rust-lang/crates.io-index)" = "d8acd393692c503b168471874953a2531df0e9ab77d0b6bbc582395743300a4a"
  "checksum dtoa 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "09c3753c3db574d215cba4ea76018483895d7bff25a31b49ba45db21c48e50ab"
- "checksum dtoa-short 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "068d4026697c1a18f0b0bb8cfcad1b0c151b90d8edb9bf4c235ad68128920d1d"
- "checksum dwrote 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "a207eb7b40e25d1d28dc679f451d321fb6954b73ceaa47986702575865469461"
-@@ -2279,6 +2298,7 @@ dependencies = [
+@@ -2581,6 +2600,7 @@ dependencies = [
  "checksum net2 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)" = "3a80f842784ef6c9a958b68b7516bc7e35883c614004dd94959a4dca1b716c09"
  "checksum nodrop 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)" = "9a2228dca57108069a5262f2ed8bd2e82496d2e074a06d1ccc7ce1687b6ae0a2"
  "checksum nom 1.2.4 (registry+https://github.com/rust-lang/crates.io-index)" = "a5b8c256fd9471521bcb84c3cdba98921497f1a331cbc15b8030fc63b82050ce"
@@ -73,14 +73,6 @@ index a0ab8ce71067..046de1e46f15 100644
  [target.'cfg(target_os = "macos")'.dependencies]
  core-foundation-sys = "0.5.1"
  
-@@ -21,6 +24,6 @@ runloop = "0.1.0"
- bitflags = "1.0"
- 
- [dev-dependencies]
--rust-crypto = "^0.2"
-+sha2 = "^0.7"
- base64 = "^0.4"
- env_logger = "0.4.1"
 diff --git dom/webauthn/u2f-hid-rs/README.md dom/webauthn/u2f-hid-rs/README.md
 index 2edf412211b5..a29905832e5e 100644
 --- dom/webauthn/u2f-hid-rs/README.md
@@ -94,61 +86,6 @@ index 2edf412211b5..a29905832e5e 100644
  * **Supported HID Transports**: USB.
  * **Supported Protocols**: [FIDO U2F over USB](https://fidoalliance.org/specs/fido-u2f-v1.1-id-20160915/fido-u2f-raw-message-formats-v1.1-id-20160915.html).
  
-diff --git dom/webauthn/u2f-hid-rs/examples/main.rs dom/webauthn/u2f-hid-rs/examples/main.rs
-index d0b02e61a05b..8ecf102f2136 100644
---- dom/webauthn/u2f-hid-rs/examples/main.rs
-+++ dom/webauthn/u2f-hid-rs/examples/main.rs
-@@ -3,10 +3,9 @@
-  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
- 
- extern crate base64;
--extern crate crypto;
-+extern crate sha2;
- extern crate u2fhid;
--use crypto::digest::Digest;
--use crypto::sha2::Sha256;
-+use sha2::{Digest, Sha256};
- use std::io;
- use std::sync::mpsc::channel;
- use u2fhid::{AuthenticatorTransports, KeyHandle, RegisterFlags, SignFlags, U2FManager};
-@@ -17,10 +16,12 @@ extern crate log;
- macro_rules! try_or {
-     ($val:expr, $or:expr) => {
-         match $val {
--            Ok(v) => { v }
--            Err(e) => { return $or(e); }
-+            Ok(v) => v,
-+            Err(e) => {
-+                return $or(e);
-+            }
-         }
--    }
-+    };
- }
- 
- fn u2f_get_key_handle_from_register_response(register_response: &Vec<u8>) -> io::Result<Vec<u8>> {
-@@ -46,15 +47,13 @@ fn main() {
-     let challenge_str = format!("{}{}",
-         r#"{"challenge": "1vQ9mxionq0ngCnjD-wTsv1zUSrGRtFqG2xP09SbZ70","#,
-         r#" "version": "U2F_V2", "appId": "http://demo.yubico.com"}"#);
--    let mut challenge = Sha256::new();
--    challenge.input_str(&challenge_str);
--    let mut chall_bytes: Vec<u8> = vec![0; challenge.output_bytes()];
--    challenge.result(&mut chall_bytes);
-+    let mut challenge = Sha256::default();
-+    challenge.input(challenge_str.as_bytes());
-+    let chall_bytes = Vec::from(challenge.result().as_slice());
- 
--    let mut application = Sha256::new();
--    application.input_str("http://demo.yubico.com");
--    let mut app_bytes: Vec<u8> = vec![0; application.output_bytes()];
--    application.result(&mut app_bytes);
-+    let mut application = Sha256::default();
-+    application.input("http://demo.yubico.com".as_bytes());
-+    let app_bytes = Vec::from(application.result().as_slice());
- 
-     let manager = U2FManager::new().unwrap();
-     let flags = RegisterFlags::empty();
 diff --git dom/webauthn/u2f-hid-rs/src/freebsd/device.rs dom/webauthn/u2f-hid-rs/src/freebsd/device.rs
 new file mode 100644
 index 000000000000..5b9e7f2a912e
@@ -756,42 +693,6 @@ index 1307497e91ac..e0cdc5080924 100644
  #[path = "stub/mod.rs"]
  pub mod platform;
  
-@@ -39,8 +51,8 @@ extern crate bitflags;
- 
- mod consts;
- mod statemachine;
--mod u2ftypes;
- mod u2fprotocol;
-+mod u2ftypes;
- 
- mod manager;
- pub use manager::U2FManager;
-@@ -88,9 +100,9 @@ pub enum Error {
-     NotAllowed = 5,
- }
- 
-+#[cfg(fuzzing)]
-+pub use consts::*;
- #[cfg(fuzzing)]
- pub use u2fprotocol::*;
- #[cfg(fuzzing)]
- pub use u2ftypes::*;
--#[cfg(fuzzing)]
--pub use consts::*;
-diff --git dom/webauthn/u2f-hid-rs/src/linux/device.rs dom/webauthn/u2f-hid-rs/src/linux/device.rs
-index 6ed57106920f..35569f88a190 100644
---- dom/webauthn/u2f-hid-rs/src/linux/device.rs
-+++ dom/webauthn/u2f-hid-rs/src/linux/device.rs
-@@ -11,8 +11,8 @@ use std::os::unix::prelude::*;
- 
- use consts::CID_BROADCAST;
- use platform::hidraw;
--use util::from_unix_result;
- use u2ftypes::U2FDevice;
-+use util::from_unix_result;
- 
- #[derive(Debug)]
- pub struct Device {
 diff --git dom/webauthn/u2f-hid-rs/src/linux/hidraw.rs dom/webauthn/u2f-hid-rs/src/linux/hidraw.rs
 index 0ce5d379c3f7..182fe0ec5f2e 100644
 --- dom/webauthn/u2f-hid-rs/src/linux/hidraw.rs
@@ -821,7 +722,7 @@ index 0ce5d379c3f7..182fe0ec5f2e 100644
  const NRBITS: u32 = 8;
  const TYPEBITS: u32 = 8;
  
-@@ -35,28 +29,15 @@ const TYPESHIFT: u32 = NRSHIFT + NRBITS as u32;
+@@ -35,17 +29,6 @@ const TYPESHIFT: u32 = NRSHIFT + NRBITS as u32;
  const SIZESHIFT: u32 = TYPESHIFT + TYPEBITS as u32;
  const DIRSHIFT: u32 = SIZESHIFT + SIZEBITS as u32;
  
@@ -839,27 +740,7 @@ index 0ce5d379c3f7..182fe0ec5f2e 100644
  // https://github.com/torvalds/linux/blob/master/include/uapi/linux/hid.h
  const HID_MAX_DESCRIPTOR_SIZE: usize = 4096;
  
- macro_rules! ioctl {
--    ($dir:expr, $name:ident, $ioty:expr, $nr:expr; $ty:ty) => (
-+    ($dir:expr, $name:ident, $ioty:expr, $nr:expr; $ty:ty) => {
-         pub unsafe fn $name(fd: libc::c_int, val: *mut $ty) -> io::Result<libc::c_int> {
-             let size = mem::size_of::<$ty>();
--            let ioc = (($dir as u32) << DIRSHIFT) |
--                      (($ioty as u32) << TYPESHIFT) |
--                      (($nr as u32) << NRSHIFT) |
--                      ((size as u32) << SIZESHIFT);
-+            let ioc = (($dir as u32) << DIRSHIFT) | (($ioty as u32) << TYPESHIFT)
-+                | (($nr as u32) << NRSHIFT) | ((size as u32) << SIZESHIFT);
- 
-             #[cfg(not(target_env = "musl"))]
-             type IocType = libc::c_ulong;
-@@ -65,120 +46,12 @@ macro_rules! ioctl {
- 
-             from_unix_result(libc::ioctl(fd, ioc as IocType, val))
-         }
--    );
-+    };
- }
+@@ -68,115 +51,7 @@ macro_rules! ioctl {
  
  // https://github.com/torvalds/linux/blob/master/include/uapi/linux/hidraw.h
  ioctl!(READ, hidiocgrdescsize, b'H', 0x01; ::libc::c_int);
@@ -1013,126 +894,10 @@ index 0ce5d379c3f7..182fe0ec5f2e 100644
 +    value.truncate(desc.size as usize);
 +    Ok(ReportDescriptor { value })
  }
-diff --git dom/webauthn/u2f-hid-rs/src/linux/monitor.rs dom/webauthn/u2f-hid-rs/src/linux/monitor.rs
-index 47c376ba9176..408ea4b7b9ad 100644
---- dom/webauthn/u2f-hid-rs/src/linux/monitor.rs
-+++ dom/webauthn/u2f-hid-rs/src/linux/monitor.rs
-@@ -65,13 +65,11 @@ where
- 
-         // Start listening for new devices.
-         let mut socket = monitor.listen()?;
--        let mut fds = vec![
--            ::libc::pollfd {
--                fd: socket.as_raw_fd(),
--                events: POLLIN,
--                revents: 0,
--            },
--        ];
-+        let mut fds = vec![::libc::pollfd {
-+            fd: socket.as_raw_fd(),
-+            events: POLLIN,
-+            revents: 0,
-+        }];
- 
-         while alive() {
-             // Wait for new events, break on failure.
-diff --git dom/webauthn/u2f-hid-rs/src/macos/iokit.rs dom/webauthn/u2f-hid-rs/src/macos/iokit.rs
-index 7e550af2a445..79e53599004e 100644
---- dom/webauthn/u2f-hid-rs/src/macos/iokit.rs
-+++ dom/webauthn/u2f-hid-rs/src/macos/iokit.rs
-@@ -282,13 +282,13 @@ extern "C" {
- 
- #[cfg(test)]
- mod tests {
-+    use super::*;
-     use core_foundation_sys::base::*;
-     use core_foundation_sys::runloop::*;
-     use libc::c_void;
-     use std::ptr;
-     use std::sync::mpsc::{channel, Sender};
-     use std::thread;
--    use super::*;
- 
-     extern "C" fn observe(_: CFRunLoopObserverRef, _: CFRunLoopActivity, context: *mut c_void) {
-         let tx: &Sender<SendableRunLoop> = unsafe { &*(context as *mut _) };
-diff --git dom/webauthn/u2f-hid-rs/src/macos/monitor.rs dom/webauthn/u2f-hid-rs/src/macos/monitor.rs
-index c346fe5eff57..b971ed885d18 100644
---- dom/webauthn/u2f-hid-rs/src/macos/monitor.rs
-+++ dom/webauthn/u2f-hid-rs/src/macos/monitor.rs
-@@ -10,9 +10,9 @@ use core_foundation_sys::runloop::*;
- use libc::c_void;
- use platform::iokit::*;
- use runloop::RunLoop;
--use std::{io, slice};
- use std::collections::HashMap;
- use std::sync::mpsc::{channel, Receiver, Sender};
-+use std::{io, slice};
- use util::io_err;
- 
- struct DeviceData {
-diff --git dom/webauthn/u2f-hid-rs/src/manager.rs dom/webauthn/u2f-hid-rs/src/manager.rs
-index c9f92bdbfad5..ca8b80a9584a 100644
---- dom/webauthn/u2f-hid-rs/src/manager.rs
-+++ dom/webauthn/u2f-hid-rs/src/manager.rs
-@@ -7,8 +7,8 @@ use std::sync::mpsc::{channel, RecvTimeoutError, Sender};
- use std::time::Duration;
- 
- use consts::PARAMETER_SIZE;
--use statemachine::StateMachine;
- use runloop::RunLoop;
-+use statemachine::StateMachine;
- use util::OnceCallback;
- 
- enum QueueAction {
-diff --git dom/webauthn/u2f-hid-rs/src/statemachine.rs dom/webauthn/u2f-hid-rs/src/statemachine.rs
-index 8e4abaa7cf02..55e7d36155a3 100644
---- dom/webauthn/u2f-hid-rs/src/statemachine.rs
-+++ dom/webauthn/u2f-hid-rs/src/statemachine.rs
-@@ -7,8 +7,8 @@ use platform::device::Device;
- use platform::transaction::Transaction;
- use std::thread;
- use std::time::Duration;
--use util::OnceCallback;
- use u2fprotocol::{u2f_init_device, u2f_is_keyhandle_valid, u2f_register, u2f_sign};
-+use util::OnceCallback;
- 
- fn is_valid_transport(transports: ::AuthenticatorTransports) -> bool {
-     transports.is_empty() || transports.contains(::AuthenticatorTransports::USB)
-diff --git dom/webauthn/u2f-hid-rs/src/u2fprotocol.rs dom/webauthn/u2f-hid-rs/src/u2fprotocol.rs
-index 4d6737b1289e..0b984407d873 100644
---- dom/webauthn/u2f-hid-rs/src/u2fprotocol.rs
-+++ dom/webauthn/u2f-hid-rs/src/u2fprotocol.rs
-@@ -5,9 +5,9 @@
- extern crate std;
- 
- use rand::{thread_rng, Rng};
-+use std::ffi::CString;
- use std::io;
- use std::io::{Read, Write};
--use std::ffi::CString;
- 
- use consts::*;
- use u2ftypes::*;
 diff --git dom/webauthn/u2f-hid-rs/src/util.rs dom/webauthn/u2f-hid-rs/src/util.rs
 index 27db864e2fcd..770e166d57d2 100644
 --- dom/webauthn/u2f-hid-rs/src/util.rs
 +++ dom/webauthn/u2f-hid-rs/src/util.rs
-@@ -12,10 +12,12 @@ use boxfnonce::SendBoxFnOnce;
- macro_rules! try_or {
-     ($val:expr, $or:expr) => {
-         match $val {
--            Ok(v) => { v }
--            Err(e) => { return $or(e); }
-+            Ok(v) => v,
-+            Err(e) => {
-+                return $or(e);
-+            }
-         }
--    }
-+    };
- }
- 
- pub trait Signed {
 @@ -44,6 +46,16 @@ pub fn from_unix_result<T: Signed>(rv: T) -> io::Result<T> {
      }
  }
@@ -1150,33 +915,6 @@ index 27db864e2fcd..770e166d57d2 100644
  pub fn io_err(msg: &str) -> io::Error {
      io::Error::new(io::ErrorKind::Other, msg)
  }
-diff --git dom/webauthn/u2f-hid-rs/src/windows/device.rs dom/webauthn/u2f-hid-rs/src/windows/device.rs
-index cbbe2811d672..5579cc052a6f 100644
---- dom/webauthn/u2f-hid-rs/src/windows/device.rs
-+++ dom/webauthn/u2f-hid-rs/src/windows/device.rs
-@@ -7,8 +7,8 @@ use std::io;
- use std::io::{Read, Write};
- use std::os::windows::io::AsRawHandle;
- 
--use consts::{FIDO_USAGE_U2FHID, CID_BROADCAST, FIDO_USAGE_PAGE, HID_RPT_SIZE};
- use super::winapi::DeviceCapabilities;
-+use consts::{FIDO_USAGE_U2FHID, CID_BROADCAST, FIDO_USAGE_PAGE, HID_RPT_SIZE};
- 
- use u2ftypes::U2FDevice;
- 
-diff --git dom/webauthn/u2f-hid-rs/src/windows/winapi.rs dom/webauthn/u2f-hid-rs/src/windows/winapi.rs
-index 18c6898e86ee..bd8a7e58d06a 100644
---- dom/webauthn/u2f-hid-rs/src/windows/winapi.rs
-+++ dom/webauthn/u2f-hid-rs/src/windows/winapi.rs
-@@ -60,7 +60,7 @@ extern "stdcall" {
- macro_rules! offset_of {
-     ($ty:ty, $field:ident) => {
-         unsafe { &(*(0 as *const $ty)).$field as *const _ as usize }
--    }
-+    };
- }
- 
- fn from_wide_ptr(ptr: *const u16, len: usize) -> String {
 diff --git third_party/rust/devd-rs/.cargo-checksum.json third_party/rust/devd-rs/.cargo-checksum.json
 new file mode 100644
 index 000000000000..7f8c6af3141e

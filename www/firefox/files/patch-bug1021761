@@ -689,7 +689,7 @@ new file mode 100644
 index 000000000000..7d96168b9ea6
 --- /dev/null
 +++ media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,454 @@
+@@ -0,0 +1,453 @@
 +/*
 + * Copyright © 2014 Mozilla Foundation
 + *
@@ -1126,7 +1126,6 @@ index 000000000000..7d96168b9ea6
 +  .get_max_channel_count = oss_get_max_channel_count,
 +  .get_min_latency = oss_get_min_latency,
 +  .get_preferred_sample_rate = oss_get_preferred_sample_rate,
-+  .get_preferred_channel_layout = NULL,
 +  .enumerate_devices = NULL,
 +  .device_collection_destroy = NULL,
 +  .destroy = oss_destroy,
@@ -1161,10 +1160,10 @@ index e1fea30ca417..a5b1100f1014 100644
  if CONFIG['MOZ_PULSEAUDIO'] or CONFIG['MOZ_JACK']:
      SOURCES += [
          'cubeb_resampler.cpp',
-@@ -88,6 +94,7 @@ if CONFIG['OS_TARGET'] == 'Android':
- FINAL_LIBRARY = 'gkmedias'
+@@ -89,6 +95,7 @@ FINAL_LIBRARY = 'gkmedias'
  
  CFLAGS += CONFIG['MOZ_ALSA_CFLAGS']
+ CFLAGS += CONFIG['MOZ_JACK_CFLAGS']
 +CFLAGS += CONFIG['MOZ_OSS_CFLAGS']
  CFLAGS += CONFIG['MOZ_PULSEAUDIO_CFLAGS']
  
@@ -1250,9 +1249,9 @@ index 28e1a9e48d61..edacedcf6e5d 100644
 +AC_SUBST_LIST(MOZ_OSS_CFLAGS)
 +AC_SUBST_LIST(MOZ_OSS_LIBS)
 +
- dnl ==================================
- dnl = Check alsa availability on Linux
- dnl ==================================
+ dnl ========================================================
+ dnl NegotiateAuth
+ dnl ========================================================
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index e06592daa265..ce016b96c2bc 100644
 --- toolkit/library/moz.build

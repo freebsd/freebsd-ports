@@ -111,6 +111,11 @@ BUILD_DEPENDS+=	llvm${MESA_LLVM_VER}>0:devel/llvm${MESA_LLVM_VER}
 MOZ_EXPORT+=	LLVM_CONFIG=llvm-config${MESA_LLVM_VER}
 .endif
 
+.if ${MOZILLA_VER:R:R} >= 61
+BUILD_DEPENDS+=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//g}
+MOZ_EXPORT+=	PYTHON3="${LOCALBASE}/bin/python${PYTHON3_DEFAULT}"
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSREL} == 11.1
 LLD_UNSAFE=	yes
 .endif
