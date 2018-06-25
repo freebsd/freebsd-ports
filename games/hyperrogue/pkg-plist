@@ -86,6 +86,7 @@ bin/hyperrogue
 %%DATADIR%%/sounds/speak-princess.ogg
 %%DATADIR%%/sounds/splash1.ogg
 %%DATADIR%%/sounds/splash2.ogg
+%%DATADIR%%/sounds/steamhiss.ogg
 %%DATADIR%%/sounds/storm.ogg
 %%DATADIR%%/sounds/tada.ogg
 %%DATADIR%%/sounds/trapdoor.ogg
