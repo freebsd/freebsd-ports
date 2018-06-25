@@ -7,7 +7,7 @@ CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0/
 DIST_SUBDIR=	perl
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
 LICENSE=	ART10 GPLv1+
