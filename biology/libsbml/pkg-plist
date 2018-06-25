@@ -449,6 +449,7 @@ lib/cmake/sbml-static-config.cmake
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/printsupported.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/promoteParameters.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/readSBML.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/renameSId.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/replaceOneFD.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/setIdFromNames.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/stringInput.py
