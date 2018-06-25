@@ -1,4 +1,5 @@
-SHA256 (feappv31/feappv31.zip) = e1edbced934474b0839857ce799a6cc6b31961b7c0acae8ee70ce2f1efa26791
-SIZE (feappv31/feappv31.zip) = 615732
-SHA256 (feappv31/manual.pdf) = f3c6d5ac9c310852dfcde0c74c22df7388fcc6230e30630f70d591c50fd93832
-SIZE (feappv31/manual.pdf) = 649124
+TIMESTAMP = 1529955297
+SHA256 (manual41.pdf) = 09bb4b6f0622a1384ad7c52bcd7db0a1b7d190f9849012bf05622b5e7fa3463e
+SIZE (manual41.pdf) = 649177
+SHA256 (sanjayg0-feappv-v4.1i_GH0.tar.gz) = 49917388a390b5d35e4ac938db8bc67cfe144a4c7127ad7016fcc741e6256f28
+SIZE (sanjayg0-feappv-v4.1i_GH0.tar.gz) = 1043692
