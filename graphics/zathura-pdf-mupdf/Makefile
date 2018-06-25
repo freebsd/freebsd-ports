@@ -31,6 +31,6 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 CONFLICTS_INSTALL=	zathura-pdf-poppler-[0-9]*
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/zathura/pdf.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/zathura/pdf.so
 
 .include <bsd.port.mk>
