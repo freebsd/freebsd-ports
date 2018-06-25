@@ -43,6 +43,7 @@
     SUBDIR += hmmer
     SUBDIR += htslib
     SUBDIR += hyphy
+    SUBDIR += igv
     SUBDIR += infernal
     SUBDIR += iolib
     SUBDIR += iqtree
