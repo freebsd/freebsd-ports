@@ -10,6 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/Jikes/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java source to byte-code compiler made available by IBM
 
+BROKEN_FreeBSD_12_aarch64=	fails to configure: Could not find standard set_new_handler function
+BROKEN_FreeBSD_12_armv6=	fails to configure: Could not find standard set_new_handler function
+BROKEN_FreeBSD_12_armv7=	fails to configure: Could not find standard set_new_handler function
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_search_iconv=${ICONV_LIB} \
