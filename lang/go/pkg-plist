@@ -1962,7 +1962,6 @@ go/src/cmd/go/internal/list/context.go
 go/src/cmd/go/internal/list/list.go
 go/src/cmd/go/internal/load/flag.go
 go/src/cmd/go/internal/load/flag_test.go
-go/src/cmd/go/internal/load/icfg.go
 go/src/cmd/go/internal/load/match_test.go
 go/src/cmd/go/internal/load/path.go
 go/src/cmd/go/internal/load/pkg.go
@@ -2019,6 +2018,16 @@ go/src/cmd/go/testdata/local/easysub/main.go
 go/src/cmd/go/testdata/local/hard.go
 go/src/cmd/go/testdata/local/sub/sub.go
 go/src/cmd/go/testdata/local/sub/sub/subsub.go
+go/src/cmd/go/testdata/modlegacy/src/new/go.mod
+go/src/cmd/go/testdata/modlegacy/src/new/new.go
+go/src/cmd/go/testdata/modlegacy/src/new/p1/p1.go
+go/src/cmd/go/testdata/modlegacy/src/new/p2/p2.go
+go/src/cmd/go/testdata/modlegacy/src/new/sub/go.mod
+go/src/cmd/go/testdata/modlegacy/src/new/sub/inner/go.mod
+go/src/cmd/go/testdata/modlegacy/src/new/sub/inner/x/x.go
+go/src/cmd/go/testdata/modlegacy/src/new/sub/x/v1/y/y.go
+go/src/cmd/go/testdata/modlegacy/src/old/p1/p1.go
+go/src/cmd/go/testdata/modlegacy/src/old/p2/p2.go
 go/src/cmd/go/testdata/norunexample/example_test.go
 go/src/cmd/go/testdata/norunexample/test_test.go
 go/src/cmd/go/testdata/print_goroot.go
