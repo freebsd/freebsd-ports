@@ -16,6 +16,8 @@ LICENSE_NAME=	IBM PUBLIC LICENSE - Open Visualization Data Explorer VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_FreeBSD_12_amd64=	fails to build: gmake[1]: *** No rule to make target 'Makefile'.  Stop.
+
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick	\
 		libtiff.so:graphics/tiff		\
 		libcdf.so:science/cdf			\
