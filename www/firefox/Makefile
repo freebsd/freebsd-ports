@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	60.0.2
+DISTVERSION=	61.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build3/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
-		nss>=3.36.1:security/nss \
+		nss>=3.37.3:security/nss \
 		icu>=59.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=1.7.6:print/harfbuzz \
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 		png>=1.6.34:graphics/png \
 		libvorbis>=1.3.6,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.22.0:databases/sqlite3 \
+		sqlite3>=3.23.1:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
@@ -32,7 +33,7 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	-cairo -soundtouch
+USE_MOZILLA=	-cairo -hunspell -soundtouch
 
 USE_GL=		gl
 USES=		tar:xz
@@ -43,7 +44,7 @@ FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/${MOZILLA}-snap/${MOZILLA}.desktop
 MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_EXCLUDE=	BUNDLED_CAIRO
+OPTIONS_EXCLUDE=	BUNDLED_CAIRO DTRACE
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
