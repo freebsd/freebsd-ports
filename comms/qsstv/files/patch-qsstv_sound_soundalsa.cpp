@@ -1,4 +1,4 @@
---- qsstv/sound/soundalsa.cpp.orig	2016-04-08 23:08:29 UTC
+--- qsstv/sound/soundalsa.cpp.orig	2016-08-28 16:01:40 UTC
 +++ qsstv/sound/soundalsa.cpp
 @@ -64,6 +64,8 @@ void soundAlsa::prepareCapture()
  {
@@ -27,7 +27,7 @@
            snd_pcm_prepare (captureHandle );
            snd_pcm_start (captureHandle);
            errorOut() << "Overrun";
-@@ -140,6 +146,8 @@ int soundAlsa::write(uint numFrames)
+@@ -142,6 +148,8 @@ int soundAlsa::write(uint numFrames)
       else if ( framesWritten == -EPIPE )
        {
          /* underrun */
@@ -36,7 +36,7 @@
          error = snd_pcm_prepare (playbackHandle);
          if ( error < 0 )
            {
-@@ -337,5 +345,42 @@ void getCardList(QStringList &alsaInputL
+@@ -360,5 +368,42 @@ void getCardList(QStringList &alsaInputL
      n++;
    }
    snd_device_name_free_hint(hints);

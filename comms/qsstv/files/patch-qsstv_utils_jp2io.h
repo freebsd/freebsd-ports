@@ -1,4 +1,4 @@
---- qsstv/utils/jp2io.h.orig	2016-04-08 23:08:29 UTC
+--- qsstv/utils/jp2io.h.orig	2016-08-23 19:39:12 UTC
 +++ qsstv/utils/jp2io.h
 @@ -1,6 +1,6 @@
  #ifndef JP2READER_H

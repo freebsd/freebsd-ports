@@ -1,4 +1,4 @@
---- qsstv/drmrx/mkfacmap.cpp.orig	2016-04-08 23:08:29 UTC
+--- qsstv/drmrx/mkfacmap.cpp.orig	2016-08-23 19:39:12 UTC
 +++ qsstv/drmrx/mkfacmap.cpp
 @@ -27,7 +27,6 @@
  
