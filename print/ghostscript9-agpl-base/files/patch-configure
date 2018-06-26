@@ -9,7 +9,24 @@
  fi
  
  
-@@ -9950,42 +9950,42 @@ if test x$enable_threadsafe = xyes; then
+@@ -5762,7 +5762,6 @@ if ${ac_cv_lib_dl_dlopen+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -5795,7 +5794,7 @@ $as_echo "$ac_cv_lib_dl_dlopen" >&6; }
+ if test "x$ac_cv_lib_dl_dlopen" = xyes; then :
+   ac_fn_c_check_header_mongrel "$LINENO" "dlfcn.h" "ac_cv_header_dlfcn_h" "$ac_includes_default"
+ if test "x$ac_cv_header_dlfcn_h" = xyes; then :
+-  GCFLAGS="$GCFLAGS -DHAVE_LIBDL=1";LIBS="-ldl $LIBS"
++  GCFLAGS="$GCFLAGS -DHAVE_LIBDL=1";
+ fi
+ 
+ 
+@@ -9950,42 +9949,42 @@ if test x$enable_threadsafe = xyes; then
  
    for ntsdev in $NTS_DEVS ; do
      NTS_EXCLUDES="$(echo \"$P_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
@@ -60,7 +77,7 @@
    done
  
    NTS_EXCLUDES=`echo "$NTS_EXCLUDES" | tr " " "\n" | sort | uniq | tr "\n" " "`
-@@ -10145,7 +10145,12 @@ if test "${enable_dynamic+set}" = set; then :
+@@ -10145,7 +10144,12 @@ if test "${enable_dynamic+set}" = set; then :
        DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
        ;;
        *BSD)
