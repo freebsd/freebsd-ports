@@ -155,3 +155,37 @@
  .Ev DISPLAY
  environment variable to
  .Cm localhost .
+--- openbsd-compat/port-net.c	2018-06-26 15:18:43.551904000 -0700
++++ openbsd-compat/port-net.c.orig	2018-04-01 22:38:28.000000000 -0700
+@@ -186,8 +185,8 @@ sys_tun_open(int tun, int mode, char **ifname)
+ 	else
+ 		debug("%s: %s mode %d fd %d", __func__, ifr.ifr_name, mode, fd);
+ 
+-	if (ifname != NULL)
+-		*ifname = xstrdup(ifr.ifr_name);
++	if (ifname != NULL && (*ifname = strdup(ifr.ifr_name)))
++		goto failed;
+ 
+ 	return (fd);
+ 
+@@ -273,8 +272,8 @@ sys_tun_open(int tun, int mode, char **ifname)
+ 			goto failed;
+ 	}
+ 
+-	if (ifname != NULL)
+-		*ifname = xstrdup(ifr.ifr_name);
++	if (ifname != NULL && (*ifname = strdup(ifr.ifr_name)))
++		goto failed;
+ 
+ 	close(sock);
+ 	return (fd);
+--- ssh.c.orig	2018-04-01 22:38:28.000000000 -0700
++++ ssh.c	2018-06-26 15:22:02.947595000 -0700
+@@ -1411,6 +1323,7 @@ main(int ac, char **av)
+ 		    (char *)NULL);
+ 		free(cp);
+ 	}
++	free(conn_hash_hex);
+ 
+ 	if (config_test) {
+ 		dump_client_config(&options, host);

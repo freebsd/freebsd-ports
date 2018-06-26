@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	7.7p1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -62,7 +62,7 @@ HPN_CONFIGURE_WITH=		hpn
 NONECIPHER_CONFIGURE_WITH=	nonecipher
 
 # See http://www.roumenpetrov.info/openssh/
-X509_VERSION=		11.3
+X509_VERSION=		11.3.2
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
 X509_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x509-glue
 X509_PATCHFILES=	${PORTNAME}-7.7p1+x509-${X509_VERSION}.diff.gz:-p1:x509
