@@ -1,5 +1,5 @@
-TIMESTAMP = 1529876924
-SHA256 (gmic-v.2.3.0/gmic_stdlib.h) = d5d90573300d99e013ff3439c0d71e8a83f9a77a509a6afb44c6a8cf6b5f4152
-SIZE (gmic-v.2.3.0/gmic_stdlib.h) = 1844576
-SHA256 (gmic-v.2.3.0/dtschump-gmic-v.2.3.0_GH0.tar.gz) = 8ce373454665266417ecca39576e10f53b349b1cd2622667782ea9360aec8926
-SIZE (gmic-v.2.3.0/dtschump-gmic-v.2.3.0_GH0.tar.gz) = 39069330
+TIMESTAMP = 1530046554
+SHA256 (gmic-v.2.3.1/gmic_stdlib.h) = 06a099d4d63ea6a48f8256ce5276d1ee19cb83c737b206b34d29f42dd01529dc
+SIZE (gmic-v.2.3.1/gmic_stdlib.h) = 1844150
+SHA256 (gmic-v.2.3.1/dtschump-gmic-v.2.3.1_GH0.tar.gz) = 525af5882ee61645cf80c26cbfb4ee7a659e3a3c7c71aa2d7f93760f1a56a030
+SIZE (gmic-v.2.3.1/dtschump-gmic-v.2.3.1_GH0.tar.gz) = 39069023
