@@ -1,19 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	polybar
-DISTVERSION=	3.1.0
-PORTREVISION=	2
+DISTVERSION=	3.1.0.20180621
 CATEGORIES=	x11
 
-MAINTAINER=	capt_redbeard@protonmail.com
+MAINTAINER=	lebarondemerde@privacychain.ch
 COMMENT=	Fast and easy-to-use status bar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to build: KeyError: 'eventstruct'
-BROKEN_armv6=		fails to build: KeyError: 'eventstruct'
-BROKEN_armv7=		fails to build: KeyError: 'eventstruct'
+BROKEN_aarch64=	fails to build: KeyError: 'eventstruct'
+BROKEN_armv6=	fails to build: KeyError: 'eventstruct'
+BROKEN_armv7=	fails to build: KeyError: 'eventstruct'
 
 BUILD_DEPENDS=	xcb-proto>=1.9:x11/xcb-proto
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
@@ -26,15 +25,17 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-util.so:x11/xcb-util \
 		libxcb-xrm.so:x11/xcb-util-xrm
 
-USES=		cmake:outsource localbase:ldflags pkgconfig python:2.7,build
+USES=		cmake:outsource localbase:ldflags pkgconfig \
+		python:2.7,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	jaagr
-GH_TUPLE=	jaagr:i3ipcpp:v0.7.1:i3ipcpp/lib/i3ipcpp \
-		jaagr:xpp:1.4.0-1-g64bd576:xpp/lib/xpp
+GH_TAGNAME=	028b141
+GH_TUPLE=	jaagr:i3ipcpp:v0.7.1-4-gd4e4786:i3ipcpp/lib/i3ipcpp \
+		jaagr:xpp:1.4.0-4-g00165e1:xpp/lib/xpp
 USE_GNOME=	cairo
 USE_XORG=	xcb
 
-OPTIONS_DEFINE=	ALSA CURL EXAMPLES I3 IPC MPD TESTS
+OPTIONS_DEFINE=	ALSA DEBUG CURL EXAMPLES I3 IPC MPD TESTS
 OPTIONS_DEFAULT=	CURL I3 IPC MPD
 OPTIONS_SUB=	yes
 
@@ -51,6 +52,8 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 CURL_CMAKE_BOOL=	ENABLE_CURL
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
+DEBUG_CMAKE_BOOL=	DEBUG_LOGGER
+
 I3_BUILD_DEPENDS=	${LOCALBASE}/include/i3/ipc.h:x11-wm/i3
 I3_CMAKE_BOOL=		ENABLE_I3
 I3_LIB_DEPENDS=		libjsoncpp.so:devel/jsoncpp
@@ -60,10 +63,10 @@ IPC_CMAKE_BOOL=		BUILD_IPC_MSG
 MPD_CMAKE_BOOL=		ENABLE_MPD
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
+# fail while building on poudriere because it need network access
+# during the building process to download googletest on-the-fly.
+TESTS_BUILD_DEPENDS=	git>=0:devel/git
 TESTS_CMAKE_BOOL=	BUILD_TESTS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python2|${PYTHON_CMD}|g' ${WRKSRC_xpp}/CMakeLists.txt
 
 do-test-TESTS-on:
 	cd ${TEST_WRKSRC} && ${SETENV} BUILD_TESTS=ON \
