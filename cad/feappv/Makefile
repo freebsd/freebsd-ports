@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	cad science
 MASTER_SITES=	http://projects.ce.berkeley.edu/feap/${PORTNAME}/:1
 DISTFILES=	${PORTDOCS}:1
-EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}_GH0${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite element analysis program (personal version)
