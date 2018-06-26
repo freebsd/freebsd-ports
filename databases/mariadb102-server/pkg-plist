@@ -43,6 +43,7 @@ bin/wsrep_sst_common
 bin/wsrep_sst_mariabackup
 bin/wsrep_sst_mysqldump
 bin/wsrep_sst_rsync
+bin/wsrep_sst_rsync_wan
 bin/wsrep_sst_xtrabackup
 bin/wsrep_sst_xtrabackup-v2
 include/mysql/server/private/embedded_priv.h
