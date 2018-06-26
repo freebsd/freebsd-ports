@@ -2,30 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	feappv
-PORTVERSION=	3.1
-PORTREVISION=	9
+PORTVERSION=	4.1i
+DISTVERSIONPREFIX=v
 CATEGORIES=	cad science
-MASTER_SITES=	http://www.ce.berkeley.edu/projects/feap/feappv/
-DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX} ${PORTDOCS}
-DIST_SUBDIR=	${PORTNAME}${PORTVERSION:S/.//}
-EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
+MASTER_SITES=	http://projects.ce.berkeley.edu/feap/${PORTNAME}/:1
+DISTFILES=	${PORTDOCS}:1
+EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite element analysis program (personal version)
 
-BROKEN=		No public distfiles
-USES=		fortran gmake localbase:ldflags zip
+USES=		fortran gmake localbase:ldflags
+USE_GITHUB=	yes
+GH_ACCOUNT=	sanjayg0
 USE_XORG=	x11
 MAKEFILE=	makefile
-MAKE_ENV=	FEAPPVHOME3_1="${WRKSRC}"
+MAKE_ENV=	FEAPPVHOME4_1="${WRKSRC}"
 ALL_TARGET=	install
-
-WRKSRC=		${WRKDIR}/ver${PORTVERSION:S/.//}
 
 LDFLAGS+=	-lX11 -lm
 
 PLIST_FILES=	bin/feappv lib/libfeappv.a
-PORTDOCS=	manual.pdf
+PORTDOCS=	manual41.pdf
 
 OPTIONS_DEFINE=	DOCS
 
@@ -33,11 +31,11 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's| make | $$(MAKE) |' ${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e \
-		'/^FF /s|=.*|= ${FC}| ; \
-		 /^CC /s|=.*|= ${CC}| ; \
-		 /^FFOPTFLAG /s|=.*|= ${FFLAGS}| ; \
-		 /^CCOPTFLAG /s|=.*|= ${CFLAGS}| ; \
-		 /^LDOPTIONS /s|=.*|= ${LDFLAGS}| ; \
+		'/^  FF /s|=.*|= ${FC}| ; \
+		 /^  CC /s|=.*|= ${CC}| ; \
+		 /^  FFOPTFLAG /s|=.*|= ${FFLAGS}| ; \
+		 /^  CCOPTFLAG /s|=.*|= ${CFLAGS}| ; \
+		 /^  LDOPTIONS /s|=.*|= ${LDFLAGS}| ; \
 		 s|Feappv.a|libfeappv.a|' ${WRKSRC}/makefile.in
 
 do-install:
