@@ -114,6 +114,7 @@
     SUBDIR += libreoffice-eu
     SUBDIR += libreoffice-fa
     SUBDIR += libreoffice-fi
+    SUBDIR += libreoffice-fy
     SUBDIR += libreoffice-ga
     SUBDIR += libreoffice-gd
     SUBDIR += libreoffice-gl
