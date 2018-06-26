@@ -3,6 +3,7 @@
 
 PORTNAME=	irsim
 PORTVERSION=	9.7.100
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 
@@ -30,8 +31,6 @@ GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-BROKEN_aarch64=		Fails to link: missing sbrk
 
 .include <bsd.port.options.mk>
 
