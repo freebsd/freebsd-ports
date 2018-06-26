@@ -2,6 +2,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	9.23
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//}/
 PKGNAMESUFFIX=	9-agpl-x11
@@ -31,7 +32,6 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-fontconfig \
 		--enable-freetype \
 		--enable-openjpeg \
-		--enable-threadsafe \
 		--with-drivers=ALL \
 		--with-fontpath=${LOCALBASE}/share/fonts \
 		--with-jbig2dec \
