@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.5-530
-DISTVERSIONSUFFIX=	-g78ef205b4
+DISTVERSION=	0.0.5-546
+DISTVERSIONSUFFIX=	-g3b8eab87d
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
-		RPCS3:llvm:17ec6d78a73:llvm/llvm \
+		RPCS3:llvm:4952addb0c00:llvm/llvm \
 		akrzemi1:Optional:f27e790:Optional/3rdparty/Optional \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
 		jbeder:yaml-cpp:yaml-cpp-0.6.2-4-g4fb1c4b:yamlcpp/3rdparty/yaml-cpp \
@@ -33,7 +33,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
 		KhronosGroup:glslang:3.0-1794-ge22e3473:glslang/Vulkan/glslang \
 		Microsoft:GSL:fc5fce4:GSL/3rdparty/GSL \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal \
-		zeux:pugixml:v1.8.1-148-g257fbb4:pugixml/3rdparty/pugixml
+		zeux:pugixml:v1.9:pugixml/3rdparty/pugixml
 
 USES=		cmake:outsource compiler:c++14-lang iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig
