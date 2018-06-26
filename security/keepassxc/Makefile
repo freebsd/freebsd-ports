@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	keepassxc
-DISTVERSION=	2.3.1
+DISTVERSION=	2.3.3
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/2.3.1/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
+MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
 
 MAINTAINER=	melanhit@gmail.com
 COMMENT=	KeePass Cross-platform Community Edition
