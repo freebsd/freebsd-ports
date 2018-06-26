@@ -4359,7 +4359,6 @@
     SUBDIR += py-bcdoc
     SUBDIR += py-bidict
     SUBDIR += py-billiard
-    SUBDIR += py-binplist
     SUBDIR += py-biplist
     SUBDIR += py-bison
     SUBDIR += py-bitarray

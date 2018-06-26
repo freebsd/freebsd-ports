@@ -10293,3 +10293,4 @@ www/npapi-vlc||2018-06-22|Removed, depends on expired www/libxul
 www/libxul||2018-06-22|Has expired: NPAPI are no longer supported
 mail/postfix211||2018-06-24|Has expired: Not supported anymore by vendor. Please choose a new one version
 mail/postfix211-sasl||2018-06-24|Has expired: Not supported anymore by vendor. Please choose a new one version
+devel/py-binplist||2018-06-26|Has expired: Not depended upon anymore, no longer maintained upstream
