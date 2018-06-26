@@ -1,13 +1,16 @@
 bin/cardos-tool
 bin/cryptoflex-tool
 bin/dnie-tool
+bin/egk-tool
 bin/eidenv
 bin/gids-tool
 bin/iasecc-tool
 bin/netkey-tool
 bin/npa-tool
 bin/openpgp-tool
+bin/opensc-asn1
 bin/opensc-explorer
+bin/opensc-notify
 bin/opensc-tool
 bin/piv-tool
 bin/pkcs11-tool
@@ -36,11 +39,11 @@ etc/bash_completion.d/westcos-tool
 @sample etc/opensc.conf.sample
 lib/libopensc.a
 lib/libopensc.so
-lib/libopensc.so.5
-lib/libopensc.so.5.0.0
+lib/libopensc.so.6
+lib/libopensc.so.6.0.0
 %%SM%%lib/libsmm-local.so
-%%SM%%lib/libsmm-local.so.5
-%%SM%%lib/libsmm-local.so.5.0.0
+%%SM%%lib/libsmm-local.so.6
+%%SM%%lib/libsmm-local.so.6.0.0
 lib/onepin-opensc-pkcs11.so
 lib/opensc-pkcs11.so
 lib/pkcs11-spy.so
@@ -48,6 +51,7 @@ lib/pkcs11/onepin-opensc-pkcs11.so
 lib/pkcs11/opensc-pkcs11.so
 lib/pkcs11/pkcs11-spy.so
 libdata/pkgconfig/opensc-pkcs11.pc
+share/applications/org.opensc.notify.desktop
 %%DATADIR%%/asepcos.profile
 %%DATADIR%%/authentic.profile
 %%DATADIR%%/cardos.profile
@@ -82,13 +86,16 @@ libdata/pkgconfig/opensc-pkcs11.pc
 %%MANPAGES%%man/man1/cardos-tool.1.gz
 %%MANPAGES%%man/man1/cryptoflex-tool.1.gz
 %%MANPAGES%%man/man1/dnie-tool.1.gz
+%%MANPAGES%%man/man1/egk-tool.1.gz
 %%MANPAGES%%man/man1/eidenv.1.gz
 %%MANPAGES%%man/man1/gids-tool.1.gz
 %%MANPAGES%%man/man1/iasecc-tool.1.gz
 %%MANPAGES%%man/man1/netkey-tool.1.gz
 %%MANPAGES%%man/man1/npa-tool.1.gz
 %%MANPAGES%%man/man1/openpgp-tool.1.gz
+%%MANPAGES%%man/man1/opensc-asn1.1.gz
 %%MANPAGES%%man/man1/opensc-explorer.1.gz
+%%MANPAGES%%man/man1/opensc-notify.1.gz
 %%MANPAGES%%man/man1/opensc-tool.1.gz
 %%MANPAGES%%man/man1/piv-tool.1.gz
 %%MANPAGES%%man/man1/pkcs11-tool.1.gz
