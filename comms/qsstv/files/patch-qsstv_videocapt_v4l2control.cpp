@@ -1,4 +1,4 @@
---- qsstv/videocapt/v4l2control.cpp.orig	2016-04-08 23:08:29 UTC
+--- qsstv/videocapt/v4l2control.cpp.orig	2016-08-23 19:39:12 UTC
 +++ qsstv/videocapt/v4l2control.cpp
 @@ -32,7 +32,7 @@
  #include <cerrno>
