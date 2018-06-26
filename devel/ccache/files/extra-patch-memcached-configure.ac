@@ -30,7 +30,7 @@
 -    echo '  please install libmemcached > 1.0 with development files'
 -    exit 1
 -    ])
-+    if test x${enable_static} != x; then
++    if test x${enable_static} = xyes; then
 +      AC_CHECK_LIB(sasl2, sasl_version, ac_cv_have_libsasl2=yes,
 +                   ac_cv_have_libsasl2=no, -lcrypto -lopie -lmd)
 +    fi

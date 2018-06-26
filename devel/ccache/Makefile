@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ccache
-PORTVERSION=	3.3.5
-PORTREVISION=	2
+PORTVERSION=	3.4.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.samba.org/ftp/ccache/ \
 		LOCAL/bdrewery
@@ -14,7 +14,7 @@ COMMENT=	Tool to minimize the compile time of C/C++ programs
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPL-3.0.txt
 
-CONFLICTS_INSTALL=	ccache-static-[0-9]* ccache-memcached-[0-9]* ccache-memcached-static-[0-9]*
+CONFLICTS_INSTALL?=	ccache-static-[0-9]* ccache-memcached-[0-9]* ccache-memcached-static-[0-9]*
 
 GNU_CONFIGURE=	yes
 
@@ -22,7 +22,8 @@ HOWTO=		ccache-howto-freebsd.txt
 CCLINKDIR=	libexec/ccache
 SUB_FILES=	${HOWTO} world-ccache pkg-message ccache-update-links.sh
 
-PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html MANUAL.txt
+PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html MANUAL.adoc NEWS.adoc \
+		NEWS.html
 
 OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC DOCS TINDERBOX MEMCACHED
 OPTIONS_DEFAULT=CLANGLINK LLVMLINK
@@ -34,12 +35,11 @@ MEMCACHED_DESC=	Build in experimental Memcached support
 
 USES=		compiler
 
-MEMCACHED_EXTRA_PATCHES=	${FILESDIR}/extra-patch-memcached:-p1 \
-				${FILESDIR}/extra-patch-memcached-ccache.c \
+MEMCACHED_EXTRA_PATCHES=	\
 				${FILESDIR}/extra-patch-memcached-configure.ac \
 				${FILESDIR}/extra-patch-memcached-Makefile.in
 MEMCACHED_CONFIGURE_ENABLE=	memcached
-MEMCACHED_USES=			autoreconf pkgconfig
+MEMCACHED_USES=			autoreconf gmake pkgconfig
 MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 MEMCACHED_LDFLAGS=		-L${LOCALBASE}/lib
 MEMCACHED_CFLAGS=		-I${LOCALBASE}/include
@@ -63,6 +63,17 @@ NO_CCACHE_DEPEND=	yes
 OPTIONS_SUB=	yes
 
 STATIC_LDFLAGS=	-static
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMEMCACHED}
+USE_GITHUB=	yes
+GH_TAGNAME=	dd9123d3bc0763ef7133330e20ca3e3409a08904
+MASTER_SITES=
+DISTINFO_FILE=	${MASTERDIR}/distinfo.memcached
+BUILD_DEPENDS+=	${LOCALBASE}/bin/a2x:textproc/asciidoc
+ALL_TARGET=	all docs
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -96,6 +107,12 @@ SUB_LIST+=	CCACHE_COMPILERS="${CCACHE_COMPILERS}" \
 		ICCPREFIX="${LOCALBASE}/intel_cc_80/bin" \
 		HOWTO="${HOWTO}"
 
+post-patch-MEMCACHED-off:
+	@${REINPLACE_CMD} \
+	    -e 's,_XOPEN_SOURCE 600,_XOPEN_SOURCE 700,' \
+	    -e 's,_POSIX_C_SOURCE 200112L,_POSIX_C_SOURCE 200809L,' \
+	    ${WRKSRC}/configure
+
 post-build-TINDERBOX-on:
 	@${MKDIR} ${WRKDIR}/tb/opt
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${WRKDIR}/tb/opt
@@ -106,7 +123,7 @@ post-build-TINDERBOX-on:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ccache.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/ccache.1 ${STAGEDIR}${PREFIX}/man/man1
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CCLINKDIR}/world
 	${INSTALL_SCRIPT} ${WRKDIR}/world-ccache \
 		${STAGEDIR}${PREFIX}/${CCLINKDIR}/world/ccache
@@ -119,8 +136,10 @@ do-install-TINDERBOX-on:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/MANUAL.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/MANUAL.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/MANUAL.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/MANUAL.adoc ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/NEWS.adoc ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/NEWS.html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
