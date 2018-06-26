@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}.tgz \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tgz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for managing and running ssh and related utilities
 
 LICENSE=	GPLv2

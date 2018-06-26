@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Match and remove all of the blocks before time runs out
 
 LICENSE=	GPLv2+

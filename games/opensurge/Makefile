@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.ime.usp.br/~alemart/opensurge_nightly/ \
 DISTFILES=	${PORTNAME}-src-build${SVN_REV}${EXTRACT_SUFX} \
 		${PORTNAME}-mods-${MODS_VER}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game based on the Sonic the Hedgehog universe
 
 LICENSE=	GPLv2+ CC-BY-SA-3.0

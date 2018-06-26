@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME:S/na/n-a/}.tar.bz2 \
 		${PORTNAME:S/arena/-data/}-0.0.zip \
 		${PORTNAME}_icons_1.tar.gz:icons
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pacman clone in full 3D with a few surprises
 
 LICENSE=	GPLv2+

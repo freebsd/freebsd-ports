@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games python
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game loosely based on the original Spacewar!
 
 LICENSE=	GPLv2

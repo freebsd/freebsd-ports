@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-srcdata-${PORTVERSION:S/.//g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Racing game with elaborate stunts
 
 LICENSE=	GPLv2+
