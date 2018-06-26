@@ -11,6 +11,7 @@ bin/mysqlimport
 bin/mysqlshow
 bin/mysqlslap
 bin/mysql_config
+@comment bin/wsrep_sst_rsync_wan
 include/mysql/errmsg.h
 include/mysql/ma_list.h
 include/mysql/ma_pvio.h
