@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	iperf
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	benchmarks ipv6
-MASTER_SITES=	http://downloads.es.net/pub/iperf/
+MASTER_SITES=	https://downloads.es.net/pub/iperf/
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	bmah@FreeBSD.org

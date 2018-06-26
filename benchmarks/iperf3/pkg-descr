@@ -10,4 +10,4 @@ code base (compared to its predecessor, iperf2) and a library version
 of the functionality that can be used in other programs.  Note that
 iperf3 does not interoperate with with iperf 2.x.
 
-WWW: http://software.es.net/iperf/
+WWW: https://software.es.net/iperf/
