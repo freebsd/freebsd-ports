@@ -1,4 +1,4 @@
---- getgit.cmake.orig	2017-07-30 10:19:41 UTC
+--- getgit.cmake.orig	2018-06-23 14:18:06 UTC
 +++ getgit.cmake
 @@ -1,66 +1,7 @@
  # this macro gets called as a custom build step by running make
