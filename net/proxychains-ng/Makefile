@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	proxychains-ng
-PORTVERSION=	4.12
+PORTVERSION=	4.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Redirect connection through proxy servers
 
 LICENSE=	GPLv2
