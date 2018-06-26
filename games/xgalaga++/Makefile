@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic single screen vertical shoot em up
 
 LICENSE=	GPLv2

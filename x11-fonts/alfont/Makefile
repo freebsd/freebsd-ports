@@ -10,7 +10,7 @@ DISTNAME=	AlFont${DISTVERSION}
 EXTRACT_SUFX=	.rar
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper around the freetype2 library
 
 LICENSE=	FTL

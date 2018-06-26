@@ -9,7 +9,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/sdlscavenger/
 DISTNAME=	sdlscav-145.4_2015_01_05
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lode Runner like game
 
 LICENSE=	GPLv1

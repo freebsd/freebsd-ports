@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}-src${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-src${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform pipe connecting action puzzle game
 
 LICENSE=	GPLv2+

@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		rocksndiamonds-3.3.1.0${EXTRACT_SUFX} \
 		${PORTNAME}_icons.tar.gz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff jue
 
 LICENSE=	GPLv2

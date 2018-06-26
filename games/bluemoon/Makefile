@@ -6,7 +6,7 @@ PORTVERSION=	2.12
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blue Moon card solitaire
 
 LICENSE=	BSD3CLAUSE

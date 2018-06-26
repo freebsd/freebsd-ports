@@ -20,7 +20,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		rnd_jue-3.3.0.0.tar.gz \
 		${PORTNAME}_icons.zip
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	2
 CATEGORIES=	graphics
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3

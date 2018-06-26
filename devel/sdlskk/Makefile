@@ -8,7 +8,7 @@ CATEGORIES=	devel graphics ruby
 MASTER_SITES=	http://www.kmc.gr.jp/~ohai/sdlskk/
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SKK like library for input Japanese, based on SDL
 
 LICENSE=	LGPL21

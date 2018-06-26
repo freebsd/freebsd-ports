@@ -6,7 +6,7 @@ DISTVERSION=	1.26
 CATEGORIES=	games
 PKGNAMEPREFIX=	legend-of-
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	2D platform game with a persistent world
 
 LICENSE=	GPLv2

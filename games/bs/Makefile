@@ -6,7 +6,7 @@ PORTVERSION=	2.10
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bs/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Battleships solitaire game with a color interface
 
 LICENSE=	BSD3CLAUSE

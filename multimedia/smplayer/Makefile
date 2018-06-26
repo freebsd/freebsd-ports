@@ -6,7 +6,7 @@ DISTVERSION=	18.1.0
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete front-end based on Qt for mplayer
 
 LICENSE=	GPLv2+

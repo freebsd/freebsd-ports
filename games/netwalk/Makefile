@@ -6,7 +6,7 @@ PORTVERSION=	0.4.11
 PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game where the object is to connect every terminal to the main server
 
 LICENSE=	GPLv3+

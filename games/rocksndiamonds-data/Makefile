@@ -25,7 +25,7 @@ DIST_SUBDIR=	rocksndiamonds
 EXTRACT_ONLY=	#empty
 EXTRACT_ONLY_7z=Emerald_Mine_Club-2.1.1.7z
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional Player Levels for Rocks'n'Diamonds and R'n'D jue
 
 EXTRACT_DEPENDS+=${UNZIP_CMD}:archivers/unzip

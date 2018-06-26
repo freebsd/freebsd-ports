@@ -6,7 +6,7 @@ PORTVERSION=	4.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net security
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redirect connection through proxy servers
 
 LICENSE=	GPLv2

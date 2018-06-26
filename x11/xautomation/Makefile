@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control X from the command line for scripts
 
 LICENSE=	GPLv2

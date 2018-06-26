@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.nongnu.org/tong/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tetris and Pong in the same place at the same time
 
 LICENSE=	GPLv3+

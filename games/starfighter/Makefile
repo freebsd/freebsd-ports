@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}-src${EXTRACT_SUFX} \
 		${PORTNAME}-icons${EXTRACT_SUFX}:icons
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Liberate the universe from the evil company WEAPCO
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src

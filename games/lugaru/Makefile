@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/oss${PORTNAME}/${PORTNAME}/downloads/
 DISTNAME=	${PORTNAME}-rev${DISTVERSION}-src
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D arcade with unique fighting system and anthropomorphic characters
 
 LICENSE=	GPLv2+

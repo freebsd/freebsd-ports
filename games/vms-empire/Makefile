@@ -6,7 +6,7 @@ PORTVERSION=	1.14
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulation of a full-scale war between two emperors
 
 LICENSE=	GPLv2
