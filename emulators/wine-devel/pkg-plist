@@ -450,6 +450,7 @@ include/wine/windows/inseng.h
 include/wine/windows/inseng.idl
 include/wine/windows/inspectable.h
 include/wine/windows/inspectable.idl
+include/wine/windows/interactioncontext.h
 include/wine/windows/intshcut.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
@@ -2475,6 +2476,7 @@ lib/wine/libmswsock.def
 lib/wine/libnddeapi.def
 lib/wine/libnetapi32.def
 lib/wine/libnewdev.def
+lib/wine/libninput.def
 lib/wine/libnormaliz.def
 lib/wine/libntdll.def
 lib/wine/libntdsapi.def
@@ -2531,6 +2533,7 @@ lib/wine/libuuid.a
 lib/wine/libuxtheme.def
 lib/wine/libvdmdbg.def
 lib/wine/libversion.def
+lib/wine/libvulkan-1.def
 lib/wine/libwebservices.def
 lib/wine/libwer.def
 lib/wine/libwindowscodecs.def
