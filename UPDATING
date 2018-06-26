@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180625:
+  AFFECTS: users of PHP based applications like drush
+  AUTHOR: mfechner@FreeBSD.org
+
+  Flavors are being added to PHP applications. If you use PHP 5.6 you need:
+
+  # pkg set -n drush:drush-php56
+
+  For more details see 20180611.
+
 20180612:
   AFFECTS: users of the nox flavor of editors/emacs-devel
   AUTHOR: jrm@FreeBSD.org
