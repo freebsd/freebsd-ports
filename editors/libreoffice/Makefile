@@ -2,9 +2,9 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
-		http://dev-www.libreoffice.org/src/:src \
-		http://dev-www.libreoffice.org/extern/:ext
+MASTER_SITES=	https://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
+		https://dev-www.libreoffice.org/src/:src \
+		https://dev-www.libreoffice.org/extern/:ext
 DISTFILES=	${PORTNAME}-${LOVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-help-${LOVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	libreoffice
