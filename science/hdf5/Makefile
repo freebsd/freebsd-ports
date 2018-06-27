@@ -5,9 +5,7 @@ PORTNAME=	hdf5
 PORTVERSION=	1.10.1
 PORTREVISION=	1
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	https://www.hdfgroup.org/ftp/HDF5/releases/hdf5-${PORTVERSION:R}/${DISTNAME}/src/ \
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${PORTVERSION:R}/${DISTNAME}/src/ \
-		ftp://support.hdfgroup.org/HDF5/releases/hdf5-${PORTVERSION:R}/${DISTNAME}/src/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
