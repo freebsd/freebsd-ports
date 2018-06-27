@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	qsynth
-DISTVERSIONPREFIX=	qsynth_
-DISTVERSION=	0_5_0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	audio
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Qt fluidsynth front-end application
 
 LICENSE=	GPLv2+
@@ -15,12 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
-USES=		autoreconf gmake pkgconfig
+USES=		gmake pkgconfig
 USE_CXXSTD=	c++11
 USE_QT5=	core gui widgets x11extras buildtools_build linguisttools_build qmake_build
 USE_GL=		gl
-USE_GITHUB=	yes
-GH_ACCOUNT=	rncbc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_cv_qmake=${QMAKE} \
@@ -45,14 +42,11 @@ XUNIQUE_USE=	XORG=x11
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \
-		s|oss,alsa,alsa_seq,|jack,oss,|; \
-		s|alsa,jack,oss,dsound,|jack,oss,dsound,|; \
+		s|oss,alsa,alsa_seq,|jack,sndio,oss,|; \
+		s|alsa,jack,oss,dsound,|jack,sndio,oss,|; \
 		s|"/MidiDriver", "alsa_seq"|"/MidiDriver", "jack"|; \
 		s|m_settings.value("/SoundFontDir").toString();|m_settings.value("/SoundFontDir").toString().isEmpty() ? "${LOCALBASE}/share/sounds/sf2" : m_settings.value("/SoundFontDir").toString();|' \
-		${WRKSRC}/src/qsynthOptions.cpp
-
-post-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o qsynth.mak \
-		${QMAKE_ARGS})
+		${WRKSRC}/src/qsynthOptions.cpp \
+		${WRKSRC}/qsynth.1 ${WRKSRC}/qsynth.fr.1
 
 .include <bsd.port.mk>
