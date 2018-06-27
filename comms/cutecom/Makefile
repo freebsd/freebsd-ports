@@ -18,6 +18,7 @@ USES=		cmake
 USE_QT5=	buildtools_build core gui qmake_build serialport widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	neundorf
+GH_PROJECT=	CuteCom
 
 PLIST_FILES=	bin/cutecom
 
