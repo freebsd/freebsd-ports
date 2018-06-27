@@ -49,4 +49,7 @@ post-install-SRC-on:
 			${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/elixir/lib/$${lib}/lib; \
 	done
 
+do-test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test
+
 .include <bsd.port.mk>
