@@ -716,6 +716,7 @@
     SUBDIR += mount.app
     SUBDIR += mountsmb2
     SUBDIR += mpiexec
+    SUBDIR += mping
     SUBDIR += mptd
     SUBDIR += msiklm
     SUBDIR += msktutil
