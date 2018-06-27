@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for MessagePack
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-LeakTrace>0:devel/p5-Test-LeakTrace
 
