@@ -1,0 +1,22 @@
+Based on https://github.com/cisco/openh264/pull/2877
+
+--- codec/common/arm64/arm_arch64_common_macro.S.orig	2018-06-27 01:36:43 UTC
++++ codec/common/arm64/arm_arch64_common_macro.S
+@@ -52,13 +52,17 @@ ret
+ .align 2
+ .global \funcName
+ .type \funcName, %function
++#ifndef __clang__
+ .func \funcName
++#endif
+ \funcName:
+ .endm
+ 
+ .macro WELS_ASM_AARCH64_FUNC_END
+ ret
++#ifndef __clang__
+ .endfunc
++#endif
+ .endm
+ 
+ #endif
