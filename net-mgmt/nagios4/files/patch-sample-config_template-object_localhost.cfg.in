@@ -1,40 +1,39 @@
---- sample-config/template-object/localhost.cfg.in.orig	2014-08-12 15:00:01 UTC
+--- sample-config/template-object/localhost.cfg.in.orig	2018-06-25 21:25:22 UTC
 +++ sample-config/template-object/localhost.cfg.in
 @@ -4,7 +4,7 @@
  #
- # NOTE: This config file is intended to serve as an *extremely* simple 
+ # NOTE: This config file is intended to serve as an *extremely* simple
  #       example of how you can create configuration entries to monitor
 -#       the local (Linux) machine.
 +#       the local (FreeBSD) machine.
  #
  ###############################################################################
  
-@@ -22,9 +22,9 @@
- # Define a host for the local machine
+@@ -20,9 +20,9 @@
  
- define host{
--        use                     linux-server            ; Name of host template to use
-+        use                     freebsd-server          ; Name of host template to use
- 							; This host definition will inherit all variables that are defined
--							; in (or inherited by) the linux-server host template definition.
-+							; in (or inherited by) the freebsd-server host template definition.
-         host_name               localhost
-         alias                   localhost
-         address                 127.0.0.1
-@@ -40,12 +40,12 @@ define host{
- ###############################################################################
+ define host {
+ 
+-    use                     linux-server            ; Name of host template to use
++    use                     freebsd-server            ; Name of host template to use
+                                                     ; This host definition will inherit all variables that are defined
+-                                                    ; in (or inherited by) the linux-server host template definition.
++                                                    ; in (or inherited by) the freebsd-server host template definition.
+     host_name               localhost
+     alias                   localhost
+     address                 127.0.0.1
+@@ -36,12 +36,12 @@ define host {
+ #
  ###############################################################################
  
 -# Define an optional hostgroup for Linux machines
 +# Define an optional hostgroup for FreeBSD machines
  
- define hostgroup{
--        hostgroup_name  linux-servers ; The name of the hostgroup
--        alias           Linux Servers ; Long name of the group
--        members         localhost     ; Comma separated list of hosts that belong to this group
-+        hostgroup_name  freebsd-servers ; The name of the hostgroup
-+        alias           FreeBSD Servers ; Long name of the group
-+        members         localhost       ; Comma separated list of hosts that belong to this group
-         }
+ define hostgroup {
  
+-    hostgroup_name          linux-servers           ; The name of the hostgroup
+-    alias                   Linux Servers           ; Long name of the group
++    hostgroup_name          freebsd-servers           ; The name of the hostgroup
++    alias                   FreeBSD Servers           ; Long name of the group
+     members                 localhost               ; Comma separated list of hosts that belong to this group
+ }
  
