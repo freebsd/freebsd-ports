@@ -1,0 +1,25 @@
+# $FreeBSD$
+
+PORTNAME=	geopandas
+PORTVERSION=	0.3.0
+CATEGORIES=	graphics python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	lbartoletti@tuxfamily.org
+COMMENT=	Python tools for geographic data
+
+LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Shapely>=1.2.18:devel/py-shapely@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Fiona>=1.0.1:graphics/py-fiona@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.3:graphics/py-pyproj@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.3.0:devel/py-six@${FLAVOR}
+
+NO_ARCH=	yes
+
+USES=		python
+USE_PYTHON=	autoplist cython distutils
+
+.include <bsd.port.mk>
