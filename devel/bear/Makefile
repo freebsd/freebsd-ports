@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	bear
-PORTVERSION=	2.3.6
+PORTVERSION=	2.3.11
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Tool that generates a compilation database for clang tooling
 
 LICENSE=	GPLv3
 
+USES=		cmake shebangfix python
 USE_GITHUB=	yes
 GH_ACCOUNT=	rizsotto
 GH_PROJECT=	Bear
-
-USES=		cmake shebangfix python
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	bear/main.py.in
