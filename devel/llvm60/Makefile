@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	6.0.0
-PORTREVISION=	4
+DISTVERSION=	6.0.1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -423,7 +423,6 @@ post-install-LLD-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/BinaryFormat/WasmRelocs
 
 post-install-LLDB-on:
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/lldb/API
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/lldb/Host/windows/getopt
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/lldb/Host/mingw
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/lldb/Host/msvc
