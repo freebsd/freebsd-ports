@@ -1,4 +1,3 @@
-@unexec [ ! -f /var/jabberd/pid/router.pid ] || %D/etc/rc.d/jabberd stop || true
 bin/c2s
 bin/jabberd
 bin/router

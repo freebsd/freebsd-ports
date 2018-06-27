@@ -1,4 +1,3 @@
-@unexec %D/etc/rc.d/syslog-ng.sh stop > /dev/null 2>&1 || true
 @sample etc/scl.conf.sample
 etc/syslog-ng.conf.dist
 @sample etc/syslog-ng.conf.sample

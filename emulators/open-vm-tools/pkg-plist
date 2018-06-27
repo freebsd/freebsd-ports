@@ -59,5 +59,3 @@ share/vmware-tools/vm-support
 etc/pam.d/vmtoolsd
 @dir %%DATADIR%%/scripts/vmware
 @dir %%DATADIR%%/tests
-@preunexec %%PREFIX%%/bin/vmware-rpctool 'tools.set.version 0' ; service vmware-guestd stop 2>/dev/null || /usr/bin/true
-@postexec service vmware-kmod restart && service vmware-guestd restart || /usr/bin/true

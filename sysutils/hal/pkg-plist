@@ -1,4 +1,3 @@
-@unexec %D/etc/rc.d/hald stop > /dev/null 2>&1 || true
 bin/hal-device
 bin/hal-disable-polling
 bin/hal-find-by-capability

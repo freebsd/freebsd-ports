@@ -3,7 +3,7 @@
 
 PORTNAME=	proxsmtp
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	http://thewalter.net/stef/software/proxsmtp/ \
 		ZI

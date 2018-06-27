@@ -3,7 +3,7 @@
 
 PORTNAME=	quoted
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.mrp3.com/webutil/
 

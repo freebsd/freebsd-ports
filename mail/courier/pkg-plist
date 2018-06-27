@@ -1,14 +1,3 @@
-@unexec [ -x %D/sbin/pop3d-ssl ] && %D/sbin/pop3d-ssl stop || true
-@unexec [ -x %D/sbin/pop3d ] && %D/sbin/pop3d stop || true
-@unexec [ -x %D/sbin/imapd-ssl ] && %D/sbin/imapd-ssl stop || true
-@unexec [ -x %D/sbin/imapd ] && %D/sbin/imapd stop || true
-@unexec [ -x %D/sbin/esmtpd-ssl ] && %D/sbin/esmtpd-ssl stop || true
-@unexec [ -x %D/sbin/esmtpd-msa ] && %D/sbin/esmtpd-msa stop || true
-@unexec [ -x %D/sbin/esmtpd ] && %D/sbin/esmtpd stop || true
-@unexec [ -x %D/sbin/courier ] && %D/sbin/courier stop || true
-@unexec [ -x %D/sbin/webmaild ] && %D/sbin/webmaild stop || true
-@unexec [ -x %D/sbin/courierldapaliasd ] && %D/sbin/courierldapaliasd stop || true
-@unexec [ -x %D/sbin/courierfilter ] && %D/sbin/courierfilter stop || true
 @unexec rm -f %D/etc/courier/*.dat 2>/dev/null || true
 bin/addcr
 @(%%MAILOWN%%,%%MAILGRP%%,) bin/cancelmsg

@@ -1,6 +1,5 @@
 sbin/havp
 @sample etc/havp/havp.config.default etc/havp/havp.config
-@unexec [ ! -f %%RUN_DIR%%/havp.pid ] || %D/etc/rc.d/havp stop
 %%EXAMPLESDIR%%/blacklist.sample
 %%EXAMPLESDIR%%/templates/br/blacklist.html
 %%EXAMPLESDIR%%/templates/br/dns.html
