@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	20.3.8.1
+PORTVERSION=	21.0.1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg			\
 		http://erlang.stacken.kth.se/download/:erlangorg		\
@@ -18,9 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-20.3.1 patch-otp-20.3.2 patch-otp-20.3.3 \
-		patch-otp-20.3.4 patch-otp-20.3.5 patch-otp-20.3.6 \
-		patch-otp-20.3.7 patch-otp-20.3.8 patch-otp-20.3.8.1
+PATCHFILES=	patch-otp-21.0.1
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -32,7 +30,7 @@ BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 WRKSRC=		${WRKDIR}/otp_src_${ERLANG_REL}
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
-ERLANG_REL=	20.3
+ERLANG_REL=	21.0
 
 OPTIONS_SUB=	yes
 SUB_FILES=	pkg-message
