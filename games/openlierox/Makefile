@@ -12,17 +12,14 @@ DISTNAME=	OpenLieroX_${DISTVERSION}.src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Extremely addictive realtime worms shoot-em-up
 
-LIB_DEPENDS=	libgd.so:graphics/gd \
-		libboost_signals.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_signals.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
-USES=		tar:bzip2 cmake openal:al,alut pkgconfig
+USES=		tar:bzip2 cmake localbase pkgconfig
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
 
-CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CXXFLAGS+=	-Wno-c++11-narrowing
 
 CMAKE_ARGS=	-DHAWKNL_BUILTIN=YES \
 		-DLIBZIP_BUILTIN=YES \
@@ -43,16 +40,11 @@ PLIST_FILES=	bin/openlierox \
 		share/pixmaps/OpenLieroX.svg
 
 OPTIONS_DEFINE=	DEDICATED_ONLY DOCS
-DEDICATED_ONLY_DESC=Build dedicated server only
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEDICATED_ONLY}
-CMAKE_ARGS+=	-DDEDICATED_ONLY=YES
-.else
-USE_XORG+=	x11
-USE_SDL+=	mixer
-.endif
+DEDICATED_ONLY_DESC=		Build dedicated server only
+DEDICATED_ONLY_CMAKE_BOOL=	DEDICATED_ONLY
+DEDICATED_ONLY_USE_OFF=		XORG=x11 SDL=mixer
+DEDICATED_ONLY_LIB_DEPENDS_OFF=	libgd.so:graphics/gd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|EXEC_PROGRAM.*OLXVER)|SET(OLXVER "${DISTVERSION}")|; \
@@ -69,7 +61,9 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/share/OpenLieroX.svg \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-	cd ${WRKSRC}/share/gamedir && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+	@cd ${WRKSRC}/share/gamedir && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+
+do-install-DOCS-on:
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
