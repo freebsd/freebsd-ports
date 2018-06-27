@@ -1,0 +1,6 @@
+===========================================================================
+
+To use this runtime port for development or testing, just prepend
+its binary path ("%%LOCALBASE%%/lib/%%ERLANG_LIB%%/bin") to your PATH variable.
+
+===========================================================================
