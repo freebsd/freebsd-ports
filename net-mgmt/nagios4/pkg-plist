@@ -13,10 +13,10 @@
 @(,%%NAGIOSGROUP%%,) %%ETCDIR%%/resource.cfg-sample
 %%WWWDIR%%/angularjs/angular-1.3.9/angular.min.js
 %%WWWDIR%%/angularjs/angular-1.3.9/angular.min.js.map
-%%WWWDIR%%/angularjs/ui-bootstrap-tpls-0.12.0.min.js
-%%WWWDIR%%/angularjs/ui-utils-0.2.1/ui-utils.js
-%%WWWDIR%%/bootstrap-3.3.0/css/bootstrap-theme.min.css
-%%WWWDIR%%/bootstrap-3.3.0/css/bootstrap.min.css
+%%WWWDIR%%/angularjs/ui-bootstrap-tpls-0.14.3.min.js
+%%WWWDIR%%/angularjs/ui-utils-0.2.3/ui-utils.js
+%%WWWDIR%%/bootstrap-3.3.7/css/bootstrap-theme.min.css
+%%WWWDIR%%/bootstrap-3.3.7/css/bootstrap.min.css
 %%WWWDIR%%/cgi-bin/archivejson.cgi
 %%WWWDIR%%/cgi-bin/avail.cgi
 %%WWWDIR%%/cgi-bin/cmd.cgi
@@ -371,7 +371,7 @@
 %%WWWDIR%%/js/histogram-form.js
 %%WWWDIR%%/js/histogram-graph.js
 %%WWWDIR%%/js/histogram.js
-%%WWWDIR%%/js/jquery-1.7.1.min.js
+%%WWWDIR%%/js/jquery-1.12.4.min.js
 %%WWWDIR%%/js/jsonquery.js
 %%WWWDIR%%/js/map-directive.js
 %%WWWDIR%%/js/map-form.js
