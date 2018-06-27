@@ -25,6 +25,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	libenet
 
+CXXFLAGS+=	-Wno-c++11-narrowing
+
 SUB_FILES=	${PLIST_FILES:Mbin/*:T}
 
 PORTDATA=	*
