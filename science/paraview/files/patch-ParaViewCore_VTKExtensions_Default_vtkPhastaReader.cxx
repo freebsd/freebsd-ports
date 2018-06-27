@@ -1,6 +1,6 @@
---- ParaViewCore/VTKExtensions/Default/vtkPhastaReader.cxx.orig	2018-05-31 00:13:08.178409000 +0700
-+++ ParaViewCore/VTKExtensions/Default/vtkPhastaReader.cxx	2018-05-31 18:19:21.545706000 +0700
-@@ -200,7 +200,7 @@
+--- ParaViewCore/VTKExtensions/Default/vtkPhastaReader.cxx.orig	2018-06-01 19:23:15 UTC
++++ ParaViewCore/VTKExtensions/Default/vtkPhastaReader.cxx
+@@ -200,7 +200,7 @@ int vtkPhastaReader::readHeader(FILE* fi
      {
        text_header = new char[real_length + 1];
        strncpy(text_header, Line, real_length);

@@ -1,6 +1,6 @@
---- VTK/IO/EnSight/vtkEnSightGoldBinaryReader.cxx.orig	2018-05-30 20:37:02.610942000 +0700
-+++ VTK/IO/EnSight/vtkEnSightGoldBinaryReader.cxx	2018-05-30 20:37:18.549087000 +0700
-@@ -37,7 +37,7 @@
+--- VTK/IO/EnSight/vtkEnSight6BinaryReader.cxx.orig	2018-06-01 19:23:15 UTC
++++ VTK/IO/EnSight/vtkEnSight6BinaryReader.cxx
+@@ -36,7 +36,7 @@
  #if defined(_WIN32)
  # define VTK_STAT_STRUCT struct _stat64
  # define VTK_STAT_FUNC _stat64

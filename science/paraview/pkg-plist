@@ -834,8 +834,6 @@ lib/cmake/paraview-%%VERMAJORMINOR%%/vtkm/VTKmMacros.cmake
 lib/cmake/paraview-%%VERMAJORMINOR%%/vtkm/VTKmTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/paraview-%%VERMAJORMINOR%%/vtkm/VTKmTargets.cmake
 lib/libQtTesting-pv%%VERMAJORMINOR%%.so
-lib/libprotobuf-lite.so
-lib/libprotobuf.so
 lib/libvtkAcceleratorsVTKm-pv%%VERMAJORMINOR%%.so
 lib/libvtkAcceleratorsVTKm-pv%%VERMAJORMINOR%%.so.1
 lib/libvtkAcceleratorsVTKmPython27D-pv%%VERMAJORMINOR%%.so
