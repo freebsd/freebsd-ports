@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/swift/LICENSE.txt
 BUILD_DEPENDS=	cmake:devel/cmake \
 		bash:shells/bash \
 		swig3.0:devel/swig30 \
-		sphinx-build:textproc/py-sphinx \
 		binutils>=2.25.1:devel/binutils
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libuuid.so:misc/e2fsprogs-libuuid \
@@ -49,6 +48,8 @@ CONFLICTS_BUILD=	googletest
 LDFLAGS+=	-lobjc
 
 OPTIONS_DEFINE=	DOCS
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+DOCS_CMAKE_BOOL=	SWIFT_INCLUDE_DOCS
 
 PORTDOCS=	*
 
