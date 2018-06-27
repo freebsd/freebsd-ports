@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paraview
-DISTVERSION=	5.5.0
+DISTVERSION=	5.5.1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -26,11 +26,10 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libpcre.so:devel/pcre \
 		libffi.so:devel/libffi \
 		libdrm.so:graphics/libdrm \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libprotobuf.so:devel/protobuf
 RUN_DEPENDS=	bash:shells/bash	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
-
-CONFLICTS_INSTALL=	protobuf # https://gitlab.kitware.com/paraview/paraview/issues/18225
 
 USES=		alias cmake:outsource jpeg localbase python:2.7 shebangfix
 USE_QT5=	core gui help network sql widgets x11extras buildtools_build qmake_build
@@ -46,6 +45,7 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_ZLIB="ON" \
 		-DVTK_USE_SYSTEM_FREETYPE="ON" \
 		-DVTK_USE_SYSTEM_EXPAT="ON" \
+		-DVTK_USE_SYSTEM_PROTOBUF="ON" \
 		-DVTK_USE_X="ON" \
 		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1 \
 		-DPARAVIEW_ENABLE_PYTHON:BOOL="ON" \
@@ -59,28 +59,20 @@ SHEBANG_FILES=	Catalyst/catalyze.py VTK/Examples/SearchScript.sh \
 		VTK/Utilities/Maintenance/*.sh
 
 OPTIONS_DEFINE=	OSMESA GL2PS DOCS
+OPTIONS_SUB=	yes
 OSMESA_DESC=	Use Mesa for off-screen rendering
 GL2PS_DESC=	Install support conversion OpenGL to PostScript
 #		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
 
 VERMAJORMINOR=	${PORTVERSION:R}
 
-.include <bsd.port.options.mk>
+OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
+OSMESA_CMAKE_BOOL=	VTK_OPENGL_HAS_OSMESA
+OSMESA_CMAKE_ON=	-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
+			-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
 
-.if ${PORT_OPTIONS:MOSMESA}
-LIB_DEPENDS+=	libOSMesa.so:graphics/libosmesa
-CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
-		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
-		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
-.endif
-
-.if ${PORT_OPTIONS:MGL2PS}
-LIB_DEPENDS+=	libgl2ps.so:print/gl2ps
-CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
-PLIST_SUB+=	GL2PS=""
-.else
-PLIST_SUB+=	GL2PS="@comment "
-.endif
+GL2PS_LIB_DEPENDS=	libgl2ps.so:print/gl2ps
+GL2PS_CMAKE_BOOL=	VTK_USE_GL2PS
 
 PLIST_SUB+=	VERMAJORMINOR=${VERMAJORMINOR}
 CMAKE2INST=	ParaViewConfig.cmake \
