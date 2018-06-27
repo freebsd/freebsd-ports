@@ -1,0 +1,6 @@
+mping is a utility for pinging multiple hosts. It is written in shell with
+minimal dependencies (awk, date, getconf, head, host, ping, sleep, sort, stty,
+tr, uname, and xargs). It also has a feature to keep watching the given hosts
+and alert to any changes in uptime.
+
+WWW: https://fraubsd.org/mping/
