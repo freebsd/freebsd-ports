@@ -13,8 +13,6 @@ COMMENT=	Vendor and platform neutral SDR support library (python binding)
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/../LICENSE_1_0.txt
 
-BROKEN_i386=	error: redefinition of 'swig::traits<unsigned int>', pending fix of https://github.com/pothosware/SoapySDR/issues/169
-
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libSoapySDR.so:misc/soapysdr
 
