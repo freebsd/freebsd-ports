@@ -1,6 +1,5 @@
 @sample %%ETCDIR%%/ldapaddressbook.sample
 @sample %%ETCDIR%%/sqwebmaild.sample
-@unexec [ -f /var/sqwebmail/run/sqwebmail.pid ] && %D/etc/rc.d/sqwebmail-sqwebmaild stop || true
 libexec/sqwebmail/deliverquota
 libexec/sqwebmail/maildirmake
 libexec/sqwebmail/makemime

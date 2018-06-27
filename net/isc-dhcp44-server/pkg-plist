@@ -1,4 +1,3 @@
-@unexec echo "You should stop the dhcpd and dhcpd6 daemons if you are permanently removing this port."
 @sample etc/dhcpd.conf.sample
 %%IPV6%%@sample etc/dhcpd6.conf.sample
 %%IPV6%%etc/rc.d/isc-dhcpd6

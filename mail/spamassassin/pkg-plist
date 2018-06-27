@@ -1,4 +1,3 @@
-@preunexec if service sa-spamd status | grep -q "spamd is running"; then service sa-spamd stop; fi
 bin/sa-awl
 bin/sa-check_spamd
 bin/sa-compile
