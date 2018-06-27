@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmp
-DISTVERSION=	6.0.0
+DISTVERSION=	6.0.1
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	devel
 MASTER_SITES=	http://llvm.org/releases/${DISTVERSION}/
