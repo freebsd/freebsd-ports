@@ -6,17 +6,17 @@ Changed paths:
 
 Apply FreeBSD's configuration defaults.
 
---- servconf.c.orig	2018-06-19 09:26:26 UTC
-+++ servconf.c
-@@ -63,6 +63,7 @@
- #include "auth.h"
- #include "myproposal.h"
- #include "digest.h"
-+#include "version.h"
+--- servconf.c.orig	2018-06-27 17:18:19.513676000 -0700
++++ servconf.c	2018-06-27 17:19:38.133882000 -0700
+@@ -41,6 +41,7 @@
+ #include <util.h>
+ #endif
  
- static void add_listen_addr(ServerOptions *, const char *,
-     const char *, int);
-@@ -240,7 +241,11 @@ fill_default_server_options(ServerOption
++#include "version.h"
+ #include "openbsd-compat/sys-queue.h"
+ #include "xmalloc.h"
+ #include "ssh.h"
+@@ -251,7 +252,11 @@ fill_default_server_options(ServerOptions *options)
  
  	/* Portable-specific options */
  	if (options->use_pam == -1)
@@ -28,7 +28,7 @@ Apply FreeBSD's configuration defaults.
  
  	/* Standard Options */
  	if (options->num_host_key_files == 0) {
-@@ -280,7 +285,7 @@ fill_default_server_options(ServerOption
+@@ -291,7 +296,7 @@ fill_default_server_options(ServerOptions *options)
  	if (options->print_lastlog == -1)
  		options->print_lastlog = 1;
  	if (options->x11_forwarding == -1)
@@ -37,7 +37,7 @@ Apply FreeBSD's configuration defaults.
  	if (options->x11_display_offset == -1)
  		options->x11_display_offset = 10;
  	if (options->x11_use_localhost == -1)
-@@ -320,7 +325,11 @@ fill_default_server_options(ServerOption
+@@ -331,7 +336,11 @@ fill_default_server_options(ServerOptions *options)
  	if (options->gss_strict_acceptor == -1)
  		options->gss_strict_acceptor = 1;
  	if (options->password_authentication == -1)
