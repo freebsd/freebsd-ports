@@ -52,6 +52,7 @@
     SUBDIR += dkh
     SUBDIR += dlib-cpp
     SUBDIR += dlpoly-classic
+    SUBDIR += eccodes
     SUBDIR += ecs
     SUBDIR += epte
     SUBDIR += erd
