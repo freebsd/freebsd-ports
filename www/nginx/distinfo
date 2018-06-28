@@ -1,4 +1,4 @@
-TIMESTAMP = 1529855995
+TIMESTAMP = 1530206416
 SHA256 (nginx-1.14.0.tar.gz) = 5d15becbf69aba1fe33f8d416d97edd95ea8919ea9ac519eff9bafebb6022cb5
 SIZE (nginx-1.14.0.tar.gz) = 1016272
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -23,8 +23,8 @@ SHA256 (yaoweibin-nginx_ajp_module-bf6cd93_GH0.tar.gz) = 9e3f78ea73e2d606a95ee64
 SIZE (yaoweibin-nginx_ajp_module-bf6cd93_GH0.tar.gz) = 109704
 SHA256 (anomalizer-ngx_aws_auth-1e62670_GH0.tar.gz) = db7ceef4ae22cf5bfaf5abae64830dfeef203ca85f9f40f7d1f1d90f277478c0
 SIZE (anomalizer-ngx_aws_auth-1e62670_GH0.tar.gz) = 8260
-SHA256 (eustas-ngx_brotli-37ab9b2_GH0.tar.gz) = 402c58b4330f585153c43904b44fbcedf9ef0e0d1e5993158650ca17badfbd7b
-SIZE (eustas-ngx_brotli-37ab9b2_GH0.tar.gz) = 12687
+SHA256 (eustas-ngx_brotli-e26248e_GH0.tar.gz) = 915d35ecbc58ceb20f8d1b9463719f9934ca24f5a5ab261f44cb8263f8c5aa0f
+SIZE (eustas-ngx_brotli-e26248e_GH0.tar.gz) = 12673
 SHA256 (nginx-clojure-nginx-clojure-v0.4.5_GH0.tar.gz) = c6d500f935dde5f87a6eb47ca473094a8ee2c9b4bb4578c9f99ccdc70a12d59e
 SIZE (nginx-clojure-nginx-clojure-v0.4.5_GH0.tar.gz) = 602064
 SHA256 (grahamedgecombe-nginx-ct-v1.3.2_GH0.tar.gz) = b4ceae549b9dbf84b2e511633982e4efeee0388e3b7a038a8bac555008a77b88
