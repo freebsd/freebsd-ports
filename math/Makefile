@@ -202,6 +202,7 @@
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib
     SUBDIR += freemat
+    SUBDIR += fricas
     SUBDIR += fxt
     SUBDIR += g2o
     SUBDIR += galculator
