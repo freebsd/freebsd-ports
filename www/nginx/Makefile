@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.14.0
-PORTREVISION?=	5
+PORTREVISION?=	6
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/ \
@@ -179,7 +179,7 @@ MAIL_SSL_CONFIGURE_ON=		--with-mail_ssl_module
 STREAM_VARS=			DSO_BASEMODS+=stream
 STREAM_SSL_IMPLIES=		HTTP_SSL
 STREAM_SSL_CONFIGURE_ON=	--with-stream_ssl_module
-STREAM_SSL_PREREAD_OFF=		--without-stream_ssl_preread_module
+STREAM_SSL_PREREAD_CONFIGURE_ON=	--with-stream_ssl_preread_module
 
 ### External modules
 .include "Makefile.extmod"
