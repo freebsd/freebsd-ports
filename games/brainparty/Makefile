@@ -19,6 +19,8 @@ USES=		gmake
 USE_SDL=	sdl mixer ttf gfx image
 USE_GL=		gl glu
 
+CXXFLAGS+=	-Wno-c++11-narrowing
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
