@@ -1,0 +1,18 @@
+--- configure.ac.orig	2018-06-28 08:18:19 UTC
++++ configure.ac
+@@ -595,11 +595,10 @@ AC_CHECK_DECL([openpty],
+                  [AC_DEFINE([HAVE_OPENPTY_DECL], [1],
+                               [openpty is declared])], [],
+                  [
+-#if defined(HAVE_UTIL_H)
+-# include <util.h>
+-#elif defined(HAVE_PTY_H)
+-# include <pty.h>
+-#endif
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <termios.h>
++#include <libutil.h>
+                  ]) # HAVE_OPENPTY_DECL
+ 
+ AC_CHECK_LIB([c], [openpty],
