@@ -3,8 +3,7 @@
 
 PORTNAME=	retroshare
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
-PORTREVISION=	2
+DISTVERSION=	0.6.4
 CATEGORIES=	net-p2p
 
 MAINTAINER=	peter@netkey.at
@@ -29,6 +28,7 @@ USES=		compiler:features desktop-file-utils dos2unix pkgconfig qmake qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	RetroShare
 GH_PROJECT=	RetroShare
+RS_REVISION=	0e6d27a
 USE_GNOME=	libxml2 libxslt
 USE_GL=		gl
 USE_QT=		core gui multimedia printsupport network widgets xml \
@@ -39,7 +39,11 @@ DOS2UNIX_FILES=	retroshare-nogui/src/retroshare-nogui.pro
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/retroshare.pri
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/libretroshare/src/libretroshare.pro
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/libretroshare/src/rsserver/rsaccounts.cc
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/retroshare-gui/src/retroshare-gui.pro
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
@@ -48,9 +52,7 @@ post-patch:
 		${WRKSRC}/data/retroshare.desktop
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/data/retroshare.desktop
-.if defined(GH_TAGNAME)
-	@${REINPLACE_CMD} -e 's|RS_REVISION_NUMBER.*|RS_REVISION_NUMBER   0x${GH_TAGNAME}|' \
+	@${REINPLACE_CMD} -e 's|RS_REVISION_NUMBER.*|RS_REVISION_NUMBER   0x${RS_REVISION}|' \
 		${WRKSRC}/libretroshare/src/retroshare/rsversion.h
-.endif
 
 .include <bsd.port.post.mk>
