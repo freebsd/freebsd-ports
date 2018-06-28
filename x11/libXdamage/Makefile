@@ -9,6 +9,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Damage extension library
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	lib
 USE_XORG=	x11 damageproto:both xfixes fixesproto xextproto xproto:both
 
