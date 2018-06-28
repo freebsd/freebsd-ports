@@ -31,6 +31,8 @@ USE_XORG=	x11 xext sm ice
 INSTALLS_ICONS=	yes
 LLD_UNSAFE=	yes
 
+CXXFLAGS+=	-Wno-reserved-user-defined-literal
+
 PORTDOCS=	*
 PORTDATA=	*
 
