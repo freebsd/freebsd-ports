@@ -21,9 +21,9 @@ CONFIGURE_ARGS=	--disable-maintainer-mode \
 		--enable-qt --with-qt-lib=${QT_LIBDIR} \
 		--with-qt-include=${QT_INCDIR}
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool shebangfix
+USES=		gmake libtool qt:4 shebangfix
 SHEBANG_FILES=	rsplib/scriptingserviceexample
 USE_LDCONFIG=	yes
-USE_QT4=	gui xml moc_build
+USE_QT=		gui xml moc_build
 
 .include <bsd.port.mk>

@@ -15,8 +15,8 @@ COMMENT=	QElectroTech is application to design electric diagrams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lib desktop-file-utils qmake shared-mime-info
-USE_QT5=	buildtools_build gui network printsupport \
+USES=		compiler:c++11-lib desktop-file-utils qmake qt:5 shared-mime-info
+USE_QT=		buildtools_build gui network printsupport \
 		sql-sqlite3 svg xml
 
 OPTIONS_DEFINE=       DEBUG

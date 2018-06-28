@@ -14,9 +14,9 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake \
-		shared-mime-info tar:bzip2
+		qt:5 shared-mime-info tar:bzip2
 USE_GL=		gl
-USE_QT5=	buildtools_build linguisttools_build core gui widgets
+USE_QT=		buildtools_build linguisttools_build core gui widgets
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

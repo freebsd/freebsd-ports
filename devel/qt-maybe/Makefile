@@ -11,11 +11,12 @@ COMMENT=	Implementation of sum/option types using QVariant
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=	qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	robertknight
 GH_TAGNAME=	52b21af
 
-USE_QT5=	core
+USE_QT=		core
 NO_BUILD=	yes
 
 PLIST_FILES=	include/Either.h include/Maybe.h

@@ -14,9 +14,9 @@ COMMENT=	PHP support for KDevelop
 LIB_DEPENDS=	libkdevplatforminterfaces.so:devel/kdevplatform-kde4
 BUILD_DEPENDS=	${KDE_PREFIX}/bin/kdev-pg-qt:devel/kdevelop-pg-qt-kde4
 
-USES=		cmake:outsource compiler:c++11-lib kde:4 tar:xz
+USES=		cmake:outsource compiler:c++11-lib kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
-USE_QT4=	moc_build qmake_build rcc_build uic_build
+USE_QT=		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	PHPDOCS NLS

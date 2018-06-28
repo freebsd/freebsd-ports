@@ -131,7 +131,8 @@ TIMING_MAKE_ARGS_OFF=	timing=no
 # Client-side options
 NCURSES_MAKE_ARGS_OFF=	ncurses=no
 NCURSES_USES=		ncurses
-QTBIND_USE=		QT4=network,corelib
+QTBIND_USES=		qt:4
+QTBIND_USE=		QT=network,corelib
 QTBIND_MAKE_ARGS=	qt=yes
 QTBIND_MAKE_ARGS_OFF=	qt=no
 QTBIND_PLIST_SUB=	QTBIND=""

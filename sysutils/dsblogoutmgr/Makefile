@@ -11,9 +11,9 @@ COMMENT=	Graphical logout manager
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:tgz qmake
+USES=		qt:5 tar:tgz qmake
 
 USE_GL=		gl
-USE_QT5=	buildtools_build core gui linguisttools_build widgets
+USE_QT=		buildtools_build core gui linguisttools_build widgets
 
 .include <bsd.port.mk>

@@ -26,15 +26,16 @@ CMAKE_OFF=	BUILD_EXAMPLES  \
 		BUILD_TEST
 
 .  if ${FLAVOR} == qt4
-USES+=		kde:4
+USES+=		kde:4 qt:4
 USE_KDE=	automoc4
-USE_QT4=	corelib dbus gui \
+USE_QT=		corelib dbus gui \
 		qmake_build moc_build rcc_build uic_build
 CMAKE_ON+=	USE_QT4
 CMAKE_OFF+=	USE_QT5
 QTVER_SUFFIX=	# empty
 .  else
-USE_QT5=	core dbus gui widgets buildtools_build qmake_build
+USES+=		qt:5
+USE_QT=		core dbus gui widgets buildtools_build qmake_build
 CMAKE_ON+=	USE_QT5
 CMAKE_OFF+=	USE_QT4
 QTVER_SUFFIX=	5

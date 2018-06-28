@@ -21,10 +21,10 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libsord-0.so:devel/sord \
 		libvamp-hostsdk.so:audio/vamp-plugin-sdk
 
-USES=	autoreconf desktop-file-utils pkgconfig
+USES=	autoreconf desktop-file-utils pkgconfig qt:5
 
 GNU_CONFIGURE=	yes
-USE_QT5=	buildtools_build core gui network qmake_build testlib widgets xml
+USE_QT=		buildtools_build core gui network qmake_build testlib widgets xml
 USE_XORG=	x11
 USE_GL=		gl
 

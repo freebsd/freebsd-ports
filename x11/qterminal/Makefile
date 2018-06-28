@@ -15,8 +15,8 @@ RUN_DEPENDS=	liberation-fonts-ttf>=2.00:x11-fonts/liberation-fonts-ttf \
 	qterminal-l10n>0:x11/qterminal-l10n
 
 USES=	cmake:outsource compiler:c++11-lang gettext-runtime \
-	localbase:ldflags lxqt pkgconfig tar:xz
-USE_QT5=	buildtools_build core gui qmake_build dbus linguisttools \
+	localbase:ldflags lxqt pkgconfig qt:5 tar:xz
+USE_QT=		buildtools_build core gui qmake_build dbus linguisttools \
 	widgets x11extras
 USE_XORG=	x11
 USE_LXQT=	buildtools lxqt

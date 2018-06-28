@@ -12,12 +12,12 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
 USES=		cmake:outsource compiler:c++11-lib gettext gperf jpeg kde:5 \
-		tar:xz
+		qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config \
 		configwidgets coreaddons ecm globalaccel i18n iconthemes \
 		jobwidgets js kio notifications parts service sonnet \
 		textwidgets wallet widgetsaddons windowsystem xmlgui
-USE_QT5=	buildtools_build core dbus gui network phonon4 \
+USE_QT=		buildtools_build core dbus gui network phonon4 \
 		printsupport qmake_build widgets x11extras xml
 USE_XORG=	ice sm x11 xext
 

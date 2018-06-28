@@ -17,11 +17,11 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libavformat.so:multimedia/ffmpeg \
 		libopenal.so:audio/openal-soft
 
-USES=		autoreconf desktop-file-utils gmake iconv pkgconfig tar:xz
+USES=		autoreconf desktop-file-utils gmake iconv pkgconfig qt:5 tar:xz
 USE_GL=		gl glu glew
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_QT5=	buildtools_build core gui opengl widgets
+USE_QT=		buildtools_build core gui opengl widgets
 USE_CXXSTD=	c++11
 
 # no port fow equalizer now, lirc detecting not working

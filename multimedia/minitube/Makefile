@@ -11,18 +11,19 @@ COMMENT=	TV-like client for YouTube
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake
+USES=		qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	flaviotordini
 USE_GL=		gl
-USE_QT5=	core dbus gui network phonon4 qml script sql widgets \
+USE_QT=		core dbus gui network phonon4 qml script sql widgets \
 		buildtools_build imageformats_run sql-sqlite3_run
 QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE} \
 		DEFINES+=APP_GOOGLE_API_KEY="${MINITUBE_GOOGLE_API_KEY}"
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-NLS_USE=	QT5=linguisttools_build
+NLS_USES=	qt:5
+NLS_USE=	QT=linguisttools_build
 
 pre-everything::
 	@${CAT} ${PKGMESSAGE}

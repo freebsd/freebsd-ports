@@ -16,9 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 LIB_DEPENDS=	libCoin.so:graphics/Coin
 
-USES=		gmake libtool pathfix pkgconfig
-USE_QT4=	corelib opengl moc_build
-QT_NONSTANDARD=	yes
+USES=		gmake libtool pathfix pkgconfig qmake:no_env qt:4
+USE_QT=		corelib opengl moc_build
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${PREFIX}" MOC="${MOC}"

@@ -14,9 +14,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	parisolab
 GH_PROJECT=	${PORTNAME:tl}
 
-USES=		dos2unix qmake
+USES=		dos2unix qmake qt:5
 USE_GL=		gl
-USE_QT5=	buildtools_build core gui opengl qmake_build widgets
+USE_QT=		buildtools_build core gui opengl qmake_build widgets
 
 PLIST_FILES=	bin/${PORTNAME}
 

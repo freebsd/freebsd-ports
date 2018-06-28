@@ -14,8 +14,8 @@ COMMENT=	Library for building UPnP devices and control points
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/hupnp/LICENSE_LGPLv3.txt
 
-USES=		gmake qmake zip
-USE_QT4=	corelib network xml dbus gui \
+USES=		gmake qmake qt:4 zip
+USE_QT=		corelib network xml dbus gui \
 		moc_build rcc_build uic_build
 USE_CXXSTD=	gnu++98
 

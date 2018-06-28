@@ -9,9 +9,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Perl bindings for KDE
 
-USES=		cmake:outsource compiler:c++11-lib kde:4 perl5 tar:xz
+USES=		cmake:outsource compiler:c++11-lib kde:4 perl5 qt:4 tar:xz
 USE_KDE=	perlqt smokekde automoc4
-USE_QT4=	network opengl sql svg xml \
+USE_QT=		network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 
 # Respect PREFIX

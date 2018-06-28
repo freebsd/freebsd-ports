@@ -20,8 +20,8 @@ BUILD_DEPENDS=	qmmp-qt5>=1.2.0:multimedia/qmmp-qt5
 CONFLICTS=	${PORTNAME}-0.*
 PORTSCOUT=	limit:^1\..*
 
-USES=		cmake:outsource pkgconfig tar:bzip2
-USE_QT5=	core gui widgets \
+USES=		cmake:outsource pkgconfig qt:5 tar:bzip2
+USE_QT=		core gui widgets \
 		buildtools_build linguisttools_build qmake_build
 USE_LDCONFIG=	yes
 
@@ -53,7 +53,8 @@ GOOMASM_BUILD_DEPENDS=	yasm:devel/yasm
 GOOMASM_CMAKE_BOOL=	GOOM_ASM
 
 HISTORY_DESC=	Information about listened tracks
-HISTORY_USE=	QT5=sql
+HISTORY_USES=	qt:5
+HISTORY_USE=	QT=sql
 HISTORY_CMAKE_BOOL=	USE_HISTORY
 
 MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123 \

@@ -7,8 +7,8 @@ COMMENT=	Qt4 modules of uim input method
 
 LIB_DEPENDS=	libuim.so:textproc/uim
 
-USE_QT4=	qmake_build moc_build qt3support uic
-USES=		iconv libtool
+USE_QT=		qmake_build moc_build qt3support uic
+USES=		iconv libtool qt:4
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

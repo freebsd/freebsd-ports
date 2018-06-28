@@ -19,10 +19,10 @@ LIB_DEPENDS=	libquazip.so:archivers/quazip@qt4
 
 MAKE_JOBS_UNSAFE=yes
 
-USES=		gmake qmake
+USES=		gmake qmake qt:5
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_QT5=	buildtools qmake_build \
+USE_QT=		buildtools qmake_build \
 		designer gui help imageformats network opengl script \
 		scripttools sql svg xml xmlpatterns webkit widgets uitools
 USE_GL=		glu

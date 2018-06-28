@@ -20,8 +20,8 @@ LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6@qt4 \
 #LC_REV=		1526-g7fdb92a
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USES=		cmake pkgconfig tar:xz
-USE_QT4=	corelib declarative gui network script sql sql-sqlite3_run \
+USES=		cmake pkgconfig qt:4 tar:xz
+USE_QT=		corelib declarative gui network script sql sql-sqlite3_run \
 		webkit xml qmake_build moc_build rcc_build uic_build \
 		linguisttools_build
 USE_XORG=	x11
@@ -370,12 +370,12 @@ OPTIONS_DEFAULT=AGGREGATOR ANHERO ANOTIFI AUSCRIE AZOTH BLASQ BLOGIQUE CERTMGR \
     ${PORT_OPTIONS:MLAUGHTY} || ${PORT_OPTIONS:MLIZNOO} || \
     ${PORT_OPTIONS:MLMP}     || ${PORT_OPTIONS:MSYSNOTIFY} || \
     ${PORT_OPTIONS:MVROOBY}  || ${PORT_OPTIONS:MXTAZY}
-USE_QT4+=	dbus
+USE_QT+=	dbus
 .endif
 
 .if ${PORT_OPTIONS:MBLASQ} || ${PORT_OPTIONS:MBLOGIQUE} || \
     ${PORT_OPTIONS:MLACKMAN}
-USE_QT4+=	xmlpatterns
+USE_QT+=	xmlpatterns
 .endif
 
 .if ${PORT_OPTIONS:MAZOTH} || ${PORT_OPTIONS:MBLASQ} || \

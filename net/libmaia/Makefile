@@ -10,10 +10,10 @@ CATEGORIES=	net
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	XML-RPC lib for Qt
 
-USES=		gmake qmake
+USES=		gmake qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	wiedi
-USE_QT5=	buildtools_build network xml
+USE_QT=		buildtools_build network xml
 
 PLIST_FILES=	include/maia/maiaObject.h \
 		include/maia/maiaXmlRpcClient.h \

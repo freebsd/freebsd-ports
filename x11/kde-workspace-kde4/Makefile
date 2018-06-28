@@ -42,12 +42,12 @@ RUN_DEPENDS=	${KDE_PREFIX}/env/xdg-env.sh:misc/kde4-xdg-env \
 		${KDE_PREFIX}/share/apps/ksplash/Themes/Default/Theme.rc:x11-themes/kde-base-artwork-kde4
 
 USES=		cmake:outsource,noninja compiler:c++11-lib gettext gmake jpeg kde:4 \
-		pkgconfig shebangfix tar:xz
+		pkgconfig qt:4 shebangfix tar:xz
 USE_GL=		gl glu
 USE_GNOME=	glib20 libxml2
 USE_KDE=	kactivities kdelibs nepomuk-core oxygen-icons5 \
 		pimlibs akonadi automoc4 ontologies qimageblitz soprano strigi
-USE_QT4=	corelib dbus declarative designer_build gui network \
+USE_QT=		corelib dbus declarative designer_build gui network \
 		opengl phonon qtestlib script sql svg webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	ice sm kbproto x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
@@ -90,7 +90,8 @@ GPS_CMAKE_ON=	-DWITH_libgps:BOOL=ON
 GPS_CMAKE_OFF=	-DWITH_libgps:BOOL=OFF
 
 GSTREAMER_DESC=	Multimedia via Phonon-GStreamer
-GSTREAMER_USE=	QT4=phonon-gst_run
+GSTREAMER_USES=	qt:4
+GSTREAMER_USE=	QT=phonon-gst_run
 
 KACTIVITY_DESC=		Activity Manager daemon
 KACTIVITY_RUN_DEPENDS=	${KDE_PREFIX}/bin/kactivitymanagerd:x11/kactivitymanagerd

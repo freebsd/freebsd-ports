@@ -25,7 +25,9 @@ OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
 OPTIONS_DEFAULT=	QT5
 
 TOOLKIT_DESC=	Qt toolkit
-QT4_USE=	${_USE_QT4:S/^/QT4=/}
-QT5_USE=	${_USE_QT5:S/^/QT5=/} GL=gl
+QT4_USES=	qt:4
+QT4_USE=	${_USE_QT4:S/^/QT=/}
+QT5_USES=	qt:5
+QT5_USE=	${_USE_QT5:S/^/QT=/} GL=gl
 
 .include <bsd.port.mk>

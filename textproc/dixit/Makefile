@@ -19,8 +19,8 @@ COMMENT=	Romanian dictionaries databases and query application
 
 LICENSE=	GPLv3+
 
-USES=		qmake
-USE_QT4=	corelib gui network moc_build rcc_build
+USES=		qmake qt:4
+USE_QT=		corelib gui network moc_build rcc_build
 LDFLAGS+=	-lz
 
 PLIST_SUB=	_DB=${_DB} DB_DIR=${DB_DIR} _DB_F=${_DB_F} \

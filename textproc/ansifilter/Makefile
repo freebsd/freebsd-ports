@@ -20,8 +20,8 @@ PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 OPTIONS_DEFINE=		DOCS QT4
 
-QT4_USES=		qmake:norecursive
-QT4_USE=		QT4=gui,moc_build
+QT4_USES=		qmake:norecursive qt:4
+QT4_USE=		QT=gui,moc_build
 QT4_ALL_TARGET=		all all-gui
 QT4_PLIST_FILES=	bin/${PORTNAME}-gui
 QT4_DESKTOP_ENTRIES=	"ANSIFilter" "" "" "${PORTNAME}-gui" \

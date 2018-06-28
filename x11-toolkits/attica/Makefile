@@ -11,10 +11,10 @@ MASTER_SITES=	KDE/stable/${PORTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Open Collaboration Services API library
 
-USE_QT4=	network qtestlib_build xml \
+USE_QT=		network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
-USES=		cmake:outsource tar:bzip2
+USES=		cmake:outsource qt:4 tar:bzip2
 CMAKE_ARGS=	-DATTICA_ENABLE_TESTS:BOOL=OFF \
 		-DQT4_BUILD:BOOL=ON
 USE_CXXSTD=	gnu++98

@@ -16,8 +16,8 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libgcin-im-client.so:chinese/gcin
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/qt4-im
-USES=		gmake pkgconfig tar:xz
-USE_QT4=	inputmethods qmake_build moc_build corelib gui
+USES=		gmake pkgconfig qt:4 tar:xz
+USE_QT=		inputmethods qmake_build moc_build corelib gui
 MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		MKDIR="${MKDIR}"
 

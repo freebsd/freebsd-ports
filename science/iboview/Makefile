@@ -20,9 +20,9 @@ RUN_DEPENDS=	boost-libs>=0:devel/boost-libs
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON_amd64=	only builds and is supported on amd64
 
-USES=		fortran blaslapack:openblas qmake:outsource tar:bz2
+USES=		fortran blaslapack:openblas qmake:outsource qt:5 tar:bz2
 USE_GL=		gl glu
-USE_QT5=	buildtools_build core gui widgets opengl script svg
+USE_QT=		buildtools_build core gui widgets opengl script svg
 
 PLIST_FILES=	bin/iboview
 

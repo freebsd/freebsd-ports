@@ -7,8 +7,8 @@ CATEGORIES=	multimedia kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Multimedia applications (meta port)
 
-USES=		kde:5 metaport
-USE_QT5=	#
+USES=		kde:5 metaport qt:5
+USE_QT=		#
 
 OPTIONS_DEFINE=		DRAGON FFMPEG AUDIOCD_KIO KMIX
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}

@@ -11,11 +11,13 @@ COMMENT=	Extra modules and scripts for CMake
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING-CMAKE-SCRIPTS
 
-USES=		cmake:outsource kde:5 tar:xz
-USE_QT5=	#
+USES=		cmake:outsource kde:5 qt:5 tar:xz
+USE_QT=		#
 
-HELP_USE=	QT5=help_build  # qt5-help is only used to build a .qch file.
-TEST_USE=	QT5=buildtools_build,linguisttools_build,qmake_build
+HELP_USES=	qt:5
+HELP_USE=	QT=help_build  # qt5-help is only used to build a .qch file.
+TEST_USES=	qt:5
+TEST_USE=	QT=buildtools_build,linguisttools_build,qmake_build
 NO_ARCH=	yes
 
 ## options

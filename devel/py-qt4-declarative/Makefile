@@ -10,10 +10,10 @@ COMMENT=	Python bindings for the Qt4 toolkit, QtDeclarative module
 CONFIGURE_ARGS=	--enable QtDeclarative
 PYQT_DIST=	yes
 
-USES=		python pyqt:4
+USES=		python pyqt:4 qt:4
 USE_PYQT=	sip_build core_run gui_run network_run
 USE_PYTHON=	flavors
-USE_QT4=	corelib declarative gui network script sql svg xmlpatterns \
+USE_QT=		corelib declarative gui network script sql svg xmlpatterns \
 		qmake_build moc_build
 
 OPTIONS_DEFINE=	API DEBUG

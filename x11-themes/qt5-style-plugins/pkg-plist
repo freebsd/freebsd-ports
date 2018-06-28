@@ -1,4 +1,7 @@
 lib/cmake/Qt5Widgets/Qt5Widgets_.cmake
 %%QT_PLUGINDIR%%/styles/libqcleanlooksstyle.so
+%%DEBUG%%%%QT_PLUGINDIR%%/styles/libqcleanlooksstyle.so.debug
 %%QT_PLUGINDIR%%/styles/libqmotifstyle.so
+%%DEBUG%%%%QT_PLUGINDIR%%/styles/libqmotifstyle.so.debug
 %%QT_PLUGINDIR%%/styles/libqplastiquestyle.so
+%%DEBUG%%%%QT_PLUGINDIR%%/styles/libqplastiquestyle.so.debug

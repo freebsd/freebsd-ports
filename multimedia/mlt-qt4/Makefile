@@ -4,7 +4,8 @@ PORTREVISION=	0
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt5-*
 
-USE_QT4=	corelib gui opengl svg xml
+USES=	qt:4
+USE_QT=		corelib gui opengl svg xml
 MASTERDIR=	${.CURDIR:H}/mlt
 SLAVEPORT=	qt4
 

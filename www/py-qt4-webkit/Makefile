@@ -11,10 +11,10 @@ COMMENT=	Python bindings for the Qt4 toolkit, QtWebKit module
 CONFIGURE_ARGS=	--enable QtWebKit
 PYQT_DIST=	yes
 
-USES=		python pyqt:4
+USES=		python pyqt:4 qt:4
 USE_PYQT=	sip_build core_run gui_run network_run
 USE_PYTHON=	flavors
-USE_QT4=	corelib gui network webkit \
+USE_QT=		corelib gui network webkit \
 		moc_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG

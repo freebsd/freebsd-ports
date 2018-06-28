@@ -19,7 +19,8 @@ OPTIONS_DEFINE=	DOCS GUI
 OPTIONS_DEFAULT=GUI
 OPTIONS_SUB=	yes
 
-GUI_USE=	QT5=buildtools_build,core,gui,qmake_build,widgets
+GUI_USES=	qt:5
+GUI_USE=	QT=buildtools_build,core,gui,qmake_build,widgets
 GUI_CMAKE_OFF=	-DDISABLE_FRONTEND=YES
 
 GH_ACCOUNT=	Benjamin-Dobell

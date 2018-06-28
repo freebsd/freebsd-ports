@@ -16,8 +16,8 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${LICQ_PORT}-icq
 
 USE_XORG=	x11 xext ice xscrnsaver sm
-USES=		cmake
-USE_QT4=	qmake_build moc_build rcc_build uic_build linguisttools_build \
+USES=		cmake qt:4
+USE_QT=		qmake_build moc_build rcc_build uic_build linguisttools_build \
 		corelib xml gui network dbus svg
 
 OPTIONS_DEFINE=	HUNSPELL KDE4

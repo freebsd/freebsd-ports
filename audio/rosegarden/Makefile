@@ -34,13 +34,14 @@ OPTIONS_DEFAULT=	QT4
 
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CMAKE_ON=		-DENABLE_LIRC:BOOL=ON
-QT4_USE=		qt4=gui,network,testlib,xml \
-			qt4=linguisttools_build,moc_build,qmake_build \
-			qt4=rcc_build,uic_build
+QT4_USES=		qt:4
+QT4_USE=		qt=gui,network,testlib,xml \
+			qt=linguisttools_build,moc_build,qmake_build \
+			qt=rcc_build,uic_build
 QT4_CMAKE_ON=		-DUSE_QT4:BOOL=ON
-QT5_USES=		compiler:c++11-lib
-QT5_USE=		qt5=network,printsupport,testlib,widgets,xml \
-			qt5=buildtools_build,linguisttools_build,qmake_build
+QT5_USES=		compiler:c++11-lib qt:5
+QT5_USE=		qt=network,printsupport,testlib,widgets,xml \
+			qt=buildtools_build,linguisttools_build,qmake_build
 QT5_CMAKE_ON=		-DUSE_QT5:BOOL=ON
 TOOLKIT_DESC=		Qt toolkit
 

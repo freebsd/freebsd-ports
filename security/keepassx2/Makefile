@@ -24,10 +24,10 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 CONFLICTS_INSTALL=	keepassx-0.* keepassx-devel-* keepassxc-*
 
-USES=		cmake compiler:features desktop-file-utils shared-mime-info
+USES=		cmake compiler:features desktop-file-utils qt:4 shared-mime-info
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_QT4=	corelib gui xml qtestlib uic_build moc_build \
+USE_QT=		corelib gui xml qtestlib uic_build moc_build \
 		qmake_build rcc_build linguisttools
 USE_XORG=	ice inputproto sm x11 xcursor xext xfixes xi xrandr xrender \
 		xt xtst

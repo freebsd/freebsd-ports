@@ -15,10 +15,10 @@ LIB_DEPENDS=	libqalculate.so:math/libqalculate \
 		libqjson.so:devel/qjson@qt4
 CONFLICTS_INSTALL=	plasma-applet-icontasks-0.[89].*
 
-USES=		cmake:outsource eigen:2 kde:4 pkgconfig shared-mime-info tar:xz
+USES=		cmake:outsource eigen:2 kde:4 pkgconfig qt:4 shared-mime-info tar:xz
 USE_KDE=	kdelibs libkexiv2 pimlibs workspace \
 		akonadi attica automoc4 qimageblitz soprano
-USE_QT4=	corelib dbus declarative gui network script sql webkit \
+USE_QT=		corelib dbus declarative gui network script sql webkit \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11 xrender xtst
 USE_LDCONFIG=	yes

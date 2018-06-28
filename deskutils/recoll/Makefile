@@ -55,13 +55,13 @@ KONQUEROR_RUN_DEPENDS=	kwebkitpart>0:www/kwebkitpart
 LATEX_USE=		tex=dvipsk:run,latex:run
 PDF_RUN_DEPENDS=	pdftotext:graphics/poppler-utils
 PS_RUN_DEPENDS=		pstotext:print/pstotext
-QT4_USE=		qt4=moc_build,qmake_build,rcc_build,uic_build \
-			qt4=iconengines_run,imageformats_run \
-			qt4=corelib,gui,xml,webkit
+QT4_USES=		qmake:no_env qt:4
+QT4_USE=		qt=moc_build,qmake_build,rcc_build,uic_build \
+			qt=iconengines_run,imageformats_run \
+			qt=corelib,gui,xml,webkit
 QT4_CONFIGURE_ENABLE=	qtgui
 QT4_CONFIGURE_ENV=	QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" \
 			QTDIR="${PREFIX}"
-QT4_VARS=		QT_NONSTANDARD=yes
 SOUND_RUN_DEPENDS=	mutagen-pony:audio/py-mutagen@${PY_FLAVOR} \
 			pykaraoke:audio/py-karaoke@${PY_FLAVOR}
 X11MON_DESC=		X11 session monitoring support

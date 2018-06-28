@@ -7,9 +7,9 @@ CONFLICTS_INSTALL=	kf5-baloo-5.* \
 			kf5-kdelibs4support-5.* \
 			kf5-kfilemetadata-5.*
 
-USE_QT4=	uic_build moc_build qmake_build rcc_build xml
+USE_QT=		uic_build moc_build qmake_build rcc_build xml
 USE_KDE=	kdelibs automoc4
-USES=		cmake gettext kde:4 tar:xz
+USES=		cmake gettext kde:4 qt:4 tar:xz
 
 
 # Support for spelling dictionaries

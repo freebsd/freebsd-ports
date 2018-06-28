@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/copying
 
 RUN_DEPENDS=	exctags:devel/ctags
 
-USE_QT4=	corelib gui sql network xml designer sql-sqlite3_run \
+USE_QT=		corelib gui sql network xml designer sql-sqlite3_run \
 		moc_build uic_build rcc_build
-USES=		qmake
+USES=		qmake qt:4
 
 DESKTOP_ENTRIES=	"QDevelop" \
 			"Qt 4 development environment" \
@@ -30,9 +30,10 @@ DESKTOP_ENTRIES=	"QDevelop" \
 OPTIONS_DEFINE=	TOOLS DOCS NLS
 OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
 OPTIONS_SUB=	yes
-NLS_USE=	QT4=linguisttools_build
+NLS_USES=	qt:4
+NLS_USE=	QT=linguisttools_build
 TOOLS_DESC=	Install Qt 4 development tools (qmake, moc, etc.)
-TOOLS_USE=	${_TOOLS:C|.*|QT4=&_run|}
+TOOLS_USE=	${_TOOLS:C|.*|QT=&_run|}
 _TOOLS=		assistant linguisttools moc qmake rcc uic
 
 post-patch:

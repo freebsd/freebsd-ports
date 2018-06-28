@@ -11,11 +11,11 @@ LIB_DEPENDS=	libvncserver.so:net/libvncserver \
 		libxcb-image.so:x11/xcb-util-image
 
 USES=		alias cmake:outsource compiler:c++11-lib gettext jpeg \
-		kde:5 pkgconfig tar:xz
+		kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		crash dbusaddons dnssd doctools ecm i18n notifications \
 		wallet widgetsaddons xmlgui
-USE_QT5=	core dbus gui network widgets x11extras xml \
+USE_QT=		core dbus gui network widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	x11 xcb xdamage xext xtst
 

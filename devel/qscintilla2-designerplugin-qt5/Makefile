@@ -14,8 +14,8 @@ LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 
 DISTINFO_FILE=	${.CURDIR:H}/qscintilla2-qt5/distinfo
 USE_GL=		gl
-USES=		qmake pyqt:5
-USE_QT5=	core designer printsupport gui widgets xml \
+USES=		qmake pyqt:5 qt:5
+USE_QT=		core designer printsupport gui widgets xml \
 		buildtools_build qmake_build
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/designer-Qt4Qt5

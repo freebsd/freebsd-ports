@@ -19,14 +19,14 @@ LIB_DEPENDS=	libflann_cpp.so:math/flann \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:outsource eigen:3 jpeg
+USES=		cmake:outsource eigen:3 jpeg qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	openMVG
 GH_PROJECT=	openMVG
 GH_TUPLE=	openMVG-thirdparty:cereal:37fca60:cereal/dependencies/cereal \
 		openMVG-thirdparty:osi_clp:a25a980:osi/dependencies/osi_clp
 WRKSRC_SUBDIR=	src
-USE_QT5=	core gui opengl svg widgets buildtools_build qmake_build
+USE_QT=		core gui opengl svg widgets buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DEIGEN_INCLUDE_DIR_HINTS=${LOCALBASE}/include/eigen3 \

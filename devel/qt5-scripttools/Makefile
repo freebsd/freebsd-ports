@@ -8,9 +8,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Script additional components
 
-USE_QT5=	core gui script widgets buildtools_build
-QT_DIST=	script
-USES=		qmake
+USE_QT=		core gui script widgets buildtools_build
+USES=		qmake qt-dist:5,script
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}

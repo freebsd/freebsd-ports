@@ -9,8 +9,8 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt localized messages
 
-USE_QT4=	linguisttools_build
-QT_DIST=	yes
+USES=		qmake:no_configure qt-dist:4
+USE_QT=		linguisttools_build
 
 NO_ARCH=	yes
 

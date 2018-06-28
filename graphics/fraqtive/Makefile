@@ -13,8 +13,8 @@ COMMENT=	Draws Mandelbrot and Julia fractals
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake tar:bzip2
-USE_QT4=	corelib gui opengl xml uic_build moc_build rcc_build
+USES=		qmake qt:4 tar:bzip2
+USE_QT=		corelib gui opengl xml uic_build moc_build rcc_build
 USE_GL=		gl glu
 
 OPTIONS_DEFINE=	SSE2

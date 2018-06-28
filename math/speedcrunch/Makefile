@@ -12,7 +12,7 @@ COMMENT=	Keyboard-oriented desktop scientific calculator
 
 LICENSE=	GPLv2+
 
-USES=		cmake:outsource
+USES=		cmake:outsource qt:5
 
 BB_ACCOUNT=	heldercorreia
 BB_PROJECT=	${PORTNAME}
@@ -20,7 +20,7 @@ BB_COMMIT=	7f2565d6a0ad
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
-USE_QT5=	buildtools core gui help qmake_build qml widgets
+USE_QT=		buildtools core gui help qmake_build qml widgets
 USE_XORG=	x11
 
 post-patch:

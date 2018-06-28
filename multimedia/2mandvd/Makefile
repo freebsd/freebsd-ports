@@ -30,9 +30,9 @@ RUN_DEPENDS=	sox:audio/sox \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		desktop-file-utils gmake perl5 qmake:norecursive shebangfix
+USES=		desktop-file-utils gmake perl5 qmake:norecursive qt:4 shebangfix
 SHEBANG_FILES=	fake.pl
-USE_QT4=	corelib gui opengl \
+USE_QT=		corelib gui opengl \
 		linguisttools_build moc_build rcc_build uic_build
 USE_GL=		glu
 USE_SDL=	sdl

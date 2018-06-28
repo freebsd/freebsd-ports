@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libssh2.so:security/libssh2
 
-USES=		dos2unix kde:5 qmake ssl
+USES=		dos2unix kde:5 qmake qt:5 ssl
 DOS2UNIX_FILES=	3rdparty/3rdparty.pri
 USE_GL=		gl
 USE_GITHUB=	yes
@@ -30,7 +30,7 @@ GH_TUPLE=	\
 		uglide:qredisclient:34f1c5a:qredisclient/3rdparty/qredisclient \
 		sijk:qt-unix-signals:d6a1d12:qtunixsignals/3rdparty/qt-unix-signals \
 		redis:hiredis:53c3243:hiredis/3rdparty/qredisclient/3rdparty/hiredis
-USE_QT5=	buildtools_build charts concurrent core gui network qmake_build qml quick widgets
+USE_QT=		buildtools_build charts concurrent core gui network qmake_build qml quick widgets
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|g' ${WRKSRC}/src/version.h

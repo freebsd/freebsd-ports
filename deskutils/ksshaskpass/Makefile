@@ -12,9 +12,9 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	KDE 4 version of ssh-askpass with KWallet support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		cmake kde:4
+USES=		cmake kde:4 qt:4
 USE_KDE=	kdelibs automoc4
-USE_QT4=	moc_build uic_build qmake_build rcc_build
+USE_QT=		moc_build uic_build qmake_build rcc_build
 
 SUB_FILES=	pkg-message
 

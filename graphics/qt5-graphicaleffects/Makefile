@@ -8,8 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Quick graphical effects
 
-USES=		qmake
-USE_QT5=	buildtools_build core gui quick qml
-QT_DIST=	${PORTNAME}
+USES=		qmake qt-dist:5,graphicaleffects
+USE_QT=		buildtools_build core gui quick qml
 
 .include <bsd.port.mk>

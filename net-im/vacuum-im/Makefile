@@ -16,10 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Vacuum-IM
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		cmake
+USES=		cmake qt:4
 USE_XORG=	xscrnsaver
 USE_LDCONFIG=	yes
-USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
+USE_QT=		gui xml qmake_build uic_build moc_build rcc_build \
 		network linguist_build webkit
 
 PORTDOCS=	AUTHORS CHANGELOG COPYING README TRANSLATORS

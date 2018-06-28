@@ -11,9 +11,9 @@ DISTNAME=	geek-clock-plasmoid-${PORTVERSION}-src
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE4 geeky analog clock plasma applet
 
-USES=		cmake kde:4
+USES=		cmake kde:4 qt:4
 USE_KDE=	automoc4 kdelibs workspace
-USE_QT4=	gui dbus network opengl svg webkit xml \
+USE_QT=		gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
 PLIST_FILES=	lib/kde4/plasma_applet_geekclock.so \

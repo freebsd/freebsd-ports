@@ -13,8 +13,8 @@ COMMENT=	Large file hex editor
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		bison qmake
-USE_QT4=	corelib gui moc_build rcc_build
+USES=		bison qmake qt:4
+USE_QT=		corelib gui moc_build rcc_build
 
 WRKSRC_SUBDIR=	src
 

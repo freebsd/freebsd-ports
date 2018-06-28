@@ -16,12 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 
-USES=		compiler:c++14-lang gmake qmake
+USES=		compiler:c++14-lang gmake qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	abau
 USE_CXXSTD=	c++14
 USE_GL=		gl
-USE_QT5=	core gui opengl widgets xml buildtools_build
+USE_QT=		core gui opengl widgets xml buildtools_build
 
 MAKE_JOBS_UNSAFE=	yes  # Workaround for: https://github.com/abau/dilay/issues/19 parallel build fails (still a problem despite having been closed)
 

@@ -20,14 +20,16 @@ USE_LDCONFIG=	yes
 
 SLAVE?=		qt5
 .if ${SLAVE} ==	qt4
-USE_QT4=	corelib dbus \
+USES+=		qt:4
+USE_QT=		corelib dbus \
 		moc_build qmake_build rcc_build
 # BUILD_QT4 must be set to "1" due to comparison used in src/LibAlkimiaConfig.cmake.in
 CMAKE_ARGS+=	-DBUILD_QT4=1
 CMAKE_OFF+=	KDE_INSTALL_USE_QT_SYS_PATHS
 INCLUDE_SUBDIR=	Qt4
 .else
-USE_QT5=	core dbus \
+USES+=		qt:5
+USE_QT=		core dbus \
 		buildtools_build qmake_build
 CMAKE_ON+=	KDE_INSTALL_USE_QT_SYS_PATHS
 INCLUDE_SUBDIR=	Qt5
@@ -52,9 +54,10 @@ MPIR_DESC=		MPIR (multiple precision arithmetic) support
 MPIR_LIB_DEPENDS=	libmpir.so:math/mpir
 
 .if ${SLAVE} == qt4
-TEST_USE=		QT4=qtestlib
+TEST_USES=	qt:4 qt:5
+TEST_USE=		QT=qtestlib
 .else
-TEST_USE=		QT5=testlib
+TEST_USE=		QT=testlib
 .endif
 TEST_CMAKE_BOOL=	BUILD_TESTING
 TEST_TEST_TARGET=	test

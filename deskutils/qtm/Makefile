@@ -12,8 +12,8 @@ COMMENT=	Blog management application based on Qt 4
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake tar:bzip2 ssl
-USE_QT4=	corelib dbus gui network xml \
+USES=		cmake qt:4 tar:bzip2 ssl
+USE_QT=		corelib dbus gui network xml \
 		moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS=	-DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
 		-DMANPAGE_DIRECTORY:STRING="${MANPREFIX}/man/man1" \

@@ -8,10 +8,9 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 Gamepad Module
 
-USE_QT5=	core gui qml quick buildtools_build
-QT_DIST=	${PORTNAME}
+USE_QT=		core gui qml quick buildtools_build
 
-USES=		qmake:norecursive
+USES=		qmake:norecursive qt-dist:5,gamepad
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .include <bsd.port.mk>

@@ -12,14 +12,14 @@ LIB_DEPENDS=	libcln.so:math/cln \
 		libgsl.so:math/gsl \
 		libqalculate.so:math/libqalculate
 
-USES=		cmake:outsource eigen:3 gettext kde:5 pkgconfig tar:xz
+USES=		cmake:outsource eigen:3 gettext kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash doctools ecm emoticons guiaddons i18n \
 		iconthemes init itemmodels itemviews jobwidgets js \
 		kdelibs4support khtml kio newstuff notifications parts \
 		plotting service solid sonnet textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui
-USE_QT5=	core dbus gui network opengl printsupport qml quick svg \
+USE_QT=		core dbus gui network opengl printsupport qml quick svg \
 		widgets xml \
 		buildtools_build qmake_build
 

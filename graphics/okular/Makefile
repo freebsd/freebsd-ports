@@ -24,14 +24,14 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libzip.so:archivers/libzip
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
-		gettext jpeg kde:5 pkgconfig tar:xz
+		gettext jpeg kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons dbusaddons ecm emoticons i18n \
 		iconthemes init itemmodels itemviews jobwidgets js \
 		kdelibs4support khtml kio libkexiv2 parts pty \
 		service solid sonnet textwidgets threadweaver wallet \
 		widgetsaddons windowsystem xmlgui
-USE_QT5=	core dbus gui network phonon4 printsupport qml quick speech \
+USE_QT=		core dbus gui network phonon4 printsupport qml quick speech \
 		svg widgets xml \
 		buildtools_build qmake_build
 

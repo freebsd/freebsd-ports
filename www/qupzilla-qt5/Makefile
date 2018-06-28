@@ -17,8 +17,8 @@ LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt4*
 
-USES=		desktop-file-utils pkgconfig qmake ssl tar:xz
-USE_QT5=	core concurrent gui network printsupport script sql webkit \
+USES=		desktop-file-utils pkgconfig qmake qt:5 ssl tar:xz
+USE_QT=		core concurrent gui network printsupport script sql webkit \
 		widgets x11extras xml imageformats_run sql-sqlite3_run \
 		buildtools_build linguisttools_build
 USE_XORG=	x11
@@ -32,7 +32,8 @@ OPTIONS_DEFINE=	DBUS DEBUG GNOMEKEYRING KWALLET
 OPTIONS_DEFAULT=DBUS
 OPTIONS_SUB=	yes
 
-DBUS_USE=		QT5=dbus
+DBUS_USES=	qt:5
+DBUS_USE=		QT=dbus
 DBUS_CONFIGURE_ENV_OFF=	DISABLE_DBUS="true"
 
 GNOMEKEYRING_LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring

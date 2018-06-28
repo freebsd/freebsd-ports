@@ -26,11 +26,12 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libboost_program_options.so:devel/boost-libs \
 		liblog4cpp.so:devel/log4cpp
 
-USES=		pkgconfig qmake
+USES=		pkgconfig qmake qt:5
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	csete
 USE_GL=		gl
-USE_QT5=	buildtools_build core gui svg network widgets
+USE_QT=		buildtools_build core gui svg network widgets
 
 OPTIONS_RADIO=	AUDIO
 AUDIO_DESC=	Audio backend

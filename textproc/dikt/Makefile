@@ -13,10 +13,10 @@ COMMENT=	Dictionary for KDE
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource kde:5 tar:txz
+USES=		cmake:outsource kde:5 qt:5 tar:txz
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons dbusaddons guiaddons i18n \
 		iconthemes itemviews jobwidgets kio service solid widgetsaddons xmlgui
-USE_QT5=	concurrent core dbus gui network printsupport svg widgets xml \
+USE_QT=		concurrent core dbus gui network printsupport svg widgets xml \
 		buildtools_build qmake_build
 
 PLIST_FILES=	bin/dikt \

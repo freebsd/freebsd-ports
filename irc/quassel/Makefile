@@ -13,12 +13,12 @@ COMMENT?=	Qt 5 based distributed IRC client (client and monolithic binary)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource compiler:c++11-lib cpe pkgconfig tar:bzip2
+USES=		cmake:outsource compiler:c++11-lib cpe pkgconfig qt:5 tar:bzip2
 
 CPE_VENDOR=	quassel-irc
 CPE_PRODUCT=	quassel_irc
 
-USE_QT5=	buildtools_build core network qmake_build
+USE_QT=		buildtools_build core network qmake_build
 CMAKE_ARGS=	-DWITH_KDE=off \
 		-DUSE_QT5=on
 
@@ -33,12 +33,12 @@ OPTIONS_SUB=		yes
 
 CLIENT_DESC=		Quassel client (for use with core)
 CLIENT_CMAKE_BOOL=	WANT_QTCLIENT
-CLIENT_USE=		qt5=dbus,gui,phonon4,webkit,widgets
+CLIENT_USE=		qt=dbus,gui,phonon4,webkit,widgets
 CLIENT_LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5
 
 CORE_DESC=		Quassel core server (for use with client)
 CORE_CMAKE_BOOL=	WANT_CORE
-CORE_USE=		qt5=script,sql
+CORE_USE=		qt=script,sql
 CORE_LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5
 CORE_SUB_FILES=		pkg-message
 CORE_VARS=		use_rc_subr=quasselcore \
@@ -49,14 +49,15 @@ CORE_PLIST_FILES=	bin/quasselcore
 
 MONO_DESC=		Quassel standalone (monolithic binary: core+client combined)
 MONO_CMAKE_BOOL=	WANT_MONO
-MONO_USE=		qt5=script,sql
+MONO_USE=		qt=script,sql
 MONO_LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5
 
-NLS_USE=		QT5=linguisttools_build
+NLS_USES=	qt:5
+NLS_USE=		QT=linguisttools_build
 
-PGSQL_USE=		qt5=sql-pgsql
+PGSQL_USE=		qt=sql-pgsql
 
-SQLITE3_USE=		qt5=sql-sqlite3_run
+SQLITE3_USE=		qt=sql-sqlite3_run
 
 post-patch-NLS-off:
 	${REINPLACE_CMD} -e '/add_subdirectory(po)/d' \

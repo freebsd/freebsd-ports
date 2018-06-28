@@ -13,9 +13,9 @@ COMMENT=	Simple, top-down game in which mazes are randomly generated
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake tar:bzip2
+USES=		qmake qt:5 tar:bzip2
 USE_GL=		gl
-USE_QT5=	core gui svg imageformats_run widgets \
+USE_QT=		core gui svg imageformats_run widgets \
 		linguisttools_build buildtools_build
 
 PORTDOCS=	ChangeLog NEWS README

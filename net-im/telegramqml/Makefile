@@ -19,8 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Aseman-Land
 GH_PROJECT=	TelegramQML
 
-USES=		qmake:outsource ssl
-USE_QT5=	qmake_build buildtools_build core qml quick sql xml multimedia
+USES=		qmake:outsource qt:5 ssl
+USE_QT=		qmake_build buildtools_build core qml quick sql xml multimedia
 USE_LDCONFIG=	yes
 QMAKE_ARGS=	BUILD_MODE+=lib \
 		LIBQTELEGRAM_INCLUDE_PATH="${LOCALBASE}/include/libqtelegram-ae"

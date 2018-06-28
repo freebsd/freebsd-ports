@@ -20,20 +20,22 @@ FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
 qt4_LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4 \
-		libquazip.so:archivers/quazip@qt4
+			libquazip.so:archivers/quazip@qt4
 qt5_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5 \
-		libquazip5.so:archivers/quazip@qt5
+			libquazip5.so:archivers/quazip@qt5
 
 USES=		desktop-file-utils dos2unix ghostscript:run \
 		pkgconfig qmake
 
 .if ${FLAVOR} == qt4
-USE_QT4=	corelib gui network script svg xml \
+USES+=		qt:4
+USE_QT=		corelib gui network script svg xml \
 		iconengines_run designer_build moc_build rcc_build uic_build
 QMAKE_ARGS=	QUAZIP_INCLUDE="${LOCALBASE}/include/quazip" \
 		QUAZIP_LIB="-lquazip"
 .else
-USE_QT5=	core gui network script svg widgets xml \
+USES+=		qt:5
+USE_QT	=	core gui network script svg widgets xml \
 		printsupport concurrent uitools buildtools_build
 QMAKE_ARGS=	QUAZIP_INCLUDE="${LOCALBASE}/include/quazip5" \
 		QUAZIP_LIB="-lquazip5"

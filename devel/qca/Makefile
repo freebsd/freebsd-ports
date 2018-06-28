@@ -27,10 +27,12 @@ USE_LDCONFIG=	yes
 
 .  if ${FLAVOR} == qt4
 CMAKE_ON=	QT4_BUILD
-USE_QT4=	corelib moc_build qmake_build rcc_build
+USES+=		qt:4
+USE_QT=		corelib moc_build qmake_build rcc_build
 .  else
 CMAKE_ARGS+=	-DQCA_SUFFIX=qt5
-USE_QT5=	core buildtools_build qmake_build
+USES+=		qt:5
+USE_QT=	core buildtools_build qmake_build
 .  endif
 qt4_PLIST=	${.CURDIR}/pkg-plist.qt4
 qt5_PLIST=	${.CURDIR}/pkg-plist.qt5

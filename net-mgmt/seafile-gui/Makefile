@@ -19,7 +19,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		compiler:c++11-lang cmake pkgconfig shebangfix ssl
+USES=		compiler:c++11-lang cmake pkgconfig qt:5 shebangfix ssl
 SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \
 		scripts/*.py
 
@@ -28,7 +28,7 @@ GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile-client
 
 USE_GNOME=	glib20
-USE_QT5=	core gui network widgets \
+USE_QT=		core gui network widgets \
 		qmake_build buildtools_build linguisttools_build
 #INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:PATH=include/glib-2.0 \

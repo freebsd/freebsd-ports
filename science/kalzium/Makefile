@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:math/facile \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 
-USES=		cmake:outsource gettext kde:5 pkgconfig tar:xz
+USES=		cmake:outsource gettext kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	auth archive bookmarks codecs completion config configwidgets \
 		coreaddons crash doctools ecm emoticons guiaddons i18n \
 		iconthemes itemmodels itemviews jobwidgets js kdelibs4support \
@@ -22,7 +22,7 @@ USE_KDE=	auth archive bookmarks codecs completion config configwidgets \
 		xmlgui
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
-USE_QT5=	core dbus gui network opengl printsupport qml quick script svg \
+USE_QT=		core dbus gui network opengl printsupport qml quick script svg \
 		widgets xml \
 		buildtools_build qmake_build
 

@@ -10,7 +10,7 @@ COMMENT=	Plasma5 utility providing system information
 LIB_DEPENDS=	libpci.so:devel/libpci
 
 USES=		cmake:outsource compiler:c++11-lib cpe gettext kde:5 pkgconfig \
-		tar:xz
+		qt:5 tar:xz
 USE_GL=		egl gl glu
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools ecm emoticons guiaddons \
@@ -18,7 +18,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		kdelibs4support kio notifications package parts init \
 		itemmodels itemviews service solid sonnet textwidgets \
 		unitconversion wayland wayland widgetsaddons windowsystem xmlgui
-USE_QT5=	concurrent core dbus gui network printsupport widgets xml \
+USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext
 

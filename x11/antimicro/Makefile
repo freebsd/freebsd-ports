@@ -20,8 +20,8 @@ GH_ACCOUNT=	antimicro #Ryochan7
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_XORG=	x11 xi xtst
-USE_QT5=	core gui linguisttools_build qmake_build buildtools_build widgets network
+USE_QT=		core gui linguisttools_build qmake_build buildtools_build widgets network
 USE_SDL=	sdl2
-USES=		cmake:outsource pkgconfig desktop-file-utils shared-mime-info
+USES=		cmake:outsource pkgconfig desktop-file-utils qt:5 shared-mime-info
 
 .include <bsd.port.mk>

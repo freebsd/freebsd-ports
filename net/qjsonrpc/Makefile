@@ -13,8 +13,8 @@ COMMENT=	C++ Qt based JSON RPC2 library
 
 LICENSE=	LGPL21
 
-USES=		qmake
-USE_QT4=	moc_build network qtestlib_build rcc_build
+USES=		qmake qt:4
+USE_QT=		moc_build network qtestlib_build rcc_build
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/devonit-qjsonrpc-adefe89b0c6f

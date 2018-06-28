@@ -8,9 +8,9 @@ CATEGORIES=	x11
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QML based login manager
 
-USES=		cmake:outsource desktop-file-utils kde:5
+USES=		cmake:outsource desktop-file-utils kde:5 qt:5
 USE_KDE=	ecm
-USE_QT5=	concurrent core dbus gui linguisttools multimedia network \
+USE_QT=		concurrent core dbus gui linguisttools multimedia network \
 		printsupport qml quick script sql webkit widgets \
 		buildtools_build qmake_build
 USE_XORG=	xcb

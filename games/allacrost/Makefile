@@ -24,7 +24,6 @@ USES=		gettext gmake iconv jpeg lua:51 openal:al
 USE_SDL=	sdl ttf net
 USE_GL=		gl glu
 USE_XORG=	x11
-QT_NONSTANDARD=	yes # used when EDITOR enabled
 
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
@@ -42,7 +41,8 @@ OPTIONS_SUB=	yes
 
 EDITOR_DESC=		Enable editor
 
-EDITOR_USE=		QT4=corelib,gui,moc_build,opengl,qt3support
+EDITOR_USES=		qmake:no_env qt:4
+EDITOR_USE=		QT=corelib,gui,moc_build,opengl,qt3support
 EDITOR_CONFIGURE_ON=	--enable-editor=yes
 EDITOR_CONFIGURE_OFF=	--enable-editor=no
 

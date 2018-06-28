@@ -9,8 +9,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Qt5 binding for FreePascal
 
 USE_LDCONFIG=	yes
-USES=		qmake
-USE_QT5=	buildtools_build core gui network printsupport x11extras
+USES=		qmake qt:5
+USE_QT=		buildtools_build core gui network printsupport x11extras
 
 QT5_VER_MIN=	5.6.1
 

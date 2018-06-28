@@ -12,8 +12,8 @@ COMMENT=	Advanced shutdown utility for KDE
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		alias cmake:outsource compiler:c++0x gettext kde:4 zip
-USE_QT4=	corelib dbus gui moc_build qmake_build rcc_build svg uic_build
+USES=		alias cmake:outsource compiler:c++0x gettext kde:4 qt:4 zip
+USE_QT=		corelib dbus gui moc_build qmake_build rcc_build svg uic_build
 USE_KDE=	automoc4 kdelibs workspace
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}

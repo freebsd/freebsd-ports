@@ -51,9 +51,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:math/py-gnuplot@${PY_FLAVOR} \
 		${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		astk-serveur>0:cad/astk-serveur
 
-USES=		bison fortran gettext python:2.7 tk
+USES=		bison fortran gettext python:2.7 qt:4 tk
 USE_BINUTILS=	yes
-USE_QT4=	linguisttools_build
+USE_QT=		linguisttools_build
 
 .if defined(WITH_ATLAS)
 USES+=		blaslapack:atlas

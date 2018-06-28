@@ -12,8 +12,8 @@ COMMENT=	Qt 4 chess database application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		desktop-file-utils qmake shared-mime-info tar:tgz
-USE_QT4=	corelib gui svg network linguisttools_build \
+USES=		desktop-file-utils qmake qt:4 shared-mime-info tar:tgz
+USE_QT=		corelib gui svg network linguisttools_build \
 		moc_build qmake_build rcc_build uic_build
 QMAKE_ARGS+=	QMAKE_LRELEASE=${LRELEASE}
 

@@ -17,10 +17,10 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 
-USES=		cmake:noninja desktop-file-utils fpc lua:51 tar:bzip2 pkgconfig
+USES=		cmake:noninja desktop-file-utils fpc lua:51 qt:5 tar:bzip2 pkgconfig
 USE_SDL=	sdl2 mixer2 image2 ttf2 net2
 USE_FPC=	opengl libpng rtl-objpas
-USE_QT5=	core gui widgets network \
+USE_QT=		core gui widgets network \
 		qmake_build buildtools_build \
 		linguisttools_build
 LLD_UNSAFE=	yes

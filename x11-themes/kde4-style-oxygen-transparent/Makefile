@@ -13,8 +13,8 @@ COMMENT=	KDE oxygen style with transparency
 
 LICENSE=	GPLv2
 
-USES=		cmake kde:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs workspace automoc4
-USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
+USE_QT=		corelib qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>

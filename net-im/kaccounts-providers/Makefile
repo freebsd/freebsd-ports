@@ -12,10 +12,10 @@ LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libaccounts-qt5.so:net-im/libaccounts-qt5 \
 		libsignon-qt5.so:sysutils/signon-qt5
 
-USES=		cmake:outsource gettext kde:5 pkgconfig tar:xz
+USES=		cmake:outsource gettext kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	intltool
 USE_KDE=	config coreaddons i18n kdeclarative kio package service
-USE_QT5=	core gui network qml xml \
+USE_QT=		core gui network qml xml \
 		buildtools_build qmake_build
 
 #install to ${LOCALBASE}:

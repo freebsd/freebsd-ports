@@ -14,14 +14,14 @@ LIB_DEPENDS=		libKDb3.so:databases/kdb \
 			libKReport3.so:textproc/kreport
 
 USES=			cmake:outsource desktop-file-utils gettext iconv \
-			kde:5 pkgconfig tar:xz
+			kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=		glib20
 USE_KDE=		auth bookmarks codecs completion config \
 			configwidgets coreaddons crash ecm guiaddons i18n \
 			iconthemes itemviews jobwidgets kio parts service \
 			solid sonnet texteditor textwidgets widgetsaddons \
 			xmlgui breeze-icons_build
-USE_QT5=		core dbus gui network printsupport webkit widgets xml \
+USE_QT=			core dbus gui network printsupport webkit widgets xml \
 			buildtools_build qmake_build qml
 
 CONFLICTS_INSTALL=	calligra-2*

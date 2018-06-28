@@ -48,13 +48,13 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		pdftohtml:graphics/poppler-utils
 
 USES=		desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig \
-		python:2.7 pyqt:5 shared-mime-info shebangfix ssl tar:xz
+		python:2.7 pyqt:5 qt:5 shared-mime-info shebangfix ssl tar:xz
 USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 SHEBANG_GLOB=	*.sh *.py
 python_OLD_CMD=	"/usr/bin/env python2" /bin/python2 /usr/bin/python2 /usr/local/bin/python2
 USE_PYQT=	core gui network sip svg webkit widgets webkitwidgets xmlpatterns
-USE_QT5=	buildtools_build core dbus gui qmake_build widgets
+USE_QT=		buildtools_build core dbus gui qmake_build widgets
 USE_GL=		egl gl
 USE_GNOME=	glib20
 USE_XORG=	xrender xext x11

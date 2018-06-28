@@ -25,12 +25,12 @@ CONFLICTS_INSTALL=	kdepim44-4.*
 USE_GNOME=	libxml2 libxslt:build
 USE_KDE=	kdelibs pimlibs kactivities \
 		akonadi automoc4 soprano nepomuk-widgets baloo
-USES=		cmake:outsource grantlee:4 iconv kde:4 shebangfix tar:xz
+USES=		cmake:outsource grantlee:4 iconv kde:4 qt:4 shebangfix tar:xz
 SHEBANG_FILES=	agents/mailfilteragent/kconf_update/migrate-kmail-filters.pl \
 		kalarm/*.pl kmail/kconf_update/*.pl \
 		libkpgp/kconf_update/kpgp-3.1-upgrade-address-data.pl
 USE_OPENLDAP=	yes
-USE_QT4=	corelib dbus declarative designer_build gui network opengl \
+USE_QT=		corelib dbus declarative designer_build gui network opengl \
 		qt3support script sql webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11 xscrnsaver

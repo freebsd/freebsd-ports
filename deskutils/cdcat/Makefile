@@ -22,8 +22,8 @@ LIB_DEPENDS=	libtar.so:devel/libtar \
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 
-USES=		libtool qmake:norecursive tar:bzip2
-USE_QT4=	corelib gui xml linguisttools_build moc_build uic_build
+USES=		libtool qmake:norecursive qt:4 tar:bzip2
+USE_QT=		corelib gui xml linguisttools_build moc_build uic_build
 QMAKE_ARGS=	LIBS+="${LOCALBASE}/lib/libcryptopp.a" \
 		LIBS+="-lz -lbz2 -ltar -lexif -lmediainfo -lzen" \
 		DEFINES+="MEDIAINFO_STATIC" \

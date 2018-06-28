@@ -38,7 +38,7 @@ RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
 USES=		cmake:outsource cpe compiler:c++11-lib desktop-file-utils eigen:3 \
 		gettext iconv:translit jpeg kde:5 localbase:ldflags perl5 pkgconfig \
-		shared-mime-info sqlite tar:xz
+		qt:5 shared-mime-info sqlite tar:xz
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons doctools ecm \
 		emoticons guiaddons i18n iconthemes init itemmodels itemviews \
@@ -47,7 +47,7 @@ USE_KDE=	activities archive auth bookmarks codecs completion config \
 		texteditor textwidgets threadweaver unitconversion wallet \
 		widgetsaddons windowsystem xmlgui \
 		calendarcore okular
-USE_QT5=	buildtools_build core dbus gui network opengl \
+USE_QT=		buildtools_build core dbus gui network opengl \
 		phonon4 printsupport qmake_build qml \
 		quick script sql svg testlib webkit widgets x11extras xml
 USE_XORG=	ice sm x11 xext

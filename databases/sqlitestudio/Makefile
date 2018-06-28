@@ -38,9 +38,9 @@ OPTIONS_SUB=		yes
 
 WRKSRC=		${WRKDIR}/SQLiteStudio3
 
-USES=		compiler:c++11-lib gmake ncurses qmake readline sqlite
+USES=		compiler:c++11-lib gmake ncurses qmake qt:5 readline sqlite
 USE_CXXSTD=	c++11
-USE_QT5=	core concurrent gui network script sql sql-sqlite3_run svg widgets xml \
+USE_QT=		core concurrent gui network script sql sql-sqlite3_run svg widgets xml \
 		uitools buildtools_build linguisttools_build
 USE_GL=		gl
 USE_LDCONFIG=	yes
@@ -64,7 +64,7 @@ PLUGIN_DB_SQLITE_CIPHER_VARS=		PLUGIN_DIRS+=DbSqliteCipher
 PLUGIN_HTML_EXPORT_VARS=		PLUGIN_DIRS+=HtmlExport
 PLUGIN_JSON_EXPORT_VARS=		PLUGIN_DIRS+=JsonExport
 PLUGIN_PDF_EXPORT_VARS=			PLUGIN_DIRS+=PdfExport
-PLUGIN_PRINTING_VARS=			PLUGIN_DIRS+=Printing USE_QT5+=printsupport
+PLUGIN_PRINTING_VARS=			PLUGIN_DIRS+=Printing USE_QT+=printsupport
 PLUGIN_REGEXP_IMPORT_VARS=		PLUGIN_DIRS+=RegExpImport
 PLUGIN_SQL_ENTERPRISE_FORMATTER_VARS=	PLUGIN_DIRS+=SqlEnterpriseFormatter
 PLUGIN_SQL_EXPORT_VARS=			PLUGIN_DIRS+=SqlExport

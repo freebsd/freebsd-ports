@@ -21,9 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip@${PY_FLAVOR} \
 		${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
-USES=		desktop-file-utils python:3.5+ pyqt:5
+USES=		desktop-file-utils python:3.5+ pyqt:5 qt:5
 USE_PYQT=	core opengl printsupport sql widgets qml
-USE_QT5=	sql-sqlite3
+USE_QT=		sql-sqlite3
 USE_PYTHON=	distutils autoplist noflavors
 
 NO_ARCH=	yes

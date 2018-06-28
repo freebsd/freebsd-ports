@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
-USES=		bison cmake:outsource compiler:c++11-lib kde:5 tar:xz
+USES=		bison cmake:outsource compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	ecm
-USE_QT5=	core testlib \
+USE_QT=		core testlib \
 		buildtools_build qmake_build
 
 CONFLICTS=	kdevelop-pg-qt-1.0*

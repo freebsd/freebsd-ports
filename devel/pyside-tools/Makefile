@@ -21,8 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PySide
 GH_PROJECT=	Tools
 
-USES=		cmake python:2.7 shebangfix
+USES=		cmake python:2.7 qt:4 shebangfix
 SHEBANG_FILES=	pyside-uic pysideuic/icon_cache.py
-USE_QT4=	moc_build qmake_build rcc_build uic_build
+USE_QT=		moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

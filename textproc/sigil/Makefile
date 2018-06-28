@@ -20,10 +20,10 @@ GH_ACCOUNT=	Sigil-Ebook
 GH_PROJECT=	Sigil
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
-		pkgconfig python:3.4+ shebangfix
+		pkgconfig python:3.4+ qt:5 shebangfix
 SHEBANG_FILES=	src/Resource_Files/plugin_launchers/python/*.py \
 		src/Resource_Files/python3lib/*.py
-USE_QT5=	concurrent core gui network printsupport svg webkit \
+USE_QT=		concurrent core gui network printsupport svg webkit \
 		widgets xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build \
 		imageformats_run

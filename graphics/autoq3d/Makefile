@@ -14,11 +14,11 @@ COMMENT=	Qt 4 quick 3D model editor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
-USES=		dos2unix qmake zip
+USES=		dos2unix qmake qt:4 zip
 DOS2UNIX_FILES=	*.pro src/cmds/*.cpp src/fgui/*.cpp docs/*.txt
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
 USE_GL=		glu
-USE_QT4=	corelib gui opengl moc_build
+USE_QT=		corelib gui opengl moc_build
 
 PORTDOCS=	3DQformat.txt ChangeLog.txt
 

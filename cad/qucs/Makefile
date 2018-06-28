@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/qucs/COPYING
 BUILD_DEPENDS=	gperf:devel/gperf \
 		admsXml:cad/adms
 
-USE_QT4=	moc_build uic_build rcc_build linguisttools_build \
+USE_QT=		moc_build uic_build rcc_build linguisttools_build \
 		corelib gui xml svg script qt3support
-USES=		autoreconf compiler:c++11-lib bison gmake libtool shebangfix
+USES=		autoreconf compiler:c++11-lib bison gmake libtool qt:4 shebangfix
 SHEBANG_FILES=	qucs/contrib/ps2sp
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doc

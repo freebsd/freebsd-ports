@@ -16,10 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/jeromerobert-k4dirstat-3a4663ee20e7
 
-USES=		cmake cpe gettext-tools kde:4 tar:bzip2
+USES=		cmake cpe gettext-tools kde:4 qt:4 tar:bzip2
 CPE_VENDOR=	kdirstat_project
 USE_KDE=	automoc4 kdelibs libkonq
-USE_QT4=	corelib dbus gui network qt3support svg xml \
+USE_QT=		corelib dbus gui network qt3support svg xml \
 		moc_build qmake_build rcc_build uic_build
 
 post-patch:

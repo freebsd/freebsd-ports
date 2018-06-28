@@ -32,10 +32,11 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libxcb-util.so:x11/xcb-util
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
-		eigen:3 gettext jpeg kde:5 pkgconfig python:3.4+ shared-mime-info
+		eigen:3 gettext jpeg kde:5 pkgconfig python:3.4+ qt:5 \
+		shared-mime-info
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
-USE_QT5=	concurrent core dbus gui multimedia network printsupport \
+USE_QT=		concurrent core dbus gui multimedia network printsupport \
 		qml quick svg testlib widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm xcb xext xi

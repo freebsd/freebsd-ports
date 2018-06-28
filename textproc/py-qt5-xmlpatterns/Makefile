@@ -10,10 +10,10 @@ COMMENT=	Python bindings for the Qt5 toolkit, QtXmlPatterns module
 CONFIGURE_ARGS=	--enable QtXmlPatterns
 PYQT_DIST=	yes
 
-USES=		python pyqt:5
+USES=		python pyqt:5 qt:5
 USE_PYQT=	sip_build core_run network_run
 USE_PYTHON=	flavors
-USE_QT5=	core network xmlpatterns qmake_build
+USE_QT=		core network xmlpatterns qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

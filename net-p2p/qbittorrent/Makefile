@@ -24,16 +24,15 @@ default_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${NONEXISTENT}
 
-USES=			compiler:c++11-lib pkgconfig tar:xz
+USES=			compiler:c++11-lib pkgconfig qmake:no_env qt:5 tar:xz
 GNU_CONFIGURE=		yes
-USE_QT5=		core network xml buildtools_build linguisttools_build qmake_build
+USE_QT=			core network xml buildtools_build linguisttools_build qmake_build
 CONFIGURE_ARGS=		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
-QT_NONSTANDARD=		yes
 DESTDIRNAME=		INSTALL_ROOT
 
 .if ${FLAVOR} == default
 USES+=			desktop-file-utils
-USE_QT5+=		concurrent gui svg widgets
+USE_QT+=		concurrent gui svg widgets
 USE_GL=			gl
 .endif
 
@@ -50,7 +49,7 @@ OPTIONS_DEFAULT=	DBUS
 
 DEBUG_CONFIGURE_ENABLE=	debug
 DBUS_CONFIGURE_ENABLE=	qt-dbus
-DBUS_USE=		qt5=dbus
+DBUS_USE=		qt=dbus
 
 PORTDOCS=		AUTHORS Changelog README.md
 

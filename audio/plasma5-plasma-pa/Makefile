@@ -11,11 +11,11 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libpulse.so:audio/pulseaudio
 
 USES=		cmake:outsource compiler:c++11-lib cpe gettext kde:5 \
-		pkgconfig shebangfix tar:xz
+		pkgconfig qt:5 shebangfix tar:xz
 USE_GNOME=	gconf2
 USE_KDE=	config configwidgets coreaddons ecm globalaccel i18n \
 		kdeclarative package plasma-framework
-USE_QT5=	core dbus gui network qml quick widgets \
+USE_QT=		core dbus gui network qml quick widgets \
 		buildtools_build qmake_build
 
 SHEBANG_FILES=	data/plasmaVolumeDisableKMixAutostart.pl

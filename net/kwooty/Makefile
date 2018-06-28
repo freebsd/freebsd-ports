@@ -14,9 +14,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/unrar:archivers/unrar \
 		${LOCALBASE}/bin/par2:archivers/par2cmdline \
 		${LOCALBASE}/bin/7z:archivers/p7zip
 
-USES=		cmake gettext kde:4
+USES=		cmake gettext kde:4 qt:4
 USE_KDE=	kdelibs automoc4 workspace
-USE_QT4=	qmake_build moc_build rcc_build uic_build
+USE_QT=		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
 post-patch:

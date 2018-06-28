@@ -15,12 +15,12 @@ RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
 		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt5
 
 USES=		cmake:outsource desktop-file-utils gettext-tools pkgconfig \
-		shared-mime-info kde:5 tar:xz
+		qt:5 shared-mime-info kde:5 tar:xz
 USE_KDE=	archive bookmarks config configwidgets coreaddons crash \
 		dbusaddons ecm filemetadata guiaddons iconthemes \
 		init_run kio newstuff notifications notifyconfig \
 		textwidgets widgetsaddons xmlgui
-USE_QT5=	buildtools_build concurrent core dbus gui qmake_build \
+USE_QT=		buildtools_build concurrent core dbus gui qmake_build \
 		qml quick quickcontrols_run script svg webkit widgets
 USE_XORG=	x11
 CFLAGS+=	-I${LOCALBASE}/include # linux/input.h

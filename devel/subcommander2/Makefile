@@ -20,10 +20,9 @@ CONFLICTS=	subcommander-1.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S,.b,b,}p${PORTVERSION:E}
 
-USES=		autoreconf gmake dos2unix ssl
+USES=		autoreconf gmake dos2unix qmake:no_env qt:4 ssl
 DOS2UNIX_GLOB=	*.cpp *.h
-USE_QT4=	corelib gui network qt3support moc_build rcc_build uic_build
-QT_NONSTANDARD=	yes
+USE_QT=		corelib gui network qt3support moc_build rcc_build uic_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include \
 		--with-subversion=${LOCALBASE} --with-qt=${PREFIX} \

@@ -17,9 +17,9 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-video-rice.so:emulators/mupen64plus-video-rice \
 		mupen64plus:emulators/mupen64plus-ui-console
 
-USES=		qmake
+USES=		qmake qt:5
 USE_GL=		gl
-USE_QT5=	core gui network sql widgets xml \
+USE_QT=		core gui network sql widgets xml \
 		buildtools_build \
 		sql-sqlite3_run
 

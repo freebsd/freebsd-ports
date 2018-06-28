@@ -15,9 +15,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 USES=		cmake:outsource compiler:c++11-lib gettext kde:5 pkgconfig \
-		tar:xz
+		qt:5 tar:xz
 USE_GL=		egl
 USE_KDE=	ecm
-USE_QT5=	buildtools_build concurrent core gui qmake_build testlib
+USE_QT=		buildtools_build concurrent core gui qmake_build testlib
 
 .include <bsd.port.mk>

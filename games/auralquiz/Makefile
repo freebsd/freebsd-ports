@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtag.so:audio/taglib
 
-USES=		qmake
+USES=		qmake qt:5
 USE_GL=		gl
-USE_QT5=	core gui widgets phonon4 qmake_build buildtools_build
+USE_QT=		core gui widgets phonon4 qmake_build buildtools_build
 
 PORTDOCS=	CHANGELOG README TODO
 

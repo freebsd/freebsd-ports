@@ -11,8 +11,8 @@ COMMENT=	Lumina desktop wallpapers/colors
 LICENSE=	BSD2CLAUSE CC0-1.0
 LICENSE_COMB=	multi
 
-USES=	qmake
-USE_QT5=	qmake_build
+USES=	qmake qt:5
+USE_QT=		qmake_build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos

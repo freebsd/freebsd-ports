@@ -17,8 +17,8 @@ LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/SudokuSenseiSources
 
-USES=		qmake
-USE_QT4=	moc_build uic_build corelib gui iconengines_run imageformats_run
+USES=		qmake qt:4
+USE_QT=		moc_build uic_build corelib gui iconengines_run imageformats_run
 
 SUB_FILES=	${PORTNAME} pkg-deinstall pkg-message
 

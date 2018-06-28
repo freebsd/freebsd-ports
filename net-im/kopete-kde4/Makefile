@@ -18,12 +18,12 @@ LIB_DEPENDS=	libidn.so:dns/libidn \
 		libjasper.so:graphics/jasper
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 
-USES=		cmake:outsource jpeg kde:4 pkgconfig shebangfix sqlite tar:xz \
+USES=		cmake:outsource jpeg kde:4 pkgconfig qt:4 shebangfix sqlite tar:xz \
 		webplugin:native
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	kdelibs pimlibs \
 		automoc4 qimageblitz
-USE_QT4=	corelib gui network qt3support sql xml \
+USE_QT=		corelib gui network qt3support sql xml \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_XORG=	x11 xdamage xext xscrnsaver xtst
 USE_LDCONFIG=	yes

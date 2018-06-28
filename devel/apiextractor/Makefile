@@ -17,9 +17,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PySide
 GH_PROJECT=	Apiextractor
 
-USES=		cmake
+USES=		cmake qt:4
 USE_GNOME=	libxml2 libxslt
-USE_QT4=	gui moc_build qmake_build qtestlib_build \
+USE_QT=		gui moc_build qmake_build qtestlib_build \
 		rcc_build uic_build xml xmlpatterns
 USE_LDCONFIG=	yes
 

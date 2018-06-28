@@ -10,10 +10,10 @@ COMMENT=	Python bindings for the Qt5 toolkit, QtNetwork module
 CONFIGURE_ARGS=	--enable QtNetwork
 PYQT_DIST=	yes
 
-USES=		python pyqt:5
+USES=		python pyqt:5 qt:5
 USE_PYQT=	sip_build core_run
 USE_PYTHON=	flavors
-USE_QT5=	core network qmake_build
+USE_QT=		core network qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

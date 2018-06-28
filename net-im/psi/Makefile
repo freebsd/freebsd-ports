@@ -15,13 +15,13 @@ LIB_DEPENDS=	libidn.so:dns/libidn \
 		libminizip.so:archivers/minizip \
 		libqca-qt5.so:devel/qca@qt5
 
-USES=		cmake desktop-file-utils pkgconfig tar:xz
+USES=		cmake desktop-file-utils pkgconfig qt:5 tar:xz
 
 CMAKE_ARGS=	-DIDN_LIBRARY=${LOCALBASE}/lib/libidn.so \
 		-DIDN_INCLUDE_DIR=${LOCALBASE}/include \
 		-DUSE_WEBENGINE:BOOL=FALSE
 
-USE_QT5=	concurrent core dbus gui multimedia network svg webkit widgets \
+USE_QT=		concurrent core dbus gui multimedia network svg webkit widgets \
 		x11extras xml \
 		buildtools_build qmake_build imageformats_run
 USE_XORG=	ice sm x11 xcb xext xscrnsaver

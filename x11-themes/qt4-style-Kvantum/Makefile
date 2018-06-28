@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsujan
 
-USES=		compiler:c++11-lang qmake
-USE_QT4=	corelib gui svg rcc_build uic_build moc_build
+USES=		compiler:c++11-lang qmake qt:4
+USE_QT=		corelib gui svg rcc_build uic_build moc_build
 USE_XORG=	x11 xext
 
 WRKSRC_SUBDIR=	${PORTNAME}

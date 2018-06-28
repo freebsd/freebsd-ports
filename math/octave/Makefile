@@ -40,7 +40,7 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libOSMesa.so:graphics/libosmesa \
 		libsundials_arkode.so:math/sundials
 
-USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline \
+USES=		charsetfix fortran gmake libtool perl5 pkgconfig qt:5 readline \
 		tar:xz compiler:c++14-lang
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
@@ -48,7 +48,7 @@ USE_TEX=	dvipsk:build formats:build
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
-USE_QT5=	core gui help network opengl \
+USE_QT=		core gui help network opengl \
 		qmake_build buildtools_build linguist_build
 USE_XORG=	x11 xext xfixes xft
 USE_GL=		gl glu

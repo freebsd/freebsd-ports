@@ -21,8 +21,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python qmake
-USE_QT4=	corelib gui xml moc_build
+USES=		python qmake qt:4
+USE_QT=		corelib gui xml moc_build
 QMAKE_ARGS=	VERSION_NUMBER="${PORTVERSION}"
 QMAKE_SOURCE_PATH=	${WRKSRC}/main.pro
 MAKE_JOBS_UNSAFE=	yes

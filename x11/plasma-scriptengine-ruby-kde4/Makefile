@@ -11,9 +11,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma scriptengine for Ruby
 
 NO_ARCH=	yes
-USES=		cmake:outsource kde:4 tar:xz
+USES=		cmake:outsource kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs korundum automoc4
-USE_QT4=	qmake_build moc_build uic_build rcc_build
+USE_QT=		qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
 DISTINFO_FILE=	${.CURDIR:H:H}/x11/kde-workspace-kde4/distinfo
 

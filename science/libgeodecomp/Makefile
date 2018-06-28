@@ -30,7 +30,8 @@ OPTIONS_DEFAULT=	MPI QT4 SILO SCOTCH
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
 MPI_CMAKE_BOOL=		WITH_MPI
 
-QT4_USE=		QT4=corelib,gui,opengl,qmake_build,moc_build,rcc_build,uic_build
+QT4_USES=	qt:4
+QT4_USE=		QT=corelib,gui,opengl,qmake_build,moc_build,rcc_build,uic_build
 QT4_CMAKE_BOOL=		WITH_QT
 
 SILO_DESC=		Enable Silo dependend output

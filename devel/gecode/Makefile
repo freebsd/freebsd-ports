@@ -46,7 +46,8 @@ OPTIONS_DEFINE=	GIST
 OPTIONS_SUB=	yes
 
 GIST_DESC=	Interactive Search Tool (requires Qt)
-GIST_USE=	QT4=corelib,gui,moc_build,qmake_build
+GIST_USES=	qt:4
+GIST_USE=	QT=corelib,gui,moc_build,qmake_build
 GIST_CONFIGURE_ON=	--enable-gist --enable-qt
 GIST_CONFIGURE_OFF=	--disable-gist --disable-qt
 

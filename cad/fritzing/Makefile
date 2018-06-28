@@ -14,8 +14,8 @@ LICENSE=	GPLv2+
 
 SUB_FILES+=	pkg-install
 
-USES=		dos2unix gmake python qmake tar:bzip2
-USE_QT5=	buildtools concurrent core dbus gui imageformats network printsupport qmake serialport sql-sqlite3 svg xml
+USES=		dos2unix gmake python qmake qt:5 tar:bzip2
+USE_QT=		buildtools concurrent core dbus gui imageformats network printsupport qmake serialport sql-sqlite3 svg xml
 DOS2UNIX_REGEX=	.*pro
 INSTALLS_ICONS=	yes
 USE_GITHUB=	yes

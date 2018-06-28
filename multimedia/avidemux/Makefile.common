@@ -14,7 +14,6 @@ LIB_DEPENDS+=	libmad.so:audio/libmad \
 LICENSE=	GPLv2
 
 USE_GNOME=	libxml2
-USE_QT4=	# empty
 
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
 
@@ -96,7 +95,8 @@ PLIST_SUB+=	GTK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build gui
+USES+=		qt:4
+USE_QT=		qmake_build moc_build rcc_build uic_build linguist_build gui
 PLIST_SUB+=	QT4=""
 .else
 CMAKE_ARGS+=	-DQT4:BOOL=OFF

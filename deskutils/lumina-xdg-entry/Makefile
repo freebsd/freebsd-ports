@@ -20,16 +20,16 @@ I18N_DESC=	Install localization files
 
 MAKE_JOBS_UNSAFE=yes
 
-USE_QT5=	core gui widgets network svg \
+USE_QT=		core gui widgets network svg \
 		buildtools_build x11extras concurrent multimedia
-USES=		qmake
+USES=		qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
 WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}
 
 .if${PORT_OPTIONS:MI18N}
-USE_QT5+=	linguist_build
+USE_QT+=	linguist_build
 QMAKE_ARGS+=	CONFIG+=WITH_I18N
 .endif
 

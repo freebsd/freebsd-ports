@@ -8,9 +8,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Makefile generator
 
-USE_QT5=	# empty
 USES=		compiler:c++11-lib gmake pkgconfig \
-		python:build shebangfix
+		python:build qmake:no_env qt-dist:5,base shebangfix
 SHEBANG_FILES=	util/harfbuzz/update-harfbuzz \
 		util/unicode/x11/makeencodings \
 		src/3rdparty/freetype/src/tools/afblue.pl \
@@ -18,7 +17,6 @@ SHEBANG_FILES=	util/harfbuzz/update-harfbuzz \
 		mkspecs/features/uikit/devices.py \
 		mkspecs/features/uikit/device_destinations.sh
 
-QT_DIST=	base
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 # Disable everything to install minimal qconfig.pri.

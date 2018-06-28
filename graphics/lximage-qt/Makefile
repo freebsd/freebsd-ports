@@ -16,9 +16,9 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 	libfm.so:x11/libfm
 
 USES=	cmake:outsource compiler:c++11-lib desktop-file-utils gettext-runtime \
-	localbase:ldflags lxqt pkgconfig tar:xz
+	localbase:ldflags lxqt pkgconfig qt:5 tar:xz
 USE_GNOME=	glib20
-USE_QT5=	buildtools_build qmake_build core dbus gui linguisttools \
+USE_QT=		buildtools_build qmake_build core dbus gui linguisttools \
 	network printsupport svg widgets x11extras
 USE_LXQT=	buildtools libfmqt
 USE_XORG=	ice sm x11 xcb xext xfixes

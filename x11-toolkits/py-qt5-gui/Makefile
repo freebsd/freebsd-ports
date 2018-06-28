@@ -10,11 +10,11 @@ COMMENT=	Python bindings for the Qt5 toolkit, QtGui module
 CONFIGURE_ARGS=	--enable QtGui
 PYQT_DIST=	yes
 
-USES=		python pyqt:5
+USES=		python pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run
 USE_PYTHON=	flavors
-USE_QT5=	core gui qmake_build imageformats_run
+USE_QT=		core gui qmake_build imageformats_run
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

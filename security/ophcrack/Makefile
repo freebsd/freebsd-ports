@@ -27,7 +27,8 @@ GRAPH_IMPLIES=	X11
 X11_DESC=	Build Qt 4 GUI frontend
 GRAPH_DESC=	Enable graph rendering via Qwt
 
-X11_USE=	QT4=moc_build,qmake_build,rcc_build,uic_build,corelib,gui
+X11_USES=	qt:4
+X11_USE=	QT=moc_build,qmake_build,rcc_build,uic_build,corelib,gui
 X11_CONFIGURE_OFF=	--disable-gui
 
 GRAPH_LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5

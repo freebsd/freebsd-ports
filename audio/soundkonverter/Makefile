@@ -17,9 +17,9 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libphonon.so:multimedia/phonon@qt4
 
 GH_ACCOUNT=	HessiJames
-USES=		cmake compiler:c++11-lang kde:4
+USES=		cmake compiler:c++11-lang kde:4 qt:4
 USE_GITHUB=	yes
-USE_QT4=	corelib dbus gui network moc_build qmake_build rcc_build svg uic_build xml
+USE_QT=		corelib dbus gui network moc_build qmake_build rcc_build svg uic_build xml
 USE_KDE=	automoc4 kdelibs libkcddb
 WRKSRC_SUBDIR=	src
 

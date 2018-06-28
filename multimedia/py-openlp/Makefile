@@ -25,12 +25,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup32>0:www/py-beautifulsoup32@${P
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		unoconv:textproc/unoconv
 
-USES=		desktop-file-utils pyqt:4 python:2.7
+USES=		desktop-file-utils pyqt:4 python:2.7 qt:4
 USE_PYQT=	core gui \
 		network_run opengl_run phonon_run svg_run test_run webkit_run
 USE_PYTHON=	distutils autoplist
 USE_GSTREAMER=	good bad ugly
-USE_QT4=	linguist phonon-gst
+USE_QT=		linguist phonon-gst
 QT_LRELEASE=	${LRELEASE}
 NO_ARCH=	yes
 

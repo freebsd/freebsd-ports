@@ -13,8 +13,8 @@ COMMENT=	Advanced file copier
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake tar:xz
-USE_QT5=	buildtools_build linguisttools_build \
+USES=		qmake qt:5 tar:xz
+USE_QT=		buildtools_build linguisttools_build \
 		core gui network widgets xml
 QMAKE_ARGS=	LRELEASE="${LRELEASE}" ultracopier-core.pro
 

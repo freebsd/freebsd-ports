@@ -14,10 +14,10 @@ COMMENT=	Qbs Build Suite
 LICENSE=	GPLv3 LGPL21
 LICENSE_COMB=	dual
 
-USES=		compiler:c++11-lib python:run qmake:outsource shebangfix
+USES=		compiler:c++11-lib python:run qmake:outsource qt:5 shebangfix
 USE_GL=		gl
 USE_LDCONFIG=	yes
-USE_QT5=	buildtools_build core concurrent gui network script testlib \
+USE_QT=		buildtools_build core concurrent gui network script testlib \
 		widgets xml
 
 SHEBANG_FILES=	src/3rdparty/python/bin/dmgbuild
@@ -27,7 +27,8 @@ QMAKE_ARGS=		CONFIG+=qbs_disable_rpath \
 QMAKE_SOURCE_PATH=	${WRKSRC}/qbs.pro
 
 OPTIONS_DEFINE=		DOCS
-DOCS_USE=		QT5=help_build,qdoc_build,sql-sqlite3_build
+DOCS_USES=	qt:5
+DOCS_USE=		QT=help_build,qdoc_build,sql-sqlite3_build
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 ALL_TARGET=		all

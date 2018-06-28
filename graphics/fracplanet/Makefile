@@ -23,10 +23,9 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake
+USES=		gmake qmake:no_env qt:4
 USE_GL=		glu
-USE_QT4=	corelib moc_build qmake_build gui opengl
-QT_NONSTANDARD=	yes
+USE_QT=		corelib moc_build qmake_build gui opengl
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${PREFIX}"
 CONFIGURE_ARGS=	-spec ${QMAKESPEC}

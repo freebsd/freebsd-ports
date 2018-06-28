@@ -16,8 +16,8 @@ BROKEN_powerpc64=	fails to compile: btosismorphsegmentation.cpp.o: undefined ref
 LIB_DEPENDS=	libclucene-core.so:textproc/clucene \
 		libsword.so:misc/sword
 
-USES=		cmake:outsource tar:xz ssl
-USE_QT4=	corelib dbus gui iconengines network phonon qtestlib script \
+USES=		cmake:outsource qt:4 tar:xz ssl
+USE_QT=		corelib dbus gui iconengines network phonon qtestlib script \
 		svg webkit xml linguist_build moc_build qmake_build \
 		rcc_build uic_build
 

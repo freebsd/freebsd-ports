@@ -21,13 +21,13 @@ LIB_DEPENDS+=	libspeex.so:audio/speex \
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-USES=		compiler cpe desktop-file-utils gmake pkgconfig qmake ssl
+USES=		compiler cpe desktop-file-utils gmake pkgconfig qmake qt:4 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	mumble-voip
 GH_PROJECT=	mumble celt-0.7.0:mumble_celt_0_7 celt-0.11.0:mumble_celt_0_11
 GH_TAGNAME=	5a16cda:mumble_celt_0_7 e18de77:mumble_celt_0_11
 GH_SUBDIR=	celt-0.7.0-src:mumble_celt_0_7 celt-0.11.0-src:mumble_celt_0_11
-USE_QT4=	gui svg iconengines_run xml sql network l10n \
+USE_QT=		gui svg iconengines_run xml sql network l10n \
 		linguist_build moc_build rcc_build uic_build \
 		opengl sql-sqlite3_run corelib
 USE_LDCONFIG=	yes
@@ -45,7 +45,8 @@ OPTIONS_DEFINE=	DBUS BONJOUR PORTAUDIO
 OPTIONS_DEFAULT=	DBUS
 
 DBUS_VARS_OFF=	CONFIG+=no-dbus
-DBUS_USE=	QT4=dbus
+DBUS_USES=	qt:4
+DBUS_USE=	QT=dbus
 
 BONJOUR_DESC=		Bonjour support
 BONJOUR_VARS_OFF=	CONFIG+=no-bonjour

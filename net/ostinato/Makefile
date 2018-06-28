@@ -15,8 +15,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USES=		compiler:c++11-lang qmake
-USE_QT4=	corelib gui moc_build rcc_build uic_build network script \
+USES=		compiler:c++11-lang qmake qt:4
+USE_QT=		corelib gui moc_build rcc_build uic_build network script \
 		xml
 
 PLIST_FILES=	bin/drone \

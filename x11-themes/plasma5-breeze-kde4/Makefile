@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CMAKE_ON=	USE_KDE4
 
 USES=		cmake:outsource compiler:c++11-lang cpe gettext \
-		kde:4 pkgconfig tar:xz
+		kde:4 pkgconfig qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
-USE_QT4=	corelib dbus gui svg \
+USE_QT=		corelib dbus gui svg \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xcb
 

@@ -13,7 +13,8 @@ LIB_DEPENDS=	libstreams.so:deskutils/libstreams \
 		libstreamanalyzer.so:deskutils/libstreamanalyzer \
 		libsearchclient.so:deskutils/strigidaemon
 
-USE_QT4=	corelib gui dbus moc_build uic_build qmake_build rcc_build
+USES=	qt:4
+USE_QT=		corelib gui dbus moc_build uic_build qmake_build rcc_build
 USE_LDCONFIG=	yes
 
 .include <${.CURDIR}/../strigi/Makefile.common>

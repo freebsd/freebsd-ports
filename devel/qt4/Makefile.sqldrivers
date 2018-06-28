@@ -10,9 +10,8 @@ MAINTAINER=	kde@FreeBSD.org
 
 EXTRA_PATCHES=	# empty
 
-USE_QT4=	corelib sql moc_build qmake_build
-QT_DIST=	yes
-USES+=		qmake:outsource
+USE_QT=		corelib sql moc_build qmake_build
+USES+=		qmake:outsource qt-dist:4
 
 CXXFLAGS+=	-I${WRKSRC}/include  # For private QtSql headers.
 

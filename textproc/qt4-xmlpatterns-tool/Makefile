@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt command-line utility for running XQueries
 
-USE_QT4=	qmake_build xmlpatterns
-QT_DIST=	yes
+USES=		qmake:no_env qt-dist:4
+USE_QT=		xmlpatterns
 
 HAS_CONFIGURE=	yes
 

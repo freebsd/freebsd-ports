@@ -15,9 +15,9 @@ LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4 \
 		libktpcommoninternalsprivate.so:net-im/ktp-common-internals-kde4
 RUN_DEPENDS=	${KDE_PREFIX}/bin/ktp-contactlist:net-im/ktp-contact-list-kde4
 
-USES=		cmake compiler:c++11-lang gettext kde:4 tar:bzip2
+USES=		cmake compiler:c++11-lang gettext kde:4 qt:4 tar:bzip2
 USE_KDE=	automoc4
-USE_QT4=	corelib webkit xml \
+USE_QT=		corelib webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

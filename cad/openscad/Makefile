@@ -26,10 +26,10 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 CONFLICTS=      openscad-devel
 
 USES=		bison compiler:c++11-lang desktop-file-utils eigen:3 gettext-tools \
-		pkgconfig python:run qmake shebangfix
+		pkgconfig python:run qmake qt:4 shebangfix
 SHEBANG_FILES=	libraries/MCAD/get_submodules.py
 USE_GL=		glu glew
-USE_QT4=	corelib gui opengl moc_build uic_build rcc_build
+USE_QT=		corelib gui opengl moc_build uic_build rcc_build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 QMAKE_ENV=	EIGENDIR=${LOCALBASE}/include/eigen3
 QMAKE_ARGS+=	VERSION=${PORTVERSION} \

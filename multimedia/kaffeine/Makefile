@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=	libvlc.so:multimedia/vlc-qt4
 
-USES=		cmake kde:4 cpe gettext pkgconfig
+USES=		cmake kde:4 cpe gettext pkgconfig qt:4
 USE_KDE=	automoc4 kdelibs
-USE_QT4=	corelib dbus gui network phonon sql svg xml \
+USE_QT=		corelib dbus gui network phonon sql svg xml \
 		moc_build qmake_build rcc_build uic_build sql-sqlite2
 USE_XORG=	xscrnsaver
 

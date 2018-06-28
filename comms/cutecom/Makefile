@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	lsz:comms/lrzsz
 
-USES=		cmake
-USE_QT5=	buildtools_build core gui qmake_build serialport widgets
+USE_QT=		qt3support qmake_build moc_build rcc_build uic_build
+USES=		cmake qt:5
+USE_QT=		buildtools_build core gui qmake_build serialport widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	neundorf
 GH_PROJECT=	CuteCom

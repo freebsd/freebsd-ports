@@ -92,8 +92,9 @@ LIBRSVG2_USE=	GNOME=librsvg2 GL=gl,glu,glut
 GTK2_USE=	XORG=sm,ice,xext,xinerama,xi,xrandr,xcursor,xfixes GNOME=gtk20
 GNOMEUI_USE=	GNOME=libgnomeui
 SMYRNA_USE=	GNOME=libglade2,pangox-compat GL=glut
-GVEDIT_USE=	qt4=qmake_build,moc_build,rcc_build,uic_build \
-		qt4=linguist_build,corelib,gui
+GVEDIT_USES=	qt:4
+GVEDIT_USE=	qt=qmake_build,moc_build,rcc_build,uic_build \
+		qt=linguist_build,corelib,gui
 GHOSTSCRIPT_USES=ghostscript
 PERL_USES=	perl5
 PHP_USES=	php:build

@@ -45,7 +45,8 @@ GTK2_USE=	GNOME=cairo,gdkpixbuf2,gtk20,gtksourceview2
 GTK2_USES=	gettext
 
 QT4_MAKE_ENV=	hiro="qt"
-QT4_USE=	QT4=corelib,gui,moc_build
+QT4_USES=	qt:4
+QT4_USE=	QT=corelib,gui,moc_build
 
 GLX_USE=	GL=gl
 GLX_VARS=	VIDEO_DRIVER+=video.glx

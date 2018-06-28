@@ -10,9 +10,9 @@ COMMENT=	Plasma5 Breeze visual style for Gtk
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		cmake:outsource cpe kde:5 pkgconfig tar:xz
+USES=		cmake:outsource cpe kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	gdkpixbuf2
 USE_KDE=	ecm
-USE_QT5=	core buildtools_build qmake_build
+USE_QT=		core buildtools_build qmake_build
 
 .include <bsd.port.mk>

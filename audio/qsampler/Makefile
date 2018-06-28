@@ -19,7 +19,6 @@ RUN_DEPENDS=	linuxsampler:audio/linuxsampler
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USES=	autoreconf gmake pkgconfig shared-mime-info
-QT_NONSTANDARD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_cv_qmake=${QMAKE} \
 		ac_cv_path_ac_moc=${MOC} \
@@ -38,13 +37,15 @@ OPTIONS_DEFAULT=	QT5
 
 TOOLKIT_DESC=	Qt toolkit
 
-QT4_USE=	qt4=corelib,gui \
-		qt4=linguisttools_build \
-		qt4=moc_build,qmake_build,rcc_build,uic_build
+QT4_USES=	qmake:no_env qt:4
+QT4_USE=	qt=corelib,gui \
+		qt=linguisttools_build \
+		qt=moc_build,qmake_build,rcc_build,uic_build
 QT4_CONFIGURE_ENABLE=	qt4
 
-QT5_USE=	qt5=core,gui,widgets,x11extras \
-		qt5=buildtools_build,linguisttools_build,qmake_build
+QT5_USES=	qmake:no_env qt:5
+QT5_USE=	qt=core,gui,widgets,x11extras \
+		qt=buildtools_build,linguisttools_build,qmake_build
 QT5_CONFIGURE_ENABLE=	qt5
 
 post-configure:

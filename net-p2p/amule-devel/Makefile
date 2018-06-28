@@ -89,8 +89,8 @@ MMAP_CONFIGURE_ON=	--enable-mmap
 MONOLITHIC_CONFIGURE_OFF=	--disable-monolithic
 
 PLASMAMULE_CONFIGURE_ON=	--enable-plasmamule
-PLASMAMULE_USES=	kde:4
-PLASMAMULE_USE=	KDE=kdelibs QT4=dbus,gui,moc_build
+PLASMAMULE_USES=	kde:4 qt:4
+PLASMAMULE_USE=	KDE=kdelibs QT=dbus,gui,moc_build
 PLASMAMULE_CONFIGURE_ENV= \
 			ac_cv_path_KDE4_CONFIG=${KDE_PREFIX}/bin/kde4-config \
 			KBUILDSYCOCA=${KDE_PREFIX}/bin/kbuildsycoca4 \

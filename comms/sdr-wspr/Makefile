@@ -16,8 +16,8 @@ LIB_DEPENDS=	libsdr-gui.so:comms/libsdr-gui
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatuschek
-USE_QT5=	core buildtools_build qmake webkit widgets
-USES=		cmake:outsource compiler:gcc-c++11-lib fortran pkgconfig
+USE_QT=		core buildtools_build qmake webkit widgets
+USES=		cmake:outsource compiler:gcc-c++11-lib fortran pkgconfig qt:5
 
 PLIST_FILES=	bin/sdr-wspr share/applications/sdr-wspr.desktop \
 		share/icons/sdr-wspr.svg

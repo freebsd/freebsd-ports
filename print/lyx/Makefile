@@ -21,8 +21,8 @@ MAJOR_VERSION=	2.3
 MINOR_VERSION=	0
 
 USES=		desktop-file-utils gmake iconv pkgconfig perl5 \
-		python:2.7 shebangfix tar:xz
-USE_QT5=	core concurrent gui svg widgets buildtools_build qmake_build
+		python:2.7 qt:5 shebangfix tar:xz
+USE_QT=		core concurrent gui svg widgets buildtools_build qmake_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-boost \
 		--without-included-mythes \

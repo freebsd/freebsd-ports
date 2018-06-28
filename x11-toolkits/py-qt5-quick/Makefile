@@ -10,10 +10,10 @@ COMMENT=	Python bindings for the Qt5 toolkit, QtQuick module
 CONFIGURE_ARGS=	--enable QtQuick
 PYQT_DIST=	yes
 
-USES=		python pyqt:5
+USES=		python pyqt:5 qt:5
 USE_PYQT=	sip_build core_run gui_run
 USE_PYTHON=	flavors
-USE_QT5=	core quick qmake_build
+USE_QT=		core quick qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

@@ -18,8 +18,8 @@ COMMENT=	Qt-based frontend for wpa_supplicant
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		gmake
-USE_QT5=	qmake_build buildtools_build linguisttools_build core gui \
+USES=		gmake qt:5
+USE_QT=		qmake_build buildtools_build linguisttools_build core gui \
 		widgets svg_run
 
 ALL_TARGET=	wpa_gui-qt4

@@ -10,11 +10,11 @@ COMMENT=	Python bindings for the Qt5 toolkit, QtMultimediaWidgets module
 CONFIGURE_ARGS=	--enable QtMultimediaWidgets
 PYQT_DIST=	yes
 
-USES=		python pyqt:5
+USES=		python pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run multimedia_run widgets_run
 USE_PYTHON=	flavors
-USE_QT5=	core gui multimedia network widgets qmake_build
+USE_QT=		core gui multimedia network widgets qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CONFLICTS=	${PORTNAME}-0.*
 PORTSCOUT=	limit:^1\..*
 
-USES=		cmake:outsource pathfix pkgconfig tar:bzip2
-USE_QT5=	core gui network widgets xml \
+USES=		cmake:outsource pathfix pkgconfig qt:5 tar:bzip2
+USE_QT=		core gui network widgets xml \
 		buildtools_build linguisttools_build qmake_build
 USE_LDCONFIG=	yes
 
@@ -72,7 +72,8 @@ QSUI_DESC=	Simple UI based on standard widgets set
 QSUI_CMAKE_BOOL=	USE_QSUI
 
 SKINNEDUI_DESC=	Skinned GUI
-SKINNEDUI_USE=	QT5=x11extras XORG=x11
+SKINNEDUI_USES=	qt:5
+SKINNEDUI_USE=	QT=x11extras XORG=x11
 SKINNEDUI_CMAKE_BOOL=	USE_SKINNED
 
 DIR_ASSOC_DESC=	inode/directory mime type association
@@ -95,7 +96,8 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
 QTMULTIMEDIA_DESC=	Support to use Qt low-level multimedia API
-QTMULTIMEDIA_USE=	QT5=multimedia
+QTMULTIMEDIA_USES=	qt:5
+QTMULTIMEDIA_USE=	QT=multimedia
 QTMULTIMEDIA_CMAKE_BOOL=	USE_QTMULTIMEDIA
 
 SHOUTCAST_LIB_DEPENDS=	libogg.so:audio/libogg \
@@ -221,7 +223,8 @@ COPYPASTE_DESC=	Enable copy/paste track infos between playlists
 COPYPASTE_CMAKE_BOOL=	USE_COPYPASTE
 
 MPRIS_DESC=	Support the Media Player Remote
-MPRIS_USE=	QT5=dbus
+MPRIS_USES=	qt:5
+MPRIS_USE=	QT=dbus
 MPRIS_CMAKE_BOOL=	USE_MPRIS
 
 SCROBBLER_DESC=	Support Libre.fm/Last.fm scrobbler feature
@@ -243,15 +246,18 @@ NOTIFIER_CMAKE_BOOL=	USE_NOTIFIER
 LYRICS_DESC=	Support to show lyrics using lyrics.wikia.com
 LYRICS_CMAKE_BOOL=	USE_LYRICS
 
-HAL_USE=	QT5=dbus
+HAL_USES=	qt:5
+HAL_USE=	QT=dbus
 HAL_CMAKE_BOOL=	USE_HAL
 
 HOTKEY_DESC=	Support global shortcut keys
-HOTKEY_USE=	QT5=x11extras XORG=x11
+HOTKEY_USES=	qt:5
+HOTKEY_USE=	QT=x11extras XORG=x11
 HOTKEY_CMAKE_BOOL=	USE_HOTKEY
 
 GNOMEHOTKEY_DESC=	Support GNOME/Cinnamon shortcut keys
-GNOMEHOTKEY_USE=	QT5=dbus
+GNOMEHOTKEY_USES=	qt:5
+GNOMEHOTKEY_USE=	QT=dbus
 GNOMEHOTKEY_CMAKE_BOOL=	USE_GNOMEHOTKEY
 
 FILEOPS_DESC=	Support file operation
@@ -261,7 +267,8 @@ COVER_DESC=	Support to show cover images
 COVER_CMAKE_BOOL=	USE_COVER
 
 KDENOTIFY_DESC=	Support to popup notifier for KDE
-KDENOTIFY_USE=	QT5=dbus
+KDENOTIFY_USES=	qt:5
+KDENOTIFY_USE=	QT=dbus
 KDENOTIFY_CMAKE_BOOL=	USE_KDENOTIFY
 
 TRACKCHANGE_DESC=	Enable to run external command each track
@@ -269,7 +276,8 @@ TRACKCHANGE_CMAKE_BOOL=	USE_TRACKCHANGE
 
 UDISKS2_DESC=	Support removable disc detection using UDisks
 UDISKS2_RUN_DEPENDS=	bsdisks:sysutils/bsdisks
-UDISKS2_USE=	QT5=dbus
+UDISKS2_USES=	qt:5
+UDISKS2_USE=	QT=dbus
 UDISKS2_CMAKE_BOOL=	USE_UDISKS2
 
 QMMP_DIALOG_DESC=	An original dialog

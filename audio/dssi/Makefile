@@ -37,8 +37,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES QT4
 OPTIONS_DEFAULT=QT4
 OPTIONS_SUB=	yes
 
-QT4_USE=	QT4=corelib,gui,moc_build
-QT_NONSTANDARD=	yes
+QT4_USES=	qmake:no_env qt:4
+QT4_USE=	QT=corelib,gui,moc_build
 
 post-patch:
 	@${REINPLACE_CMD} -e \

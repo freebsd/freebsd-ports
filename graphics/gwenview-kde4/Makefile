@@ -11,10 +11,10 @@ COMMENT=	Image viewer and browser for KDE 4
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libpng.so:graphics/png
 
-USES=		cmake:outsource jpeg kde:4 pkgconfig tar:xz
+USES=		cmake:outsource jpeg kde:4 pkgconfig qt:4 tar:xz
 USE_KDE=	kactivities kdelibs baloo kfilemetadata \
 		libkdcraw libkipi libkonq automoc4 soprano
-USE_QT4=	corelib gui opengl qmake_build moc_build uic_build rcc_build
+USE_QT=		corelib gui opengl qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

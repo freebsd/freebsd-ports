@@ -58,11 +58,13 @@ JACK_LIB_DEPENDS=	libjack.so:audio/jack \
 JACK_CMAKE_OFF=	-DBUILD_JACK="OFF"
 KX_CMAKE_ON=	-DBUILD_UI="ON" -DBUILD_SANDBOX_KX="ON"
 KX_USE=		XORG=x11,xcb,xext GL=glu
+QT4_USES=	qt:4
 QT4_CMAKE_ON=	-DBUILD_UI="ON" -DBUILD_SANDBOX_QT4="ON"
-QT4_USE=	XORG=x11,xcb,xext GL=glu QT4=corelib,gui
+QT4_USE=	XORG=x11,xcb,xext GL=glu QT=corelib,gui
+QT5_USES=	qt:5
 QT5_BROKEN=	Build fails: https://github.com/OpenMusicKontrollers/synthpod/issues/10
 QT5_CMAKE_ON=	-DBUILD_UI="ON" -DBUILD_SANDBOX_QT5="ON"
-QT5_USE=	XORG=x11,xcb,xext GL=glu QT5=core,gui
+QT5_USE=	XORG=x11,xcb,xext GL=glu QT=core,gui
 SHOW_USE=	XORG=x11,xcb,xext GL=glu
 SHOW_CMAKE_ON=	-DBUILD_UI="ON" -DBUILD_SANDBOX_SHOW="ON"
 X11_CMAKE_ON=	-DBUILD_UI="ON" -DBUILD_SANDBOX_X11="ON"

@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
-USES=		cmake:outsource gettext kde:4 pkgconfig tar:xz
-USE_QT4=	moc_build qmake_build rcc_build uic_build
+USES=		cmake:outsource gettext kde:4 pkgconfig qt:4 tar:xz
+USE_QT=		moc_build qmake_build rcc_build uic_build
 USE_KDE=	automoc4 kdelibs
 USE_LDCONFIG=	yes
 

@@ -107,7 +107,6 @@ GNU_CONFIGURE=	yes
 USE_GL=		gl glew glu
 USE_OPENLDAP=	yes
 USE_PERL5=	build
-USE_QT4=	# empty but required
 USE_XORG=	ice sm x11 xaw xext xinerama xrandr xrender
 USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
 		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz
@@ -195,8 +194,8 @@ KDE4_CONFIGURE_ENV=	KDE4DIR="${KDE_PREFIX}" \
 			QT4DIR="${PREFIX}" \
 			QT4INC="${QT_INCDIR}" \
 			QT4LIB="${QT_LIBDIR}"
-KDE4_USES=	kde:4
-KDE4_USE=	KDE=kdelibs QT4=moc_build,qmake_build
+KDE4_USES=	kde:4 qt:4
+KDE4_USE=	KDE=kdelibs QT=moc_build,qmake_build
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 MMEDIA_USE=	GSTREAMER1=yes

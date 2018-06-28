@@ -31,7 +31,7 @@ LIB_DEPENDS=	libKF5KGeoMap.so:astro/libkgeomap \
 		libtiff.so:graphics/tiff
 
 USES=		cmake:outsource compiler:c++11-lib eigen:3 jpeg kde:5 pkgconfig \
-		shebangfix tar:xz
+		qt:5 shebangfix tar:xz
 USE_GNOME=	glib20 libxml2 libxslt
 USE_KDE=	archive auth bookmarks calendarcore codecs completion config \
 		configwidgets coreaddons crash doctools ecm filemetadata \
@@ -39,7 +39,7 @@ USE_KDE=	archive auth bookmarks calendarcore codecs completion config \
 		kio marble libkipi notifications notifyconfig parts service \
 		solid sonnet textwidgets threadweaver unitconversion \
 		widgetsaddons windowsystem xmlgui
-USE_QT5=	concurrent core dbus gui network opengl printsupport sql \
+USE_QT=		concurrent core dbus gui network opengl printsupport sql \
 		webkit widgets x11extras xml \
 		sql-sqlite3_run \
 		buildtools_build qmake_build
@@ -66,7 +66,8 @@ MULTIMEDIA_DESC=	Multimedia support
 MULTIMEDIA_CMAKE_BOOL=	ENABLE_MEDIAPLAYER
 MULTIMEDIA_LIB_DEPENDS=	libQtAV.so:multimedia/QtAV
 
-MYSQL_USE=		MYSQL=server QT5=sql-mysql_run
+MYSQL_USES=	qt:5
+MYSQL_USE=		MYSQL=server QT=sql-mysql_run
 MYSQL_CMAKE_BOOL=	ENABLE_INTERNALMYSQL \
 			ENABLE_MYSQLSUPPORT
 MYSQL_CMAKE_ON=		-DMYSQLD_PATH:PATH=${LOCALBASE}/libexec \

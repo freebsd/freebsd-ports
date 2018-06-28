@@ -11,8 +11,8 @@ COMMENT=	Graphical interface to git repositories
 
 LICENSE=	GPLv2
 
-USES=		cmake:outsource
-USE_QT5=	core gui widgets \
+USES=		cmake:outsource qt:5
+USE_QT=		core gui widgets \
 		buildtools_build qmake_build
 
 USE_GITHUB=	yes

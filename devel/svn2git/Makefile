@@ -17,9 +17,9 @@ RUN_DEPENDS=	git:devel/git \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 		p5-subversion>=0:devel/p5-subversion
 
-USES=		qmake
+USES=		qmake qt:5
 USE_GITHUB=	yes
-USE_QT5=	core
+USE_QT=		core
 GH_ACCOUNT=	svn-all-fast-export
 
 OPTIONS_DEFINE=	FREEBSD_REPO

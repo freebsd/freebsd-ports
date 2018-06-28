@@ -19,7 +19,7 @@ NOT_FOR_ARCHS_REASON=	fails to configure: "Big Endian not supported"
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
 
-USES+=		autoreconf compiler:c++11-lib gmake libtool pkgconfig ssl
+USES+=		autoreconf compiler:c++11-lib gmake libtool pkgconfig qt:5 ssl
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 
@@ -27,13 +27,14 @@ SLAVE_PORT?=	no
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 USES+=		desktop-file-utils
-USE_QT5=	core gui network widgets \
+USE_QT=		core gui network widgets \
 		buildtools_build linguisttools_build qmake_build
 
 BUILD_DEPENDS+=	protoc:devel/protobuf
 LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
 
-TESTS_USE=		QT5=testlib
+TESTS_USES=	qt:5
+TESTS_USE=		QT=testlib
 TESTS_PLIST_FILES=	bin/test_litecoin-qt \
 			bin/test_litecoin
 .endif
@@ -49,7 +50,8 @@ WALLET_DESC=	Wallet Management Support
 ZMQ_DESC=	Block and transaction broadcasting with ZeroMQ
 
 DBUS_CONFIGURE_WITH=	dbus
-DBUS_USE=		QT5=dbus
+DBUS_USES=	qt:5
+DBUS_USE=		QT=dbus
 
 DEBUG_CONFIGURE_ENABLE=		debug
 DEBUG_INSTALL_TARGET_OFF=	install-strip

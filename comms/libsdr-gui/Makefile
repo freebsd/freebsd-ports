@@ -19,8 +19,8 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	hmatuschek
 
-USE_QT5=	core buildtools_build qmake widgets
-USES=		cmake pkgconfig
+USE_QT=		core buildtools_build qmake widgets
+USES=		cmake pkgconfig qt:5
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

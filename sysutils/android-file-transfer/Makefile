@@ -45,11 +45,13 @@ QT_PLIST_FILES=	bin/android-file-transfer \
 		share/icons/hicolor/512x512/apps/android-file-transfer.png \
 		share/metainfo/android-file-transfer.appdata.xml
 
-QT4_USE=	QT4=qmake_build,moc_build,rcc_build,uic_build,corelib,gui
+QT4_USES=	qt:4
+QT4_USE=	QT=qmake_build,moc_build,rcc_build,uic_build,corelib,gui
 QT4_CMAKE_ON=	-DDESIRED_QT_VERSION:STRING=4
 QT4_IMPLIES=	QT
 
-QT5_USE=	QT5=qmake_build,buildtools_build,core,gui,widgets
+QT5_USES=	qt:5
+QT5_USE=	QT=qmake_build,buildtools_build,core,gui,widgets
 QT5_CMAKE_ON=	-DDESIRED_QT_VERSION:STRING=5
 QT5_IMPLIES=	QT
 

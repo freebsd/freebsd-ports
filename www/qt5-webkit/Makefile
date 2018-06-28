@@ -20,10 +20,10 @@ LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 			libwebp.so:graphics/webp
 
 USES=			bison cmake:outsource gperf jpeg pathfix perl5 pkgconfig \
-			python:2.7,build sqlite:3 tar:xz
+			python:2.7,build qt:5 sqlite:3 tar:xz
 USE_GNOME=		glib20 libxml2 libxslt
 USE_GSTREAMER1=		core
-USE_QT5=		core gui location network opengl printsupport \
+USE_QT=			core gui location network opengl printsupport \
 			qml quick sensors testlib webchannel widgets \
 			buildtools_build qmake_build
 USE_RUBY=		yes

@@ -8,9 +8,9 @@ CATEGORIES=	games kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
-USES=		cmake:outsource kde:4 shared-mime-info tar:xz
+USES=		cmake:outsource kde:4 qt:4 shared-mime-info tar:xz
 USE_KDE=	kdelibs libkdegames automoc4
-USE_QT4=	moc_build qmake_build rcc_build uic_build
+USE_QT=		moc_build qmake_build rcc_build uic_build
 
 post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \

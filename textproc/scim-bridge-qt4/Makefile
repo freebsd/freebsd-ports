@@ -18,9 +18,8 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/doc/LICENSE.LGPL
 
 RUN_DEPENDS=	scim-bridge:textproc/scim-bridge
 
-USE_QT4=	corelib gui moc_build
-QT_NONSTANDARD=	yes
-USES=		gettext gmake libtool pkgconfig
+USE_QT=		corelib gui moc_build
+USES=		gettext gmake libtool pkgconfig qmake:no_env qt:4
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__

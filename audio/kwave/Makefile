@@ -19,12 +19,12 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libvorbisenc.so:audio/libvorbis
 
 USES=		cmake:outsource desktop-file-utils gettext kde:5 \
-		localbase:ldflags pkgconfig tar:xz
+		localbase:ldflags pkgconfig qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons ecm i18n iconthemes itemviews \
 		jobwidgets kio service solid sonnet textwidgets widgetsaddons \
 		xmlgui
-USE_QT5=	concurrent core dbus gui multimedia network widgets xml \
+USE_QT=		concurrent core dbus gui multimedia network widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_GROUP=			AUDIOPLUGIN

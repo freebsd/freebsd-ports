@@ -20,11 +20,12 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libvorbis.so:audio/libvorbis \
 		libmyth-29.so:multimedia/mythtv
 
+USES=	qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
 USE_LDCONFIG=	yes
-USE_QT5=	buildtools_build core gui qmake_build sql xml
+USE_QT=		buildtools_build core gui qmake_build sql xml
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-all \

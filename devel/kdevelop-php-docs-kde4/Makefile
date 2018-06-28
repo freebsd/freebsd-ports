@@ -13,9 +13,9 @@ COMMENT=	PHP documentation for KDevelop
 
 LIB_DEPENDS=	libkdevplatforminterfaces.so:devel/kdevplatform-kde4
 
-USES=		cmake:outsource compiler:c++11-lib kde:4 tar:xz
+USES=		cmake:outsource compiler:c++11-lib kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
-USE_QT4=	moc_build qmake_build rcc_build uic_build webkit
+USE_QT=		moc_build qmake_build rcc_build uic_build webkit
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

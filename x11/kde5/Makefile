@@ -12,9 +12,9 @@ LICENSE=	LGPL20
 RUN_DEPENDS=	kde-baseapps>=0:x11/kde-baseapps \
 		kwalletmanager5:security/kwalletmanager
 
-USES=		kde:5 metaport
+USES=		kde:5 metaport qt:5
 USE_KDE=	plasma-desktop_run
-USE_QT5=	# empty
+USE_QT=		# empty
 
 OPTIONS_DEFINE=	KDEADMIN KDEEDU \
 		KDEGAMES KDEGRAPHICS KDEMULTIMEDIA KDENETWORK \

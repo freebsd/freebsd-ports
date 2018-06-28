@@ -13,18 +13,20 @@ COMMENT=	Qt C++ library for the Last.fm webservices
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lastfm
 USE_LDCONFIG=	yes
 
 SLAVE?=		qt4
 .if ${SLAVE} == qt4
-USE_QT4=	corelib dbus network sql xml \
+USES+=		qt:4
+USE_QT=		corelib dbus network sql xml \
 		moc_build qmake_build rcc_build
 CMAKE_ON+=	BUILD_WITH_QT4
 .else
-USE_QT5=	core dbus network sql xml \
+USES+=		qt:5
+USE_QT=		core dbus network sql xml \
 		buildtools_build qmake_build
 CMAKE_OFF+=	BUILD_WITH_QT4
 QTVER_SUFFIX=	5
@@ -45,9 +47,10 @@ FINGERPRINT_BUILD_DEPENDS=	${NONEXISTENT}:math/fftw3:patch
 FINGERPRINT_CMAKE_ON=	-DLIBFFTW3_INCLUDE_DIR:PATH=`${MAKE} -C ${PORTSDIR}/math/fftw3 -VWRKSRC`/api
 
 .if ${SLAVE} == qt4
-TEST_USE=		QT4=qtestlib_build
+TEST_USES=	qt:4 qt:5
+TEST_USE=		QT=qtestlib_build
 .else
-TEST_USE=		QT5=testlib_build
+TEST_USE=		QT=testlib_build
 .endif
 TEST_CMAKE_BOOL=	BUILD_TESTS
 TEST_TEST_TARGET=	test

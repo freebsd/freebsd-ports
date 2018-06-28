@@ -11,8 +11,8 @@ COMMENT=	UDisks2 service implementation for FreeBSD
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang qt:5
 
-USE_QT5=	qmake_build buildtools_build core dbus
+USE_QT=		qmake_build buildtools_build core dbus
 
 .include <bsd.port.mk>

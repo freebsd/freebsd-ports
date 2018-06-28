@@ -31,10 +31,10 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	pivy>0:graphics/py-pivy@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++11-lib cmake:outsource eigen:3 fortran jpeg \
-		python:2.7 localbase
+		python:2.7 localbase qt:4
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
-USE_QT4=	qmake_build corelib gui moc_build network opengl rcc_build \
+USE_QT=		qmake_build corelib gui moc_build network opengl rcc_build \
 		uic_build svg xml webkit
 USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL

@@ -25,10 +25,10 @@ TESSERACT_RUN_DEPENDS=	tesseract:graphics/tesseract
 
 OPTIONS_DEFAULT=	CUNEIFORM
 
-USES=		cmake desktop-file-utils pkgconfig
+USES=		cmake desktop-file-utils pkgconfig qt:4
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_QT4=	corelib gui imageformats linguist_build \
+USE_QT=		corelib gui imageformats linguist_build \
 		moc_build qmake_build rcc_build uic_build
 
 PLIST_FILES=	bin/yagf lib/yagf/libxspreload.so share/applications/YAGF.desktop\

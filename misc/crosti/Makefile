@@ -12,9 +12,9 @@ COMMENT=	Convert custom image to cross stitch design, edit stitch designs
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-USES=		desktop-file-utils dos2unix qmake shared-mime-info zip
+USES=		desktop-file-utils dos2unix qmake qt:5 shared-mime-info zip
 USE_GL=		gl
-USE_QT5=	concurrent core gui printsupport svg widgets buildtools_build
+USE_QT=		concurrent core gui printsupport svg widgets buildtools_build
 DOS2UNIX_FILES=	${PORTNAME}.pro
 NO_WRKSUBDIR=	yes
 

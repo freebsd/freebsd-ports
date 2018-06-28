@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
 
-USES=		cmake:outsource compiler:c++11-lang pkgconfig
-USE_QT4=	corelib gui linguisttools_build moc_build qmake_build rcc_build \
+USES=		cmake:outsource compiler:c++11-lang pkgconfig qt:4
+USE_QT=		corelib gui linguisttools_build moc_build qmake_build rcc_build \
 		uic_build xml
 
 OPTIONS_DEFINE=	7ZIP ACE RAR

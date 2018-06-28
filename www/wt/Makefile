@@ -178,7 +178,8 @@ USE_GNOME+=	pango
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4=	corelib moc_build
+USES+=		qt:4
+USE_QT=		corelib moc_build
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}

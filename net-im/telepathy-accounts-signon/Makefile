@@ -15,8 +15,8 @@ LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libmission-control-plugins.so:net-im/telepathy-mission-control \
 		libsignon-glib.so:net-im/libsignon-glib
 
-USES=		gettext pkgconfig qmake tar:bz2
-USE_QT5=	buildtools_build core qmake_build
+USES=		gettext pkgconfig qmake qt:5 tar:bz2
+USE_QT=		buildtools_build core qmake_build
 
 USE_LDCONFIG=	YES
 

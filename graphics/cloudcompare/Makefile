@@ -16,12 +16,12 @@ LICENSE_COMB=	multi
 BROKEN_FreeBSD_10=	error: "SSE instruction set not enabled"
 BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
-USES=		cmake:outsource localbase:ldflags
+USES=		cmake:outsource localbase:ldflags qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	CloudCompare
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	5d41227deb30c445ccbaa2d789a4363b57948a5d
-USE_QT5=	concurrent core gui opengl printsupport widgets buildtools_build qmake_build
+USE_QT=		concurrent core gui opengl printsupport widgets buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DXFLIB GAMEPAD GDAL PDAL SHAPELIB PLUGINS
@@ -36,7 +36,8 @@ SHAPELIB_DESC=	Enable shape file support
 
 DXFLIB_CMAKE_BOOL=	OPTION_USE_DXF_LIB
 
-GAMEPAD_USE=		QT5=gamepad
+GAMEPAD_USES=	qt:5
+GAMEPAD_USE=		QT=gamepad
 GAMEPAD_CMAKE_BOOL=	OPTION_SUPPORT_GAMEPADS
 
 GDAL_CMAKE_BOOL=	OPTION_USE_GDAL

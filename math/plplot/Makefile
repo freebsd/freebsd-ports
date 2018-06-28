@@ -95,7 +95,8 @@ TCLTK_CMAKE_ON=		-DPLPLOT_TK_VERSION:STRING="${TK_VER}" \
 
 THREADS_CMAKE_BOOL=	THREADS_HAVE_PTHREAD_ARG
 
-QT4_USE=		QT4=corelib,gui,svg,xml,moc_build,qmake_build,rcc_build,uic_build
+QT4_USES=		qt:4
+QT4_USE=		QT=corelib,gui,svg,xml,moc_build,qmake_build,rcc_build,uic_build
 QT4_CMAKE_BOOL=		ENABLE_qt
 QT4_CMAKE_BOOL_OFF=	DEFAULT_NO_QT_DEVICES
 

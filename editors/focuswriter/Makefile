@@ -16,11 +16,11 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/resources/images/icons/oxygen/COPYING
 
 LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
 
-USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake
+USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	gottcode
 USE_GL=		gl
-USE_QT5=	concurrent core gui multimedia network printsupport widgets \
+USE_QT=		concurrent core gui multimedia network printsupport widgets \
 		buildtools_build linguisttools_build
 
 PORTDATA=	*

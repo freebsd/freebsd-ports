@@ -14,9 +14,9 @@ LICENSE=	GPLv3+
 
 OPTIONS_DEFINE=	GRAPHVIZ DOCS EXAMPLES
 
-USES=		tar:bzip2 cmake desktop-file-utils
+USES=		qt:4 tar:bzip2 cmake desktop-file-utils
 USE_XORG=	xi
-USE_QT4=	corelib gui qt3support svg xml \
+USE_QT=		corelib gui qt3support svg xml \
 		moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes
 

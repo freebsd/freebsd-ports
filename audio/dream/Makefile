@@ -16,8 +16,8 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib\
 		libqwt.so:x11-toolkits/qwt5\
 		libfftw3.so:math/fftw3
 
-USES=		gmake pkgconfig qmake
-USE_QT4=	qmake_build moc_build uic_build corelib gui network rcc webkit
+USES=		gmake pkgconfig qmake qt:4
+USE_QT=		qmake_build moc_build uic_build corelib gui network rcc webkit
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=		SNDFILE OGG VORBIS FLAC OPUS SPEEX FAAD FAAC

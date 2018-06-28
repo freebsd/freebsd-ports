@@ -14,9 +14,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt *.adp-compatible documentation browser
 
-USE_QT4=	moc_build rcc_build uic_build corelib \
+USE_QT=		moc_build rcc_build uic_build corelib \
 		gui network xml doc dbus
-USES=		qmake
+USES=		qmake qt:4
 QMAKE_ARGS=	QT_CONFIG+="dbus" QT_PRODUCT="OpenSource"
 
 ALL_TARGET=	first

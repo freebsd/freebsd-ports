@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 localization tools
 
-USE_QT4=	qmake_build designer_build moc_build rcc_build uic_build \
+USES=		qmake:no_env qt-dist:4
+USE_QT=		designer_build moc_build rcc_build uic_build \
 		assistant_run gui linguisttools_run network xml
-QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
 

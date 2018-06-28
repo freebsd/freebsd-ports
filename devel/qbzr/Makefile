@@ -20,10 +20,10 @@ RUN_DEPENDS=	bzr:devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gettext pyqt:4 python:2.7
+USES=		gettext pyqt:4 python:2.7 qt:4
 USE_PYQT=	core
 USE_PYTHON=	distutils autoplist
-USE_QT4=	# empty
+USE_QT=		# empty
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

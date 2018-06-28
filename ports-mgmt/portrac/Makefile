@@ -20,9 +20,9 @@ PLIST_FILES=	bin/portrac \
 # Unhide std::to_string() to fix build with GCC (ports/193528)
 CXXFLAGS=	-D_GLIBCXX_USE_C99
 
-USES=		compiler:c++11-lib qmake tar:bzip2
+USES=		compiler:c++11-lib qmake qt:5 tar:bzip2
 USE_CXXSTD=	c++11
-USE_QT5=	widgets buildtools_build
+USE_QT=		widgets buildtools_build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/portrac ${STAGEDIR}${PREFIX}/bin && \

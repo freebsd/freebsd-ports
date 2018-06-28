@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		cmake:outsource desktop-file-utils ghostscript:run \
-		shared-mime-info localbase
-USE_QT4=	gui xml dbus designer_build linguisttools_build \
+		qt:4 shared-mime-info localbase
+USE_QT=		gui xml dbus designer_build linguisttools_build \
 		qmake_build moc_build rcc_build uic_build
 USE_TEX=	latex dvipsk
 CMAKE_ARGS=	-DQT_QMAKE_EXECUTABLE_FINDQT=${QMAKE} \

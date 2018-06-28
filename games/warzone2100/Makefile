@@ -24,13 +24,13 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
-USES=		bison compiler:c++11-lib gmake localbase openal:al pkgconfig ssl tar:xz
+USES=		bison compiler:c++11-lib gmake localbase openal:al pkgconfig \
+		qmake:no_env qt:5 ssl tar:xz
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu glew
 USE_SDL=	sdl2
 USE_XORG=	x11 xrandr
-USE_QT5=	core gui widgets script buildtools_build
-QT_NONSTANDARD=	yes
+USE_QT=		core gui widgets script buildtools_build
 CONFIGURE_ARGS=	--program-transform-name="" --with-distributor="FreeBSD ports"
 CONFIGURE_ENV=	LIBCRYPTO_CFLAGS="-I${OPENSSLINC}" \
 		LIBCRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto"

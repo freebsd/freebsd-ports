@@ -21,11 +21,13 @@ GH_ACCOUNT=	flavio
 USE_LDCONFIG=	yes
 
 .  if ${FLAVOR} == qt4
-USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
+USES+=		qt:4
+USE_QT=		corelib moc_build qmake_build rcc_build uic_build
 CMAKE_ON=	QT4_BUILD
 PLIST_SUB=	QT5="@comment " NO_QT5=""
 .  else
-USE_QT5=	core buildtools_build qmake_build
+USES+=		qt:5
+USE_QT=		core buildtools_build qmake_build
 CMAKE_OFF=	QT4_BUILD
 PLIST_SUB=	QT5="" NO_QT5="@comment "
 QT_SUFFIX=	-qt5

@@ -12,9 +12,9 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Qt4 binding for FreePascal
 
 USE_LDCONFIG=	yes
-USE_QT4=	corelib gui network script webkit \
+USE_QT=		corelib gui network script webkit \
 		moc_build
-USES=		qmake
+USES=		qmake qt:4
 
 QT4_VER_MIN=	4.5.3
 

@@ -86,7 +86,8 @@ KRB_NONE_DESC=		Disable Kerberos support
 
 GTK2_USE=	GNOME=gtk20,cairo
 GTK3_USE=	GNOME=gtk30,cairo
-QT5_USE=	qt5=core,gui,widgets,printsupport,buildtools_build,linguisttools_build
+QT5_USES=		qt:5
+QT5_USE=	qt=core,gui,widgets,printsupport,buildtools_build,linguisttools_build
 
 LUA_USES=		lua:5[1-2]
 KRB_BASE_USES=		gssapi

@@ -36,24 +36,24 @@ PLIST_SUB+=	QT="" KDE="@comment "
 .  if ${PKGNAMESUFFIX} == "-qt5"
 # Qt 5 only
 CONFLICTS_INSTALL=	kid3-3.* kid3-qt4-3.*
-
-USE_QT5=	core dbus gui multimedia network testlib xml widgets \
+USES+=		qt:5
+USE_QT=		core dbus gui multimedia network testlib xml widgets \
 		buildtools_build linguisttools_build qmake_build
 CMAKE_ARGS+=	-DWITH_QT5=true
 OPTIONS_EXCLUDE=PHONON
 .  elif ${PKGNAMESUFFIX} == "-qt4"
 # Qt 4 only
 CONFLICTS_INSTALL=	kid3-3.* kid3-qt5-3.*
-
-USE_QT4=	corelib dbus gui network xml \
+USES+=		qt:4
+USE_QT=		corelib dbus gui network xml \
 		qmake_build moc_build rcc_build uic_build \
 		linguisttools_build
 .  endif
 .else
 # KDE 4 only
 CONFLICTS_INSTALL=	kid3-qt4-3.* kid3-qt5-3.*
-
-USE_QT4=	corelib dbus gui network svg xml \
+USES+=		qt:4
+USE_QT=		corelib dbus gui network svg xml \
 		qmake_build moc_build rcc_build uic_build \
 		linguisttools_build
 USE_KDE=	kdelibs automoc4
@@ -81,7 +81,8 @@ MP3_CMAKE_BOOL=		WITH_ID3LIB
 MP4_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
 MP4_CMAKE_BOOL=		WITH_MP4V2
 
-PHONON_USE=		QT4=phonon
+PHONON_USES=	qt:4
+PHONON_USE=		QT=phonon
 PHONON_CMAKE_BOOL=	WITH_PHONON
 
 TAGLIB_DESC=		Various audio formats support via Taglib

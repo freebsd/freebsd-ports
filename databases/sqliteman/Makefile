@@ -12,8 +12,8 @@ COMMENT=	Admin's GUI tool for Sqlite3
 
 LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2
 
-USES=		cmake sqlite
-USE_QT4=	qmake_build gui moc_build rcc_build uic_build xml sql
+USES=		cmake qt:4 sqlite
+USE_QT=		qmake_build gui moc_build rcc_build uic_build xml sql
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

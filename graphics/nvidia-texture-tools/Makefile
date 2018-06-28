@@ -38,7 +38,8 @@ OPTIONS_DEFINE=	COMPRESSUI DOCS
 OPTIONS_SUB=	yes
 
 COMPRESSUI_DESC=Build compressor UI (requires Qt4)
-COMPRESSUI_USE=	QT4=qmake_build,moc_build,uic_build,rcc_build,corelib,gui,opengl
+COMPRESSUI_USES=	qt:4
+COMPRESSUI_USE=	QT=qmake_build,moc_build,uic_build,rcc_build,corelib,gui,opengl
 
 post-patch-COMPRESSUI-on:
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*Qt4/ s|)$$| REQUIRED&|' \

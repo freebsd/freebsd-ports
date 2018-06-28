@@ -27,15 +27,14 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libxml2.so:textproc/libxml2
 BUILD_DEPENDS=	yasm:devel/yasm
 
-USES=		gmake iconv libtool pkgconfig pathfix ssl
+USES=		gmake iconv libtool pkgconfig pathfix qmake:no_env qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 USE_GL=		gl
 USE_LDCONFIG=	yes
-USE_QT5=	buildtools_build core dbus gui imageformats_run \
+USE_QT=		buildtools_build core dbus gui imageformats_run \
 		linguist_build network opengl qmake_build script sql \
 		sql-mysql_run webkit widgets xml
-QT_NONSTANDARD=	yes
 USE_XORG=	x11 xv xrandr xxf86vm xinerama xext xcb
 
 HAS_CONFIGURE=	yes

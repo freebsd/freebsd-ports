@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USES=		cmake compiler:c++11-lib
-USE_QT5=	buildtools concurrent core network qmake widgets
+USES=		cmake compiler:c++11-lib qt:5
+USE_QT=		buildtools concurrent core network qmake widgets
 USE_GITHUB=	yes
 GH_TAGNAME=	2018-04-16-Release-2.5.1
 
@@ -35,8 +35,8 @@ SERVATRICE_CMAKE_OFF=	-DWITH_SERVER=OFF
 COCKATRICE_CMAKE_ON=	-DWITH_CLIENT=ON -DWITH_ORACLE=ON
 COCKATRICE_CMAKE_OFF=	-DWITH_CLIENT=OFF -DWITH_ORACLE=OFF
 
-COCKATRICE_USE=		qt5=multimedia,printsupport,svg,linguisttools,gui
-SERVATRICE_USE=		qt5=sql,sql-mysql,websockets
+COCKATRICE_USE=		qt=multimedia,printsupport,svg,linguisttools,gui
+SERVATRICE_USE=		qt=sql,sql-mysql,websockets
 SERVATRICE_USE+=	RC_SUBR=servatrice
 
 MYSQL_USES+=		mysql:server

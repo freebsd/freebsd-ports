@@ -22,8 +22,8 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libraw_r.so:graphics/libraw \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake:outsource jpeg pkgconfig tar:bzip2
-USE_QT5=	concurrent gui printsupport sql webkit xml \
+USES=		cmake:outsource jpeg pkgconfig qt:5 tar:bzip2
+USE_QT=		concurrent gui printsupport sql webkit xml \
 		buildtools_build linguist_build qmake_build \
 		imageformats_run
 INSTALLS_ICONS=	yes

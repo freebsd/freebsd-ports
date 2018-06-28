@@ -17,8 +17,8 @@ BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
 
 NO_ARCH=	yes
-USES=		cmake:outsource
-USE_QT5=	help_build
+USES=		cmake:outsource qt:5
+USE_QT=		help_build
 
 CMAKE_OFF=	SPHINX_MAN
 CMAKE_ON=	SPHINX_HTML SPHINX_QTHELP

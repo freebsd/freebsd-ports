@@ -28,14 +28,14 @@ CMAKE_OFF=	PHONON_BUILD_DESIGNER_PLUGIN:BOOL=OFF
 USE_LDCONFIG=	yes
 
 .  if ${FLAVOR} == qt4
-USES+=		kde:4
+USES+=		kde:4 qt:4
 USE_KDE=	automoc4
-USE_QT4=	corelib dbus declarative gui testlib \
+USE_QT=		corelib dbus declarative gui testlib \
 		qmake_build moc_build rcc_build uic_build
 .  else
-USES+=		kde:5
+USES+=		kde:5 qt:5
 USE_KDE=	ecm
-USE_QT5=	core dbus gui opengl widgets \
+USE_QT=		core dbus gui opengl widgets \
 		buildtools_build qmake_build
 CMAKE_OFF+=	PHONON_BUILD_DECLARATIVE_PLUGIN
 CMAKE_ON+=	PHONON_BUILD_PHONON4QT5

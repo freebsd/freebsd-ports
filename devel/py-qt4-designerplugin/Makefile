@@ -15,10 +15,10 @@ DESTDIRNAME=	INSTALL_ROOT
 CONFIGURE_ARGS=	--enable QtDesigner
 PYQT_DIST=	yes
 
-USES=		python pyqt:4
+USES=		python pyqt:4 qt:4
 USE_PYQT=	sip_build
 USE_PYTHON=	flavors
-USE_QT4=	corelib designer gui script xml moc_build qmake_build
+USE_QT=		corelib designer gui script xml moc_build qmake_build
 
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace

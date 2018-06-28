@@ -9,8 +9,8 @@ PKGNAMESUFFIX=	5
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 
-USES=		gmake qmake tar:bzip2
-USE_QT4=	gui svg moc_build
+USES=		gmake qmake qt:4 tar:bzip2
+USE_QT=		gui svg moc_build
 USE_LDCONFIG=	yes
 PORTSCOUT=	limit:^5\.
 

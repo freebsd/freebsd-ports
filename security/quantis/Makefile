@@ -32,8 +32,7 @@ TOOL_DESC=	Build EasyQuantis application
 GUI_DESC=	Build QT4 GUI for EasyQuantis application
 
 EXTRACT_BEFORE_ARGS=	-aqo
-USES=		cmake compiler:c++11-lang zip:infozip
-USE_QT4=	# empty but required
+USES=		cmake compiler:c++11-lang qt:4 zip:infozip
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 
@@ -78,7 +77,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libboost_date_time.a:devel/boost-libs
 CXXFLAGS+=	-I${LOCALBASE}/include
 
 . if ${PORT_OPTIONS:MGUI}
-USE_QT4+=	gui moc_build uic_build rcc_build qmake_build
+USE_QT+=	gui moc_build uic_build rcc_build qmake_build
 . else
 CMAKE_ARGS+=	-DDISABLE_EASYQUANTIS_GUI=1
 . endif

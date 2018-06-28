@@ -31,7 +31,8 @@ QT4_DESC=	Enable Qt4 for dictmanager
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4=	qmake_build moc_build rcc_build uic_build gui webkit
+USES+=		qt:4
+USE_QT=		qmake_build moc_build rcc_build uic_build gui webkit
 USE_LDCONFIG=	${PREFIX}/lib/fcitx/qt
 PLIST_SUB+=	QT4=""
 .else

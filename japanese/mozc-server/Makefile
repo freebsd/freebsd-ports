@@ -48,8 +48,9 @@ LICENSE_PERMS_NAISTL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_NAISTL=	${WRKSRC}/src/data/dictionary_oss/README.txt
 LICENSE_DISTFILES_NAISTL=${DISTNAME}${EXTRACT_SUFX}
 .elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
+USES+=		qt:5
 USE_GNOME=	glib20 gtk20
-USE_QT5=	buildtools core gui widgets
+USE_QT=		buildtools core gui widgets
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
 USES+=		gettext-runtime
 USE_XORG=	xcb

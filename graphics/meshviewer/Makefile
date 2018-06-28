@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/mview-${PORTVERSION}
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig qt:4
 USE_GL=		glu
-USE_QT4=	corelib gui opengl moc_build
+USE_QT=		corelib gui opengl moc_build
 CXXFLAGS+=	-I. -Imesh -Imathvector \
 		`pkg-config --cflags QtOpenGL glu`
 LDFLAGS+=	-lpthread `pkg-config --libs QtOpenGL glu`

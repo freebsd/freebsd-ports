@@ -23,8 +23,8 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake:outsource desktop-file-utils shared-mime-info tar:xz
-USE_QT5=	buildtools_build concurrent core dbus gui linguisttools network \
+USES=		cmake:outsource desktop-file-utils qt:5 shared-mime-info tar:xz
+USE_QT=		buildtools_build concurrent core dbus gui linguisttools network \
 		qmake_build testlib widgets
 USE_XORG=	x11
 USE_LDCONFIG=	yes
@@ -41,7 +41,8 @@ OPTIONS_SUB=		yes
 
 AUTOTYPE_CMAKE_BOOL=	WITH_XC_AUTOTYPE
 AUTOTYPE_DESC=		Auto-type passwords in input fields
-AUTOTYPE_USE=		QT5=x11extras XORG=xi,xtst
+AUTOTYPE_USES=	qt:5
+AUTOTYPE_USE=		QT=x11extras XORG=xi,xtst
 
 BROWSER_CMAKE_BOOL=	WITH_XC_BROWSER
 BROWSER_DESC=		Browser integration with KeePassXC-Browser

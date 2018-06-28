@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 documentation browser
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build \
+USES=		qmake:no_env qt-dist:4
+USE_QT=		moc_build rcc_build uic_build \
 		corelib gui help network sql webkit xml \
 		doc_run sql-sqlite3_run
-QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
 

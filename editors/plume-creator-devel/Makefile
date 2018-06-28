@@ -12,8 +12,8 @@ LICENSE=	GPLv3+
 
 DATE=		20150510
 
-USES=		desktop-file-utils qmake shared-mime-info tar:xz
-USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build webkit
+USES=		desktop-file-utils qmake qt:4 shared-mime-info tar:xz
+USE_QT=		corelib gui moc_build qmake_build rcc_build uic_build webkit
 QMAKE_ARGS=	${WRKSRC}/plume-creator.pro
 
 .include <bsd.port.mk>

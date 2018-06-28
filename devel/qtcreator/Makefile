@@ -14,10 +14,10 @@ COMMENT=	C++ and QML IDE for Qt development
 # depend on the split out qbs
 LIB_DEPENDS=	libqbscore.so:devel/qbs
 
-USES=		qmake compiler:c++14-lang tar:xz
+USES=		qmake compiler:c++14-lang qt:5 tar:xz
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USE_GL=		gl
-USE_QT5=	buildtools concurrent core designer gui help \
+USE_QT=		buildtools concurrent core designer gui help \
 		linguist location network printsupport qdoc qmake qml quick \
 		quickcontrols script script sql svg webchannel webengine \
 		widgets xml xmlpatterns
@@ -42,9 +42,11 @@ BROKEN_aarch64=		fails to build: invokes x86 asm
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 DOCS_DESC=		Install the Qt5 api documentation
-DOCS_USE=		QT5=doc_run
+DOCS_USES=	qt:5
+DOCS_USE=		QT=doc_run
 EXAMPLES_DESC=		Install the Qt5 example projects
-EXAMPLES_USE=		QT5=examples_run
+EXAMPLES_USES=	qt:5
+EXAMPLES_USE=		QT=examples_run
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 ALL_TARGET=		all
