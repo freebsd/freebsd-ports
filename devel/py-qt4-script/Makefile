@@ -12,10 +12,10 @@ COMMENT=	Python bindings for the Qt4 toolkit, QtScript module
 CONFIGURE_ARGS=	--enable QtScript
 PYQT_DIST=	yes
 
-USES=		python pyqt:4
+USES=		python pyqt:4 qt:4
 USE_PYQT=	sip_build core_run
 USE_PYTHON=	flavors
-USE_QT4=	corelib script moc_build qmake_build
+USE_QT=		corelib script moc_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

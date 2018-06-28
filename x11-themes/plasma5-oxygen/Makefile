@@ -13,12 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 USES=		cmake:outsource compiler:c++11-lib cpe gettext \
-		kde:5 pkgconfig tar:xz
+		kde:5 pkgconfig qt:5 tar:xz
 USE_LDCONFIG=	yes
 USE_KDE=	auth codecs completion config configwidgets coreaddons decoration ecm \
 		frameworkintegration guiaddons i18n kcmutils service \
 		wayland widgetsaddons windowsystem
-USE_QT5=	core dbus gui network qml quick widgets x11extras xml \
+USE_QT=		core dbus gui network qml quick widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	xcb
 

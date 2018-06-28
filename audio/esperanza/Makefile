@@ -18,10 +18,9 @@ LIB_DEPENDS=	libxmmsclient++.so:audio/cpp-xmms2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}+git${PORTVERSION:E}
 
-USE_QT4=	gui xml network imageformats_run \
+USE_QT=		gui xml network imageformats_run \
 		qmake_build moc_build rcc_build uic_build
-QT_NONSTANDARD=	yes
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake pkgconfig qmake:no_env qt:4 tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-growl
 MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}"

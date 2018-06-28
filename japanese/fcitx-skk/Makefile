@@ -27,7 +27,8 @@ QT4_DESC=	Enable Qt for GUI configuration
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4=	qmake_build moc_build rcc_build uic_build gui
+USES+=		qt:4
+USE_QT=		qmake_build moc_build rcc_build uic_build gui
 USE_LDCONFIG=	${PREFIX}/lib/fcitx/qt
 PLIST_SUB+=	QT4=""
 .else

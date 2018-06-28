@@ -15,8 +15,8 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libid3.so:audio/id3lib \
 		libvorbisenc.so:audio/libvorbis
 
-USES=		cmake
-USE_QT4=	corelib dbus gui network \
+USES=		cmake qt:4
+USE_QT=		corelib dbus gui network \
 		qmake_build moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/skype-call-recorder \

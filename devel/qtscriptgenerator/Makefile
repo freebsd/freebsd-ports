@@ -20,8 +20,8 @@ OPTIONS_DEFINE=	PHONON
 PHONON_DESC=	Build Phonon support
 OPTIONS_DEFAULT=	PHONON
 
-USES=		gmake qmake
-USE_QT4=	corelib declarative designer doc help help-tools gui \
+USES=		gmake qmake qt:4
+USE_QT=		corelib declarative designer doc help help-tools gui \
 		iconengines imageformats inputmethods linguist network \
 		opengl pixeltool porting qdbusviewer \
 		qt3support qtestlib qvfb script scripttools \
@@ -32,7 +32,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHONON}
-USE_QT4+=	phonon
+USE_QT+=	phonon
 PLIST_SUB+=	PHONON=""
 .else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-no_phonon

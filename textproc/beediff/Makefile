@@ -13,8 +13,8 @@ COMMENT=	Qt 4 based diff frontend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/licence.txt
 
-USES=		qmake
-USE_QT4=	corelib gui moc_build rcc_build
+USES=		qmake qt:4
+USE_QT=		corelib gui moc_build rcc_build
 USE_XORG=	x11 xext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

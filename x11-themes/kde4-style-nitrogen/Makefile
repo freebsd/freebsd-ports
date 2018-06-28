@@ -16,8 +16,8 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/kde4-kstyle-nitrogen-${PORTVERSION}-Source
 
-USES=		cmake kde:4
+USES=		cmake kde:4 qt:4
 USE_KDE=	kdelibs automoc4
-USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
+USE_QT=		corelib qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>

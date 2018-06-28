@@ -14,8 +14,8 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lib gmake qmake
-USE_QT4=	corelib gui moc_build
+USES=		compiler:c++11-lib gmake qmake qt:4
+USE_QT=		corelib gui moc_build
 
 BUILD_WRKSRC=	${WRKSRC}/quacker
 

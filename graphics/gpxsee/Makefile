@@ -12,8 +12,8 @@ COMMENT=	GPS log file viewer and analyzer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/licence.txt
 
-USES=		qmake:outsource desktop-file-utils shared-mime-info
-USE_QT5=	buildtools_build core gui network opengl printsupport widgets
+USES=		qmake:outsource desktop-file-utils qt:5 shared-mime-info
+USE_QT=		buildtools_build core gui network opengl printsupport widgets
 USE_GL=		gl
 
 USE_GITHUB=	yes
@@ -23,10 +23,11 @@ GH_PROJECT=	GPXSee
 OPTIONS_DEFINE=	NLS TIFF
 OPTIONS_DEFAULT=	TIFF
 OPTIONS_SUB=	yes
-NLS_USE=	QT5=linguisttools_build
-NLS_USES=	gettext-runtime
+NLS_USE=	QT=linguisttools_build
+NLS_USES=	gettext-runtime qt:5
 TIFF_DESC=	Support for TIFF
-TIFF_USE=	QT5=imageformats_run
+TIFF_USES=	qt:5
+TIFF_USE=	QT=imageformats_run
 
 do-patch:
 	@${REINPLACE_CMD} -e "s|/usr/share/gpxsee|${DATADIR}|" ${WRKSRC}/src/config.h

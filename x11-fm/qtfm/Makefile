@@ -12,9 +12,9 @@ COMMENT=	Small, lightweight file manager based on pure Qt
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		dos2unix qmake
+USES=		dos2unix qmake qt:4
 DOS2UNIX_REGEX=	.*\.(h|cpp)
-USE_QT4=	gui network moc_build rcc_build \
+USE_QT=		gui network moc_build rcc_build \
 		imageformats_run
 
 post-patch:

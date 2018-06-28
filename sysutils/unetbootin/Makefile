@@ -16,7 +16,8 @@ RUN_DEPENDS=	7z:archivers/p7zip \
 		syslinux:sysutils/syslinux \
 		mke2fs:sysutils/e2fsprogs
 
-USE_QT4=	linguisttools_build moc_build qmake_build uic_build \
+USES=	qt:4
+USE_QT=		linguisttools_build moc_build qmake_build uic_build \
 		corelib gui network
 QMAKE_ARGS=	DEFINES+=LOCALBASE=\\\\\\\"${LOCALBASE}\\\\\\\"
 

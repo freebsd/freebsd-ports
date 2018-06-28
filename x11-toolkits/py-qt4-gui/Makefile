@@ -12,10 +12,10 @@ COMMENT=	Python bindings for the Qt4 toolkit, QtGui module
 CONFIGURE_ARGS=	--enable QtGui
 PYQT_DIST=	yes
 
-USES=		python pyqt:4
+USES=		python pyqt:4 qt:4
 USE_PYQT=	sip_build core_run
 USE_PYTHON=	flavors
-USE_QT4=	corelib gui imageformats_run inputmethods_run iconengines_run \
+USE_QT=		corelib gui imageformats_run inputmethods_run iconengines_run \
 		moc_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG

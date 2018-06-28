@@ -13,8 +13,8 @@ COMMENT=	Qt 4 program that displays images of various formats
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake tar:bzip2
-USE_QT4=	corelib gui moc_build uic_build rcc_build
+USES=		qmake qt:4 tar:bzip2
+USE_QT=		corelib gui moc_build uic_build rcc_build
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}

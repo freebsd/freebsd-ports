@@ -10,8 +10,8 @@ COMMENT=	Implementation of OAuth 1.0 in C++ for Qt
 
 LICENSE=	LGPL21
 
-USES=		pkgconfig qmake
-USE_QT4=	corelib network gui moc_build qtestlib_build
+USES=		pkgconfig qmake qt:4
+USE_QT=		corelib network gui moc_build qtestlib_build
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro

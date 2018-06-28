@@ -11,8 +11,8 @@ COMMENT=	Simple, powerful and good looking QT5 image viewer
 LICENSE=	GPLv2
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
-		localbase:ldflags
-USE_QT5=	core graphicaleffects gui multimedia network qml quick \
+		localbase:ldflags qt:5
+USE_QT=		core graphicaleffects gui multimedia network qml quick \
 		quickcontrols sql svg widgets xml \
 		buildtools_build linguisttools_build qmake_build
 

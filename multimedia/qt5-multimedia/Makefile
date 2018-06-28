@@ -10,12 +10,11 @@ COMMENT=	Qt audio, video, radio and camera support module
 
 # LICENSE set via USES_QT5 (bsd.qt.mk)
 
-USES=		pkgconfig qmake:norecursive
+USES=		pkgconfig qmake:norecursive qt-dist:5,multimedia
 USE_GL=		gl
 USE_GNOME=	glib20
-USE_QT5=	core gui network opengl qml quick widgets \
+USE_QT=		core gui network opengl qml quick widgets \
 		buildtools_build
-QT_DIST=	${PORTNAME}
 USE_XORG=	x11 xext xv
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

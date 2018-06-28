@@ -47,7 +47,8 @@ DBUS_CMAKE_ON=	-DUSE_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
 QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON
 QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
-QT5_USE=	QT5=core,buildtools,gui,network,qmake,qml,quick,widgets
+QT5_USES=	qt:5
+QT5_USE=	QT=core,buildtools,gui,network,qmake,qml,quick,widgets
 
 .include <bsd.port.pre.mk>
 

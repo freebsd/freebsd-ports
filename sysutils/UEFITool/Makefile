@@ -12,11 +12,11 @@ COMMENT=	UEFI images parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE.md
 
-USES=		qmake:outsource
+USES=		qmake:outsource qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	LongSoft
 USE_GL=		gl
-USE_QT5=	core gui widgets buildtools_build qmake_build
+USE_QT=		core gui widgets buildtools_build qmake_build
 
 WRKSRC_SUBDIR=	${PORTNAME}
 

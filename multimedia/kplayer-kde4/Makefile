@@ -12,8 +12,8 @@ COMMENT=	Movie player based on mplayer
 
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
-USES=		cmake gettext kde:4 tar:bzip2
-USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
+USES=		cmake gettext kde:4 qt:4 tar:bzip2
+USE_QT=		corelib qmake_build moc_build rcc_build uic_build
 USE_KDE=	kdelibs automoc4
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -L${LOCALBASE}/kde4/lib -lsolid
 

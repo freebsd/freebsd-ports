@@ -11,11 +11,11 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 tar:xz
+USES=		cmake:outsource compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	ecm completion config coreaddons i18n kio widgetsaddons service
 # pim components
 USE_KDE+=	mbox
-USE_QT5=	core gui network widgets \
+USE_QT=		core gui network widgets \
 		buildtools_build qmake_build
 USE_OPENLDAP=	yes
 USE_LDCONFIG=	yes

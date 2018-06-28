@@ -32,8 +32,9 @@ OPTIONS_DEFINE=	CRASHREPORTER DOCS
 OPTIONS_SUB=	yes
 
 CRASHREPORTER_DESC=	Build crash reporter (requires Qt4)
-CRASHREPORTER_USE=	QT4=corelib,gui,network \
-			QT4=rcc_build,moc_build,uic_build,qmake_build
+CRASHREPORTER_USES=	qt:4
+CRASHREPORTER_USE=	QT=corelib,gui,network \
+			QT=rcc_build,moc_build,uic_build,qmake_build
 CRASHREPORTER_CMAKE_ON=	-DBUILD_CRASHREPORTER=ON -DUSE_QT5=OFF
 CRASHREPORTER_CMAKE_OFF=-DBUILD_CRASHREPORTER=OFF
 

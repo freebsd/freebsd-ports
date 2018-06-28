@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libdmtx.so:graphics/libdmtx \
 		libqrencode.so:graphics/libqrencode
 
-USES=		cmake:outsource tar:xz
-USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
+USES=		cmake:outsource qt:4 tar:xz
+USE_QT=		corelib gui qmake_build moc_build rcc_build uic_build
 
 USE_LDCONFIG=	yes
 

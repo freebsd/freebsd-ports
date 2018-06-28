@@ -13,8 +13,8 @@ COMMENT=	Simple utility to manipulate PS and PDF files
 
 RUN_DEPENDS=	convert:graphics/ImageMagick
 
-USE_QT4=	qt3support moc_build porting_build uic3_build
-USES=		ghostscript:run qmake zip
+USE_QT=		qt3support moc_build porting_build uic3_build
+USES=		ghostscript:run qmake qt:4 zip
 
 DESKTOP_ENTRIES=	"KPDFTool" "${COMMENT}" "kpdftool" \
 			"kpdftool" "Qt;Utility;" true

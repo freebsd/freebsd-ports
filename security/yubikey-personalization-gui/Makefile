@@ -17,8 +17,8 @@ LIB_DEPENDS=	libykpers-1.so:security/ykpers \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yubico
 
-USES=		pkgconfig qmake
-USE_QT4=	corelib gui moc_build rcc_build testlib_build uic_build
+USES=		pkgconfig qmake qt:4
+USE_QT=		corelib gui moc_build rcc_build testlib_build uic_build
 
 PLIST_FILES=	bin/yubikey-personalization-gui \
 		man/man1/yubikey-personalization-gui.1.gz \

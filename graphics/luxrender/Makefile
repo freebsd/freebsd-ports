@@ -53,7 +53,8 @@ FREEIMAGE_CMAKE_ON=	-DLUX_USE_FREEIMAGE:BOOL=ON
 FREEIMAGE_LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 
 X11_DESC=	Build GUI executable (requires Qt 4)
-X11_USE=	QT4=moc_build,qmake_build,rcc_build,uic_build,corelib,gui
+X11_USES=	qt:4
+X11_USE=	QT=moc_build,qmake_build,rcc_build,uic_build,corelib,gui
 X11_PLIST_FILES=	bin/luxrender
 
 post-extract:

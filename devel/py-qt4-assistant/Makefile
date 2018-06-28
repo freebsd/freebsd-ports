@@ -12,10 +12,10 @@ COMMENT=	Python bindings for the Qt4 toolkit, QtAssistant module
 CONFIGURE_ARGS=	--enable QtAssistant
 PYQT_DIST=	yes
 
-USES=		python pyqt:4
+USES=		python pyqt:4 qt:4
 USE_PYQT=	sip_build core_run
 USE_PYTHON=	flavors
-USE_QT4=	assistantclient corelib gui network \
+USE_QT=		assistantclient corelib gui network \
 		moc_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG

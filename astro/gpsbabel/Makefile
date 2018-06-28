@@ -19,17 +19,18 @@ USE_GITHUB=	yes
 
 CONFLICTS=	gpsbabel14-[0-9]*
 
-USE_QT5=	core qmake_build
+USE_QT=		core qmake_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-zlib=system
-USES=		localbase
+USES=		localbase qt:5 qt:5
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_SUB=	yes
 
 GUI_ALL_TARGET=	gui
-GUI_USE=	QT5=gui,xml,network,webkit
-GUI_USE+=	QT5=linguisttools_build,moc_build,rcc_build,uic_build
+GUI_USES=	qt:5 qt:5
+GUI_USE=	QT=gui,xml,network,webkit
+GUI_USE+=	QT=linguisttools_build,moc_build,rcc_build,uic_build
 GUI_VARS=	MAKE_JOBS_UNSAFE=yes
 
 post-patch:

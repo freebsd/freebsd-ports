@@ -17,8 +17,8 @@ LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
 		libsignon-qt5.so:sysutils/signon-qt5 \
 		libproxy.so:net/libproxy
 
-USES=		pkgconfig python qmake tar:bz2
-USE_QT5=	buildtools_build qmake_build webkit widgets
+USES=		pkgconfig python qmake qt:5 tar:bz2
+USE_QT=		buildtools_build qmake_build webkit widgets
 
 # gitlab variables
 USE_GITLAB=	yes

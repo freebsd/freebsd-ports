@@ -18,7 +18,7 @@ LIB_DEPENDS=	libofx.so:finance/libofx \
 		libsqlcipher.so:databases/sqlcipher
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
-		gettext grantlee:5 kde:5 pkgconfig python:3.4+ shared-mime-info \
+		gettext grantlee:5 kde:5 pkgconfig python:3.4+ qt:5 shared-mime-info \
 		shebangfix sqlite:3 tar:xz
 USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
 		config configwidgets coreaddons crash dbusaddons \
@@ -28,7 +28,7 @@ USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
 		package parts plasma-framework runner service solid sonnet \
 		textwidgets unitconversion wallet widgetsaddons windowsystem \
 		xmlgui
-USE_QT5=	concurrent core dbus designer gui network printsupport qml \
+USE_QT=		concurrent core dbus designer gui network printsupport qml \
 		quick script sql svg webkit widgets xml \
 		qmake_build buildtools_build
 SHEBANG_FILES=	plugins/import/skrooge_import_backend/skrooge-sabb.py \

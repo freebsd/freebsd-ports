@@ -41,7 +41,8 @@ OPTIONS_SUB=	yes
 
 EDITOR_DESC=	Compile the Qt editor along with the game
 EDITOR_CMAKE_BOOL=	EDITOR_SUPPORT
-EDITOR_USE=	QT4=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
+EDITOR_USES=	qt:4
+EDITOR_USE=	QT=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
 EDITOR_DESKTOP_ENTRIES=	\
 		"Valyria Tear Editor" \
 		"Map editor for Valyria Tear game" \

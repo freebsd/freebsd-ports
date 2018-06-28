@@ -36,13 +36,13 @@ USES=		cmake \
 		desktop-file-utils \
 		gettext-tools \
 		pkgconfig \
-		sqlite
+		qt:4 sqlite
 
 USE_GL=		gl glew glu
 USE_XORG=	x11
 
 CONFLICTS_BUILD=	qt-3.*
-USE_QT4=	corelib \
+USE_QT=		corelib \
 		dbus \
 		gui \
 		imageformats \

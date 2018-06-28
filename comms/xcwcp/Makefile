@@ -12,8 +12,8 @@ LIB_DEPENDS=	libcw.so:comms/unixcw
 MASTERDIR=	${.CURDIR}/../unixcw
 
 PLIST=		${.CURDIR}/pkg-plist
-USE_QT5=	buildtools gui widgets qmake_build
-USES=		gettext
+USE_QT=		buildtools gui widgets qmake_build
+USES=		gettext qt:5
 # Qt from 5.7.0 on requires c++11.
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes

@@ -14,10 +14,10 @@ LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource kde:4 libarchive cpe tar:xz
+USES=		cmake:outsource kde:4 libarchive cpe qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs libkonq
 CPE_VENDOR=	kde
-USE_QT4=	qtestlib qmake_build moc_build rcc_build uic_build
+USE_QT=		qtestlib qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	7ZIP RAR ZIP

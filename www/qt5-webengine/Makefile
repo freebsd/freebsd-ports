@@ -66,16 +66,15 @@ PULSEAUDIO_QMAKE_ON=	QT_CONFIG+=pulseaudio
 # whether webenginewidgets is available, which fails when qmake processes all
 # .pro files at once.
 USES=		gperf jpeg python:2.7,build pkgconfig \
-		qmake:norecursive,outsource shebangfix
+		qmake:norecursive,outsource qt-dist:5,webengine shebangfix
 USE_GNOME=	glib20 libxml2 libxslt
-USE_QT5=	core designer gui location network qml quick webchannel \
+USE_QT=		core designer gui location network qml quick webchannel \
 		widgets buildtools_build qmake_build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xi xproto \
 		xrandr xrender xscrnsaver xtst
 
 USE_LDCONFIG=	${QT_LIBDIR}
 
-QT_DIST=	${PORTNAME}
 
 QMAKE_CONFIGURE_ARGS=	-no-printing-and-pdf -proprietary-codecs -system-ffmpeg
 

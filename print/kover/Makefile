@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcddb.so:audio/libcddb \
 		libcdio.so:sysutils/libcdio
 
-USES=		cmake gettext kde:4 perl5 pkgconfig shared-mime-info tar:bzip2
+USES=		cmake gettext kde:4 perl5 pkgconfig qt:4 shared-mime-info tar:bzip2
 USE_KDE=	automoc4 kdelibs
-USE_QT4=	corelib dbus gui network svg xml \
+USE_QT=		corelib dbus gui network svg xml \
 		qmake_build uic_build rcc_build
 USE_PERL5=	build
 

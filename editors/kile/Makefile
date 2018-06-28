@@ -15,13 +15,13 @@ LIB_DEPENDS=	libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		cmake:outsource desktop-file-utils kde:5 \
-		shared-mime-info shebangfix
+		qt:5 shared-mime-info shebangfix
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons ecm guiaddons i18n iconthemes \
 		init itemviews jobwidgets js khtml kio parts service solid \
 		sonnet texteditor textwidgets widgetsaddons windowsystem xmlgui \
 		okular
-USE_QT5=	concurrent core dbus gui network script widgets xml \
+USE_QT=		concurrent core dbus gui network script widgets xml \
 		buildtools_build qmake_build
 SHEBANG_FILES=	*.pl
 

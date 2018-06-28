@@ -9,7 +9,7 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Widget styles for Qt and GTK+ toolkits
 
 .if !defined(QTCURVE_SLAVE)
-USES=		metaport
+USES=		metaport qt:4
 # There is no NO_PATCH
 PATCHDIR=	${MASTERDIR}/none
 
@@ -76,8 +76,8 @@ post-install:
 WITH_qt4=	On # required for KDE 4
 PKGNAMEPREFIX=	kde4-style-
 USE_KDE=	kdelibs workspace automoc4
-USES+=		kde:4
-USE_QT4=	corelib dbus gui svg moc_build qmake_build rcc_build uic_build
+USES+=		kde:4 qt:4
+USE_QT=		corelib dbus gui svg moc_build qmake_build rcc_build uic_build
 BUILD_WRKSRC=	${WRKSRC}/qt4
 .endif
 
@@ -85,25 +85,27 @@ BUILD_WRKSRC=	${WRKSRC}/qt4
 CONFLICTS_INSTALL=	qt5-style-qtcurve
 WITH_qt5=	On # required for KF5
 PKGNAMEPREFIX=	kf5-style-
-USES+=		kde:5
+USES+=		kde:5 qt:5
 USE_KDE=	archive completion config configwidgets coreaddons \
 		ecm_build frameworkintegration guiaddons i18n iconthemes \
 		kdelibs4support kio widgetsaddons windowsystem xmlgui
-USE_QT5=	core dbus gui printsupport svg widgets x11extras \
+USE_QT=		core dbus gui printsupport svg widgets x11extras \
 		buildtools_build qmake_build
 BUILD_WRKSRC=	${WRKSRC}/qt5
 .endif
 
 .if ${QTCURVE_SLAVE} == "qt4"
 PKGNAMEPREFIX=	qt4-style-
-USE_QT4=	corelib dbus gui svg moc_build qmake_build rcc_build uic_build
+USES+=		qt:4
+USE_QT=		corelib dbus gui svg moc_build qmake_build rcc_build uic_build
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/qtcurve.so
 .endif
 
 .if ${QTCURVE_SLAVE} == "qt5"
 CONFLICTS_INSTALL=	kf5-style-qtcurve
 PKGNAMEPREFIX=	qt5-style-
-USE_QT5=	core dbus gui svg widgets x11extras \
+USES+=		qt:5
+USE_QT=		core dbus gui svg widgets x11extras \
 		buildtools_build qmake_build
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/qtcurve.so
 .endif

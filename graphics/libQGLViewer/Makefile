@@ -12,9 +12,9 @@ COMMENT=	C++ library based on Qt5 that eases the creation of OpenGL 3D viewers
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		qmake
+USES=		qmake qt:5
 USE_GL=		gl glu
-USE_QT5=	core designer gui opengl widgets xml buildtools_build
+USE_QT=		core designer gui opengl widgets xml buildtools_build
 USE_LDCONFIG=	yes
 PLIST_SUB=	SHL3=${DISTVERSION} SHL2=${DISTVERSION:C/\.[0-9]$//} SHL1=${DISTVERSION:C/\.[0-9]\.[0-9]$//}
 

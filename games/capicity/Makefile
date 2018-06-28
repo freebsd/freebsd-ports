@@ -23,9 +23,9 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 
 WRKSRC=		${WRKDIR}/CapiCity_${PORTVERSION}
 
-USES=		iconv qmake
+USES=		iconv qmake qt:4
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
-USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
+USE_QT=		moc_build rcc_build uic_build iconengines_run imageformats_run \
 		corelib gui network script xml
 
 PORTDOCS=	README changelog

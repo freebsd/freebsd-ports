@@ -15,8 +15,8 @@ LICENSE=	GPLv3+
 RUN_DEPENDS=	aria2c:www/aria2 \
 		xterm:x11/xterm
 
-USES=		tar:bzip2 qmake
-USE_QT4=	gui moc_build rcc_build uic_build
+USES=		qt:4 tar:bzip2 qmake
+USE_QT=		gui moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/${PORTNAME}
 

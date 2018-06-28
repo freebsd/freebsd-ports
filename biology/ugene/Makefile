@@ -20,9 +20,9 @@ RUN_DEPENDS=	bash:shells/bash
 
 BROKEN_aarch64=	Fails to build: invokes x86 asm
 
-USES=		desktop-file-utils qmake
+USES=		desktop-file-utils qmake qt:5
 USE_GL=		glu
-USE_QT5=	buildtools_build linguisttools_build scripttools_build \
+USE_QT=		buildtools_build linguisttools_build scripttools_build \
 		gui network printsupport script sql svg webkit widgets xml \
 		imageformats_run
 

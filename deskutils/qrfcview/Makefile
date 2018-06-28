@@ -13,8 +13,8 @@ COMMENT=	Graphical RFC viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		qmake tar:tgz
-USE_QT4=	gui network corelib uic_build moc_build rcc_build
+USES=		qmake qt:4 tar:tgz
+USE_QT=		gui network corelib uic_build moc_build rcc_build
 
 SUB_FILES=	qRFCView
 

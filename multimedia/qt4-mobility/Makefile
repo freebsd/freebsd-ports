@@ -18,9 +18,9 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libblkid.so:misc/e2fsprogs-libblkid
 
 DATE=	20130703
-USES=		pkgconfig qmake shebangfix tar:xz
+USES=		pkgconfig qmake qt:4 shebangfix tar:xz
 SHEBANG_FILES=	bin/pathhelper bin/syncheaders
-USE_QT4=declarative corelib dbus gui linguist_build moc_build
+USE_QT=		declarative corelib dbus gui linguist_build moc_build rcc_build
 USE_LDCONFIG=	yes
 MOBILITY_MODS=
 
@@ -33,31 +33,31 @@ USE_CXXSTD=	gnu++98
 
 BEARER_DESC=		Bearer module
 CONNECTIVITY_DESC=	Connectivity module
-CONNECTIVITY_USE=	qt4=rcc_build
+CONNECTIVITY_USE=	qt=rcc_build
 
 CONTACTS_DESC=		Contacts module
 FEEDBACK_DESC=		Feedback module
 GALLERY_DESC=		Gallery module
 LOCATION_DESC=		Location module
-LOCATION_USE=		qt4=rcc_build,sql
+LOCATION_USE=		qt=rcc_build,sql
 
 MESSAGING_DESC=		Messaging module
 
 MULTIMEDIA_DESC=	Multimedia module
 MULTIMEDIA_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 MULTIMEDIA_BUILD_DEPENDS=	v4l_compat>=1.0.20120501:multimedia/v4l_compat
-MULTIMEDIA_USE=		qt4=opengl gstreamer=bad
+MULTIMEDIA_USE=		qt=opengl gstreamer=bad
 
 ORGANIZER_DESC=		Organizer module
 PUBLISHSUBSCRIBE_DESC=	Publishsubscribe module
 SENSORS_DESC=		(BROKEN) Sensors module
 SERVICEFRAMEWORK_DESC=	(BROKEN) ServiceFramework module
-SERVICEFRAMEWORK_USE=	qt4=sql
+SERVICEFRAMEWORK_USE=	qt=sql
 
 SYSTEMINFO_DESC=	(BROKEN) Systeminfo module
-SYSTEMINFO_USE=		qt4=network
+SYSTEMINFO_USE=		qt=network
 VERSIT_DESC=		Versit module
-VERSIT_USE=		qt4=rcc_build
+VERSIT_USE=		qt=rcc_build
 
 OPTIONS_DEFAULT=BEARER CONNECTIVITY CONTACTS FEEDBACK GALLERY LOCATION \
 		MESSAGING MULTIMEDIA ORGANIZER PUBLISHSUBSCRIBE VERSIT

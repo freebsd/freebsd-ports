@@ -18,12 +18,12 @@ LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
 RUN_DEPENDS=	${KDE_PREFIX}/bin/ktp-contactlist:net-im/ktp-contact-list  \
 		${QT_PLUGINDIR}/kaccounts/ui/owncloud_plugin_kaccounts.so:net-im/kaccounts-providers
 
-USES=		cmake:outsource gettext kde:5 pkgconfig tar:xz
+USES=		cmake:outsource gettext kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	intltool
 USE_KDE=	auth codecs config configwidgets coreaddons ecm i18n \
 		iconthemes itemviews kcmutils kio notifications notifyconfig \
 		service texteditor wallet widgetsaddons windowsystem
-USE_QT5=	core dbus gui network qml sql widgets xml \
+USE_QT=		core dbus gui network qml sql widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

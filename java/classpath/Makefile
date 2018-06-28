@@ -115,7 +115,8 @@ CONFIGURE_ARGS+=	--enable-qt-peer
 CONFIGURE_ARGS+=	--enable-default-toolkit=gnu.java.awt.peer.qt.QtToolkit
 .endif
 CONFIGURE_ENV+=		MOC="${LOCALBASE}/bin/moc-qt4"
-USE_QT4=		moc_build corelib gui
+USES+=			qt:4
+USE_QT=			moc_build corelib gui
 PLIST_SUB+=		QT4=""
 .else
 PLIST_SUB+=		QT4="@comment "

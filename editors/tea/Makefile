@@ -24,8 +24,10 @@ USES=		pkgconfig:build qmake tar:bzip2
 USE_GL=		gl
 USE_LOCALE=	en_US.UTF-8
 
-QT4_USE=	qt4=corelib,gui,moc_build,network,rcc_build
-QT5_USE=	qt5=buildtools_build,core,gui,network,widgets,printsupport,qml,quick
+QT4_USES=	qt:4
+QT4_USE=	qt=corelib,gui,moc_build,network,rcc_build
+QT5_USES=	qt:5
+QT5_USE=	qt=buildtools_build,core,gui,network,widgets,printsupport,qml,quick
 
 LDFLAGS+=	-lz
 PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png

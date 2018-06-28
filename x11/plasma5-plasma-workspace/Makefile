@@ -22,7 +22,7 @@ RUN_DEPENDS=	ck-launch-session:sysutils/consolekit2\
 		iso-codes>=0:misc/iso-codes
 
 USES=		cmake:outsource compiler:c++11-lib cpe gettext kde:5 pkgconfig \
-		tar:xz
+		qt:5 tar:xz
 USE_KDE=	activities activitymanagerd attica auth baloo bookmarks \
 		codecs completion config configwidgets coreaddons crash \
 		dbusaddons doctools emoticons filemetadata globalaccel \
@@ -36,7 +36,7 @@ USE_KDE=	activities activitymanagerd attica auth baloo bookmarks \
 		widgetsaddons windowsystem xmlgui xmlrpcclient \
 		breeze_run breeze-icons_run oxygen-icons5_run \
 		kde-cli-tools_run kded_run milou_run
-USE_QT5=	concurrent core dbus graphicaleffects gui network phonon4 \
+USE_QT=		concurrent core dbus graphicaleffects gui network phonon4 \
 		printsupport qdbus qml quick quickcontrols_run script sql \
 		testlib webkit widgets x11extras xml \
 		paths_run \

@@ -10,8 +10,8 @@ PKGNAMESUFFIX=	-qt4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D plotting widgets for scientific data and math expressions
 
-USES=		dos2unix qmake tar:tgz
-USE_QT4=	gui moc_build opengl
+USES=		dos2unix qmake qt:4 tar:tgz
+USE_QT=		gui moc_build opengl
 USE_GL=		glu
 USE_LDCONFIG=	yes
 

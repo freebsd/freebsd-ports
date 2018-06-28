@@ -9,13 +9,13 @@ COMMENT=	Encryption tool for KDE
 
 RUN_DEPENDS=	gpg2:security/gnupg
 
-USES=		cmake:outsource gettext kde:5 tar:xz
+USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
 USE_KDE=	akonadi akonadicontacts archive auth bookmarks codecs \
 		completion config configwidgets contacts coreaddons crash \
 		dbusaddons doctools ecm i18n iconthemes itemmodels itemviews \
 		jobwidgets kio notifications service solid sonnet textwidgets \
 		widgetsaddons windowsystem xmlgui
-USE_QT5=	core dbus gui network printsupport widgets xml \
+USE_QT=		core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtspi.so:security/trousers
 
-USES=		qmake
-USE_QT4=	gui moc_build rcc_build uic_build
+USES=		qmake qt:4
+USE_QT=		gui moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*

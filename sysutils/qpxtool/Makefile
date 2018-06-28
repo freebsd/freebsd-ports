@@ -19,10 +19,9 @@ BROKEN_armv7=		fails to compile: qpx_mmc_defs.h:608:4: constant expression evalu
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake tar:bzip2
-USE_QT4=	qmake_build moc_build rcc_build linguisttools_build \
+USES=		gmake qmake:no_env qt:4 tar:bzip2
+USE_QT=		qmake_build moc_build rcc_build linguisttools_build \
 		corelib gui network sql
-QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 USE_LDCONFIG=	yes
@@ -31,9 +30,12 @@ OPTIONS_GROUP=		DB
 OPTIONS_GROUP_DB=	SQLITE MYSQL PGSQL
 OPTIONS_DEFAULT=	SQLITE
 
-SQLITE_USE=	QT4=sql-sqlite3_run
-MYSQL_USE=	QT4=sql-mysql_run
-PGSQL_USE=	QT4=sql-pgsql_run
+SQLITE_USES=	qt:4
+SQLITE_USE=	QT=sql-sqlite3_run
+MYSQL_USES=	qt:4
+MYSQL_USE=	QT=sql-mysql_run
+PGSQL_USES=	qt:4
+PGSQL_USE=	QT=sql-pgsql_run
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|$$(QMAKE4)|& ${QMAKE_AGRS}|' \

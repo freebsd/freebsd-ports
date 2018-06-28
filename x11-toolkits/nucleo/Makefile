@@ -50,7 +50,8 @@ GNUTLS_CONFIGURE_OFF=	--without-gnutls
 
 MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
-QT4_USE=		QT4=moc_build,corelib
+QT4_USE=		QT=moc_build,corelib
+QT4_USES=		qmake:no_env qt:4
 QT4_CONFIGURE_OFF=	--without-qt
 QT4_MAKE_ARGS=		QT4MOC="${MOC}"
 
@@ -58,10 +59,6 @@ QT4_MAKE_ARGS=		QT4MOC="${MOC}"
 
 .if ! ${PORT_OPTIONS:MAVAHI} && ! ${PORT_OPTIONS:MMDNSRESPONDER}
 CONFIGURE_ARGS+=	--without-dns-sd
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-QT_NONSTANDARD=		yes
 .endif
 
 post-install:

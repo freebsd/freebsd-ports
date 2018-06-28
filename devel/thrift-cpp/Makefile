@@ -31,7 +31,8 @@ PLIST_SUB=		PORTVERSION="${THRIFT_PORTVERSION}"
 
 OPTIONS_DEFINE=		QT4
 QT4_CONFIGURE_WITH=	qt4
-QT4_USE=		QT4=network,moc_build,qmake_build,rcc_build,uic_build
+QT4_USES=		qt:4
+QT4_USE=		QT=network,moc_build,qmake_build,rcc_build,uic_build
 
 OPTIONS_SUB=		yes
 

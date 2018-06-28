@@ -9,12 +9,12 @@ COMMENT=	RDP and VNC client for KDE
 
 LIB_DEPENDS=	libvncserver.so:net/libvncserver
 
-USES=		cmake:outsource gettext kde:5 tar:xz
+USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons dnssd doctools ecm i18n iconthemes kcmutils \
 		notifications notifyconfig service wallet widgetsaddons \
 		xmlgui
-USE_QT5=	core dbus gui network widgets xml \
+USE_QT=		core dbus gui network widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

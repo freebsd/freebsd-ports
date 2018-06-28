@@ -14,8 +14,8 @@ COMMENT=	General organizer that includes calendar with jurnal and schedule
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		qmake
-USE_QT4=	corelib gui network moc_build rcc_build sql
+USES=		qmake qt:4
+USE_QT=		corelib gui network moc_build rcc_build sql
 WRKSRC=		${WRKDIR}/qOrganizer/src
 
 PLIST_FILES=	bin/qOrganizer share/pixmaps/qOrganizer.png

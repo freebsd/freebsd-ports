@@ -21,8 +21,8 @@ LIB_DEPENDS+=	librtlsdr.so:comms/rtl-sdr \
 		libfftw3.so:math/fftw3 \
 		libfaad.so:audio/faad
 
-USES=		tar:tgz
-USE_QT4=	gui qt3support qmake_build moc_build rcc_build uic_build
+USES=		qt:4 tar:tgz
+USE_QT=		gui qt3support qmake_build moc_build rcc_build uic_build
 
 PORTDOCS=	*
 PLIST_FILES+=	bin/dabreceiver bin/fmreceiver bin/spectrum-viewer

@@ -9,11 +9,11 @@ COMMENT=	Python bindings for the Qt5 toolkit, QtWebEngine module
 
 # LICENSE set in Mk/Uses/pyqt.mk
 
-USES=		python pyqt:5
+USES=		python pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run gui_run network_run webchannel_run
 USE_PYTHON=	flavors
-USE_QT5=	core gui location network printsupport qml quick webchannel \
+USE_QT=		core gui location network printsupport qml quick webchannel \
 		webengine widgets qmake_build
 
 CONFIGURE_ARGS=	--enable QtWebEngine \

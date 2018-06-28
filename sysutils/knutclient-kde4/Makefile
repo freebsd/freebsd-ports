@@ -19,8 +19,8 @@ LIB_DEPENDS=	libqimageblitz.so:x11/qimageblitz
 
 CONFLICTS=	knutclient-0.*
 
-USES=		cmake gettext kde:4
+USES=		cmake gettext kde:4 qt:4
 USE_KDE=	kdelibs automoc4
-USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
+USE_QT=		corelib gui qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>

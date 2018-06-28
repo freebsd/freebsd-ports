@@ -17,8 +17,8 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USERS=		murmur
 GROUPS=		murmur
-USES=		compiler:c++11-lang qmake pkgconfig ssl
-USE_QT4=	moc_build corelib network sql xml
+USES=		compiler:c++11-lang qmake pkgconfig qt:4 ssl
+USE_QT=		moc_build corelib network sql xml
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	mumble-voip
@@ -46,7 +46,7 @@ CONFIG+=	no-ice
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-USE_QT4+=	dbus
+USE_QT+=	dbus
 .else
 CONFIG+=	no-dbus
 .endif
@@ -58,13 +58,13 @@ CONFIG+=	no-bonjour
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_QT4+=	sql-mysql
+USE_QT+=	sql-mysql
 .else
 CONFIG+=	no-sql-mysql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_QT4+=	sql-sqlite3_run
+USE_QT+=	sql-sqlite3_run
 .else
 CONFIG+=	no-sqlite3_run
 .endif

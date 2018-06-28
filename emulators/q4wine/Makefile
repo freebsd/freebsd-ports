@@ -19,11 +19,11 @@ RUN_DEPENDS=	sudo:security/sudo \
 		cabextract:archivers/cabextract \
 		icotool:graphics/icoutils
 
-USES=		cmake desktop-file-utils
+USES=		cmake desktop-file-utils qt:4
 CMAKE_ARGS+=	-DMANPAGE_ENTRY_PATH=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_QT4=	qmake_build rcc_build moc_build uic_build \
+USE_QT=		qmake_build rcc_build moc_build uic_build \
 		linguisttools_build corelib gui sql sql-sqlite3_run network
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -36,7 +36,8 @@ OPTIONS_SUB=	yes
 
 DBUS_CMAKE_ON=		-DWITH_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=		-DWITH_DBUS:BOOL=OFF
-DBUS_USE=		QT4=dbus
+DBUS_USES=	qt:4
+DBUS_USE=		QT=dbus
 
 .include <bsd.port.options.mk>
 

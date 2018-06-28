@@ -14,11 +14,11 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:math/facile \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 
-USES=		cmake:outsource eigen:3 kde:4 pkgconfig tar:xz
+USES=		cmake:outsource eigen:3 kde:4 pkgconfig qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
-USE_QT4=	corelib declarative designer opengl script xml \
+USE_QT=		corelib declarative designer opengl script xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

@@ -9,11 +9,11 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for KDE
 
-USES=		cmake:outsource kde:4 tar:xz
+USES=		cmake:outsource kde:4 qt:4 tar:xz
 USE_KDE=	kate kdelibs okular pimlibs \
 		qtruby smokegen smokekde smokeqt \
 		akonadi automoc4 soprano
-USE_QT4=	corelib network opengl sql svg xml \
+USE_QT=		corelib network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
 

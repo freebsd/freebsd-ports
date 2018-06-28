@@ -31,13 +31,13 @@ NETCDF_DESC=		Build with NetCDF support
 NETCDF_CMAKE_BOOL=	ENABLE_NETCDF
 NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-USES=		cmake:outsource desktop-file-utils kde:5 shared-mime-info tar:xz
+USES=		cmake:outsource desktop-file-utils kde:5 qt:5 shared-mime-info tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm guiaddons i18n iconthemes itemviews \
 		jobwidgets kdelibs4support kio newstuff notifications parts \
 		service solid sonnet textwidgets unitconversion widgetsaddons \
 		windowsystem xmlgui
-USE_QT5=	core dbus gui network printsupport svg widgets xml \
+USE_QT=		core dbus gui network printsupport svg widgets xml \
 		buildtools_build qmake_build
 
 DATADIR=	${PREFIX}/share/labplot2

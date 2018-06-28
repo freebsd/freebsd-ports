@@ -10,9 +10,9 @@ COMMENT=	Exiv2 library interface for KDE
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
-USES=		cmake:outsource kde:4 tar:xz
+USES=		cmake:outsource kde:4 qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs
-USE_QT4=	corelib gui xml \
+USE_QT=		corelib gui xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

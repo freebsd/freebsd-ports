@@ -17,10 +17,10 @@ GH_ACCOUNT=	lupoDharkael
 
 INSTALL_ICONS=	yes
 
-USES=		qmake
+USES=		qmake qt:5
 USE_GITHUB=	yes
 USE_GL=		gl
-USE_QT5=	core dbus gui linguist network widgets \
+USE_QT=		core dbus gui linguist network widgets \
 		buildtools_build
 
 post-patch:

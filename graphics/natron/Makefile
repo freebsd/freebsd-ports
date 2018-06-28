@@ -24,7 +24,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 				libpyside-${PYTHON_VERSION}.so:devel/pyside \
 				libfreetype.so:print/freetype2
 
-USES=	pkgconfig python qmake shebangfix desktop-file-utils shared-mime-info \
+USES=	pkgconfig python qmake qt:4 shebangfix desktop-file-utils shared-mime-info \
 		gettext-runtime desktop-file-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	NatronGitHub
@@ -37,7 +37,7 @@ GH_TUPLE=	NatronGitHub:openfx:a85dc34:openfx/libs/OpenFX \
 			NatronGitHub:tinydir:3aae922:tinydir/libs/SequenceParsing/tinydir \
 			NatronGitHub:OpenColorIO-Configs:Natron-v3.0:OpenColorIO_Configs/OpenColorIO-Configs
 
-USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build network opengl
+USE_QT=		corelib gui moc_build qmake_build rcc_build uic_build network opengl
 USE_XORG=	x11 pixman
 USE_GL=		gl
 

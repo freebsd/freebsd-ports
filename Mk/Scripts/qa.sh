@@ -551,12 +551,10 @@ proxydeps_suggest_uses() {
 		warn "you need USE_XORG+=pixman"
 	# Qt4
 	elif expr ${pkg} : '.*/qt4-.*' > /dev/null; then
-		warn "you need USE_QT4+=$(echo ${pkg} | sed -E 's|.*/qt4-||')"
-	elif expr ${pkg} : '.*/.*-qt4' > /dev/null; then
-		warn "you need USE_QT4+=$(echo ${pkg} | sed -E 's|.*/(.*)-qt4|\1|')"
+		warn "you need USES=qt:4 and USE_QT+=$(echo ${pkg} | sed -E 's|.*/qt4-||')"
 	# Qt5
 	elif expr ${pkg} : '.*/qt5-.*' > /dev/null; then
-		warn "you need USE_QT5+=$(echo ${pkg} | sed -E 's|.*/qt5-||')"
+		warn "you need USES=qt:5 and USE_QT+=$(echo ${pkg} | sed -E 's|.*/qt5-||')"
 	# MySQL
 	elif expr ${lib_file} : "${LOCALBASE}/lib/mysql/[^/]*$" > /dev/null; then
 		warn "you need USES+=mysql"

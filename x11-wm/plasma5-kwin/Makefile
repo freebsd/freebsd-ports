@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat \
 RUN_DEPENDS=	Xwayland:x11-servers/xwayland
 
 USES=		cmake:outsource compiler:c++11-lib cpe gettext \
-		kde:5 pkgconfig tar:xz
+		kde:5 pkgconfig qt:5 tar:xz
 USE_GL=		egl
 USE_KDE=	activities activities attica auth breeze codecs \
 		completion config configwidgets coreaddons crash decoration \
@@ -37,7 +37,7 @@ USE_KDE=	activities activities attica auth breeze codecs \
 		newstuff notifications plasma-framework service sonnet \
 		textwidgets wayland widgetsaddons windowsystem xmlgui
 USE_LDCONFIG=	yes
-USE_QT5=	concurrent core dbus gui multimedia network qml quick script \
+USE_QT=		concurrent core dbus gui multimedia network qml quick script \
 		sensors testlib uiplugin uitools widgets x11extras xml \
 		buildtools_build qmake_build \
 		quickcontrols2_run virtualkeyboard_run

@@ -13,8 +13,8 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libxkbfile.so:x11/libxkbfile
 
-USES=		cmake
-USE_QT4=	linguisttools_build moc_build qmake_build rcc_build uic_build \
+USES=		cmake qt:4
+USE_QT=		linguisttools_build moc_build qmake_build rcc_build uic_build \
 		corelib gui svg
 
 USE_GITHUB=	yes

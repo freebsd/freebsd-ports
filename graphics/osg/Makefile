@@ -99,11 +99,13 @@ PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 PDF_USE=		gnome=cairo
 PDF_VARS=		FORCE_REQUIRE+=Poppler-glib
 PDF_VARS_OFF=		FORCE_IGNORE+=Poppler-glib
-QT4_USE=		qt4=corelib,gui,moc_build,opengl,qmake_build,rcc_build,uic_build
+QT4_USES=		qt:4
+QT4_USE=		qt=corelib,gui,moc_build,opengl,qmake_build,rcc_build,uic_build
 QT4_CMAKE_ON=		-DDESIRED_QT_VERSION=4
 QT4_VARS=		FORCE_REQUIRE+=Qt4
 QT4_VARS_OFF=		FORCE_IGNORE+=Qt4
-QT5_USE=		qt5=buildtools_build,core,gui,opengl,qmake_build,webkit
+QT5_USE=		qt:5
+QT5_USE=		qt=buildtools_build,core,gui,opengl,qmake_build,webkit
 QT5_CMAKE_ON=		-DDESIRED_QT_VERSION=5
 QT5_VARS=		FORCE_REQUIRE+="Qt5Widgets Qt5WebKitWidgets"
 QT5_VARS_OFF=		FORCE_IGNORE+="Qt5Widgets Qt5WebKitWidgets"

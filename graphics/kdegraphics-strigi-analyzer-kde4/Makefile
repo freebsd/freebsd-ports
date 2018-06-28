@@ -11,8 +11,8 @@ COMMENT=	Strigi analyzers for various graphics file formats
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-USES=		cmake:outsource kde:4 tar:xz
+USES=		cmake:outsource kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4 strigi
-USE_QT4=	moc_build qmake_build rcc_build uic_build
+USE_QT=		moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

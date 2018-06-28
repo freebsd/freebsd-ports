@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake
+USES=		cmake qt:4
 USE_LDCONFIG=	yes
-USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build designer
+USE_QT=		gui xml qmake_build uic_build moc_build rcc_build designer
 
 DESKTOP_ENTRIES="Zint" "Barcode generator" "" "zint-qt" "" false
 

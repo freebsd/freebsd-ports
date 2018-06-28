@@ -8,8 +8,8 @@ PKGNAMEPREFIX?=	qt5-sqldrivers-
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT?=	Qt ${DB_DESC} database plugin
 
-USE_QT5+=	core sql qmake_build buildtools_build
-QT_DIST?=	base
+USES+=		qmake:no_env qt-dist:5,base
+USE_QT+=	core sql qmake_build buildtools_build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=-no-gui -no-xcb
 

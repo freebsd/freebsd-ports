@@ -11,8 +11,8 @@ COMMENT=	Signon OAuth 1.0 and 2.0 plugin for accounts-sso
 
 LIB_DEPENDS=	libsignon-qt5.so:sysutils/signon-qt5
 
-USES=		pkgconfig python qmake
-USE_QT5=	core network testlib \
+USES=		pkgconfig python qmake qt:5
+USE_QT=		core network testlib \
 		buildtools_build qmake_build
 USE_LDCONFIG=	${PREFIX}/lib/signon
 

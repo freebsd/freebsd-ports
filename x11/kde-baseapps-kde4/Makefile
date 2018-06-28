@@ -11,11 +11,11 @@ COMMENT=	Basic applications for KDE
 
 LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
-USES=		cmake:outsource gettext kde:4 tar:xz
+USES=		cmake:outsource gettext kde:4 qt:4 tar:xz
 USE_GNOME=	glib20
 USE_KDE=	kdelibs baloo baloo-widgets libkonq \
 		automoc4 kactivities
-USE_QT4=	corelib dbus gui script xml \
+USE_QT=		corelib dbus gui script xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt
 USE_LDCONFIG=	yes

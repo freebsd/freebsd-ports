@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt online help integration module
 
-USE_QT4=	qmake_build moc_build rcc_build corelib clucene \
+USES=		qmake:no_env qt-dist:4
+USE_QT=		moc_build rcc_build corelib clucene \
 		gui sql sql-sqlite3_run xml network
-QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}

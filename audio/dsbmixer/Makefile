@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	dsbwrtsysctl:sysutils/dsbwrtsysctl
 
-USES=		tar:tgz qmake
+USES=		qt:5 tar:tgz qmake
 
 USE_GL=		gl
-USE_QT5=	buildtools_build core gui linguisttools_build widgets
+USE_QT=		buildtools_build core gui linguisttools_build widgets
 
 QMAKE_ARGS=	PORTS=1
 

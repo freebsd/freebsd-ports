@@ -13,11 +13,11 @@ COMMENT=	Simple KDE based image viewer
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource kde:5 tar:bzip2
+USES=		cmake:outsource kde:5 qt:5 tar:bzip2
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons ecm i18n itemviews jobwidgets kio service solid \
 		widgetsaddons xmlgui
-USE_QT5=	core dbus gui network xml widgets \
+USE_QT=		core dbus gui network xml widgets \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

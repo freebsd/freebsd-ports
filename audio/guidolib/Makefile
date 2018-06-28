@@ -13,10 +13,10 @@ LICENSE=	MPL20
 
 BUILD_DEPENDS=	cmake:devel/cmake
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
-USE_QT5=	core gui widgets printsupport xml buildtools_build qmake_build
+USE_QT=		core gui widgets printsupport xml buildtools_build qmake_build
 USE_GL=		gl
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes

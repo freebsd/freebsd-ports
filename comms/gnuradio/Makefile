@@ -48,7 +48,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # volk/lib/volk_cpu.c: In function 'i_can_has_3dnow':
 # volk/lib/volk_cpu.c:62: error: can't find a register in class 'BREG' while reloading 'asm'
 # volk/lib/volk_cpu.c:62: error: 'asm' operand has impossible constraints
-USES=		cmake:outsource compiler:c11 fortran iconv perl5 pkgconfig pyqt:4 python:2.7 shebangfix
+USES=		cmake:outsource compiler:c11 fortran iconv perl5 pkgconfig pyqt:4 python:2.7 qt:4 shebangfix
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
@@ -67,7 +67,7 @@ DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	pygtk2
 USE_PYQT=	core gui opengl
 USE_WX=		3.0+
-USE_QT4=	corelib gui xml qmake moc_build rcc_build uic_build
+USE_QT=		corelib gui xml qmake moc_build rcc_build uic_build
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_LDCONFIG=	yes
 PLIST_SUB+=	MAJOR_VERSION="3"

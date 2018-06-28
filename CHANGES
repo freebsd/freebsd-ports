@@ -10,6 +10,27 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20180630:
+AUTHOR: kde@FreeBSD.org
+
+  bsd.qt.mk has been replaced by qt.mk. This changes the way ports have to
+  depend on Qt slightly.
+
+  Previously one would have written
+  	USE_QT4=foo bar
+  or
+  	USE_QT5=foo bar
+  while now one has to write
+  	USES=qt:4
+  	USE_QT=foo bar
+  respectively
+  	USES=qt:5
+  	USE_QT=foo bar
+
+  Further qmake.mk no longer respects QT_NONSTANDARD. Ports that don't want to
+  get the configure environment provided by qmake.mk should add the argument
+  no_env, ports that don't want the configure target should specify no_configure.
+
 20180506:
 AUTHOR: brnrd@FreeBSD.org
 

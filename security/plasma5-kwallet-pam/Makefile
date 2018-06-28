@@ -11,9 +11,9 @@ COMMENT=	Plasma5 KWallet PAM Integration
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake:outsource cpe gettext kde:5 tar:xz
+USES=		cmake:outsource cpe gettext kde:5 qt:5 tar:xz
 USE_KDE=	ecm
-USE_QT5=	buildtools_build qmake_build
+USE_QT=		buildtools_build qmake_build
 
 # The qmake dependency is only needed so that kf5-e-c-m can query qmake for
 # some installation directories.

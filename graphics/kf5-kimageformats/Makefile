@@ -9,9 +9,9 @@ COMMENT=	KF5 library providing support for additional image formats
 
 LIB_DEPENDS=	libHalf.so:graphics/ilmbase
 
-USES=		cmake:outsource compiler:c++11-lib kde:5 pkgconfig tar:xz
+USES=		cmake:outsource compiler:c++11-lib kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	archive ecm 
-USE_QT5=	buildtools_build core gui printsupport qmake_build widgets
+USE_QT=		buildtools_build core gui printsupport qmake_build widgets
 
 OPTIONS_DEFINE=	OPENEXR
 OPTIONS_DEFAULT=	OPENEXR

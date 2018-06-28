@@ -13,10 +13,10 @@ COMMENT=	KDE 4.x SMB Network browser and SMB shares mounting center
 
 RUN_DEPENDS=	sudo:security/sudo
 
-USES=		cmake gettext kde:4 samba:run tar:bzip2
+USES=		cmake gettext kde:4 qt:4 samba:run tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4
 USE_KDE=	kdelibs automoc4 runtime
-USE_QT4=	corelib gui network opengl script svg webkit \
+USE_QT=		corelib gui network opengl script svg webkit \
 		qmake_build moc_build rcc_build uic_build phonon
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/smb4k
 SUB_FILES=	pkg-message

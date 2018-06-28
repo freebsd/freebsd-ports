@@ -17,15 +17,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	u8sand
 GH_PROJECT=	Baka-MPlayer
 
-USES=		compiler:c++11-lib pkgconfig qmake
-USE_QT5=	qmake_build buildtools_build gui network svg widgets x11extras
+USES=		compiler:c++11-lib pkgconfig qmake qt:5
+USE_QT=		qmake_build buildtools_build gui network svg widgets x11extras
 QMAKE_SOURCE_PATH=${WRKSRC}/src
 QMAKE_ARGS=	lupdate="${LUPDATE}" lrelease="${LRELEASE}"
 
 OPTIONS_DEFINE=	DOCS NLS NOTO
 OPTIONS_SUB=	yes
 
-NLS_USE=	QT5=linguisttools_build
+NLS_USES=	qt:5
+NLS_USE=	QT=linguisttools_build
 NLS_QMAKE_ON=	CONFIG+="install_translations"
 NOTO_DESC=	Original look with Noto Sans font
 NOTO_RUN_DEPENDS=	noto>0:x11-fonts/noto

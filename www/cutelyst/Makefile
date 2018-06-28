@@ -11,10 +11,10 @@ COMMENT=	C++/Qt web framework
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource localbase
+USES=		cmake:outsource localbase qt:5
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_QT5=	qmake_build buildtools_build \
+USE_QT=		qmake_build buildtools_build \
 		core network sql
 CMAKE_ARGS=	-DBUILD_ALL=OFF \
 		-DBUILD_TESTS=OFF \

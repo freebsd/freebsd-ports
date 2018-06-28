@@ -17,9 +17,9 @@ LIB_DEPENDS=	libmlt.so:multimedia/mlt \
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
 		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt4
 
-USES=		cmake kde:4 pkgconfig shared-mime-info tar:bzip2
+USES=		cmake kde:4 pkgconfig qt:4 shared-mime-info tar:bzip2
 USE_KDE=	automoc4 kdelibs nepomuk-core
-USE_QT4=	corelib dbus gui opengl script svg xml \
+USE_QT=		corelib dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"

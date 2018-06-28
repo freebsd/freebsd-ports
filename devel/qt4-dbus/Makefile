@@ -14,9 +14,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 BROKEN_sparc64=	fails to compile: invalid conversion
 
-USES=		pkgconfig
-USE_QT4=	qmake_build moc_build rcc_build corelib xml
-QT_DIST=	yes
+USES=		pkgconfig qmake:no_env qt-dist:4
+USE_QT=		moc_build rcc_build corelib xml
 MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes

@@ -14,9 +14,8 @@ LIB_DEPENDS=	libmng.so:graphics/libmng \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		jpeg pkgconfig
-USE_QT4=	qmake_build moc_build rcc_build corelib gui svg xml
-QT_DIST=	yes
+USES=		jpeg pkgconfig qmake:no_env qt-dist:4
+USE_QT=		moc_build rcc_build corelib gui svg xml
 
 HAS_CONFIGURE=	yes
 

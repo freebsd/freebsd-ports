@@ -59,17 +59,17 @@ USE_GNOME+=	cairo gdkpixbuf2 gtk20
 .  elif ${SLAVEPORT}=="gtk3"
 USE_GNOME+=	cairo gdkpixbuf2 gtk30
 .  elif ${SLAVEPORT}=="qt4"
-USE_QT4=	corelib gui moc_build uic_build
-QT_NONSTANDARD=	yes
+USES+=		qmake:no_env qt:4
+USE_QT=		corelib gui moc_build uic_build
 CONFIGURE_ARGS+=--with-qt4-includes=${QT_INCDIR} \
 		--with-qt4-libs=${QT_LIBDIR} \
 		--with-qt4-moc=${MOC} \
 		--with-qt4-uic=${UIC}
 .  elif ${SLAVEPORT}=="qt5"
+USES+=		qmake:no_env qt:5
 USE_GL=		gl
-USE_QT5=	core gui widgets \
+USE_QT=		core gui widgets \
 		buildtools_build qmake_build
-QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=--with-qt5-qmake=${QMAKE} \
 		--with-qt5-moc=${MOC} \
 		--with-qt5-uic=${UIC}

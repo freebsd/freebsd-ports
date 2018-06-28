@@ -10,9 +10,8 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt SVG icon engine
 
-USES=		pkgconfig
-USE_QT4=	qmake_build moc_build corelib gui svg xml
-QT_DIST=	yes
+USES=		pkgconfig qmake:no_env qt-dist:4
+USE_QT=		moc_build corelib gui svg xml
 
 HAS_CONFIGURE=	yes
 

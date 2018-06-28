@@ -13,8 +13,8 @@ COMMENT=	Qt 4 based dictionary program (stardict clone)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		dos2unix pkgconfig qmake tar:bzip2
-USE_QT4=	corelib gui network xml uic_build moc_build rcc_build
+USES=		dos2unix pkgconfig qmake qt:4 tar:bzip2
+USE_QT=		corelib gui network xml uic_build moc_build rcc_build
 USE_GNOME=	glib20
 USE_XORG=	x11
 DOS2UNIX_FILES=	qstardict.pri
@@ -26,7 +26,8 @@ OPTIONS_DEFINE=	DBUS DOCS NLS
 OPTIONS_DEFAULT=DBUS
 OPTIONS_SUB=	yes
 
-DBUS_USE=	QT4=dbus
+DBUS_USES=	qt:4
+DBUS_USE=	QT=dbus
 DBUS_QMAKE_OFF=	NO_DBUS=1
 
 NLS_QMAKE_OFF=	NO_TRANSLATIONS=1

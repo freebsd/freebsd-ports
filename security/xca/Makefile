@@ -27,9 +27,11 @@ OPTIONS_SINGLE=		TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
 OPTIONS_DEFAULT=	QT4
 
-QT4_USE=		qt4=gui,linguist_build,moc_build,qmake_build \
-			qt4=rcc_build,uic_build
-QT5_USE=		qt5=widgets,buildtools_build,linguist_build \
+QT4_USES=		qt:4
+QT4_USE=		qt=gui,linguist_build,moc_build,qmake_build \
+			qt=rcc_build,uic_build
+QT5_USES=		qt:5
+QT5_USE=		qt=widgets,buildtools_build,linguist_build \
 			CXXSTD=c++11
 TOOLKIT_DESC=		Qt toolkit
 

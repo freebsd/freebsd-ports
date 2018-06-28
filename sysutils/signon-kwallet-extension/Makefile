@@ -9,9 +9,9 @@ COMMENT=	KWallet integration for signon framework
 
 LIB_DEPENDS=	libsignon-qt5.so:sysutils/signon-qt5
 
-USES=		cmake:outsource kde:5 pkgconfig tar:xz
+USES=		cmake:outsource kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	ecm wallet
-USE_QT5=	core dbus gui \
+USE_QT=		core dbus gui \
 		buildtools_build qmake_build
 USE_LDCONFIG=	${KDE_PREFIX}/${SE_DIR}
 PLIST_FILES=	${SE_DIR}/libkeyring-kwallet.so

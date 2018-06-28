@@ -24,9 +24,9 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
-USES=		cmake:outsource gettext-runtime kde:4 pkgconfig
+USES=		cmake:outsource gettext-runtime kde:4 pkgconfig qt:4
 USE_GNOME=	cairo gdkpixbuf2 gtk20
-USE_QT4=	corelib dbus gui network svg xml \
+USE_QT=		corelib dbus gui network svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_KDE=	automoc4 kdelibs soprano
 USE_XORG=	x11

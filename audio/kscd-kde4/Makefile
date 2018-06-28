@@ -13,9 +13,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmusicbrainz3.so:audio/libmusicbrainz3
 
-USES=		cmake:outsource kde:4 tar:xz
+USES=		cmake:outsource kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
-USE_QT4=	phonon moc_build qmake_build rcc_build uic_build
+USE_QT=		phonon moc_build qmake_build rcc_build uic_build
 
 OPTIONS_DEFINE=	ALSA
 

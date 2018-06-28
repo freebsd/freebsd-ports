@@ -29,14 +29,14 @@ USE_GSTREAMER1=	yes
 USE_XORG=	x11
 
 .  if ${FLAVOR} == qt4
-USES+=		kde:4
+USES+=		kde:4 qt:4
 USE_KDE=	automoc4
-USE_QT4=	corelib gui opengl phonon \
+USE_QT=		corelib gui opengl phonon \
 		qmake_build moc_build rcc_build uic_build
 .  else
-USES+=		kde:5
+USES+=		kde:5 qt:5
 USE_KDE=	ecm
-USE_QT5=	core gui opengl phonon4 widgets x11extras \
+USE_QT=		core gui opengl phonon4 widgets x11extras \
 		buildtools_build qmake_build
 CMAKE_ON=	PHONON_BUILD_PHONON4QT5
 .  endif

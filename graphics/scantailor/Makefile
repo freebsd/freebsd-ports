@@ -20,8 +20,8 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png
 
 #MAKE_JOBS_UNSAFE=	yes
-USES=		cmake gettext jpeg
-USE_QT4=	corelib gui xml qmake_build uic_build moc_build rcc_build \
+USES=		cmake gettext jpeg qt:4
+USE_QT=		corelib gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
 USE_XORG+=	xrender
 

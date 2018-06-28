@@ -8,9 +8,9 @@ CATEGORIES=	x11-themes kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Set of wallpapers for the KDE Plasma workspace
 
-USES=		cmake:outsource kde:4 tar:xz
+USES=		cmake:outsource kde:4 qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs
-USE_QT4=	moc_build qmake_build rcc_build uic_build
+USE_QT=		moc_build qmake_build rcc_build uic_build
 
 NO_BUILD=	yes
 

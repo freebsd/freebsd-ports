@@ -31,8 +31,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
 BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprotobuf, libchromaprint, libmp4, and libwavpack
 
-USES=		scons iconv pkgconfig
-USE_QT4=	corelib gui network opengl script scripttools sql sql-sqlite3 \
+USES=		qt:4 scons iconv pkgconfig
+USE_QT=		corelib gui network opengl script scripttools sql sql-sqlite3 \
 		svg testlib xml xmlpatterns linguisttools_build moc_build \
 		qmake_build rcc_build uic_build
 USE_GL=		gl glu

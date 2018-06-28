@@ -15,7 +15,7 @@ COMMENT=	Free timetabling software
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake tar:bzip2
+USES=		qmake qt:4 tar:bzip2
 
 PORTEXAMPLES=	*
 
@@ -34,8 +34,10 @@ ONLYCL_DESC=	Build only command line version (without Qt GUI)
 
 OPTIONS_SUB=	yes
 
-QT4_USE=	QT4=corelib,moc_build,rcc_build,uic_build,xml
-QT5_USE=	QT5=buildtools_build,core,xml GL=gl
+QT4_USES=	qt:4
+QT4_USE=	QT=corelib,moc_build,rcc_build,uic_build,xml
+QT5_USES=	qt:5
+QT5_USE=	QT=buildtools_build,core,xml GL=gl
 
 .include <bsd.port.options.mk>
 
@@ -45,9 +47,9 @@ QMAKE_SOURCE_PATH=	${WRKSRC}/src/src-cl.pro
 .else
 INSTALL_TARGET+=	${WRKSRC}/fet
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4+=gui network
+USE_QT+=	gui network
 .else
-USE_QT5+=gui network printsupport widgets
+USE_QT+=	gui network printsupport widgets
 .endif
 .endif
 

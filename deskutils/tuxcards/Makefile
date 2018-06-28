@@ -11,8 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for managing notes within a hierarchical tree
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		qmake
-USE_QT4=	gui xml moc_build uic_build rcc_build
+USES=		qmake qt:4
+USE_QT=		gui xml moc_build uic_build rcc_build
 
 PLIST_FILES=	bin/tuxcards
 

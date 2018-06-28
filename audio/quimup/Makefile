@@ -18,8 +18,8 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 
 WRKSRC=		${WRKDIR}/Quimup_${PORTVERSION}
 
-USES=		pkgconfig qmake compiler:c++11-lang
-USE_QT5=	core gui network widgets buildtools_build
+USES=		pkgconfig qmake compiler:c++11-lang qt:5
+USE_QT=		core gui network widgets buildtools_build
 USE_GL=		gl
 
 CXXFLAGS+=	-std=c++11

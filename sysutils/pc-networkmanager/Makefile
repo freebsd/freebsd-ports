@@ -19,10 +19,10 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 CONFLICTS=	pcbsd-utils*
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		qmake shebangfix tar:xz
+USES=		qmake qt:5 shebangfix tar:xz
 SHEBANG_FILES=	src/NetworkManager/resources/umts_stick
 USE_LDCONFIG=	yes
-USE_QT5=	core gui network svg linguist \
+USE_QT=		core gui network svg linguist \
 		buildtools x11extras widgets
 USE_GL+=	gl
 

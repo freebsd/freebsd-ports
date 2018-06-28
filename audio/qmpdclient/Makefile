@@ -13,8 +13,8 @@ COMMENT=	Easy to use musicpd client written in Qt4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake tar:bzip2
-USE_QT4=	moc_build rcc_build uic_build \
+USES=		qmake qt:4 tar:bzip2
+USE_QT=		moc_build rcc_build uic_build \
 		corelib gui network xml xmlpatterns
 INSTALLS_ICONS=	yes
 
@@ -25,10 +25,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_SUB=	yes
 
-NLS_USE=	QT4=linguisttools_build
+NLS_USES=	qt:4
+NLS_USE=	QT=linguisttools_build
 
 DBUS_QMAKE_ON=	CONFIG+=qdbus
-DBUS_USE=	QT4=dbus
+DBUS_USES=	qt:4
+DBUS_USE=	QT=dbus
 
 DEBUG_QMAKE_ON=	CONFIG+=debug
 

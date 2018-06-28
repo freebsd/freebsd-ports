@@ -47,12 +47,14 @@ OPTIONS_SINGLE=		GUI
 OPTIONS_SINGLE_GUI=	QT4 QT5
 OPTIONS_DEFAULT=	QT4
 
-QT4_USE=		qt4=corelib,gui,network,opengl,webkit \
-			qt4=xml,xmlpatterns \
-			qt4=moc_build,qmake_build,rcc_build,uic_build
-QT5_USE=		qt5=core,gui,network,opengl,webkit,widgets \
-			qt5=xml,xmlpatterns \
-			qt5=buildtools_build,qmake_build
+QT4_USES=		qt:4
+QT4_USE=		qt=corelib,gui,network,opengl,webkit \
+			qt=xml,xmlpatterns \
+			qt=moc_build,qmake_build,rcc_build,uic_build
+QT_USES=		qt:5
+QT5_USE=		qt=core,gui,network,opengl,webkit,widgets \
+			qt=xml,xmlpatterns \
+			qt=buildtools_build,qmake_build
 QT5_CMAKE_BOOL=		USE_QT5_IF_INSTALLED
 
 post-build:

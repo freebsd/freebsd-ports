@@ -12,10 +12,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus@${PY_FLAVOR}
 CONFIGURE_ARGS=	--enable QtCore
 PYQT_DIST=	yes
 
-USES=		pkgconfig python pyqt:4
+USES=		pkgconfig python pyqt:4 qt:4
 USE_PYQT=	sip_build
 USE_PYTHON=	flavors
-USE_QT4=	corelib qmake_build moc_build
+USE_QT=		corelib qmake_build moc_build
 
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace

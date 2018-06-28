@@ -36,9 +36,9 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
 		zeux:pugixml:v1.9:pugixml/3rdparty/pugixml
 
 USES=		cmake:outsource compiler:c++14-lang iconv:wchar_t localbase:ldflags \
-		openal:soft pkgconfig
+		openal:soft pkgconfig qt:5
 USE_GL=		gl glew
-USE_QT5=	qmake_build buildtools_build core dbus gui network widgets qml
+USE_QT=		qmake_build buildtools_build core dbus gui network widgets qml
 USE_XORG=	x11
 CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS

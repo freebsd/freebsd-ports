@@ -18,10 +18,10 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
-USES=		cmake:outsource kde:4 shared-mime-info \
+USES=		cmake:outsource kde:4 qt:4 shared-mime-info \
 		compiler:c++11-lang pathfix tar:bzip2
 USE_KDE=	automoc4 soprano
-USE_QT4=	corelib dbus gui network qtestlib_build sql xml \
+USE_QT=		corelib dbus gui network qtestlib_build sql xml \
 		moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS+=	-DAKONADI_BUILD_TESTS:BOOL=FALSE \
 		-DINSTALL_QSQLITE_IN_QT_PREFIX:BOOL=TRUE \
@@ -33,15 +33,16 @@ OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_SUB=	yes # SQLITE
 
 MYSQL_DESC=	Install MySQL Qt plugin and server
-MYSQL_USE=	QT4=sql-mysql_run
-MYSQL_USES=	mysql:server
+MYSQL_USE=	QT=sql-mysql_run
+MYSQL_USES=	mysql:server qt:4
 
 PGSQL_DESC=	Install PostgreSQL Qt plugin
 # Do not add a dependency on PostgreSQL server as someone preferring
 # it over MySQL might like to use some advanced configuration, like a
 # remote server.
 #PGSQL_USE=	PGSQL=server
-PGSQL_USE=	QT4=sql-pgsql_run
+PGSQL_USES=	qt:4
+PGSQL_USE=	QT=sql-pgsql_run
 
 SQLITE_DESC=	Enable SQLite backend
 SQLITE_USES=	sqlite:3

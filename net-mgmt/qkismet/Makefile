@@ -12,8 +12,8 @@ COMMENT=	Qt 4 GUI client for Kismet
 
 RUN_DEPENDS=	kismet:net-mgmt/kismet
 
-USES=		qmake tar:bzip2
-USE_QT4=	gui xml uic_build moc_build rcc_build network
+USES=		qmake qt:4 tar:bzip2
+USE_QT=		gui xml uic_build moc_build rcc_build network
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

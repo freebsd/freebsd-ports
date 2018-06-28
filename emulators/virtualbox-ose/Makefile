@@ -156,10 +156,10 @@ USES+=		python:build
 .if ${PORT_OPTIONS:MQT5}
 CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
-QT_NONSTANDARD=	yes
 USE_GL=		gl
-USE_QT5=	buildtools_build core dbus gui linguisttools_build opengl
-USE_QT5+=	printsupport widgets x11extras
+USES+=		qmake:no_env qt:5
+USE_QT=		buildtools_build core dbus gui linguisttools_build opengl
+USE_QT+=	printsupport widgets x11extras
 USE_XORG=	xcb
 INSTALLS_ICONS=	yes
 VBOX_PROGS+=	VirtualBox

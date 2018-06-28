@@ -18,8 +18,8 @@ LICENSE=	GPLv2+
 CONFLICTS_INSTALL=	${PORTNAME}-0.17.*
 PORTSCOUT=	limit:^0\.12\.			# track only 0.12.x (legacy)
 
-USES=		cmake gettext iconv
-USE_QT4=	moc_build rcc_build uic_build qmake_build \
+USES=		cmake gettext iconv qt:4
+USE_QT=		moc_build rcc_build uic_build qmake_build \
 		corelib gui network opengl
 
 PORTDOCS=	AUTHORS ChangeLog README
@@ -55,13 +55,13 @@ PLIST_SUB+=	TEXTURES="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMULTIMEDIA}
-USE_QT4+=	phonon
+USE_QT+=	phonon
 .else
 CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MSCRIPTING}
-USE_QT4+=	script
+USE_QT+=	script
 PLIST_SUB+=	SCRIPTS=""
 .else
 CMAKE_ARGS+=	-DENABLE_SCRIPTING:BOOL=OFF

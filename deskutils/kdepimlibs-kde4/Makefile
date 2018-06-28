@@ -21,12 +21,12 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libprison.so:graphics/prison \
 		libqjson.so:devel/qjson@qt4
 
-USES=		cmake:outsource kde:4 shared-mime-info shebangfix tar:xz
+USES=		cmake:outsource kde:4 qt:4 shared-mime-info shebangfix tar:xz
 USE_KDE=	kdelibs akonadi \
 		automoc4 ontologies soprano
 SHEBANG_FILES=	mailtransport/kconf_update/migrate-transports.pl
 USE_OPENLDAP=	yes
-USE_QT4=	corelib dbus declarative designer_build gui network sql xml \
+USE_QT=		corelib dbus declarative designer_build gui network sql xml \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

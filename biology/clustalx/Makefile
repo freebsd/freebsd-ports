@@ -12,8 +12,8 @@ COMMENT=	Multiple alignment of nucleic acid and protein sequences with GUI
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake
-USE_QT4=	corelib gui moc qmake_build xml
+USES=		qmake qt:4
+USE_QT=		corelib gui moc qmake_build xml
 
 PLIST_FILES=	bin/clustalx \
 		${DATADIR}/colprot.xml \

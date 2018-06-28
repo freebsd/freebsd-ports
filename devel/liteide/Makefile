@@ -31,8 +31,10 @@ OPTIONS_SUB=		yes
 
 DEBUG_CONFIGURE_ENABLE=	debug
 
-QT4_USE=	QT4=corelib,gui,network,webkit,xml,moc_build,rcc_build,uic_build
-QT5_USE=	QT5=core,gui,network,printsupport,widgets,xml,buildtools_build
+QT4_USES=	qt:4
+QT4_USE=	QT=corelib,gui,network,webkit,xml,moc_build,rcc_build,uic_build
+QT5_USES=	qt:5
+QT5_USE=	QT=core,gui,network,printsupport,widgets,xml,buildtools_build
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications

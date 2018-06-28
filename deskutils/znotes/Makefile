@@ -24,9 +24,11 @@ GH_PROJECT=	zNotes
 GH_TAGNAME=	6423c5e
 
 . if ${FLAVOR} == qt4
-USE_QT4=	uic_build moc_build rcc_build linguisttools_build corelib gui network xml
+USES+=		qt:4
+USE_QT=		uic_build moc_build rcc_build linguisttools_build corelib gui network xml
 . else
-USE_QT5=	buildtools_build linguisttools_build core gui network printsupport widgets xml
+USES+=		qt:5
+USE_QT=		buildtools_build linguisttools_build core gui network printsupport widgets xml
 . endif
 
 DESKTOP_ENTRIES="zNotes" "Notes managment" \

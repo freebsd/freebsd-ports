@@ -7,10 +7,10 @@ CATEGORIES=	games kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
-USES=		cmake:outsource kde:5 tar:xz
+USES=		cmake:outsource kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons crash ecm \
 		guiaddons i18n libkdegames notifyconfig widgetsaddons xmlgui
-USE_QT5=	core dbus gui network qml quick svg widgets xml \
+USE_QT=		core dbus gui network qml quick svg widgets xml \
 		buildtools_build qmake_build
 
 .include <${.CURDIR}/../kdegames/Makefile.common>

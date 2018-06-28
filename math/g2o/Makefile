@@ -15,11 +15,11 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libcxsparse.so:math/suitesparse \
 		libQGLViewer-qt5.so:graphics/libQGLViewer
 
-USES=		cmake:outsource eigen:3
+USES=		cmake:outsource eigen:3 qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	RainerKuemmerle
 USE_GL=		gl glu
-USE_QT5=	core gui opengl xml widgets buildtools_build qmake_build
+USE_QT=		core gui opengl xml widgets buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	DO_SSE_AUTODETECT

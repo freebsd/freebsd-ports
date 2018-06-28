@@ -18,9 +18,8 @@ BROKEN_SSL_REASON_openssl-devel=	error: member access into incomplete type 'RSA'
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		ssl
-USE_QT4=	qmake_build moc_build rcc_build corelib
-QT_DIST=	yes
+USES=		qmake:no_env qt-dist:4 ssl
+USE_QT=		moc_build rcc_build corelib
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

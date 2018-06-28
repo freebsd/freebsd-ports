@@ -20,14 +20,14 @@ qt5_PKGNAMESUFFIX=	-designerplugin-qt5
 USES=		cmake tar:xz
 
 .  if ${FLAVOR} == qt4
-USES+=		kde:4
-USE_QT4=	corelib designer gui phonon \
+USES+=		kde:4 qt:4
+USE_QT=		corelib designer gui phonon \
 		qmake_build moc_build rcc_build uic_build
 PLIST_FILES=	${QT_PLUGINDIR_REL}/designer/libphononwidgets.so
 .  else
-USES+=		kde:5
+USES+=		kde:5 qt:5
 USE_KDE=	ecm
-USE_QT5=	core designer gui phonon4 widgets xml \
+USE_QT=		core designer gui phonon4 widgets xml \
 		buildtools_build qmake_build
 CMAKE_ON=	PHONON_BUILD_PHONON4QT5
 PLIST_FILES=	${QT_PLUGINDIR_REL}/designer/phononwidgets.so

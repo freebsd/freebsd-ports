@@ -28,9 +28,9 @@ CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-* \
 		libfwbuilder-[234].* libfwbuilder-devel-*
 .endif
 
-USES=		autoreconf:build gmake libtool ssl
+USES=		autoreconf:build gmake libtool qmake:no_configure qt:4 ssl
 PLIST_SUB=	BUILD_VERSION=${PORTVERSION}.${BUILD}
-USE_QT4=	corelib \
+USE_QT=		corelib \
 		gui \
 		iconengines \
 		inputmethods \

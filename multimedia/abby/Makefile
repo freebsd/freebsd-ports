@@ -13,8 +13,8 @@ COMMENT=	Front-end for c/clive
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake tar:bzip2
-USE_QT4=	gui network xml moc_build rcc_build uic_build
+USES=		qmake qt:4 tar:bzip2
+USE_QT=		gui network xml moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/abby
 

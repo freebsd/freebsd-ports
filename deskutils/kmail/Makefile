@@ -20,7 +20,7 @@ RUN_DEPENDS=	accountwizard:deskutils/kmail-account-wizard \
 		mboximporter:deskutils/mbox-importer \
 		sieveeditor:deskutils/pim-sieve-editor
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 tar:xz
+USES=		cmake:outsource compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons ecm guiaddons i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kdelibs4support kio \
@@ -33,7 +33,7 @@ USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \
 		identitymanagement libkdepim libkleo libksieve \
 		kontactinterface ldap mailcommon mailtransport messagelib \
 		mime pimcommon pimtextedit tnef
-USE_QT5=	core dbus gui location network printsupport qml quick \
+USE_QT=		core dbus gui location network printsupport qml quick \
 		webchannel webengine widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

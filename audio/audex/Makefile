@@ -13,9 +13,9 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcdda_paranoia.so:audio/cdparanoia
 
-USES=		tar:xz cmake kde:4
+USES=		qt:4 tar:xz cmake kde:4
 USE_KDE=	automoc4 kdelibs libkcddb libkcompactdisc
-USE_QT4=	gui dbus network svg xml \
+USE_QT=		gui dbus network svg xml \
 		qmake_build moc_build rcc_build uic_build
 # Too many changes for suffix on literals without a space.
 USE_CXXSTD=	gnu++98

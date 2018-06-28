@@ -14,8 +14,8 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-USES=		qmake shebangfix tar:xz
-USE_QT5=	core gui network linguist_build \
+USES=		qmake qt:5 shebangfix tar:xz
+USE_QT=		core gui network linguist_build \
 		buildtools_build widgets webkit svg
 USE_GL+=	gl
 

@@ -79,7 +79,8 @@ LIB_DEPENDS+=	libpackagekit-glib2.so:ports-mgmt/packagekit
 
 CONFIGURE_ARGS+=--enable-qt
 LIB_DEPENDS+=	libcppunit.so:devel/cppunit
-USE_QT4+=	dbus gui xml sql moc_build
+USES=		qt:4
+USE_QT+=	dbus gui xml sql moc_build
 #.include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 

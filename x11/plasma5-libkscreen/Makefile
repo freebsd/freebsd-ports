@@ -8,9 +8,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 screen management library
 
 USES=		cmake:outsource compiler:c++11-lib cpe kde:5 pathfix \
-		pkgconfig tar:xz
+		pkgconfig qt:5 tar:xz
 USE_KDE=	ecm wayland
-USE_QT5=	core dbus gui testlib x11extras \
+USE_QT=		core dbus gui testlib x11extras \
 		buildtools_build qmake_build
 USE_XORG=	x11 xcb xrandr
 

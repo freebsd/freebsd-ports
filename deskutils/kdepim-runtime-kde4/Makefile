@@ -21,11 +21,11 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 CONFLICTS_INSTALL=	kdepim-runtime44-4.*
 
-USES=		cmake:outsource kde:4 shared-mime-info tar:xz
+USES=		cmake:outsource kde:4 qt:4 shared-mime-info tar:xz
 USE_GNOME=	libxml2 libxslt:build
 USE_KDE=	kdelibs pimlibs \
 		akonadi automoc4
-USE_QT4=	corelib dbus declarative designer_build gui network qtestlib \
+USE_QT=		corelib dbus declarative designer_build gui network qtestlib \
 		script xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes

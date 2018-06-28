@@ -21,10 +21,10 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		cmake compiler:c++11-lib dos2unix fortran pkgconfig \
-			readline tar:tgz
+		qt:5 readline tar:tgz
 USE_GL=		yes
-USE_QT5=	core gui buildtools network qmake_build widgets \
-			multimedia concurrent printsupport serialport
+USE_QT=		core gui buildtools network qmake_build widgets \
+		multimedia concurrent printsupport serialport
 CMAKE_ARGS+=	-DPORT_BUILDING::STRING="ON" \
 		-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \
 		-DLOCALBASE::STRING="${LOCALBASE}"

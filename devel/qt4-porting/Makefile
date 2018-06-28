@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt utility to assist with porting from Qt 3 to Qt 4
 
-USE_QT4=	qmake_build moc_build rcc_build corelib xml
-QT_DIST=	yes
+USES=		qmake:no_env qt-dist:4
+USE_QT=		moc_build rcc_build corelib xml
 
 HAS_CONFIGURE=	yes
 

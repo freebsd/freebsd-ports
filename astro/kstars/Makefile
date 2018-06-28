@@ -19,13 +19,13 @@ BUILD_DEPENDS=	xplanet:astro/xplanet
 RUN_DEPENDS=	xplanet:astro/xplanet
 
 USES=		cmake:outsource compiler:c++11-lib eigen:3 gettext kde:5 \
-		pkgconfig tar:xz
+		pkgconfig qt:5 tar:xz
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets\
 		coreaddons crash dbusaddons doctools ecm guiaddons i18n \
 		iconthemes init itemviews jobwidgets kio newstuff notifications \
 		notifyconfig parts plotting service solid texteditor \
 		widgetsaddons xmlgui
-USE_QT5=	concurrent core dbus gui multimedia network opengl printsupport \
+USE_QT=		concurrent core dbus gui multimedia network opengl printsupport \
 		qml quick sql svg testlib widgets xml \
 		buildtools_build qmake_build
 

@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_UNSAFE= yes
 
-USE_QT4=	corelib gui moc_build qmake_build
+USES=	qt:4
+USE_QT=		corelib gui moc_build qmake_build
 
 PORTDOCS=	CHANGES README
 

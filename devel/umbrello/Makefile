@@ -9,14 +9,14 @@ COMMENT=	UML modeller for KDE
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		cmake:outsource kde:5 tar:xz
+USES=		cmake:outsource kde:5 qt:5 tar:xz
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm guiaddons i18n iconthemes itemviews \
 		jobwidgets kdelibs4support kio notifications parts service \
 		solid sonnet texteditor textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui
-USE_QT5=	core dbus gui network printsupport svg webkit widgets xml \
+USE_QT=		core dbus gui network printsupport svg webkit widgets xml \
 		buildtools_build qmake_build
 
 # Build the KDE Frameworks 5 based version.

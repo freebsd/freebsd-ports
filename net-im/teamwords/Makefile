@@ -12,9 +12,9 @@ COMMENT=	Unofficial Qt Slack client
 
 LICENSE=	LGPL3
 
-USES=		compiler:c++11-lang qmake
+USES=		compiler:c++11-lang qmake qt:5
 USE_LDCONFIG=	yes
-USE_QT5=	core gui widgets network svg linguist \
+USE_QT=		core gui widgets network svg linguist \
 		webkit buildtools x11extras
 USE_GL=		gl
 

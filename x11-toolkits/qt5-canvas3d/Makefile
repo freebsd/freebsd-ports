@@ -8,9 +8,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt canvas3d module
 
-USE_QT5=	core gui network qml quick buildtools_build
-QT_DIST=	${PORTNAME}
-USES=		qmake
+USE_QT=		core gui network qml quick buildtools_build
+USES=		qmake qt-dist:5,canvas3d
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

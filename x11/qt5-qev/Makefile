@@ -8,15 +8,14 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt QWidget events introspection tool
 
-USE_QT5=	core widgets
-QT_DIST=	tools
-USES=		qmake
+USE_QT=		core widgets
+USES=		qmake qt-dist:5,tools
 
 WRKSRC_SUBDIR=	src/${PORTNAME}
 
-# qev is not connected to qttool's build system, so we cannot just run qmake
+# qev is not connected to qttool's build system, so we cannot just run qmake qt-dist:5,tools
 # and set {BUILD,INSTALL}_WRKSRC.
-# Instead, we run qmake from src/${PORTNAME} but need to copy .qmake.conf to
+# Instead, we run qmake qt-dist:5,tools from src/${PORTNAME} but need to copy .qmake qt-dist:5,tools.conf to
 # it for all required variables to be set (MODULE_VERSION etc).
 post-patch:
 	${CP} ${WRKSRC}/../../.qmake.conf ${WRKSRC}

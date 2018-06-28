@@ -11,9 +11,9 @@ COMMENT=	Qt5 based clipboard manager
 
 LICENSE=	GPLv3
 
-USES=		qmake
+USES=		qmake qt:5
 USE_XORG=	x11 xfixes xtst
-USE_QT5=	core gui network svg multimedia imageformats \
+USE_QT=		core gui network svg multimedia imageformats \
 		buildtools_build x11extras concurrent widgets xml \
 		script
 USE_GL=		gl

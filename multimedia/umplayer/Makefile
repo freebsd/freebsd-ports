@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/Copying.txt
 
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
-USES=		desktop-file-utils gmake qmake tar:xz
-USE_QT4=	gui network xml moc_build rcc_build uic_build \
+USES=		desktop-file-utils gmake qmake qt:4 tar:xz
+USE_QT=		gui network xml moc_build rcc_build uic_build \
 		linguisttools_build
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX} DESTDIR=${STAGEDIR}

@@ -12,9 +12,9 @@ COMMENT=	Qt core non-graphical module
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libpcre2-posix.so:devel/pcre2
 
+USES=		qmake:no_env qt-dist:5,base
 USE_GNOME=	glib20
-USE_QT5=	qmake_build buildtools_build
-QT_DIST=	base
+USE_QT=		qmake_build buildtools_build
 HAS_CONFIGURE=	yes
 # Disable (almost) everything to install minimal qconfig.h.
 # -no-feature-* adds QT_NO_* (for features which have no switch or

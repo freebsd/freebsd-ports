@@ -12,10 +12,10 @@ LICENSE_COMB=		multi
 LICENSE_FILE_GFDL=	${WRKSRC}/COPYING.DOC
 LICENSE_FILE_GPLv2=	 ${WRKSRC}/COPYING
 
-USES=		cmake:outsource kde:5 tar:xz
+USES=		cmake:outsource kde:5 qt:5 tar:xz
 USE_GL=		glu
 USE_KDE=	ecm
-USE_QT5=	core gui network opengl printsupport qml quick svg widgets xml \
+USE_QT=		core gui network opengl printsupport qml quick svg widgets xml \
 		buildtools_build linguisttools_build qmake_build
 
 USE_LDCONFIG=	yes

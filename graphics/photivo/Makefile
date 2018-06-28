@@ -37,8 +37,10 @@ _QT5_DEPS=	qmake_build buildtools_build core gui network widgets
 OPTIONS_DEFINE=	QT4
 QT4_DESC=	Build against Qt 4 instead of Qt 5
 
-QT4_USE=	QT4=${_QT4_DEPS:ts,}
-QT4_USE_OFF=	QT5=${_QT5_DEPS:ts,}
+QT4_USES=	qt:4
+QT4_USES_OFF=	qt:5
+QT4_USE=	QT=${_QT4_DEPS:ts,}
+QT4_USE_OFF=	QT=${_QT5_DEPS:ts,}
 QT4_CMAKE_ON=	-DFORCE_QT4:BOOL=true
 
 post-patch:

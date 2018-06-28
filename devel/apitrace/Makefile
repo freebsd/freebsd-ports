@@ -24,7 +24,8 @@ OPTIONS_DEFAULT=	QT5
 OPTIONS_SUB=	yes
 
 QT5_CMAKE_BOOL=	ENABLE_GUI
-QT5_USE=	qt5=core,gui,network,widgets,buildtools_build,qmake_build
+QT5_USES=	qt:5
+QT5_USE=	qt=core,gui,network,widgets,buildtools_build,qmake_build
 
 post-install:
 	${RM} ${STAGEDIR}${DOCSDIR}/LICENSE.txt

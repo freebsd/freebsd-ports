@@ -13,8 +13,8 @@ COMMENT=	Card game suite
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake
-USE_QT4=	assistantclient corelib gui network \
+USES=		qmake qt:4
+USE_QT=		assistantclient corelib gui network \
 		moc_build rcc_build uic_build
 ALL_TARGET=	qmake release
 MAKE_JOBS_UNSAFE=	yes

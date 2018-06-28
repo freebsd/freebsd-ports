@@ -8,10 +8,9 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 documentation browser
 
-USE_QT5=	core gui help network printsupport sql widgets \
+USE_QT=		core gui help network printsupport sql widgets \
 		buildtools_build sql-sqlite3_run
-QT_DIST=	tools
-USES=		qmake
+USES=		qmake qt-dist:5,tools
 
 DESKTOP_ENTRIES="Qt 5 Assistant" "" \
 		"${PREFIX}/share/pixmaps/assistant-qt5.png" \

@@ -30,11 +30,13 @@ CMAKE_ARGS=	-DENABLE_EXAMPLES:BOOL=False \
 		-DDESIRED_QT_VERSION:STRING=${PKGNAMESUFFIX} \
 		-DQT_QMAKE_EXECUTABLE:FILEPATH=${QMAKE}
 . if ${PKGNAMESUFFIX:M4}
-USE_QT4=	corelib dbus gui network qtestlib_build xml \
+USES+=		qt:4
+USE_QT=		corelib dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
 SHLIB_SUFFIX=	2
 . else
-USE_QT5=	core dbus gui network xml \
+USES+=		qt:5
+USE_QT=		core dbus gui network xml \
 		buildtools_build qmake_build testlib_build widgets_build
 SHLIB_SUFFIX=	0
 . endif

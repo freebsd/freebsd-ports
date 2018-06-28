@@ -114,12 +114,12 @@ DISTINFO_FILE=	${.CURDIR:H:H}/graphics/digikam-kde4/distinfo
 
 LICENSE?=	GPLv2
 
-USES+=		tar:bzip2
+USES+=		qt:4 tar:bzip2
 
 .if !defined(NO_BUILD)
 USES+=		cmake:noninja kde:4
 USE_KDE+=	automoc4 kdelibs
-USE_QT4+=	qmake_build moc_build rcc_build uic_build
+USE_QT+=	qmake_build moc_build rcc_build uic_build
 
 WRKSRC?=	${WRKDIR}/${DISTNAME}/extra/${PORTNAME}
 

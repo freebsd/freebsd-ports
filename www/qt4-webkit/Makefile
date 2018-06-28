@@ -10,11 +10,10 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt WebKit implementation
 
-USE_QT4=	corelib declarative gui network \
-		qmake_build moc_build rcc_build
-QT_DIST=	yes
+USE_QT=		corelib declarative gui network \
+		moc_build rcc_build
 USE_XORG=	xrender
-USES=		pkgconfig
+USES=		pkgconfig qmake:no_env qt-dist:4
 USE_CXXSTD=	gnu++98
 
 HAS_CONFIGURE=	yes

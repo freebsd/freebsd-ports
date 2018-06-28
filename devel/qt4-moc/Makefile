@@ -10,8 +10,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Meta-Object Compiler
 
-USE_QT4=	qmake_build
-QT_DIST=	yes
+USES=		qt-dist:4 qmake:no_env
 
 HAS_CONFIGURE=	yes
 

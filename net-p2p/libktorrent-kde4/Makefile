@@ -15,9 +15,9 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgmp.so:math/gmp \
 		libqca.so:devel/qca
 
-USES=		cmake:outsource gettext kde:4 tar:bzip2
+USES=		cmake:outsource gettext kde:4 qt:4 tar:bzip2
 USE_KDE=	kdelibs automoc4
-USE_QT4=	qtestlib_build qmake_build moc_build rcc_build uic_build
+USE_QT=		qtestlib_build qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
 SHLIB_VER=	5.0.1

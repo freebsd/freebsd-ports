@@ -17,12 +17,12 @@ LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
 		libkaccounts.so:net-im/kaccounts-integration
 RUN_DEPENDS=	kaccounts-providers>=0:net-im/kaccounts-providers
 
-USES=		cmake:outsource gettext kde:5 pkgconfig tar:xz
+USES=		cmake:outsource gettext kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	intltool
 USE_KDE=	completion config coreaddons ecm i18n jobwidgets kio \
 		notifications service widgetsaddons \
 		gapi
-USE_QT5=	core dbus gui network widgets xml \
+USE_QT=		core dbus gui network widgets xml \
 		buildtools_build  qmake_build
 
 .include <bsd.port.mk>

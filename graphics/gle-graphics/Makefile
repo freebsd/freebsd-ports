@@ -44,8 +44,8 @@ REINPLACE_FILES=	configure
 
 USE_GL=	yes
 USE_LDCONFIG=	yes
-USE_QT4=	corelib gui moc network opengl rcc qmake_build
-USES=		gmake ncurses pathfix
+USE_QT=		corelib gui moc network opengl rcc qmake_build
+USES=		gmake ncurses pathfix qt:4
 CPPFLAGS+=	-I${NCURSESINC}
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}

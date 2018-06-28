@@ -11,8 +11,8 @@ DISTNAME=	QProg_${PORTVERSION}
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Cross-platform software for the DIY line of PIC programmers
 
-USES=		qmake tar:tgz
-USE_QT4=	moc_build gui network
+USES=		qmake qt:4 tar:tgz
+USE_QT=		moc_build gui network
 
 WRKSRC=		${WRKDIR}/QProg
 

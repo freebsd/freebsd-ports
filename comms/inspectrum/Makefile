@@ -22,8 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	miek
 GH_TAGNAME=	11853b64062bda4f81926613f15d1d9654c227c8
 
-USE_QT5=	core buildtools_build concurrent widgets
-USES=		cmake pkgconfig qmake
+USE_QT=		core buildtools_build concurrent widgets
+USES=		cmake pkgconfig qmake qt:5
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

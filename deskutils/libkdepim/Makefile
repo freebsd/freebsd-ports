@@ -11,13 +11,13 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		cmake:outsource gettext compiler:c++11-lib kde:5 tar:xz
+USES=		cmake:outsource gettext compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons ecm \
 		i18n iconthemes itemmodels itemviews jobwidgets kcmutils \
 		kio service wallet widgetsaddons
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadisearch contacts  ldap mime
-USE_QT5=	core dbus designer gui network testlib uiplugin uitools \
+USE_QT=		core dbus designer gui network testlib uiplugin uitools \
 		widgets xml \
 		buildtools_build qmake_build
 

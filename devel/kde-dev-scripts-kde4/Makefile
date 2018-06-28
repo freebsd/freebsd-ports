@@ -8,9 +8,9 @@ CATEGORIES=	devel kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE development scripts
 
-USES=		cmake:outsource kde:4 python:run shebangfix tar:xz
+USES=		cmake:outsource kde:4 python:run qt:4 shebangfix tar:xz
 USE_KDE=	kdelibs automoc4
-USE_QT4=	moc_build qmake_build rcc_build uic_build
+USE_QT=		moc_build qmake_build rcc_build uic_build
 
 SHEBANG_FILES=	cxxmetric \
 		draw_lib_dependencies \

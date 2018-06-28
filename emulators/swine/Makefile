@@ -22,11 +22,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dswd
 GH_PROJECT=	Swine
 
-USES=		gmake python:2.7 shebangfix pyqt:4
+USES=		gmake python:2.7 qt:4 shebangfix pyqt:4
 SHEBANG_FILES=	*.py
 NO_BUILD=	yes
 USE_PYQT=	gui_run xml_build
-USE_QT4=	linguist_build
+USE_QT=		linguist_build
 ONLY_FOR_ARCHS=	i386 amd64
 NO_ARCH=	yes
 

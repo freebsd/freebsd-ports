@@ -64,7 +64,8 @@ CONFIGURE_ARGS+=--disable-poppler-glib
 .if ${SLAVEPORT}==qt4
 CONFIGURE_ARGS+=--enable-poppler-qt4
 CONFIGURE_ENV+=	MOCQT4=${MOC}
-USE_QT4=	gui corelib xml qtestlib moc_build
+USES+=		qt:4
+USE_QT=		gui corelib xml qtestlib moc_build
 BUILD_WRKSRC=	${WRKSRC}/qt4
 INSTALL_WRKSRC=	${WRKSRC}/qt4
 .else
@@ -74,7 +75,8 @@ CONFIGURE_ARGS+=--disable-poppler-qt4
 .if ${SLAVEPORT}==qt5
 CONFIGURE_ARGS+=--enable-poppler-qt5
 CONFIGURE_ENV+=	MOCQT5=${MOC}
-USE_QT5=	core gui widgets xml buildtools_build testlib_build
+USES+=		qt:5
+USE_QT=		core gui widgets xml buildtools_build testlib_build
 # Qt from 5.7.0 on requires c++11.
 USE_CXXSTD=	c++11
 BUILD_WRKSRC=	${WRKSRC}/qt5

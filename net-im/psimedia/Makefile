@@ -12,12 +12,11 @@ COMMENT=	Voice and video API for Psi-like IM clients
 LIB_DEPENDS=	liboil-0.3.so:devel/liboil \
 		libspeexdsp.so:audio/speexdsp
 
-USES=		pkgconfig tar:bzip2
+USES=		pkgconfig qmake:no_env qt:4 tar:bzip2
 HAS_CONFIGURE=	yes
-USE_QT4=	gui qmake_build moc_build uic_build
+USE_QT=		gui qmake_build moc_build uic_build
 USE_GSTREAMER=	jpeg speex theora vorbis
 
-QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--qtdir=${LOCALBASE} \
 		--verbose
 DESTDIRNAME=	INSTALL_ROOT

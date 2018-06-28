@@ -18,9 +18,9 @@ BUILD_DEPENDS=	espeak:audio/espeak \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		bison dos2unix qmake
+USES=		bison dos2unix qmake qt:5
 USE_SDL=	sdl mixer
-USE_QT5=	buildtools core gui multimedia network printsupport sql widgets serialport
+USE_QT=		buildtools core gui multimedia network printsupport sql widgets serialport
 QMAKE_ARGS+=	LOCALBASE="${LOCALBASE}"
 QMAKE_SOURCE_PATH=	BASIC256.pro
 

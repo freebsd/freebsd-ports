@@ -18,12 +18,11 @@ DISTINFO_FILE=	${.CURDIR:H}/qscintilla2/distinfo
 DESTDIRNAME=	INSTALL_ROOT
 
 HAS_CONFIGURE=	yes
-QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 
-USES=		python pyqt:4
+USES=		python pyqt:4 qmake:no_env qt:4
 USE_PYQT=	sip core gui
 USE_PYTHON=	flavors
-USE_QT4=	corelib gui moc_build qmake_build
+USE_QT=		corelib gui moc_build qmake_build
 
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace

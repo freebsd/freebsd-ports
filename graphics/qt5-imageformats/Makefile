@@ -13,8 +13,7 @@ LIB_DEPENDS=	libjasper.so:graphics/jasper \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USE_QT5=	core gui buildtools_build
-QT_DIST=	${PORTNAME}
-USES=		localbase qmake
+USE_QT=		core gui buildtools_build
+USES=		localbase qmake qt-dist:5,imageformats
 
 .include <bsd.port.mk>

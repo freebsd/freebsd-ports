@@ -16,8 +16,8 @@ LIB_DEPENDS=	libalkimia5.so:finance/alkimia \
 		libKChart.so:graphics/kdiagram
 
 USES=		cmake compiler:c++14-lang desktop-file-utils gettext kde:5 \
-		pkgconfig shared-mime-info shebangfix tar:xz
-USE_QT5=	buildtools_build core dbus gui network printsupport qmake_build \
+		pkgconfig qt:5 shared-mime-info shebangfix tar:xz
+USE_QT=		buildtools_build core dbus gui network printsupport qmake_build \
 		sql testlib_build xml webkit widgets
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons doctools_build ecm_build i18n \
@@ -64,7 +64,7 @@ KBANKING_DESC=		Online banking via KBanking (AqBanking)
 KBANKING_LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar \
 			libgwengui-qt5.so:devel/gwenhywfar-qt5 \
 			libaqbanking.so:finance/aqbanking
-KBANKING_USE=		qt5=qml,quick
+KBANKING_USE=		qt=qml,quick
 KBANKING_CMAKE_BOOL=	ENABLE_KBANKING
 
 KDEWEBKIT_DESC=		Web content rendering via KDEWebKit
@@ -75,7 +75,7 @@ OFX_LIB_DEPENDS=	libofx.so:finance/libofx
 OFX_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibOfx
 
 QTWEBENGINE_DESC=	Web content rendering via QtWebEngine
-QTWEBENGINE_USE=	qt5=location,webchannel,webengine
+QTWEBENGINE_USE=	qt=location,webchannel,webengine
 QTWEBENGINE_CMAKE_BOOL=	ENABLE_WEBENGINE
 
 QUOTES_DESC=		Online stock and currency price quotes
@@ -91,7 +91,7 @@ WEBOOB_DESC=		Online banking via Web Outside Of Browsers
 WEBOOB_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}weboob>0:www/py-weboob@${PY_FLAVOR}
 WEBOOB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}weboob>0:www/py-weboob@${PY_FLAVOR}
 WEBOOB_USES=		python:2.7
-WEBOOB_USE=		qt5=concurrent
+WEBOOB_USE=		qt=concurrent
 WEBOOB_CMAKE_BOOL=	ENABLE_WEBOOB
 
 .if defined(MAINTAINER_MODE)

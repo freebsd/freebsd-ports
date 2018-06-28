@@ -9,8 +9,8 @@ MASTER_SITES=	GH
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Portable Qt 4 based GMail notifier
 
-USES=		qmake tar:tgz
-USE_QT4=	moc_build uic_build gui network xml rcc_build
+USES=		qmake qt:4 tar:tgz
+USE_QT=		moc_build uic_build gui network xml rcc_build
 USE_GITHUB=	yes
 GH_ACCOUNT=	eteran
 

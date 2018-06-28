@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libR.so:math/R \
 		libsoprano.so:textproc/soprano
 
-USES=		cmake desktop-file-utils gettext fortran kde:5 php:cli shared-mime-info
-USE_QT5=	buildtools core dbus gui network printsupport qmake script webkit	\
+USES=		cmake desktop-file-utils gettext fortran kde:5 php:cli qt:5 shared-mime-info
+USE_QT=		buildtools core dbus gui network printsupport qmake script webkit	\
 		widgets xml
 USE_XORG=	x11
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash	\

@@ -9,8 +9,8 @@ MASTER_SITES=	TOR/vidalia
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Graphical Tor controller based on Qt 4.x
 
-USES=		cmake
+USES=		cmake qt:4
 INSTALLS_ICONS=	yes
-USE_QT4=	gui moc_build qmake_build rcc_build uic_build network xml linguist_build
+USE_QT=		gui moc_build qmake_build rcc_build uic_build network xml linguist_build
 
 .include <bsd.port.mk>

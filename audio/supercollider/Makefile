@@ -20,9 +20,9 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libsndfile.so:audio/libsndfile \
 		libfftw3f.so:math/fftw3-float
 
-USES=		cmake:outsource iconv localbase pkgconfig readline \
+USES=		cmake:outsource iconv localbase pkgconfig qt:5 readline \
 		shared-mime-info tar:bzip2
-USE_QT5=	buildtools_build concurrent core gui linguisttools location \
+USE_QT=		buildtools_build concurrent core gui linguisttools location \
 		network opengl printsupport qmake_build qml quick sensors \
 		sql webkit widgets
 USE_LDCONFIG=	yes

@@ -13,9 +13,8 @@ COMMENT=	Qt core non-graphical module
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USE_GNOME=	glib20
-USE_QT4=	qmake_build moc_build
-QT_DIST=	yes
-USES=		iconv pkgconfig
+USE_QT=		moc_build
+USES=		iconv pkgconfig qmake:no_env qt-dist:4
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}

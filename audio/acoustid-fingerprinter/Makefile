@@ -18,8 +18,8 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 BROKEN_armv6=		fails to link: fingerprintcalculator.cpp: undefined reference to 'chromaprint_new'
 BROKEN_powerpc64=	fails to compile: libchromaprint.so: undefined reference to std::__cxx11::basic_string
 
-USES=		cmake desktop-file-utils
-USE_QT4=	corelib gui network \
+USES=		cmake desktop-file-utils qt:4
+USE_QT=		corelib gui network \
 		qmake_build moc_build rcc_build uic_build
 USE_GITHUB=	yes
 GH_ACCOUNT=	acoustid

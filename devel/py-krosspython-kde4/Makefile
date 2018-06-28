@@ -10,9 +10,9 @@ DISTNAME=	kross-interpreters-${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kross Python scripting library
 
-USES=		cmake:outsource kde:4 python:2.7 tar:xz
+USES=		cmake:outsource kde:4 python:2.7 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
-USE_QT4=	corelib gui qmake_build moc_build uic_build rcc_build
+USE_QT=		corelib gui qmake_build moc_build uic_build rcc_build
 CMAKE_ARGS+=	-DBUILD_falcon:BOOL=FALSE \
 		-DBUILD_ruby:BOOL=FALSE \
 		-DBUILD_java:BOOL=FALSE

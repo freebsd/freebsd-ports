@@ -14,11 +14,11 @@ LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libkeyring-kwallet.so:sysutils/signon-kwallet-extension
 RUN_DEPENDS=	signon-ui:sysutils/signon-ui
 
-USES=		cmake:outsource gettext pkgconfig kde:5 tar:xz
+USES=		cmake:outsource gettext pkgconfig kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons ecm \
 		i18n iconthemes kcmutils kio service wallet widgetsaddons \
 		akonadi
-USE_QT5=	dbus core gui network qml widgets xml \
+USE_QT=		dbus core gui network qml widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

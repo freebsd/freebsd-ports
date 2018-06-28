@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Makefile generator
 
-USE_QT4=	# empty
-QT_DIST=	yes
+USES=	qt-dist:4
+USE_QT=		# empty
 REINPLACE_ARGS=	-i ""
 WRKSRC_SUBDIR=	${PORTNAME}
 MAKEFILE=	${FILESDIR}/Makefile.bsd

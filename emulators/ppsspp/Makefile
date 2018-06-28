@@ -64,7 +64,8 @@ LIBRETRO_PLIST_FILES=	lib/libretro/${PORTNAME}_libretro.so
 LIBRETRO_IMPLIES=	SDL
 OLDJOY_DESC=	Old joystick support with fixed button mappings (deprecated)
 OLDJOY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-old-joy
-QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
+QT5_USES=	qt:5
+QT5_USE=	QT=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
 QT5_CMAKE_BOOL=	USING_QT_UI
 QT5_VARS=	EXENAME=PPSSPPQt
 SDL_BUILD_DEPENDS=	png>=1.6:graphics/png

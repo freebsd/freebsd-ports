@@ -16,9 +16,9 @@ LIB_DEPENDS=	libkdevplatforminterfaces.so:devel/kdevplatform-kde4
 RUN_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake:outsource compiler:c++11-lib kde:4 \
-		shared-mime-info tar:xz
+		qt:4 shared-mime-info tar:xz
 USE_KDE=	kdelibs workspace automoc4
-USE_QT4=	qmake_build moc_build uic_build rcc_build \
+USE_QT=		qmake_build moc_build uic_build rcc_build \
 		corelib declarative gui help script webkit xml
 
 OPTIONS_DEFINE=	OKTETA PHP NLS

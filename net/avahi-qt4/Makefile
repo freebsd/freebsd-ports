@@ -17,7 +17,8 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	qt4
-USE_QT4=	corelib moc_build
+USES=	qt:4
+USE_QT=		corelib moc_build
 AVAHI_PKGCONFIG=	avahi-qt4.pc
 
 .include "${MASTERDIR}/Makefile"

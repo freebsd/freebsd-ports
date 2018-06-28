@@ -45,7 +45,8 @@ GTK2_USE=	GNOME=gtk20
 GTK2_CONFIGURE_ON=	--with-gtk=yes
 GTK2_CONFIGURE_OFF=	--with-gtk=no
 
-QT4_USE=	QT4=gui,moc_build
+QT4_USES=	qt:4
+QT4_USE=	QT=gui,moc_build
 QT4_CONFIGURE_ON=	--with-qt=yes
 QT4_CONFIGURE_OFF=	--with-qt=no
 

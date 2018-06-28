@@ -11,12 +11,12 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-USES=		cmake:outsource gettext kde:5 tar:xz
+USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons ecm \
 		emoticons globalaccel i18n iconthemes init itemmodels \
 		itemviews kcmutils kdelibs4support notifications package \
 		plasma-framework service solid widgetsaddons windowsystem xmlgui
-USE_QT5=	core dbus gui widgets xml \
+USE_QT=		core dbus gui widgets xml \
 		buildtools_build qmake_build
 
 # we want the KF5 version of kmix

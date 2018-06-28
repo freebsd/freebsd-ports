@@ -24,17 +24,17 @@ qt5_LIB_DEPENDS=	libvlc.so:multimedia/vlc
 USES=		cmake:outsource pkgconfig tar:xz
 
 .  if ${FLAVOR} == qt4
-USES+=		kde:4
+USES+=		kde:4 qt:4
 USE_KDE=	automoc4
-USE_QT4=	corelib gui phonon \
+USE_QT=		corelib gui phonon \
 		qmake_build moc_build rcc_build uic_build
 PLIST_FILES=	lib/kde4/plugins/phonon_backend/phonon_vlc.so \
 		share/kde4/services/phononbackends/vlc.desktop \
 		${QT_PLUGINDIR}/phonon_backend/libphonon_vlc.so
 .  else
-USES+=		kde:5
+USES+=		kde:5 qt:5
 USE_KDE=	ecm
-USE_QT5=	core gui widgets phonon4 \
+USE_QT=		core gui widgets phonon4 \
 		buildtools_build qmake_build
 CMAKE_ON=	PHONON_BUILD_PHONON4QT5
 PLIST_FILES=	${QT_PLUGINDIR_REL}/phonon4qt5_backend/phonon_vlc.so

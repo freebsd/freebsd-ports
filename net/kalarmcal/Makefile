@@ -9,7 +9,7 @@ COMMENT=	KDE API for KAlarm alarms
 
 LICENSE=	LGPL21
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 tar:xz
+USES=		cmake:outsource compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm guiaddons holidays i18n iconthemes \
 		itemmodels itemviews jobwidgets kdelibs4support kio \
@@ -18,7 +18,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 # pim components
 USE_KDE+=	akonadi calendarcore calendarutils holidays identitymanagement \
 		pimtextedit
-USE_QT5=	core dbus gui network printsupport widgets xml \
+USE_QT=		core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

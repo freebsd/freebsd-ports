@@ -19,10 +19,10 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		PYTHON_VERSION=${PYTHON_VERSION}
 
-USE_QT4=	corelib qmake_build qtestlib moc_build network \
+USE_QT=		corelib qmake_build qtestlib moc_build network \
 		uic_build rcc_build xml xmlpatterns
 
-USES=		cmake python:2.7 tar:bzip2
+USES=		cmake python:2.7 qt:4 tar:bzip2
 USE_LDCONFIG=	yes
 
 ALL_TARGET=	all

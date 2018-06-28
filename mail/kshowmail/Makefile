@@ -12,9 +12,9 @@ COMMENT=	POP3 mail checker for KDE
 
 LICENSE=	GPLv2
 
-USES=		cmake gettext kde:4 perl5
+USES=		cmake gettext kde:4 perl5 qt:4
 USE_KDE=	automoc4 kdelibs pimlibs
-USE_QT4=	corelib dbus gui network svg xml \
+USE_QT=		corelib dbus gui network svg xml \
 		qmake_build uic_build rcc_build
 USE_PERL5=	build
 

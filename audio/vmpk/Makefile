@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdrumstick-rt.so:audio/drumstick
 
-USES=		cmake:outsource pkgconfig tar:bz2
-USE_QT5=	core gui network svg widgets x11extras \
+USES=		cmake:outsource pkgconfig qt:5 tar:bz2
+USE_QT=		core gui network svg widgets x11extras \
 		buildtools_build linguisttools_build qmake_build
 USE_XORG=	xcb
 
@@ -26,6 +26,6 @@ OPTIONS_DEFINE=	DBUS
 OPTIONS_SUB=		yes
 
 DBUS_CMAKE_BOOL=	ENABLE_DBUS
-DBUS_USE=	qt5=dbus
+DBUS_USE=	qt=dbus
 
 .include <bsd.port.mk>

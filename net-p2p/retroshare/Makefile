@@ -25,13 +25,13 @@ LIB_DEPENDS=	libsqlcipher.so:databases/sqlcipher \
 		libcurl.so:ftp/curl \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		compiler:features desktop-file-utils dos2unix pkgconfig qmake ssl
+USES=		compiler:features desktop-file-utils dos2unix pkgconfig qmake qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	RetroShare
 GH_PROJECT=	RetroShare
 USE_GNOME=	libxml2 libxslt
 USE_GL=		gl
-USE_QT5=	core gui multimedia printsupport network widgets xml \
+USE_QT=		core gui multimedia printsupport network widgets xml \
 		buildtools_build uitools_build
 DOS2UNIX_FILES=	retroshare-nogui/src/retroshare-nogui.pro
 

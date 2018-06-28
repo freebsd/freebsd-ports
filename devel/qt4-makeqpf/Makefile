@@ -12,8 +12,8 @@ COMMENT=	Qt QPF2 font generator
 
 BROKEN_sparc64=	does not compile
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui
-QT_DIST=	yes
+USES=		qmake:no_env qt-dist:4
+USE_QT=		moc_build rcc_build uic_build corelib gui
 
 HAS_CONFIGURE=	yes
 

@@ -25,10 +25,10 @@ CMAKE_ARGS=	-DBUILD_TESTS:BOOL=OFF \
 		-DPHP_BINDINGS:BOOL=OFF \
 		-DPYTHON_BINDINGS:BOOL=OFF \
 		-DUSE_LIBCALENDARING:BOOL=OFF
-USES=		cmake:outsource kde:4
+USES=		cmake:outsource kde:4 qt:4
 USE_KDE=	automoc4 kdelibs pimlibs
 USE_LDCONFIG=	yes
-USE_QT4=	corelib dbus gui network svg xml \
+USE_QT=		corelib dbus gui network svg xml \
 		moc_build qmake_build rcc_build uic_build
 # Fix build of desktuils/kdepim4-runtime:
 CXXFLAGS+=	-DMAKE_KOLAB_LIB

@@ -13,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
-USES=		cmake:outsource gettext kde:5 tar:xz
+USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
 USE_KDE=	activities archive auth codecs config configwidgets \
 		coreaddons crash dbusaddons globalaccel i18n iconthemes \
 		kdeclarative notifications package plasma-framework service \
 		wayland widgetsaddons windowsystem xmlgui \
 		ecm_build
-USE_QT5=	core dbus gui network qml quick widgets x11extras xml \
+USE_QT=		core dbus gui network qml quick widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xcb xext
 

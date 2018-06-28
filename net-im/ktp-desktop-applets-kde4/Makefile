@@ -12,8 +12,8 @@ COMMENT=	KDE instant messaging plasma widgets
 
 LIB_DEPENDS=	libktpcommoninternalsprivate.so:net-im/ktp-common-internals-kde4
 
-USES=		cmake gettext kde:4 tar:bzip2
+USES=		cmake gettext kde:4 qt:4 tar:bzip2
 USE_KDE=	kdelibs automoc4
-USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
+USE_QT=		corelib moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

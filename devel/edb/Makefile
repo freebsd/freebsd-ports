@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		qmake tar:tgz
-USE_QT4=	gui network xml moc_build rcc_build uic_build
+USES=		qmake qt:4 tar:tgz
+USE_QT=		gui network xml moc_build rcc_build uic_build
 QMAKE_ARGS=	DEFAULT_PLUGIN_PATH="${PREFIX}/libexec/${PORTNAME}"
 
 WRKSRC=		${WRKDIR}/debugger

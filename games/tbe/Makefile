@@ -18,8 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 USE_GITHUB=	yes
 GH_ACCOUNT=	kaa-ching
 
-USES=		cmake compiler:c++11-lib
-USE_QT4=	corelib gui linguisttools_build moc_build qmake_build rcc_build \
+USES=		cmake compiler:c++11-lib qt:4
+USE_QT=		corelib gui linguisttools_build moc_build qmake_build rcc_build \
 		svg uic_build xml
 
 PORTDOCS=	*

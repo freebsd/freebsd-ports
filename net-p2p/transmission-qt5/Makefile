@@ -17,9 +17,8 @@ MASTERDIR=	${.CURDIR}/../transmission-cli
 PLIST=		${.CURDIR}/pkg-plist
 SLAVEPORT=	qt5
 
-QT_NONSTANDARD=	yes
-USE_QT5=	buildtools_build qmake_build core dbus gui network widgets
-USES=		compiler:c++11-lib desktop-file-utils
+USE_QT=		buildtools_build qmake_build core dbus gui network widgets
+USES=		compiler:c++11-lib desktop-file-utils qmake:no_env qt:5
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--disable-daemon \
