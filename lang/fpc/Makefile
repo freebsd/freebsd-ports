@@ -21,9 +21,6 @@ DIST_SUBDIR=	freepascal
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/compiler/COPYING.txt
-
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES+=		gmake iconv
