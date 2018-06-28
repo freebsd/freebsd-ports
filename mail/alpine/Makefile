@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	alpine
-DISTVERSION=	2.21.999
-PORTREVISION?=	1
+DISTVERSION=	2.21.9999
+PORTREVISION?=	0
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	http://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
@@ -30,8 +30,8 @@ CONFIGURE_ARGS+=	--with-debug-level=2 \
 MAKE_ARGS+=		CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 # When you update please double check that the commit corresponds to
 # the actual version you've set in PORTVERSION.
-GIT_COMMIT=		349642a84039a4b026513c32a3b4f8594acd50df
-GIT_COMMIT_SHORT=	349642a
+GIT_COMMIT=		d3e6f3932f2af9deca8eed09e30a55e9bd524362
+GIT_COMMIT_SHORT=	d3e6f39
 WRKSRC=			${WRKDIR}/alpine-${GIT_COMMIT_SHORT}
 
 OPTIONS_DEFINE=		ASPELL CONS25 DOCS IPV6 LDAP MAILDIR MOUSE NLS NTLM PASSFILE THREADS
