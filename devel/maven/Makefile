@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maven
-DISTVERSION=	3.5.3
+DISTVERSION=	3.5.4
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
@@ -21,6 +21,7 @@ CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 NO_BUILD=	yes
+NO_ARCH=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/apache-maven-${DISTVERSION}
 SUB_FILES=	mvn.sh
@@ -29,7 +30,7 @@ INSTANCE_FILE=	${PORTNAME}-${PORTVERSION}
 INSTANCES_DIR=	etc/maven-wrapper/instances.d/
 
 post-extract:
-	${RM} ${WRKSRC}/bin/*.bat
+	${RM} -r ${WRKSRC}/lib/jansi-native ${WRKSRC}/bin/*.bat
 	${ECHO_CMD} "${DATADIR}" > ${WRKSRC}/${INSTANCE_FILE}
 
 do-install:
