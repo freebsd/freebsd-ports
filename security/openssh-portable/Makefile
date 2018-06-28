@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	7.7p1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -29,10 +29,18 @@ ETCOLD=			${PREFIX}/etc
 BROKEN_SSL=	openssl-devel
 BROKEN_SSL_REASON_openssl-devel=	error: OpenSSL >= 1.1.0 is not yet supported
 
+FLAVORS=			default hpn
+default_CONFLICTS_INSTALL=	openssl-portable-hpn-[0-9]*
+hpn_CONFLICTS_INSTALL=		openssh-portable-[0-9]*
+hpn_PKGNAMESUFFIX=		-portable-hpn
+
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
 			LDNS NONECIPHER XMSS
 OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS
+.if ${FLAVOR:U} == hpn
+OPTIONS_DEFAULT+=	HPN NONECIPHER
+.endif
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
 TCP_WRAPPERS_DESC=	tcp_wrappers support
@@ -57,7 +65,6 @@ LDNS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ldns
 LDNS_CFLAGS=		-I${LOCALBASE}/include
 LDNS_CONFIGURE_ON=	--with-ldflags='-L${LOCALBASE}/lib'
 
-# http://www.psc.edu/index.php/hpn-ssh
 HPN_CONFIGURE_WITH=		hpn
 NONECIPHER_CONFIGURE_WITH=	nonecipher
 
@@ -103,12 +110,12 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue
 PATCHFILES+=	openssh-7.7p1-gsskex-all-20141021-debian-rh-20171004.patch.gz:-p1:gsskex
 .endif
 
-# http://www.psc.edu/index.php/hpn-ssh https://github.com/rapier1/hpn-ssh https://github.com/rapier1/openssh-portable
+# https://www.psc.edu/hpn-ssh https://github.com/rapier1/openssh-portable/tree/hpn-openssl1.1-7_7_P1
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
-BROKEN=			HPN: Not yet updated for ${DISTVERSION} and disabled in base
+#BROKEN=			HPN: Not yet updated for ${DISTVERSION} and disabled in base
 PORTDOCS+=		HPN-README
-HPN_VERSION=		14v5
-HPN_DISTVERSION=	6.7p1
+HPN_VERSION=		14v15
+HPN_DISTVERSION=	7.7p1
 #PATCH_SITES+=		SOURCEFORGE/hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
 #PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn:-p2
