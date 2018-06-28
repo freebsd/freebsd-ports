@@ -1,5 +1,5 @@
---- bin/bbackupd/bbackupd-config.in.orig	2013-01-25 13:17:39.942303010 +1300
-+++ bin/bbackupd/bbackupd-config.in	2013-01-25 13:18:04.021348906 +1300
+--- bin/bbackupd/bbackupd-config.in.orig	2013-01-25 13:17:39 UTC
++++ bin/bbackupd/bbackupd-config.in
 @@ -445,7 +445,7 @@
  
  Server
