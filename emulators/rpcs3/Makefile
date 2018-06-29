@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.5-546
-DISTVERSIONSUFFIX=	-g3b8eab87d
+DISTVERSION=	0.0.5-558
+DISTVERSIONSUFFIX=	-g345f92ab0
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,7 +30,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
 		jbeder:yaml-cpp:yaml-cpp-0.6.2-4-g4fb1c4b:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:673dcef:asmjit/asmjit \
-		KhronosGroup:glslang:3.0-1794-ge22e3473:glslang/Vulkan/glslang \
+		KhronosGroup:glslang:5.1-184-gc99304c5:glslang/Vulkan/glslang \
 		Microsoft:GSL:fc5fce4:GSL/3rdparty/GSL \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal \
 		zeux:pugixml:v1.9:pugixml/3rdparty/pugixml
