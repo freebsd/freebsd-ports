@@ -22,6 +22,7 @@
     SUBDIR += apq-pgsql
     SUBDIR += arangodb32
     SUBDIR += arangodb33
+    SUBDUR += py-asyncpg
     SUBDIR += ateam_mysql_ldap_auth
     SUBDIR += autobackupmysql
     SUBDIR += bbdb
