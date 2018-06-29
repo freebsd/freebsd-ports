@@ -3,6 +3,7 @@
 
 PORTNAME=	tRNAscan-SE
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://lowelab.ucsc.edu/software/
 DISTFILES=	${DISTNAME:tl}${EXTRACT_SUFX}
@@ -12,6 +13,8 @@ COMMENT=	Searching for tRNA genes in genomic sequence
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		missing plist
 
 RUN_DEPENDS=	cmsearch:biology/infernal
 
