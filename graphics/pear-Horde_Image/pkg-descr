@@ -7,4 +7,4 @@ This package provides an Image utility API, with backends for:
 * ImageMagick convert command line tool
 * Imagick Extension
 
-WWW: http://pear.horde.org
+WWW: https://pear.horde.org
