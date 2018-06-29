@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	7.7p1
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -30,8 +30,8 @@ BROKEN_SSL=	openssl-devel
 BROKEN_SSL_REASON_openssl-devel=	error: OpenSSL >= 1.1.0 is not yet supported
 
 FLAVORS=			default hpn
-default_CONFLICTS_INSTALL=	openssl-portable-hpn-[0-9]*
-hpn_CONFLICTS_INSTALL=		openssh-portable-[0-9]*
+default_CONFLICTS_INSTALL=	openssl-portable-hpn
+hpn_CONFLICTS_INSTALL=		openssh-portable
 hpn_PKGNAMESUFFIX=		-portable-hpn
 
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
