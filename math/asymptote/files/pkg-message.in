@@ -1,0 +1,9 @@
+
+Asymptote with enabled hardware acceleration produces incorrect rendered
+figures in 3D. It is proven that asy has problems with the xf86-video-intel
+driver.
+
+To successfully process 3D figures or examples, it is necessary to always
+use software rendering.
+
+% env LIBGL_ALWAYS_SOFTWARE=1 asy sample.asy
