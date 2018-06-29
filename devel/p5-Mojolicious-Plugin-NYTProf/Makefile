@@ -24,7 +24,4 @@ USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-post-patch:
-	@${RM} ${WRKSRC}/README.pod
-
 .include <bsd.port.mk>

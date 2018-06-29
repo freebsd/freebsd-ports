@@ -19,7 +19,4 @@ PLIST_FILES=	${SITE_PERL_REL}/Math/ProvablePrime.pm \
 		${SITE_PERL_REL}/Math/ProvablePrime/Rand.pm \
 		${SITE_MAN3_REL}/Math::ProvablePrime.3.gz
 
-pre-install:
-		${RM} ${WRKSRC}/blib/lib/Math/README.pod
-
 .include <bsd.port.mk>

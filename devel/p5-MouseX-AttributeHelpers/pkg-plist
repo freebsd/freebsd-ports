@@ -9,7 +9,6 @@
 %%SITE_PERL%%/MouseX/AttributeHelpers/Counter.pm
 %%SITE_PERL%%/MouseX/AttributeHelpers/Number.pm
 %%SITE_PERL%%/MouseX/AttributeHelpers/String.pm
-%%SITE_PERL%%/MouseX/README.pod
 %%PERL5_MAN3%%/MouseX::AttributeHelpers.3.gz
 %%PERL5_MAN3%%/MouseX::AttributeHelpers::Base.3.gz
 %%PERL5_MAN3%%/MouseX::AttributeHelpers::Bool.3.gz

@@ -20,7 +20,4 @@ USE_PERL5=	configure
 PLIST_FILES=	${SITE_PERL_REL}/Call/Context.pm \
 		${SITE_MAN3_REL}/Call::Context.3.gz
 
-pre-install:
-		${RM} ${WRKSRC}/blib/lib/Call/README.pod
-
 .include <bsd.port.mk>

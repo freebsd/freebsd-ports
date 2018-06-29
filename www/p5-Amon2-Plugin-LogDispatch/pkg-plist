@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Amon2/Plugin/LogDispatch.pm
-%%SITE_PERL%%/Amon2/Plugin/README.pod
 %%PERL5_MAN3%%/Amon2::Plugin::LogDispatch.3.gz

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/Test/Mini/README.pod
 %%SITE_PERL%%/Test/Mini/Unit.pm
 %%SITE_PERL%%/Test/Mini/Unit.pod
 %%SITE_PERL%%/Test/Mini/Unit/SharedBehavior.pm

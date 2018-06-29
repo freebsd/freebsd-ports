@@ -7,4 +7,3 @@
 %%SITE_ARCH%%/RedisDB/Parser/Error.pm
 %%SITE_ARCH%%/RedisDB/Parser/PP.pm
 %%SITE_ARCH%%/RedisDB/Parser/XS.pm
-%%SITE_ARCH%%/RedisDB/README.pod

@@ -19,7 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-post-patch:
-	@${RM} ${WRKSRC}/README.pod
-
 .include <bsd.port.mk>
