@@ -1,0 +1,11 @@
+--- configure.orig	2018-06-29 12:40:33 UTC
++++ configure
+@@ -3504,7 +3504,7 @@ then
+ $as_echo "jni_md.h found in $JAVA_HOME/$JAVA_INC" >&6; }
+   INCLUDES="$INCLUDES -I$JAVA_HOME/include -I$JAVA_HOME/$JAVA_INC"
+ else
+-  INCLUDES="$INCLUDES -I$JAVA_HOME/include -I$JAVA_HOME/include/$supported_os"
++  INCLUDES="$INCLUDES -I$JAVA_HOME/include -I$JAVA_HOME/include/$JAVA_OS"
+ fi
+ 
+ if test "$GCC" = "yes"
