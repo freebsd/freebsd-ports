@@ -11,10 +11,10 @@ COMMENT=	Simple IDE for NASM, MASM, GAS and FASM assembly languages
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake
+USES=		qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dman95
-USE_QT5=	core gui network widgets buildtools_build
+USE_QT=		core gui network widgets buildtools_build
 USE_GL=		gl
 
 DATADIR=	${PREFIX}/share/sasm
