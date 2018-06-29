@@ -1,6 +1,6 @@
---- src/scorelist.cpp.orig	2013-09-14 02:20:35.651231123 +0400
-+++ src/scorelist.cpp	2013-09-14 02:22:39.837225946 +0400
-@@ -98,7 +98,7 @@
+--- src/scorelist.cpp.orig	2010-05-07 18:21:19 UTC
++++ src/scorelist.cpp
+@@ -98,7 +98,7 @@ string ScoreList::getPoints() const {
  ostream & operator << (ostream & o,const ScoreList & s) {
      STDStreamPrinter sp(o);
      OStreamUTF8Encoder sc(&sp);
