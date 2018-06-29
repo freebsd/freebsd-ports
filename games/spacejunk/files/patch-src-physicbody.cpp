@@ -1,6 +1,6 @@
 Clang compatibility
---- src/physicbody.cpp.orig	2013-06-14 01:22:11.442112529 +0400
-+++ src/physicbody.cpp	2013-06-14 01:38:02.468909545 +0400
+--- src/physicbody.cpp.orig	2009-06-17 17:47:07 UTC
++++ src/physicbody.cpp
 @@ -20,9 +20,21 @@
  #include "physicbody.h"
  #include <math.h>
@@ -23,7 +23,7 @@ Clang compatibility
  
  const double PhysicEngine::G=6.6726e-17;
  
-@@ -165,7 +180,6 @@
+@@ -165,7 +177,6 @@ inline Vector2d PhysicEngine::calculateA
      return acc;
  }
  
@@ -31,7 +31,7 @@ Clang compatibility
  void PhysicEngine::_vstep (int delta) {
  #define DELTA_LIMIT 3
  #define ERROR_LIMIT 0.001
-@@ -179,11 +193,11 @@
+@@ -179,11 +190,11 @@ void PhysicEngine::_vstep (int delta) {
      real tempdelta=delta;
      real time=0;
      int n=bodies.size();
@@ -46,7 +46,7 @@ Clang compatibility
      do {
          for (vector<PhysicBody*>::iterator j=bodies.begin();j!=bodies.end();j++) {
              if (!*j) continue;
-@@ -306,12 +320,12 @@
+@@ -306,12 +317,12 @@ void PhysicEngine::_step(int delta,bool 
  real PhysicEngine::vstepRK5 (real delta,Vector2d initaccels[]) {
      real maxdist=0;
      int n=bodies.size();
@@ -65,7 +65,7 @@ Clang compatibility
      for (vector<PhysicBody*>::iterator j=bodies.begin();j!=bodies.end();j++) {
          if (!*j || ((*j)->flags & PhysicBody::FIXED)) continue;
          mipos[(*j)->id]=(*j)->pos;
-@@ -321,8 +335,8 @@
+@@ -321,8 +332,8 @@ real PhysicEngine::vstepRK5 (real delta,
          (*j)->pos=mipos[(*j)->id]+k1pos[(*j)->id]*0.2;
      }
      calculateForces(delta*0.2,accels);
@@ -76,7 +76,7 @@ Clang compatibility
      for (vector<PhysicBody*>::iterator j=bodies.begin();j!=bodies.end();j++) {
          if (!*j || ((*j)->flags & PhysicBody::FIXED)) continue;
          k2vel[(*j)->id]=accels[(*j)->id]*delta;
-@@ -330,8 +344,8 @@
+@@ -330,8 +341,8 @@ real PhysicEngine::vstepRK5 (real delta,
          (*j)->pos=mipos[(*j)->id]+k1pos[(*j)->id]*(3.0/40.0)+k2pos[(*j)->id]*(9.0/40.0);
      }
      calculateForces(delta*0.3,accels);
@@ -87,7 +87,7 @@ Clang compatibility
      for (vector<PhysicBody*>::iterator j=bodies.begin();j!=bodies.end();j++) {
          if (!*j || ((*j)->flags & PhysicBody::FIXED)) continue;
          k3vel[(*j)->id]=accels[(*j)->id]*delta;
-@@ -339,8 +353,8 @@
+@@ -339,8 +350,8 @@ real PhysicEngine::vstepRK5 (real delta,
          (*j)->pos=mipos[(*j)->id]+k1pos[(*j)->id]*0.3+k2pos[(*j)->id]*(-0.9)+k3pos[(*j)->id]*1.2;
      }
      calculateForces(delta*0.6,accels);
@@ -98,7 +98,7 @@ Clang compatibility
      for (vector<PhysicBody*>::iterator j=bodies.begin();j!=bodies.end();j++) {
          if (!*j || ((*j)->flags & PhysicBody::FIXED)) continue;
          k4vel[(*j)->id]=accels[(*j)->id]*delta;
-@@ -348,8 +362,8 @@
+@@ -348,8 +359,8 @@ real PhysicEngine::vstepRK5 (real delta,
          (*j)->pos=mipos[(*j)->id]+k1pos[(*j)->id]*(-11.0/54.0)+k2pos[(*j)->id]*2.5+k3pos[(*j)->id]*(-70.0/27.0)+k4pos[(*j)->id]*(35.0/27.0);
      }
      calculateForces(delta,accels);

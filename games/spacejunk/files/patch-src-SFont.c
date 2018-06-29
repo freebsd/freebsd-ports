@@ -1,7 +1,7 @@
 Clang compatibility
---- src/SFont.c.orig	2013-06-14 01:28:33.767289275 +0400
-+++ src/SFont.c	2013-06-14 01:39:06.709113401 +0400
-@@ -72,7 +72,7 @@
+--- src/SFont.c.orig	2009-06-17 17:47:07 UTC
++++ src/SFont.c
+@@ -72,7 +72,7 @@ static Uint32 GetPixel(SDL_Surface *Surf
     return -1;
  }
  
