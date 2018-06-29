@@ -212,6 +212,7 @@
     SUBDIR += qcl
     SUBDIR += qtresistors
     SUBDIR += rdkit
+    SUBDIR += rmf
     SUBDIR += rubygem-ai4r
     SUBDIR += rubygem-cdo
     SUBDIR += rubygem-rgeo

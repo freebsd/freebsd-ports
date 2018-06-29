@@ -1,0 +1,45 @@
+--- CMakeLists.txt.orig	2018-06-15 00:56:51 UTC
++++ CMakeLists.txt
+@@ -4,15 +4,15 @@ project(RMF)
+ # needs to be in main CMakeLists.txt
+ enable_testing()
+ 
+-execute_process(COMMAND python setup_git.py
+-                  RESULT_VARIABLE setup
+-                  OUTPUT_VARIABLE toutput
+-                  ERROR_VARIABLE error
+-                  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+-                  OUTPUT_STRIP_TRAILING_WHITESPACE)
+-if(NOT ${setup} EQUAL 0)
+-   message(FATAL_ERROR " Failed to run setup_git.py: ${setup}; ${error}")
+-endif()
++#execute_process(COMMAND python setup_git.py
++#                  RESULT_VARIABLE setup
++#                  OUTPUT_VARIABLE toutput
++#                  ERROR_VARIABLE error
++#                  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
++#                  OUTPUT_STRIP_TRAILING_WHITESPACE)
++#if(NOT ${setup} EQUAL 0)
++#   message(FATAL_ERROR " Failed to run setup_git.py: ${setup}; ${error}")
++#endif()
+ 
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake_modules)
+ 
+@@ -140,12 +140,12 @@ else()
+ endif()
+ 
+ 
+-add_subdirectory(swig)
++#add_subdirectory(swig)
+ 
+-add_subdirectory(test)
+-add_subdirectory(examples)
+-add_subdirectory(benchmark)
+-add_subdirectory(doc)
++#add_subdirectory(test)
++#add_subdirectory(examples)
++#add_subdirectory(benchmark)
++#add_subdirectory(doc)
+ 
+ add_custom_target(RMF DEPENDS ${RMF_BINS} ${RMF_SWIG} ${RMF_TESTS} ${RMF_VMD} RMF-decorators)
+ set_property(TARGET "RMF" PROPERTY FOLDER "RMF")

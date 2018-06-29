@@ -1,0 +1,6 @@
+The library provides support for the Rich Molecular Format (RMF) file format for
+storing hierarchical molecular data (such as atomic or coarse grained
+representations of proteins), along with markup, including geometry and score
+data.
+
+WWW: https://integrativemodeling.org/rmf/
