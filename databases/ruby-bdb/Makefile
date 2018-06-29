@@ -71,9 +71,9 @@ post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -empty")
 
-regression-test: build
+do-test:
 	@${MKDIR} ${BUILD_WRKSRC}/tmp
 	(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
-	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 
 .include <bsd.port.mk>
