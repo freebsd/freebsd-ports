@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-RSA
-PORTVERSION=	0.28
-PORTREVISION=	2
+PORTVERSION=	0.30
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,15 +12,14 @@ COMMENT=	Perl5 module to RSA encode and decode strings using OpenSSL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
+		p5-Crypt-OpenSSL-Guess>=0.11:security/p5-Crypt-OpenSSL-Guess \
 		p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-BROKEN_SSL=	openssl-devel
-
 USES=		perl5 ssl
 USE_PERL5=	configure
-MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 
 .include <bsd.port.mk>
