@@ -27,15 +27,6 @@
  
  # Colored output to console
  gem 'rainbow', '~> 2.2'
-@@ -222,7 +222,7 @@ gem 'kubeclient', '~> 3.0'
- gem 'd3_rails', '~> 3.5.0'
- 
- # Sanitize user input
--gem 'sanitize', '~> 2.0'
-+gem 'sanitize', '>= 2.0'
- gem 'babosa', '~> 1.0.2'
- 
- # Sanitizes SVG input
 @@ -284,7 +284,7 @@ gem 'batch-loader', '~> 1.2.1'
  # Perf bar
  gem 'peek', '~> 1.0.1'

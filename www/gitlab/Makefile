@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	10.8.4
+PORTVERSION=	10.8.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -92,7 +92,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-google-api-client>=0.19.8:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7:databases/rubygem-seed-fu \
-	rubygem-html-pipeline27>=2.7.1:textproc/rubygem-html-pipeline27 \
+	rubygem-html-pipeline-gitlab>=2.7.1:textproc/rubygem-html-pipeline-gitlab \
 	rubygem-deckar01-task_list>=2.0.0:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.6.2:textproc/rubygem-gitlab-markup \
 	rubygem-redcarpet>=3.4:textproc/rubygem-redcarpet \
@@ -136,7 +136,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-ruby-fogbugz>=0.2.1:devel/rubygem-ruby-fogbugz \
 	rubygem-kubeclient>=3.0.0:www/rubygem-kubeclient \
 	rubygem-d3_rails-rails4>=3.5.0:www/rubygem-d3_rails-rails4 \
-	rubygem-sanitize>=2.0:textproc/rubygem-sanitize \
+	rubygem-sanitize>=4.6.5:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2:textproc/rubygem-babosa \
 	rubygem-loofah>=2.2:textproc/rubygem-loofah \
 	rubygem-licensee8>=8.9:devel/rubygem-licensee8 \
