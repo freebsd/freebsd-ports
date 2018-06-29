@@ -82,6 +82,11 @@ share/mime/packages/pentobi-mime.xml
 %%DATADIR%%/books/book_trigon_2.blksgf
 %%DATADIR%%/books/book_trigon_3.blksgf
 %%DATADIR%%/translations/libpentobi_gui_de.qm
+%%DATADIR%%/translations/libpentobi_gui_fr.qm
+%%DATADIR%%/translations/libpentobi_gui_nb_NO.qm
 %%DATADIR%%/translations/pentobi.qm
 %%DATADIR%%/translations/pentobi_de.qm
+%%DATADIR%%/translations/pentobi_fr.qm
+%%DATADIR%%/translations/pentobi_nb_NO.qm
+%%DATADIR%%/translations/qtbase_minimal_nb_NO.qm
 share/thumbnailers/pentobi.thumbnailer
