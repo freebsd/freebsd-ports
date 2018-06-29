@@ -1,0 +1,9 @@
+--- doc/plugins/Makefile.am.orig	2018-06-29 19:01:30 UTC
++++ doc/plugins/Makefile.am
+@@ -1,5 +1,6 @@
+ docfiles = \
+ 	imapsieve.txt \
++	imap_filter_sieve.txt \
+ 	sieve_extprograms.txt
+ 
+ if BUILD_DOCS
