@@ -2125,8 +2125,8 @@ PATCH_STRIP?=	-p0
 PATCH_DIST_STRIP?=	-p0
 .if defined(PATCH_DEBUG)
 PATCH_DEBUG_TMP=	yes
-PATCH_ARGS?=	-E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	--suffix ${DISTORIG} -E ${PATCH_DIST_STRIP}
+PATCH_ARGS?=	--forward -E ${PATCH_STRIP}
+PATCH_DIST_ARGS?=	--suffix ${DISTORIG} --forward -E ${PATCH_DIST_STRIP}
 .else
 PATCH_ARGS?=	--forward --quiet -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	--suffix ${DISTORIG} --forward --quiet -E ${PATCH_DIST_STRIP}
