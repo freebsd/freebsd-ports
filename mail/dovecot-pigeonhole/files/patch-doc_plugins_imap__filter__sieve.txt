@@ -1,0 +1,55 @@
+--- doc/plugins/imap_filter_sieve.txt.orig	2018-06-29 18:42:19 UTC
++++ doc/plugins/imap_filter_sieve.txt
+@@ -0,0 +1,52 @@
++IMAP FILTER Sieve plugin for Pigeonhole
++
++Relevant specifications
++=======================
++
++	doc/rfc/draft-bosch-imap-filter-sieve-00.txt
++
++Introduction
++============
++
++Normally, Sieve filters can either be applied at initial mail delivery or
++triggered by certain events in the Internet Message Access Protocol (IMAPSIEVE;
++RFC 6785). The user can configure which Sieve scripts to run at these instances,
++but it is not possible to trigger the execution of Sieve scripts manually.
++However, this could be very useful; e.g, to test new Sieve rules and to
++re-filter messages that were erroneously handled by an earlier version of the
++Sieve scripts involved.
++
++Pigeonhole provides the imap_filter_sieve plugin, which provides a vendor-
++defined IMAP extension called "FILTER=SIEVE". This adds a new "FILTER" command
++that allows applying a mail filter (a Sieve script) on a set of messages that
++match the specified searching criteria.
++
++This plugin is experimental and the specification is likely to change.
++
++Configuration
++=============
++
++The IMAP FILTER Sieve plugin is activated by adding it to the mail_plugins
++setting for  the imap protocol:
++
++protocol imap {
++	mail_plugins = $mail_plugins imap_filter_sieve
++}
++
++Currently, no other settings specific to this plugin are defined. It uses the
++normal configuration settings used by the LDA Sieve plugin at delivery.
++
++The sieve_before and sieve_after scripts are currently ignored by this plugin.
++
++Example
++-------
++
++protocol imap {
++  # Space separated list of plugins to load (default is global mail_plugins).
++  mail_plugins = $mail_plugins imap_filter_sieve
++}
++
++plugin {
++  sieve_global = /usr/lib/dovecot/sieve-global.d
++}
++
