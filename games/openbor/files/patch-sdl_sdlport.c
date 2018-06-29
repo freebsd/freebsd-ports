@@ -11,18 +11,6 @@ Store settings under ~/.openbor instead of current directory
  #include <time.h>
  #include <unistd.h>
  
-@@ -58,10 +58,10 @@ char* AndroidRoot(char *relPath)
- 	strcat(filename, relPath);
- 	return filename;
- }
-+#endif
- 
- void borExit(int reset)
- {
--#endif
- 
- #ifdef GP2X
- 	gp2x_end();
 @@ -103,6 +105,16 @@ int main(int argc, char *argv[])
  #ifdef ANDROID
  	dirExists(rootDir, 1);
