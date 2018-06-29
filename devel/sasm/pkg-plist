@@ -1,0 +1,15 @@
+bin/fasm
+bin/listing
+bin/sasm
+share/applications/sasm.desktop
+%%DATADIR%%/NASM/macro.c
+%%DATADIR%%/Projects/FASMHello.asm
+%%DATADIR%%/Projects/FASMHellox64.asm
+%%DATADIR%%/Projects/GASHello.asm
+%%DATADIR%%/Projects/GASHellox64.asm
+%%DATADIR%%/Projects/NASMHello.asm
+%%DATADIR%%/Projects/NASMHellox64.asm
+%%DATADIR%%/include/io.inc
+%%DATADIR%%/include/io64.inc
+%%DATADIR%%/keys.ini
+%%DATADIR%%/sasm.png

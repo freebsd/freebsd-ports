@@ -6040,6 +6040,7 @@
     SUBDIR += sabre
     SUBDIR += safe-iop
     SUBDIR += samurai
+    SUBDIR += sasm
     SUBDIR += sbt
     SUBDIR += scalatest
     SUBDIR += scandoc
