@@ -30,7 +30,4 @@ BUILD_DEPENDS=	p5-Test-Class>=0.4:devel/p5-Test-Class \
 USES=		perl5
 USE_PERL5=	configure
 
-pre-install:
-		${RM} ${WRKSRC}/blib/lib/Crypt/README.pod
-
 .include <bsd.port.mk>

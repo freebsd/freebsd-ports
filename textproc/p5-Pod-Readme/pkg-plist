@@ -1,5 +1,4 @@
 bin/pod2readme
-%%SITE_PERL%%/Pod/README.pod
 %%SITE_PERL%%/Pod/Readme.pm
 %%SITE_PERL%%/Pod/Readme/Filter.pm
 %%SITE_PERL%%/Pod/Readme/Plugin.pm

@@ -8,7 +8,6 @@
 %%SITE_PERL%%/Protocol/ACME/Logger.pm
 %%SITE_PERL%%/Protocol/ACME/OpenSSL.pm
 %%SITE_PERL%%/Protocol/ACME/Utils.pm
-%%SITE_PERL%%/Protocol/README.pod
 %%PERL5_MAN3%%/Protocol::ACME.3.gz
 %%PERL5_MAN3%%/Protocol::ACME::Challenge.3.gz
 %%PERL5_MAN3%%/Protocol::ACME::Challenge::LocalFile.3.gz

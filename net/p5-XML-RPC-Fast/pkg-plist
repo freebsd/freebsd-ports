@@ -6,7 +6,6 @@
 %%SITE_PERL%%/XML/RPC/UA/AnyEvent.pm
 %%SITE_PERL%%/XML/RPC/UA/AnyEventSync.pm
 %%SITE_PERL%%/XML/RPC/Fast.pm
-%%SITE_PERL%%/XML/RPC/README.pod
 %%PERL5_MAN3%%/XML::RPC::Enc.3.gz
 %%PERL5_MAN3%%/XML::RPC::Enc::LibXML.3.gz
 %%PERL5_MAN3%%/XML::RPC::Fast.3.gz

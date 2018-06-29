@@ -10,7 +10,6 @@
 %%SITE_PERL%%/Test/Mini/Runner.pod
 %%SITE_PERL%%/Test/Mini/TestCase.pm
 %%SITE_PERL%%/Test/Mini/TestCase.pod
-%%SITE_PERL%%/Test/README.pod
 %%PERL5_MAN3%%/Test::Mini.3.gz
 %%PERL5_MAN3%%/Test::Mini::Assertions.3.gz
 %%PERL5_MAN3%%/Test::Mini::Logger.3.gz

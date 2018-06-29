@@ -18,7 +18,4 @@ PLIST_FILES=	${SITE_PERL_REL}/Bytes/Random/Secure/Tiny.pm \
 		${SITE_PERL_REL}/Bytes/Random/Secure/Tiny.pod \
 		${SITE_MAN3_REL}/Bytes::Random::Secure::Tiny.3.gz
 
-pre-install:
-		${RM} ${WRKSRC}/blib/lib/Bytes/Random/Secure/README.pod
-
 .include <bsd.port.mk>

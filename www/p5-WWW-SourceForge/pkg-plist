@@ -1,4 +1,3 @@
-%%SITE_PERL%%/WWW/README.pod
 %%SITE_PERL%%/WWW/SourceForge.pm
 %%SITE_PERL%%/WWW/SourceForge/API.pm
 %%SITE_PERL%%/WWW/SourceForge/Project.pm

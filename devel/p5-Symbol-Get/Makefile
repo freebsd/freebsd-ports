@@ -18,7 +18,4 @@ USE_PERL5=	configure
 PLIST_FILES=	${SITE_PERL_REL}/Symbol/Get.pm \
 		${SITE_MAN3_REL}/Symbol::Get.3.gz
 
-pre-install:
-		${RM} ${WRKSRC}/blib/lib/Symbol/README.pod
-
 .include <bsd.port.mk>

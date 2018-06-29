@@ -13,7 +13,6 @@
 %%SITE_PERL%%/SVN/Hooks/Mailer.pm
 %%SITE_PERL%%/SVN/Hooks/Notify.pm
 %%SITE_PERL%%/SVN/Hooks/UpdateConfFile.pm
-%%SITE_PERL%%/SVN/README.pod
 %%PERL5_MAN3%%/SVN::Hooks.3.gz
 %%PERL5_MAN3%%/SVN::Hooks::AllowLogChange.3.gz
 %%PERL5_MAN3%%/SVN::Hooks::AllowPropChange.3.gz

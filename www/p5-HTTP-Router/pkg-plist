@@ -1,4 +1,3 @@
-%%SITE_PERL%%/HTTP/README.pod
 %%SITE_PERL%%/HTTP/Router/Route.pm
 %%SITE_PERL%%/HTTP/Router/Debug.pm
 %%SITE_PERL%%/HTTP/Router/Declare.pm

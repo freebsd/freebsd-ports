@@ -1,4 +1,2 @@
 %%SITE_PERL%%/Dancer2/Plugin/Deferred.pm
-@comment Don't package these:
-@comment %%SITE_PERL%%/Dancer2/Plugin/README.pod
 %%PERL5_MAN3%%/Dancer2::Plugin::Deferred.3.gz
