@@ -6,6 +6,8 @@ lib/sbcl/contrib/sb-aclrepl.asd
 lib/sbcl/contrib/sb-aclrepl.fasl
 lib/sbcl/contrib/sb-bsd-sockets.asd
 lib/sbcl/contrib/sb-bsd-sockets.fasl
+lib/sbcl/contrib/sb-capstone.asd
+lib/sbcl/contrib/sb-capstone.fasl
 lib/sbcl/contrib/sb-cltl2.asd
 lib/sbcl/contrib/sb-cltl2.fasl
 lib/sbcl/contrib/sb-concurrency.asd
