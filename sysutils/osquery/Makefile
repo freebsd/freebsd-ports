@@ -3,6 +3,7 @@
 
 PORTNAME=	osquery
 PORTVERSION=	3.2.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org

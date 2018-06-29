@@ -2,7 +2,7 @@
 
 PORTNAME=	text-icu
 PORTVERSION=	0.7.0.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
