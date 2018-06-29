@@ -26,6 +26,8 @@ MAKE_ARGS=	HC_BASE=${PREFIX}/share/${PORTNAME}/ \
 		HC_BIN_DIR=${PREFIX}/bin/
 MAKE_JOBS_UNSAFE=	yes
 
+CXXFLAGS+=	-Wno-reserved-user-defined-literal
+
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
 
@@ -41,12 +43,8 @@ OPTIONS_SUB=	yes
 
 SOLUTIONS_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSOLUTIONS}
-DISTFILES+=	${PORTNAME}_solutions${EXTRACT_SUFX}
-EXTRACT_ONLY+=	${PORTNAME}_solutions${EXTRACT_SUFX}
-.endif
+SOLUTIONS_DISTFILES=	${PORTNAME}_solutions${EXTRACT_SUFX}
+SOLUTIONS_EXTRACT_ONLY=	${PORTNAME}_solutions${EXTRACT_SUFX}
 
 post-install:
 .for f in ${PORTNAME} ${PORTNAME}-editor
@@ -62,12 +60,11 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	(cd ${WRKSRC}/man && ${INSTALL_MAN} *.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/)
 
-.if ${PORT_OPTIONS:MSOLUTIONS}
+post-install-SOLUTIONS-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-solutions ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}-solutions.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/solutions
 	@(cd ${WRKDIR} && ${INSTALL_DATA} *.avi ${STAGEDIR}${DATADIR}/solutions)
-.endif
 
 .include <bsd.port.mk>
