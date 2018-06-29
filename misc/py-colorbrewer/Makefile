@@ -11,7 +11,7 @@ COMMENT=	Constants from Cynthia Brewer's ColorBrewer
 
 LICENSE=	APACHE20
 
-INSTALL_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
