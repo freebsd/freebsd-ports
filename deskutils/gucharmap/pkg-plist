@@ -20,44 +20,60 @@ lib/libgucharmap_2_90.so.7.0.0
 libdata/pkgconfig/gucharmap-2.90.pc
 share/applications/gucharmap.desktop
 share/gir-1.0/Gucharmap-2.90.gir
+share/help/C/gucharmap/figures/gucharmap_window.png
 share/help/C/gucharmap/index.docbook
 share/help/C/gucharmap/legal.xml
+share/help/bg/gucharmap/figures/gucharmap_window.png
 share/help/bg/gucharmap/index.docbook
 share/help/bg/gucharmap/legal.xml
 share/help/ca/gucharmap/index.docbook
 share/help/ca/gucharmap/legal.xml
+share/help/cs/gucharmap/figures/gucharmap_window.png
 share/help/cs/gucharmap/index.docbook
 share/help/cs/gucharmap/legal.xml
+share/help/de/gucharmap/figures/gucharmap_window.png
 share/help/de/gucharmap/index.docbook
 share/help/de/gucharmap/legal.xml
+share/help/el/gucharmap/figures/gucharmap_window.png
 share/help/el/gucharmap/index.docbook
 share/help/el/gucharmap/legal.xml
 share/help/en_GB/gucharmap/index.docbook
 share/help/en_GB/gucharmap/legal.xml
+share/help/es/gucharmap/figures/gucharmap_window.png
 share/help/es/gucharmap/index.docbook
 share/help/es/gucharmap/legal.xml
+share/help/fi/gucharmap/figures/gucharmap_window.png
 share/help/fi/gucharmap/index.docbook
 share/help/fi/gucharmap/legal.xml
+share/help/fr/gucharmap/figures/gucharmap_window.png
 share/help/fr/gucharmap/index.docbook
 share/help/fr/gucharmap/legal.xml
 share/help/gl/gucharmap/index.docbook
 share/help/gl/gucharmap/legal.xml
+share/help/hu/gucharmap/figures/gucharmap_window.png
 share/help/hu/gucharmap/index.docbook
 share/help/hu/gucharmap/legal.xml
+share/help/ko/gucharmap/figures/gucharmap_window.png
 share/help/ko/gucharmap/index.docbook
 share/help/ko/gucharmap/legal.xml
 share/help/oc/gucharmap/index.docbook
 share/help/oc/gucharmap/legal.xml
+share/help/pl/gucharmap/figures/gucharmap_window.png
+share/help/pl/gucharmap/index.docbook
+share/help/pl/gucharmap/legal.xml
+share/help/pt_BR/gucharmap/figures/gucharmap_window.png
 share/help/pt_BR/gucharmap/index.docbook
 share/help/pt_BR/gucharmap/legal.xml
 share/help/ru/gucharmap/index.docbook
 share/help/ru/gucharmap/legal.xml
 share/help/sl/gucharmap/index.docbook
 share/help/sl/gucharmap/legal.xml
+share/help/sv/gucharmap/figures/gucharmap_window.png
 share/help/sv/gucharmap/index.docbook
 share/help/sv/gucharmap/legal.xml
 share/help/vi/gucharmap/index.docbook
 share/help/vi/gucharmap/legal.xml
+share/help/zh_CN/gucharmap/figures/gucharmap_window.png
 share/help/zh_CN/gucharmap/index.docbook
 share/help/zh_CN/gucharmap/legal.xml
 share/locale/af/LC_MESSAGES/gucharmap.mo
@@ -149,3 +165,10 @@ share/locale/zh_CN/LC_MESSAGES/gucharmap.mo
 share/locale/zh_HK/LC_MESSAGES/gucharmap.mo
 share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
 share/metainfo/gucharmap.appdata.xml
+@dir share/help/ca/gucharmap/figures
+@dir share/help/en_GB/gucharmap/figures
+@dir share/help/gl/gucharmap/figures
+@dir share/help/oc/gucharmap/figures
+@dir share/help/ru/gucharmap/figures
+@dir share/help/sl/gucharmap/figures
+@dir share/help/vi/gucharmap/figures
