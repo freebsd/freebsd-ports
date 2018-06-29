@@ -160,6 +160,8 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 		ARCH_LIB=${_ARCH_LIB}
 
+# Why this is required is explained in:
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=227356#c5
 _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 
 # Get the default version, and possibly, overwrite it.
