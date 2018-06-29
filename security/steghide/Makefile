@@ -20,18 +20,15 @@ USES=		gmake jpeg libtool:build perl5
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -fpermissive
 LIBS+=		-L${LOCALBASE}/lib -lmcrypt
+CXXFLAGS+=	-Wno-static-float-init
 MAKE_ARGS=	LIBTOOL="${LOCALBASE}/bin/libtool"
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
+
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-LIBS+=		-lintl
-.endif
+NLS_LIBS=	-lintl
 
 post-patch:
 	@${REINPLACE_CMD} '/CXXFLAGS=/s|-O2|${CXXFLAGS}|' ${WRKSRC}/configure
