@@ -167,6 +167,12 @@
     SUBDIR += libobjc2
     SUBDIR += librep
     SUBDIR += libstdc++_stldoc_4.2.2
+    SUBDIR += linux-dotnet-cli
+    SUBDIR += linux-dotnet-runtime
+    SUBDIR += linux-dotnet-sdk
+    SUBDIR += linux-dotnet10-runtime
+    SUBDIR += linux-dotnet11-runtime
+    SUBDIR += linux-dotnet11-sdk
     SUBDIR += linux-c6-tcl85
     SUBDIR += linux-c7-tcl85
     SUBDIR += linux-j
