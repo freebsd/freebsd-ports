@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180630:
+  AFFECTS: users of net-im/ejabberd
+  AUTHOR: ashish@FreeBSD.org
+
+  In version 18.06, upstream has removed support for IRC transport.
+
 20180625:
   AFFECTS: users of PHP based applications like drush
   AUTHOR: mfechner@FreeBSD.org
