@@ -19,6 +19,7 @@ GH_ACCOUNT=	google
 GH_TAGNAME=	edcd096379
 
 USES=		dos2unix gmake mono:nuget pathfix
+NUGET_LAYOUT=	flat
 PATHFIX_MAKEFILEIN=	Makefile
 WRKSRC_SUBDIR=	clients/cs
 DOS2UNIX_FILES=	${WRKSRC}/Makefile ${WRKSRC}/misc/gdata-sharp-core.pc.in
