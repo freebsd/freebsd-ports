@@ -1,11 +1,10 @@
---- Makefile.orig	2017-04-30 09:29:26 UTC
+--- Makefile.orig	2018-04-30 23:30:26 UTC
 +++ Makefile
-@@ -13,7 +13,7 @@ all:
+@@ -20,7 +20,6 @@ all:
+ 	@echo monolibdir=$(monolibdir)
+ 	@echo monobindir=$(monobindir)
+ 	@echo -----------
+-	$(MAKE) restore
  	$(MAKE) build-proto
  	$(MAKE) build
  
--build-proto: restore
-+build-proto:
- 	MONO_ENV_OPTIONS=$(monoopts) $(XBUILD) /p:Configuration=Proto /p:TargetFramework=$(TargetFramework) src/fsharp/FSharp.Build-proto/FSharp.Build-proto.fsproj
- 	MONO_ENV_OPTIONS=$(monoopts) $(XBUILD) /p:Configuration=Proto /p:TargetFramework=$(TargetFramework) src/fsharp/FSharp.Compiler-proto/FSharp.Compiler-proto.fsproj
- 	MONO_ENV_OPTIONS=$(monoopts) $(XBUILD) /p:Configuration=Proto /p:TargetFramework=$(TargetFramework) src/fsharp/Fsc-proto/Fsc-proto.fsproj
