@@ -3,7 +3,7 @@
 
 PORTNAME=	bsnmp-regex
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://thewalter.net/stef/software/bsnmp-regex/
 
