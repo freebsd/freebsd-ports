@@ -2,7 +2,7 @@
 
 PORTNAME=	wxdirect
 PORTVERSION=	0.92.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

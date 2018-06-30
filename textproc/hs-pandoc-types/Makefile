@@ -2,6 +2,7 @@
 
 PORTNAME=	pandoc-types
 PORTVERSION=	1.17.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc haskell
 

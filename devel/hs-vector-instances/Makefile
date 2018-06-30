@@ -2,7 +2,7 @@
 
 PORTNAME=	vector-instances
 PORTVERSION=	3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

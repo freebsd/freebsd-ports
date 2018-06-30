@@ -3,7 +3,6 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-GHC_VERSION=		8.4.2
+GHC_VERSION=		8.4.3
 HSCOLOUR_VERSION=	1.24.4
 
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}

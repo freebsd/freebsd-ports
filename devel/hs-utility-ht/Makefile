@@ -3,7 +3,7 @@
 
 PORTNAME=	utility-ht
 PORTVERSION=	0.0.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

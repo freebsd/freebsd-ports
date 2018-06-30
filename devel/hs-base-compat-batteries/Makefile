@@ -2,6 +2,7 @@
 
 PORTNAME=	base-compat-batteries
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

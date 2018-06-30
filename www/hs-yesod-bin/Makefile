@@ -2,7 +2,7 @@
 
 PORTNAME=	yesod-bin
 PORTVERSION=	1.5.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

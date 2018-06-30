@@ -3,7 +3,7 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	0.2.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

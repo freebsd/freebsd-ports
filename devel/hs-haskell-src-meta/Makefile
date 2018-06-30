@@ -2,6 +2,7 @@
 
 PORTNAME=	haskell-src-meta
 PORTVERSION=	0.8.0.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

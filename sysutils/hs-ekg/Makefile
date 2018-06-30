@@ -2,6 +2,7 @@
 
 PORTNAME=	ekg
 PORTVERSION=	0.4.0.15
+PORTREVISION=	1
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	haskell@FreeBSD.org

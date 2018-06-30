@@ -2,6 +2,7 @@
 
 PORTNAME=	hoauth2
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
