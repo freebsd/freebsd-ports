@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	autossh
-PORTVERSION=	1.4e
+PORTVERSION=	1.4f
 CATEGORIES=	security
 MASTER_SITES=	http://www.harding.motd.ca/autossh/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically restart SSH sessions and tunnels
+
+LICENSE=	BSD3CLAUSE
 
 USES=		tar:tgz
 GNU_CONFIGURE=	yes
