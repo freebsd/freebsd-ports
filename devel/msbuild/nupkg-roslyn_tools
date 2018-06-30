@@ -1,0 +1,6 @@
+MicroBuild.Core.Sentinel=1.0.0
+MicroBuild.Plugins.SwixBuild=1.0.147
+Microsoft.NET.Test.Sdk=15.6.0-dev
+RoslynTools.ModifyVsixManifest=1.0.0-beta-62327-02
+RoslynTools.RepoToolset=1.0.0-beta-62705-01
+RoslynTools.SignTool=1.0.0-beta-62414-01

@@ -1,0 +1,35 @@
+--- mono/build/install.proj.orig	2018-05-02 18:19:31 UTC
++++ mono/build/install.proj
+@@ -8,8 +8,8 @@
+         <Error Text="%24(TargetMSBuildToolsVersion) cannot be empty." Condition="'$(TargetMSBuildToolsVersion)' == ''" />
+ 
+         <PropertyGroup>
+-            <MSBuildInstallBinDir>$(MonoInstallPrefix)\lib\mono\msbuild\$(TargetMSBuildToolsVersion)\bin</MSBuildInstallBinDir>
+-            <XBuildDir>$(MonoInstallPrefix)\lib\mono\xbuild</XBuildDir>
++            <MSBuildInstallBinDir>$(DESTDIR)$(MonoInstallPrefix)\lib\mono\msbuild\$(TargetMSBuildToolsVersion)\bin</MSBuildInstallBinDir>
++            <XBuildDir>$(DESTDIR)$(MonoInstallPrefix)\lib\mono\xbuild</XBuildDir>
+ 
+             <MSBuildBinSrcDir>$(RepoRoot)artifacts\2\$(Configuration)\bin\MSBuild.Bootstrap\net461\</MSBuildBinSrcDir>
+ 
+@@ -134,17 +134,17 @@
+             WorkingDirectory="$(MSBuildInstallBinDir)"
+             Command="ln -s Roslyn/System.Reflection.Metadata.dll System.Reflection.Metadata.dll" />
+ 
+-        <Exec Command="$(RepoRoot)\mono\build\gen_msbuild_wrapper.sh $(MonoInstallPrefix) $(MonoInstallPrefix)\bin" />
++        <Exec Command="$(RepoRoot)\mono\build\gen_msbuild_wrapper.sh $(MonoInstallPrefix) $(DESTDIR)$(MonoInstallPrefix)\bin" />
+         <ItemGroup>
+-            <CopiedFiles Include="$(MonoInstallPrefix)\bin\msbuild" />
++            <CopiedFiles Include="$(DESTDIR)$(MonoInstallPrefix)\bin\msbuild" />
+         </ItemGroup>
+ 
+-        <Copy SourceFiles="$(RepoRoot)\mono\msbuild.1" DestinationFolder="$(MonoInstallPrefix)\share\man\man1">
++        <Copy SourceFiles="$(RepoRoot)\mono\msbuild.1" DestinationFolder="$(DESTDIR)$(MonoInstallPrefix)\share\man\man1">
+             <Output TaskParameter="CopiedFiles" ItemName="CopiedFiles" />
+         </Copy>
+ 
+         <ItemGroup>
+-            <_CopiedFiles_Relative_Tmp Include="@(CopiedFiles -> '$([MSBuild]::MakeRelative('$(MonoInstallPrefix)', %(CopiedFiles.Identity)))' )" />
++            <_CopiedFiles_Relative_Tmp Include="@(CopiedFiles -> '$([MSBuild]::MakeRelative('$(DESTDIR)$(MonoInstallPrefix)', %(CopiedFiles.Identity)))' )" />
+             <CopiedFiles_Relative Include="@(_CopiedFiles_Relative_Tmp -> Distinct())" />
+         </ItemGroup>
+ 
