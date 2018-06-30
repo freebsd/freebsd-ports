@@ -2,38 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	fsharp
-PORTVERSION=	4.1.18
-PORTREVISION=	1
+PORTVERSION=	10.0.2
 CATEGORIES=	lang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Functional and object-oriented language for the .NET platform
 
-LICENSE=	APACHE20
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	mono>=3.0:lang/mono \
-		referenceassemblies-pcl>=4.6-1:lang/referenceassemblies-pcl
-RUN_DEPENDS=	mono>=3.0:lang/mono
+BUILD_DEPENDS=	msbuild:devel/msbuild
 TEST_DEPENDS=	libgdiplus>=0:x11-toolkits/libgdiplus
-
-NUGET_DEPENDS=	FSharp.Compiler.Tools=4.1.5 \
-		FSharp.Data=2.2.5 \
-		FsCheck=2.6.2 \
-		FsLexYacc=7.0.4 \
-		Microsoft.DiaSymReader=1.1.0 \
-		Microsoft.DiaSymReader.PortablePdb=1.1.0 \
-		NUnit=3.5.0 \
-		System.Collections.Immutable=1.2.0 \
-		System.Reflection.Metadata=1.4.2 \
-		System.ValueTuple=4.3.0
 
 USE_GITHUB=	yes
 
-USES=		autoreconf gmake mono:nuget pkgconfig
-GNU_CONFIGURE=	yes
+USES=		gmake mono:nuget pkgconfig
 MAKE_JOBS_UNSAFE=	Build not parallelizable
+NUGET_LAYOUT=	legacy
 NO_ARCH=	yes
 
 do-test:
