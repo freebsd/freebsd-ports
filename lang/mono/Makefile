@@ -3,7 +3,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	5.10.1.47
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -43,7 +43,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/mono-heapviz mono/mini/genmdesc.py mono/tests/test_lldb.py
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
-CONFIGURE_ARGS=	--disable-dtrace
+CONFIGURE_ARGS=	--disable-dtrace --enable-btls
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
 
 MAKE_ENV=	MONO_SHARED_DIR="${WRKDIR}" \
