@@ -8,7 +8,7 @@ MASTER_SITES=	https://download.microsoft.com/download/4/0/2/4022CFC7-5061-4762-B
 
 RUN_DEPENDS=	linux-dotnet10-runtime>=0:lang/linux-dotnet10-runtime \
 		linux-dotnet11-runtime>=0:lang/linux-dotnet11-runtime \
-		bash:shell/bash
+		bash:shells/bash
 
 MASTERDIR=	${.CURDIR}/../linux-dotnet-sdk
 
