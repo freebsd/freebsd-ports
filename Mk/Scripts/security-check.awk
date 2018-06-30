@@ -1,9 +1,5 @@
 BEGIN {
 	file = "";
-	if (audit != "")
-		stupid_functions_regexp="^(gets|mktemp|tempnam|tmpnam|strcpy|strcat|sprintf)$";
-	else
-		stupid_functions_regexp="^(gets|mktemp|tempnam|tmpnam)$";
 	split("", stupid_binaries);
 	split("", network_binaries);
 	split("", setuid_binaries);
@@ -18,7 +14,6 @@ FILENAME ~ /\.flattened$/ {
 FILENAME ~ /\.objdump$/ {
 	if (match($0, /: +file format [^ ]+$/)) {
 		file = substr($0, 1, RSTART - 1);
-		stupid_functions = "";
 		next;
 	}
 	if (file == "")
