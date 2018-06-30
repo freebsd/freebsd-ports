@@ -1,20 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	p8-platform
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0.1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	devel
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	Platform support library used by libCEC and binary add-ons for Kodi
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+
+USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Pulse-Eight
 GH_PROJECT=	platform
 
-USES=		cmake
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON
 
