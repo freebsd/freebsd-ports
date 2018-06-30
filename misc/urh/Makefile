@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	urh
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.0
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		fortran python:3.4+ localbase pyqt:5
 USE_PYQT=	core gui test widgets
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils cython autoplist
 
 PLIST_FILES=	bin/urh.shadow
 
