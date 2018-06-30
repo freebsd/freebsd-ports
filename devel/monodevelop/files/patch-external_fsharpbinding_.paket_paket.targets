@@ -1,4 +1,4 @@
---- external/fsharpbinding/.paket/paket.targets.orig	2017-03-23 16:19:23 UTC
+--- external/fsharpbinding/.paket/paket.targets.orig	2017-08-07 15:04:47 UTC
 +++ external/fsharpbinding/.paket/paket.targets
 @@ -35,7 +35,5 @@
    <Target Name="DownloadPaket">

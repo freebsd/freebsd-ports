@@ -1,11 +1,11 @@
---- Makefile.am.orig	2017-05-01 15:02:45 UTC
+--- Makefile.am.orig	2018-06-30 13:47:45 UTC
 +++ Makefile.am
-@@ -13,7 +13,7 @@ buildinfo = $(top_builddir)/build/bin/bu
+@@ -29,8 +29,6 @@ NUGET_RESTORE = mono external/nuget-bina
+ restore-packages:
+ 	@$(NUGET_RESTORE)
+ 	msbuild /t:Restore /p:RestoreDisableParallel=true external/RefactoringEssentials/RefactoringEssentials/RefactoringEssentials.csproj
+-	mono external/fsharpbinding/.paket/paket.bootstrapper.exe
+-	pushd . && cd external/fsharpbinding && mono .paket/paket.exe restore && popd
  
- all: vcrevision
- 
--all-local: vcrevision restore-packages sln_build
-+all-local: vcrevision sln_build
- 
- clean: clean-local
- 
+ vcrevision:
+ 	touch vcrevision
