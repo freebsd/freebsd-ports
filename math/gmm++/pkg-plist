@@ -1,6 +1,7 @@
 include/gmm/gmm.h
 include/gmm/gmm_MUMPS_interface.h
 include/gmm/gmm_algobase.h
+include/gmm/gmm_arch_config.h
 include/gmm/gmm_blas.h
 include/gmm/gmm_blas_interface.h
 include/gmm/gmm_condition_number.h
@@ -13,6 +14,7 @@ include/gmm/gmm_dense_qr.h
 include/gmm/gmm_dense_sylvester.h
 include/gmm/gmm_domain_decomp.h
 include/gmm/gmm_except.h
+include/gmm/gmm_feedback_management.h
 include/gmm/gmm_inoutput.h
 include/gmm/gmm_interface.h
 include/gmm/gmm_interface_bgeot.h
