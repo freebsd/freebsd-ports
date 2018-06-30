@@ -207,11 +207,10 @@ makenupkg:
 	@[ -f ${WRKDIR}/.nupkg-${feed:tl} -o ${feed} = NUGET ] || mono ${NUGET_EXE} list -AllVersions -IncludeDelisted -PreRelease -Source ${${feed}_URL} | ${SED} 's/ /=/g' > ${WRKDIR}/.nupkg-${feed:tl}
 	@${RM} ${WRKDIR}/nupkg-${feed:tl}
 .endfor
-	@for nupkg in `${FIND} ${NUGET_PACKAGEDIR}/ -name '*.sha512' | ${SED} 's/\.sha512//g'`; \
-	do \
-		name="`tar -tf $${nupkg} | ${GREP} nuspec | ${SED} 's/.nuspec//g'`"; \
-		version="`${BASENAME} $$(${DIRNAME} $$nupkg)`"; \
-		${ECHO} "$$name=$${version#$$name.}"; \
+	@for nuspec in `${FIND} ${_NUGET_PACKAGEDIR} -name '*.nuspec'`; do \
+		name="`${SED} -nE 's|.*<id>(.*)</id>.*|\1|p' $$nuspec`"; \
+		version="`${SED} -nE 's|.*<version>(.*)</version>.*|\1|p' $$nuspec`"; \
+		${ECHO} $$name=$$version; \
 	done | ${SORT} -u > ${WRKDIR}/.nupkgs
 	@${CAT} ${WRKDIR}/.nupkgs | while read nupkg; do \
 		default=no; \
