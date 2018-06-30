@@ -1324,6 +1324,7 @@
     SUBDIR += kickassembler
     SUBDIR += kimwitu
     SUBDIR += kio-extras
+    SUBDIR += kodi-platform
     SUBDIR += kore
     SUBDIR += kronosnet
     SUBDIR += ksql
