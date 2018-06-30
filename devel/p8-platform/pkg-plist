@@ -16,6 +16,6 @@ include/p8-platform/util/timeutils.h
 include/p8-platform/util/util.h
 lib/libp8-platform.so
 lib/libp8-platform.so.2
-lib/libp8-platform.so.2.0.1
+lib/libp8-platform.so.2.1.0
 lib/p8-platform/p8-platform-config.cmake
 libdata/pkgconfig/p8-platform.pc
