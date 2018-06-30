@@ -10,7 +10,6 @@ COMMENT=	IPTV Live TV and Radio PVR client for Kodi
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libp8-platform.so:devel/p8-platform \
 		libkodiplatform.so:devel/kodi-platform
 RUN_DEPENDS=	kodi:multimedia/kodi
