@@ -5113,6 +5113,7 @@
     SUBDIR += py-usb
     SUBDIR += py-user_agents
     SUBDIR += py-utils
+    SUBDIR += py-uvloop
     SUBDIR += py-validators
     SUBDIR += py-validictory
     SUBDIR += py-vcrpy
