@@ -2,7 +2,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2999.19.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org

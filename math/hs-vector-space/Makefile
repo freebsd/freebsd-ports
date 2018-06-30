@@ -3,6 +3,7 @@
 
 PORTNAME=	vector-space
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

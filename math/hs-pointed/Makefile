@@ -2,7 +2,7 @@
 
 PORTNAME=	pointed
 PORTVERSION=	5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

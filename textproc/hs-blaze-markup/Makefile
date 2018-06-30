@@ -2,6 +2,7 @@
 
 PORTNAME=	blaze-markup
 PORTVERSION=	0.8.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

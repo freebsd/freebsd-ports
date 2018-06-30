@@ -2,6 +2,7 @@
 
 PORTNAME=	cmark-gfm
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

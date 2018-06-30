@@ -2,6 +2,7 @@
 
 PORTNAME=	sandi
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	converters haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -2,6 +2,7 @@
 
 PORTNAME=	zip-archive
 PORTVERSION=	0.3.2.4
+PORTREVISION=	1
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org

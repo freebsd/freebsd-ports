@@ -2,7 +2,7 @@
 
 PORTNAME=	th-lift-instances
 PORTVERSION=	0.1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

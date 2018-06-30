@@ -2,6 +2,7 @@
 
 PORTNAME=	uri-encode
 PORTVERSION=	1.5.0.5
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

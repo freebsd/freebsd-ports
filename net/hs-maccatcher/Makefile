@@ -2,7 +2,7 @@
 
 PORTNAME=	maccatcher
 PORTVERSION=	2.1.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

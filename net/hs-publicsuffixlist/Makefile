@@ -2,7 +2,7 @@
 
 PORTNAME=	publicsuffixlist
 PORTVERSION=	0.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
