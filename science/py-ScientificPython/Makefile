@@ -2,8 +2,9 @@
 
 PORTNAME=	ScientificPython
 DISTVERSION=	2.9.4
+PORTREVISION=	1
 CATEGORIES=	science python
-MASTER_SITES=	https://sourcesup.renater.fr/frs/download.php/file/4570/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
