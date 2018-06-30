@@ -24,7 +24,7 @@ GH_ACCOUNT=	perseas
 
 # Requires a running PostgreSQL instance
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
