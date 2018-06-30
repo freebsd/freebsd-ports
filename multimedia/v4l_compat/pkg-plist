@@ -1,6 +1,7 @@
 include/linux/dvb/audio.h
 include/linux/dvb/ca.h
 include/linux/dvb/dmx.h
+include/linux/dvb/net.h
 include/linux/dvb/frontend.h
 include/linux/dvb/osd.h
 include/linux/dvb/version.h
