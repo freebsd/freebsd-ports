@@ -235,6 +235,9 @@ lib/libaddress_sorting.so.%%SOVERSION%%
 lib/libbenchmark.so
 lib/libbenchmark.so.0
 lib/libbenchmark.so.0.0.0
+lib/libbenchmark_main.so
+lib/libbenchmark_main.so.0
+lib/libbenchmark_main.so.0.0.0
 lib/libgpr.so
 lib/libgpr.so.1
 lib/libgpr.so.%%SOVERSION%%
@@ -269,3 +272,4 @@ lib/libgrpc_unsecure.so
 lib/libgrpc_unsecure.so.1
 lib/libgrpc_unsecure.so.%%SOVERSION%%
 libdata/pkgconfig/benchmark.pc
+%%DATADIR%%/roots.pem
