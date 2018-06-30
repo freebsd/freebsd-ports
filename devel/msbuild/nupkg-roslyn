@@ -1,0 +1,4 @@
+Microsoft.CodeAnalysis.Build.Tasks=3.0.0-beta1-61516-01
+Microsoft.CodeAnalysis.CSharp=3.0.0-beta1-61516-01
+Microsoft.CodeAnalysis.Common=3.0.0-beta1-61516-01
+Microsoft.NETCore.Compilers=2.6.0-beta3-62309-01
