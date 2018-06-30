@@ -28,7 +28,7 @@ NUGET_DEPENDS=	FuzzyLogicLibrary=1.2.0 \
 		MaxMind.Db=2.0.0 \
 		NUnit=3.0.1 \
 		NUnit.Console=3.0.1 \
-		Open.Nat=2.1.0 \
+		Open.NAT=2.1.0 \
 		SharpFont=4.0.1 \
 		SharpZipLib=0.86.0 \
 		StyleCop.MSBuild=4.7.49.0 \
@@ -42,6 +42,7 @@ NO_ARCH=	yes
 USES=		desktop-file-utils gmake lua:51,run mono:nuget openal:soft \
 		shared-mime-info shebangfix
 USE_SDL=	sdl2
+NUGET_LAYOUT=	flat
 NUGET_PACKAGEDIR=${WRKSRC}/thirdparty/download
 SHEBANG_FILES=	launch-dedicated.sh
 MAKE_ENV=	prefix="${PREFIX}" mandir="${PREFIX}/man" \

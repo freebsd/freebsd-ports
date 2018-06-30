@@ -20,11 +20,26 @@
 # makenuget	This target will output the NUGET_DEPENDS based on the
 #		port's packages.config file.
 #
+# makenupkg	This target will create nupkg-${NAME} files based on the
+# 		port's downloaded packages in ${NUGET_PACKAGEDIR}
+#
 # Variables overrideable by the port:
 #
 # NUGET_PACKAGEDIR	The directory in which the port expects the
 #			nuget packages to be available
 #			default: ${WRKSRC}/packages
+#
+# NUGET_LAYOUT		The directory layout of ${NUGET_PACKAGEDIR}:
+# 				legacy:
+# 					${NAME}
+# 					${NAME}.${VERSION}
+# 					${NAME.tl}/${VERSION}
+# 				flat:
+# 					${NAME}
+# 					${NAME:tl}
+# 				dotnet:
+# 					${NAME:tl}/${VERSION}
+# 			default: legacy
 #
 # NUGET_FEEDS		A list of nuget feed names
 #			default: NUGET
@@ -32,10 +47,12 @@
 # ${NAME}_URL:		The base URL for the feed ${NAME}
 #			defaults:
 #				NUGET_URL=https://www.nuget.org/api/v2/
+#				${NAME}_URL=https://dotnet.myget.org/F/${NAME:tl:S/_/-/g}/api/v2/
 #
 # ${NAME}_FILE:		The file containing a list of nuget packages from
 # 			feed ${NAME} in the format:
 # 				${name}=${version}
+# 			default: ${PKGDIR}/nupkg-${NAME:tl}
 #
 # ${NAME}_DEPENDS:	The list of nuget packages from feed ${NAME} in the
 #			format:
@@ -78,10 +95,12 @@ GACUTIL_INSTALL_PACKAGE=${GACUTIL} /i /package 1.0 /package 2.0
 MAKE_ENV+=	NUGET_PACKAGES=${NUGET_PACKAGEDIR}
 
 # TODO: add nuget as a Port, use it for makenupkg
-NUGET_EXE?=	${WRKSRC}/external/nuget-binary/nuget.exe
+NUGET_EXE?=	${WRKDIR}/nuget.exe
+NUGET_LATEST_URL?=	https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 _NUGET_PACKAGEDIR=	${WRKDIR}/.nuget/packages
 NUGET_PACKAGEDIR?=	${WRKSRC}/packages
+NUGET_LAYOUT?=		legacy
 NUGET_FEEDS?=		NUGET
 NUGET_URL?=		https://www.nuget.org/api/v2/
 
@@ -92,6 +111,7 @@ NUGET_DEPENDS?=		${PAKET_DEPENDS}
 . for feed in ${NUGET_FEEDS}
 ${feed}_DEPENDS?=
 ${feed}_FILE?=		${PKGDIR}/nupkg-${feed:tl}
+${feed}_URL?=		https://dotnet.myget.org/F/${feed:tl:S/_/-/g}/api/v2/
 .  if exists(${${feed}_FILE})
 ${feed}_EXTRA!=		${CAT} ${${feed}_FILE}
 .  else
@@ -122,36 +142,53 @@ _USES_extract+=	600:nuget-extract
 nuget-extract:
 	@${MKDIR} ${_NUGET_PACKAGEDIR} ${PAKET_PACKAGEDIR}
 . for nupkg in ${NUGET_NUPKGS}
-.  if !empty(NUPKGS_${nupkg:C/^.*://:C/=.*//}:[2])
-	@${MKDIR} ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}
-.  else
-	@${MKDIR} ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C/=.*//}
-	@${LN} -s ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C/=.*//} ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}
-.  endif
-	@tar -xf ${DISTDIR}/${nupkg:C/:.*$//} -C ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|} \
+	@${MKDIR} ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}
+	@tar -xf ${DISTDIR}/${nupkg:C/:.*$//} -C ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|} \
 		-s/%2B/\+/g -s/%2B/\+/g -s/%2B/\+/g \
 		--exclude '\[Content_Types\].xml' \
 		--exclude package/ \
 		--exclude _rels/
-	@${CP} ${DISTDIR}/${nupkg:C/:.*$//} ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}/${nupkg:C/^.*://:S/=/./}.nupkg
+	@${MV} ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/${nupkg:C/^.*://:C/=.*//}.nuspec \
+		${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/${nupkg:tl:C/^.*://:C/=.*//}.nuspec
+	@${CP} ${DISTDIR}/${nupkg:C/:.*$//} ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/${nupkg:tl:C/^.*://:S/=/./}.nupkg
 	@openssl dgst -sha512 -binary ${DISTDIR}/${nupkg:C/:.*$//} | openssl enc -base64 | ${TR} -d "\n" \
-		> ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}/${nupkg:C/^.*://:S/=/./}.nupkg.sha512
-	@${LN} -s ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|} ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S/=/./}
-.  if ${nupkg:C/^.*://:tl} != ${nupkg:C/^.*://}
-	@${LN} -s ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}/${nupkg:C/^.*://:C/=.*$//}.nuspec ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}/${nupkg:C/^.*://:C/=.*$//:tl}.nuspec
-	@${LN} -s ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}/${nupkg:C/^.*://:S/=/./}.nupkg ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}/${nupkg:C/^.*://:S/=/./:tl}.nupkg
-	@${LN} -s ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}/${nupkg:C/^.*://:S/=/./}.nupkg.sha512 ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|}/${nupkg:C/^.*://:S/=/./:tl}.nupkg.sha512
-	@${LN} -s ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|/|} ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S/=/./:tl}
-	@[ -e ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C/=.*$//:tl} ] || ${LN} -s ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C/=.*$//} ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C/=.*$//:tl}
+		> ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/${nupkg:tl:C/^.*://:S/=/./}.nupkg.sha512
+.  if ${NUGET_LAYOUT} == legacy
+	@${CP} -a ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/ ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|.|}/
+	@${CP} -a ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/ ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C|=.*||}/
+.   if ${nupkg} != ${nupkg:tl}
+	@(cd ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C|=.*||}; \
+		${MV} ${nupkg:tl:C/^.*://:C/=.*//}.nuspec ${nupkg:C/^.*://:C/=.*//}.nuspec; \
+		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg ${nupkg:C/^.*://:S/=/./}.nupkg; \
+		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg.sha512 ${nupkg:C/^.*://:S/=/./}.nupkg.sha512)
+	@(cd ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|.|}; \
+		${MV} ${nupkg:tl:C/^.*://:C/=.*//}.nuspec ${nupkg:C/^.*://:C/=.*//}.nuspec; \
+		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg ${nupkg:C/^.*://:S/=/./}.nupkg; \
+		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg.sha512 ${nupkg:C/^.*://:S/=/./}.nupkg.sha512)
+.   endif
+.  elif ${NUGET_LAYOUT} == flat
+	@${CP} -a ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/ ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:C|=.*||}/
+	@${RM} -r ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}
+.   if ${nupkg} != ${nupkg:tl}
+	@${CP} -a ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:C|=.*||}/ ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C|=.*||}/
+	@(cd ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C|=.*||}; \
+		${MV} ${nupkg:tl:C/^.*://:C/=.*//}.nuspec ${nupkg:C/^.*://:C/=.*//}.nuspec; \
+		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg ${nupkg:C/^.*://:S/=/./}.nupkg; \
+		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg.sha512 ${nupkg:C/^.*://:S/=/./}.nupkg.sha512)
+.   endif
 .  endif
 . endfor
-	@${LN} -s ${_NUGET_PACKAGEDIR} ${NUGET_PACKAGEDIR}
+	@${RLN} ${_NUGET_PACKAGEDIR} ${NUGET_PACKAGEDIR}
 	@${TOUCH} ${WRKDIR}/.nuget-sentinal
 
 _USES_extract+=	601:paket-extract
 paket-extract:
 . for nupkg in ${PAKET_DEPENDS}
-	@${LN} -s ${_NUGET_PACKAGEDIR}/${nupkg:S|=|/|} ${PAKET_PACKAGEDIR}/${nupkg:C/=.*$//}
+	@${RLN} ${_NUGET_PACKAGEDIR}/${nupkg:tl:S|=|/|} ${PAKET_PACKAGEDIR}/${nupkg:C/=.*//}
+	@(cd ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}; \
+		${CP} ${nupkg:tl:C/^.*://:C/=.*//}.nuspec ${nupkg:C/^.*://:C/=.*//}.nuspec; \
+		${CP} ${nupkg:tl:C/^.*://:S/=/./}.nupkg ${nupkg:C/^.*://:S/=/./}.nupkg; \
+		${CP} ${nupkg:tl:C/^.*://:S/=/./}.nupkg.sha512 ${nupkg:C/^.*://:S/=/./}.nupkg.sha512)
 . endfor
 .endif
 
@@ -165,22 +202,30 @@ makenuget: patch
 			-e '$$!s|$$| \\|g'
 
 makenupkg:
+	@[ -f ${NUGET_EXE} ] || fetch -o ${NUGET_EXE} ${NUGET_LATEST_URL}
 .for feed in ${NUGET_FEEDS}
-	@[ -f ${WRKDIR}/.nupkg-${feed:tl} ] || mono ${NUGET_EXE} list -IncludeDelisted -PreRelease -Source ${${feed}_URL} | ${SED} 's/ .*//g' > ${WRKDIR}/.nupkg-${feed:tl}
+	@[ -f ${WRKDIR}/.nupkg-${feed:tl} -o ${feed} = NUGET ] || mono ${NUGET_EXE} list -AllVersions -IncludeDelisted -PreRelease -Source ${${feed}_URL} | ${SED} 's/ /=/g' > ${WRKDIR}/.nupkg-${feed:tl}
 	@${RM} ${WRKDIR}/nupkg-${feed:tl}
 .endfor
-	@for nupkg in `${FIND} ${_NUGET_PACKAGEDIR} -name '*.sha512' | ${SED} 's/\.sha512//g'`; \
+	@for nupkg in `${FIND} ${NUGET_PACKAGEDIR}/ -name '*.sha512' | ${SED} 's/\.sha512//g'`; \
 	do \
 		name="`tar -tf $${nupkg} | ${GREP} nuspec | ${SED} 's/.nuspec//g'`"; \
 		version="`${BASENAME} $$(${DIRNAME} $$nupkg)`"; \
 		${ECHO} "$$name=$${version#$$name.}"; \
 	done | ${SORT} -u > ${WRKDIR}/.nupkgs
 	@${CAT} ${WRKDIR}/.nupkgs | while read nupkg; do \
+		default=no; \
 		for feed in ${NUGET_FEEDS:tl}; do \
-			if ${GREP} -q "^$${nupkg%%=*}\$$" ${WRKDIR}/.nupkg-$$feed; then \
+			if [ $$feed = nuget ]; then \
+				default=yes; \
+			elif ${GREP} -q "^$$nupkg\$$" ${WRKDIR}/.nupkg-$$feed; then \
 				${ECHO} $$nupkg >> ${WRKDIR}/nupkg-$$feed; \
+				default=na; \
 				break; \
 			fi; \
 		done; \
+		if [ $$default = yes ]; then \
+			${ECHO} $$nupkg >> ${WRKDIR}/nupkg-nuget; \
+		fi; \
 	done
 .endif
