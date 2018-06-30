@@ -3,6 +3,7 @@
 
 PORTNAME=	slrn
 PORTVERSION=	1.0.3a
+PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	http://www.jedsoft.org/releases/slrn/
 
@@ -19,7 +20,7 @@ USES=		gmake iconv tar:bz2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-inews --with-slrnpull \
-		--with-non-gnu-iconv ${ICONV_CONFIGURE_ARG}
+		${ICONV_CONFIGURE_ARG}
 
 ALL_TARGET=	all
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[a-z]$//}
