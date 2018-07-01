@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	natron
-PORTVERSION=	2.3.12
+PORTVERSION=	2.3.13
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
