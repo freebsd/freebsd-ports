@@ -27,8 +27,6 @@ OPTIONS_SUB=	yes
 
 VIM_DESC=	Install Vim plugin
 
-pre-install:	do-test
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
