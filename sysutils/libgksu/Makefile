@@ -3,12 +3,15 @@
 
 PORTNAME=	libgksu
 PORTVERSION=	2.0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library providing su and sudo functionality
+
+LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 		libglade-2.0.so:devel/libglade2 \
@@ -35,5 +38,15 @@ post-patch:
 		${WRKSRC}/libgksu/Makefile.in
 	@${REINPLACE_CMD} '/^libgksuui1_0_la_LIBADD =/s/$$/ -lX11/' \
 		${WRKSRC}/libgksuui/Makefile.in
+	@${REINPLACE_CMD} -E \
+		-e 's|([" ])/bin/su|\1/usr/bin/su|g' \
+		-e 's|/usr/bin/sudo|${LOCALBASE}/bin/sudo|g' \
+		-e 's|/usr/bin/xauth|${LOCALBASE}/bin/xauth|g' \
+		-e 's|/usr/bin/xgettext|${LOCALBASE}/bin/xgettext|g' \
+		-e 's|/usr/bin/xterm|${LOCALBASE}/bin/xterm|g' \
+		${WRKSRC}/libgksu/gksu-run-helper.c \
+		${WRKSRC}/libgksu/libgksu.c \
+		${WRKSRC}/libgksu/test-gksu.c \
+		${WRKSRC}/po/*.po
 
 .include <bsd.port.mk>
