@@ -310,6 +310,7 @@
     SUBDIR += freedroidrpg
     SUBDIR += freeminer
     SUBDIR += freeminer-default
+    SUBDIR += freeorion
     SUBDIR += freera
     SUBDIR += freesweep
     SUBDIR += freesynd
