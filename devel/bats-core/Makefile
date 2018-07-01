@@ -1,24 +1,22 @@
-# Created by: Nikolai Lifanov <lifanov@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	bats
+PORTNAME=	bats-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	1.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Bash automated testing system
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		shebangfix
-SHEBANG_FILES=	${SCRIPTS:S/^/libexec\//}
+SHEBANG_FILES=	${SCRIPTS:S/^/libexec\/${PORTNAME}\//}
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	sstephenson
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -37,7 +35,7 @@ PLIST_FILES=	${SCRIPTS:S/^/libexec\/${PORTNAME}\//} \
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 .for f in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/libexec/${f} \
+	${INSTALL_SCRIPT} ${WRKSRC}/libexec/${PORTNAME}/${f} \
 		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/${f}
 .endfor
 	${RLN} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/bats \

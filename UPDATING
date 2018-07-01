@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180701:
+  AFFECTS: users of devel/bats
+  AUTHOR: lifanov@FreeBSD.org
+
+  The devel/bats port has been renamed to devel/bats-core to match the
+  new upstream project.
+
 20180630:
   AFFECTS: users of net-im/ejabberd
   AUTHOR: ashish@FreeBSD.org
