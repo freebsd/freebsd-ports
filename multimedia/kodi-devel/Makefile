@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	18.0.g201805221344
+DISTVERSION=	18.0.g201806300625
 CATEGORIES=	multimedia
 PKGNAMESUFFIX?=	-devel
 
@@ -54,7 +54,7 @@ USES=		autoreconf:build cmake:outsource,noninja compiler:c++11-lib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	d2b10e2bb0650d8d47caf8a5d15fa4b6f2cb7254
+GH_TAGNAME=	8063088ceecc6674763c83a63356fe0296b005a8
 USE_GNOME=	libxslt libxml2
 USE_JAVA=	yes
 JAVA_BUILD=	yes
@@ -78,7 +78,7 @@ PLIST_SUB=	ARCH=${KODIARCH_${ARCH}:U${ARCH}} OPSYS=${OPSYS:tl}
 
 OPTIONS_DEFINE=	AVAHI CEC DBUS LIBBLURAY MYSQL NFS SMB SSH UPNP VAAPI	\
 		VDPAU WEBSERVER
-OPTIONS_DEFAULT=	LIBBLURAY SSH UPNP WEBSERVER X11
+OPTIONS_DEFAULT=	LIBBLURAY SSH UPNP VAAPI VDPAU WEBSERVER X11
 OPTIONS_SINGLE=	PLATFORM
 OPTIONS_SINGLE_PLATFORM=	GBM RPI WAYLAND X11
 OPTIONS_EXCLUDE_amd64=	RPI
@@ -148,11 +148,9 @@ UPNP_CXXFLAGS=		-DNPT_CONFIG_HAVE_ARPA_INET_H \
 			-DNPT_CONFIG_HAVE_SOCKADDR_DL \
 			-DNPT_CONFIG_HAVE_SOCKADDR_IN_SIN_LEN
 
-VAAPI_BROKEN=		Crashes at startup with VAAPI enabled
 VAAPI_CMAKE_BOOL=	ENABLE_VAAPI
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 
-VDPAU_BROKEN=		Crashes at startup with VDPAU enabled
 VDPAU_CMAKE_BOOL=	ENABLE_VDPAU
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 
@@ -183,6 +181,10 @@ post-patch:
 # (see CMAKE_ARGS).
 	@${REINPLACE_CMD} 's@KODI_DEPENDSBUILD@true@' \
 		${WRKSRC}/cmake/modules/FindLibDvd.cmake
+# Make sure freebsd.xml is in sync with linux.xml since the
+# upstream devs do not sync them
+	@${CP} ${WRKSRC}/system/settings/linux.xml \
+		${WRKSRC}/system/settings/freebsd.xml
 
 .if ${SLAVE_PORT} == no
 post-install:
