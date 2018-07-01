@@ -196,6 +196,7 @@
     SUBDIR += py-pyteomics.biolccc
     SUBDIR += py-qspin
     SUBDIR += py-quantities
+    SUBDIR += py-rmf
     SUBDIR += py-scikit-fuzzy
     SUBDIR += py-scikit-learn
     SUBDIR += py-scikit-sparse

@@ -1,0 +1,6 @@
+The Python binding for Rich Molecular Format (RMF) file format library
+storing hierarchical molecular data (such as atomic or coarse grained
+representations of proteins), along with markup, including geometry and score
+data.
+
+WWW: https://integrativemodeling.org/rmf/
