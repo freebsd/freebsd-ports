@@ -71,6 +71,7 @@ include/kodi/xbmc_pvr_types.h
 %%X11%%lib/kodi/kodi-x11
 %%X11%%lib/kodi/kodi-xrandr
 lib/kodi/system/players/VideoPlayer/libdvdnav-%%ARCH%%-%%OPSYS%%.so
+%%SSE%%lib/kodi/system/libsse4-%%ARCH%%-%%OPSYS%%.so
 man/man1/kodi.1.gz
 man/man1/kodi.bin.1.gz
 share/applications/kodi.desktop
