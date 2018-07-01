@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfx-io
-PORTVERSION=	2.3.12
+PORTVERSION=	2.3.13
 DISTVERSIONPREFIX=	Natron-
 CATEGORIES=	graphics
 
@@ -33,7 +33,7 @@ GH_PROJECT=	openfx-io
 GH_TUPLE=	NatronGitHub:openfx:a85dc34:openfx/openfx \
 		NatronGitHub:SequenceParsing:9e8b77a:SequenceParsing/IOSupport/SequenceParsing \
 		NatronGitHub:tinydir:3aae922:tinydir/IOSupport/SequenceParsing/tinydir \
-		NatronGitHub:openfx-supportext:1db2bfa:openfx_supportext/SupportExt
+		NatronGitHub:openfx-supportext:e600cae:openfx_supportext/SupportExt
 
 MAKE_ENV+=	CONFIG=release
 USE_GL=	gl
