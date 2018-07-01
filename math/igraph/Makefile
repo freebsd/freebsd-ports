@@ -11,6 +11,9 @@ COMMENT=	Package For Manipulating Undirected And Directed Graphs
 
 LICENSE=	GPLv2
 
+BROKEN_mips64=		fails to link: relocation truncated to fit: R_MIPS_TLS_GD against 'igraph_i_interruption_handler'
+BROKEN_sparc64=		fails to compile: uses x86 asm
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 GNU_CONFIGURE=	yes
@@ -22,10 +25,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: uses i386 asm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

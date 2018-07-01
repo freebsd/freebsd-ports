@@ -13,6 +13,9 @@ COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN_mips=		fails to link: Nonrepresentable section on output
+BROKEN_mips64=		fails to link: Nonrepresentable section on output
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_stdcpp_main=no
 INSTALL_TARGET=	install-strip

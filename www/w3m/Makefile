@@ -13,6 +13,8 @@ LICENSE_NAME=	w3m
 LICENSE_FILE=	${WRKSRC}/doc/README
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+
 LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
 USES=		iconv pkgconfig perl5 ssl

@@ -12,6 +12,9 @@ COMMENT=	General purpose dynamic array
 
 LICENSE=	LGPL21
 
+BROKEN_mips=		fails to compile: unrecognized command line option "-m32"
+BROKEN_mips64=		fails to compile: unrecognized command line option "-m64"
+
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -13,6 +13,8 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LICENSE=	LGPL21
 
+BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libltdl.so:devel/libltdl \
 		libunistring.so:devel/libunistring \

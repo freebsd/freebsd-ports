@@ -11,6 +11,9 @@ COMMENT=	High performance distributed file system (DFS)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING-3_0.txt
 
+BROKEN_mips=		fails to link: tracker_service.c:270: undefined reference to '__sync_add_and_fetch_4'
+BROKEN_mips64=		fails to link: tracker_service.c:270: undefined reference to '__sync_add_and_fetch_4'
+
 LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon
 
 USES=		perl5

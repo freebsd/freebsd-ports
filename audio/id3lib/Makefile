@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	Library for manipulating ID3v1/v1.1 and ID3v2 tags
 
+BROKEN_mips=		fails to link: '_ZTSN12_GLOBAL__N_117ConstIteratorImplE' referenced in section '.data.rel.ro' of tag.lo: defined in discarded section
+BROKEN_mips64=		fails to link: '_ZTSN12_GLOBAL__N_117ConstIteratorImplE' referenced in section '.data.rel.ro' of tag.lo: defined in discarded section
+
 GNU_CONFIGURE=	yes
 USES=		iconv libtool
 USE_LDCONFIG=	yes
