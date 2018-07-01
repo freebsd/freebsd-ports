@@ -1,4 +1,16 @@
 bin/prometheus
 bin/promtool
+%%USE_SYSLOG%%@sample %%ETCDIR%%/newsyslog.conf.sample etc/newsyslog.conf.d/%%PORTNAME%%.conf
+%%USE_SYSLOG%%@sample %%ETCDIR%%/syslog.d.conf.sample /etc/syslog.d/%%PORTNAME%%.conf
+%%PROMETHEUS_CONSOLE_LIBRARIES_DIR%%/menu.lib
+%%PROMETHEUS_CONSOLE_LIBRARIES_DIR%%/prom.lib
+%%PROMETHEUS_CONSOLES_DIR%%/index.html.example
+%%PROMETHEUS_CONSOLES_DIR%%/node-cpu.html
+%%PROMETHEUS_CONSOLES_DIR%%/node-disk.html
+%%PROMETHEUS_CONSOLES_DIR%%/node-overview.html
+%%PROMETHEUS_CONSOLES_DIR%%/node.html
+%%PROMETHEUS_CONSOLES_DIR%%/prometheus-overview.html
+%%PROMETHEUS_CONSOLES_DIR%%/prometheus.html
 @sample etc/prometheus.yml.sample
-@dir(prometheus,prometheus) /var/db/prometheus
+@dir(prometheus,prometheus) %%PROMETHEUS_DB_DIR%%
+@dir(root,root) %%PROMETHEUS_LOG_DIR%%
