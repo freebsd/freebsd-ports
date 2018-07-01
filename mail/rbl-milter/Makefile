@@ -3,7 +3,7 @@
 
 PORTNAME=	rbl-milter
 PORTVERSION=	0.30
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://opensource.confusticate.com/rbl-milter/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	spamass-milter
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SAVANNAH/spamass-milt
 
@@ -15,8 +15,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	LDAP SENDMAIL_PORT DOCS
-SENDMAIL_PORT_DESC=	Build against sendmail port
+OPTIONS_DEFINE=	LDAP MILTER_PORT DOCS
+MILTER_PORT_DESC=	Build against libmiter port
 
 .include <bsd.port.pre.mk>
 

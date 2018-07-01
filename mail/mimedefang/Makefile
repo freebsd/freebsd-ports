@@ -3,6 +3,7 @@
 
 PORTNAME=	mimedefang
 PORTVERSION=	2.83
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/ \
 		http://fossies.org/linux/misc/
@@ -55,9 +56,7 @@ CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-.if defined(WITH_SENDMAIL_PORT)
-CONFIGURE_ARGS+=	--with-milterinc=${LOCALBASE}/include --with-milterlib=${LOCALBASE}/lib
-.endif
+CONFIGURE_ARGS+=	--with-milterinc=${MILTERBASE}/include --with-milterlib=${MILTERBASE}/lib
 
 CLAMAV_BUILD_DEPENDS+=		clamscan:security/clamav
 CLAMAV_RUN_DEPENDS+=		clamscan:security/clamav
