@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	devel deskutils
 MASTER_SITES=	http://releases.chipx86.com/leaftag/libleaftag/
 
-MAINTAINER=	kaeru@inigo-tech.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Leaftag is a library for tagging files on the desktop
 
 USES=		pathfix pkgconfig libtool sqlite:2
