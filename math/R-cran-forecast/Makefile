@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	forecast
-PORTVERSION=	8.3
+PORTVERSION=	8.4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 CRAN_DEPENDS=	R-cran-colorspace>0:graphics/R-cran-colorspace \
 		R-cran-fracdiff>0:math/R-cran-fracdiff \
-		R-cran-ggplot2>=2.0.0:graphics/R-cran-ggplot2 \
+		R-cran-ggplot2>=2.2.1:graphics/R-cran-ggplot2 \
 		R-cran-lmtest>0:finance/R-cran-lmtest \
 		R-cran-Rcpp>=0.11.0:devel/R-cran-Rcpp \
 		R-cran-timeDate>0:finance/R-cran-timeDate \
