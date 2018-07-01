@@ -1,66 +1,51 @@
-See:
-
-	https://github.com/ansible/ansible/pull/27376
-
---- lib/ansible/constants.py
+--- lib/ansible/constants.py.orig	2018-06-28 23:30:34 UTC
 +++ lib/ansible/constants.py
-@@ -60,6 +60,19 @@
+@@ -59,8 +59,9 @@ def set_constant(name, value, export=var
+ 
  
  # CONSTANTS ### yes, actual ones
--BECOME_METHODS = ['sudo', 'su', 'pbrun', 'pfexec', 'doas', 'dzdo', 'ksu', 'runas', 'pmrun', 'enable']
-+BECOME_METHODS = [
-+    'sesu',
-+    'sudo',
-+    'su',
-+    'pbrun',
-+    'pfexec',
-+    'doas',
-+    'dzdo',
-+    'ksu',
-+    'runas',
-+    'pmrun',
-+    'enable'
-+]
+-BECOME_METHODS = ['sudo', 'su', 'pbrun', 'pfexec', 'doas', 'dzdo', 'ksu', 'runas', 'pmrun', 'enable', 'machinectl']
++BECOME_METHODS = ['sesu', 'sudo', 'su', 'pbrun', 'pfexec', 'doas', 'dzdo', 'ksu', 'runas', 'pmrun', 'enable', 'machinectl']
  BECOME_ERROR_STRINGS = {
 +    'sesu': '',
      'sudo': 'Sorry, try again.',
      'su': 'Authentication failure',
-@@ -73,4 +85,5 @@
+     'pbrun': '',
+@@ -73,6 +74,7 @@ BECOME_ERROR_STRINGS = {
+     'machinectl': '',
  }  # FIXME: deal with i18n
  BECOME_MISSING_STRINGS = {
 +    'sesu': '',
      'sudo': 'sorry, a password is required to run sudo',
      'su': '',
---- lib/ansible/modules/commands/command.py
+     'pbrun': '',
+--- lib/ansible/modules/commands/command.py.orig	2018-06-28 23:30:34 UTC
 +++ lib/ansible/modules/commands/command.py
-@@ -105,7 +105,7 @@
+@@ -142,7 +142,7 @@ def check_command(module, commandline):
                  'mount': 'mount', 'rpm': 'yum, dnf or zypper', 'yum': 'yum', 'apt-get': 'apt',
-                 'tar': 'unarchive', 'unzip': 'unarchive', 'sed': 'template or lineinfile',
+                 'tar': 'unarchive', 'unzip': 'unarchive', 'sed': 'replace, lineinfile or template',
                  'dnf': 'dnf', 'zypper': 'zypper'}
--    become = ['sudo', 'su', 'pbrun', 'pfexec', 'runas', 'pmrun']
-+    become = ['sudo', 'su', 'pbrun', 'pfexec', 'runas', 'pmrun', 'sesu']
-     command = os.path.basename(commandline.split()[0])
-     if command in arguments:
-         module.warn("Consider using file module with %s rather than running %s" % (arguments[command], command))
---- lib/ansible/modules/web_infrastructure/ansible_tower/tower_credential.py
+-    become = ['sudo', 'su', 'pbrun', 'pfexec', 'runas', 'pmrun', 'machinectl']
++    become = ['sesu', 'sudo', 'su', 'pbrun', 'pfexec', 'runas', 'pmrun', 'machinectl']
+     if isinstance(commandline, list):
+         command = commandline[0]
+     else:
+--- lib/ansible/modules/web_infrastructure/ansible_tower/tower_credential.py.orig	2018-06-28 23:30:34 UTC
 +++ lib/ansible/modules/web_infrastructure/ansible_tower/tower_credential.py
-@@ -123,9 +123,9 @@
-       default: null
+@@ -96,7 +96,7 @@ options:
      become_method:
        description:
--        - Become method to Use for privledge escalation.
-+        - Become method to Use for privilege escalation.
-       required: False
+         - Become method to Use for privledge escalation.
 -      choices: ["None", "sudo", "su", "pbrun", "pfexec", "pmrun"]
-+      choices: ["None", "sudo", "su", "pbrun", "pfexec", "pmrun", "sesu"]
-       default: "None"
++      choices: ["None", "sesu", "sudo", "su", "pbrun", "pfexec", "pmrun"]
      become_username:
        description:
---- lib/ansible/playbook/play_context.py
+         - Become username. Use ASK for prompting.
+--- lib/ansible/playbook/play_context.py.orig	2018-06-28 23:30:34 UTC
 +++ lib/ansible/playbook/play_context.py
-@@ -599,6 +599,13 @@ def detect_ksu_prompt(b_data):
-                 prompt = 'Enter UPM user password:'
-                 becomecmd = '%s %s %s' % (exe, flags, shlex_quote(command))
+@@ -562,6 +562,13 @@ class PlayContext(Base):
+                 exe = self.become_exe or 'machinectl'
+                 becomecmd = '%s shell -q %s %s@ %s' % (exe, flags, self.become_user, command)
  
 +            elif self.become_method == 'sesu':
 +
@@ -71,3 +56,4 @@ See:
 +
              else:
                  raise AnsibleError("Privilege escalation method not found: %s" % self.become_method)
+ 
