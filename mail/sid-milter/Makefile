@@ -2,7 +2,7 @@
 
 PORTNAME=	sid-milter
 PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/SenderID%20Milter/${PORTVERSION}
 
@@ -41,7 +41,7 @@ LIBAR_PLIST_FILES=	include/libar.h lib/libar.a man/man3/ar.3.gz
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-.if defined(WITH_SENDMAIL_PORT)
+.if defined(WITH_MILTER_PORT)
 SITE+=		${FILESDIR}/site.config.m4.milter
 .endif
 

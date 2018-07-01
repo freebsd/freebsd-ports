@@ -3,7 +3,7 @@
 
 PORTNAME=	amavisd-milter
 PORTVERSION=	1.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,9 +15,9 @@ RUN_DEPENDS=	amavisd:security/amavisd-new
 ##
 # Use the following quirks to choose which sendmail to use (ports or system):
 #
-#   WITH_SENDMAIL_BASE=yes
+#   WITH_MILTER_BASE=yes
 # or
-#   WITH_SENDMAIL_PORT=yes
+#   WITH_MILTER_PORT=yes
 #
 # If unspecified, check for an up-to-date system version but give an
 # installed port preference over it.
@@ -46,13 +46,7 @@ PORTDOCS=	AUTHORS CHANGES INSTALL LICENSE README TODO
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-.if defined(WITH_SENDMAIL_BASE) && !exists(/usr/lib/libmilter.a)
-BROKEN=		Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
-.endif
-
-.if defined(WITH_SENDMAIL_PORT)
 CONFIGURE_ARGS+=--with-sendmail=${MILTERBASE}
-.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug

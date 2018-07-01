@@ -2,7 +2,7 @@
 
 PORTNAME=	vbsfilter
 PORTVERSION=	1.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/approved/
 EXTRACT_SUFX=	.c

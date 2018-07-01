@@ -9,10 +9,12 @@
 #
 # the user/port can now set this options in the makefiles.
 #
-# WITH_SENDMAIL_STATIC_MILTER=	- Use static milter lib
+# WITH_MILTER_STATIC=		- Use static milter lib
+# WITHOUT_MILTER_CFLAGS=	- do not set CFLAGS
+# WITHOUT_MILTER_LDFLAGS=	- do not set LDFLAGS
 #
-# WITH_SENDMAIL_BASE=yes	- Use milter in the base
-# WITH_SENDMAIL_PORT=yes	- Use milter from ports
+# WITH_MILTER_BASE=yes		- Use milter in the base
+# WITH_MILTER_PORT=yes		- Use milter from ports
 #
 # If unspecified, check for the lib exist in the base system,
 # but gives an installed port preference over it.
@@ -41,49 +43,66 @@
 
 Milter_Include_MAINTAINER=	dinoex@FreeBSD.org
 
-.if	!defined(WITH_SENDMAIL_BASE) && \
+.  if	!defined(WITH_MILTER_BASE) && \
+	!defined(WITH_MILTER_PORT)
+.   if	!defined(WITH_SENDMAIL_BASE) && \
 	!defined(WITH_SENDMAIL_PORT)
-.if	exists(${LOCALBASE}/lib/libmilter.a) || \
-	!exists(/usr/lib/libmilter.a)
+.     if	exists(${LOCALBASE}/lib/libmilter.a) || \
+		!exists(/usr/lib/libmilter.a)
+WITH_MILTER_PORT=yes
 WITH_SENDMAIL_PORT=yes
-.else
+.     else
+WITH_MILTER_BASE=yes
 WITH_SENDMAIL_BASE=yes
-.endif
+.     endif
+.   else
+# convert old macros to new
+.     if	defined(WITH_SENDMAIL_PORT)
+WITH_MILTER_PORT=yes
+.     endif
+.     if	defined(WITH_SENDMAIL_BASE)
+WITH_MILTER_BASE=yes
+.     endif
+.   endif
 .endif
 
-.if defined(WITH_SENDMAIL_PORT)
+.if defined(WITH_MILTER_PORT)
 
-.if defined(WITH_SENDMAIL_STATIC_MILTER)
+.  if defined(WITH_MILTER_STATIC) || defined(WITH_SENDMAIL_STATIC_MILTER)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:mail/${SENDMAIL_MILTER_PORT}
-.else
+.  else
 LIB_DEPENDS+=	libmilter.so.${MILTER_SOVER}:mail/${SENDMAIL_MILTER_PORT}
-.endif
+.  endif
 
 SENDMAIL_MILTER_PORT?=	libmilter
-MILTER_SOVER?=	6
+MILTER_SOVER?=	7
 MILTERBASE?=	${LOCALBASE}
-MILTERINC=	-I${MILTERBASE}/include
 MILTERRPATH=	${MILTERBASE}/lib
-MILTERLIB=	-L${MILTERBASE}/lib -Wl,-rpath,${MILTERRPATH}
-
-.if !defined(WITHOUT_MILTER_CFLAGS)
-.if defined(CFLAGS)
-CFLAGS+=${MILTERINC}
-.else
-CFLAGS=${MILTERINC}
-.endif
-.endif
 
 .endif
 
-.if defined(WITH_SENDMAIL_BASE)
+.if defined(WITH_MILTER_BASE)
 MILTERBASE?=	/usr
 MILTERRPATH=	${DESTDIR}/usr/lib:${LOCALBASE}/lib
-MILTERLIB=	-Wl,-rpath,${MILTERRPATH}
+
+.if !exists(/usr/lib/libmilter.a)
+BROKEN=		Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
 .endif
 
+.endif
+
+MILTERINC=	-I${MILTERBASE}/include
+.if !defined(WITHOUT_MILTER_CFLAGS)
+.  if defined(CFLAGS)
+CFLAGS+=${MILTERINC}
+.  else
+CFLAGS=${MILTERINC}
+.  endif
+.endif
+
+MILTERLIB=	-L${MILTERBASE}/lib
 .if !defined(WITHOUT_MILTER_LDFLAGS)
-LDFLAGS+=${MILTERLIB}
+LDFLAGS+=	-Wl,-rpath,${MILTERRPATH} ${MILTERLIB}
 .endif
 
 # eof

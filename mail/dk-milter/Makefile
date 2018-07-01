@@ -3,7 +3,7 @@
 
 PORTNAME=	dk-milter
 PORTVERSION=	1.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/DomainKeys%20Milter/${PORTVERSION}
 
@@ -21,7 +21,7 @@ IGNORE=		your system does not support sysvipc
 .endif
 
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
-WITH_SENDMAIL_BASE=	yes
+WITH_MILTER_BASE=	yes
 PKGMESSAGE=	pkg-message.postfix
 
 .if defined(WITH_POSTFIX_CURRENT)
@@ -62,11 +62,11 @@ WITHOUT_MILTER_CFLAGS=	yes
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 SITE+=		${WRKSRC}/site.config.m4.dist
-.if defined(WITH_SENDMAIL_PORT)
+.if defined(WITH_MILTER_PORT)
 SITE+=		${FILESDIR}/site.config.m4.milter
 .endif
 
-.if defined(WITH_SENDMAIL_STATIC_MILTER)
+.if defined(WITH_MILTER_STATIC)
 SITE_SUB+=	-e '\|-static|s|%%STATIC%%||g'
 .else
 SITE_SUB+=	-e '\|-static|s|%%STATIC%%|dnl |g'

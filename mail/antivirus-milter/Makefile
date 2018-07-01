@@ -2,7 +2,7 @@
 
 PORTNAME=	antivirus
 PORTVERSION=	3.30
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	LOCAL/dinoex
 
@@ -25,9 +25,7 @@ ANTIVIRUS_DIR?=	/var/spool/antivirus
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-.if defined(WITH_SENDMAIL_PORT)
 LIBS+=		${LDFLAGS}
-.endif
 
 MAKE_ENV+=	SENDMAILBASE="${MILTERBASE}" \
 		SENDMAILOBJ="${MILTERBASE}" \

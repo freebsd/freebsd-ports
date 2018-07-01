@@ -3,6 +3,7 @@
 
 PORTNAME=	opendmarc
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/Previous%20Releases
