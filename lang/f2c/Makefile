@@ -13,6 +13,9 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	Fortran-to-C converter and its run-time libraries
 
+BROKEN_mips=		fails to compile: /usr/include/sigfpe.h: No such file or directory
+BROKEN_mips64=		fails to compile: /usr/include/sigfpe.h: No such file or directory
+
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 GUNZIP_CMD=	minigzip -d

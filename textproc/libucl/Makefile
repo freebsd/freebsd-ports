@@ -11,6 +11,9 @@ COMMENT=	Universal configuration library parser
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_mips=		fails to link: undefined reference to '__sync_add_and_fetch_4'
+BROKEN_mips64=		fails to link: undefined reference to '__sync_add_and_fetch_4'
+
 OPTIONS_DEFINE=		LUA REGEX SIGNATURES URLS UTILS
 OPTIONS_DEFAULT=	REGEX UTILS
 OPTIONS_SUB=		yes
