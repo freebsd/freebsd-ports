@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	kaeru@inigo-tech.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating ID3v1/v1.1 and ID3v2 tags
 
 BROKEN_mips=		fails to link: '_ZTSN12_GLOBAL__N_117ConstIteratorImplE' referenced in section '.data.rel.ro' of tag.lo: defined in discarded section
