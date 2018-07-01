@@ -8,14 +8,3 @@
    fprintf (stderr, "gksu: waiting\n");
  
    xauth_file = g_strdup_printf ("%s/.Xauthority",
-@@ -159,8 +160,8 @@
-     /* find out where the xauth binary is located */
-     if (g_file_test ("/usr/bin/xauth", G_FILE_TEST_IS_EXECUTABLE))
-       xauth_bin = "/usr/bin/xauth";
--    else if (g_file_test ("/usr/X11R6/bin/xauth", G_FILE_TEST_IS_EXECUTABLE))
--      xauth_bin = "/usr/X11R6/bin/xauth";
-+    else if (g_file_test ("/usr/local/bin/xauth", G_FILE_TEST_IS_EXECUTABLE))
-+      xauth_bin = "/usr/local/bin/xauth";
-     else
-       {
- 	fprintf (stderr,
