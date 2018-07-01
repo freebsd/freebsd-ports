@@ -27,4 +27,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/panicmail ${STAGEDIR}${PREFIX}/etc/rc.d/
 	${INSTALL_DATA} ${WRKSRC}/cperciva-panicmail.pem ${STAGEDIR}${PREFIX}/etc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
