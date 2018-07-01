@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	myrddin
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	lang
 MASTER_SITES=	http://myrlang.org/releases/
 
@@ -17,7 +17,7 @@ USES=	gmake
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix "${PREFIX}"
-ALL_TARGET=	bootstrap all
+ALL_TARGET=	bootstrap
 TEST_TARGET=	check
 WRKSRC=	${WRKDIR}/mc
 
@@ -26,6 +26,8 @@ OPTIONS_DEFAULT=	VIM
 OPTIONS_SUB=	yes
 
 VIM_DESC=	Install Vim plugin
+
+pre-install:	do-test
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
