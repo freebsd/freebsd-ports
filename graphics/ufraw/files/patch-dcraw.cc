@@ -1,4 +1,4 @@
---- dcraw.cc.orig	2018-04-03 22:16:35 UTC
+--- dcraw.cc.orig	2018-06-23 21:54:05 UTC
 +++ dcraw.cc
 @@ -2287,7 +2287,7 @@ void CLASS quicktake_100_load_raw()
  
@@ -21,3 +21,21 @@
      if (!(pix & 1) && HOLE(pix / raw_width)) pix += 2;
    }
    maximum = 0xff;
+@@ -8946,7 +8949,7 @@ void CLASS identify()
+     parse_fuji (get4());
+     if (thumb_offset > 120) {
+       fseek (ifp, 120, SEEK_SET);
+-      is_raw += (i = get4()) && 1;
++      is_raw += (i = get4()) & 1;
+       if (is_raw == 2 && shot_select)
+ 	parse_fuji (i);
+     }
+@@ -10192,7 +10195,7 @@ void CLASS tiff_head (struct tiff_hdr *t
+   strncpy (th->desc, desc, 512);
+   strncpy (th->make, make, 64);
+   strncpy (th->model, model, 64);
+-  strcpy (th->soft, "dcraw v"DCRAW_VERSION);
++  strcpy (th->soft, " dcraw v " DCRAW_VERSION);
+   t = localtime (&timestamp);
+   sprintf (th->date, "%04d:%02d:%02d %02d:%02d:%02d",
+       t->tm_year+1900,t->tm_mon+1,t->tm_mday,t->tm_hour,t->tm_min,t->tm_sec);
