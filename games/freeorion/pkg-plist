@@ -1,0 +1,14 @@
+%%NO_HEADLESS%%bin/freeorion
+bin/freeorionca
+bin/freeoriond
+%%NO_HEADLESS%%lib/freeorion/libGiGi.so
+%%NO_HEADLESS%%lib/freeorion/libGiGiSDL.so
+lib/freeorion/libfreeorioncommon.so
+lib/freeorion/libfreeorionparse.so
+%%NO_HEADLESS%%share/applications/freeorion.desktop
+share/icons/hicolor/128x128/apps/freeorion.png
+share/icons/hicolor/16x16/apps/freeorion.png
+share/icons/hicolor/24x24/apps/freeorion.png
+share/icons/hicolor/256x256/apps/freeorion.png
+share/icons/hicolor/32x32/apps/freeorion.png
+share/icons/hicolor/64x64/apps/freeorion.png
