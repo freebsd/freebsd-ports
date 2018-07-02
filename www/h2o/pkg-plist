@@ -34,10 +34,10 @@ include/h2o/version.h
 include/h2o/websocket.h
 lib/libh2o-evloop.so
 lib/libh2o-evloop.so.0.13
-lib/libh2o-evloop.so.0.13.4
+lib/libh2o-evloop.so.0.13.5
 lib/libh2o.so
 lib/libh2o.so.0.13
-lib/libh2o.so.0.13.4
+lib/libh2o.so.0.13.5
 libdata/pkgconfig/libh2o-evloop.pc
 libdata/pkgconfig/libh2o.pc
 %%DATADIR%%/annotate-backtrace-symbols
