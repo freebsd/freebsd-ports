@@ -13,6 +13,9 @@ COMMENT=	High-performance distributed memory object cache system
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_mips=		fails to link: failed to merge target specific data of file /usr/lib/dtrace/drti.o
+BROKEN_mips64=		fails to link: failed to merge target specific data of file /usr/lib/dtrace/drti.o
+
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 CONFLICTS=	memcached-1.2*

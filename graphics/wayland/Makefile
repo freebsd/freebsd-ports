@@ -12,6 +12,8 @@ COMMENT=	Wayland composite "server"
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_mips=		fails to compile: tests/test-runner.c:349: undefined reference to prctl
+BROKEN_mips64=		fails to compile: tests/test-runner.c:349: undefined reference to prctl
 BROKEN_powerpc64=	fails to compile: tests/test-runner.c:349: undefined reference to prctl
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
