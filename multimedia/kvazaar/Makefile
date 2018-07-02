@@ -7,7 +7,7 @@ PORTREVISION?=	0
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	4b5d95155526.patch:-p1
+PATCHFILES+=	93e1c9f1c39c.patch:-p1 4f4bea749680.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	H.265/HEVC encoder implemented in C
