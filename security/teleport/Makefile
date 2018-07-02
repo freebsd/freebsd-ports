@@ -45,9 +45,9 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|^GITREF=.*|GITREF=${GH_TAG_COMMIT}|' \
 		${WRKDIR}/${GO_TELEPORT_SRC_DIR}/version.mk
-	@${FIND} ${WRKDIR} -type f \
-		-exec ${SED} -i '' -e 's|\/var\/lib|/var/db|g' {} \; \
-		-exec ${SED} -i '' -e 's|\/usr\/bin\/hostname|/bin/hostname|g' {} \;
+	@${FIND} ${WRKDIR} -type f -exec ${SED} -i '' \
+		-e 's|\/var\/lib|/var/db|g' \
+		-e 's|\/usr\/bin\/hostname|/bin/hostname|g' {} \;
 
 do-build:
 	@cd ${WRKDIR}/${GO_TELEPORT_SRC_DIR} && \
