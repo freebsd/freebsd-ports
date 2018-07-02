@@ -5,7 +5,4 @@ This supplies initial data for certain regions so that the dvb applications
 in question only scan those known frequencies, saving a lot of time scanning.
 These tables however need to be kept up to date by users.
 
-This repository is maintained by Olliver Schinagl (https://github.com/oliv3r)
-on behalf of the LinuxTV.org project.
-
 WWW: https://linuxtv.org/
