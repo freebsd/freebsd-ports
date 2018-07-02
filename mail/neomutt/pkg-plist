@@ -1,10 +1,8 @@
 bin/neomutt
 libexec/neomutt/pgpewrap
-libexec/neomutt/pgpring
 libexec/neomutt/smime_keys
 man/man1/neomutt.1.gz
 man/man1/pgpewrap_neomutt.1.gz
-man/man1/pgpring_neomutt.1.gz
 man/man1/smime_keys_neomutt.1.gz
 man/man5/mbox_neomutt.5.gz
 man/man5/mmdf_neomutt.5.gz
@@ -45,7 +43,6 @@ man/man5/neomuttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
-%%PORTDOCS%%%%DOCSDIR%%/PGP-Notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/advancedusage.html
 %%PORTDOCS%%%%DOCSDIR%%/colorschemes/neonwolf-256.neomuttrc
@@ -90,9 +87,6 @@ man/man5/neomuttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/samples/colors.default
 %%PORTDOCS%%%%DOCSDIR%%/samples/colors.linux
 %%PORTDOCS%%%%DOCSDIR%%/samples/gpg.rc
-%%PORTDOCS%%%%DOCSDIR%%/samples/pgp2.rc
-%%PORTDOCS%%%%DOCSDIR%%/samples/pgp5.rc
-%%PORTDOCS%%%%DOCSDIR%%/samples/pgp6.rc
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.mailcap
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.neomuttrc
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.neomuttrc-tlr
