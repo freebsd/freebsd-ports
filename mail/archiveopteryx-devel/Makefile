@@ -12,9 +12,11 @@ COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	jam:devel/jam
-
+BROKEN_mips=		fails to build: /bin/sh: clang: not found
+BROKEN_mips64=		fails to build: /bin/sh: clang: not found
 BROKEN_powerpc64=	Does not build: /bin/sh: clang: not found
+
+BUILD_DEPENDS=	jam:devel/jam
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aox

@@ -12,6 +12,8 @@ COMMENT=	Main Memory Relational Database Management System
 
 LICENSE=	MIT
 
+BROKEN_mips=		fails to compile: unrecognized command line option "-std=gnu++03"
+BROKEN_mips64=		fails to compile: unrecognized command line option "-std=gnu++03"
 BROKEN_powerpc64=	fails to compile: unrecognized command line option "-std=gnu++03"
 
 USES=		gmake dos2unix

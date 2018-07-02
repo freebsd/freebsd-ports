@@ -13,6 +13,8 @@ LICENSE_COMB=		multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/Apache-2.0
 LICENSE_FILE_ISCL=	${WRKSRC}/ISC
 
+BROKEN_mips=		fails to compile: dnsdbq.c:817: passing argument 1 of 'curl_global_init' with different width due to prototype
+BROKEN_mips64=		fails to compile: dnsdbq.c:817: passing argument 1 of 'curl_global_init' with different width due to prototype
 BROKEN_powerpc64=	fails to compile: dnsdbq.c:817: passing argument 1 of 'curl_global_init' with different width due to prototype
 
 LIB_DEPENDS=	libjansson.so:devel/jansson \

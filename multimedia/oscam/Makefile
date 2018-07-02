@@ -12,6 +12,8 @@ COMMENT=	Softcam software to decrypt digital tv channels
 
 LICENSE=	GPLv3
 
+BROKEN_mips=		does not build: gmake: clang: Command not found
+BROKEN_mips64=		does not build: gmake: clang: Command not found
 BROKEN_powerpc64=	does not build: gmake: clang: Command not found
 
 USES=		gmake ssl tar:bzip2

@@ -14,18 +14,18 @@ COMMENT=	Universal SQL/Application Server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		Fails to link: missing sbrk
+BROKEN_mips64=		Does not compile: error: DV_INT_TAG_WORD undeclared
+BROKEN_powerpc64=	Does not compile: error: DV_INT_TAG_WORD undeclared
+BROKEN_sparc64=		Does not compile: error: DV_INT_TAG_WORD undeclared
+NOT_FOR_ARCHS=	arm armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS_REASON=	can only be built on 64bit platforms
+
 BUILD_DEPENDS=	gawk:lang/gawk\
 		htmldoc:textproc/htmldoc\
 		flex>2.5.4:textproc/flex\
 		gperf>=3.0.3:devel/gperf
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
-
-BROKEN_aarch64=		Fails to link: missing sbrk
-BROKEN_powerpc64=	Does not compile: error: DV_INT_TAG_WORD undeclared
-BROKEN_sparc64=		Does not compile: error: DV_INT_TAG_WORD undeclared
-
-NOT_FOR_ARCHS=	arm armv6 armv7 i386 mips powerpc
-NOT_FOR_ARCHS_REASON=	can only be built on 64bit platforms
 
 USES=		gmake libtool readline uidfix ssl
 
