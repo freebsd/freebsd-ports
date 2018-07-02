@@ -4,7 +4,7 @@ PORTNAME=	SoapySDR
 DISTVERSIONPREFIX=	soapy-sdr-
 DISTVERSION=	0.6.1-71
 DISTVERSIONSUFFIX=	-g69c16e9
-CATEGORIES=	misc
+CATEGORIES=	misc hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vendor and platform neutral SDR support library
