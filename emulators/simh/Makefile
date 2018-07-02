@@ -17,13 +17,11 @@ COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option "-Wno-logical-op-parentheses"
-
 NO_WRKSUBDIR=	yes
 
 USES=		gmake dos2unix zip
 DOS2UNIX_GLOB=	*.c *.h *.txt *.mak *.ini makefile
-CFLAGS+=	-Wno-format-extra-args -Wno-comment -Wno-logical-op-parentheses -Wno-bitwise-op-parentheses -Wno-shift-negative-value
+CFLAGS+=	-Wno-format-extra-args -Wno-comment
 MAKE_ENV=	GCC="${CC}" CFLAGS_O="${CFLAGS}" USE_NETWORK=1
 MAKEFILE=	makefile
 
@@ -33,6 +31,12 @@ READMES=	0readme_${PORTVERSION:R:S/.//}.txt 0readme_ethernet.txt
 PORTDOCS=	${READMES} pdf/*
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386
+CFLAGS+=	-Wno-logical-op-parentheses -Wno-bitwise-op-parentheses -Wno-shift-negative-value
+.endif
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
@@ -61,4 +65,4 @@ do-install-DOCS-on:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${READMES} ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} pdf ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
