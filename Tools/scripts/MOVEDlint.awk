@@ -82,7 +82,9 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
     srcs[$1] = 1
 
     if (lastdate > $3) {
-        printf "%5d: date going backwards from %s to %s\n", NR, lastdate, $3 | sort
+        printf "%5d: date going backwards from %s to %s from this line\n", NR-1, lastdate, $3 | sort
+        error[NR-1] = 1
+        printf "%5d: date going backwards from %s to %s to this line\n", NR, lastdate, $3 | sort
         error[NR] = 1
     }
     lastdate = $3
