@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timescaledb
-PORTVERSION=	0.9.2
+PORTVERSION=	0.10.0
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -23,22 +23,23 @@ SUB_LIST+=	PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	lib/postgresql/timescaledb.so \
-		lib/postgresql/timescaledb-0.9.2.so \
-		share/postgresql/extension/timescaledb--0.1.0--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.2.0--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.3.0--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.4.0--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.4.1--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.4.2--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.5.0--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.6.0--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.6.1--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.7.0--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.7.1--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.8.0--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.9.0--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.9.1--0.9.2.sql \
-		share/postgresql/extension/timescaledb--0.9.2.sql \
+		lib/postgresql/timescaledb-0.10.0.so \
+		share/postgresql/extension/timescaledb--0.1.0--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.2.0--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.3.0--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.4.0--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.4.1--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.4.2--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.5.0--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.6.0--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.6.1--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.7.0--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.7.1--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.8.0--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.9.0--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.9.1--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.9.2--0.10.0.sql \
+		share/postgresql/extension/timescaledb--0.10.0.sql \
 		share/postgresql/extension/timescaledb.control
 
 post-install:
