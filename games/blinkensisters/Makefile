@@ -10,14 +10,16 @@ MASTER_SITES=	SF/${PORTNAME}/Blinkensisters%20-%20Lost%20Pixels/LostPixels%20${P
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Parallax-style 2D scrolling platform game
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/DOC/LICENSE
+
 BROKEN_sparc64=	does not compile on sparc64
 
+USES=		cmake compiler:c++11-lang localbase perl5 # actually, old gcc fails in theora.h
 USE_SDL=	sdl image ttf
 USE_PERL5=	build
-USES=		cmake perl5 compiler:c++11-lang # actually, old gcc fails in theora.h
 
-CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-Wno-c++11-narrowing
 
 WRKSRC=		${WRKDIR}/blinkensisters/lostpixels/game/software
 ADDONS_WRKSRC=	${WRKDIR}/blinkensisters/lostpixels/game/addons
@@ -49,18 +51,13 @@ SDL_NET_PLIST_FILES=	bin/blpmatrix \
 THEORA_CMAKE_ON=	-DUSE_THEORA:BOOL=ON
 THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MADDONS}
-DISTNAME=	LostPixels-${PORTVERSION}-source-with-addons
-PKGNAMESUFFIX=	-with-addons
-.else
-DISTNAME=	LostPixels-${PORTVERSION}-source
-.endif
+ADDONS_VARS=		DISTNAME=LostPixels-${PORTVERSION}-source-with-addons \
+			PKGNAMESUFFIX=-with-addons
+ADDONS_VARS_OFF=	DISTNAME=LostPixels-${PORTVERSION}-source
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/blinkensisters|${DATADIR:S,${PREFIX}/,,}|; \
-		s|share/doc/blinkensisters|${DOCSDIR:S,${PREFIX}/,,}|' \
+	@${REINPLACE_CMD} -e 's|share/blinkensisters|${DATADIR_REL}|; \
+		s|share/doc/blinkensisters|${DOCSDIR_REL}|' \
 		${WRKSRC}/CMakeLists.txt
 
 post-patch-ADDONS-on:
@@ -71,7 +68,7 @@ post-build-ADDONS-on:
 	cd ${ADDONS_WRKSRC} && ${MAKE}
 
 post-install-ADDONS-on:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${ADDONS_WRKSRC}/for_upload/*.bmf ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
