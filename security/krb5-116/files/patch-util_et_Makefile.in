@@ -1,0 +1,17 @@
+--- util/et/Makefile.in.orig	2018-05-03 07:34:47.000000000 -0700
++++ util/et/Makefile.in	2018-07-01 20:16:24.159117000 -0700
+@@ -111,12 +111,13 @@
+ 	path
+ 	$(OUTPRE)test_et$(EXEEXT)
+ 
+-install-unix: compile_et compile_et.1
++install-unix: compile_et compile_et.1 com_err.3
+ 	$(INSTALL) compile_et $(DESTDIR)$(bindir)/compile_et
+ 	test -d $(DESTDIR)$(mydatadir) || mkdir $(DESTDIR)$(mydatadir)
+ 	$(INSTALL_DATA) $(srcdir)/et_c.awk $(DESTDIR)$(mydatadir)
+ 	$(INSTALL_DATA) $(srcdir)/et_h.awk $(DESTDIR)$(mydatadir)
+ 	$(INSTALL_DATA) $(srcdir)/compile_et.1 $(DESTDIR)$(CLIENT_MANDIR)/compile_et.1
++	$(INSTALL_DATA) $(srcdir)/com_err.3 $(DESTDIR)$(SUBR_MANDIR)/com_err.3
+ 
+ 
+ install-headers: compile_et

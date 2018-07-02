@@ -131,6 +131,7 @@ man/man1/kswitch.1.gz
 man/man1/ktutil.1.gz
 man/man1/kvno.1.gz
 man/man1/sclient.1.gz
+man/man3/com_err.3.gz
 man/man5/.k5identity.5.gz
 man/man5/.k5login.5.gz
 man/man5/k5identity.5.gz
