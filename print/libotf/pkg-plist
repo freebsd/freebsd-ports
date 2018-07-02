@@ -2,11 +2,10 @@ bin/libotf-config
 bin/otfdump
 bin/otflist
 bin/otftobdf
-bin/otfview
 include/otf.h
 lib/libotf.a
 lib/libotf.la
 lib/libotf.so
-lib/libotf.so.0
-lib/libotf.so.0.0.0
+lib/libotf.so.1
+lib/libotf.so.1.0.0
 libdata/pkgconfig/libotf.pc
