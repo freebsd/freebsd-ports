@@ -9,14 +9,16 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# teleport_enable (bool):	Set to NO by default.
-#				Set it to YES to enable teleport.
-# teleport_config (str):	Configuration file.
-#				Default is "${LOCALBASE}/etc/teleport.yaml"
+# teleport_enable (bool):       Set to NO by default.
+#                               Set it to YES to enable teleport.
+# teleport_config (str):        Configuration file.
+#                               Default is "${LOCALBASE}/etc/teleport.yaml"
 # teleport_dir (dir):           Set dir to run teleport in.
-#                               Default is "/var/lib/teleport".
+#                               Default is "/var/db/teleport".
 # teleport_roles (dir):         Set roles to run teleport in.
 #                               Default is "node".
+#                               Can be any combination of
+#                               "proxy" "node" and "auth", separated by commas
 
 . /etc/rc.subr
 
@@ -27,14 +29,29 @@ load_rc_config $name
 
 : ${teleport_enable:="NO"}
 : ${teleport_config:="%%PREFIX%%/etc/teleport.yaml"}
-: ${teleport_args:="--config=${teleport_config}"
-: ${teleport_dir:="/var/lib/teleport"}
+: ${teleport_args:="--config=${teleport_config}"}
+: ${teleport_dir:="/var/db/teleport"}
 : ${teleport_roles:="node"}
 
 pidfile=/var/run/teleport.pid
 required_files="${teleport_config}"
 procname="%%PREFIX%%/bin/teleport"
 command="/usr/sbin/daemon"
-command_args="-S -T teleport -s info -m 3 -p ${pidfile} /usr/bin/env ${teleport_env} ${procname} start --roles=${teleport_roles} ${teleport_args}"
+
+DAEMON=$(daemon 2>&1 | grep -q syslog ; echo $?)
+if [ ${DAEMON} -eq 0 ]; then
+  DAEMON_SYSLOG_FLAGS="-S -T teleport -s info -m 3"
+else
+  DAEMON_SYSLOG_FLAGS=""
+fi
+
+command_args="${DAEMON_SYSLOG_FLAGS} -f -p ${pidfile} /usr/bin/env ${teleport_env} ${procname} start --roles=${teleport_roles} ${teleport_args}"
+
+start_precmd="teleport_prestart"
+
+teleport_prestart()
+{
+	mkdir -p ${teleport_dir}
+}
 
 run_rc_command "$1"
