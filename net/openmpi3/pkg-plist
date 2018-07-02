@@ -93,7 +93,7 @@
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.40
-%%MPIDIR%%/lib/libmpi.so.40.10.0
+%%MPIDIR%%/lib/libmpi.so.40.10.1
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.40
@@ -101,11 +101,11 @@
 %%MPIDIR%%/lib/libmpi_mpifh.la
 %%MPIDIR%%/lib/libmpi_mpifh.so
 %%MPIDIR%%/lib/libmpi_mpifh.so.40
-%%MPIDIR%%/lib/libmpi_mpifh.so.40.10.0
+%%MPIDIR%%/lib/libmpi_mpifh.so.40.10.1
 %%MPIDIR%%/lib/libmpi_usempi.la
 %%MPIDIR%%/lib/libmpi_usempi.so
 %%MPIDIR%%/lib/libmpi_usempi.so.40
-%%MPIDIR%%/lib/libmpi_usempi.so.40.10.0
+%%MPIDIR%%/lib/libmpi_usempi.so.40.10.1
 %%MPIDIR%%/lib/libompitrace.la
 %%MPIDIR%%/lib/libompitrace.so
 %%MPIDIR%%/lib/libompitrace.so.40
@@ -113,11 +113,11 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.40
-%%MPIDIR%%/lib/libopen-pal.so.40.10.0
+%%MPIDIR%%/lib/libopen-pal.so.40.10.1
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.40
-%%MPIDIR%%/lib/libopen-rte.so.40.10.0
+%%MPIDIR%%/lib/libopen-rte.so.40.10.1
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/ompi_monitoring_prof.la
 %%MPIDIR%%/lib/ompi_monitoring_prof.so
@@ -855,6 +855,7 @@
 %%MPIDIR%%/%%DATADIR%%/help-orte-top.txt
 %%MPIDIR%%/%%DATADIR%%/help-orted.txt
 %%MPIDIR%%/%%DATADIR%%/help-orterun.txt
+%%MPIDIR%%/%%DATADIR%%/help-osc-pt2pt.txt
 %%MPIDIR%%/%%DATADIR%%/help-plm-base.txt
 %%MPIDIR%%/%%DATADIR%%/help-plm-rsh.txt
 %%MPIDIR%%/%%DATADIR%%/help-pmix-base.txt
