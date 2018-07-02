@@ -16,8 +16,6 @@ LICENSE_NAME=	IBM PUBLIC LICENSE - Open Visualization Data Explorer VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_FreeBSD_12_amd64=	fails to build: gmake[1]: *** No rule to make target 'Makefile'.  Stop.
-
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick	\
 		libtiff.so:graphics/tiff		\
 		libcdf.so:science/cdf			\
@@ -85,6 +83,14 @@ post-patch:
 		${WRKSRC}/src/uipp/java/server/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(ARCH)|@ARCH@|' \
 		${WRKSRC}/src/misc/Makefile.*
+	@${REINPLACE_CMD} -e 's/void exit (int);/[[noreturn]] void exit (int);/' \
+		${WRKSRC}/configure
+	for f in `find ${WRKSRC} -name "*.bm"`; do \
+		if [ $${f%/*} != "${WRKSRC}/src/uipp/widgets" ]; then \
+				${REINPLACE_CMD} -E 's/0x(..)/static_cast<char>(0x\1)/g' $$f; \
+				${REINPLACE_CMD} -E 's/static unsigned char/static char/g' $$f; \
+		fi; \
+	done
 
 post-install:
 	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
