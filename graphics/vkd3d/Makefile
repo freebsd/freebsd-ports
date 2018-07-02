@@ -1,6 +1,5 @@
 PORTNAME=	vkd3d
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.winehq.org/${PORTNAME}/source/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -28,13 +27,13 @@ TEST_TARGET=	check
 # Override pkg-config support before https://cgit.freebsd.org/src/commit/?id=396851c20aeb
 # but only if devel/ncurses isn't installed
 .if !exists(/usr/libdata/pkgconfig/ncurses.pc)
-CONFIGURE_ENV+=	NCURSES_CFLAGS=" " NCURSES_LIBS="-lncurses"
+CONFIGURE_ENV+=	NCURSES_CFLAGS=" " NCURSES_LIBS="-lncurses" NCURSES_VERSION=unused
 .endif
 
 # XXX Move to a separate port (a la graphics/vulkan-headers) and maybe make
 #     graphics/spirv-tools depend on it as well
 USE_GITHUB=	nodefault
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-177-g87d5b78:headers/external/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-187-g85a1ed2:headers/external/spirv-headers
 CPPFLAGS+=	-isystem${WRKSRC}/external/spirv-headers/include
 
 OPTIONS_DEFINE=	EXAMPLES
