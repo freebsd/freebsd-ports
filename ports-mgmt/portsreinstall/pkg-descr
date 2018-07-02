@@ -1,4 +1,11 @@
-This is a ports upgrading utility for massive forced reinstallation,
-and for those who are pursuing the perfect packages environment.
+This is a ports upgrading utility as a replacement of portupgrade
+and portmaster to facilitate the perfect upgrade of the whole
+packages in heavly customized systems by configuration
+compatible with portupgrade. Most of the issues in
+/usr/ports/UPDATING are resolved automatically. Robust
+restarting functionality against manual/sudden termination is
+implemented for facilitating package build in busy or low-
+performance machines. Utilities for building packages in a chroot
+environment are also provided for safe upgrade.
 
 WWW: http://www.mwghennndo.com/software/portsreinstall/
