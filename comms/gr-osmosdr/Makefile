@@ -1,7 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gr-osmosdr
-PORTVERSION=	20180610
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.4-99
+DISTVERSIONSUFFIX=	-gc98be5d
+PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -21,7 +24,6 @@ USES=	cmake compiler:c++11-lang fortran pkgconfig python:2.7 tar:tgz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	osmocom
-GH_TAGNAME=	c98be5d
 
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	swig=swig3.0
