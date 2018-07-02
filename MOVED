@@ -3679,7 +3679,6 @@ x11-toolkits/gal||2012-10-15|Development ceased, nothing in the ports tree uses 
 math/octave-forge-physicalconstants||2012-10-15|Incorporated upstream into math/octave-forge-miscellaneous
 math/octave-forge-combinatorics||2012-10-15|Incorporated upstream into math/octave-forge-miscellaneous
 games/8kingdoms||2012-10-16|Has expired: Broken for more than 6 months
-games/freeorion||2012-10-16|Has expired: Broken for more than 6 months
 games/rigsofrods||2012-10-16|Has expired: Broken for more than 6 months
 sysutils/bacula2-client||2012-10-20|No longer supported upstream and may contain vulnerabilities. Use sysutils/bacula-client instead
 sysutils/bacula2-server||2012-10-20|No longer supported upstream and may contain vulnerabilities. Use sysutils/bacula-server instead
