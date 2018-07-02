@@ -20,9 +20,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
-GNU_CONFIGURE=	yes
 USES=		libtool:keepla localbase fortran perl5 \
 		pkgconfig python:2.7
+GNU_CONFIGURE=	yes
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -44,7 +44,8 @@ CONFIGURE_ARGS=	--enable-romio --enable-shared	\
 CONFIGURE_ENV=	FCFLAGS="${FFLAGS}" \
 		MPI_CFLAGS="-I${LOCALBASE}/include" \
 		PACKAGE="${PORTNAME}" \
-		PTHREAD_LIBS="-lpthread"
+		PTHREAD_LIBS="-lpthread" \
+		BASH_SHELL="${LOCALBASE}/bin/bash"
 
 .if ${FFLAGS} == "-O"
 FFLAGS=		-O2
