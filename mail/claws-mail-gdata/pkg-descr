@@ -3,4 +3,4 @@ Provides access to GData (Google services) for Claws Mail.
 The only currently implemented feature is inclusion of
 Google contacts into the address completion.
 
-WWW: http://www.claws-mail.org/plugins.php
+WWW: https://www.claws-mail.org/plugins.php
