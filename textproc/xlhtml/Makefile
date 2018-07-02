@@ -15,12 +15,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake tar:tgz
-
-# If autotools are installed in the build environment a regeneration
-# of it's build files is triggered for unknown reasons.  Pretend they
-# are not there.
-BINARY_ALIAS=	aclocal=false autoheader=false automake=false makeinfo=false
+USES=		autoreconf gmake tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 
