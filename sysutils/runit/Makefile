@@ -14,6 +14,9 @@ COMMENT=	Service supervision tools compatible with DJB daemontools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/package/COPYING
 
+BROKEN_mips=		fails to install: runit-init failed
+BROKEN_mips64=		fails to install: runit-init failed
+
 USE_RC_SUBR=	runsvdir
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 

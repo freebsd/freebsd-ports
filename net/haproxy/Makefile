@@ -13,6 +13,9 @@ COMMENT=	Reliable, high performance TCP/HTTP load balancer
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN_mips=		fails to build: undefined reference to '__sync_sub_and_fetch_4'
+BROKEN_mips64=		fails to build: undefined reference to '__sync_sub_and_fetch_4'
+
 CONFLICTS_INSTALL=	haproxy-devel-[0-9]*
 
 USES=		cpe gmake
