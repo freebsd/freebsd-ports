@@ -10,13 +10,15 @@ MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Open source Clipper-compatible compiler
 
+BROKEN_mips=		does not build: clang: Command not found
+BROKEN_mips64=		does not build: clang: Command not found
+BROKEN_powerpc64=	does not build: clang: Command not found
+BROKEN_sparc64=		does not compile: assertion failed
+
 LIB_DEPENDS=	libslang.so:devel/libslang2\
 		libpcre.so:devel/pcre
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-BROKEN_powerpc64=	does not build: clang: Command not found
-BROKEN_sparc64=		does not compile on sparc64: assertion failed
 
 PORTDOCS=	*.txt *.hbd NEWS INSTALL TODO COPYING ChangeLog
 

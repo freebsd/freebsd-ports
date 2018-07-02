@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Common Desktop Environment
 
+BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
 
 BUILD_DEPENDS=	ksh93:shells/ksh93			\

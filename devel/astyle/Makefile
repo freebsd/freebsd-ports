@@ -13,6 +13,8 @@ COMMENT=	Source code indenter and formatter for C, C++, C\#, and Java
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/astyle/LICENSE.md
 
+BROKEN_mips=		fails to build: unrecognized command line option "-std=c++11"
+BROKEN_mips64=		fails to build: unrecognized command line option "-std=c++11"
 BROKEN_powerpc64=	fails to build: unrecognized command line option "-std=c++11"
 
 USES=		compiler:c++11-lang dos2unix gmake

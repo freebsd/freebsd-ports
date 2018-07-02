@@ -10,6 +10,8 @@ COMMENT=	Yet another FreeBSD Jail and Bhyve Management Utility
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_mips=		fails to link: cannot find -lc++
+BROKEN_mips64=		fails to link: cannot find -lc++
 BROKEN_powerpc64=	fails to link: cannot find -lc++
 
 RUN_DEPENDS=	rsync:net/rsync \

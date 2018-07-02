@@ -12,7 +12,9 @@ MASTER_SITES=	http://www.chillispot.info/download/ \
 MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Wireless LAN Access Point Controller
 
-BROKEN_powerpc64=	Does not build: error: nested functions are disabled, use -fnested-functions to re-enable
+BROKEN_mips=		fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
+BROKEN_mips64=		fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
+BROKEN_powerpc64=	fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
 
 CONFLICTS=	coovachilli-[0-9]*
 

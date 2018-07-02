@@ -11,8 +11,10 @@ COMMENT=	Command line tool to verify Matroska and WebM files
 LICENSE=	BSD3CLAUSE BSD4CLAUSE GPLv2
 LICENSE_COMB=	multi
 
+BROKEN_mips=		fails to build: gmake[3]: mipsel-linux-gcc: Command not found
+BROKEN_mips64=		fails to build: gmake[3]: mipsel-linux-gcc: Command not found
 BROKEN_powerpc64=	does not compile: mkvtree.c: error: dereferencing pointer to incomplete type
-BROKEN_sparc64=	build broken on big endian architectures
+BROKEN_sparc64=		build broken on big endian architectures
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 

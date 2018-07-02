@@ -12,10 +12,12 @@ COMMENT=	ANSI Common Lisp implementation
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libgmp.so:math/gmp
+BROKEN_aarch64=		fails to compile: error: unknown type name AO_TS_t
+BROKEN_mips=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+BROKEN_powerpc64=	fails to link: undefined reference to fmodl
 
-BROKEN_aarch64=		Does not compile: error: unknown type name AO_TS_t
-BROKEN_powerpc64=	Does not link: undefined reference to fmodl
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake perl5 tar:tgz

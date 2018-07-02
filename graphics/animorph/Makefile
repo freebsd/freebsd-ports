@@ -12,6 +12,8 @@ COMMENT=	Morphing engine for MakeHuman
 
 LICENSE=	LGPL21
 
+BROKEN_mips=		fails to compile: unrecognized command line option "-std=gnu++03"
+BROKEN_mips64=		fails to compile: unrecognized command line option "-std=gnu++03"
 BROKEN_powerpc64=	fails to compile: unrecognized command line option "-std=gnu++03"
 
 GNU_CONFIGURE=	yes

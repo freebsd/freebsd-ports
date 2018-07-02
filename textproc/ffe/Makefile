@@ -12,6 +12,8 @@ COMMENT=	Flat file extractor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_mips=		fails to compile: unrecognized command line option "-Wmaybe-uninitialized"
+BROKEN_mips64=		fails to compile: unrecognized command line option "-Wmaybe-uninitialized"
 BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wmaybe-uninitialized"
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \

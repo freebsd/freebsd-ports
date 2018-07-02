@@ -14,14 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BROKEN_aarch64=		fails to compile: generic selections are a C11-specific feature [-Werror,-Wc11-extensions]
 BROKEN_armv6=		fails to compile: generic selections are a C11-specific feature [-Werror,-Wc11-extensions]
 BROKEN_armv7=		fails to compile: generic selections are a C11-specific feature [-Werror,-Wc11-extensions]
+BROKEN_mips=		fails to compile: cc1: unrecognized command line option -std=c90
+BROKEN_mips64=		fails to compile: cc1: unrecognized command line option -std=c90
 BROKEN_powerpc64=	fails to compile: cc1: unrecognized command line option -std=c90
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cr-marcstevens
 
-USE_LDCONFIG=	yes
-
 USES=		gmake libtool:build
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/sha1dcsum \
 		bin/sha1dcsum_partialcoll \

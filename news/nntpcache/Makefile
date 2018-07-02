@@ -10,14 +10,15 @@ MASTER_SITES=	http://www.xs4all.nl/~suelette/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
 
-# This may be set interactively at install-time.  NNTPCache will
-# cache news articles and related data in ${SPOOLDIR}/nntpcache.
-SPOOLDIR?=	/var/spool
+BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+BROKEN_powerpc64=	fails to install: ./mmap_tests: Quit (core dumped)
 
 NO_CDROM=	Free for individuals and non-military, non-profit organisations only
 
-BROKEN_aarch64=		fails to link: missing sbrk
-BROKEN_powerpc64=	fails to install: ./mmap_tests: Quit (core dumped)
+# This may be set interactively at install-time.  NNTPCache will
+# cache news articles and related data in ${SPOOLDIR}/nntpcache.
+SPOOLDIR?=	/var/spool
 
 USES=		gmake autoreconf shebangfix
 GNU_CONFIGURE=	yes
