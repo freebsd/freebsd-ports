@@ -17,6 +17,7 @@ USE_GL=		gl glu
 USE_SDL=	sdl
 
 CFLAGS+=	-Wno-c++11-narrowing
+LLD_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
