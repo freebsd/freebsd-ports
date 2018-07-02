@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	wandio
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://research.wand.net.nz/software/wandio/
 
 MAINTAINER=	alistair@caida.org
 COMMENT=	C library for compressed file I/O
 
-LICENSE=	GPLv2
+LICENSE=	LGPL3+
 
 USES=		libtool
 GNU_CONFIGURE=	yes
