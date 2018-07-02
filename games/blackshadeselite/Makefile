@@ -20,6 +20,8 @@ USES=		tar:bzip2 gmake openal:al,alut
 USE_SDL=	sdl
 USE_GL=		gl glu
 
+LLD_UNSAFE=	yes
+
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
 
 CXXFLAGS+=	-Wno-c++11-narrowing
