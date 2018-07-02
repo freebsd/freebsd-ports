@@ -10,13 +10,14 @@ MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Couple of command line utilities for working with desktop entries
 
-USES=		gettext gmake pkgconfig tar:xz
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gettext gmake localbase:ldflags pkgconfig tar:xz
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lispdir
 CONFIGURE_ENV=	EMACS="no"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
