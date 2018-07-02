@@ -2,7 +2,7 @@
 
 PORTNAME=	urh
 DISTVERSION=	2.2.0
-CATEGORIES=	misc python
+CATEGORIES=	misc hamradio python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	yuri@FreeBSD.org
