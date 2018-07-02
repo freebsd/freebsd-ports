@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	electrum
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.2
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
@@ -48,9 +48,6 @@ TREZOR_PLIST_FILES=	"@sample etc/devd/trezor_wallet.conf.sample"
 
 LEDGER_SUB_FILES=	pkg-message-hwwallet
 TREZOR_SUB_FILES=	pkg-message-hwwallet
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/setup.py
 
 post-install-LEDGER-on:
 	${INSTALL_DATA} ${FILESDIR}/ledger_wallet.conf.sample \
