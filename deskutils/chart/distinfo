@@ -1,0 +1,11 @@
+TIMESTAMP = 1529330210
+SHA256 (marianogappa-chart-v3.0.0_GH0.tar.gz) = 8e2d7c50831e901d5eec9f0434d2ddbbeacfe66e41a4f4a24b1541295b95145f
+SIZE (marianogappa-chart-v3.0.0_GH0.tar.gz) = 1163689
+SHA256 (Sirupsen-logrus-v1.0.5_GH0.tar.gz) = 0c422c0f06eb8a67a7c3ce6814d92b866e47b88ad33948c6c009f48ccfbe935f
+SIZE (Sirupsen-logrus-v1.0.5_GH0.tar.gz) = 28746
+SHA256 (skratchdot-open-golang-75fb7ed_GH0.tar.gz) = 96759603b7ac614f579d6bd5f67f7c17148594f87c424825df774300c796dd5f
+SIZE (skratchdot-open-golang-75fb7ed_GH0.tar.gz) = 7019
+SHA256 (golang-crypto-027cca1_GH0.tar.gz) = 27329e629f7d110452d2a716809d79966c01fc394d545d4aaaf4b2c26a070732
+SIZE (golang-crypto-027cca1_GH0.tar.gz) = 1617027
+SHA256 (golang-sys-6c888cc_GH0.tar.gz) = df96c8973f3a5c5c0ac9ef2e065b19dc2dae62782804659bf7edaab9fca1e1b6
+SIZE (golang-sys-6c888cc_GH0.tar.gz) = 975906
