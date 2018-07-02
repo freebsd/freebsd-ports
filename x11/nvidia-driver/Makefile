@@ -10,7 +10,7 @@
 # slave ports instead (`x11/nvidia-driver-340' or `x11/nvidia-driver-304').
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	390.59
+DISTVERSION?=	390.67
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
@@ -74,6 +74,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_nvidia_Makefile \
 		${FILESDIR}/extra-patch-src_nvidia_nv-misc.h
 NVSRC=		nvidia
 .endif
+
 .if ${NVVERSION} >= 358.009
 # Initialize memory allocations to avoid spurious "lock re-initialization"
 # errors.  A little more detail can be found in bug 201340 starting around
