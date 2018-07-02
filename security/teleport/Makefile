@@ -45,8 +45,9 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|^GITREF=.*|GITREF=${GH_TAG_COMMIT}|' \
 		${WRKDIR}/${GO_TELEPORT_SRC_DIR}/version.mk
-	@${FIND} ${WRKDIR} -type f -exec ${SED} -i '' -e 's|\/var\/lib|/var/db|g' {} \;
-	@${FIND} ${WRKDIR} -type f -exec ${SED} -i '' -e 's|\/usr\/bin\/hostname|/bin/hostname|g' {} \;
+	@${FIND} ${WRKDIR} -type f \
+		-exec ${SED} -i '' -e 's|\/var\/lib|/var/db|g' {} \; \
+		-exec ${SED} -i '' -e 's|\/usr\/bin\/hostname|/bin/hostname|g' {} \;
 
 do-build:
 	@cd ${WRKDIR}/${GO_TELEPORT_SRC_DIR} && \
@@ -56,8 +57,10 @@ do-build:
 
 do-install:
 	${WRKDIR}/${GO_TELEPORT_SRC_DIR}/build/teleport configure > ${STAGEDIR}${PREFIX}/etc/teleport.yaml.sample
-	@${SED} -i '' -e "s|nodename: .*|nodename: |g" ${STAGEDIR}${PREFIX}/etc/teleport.yaml.sample
-	@${SED} -i '' -e "s|cluster-join-token||g" ${STAGEDIR}${PREFIX}/etc/teleport.yaml.sample
+	@${SED} -i '' \
+		-e "s|nodename: .*|nodename: |g" \
+		-e "s|cluster-join-token||g" \
+		${STAGEDIR}${PREFIX}/etc/teleport.yaml.sample
 	${INSTALL_PROGRAM} ${WRKDIR}/${GO_TELEPORT_SRC_DIR}/build/teleport ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/${GO_TELEPORT_SRC_DIR}/build/tsh ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/${GO_TELEPORT_SRC_DIR}/build/tctl ${STAGEDIR}${PREFIX}/bin
