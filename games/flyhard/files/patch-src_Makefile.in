@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2009-02-15 18:44:02.000000000 +0300
-+++ src/Makefile.in	2013-09-30 06:52:38.221519372 +0400
-@@ -597,9 +597,9 @@
+--- src/Makefile.in.orig	2009-02-15 15:44:02 UTC
++++ src/Makefile.in
+@@ -597,9 +597,9 @@ uninstall-am: uninstall-binPROGRAMS unin
  #since automake doesn't directly put anything in $(savedir), it may not exist
  install-data-hook:
  	@echo "Creating blank hi-score file"
