@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	typometer
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 DISTVERSIONSUFFIX=	-bin
 CATEGORIES=	benchmarks java
-MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
+# Not USE_GITHUB because we want to grab the binary release (it's Java)
+MASTER_SITES=	https://github.com/pavelfatin/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Text/code editor typing latency analyzer
 
-LICENSE=	GPLv3
+LICENSE=	APACHE20
 
 USES=		zip
 USE_JAVA=	yes
@@ -27,7 +28,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar \
 		${STAGEDIR}${PREFIX}/bin
-	${PRINTF} "!#/bin/sh\n\n%s %s\n" "${JAVA} -jar" \
+	${PRINTF} "#!/bin/sh\n\n%s %s\n" "exec ${JAVA} -jar" \
 		"${PREFIX}/bin/${PORTNAME}-${PORTVERSION}.jar" \
 			> ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
