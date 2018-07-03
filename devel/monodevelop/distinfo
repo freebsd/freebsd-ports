@@ -1,4 +1,4 @@
-TIMESTAMP = 1530366145
+TIMESTAMP = 1530634255
 SHA256 (extcore.0.8.46.nupkg) = 6220962d632c99bcc79f565ada972b948ac9e8db6e47a7cc7b08bf4357b1479e
 SIZE (extcore.0.8.46.nupkg) = 5905090
 SHA256 (fake.4.61.1.nupkg) = d3bacc8cb694b64c58c20fcf04f9cc86988de3dc5fd40b205640b0ee354bb201
@@ -413,8 +413,8 @@ SHA256 (mono-libgit-binary-d8b2aca_GH0.tar.gz) = 4a86c1c9796c17f2e86290e005a21af
 SIZE (mono-libgit-binary-d8b2aca_GH0.tar.gz) = 4029512
 SHA256 (mono-libgit2-e8b8948_GH0.tar.gz) = edcffd4fedb71d4bdeb56d7532d0a19847552f7262a4935217b1382434028cb0
 SIZE (mono-libgit2-e8b8948_GH0.tar.gz) = 3730933
-SHA256 (mono-libgit2sharp-319fa36_GH0.tar.gz) = 939f10cef89c2e92c43f9e977536930b65cb0d88d127bf8cd8612c7fe9160569
-SIZE (mono-libgit2sharp-319fa36_GH0.tar.gz) = 1859820
+SHA256 (mono-libgit2sharp-319fa36_GH0.tar.gz) = eae1f7d6bfcfc62a2166a5b8f40082595e90fc6ac0b063f62c17e785255a2154
+SIZE (mono-libgit2sharp-319fa36_GH0.tar.gz) = 1860041
 SHA256 (mono-mono-addins-84fa753_GH0.tar.gz) = 13094df3897b9b9b3efaf2765bc03ac5cfeefd7b2861f3e48ba664a9b7aed6dc
 SIZE (mono-mono-addins-84fa753_GH0.tar.gz) = 470158
 SHA256 (icsharpcode-NRefactory-0607a4a_GH0.tar.gz) = 1b9657b66739296d6cf7355ff5d986e35271c248c89d89ba730ae8ef0de164e5
