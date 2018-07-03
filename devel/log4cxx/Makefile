@@ -22,6 +22,8 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 
+CXXFLAGS+=	-Wno-c++11-narrowing
+
 OPTIONS_DEFINE=	BOOST DOXYGEN
 
 BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/regex.hpp:devel/boost-libs
