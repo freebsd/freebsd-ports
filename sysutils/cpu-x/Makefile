@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cpu-x
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -11,8 +10,6 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Gathers information about CPU, motherboard, and more
 
 LICENSE=	GPLv3
-
-PORTSCOUT=	skipv:3.2.2	# useful parts of 3.2.2 were cherry-picked
 
 BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libcpuid.so:sysutils/libcpuid \
