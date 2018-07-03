@@ -3,6 +3,7 @@
 
 PORTNAME=	buici-clock
 PORTVERSION=	0.4.9.4
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo
 WRKSRC=		${WRKDIR}/buici
 
 USE_XORG=	x11 xext
-USES=		tar:xz bison gmake pkgconfig
+USES=		tar:xz bison gmake pkgconfig autoreconf
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
