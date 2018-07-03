@@ -14,4 +14,4 @@ with socket_wrapper.
 - Network name resolution using a hosts file.
 - Loading and testing of NSS modules.
 
-WWW: https://cwrap.org/
+WWW: https://cwrap.org/nss_wrapper.html

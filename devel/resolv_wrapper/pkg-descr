@@ -7,4 +7,4 @@ and return valid responses to your application.
 - Redirects name queries to the nameservers specified in your resolv.conf
 - Can fake DNS queries using a simple formatted DNS hosts file.
 
-WWW: https://cwrap.org/
+WWW: https://cwrap.org/resolv_wrapper.html

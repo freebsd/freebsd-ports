@@ -13,14 +13,14 @@ LICENSE=		GPLv3
 USES=			cmake:outsource
 USE_LDCONFIG=		yes
 
-CMAKE_ARGS+=		-DMAN_INSTALL_DIR:PATH="${PREFIX}/man"
+CMAKE_ARGS=		-DMAN_INSTALL_DIR:PATH="${PREFIX}/man"
 
 OPTIONS_DEFINE=		TEST
 OPTIONS_DEFAULT=	TEST
 
-TEST_TARGET=		test
+TEST_TEST_TARGET=	test
 TEST_CMAKE_BOOL=	UNIT_TESTING
-TEST_BUILD_DEPENDS+=	cmocka>=1.1.1:sysutils/cmocka
+TEST_BUILD_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
 
 PLIST_FILES=		libdata/pkgconfig/resolv_wrapper.pc \
 			lib/cmake/resolv_wrapper/resolv_wrapper-config-version.cmake \
