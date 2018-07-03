@@ -773,7 +773,6 @@ editors/openoffice.org-2-devel||2009-07-21|Removed
 games/amy||2009-07-28|Has expired: mastersite disappeared, does not build on recent version
 security/hashish||2009-07-28|Has expired: does not compile
 security/smtpmap||2009-07-28|Has expired: depends on GCC 2.95 which has not been available for 9+ months
-devel/bats|devel/bats-core|2018-07-01|Bats maintainership changed upstream to bats-core team
 devel/boost|devel/boost-libs|2009-07-28|Boost ports were split and sliced
 devel/boost-python|devel/boost-python-libs|2009-07-28|Boost ports were split and sliced
 www/xpi-firegpg||2009-07-31|Removed
@@ -10293,3 +10292,4 @@ www/libxul||2018-06-22|Has expired: NPAPI are no longer supported
 mail/postfix211||2018-06-24|Has expired: Not supported anymore by vendor. Please choose a new one version
 mail/postfix211-sasl||2018-06-24|Has expired: Not supported anymore by vendor. Please choose a new one version
 devel/py-binplist||2018-06-26|Has expired: Not depended upon anymore, no longer maintained upstream
+devel/bats|devel/bats-core|2018-07-01|Bats maintainership changed upstream to bats-core team
