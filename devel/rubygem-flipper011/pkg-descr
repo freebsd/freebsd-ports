@@ -1,9 +1,0 @@
-Feature flipping is the act of enabling or disabling features or parts of your
-application, ideally without re-deploying or changing anything in your code
-base.
-
-The goal of this gem is to make turning features on or off so easy that everyone
-does it. Whatever your data store, throughput, or experience, feature flipping
-should be easy and have minimal impact on your application.
-
-WWW: https://github.com/jnunemaker/flipper
