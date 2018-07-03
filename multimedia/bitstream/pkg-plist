@@ -86,6 +86,7 @@ include/bitstream/ieee/ethernet.h
 include/bitstream/ietf/ip.h
 include/bitstream/ietf/rfc4175.h
 include/bitstream/ietf/rtcp.h
+include/bitstream/ietf/rtcp3611.h
 include/bitstream/ietf/rtcp_fb.h
 include/bitstream/ietf/rtcp_rr.h
 include/bitstream/ietf/rtcp_sr.h
@@ -159,5 +160,6 @@ include/bitstream/smpte/2022_1_fec.h
 include/bitstream/smpte/2022_6_hbrmt.h
 include/bitstream/smpte/291.h
 include/bitstream/smpte/337.h
+include/bitstream/smpte/352.h
 include/bitstream/smpte/rdd08.h
 libdata/pkgconfig/bitstream.pc
