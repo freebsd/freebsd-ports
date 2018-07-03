@@ -434,7 +434,6 @@
     SUBDIR += p5-Net-ManageSieve
     SUBDIR += p5-Net-POP3-SSLWrapper
     SUBDIR += p5-Net-QMTP
-    SUBDIR += p5-Net-SMTP-SSL
     SUBDIR += p5-Net-SMTP-Server
     SUBDIR += p5-Net-SMTP-TLS
     SUBDIR += p5-Net-SMTP-TLS-ButMaintained
