@@ -604,6 +604,7 @@
     SUBDIR += roundcube-contextmenu
     SUBDIR += roundcube-groupvice
     SUBDIR += roundcube-html5_notifier
+    SUBDIR += roundcube-identity_smtp
     SUBDIR += roundcube-login_info
     SUBDIR += roundcube-markasjunk2
     SUBDIR += roundcube-mobilecube
