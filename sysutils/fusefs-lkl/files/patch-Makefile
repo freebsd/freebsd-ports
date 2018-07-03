@@ -1,13 +1,15 @@
---- Makefile.orig	2016-08-16 21:09:03 UTC
+--- Makefile.orig	2018-06-12 22:43:19 UTC
 +++ Makefile
-@@ -121,8 +121,8 @@ endif
- 	$(Q)$(MAKE) -f $(srctree)/tools/build/Makefile.build dir=$(patsubst %/,%,$(dir $*)) obj=$(notdir $*)
+@@ -61,10 +61,10 @@ endif
  
- lib/lkl.o:
--	$(Q)$(MAKE) -C ../.. ARCH=lkl $(KOPT) defconfig
--	$(Q)$(MAKE) -C ../.. ARCH=lkl $(KOPT) install INSTALL_PATH=$(CURDIR)
-+	$(Q)$(MAKE) -C ../.. ARCH=lkl LDFLAGS= $(KOPT) defconfig
-+	$(Q)$(MAKE) -C ../.. ARCH=lkl LDFLAGS= $(KOPT) install INSTALL_PATH=$(CURDIR)
+ # rule to build lkl.o
+ $(OUTPUT)lib/lkl.o: bin/stat
+-	$(Q)$(MAKE) -C ../.. ARCH=lkl $(KOPT) $(KCONFIG)
++	$(Q)$(MAKE) -C ../.. ARCH=lkl LDFLAGS= $(KOPT) $(KCONFIG)
+ # this workaround is for arm32 linker (ld.gold)
+ 	$(Q)export PATH=$(srctree)/tools/lkl/bin/:${PATH} ;\
+-	$(MAKE) -C ../.. ARCH=lkl $(KOPT) install INSTALL_PATH=$(OUTPUT)
++	$(MAKE) -C ../.. ARCH=lkl LDFLAGS= $(KOPT) install INSTALL_PATH=$(OUTPUT)
  
- liblkl.a: lib/lkl-in.o lib/lkl.o
- 	$(QUIET_AR)$(AR) -rc $@ $^
+ # rules to link libs
+ $(OUTPUT)%$(SOSUF): LDFLAGS += -shared
