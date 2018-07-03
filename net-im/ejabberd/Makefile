@@ -141,6 +141,7 @@ REDIS_CONFIGURE_ENABLE=	redis
 REDIS_GH_TUPLE=	wooga:eredis:v${EREDIS_VER}:eredis/deps/eredis
 SIP_CONFIGURE_ENABLE=	sip
 SIP_GH_TUPLE=	processone:esip:${ESIP_VER}:esip/deps/esip
+SIP_IMPLIES=	STUN
 STUN_CONFIGURE_ENABLE=	stun
 STUN_GH_TUPLE=	processone:stun:${STUN_VER}:stun/deps/stun
 SQLITE_CONFIGURE_ENABLE=sqlite
