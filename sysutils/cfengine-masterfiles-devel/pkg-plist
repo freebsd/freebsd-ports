@@ -79,12 +79,10 @@
 %%EXAMPLESDIR%%/masterfiles/sketches/meta/api-runfile.cf
 %%EXAMPLESDIR%%/masterfiles/standalone_self_upgrade.cf
 %%EXAMPLESDIR%%/masterfiles/templates/cf-apache.service.mustache
-%%EXAMPLESDIR%%/masterfiles/templates/cf-consumer.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-execd.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-hub.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-monitord.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-postgres.service.mustache
-%%EXAMPLESDIR%%/masterfiles/templates/cf-redis-server.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-runalerts.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-serverd.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cfengine3.service.mustache
@@ -98,5 +96,6 @@
 %%EXAMPLESDIR%%/modules/packages/nimclient
 %%EXAMPLESDIR%%/modules/packages/pkg
 %%EXAMPLESDIR%%/modules/packages/pkgsrc
+%%EXAMPLESDIR%%/modules/packages/slackpkg
 %%EXAMPLESDIR%%/modules/packages/yum
 %%EXAMPLESDIR%%/modules/packages/zypper
