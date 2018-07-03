@@ -152,6 +152,7 @@
     SUBDIR += cfengine-masterfiles-devel
     SUBDIR += cfengine-masterfiles310
     SUBDIR += cfengine-masterfiles311
+    SUBDIR += cfengine-masterfiles312
     SUBDIR += cfengine-masterfiles36
     SUBDIR += cfengine-masterfiles37
     SUBDIR += cfengine-masterfiles38
@@ -159,6 +160,7 @@
     SUBDIR += cfengine22
     SUBDIR += cfengine310
     SUBDIR += cfengine311
+    SUBDIR += cfengine312
     SUBDIR += cfengine32
     SUBDIR += cfengine33
     SUBDIR += cfengine34
