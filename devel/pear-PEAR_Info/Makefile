@@ -3,7 +3,7 @@
 
 PORTNAME=	PEAR_Info
 PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -18,6 +18,6 @@ PHPUNIT_DESC=	PEAR::PHPUnit support
 
 USES=		pear
 
-PHPUNIT_RUN_DEPENDS=	phpunit:devel/phpunit@${PHP_FLAVOR}
+PHPUNIT_RUN_DEPENDS=	phpunit:devel/phpunit6@${PHP_FLAVOR}
 
 .include <bsd.port.mk>
