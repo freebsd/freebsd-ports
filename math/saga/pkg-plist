@@ -134,6 +134,8 @@ share/pixmaps/saga.png
 @mode 0666
 %%DATADIR%%/accessories/CMakeLists.txt
 %%DATADIR%%/accessories/helper/make_arcsaga_toolboxes.bat
+%%DATADIR%%/accessories/helper/make_python_api.bat
+%%DATADIR%%/accessories/helper/make_python_api_x64.bat
 %%DATADIR%%/accessories/helper/make_saga_release.bat
 %%DATADIR%%/accessories/helper/make_saga_snapshot.bat
 %%DATADIR%%/accessories/helper/make_tools_interface.bat
@@ -171,8 +173,8 @@ share/pixmaps/saga.png
 %%DATADIR%%/accessories/templates/template4saga-tools/my_tool_library/my_tool_library_link2bin.vcxproj.filters
 %%DATADIR%%/accessories/templates/template4saga-tools/my_tool_library/my_tool_library_link2src.vcxproj
 %%DATADIR%%/accessories/templates/template4saga-tools/my_tool_library/my_tool_library_link2src.vcxproj.filters
-%%DATADIR%%/accessories/templates/template4saga-tools/my_tools_link2bin.vc10.sln
-%%DATADIR%%/accessories/templates/template4saga-tools/my_tools_link2src.vc10.sln
+%%DATADIR%%/accessories/templates/template4saga-tools/my_tools_link2bin.vc14.sln
+%%DATADIR%%/accessories/templates/template4saga-tools/my_tools_link2src.vc14.sln
 %%DATADIR%%/accessories/templates/template4saga-tools/readme.txt
 %%DATADIR%%/saga.bra.txt
 %%DATADIR%%/saga.ger.txt
