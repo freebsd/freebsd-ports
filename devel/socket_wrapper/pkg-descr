@@ -7,4 +7,4 @@ testing of complex network configurations.
 - Support for IPv4 and IPv6 socket and addressing emulation.
 - Ablility to capture network traffic in pcap format.
 
-WWW: https://cwrap.org/
+WWW: https://cwrap.org/socket_wrapper.html
