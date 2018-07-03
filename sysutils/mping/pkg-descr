@@ -1,6 +1,15 @@
 mping is a utility for pinging multiple hosts. It is written in shell with
 minimal dependencies (awk, date, getconf, head, host, ping, sleep, sort, stty,
 tr, uname, and xargs). It also has a feature to keep watching the given hosts
-and alert to any changes in uptime.
+and alert to any changes in availability.
+
+Quickly get status on one or more hosts using ping. Automatically takes
+advantage of multiple CPUs and will ping multiple hosts in parallel.
+
+Watch changes in ping status with "-d" for differential mode to alert you when
+changes take place.
+
+Use shell expansion features such as 192.168.0.{1..254} to quickly scan for
+unused IP addresses (if applicable).
 
 WWW: https://fraubsd.org/mping/
