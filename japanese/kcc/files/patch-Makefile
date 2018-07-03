@@ -1,12 +1,12 @@
---- Makefile.orig	1994-03-28 13:05:28.000000000 +0200
-+++ Makefile	2014-05-09 21:13:14.000000000 +0200
+--- Makefile.orig	1994-06-28 11:42:32 UTC
++++ Makefile
 @@ -7,10 +7,11 @@
  
  #	@(#)Makefile 2.3 (Y.Tonooka) 3/28/94
  
 -          BINPATH = /usr/local/bin
--          MANPATH = /usr/local/man
--          JMANDIR = japanese
+-          MANPATH = /usr/man
+-          JMANDIR = ja_JP.ujis
 -           CFLAGS = -O
 +          PREFIX?= /usr/local
 +          BINPATH = ${PREFIX}/bin
@@ -16,7 +16,7 @@
  
              SHELL = /bin/sh
                 CP = cp
-@@ -34,10 +35,10 @@
+@@ -34,10 +35,10 @@ install.man: $(MANPATH)/$(JMANDIR)/man1/
  
  $(BINPATH)/kcc: kcc.c
  	$(MAKE) kcc

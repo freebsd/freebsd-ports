@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	kcc
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	japanese
-MASTER_SITES=	PORTS_JP
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/os/linux/JE/sources/base/
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${DISTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kanji code conversion Filter
