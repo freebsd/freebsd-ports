@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stomp
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	net-im pear
 
 MAINTAINER=	dbaio@FreeBSD.org
