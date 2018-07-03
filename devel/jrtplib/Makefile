@@ -3,6 +3,7 @@
 
 PORTNAME=	jrtplib
 PORTVERSION=	3.11.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://research.edm.uhasselt.be/jori/jrtplib/
 
