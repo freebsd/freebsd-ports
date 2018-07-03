@@ -3744,6 +3744,7 @@
     SUBDIR += p5-UUID-Random
     SUBDIR += p5-UUID-Random-Patch-UseMRS
     SUBDIR += p5-UUID-Tiny
+    SUBDIR += p5-UUID-URandom
     SUBDIR += p5-Uniq
     SUBDIR += p5-Unix-Groups
     SUBDIR += p5-Unix-Groups-FFI

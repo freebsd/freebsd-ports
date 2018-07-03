@@ -1,0 +1,5 @@
+This module provides a portable, secure generator of RFC-4122 version 4 (random)
+UUIDs. It is a thin wrapper around Crypt::URandom to set the UUID version and
+variant bits required by the RFC.
+
+WWW: https://metacpan.org/release/UUID-URandom
