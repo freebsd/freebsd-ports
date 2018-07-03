@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Mail/Mbox/MessageParser/Perl.pm
 %%PERL5_MAN3%%/Mail::Mbox::MessageParser.3.gz
 %%PERL5_MAN3%%/Mail::Mbox::MessageParser::Cache.3.gz
+%%PERL5_MAN3%%/Mail::Mbox::MessageParser::Config.3.gz
 %%PERL5_MAN3%%/Mail::Mbox::MessageParser::Grep.3.gz
 %%PERL5_MAN3%%/Mail::Mbox::MessageParser::MetaInfo.3.gz
 %%PERL5_MAN3%%/Mail::Mbox::MessageParser::Perl.3.gz
