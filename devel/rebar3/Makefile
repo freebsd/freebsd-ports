@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	3.5.3
+PORTVERSION=	3.6.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
@@ -31,17 +31,17 @@ PORTEXAMPLES=	rebar.config.sample
 BASH_PLIST_FILES=	share/bash-completion/completions/rebar3
 ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
 
-CACHE_VERSION=	17
+CACHE_VERSION=	18
 # from rebar.config
-REBAR_DEPS=	bbmustache-1.3.0 \
+REBAR_DEPS=	bbmustache-1.5.0 \
 		certifi-2.0.0 \
 		cf-0.2.2 \
-		cth_readable-1.4.0 \
-		erlware_commons-1.1.0 \
+		cth_readable-1.4.2 \
+		erlware_commons-1.2.0 \
 		eunit_formatters-0.5.0 \
 		getopt-1.0.1 \
 		providers-1.7.0 \
-		relx-3.24.4 \
+		relx-3.26.0 \
 		ssl_verify_fun-1.1.3
 
 .for _dep in ${REBAR_DEPS} ${REBAR_PLUGINS}
