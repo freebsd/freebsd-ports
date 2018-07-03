@@ -20,7 +20,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Fast x86 and x86-64 disassembler library
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		dos2unix tar:xz
 
@@ -69,27 +70,27 @@ post-patch:
 	@${REINPLACE_CMD} -e "\|extra_compile_args=|s| '-O2',||" ${WRKSRC}/setup.py
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/dislib.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/dislib.py ${STAGEDIR}${PREFIX}/bin
 
 .else
 do-build:
 	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	EXTRAFLAGS="${PICFLAG} -DDISTORM_DYNAMIC" ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} clib)
+		EXTRAFLAGS="${PICFLAG} -DDISTORM_DYNAMIC" ${MAKE} ${_MAKE_JOBS} \
+		${MAKE_ARGS} clib)
 	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	EXTRAFLAGS="-DDISTORM_STATIC" ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} staticlib)
+		EXTRAFLAGS="-DDISTORM_STATIC" ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} staticlib)
 	${CC} ${CFLAGS} ${LDFLAGS} -o ${BUILD_WRKSRC}/disasm \
-	${WRKSRC}/examples/linux/main.c ${BUILD_WRKSRC}/libdistorm3.a
+		${WRKSRC}/examples/linux/main.c ${BUILD_WRKSRC}/libdistorm3.a
 
-check regression-test test: build
-	@cd ${BUILD_WRKSRC}; ./disasm disasm
+do-test:
+	@cd ${BUILD_WRKSRC} && ./disasm disasm
 
 do-install:
-	@(cd ${BUILD_WRKSRC}; ${INSTALL_DATA} libdistorm3.a ${STAGEDIR}${PREFIX}/lib; \
-	${INSTALL_LIB} libdistorm3.so ${STAGEDIR}${PREFIX}/lib/libdistorm3.so.1; \
-	${LN} -sf libdistorm3.so.1 ${STAGEDIR}${PREFIX}/lib/libdistorm3.so; \
-	${INSTALL_PROGRAM} disasm ${STAGEDIR}${PREFIX}/bin)
-	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
-
+	${INSTALL_DATA} ${BUILD_WRKSRC}/libdistorm3.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${BUILD_WRKSRC}/libdistorm3.so ${STAGEDIR}${PREFIX}/lib/libdistorm3.so.1
+	${LN} -sf libdistorm3.so.1 ${STAGEDIR}${PREFIX}/lib/libdistorm3.so
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/disasm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
 .endif
+
 .include <bsd.port.post.mk>
