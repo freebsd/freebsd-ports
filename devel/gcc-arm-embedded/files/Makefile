@@ -169,6 +169,7 @@ build-newlib:
 	 --htmldir=${DOC_PREFIX}/html \
 	 --pdfdir=${DOC_PREFIX}/pdf \
 	 --enable-newlib-io-long-long \
+	 --enable-newlib-io-c99-formats \
 	 --enable-newlib-register-fini \
 	 --disable-newlib-supplied-syscalls \
 	 --disable-nls
