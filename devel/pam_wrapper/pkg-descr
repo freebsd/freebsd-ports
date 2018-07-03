@@ -1,0 +1,8 @@
+This tool allows you to either test your PAM application or module. For testing
+PAM applications we have written a simple PAM module called pam_matrix
+(see below). If you plan to test a PAM module you can use the pamtest library
+we have implemented. It simplifies testing of modules. You can be combine it
+with the cmocka unit testing framework or you can use the provided Python
+bindings to write tests for your module in Python.
+
+WWW: https://cwrap.org/
