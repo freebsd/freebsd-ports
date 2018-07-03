@@ -1,0 +1,10 @@
+resolv_wrapper makes it possible on most UNIX platforms to contact your own DNS
+implementation in your test environment. It requires socket_wrapper to be able
+to contact it.
+If it doesn't work on a special platform the wrapper is able to fake DNS queries
+and return valid responses to your application.
+
+- Redirects name queries to the nameservers specified in your resolv.conf
+- Can fake DNS queries using a simple formatted DNS hosts file.
+
+WWW: https://cwrap.org/

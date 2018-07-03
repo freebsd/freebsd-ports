@@ -1,0 +1,10 @@
+socket_wrapper aims to help client/server software development teams willing to
+gain full functional test coverage. It makes possible to run several instances
+of the full software stack on the same machine and perform locally functional
+testing of complex network configurations.
+
+- Redirects all network communication to happen over unix sockets.
+- Support for IPv4 and IPv6 socket and addressing emulation.
+- Ablility to capture network traffic in pcap format.
+
+WWW: https://cwrap.org/
