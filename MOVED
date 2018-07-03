@@ -10293,28 +10293,28 @@ mail/postfix211||2018-06-24|Has expired: Not supported anymore by vendor. Please
 mail/postfix211-sasl||2018-06-24|Has expired: Not supported anymore by vendor. Please choose a new one version
 devel/py-binplist||2018-06-26|Has expired: Not depended upon anymore, no longer maintained upstream
 devel/bats|devel/bats-core|2018-07-01|Bats maintainership changed upstream to bats-core team
-net/rubygem-omniauth-twitter12|net/rubygem-omniauth-twitter|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-omniauth-twitter instead.
-net/rubygem-gitaly-proto088|net/rubygem-gitaly-proto|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-gitaly-proto instead.
-net/rubygem-octokit46|net/rubygem-octokit|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-octokit instead.
-net/rubygem-fog-google0|net/rubygem-fog-google|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-fog-google instead.
-net/rubygem-fog-aws1|net/rubygem-fog-aws|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-fog-aws instead.
-textproc/rubygem-asciidoctor-plantuml007|textproc/rubygem-asciidoctor-plantuml|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use textproc/rubygem-asciidoctor-plantuml instead.
+net/rubygem-omniauth-twitter12|net/rubygem-omniauth-twitter|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-omniauth-twitter instead
+net/rubygem-gitaly-proto088|net/rubygem-gitaly-proto|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-gitaly-proto instead
+net/rubygem-octokit46|net/rubygem-octokit|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-octokit instead
+net/rubygem-fog-google0|net/rubygem-fog-google|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-fog-google instead
+net/rubygem-fog-aws1|net/rubygem-fog-aws|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use net/rubygem-fog-aws instead
+textproc/rubygem-asciidoctor-plantuml007|textproc/rubygem-asciidoctor-plantuml|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use textproc/rubygem-asciidoctor-plantuml instead
 graphics/mitsuba||2018-07-03|Has expired: Broken for more than 6 months
 mail/p5-Net-SMTP-SSL||2018-07-03|Has expired: Deprecated by upstream, use Net::SMTP instead
-www/rubygem-kubeclient22|www/rubygem-kubeclient|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use www/rubygem-kubeclient instead.
-security/rubygem-doorkeeper42|security/rubygem-doorkeeper|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-doorkeeper instead.
-security/rubygem-net-ssh41|security/rubygem-net-ssh|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-net-ssh instead.
-security/rubygem-omniauth-saml17|security/rubygem-omniauth-saml|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-omniauth-saml instead.
-security/rubygem-doorkeeper-openid_connect12|security/rubygem-doorkeeper-openid_connect|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-doorkeeper-openid_connect instead.
-security/rubygem-attr_encrypted30|security/rubygem-attr_encrypted|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-attr_encrypted instead.
-security/rubygem-omniauth14|security/rubygem/omniauth|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-omniauth instead.
-devel/rubygem-flipper011|devel/rubygem-flipper|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-flipper instead.
-devel/rubygem-ruby-prof016|devel/rubygem-ruby-prof|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-ruby-prof instead.
+www/rubygem-kubeclient22|www/rubygem-kubeclient|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use www/rubygem-kubeclient instead
+security/rubygem-doorkeeper42|security/rubygem-doorkeeper|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-doorkeeper instead
+security/rubygem-net-ssh41|security/rubygem-net-ssh|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-net-ssh instead
+security/rubygem-omniauth-saml17|security/rubygem-omniauth-saml|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-omniauth-saml instead
+security/rubygem-doorkeeper-openid_connect12|security/rubygem-doorkeeper-openid_connect|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-doorkeeper-openid_connect instead
+security/rubygem-attr_encrypted30|security/rubygem-attr_encrypted|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-attr_encrypted instead
+security/rubygem-omniauth14|security/rubygem-omniauth|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use security/rubygem-omniauth instead
+devel/rubygem-flipper011|devel/rubygem-flipper|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-flipper instead
+devel/rubygem-ruby-prof016|devel/rubygem-ruby-prof|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-ruby-prof instead
 devel/rubygem-recursive-open-struct10|devel/rubygem-recursive-open-struct|2018-07-03|Has expired: Obsoleted by update of www/rubygem-kubeclient. Please use devel/rubygem-recursive-open-struct instead
-devel/rubygem-flipper-active_support_cache_store011|devel/rubygem-flipper-active_support_cache_store|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-flipper-active_support_cache_store instead.
-devel/rubygem-gettext_i18n_rails_js12|devel/rubygem-gettext_i18n_rails_js|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-gettext_i18n_rails_js instead.
+devel/rubygem-flipper-active_support_cache_store011|devel/rubygem-flipper-active_support_cache_store|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-flipper-active_support_cache_store instead
+devel/rubygem-gettext_i18n_rails_js12|devel/rubygem-gettext_i18n_rails_js|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-gettext_i18n_rails_js instead
 devel/phpunit|devel/phpunit6|2018-07-03|Has expired: No longer maintained upstream
-devel/rubygem-recursive-open-struct100|devel/rubyhem-recursive-open-struct|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-recursive-open-struct instead.
-databases/rubygem-flipper-active_record011|databases/rubygem-flipper-active_record|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use databases/rubygem-flipper-active_record instead.
+devel/rubygem-recursive-open-struct100|devel/rubygem-recursive-open-struct|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-recursive-open-struct instead
+databases/rubygem-flipper-active_record011|databases/rubygem-flipper-active_record|2018-07-03|Has expired: Obsoleted by update of www/gitlab. Please use databases/rubygem-flipper-active_record instead
 databases/mongodb34-rocks||2018-07-03|Has expired: Broken for more than 6 months
 math/freemat||2018-07-03|Has expired: Complex, unmaintained software with obsolete dependencies
