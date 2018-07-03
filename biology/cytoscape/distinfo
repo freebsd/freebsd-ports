@@ -1,0 +1,17 @@
+TIMESTAMP = 1530603760
+SHA256 (FreeBSD-cytoscape-3.6.1-maven-repository.tar.gz) = f3e33e99168b56768d2ee854956e59bcbb888101fd518239887524d692b78f7a
+SIZE (FreeBSD-cytoscape-3.6.1-maven-repository.tar.gz) = 1235655281
+SHA256 (cytoscape-cytoscape-3.6.1_GH0.tar.gz) = f172c9e459293661a83d2618da511901410336b76b0c1716697e60f821c2f150
+SIZE (cytoscape-cytoscape-3.6.1_GH0.tar.gz) = 12785
+SHA256 (cytoscape-cytoscape-parent-3.6.1_GH0.tar.gz) = 0786e8d7877fa54d2a64d65209856a4a946df4facd3cbc947e8c65d14a035084
+SIZE (cytoscape-cytoscape-parent-3.6.1_GH0.tar.gz) = 2863
+SHA256 (cytoscape-cytoscape-api-3.6.1_GH0.tar.gz) = a264a434d5942cad2ef69df7aa29fad74a6d1f11369a964d7c38462608def73b
+SIZE (cytoscape-cytoscape-api-3.6.1_GH0.tar.gz) = 1731631
+SHA256 (cytoscape-cytoscape-impl-3.6.1_GH0.tar.gz) = 0fcea5a4d804972db5b0cf77174a953d22da8fed6740dbaa01754eb7aea50d21
+SIZE (cytoscape-cytoscape-impl-3.6.1_GH0.tar.gz) = 29851040
+SHA256 (cytoscape-cytoscape-support-3.6.1_GH0.tar.gz) = 3f13088c35d41fa616dc7e735469f360ee4d17b1838cde8291f88b01bacfe657
+SIZE (cytoscape-cytoscape-support-3.6.1_GH0.tar.gz) = 52940
+SHA256 (cytoscape-cytoscape-gui-distribution-3.6.1_GH0.tar.gz) = 73fb7efb51a0413252a7e9e28d4fb7e28d16eea9f60be534fd962a5e534ca72e
+SIZE (cytoscape-cytoscape-gui-distribution-3.6.1_GH0.tar.gz) = 14818052
+SHA256 (cytoscape-cytoscape-app-template-3.6.1_GH0.tar.gz) = 9cf7b64a3e6effd22a20d577c7fa41b11f896e2298ef1655f2fe31c21602bce0
+SIZE (cytoscape-cytoscape-app-template-3.6.1_GH0.tar.gz) = 1887
