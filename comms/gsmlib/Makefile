@@ -13,18 +13,22 @@ DISTFILES=	gsmlib_1.10.orig.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to access GSM mobile phones through GSM modems
 
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include -DBROKEN_STRFTIME -DHAVE_DECL_GETOPT
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+CPPFLAGS+=	-DBROKEN_STRFTIME -DHAVE_DECL_GETOPT
+LDFLAGS+=	-lpthread
+CXXFLAGS+=	-Wno-c++11-narrowing
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
+NLS_USES=	gettext localbase:ldflags
 NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
