@@ -8,4 +8,13 @@ To connect to a zerotier network:
 
 zerotier-cli join <network>
 
+If you are running other daemons or require firewall rules to depend on
+zerotier interfaces being available at startup, you may need to enable
+the following sysctl in /etc/sysctl.conf:
+
+net.link.tap.up_on_open=1
+
+This avoids a race condition where zerotier interfaces are created, but
+not up, prior to firewalls and services trying to use them.
+
 #################################

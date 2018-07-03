@@ -3,8 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: zerotier
-# REQUIRE: FILESYSTEMS netif
-# BEFORE:  pf ipfw ipfilter
+# REQUIRE: FILESYSTEMS devfs
+# BEFORE:  pf ipfw
 # KEYWORD: shutdown
 #
 # Add these lines to /etc/rc.conf.local or /etc/rc.conf
@@ -22,8 +22,19 @@ load_rc_config $name
 
 : ${zerotier_enable:="NO"}
 
-command=%%PREFIX%%/sbin/${name}-one
+required_modules="if_tap"
 
-command_args="-d"
+pidfile="/var/run/${name}.pid"
+start_precmd="install -o root /dev/null ${pidfile}"
+
+command="/usr/sbin/daemon"
+command_args=" \
+	-c \
+	-t ${name} \
+	-r \
+	-P ${pidfile} \
+	%%ZEROTIER_SYSLOG%% \
+	/usr/local/sbin/${name}-one"
 
 run_rc_command "$1"
+
