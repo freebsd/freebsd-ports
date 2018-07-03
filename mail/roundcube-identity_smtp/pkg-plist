@@ -1,0 +1,12 @@
+%%RCDIR_REL%%/plugins/identity_smtp/LICENSE
+%%RCDIR_REL%%/plugins/identity_smtp/README.markdown
+%%RCDIR_REL%%/plugins/identity_smtp/composer.json
+%%RCDIR_REL%%/plugins/identity_smtp/crowdin.yaml
+%%RCDIR_REL%%/plugins/identity_smtp/identity_smtp.js
+%%RCDIR_REL%%/plugins/identity_smtp/identity_smtp.php
+%%RCDIR_REL%%/plugins/identity_smtp/localization/ca_ES.inc
+%%RCDIR_REL%%/plugins/identity_smtp/localization/de_DE.inc
+%%RCDIR_REL%%/plugins/identity_smtp/localization/en_US.inc
+%%RCDIR_REL%%/plugins/identity_smtp/localization/es_ES.inc
+%%RCDIR_REL%%/plugins/identity_smtp/localization/fr_FR.inc
+%%RCDIR_REL%%/plugins/identity_smtp/localization/ja_JP.inc
