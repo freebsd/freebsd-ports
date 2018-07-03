@@ -28,8 +28,7 @@ OPTIONS_GROUP_DBBACKEND= \
 OPTIONS_GROUP_EMAIL= 	\
 	INBOUND_EMAIL	\
 	MAIL_QUEUEING	\
-	SMTP_AUTH	\
-	SMTP_SSL
+	SMTP_AUTH
 
 OPTIONS_GROUP_REPORTING= \
 	GRAPHVIZ	\
@@ -64,7 +63,6 @@ MORE_HTML_DESC=		More HTML in Product/Group Descriptions
 MOVE_BUGZ_DESC=		Move Bugs Between Installations
 PATCH_VIEWER_DESC=	Patch Viewer
 SMTP_AUTH_DESC=		SMTP Authentication
-SMTP_SSL_DESC=		SSL Support for SMTP
 XMLRPC_DESC=		XML-RPC Interface
 
 # Option group description

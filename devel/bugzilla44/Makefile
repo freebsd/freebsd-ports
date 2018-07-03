@@ -89,7 +89,6 @@ EXPORT_IMPORT_RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 LDAP_RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap
 RADIUS_RUN_DEPENDS=	p5-Authen-Radius>=0:security/p5-Authen-Radius
 SMTP_AUTH_RUN_DEPENDS=	p5-Authen-SASL>=2.16:security/p5-Authen-SASL
-SMTP_SSL_RUN_DEPENDS=	p5-Net-SMTP-SSL>=1.01:mail/p5-Net-SMTP-SSL
 MIME_SNIFF_RUN_DEPENDS=	p5-File-MimeInfo>=0.16:devel/p5-File-MimeInfo \
 			p5-IO-stringy>=2.110:devel/p5-IO-stringy
 
