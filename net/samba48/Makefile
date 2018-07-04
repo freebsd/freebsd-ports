@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}48
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			0
+PORTREVISION=			1
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -106,7 +106,7 @@ OPTIONS_SINGLE=			GSSAPI
 OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
 
 OPTIONS_RADIO=			DNS ZEROCONF
-OPTIONS_RADIO_DNS=		NSUPDATE BIND99 BIND910 BIND911
+OPTIONS_RADIO_DNS=		NSUPDATE BIND911
 OPTIONS_RADIO_ZEROCONF=		MDNSRESPONDER AVAHI
 ##############################################################################
 AD_DC_DESC=			Active Directory Domain Controller(implies LDAP)
@@ -130,8 +130,6 @@ UTMP_DESC=			UTMP accounting
 
 GSSAPI_BUILTIN_DESC=		GSSAPI support via bundled Heimdal
 
-BIND99_DESC=			Use Bind 9.9 as AD DC DNS server frontend
-BIND910_DESC=			Use Bind 9.10 as AD DC DNS server frontend
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 ##############################################################################
@@ -270,8 +268,6 @@ CONFIGURE_ARGS+=		\
 				--disable-ctdb-tests \
 				${ICONV_CONFIGURE_BASE}
 ##############################################################################
-BIND99_RUN_DEPENDS=		bind99>=9.9.0.0:dns/bind99
-BIND910_RUN_DEPENDS=		bind910>=9.10.0.0:dns/bind910
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 

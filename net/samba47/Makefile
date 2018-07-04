@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}47
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			0
+PORTREVISION=			1
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -95,7 +95,7 @@ OPTIONS_DEFAULT_amd64=		AESNI
 OPTIONS_DEFINE+=		CLUSTER CUPS GLUSTERFS GPGME NTVFS SPOTLIGHT
 
 OPTIONS_RADIO=			DNS ZEROCONF
-OPTIONS_RADIO_DNS=		NSUPDATE BIND99 BIND910 BIND911
+OPTIONS_RADIO_DNS=		NSUPDATE BIND911
 OPTIONS_RADIO_ZEROCONF=		MDNSRESPONDER AVAHI
 ##############################################################################
 AD_DC_DESC=			Active Directory Domain Controller
@@ -116,8 +116,6 @@ PROFILE_DESC=			Profiling data
 QUOTAS_DESC=			Disk quota
 UTMP_DESC=			UTMP accounting
 
-BIND99_DESC=			Use Bind 9.9 as AD DC DNS server frontend
-BIND910_DESC=			Use Bind 9.10 as AD DC DNS server frontend
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 ##############################################################################
@@ -255,8 +253,6 @@ CONFIGURE_ARGS+=		\
 				${ICONV_CONFIGURE_BASE}
 
 ##############################################################################
-BIND99_RUN_DEPENDS=		bind99>=9.9.0.0:dns/bind99
-BIND910_RUN_DEPENDS=		bind910>=9.10.0.0:dns/bind910
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 
