@@ -2,7 +2,7 @@
 
 PORTNAME=	vegeta
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.0
+DISTVERSION=	8.0.0
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	egypcio@googlemail.com
@@ -19,8 +19,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tsenart
 
 GH_TUPLE=	streadway:quantile:b0c5887:quantile/github.com/streadway/quantile \
-		golang:net:ab54850:net/golang.org/x/net \
-		golang:text:c4d099d:text/golang.org/x/text
+		golang:net:ed29d75:net/golang.org/x/net \
+		golang:text:v0.3.0:text/golang.org/x/text \
+		lucasb-eyer:go-colorful:v1.0:colorful/github.com/lucasb-eyer/go-colorful
 
 do-build:
 	@${MKDIR} ${WRKSRC}/github.com/${GH_ACCOUNT}
