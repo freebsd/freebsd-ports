@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	xvid
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://downloads.xvid.com/downloads/ \
-		https://source.ipfire.org/source-2.x/
+MASTER_SITES=	https://downloads.xvid.com/downloads/
 DISTNAME=	${PORTNAME}core-${PORTVERSION}
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -15,7 +14,7 @@ COMMENT=	Opensource MPEG-4 codec, based on OpenDivx
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKDIR}/xvidcore/LICENSE
 
-USES=		gmake
+USES=		gmake tar:bz2
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
