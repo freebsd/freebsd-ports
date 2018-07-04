@@ -22,7 +22,7 @@ LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick	\
 		libXp.so:x11/libXp
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		bison motif gmake libtool compiler:c++14-lang
+USES=		bison compiler:c++17-lang gmake libtool motif
 USE_XORG=	x11 xt xinerama xext xpm xmu sm ice
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
