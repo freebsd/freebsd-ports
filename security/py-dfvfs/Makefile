@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20180510
+PORTVERSION=	20180703
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -35,9 +35,9 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2.7
+USES=		python
 USE_LOCALE=	en_US.UTF-8
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent
 
 .include <bsd.port.pre.mk>
 
@@ -47,6 +47,9 @@ TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
 .else
 TEST_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
 .endif
+
+post-patch:
+	${REINPLACE_CMD} "s,share/doc/dfvfs,${DOCSDIR_REL}," ${WRKSRC}/setup.py
 
 do-test:
 	@${TOUCH} ${TEST_WRKSRC}/utils/__init__.py
