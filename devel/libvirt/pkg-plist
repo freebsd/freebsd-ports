@@ -281,6 +281,8 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/schemas/networkcommon.rng
 %%DATADIR%%/schemas/nodedev.rng
 %%DATADIR%%/schemas/nwfilter.rng
+%%DATADIR%%/schemas/nwfilter_params.rng
+%%DATADIR%%/schemas/nwfilterbinding.rng
 %%DATADIR%%/schemas/secret.rng
 %%DATADIR%%/schemas/storagecommon.rng
 %%DATADIR%%/schemas/storagepool.rng
