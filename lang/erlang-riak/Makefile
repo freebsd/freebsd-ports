@@ -8,7 +8,7 @@ DISTNAME=	otp_src_${ERL_RELEASE}
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	wg@FreeBSD.org
-COMMENT=	Custom erlang from bashio to be used with riak2
+COMMENT=	Custom erlang from Basho to be used with riak2
 
 WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
