@@ -7,9 +7,9 @@ follow the instructions in the guide at:
 https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/install/10.8-freebsd.md
 
 If you just installed an major upgrade of GitLab, for example you
-switched from 10.7.x to 10.8.x, please follow the instructions in the guide at:
+switched from 10.8.x to 11.0.x, please follow the instructions in the guide at:
 
-https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/10.7-10.8-freebsd.md
+https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/10.8-11.0-freebsd.md
 
 If you just installed an minor upgrade of GitLab please follow
 the instructions in the guide at:
