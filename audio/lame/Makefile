@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/3.100
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Fast MP3 encoder kit
 
+LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake iconv libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
