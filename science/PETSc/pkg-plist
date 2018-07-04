@@ -279,10 +279,10 @@ libdata/pkgconfig/PETSc.pc
 %%DATADIR%%/matlab/PetscReadBinaryTrajectory.m
 %%DATADIR%%/matlab/UFgetPetscMat.m
 %%DATADIR%%/matlab/generatePetscTestFiles.m
-%%DATADIR%%/matlab/generatehtml.m
 %%DATADIR%%/matlab/laplacian.m
 %%DATADIR%%/matlab/laplacianlicense.txt
 %%DATADIR%%/matlab/launch.m
+%%DATADIR%%/matlab/makefile
 %%DATADIR%%/saws/documentation
 %%DATADIR%%/saws/images/arrow.png
 %%DATADIR%%/saws/images/transition.bmp
