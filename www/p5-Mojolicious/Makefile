@@ -13,8 +13,8 @@ COMMENT=	High-level MVC web framework written in Perl
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Cpanel-JSON-XS>=4.04:converters/p5-Cpanel-JSON-XS \
-		p5-Role-Tiny>=2.000001:devel/p5-Role-Tiny
+TEST_DEPENDS=	p5-Role-Tiny>=2.000001:devel/p5-Role-Tiny \
+		${JSONXS_BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5
