@@ -16,6 +16,9 @@ LICENSE_NAME=	Joseph H Taylor, Jr, K1JT.
 LICENSE_FILE=	${FILESDIR}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+DEPRECATED=	use wsjtx- kvasd is not needed by wsjtx and no longer maintained
+EXPIRATION_DATE=2018-10-01
+
 BUILD_DEPENDS=	${KVASD_DEPENDS}
 RUN_DEPENDS=	${KVASD_DEPENDS}
 
