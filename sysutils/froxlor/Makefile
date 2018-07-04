@@ -3,7 +3,7 @@
 
 PORTNAME=	froxlor
 PORTVERSION=	0.9.38.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -55,7 +55,7 @@ COURIER_DESC=	Courier as IMAP/POP3 server
 PROFTPD_DESC=	ProFTPd as FTP server
 PUREFTPD_DESC=	Pure-FTPd as FTP server
 POWERDNS_DESC=	Powerdns as DNS server
-ISCDNS_DESC=	ISC BIND 9.9 from ports as DNS server
+ISCDNS_DESC=	ISC BIND 9.11 from ports as DNS server
 PCNTL_DESC=	Use php-pcntl (speeds up statistics creation)
 LIBNSS_DESC=	Libnss-mysql for authentication
 WEBALIZER_DESC=	Webalizer (small, fast, static result pages)
@@ -82,7 +82,7 @@ PUREFTPD_RUN_DEPENDS=	pure-ftpd:ftp/pure-ftpd
 
 POWERDNS_RUN_DEPENDS=	pdns_control:dns/powerdns
 
-ISCDNS_RUN_DEPENDS=	bind>=9.9.0.0:dns/bind99
+ISCDNS_RUN_DEPENDS=	bind>=9.11.0.0:dns/bind911
 
 LIBNSS_RUN_DEPENDS=	${LOCALBASE}/lib/nss_mysql.so:net/libnss-mysql
 
