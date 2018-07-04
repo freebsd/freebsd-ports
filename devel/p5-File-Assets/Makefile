@@ -40,4 +40,6 @@ RUN_DEPENDS=	p5-Test-Memory-Cycle>0:devel/p5-Test-Memory-Cycle \
 USES=		perl5
 USE_PERL5=	configure
 
+PORTSCOUNT=	ignore:0.064_1
+
 .include <bsd.port.mk>
