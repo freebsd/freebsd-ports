@@ -3,12 +3,8 @@
 
 PORTNAME=	qTox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.0
-PORTREVISION=	1
+DISTVERSION=	1.16.0
 CATEGORIES=	net-im net-p2p
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	441931765ffe.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt 5 based Tox client
@@ -47,9 +43,9 @@ PLATFORM_EXTENSIONS_CMAKE_BOOL=	PLATFORM_EXTENSIONS
 PLATFORM_EXTENSIONS_USE=	XORG=x11,xscrnsaver
 
 PLIST_FILES=	bin/qtox \
-		share/applications/qtox.desktop \
+		share/applications/io.github.qtox.qTox.desktop \
 		share/icons/hicolor/scalable/apps/qtox.svgz \
-		share/metainfo/qTox.appdata.xml
+		share/metainfo/io.github.qtox.qTox.appdata.xml
 .for SZ in 14 16 22 24 32 36 48 64 72 96 128 192 256 512
 PLIST_FILES+=	share/icons/hicolor/${SZ}x${SZ}/apps/qtox.png
 .endfor
@@ -61,10 +57,10 @@ PLIST_FILES+=	share/icons/hicolor/${SZ}x${SZ}/apps/qtox.png
 CFLAGS+=	-march=i586
 .endif
 
-.if !defined(GH_TAGNAME)
+.if !defined(DISTVERSIONSUFFIX)
 FULLVERSION=	${PKGVERSION}
 .else
-FULLVERSION=	"${PKGVERSION} (rev.${GH_TAGNAME})"
+FULLVERSION=	"${PKGVERSION} (rev.${DISTVERSIONSUFFIX:S/-g//})"
 .endif
 
 pre-everything::
@@ -74,6 +70,6 @@ pre-everything::
 
 pre-configure:
 	@${REINPLACE_CMD} '/Comment/s,=.*,=${COMMENT},' \
-		${WRKSRC}/qtox.desktop
+		${WRKSRC}/io.github.qtox.qTox.desktop
 
 .include <bsd.port.post.mk>
