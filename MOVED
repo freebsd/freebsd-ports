@@ -10321,3 +10321,4 @@ math/freemat||2018-07-03|Has expired: Complex, unmaintained software with obsole
 dns/bind99|dns/bind911|2018-07-04|Has expired: Going out of support, please migrate to dns/bind911
 dns/bind910|dns/bind911|2018-07-04|Has expired: Going out of support, please migrate to dns/bind911
 www/gitlab|www/gitlab-ce|2018-07-04|Port renamed to match name on gitlab.org
+devel/rubygem-oj2|devel/rubygem-oj|2018-07-04|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-oj instead.
