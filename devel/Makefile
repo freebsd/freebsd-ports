@@ -4477,6 +4477,7 @@
     SUBDIR += py-dill
     SUBDIR += py-dirspec
     SUBDIR += py-dis3
+    SUBDIR += py-distlib
     SUBDIR += py-distorm
     SUBDIR += py-django-rq
     SUBDIR += py-django-rq-dashboard
