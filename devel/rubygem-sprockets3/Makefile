@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sprockets
-PORTVERSION=	3.7.1
-PORTREVISION=	1
+PORTVERSION=	3.7.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	3
@@ -17,9 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
 		rubygem-rack16>=1.0:www/rubygem-rack16
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/sprockets
