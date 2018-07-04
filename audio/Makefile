@@ -441,6 +441,7 @@
     SUBDIR += libsidplayfp
     SUBDIR += libsmf
     SUBDIR += libsndfile
+    SUBDIR += libsonic
     SUBDIR += libsoxr
     SUBDIR += libtremor
     SUBDIR += libumidi
