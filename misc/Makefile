@@ -499,6 +499,7 @@
     SUBDIR += table.el
     SUBDIR += talkfilters
     SUBDIR += tcb
+    SUBDIR += tdfiglet
     SUBDIR += team
     SUBDIR += telbook
     SUBDIR += tellico-kde4
