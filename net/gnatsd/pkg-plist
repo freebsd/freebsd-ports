@@ -7,6 +7,7 @@ bin/gnatsd
 %%PORTDOCS%%%%DOCSDIR%%/configs/certs/key.pem
 %%PORTDOCS%%%%DOCSDIR%%/configs/certs/server.pem
 %%PORTDOCS%%%%DOCSDIR%%/configs/cluster.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/listen-1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen_port.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen_port_with_colon.conf
@@ -30,6 +31,7 @@ bin/gnatsd
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/srv_a_1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/srv_a_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/srv_a_3.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/reload/srv_a_4.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/srv_b_1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/srv_b_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/srv_c_1.conf
