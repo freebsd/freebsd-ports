@@ -3,7 +3,7 @@
 
 PORTNAME=	liboop
 PORTVERSION=	1.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	devel
 MASTER_SITES=	GENTOO \
 		http://download.ofb.net/liboop/

@@ -1,6 +1,6 @@
---- Library/src/SSL/HTSSL.c.orig	2000-08-03 16:17:20 UTC
+--- Library/src/SSL/HTSSL.c.orig	2018-07-04 23:30:19 UTC
 +++ Library/src/SSL/HTSSL.c
-@@ -187,12 +187,16 @@ PUBLIC BOOL HTSSL_init (void)
+@@ -214,12 +214,16 @@ PUBLIC BOOL HTSSL_init (void)
  
  	/* select the protocol method */
  	switch (ssl_prot_method) {
