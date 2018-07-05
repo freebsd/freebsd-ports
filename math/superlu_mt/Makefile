@@ -19,7 +19,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
-BROKEN_sparc64=		Does not link on sparc64
+BROKEN_powerpc64=	fails to build: pstest runs away and consumes all memory
+BROKEN_sparc64=		fails to link
 
 USES=		fortran gmake
 
