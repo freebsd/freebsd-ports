@@ -23,8 +23,10 @@
 
 name="%%GRAPHITEAPI_APP%%"
 rcvar="%%GRAPHITEAPI_APP%%_enable"
+desc="graphite-web rendering API"
 
-# defaults
+load_rc_config ${name}
+
 : ${graphiteapi_enable:="NO"}
 : ${graphiteapi_user="%%GRAPHITEAPI_USER%%"}
 : ${graphiteapi_group="%%GRAPHITEAPI_GROUP%%"}
@@ -32,21 +34,32 @@ rcvar="%%GRAPHITEAPI_APP%%_enable"
 : ${graphiteapi_config="%%ETCDIR%%/%%GRAPHITEAPI_APP%%.yaml"}
 : ${graphiteapi_flags="--workers 4"}
 
-# daemon
-command="%%PREFIX%%/bin/gunicorn"
 required_files="${graphiteapi_config}"
-command_args="graphite_api.app:app"
+
+command="%%PREFIX%%/bin/gunicorn-%%PYTHON_VER%%"
+procname="%%PYTHON_VERSION%%"
+
+pidfile="%%GRAPHITEAPI_PIDFILE%%"
+
+command_args="--daemon graphite_api.app:app"
 command_args="${command_args} --user ${graphiteapi_user} --group ${graphiteapi_group}"
 command_args="${command_args} --bind ${graphiteapi_address}"
-command_args="${command_args} --env TZ=UTC"
 command_args="${command_args} --env GRAPHITE_API_CONFIG=${graphiteapi_config}"
 command_args="${command_args} --pid %%GRAPHITEAPI_PIDFILE%%"
 command_args="${command_args} --worker-tmp-dir %%GRAPHITEAPI_TMPDIR%%"
 command_args="${command_args} --error-logfile %%GRAPHITEAPI_LOGDIR%%/error.log"
 command_args="${command_args} --access-logfile %%GRAPHITEAPI_LOGDIR%%/access.log"
 
-# support SIGHUP to reload configuration file
 extra_commands="reload"
+start_precmd="start_precmd"
 
-load_rc_config $name
+start_precmd()
+{
+    test -d "%%GRAPHITEAPI_LOGDIR%%" || install -d -o
+    ${graphiteapi_user} \
+        -g ${graphiteapi_group} -m 0750 "%%GRAPHITEAPI_LOGDIR%%"
+    test -d "%%GRAPHITEAPI_TMPDIR%%" || install -d -o ${graphiteapi_user} \
+        -g ${graphiteapi_group} -m 0750 "%%GRAPHITEAPI_TMPDIR%%"
+}
+
 run_rc_command "$1"
