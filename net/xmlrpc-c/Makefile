@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlrpc-c
 PORTVERSION=	1.39.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Xmlrpc-c%20Super%20Stable/${PORTVERSION}
 
@@ -31,7 +31,9 @@ USE_LDCONFIG=	yes
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ENABLE=	curl-client
-LIBWWW_LIB_DEPENDS=	libwwwcore.so:www/libwww
+LIBWWW_USES=	ssl
+LIBWWW_LIB_DEPENDS=	libwwwcore.so:www/libwww \
+		libexpat.so:textproc/expat2
 LIBWWW_CONFIGURE_ENABLE=libwww-client
 LIBWWW_CONFIGURE_WITH=	libwww-ssl
 CPLUSPLUS_CONFIGURE_ENABLE=	cplusplus
