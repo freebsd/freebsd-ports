@@ -30,6 +30,7 @@ USE_PERL5=	run
 SHEBANG_FILES=	opendkim/opendkim-genkey* reputation/opendkim-* stats/opendkim-* \
 		reprrd/opendkim-reprrdimport*
 USE_LDCONFIG=	yes
+TEST_TARGET=	check  # XXX: 1 of 30 tests fails
 
 PORTDOCS=	*
 
@@ -164,19 +165,14 @@ pre-configure:
 	    -e '/PKG_CONFIG/s/cyrussasl/libsasl2/'			 \
 	    ${WRKSRC}/configure
 
-post-patch:
-.if ${PORT_OPTIONS:MLCOV}
+post-patch-LCOV-on:
 	${CP} ${FILESDIR}/lcov-helper.sh ${WRKSRC}/libopendkim/tests/
 	${CP} ${FILESDIR}/lcov-helper.sh ${WRKSRC}/opendkim/tests/
 	${FIND} ${WRKSRC} -type f -name \*-helper.sh -exec ${CHMOD} 755 {} +
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
 	${INSTALL_DATA} ${WRKSRC}/opendkim/opendkim.conf.sample \
 	    ${STAGEDIR}${PREFIX}/etc/mail/
-
-regression-test: build
-	cd ${WRKSRC} ; ${MAKE} check
 
 .include <bsd.port.mk>
