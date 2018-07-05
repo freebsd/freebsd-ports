@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.22
-PORTREVISION=	10
+PORTVERSION=	0.0.23
 CATEGORIES=	games
 MASTER_SITES=	http://releases.wildfiregames.com/ \
 		SF/zero-ad/releases
@@ -24,13 +23,14 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libminiupnpc.so:net/miniupnpc \
 		libnspr4.so:devel/nspr \
 		libenet.so:net/enet \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libsodium.so:security/libsodium
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
-MAKE_ARGS=	config=release
+MAKE_ARGS=	config=release verbose=1
 CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
-USES=		compiler:c++11-lib dos2unix gmake iconv jpeg openal:al \
+USES=		compiler:c++11-lib desktop-file-utils dos2unix gmake iconv jpeg openal:al \
 		pkgconfig python:build tar:xz
 USE_GNOME=	libxml2 gtk20
 USE_GL=		gl
@@ -40,7 +40,7 @@ BUNDLE_LIBS=	yes
 DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
-USE_WX=		2.8+
+USE_WX=		3.0+
 WX_COMPS=	wx:lib
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 
@@ -56,28 +56,26 @@ PORTDATA=	*
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 			-e 's|%%CC%%|${CC}|' \
-		${WRKSRC}/build/premake/premake4.lua
+		${WRKSRC}/build/premake/premake5.lua ${WRKSRC}/build/premake/extern_libs5.lua
 .if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == gcc
 	@${REINPLACE_CMD} -e '1055,1251s/-rdynamic/-lssp_nonshared &/' \
 			-e '1441s/"execinfo",/& "ssp_nonshared",/' \
-		${WRKSRC}/build/premake/premake4.lua
+		${WRKSRC}/build/premake/premake5.lua
 .endif
 	@${REINPLACE_CMD} 's,^\(Exec=\)/usr/local,\1${PREFIX},' \
 		${WRKSRC}/build/resources/0ad.desktop
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
 		${WRKSRC}/build/resources/0ad.sh
-	@${CP} ${FILESDIR}/psutil.diff ${WRKSRC}/libraries/source/spidermonkey/
 
 pre-build:
-	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh ${0ADSDLARG} --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/pyrogenesis ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/build/resources/0ad.sh ${STAGEDIR}${PREFIX}/bin/0ad
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/ActorEditor ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
-	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libmozjs38-ps-release.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libmozjs38-ps-release.so libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DATADIR}

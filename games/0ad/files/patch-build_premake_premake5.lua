@@ -1,7 +1,7 @@
---- build/premake/premake4.lua.orig	2017-07-06 17:29:49 UTC
-+++ build/premake/premake4.lua
-@@ -388,11 +388,11 @@ function project_add_x11_dirs()
- 		includedirs {
+--- build/premake/premake5.lua.orig	2018-04-22 18:14:45 UTC
++++ build/premake/premake5.lua
+@@ -376,11 +376,11 @@ function project_add_x11_dirs()
+ 		sysincludedirs {
  			"/usr/X11R6/include/X11",
  			"/usr/X11R6/include",
 -			"/usr/local/include/X11",
