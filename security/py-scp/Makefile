@@ -6,7 +6,7 @@ CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sergey@akhmatov.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scp module for paramiko
 
 LICENSE=	LGPL21+
