@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.12.0
-PORTREVISION=	20180427
+PORTVERSION=	2.13.0
+PORTREVISION=	20180622
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-riscv
 
@@ -17,15 +17,15 @@ BROKEN_powerpc64=	fails to compile: async.c: internal compiler error: Segmentati
 USES=	gmake libtool makeinfo pkgconfig python:2.7,build
 
 USE_GITHUB=	yes
-GH_TUPLE=	riscv:riscv-qemu:ad8989a \
+GH_TUPLE=	riscv:riscv-qemu:360a780 \
 		qemu:dtc:e543880:dtc/dtc \
 		qemu:keycodemapdb:6b3d716:keycodemapdb/ui/keycodemapdb
 
 HAS_CONFIGURE=	yes
 USE_XORG=	pixman
-USE_GNOME+=	glib20
+USE_GNOME=	glib20
 
-CONFIGURE_ARGS+=--target-list=riscv64-softmmu,riscv32-softmmu \
+CONFIGURE_ARGS=--target-list=riscv64-softmmu,riscv32-softmmu \
 		--cc=${CC} \
 		--enable-fdt \
 		--disable-curl \
