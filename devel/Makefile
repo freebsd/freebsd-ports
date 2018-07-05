@@ -2684,6 +2684,7 @@
     SUBDIR += p5-Goo-Canvas2
     SUBDIR += p5-Google-Checkout
     SUBDIR += p5-Google-ProtocolBuffers
+    SUBDIR += p5-GraphQL
     SUBDIR += p5-Gravatar-URL
     SUBDIR += p5-Gtk2-Notify
     SUBDIR += p5-Gtk2-Spell
