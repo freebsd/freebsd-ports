@@ -15,6 +15,7 @@ lib/hevea/cleveref.hva
 lib/hevea/comment.hva
 lib/hevea/compat.hva
 lib/hevea/contents_motif.gif
+lib/hevea/contents_motif.svg
 lib/hevea/crlang.hva
 lib/hevea/czech.hva
 lib/hevea/deepcut.hva
@@ -119,10 +120,12 @@ lib/hevea/multibib.hva
 lib/hevea/multind.hva
 lib/hevea/natbib-common.hva
 lib/hevea/next_motif.gif
+lib/hevea/next_motif.svg
 lib/hevea/packages.hva
 lib/hevea/plain.hva
 lib/hevea/portuguese.hva
 lib/hevea/previous_motif.gif
+lib/hevea/previous_motif.svg
 lib/hevea/program.hva
 lib/hevea/ragged2e.hva
 lib/hevea/spaces.hva
