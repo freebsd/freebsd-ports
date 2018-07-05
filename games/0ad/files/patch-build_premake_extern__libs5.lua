@@ -1,16 +1,16 @@
---- build/premake/extern_libs4.lua.orig	2015-11-19 23:47:41 UTC
-+++ build/premake/extern_libs4.lua
-@@ -237,7 +237,7 @@ extern_lib_defs = {
+--- build/premake/extern_libs5.lua.orig	2018-04-29 15:44:48 UTC
++++ build/premake/extern_libs5.lua
+@@ -191,7 +191,7 @@ extern_lib_defs = {
  			end
  			-- TODO: This actually applies to most libraries we use on BSDs, make this a global setting.
- 			if os.is("bsd") then
--				includedirs { "/usr/local/include" }
-+				includedirs { "%%LOCALBASE%%/include" }
+ 			if os.istarget("bsd") then
+-				sysincludedirs { "/usr/local/include" }
++				sysincludedirs { "%%LOCALBASE%%/include" }
  			end
  		end,
  		link_settings = function()
-@@ -347,9 +347,6 @@ extern_lib_defs = {
- 			elseif os.is("macosx") then
+@@ -301,9 +301,6 @@ extern_lib_defs = {
+ 			elseif os.istarget("macosx") then
  				add_default_include_paths("iconv")
  				defines { "LIBICONV_STATIC" }
 -			elseif os.getversion().description == "FreeBSD" then
