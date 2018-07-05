@@ -34,7 +34,8 @@ CONFIGURE_ARGS=	--with-external-db \
 		--sysconfdir=${PREFIX}/etc \
 		--localstatedir=/var \
 		--without-javaglue \
-		am_cv_python_version=${PYTHON_VER}${PYTHON_ABIVER}
+		am_cv_python_version=${PYTHON_VER}${PYTHON_ABIVER} \
+		ac_cv_lib_elf_gelf_getvernaux=no  # otherwise fails to build in presence of devel/elfutils
 CONFIGURE_ENV=	LUA_CFLAGS=-I${LUA_INCDIR} \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 INSTALL_TARGET=	install-strip
