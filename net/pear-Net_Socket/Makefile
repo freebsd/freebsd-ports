@@ -8,6 +8,9 @@ CATEGORIES=	net www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Network Socket Interface
 
+LICENSE=	PHP202
+
 USES=		pear
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
