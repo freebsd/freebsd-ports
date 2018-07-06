@@ -2,7 +2,7 @@
 
 PORTNAME=	gmic
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.3.2
+DISTVERSION=	2.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://gmic.eu/:gmic_stdlib
 DISTFILES=	gmic_stdlib.h:gmic_stdlib
