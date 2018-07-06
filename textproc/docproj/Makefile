@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -21,32 +21,36 @@ RUN_DEPENDS=	links:www/links1 \
 		docbook>0:textproc/docbook \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:textproc/xmlcharent \
 		p5-XML-Parser>=2.41:textproc/p5-XML-Parser \
-		zip:archivers/zip \
-		groff:textproc/groff
+		zip:archivers/zip
 
 USES=		ghostscript:run metaport perl5
 USE_PERL5=	run
 
-OPTIONS_DEFINE=		DBLATEX CJK FOP IGOR JING SVN TRANSLATOR
-OPTIONS_DEFAULT=	        CJK     IGOR          TRANSLATOR
+OPTIONS_DEFINE=		CJK DBLATEX FOP GROFF IGOR JING SVN TRANSLATOR
+OPTIONS_DEFAULT=	CJK		      IGOR          TRANSLATOR
+.if !exists(/usr/bin/groff)
+OPTIONS_DEFAULT+=	GROFF
+.endif
 .if !exists(/usr/bin/svnlite)
 OPTIONS_DEFAULT+=	SVN
 .endif
+
 CJK_DESC=		CJK support
 CJK_RUN_DEPENDS=	html2text:textproc/html2text
-SVN_DESC=		Subversion support (required to check out sources)
-SVN_RUN_DEPENDS=	svn:devel/subversion
-IGOR_DESC=		Igor automated proofreader for documentation
-IGOR_RUN_DEPENDS=	igor:textproc/igor
+DBLATEX_DESC=		dblatex PDF renderer (experimental, requires TeXLive)
+DBLATEX_RUN_DEPENDS=	dblatex:textproc/dblatex \
+DBLATEX_USE=		TEX=xetex
 FOP_DESC=		FOP PDF renderer (requires Java)
 FOP_RUN_DEPENDS=	fop:textproc/fop \
 			${FONTS}
+GROFF_DESC=		Groff support from ports
+GROFF_RUN_DEPENDS=	${LOCALBASE}/bin/groff:textproc/groff
+IGOR_DESC=		Igor automated proofreader for documentation
+IGOR_RUN_DEPENDS=	igor:textproc/igor
 JING_DESC=		Jing for advanced RELAX NG validation
 JING_RUN_DEPENDS=	jing:textproc/jing
-DBLATEX_DESC=		dblatex PDF renderer (experimental, requires TeXLive)
-DBLATEX_RUN_DEPENDS=	dblatex:textproc/dblatex \
-			${FONTS}
-DBLATEX_USE=		TEX=xetex
+SVN_DESC=		Subversion support from ports
+SVN_RUN_DEPENDS=	svn:devel/subversion
 TRANSLATOR_DESC=	Tools for translators
 TRANSLATOR_RUN_DEPENDS=	itstool:textproc/itstool \
 			msgcat:devel/gettext-tools
