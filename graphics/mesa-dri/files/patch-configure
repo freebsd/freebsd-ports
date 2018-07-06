@@ -51,22 +51,6 @@
      dri3_default=yes
      ;;
  *)
-@@ -26765,13 +26765,13 @@
-     have_vdpau_platform=no
- fi
- 
--if echo $platforms | grep -q "x11\|drm"; then
-+if echo $platforms | egrep -q "x11|drm"; then
-     have_omx_platform=yes
- else
-     have_omx_platform=no
- fi
- 
--if echo $platforms | grep -q "x11\|drm\|wayland"; then
-+if echo $platforms | egrep -q "x11|drm|wayland"; then
-     have_va_platform=yes
- else
-     have_va_platform=no
 @@ -27096,9 +27106,6 @@ rm -f core conftest.err conftest.$ac_obj
          CLANG_LIBDIR=${LLVM_LIBDIR}
      fi
