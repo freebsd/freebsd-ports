@@ -47,7 +47,9 @@
     SUBDIR += kicad
     SUBDIR += kicad-devel
     SUBDIR += kicad-library
-    SUBDIR += kicad-library-devel
+    SUBDIR += kicad-library-footprints-devel
+    SUBDIR += kicad-library-packages3d-devel
+    SUBDIR += kicad-library-symbols-devel
     SUBDIR += klayout
     SUBDIR += layouteditor
     SUBDIR += ldraw
