@@ -4,7 +4,7 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_P3D_DATE}
 CATEGORIES=	cad
-PKGNAMESUFFIX=	-library-devel
+PKGNAMESUFFIX=	-library-packages3d-devel
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Official KiCad 3D model libraries for rendering and MCAD integration

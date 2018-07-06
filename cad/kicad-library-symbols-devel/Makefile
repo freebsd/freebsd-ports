@@ -4,7 +4,7 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SYM_DATE}
 CATEGORIES=	cad
-PKGNAMESUFFIX=	-library-devel
+PKGNAMESUFFIX=	-library-symbols-devel
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Official KiCad schematic symbol libraries for the future Kicad 5 release
