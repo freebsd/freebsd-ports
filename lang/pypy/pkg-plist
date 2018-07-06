@@ -22,6 +22,7 @@ bin/pypy
 %%PYPY_DIR%%/include/code.h
 %%PYPY_DIR%%/include/compile.h
 %%PYPY_DIR%%/include/complexobject.h
+%%PYPY_DIR%%/include/cpyext_datetime.h
 %%PYPY_DIR%%/include/cpyext_descrobject.h
 %%PYPY_DIR%%/include/cpyext_memoryobject.h
 %%PYPY_DIR%%/include/cpyext_object.h
