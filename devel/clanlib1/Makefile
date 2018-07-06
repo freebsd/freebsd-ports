@@ -27,6 +27,8 @@ USE_LDCONFIG=	yes
 USE_SDL=	gfx
 USE_GL=		gl glu
 
+CXXFLAGS+=	-Wno-c++11-narrowing
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs \
 		--enable-clanDisplay \
