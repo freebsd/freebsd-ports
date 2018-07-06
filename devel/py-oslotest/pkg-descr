@@ -1,0 +1,4 @@
+The Oslo Test framework provides common fixtures, support for debugging, and
+better support for mocking results.
+
+WWW: https://docs.openstack.org/oslotest/
