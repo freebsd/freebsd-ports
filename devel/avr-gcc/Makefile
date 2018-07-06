@@ -57,6 +57,11 @@ BROKEN_mips64=		Fails to configure: cannot compute suffix of object files
 ARCH=		x86_64
 .endif
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f \( -name '*.[ch]' -o -name '*.cc' \) | \
+		${XARGS} ${EGREP} -l '"(HOST_WIDE|PLUGIN_COND|PRId64)' | \
+		${XARGS} ${REINPLACE_CMD} -E -e 's/"(HOST_WIDE|PLUGIN_COND|PRId64)/" \1/g'
+
 post-configure:
 	${MKDIR} ${WRKSRC}/gcc/include
 
