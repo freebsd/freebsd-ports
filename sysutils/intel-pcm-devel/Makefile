@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	intel-pcm
-DISTVERSION=	g20180319
+DISTVERSION=	20180620
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -12,6 +12,8 @@ COMMENT=	Process Count Monitor (PCM) for Intel processors
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+PORTSCOUT=	ignore
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		gmake
@@ -19,7 +21,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	opcm
 GH_PROJECT=	pcm
-GH_TAGNAME=	e7e3dcc
+GH_TAGNAME=	7f211c9
 
 CONFLICTS_INSTALL=	intel-pcm
 
