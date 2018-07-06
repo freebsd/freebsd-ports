@@ -53,8 +53,8 @@ share/irssi/scripts/bitlbee_typing_notice.pl
 share/irssi/scripts/blowjob.pl
 share/irssi/scripts/bmi.pl
 share/irssi/scripts/calc.pl
-share/irssi/scripts/cap_sasl.pl
 share/irssi/scripts/callerid.pl
+share/irssi/scripts/cap_sasl.pl
 share/irssi/scripts/centericq.pl
 share/irssi/scripts/cgrep.pl
 share/irssi/scripts/challenge.pl
@@ -170,9 +170,9 @@ share/irssi/scripts/linkchan.pl
 share/irssi/scripts/listen.pl
 share/irssi/scripts/loadavg.pl
 share/irssi/scripts/localize.pl
-share/irssi/scripts/logresume.pl
 share/irssi/scripts/log2ansi.pl
 share/irssi/scripts/logcompress.pl
+share/irssi/scripts/logresume.pl
 share/irssi/scripts/ls.pl
 share/irssi/scripts/mailcheck_imap.pl
 share/irssi/scripts/mailcheck_mbox_flux.pl
@@ -242,8 +242,8 @@ share/irssi/scripts/poison.pl
 share/irssi/scripts/postpone.pl
 share/irssi/scripts/ppl.pl
 share/irssi/scripts/q_username.pl
-share/irssi/scripts/query.pl
 share/irssi/scripts/query-connection-notifier.pl
+share/irssi/scripts/query.pl
 share/irssi/scripts/queryresume.pl
 share/irssi/scripts/quiet.pl
 share/irssi/scripts/quitrand.pl
@@ -320,9 +320,9 @@ share/irssi/scripts/users.pl
 share/irssi/scripts/version-stat.pl
 share/irssi/scripts/verstats.pl
 share/irssi/scripts/vowels.pl
+share/irssi/scripts/warnkick.pl
 share/irssi/scripts/washnicks.pl
 share/irssi/scripts/watch.pl
-share/irssi/scripts/warnkick.pl
 share/irssi/scripts/whitelist.pl
 share/irssi/scripts/whois.pl
 share/irssi/scripts/whos.pl
