@@ -1216,6 +1216,7 @@ lib/calibre/calibre/srv/cdb.py
 lib/calibre/calibre/srv/changes.py
 lib/calibre/calibre/srv/code.py
 lib/calibre/calibre/srv/content.py
+lib/calibre/calibre/srv/convert.py
 lib/calibre/calibre/srv/embedded.py
 lib/calibre/calibre/srv/errors.py
 lib/calibre/calibre/srv/handler.py
