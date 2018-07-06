@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Python package that provides useful locks
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}monotonic>=0.1:devel/py-monotonic@${PY_FLAVOR}
 
