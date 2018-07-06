@@ -4,7 +4,7 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_FP_DATE}
 CATEGORIES=	cad
-PKGNAMESUFFIX=	-library-devel
+PKGNAMESUFFIX=	-library-footprints-devel
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Official KiCad Footprint Libraries for the future Kicad version 5
