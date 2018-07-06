@@ -34,6 +34,7 @@
     SUBDIR += cclive
     SUBDIR += cheese
     SUBDIR += chilitags
+    SUBDIR += cinelerra-gg
     SUBDIR += clipgrab
     SUBDIR += clive
     SUBDIR += clutter-gst
