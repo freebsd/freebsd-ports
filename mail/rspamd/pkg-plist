@@ -158,6 +158,8 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/languages/vi.json
 %%DATADIR%%/languages/yi.json
 %%DATADIR%%/languages/zh-CN.json
+%%DATADIR%%/lib/ansicolors.lua
+%%DATADIR%%/lib/argparse.lua
 %%DATADIR%%/lib/fun.lua
 %%DATADIR%%/lib/global_functions.lua
 %%DATADIR%%/lib/lua_auth_results.lua
@@ -169,17 +171,17 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lib/lua_redis.lua
 %%DATADIR%%/lib/lua_stat.lua
 %%DATADIR%%/lib/lua_util.lua
-%%DATADIR%%/lib/rspamadm/ansicolors.lua
+%%DATADIR%%/lib/plugins_stats.lua
+%%DATADIR%%/lib/rescore_utility.lua
 %%DATADIR%%/lib/rspamadm/confighelp.lua
 %%DATADIR%%/lib/rspamadm/configwizard.lua
 %%DATADIR%%/lib/rspamadm/corpus_test.lua
 %%DATADIR%%/lib/rspamadm/fuzzy_convert.lua
 %%DATADIR%%/lib/rspamadm/fuzzy_stat.lua
-%%DATADIR%%/lib/rspamadm/getopt.lua
 %%DATADIR%%/lib/rspamadm/grep.lua
-%%DATADIR%%/lib/rspamadm/plugins_stats.lua
+%%DATADIR%%/lib/rspamadm/mime.lua
+%%DATADIR%%/lib/rspamadm/keypair.lua
 %%DATADIR%%/lib/rspamadm/rescore.lua
-%%DATADIR%%/lib/rspamadm/rescore_utility.lua
 %%DATADIR%%/lib/rspamadm/stat_convert.lua
 %%TORCH%%%%DATADIR%%/lib/decisiontree/CartNode.lua
 %%TORCH%%%%DATADIR%%/lib/decisiontree/CartTrainer.lua
@@ -518,9 +520,9 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/lib/footable.min.js
 %%DATADIR%%/www/js/lib/humanize.min.js
 %%DATADIR%%/www/js/lib/jquery-3.3.1.min.js
+%%DATADIR%%/www/js/lib/require.min.js
 %%DATADIR%%/www/js/lib/visibility.min.js
 %%DATADIR%%/www/js/main.js
-%%DATADIR%%/www/js/require.js
 %%DATADIR%%/www/plugins.txt
 %%DATADIR%%/www/react-index.html
 @owner nobody

@@ -1,5 +1,5 @@
---- contrib/torch/torch7/lib/TH/CMakeLists.txt.orig	2018-03-12 16:46:32 UTC
-+++ contrib/torch/torch7/lib/TH/CMakeLists.txt
+--- contrib/lua-torch/torch7/lib/TH/CMakeLists.txt.orig	2018-06-16 00:02:13 UTC
++++ contrib/lua-torch/torch7/lib/TH/CMakeLists.txt
 @@ -230,22 +230,26 @@ ELSE()
    ENDIF()
  ENDIF()
