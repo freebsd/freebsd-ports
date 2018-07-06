@@ -15,6 +15,7 @@ bin/pypy3
 %%PYPY_DIR%%/include/code.h
 %%PYPY_DIR%%/include/compile.h
 %%PYPY_DIR%%/include/complexobject.h
+%%PYPY_DIR%%/include/cpyext_datetime.h
 %%PYPY_DIR%%/include/cpyext_descrobject.h
 %%PYPY_DIR%%/include/cpyext_genobject.h
 %%PYPY_DIR%%/include/cpyext_memoryobject.h
@@ -2090,6 +2091,7 @@ bin/pypy3
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/openssl/pem.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/openssl/pkcs12.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/openssl/pkcs7.py
+%%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/openssl/pypy_win32_extra.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/openssl/rand.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/openssl/rsa.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/openssl/src/osrandom_engine.c
@@ -2106,6 +2108,7 @@ bin/pypy3
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_stdssl/error.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_stdssl/errorcodes.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_stdssl/utility.py
+%%PYPY_DIR%%/lib_pypy/_cffi_ssl/_stdssl/win32_extra.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/osx-roots.diff
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/tools/make_ssl_data.py
 %%PYPY_DIR%%/lib_pypy/_codecs_cn.py
