@@ -4781,6 +4781,7 @@
     SUBDIR += py-oslo.utils
     SUBDIR += py-oslo.versionedobjects
     SUBDIR += py-oslo.vmware
+    SUBDIR += py-oslotest
     SUBDIR += py-osprofiler
     SUBDIR += py-p4python
     SUBDIR += py-packaging
