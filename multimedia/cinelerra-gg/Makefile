@@ -1,0 +1,82 @@
+# $FreeBSD$
+
+PORTNAME=	cinelerra-gg
+DISTVERSION=	5.1-20180705
+DISTVERSIONSUFFIX=	-${REV:C/(.......).*/\1/}
+CATEGORIES=	multimedia
+MASTER_SITES=	https://git.cinelerra-cv.org/gitweb?p=goodguy/cinelerra.git;a=snapshot;h=${REV};sf=tgz;dummy=/ # tarballs are @ https://cinelerra-cv.org/five/pkgs/src/
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Professional video editing and compositing environment
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${BUILD_WRKSRC}/COPYING
+
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	not designed for other architectures
+
+BUILD_DEPENDS=	bash:shells/bash \
+		nasm:devel/nasm \
+		yasm:devel/yasm \
+		${LOCALBASE}/include/libdv/dv.h:multimedia/libdv \
+		${LOCALBASE}/include/mjpegtools/yuv4mpeg.h:multimedia/mjpegtools
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libasound.so:audio/alsa-lib \
+		libavcodec.so:multimedia/ffmpeg \
+		libfftw3.so:math/fftw3 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgif.so:graphics/giflib \
+		libogg.so:audio/libogg \
+		libopenjp2.so:graphics/openjpeg \
+		libopus.so:audio/opus \
+		libpng16.so:graphics/png \
+		libsndfile.so:audio/libsndfile \
+		libtheoraenc.so:multimedia/libtheora \
+		libtiff.so:graphics/tiff \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libvorbis.so:audio/libvorbis \
+		libvpx.so:multimedia/libvpx \
+		libwebp.so:graphics/webp \
+		libx264.so:multimedia/libx264 \
+		libx265.so:multimedia/x265
+RUN_DEPENDS=	bash:shells/bash
+
+EXTRA_PATCHES=	${BUILD_WRKSRC}/bsd.patch:-p1
+
+REV=		34dd3a28727fc230ba5abbed50766d671a2b8055 # git revision
+
+USES=		autoreconf gettext-runtime gettext-tools gmake iconv:wchar_t jpeg localbase makeinfo shebangfix
+SHEBANG_GLOB=	*.sh *.bld
+GNU_CONFIGURE=	yes
+USE_XORG=	x11 xau xdmcp xext xfixes xft xinerama xv
+
+MAKE_ENV=	C_INCLUDE_PATH=${LOCALBASE}/include CPLUS_INCLUDE_PATH=${LOCALBASE}/include LIBRARY_PATH=${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-static-build --without-lv2 --disable-lame --disable-twolame \
+		--with-oss --without-alsa \
+		--without-gl --without-firewire --without-dv --without-dvb \
+		--without-video4linux2 --without-xxf86vm --without-ladspa-build \
+		--without-libzmpeg --without-commercial --without-thirdparty
+CFLAGS+=	-DFFMPEG3
+BINARY_ALIAS=	make=gmake
+
+WRKSRC=			${WRKDIR}/cinelerra-${REV:C/(.......).*/\1/}
+AUTORECONF_WRKSRC=	${BUILD_WRKSRC}
+CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
+BUILD_WRKSRC=		${WRKSRC}/cinelerra-${DISTVERSION:C/-.*//}
+INSTALL_WRKSRC=		${BUILD_WRKSRC}
+
+DATADIR=		${PREFIX}/share/cin
+
+post-patch:
+	# the patch recommended by the upstream
+	@cd ${CONFIGURE_WRKSRC}/ffmpeg && \
+		for f in `grep -lr libfdk_ .`; do ${REINPLACE_CMD} -e 's/libfdk_//' -i '' $$f; done;
+	# correct the bash interpreter path
+	@cd ${CONFIGURE_WRKSRC}/cinelerra && ${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
+		../configure.ac bdcreate.C dvdcreate.C shbtnprefs.C
+
+do-configure: # configure needs bash
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/bash configure ${CONFIGURE_ARGS}
+
+.include <bsd.port.mk>
