@@ -2112,7 +2112,7 @@ lib/python%%XYDOT%%/ensurepip/__pycache__/__main__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-9.0.3-py2.py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-10.0.1-py2.py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-39.0.1-py2.py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
@@ -2424,6 +2424,9 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_browser.cpython-%%XY%%.py
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_calltips.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_calltips.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_calltips.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_codecontext.cpython-36.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_codecontext.cpython-36.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_codecontext.cpython-36.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_colorizer.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_colorizer.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_colorizer.cpython-%%XY%%.pyc
@@ -2536,6 +2539,7 @@ lib/python%%XYDOT%%/idlelib/idle_test/test_autocomplete.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_autoexpand.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_browser.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_calltips.py
+lib/python%%XYDOT%%/idlelib/idle_test/test_codecontext.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_colorizer.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_config.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_config_key.py
@@ -2716,10 +2720,10 @@ lib/python%%XYDOT%%/lib-dynload/termios.so
 lib/python%%XYDOT%%/lib-dynload/unicodedata.so
 %%NO_DEBUG%%lib/python%%XYDOT%%/lib-dynload/xxlimited.so
 lib/python%%XYDOT%%/lib-dynload/zlib.so
-lib/python%%XYDOT%%/lib2to3/Grammar.txt
 lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.final.0.pickle
-lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
+lib/python%%XYDOT%%/lib2to3/Grammar.txt
 lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.final.0.pickle
+lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
 lib/python%%XYDOT%%/lib2to3/__init__.py
 lib/python%%XYDOT%%/lib2to3/__main__.py
 lib/python%%XYDOT%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
@@ -3535,6 +3539,9 @@ lib/python%%XYDOT%%/test/__pycache__/test_base64.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_baseexception.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_baseexception.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_baseexception.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/test_bdb.cpython-36.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/test_bdb.cpython-36.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/test_bdb.cpython-36.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_bigaddrspace.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_bigaddrspace.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_bigaddrspace.cpython-%%XY%%.pyc
@@ -5021,6 +5028,9 @@ lib/python%%XYDOT%%/test/libregrtest/__pycache__/save_env.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/libregrtest/__pycache__/setup.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/libregrtest/__pycache__/setup.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/libregrtest/__pycache__/setup.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/libregrtest/__pycache__/utils.cpython-36.opt-1.pyc
+lib/python%%XYDOT%%/test/libregrtest/__pycache__/utils.cpython-36.opt-2.pyc
+lib/python%%XYDOT%%/test/libregrtest/__pycache__/utils.cpython-36.pyc
 lib/python%%XYDOT%%/test/libregrtest/cmdline.py
 lib/python%%XYDOT%%/test/libregrtest/main.py
 lib/python%%XYDOT%%/test/libregrtest/refleak.py
@@ -5028,6 +5038,7 @@ lib/python%%XYDOT%%/test/libregrtest/runtest.py
 lib/python%%XYDOT%%/test/libregrtest/runtest_mp.py
 lib/python%%XYDOT%%/test/libregrtest/save_env.py
 lib/python%%XYDOT%%/test/libregrtest/setup.py
+lib/python%%XYDOT%%/test/libregrtest/utils.py
 lib/python%%XYDOT%%/test/list_tests.py
 lib/python%%XYDOT%%/test/lock_tests.py
 lib/python%%XYDOT%%/test/mailcap.txt
@@ -5222,6 +5233,7 @@ lib/python%%XYDOT%%/test/test_audioop.py
 lib/python%%XYDOT%%/test/test_augassign.py
 lib/python%%XYDOT%%/test/test_base64.py
 lib/python%%XYDOT%%/test/test_baseexception.py
+lib/python%%XYDOT%%/test/test_bdb.py
 lib/python%%XYDOT%%/test/test_bigaddrspace.py
 lib/python%%XYDOT%%/test/test_bigmem.py
 lib/python%%XYDOT%%/test/test_binascii.py
