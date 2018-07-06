@@ -18,6 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-PORTSCOUT=	ignore:2.200002
+PORTSCOUT=	skipv:2.200002
 
 .include <bsd.port.mk>
