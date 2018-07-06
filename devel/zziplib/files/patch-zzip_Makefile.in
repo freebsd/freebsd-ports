@@ -1,6 +1,6 @@
---- zzip/Makefile.in.orig	2010-05-20 16:46:22.000000000 +0200
-+++ zzip/Makefile.in	2010-05-20 16:47:02.000000000 +0200
-@@ -694,7 +694,6 @@
+--- zzip/Makefile.in.orig	2018-03-16 11:43:07 UTC
++++ zzip/Makefile.in
+@@ -826,7 +826,6 @@ install-dvi-am:
  
  install-exec-am: install-libLTLIBRARIES
  	@$(NORMAL_INSTALL)
