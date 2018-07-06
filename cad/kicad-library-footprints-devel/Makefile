@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-DISTVERSION=	r${GIT_SRC_DATE}
+DISTVERSION=	r${GIT_FP_DATE}
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-library-devel
 
 MAINTAINER=	mr@FreeBSD.org
-COMMENT=	Schematic and 3D libraries supported by KiCad team
+COMMENT=	Official KiCad Footprint Libraries for the future Kicad version 5
 
 LICENSE=	GPLv2
 
@@ -17,10 +17,16 @@ CONFLICTS=	kicad-4.*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KiCad
-GH_PROJECT=	kicad-library
-GH_TAGNAME=	758be27c7697b7ce3d4e0d6c9bb32fb6ff962a32
+GH_PROJECT=	kicad-footprints
+GH_TAGNAME=	${GIT_FP_HASH}
 
 USES=		cmake
+
+CMAKE_ARGS=     -DLOCALBASE="${LOCALBASE}" \
+		-DCMAKE_BUILD_TYPE="Release" \
+		-DKICAD_TESTING_VERSION=ON \
+		-DKICAD_BUILD_VERSION=${DISTVERSION}
+INSTALL_TARGET=	install
 
 NO_ARCH=	yes
 

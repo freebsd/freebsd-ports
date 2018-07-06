@@ -1,8 +1,0 @@
-This port installs the official schematic and 3D libraries supported by the
-KiCad library team.
-
-The footprint libraries are the *.pretty repos themselves and are used online by
-default. If you want to download them locally, the library-repos-install.bat and
-library-repos-install.sh scripts in the KiCad source can do this automatically.
-
-WWW: https://github.com/KiCad/kicad-library
