@@ -1,6 +1,6 @@
---- configure.orig	2012-03-11 23:21:53.000000000 +0900
-+++ configure	2012-03-12 17:46:25.000000000 +0900
-@@ -11452,7 +11452,7 @@
+--- configure.orig	2018-03-15 22:54:37 UTC
++++ configure
+@@ -13077,7 +13077,7 @@ $as_echo_n "checking out linker version 
    if test "_$MICRO_VERSION" = "_" ; then MICRO_VERSION="0" ; fi
    if test "_$MINOR_VERSION" = "_" ; then MINOR_VERSION="$MAJOR_VERSION" ; MAJOR_VERSION="0" ; fi
    MINOR_VERSION=`echo "$MINOR_VERSION" | sed -e 's/[^0-9].*//'`
@@ -9,7 +9,7 @@
    VERSION_INFO="-version-info $MINOR_VERSION:$MICRO_VERSION"
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: /$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&5
  $as_echo "/$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&6; }
-@@ -13733,12 +13733,12 @@
+@@ -15430,12 +15430,12 @@ case "$host_os" in mingw*)
  ;; *)
      if test ".$can_build_shared" != ".no" ; then
        ZZIPLIB_LDFLAGS="-export-dynamic"
