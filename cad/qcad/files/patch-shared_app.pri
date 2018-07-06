@@ -1,6 +1,12 @@
---- shared_app.pri.orig	2015-11-28 16:39:25.396369000 +0000
-+++ shared_app.pri	2015-11-28 16:41:00.193868000 +0000
-@@ -18,6 +18,6 @@
+--- shared_app.pri.orig	2018-06-19 20:32:20 UTC
++++ shared_app.pri
+@@ -13,12 +13,12 @@ LIBS += \
+     -l$${RLIBNAME}stemmer \
+     -lstemmer \
+     -l$${RLIBNAME}zip \
+-    -lquazip
++    -lquazip5
+ 
  !r_no_opennurbs {
      LIBS += \
 -        -lopennurbs \
@@ -9,3 +15,4 @@
 +        -lz
  }
  
+ win32 {

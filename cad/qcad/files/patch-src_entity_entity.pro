@@ -1,9 +1,11 @@
---- src/entity/entity.pro.orig	2016-06-08 19:38:26.408322000 +0000
-+++ src/entity/entity.pro	2016-06-08 19:39:06.335114000 +0000
-@@ -116,5 +116,5 @@
+--- src/entity/entity.pro.orig	2018-06-19 20:32:20 UTC
++++ src/entity/entity.pro
+@@ -132,7 +132,7 @@ TARGET = $${NAME}
  OTHER_FILES += entity.dox
  DEFINES += QCADENTITY_LIBRARY
+ RC_FILE = entity.rc
 -LIBS += -l$${RLIBNAME}core -lopennurbs
 +LIBS += -l$${RLIBNAME}core -lopenNURBS
  !win32 {
      include( ../../shared_ts.pri )
+ }

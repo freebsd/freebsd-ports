@@ -1,9 +1,11 @@
---- support/ecmagenerator/src/srcml/RSpline.srcml.orig	2015-11-24 14:13:30.000000000 +0000
-+++ support/ecmagenerator/src/srcml/RSpline.srcml	2015-11-28 16:47:09.817021000 +0000
-@@ -35,5 +35,5 @@
+--- support/ecmagenerator/src/srcml/RSpline.srcml.orig	2018-06-19 20:32:20 UTC
++++ support/ecmagenerator/src/srcml/RSpline.srcml
+@@ -33,7 +33,7 @@
+ <cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>"RPolyline.h"</cpp:file></cpp:include>
  
  <cpp:ifndef>#<cpp:directive>ifndef</cpp:directive> <name>R_NO_OPENNURBS</name></cpp:ifndef>
 -<cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>"opennurbs/opennurbs.h"</cpp:file></cpp:include>
 +<cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>"openNURBS/opennurbs.h"</cpp:file></cpp:include>
  <cpp:endif>#<cpp:directive>endif</cpp:directive></cpp:endif>
+ 
  
