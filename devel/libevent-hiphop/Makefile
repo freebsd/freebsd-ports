@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libevent
-PKGNAMESUFFIX=	-hiphop
 PORTVERSION=	1.4.14b
 PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
+PKGNAMESUFFIX=	-hiphop
 DISTNAME=	${PORTNAME}-${DISTVERSION}-stable
 
 MAINTAINER=	mm@FreeBSD.org
@@ -33,7 +33,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
 		${WRKSRC}/epoll.c ${WRKSRC}/epoll_sub.c ${WRKSRC}/evdns.c
 
-regression-test: build
-	@(${SH} ${WRKSRC}/test/regress)
+do-test:
+	cd ${WRKSRC}/test && ./regress
 
 .include <bsd.port.mk>
