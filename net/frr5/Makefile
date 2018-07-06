@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	frr
-PORTVERSION=	3.0.3
+PORTVERSION=	5.0.1
 DISTVERSIONPREFIX=	frr-
 CATEGORIES=	net ipv6
-PKGNAMESUFFIX=	3
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	IP routing protocol suite including BGP, IS-IS, OSPF and RIP
@@ -15,31 +15,29 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	gawk:lang/gawk
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
-CONFLICTS=	openbgpd openospfd zebra quagga frr4 frr5
+CONFLICTS=	openbgpd openospfd zebra quagga frr3 frr4
+
+USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
+		makeinfo python:2.7,build readline
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FRRouting
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		autoreconf bison gmake pkgconfig libtool makeinfo readline
-USE_LDCONFIG=	yes
-
 INFO=		frr
 
-OPTIONS_DEFINE=		FPM LDPD PAM SHELLACCESS TCPSOCKETS VTYSH MULTIPATH TCMALLOC
-OPTIONS_DEFAULT=	VTYSH
+OPTIONS_DEFINE=		FPM LDPD PAM SHELLACCESS TCPSOCKETS VTYSH MANPAGES \
+					MULTIPATH TCMALLOC RPKI SNMP
+OPTIONS_DEFAULT=	VTYSH RPKI FPM MANPAGES
 OPTIONS_SUB=	yes
-# SNMP option build failed
-# checksum.c:79:21: warning: implicit declaration of function 'typeof' is
-#   invalid in C99 [-Wimplicit-function-declaration]
-# IRDP option needs something freebsd does not seem to have:
-# configure: error: 'IRDP requires in_pktinfo at the moment!'
 
 FPM_DESC=		Enable Forwarding Plane Manager support
 LDPD_DESC=		Build ldpd
 MULTIPATH_DESC=		Enable multipath function
 PAM_DESC=		Use libpam for PAM support in vtysh
+RPKI_DESC=		Add BGP RPKI (RFC 6810) support
 SHELLACCESS_DESC=	Allow users to access shell/telnet/ssh
 SNMP_DESC=		SNMP support
 TCMALLOC_DESC=		Use tcmalloc
@@ -59,16 +57,23 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--enable-vty-group=frrvty \
 		--sysconfdir=${ETCDIR} \
 		--localstatedir=/var/run/frr \
+		--disable-nhrpd \
 		--disable-pimd
 
+MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+MANPAGES_CONFIGURE_OFF=	--disable-doc
 SHELLACCESS_CONFIGURE_ENABLE=	shell-access
 FPM_CONFIGURE_ENABLE=		fpm
 PAM_CONFIGURE_WITH=		libpam
 LDPD_CONFIGURE_ENABLE=		ldpd
 MULTIPATH_CONFIGURE_ON=		--enable-multipath=64
+RPKI_CONFIGURE_ENABLE=	rpki
+RPKI_LIB_DEPENDS=		librtr.so:net-mgmt/rtrlib \
+						libssh.so:security/libssh
 TCMALLOC_CONFIGURE_ENABLE=	tcmalloc
 TCMALLOC_LIB_DEPENDS=		libtcmalloc.so:devel/google-perftools
 SNMP_CONFIGURE_ENABLE=		snmp
+SNMP_CFLAGS=	"-std=gnu99"
 SNMP_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp
 TCPSOCKETS_CONFIGURE_ENABLE=	tcp-zebra
 VTYSH_CONFIGURE_ENABLE=		vtysh
