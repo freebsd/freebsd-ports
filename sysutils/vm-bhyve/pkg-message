@@ -1,4 +1,4 @@
-To enable vm-bhyve, please add the following lines to /etc/rc.conf,
+To enable vm-bhyve, please add the following lines to rc.conf,
 depending on whether you are using ZFS storage or not. Please note
 that the directory or dataset specified should already exist.
 
@@ -14,11 +14,7 @@ Then run 'vm init'.
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-If upgrading from 1.0 or earlier, please note that the 'guest'
-configuration option is no longer used.
-
-Guests that are not using UEFI boot will need either loader="grub"
-or loader="bhyveload" in their configuration in order to make sure
-the correct loader is used.
+Please note, if upgrading from version 1.1, it is advised to shutdown guests
+and restart the host in order to re-create all virtual switches using new identifiers.
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
