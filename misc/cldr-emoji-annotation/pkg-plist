@@ -84,6 +84,8 @@ share/unicode/cldr/common/annotations/sk.xml
 share/unicode/cldr/common/annotations/sl.xml
 share/unicode/cldr/common/annotations/sq.xml
 share/unicode/cldr/common/annotations/sr.xml
+share/unicode/cldr/common/annotations/sr_Cyrl.xml
+share/unicode/cldr/common/annotations/sr_Cyrl_BA.xml
 share/unicode/cldr/common/annotations/sr_Latn.xml
 share/unicode/cldr/common/annotations/sv.xml
 share/unicode/cldr/common/annotations/sw.xml
@@ -188,6 +190,8 @@ share/unicode/cldr/common/annotationsDerived/sk.xml
 share/unicode/cldr/common/annotationsDerived/sl.xml
 share/unicode/cldr/common/annotationsDerived/sq.xml
 share/unicode/cldr/common/annotationsDerived/sr.xml
+share/unicode/cldr/common/annotationsDerived/sr_Cyrl.xml
+share/unicode/cldr/common/annotationsDerived/sr_Cyrl_BA.xml
 share/unicode/cldr/common/annotationsDerived/sr_Latn.xml
 share/unicode/cldr/common/annotationsDerived/sv.xml
 share/unicode/cldr/common/annotationsDerived/sw.xml
