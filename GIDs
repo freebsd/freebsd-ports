@@ -172,7 +172,7 @@ osrm:*:228:
 kismet:*:229:
 carbon:*:230:
 foundationdb:*:231:
-# free: 232
+archiva:*:232:
 # free: 233
 kafka:*:234:
 openhab:*:235:

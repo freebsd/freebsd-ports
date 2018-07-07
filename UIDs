@@ -177,7 +177,7 @@ osrm:*:228:228::0:0:osrm:/nonexistent:/usr/sbin/nologin
 # free: 229
 carbon:*:230:230::0:0:osrm:/nonexistent:/usr/sbin/nologin
 foundationdb:*:231:231::0:0:foundationdb:/nonexistent:/usr/sbin/nologin
-# free: 232
+archiva:*:232:232::0:0:Archiva Daemon User:/usr/local/archiva:/bin/sh
 # free: 233
 kafka:*:234:234::0:0:Apache Kafka user:/nonexistent:/usr/sbin/nologin
 openhab:*:235:235::0:0:openHAB user:/var/db/openhab2/home:/usr/sbin/nologin

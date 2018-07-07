@@ -1,0 +1,32 @@
+--- bin/archiva.orig    2018-06-30 21:13:59.141026000 +0200
++++ bin/archiva 2018-06-30 21:16:04.098265000 +0200
+@@ -41,6 +41,7 @@ APP_NAME="archiva"
+ APP_LONG_NAME="Apache Archiva"
+ 
+ # discover BASEDIR
++BASEDIR="%%LOCALBASE%%/archiva"
+ BASEDIR=`dirname "$0"`/..
+ BASEDIR=`(cd "$BASEDIR"; pwd)`
+ ls -l "$0" | grep -e '->' > /dev/null 2>&1
+@@ -57,10 +58,9 @@ if [ $? = 0 ]; then
+ fi
+ 
+ 
+-
+ # Wrapper
+-WRAPPER_CMD="./wrapper"
+-WRAPPER_CONF="$BASEDIR/conf/wrapper.conf"
++WRAPPER_CMD="%%PREFIX%%/bin/javaservicewrapper"
++WRAPPER_CONF="%%PREFIX%%/etc/conf/wrapper.conf"
+ 
+ # Priority at which to run the wrapper.  See "man nice" for valid priorities.
+ #  nice is only used if a priority is specified.
+@@ -82,7 +82,7 @@ PIDDIR="$BASEDIR/logs"
+ # NOTE - This will set the user which is used to run the Wrapper as well as
+ #  the JVM and is not useful in situations where a privileged resource or
+ #  port needs to be allocated prior to the user being changed.
+-#RUN_AS_USER=
++#%%USERS%%=archiv=
+ 
+ # The following two lines are used by the chkconfig command. Change as is
+ #  appropriate for your application.  They should remain commented.
