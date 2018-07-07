@@ -18,3 +18,4 @@ lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_parser.yrl
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_scanner.erl
 lib/erlang/lib/protobuffs-%%VERSION%%/src/protobuffs_scanner.xrl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/README_ORIG.md
