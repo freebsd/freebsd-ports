@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	krita
-DISTVERSION=	4.0.4
-PORTREVISION=	1
+DISTVERSION=	4.1.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -45,7 +44,7 @@ OPTIONS_DEFINE=		GMIC OPENEXR
 OPTIONS_DEFAULT=	OPENEXR
 OPTIONS_SUB=		yes
 
-GMIC_DESC=		Depend on the G'Mic plugin
+GMIC_DESC=		Depend on the G'Mic plugin #'
 GMIC_RUN_DEPENDS=	gmic_krita_qt:graphics/gmic-qt
 
 OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
