@@ -1,9 +1,9 @@
 Fix potential crashes found by ASan/Clang/GCC
 Fix an infinite loop in lcmScriptDeleteMain()
 
---- openbor.c.orig	2017-04-22 14:20:08 UTC
+--- openbor.c.orig	2018-07-06 15:13:16 UTC
 +++ openbor.c
-@@ -5747,17 +5747,17 @@ s_collision_attack *collision_alloc_attack_instance(s_
+@@ -6259,17 +6259,17 @@ s_collision_attack *collision_alloc_attack_instance(s_
  //
  // Allocate an empty collision attack list.
  s_collision_attack **collision_alloc_attack_list()
@@ -22,7 +22,7 @@ Fix an infinite loop in lcmScriptDeleteMain()
      memset(result, 0, alloc_size);
  
      // return result.
-@@ -5796,17 +5796,17 @@ s_collision_body *collision_alloc_body_instance(s_coll
+@@ -6308,17 +6308,17 @@ s_collision_body *collision_alloc_body_instance(s_coll
  //
  // Allocate an empty collision attack list.
  s_collision_body **collision_alloc_body_list()
@@ -41,7 +41,7 @@ Fix an infinite loop in lcmScriptDeleteMain()
      memset(result, 0, alloc_size);
  
      // return result.
-@@ -8204,7 +8204,8 @@ size_t lcmScriptCopyBuffer(ArgList *argl
+@@ -8743,7 +8743,8 @@ size_t lcmScriptCopyBuffer(ArgList *arglist, char *buf
  
  size_t lcmScriptDeleteMain(char **buf)
  {
@@ -51,15 +51,15 @@ Fix an infinite loop in lcmScriptDeleteMain()
      ptrdiff_t pos = 0;
      char *newbuf = NULL;
  
-@@ -15210,6 +15210,11 @@ void bar(int x, int y, int value, int ma
+@@ -15920,6 +15921,11 @@ void bar(int x, int y, int value, int maxvalue, s_bars
+     else
+     {
          return;
-     }
- 
++    }
++
 +    if (value < 0)
 +    {
 +        value = 0;
-+    }
-+
+     }
+ 
      if (value > maxvalue)
-     {
-         value = maxvalue;

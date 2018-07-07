@@ -1,6 +1,6 @@
 Store settings under ~/.openbor instead of current directory
 
---- sdl/sdlport.c.orig	2015-04-18 21:21:56 UTC
+--- sdl/sdlport.c.orig	2018-07-06 15:13:16 UTC
 +++ sdl/sdlport.c
 @@ -11,6 +11,8 @@
  #include "ram.h"
@@ -11,8 +11,8 @@ Store settings under ~/.openbor instead of current directory
  #include <time.h>
  #include <unistd.h>
  
-@@ -103,6 +105,16 @@ int main(int argc, char *argv[])
- #ifdef ANDROID
+@@ -135,6 +137,16 @@ int main(int argc, char *argv[])
+     }
  	dirExists(rootDir, 1);
      chdir(rootDir);
 +#else
@@ -26,5 +26,5 @@ Store settings under ~/.openbor instead of current directory
 +			err(1, "cannot cd to $HOME/.openbor");
 +	}
  #endif
+ 
  	dirExists(paksDir, 1);
- 	dirExists(savesDir, 1);

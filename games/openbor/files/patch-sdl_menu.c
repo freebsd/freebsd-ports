@@ -1,8 +1,8 @@
 Don't crash with empty Paks/ directory.
 
---- sdl/menu.c.orig	2015-04-18 21:21:56 UTC
+--- sdl/menu.c.orig	2018-07-06 15:13:16 UTC
 +++ sdl/menu.c
-@@ -747,7 +747,7 @@ void Menu()
+@@ -753,7 +753,7 @@ void Menu()
  		}
  		freeAllLogs();
  		termMenu();

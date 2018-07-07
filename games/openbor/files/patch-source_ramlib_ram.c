@@ -1,6 +1,6 @@
 Implement Linux-like memory stats for BSDs
 
---- source/ramlib/ram.c.orig	2017-04-22 14:20:08 UTC
+--- source/ramlib/ram.c.orig	2018-07-06 15:13:16 UTC
 +++ source/ramlib/ram.c
 @@ -25,6 +25,21 @@
  #include <mach/task.h>
@@ -36,7 +36,7 @@ Implement Linux-like memory stats for BSDs
  static unsigned long elfOffset = 0x00000000;
  static unsigned long stackSize = 0x00000000;
  #endif
-@@ -56,7 +74,10 @@ static unsigned long stackSize = 0x00000
+@@ -56,7 +74,10 @@ static unsigned long stackSize = 0x00000000;
  /////////////////////////////////////////////////////////////////////////////
  // Symbols
  
@@ -97,7 +97,7 @@ Implement Linux-like memory stats for BSDs
  #elif LINUX
      struct sysinfo info;
      sysinfo(&info);
-@@ -133,11 +197,29 @@ void setSystemRam()
+@@ -133,11 +196,29 @@ void setSystemRam()
      stat.dwLength = sizeof(MEMORYSTATUSEX);
      GlobalMemoryStatusEx(&stat);
      systemRam = stat.ullTotalPhys;
@@ -132,7 +132,7 @@ Implement Linux-like memory stats for BSDs
  #elif LINUX
      struct sysinfo info;
      sysinfo(&info);
-@@ -183,7 +265,10 @@ void setSystemRam()
+@@ -183,7 +264,10 @@ void setSystemRam()
      stackSize = 0x00000000;
      systemRam = getFreeRam(BYTES);
  #endif
@@ -144,7 +144,7 @@ Implement Linux-like memory stats for BSDs
      stackSize = (int)&_end - (int)&_start + ((int)&_start - elfOffset);
  #endif
      getRamStatus(BYTES);
-@@ -212,6 +297,42 @@ u64 getUsedRam(int byte_size)
+@@ -215,6 +299,42 @@ u64 getUsedRam(int byte_size)
          return 0;
      }
      return info.resident_size / byte_size;
