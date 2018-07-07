@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.5-562
-DISTVERSIONSUFFIX=	-g3d8223fcc
+DISTVERSION=	0.0.5-609
+DISTVERSIONSUFFIX=	-gd856dc89a
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
-		RPCS3:llvm:4952addb0c00:llvm/llvm \
+		RPCS3:llvm:60611c0f232c:llvm/llvm \
 		akrzemi1:Optional:f27e790:Optional/3rdparty/Optional \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
 		jbeder:yaml-cpp:yaml-cpp-0.6.2-4-g4fb1c4b:yamlcpp/3rdparty/yaml-cpp \
