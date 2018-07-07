@@ -3,7 +3,7 @@
 PORTNAME=	cinelerra-gg
 DISTVERSION=	5.1-20180705
 DISTVERSIONSUFFIX=	-${REV:C/(.......).*/\1/}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://git.cinelerra-cv.org/gitweb?p=goodguy/cinelerra.git;a=snapshot;h=${REV};sf=tgz;dummy=/ # tarballs are @ https://cinelerra-cv.org/five/pkgs/src/
 
@@ -55,7 +55,7 @@ USE_XORG=	x11 xau xdmcp xext xfixes xft xinerama xv
 MAKE_ENV=	C_INCLUDE_PATH=${LOCALBASE}/include CPLUS_INCLUDE_PATH=${LOCALBASE}/include LIBRARY_PATH=${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-static-build --disable-lame --disable-twolame \
 		--with-oss --without-alsa \
-		--without-gl --without-firewire --without-dv --without-dvb \
+		--without-firewire --without-dv --without-dvb \
 		--without-video4linux2 --without-xxf86vm --without-ladspa-build \
 		--without-libzmpeg --without-commercial --without-thirdparty
 CFLAGS+=	-DFFMPEG3
@@ -69,8 +69,8 @@ INSTALL_WRKSRC=		${BUILD_WRKSRC}
 
 DATADIR=		${PREFIX}/share/cin
 
-OPTIONS_DEFINE=		LV2
-OPTIONS_DEFAULT=	LV2
+OPTIONS_DEFINE=		LV2 OPENGL
+OPTIONS_DEFAULT=	LV2 OPENGL
 OPTIONS_SUB=		yes
 
 LV2_DESC=		Use LV2 plugins
@@ -84,6 +84,9 @@ LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 			libsord-0.so:devel/sord \
 			libsratom-0.so:audio/sratom \
 			libsuil-0.so:audio/suil
+
+OPENGL_CONFIGURE_WITH=	gl
+OPENGL_USE=		GL=gl,glu
 
 post-patch:
 	# the patch recommended by the upstream
