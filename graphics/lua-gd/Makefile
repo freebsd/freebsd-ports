@@ -12,6 +12,8 @@ COMMENT=	GD bindings for the Lua programming language
 
 LICENSE=	MIT
 
+BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ABS64 against local symbol in readonly segment
+
 LIB_DEPENDS=	libgd.so:graphics/gd
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

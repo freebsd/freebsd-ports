@@ -13,6 +13,9 @@ COMMENT=	802.11 WEP and WPA-PSK keys cracking program
 LICENSE=	GPLv2 BSD3CLAUSE APACHE20
 LICENSE_COMB=	dual
 
+BROKEN_aarch64=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
+BROKEN_armv6=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
+BROKEN_armv7=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
 BROKEN_powerpc64=	fails to compile: sse-intrinsics.c: error: emmintrin.h: No such file or directory
 
 USES=		autoreconf cpe dos2unix gmake libtool ssl

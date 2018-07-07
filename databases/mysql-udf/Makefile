@@ -10,9 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of user-defined functions for the MySQL server
 
+BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol 'compare_doubles(void const*, void const*)' defined in udf_median.o
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		mysql
+CFLAGS_amd64+=	-fPIC
 
 MODULES=	colwidth confidence_higher confidence_lower correlation \
 		faculty geomean intercept kurtosis longest median noverm \
@@ -21,12 +24,6 @@ MODULES=	colwidth confidence_higher confidence_lower correlation \
 .for MODULE in ${MODULES}
 PLIST_FILES+=	lib/mysql/plugin/udf_${MODULE}.so
 .endfor
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-CFLAGS+=	-fPIC
-.endif
 
 do-build:
 .for MODULE in ${MODULES}
@@ -41,4 +38,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/udf_${MODULE}.so ${STAGEDIR}${PREFIX}/lib/mysql/plugin/udf_${MODULE}.so
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
