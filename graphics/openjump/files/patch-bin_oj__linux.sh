@@ -1,4 +1,4 @@
---- bin/oj_linux.sh.orig	2016-05-29 14:45:28 UTC
+--- bin/oj_linux.sh.orig	2017-12-14 23:17:50 UTC
 +++ bin/oj_linux.sh
 @@ -4,9 +4,11 @@
  ## if unset defaults to
@@ -131,7 +131,7 @@
  
  JUMP_PLUGINS=./bin/default-plugins.xml
  if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JUMP_PLUGINS" ]; then
-@@ -208,6 +231,7 @@ if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JU
+@@ -208,6 +231,7 @@ if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JUMP_PLUGINS" ];
      JUMP_PLUGINS="./scripts/default-plugins.xml"
    fi
  fi
@@ -139,7 +139,7 @@
  
  # include every jar/zip in lib and native dir
  for libfile in "$JUMP_LIB/"*.zip "$JUMP_LIB/"*.jar "$JUMP_NATIVE_DIR/$JAVA_ARCH/"*.jar "$JUMP_NATIVE_DIR/"*.jar
-@@ -216,29 +240,39 @@ do
+@@ -216,26 +240,35 @@ do
  done
  CLASSPATH=.:./bin:./conf:$CLASSPATH
  export CLASSPATH;
@@ -173,6 +173,11 @@
  JAVA_OPTS="$JAVA_OPTS $JAVA_OPTS_OVERRIDE"
 +echo "#####  JAVA_OPTS = '$JAVA_OPTS'"
  
+ # java9 needs some packages explicitly added/exported
+ if awk "BEGIN{if($JAVA_VERSION >= 9)exit 0;else exit 1}"; then
+@@ -247,7 +280,8 @@ $JAVA_OPTS"
+ fi
+ 
  # in case some additional archives were placed in native dir inbetween
 -extract_libs "$JUMP_NATIVE_DIR"
 +echo "#####  -----------------------------------------------------------"
@@ -180,7 +185,7 @@
  
  # allow jre to find native libraries in native dir, lib/ext (backwards compatibility)
  NATIVE_PATH="$JUMP_NATIVE_DIR/$JAVA_ARCH:$JUMP_NATIVE_DIR:$JUMP_PLUGIN_DIR"
-@@ -274,7 +308,11 @@ echo "$JUMP_SETTINGS/"
+@@ -283,7 +317,11 @@ echo "$JUMP_SETTINGS/"
  
  echo ---Detect maximum memory limit---
  # use previously set or detect RAM size in bytes
@@ -193,7 +198,7 @@
  if [ -n "$JAVA_MAXMEM" ]; then
    echo "max. memory limit defined via JAVA_MAXMEM=$JAVA_MAXMEM"
  elif ! is_number "$RAM_SIZE"; then
-@@ -292,14 +330,18 @@ else
+@@ -301,14 +339,18 @@ else
    else
      MEM_MAX="$MEM_MINUS1GB"
    fi
