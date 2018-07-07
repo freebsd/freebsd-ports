@@ -1,7 +1,7 @@
 bin/povray37
 man/man1/povray37.1.gz
-%%ETCDIR%%/povray.conf
-%%ETCDIR%%/povray.ini
+@sample %%ETCDIR%%/povray.conf.sample
+@sample %%ETCDIR%%/povray.ini.sample
 %%X11%%%%DATADIR%%/icons/file_inc_classic_16.png
 %%X11%%%%DATADIR%%/icons/file_inc_classic_32.png
 %%X11%%%%DATADIR%%/icons/file_inc_classic_48.png
@@ -30,7 +30,8 @@ man/man1/povray37.1.gz
 %%X11%%%%DATADIR%%/icons/povray_32.png
 %%X11%%%%DATADIR%%/icons/povray_48.png
 %%X11%%%%DATADIR%%/icons/povray_64.png
-%%DATADIR%%/include/.directory
+%%DATADIR%%/include/Mount1.png
+%%DATADIR%%/include/Mount2.png
 %%DATADIR%%/include/arrays.inc
 %%DATADIR%%/include/ash.map
 %%DATADIR%%/include/benediti.map
@@ -51,8 +52,10 @@ man/man1/povray37.1.gz
 %%DATADIR%%/include/golds.inc
 %%DATADIR%%/include/ior.inc
 %%DATADIR%%/include/logo.inc
+%%DATADIR%%/include/makegrass.inc
 %%DATADIR%%/include/marbteal.map
 %%DATADIR%%/include/math.inc
+%%DATADIR%%/include/meshmaker.inc
 %%DATADIR%%/include/metals.inc
 %%DATADIR%%/include/mtmand.pot
 %%DATADIR%%/include/mtmandj.png
@@ -68,6 +71,7 @@ man/man1/povray37.1.gz
 %%DATADIR%%/include/screen.inc
 %%DATADIR%%/include/shapes.inc
 %%DATADIR%%/include/shapes2.inc
+%%DATADIR%%/include/shapes3.inc
 %%DATADIR%%/include/shapes_old.inc
 %%DATADIR%%/include/shapesq.inc
 %%DATADIR%%/include/skies.inc
