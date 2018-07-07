@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: archiva
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Configuration settings for archiva in /etc/rc.conf:
+#
+# archiva_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable archiva.
+#
+
+. /etc/rc.subr
+
+name="archiva"
+rcvar=archiva_enable
+
+load_rc_config $name
+
+archiva_enable="${archiva_enable:-"NO"}"
+
+start_cmd="archiva_start"
+stop_cmd="archiva_stop"
+
+pidfile="%%PREFIX%%/archiva/logs/archiva.pid"
+
+archiva_start()
+{
+	%%PREFIX%%/share/archiva/bin/archiva start
+}
+
+archiva_stop()
+{
+	%%PREFIX%%/share/archiva/bin/archiva stop
+}
+
+run_rc_command "$1"

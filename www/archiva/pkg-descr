@@ -1,0 +1,9 @@
+Apache Archiva is an extensible repository management software that helps taking
+care of your own personal or enterprise-wide build artifact repository. It is
+the perfect companion for build tools such as Maven, Continuum, and ANT.
+
+Archiva offers several capabilities, amongst which remote repository proxying,
+security access management, build artifact storage, delivery, browsing, indexing
+and usage reporting, extensible scanning functionality and many more!
+
+WWW: https://archiva.apache.org
