@@ -47,6 +47,7 @@
 %%WWWDIR%%/js/app.js
 %%WWWDIR%%/js/autoredirect.js
 %%WWWDIR%%/js/build/build.js
+%%WWWDIR%%/js/crashreport.js
 %%WWWDIR%%/js/init.js
 %%WWWDIR%%/js/radio.js
 %%WWWDIR%%/js/replybuilder.js
@@ -249,6 +250,7 @@
 %%WWWDIR%%/lib/Model/ReplyMessage.php
 %%WWWDIR%%/lib/SMTP/SmtpClientFactory.php
 %%WWWDIR%%/lib/SearchFolder.php
+%%WWWDIR%%/lib/SearchHelper.php
 %%WWWDIR%%/lib/SearchMailbox.php
 %%WWWDIR%%/lib/Service/AccountService.php
 %%WWWDIR%%/lib/Service/AliasesService.php
@@ -282,6 +284,9 @@
 %%WWWDIR%%/lib/Service/DefaultAccount/Config.php
 %%WWWDIR%%/lib/Service/DefaultAccount/Manager.php
 %%WWWDIR%%/lib/Service/FolderNameTranslator.php
+%%WWWDIR%%/lib/Service/Group/IGroupService.php
+%%WWWDIR%%/lib/Service/Group/NextcloudGroupService.php
+%%WWWDIR%%/lib/Service/GroupsIntegration.php
 %%WWWDIR%%/lib/Service/Html.php
 %%WWWDIR%%/lib/Service/HtmlPurify/CidURIScheme.php
 %%WWWDIR%%/lib/Service/HtmlPurify/TransformCSSBackground.php
@@ -312,6 +317,7 @@
 %%WWWDIR%%/vendor/arthurhoaro/favicon/src/Favicon/FaviconDLType.php
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/cerdic/css-tidy/.gitignore
+%%WWWDIR%%/vendor/cerdic/css-tidy/.travis.yml
 %%WWWDIR%%/vendor/cerdic/css-tidy/COPYING
 %%WWWDIR%%/vendor/cerdic/css-tidy/Docs/__filesource/fsource_csstidy__class.csstidy.php.html
 %%WWWDIR%%/vendor/cerdic/css-tidy/Docs/__filesource/fsource_csstidy__class.csstidy_optimise.php.html
@@ -335,7 +341,7 @@
 %%WWWDIR%%/vendor/cerdic/css-tidy/Docs/media/style.css
 %%WWWDIR%%/vendor/cerdic/css-tidy/Docs/todolist.html
 %%WWWDIR%%/vendor/cerdic/css-tidy/NEWS
-%%WWWDIR%%/vendor/cerdic/css-tidy/README
+%%WWWDIR%%/vendor/cerdic/css-tidy/README.md
 %%WWWDIR%%/vendor/cerdic/css-tidy/class.csstidy.php
 %%WWWDIR%%/vendor/cerdic/css-tidy/class.csstidy_optimise.php
 %%WWWDIR%%/vendor/cerdic/css-tidy/class.csstidy_print.php
@@ -366,6 +372,7 @@
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/ie-hacks.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/import.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/keyframes.csst
+%%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/keyframes2.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/selector-commented.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/simple-default.csst
 %%WWWDIR%%/vendor/cerdic/css-tidy/testing/unit-tests/csst/print-plain/simple-high.csst
@@ -478,10 +485,12 @@
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/extras/FSTools.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/extras/FSTools/File.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/extras/HTMLPurifierExtras.auto.php
+%%WWWDIR%%/vendor/ezyang/htmlpurifier/extras/HTMLPurifierExtras.autoload-legacy.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/extras/HTMLPurifierExtras.autoload.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/extras/HTMLPurifierExtras.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/extras/README
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier.auto.php
+%%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier.autoload-legacy.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier.autoload.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier.composer.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier.func.php
