@@ -314,6 +314,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sl.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sq.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Cyrl_BA.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Latn.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sv.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sw.dict
@@ -405,8 +406,8 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/ml/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/mn/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/ibus10.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/or/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ibus10.mo
