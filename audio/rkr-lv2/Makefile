@@ -13,6 +13,8 @@ COMMENT=	Rakarrack effects as LV2 plugins
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to compile: argument unused during compilation: '-msse' [-Wunused-command-line-argument]
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libsamplerate.so:audio/libsamplerate

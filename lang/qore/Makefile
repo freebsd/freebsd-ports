@@ -10,6 +10,7 @@ COMMENT=	Qore Programming Language
 
 LICENSE=	MIT
 
+BROKEN_aarch64=		fails to compile: calling a private constructor of class 'ReferenceNode'
 BROKEN_armv6=		fails to compile: calling a private constructor of class 'ReferenceNode'
 BROKEN_armv7=		fails to compile: calling a private constructor of class 'ReferenceNode'
 BROKEN_mips=		fails to link: single-compilation-unit.cpp:(.text+0xdfc): relocation truncated to fit: R_MIPS_CALL16 against '__ltdf2@@FBSDprivate_1.0'

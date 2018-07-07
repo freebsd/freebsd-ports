@@ -12,6 +12,8 @@ DISTNAME=	lua-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Iconv binding for Lua 5
 
+BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ABS64 against local symbol in readonly segment defined in iconv.lo
+
 USES=		pkgconfig iconv lua:51
 
 USE_GITHUB=	yes
