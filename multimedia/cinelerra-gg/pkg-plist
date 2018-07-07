@@ -1,5 +1,6 @@
 bin/bdwrite
 bin/cin
+%%LV2%%lib/cin/lv2ui
 lib/cin/plugins/audio/audioscope.plugin
 lib/cin/plugins/audio/compressor.plugin
 lib/cin/plugins/audio/dcoffset.plugin
@@ -1163,6 +1164,7 @@ share/applications/cin.desktop
 %%DATADIR%%/ffmpeg/video/youtube.dfl
 %%DATADIR%%/ffmpeg/video/yuv.dfl
 %%DATADIR%%/info/plugins.txt
+%%LV2%%%%DATADIR%%/lv2_blacklist.txt
 %%DATADIR%%/models/amazon01
 %%DATADIR%%/models/amazon01.xcf.bz2
 %%DATADIR%%/models/amazon01_body.png
