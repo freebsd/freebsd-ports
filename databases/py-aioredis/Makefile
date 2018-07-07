@@ -3,6 +3,7 @@
 
 PORTNAME=	aioredis
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,13 @@ COMMENT=	Python asyncio based Redis client library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libhiredis.so:databases/hiredis
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}async_timeout>0:devel/py-async_timeout@${PY_FLAVOR}
+
+OPTIONS_DEFINE=	HIREDIS
+
+HIREDIS_DESC=	High performance response parser (via hiredis)
+
+HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>0:databases/py-hiredis@${PY_FLAVOR}
 
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
