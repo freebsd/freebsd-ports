@@ -1,4 +1,5 @@
 lib/elixir/lib/hex/ebin/Elixir.Hex.API.Auth.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.API.Key.Organization.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.API.Key.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.API.Package.Owner.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.API.Package.beam
@@ -57,13 +58,13 @@ lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Search.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.User.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.beam
 lib/elixir/lib/hex/ebin/hex.app
-lib/elixir/lib/hex/ebin/vendored_hex_erl_tar.beam
-lib/elixir/lib/hex/ebin/vendored_hex_filename.beam
-lib/elixir/lib/hex/ebin/vendored_hex_pb_package.beam
-lib/elixir/lib/hex/ebin/vendored_hex_pb_signed.beam
-lib/elixir/lib/hex/ebin/vendored_hex_registry.beam
-lib/elixir/lib/hex/ebin/vendored_hex_tarball.beam
-lib/elixir/lib/hex/ebin/vendored_safe_erl_term.beam
+lib/elixir/lib/hex/ebin/mix_hex_erl_tar.beam
+lib/elixir/lib/hex/ebin/mix_hex_filename.beam
+lib/elixir/lib/hex/ebin/mix_hex_pb_package.beam
+lib/elixir/lib/hex/ebin/mix_hex_pb_signed.beam
+lib/elixir/lib/hex/ebin/mix_hex_registry.beam
+lib/elixir/lib/hex/ebin/mix_hex_tarball.beam
+lib/elixir/lib/hex/ebin/mix_safe_erl_term.beam
 lib/elixir/lib/hex/lib/hex.ex
 lib/elixir/lib/hex/lib/hex/api.ex
 lib/elixir/lib/hex/lib/hex/api/auth.ex
