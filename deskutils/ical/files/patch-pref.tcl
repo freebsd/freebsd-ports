@@ -1,5 +1,5 @@
---- pref.tcl.orig	1997-06-13 00:50:36.000000000 +0200
-+++ pref.tcl	2003-04-28 18:46:04.000000000 +0200
+--- pref.tcl.orig	1997-06-12 22:50:36 UTC
++++ pref.tcl
 @@ -118,7 +118,12 @@ proc pref_init {} {
      # XXX People do not seem to like the motif-style popup behavior
      global tk_strictMotif

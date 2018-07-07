@@ -1,5 +1,5 @@
---- config.h.in.orig	Sun Jul  2 15:12:55 1995
-+++ config.h.in	Wed Oct 15 13:19:33 2003
+--- config.h.in.orig	1995-07-02 22:12:55 UTC
++++ config.h.in
 @@ -5,26 +5,26 @@
  #undef pid_t
  

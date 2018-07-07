@@ -1,6 +1,6 @@
---- cal_tcl.C.orig	Sun Nov 28 17:29:13 1999
-+++ cal_tcl.C	Sun Nov 28 17:30:24 1999
-@@ -214,27 +214,27 @@ static int cal_loopf	(ClientData, Tcl_In
+--- cal_tcl.C.orig	1995-07-06 15:48:16 UTC
++++ cal_tcl.C
+@@ -214,27 +214,27 @@ static int cal_loopf	(ClientData, Tcl_Interp*, int, ch
  static int cal_loopb	(ClientData, Tcl_Interp*, int, char*[]);
  
  static Dispatch_Entry calendar_dispatch[] = {
@@ -49,7 +49,7 @@
      { 0,		0, 0, 0			}
  };
  
-@@ -281,7 +281,7 @@ static int parse_items(Tcl_Interp* tcl, 
+@@ -281,7 +281,7 @@ static int parse_items(Tcl_Interp* tcl, Calendar_Tcl* 
  
      if ((argc >= 2) && (strcmp(argv[0], "-items") == 0)) {
  	int count;
@@ -58,7 +58,7 @@
  	if (Tcl_SplitList(tcl, argv[1], &count, &list) != TCL_OK) {
  	    TCL_Error(tcl, "invalid item list");
  	}
-@@ -516,7 +516,7 @@
+@@ -516,7 +516,7 @@ static int cal_ronly(ClientData c, Tcl_Interp* tcl, in
  	TCL_Error(tcl, "no such calendar");
      }
  
@@ -67,7 +67,7 @@
  }
  
  static int cal_dirty(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]){
-@@ -527,7 +527,7 @@
+@@ -527,7 +527,7 @@ static int cal_dirty(ClientData c, Tcl_Interp* tcl, in
  	TCL_Error(tcl, "no such calendar");
      }
  
@@ -76,7 +76,7 @@
  }
  
  static int cal_stale(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]){
-@@ -538,7 +538,7 @@
+@@ -538,7 +538,7 @@ static int cal_stale(ClientData c, Tcl_Interp* tcl, in
  	TCL_Error(tcl, "no such calendar");
      }
  
@@ -85,3 +85,12 @@
  }
  
  static int cal_save(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]){
+@@ -609,7 +609,7 @@ static int item_loop(Tcl_Interp* tcl, Occurrences cons
+ 
+ 	if (dvar != 0) {
+ 	    char buffer[20];
+-	    sprintf(buffer, "%d", list[i].date.EpochDays());
++	    sprintf(buffer, "%ld", list[i].date.EpochDays());
+ 	    if (Tcl_SetVar(tcl, dvar, buffer, 0) == NULL) {
+ 		TCL_Error(tcl, "could not set loop variable");
+ 	    }

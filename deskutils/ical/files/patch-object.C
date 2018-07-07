@@ -1,6 +1,6 @@
---- object.C.orig	1994-05-20 05:22:04.000000000 +0200
-+++ object.C	2003-04-28 18:14:32.000000000 +0200
-@@ -33,7 +33,7 @@ void Object::init(Tcl_Interp* t, char co
+--- object.C.orig	1994-05-20 03:22:04 UTC
++++ object.C
+@@ -33,7 +33,7 @@ void Object::init(Tcl_Interp* t, char const* ty, char 
      interp = t;
  
      /* Create TCL Command */

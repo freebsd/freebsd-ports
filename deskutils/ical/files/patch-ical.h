@@ -1,5 +1,5 @@
---- ical.h.orig	1996-02-10 04:17:36.000000000 +0100
-+++ ical.h	2003-04-28 18:14:32.000000000 +0200
+--- ical.h.orig	1996-02-10 03:17:36 UTC
++++ ical.h
 @@ -4,6 +4,11 @@
  
  #include <tcl.h>
@@ -11,4 +11,20 @@
 +
  // Proc for triggering tcl code based on changes
  // to calendars/items.
+ 
+@@ -25,13 +30,13 @@ extern void trigger(Tcl_Interp*, char const* ttype, ch
+ 
+ #define TCL_Return(tcl,str)			\
+     do {					\
+-	Tcl_SetResult(tcl, (str), TCL_STATIC);	\
++	Tcl_SetResult(tcl, ((char *)(str)), TCL_STATIC);	\
+ 	return TCL_OK;				\
+     } while (0)
+ 
+ #define TCL_Error(tcl,str)			\
+     do {					\
+-	Tcl_SetResult(tcl, (str), TCL_STATIC);	\
++	Tcl_SetResult(tcl, ((char *)(str)), TCL_STATIC);	\
+ 	return TCL_ERROR;			\
+     } while (0)
  
