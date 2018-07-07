@@ -5,8 +5,10 @@ PKGNAMESUFFIX=	-gtk
 
 COMMENT=	GTK+ modules of uim input method
 
-USE_GNOME=	gtk20
-LIB_DEPENDS=	libuim.so:textproc/uim
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+LIB_DEPENDS=	libuim.so:textproc/uim \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

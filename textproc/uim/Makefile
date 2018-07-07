@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	uim
-PORTVERSION=	1.8.6
-PORTREVISION?=	3
+PORTVERSION=	1.8.8
 CATEGORIES?=	textproc
-MASTER_SITES=	https://github.com/uim/uim/releases/download/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://github.com/uim/uim/releases/download/${PORTVERSION}/
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 .endif
@@ -13,11 +12,15 @@ PKGNAMESUFFIX=	-nox11
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Input method library
 
+LICENSE=	BSD3CLAUSE GPLv2+ GPLv3+ LGPL21+ PD
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BROKEN_aarch64=	Fails to build: The collector has not been ported to this machine/OS combination
 
+USES+=		gettext gmake iconv libedit libtool pathfix pkgconfig perl5 sqlite tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME+=	glib20 intltool
-USES+=		gettext gmake iconv libedit libtool pathfix pkgconfig perl5 tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
@@ -27,13 +30,16 @@ OPTIONS_DEFAULT=	X11
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
+USE_XORG+=	x11 xext
 LIB_DEPENDS+=	libXft.so:x11-fonts/libXft
 CONFIGURE_ARGS+=	--with-x --with-xft
 .endif
 
 .if !defined(UIM_SLAVE)
 .if ${PORT_OPTIONS:MX11}
-USE_GNOME+=	gtk20
+USE_GNOME+=	cairo gdkpixbuf2 gtk20
+LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 CONFIGURE_ARGS+=	--with-gtk2
 .endif
 CONFIGURE_ARGS+=	--enable-emacs --with-sj3 --with-canna --with-prime

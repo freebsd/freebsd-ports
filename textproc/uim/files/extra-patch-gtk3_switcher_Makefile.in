@@ -1,20 +1,19 @@
---- gtk3/switcher/Makefile.in.orig	2012-03-30 22:02:18.000000000 +0900
-+++ gtk3/switcher/Makefile.in	2012-04-01 04:48:26.000000000 +0900
-@@ -64,10 +64,9 @@
+--- gtk3/switcher/Makefile.in.orig	2018-06-30 03:52:43.790439000 +0900
++++ gtk3/switcher/Makefile.in	2018-06-30 03:55:37.760210000 +0900
+@@ -131,11 +131,7 @@
+ @GTK3_TRUE@am_uim_im_switcher_gtk3_OBJECTS =  \
  @GTK3_TRUE@	uim_im_switcher_gtk3-gtk.$(OBJEXT)
  uim_im_switcher_gtk3_OBJECTS = $(am_uim_im_switcher_gtk3_OBJECTS)
- @GTK3_TRUE@uim_im_switcher_gtk3_DEPENDENCIES =  \
+-@GTK3_TRUE@uim_im_switcher_gtk3_DEPENDENCIES =  \
 -@GTK3_TRUE@	$(top_builddir)/uim/libuim-scm.la \
 -@GTK3_TRUE@	$(top_builddir)/uim/libuim-custom.la \
 -@GTK3_TRUE@	$(top_builddir)/uim/libuim-scm.la \
 -@GTK3_TRUE@	$(top_builddir)/uim/libuim.la
-+@GTK3_TRUE@	-luim-scm \
-+@GTK3_TRUE@	-luim-custom \
-+@GTK3_TRUE@	-luim
- uim_im_switcher_gtk3_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
- 	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
- 	$(uim_im_switcher_gtk3_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-@@ -356,10 +355,10 @@
++@GTK3_TRUE@uim_im_switcher_gtk3_DEPENDENCIES = 
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+@@ -486,10 +482,10 @@
  top_srcdir = @top_srcdir@
  uim_pixmapsdir = @uim_pixmapsdir@
  @GTK3_TRUE@uim_im_switcher_gtk3_SOURCES = ../../gtk2/switcher/gtk.c

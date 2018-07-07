@@ -1,7 +1,6 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-m17nlib-nox11
 .else

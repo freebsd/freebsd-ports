@@ -1,7 +1,6 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
 CATEGORIES=	japanese
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-anthy-nox11
@@ -12,11 +11,13 @@ PKGNAMESUFFIX=	-anthy
 COMMENT=	Uim plugin using Anthy input method
 
 .if !defined(WITHOUT_X11)
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 .endif
 
 LIB_DEPENDS=	libanthy.so:japanese/anthy \
-		libuim.so:textproc/uim
+		libfreetype.so:print/freetype2 \
+		libuim.so:textproc/uim \
+		libfontconfig.so:x11-fonts/fontconfig
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

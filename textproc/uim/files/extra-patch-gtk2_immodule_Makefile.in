@@ -1,6 +1,6 @@
---- gtk2/immodule/Makefile.in.orig	2016-10-14 09:57:35 UTC
-+++ gtk2/immodule/Makefile.in
-@@ -105,8 +105,7 @@ am__uninstall_files_from_dir = { \
+--- gtk2/immodule/Makefile.in.orig	2018-06-30 00:34:14.035453000 +0900
++++ gtk2/immodule/Makefile.in	2018-06-30 00:35:43.223656000 +0900
+@@ -156,8 +156,7 @@
    }
  am__installdirs = "$(DESTDIR)$(moduledir)"
  LTLIBRARIES = $(module_LTLIBRARIES)
@@ -10,14 +10,14 @@
  @GTK2_TRUE@	$(top_builddir)/uim/libuim-counted-init.la \
  @GTK2_TRUE@	$(am__append_1)
  am__im_uim_la_SOURCES_DIST = gtk-im-uim.c gtk-im-uim.h key-util-gtk.c \
-@@ -442,8 +441,8 @@ moduledir = $(uim_gtk_im_module_path)/@G
+@@ -547,8 +546,8 @@
  @GTK2_TRUE@module_LTLIBRARIES = $(im_uim_la)
  @GTK2_TRUE@im_uim_la_SOURCES = $(IM_UIM_SOURCES)
- @GTK2_TRUE@im_uim_la_LDFLAGS = -module -avoid-version @GTK2_LIBS@
+ @GTK2_TRUE@im_uim_la_LDFLAGS = -module -avoid-version
 -@GTK2_TRUE@im_uim_la_LIBADD = $(top_builddir)/uim/libuim-scm.la \
 -@GTK2_TRUE@	$(top_builddir)/uim/libuim.la \
 +@GTK2_TRUE@im_uim_la_LIBADD = -luim-scm \
 +@GTK2_TRUE@	-luim \
  @GTK2_TRUE@	$(top_builddir)/uim/libuim-counted-init.la \
- @GTK2_TRUE@	$(am__append_1)
+ @GTK2_TRUE@	$(am__append_1) -lm @GTK2_LIBS@
  @GTK2_TRUE@IM_UIM_SOURCES = \
