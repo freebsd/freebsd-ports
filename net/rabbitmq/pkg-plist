@@ -175,7 +175,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/cowboy-2.2.2.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/cowlib-2.1.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/goldrush-0.1.9.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/jsx-2.8.2.ez
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/lager-3.5.1.ez
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/lager-3.6.3.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_amqp1_0-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_cache-%%VERSION%%.ez
