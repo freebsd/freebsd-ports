@@ -2,17 +2,17 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Free Java plug-in and Java Web Start for OpenJDK
 
 LICENSE=	GPLv2
 
-BROKEN=		Does not configure: "Package 'mozilla-plugin', required by 'virtual:world', not found" 
 BUILD_DEPENDS=	zip:archivers/zip \
 		bash:shells/bash \
 		gsed:textproc/gsed
@@ -43,9 +43,11 @@ CONFIGURE_SHELL=	${bash_CMD}
 
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	DOCS RHINO TAGSOUP
+OPTIONS_DEFINE=	DOCS PLUGIN RHINO TAGSOUP
+OPTIONS_DEFAULT=PLUGIN
 OPTIONS_SUB=	yes
 
+PLUGIN_DESC=	Enable the browser plug-in
 RHINO_DESC=	Add support for Proxy Auto Config files
 TAGSOUP_DESC=	Enable cleaning up of malformed JNLP files
 
@@ -61,6 +63,18 @@ TAGSOUP_BUILD_DEPENDS=	${JAVALIBDIR}/tagsoup.jar:textproc/tagsoup
 TAGSOUP_RUN_DEPENDS=	${TAGSOUP_BUILD_DEPENDS}
 TAGSOUP_VARS=		TAGSOUP_JAR="${JAVALIBDIR}/tagsoup.jar"
 TAGSOUP_VARS_OFF=	TAGSOUP_JAR=no
+
+PLUGIN_CONFIGURE_ENABLE=plugin
+PLUGIN_CONFIGURE_ENV=	MOZILLA_CFLAGS="-I${WRKDIR}/npapi-headers -DXP_UNIX" \
+			MOZILLA_LIBS=" " # needs to be set and non-empty!
+PLUGIN_DISTFILES=	npapi-headers${EXTRACT_SUFX}:npapi
+PLUGIN_MASTER_SITES=	LOCAL/tobik:npapi
+PLUGIN_PORTDOCS=	plugin
+PLUGIN_TEST_TARGET=	plugin-tests
+PLUGIN_USE=		GNOME=glib20
+PLUGIN_USES=		webplugin:native
+PLUGIN_VARS=		WEBPLUGIN_DIR=${PREFIX}/lib \
+			WEBPLUGIN_FILES=IcedTeaPlugin.so
 
 HAMCREST_JAR=	${JAVALIBDIR}/hamcrest.jar
 JUNIT_JAR=	${JAVALIBDIR}/junit.jar
