@@ -19,7 +19,7 @@ BROKEN_armv7=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
 BROKEN_powerpc64=	fails to compile: sse-intrinsics.c: error: emmintrin.h: No such file or directory
 
 USES=		autoreconf cpe dos2unix gmake libtool ssl
-USE_GCC=	6+
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-experimental
 CPE_VERSION=	${DISTVERSION:C/-.*//}
