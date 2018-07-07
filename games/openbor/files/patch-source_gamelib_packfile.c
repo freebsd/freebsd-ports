@@ -1,9 +1,9 @@
 Reset seek position for BGM with more than 128 tracks
 Don't crash with more than 256 tracks.
 
---- source/gamelib/packfile.c.orig	2018-02-19 15:02:50 UTC
+--- source/gamelib/packfile.c.orig	2018-07-06 15:13:16 UTC
 +++ source/gamelib/packfile.c
-@@ -1408,7 +1408,7 @@ void packfile_music_read(fileliststruct *filelist, int
+@@ -1407,7 +1407,7 @@ void packfile_music_read(fileliststruct *filelist, int
          getBasePath(packfile, filelist[i].filename, 1);
          if(stristr(packfile, ".pak"))
          {
@@ -12,7 +12,7 @@ Don't crash with more than 256 tracks.
              filelist[i].nTracks = 0;
              fd = fopen(packfile, "rb");
              if(fd == NULL)
-@@ -1440,7 +1440,7 @@ void packfile_music_read(fileliststruct *filelist, int
+@@ -1439,7 +1439,7 @@ void packfile_music_read(fileliststruct *filelist, int
                      {
                          goto nextpak;
                      }
