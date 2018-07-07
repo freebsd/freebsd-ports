@@ -21,6 +21,7 @@ BROKEN_mips64=		fails to install: quartz_log.cc:: error: call to 'om_tostring' i
 CONFLICTS_INSTALL=	xapian-core xapian-core12
 
 USES=		libtool
+USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
