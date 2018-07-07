@@ -5,7 +5,6 @@ PORTVERSION=	2.5.3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
 		GNU
-
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -33,7 +32,7 @@ NLS_CONFIGURE_ENABLE=	nls
 
 INFO=		nano
 
-PORTSCOUT=	limitw:1,odd
+PORTSCOUT=	ignore:1
 
 post-build:
 	cd ${WRKSRC}/doc/man; ${REINPLACE_CMD} \
