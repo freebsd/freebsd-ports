@@ -1,5 +1,5 @@
---- Makefile.in.orig	1997-06-04 18:09:59.000000000 +0200
-+++ Makefile.in	2014-02-17 15:05:23.000000000 +0100
+--- Makefile.in.orig	1997-06-04 16:09:59 UTC
++++ Makefile.in
 @@ -14,10 +14,10 @@
   CONFIGURE_IN = @MFILES_IN@
   CONFFILES    = $(srcdir)/configure.in

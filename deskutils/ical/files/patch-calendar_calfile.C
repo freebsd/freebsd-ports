@@ -1,6 +1,6 @@
 --- calendar/calfile.C.orig	1997-05-24 00:23:52 UTC
 +++ calendar/calfile.C
-@@ -60,7 +60,7 @@ CalFile::CalFile(int ro, const char* nam
+@@ -60,7 +60,7 @@ CalFile::CalFile(int ro, const char* name) {
      backupName = tmp;
  
      // Get directory name for access checks
