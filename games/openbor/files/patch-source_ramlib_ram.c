@@ -98,9 +98,9 @@ Implement Linux-like memory stats for BSDs
      struct sysinfo info;
      sysinfo(&info);
 @@ -133,11 +197,29 @@ void setSystemRam()
-     stat.dwLength = sizeof(MEMORYSTATUS);
-     GlobalMemoryStatus(&stat);
-     systemRam = stat.dwTotalPhys;
+     stat.dwLength = sizeof(MEMORYSTATUSEX);
+     GlobalMemoryStatusEx(&stat);
+     systemRam = stat.ullTotalPhys;
 -#elif DARWIN
 -    u64 mem;
 -    size_t len = sizeof(mem);
