@@ -1,0 +1,43 @@
+# socat-instances.conf.sample
+# This config file is evaluated by the rc script from the FreeBSD
+# port of net/socat.
+# It is not related to socat(1) itself!
+# This file is shell syntax.
+
+# Each instance to be daemonized must be defined with a line starting
+# with [instancename].  instancename can be any alnum and is case insensitive
+# (will internally be converted to upper case).
+
+#[ntp4]
+# Default socat_daemonuser=nobody won't be able to open sockets with port numbers
+# below 1024.
+#daemonuser=root
+#flags="UDP4-RECVFROM:123,fork,bind=192.0.2.20 UDP4-SENDTO:169.254.0.53:123"
+
+#[ntp6]
+#daemonuser=root
+#flags="UDP6-RECVFROM:123,fork,bind=[2001:DB8::1:2:3] UDP4-SENDTO:169.254.0.53:123"
+
+
+#
+# Variable definitions:
+#
+#   daemonuser (optional):
+#      Overrides socat_daemonuser= from rc.conf if defined or the
+#      rc scripts builtin default (nobody).
+#      daemon(8) will run socat as this user.
+#
+#   pidfile (optional):
+#     If not defined, /var/run/socat_INSTANCENAME.pid will be used
+#     (will be derived from rc script's default, which is /var/run/socat.pid).
+#
+#   flags (mandatory):
+#     See socat(1).
+#
+# service(8)/rc(8) "start" commands will skip instances without flags defined,
+# while "stop" commands will try to stop any present instance section.
+#
+# To control a single instance, you can append one instance name to the
+# rc(8) command.
+# Otherwise all uncommented instance definitions in this file will be processed.
+
