@@ -3,6 +3,7 @@
 PORTNAME=	cinelerra-gg
 DISTVERSION=	5.1-20180705
 DISTVERSIONSUFFIX=	-${REV:C/(.......).*/\1/}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://git.cinelerra-cv.org/gitweb?p=goodguy/cinelerra.git;a=snapshot;h=${REV};sf=tgz;dummy=/ # tarballs are @ https://cinelerra-cv.org/five/pkgs/src/
 
@@ -52,7 +53,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	x11 xau xdmcp xext xfixes xft xinerama xv
 
 MAKE_ENV=	C_INCLUDE_PATH=${LOCALBASE}/include CPLUS_INCLUDE_PATH=${LOCALBASE}/include LIBRARY_PATH=${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-static-build --without-lv2 --disable-lame --disable-twolame \
+CONFIGURE_ARGS=	--disable-static-build --disable-lame --disable-twolame \
 		--with-oss --without-alsa \
 		--without-gl --without-firewire --without-dv --without-dvb \
 		--without-video4linux2 --without-xxf86vm --without-ladspa-build \
@@ -68,6 +69,22 @@ INSTALL_WRKSRC=		${BUILD_WRKSRC}
 
 DATADIR=		${PREFIX}/share/cin
 
+OPTIONS_DEFINE=		LV2
+OPTIONS_DEFAULT=	LV2
+OPTIONS_SUB=		yes
+
+LV2_DESC=		Use LV2 plugins
+LV2_CONFIGURE_WITH=	lv2
+LV2_USES=		pkgconfig
+LV2_USE=		GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
+LV2_CFLAGS=		-I${LOCALBASE}/include/lilv-0 -I${LOCALBASE}/include/suil-0
+LV2_BUILD_DEPENDS=	lv2>0:audio/lv2
+LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv \
+			libserd-0.so:devel/serd \
+			libsord-0.so:devel/sord \
+			libsratom-0.so:audio/sratom \
+			libsuil-0.so:audio/suil
+
 post-patch:
 	# the patch recommended by the upstream
 	@cd ${CONFIGURE_WRKSRC}/ffmpeg && \
@@ -75,6 +92,9 @@ post-patch:
 	# correct the bash interpreter path
 	@cd ${CONFIGURE_WRKSRC}/cinelerra && ${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		../configure.ac bdcreate.C dvdcreate.C shbtnprefs.C
+
+post-install-LV2-on:
+	@${RMDIR} ${STAGEDIR}${DATADIR}/lv2
 
 do-configure: # configure needs bash
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/bash configure ${CONFIGURE_ARGS}
