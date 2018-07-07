@@ -13,10 +13,6 @@ COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=		fails to build: mp4read.c:(.text+0x87c): undefined reference to '__builtin_bswap16'
-BROKEN_mips64=		fails to build: mp4read.c:(.text+0x87c): undefined reference to '__builtin_bswap16'
-BROKEN_powerpc64=	fails to build: mp4read.o:(.text+0x714): undefined reference to '__builtin_bswap16'
-
 USES=		autoreconf gmake libtool
 INSTALL_TARGET=	install-strip
 
