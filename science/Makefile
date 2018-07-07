@@ -115,6 +115,7 @@
     SUBDIR += metaf2xml
     SUBDIR += metaphysicl
     SUBDIR += minc2
+    SUBDIR += mmdb2
     SUBDIR += mol2ps
     SUBDIR += mpb
     SUBDIR += mpqc
