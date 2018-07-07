@@ -8,7 +8,7 @@ MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Small C client for sending ssh login notications to a hared server
 
 LICENSE=	MIT
-LICENSE=	LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jpmens
