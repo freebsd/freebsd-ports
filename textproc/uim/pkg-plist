@@ -39,6 +39,8 @@ lib/uim/plugin/libuim-look.so
 lib/uim/plugin/libuim-process.so
 lib/uim/plugin/libuim-skk.so
 lib/uim/plugin/libuim-socket.so
+lib/uim/plugin/libuim-sqlite3.so
+lib/uim/plugin/libuim-xkb.so
 libdata/pkgconfig/gcroots.pc
 libdata/pkgconfig/uim.pc
 %%X11%%libexec/uim-candwin-gtk
@@ -280,8 +282,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/skk.svg
 %%DATADIR%%/pixmaps/skk_dark_background.png
 %%DATADIR%%/pixmaps/skk_dark_background.svg
-%%DATADIR%%/pixmaps/social-ime.png
-%%DATADIR%%/pixmaps/social-ime.svg
 %%DATADIR%%/pixmaps/tcode.png
 %%DATADIR%%/pixmaps/tcode.svg
 %%DATADIR%%/pixmaps/tcode_dark_background.png
@@ -336,7 +336,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pyunihan.scm
 %%DATADIR%%/rk.scm
 %%DATADIR%%/romaja.scm
-%%DATADIR%%/scim.scm
 %%DATADIR%%/sj3-custom.scm
 %%DATADIR%%/sj3-key-custom.scm
 %%DATADIR%%/sj3.scm
@@ -346,9 +345,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/skk-editor.scm
 %%DATADIR%%/skk-key-custom.scm
 %%DATADIR%%/skk.scm
-%%DATADIR%%/social-ime-custom.scm
-%%DATADIR%%/social-ime-key-custom.scm
-%%DATADIR%%/social-ime.scm
 %%DATADIR%%/socket.scm
 %%DATADIR%%/sqlite3.scm
 %%DATADIR%%/sxml-tools.scm
@@ -377,6 +373,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/wnn-custom.scm
 %%DATADIR%%/wnn-key-custom.scm
 %%DATADIR%%/wnn.scm
+%%DATADIR%%/xkb.scm
 %%DATADIR%%/xmload.scm
 %%DATADIR%%/yahoo-jp-custom.scm
 %%DATADIR%%/yahoo-jp-key-custom.scm

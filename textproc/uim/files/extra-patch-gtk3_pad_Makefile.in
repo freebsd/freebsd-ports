@@ -1,6 +1,6 @@
---- gtk3/pad/Makefile.in.orig	2012-03-30 22:02:18.000000000 +0900
-+++ gtk3/pad/Makefile.in	2012-04-01 04:45:48.000000000 +0900
-@@ -63,9 +63,7 @@
+--- gtk3/pad/Makefile.in.orig	2018-06-30 03:46:16.677802000 +0900
++++ gtk3/pad/Makefile.in	2018-06-30 03:49:07.172912000 +0900
+@@ -131,9 +131,7 @@
  @GTK3_TRUE@am_uim_input_pad_ja_gtk3_OBJECTS =  \
  @GTK3_TRUE@	uim_input_pad_ja_gtk3-ja.$(OBJEXT)
  uim_input_pad_ja_gtk3_OBJECTS = $(am_uim_input_pad_ja_gtk3_OBJECTS)
@@ -8,10 +8,10 @@
 -@GTK3_TRUE@	$(top_builddir)/uim/libuim-scm.la \
 -@GTK3_TRUE@	$(top_builddir)/uim/libuim.la
 +@GTK3_TRUE@uim_input_pad_ja_gtk3_DEPENDENCIES = 
- uim_input_pad_ja_gtk3_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
- 	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
- 	$(uim_input_pad_ja_gtk3_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-@@ -354,8 +352,8 @@
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+@@ -484,8 +482,8 @@
  top_srcdir = @top_srcdir@
  uim_pixmapsdir = @uim_pixmapsdir@
  @GTK3_TRUE@uim_input_pad_ja_gtk3_SOURCES = ../../gtk2/pad/ja.c

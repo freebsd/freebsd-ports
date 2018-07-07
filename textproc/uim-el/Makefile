@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	uim-el
-PORTVERSION=	1.8.6
-PORTREVISION=	7
+PORTVERSION=	1.8.8
 CATEGORIES=	textproc
-MASTER_SITES=	https://github.com/uim/uim/releases/download/uim-${PORTVERSION}/
+MASTER_SITES=	https://github.com/uim/uim/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	uim-${PORTVERSION}
 

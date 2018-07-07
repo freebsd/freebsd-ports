@@ -1,7 +1,6 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	6
 PKGNAMESUFFIX=	-kde4
 
 COMMENT=	KDE4 panel applet of uim input method
@@ -12,7 +11,7 @@ RUN_DEPENDS=	uim-pref-qt4:textproc/uim-qt4
 
 USE_GCC=	any
 USE_KDE=	kdelibs automoc4
-USE_QT=		qmake_build moc_build qt3support uic rcc
+USE_QT=		corelib dbus gui qmake_build moc_build qt3support svg uic rcc
 USES+=		kde:4 qt:4
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim

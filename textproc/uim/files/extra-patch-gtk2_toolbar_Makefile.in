@@ -1,18 +1,18 @@
---- gtk2/toolbar/Makefile.in.orig	2016-10-14 09:57:35 UTC
-+++ gtk2/toolbar/Makefile.in
-@@ -88,10 +88,7 @@ am__uim_toolbar_applet_SOURCES_DIST = ap
- @APPLET_GNOME_TRUE@	uim_toolbar_applet-applet-gnome.$(OBJEXT) \
- @APPLET_GNOME_TRUE@	uim_toolbar_applet-common-gtk.$(OBJEXT)
+--- gtk2/toolbar/Makefile.in.orig	2018-06-30 00:28:37.045910000 +0900
++++ gtk2/toolbar/Makefile.in	2018-06-30 00:33:13.062351000 +0900
+@@ -139,10 +139,7 @@
+ @GNOME_APPLET_TRUE@	uim_toolbar_applet-applet-gnome.$(OBJEXT) \
+ @GNOME_APPLET_TRUE@	uim_toolbar_applet-common-gtk.$(OBJEXT)
  uim_toolbar_applet_OBJECTS = $(am_uim_toolbar_applet_OBJECTS)
--@APPLET_GNOME_TRUE@uim_toolbar_applet_DEPENDENCIES =  \
--@APPLET_GNOME_TRUE@	$(top_builddir)/uim/libuim-scm.la \
--@APPLET_GNOME_TRUE@	$(top_builddir)/uim/libuim.la \
--@APPLET_GNOME_TRUE@	$(top_builddir)/uim/libuim-custom.la
-+@APPLET_GNOME_TRUE@uim_toolbar_applet_DEPENDENCIES = 
- uim_toolbar_applet_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
- 	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
- 	$(uim_toolbar_applet_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-@@ -99,9 +96,7 @@ uim_toolbar_applet_LINK = $(LIBTOOL) --t
+-@GNOME_APPLET_TRUE@uim_toolbar_applet_DEPENDENCIES =  \
+-@GNOME_APPLET_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@GNOME_APPLET_TRUE@	$(top_builddir)/uim/libuim.la \
+-@GNOME_APPLET_TRUE@	$(top_builddir)/uim/libuim-custom.la
++@GNOME_APPLET_TRUE@uim_toolbar_applet_DEPENDENCIES = 
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+@@ -154,9 +151,7 @@
  am_uim_toolbar_gtk_OBJECTS = uim_toolbar_gtk-standalone-gtk.$(OBJEXT) \
  	uim_toolbar_gtk-common-gtk.$(OBJEXT)
  uim_toolbar_gtk_OBJECTS = $(am_uim_toolbar_gtk_OBJECTS)
@@ -20,10 +20,10 @@
 -	$(top_builddir)/uim/libuim.la \
 -	$(top_builddir)/uim/libuim-custom.la
 +uim_toolbar_gtk_DEPENDENCIES = 
- uim_toolbar_gtk_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
- 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_toolbar_gtk_CFLAGS) \
- 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-@@ -111,10 +106,7 @@ am_uim_toolbar_gtk_systray_OBJECTS =  \
+ uim_toolbar_gtk_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(uim_toolbar_gtk_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+@@ -167,10 +162,7 @@
  	uim_toolbar_gtk_systray-eggtrayicon.$(OBJEXT)
  uim_toolbar_gtk_systray_OBJECTS =  \
  	$(am_uim_toolbar_gtk_systray_OBJECTS)
@@ -32,24 +32,24 @@
 -	$(top_builddir)/uim/libuim.la \
 -	$(top_builddir)/uim/libuim-custom.la
 +uim_toolbar_gtk_systray_DEPENDENCIES = 
- uim_toolbar_gtk_systray_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
- 	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ uim_toolbar_gtk_systray_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
  	$(uim_toolbar_gtk_systray_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-@@ -443,9 +435,9 @@ uim_pixmapsdir = @uim_pixmapsdir@
+@@ -549,9 +541,9 @@
  EXTRA_DIST = GNOME_UimApplet.server.in.in
  helper_defs = -DUIM_DATADIR=\""$(datadir)/@PACKAGE@"\"
- @APPLET_GNOME_TRUE@uim_toolbar_applet_LDADD = @GTK2_LIBS@ @APPLET_GNOME_LIBS@ \
--@APPLET_GNOME_TRUE@			   $(top_builddir)/uim/libuim-scm.la \
--@APPLET_GNOME_TRUE@			   $(top_builddir)/uim/libuim.la \
--@APPLET_GNOME_TRUE@			   $(top_builddir)/uim/libuim-custom.la
-+@APPLET_GNOME_TRUE@			   -luim-scm \
-+@APPLET_GNOME_TRUE@			   -luim \
-+@APPLET_GNOME_TRUE@			   -luim-custom
+ @GNOME_APPLET_TRUE@uim_toolbar_applet_LDADD = @GTK2_LIBS@ @GNOME_APPLET_LIBS@ \
+-@GNOME_APPLET_TRUE@			   $(top_builddir)/uim/libuim-scm.la \
+-@GNOME_APPLET_TRUE@			   $(top_builddir)/uim/libuim.la \
+-@GNOME_APPLET_TRUE@			   $(top_builddir)/uim/libuim-custom.la
++@GNOME_APPLET_TRUE@			   -luim-scm \
++@GNOME_APPLET_TRUE@			   -luim \
++@GNOME_APPLET_TRUE@			   -luim-custom
  
- @APPLET_GNOME_TRUE@uim_toolbar_applet_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
- @APPLET_GNOME_TRUE@uim_toolbar_applet_CFLAGS = @GTK2_CFLAGS@ @APPLET_GNOME_CFLAGS@
-@@ -460,9 +452,9 @@ helper_defs = -DUIM_DATADIR=\""$(datadir
- @APPLET_GNOME_TRUE@		 GNOME_UimApplet.server.in.tmp
+ @GNOME_APPLET_TRUE@uim_toolbar_applet_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
+ @GNOME_APPLET_TRUE@uim_toolbar_applet_CFLAGS = @GTK2_CFLAGS@ @GNOME_APPLET_CFLAGS@
+@@ -566,9 +558,9 @@
+ @GNOME_APPLET_TRUE@		 GNOME_UimApplet.server.in.tmp
  
  uim_toolbar_gtk_SOURCES = standalone-gtk.c common-gtk.c
 -uim_toolbar_gtk_LDADD = @GTK2_LIBS@ $(top_builddir)/uim/libuim-scm.la \
@@ -61,7 +61,7 @@
  
  uim_toolbar_gtk_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
  uim_toolbar_gtk_CFLAGS = @GTK2_CFLAGS@
-@@ -471,9 +463,9 @@ uim_toolbar_gtk_systray_SOURCES = systra
+@@ -577,9 +569,9 @@
  
  uim_toolbar_gtk_systray_LDADD = @GTK2_LIBS@ \
  				   @X11_LIBS@ \
