@@ -67,7 +67,7 @@ TAGSOUP_VARS_OFF=	TAGSOUP_JAR=no
 PLUGIN_CONFIGURE_ENABLE=plugin
 PLUGIN_CONFIGURE_ENV=	MOZILLA_CFLAGS="-I${WRKDIR}/npapi-headers -DXP_UNIX" \
 			MOZILLA_LIBS=" " # needs to be set and non-empty!
-PLUGIN_DISTFILES=	npapi-headers${EXTRACT_SUFX}:npapi
+PLUGIN_DISTFILES=	libxul-npapi-headers-45.9.0${EXTRACT_SUFX}:npapi
 PLUGIN_MASTER_SITES=	LOCAL/tobik:npapi
 PLUGIN_PORTDOCS=	plugin
 PLUGIN_TEST_TARGET=	plugin-tests
