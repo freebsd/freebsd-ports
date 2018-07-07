@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player memory game
 
 USES=		imake tar:tgz
+USE_CXXSTD=	c++98
 USE_XORG=	x11 xext
 MAKE_ENV=	DATADIR="${DATADIR}"
 
