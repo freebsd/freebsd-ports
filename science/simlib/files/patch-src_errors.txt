@@ -1,0 +1,13 @@
+src/errors.txt is used to generate src/errors.cc
+
+--- src/errors.txt.orig	2018-07-07 20:48:53 UTC
++++ src/errors.txt
+@@ -14,7 +14,7 @@ _ErrMsg(_ErrEnum)
+ 
+ ////////////////////////////////////////////////////////////////////////////
+ 
+-Copyright               SIMLIB/C++ Simulation Library, "SIMLIB_COPYRIGHT"
++Copyright               SIMLIB/C++ Simulation Library, " SIMLIB_COPYRIGHT "
+ UnknownError            Undocumented error
+ InternalError           Internal error
+ MemoryError             No memory

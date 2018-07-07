@@ -20,6 +20,15 @@ CXXFLAGS+=	-fPIC
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1101000
+# nm crashes during the build:
+# Assertion failed: (ddata->output.size > 0), function cpp_demangle_read_sname, file /usr/src/contrib/elftoolchain/libelftc/libelftc_dem_gnu3.c, line 2137.
+USE_BINUTILS=	yes
+BINARY_ALIAS=	nm=${NM}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|gmake|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
