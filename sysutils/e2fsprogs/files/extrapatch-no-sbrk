@@ -1,0 +1,34 @@
+diff -up ./e2fsck/e2fsck.h.orig ./e2fsck/e2fsck.h
+--- ./e2fsck/e2fsck.h.orig	2018-05-16 01:42:44.000000000 +0200
++++ ./e2fsck/e2fsck.h	2018-07-07 12:50:43.420944000 +0200
+@@ -134,7 +134,7 @@ struct dx_dirblock_info {
+ #define DX_FLAG_FIRST		4
+ #define DX_FLAG_LAST		8
+ 
+-#define RESOURCE_TRACK
++#undef RESOURCE_TRACK
+ 
+ #ifdef RESOURCE_TRACK
+ /*
+diff -up ./resize/resource_track.c.orig ./resize/resource_track.c
+--- ./resize/resource_track.c.orig	2018-05-16 01:42:44.000000000 +0200
++++ ./resize/resource_track.c	2018-07-07 14:24:54.728576000 +0200
+@@ -27,7 +27,6 @@ void init_resource_track(struct resource
+ 	io_stats io_start = 0;
+ 
+ 	track->desc = desc;
+-	track->brk_start = sbrk(0);
+ 	gettimeofday(&track->time_start, 0);
+ #ifdef HAVE_GETRUSAGE
+ #ifdef sun
+@@ -84,9 +83,7 @@ void print_resource_track(ext2_resize_t 
+ 		kbytes(malloc_info.arena), kbytes(malloc_info.hblkhd),
+ 		kbytes(malloc_info.uordblks), kbytes(malloc_info.fordblks));
+ #else
+-	printf("Memory used: %lu, ",
+-		(unsigned long) (((char *) sbrk(0)) -
+-				 ((char *) track->brk_start)));
++	printf("Memory used: unknown, ");
+ #endif
+ #ifdef HAVE_GETRUSAGE
+ 	getrusage(RUSAGE_SELF, &r);
