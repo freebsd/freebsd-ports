@@ -3,7 +3,7 @@
 
 PORTNAME=	socat
 PORTVERSION=	1.7.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt
@@ -22,7 +22,8 @@ CPE_VENDOR=	dest-unreach
 
 PORTSCOUT=	skipv:2.0.0-b2
 
-PLIST_FILES=	bin/filan bin/procan bin/socat man/man1/socat.1.gz
+PLIST_FILES=	bin/filan bin/procan bin/socat man/man1/socat.1.gz \
+		"@sample etc/socat-instances.conf.sample"
 PORTDOCS=	EXAMPLES README SECURITY FAQ
 
 OPTIONS_DEFINE=	DOCS READLINE
@@ -48,5 +49,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/socat-instances.conf.sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.post.mk>

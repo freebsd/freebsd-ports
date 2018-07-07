@@ -11,7 +11,8 @@
 
 # Add the following lines to /etc/rc.conf to enable socat:
 # socat_enable="YES"
-# socat_flags="<set as needed>"
+# socat_daemonuser="root" for priviledged ports e.g.
+# socat_flags="<set as needed>" or create /usr/local/etc/socat-instances.conf
 
 . /etc/rc.subr
 
@@ -21,12 +22,16 @@ rcvar=socat_enable
 load_rc_config $name
 
 : ${socat_enable="NO"}
+: ${socat_daemonuser:=nobody}
+: ${socat_config:=%%PREFIX%%/etc/socat-instances.conf}
 
 start_precmd="socat_prestart"
 pidfile=/var/run/socat.pid
 procname="%%PREFIX%%/bin/socat"
 command=/usr/sbin/daemon
-command_args=" -f -p ${pidfile} ${procname} ${socat_flags}"
+command_args=' -f -p ${pidfile} -u ${socat_daemonuser} ${procname} ${socat_flags}'
+
+[ -n "${2}" ] && socat_instance_arg=`echo "${2}" | tr '[:lower:]' '[:upper:]'`
 
 socat_prestart()
 {
@@ -36,4 +41,141 @@ socat_prestart()
 	rc_flags=""
 }
 
-run_rc_command "$1"
+socat_parse_instances()
+{
+  local _line _section_search
+
+  socat_instances=`grep -Eo "^[[:blank:]]*\[[[:alnum:]_]+\]" ${socat_config} |
+    tr '[:lower:]' '[:upper:]'`
+				
+  if [ -n "${socat_instance_arg}" ] && ! echo "${socat_instances}" |
+      grep -q -E '(^|[[:blank:]])\['${socat_instance_arg}'\]([[:blank:]]|$)'
+  then
+    echo -n "$name: Can't find instance definition " >&2
+    echo "\"[${1}]\" in config file ${socat_config}." >&2
+    return 1
+  fi
+
+  [ -n "${socat_instance_arg}" ] && socat_instances="[${socat_instance_arg}]"
+
+  for i in ${socat_instances}; do
+    _section_search=1
+    _instance=${i#[}
+    _instance=${_instance%]}
+
+    # Process each line of the optional config file, which
+    # matches the regex, defined at the end of the loop.
+    # There we filter to only process definitions and section separators.
+    while read -r _line; do
+
+      # Look for ${i} section until found
+      if [ ${_section_search} ]; then
+        if echo "${_line}" | grep -qi "^[[:blank:]]*\[${_instance}\]"; then
+          unset _section_search
+          continue # Nothing to do with section identifiers
+        else
+          # Continue with next line s_instance we haven't reached our section yet
+          continue
+        fi
+      fi
+
+      # Stop processing if the current line is another section identifier.
+      echo "${_line}" | grep -q "^[[:blank:]]*\[[^]]*\]" && break
+
+      # Only proceed with lines which contain variable declaration.
+      echo "${_line}" | grep -q -E \
+                        -e "^[[:blank:]]*[[:alpha:]_][[:alnum:]_]{0,30}=" ||
+                            continue
+      # Filter malformed lines (which could cause command execution)
+      #   (shell exits with test result, wich is false as soon as
+      #   there's a 2nd argument (1st is considered as 0))
+      eval sh -c \'[ \$# -eq 0 ]\' "${_line}" \|\| continue
+
+      eval socat_${_instance}_${_line%%=*}=${_line#*=}
+
+    done << EOCFF
+$(cat "${socat_config}")
+EOCFF
+  done
+}
+
+# Check if daemon(8) handles title and syslog parameters
+# (as in FreeBSD 11).
+if [ "${1%start}" != "${1}" ]; then
+	daemon_extended_args=" -l daemon"
+	${command} -t "test" ${daemon_extended_args} -f -u nobody true \
+		> /dev/null 2>&1 || unset daemon_extended_args
+fi
+
+
+# If we can read the config file, handle multiple instances,
+# else just process a single instance.
+if [ -r ${socat_config} ]; then
+
+	# T O D O :   Check rc(8) how restarts are handled and make
+	#		all-instaces restart working.
+	#	For now refuse restart commands without instance argument.
+	#
+	if [ "${1%restart}" != "${1}" ] && [ -z "${socat_instance_arg}" ]; then
+		echo -n "$name: Restart command requires a instance argument,"
+		echo "since config file is in use."
+		exit 1
+	fi
+
+	if [ -n "${socat_flags}" ]; then
+		echo -n "${name}: WARNING:"
+		echo -n " Ignoring \"socat_flags\" in rc.conf because"
+                echo " \"${socat_config}\" is present."
+	fi
+
+	socat_parse_instances "${2}" || exit 1
+
+	default_pidfile="${pidfile}"
+	default_socat_daemonuser="${socat_daemonuser}"
+	eval default_command_args=\'${command_args}\'
+
+	for i in ${socat_instances}; do
+		_instance=${i#[}
+		_instance=${_instance%]}
+
+		eval socat_flags=\"\$\{socat_${_instance}_flags\}\"
+
+		# We need to have socat_flags to start, else skip start commands
+		if [ "${1%start}" != "${1}" ] && [ -z "${socat_flags}" ]; then
+			echo -n "$name: Missing \"flags\" definition for"
+			echo " instance ${i}, skipping \"${1}\" command."
+			continue
+		fi
+
+		eval pidfile=\"\$\{socat_${_instance}_pidfile\}\"
+		[ -n "${pidfile}" ] ||
+			pidfile="${default_pidfile%.pid}_${_instance}.pid"
+
+		eval socat_daemonuser=\"\$\{socat_${_instance}_daemonuser\}\"
+		[ -n "${socat_daemonuser}" ] ||
+			socat_daemonuser="${default_socat_daemonuser}"
+
+		eval command_args=\"${default_command_args}\"
+		if [ -n "${daemon_extended_args}" ]; then
+			# A bit confusing, but to keep 80 chars line break:
+			command_args="(${_instance})\" ${command_args}"
+			command_args="-t \"${procname} ${command_args}"
+			command_args="${daemon_extended_args} ${command_args}"
+		fi
+
+		run_rc_command "$1"
+	done
+
+else
+
+	if [ -n "${socat_instance_arg}" ]; then
+		echo -n "$name: Missing config file (${socat_config}), " >&2
+		echo "can't handle instance \"${2}\"." >&2
+		exit 1
+	fi
+
+	eval command_args=\"${daemon_extended_args} ${command_args}\"
+	run_rc_command "$1"
+
+fi
+
