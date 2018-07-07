@@ -60,6 +60,7 @@ lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Param.BitString.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Param.Integer.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Param.Map.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Param.beam
+lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.PlugError.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Presence.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Router.ConsoleFormatter.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Router.Helpers.beam
@@ -273,6 +274,7 @@ lib/elixir/lib/phoenix/lib/phoenix/exceptions.ex
 lib/elixir/lib/phoenix/lib/phoenix/logger.ex
 lib/elixir/lib/phoenix/lib/phoenix/naming.ex
 lib/elixir/lib/phoenix/lib/phoenix/param.ex
+lib/elixir/lib/phoenix/lib/phoenix/plug_error.ex
 lib/elixir/lib/phoenix/lib/phoenix/presence.ex
 lib/elixir/lib/phoenix/lib/phoenix/router.ex
 lib/elixir/lib/phoenix/lib/phoenix/router/console_formatter.ex
