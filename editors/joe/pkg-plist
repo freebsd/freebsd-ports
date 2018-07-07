@@ -15,6 +15,10 @@ bin/rjoe
 %%ETCDIR%%/shell.sh
 man/man1/joe.1.gz
 man/ru/man1/joe.1.gz
+share/applications/jmacs.desktop
+share/applications/joe.desktop
+share/applications/jpico.desktop
+share/applications/jstar.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
