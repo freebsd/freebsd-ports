@@ -18,4 +18,6 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
+PORTSCOUT=	limit:^3\.4\.2
+
 .include <bsd.port.mk>
