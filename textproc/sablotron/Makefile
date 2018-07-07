@@ -17,6 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
 USES=		gmake iconv libtool localbase:ldflags
+USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes
 LDFLAGS+=	${ICONV_LIB}
 
