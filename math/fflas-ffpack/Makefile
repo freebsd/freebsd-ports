@@ -18,6 +18,7 @@ USES=		shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp="${LOCALBASE}"
 SHEBANG_FILES=	fflas-ffpack-config.in
+TEST_TARGET=	check  # XXX: 1 of 2 tests fails
 
 OPTIONS_DEFINE=	DOXYGEN OPTIMIZED_CFLAGS
 
@@ -68,7 +69,7 @@ CONFIGURE_ARGS+=	--disable-optimization
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/{s/-O2 //;s/-pipe//;}' \
+	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/{s/-O2 //;s/-pipe//;}' \
 		-e '/DEBUG_CFLAGS=.*-DNDEBUG/s/$${DEBUG_CFLAGS} //' \
 		-e '/^WARN_CFLAGS="-Wall"/d' \
 		-e '/if test "x$$WARN" = "xyes"/s/$$/ WARN_CFLAGS="-Wall" ;/' \
@@ -79,7 +80,7 @@ post-patch:
 		${WRKSRC}/configure
 #Unfortunately, we must leave stdint.h --> cstdint unresolved when not using
 #lang/gcc4*, or switch to TR1 headers, due to our aging base system libstdc++
-	${REINPLACE_CMD} -E \
+	@${REINPLACE_CMD} -E \
 	-e 's/(#include[[:blank:]]+<)(std)(arg|def|io|lib)(\.h>)/\1c\2\3>/' \
 		${WRKSRC}/fflas-ffpack/field/nonzero-randiter.h \
 		${WRKSRC}/fflas-ffpack/field/modular-randiter.h \
@@ -89,21 +90,12 @@ post-patch:
 		${WRKSRC}/utils/args-parser.h \
 		${WRKSRC}/utils/debug.h \
 		${WRKSRC}/utils/Matio.h
-.if ${PORT_OPTIONS:MDOXYGEN}
+
+post-patch-DOXYGEN-on:
 	@${REINPLACE_CMD} -e 's/sed -i/& ""/' ${WRKSRC}/doc/Makefile.in
-.endif
 
-.if ${PORT_OPTIONS:MDOXYGEN}
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/fflas-ffpack-dev-html
-	${TOUCH} ${STAGEDIR}${DOCSDIR}/fflas-ffpack-dev-html/.keep-me
-.endif
-
-.if defined(MAINTAINER_MODE)
-check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-	${MAKE_ARGS} check
-
-.endif
+post-install-DOXYGEN-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/fflas-ffpack-dev-html
+	@${TOUCH} ${STAGEDIR}${DOCSDIR}/fflas-ffpack-dev-html/.keep-me
 
 .include <bsd.port.mk>
