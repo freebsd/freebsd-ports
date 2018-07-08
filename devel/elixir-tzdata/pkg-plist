@@ -7,6 +7,7 @@ lib/elixir/lib/tzdata/ebin/Elixir.Tzdata.FarFutureDynamicPeriods.beam
 lib/elixir/lib/tzdata/ebin/Elixir.Tzdata.LeapSecParser.beam
 lib/elixir/lib/tzdata/ebin/Elixir.Tzdata.Parser.beam
 lib/elixir/lib/tzdata/ebin/Elixir.Tzdata.ParserOrganizer.beam
+lib/elixir/lib/tzdata/ebin/Elixir.Tzdata.PeriodBuilder.State.beam
 lib/elixir/lib/tzdata/ebin/Elixir.Tzdata.PeriodBuilder.beam
 lib/elixir/lib/tzdata/ebin/Elixir.Tzdata.ReleaseReader.beam
 lib/elixir/lib/tzdata/ebin/Elixir.Tzdata.ReleaseUpdater.beam
@@ -31,5 +32,5 @@ lib/elixir/lib/tzdata/lib/tzdata/table_data.ex
 lib/elixir/lib/tzdata/lib/tzdata/table_parser.ex
 lib/elixir/lib/tzdata/lib/tzdata/tzdata_app.ex
 lib/elixir/lib/tzdata/lib/tzdata/util.ex
-lib/elixir/lib/tzdata/priv/release_ets/2017b.ets
+lib/elixir/lib/tzdata/priv/release_ets/2018e.ets
 %%PORTDOCS%%%%DOCSDIR%%/README.md
