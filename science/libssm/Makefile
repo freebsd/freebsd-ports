@@ -21,11 +21,4 @@ CONFIGURE_ARGS=	--enable-shared --disable-static --enable-ccp4 --with-mmdb=${LOC
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-fPIC
-FFLAGS+=	-fPIC
-
-xpost-configure:
-	${REINPLACE_CMD} -e 's| -Wl,--as-needed||; s| -Wl,--no-as-needed||' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|^archive_cmds=|wl="-Wl,"; archive_cmds=|' ${WRKSRC}/libtool # wl is missing otherwise for some reason
-
 .include <bsd.port.mk>
