@@ -44,6 +44,7 @@
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep
+    SUBDIR += clipper
     SUBDIR += colt
     SUBDIR += crf++
     SUBDIR += dcl
