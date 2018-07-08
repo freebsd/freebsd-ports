@@ -10322,3 +10322,5 @@ dns/bind99|dns/bind911|2018-07-04|Has expired: Going out of support, please migr
 dns/bind910|dns/bind911|2018-07-04|Has expired: Going out of support, please migrate to dns/bind911
 www/gitlab|www/gitlab-ce|2018-07-04|Port renamed to match name on gitlab.org
 devel/rubygem-oj2|devel/rubygem-oj|2018-07-04|Has expired: Obsoleted by update of www/gitlab. Please use devel/rubygem-oj instead.
+net-mgmt/sx||2018-07-08|Has expired: Upstream gone, does not fetch
+www/sxweb||2018-07-08|Removed, web frontend of net-mgmt/sx, upstream also gone

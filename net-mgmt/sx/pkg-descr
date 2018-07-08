@@ -1,9 +1,0 @@
-Skylable Sx is a reliable, fully distributed cluster solution for your data
-storage needs. With Sx you can aggregate the disk space available on multiple
-servers and merge it into a single storage system. The cluster makes sure that
-your data is always replicated over multiple nodes (the exact number of copies
-is defined by the sysadmin) and synchronized. Additionally Sx has built-in
-support for deduplication, client-side encryption, on-the-fly compression and
-much more.
-
-WWW: http://www.skylable.com/

@@ -375,7 +375,6 @@
     SUBDIR += statsite
     SUBDIR += subcalc
     SUBDIR += super_mediator
-    SUBDIR += sx
     SUBDIR += sysmon
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
