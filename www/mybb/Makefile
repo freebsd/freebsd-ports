@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mybb
-DISTVERSION=	1.8.15
+DISTVERSION=	1.8.16
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	PHP-based bulletin board / discussion forum system
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}_1815
+GH_TAGNAME=	${PORTNAME}_1816
 
 USES=		cpe mysql php:web
 NO_BUILD=	yes
