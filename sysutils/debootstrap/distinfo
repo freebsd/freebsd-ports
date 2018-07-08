@@ -1,3 +1,3 @@
-TIMESTAMP = 1530487725
-SHA256 (debootstrap_1.0.104.tar.gz) = fd01743c9d87aef2621c88420f896c67342c85ce24d289fad021518755801b28
-SIZE (debootstrap_1.0.104.tar.gz) = 73264
+TIMESTAMP = 1531088624
+SHA256 (debootstrap_1.0.106.tar.gz) = 4ffcd12477540cbccdbed7c254f77797b886228ca94e749414d0380eab62c26e
+SIZE (debootstrap_1.0.106.tar.gz) = 73686
