@@ -2263,6 +2263,7 @@
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
+    SUBDIR += squid3
     SUBDIR += squid-devel
     SUBDIR += squid_radius_auth
     SUBDIR += squidanalyzer
