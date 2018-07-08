@@ -20,11 +20,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libespeak.so:audio/espeak
 
+USES=		tar:bzip2 gettext gmake localbase pkgconfig
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2 gettext gmake pkgconfig
 USE_GNOME=	gtk20 intltool esound
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+
+CXXFLAGS+=	-Wno-reserved-user-defined-literal
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL README readme.txt
 
