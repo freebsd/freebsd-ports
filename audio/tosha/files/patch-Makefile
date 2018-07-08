@@ -1,5 +1,14 @@
 --- Makefile.orig	1998-12-16 12:34:09 UTC
 +++ Makefile
+@@ -17,7 +17,7 @@ MANDIR=$(PREFIX)/man
+ ###################################################
+ 
+ CFLAGS?=-O2
+-CFLAGS+=-Wall -ansi -DGLOBAL_ETC_DIR=\"$(ETCDIR)\"
++CFLAGS+=-Wall -DGLOBAL_ETC_DIR=\"$(ETCDIR)\"
+ 
+ .if (exists(/usr/include/camlib.h))
+ CFLAGS+=-DCAM
 @@ -53,15 +53,10 @@ pcmfade:	pcmfade.o utils.o
  	$(CC) $(CFLAGS) -o pcmfade pcmfade.o utils.o
  
