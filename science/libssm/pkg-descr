@@ -1,0 +1,9 @@
+SSM is a macromolecular coordinate superposition library, written by Eugene
+Krissinel of the EBI.
+
+The library implements the SSM algorithm of protein structure comparison in
+three dimensions, which includes an original procedure of matching graphs built
+on the protein's secondary-structure elements, followed by an iterative
+three-dimensional alignment of protein backbone Calpha atoms.
+
+WWW: https://launchpad.net/ssm

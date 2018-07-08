@@ -1,0 +1,12 @@
+bin/superpose
+include/ssm/ssm_align.h
+include/ssm/ssm_csia.h
+include/ssm/ssm_defs.h
+include/ssm/ssm_graph.h
+include/ssm/ssm_malign.h
+include/ssm/ssm_superpose.h
+include/ssm/ssm_vxedge.h
+lib/libssm.so
+lib/libssm.so.2
+lib/libssm.so.2.0.0
+libdata/pkgconfig/ssm.pc
