@@ -34,6 +34,7 @@
 %%ETCDIR%%/errors/af/ERR_NO_RELAY
 %%ETCDIR%%/errors/af/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/af/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/af/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/af/ERR_READ_ERROR
 %%ETCDIR%%/errors/af/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/af/ERR_SECURE_CONNECT_FAIL
@@ -92,6 +93,7 @@
 %%ETCDIR%%/errors/ar/ERR_NO_RELAY
 %%ETCDIR%%/errors/ar/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/ar/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/ar/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/ar/ERR_READ_ERROR
 %%ETCDIR%%/errors/ar/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/ar/ERR_SECURE_CONNECT_FAIL
@@ -135,6 +137,7 @@
 %%ETCDIR%%/errors/az/ERR_NO_RELAY
 %%ETCDIR%%/errors/az/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/az/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/az/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/az/ERR_READ_ERROR
 %%ETCDIR%%/errors/az/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/az/ERR_SECURE_CONNECT_FAIL
@@ -178,6 +181,7 @@
 %%ETCDIR%%/errors/bg/ERR_NO_RELAY
 %%ETCDIR%%/errors/bg/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/bg/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/bg/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/bg/ERR_READ_ERROR
 %%ETCDIR%%/errors/bg/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/bg/ERR_SECURE_CONNECT_FAIL
@@ -220,6 +224,7 @@
 %%ETCDIR%%/errors/ca/ERR_NO_RELAY
 %%ETCDIR%%/errors/ca/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/ca/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/ca/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/ca/ERR_READ_ERROR
 %%ETCDIR%%/errors/ca/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/ca/ERR_SECURE_CONNECT_FAIL
@@ -263,6 +268,7 @@
 %%ETCDIR%%/errors/cs/ERR_NO_RELAY
 %%ETCDIR%%/errors/cs/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/cs/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/cs/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/cs/ERR_READ_ERROR
 %%ETCDIR%%/errors/cs/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/cs/ERR_SECURE_CONNECT_FAIL
@@ -306,6 +312,7 @@
 %%ETCDIR%%/errors/da/ERR_NO_RELAY
 %%ETCDIR%%/errors/da/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/da/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/da/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/da/ERR_READ_ERROR
 %%ETCDIR%%/errors/da/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/da/ERR_SECURE_CONNECT_FAIL
@@ -353,6 +360,7 @@
 %%ETCDIR%%/errors/de/ERR_NO_RELAY
 %%ETCDIR%%/errors/de/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/de/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/de/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/de/ERR_READ_ERROR
 %%ETCDIR%%/errors/de/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/de/ERR_SECURE_CONNECT_FAIL
@@ -396,6 +404,7 @@
 %%ETCDIR%%/errors/el/ERR_NO_RELAY
 %%ETCDIR%%/errors/el/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/el/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/el/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/el/ERR_READ_ERROR
 %%ETCDIR%%/errors/el/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/el/ERR_SECURE_CONNECT_FAIL
@@ -453,6 +462,7 @@
 %%ETCDIR%%/errors/en/ERR_NO_RELAY
 %%ETCDIR%%/errors/en/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/en/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/en/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/en/ERR_READ_ERROR
 %%ETCDIR%%/errors/en/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/en/ERR_SECURE_CONNECT_FAIL
@@ -515,6 +525,7 @@
 %%ETCDIR%%/errors/es/ERR_NO_RELAY
 %%ETCDIR%%/errors/es/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/es/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/es/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/es/ERR_READ_ERROR
 %%ETCDIR%%/errors/es/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/es/ERR_SECURE_CONNECT_FAIL
@@ -558,6 +569,7 @@
 %%ETCDIR%%/errors/et/ERR_NO_RELAY
 %%ETCDIR%%/errors/et/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/et/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/et/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/et/ERR_READ_ERROR
 %%ETCDIR%%/errors/et/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/et/ERR_SECURE_CONNECT_FAIL
@@ -602,6 +614,7 @@
 %%ETCDIR%%/errors/fa/ERR_NO_RELAY
 %%ETCDIR%%/errors/fa/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/fa/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/fa/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/fa/ERR_READ_ERROR
 %%ETCDIR%%/errors/fa/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/fa/ERR_SECURE_CONNECT_FAIL
@@ -645,6 +658,7 @@
 %%ETCDIR%%/errors/fi/ERR_NO_RELAY
 %%ETCDIR%%/errors/fi/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/fi/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/fi/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/fi/ERR_READ_ERROR
 %%ETCDIR%%/errors/fi/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/fi/ERR_SECURE_CONNECT_FAIL
@@ -693,6 +707,7 @@
 %%ETCDIR%%/errors/fr/ERR_NO_RELAY
 %%ETCDIR%%/errors/fr/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/fr/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/fr/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/fr/ERR_READ_ERROR
 %%ETCDIR%%/errors/fr/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/fr/ERR_SECURE_CONNECT_FAIL
@@ -736,6 +751,7 @@
 %%ETCDIR%%/errors/he/ERR_NO_RELAY
 %%ETCDIR%%/errors/he/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/he/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/he/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/he/ERR_READ_ERROR
 %%ETCDIR%%/errors/he/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/he/ERR_SECURE_CONNECT_FAIL
@@ -779,6 +795,7 @@
 %%ETCDIR%%/errors/hu/ERR_NO_RELAY
 %%ETCDIR%%/errors/hu/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/hu/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/hu/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/hu/ERR_READ_ERROR
 %%ETCDIR%%/errors/hu/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/hu/ERR_SECURE_CONNECT_FAIL
@@ -823,6 +840,7 @@
 %%ETCDIR%%/errors/hy/ERR_NO_RELAY
 %%ETCDIR%%/errors/hy/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/hy/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/hy/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/hy/ERR_READ_ERROR
 %%ETCDIR%%/errors/hy/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/hy/ERR_SECURE_CONNECT_FAIL
@@ -866,6 +884,7 @@
 %%ETCDIR%%/errors/id/ERR_NO_RELAY
 %%ETCDIR%%/errors/id/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/id/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/id/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/id/ERR_READ_ERROR
 %%ETCDIR%%/errors/id/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/id/ERR_SECURE_CONNECT_FAIL
@@ -910,6 +929,7 @@
 %%ETCDIR%%/errors/it/ERR_NO_RELAY
 %%ETCDIR%%/errors/it/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/it/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/it/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/it/ERR_READ_ERROR
 %%ETCDIR%%/errors/it/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/it/ERR_SECURE_CONNECT_FAIL
@@ -953,6 +973,7 @@
 %%ETCDIR%%/errors/ja/ERR_NO_RELAY
 %%ETCDIR%%/errors/ja/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/ja/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/ja/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/ja/ERR_READ_ERROR
 %%ETCDIR%%/errors/ja/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/ja/ERR_SECURE_CONNECT_FAIL
@@ -996,6 +1017,7 @@
 %%ETCDIR%%/errors/ka/ERR_NO_RELAY
 %%ETCDIR%%/errors/ka/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/ka/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/ka/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/ka/ERR_READ_ERROR
 %%ETCDIR%%/errors/ka/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/ka/ERR_SECURE_CONNECT_FAIL
@@ -1040,6 +1062,7 @@
 %%ETCDIR%%/errors/ko/ERR_NO_RELAY
 %%ETCDIR%%/errors/ko/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/ko/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/ko/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/ko/ERR_READ_ERROR
 %%ETCDIR%%/errors/ko/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/ko/ERR_SECURE_CONNECT_FAIL
@@ -1083,6 +1106,7 @@
 %%ETCDIR%%/errors/lt/ERR_NO_RELAY
 %%ETCDIR%%/errors/lt/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/lt/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/lt/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/lt/ERR_READ_ERROR
 %%ETCDIR%%/errors/lt/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/lt/ERR_SECURE_CONNECT_FAIL
@@ -1126,6 +1150,7 @@
 %%ETCDIR%%/errors/lv/ERR_NO_RELAY
 %%ETCDIR%%/errors/lv/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/lv/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/lv/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/lv/ERR_READ_ERROR
 %%ETCDIR%%/errors/lv/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/lv/ERR_SECURE_CONNECT_FAIL
@@ -1169,6 +1194,7 @@
 %%ETCDIR%%/errors/ms/ERR_NO_RELAY
 %%ETCDIR%%/errors/ms/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/ms/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/ms/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/ms/ERR_READ_ERROR
 %%ETCDIR%%/errors/ms/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/ms/ERR_SECURE_CONNECT_FAIL
@@ -1212,6 +1238,7 @@
 %%ETCDIR%%/errors/nl/ERR_NO_RELAY
 %%ETCDIR%%/errors/nl/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/nl/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/nl/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/nl/ERR_READ_ERROR
 %%ETCDIR%%/errors/nl/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/nl/ERR_SECURE_CONNECT_FAIL
@@ -1254,6 +1281,7 @@
 %%ETCDIR%%/errors/oc/ERR_NO_RELAY
 %%ETCDIR%%/errors/oc/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/oc/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/oc/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/oc/ERR_READ_ERROR
 %%ETCDIR%%/errors/oc/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/oc/ERR_SECURE_CONNECT_FAIL
@@ -1297,6 +1325,7 @@
 %%ETCDIR%%/errors/pl/ERR_NO_RELAY
 %%ETCDIR%%/errors/pl/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/pl/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/pl/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/pl/ERR_READ_ERROR
 %%ETCDIR%%/errors/pl/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/pl/ERR_SECURE_CONNECT_FAIL
@@ -1339,6 +1368,7 @@
 %%ETCDIR%%/errors/pt-br/ERR_NO_RELAY
 %%ETCDIR%%/errors/pt-br/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/pt-br/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/pt-br/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/pt-br/ERR_READ_ERROR
 %%ETCDIR%%/errors/pt-br/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/pt-br/ERR_SECURE_CONNECT_FAIL
@@ -1383,6 +1413,7 @@
 %%ETCDIR%%/errors/pt/ERR_NO_RELAY
 %%ETCDIR%%/errors/pt/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/pt/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/pt/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/pt/ERR_READ_ERROR
 %%ETCDIR%%/errors/pt/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/pt/ERR_SECURE_CONNECT_FAIL
@@ -1427,6 +1458,7 @@
 %%ETCDIR%%/errors/ro/ERR_NO_RELAY
 %%ETCDIR%%/errors/ro/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/ro/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/ro/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/ro/ERR_READ_ERROR
 %%ETCDIR%%/errors/ro/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/ro/ERR_SECURE_CONNECT_FAIL
@@ -1470,6 +1502,7 @@
 %%ETCDIR%%/errors/ru/ERR_NO_RELAY
 %%ETCDIR%%/errors/ru/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/ru/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/ru/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/ru/ERR_READ_ERROR
 %%ETCDIR%%/errors/ru/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/ru/ERR_SECURE_CONNECT_FAIL
@@ -1513,6 +1546,7 @@
 %%ETCDIR%%/errors/sk/ERR_NO_RELAY
 %%ETCDIR%%/errors/sk/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/sk/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/sk/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/sk/ERR_READ_ERROR
 %%ETCDIR%%/errors/sk/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/sk/ERR_SECURE_CONNECT_FAIL
@@ -1556,6 +1590,7 @@
 %%ETCDIR%%/errors/sl/ERR_NO_RELAY
 %%ETCDIR%%/errors/sl/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/sl/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/sl/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/sl/ERR_READ_ERROR
 %%ETCDIR%%/errors/sl/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/sl/ERR_SECURE_CONNECT_FAIL
@@ -1602,6 +1637,7 @@
 %%ETCDIR%%/errors/sr-cyrl/ERR_NO_RELAY
 %%ETCDIR%%/errors/sr-cyrl/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/sr-cyrl/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/sr-cyrl/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/sr-cyrl/ERR_READ_ERROR
 %%ETCDIR%%/errors/sr-cyrl/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/sr-cyrl/ERR_SECURE_CONNECT_FAIL
@@ -1647,6 +1683,7 @@
 %%ETCDIR%%/errors/sr-latn/ERR_NO_RELAY
 %%ETCDIR%%/errors/sr-latn/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/sr-latn/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/sr-latn/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/sr-latn/ERR_READ_ERROR
 %%ETCDIR%%/errors/sr-latn/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/sr-latn/ERR_SECURE_CONNECT_FAIL
@@ -1693,6 +1730,7 @@
 %%ETCDIR%%/errors/sv/ERR_NO_RELAY
 %%ETCDIR%%/errors/sv/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/sv/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/sv/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/sv/ERR_READ_ERROR
 %%ETCDIR%%/errors/sv/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/sv/ERR_SECURE_CONNECT_FAIL
@@ -1735,6 +1773,7 @@
 %%ETCDIR%%/errors/templates/ERR_NO_RELAY
 %%ETCDIR%%/errors/templates/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/templates/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/templates/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/templates/ERR_READ_ERROR
 %%ETCDIR%%/errors/templates/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/templates/ERR_SECURE_CONNECT_FAIL
@@ -1778,6 +1817,7 @@
 %%ETCDIR%%/errors/th/ERR_NO_RELAY
 %%ETCDIR%%/errors/th/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/th/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/th/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/th/ERR_READ_ERROR
 %%ETCDIR%%/errors/th/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/th/ERR_SECURE_CONNECT_FAIL
@@ -1821,6 +1861,7 @@
 %%ETCDIR%%/errors/tr/ERR_NO_RELAY
 %%ETCDIR%%/errors/tr/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/tr/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/tr/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/tr/ERR_READ_ERROR
 %%ETCDIR%%/errors/tr/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/tr/ERR_SECURE_CONNECT_FAIL
@@ -1864,6 +1905,7 @@
 %%ETCDIR%%/errors/uk/ERR_NO_RELAY
 %%ETCDIR%%/errors/uk/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/uk/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/uk/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/uk/ERR_READ_ERROR
 %%ETCDIR%%/errors/uk/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/uk/ERR_SECURE_CONNECT_FAIL
@@ -1906,6 +1948,7 @@
 %%ETCDIR%%/errors/uz/ERR_NO_RELAY
 %%ETCDIR%%/errors/uz/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/uz/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/uz/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/uz/ERR_READ_ERROR
 %%ETCDIR%%/errors/uz/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/uz/ERR_SECURE_CONNECT_FAIL
@@ -1949,6 +1992,7 @@
 %%ETCDIR%%/errors/vi/ERR_NO_RELAY
 %%ETCDIR%%/errors/vi/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/vi/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/vi/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/vi/ERR_READ_ERROR
 %%ETCDIR%%/errors/vi/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/vi/ERR_SECURE_CONNECT_FAIL
@@ -1994,6 +2038,7 @@
 %%ETCDIR%%/errors/zh-hans/ERR_NO_RELAY
 %%ETCDIR%%/errors/zh-hans/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/zh-hans/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/zh-hans/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/zh-hans/ERR_READ_ERROR
 %%ETCDIR%%/errors/zh-hans/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/zh-hans/ERR_SECURE_CONNECT_FAIL
@@ -2039,6 +2084,7 @@
 %%ETCDIR%%/errors/zh-hant/ERR_NO_RELAY
 %%ETCDIR%%/errors/zh-hant/ERR_ONLY_IF_CACHED_MISS
 %%ETCDIR%%/errors/zh-hant/ERR_PRECONDITION_FAILED
+%%ETCDIR%%/errors/zh-hant/ERR_PROTOCOL_UNKNOWN
 %%ETCDIR%%/errors/zh-hant/ERR_READ_ERROR
 %%ETCDIR%%/errors/zh-hant/ERR_READ_TIMEOUT
 %%ETCDIR%%/errors/zh-hant/ERR_SECURE_CONNECT_FAIL
@@ -2112,7 +2158,6 @@ libexec/squid/basic_db_auth
 libexec/squid/basic_fake_auth
 libexec/squid/basic_getpwnam_auth
 %%AUTH_LDAP%%libexec/squid/basic_ldap_auth
-libexec/squid/basic_msnt_multi_domain_auth
 libexec/squid/basic_ncsa_auth
 %%AUTH_NIS%%libexec/squid/basic_nis_auth
 libexec/squid/basic_pam_auth
@@ -2124,17 +2169,18 @@ libexec/squid/basic_radius_auth
 libexec/squid/basic_smb_lm_auth
 libexec/squid/cachemgr.cgi
 %%AUTH_KERB%%%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/cert_tool
-%%SSL%%libexec/squid/cert_valid.pl
 libexec/squid/digest_file_auth
 %%FS_DISKD%%libexec/squid/diskd
 libexec/squid/ext_file_userip_acl
 %%AUTH_KERB%%%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/ext_kerberos_ldap_group_acl
 %%AUTH_LDAP%%libexec/squid/ext_ldap_group_acl
+%%BDB%%libexec/squid/ext_session_acl
 %%AUTH_SQL%%libexec/squid/ext_sql_session_acl
-libexec/squid/ext_time_quota_acl
+%%BDB%%libexec/squid/ext_time_quota_acl
 libexec/squid/ext_unix_group_acl
 %%AUTH_SMB%%libexec/squid/ext_wbinfo_group_acl
-libexec/squid/helper-mux.pl
+libexec/squid/helper-mux
+man/man8/helper-mux.8.gz
 libexec/squid/log_file_daemon
 %%AUTH_KERB%%libexec/squid/negotiate_kerberos_auth
 %%AUTH_KERB%%libexec/squid/negotiate_kerberos_auth_test
@@ -2146,7 +2192,9 @@ libexec/squid/ntlm_smb_lm_auth
 %%ICMP%%libexec/squid/pinger
 %%ICMP%%@group
 %%ICMP%%@mode
-%%SSL_CRTD%%libexec/squid/ssl_crtd
+libexec/squid/security_fake_certverify
+man/man8/security_fake_certverify.8.gz
+%%SSL%%libexec/squid/security_file_certgen
 libexec/squid/storeid_file_rewrite
 %%UNLINKD%%libexec/squid/unlinkd
 libexec/squid/url_fake_rewrite
@@ -2155,7 +2203,6 @@ man/man1/squidclient.1.gz
 man/man8/basic_db_auth.8.gz
 man/man8/basic_getpwnam_auth.8.gz
 %%AUTH_LDAP%%man/man8/basic_ldap_auth.8.gz
-man/man8/basic_msnt_multi_domain_auth.8.gz
 man/man8/basic_ncsa_auth.8.gz
 man/man8/basic_pam_auth.8.gz
 man/man8/basic_pop3_auth.8.gz
@@ -2165,15 +2212,17 @@ man/man8/cachemgr.cgi.8.gz
 man/man8/digest_file_auth.8.gz
 man/man8/ext_file_userip_acl.8.gz
 %%AUTH_LDAP%%man/man8/ext_ldap_group_acl.8.gz
+%%BDB%%man/man8/ext_session_acl.8.gz
 %%AUTH_SQL%%man/man8/ext_sql_session_acl.8.gz
-man/man8/ext_time_quota_acl.8.gz
+%%BDB%%man/man8/ext_time_quota_acl.8.gz
 man/man8/ext_unix_group_acl.8.gz
 %%AUTH_SMB%%man/man8/ext_wbinfo_group_acl.8.gz
 %%AUTH_KERB%%man/man8/negotiate_kerberos_auth.8.gz
+%%SSL%%man/man8/security_file_certgen.8.gz
 man/man8/squid.8.gz
-%%SSL_CRTD%%man/man8/ssl_crtd.8.gz
 man/man8/storeid_file_rewrite.8.gz
 sbin/purge
+man/man1/purge.1.gz
 sbin/squid
 sbin/squidclient
 @dir(squid,squid,750) /var/log/squid

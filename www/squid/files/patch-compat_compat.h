@@ -1,8 +1,8 @@
---- compat/compat.h.orig	2015-11-01 10:44:25 UTC
+--- compat/compat.h.orig	2016-12-16 10:06:20 UTC
 +++ compat/compat.h
-@@ -42,17 +42,6 @@
- #endif
- #endif
+@@ -29,17 +29,6 @@
+ /******************************************************/
+ #include "compat/osdetect.h"
  
 -/* Solaris 10 has a broken definition for minor_t in IPFilter compat.
 - * We must pre-define before doing anything with OS headers so the OS
