@@ -109,7 +109,6 @@
 %%WWWDIR%%/admin/modules/forum/management.php
 %%WWWDIR%%/admin/modules/forum/moderation_queue.php
 %%WWWDIR%%/admin/modules/forum/module_meta.php
-%%WWWDIR%%/admin/modules/home/credits.php
 %%WWWDIR%%/admin/modules/home/index.html
 %%WWWDIR%%/admin/modules/home/index.php
 %%WWWDIR%%/admin/modules/home/module_meta.php
@@ -482,7 +481,6 @@
 %%WWWDIR%%/inc/languages/english/admin/forum_module_meta.lang.php
 %%WWWDIR%%/inc/languages/english/admin/global.lang.php
 %%WWWDIR%%/inc/languages/english/admin/hello.lang.php
-%%WWWDIR%%/inc/languages/english/admin/home_credits.lang.php
 %%WWWDIR%%/inc/languages/english/admin/home_dashboard.lang.php
 %%WWWDIR%%/inc/languages/english/admin/home_module_meta.lang.php
 %%WWWDIR%%/inc/languages/english/admin/home_preferences.lang.php
@@ -644,6 +642,7 @@
 %%WWWDIR%%/install/resources/upgrade40.php
 %%WWWDIR%%/install/resources/upgrade41.php
 %%WWWDIR%%/install/resources/upgrade42.php
+%%WWWDIR%%/install/resources/upgrade43.php
 %%WWWDIR%%/install/resources/upgrade5.php
 %%WWWDIR%%/install/resources/upgrade6.php
 %%WWWDIR%%/install/resources/upgrade7.php
@@ -757,7 +756,6 @@
 %%WWWDIR%%/printthread.php
 %%WWWDIR%%/private.php
 %%WWWDIR%%/ratethread.php
-%%WWWDIR%%/readme.md
 %%WWWDIR%%/report.php
 %%WWWDIR%%/reputation.php
 %%WWWDIR%%/rss.php
@@ -771,6 +769,5 @@
 %%WWWDIR%%/uploads/avatars/index.html
 %%WWWDIR%%/uploads/index.html
 %%WWWDIR%%/usercp.php
-%%WWWDIR%%/usercp2.php
 %%WWWDIR%%/warnings.php
 %%WWWDIR%%/xmlhttp.php
