@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calf
-DISTVERSION=	0.90.0
-PORTREVISION=	2
+DISTVERSION=	0.90.1
 CATEGORIES=	audio
 MASTER_SITES=	http://calf-studio-gear.org/files/
 PKGNAMESUFFIX=	-lv2
