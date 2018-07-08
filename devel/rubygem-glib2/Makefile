@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	glib2
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
