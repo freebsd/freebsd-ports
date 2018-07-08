@@ -100,6 +100,7 @@
     SUBDIR += liblinear
     SUBDIR += liboglappth
     SUBDIR += libquantum
+    SUBDIR += libssm
     SUBDIR += libsvm
     SUBDIR += libsvm-python
     SUBDIR += libxc
