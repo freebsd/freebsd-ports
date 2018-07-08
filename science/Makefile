@@ -46,6 +46,7 @@
     SUBDIR += clhep
     SUBDIR += clipper
     SUBDIR += colt
+    SUBDIR += coot
     SUBDIR += crf++
     SUBDIR += dcl
     SUBDIR += devisor
