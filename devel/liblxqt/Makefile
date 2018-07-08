@@ -10,9 +10,8 @@ MAINTAINER=	jesper@schmitz.computer
 COMMENT=	Shared library for LXQt applications
 
 LICENSE=	LGPL21+
-LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt@qt5
 
-BROKEN_aarch64=		fails to compile: lxqtplugininfo.cpp:107:14: expected expression
+LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt@qt5
 
 USES=	cmake:outsource compiler:c++11-lib gettext kde:5 lxqt \
 	pkgconfig qt:5 tar:xz
