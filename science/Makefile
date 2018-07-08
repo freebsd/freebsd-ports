@@ -89,6 +89,7 @@
     SUBDIR += kst2
     SUBDIR += lamprop
     SUBDIR += libaec
+    SUBDIR += libccp4
     SUBDIR += libcint
     SUBDIR += libctl
     SUBDIR += libefp
