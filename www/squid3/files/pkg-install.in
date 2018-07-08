@@ -1,0 +1,70 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+pkgname=$1
+squid_homedir="/var/squid"
+squid_cache_basedir="${squid_homedir}/cache"
+squid_confdir="${PKG_PREFIX:-%%PREFIX%%}/etc/squid"
+squid_logdir="/var/log/squid"
+# these are hardcoded, see /usr/ports/UIDs and /usr/ports/GIDs:
+squid_user=squid
+squid_group=squid
+squid_gid=100
+squid_uid=100
+case $2 in
+PRE-INSTALL)
+	echo "===> Pre-installation configuration for ${pkgname}"
+	;;
+POST-INSTALL)
+	# Since we usually start the Squid master process as ${squid_user}
+	# instead of root make sure that ${squid_homedir} is writable for it.
+	if [ ! -d ${squid_homedir} ]; then
+		echo "Creating ${squid_homedir}..."
+		install -d -o root -g ${squid_group} \
+		    -m 0775 ${squid_homedir}
+	else
+		chgrp ${squid_group} ${squid_homedir}
+		chmod g+w ${squid_homedir}
+	fi
+	if [ ! -d ${squid_cache_basedir} ]; then
+		echo "Creating ${squid_cache_basedir} ..."
+		install -d -o ${squid_user} -g ${squid_group} \
+		    -m 0750 ${squid_cache_basedir}
+	else
+		chown ${squid_user} ${squid_cache_basedir}
+		chgrp ${squid_group} ${squid_cache_basedir}
+		chmod 0750 ${squid_cache_basedir}
+	fi
+	if [ ! -d ${squid_confdir} ]; then
+		echo "Creating ${squid_confdir}..."
+		install -d -o root -g ${squid_group} \
+		    -m 0755 ${squid_confdir}
+	else
+		chgrp ${squid_group} ${squid_confdir}
+	fi
+	if [ ! -d ${squid_logdir} ]; then
+		echo "Creating ${squid_logdir}..."
+		install -d -o ${squid_user} -g ${squid_group} \
+		    -m 0750 ${squid_logdir}
+	else
+		chown ${squid_user} ${squid_logdir}
+		chgrp ${squid_group} ${squid_logdir}
+	fi
+	for file in cachemgr.conf errorpage.css mime.conf msntauth.conf squid.conf; do
+		if [ ! -f ${squid_confdir}/${file} \
+		    -a -f ${squid_confdir}/${file}.default ]; then
+			echo "Creating ${file} from default..."
+			install -c -o root -g ${squid_group} -m 0640 \
+		    	    ${squid_confdir}/${file}.default \
+			    ${squid_confdir}/${file}
+		fi
+	done
+	;;
+*)
+	exit 64
+	;;
+esac
+exit 0
