@@ -11,6 +11,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Subversion repository web frontend
 
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		p5-Test-Benchmark>=0:devel/p5-Test-Benchmark \
+		p5-Test-HTML-Tidy>=0:devel/p5-Test-HTML-Tidy \
+		p5-Test-WWW-Mechanize>=0:devel/p5-Test-WWW-Mechanize
 RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
 		p5-Locale-Maketext-Simple>=0:devel/p5-Locale-Maketext-Simple \
@@ -30,10 +34,6 @@ RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
 		p5-Template-Plugin-Subst>=0:www/p5-Template-Plugin-Subst \
 		p5-Text-Diff-HTML>=0:textproc/p5-Text-Diff-HTML \
 		p5-URI>=0:net/p5-URI
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		p5-Test-Benchmark>=0:devel/p5-Test-Benchmark \
-		p5-Test-HTML-Tidy>=0:devel/p5-Test-HTML-Tidy \
-		p5-Test-WWW-Mechanize>=0:devel/p5-Test-WWW-Mechanize
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/svnweb-install

@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to extend your attribute interfaces
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Mouse>=0.40:devel/p5-Mouse
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-UseAllModules>=0:devel/p5-Test-UseAllModules \

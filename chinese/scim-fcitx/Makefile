@@ -15,8 +15,8 @@ COMMENT=	SCIM IMEngine module for fcitx
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	scim:textproc/scim
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		tar:bzip2 gmake libtool:keepla pkgconfig
 GNU_CONFIGURE=	yes

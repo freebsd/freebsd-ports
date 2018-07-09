@@ -12,12 +12,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Primitive Geometry Entities
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Check-ISA>=0.04:devel/p5-Check-ISA \
 		p5-JSON-Any>=1.22:converters/p5-JSON-Any \
 		p5-Moose>=0.92:devel/p5-Moose \
 		p5-MooseX-Clone>=0.04:devel/p5-MooseX-Clone \
 		p5-MooseX-Storage>=0.17:devel/p5-MooseX-Storage
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

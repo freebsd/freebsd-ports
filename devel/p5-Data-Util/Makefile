@@ -13,10 +13,10 @@ COMMENT=	Perl extension for utilities for data and data types
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-MRO-Compat>=0.09:devel/p5-MRO-Compat \
 	p5-Hash-Util-FieldHash-Compat>0:devel/p5-Hash-Util-FieldHash-Compat
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 	p5-Scope-Guard>=0.20:devel/p5-Scope-Guard
 

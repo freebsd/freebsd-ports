@@ -10,7 +10,7 @@ COMMENT=	Sympa is an electronic mailing list manager
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 	p5-DBI>=0:databases/p5-DBI	\

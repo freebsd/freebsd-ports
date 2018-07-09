@@ -15,10 +15,10 @@ COMMENT=	Test required module is really used and vice versa
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-List-MoreUtils>=0.24:lang/p5-List-MoreUtils \
 		p5-Module-Used>=v1.2.0:devel/p5-Module-Used \
 		p5-PPI>=1.205:textproc/p5-PPI
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

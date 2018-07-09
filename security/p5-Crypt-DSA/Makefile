@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DSA signature and key generation
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-Convert-PEM>=0:converters/p5-Convert-PEM \
 		p5-Data-Buffer>=0:misc/p5-Data-Buffer \
 		p5-File-Which>=0.05:sysutils/p5-File-Which
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

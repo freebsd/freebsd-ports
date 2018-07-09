@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for Sass support for all Plack frameworks
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Plack>0:www/p5-Plack \
 	p5-Text-Sass>0:textproc/p5-Text-Sass
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 # Now, sass gem can be used instead of p5-Text-Sass.
 
 USES=		perl5

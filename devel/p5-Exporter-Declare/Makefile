@@ -13,10 +13,10 @@ COMMENT=	Perl extension for exporting done right
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Meta-Builder>=0.003:devel/p5-Meta-Builder \
 	p5-aliased>0:devel/p5-aliased
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Fennec-Lite>=0:devel/p5-Fennec-Lite \
 		p5-Test-Exception>=0:devel/p5-Test-Exception
 

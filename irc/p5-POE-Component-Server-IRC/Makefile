@@ -15,6 +15,7 @@ COMMENT=	Fully event-driven networkable IRC server daemon module
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-PasswdMD5>=1.3:security/p5-Crypt-PasswdMD5 \
 		p5-IRC-Utils>=0.10:irc/p5-IRC-Utils \
 		p5-Net-Netmask>=1.9012:net-mgmt/p5-Net-Netmask \
@@ -26,7 +27,6 @@ RUN_DEPENDS=	p5-Crypt-PasswdMD5>=1.3:security/p5-Crypt-PasswdMD5 \
 		p5-POE-Component-SSLify>=0:security/p5-POE-Component-SSLify \
 		p5-POE-Filter-IRCD>=2.2:irc/p5-POE-Filter-IRCD \
 		p5-POE-Filter-Zlib>0:archivers/p5-POE-Filter-Zlib
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

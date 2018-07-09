@@ -14,8 +14,8 @@ COMMENT=	Scientific plotting package
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYNUMPY}
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		python pyqt:4 qt:4 shebangfix
 USE_PYQT=	gui svg

@@ -12,6 +12,8 @@ COMMENT=	Tool for converting, exporting, merging and transforming DSC data
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${TEST_DEPENDS}
 RUN_DEPENDS=	p5-common-sense>=3:devel/p5-common-sense		\
 		p5-IO-Socket-INET6>=1.31:net/p5-IO-Socket-INET6		\
 		p5-IP-Country>=2.28:net/p5-IP-Country			\
@@ -22,8 +24,6 @@ RUN_DEPENDS=	p5-common-sense>=3:devel/p5-common-sense		\
 		p5-XML-LibXML-Simple>=0.93:textproc/p5-XML-LibXML-Simple \
 		p5-YAML-Tiny>=1.69:textproc/p5-YAML-Tiny
 TEST_DEPENDS=	p5-Test-CheckManifest>=0.9:devel/p5-Test-CheckManifest
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		${TEST_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

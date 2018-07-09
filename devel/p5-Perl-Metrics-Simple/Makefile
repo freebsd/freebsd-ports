@@ -12,11 +12,11 @@ COMMENT=	Perl extension to count packages, subs, lines, etc. of many files
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-PPI>=1.113:textproc/p5-PPI \
 	p5-Readonly>=1.03:devel/p5-Readonly \
 	p5-Statistics-Basic>0:math/p5-Statistics-Basic
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Pod>0:devel/p5-Test-Pod \
 	p5-Test-Pod-Coverage>0:devel/p5-Test-Pod-Coverage

@@ -13,10 +13,10 @@ COMMENT=	Perl extension for color space conversions and named lookups
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-List-UtilsBy>0:devel/p5-List-UtilsBy \
 	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

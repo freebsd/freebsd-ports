@@ -13,8 +13,8 @@ COMMENT=	Subclass of AppConfig that provides standard options
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-AppConfig>=1.52:devel/p5-AppConfig
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

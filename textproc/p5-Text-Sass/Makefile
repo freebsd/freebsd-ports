@@ -14,10 +14,10 @@ COMMENT=	Perl implementation of http://sass-lang.com/
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Readonly>=1.03:devel/p5-Readonly \
 	p5-Convert-Color>0:graphics/p5-Convert-Color
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Try-Tiny>0:lang/p5-Try-Tiny
 
 USES=		perl5

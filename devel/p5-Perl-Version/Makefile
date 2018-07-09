@@ -14,8 +14,8 @@ COMMENT=	Parse and manipulate Perl version strings
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Slurp-Tiny>=0:devel/p5-File-Slurp-Tiny
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

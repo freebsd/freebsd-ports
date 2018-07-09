@@ -12,6 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for logic programming
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-aliased>=0.11:devel/p5-aliased \
 		p5-Clone>=0.15:devel/p5-Clone \
 		p5-Exporter-Tidy>=0.06:devel/p5-Exporter-Tidy \
@@ -19,7 +20,6 @@ RUN_DEPENDS=	p5-aliased>=0.11:devel/p5-aliased \
 		p5-Regexp-Common>=2.119:textproc/p5-Regexp-Common \
 		p5-Text-Quote>=0.03:textproc/p5-Text-Quote \
 		p5-Term-ReadKey>=2.21:devel/p5-Term-ReadKey
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

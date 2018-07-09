@@ -14,6 +14,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:devel/p5-Class-Accessor-Chained \
 		p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
@@ -21,7 +22,6 @@ RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:devel/p5-Class-Accessor-Chained \
 		p5-Proc-Background>=0:devel/p5-Proc-Background \
 		p5-String-Koremutake>=0:textproc/p5-String-Koremutake \
 		p5-YAML>=0:textproc/p5-YAML
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Expect>=0:devel/p5-Test-Expect
 
 NO_ARCH=	yes

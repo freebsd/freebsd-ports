@@ -12,9 +12,9 @@ COMMENT=	Encode plugin for Punycode
 
 LICENSE=	GPLv1
 
-RUN_DEPENDS=	p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
+BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
+RUN_DEPENDS=	p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode
 
 USES=		perl5
 USE_PERL5=	modbuild

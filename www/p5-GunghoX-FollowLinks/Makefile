@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to follow links within responses for Gungho
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Gungho>=0.09005:www/p5-Gungho \
 	p5-HTML-Parser>0:www/p5-HTML-Parser \
@@ -18,7 +19,6 @@ RUN_DEPENDS=	\
 	p5-MIME-Types>0:mail/p5-MIME-Types \
 	p5-Sub-Exporter>0:devel/p5-Sub-Exporter \
 	p5-URI-Match>0:net/p5-URI-Match
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Class-Null>0:devel/p5-Class-Null
 
 USES=		perl5

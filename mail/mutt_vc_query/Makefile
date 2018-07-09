@@ -9,8 +9,8 @@ MASTER_SITES=	SF/rolo/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	vCard query utility for mutt
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	libvc>=003:devel/libvc
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes

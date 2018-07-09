@@ -11,7 +11,7 @@ DISTNAME=	Ark-0.001000_001
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl web application framework
 
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Class-Data-Inheritable>0:devel/p5-Class-Data-Inheritable \
 	p5-Class-Method-Modifiers-Fast>0:devel/p5-Class-Method-Modifiers-Fast \

@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Asynchronous client module for Gearman for Danga::Socket applications
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Danga-Socket>=0:devel/p5-Danga-Socket \
 		p5-Gearman>=0:devel/p5-Gearman
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Gearman-Server>=0:devel/p5-Gearman-Server
 
 USES=		perl5

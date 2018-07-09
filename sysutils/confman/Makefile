@@ -10,12 +10,12 @@ MASTER_SITES=	http://www.timesinks.net/distfiles/
 MAINTAINER=	ccowart@timesinks.net
 COMMENT=	Revision controlled configuration manager
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
 		svn:devel/subversion \
 		sudo:security/sudo \
 		greadlink:sysutils/coreutils \
 		wget:ftp/wget
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
 

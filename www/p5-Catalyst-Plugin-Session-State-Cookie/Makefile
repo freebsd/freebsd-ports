@@ -11,13 +11,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Stores a Catalyst Session in a Cookie
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Catalyst-Runtime>=5.80005:www/p5-Catalyst-Runtime \
 	p5-Catalyst-Plugin-Session>=0.27:www/p5-Catalyst-Plugin-Session \
 	p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 	p5-Moose>0:devel/p5-Moose \
 	p5-namespace-autoclean>0:devel/p5-namespace-autoclean
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure extract

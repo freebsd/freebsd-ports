@@ -13,6 +13,7 @@ COMMENT=	Perl extension for simple DBI wrapper/ORMapper
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Class-Accessor-Lite>=0.05:devel/p5-Class-Accessor-Lite \
 	p5-Class-Load>=0.06:devel/p5-Class-Load \
@@ -22,7 +23,6 @@ RUN_DEPENDS=	\
 	p5-Data-Page>0:databases/p5-Data-Page \
 	p5-Data-Page-NoTotalEntries>=0.02:devel/p5-Data-Page-NoTotalEntries \
 	p5-SQL-Maker>=0.14:databases/p5-SQL-Maker
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-DBD-SQLite>=1.12:databases/p5-DBD-SQLite \
 	p5-Test-Mock-Guard>=0.10:devel/p5-Test-Mock-Guard \

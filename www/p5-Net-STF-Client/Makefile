@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for STF Client
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Class-Accessor-Lite>0:devel/p5-Class-Accessor-Lite \
 	p5-Furl>0:www/p5-Furl \
 	p5-libwww>0:www/p5-libwww \
 	p5-URI>0:net/p5-URI
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Requires>0:devel/p5-Test-Requires \
 	p5-Test-TCP>0:devel/p5-Test-TCP \

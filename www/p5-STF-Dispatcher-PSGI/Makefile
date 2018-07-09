@@ -14,12 +14,12 @@ COMMENT=	Perl extension for pluggable STF dispatcher interface
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Class-Accessor-Lite>0:devel/p5-Class-Accessor-Lite \
 	p5-HTTP-Date>0:www/p5-HTTP-Date \
 	p5-Plack>0:www/p5-Plack \
 	p5-Plack-Middleware-Header>0:www/p5-Plack-Middleware-Header
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Net-STF-Client>0:www/p5-Net-STF-Client \
 	p5-Test-TCP>0:devel/p5-Test-TCP

@@ -12,8 +12,8 @@ COMMENT=	Read/Write .css files with as little code as possible
 
 LICENSE=	ARTPERL10
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

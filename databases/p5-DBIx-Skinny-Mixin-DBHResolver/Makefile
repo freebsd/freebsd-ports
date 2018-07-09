@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of DBIx::DBHResolver mixin for DBIx::Skinny
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-DBIx-DBHResolver>0:databases/p5-DBIx-DBHResolver \
 	p5-DBIx-Skinny>0:databases/p5-DBIx-Skinny
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
