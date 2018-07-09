@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix2
-PORTREVISION=	1
 PKGNAMESUFFIX=	-agent
 CATEGORIES=	net-mgmt
 
