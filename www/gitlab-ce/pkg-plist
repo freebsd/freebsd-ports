@@ -10234,6 +10234,7 @@
 %%WWWDIR%%/spec/features/groups/group_settings_spec.rb
 %%WWWDIR%%/spec/features/groups/issues_spec.rb
 %%WWWDIR%%/spec/features/groups/labels/edit_spec.rb
+%%WWWDIR%%/spec/features/groups/labels/index_spec.rb
 %%WWWDIR%%/spec/features/groups/labels/subscription_spec.rb
 %%WWWDIR%%/spec/features/groups/labels/user_sees_links_to_issuables.rb
 %%WWWDIR%%/spec/features/groups/members/filter_members_spec.rb
@@ -12945,6 +12946,7 @@
 %%WWWDIR%%/spec/services/preview_markdown_service_spec.rb
 %%WWWDIR%%/spec/services/projects/after_import_service_spec.rb
 %%WWWDIR%%/spec/services/projects/autocomplete_service_spec.rb
+%%WWWDIR%%/spec/services/projects/batch_open_issues_count_service_spec.rb
 %%WWWDIR%%/spec/services/projects/count_service_spec.rb
 %%WWWDIR%%/spec/services/projects/create_from_template_service_spec.rb
 %%WWWDIR%%/spec/services/projects/create_service_spec.rb
