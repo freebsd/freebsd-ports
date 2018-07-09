@@ -2,7 +2,9 @@
 
 PORTNAME=	openstructure
 DISTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	science
+MASTER_SITES=	https://git.scicore.unibas.ch/schwede/${PORTNAME}/repository/${DISTVERSION}/archive.tar.gz?dummy=/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Molecular modelling and visualization environment
@@ -16,12 +18,11 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		${PY_BOOST}
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY} \
+		bash:shells/bash
 
 USES=		cmake:outsource eigen:3 python pyqt:4 qt:4 shebangfix
 SHEBANG_FILES=	scripts/dng.in scripts/ost.in scripts/ost_config.in
-USE_GITHUB=	yes
-GH_ACCOUNT=	yurivict
 USE_QT=		corelib gui network opengl xml qmake_build moc_build rcc_build uic_build
 USE_PYQT=	core gui
 USE_GL=		gl glu
@@ -32,5 +33,8 @@ CMAKE_ARGS=	-DPYTHON_INCLUDE_PATH=${PYTHON_INCLUDEDIR} \
 		-DPYTHON_LIBRARIES=${PYTHON_LIBDIR} \
 		-DFREEBSD_BOOST_PYTHON_COMPONENT=python${PYTHON_VER:S/.//} \
 		-DFREEBSD_PYTHON_LIBRARY=python${PYTHON_VER}
+
+post-extract:
+	@${MV} ${WRKSRC}-* ${WRKSRC}
 
 .include <bsd.port.mk>
