@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-pointclouds
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	2309bdab20fb2a385d374db6a87349199279db18.patch:-p1
+PATCHFILES+=	491b7c7e12ce39c59fb1f22718812a02e7f58065.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Point Cloud Library
