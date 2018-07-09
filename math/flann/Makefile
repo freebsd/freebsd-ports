@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	flann
-DISTVERSION=	1.8.4
-DISTVERSIONSUFFIX=	-src
+DISTVERSION=	1.9.1-19
+DISTVERSIONSUFFIX=	-gf3a17cd
 CATEGORIES=	math
-MASTER_SITES=	http://people.cs.ubc.ca/~mariusm/uploads/FLANN/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for fast nearest neighbor searches in high dimensional spaces
@@ -15,16 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/szip
 
-USES=		cmake:outsource zip
-CMAKE_ARGS=	-DBUILD_PYTHON_BINDINGS:BOOL=OFF \
-		-DBUILD_MATLAB_BINDINGS:BOOL=OFF \
-		-DEXAMPLES_SUBDIR:STRING="share/examples/flann" \
-		-DUSE_OPENMP:BOOL=OFF  # OpenMP search is broken in cmake: https://gitlab.kitware.com/cmake/cmake/issues/17474
+USES=		cmake:outsource
+USE_GITHUB=	yes
+GH_ACCOUNT=	mariusmuja
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-PLIST_SUB=	SHL3=${DISTVERSION} SHL2=${DISTVERSION:R}
+PLIST_SUB=	SHL3=${DISTVERSION:C/-.*//} SHL2=${DISTVERSION:R}
 
-EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
+CMAKE_OFF=	BUILD_PYTHON_BINDINGS BUILD_MATLAB_BINDINGS BUILD_EXAMPLES BUILD_TESTS BUILD_DOC \
+		USE_OPENMP # OpenMP search is broken in cmake: https://gitlab.kitware.com/cmake/cmake/issues/17474
 
 .include <bsd.port.mk>

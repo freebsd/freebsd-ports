@@ -14,6 +14,8 @@ include/flann/algorithms/lsh_index.h
 include/flann/algorithms/nn_index.h
 include/flann/config.h
 include/flann/defines.h
+include/flann/ext/lz4.h
+include/flann/ext/lz4hc.h
 include/flann/flann.h
 include/flann/flann.hpp
 include/flann/general.h
@@ -44,6 +46,10 @@ include/flann/util/sampling.h
 include/flann/util/saving.h
 include/flann/util/serialization.h
 include/flann/util/timer.h
+lib/cmake/flann/flann-config-version.cmake
+lib/cmake/flann/flann-config.cmake
+lib/cmake/flann/flann-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/flann/flann-targets.cmake
 lib/libflann.so
 lib/libflann.so.%%SHL2%%
 lib/libflann.so.%%SHL3%%
@@ -53,6 +59,3 @@ lib/libflann_cpp.so.%%SHL3%%
 lib/libflann_cpp_s.so
 lib/libflann_s.so
 libdata/pkgconfig/flann.pc
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flann_example_c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flann_example_cpp
