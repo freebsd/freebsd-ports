@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-07-09 07:47:42 UTC
++++ CMakeLists.txt
+@@ -83,7 +83,7 @@ file(GLOB_RECURSE ZXING_FILES
+ )
+ 
+ add_executable(zxing ${ZXING_FILES})
+-target_link_libraries(zxing libzxing)
++target_link_libraries(zxing libzxing ${OpenCV_LIBRARIES})
+ 
+ install(TARGETS zxing libzxing EXPORT zxing-targets
+ 	LIBRARY DESTINATION lib
