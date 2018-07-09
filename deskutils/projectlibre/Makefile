@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	projectlibre
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF/${PORTNAME}/ProjectLibre/${PORTVERSION:S/.0$//} \
 		LOCAL/cpm/projectlibre/:icons
