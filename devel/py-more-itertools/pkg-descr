@@ -1,3 +1,11 @@
-More routines for operating on iterables, beyond itertools.
+Python implementation of the "purl" (= package URL) specification. The library
+provides parsing and building of package URLs. 
+
+WWW: https://github.com/package-url/packageurl-python
+Python's itertools library is a gem - you can compose elegant solutions for a
+variety of problems with the functions it provides.
+
+In more-itertools one collect additional building blocks, recipes, and routines
+for working with Python iterables.
 
 WWW: https://github.com/erikrose/more-itertools
