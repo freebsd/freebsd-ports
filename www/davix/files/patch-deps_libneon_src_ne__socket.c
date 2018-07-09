@@ -1,6 +1,6 @@
---- deps/libneon/src/ne_socket.c.orig	2018-06-16 07:30:42 UTC
+--- deps/libneon/src/ne_socket.c.orig	2018-06-15 09:35:23 UTC
 +++ deps/libneon/src/ne_socket.c
-@@ -31,9 +31,9 @@
+@@ -34,9 +34,9 @@
  #include <sys/time.h>
  #endif
  #include <sys/stat.h>
