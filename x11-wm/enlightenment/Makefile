@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.21.10
+PORTVERSION=	0.22.3
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
@@ -43,11 +43,11 @@ NLS_CONFIGURE_ENABLE=	nls
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's/\(setuid_root_mode = a=rx,u+x\)s/\1/g' \
-		${WRKSRC}/src/bin/Makefile.mk \
-		${WRKSRC}/src/modules/Makefile_cpufreq.mk
-
+# why is setuid deactivated? "enlightenment_ckpasswd" i.e. does not work without setuid
+#post-patch:
+#	@${REINPLACE_CMD} -e \
+#		's/\(setuid_root_mode = a=rx,u+x\)s/\1/g' \
+#		${WRKSRC}/src/bin/Makefile.mk \
+#		${WRKSRC}/src/modules/Makefile_cpufreq.mk
+#
 .include <bsd.port.mk>

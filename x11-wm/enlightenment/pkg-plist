@@ -1,11 +1,12 @@
 bin/emixer
 bin/enlightenment
+bin/enlightenment_askpass
 bin/enlightenment_filemanager
 bin/enlightenment_imc
 bin/enlightenment_open
 bin/enlightenment_remote
 bin/enlightenment_start
-etc/enlightenment/sysactions.conf
+%%ETCDIR%%/sysactions.conf
 etc/xdg/menus/e-applications.menu
 include/enlightenment/e.h
 include/enlightenment/e_Efx.h
@@ -21,6 +22,7 @@ include/enlightenment/e_bindings.h
 include/enlightenment/e_bryce.h
 include/enlightenment/e_client.h
 include/enlightenment/e_client.x
+include/enlightenment/e_client_volume.h
 include/enlightenment/e_color.h
 include/enlightenment/e_color_dialog.h
 include/enlightenment/e_comp.h
@@ -66,6 +68,7 @@ include/enlightenment/e_font.h
 include/enlightenment/e_gadcon.h
 include/enlightenment/e_gadcon_popup.h
 include/enlightenment/e_gadget.h
+include/enlightenment/e_gadget_types.h
 include/enlightenment/e_grab_dialog.h
 include/enlightenment/e_grabinput.h
 include/enlightenment/e_hints.h
@@ -91,6 +94,7 @@ include/enlightenment/e_ipc_codec.h
 include/enlightenment/e_layout.h
 include/enlightenment/e_livethumb.h
 include/enlightenment/e_log.h
+include/enlightenment/e_macros.h
 include/enlightenment/e_maximize.h
 include/enlightenment/e_menu.h
 include/enlightenment/e_mmx.h
@@ -223,9 +227,7 @@ lib/enlightenment/modules/conf_window_remembers/e-module-conf_window_remembers.e
 lib/enlightenment/modules/conf_window_remembers/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/conf_window_remembers/module.desktop
 lib/enlightenment/modules/cpufreq/e-module-cpufreq.edj
-@mode 4555
 lib/enlightenment/modules/cpufreq/%%ENLIGHTENMENT_ARCH%%/freqset
-@mode
 lib/enlightenment/modules/cpufreq/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/cpufreq/module.desktop
 lib/enlightenment/modules/everything/e-module-everything-start.edj
@@ -251,6 +253,9 @@ lib/enlightenment/modules/ibox/e-module-ibox.edj
 lib/enlightenment/modules/ibox/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/ibox/module.desktop
 lib/enlightenment/modules/lokker/%%ENLIGHTENMENT_ARCH%%/module.so
+lib/enlightenment/modules/luncher/e-module-luncher.edj
+lib/enlightenment/modules/luncher/%%ENLIGHTENMENT_ARCH%%/module.so
+lib/enlightenment/modules/luncher/module.desktop
 lib/enlightenment/modules/mixer/e-module-mixer.edj
 lib/enlightenment/modules/mixer/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/mixer/module.desktop
@@ -269,11 +274,9 @@ lib/enlightenment/modules/packagekit/module.desktop
 lib/enlightenment/modules/pager/e-module-pager.edj
 lib/enlightenment/modules/pager/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/pager/module.desktop
-lib/enlightenment/modules/pager_plain/e-module-pager-plain.edj
+lib/enlightenment/modules/pager_plain/e-module-pager_plain.edj
 lib/enlightenment/modules/pager_plain/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/pager_plain/module.desktop
-lib/enlightenment/modules/policy_mobile/e-module-policy-mobile.edj
-lib/enlightenment/modules/policy_mobile/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/quickaccess/e-module-quickaccess.edj
 lib/enlightenment/modules/quickaccess/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/quickaccess/module.desktop
@@ -286,6 +289,10 @@ lib/enlightenment/modules/start/module.desktop
 lib/enlightenment/modules/syscon/e-module-syscon.edj
 lib/enlightenment/modules/syscon/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/syscon/module.desktop
+lib/enlightenment/modules/sysinfo/e-module-sysinfo.edj
+lib/enlightenment/modules/sysinfo/%%ENLIGHTENMENT_ARCH%%/cpuclock_sysfs
+lib/enlightenment/modules/sysinfo/%%ENLIGHTENMENT_ARCH%%/module.so
+lib/enlightenment/modules/sysinfo/module.desktop
 lib/enlightenment/modules/systray/e-module-systray.edj
 lib/enlightenment/modules/systray/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/systray/module.desktop
@@ -297,7 +304,6 @@ lib/enlightenment/modules/teamwork/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/teamwork/module.desktop
 lib/enlightenment/modules/temperature/e-module-temperature.edj
 lib/enlightenment/modules/temperature/%%ENLIGHTENMENT_ARCH%%/module.so
-lib/enlightenment/modules/temperature/%%ENLIGHTENMENT_ARCH%%/tempget
 lib/enlightenment/modules/temperature/module.desktop
 lib/enlightenment/modules/tiling/e-module-tiling.edj
 lib/enlightenment/modules/tiling/%%ENLIGHTENMENT_ARCH%%/module.so
@@ -352,6 +358,7 @@ lib/enlightenment/utils/enlightenment_thumb
 libdata/pkgconfig/enlightenment.pc
 libdata/pkgconfig/everything.pc
 share/applications/emixer.desktop
+share/applications/enlightenment_askpass.desktop
 share/applications/enlightenment_filemanager.desktop
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
@@ -598,4 +605,5 @@ share/applications/enlightenment_filemanager.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/enlightenment.mo
 share/pixmaps/emixer.png
+share/pixmaps/enlightenment-askpass.png
 share/xsessions/enlightenment.desktop

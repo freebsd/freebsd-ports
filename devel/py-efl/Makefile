@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	efl
-PORTVERSION=	1.19.0
+PORTVERSION=	1.20.0
 CATEGORIES=	devel python enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/bindings/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
