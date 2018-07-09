@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	LXQT
 
-MAINTAINER=	jesper@schmitz.computer
+MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Lightweight Qt-based terminal emulator
 
 LICENSE=	GPLv2
