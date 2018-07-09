@@ -6,7 +6,7 @@ PORTVERSION=	0.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	LXQT
 
-MAINTAINER=	jesper@schmitz.computer
+MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Image viewer and screenshot tool
 
 LICENSE=	GPLv2

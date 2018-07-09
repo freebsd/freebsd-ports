@@ -9,7 +9,7 @@ MASTER_SITES=	LXQT/lxqt-l10n
 PKGNAMESUFFIX=	-l10n
 DISTNAME=	lxqt-l10n-${DISTVERSION}
 
-MAINTAINER=	jesper@schmitz.computer
+MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Translations of Qtermwidget
 
 LICENSE=	LGPL21+

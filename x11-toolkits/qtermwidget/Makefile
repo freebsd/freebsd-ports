@@ -5,7 +5,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	LXQT
 
-MAINTAINER=	jesper@schmitz.computer
+MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Terminal widget for QTerminal
 
 LICENSE=	GPLv2+
