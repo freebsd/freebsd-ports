@@ -1,5 +1,24 @@
 ================================================================================
 
+===================
+ /// UPGRADING ///
+===================
+
+1. Run database migrations
+
+# python%%PYTHON_VER%% manage.py migrate
+
+2. Collect static files 
+
+# python%%PYTHON_VER%% manage.py collectstatic --no-input
+
+3. Restart WSGI/httpd environment (apache/nginx/etc.)
+
+
+====================
+ /// INSTALLING ///
+====================
+
 ==================================
  Create a new PostgreSQL database
 ==================================
