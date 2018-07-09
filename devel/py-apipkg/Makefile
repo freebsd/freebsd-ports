@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apipkg
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,8 @@ COMMENT=	Namespace control and lazy-import mechanism
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm
 
 NO_ARCH=	yes
 USES=		python
