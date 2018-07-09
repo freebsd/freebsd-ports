@@ -1,9 +1,8 @@
---- ./Makefile.bsd.orig	2010-04-06 19:07:33.000000000 +0200
-+++ ./Makefile.bsd	2014-01-03 11:29:36.000000000 +0100
+--- Makefile.bsd.orig	2010-04-06 17:07:33 UTC
++++ Makefile.bsd
 @@ -1,4 +1,4 @@
 -CC=g++
 +CC?=g++
  INCL=-I/usr/local/include
  LDFLAGS=-L/usr/local/lib
  LIBS=-lgcrypt -lgpg-error -lstdc++ -lm -lpthread
-
