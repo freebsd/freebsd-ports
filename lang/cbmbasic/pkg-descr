@@ -1,0 +1,10 @@
+Commodore BASIC (cbmbasic) is a 100% compatible version of Commodore's
+version of Microsoft BASIC 6502 as found on the Commodore 64.
+
+You can use cbmbasic in interactive mode by just running the binary
+without parameters, or you can specify an ASCII-encoded BASIC program
+on the command line. You can also use cbmbasic as a UNIX scripting
+language by adding a hashbang line to your BASIC program and making
+it executable.
+
+WWW: https://github.com/mist64/cbmbasic
