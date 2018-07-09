@@ -1,0 +1,73 @@
+commit f883eeb39f24
+Author: Jorg K <jorgk@jorgk.com>
+Date:   Mon Jul 9 00:09:58 2018 +0200
+
+    Bug 1473893 - Don't use parsed HTML MIME class if saving, processing attachments and in other cases. r=aceman a=jorgk
+
+---
+ mailnews/db/gloda/test/unit/test_mime_attachments_size.js |  3 ---
+ mailnews/mime/src/mimei.cpp                               | 12 ++++++++++--
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+diff --git mailnews/db/gloda/test/unit/test_mime_attachments_size.js mailnews/db/gloda/test/unit/test_mime_attachments_size.js
+index 7eff626979..389bebee42 100644
+--- mailnews/db/gloda/test/unit/test_mime_attachments_size.js
++++ mailnews/db/gloda/test/unit/test_mime_attachments_size.js
+@@ -211,19 +211,16 @@ function check_attachments(aMimeMsg, eps
+   for (let att of aMimeMsg.allUserAttachments) {
+     dump("*** Attachment now is " + att.name + " " + att.size + "\n");
+     do_check_true(Math.abs(att.size - originalTextByteCount) <= epsilon);
+     totalSize += att.size;
+   }
+ 
+   // undefined means true
+   if (checkTotalSize !== false) {
+-    // Account for stuff added by libmime, incl. two CRLF or LF before and after.
+-    totalSize += "<meta http-equiv=\"content-type\" content=\"text\/html; \">".length;
+-    totalSize += ("@mozilla.org/windows-registry-key;1" in Cc) ? 4 : 2;
+     dump("*** Total size comparison: " + totalSize + " vs " + aMimeMsg.size + "\n");
+     do_check_true(Math.abs(aMimeMsg.size - totalSize) <= epsilon);
+   }
+ 
+   async_driver();
+ }
+ 
+ function* test_message_attachments(info) {
+diff --git mailnews/mime/src/mimei.cpp mailnews/mime/src/mimei.cpp
+index 450eae584a..8290a83e63 100644
+--- mailnews/mime/src/mimei.cpp
++++ mailnews/mime/src/mimei.cpp
+@@ -505,21 +505,29 @@ mime_find_class (const char *content_typ
+       clazz = (MimeObjectClass *)&mimeUntypedTextClass;
+ 
+     /* Subtypes of text...
+     */
+     else if (!PL_strncasecmp(content_type,      "text/", 5))
+     {
+       if      (!PL_strcasecmp(content_type+5,    "html"))
+       {
+-        if (opts
+-            && opts->format_out == nsMimeOutput::nsMimeMessageSaveAs)
++        if (opts &&
++            (opts->format_out == nsMimeOutput::nsMimeMessageSaveAs ||
++             opts->format_out == nsMimeOutput::nsMimeMessageFilterSniffer ||
++             opts->format_out == nsMimeOutput::nsMimeMessageDecrypt ||
++             opts->format_out == nsMimeOutput::nsMimeMessageAttach))
+           // SaveAs in new modes doesn't work yet.
+         {
+-          clazz = (MimeObjectClass *)&mimeInlineTextHTMLParsedClass;
++          // Don't use the parsed HTML class if we're ...
++          // - saving the HTML of a message
++          // - getting message content for filtering
++          // - snarfing attachments (nsMimeMessageDecrypt used in SnarfMsgAttachment)
++          // - processing attachments (like deleting attachments).
++          clazz = (MimeObjectClass *)&mimeInlineTextHTMLClass;
+           types_of_classes_to_disallow = 0;
+         }
+         else if (html_as == 0 || html_as == 4) // Render sender's HTML
+           clazz = (MimeObjectClass *)&mimeInlineTextHTMLParsedClass;
+         else if (html_as == 1) // convert HTML to plaintext
+           // Do a HTML->TXT->HTML conversion, see mimethpl.h.
+           clazz = (MimeObjectClass *)&mimeInlineTextHTMLAsPlaintextClass;
+         else if (html_as == 2) // display HTML source
+
