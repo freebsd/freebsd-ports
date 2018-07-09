@@ -6,7 +6,7 @@ CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd_ports@k-worx.org
 COMMENT=	Python library for NETCONF clients
 
 LICENSE=	APACHE20

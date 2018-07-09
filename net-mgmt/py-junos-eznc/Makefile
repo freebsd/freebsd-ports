@@ -6,7 +6,7 @@ CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd_ports@k-worx.org
 COMMENT=	Junos easy automation for non-programmers
 
 LICENSE=	APACHE20
