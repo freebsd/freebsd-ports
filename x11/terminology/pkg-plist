@@ -5,6 +5,7 @@ bin/tycat
 bin/tyls
 bin/typop
 bin/tyq
+bin/tysend
 man/man1/terminology.1.gz
 share/applications/terminology.desktop
 share/icons/terminology.png
@@ -23,6 +24,8 @@ share/icons/terminology.png
 %%DATADIR%%/fonts/8x13.pcf
 %%DATADIR%%/fonts/9x15.pcf
 %%DATADIR%%/fonts/9x18.pcf
+%%DATADIR%%/fonts/TERMINUS.txt
+%%DATADIR%%/fonts/XFONT.txt
 %%DATADIR%%/fonts/nexus.pcf
 %%DATADIR%%/fonts/terminus-12.pcf
 %%DATADIR%%/fonts/terminus-14-bold.pcf
@@ -39,12 +42,12 @@ share/icons/terminology.png
 %%DATADIR%%/themes/default.edj
 %%DATADIR%%/themes/mild.edj
 %%DATADIR%%/themes/mustang.edj
+%%DATADIR%%/themes/nord.edj
 %%DATADIR%%/themes/nyanology.edj
 %%DATADIR%%/themes/smyck.edj
 %%DATADIR%%/themes/solarized.edj
 %%DATADIR%%/themes/solarized_light.edj
 %%NLS%%share/locale/ca/LC_MESSAGES/terminology.mo
-%%NLS%%share/locale/da/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/de/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/el/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/terminology.mo

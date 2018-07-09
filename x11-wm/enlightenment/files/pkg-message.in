@@ -5,5 +5,6 @@ menu actions to work properly, manually set SUID bit on
 executable.
 
 WARNING: this program might be vulnerable so do not
-set suid bit if do not trust all users of this machine.
+set suid bit if you do not trust all the users of this 
+machine.
 ********************************************************
