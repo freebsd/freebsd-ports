@@ -1,4 +1,4 @@
-After boostorg/uuid@33da3e2a5b87 (and boostorg/uuid@3d2f7758e9e1) build fails:
+After https://github.com/boostorg/uuid/commit/33da3e2a5b87 build fails:
 
 3d-viewer/3d_cache/3d_cache.cpp:37:10: fatal error: 'boost/uuid/sha1.hpp' file not found
 #include <boost/uuid/sha1.hpp>
