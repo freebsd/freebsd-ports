@@ -12,6 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	JMX access for Perl
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Config-General>=0:devel/p5-Config-General \
 		p5-Crypt-Blowfish_PP>=0:security/p5-Crypt-Blowfish_PP \
@@ -30,7 +31,6 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
 		p5-XML-Twig>=0:textproc/p5-XML-Twig \
 		p5-libwww>=0:www/p5-libwww
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

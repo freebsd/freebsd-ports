@@ -14,10 +14,10 @@ COMMENT=	Network control port for POE applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate \
 		p5-Authen-Libwrap>=0:security/p5-Authen-Libwrap \
 		p5-POE>=0:devel/p5-POE
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

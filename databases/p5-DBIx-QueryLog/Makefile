@@ -12,10 +12,10 @@ COMMENT=	Perl extension for logging queries for DBI
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-DBI>0:databases/p5-DBI \
 	p5-Text-ASCIITable>0:textproc/p5-Text-ASCIITable
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-DBD-SQLite>0:databases/p5-DBD-SQLite \
 	p5-Class-Method-Modifiers>0:devel/p5-Class-Method-Modifiers \

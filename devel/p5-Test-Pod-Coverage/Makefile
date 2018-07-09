@@ -13,9 +13,9 @@ COMMENT=	Check for pod coverage in your distribution
 
 LICENSE=	ART20
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Pod-Coverage>0:devel/p5-Pod-Coverage \
 		p5-Test-Simple>0:devel/p5-Test-Simple
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

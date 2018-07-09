@@ -12,7 +12,7 @@ COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
+BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-File-Slurp>=0:devel/p5-File-Slurp
 RUN_DEPENDS=	p5-SDL>=2.511:devel/p5-SDL \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext \

@@ -12,12 +12,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Access Google REST (aka AJAX) API from Perl
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-Class-Accessor>0:devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>0:devel/p5-Class-Data-Inheritable \
 		p5-URI>=1.35:net/p5-URI \
 		p5-JSON-Any>=1.16:converters/p5-JSON-Any
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

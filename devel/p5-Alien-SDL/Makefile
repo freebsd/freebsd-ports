@@ -14,7 +14,7 @@ LICENSE=	GPLv1 ART10
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
+BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-Text-Patch>=1.4:textproc/p5-Text-Patch
 RUN_DEPENDS=	p5-Archive-Extract>=0:archivers/p5-Archive-Extract \
 		p5-File-Which>=0:sysutils/p5-File-Which \

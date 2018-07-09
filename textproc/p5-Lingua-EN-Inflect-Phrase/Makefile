@@ -13,13 +13,13 @@ COMMENT=	Perl extension to inflect short English Phrases
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Lingua-EN-FindNumber>=0:textproc/p5-Lingua-EN-FindNumber \
 	p5-Lingua-EN-Inflect>=1.891:textproc/p5-Lingua-EN-Inflect \
 	p5-Lingua-EN-Inflect-Number>=1.1:textproc/p5-Lingua-EN-Inflect-Number \
 	p5-Lingua-EN-Number-IsOrdinal>0:textproc/p5-Lingua-EN-Number-IsOrdinal \
 	p5-Lingua-EN-Tagger>=0.20:textproc/p5-Lingua-EN-Tagger
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Lingua-EN-Number-IsOrdinal>0:textproc/p5-Lingua-EN-Number-IsOrdinal \
 	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings

@@ -14,6 +14,9 @@ COMMENT=	Inlining your tests next to the code being tested
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		p5-Test-ClassAPI>=1.02:devel/p5-Test-ClassAPI \
+		p5-Test-Script>=1.02:devel/p5-Test-Script
 RUN_DEPENDS=	p5-Algorithm-Dependency>=1.02:devel/p5-Algorithm-Dependency \
 		p5-Class-Autouse>=1.15:devel/p5-Class-Autouse \
 		p5-Config-Tiny>=2.00:devel/p5-Config-Tiny \
@@ -24,9 +27,6 @@ RUN_DEPENDS=	p5-Algorithm-Dependency>=1.02:devel/p5-Algorithm-Dependency \
 		p5-File-chmod>=0.31:devel/p5-File-chmod \
 		p5-Params-Util>=0.21:devel/p5-Params-Util \
 		p5-Pod-Tests>=0.18:devel/p5-Pod-Tests
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-ClassAPI>=1.02:devel/p5-Test-ClassAPI \
-		p5-Test-Script>=1.02:devel/p5-Test-Script
 
 USES=		perl5
 USE_PERL5=	configure

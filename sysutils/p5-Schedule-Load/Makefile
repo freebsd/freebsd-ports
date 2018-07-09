@@ -15,10 +15,10 @@ LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE_ART20=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Proc-ProcessTable>=0.40:devel/p5-Proc-ProcessTable \
 		p5-Unix-Processors>=2.02:sysutils/p5-Unix-Processors \
 		p5-IPC-Locker>=1.41:devel/p5-IPC-Locker
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
 

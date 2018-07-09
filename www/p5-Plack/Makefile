@@ -13,6 +13,8 @@ COMMENT=	Perl extension of PSGI reference implementation and utilities
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+	p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install
 RUN_DEPENDS=	\
 	p5-Apache-LogFormat-Compiler>=0.33:www/p5-Apache-LogFormat-Compiler \
 	p5-Cookie-Baker>=0.07:www/p5-Cookie-Baker \
@@ -28,8 +30,6 @@ RUN_DEPENDS=	\
 	p5-Stream-Buffered>=0.02:devel/p5-Stream-Buffered \
 	p5-Try-Tiny>0:lang/p5-Try-Tiny \
 	p5-URI>=1.59:net/p5-URI
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
-	p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install
 TEST_DEPENDS=	\
 	p5-Authen-Simple-Passwd>0:security/p5-Authen-Simple-Passwd \
 	p5-CGI-Compile>0:www/p5-CGI-Compile \

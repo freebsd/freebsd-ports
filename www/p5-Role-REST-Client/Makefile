@@ -13,6 +13,7 @@ COMMENT=	Perl extension for Rest Client Role
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Serializer>=0.60:devel/p5-Data-Serializer \
 		p5-HTTP-Tiny>=0.056:www/p5-HTTP-Tiny \
 		p5-Moo>=1.003000:devel/p5-Moo \
@@ -20,7 +21,6 @@ RUN_DEPENDS=	p5-Data-Serializer>=0.60:devel/p5-Data-Serializer \
 		p5-Type-Tiny>=0.024:devel/p5-Type-Tiny \
 		p5-URI-Escape-XS>0.11:www/p5-URI-Escape-XS \
 		p5-HTTP-Thin>0:www/p5-HTTP-Thin
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

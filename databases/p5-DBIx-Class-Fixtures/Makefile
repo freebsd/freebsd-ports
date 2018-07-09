@@ -13,6 +13,7 @@ COMMENT=	Perl extension to use fixtures with DBIx::Class
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Class-Accessor-Grouped>=0.1001:devel/p5-Class-Accessor-Grouped \
 	p5-Config-Any>=0.23:devel/p5-Config-Any \
@@ -29,7 +30,6 @@ RUN_DEPENDS=	\
 	p5-IO-All>=0.85:devel/p5-IO-All \
 	p5-YAML-Syck>=1.27:textproc/p5-YAML-Syck \
 	p5-Path-Class>=0.32:devel/p5-Path-Class
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-DBD-SQLite>=1.12:databases/p5-DBD-SQLite \
 	p5-DBIx-Class-InflateColumn-FS>=0.01007:databases/p5-DBIx-Class-InflateColumn-FS \

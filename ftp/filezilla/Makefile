@@ -13,8 +13,7 @@ COMMENT=	Fast and reliable cross-platform FTP, FTPS, and SFTP client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	xdg-open:devel/xdg-utils
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libfilezilla.so:ftp/libfilezilla \
 		libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
@@ -23,6 +22,7 @@ LIB_DEPENDS=	libfilezilla.so:ftp/libfilezilla \
 		libpugixml.so:textproc/pugixml \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 INSTALLS_ICONS=	yes
 USES=		compiler:c++14-lang gmake iconv:wchar_t localbase pkgconfig sqlite tar:bzip2

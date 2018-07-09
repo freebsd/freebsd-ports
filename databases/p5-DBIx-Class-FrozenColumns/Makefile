@@ -14,9 +14,9 @@ COMMENT=	Store virtual columns inside another column
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBIx-Class>=0.07003:databases/p5-DBIx-Class \
 		p5-JSON-XS>=0:converters/p5-JSON-XS
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

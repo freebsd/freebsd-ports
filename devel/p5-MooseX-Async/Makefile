@@ -14,9 +14,9 @@ COMMENT=	The Orphanange of Asynchronous Love Children
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=0.56:devel/p5-Moose \
 		p5-MooseX-AttributeHelpers>=0.13:devel/p5-MooseX-AttributeHelpers
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

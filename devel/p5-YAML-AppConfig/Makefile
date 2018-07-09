@@ -13,9 +13,9 @@ COMMENT=	Perl extension to manage configuration files with YAML
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-YAML>=0.38:textproc/p5-YAML
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,10 +13,10 @@ COMMENT=	Command-line script to check the availability of a ports distfiles
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-URI>=1.56:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww \
 		p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

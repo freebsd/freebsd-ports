@@ -14,12 +14,12 @@ COMMENT=	Perl extension of form html generator/validator
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Email-Valid-Loose>=0.05:mail/p5-Email-Valid-Loose \
 	p5-FormValidator-Lite>=0.24:textproc/p5-FormValidator-Lite \
 	p5-List-MoreUtils>=0.22:lang/p5-List-MoreUtils \
 	p5-Mouse>=0.90,1:devel/p5-Mouse
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Requires>0:devel/p5-Test-Requires \
 	p5-Lingua-JA-Regular-Unicode>0:japanese/p5-Lingua-JA-Regular-Unicode \

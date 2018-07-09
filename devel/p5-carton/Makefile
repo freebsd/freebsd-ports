@@ -16,6 +16,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-App-cpanminus>=1.703:devel/p5-App-cpanminus \
 	p5-JSON>=2.53:converters/p5-JSON \
@@ -24,7 +25,6 @@ RUN_DEPENDS=	\
 	p5-Path-Tiny>=0.033:devel/p5-Path-Tiny \
 	p5-Class-Tiny>=1.001:devel/p5-Class-Tiny \
 	p5-Try-Tiny>=0.09:lang/p5-Try-Tiny
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -15,9 +15,9 @@ COMMENT=	Text::Xslate wrapper for Dancer
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Dancer>0:www/p5-Dancer \
 		p5-Text-Xslate>0:textproc/p5-Text-Xslate
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

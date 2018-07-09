@@ -12,11 +12,11 @@ COMMENT=	X11 interactive printed circuit board layout system
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 RUN_DEPENDS=	m4>=1.4.11:devel/m4 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:devel/dbus
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	gts-[0-9]*
 

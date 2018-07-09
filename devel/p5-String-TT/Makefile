@@ -11,12 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl interface to interpolate lexical variables
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-PadWalker>=1:devel/p5-PadWalker \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
 		p5-Template-Toolkit>=2:www/p5-Template-Toolkit \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-TableDriven>=0:devel/p5-Test-TableDriven
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

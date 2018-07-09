@@ -12,11 +12,11 @@ COMMENT=	Perl extension for higher level interface to Devel-Declare
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-B-Compiling>=0.02:devel/p5-B-Compiling \
 	p5-B-Hooks-EndOfScope>=0.08:devel/p5-B-Hooks-EndOfScope \
 	p5-Devel-Declare>=0.006:devel/p5-Devel-Declare
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

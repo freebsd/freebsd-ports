@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pager utility for Class::DBI
 
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \
 		p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \
 		p5-Data-Page>=0:databases/p5-Data-Page \

@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing Tie hash to a DBI handle
 
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,10 +13,10 @@ COMMENT=	Perl extension to emulate file interface for a code reference
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	\
+	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-IO-String>0:devel/p5-IO-String
-BUILD_DEPENDS:=	\
-	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-File-Slurp>0:devel/p5-File-Slurp \
 	p5-Test-Exception>0:devel/p5-Test-Exception \

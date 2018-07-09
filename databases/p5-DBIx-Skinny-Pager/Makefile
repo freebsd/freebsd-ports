@@ -10,11 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of resultset pager for DBIx::Skinny
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-DBIx-Skinny>=0.0729:databases/p5-DBIx-Skinny \
 	p5-Data-Page>0:databases/p5-Data-Page \
 	p5-Class-Accessor-Lite>0:devel/p5-Class-Accessor-Lite
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-UseAllModules>=0:devel/p5-Test-UseAllModules \
 		p5-Test-Deep>0:devel/p5-Test-Deep \

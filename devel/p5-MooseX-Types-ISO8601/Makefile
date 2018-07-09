@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	ISO8601 date and duration string type constraints and coercions
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-aliased>=0:devel/p5-aliased \
 		p5-DateTime>=0.03:devel/p5-DateTime \
 		p5-DateTime-Format-Duration>=1.03:devel/p5-DateTime-Format-Duration \
@@ -19,7 +20,6 @@ RUN_DEPENDS=	p5-aliased>=0:devel/p5-aliased \
 		p5-namespace-clean>=0.05:devel/p5-namespace-clean \
 		p5-Safe-Isa>=0:devel/p5-Safe-Isa \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Simple>=0.88:devel/p5-Test-Simple
 

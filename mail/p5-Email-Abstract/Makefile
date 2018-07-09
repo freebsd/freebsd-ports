@@ -13,10 +13,10 @@ COMMENT=	Unified interface to mail representations
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Email-Simple>=1.998:mail/p5-Email-Simple \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-Module-Pluggable>1.5:devel/p5-Module-Pluggable
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

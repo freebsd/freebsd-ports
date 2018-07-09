@@ -12,8 +12,8 @@ COMMENT=	Regexp::Log::Common, a parser for the Common Log Format
 
 LICENSE=	ART20
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Regexp-Log>=0:textproc/p5-Regexp-Log
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

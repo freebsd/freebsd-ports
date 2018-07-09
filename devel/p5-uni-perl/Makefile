@@ -15,8 +15,8 @@ COMMENT=	Modern perl with Unicode
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-lib-abs>=0.90:devel/p5-lib-abs
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
 NO_ARCH=	yes

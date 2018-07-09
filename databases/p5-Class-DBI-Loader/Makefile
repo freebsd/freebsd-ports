@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dynamic definition of Class::DBI sub classes
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-DBI>=0.89:databases/p5-Class-DBI \
 		p5-DBI>=1.3:databases/p5-DBI \
 		p5-Lingua-EN-Inflect>=0:textproc/p5-Lingua-EN-Inflect
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,6 +13,7 @@ COMMENT=	Perl extension for minimal-effort oriented web application framework
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-HTTP-Body>0:www/p5-HTTP-Body \
 	p5-HTTP-Date>0:www/p5-HTTP-Date \
@@ -24,7 +25,6 @@ RUN_DEPENDS=	\
 	p5-Module-Runtime>0:devel/p5-Module-Runtime \
 	p5-Try-Tiny>0:lang/p5-Try-Tiny \
 	p5-URI>0:net/p5-URI
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Devel-Hide>=0:devel/p5-Devel-Hide \
 	p5-Test-TCP>0:devel/p5-Test-TCP \

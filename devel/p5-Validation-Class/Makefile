@@ -14,6 +14,7 @@ COMMENT=	Perl extension for centralized input validation for any application
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Class-Forward>0:devel/p5-Class-Forward \
 	p5-Hash-Flatten>0:devel/p5-Hash-Flatten \
@@ -21,7 +22,6 @@ RUN_DEPENDS=	\
 	p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
 	p5-Module-Find>0:devel/p5-Module-Find \
 	p5-Module-Runtime>0:devel/p5-Module-Runtime
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-DBD-SQLite>0:databases/p5-DBD-SQLite \
 	p5-Class-Method-Modifiers>0:devel/p5-Class-Method-Modifiers

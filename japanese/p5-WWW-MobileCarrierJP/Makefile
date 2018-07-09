@@ -13,6 +13,7 @@ COMMENT=	Scrape Japanese mobile carrier information
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=0.60:devel/p5-Moose \
 		p5-Filter>=0:devel/p5-Filter \
 		p5-HTML-Selector-XPath>=0.03:www/p5-HTML-Selector-XPath \
@@ -21,7 +22,6 @@ RUN_DEPENDS=	p5-Moose>=0.60:devel/p5-Moose \
 		p5-libwww>=5.834:www/p5-libwww \
 		p5-URI>=0:net/p5-URI \
 		p5-CAM-PDF>=0:textproc/p5-CAM-PDF
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-LWP-Online>=1.07:www/p5-LWP-Online \
 		p5-Test-Base>0:devel/p5-Test-Base
 

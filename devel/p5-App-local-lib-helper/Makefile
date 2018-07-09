@@ -13,8 +13,8 @@ COMMENT=	Make it easy to run code against a local-lib
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS:=	p5-local-lib>=2.000004:devel/p5-local-lib
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-local-lib>=2.000004:devel/p5-local-lib
 
 USES=		perl5
 USE_PERL5=	configure

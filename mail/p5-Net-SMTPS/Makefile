@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ale@biancalanas.net
 COMMENT=	SSL/STARTTLS support for Net::SMTP
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Authen-SASL>=2:security/p5-Authen-SASL \
 		p5-IO-Socket-SSL>=1.9:security/p5-IO-Socket-SSL
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5

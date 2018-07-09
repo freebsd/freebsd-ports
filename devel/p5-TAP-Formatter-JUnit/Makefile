@@ -13,13 +13,13 @@ COMMENT=	Perl extension for Harness output delegate for JUnit output
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Moose>0:devel/p5-Moose \
 	p5-MooseX-NonMoose>0:devel/p5-MooseX-NonMoose \
 	p5-File-Slurp>0:devel/p5-File-Slurp \
 	p5-XML-Generator>0:textproc/p5-XML-Generator \
 	p5-List-MoreUtils>0:lang/p5-List-MoreUtils
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy
 
 USES=		perl5

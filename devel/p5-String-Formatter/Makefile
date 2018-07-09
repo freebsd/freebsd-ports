@@ -14,9 +14,9 @@ COMMENT=	Build sprintf-like functions of your own
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Params-Util>=0:devel/p5-Params-Util \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

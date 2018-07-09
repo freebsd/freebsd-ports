@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Clamd - Connect to a local clamd service and send commands
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	clamd:security/clamav
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

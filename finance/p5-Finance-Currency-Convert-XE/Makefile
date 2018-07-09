@@ -13,9 +13,9 @@ COMMENT=	Currency conversion module
 
 LICENSE=	ART20
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-WWW-Mechanize>=1.60:www/p5-WWW-Mechanize
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS
 
