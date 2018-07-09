@@ -790,6 +790,8 @@
 %%WWWDIR%%/locale/lv/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/lv/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/make_mo.sh
+%%WWWDIR%%/locale/nb/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/nb/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/nl/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/nl/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/pl/LC_MESSAGES/frontend.mo
