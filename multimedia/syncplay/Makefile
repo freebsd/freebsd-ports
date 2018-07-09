@@ -2,7 +2,7 @@
 
 PORTNAME=	syncplay
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.4
+DISTVERSION=	1.5.5
 CATEGORIES=	multimedia
 
 MAINTAINER=	heckendorfc@gmail.com
