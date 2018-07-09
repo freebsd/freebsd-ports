@@ -48,6 +48,7 @@ lib/xrdp/libxrdpapi.so.0
 lib/xrdp/libxrdpapi.so.0.0.0
 etc/pam.d/xrdp-sesman
 etc/rc.d/xrdp
+etc/rc.d/xrdp-sesman
 %%ETCDIR%%/km-00000407.ini
 %%ETCDIR%%/km-00000409.ini
 %%ETCDIR%%/km-00010409.ini
