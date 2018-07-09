@@ -8,6 +8,7 @@ include/highwayhash/hh_buffer.h
 include/highwayhash/hh_portable.h
 include/highwayhash/hh_sse41.h
 include/highwayhash/hh_types.h
+include/highwayhash/hh_vsx.h
 include/highwayhash/highwayhash.h
 include/highwayhash/highwayhash_target.h
 include/highwayhash/highwayhash_test_target.h
@@ -29,4 +30,3 @@ include/highwayhash/vector256.h
 include/highwayhash/vector_test_target.h
 lib/libhighwayhash.a
 lib/libhighwayhash.so
-lib/libhighwayhash.so.0
