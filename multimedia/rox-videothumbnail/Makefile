@@ -2,7 +2,7 @@
 
 PORTNAME=	rox-videothumbnail
 PORTVERSION=	0.1.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.kerofin.demon.co.uk/rox/
 DISTNAME=	VideoThumbnail-${PORTVERSION}
@@ -15,7 +15,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
 
 WRKSRC=		${WRKDIR}/VideoThumbnail
 
-USES=		python:2.7
+USES=		python:2.7 shebangfix
+SHEBANG_FILES=	AppRun vidthumb.py
+NO_ARCH=	yes
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
