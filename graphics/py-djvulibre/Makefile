@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-djvulibre
-PORTVERSION=	0.8
-PORTREVISION=	1
+DISTVERSION=	0.8.1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 
-USES=		python:2.7 pkgconfig
+USES=		python pkgconfig
 USE_PYTHON=	autoplist distutils cython
 
 post-patch:
