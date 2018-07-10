@@ -18,8 +18,6 @@ LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
 		libboost_program_options.so:devel/boost-libs
 RUN_DEPENDS=	opencl>=0:devel/opencl
 
-BROKEN_powerpc64=	fails to compile: xgemm.cc: error: extra ';'
-
 USES=		cmake python
 USE_LDCONFIG=	yes
 USE_CXXSTD=	gnu++98
