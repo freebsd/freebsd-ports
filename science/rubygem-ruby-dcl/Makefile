@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-dcl
-PORTVERSION=	1.7.0.2
+PORTVERSION=	1.8.1
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -13,12 +13,17 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	rubygem-narray>=0.5.5:math/rubygem-narray
-LIB_DEPENDS=	libcdcl.so:science/cdcl
+LIB_DEPENDS=	libcdcl.so:science/cdcl \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libunwind.so:devel/libunwind
 RUN_DEPENDS=	rubygem-narray>=0.5.5:math/rubygem-narray \
 		rubygem-narray_miss>0:math/rubygem-narray_miss
 
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_XORG=	ice sm x11
+
 USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
-USES=		gem
+USES=		gem gettext-runtime
 
 .include <bsd.port.mk>
