@@ -17,7 +17,7 @@ bin/qmidiarp
 man/de/man1/qmidiarp.1.gz
 man/fr/man1/qmidiarp.1.gz
 man/man1/qmidiarp.1.gz
-share/appdata/qmidiarp.appdata.xml
+share/metainfo/qmidiarp.appdata.xml
 share/applications/qmidiarp.desktop
 share/icons/hicolor/scalable/apps/qmidiarp.svg
 %%DATADIR%%/examples/demo.qmax
