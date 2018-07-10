@@ -1,5 +1,5 @@
-TIMESTAMP = 1520062781
-SHA256 (mongrel2-mongrel2-v1.11.0_GH0.tar.gz) = dd7accbe4be25ee841b1d73e1fc2e6230e90f5783e1d25527037416e5f519c86
-SIZE (mongrel2-mongrel2-v1.11.0_GH0.tar.gz) = 1060770
+TIMESTAMP = 1531175682
+SHA256 (mongrel2-mongrel2-v1.12.0_GH0.tar.gz) = cef8aeaac27ae61d81a5b7bce023aa3cb8e0e50d4a0fbab84738deb488a889f4
+SIZE (mongrel2-mongrel2-v1.12.0_GH0.tar.gz) = 1065961
 SHA256 (ARMmbed-mbedtls-8254ed2_GH0.tar.gz) = de500973a2db0bc419ddd7a67360b1f2dd4fe925448539f8ee59ae3e6eafcc9b
 SIZE (ARMmbed-mbedtls-8254ed2_GH0.tar.gz) = 1803037
