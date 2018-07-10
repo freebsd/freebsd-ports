@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mplayer-skins
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/skins/
+MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/skins/ \
+		http://ftp.icm.edu.pl/packages/mplayer/skins/
 DISTFILES=	# filled in later after options
 DIST_SUBDIR=	mplayer-skins
 

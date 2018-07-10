@@ -304,7 +304,6 @@ share/mplayer/skins/Blue/zoom-3.png
 %%CHANGUITO%%share/mplayer/skins/changuito/vol.png
 %%CLEARLOOKS%%share/mplayer/skins/Clearlooks/README
 %%CLEARLOOKS%%share/mplayer/skins/Clearlooks/VERSION
-%%CLEARLOOKS%%share/mplayer/skins/Clearlooks/button.png
 %%CLEARLOOKS%%share/mplayer/skins/Clearlooks/fullscreen.png
 %%CLEARLOOKS%%share/mplayer/skins/Clearlooks/liberation.fnt
 %%CLEARLOOKS%%share/mplayer/skins/Clearlooks/liberation.png
@@ -324,10 +323,7 @@ share/mplayer/skins/Blue/zoom-3.png
 %%CLEARLOOKS%%share/mplayer/skins/Clearlooks/volume.png
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/README
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/VERSION
-%%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/button.png
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/fullscreen.png
-%%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/gnu-Unifont.fnt
-%%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/gnu-Unifont.png
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/load.png
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/logo.png
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/main.png
@@ -341,6 +337,8 @@ share/mplayer/skins/Blue/zoom-3.png
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/stop.png
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/symbols.fnt
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/symbols.png
+%%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/unifont.fnt
+%%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/unifont.png
 %%CLEARLOOKS_I18N%%share/mplayer/skins/Clearlooks-multilingual/volume.png
 %%CLEARPLAYER%%share/mplayer/skins/clearplayer/README
 %%CLEARPLAYER%%share/mplayer/skins/clearplayer/VERSION
@@ -538,8 +536,6 @@ share/mplayer/skins/Blue/zoom-3.png
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/font.fnt
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/font-pl.png
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/forward.png
-%%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/gnu-Unifont.fnt
-%%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/gnu-Unifont.png
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/icons/icon32x32.png
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/icons/icon48x48.png
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/load.png
@@ -567,6 +563,8 @@ share/mplayer/skins/Blue/zoom-3.png
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/symbols.fnt
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/symbols2.png
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/symbolsg.fnt
+%%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/unifont.fnt
+%%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/unifont.png
 %%DEFAULT_I18N%%share/mplayer/skins/Blue-multilingual/zoom-3.png
 %%DEFAULT_SMALL%%share/mplayer/skins/Blue-small/README
 %%DEFAULT_SMALL%%share/mplayer/skins/Blue-small/VERSION
