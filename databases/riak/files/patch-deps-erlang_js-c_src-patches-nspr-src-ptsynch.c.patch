@@ -1,3 +1,8 @@
+The same patch as here:
+https://bugzilla.mozilla.org/show_bug.cgi?id=1444953
+
+Fix build on -current after 1200059
+
 --- deps/erlang_js/c_src/patches/nspr-src-ptsynch.c.patch	1970-01-01 03:00:00 UTC
 +++ deps/erlang_js/c_src/patches/nspr-src-ptsynch.c.patch
 @@ -0,0 +1,12 @@
