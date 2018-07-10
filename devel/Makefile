@@ -4960,6 +4960,7 @@
     SUBDIR += py-qt5-qscintilla2
     SUBDIR += py-qt5-test
     SUBDIR += py-qtconsole
+    SUBDIR += py-qutip
     SUBDIR += py-ramlfications
     SUBDIR += py-ratelimiter
     SUBDIR += py-rauth
