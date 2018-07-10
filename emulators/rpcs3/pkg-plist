@@ -3,6 +3,7 @@ share/applications/rpcs3.desktop
 share/icons/hicolor/48x48/apps/rpcs3.png
 share/icons/hicolor/scalable/apps/rpcs3.svg
 share/metainfo/rpcs3.appdata.xml
+%%DATADIR%%/GuiConfigs/Classic (Bright).qss
 %%DATADIR%%/GuiConfigs/Darker Style by TheMitoSan.qss
 %%DATADIR%%/GuiConfigs/Kuroi (Dark) by Ani.qss
 %%DATADIR%%/GuiConfigs/ModernBlue Theme by TheMitoSan.qss
