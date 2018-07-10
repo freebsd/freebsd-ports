@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dill
-PORTVERSION=	0.2.5
+DISTVERSION=	0.2.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,8 @@ COMMENT=	Serialize all of python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python tar:tgz
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
-
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
