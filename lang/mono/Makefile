@@ -3,7 +3,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	5.10.1.47
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -27,6 +27,7 @@ CONFLICTS_INSTALL=	czmq-3*
 
 OPTIONS_DEFINE=		MONOLITE NLS X11
 OPTIONS_DEFAULT=	MONOLITE NLS X11
+OPTIONS_SUB=	yes
 
 MONOLITE_DESC=		Use monolite to bootstrap mcs (otherwise use installed mcs)
 MONOLITE_DISTFILES=	monolite-linux-${MONOLITE_VERSION}-latest.tar.gz:monolite
