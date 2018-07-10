@@ -3,7 +3,7 @@
 
 PORTNAME=	mutt
 DISTVERSION=	1.10.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -191,7 +191,6 @@ GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
 QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 			patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
 
-NNTP_BROKEN=	NNTP Patch needs updated for 1.10.x
 NNTP_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:-p1:vvv
 NNTP_CONFIGURE_ON=	--enable-nntp
 NNTP_VARS=	XML_NEEDED=yes
@@ -203,8 +202,8 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
-VVV_PATCH_VERSION=	1.9.5
-GREETING_PATCH_VERSION=	1.9.5
+VVV_PATCH_VERSION=	1.10.0
+GREETING_PATCH_VERSION=	1.10.0
 
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
