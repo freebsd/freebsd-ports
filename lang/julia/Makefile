@@ -84,6 +84,7 @@ LLVM_MAKE_ARGS=	USE_SYSTEM_LLVM=0
 LLVM_MAKE_ARGS_OFF=	USE_SYSTEM_LLVM=1 LLVM_CONFIG=llvm-config40
 LLVM_BUILD_DEPENDS=	cmake:devel/cmake
 LLVM_BUILD_DEPENDS_OFF=	llvm-config40:devel/llvm40
+LLVM_LIB_DEPENDS_OFF=	libLLVM-4.0.so:devel/llvm40
 LLVM_USES=	python:build perl5
 
 SYSLIBM_DESC=	Build with system libm
