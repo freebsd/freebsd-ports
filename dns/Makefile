@@ -223,6 +223,7 @@
     SUBDIR += udns
     SUBDIR += unbound
     SUBDIR += updatedd
+    SUBDIR += utdns
     SUBDIR += validns
     SUBDIR += vhostcname
     SUBDIR += vizone
