@@ -423,6 +423,7 @@ lib/elixir/lib/iex/ebin/iex.app
 lib/elixir/lib/logger/ebin/Elixir.Logger.App.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Backends.Console.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Config.beam
+lib/elixir/lib/logger/ebin/Elixir.Logger.ErlangHandler.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.ErrorHandler.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Formatter.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Translator.beam
@@ -435,6 +436,7 @@ lib/elixir/lib/logger/ebin/logger.app
 %%SRC%%lib/elixir/lib/logger/lib/logger/app.ex
 %%SRC%%lib/elixir/lib/logger/lib/logger/backends/console.ex
 %%SRC%%lib/elixir/lib/logger/lib/logger/config.ex
+%%SRC%%lib/elixir/lib/logger/lib/logger/erlang_handler.ex
 %%SRC%%lib/elixir/lib/logger/lib/logger/error_handler.ex
 %%SRC%%lib/elixir/lib/logger/lib/logger/formatter.ex
 %%SRC%%lib/elixir/lib/logger/lib/logger/translator.ex
