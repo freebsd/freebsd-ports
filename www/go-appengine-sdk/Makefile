@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-appengine-sdk
-DISTVERSION=	1.9.64
-PORTREVISION=	1
+DISTVERSION=	1.9.66
 CATEGORIES=	www devel
 MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
 DISTNAME=	${PORTNAME:S,-,_,g}_linux_amd64-${PORTVERSION}
