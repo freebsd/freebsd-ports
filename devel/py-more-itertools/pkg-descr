@@ -1,7 +1,3 @@
-Python implementation of the "purl" (= package URL) specification. The library
-provides parsing and building of package URLs. 
-
-WWW: https://github.com/package-url/packageurl-python
 Python's itertools library is a gem - you can compose elegant solutions for a
 variety of problems with the functions it provides.
 
