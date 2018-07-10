@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	2018-07-10 05:14:26 UTC
++++ tests/Makefile.in
+@@ -16,7 +16,7 @@ all:: @DO_TEST_SUITE@ test_one test_scri
+ test_one: $(srcdir)/test_one.in Makefile mke2fs.conf
+ 	@echo "Creating test_one script..."
+ 	@[ -f test_one ] && chmod u+w test_one || true
+-	@echo "#!/bin/sh" > test_one
++	@echo "#!${SHELL}" > test_one
+ 	@echo "HTREE=y" >> test_one
+ 	@echo "QUOTA=y" >> test_one
+ 	@echo "SRCDIR=@srcdir@" >> test_one

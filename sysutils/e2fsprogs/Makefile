@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.44.2
+# XXX if bumping PORTVERSION, check/adjust pre-configure!
+PORTVERSION=	1.44.3
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -51,7 +52,7 @@ MAKE_ENV+=	CHECK_CMD=@true
 .if !defined(MASTERDIR)
 INSTALL_TARGET=		install install-libs
 
-OPTIONS_DEFINE=		DOCS NLS FUSEFS PARALLELTESTS
+OPTIONS_DEFINE=		DOCS NLS FUSEFS PARALLELTESTS SLOWTESTS BASHTESTS
 OPTIONS_EXCLUDE+=	EXAMPLES
 OPTIONS_SUB=		yes
 
@@ -64,10 +65,13 @@ NOTESTS_DESC=	Do not run any self-tests (Tier-1, DISCOURAGED)
 SMALLTESTS_DESC=Run tests that need <500 MB disk space (DEFAULT)
 ALLTESTS_DESC=	Run most self-tests (needs more RAM/disk space)
 PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
+SLOWTESTS_DESC=	Enable slow tests that are skipped by default
+BASHTESTS_DESC=	Enable tests that require the GNU bash shell
 
 FUSEFS_CONFIGURE_ENABLE=	fuse2fs
 
 BUILD_DEPENDS+=	gdd:sysutils/coreutils
+BASHTEST_BUILD_DEPENDS=	bash:shells/bash
 
 LIB_DEPENDS+=	libblkid.so:misc/e2fsprogs-libblkid
 LIB_DEPENDS+=	libss.so:devel/e2fsprogs-libss
@@ -121,7 +125,7 @@ post-patch::
 	    ${WRKSRC}/tests/[a-z]_*/script
 	@${REINPLACE_CMD} -e 's/<malloc\.h>/<stdlib.h>/' ${WRKSRC}/*/*.c
 .if empty(PORT_OPTIONS:MALLTESTS)
-.for i in \
+. for i in \
 		d_fallocate_blkmap \
 		f_baddir \
 		f_bbfile \
@@ -158,10 +162,22 @@ post-patch::
 		u_dryrun \
 		u_mke2fs_opt_offset
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
-.endfor
+. endfor
+.endif
+.if ${PORT_OPTIONS:MBASHTESTS}
+	${REINPLACE_CMD} -e 's}^SHELL *=.*}SHELL = ${_CHECK_SHELL}}' ${WRKSRC}/MCONFIG.in
+.else
+. for i in f_large_dir
+	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
+. endfor
 .endif
 
+pre-configure::
+	${REINPLACE_CMD} -e 's/July/Jul/' ${WRKSRC}/version.h
+
+##############################################################
 # Master port stuff that is not to be seen by the slave ports.
+##############################################################
 .if ${MASTERDIR} == ${.CURDIR}
 # NOTE: The previous .if block goes all the way to the end of the file.
 
@@ -180,8 +196,27 @@ _CHECK_JOBS=${_MAKE_JOBS}
 _CHECK_JOBS=
 .endif
 
+.if ${PORT_OPTIONS:MBASHTESTS}
+_CHECK_SHELL=${SHELL}
+.else
+_CHECK_SHELL=${LOCALBASE}/bin/bash
+.endif
+
+_checkaddargs=
 .if !defined(TMPDIR)
-_checkaddargs=TMPDIR=${WRKDIR}/tmp
+_checkaddargs+=TMPDIR=${WRKDIR}/tmp
+.endif
+
+.if ${PORT_OPTIONS:MBASHTESTS}
+_checkaddargs+=--eval SHELL:=${LOCALBASE}/bin/bash
+.endif
+
+.if ${PORT_OPTIONS:MSLOWTESTS}
+_check_target=SKIP_SLOW_TESTS= check
+_check_timeout=7200
+.else
+_check_target=check
+_check_timeout=180
 .endif
 
 post-build:
@@ -222,7 +257,11 @@ post-build:
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
 # do not add -j options unconditionally to ${MAKE_CMD} below, this might break
 # due to excessive disk space use.
-	cd ${WRKSRC}/tests && ulimit -t 60 && ${MKDIR} ${WRKDIR}/tmp && ${SETENV} e2fsprogs_inhibit_SIGINFO=1 BLKID_FILE=${WRKDIR}/tmp/blkid.tab ${MAKE_CMD} check ${_CHECK_JOBS} ${_checkaddargs} \
+	cd ${WRKSRC}/tests && \
+		ulimit -t ${_check_timeout} && \
+		${MKDIR} ${WRKDIR}/tmp && \
+		${SETENV} e2fsprogs_inhibit_SIGINFO=1 BLKID_FILE=${WRKDIR}/tmp/blkid.tab SHELL=${_CHECK_SHELL} \
+		${MAKE_CMD} ${_check_target} ${_CHECK_JOBS} ${_checkaddargs} \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 .else
 	@${ECHO_CMD} '===>  SKIPPING e2fsprogs self-test suite (DISCOURAGED!)'

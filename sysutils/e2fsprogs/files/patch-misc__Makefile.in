@@ -1,6 +1,6 @@
---- misc/Makefile.in.orig	2018-03-25 02:42:47 UTC
+--- misc/Makefile.in.orig	2018-07-10 05:14:26 UTC
 +++ misc/Makefile.in
-@@ -34,16 +34,16 @@ INSTALL = @INSTALL@
+@@ -34,17 +34,17 @@ INSTALL = @INSTALL@
  
  SPROGS=		mke2fs badblocks tune2fs dumpe2fs $(BLKID_PROG) logsave \
  			$(E2IMAGE_PROG) @FSCK_PROG@ e2undo
@@ -10,9 +10,10 @@
  SMANPAGES=	tune2fs.8 mklost+found.8 mke2fs.8 dumpe2fs.8 badblocks.8 \
  			e2label.8 $(FINDFS_MAN) $(BLKID_MAN) $(E2IMAGE_MAN) \
 -			logsave.8 filefrag.8 e2freefrag.8 e2undo.8 \
--			$(UUIDD_MAN) $(E4DEFRAG_MAN) $(E4CRYPT_MAN) @FSCK_MAN@
+-			$(UUIDD_MAN) $(E4DEFRAG_MAN) $(E4CRYPT_MAN) @FSCK_MAN@ \
 +			logsave.8 e2freefrag.8 e2undo.8 \
-+			$(E4DEFRAG_MAN) $(E4CRYPT_MAN) @FSCK_MAN@
++			$(E4DEFRAG_MAN) $(E4CRYPT_MAN) @FSCK_MAN@ \
+ 			e2mmpstatus.8
  FMANPAGES=	mke2fs.conf.5 ext4.5
  
 -UPROGS=		chattr lsattr @UUID_CMT@ uuidgen
@@ -22,7 +23,7 @@
  UMANPAGES+=	@FUSE_CMT@ fuse2fs.1
  
  LPROGS=		@E2INITRD_PROG@
-@@ -145,14 +145,14 @@ profiled:
+@@ -146,14 +146,14 @@ profiled:
  
  mke2fs.conf: $(srcdir)/mke2fs.conf.in
  	if test -f $(srcdir)/mke2fs.conf.custom.in ; then \
@@ -40,7 +41,7 @@
  		>  default_profile.c
  findsuper: findsuper.o
  	$(E) "	LD $@"
-@@ -593,34 +593,9 @@ install: all $(SMANPAGES) $(UMANPAGES) i
+@@ -600,34 +600,9 @@ install: all $(SMANPAGES) $(UMANPAGES) i
  		(cd $(DESTDIR)$(man5dir); \
  			$(LN) $(LINK_INSTALL_FLAGS) ext4.5 $$i.5); \
  	done
