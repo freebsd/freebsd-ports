@@ -1,0 +1,11 @@
+--- base_conf.php.dist.orig	2016-10-13 08:46:30 UTC
++++ base_conf.php.dist
+@@ -393,7 +393,7 @@ $external_port_link = array('sans'     =
+ 
+ /* Signature references */
+ $external_sig_link = array('bugtraq'   => array('http://www.securityfocus.com/bid/', ''),
+-                           'snort'     => array('http://www.snort.org/search/sid/', ''),
++                           'snort'     => array('http://www.snort.org/rule_docs/', ''),
+                            'cve'       => array('http://cve.mitre.org/cgi-bin/cvename.cgi?name=', ''),
+                            'arachnids' => array('http://www.whitehats.com/info/ids', ''),
+                            'mcafee'    => array('http://vil.nai.com/vil/content/v_', '.htm'),
