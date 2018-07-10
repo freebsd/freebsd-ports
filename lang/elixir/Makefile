@@ -3,6 +3,7 @@
 
 PORTNAME=	elixir
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
