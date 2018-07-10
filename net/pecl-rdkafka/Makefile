@@ -4,7 +4,7 @@ PORTNAME=	rdkafka
 PORTVERSION=	3.0.5
 CATEGORIES=	net pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	sergey@akhmatov.ru
 COMMENT=	Kafka client for PHP
 
 LICENSE=	MIT
