@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# %%PORTNAME%%_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# %%PORTNAME%%_flags:		Additional flags (see utdns --help)
+
+. /etc/rc.subr
+
+name="%%PORTNAME%%"
+rcvar="${name}_enable"
+
+load_rc_config ${name}
+
+: ${utdns_enable:="NO"}
+: ${utdns_flags:=" -b -4 -p 53 0.0.0.0"}
+
+command="%%PREFIX%%/bin/${name}"
+command_args='> /dev/null 2>&1'
+
+run_rc_command "$1"
