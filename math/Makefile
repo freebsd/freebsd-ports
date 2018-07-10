@@ -777,6 +777,7 @@
     SUBDIR += sfft
     SUBDIR += sfst
     SUBDIR += simd-viterbi
+    SUBDIR += singular
     SUBDIR += slatec
     SUBDIR += slepc
     SUBDIR += slgrace
