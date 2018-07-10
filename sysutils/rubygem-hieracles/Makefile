@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hieracles
-PORTVERSION=	0.3.6
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,8 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 PLIST_FILES=	bin/hc man/man1/hc.1.gz \
-		bin/ppdb man/man1/ppdb.1.gz
+		bin/ppdb man/man1/ppdb.1.gz \
+		bin/hieracles
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/hc.1 ${STAGEDIR}${PREFIX}/man/man1/
