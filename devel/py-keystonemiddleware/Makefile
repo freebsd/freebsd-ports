@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keystonemiddleware
-PORTVERSION=	4.14.0
+PORTVERSION=	4.21.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,24 +10,29 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Middleware for OpenStack Identity
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.8:devel/py-pbr@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=1.6.0:www/py-webob@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.8.0:net/py-python-keystoneclient@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycadf>=0:devel/py-pycadf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}positional>=1.1.1:devel/py-positional@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.18.0:devel/py-oslo.utils@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=1.10.0:devel/py-oslo.serialization@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=2.1.0:devel/py-oslo.i18n@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.context>=2.9.0:devel/py-oslo.context@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.config>=3.14.0:devel/py-oslo.config@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.log>=3.11.0:devel/py-oslo.log@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}keystoneauth1>=2.17.0:devel/py-keystoneauth1@${PY_FLAVOR}
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.3.0:devel/py-keystoneauth1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.cache>=1.26.0:devel/py-oslo.cache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.config>=5.1.0:devel/py-oslo.config@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.context>=2.19.2:devel/py-oslo.context@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.log>=3.30.0:devel/py-oslo.log@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=2.18.0:devel/py-oslo.serialization@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.31.0:devel/py-oslo.utils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycadf>=1.1.0:devel/py-pycadf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.8.0:net/py-python-keystoneclient@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.14.2:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=1.7.1:www/py-webob@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
+PORTSCOUT=	limit:^4\.
 
 .include <bsd.port.mk>
