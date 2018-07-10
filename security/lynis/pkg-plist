@@ -5,6 +5,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/fileperms.db
 %%DATADIR%%/db/hints.db
 %%DATADIR%%/db/integrity.db
+%%DATADIR%%/db/languages/az
 %%DATADIR%%/db/languages/br
 %%DATADIR%%/db/languages/cn
 %%DATADIR%%/db/languages/de
