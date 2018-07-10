@@ -1,4 +1,4 @@
---- src/gopkg.in/libgit2/git2go.v27/diff.go.orig	2018-05-15 14:06:24 UTC
+--- src/gopkg.in/libgit2/git2go.v27/diff.go.orig	2018-07-05 13:56:38 UTC
 +++ src/gopkg.in/libgit2/git2go.v27/diff.go
 @@ -14,7 +14,7 @@ import (
  	"unsafe"
