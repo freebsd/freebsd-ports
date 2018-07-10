@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obhttpd
-PORTVERSION=	6.0.20161006
-PORTREVISION=	2
+PORTVERSION=	6.3.20180529
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
@@ -12,16 +11,17 @@ LICENSE=	BSD3CLAUSE
 
 WRKSRC_SUBDIR=	src
 
+USES=		ssl uidfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	koue
 GH_PROJECT=	httpd
 
 USE_RC_SUBR=	obhttpd
-USES=		ssl uidfix
 
 CFLAGS+=	-Wall
 
-MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
+MAKE_ARGS+=	MANDIR=${PREFIX}/man/man
 
 USERS=		www
 GROUPS=		www
@@ -45,25 +45,21 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ! ${SSL_DEFAULT:Mlibressl*}
-BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
-
-do-configure:
-	${REINPLACE_CMD} -e 's|/usr/local|${WRKDIR}/libressl|g' \
-			${WRKSRC}/usr.sbin/httpd/Makefile
-	${REINPLACE_CMD} -e 's|LOCALBASE|LIBRESSLBASE|g' \
-			${WRKSRC}/usr.sbin/httpd/Makefile
-	${REINPLACE_CMD} -e 's|/usr/local|${WRKDIR}/libressl|g' \
-			${WRKSRC}/usr.bin/htpasswd/Makefile
-	${REINPLACE_CMD} -e 's|LOCALBASE|LIBRESSLBASE|g' \
-			${WRKSRC}/usr.bin/htpasswd/Makefile
-
 . ifnmake describe
 STAGEDIR_libressl!=	${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl
 . endif
+BUILD_DEPENDS+= 	${NONEXISTENT}:security/libressl:stage
+CFLAGS+=		-I${STAGEDIR_libressl}${LOCALBASE}/include
 
-pre-configure:
-	@(cd ${STAGEDIR_libressl}${LOCALBASE} && ${COPYTREE_SHARE} \
-		. ${WRKDIR}/libressl "! -name *.so*")
+post-configure:
+	${REINPLACE_CMD} 's|-ltls|${STAGEDIR_libressl}${LOCALBASE}/lib/libtls.a|g' \
+		${WRKSRC}/usr.sbin/httpd/Makefile
+	${REINPLACE_CMD} 's|-lssl|${STAGEDIR_libressl}${LOCALBASE}/lib/libssl.a|g' \
+		 ${WRKSRC}/usr.sbin/httpd/Makefile
+	${REINPLACE_CMD} 's|-lcrypto|${STAGEDIR_libressl}${LOCALBASE}/lib/libcrypto.a|g' \
+		${WRKSRC}/usr.sbin/httpd/Makefile
+	${REINPLACE_CMD} 's|-lcrypto|${STAGEDIR_libressl}${LOCALBASE}/lib/libcrypto.a|g' \
+		${WRKSRC}/usr.bin/htpasswd/Makefile
 .endif # SSL_DEFAULT
 
 .include <bsd.port.post.mk>
