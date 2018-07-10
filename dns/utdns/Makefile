@@ -4,6 +4,7 @@
 PORTNAME=	utdns
 PORTVERSION=	1.0
 DISTVERSIONSUFFIX=	.r1437
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.cypherpunk.at/download/utdns/ \
 		LOCAL/ehaupt
