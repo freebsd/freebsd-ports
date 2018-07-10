@@ -1,7 +1,7 @@
 # Created by: Ben Kaduk <kaduk@mit.edu>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-libss
 

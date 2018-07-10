@@ -13,6 +13,7 @@ include/e2fsprogs/ext2fs/ext2_io.h
 include/e2fsprogs/ext2fs/ext2_types.h
 include/e2fsprogs/ext2fs/ext2fs.h
 include/e2fsprogs/ext2fs/ext3_extents.h
+include/e2fsprogs/ext2fs/hashmap.h
 include/e2fsprogs/ext2fs/qcow2.h
 include/e2fsprogs/ext2fs/tdb.h
 lib/e2fsprogs/libcom_err.so
@@ -44,6 +45,7 @@ man/man8/dumpe2fs.8.gz
 man/man8/e2fsck.8.gz
 man/man8/e2image.8.gz
 man/man8/e2label.8.gz
+man/man8/e2mmpstatus.8.gz
 man/man8/e2undo.8.gz
 man/man8/mke2fs.8.gz
 man/man8/mklost+found.8.gz
@@ -68,6 +70,7 @@ sbin/e2freefrag
 sbin/e2fsck
 sbin/e2image
 sbin/e2label
+sbin/e2mmpstatus
 sbin/e2undo
 sbin/findfs
 sbin/fsck.ext2
