@@ -3,7 +3,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	5.10.1.47
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -25,17 +25,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 
 CONFLICTS_INSTALL=	czmq-3*
 
-OPTIONS_DEFINE=		MONOLITE X11
-OPTIONS_DEFAULT=	MONOLITE X11
+OPTIONS_DEFINE=		MONOLITE NLS X11
+OPTIONS_DEFAULT=	MONOLITE NLS X11
 
 MONOLITE_DESC=		Use monolite to bootstrap mcs (otherwise use installed mcs)
 MONOLITE_DISTFILES=	monolite-linux-${MONOLITE_VERSION}-latest.tar.gz:monolite
 MONOLITE_MASTER_SITES=	http://download.mono-project.com/monolite/:monolite
 MONOLITE_VERSION=	1051000004
 
+NLS_USES=	gettext
+
 X11_USES=	display:test
 
-USES=	autoreconf bison compiler:c11 cpe gettext gmake iconv libtool \
+USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool \
 	pathfix perl5 python:2.7 shebangfix tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes

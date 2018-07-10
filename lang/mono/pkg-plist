@@ -2969,10 +2969,10 @@ share/libgc-mono/leak.html
 share/libgc-mono/scale.html
 share/libgc-mono/simple_example.html
 share/libgc-mono/tree.html
-share/locale/de/LC_MESSAGES/mcs.mo
-share/locale/es/LC_MESSAGES/mcs.mo
-share/locale/ja/LC_MESSAGES/mcs.mo
-share/locale/pt_BR/LC_MESSAGES/mcs.mo
+%%NLS%%share/locale/de/LC_MESSAGES/mcs.mo
+%%NLS%%share/locale/es/LC_MESSAGES/mcs.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/mcs.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/mcs.mo
 %%DATADIR%%-2.0/mono/cil/cil-opcodes.xml
 %%DATADIR%%-2.0/mono/profiler/mono-profiler-coverage.suppression
 %%DATADIR%%-2.0/mono/profiler/mono-profiler-log.suppression
