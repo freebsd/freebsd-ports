@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	5.1.5
+PORTVERSION=	5.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/grafana-releases/release/:public
 PKGNAMESUFFIX=	${PORTVERSION:C/([0-9]).*/\1/1}
-DISTFILES=	grafana-${PORTVERSION}.linux-x64${EXTRACT_SUFX}:public
+DISTFILES=	grafana-${PORTVERSION}.linux-amd64${EXTRACT_SUFX}:public
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	swills@FreeBSD.org
@@ -24,7 +24,7 @@ USE_RC_SUBR=	grafana
 
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
-TAG=		7dc36ae
+TAG=		2040f61
 
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana
@@ -53,7 +53,7 @@ PLIST_SUB+=	GRAFANAHOMEDIR=${GRAFANAHOMEDIR}
 
 post-extract:
 	@${RM} -r ${WRKSRC}/src/github.com/grafana/grafana/public
-	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/grafana-${PORTVERSION}.linux-x64${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS} grafana-${PORTVERSION}/public)
+	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/grafana-${PORTVERSION}.linux-amd64${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS} grafana-${PORTVERSION}/public)
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; ${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags "-w -X main.version=${PORTVERSION} -X main.commit=${TAG}" -o ./bin/grafana-server ./pkg/cmd/grafana-server
