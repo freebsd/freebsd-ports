@@ -1,5 +1,5 @@
-cliff is a framework for building command line programs.
-It uses setuptools entry points to provide subcommands, output formatters,
-and other extensions.
+cliff is a framework for building command line programs. It uses setuptools
+entry points to provide subcommands, output formatters, and other
+extensions.
 
-WWW: https://pypi.org/project/cliff/
+WWW: https://docs.openstack.org/cliff/
