@@ -24,7 +24,6 @@ LICENSE_PERMS_CUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
 USES=		gmake tar:bzip2
-ALL_TARGET=	# empty
 LLD_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/AssaultCube_v${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/source/src
@@ -32,7 +31,7 @@ SUB_FILES=	${PLIST_FILES:Mbin/*:T}
 
 PORTDATA=	config packages scripts
 PORTDOCS=	*
-PLIST_DIRS=	%%DATADIR%%/packages/maps/servermaps/incoming
+PLIST_DIRS=	${DATADIR}/packages/maps/servermaps/incoming
 
 OPTIONS_DEFINE=	DOCS PORT_ENET
 OPTIONS_MULTI=	BUILD
@@ -45,6 +44,9 @@ CLIENT_USE=		GL=gl SDL=image,sdl XORG=x11
 CLIENT_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 			libcurl.so:ftp/curl
 CLIENT_ALL_TARGET=	client
+CLIENT_DESKTOP_ENTRIES=	"AssaultCube" "${COMMENT}" \
+	"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}_client" \
+	"Game;" false
 CLIENT_PLIST_FILES=	bin/${PORTNAME}_client libexec/${PORTNAME}_client \
 			share/pixmaps/${PORTNAME}.png
 DEDICATED_DESC=	Build dedicated server
@@ -54,23 +56,9 @@ MASTER_DESC=	Build master server
 MASTER_ALL_TARGET=	master
 MASTER_PLIST_FILES=	bin/${PORTNAME}_master libexec/${PORTNAME}_master
 PORT_ENET_DESC=	Use libenet from net/enet
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCLIENT}
-DESKTOP_ENTRIES="AssaultCube" "${COMMENT}" \
-	"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}_client" \
-	"Game;" false
-.endif
-
-.if ${PORT_OPTIONS:MPORT_ENET}
-LIB_DEPENDS+=	libenet.so:net/enet
-.else
-ALL_TARGET+=	libenet
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--enable-shared=no --enable-static=yes
-CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
-.endif
+PORT_ENET_CONFIGURE_OFF=	--enable-shared=no --enable-static=yes
+PORT_ENET_LIB_DEPENDS=	libenet.so:net/enet
+PORT_ENET_VARS_OFF=	GNU_CONFIGURE=yes CONFIGURE_WRKSRC="${WRKSRC}/source/enet"
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e '/^CXXFLAGS=/d ; /^CXX=/d ; /^CLIENT_PCH/d ; \
@@ -81,26 +69,28 @@ post-patch: .SILENT
 		/^CLIENT_LIBS=/s|$$| $$(LDFLAGS) -lintl| ; \
 		/^SERVER_LIBS=/s|$$| $$(LDFLAGS) -L$$(LOCALBASE)/lib|' \
 		${BUILD_WRKSRC}/Makefile
-.if ${PORT_OPTIONS:MPORT_ENET}
-	${SED} -i '.port_enet.bak' -e 's/libenet // ; \
+
+post-patch-PORT_ENET-on:
+	@${REINPLACE_CMD} -i '.port_enet.bak' -e 's/libenet // ; \
 		s|-I\.\./enet/include|| ; \
 		s|-L\.\./enet/\.libs||' \
 		${BUILD_WRKSRC}/Makefile
-.endif
 
 do-install:
-.for f in ${PLIST_FILES:Mbin/*}
-	${INSTALL_SCRIPT} ${WRKDIR}/${f:T} ${STAGEDIR}${PREFIX}/${f}
-.endfor
-.for f in ${PLIST_FILES:Mlibexec/*}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f:T:S/${PORTNAME}/ac/} \
-		${STAGEDIR}${PREFIX}/${f}
-.endfor
-.if ${PORT_OPTIONS:MCLIENT}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
+
+do-install-DOCS-on:
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+do-install-CLIENT-on:
 	${INSTALL_DATA} ${WRKSRC}/docs/images/icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-.endif
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+.for f in client master server
+post-install-${f:S|server|DEDICATED|:tu}-on:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}_${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ac_${f} \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}_${f}
+.endfor
 
 .include <bsd.port.mk>
