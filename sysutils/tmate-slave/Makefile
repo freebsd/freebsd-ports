@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	tmate-slave
-PORTVERSION=	0.0.0.2016051901
-PORTREVISION=	2
+PORTVERSION=	g20171113
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 USES=		autoreconf ncurses pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	tmate-io
-GH_TAGNAME=	b3c85fa
+GH_TAGNAME=	d6a76e0
 
 GNU_CONFIGURE=	yes
 INSTALL_ARGET=	install-strip
@@ -23,5 +23,7 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	-lexecinfo
 
 PLIST_FILES=	bin/tmate-slave
+
+PORTSCOUT=	skipv:1.8
 
 .include <bsd.port.mk>
