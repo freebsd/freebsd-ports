@@ -3,6 +3,7 @@
 
 PORTNAME=	openvswitch
 PORTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
