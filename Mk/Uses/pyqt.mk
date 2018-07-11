@@ -84,8 +84,8 @@ _USE_PYQT_ALL=		core dbus dbussupport demo designer designerplugin \
 _USE_PYQT4_ONLY=	assistant declarative doc \
 			help phonon script scripttools
 # List of components only in pyqt5
-_USE_PYQT5_ONLY=	multimediawidgets printsupport qml serialport \
-			webchannel webengine webkitwidgets widgets
+_USE_PYQT5_ONLY=	multimediawidgets printsupport qml quickwidgets \
+			serialport webchannel webengine webkitwidgets widgets
 
 # Unversioned variables for the rest of the file
 PYQT_VERSION=		${PYQT${_PYQT_VERSION}_VERSION}
@@ -127,6 +127,7 @@ py-xmlpatterns_PATH=	${PYQT_PY_RELNAME}-xmlpatterns>=${PYQT_VERSION}
 
 py-multimediawidgets_PATH=	${PYQT_PY_RELNAME}-multimediawidgets>=${PYQT_VERSION}
 py-qml_PATH=			${PYQT_PY_RELNAME}-qml>=${PYQT_VERSION}
+py-quickwidgets_PATH=		${PYQT_PY_RELNAME}-quickwidgets>=${PYQT_VERSION}
 py-printsupport_PATH=		${PYQT_PY_RELNAME}-printsupport>=${PYQT_VERSION}
 py-serialport_PATH=		${PYQT_PY_RELNAME}-serialport>=${PYQT_VERSION}
 py-webkitwidgets_PATH=		${PYQT_PY_RELNAME}-webkitwidgets>=${PYQT_VERSION}
@@ -163,6 +164,7 @@ py-xmlpatterns_PORT=	textproc/${PYQT_RELNAME}-xmlpatterns
 
 py-multimediawidgets_PORT=	multimedia/py-qt5-multimediawidgets
 py-qml_PORT=			lang/py-qt5-qml
+py-quickwidgets_PORT=		x11-toolkits/py-qt5-quickwidgets
 py-printsupport_PORT=		print/py-qt5-printsupport
 py-serialport_PORT=		comms/py-qt5-serialport
 py-webkitwidgets_PORT=		www/py-qt5-webkitwidgets
@@ -197,6 +199,7 @@ py-xmlpatterns_DESC=	Python bindings for QtXmlPatterns module
 
 py-multimediawidgets_DESC=	Python bindings for QtMultimediaWidgets module
 py-qml_DESC=			Python bindings for Qml module
+py-quickwidgets_DESC=		Python bindings for QtQuickWidgets module
 py-printsupport_DESC=		Python bindings for Printsupport module
 py-serialport_DESC=		Python bindings for QtSerialPort
 py-webkitwidgets_DESC=		Python bindings for QtWebKitWidgets module

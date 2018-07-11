@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/PyQt5/QtQuickWidgets.pyi
+%%PYTHON_SITELIBDIR%%/PyQt5/QtQuickWidgets.so
+%%PYQT_SIPDIR%%/QtQuickWidgets/QtQuickWidgetsmod.sip
+%%PYQT_SIPDIR%%/QtQuickWidgets/qquickwidget.sip
+%%API%%%%QT_DATADIR%%/qsci/api/python/QtQuickWidgets.api
