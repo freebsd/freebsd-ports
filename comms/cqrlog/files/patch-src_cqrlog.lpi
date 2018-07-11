@@ -1,20 +1,11 @@
---- src/cqrlog.lpi.orig	2017-12-30 02:10:01.000000000 -0500
-+++ src/cqrlog.lpi	2018-04-07 19:17:15.225110000 -0500
+--- src/cqrlog.lpi.orig	2018-07-11 03:52:28 UTC
++++ src/cqrlog.lpi
 @@ -35,7 +35,7 @@
        <local>
          <FormatVersion Value="1"/>
          <CommandLineParams Value="--DEBUG=1"/>
 -        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
-+        <LaunchingApplication PathPlusParams="/usr/local/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
++        <LaunchingApplication PathPlusParams="%%LOCALBASE%%/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
        </local>
        <environment>
          <UserOverrides Count="2">
-@@ -748,7 +748,7 @@
-     <Version Value="11"/>
-     <SearchPaths>
-       <Libraries Value="$(LazarusDir)/lcl"/>
--      <OtherUnitFiles Value="lnet/lib;richmemo;richmemo/gtk2;synapse"/>
-+      <OtherUnitFiles Value="lnet/lib;richmemo;richmemo/gtk2;richmemo/qt;synapse"/>
-     </SearchPaths>
-     <Parsing>
-       <SyntaxOptions>

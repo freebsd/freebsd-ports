@@ -1,6 +1,6 @@
---- src/fGrayline.pas.orig	2016-05-07 08:21:24 UTC
+--- src/fGrayline.pas.orig	2018-06-17 12:42:42 UTC
 +++ src/fGrayline.pas
-@@ -383,7 +383,7 @@ begin
+@@ -411,7 +411,7 @@ begin
      RBNSpotList[i].band := '';
    ImageFile := dmData.HomeDir+'images'+PathDelim+'grayline.bmp';
    if not FileExists(ImageFile) then

@@ -1,6 +1,6 @@
---- src/fLoTWExport.lfm.orig	2016-04-20 16:06:15 UTC
+--- src/fLoTWExport.lfm.orig	2018-06-17 12:42:42 UTC
 +++ src/fLoTWExport.lfm
-@@ -182,7 +182,7 @@ object frmLoTWExport: TfrmLoTWExport
+@@ -185,7 +185,7 @@ object frmLoTWExport: TfrmLoTWExport
            Top = 29
            Width = 424
            TabOrder = 0

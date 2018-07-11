@@ -1,6 +1,6 @@
---- src/fRotControl.pas.orig	2016-04-20 16:06:15 UTC
+--- src/fRotControl.pas.orig	2018-06-17 12:42:42 UTC
 +++ src/fRotControl.pas
-@@ -149,7 +149,7 @@ begin
+@@ -150,7 +150,7 @@ begin
    if not TryStrToInt(cqrini.ReadString('ROT'+n,'poll','500'),poll) then
      poll := 500;
  

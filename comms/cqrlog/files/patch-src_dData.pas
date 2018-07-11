@@ -1,60 +1,60 @@
---- src/dData.pas.orig	2016-05-07 08:21:24 UTC
+--- src/dData.pas.orig	2018-07-11 03:36:41 UTC
 +++ src/dData.pas
-@@ -910,22 +910,22 @@ begin
-   if DirectoryExistsUTF8(fHomeDir+'members') then
-     fMembersDir := fHomeDir+'members'+PathDelim
-   else
--    fMembersDir := ExpandFileNameUTF8('..'+PathDelim+'share'+PathDelim+'cqrlog'+
-+    fMembersDir := ExpandFileNameUTF8('%%DATADIR%%'+
-                    PathDelim+'members'+PathDelim);
+@@ -904,22 +904,22 @@ begin
+   if not DirectoryExistsUTF8(fHomeDir+'members') then
+     CreateDirUTF8(fHomeDir+'members');
+   fMembersDir := fHomeDir+'members'+PathDelim;
+-  fGlobalMembersDir := ExpandFileNameUTF8('..'+PathDelim+'share'+PathDelim+'cqrlog'+
++  fGlobalMembersDir := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'share'+PathDelim+'cqrlog'+
+                        PathDelim+'members'+PathDelim);
  
    if DirectoryExistsUTF8(fHomeDir+'zipcodes') then
      fZipCodeDir := fHomeDir+'zipcodes'+PathDelim
    else
 -    fZipCodeDir := ExpandFileNameUTF8('..'+PathDelim+'share'+PathDelim+'cqrlog')+
-+    fZipCodeDir := ExpandFileNameUTF8('%%DATADIR%%')+
++    fZipCodeDir := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'share'+PathDelim+'cqrlog')+
                     PathDelim+'zipcodes'+PathDelim;
  
    if not DirectoryExistsUTF8(fHomeDir+'images') then
      CreateDirUTF8(fHomeDir+'images');
  
 -  fHelpDir := ExpandFileNameUTF8('..'+PathDelim+'share'+PathDelim+'cqrlog'+
-+  fHelpDir := ExpandFileNameUTF8('%%DATADIR%%'+
++  fHelpDir := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'share'+PathDelim+'cqrlog'+
                PathDelim+'help'+PathDelim);
  
 -  fShareDir := ExpandFileNameUTF8('..'+PathDelim+'share'+PathDelim+'cqrlog'+
-+  fShareDir := ExpandFileNameUTF8('%%DATADIR%%'+
++  fShareDir := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'share'+PathDelim+'cqrlog'+
                 PathDelim);
  
    if not DirectoryExistsUTF8(fHomeDir + 'lotw') then
-@@ -948,7 +948,7 @@ procedure TdmData.PrepareCtyData;
+@@ -942,7 +942,7 @@ procedure TdmData.PrepareCtyData;
  var
    s,d : String;
  begin
 -  s := ExpandFileNameUTF8('..'+PathDelim+'share'+PathDelim+'cqrlog'+PathDelim+'ctyfiles'+PathDelim);
-+  s := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'ctyfiles'+PathDelim);
++  s := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'share'+PathDelim+'cqrlog'+PathDelim+'ctyfiles'+PathDelim);
    d := fHomeDir+'ctyfiles'+PathDelim;
  
    if not FileExistsUTF8(fHomeDir+'ctyfiles'+PathDelim+'AreaOK1RR.tbl') then
-@@ -1016,7 +1016,7 @@ procedure TdmData.PrepareXplanetDir;
+@@ -1015,7 +1015,7 @@ procedure TdmData.PrepareXplanetDir;
  var
    s,d : String;
  begin
 -  s := ExpandFileNameUTF8('..'+PathDelim+'share'+PathDelim+'cqrlog'+PathDelim+'xplanet'+PathDelim);
-+  s := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'xplanet'+PathDelim);
++  s := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'share'+PathDelim+'cqrlog'+PathDelim+'xplanet'+PathDelim);
    d := fHomeDir+'xplanet'+PathDelim;
    if not FileExistsUTF8(d+'geoconfig') then
      CopyFile(s+'geoconfig',d+'geoconfig')
-@@ -1026,7 +1026,7 @@ procedure TdmData.PrepareVoice_keyerDir;
+@@ -1025,7 +1025,7 @@ procedure TdmData.PrepareVoice_keyerDir;
  var
    s,d : String;
  begin
 -  s := ExpandFileNameUTF8('..'+PathDelim+'share'+PathDelim+'cqrlog'+PathDelim+'voice_keyer'+PathDelim);
-+  s := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'voice_keyer'+PathDelim);
++  s := ExpandFileNameUTF8('%%DATADIR%%'+PathDelim+'share'+PathDelim+'cqrlog'+PathDelim+'voice_keyer'+PathDelim);
    d := fHomeDir+'voice_keyer'+PathDelim;
    if not FileExistsUTF8(d+'voice_keyer.sh') then
      CopyFile(s+'voice_keyer.sh',d+'voice_keyer.sh')
-@@ -3462,12 +3462,12 @@ var
+@@ -3367,12 +3367,12 @@ var
    l : TStringList;
    info : String;
  begin
@@ -73,3 +73,22 @@
    if Result = '' then  //don't know where mysqld is, so hopefully will be in  $PATH
      Result := 'mysqld'
  end;
+@@ -4209,17 +4209,7 @@ begin
+   Result := '';
+   Paths := TStringList.Create;
+   try
+-    Paths.Add('/usr/lib64/');
+-    Paths.Add('/lib64/');
+-    Paths.Add('/usr/lib/x86_64-linux-gnu/');
+-    Paths.Add('/usr/lib64/mysql/');
+-    Paths.Add('/lib/x86_64-linux-gnu/');
+-
+-    Paths.Add('/usr/lib/i386-linux-gnu/');
+-    Paths.Add('/lib/i386-linux-gnu/');
+-    Paths.Add('/usr/lib/');
+-    Paths.Add('/lib/');
+-    Paths.Add('/usr/lib/mysql/');
++    Paths.Add('%%LOCALBASE%%/lib/');
+ 
+     Result := MyFindFile('libmariadbclient.so*', Paths);
+     if (Result='') then
