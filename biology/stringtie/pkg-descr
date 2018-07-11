@@ -1,0 +1,11 @@
+StringTie is a fast and highly efficient assembler of RNA-seq alignments into
+potential transcripts. The input can be the alignments of raw reads as usual;
+it also accepts longer assembled sequences. The output can be processed by
+downstream software including Ballgown, Cuffdiff, etc.
+
+Citation:
+Pertea et al. (2015) StringTie enables improved reconstruction of a
+transcriptome from RNA-seq reads.
+Nature Biotechnology 33: 290-295 doi:10.1038/nbt.3122
+
+WWW: http://www.ccb.jhu.edu/software/stringtie/

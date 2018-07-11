@@ -1,0 +1,10 @@
+--- samtools-0.1.18/Makefile.orig	2018-03-06 16:29:49 UTC
++++ samtools-0.1.18/Makefile
+@@ -1,5 +1,5 @@
+-CC=			gcc
+-CFLAGS=		-g -Wall -fsigned-char -O2 #-m64 #-arch ppc
++CC?=			gcc
++CFLAGS?=		-g -Wall -fsigned-char -O2 #-m64 #-arch ppc
+ DFLAGS=		-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=0 #-D_USE_KNETFILE 
+ KNETFILE_O=	knetfile.o
+ LOBJS=		bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o	\
