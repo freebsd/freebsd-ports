@@ -1,0 +1,13 @@
+--- src/meson.build.orig	2018-07-11 01:43:01.888587000 +0000
++++ src/meson.build	2018-07-11 01:43:07.416631000 +0000
+@@ -51,6 +51,10 @@ if zlib_dep.found()
+     deps += [zlib_dep]
+ endif
+ 
++if execinfo_dep.found()
++    deps += [execinfo_dep]
++endif
++
+ if xapian_dep.found()
+     sources += xapian_sources
+     sources += lib_resources

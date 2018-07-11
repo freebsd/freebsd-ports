@@ -1,0 +1,17 @@
+--- meson.build.orig	2018-07-11 01:42:53.056789000 +0000
++++ meson.build	2018-07-11 01:42:55.616640000 +0000
+@@ -9,6 +9,9 @@ conf.set('DIRENT_CACHE_SIZE', get_option('DIRENT_CACHE
+ conf.set('CLUSTER_CACHE_SIZE', get_option('CLUSTER_CACHE_SIZE'))
+ conf.set('LZMA_MEMORY_SIZE', get_option('LZMA_MEMORY_SIZE'))
+ 
++cc = meson.get_compiler('c')
++execinfo_dep = cc.find_library('execinfo', required : false)
++
+ zlib_dep = dependency('zlib', required:false)
+ conf.set('ENABLE_ZLIB', zlib_dep.found())
+ 
+@@ -49,3 +52,4 @@ pkg_mod.generate(libraries : libzim,
+                  filebase : 'libzim',
+                  description : 'A Library to zim.',
+                  requires : pkg_requires)
++
