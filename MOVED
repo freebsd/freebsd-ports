@@ -10325,3 +10325,4 @@ net-mgmt/sx||2018-07-08|Has expired: Upstream gone, does not fetch
 www/sxweb||2018-07-08|Removed, web frontend of net-mgmt/sx, upstream also gone
 sysutils/logstash|sysutils/logstash5|2018-07-10|Has expired: End of Life was 2018-02-28
 textproc/kibana46|textproc/kibana5|2018-07-10|Has expired: End of Life was 2018-02-28
+print/cups-connector|print/cloud-print-connector|2018-07-11|Project renamed upstream
