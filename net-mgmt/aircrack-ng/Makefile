@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	aircrack-ng
-DISTVERSION=	1.2
-PORTREVISION=	1
+DISTVERSION=	1.3
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	802.11 WEP and WPA-PSK keys cracking program
 
 LICENSE=	GPLv2 BSD3CLAUSE APACHE20
@@ -24,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-experimental
 CPE_VERSION=	${DISTVERSION:C/-.*//}
 CPE_UPDATE=	${DISTVERSION:C/^[^-]*$//:C/.*-//}
-DOS2UNIX_FILES=	src/osdep/byteorder.h
+DOS2UNIX_FILES=	src/aircrack-osdep/byteorder.h
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 # Don't call 'strip' target with WITH_DEBUG set

@@ -1,5 +1,5 @@
---- src/osdep/file.c.orig	2018-01-11 15:45:35 UTC
-+++ src/osdep/file.c
+--- src/aircrack-osdep/file.c.orig
++++ src/aircrack-osdep/file.c
 @@ -33,7 +33,7 @@
  #include <err.h>
  
