@@ -27,10 +27,10 @@ GH_TAGNAME=	48e42d5
 
 PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 
-# MCE DB r72
+# MCE DB r74.1
 CPM_ACCOUNT=	platomav
 CPM_PROJECT=	CPUMicrocodes
-CPM_TAGNAME=	9562441
+CPM_TAGNAME=	e57dee3
 
 OPTIONS_DEFINE=		CPM INTEL
 CPM_DESC=		Download platomav/CPUMicrocodes collection
@@ -40,9 +40,9 @@ CPM_GH_TAGNAME=		${CPM_TAGNAME}:cpm
 CPM_DIR=		${WRKDIR}/${CPM_PROJECT}-${CPM_TAGNAME}
 CPM_DATADIR=		${DATADIR}/CPUMicrocodes/secondary/Intel
 
-INTEL_PACK=		microcode-20180425.tgz
+INTEL_PACK=		microcode-20180703.tgz
 INTEL_DESC=		Download Intel microcode pack ${INTEL_PACK}
-INTEL_MASTER_SITES=	https://downloadmirror.intel.com/27776/eng/:intel
+INTEL_MASTER_SITES=	https://downloadmirror.intel.com/27945/eng/:intel
 INTEL_DISTFILES=	${INTEL_PACK}:intel
 INTEL_DIR=		${WRKDIR}/intel-ucode
 INTEL_DATADIR=		${DATADIR}/CPUMicrocodes/primary/Intel
