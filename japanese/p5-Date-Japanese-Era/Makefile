@@ -11,7 +11,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Conversion between Japanese Era / Gregorian calendar
 
 BUILD_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
-		p5-Lingua-JA-Numbers>=0:japanese/p5-Lingua-JA-Numbers
+		ja-p5-Lingua-JA-Numbers>=0:japanese/p5-Lingua-JA-Numbers
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
