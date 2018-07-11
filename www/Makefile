@@ -554,6 +554,7 @@
     SUBDIR += nuvolaplayer-yandex-music
     SUBDIR += nuvolaplayer-youtube
     SUBDIR += obhttpd
+    SUBDIR += onionshare
     SUBDIR += opencart
     SUBDIR += opera
     SUBDIR += opera-linuxplugins
