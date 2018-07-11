@@ -10,6 +10,7 @@ MASTER_SITES=	http://mapnik.s3.amazonaws.com/dist/v${PORTVERSION}/
 
 PATCH_SITES=	https://github.com/mapnik/mapnik/commit/
 PATCHFILES=	1ddfe6c31548.patch:-p1
+PATCHFILES+=	f554d4fb59f8.patch:-p1
 
 MAINTAINER=	littlesavage@rambler.ru
 COMMENT=	Free Toolkit For Developing Mapping Applications
