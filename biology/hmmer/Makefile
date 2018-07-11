@@ -2,30 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	hmmer
-PORTVERSION=	3.1b2
+PORTVERSION=	3.2.1
 CATEGORIES=	biology
-MASTER_SITES=	http://eddylab.org/software/hmmer3/${PORTVERSION}/
+MASTER_SITES=	http://eddylab.org/software/hmmer/
 
 MAINTAINER=	mzaki@niid.go.jp
 COMMENT=	Profile hidden Markov models for biological sequence analysis
 
-LICENSE=	GPLv3
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc powerpc64
+ONLY_FOR_ARCHS_REASON=	requires SSE2 or AltiVec instructions
+
+USES=		gmake perl5 shebangfix
+
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	V=1
 
-OPTIONS_DEFINE=	DOCS EXAMPLES TEST
-TEST_TEST_TARGET=	check
-TEST_USES=	shebangfix perl5
-TEST_VARS=	shebang_glob=*.pl shebang_files=easel/devkit/* use_perl5=build
+TEST_TARGET=	check
+USE_PERL5=	test
+SHEBANG_GLOB=	*.pl
+SHEBANG_FILES=	easel/devkit/*
 
-DOCFILES=	COPYRIGHT Userguide.pdf
-EXAMPLES=	7LESS_DROME HBB_HUMAN MADE1.hmm MADE1.out MADE1.sto \
-		Pkinase.hmm Pkinase.sto dna_target.fa fn3.hmm fn3.out fn3.sto \
-		globins4.hmm globins4.out globins4.sto globins45.fa \
-		minifam minifam.h3f minifam.h3i minifam.h3m minifam.h3p
+OPTIONS_DEFINE=	DOCS EXAMPLES TEST
+
+DOCFILES=	Userguide.pdf
+EXAMPLES=	7LESS_DROME HBB_HUMAN MADE1.hmm MADE1.sto \
+		Pkinase.hmm Pkinase.sto dna_target.fa fn3.hmm fn3.sto \
+		globins4.hmm globins4.sto globins45.fa
+
+TEST_VARS=	use_perl5=build
 
 post-build-TEST-on:	do-test
 
