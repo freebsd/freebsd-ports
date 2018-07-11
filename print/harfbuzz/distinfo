@@ -1,3 +1,7 @@
-TIMESTAMP = 1530605630
-SHA256 (harfbuzz-1.8.2.tar.bz2) = c8a3f88f416185a82f899a68b5714d6a40d7dc4d1d7379057348918d55aac657
-SIZE (harfbuzz-1.8.2.tar.bz2) = 3820498
+TIMESTAMP = 1531315035
+SHA256 (harfbuzz-1.8.3.tar.bz2) = 2ac2ad1ca26253bfe7f437adcd034c84dad0e7c2c0fe008d6051b754fa987a9e
+SIZE (harfbuzz-1.8.3.tar.bz2) = 3828043
+SHA256 (20a318d06aca.patch) = 9acf0f5b0f6361a8f055f3f8cbf9432fa324ddd682fa1b02669d0fe095e65b1b
+SIZE (20a318d06aca.patch) = 627
+SHA256 (2aae617a84f4.patch) = b1626a8ac483ab1793a96bb3c28de56d9b51e8895e23254aa9e9a139aad4aeeb
+SIZE (2aae617a84f4.patch) = 1114
