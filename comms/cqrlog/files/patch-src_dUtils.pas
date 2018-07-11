@@ -1,6 +1,6 @@
---- src/dUtils.pas.orig	2016-04-20 16:06:15 UTC
+--- src/dUtils.pas.orig	2018-06-17 12:42:42 UTC
 +++ src/dUtils.pas
-@@ -2394,7 +2394,7 @@ var
+@@ -2376,7 +2376,7 @@ var
    proj: string = '';
  begin
    Result := '';
@@ -9,7 +9,7 @@
    myloc := cqrini.ReadString('Station', 'LOC', '');
    if not FileExists(Result) then
    begin
-@@ -2684,7 +2684,7 @@ begin
+@@ -2667,7 +2667,7 @@ begin
    if Device = '' then
      exit;
  

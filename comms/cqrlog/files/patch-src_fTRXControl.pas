@@ -1,6 +1,6 @@
---- src/fTRXControl.pas.orig	2016-04-20 16:06:15 UTC
+--- src/fTRXControl.pas.orig	2018-06-17 12:42:42 UTC
 +++ src/fTRXControl.pas
-@@ -749,7 +749,7 @@ begin
+@@ -856,7 +856,7 @@ begin
    if not TryStrToInt(cqrini.ReadString('TRX'+n,'poll','500'),poll) then
      poll := 500;
  
