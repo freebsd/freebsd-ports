@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	6
 CATEGORIES=	net-p2p finance
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	P2P crypto currency client favored by shiba inus worldwide
 
 LICENSE=	MIT
