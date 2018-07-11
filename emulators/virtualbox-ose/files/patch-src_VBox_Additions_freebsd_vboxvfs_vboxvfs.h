@@ -1,4 +1,4 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h.orig	2017-10-18 07:06:47 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h.orig	2018-06-29 13:08:17 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h
 @@ -1,8 +1,3 @@
 -/* $Id: vboxvfs.h $ */
@@ -7,9 +7,9 @@
 - */
 -
  /*
-  * Copyright (C) 2010-2016 Oracle Corporation
+  * Copyright (C) 2010-2017 Oracle Corporation
   *
-@@ -21,72 +16,416 @@
+@@ -21,72 +16,413 @@
  #define VBOXVFS_VFSNAME "vboxvfs"
  #define VBOXVFS_VERSION 1
  
@@ -174,9 +174,6 @@
 -    long            nextino;
 -    int             caseopt;
 -    int             didrele;
-+#if defined(RT_OS_FREEBSD) && defined(_KERNEL)
-+# undef PVM /** XXX: For not conflict with PVM in sys/priority.h */
-+#endif
 +#include <VBox/VBoxGuestLibSharedFolders.h>
 +
 +#define	VBOXVFS_DEBUG(lvl, ...)	do {					\
