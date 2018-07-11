@@ -5876,6 +5876,7 @@
     SUBDIR += rubygem-ruby-enum
     SUBDIR += rubygem-ruby-filemagic
     SUBDIR += rubygem-ruby-fogbugz
+    SUBDIR += rubygem-ruby-fogbugz021
     SUBDIR += rubygem-ruby-libvirt
     SUBDIR += rubygem-ruby-macho
     SUBDIR += rubygem-ruby-ole
