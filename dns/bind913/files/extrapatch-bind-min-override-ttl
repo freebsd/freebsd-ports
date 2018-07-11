@@ -1,6 +1,6 @@
---- bin/named/config.c.orig	2018-05-18 05:44:02 UTC
+--- bin/named/config.c.orig	2018-07-03 07:51:40 UTC
 +++ bin/named/config.c
-@@ -174,12 +174,14 @@ options {\n\
+@@ -177,12 +177,14 @@ options {\n\
  	max-recursion-queries 75;\n\
  	max-stale-ttl 604800; /* 1 week */\n\
  	message-compression yes;\n\
@@ -13,11 +13,11 @@
  	nsec3-test-zone no;\n\
 +	override-cache-ttl 0; /* do not override */\n\
  	provide-ixfr true;\n\
+ 	qname-minimization relaxed;\n\
  	query-source address *;\n\
- 	query-source-v6 address *;\n\
---- bin/named/server.c.orig	2018-05-18 05:44:02 UTC
+--- bin/named/server.c.orig	2018-07-03 07:51:40 UTC
 +++ bin/named/server.c
-@@ -4072,6 +4072,16 @@ configure_view(dns_view_t *view, dns_vie
+@@ -4071,6 +4071,16 @@ configure_view(dns_view_t *view, dns_vie
  	}
  
  	obj = NULL;
@@ -34,9 +34,9 @@
  	result = named_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asuint32(obj);
---- lib/dns/include/dns/view.h.orig	2018-05-18 05:44:02 UTC
+--- lib/dns/include/dns/view.h.orig	2018-07-03 07:51:40 UTC
 +++ lib/dns/include/dns/view.h
-@@ -149,6 +149,8 @@ struct dns_view {
+@@ -151,6 +151,8 @@ struct dns_view {
  	isc_boolean_t			requestnsid;
  	isc_boolean_t			sendcookie;
  	dns_ttl_t			maxcachettl;
@@ -45,9 +45,9 @@
  	dns_ttl_t			maxncachettl;
  	isc_uint32_t			nta_lifetime;
  	isc_uint32_t			nta_recheck;
---- lib/dns/resolver.c.orig	2018-05-18 05:44:02 UTC
+--- lib/dns/resolver.c.orig	2018-07-03 07:51:40 UTC
 +++ lib/dns/resolver.c
-@@ -5746,6 +5746,18 @@ cache_name(fetchctx_t *fctx, dns_name_t 
+@@ -5799,6 +5799,18 @@ cache_name(fetchctx_t *fctx, dns_name_t 
  		}
  
  		/*
@@ -66,9 +66,9 @@
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2018-05-18 05:44:02 UTC
+--- lib/isccfg/namedconf.c.orig	2018-07-03 07:51:40 UTC
 +++ lib/isccfg/namedconf.c
-@@ -1916,6 +1916,8 @@ view_clauses[] = {
+@@ -1917,6 +1917,8 @@ view_clauses[] = {
  	{ "max-acache-size", &cfg_type_sizenodefault,
  	  CFG_CLAUSEFLAG_OBSOLETE },
  	{ "max-cache-size", &cfg_type_sizeorpercent, 0 },
