@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	3.11
+DISTVERSION=	3.12
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://mirrors.ibiblio.org/wine/source/3.x/ \
-		SF/${PORTNAME}/Source
+MASTER_SITES=	SF/${PORTNAME}/Source \
+		http://mirrors.ibiblio.org/wine/source/3.x/
 PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
