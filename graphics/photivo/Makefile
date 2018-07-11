@@ -15,8 +15,6 @@ COMMENT=	Free and open source photo processor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to compile: error: constant expression evaluates to -2 which cannot be narrowed to type char
-
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libexiv2.so:graphics/exiv2 \
 		liblqr-1.so:graphics/liblqr-1 \
@@ -31,17 +29,20 @@ DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-_QT4_DEPS=	qmake_build moc_build rcc_build uic_build corelib gui network
-_QT5_DEPS=	qmake_build buildtools_build core gui network widgets
+FLAVORS=	qt5 qt4
 
-OPTIONS_DEFINE=	QT4
-QT4_DESC=	Build against Qt 4 instead of Qt 5
+qt4_CONFLICTS_INSTALL=	${PORTNAME}
+qt4_PKGNAMESUFFIX=	-qt4
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt4
 
-QT4_USES=	qt:4
-QT4_USES_OFF=	qt:5
-QT4_USE=	QT=${_QT4_DEPS:ts,}
-QT4_USE_OFF=	QT=${_QT5_DEPS:ts,}
-QT4_CMAKE_ON=	-DFORCE_QT4:BOOL=true
+.if ${FLAVOR:U} == qt4
+USES+=		qt:4
+USE_QT=		qmake_build moc_build rcc_build uic_build corelib gui network
+CMAKE_ON=	FORCE_QT4
+.else
+USES+=		qt:5
+USE_QT=		qmake_build buildtools_build core gui network widgets
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,#define cimg_use_openmp 1,//&,' \
@@ -55,5 +56,7 @@ post-patch:
 		${WRKSRC}/Sources/filters/ptFilter_PyramidDenoise.cpp \
 		${WRKSRC}/Sources/filters/ptFilter_StdCurve.cpp \
 		${WRKSRC}/Sources/filters/ptFilter_WaveletDenoise.cpp
+	@${REINPLACE_CMD} -e '/static const char src/s,char,int8_t,' \
+		${WRKSRC}/Sources/ptDcRaw.cpp
 
 .include <bsd.port.mk>
