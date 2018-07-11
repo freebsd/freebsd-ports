@@ -20,11 +20,11 @@
     SUBDIR += c2ps
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
+    SUBDIR += cloud-print-connector
     SUBDIR += cloudprint
     SUBDIR += cups
     SUBDIR += cups-bjnp
     SUBDIR += cups-cloud-print
-    SUBDIR += cups-connector
     SUBDIR += cups-filters
     SUBDIR += cups-fxlinuxprint
     SUBDIR += cups-pdf
