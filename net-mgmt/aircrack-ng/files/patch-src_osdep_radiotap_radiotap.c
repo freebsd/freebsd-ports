@@ -1,5 +1,5 @@
---- src/osdep/radiotap/radiotap.c.orig	2016-02-08 04:12:03 UTC
-+++ src/osdep/radiotap/radiotap.c
+--- src/aircrack-osdep/radiotap/radiotap.c.orig
++++ src/aircrack-osdep/radiotap/radiotap.c
 @@ -20,6 +20,16 @@
  #endif
  
