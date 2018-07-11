@@ -4,4 +4,4 @@ as spam or save it to a designated folder. Bogofilter is a pure Bayesian
 filter, therefore it has better speed performance than SpamAssassin but might
 catch less spam.
 
-WWW: http://claws-mail.org/plugin.php?plugin=bogofilter
+WWW: https://www.claws-mail.org/plugin.php?plugin=bogofilter
