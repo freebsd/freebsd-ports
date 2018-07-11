@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	11.0.3
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -137,7 +138,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-gemnasium-gitlab-service>=0.2:devel/rubygem-gemnasium-gitlab-service \
 	rubygem-slack-notifier1>=1.5.1:devel/rubygem-slack-notifier1 \
 	rubygem-asana>=0.6.0:www/rubygem-asana \
-	rubygem-ruby-fogbugz>=0.2.1:devel/rubygem-ruby-fogbugz \
+	rubygem-ruby-fogbugz021>=0.2.1:devel/rubygem-ruby-fogbugz021 \
 	rubygem-kubeclient>=3.1.0:www/rubygem-kubeclient \
 	rubygem-sanitize>=4.6.5:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2:textproc/rubygem-babosa \
