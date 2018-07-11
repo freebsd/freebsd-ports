@@ -62,6 +62,7 @@ USE_PERL5=	build
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
 SUB_FILES=	pkg-message
+TEST_TARGET=	test
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -154,10 +155,5 @@ post-install-SHARED-on:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${STAGEDIR}${DOCSDIR}/
-
-test: build
-	cd ${WRKSRC} && ${MAKE} test
-
-regression-test:	test
 
 .include <bsd.port.post.mk>
