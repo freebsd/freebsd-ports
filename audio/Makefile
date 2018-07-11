@@ -203,6 +203,7 @@
     SUBDIR += gbsplay
     SUBDIR += gervill
     SUBDIR += ghostess
+    SUBDIR += giada
     SUBDIR += gimmix
     SUBDIR += gkrellmms2
     SUBDIR += gkrellmvolume2
