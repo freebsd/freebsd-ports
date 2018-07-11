@@ -33,7 +33,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=	cpe libedit ssl
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.1
+ISCVERSION=	9.13.2
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}

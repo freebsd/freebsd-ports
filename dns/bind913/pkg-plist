@@ -120,6 +120,7 @@ include/dns/view.h
 include/dns/xfrin.h
 include/dns/zone.h
 include/dns/zonekey.h
+include/dns/zoneverify.h
 include/dns/zt.h
 include/dst/dst.h
 include/dst/gssapi.h
