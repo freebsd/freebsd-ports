@@ -2,6 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	powerpc64-
@@ -59,6 +60,10 @@ CFLAGS+=	-DCROSS_DIRECTORY_STRUCTURE
 
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
+
+.if ${GCC_TARGET:M*${OPSYS:tl}*} != ""
+CONFIGURE_ARGS+= --enable-initfini-array
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBSTDCXX/ s/stdc\+\+/c\+\+/g ' \
