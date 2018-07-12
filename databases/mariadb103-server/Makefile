@@ -23,8 +23,6 @@ LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		Segfaults on start, see https://jira.mariadb.org/browse/MDEV-16495
-
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -41,9 +39,9 @@ OPTIONS_DEFAULT=	GSSAPI_BASE
 
 .if !defined(CLIENT_ONLY)
 # MySQL-Server options
-OPTIONS_DEFAULT+=	CONNECT_EXTRA INNOBASE SPHINX SPIDER
+OPTIONS_DEFAULT+=	CONNECT_EXTRA INNOBASE SPHINX SPIDER WSREP
 OPTIONS_GROUP=		COMPRESSION ENGINES GROONGA
-OPTIONS_DEFINE=		CONNECT_EXTRA
+OPTIONS_DEFINE=		CONNECT_EXTRA WSREP
 OPTIONS_GROUP_COMPRESSION=	LZ4 LZO SNAPPY ZSTD
 OPTIONS_GROUP_ENGINES=	INNOBASE MROONGA OQGRAPH ROCKSDB SPHINX SPIDER TOKUDB XTRADB
 OPTIONS_GROUP_GROONGA=	ZMQ MSGPACK
@@ -61,6 +59,7 @@ ROCKSDB_DESC=	RocksDB LSM engine (Alpha)
 SPHINX_DESC=	SphinxSE engine
 SPIDER_DESC=	Partitioning and XA-transactions engine
 TOKUDB_DESC=	Fractal tree index tree data structure engine
+WSREP_DESC=	Build wsrep clustering
 XTRADB_DESC=	Build XtraDB engine next to InnoDB
 ZMQ_DESC=	ZeroMQ support
 ZSTD_DESC+=	Zstandard compression support (RocksDB only)
@@ -162,12 +161,15 @@ SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 TOKUDB_IMPLIES=		SNAPPY
 TOKUDB_PORTDOCS=	README.md
 TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
+WSREP_CMAKE_OFF=	-DWITH_WSREP=OFF
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 ZSTD_CMAKE_ON=		-DWITH_ROCKSDB_ZSTD=ON
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 post-install:
-	${RM} -r ${STAGEDIR}/${PREFIX}/share/mysql/policy
+	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy
+	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server/private
+	${RM} -r `${FIND} ${STAGEDIR}${DATADIR} -type d -mindepth 1`
 .endif # defined(CLIENT_ONLY)
 
 .if defined(WITH_OPENSSL_PORT)
@@ -181,9 +183,9 @@ CMAKE_ARGS+=	-DWITHOUT_TOKUDB
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
 	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/mysys/my_default.c
-	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/scripts/mysql_config.sh
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/scripts/mysql_config.sh \
+		${WRKSRC}/storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake
 .if ${OPSYS} == DragonFly
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
 		${WRKSRC}/cmake/os/DragonFly.cmake

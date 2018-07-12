@@ -41,23 +41,111 @@ bin/mysqldumpslow
 bin/resolve_stack_dump
 bin/resolveip
 %%ROCKSDB%%bin/sst_dump
+@comment bin/test-connect-t
 %%TOKUDB%%bin/tokuft_logprint
 %%TOKUDB%%bin/tokuftdump
-bin/wsrep_sst_common
-bin/wsrep_sst_mariabackup
-bin/wsrep_sst_mysqldump
-bin/wsrep_sst_rsync
-bin/wsrep_sst_xtrabackup
-bin/wsrep_sst_xtrabackup-v2
+%%WSREP%%bin/wsrep_sst_common
+%%WSREP%%bin/wsrep_sst_mariabackup
+%%WSREP%%bin/wsrep_sst_mysqldump
+%%WSREP%%bin/wsrep_sst_rsync
+%%WSREP%%bin/wsrep_sst_rsync_wan
+%%WSREP%%bin/wsrep_sst_xtrabackup
+%%WSREP%%bin/wsrep_sst_xtrabackup-v2
 @comment include/mysql/my_config.h
 @comment include/mysql/my_global.h
 @comment include/mysql/my_sys.h
 @comment include/mysql/mysql_com.h
 @comment include/mysql/mysql_version.h
 @comment include/mysql/mysqld_error.h
-include/mysql/server/private/embedded_priv.h
-@comment lib/mysql/libmariadb.so
-@comment lib/mysql/libmariadb.so.3
+include/mysql/server/big_endian.h
+include/mysql/server/byte_order_generic.h
+include/mysql/server/byte_order_generic_x86.h
+include/mysql/server/byte_order_generic_x86_64.h
+include/mysql/server/decimal.h
+include/mysql/server/errmsg.h
+include/mysql/server/handler_ername.h
+include/mysql/server/handler_state.h
+include/mysql/server/json_lib.h
+include/mysql/server/keycache.h
+include/mysql/server/little_endian.h
+include/mysql/server/m_ctype.h
+include/mysql/server/m_string.h
+include/mysql/server/ma_dyncol.h
+include/mysql/server/my_alloc.h
+include/mysql/server/my_attribute.h
+include/mysql/server/my_byteorder.h
+include/mysql/server/my_compiler.h
+include/mysql/server/my_config.h
+include/mysql/server/my_dbug.h
+include/mysql/server/my_decimal_limits.h
+include/mysql/server/my_dir.h
+include/mysql/server/my_getopt.h
+include/mysql/server/my_global.h
+include/mysql/server/my_list.h
+include/mysql/server/my_net.h
+include/mysql/server/my_pthread.h
+include/mysql/server/my_sys.h
+include/mysql/server/my_valgrind.h
+include/mysql/server/my_xml.h
+include/mysql/server/mysql.h
+include/mysql/server/mysql/auth_dialog_client.h
+include/mysql/server/mysql/client_plugin.h
+include/mysql/server/mysql/plugin.h
+include/mysql/server/mysql/plugin_audit.h
+include/mysql/server/mysql/plugin_auth.h
+include/mysql/server/mysql/plugin_auth_common.h
+include/mysql/server/mysql/plugin_encryption.h
+include/mysql/server/mysql/plugin_ftparser.h
+include/mysql/server/mysql/plugin_password_validation.h
+include/mysql/server/mysql/psi/mysql_file.h
+include/mysql/server/mysql/psi/mysql_idle.h
+include/mysql/server/mysql/psi/mysql_socket.h
+include/mysql/server/mysql/psi/mysql_stage.h
+include/mysql/server/mysql/psi/mysql_statement.h
+include/mysql/server/mysql/psi/mysql_table.h
+include/mysql/server/mysql/psi/mysql_thread.h
+include/mysql/server/mysql/psi/psi.h
+include/mysql/server/mysql/psi/psi_abi_v0.h
+include/mysql/server/mysql/psi/psi_abi_v1.h
+include/mysql/server/mysql/psi/psi_abi_v2.h
+include/mysql/server/mysql/psi/psi_base.h
+include/mysql/server/mysql/psi/psi_memory.h
+include/mysql/server/mysql/service_base64.h
+include/mysql/server/mysql/service_debug_sync.h
+include/mysql/server/mysql/service_encryption.h
+include/mysql/server/mysql/service_encryption_scheme.h
+include/mysql/server/mysql/service_kill_statement.h
+include/mysql/server/mysql/service_logger.h
+include/mysql/server/mysql/service_md5.h
+include/mysql/server/mysql/service_my_crypt.h
+include/mysql/server/mysql/service_my_print_error.h
+include/mysql/server/mysql/service_my_snprintf.h
+include/mysql/server/mysql/service_progress_report.h
+include/mysql/server/mysql/service_sha1.h
+include/mysql/server/mysql/service_sha2.h
+include/mysql/server/mysql/service_thd_alloc.h
+include/mysql/server/mysql/service_thd_autoinc.h
+include/mysql/server/mysql/service_thd_error_context.h
+include/mysql/server/mysql/service_thd_rnd.h
+include/mysql/server/mysql/service_thd_specifics.h
+include/mysql/server/mysql/service_thd_timezone.h
+include/mysql/server/mysql/service_thd_wait.h
+include/mysql/server/mysql/service_wsrep.h
+include/mysql/server/mysql/services.h
+include/mysql/server/mysql_com.h
+include/mysql/server/mysql_com_server.h
+include/mysql/server/mysql_embed.h
+include/mysql/server/mysql_time.h
+include/mysql/server/mysql_version.h
+include/mysql/server/mysqld_ername.h
+include/mysql/server/mysqld_error.h
+include/mysql/server/pack.h
+include/mysql/server/sql_common.h
+include/mysql/server/sql_state.h
+include/mysql/server/sslopt-case.h
+include/mysql/server/sslopt-longopts.h
+include/mysql/server/sslopt-vars.h
+include/mysql/server/typelib.h
 @comment lib/mysql/libmariadbclient.a
 lib/mysql/libmariadbd.a
 lib/mysql/libmariadbd.so
@@ -107,7 +195,7 @@ lib/mysql/plugin/server_audit.so
 lib/mysql/plugin/simple_password_check.so
 lib/mysql/plugin/sql_errlog.so
 lib/mysql/plugin/test_versioning.so
-lib/mysql/plugin/wsrep_info.so
+%%WSREP%%lib/mysql/plugin/wsrep_info.so
 libexec/mysqld
 man/man1/aria_chk.1.gz
 man/man1/aria_dump_log.1.gz
@@ -143,11 +231,11 @@ man/man1/resolve_stack_dump.1.gz
 man/man1/resolveip.1.gz
 %%TOKUDB%%man/man1/tokuft_logdump.1.gz
 %%TOKUDB%%man/man1/tokuftdump.1.gz
-man/man1/wsrep_sst_common.1.gz
-man/man1/wsrep_sst_mysqldump.1.gz
-man/man1/wsrep_sst_rsync.1.gz
-man/man1/wsrep_sst_xtrabackup-v2.1.gz
-man/man1/wsrep_sst_xtrabackup.1.gz
+%%WSREP%%man/man1/wsrep_sst_common.1.gz
+%%WSREP%%man/man1/wsrep_sst_mysqldump.1.gz
+%%WSREP%%man/man1/wsrep_sst_rsync.1.gz
+%%WSREP%%man/man1/wsrep_sst_xtrabackup-v2.1.gz
+%%WSREP%%man/man1/wsrep_sst_xtrabackup.1.gz
 man/man8/mysqld.8.gz
 %%DATADIR%%/binary-configure
 %%DATADIR%%/fill_help_tables.sql
@@ -155,9 +243,6 @@ man/man8/mysqld.8.gz
 %%SPIDER%%%%DATADIR%%/install_spider.sql
 %%DATADIR%%/maria_add_gis_sp.sql
 %%DATADIR%%/maria_add_gis_sp_bootstrap.sql
-%%MROONGA%%%%DATADIR%%/mroonga/install.sql
-%%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
-%%MROONGA%%%%DATADIR%%/mroonga/AUTHORS
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/mysql_performance_tables.sql
@@ -167,8 +252,8 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/mysql_test_db.sql
 %%DATADIR%%/mysql_to_mariadb.sql
 %%DATADIR%%/mysqld_multi.server
-%%DATADIR%%/wsrep.cnf
-%%DATADIR%%/wsrep_notify
+%%WSREP%%%%DATADIR%%/wsrep.cnf
+%%WSREP%%%%DATADIR%%/wsrep_notify
 @comment %%DOCSDIR%%/COPYING
 @comment %%DOCSDIR%%/COPYING.thirdparty
 @comment share/groonga-normalizer-mysql/lgpl-2.0.txt

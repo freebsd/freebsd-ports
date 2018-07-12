@@ -23,11 +23,11 @@ Do NOT use bundled libs, use xz/lzma from base and archivers/snappy from ports
 +ENDIF()
  
 +IF (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+  include_directories("/usr/local/include")
++  include_directories("%%LOCALBASE%%/include")
  
 +  add_library(snappy SHARED IMPORTED)
 +  set_target_properties(snappy PROPERTIES IMPORTED_LOCATION
-+    "/usr/local/lib/libsnappy.so")
++    "%%LOCALBASE%%/lib/libsnappy.so")
 +ELSE()
  ## add snappy with an external project
  set(SNAPPY_SOURCE_DIR "${TokuDB_SOURCE_DIR}/third_party/snappy-1.1.2" CACHE FILEPATH "Where to find sources for snappy.")
