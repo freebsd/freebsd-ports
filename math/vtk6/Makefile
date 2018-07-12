@@ -23,7 +23,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 # TODO
 # * VTK Groups
 
-CONFLICTS=	vtk-4*
+CONFLICTS=	vtk5 vtk8
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	xt sm ice x11 xext
 USES=		alias cmake:outsource jpeg
