@@ -51,6 +51,7 @@
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
     SUBDIR += dv2sub
+    SUBDIR += dvb-apps
     SUBDIR += dvbcut
     SUBDIR += dvbsnoop
     SUBDIR += dvd-slideshow
