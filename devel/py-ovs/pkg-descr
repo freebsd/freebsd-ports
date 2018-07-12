@@ -1,0 +1,4 @@
+Ovs is a Python library for working with Open vSwitch, a production quality,
+multilayer virtual switch licensed under the open source Apache 2.0 license. 
+
+WWW: https://github.com/openvswitch/ovs/tree/master/python
