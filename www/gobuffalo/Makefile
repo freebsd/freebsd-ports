@@ -5,7 +5,7 @@ PORTVERSION=	0.10.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go web development eco-system, designed to make the life easier
 
 LICENSE=	MIT
