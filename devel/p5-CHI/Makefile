@@ -1,16 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	CHI
-PORTVERSION=	0.580
-PORTREVISION=	1
+PORTVERSION=	0.600
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.58
+DISTNAME=	${PORTNAME}-0.60
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for unified cache interface
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
@@ -18,9 +21,10 @@ RUN_DEPENDS=	\
 	p5-Data-UUID>0:devel/p5-Data-UUID \
 	p5-Digest-JHash>0:security/p5-Digest-JHash \
 	p5-Hash-MoreUtils>0:devel/p5-Hash-MoreUtils \
-	p5-JSON>0:converters/p5-JSON \
+	p5-JSON-MaybeXS>=1.003003:converters/p5-JSON-MaybeXS \
 	p5-List-MoreUtils>=0.13:lang/p5-List-MoreUtils \
 	p5-Log-Any>=0.08:devel/p5-Log-Any \
+	p5-Module-Runtime>0:devel/p5-Module-Runtime \
 	p5-Moo>=1.003:devel/p5-Moo \
 	p5-MooX-Types-MooseLike>=0.23:devel/p5-MooX-Types-MooseLike \
 	p5-MooX-Types-MooseLike-Numeric>0:devel/p5-MooX-Types-MooseLike-Numeric \
@@ -35,6 +39,7 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Class>=0:devel/p5-Test-Class \
 		p5-TimeDate>=0:devel/p5-TimeDate
 
+NO_ARCH=	yes
 USES=	perl5
 USE_PERL5=	configure
 
