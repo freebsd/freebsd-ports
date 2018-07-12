@@ -1,0 +1,5 @@
+A lightweight MPD (Music Player Daemon) web client written in C, that
+runs without a dedicated webserver or interpreters like PHP, NodeJS or
+Ruby. It's tuned for minimal resource usage, and minimal configuration.
+
+WWW: https://www.ympd.org/
