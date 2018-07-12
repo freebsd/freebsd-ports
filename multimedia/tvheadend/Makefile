@@ -4,7 +4,7 @@
 PORTNAME=	tvheadend
 PORTVERSION=	4.2.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib --disable-hdhomerun_static \
 CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lcrypto -lz
 
-OPTIONS_DEFINE=	AVAHI DVBCSA HDHOMERUN INOTIFY TRANSCODING XMLTV
+OPTIONS_DEFINE=	AVAHI DVBCSA DVBEN50221 HDHOMERUN INOTIFY TRANSCODING XMLTV
 OPTIONS_DEFAULT=DVBCSA HDHOMERUN INOTIFY
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
@@ -65,6 +65,10 @@ AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 DVBCSA_DESC=		Replace internal ffdecsa with dvbcsa
 DVBCSA_LIB_DEPENDS=	libdvbcsa.so:multimedia/libdvbcsa
 DVBCSA_CONFIGURE_ENABLE=	dvbcsa
+
+DVBEN50221_DESC=	Hardware CAM support
+DVBEN50221_LIB_DEPENDS=	libdvben50221.so:multimedia/dvb-apps
+DVBEN50221_CONFIGURE_ENABLE=	dvben50221
 
 HDHOMERUN_DESC=		Native support for HDHomeRun network tuners
 HDHOMERUN_LIB_DEPENDS=	libhdhomerun.so:multimedia/libhdhomerun
