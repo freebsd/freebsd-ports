@@ -1,6 +1,6 @@
---- sigscheme/doc/Makefile.in.orig	2016-10-14 09:57:35 UTC
+--- sigscheme/doc/Makefile.in.orig	2018-07-12 14:16:06 UTC
 +++ sigscheme/doc/Makefile.in
-@@ -210,7 +210,7 @@ build_vendor = @build_vendor@
+@@ -266,7 +266,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@

@@ -1,6 +1,6 @@
---- emacs/Makefile.in.orig	2016-10-14 09:57:35 UTC
+--- emacs/Makefile.in.orig	2018-07-12 14:16:06 UTC
 +++ emacs/Makefile.in
-@@ -872,21 +872,6 @@ mostlyclean-libtool:
+@@ -981,21 +981,6 @@ mostlyclean-libtool:
  
  clean-libtool:
  	-rm -rf .libs _libs
