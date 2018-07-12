@@ -16,7 +16,7 @@
 +  if (strstr(name, "/etc") == name)
 +  {
 +    fprintf(stderr,
-+             "error: Config file %s in invalid location, please move to or merge with /usr/local%s\n",
++             "error: Config file %s in invalid location, please move to or merge with %%PREFIX%%%s\n",
 +             name,name);
 +      goto err;
 +  }
@@ -45,8 +45,8 @@
    errors += add_directory(alloc, "/etc/", dirs);
    errors += add_directory(alloc, "/etc/mysql/", dirs);
 -#endif /* DEFAULT_SYSCONFDIR */
-+  errors += add_directory(alloc, "/usr/local/etc/", dirs);
-+  errors += add_directory(alloc, "/usr/local/etc/mysql/", dirs);
++  errors += add_directory(alloc, "%%PREFIX%%/etc/", dirs);
++  errors += add_directory(alloc, "%%PREFIX%%/etc/mysql/", dirs);
  
  #endif
  
