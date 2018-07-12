@@ -13,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/legal/LGPLv3
 
 BROKEN_FreeBSD_10=	conflicting types for '__hash_table<_Tp, _Hash, _Equal, _Alloc>'
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
-
 USES=		cmake:outsource compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	SFTtech
