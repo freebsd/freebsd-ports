@@ -2,6 +2,7 @@
 
 PORTNAME=	ryu
 PORTVERSION=	4.26
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -35,6 +36,5 @@ USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	osrg
-GH_TAGNAME=	b9909d0
 
 .include <bsd.port.mk>
